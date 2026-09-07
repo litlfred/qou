@@ -6420,6 +6420,36 @@ export const references: Reference[] = [
       "(\\ref{rem:algebraic-core-survives}).",
   }),
 
+  // ── Dunfield 2001 (revised 2010) — table of boundary slopes of Montesinos knots ──
+  ref({
+    id: "dunfield2001",
+    library: {
+      docId: "arxiv-math-9901120v3",
+      dir: "library/arxiv-math-9901120v3",
+      pdf: "library/arxiv-math-9901120v3/9901120v3.pdf",
+      stage: "sections",
+      pages: 4,
+      sections: 4,
+      arxiv: "math/9901120v3",
+    },
+    type: "article-journal",
+    title: "A table of boundary slopes of Montesinos knots",
+    author: [{ family: "Dunfield", given: "Nathan M." }],
+    issued: { "date-parts": [[2001]] },
+    "container-title": "Topology",
+    volume: "40",
+    page: "309-315",
+    URL: "https://arxiv.org/abs/math/9901120",
+    note:
+      "arXiv:math/9901120v3 (revised June 2010). Owner upload 2026-09-07. " +
+      "Corrects Hatcher–Oertel's table of boundary slopes for Montesinos knots " +
+      "of at most 10 crossings; notation follows [HO] and Rolfsen. Used here for " +
+      "the 5_2 = K(3/7) row, slopes {0, 4, 10}: an independent held source, with " +
+      "Rolfsen's convention, that the two-bridge triangulation derived from the " +
+      "Farey word RL (slopes {-10,-4,0}) is the mirror of the Rolfsen 5_2 " +
+      "(qou-lrvc). The Topology placement is recalled and not verified in-sandbox.",
+  }),
+
   // ── Garoufalidis–Gu–Mariño 2021 (resurgent structure of quantum knot invariants) ──
   ref({
     id: "garoufalidis-gu-marino2021",
