@@ -301,6 +301,12 @@ def main() -> int:
                          "snapshot-conditionality the sweep already carries for "
                          "clean dependencies -- not a new hole -- but it means a "
                          "chunked green is not identical to a single-run green.")
+    ap.add_argument("--only-exact", metavar="MODULE",
+                    help="like --only but matches ONE module exactly.  Needed for "
+                         "the library root: `--only QOU` is a prefix and EVERY "
+                         "module starts with it, so the root's chunk silently "
+                         "became the whole corpus (measured: `TO COMPILE 2774 "
+                         "[--only QOU + its untrusted deps]`).")
     ap.add_argument("--package", action="append", metavar="LIB",
                     help="library name (QOU, UGB, Fred2005); repeatable, "
                          "default all discovered")
@@ -334,12 +340,16 @@ def sweep_one(args) -> int:
     mod2path, imports = load_graph()
     dirty, changed, never_built, untrusted = dirty_closure(mod2path, imports,
                                                 oleans, all_dirty=args.all)
-    if args.only:
+    sel = args.only or args.only_exact
+    if sel:
         # Filter the population to compile, NOT the import graph -- dependencies
-        # outside the prefix must stay resolvable.
-        seeds = {m for m in dirty if m.startswith(args.only)}
+        # outside the selection must stay resolvable.
+        if args.only_exact:
+            seeds = {m for m in dirty if m == args.only_exact}
+        else:
+            seeds = {m for m in dirty if m.startswith(args.only)}
         if not seeds:
-            print(f"  --only {args.only}: no modules match; nothing to do")
+            print(f"  selection {sel}: no modules match; nothing to do")
             return 0
         # ...but a dependency is only "resolvable from the snapshot" if the
         # snapshot HAS it.  A never-built module has no olean at all, so a
@@ -361,7 +371,7 @@ def sweep_one(args) -> int:
         pulled = need - seeds
         if pulled:
             nb = len(pulled & never_built)
-            print(f"  --only {args.only}: +{len(pulled)} untrusted dep(s) pulled in "
+            print(f"  selection {sel}: +{len(pulled)} untrusted dep(s) pulled in "
                   f"across namespaces ({nb} never built, {len(pulled) - nb} stale) "
                   f"-- else they are spurious REDs")
         dirty = need
@@ -375,7 +385,7 @@ def sweep_one(args) -> int:
         # avoid.  `never_built` IS measured (olean presence), so it stays.
         print(f"  never built (new)     {len(never_built)}   [measured]")
         print(f"  source-changed        n/a  (--all: freshness rule not consulted)")
-        label = "[= every module]" if not args.only else f"[--only {args.only} + its untrusted deps]"
+        label = "[= every module]" if not sel else f"[{sel} + its untrusted deps]"
         print(f"  TO COMPILE (--all)    {len(dirty)}   {label}")
     else:
         print(f"  source-changed        {len(changed) - len(never_built)}")
