@@ -45,9 +45,10 @@ used. Measured, not assumed — it is how the first draft failed.
 
 ## What is proved here
 
-* `NormalIdx m` is a `Fintype` with `card = catalan (m+1)` for `m ≤ 4`
-  (`1, 2, 5, 14, 42`), bridged to Mathlib's `Nat.catalan` rather than to a
-  hand-typed table.
+* `NormalIdx m` is a `Fintype` with `card = catalan (m+1)` for `m ≤ 6`
+  (`1, 2, 5, 14, 42, 132, 429`), bridged to Mathlib's `Nat.catalan` rather than
+  to a hand-typed table. Each is one `decide`; `m = 6` costs 17 s, `m = 5` 6 s,
+  and the rest are instant.
 * Its `elt` map reproduces, **exactly**, the two bases this corpus has already
   proved: `{1, e₀}` for `TL₂` and `{1, e₀, e₁, e₀e₁, e₁e₀}` for `TL₃`.
 
@@ -58,9 +59,26 @@ places where a proved basis exists, the general construction lands on it.
 
 **The general theorem is not here, and nothing in this file stands in for it.**
 
-* `Fintype.card (NormalIdx m) = catalan (m+1)` is checked at `m ≤ 4` by
-  `decide` — it is **not** proved for general `m`. That needs a bijection to
-  Dyck paths or to Mathlib's binary trees.
+* `Fintype.card (NormalIdx m) = catalan (m+1)` is checked at `m ≤ 6` by
+  `decide` — it is **not** proved for general `m`.
+
+  **The route is identified, and it is not "a bijection to Dyck paths".** A pair
+  `(I, J)` is exactly a word of length `m` over four letters — `I`-only,
+  `J`-only, *both*, *neither* — and the domination condition says every prefix
+  has `#(I-only) ≤ #(J-only)`, with equality overall. Those are the **bicoloured
+  Motzkin words** of length `m`: two step letters and two neutral letters, with
+  a ballot condition. So the general count is the classical
+  *bicoloured-Motzkin-to-Catalan* bijection, not a Dyck-path one, and the two
+  neutral letters are exactly what makes it Motzkin rather than Dyck.
+
+  Equivalently, in closed form,
+
+      catalan (m+1)  =  ∑_k  C(m, 2k) · catalan k · 2^(m-2k)
+
+  Both formulations were checked against `catalan (m+1)` for `m ≤ 10` before
+  being written down here. Mathlib has `DyckWord`, `DyckWord.semilength` and
+  `catalan_succ`; it does **not** appear to have bicoloured Motzkin words, so
+  that bijection is the work.
 * **`elt` is not proved to span `TL_{m+1}(δ)` for general `m`**, and that is the
   real content of `dim TL_n = catalan n`. It needs the closure lemma, on the
   `(I, J)` index and not on word length. `span_range_elt_two` is the `m = 2`
@@ -121,6 +139,18 @@ theorem card_three : Fintype.card (NormalIdx 3) = catalan 4 := by
 set_option maxRecDepth 4000 in
 theorem card_four : Fintype.card (NormalIdx 4) = catalan 5 := by
   rw [show catalan 5 = 42 by norm_num [catalan_eq_centralBinom_div, Nat.centralBinom,
+    Nat.choose]]
+  decide
+
+set_option maxRecDepth 20000 in
+theorem card_five : Fintype.card (NormalIdx 5) = catalan 6 := by
+  rw [show catalan 6 = 132 by norm_num [catalan_eq_centralBinom_div, Nat.centralBinom,
+    Nat.choose]]
+  decide
+
+set_option maxRecDepth 100000 in
+theorem card_six : Fintype.card (NormalIdx 6) = catalan 7 := by
+  rw [show catalan 7 = 429 by norm_num [catalan_eq_centralBinom_div, Nat.centralBinom,
     Nat.choose]]
   decide
 
