@@ -1,7 +1,7 @@
 {
  "computation": "deuteron-magnus-omega2-sign",
  "scriptFile": "deuteron_magnus_omega2_sign_probe.py",
- "computedAt": "2026-09-06T03:25:35.831243+00:00",
+ "computedAt": "2026-09-07T11:16:09.789410+00:00",
  "engine": "mpmath mpf at 140 dps (H\u2086 Hoefsmit seminormal; finite-diff germ; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -184,6 +184,8 @@
     "tr_rho_Omega2_interface_only": "0.0"
    }
   ],
+  "weight_family": "quantum_plancherel_dq2_over_n_factorial",
+  "weight_family_note": "NOT the Wenzl y_lambda used by the production Markov trace. AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, which are distinct at q != 1. Re-weighting this witness's own per-partition tr(rho.Omega2) with the Wenzl bridge weight leaves the sign of P_total unchanged \u2014 measured in magnus_omega2_weight_family_robustness_probe.py.",
   "P_total": "-15.0952414446437079252206337315418091482335562779533923530652",
   "P_total_sign": -1,
   "P_interface_only": "-14.6830580096020065113631192556029957393785682562285888128968",
@@ -201,9 +203,9 @@
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
  "notes": "Magnus continuation (qou-dp32) of deuteron_interface_handle_curvature_probe.py (qou-jqof). The prior probe established F_q traceless \u21d2 quadrature \u2016F_q\u2016\u00b2\u22650, excluded from the negative-at-A=2 term. This tests whether the LINEAR Magnus pairing escapes that non-negativity.",
- "scriptHash": "7f8bd25de651",
- "scriptCommitSha": "5e21b5cbb5f12db67b70431c8868ff3f4248bab1",
- "commitSha": "75fd0b4c3264868c68924658f00c3e433e01bbcb",
+ "scriptHash": "516547d5e247",
+ "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+ "commitSha": "dc19a937cf0b11d4dfe52f8b2dc36f8abebbce5b",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"
