@@ -1345,3 +1345,63 @@ anyone deriving it should state which `R_4` they used — but a slip here is a
 factor of **3**, and kappa's gap is **0.3 %** (`~0.0591` vs
 `sqrt(2)/24 = 0.058926`). It therefore cannot explain that gap, and finding it
 must not be reported as explaining it. Gap stays OPEN.
+
+### 2026-09-07 — CONVERGENCE with the epic's A2 leg, and TWO of my results were re-derivations
+
+Prompted by reviewing 1298 commits that landed on `main` while this arc ran. This entry is a
+correction to my own arc's standing, not a new result.
+
+**`M_1` is already IN the epic, as a sub-item of `qou-ogrk` (A2 leg 1, in-progress, priority
+high, parent `qou-v8t7`) -- and the epic bean `qou-x631` does not mention `k5r5` at all.** The
+carrier is `qou-ogrk`'s "M_1 REFORMULATION (2026-08-21)": `M_1 = Cov_Planch(Sum(i+j), Sum c^2) =
+Cov(Sum h, Sum h^2)`, "Route = Kerov CLT integral (open)". That was written **two weeks before**
+#6825 concluded the same thing. I corpus-grepped `k5r5`, `M_1` and `covariance-kernel`; I did not
+grep `qou-ogrk`, which is where the reformulation lives. The k5r5 bean already records a prior
+agent making this exact mistake on this exact epic.
+
+**Two of my results are re-derivations, and mine are the weaker derivations.**
+
+1. `V_W = Var(omega_3) = n(n-1)(n-2)/3`. I found it in #6627 by exact Lagrange interpolation
+   (degree 3, held-out points). `qou-ogrk` had it on **2026-07-25** from the classical identity
+   `Sum h^2 = Sum c^2 + n^2`; and `f02c2dcba45` (2026-09-06) re-derives it from **character column
+   orthogonality**: `Var_P(Sigma_p) = (k)_p^2/|C_p|`, so `Var(Sigma_3) = 3k(k-1)(k-2)` and
+   `omega_3 = Sigma_3/3` gives `k(k-1)(k-2)/3`. VERIFIED here: all three agree exactly. An
+   interpolant that fits is not a derivation; two of the three are.
+2. "The route is the Kerov-CLT integral." `qou-ogrk` line 32, 2026-08-21.
+
+**What my arc DID add, and the epic does not hold**: the Fulman edge decomposition `M_1 = P - N`
+with both signs measured per edge; the eigenfunction-reach negative (`A`, `D` are not
+eigenfunctions at any non-degenerate n, so the identity reaches `P`/`N` but not `V_A`/`V_D`); the
+falsification of the 2026-08-21 audit's Fact B; the exact negative-edge criterion
+`g(g + 2(d_u-d_v) - 2) < 0`; the reversal-closure proof; and the `Q < P` census. The epic's A2 leg
+works in HOOK-VALUE coordinates (`nu_v`, `H_s`, the polynomial `R`); mine works in EDGE
+coordinates. Those are genuinely different and the edge results are not duplicated anywhere.
+
+**MY RECOMMENDED NEXT STEP WAS AIMED AT A ROUTE THE EPIC HAD ALREADY ELIMINATED -- partly.**
+#6825 closed with "control of the joint distribution of (g, delta) under Plancherel ... the
+Kerov-CLT-adjacent analysis, and it is where the next attempt should aim". `qou-ujil` (route 7,
+2026-09-06) eliminates **concentration / limit-shape** arguments for the epic's object, because
+`E_P[Sigma_3] = 0` exactly, so replacing lambda by the limit shape "discards exactly the term
+being computed and proves 0 <= 0". **That objection transfers to `M_1` verbatim**: `E_P[omega_3] = 0`
+is what makes `M_1 = E_P[Sum h * omega_3]` in the first place. So my recommendation was ambiguous
+between an eliminated reading (limit-shape/concentration) and the one the epic endorses (a
+CLT-SCALE CORRELATION computation, `qou-t5m1`'s Sniady genus expansion). Read it as the second only.
+
+**THE UNEXPLORED ROUTE WITH THE BEST WARRANT, and I have not touched it.** `qou-ogrk` PROVED the
+EVEN members of the moment tower `M_k = Cov(Sum h^k, omega_3)` positive for all n >= 3 (2026-07-25)
+with manifest certificates -- `M_2 = n(n-1)(n-2)/3`, `M_4 = M_2 * 5(n - 8/3)`,
+`M_6 = M_2 * 7(3n-8)^2` -- by: even hook-power moments are SHIFTED-SYMMETRIC, hence exact
+polynomials in n by Ivanov-Olshanski Prop 5.1, hence provable by a finite positivity check.
+`M_1` is the first ODD member; odd-k is empirical only, because `Sum h` is not shifted-symmetric.
+
+**That is the SAME boundary my own arc kept hitting from two other directions**, which is why it
+is worth stating as one fact rather than three: `V_W` has a closed form and `V_A` does not (#6627);
+`W` is an eigenfunction of the up-down chain and `A`, `D` are not (#6651); and even-k moments are
+shifted-symmetric while odd-k are not (`qou-ogrk`). Shifted-symmetric <=> closed form <=> reachable,
+three times over. Cheap unasked question: is either piece of the split `Sum h = D + A` shifted-
+symmetric on its own, or any combination that is not `Sum h` itself?
+
+**Standing:** `qou-k5r5` stays OPEN and is NOT on `qou-x631`'s stated critical path -- the epic's
+live phase-3 routes are `qou-t5m1` (Sniady genus expansion, todo) and `qou-0ml9` (RSK, todo, Lean
+dependency landed in `qou-t181`). `M_1` sits under `qou-ogrk`. Before any further edge-coordinate
+work here, grep `qou-ogrk` and `qou-v8t7`, not just `k5r5`.
