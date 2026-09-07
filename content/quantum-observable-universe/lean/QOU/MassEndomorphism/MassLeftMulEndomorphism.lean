@@ -31,6 +31,14 @@ This framework runs at `N = 2` (convention D) with `n = 3A`, where the image is
 `TL_n` identification) and `QOU.QuantumObservableUniverses.QSchurWeyl` (which
 correctly says *the image of* `H_n(q)`).
 
+The surjectivity is no longer only asserted in prose: `QOU.MathlibExt`'s
+`heckeToTL_surjective` proves `H_n(v^2) ↠ TL_n(δ)` sorry-free at general index
+type, and `heckeTLEquiv` identifies `TL_n(δ)` with `H_n(v^2)` modulo one named
+family of relators.  **Read the scope exactly**: that is the *presentation*
+leg, `H ↠ TL`.  The remaining leg `TL_n(q) = End_{U_q 𝔰𝔩₂}(V^⊗ⁿ)` is *stated*
+in `TraceBlindSector` and is not proved anywhere in this corpus, so the
+Schur–Weyl surjection is not yet closed end to end in Lean.
+
 > **Trace caveat (NOT proved here — deliberately).**  The Markov trace
 > `tr_M : A → R` is the **quantum** trace (Ocneanu weights / ribbon twist),
 > **not** the regular-representation trace `tr(L_a)`.  So this file proves only

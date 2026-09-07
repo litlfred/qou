@@ -40,7 +40,11 @@ class SchurWeylSetup (R : Type*) (q : R) (n : ℕ) where
       rows.  This framework runs at `N = 2` with `n = 3A`, where the image
       is `TL_n(q)` of dimension `Catalan(n)` against `dim H_n = n!`.  The
       inhabitedness witness is unaffected — the image of `1` exists either
-      way — so nothing below this line changes. -/
+      way — so nothing below this line changes.
+
+      Surjectivity is proved, for the presentation leg: `heckeToTL_surjective`
+      (`QOU.MathlibExt.HeckeToTemperleyLieb`, sorry-free) gives `H ↠ TL`.  The
+      identification `TL_n = End_H(V^{⊗n})` is stated, not proved. -/
   centraliser_unit : HeckeAlg
   -- Ref: Schur–Weyl duality, Tannaka–Krein reconstruction
 
