@@ -1,0 +1,166 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-07T08:45:01.363206+00:00",
+  "commitSha": "5e6cfaabf5730039d9fca1f29aabd06e9d303a93",
+  "assertions": [
+    {
+      "name": "quotient_correction_is_not_negligible",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "At the largest measured separation (alpha = 0.443227) the derived r^2 term is 14.46% of the kernel at the smallest corpus volume and 3.542% at the largest, against a noise floor of 2.656%. So the exact kernel is NOT indistinguishable from the one-term model on this data -- this is the first thing computing it would buy, and it grows with r, so it enters as a systematic trend."
+    },
+    {
+      "name": "correction_exceeds_coths_own_unresolvable_cubic",
+      "computed": "104.755",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "1e9",
+      "unit": "ratio (recorded, not gated)",
+      "source": "The quotient r^2 term reaches 14.46% where coth's own r^3/45 term reaches 0.138%, a ratio of 104.75. Recorded with a wide tolerance because the ORDERING is the content, not the value: the correction the corpus never modelled is larger than the one it already declared unresolvable."
+    },
+    {
+      "name": "fitter_selftest_refit_beats_frozen",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Self-check on the optimiser, not on the physics: a refit over a superset of the frozen point must not do worse than the frozen point. The first version of this probe used a golden section on the scale alone and returned rms 25-32% where the true minimum is 2.7-3.0%, because the objective is not unimodal in the scale (coth diverges as it goes to 0). This assertion makes that class of failure loud."
+    },
+    {
+      "name": "the_correction_is_reabsorbed_by_the_exponent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "The derived term is NOT small -- it reaches 14.46% of the kernel, 5.44x the noise floor, against only 0.138% for coth's own r^3/45 term which the corpus already calls unresolvable. Yet at MATCHED degrees of freedom every corpus volume lands within 15% of the uncorrected 2.755%: 2.7% to 2.718%, bought by an exponent shift of up to 0.0405. So the exact kernel would change the KERNEL materially and the FIT hardly at all -- the same kernel/exponent degeneracy the companion probe measures, one order down."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "em-linking-quotient-kernel-correction",
+  "scriptFile": "em_linking_quotient_kernel_correction_probe.py",
+  "scriptHash": "46982603bfb1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_quotient_kernel_correction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_quotient_kernel_correction_probe.py"
+  },
+  "data": {
+    "derivation": {
+      "decomposition": "G_M = G_dec + R on the ball of radius inj(M); both carry the same delta so Laplacian R = -1/vol(M) and R is smooth where G_dec is not.",
+      "exact_kernel_near_diagonal": "kappa = coth r - c0 + (2 pi / (3 vol)) r^2 + O(r^3)",
+      "c0_identified": "c0 = 1 + 4 pi R_0, the quotient's Robin constant. Round 6 scans c0 as a free modelling parameter; this identifies what it IS.",
+      "why_the_one_term_family_is_not_arbitrary": "It is the exact quotient kernel truncated at O(r^2). The correction beyond it is parameter-free once vol is given.",
+      "condition": "Valid for r < inj(M). A cusped quotient has arbitrarily small injectivity radius in the cusp and the corpus holds no per-isotope geometry to check this. Everything here is conditional on it."
+    },
+    "implied_separations": {
+      "alpha_min": "0.2419449588265028653839734189137077150584113385941792041794757156762866",
+      "alpha_max": "0.4432265902557620761294102424662209736010422632438528425582235024616594",
+      "kernel": "coth(alpha) - 1 (the O2-admissible boundary member)"
+    },
+    "noise_floor_2param_power_law": "0.02656353256896967912426513775362961776510193512573902518246827129159277",
+    "uncorrected_one_term_baseline": {
+      "exponent": "0.1869745916470726114157992108405998678776593564112764376373706219795123",
+      "scale": "0.2050131933190159889423510280140107772431136274422276229342534025340673",
+      "kappa_rms": "0.02755252626126305655757938381714551891007756090222671155206679404349317"
+    },
+    "correction_size_relative_to_kernel": {
+      "L6a4_3He (Borromean)": {
+        "vol": "7.3277247534",
+        "rel_at_alpha_min": "0.005206470328206247482193713126330811943666671174608686474368160057780259",
+        "rel_at_alpha_max": "0.04004841114670852425002946550904416944073659195057213180065335002260356",
+        "ratio_to_noise_floor_at_max": "1.507646283216535446243606915678491730192088577471430617037528162546778"
+      },
+      "knot_8_11_3H": {
+        "vol": "8.2863168178",
+        "rel_at_alpha_min": "0.00460416640356851670361887444193019833979423792684596494536983730245825",
+        "rel_at_alpha_max": "0.03541546143440730126915677692880434678192752495862246724918542219116774",
+        "ratio_to_noise_floor_at_max": "1.333236132749077442790289524152583313902478193751738271097188761587499"
+      },
+      "figure_eight_4_1": {
+        "vol": "2.029883212819307250042405108549040571883378615060599584034978213553195",
+        "rel_at_alpha_min": "0.01879496379934625115304828980455300340564355212564951524973202863511849",
+        "rel_at_alpha_max": "0.1445717329158480981380600325686869939661536722367506546665014872195927",
+        "ratio_to_noise_floor_at_max": "5.442488966423474757601593814266980059292287613034184014154655292504606"
+      }
+    },
+    "coth_own_cubic_term_for_comparison": {
+      "rel_at_alpha_max": "0.001380095431323374795031207063697801339610343813296492299033683690145097",
+      "note": "The corpus already reports this term as unresolvable (0.97% against 3.5% scatter). The quotient correction is compared against it."
+    },
+    "parameter_free_test": {
+      "L6a4_3He (Borromean)": {
+        "vol": "7.3277247534",
+        "scale": "0.2045341107871720116618075801749271137026239067055393586005830903790087",
+        "exponent": "0.1936820991253644314868804664723032069970845481049562682215743440233236",
+        "kappa_rms": "0.02700441047994782784016890873391808580570724371769574430708465820935274",
+        "kappa_rms_without_refitting": "0.03938372723254498317316379227230137838443401585848939571546322066010071",
+        "delta_vs_uncorrected": "-0.0005481157813152287174104750832274331043703171845309672449821358341404291",
+        "exponent_shift_vs_uncorrected": "0.006707507478291820071081255631703339119425191693679830584203722043811293"
+      },
+      "knot_8_11_3H": {
+        "vol": "8.2863168178",
+        "scale": "0.2048368513119533527696793002915451895043731778425655976676384839650146",
+        "exponent": "0.1925457725947521865889212827988338192419825072886297376093294460641399",
+        "kappa_rms": "0.0270495462443738030069235326139877500104081941033237056936662147799031",
+        "kappa_rms_without_refitting": "0.03712019343287737385940996275494246168932772044072765760003585101340525",
+        "delta_vs_uncorrected": "-0.0005029800168892535506558512031577688996693667989030058584005792635900658",
+        "exponent_shift_vs_uncorrected": "0.005571180947679575173122071958233951364323150877353299971958824084627622"
+      },
+      "figure_eight_4_1": {
+        "vol": "2.029883212819307250042405108549040571883378615060599584034978213553195",
+        "scale": "0.1947363265306122448979591836734693877551020408163265306122448979591837",
+        "exponent": "0.2274742857142857142857142857142857142857142857142857142857142857142857",
+        "kappa_rms": "0.02717681951772564771182563054618870450348622940384093312752990297883582",
+        "kappa_rms_without_refitting": "0.1054938826378397333676926561938624648888022761531676173651810794992319",
+        "delta_vs_uncorrected": "-0.0003757067435374088457537532709568144065913314983857784245368910646573484",
+        "exponent_shift_vs_uncorrected": "0.0404996940672131028699150748736858464080549293030092766483436637347734"
+      }
+    },
+    "scope": {
+      "a_scope_limited": "A statement about the SIZE of the leading quotient correction over the measured separations, at the volumes the corpus carries, conditional on those separations lying inside the injectivity radius. Not a computation of the exact kernel.",
+      "what_is_new": "That c0 is the Robin constant rather than a modelling parameter, that the one-term family is the exact kernel truncated at O(r^2), that the first neglected term is parameter-free -- so round 6's named next step is answerable in SIZE without summing a divergent series -- and that the term is nonetheless reabsorbed by the separation exponent, which is the degeneracy showing up one order down.",
+      "NOT_claimed": "That any corpus volume IS the fibre volume. That the exact kernel is excluded -- the test above uses one truncation at three assumed volumes, and a genuine quotient could differ in c0, in vol, and at O(r^3). That the metric Coulomb route fails: untouched."
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-mirror-series.witness.json",
+        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
+        "size_bytes": 10833,
+        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+      },
+      {
+        "path": "binding-link-volumes.witness.json",
+        "sha256": "0a3df4871e59629a327f13159ba192a8d1ae87133c1c8c300f097fac81898b5f",
+        "size_bytes": 2704,
+        "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
+        "scriptCommitSha": "59ea22b8210c4ca2fdf86167991901727ada14a8",
+        "computedAt": "2026-08-29T11:04:54.258451+00:00"
+      }
+    ]
+  }
+}
