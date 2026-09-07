@@ -9453,6 +9453,69 @@ export const references: Reference[] = [
     note: "arXiv:0903.0853. Local analytic classification of irregular q-difference equations: q-Stokes phenomena, filtration by the slopes of the Newton polygon, and the q-analogue of the Stokes sheaf. The q-Stokes frame behind the GGM Stokes-matrix identification target for the 4₁ descendant equation (q-lift literature check, 2026-07-20).",
   }),
 
+  // ── Ramis–Sauloy 2006 (the q-analogue of the wild fundamental group) ──
+  ref({
+    id: "ramis-sauloy2006",
+    library: {
+      docId: "arxiv-math-0611521v1",
+      dir: "library/arxiv-math-0611521v1",
+      pdf: "library/arxiv-math-0611521v1/0611521v1.pdf",
+      stage: "sections",
+      pages: 22,
+      sections: 16,
+      arxiv: "math/0611521v1",
+    },
+    type: "article",
+    title: "The q-analogue of the wild fundamental group",
+    author: [
+      { family: "Ramis", given: "Jean-Pierre" },
+      { family: "Sauloy", given: "Jacques" },
+    ],
+    issued: { "date-parts": [[2006]] },
+    URL: "https://arxiv.org/abs/math/0611521",
+    note: "arXiv:math/0611521 (the arXiv listing carries the suffix '(I)'; the document's own title page does not). Registered 2026-09-07 from the title page, owner upload for the Stokes / q-difference arc. Galoisian Stokes operators for irregular linear q-difference equations, parameterised by the points of the elliptic curve E_q minus a finite singular set (Prop 2.5 + eq. (6): the Stokes operator S_{c,d} is the ambiguity between two q-directions of summation c, d in E_q); Thm 3.3: S_{c0,c} lies in the Stokes group St(A); Thm 3.5 DEFINES the q-alien derivations as residues Δ̇_c(A) = Res_{d=c} log S_{c0,d}, valued in the Stokes Lie algebra st(A) and graded by level δ = μ_j − μ_i (eq. 16); Thm 3.6: they are Lie-like ⊗-endomorphisms of the fibre functor; Thm 3.8: a level-δ q-Borel transform B_q^(δ) whose vanishing on the block entries is a complete analytic invariant within the formal class; Thm 3.9: the q-Borel invariants and the alien-derivation invariants are related by left multiplication by a theta power. §4 item 1 states the programme of copying Écalle's alien derivations to the q-case (resurgence lattice replaced by the singularities in the q-Borel planes at the different levels). This is the source for the q-alien-derivation object that QOU/Mathlib/QAlienBridgeEquation.lean models (bean qou-vkg5) and for the level-δ q-Borel kernel (QOU/MathlibExt/QBorelKernel*.lean). Venue placement not verified in-sandbox.",
+  }),
+
+  // ── Sauloy 2004 (algebraic construction of the q-Stokes sheaf) ──
+  ref({
+    id: "sauloy2004",
+    library: {
+      docId: "arxiv-math-0409393v1",
+      dir: "library/arxiv-math-0409393v1",
+      pdf: "library/arxiv-math-0409393v1/0409393v1.pdf",
+      stage: "sections",
+      pages: 26,
+      sections: 3,
+      arxiv: "math/0409393v1",
+    },
+    type: "article",
+    title: "Algebraic construction of the Stokes sheaf for irregular linear q-difference equations",
+    author: [{ family: "Sauloy", given: "Jacques" }],
+    issued: { "date-parts": [[2004]] },
+    URL: "https://arxiv.org/abs/math/0409393",
+    note: "arXiv:math/0409393. Registered 2026-09-07 from the title page, owner upload for the Stokes / q-difference arc. An algebraic route to the RSZ local analytic classification: Thm 2.5/2.6 (recalled from RSZ) F(M0) ≅ H^1(E_q, Λ_I(M0)); Thm 3.7 the canonical resummation F_D(U,V) of the formal isomorphism along a divisor 'direction' D on E_q, unique subject to a divisor bound on the over-diagonal blocks; Thm 3.18 the bijection F(M0) ≅ H^1(E_q, Λ_I(M0)) proved algebraically via the Čech cocycle (F_{D,D'}(U)); §4 the q-Gevrey filtration on the Stokes sheaf — Prop 4.1: λ_I(M0) is the sheaf of sections of the holomorphic vector bundle over E_q associated to End^{>0}(M0) = ⊕_{μ_i > μ_j} Hom(P_j, P_i), so a single-slope (pure isoclinic) M0 has End^{>0}(M0) = 0 and a trivial Stokes sheaf; Prop 4.2 the associated graded of the filtration. Cited by ramis-sauloy2006 as its reference [28]. The Astérisque placement (vol. 296, 2004) is recalled and NOT verified in-sandbox.",
+  }),
+
+  // ── van der Put 2006 (survey: analytic q-difference equations) ──
+  ref({
+    id: "vanderput2006",
+    library: {
+      docId: "arxiv-math-0612592v1",
+      dir: "library/arxiv-math-0612592v1",
+      pdf: "library/arxiv-math-0612592v1/0612592v1.pdf",
+      stage: "sections",
+      pages: 16,
+      sections: 1,
+      arxiv: "math/0612592v1",
+    },
+    type: "article",
+    title: "Analytic q-difference equations",
+    author: [{ family: "van der Put", given: "Marius" }],
+    issued: { "date-parts": [[2006]] },
+    URL: "https://arxiv.org/abs/math/0612592",
+    note: "arXiv:math/0612592 (math.AC, Dec 2006). Registered 2026-09-07 from the title page, owner upload for the Stokes / q-difference arc. A 16-page English survey of the van der Put–Reversat / van der Put–Singer theory, 0 < |q| < 1, definitions and statements in full, proofs deferred to [P-S] and [P-R]: Thm 3.2 (Adams–Birkhoff–Guenther–Ramis–Sauloy) unique slope filtration; Thm 3.4 E(cz^{t/n}) is pure, irreducible, of slope t/n, and every irreducible module is one of these; Thm 3.5 the indecomposable pure modules are E(cz^{t/n}) ⊗ U_m; Thm 3.8 the functor from split modules to vector bundles on E_q; Thm 4.1 the moduli space of modules with given gr; §5 the difference Galois groups case by case — (1) regular singular: Gal(M) = Hom(L, C*) (× G_a when A is not semisimple), i.e. a torus of characters extended by a unipotent part, (5) general: 1 → U_ξ → Gal(M) → Gal(gr M) → 1 with U_ξ unipotent, a semi-direct product (the Levi decomposition), Remarks 5.1 (1) Gal(M)^o is solvable, (3) the computation is algorithmic given the global lattice; §6 universal Picard–Vessiot rings, Thm 6.3. The single library section is the whole document (the ingestion found no section breaks). In this corpus it is the English-language locator for the E(r,d,b) irreducibility that BindingScalarKernelParityExclusion.lean attributes to van der Put–Reversat, and for the torus-extended-by-unipotent Galois-group shape asserted in QAlienBridgeEquation.lean.",
+  }),
+
   // ── P¹∖{0,1,∞} motivic side + q-deformed polylogs (uploaded 2026-08-08, commit 9a6d8f4b) ──
   ref({
     id: "brown-motivic-p1-three-points",
@@ -12987,6 +13050,27 @@ export const references: Reference[] = [
     author: [{ family: "MORITA", given: "Takeshi" }],
     URL: "https://arxiv.org/abs/1404.2541",
     note: "PDF library/arxiv-1404.2541v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record.",
+  }),
+  // Morita 2012b: the divergent BILATERAL series 1ψ0 by first-kind q-Borel–Laplace.
+  // The suffix 'b' distinguishes it from morita2012 (arXiv:1203.3404, the
+  // Ramanujan-equation connection formulae).
+  ref({
+    id: "morita2012b",
+    library: {
+      docId: "arxiv-1205.1453v2",
+      dir: "library/arxiv-1205.1453v2",
+      pdf: "library/arxiv-1205.1453v2/1205.1453v2.pdf",
+      stage: "sections",
+      pages: 12,
+      sections: 4,
+      arxiv: "1205.1453v2",
+    },
+    type: "article",
+    title: "An asymptotic formula of the divergent bilateral basic hypergeometric series",
+    author: [{ family: "Morita", given: "Takeshi" }],
+    issued: { "date-parts": [[2012]] },
+    URL: "https://arxiv.org/abs/1205.1453",
+    note: "arXiv:1205.1453 (v2). Registered 2026-09-07 from the title page, owner upload for the Stokes / q-difference arc. The divergent bilateral series 1ψ0(a;−;q,x) is the formal solution (eq. 20) of the degenerate first-order q-difference equation ((1/q − ax)σ_q + x) u = 0 (eq. 19); Thm 1 (§3.2): its first-kind q-Borel–Laplace resummation in the direction λ equals an explicit product of theta quotients θ(aqλ)/θ(qλ) · θ(ax/λ)/θ(x/λ) times 1/(1/ax;q)_∞, valid off the q-spiral [−λ;q]; Cor 1: the connection coefficient C(x;q) is q-elliptic; Thm 2 (§4): the q → 1 limit recovers the bilateral hypergeometric 1H0. A worked precedent, alongside morita2014, in which the summation-direction dependence of a q-Borel–Laplace resummation sits entirely in a theta quotient — the shape bean qou-wgnx's route (a) needs for the C1 connection matrix.",
   }),
   ref({
     id: "arxiv-1504.07260v3",
