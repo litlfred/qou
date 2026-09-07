@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T11:14:56Z
-updated_at: 2026-09-07T11:51:41Z
+updated_at: 2026-09-07T12:17:05Z
 ---
 
 ## The question this answers
@@ -275,3 +275,52 @@ The chain feeds 63 producers, but only **one** reader-facing number, and that
 number is currently *better* served by the repair than by the committed state.
 The `.lean` citation is a docstring provenance line, not a proof dependency.
 The `.ts` citation points at a witness already failing.
+
+
+## The 1.9 % residual — my hypothesis was wrong, and the real timeline is better
+
+I closed the last note guessing the 1.9 % gap between the paper's 14.6673 and
+the re-run's 14.9402 "may be the ⁴He leg, which is still stale". **It cannot
+be.** `binding_rotation_phase_lead.py` computes `aggs["S3_markov"][name]` per
+atom, from that atom's own `chi_free`/`chi_atom` only, and then
+`rho[iso] = AME[iso] / vals[iso]`. The deuteron figure depends on
+`atom-chi-rust-d` alone — already repaired and verified exact against
+canonical. ⁴He does not enter it.
+
+### What the history actually says
+
+`rho_needed.D` across every commit that touched the witness:
+
+| commit | date | value |
+|---|---|---|
+| `52c68267f2` | witness `computedAt` **2026-06-22** | **14.669** |
+| `831980f1ce` | 2026-09-04 — *"q0(a): the nine y_lambda consumers re-run"* | **177.422** |
+| `3b0c808122` | 2026-09-07 (this session) | **14.9402** |
+
+`52c68267f2` is **the same commit that wrote 14.6673 into the paper**
+(found with `git log -S "14.6673"`). So the prose and its witness agreed to
+0.012 % when the figure was written. The number was correct as published.
+
+It broke on **2026-09-04**, at a commit whose own message says it re-ran a set
+of consumers — and it broke to **12.0964×**. Today's re-run, with the χ inputs
+repaired, restores it to **1.861 %** of the published value.
+
+### So the 1.9 % is the expected part and the 12× was the defect
+
+A ~2 % move is what an intra-nucleon reordering *should* do to a phase
+aggregation. A 12× move is not. The published figure was right, the committed
+witness was wrong for three days, and the repair recovers the published value
+to within the size of the ruling's own effect.
+
+### Mechanism NOT asserted
+
+The breaking commit re-ran consumers with refreshed `y_λ`. Whether the 12×
+came from a `y_λ`-against-stale-χ straddle, or from something else in that
+pass, is **not measured** — and note the timing does not obviously fit a
+word-order cause: 2026-09-04 is the day *before* the intra-ordering ruling, so
+the χ that run read were grouped and correct at the time. I have guessed at
+two mechanisms this session and been wrong twice; this one stays open.
+
+What is measured is the shape: **published value, three-day 12× excursion,
+recovery to 1.9 %** — and that the recovery required repairing the χ source,
+not touching the paper.
