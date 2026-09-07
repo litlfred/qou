@@ -351,3 +351,50 @@ rounds produced three wrong diagnoses instead of one right one. Isolating the
 single hard lemma into a scratch file dropped the loop to seconds and settled
 three candidate tactics in one compile. Cheap iteration was the missing tool,
 not Lean knowledge.
+
+### Fourth attempt: right tactic, wrong tool. Bulk regex on a proof file.
+
+With the shadowing fixed and the idiom proved in isolation, I regenerated the
+migration — and it came back **19 errors**, worse than the 16, including a fresh
+syntax error.
+
+The tactic was correct. The *application* was not. I replaced the `HasDerivAt`
+chains with a regex matching "a run of `have h… :=` lines ending in
+`have hsum := …`". That pattern does not distinguish the **numerator** chains
+(which needed the degree-17 polynomial) from the **denominator** chains for
+`D = 4q⁸(q²+q+1)`, which have a different shape entirely — `h5`/`h2`/`h1`/`h0`
+feeding `hquad` and `hprod`. The regex overwrote denominator proofs with
+numerator polynomials and mangled the surrounding structure.
+
+Bulk text substitution is fine for the polynomial literals — those are
+unambiguous strings. It is the wrong tool for proof *structure*, where two
+blocks can look alike and mean different things. That is the third distinct
+methodological error in this one sub-task, after the misidentified baseline and
+the shadowed binder.
+
+**Reverted to the verified-compiling version, confirmed byte-identical** to the
+file measured at 0 errors (`git diff` against `bb9c4826cf6` = empty).
+
+A related process failure worth recording: the broken migration reached a commit
+because I used `git add -A` in an unrelated bean commit while those edits were
+sitting in the tree. It never reached origin — caught at `ahead 1` — but the
+lesson is to stage explicitly when a working tree holds experimental edits.
+
+## State, and what the next attempt should do
+
+Settled and verified, independent of Lean:
+
+- the closed form, derived from the words and cross-checked against a second
+  implementation to ~1e-40 (9/9 assertions);
+- every replacement polynomial and constant, re-verified by parsing them back
+  out of the edited `.lean` and checking in sympy — `chi_block_21`, the
+  surrogate, and **both** derivative functions all matched their symbolic
+  targets exactly, including `d/dq(1) = -5/6` and `d²/dq²(1) = 5/3`;
+- the tactic idiom, proved on all four chain shapes at exit 0.
+
+So every *ingredient* is verified. What is missing is a careful per-site
+application: roughly a dozen chains across three derivative layers, where the
+numerator and denominator blocks must be edited by hand and distinguished by
+what they prove, not by what they look like. That is a focused sitting with the
+file open, not a scripted pass — and it now has a fast feedback loop
+(scratch-file iteration, seconds per round) and a real 0-error baseline.
