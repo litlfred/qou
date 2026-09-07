@@ -326,7 +326,15 @@ def main() -> int:
     WitnessBuilder.wrap_legacy(
         "tl-gs-reduction", witness, script_path=__file__,
         output_dir=WITNESS.parent, start_time=_t0,
-    ).save()
+    ).save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Pure Temperley-Lieb combinatorics: normal-form words, planar "
+            "diagrams and set/tuple indices, over exact integers. No substrate "
+            "q0 is read on any path, and delta appears only as a symbolic "
+            "exponent count, never as a number."
+        ),
+    })
     print(f"\nWROTE {WITNESS.name} — all_pass={all_pass}")
     return 0 if all_pass else 1
 

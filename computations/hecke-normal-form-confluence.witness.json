@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T18:26:41.038440+00:00",
-  "commitSha": "7a5971336490010fe25602926ca0ed2b2de20e79",
+  "computedAt": "2026-09-07T18:48:43.074765+00:00",
+  "commitSha": "810bc3e3b4ef52a7c1bd63519da71420a7b52f7c",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1816,
+  "durationMs": 1845,
   "computation": "hecke-normal-form-confluence",
   "scriptFile": "hecke_normal_form_confluence_probe.py",
-  "scriptHash": "0bf6b572da00",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e8b99f7baa6a",
+  "scriptCommitSha": "810bc3e3b4ef52a7c1bd63519da71420a7b52f7c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -267,5 +267,7 @@
     "not_claimed": "that the completed system is a Grobner-Shirshov basis for H_n(q)",
     "primary_not_held": "qou-qspu (Kang-Lee-Lee-Oh 2002)"
   },
-  "all_pass": true
+  "all_pass": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q is a FORMAL variable throughout: coefficients are Laurent polynomials over Z as {exponent: integer} dicts, and q is never evaluated at any pin. No substrate q0 is read on any path, so neither the muon nor the proton anchor can move a single result."
 }

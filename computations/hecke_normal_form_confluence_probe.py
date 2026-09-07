@@ -373,7 +373,15 @@ def main() -> int:
     WitnessBuilder.wrap_legacy(
         "hecke-normal-form-confluence", payload, script_path=__file__,
         output_dir=WITNESS.parent, start_time=_t0,
-    ).save()
+    ).save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q is a FORMAL variable throughout: coefficients are Laurent "
+            "polynomials over Z as {exponent: integer} dicts, and q is never "
+            "evaluated at any pin. No substrate q0 is read on any path, so "
+            "neither the muon nor the proton anchor can move a single result."
+        ),
+    })
     print(f"\nWROTE {WITNESS.name} — all_pass={all_pass}")
     return 0 if all_pass else 1
 

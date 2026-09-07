@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T18:21:51.710102+00:00",
-  "commitSha": "7a5971336490010fe25602926ca0ed2b2de20e79",
+  "computedAt": "2026-09-07T18:48:41.077409+00:00",
+  "commitSha": "810bc3e3b4ef52a7c1bd63519da71420a7b52f7c",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 980,
+  "durationMs": 900,
   "computation": "tl-gs-reduction",
   "scriptFile": "tl_gs_reduction_probe.py",
-  "scriptHash": "dd40f4ee4425",
-  "scriptCommitSha": "7a5971336490010fe25602926ca0ed2b2de20e79",
+  "scriptHash": "aff68fefa179",
+  "scriptCommitSha": "810bc3e3b4ef52a7c1bd63519da71420a7b52f7c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -178,5 +178,7 @@
       "pass": true
     }
   },
-  "all_pass": true
+  "all_pass": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure Temperley-Lieb combinatorics: normal-form words, planar diagrams and set/tuple indices, over exact integers. No substrate q0 is read on any path, and delta appears only as a symbolic exponent count, never as a number."
 }
