@@ -7,7 +7,6 @@ section_number: null
 pages: 4-4
 source_pdf: 0905.1873v2.pdf
 source_sha256: d4f785469fafdce6
-doc_brief: "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group — 2 sections: MeV are compared with SRG at ℏΩ = ; Acknowledgments"
 ---
 We thank E. Anderson, S. Bogner, J. Drut, R. Perry,
 S. Quaglioni, and A. Schwenk for useful comments.

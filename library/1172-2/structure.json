@@ -5,49 +5,48 @@
   "file": "1172-2.pdf",
   "sha256": "390665341d5b7522bb384d3a99acf76e40126b477362a34f93a5a342c6190737",
   "bytes": 1529414,
-  "pages": 26
+  "pages": 26,
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "L^2-torsion of 3-manifolds",
+  "title": "$L^{2}$ -torsion of 3-manifolds KLLn98O/* (El5~9)6HBg3X) 9bBt8wI'(El5~9)6HBg3X) ?9F#9'G7\\dagger (El5~Bg3X)",
   "authors_raw": null,
+  "title_lines": [
+   "$L^{2}$",
+   "-torsion of 3-manifolds",
+   "KLLn98O/* (El5~9)6HBg3X) 9bBt8wI'(El5~9)6HBg3X)",
+   "?9F#9'G7\\dagger (El5~Bg3X)"
+  ],
   "abstract": null,
   "docinfo": {
    "Creator": "LaTeX with hyperref package",
    "Title": "",
    "Author": "",
-   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright © 1998, by Mark A. Wicks",
+   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright \u00a9 1998, by Mark A. Wicks",
    "CreationDate": "D:20080313235811+09'00'"
-  },
-  "title_lines": [
-   "$L^{2}$-torsion of 3-manifolds",
-   "KLLn98O/* ( El5~9)6HBg3X) 9bBt8wI'( El5~9)6HBg3X)",
-   "?9F#9'G7\\dagger( El5~Bg3X)",
-   "2000 G/7 7n 20 F|",
-   "1 =x>O 2",
-   "1.1 $O$8$a$K. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2"
-  ],
-  "title_prev": "$L^{2}$-torsion of 3-manifolds KLLn98O/* ( El5~9)6HBg3X) 9bBt8wI'( El5~9)6HBg3X) ?9F#9'G7\\dagger( El5~Bg3X) 2000 G/7 7n 20 F| 1 =x>O 2 1.1 $O$8$a$K. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2"
+  }
  },
  "toc": [
   {
    "level": 2,
-   "title": "L\\\"u$\\mathrm{c}\\mathrm{k}$$N8x<0",
+   "title": "L\\\"u",
    "page": 13,
    "source": "inferred",
    "number": "3.3"
   },
   {
    "level": 2,
-   "title": "Bh$-$6a;w$\\rho_{1}$$K$D$$$F",
+   "title": "Bh$-$ 6a;w$\\rho_{1}$ $K$D$$$F",
    "page": 17,
    "source": "inferred",
    "number": "4.2"
   },
   {
    "level": 2,
-   "title": "BhFs6a;w$\\rho_{2}$$K$D$$$F",
+   "title": "BhFs6a;w$\\rho_{2}$ $K$D$$$F",
    "page": 19,
    "source": "inferred",
    "number": "4.3"
@@ -56,41 +55,51 @@
  "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-33-lumathrmcmathrmkn8x0",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 13,
+   "n_chars": 19075,
+   "n_words": 1344
+  },
+  {
+   "id": "sec-000-33-lu",
    "number": "3.3",
-   "title": "L\\\"u$\\mathrm{c}\\mathrm{k}$$N8x<0",
+   "title": "L\\\"u",
    "level": 2,
    "page_start": 13,
    "page_end": 17,
-   "n_chars": 5983,
-   "n_words": 187
+   "n_chars": 7118,
+   "n_words": 321
   },
   {
-   "id": "sec-001-42-bh-6awrho-1kdf",
+   "id": "sec-001-42-bh--6awrho-1-kdf",
    "number": "4.2",
-   "title": "Bh$-$6a;w$\\rho_{1}$$K$D$$$F",
+   "title": "Bh$-$ 6a;w$\\rho_{1}$ $K$D$$$F",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 1288,
-   "n_words": 42
+   "n_chars": 1306,
+   "n_words": 60
   },
   {
-   "id": "sec-002-43-bhfs6awrho-2kdf",
+   "id": "sec-002-43-bhfs6awrho-2-kdf",
    "number": "4.3",
-   "title": "BhFs6a;w$\\rho_{2}$$K$D$$$F",
+   "title": "BhFs6a;w$\\rho_{2}$ $K$D$$$F",
    "level": 2,
    "page_start": 19,
    "page_end": 26,
-   "n_chars": 5093,
-   "n_words": 377
+   "n_chars": 5165,
+   "n_words": 449
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 3,
-  "sections": 3,
-  "chars_total": 12364
+  "sections": 4,
+  "chars_total": 32664
  }
 }

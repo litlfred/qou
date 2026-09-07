@@ -7,7 +7,6 @@ section_number: 16.7
 pages: 19-24
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
-doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spa ces."
 ---
 respondence. We deﬁne SGιθ as the set of triples, ( L, O1, E1), up to the conjugation
 action of H, where L is a θ-stable Levi subgroup of a θ-stable parabolic subgroup P ,
@@ -17,8 +16,7 @@ uni. Since LH≃ (GL1)a×SON0 withN0 =N−2a
 (16.2) SGιθ≃ CN :={(N0,ν,σ )|N≥N0 : odd, ( ν,σ )∈ Ψ (0)
 N0}
 Takeξ = (N0,ν,σ )∈ CN corresponding to ( L, O1, E1)∈ SGιθ , and put Kξ =
-IC(
-O 1, E1)[dim O1]. Since Kξ is an LH -equivariant perverse sheaf on Lιθ, one can
+IC(O 1, E1)[dim O1]. Since Kξ is an LH -equivariant perverse sheaf on Lιθ, one can
 consider the complex ind G
 PKξ on Gιθ
 uni.
@@ -38,8 +36,7 @@ indG
 PKξ =
 ⨁
 µ ∈Pa
-Vµ⊗ IC(
-O, E )[dim O],
+Vµ⊗ IC(O, E )[dim O],
 whereΓξ(µ)↔ (O, E ) under the identiﬁcation Ψ N≃ NGιθ
 (ii) Forξ∈ SGιθ , let N (ξ)
 Gιθ be the subset of NGιθ corresponding to{Γξ(µ)|µ∈
@@ -180,8 +177,7 @@ As the restriction of the diagram (18.1) on Xm, we have a diagram
 −−−→Xm,
 where ~Xm =π−1(Xm), ˆXm =ψ−1( ~Xm), andαm,ψ m,π m are deﬁned as restrictions
 of α,ψ,π , respectively.
-Put Kξ = IC(
-O 1, E1)[dim O1]. We deﬁne a complex ~K (m)
+Put Kξ = IC(O 1, E1)[dim O1]. We deﬁne a complex ~K (m)
 ξ on ~Xm by the condi-
 tion
 (18.3) α∗
@@ -267,8 +263,7 @@ in bijection with Pn, 2, via Oλ↔ λ , and the following formula holds.
 uni]≃
 ⨁
 λ ∈Pn, 2
-~Vλ⊗ IC(
-O λ, ¯Ql)[dim Oλ ],
+~Vλ⊗ IC(O λ, ¯Ql)[dim Oλ ],
 where ~Vλ is the irreducible representation of Wn, 2 corresponding to λ∈ Pn, 2.
 24
 Next consider the case where N is odd. In this case, a quite diﬀerent situation

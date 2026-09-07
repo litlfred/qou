@@ -1,13 +1,12 @@
 ---
 doc_id: arxiv-alg-geom-9408004v1
-doc_title: "Cubics, Integrable Systems, and Calabi-Yau Threefolds"
+doc_title: "CUBICS, INTEGRABLE SYSTEMS, AND"
 section_id: sec-001-references
 section_title: "References"
 section_number: null
 pages: 26-28
 source_pdf: 9408004v1.pdf
 source_sha256: d3bc00265294aa02
-doc_brief: "Cubics, Integrable Systems, and Calabi-Yau Threefolds — 2 sections: This number is conjectured, but no; References"
 ---
 [AG] V.I. Arnol’d and A.B. Givental’: Symplectic Geometry. In: Arnol’d,
 V.I., Novikov, S.P. (eds.) Dynamical systems IV (EMS, vol. 4 ),

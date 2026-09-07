@@ -5,52 +5,50 @@
   "file": "the-period-matrix-of-bring-s-curve-1hik02mwva.pdf",
   "sha256": "56f8ce317a00b0f339384c91086715552902d45a4e2021049fdcc054e29762f2",
   "bytes": 810241,
-  "pages": 22
+  "pages": 22,
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "PACIFI C JOURNA L OF MATHEMATICS TH E PERIOD MATRIX O F BRING' S CURVE GONZALO RlER A AN D RUBI E . RODRIGUEZ In genu s fou r ther e i s onl y on e Rieman n surfac e admittin g th e",
-  "authors_raw": "Vol. 154, No. 1, 1992",
+  "title": "PACIFI C\u00a0JOURNA L\u00a0OF\u00a0MATHEMATICS",
+  "authors_raw": "TH E\u00a0PERIOD\u00a0MATRIX\u00a0O F\u00a0BRING' S\u00a0CURVE",
+  "title_lines": [
+   "PACIFI C\u00a0JOURNA L\u00a0OF\u00a0MATHEMATICS"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "PyPDF2",
-   "Title": "The period matrix of Bring’s curve",
-   "Author": "Gonzalo Riera, Rubí E. Rodríguez"
-  },
-  "title_lines": [
-   "PACIFI C JOURNA L OF MATHEMATICS",
-   "TH E PERIOD MATRIX O F BRING' S CURVE",
-   "GONZALO RlER A AN D RUBI E . RODRIGUEZ",
-   "In genu s fou r ther e i s onl y on e Rieman n surfac e admittin g th e"
-  ],
-  "title_prev": "PACIFI C JOURNA L OF MATHEMATICS"
+   "Title": "The period matrix of Bring\u2019s curve",
+   "Author": "Gonzalo Riera, Rub\u00ed E. Rodr\u00edguez"
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "Introduction. Whe n studyin g th e general equatio n of degree five,",
+   "title": "Introduction.\u00a0Whe n\u00a0studyin g\u00a0th e\u00a0general\u00a0equatio n\u00a0of\u00a0degree\u00a0five,",
    "page": 1,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "The universal cover of Bring's curve. I f / : B —> B i s an automor -",
+   "title": "The\u00a0universal\u00a0cover\u00a0of\u00a0Bring's\u00a0curve.\u00a0I f\u00a0/ :\u00a0B \u2014>\u00a0B\u00a0i s\u00a0an\u00a0automor -",
    "page": 1,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "The Riemann matrix. We now compute the values of the complex",
+   "title": "The\u00a0Riemann\u00a0matrix.\u00a0We\u00a0now\u00a0compute\u00a0the\u00a0values\u00a0of\u00a0the\u00a0complex",
    "page": 7,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(z, Z) = Σ",
+   "title": "(z,\u00a0Z)\u00a0= \u03a3",
    "page": 12,
    "source": "inferred",
    "number": "1"
@@ -72,6 +70,16 @@
  ],
  "toc_source": "inferred",
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 13,
+   "n_chars": 20186,
+   "n_words": 5302
+  },
   {
    "id": "sec-000-2-j-k",
    "number": "2",
@@ -97,9 +105,7 @@
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 2,
-  "chars_total": 8674
- },
- "duplicate_of": "pjm-v154-n1-p09-s",
- "duplicate_note": "Same work as library/pjm-v154-n1-p09-s/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+  "sections": 3,
+  "chars_total": 28860
+ }
 }
