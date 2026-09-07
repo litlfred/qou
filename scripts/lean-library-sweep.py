@@ -140,6 +140,32 @@ def last_commit_times() -> dict[str, int]:
     return times
 
 
+def _standard_dirty(mod2path, oleans, times, never_built):
+    """Modules the SNAPSHOT cannot vouch for: no olean, or source newer than it.
+
+    Separate from the --all population on purpose.  A dep of a --only chunk is
+    fine to take from the snapshot when the snapshot is current for it; it is
+    NOT fine when the snapshot predates a declaration the dependent needs.
+    MEASURED instance, and it nearly went out as a corpus defect against main:
+    `QOU.IwahoriHecke.BruhatReflection` failed with `Unknown identifier
+    bruhatLe_inv_iff`.  That lemma exists, in an imported module, in an opened
+    namespace -- and was added 2026-09-07 07:04 (`8ca51eb3ddc`) while the
+    snapshot olean for `QOU.Machinery.CoxeterBruhat` dates from 2026-09-06
+    07:04.  `strings` on that olean finds the symbol 0 times.  So the module is
+    fine and the slice was wrong.
+    """
+    out = set(never_built)
+    for m, p_ in mod2path.items():
+        if m in out:
+            continue
+        o = oleans / (m.replace(".", "/") + ".olean")
+        c = times.get(str(p_.relative_to(ROOT)))
+        src = max(c, p_.stat().st_mtime) if c is not None else None
+        if src is None or src > o.stat().st_mtime:
+            out.add(m)
+    return out
+
+
 def dirty_closure(mod2path, imports, oleans, all_dirty=False):
     """Modules to compile.  With `all_dirty`, that is EVERY module.
 
@@ -156,11 +182,14 @@ def dirty_closure(mod2path, imports, oleans, all_dirty=False):
     times = last_commit_times()
     changed, never_built = set(), set()
     if all_dirty:
+        # --all says "verify every module"; it does NOT say every olean is wrong.
+        # Those are different facts and --only needs the second one, so compute
+        # the standard freshness verdict too and hand it back as `untrusted`.
         for m, p_ in mod2path.items():
             if not (oleans / (m.replace(".", "/") + ".olean")).exists():
                 never_built.add(m)
-        changed = set(mod2path)
-        return set(mod2path), changed, never_built
+        untrusted = _standard_dirty(mod2path, oleans, times, never_built)
+        return set(mod2path), set(mod2path), never_built, untrusted
     for m, p in mod2path.items():
         o = oleans / (m.replace(".", "/") + ".olean")
         if not o.exists():
@@ -223,7 +252,7 @@ def dirty_closure(mod2path, imports, oleans, all_dirty=False):
 
     for m in mod2path:
         is_dirty(m)
-    return dirty, changed, never_built
+    return dirty, changed, never_built, _standard_dirty(mod2path, oleans, times, never_built)
 
 
 def layers(need, imports):
@@ -303,15 +332,39 @@ def sweep_one(args) -> int:
     oleans = find_oleans()
     print(f"olean tree: {oleans}")
     mod2path, imports = load_graph()
-    dirty, changed, never_built = dirty_closure(mod2path, imports, oleans,
-                                                all_dirty=args.all)
+    dirty, changed, never_built, untrusted = dirty_closure(mod2path, imports,
+                                                oleans, all_dirty=args.all)
     if args.only:
         # Filter the population to compile, NOT the import graph -- dependencies
         # outside the prefix must stay resolvable.
-        dirty = {m for m in dirty if m.startswith(args.only)}
-        if not dirty:
+        seeds = {m for m in dirty if m.startswith(args.only)}
+        if not seeds:
             print(f"  --only {args.only}: no modules match; nothing to do")
             return 0
+        # ...but a dependency is only "resolvable from the snapshot" if the
+        # snapshot HAS it.  A never-built module has no olean at all, so a
+        # selection that drops it makes every importer a GUARANTEED spurious
+        # RED -- reported as a corpus failure when it is an artifact of how the
+        # run was sliced.  MEASURED, not hypothetical: the first chunked run
+        # reported `QOU.BraidKnot.DominanceIsBruhat` RED with
+        #   error: object file '.../QOU/Machinery/BruhatRankCriterion.olean' ...
+        #   of module QOU.Machinery.BruhatRankCriterion does not exist
+        # because that dep is one of the 60 never-built modules and sits in a
+        # different namespace.  So pull the never-built cone in regardless of
+        # prefix.  5 modules corpus-wide need this; 24 of them are dependencies
+        # of the library ROOT alone.
+        need, stack = set(seeds), list(seeds)
+        while stack:
+            for d in imports[stack.pop()]:
+                if d in untrusted and d not in need:
+                    need.add(d); stack.append(d)
+        pulled = need - seeds
+        if pulled:
+            nb = len(pulled & never_built)
+            print(f"  --only {args.only}: +{len(pulled)} untrusted dep(s) pulled in "
+                  f"across namespaces ({nb} never built, {len(pulled) - nb} stale) "
+                  f"-- else they are spurious REDs")
+        dirty = need
 
     print(f"library modules        {len(mod2path)}")
     if args.all:
@@ -322,7 +375,8 @@ def sweep_one(args) -> int:
         # avoid.  `never_built` IS measured (olean presence), so it stays.
         print(f"  never built (new)     {len(never_built)}   [measured]")
         print(f"  source-changed        n/a  (--all: freshness rule not consulted)")
-        print(f"  TO COMPILE (--all)    {len(dirty)}   [= every module]")
+        label = "[= every module]" if not args.only else f"[--only {args.only} + its untrusted deps]"
+        print(f"  TO COMPILE (--all)    {len(dirty)}   {label}")
     else:
         print(f"  source-changed        {len(changed) - len(never_built)}")
         print(f"  never built (new)     {len(never_built)}")
