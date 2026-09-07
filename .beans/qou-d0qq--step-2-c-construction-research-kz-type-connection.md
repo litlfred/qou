@@ -1,11 +1,11 @@
 ---
 # qou-d0qq
-title: 'Step-2 C construction (research): KZ-type connection on the configuration space of the colour cubic''s six branch points at an IMAGINARY level, monodromy computed, Hecke quadratic read off; first measurement = does any level reproduce q0 ≈ 1.11 real'
+title: 'Step-2 option C (research): the sl2 KZ connection on Conf3(C) pulled back along the colour cubic''s root map, at the level FIXED BY q0 (q0 is input; forever-gate) — does its monodromy reproduce the Hecke quadratic and z_D = q^3/(q^2+1)?'
 status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-09-07T09:43:07Z
+updated_at: 2026-09-07T09:55:02Z
 parent: qou-2akx
 ---
 
