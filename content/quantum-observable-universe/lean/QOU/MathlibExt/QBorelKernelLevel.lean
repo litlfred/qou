@@ -22,9 +22,28 @@ Sanity: `d = 1` gives `m = n`, `r = 0`, hence `C(n,2)` — exactly `QBorelKernel
 growth `q^{n²/2d}`.
 
 **Scope (stage S0 of `docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md`).** The kernel
-family and its degree law only. The ramified level-2 construction for C1, the `d`-th roots
-`B₁,B₂` of the slope blocks, and the two Stokes multipliers `U ∈ ℂ²` are NOT here — beans
-`qou-qbr3`, `qou-qbs4`, and the RSZ-wild residual `qou-xufp`.
+family and its degree law only.
+
+🛑 **The onward staging this note used to point at was RETIRED the same week, and this
+note did not follow (corrected 2026-09-07, bean `qou-hok7`).** It read: *"The ramified
+level-2 construction for C1, the `d`-th roots `B₁,B₂` of the slope blocks, and the two
+Stokes multipliers `U ∈ ℂ²` are NOT here — beans `qou-qbr3`, `qou-qbs4`, and the RSZ-wild
+residual `qou-xufp`."* **`qou-qbr3`, `qou-qbs4` and `qou-qbg2` were all scrapped in one
+batch on 2026-08-08**, because
+[`2026-08-08-rsz-c1-infinity-route-closed.md`](../../../../../docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md)
+established the chain *"slope ½ ⇒ RSZ level 2 ⇒ `F(P₁,P₂) ≅ ℂ²` ⇒ two multipliers"* as a
+**mis-citation**: RSZ §3.3 is titled *"…in the case of **integral slopes**"*, and ½ is not
+integral. Every number in that chain was right; the reading was not.
+
+So a reader arriving here is pointed at three scrapped beans as the live carriers. The
+live ones are **`qou-wgnx`** (the connection-matrix Stokes multipliers between the
+theta-normalised solutions at `0` and `∞` — a *different object* from the local isoformal
+moduli, and genuinely open) and **q-native alien calculus**, which the closure audit
+argues is right for the reason RSZ was wrong: `F(P₁,…,P_k)` is built on the slope
+filtration, whereas alien derivations need none.
+
+**Nothing below changes.** The kernel family, the degree law and the growth budget are
+arithmetic and stand; only the note about where the onward work lives was stale.
 
 **Note the growth budget** (bean `qou-qbg2`, stage S1): the degree law proved here, set
 against the proved `deg_q(cₙ) = n²` for the C1 ∞ coefficients
