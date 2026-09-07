@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-23T22:15:01.091854+00:00",
-  "commitSha": "6528777c6052a7578c3450d3002d8347c499e98e",
+  "computedAt": "2026-09-05T17:10:04.586613+00:00",
+  "commitSha": "21a8d76250d2c826430ebb0e65b697ccce0adbfd",
   "assertions": [
     {
       "name": "closed_form::identity_H3",
@@ -81,8 +81,8 @@
   "durationMs": 0,
   "computation": "markov-trace-recursive",
   "scriptFile": "markov_trace_recursive.py",
-  "scriptHash": "4aa477896eeb",
-  "scriptCommitSha": "e54ffbca0a1b5171dcbdaf5873075129af9b12ba",
+  "scriptHash": "ef376c4b4792",
+  "scriptCommitSha": "0f526aa14cd4e378428c8330df2e6e7343e6948d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,7 +97,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -106,6 +106,7 @@
     "reproduce": "python3 -u computations/markov/markov_trace_recursive.py"
   },
   "description": "Recursive symbolic Markov-trace computer for arbitrary H_n(q) words. Uses gb_filtration_jet_tracker.HeckeElement (symbolic in q via sympy) to expand braids into the Hecke basis, then applies recursive Markov-axiom descent for each basis element with LRU memoisation on (perm, n). Tested up to H_6 for representative atomic-braid words (proton, neutron-like, deuteron disjoint cluster).",
+  "contentBlock": "prop:markov-trace-recursive-reducer",
   "reference_blocks": [
     "prop:atomic-mass-gb-nf",
     "prop:categorical-mass-markov",

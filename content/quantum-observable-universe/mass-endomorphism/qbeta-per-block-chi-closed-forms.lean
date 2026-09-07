@@ -74,14 +74,22 @@ noncomputable def chi_block_3 (q : ℝ) : ℝ :=
 /-- Per-block character $\chi_{(2,1)}(\Delta_{T_\beta})(q)$ on the
 2-dim irrep $V_{(2,1)}$.
 
-Closed form: $(q^2 - 1)(-q^4 - 1) / (4q^3)$.
+Closed form: $(q^2 - 1)(q^4 + 1)P(q) / (4q^{9})$ with
+$P(q) = 2q^{12} - 5q^{10} + 5q^{8} - 5q^{6} + 5q^{4} - 5q^{2} + 2$.
 
-Structural note: this collapses to LINEAR in $h = q - 1/q$ — the
-$b^2$ off-diagonal contributions from $\sigma_1$ and
-$\sigma_0\sigma_1$ cancel (cf. `qbeta_per_block_symbolic.py`). -/
+**The only ordering-dependent block, and the only 2-dimensional one.**
+In $V_{(3)}$ and $V_{(1,1,1)}$ the generators act by scalars and commute, so
+the intra-nucleon braid ordering cannot reach those characters. Here it can.
+The form above is the canonical borromean word $(\sigma_0\sigma_1^{-1})^3$
+(beans `qou-hu1f` / `qou-eddc`); the superseded grouped word gave
+$(q^2-1)(-q^4-1)/(4q^3)$, which was linear in $h = q - 1/q$ up to the $h^3$
+term. The canonical form is degree 9 in $h$, still odd, still with the same
+$-h/2$ leading term — which is why $P(1) = -1$ and the two frames agree at
+the classical point. -/
 -- Ref: [hoefsmit1974]
 noncomputable def chi_block_21 (q : ℝ) : ℝ :=
-  (q^2 - 1) * (-q^4 - 1) / (4 * q^3)
+  (q^2 - 1) * (q^4 + 1)
+    * (2*q^12 - 5*q^10 + 5*q^8 - 5*q^6 + 5*q^4 - 5*q^2 + 2) / (4 * q^9)
 
 /-- Per-block character $\chi_{(1,1,1)}(\Delta_{T_\beta})(q)$ on the
 sign irrep $V_{(1,1,1)}$.
@@ -149,7 +157,8 @@ theorem chi_blocks_have_q2_minus_1_factor (q : ℝ) (hq : 0 < q) :
       chi_block_111 q = (q^2 - 1) * P111 q := by
   refine ⟨
     fun q' => -(q'^2 + 1)^2 / (4 * q'),
-    fun q' => (-q'^4 - 1) / (4 * q'^3),
+    fun q' => (q'^4 + 1)
+      * (2*q'^12 - 5*q'^10 + 5*q'^8 - 5*q'^6 + 5*q'^4 - 5*q'^2 + 2) / (4 * q'^9),
     fun q' => -(q'^2 + 1)^2 / (4 * q'^5),
     ?_, ?_, ?_⟩
   · unfold chi_block_3
@@ -207,14 +216,21 @@ noncomputable def y_lambda_surrogate_111 (q : ℝ) : ℝ :=
 
 Source (SymPy): `qbeta_c3_multiblock_recursion_attack.py` Step 1.
 
-Numerator: `−q¹¹ + q¹⁰ − 2q⁹ + q⁸ + q⁶ − q⁵ − q³ + 2q² − q + 1`
-Denominator: `4 q⁵ (q² + q + 1)`
+Numerator: `2q¹⁷ − 2q¹⁶ − 5q¹⁵ + 4q¹⁴ + 8q¹³ − 9q¹² − 8q¹¹ + 9q¹⁰ + 11q⁹
+− 11q⁸ − 9q⁷ + 8q⁶ + 9q⁵ − 8q⁴ − 4q³ + 5q² + 2q − 2`
+Denominator: `4 q⁸ (q² + q + 1)`
+
+Restated 2026-09-07 for the canonical borromean `chi_block_21`; the grouped
+frame gave `(−q¹¹ + q¹⁰ − 2q⁹ + q⁸ + q⁶ − q⁵ − q³ + 2q² − q + 1)/(4q⁵(q²+q+1))`.
+Both vanish at `q = 1` and agree on the order-1 and order-2 Taylor
+coefficients.
 
 For all `q > 0`, this equals `y_(3)·χ_(3) + y_(2,1)·χ_(2,1) + y_(1,1,1)·χ_(1,1,1)`
 (theorem `delta_tau_M_surrogate_eq_sum` below). -/
 noncomputable def delta_tau_M_surrogate (q : ℝ) : ℝ :=
-  (-q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1) /
-    (4 * q^5 * (q^2 + q + 1))
+  (2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10
+     + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2) /
+    (4 * q^8 * (q^2 + q + 1))
 
 /-- Helper: `1 + q + q² > 0` for any `q : ℝ` (sum of squares form). -/
 lemma one_plus_q_plus_q_sq_pos (q : ℝ) : 0 < 1 + q + q^2 := by
@@ -261,29 +277,40 @@ final numerical identity. -/
 theorem delta_tau_M_surrogate_hasDerivAt_one :
     HasDerivAt delta_tau_M_surrogate (-5/6) 1 := by
   unfold delta_tau_M_surrogate
-  have hden_ne : (4 : ℝ) * (1 : ℝ)^5 * ((1 : ℝ)^2 + 1 + 1) ≠ 0 := by norm_num
-  -- Numerator: −q¹¹ + q¹⁰ − 2q⁹ + q⁸ + q⁶ − q⁵ − q³ + 2q² − q + 1
+  have hden_ne : (4 : ℝ) * (1 : ℝ)^8 * ((1 : ℝ)^2 + 1 + 1) ≠ 0 := by norm_num
+  -- Numerator: 2q¹⁷ − 2q¹⁶ − 5q¹⁵ + … + 5q² + 2q − 2
   -- N(1) = 0, N'(1) = -10.
   have hN : HasDerivAt
-      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
+      (fun q : ℝ => 2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2)
       (-10 : ℝ) 1 := by
-    have h11 := (hasDerivAt_pow 11 (1 : ℝ)).neg
-    have h10 := hasDerivAt_pow 10 (1 : ℝ)
-    have h9  := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 2
-    have h8  := hasDerivAt_pow 8 (1 : ℝ)
-    have h6  := hasDerivAt_pow 6 (1 : ℝ)
-    have h5  := hasDerivAt_pow 5 (1 : ℝ)
-    have h3  := hasDerivAt_pow 3 (1 : ℝ)
-    have h2  := (hasDerivAt_pow 2 (1 : ℝ)).const_mul 2
-    have h1  := hasDerivAt_id (1 : ℝ)
-    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const 1 1
-    have hsum := (((((((((h11.add h10).sub h9).add h8).add h6).sub h5).sub h3).add h2).sub h1).add h0)
-    convert hsum using 1
-    norm_num
-  -- Denominator: 4 q^5 (q² + q + 1)
-  -- D(1) = 12, D'(1) = 4·(5·3 + 1·3) = 4·18 = 72.
-  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) (72 : ℝ) 1 := by
-    have h5  : HasDerivAt (fun q : ℝ => q^5) ((5 : ℝ) * 1^4) 1 := hasDerivAt_pow 5 1
+    have d0 := (hasDerivAt_pow 17 (1 : ℝ)).const_mul (2 : ℝ)
+    have d1 := (hasDerivAt_pow 16 (1 : ℝ)).const_mul (-2 : ℝ)
+    have d2 := (hasDerivAt_pow 15 (1 : ℝ)).const_mul (-5 : ℝ)
+    have d3 := (hasDerivAt_pow 14 (1 : ℝ)).const_mul (4 : ℝ)
+    have d4 := (hasDerivAt_pow 13 (1 : ℝ)).const_mul (8 : ℝ)
+    have d5 := (hasDerivAt_pow 12 (1 : ℝ)).const_mul (-9 : ℝ)
+    have d6 := (hasDerivAt_pow 11 (1 : ℝ)).const_mul (-8 : ℝ)
+    have d7 := (hasDerivAt_pow 10 (1 : ℝ)).const_mul (9 : ℝ)
+    have d8 := (hasDerivAt_pow 9 (1 : ℝ)).const_mul (11 : ℝ)
+    have d9 := (hasDerivAt_pow 8 (1 : ℝ)).const_mul (-11 : ℝ)
+    have d10 := (hasDerivAt_pow 7 (1 : ℝ)).const_mul (-9 : ℝ)
+    have d11 := (hasDerivAt_pow 6 (1 : ℝ)).const_mul (8 : ℝ)
+    have d12 := (hasDerivAt_pow 5 (1 : ℝ)).const_mul (9 : ℝ)
+    have d13 := (hasDerivAt_pow 4 (1 : ℝ)).const_mul (-8 : ℝ)
+    have d14 := (hasDerivAt_pow 3 (1 : ℝ)).const_mul (-4 : ℝ)
+    have d15 := (hasDerivAt_pow 2 (1 : ℝ)).const_mul (5 : ℝ)
+    have d16 := (hasDerivAt_pow 1 (1 : ℝ)).const_mul (2 : ℝ)
+    have d17 : HasDerivAt (fun _ : ℝ => (-2 : ℝ)) 0 (1 : ℝ) := hasDerivAt_const (1 : ℝ) (-2 : ℝ)
+    have hsum := (((((((((((((((((d0.add d1).add d2).add d3).add d4).add d5).add d6).add d7).add d8).add d9).add d10).add d11).add d12).add d13).add d14).add d15).add d16).add d17)
+    convert hsum using 1 <;>
+      first
+        | (funext x; simp only [Pi.add_apply]; ring)
+        | ring
+        | norm_num
+  -- Denominator: 4 q^8 (q² + q + 1)
+  -- D(1) = 12, D'(1) = 4·(8·3 + 1·3) = 4·27 = 108.
+  have hD : HasDerivAt (fun q : ℝ => 4 * q^8 * (q^2 + q + 1)) (108 : ℝ) 1 := by
+    have h5  : HasDerivAt (fun q : ℝ => q^8) ((8 : ℝ) * 1^7) 1 := hasDerivAt_pow 8 1
     have h2  : HasDerivAt (fun q : ℝ => q^2) ((2 : ℝ) * 1^1) 1 := hasDerivAt_pow 2 1
     have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) 1 := hasDerivAt_id 1
     have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const 1 1
@@ -291,7 +318,7 @@ theorem delta_tau_M_surrogate_hasDerivAt_one :
       have := (h2.add h1).add h0
       convert this using 1
       norm_num
-    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1)) (18 : ℝ) 1 := by
+    have hprod : HasDerivAt (fun q : ℝ => q^8 * (q^2 + q + 1)) (27 : ℝ) 1 := by
       have := h5.mul hquad
       convert this using 1
       norm_num
@@ -299,7 +326,7 @@ theorem delta_tau_M_surrogate_hasDerivAt_one :
     convert this using 1
     · funext q; ring
     · norm_num
-  -- Quotient: (N'·D − N·D')/D² = (-10·12 − 0·72)/144 = -120/144 = -5/6
+  -- Quotient: (N'·D − N·D')/D² = (-10·12 − 0·108)/144 = -120/144 = -5/6
   have hdiv := hN.div hD hden_ne
   convert hdiv using 1
   norm_num
@@ -337,11 +364,18 @@ declaration (measured: zero occurrences outside this file). Bean `qou-z9ws`;
 
 Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2) -/
 
-/-! The order-2..7 Taylor coefficients (`5/6`, `-41/9`, `149/18`,
-`-1729/108`, `111/4`, `-3665/81`) are recorded in the witness JSON
-`qbeta-c3-multiblock-recursion-attack.witness.json` and would each
-require an n-th derivative computation in Lean — bulky but tractable.
-Stated as TODO. -/
+/-! The order-2..7 Taylor coefficients in the canonical borromean frame
+(`5/6`, `-23/9`, `77/18`, `1349/108`, `-191/4`, `26285/162`) are **all proved
+sorry-free** in the library twin `QOU.BraidKnot`, orders 2-3 by explicit
+quotient-rule derivative towers and orders 4-7 by an iterated-Leibniz
+recurrence on `f·D = N`. They are also recorded in the regenerated witness
+JSON `qbeta-c3-multiblock-recursion-attack.witness.json`, which additionally
+keeps the superseded grouped-frame values (`-41/9`, `149/18`, `-1729/108`,
+`111/4`, `-3665/81`) under `grouped_frame_superseded`.
+
+Not restated here: a content-block sibling cannot `import` the library module,
+and a second independent formalisation of the same fact is what the
+2026-08-31 removal of the class-conditional order-2 stub was avoiding. -/
 
 /-! ### Extension #4 — canonical √q-bearing Δτ_M (conditional on
 class axiomatisation of canonical Wenzl–Markov weights)

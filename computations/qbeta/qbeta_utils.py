@@ -13,22 +13,61 @@ from mpmath import mpf, sqrt as mpsqrt, cos as mpcos, fabs as mpfabs
 
 
 # ── Per-Wedderburn-block characters χ_λ(Δ_T_β)(q) over H_3(q) ──
-# Closed forms from `qbeta-per-block-paper-closed-forms.witness.json`,
-# formalised as `chi_block_{3,21,111}` in
-# `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`.
+# Closed forms formalised as `chi_block_{3,21,111}` in
+# `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`, which is authoritative.
+# (3) and (1,1,1) are from `qbeta-per-block-paper-closed-forms.witness.json`;
+# (2,1) is from `qbeta_per_block_chi_borromean_closed_forms_probe.py`.
+#
+# INTRA-NUCLEON ORDERING (beans qou-hu1f / qou-eddc, 2026-09-05..07)
+# ------------------------------------------------------------------
+# Exactly one of the three blocks depends on the order in which the two nucleon
+# strands are braided, and it is the only 2-dimensional one. (3) and (1,1,1)
+# are 1-dimensional, so their generators act by scalars and commute; sympy
+# confirms their two frames differ by exactly 0, not merely by something small.
+# (2,1) is where σ₀ and σ₁ genuinely do not commute, and it moves.
+#
+# The canonical word is borromean, `(σ₀σ₁⁻¹)³`. The superseded grouped word
+# (all σ₀, then all σ₁) is reachable via `intra_order="grouped"` so historical
+# comparisons stay reproducible — do not delete it, and do not flip a caller
+# that is deliberately pinned to it.
+
+_VALID_ORDERS = ("borromean", "grouped")
+
+
+def _check_order(intra_order: str) -> str:
+    if intra_order not in _VALID_ORDERS:
+        raise ValueError(
+            f"intra_order must be one of {_VALID_ORDERS}, got {intra_order!r}")
+    return intra_order
+
 
 def chi_block_3(q: mpf) -> mpf:
-    """χ_(3)(q) = -(q²-1)(q²+1)² / (4q)."""
+    """χ_(3)(q) = -(q²-1)(q²+1)² / (4q).  Ordering-independent (dim 1)."""
     return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q)
 
 
-def chi_block_21(q: mpf) -> mpf:
-    """χ_(2,1)(q) = (q²-1)(-q⁴-1) / (4q³)."""
-    return (q ** 2 - 1) * (-(q ** 4) - 1) / (4 * q ** 3)
+def chi_block_21(q: mpf, *, intra_order: str = "borromean") -> mpf:
+    """χ_(2,1)(q), the one ordering-dependent block (dim 2).
+
+    borromean (canonical):
+        (q²-1)(q⁴+1)·P(q) / (4q⁹),
+        P = 2q¹²-5q¹⁰+5q⁸-5q⁶+5q⁴-5q²+2
+    grouped (superseded):
+        (q²-1)(-q⁴-1) / (4q³)
+
+    The two agree at q = 1 (`P(1) = -1`, both vanish), both carry the (q²-1)
+    factor, and both are odd in h = q - 1/q with the same -h/2 leading term.
+    They differ from the h³ term on.
+    """
+    if _check_order(intra_order) == "grouped":
+        return (q ** 2 - 1) * (-(q ** 4) - 1) / (4 * q ** 3)
+    P = (2 * q ** 12 - 5 * q ** 10 + 5 * q ** 8 - 5 * q ** 6
+         + 5 * q ** 4 - 5 * q ** 2 + 2)
+    return (q ** 2 - 1) * (q ** 4 + 1) * P / (4 * q ** 9)
 
 
 def chi_block_111(q: mpf) -> mpf:
-    """χ_(1,1,1)(q) = -(q²-1)(q²+1)² / (4q⁵)."""
+    """χ_(1,1,1)(q) = -(q²-1)(q²+1)² / (4q⁵).  Ordering-independent (dim 1)."""
     return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q ** 5)
 
 
@@ -91,39 +130,59 @@ def markov_parameter_convention_C(q: mpf) -> mpf:
     return mpsqrt(q) / (1 + q)
 
 
-def delta_tau_M_surrogate(q: mpf) -> mpf:
+def delta_tau_M_surrogate(q: mpf, *, intra_order: str = "borromean") -> mpf:
     """Rational Δτ_M surrogate (NON-canonical y_λ weights).
 
     Closed form (canonical source: Lean `delta_tau_M_surrogate` in
     `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`, Extension #1;
     originally from `qbeta_c3_multiblock_recursion_attack.py`):
 
+    borromean (canonical, matches Lean since 2026-09-07):
+
+        Δτ_M_sur(q) =
+          (2q¹⁷ - 2q¹⁶ - 5q¹⁵ + 4q¹⁴ + 8q¹³ - 9q¹² - 8q¹¹ + 9q¹⁰ + 11q⁹
+           - 11q⁸ - 9q⁷ + 8q⁶ + 9q⁵ - 8q⁴ - 4q³ + 5q² + 2q - 2)
+          / (4 q⁸ (q² + q + 1))
+
+    grouped (superseded, what this returned before 2026-09-07):
+
         Δτ_M_sur(q) =
           (-q¹¹ + q¹⁰ - 2q⁹ + q⁸ + q⁶ - q⁵ - q³ + 2q² - q + 1)
           / (4 q⁵ (q² + q + 1))
+
+    Both are the y_λ-weighted sum of the three blocks, differing only through
+    χ_(2,1); Taylor coefficients at q = 1 agree at orders 0-2 and diverge at 3.
 
     This uses the rational dimension-shape surrogate for the Wenzl
     y_λ weights (y_λ = q^ℓ(λ) / ((1+q)(1+q+q²))), NOT the canonical
     √q-bearing weights. Retained for the cross-anchor NEAR-MATCH
     diagnostic only.
     """
+    if _check_order(intra_order) == "grouped":
+        num = (
+            -(q ** 11)
+            + q ** 10
+            - 2 * q ** 9
+            + q ** 8
+            + q ** 6
+            - q ** 5
+            - q ** 3
+            + 2 * q ** 2
+            - q
+            + 1
+        )
+        return num / (4 * q ** 5 * (q ** 2 + q + 1))
     num = (
-        -(q ** 11)
-        + q ** 10
-        - 2 * q ** 9
-        + q ** 8
-        + q ** 6
-        - q ** 5
-        - q ** 3
-        + 2 * q ** 2
-        - q
-        + 1
+        2 * q ** 17 - 2 * q ** 16 - 5 * q ** 15 + 4 * q ** 14 + 8 * q ** 13
+        - 9 * q ** 12 - 8 * q ** 11 + 9 * q ** 10 + 11 * q ** 9 - 11 * q ** 8
+        - 9 * q ** 7 + 8 * q ** 6 + 9 * q ** 5 - 8 * q ** 4 - 4 * q ** 3
+        + 5 * q ** 2 + 2 * q - 2
     )
-    den = 4 * q ** 5 * (q ** 2 + q + 1)
-    return num / den
+    return num / (4 * q ** 8 * (q ** 2 + q + 1))
 
 
-def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
+def delta_tau_M_canonical_explicit(
+        q: mpf, *, intra_order: str = "borromean") -> mpf:
     """Canonical Δτ_M evaluated at the EXPLICIT √q-bearing instance of
     `CanonicalMarkovWeightsH3` (Lean `CanonicalMarkovWeightsH3.explicitInstance`):
 
@@ -138,7 +197,7 @@ def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
     z = markov_parameter_convention_C(q)
     return (
         z * chi_block_3(q)
-        + (mpf("0.5") - z) * chi_block_21(q)
+        + (mpf("0.5") - z) * chi_block_21(q, intra_order=intra_order)
         + z * chi_block_111(q)
     )
 

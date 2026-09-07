@@ -56,13 +56,18 @@ right. It is reported because it is the shape a derivation would have to produce
 
 ## 🛑 Scope — what is NOT established
 
-1. **Sorted orderings only.** Every word here is `p…p n…n`, because `atom_canonical_crossings` takes
-   `(Z, N)` and builds that ordering. The bond product is *stated* for an arbitrary ordering and is
-   **untested** on one; a word like `pnp` would be the discriminating case and needs the canonical
-   construction extended, not hand-built. A corollary that is easy to miss: only the `(p, n)`
-   orientation of the mixed bond ever occurs here, so the code's treatment of `(n, p)` as the same
-   factor is an **assumption**, not a measurement. It is inert on sorted orderings and would be the
-   first thing to check on an unsorted one.
+1. **Sorted orderings only *here* — but the unsorted case has since been tested, and it passed.**
+   Every word in *this* file is `p…p n…n`, because `atom_canonical_crossings` took `(Z, N)` and
+   nothing else. That is no longer the only word the corpus can build:
+   `atom_word_explicit_ordering_probe` adds `ordering=` to the canonical builder (default unchanged,
+   asserted identical on 14/14 words with `A ≤ 4`) and runs `pnp` at `A = 3`. Result: **6/6** —
+   `c₀ = 3/32`, `c₁ = 3/16`, `c₂ = 177/128`, each predicted by the product from factors measured on
+   *other* words, and `pnp ≠ ppn` so the check is not satisfied by a constant.
+
+   That also settles the corollary this note flagged as an assumption. `pnp`'s two bonds are `(p,n)`
+   and `(n,p)`, so the code's treatment of the mixed bond as **orientation-independent** is now a
+   measurement rather than an untested convenience — at `A = 3`, orders ≤ 2. One ordering at one `A`
+   is not "all orderings"; it is the first evidence of any kind, where before there was none.
 2. **Orders 0, 1, 2 only**, and `A ≤ 5`.
 3. **Not proved — and the corpus already holds the neighbouring theorem, which I first claimed it
    did not.** An earlier version of this file said "neither the free-word factorisation nor the bond

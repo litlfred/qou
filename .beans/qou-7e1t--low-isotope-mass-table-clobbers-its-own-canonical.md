@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-22T15:29:23Z
-updated_at: 2026-08-23T08:27:15Z
+updated_at: 2026-09-07T07:08:12Z
 ---
 
 ## What
@@ -290,3 +290,28 @@ unilaterally inside someone else's arc.
 
 **Until then: do not run `bar_pairing_binding_observable.py` without reverting
 `chi-{deuteron-h6,tritium-h9,helium-3-h9}-at-q0-50dps.witness.json` afterwards.**
+
+## STALE — the defect described here is fixed on main (measured 2026-09-07)
+
+Claimed this to run the regeneration and found the blocker already gone.
+`d4c196c030` ("low-isotope table: stop rewriting the canonical table it
+projects from (qou-7e1t opt 1)") **inverted the flag**: `--rerun-canonical` is
+now opt-IN (`store_true`), where this bean describes `--no-rerun-canonical` as
+an opt-out, and `--target-dps` now defaults to `None` rather than 11 so the
+canonical script uses its own default. The docstring also records that the
+canonical script "refuses a partial write outright".
+
+Verified by running the canonical producer directly: **exactly one file
+written**, no clobber, 9/9 rows, 0 assertions.
+
+**One figure in this bean is also stale.** Its table gives the committed
+canonical as `method: branching`, `target_dps: 60`. Measured on main today the
+committed artifact is `method: **auto**`, `target_dps: 60`. And
+`--method branching` cannot produce the A=1 rows at all — it errors
+"A < 2: branching combiner inapplicable (use direct H_3 path)" — which is why
+`auto` is the default and why quoting `branching` as the committed method would
+send the next agent to a run that fails on its first two rows.
+
+Left OPEN rather than completed: the commit message says "opt 1", so further
+options may have been intended, and closing someone else's bug bean on the
+strength of one measured behaviour is not mine to do.

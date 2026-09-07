@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T08:14:55.918885+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-09-07T08:10:22.767760+00:00",
+  "commitSha": "88ff94a2659a5eea9fc5a8a0e7a48ceba29f455d",
   "assertions": [
     {
       "name": "delta_tau_M_canonical_explicit_vanish_at_one",
@@ -23,7 +23,7 @@
   "computation": "qbeta-delta-tau-m-canonical-explicit-instance",
   "scriptFile": "qbeta_delta_tau_M_canonical_explicit_instance.py",
   "scriptHash": "ee8bb8741555",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "d645877e7ca70b97951bcd1ea443a07b2fbb5b39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -54,14 +54,14 @@
     "output_dps": 60,
     "q_proton": "1.10997858275138080759166909561076887987449912187357873607281",
     "q_muon": "1.10997859564273904668179512938000175270006556102901155697405",
-    "delta_tau_M_canonical_explicit_q_proton": "-0.215742175387449619996559998606212913912306932846169861520977",
-    "delta_tau_M_canonical_explicit_q_muon": "-0.215742200991100076874709365250085005765934777814614293024724",
-    "swing_canonical_explicit": "0.0000000256036504568781493666438720918536278449684444315037473410060",
-    "delta_tau_M_surrogate_q_proton": "-0.0866343003075774469231990712235120102643082384354145654682597",
-    "delta_tau_M_surrogate_q_muon": "-0.0866343103730547346262609235403476772109620517255638142576452",
-    "swing_surrogate": "0.0000000100654772877030618523168356669466538132901492487893855002652",
-    "relative_divergence_at_q_proton": "1.49026280147125267188883333674131395463978188812795573481376",
-    "relative_divergence_at_q_muon": "1.49026280768088008094796627305897406243493494899699649500641",
+    "delta_tau_M_canonical_explicit_q_proton": "-0.215731673542090243803763203717299196258004561948424709544307",
+    "delta_tau_M_canonical_explicit_q_muon": "-0.215731699139613394318661057398298453154852055737024650564169",
+    "swing_canonical_explicit": "0.0000000255975231505148978536809992568968474937885999410198616217266",
+    "delta_tau_M_surrogate_q_proton": "-0.0842021172184397188296379942517477565316661313494023737597880",
+    "delta_tau_M_surrogate_q_muon": "-0.0842021264225145349057555210843450197282739254907275076149380",
+    "swing_surrogate": "0.00000000920407481607611752683259726319660779414132513385514995675896",
+    "relative_divergence_at_q_proton": "1.56206946652460661902511929071092922943700525912245605828369",
+    "relative_divergence_at_q_muon": "1.56206949046751854172365472355008386370706184736187044563664",
     "interpretation": "The explicit-instance Δτ_M and the surrogate Δτ_M disagree by the reported relative divergence at each anchor; both have non-zero cross-anchor swings (NEAR-MATCH diagnostic). Neither is the canonical Wenzl–Markov instance: the explicit instance uses y_3 = y_111 = z and y_21 = 1/2 - z (the simplest √q-bearing choice that satisfies the dimension-normalisation axiom), while the surrogate uses the rational dimension-shape y_λ = q^{ℓ(λ)} / ((1+q)(1+q+q²)). Identifying THE canonical instance — the open math — would close the f-map keystone for the Q_β c_k ladder."
   }
 }

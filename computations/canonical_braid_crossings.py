@@ -143,6 +143,7 @@ def atom_canonical_crossings(
     include_inter: bool = True,
     m_pp: int = 1, m_pn: int = 1, m_nn: int = 1,
     intra_order: str = "borromean",
+    ordering: list | None = None,
 ) -> list[tuple[int, str]]:
     """Canonical (gen_idx, ctype) crossings for atomic braid β(Z, N).
 
@@ -172,6 +173,7 @@ def atom_canonical_crossings(
         m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
         include_inter=include_inter,
         intra_order=intra_order,
+        ordering=ordering,
     )
     out: list[tuple[int, str]] = []
     for run_idx, (c, d, g) in enumerate(triples):

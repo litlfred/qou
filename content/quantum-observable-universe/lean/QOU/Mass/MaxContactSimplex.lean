@@ -183,6 +183,9 @@ is the t7qv frontier's "A≥5 saturates below" as a theorem rather than a premis
 span.** `bounded_degree_saturates` needs a bound on the DEGREE, and that is the
 three-dimensional kissing number (12, Schütte–van der Waerden) — not proved here
 and not a modest formalisation.
+-- Ref: [bezdek-reid2013] — held source stating the kissing-number-12 rigidity it uses
+   (Thms 4/5, via Hales' 2.52 separation of a 13th ball); the Schütte–van der Waerden
+   1953 proof itself is not held.
 
 **And a trap, verified numerically, for whoever tries the easy route.** The
 standard spherical-code argument — `∑ᵢⱼ ⟪uᵢ,uⱼ⟫² ≥ m²/d` against

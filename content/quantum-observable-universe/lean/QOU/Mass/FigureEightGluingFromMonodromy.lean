@@ -30,6 +30,11 @@ its volume; these are the exact identities the geometry rests on.
 
 -- Ref: [manuscript] computations/probes/nz_gluing_from_braid_monodromy_probe.py
 -- Ref: library/arxiv-0808.2716v4 (Futer–Kalfagianni–Purcell) §2.2 for the R, L matrices.
+-- Ref: [martelli2016] §14.1 (Prop 14.1.8 + Fig 14.7: the two-tetrahedron, valence-6 triangulation
+--   with all shapes e^{iπ/3} is the figure-eight complement — the literature form of the
+--   sixth-root check), §15.2 (Prop 15.2.9 / 15.2.11: the incidence rows generate a Lagrangian
+--   subspace — the NZ symplectic check; Cor 15.2.8: rk A = 2n − c). Not in that book: the
+--   Guéritaud two-bridge layering and the Floyd–Hatcher bundle layering (keep FKP for those).
 -/
 
 namespace QOU.Mass.FigureEightGluingFromMonodromy

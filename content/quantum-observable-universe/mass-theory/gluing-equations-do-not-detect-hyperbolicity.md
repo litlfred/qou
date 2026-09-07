@@ -1,6 +1,6 @@
 ## What the gluing equations do, and do not, decide
 
-An ideal triangulation with shape parameters $z_1, \dots, z_N$ carries Thurston's gluing equations: one equation per edge class, asserting that the edge parameters around that edge multiply to $1$. A solution is *geometric* when every $z_i$ lies in the upper half plane, and only then does the triangulation describe a hyperbolic structure.
+An ideal triangulation with shape parameters $z_1, \dots, z_N$ carries Thurston's gluing equations: one equation per edge class, asserting that the edge parameters around that edge multiply to $1$. A solution is *geometric* when every $z_i$ lies in the upper half plane, and only then does the triangulation describe a hyperbolic structure \cite{martelli2016} (Prop.~14.1.7).
 
 It is tempting to treat the equations themselves as the test — to read "the gluing equations are satisfiable" as "the manifold is hyperbolic". They are not that test.
 
