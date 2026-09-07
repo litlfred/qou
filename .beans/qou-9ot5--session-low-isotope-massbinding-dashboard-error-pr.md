@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-25T16:28:09Z
-updated_at: 2026-08-25T18:20:23Z
+updated_at: 2026-09-07T10:22:57Z
 ---
 
 ## Session state 2026-08-25 (PR #5765)
@@ -65,3 +65,65 @@ pairwise ceiling), **#5755** (the Q0_OK mechanism), **#5500** (two asks, no repl
 ### Child beans
 `qou-fdjp`, `qou-ahbz`, `qou-04cj`, `qou-5d6k` (carries the GAP-1 retraction),
 `qou-ib3g`.
+
+
+## 2026-09-07 — the blocking q0-anchor gate is RED on main, and re-running one witness surfaced a 45 % drift
+
+Re-measured this bean's `Q0_FLIP` reading. Live: **`Q0_OK 1429`, `Q0_FLIP 1`,
+`Q0_ANCHOR_UNRECOGNISED 4`** — and `q0_anchor_consistency_audit.py --strict`
+**exits 1** on either, with `precision-gates.sh` registering that gate
+**blocking**. So the gate is red on `main` today.
+
+**Root cause of the 4: two vocabularies for one concept.** `physical_proton`
+is the **manifest** token (`q0_anchor_manifest.json`); the witness field wants
+`proton`. A producer author writing the manifest spelling does the natural
+thing and fails the gate.
+
+**Two wrong hypotheses of mine, recorded because the shape recurs.** I first
+supposed `stamp_staleness_metadata` concatenated anchor+reason — it writes the
+argument verbatim. Then that a payload `q0Anchor` won — no such key exists in
+the producers. `git log` settled it: at `2e68bb647d` (09-03) two producers
+literally passed `q0_anchor="proton (experimental pin)"`, and `c415d81fe7`
+(09-04, *"fix the 13 producers, not the witnesses"*) fixed those two and
+**missed the other two**, which still passed `physical_proton`. That miss is
+why the drain refilled.
+
+**Also recorded: a re-run that timed out is not a measurement.** My first
+attempt returned `exit=124` at 900 s having written nothing, and the
+`q0Anchor` I read back was the unchanged on-disk value. I nearly reported it
+as fresh.
+
+### Outcome, 4 witnesses
+
+| witness | result |
+|---|---|
+| `d-eigenphase-projection-through-ladder` | producer fixed, re-run **allPassed**, diff **anchor-only** — committed |
+| `habiro-pochhammer-convention` | producer fixed; **witness re-run REVERTED, see below** |
+| `derived-w-overdetermined-test` | **cannot re-run** — `RuntimeError: tr_m_word_lq: Case C (multiple top-1 in segment) not implemented; word=[1,0,0,1], n=3` |
+| `interface-w-deciding-test` | long-compute (>15 min), still running |
+
+**The `habiro` finding is the substantive one.** Its re-run moved every number
+by 45–52 % — `witness_tr_M_at_q0` proton `1.145759692457300816435` →
+`0.6293284022029219051444`, neutron `0.987743688115809530983` →
+`0.4751335171556822112807`; `rel_err_1_minus_u_2k` `5.075 → 3.596` and
+`3.622 → 2.015`. **My edit was one line of metadata and cannot do that.** So
+the committed witness (computed 2026-09-06) disagrees with today's import cone
+— textbook `cosmetic_import_cone_drift`, the one bucket measured growing 4 → 9
+this same session (`qou-e9pp`).
+
+Worse, the witness's own assertion prose is hardcoded: it still reads *"Not a
+rounding question: **507 % and 362 %**"* beside recomputed values of **359.6 %
+and 201.5 %**. The qualitative conclusion survives; the quoted figures do not.
+
+**So its witness was REVERTED and only its producer fix committed** — the same
+producer-without-witness split I criticise above, taken deliberately here
+because baking a 45 % undiagnosed move into a metadata PR would be laundering.
+That witness stays `Q0_ANCHOR_UNRECOGNISED` for a **documented** reason.
+
+**Not drainable, and do not try:** the remaining `Q0_FLIP: 1` is
+`hadron-knot-table.witness.json` on the retired muon anchor; AGENTS.md records
+that producer needs >50 min for one bound atom of nineteen and will not finish.
+
+**Follow-ups (none attempted):** adjudicate the habiro drift; implement or
+guard `tr_m_word_lq` Case C; reconcile the manifest vs witness anchor
+vocabulary at the source so the two spellings cannot diverge again.

@@ -221,7 +221,7 @@ out = {
 # `scripts/check-sidecars.sh` flags as P30.
 WitnessBuilder.stamp_staleness_metadata(
     out, script_path=__file__, engine="python+sympy+mpmath",
-    q0_anchor="physical_proton", q0_value=mpm.nstr(q0, 50),
+    q0_anchor="proton", q0_anchor_reason="experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin; 'physical_proton' is the MANIFEST token, not the witness-field vocabulary", q0_value=mpm.nstr(q0, 50),
 )
 wpath = _HERE.parent / "qbeta-habiro-pochhammer-convention.witness.json"
 wpath.write_text(json.dumps(out, indent=2) + "\n")

@@ -211,7 +211,7 @@ out = {
 }
 WitnessBuilder.stamp_staleness_metadata(
     out, script_path=__file__, engine="python+mpmath",
-    q0_anchor="physical_proton", q0_value=mpm.nstr(q, 50))
+    q0_anchor="proton", q0_anchor_reason="experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin; 'physical_proton' is the MANIFEST token, not the witness-field vocabulary", q0_value=mpm.nstr(q, 50))
 wp = _HERE.parent / "qbeta-d-eigenphase-projection-through-ladder.witness.json"
 wp.write_text(json.dumps(out, indent=2) + "\n")
 print(f"witness -> {wp}\nallPassed: {out['allPassed']}")
