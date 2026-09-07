@@ -230,9 +230,25 @@ theorem categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
     LaTeX: `\label{prop:categorical-self-duality}`
 
     Any `CategoricalInstanton` is self-dual by construction: self-duality
-    is encoded as a field of the structure.  This is a structural accessor
-    theorem; for the derivation of self-duality from the variational
-    principle see `variational_einstein`. -/
+    is encoded as the `self_dual` field of the structure.  This is a
+    structural accessor theorem and derives nothing.
+
+    The pointer this docstring carried until 2026-09-07 — "for the
+    derivation of self-duality from the variational principle see
+    `variational_einstein`" — went to the wrong place.
+    `QOU.variational_einstein` states `ca.gravity = einsteinTensor +
+    stressTensor`, the Einstein equation, and is itself a projection of
+    `HasCategoricalEOM.einstein`; `variational_yang_mills` states the
+    gauge equation of motion.  Neither is the self-duality step.
+
+    The derivation the block claims — that every critical point of the
+    categorical Yang-Mills functional is an instanton — is the Bogomolny
+    decomposition, and it lives in the manuscript proof
+    `prf:categorical-self-duality`, not in Lean.  Formalising it needs the
+    dagger-category decomposition `∫(F* · F) = 2∫(F⁻* · F⁻) + ∫(F ∧_q F)`
+    and the topological invariance of the second term; the structure here
+    carries no variational data at all, so the implication cannot be
+    stated against it. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]

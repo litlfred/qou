@@ -1,10 +1,11 @@
 ---
 # qou-2re6
 title: Cite [li2026-two-sphere] Thm 1.0.8 at rem:tqft-context — 'A carries the 2d cobordism data' is Cob(2) ≅ Cob(3)_{S²,CF}
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-06T13:41:39Z
-updated_at: 2026-09-06T13:41:39Z
+updated_at: 2026-09-07T08:40:01Z
 parent: qou-2akx
 ---
 
@@ -17,3 +18,9 @@ DO. Add 'li2026-two-sphere' to cites[] in tqft-context.ts and one sentence to th
 CAVEAT (state it in the sentence, do not overclaim). Li's monoids are COMMUTATIVE Frobenius monoids in a SYMMETRIC monoidal target; QOU's A is a Hopf algebra in a BRAIDED category and is not assumed commutative. The identification is at the Frobenius-structure level only; it does not say A is Z(S²) of some 3d TFT, and it says nothing about the Hopf half of the Frobenius–Hopf object. Corpus grep before writing: content/ has no 'Cob(' / bordism-category vocabulary outside this block and quantum-universes/frobenius-relation.md.
 
 Correction 2026-09-06 (same session): the last sentence's corpus-grep claim is slightly off — 'Cob(' / 'bordism' occur in content/ ONLY in rem:tqft-context (quantum-universes/frobenius-relation.md does not use that vocabulary; it states the Frobenius relation diagrammatically). The action is unchanged.
+
+
+
+Claimed 2026-09-07 on branch claude/uploads-triage-chips-2026-09-07 (one PR for the three remaining citation/framing chips of the 2026-09-06 uploads triage).
+
+Done: merged in PR #7009 (d36a0bf8c6).

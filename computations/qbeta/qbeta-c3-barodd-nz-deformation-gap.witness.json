@@ -1,16 +1,16 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T04:33:57.890806+00:00",
-  "commitSha": "ca508def881897ebce9db24ddef4933b7bae1c1f",
+  "computedAt": "2026-09-07T06:48:48.952809+00:00",
+  "commitSha": "a23d06ce2cb2ed2c353625a1ef00e254c69d47e1",
   "assertions": [
     {
-      "name": "vol_4_1_eq_2_lambda_pi3",
+      "name": "vol_4_1_eq_2_cl2_pi3",
       "computed": "3.62227163153068494700364771635511671227301247925565527583305e-71",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-30",
-      "source": "Bloch-Wigner D(e^{iπ/3})=Λ(π/3)"
+      "source": "Bloch-Wigner D(e^{iπ/3})=Cl₂(π/3); Vol(4₁)=2·Cl₂(π/3)=6·Λ(π/3)"
     },
     {
       "name": "cs_4_1_complete_zero",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "qbeta-c3-barodd-nz-deformation-gap",
   "scriptFile": "qbeta_c3_barodd_nz_deformation_probe.py",
-  "scriptHash": "288ceb07d32e",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "c3d78a23b6a7",
+  "scriptCommitSha": "9219efdb220a9560808452d396de4f819a344702",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,7 +62,7 @@
   "data": {
     "vol_4_1": {
       "value": "2.02988321281930725",
-      "eq_2_lambda_pi3": true,
+      "eq_2_cl2_pi3": true,
       "role": "bar-EVEN part = −Vol(4₁), SOLVED"
     },
     "cs_4_1_complete": {

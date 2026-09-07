@@ -88,7 +88,7 @@ def _candidates_at(q):
     hbar_q = 1 - 1 / q
     q2 = q + 1 / q
     G = mp.catalan
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
 
     return [
         ("(a) bare", mp.mpf(1)),

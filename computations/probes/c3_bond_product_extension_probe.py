@@ -76,7 +76,11 @@ _D = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_D)
 _ORIG = _CBC.atom_canonical_crossings
 
-K = 3   # truncation order: we need a3
+# Truncation order. 3 by default (the c3 question this file was written for);
+# `--order N` raises it, which is how the c4 rung is tested without a second copy
+# of the machinery. mul/div/predict are generic in K, so nothing else changes.
+K = 4 if "--order=4" in sys.argv else (
+    int(next((a.split("=")[1] for a in sys.argv if a.startswith("--order=")), 3)))
 
 ZN = {"pp": (2, 0), "pn": (1, 1), "nn": (0, 2), "3p": (3, 0), "T": (1, 2),
       "3He": (2, 1), "3n": (0, 3), "4He": (2, 2), "5He": (2, 3)}
@@ -85,6 +89,14 @@ LIVE_OK = ("pp", "pn", "nn", "3p", "T", "3He", "3n")
 # c3 measured independently in bean qou-yaig (#6966) — NOT an input here.
 C3_RECORDED = {"pp": F(67, 16), "pn": F(43, 8), "nn": F(27, 4),
                "T": F(101, 16), "3He": F(839, 128), "4He": F(1329, 256)}
+
+# c4 measured independently in bean qou-yaig (#6966) — NOT an input here. Only
+# A = 2 and A = 3 were measured there; 4He's c4 was never computed, so at
+# --order=4 the 4He row becomes a genuine open prediction rather than a check.
+C4_RECORDED = {"pp": F(-585, 128), "pn": F(109, 192), "nn": F(27, 32),
+               "T": F(743, 384), "3He": F(10001, 1536)}
+
+RECORDED = {3: C3_RECORDED, 4: C4_RECORDED}
 
 
 def mul(a, b):
@@ -112,13 +124,88 @@ def _series(Z, N, *, inter, **mk):
     return list(c)[:K + 1]
 
 
+# ---------------------------------------------------------------------------
+# Measured inputs, recorded so a killed run does not have to re-earn them.
+#
+# 🛑 THIS IS A RESUME AID, NOT A SOURCE OF TRUTH. Nothing reads it unless
+# `--inputs-from-cache` is passed explicitly, and the run says so in its output
+# when it does. The default path always MEASURES. That asymmetry is deliberate:
+# a cache that is consulted silently is how a stale number becomes a result, and
+# this corpus has a documented history of exactly that.
+#
+# Cost being preserved: at K = 4 the three bonds took 2452 s, 2437 s and ~2400 s
+# — about 2.7 h — and the log they were printed to lives in /tmp, which does not
+# survive the container. At K = 3 the same three were ~190 s each and hardly
+# worth caching; at K = 4 they dominate the run.
+#
+# Provenance: measured 2026-09-07 by this file at the stated order, one nucleon
+# at n = 3 (free word) and one interface at A = 3, exact Fraction throughout.
+#
+# OBSERVED IN THE BOND ROWS, recorded and NOT built on. Writing each bond as
+# (1/2)(1, rho, tau, ups, ...):
+#
+#     pp   (1,  2, 1/2, -1/2, 1/4)
+#     pn   (1,  0, 3/2, -3/2, 31/12)
+#     nn   (1, -2, 5/2, -5/2, ?)
+#
+# rho = p_b - n_b and tau = 1/2 + n_b are qou-qqm4's noted pattern, which that
+# author correctly called a DESCRIPTION of three values with one spare dof. The
+# cubic adds something that description did not predict: **ups = -tau exactly,
+# in all three bonds**. That is three hits with no freedom left, which is more
+# than a redescription — but it is still three data points, and the quartic
+# column (1/4, 31/12, ?) shows no comparable relation to tau, so nothing here
+# says the pattern continues. A derivation would have to produce it; this file
+# does not, and does not use it: `predict` reads the MEASURED factors.
+_INPUT_CACHE = {
+    3: {
+        "nuc": {"p": ["1/2", "3/4", "23/8", "75/8"],
+                "n": ["1/2", "-1/2", "3/2", "19/2"]},
+        "bond": {"pp": ["1/2", "1", "1/4", "-1/4"],
+                 "pn": ["1/2", "0", "3/4", "-3/4"],
+                 "nn": ["1/2", "-1", "5/4", "-5/4"]},
+    },
+    4: {
+        "nuc": {"p": ["1/2", "3/4", "23/8", "75/8", "-37/4"],
+                "n": ["1/2", "-1/2", "3/2", "19/2", "-57/4"]},
+        "bond": {"pp": ["1/2", "1", "1/4", "-1/4", "1/8"],
+                 "pn": ["1/2", "0", "3/4", "-3/4", "31/24"],
+                 "nn": None},
+    },
+}
+
+
+def _cached_inputs(log):
+    """Load recorded inputs for order K. Returns None unless the table is
+    COMPLETE for this order — a partial row is refused rather than silently
+    padded, because a missing high-order term is exactly the coefficient the
+    question turns on."""
+    tab = _INPUT_CACHE.get(K)
+    if tab is None:
+        log(f"    no recorded inputs for K = {K}; measuring")
+        return None
+    out = {}
+    for kind in ("nuc", "bond"):
+        out[kind] = {}
+        for key, row in tab[kind].items():
+            if row is None or len(row) != K + 1 or any(v is None for v in row):
+                log(f"    recorded inputs INCOMPLETE at K = {K} ({kind} {key});"
+                    f" measuring instead")
+                return None
+            out[kind][key] = [F(v) for v in row]
+    log(f"    USING RECORDED INPUTS for K = {K} (--inputs-from-cache). These "
+        f"were measured by this file on 2026-09-07; nothing here re-derives "
+        f"them. Drop the flag to measure.")
+    return out["nuc"], out["bond"]
+
+
 def measure_inputs(log=print):
     nuc = {}
     for key, Z, N in (("p", 1, 0), ("n", 0, 1)):
         c = _series(Z, N, inter=False)
         nuc[key] = c
-        log(f"    nucleon {key}:  a={c[0]}  r={c[1]/c[0]}  q={c[2]/c[0]}  "
-            f"s={c[3]/c[0]}   (one nucleon, n=3, free word)")
+        co = "  ".join(f"{nm}={c[i]/c[0]}" for i, nm in
+                       zip(range(1, K + 1), ("r", "q", "s", "t", "u")))
+        log(f"    nucleon {key}:  a={c[0]}  {co}   (one nucleon, n=3, free word)")
     bond = {}
     for wZ, wN, which, mk in ((2, 1, "pp", dict(m_pp=1, m_pn=0, m_nn=0)),
                               (1, 2, "pn", dict(m_pp=0, m_pn=1, m_nn=0)),
@@ -126,8 +213,8 @@ def measure_inputs(log=print):
         free = _series(wZ, wN, inter=True, m_pp=0, m_pn=0, m_nn=0)
         R = div(_series(wZ, wN, inter=True, **mk), free)
         bond[which] = R
-        log(f"    bond {which}:  (1/2)(1, {R[1]/R[0]}, {R[2]/R[0]}, {R[3]/R[0]})"
-            f"   (A=3, ONE interface on)")
+        inner = ", ".join(str(R[i] / R[0]) for i in range(1, K + 1))
+        log(f"    bond {which}:  (1/2)(1, {inner})   (A=3, ONE interface on)")
     return nuc, bond
 
 
@@ -151,10 +238,11 @@ def main() -> int:
         print(f"  [{time.time()-t0:6.1f}s] {m}", flush=True)
 
     print("=" * 78)
-    print("  Does the block-and-bond product reach c3?")
+    print(f"  Does the block-and-bond product reach c{K}?")
     print("=" * 78)
-    log("measuring the seven inputs (2 nucleons x 4 coeffs, 3 bonds x 4) …")
-    nuc, bond = measure_inputs(log)
+    log(f"order K = {K}; inputs (2 nucleons x {K+1}, 3 bonds x {K+1}) …")
+    cached = _cached_inputs(log) if "--inputs-from-cache" in sys.argv else None
+    nuc, bond = cached if cached else measure_inputs(log)
 
     rows, failures = [], []
     for name, (Z, N) in ZN.items():
@@ -170,12 +258,12 @@ def main() -> int:
             if d_pred != d_live:
                 failures.append(f"{name}: predicted {d_pred} != live {d_live}")
             ok3 = (d_pred[2] + d_pred[3]) == (d_live[2] + d_live[3])
-        elif name in C3_RECORDED:
+        elif name in RECORDED.get(K, {}):
             src = "recorded (qou-yaig, independent)"
-            ok3 = (c3_pred == C3_RECORDED[name])
+            ok3 = (c3_pred == RECORDED[K][name])
             if not ok3:
-                failures.append(f"{name}: c3 predicted {c3_pred} != "
-                                f"recorded {C3_RECORDED[name]}")
+                failures.append(f"{name}: c{K} predicted {c3_pred} != "
+                                f"recorded {RECORDED[K][name]}")
         else:
             src = "prediction only (no target)"
         rows.append((name, Z + N, d_pred[3], c3_pred, src, ok3))
@@ -184,7 +272,7 @@ def main() -> int:
 
     print()
     print("=" * 78)
-    print(f"  {'case':>5s} {'A':>2s} {'a3 (raw)':>16s} {'c3 = a2+a3':>14s}   source")
+    print(f"  {'case':>5s} {'A':>2s} {f'a{K} (raw)':>16s} {f'c{K}':>16s}   source")
     for name, A, a3, c3, src, ok in rows:
         print(f"  {name:>5s} {A:>2d} {str(a3):>16s} {str(c3):>14s}   {src}")
     print("=" * 78)
@@ -192,23 +280,22 @@ def main() -> int:
     print(f"  {sum(1 for r in checked if r[5])}/{len(checked)} checked rows agree")
     print()
     if failures:
-        print("  VERDICT: the product does NOT reach c3. Multiplicativity over")
-        print("  blocks and bonds holds to order 2 and breaks at order 3 — an")
-        print("  irreducible term appears that no smaller object supplies.")
+        print(f"  VERDICT: the product does NOT reach c{K}. Multiplicativity")
+        print(f"  over blocks and bonds holds below order {K} and BREAKS there —")
+        print("  an irreducible term appears that no smaller object supplies.")
         for f in failures:
             print(f"    {f}")
         return 1
-    print("  VERDICT: the product REACHES c3. Adding one cubic term per nucleon")
+    print(f"  VERDICT: the product REACHES c{K}. One order-{K} term per nucleon")
     print("  and per bond — each measured on a smaller object, none fitted to any")
-    print("  c3 — reproduces every checked c3, including 4He's 1329/256, which was")
-    print("  measured independently at P = 5 and contributes to no input here.")
+    print(f"  c{K} — reproduces every checked row.")
     print()
     print("  SCOPE, inherited from the form and not weakened here: SORTED orderings")
     print("  only; A <= 5; NOT PROVED. 'pnp' remains the discriminating untested")
     print("  case. This extends the order reach, not the ordering reach.")
     print()
     print(f"PASS  {sum(1 for r in checked if r[5])}/{len(checked)} — "
-          f"the block-and-bond product carries c3")
+          f"the block-and-bond product carries c{K}")
     return 0
 
 

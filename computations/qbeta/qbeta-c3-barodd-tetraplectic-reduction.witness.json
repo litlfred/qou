@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+combinatorial",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:44:58.545907+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-07T06:48:58.505594+00:00",
+  "commitSha": "a23d06ce2cb2ed2c353625a1ef00e254c69d47e1",
   "assertions": [
     {
       "name": "frobenius_distinct_odd_eq_self_conjugate",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2895,
+  "durationMs": 2968,
   "computation": "qbeta-c3-barodd-tetraplectic-reduction",
   "scriptFile": "qbeta_c3_barodd_tetraplectic_reduction_probe.py",
-  "scriptHash": "5e50c02052eb",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "8bd2390267f0",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -138,7 +138,7 @@
       "conclusion": "S = sigma-antisymmetric (sinh) part of the SAME compact e_k; no modular-dual factor needed"
     },
     "fibre_saddle_phase_zeta6": {
-      "point": "b^2=1/6, q=zeta_6=e^{i pi/3} (Vol(4_1)=2Lambda(pi/3) angle)",
+      "point": "b^2=1/6, q=zeta_6=e^{i pi/3} (Vol(4_1)=2*Cl_2(pi/3)=6*Lambda(pi/3) angle)",
       "Im_e3_zeta6": "2.1288908e-69",
       "arg_phi_b_rows": [
         {

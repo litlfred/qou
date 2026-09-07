@@ -111,7 +111,7 @@ def main() -> int:
     # ratio and still MEETS L2 with 5.13× margin (was 11.27×).
     hbar_q = (q - 1) / q
     em_correction = 1 + mp.log(1 + hbar_q)
-    alpha_em_codata = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em_codata = mp.mpf(1) / mp.mpf("137.035999084")
     em_term = (alpha_em_codata / mp.pi) * em_correction
 
     print(f"\nq_0 = {Q_50_DIGIT_STR}")

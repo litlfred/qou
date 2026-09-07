@@ -99,7 +99,7 @@ def main() -> int:
          (mp.mpf(18)/24) * hbar_q_sq * h),
         # (f) Antisymmetric pair: (P_(2,2)) · h² · α_em/π
         ("(f) P_(2,2) · h² · α_em/π",
-         (mp.mpf(4)/24) * h2 * mp.mpf(1)/mp.mpf("137.0359991")/mp.pi),
+         (mp.mpf(4)/24) * h2 * mp.mpf(1)/mp.mpf("137.035999084")/mp.pi),
         # (g) bare 1/24 with X-like multiplier
         ("(g) (1/24) · ℏ_q² · h · [2]_q²",
          (mp.mpf(1)/24) * hbar_q_sq * h * q2 ** 2),

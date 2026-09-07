@@ -56,7 +56,7 @@ def main():
         
         # Let's check PSLQ on epsilon
         print("PSLQ on epsilon:")
-        res = mp.pslq([epsilon, 1, h**2, h**4, h**6, h**8, mp.mpf(1)/mp.mpf("137.0359991")], tol=1e-6)
+        res = mp.pslq([epsilon, 1, h**2, h**4, h**6, h**8, mp.mpf(1)/mp.mpf("137.035999084")], tol=1e-6)
         print(res)
 
 if __name__ == "__main__":

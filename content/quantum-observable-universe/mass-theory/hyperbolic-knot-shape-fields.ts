@@ -25,5 +25,5 @@ export default proposition({
     validation: "leanok",
   },
   uses: ["prop:thurston-volume-additivity"],
-  cites: ["thurston1978", "neumann-zagier1985"],
+  cites: ["thurston1978", "neumann-zagier1985", "martelli2016"],
 });
