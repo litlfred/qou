@@ -5198,17 +5198,34 @@ re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 >
 > **🛑 And "0 red" is not the current result — at full scope it is 8 RED, of which
 > ZERO are corpus defects.** All 8 are one class: a **missing Mathlib olean**,
-> named at the block's own `import` line. Exactly **4** of the **252** distinct
-> Mathlib modules the content corpus imports are absent from the restored
-> `lake-cache/qou-v4-24-0` — `Topology.FiberBundle.Basic`,
-> `RingTheory.HopfAlgebra.Basic`, `Analysis.Complex.UpperHalfPlane.Basic`,
-> `Analysis.Real.Pi.Bounds` — and those four account for all 8. Absent from the
+> named at the block's own `import` line. Absent from the
 > **paper and root trees alike**, and reproducible with **no shadow and no sweep**
 > on a plain restored cache, so it is the cache branch, not the gate and not the
 > source. So read the corpus result as **930 of 938 verifiable and green, 8
 > unverifiable here**, and do NOT "fix" those blocks: their imports are fine, the
-> cache is short. Fix at the cache branch (reseed those four cones) or give the
-> gate an expected-RED list, so it distinguishes *cannot verify* from *fails*.
+> cache is short.
+>
+> **🟩 THE GAP IS CLOSED, and it was 3 targets / 7 modules, not 4 (2026-09-07).**
+> This paragraph named four absent modules. Measured: **`Analysis.Real.Pi.Bounds`
+> is PRESENT.** The real gap is three targets whose transitive cones are seven
+> modules — `HopfAlgebra.Basic` (+ `Bialgebra.Basic`, `Coalgebra.Basic`,
+> `TensorProduct.Finiteness`), `FiberBundle.Basic` (+ `FiberBundle.Trivialization`)
+> and `UpperHalfPlane.Basic`. All seven build from source with `lean`-direct in a
+> few minutes and package to **2.3 MB**.
+>
+> Seeded to the addon orphan branch **`lake-cache/qou-v4-24-0-mathlib-gap-modules`**;
+> restore with [`scripts/lean-restore-gap-oleans.sh`](scripts/lean-restore-gap-oleans.sh).
+> With them restored, the seven blocks that import them compile **plain
+> `lean`-direct, no shadow, exit 0** — confirming the diagnosis above exactly.
+>
+> **Seven, not eight, and the difference is NOT settled.** The 8 above came from a
+> full content sweep; the 7 from grepping `import` lines, so a block blocked
+> *transitively* through a `QOU` module would not appear in it. One block remains
+> unaccounted for. Do not read 7 as a correction of 8.
+>
+> Restoring is **not** a Lake restore: these are plain oleans with no `.trace`, so
+> `lake build` would evict them with the rest of the cache. Write-up:
+> [`docs/audits/2026-09-07-mathlib-cache-gap-closed.md`](docs/audits/2026-09-07-mathlib-cache-gap-closed.md).
 >
 > **🛑 QUIESCE THE SESSIONSTART BUILD BEFORE TRUSTING THE SAFETY INVARIANT.** Both
 > sweeps assert that the hardlinked shadow never writes through into the real
