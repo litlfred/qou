@@ -65,12 +65,23 @@ there.
 
 ## What is NOT established
 
-- **The `A = 4` crossover is unsettled, not refuted.** `c₂(⁴He)` needs `P = 4`
-  and the committed `P_OF["4He"] = 3` returns `None`. So the specific claim
-  "crosses over between A = 3 and A = 4" is **untested** under Borromean, not
-  disproved. Settling it is one ~5-minute run at raised precision, and it is
-  deliberately not done here — raising `P_OF` on `main` is the probe owner's
-  call (`qou-pdg9`), exactly as #6559 itself said.
+- ~~**The `A = 4` crossover is unsettled, not refuted.**~~ **🛑 SETTLED
+  2026-09-06 — bean `qou-yaig`, and the answer splits in two.** This bullet said
+  `c₂(⁴He)` was untested because the committed `P_OF["4He"] = 3` returns `None`.
+  It has now been measured at `P = 4` (295 s):
+
+      c2(4He) borromean = 439/512      ratio c2·ℏ² / c1·ℏ = 1.5535
+
+  The **endpoint fact SURVIVES**: at `A = 4` the second order does exceed the
+  first, and by *more* than under grouped (1.4639). The **location does NOT**:
+  "crosses over *between* `A = 3` and `A = 4`" also requires the ratio to be
+  below 1 underneath, and under Borromean it is already `4.9045` at `T` (`A = 3`)
+  and `1.2385` at `pn` (`A = 2`). There is no crossing *there*.
+
+  Three controls passed before the new number was trusted — `a₀ = 7/128` against
+  the derived floor two ways, and `a₁ = 7/128` against the `c₁(⁴He)` of #6931,
+  which **independently confirms the one row that PR's own probe could only
+  assert circularly**.
 - **`c₃` is not re-measured at all.** #6607's comparable-not-diverging result is
   therefore **convention-scoped**, not refuted. It needs `P = 5`.
 - **This says nothing about the physics.** Scope-(a). It is a statement about

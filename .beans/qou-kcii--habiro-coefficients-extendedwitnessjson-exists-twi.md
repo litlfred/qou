@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-08-23T21:48:43Z
+updated_at: 2026-09-06T16:17:21Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -325,3 +325,87 @@ Not decidable, left alone:
    because no pair is content-identical.
 2. The 17 latent unordered glob sites `--bypasses` now lists.
 3. `qbeta-phib-2loop-bdictionary`: rename, qβ arc's call.
+
+
+## 2026-09-06 — both open items answered: the duplicate is GONE and the cheap check is now a permanent audit
+
+Found by `scripts/bean-staleness-triage.py` (16th of 291 artifact beans, 19
+commits over its named paths since 2026-08-23).
+
+### 1. The bean's own instance is resolved
+
+`find computations -name 'habiro-coefficients-extended.witness.json'` returns
+**one** file — `computations/habiro-coefficients-extended.witness.json`,
+`q0Anchor: muon`, regenerated 2026-08-30. The `computations/habiro/` copy is
+gone.
+
+**And the producer now carries the fix with this bean's own diagnosis in its
+source.** `habiro_coefficients_extended.py:205-217` writes to
+`_COMPUTATIONS / "habiro-coefficients-extended.witness.json"` and explains why:
+
+> This previously wrote `HERE / …`, i.e. `computations/habiro/`. Every consumer
+> that matters reads the `computations/` root — `cross_check_trM_1ppb` (the L1
+> gate), `d_u_closed_form_proof`, `mass_formula_6term_mpfr_50dps` — so the
+> producer refreshed a copy nobody reads while the copy everybody reads went
+> stale. … Bean `qou-kcii`.
+
+It also **deliberately does not use `_path_bridge.witness_path` for output**,
+naming the exact trap this bean reported: *"it searches `prefer_dir` first,
+which is what handed a habiro/-local probe the dead error-record copy and made
+it report the wrong `q0Anchor` (667c9ab3f6)."*
+
+That is the same finding this bean made, reached independently and fixed at the
+producer — the strongest possible disposition for it.
+
+### 2. The "cheap check for whoever takes it" — done, and permanentised
+
+The bean proposes *"a `find | basename | sort | uniq -d` over `computations/`"*.
+That exists as
+[`computations/audits/duplicate_witness_stem_audit.py`](computations/audits/duplicate_witness_stem_audit.py),
+and it is better than the one-liner: it reports, per duplicated stem, **which
+copy each consumer reads**.
+
+    witness stems duplicated across paths : 27
+    of those, CONSUMERS DIVERGE on        :  8
+
+**Run the one-liner too, and reconcile — the numbers differ and both are
+right.** My raw `find | uniq -d` gives **53**; the audit gives **27**. The
+difference is exactly the `_deprecated/` tree: excluding it gives 27, so
+`53 = 27 live + 26 involving a deprecated copy`. Quote 27 for live surface.
+
+The eight where a "cleanup" would change what code reads:
+
+    adjacent-vs-full-probe            alpha-k-jones-markov-h3
+    alpha-k-jones-markov-h4           hecke-core-symbolic-migration
+    option-e-deuteron-delta-lambda-probe   pentagon-rt-torus-knot-higgs-probe
+    q0-consistency-audit              qbeta-phib-2loop-bdictionary
+
+The audit is careful about its own limits (*"these are REFERENCES, not verified
+reads: the scan is textual"*) and declines to gate, pointing at `qou-2r42` for a
+pair where consolidating by name would swap one audit for a different one. So
+this bean's follow-up question is answered and owned; it does not need to
+re-ask it.
+
+### 3. One thread I did NOT close, named rather than guessed
+
+The bean's live worry was *"Habiro's values are measured at the PROTON pin
+(`qou-3zby`), so 'ambiguous' may itself be wrong."* The label is now `muon`, and
+the stamp is **internally consistent**: the recorded `q0Value` is
+`1.109978595642739046681795…`, which is the live muon pin to **0.0 ppb** and
+**11.6141 ppb** from the proton pin.
+
+But that verifies the *stamp against itself*, not the payload's layer. Two facts
+sit oddly together and I have not reconciled them:
+
+* `habiro_coefficients_extended` is in **none** of the manifest's three lists
+  (`ideal_muon` / `physical_proton` / `ambiguous`), and `q_parameter` selects by
+  `if _stem in _man["ideal_muon"]`, so an untagged stem resolves to **proton**.
+* Its arithmetic is **symbolic** — line 98 takes `q` as a free sympy symbol —
+  so the producer chooses no numeric pin at all.
+
+An untagged, symbolic producer whose witness nonetheless stamps `muon` is not
+obviously wrong (a symbolic result is anchor-free, and the stamp may be recording
+the evaluation point a consumer uses), but it is not obviously right either, and
+I could not find where `stamp_staleness_metadata` sources the anchor. **Whether
+this is correct or a straddle is unresolved**; it is the `qou-aj91` "67 untagged"
+shape, one instance. Not asserted as a defect.

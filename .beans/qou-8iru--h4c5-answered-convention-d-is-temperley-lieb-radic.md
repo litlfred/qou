@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-08-28T15:39:20Z
+updated_at: 2026-09-06T13:29:31Z
 ---
 
 
@@ -403,3 +403,51 @@ guard. Suggested order in the PR body. Caution recorded there:
 `gram-matrix-dual.py:169-170`'s `eigvals` is a SEPARATE question from the
 inverse — the zero eigenvalue of the singular form IS the finding, so do
 not repoint it along with the `pinv`.
+
+
+## 2026-09-06 — independently re-derived by THREE siblings overnight, none citing this
+
+Found while descending `scripts/bean-staleness-triage.py` (9th of 291 artifact
+beans, 24 commits over 19 paths).
+
+This bean's headline — **convention D IS Temperley-Lieb** — was re-derived on
+`main` overnight by three commits on two other beans, none of which cites this
+bean or its Lean:
+
+| commit | bean | what it established |
+|---|---|---|
+| `336a35ff27` | `qou-cds1` | C and D are different algebras; D annihilates the sign block |
+| `8d18aefe06` | `qou-fq0f` | D is Wenzl level `r = 2` exactly; row cap at two rows |
+| `2e00d7b8fa` | `qou-cds1` | `dim TL_n = Catalan(n)`, retained % by atom, `n` to 18 |
+
+**The corpus already had it, Lean-proved.** `QOU/QBeta/TemperleyLiebTower.lean`
+— 1027 lines, **0 real sorries**, on `main` — carries
+`conventionD_kills_antisymmetriser` (`z(q²+1) = q³ ⟹ y₍₁³₎ = 0`) and its
+converse, which **excludes convention C by derivation** since
+`1/(q^{1/2}+q^{-1/2})` is neither root of `z = q` / `z(q²+1) = q³`. That is
+strictly stronger than the overnight probes, which measure rather than prove it.
+
+**This is not a complaint, and the additions are real.** AGENTS.md's
+parallel-exploration rule makes three independent routes to one fact a
+*strengthening*: `qou-fq0f` arrives via the Wenzl level and Orellana's row cap
+where this bean arrives via SU(2)'s 2-dimensional fundamental — different
+mechanisms, same conclusion. `qou-cds1` adds the rank indexing
+`z_N = q^N/[N]_q` (with `z_2 = z_D`, and `z_C` in the family for no `N`) and
+identifies `b² = [3]_q/[2]_q²` so that `b² = 0 ⟺ [3]_q = 0 ⟺ H_3(q)
+non-semisimple. `2e00d7b8fa` extends this bean's own `n = 2..7` table to
+`n = 18` and maps it to atoms. What none of the three did was **cite the Lean**,
+which is the part a reader of any of them would most want.
+
+**Consequence, and it is the reason this is written up rather than noted.** The
+owner decision now filed as **D7** in
+[`docs/coordination/2026-09-05-owner-gated-bean-triage.md`](docs/coordination/2026-09-05-owner-gated-bean-triage.md)
+— *where does the C↔D crossover bite, given that 2026-08-15 makes D canonical
+and 2026-09-03 asks for the full tower* — rests on this bean's theorem, not on
+the overnight measurements. A ruling backed by a sorry-free Lean proof is on
+much firmer ground than one backed by three probes, and the D7 entry now says
+so and points here.
+
+Two claims relayed from the siblings were re-derived independently before being
+written into D7: `Q^r = q⁴` under D is exact (`sympy`,
+`simplify(rhs − q⁴) == 0` is `True`), C gives the non-integer `r = 2.59952` at
+the proton pin, and the Catalan/`n!` table reproduces to every digit.

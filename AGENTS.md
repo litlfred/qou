@@ -4924,14 +4924,43 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 # 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
 # flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
 # is now FALSE for this branch: `lake-cache/qou-v4-24-0` was RESEEDED AGAIN
-# 2026-09-06 (@ `1c496980587`) from a full `lake build QOU UGB Fred2005` —
-# 6483 oleans / 6484 traces, **100% coverage**, in 20 parts (~1.8 GB):
-# mathlib 3471/3471, QOU 2702/2702, UGB 28, Fred2005 1. Round-trip verified by
-# streaming the parts back through `tar tzf -` (32416 in = 32416 out) and
-# hashing three extracted oleans against local. The prior figures on this line
-# — the 2026-08-31 seed, 6170 of 6172 oleans, 27 parts — are superseded; note
-# that seed was NOT measured before being replaced, so no before/after
-# comparison exists (see lean-environment-setup.md §PRESERVE THE BUILD).
+# 2026-09-06 from a full `lake build QOU UGB Fred2005`, then GAP-FILLED the same
+# day. Measured on the branch head `a792c46d01b` (part19 of a 20-part seed
+# stamped "fresh f897ebc"; parts 00-19 are 19x94371840 + 28770096 B = 1.70 GiB):
+# **6492 oleans / 6492 PAIRED traces = 100.0% coverage**, 32461 tar entries,
+# 1 orphan trace. Per tree: mathlib 3480, QOU 2702, Aesop 129, Batteries 85,
+# ProofWidgets 34, UGB 28, Qq 12, Plausible 8, LeanSearchClient 3, ImportGraph 2.
+#
+# 🛑 The figures this line carried until 2026-09-06 — seed `1c496980587`,
+# 6483 oleans / 6484 traces, mathlib 3471, 32416 tar entries — are STALE, and
+# the way they went stale is the point. They are the PRE-GAP-FILL seed. The
+# deltas are exactly +9 oleans and +45 tar entries = **9 modules x 5 files**
+# (.olean/.ilean/.trace + 2 build artifacts): the four content-corpus imports
+# that were missing (Topology.FiberBundle.Basic, RingTheory.HopfAlgebra.Basic,
+# Analysis.Complex.UpperHalfPlane.Basic, Analysis.Real.Pi.Bounds) plus five
+# transitive deps. All four verified PRESENT at the head above. So the branch
+# was re-pushed after the figures were written, and the doc silently understated
+# it by 9 — quote the head sha with any count here, and re-measure.
+#
+# 🛑 VERIFYING THIS COSTS ~1.7 GiB OF GIT OBJECTS PER RUN, and that is enough to
+# brick a session. The round-trip check streams the parts (no tarball on disk),
+# but the FETCH is the cost, not the stream: two verification fetches into the
+# repo's own .git took it to 9.0G and the container to 402M free / 99%, where
+# the Bash harness cannot write its output capture and every command fails.
+# Fetch into a THROWAWAY repo so `rm -rf` reclaims it with no gc:
+#   T=/tmp/cachecheck; rm -rf $T; git init -q $T
+#   git -C $T remote add origin https://github.com/litlfred/qou
+#   git -C $T fetch --depth=1 -q origin lake-cache/qou-v4-24-0
+#   C=$(git -C $T rev-parse FETCH_HEAD)
+#   git -C $T ls-tree --name-only $C | grep '^lake-oleans\.tgz\.part' | sort \
+#     | while read -r p; do git -C $T show "$C:$p"; done | tar tzf - > /tmp/listing.txt
+#   rm -rf $T          # <- reclaims fully; a fetch into .git does NOT
+# raw.githubusercontent.com is NOT an alternative: the repo is private, so an
+# unauthenticated raw fetch 404s (measured, not assumed).
+#
+# The prior figures — the 2026-08-31 seed, 6170 of 6172 oleans, 27 parts — are
+# superseded; note that seed was NOT measured before being replaced, so no
+# before/after comparison exists (see lean-environment-setup.md §PRESERVE THE BUILD).
 # Measured by stream-listing the parts; the seeders have refused a sub-90% seed since
 # 2026-08-07. So the unconditional `touch` the recipe used to do now asserts
 # something false in the BLOCKING direction, which is why the line above runs

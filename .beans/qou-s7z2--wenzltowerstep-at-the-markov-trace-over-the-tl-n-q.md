@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-08-26T18:55:10Z
+updated_at: 2026-09-06T09:25:33Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -130,3 +130,60 @@ stand in for the general value.
 MERGE NOTE: #5852 and #5853 both anchor guard-registry entries at the same line
 and will conflict in scripts/lean-axiom-guard.py. Both sides are pure additions;
 keep both.
+
+
+## Still open — but one named prerequisite landed after this bean was written (checked 2026-09-06)
+
+Reached by `scripts/bean-staleness-triage.py`. **Genuinely open, and correctly
+so**: there is **no instance of `WenzlTowerStep` anywhere in the tree**. The
+only mention outside its own declaration is a *negative* result —
+`QBeta/TraceNondegeneracyInsufficient.lean:43`, *"So an instance of
+`WenzlTowerStep` at a general trace cannot be obtained from …"* — which is
+consistent with this bean's predecessor `qou-vndn` being refuted, not with the
+work having quietly happened.
+
+### What changed under it
+
+`71413d0c0f` (2026-08-30, bean `qou-twwf`) landed
+`QOU/Hecke/HeckeTower.lean`, +73 lines:
+
+```lean
+noncomputable def freeIncl : …                     -- on the free algebra
+theorem freeIncl_rel  (h : HeckeRel K q n x y) : … -- Hecke relations preserved
+noncomputable def incl : …                         -- H_n(q) →ₐ H_{n+1}(q)
+```
+
+**Why that is upstream of this bean rather than beside it.** `WenzlTowerStep`
+takes the inclusion as a *class parameter*, not a field:
+
+```lean
+class WenzlTowerStep (R) [Field R] (q : R) (rank : ℕ)
+    (Hn Hn1) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
+    (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
+    (ι : Hn →ₐ[R] Hn1) (trn1 : Hn1 → R) : Prop where
+  semisimple_ascend : …
+```
+
+so any instantiation has to *supply* a concrete `ι`. `qou-twwf`'s `incl` is
+exactly such a map at the H-level, and it is **constructed** — built through
+the free algebra with `freeIncl_rel` proving the Hecke relations descend —
+rather than assumed. This belongs in this bean's own **"Already available, do
+not re-derive"** section, which is there precisely because of the `qou-kzjl`
+lesson.
+
+### What is NOT thereby done
+
+This bean's two stated obstacles are unchanged in substance:
+
+1. **The braided presentation must be restated for the quotient.**
+   `HeckeBraidedPresentationOfRank` is a class parameter on `Hn1`; the
+   generators descend to `TL_n(δ)`, but that needs proving and saying.
+2. **The inclusion must be shown to descend**, `TL_n → TL_{n+1}`, *compatibly
+   with the radical*. `qou-twwf` gives the H-level map; the descent through
+   `MarkovGramDegenerate.pairing_descends` / `mem_radical_of_pairing_zero`
+   (both already proved, both cited by this bean) is the actual work.
+
+So the honest position is: **prerequisite (2) has its H-level half constructed
+and its descent still open**, and (1) is untouched. Left in-progress at
+unchanged status — this is real Lean work, not a triage item, and nothing here
+shortens it beyond removing one construction from its critical path.

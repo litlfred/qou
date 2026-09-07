@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:54:24Z
-updated_at: 2026-09-06T07:31:43Z
+updated_at: 2026-09-06T10:03:05Z
 ---
 
 MEASURED 2026-08-21 (found while draining the library registration backlog, bean qou-kqbk).
@@ -347,3 +347,69 @@ I ran the validator with the paper **positionally** first (wrong), then with
 `--paper` on the strength of the wrapper's docstring (also wrong, because the
 docstring is stale). Both fail identically. Read `requirePaper`'s signature
 before trusting any documented invocation of it.
+
+
+## 2026-09-06 (later) — 9 → 8 keys, 48 → 16 sites, by retiring a fabricated DOI
+
+`litlfred2025` was **not** a missing bibliography entry. Its 32 sites, in
+`tools/hecke-engine/`, all read
+
+    -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+
+`10.xxxx` is a literal placeholder. The citation is a **self-citation to this
+manuscript**, which AGENTS.md §1 already provides `[manuscript]` for, so
+registering `litlfred2025` would have meant writing a fabricated identifier
+into `references.ts` in order to make a gate go green.
+
+Fixed at the producer as well as the output — the string is `println!`-ed by
+the Rust generators, so editing only the `.lean` files would have regrown on
+the next run:
+
+| | sites |
+|---|---|
+| `src/bin/v6.rs`, `src/bin/v8.rs` — live generators | 2 |
+| `src/archive/v3,v4,v7.rs` — dead (no `[[bin]]` path points there) | 7 |
+| `witness-*.lean` — emitted output, 22 files | 23 |
+
+Measured with `scripts/check-citation-keys.py` before and after:
+**9 → 8 distinct keys, 48 → 16 sites.** Commit `153acfeb5a`.
+
+### The remaining 8, and what each actually needs
+
+    4  lean-ref   kassel1995quantum
+    4  md+ts      milnor1950
+    2  ts-cites   faddeev1996
+    2  lean-ref   humphreys1990
+    1  ts-cites   bokut1978
+    1  lean-ref   hatcher2002
+    1  lean-ref   matsumoto1964
+    1  lean-ref   ohtsuki2016-52
+
+**Two carry an identifier the author wrote beside the citation** — the route
+that worked in the 2026-08-23 tranche:
+
+* `ohtsuki2016-52` → `doi:10.4171/QT/83`. Prefix `10.4171` is EMS Press and
+  `/QT/` is *Quantum Topology*, so journal and publisher **decode** from the
+  string; the citing prose names Ohtsuki–Takata Prop. 4.9 / Assumption 4.8.
+  One lookup closes it. Not written from memory here.
+* `matsumoto1964` → `DOI 10.1090/S0002-9904-1964-11211-9`. The AMS legacy
+  scheme is `10.1090/S<ISSN>-<year>-<id>`, and `0002-9904` is the **Bulletin
+  of the AMS**. So the author-written DOI decodes to *Bull. AMS, 1964* —
+  which is **not** where the paper usually cited as "Matsumoto 1964" for the
+  word/exchange property appeared (*C. R. Acad. Sci. Paris* 258). Either it is
+  a different Matsumoto item or the DOI at the site is wrong. Flagging rather
+  than guessing: one lookup separates the two, and picking either from here
+  would assert something unchecked.
+
+`hatcher2002` (§4.D, Gysin sequence), `humphreys1990` (§7.1/§7.4),
+`kassel1995quantum` (§X, §XIV) are standard books cited by section, so each is
+one entry away — but typing the ISBN/edition from memory is what these rules
+exist to prevent. `bokut1978`, `faddeev1996`, `milnor1950` remain ambiguous
+against multiple works by the same author, as recorded above.
+
+**Egress re-probed this session and is still closed** — `api.crossref.org`,
+`export.arxiv.org`, `api.semanticscholar.org` all return `000` (no
+connection). `scripts/enrich-dangling-citations.py` still cannot run.
+
+**The `requirePaper()` blocker recorded above is unchanged**; it is a one-line
+fix in `folio-assistant` and outside this repo's scope.

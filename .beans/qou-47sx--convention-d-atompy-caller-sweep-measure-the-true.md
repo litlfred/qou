@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T12:34:42Z
-updated_at: 2026-08-16T13:48:34Z
+updated_at: 2026-09-06T16:11:20Z
 ---
 
 ## The caller count: "31" is refuted — the true live figure is 20 modules, 15 of them producers
@@ -186,3 +186,73 @@ on a pre-existing producer crash (brane-tower-isospin-diagnosis, 3 witness
 copies), 3 exceed 900 s, 1 parked by owner decision (mass-table-comprehensive,
 qou-53p1), and 2 measured convention-invariant and deliberately not regenerated
 (li2q-fbor-expansion-probe, r5-full-canonical-knot-solver).
+
+
+## 2026-09-06 — the "pre-existing producer crash" is the LEAST of that producer's problems
+
+Re-measured while descending `scripts/bean-staleness-triage.py` (13th of 291
+artifact beans). The final tally above lists `brane-tower-isospin-diagnosis`
+(3 witness copies) as *"blocked on a pre-existing producer crash"*. It still
+crashes, and the crash is real — but **fixing it would be the wrong move**, so
+recording the verdict rather than the patch.
+
+### The crash, and it is a genuine defect not a guard
+
+    computations/brane_tower_isospin_diagnosis.py:180
+    phi_vals = [float(Phi_q(v)) for v in vols]
+    TypeError: unhashable type: 'dict'
+
+`atom_per_generator_volumes` returns dicts; `Phi_q` is memoised. The file
+**already contains the fix** — `abs_mpf(v)` at line 168 does
+`x = v["full"] if isinstance(v, dict) else v`, and the line immediately above
+the crash uses it. One of two sibling call sites was updated and the other was
+not. `TypeError` is a builtin, not a corpus-defined domain exception, so by
+AGENTS.md's own discriminator this is a crash and not a refusal.
+
+### But the producer sits on a function documented as WRONG for exactly its inputs
+
+`pyhecke.atom.atom_per_generator_volumes` opens with
+
+> ⚠️ KNOWN BUG (audit 2026-05-25, PR #1238): This function uses HARDCODED H_3
+> Wedderburn weights regardless of atom size A. For A > 1 (deuteron, ⁴He, ⁶Li,
+> …), the braid lives in H_{3A}(q), not H_3(q), and the H_3 weights are
+> systematically wrong. The CANONICAL replacement is
+> `computations/mass_at_3A_proper.per_generator_V_hat_3A(Z, N)`.
+
+`main()` diagnoses **proton, neutron, deuteron, tritium, helium-3, helium-4** —
+**five of six at A ≥ 2**, i.e. precisely the regime the banner excludes. Its
+whole headline (the T-vs-³He isospin asymmetry, converted to MeV through a
+hardcoded `E_0 = 7.947423e-04`) is computed from those weights.
+
+### And its kernel is float64 with an mpf twin sitting beside it
+
+`mass_endomorphism.Phi_q` computes in `float` (`product = 1.0`, `1e-300`
+underflow guard, `1e-15` break). `Phi_q_mp` is defined **in the same file** at
+line 280, carrying `mpf`, with the f64 thresholds re-expressed as mp-scaled
+ones. So the non-crashing path violates §PROBES-ARE-NOT-EXEMPT item 1 while the
+correct routine is one import away.
+
+### Verdict: do NOT resurrect it
+
+Repairing line 180 would take a producer that (a) uses weights its own upstream
+documents as systematically wrong for five of its six subjects and (b) computes
+in float64 where an mpf twin exists, and make it emit a witness again. That is
+strictly worse than leaving it crashed — a crash is visible; a green witness
+carrying known-wrong weights is not.
+
+The committed `brane-tower-isospin-diagnosis.witness.json` is dated
+**2026-05-03**, `auditOnly: true`, `allPassed: null` — so the numbers on disk
+predate the dict change and carry the H_3 weights. Nothing downstream should
+read them.
+
+**Two honest dispositions, neither of them "fix the TypeError":**
+
+1. **Port it** — `per_generator_V_hat_3A(Z, N)` for the volumes, `Phi_q_mp` for
+   the kernel — and re-derive. That is a real piece of work and changes every
+   number it prints.
+2. **Retire it**, with the witness marked superseded.
+
+The wider H_3-vs-H_3A question already has a carrier in **`qou-2tuv`** (*"the
+proper sum is infeasible past A=12"*), so this is not a new front; **27 live
+non-deprecated modules** still reach `atom_per_generator_volumes`, and this one
+is simply the instance this bean's tally happened to name.

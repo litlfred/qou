@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-08-09T00:16:16Z
+updated_at: 2026-09-06T23:20:46Z
 ---
 
 
@@ -422,3 +422,190 @@ Item 3 (rewire `global_wedderburn_sum_q_hecke_seminormal` onto
 `_build_seminormal_matrices_mpf`) is the next-largest precision win and its
 Round 1 edit notes are still accurate — but VERIFY THE LINE NUMBERS FIRST.
 Round 1's item-4 references had drifted by a whole function in two weeks.
+
+
+## 2026-09-06 — re-measured: the widened detector LANDED, and it is the largest live tier
+
+Found by `scripts/bean-staleness-triage.py` (21st of 291 artifact beans), and
+reached from the other end the same day: `qou-b7cf`'s LAUNDERED drain ran into
+exactly the boundary this bean names.
+
+### The good half — the detector is no longer a working copy
+
+This bean's widened scan lived in `/tmp/f64scan.py`, which would have been lost.
+It **did land** in the canonical audit, as the `F64_CAST` tier —
+`computations/f64_into_mpmath_audit.py:635` still carries the attribution
+comment *"the tier the LAUNDERED-only reading missed (qou-840k)"* — along with
+`NUMPY_ON_Q`, `F64_ENGINE_ENTRY`, `F64_DISPLAY` and `F64_IMPORT`. So the
+measurement is reproducible by anyone, which was this bean's real deliverable.
+
+### The count, and it has barely moved
+
+| | bean (2026-08-09) | measured 2026-09-06 |
+|---|---|---|
+| files | 129 | **105** |
+| `float()`-casts in a value position | 222 | **188** |
+
+`F64_CAST` is **the largest defect tier in the audit** — LAUNDERED is now 0
+(`qou-b7cf`, four sites fixed today) while this one stands at 188. The
+circumstantial tiers underneath it are larger still: `NUMPY_ON_Q` 283 ops
+corpus-wide, `F64_ENGINE_ENTRY` 70 sites, `F64_IMPORT` 138 files — all marked
+*review, do not bulk-edit*.
+
+### 🛑 A caution bought today, and it is this bean's own failure mode one level up
+
+`--tier` **filters the rows before the report is built** (`main()`:844-846), so
+`--tier LAUNDERED` prints `F64_CAST — none.` on a tree carrying 188 of them. I
+read that as a corpus fact and wrote "F64_CAST 195 → none" into a commit
+message and a bean before catching it; the correction is on `qou-b7cf`.
+
+That is the same shape this bean was opened about — *"`LAUNDERED — none` … and
+that reading was used as assurance"* — except that there the detector was too
+narrow, and here the detector is right and the **invocation** narrowed it.
+Either way a `— none.` line was read as an all-clear. **Run the audit
+unfiltered when quoting any tier's count**; use `--tier` only to list sites
+within a tier you have already sized.
+
+### Not attempted here
+
+Draining 188 sites is a tranche, not an idle pass, and the tiers below it are
+explicitly not bulk-editable. `qou-b7cf`'s scope note applies verbatim: fixing
+the `mpf(str(f64))` entry point does not de-float a probe body, and the two
+probes fixed today still carry `HF, DPN = float(_H), float(D_PN)` — they are 2
+of the 105.
+
+
+## 2026-09-06 — the 188 are now ENUMERABLE; the tier listing was capped at 40
+
+Found while trying to scope this bean's drain: I asked for the 188 `F64_CAST`
+sites and got 40, under a message reading *"… and more; re-run with `--tier`
+for the full list"* — while already running `--tier`.
+
+`_print_sites` carried an unconditional `cap = 40`, and `--tier` is passed to
+`_iter_rows(a.tier)`, which filters the **rows** and never the cap. So the
+escape hatch the message advertised did nothing. Two sibling listings (lines
+910, 998 — `numpy`, `imports`) had the same `[:40]` shape; those at least named
+the hidden count, the `F64_CAST` one did not.
+
+Fixed all three: `_cap = 10 ** 6 if a.tier else 40`, set once from the flag.
+
+    overview (no --tier)   40, and now names what is hidden ("… and 148 more")
+    --tier F64_CAST        188 == headline
+    --tier F64_IMPORT      138 == headline
+    --tier NUMPY_ON_Q       21 == headline
+
+**Display only** — `--self-test` 36/36, exit contract unchanged (1 on
+LAUNDERED 0 + F64_CAST 188). Commit on PR #6930.
+
+**Why it matters for this bean specifically:** the drain cannot be scoped from
+a 40-site sample. The full list is now obtainable in one command, which is the
+precondition for anyone — owner or agent — deciding how to stage 188 sites
+across 105 files.
+
+    python3 computations/f64_into_mpmath_audit.py --tier F64_CAST
+
+
+## 2026-09-06 — the 188 CHARACTERISED, so the drain can be staged rather than swept
+
+Measurement only; nothing edited. Now that `--tier F64_CAST` lists all 188 (the
+cap fix above), the tranche has a shape.
+
+### 74 % of it is ONE constant, so there is one repair pattern, not 188
+
+    139   q_parameter.Q            <- the same origin as every LAUNDERED site
+     20   q_parameter.HA
+     13   pyhecke.gram.z
+      6   qou_substrate.constants.Q
+      4   q_parameter.Q_INV
+      3   qou_substrate.constants.HA
+      3   pyhecke.gram.q0
+    ---
+    188
+
+`q_parameter.Q` is exactly what `qou-b7cf` repaired today with
+`q_at(mp.mp.dps)` — the established, already-reviewed pattern. So 139 of 188
+have a known fix, and the remaining 49 split over six origins, of which `HA`
+(23) and `pyhecke.gram.z`/`q0` (16) are the only groups above single digits.
+
+### The risk axis: does fixing a file MOVE a published number?
+
+Of the 105 files:
+
+    61   own a committed witness   -> the fix moves published numbers; each
+                                      needs a producer re-run and a before/after
+    41   own no witness            -> probe / consumer / library; the fix is
+                                      local and verifiable in place
+     3   qou-mass/src/…            -> 🛑 GENERATED mirror. NEVER hand-edit.
+                                      Fix at the computations/ source, then
+                                      scripts/sync-qou-mass-vendor.py --apply
+
+### Concentration worth knowing before staging
+
+`computations/h2o_angle_gb_truncation_inverse.py` alone carries **25 sites** —
+**13 % of the whole tranche in one file.** Three more carry 4 each. So a
+first batch of ~5 files reaches roughly a quarter of the sites.
+
+### A suggested staging, offered for scoping — NOT started
+
+1. **The 41 witness-free files.** Local, verifiable in place, no published
+   number moves. This is the safe majority of the *files* even though not of
+   the sites.
+2. **`h2o_angle_gb_truncation_inverse.py`** on its own — 25 sites, one
+   before/after.
+3. **The 61 witness-owning files**, in producer-cost order, each with the
+   before/after `qou-b7cf` used. This is the expensive part and the one that
+   wants owner sign-off, because it re-publishes numbers.
+4. **The 3 generated mirrors last**, via the sync script, never by hand.
+
+**Not begun.** Under the AGENTS.md precision rules a fix here is *fix at the
+producer and re-run*, and 61 producer re-runs is a tranche with real compute
+cost — it is a scoping decision, not an idle pass. The list, the counts and the
+staging are the deliverable of this pass.
+
+Reproduce any of it with:
+
+    python3 computations/f64_into_mpmath_audit.py --tier F64_CAST
+
+
+## 🛑 2026-09-06 (correction to my own staging, made BEFORE acting on it)
+
+The plan above says stage 1 is *"the 41 witness-free files — local, verifiable
+in place, no published number moves."* **That is wrong, and it is wrong in the
+exact way AGENTS.md's import-cone note warns about**: a file can own no witness
+and still be *imported by* producers that do, so a float cast fixed there
+propagates into their numbers. `binding_canonical` is the corpus's own worked
+case — source-stable while `tr_M_atom` moved 48 % because a module it *calls*
+changed.
+
+Measured before touching anything. Of the 41:
+
+    12  imported by another computations/ or tools/ module
+    29  imported by nobody -> genuinely cannot move a published number
+
+And the 12 are not marginal. Three are high-fan-in library modules:
+
+    hecke_core_legacy.py       imported by 17
+    per_irrep_pole_atom.py     imported by 14
+    schur_weyl_mpmath.py       imported by 12
+    canonical_tr_m_via_branching.py, term5_v2_chirality.py   3 each
+    canonical_brane_tower.py, probe_4_li6_rectangular_python.py, …
+
+A cast fixed in `hecke_core_legacy` reaches seventeen consumers, several of
+which publish witnesses. Those belong **with** the witness-owning group, behind
+the same sign-off, not ahead of it.
+
+### Corrected staging
+
+1. **29 isolated files / 46 sites** — witness-free *and* imported by nobody.
+   This is the real no-risk batch. Smaller than it looked: 46 of 188 sites
+   (25 %), not the 41 files I implied.
+2. `h2o_angle_gb_truncation_inverse.py` — 25 sites, one before/after.
+3. **61 witness-owners + the 12 imported ones = 73 files** — each moves
+   published numbers, directly or through its consumers. Producer re-run and
+   before/after each. This is the part that wants owner sign-off.
+4. The 3 generated `qou-mass` mirrors, via `sync-qou-mass-vendor.py`, never by
+   hand.
+
+**Still not begun.** Recording the correction is the point: the difference
+between the two versions is 12 files that would have been edited as "no risk"
+while feeding up to seventeen consumers each.

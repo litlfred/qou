@@ -79,7 +79,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from _precision import COMPUTE_DPS  # noqa: E402
-from q_parameter import Q  # noqa: E402  (proton pin — the standing default)
+from q_parameter import q_at  # noqa: E402  (proton pin — the standing default)
 
 
 def main() -> int:
@@ -100,9 +100,9 @@ def main() -> int:
     ell_share = sp.simplify(hbar_q)                   # p5-counterexample: ell_q
     ell_dim = ell_P                                   # derived above
 
-    q0 = mp.mpf(str(Q))
+    q0 = q_at(mp.mp.dps)
     def at0(e):
-        return mp.mpf(str(sp.N(e.subs(q, sp.Float(str(Q), 40)), 40)))
+        return mp.mpf(str(sp.N(e.subs(q, sp.Float(str(q_at(40)), 40)), 40)))
 
     v_total, v_share, v_dim = at0(ell_total), at0(ell_share), at0(ell_dim)
     ratio = v_dim / v_share

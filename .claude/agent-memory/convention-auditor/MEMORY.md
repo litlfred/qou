@@ -79,6 +79,57 @@ the body. `markovZC` now has no case twin.
 the third thing.** Only the body is evidence — the `Λ`/`Cl₂` failure below,
 one level deeper, because here the prose agreed with the wrong name.
 
+## TRAP — the C surface that GROWS is the `qou-cds1` arc; the drain is adjudication, not migration
+
+Measured 2026-09-06 (`qou-htsi`): the value audit went 0 → 26 BLOCKING in a
+week with no producer regressing. All 26 were sibling research probes — 14 the
+convention-C `c_k` ladder investigated *in its own frame*, 12 two-arm C-vs-D
+comparisons — and **0 of 26** was a live Markov-trace computation a `z_D`
+substitution would validly migrate. Swapping `z` in any of them makes the probe
+report a fact about a premise it no longer has. The honest drain is a ledger
+entry each (`comparison` / `deliberate-c-frame`), never a rename (that is
+AGENTS.md §1a audit-dodging) and never a z-swap. Expect the count to climb
+again as `qou-cds1` lands; read each site, do not sweep.
+
+**The `--propose-ledger` stubs cover under half.** 11 of 26 were not proposed,
+for four reasons: the D arm is a *call* (`hs.z_markov`), the D arm is spelled
+via a helper (`q**2/sym_int(2)`), the two arms are separate `def` scopes, or
+there is no D arm because the file IS the C ladder. A drain that took only the
+stubs would have stopped at 15 and read as finished. Compute the key yourself
+with the audit's `_site_hash` (whitespace-normalised source line).
+
+## TRAP — detector rows 37-38: a Lean FALSE positive, and two value-audit invisibles
+
+- **Lean `RE_C_SQRTVAR` matched `coneRow5Numerator q / (q ^ 2 + 1) ^ 2`** —
+  the applied argument `q` taken as the numerator, `^ 2` on the denominator
+  ignored. A convention-D rational function reported as C-actionable. The
+  mirror of every spelling row: shape-matching errs in *both* directions, and
+  the false-positive direction costs an agent a "fix" of something right.
+  Guarded (`_sqrtvar_hit`); selftest still finds the 18 recorded C sites.
+- **`z_old = 1.0/(q0**0.5 + qi0**0.5)`** (`nucleon-lp-convention-probe.py:87`)
+  is `z_C` exactly and the value audit lists it **nowhere** — `**0.5` is not the
+  `sqrt` call its resolver keys on and `qi0` is an imported inverse. The shape
+  audit sees it but files it "probes / exploratory" because it is named
+  `z_old`. Neither detector describes a labelled 3-convention comparison.
+- **`Q0`** was not in the value audit's `_Q_VARS`, so `1/(Q0 + 1/Q0)` (= `1/[2]_q`,
+  NOT C) sat UNRESOLVED — the bucket invisible in both directions. Added; the
+  principled fix (resolve every variable at its binding) is still not done.
+- Diffing the shape audit's `--list` against the value audit's `--all` on one
+  tree is the cheap way to find the next one: a site in exactly one of them is
+  a blind spot in the other.
+
+## STABLE — verdict survey method (2026-09-06)
+
+A verdict-word grep of `docs/audits` + `.beans` returns 366 files ("closed"
+matches "closed form"). Go **from the C surface outward** instead: for each
+file with a confirmed C binding, find the docs/beans naming its stem, count
+strong verdicts, check for C-scoping words — 43 strong pairs, read at the
+citing line. Result: outside the `c_k` ladder arc the corpus's refutations bind
+both conventions or rest on D; inside it they are C-conditional and the
+individual docs do not say so (AGENTS.md's `c_k` banner and `qou-cds1` carry the
+scoping). List and classes in
+`docs/audits/2026-09-06-convention-c-excision-and-c-conditional-gates.md` §4.
+
 ## STABLE — the counter-move: test the ANSWER, not the source
 
 When the result is exact and symbolic, the algebraic form of the result keys
@@ -169,9 +220,9 @@ every re-measurement, in both directions.
 
 | what | command | last seen | when |
 |---|---|---|---|
-| `.py` C by shape | `python3 scripts/convention-c-producer-audit.py` | 9 actionable (7 registry-blocked on `qou-cds1`) | 2026-08-29 |
-| `.py` C by value | `python3 scripts/convention-c-value-audit.py` | 85 in `computations/`, 21 invisible to the shape audit; `tools/` 0, `content/` 0 | 2026-08-29 |
-| `.lean` C defs | `python3 scripts/lean-markov-convention-audit.py` | 14 defs, 0 actionable / 14 deliberate | 2026-08-29 (post-`qou-961o`) |
+| `.py` C by shape | `python3 scripts/convention-c-producer-audit.py` (`--list` for sites; 2.5 min) | 13 actionable (6 `qou-cds1` registry rows, 6 named comparisons, 1 `qbeta_ck_cache`) + 113 deliberate | 2026-09-06 |
+| `.py` C by value | `python3 scripts/convention-c-value-audit.py --all` (23 s) | 137 confirmed / 137 ledger-adjudicated / **0 BLOCKING** / 0 UNRESOLVED; 509 D. Was 26 BLOCKING on the same HEAD before `qou-htsi` | 2026-09-06 |
+| `.lean` C defs | `python3 scripts/lean-markov-convention-audit.py` (7 s) | 23 defs, 0 actionable / 23 deliberate; 50 D. Was 24 / 3 actionable before the row-37 guard + two docstrings | 2026-09-06 |
 | `markovZ*` family | that script **and** `grep -rn 'def markovZ'` — they disagree, see below | bare `markovZ` **10, all D**; `markovZD` 3; `cosKernel` 1; `markovZc` **gone**. `markovZC`: audit says **2**, grep says **3** | 2026-08-29 (post-#6015) |
 
 `markovZC` 2-vs-3 is live and unexplained: grep finds three (all genuinely C),
@@ -204,32 +255,14 @@ under 200 lines — prune the log or split a section out, never the TRAPs.
   deliberate-named). Safely-actionable C = ≤1, and that 1 is the forbidden
   z-swap on the cds1-blocked `qbeta_ck_cache.py`. Fixed one Λ-Cl₂ mislabel
   (`local-substrate-q.qa.json:1498`, `3Cl_2`→`2*Cl_2`). Never quote "BLOCKING".
-- 2026-09-01 — bean `t7qv`: split `functional-and-bond-topology.md` out. Four
-  live convention hazards, all measured. **(1)** Markov vs q-Plancherel is
-  settled three ways — Plancherel is not a Markov trace, does not annihilate the
-  q-antisymmetriser (so its Gram is nonsingular, a different cone), and fails
-  multiplicativity on disjoint blocks 36/36 at `H_6`. The silver coincidence is
-  a true all-`n` theorem about Plancherel; under Markov it moves to the
-  supergolden `q^3 = q^2+1`. **Never transport a metallic result across that
-  line.** **(2)** `atom_gen_chains` (C(A,2) bonds) and `atom_braid_word_3A`
-  (A-1, chain) DISAGREE for every `A >= 3` and this was undocumented; the arity
-  law needs the chain, the binding evidence favours all-pairs, and the choice
-  moves numbers 16 % vs 4 % under mere relabelling. **(3)** the colour
-  convention splits deliberately between scales — `pn` colour-weighted (`D_PN`,
-  owner ruling R3), quark `ud` colour-blind and explicitly UNSETTLED in the
-  source. **(4)** force channels are assigned by GENERATOR (`3k+2` strong,
-  `3k+1` EM, `3k` intra) and the rate follows the generator, not `beta`: the
-  same `sigma^-1` gives `+0.907` strong and `-0.600` EM, opposite signs. Scope
-  trap: AME binding is NUCLEAR, so compare the strong channel ALONE.
-  **The chain/all-pairs choice has a measured cost, not just a convention.** The
-  chain attachment functional is exactly rank one (spread `<1e-12`); all-pairs is
-  not (`0.196..0.696`), and the gap is the model's entire many-body content —
-  produced by the band generator routing a non-adjacent bond *through* the
-  intervening nucleon. That term is **negative** at all eight `A=3` orderings
-  (`-9%` to `-15%`), so a naive all-pairs sum **overestimates** binding; and it
-  privileges the middle nucleon (`pnp` vs `ppn` `4.17%`, `npn` vs `nnp` `5.05%`
-  on identical bond multisets) while reversal is exact — a labelling artifact,
-  since a nucleus has no middle. Before spending more on bond topology, know the
-  ceiling: `B(4He)/B(2H) <= 6.0643` against AME `12.7196`, short `2.0975x` with
-  `alpha` cancelling, and every many-body term measured has the sign that makes
-  it worse.
+- 2026-09-06 — `qou-htsi`: value 137 C / 26 → 0 BLOCKING by adjudication (0 of 26
+  migratable — 12 comparisons, 14 `qou-cds1` C-frame ladder incl. the producer
+  `qbeta_precision_ladder_n5`); Lean 24/3 → 23/0 (row-37 false positive +
+  docstring-scoped `markov_parameter` ×2, NOT lean-verified — no oleans here);
+  shape 13 actionable unchanged (no renames). Survey: C-dependence of closed
+  gates is concentrated in the `c_k` arc. Taxonomy rows 37-38.
+- 2026-09-01 — bean `t7qv`: split `functional-and-bond-topology.md` out — read
+  it before touching Markov-vs-Plancherel (never transport a metallic result
+  across that line), the chain/all-pairs bond builders (they disagree for every
+  `A >= 3`, and the gap is the model's whole many-body content), the pn/ud
+  colour split, or generator-assigned force channels. Every number is there.
