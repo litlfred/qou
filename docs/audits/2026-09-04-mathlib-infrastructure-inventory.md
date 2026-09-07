@@ -655,7 +655,28 @@ and six S-polynomial checks on the tensor product.
 
 **Not a Mathlib gap and not upstreamable** — it is this corpus's own
 construction, and the missing pieces are local: a name for the divided-power
-comultiplication and a multiplication on `AlgElement G k`. Recorded because a
+comultiplication and a multiplication on `AlgElement G k`.
+
+**The multiplication half is VERIFIED absent (2026-09-07), not asserted.**
+`AlgElement` is declared twice — `UGB/GrobnerShirshov/Elem.lean:92` and its
+content-block mirror at `unital-groebner-bases-chapter/monomial-basis.lean:41`
+— and *neither* carries a `Mul`, `Ring` or `Semiring` instance; the only
+`AlgElement.mul` in the corpus is an **`axiom`** at
+`quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean:121`,
+in a different paper and over a differently-shaped `AlgElement`. That is why
+`strong_multiplicativity_on_generators` took `[Ring (AlgElement G k)]` as a
+*hypothesis* rather than finding an instance.
+
+The check was run because §"Why the second half of this audit is load-bearing"
+applies to claims made *in* this document too, and the addendum above was
+written from the shape of the difficulty. This one survives measurement.
+
+The two `AlgElement` declarations are **not** a defect, and that was checked
+rather than assumed: they are structurally identical, live in different
+namespaces (bare vs `QOU.GrobnerShirshov`), and the content-block copy's
+docstring cross-references the library one. A self-contained content-block
+sibling is the sanctioned pattern; the §0a shadowing hazard needs the *same*
+qualified name, which these do not share. Recorded because a
 theorem *over* a given `FilteredBialgebra` can never establish it (taking the
 structure as a hypothesis assumes the property), which is why the tautological
 `strong_multiplicativity_on_generators` was deleted rather than restated
