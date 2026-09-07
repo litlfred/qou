@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T16:15:00Z
+updated_at: 2026-09-07T12:00:52Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -452,3 +452,55 @@ asserts the *refutation*; the mechanism is **open**, and no replacement guess is
 offered for six rows.
 
 Probe `o3prime_selection_is_atom_independent` 4/4.
+
+
+## RE-MEASURED 2026-09-07 against `main` (PR #7073) — 4 of 6 are gone, and re-measuring found a NEW one
+
+Do not act on the six findings above without re-checking them; most have moved.
+
+| # | claim above | status on `main` today |
+|---|---|---|
+| 1 | O(dim·nnz) sparse path unreachable (`if s['sparse'] and not exact_chain`) | **FIXED** — the guard is now `elif s['sparse']:`, and the in-code note records value-equality against the pre-fix result at `k_exact` 4–8 |
+| 2 | zero Rust in the hot file | **FIXED** — 7 references, including a live `pyhecke_native.lp_accumulator_step_traces_mpfr` kernel that computes a partition's whole trajectory |
+| 3 | `dense_dense_mul_mpfr` exists and is not exported | **still literally true, but SUPERSEDED** — it is still not a `#[pyfunction]`; a whole-trajectory kernel was exported instead, so a matmul export is moot for this path |
+| 4 | half the matmuls are float64; the inter-nucleon `-h` straddle | **STILL LIVE → fixed in #7073** (below) |
+| 5 | the `dim >= 8` numpy branch is a pessimization | **NOT re-measured** — `_matmul_dim` still branches at `dim >= 8` (line ~1310) |
+| 6 | the q-Gaussian tier is dead (`k_exact` defaults to `k_max`) | **NOT re-measured** — the default is still `k_exact=K_PARTITION_MAX` |
+
+**The headline is superseded.** "Cannot scale / deuterium ~40 days" was measured before the kernel landed. `qou-i7ju` records deuterium at **942 s** with the kernel live, against 22607 s on the fallback — and the fallback is 17.3 % off, because it uses braid-relation-violating matrices.
+
+### Finding 4, localized and fixed
+
+Six lines: the inter-nucleon crossings in `_step_chain_22` and `_step_chain_generic` used Python floats (`1.0`, `0.0`, `-h`, `_pn_d(h)`) while the intra-nucleon tables `_PROTON_G1` / `_NEUTRON_G1` carried exact `mpf`. Coefficient dtype histogram over every (nucleon, prev_types, n_gens) combination, n=480:
+
+    before  ('int','int') 220  ('int','mpf') 220  ('float','float') 40
+    after   ('int','int') 230  ('int','mpf') 250  ('float','float')  0
+
+### NEW: the exact coefficients were truncated BELOW float64 entering Rust
+
+`_lp_kernel_steps` serialized coefficients with a bare `str()`. `str(mpf)` renders at the AMBIENT `mp.dps`, which is **15** in a bare import of this module. So the exact 50-dps coefficients crossed at 14–15 significant digits — less than float64 — while the docstring one line above said "nothing narrows to f64". Measured by spying on the live call:
+
+    mp.dps at the call : 15      prec requested : 50      q50 digits : 50
+    d='-0.209060298795639'   (15 sig digits)
+    exact -0.2090602987956393154308462131296749438598
+
+**It is not cosmetic, and one truncation order does not tell you that.** Three-way run, each arm in its own process — A pre-fix, B boundary fix only, C both:
+
+                  A                     B                     C
+    k_exact=4   -0.08955968305895065  -0.08955968305895065  -0.08955968305895068
+    k_exact=5   -0.7335499391634722   -0.7335499391634975   -0.7335499391634976
+
+                A->B (boundary)   B->C (coefficients)
+    k_exact=4        0                 3.35e-16
+    k_exact=5      3.45e-14            1.36e-16
+
+The boundary truncation is worth **3.45e-14 relative at k_exact=5** — ~150x the float64 floor and above the 1 ppQ L1 target — and **zero at k_exact=4**. It grows with the partition set. I first reported it as cosmetic on the k=4 arm alone; that was wrong and is corrected in the second commit of #7073.
+
+### Also corrected: a stale convention claim in the `_pn_d` import note
+
+It read "`-h/2` is `strict_averaged`" as though that were R3's outcome. R3 made `bring_color_weighted` canonical; `strict_averaged` is the colour-blind one the next sentence warns about. Live `PN_CONVENTION` is `bring_color_weighted`, and they are 6.9e-4 apart at this q0 (`-0.10445824776972631` vs `-0.10453014939781966`) — 12 orders above the 1 ppQ target. Do not "simplify" `_pn_d(h)` to `-h/2`.
+
+### What stays open (why this bean is NOT completed)
+
+- Findings **5** and **6** are unmeasured.
+- The real ceiling on this producer is **downstream of everything above**: `unified_iterative_correction` narrows to float64 inside its own accumulation loop (`math.log(abs(tr_run))` returns a Python float whatever it is handed) and returns a Python `float`. Documented in-file, tracked separately, untouched by #7073.
