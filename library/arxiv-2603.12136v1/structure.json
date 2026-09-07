@@ -1,0 +1,444 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2603.12136v1",
+ "source": {
+  "file": "2603.12136v1.pdf",
+  "sha256": "e9c50616344b24e0605976affa8f5d4bb6b9baad038df3216f4ef412ae4f8884",
+  "bytes": 1282526,
+  "pages": 70,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2603.12136",
+   "version": "1",
+   "primary_class": "math.OC",
+   "stamp_date": "12 Mar 2026"
+  },
+  "doi": null,
+  "title": "Folding Mixed-Integer Linear Programs and Reflection Symmetries",
+  "authors_raw": "Rolf van der Hulst",
+  "title_lines": [
+   "Folding Mixed-Integer Linear Programs and",
+   "Reflection Symmetries"
+  ],
+  "abstract": "For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the performance of branch- and-bound and linear optimization algorithms. A common strategy to handle symmetriesin linearprogramsisto reducethedimensionof thelinearprogramby aggregating symmetric variables and solving a linear program of reduced dimen- sion. In their workDimension Reduction via Color Refinement(DRCR), Grohe, Kersting, Mladenov and Selman show that it is sufficient to run a fast color refinement algorithm to detect permutation symmetries and reduce the dimen- sion of the linear program. We extend DRCR in two directions. First, we show that DRCR can be extended to reflection symmetries, which generalize permuta- tion symmetries. Second, we show the folklore result that DRCR can be applied to the continuous columns of mixed-integer linear programs. In order to derive additional reductions on the integer variables we useaffine totally unimodular decompositionsto reformulate mixed-integer linear programs into mixed-integer linear programs with fewer integer variables. Computational experiments on MIPLIB 2017 collection set using SCIP 10 show that DRCR is an effective tool for handling symmetries. For the linear programming relaxations, DRCR with reflection symmetries yields a modest reduction in running time compared to the original DRCR procedure. For mixed-integer linear programming models, DRCR is very effective at reducing the solution time compared to the default configura- tion of SCIP. Moreover, the developed DRCR detection algorithms are fast and scale well to large problem instances.",
+  "docinfo": {
+   "Author": "Rolf van der Hulst",
+   "Creator": "arXiv GenPDF (tex2pdf:8e18bb9)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Folding Mixed-Integer Linear Programs and Reflection Symmetries"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Contribution",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Outline",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Dimension Reduction via Color Refinement",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Equitable partitions and fractional automorphisms",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Dimension Reduction of a Linear Program",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Extending DRCR to reflection symmetries",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Centering the linear program",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Split reformulations of linear programs",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Equitable partitions of split reformulations",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Reducing the split reformulation",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Choosing the affine offset",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Comparison with reflection symmetries",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Detecting reflection reductions",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Choosing gamma, lambda and delta",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Dimension Reduction for Mixed-Integer Linear Programs",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Affine TU decompositions for mixed-integer linear programs",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Example: Generalized Assignment problem",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Detecting DRCR for mixed-integer linear programs",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Computational Results",
+   "page": 55,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Folding reflection symmetries for Linear Programs",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Folding symmetries in Mixed-Integer Linear Programming",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 60,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Experimental results",
+   "page": 69,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 10093,
+   "n_words": 1528
+  },
+  {
+   "id": "sec-001-contribution",
+   "number": null,
+   "title": "Contribution",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3437,
+   "n_words": 526
+  },
+  {
+   "id": "sec-002-outline",
+   "number": null,
+   "title": "Outline",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 442,
+   "n_words": 67
+  },
+  {
+   "id": "sec-003-dimension-reduction-via-color-refinement",
+   "number": null,
+   "title": "Dimension Reduction via Color Refinement",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 859,
+   "n_words": 119
+  },
+  {
+   "id": "sec-004-equitable-partitions-and-fractional-automorphism",
+   "number": null,
+   "title": "Equitable partitions and fractional automorphisms",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3479,
+   "n_words": 570
+  },
+  {
+   "id": "sec-005-dimension-reduction-of-a-linear-program",
+   "number": null,
+   "title": "Dimension Reduction of a Linear Program",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 7584,
+   "n_words": 1212
+  },
+  {
+   "id": "sec-006-extending-drcr-to-reflection-symmetries",
+   "number": null,
+   "title": "Extending DRCR to reflection symmetries",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 7033,
+   "n_words": 1216
+  },
+  {
+   "id": "sec-007-centering-the-linear-program",
+   "number": null,
+   "title": "Centering the linear program",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1654,
+   "n_words": 252
+  },
+  {
+   "id": "sec-008-split-reformulations-of-linear-programs",
+   "number": null,
+   "title": "Split reformulations of linear programs",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3844,
+   "n_words": 563
+  },
+  {
+   "id": "sec-009-equitable-partitions-of-split-reformulations",
+   "number": null,
+   "title": "Equitable partitions of split reformulations",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 22,
+   "n_chars": 19044,
+   "n_words": 3240
+  },
+  {
+   "id": "sec-010-reducing-the-split-reformulation",
+   "number": null,
+   "title": "Reducing the split reformulation",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 28,
+   "n_chars": 14046,
+   "n_words": 2218
+  },
+  {
+   "id": "sec-011-choosing-the-affine-offset",
+   "number": null,
+   "title": "Choosing the affine offset",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 32,
+   "n_chars": 11063,
+   "n_words": 1871
+  },
+  {
+   "id": "sec-012-comparison-with-reflection-symmetries",
+   "number": null,
+   "title": "Comparison with reflection symmetries",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 4653,
+   "n_words": 687
+  },
+  {
+   "id": "sec-013-detecting-reflection-reductions",
+   "number": null,
+   "title": "Detecting reflection reductions",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 7945,
+   "n_words": 1278
+  },
+  {
+   "id": "sec-014-dimension-reduction-for-mixed-integer-linear-pro",
+   "number": null,
+   "title": "Dimension Reduction for Mixed-Integer Linear Programs",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 44,
+   "n_chars": 18837,
+   "n_words": 2963
+  },
+  {
+   "id": "sec-015-affine-tu-decompositions-for-mixed-integer-linea",
+   "number": null,
+   "title": "Affine TU decompositions for mixed-integer linear programs",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 3763,
+   "n_words": 741
+  },
+  {
+   "id": "sec-016-example-generalized-assignment-problem",
+   "number": null,
+   "title": "Example: Generalized Assignment problem",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 6054,
+   "n_words": 981
+  },
+  {
+   "id": "sec-017-detecting-drcr-for-mixed-integer-linear-programs",
+   "number": null,
+   "title": "Detecting DRCR for mixed-integer linear programs",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 55,
+   "n_chars": 18215,
+   "n_words": 3031
+  },
+  {
+   "id": "sec-018-computational-results",
+   "number": null,
+   "title": "Computational Results",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 1538,
+   "n_words": 225
+  },
+  {
+   "id": "sec-019-folding-reflection-symmetries-for-linear-program",
+   "number": null,
+   "title": "Folding reflection symmetries for Linear Programs",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 3230,
+   "n_words": 525
+  },
+  {
+   "id": "sec-020-folding-symmetries-in-mixed-integer-linear-progr",
+   "number": null,
+   "title": "Folding symmetries in Mixed-Integer Linear Programming",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 60,
+   "n_chars": 8017,
+   "n_words": 1307
+  },
+  {
+   "id": "sec-021-discussion",
+   "number": null,
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 69,
+   "n_chars": 22837,
+   "n_words": 3085
+  },
+  {
+   "id": "sec-022-experimental-results",
+   "number": null,
+   "title": "Experimental results",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 70,
+   "n_chars": 5720,
+   "n_words": 944
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 24,
+  "sections": 23,
+  "chars_total": 183387
+ }
+}

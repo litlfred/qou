@@ -1,0 +1,76 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0806.2317v1",
+ "source_sha256": "c54e80d460413a5e",
+ "brief": "Bounds for codes and designs in complex subspaces Aidan Roy ∗ — We introduce the concepts of complex Grassmannian codes and designs.",
+ "extended": "**Bounds for codes and designs in complex subspaces Aidan Roy ∗**\n\n*Institute for Quantum Information Science, University of C algary*\n\n33 pp, 11 sections.\n\n**Abstract.** We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a ﬁnite subset of Gm,n in which few distances occur, while a design is a ﬁnite subset of Gm,n that polynomially approximates the entire set. Using Delsa rte’s linear programming techniques, we ﬁnd upper bounds for the size of a code and lower bounds for the size of a design, and we show that association s chemes can occur when the bounds are tight. These results are motivated by the bounds for real subspaces recently found by Bachoc, Coulangeon and Nebe, an d the bounds generalize those of Delsarte, Goethals and Seidel for codes and designs on the complex unit sphere.\n\n**Outline.** Introduction; Orbitals; Representations; Symmetric spaces; Zonal polynomials; Bounds; Other bounds; Examples; Designs; Association schemes; Acknowledgements",
+ "tokens": {
+  "brief": 33,
+  "extended": 264
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-orbitals",
+   "title": "Orbitals",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-representations",
+   "title": "Representations",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-003-symmetric-spaces",
+   "title": "Symmetric spaces",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-004-zonal-polynomials",
+   "title": "Zonal polynomials",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-005-bounds",
+   "title": "Bounds",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-006-other-bounds",
+   "title": "Other bounds",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-007-examples",
+   "title": "Examples",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-008-designs",
+   "title": "Designs",
+   "pages": "23-27"
+  },
+  {
+   "id": "sec-009-association-schemes",
+   "title": "Association schemes",
+   "pages": "27-32"
+  },
+  {
+   "id": "sec-010-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "32-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
