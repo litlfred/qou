@@ -25,5 +25,5 @@ export default theorem({
     validation: "leanok",
   },
   uses: ["thm:flat-tetrahedron-zero-volume"],
-  cites: ["thurston1978", "neumann-zagier1985"],
+  cites: ["thurston1978", "neumann-zagier1985", "martelli2016"],
 });
