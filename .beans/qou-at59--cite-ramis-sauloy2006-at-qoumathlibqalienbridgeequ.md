@@ -1,13 +1,14 @@
 ---
 # qou-at59
 title: Cite [ramis-sauloy2006] at QOU/Mathlib/QAlienBridgeEquation.lean — Thm 3.5/3.6 are the source of the q-alien derivations the file models
-status: todo
+status: in-progress
 type: task
+priority: normal
 tags:
     - paper-relevance-triage
     - qdiff-stokes
 created_at: 2026-09-07T08:35:51Z
-updated_at: 2026-09-07T08:35:51Z
+updated_at: 2026-09-07T09:05:38Z
 parent: qou-2akx
 ---
 
