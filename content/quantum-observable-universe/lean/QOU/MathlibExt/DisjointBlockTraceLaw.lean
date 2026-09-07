@@ -668,8 +668,39 @@ theorem disjointBlock_of_towerSpan [TowerSpan T]
   obtain ⟨h, hq⟩ := hquad n
   exact tr_mul_shiftedUpTo T n a ha (tr_mul_shiftedUpTo_base T n h hq a ha) M hnM b hbM
 
-/-- **Anti-vacuity: `TowerSpan` is inhabited**, so nothing above is vacuously
-true. The one-dimensional tower over `R` satisfies it. -/
+/-- **Any tower whose filtration does not GROW satisfies `TowerSpan` for free.**
+
+This is stated to make the weakness of the anti-vacuity witness below *precise
+and machine-checked*, rather than leaving it as prose. If `shiftedUpTo n (M+1) ≤
+shiftedUpTo n M` then the step condition is discharged by `le_sup_left` alone,
+using nothing about sandwiches, nothing about `g (M+1)`, and nothing about the
+tower.
+
+So the entire content of `TowerSpan` lies in towers whose filtration genuinely
+grows — and a witness that does not grow is evidence of satisfiability only, not
+of the hypothesis being reasonable. -/
+theorem towerSpan_of_constant
+    (h : ∀ n M : ℕ, shiftedUpTo T n (M + 1) ≤ shiftedUpTo T n M) : TowerSpan T where
+  step := by
+    intro n M
+    exact le_trans (Subalgebra.toSubmodule.monotone (h n M)) le_sup_left
+
+/-- **Anti-vacuity: `TowerSpan` is inhabited**, so no theorem above is vacuously
+true.
+
+🛑 **But read this as a DEGENERATE witness, and it is the weakest kind.** In
+`unitMarkovTrace` the algebra *is* `R`, so every submodule containing `1` is
+already `⊤` and the step condition holds for a reason that has nothing to do with
+tower structure. Worse, its filtration is constant, so `towerSpan_of_constant`
+above already covers it: the witness exercises **none** of what `TowerSpan`
+asserts.
+
+**No witness with a growing filtration is supplied here**, and building one
+essentially means constructing a Hecke or group-algebra tower — which Mathlib
+does not have (see `OcneanuTrace`'s measured note: one hit for "Hecke", a
+bibliography title). Until such a witness exists, `TowerSpan` should be read as a
+*well-posed statement of the classical structure theorem*, not as a hypothesis
+demonstrated to be satisfiable in any interesting case. Bean `qou-301d`. -/
 instance towerSpan_unit {R₀ : Type*} [CommRing R₀] (u : R₀ˣ) :
     TowerSpan (OcneanuTrace.unitMarkovTrace u) where
   step := by
