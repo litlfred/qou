@@ -171,4 +171,116 @@ noncomputable def tl2Basis (hδ : ∀ x : R, x * δ = 0 → x = 0) :
 
 end TL2
 
+/-! ## `n = 3`: the same method, one relation more
+
+`TL₃(δ)` is where the adjacency relation `e_i e_j e_i = e_i` first has anything
+to say — at `n = 2` there is no adjacent pair. The spanning set grows from `2` to
+`5`, and closure is 25 products rather than 4, each still a one-line consequence
+of `e_sq`, `e_adjacent`. The two reduction lemmas above are reused unchanged,
+which is the point of stating them generically.
+-/
+
+section TL3
+
+open QOU.MathlibExt.TemperleyLieb (adjFin)
+
+variable (δ : R)
+
+/-- `TL₃(δ)`: two generators, and they are adjacent. -/
+abbrev TL3 := TemperleyLiebAlgebra R δ (adjFin (n := 2))
+
+noncomputable abbrev a3 : TL3 (R := R) δ := e R δ (adjFin (n := 2)) 0
+noncomputable abbrev b3 : TL3 (R := R) δ := e R δ (adjFin (n := 2)) 1
+
+theorem adj01 : adjFin (0 : Fin 2) 1 := by decide
+theorem adj10 : adjFin (1 : Fin 2) 0 := by decide
+
+theorem aba : a3 (R := R) δ * b3 δ * a3 δ = a3 δ := e_adjacent adj01
+theorem bab : b3 (R := R) δ * a3 δ * b3 δ = b3 δ := e_adjacent adj10
+theorem asq : a3 (R := R) δ * a3 δ = algebraMap R (TL3 (R := R) δ) δ * a3 δ := e_sq 0
+theorem bsq : b3 (R := R) δ * b3 δ = algebraMap R (TL3 (R := R) δ) δ * b3 δ := e_sq 1
+
+-- the two generators exhaust Fin 2
+theorem gens (i : Fin 2) : e R δ (adjFin (n := 2)) i = a3 (R := R) δ ∨
+    e R δ (adjFin (n := 2)) i = b3 (R := R) δ := by
+  fin_cases i
+  · exact Or.inl rfl
+  · exact Or.inr rfl
+
+/-- **`TL₃(δ) = span_R {1, e₀, e₁, e₀e₁, e₁e₀}`** — so `dim TL₃(δ) ≤ 5 = catalan 3`.
+
+🛑 **This is the upper bound only; freeness is NOT claimed at `n = 3`.** Unlike
+`n = 2`, this corpus has no matching lower bound: `TemperleyLiebAlgebra`'s
+`tl3Fam` representation lands in `2 × 2` matrices, a `4`-dimensional target, so
+it *cannot* witness linear independence of five elements however it is chosen.
+Establishing `dim TL₃ = 5` needs a faithful representation of dimension at least
+five, which is not here.
+
+The 25 products, for the reader checking the case list is complete: with
+`A = e₀`, `B = e₁`, the interesting ones are `A(BA) = A`, `B(AB) = B`,
+`(AB)(AB) = AB`, `(BA)(BA) = BA` (adjacency), `(AB)(BA) = δ·A`,
+`(BA)(AB) = δ·B` (loop then adjacency), and the rest are a loop relation or an
+identity. -/
+theorem tl3_span_eq_top :
+    Submodule.span R
+        ({1, a3 (R := R) δ, b3 δ, a3 δ * b3 δ, b3 δ * a3 δ} : Set (TL3 (R := R) δ)) = ⊤ := by
+  have hAA : a3 (R := R) δ * a3 δ = δ • a3 δ := by rw [asq, ← Algebra.smul_def]
+  have hBB : b3 (R := R) δ * b3 δ = δ • b3 δ := by rw [bsq, ← Algebra.smul_def]
+  have hABA := aba (R := R) δ
+  have hBAB := bab (R := R) δ
+  refine eq_top_of_one_mem_of_gen_mem_of_mul_mem _
+    (Submodule.subset_span (by simp)) ?_ ?_
+  · intro i
+    fin_cases i
+    · exact Submodule.subset_span (by simp)
+    · exact Submodule.subset_span (by simp)
+  refine mul_mem_span_of_pairs ?_
+  have m1 : (1 : TL3 (R := R) δ) ∈ Submodule.span R ({1, a3 (R := R) δ, b3 δ, a3 δ * b3 δ, b3 δ * a3 δ} : Set (TL3 (R := R) δ)) :=
+    Submodule.subset_span (by simp)
+  have mA : a3 (R := R) δ ∈ Submodule.span R ({1, a3 (R := R) δ, b3 δ, a3 δ * b3 δ, b3 δ * a3 δ} : Set (TL3 (R := R) δ)) :=
+    Submodule.subset_span (by simp)
+  have mB : b3 (R := R) δ ∈ Submodule.span R ({1, a3 (R := R) δ, b3 δ, a3 δ * b3 δ, b3 δ * a3 δ} : Set (TL3 (R := R) δ)) :=
+    Submodule.subset_span (by simp)
+  have mAB : a3 (R := R) δ * b3 δ ∈ Submodule.span R ({1, a3 (R := R) δ, b3 δ, a3 δ * b3 δ, b3 δ * a3 δ} : Set (TL3 (R := R) δ)) :=
+    Submodule.subset_span (by simp)
+  have mBA : b3 (R := R) δ * a3 δ ∈ Submodule.span R ({1, a3 (R := R) δ, b3 δ, a3 δ * b3 δ, b3 δ * a3 δ} : Set (TL3 (R := R) δ)) :=
+    Submodule.subset_span (by simp)
+  rintro x (rfl | rfl | rfl | rfl | rfl) y (rfl | rfl | rfl | rfl | rfl)
+  -- 1 * _
+  · first | exact m1 | simpa using m1
+  · first | exact mA | simpa using mA
+  · first | exact mB | simpa using mB
+  · first | exact mAB | simpa using mAB
+  · first | exact mBA | simpa using mBA
+  -- A * _
+  · first | exact mA | simpa using mA
+  · rw [hAA]; exact Submodule.smul_mem _ _ mA
+  · exact mAB
+  · rw [← mul_assoc, hAA, smul_mul_assoc]; exact Submodule.smul_mem _ _ mAB
+  · rw [← mul_assoc, hABA]; exact mA
+  -- B * _
+  · first | exact mB | simpa using mB
+  · exact mBA
+  · rw [hBB]; exact Submodule.smul_mem _ _ mB
+  · rw [← mul_assoc, hBAB]; exact mB
+  · rw [← mul_assoc, hBB, smul_mul_assoc]; exact Submodule.smul_mem _ _ mBA
+  -- AB * _
+  · first | exact mAB | simpa using mAB
+  · rw [hABA]; exact mA
+  · rw [mul_assoc, hBB, mul_smul_comm]; exact Submodule.smul_mem _ _ mAB
+  · rw [← mul_assoc, hABA]; exact mAB
+  · rw [← mul_assoc, mul_assoc (a3 δ) (b3 δ) (b3 δ), hBB, mul_smul_comm,
+      smul_mul_assoc, hABA]
+    exact Submodule.smul_mem _ _ mA
+  -- BA * _
+  · first | exact mBA | simpa using mBA
+  · rw [mul_assoc, hAA, mul_smul_comm]; exact Submodule.smul_mem _ _ mBA
+  · rw [hBAB]; exact mB
+  · rw [← mul_assoc, mul_assoc (b3 δ) (a3 δ) (a3 δ), hAA, mul_smul_comm,
+      smul_mul_assoc, hBAB]
+    exact Submodule.smul_mem _ _ mB
+  · rw [← mul_assoc, hBAB]; exact mBA
+
+end TL3
+
 end QOU.MathlibExt.TemperleyLiebSpanning
