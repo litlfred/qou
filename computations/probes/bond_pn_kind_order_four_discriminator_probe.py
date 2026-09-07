@@ -64,11 +64,30 @@ the inheritance stops.
 - **This does not make the bond factor fitted.** `d_averaged_weighted` is the corpus's own
   `letter_d_series`, and `δ = (q−1)²(1−q⁻⁴)/3` is written there; nothing here is tuned to `31/24`.
   What changed is that a *previously untested* branch of that function is now tested, and passed.
-- **`A ≤ 3` for the product**, and order 4 only for the bond factors themselves. The held-out
-  product test below is one `A = 3` word.
+- **`A ≤ 3` for the product**, and orders 4 **and 5** for the bond factors themselves. The held-out
+  product test below is one `A = 3` word, at order 4. Still open: `A ≥ 6`, `A = 4`/`A = 5` at
+  `K = 3`, order 6+.
 - **No Lean.** The order-3 Lean (`tr_mul_gen_comb`) states `c • g + c' • ginv`; `averaged_weighted`
   is *not* of that form at order 4 — the `δ` term is not a constant combination of the two
   generators — so the merged theorem does not cover this and is not claimed to.
+
+## Order 5, and the one thing it is evidence *for*
+
+Section 6 repeats all three identities one order further, and all three hold — so the kind
+determination stands at **two orders** (`d_averaged` is ruled out again at `ε⁵`, `−1/2` against the
+measured `−5/2`).
+
+The reason that section exists is `pp` specifically. `pp`'s interface letter has `d = 0`, so
+`pp = z` **is** the statement `tr(a·σ) = tr(a)·z` — the premise of `TwoSidedMarkov`, the class every
+theorem in `DisjointBlockTraceLaw` is conditional on and which **has no instance**. It now holds
+over six coefficients, including `ε⁵` where `z`'s own coefficient is `0`: a zero predicted and a
+zero measured, not a vacuous match.
+
+🛑 **That is evidence, not a proof, and it discharges nothing.** A conditional theorem whose premise
+has passed six numerical checks is still a conditional theorem, and the corpus's rule that
+conditional-proved is not premise-established applies to numerical support exactly as it does to
+Lean. The classical route to the premise remains the conditional expectation `E_n : H(n+1) → H n`
+and its tower compatibility — bean `qou-301d`, unchanged by anything here.
 
 Exact `Fraction` arithmetic throughout; no `q₀` evaluated, no float, no witness, nothing wired.
 
@@ -98,6 +117,15 @@ _D = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_D)
 
 K = 4
+
+# Order 5, measured separately (241-244 s per bond, 730 s total) and recorded. Checked in section 6
+# against the same three identities; `--verify-live-k5` re-measures.
+K5 = 5
+MEASURED_K5 = {
+    "pp": [F(1, 2), F(1), F(1, 4), F(-1, 4), F(1, 8), F(0)],
+    "pn": [F(1, 2), F(0), F(3, 4), F(-3, 4), F(31, 24), F(-5, 2)],
+    "nn": [F(1, 2), F(-1), F(5, 4), F(-5, 4), F(9, 8), F(-1)],
+}
 
 # Held-out: 3He at K = 4. 1470 s free + 1785 s atom, so recorded; --verify-live re-measures.
 TARGET_3HE: dict[str, list[F]] = {
@@ -129,6 +157,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--verify-live", action="store_true",
                     help="re-measure the held-out 3He word at K=4 (~33 min)")
+    ap.add_argument("--verify-live-k5", action="store_true",
+                    help="re-measure the order-5 bond factors (~12 min)")
     args = ap.parse_args()
 
     t0 = time.time()
@@ -236,12 +266,66 @@ def main() -> int:
         print("       picks `averaged_weighted` again. So the kind is settled on TWO different")
         print("       objects: the A=2 extraction (check 1) and this A=3 product — not once.")
 
-    ok = ok1 and ok2 and ok4 and ok5
-    print(f"\n  SCOPE. Order 4 for the bond factors (A=2) and one held-out A=3 word. The pn kind is")
-    print("  now SETTLED as `averaged_weighted`; the plain-average reading of the mixed bond is an")
-    print("  order-≤3 fact and is refuted at order 4. No q₀, no float, no witness, no Lean — and the")
-    print("  merged `tr_mul_gen_comb` does NOT cover this: `averaged_weighted` is not a constant")
-    print("  combination of the two generators once δ enters.")
+    # ---- 6. order 5 — and what `pp = z` is evidence FOR ----------------------------------
+    print(f"\n  6. ORDER 5 — the same three identities, one order further")
+    if args.verify_live_k5:
+        nuc5, m5 = {}, {}
+        for nm, (Z, N) in (("p", (1, 0)), ("n", (0, 1))):
+            nuc5[nm] = list(_D.trace_expansion(Z, N, False, K5)[0])
+        for b, (Z, N, x, y) in (("pp", (2, 0, "p", "p")), ("pn", (1, 1, "p", "n")),
+                                ("nn", (0, 2, "n", "n"))):
+            t = time.time()
+            num = list(_D.trace_expansion(Z, N, True, K5)[0])
+            den = [sum(nuc5[x][i] * nuc5[y][k - i] for i in range(k + 1)) for k in range(K5 + 1)]
+            out = [F(0)] * (K5 + 1)
+            for k in range(K5 + 1):
+                out[k] = (num[k] - sum(out[i] * den[k - i] for i in range(k))) / den[0]
+            m5[b] = out
+            print(f"     (measured {b} live, {time.time()-t:.0f}s)", flush=True)
+    else:
+        m5 = MEASURED_K5
+    q5 = [F(1), F(1)] + [F(0)] * (K5 - 1)
+    q52 = [sum(q5[i] * q5[k - i] for i in range(k + 1)) for k in range(K5 + 1)]
+    q53 = [sum(q52[i] * q5[k - i] for i in range(k + 1)) for k in range(K5 + 1)]
+    den5 = [q52[0] + 1] + q52[1:]
+    z5 = [F(0)] * (K5 + 1)
+    for k in range(K5 + 1):
+        z5[k] = (q53[k] - sum(z5[i] * den5[k - i] for i in range(k))) / den5[0]
+    h5 = _D.series_h(K5)
+    zp5 = [z5[i] - h5[i] for i in range(K5 + 1)]
+    dw5 = _D.letter_d_series("averaged_weighted", K5)
+    da5 = _D.letter_d_series("averaged", K5)
+    pw5 = [z5[i] + dw5[i] for i in range(K5 + 1)]
+    pa5 = [z5[i] + da5[i] for i in range(K5 + 1)]
+    ok6 = (z5 == m5["pp"]) and (zp5 == m5["nn"]) and (pw5 == m5["pn"]) and (pa5 != m5["pn"])
+    print(f"     pp = z                        {'HOLDS' if z5 == m5['pp'] else 'BREAKS'}   "
+          f"{[str(x) for x in z5]}")
+    print(f"     nn = z' = z − h               {'HOLDS' if zp5 == m5['nn'] else 'BREAKS'}   "
+          f"{[str(x) for x in zp5]}")
+    print(f"     pn = z + d_averaged_weighted  {'HOLDS' if pw5 == m5['pn'] else 'BREAKS'}   "
+          f"{[str(x) for x in pw5]}")
+    print(f"     pn = z + d_averaged           "
+          f"{'ruled out again' if pa5 != m5['pn'] else 'ALSO matches — no longer discriminating'}"
+          f"   (ε⁵: {str(pa5[K5])} vs measured {str(m5['pn'][K5])})")
+    print(f"     ⇒ {'all three hold at order 5; the kind determination is confirmed at TWO orders.' if ok6 else 'FAIL at order 5 — that is the finding; report it rather than re-scoping.'}")
+    print("\n     WHAT `pp = z` IS EVIDENCE FOR, and it is the reason this section exists.")
+    print("     `pp`'s letter has d = 0, so `pp = z` IS the statement `tr(a·σ) = tr(a)·z` — the")
+    print("     premise of `TwoSidedMarkov`, the class every theorem in `DisjointBlockTraceLaw`")
+    print("     is conditional on and which has NO INSTANCE. It now holds over six coefficients,")
+    print("     including ε⁵ where z's own coefficient is 0 — a zero predicted and a zero")
+    print("     measured, not a vacuous match.")
+    print("     🛑 This is EVIDENCE, not a proof, and it discharges nothing. The classical route")
+    print("     to the premise remains the conditional expectation E_n (bean qou-301d).")
+
+    ok = ok1 and ok2 and ok4 and ok5 and ok6
+    print(f"\n  SCOPE. Orders 4 AND 5 for the bond factors (A=2), and one held-out A=3 word at")
+    print("  order 4. The pn kind is SETTLED as `averaged_weighted` — determined at two orders and")
+    print("  on two different objects; the plain-average reading of the mixed bond is an order-≤3")
+    print("  fact, refuted at both 4 and 5. `pp = z` over six coefficients is EVIDENCE for the")
+    print("  `TwoSidedMarkov` premise and discharges nothing. Still open: A ≥ 6, A=4/A=5 at K=3,")
+    print("  order 6+. No q₀, no float, no witness, no Lean — the merged `tr_mul_gen_comb` does NOT")
+    print("  cover this: `averaged_weighted` is not a constant combination of the two generators")
+    print("  once δ enters.")
     print(f"\n  ({time.time()-t0:.0f}s)")
     return 0 if ok else 1
 
