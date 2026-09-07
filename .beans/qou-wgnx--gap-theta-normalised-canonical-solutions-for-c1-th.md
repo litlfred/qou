@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T08:45:09Z
-updated_at: 2026-09-07T06:22:35Z
+updated_at: 2026-09-07T06:45:22Z
 ---
 
 ---
@@ -1228,3 +1228,30 @@ Work continues from `main` on `claude/alien-calculus-surreal-integration-2t823z`
 closure audit names as the successor — NOT the retired RSZ slope-½ chain, and NOT
 the local-isoformal object that `2026-08-08-c1-infinity-has-no-stokes-multiplier.md`
 proves has dimension 0.
+
+
+
+## 🛑 TARGET DISSOLVED — recorded 2026-09-07, status left for the owner
+
+I took this bean up today under the owner's "take up idle as relevant" ruling, on the
+strength of the RSZ closure audit naming it the successor. **Its target does not exist**,
+and this bean already says so: line 16, *"multipliers are TRIVIAL — the target dissolved
+rather than being computed"*, and item 1 struck through as *"CLOSED — trivial, by four
+independent routes."*
+
+Machine-checked: `RSZIsoformalInterface.lean:148` `c1_infinity_isoformalDim_eq_zero`,
+strengthened by `isoformalDim_eq_zero_of_pure` — *"what kills the Stokes data is
+`k = 1` alone."*
+
+**This bean's own line 74 notes that its STATUS field is wrong.** That is the third
+status-field-vs-content mismatch found today (`qou-odh5`, `qou-wgnx`, and the
+`QBorelKernelLevel` scope note). I read the audit's recommendation and the status
+field, and did not read this bean's own body until after claiming it.
+
+**Status deliberately NOT changed** — same treatment as `qou-odh5`. Dissolving a target
+is not the same as finishing the work, and which of scrap / re-title / fold is right is
+the owner's call. What is certain is that it is not "in-progress" on the object named
+in its title.
+
+The genuinely open residue is `qou-vkg5` item 2: **exhibit an analytic q-difference
+module satisfying the q-bridge relation, and compute its weights.** Tracked in `qou-frzo`.
