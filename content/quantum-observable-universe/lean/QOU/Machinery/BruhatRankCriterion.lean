@@ -522,6 +522,59 @@ theorem rk_mul_swap_le_of_asc (u w : Perm (Fin (n + 1))) (j : Fin n)
   · rw [rk_mul_swap_of_ne _ _ _ _ (by omega)]
     exact h i m
 
+/-! ### The base case of the hard direction
+
+Rank domination by the identity pins every entry: `rk 1 i m = min i m` is the largest a rank
+matrix can be (`rk_le_min`), so `rk 1 <= rk u` forces equality throughout, and differencing at
+consecutive cuts recovers `u x = x`. -/
+
+theorem rk_le_min (u : Perm (Fin n)) (i m : ℕ) : rk u i m ≤ min i m := by
+  rw [rk_eq_card]
+  refine le_min ?_ ?_
+  · refine le_trans (Finset.card_le_card_of_injOn (fun x : Fin n => (x : ℕ))
+      (fun x hx => ?_) (fun x _ y _ hxy => Fin.ext hxy)) (Finset.card_range i).le
+    obtain ⟨-, h1, -⟩ := Finset.mem_filter.mp hx
+    exact Finset.mem_range.mpr h1
+  · refine le_trans (Finset.card_le_card_of_injOn (fun x : Fin n => ((u x : Fin n) : ℕ))
+      (fun x hx => ?_) (fun x _ y _ hxy => ?_)) (Finset.card_range m).le
+    · obtain ⟨-, -, h2⟩ := Finset.mem_filter.mp hx
+      exact Finset.mem_range.mpr h2
+    · exact u.injective (Fin.ext hxy)
+
+theorem rk_one (i m : ℕ) (hi : i ≤ n) :
+    rk (1 : Perm (Fin n)) i m = min i m := by
+  rw [rk_eq_card]
+  have e : (Finset.univ.filter fun x : Fin n =>
+            (x : ℕ) < i ∧ (((1 : Perm (Fin n)) x : Fin n) : ℕ) < m)
+       = (Finset.univ.filter fun x : Fin n => 0 ≤ (x : ℕ) ∧ (x : ℕ) < min i m) := by
+    ext x
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and, Equiv.Perm.coe_one, id_eq,
+      Nat.zero_le, lt_min_iff]
+  rw [e, card_filter_val_Ico n 0 (min i m) (le_trans (min_le_left _ _) hi), Nat.sub_zero]
+
+theorem eq_one_of_rk_one_le {u : Perm (Fin n)}
+    (h : ∀ i m, rk (1 : Perm (Fin n)) i m ≤ rk u i m) : u = 1 := by
+  have hall : ∀ i m, i ≤ n → rk u i m = min i m := fun i m hi =>
+    le_antisymm (rk_le_min u i m) (by have := h i m; rwa [rk_one i m hi] at this)
+  refine Equiv.ext fun x => ?_
+  have key : ∀ m, (((u x : Fin n) : ℕ) < m ↔ (x : ℕ) < m) := by
+    intro m
+    have e1 : rk u ((x : ℕ) + 1) m
+        = rk u (x : ℕ) m + (if ((u x : Fin n) : ℕ) < m then 1 else 0) := by
+      have hs := rk_succ u (x : ℕ) m x.isLt
+      simpa using hs
+    rw [hall _ m x.isLt.le, hall _ m (Nat.succ_le_of_lt x.isLt)] at e1
+    by_cases hc : ((u x : Fin n) : ℕ) < m
+    · simp only [hc, if_true] at e1; omega
+    · simp only [hc, if_false, add_zero] at e1
+      constructor
+      · intro hlt; exact absurd hlt hc
+      · intro hlt; omega
+  have h1 : ((u x : Fin n) : ℕ) < (x : ℕ) + 1 := (key ((x : ℕ) + 1)).mpr (Nat.lt_succ_self _)
+  have h2 : ¬ (((u x : Fin n) : ℕ) < (x : ℕ)) := fun hc => absurd ((key (x : ℕ)).mp hc) (lt_irrefl _)
+  show u x = x
+  exact Fin.ext (by omega)
+
 /-! ### The hard direction — stated, not proved
 
 `rk_le_of_bruhatLe` above is the EASY half of Ehresmann's criterion.  Its converse — the rank
