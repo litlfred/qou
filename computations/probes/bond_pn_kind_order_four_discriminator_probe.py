@@ -77,17 +77,32 @@ Section 6 repeats all three identities one order further, and all three hold —
 determination stands at **two orders** (`d_averaged` is ruled out again at `ε⁵`, `−1/2` against the
 measured `−5/2`).
 
-The reason that section exists is `pp` specifically. `pp`'s interface letter has `d = 0`, so
-`pp = z` **is** the statement `tr(a·σ) = tr(a)·z` — the premise of `TwoSidedMarkov`, the class every
-theorem in `DisjointBlockTraceLaw` is conditional on and which **has no instance**. It now holds
-over six coefficients, including `ε⁵` where `z`'s own coefficient is `0`: a zero predicted and a
-zero measured, not a vacuous match.
+The reason that section exists is `pp` specifically: its interface letter has `d = 0`, so `pp = z`
+is the cleanest possible test of the interface's stabilisation. It holds over six coefficients,
+including `ε⁵` where `z`'s own coefficient is `0` — a zero predicted and a zero measured, not a
+vacuous match.
 
-🛑 **That is evidence, not a proof, and it discharges nothing.** A conditional theorem whose premise
-has passed six numerical checks is still a conditional theorem, and the corpus's rule that
-conditional-proved is not premise-established applies to numerical support exactly as it does to
-Lean. The classical route to the premise remains the conditional expectation `E_n : H(n+1) → H n`
-and its tower compatibility — bean `qou-301d`, unchanged by anything here.
+🛑 **CORRECTED 2026-09-07 — my first reading of what this supports was a category error.** This
+section originally said `pp = z` was *"evidence for the `TwoSidedMarkov` premise, the class every
+theorem in `DisjointBlockTraceLaw` is conditional on and which has no instance"*. Both halves are
+wrong:
+
+- `TwoSidedMarkov` is **derivable** from `MarkovTrace` in four lines — cyclicity, T3, and the fact
+  that `H n` is a `Subalgebra` — and now carries a global instance (PR #7067). It has an instance
+  for every `MarkovTrace` and needs no support.
+- Worse, `tr(a·σ) = tr(a)·z` for `a ∈ H n` **is T3 itself**, an *axiom* of `MarkovTrace`. Offering
+  numerical evidence for an axiom of the structure one is reasoning in is not a weak result; it is
+  a category error.
+
+**What the measurement does support**, stated correctly: that the *concrete* Hecke Markov trace —
+the one the `[◇]` expansion evaluates — satisfies the Markov stabilisation axiom at the atom word's
+interface positions, with `z = z_D = q³/(q²+1)`. That is a fact about the concrete trace matching
+the abstract axioms. It is classical (Jones/Ocneanu) though unformalised in this corpus, and it is
+strictly weaker and different from the claim it replaces.
+
+The numbers are unaffected — only what they were said to be evidence *for* was wrong. The real gap
+on `qou-301d` is unchanged and is now known to sit entirely in `DisjointBlockMultiplicative` itself,
+not in any axiom: see #7067.
 
 Exact `Fraction` arithmetic throughout; no `q₀` evaluated, no float, no witness, nothing wired.
 
@@ -308,14 +323,20 @@ def main() -> int:
           f"{'ruled out again' if pa5 != m5['pn'] else 'ALSO matches — no longer discriminating'}"
           f"   (ε⁵: {str(pa5[K5])} vs measured {str(m5['pn'][K5])})")
     print(f"     ⇒ {'all three hold at order 5; the kind determination is confirmed at TWO orders.' if ok6 else 'FAIL at order 5 — that is the finding; report it rather than re-scoping.'}")
-    print("\n     WHAT `pp = z` IS EVIDENCE FOR, and it is the reason this section exists.")
-    print("     `pp`'s letter has d = 0, so `pp = z` IS the statement `tr(a·σ) = tr(a)·z` — the")
-    print("     premise of `TwoSidedMarkov`, the class every theorem in `DisjointBlockTraceLaw`")
-    print("     is conditional on and which has NO INSTANCE. It now holds over six coefficients,")
-    print("     including ε⁵ where z's own coefficient is 0 — a zero predicted and a zero")
-    print("     measured, not a vacuous match.")
-    print("     🛑 This is EVIDENCE, not a proof, and it discharges nothing. The classical route")
-    print("     to the premise remains the conditional expectation E_n (bean qou-301d).")
+    print("\n     WHAT `pp = z` IS EVIDENCE FOR — CORRECTED 2026-09-07, and my first answer was")
+    print("     a category error. This read: 'the premise of `TwoSidedMarkov`, the class every")
+    print("     theorem in `DisjointBlockTraceLaw` is conditional on and which has NO INSTANCE'.")
+    print("     Both halves are wrong. `TwoSidedMarkov` is DERIVABLE from `MarkovTrace` in four")
+    print("     lines (cyclicity + T3 + `H n` being a Subalgebra) and now carries a global")
+    print("     instance — PR #7067. And `tr(a·σ) = tr(a)·z` for a ∈ H n is T3 ITSELF, an AXIOM")
+    print("     of MarkovTrace: offering numerical evidence for an axiom of the structure one is")
+    print("     reasoning in is not a weak result, it is a category error.")
+    print("     WHAT IT ACTUALLY SUPPORTS: that the CONCRETE Hecke Markov trace — the one [◇]")
+    print("     evaluates — satisfies the Markov stabilisation axiom at the atom word's interface")
+    print("     positions, with z = z_D. That is a fact about the concrete trace matching the")
+    print("     abstract axioms; it is classical (Jones/Ocneanu) though unformalised here, and it")
+    print("     is strictly weaker and different from what this section first claimed.")
+    print("     The ε⁵ zero-predicted/zero-measured match stands; only its interpretation moved.")
 
     ok = ok1 and ok2 and ok4 and ok5 and ok6
     print(f"\n  SCOPE. Orders 4 AND 5 for the bond factors (A=2), and one held-out A=3 word at")
