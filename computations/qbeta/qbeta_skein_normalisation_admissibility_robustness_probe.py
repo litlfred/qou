@@ -229,6 +229,49 @@ def main() -> int:
               "not collapse the two roots into one, which would have made "
               "'no branch matches' vacuous")
 
+    # ---- 1b. the transport's two halves, separated ----------------------
+    # sigma_J = u^-2 * sigma~(u) is a SCALAR RESCALE composed with a
+    # REPARAMETRISATION q -> u.  They are not the same kind of move and the
+    # eigenvalue ratio separates them: a rescale cannot touch it, so every
+    # difference between the two Skein normalisations that survives in the
+    # ratio is reparametrisation.  Derived here from each relation directly
+    # (alpha*L+ + beta*L- + gamma*L0 = 0  =>  alpha*s^2 + gamma*s + beta = 0),
+    # NOT assumed.
+    xv = sp.symbols("xv")
+
+    def _skein_eigs(alpha, beta, gamma):
+        roots = sp.solve(sp.Eq(alpha * xv**2 + gamma * xv + beta, 0), xv)
+        return [sp.simplify(r) for r in roots]
+
+    def _ratio(eigs):
+        probe_q = sp.Rational(11, 10)
+        pos = [r for r in eigs if sp.sign(r.subs(q, probe_q)) == 1]
+        neg = [r for r in eigs if r not in pos]
+        return sp.simplify(pos[0] / neg[0])
+
+    eigs_H = _skein_eigs(1, -1, -(q - 1 / q))
+    eigs_J = _skein_eigs(q, -1 / q, -(sp.sqrt(q) - 1 / sp.sqrt(q)))
+    rat_H, rat_J = _ratio(eigs_H), _ratio(eigs_J)
+
+    ok &= chk("H_and_J_generator_ratios_are_MINUS_q2_and_MINUS_q",
+              sp.simplify(rat_H + q**2) == 0 and sp.simplify(rat_J + q) == 0,
+              "in the SAME variable q: (H) eigenvalues {q, -1/q} ratio -q^2; "
+              "(J) eigenvalues {q^-1/2, -q^-3/2} ratio -q. The two Skein "
+              "normalisations differ in the ratio, so they are not related by "
+              "a rescale alone -- which is the ratio-side restatement of this "
+              "probe's separation premise (bean qou-8bxv)")
+
+    ok &= chk("the_u2_rescale_half_of_the_transport_is_INERT_on_the_ratio",
+              sp.simplify((eigs_J[0] / u**2) / (eigs_J[1] / u**2)
+                          - eigs_J[0] / eigs_J[1]) == 0,
+              "(u^-2 a)/(u^-2 b) = a/b for the (J) pair. NOT NEW and NOT "
+              "MINE: this is QOU.Mass.KZLevelFromHeckeNormalisation."
+              "ratio_invariant, sorry-free over a generic field, landed on "
+              "main in 492ad4221f6 (bean qou-d0qq). Recorded here because it "
+              "closes the rescale half of sigma_J = u^-2 sigma~(u) with a "
+              "Lean proof instead of this probe's arithmetic, leaving the "
+              "reparametrisation q -> u as the whole content of the transport")
+
     # ---- 2. C-reading: reduces to a root check, no pin needed -----------
     # value family under both conventions is {|h^2/2 - h*Z|*E0 : Z}; the
     # published form is at Z = 1 (established in #6722, re-derived here).
