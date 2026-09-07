@@ -69,6 +69,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
+# Option A (bean qou-q2q7): production Wenzl/Markov weight carried alongside
+# the Plancherel measure this probe aggregates with. See
+# docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
 set_compute_dps()
 mp.mp.dps = 140
@@ -404,11 +408,15 @@ def _aggregate_P(rows):
     accumulators that a reclaim would lose."""
     P_total = mp.mpf(0)
     P_ctrl = mp.mpf(0)
+    P_wenzl = mp.mpf(0)   # HEADLINE arm (option A); also reproducible from rows
     for r in rows:
         y = mp.mpf(r["y_lambda"])
         P_total += y * mp.mpf(r["tr_rho_Omega2"])
         P_ctrl += y * mp.mpf(r["tr_Omega2_ctrl"])
-    return P_total, P_ctrl
+        P_wenzl += (y_lambda_wenzl_bridge_numeric(tuple(r["lambda"]), Q0,
+                                                  dps=mp.mp.dps)
+                    * mp.mpf(r["tr_rho_Omega2"]))
+    return P_total, P_ctrl, P_wenzl
 
 
 def _partition_contribution(shape, gens):
@@ -541,13 +549,14 @@ def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, worke
         ckpt_fh.close()
 
     rows = [rows_by_shape[tuple(s)] for s in parts]  # canonical partition order
-    P_total, P_ctrl = _aggregate_P(rows)
+    P_total, P_ctrl, P_wenzl = _aggregate_P(rows)
     ctrl_ok = abs(P_ctrl) < _EXACT
     P_sign = 0 if abs(P_total) < _EXACT else (1 if P_total > 0 else -1)
     npos = sum(1 for r in rows if mp.mpf(r["tr_rho_Omega2"]) > _EXACT)
     nneg = sum(1 for r in rows if mp.mpf(r["tr_rho_Omega2"]) < -_EXACT)
     return {
         "rows": rows, "P_total": P_total, "P_ctrl": P_ctrl, "ctrl_ok": ctrl_ok,
+        "P_wenzl": P_wenzl,
         "P_sign": P_sign, "npos": npos, "nneg": nneg,
         "worst_hcheck": worst_hcheck,
     }
@@ -606,6 +615,7 @@ def run_he4(workers=1, checkpoint=None):
     res = pairing_for_word(gens, 12, log_prefix="[he4]", a_baseline_sign=a3_sign,
                            workers=workers, checkpoint=checkpoint)
     P_total, P_ctrl = res["P_total"], res["P_ctrl"]
+    P_wenzl = res["P_wenzl"]
     P_sign, npos, nneg = res["P_sign"], res["npos"], res["nneg"]
     ctrl_ok = res["ctrl_ok"]
     sign_indefinite = npos > 0 and nneg > 0
@@ -691,6 +701,15 @@ def run_he4(workers=1, checkpoint=None):
                 "leaves the sign of P_total unchanged — measured in "
                 "magnus_omega2_weight_family_robustness_probe.py."
             ),
+            # HEADLINE (Option A, bean qou-q2q7). `P_total` keeps its existing
+            # name and Plancherel meaning deliberately: gate 2 above does a
+            # NUMERICAL dense-vs-sparse check against the committed `P_total`,
+            # and he4_magnus_mpfr_probe.py reads it too, so silently re-meaning
+            # it would break a real cross-check.
+            "headline_pairing": "P_total_wenzl",
+            "P_total_wenzl": fmt(P_wenzl),
+            "P_total_wenzl_sign": (0 if abs(P_wenzl) < _EXACT
+                                   else (1 if P_wenzl > 0 else -1)),
             "P_total": fmt(P_total),
             "P_total_sign": P_sign,
             "P_control_rho_identity": fmt(P_ctrl),

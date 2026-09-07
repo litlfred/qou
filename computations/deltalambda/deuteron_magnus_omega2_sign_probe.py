@@ -64,6 +64,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
+# Option A (bean qou-q2q7): the production Wenzl/Markov weight, carried
+# alongside the Plancherel measure this probe aggregates with. See
+# docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
 # NO-FLOAT64 (owner directive 2026-08-18: probes are not exempt). The germ is a
 # finite-difference q-derivative, so precision is load-bearing: raise dps at
@@ -176,7 +180,8 @@ def main() -> None:
     mult = {g: gens.count(g) for g in sorted(set(gens))}
 
     rows = []
-    P_total = mp.mpf(0)          # Σ_λ y_λ tr(ρ Ω₂)      — the full Magnus pairing
+    P_total = mp.mpf(0)          # Σ_λ w_planch tr(ρ Ω₂)  — the Plancherel arm
+    P_wenzl = mp.mpf(0)          # Σ_λ y_λ^Wenzl tr(ρ Ω₂) — the HEADLINE (Markov)
     P_intf = mp.mpf(0)           # interface-only part    (Ω₂ restricted to the σ₂ neighbours)
     P_ctrl = mp.mpf(0)           # Σ_λ y_λ tr(Ω₂)         — ρ=I control, must be 0
 
@@ -221,6 +226,7 @@ def main() -> None:
         tr_O = sum(Om2[r, r] for r in range(dim))        # control: should be ~0
 
         P_total += y * tr_rO
+        P_wenzl += y_lambda_wenzl_bridge_numeric(shape, Q0, dps=mp.mp.dps) * tr_rO
         P_intf += y * tr_rO_intf
         P_ctrl += y * tr_O
         rows.append({"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
@@ -307,6 +313,25 @@ def main() -> None:
                 "per-partition tr(rho.Omega2) with the Wenzl bridge weight "
                 "leaves the sign of P_total unchanged — measured in "
                 "magnus_omega2_weight_family_robustness_probe.py."
+            ),
+            # HEADLINE (Option A, bean qou-q2q7): the production Wenzl/Markov
+            # weight. `P_total` above keeps its existing name and Plancherel
+            # meaning deliberately — `he4_magnus_mpfr_probe.py` and the sparse
+            # probe both do a NUMERICAL dense-vs-sparse check against the
+            # committed `P_total`, so silently re-meaning it would break a real
+            # cross-check. Declaring which arm is authoritative is the same fix
+            # this arc used for the `y_lambda` column and for `scriptFile`.
+            "headline_pairing": "P_total_wenzl",
+            "P_total_wenzl": fmt(P_wenzl),
+            "P_total_wenzl_sign": (0 if abs(P_wenzl) < _EXACT
+                                   else (1 if P_wenzl > 0 else -1)),
+            "P_total_wenzl_note": (
+                "Sum over lambda of y_lambda^Wenzl * tr(rho.Omega2), the "
+                "production Markov weight (row cap at level r=2 zeroes every "
+                "shape with >=3 rows). tr(1)=1 at every n, so values ARE "
+                "comparable across A -- which the Plancherel arm is not "
+                "(tr(1) = 11.1 / 184.2 / 6751.5 at n = 6 / 9 / 12). See "
+                "docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md."
             ),
             "P_total": fmt(P_total),
             "P_total_sign": P_sign,
