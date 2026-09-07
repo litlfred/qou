@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-05T20:24:35Z
+updated_at: 2026-09-07T18:53:59Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1005,3 +1005,32 @@ for general `n`.
 for all `n` — now a precise target rather than an ill-posed one; (iii) Tits
 deformation for the converse direction. `SchurElementCriterion` keeps no
 instance.
+
+
+### 2026-09-07 — #6758 MERGED; follow-up restarted as #7136
+
+The whole arc — option C, option 2, option 3 step (i) — is on `main`. Verified
+per-file with `git cat-file` (rule 8 rebase-merge rewrote the SHAs, so the
+branch's commits looked unmerged by SHA and were not).
+
+**New work, PR #7136:** `QOU/Hecke/TauDualBasis.lean`, 4 declarations,
+`[propext, Classical.choice, Quot.sound]`, `lean`-direct exit 0 no warnings.
+
+`TwDual w := q^{-ℓ(w)} · T_{w⁻¹}` is the τ-dual of the `T_w` basis —
+`τ(T_v · T^∨_w) = δ_{v,w}`. Immediate from `tau_Tw_mul_Tw` read as a pairing.
+The off-diagonal half (`TwDual_apply_ne`) needs **no** hypothesis on `q`; only
+the diagonal cancellation `q^{-ℓ}·q^{ℓ} = 1` does.
+
+**Re-verified against current main**, 1681 commits newer than when the file was
+written: the import cone is unchanged by those commits, and the entire #6758 arc
+rebuilds from source (TraceIsWeighted, TraceWeightsOfAlgEquiv,
+TauStructureConstants, TauSchurElement all exit 0).
+
+**Why this brick.** Dual bases are what turn character theory into computation.
+The classical route is: dual basis → the Casimir `Σ_w b_w b_w^∨` is central →
+it acts on the λ-block by `s_λ` → `s_λ` as a character sum → (Wenzl) the
+hook-length product. **Only step 1 is done.** Step (ii) proper is Wenzl's
+theorem and the probe pins it only for `n ≤ 3`.
+
+**Next:** centrality of the Casimir, then its block scalar. `SchurElementCriterion`
+still has no instance.
