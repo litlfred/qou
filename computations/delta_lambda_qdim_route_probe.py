@@ -174,6 +174,14 @@ def main():
 
     any_overshoot = any(r["ceiling_over_target"][c] >= 1.0
                         for r in rows for c in CONVENTIONS)
+    # ⁴He ceiling span, derived so the description cannot quote a number the
+    # data contradicts (bean qou-n62l).
+    _he4_row = next((r for r in rows if r["atom"] in ("4He", "He4")), None)
+    _he4_c = _he4_row["ceiling_over_target"] if _he4_row else {}
+    _he4_span = (min(_he4_c.values()) if _he4_c else float("nan"),
+                 max(_he4_c.values()) if _he4_c else float("nan"),
+                 sorted(_he4_c))
+
     witness = {
         "engine": "mpmath",
         "engineVersion": "mpmath 50dps on canonical witnesses",
@@ -181,19 +189,32 @@ def main():
         "computation": "delta-lambda-qdim-route-probe",
         "scriptFile": "delta_lambda_qdim_route_probe.py",
         "scriptHash": hashlib.sha256(open(__file__, "rb").read()).hexdigest()[:12],
+        # The ⁴He span is INTERPOLATED from the row this run computed, never
+        # typed. It read "0.41→5.62" while the data said 0.433→3.103 (bean
+        # qou-n62l): stale prose beside its own contradicting numbers, with
+        # nothing in the tree reading a description to notice. `_he4_span`
+        # is also recorded in the payload below, so the two cannot diverge.
         "description": (
             "Route-(i) probe across 3 q-dimension conventions (balanced / "
             "unbalanced / fake-degree). The ℓ¹ ceiling ‖c_q‖₁/|target| is "
-            "wildly convention-dependent (⁴He spans 0.41→5.62): balanced "
+            f"wildly convention-dependent (⁴He spans {_he4_span[0]:.3g}→"
+            f"{_he4_span[1]:.3g} over the {len(_he4_span[2])} conventions "
+            "computed here): balanced "
             "undershoots all isotopes, unbalanced/fake-degree overshoot the "
             "heavy ones. ⟹ route (i) ESCAPES the sign-only prune and is "
             "UNDER-CONSTRAINED — the q-dim convention is a hidden DOF (Rule "
             "14), so magnitude-matching via q-dim is not evidence of a "
             "derivation. The real discriminators: an independent principle "
-            "fixing the convention + the sign/cancellation structure (net "
-            "−82.9% vs fake-degree ℓ¹ +462% on ⁴He). Scope (a), NOT a (b) "
-            "exclusion (no invariant)."
+            "fixing the convention + the sign/cancellation structure. "
+            "(The often-quoted 'net −82.9% vs fake-degree ℓ¹ +462% on ⁴He' "
+            "is NOT computed by this producer — it appears only in prose, "
+            "here and in the module docstring, and this witness carries "
+            "nothing to check it against. Treat it as a claim inherited from "
+            "the surrounding analysis, not as this run's measurement.) "
+            "Scope (a), NOT a (b) exclusion (no invariant)."
         ),
+        "he4_ceiling_span": {"min": _he4_span[0], "max": _he4_span[1],
+                             "conventions": _he4_span[2]},
         "scope": "(a) scope-limited — route (i) is convention-under-determined; q-dim convention is a hidden DOF",
         "conventions": {
             "balanced": "[n]_q!/∏[h]_q, [k]=(q^k-q^-k)/(q-q^-1)",

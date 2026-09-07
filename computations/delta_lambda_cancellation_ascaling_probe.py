@@ -160,6 +160,11 @@ def main():
         closes[c] = all(0.9 <= v <= 1.1 for v in vals)
     any_closes = any(closes.values())
 
+    # Per-atom fake-degree net/target, derived so the description cannot quote
+    # a number its own data contradicts (bean qou-n62l).
+    _fd = {r["atom"]: r["net_over_target"]["fake_degree"]
+           for r in rows if "fake_degree" in r.get("net_over_target", {})}
+
     witness = {
         "engine": "mpmath",
         "engineVersion": "mpmath 50dps on canonical witnesses",
@@ -167,12 +172,28 @@ def main():
         "computation": "delta-lambda-cancellation-ascaling-probe",
         "scriptFile": "delta_lambda_cancellation_ascaling_probe.py",
         "scriptHash": hashlib.sha256(open(__file__, "rb").read()).hexdigest()[:12],
+        # The four fake-degree figures are INTERPOLATED from the rows this run
+        # computed, never typed. They read "³He 1.27, ⁴He 1.31 … D 0.28,
+        # T 0.91" while the data said D 0.2296 (bean qou-n62l) -- prose
+        # contradicting the numbers beside it, with nothing in the tree reading
+        # a description to notice.
         "description": (
             "SIGNED net/target = Σ_λ y_λ χ^λ sgn(w₀^{S_λ'}) dim_q,λ (closure ⇒ "
             "+1) for D/T/³He/⁴He under classic + 3 q-dim conventions. As the "
-            "convention grows the net grows NON-UNIFORMLY in A: heavy isotopes "
-            "(³He 1.27, ⁴He 1.31 at fake-degree) overshoot while light ones "
-            "(D 0.28, T 0.91) undershoot. NO single convention lands all four "
+            "convention grows the net grows NON-UNIFORMLY in A. Fake-degree "
+            f"net/target this run: D {_fd.get('D', float('nan')):.3g}, "
+            f"T {_fd.get('T', float('nan')):.3g}, "
+            f"³He {_fd.get('3He', float('nan')):.3g}, "
+            f"⁴He {_fd.get('4He', float('nan')):.3g}. "
+            "⚠ THE QUALITATIVE READING BELOW PREDATES THESE NUMBERS AND NO "
+            "LONGER DESCRIBES THEM. It said heavy isotopes OVERSHOOT +1 "
+            "(³He 1.27, ⁴He 1.31) while light ones undershoot; under the "
+            "interleaved Borromean atom word (bean qou-hu1f) none of the four "
+            "overshoots and ⁴He has changed SIGN. The non-uniformity in A "
+            "survives; the direction does not. Re-read before citing — this "
+            "is flagged rather than rewritten because restating a refutation "
+            "is a scientific judgement, not a formatting fix (bean qou-n62l). "
+            "NO single convention lands all four "
             "near +1 ⟹ no flat q-dim convention reproduces binding's A-scaling; "
             "the closure object must be A-/λ-structured (route (ii)/(iii) or a "
             "structured kernel, e.g. z2bn q-Gaussian/Habiro EGF #2899). Scope "

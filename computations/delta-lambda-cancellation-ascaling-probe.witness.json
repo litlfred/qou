@@ -1,16 +1,16 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T03:55:42.615747+00:00",
-  "commitSha": "18d714136541debe3a88d017e6ad774a845840a1",
+  "computedAt": "2026-09-07T08:11:23.344159+00:00",
+  "commitSha": "0a75d231cde9455c57c49400bf0203dbd54c6cbe",
   "assertions": [],
   "allPassed": true,
   "allPassedBasis": "vacuous",
-  "durationMs": 227,
+  "durationMs": 168,
   "durationMsBaseline": "caller",
   "computation": "delta-lambda-cancellation-ascaling-probe",
   "scriptFile": "delta_lambda_cancellation_ascaling_probe.py",
-  "scriptHash": "89b4fe492d09",
+  "scriptHash": "1e7910217d4f",
   "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -23,10 +23,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "2ac15a3627acca95"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -34,7 +33,7 @@
     ],
     "reproduce": "python3 -u computations/delta_lambda_cancellation_ascaling_probe.py"
   },
-  "description": "SIGNED net/target = Σ_λ y_λ χ^λ sgn(w₀^{S_λ'}) dim_q,λ (closure ⇒ +1) for D/T/³He/⁴He under classic + 3 q-dim conventions. As the convention grows the net grows NON-UNIFORMLY in A: heavy isotopes (³He 1.27, ⁴He 1.31 at fake-degree) overshoot while light ones (D 0.28, T 0.91) undershoot. NO single convention lands all four near +1 ⟹ no flat q-dim convention reproduces binding's A-scaling; the closure object must be A-/λ-structured (route (ii)/(iii) or a structured kernel, e.g. z2bn q-Gaussian/Habiro EGF #2899). Scope (a), not a (b) exclusion. Sign on transpose λ' (proven form PR #2416).",
+  "description": "SIGNED net/target = Σ_λ y_λ χ^λ sgn(w₀^{S_λ'}) dim_q,λ (closure ⇒ +1) for D/T/³He/⁴He under classic + 3 q-dim conventions. As the convention grows the net grows NON-UNIFORMLY in A. Fake-degree net/target this run: D 0.23, T 0.458, ³He 0.647, ⁴He -0.066. ⚠ THE QUALITATIVE READING BELOW PREDATES THESE NUMBERS AND NO LONGER DESCRIBES THEM. It said heavy isotopes OVERSHOOT +1 (³He 1.27, ⁴He 1.31) while light ones undershoot; under the interleaved Borromean atom word (bean qou-hu1f) none of the four overshoots and ⁴He has changed SIGN. The non-uniformity in A survives; the direction does not. Re-read before citing — this is flagged rather than rewritten because restating a refutation is a scientific judgement, not a formatting fix (bean qou-n62l). NO single convention lands all four near +1 ⟹ no flat q-dim convention reproduces binding's A-scaling; the closure object must be A-/λ-structured (route (ii)/(iii) or a structured kernel, e.g. z2bn q-Gaussian/Habiro EGF #2899). Scope (a), not a (b) exclusion. Sign on transpose λ' (proven form PR #2416).",
   "scope": "(a) scope-limited — the 3 flat q-dim conventions fail the A-scaling closure test",
   "parameters": {
     "q_0": 1.1099785827513808,

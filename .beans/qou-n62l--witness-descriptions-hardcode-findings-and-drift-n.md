@@ -142,3 +142,55 @@ The full `precision-gates.sh` run fails PREFLIGHT in this container
 script itself says that is not a gate failure. So the two gates were exercised
 by replaying the harness's own `--self-test` + `$args` sequence against them,
 not by a whole-suite run; the remaining 25 gates are unexercised here.
+
+---
+
+## 2026-09-07 — the two known-stale descriptions, and what interpolating them exposed
+
+Both now DERIVE their numbers and are clean; the population drained
+185 → 183 witnesses, 239 → 234 numbers.
+
+### `delta-lambda-qdim-route-probe` — two errors, one of them not numeric
+
+Prose said "⁴He spans **0.41→5.62**"; the data said 0.433→3.103. Now
+interpolated from the row the run computes, and also recorded as
+`he4_ceiling_span` so prose and payload cannot diverge.
+
+Interpolating caught a second error the drift detector could not see: the
+description opened "across **3** q-dimension conventions" while
+`ceiling_over_target` carries **four** (classic, balanced, unbalanced,
+fake_degree). The count is now derived too.
+
+A third thing surfaced and was NOT fixed: "net −82.9 % vs fake-degree ℓ¹
++462 % on ⁴He" is **not computed by this producer at all** — it appears only in
+prose, here and in the module docstring, and the witness carries nothing to
+check it against. I could not attribute it either: a substring search for the
+digits matched 1250 witnesses, because "462" occurs inside any long decimal —
+a useless result, not a finding. The description now says plainly that the
+figure is inherited from the surrounding analysis and is not this run's
+measurement.
+
+### `delta-lambda-cancellation-ascaling` — the numbers were the smaller problem
+
+Prose: "heavy isotopes (³He **1.27**, ⁴He **1.31** at fake-degree) **overshoot**
+while light ones (D 0.28, T 0.91) undershoot."
+
+Derived from the current rows: D 0.23, T 0.458, ³He 0.647, ⁴He **−0.066**.
+
+So interpolating exposed that the QUALITATIVE claim is stale as well: **none of
+the four overshoots +1 any more, and ⁴He has changed sign.** The
+non-uniformity in A survives; the direction does not. Almost certainly the
+qou-hu1f braid-word correction, which is what moved every atom trace.
+
+**Flagged, not rewritten.** The description now reports the derived figures and
+states in terms that the qualitative reading predates them and no longer
+describes them. Restating a refutation is a scientific judgement; substituting
+my own reading of a convention-dependence result I have not studied would have
+been worse than leaving it visibly wrong.
+
+### What this says about the detector
+
+It found stale DIGITS. Fixing them found a stale COUNT and a stale CONCLUSION,
+neither of which any number-matching rule could reach. The detector's value is
+as a triage pointer to descriptions worth reading — which is what its docstring
+claims and, on this evidence, understates.

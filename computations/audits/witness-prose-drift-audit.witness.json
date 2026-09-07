@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T11:52:17.847554+00:00",
-  "commitSha": "ac82f267972883065bbcaba8b2e48c2135c15f60",
+  "computedAt": "2026-09-07T08:12:19.699616+00:00",
+  "commitSha": "0a75d231cde9455c57c49400bf0203dbd54c6cbe",
   "assertions": [
     {
       "name": "no witness prose quotes a number absent from its data",
-      "computed": 239,
+      "computed": 234,
       "expected": 0,
       "passed": false
     }
   ],
   "allPassed": false,
   "allPassedBasis": "failed-assertions",
-  "durationMs": 5,
+  "durationMs": 254,
   "durationMsBaseline": "builder-construction",
   "computation": "witness-prose-drift-audit",
   "scriptFile": "witness_prose_drift_audit.py",
-  "scriptHash": "113001c0f715",
-  "scriptCommitSha": "ac82f267972883065bbcaba8b2e48c2135c15f60",
+  "scriptHash": "340564f49912",
+  "scriptCommitSha": "67bca2b867d674d93af4c03fe5b23afd7c44d8a2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "2ac15a3627acca95"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -46,9 +45,9 @@
   "description": "Witness descriptions quoting a number the witness's own data does not contain. No staleness mechanism here reads a description -- they all compare a witness to its PRODUCER -- so a description that hardcodes a finding keeps asserting it after the data moves, and the file contradicts itself while staying green. Measured: rho-binding-constancy said '~182% (D 5.73, T 81.5, He3 37.4)' while carrying 3.87/36.99/19.12, matching neither the committed nor the regenerated data. Buckets by DISTANCE, not presence, so a 4% three-sig-fig rounding is not flagged like a 49% contradiction. FAR is a candidate, not a verdict: prose may cite an external constant. Bean qou-n62l.",
   "auditOnly": "computations/audits/witness_prose_drift_audit.py",
   "data": {
-    "witnesses_scanned": 3539,
+    "witnesses_scanned": 3540,
     "without_description": 387,
-    "witnesses_with_candidates": 185,
+    "witnesses_with_candidates": 183,
     "findings": [
       {
         "witness": "computations/aj-masbaum-crosscheck.witness.json",
@@ -211,21 +210,6 @@
         "nearest_relative_distance": "0.0666666666666666666666666666666666666666666666666666666666667"
       },
       {
-        "witness": "computations/delta-lambda-cancellation-ascaling-probe.witness.json",
-        "prose_number": "1.27",
-        "nearest_relative_distance": "0.0787401574803149606299212598425196850393700787401574803149606"
-      },
-      {
-        "witness": "computations/delta-lambda-cancellation-ascaling-probe.witness.json",
-        "prose_number": "1.31",
-        "nearest_relative_distance": "0.0687022900763358778625954198473282442748091603053435114503817"
-      },
-      {
-        "witness": "computations/delta-lambda-cancellation-ascaling-probe.witness.json",
-        "prose_number": "0.28",
-        "nearest_relative_distance": "0.0584510473332108928571428571428571428571428571428571428571429"
-      },
-      {
         "witness": "computations/delta-lambda-canonical-residual.witness.json",
         "prose_number": "0.07",
         "nearest_relative_distance": "0.285714285714285714285714285714285714285714285714285714285714"
@@ -239,16 +223,6 @@
         "witness": "computations/delta-lambda-imme-triplet.witness.json",
         "prose_number": "0.11",
         "nearest_relative_distance": "0.0909090909090909090909090909090909090909090909090909090909091"
-      },
-      {
-        "witness": "computations/delta-lambda-qdim-route-probe.witness.json",
-        "prose_number": "0.41",
-        "nearest_relative_distance": "0.0572542201524387804878048780487804878048780487804878048780488"
-      },
-      {
-        "witness": "computations/delta-lambda-qdim-route-probe.witness.json",
-        "prose_number": "5.62",
-        "nearest_relative_distance": "0.225379456918608629893238434163701067615658362989323843416370"
       },
       {
         "witness": "computations/delta-lambda-z-coefficient-and-slope.witness.json",
