@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:31:25Z
-updated_at: 2026-09-07T09:20:58Z
+updated_at: 2026-09-07T09:32:18Z
 parent: qou-2akx
 ---
 
@@ -28,3 +28,7 @@ REFINED same day (checks 18–23 of the same probe): the K-weight is itself a ca
 
 
 ODD n RESOLVED same day (checks 24–26, 26/26): take the framework's q itself as the prime power p; the counts N_k(w) live over F_{p²} (non-negative integers at Q ∈ {4,9,25,49,64}, all six words of S₃, e.g. N_k(s0) = (Q, 2Q−1, 2Q−1, Q)) and the weights p^{n−2k} are |F_p^{n−2k}| / |B(F_p^{2k−n})| over the index-2 subfield — cardinalities for EVERY n. So the convention-D trace is a BHW groupoid cardinality of ⊔_k Fix_k(w) × A_k for all n; only the unweighted reading fails (Markov). NEXT honest question: the binding functional is a LOG-trace difference — a log of a cardinality is not a cardinality — so whether route C reaches b3 is the §7g extensive-term problem, not a trace question. PR #7030.
+
+
+
+2026-09-07: PR #7030 merged (38a4aa45d7). Step 3 (the log-trace question) dispatched to a planning agent (label routec-log); plan to be filed by the parent session.
