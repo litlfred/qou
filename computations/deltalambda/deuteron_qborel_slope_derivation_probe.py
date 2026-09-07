@@ -358,6 +358,20 @@ def main() -> int:
         "per-step symmetry of D10 is. Recorded so the hypothesis is not retried.",
     ))
 
+    # -- D12 the fifth REV route, also closed: the deficit spectrum does not stabilise.
+    checks.append((
+        "D12_deficit_spectrum_does_not_stabilise",
+        True,
+        "REV_n = log sum_E N_n(E) x^E is a free energy over the deficit spectrum N_n(E), so a "
+        "natural route is a LIMIT SHAPE at the top of the spectrum. TESTED AND ABSENT: the leading "
+        "coefficient N_n(0) itself oscillates (4, 6, 4, 1, 5, 10 at n=7..12) and the E=0..9 rows, "
+        "normalised or not, have unrelated shapes row to row. So the top of the spectrum is not "
+        "governed by a fixed local structure and this route is closed too. A strong even/odd "
+        "alternation in E IS visible, but which parity dominates flips between n (even at "
+        "n=7,8,12; odd at n=9,10,11) with no pattern established -- recorded as an observation, "
+        "explicitly NOT a finding, since chasing it would be pattern-hunting without a hypothesis.",
+    ))
+
     # -- D6 honesty gate: the sub-leading coefficient stays an empirical fit
     checks.append((
         "D6_subleading_coefficient_is_still_a_fit_scope_gate",
