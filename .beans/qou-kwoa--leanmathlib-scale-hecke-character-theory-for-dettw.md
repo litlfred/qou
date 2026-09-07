@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-07T19:32:23Z
+updated_at: 2026-09-07T19:37:02Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1210,3 +1210,31 @@ introduce it for one lemma.
 The fifth is Wenzl's theorem; the probe pins it only for `n ≤ 3`.
 `SchurElementCriterion` still has no instance, and the criterion's *own*
 direction (all `s_λ ≠ 0` ⟹ semisimple) is Tits deformation, separate again.
+
+
+### 2026-09-07 — `Σ_λ d_λ c_λ = 1`, and a correction to my own framing (`e9120d22fa`)
+
+`sum_dim_mul_traceWeight`. `τ(1) = 1` says the weights satisfy **one** linear
+constraint, weighted by the block dimensions — the Lean form of the identity
+that pins `(1−Q)^n` as the only possible normalisation for the Wenzl candidate.
+
+**What it is and is not evidence for**, stated in the file so nobody
+over-reads it: a genuine constraint on the weight *system*, saying **nothing
+per-block**. That is exactly why the probe's Tier 2 (per-λ, `n ≤ 3`) is a
+separate and strictly stronger check.
+
+**🛑 CORRECTION to my own report.** I ended the previous turn saying the next
+step "needs framing as a fork — (a) attack Wenzl, or (b) stop and consolidate".
+**It needs no fork.** The owner selected options **2 and 3** earlier in this
+session, and option 3 explicitly includes *"prove the hook-length product
+equals abstractSchurElement"*. It is authorised; re-asking would have cost a
+round-trip for a decision already made. The habit this is an instance of —
+raising a decision that is already settled — is the mirror of the one AGENTS.md
+warns about, and costs the author the same way.
+
+**PR #7136 body refreshed**: 5 files, 30 declarations, the four-of-five table,
+and the four review-relevant subtleties (the `d_λ` factor, the deliberate
+asymmetry of the expansions, the elementary basis construction, the two forms
+of the character sum).
+
+**Arc: four of five.** The fifth is Wenzl's theorem — authorised and open.
