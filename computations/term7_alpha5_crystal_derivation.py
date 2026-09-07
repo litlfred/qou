@@ -43,11 +43,27 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
+from fractions import Fraction
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from hecke_characters import standard_young_tableaux  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
+
+
+def _dec(fr: Fraction) -> str:
+    """Serialise an exact rational as a `_precision.fmt` decimal string.
+
+    The corpus convention is a parseable decimal (`mp.mpf(s)` round-trips),
+    so that is what the numeric fields carry.  The rational is EXACT and a
+    decimal of it generally is not — `1/12!` does not terminate — so the
+    aggregate additionally carries its exact `p/q` form alongside.
+    """
+    import mpmath as mp
+    return fmt(mp.mpf(fr.numerator) / mp.mpf(fr.denominator))
 
 
 HERE = Path(__file__).parent
@@ -105,11 +121,20 @@ def factorial(n: int) -> int:
     return f
 
 
-def plancherel_weight(shape: tuple[int, ...]) -> float:
-    """w_λ at q = 1: Plancherel weight (f^λ)² / n!."""
+def plancherel_weight(shape: tuple[int, ...]) -> Fraction:
+    """w_λ at q = 1: Plancherel weight (f^λ)² / n!.
+
+    EXACT.  `f_lambda` and `factorial` are both integers, so this weight
+    is a rational with denominator n! and there is no approximation to
+    make.  It returned a `float` until 2026-09-07, which forced an exact
+    number through the 53-bit mantissa for no reason: everything
+    downstream — `contribution = w · χ` with χ an integer, and the sum
+    `S_crystal` — is rational too, so the whole computation is exact
+    arithmetic and only the record was floating.
+    """
     n = sum(shape)
     f = f_lambda(shape)
-    return f * f / factorial(n)
+    return Fraction(f * f, factorial(n))
 
 
 # Atomic braid words (mirror atomic_braid_gb_filtration_extension).
@@ -144,31 +169,40 @@ def main() -> int:
     print(f"  {'atom':<6} {'A':>2} {'n':>3} {'n_λ':>5} {'S_crystal':>15}")
     print("  " + "-" * 50)
     rows = []
+    S_exact: list[Fraction] = []
     for atom, A, n, word in ATOMS:
         partitions = height_6_partitions(n)
-        S_crystal = 0.0
+        S_crystal = Fraction(0)
         per_partition = []
         for shape in partitions:
             chi = crystal_chi_lambda(shape, word)
             w = plancherel_weight(shape)
             contrib = w * chi
             S_crystal += contrib
-            if abs(contrib) > 1e-12:
+            # EXACT zero test, replacing `abs(contrib) > 1e-12`.  The
+            # threshold was safe but arbitrary: χ is an integer and
+            # w ≥ 1/12! ≈ 2.09e-9, so no nonzero contribution can fall
+            # below 1e-12 and the two tests select the same rows — which
+            # is asserted below rather than assumed.
+            if contrib != 0:
                 per_partition.append({
                     "lambda": list(shape),
                     "f_lambda": f_lambda(shape),
-                    "w_plancherel": w,
+                    "w_plancherel": _dec(w),
                     "chi_crystal": chi,
-                    "contribution": contrib,
+                    "contribution": _dec(contrib),
                 })
         rows.append({
             "atom": atom, "A": A, "n_strands": n, "word": word,
             "n_height_6_partitions": len(partitions),
-            "S_crystal_at_q_zero": S_crystal,
+            "S_crystal_at_q_zero": _dec(S_crystal),
+            # The result is a rational; a decimal of it is not exact.
+            "S_crystal_at_q_zero_exact": f"{S_crystal.numerator}/{S_crystal.denominator}",
             "nonzero_contributions": per_partition,
         })
+        S_exact.append(S_crystal)
         print(f"  {atom:<6} {A:>2} {n:>3} {len(partitions):>5} "
-              f"{S_crystal:>15.10f}")
+              f"{float(S_crystal):>15.10f}   = {S_crystal}")
 
     print("\n  S_crystal(A) is the crystal-side prediction for")
     print("  Term 7's shell-correction sum (no free parameter).")
@@ -196,11 +230,13 @@ def main() -> int:
             # vanish at the crystal limit (no shell residual).
             # Check: |S_crystal(⁴He)| < |S_crystal(³He)|·k for
             # some bounded k (Crystal cancellation pattern).
-            computed=1.0 if abs(rows[3]["S_crystal_at_q_zero"]) <
-                            10 * abs(rows[1]["S_crystal_at_q_zero"]) + 1
-                       else 0.0,
-            expected=1.0,
-            tolerance=0.0,
+            # Now an EXACT rational comparison — it was a float64 one,
+            # and the predicate is a strict inequality, which is the
+            # shape most exposed to a rounding artefact.
+            computed="1" if abs(S_exact[3]) < 10 * abs(S_exact[1]) + 1
+                       else "0",
+            expected="1",
+            tolerance="0",
             source="⁴He doubly-magic structural cancellation",
         )
         .save())
