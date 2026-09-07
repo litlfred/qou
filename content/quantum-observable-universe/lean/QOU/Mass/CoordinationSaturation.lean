@@ -36,6 +36,16 @@ Nuclear saturation *forces* a bounded coordination number (the close-packing /
 fcc picture, arc item 3a) and *excludes* the complete-graph `z = A−1` (arc item
 1, refuted at ⁴He). That is the structural content proved here.
 
+The close-packing input is IMPORTED Euclidean geometry, now held and cited (bean
+`qou-ywbd`); a citation makes it citable, not derived, and the four objections of
+`docs/audits/2026-09-05-max-contact-sub-affine-negative.md` §5 stand:
+
+-- Ref: [bezdek-reid2013] Thm 1(i) — touching pairs in any packing of n unit balls in
+   E³ number < 6n − 0.926·n^{2/3}: bulk 12·n/2 from the kissing number k = 12, minus a
+   sub-affine surface deficit. This is the bounded-degree `k` of `perNucleonBounded`.
+-- Ref: [hales-etal2010] — the Kepler theorem statement (fcc density is maximal); the
+   paper proves no kissing- or contact-number bound, so it does not source `k = 12`.
+
 The REMAINING open input — that the binding multiplier is the **mutual**
 (coordination) linking count while the mass multiplier is the **self**-linking
 weight `lw` — is the linking-vs-self-energy amplitude assignment (bean
