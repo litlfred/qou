@@ -1,0 +1,115 @@
+{
+  "L2_prime": "H(lambda) >= r^2 - r + 1, r = min(ell, lambda_1)",
+  "bean": "qou-hok7",
+  "bound_vs_measured": [
+    {
+      "REV": "2.1069303",
+      "n": 4,
+      "slack": "23.12928467",
+      "upper_bound": "25.236214969"
+    },
+    {
+      "REV": "5.37076246",
+      "n": 8,
+      "slack": "32.83814436",
+      "upper_bound": "38.2089068232"
+    },
+    {
+      "REV": "8.64003313",
+      "n": 12,
+      "slack": "40.90657489",
+      "upper_bound": "49.5466080228"
+    },
+    {
+      "REV": "11.7081362",
+      "n": 16,
+      "slack": "48.10590676",
+      "upper_bound": "59.8140429557"
+    },
+    {
+      "REV": "14.5903827",
+      "n": 20,
+      "slack": "54.91951896",
+      "upper_bound": "69.509901661"
+    },
+    {
+      "REV": "17.3292831",
+      "n": 24,
+      "slack": "61.51615227",
+      "upper_bound": "78.8454353714"
+    },
+    {
+      "REV": "19.7613194",
+      "n": 28,
+      "slack": "67.65208472",
+      "upper_bound": "87.4134041161"
+    },
+    {
+      "REV": "22.2400831",
+      "n": 32,
+      "slack": "73.89844691",
+      "upper_bound": "96.1385300062"
+    },
+    {
+      "REV": "24.3826729",
+      "n": 36,
+      "slack": "79.73088577",
+      "upper_bound": "104.113558669"
+    },
+    {
+      "REV": "26.6352043",
+      "n": 40,
+      "slack": "85.67097458",
+      "upper_bound": "112.30617888"
+    },
+    {
+      "REV": "28.6042692",
+      "n": 44,
+      "slack": "91.32180257",
+      "upper_bound": "119.926071772"
+    }
+  ],
+  "checks": [
+    {
+      "check": "R1_L2prime_H_at_least_r2_minus_r_plus_1",
+      "detail": "H(lambda) >= r^2 - r + 1 with r = min(ell, lambda_1), verified on all 11731 partitions with n <= 26 (0 violations). Equality cases: [(1, (1,))]. Exact integers, no tolerance.",
+      "pass": true
+    },
+    {
+      "check": "R2_row_plus_column_argument_is_sound_stepwise",
+      "detail": "both steps of the derivation hold separately on all 11731 partitions with n <= 26 (0 failures): H >= [ell(ell+1)/2 + l1(l1+1)/2 - (l1+ell-1)] >= r^2-r+1. The bound is therefore established by the stated argument, not merely observed to hold.",
+      "pass": true
+    },
+    {
+      "check": "R3_repair_survives_the_counterexample_that_killed_L2",
+      "detail": "on lambda=(11,1^10): r=11, H=131. Refuted L2 claimed H >= 331 (FALSE, by 200). Repaired L2' claims H >= 111 (TRUE, slack 20). L2' never assumes anything about columns 2..r, which is exactly where L2 broke.",
+      "pass": true
+    },
+    {
+      "check": "R4_f_is_decreasing_past_H_min_for_all_large_n",
+      "detail": "f(H) = C(sqrt H + 1) - (H - H_min) ln q0 has f'(H) < 0 for H > (C/(2 ln q0))^2 = 874.58202. H_min(n) first exceeds that at n = 95 (H_min(95) = 875), so for every n >= 95 the maximum of f over H >= H_min sits at H = H_min. Below that the range is finite and REV is bounded there by inspection.",
+      "pass": true
+    },
+    {
+      "check": "R5_bound_dominates_every_measured_REV",
+      "detail": "the proved bound log p(n) + C(sqrt(H_min)+1) exceeds the measured REV at all 11 values of n where REV has been computed exactly. It is loose (the L1 bound R <= C*r is itself loose by ~13x on thin shapes) -- looseness is expected and does not weaken the asymptotic statement.",
+      "pass": true
+    },
+    {
+      "check": "R6_bound_is_O_n_three_quarters",
+      "detail": "bound / n^(3/4) -> C * sqrt(2 sqrt2 / 3) = 5.992333394; at n=10^7 it is 6.037881285. Sequence: n=10^3:6.434033, n=10^4:6.243904, n=10^5:6.135292, n=10^6:6.073147, n=10^7:6.037881. The log p(n) term is O(sqrt n) and vanishes from the ratio.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6,
+  "computedAt": "2026-09-07T07:49:44.330526+00:00",
+  "dps": 60,
+  "probe": "rev_sublinearity_closed_probe",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0_anchor": "physical_proton",
+  "repairs": "L2 'H >= 3r^2-3r+1' refuted in rev_sublinearity_proof_probe.py; L2' uses only the first row and first column and assumes nothing about columns 2..r",
+  "result": "Omega(sqrt n) <= REV_n <= O(n^{3/4}) -- sub-linearity PROVED",
+  "still_open": "tightness; conjectured REV ~ A sqrt(2n) with A sqrt2 = 5.0959",
+  "upper_bound_constant": "5.9923333939318587431"
+}
