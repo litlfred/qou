@@ -203,6 +203,33 @@ content. It does not reach `(−2,3,7)`: that field is not derived here, so the 
 a prediction. Nothing about `A_ω` is derived; the Hecke-side origin of the extra 5₂ ray
 (`qou-rtec` M3) is untouched.
 
+## 3d. The chirality convention, settled against SnapPy's Rolfsen table (2026-09-07, bean `qou-lrvc`)
+
+**Producer:** [`computations/probes/fivetwo_chirality_frame_vs_snappy_probe.py`](../../computations/probes/fivetwo_chirality_frame_vs_snappy_probe.py)
+(8/8; SnapPy 3.3.2 from PyPI, route 2 of `sandbox-egress.md`, and Culler's census tarball
+`library/A_census.tgz`, already held).
+
+§3 left open which chirality the Rolfsen 5₂ is in the derived frame. Two held sources answer it,
+and they agree to every digit compared:
+
+| source | its 5₂ | relation to the derived frame |
+|---|---|---|
+| Culler's census `A_{K3_2}` (SnapPy framing) | `1 + L(M¹⁰−M⁸+2M⁴+2M²−1) + L²(−M¹⁴+2M¹²+2M¹⁰−M⁶+M⁴) + L³M¹⁴` | **exactly** `L³·A(1/L, M)` — the mirror; the 4₁ control `K2_1` is identical to the derived `A₄₁` |
+| SnapPy `Manifold('5_2')` (= `m015` = `K3_2` = `K5a1`) | cusp shape `−2.49024466750661447990098220728294261621078676… + 2.97944706647897694637268171441756946896065234… i`, slopes `{0, 4, 10}` | `−conj(τ_derived)` to 38 digits; slopes negated. `reverse_orientation()` reproduces the derived shape and `{−10, −4, 0}` exactly |
+
+So **the derived Farey-word triangulation `RL` of `K(7,3)` is the mirror of the Rolfsen-table 5₂
+as SnapPy digitises it**, and its A-polynomial is the mirror's. "Rolfsen's 5₂" here means the
+digitised table (SnapPy's `LinkExteriors`, triangulations by Joe Christy); the book itself is not
+held, and the identification of SnapPy's table with the book's diagrams is SnapPy's claim, recorded
+as such. The mirror is obtained by conjugating the shapes, as §3 said.
+
+**What remains open on the bean.** Which of GGM's `S⁺`/`S⁻` (the `(96)`/`(97)` factorisations,
+`FiveTwoDTSpectrumSplit`) attaches to which chirality: GGM state no table-relative orientation, and
+the three held resurgence papers (`arxiv-2012.00062v3`, `arxiv-2111.04763v2`, `arxiv-2208.14188v2`)
+treat only 4₁ and 5₂. That half stays a source question; the library cannot be built out for it
+from this sandbox (arXiv, publisher and author hosts all return no route; only GitHub, PyPI and the
+GitHub API are open).
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
