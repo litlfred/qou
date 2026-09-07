@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:27:04.995868+00:00",
-  "commitSha": "367b837d5f738cc4b3e306a71938f6cb2877d2bf",
+  "computedAt": "2026-09-07T18:10:16.390438+00:00",
+  "commitSha": "20b1cce1cb1f5ba41b33bb43b615d2687efe342c",
   "assertions": [
     {
       "name": "split_Casimir_eigenvalues_on_Sym2_/_Lambda2_are_1/4_/_-3/4",
@@ -46,6 +46,14 @@
     },
     {
       "name": "at_the_proton_pin_hbar_=_(2/i_pi)_ln_q0_is_purely_imaginary",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "B1_witness_on_disk_mentions_all_six_words",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -110,11 +118,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 1,
   "computation": "kz-pullback-monodromy-exact",
   "scriptFile": "kz_pullback_monodromy_exact_probe.py",
   "scriptHash": "165c74f576ba",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "492ad4221f6a8dc4f4f8f9d9f32d13e4fab12276",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
