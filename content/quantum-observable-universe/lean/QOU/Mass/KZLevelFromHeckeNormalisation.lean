@@ -12,14 +12,27 @@ has eigenvalues `λ₁ = e^{iπħ/4}` on `Sym²` and `λ₂ = −e^{−3iπħ/4}
 of the generator changes the product but never the ratio, so the ratio is the invariant that
 matches the two — and it gives `q² = e^{iπħ}`.
 
-That is the whole "which level" question, stated so no convention can move it: whichever way a
-book writes `ħ` in terms of `k` (`1/(k+2)`, `2/(k+2)`, …), the *invariant* relation is
-`e^{iπħ} = q²`, i.e. `ħ = (2/iπ)·ln q`. For the framework's real `q₀ > 1` this makes `ħ`
-**purely imaginary** — the precise content of "imaginary level". The corpus's earlier form,
-*"KD matching forces `ħ = 2 ln q`"* (`qbeta_fibre_unit_circle_opens_route5_probe.py`), is the
-same relation with `iπħ` renamed `ħ`. The two candidate levels recorded on the bean,
-`k + 2 = 2πi/ln q₀ ≈ 60.2 i` and `iπ/ln q₀ ≈ 30.1 i`, are the two bookkeeping conventions
-`ħ = 2/(k+2)` and `ħ = 1/(k+2)`; neither is more canonical than the ratio.
+That is the whole "which level" question on the `ħ`-vs-`k` axis: whichever way a book writes
+`ħ` in terms of `k` (`1/(k+2)`, `2/(k+2)`, …), the relation `e^{iπħ} = q²`, i.e.
+`ħ = (2/iπ)·ln q`, is invariant under rescaling the generator and under that bookkeeping. For
+the framework's real `q₀ > 1` this makes `ħ` **purely imaginary** — the precise content of
+"imaginary level". The corpus's earlier form, *"KD matching forces `ħ = 2 ln q`"*
+(`qbeta_fibre_unit_circle_opens_route5_probe.py`), is the same relation with `iπħ` renamed `ħ`.
+
+**Scope (corrected 2026-09-07 after the `qou-99qc` review on PR #7088).** The ratio `−q²` is read
+off the §7a Skein normalisation (H) `L₊ − L₋ = (q − q⁻¹)L₀`, which AGENTS.md makes STRICT; the
+relation is **conditional on that normalisation**, not normalisation-free. The corpus also carries
+the normalisation (J) `q[L₊] − q⁻¹[L₋] = (q^{1/2} − q^{−1/2})[L₀]` (bean `qou-8bxv`, 8 content
+blocks), which is *not* a rescaling of (H): its generator eigenvalues are `{q^{−1/2}, −q^{−3/2}}`,
+ratio `−q`, so under (J) the same matching gives `e^{iπħ} = q` and `ħ` halves. `ratio_invariant`
+covers rescaling and `ħ`-vs-`k` bookkeeping; it does not cover a change of Skein normalisation.
+
+**Level bookkeeping, corrected.** With `ħ = (2/iπ)·ln q₀` (`|ħ| = 0.0664` at the proton pin):
+`ħ = 1/(k+2)` gives `k+2 = iπ/(2 ln q₀) ≈ 15.05 i`; `ħ = 2/(k+2)` gives `k+2 = iπ/ln q₀ ≈ 30.1 i`
+(the convention `q = e^{iπ/(k+2)}`); the bean's other candidate `k+2 = 2πi/ln q₀ ≈ 60.2 i` is the
+convention `q = e^{2πi/(k+2)}`, i.e. `ħ = 4/(k+2)`. An earlier version of this paragraph mapped
+`60.2 i` and `30.1 i` onto `ħ = 2/(k+2)` and `1/(k+2)`, which is off by a factor of two; the probe
+`kz_pullback_monodromy_exact_probe.py` computed the correct values (`15.05 i`, `30.1 i`) all along.
 
 This file proves the algebraic core over a generic field: if a pair of eigenvalues has product
 `−1` and ratio `−q²`, it is `{q, −q⁻¹}` up to a global sign, and the ratio is invariant under

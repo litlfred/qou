@@ -203,6 +203,18 @@ Do steps 1–3 first, in that order — they convert option C from "research-sca
 
 ---
 
+## B′. Correction to §B and to the KZ-level docstring (2026-09-07, after the `qou-99qc` review on #7088)
+
+Two points from the sibling review, both accepted. (1) **Scope.** The relation `q² = e^{iπħ}` is
+read off the §7a Skein normalisation (H); the corpus's other live normalisation (J) (bean
+`qou-8bxv`) has generator eigenvalue ratio `−q`, so under it `e^{iπħ} = q` and `ħ` halves. The
+relation is invariant under generator rescaling and `ħ`-vs-`k` bookkeeping, **not** under a change
+of Skein normalisation; (H) is canonical by AGENTS.md, so the number stands, the scope sentence
+was wrong. (2) **Level bookkeeping.** With `ħ = (2/iπ) ln q₀`: `ħ = 1/(k+2) ⇒ k+2 ≈ 15.05 i`,
+`ħ = 2/(k+2) ⇒ 30.1 i` (`q = e^{iπ/(k+2)}`), `ħ = 4/(k+2) ⇒ 60.2 i` (`q = e^{2πi/(k+2)}`). §B's
+plan text and the merged docstring mapped `60.2 i / 30.1 i` onto `ħ = 2/(k+2)` and `1/(k+2)`,
+off by two; the probe's computed values were correct. Fixed in the docstring and the probe on #7088.
+
 ## C. The framework-side connection — plan (agent `fw-conn`, verbatim) and the two steps executed the same day
 
 **Parent verification.** Every Lean and audit citation re-read: `KZUnitModulusPrune.lean:30` (`unit_modulus_ne_real_gt_one`), `mi_sw_cartan_reduction.lean:103/142` (the class and theorem, no instance), `reeb-bundle.lean:29` (`structure ReebBundle (M) (q : ℝ)`), the two June audits and `2026-08-02-moc-gauss-manin-not-derivable.md` exist, `library/deligne-mostow-1986` is held, and `ColorSpectralCubicGeometry.lean:35-36` carries the zero-residue statement (`Res(X dz) = 0` at every finite branch point, PR #2755). One path correction: `TrBIntegerTracePrune.lean` lives under `QOU/BraidKnot/`, not `QOU/Mass/`. The §3 amendment table (the library holds 53 Gauss–Manin and 37 vanishing-cycle section files that `INDEX.md` does not show) is recorded as delivered.

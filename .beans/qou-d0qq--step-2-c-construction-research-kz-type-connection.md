@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-09-07T16:56:15Z
+updated_at: 2026-09-07T18:13:25Z
 parent: qou-2akx
 ---
 
@@ -36,3 +36,7 @@ parent: qou-2akx
 
 
 2026-09-07 fw-conn PLAN FILED (audit §C) and steps 1–2 EXECUTED by the parent: UntwistedMonodromyPrune.lean (finite-order / quasi-unipotent eigenvalues are never > 1 — C1/C2 dead, scope (b)); colour_cubic_abelian_twist_holonomy_probe.py 8/8 (A⁰ = X dz has trivial push-down and trivial holonomy around every ramification point — C3 dead, scope (b)). Survivor C3′: external twist exponent μ with e^{2πiμ} = −q₀², i.e. the KZ level. CONCLUSION: no framework geometry in the corpus produces 1 ↦ q₀; the deformation is an input (forever-gate-consistent). Remaining plan steps 3–5. PR #7088.
+
+
+
+2026-09-07 CORRECTION (qou-99qc review on #7088): q² = e^{iπħ} is conditional on Skein normalisation (H) — under (J) the ratio is −q and ħ halves; and the level mapping is k+2 = 15.05 i / 30.1 i / 60.2 i for ħ = 1/(k+2), 2/(k+2), 4/(k+2) (the earlier '60.2 i ↔ 2/(k+2), 30.1 i ↔ 1/(k+2)' was off by two; the probe's numbers were right). Fixed in KZLevelFromHeckeNormalisation.lean, the kz_pullback probe and audit §B′.
