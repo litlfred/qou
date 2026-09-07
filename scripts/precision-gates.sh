@@ -431,6 +431,27 @@ GATES=(
   # baselines, verified by running them, and both were verified to go RED on an
   # injected regression rather than assumed to.
   "witness prose drift ratchet|computations/audits/witness_prose_drift_audit.py|--strict --no-witness --top 0|yes|yes"
+  # A file the interpreter cannot load at all. `compile()`, deliberately NOT
+  # `ast.parse` -- future-statement placement is enforced at COMPILE time, so
+  #
+  #     import os as _o
+  #     """docstring"""
+  #     from __future__ import annotations
+  #
+  # PARSES and does not COMPILE. Every static audit in this array validates
+  # with `ast.parse` and reported 12 such producers as fine; they were found
+  # by running one, after the qou-sidu transform had hoisted its import above
+  # 35 module docstrings. One of the twelve kept a committed `allPassed: true`
+  # for 435 commits, not by lying but by becoming impossible to ask.
+  #
+  # Blocking at ZERO with no baseline, unlike its two neighbours above. There
+  # is no judgement in it: `compile()` failing IS the defect, so it has no
+  # false positives and no state in which a finding should be recorded rather
+  # than repaired. `producer_importability_audit` would also have caught these
+  # -- but it is wired into no array (see the comment at the top of this one)
+  # and its own docstring records a pass that reported 24 bogus SyntaxErrors.
+  # Bean qou-sidu.
+  "python compile gate|computations/audits/python_compile_gate.py|--strict|yes|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then
