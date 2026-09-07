@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T12:44:43Z
-updated_at: 2026-09-06T13:59:09Z
+updated_at: 2026-09-07T10:30:11Z
 ---
 
 
@@ -270,3 +270,44 @@ The instance's `ratio := 866/1000` is likewise documentary and two generations
 stale. Recorded in the block's `authorNotes` with the exact edit required if
 the author wants `[12]`; not changed here, because choosing is a judgement
 about what the class means, not a transcription.
+
+
+
+## Q2 RESOLVED 2026-09-07 — owner picked BOTH, so the class now carries both
+
+The two options were mutually exclusive for one field, so "both" reads as:
+**make the distinction explicit rather than choose.** That is the better
+answer, and it is what the conflation had been hiding.
+
+`HasHe4DominantBlock` now has:
+
+- `dominant_partition := [9, 3]` — **unchanged**, redocumented as the leading
+  **non-trivial** block, the quantity the magic-shell reading refers to.
+- `largest_partition := [12]` — new, the largest `|c_λ|` **overall**, with its
+  own `largest_is_two_row` and `largest_sums_to_12`.
+- `leading_ne_largest : dominant_partition ≠ largest_partition` — the field
+  that **asserts** the distinction rather than merely recording two values.
+
+Two derived results give the new fields consequence instead of leaving them
+inert: `largest_in_two_row_stratum` (the trivial rep is a ONE-row partition and
+`IsTwoRow` is `length ≤ 2`, which is why the stratum ratio is exactly 1 with it
+included) and `dominant_ne_trivial_rep`, proved from `leading_ne_largest` and
+`largest_eq` so it holds for any instance rather than being read off this one.
+
+**Why both, in one sentence:** before the 2026-09-05 ruling the two notions
+picked out the same block, so one field expressed both and nothing recorded
+which was meant — the conflation only became visible when the data moved.
+
+### Verification
+
+`lean`-direct with `-DautoImplicit=false -s 65536` against the restored
+v4.24.0 cache: **exit 0** (1m50s cold on the unmodified file as a baseline,
+3.4s warm after the edit). `#print axioms` on `dominant_ne_trivial_rep`,
+`largest_in_two_row_stratum` and `dominant_eq_nine_three_in_stratum` reports
+**`[propext]`** on all three — no `sorryAx`, no `Classical.choice`. The single
+`sorry` the grep finds is in a docstring. `qa-sweep`: **92 pass / 19 n/a / 0
+fail**.
+
+`dominant_partition` is unchanged, so every existing downstream theorem —
+`dominant_in_two_row_stratum`, `dominant_eq_nine_three_in_stratum` — is
+untouched.
