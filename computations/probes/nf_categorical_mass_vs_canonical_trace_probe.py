@@ -1,11 +1,24 @@
 #!/usr/bin/env python3
-"""Does the NF `categorical_mass` agree with the canonical p(3A) trace?
+"""Does the NF `nf_trace_pairing` agree with the canonical p(3A) trace?
+
+ANSWERED, and the answer renamed the field. This probe reported DISAGREE,
+`compound_shift_nf` renamed `categorical_mass` -> `nf_trace_pairing` on
+2026-09-06 on the strength of it, and that rename then broke THIS FILE:
+line 63 kept reading the old attribute and died with
+`AttributeError: 'CompoundShiftResult' object has no attribute
+`categorical_mass``. A rename that drops a definition while its consumer
+survives — the same shape as bean qou-lejl, one level up, on an ATTRIBUTE
+rather than a bare name, which is why neither the undefined-name audit nor
+the compile gate can see it. Repaired on merge; the probe now stands as a
+regression check on a settled question.
+
+The FILE keeps its old name so its witness stem does not move.
 
 Settles item 3.2 of bean `qou-zgg2`, which `qou-hu1f` names as unmeasured.
 
 THE TWO OBJECTS, and they are NOT the same construction:
 
-* `compound_shift_nf.compound_shift(Z, N).categorical_mass` is
+* `compound_shift_nf.compound_shift(Z, N).nf_trace_pairing` is
   `Σ_{i<6} nf_mp[i] · tr_w[i]` — the SIX-vector `H_3` normal form contracted
   against the `H_3` Markov weights.  A collapsed object, no tower.
 * `tr_m_atom_via_transfer.tr_m_atom_zn(Z, N)` is the canonical route's default
@@ -13,7 +26,7 @@ THE TWO OBJECTS, and they are NOT the same construction:
   EVERY partition of `3A` — full-tower in `n` (measured on `main`
   `30b3568404`: `2H` 11 = p(6), `3He` 30 = p(9), `4He` 77 = p(12)).
 
-WHY IT MATTERS.  `categorical_mass` is serialised into
+WHY IT MATTERS.  The field is serialised into
 `compound-shift-nf.witness.json` uncaveated, under a name that says "mass".
 No consumer reads it today.  If the two agree, the field is a faithful
 order-zero rendering and only its NAME is loose; if they disagree, that witness
@@ -50,9 +63,9 @@ from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 
 
 def main() -> int:
-    print(f"NF categorical_mass  vs  canonical p(3A) trace   (dps={DPS})")
+    print(f"NF nf_trace_pairing  vs  canonical p(3A) trace   (dps={DPS})")
     print()
-    print("| atom | A | n=3A | categorical_mass (NF, 6-vec) | tr_M_atom (canonical) | |Δ| | rel |")
+    print("| atom | A | n=3A | nf_trace_pairing (NF, 6-vec) | tr_M_atom (canonical) | |Δ| | rel |")
     print("|---|--:|--:|---|---|---|---|")
 
     rows = []
@@ -60,7 +73,7 @@ def main() -> int:
         A = Z + N
         t0 = time.monotonic()
         cs = compound_shift(Z, N, atom, dps=DPS)
-        cat = mpf(cs.categorical_mass)
+        cat = mpf(cs.nf_trace_pairing)
         tr_atom, _tr_free, _chi, _wall = tr_m_atom_zn(Z, N, dps=DPS)
         tr_atom = mpf(tr_atom)
         delta = cat - tr_atom
@@ -80,12 +93,12 @@ def main() -> int:
     print(f"50-dps serialisation floor: {nstr(floor, 6)}")
     print()
     if agree:
-        print("VERDICT: AGREE at the compute floor.  The NF `categorical_mass` is a")
+        print("VERDICT: AGREE at the compute floor.  The NF `nf_trace_pairing` is a")
         print("faithful order-zero rendering of the canonical trace at these A;")
         print("only the FIELD NAME is loose.")
     else:
         print("VERDICT: DISAGREE.  `compound-shift-nf.witness.json` carries a field")
-        print("named `categorical_mass` that is NOT the framework's canonical trace.")
+        print("named `nf_trace_pairing` that is NOT the framework's canonical trace.")
         print("Any downstream reading of it is about the wrong object.")
     print()
     print("Scope: this is a statement about ONE serialised field at A = 2..6.")
