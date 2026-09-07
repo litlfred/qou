@@ -50,8 +50,17 @@ class HasConfinementSDPData (n : ℕ) where
   primalOpt : R_q
   /-- Normalisation target. -/
   nTarget : R_q
-  /-- Slater-strict feasibility predicate. -/
-  slaterStrict : Prop
+  /-- **Strict positive-definiteness** on the block algebra.
+
+      Carried as a field, not referenced: `R_q` is `LaurentPolynomial ℤ`,
+      which has no order at all, so there is no `≻ 0` to appeal to. That
+      absence is what made the old `slaterStrict : Prop` look unavoidable,
+      and carrying the cone is what makes it avoidable. -/
+  PosDef : Matrix (Fin (Nat.factorial n)) (Fin (Nat.factorial n)) R_q → Prop
+  /-- **The primal feasible set** — `⟨π_λ, Φ⟩ ≥ 0`, the 2×2 pair-PSD
+      conditions and `tr(Φ) = n_target`, as one predicate. Carried for the
+      same reason: this class holds an optimum and no constraint set. -/
+  Feasible : Matrix (Fin (Nat.factorial n)) (Fin (Nat.factorial n)) R_q → Prop
   /-- Optimal dual shadow price `y₀*`. -/
   y0Star : R_q
 
@@ -66,8 +75,25 @@ def primalOpt (n : ℕ) [h : HasConfinementSDPData n] : R_q := h.primalOpt
 /-- Normalisation target accessor. -/
 def nTarget (n : ℕ) [h : HasConfinementSDPData n] : R_q := h.nTarget
 
-/-- Slater-strict feasibility accessor. -/
-def slaterStrict (n : ℕ) [h : HasConfinementSDPData n] : Prop := h.slaterStrict
+/-- **Slater's condition**: a strictly feasible point exists.
+
+    Was `h.slaterStrict`, a field typed with the *universe* `Prop` — so the
+    instance supplied a proposition and `True` was a legal choice. It is now
+    the condition itself, `∃ Φ ≻ 0 feasible`, built from the cone and the
+    constraint set the class carries.
+
+    **This narrows the freedom; it does not remove it, and saying otherwise
+    would be the over-claim.** An instance can still choose
+    `PosDef := fun _ => True` and `Feasible := fun _ => True`, and
+    `slaterStrict_is_freely_dischargeable` below still holds — with a
+    different proof. What changed is *where* the choice lives: the SHAPE of
+    Slater's condition is now fixed (an existential over matrices conjoining
+    two predicates) and only the cone is chosen, where before the whole
+    proposition was. A model that supplies a real PSD cone gets a real
+    hypothesis; before, no model could. -/
+def slaterStrict (n : ℕ) [h : HasConfinementSDPData n] : Prop :=
+  ∃ Φ : Matrix (Fin (Nat.factorial n)) (Fin (Nat.factorial n)) R_q,
+    h.PosDef Φ ∧ h.Feasible Φ
 
 /-- Optimal dual shadow price accessor. -/
 def y0Star (n : ℕ) [h : HasConfinementSDPData n] : R_q := h.y0Star
@@ -141,11 +167,16 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
     signature therefore reads as Slater-conditional while constraining
     nothing.
 
-    It is **not** encodable here, which is why it is documented rather
-    than fixed: Slater's condition is `∃ Φ ≻ 0 feasible`, and this class
-    carries no constraint set and no PSD order — `R_q` is
-    `LaurentPolynomial ℤ`, which carries no order at all.  Encoding it
-    needs the constraint data and an ordered evaluation layer.
+    **That paragraph said this was "not encodable here". It was wrong, and
+    it was mine (2026-09-07).** The reasoning — Slater is `∃ Φ ≻ 0
+    feasible`, and this class carries no constraint set and no PSD order,
+    `R_q` being `LaurentPolynomial ℤ` — is all correct. The conclusion does
+    not follow: missing vocabulary is carried as fields, which is what
+    `PosDef` and `Feasible` now are. `slaterStrict` is the condition itself.
+
+    What survives of the caveat: an instance still chooses the cone, so the
+    hypothesis is not thereby non-trivial in every model. See the note on
+    `slaterStrict` for the exact scope of the improvement.
 
     **Two sentences here were false and were corrected on 2026-09-03**;
     the lead sentence above was not among them and asserted, until
@@ -187,12 +218,19 @@ theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
   -- Ref: [manuscript] particle-interactions/confinement-sdp
   exact hi.strong_duality
 
-/-- **The Slater hypothesis of `ConfinementSDP` is freely dischargeable.**
+/-- **The Slater hypothesis of `ConfinementSDP` is still freely
+    dischargeable — by a different route since 2026-09-07.**
 
-    `HasConfinementSDPData.slaterStrict` is typed with the universe `Prop`,
-    so an instance supplies *a proposition* rather than *the* Slater
-    condition — and `True` is a legal choice.  This exhibits such an
-    instance and discharges the hypothesis by `trivial`.
+    It used to be free because `slaterStrict` was a `Prop`-universe FIELD:
+    the instance supplied a proposition and `True` was legal. It is now the
+    real condition `∃ Φ, PosDef Φ ∧ Feasible Φ`, and the instance below
+    discharges it by choosing a trivial CONE instead — `PosDef` and
+    `Feasible` both `fun _ => True`, witnessed at `Φ = 0`.
+
+    Keeping this theorem is the point. The encoding narrowed the freedom
+    without eliminating it, and a theorem that still proves the hypothesis
+    free is the honest record of exactly how much was bought: the shape of
+    Slater's condition, not its content.
 
     Note the statement is `∃ inst, slaterStrict` and **not** `∃ _inst,
     True`: the latter says only that the class is inhabited, which is the
@@ -207,7 +245,8 @@ theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
 theorem slaterStrict_is_freely_dischargeable (n : ℕ) :
     ∃ inst : HasConfinementSDPData n, @slaterStrict n inst :=
   ⟨{ sdpCost := 0, primalOpt := 0, nTarget := 0, y0Star := 0,
-     slaterStrict := True }, trivial⟩
+     PosDef := fun _ => True, Feasible := fun _ => True },
+   ⟨0, trivial, trivial⟩⟩
 
 -- The deprecated universal axiom `ConfinementSDP_axiom` has been
 -- removed. Use `ConfinementSDP` (typeclass-backed) instead.
