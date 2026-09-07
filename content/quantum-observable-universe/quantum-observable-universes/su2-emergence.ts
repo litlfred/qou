@@ -70,6 +70,28 @@ export default theorem({
         "gap from 'rank and subgroup both assumed' to 'the realisation is " +
         "assumed'; it does not close it.",
     },
+    {
+      kind: "status",
+      date: "2026-09-06",
+      body:
+        "**The display sibling carried a third vacuous statement, now a " +
+        "theorem.** `su2-emergence.lean` held `axiom su2_emergence` for " +
+        "`∃ sd : SpinDecomposition …, sd.fundamentalObj = " +
+        "data.qou.fundamentalObj`. That is vacuously true: " +
+        "`SpinDecomposition` has three free fields and two equations " +
+        "satisfiable by taking `simpleObj` constant, so the whole statement " +
+        "closes by `rfl`. Unlike a false axiom nothing unsound followed " +
+        "from it -- and unlike a false axiom it could stand indefinitely, " +
+        "cited as Tannaka-Krein reconstruction, since looking for a " +
+        "counterexample finds none. The old docstring described the " +
+        "consequence as *simple objects indexed by half-integer spin " +
+        "labels with dim = 2j + 1*; `SpinDecomposition` carries no " +
+        "simplicity condition, no injectivity of `simpleObj` and no " +
+        "dimension field, so none of that was in the statement. The block " +
+        "itself already points at `QOU.su2_emergence_rank_forced` and is " +
+        "unaffected.",
+      see: "docs/audits/2026-09-06-q-analysis-uniqueness-axioms-are-false.md",
+    },
   ],
   uses: ["def:quantum-observable-universe"],
   proofs: ["prf:su2-emergence"],

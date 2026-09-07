@@ -11,8 +11,13 @@
 > Under Borromean it is `0.817, 1.239, ∞, 4.905, 0.972` — not monotone, not
 > ordered by `A`, already past 1 at `A = 2`. The load-bearing evidence, two `A = 3`
 > cases *"agreeing to 0.8 %, so it is signal, not scatter"*, becomes `4.905` vs
-> `0.972` — a factor of 5 apart. The `A = 4` crossover specifically is **untested**
-> under Borromean (needs `P = 4`), so it is unsettled rather than disproved.
+> `0.972` — a factor of 5 apart. **UPDATE 2026-09-06 — the `A = 4` crossover has now been
+> MEASURED** (`c₂(⁴He) = 439/512`, ratio **1.5535**, bean `qou-yaig`). The
+> ENDPOINT fact survives: second order does exceed first at `A = 4`. The
+> LOCATION does not — this document's "crosses over *between* `A = 3` and
+> `A = 4`" needs the ratio below 1 underneath, and it is already `4.90` at `T`
+> and `1.24` at `pn`. So the conclusion is right at its endpoint and wrong
+> about where the crossing happens, and the argument stays refuted.
 >
 > Full table under both orderings, and what survives:
 > [`2026-09-06-the-c1-c2-crossover-is-grouped-specific.md`](2026-09-06-the-c1-c2-crossover-is-grouped-specific.md).

@@ -544,7 +544,7 @@
 | [prop:quantum-observable-universe-exists](#prop:quantum-observable-universe-exists) | Existence of quantum observable universes | Ch 2 | `qou:QOU.QuantumObservableUniverse.exists_instance` |
 | [prop:quantum-universe-exists](#prop:quantum-universe-exists) | Existence of quantum universes | Ch 1 | `qou:QOU.QuantumUniverse.exists_instance` |
 | [prop:q-casimir-exists](#prop:q-casimir-exists) | Existence of the $q$-Casimir element | Ch 5 | `qou:QOU.QCasimir.exists` |
-| [prop:q-dilogarithm-exists](#prop:q-dilogarithm-exists) | Existence of the $q$-dilogarithm | Ch 2 | `qou:QOU.QDilogarithm.exists` |
+| [prop:q-dilogarithm-exists](#prop:q-dilogarithm-exists) | Inhabitation of the $q$-dilogarithm structure | Ch 2 | `qou:QOU.QDilogarithm.exists_of_addZeroClass` |
 | [prop:q-exponential-exists](#prop:q-exponential-exists) | Existence of the $q$-exponential grouplike | Ch 2 | `qou:QOU.QExponential.exists_in_shuffle_hopf` |
 | [prop:q-logarithm-exists](#prop:q-logarithm-exists) | Existence of the $q$-logarithm primitive | Ch 2 | `qou:QOU.QLogarithm.exists_in_shuffle_hopf` |
 | [prop:q-resolvent-exists](#prop:q-resolvent-exists) | Existence of the $q$-resolvent | Ch 2 | `qou:QOU.QResolvent.exists` |
@@ -892,7 +892,7 @@
 | [prop:lepton-meson-torus-knot-dictionary](#prop:lepton-meson-torus-knot-dictionary) | Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$ | Ch 8 | `qou:QOU.ParticleInteractions.lepton_meson_crossing_match` |
 | [prop:volume-tower-decomposition](#prop:volume-tower-decomposition) | Tower-level decomposition of hyperbolic volume | Ch 12 | `qou:QOU.Archimedean.VolumeTowerDecomposition` |
 | [prop:transfer-matrix-identities](#prop:transfer-matrix-identities) | Transfer matrix identities: $T_{pp}T_{nn} = I$ and $T_{pn}^2 = [2]_q^2/4 \cdot I$ | Ch 12 | `qou:QOU.ParticleInteractions.transfer_matrix_identities` |
-| [prop:transfer-matrix-level-independence](#prop:transfer-matrix-level-independence) | Transfer matrix level independence | Ch 12 | `qou:QOU.transfer_matrix_level_independence` |
+| [prop:transfer-matrix-level-independence](#prop:transfer-matrix-level-independence) | Transfer matrix level independence | Ch 12 | `qou:QOU.transfer_matrix_level_independence_of_derived` |
 | [prop:bring-trilog-imaginary-tate-rational](#prop:bring-trilog-imaginary-tate-rational) | Trilogarithm imaginary part at $\zeta_5$: Tate-rational closed form $4\pi^3/125$ via Kummer reflection (50-dps verified) | Ch 12 | `qou:QOU.BraidKnot.BringTrilogImaginaryTateRational.im_li3_zeta5_closed_form` |
 | [prop:cyclotomic-trilog-imaginary-closed-form](#prop:cyclotomic-trilog-imaginary-closed-form) | Trilogarithm imaginary part at $\zeta_n$: closed form $(n - 1)(n - 2)\pi^3 / (3 n^3)$ for every root of unity | Ch 12 | `qou:QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds` |
 | [prop:incompleteness-implies-horizon](#prop:incompleteness-implies-horizon) | Turing completeness with $\mathbb{N}$-embedding implies non-empty computational horizon | Ch 20 | `qou:QOU.IncompletenessHorizon.exists_noncomputable` |
@@ -910,9 +910,9 @@
 | [prop:quantum-characteristic-classes-unique](#prop:quantum-characteristic-classes-unique) | Uniqueness of quantum characteristic classes | Ch 4 | `qou:QOU.QuantumCharClasses.unique` |
 | [prop:q-heat-equation-unique](#prop:q-heat-equation-unique) | Uniqueness of solutions of the $q$-heat equation | Ch 2 | `qou:QOU.QHeatEquation.unique_solution` |
 | [prop:q-casimir-unique](#prop:q-casimir-unique) | Uniqueness of the $q$-Casimir element up to scalar | Ch 5 | `qou:QOU.QCasimir.unique_up_to_scalar` |
-| [prop:q-dilogarithm-unique](#prop:q-dilogarithm-unique) | Uniqueness of the $q$-dilogarithm | Ch 2 | `qou:QOU.QDilogarithm.unique` |
-| [prop:q-exponential-unique](#prop:q-exponential-unique) | Uniqueness of the $q$-exponential grouplike | Ch 2 | `qou:QOU.QExponential.unique` |
-| [prop:q-logarithm-unique](#prop:q-logarithm-unique) | Uniqueness of the $q$-logarithm primitive | Ch 2 | `qou:QOU.QLogarithm.unique` |
+| [prop:q-dilogarithm-unique](#prop:q-dilogarithm-unique) | Uniqueness of the $q$-dilogarithm evaluation (conditional) | Ch 2 | `qou:QOU.QDilogarithm.eval_unique_of_pentagon_rigid` |
+| [prop:q-exponential-unique](#prop:q-exponential-unique) | Uniqueness of the $q$-exponential grouplike (conditional) | Ch 2 | `qou:QOU.QExponential.unique_of_flow_rigid` |
+| [prop:q-logarithm-unique](#prop:q-logarithm-unique) | Uniqueness of the $q$-logarithm primitive (conditional) | Ch 2 | `qou:QOU.QLogarithm.unique_of_prim_rigid` |
 | [prop:q-resolvent-unique](#prop:q-resolvent-unique) | Uniqueness of the $q$-resolvent | Ch 2 | `qou:QOU.QResolvent.unique` |
 | [prop:archimedean-functor-uniqueness](#prop:archimedean-functor-uniqueness) | Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional) | Ch 12 | `qou:QOU.Archimedean.archimedean_functor_uniqueness` |
 | [prop:atom-knot-unique](#prop:atom-knot-unique) | Uniqueness of the atom-knot up to Markov equivalence | Ch 8 | `qou:QOU.BraidKnot.AtomKnot.unique_up_to_markov` |

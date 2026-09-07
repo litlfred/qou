@@ -2,7 +2,7 @@
     Computed by hecke-engine 0.8.0, 0ms.
     F_Pauli(q₀) = 0.6381977744
     Denominator: 2^6. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript] appendix-mass-binding-algorithms (F_Pauli / Markov-trace witnesses)
 noncomputable def tr_alt_5he : LaurentPolynomial ℤ :=
   -LaurentPolynomial.T -11 + 3 • LaurentPolynomial.T -10 + LaurentPolynomial.T -8 - 24 • LaurentPolynomial.T -7 + 15 • LaurentPolynomial.T -6 + 34 • LaurentPolynomial.T -5 + 45 • LaurentPolynomial.T -4 - 123 • LaurentPolynomial.T -3 - 118 • LaurentPolynomial.T -2 + 129 • LaurentPolynomial.T -1 + 351 - 40 • LaurentPolynomial.T 1 - 645 • LaurentPolynomial.T 2 - 255 • LaurentPolynomial.T 3 + 796 • LaurentPolynomial.T 4 + 822 • LaurentPolynomial.T 5 - 690 • LaurentPolynomial.T 6 - 1356 • LaurentPolynomial.T 7 + 204 • LaurentPolynomial.T 8 + 1584 • LaurentPolynomial.T 9 + 494 • LaurentPolynomial.T 10 - 1365 • LaurentPolynomial.T 11 - 981 • LaurentPolynomial.T 12 + 804 • LaurentPolynomial.T 13 + 1065 • LaurentPolynomial.T 14 - 204 • LaurentPolynomial.T 15 - 785 • LaurentPolynomial.T 16 - 117 • LaurentPolynomial.T 17 + 408 • LaurentPolynomial.T 18 + 174 • LaurentPolynomial.T 19 - 120 • LaurentPolynomial.T 20 - 90 • LaurentPolynomial.T 21 + 12 • LaurentPolynomial.T 22 + 27 • LaurentPolynomial.T 23 + 9 • LaurentPolynomial.T 24 + LaurentPolynomial.T 25
 

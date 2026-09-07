@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-09-03T12:42:18Z
+updated_at: 2026-09-06T10:21:41Z
 ---
 
 ## What
@@ -916,3 +916,53 @@ a second instance appears, that is the signal to revisit.
 code so a force-push shipped 1 of 10 commits; a payload string defeating a
 source-stripping detector. In each, **a convenience layer silently replaced the
 signal being read.**
+
+
+## Re-measured 2026-09-06 — the tranche has HELD, and the audit's own witness was stale
+
+Found by `scripts/bean-staleness-triage.py` (7th of 291 artifact beans, 29
+commits over its named paths since 2026-09-03).
+
+### The 2026-09-03 end state still holds
+
+`computations/q0_anchor_manifest.json` on `main`: **`ideal_muon` = 19**,
+`physical_proton` = 907, `ambiguous` = 15 — unchanged from the recorded
+`ideal_muon = 19 / A = 12 / B = 6 / no-live-producer = 1`. Nothing has regrown.
+
+### But `muon_anchor_reader_invisible_staleness_audit` had NOT been re-run
+
+Its committed witness was written at `d3011b1d66`; the producer was edited
+afterwards at `23d95c998f` (*"ratchet the q0-dataflow blind spot — and key it
+on structure, not on the date"*), so the recorded numbers were one
+producer-generation behind. Re-ran it (12 s, exit 0, **6/6 assertions pass**)
+and committed the honest result — `2250c83978`, not hand-edited.
+
+| | committed | re-run |
+|---|---|---|
+| `producers_reading_anchor` | 86 | **88** |
+| `paired_by_provenance` | 65 | **66** |
+| `paired_by_stem` | 31 | **30** |
+| `visible_to_a_q0_gate` | 52 | **55** |
+| `at_risk` (invisible class) | 4 | **3** |
+
+The reader surface **grew** by 2 while the at-risk set shrank by 1: the
+invisible class loses `qbeta-markov-trace-norm-probe`, leaving
+`lambda-scale-derivation-probes-123`,
+`qbeta-c3-per-block-categorical-probe` and `qbeta-symbolic-tbeta-min-l2`.
+So the surface is not converging on its own — it is being drained faster than
+it accretes, which is a different claim and the one the numbers support.
+
+### A nuance worth carrying about the "0 of ~700 safe to refresh" rule
+
+That finding (`qou-e9pp`) is about refreshing **blind** — re-running expensive
+producers whose numbers cannot move. It is not a prohibition on regenerating a
+cheap audit whose numbers demonstrably *did*: this producer is a 12-second scan
+with no free parameters and a changed `scriptHash`, so re-running it is the
+correct handling rather than an exception to the rule.
+
+### Status
+
+The option-1 tranche is landed and holding; the open item is unchanged and is
+the one this bean says must not be resolved by editing 85 files — **which of
+the two readings of the anchor-read idiom is intended.** Nothing here settles
+that, and nothing here needs it settled.

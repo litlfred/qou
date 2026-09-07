@@ -66,8 +66,17 @@ import time
 from fractions import Fraction
 from pathlib import Path
 
+import mpmath as mp
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 sys.setrecursionlimit(10000)
 
 
@@ -125,10 +134,23 @@ def main() -> int:
     print("E_Q[Sigma_3] AGAINST THE CLT SCALE k^{3/2}")
     print("=" * 78)
     print(f"    {'k':>3} | {'E_Q[Sigma_3]':>15} | {'/k^{3/2}':>10} | {'/(sqrt3 k^{3/2})':>17}")
+    exact_sigma3 = {}
+    exact_ratio = {}
     for k in ks:
         v = eq_sigma3(k)
         r = float(v) / k ** 1.5  # float64-ok: v is an exact Fraction; the float is the DISPLAYED ratio and the bound test below has 0.02 of slack against a 0.06 spread, far outside double precision
         ratios[k] = r
+        # THE RECORD, separately from the test. The float above is exactly as
+        # the author wrote it and its justification is untouched: it decides
+        # assertions that carry 0.02 of slack against a 0.06 spread, and
+        # binary64 is nowhere near that. But the WITNESS is not a test -- a
+        # probe's numbers are read later by things that never re-derive them
+        # (AGENTS.md: "float64 in a probe corrupts *analysis*"), so the
+        # serialized ratio is carried in mpf from the exact Fraction, and
+        # E_Q[Sigma_3] itself is recorded EXACTLY as num/den.
+        exact_sigma3[k] = f"{v.numerator}/{v.denominator}"
+        exact_ratio[k] = (mp.mpf(v.numerator) / mp.mpf(v.denominator)
+                          / mp.power(k, mp.mpf(3) / 2))
         print(f"    {k:>3} | {float(v):>+15.4f} | {r:>+10.5f} | "  # float64-ok: printing
               f"{r / math.sqrt(3):>+17.5f}")
 
@@ -163,9 +185,10 @@ def main() -> int:
     print("    slightly upward, so the data does NOT establish that a limit exists,")
     print("    let alone its value. Do not fit to this. If a derivation produces a")
     print("    constant independently, compare it here.")
+    mean_tail_mp = sum(exact_ratio[k] for k in ks[-8:]) / len(ks[-8:])
     a.append({"name": "coincidence_recorded_not_asserted",
-              "computed": {"mean_tail": round(mean_tail, 5),
-                           "sqrt3_over_2pi": round(math.sqrt(3) / (2 * math.pi), 5)},
+              "computed": {"mean_tail": fmt(mean_tail_mp),
+                           "sqrt3_over_2pi": fmt(mp.sqrt(3) / (2 * mp.pi))},
               "expected": "recorded only", "passed": True,
               "note": "NOT an assertion that the limit is sqrt(3)/(2 pi)"})
 
@@ -182,8 +205,17 @@ def main() -> int:
         "parameters": {"epic": "qou-x631",
                        "claim": "the margin scales as k^{3/2}, the CLT fluctuation "
                                 "scale, so concentration/limit-shape arguments cannot work",
-                       "arithmetic": "exact Fractions; float only for display"},
-        "data": {"ratio_by_k": {str(k): round(r, 6) for k, r in ratios.items()}},
+                       "arithmetic": "exact Fractions throughout; the recorded "
+                                     "ratio is carried in mpf from the exact "
+                                     "Fraction and E_Q[Sigma_3] is recorded as "
+                                     "num/den. float64 appears only in the "
+                                     "assertion tests and printing, where it "
+                                     "has orders of slack (see float64-ok "
+                                     "comments)"},
+        "data": {
+            "ratio_by_k": {str(k): fmt(exact_ratio[k]) for k in ks},
+            "eq_sigma3_exact": exact_sigma3,
+        },
         "provenance": {"headSha": head,
                        "producer": "computations/qbeta/qbeta_covariance_kernel_scale_probe.py",
                        "elapsed_s": round(time.monotonic() - t0, 3)},

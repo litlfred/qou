@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2601.07906v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "e69b1bf37f2c75b067d792f3b780054879ff55f652bfe2ffdda8738c67a82977",
+  "file": "2601.07906v2.pdf"
+ },
+ "provenance": {
+  "title": "March 2026 A universal sum over topologies in 3d gravity",
+  "authors": "Alexandre Belin 1,2, Scott Collier 3,4, Lorenz Eberhardt 5, Diego Liska 6,7, Boris",
+  "arxiv": {
+   "id": "2601.07906",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "25 Mar 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -821,11 +821,23 @@ def _iter_rows(tier: str | None):
 
 
 def _print_sites(rows: list, key: str, cap: int = 40) -> None:
+    """Print each site, capped in the overview and UNCAPPED under --tier.
+
+    The cap used to be an unconditional 40 while the message told the reader to
+    "re-run with --tier for the full list" — and `--tier` only filters the ROWS
+    (`_iter_rows(a.tier)`), never the cap, so the advertised escape hatch did
+    nothing. On a tier with 188 sites that showed 40 and pointed at a flag that
+    changed nothing. Callers now lift the cap when a tier was named, which is
+    what the message always promised; the count of what is hidden is printed so
+    a capped view cannot be mistaken for a complete one.
+    """
+    total = sum(len(r[key]) for _, _, r in rows)
     shown = 0
     for _, path, r in rows:
         for line, origin in r[key]:
             if shown >= cap:
-                print("  … and more; re-run with --tier for the full list")
+                remaining = total - shown
+                print(f"  … and {remaining} more; pass --tier for the full list")
                 return
             print(f"  {path}:{line}  <- {origin}")
             shown += 1
@@ -842,6 +854,8 @@ def main() -> int:
         return self_test()
 
     rows = _iter_rows(a.tier)
+    # Naming a tier means "show me that tier", so the listing caps lift.
+    _cap = 10 ** 6 if a.tier else 40
     laundered = [r for r in rows if r[0] == "LAUNDERED"]
     casts = [r for r in rows if r[0] == "F64_CAST"]
     native = [r for r in rows if r[0] == "F64_ENGINE_ENTRY"]
@@ -880,7 +894,7 @@ def main() -> int:
               "built on an f64\n"
               "      engine (`pyhecke.gram`, `BlockCache`, numpy) is an f64 "
               "pipeline by design.")
-        _print_sites(casts, "casts")
+        _print_sites(casts, "casts", cap=_cap)
     else:
         print("\nF64_CAST — none.")
 
@@ -891,11 +905,11 @@ def main() -> int:
           f"worst tier ({n_np_all} op(s) corpus-wide, the rest inside files "
           f"already counted as a defect above). "
           f"CIRCUMSTANTIAL — review, do not bulk-edit.")
-    for _, path, r in numpy[:40]:
+    for _, path, r in numpy[:_cap]:
         ops = ", ".join(sorted({op for _, op in r["numpy"]})[:4])
         print(f"  {path}  ({len(r['numpy'])}x: {ops})")
-    if len(numpy) > 40:
-        print(f"  … and {len(numpy) - 40} more")
+    if len(numpy) > _cap:
+        print(f"  … and {len(numpy) - _cap} more; pass --tier for the full list")
 
     # Counted over ALL rows, like F64_DISPLAY below: a file whose headline
     # tier is F64_CAST can still call the f64 engine, and that site is just as
@@ -980,10 +994,10 @@ def main() -> int:
 
     print(f"\nF64_IMPORT — imports an f64 constant and uses mpmath, no cast, "
           f"no kernel: {len(imports)} file(s). CIRCUMSTANTIAL.")
-    for _, path, r in imports[:40]:
+    for _, path, r in imports[:_cap]:
         print(f"  {path}  ({', '.join(sorted(r['f64'])[:4])})")
-    if len(imports) > 40:
-        print(f"  … and {len(imports) - 40} more")
+    if len(imports) > _cap:
+        print(f"  … and {len(imports) - _cap} more; pass --tier for the full list")
 
     print("\nFix by reading the high-precision name: Q_50_DIGIT_STR / the _MP\n"
           "family / flavor_split_leading(q) — not by widening a tolerance.\n"

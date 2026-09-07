@@ -16657,6 +16657,105 @@ export const references: Reference[] = [
     URL: "https://arxiv.org/abs/q-alg/9708006",
     note: "Cited in q-geometric-langlands/quantum-langlands-dual (cites[]). Rekeyed from 'frenkel-reshetikhin2002' on owner instruction (2026-09-04): no FR paper is dated 2002; the deformed-W-algebra duality W_{q,t}(g) = W_{t,q}(^L g) introduced here is the 'quantum Langlands dual' content the block cites. arXiv:q-alg/9708006. DOI not verifiable this session, so omitted.",
   }),
+
+  // ── Hales–Harrison–McLaughlin–Nipkow–Obua–Zumkeller 2010 — Kepler conjecture: blueprint / Flyspeck status + errata ──
+  ref({
+    id: "hales-etal2010",
+    library: {
+      docId: "arxiv-0902.0350v1",
+      dir: "library/arxiv-0902.0350v1",
+      pdf: "library/arxiv-0902.0350v1/0902.0350v1.pdf",
+      stage: "sections",
+      pages: 41,
+      sections: 12,
+      arxiv: "0902.0350v1",
+    },
+    type: "article-journal",
+    title: "A revision of the proof of the Kepler conjecture",
+    author: [
+      { family: "Hales", given: "Thomas C." },
+      { family: "Harrison", given: "John" },
+      { family: "McLaughlin", given: "Sean" },
+      { family: "Nipkow", given: "Tobias" },
+      { family: "Obua", given: "Steven" },
+      { family: "Zumkeller", given: "Roland" },
+    ],
+    "container-title": "Discrete & Computational Geometry",
+    volume: "44",
+    issue: "1",
+    page: "1-34",
+    issued: { "date-parts": [[2010]] },
+    URL: "https://arxiv.org/abs/0902.0350",
+    note: "arXiv:0902.0350 (math.MG, 2 Feb 2009; 41 pp, 12 sections). Part 1 reports the Flyspeck formal-proof initiative (HOL Light + Isabelle/HOL: nonlinear inequalities via Bernstein bases, tame-graph enumeration, linear programs) and the blueprint edition; Part 2 gives errata to the 2005 Annals proof, including the new §8 argument on biconnected graphs. Held (ingested 2026-09-06, e5afe5ea7b) as the packing source the binding arc had none of — docs/audits/2026-09-05-max-contact-sub-affine-negative.md §5 recorded 'references.ts has no packing entry'. What the folio can cite from it is the Kepler theorem STATEMENT (Introduction, p. 2: no packing of congruent balls in E^3 exceeds the fcc density); it proves no kissing-number or contact-number bound, so it does not by itself source the k = 12 bounded-degree coordination of prop:coordination-saturation — that is bezdek-reid2013 / Schütte–van der Waerden. Journal volume/pages recalled, not verified in-sandbox (Crossref CONNECT 403), DOI therefore omitted. Triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
+  }),
+
+  // ── Bezdek–Reid 2013 — contact graphs of unit sphere packings: C(n) < 6n − 0.926 n^{2/3} ──
+  ref({
+    id: "bezdek-reid2013",
+    library: {
+      docId: "arxiv-1210.5756v1",
+      dir: "library/arxiv-1210.5756v1",
+      pdf: "library/arxiv-1210.5756v1/1210.5756v1.pdf",
+      stage: "sections",
+      pages: 19,
+      sections: 13,
+      arxiv: "1210.5756v1",
+    },
+    type: "article-journal",
+    title: "Contact graphs of unit sphere packings revisited",
+    author: [
+      { family: "Bezdek", given: "Károly" },
+      { family: "Reid", given: "Samuel" },
+    ],
+    "container-title": "Journal of Geometry",
+    volume: "104",
+    issue: "1",
+    page: "57-83",
+    issued: { "date-parts": [[2013]] },
+    URL: "https://arxiv.org/abs/1210.5756",
+    note: "arXiv:1210.5756 (math.MG, 21 Oct 2012; 19 pp, 13 sections). Theorem 1(i): the number of touching pairs in any packing of n ≥ 2 unit balls in E^3 is < 6n − 0.926 n^{2/3}; (ii) lattice packings < 6n − 3.665 n^{2/3}; and (recalled from Bezdek 2012) fcc packings with n = (2k^3+k)/3 balls have > 6n − 7.862 n^{2/3} touching pairs. Theorem 2: touching triplets ≤ 25n/3, quadruples ≤ 11n/4. Theorems 4/5 use Hales' 2.52 separation of a 13th ball (kissing-number-12 rigidity). This is exactly the affine-plus-sub-affine shape — bulk 12·n/2 from the kissing number, surface deficit ∝ n^{2/3} — that QOU.Mass.CoordinationSaturation (bounded degree k) and docs/audits/2026-09-05-coordination-surface-deficit.md assume; it makes the corpus's Euclidean-packing import a citable theorem while leaving the four recorded objections to that import (internal derivation demanded by qou-rav3; ambient geometry hyperbolic; 3-dimensionality underived; exponent imported) untouched — see docs/audits/2026-09-05-max-contact-sub-affine-negative.md §5. Journal volume/pages recalled, not verified in-sandbox (Crossref CONNECT 403), DOI omitted. Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
+  }),
+
+  // ── Martelli 2016/2022 — An Introduction to Geometric Topology (hyperbolic 3-manifolds, ideal triangulations, Dehn filling) ──
+  ref({
+    id: "martelli2016",
+    library: {
+      docId: "arxiv-1610.02592v3",
+      dir: "library/arxiv-1610.02592v3",
+      pdf: "library/arxiv-1610.02592v3/1610.02592v3.pdf",
+      stage: "sections",
+      pages: 494,
+      sections: 68,
+      arxiv: "1610.02592v3",
+    },
+    type: "book",
+    title: "An Introduction to Geometric Topology",
+    author: [{ family: "Martelli", given: "Bruno" }],
+    publisher: "arXiv (self-published textbook)",
+    issued: { "date-parts": [[2016]] },
+    URL: "https://arxiv.org/abs/1610.02592",
+    note: "arXiv:1610.02592 (math.GT; v1 Oct 2016, v3 5 Apr 2022; 494 pp, 68 sections). Graduate textbook on surfaces and 3-manifolds through geometrisation. The chapters this folio can cite: §13.1 (Thm 13.1.3 Vol(Δ) = Λ(α)+Λ(β)+Λ(γ) for an ideal tetrahedron, Cor 13.1.4 the regular ideal tetrahedron is maximal — the Λ-form of the Vol(4_1) = 6Λ(π/3) = 2 Cl_2(π/3) guard); §14.1 (ideal triangulations, Thurston's consistency and completeness equations, Prop 14.1.7 a solution with Im z_i > 0 gives a complete finite-volume hyperbolic structure, Prop 14.1.8 + Fig 14.7 the two-tetrahedron valence-6 triangulation at z = e^{iπ/3} is the figure-eight complement, §14.1.7 SnapPea); §15.2 (Prop 15.2.1 #edges = #tetrahedra, Cor 15.2.8 rk A = 2n − c, Prop 15.2.9/15.2.11 the rows of the incidence matrix generate a Lagrangian subspace — the Neumann–Zagier symplectic structure — and the solution space as a complex manifold parametrised by peripheral holonomy); §15.1 the hyperbolic Dehn filling theorem with the figure-eight's exceptional surgeries (Table 15.1); §11.4 torus bundles and Anosov monodromy (Prop 11.4.14). Recorded as the held textbook source behind the NZ-from-braid audit (docs/audits/2026-09-06-nz-gluing-data-from-braid-monodromy.md, beans qou-n2cl / qou-yvyd); the two-bridge layering itself is not in this book (that is Guéritaud / Futer–Kalfagianni–Purcell, library arxiv-0808.2716v4). Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
+  }),
+
+  // ── Li 2026 — TFTs and the algebraic structures of the two-sphere: Cob(2) ≅ Cob(3)_{S^2,CF}, P/L-monoids ──
+  ref({
+    id: "li2026-two-sphere",
+    library: {
+      docId: "arxiv-2605.20846v1",
+      dir: "library/arxiv-2605.20846v1",
+      pdf: "library/arxiv-2605.20846v1/2605.20846v1.pdf",
+      stage: "sections",
+      pages: 99,
+      sections: 17,
+      arxiv: "2605.20846v1",
+    },
+    type: "article",
+    title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
+    author: [{ family: "Li", given: "Chris" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://arxiv.org/abs/2605.20846",
+    note: "arXiv:2605.20846 (math.AT, 20 May 2026; 99 pp, 17 sections; thesis-style). Two presentations of the S^2-sector Cob(3)_{S^2} of the oriented 3d bordism category: Thm 1.0.8 (= Thm 3.3.6) a canonical isomorphism Cob(2) ≅ Cob(3)_{S^2,CF} — the commutative-Frobenius part of the S^2 sector IS the 2d cobordism category; Thms 1.0.5/1.0.6 (= 4.4.13, 4.3.2) the full presentation adds one generator per closed oriented irreducible prime 3-manifold p (a unit 1_p : ∅ → S^2, equivalently an endomorphism p×× of S^2) subject to commutative-Frobenius + 'legs' relations; Def 5.1.7 / Lemma 5.1.2 package this as P-monoids ≅ L-monoids (commutative Frobenius monoids in a symmetric monoidal category with prime-labelled units). Cited as the theorem behind rem:tqft-context's sentence that the Frobenius–Hopf object A 'carries the 2d cobordism data' of the 3d TQFT: Z(S^2) is a commutative Frobenius monoid for every 3d TFT. Caveat for that use: Li's monoids are commutative and live in a SYMMETRIC monoidal target; QOU's A is a Hopf algebra in a BRAIDED category and is not assumed commutative, so the match is at the Frobenius level only. Preprint, no DOI. Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
