@@ -9,6 +9,13 @@ import QOU.BraidKnot.HookSumClosedForm
 -- hook sums and re-derives the YoungDiagram closed form from the list one, so the
 -- duplicate is a checked equivalence rather than two proofs free to drift.
 import QOU.BraidKnot.HookSumRegisterBridge
+-- Two consequences of that closed form, used to bound the deuteron-wall quantity REV
+-- (bean qou-hok7): hook lengths strictly decrease along a row, so each row holds at most
+-- one cell of any given hook length; and `min(rowLen 0, colLen 0)^2 <= Σ_c h(c)`, which
+-- couples "thickness" back to the hook sum. The second replaces a WRONG bound
+-- (`H >= 3r^2-3r+1`, 1168 counterexamples at n <= 22) and is stronger than the
+-- `r^2-r+1` a repaired row-plus-column count gives.
+import QOU.BraidKnot.HookSumThicknessBound
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
