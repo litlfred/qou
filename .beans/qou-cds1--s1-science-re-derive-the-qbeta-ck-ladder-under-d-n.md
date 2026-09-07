@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T06:21:50Z
+updated_at: 2026-09-07T06:39:28Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7711,3 +7711,42 @@ cannot be reassociated by `noncomm_ring` — the second scalar is trapped betwee
 generators; `smul_mul_smul_comm` in `•` form does it in one rewrite.
 
 PR #6986.
+
+
+## 2026-09-07 (cont.) — #6986 merged; Wedderburn-side infra in #7001
+
+`traceRadical_eq_zero_of_algEquiv_pi_matrix` (sorry-free):
+`A ≃ₐ Π Mat(d i) K` + `τ = Σ y_i·trace_i` + all `y_i ≠ 0` ⟹ `traceRadical τ = {0}`.
+Plus `weightedBlockTrace_traceRadical_ne_zero` as a sharpness witness (the
+hypothesis is load-bearing, not decorative).
+
+Everything downstream of the Wedderburn decomposition is now closed. The
+nonzero-weight input is ALREADY in the corpus (`yw_pos`). So the `⊇` half of
+`⟨relators⟩ = traceRadical tr_M` reduces to the decomposition alone.
+
+**Correction recorded.** I reported the matrix trace form as a Mathlib gap. It is
+not: `Matrix.ext_iff_trace_mul_right` IS nondegeneracy, phrased as an
+extensionality lemma, which is why a grep for "nondegenerate" misses it. Reusable
+lesson: a Mathlib lemma may exist under the SHAPE it is used for rather than the
+NAME it is known by. The weighted-product case IS genuinely absent.
+
+**Mathlib has Wedderburn–Artin** (`RingTheory/SimpleModule/WedderburnArtin.lean`,
+`exists_algEquiv_pi_matrix_divisionRing`). The gap is not the structure theorem —
+it is proving `TL_n(δ)` SEMISIMPLE, which needs a cellular/diagram-basis
+development Mathlib does not have.
+
+### Scale of what is left (for whoever picks this up)
+
+Three known routes to semisimplicity, all large:
+1. **Cellular algebra** (Graham–Lehrer) — cell modules on two-row shapes, Gram
+   determinants. Mathlib has NO cellular-algebra framework.
+2. **Schur–Weyl / Jones–Wenzl** — TL acts faithfully on `V^⊗n`, image is the
+   `U_q(sl2)` commutant. Needs the quantum group.
+3. **Diagram basis + meander determinant** (DFGG) — the corpus already flagged
+   this as gated behind the very isomorphism it would prove
+   (`TemperleyLiebTower` §T4).
+
+Route 3's *combinatorial* half is partly done here already:
+`ballot_sq_sum_catalan`, `dimHLF_two_row_sq_sum`, `dimHLF_two_col_sq_sum`. What
+is missing is the planar-diagram basis itself (`dim TL_n = Catalan n` as an
+algebra fact, not a partition count).
