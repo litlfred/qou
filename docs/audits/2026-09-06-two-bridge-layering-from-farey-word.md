@@ -129,6 +129,51 @@ derived cusp rows: 4₁ twice (bundle and two-bridge routes agreeing on volume, 
 `A₄₁`) and 5₂ once, with its A-polynomial reproduced from the word alone. The chirality split
 `{3, 4}` at 5₂ can be tested on this data with the orientation fixed by the frame above.
 
+## 3b. The A_ω Route-A gate re-run on the derived 5₂ data (2026-09-07)
+
+**Producer:** [`computations/probes/qbeta_g3_aomega_route_a_newton_polygon.py`](../../computations/probes/qbeta_g3_aomega_route_a_newton_polygon.py)
+(7/8, the FAIL is the intended falsification); **Lean:** `QOU/QBeta/RouteANewtonPolygonDT.lean`
+(core-only, `decide`; the new `a52_*` and `*_mirror` theorems, no axioms beyond `propext` /
+`Quot.sound` on the two `simp`-closed ones).
+
+Route A (`docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md`) asked whether the
+DT spectrum `{3, 4}` is Newton-polygon data of the A-polynomial. Its 5₂ half ran on
+literature-recalled inputs — slopes `{0, −4, −10}`, four boundary-parabolic connections — and bean
+`qou-52sn` asked for them to be hardened with SnapPy. **They are now derived here instead**, from
+§3's `A_{5₂}`: the probe reads `two-bridge-cusp-rows-apoly.witness.json`, recomputes the Newton
+polygon with the same lattice geometry it uses for 4₁, and asserts
+
+| quantity | derived | recalled |
+|---|---|---|
+| boundary slopes (derived frame) | `{−10, −4, 0}` | `{0, −4, −10}` |
+| geometric `L`-degree / full (`× (L−1)`) | `3` / `4` | — / `4` |
+| `|max slope|` (R2 input) | `10 ∉ {3,4}` | same |
+
+So the verdict is unchanged and no longer conditional: **R2 (DT integer = boundary slope) is
+refuted on 5₂, R1 (DT integer = connection count) survives both knots** — now as strong as #6985's
+derivation, not as strong as a recalled table. In Lean the two `5₂` `def`s that carried the literal
+values are theorems about `a52Monomials` (`fiveTwoMaxAbsSlope_derived`, `fiveTwoConnections_eq_four`),
+and the hull's central symmetry `(m,l) ↦ (14−m, 3−l)` — the exponent shadow of `A_involution` — is
+the transcription check.
+
+**What the pinned frame adds to Route A: nothing, and that is a theorem.** The one thing §3 supplies
+beyond the recalled table is the *sign* of the slopes, i.e. the chirality of the triangulated
+manifold. The mirror acts on exponents by `(m, l) ↦ (−m, l)`: every slope changes sign
+(`slopeEq_mirror`), the absolute slope is invariant (`absSlopeEq_mirror`), and the `L`-profile is
+untouched (`lProfile_mirror`). Both Route-A inputs are therefore mirror-invariant, and the mirrored
+`5₂` edges carry exactly the literature's `{0, 4, 10}` (`a52_mirror_edge_slopes_in_0_4_10`). The 5₂
+DT datum is the *ordered* pair `(4 ∈ S⁺, 3 ∈ S⁻)` with nonzero bar-odd part
+(`FiveTwoDTSpectrumSplit.chirality_odd_datum_ne_zero`); a quantity that cannot tell 5₂ from its
+mirror cannot carry it. This sharpens `symmetric_scalar_blind_to_chirality` (no *symmetric scalar*
+serves the split) to: no Newton-polygon slope-magnitude or degree datum serves it — the split is
+not Route-A data in any frame. The attack-options memo's falsifier for Route A ("check the slopes
+match its `{3,4}` chirality split") is thereby answered in the negative on structural grounds, not
+merely by the `10 ∉ {3,4}` miss.
+
+**Still open, unchanged.** Which chirality GGM's `S⁺`/`S⁻` (the `(96)`/`(97)` factorisations) belong
+to, in the derived `(μ, λ)` frame, is the same convention question as which 5₂ is Rolfsen's; no held
+source settles it, and nothing here needs it. `qou-q3np` and the Route-C programme are untouched.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who

@@ -1,0 +1,266 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0110009v3",
+ "source": {
+  "file": "0110009v3.pdf",
+  "sha256": "bb0c97f2de33b0dd50a29fa379001d358e59c6ef303ff28aad3c2c5c703b79ce",
+  "bytes": 227454,
+  "pages": 26,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0110009",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "3 Sep 2003"
+  },
+  "doi": null,
+  "title": "New upper bounds on sphere packings I",
+  "authors_raw": "By Henry Cohn and Noam Elkies *",
+  "title_lines": [
+   "New upper bounds on sphere packings I"
+  ],
+  "abstract": "We develop an analogue for sphere packing of the linear progr amming bounds for error-correcting codes, and use it to prove upper bounds for the density of sphere packings, which are the best bounds known a t least for di- mensions 4 through 36. We conjecture that our approach can be used to solve the sphere packing problem in dimensions 8 and 24.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126163421-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0110009v3  [math.MG]  3 Sep 2003"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Lattices, Fourier transforms, and Poisson summation",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Principal theorems",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Homogeneous spaces",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Conditions for a sharp bound",
+   "page": 1,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Stationary points",
+   "page": 1,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Numerical results",
+   "page": 1,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Uniqueness",
+   "page": 1,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "These two",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Lattices, F ourier transforms, and Poisson summation",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 358,
+   "n_words": 64
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-2-lattices-fourier-transforms-and-poisson-summat",
+   "number": "2",
+   "title": "Lattices, Fourier transforms, and Poisson summation",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-3-principal-theorems",
+   "number": "3",
+   "title": "Principal theorems",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-4-homogeneous-spaces",
+   "number": "4",
+   "title": "Homogeneous spaces",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-5-conditions-for-a-sharp-bound",
+   "number": "5",
+   "title": "Conditions for a sharp bound",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-6-stationary-points",
+   "number": "6",
+   "title": "Stationary points",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-7-numerical-results",
+   "number": "7",
+   "title": "Numerical results",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-8-uniqueness",
+   "number": "8",
+   "title": "Uniqueness",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 99,
+   "n_words": 14
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5588,
+   "n_words": 1015
+  },
+  {
+   "id": "sec-011-2-these-two",
+   "number": "2",
+   "title": "These two",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1998,
+   "n_words": 372
+  },
+  {
+   "id": "sec-012-2-lattices-f-ourier-transforms-and-poisson-summa",
+   "number": "2",
+   "title": "Lattices, F ourier transforms, and Poisson summation",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 26,
+   "n_chars": 44906,
+   "n_words": 8828
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 13,
+  "chars_total": 52949
+ }
+}

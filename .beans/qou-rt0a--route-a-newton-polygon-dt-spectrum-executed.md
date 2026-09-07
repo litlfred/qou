@@ -8,7 +8,7 @@ tags:
     - alien-habiro
     - g3-aomega
 created_at: 2026-08-11T00:35:00Z
-updated_at: 2026-08-11T00:35:00Z
+updated_at: 2026-09-07T09:35:38Z
 parent: qou-vr3q
 ---
 
@@ -25,3 +25,5 @@ CROSS-KNOT GATE (anti-numerology): slope reading R2 (DT=boundary slope) REFUTED 
 CONSEQUENCE: the internal handle is the connection count / A-poly L-degree = a (motivic) Euler-characteristic datum, NOT the slope — the decategorified shadow of Route C. Pivot to qou-rtec. Companion 4 still needs the motivic weight R1's bare count lacks.
 
 CAVEAT: 5_2 boundary slopes {0,-4,-10} + #connections=4 are LITERATURE-recalled (SnapPy unavailable) — harden via qou-52sn before treating the 5_2 refutation as final.
+
+CAVEAT RETIRED 2026-09-07: the 5_2 boundary data is derived in-corpus (#6985), equal to the recalled values; the cross-knot refutation of R2 and survival of R1 stand unconditionally. New structural point: both Route-A inputs (|max slope|, L-degree) are mirror-invariant (RouteANewtonPolygonDT.absSlopeEq_mirror, lProfile_mirror), so the {4 in S+, 3 in S-} split is not Newton-polygon data in any frame — the memo's Route-A falsifier is answered in the negative structurally. See qou-52sn, audit §3b.

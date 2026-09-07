@@ -1,10 +1,11 @@
 ---
 # qou-g94g
 title: 'per_irrep_pole_atom_crystal: pole_u off by exactly one at the first atom'
-status: todo
+status: in-progress
 type: bug
+priority: normal
 created_at: 2026-09-06T10:15:38Z
-updated_at: 2026-09-06T10:15:38Z
+updated_at: 2026-09-07T10:02:54Z
 ---
 
 Surfaced by the qou-hu1f regeneration pass. Pre-existing: fails identically under both intra orderings.
@@ -34,6 +35,67 @@ fires under both orderings and masks the exit code.
     witness on disk was produced under 3.12.3; regenerating here would weaken
     its provenance record, so it was NOT committed by the pass that found this.
 
-- [ ] Check the `pole_u` vs `ord_min` index convention before assuming a
-      numerical cause — `18` against an expected `19` on the first atom.
-- [ ] Drain the 4 raw-float64 witness fields.
+- [x] Check the `pole_u` vs `ord_min` index convention before assuming a
+      numerical cause — it is NOT an index convention; see below.
+- [x] Drain the 4 raw-float64 witness fields.
+- [ ] OWNER CALL: which law is right — `18Z+21N+1` or the measured
+      `16Z+20N+2`? This probe cannot adjudicate it.
+
+---
+
+## 2026-09-07 — it is not an off-by-one, and my own framing above was wrong
+
+### Run every atom, and the gap grows
+
+The bean reasoned from the first atom: *"off by exactly one, at the very first
+atom ... usually means an index convention rather than a numerical drift."*
+That inference does not survive `--continue-on-mismatch`:
+
+    atom       Z  N  measured  18Z+21N+1  gap
+    proton     1  0        18         19    1
+    neutron    0  1        18         22    4     <- A=1 anomaly, asserted=False
+    deuteron   1  1        38         40    2
+    tritium    1  2        58         61    3
+    helium-3   2  1        54         58    4
+    helium-4   2  2        74         79    5
+
+The gap is 1, 2, 3, 4, 5 — not a constant. So it is not an index convention,
+and checking that before anything more expensive (which the bean rightly
+advised) cost one flag.
+
+### The measured values fit a clean law of their own
+
+Solving the four A ≥ 2 atoms exactly gives
+
+    measured = 16*Z + 20*N + 2
+
+and that law **also reproduces the proton** (16 + 0 + 2 = 18) without being
+fitted to it. Five of six atoms, exactly. The gap to the asserted law is then
+exactly `2Z + N − 1` on all five.
+
+The sixth is the A=1 neutron, and it is anomalous under **both** laws — both
+predict 22, measured is 18. It is already `asserted=False` per
+`rem:crystal-bases-path-a` §"A=1 anomaly", so the fit is clean on every atom
+the gate actually covers.
+
+**NOT settled: which law is correct.** That is `prop:per-nucleon-shift-additive-linearity`
+against the crystal Path A derivation, and this probe cannot adjudicate it —
+it can only report that they disagree by `2Z + N − 1`. Recorded in the witness
+under `measured_law_fit` so the next reader starts from the fit rather than
+from "off by one".
+
+### Two smaller things fixed
+
+**Lithium-5 / Lithium-6 crashed with `ERROR '15'` / `ERROR '18'`** — a bare
+`KeyError` from `w["tables_by_n"][str(n)]`. Neither the symbolic witness
+(n = 2..12) nor the pole-order cache (n = 3, 6, 9, 12) covers n = 15 or 18, so
+those atoms are simply outside the available data. It now says so, and names
+the two ways to extend it, instead of printing a bare number that reads like a
+crash.
+
+**raw-float64 drained.** The assertion triple is a 0/1 indicator, now carried
+as `"1"`/`"0"` strings; `elapsed_sec` is diagnostic wall-clock, now a
+millisecond string. Zero raw float64 fields remain. (The bean said 4; it is 9
+once every atom runs rather than stopping at the first mismatch.)
+
+The top-level assertion still fails, correctly — the two laws do disagree.

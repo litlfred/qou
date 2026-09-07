@@ -1,0 +1,234 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1012.4941v2",
+ "source": {
+  "file": "1012.4941v2.pdf",
+  "sha256": "1932a359f3bafb8329e43e040873de5caab69ce3439df7a539ae9392ea5da59b",
+  "bytes": 298381,
+  "pages": 21,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1012.4941",
+   "version": "2",
+   "primary_class": "math.OC",
+   "stamp_date": "13 Jan 2011"
+  },
+  "doi": null,
+  "title": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS",
+  "authors_raw": "RICHARD B\u00d6DI, KATRIN HERR, AND MICHAEL JOSWIG",
+  "title_lines": [
+   "ALGORITHMS FOR HIGHLY SYMMETRIC",
+   "LINEAR AND INTEGER PROGRAMS"
+  ],
+  "abstract": "This paper deals with exploiting symmetry for solving linea r and integer programming problems. Basic properties of linear represen tations of \ufb01nite groups can be used to reduce symmetric linear programming to solving li near programs of lower dimension. Combining this approach with knowledge of the ge ometry of feasible inte- ger solutions yields an algorithm for solving highly symmet ric integer linear programs which only takes time which is linear in the number of constra ints and quadratic in the dimension.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181029125246-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Automorphisms of Linear Programs",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Symmetries of Integer Linear Programs",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Layers of Integer Points",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Searching Integer Layers Efficiently",
+   "page": 11,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Finding All Symmetries",
+   "page": 13,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Hypertruncated Cubes",
+   "page": 16,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Computational Results",
+   "page": 18,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Hypertruncated Cubes",
+   "page": 18,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Wild Input",
+   "page": 18,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3264,
+   "n_words": 522
+  },
+  {
+   "id": "sec-001-2-automorphisms-of-linear-programs",
+   "number": "2",
+   "title": "Automorphisms of Linear Programs",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 14950,
+   "n_words": 2791
+  },
+  {
+   "id": "sec-002-3-symmetries-of-integer-linear-programs",
+   "number": "3",
+   "title": "Symmetries of Integer Linear Programs",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 6471,
+   "n_words": 1193
+  },
+  {
+   "id": "sec-003-4-layers-of-integer-points",
+   "number": "4",
+   "title": "Layers of Integer Points",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4877,
+   "n_words": 884
+  },
+  {
+   "id": "sec-004-5-searching-integer-layers-efficiently",
+   "number": "5",
+   "title": "Searching Integer Layers Efficiently",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 7572,
+   "n_words": 1441
+  },
+  {
+   "id": "sec-005-6-finding-all-symmetries",
+   "number": "6",
+   "title": "Finding All Symmetries",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 9889,
+   "n_words": 1848
+  },
+  {
+   "id": "sec-006-7-hypertruncated-cubes",
+   "number": "7",
+   "title": "Hypertruncated Cubes",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3770,
+   "n_words": 718
+  },
+  {
+   "id": "sec-007-81-hypertruncated-cubes",
+   "number": "8.1",
+   "title": "Hypertruncated Cubes",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 133,
+   "n_words": 29
+  },
+  {
+   "id": "sec-008-8-computational-results",
+   "number": "8",
+   "title": "Computational Results",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 2487,
+   "n_words": 405
+  },
+  {
+   "id": "sec-009-82-wild-input",
+   "number": "8.2",
+   "title": "Wild Input",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 4348,
+   "n_words": 796
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 4592,
+   "n_words": 653
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 11,
+  "chars_total": 62353
+ }
+}

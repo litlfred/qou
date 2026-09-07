@@ -1,7 +1,7 @@
 {
   "computation": "path-b-defect-binding-probe",
   "description": "Refined Path B: defect binding model. B(K) = alpha * (|tr_M_free(K)| - |tr_M_atomic(K)|), where tr_M_free factorises as |tr_M(p)|^Z * |tr_M(n)|^N for disconnected constituents.  Single fit parameter alpha, calibrated from D's binding.  T, 3He, 4He are pure predictions.",
-  "computedAt": "2026-09-03T16:51:58.384109+00:00",
+  "computedAt": "2026-09-07T10:38:29.268783+00:00",
   "alpha_MeV_per_unit_defect": "3.997128135365468503782847496887079496827677660011712935693271492101243",
   "calibrated_from": "deuteron",
   "rows": [
@@ -98,8 +98,8 @@
   ],
   "scriptFile": "path_b_defect_binding_probe.py",
   "scriptHash": "3f4ae9b06d99",
-  "scriptCommitSha": "3538e57220d98c2e64fe31baedc6af43207189a3",
-  "commitSha": "65ef104c9fd87ac424a83f90b6f335e11dd39fe4",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",

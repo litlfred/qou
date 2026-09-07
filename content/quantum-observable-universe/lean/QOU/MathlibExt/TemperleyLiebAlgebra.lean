@@ -342,7 +342,20 @@ separates `1` from `e`, which is the content of the classical statement that `TL
 is free of rank two on `{1, e}`.
 
 This does **not** claim `TL₂(δ) ≅ R × R`: no upper bound on `TL₂(δ)` is proved
-anywhere in this file. -/
+anywhere in this file.
+
+**The upper bound now exists, one file over.**
+`QOU.MathlibExt.TemperleyLiebSpanning.tl2_span_eq_top` proves
+`TL₂(δ) = span_R {1, e₀}`, and `tl2Basis` combines it with
+`tl2_linearIndependent` below into an actual basis — so `TL₂(δ)` **is** free of
+rank two, and `dim TL₂(δ) = 2 = catalan 2`. It lives there rather than here
+because the proof routes through `adjoin_range_e_eq_top`, which is in
+`QOU.MathlibExt.HeckeToTemperleyLieb` and imports this file.
+
+The sentence above is still correct as written — it is scoped to *this file* —
+and `≅ R × R` is still not claimed, for a reason freeness does not settle: the
+basis `{1, e₀}` maps to `{(1,1), (δ,0)}` in `R × R`, whose determinant is `−δ`,
+so that particular map is an isomorphism only when `δ` is a unit. -/
 
 section TL2
 
@@ -383,7 +396,12 @@ parameter is a non-zero-divisor.
 This is the non-vacuity statement with content: the presentation does not secretly
 identify the generator with a scalar. It is the **lower-bound half** of the classical
 "`TL₂(δ)` is free of rank two on `{1, e}`" — this file proves no upper bound on
-`TL₂(δ)`, so freeness itself is not claimed. -/
+`TL₂(δ)`, so freeness itself is not claimed here.
+
+**The other half is now proved** in
+`QOU.MathlibExt.TemperleyLiebSpanning`: `tl2_span_eq_top` supplies the upper
+bound and `tl2Basis` assembles the two into a `Module.Basis (Fin 2)`. So the
+classical statement holds; it simply is not established in this file. -/
 theorem tl2_linearIndependent (hδ : ∀ x : R, x * δ = 0 → x = 0) (a b : R)
     (h : algebraMap R (TL2 δ) a + algebraMap R (TL2 δ) b * tl2e δ = 0) :
     a = 0 ∧ b = 0 := by

@@ -170,14 +170,57 @@ class DerivedChiCatalogue:
     # ── Mutation ──
 
     def add(self, cell: KnotPartitionAtomCell) -> None:
+        """Insert a NEW cell. Raises on a repeated (knot, partition, atom).
+
+        Deliberately strict: a caller that did not expect a collision has a
+        bug, and silently overwriting would hide a changed derivation. A
+        caller that DOES mean to re-derive says so with `upsert()`.
+        """
         key = (cell.knot, cell.partition, cell.atom)
         if key in self._index:
             raise ValueError(
                 f"duplicate catalogue cell {key}; re-derive or update the "
-                "existing record explicitly."
+                "existing record explicitly with `upsert()`."
             )
         self._index[key] = len(self.cells)
         self.cells.append(cell)
+
+    def upsert(self, cell: KnotPartitionAtomCell) -> str:
+        """Insert `cell`, or replace an existing one with the same key.
+
+        Returns `"added"`, `"unchanged"`, or `"replaced"` — and the caller is
+        expected to act on the difference. `"replaced"` means a re-derivation
+        produced a DIFFERENT cell for a key already in the catalogue; that is
+        a finding, not routine, and a builder should surface it rather than
+        overwrite quietly.
+
+        WHY THIS EXISTS (bean qou-4sqq)
+        -------------------------------
+        `derived_chi_catalogue_build.py` states in its own comment that it
+        "merges into existing catalogue if present so Phase 2 sympy cells
+        coexist with Phase 3 Rust production cells in a single witness" — it
+        is a re-runnable merging builder by design. But it merged with
+        `add()`, which refuses a repeat, so from the moment it first wrote its
+        own cells it could no longer run against its own output. Measured: the
+        committed witness is dated 2026-06-07 and the builder had been unable
+        to run for three months, dying on a raw `ValueError` for
+        `('borromean', (3,), 'borromean-baryon')`.
+
+        The fix is not to relax `add()`. Foreign cells — Phase 3 Rust
+        production cells living in the same witness — must still be protected
+        from an accidental clobber. Only cells a caller is knowingly
+        re-deriving may be replaced, and only with a report.
+        """
+        key = (cell.knot, cell.partition, cell.atom)
+        idx = self._index.get(key)
+        if idx is None:
+            self._index[key] = len(self.cells)
+            self.cells.append(cell)
+            return "added"
+        if self.cells[idx] == cell:
+            return "unchanged"
+        self.cells[idx] = cell
+        return "replaced"
 
     # ── Lookup ──
 

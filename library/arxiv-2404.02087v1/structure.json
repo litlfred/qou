@@ -1,0 +1,308 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2404.02087v1",
+ "source": {
+  "file": "2404.02087v1.pdf",
+  "sha256": "ac92bd0dff8ad907400f479a73c1bb7df72085fd5f2b9d53feccb3752b85954a",
+  "bytes": 6805898,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2404.02087",
+   "version": "1",
+   "primary_class": "cond-mat.mes-hall",
+   "stamp_date": "2 Apr 2024"
+  },
+  "doi": null,
+  "title": "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 \u2217 Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla-",
+  "authors_raw": null,
+  "title_lines": [
+   "Extreme plasmons",
+   "Aakash A. Sahai 1",
+   "1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 \u2217",
+   "Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla-"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20240403014920Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Extreme plasmons",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quantum framework",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quantum system: Degeneracy and Correlation",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Wigner quantum phase-space",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Modified independent electron approximation",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Small-amplitude plasmons: Quantum model",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quantum coherence limit",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Relativistic quantum dynamics",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Controlled excitation",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Surface crunch-in plasmon",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quantum kinetic equation using FQ(k,p)",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Fields of the extreme plasmon",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-extreme-plasmons",
+   "number": null,
+   "title": "Extreme plasmons",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1066,
+   "n_words": 143
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4967,
+   "n_words": 721
+  },
+  {
+   "id": "sec-002-modified-independent-electron-approximation",
+   "number": null,
+   "title": "Modified independent electron approximation",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 461,
+   "n_words": 70
+  },
+  {
+   "id": "sec-003-quantum-framework",
+   "number": null,
+   "title": "Quantum framework",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 696,
+   "n_words": 103
+  },
+  {
+   "id": "sec-004-quantum-system-degeneracy-and-correlation",
+   "number": null,
+   "title": "Quantum system: Degeneracy and Correlation",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1311,
+   "n_words": 200
+  },
+  {
+   "id": "sec-005-wigner-quantum-phase-space",
+   "number": null,
+   "title": "Wigner quantum phase-space",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4786,
+   "n_words": 726
+  },
+  {
+   "id": "sec-006-small-amplitude-plasmons-quantum-model",
+   "number": null,
+   "title": "Small-amplitude plasmons: Quantum model",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 6322,
+   "n_words": 966
+  },
+  {
+   "id": "sec-007-quantum-coherence-limit",
+   "number": null,
+   "title": "Quantum coherence limit",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3810,
+   "n_words": 584
+  },
+  {
+   "id": "sec-008-relativistic-quantum-dynamics",
+   "number": null,
+   "title": "Relativistic quantum dynamics",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1219,
+   "n_words": 175
+  },
+  {
+   "id": "sec-009-controlled-excitation",
+   "number": null,
+   "title": "Controlled excitation",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 197,
+   "n_words": 30
+  },
+  {
+   "id": "sec-010-surface-crunch-in-plasmon",
+   "number": null,
+   "title": "Surface crunch-in plasmon",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 7791,
+   "n_words": 1234
+  },
+  {
+   "id": "sec-011-fields-of-the-extreme-plasmon",
+   "number": null,
+   "title": "Fields of the extreme plasmon",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 11893,
+   "n_words": 2031
+  },
+  {
+   "id": "sec-012-conclusion",
+   "number": null,
+   "title": "Conclusion",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 760,
+   "n_words": 103
+  },
+  {
+   "id": "sec-013-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 4969,
+   "n_words": 754
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "sections": 14,
+  "chars_total": 50248
+ }
+}

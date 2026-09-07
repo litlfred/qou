@@ -35,12 +35,13 @@ equivalent in strength to Matsumoto.
 So the four split cleanly: antisymmetry needed only length bookkeeping and is done; transitivity,
 the subword property and lifting all wait on Matsumoto.
 
-✅ **Matsumoto is no longer open** (2026-09-06): `QOU.IwahoriHecke.Matsumoto.matsumoto` proves it
-conditional on `CoxeterRankTwo.DihedralExact`, and `matsumoto_An` proves it outright for type `A`.
+✅ **Matsumoto is no longer open** (2026-09-06): `QOU.IwahoriHecke.Matsumoto.matsumoto` proves it,
+and since 2026-09-07 with no hypothesis at all — `CoxeterDihedralOrder` discharged the rank-two
+order data it used to carry.
 
 ✅ **And the subword property and transitivity followed the same day**, in
-`QOU.IwahoriHecke.BruhatSubword` (`subword_property`, `bruhatLe_trans`, and their hypothesis-free
-type-`A` forms). They live there rather than here because they need `BraidMove`, which is defined on
+`QOU.IwahoriHecke.BruhatSubword` (`subword_property`, `bruhatLe_trans`, both hypothesis-free).
+They live there rather than here because they need `BraidMove`, which is defined on
 the Hecke side; this file cannot import them without a cycle. **Cite that file for them, not this
 one** — the paragraph above stands as a description of what *this* file proves.
 

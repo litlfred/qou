@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:17:34.851466+00:00",
-  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
+  "computedAt": "2026-09-07T10:38:37.893671+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "delta_tr_is_a_rational_function_of_q",
@@ -17,23 +17,23 @@
       "expected": 10,
       "passed": true,
       "tolerance": 0,
-      "source": "10 of 10 ε-coefficients are sympy Rational: ε^0=0, ε^1=-5/4, ε^2=-11/8, ε^3=-23/8, ε^4=-1/2, ε^5=-15/16, ε^6=17/32, ε^7=-13/32"
+      "source": "10 of 10 ε-coefficients are sympy Rational: ε^0=0, ε^1=-5/4, ε^2=-11/8, ε^3=1/8, ε^4=-5, ε^5=589/16, ε^6=-2763/32, ε^7=7167/32"
     },
     {
       "name": "taylor_series_reproduces_delta_tr_at_q0",
-      "computed": "1.13613257691e-10",
+      "computed": "3.82825063733e-7",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "tolerance": "1e-9",
-      "source": "Σ_{n<10} c_n·ε₀ⁿ = -0.158016004455104 vs direct Δtr_M(q₀) = -0.158016004341491 at ε₀ = 0.1099785828; gate 1e-9 is the O(ε₀¹⁰) ≈ 2.6e-10 truncation the series is cut at, not a chosen band"
+      "source": "Σ_{n<10} c_n·ε₀ⁿ = -0.154194502222176 vs direct Δtr_M(q₀) = -0.154194885047240 at ε₀ = 0.1099785828; gate 1e-9 is the O(ε₀¹⁰) ≈ 2.6e-10 truncation the series is cut at, not a chosen band"
     }
   ],
-  "allPassed": true,
-  "durationMs": 582,
+  "allPassed": false,
+  "durationMs": 2165,
   "computation": "qbeta-habiro-taylor-investigation",
   "scriptFile": "qbeta_habiro_taylor_investigation.py",
   "scriptHash": "df3d2aee1b0d",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,7 +48,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -60,8 +60,8 @@
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "inputs": {
-      "tr_M_proton_symbolic_in_q": "(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**13 + 8*q**11 + 4*q**9)",
-      "tr_M_neutron_symbolic_in_q": "(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(4*q**9)",
+      "tr_M_proton_symbolic_in_q": "(q**22 - 3*q**20 + 8*q**18 - 11*q**16 + 17*q**14 - 17*q**12 + 20*q**10 - 15*q**8 + 13*q**6 - 7*q**4 + 3*q**2 - 1)/(4*q**13 + 8*q**11 + 4*q**9)",
+      "tr_M_neutron_symbolic_in_q": "(q**18 - 3*q**16 + 5*q**14 - 7*q**12 + 9*q**10 - 8*q**8 + 8*q**6 - 5*q**4 + 3*q**2 - 1)/(4*q**9)",
       "Q_codata_MeV": "0.78233341",
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
     },
@@ -71,18 +71,18 @@
         "eps^0": "0",
         "eps^1": "-5/4",
         "eps^2": "-11/8",
-        "eps^3": "-23/8",
-        "eps^4": "-1/2",
-        "eps^5": "-15/16",
-        "eps^6": "17/32",
-        "eps^7": "-13/32"
+        "eps^3": "1/8",
+        "eps^4": "-5",
+        "eps^5": "589/16",
+        "eps^6": "-2763/32",
+        "eps^7": "7167/32"
       },
       "note": "These are the substrate-exact Taylor coefficients of Δtr_M(q) at q=1, computed symbolically from the Habiro-witness-cited rational tr_M expressions. The Q_β c_k will inherit from these via the (yet-undefined) categorical formula Q_β = m_e × f(Δtr_M, q)."
     },
     "numerical_sanity_at_q0": {
-      "tr_M_proton_at_q0": "1.1457596924573008",
-      "tr_M_neutron_at_q0": "0.9877436881158096",
-      "delta_tr_M_at_q0": "-0.1580160043414912"
+      "tr_M_proton_at_q0": "0.629328402202922",
+      "tr_M_neutron_at_q0": "0.4751335171556822",
+      "delta_tr_M_at_q0": "-0.15419488504723977"
     },
     "gap_identified": {
       "missing_categorical_formula": "Q_β = m_e × f(Δtr_M(q), q) for substrate-canonical f",
@@ -93,11 +93,11 @@
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
-        "sha256": "d59c76efc7cdc5050df475ad92df9ce3c0370a38ba1268cb80b048ec3be1bd56",
-        "size_bytes": 23294,
-        "commitSha": "8fc0969fb6b9c1c45f86cdeadd7e5f7f5db572e6",
-        "scriptCommitSha": "4761cfd86e0b898cc25732c2430837b199395e6d",
-        "computedAt": "2026-08-26T14:43:07.168940+00:00"
+        "sha256": "4ec945d56ca192a8d4bf0a5890bcddf0fadba045e93d12a816c847f8b4299bf3",
+        "size_bytes": 23838,
+        "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
+        "scriptCommitSha": "126edfa8929a1489af3b7466099d46492545b86f",
+        "computedAt": "2026-09-06T12:47:31.488343+00:00"
       }
     ]
   },

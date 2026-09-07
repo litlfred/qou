@@ -41,10 +41,18 @@ quotient module and **no nonzero solution of `L_𝒦` obeys any scalar relation*
 **This parity IS the Newton-slope invariant.** `L_𝒦` is pure isoclinic of slope
 `1/2` at infinity; every rank-1 q-difference module has INTEGER slope, and
 Newton slopes are additive on sub- and quotient modules. Independently corroborated
-by the van der Put–Reversat structure theorem: a pure module of non-integral
-slope `d/r` (`gcd(d,r) = 1`) and rank `r` is `E(r,d,b)`, which is irreducible —
-held in this corpus at `library/crmath-2011-349-19-20-1037-0/`. Slope `1/2` has
-`r = 2 = rank 𝒦`. Measured corroboration (second differences of `log_q|b_m|`
+by the van der Put–Reversat classification of pure modules: a pure module of
+non-integral slope `d/r` (`gcd(d,r) = 1`) and rank `r` is the restriction of a
+rank-one module over the ramified field — `E(c z^{d/r})` in van der Put–Reversat's
+notation, `E(r,d,b)` in Bugeaud's — and it is irreducible. Held in this corpus
+three times over: the theorem itself at `library/afst-2007-6-16-3-665-0/`
+([vanderput-reversat2007] Prop. 1.3, over the formal field), its English survey
+form at `library/arxiv-math-0612592v1/` ([vanderput2006] Thm 3.4–3.5, over the
+convergent field, with uniqueness of the triple `(d/r, c^r, m)`), and the
+`E(r,d,b)` notation at `library/crmath-2011-349-19-20-1037-0/` ([bugeaud2011],
+a *use* of the theorem in the two-slope non-integral classification, not its
+source — this docstring previously pointed only there, and attributed it to
+van der Put–Reversat). Slope `1/2` has `r = 2 = rank 𝒦`. Measured corroboration (second differences of `log_q|b_m|`
 → `−1/2`, with the period-2 ramification amplitude directly observed) in
 `computations/probes/binding_qdiff_scalar_kernel_parity_exclusion_probe.py`.
 
@@ -77,6 +85,9 @@ independently required (bean `qou-hh9q`).
 -- Ref: [manuscript] mass-theory, prop:binding-genfun-qdifference;
 --      conj:qdifference-kernel-prolongation-symbol
 -- Ref: [manuscript] docs/audits/2026-07-20-qdifference-kernel-confluent-narrowing.md §§4–5
+-- Ref: [vanderput-reversat2007] library/afst-2007-6-16-3-665-0/ (Prop. 1.3: E(c z^{t/n}) is irreducible of rank n and slope t/n)
+-- Ref: [vanderput2006] https://arxiv.org/abs/math/0612592 (Thm 3.4–3.5: the same over C({z}), triple (t/n, c^n, m) unique)
+-- Ref: [bugeaud2011] library/crmath-2011-349-19-20-1037-0/ (the E(r,d,b) notation, non-integral slopes)
 -/
 
 import Mathlib.Tactic

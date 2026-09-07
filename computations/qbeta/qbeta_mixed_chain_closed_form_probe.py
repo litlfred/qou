@@ -81,6 +81,10 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 sys.path.insert(0, str(ROOT / "computations"))
+# Reaches qou_substrate (tools/qou-substrate/python) for the provenance stamp
+# at the end of main(); without it the script died on its last line and its
+# witness could never be regenerated (bean qou-4383).
+import _path_bridge  # noqa: E402, F401
 
 DPS = 40
 mp.mp.dps = DPS
@@ -88,6 +92,31 @@ Q0S = "1.1099785827513808075916690956107688798744991218736"
 Q0 = mp.mpf(Q0S)
 Z_MARKOV = Q0**3 / (Q0**2 + 1)                     # convention D
 
+# ── FRAME MISMATCH, VERIFIED 2026-09-07 (bean qou-4383) ────────────────
+# The two nucleon traces below are GROUPED-era. Measured live against
+# `atom_braid_word_3A` under both intra-nucleon orderings at this same pin:
+#
+#     atom     grouped                  borromean (canonical)
+#     proton   1.1457596924573008697    0.62932840220292191817
+#     neutron  0.98774368811580957163   0.47513351715568221251
+#
+# The literals here match GROUPED to ~1e-21 — every digit written — and differ
+# from the canonical borromean values by 82 % (proton) and 108 % (neutron).
+# The canonical intra-nucleon word has been `(σ₀σ₁⁻¹)³` since the 2026-09-05
+# ruling (bean qou-hu1f).
+#
+# Meanwhile the per-atom inputs read from `ATOM_WITNESS` below ARE canonical.
+# So this probe currently mixes a canonical atom frame with superseded nucleon
+# traces, which is the most likely reason its closed form does not reproduce
+# every atom.
+#
+# NOT flipped here. `qbeta_delta_vs_deltaTbeta_settled_probe` is deliberately
+# pinned to grouped because its whole comparison lives in that frame, so
+# "grouped constant" is not automatically a defect — and this file is under
+# active edit today (`qou-qqm4`, "the bond factors ARE the two Markov
+# parameters"). Whether these should move to the canonical values, or the atom
+# witnesses should be read in the grouped frame instead, is a call for whoever
+# owns that derivation. Flagged rather than changed.
 T_P = mp.mpf("1.1457596924573008697")
 T_N = mp.mpf("0.98774368811580957163")
 R_HOMOG = mp.mpf("0.7019932570132013577923154")    # derived symbolically earlier
