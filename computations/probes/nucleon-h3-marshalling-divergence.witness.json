@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T09:59:24.521181+00:00",
-  "commitSha": "97e888700f48bc8f727c928be48c044badf4b20d",
+  "computedAt": "2026-09-07T10:07:29.427008+00:00",
+  "commitSha": "fd240796ff7d3d24986537da648133440b61bbd4",
   "assertions": [
     {
       "name": "d_preserving_reproduces_habiro_p",
@@ -27,14 +27,30 @@
       "passed": true,
       "tolerance": "1e-30",
       "source": "(tau_p*tau_n)^2 ratio between the two paths. Before the qou-qu2w fix this was 2.157, matching the independently observed 0.34716 / 0.16097 and closing the chain from root cause to reported symptom. It is 1.0 once the marshaller stops dropping `d`, and a drift away from 1.0 means that defect has returned."
+    },
+    {
+      "name": "explicit_marshalling_is_still_lossy_p",
+      "computed": "0.28236925591929335233250620050900902140608376614531",
+      "expected": "0.1",
+      "passed": true,
+      "tolerance": "0.2",
+      "source": "Marshalling explicitly through marshal_to_chi_lambda_braid drops `d` on each nucleon's two `averaged` crossings. On the canonical word that moves the trace by 0.282 (p) / 0.126 (n). A collapse toward 0 means the marshaller stopped being lossy; a large jump means the crossing census changed."
+    },
+    {
+      "name": "explicit_marshalling_is_still_lossy_n",
+      "computed": "0.12612946414335563760170530192396112088255017265497",
+      "expected": "0.1",
+      "passed": true,
+      "tolerance": "0.2",
+      "source": "Marshalling explicitly through marshal_to_chi_lambda_braid drops `d` on each nucleon's two `averaged` crossings. On the canonical word that moves the trace by 0.282 (p) / 0.126 (n). A collapse toward 0 means the marshaller stopped being lossy; a large jump means the crossing census changed."
     }
   ],
   "allPassed": true,
-  "durationMs": 67,
+  "durationMs": 62,
   "computation": "nucleon-h3-marshalling-divergence",
   "scriptFile": "nucleon_h3_marshalling_divergence_probe.py",
-  "scriptHash": "d66d82990f56",
-  "scriptCommitSha": "a4909014a567fe8cb456ee0860ada1d95bee985a",
+  "scriptHash": "947ab6a4d8e8",
+  "scriptCommitSha": "38daa36696955f13ca28deae3faf0feb803479c8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -76,6 +92,8 @@
         "d_preserving": "0.62932840220292191816534574677848592760021940063436",
         "habiro_atomic_target": "0.62932840220292191816534574677848592760021940063436",
         "marshalled_current": "0.62932840220292191816534574677848592760021940063436",
+        "marshalled_explicit": "0.8070313948618387556000492623471350608538484830575",
+        "rel_marshalled_explicit_vs_target": "0.28236925591929335233250620050900902140608376614531",
         "rel_d_preserving_vs_target": "6.3705166509322361883475918703976600008851033164227e-51",
         "rel_marshalled_vs_target": "6.3705166509322361883475918703976600008851033164227e-51"
       },
@@ -90,6 +108,8 @@
         "d_preserving": "0.47513351715568221250609023267500579955840763470872",
         "habiro_atomic_target": "0.47513351715568221250609023267500579955840763470871",
         "marshalled_current": "0.47513351715568221250609023267500579955840763470872",
+        "marshalled_explicit": "0.53506185307107628282161109859567282555456020355842",
+        "rel_marshalled_explicit_vs_target": "0.12612946414335563760170530192396112088255017265499",
         "rel_d_preserving_vs_target": "2.3907490437408692616676208453334468386594560713572e-50",
         "rel_marshalled_vs_target": "2.3907490437408692616676208453334468386594560713572e-50"
       }
