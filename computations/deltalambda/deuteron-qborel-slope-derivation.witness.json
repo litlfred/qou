@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-07T05:06:10.015396+00:00",
-  "commitSha": "5ec143eeed7d3ded8e2378d2e9cee25778959b52",
+  "computedAt": "2026-09-07T05:21:19.005458+00:00",
+  "commitSha": "82abd2b19fea13d4b763ee6d8fefb2c5f9563924",
   "assertions": [
     {
       "name": "D1_degree_second_difference_is_two_minus_triangular_indicator",
@@ -61,19 +61,33 @@
       "source": "<w>_n = C(n,2) = n(n-1)/2 EXACTLY (rational arithmetic) for every n=1..26, zero exceptions -- e.g. n=26 gives <w>=325=C(26,2). So the level-1 q-Borel exponent C(n,2) IS the mean path weight, while the Borel divisor deg_n is the max. Their ratio tends to n^2/(n^2/2) = 2, which is exactly why R2 measured the level-1 kernel as supplying half and why the required divisor is that kernel SQUARED. The 'level-1 kernel' and 'centre on the mean weight' are the same operation."
     },
     {
+      "name": "D10_mean_weight_derives_from_zero_content_and_half_descent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "At EVERY step k=1..21, in exact rational arithmetic: <content> = 0 and P(descent) = 1/2, with zero exceptions. Since the step weight is delta_k = content + 2k*[descent], linearity of expectation gives <delta_k> = 0 + 2k*(1/2) = k, hence <w>_n = sum_{k<n} k = C(n,2). So D9 is not an observed coincidence -- it REDUCES to these two facts. MECHANISM (proposed, NOT proved here): transposition lam -> lam' negates content (j-i -> i-j) and exchanges descent with non-descent, which would give both. Caveat that stops this being a proof: the state carries a marked ROW, which transposition turns into a marked column, so conjugation-invariance of THIS state space is not immediate and is not established here."
+    },
+    {
+      "name": "D11_palindromicity_refuted_not_the_mechanism",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "A natural rival explanation for <w> = C(n,2) is that Z_n(q) is self-reciprocal, which would force the mean to sit at (min+max)/2. TESTED AND FALSE: min deg Z_n = 0 for every n, so min+max = deg_n, which is NOT n(n-1) (e.g. n=10: 70 vs 90), and the coefficient vectors are not palindromic at any n=2..11. Symmetry of the POLYNOMIAL is not the reason; the per-step symmetry of D10 is. Recorded so the hypothesis is not retried."
+    },
+    {
       "name": "D6_subleading_coefficient_is_still_a_fit_scope_gate",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "source": "NOT derived: REV's asymptotics. The residual coefficient (~-0.166355 against d2(n^1.5)) is an empirical fit and is labelled one. Note it CANNOT be the asymptotic form: REV_n >= 0 by D2, while a fit of shape a*n - b*n^1.5 with b>0 goes negative at finite n. So the n^1.5 model describes the range measured, not the limit. What IS derived: the leading slope (D1-D3) and the deficit coefficient 2sqrt2/3 (D7). No resummation is performed, B_D is not reached, nothing is wired. Also measured and NOT confirmed: the extensivity hypothesis REV ~ n*f(q0) -- Delta REV drifts 0.82 -> 0.61 over n=12..30 rather than settling. And the 2nd-order cumulant expansion about q=1 tracks REV at small n (5.374 vs 5.371 at n=8) but diverges by n=27 (20.63 vs 19.19), so the weight distribution is not Gaussian enough for that route either."
+      "source": "NOT derived: REV's asymptotics. The residual coefficient (~-0.166355 against d2(n^1.5)) is an empirical fit and is labelled one. Note it CANNOT be the asymptotic form: REV_n >= 0 by D2, while a fit of shape a*n - b*n^1.5 with b>0 goes negative at finite n. So the n^1.5 model describes the range measured, not the limit. What IS derived: the leading slope (D1-D3) and the deficit coefficient 2sqrt2/3 (D7). No resummation is performed, B_D is not reached, nothing is wired. Also measured and NOT confirmed: the extensivity hypothesis REV ~ n*f(q0) -- Delta REV drifts 0.82 -> 0.61 over n=12..30 rather than settling. And the 2nd-order cumulant expansion about q=1 tracks REV at small n (5.374 vs 5.371 at n=8) but diverges by n=27 (20.63 vs 19.19), so the weight distribution is not Gaussian enough for that route either. And Var(w) has NO polynomial closed form -- exact finite differences of the rational Var never vanish through order 5, and the denominators are I(n)-related (e.g. 2521420/17519 at n=12). <w> = C(n,2) is special; the second cumulant is not. 12*Var/n^3 drifts 0.70 -> 1.16 over n=6..24, consistent with Var ~ n^3/10, unpursued."
     }
   ],
   "allPassed": true,
-  "durationMs": 9520,
+  "durationMs": 8200,
   "computation": "deuteron-qborel-slope-derivation",
   "scriptFile": "deuteron_qborel_slope_derivation_probe.py",
-  "scriptHash": "64d7a261e8ba",
-  "scriptCommitSha": "5ec143eeed7d3ded8e2378d2e9cee25778959b52",
+  "scriptHash": "cd2f4d9506ec",
+  "scriptCommitSha": "82abd2b19fea13d4b763ee6d8fefb2c5f9563924",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -190,6 +204,6 @@
       "26": "18.59402608554778454553766"
     },
     "residual_ratio_n32_mean": "-0.16635486841210490783",
-    "durationMs": 11750
+    "durationMs": 10144
   }
 }

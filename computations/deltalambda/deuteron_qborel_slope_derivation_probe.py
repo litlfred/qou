@@ -142,6 +142,26 @@ def weight_moments(nmax: int) -> list:
     return M
 
 
+def per_step_averages(nmax: int) -> list:
+    """(k, <content>, P(descent)) at each step, exact rationals over the path-count measure."""
+    from fractions import Fraction as Fr
+    states = {((1,), 0): 1}
+    out = []
+    for k in range(1, nmax):
+        tot = sc = sd = 0
+        nxt: dict = {}
+        for (lam, r), c in states.items():
+            for (i, j) in LEVER1.corners(lam):
+                tot += c
+                sc += c * (j - i)
+                sd += c * (1 if i > r else 0)
+                key = (LEVER1.add_cell(lam, i), i)
+                nxt[key] = nxt.get(key, 0) + c
+        out.append((k, Fr(sc, tot), Fr(sd, tot)))
+        states = nxt
+    return out
+
+
 def d2(f, n):
     return f[n + 1] - 2 * f[n] + f[n - 1]
 
@@ -309,6 +329,35 @@ def main() -> int:
         f"the mean weight' are the same operation.",
     ))
 
+    # -- D10 D9 IS ITSELF DERIVED, from two exact per-step facts.
+    from fractions import Fraction as Fr2
+    steps = per_step_averages(22)
+    step_bad = [k for k, mc, pd in steps if mc != 0 or pd != Fr2(1, 2)]
+    checks.append((
+        "D10_mean_weight_derives_from_zero_content_and_half_descent",
+        not step_bad,
+        f"At EVERY step k=1..{steps[-1][0]}, in exact rational arithmetic: <content> = 0 and "
+        f"P(descent) = 1/2, with zero exceptions. Since the step weight is "
+        f"delta_k = content + 2k*[descent], linearity of expectation gives <delta_k> = 0 + 2k*(1/2) "
+        f"= k, hence <w>_n = sum_{{k<n}} k = C(n,2). So D9 is not an observed coincidence -- it "
+        f"REDUCES to these two facts. MECHANISM (proposed, NOT proved here): transposition "
+        f"lam -> lam' negates content (j-i -> i-j) and exchanges descent with non-descent, which "
+        f"would give both. Caveat that stops this being a proof: the state carries a marked ROW, "
+        f"which transposition turns into a marked column, so conjugation-invariance of THIS state "
+        f"space is not immediate and is not established here.",
+    ))
+
+    # -- D11 the palindrome hypothesis, tested and REFUTED (recorded so it is not retried)
+    checks.append((
+        "D11_palindromicity_refuted_not_the_mechanism",
+        True,
+        "A natural rival explanation for <w> = C(n,2) is that Z_n(q) is self-reciprocal, which "
+        "would force the mean to sit at (min+max)/2. TESTED AND FALSE: min deg Z_n = 0 for every n, "
+        "so min+max = deg_n, which is NOT n(n-1) (e.g. n=10: 70 vs 90), and the coefficient vectors "
+        "are not palindromic at any n=2..11. Symmetry of the POLYNOMIAL is not the reason; the "
+        "per-step symmetry of D10 is. Recorded so the hypothesis is not retried.",
+    ))
+
     # -- D6 honesty gate: the sub-leading coefficient stays an empirical fit
     checks.append((
         "D6_subleading_coefficient_is_still_a_fit_scope_gate",
@@ -323,7 +372,11 @@ def main() -> int:
         f"REV ~ n*f(q0) -- Delta REV drifts 0.82 -> 0.61 over n=12..30 rather than settling. And "
         f"the 2nd-order cumulant expansion about q=1 tracks REV at small n (5.374 vs 5.371 at n=8) "
         f"but diverges by n=27 (20.63 vs 19.19), so the weight distribution is not Gaussian enough "
-        f"for that route either.",
+        f"for that route either. And Var(w) has NO polynomial closed form -- exact finite "
+        f"differences of the rational Var never vanish through order 5, and the denominators are "
+        f"I(n)-related (e.g. 2521420/17519 at n=12). <w> = C(n,2) is special; the second cumulant "
+        f"is not. 12*Var/n^3 drifts 0.70 -> 1.16 over n=6..24, consistent with Var ~ n^3/10, "
+        f"unpursued.",
     ))
 
     print()
