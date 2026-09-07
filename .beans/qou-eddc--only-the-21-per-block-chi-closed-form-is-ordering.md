@@ -271,3 +271,48 @@ I generated `norm_num` first. `norm_num` then takes the branch on the
 function-equality goal, makes partial progress, and leaves it unsolved. Copying
 the file's existing pattern exactly, rather than approximating it, would have
 avoided that.
+
+### Second correction, and the one that matters: the file DID compile. I broke it.
+
+My previous entry said the baseline was 17 errors and "it did not compile before
+either", citing `qou-lsib`. **Both halves were wrong**, and the method error is
+the instructive part.
+
+I measured that "baseline" by `git stash` + compile. But HEAD already contained
+my own migration commits, so I compared my file at two fix stages, not against
+the pre-migration state. The giveaway was sitting in the output: that baseline
+listed `197:9 unexpected token '['`, **a syntax error I had introduced myself**.
+A pre-existing file cannot contain a bug I wrote. I read past it.
+
+Extracted the real pre-migration file (`3c2a1a9d366`), confirmed it is genuinely
+grouped (`2*q^17` count 0, old numerator count 10), compiled it:
+
+    true pre-migration   0 errors      <- it compiled cleanly
+    after my migration  16 errors
+
+So I took a clean file to 16 errors and pushed it to main, then used a
+misconstructed baseline to argue it had been broken already. That is the worst
+version of this mistake: the bad measurement excused the damage.
+
+**Reverted** (`bb9c4826cf6`). The docstring marker is kept and extended — it
+states the canonical form, the `-P(q)/q^6` factor, `P(1) = -1`, what survives at
+the classical point, and that the migration was attempted and backed out rather
+than silently dropped.
+
+Also tested and **disproved** my own diagnosis: I attributed the failures to the
+`first` alternation ordering (`norm_num` before `funext`, contradicting the
+file's own working idiom). Reordering it changed nothing — 16 errors before and
+after. The derivative tower needs real work, not a tactic tweak.
+
+## What actually remains
+
+The mathematics is settled and independent of all of the above: the closed form
+is derived from the words, cross-checked against a second implementation to
+~1e-40, 9/9 assertions. What remains is Lean plumbing against a **real 0-error
+baseline**, which is now possible because the build environment works.
+
+Anyone picking this up: `chi_block_21` is load-bearing for `P21`,
+`delta_tau_M_surrogate`, `delta_tau_M_surrogate_deriv`, `_deriv2` and three
+`HasDerivAt` chains whose numerator goes degree 11 → 17. Change them as one
+piece, and **compile before claiming anything** — including before claiming a
+baseline.
