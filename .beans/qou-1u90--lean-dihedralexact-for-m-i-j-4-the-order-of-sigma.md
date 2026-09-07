@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:37Z
-updated_at: 2026-09-07T08:13:15Z
+updated_at: 2026-09-07T08:46:35Z
 ---
 
 ## What is open
@@ -141,3 +141,5 @@ sitting in `CoxeterDihedralOrder`; only the refactor remains.**
 
 Recorded in both file headers so a reader does not have to rediscover either the availability or
 the cost.
+
+**SPENT — PR #7027 (2026-09-07).** Both hypotheses are gone from all 17 signatures across five files; `MatsumotoUnconditional.lean` deleted (its whole content was the workaround). New input `CoxeterDihedralOrder.bond_ne_zero_of_pow_eq_one`: a positive trivial power of σᵢσⱼ forces `M i j ≠ 0`, which refutes the descent lemma's m=0 branch. `exists_reduced_alternating_tail` now returns `0 < M i j` (free in its proof) — the second place `hfin` was used. Twelve modules lean-direct exit 0; 13 declarations sorry-free.

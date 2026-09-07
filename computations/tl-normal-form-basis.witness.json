@@ -1,5 +1,5 @@
 {
-  "description": "Jones normal forms for TL_n(δ) are exactly the planar diagram basis (n<=6, bijectively) and number catalan n (n<=8); left multiplication by a generator closes in them (n<=7) with at most one loop per product. The reduction is NOT word-length monotone (Δ reaches -5 by n=7), so a Lean proof must index by the (I,J) normal-form data rather than induct on length.",
+  "description": "Jones normal forms for TL_n(δ) are exactly the planar diagram basis (n<=6, bijectively) and number catalan n (n<=8); left multiplication by a generator closes in them (n<=7) with at most one loop per product. The reduction is NOT word-length monotone (Δ reaches -5 by n=7), so a Lean proof must index by the (I,J) normal-form data rather than induct on length. The general-m count is a bicoloured-Motzkin-to-Catalan bijection, not a Dyck-path one (m<=10).",
   "bean": "qou-cds1",
   "arithmetic": "exact integers only; no floating point anywhere in this producer",
   "scope": "checked at finite n, not proved at general n; establishes which family to formalise and which termination measure fails. Wires to nothing.",
@@ -224,15 +224,100 @@
       "min_word_length_change": -5,
       "length_monotone": false,
       "pass": true
+    },
+    {
+      "check": "general_count_route_is_bicoloured_motzkin_not_dyck",
+      "range": "m=0..10",
+      "rows": [
+        {
+          "m": 0,
+          "bicoloured_motzkin": 1,
+          "closed_sum": 1,
+          "catalan_m_plus_1": 1,
+          "agree": true
+        },
+        {
+          "m": 1,
+          "bicoloured_motzkin": 2,
+          "closed_sum": 2,
+          "catalan_m_plus_1": 2,
+          "agree": true
+        },
+        {
+          "m": 2,
+          "bicoloured_motzkin": 5,
+          "closed_sum": 5,
+          "catalan_m_plus_1": 5,
+          "agree": true
+        },
+        {
+          "m": 3,
+          "bicoloured_motzkin": 14,
+          "closed_sum": 14,
+          "catalan_m_plus_1": 14,
+          "agree": true
+        },
+        {
+          "m": 4,
+          "bicoloured_motzkin": 42,
+          "closed_sum": 42,
+          "catalan_m_plus_1": 42,
+          "agree": true
+        },
+        {
+          "m": 5,
+          "bicoloured_motzkin": 132,
+          "closed_sum": 132,
+          "catalan_m_plus_1": 132,
+          "agree": true
+        },
+        {
+          "m": 6,
+          "bicoloured_motzkin": 429,
+          "closed_sum": 429,
+          "catalan_m_plus_1": 429,
+          "agree": true
+        },
+        {
+          "m": 7,
+          "bicoloured_motzkin": 1430,
+          "closed_sum": 1430,
+          "catalan_m_plus_1": 1430,
+          "agree": true
+        },
+        {
+          "m": 8,
+          "bicoloured_motzkin": 4862,
+          "closed_sum": 4862,
+          "catalan_m_plus_1": 4862,
+          "agree": true
+        },
+        {
+          "m": 9,
+          "bicoloured_motzkin": 16796,
+          "closed_sum": 16796,
+          "catalan_m_plus_1": 16796,
+          "agree": true
+        },
+        {
+          "m": 10,
+          "bicoloured_motzkin": 58786,
+          "closed_sum": 58786,
+          "catalan_m_plus_1": 58786,
+          "agree": true
+        }
+      ],
+      "note": "a normal form is a 4-letter word (I-only / J-only / both / neither) with a ballot condition on the first two: a bicoloured Motzkin word. The two neutral letters are why it is Motzkin and not Dyck.",
+      "pass": true
     }
   ],
   "all_pass": true,
   "scriptFile": "tl_normal_form_basis_probe.py",
-  "scriptHash": "5982b6b6701d",
-  "scriptCommitSha": "unknown",
-  "commitSha": "acbe0808912c6e083295028fd5d96ba2f6f86553",
+  "scriptHash": "3905358c2510",
+  "scriptCommitSha": "30b71962932346f626b7fa28c68afe7d597df673",
+  "commitSha": "c409711caec020e5fc07b5de8ca75dbcc24bb717",
   "engine": "python",
-  "computedAt": "2026-09-07T09:46:32.112178+00:00",
+  "computedAt": "2026-09-07T10:30:04.438738+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

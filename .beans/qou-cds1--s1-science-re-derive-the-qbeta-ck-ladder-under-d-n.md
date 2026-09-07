@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T10:00:48Z
+updated_at: 2026-09-07T10:24:25Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7932,3 +7932,40 @@ rewrote one).
 
 **Scope.** Finite n; proves nothing at general n. Wires to nothing. The general
 theorem is NOT closed.
+
+
+## Merged: Wedderburn at n=2,3 (PR #7001, main 6fadee41bb)
+
+`TL₂(δ) ≅ R×R`, `TL₃(δ) ≅ M₂(R)×R`, `tl3_traceRadical` — the ⊇ half of #6986's
+open item at n=3 with **nothing standing in for semisimplicity**. Verified by
+content on main: 12 commits, both new files, all headline decls, 0 sorries.
+Rebased 143→0 before merge; all six cone files rebuilt lean-direct exit 0; 56
+declarations axiom-clean.
+
+## Next tranche opened: the general index type (PR #7049)
+
+`QOU/MathlibExt/TemperleyLiebNormalForm.lean`, 24 decls, axiom-clean.
+
+**The design is dictated by the probe's negative, not chosen.** Because
+`Δ|word|` reaches −5, a length-based induction cannot exist, so `NormalIdx m`
+carries the **(I,J) data** and never a word.
+
+**Two things measured before they went into Lean** — both would have cost a
+rewrite otherwise:
+- **Threshold counting ⟺ pointwise domination**, checked for every pair at
+  m ≤ 7. It makes the type a subtype of a Fintype, so `card` is `decide`-able
+  rather than needing a bijection argument.
+- **`Finset.sort` does NOT reduce in the kernel** (merge sort), so every
+  `decide` fails if it is used. `elems` filters `List.finRange`, already sorted.
+  This is how the first draft failed — found by running it, not by foresight.
+
+**Proved:** `card = catalan (m+1)` for m ≤ 4 (bridged to `Nat.catalan`); and
+`range_elt_one` / `range_elt_two` — the general `elt` reproduces the proved TL₂
+and TL₃ bases **exactly**. That pair is the whole reason to trust the
+definition.
+
+**🛑 NOT proved, nothing substitutes:** `card = catalan` at general m (needs a
+Dyck-path or binary-tree bijection); `elt` spans at general m (the real content
+of dim TL_n = catalan n — needs the closure lemma on (I,J)); `elt` injective at
+general m. The two `span_range_elt_*` are proved by CITING the m = 1, 2 results
+— consistency checks, not progress on the general case. NOT closed.

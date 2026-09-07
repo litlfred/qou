@@ -31,6 +31,27 @@ tells you which shape it must take.
    normal form `w`, the diagram of `e_k · w` is again a normal form's, times
    `δ^loops`. The probe records the loop counts and the word-length changes.
 
+4. **The route to a general-`m` cardinality proof.** A normal form for
+   `TL_{m+1}` is a pair `(I, J)` of equal-size subsets of the `m` generators
+   with `J` dominating `I`; equivalently a word of length `m` over four letters
+   -- `I`-only, `J`-only, *both*, *neither* -- whose every prefix has
+   `#(I-only) <= #(J-only)`, with equality overall. Those are the **bicoloured
+   Motzkin words**: two step letters and two neutral ones, with a ballot
+   condition. This check confirms, against `catalan(m+1)`, both that count and
+   its closed form
+
+       catalan(m+1)  =  sum_k  C(m, 2k) * catalan(k) * 2^(m-2k)
+
+   so the general theorem is a bicoloured-Motzkin-to-Catalan bijection, NOT a
+   Dyck-path one -- the two neutral letters are exactly the difference. Recorded
+   because "bijection to Dyck paths" was this agent's first guess and it is
+   wrong.
+
+   Mathlib has no Motzkin words at all: checked by enumerating
+   `Mathlib/Combinatorics/Enumerative/` and by searching the library for
+   `*motzkin*`, whose only hit is an unrelated Fourier-Motzkin linarith oracle.
+   Stated from a search, not from the shape of the difficulty.
+
 ## The finding that changes the Lean design
 
 Closure holds -- and it is **NOT length-monotone**. The word length changes by
@@ -73,6 +94,7 @@ WITNESS = Path(__file__).with_name("tl-normal-form-basis.witness.json")
 MAX_N_COUNT = 8      # normal-form count vs catalan
 MAX_N_BIJ = 6        # bijection onto planar diagrams (enumeration is catalan-sized)
 MAX_N_CLOSURE = 7    # left-multiplication closure table
+MAX_M_MOTZKIN = 10   # bicoloured-Motzkin route to the general count
 
 
 def catalan(n: int) -> int:
@@ -213,6 +235,37 @@ def planar_diagrams(n: int) -> set[tuple[int, ...]]:
 
 
 # --------------------------------------------------------------------------
+# The general-count route
+# --------------------------------------------------------------------------
+
+def bicoloured_motzkin(m: int) -> int:
+    """Words of length m over {a, b, x, y} with every prefix `#a <= #b` and
+    `#a == #b` overall.  `a`/`b` are the `I`-only and `J`-only letters; `x`/`y`
+    are *both* and *neither*, both neutral."""
+    from itertools import product as _product
+    tot = 0
+    for w in _product("abxy", repeat=m):
+        bal, ok = 0, True
+        for ch in w:
+            if ch == "a":
+                bal += 1
+            elif ch == "b":
+                bal -= 1
+            if bal > 0:
+                ok = False
+                break
+        if ok and bal == 0:
+            tot += 1
+    return tot
+
+
+def closed_sum(m: int) -> int:
+    """sum_k C(m, 2k) * catalan(k) * 2^(m-2k)."""
+    return sum(comb(m, 2 * k) * catalan(k) * 2 ** (m - 2 * k)
+               for k in range(m // 2 + 1))
+
+
+# --------------------------------------------------------------------------
 
 def main() -> int:
     checks: list[dict] = []
@@ -297,6 +350,28 @@ def main() -> int:
         "pass": all(r["closed_in_normal_forms"] for r in clo_rows),
     })
 
+    # 4. the route to the general count
+    print(flush=True)
+    motz_rows = []
+    for m in range(0, MAX_M_MOTZKIN + 1):
+        bm, cs, ct = bicoloured_motzkin(m), closed_sum(m), catalan(m + 1)
+        agree = bm == cs == ct
+        ok &= agree
+        motz_rows.append({"m": m, "bicoloured_motzkin": bm, "closed_sum": cs,
+                          "catalan_m_plus_1": ct, "agree": agree})
+        print(f"m={m:2d}: bicoloured Motzkin {bm:7d}  closed sum {cs:7d}  "
+              f"catalan({m+1}) {ct:7d}  {'agree' if agree else '*** DISAGREE ***'}",
+              flush=True)
+    checks.append({
+        "check": "general_count_route_is_bicoloured_motzkin_not_dyck",
+        "range": f"m=0..{MAX_M_MOTZKIN}", "rows": motz_rows,
+        "note": ("a normal form is a 4-letter word (I-only / J-only / both / "
+                 "neither) with a ballot condition on the first two: a bicoloured "
+                 "Motzkin word. The two neutral letters are why it is Motzkin and "
+                 "not Dyck."),
+        "pass": all(r["agree"] for r in motz_rows),
+    })
+
     print(flush=True)
     print(f"max loops per product = {max_loop} (so a single δ, never a power)", flush=True)
     print(f"min word-length change = {min_dlen} — length is NOT a termination "
@@ -309,7 +384,8 @@ def main() -> int:
             "a generator closes in them (n<=7) with at most one loop per product. "
             "The reduction is NOT word-length monotone (Δ reaches -5 by n=7), so a "
             "Lean proof must index by the (I,J) normal-form data rather than induct "
-            "on length."
+            "on length. The general-m count is a bicoloured-Motzkin-to-Catalan "
+            "bijection, not a Dyck-path one (m<=10)."
         ),
         "bean": "qou-cds1",
         "arithmetic": "exact integers only; no floating point anywhere in this producer",

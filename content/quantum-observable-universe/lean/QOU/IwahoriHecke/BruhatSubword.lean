@@ -33,25 +33,26 @@ length `k ≤ n` is a **prefix** of the one of length `n` in the same spelling, 
 the other spelling when `k < n`. The one case those miss is `k = n`, where the two spellings have
 the same product outright: that is the braid relation (`wordProd_altWord_braid`).
 
-## 🛑 Scope — and the hypotheses sit further up than expected
+## Scope — nothing here is conditional
 
-Only `subword_property` and `bruhatLe_trans` carry `DihedralExact` and `M i j ≠ 0`, and they carry
-them **solely because they call Matsumoto**. `exists_subword_altWord_swap` and the braid-move
-transport are **unconditional**: the swap never needs to know the order of `σᵢσⱼ`, only that a
-reduced rank-two word is alternating and that the two full-length spellings share a product. This
-was not the shape I expected when writing it — the hypotheses were stated on the swap first and the
-compiler reported them unused.
+`subword_property` and `bruhatLe_trans` used to carry `DihedralExact` and `M i j ≠ 0`, **solely
+because they call Matsumoto**; `Matsumoto` no longer has them (`CoxeterDihedralOrder` proves both
+from the geometric representation), so neither does this file. Everything below holds for every
+Coxeter system.
 
-The type-`A` corollaries (`subword_property_An`, `bruhatLe_trans_An`) are hypothesis-free, as in
-`Matsumoto`.
+`exists_subword_altWord_swap` and the braid-move transport were **already** unconditional before
+that: the swap never needs to know the order of `σᵢσⱼ`, only that a reduced rank-two word is
+alternating and that the two full-length spellings share a product. That was not the shape I
+expected when writing it — the hypotheses were stated on the swap first and the compiler reported
+them unused.
 
 ✅ **The lifting property landed the same day**, in `QOU.IwahoriHecke.BruhatReflection`, off the
 subword property proved here — so all four of `CoxeterBruhat`'s deferred properties are now closed.
 
-🛑 **Still open:** the equivalence between this subword `BruhatLe` and the *reflection-generated*
-Bruhat order of Mathas / Dipper–James. `BruhatReflection` proves `ReflLe → BruhatLe`; the converse
-is not established anywhere in this corpus, and it is what a consumer citing Mathas' Prop 3.7 would
-need.
+✅ **And the two Bruhat orders were shown to agree**, in `QOU.IwahoriHecke.BruhatConverse`:
+`BruhatLe ↔ ReflLe` and its left-handed mirror `BruhatLe ↔ LeftReflLe`, which is what a consumer
+citing Mathas' Prop 3.7 needs. `BruhatReflection` had supplied `ReflLe → BruhatLe`; the converse
+was the open half.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, Thm 2.2.2 (subword property)
 -- Ref: [humphreys1990] Reflection Groups and Coxeter Groups, §5.10
@@ -206,22 +207,21 @@ theorem hasSubwordFor_of_braidEquiv
 
 /-- **The subword property.** If `u ≤ w` then **every** reduced word for `w` has a subword
 multiplying to `u` — not merely the one the definition happens to name. -/
-theorem subword_property (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem subword_property
     {u w : W} (h : BruhatLe cs u w) {ω : List B} (hred : cs.IsReduced ω) (hw : π ω = w) :
     ∃ ω' : List B, ω' <+ ω ∧ π ω' = u := by
   obtain ⟨ω₀, ω₀', hred₀, hw₀, hsub₀, hu₀⟩ := h
   have hequiv : BraidEquiv (fun a b => M a b) ω₀ ω :=
-    matsumoto' cs hDE hfin hred₀ hred (by rw [hw₀, hw])
+    matsumoto' cs hred₀ hred (by rw [hw₀, hw])
   exact hasSubwordFor_of_braidEquiv cs hequiv ⟨ω₀', hsub₀, hu₀⟩
 
 /-- The existential definition of `BruhatLe` is equivalent to the universal one. -/
-theorem bruhatLe_iff_forall_reduced (hDE : DihedralExact cs)
-    (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0) {u w : W} :
+theorem bruhatLe_iff_forall_reduced {u w : W} :
     BruhatLe cs u w ↔
       ∀ ω : List B, cs.IsReduced ω → π ω = w → ∃ ω' : List B, ω' <+ ω ∧ π ω' = u := by
   constructor
   · intro h ω hred hw
-    exact subword_property cs hDE hfin h hred hw
+    exact subword_property cs h hred hw
   · intro h
     obtain ⟨ω, hred, hw⟩ := cs.exists_reduced_word' w
     obtain ⟨ω', hsub, hu⟩ := h ω hred hw.symm
@@ -234,25 +234,23 @@ subword property.
 
 The obstruction `CoxeterBruhatOrder` recorded was that `u ≤ v` names *some* reduced word for `v`
 while `v ≤ w` produces *another* one. The subword property removes the distinction. -/
-theorem bruhatLe_trans (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem bruhatLe_trans
     {u v w : W} (h₁ : BruhatLe cs u v) (h₂ : BruhatLe cs v w) : BruhatLe cs u w := by
   obtain ⟨ω, ωv, hred, hw, hsub, hvred, hv⟩ := bruhatLe_reduced_witness cs h₂
-  obtain ⟨ωu, hsubu, hu⟩ := subword_property cs hDE hfin h₁ hvred hv
+  obtain ⟨ωu, hsubu, hu⟩ := subword_property cs h₁ hvred hv
   exact ⟨ω, ωu, hred, hw, hsubu.trans hsub, hu⟩
 
-/-! ## Type `A`: hypothesis-free -/
+/-! ## Type `A`: the specialisation the rest of the corpus cites -/
 
 theorem subword_property_An {n : ℕ} {W : Type*} [Group W]
     (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u w : W} (h : BruhatLe cs u w)
     {ω : List (Fin n)} (hred : cs.IsReduced ω) (hw : cs.wordProd ω = w) :
     ∃ ω' : List (Fin n), ω' <+ ω ∧ cs.wordProd ω' = u :=
-  subword_property cs (QOU.Machinery.CoxeterDihedralDescent.dihedralExact_le_three cs
-    (An_le_three n)) (fun i j hij => An_ne_zero n i j hij) h hred hw
+  subword_property cs h hred hw
 
 theorem bruhatLe_trans_An {n : ℕ} {W : Type*} [Group W]
     (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u v w : W}
     (h₁ : BruhatLe cs u v) (h₂ : BruhatLe cs v w) : BruhatLe cs u w :=
-  bruhatLe_trans cs (QOU.Machinery.CoxeterDihedralDescent.dihedralExact_le_three cs
-    (An_le_three n)) (fun i j hij => An_ne_zero n i j hij) h₁ h₂
+  bruhatLe_trans cs h₁ h₂
 
 end QOU.IwahoriHecke.BruhatSubword

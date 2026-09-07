@@ -58,7 +58,13 @@ theorem turning_point_count :
   rw [h_map] at h_card
   rw [← h_card, h_deg]
 
-/-- Saddle trajectory phase condition between two turning points i and j -/
+/-- Saddle trajectory phase condition between two turning points i and j
+
+    **`isBPS : Prop` removed 2026-09-07. Its own comment called it a "placeholder
+    for `Im ∫_{x_i}^{x_j} (y_i - y_j) dx = 0`", and typed with the *universe*
+    `Prop` it asserted nothing — an instance chose the proposition. Neither read
+    nor constructed anywhere. Stating it needs the path integral, which is what
+    the adjacent comment says is unavailable.** -/
 structure SaddleTrajectory where
   yi : ℂ
   yj : ℂ
@@ -66,6 +72,5 @@ structure SaddleTrajectory where
   htj : isTurningPoint yj
   -- Using a sorry'd condition for the integral since actual path integration in Mathlib is complex
   -- condition : Im (∫ (y(x) - yj) dx) = 0
-  isBPS : Prop -- placeholder for `Im ∫_{x_i}^{x_j} (y_i - y_j) dx = 0`
 
 end QOU.BringsSurface

@@ -1,15 +1,15 @@
 {
   "engine": "emitted_particle_tracker.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:07:47.185253+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-07T10:28:38.484123+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 25,
   "computation": "emitted-particle-tracker",
   "scriptFile": "emitted_particle_tracker.py",
   "scriptHash": "a96d22ab56bb",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -44,12 +44,12 @@
       "N": 0,
       "A": 1,
       "gamma_vertices": 5,
-      "tr_q0": 1.1457596924573008,
-      "tr_qinv": -0.07343443053864257,
+      "tr_q0": 0.629328402202922,
+      "tr_qinv": 0.4429968597157364,
       "retained_MeV": 2.2443667808906858,
-      "emitted_MeV": 2.551761938549586,
+      "emitted_MeV": 0.3899901821226357,
       "emitted_multilink_MeV": 0.0,
-      "delta_emitted_MeV": 2.551761938549586
+      "delta_emitted_MeV": 0.3899901821226357
     },
     "step_D": {
       "name": "D",
@@ -57,12 +57,12 @@
       "N": 1,
       "A": 2,
       "gamma_vertices": 12,
-      "tr_q0": 0.5751722439177719,
-      "tr_qinv": -0.0014808531711619371,
-      "retained_MeV": 1.2007307349738991,
-      "emitted_MeV": 1.2069295587501585,
-      "emitted_multilink_MeV": 1.167841621981574,
-      "delta_emitted_MeV": -1.3448323797994277
+      "tr_q0": 0.1519683392042316,
+      "tr_qinv": 0.1243483166229129,
+      "retained_MeV": 0.5783281858301405,
+      "emitted_MeV": 0.05780844988958634,
+      "emitted_multilink_MeV": 0.055953071038298975,
+      "delta_emitted_MeV": -0.33218173223304936
     },
     "step_3He": {
       "name": "3He",
@@ -70,12 +70,12 @@
       "N": 1,
       "A": 3,
       "gamma_vertices": 17,
-      "tr_q0": 0.4037670368514282,
-      "tr_qinv": 4.3892744351718696e-05,
-      "retained_MeV": 0.8451725127912761,
-      "emitted_MeV": 0.8449887785814361,
-      "emitted_multilink_MeV": 1.8684933737645286,
-      "delta_emitted_MeV": -0.36194078016872244
+      "tr_q0": 0.05859625365443638,
+      "tr_qinv": 0.02223420279194686,
+      "retained_MeV": 0.16917739213557303,
+      "emitted_MeV": 0.07610543362077347,
+      "emitted_multilink_MeV": 0.09090348391600658,
+      "delta_emitted_MeV": 0.018296983731187134
     },
     "step_4He": {
       "name": "4He",
@@ -83,12 +83,12 @@
       "N": 2,
       "A": 4,
       "gamma_vertices": 24,
-      "tr_q0": 0.16097414544240737,
-      "tr_qinv": 1.0670137842856296e-06,
-      "retained_MeV": 0.3369196196469936,
-      "emitted_MeV": 0.3369151531471781,
-      "emitted_multilink_MeV": 2.3437342800494374,
-      "delta_emitted_MeV": -0.5080736254342578
+      "tr_q0": 0.01123741765976742,
+      "tr_qinv": 0.0075236026580520156,
+      "retained_MeV": 0.03926664070339059,
+      "emitted_MeV": 0.007772980191952065,
+      "emitted_multilink_MeV": 0.0540764809936862,
+      "delta_emitted_MeV": -0.06833245342882141
     },
     "step_6Li": {
       "name": "6Li",
@@ -96,12 +96,12 @@
       "N": 3,
       "A": 6,
       "gamma_vertices": 36,
-      "tr_q0": 0.04505202706655273,
-      "tr_qinv": -7.68825997085324e-10,
-      "retained_MeV": 0.09429347123046836,
-      "emitted_MeV": 0.09429347444875966,
-      "emitted_multilink_MeV": 2.939462963962972,
-      "delta_emitted_MeV": -0.2426216786984185
+      "tr_q0": 0.0008309596348904261,
+      "tr_qinv": 0.000455209997960014,
+      "retained_MeV": 0.00269194105657362,
+      "emitted_MeV": 0.0007864404887276853,
+      "emitted_multilink_MeV": 0.024517153400891795,
+      "delta_emitted_MeV": -0.00698653970322438
     },
     "step_7Li": {
       "name": "7Li",
@@ -109,12 +109,12 @@
       "N": 4,
       "A": 7,
       "gamma_vertices": 43,
-      "tr_q0": 0.01796137598066255,
-      "tr_qinv": -1.8689830146723602e-11,
-      "retained_MeV": 0.037592992517971595,
-      "emitted_MeV": 0.03759299259620688,
-      "emitted_multilink_MeV": 2.9589807316440364,
-      "delta_emitted_MeV": -0.056700481852552775
+      "tr_q0": 0.00015935900152832697,
+      "tr_qinv": 0.00015403381819762254,
+      "retained_MeV": 0.000655928251381565,
+      "emitted_MeV": 1.1145559089227613e-05,
+      "emitted_multilink_MeV": 0.009646501130955625,
+      "delta_emitted_MeV": -0.0007752949296384576
     }
   },
   "q0Anchor": "proton",

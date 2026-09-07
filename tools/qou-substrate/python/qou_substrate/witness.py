@@ -2026,9 +2026,10 @@ class WitnessBuilder:
         non-standard and ``wrap_legacy().save()`` cannot be applied
         without breaking consumers).
 
-        Mutates and returns ``payload`` with ``scriptHash``,
-        ``scriptCommitSha``, ``commitSha``, ``engine``, ``engineVersion``,
-        ``computedAt``, and ``durationMs`` set. Avoids the need to
+        Mutates and returns ``payload`` with ``scriptFile`` (``setdefault``,
+        so a caller's own value wins), ``scriptHash``, ``scriptCommitSha``,
+        ``commitSha``, ``engine``, ``engineVersion``, ``computedAt``, and
+        ``durationMs`` set. Avoids the need to
         import the underscore-prefixed ``_git_head_sha`` /
         ``_git_file_sha`` helpers from outside this module.
 
@@ -2092,6 +2093,26 @@ class WitnessBuilder:
         spath = str(script_path)
         if engine is None:
             engine = payload.get("engine") or "python"
+        # `scriptFile` is `setdefault`, not assignment: a caller that already
+        # named its producer keeps that name (a wrapper stamping on behalf of
+        # the real script must be able to say so). Everything else here is
+        # unconditional because it is derived from `script_path` itself.
+        #
+        # It was MISSING entirely until 2026-09-07 (bean qou-4383). The
+        # docstring above promises scriptHash / scriptCommitSha / commitSha /
+        # engine / engineVersion / computedAt / durationMs and delivers them —
+        # but a witness stamped through this helper still came out with no
+        # `scriptFile`, so nothing recorded WHICH script produced it. The
+        # hash identifies the content of a file you must already know the name
+        # of; it cannot tell you the name.
+        #
+        # Measured: `qbeta-habiro-pochhammer-convention.witness.json` calls
+        # this helper correctly and is still unattributable, and the fingerprint
+        # sweep could not re-run it for exactly that reason. A sibling hit the
+        # same gap in `qbeta_delta_vs_deltaTbeta_settled_probe.py` and worked
+        # around it with a local `w.setdefault("scriptFile", ...)` rather than
+        # fixing it here — which is the signal that it belongs here.
+        payload.setdefault("scriptFile", os.path.basename(spath))
         payload["scriptHash"] = file_content_hash(spath)
         payload["scriptCommitSha"] = _git_file_sha(spath)
         payload["commitSha"] = _git_head_sha()
