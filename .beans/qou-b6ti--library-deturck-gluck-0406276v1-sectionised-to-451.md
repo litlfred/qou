@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T08:20:08Z
-updated_at: 2026-09-07T09:16:39Z
+updated_at: 2026-09-07T11:33:28Z
 ---
 
 Found 2026-09-07 by a six-path corpus-grep on the EM-linking front
@@ -189,3 +189,56 @@ path 5 works on it.
    validates against the pinned SHA (currently `428ca5c`), not upstream main.
 2. **Marks failing to locate** — 1 of 6 correct headings found on
    `arxiv-1304.4737v1`. Not addressed by #167 and not measured here.
+
+
+## Both open items closed — pin advanced, 18 documents re-sectioned (#7071)
+
+**Pin `428ca5c` -> `df28d02`.** Measured as the pin file's header demands, both
+platforms against the SAME corpus (today's main, not the `9d6fa7f2c8` the old
+note quotes — a before/after at different corpus commits is not a comparison,
+bean `vbase`):
+
+    428ca5c  ->  6 issue lines printed, "9 issue(s)" reported
+    df28d02  ->  3 issue lines printed, "3 issue(s)" reported
+
+The three that clear are the `Unknown field` warnings — `computation` on
+`knot-periodic-table`, `authorNotes` on `tm-interaction-completeness` and
+`millennium-bounds-via-surreals-intro`. Those were being SILENTLY DROPPED at
+the old pin, i.e. this bump RESTORES author-facing content already on disk.
+It also confirms AGENTS.md §4d's live-state claim from the qou side: against
+the pinned platform the fields really were still dropped.
+
+Incidental: the old platform's printed list and its own count disagreed by 3
+(6 shown, 9 claimed); the new one's agree.
+
+**Re-sectioned the 18: 162,280 -> 669,287 chars (+507,007, 4.1x)**, range
+2.2x-13.3x. The goal was greppability and it holds: `grep -rl coth
+library/0406276v1/` now hits `sections/sec-front-matter.md` — Thm 1(3),
+`phi_0(alpha) = -coth(alpha)/4pi`, the kernel the EM-linking front reads off
+and which path 5 previously reported as absent.
+
+Scope was checked BEFORE running: `pdf-structure` derives `doc_id` from the
+arXiv stamp while the directory is named from the filename, so a mismatch
+writes a new tree and orphans the old one (the `qou-cvx9` trap). All 18
+matched; exactly 18 dirs touched, no orphan.
+
+**Attribution is NOT all #167, and I checked rather than assumed.** The pin
+also carried 172 commits, some touching heading inference. 16 of 18 gained
+exactly `sec-front-matter` and nothing else (that is #167 alone). Two
+exceptions: `bujack` 2->2 sections yet 2.5x text — both old sections started
+at p7, so the entire paper (34,032 chars) was dropped; #167 added it AND the
+newer platform rejected a bogus figure-caption mark. `arxiv-hep-th-0006111v2`
+5->7, where the extra is a further MIS-INFERRED heading.
+
+## Still open (do not close)
+
+1. **Heading inference mis-locating.** #167 stops the prefix-drop becoming
+   data loss; it does not fix the inference. `arxiv-1304.4737v1` is the type
+   case — TOC inferred CORRECTLY (six headings, "I Introduction" p2 through
+   "References" p15) and only one located, the second-to-last.
+   `arxiv-hep-th-0006111v2`'s section titles are formula fragments
+   (`(zeta, {mu}) = zeta`). Not addressed here or upstream.
+2. **The other ~605 documents.** Median retention 0.977, but that residual
+   ~2 % is the title/author/abstract block, which the same fix recovers
+   (858-6,278 chars measured on three healthy controls). A 600-document diff
+   and its own reviewable decision.
