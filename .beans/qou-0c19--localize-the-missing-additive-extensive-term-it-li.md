@@ -1,11 +1,11 @@
 ---
 # qou-0c19
-title: 'LOCALIZE the missing additive extensive term: it lives in the inter-nucleon COLOR-TUBE channel (conj:inter-nucleon-channel-color-tube). Diagnostic: per-isotope error ∝ inter-nucleon arc count R²=0.83 (vs signed-h R²=0.26) = the extensive ∝A signature. Missing structure = color-tube weight W_{c1c2}. OPEN Q: does color-tube weighting saturate at A=4 (magic-shell) giving ρ_4? Conditional on conj:s5-so3-fiber-action.'
+title: 'Missing additive extensive term: is the inter-nucleon COLOR-TUBE channel (conj:inter-nucleon-channel-color-tube) its home? The arc-count diagnostic that motivated this is REFUTED — R²=0.83/0.26 are not in the cited witness (true 0.2653/0.0018, its own verdict "weak"), and arc count = A−1 so the fit is degenerate with A. W_{c1c2} now rests on the categorical argument alone. OPEN Q: does color-tube weighting saturate at A=4 giving ρ_4? Conditional on conj:s5-so3-fiber-action.'
 status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T15:55:10Z
-updated_at: 2026-08-02T19:10:41Z
+updated_at: 2026-09-07T10:31:24Z
 ---
 
 
@@ -187,3 +187,40 @@ the factor of 3 is the strand count, `tr_M` cooperates exactly, and no strand
 ordering carries the colour tube. Both escape routes remain named and untaken —
 drop contiguity (intra-nucleon crossings become conjugated braids), or drop
 single-generator couplings (and `b -> b^3` stops being exact).
+
+
+## 2026-09-07 — the 2026-08-30 correction LANDED; the title had not caught up
+
+Two verifications, both against the live tree rather than the bean's own note:
+
+1. **"PR pending" is stale — both durable artifacts are corrected.**
+   `brings-surface/inter-nucleon-channel-color-tube.md:34` now reports
+   `R² = 0.2653` and `R² = 0.0018`, quotes the witness's own **weak** verdict,
+   states in terms that it does **not** establish the per-arc claim, and adds
+   both degeneracy cautions (arc count `= A − 1`, so the fit scores exactly
+   what bare `A` scores; and `R²(B ~ A−1) = 0.9943` over 2449 AME2020 nuclei
+   with no model at all). `docs/audits/2026-08-02-...-additive-term.md` carries
+   its correction inline at :134 with the shallow-clone caveat at :157.
+   Re-confirmed independently: `0.83` occurs **zero** times in
+   `computations/low-isotope-sign-flip-diagnostic.witness.json`.
+
+2. **The TITLE still asserted the refuted diagnostic**, as a positive finding
+   (*"Diagnostic: per-isotope error ∝ inter-nucleon arc count R²=0.83 (vs
+   signed-h R²=0.26) = the extensive ∝A signature"*), with the refutation
+   visible only after opening the body. Retitled.
+
+**Why retitle here when `qou-e9pp`'s stale "~700" was deliberately left alone
+this same session** — the two cases are not alike, and the distinction is the
+point. `qou-e9pp`'s figure is **stale** (700 against a decided population of
+559–628); its title still points at a real thing. This one asserted numbers
+that **do not exist in the source it cites**, in support of a conclusion that
+source's own verdict contradicts. Staleness in a citation handle is tolerable;
+a false citation in the most-read line is not. The former title is quoted above
+so the handle survives a grep.
+
+**Bean stays OPEN.** Its subject — whether the colour-tube channel is where the
+missing additive extensive term lives, and whether the weighting saturates at
+`A = 4` — is an open conjecture, conditional on `conj:s5-so3-fiber-action`.
+Only the discredited *motivation* has been removed; `W_{c1c2}` now rests on the
+categorical argument alone, which is weaker support but is not a refutation of
+the conjecture.
