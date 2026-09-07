@@ -9,10 +9,12 @@ what it does **not** prove: *"full Tits faithfulness (`ℓ` of arbitrary words /
 being exactly `mᵢⱼ`)"*. This file proves the second half of that.
 
 `QOU.Machinery.CoxeterRankTwo.DihedralExact` is the predicate — no positive power below `M i j`
-is trivial — and it gates, at present, the whole Matsumoto/Bruhat arc: Matsumoto, the `T_w` basis,
-the subword property, transitivity, lifting, and the two Bruhat-order equivalences are all
-hypothesis-free only on **type `A`**, where `dihedralExact_le_three` discharges it. With
-`dihedralExact_full` below they are unconditional for **every** Coxeter system.
+is trivial — and it used to gate the whole Matsumoto/Bruhat arc: Matsumoto, the `T_w` basis, the
+subword property, transitivity, lifting and the two Bruhat-order equivalences were hypothesis-free
+only on **type `A`**, where `dihedralExact_le_three` discharges it. `dihedralExact_full` below
+discharges it for **every** Coxeter system, and `bond_ne_zero_of_pow_eq_one` disposes of the
+companion `M i j ≠ 0`; `CoxeterDihedralDescent` spends both, so no statement anywhere in that arc
+carries either hypothesis any more.
 
 ## The proof, and why it is shorter than the one already here
 
@@ -292,18 +294,34 @@ theorem reflEnd_pair_pow_ne_one_of_infinite {i j : B} (hij : i ≠ j) (hm : M i 
 
 variable {W : Type*} [Group W]
 
+/-- Transport a trivial power of `σᵢσⱼ` along `geomRepFull` into the reflection representation.
+Both results below turn on this one step. -/
+private theorem reflEnd_pow_eq_one_of_simple (cs : CoxeterSystem M W) {i j : B} {k : ℕ}
+    (hpow : (cs.simple i * cs.simple j) ^ k = 1) :
+    (reflEnd M i * reflEnd M j) ^ k = 1 := by
+  have h := congrArg (geomRepFull cs) hpow
+  rw [map_pow, map_mul, geomRepFull_simple, geomRepFull_simple, map_one] at h
+  exact h
+
 /-- **`σᵢσⱼ` has order exactly `M i j`, in every Coxeter system.**
 
 This is the second half of what `CoxeterGeometricRepresentationFull`'s HONESTY note excludes from
 its own scope, and it discharges `CoxeterRankTwo.DihedralExact` unconditionally — so Matsumoto,
 the `T_w` basis, the subword property, Bruhat transitivity, lifting and the order equivalences hold
 for every Coxeter system, not only type `A`. -/
-theorem dihedralExact_full (cs : CoxeterSystem M W) : DihedralExact cs := by
-  intro i j hij k hk hkm hpow
-  have himg : (reflEnd M i * reflEnd M j) ^ k = 1 := by
-    have h := congrArg (geomRepFull cs) hpow
-    rw [map_pow, map_mul, geomRepFull_simple, geomRepFull_simple, map_one] at h
-    exact h
-  exact reflEnd_pair_pow_ne_one hij rfl hk hkm himg
+theorem dihedralExact_full (cs : CoxeterSystem M W) : DihedralExact cs :=
+  fun _ _ hij _ hk hkm hpow =>
+    reflEnd_pair_pow_ne_one hij rfl hk hkm (reflEnd_pow_eq_one_of_simple cs hpow)
+
+/-- **A trivial positive power of `σᵢσⱼ` forces the bond order to be finite.**
+
+The companion of `dihedralExact_full` at the other end of the range, and the input that lets the
+descent lemma *derive* `M i j ≠ 0` instead of assuming it: at `M i j = 0` the rotation `fᵢfⱼ` is a
+shear of infinite order (`reflEnd_pair_pow_ne_one_of_infinite`), so no positive power of `σᵢσⱼ`
+can be trivial. -/
+theorem bond_ne_zero_of_pow_eq_one (cs : CoxeterSystem M W) {i j : B} (hij : i ≠ j)
+    {k : ℕ} (hk : 0 < k) (hpow : (cs.simple i * cs.simple j) ^ k = 1) : M i j ≠ 0 :=
+  fun h0 =>
+    reflEnd_pair_pow_ne_one_of_infinite hij h0 hk (reflEnd_pow_eq_one_of_simple cs hpow)
 
 end QOU.Machinery.CoxeterDihedralOrder
