@@ -10,9 +10,8 @@ This is the single most expensive thing in this file. `prepare-merge-auto`
 Phase 1b still prescribes a 15-minute poll for a check run that is never
 created; that wait **can only expire**.
 
-> This heading said "ALL THREE are dead" until 2026-08-31 while its own body
-> said "ONE intermittent gate" — fixed; **an agent who skims a heading merges
-> without ever looking for a review, so keep heading and table in step.**
+> Heading and table disagreed until 2026-08-31 (and `AGENTS.md`'s until
+> 2026-08-28) — **a skimmed heading merges without looking for a review.**
 
 | gate | actual state |
 |---|---|
@@ -25,8 +24,21 @@ last gate standing — it is very nearly the only one. Never block on a check-ru
 poll (it sees nothing), but DO expect a review wake on a subscribed PR and act
 on it; after a merge that means a follow-up PR, not nothing.
 
-*(`AGENTS.md`'s heading here read "Two of the three" against a body saying
-three, until 2026-08-28. Same defect as the blockquote above. It recurs.)*
+## TRAP — the queue you were handed may ALREADY be merged; `git cherry` FIRST
+
+2026-09-07: dispatched to merge four PRs "measured CLEAN by `merge-tree` at
+18:05Z"; all 22 commits had been rebase-merged at 18:04:20–37Z (committer =
+owner, 6 s cadence) and my worktree's own start HEAD was the last of them.
+`merge-tree --write-tree` is **vacuous for an applied patch** — clean either
+way. Before any checkout/rebase/push: `git fetch origin
+refs/pull/N/head:refs/remotes/pr/N` (needs no API), then `git cherry
+origin/main pr/N` (`-` = already upstream) and `scripts/verify-merge-replay.py
+--branch pr/N --merged origin/main`. A rebase that "skips cherry-picks" and
+leaves HEAD == `origin/main` is the same signal — stop, do not push. I
+force-pushed a merged PR's branch to main's tip before reading it and had to
+restore it. Branch name for a `pr/N` sha: `git ls-remote --heads origin`.
+The worktree guard hook rejects loops, `$VAR`s, `cd` to the shared checkout
+and even a URL containing `github`: one plain literal command per step.
 
 ## STABLE — the Phase-4 verification gate (what replaces "CI green")
 
@@ -62,18 +74,11 @@ local validate exit 0]`. (PR #1435, three consecutive.)
 
 ## STABLE — merge method
 
-**Rebase** by default (`merge_method: "rebase"`). It preserves the
-per-cluster commits, keeps `git bisect` meaningful, and leaves no empty
-merge-commit noise.
-
-**Never squash** without explicit per-PR permission from the owner ("squash
-this one" / "squash OK"). "The branch looks noisy" is not sufficient
-justification — clean it locally with `git rebase -i` and rebase-merge the
-cleaned history. A merge commit is acceptable only when the PR is a
-sub-merge of already-merged siblings and serves as a navigable boundary.
-
-This overrides any conflicting merge-method advice in
-`.claude/skills/local/*.md`.
+**Rebase** by default (`merge_method: "rebase"`): per-cluster commits kept,
+`git bisect` meaningful, no merge-commit noise. **Never squash** without
+explicit per-PR owner permission ("squash this one" / "squash OK") — a noisy
+branch is cleaned with `git rebase -i`, not squashed. A merge commit only for a
+sub-merge of already-merged siblings. Overrides any conflicting skill advice.
 
 ## STABLE — never delete a branch (owner directive 2026-06-12)
 
@@ -175,10 +180,8 @@ Recipes and full diagnosis: [`api-down-and-shared-worktree.md`](api-down-and-sha
 | Copilot reviews arriving | **request, then DO NOT PUSH**, `get_reviews` at 5/15/60 min — see below | intermittent; a clean 10-min zero on qou#6404 | `qou-gwe9`, 2026-08-31 |
 | workflows with auto-triggers | `grep -l 'on:' .github/workflows/*.yml` then read each | dispatch-only repo-wide | 2026-06-30 directive |
 
-**That Copilot row is a METHOD, not a verdict.** Request **once**, then make
-**no further push**, and read `get_reviews` at 5 / 15 / 60 min — a push may
-supersede the request, which is why no observation so far measures what it
-claims to. **Never flip the TRAP row on one run.**
+**That Copilot row is a METHOD, not a verdict**: request once, push nothing
+after, read `get_reviews` at 5/15/60 min; never flip the TRAP row on one run.
 Detail: [`copilot-review-arrival.md`](copilot-review-arrival.md).
 
 ## TRAP — `git diff --stat` omits untracked files, so a quoted diff can be 7x low
@@ -188,13 +191,8 @@ staged 33 untracked ones `--stat` never sees. **Quote it STAGED: `git add -A && 
 
 ## TRAP — a retraction reaches ONE surface and you think it landed
 
-Twice in one day, 2026-08-31. #6395: the retraction reached the runtime print
-block but **not the module docstring** — so the file asserted the retracted
-route where a reader looks first. #6405: it reached the docstring *and* the
-runtime block but **not the PR body** — where a *reviewer* looks first (caught
-pre-merge, folded in rather than appended).
-
-**A correction is not landed until it reaches every surface stating the old
-claim. Enumerate them before you start:** module docstring, runtime output, PR
-body, bean, audit doc, `AGENTS.md`. This corpus has repeatedly had a wrong
-figure survive in five places after being fixed in one.
+Twice on 2026-08-31 (#6395 missed the module docstring; #6405 missed the PR
+body — where a reviewer looks first). **Enumerate every surface stating the
+old claim before you start**: module docstring, runtime output, PR body, bean,
+audit doc, `AGENTS.md`. A wrong figure here routinely survives in five places
+after being fixed in one.
