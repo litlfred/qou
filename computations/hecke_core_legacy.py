@@ -163,12 +163,46 @@ from hecke_core import (  # noqa: E402
 )
 
 # Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
-# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
-# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
-# see the substrate flavour split. Imported, not open-coded, so there is one
-# definition; the import is hard on purpose because a fallback would compute
-# the blind convention while reporting success.
+# 2026-08-26): `bring_color_weighted`. Imported, not open-coded, so there is
+# one definition; the import is hard on purpose because a fallback would
+# compute the COLOUR-BLIND convention while reporting success.
+#
+# CORRECTED 2026-09-07. This comment read "`-h/2` is `strict_averaged`, the
+# COLOUR-BLIND convention" as though that were what R3 made canonical. R3 made
+# `bring_color_weighted` canonical, and `strict_averaged` is the blind one the
+# next sentence warns about — so the note named the wrong convention as the
+# ruling's outcome. Measured, live: `pyhecke.constants.PN_CONVENTION` is
+# `bring_color_weighted`, and the two are NOT interchangeable at this q0 —
+# `_pn_d(h) = -0.10445824776972631` against `-h/2 = -0.10453014939781966`,
+# 6.9e-4 relative apart, which is 12 orders of magnitude above the framework's
+# 1 ppQ L1 target. Do not "simplify" `_pn_d(h)` to `-h/2`.
 from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
+#: Working digits for every EXACT crossing coefficient in this module — both
+#: the inter-nucleon offsets below and the decimal strings `_lp_kernel_steps`
+#: hands the Rust kernel.  50 to match `Q_50_DIGIT_STR` and the `prec` the
+#: kernel is asked for, plus the repo's usual 10-digit guard so a coefficient
+#: is never rounded AT the precision it is about to be used at.
+_EXACT_COEFF_DPS = 60
+
+# EXACT inter-nucleon crossing offsets.
+#
+# The float64 twins `-h` and `_pn_d(h)` are what `_step_chain_22` and
+# `_step_chain_generic` used until 2026-09-07 (bean `qou-sv7h`, finding 4),
+# while the INTRA-nucleon tables `_PROTON_G1` / `_NEUTRON_G1` have carried
+# exact `mpf` throughout.  So a single matrix product mixed 50-dps intra
+# crossings with 16-digit inter crossings — the layer straddle AGENTS.md
+# forbids ("a float64 input poisons the whole result"), inside one product.
+#
+# The `workdps` is not decoration: mpmath rounds every operation to the
+# AMBIENT working precision, which is 15 dps in a bare import of this module.
+# `_pn_d(_H_MP)` evaluated outside this block inverts h to q and takes a square
+# root, and every one of those steps would round back to 15 digits —
+# reintroducing inside the offset exactly the narrowing the exact twin exists
+# to avoid.
+with _mp.workdps(_EXACT_COEFF_DPS):
+    _NN_D_MP = -_H_MP           # nn crossing offset (−ℏ_q)
+    _PN_D_MP = _pn_d(_H_MP)     # pn crossing offset (bring_color_weighted)
 
 # ════════════════════════════════════════════════════════════════════
 # MOVED SYMBOLS — original source preserved verbatim from hecke_core.py
@@ -947,13 +981,14 @@ def _step_chain_22(nucleon_type, prev_types):
         chain.append((c, d, 1))
     for c, d in intra_g1:
         chain.append((c, d, 2))
+    # Exact coefficients, matching the intra tables above (see `_NN_D_MP`).
     for ti in prev_types:
         if ti == 'p' and nucleon_type == 'p':
-            chain.append((1.0, 0.0, 3))      # pp
+            chain.append((1, 0, 3))          # pp
         elif ti == 'n' and nucleon_type == 'n':
-            chain.append((1.0, -h, 3))       # nn
+            chain.append((1, _NN_D_MP, 3))   # nn
         else:
-            chain.append((1.0, _pn_d(h), 3))   # pn
+            chain.append((1, _PN_D_MP, 3))   # pn
     return chain
 
 
@@ -1294,16 +1329,40 @@ def _lp_kernel_steps(partition, chains):
     """Per-step (trace, log_norm) for one partition, computed in Rust.
 
     Returns None when the kernel is unavailable, so callers fall back.
-    Coefficients cross the boundary as decimal STRINGS: nothing narrows to f64.
+
+    Coefficients cross the boundary as decimal STRINGS, serialized explicitly
+    at `_EXACT_COEFF_DPS`.
+
+    The explicit `workdps` is load-bearing and this docstring used to be FALSE
+    without it.  `str(mpf)` renders at the AMBIENT `mp.dps`, which is **15** in
+    a bare import of this module (nothing here raises it), so the exact 50-dps
+    intra-nucleon coefficients — the ones `_PROTON_G1` / `_NEUTRON_G1` carry as
+    `mpf` precisely so they are not float64 — were being truncated to 14-15
+    significant digits on the way in, i.e. to LESS than float64, while this
+    docstring claimed "nothing narrows to f64".  Measured on the live path
+    (`unified_iterative_correction(1, 1, k_exact=4)`, kernel available):
+
+        str(_PROTON_G1[0][1])  '-0.209060298795639'            15 sig digits
+        exact                  -0.2090602987956393154308462131296749438598
+
+    The kernel is then asked for 50-dps MPFR arithmetic over 15-digit inputs.
+
+    This fix does NOT move the producer's output, and that is expected rather
+    than a reason to skip it: `unified_iterative_correction` narrows to float64
+    inside its own accumulation loop (`math.log(abs(tr_run))`, see the note on
+    `binding_energy`'s return), so nothing downstream can resolve a change at
+    the 15th digit.  What it fixes is the claim: the boundary now carries what
+    it says it carries, and it stops being the binding constraint the moment
+    that separately-tracked narrowing is addressed.
     """
     if not _HAS_LP_KERNEL:
         return None
     from mpmath import mp as _mp
     from q_parameter import Q_50_DIGIT_STR as _Q50
+    with _mp.workdps(_EXACT_COEFF_DPS):
+        payload = [[(str(c), str(d), g) for c, d, g in ch] for ch in chains]
     out = _PHN.lp_accumulator_step_traces_mpfr(
-        list(partition),
-        [[(str(c), str(d), g) for c, d, g in ch] for ch in chains],
-        _Q50, 50)
+        list(partition), payload, _Q50, 50)
     return [(_mp.mpf(t), _mp.mpf(l)) for (t, l) in out]
 
 
@@ -1406,13 +1465,14 @@ def _step_chain_generic(nucleon_type, prev_types, n_gens, include_inter=True):
         chain.append((c, d, g % n_gens))
         g += 1
     if include_inter:
+        # Exact coefficients, matching the intra tables above (see `_NN_D_MP`).
         for ti in prev_types:
             if ti == 'p' and nucleon_type == 'p':
-                chain.append((1.0, 0.0, g % n_gens))      # pp
+                chain.append((1, 0, g % n_gens))          # pp
             elif ti == 'n' and nucleon_type == 'n':
-                chain.append((1.0, -h, g % n_gens))       # nn
+                chain.append((1, _NN_D_MP, g % n_gens))   # nn
             else:
-                chain.append((1.0, _pn_d(h), g % n_gens))   # pn
+                chain.append((1, _PN_D_MP, g % n_gens))   # pn
             g += 1
     return chain
 
