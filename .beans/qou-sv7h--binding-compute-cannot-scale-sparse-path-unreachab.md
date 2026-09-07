@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-07T12:00:52Z
+updated_at: 2026-09-07T12:11:51Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -504,3 +504,28 @@ It read "`-h/2` is `strict_averaged`" as though that were R3's outcome. R3 made 
 
 - Findings **5** and **6** are unmeasured.
 - The real ceiling on this producer is **downstream of everything above**: `unified_iterative_correction` narrows to float64 inside its own accumulation loop (`math.log(abs(tr_run))` returns a Python float whatever it is handed) and returns a Python `float`. Documented in-file, tracked separately, untouched by #7073.
+
+
+## Findings 5 and 6 now measured too (2026-09-07, same PR) — the table above is complete
+
+**Finding 6 CONFIRMED.** `k_exact` defaults to `k_max`, both `K_PARTITION_MAX = 11`, so the window `k_exact < k <= k_max` is empty and `active_gaussian` is `[]`:
+
+    defaults (k_exact = k_max = 11)   0 partitions
+    k_exact=4                       169 partitions
+    k_exact=5                       164 partitions
+    k_exact=6                       155 partitions
+
+Every default run is fully exact and pays for it, and `_q_gaussian_character_approx` is dead code on that path. Not a defect — exact-everywhere is the right default for a producer — but it means the tier is **untested by any default run**, so a green default run says nothing about whether the approximation works. Noted at the `k_exact` docstring.
+
+**Finding 5 does NOT reproduce — scope-limited negative.** The finding recorded the `dim >= 8` numpy branch as 31 % SLOWER than the Python loop at dim 16 (0.0126 s vs 0.0096 s) and called the threshold a pessimization. Re-measured against the ACTUAL `_matmul_dim` branches (not a reimplementation), best-of-7, mpf entries, python 3.11.15 / numpy 2.4.6 / mpmath 1.4.1:
+
+    dim=8   numpy  1.10 ms   loop  1.34 ms   0.82x
+    dim=12  numpy  3.89 ms   loop  4.37 ms   0.89x
+    dim=16  numpy  9.50 ms   loop 10.65 ms   0.89x
+    dim=24  numpy 32.54 ms   loop 34.96 ms   0.93x
+
+numpy is faster at every dim, by 7-18 %. **This is scope-(a), not (b):** the claim does not reproduce in this container at these library versions, which is not the same as its having been wrong when taken. The arm that moved is numpy's (12.6 -> 9.5 ms at dim 16) while the loop arm is nearly unchanged (9.6 -> 10.65 ms), so a numpy version difference is the leading candidate — and it was **not** isolated, because this container has one numpy. Do not treat either figure as settled; re-measure.
+
+Two things worth carrying forward regardless of which figure holds. The docstring's "significant speedup" was wrong in *both* measurements — 7-18 % here, negative there, never significant. And object dtype has no BLAS, so numpy on this path is an elementwise Python loop with less interpreter overhead, not a kernel; nobody should expect a large factor from it either way. Both recorded at the docstring.
+
+My first pass at F5 reimplemented the loop branch with an `int` accumulator where `_matmul_dim` seeds with `0.0`; the numbers above are from the faithful version. The reimplementation gave 0.90-0.98x, so the conclusion did not turn on it, but a benchmark of a reimplementation is not a benchmark of the code.
