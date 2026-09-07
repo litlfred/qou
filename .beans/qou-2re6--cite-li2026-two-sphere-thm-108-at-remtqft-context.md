@@ -1,11 +1,11 @@
 ---
 # qou-2re6
 title: Cite [li2026-two-sphere] Thm 1.0.8 at rem:tqft-context — 'A carries the 2d cobordism data' is Cob(2) ≅ Cob(3)_{S²,CF}
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T13:41:39Z
-updated_at: 2026-09-07T06:55:15Z
+updated_at: 2026-09-07T08:40:01Z
 parent: qou-2akx
 ---
 
@@ -22,3 +22,5 @@ Correction 2026-09-06 (same session): the last sentence's corpus-grep claim is s
 
 
 Claimed 2026-09-07 on branch claude/uploads-triage-chips-2026-09-07 (one PR for the three remaining citation/framing chips of the 2026-09-06 uploads triage).
+
+Done: merged in PR #7009 (d36a0bf8c6).

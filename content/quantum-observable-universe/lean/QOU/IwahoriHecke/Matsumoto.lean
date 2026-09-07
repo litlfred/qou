@@ -7,8 +7,7 @@ import QOU.IwahoriHecke.TwFromMatsumoto
 Two reduced words for the same element of a Coxeter group are related by braid moves. Mathlib
 records this as an open TODO (`GroupTheory/Coxeter/Basic.lean`: *"State and prove Matsumoto's
 theorem"*); `TwFromMatsumoto` records it as the one hypothesis standing between this corpus and a
-`T_w : W → H(M,q)`. This file proves it — for every Coxeter system satisfying `DihedralExact`, and
-so **unconditionally whenever `M i j ≤ 3`**, which is type `A`.
+`T_w : W → H(M,q)`. This file proves it, **for every Coxeter system, with no hypothesis**.
 
 ## The proof, and where each ingredient came from
 
@@ -26,17 +25,18 @@ The chain of inputs beneath that one step is the whole arc: exchange (`CoxeterRe
 already in the corpus) → deletion (`CoxeterDeletion`) → rank-two structure (`CoxeterRankTwo`) →
 the descent lemma (`CoxeterDihedralDescent`).
 
-## 🛑 What is still hypothetical, and what is not
+## Nothing here is hypothetical
 
-`DihedralExact` — that `s_i s_j` has order exactly `M i j` — is **not** proved in general here, and
-`M i j ≠ 0` is carried alongside it. Both are discharged for `M i j ≤ 3`, so
-`matsumoto_le_three` and `exists_Tw_le_three` are hypothesis-free on type `A`. For `M i j ≥ 4` the
-statement is conditional, and the missing input is named rather than assumed.
+Earlier versions of this file carried two hypotheses — `DihedralExact cs` (that `s_i s_j` has
+order exactly `M i j`) and `M i j ≠ 0` (no infinite bonds) — and were hypothesis-free only on
+type `A`. `QOU.Machinery.CoxeterDihedralOrder` proves both from the geometric representation, and
+`CoxeterDihedralDescent` spends them there, so `matsumoto` and `exists_Tw` below hold for **every**
+Coxeter system: `Bₙ`, `Dₙ`, `E₆₇₈`, `F₄`, `H₃`, `H₄`, every `I₂(m)`, and the infinite-bond ones too.
 
 -- Ref: [matsumoto1964] DOI 10.1090/S0002-9904-1964-11211-9
 -- Ref: [tits1969] Le problème des mots dans les groupes de Coxeter
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, Thm 3.3.1
--- Ref: [manuscript] bean qou-06h7
+-- Ref: [manuscript] beans qou-06h7, qou-1u90
 -/
 
 namespace QOU.IwahoriHecke.Matsumoto
@@ -112,7 +112,7 @@ private theorem wordProd_dropLast {l : List B} {c : B} :
 /-- **Matsumoto's theorem**, conditional on the rank-two order data.
 
 Any two reduced words for the same element are related by a finite chain of braid moves. -/
-theorem matsumoto (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0) :
+theorem matsumoto :
     ∀ (n : ℕ) (u v : List B), u.length = n → cs.IsReduced u → cs.IsReduced v →
       π u = π v → BraidEquiv (fun a b => M a b) u v := by
   intro n
@@ -154,11 +154,10 @@ theorem matsumoto (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i 
         have h1 : ℓ (π v') = v'.length := hvred'
         have h2 : ℓ (π (v' ++ [t])) = (v' ++ [t]).length := hvred
         omega
-      obtain ⟨l₁, hPred, hPprod, hQred, hQprod⟩ :=
-        exists_reduced_alternating_tail cs hDE hst (hfin s t hst) hds hdt
+      obtain ⟨hmpos, l₁, hPred, hPprod, hQred, hQprod⟩ :=
+        exists_reduced_alternating_tail cs hst hds hdt
       -- `m ≥ 1`, so each alternating tail has a last letter.
-      obtain ⟨m', hm'⟩ : ∃ m', M s t = m' + 1 :=
-        ⟨M s t - 1, by have := hfin s t hst; omega⟩
+      obtain ⟨m', hm'⟩ : ∃ m', M s t = m' + 1 := ⟨M s t - 1, by omega⟩
       -- `P` ends in `t`, `Q` ends in `s`.
       set P : List B := l₁ ++ alternatingWord s t (M s t) with hP
       set Q : List B := l₁ ++ alternatingWord t s (M s t) with hQ
@@ -217,47 +216,33 @@ theorem matsumoto (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i 
       exact (huQ.trans hPQ).trans (braidEquiv_symm _ hvP)
 
 /-- The convenient form: no explicit length bookkeeping. -/
-theorem matsumoto' (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem matsumoto'
     {u v : List B} (hu : cs.IsReduced u) (hv : cs.IsReduced v) (huv : π u = π v) :
     BraidEquiv (fun a b => M a b) u v :=
-  matsumoto cs hDE hfin u.length u v rfl hu hv huv
-
-/-! ## Type `A`: hypothesis-free -/
-
-/-- **Matsumoto's theorem, unconditional, whenever `M i j ≤ 3`.**
-
-`DihedralExact` comes from `dihedralExact_le_three`, and `M i j ≠ 0` from the same bound together
-with `M i j ≠ 1` off the diagonal — an entry that is at most `3`, not `1`, and not `0` is `2` or
-`3`. This covers every off-diagonal entry of a type-`A` Coxeter matrix, hence the symmetric group
-and the `T_w` basis of `H_n(q)`. -/
-theorem matsumoto_le_three (hle : ∀ i j : B, M i j ≤ 3) (hne : ∀ i j : B, i ≠ j → M i j ≠ 0)
-    {u v : List B} (hu : cs.IsReduced u) (hv : cs.IsReduced v) (huv : π u = π v) :
-    BraidEquiv (fun a b => M a b) u v :=
-  matsumoto' cs (dihedralExact_le_three cs hle) hne hu hv huv
+  matsumoto cs u.length u v rfl hu hv huv
 
 /-! ## The payoff: `T_w` exists -/
 
 variable {R : Type*} [CommRing R] (q : R)
 
-/-- **The `T_w` basis map exists**, with no hypothesis, whenever `M i j ≤ 3`.
+/-- **The `T_w` basis map exists**, for every Coxeter system, with no hypothesis.
 
-`TwFromMatsumoto.exists_Tw_of_matsumoto` was stated conditionally on exactly this; the condition is
+`TwFromMatsumoto.exists_Tw_of_matsumoto` was stated conditionally on Matsumoto; the condition is
 now discharged. `Tw` agrees with the word product on every reduced word, which is what a basis
 indexed by `W` through reduced expressions means. -/
-theorem exists_Tw_le_three (hle : ∀ i j : B, M i j ≤ 3) (hne : ∀ i j : B, i ≠ j → M i j ≠ 0) :
+theorem exists_Tw :
     ∃ Tw : W → QOU.MathlibExt.IwahoriHecke.HeckeAlgebra R q (fun a b => M a b),
       ∀ l : List B, cs.IsReduced l →
         Tw (cs.wordProd l) = heckeWord q (fun a b => M a b) l :=
   QOU.IwahoriHecke.TwMatsumoto.exists_Tw_of_matsumoto cs q
-    (fun _ _ hu hv huv => matsumoto_le_three cs hle hne hu hv huv)
+    (fun _ _ hu hv huv => matsumoto' cs hu hv huv)
 
-/-! ## Type `Aₙ`: the hypotheses are satisfied, so nothing above is vacuous
+/-! ## Type `Aₙ`: a concrete instantiation
 
-A conditional theorem is worth only what its hypotheses are worth, and this corpus has already been
-caught once offering a conditional whose hypothesis was **unsatisfiable** at the case it was written
-for (`TwMatsumoto.not_braidEquiv_hypothesis`). So the bound is discharged on a concrete family
-rather than left as a promise: Mathlib's `CoxeterMatrix.Aₙ` has entries `1`, `2`, `3` and nothing
-else. -/
+Nothing above is conditional any more, so this section is no longer discharging a hypothesis — it
+names the type-`A` specialisation the rest of the corpus cites, and exhibits a group carrying it.
+The two entry bounds are kept because they are the facts a reader checks when asking whether the
+symmetric group is in scope. -/
 
 theorem An_le_three (n : ℕ) (i j : Fin n) : (CoxeterMatrix.Aₙ n) i j ≤ 3 := by
   simp only [CoxeterMatrix.Aₙ, Matrix.of_apply]
@@ -267,14 +252,14 @@ theorem An_ne_zero (n : ℕ) (i j : Fin n) (h : i ≠ j) : (CoxeterMatrix.Aₙ n
   simp only [CoxeterMatrix.Aₙ, Matrix.of_apply, if_neg h]
   split_ifs <;> omega
 
-/-- **Matsumoto's theorem for type `A`, with no hypothesis at all.** -/
+/-- **Matsumoto's theorem for type `A`.** -/
 theorem matsumoto_An {n : ℕ} {W : Type*} [Group W] (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W)
     {u v : List (Fin n)} (hu : cs.IsReduced u) (hv : cs.IsReduced v)
     (huv : cs.wordProd u = cs.wordProd v) :
     BraidEquiv (fun a b => (CoxeterMatrix.Aₙ n) a b) u v :=
-  matsumoto_le_three cs (An_le_three n) (fun i j h => An_ne_zero n i j h) hu hv huv
+  matsumoto' cs hu hv huv
 
-/-- **The `T_w` basis map for the type-`A` Hecke algebra, unconditionally.**
+/-- **The `T_w` basis map for the type-`A` Hecke algebra.**
 
 This is the arc's target: `H_n(q)` for the symmetric group, with `T_w` defined on every element of
 `W` and agreeing with the word product on every reduced word. -/
@@ -284,7 +269,7 @@ theorem exists_Tw_An {n : ℕ} {W : Type*} [Group W] (cs : CoxeterSystem (Coxete
         (fun a b => (CoxeterMatrix.Aₙ n) a b),
       ∀ l : List (Fin n), cs.IsReduced l →
         Tw (cs.wordProd l) = heckeWord q (fun a b => (CoxeterMatrix.Aₙ n) a b) l :=
-  exists_Tw_le_three cs q (An_le_three n) (fun i j h => An_ne_zero n i j h)
+  exists_Tw cs q
 
 /-- A witness that the type-`A` statements are inhabited: Mathlib's presented group is a Coxeter
 system of that type. So `matsumoto_An` and `exists_Tw_An` are statements about something. -/

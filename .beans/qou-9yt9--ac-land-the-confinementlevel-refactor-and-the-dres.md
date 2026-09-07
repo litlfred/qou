@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-07T07:03:28Z
+updated_at: 2026-09-07T09:40:36Z
 ---
 
 ## Landed (A + C)
@@ -119,3 +119,96 @@ Audit: `docs/audits/2026-09-07-self-assuming-projection-reaches-the-paper.md`
 `IwahoriHeckeAPI.lean` and the vertex-algebra file) needs an author decision.
 Follow-up tranche: read the seven no-banner blocks one at a time and add
 §3b-cond item-3 banners where genuinely absent — a `.md` repair, not Lean.
+
+
+## The banner tranche (2026-09-07, PR #7011)
+
+Read the eight projection-backed paper claims one at a time. **Five repaired,
+three deliberately left.**
+
+**The discriminator the corpus already had, and I should have used first.**
+`qou-z9ws` / `2026-08-30-sizing-the-self-assuming-projection-drain.md`: a
+projection is the legitimate Mathlib accessor idiom ONLY when something BUILDS
+the bundle. Measured on all eight carriers: **0 builders, every one**. So none
+is the accessor idiom — each is a paper claim of provable kind resting on a
+hypothesis nothing in the corpus has ever witnessed.
+
+**41 vs 112 reconciled**, neither correcting the other: 112 = `genuine`
+verdicts in the vacuity review ledger (of 191) on 2026-08-30; 41 = raw scanner
+candidates today, post-`e674c94003`. Different populations, different dates.
+
+**Repaired:** `thm:strong-multiplicativity` (the `.md` asserted, verbatim, the
+claim its own Lean docstring says the accessor does not establish — seven
+weeks side by side); `prop:categorical-self-duality` (and its Lean docstring's
+`variational_einstein` pointer, which goes to the Einstein equation, not the
+self-duality step — the Bogomolny derivation is narrative-only);
+`prop:flavor-dressed-mass-from-substrate-split` (banner into the prose, since
+`authorNotes` are render-skipped; plus the missing `uses[]` edge to
+`lem:pair-skein-mass-formula`); `prop:electron-period-base` (`lean.ref`
+retargeted to `second_period_contains_me`, which DERIVES the identity the
+prose states); `cor:jet-prolongation-C`.
+
+**Left alone, read in full:** `sw-period-residue-sum` (730 words, scrupulous),
+`quantum-observable-universe-exists` (worked narrative proof in its `proofs:`
+sibling), `categorical-jet-prolongation` (already bannered).
+
+**My own detector was wrong first, in the flattering direction.** A
+line-anchored inhabitation grep returns 0 for EVERY carrier including the
+known-inhabited controls — this corpus writes instance headers across four
+lines with the result type last — and a 0 reads as "uninhabited", the
+interesting answer. Caught by a control on `SkeinMultisetInvariant`, read by
+hand an hour earlier. `scripts/lean-carrier-inhabited-check.py` scans
+declarations, and refuses to report if its control goes missing.
+
+
+### Census + ledger triage (same tranche, PR #7011)
+
+**Census replaces the sample.** `qou-z9ws` checked 12 of 112 and found 0
+legitimate, stating a 25 % ceiling at 95 %. Checking a carrier takes seconds,
+so: **41 candidates, 37 carriers, 11 inhabited / 26 uninhabited = 30 %.** Its
+caution was well calibrated; its sample's zero was not representative.
+
+**But 30 % is an UPPER BOUND, not the legitimate rate** — inhabitation is
+necessary, not sufficient, and `qou-z9ws`'s adjudicator exists to separate
+Fact-wrappers and degenerate slices from substantive instances. The **0/8** on
+the paper-facing subset is untouched: an uninhabited carrier fails the
+necessary condition outright.
+
+**Corrected my own "112" → the live figure is 33.** The ledger holds 61 rows in
+this category today: 33 `genuine`, 14 `legit`, 14 `needs-agent`.
+
+**Bounded next tranche, costed.** The 14 `needs-agent` are re-verification, not
+adjudication — they carry written analyses and `stale_prev_verdict: genuine`
+and are pending only on a moved file sha. Split: **9 uninhabited** (restored
+`genuine` needs only the byte-identity check), **2 inhabited**
+(`shell_closure_monotone`, `he4_strong_duality_value` — real adjudication),
+**3** the `:= ivar.field` resolver cannot reach.
+
+
+### Ledger drain (PR #7036) — queue to zero, and my cost estimate was wrong in KIND
+
+`proof-no-self-assuming-projection`: **41 genuine / 20 legit / 0 needs-agent.**
+
+`file_sha` is `sha256(whole file)[:12]`, so any edit anywhere expires every
+verdict in the file. `scripts/lean-vacuity-ledger-reverify.py` compares the
+DECLARATION at the recorded revision against HEAD: **14/14 IDENTICAL**, 0
+changed. Every expiry was collateral, so all fourteen prior readings are
+restored with a dated RE-VERIFIED line.
+
+**I costed this at 9 + 2 + 3 and it was none of those.** The inhabitation
+signal was the wrong tool: the question was never "what is the verdict" but
+"does the old verdict still apply".
+
+**Tension flagged, not overturned.** Four restored `legit` verdicts sit on
+carriers with ZERO builders (`sdp_lp_projection`, both `CatDescendedInputs`
+ones, `jet_prolongation_C`) while qou-z9ws's rule says legitimate ONLY when
+something builds the bundle. One-directional: `genuine` on an inhabited carrier
+is fine (necessary, not sufficient); `legit` on an uninhabited one is not.
+
+**Author decision, framed in Addendum 5** with options/costs/risks and a
+default: does the discriminator apply to a DEFINITIONAL structure at all?
+`jet_prolongation_C`'s docstring makes the `Group.mul_assoc` case; the reply is
+that `Group` has instances and `JetProlongationQOU` has none. Default if
+nothing is decided: the flags stay and nothing moves. My judgement: narrow the
+rule to hypothesis carriers — but it changes another agent's measured
+criterion, so it is not mine to make.

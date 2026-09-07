@@ -1,0 +1,84 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-0308152v1",
+ "source": {
+  "file": "0308152v1.pdf",
+  "sha256": "93bcc14b8be912579d13477397bfbfd046c3fd761a9d3d77084fed4a3b32ea56",
+  "bytes": 100505,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/0308152",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "22 Aug 2003"
+  },
+  "doi": null,
+  "title": "TORUS KNOT AND MINIMAL MODEL",
+  "authors_raw": "KAZUHIRO HIKAMI AND ANATOL N. KIRILLOV",
+  "title_lines": [
+   "TORUS KNOT AND MINIMAL MODEL"
+  ],
+  "abstract": "We reveal an intimate connection between the quantum knot i nvariant for torus knot T(s, t) and the character of the minimal model M(s, t), where s and t are relatively prime integers. We show that Kashaev\u2019s invariant,i.e., the N-colored Jones polynomial at the N-th root of unity, coincides with the Eichler integral of the character. 1. I ntroduction After Jones polynomial was introduced [1], studies of quant um invariants have been exten- sively developed. These quantum knot invariants are physically interpreted as the Feynman path integral of the Wilson loop with the Chern\u2013Simons action [2] . Though, geometrical interpreta- tion of the quantum invariant is still not complete. Some tim e ago, Kashaev de\ufb01ned a quantum knot invariant based on the quantum dilogarithm function [3 ], and made a conjecture [4] that a limit of his invariant coincides with the hyperbolic volume of the knot complement [5]. This suggests an intimate connection between the quantum invari ant and the geometry. Note that Kashaev\u2019s invariant was later identi\ufb01ed with a specialization of the N-colored Jones polynomial at q being the N-th primitive root of unity [6]. In this article, we study Kashaev\u2019s invariant\u27e8K \u27e9N for the torus knot K = T(s, t), where s and t are coprime. See Fig. 1 for a projection of some torus knots. O ne may think that it is insignif- icant from a view point of the Volume Conjecture because the torus knot is not hyperbolic [5]. Although, the Chern\u2013Simons invariant is considered as an imaginary part of the hyperbolic vol- ume, and in fact the torus knot is supposed to have non-trivia l Chern\u2013Simons invariant. We shall show that the invariant exactly coincides with a limiting value of the Eichler integral of the character of the minimal model M(s, t) with q being the N-th root of unity. This paper is organized as follows. In Section 2 we recall a modular property of the character of the minimal modelM(s, t). We de\ufb01ne the Eichler integral, and give an explicit form oflimiting v",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022202201-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Eichler Integral of the Character",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum Knot Invariant for Torus Knot",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Concluding Remarks",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-eichler-integral-of-the-character",
+   "number": null,
+   "title": "Eichler Integral of the Character",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 10,
+   "n_chars": 16915,
+   "n_words": 3458
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 1,
+  "chars_total": 16915
+ }
+}

@@ -81,6 +81,10 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 sys.path.insert(0, str(ROOT / "computations"))
+# Reaches qou_substrate (tools/qou-substrate/python) for the provenance stamp
+# at the end of main(); without it the script died on its last line and its
+# witness could never be regenerated (bean qou-4383).
+import _path_bridge  # noqa: E402, F401
 
 DPS = 40
 mp.mp.dps = DPS

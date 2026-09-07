@@ -96,6 +96,10 @@ DELIBERATE = {
         "its own word, its pre/post-fix pin and its paper closed forms are all grouped",
     "reduced-block-kernel":
         "its self-test compares two monotone-only paths (qou-cvky)",
+    "the_character_closure_block_and_a_lean_file_publish_convention_c_probe":
+        "its SUBJECT is the convention-C trace table that "
+        "prop:q-hecke-seminormal-character-closure publishes; carrying C-era "
+        "values is the finding, not a defect (qou-4383)",
 }
 
 

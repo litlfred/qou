@@ -1,0 +1,131 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2108.03616v2",
+ "source_sha256": "63696ad045602440",
+ "brief": "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces.",
+ "extended": "**Circuit imbalance measures and linear programming ∗**\n\n*Farbod Ekbatani, Bento Natura, and László A. Végh*\n\n44 pp, 22 sections.\n\n**Abstract.** We study properties and applications of various circuit imbalance mea sures associated with linear spaces. These measures describe possible ratios betwee n nonzero entries of support-minimal nonzero vectors of the space. The fractional c ircuit imbalance measure turns out to be a crucial parameter in the context of linear progra mming, and two integer variants can be used to describe integrality properties of associat ed polyhedra. We give an overview of the properties of these measures, and surv ey classical and recent applications, in particular, for linear programming algorithms with run ning time dependence on the constraint matrix only, and for circuit augmentation algorith ms. We also present new bounds on the diameter and circuit diameter of polyhedra in terms of the fractional circuit imbalance measure.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 3 Properties of the imbalance measures; 3.1 Bounds on subdeterminants; 3.2 Fractional integrality characterization; 3.3 Self-duality; 3.4 Matrix representations; 3.5 The triangle inequality; 4 Connections to other condition numbers; 5 Optimizing circuit imbalances; 7 Linear programming with dependence on the co; 7.1 A black box algorithm; 7.2 Layered least squares interior point metho; 7.3 The curvature of the central path; 8 Circuit diameter bounds and circuit augmenta; 8.1 An improved circuit diameter bound; 8.2 Circuit augmentation algorithms; 8.2.2 Convergence bounds",
+ "tokens": {
+  "brief": 40,
+  "extended": 398
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-002-3-properties-of-the-imbalance-measures",
+   "title": "Properties of the imbalance measures",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-31-bounds-on-subdeterminants",
+   "title": "Bounds on subdeterminants",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-32-fractional-integrality-characterization",
+   "title": "Fractional integrality characterization",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-005-33-self-duality",
+   "title": "Self-duality",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-006-34-matrix-representations",
+   "title": "Matrix representations",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-007-35-the-triangle-inequality",
+   "title": "The triangle inequality",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-008-4-connections-to-other-condition-numbers",
+   "title": "Connections to other condition numbers",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-009-5-optimizing-circuit-imbalances",
+   "title": "Optimizing circuit imbalances",
+   "pages": "18-24"
+  },
+  {
+   "id": "sec-010-7-linear-programming-with-dependence-on-the-cons",
+   "title": "Linear programming with dependence on the constraint matrix only",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-011-71-a-black-box-algorithm",
+   "title": "A black box algorithm",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-012-72-layered-least-squares-interior-point-methods",
+   "title": "Layered least squares interior point methods",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-013-73-the-curvature-of-the-central-path",
+   "title": "The curvature of the central path",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-014-8-circuit-diameter-bounds-and-circuit-augmentati",
+   "title": "Circuit diameter bounds and circuit augmentation algorithms",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-015-81-an-improved-circuit-diameter-bound",
+   "title": "An improved circuit diameter bound",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-016-82-circuit-augmentation-algorithms",
+   "title": "Circuit augmentation algorithms",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-017-822-convergence-bounds",
+   "title": "Convergence bounds",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-018-84-an-improved-bound-for-steepest-descent-augmen",
+   "title": "An improved bound for steepest-descent augmentation",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-019-9-circuits-integer-proximity-and-graver-bases",
+   "title": "Circuits, integer proximity, and Graver bases",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-020-10-a-decomposition-conjecture",
+   "title": "A decomposition conjecture",
+   "pages": "37-44"
+  },
+  {
+   "id": "sec-021-a-appendix-proof-of-proposition-320",
+   "title": "A Appendix: Proof of Proposition 3.20",
+   "pages": "44-44"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

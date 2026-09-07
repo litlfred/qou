@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T04:31:23.843371+00:00",
-  "commitSha": "805f11d62dc394c6f58886bd3d95117944e7d965",
+  "computedAt": "2026-09-07T10:07:36.594589+00:00",
+  "commitSha": "59e69d2336607a931fc534fac5cbe16967715d2f",
   "assertions": [
     {
       "name": "scan_completed",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 104,
+  "durationMs": 9,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
-  "scriptHash": "649c5faa7c25",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "10d33efab559",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +29,9 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -40,7 +42,7 @@
   "description": "Scans every committed witness for grouped-era |tr_M| values, matched to 15 significant digits against fingerprints computed live from atom_braid_word_3A under both orderings at both documented pins. Keys on the VALUE rather than on a symptom, because the ordering ruling has escaped three symptom-keyed sweeps.",
   "data": {
     "significant_digits_required": 15,
-    "witness_files_scanned": 3548,
+    "witness_files_scanned": 3565,
     "grouped_candidates": {
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": [
         [
@@ -149,28 +151,6 @@
         [
           "/data/nucleons/proton/prod_std_jones_markov",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/canonical-mass-table-extended.witness.json": [
-        [
-          "/data/rows[0]/tr_M_q0_canonical_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows[4]/tr_M_q0_canonical_50dps",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/rows_by_nuclide/p/tr_M_q0_canonical_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows_by_nuclide/3He/tr_M_q0_canonical_50dps",
-          "helium-3",
           "proton"
         ]
       ],
@@ -409,18 +389,6 @@
           "proton"
         ]
       ],
-      "computations/habiro/habiro-exact-qbeta.witness.json": [
-        [
-          "/data/tr_M_proton_habiro_sum",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/tr_M_proton_direct",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/habiro/habiro-interpolate-cross-validation.witness.json": [
         [
           "/assertions[2]/computed",
@@ -458,18 +426,6 @@
         [
           "/data/species/pp/g_free_trace_growth",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/low-isotope-mass-table.witness.json": [
-        [
-          "/data/rows[0]/tr_M_q0_canonical_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows[4]/tr_M_q0_canonical_50dps",
-          "helium-3",
           "proton"
         ]
       ],
@@ -886,18 +842,6 @@
           "proton"
         ]
       ],
-      "computations/probes/the_character_closure_block_and_a_lean_file_publish_convention_c_probe.witness.json": [
-        [
-          "/data/canonical_bridge_vs_block_ratio/proton/canonical_bridge_D",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/canonical_bridge_vs_block_ratio/helium-3/canonical_bridge_D",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "computations/qbeta/qbeta-bond-factors-derived.witness.json": [
         [
           "/data/constants[0]/at_q0",
@@ -1108,18 +1052,6 @@
           "proton"
         ]
       ],
-      "computations/two-row-vs-higher-row-binding-split.witness.json": [
-        [
-          "/results[2]/tr_M_total",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/results[2]/tr_M_two_row",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "computations/vhat-per-crossing-chain.witness.json": [
         [
           "/trM_composition/proton_product_genuine",
@@ -1200,57 +1132,6 @@
           "proton"
         ]
       ],
-      "qou-mass/src/qou_mass/atomic-tr-m-mpfr-50dps.witness.json": [
-        [
-          "/results[1]/tr_M_at_q0_50dps",
-          "neutron",
-          "muon-live"
-        ],
-        [
-          "/results[2]/tr_M_at_q0_50dps",
-          "deuteron",
-          "muon-live"
-        ],
-        [
-          "/results[3]/tr_M_at_q0_50dps",
-          "tritium",
-          "muon-live"
-        ],
-        [
-          "/results[4]/tr_M_at_q0_50dps",
-          "helium-3",
-          "muon-live"
-        ]
-      ],
-      "qou-mass/src/qou_mass/chi-helium-3-h9-at-q0-50dps.witness.json": [
-        [
-          "/tr_M_at_q0",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json": [
-        [
-          "/data/rows[0]/tr_M_q0_canonical_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows[4]/tr_M_q0_canonical_50dps",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/rows_by_nuclide/p/tr_M_q0_canonical_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows_by_nuclide/3He/tr_M_q0_canonical_50dps",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "qou-mass/src/qou_mass/markov-peel-atomic-tr-m.witness.json": [
         [
           "/data/results[0]/tr_M_at_q0",
@@ -1287,7 +1168,8 @@
       ]
     },
     "grouped_deliberate": [
-      "computations/probes/nucleon-h3-marshalling-divergence.witness.json"
+      "computations/probes/nucleon-h3-marshalling-divergence.witness.json",
+      "computations/probes/the_character_closure_block_and_a_lean_file_publish_convention_c_probe.witness.json"
     ],
     "borromean_hits": [
       "computations/a-K-via-lp-dual-full.witness.json",
@@ -1295,15 +1177,20 @@
       "computations/atomic-tr-m-helium4-canonical.witness.json",
       "computations/atomic-tr-m-mpfr-50dps.witness.json",
       "computations/binding-triangle-3body-cluster.witness.json",
+      "computations/canonical-mass-table-extended.witness.json",
       "computations/chi-neutron-h3-at-q0-50dps.witness.json",
       "computations/delta-lambda-empirical-tabulation.witness.json",
       "computations/deuteron-from-scratch-ledger.witness.json",
       "computations/habiro/habiro-coefficients-atomic.witness.json",
+      "computations/habiro/habiro-exact-qbeta.witness.json",
+      "computations/low-isotope-mass-table.witness.json",
       "computations/per-knot-mass-table-demonstration.witness.json",
       "computations/probes/gap-a4-L1-light-series-probe.witness.json",
       "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
       "computations/probes/nucleon-h3-marshalling-divergence.witness.json",
       "computations/probes/option-a-vol-per-knot-light-series.witness.json",
+      "qou-mass/src/qou_mass/atomic-tr-m-mpfr-50dps.witness.json",
+      "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json",
       "qou-mass/src/qou_mass/habiro-coefficients-atomic.witness.json"
     ]
   },

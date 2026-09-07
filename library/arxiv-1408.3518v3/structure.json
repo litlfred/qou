@@ -1,0 +1,178 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1408.3518v3",
+ "source": {
+  "file": "1408.3518v3.pdf",
+  "sha256": "cf18585b886587c77a93aad8403fe1724b3092f864ed0b298c87d5e74c34706c",
+  "bytes": 240949,
+  "pages": 15,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1408.3518",
+   "version": "3",
+   "primary_class": "math.OC",
+   "stamp_date": "15 Jan 2015"
+  },
+  "doi": null,
+  "title": "On Augmentation Algorithms for Linear and Integer-Linear Programming:",
+  "authors_raw": "From Edmonds-Karp to Bland and Beyond",
+  "title_lines": [
+   "On Augmentation Algorithms for Linear",
+   "and Integer-Linear Programming:"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20150116075707-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction.",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Our Contributions",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "Proofs",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Lemma ?? and Theorem ??",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Lemma ??: Discrete deepest descent.",
+   "page": 9,
+   "source": "outline",
+   "number": "2.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+   "page": 9,
+   "source": "outline",
+   "number": "2.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Proof of part (b) of of Theorem ??: Discrete steepest descent.",
+   "page": 9,
+   "source": "outline",
+   "number": "2.1.3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Lemma ?? and Theorem ??",
+   "page": 11,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Proof of Lemma ?? for Discrete deepest descent.",
+   "page": 11,
+   "source": "outline",
+   "number": "2.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+   "page": 12,
+   "source": "outline",
+   "number": "2.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Proof of part (b) of Theorem ??: Discrete steepest descent.",
+   "page": 12,
+   "source": "outline",
+   "number": "2.2.3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??.",
+   "page": 13,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks",
+   "page": 13,
+   "source": "outline",
+   "number": "3"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction.",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9868,
+   "n_words": 1757
+  },
+  {
+   "id": "sec-001-11-our-contributions",
+   "number": "1.1",
+   "title": "Our Contributions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 14407,
+   "n_words": 2678
+  },
+  {
+   "id": "sec-002-2-proofs",
+   "number": "2",
+   "title": "Proofs",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 13,
+   "n_chars": 15615,
+   "n_words": 3105
+  },
+  {
+   "id": "sec-003-3-concluding-remarks",
+   "number": "3",
+   "title": "Concluding remarks",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 8083,
+   "n_words": 1274
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 4,
+  "chars_total": 47973
+ }
+}

@@ -65,9 +65,24 @@ del _sys, _Path, _bridge
 #     serializes with `json.dump(..., default=str)`, which renders an mpf at
 #     full precision. So the reason never covered the case it was invoked for.
 #   * "the importers' float arithmetic stays intact" -- mpf interoperates
-#     with float for arithmetic, comparison and f-string formatting, so the
-#     ordinary call sites are unaffected.
-#   * "~266 importers" -- 204 live (+4 in the generated qou-mass mirror).
+#     with float for arithmetic and comparison -- but NOT with f-string format
+#     specs. MEASURED 2026-09-07, operation by operation:
+#         x * 3.0      OK        3.0 / x      OK        x < 1.0   OK
+#         f"{x}"       OK        "%.6f" % x   OK
+#         f"{x:.6f}"   TypeError: unsupported format string passed to mpf.__format__
+#         format(x, ".6f")  same TypeError
+#     So the clause "and f-string formatting" was wrong, and it is the clause
+#     that bites: `{x:.3f}` in a table column is exactly the shape that made
+#     three producers un-runnable (qou-9q4h, merged in #6971). `"%.6f" % x`
+#     does work -- but it SILENTLY DOWNCASTS, byte-identical to `float(x)`, so
+#     it is a display route and never a value route. (Not a gate blind spot:
+#     `f64_into_mpmath_audit._is_display_only` already classifies `str % x` as
+#     a display sink, which is correct.)
+#   * "~266 importers" -- 213 live (+4 in the generated qou-mass mirror).
+#     This figure is on its SECOND correction: the original "~266" was fixed to
+#     "204", and 204 has since decayed to 213. Re-measure it with
+#     `computations/audits/experimental_constants_float64_rationale_probe.py`
+#     rather than trusting this line.
 #
 # THE ONE REAL HAZARD, and it is silent: `math.log(mpf)` and friends do NOT
 # raise, they DOWNCAST. A module doing `import math` and calling `math.sqrt`

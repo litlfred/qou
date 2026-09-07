@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T09:52:25Z
-updated_at: 2026-09-07T06:39:39Z
+updated_at: 2026-09-07T08:39:19Z
 parent: qou-2akx
 ---
 
@@ -20,3 +20,9 @@ Follow-on to qou-n2cl. The Floyd–Hatcher chain reaches 4₁ only (once-punctur
 ## 2026-09-07 — cusp rows, meridian, A-polynomial (PR #6985)
 
 λ homological (dual-spine functional); μ pinned by the Dehn-filling test (Property P certificate): 4₁ k*=−1 unique over 8 sheets, 5₂ k*=0 unique over 12 sheets. A_{5₂} = L³ + L²(M¹⁰−M⁸+2M⁴+2M²−1) + L(−M¹⁴+2M¹²+2M¹⁰−M⁶+M⁴) + M¹⁴, residual 7.4e-42, A(L,±1)=(L+1)³, slopes {−10,−4,0} = literature {0,4,10} up to mirror, same sign as the corpus recall. Lean FiveTwoAPolynomialFromFareyWord (sorry-free). Chirality: the derived (Im z>0) triangulation is the negative-slope one in the (μ, λ, Im τ>0) frame; which one Rolfsen 5₂ is remains a convention question with no held source. Search history (4 failed strategies, measured) in audit doc §3. Bean stays open (13a): A_ω arc, S±, fold rule.
+
+
+
+## 2026-09-07 — #6985 merged (main 31604b1282)
+
+Landed: meridian frames by the Dehn-filling test (4₁ k*=−1 / 8 sheets, 5₂ k*=0 / 12 sheets), −A₄₁ and A₅₂ recovered, slopes {−4,4} and {−10,−4,0}, chirality frame, Lean chips (FiveTwoAPolynomialFromFareyWord; meridian_row / longitude_row in FiveTwoGluingFromFareyWord). Still open (13a): A_ω arc on derived data; S± identification needs a held source for the Rolfsen-5₂ sign convention; the fold rule as a theorem (Guéritaud not held).

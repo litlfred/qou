@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T06:21:50Z
+updated_at: 2026-09-07T10:00:48Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7711,3 +7711,224 @@ cannot be reassociated by `noncomm_ring` — the second scalar is trapped betwee
 generators; `smul_mul_smul_comm` in `•` form does it in one rewrite.
 
 PR #6986.
+
+
+## 2026-09-07 (cont.) — #6986 merged; Wedderburn-side infra in #7001
+
+`traceRadical_eq_zero_of_algEquiv_pi_matrix` (sorry-free):
+`A ≃ₐ Π Mat(d i) K` + `τ = Σ y_i·trace_i` + all `y_i ≠ 0` ⟹ `traceRadical τ = {0}`.
+Plus `weightedBlockTrace_traceRadical_ne_zero` as a sharpness witness (the
+hypothesis is load-bearing, not decorative).
+
+Everything downstream of the Wedderburn decomposition is now closed. The
+nonzero-weight input is ALREADY in the corpus (`yw_pos`). So the `⊇` half of
+`⟨relators⟩ = traceRadical tr_M` reduces to the decomposition alone.
+
+**Correction recorded.** I reported the matrix trace form as a Mathlib gap. It is
+not: `Matrix.ext_iff_trace_mul_right` IS nondegeneracy, phrased as an
+extensionality lemma, which is why a grep for "nondegenerate" misses it. Reusable
+lesson: a Mathlib lemma may exist under the SHAPE it is used for rather than the
+NAME it is known by. The weighted-product case IS genuinely absent.
+
+**Mathlib has Wedderburn–Artin** (`RingTheory/SimpleModule/WedderburnArtin.lean`,
+`exists_algEquiv_pi_matrix_divisionRing`). The gap is not the structure theorem —
+it is proving `TL_n(δ)` SEMISIMPLE, which needs a cellular/diagram-basis
+development Mathlib does not have.
+
+### Scale of what is left (for whoever picks this up)
+
+Three known routes to semisimplicity, all large:
+1. **Cellular algebra** (Graham–Lehrer) — cell modules on two-row shapes, Gram
+   determinants. Mathlib has NO cellular-algebra framework.
+2. **Schur–Weyl / Jones–Wenzl** — TL acts faithfully on `V^⊗n`, image is the
+   `U_q(sl2)` commutant. Needs the quantum group.
+3. **Diagram basis + meander determinant** (DFGG) — the corpus already flagged
+   this as gated behind the very isomorphism it would prove
+   (`TemperleyLiebTower` §T4).
+
+Route 3's *combinatorial* half is partly done here already:
+`ballot_sq_sum_catalan`, `dimHLF_two_row_sq_sum`, `dimHLF_two_col_sq_sum`. What
+is missing is the planar-diagram basis itself (`dim TL_n = Catalan n` as an
+algebra fact, not a partition count).
+
+
+## 2026-09-07 (cont.) — TL₂ is FREE of rank two (PR #7001, tranche 2)
+
+`MathlibExt/TemperleyLiebAlgebra.lean` said twice, in its own words, that **no
+upper bound on `TL₂(δ)` is proved anywhere in this file** and therefore
+"freeness itself is not claimed". That is the structural gap: everything there
+bounds TL from BELOW, so no dimension count or Wedderburn statement could even
+be attempted.
+
+Closed, sorry-free:
+- `tl2_span_eq_top` — `TL₂(δ) = span_R {1, e₀}`
+- `tl2Basis` — a `Module.Basis (Fin 2) R (TL₂ δ)`
+
+⟹ `dim TL₂ = 2 = catalan 2`, the first `dim TL_n = catalan n` here proved as an
+ALGEBRA fact rather than a partition count.
+
+**The method generalises; the spanning SET does not.** `eq_top_of_one_mem_of_gen_mem_of_mul_mem`
+(a submodule with 1, the generators, and closed under `*` is everything — via
+`Submodule.toSubalgebra` + `adjoin_range_e_eq_top`) and `mul_mem_span_of_pairs`
+(closure reduces to products of spanning elements, via `Submodule.span_mul_span`)
+are both stated at general index type. What does not generalise is knowing WHAT
+spans: general `n` needs the planar diagram basis.
+
+**Both stale notes in `TemperleyLiebAlgebra.lean` updated**, not left to rot —
+kept as written (each is correctly scoped to that file) with a pointer to the
+complement. `≅ R × R` is still NOT claimed: the basis {1,e₀} ↦ {(1,1),(δ,0)} has
+determinant `−δ`, so that map is an iso only when δ is a unit.
+
+**Lean version trap:** `Basis` is `Module.Basis` in this Mathlib pin; a bare
+`Basis` does not resolve.
+
+### Next concrete step
+`TL₃(δ) = span {1, e₀, e₁, e₀e₁, e₁e₀}` (5 = catalan 3). 25 product cases, each a
+one-line consequence of `e_sq`/`e_adjacent`/`e_farCommute`; the two reduction
+lemmas above are reused unchanged. Then the general-`n` diagram basis.
+
+
+## 2026-09-07 (cont.) — TL₃ spanned by five (#7001, tranche 3)
+
+`tl3_span_eq_top` — `TL₃(δ) = span_R {1, e₀, e₁, e₀e₁, e₁e₀}`, sorry-free ⟹
+`dim TL₃(δ) ≤ 5 = catalan 3`.
+
+n = 3 is where `e_i e_j e_i = e_i` first has content (n = 2 has no adjacent
+pair). 25 products instead of 4. **The two reduction lemmas were reused
+unchanged** — the payoff of stating them at general index type.
+
+The six non-trivial products (A = e₀, B = e₁):
+`A(BA)=A`, `B(AB)=B`, `(AB)(AB)=AB`, `(BA)(BA)=BA` (adjacency);
+`(AB)(BA)=δA`, `(BA)(AB)=δB` (loop then adjacency).
+
+🛑 **Freeness NOT claimed at n = 3, and the reason is structural**: the corpus's
+`tl3Fam` representation lands in 2×2 matrices — a 4-dimensional target — so it
+*cannot* witness linear independence of five elements however chosen.
+`dim TL₃ = 5` needs a faithful rep of dimension ≥ 5, which does not exist here.
+Recorded in the docstring with the dimension count so the gap is legible.
+
+### Running state of the Wedderburn arc
+- downstream of the decomposition: DONE (`traceRadical_eq_zero_of_algEquiv_pi_matrix`)
+- `dim TL₂ = 2` exact (basis) — DONE
+- `dim TL₃ ≤ 5` — DONE; the matching lower bound is open
+- general `n`: needs the planar diagram basis — OPEN, and it is the real work
+- semisimplicity of `TL_n(δ)`: OPEN, the deep input
+
+
+## Lean tranche — TL₃ freeness closes (2026-09-07, PR #7001)
+
+`dim TL₃(δ) = 5 = catalan 3`, exactly. `tl3Basis` / `tl3_finrank_eq_five` in
+`QOU/MathlibExt/TemperleyLiebSpanning.lean`, sorry-free, all 34 branch
+declarations `#print axioms`-clean.
+
+**The bound that was called impossible.** Tranche 2 of this PR left a 🛑 on
+`tl3_span_eq_top` saying freeness was not claimable at n = 3, because
+`TemperleyLiebAlgebra`'s `tl3Rep` lands in 2×2 matrices and a 4-dimensional
+target cannot separate five elements however it is chosen. **That obstruction
+is real; the conclusion was too strong.** The fix is not a different 2×2
+family but the SAME one summed with the trivial representation e_i ↦ 0 —
+`tl3Rep5 : TL₃(δ) →ₐ[R] Matrix (Fin 2) (Fin 2) R × R`. Five dimensions is
+exactly enough, and the argument then needs no linear system solved: reading
+entries (1,1) → (0,1) → (1,0) → (0,0) kills each coefficient using only those
+already known.
+
+Recording it because the shape recurs: **a dimension-count obstruction bounds
+the TARGET, not the METHOD.** The right move was to enlarge the target by the
+one dimension the algebra already supplies, not to look for a cleverer family.
+
+**Hypotheses, both load-bearing.** δ a unit (already needed by
+`tl3Fam_adjacent`), and δ²−1 a non-zero-divisor — genuine, since δ = 1 really
+does collapse M₀M₁ onto M₁M₀. Both hold at the substrate with room:
+δ = q + q⁻¹ ≈ 2.01, δ²−1 ≈ 3.05.
+
+**Still open, and it is the same object from both sides.** General n needs the
+planar diagram basis — for the spanning set (upper) and because each lower
+bound so far is a representation exhibited by hand at exactly the right
+dimension. Semisimplicity of TL_n(δ), the input the whole arc is for, is
+downstream of that. NOT closed.
+
+
+## Wedderburn at n = 2 and n = 3 (2026-09-07, PR #7001, commit 63a6bb9741)
+
+```
+TL₂(δ) ≃ₐ[R] R × R                          (δ a unit)
+TL₃(δ) ≃ₐ[R] Matrix (Fin 2) (Fin 2) R × R   (δ and δ²−1 units)
+```
+
+sorry-free, `QOU/MathlibExt/TemperleyLiebWedderburn.lean`, 22 declarations
+axiom-clean. Consequence `tl3_traceRadical`: the weighted trace on TL₃(δ) has
+**zero radical with no hypothesis standing in for semisimplicity** — the ⊇ half
+of #6986's single open item, at n = 3.
+
+**The arc's shape.** `TraceRadicalNondegenerate` proved everything downstream
+of a Wedderburn decomposition as a theorem about whatever satisfies the
+hypothesis; nothing was known to satisfy it. At n = 2, 3 something now does.
+
+**Nothing new was constructed.** Both maps are representations already in the
+corpus (`tl2Rep`; `tl3Rep5` from the freeness proof). What is new is that each
+is BIJECTIVE — the basis images are independent (already the freeness content),
+they span (the one new computation), so they are a basis, and a basis-to-basis
+linear map is an isomorphism.
+
+**The lesson worth keeping: injectivity and surjectivity are NOT symmetric over
+a ring.** `tl3Basis` needs δ²−1 only as a non-zero-divisor. Surjectivity needs
+it as a **unit** — an injective endomorphism of a free module of finite rank
+need not be onto (×2 : ℤ → ℤ). The determinant of the five images is exactly
+**(δ²−1)²**, so onto ⟺ δ²−1 invertible. Not a basis artefact: at δ = ±1 the
+algebra degenerates.
+
+**§7c for free.** The inverse is polynomial in c = δ⁻¹ and w = (δ²−1)⁻¹, both
+carried as primitive data with polynomial hypotheses — no ℝ, no ordering, no
+square root, no division. Substrate: δ = q + q⁻¹ ≈ 2.01, δ²−1 ≈ 3.05.
+
+**Cross-check that was not designed in.** The 1 ⊕ 2 block shape matches
+`TemperleyLiebTower.catalan_three`'s 1² + 2² = 5, reached from the
+representation-theoretic side. Two tables became two theorems that agree.
+
+**Method note.** The determinant and every `linear_combination` multiplier were
+computed exactly (five rational δ, then a symbolic solve and an ideal
+reduction) BEFORE any Lean was written. Multipliers derived, not guessed — the
+first Lean attempt then went through.
+
+**Still open, unchanged.** n = 2 and n = 3 are not n. TL_n(δ) is not proved
+semisimple; the ideal equality is open for n ≥ 4. General n needs the planar
+diagram basis, which this arc reaches from a new side each tranche. NOT closed.
+
+
+## The diagram basis, measured before building it (2026-09-07, PR #7001, aae63bb6d8)
+
+`computations/tl_normal_form_basis_probe.py` — formalize-first applied to a
+Lean build: the wide search is the development, this is the prune. Exact
+integers only; the witness carries zero float-valued fields.
+
+**Settled.** The **Jones normal forms** — `(e_{i1}…e_{j1})(e_{i2}…e_{j2})…` with
+`i₁<…<i_k`, `j₁<…<j_k`, `j_m ≤ i_m` — number exactly `catalan n` (n=1..8) and
+map **bijectively onto all planar diagrams** (n=1..6), every one loop-free. Left
+multiplication by a generator **closes** in them (n=2..7, 2574 products at n=7).
+So the family to formalise is settled and is not in the corpus yet.
+
+**🛑 THE FINDING THAT CHANGES THE DESIGN — and it is a negative.** Closure holds
+and is **NOT length-monotone**: `Δ|word|` takes `+1`, `0` and **negative odd**
+values, reaching **−5** by n = 7. **A 'rewrite until shorter' termination measure
+does not exist**, and that is the first thing an agent reaches for. The proof
+must carry the `(I, J)` index data and prove the multiplication rule on that —
+a substantially different and larger design. Loop counts are always 0 or 1, so
+δ-bookkeeping is one factor per generator, never a power.
+
+**Two checker errors of mine, recorded because the class recurs.** My first
+planar enumerator recursed on the *concatenation* of the two sides rather than
+each side separately, counting `n!` not `catalan` — it printed `bijection=NO`
+for n ≥ 3, a **false negative about the corpus produced entirely by the
+checker**. The same script then printed `all bijections hold` while its own rows
+said NO, because the flag tracked only collisions. A summary disagreeing with
+the rows it summarises is worse than none.
+
+**Gate posture.** `precision-gates.sh --changed` is RED and the RED is
+**pre-existing corpus state, established not assumed**: this probe and its
+witness appear nowhere in the gate output, and `witness_raw_float64_audit.py`
+does not list the witness. Tree-measuring audit witnesses reverted per
+`qou-v0t8` (twice — the second time because *running the ratchet to check*
+rewrote one).
+
+**Scope.** Finite n; proves nothing at general n. Wires to nothing. The general
+theorem is NOT closed.

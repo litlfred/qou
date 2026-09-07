@@ -53,6 +53,7 @@ export default proposition({
   uses: [
     "def:flavor-dressing-functor",
     "prop:flavor-split-substrate",
+    "lem:pair-skein-mass-formula",
   ],
   computation: {
     engine: "mpmath",

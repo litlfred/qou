@@ -1,11 +1,11 @@
 ---
 # qou-6cu7
 title: Cite [martelli2016] §14.1 + §15.2 at prop:hyperbolic-knot-shape-fields and the NZ-from-braid Lean (qou-n2cl / qou-yvyd) — held source for Thurston's equations and the Lagrangian NZ rows
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T13:41:29Z
-updated_at: 2026-09-07T06:55:15Z
+updated_at: 2026-09-07T08:40:02Z
 parent: qou-2akx
 ---
 
@@ -24,3 +24,5 @@ NOT IN THIS BOOK: the Guéritaud two-bridge layered triangulation and the Floyd�
 
 
 Claimed 2026-09-07 on branch claude/uploads-triage-chips-2026-09-07 (one PR for the three remaining citation/framing chips of the 2026-09-06 uploads triage).
+
+Done: merged in PR #7009 (d36a0bf8c6).

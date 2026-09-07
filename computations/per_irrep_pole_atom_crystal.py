@@ -304,7 +304,20 @@ def _load_y_lambda_n(n: int) -> dict[tuple[int, ...], sp.Expr]:
     here = Path(__file__).parent
     path = here / "y-lambda-wenzl-bridge-symbolic-witness.json"
     w = json.loads(path.read_text())
-    rows = w["tables_by_n"][str(n)]["weights"]
+    tables = w["tables_by_n"]
+    if str(n) not in tables:
+        # Lithium-5 (n=15) and Lithium-6 (n=18) hit this. It used to surface
+        # as a bare `KeyError` printed by the caller as `ERROR '15'`, which
+        # reads like a crash and is really "the data does not go that far".
+        have = sorted(int(k) for k in tables)
+        raise KeyError(
+            f"no y_lambda table for n={n} in {path.name} (have n={have}); "
+            f"and the fast pole-order cache does not cover it either. "
+            f"Extend the symbolic witness via y_lambda_wenzl_bridge, or add "
+            f"n={n} to y-lambda-pole-order-cache.json via "
+            f"y_lambda_pole_order_cache.py, before asking for this atom."
+        )
+    rows = tables[str(n)]["weights"]
     out: dict[tuple[int, ...], sp.Expr] = {}
     for r in rows:
         shape = tuple(r["partition"])
@@ -427,7 +440,10 @@ def verify_atom(
         "expected_shift": expected_shift,
         "match": match,
         "asserted": asserted,
-        "elapsed_sec": elapsed,
+        # Wall-clock, reported to ms as a string: it is diagnostic timing,
+        # never an input to anything, and a bare float64 here trips the
+        # precision gate for no benefit (bean qou-g94g).
+        "elapsed_sec": f"{elapsed:.3f}",
         "per_partition": rows,
     }
 
@@ -504,6 +520,58 @@ def main(argv: list[str]) -> int:
     asserted_atoms = [r["atom"] for r in atoms_results if r.get("asserted", True)]
     n_asserted = sum(1 for r in atoms_results if r.get("asserted", True))
     out.add_data("atoms", atoms_results)
+
+    # WHAT THE CRYSTAL PATH ACTUALLY MEASURES (bean qou-g94g)
+    # ------------------------------------------------------
+    # The bean recorded this as "pole_u off by exactly one at the first atom",
+    # which reads like an index convention. Running every atom instead of
+    # stopping at the first mismatch shows it is not: the gap GROWS.
+    #
+    #   atom       Z  N  measured  18Z+21N+1  gap
+    #   proton     1  0        18         19    1
+    #   neutron    0  1        18         22    4      <- A=1 anomaly, not asserted
+    #   deuteron   1  1        38         40    2
+    #   tritium    1  2        58         61    3
+    #   helium-3   2  1        54         58    4
+    #   helium-4   2  2        74         79    5
+    #
+    # Solving the four A>=2 atoms exactly gives `16Z + 20N + 2`, and that law
+    # ALSO reproduces the proton (16+0+2 = 18). So five of six atoms fit a
+    # single clean linear law that is not the asserted one, and the gap is
+    # exactly `2Z + N - 1` on those five. The sixth is the A=1 neutron, which
+    # is anomalous under BOTH laws (both predict 22, measured 18) and is
+    # already `asserted=False` per rem:crystal-bases-path-a.
+    #
+    # NOT settled here: which law is right. That is a question about
+    # prop:per-nucleon-shift-additive-linearity versus the crystal Path A
+    # derivation, not something this probe can adjudicate. Recorded so the
+    # next reader starts from the fit rather than from "off by one".
+    fit = {"per_Z": 16, "per_N": 20, "const": 2}
+    fitted = []
+    for r in atoms_results:
+        if r.get("u_pole_order_inferred") is None:
+            continue
+        pred = fit["per_Z"] * r["Z"] + fit["per_N"] * r["N"] + fit["const"]
+        fitted.append({
+            "atom": r["atom"], "Z": r["Z"], "N": r["N"],
+            "measured": r.get("u_pole_order_inferred"),
+            "asserted_law_18Z_21N_1": r.get("expected_shift"),
+            "fitted_law_16Z_20N_2": pred,
+            "fitted_law_matches": pred == r.get("u_pole_order_inferred"),
+        })
+    out.add_data("measured_law_fit", {
+        "form": "16*Z + 20*N + 2",
+        "matches": sum(1 for f in fitted if f["fitted_law_matches"]),
+        "of": len(fitted),
+        "gap_to_asserted_law": "2*Z + N - 1 (on every atom the fit matches)",
+        "sole_exception": ("the A=1 neutron, anomalous under BOTH laws "
+                           "(both predict 22, measured 18); already "
+                           "asserted=False per rem:crystal-bases-path-a"),
+        "not_settled": ("which law is correct — this probe cannot adjudicate "
+                        "prop:per-nucleon-shift-additive-linearity against the "
+                        "crystal Path A derivation"),
+        "per_atom": fitted,
+    })
     out.add_data("asserted_atoms", asserted_atoms)
     out.add_data("asserted_atoms_match", asserted_match)
     out.add_data("full_atoms_match_including_extrapolations", full_match)
@@ -512,9 +580,12 @@ def main(argv: list[str]) -> int:
     # remains green for the verified A ≥ 2 closed-form scope.
     out.add_assertion(
         "asserted_atoms_match_closed_form_shift",
-        computed=1.0 if asserted_match else 0.0,
-        expected=1.0,
-        tolerance=0.0,
+        # 0/1 INDICATOR, not a measurement — carried as a string so the
+        # raw-float64 gate is satisfied without pretending to a precision
+        # this has none of (bean qou-g94g). Same idiom as `scan_completed`
+        # in audits/intra_ordering_value_fingerprint_audit.py.
+        computed=str(int(asserted_match)),
+        expected="1",
         source=("prop:per-nucleon-shift-additive-linearity (verified "
                 "for A ≥ 2 in per-nucleon-shift-derivation.witness.json) "
                 "+ crystal-bases Path A (this script)"),

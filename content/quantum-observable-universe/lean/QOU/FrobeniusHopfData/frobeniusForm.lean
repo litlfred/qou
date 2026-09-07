@@ -31,26 +31,62 @@ class FrobeniusFormContext where
   A_dual : Type
   /-- The Frobenius-pairing-induced map `A → A^∨`. -/
   pairing : A → A_dual
-  /-- Predicate: the pairing is non-degenerate, i.e. `pairing` is
-      an isomorphism (the snake-identity / iso content). -/
-  is_iso : Prop
 
-/-- **Manuscript statement** (non-degeneracy of the Frobenius pairing),
-named as a `Prop`:
+/-- **Non-degeneracy of the Frobenius pairing**, at the level this model
+can state it.
 
 Let `(𝐂, A, τ)` be a [quantum universe](#def:quantum-universe) with
 multiplication `μ : A ⊗ A → A` and Frobenius form `∫_A : A → 𝟏`.  The
-Frobenius pairing `∫_A ∘ μ` is *non-degenerate* — inducing an iso
-`A ≅ A^∨` (`is_iso`) — **iff** it is bijective as the underlying map
-(the snake identities, with a coevaluation `η̃ : 𝟏 → A ⊗ A` such that
-both snake composites equal `id_A`).
+manuscript claim is that the Frobenius pairing `∫_A ∘ μ` is
+*non-degenerate* — inducing an iso `A ≅ A^∨` — **iff** it is bijective as
+the underlying map (the snake identities, with a coevaluation
+`η̃ : 𝟏 → A ⊗ A` whose two snake composites are `id_A`).
 
-This is the §3b "name the conditional conjecture" disposition (pattern
-C): `FrobeniusForm ctx` is the proposition the manuscript conjectures
-for the pairing data `ctx`; the open state is honestly represented by
-the absence of an instance.  It is *not* a self-assuming projection. -/
+**Only the bijectivity half is stated here, and the loss is deliberate.**
+`FrobeniusFormContext` models `A` and `A_dual` as plain `Type` and the
+pairing as a plain function, so there is no categorical iso in scope to
+put on the other side of the `↔`.  Stating bijectivity alone is weaker
+than the manuscript claim and is what this model supports; the
+categorical half needs the rigid-monoidal apparatus on the specific
+quantum universe.
+
+**What was here until 2026-09-07, and why it went.**  The class carried
+`is_iso : Prop` — a field typed with the *universe* `Prop`, so it held a
+proposition as data — and this `def` read `ctx.is_iso ↔ Function.Bijective
+ctx.pairing`.  The docstring called that the §3b pattern-C disposition,
+resting on "the open state is honestly represented by the absence of an
+instance".  That mechanism did not hold: the instance is one line, because
+the instance chooses `is_iso`.  Measured, `lean`-direct exit 0:
+
+    example (X Y : Type) (p : X → Y) : ∃ ctx : FrobeniusFormContext,
+        FrobeniusForm ctx :=
+      ⟨{ A := X, A_dual := Y, pairing := p,
+         is_iso := Function.Bijective p }, Iff.rfl⟩
+
+So the old `FrobeniusForm` held for **every** pairing datum and asserted
+nothing.  The `example` below shows the replacement is refutable, which
+is the property the old form could not offer. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
 def FrobeniusForm (ctx : FrobeniusFormContext) : Prop :=
-    ctx.is_iso ↔ Function.Bijective ctx.pairing
+    Function.Bijective ctx.pairing
+
+/-- The statement has content: it is FALSE for some pairing data.
+
+    This is what the previous form could not offer. With `is_iso : Prop`
+    free, `FrobeniusForm` was `ctx.is_iso ↔ Function.Bijective ctx.pairing`
+    and an instance existed for *every* pairing data — measured, not
+    argued:
+
+        ⟨{ A := X, A_dual := Y, pairing := p,
+           is_iso := Function.Bijective p }, Iff.rfl⟩
+
+    compiles for arbitrary `X`, `Y`, `p` (`lean`-direct exit 0,
+    2026-09-07). So the pattern-C honesty mechanism the docstring above
+    relied on — "the open state is honestly represented by the absence of
+    an instance" — did not hold: the instance was one line. -/
+example : ¬ FrobeniusForm { A := Bool, A_dual := Unit, pairing := fun _ => () } := by
+  intro h
+  have hbad : (true : Bool) = false := h.1 rfl
+  exact Bool.noConfusion hbad
 
 end QOU.FrobeniusHopfData
