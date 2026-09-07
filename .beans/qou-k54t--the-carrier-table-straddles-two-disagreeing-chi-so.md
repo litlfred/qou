@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T11:14:56Z
-updated_at: 2026-09-07T11:45:28Z
+updated_at: 2026-09-07T11:51:41Z
 ---
 
 ## The question this answers
@@ -223,3 +223,55 @@ The right next step is the dating pass already committed as
 `computations/audits/date_failing_witnesses_against_pre_regeneration.py`,
 pointed at this population rather than at the failing set — it distinguishes
 "would move" from "already recorded as moved" without re-running 63 producers.
+
+
+## Does this reach the paper? Yes — and the repair moved it TOWARD the paper
+
+I first checked whether any content block cites the four chain witnesses
+directly: **zero**. That was the wrong question — content cites *downstream*
+witnesses. Of the **35** downstream witnesses, **3 are cited from `content/`**:
+
+| witness | cited by | date | state |
+|---|---|---|---|
+| `binding-depth-stratified-knot-weighted` | `mass-theory/depth-stratified-frobenius-reciprocity.ts` (`computation.witness`) | 2026-08-29 | `allPassed=false` already |
+| `binding-rotation-phase-lead` | `mass-theory/binding-alpha-shift-extension-context.md` — **quoted in prose** | 2026-09-04 | `allPassed=true` |
+| `delta-lambda-l1-ceiling-sign-prune` | `lean/QOU/BraidsAndKnots/DeltaLambdaL1Ceiling.lean` (docstring provenance) | 2026-09-05 | `allPassed=true` |
+
+Only the second is a **number a reader sees**. The block states:
+
+> *"Per `binding-rotation-phase-lead.witness.json`, the deuteron's full
+> Markov-weighted q-Reeb phase aggregation gives ρ_full(D) = **14.6673**
+> MeV/rad."*
+
+## The three-way comparison, and it is not what I expected
+
+Re-running `binding_rotation_phase_lead.py` with `atom-chi-rust-{d,t,3he}`
+repaired moved **30 of 36** data fields. For the field the paper quotes,
+`aggregations.S3_markov.rho_needed.D`:
+
+| | value | vs the paper's figure |
+|---|---|---|
+| paper prose | 14.6673 | — |
+| witness **as committed** | **177.422** | **12.0964×** |
+| witness **re-run today** | **14.9402** | **1.861 %** |
+
+**The committed witness already disagreed with the paper by a factor of 12
+before I touched anything.** The repair did not break the paper number — it
+brought the witness from 12× away to within 1.9 % of it.
+
+That is an independent consistency check on the repair that I did not
+construct: the paper's own recorded figure, written when the chain was
+presumably coherent, is reproduced to ~2 % by the fixed inputs and not at all
+by the stale ones. It is corroboration, not proof — 1.9 % is not agreement,
+and I have not established when or why the committed witness diverged.
+
+Also notable: `S3_markov.rho_needed.3He` was **`null`** in the committed
+witness and is **56.6306** now — the ³He leg could not be computed from the
+stale caches at all.
+
+## Severity, bounded
+
+The chain feeds 63 producers, but only **one** reader-facing number, and that
+number is currently *better* served by the repair than by the committed state.
+The `.lean` citation is a docstring provenance line, not a proof dependency.
+The `.ts` citation points at a witness already failing.
