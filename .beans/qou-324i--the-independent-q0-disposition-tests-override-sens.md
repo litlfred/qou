@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-09-06T07:02:26Z
+updated_at: 2026-09-07T18:01:29Z
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
@@ -303,3 +303,15 @@ FIX (rides on PR #6824 with qou-v6wz): q0_anchor=False -> q0_anchor=None (resolv
 SEPARATE, NOT FIXED: a3-magnitude computes in float64 (Q0 = float(Q_50_DIGIT_STR), all scatter values ~16-digit) — a NO-FLOAT64 concern needing an mpmath refactor, out of scope for a stamp fix. Its q0-dependence at ~1e-8 is above the float64 floor so the anchor-diff is real, not noise. Worth its own bean.
 
 STILL SUSPECT, unmeasurable here: `toffoli-lp-stability` — same boilerplate-independent + carries q0 in a scan[9].q + constants.q0_physical, but its producer exits non-zero (both pins) in this container, so I could not anchor-diff it. Needs a run in a working env before verdict.
+
+## toffoli-lp-stability drained (2026-09-07, session fervent-noether) — the suspect from the a3-magnitude pass, CONFIRMED
+
+The 'STILL SUSPECT, unmeasurable here' item from the a3-magnitude section is resolved. toffoli-lp-stability's producer needs numpy (via pyhecke.gram), absent in the prior container; installed it and ran the anchor-diff.
+
+CONFIRMED genuine (QOU_Q0_ANCHOR=muon vs =proton): 49 substantive fields move — constants.q0_physical and the entire gram_matrix_at_q0 — at the ~1e-8 mu-p level. Stamped q0Anchor:independent (boilerplate reason) with the same copy-paste '# no q0 in this producer's cone' comment + q0_anchor=False. Third instance of the false-`independent` class (after qbeta-ck-basis-constrained-pslq / qou-v6wz and a3-magnitude).
+
+DISTINCT AXIS from qou-3j5m. Commit 9ea4f724d4 (qou-3j5m, 2026-08-30) migrated toffoli's convention C->D straddle (gram/toffoli_diagonal/q_and_amplitude) and found 'the stability claim does not survive'. It did NOT touch the q0-anchor stamp — orthogonal. My fix is the stamp only; the C->D migration is theirs and untouched.
+
+FIX: q0_anchor=False -> q0_anchor=None (resolve). Reads ONE pin (Q_50_DIGIT_STR -> proton default), so `proton` is correct (not `comparison`). Now stamps q0Anchor:proton + q0Value; q0_anchor_consistency_audit does NOT flag it; gram numbers byte-identical (default was already proton, only the producer's own timestamp/git_sha bumped). Stale comment corrected.
+
+RUNNING TALLY of the false-`independent` drain from this session: qbeta-ck-basis-constrained-pslq (ambiguous, reads both), a3-magnitude (proton), toffoli-lp-stability (proton). All three were the identical copy-paste stamp block.
