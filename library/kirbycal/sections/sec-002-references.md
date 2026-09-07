@@ -7,6 +7,7 @@ section_number: null
 pages: 21-22
 source_pdf: kirbycal.pdf
 source_sha256: 8dae9487ed32a3bd
+doc_brief: "Kirby, A calculus for framed links in S³ (Invent. Math. 45, 35–56, 1978) — the two moves generating equivalence of framed-link surgery presentations of a 3-manifold."
 ---
 Akbulut, S., Kirby, R.C.: (To appear) 
 Akbulut, S., Kirby, R.C.: Mazur manifolds. (To appear) 

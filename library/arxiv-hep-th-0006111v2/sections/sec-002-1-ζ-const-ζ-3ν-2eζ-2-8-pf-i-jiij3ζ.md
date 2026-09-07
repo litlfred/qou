@@ -7,6 +7,7 @@ section_number: 1
 pages: 3-3
 source_pdf: 0006111v2.pdf
 source_sha256: e024febd3d0886a3
+doc_brief: "Distribution of the k-th smallest Dirac operator eigenvalu e — 7 sections: Front matter; (ζ, {µ }) = ζ; (ζ) = ζ"
 ---
 (12)
 where the indices i and j run between − ν/ 2 + 1 and

@@ -2,16 +2,21 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-th-0006111v2",
  "source_sha256": "e024febd3d0886a3",
- "brief": "Distribution of the k-th smallest Dirac operator eigenvalue Poul H. Damgaard — 5 sections: (ζ, {µ}) = ζ; (ζ) = ζ; (ζ) = const. ζ(3−ν)/2e−ζ2/8 Pf [(i",
- "extended": "**Distribution of the k-th smallest Dirac operator eigenvalue Poul H. Damgaard**\n\n*The Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen Ø, Denmark*\n\n6 pp, 5 sections.\n\n**Outline.** 1 (ζ, {µ}) = ζ; 1 (ζ) = ζ; 1 (ζ) = const. ζ(3−ν)/2e−ζ2/8 Pf [(i −j)Ii+j+3; 1 (ζ) = 1; 1 (ζ)",
+ "brief": "Distribution of the k-th smallest Dirac operator eigenvalu e — 7 sections: Front matter; (ζ, {µ }) = ζ; (ζ) = ζ",
+ "extended": "**Distribution of the k-th smallest Dirac operator eigenvalu e**\n\n*Poul H. Damgaard*\n\n6 pp, 7 sections.\n\n**Outline.** Front matter; 1 (ζ, {µ }) = ζ; 1 (ζ) = ζ; 1 (ζ) = const . ζ (3−ν )/ 2e−ζ 2/ 8 Pf [(i − j; 1 (ζ) = 1; 1 (ζ); 0 (ζ) + J 2",
  "tokens": {
-  "brief": 37,
-  "extended": 70
+  "brief": 27,
+  "extended": 59
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
+  {
    "id": "sec-000-1-ζ-µ-ζ",
-   "title": "(ζ, {µ}) = ζ",
+   "title": "(ζ, {µ }) = ζ",
    "pages": "3-3"
   },
   {
@@ -20,8 +25,8 @@
    "pages": "3-3"
   },
   {
-   "id": "sec-002-1-ζ-const-ζ3ν2eζ28-pf-i-jiij3ζ",
-   "title": "(ζ) = const. ζ(3−ν)/2e−ζ2/8 Pf [(i −j)Ii+j+3(ζ)] ,",
+   "id": "sec-002-1-ζ-const-ζ-3ν-2eζ-2-8-pf-i-jiij3ζ",
+   "title": "(ζ) = const . ζ (3−ν )/ 2e−ζ 2/ 8 Pf [(i − j)Ii+j+3(ζ)] ,",
    "pages": "3-3"
   },
   {
@@ -32,7 +37,12 @@
   {
    "id": "sec-004-1-ζ",
    "title": "(ζ)",
-   "pages": "4-6"
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-0-ζ-j-2",
+   "title": "(ζ) + J 2",
+   "pages": "5-6"
   }
  ],
  "provenance": {

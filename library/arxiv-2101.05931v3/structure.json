@@ -1,0 +1,438 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2101.05931v3",
+ "source": {
+  "file": "2101.05931v3.pdf",
+  "sha256": "41eaa81b97ede8e9829c407206e09f24f0bcbf0bc86d7c11656d566e368afe03",
+  "bytes": 392199,
+  "pages": 26,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2101.05931",
+   "version": "3",
+   "primary_class": "math.RT",
+   "stamp_date": "15 Jun 2023"
+  },
+  "doi": null,
+  "title": "CATEGORICAL BRAID GROUP ACTIONS",
+  "authors_raw": "AND CACTUS GROUPS",
+  "title_lines": [
+   "CATEGORICAL BRAID GROUP ACTIONS"
+  ],
+  "abstract": "Let g be a semisimple simply-laced Lie algebra of \ufb01nite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence \u0398 w0 : Db(C\u00b5) \u2192 Db(Cw0(\u00b5)) where \u00b5 is a weight of V , and \u0398 w0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that \u0398 w0 is a perverse equivalence with respect to a Jordan-H\u00a8 older \ufb01ltr ation of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V . This recovers the cactus group action on V de\ufb01ned via generalised Sch\u00a8 utzenberger involutions, and provides a new connection between categor ical representation theory and crystal bases. We also use these results to give new proofs of theorem s of Berenstein-Zelevinsky, Rhoades, and Stembridge regarding the action of symmetric group on th e Kazhdan-Lusztig basis of its Specht modules.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20230615210625-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgement",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Background on quantum groups",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The quantum group",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Braid group actions on integrable representations of U_q(g).",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Categorical representations of U_q(g)",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Notation",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Definition",
+   "page": 6,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Crystals",
+   "page": 7,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Jordan-H\u00f6lder series",
+   "page": 7,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The categorical braid group action",
+   "page": 9,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Perverse equivalences",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "General definition",
+   "page": 10,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Derived categories of graded abelian categories",
+   "page": 11,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Some commutation relations",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Cautis' relations",
+   "page": 12,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Marked words",
+   "page": 13,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The relation between _w_0 and Chevalley functors",
+   "page": 14,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "On t-exactness and perversity of _w_0",
+   "page": 15,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "_w_0 on isotypic categorifications",
+   "page": 15,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "_w_0 on general categorical representations",
+   "page": 17,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Crystalising the braid group action",
+   "page": 17,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Cactus groups",
+   "page": 17,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "The cactus group action arising from Rickard complexes",
+   "page": 18,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Reconciling the two cactus group actions",
+   "page": 20,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "Examples and Applications",
+   "page": 21,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 21,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Type A combinatorics",
+   "page": 23,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7468,
+   "n_words": 1278
+  },
+  {
+   "id": "sec-001-21-the-quantum-group",
+   "number": "2.1",
+   "title": "The quantum group",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2782,
+   "n_words": 504
+  },
+  {
+   "id": "sec-002-acknowledgement",
+   "number": null,
+   "title": "Acknowledgement",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 427,
+   "n_words": 65
+  },
+  {
+   "id": "sec-003-2-background-on-quantum-groups",
+   "number": "2",
+   "title": "Background on quantum groups",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1636,
+   "n_words": 356
+  },
+  {
+   "id": "sec-004-22-braid-group-actions-on-integrable-representat",
+   "number": "2.2",
+   "title": "Braid group actions on integrable representations of U_q(g).",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1603,
+   "n_words": 334
+  },
+  {
+   "id": "sec-005-31-notation",
+   "number": "3.1",
+   "title": "Notation",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 6356,
+   "n_words": 1151
+  },
+  {
+   "id": "sec-006-33-crystals",
+   "number": "3.3",
+   "title": "Crystals",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 7562,
+   "n_words": 1463
+  },
+  {
+   "id": "sec-007-35-the-categorical-braid-group-action",
+   "number": "3.5",
+   "title": "The categorical braid group action",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2176,
+   "n_words": 461
+  },
+  {
+   "id": "sec-008-4-perverse-equivalences",
+   "number": "4",
+   "title": "Perverse equivalences",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 4532,
+   "n_words": 982
+  },
+  {
+   "id": "sec-009-42-derived-categories-of-graded-abelian-categori",
+   "number": "4.2",
+   "title": "Derived categories of graded abelian categories",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1873,
+   "n_words": 373
+  },
+  {
+   "id": "sec-010-5-some-commutation-relations",
+   "number": "5",
+   "title": "Some commutation relations",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2485,
+   "n_words": 501
+  },
+  {
+   "id": "sec-011-52-marked-words",
+   "number": "5.2",
+   "title": "Marked words",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 17,
+   "n_chars": 10423,
+   "n_words": 2195
+  },
+  {
+   "id": "sec-012-71-cactus-groups",
+   "number": "7.1",
+   "title": "Cactus groups",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1684,
+   "n_words": 336
+  },
+  {
+   "id": "sec-013-7-crystalising-the-braid-group-action",
+   "number": "7",
+   "title": "Crystalising the braid group action",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3669,
+   "n_words": 663
+  },
+  {
+   "id": "sec-014-72-the-cactus-group-action-arising-from-rickard",
+   "number": "7.2",
+   "title": "The cactus group action arising from Rickard complexes",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5073,
+   "n_words": 1000
+  },
+  {
+   "id": "sec-015-73-reconciling-the-two-cactus-group-actions",
+   "number": "7.3",
+   "title": "Reconciling the two cactus group actions",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2040,
+   "n_words": 387
+  },
+  {
+   "id": "sec-016-8-examples-and-applications",
+   "number": "8",
+   "title": "Examples and Applications",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 6189,
+   "n_words": 1135
+  },
+  {
+   "id": "sec-017-82-type-a-combinatorics",
+   "number": "8.2",
+   "title": "Type A combinatorics",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 5378,
+   "n_words": 995
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 7114,
+   "n_words": 1077
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 19,
+  "chars_total": 80470
+ }
+}

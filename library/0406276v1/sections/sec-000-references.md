@@ -7,6 +7,7 @@ section_number: null
 pages: 38-40
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 2 sections: Front matter; References"
 ---
 1820 Jean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, 
  Annales de chimie et de physique, 2nd ser., vol 15, 222-223. 
