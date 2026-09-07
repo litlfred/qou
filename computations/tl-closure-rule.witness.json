@@ -1,0 +1,91 @@
+{
+  "description": "Closure of left multiplication on the Jones normal forms, indexed by (I,J). The δ rule is COMPLETE and holds on all 3456 products at n=2..7: loops=1 iff (I',J')=(I,J) iff k in I and k-1 not in I -- a condition on I alone. The (I',J') formula for the loops=0 branch is NOT identified and is recorded as open.",
+  "bean": "qou-cds1",
+  "products_tested": 3456,
+  "arithmetic": "exact integers, sets and tuples; no floating point",
+  "scope": "checked at n <= 7, not proved at general n; the δ rule has a proof sketch (e_k commutes past a block iff its top is <= k-2, then e_k^2 = δ e_k) and is ready to formalise. Wires to nothing.",
+  "checks": [
+    {
+      "check": "delta_rule",
+      "rules": [
+        {
+          "rule": "loops=1 <=> (I',J')=(I,J)",
+          "counterexamples": 0,
+          "of": 3456,
+          "holds": true
+        },
+        {
+          "rule": "loops=1 <=> k in I and k-1 not in I",
+          "counterexamples": 0,
+          "of": 3456,
+          "holds": true
+        },
+        {
+          "rule": "loops=1 <=> k in I",
+          "counterexamples": 650,
+          "of": 3456,
+          "holds": false
+        },
+        {
+          "rule": "loops=1 <=> k in I and k+1 not in I",
+          "counterexamples": 882,
+          "of": 3456,
+          "holds": false
+        },
+        {
+          "rule": "loops=1 <=> k in I and k not in J",
+          "counterexamples": 846,
+          "of": 3456,
+          "holds": false
+        }
+      ],
+      "pass": true,
+      "note": "the δ appears exactly at the fixed points, and the test is on I alone -- J does not enter it"
+    },
+    {
+      "check": "invariants",
+      "results": {
+        "k_in_I_prime": true,
+        "card_I_prime_eq_card_J_prime": true,
+        "loops_at_most_one": true
+      },
+      "pass": true
+    },
+    {
+      "check": "loops_zero_branch_formula",
+      "status": "OPEN -- no candidate fits",
+      "products": 2378,
+      "rejected_candidates": [
+        {
+          "candidate": "I' = I union {k}",
+          "counterexamples": 1821
+        },
+        {
+          "candidate": "I' subset of I union {k}",
+          "counterexamples": 348
+        },
+        {
+          "candidate": "J' subset of J union {k}",
+          "counterexamples": 129
+        }
+      ],
+      "card_I_delta_distribution": {
+        "-1": 302,
+        "0": 1519,
+        "1": 557
+      },
+      "pass": true,
+      "note": "recorded as open. The |I'| decrease is what makes word length non-monotone, so an insertion-shaped rule cannot be right."
+    }
+  ],
+  "all_pass": true,
+  "scriptFile": "tl_closure_rule_probe.py",
+  "scriptHash": "9d33f38395e9",
+  "scriptCommitSha": "unknown",
+  "commitSha": "ef8adcf235e553e11eaf7275f5d82153463c635f",
+  "engine": "python",
+  "computedAt": "2026-09-07T16:55:18.252062+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
