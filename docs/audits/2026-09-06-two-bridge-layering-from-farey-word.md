@@ -99,14 +99,18 @@ sheet, so that route is circular.
 | 4₁ | 8 / 4928 | all `k ≠ −1` in `[−8, 8]`: 4, 4 at `k = −2, 0`, then 9–10 | `−1` (unique) | `2√3 i` |
 | 5₂ | 12 / 7026 | all `k ≠ 0` in `[−8, 8]`: 7, 8 at `k = ∓1`, then 10 | `0` (unique) | `2.49024… + 2.97945… i` (recorded modulus mod 1) |
 
-**A-polynomials.** Fitted from the deformation curve as the lift-free product
-`P(L², M²) = c·A(L,M)A(−L,M)` (the lift `L = ±√ℓ` of a grid point is unreliable across a branch
-point), factored over `ℤ`, the factor vanishing at the complete point `(L, M) = (−1, 1)` taken:
+**A-polynomials.** Fitted directly in `(L, M²)` from the continuation grid on the sheet of the
+complete structure (rows scaled to unit max entry; a one-dimensional nullspace by a gap criterion;
+integer rounding verified on fresh samples), with the lift-free product `P(L², M²) = c·A(L,M)A(−L,M)`
+kept as a fallback — measured, the product box (3,14) is conditioned to ~1e-31 against ~1e-16
+for the direct box (3,7) on the same samples. Every 4₁ fit failure in the search history traced to
+one inverted exponent in the frame transform (`M² = M₀²·L^{2k*}`, not `/`), invisible on 5₂
+because its `k* = 0`:
 
-- 4₁: `−A₄₁(L,M)` exactly, `A(L,±1) = (L+1)²`, slopes `{−4, 4}` — the control against #6935's
-  elimination route.
+- 4₁: `−A₄₁(L,M)` exactly, `A(L,±1) = (L+1)²`, fresh-sample residual `1.6e-49`, slopes `{−4, 4}` —
+  the control against #6935's elimination route.
 - 5₂: `A = L³ + L²(M¹⁰ − M⁸ + 2M⁴ + 2M² − 1) + L(−M¹⁴ + 2M¹² + 2M¹⁰ − M⁶ + M⁴) + M¹⁴`, fresh-sample
-  residual `7.4e-42`, `A(L,±1) = (L+1)³` exactly (Lean: `A_at_M_one`, `A_at_M_neg_one`); the
+  residual `2.3e-43`, `A(L,±1) = (L+1)³` exactly (Lean: `A_at_M_one`, `A_at_M_neg_one`); the
   involution `L³M¹⁴·A(L⁻¹,M⁻¹) = A(L,M)` holds (Lean: `A_involution`). Newton hull
   `(0,14),(1,4),(2,0),(3,0),(2,10),(1,14)`; **boundary slopes `{−10, −4, 0}`**.
 
