@@ -58,22 +58,76 @@ statistics for `RL`: 718 candidates, 202 with torus cusps, 132 with `H₁ = ℤ`
 23rd matched Vol(5₂). The competing geometric folds are other knot complements (by volume,
 several census manifolds), so the reference volume — never an input — is what selects.
 
-## 3. What this buys for the A_ω arc
+## 3. Cusp rows, the meridian, and the A-polynomial (added 2026-09-07)
 
-Both sides of the cross-knot gate now have Neumann–Zagier data derived from a word with no SnapPy
-input: 4₁ twice (bundle route and two-bridge route, agreeing on volume and cusp modulus) and 5₂
-once. The chirality split `{3, 4}` at 5₂ can now be tested on derived data — with one caveat that
-this audit does not resolve: **orientation.** 5₂ is chiral; the pillowcase inherits (fibre
-orientation) ∧ dt and the mirror has conjugate shapes and the same volume, so which of `S⁺`/`S⁻`
-the derived triangulation corresponds to must be pinned (e.g. by the sign of the Chern–Simons
-invariant or by matching the derived meridian/longitude rows to a chirality-sensitive invariant)
-before any `S⁺`/`S⁻` claim rests on it. The cusp rows (μ, λ) for 5₂ are computed by the same
-developing-map machinery as for 4₁ but are not yet identified against an independent invariant;
-that and the orientation are the next honest step (bean stays open).
+**Producer:** [`computations/probes/two_bridge_cusp_rows_apoly_probe.py`](../../computations/probes/two_bridge_cusp_rows_apoly_probe.py);
+**Lean:** `QOU/Mass/FiveTwoAPolynomialFromFareyWord.lean` (sorry-free, standard axioms).
+
+**λ is homological; μ is not.** The longitude is the primitive cusp class dying in `H₁(M) = ℤ`,
+read off a functional on the dual spine of the triangulation. The meridian is *not* determined by
+homology: every `μ₀ + kλ` kills the same class, and the Bézout complement measured against the
+known `A₄₁` on the 4₁ control came out as `μ + λ`. The loop around a puncture in a layer surface is
+not available either — in these triangulations the front and back squares of a layer do not share
+their side edges (on 4₁ the side `(0,0)–(0,½)` of the front square is edge class 1, the back
+square's is class 2; the folds, found by search, identify the sides otherwise).
+
+**The meridian is pinned by the Dehn-filling test.** A nondegenerate solution of the gluing
+equations is a representation `ρ : π₁(M) → PSL₂(ℂ)`. If `H(μ₀+kλ) = 1` while `H(λ) ≠ 1`, the cusp
+subgroup's image is abelian with a loxodromic element, so `μ₀+kλ`, of eigenvalue `±1`, is the
+identity: `ρ` factors through the filling `M(μ₀+kλ)`, whose `π₁` is therefore nontrivial. The
+meridian filling is `S³`, so the meridian is the unique frame with no such point (Property P,
+`kronheimer2004`, supplies existence and uniqueness of that frame; the certificates for every other
+frame are explicit solutions). The absence at `k*` is then checked exactly on the fitted polynomial:
+`A(L, ±1)` must vanish only at `L = ±1`.
+
+**Finding the certificates took four attempts, each failure measured.** Random Newton starts on
+four shapes (0–4 hits per frame, seven surviving frames on 5₂); seeds near the complete structure
+(every frame fell onto it); a deflated secant target (the iteration converged to the deflator's own
+zero — at `ℓ = ∞` for `1/(ℓ−1)²`, linearly at `ℓ = −3.7` for `((ℓ+3.7)/(ℓ−1))²` — while the genuine
+`k = 0` points of 4₁, the roots of `A₄₁(L,1/L)·L⁷ = (L+1)²(L⁶−2L⁵+2L⁴−3L³+2L²−2L+1)`, sit at
+`ℓ = 0.374, 2.675` and four points on the unit circle); and a continuation grid over the curve on
+the sheet of the complete structure, which certified every frame *except* `k*−1, k*, k*+1` (the
+count grows with `|k − k*|`: 2, 2, 4, 4, 6, 6, 8, 8). What works: seed further sheets of the
+`ℓ = H(λ)` projection at `ℓ = 1` (the conjugate structure, random-start solutions of
+`{edge rows, H(λ) = 1}`) and multiply them by monodromy loops once around `|ℓ| = r`; grid every
+sheet; run an undeflated complex secant in `s = log ℓ` along the curve from the grid points where
+`|H(μ₀)H(λ)^k − 1|` is smallest. Continuing a *found* point back to `ℓ = 1` never leaves its own
+sheet, so that route is circular.
+
+| knot | sheets / grid points | frames certified (loxodromic points) | `k*` | cusp shape `t_λ/t_μ` |
+|---|---|---|---|---|
+| 4₁ | 8 / 4928 | all `k ≠ −1` in `[−8, 8]`: 4, 4 at `k = −2, 0`, then 9–10 | `−1` (unique) | `2√3 i` |
+| 5₂ | 12 / 7026 | all `k ≠ 0` in `[−8, 8]`: 7, 8 at `k = ∓1`, then 10 | `0` (unique) | `2.49024… + 2.97945… i` (recorded modulus mod 1) |
+
+**A-polynomials.** Fitted from the deformation curve as the lift-free product
+`P(L², M²) = c·A(L,M)A(−L,M)` (the lift `L = ±√ℓ` of a grid point is unreliable across a branch
+point), factored over `ℤ`, the factor vanishing at the complete point `(L, M) = (−1, 1)` taken:
+
+- 4₁: `−A₄₁(L,M)` exactly, `A(L,±1) = (L+1)²`, slopes `{−4, 4}` — the control against #6935's
+  elimination route.
+- 5₂: `A = L³ + L²(M¹⁰ − M⁸ + 2M⁴ + 2M² − 1) + L(−M¹⁴ + 2M¹² + 2M¹⁰ − M⁶ + M⁴) + M¹⁴`, fresh-sample
+  residual `7.4e-42`, `A(L,±1) = (L+1)³` exactly (Lean: `A_at_M_one`, `A_at_M_neg_one`); the
+  involution `L³M¹⁴·A(L⁻¹,M⁻¹) = A(L,M)` holds (Lean: `A_involution`). Newton hull
+  `(0,14),(1,4),(2,0),(3,0),(2,10),(1,14)`; **boundary slopes `{−10, −4, 0}`**.
+
+**Chirality.** The frame is `λ` oriented so `Im(t_λ/t_μ) > 0` for the `Im z > 0` solution. The
+slopes `{−10, −4, 0}` are the literature set `{0, 4, 10}` for the mirror; under `L ↦ 1/L` the
+polynomial is the standard `A_{5₂}` as usually printed. So the derived triangulation is the
+chirality whose slopes are negative in this frame — the same sign as the corpus's recalled
+`{0, −4, −10}` (`qbeta_g3_aomega_route_a_newton_polygon.py`, the 2026-08-11 memo). Which of the
+two the Rolfsen `5₂` is, in this frame, is a convention question a held source would settle; the
+library holds none, and the corpus's recall carries the same unverified sign. What is settled is
+that `S⁺`/`S⁻` claims can now be tied to a definite triangulation with a definite `(μ, λ)` and a
+definite `A`, with the mirror obtained by conjugating the shapes.
+
+**What this buys for the A_ω arc.** Both sides of the cross-knot gate have derived NZ data *and*
+derived cusp rows: 4₁ twice (bundle and two-bridge routes agreeing on volume, cusp modulus and
+`A₄₁`) and 5₂ once, with its A-polynomial reproduced from the word alone. The chirality split
+`{3, 4}` at 5₂ can be tested on this data with the orientation fixed by the frame above.
 
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
 wants the rule as a theorem should read it off the recorded gluings and prove it, or ingest
-Guéritaud 2006. It does not compute the 3d-index or Stokes constants of 5₂. It does not settle
+Guéritaud 2006. It does not compute the 3d-index or Stokes constants of 5₂, and it does not decide which chirality the Rolfsen 5₂ is in the derived frame (no held source). It does not settle
 A_ω (`qou-arc1` terminus unchanged; `qou-q3np` open).
