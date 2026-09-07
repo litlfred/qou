@@ -1,11 +1,11 @@
 ---
 # qou-zv46
 title: AME tritium typo 8.481821 survives in 40 live files; 3He companion 7.718058 in 25
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T03:41:22Z
-updated_at: 2026-09-06T06:48:22Z
+updated_at: 2026-09-07T09:30:21Z
 ---
 
 Not an inference — **already established prior art**. `computations/binding_canonical.py:610-623`
@@ -244,3 +244,56 @@ how those two write witnesses rather than to what they read.
 
 **Remaining on this bean: those two producers' witnesses.** Everything else is
 regenerated and consistent.
+
+---
+
+## 2026-09-07 — the last two producers; bean closed
+
+`binding_ladder_catalog` and `binding_bring_enhancement_compare` now write.
+**39 of 39.** Both were serializing an `mpf` straight into `json.dump`;
+`_precision.fmt` is what the sibling `log_ratio_binding_prototype.py` already
+uses for the same `B_AME_MeV` field.
+
+Fixing them surfaced three things beyond the serializer:
+
+**⁶Li and ⁷Li were still hand-typed in `binding_ladder_catalog`'s ISOTOPES
+table** — `31.99405` and `39.24452` against `_ame_binding_mev`'s `31.9939872`
+and `39.2450807`, i.e. **1.96 ppm** and **14.29 ppm**. This is the *same
+family* the bean opened on, missed by every earlier pass because the table's
+other four rows were already registry-derived, so a scan for the known typo
+literals had nothing to match on. Both rows carry `leading = None`, so nothing
+downstream consumed them. Routed to `AME_B_LI6/LI7_MEV_VALIDATION`.
+
+**Import ORDER decides the precision of a constant.** `codata_constants` builds
+its AME entries inside `mp.workdps(max(50, mp.mp.dps))` **at import time**, and
+importing `_precision` does not set `mp.dps` — its own docstring says so in
+capitals. `binding_bring_enhancement_compare` called `set_compute_dps()` inside
+`build_witness()`, i.e. *after* the import, so its constants were clamped to 50
+digits while `fmt` wrote 60: `2.2245662` serialized as
+`2.2245661999…9734095406`. `binding_ladder_catalog` sets dps above the same
+import and was clean. Nothing about either file's *arithmetic* differs — only
+where one line sits.
+
+**A half-conversion is worse than either end.** `b_endo_*` was `float()`, so
+`f_required = B_AME / b_endo` carried 53 bits — while the new `fmt` would have
+published it at 60 digits. Two runs that changed no physics disagreed in their
+last 12 digits. Serializing that would have turned an honest float64 into fake
+precision, so the mpf conversion was completed instead. Both producers now
+re-run **byte-identically** apart from timestamps, which is the check that
+settles it.
+
+The four non-Li rows move in `binding-ladder-catalog.witness.json` because the
+committed witness *predates the registry wiring* — it still held `2.22456612`
+for D where AME2020 gives `2.2245662`. That witness had been unregenerable for
+as long as the producer had been broken, which is why the campaign's earlier
+literal sweeps never reached it.
+
+Verified: suites 64 + 145 green; no `environment` block on either witness
+before or after, so nothing degraded. The full 27-gate `precision-gates.sh`
+run names neither producer — its 12 red gates are pre-existing on this branch
+(`never-raises-dps` → `interface_composition.py`; `float64-padding` →
+`b-over-a`, `casimir-q-zeta-probe`, `qbeta-markov-trace-norm-probe`;
+`prose-drift` → `binding-hbarq-rung-forward-test`) — and the witness-value
+copy ratchet **drains** `binding-bring-enhancement-compare` from two findings.
+
+**Closed.** Every source site routed, every producer regenerated.
