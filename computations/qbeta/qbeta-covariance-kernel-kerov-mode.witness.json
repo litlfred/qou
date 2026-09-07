@@ -1,0 +1,161 @@
+{
+  "computation": "qbeta-covariance-kernel-kerov-mode",
+  "assertions": [
+    {
+      "name": "parseval_exact_over_full_class_basis",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "SUM_{mu != 1^k} b_mu^2 = Var_P(ln f) to 1e-9 at every k -- the expansion is complete, which is the check that the coefficients are right"
+    },
+    {
+      "name": "ln_f_is_supported_on_even_classes",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "ln f is omega-even, so its odd-class mass is 0; measured ~1e-30 relative, i.e. numerically exact"
+    },
+    {
+      "name": "mass_is_at_degree_two_not_degree_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "d=2 carries 50.0% against d=1's 19.4% at k=16. SELF-CORRECTION: #7051 argued ln f has no terminating Kerov expansion from the d=1 share alone, which does not follow -- the Sigma_p generate the algebra MULTIPLICATIVELY, and the mass is at d=2"
+    },
+    {
+      "name": "no_fixed_degree_suffices",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "d<=2 cumulative falls 90.5% (k=8) -> 69.4% (k=16). The #7051 conclusion survives, now on evidence that supports it"
+    },
+    {
+      "name": "sigma3_is_a_single_basis_vector",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "|C_{(3,1^{k-3})}| = (k)_3/3, so Sigma_3 = (k)_3/sqrt(|C_3|) * e_3 is ONE orthonormal basis vector. Hence Cov_P(ln f, Sigma_3) is one Fourier coefficient of ln f, and every d>=2 mode -- the 50-66% of the mass measured above -- is orthogonal to it and contributes nothing. Whether the expansion terminates has no bearing on the conjecture"
+    },
+    {
+      "name": "G_of_zero_vanishes_as_exact_integers",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "W+ = W- as EXACT integers for 4 <= k <= 22. This is G(0) = 0, i.e. column orthogonality, and it is what makes the sign-split a pair of probability measures with equal total mass"
+    },
+    {
+      "name": "G_is_negative_on_the_open_interval",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "E_{nu+}[f^s] < E_{nu-}[f^s] at s = .25,.5,.75,1 for every k tested: partitions whose 3-cycle character is NEGATIVE carry the larger dimensions. s=1 is the conjecture itself"
+    },
+    {
+      "name": "first_order_dominance_is_FALSE",
+      "computed": [
+        18,
+        26
+      ],
+      "expected": [
+        18,
+        26
+      ],
+      "passed": true,
+      "note": "nu- does NOT stochastically dominate nu+ in f^lam. Exact on Fractions: fails at k=18 (gap 0.0161) and k=26 (gap 0.0011), holds at the other 21 values in 10..32. It would have given G(s) <= 0 for ALL s >= 0. ELIMINATED"
+    },
+    {
+      "name": "increasing_concave_dominance_is_FALSE",
+      "computed": [
+        18,
+        26
+      ],
+      "expected": [
+        18,
+        26
+      ],
+      "passed": true,
+      "note": "Second-order (increasing-concave) dominance is strictly WEAKER and exactly matched to the exponents that matter -- x^s is increasing concave for s in (0,1) -- so the FSD failure did not settle it. It fails at the SAME two k. ELIMINATED"
+    },
+    {
+      "name": "conjecture_still_holds_at_the_failing_k",
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true,
+      "note": "Decided on exact Fractions: E_{nu+}[f] <= E_{nu-}[f] -- i.e. G(1) = T_3(k) <= 0 -- holds at BOTH k=18 and k=26. So those k break the dominance STRUCTURE, not the conjecture, which is what makes the two orders strictly stronger than needed and strictly false"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "epic": "qou-x631",
+    "bean": "qou-igjo",
+    "claim": "the Kerov-expansion question is orthogonal to the conjecture (one coefficient); FSD and ICV on the sign-split both fail at k=18 and k=26"
+  },
+  "data": {
+    "_grade": "decimal strings, float64-grade, 4 dp",
+    "ln_f_share_by_degree": {
+      "8": {
+        "1": "0.2438",
+        "2": "0.6613",
+        "3": "0.0189",
+        "4": "0.0760"
+      },
+      "10": {
+        "1": "0.2520",
+        "2": "0.5471",
+        "3": "0.1354",
+        "4": "0.0655",
+        "5": "0.0000"
+      },
+      "12": {
+        "1": "0.2082",
+        "2": "0.5641",
+        "3": "0.1287",
+        "4": "0.0924",
+        "5": "0.0037",
+        "6": "0.0029"
+      },
+      "14": {
+        "1": "0.2046",
+        "2": "0.5110",
+        "3": "0.1199",
+        "4": "0.1453",
+        "5": "0.0046",
+        "6": "0.0145",
+        "7": "0.0000"
+      },
+      "16": {
+        "1": "0.1944",
+        "2": "0.4995",
+        "3": "0.1335",
+        "4": "0.1419",
+        "5": "0.0137",
+        "6": "0.0168",
+        "7": "0.0001",
+        "8": "0.0000"
+      }
+    },
+    "fsd_failing_k": [
+      18,
+      26
+    ],
+    "icv_failing_k": [
+      18,
+      26
+    ],
+    "fsd_worst_gap": {
+      "18": "0.016149",
+      "26": "0.001093"
+    }
+  },
+  "provenance": {
+    "headSha": "f22d662f99a527ed0c9dfea4e790cde465d5b623",
+    "producer": "computations/qbeta/qbeta_covariance_kernel_kerov_mode_probe.py",
+    "elapsed_s": "2.076"
+  }
+}

@@ -6,7 +6,8 @@
   "sha256": "7dcfb1a25bfc0cdafa16049319fbccad7733d6347c0e83ff698d5d78ee4cc369",
   "bytes": 1781362,
   "pages": 18,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": {
@@ -77,6 +78,16 @@
  "toc_source": "outline",
  "sections": [
   {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 14,
+   "n_chars": 20061,
+   "n_words": 3850
+  },
+  {
    "id": "sec-000-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
@@ -91,7 +102,7 @@
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 1,
-  "chars_total": 8170
+  "sections": 2,
+  "chars_total": 28231
  }
 }

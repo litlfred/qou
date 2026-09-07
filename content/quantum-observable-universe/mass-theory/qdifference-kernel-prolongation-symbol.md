@@ -73,9 +73,11 @@ local monodromy, not fitted numerically.
 > $1+2p$, $p+u$, $2u$ and the odd/even parity of the outer two forces the
 > maximum to be attained exactly once. Sorry-free in
 > [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean);
-> corroborated by van der Put--Reversat's normal form $E(r,d,b)$ for pure
-> modules of non-integral slope $d/r$, which is irreducible when the rank equals
-> $r$ — here $r = 2 = \mathrm{rank}\mathcal{K}$.
+> corroborated by the van der Put--Reversat classification
+> \cite{vanderput-reversat2007,vanderput2006} of pure modules of non-integral
+> slope $d/r$ — the normal form $E(r,d,b)$ in Bugeaud's notation
+> \cite{bugeaud2011} — which is irreducible when the rank equals $r$; here
+> $r = 2 = \mathrm{rank}\mathcal{K}$.
 >
 > Two revisions follow.
 >

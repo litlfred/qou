@@ -1,12 +1,12 @@
 {
   "name": "qbeta-g3-aomega-route-a-newton-polygon",
-  "description": "Route A: Newton polygon of A_{4_1} / C1 carrier vs the G3 DT spectrum {3,4}. 3 = full-A L-degree = #connections; 4 = |max boundary slope|; C1 \u2260 quantum A-poly; slope reading R2 refuted on 5_2 cross-knot, L-degree reading R1 survives.",
+  "description": "Route A: Newton polygon of A_{4_1} / C1 carrier vs the G3 DT spectrum {3,4}. 3 = full-A L-degree = #connections; 4 = |max boundary slope|; C1 ≠ quantum A-poly; slope reading R2 refuted on 5_2 cross-knot, L-degree reading R1 survives.",
   "computation": "qbeta-g3-aomega-route-a-newton-polygon",
   "engine": "python",
   "scriptFile": "computations/probes/qbeta_g3_aomega_route_a_newton_polygon.py",
-  "scriptCommitSha": "159a901189d2666e7645fef528478a01dc452044",
-  "computedAt": "2026-08-14T22:17:46Z",
-  "durationMs": 5,
+  "scriptCommitSha": "69e278d40612569c7f470ecbe15167965864a746",
+  "computedAt": "2026-09-07T09:36:12.241850+00:00",
+  "durationMs": 0,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md",
   "parameters": {
@@ -65,6 +65,9 @@
       0
     ],
     "five2_num_connections_literature": 4,
+    "five2_source_witness": "two-bridge-cusp-rows-apoly.witness.json",
+    "five2_source_scriptHash": "5a2ef6020ced",
+    "five2_source_computedAt": "2026-09-07T07:15:04.415662+00:00",
     "dt_spectrum_corpus": [
       3,
       4
@@ -82,9 +85,99 @@
       "1/2"
     ],
     "C1_max_abs_slope": "1/2",
+    "A52_monomials_ML": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        10,
+        2
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        14,
+        0
+      ],
+      [
+        14,
+        1
+      ]
+    ],
+    "A52_newton_hull_ML": [
+      [
+        0,
+        2
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        14,
+        0
+      ],
+      [
+        14,
+        1
+      ],
+      [
+        10,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "A52_boundary_slopes_derived": [
+      "-10",
+      "-4",
+      "0"
+    ],
+    "A52_max_abs_slope_derived": "10",
+    "A52_geom_L_degree_derived": 3,
+    "A52_full_L_degree_derived": 4,
+    "A52_mirror_boundary_slopes": [
+      "0",
+      "4",
+      "10"
+    ],
+    "A52_frame": "Frame: λ = the cusp class dying in H₁(M); μ = the unique complement whose filling admits no nondegenerate representation (Property P certificate, see meridian_frame); λ oriented so Im(t_λ/t_μ) > 0 for the Im z > 0 solution. The sign of the slopes then distinguishes the triangulated manifold from its mirror; which sign the Rolfsen 5₂ carries in this frame is not held in a source here (the corpus's {0,−4,−10} is literature-recalled with the same unverified sign).",
     "R1_survives_crossknot": true,
     "R2_survives_crossknot": false,
-    "verdict": "Route A is PARTIAL / mixed (scope-(a), anti-numerology-gated). AIRTIGHT: (i) the figure-eight DT integers {3,4} ARE Newton-polygon data of A_{4_1} \u2014 3 = full-A L-degree = #boundary-parabolic connections, 4 = |max boundary slope|; (ii) the QOU C1 binding carrier is NOT the quantum A-polynomial (slopes \u00b11/2 \u2260 \u00b14), so Route A needs the true colored-Jones recursion \u00c2_K, not C1. CROSS-KNOT GATE: the slope reading R2 (DT=boundary slope) is REFUTED on 5_2 (max slope 10 \u2209 {3,4}); the L-degree/#connections reading R1 SURVIVES (4_1:3, 5_2:4, both \u2208 {3,4}). Consequence: the internal handle on the DT spectrum is the A-polynomial L-degree / connection count (an Euler-characteristic datum \u2192 Route B), NOT the Newton-polygon slope; and it needs \u00c2_K, not the binding carrier. 5_2 boundary data is literature-recalled \u2014 verify with SnapPy before hardening."
+    "verdict": "Route A is PARTIAL / mixed (scope-(a), anti-numerology-gated). AIRTIGHT: (i) the figure-eight DT integers {3,4} ARE Newton-polygon data of A_{4_1} — 3 = full-A L-degree = #boundary-parabolic connections, 4 = |max boundary slope|; (ii) the QOU C1 binding carrier is NOT the quantum A-polynomial (slopes ±1/2 ≠ ±4), so Route A needs the true colored-Jones recursion Â_K, not C1. CROSS-KNOT GATE: the slope reading R2 (DT=boundary slope) is REFUTED on 5_2 (max slope 10 ∉ {3,4}); the L-degree/#connections reading R1 SURVIVES (4_1:3, 5_2:4, both ∈ {3,4}). Consequence: the internal handle on the DT spectrum is the A-polynomial L-degree / connection count (an Euler-characteristic datum → Route B), NOT the Newton-polygon slope; and it needs Â_K, not the binding carrier. 5_2 boundary data is DERIVED (2026-09-07) from the corpus's own A_{5_2} (#6985), equal to the literature set; the derived frame's sign is invisible to both readings (mirror-invariant inputs)."
   },
   "assertions": [
     {
@@ -110,17 +203,49 @@
       "passed": true,
       "C1_max_slope": "1/2",
       "A41_max_slope": "4",
-      "note": "C1 (binding carrier, slopes \u00b11/2) is NOT the reduced \u00c2_{4_1} (slopes \u00b14). Route A must use the true colored-Jones recursion, not the binding carrier."
+      "note": "C1 (binding carrier, slopes ±1/2) is NOT the reduced Â_{4_1} (slopes ±4). Route A must use the true colored-Jones recursion, not the binding carrier."
+    },
+    {
+      "name": "5_2-derived-slopes-match-recalled: derived boundary slopes == literature set",
+      "passed": true,
+      "derived": [
+        "-10",
+        "-4",
+        "0"
+      ],
+      "literature": [
+        -10,
+        -4,
+        0
+      ],
+      "note": "In the derived frame (μ by the filling test, λ homological, Im(t_λ/t_μ) > 0) the signs agree with the corpus's recalled {0,-4,-10}; the literature's {0,4,10} is the mirror."
+    },
+    {
+      "name": "5_2-derived-connections-match-recalled: geometric L-degree 3, full 4",
+      "passed": true,
+      "derived_geom_L_degree": 3,
+      "derived_full": 4,
+      "literature": 4
+    },
+    {
+      "name": "5_2-mirror: |max slope| and L-degree are mirror-invariant (frame invisible to Route A)",
+      "passed": true,
+      "mirror_slopes": [
+        "0",
+        "4",
+        "10"
+      ],
+      "note": "The derived frame fixes the SIGN of the slopes; R2 uses |slope| and R1 the L-degree, both mirror-invariant (Lean absSlopeEq_mirror, lProfile_mirror). So the {4∈S⁺,3∈S⁻} split — an ordered, ι-odd datum — is not Newton-polygon data, whatever the frame."
     },
     {
       "name": "R2-crossknot-5_2: |max boundary slope| in DT spectrum?",
       "passed": false,
-      "five2_max_slope": 10,
+      "five2_max_slope": "10",
       "five2_dt": [
         3,
         4
       ],
-      "note": "5_2 max boundary slope 10 is NOT a DT integer {3,4} \u2014 the 'DT integer = boundary slope' reading (R2) is REFUTED on 5_2 (scope-(a), conditional on the literature slope 10)."
+      "note": "5_2 max boundary slope 10 is NOT a DT integer {3,4} — the 'DT integer = boundary slope' reading (R2) is REFUTED on 5_2 (scope-(a); the slope 10 is DERIVED from the corpus's A_{5_2})."
     },
     {
       "name": "R1-crossknot-5_2: #connections consistent with a DT integer?",
@@ -130,7 +255,11 @@
         3,
         4
       ],
-      "note": "4_1 #connections=3\u2208{3,4}; 5_2 #connections=4\u2208{3,4} (lit). The L-degree/#connections reading of the 3\u21944 is CONSISTENT across both knots (both land in {3,4}) \u2014 survives where R2 fails."
+      "note": "4_1 #connections=3∈{3,4}; 5_2 #connections=4∈{3,4} (derived). The L-degree/#connections reading of the 3↔4 is CONSISTENT across both knots (both land in {3,4}) — survives where R2 fails."
     }
-  ]
+  ],
+  "scriptHash": "b511b364a316",
+  "commitSha": "a548eb6f15a0bc1257dd10e524397903de11a685",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

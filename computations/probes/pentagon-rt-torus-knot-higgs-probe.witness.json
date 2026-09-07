@@ -6,8 +6,12 @@
     "ratio_m_H": "0.626683802890976707993616121035853421532586831823822541959866",
     "value_MeV": "78398.1437416611861700013767415852630337266126611601999991793"
   },
+  "commitSha": "8ffe0488ba5b7cf72cfcb4a999cc9e09cddac938",
   "compute": "pentagon_rt_torus_knot_higgs_probe",
+  "computedAt": "2026-09-07T11:41:57.911080+00:00",
   "description": "Q2: Reshetikhin-Turaev colored Jones J_N(T(2,8)) probe for candidate Higgs mass via RT-at-root-of-unity. Tests N = 2..12 at substrate q_0 and at roots of unity exp(2\u03c0i/N), exp(2\u03c0i/(N+2)). Mass-scale candidates: |J_N|\u00b7m_e, log|J_N|\u00b7m_e, etc. Compares to actual m_H/m_e \u2248 244811.",
+  "durationMs": 0,
+  "engine": "python",
   "interpretation": "Exploratory first look at RT-at-root-of-unity for Higgs mass. Looks for structurally-derivable scales matching m_H. The best ratio found is reported above; if within order-of-magnitude of unity, the corresponding (N, q) combination warrants deeper investigation. If far from unity across all tested combinations, the RT chain likely needs additional categorical structure (e.g., per-shell Geom evaluation, Chern-Simons partition function, or quantum-group level-k tensoring with the matter charge sector).",
   "parameters": {
     "N_color_range": [
@@ -740,7 +744,9 @@
       }
     }
   ],
-  "scriptCommitSha": "8f4c3fd8974dbdb2932f5e4d7ec58a8ed5a72073",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptFile": "pentagon_rt_torus_knot_higgs_probe.py",
+  "scriptHash": "4ef426596d18",
   "status": "exploratory",
   "tags": [
     "rt-route",

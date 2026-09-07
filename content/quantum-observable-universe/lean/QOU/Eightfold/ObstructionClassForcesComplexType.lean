@@ -1,4 +1,8 @@
 import Mathlib.Data.ZMod.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Group
+import Mathlib.Algebra.Group.TypeTags.Basic
 
 /-!
 # QOU.Eightfold.ObstructionClassForcesComplexType — self-duality forces a trivial obstruction
@@ -33,10 +37,37 @@ variety in a non-trivial class", i.e. to the ideal being proper.
 
 ## Scope
 
-This proves an implication about any structure satisfying the two hypotheses; it does not
-prove the hypotheses, which are the cited topological facts, and it says nothing about
-whether such a representation exists for a given manifold.  Non-emptiness is a separate,
-computational question.
+This proves an implication about any structure satisfying the two hypotheses, and says
+nothing about whether such a representation exists for a given manifold.  Non-emptiness
+is a separate, computational question.
+
+**Both hypotheses are now DERIVED, not cited (2026-09-06).**  This section previously
+called them "the cited topological facts"; they are two-line computations from the
+definition of the cocycle, and neither needs a topological input.
+
+Write `c(g,h)` for the cocycle of a lift `s`, i.e. `s g * s h * (s (g*h))⁻¹`, central by
+construction.
+
+* `obs_dual`.  Inverse-transpose `φ : A ↦ ᵗA⁻¹` is a group HOMOMORPHISM, not an
+  anti-homomorphism: `(AB)⁻ᵀ = ᵗ(B⁻¹A⁻¹) = A⁻ᵀB⁻ᵀ`.  So the dual lift `φ ∘ s` has
+  cocycle `φ(c(g,h))`, and `φ` inverts the centre (`ζ•1 ↦ ζ⁻¹•1`), giving `c⁻¹`.
+* `obs_congr`.  A conjugate lift `a * s · * a⁻¹` has cocycle `a * c(g,h) * a⁻¹`, which
+  equals `c(g,h)` because `c` is central.
+
+The `obs_dual` step is additionally verified in the RELATIVE setting the Ptolemy
+obstruction actually lives in — `H²(M, ∂M; ℤ/3)`, not `H²(Γ; μ₃)`.  Negating the cocycle
+acts on the Ptolemy variety exactly as `u ↦ u²`, the nontrivial automorphism of `μ₃`:
+`P^c` and `P^{-c}` differ in 10 of 33 equations, and substituting `u ↦ u²` throughout
+`P^c` reproduces `P^{-c}` as polynomial sets, on classes 1, 2 and 3
+(`computations/ptolemy/ptolemy_duality_galois_check.py`, 3/3).  Corroborated
+independently by snappy, whose enumeration quotients `H²` by the units of `ℤ/N` —
+at `N = 3` the units are `{1,2}` and `2 = -1`, which is why 27 classes present as 14.
+
+**NOT YET FORMALISED.**  The class is still carried as hypotheses here because turning
+the two derivations into Lean needs an explicit cocycle model over Mathlib's group theory,
+and the container that derived them could not restore a Mathlib cache to check it.  So
+this is a statement about what is now PROVED ON PAPER, not about what Lean has verified —
+the declarations below are unchanged and still assume the class.
 
 Empirically consistent: for `4₁` at `n = 3`, obstruction class 0 has 6 solutions of which
 4 are self-dual, while the non-trivial class has 2 solutions and **none** are self-dual.
@@ -90,5 +121,77 @@ fails to be self-dual — hence is of complex type, with no variety decompositio
 theorem not_selfDual_of_obs_ne_zero [ObstructionDuality Rep Iso dual obs]
     (ρ : Rep) (h : obs ρ ≠ 0) : ¬ Iso ρ (dual ρ) :=
   fun hsd => h (obs_eq_zero_of_selfDual ρ hsd)
+
+/-! ## The cocycle model — where the two hypotheses come from
+
+`ObstructionDuality` above carries `obs_dual` and `obs_congr` as hypotheses.  This section
+proves their group-theoretic content, so they are no longer bare assumptions: each is a
+short computation with the *definition* of the obstruction cocycle, and neither needs a
+topological input.
+
+Write `cocycle s g h = s g * s h * (s (g * h))⁻¹` for the failure of a set-theoretic lift
+`s` to be multiplicative.  For a lift of a `PGL(n,ℂ)` representation to `SL(n,ℂ)` this
+lands in the centre `μ_n`, and its class is the obstruction.
+
+* `cocycle_dual` is `obs_dual`.  Inverse-transpose `φ : A ↦ ᵗA⁻¹` is a group
+  **homomorphism**, not an anti-homomorphism — `(AB)⁻ᵀ = ᵗ(B⁻¹A⁻¹) = A⁻ᵀB⁻ᵀ` — so by
+  `cocycle_map` the dual lift's cocycle is `φ` applied to the original, and `φ` inverts
+  the centre.
+* `cocycle_conj_of_comm` is `obs_congr`.  Conjugating a lift conjugates its cocycle, and a
+  cocycle commuting with the conjugator is unchanged — which centrality supplies.
+
+**Scope.** This is the group theory, machine-checked.  Instantiating `ObstructionDuality`
+for the Ptolemy setting additionally needs the identification `μ₃ ≅ ZMod 3` and the
+*relative* class in `H²(M, ∂M; ℤ/3)` rather than `H²(Γ; μ₃)`; that relative step is
+verified computationally, not here — negating the cocycle acts on the Ptolemy variety as
+`u ↦ u²` (`computations/ptolemy/ptolemy_duality_galois_check.py`, classes 1/2/3). -/
+
+section CocycleModel
+
+variable {Γ G : Type*} [Group Γ] [Group G]
+
+/-- The failure of a set-theoretic lift `s` to be multiplicative. -/
+def cocycle (s : Γ → G) (g h : Γ) : G := s g * s h * (s (g * h))⁻¹
+
+/-- A homomorphism applied to a lift carries its cocycle along. -/
+theorem cocycle_map (φ : G →* G) (s : Γ → G) (g h : Γ) :
+    cocycle (fun x => φ (s x)) g h = φ (cocycle s g h) := by
+  simp [cocycle, map_mul, map_inv]
+
+/-- **`obs_dual`, as group theory.**  If `φ` inverts the cocycle's value — as
+inverse-transpose does on the centre — then the dual lift's cocycle is the inverse. -/
+theorem cocycle_dual (φ : G →* G) (s : Γ → G) (g h : Γ)
+    (hφ : φ (cocycle s g h) = (cocycle s g h)⁻¹) :
+    cocycle (fun x => φ (s x)) g h = (cocycle s g h)⁻¹ := by
+  rw [cocycle_map]; exact hφ
+
+/-- Conjugating a lift conjugates its cocycle. -/
+theorem cocycle_conj (a : G) (s : Γ → G) (g h : Γ) :
+    cocycle (fun x => a * s x * a⁻¹) g h = a * cocycle s g h * a⁻¹ := by
+  simp only [cocycle, mul_inv_rev, inv_inv]
+  group
+
+/-- **`obs_congr`, as group theory.**  A cocycle commuting with the conjugator — which
+centrality supplies — is unchanged by conjugating the lift. -/
+theorem cocycle_conj_of_comm (a : G) (s : Γ → G) (g h : Γ)
+    (hc : a * cocycle s g h = cocycle s g h * a) :
+    cocycle (fun x => a * s x * a⁻¹) g h = cocycle s g h := by
+  rw [cocycle_conj, hc]; group
+
+/-- **The `μ₃ ≅ ZMod 3` bridge.**  `cocycle_dual` says the dual lift's cocycle is the
+*inverse*; `obs_dual` says the class *negates*.  Transporting along an isomorphism of the
+centre with `Multiplicative (ZMod 3)` is what turns one into the other — inversion in the
+group is negation in `ZMod 3`.
+
+With this, the algebraic chain behind `obs_dual` is complete: inverse-transpose is a
+homomorphism (`cocycle_map`), it inverts the centre (`cocycle_dual`), and inversion of a
+`μ₃` value is negation of a `ZMod 3` value (here).  What is still missing for a genuine
+`instance` is only the passage from a *cocycle* to its *cohomology class* — H² machinery
+— and the relative-vs-absolute step, which is checked computationally instead. -/
+theorem obs_neg_of_inv {Z : Type*} [Group Z] (e : Z ≃* Multiplicative (ZMod 3)) (z : Z) :
+    (e z⁻¹).toAdd = - (e z).toAdd := by
+  rw [map_inv]; rfl
+
+end CocycleModel
 
 end QOU.Eightfold

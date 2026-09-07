@@ -13,6 +13,10 @@ import QOU.Eightfold.IndecomposableQuotientPrune
 import QOU.Eightfold.SelfDualSectorConfinement
 import QOU.Eightfold.OctonionicSu3RankObstruction
 import QOU.Eightfold.FlavourColourDiscriminator
+import QOU.Eightfold.ObstructionClassForcesComplexType
+import QOU.Eightfold.ObstructionH2
+import QOU.Eightfold.ObstructionH2Mathlib
+import QOU.Eightfold.PtolemyTwist
 -- This project formalizes the mathematical content of the QOU manuscript.
 -- Each chapter has a corresponding Lean file.
 --
@@ -29,6 +33,10 @@ import QOU.MathlibExt
 import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.MathlibExt.MarkovTrace
 import QOU.MathlibExt.HeckeToTemperleyLieb
+import QOU.MathlibExt.TraceRadicalNondegenerate
+import QOU.MathlibExt.TemperleyLiebSpanning
+import QOU.MathlibExt.TemperleyLiebWedderburn
+import QOU.MathlibExt.TemperleyLiebNormalForm
 import QOU.MathlibExt.MacdonaldTelescope
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite

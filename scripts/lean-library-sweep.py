@@ -231,6 +231,9 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--shadow")
     ap.add_argument("--jobs", type=int, default=3)
+    ap.add_argument("--timeout", type=int, default=1800,
+                    help="per-module seconds; on expiry the module is reported "
+                         "TIMEOUT (unverified) and the sweep CONTINUES")
     ap.add_argument("--limit", type=int, default=0,
                     help="stop after N modules (for a smoke test)")
     ap.add_argument("--package", action="append", metavar="LIB",
@@ -344,7 +347,7 @@ def sweep_one(args) -> int:
             order = [[m for m in layer if m in todo_set] for layer in order]
             order = [l for l in order if l]
 
-        red, skipped, ok = {}, {}, 0
+        red, skipped, timed_out, ok = {}, {}, {}, 0
         broken = set()
         t0 = time.time()
         n = sum(len(l) for l in order)
@@ -363,9 +366,21 @@ def sweep_one(args) -> int:
                     stale.unlink()
                 except (FileNotFoundError, IsADirectoryError):
                     pass
-            r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(out)],
-                               cwd=PKG, env=env, capture_output=True, text=True,
-                               timeout=1800)
+            try:
+                r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(out)],
+                                   cwd=PKG, env=env, capture_output=True, text=True,
+                                   timeout=args.timeout)
+            except subprocess.TimeoutExpired:
+                # A TIMEOUT IS NOT A RED.  It says the module was not verified, not
+                # that it fails -- reporting it as a failure would send someone
+                # hunting a defect that has not been shown to exist.  It is also not
+                # a reason to abandon the sweep: this exception used to propagate out
+                # of ThreadPoolExecutor.map and kill the whole run, so ONE slow module
+                # suppressed the verdict on every module after it (measured
+                # 2026-09-07: QOU.Machinery.HeckeH4Semisimple exceeded 1800s at
+                # module 527 of 628, and the remaining 101 were never attempted AND
+                # no summary was printed -- bean qou-xumu).
+                return m, None, f"TIMEOUT after {args.timeout}s"
             return m, r.returncode, (r.stdout + r.stderr)
 
         for layer in order:
@@ -385,6 +400,10 @@ def sweep_one(args) -> int:
                     if rc == 0:
                         ok += 1
                         print(f"  [{done_ct}/{n}] ok   {m}", flush=True)
+                    elif rc is None:
+                        timed_out[m] = log
+                        broken.add(m)   # dependents cannot be judged either
+                        print(f"  [{done_ct}/{n}] TIMEOUT  {m}  ({log})", flush=True)
                     else:
                         errs = [l for l in log.splitlines() if ": error:" in l]
                         red[m] = errs[:5]
@@ -394,8 +413,11 @@ def sweep_one(args) -> int:
                             print(f"        {e}", flush=True)
 
         print(f"\n=== library sweep: {ok} ok, {len(red)} RED, "
+              f"{len(timed_out)} TIMEOUT (unverified, NOT failing), "
               f"{len(skipped)} skipped (dependency red), "
               f"{time.time() - t0:.0f}s ===")
+        for m in sorted(timed_out):
+            print(f"TIMEOUT {m} -- unverified; re-run with a larger --timeout to judge it")
         for m, errs in sorted(red.items()):
             print(f"\nRED {m}")
             for e in errs:

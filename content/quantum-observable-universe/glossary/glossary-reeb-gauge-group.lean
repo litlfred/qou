@@ -17,14 +17,16 @@ namespace QOU
     form θ and generates the Reeb flow.
 
     Maps to Mathlib: `Subgroup` of the gauge group, analogous
-    to `TopologicalGroup.maximalTorus`. -/
+    to `TopologicalGroup.maximalTorus`.
+
+    **`is_commutative : Prop` and `preserves_contact : Prop` removed 2026-09-07.
+    Both were typed with the *universe* `Prop`, so an instance chose the
+    proposition; neither was read or constructed anywhere. `Commutative` is
+    statable once the group operation is a field; `preserves_contact` needs the
+    contact form.** -/
 -- Ref: [manuscript] Ch. 8 Glossary
 structure ReebGaugeGroup where
   /-- The R-group scheme carrier. -/
   carrier : Type*
-  /-- U₁(R) is commutative. -/
-  is_commutative : Prop
-  /-- U₁(R) preserves the contact form θ. -/
-  preserves_contact : Prop
 
 end QOU

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T00:44:24.256402+00:00",
-  "commitSha": "abab238abc44e49605955c09dd7d1fe9dc37dd09",
+  "computedAt": "2026-09-07T11:21:00.600461+00:00",
+  "commitSha": "1a3f96e72efd999f3eb3b745301c5e7b0ad7b40e",
   "assertions": [
     {
       "name": "alpha_em_not_at_100x_target",
@@ -10,7 +10,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": "0.5",
-      "source": "proton-anchored quadratic residual 1.672 ppb exceeds the L2 100x target sigma_a/100 = 0.0015 ppb by ~1115.0x. The cubic (+Schwinger) form reaches 0.313 ppb, still ~209x short -- see alpha_em_schwinger_ladder_probe.py, which supersedes this probe's best number."
+      "source": "proton-anchored quadratic residual 0.9937 ppb exceeds the L2 100x target sigma_a/100 = 0.00153 ppb by ~648.4x. The cubic (+Schwinger) form reaches -0.365 ppb, still 238x short -- see alpha_em_schwinger_ladder_probe.py, which supersedes this probe's best number."
     },
     {
       "name": "alpha_em_anchor_dependent",
@@ -18,15 +18,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": "0.5",
-      "source": "quadratic fixed-point residual is 1.672 ppb at the proton (default) pin vs 81.04 ppb at the muon pin (live CODATA-2022 derivation; the retired pin A gave 80.51) -- the mu-p substrate tension, not an intrinsic scale"
+      "source": "quadratic fixed-point residual is 0.9937 ppb at the proton (default) pin vs 80.36 ppb at the muon pin (live CODATA-2022 derivation; the retired pin A gave 80.51) -- the mu-p substrate tension, not an intrinsic scale"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "alpha-em-form-ladder",
   "scriptFile": "alpha_em_form_ladder_probe.py",
-  "scriptHash": "487f170f5bfc",
-  "scriptCommitSha": "f44d3bf79fa2e971e858e99483235d152ec9a0f3",
+  "scriptHash": "11a0e06135fd",
+  "scriptCommitSha": "01ba57351bb3d0500c13470cb6f311430a5faea7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -49,7 +49,7 @@
     ],
     "reproduce": "python3 -u computations/alpha_em_form_ladder_probe.py"
   },
-  "description": "Standalone residual ladder for the alpha_EM Bring-zero-mode form (1/a=q[9]_q[10]_q+2g/(4pi(g-1))+a*H*(1-h^2 a)+D2, g=4; H=[2]_q/(8pi), h=q-1/q Hecke structure constant; D2=uncomputed archimedean 2-loop). Integers structurally derived (Bring genus 4; crossing numbers of T_{2,9},T_{3,5}). Honest caveats: (A) conjectural (3 unproved classes), (B) anchor-dependent (~1.7 ppb proton vs ~80 ppb muon; scored at the proton default), (C) proton quadratic ~1.7 ppb = ~11x sigma_a = ~1115x the L2 100x criterion (sigma_a/100 = 0.0015 ppb); SUPERSEDED on the best number by the +Schwinger cubic at 0.313 ppb. Highest-value but long-horizon conjectural close, not near-term. No coefficient fitted; scope-(a).",
+  "description": "Standalone residual ladder for the alpha_EM Bring-zero-mode form (1/a=q[9]_q[10]_q+2g/(4pi(g-1))+a*H*(1-h^2 a)+D2, g=4; H=[2]_q/(8pi), h=q-1/q Hecke structure constant; D2=uncomputed archimedean 2-loop). Integers structurally derived (Bring genus 4; crossing numbers of T_{2,9},T_{3,5}). Honest caveats: (A) conjectural (3 unproved classes), (B) anchor-dependent (~1.7 ppb proton vs ~80 ppb muon; scored at the proton default), (C) proton quadratic ~1.7 ppb = ~11x sigma_a = ~1115x the L2 100x criterion (sigma_a/100 = 0.0015 ppb); SUPERSEDED on the best number by the +Schwinger cubic at -0.365 ppb. Highest-value but long-horizon conjectural close, not near-term. No coefficient fitted; scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
     "ladder": {
@@ -59,8 +59,8 @@
         "additive": "137.035426320062",
         "plus_oalpha": "137.036007027356",
         "fixed_point": "137.036010188814",
-        "fixed_point_resid_ppb": "81.035740382392584513",
-        "additive_resid_ppb": "-4179.6603942054591178",
+        "fixed_point_resid_ppb": "80.357086538914549772",
+        "additive_resid_ppb": "-4180.3390451573995792",
         "q0": "1.1099785956427390466817951293800017527000655610290"
       },
       "proton": {
@@ -69,16 +69,18 @@
         "additive": "137.035415444372",
         "plus_oalpha": "137.035996151711",
         "fixed_point": "137.035999313169",
-        "fixed_point_resid_ppb": "1.6723270456964245288",
-        "additive_resid_ppb": "-4259.0241405410041263",
+        "fixed_point_resid_ppb": "0.99367325607867091580",
+        "additive_resid_ppb": "-4259.7027914390840806",
         "q0": "1.1099785827513808075916690956107688798744991218736"
       }
     },
     "codata_reference": {
-      "alpha_inv": "137.035999084000000000000000000000000000000000000000000000000",
-      "sigma_ppb": "0.150000000000000000000000000000000000000000000000000000000000",
-      "vintage": "CODATA-2018 (Cs recoil)",
-      "note": "the live table carries 137.035999177; this producer scores against the 2018 value on purpose, and bumping it alone would desynchronise the recorded residuals"
+      "alpha_inv": "137.035999177",
+      "uncertainty": "0.000000021",
+      "sigma_ppb": "0.153244403850959925635161700558525347789386447580672570411377",
+      "vintage": "CODATA-2022",
+      "source": "qou_substrate.codata registry (data/allascii.txt) — derived, not chosen",
+      "superseded": "137.035999084 (CODATA-2018 Cs recoil), sigma_ppb 0.15 (a 2% rounding of 0.15325); the 0.6787 ppb edition shift flips the Schwinger form's residual sign, see #7069"
     },
     "integers_provenance": {
       "g": "4 = genus of Bring's surface (structural)",
@@ -88,10 +90,10 @@
     "honest_status": {
       "conjectural": "3 unproved classes; conditional-class != established",
       "anchor_dependent": {
-        "proton_ppb": "1.6723270456964245288",
-        "muon_ppb": "81.035740382392584513"
+        "proton_ppb": "0.99367325607867091580",
+        "muon_ppb": "80.357086538914549772"
       },
-      "not_at_target": "proton (default) quadratic 1.672 ppb = ~11.1x sigma_a = ~1115.0x the L2 100x criterion; muon (ideal CAL-2, live CODATA-2022 derivation) 81.04 ppb. Superseded on the best number by the +Schwinger cubic (0.313 ppb, proton).",
+      "not_at_target": "proton (default) quadratic 0.9937 ppb = ~6.48x sigma_a = ~648.4x the L2 100x criterion; muon (ideal CAL-2, live CODATA-2022 derivation) 80.36 ppb. Superseded on the best number by the +Schwinger cubic (-0.365 ppb, proton).",
       "verdict": "highest-value but long-horizon conjectural close, not near-term"
     }
   },

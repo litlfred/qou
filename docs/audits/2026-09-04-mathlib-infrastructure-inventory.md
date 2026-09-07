@@ -633,3 +633,84 @@ before creation (`beans create` is not idempotent and dedupes on nothing).
   axiom could be weakened to a conditional class rather than an axiom. That is a
   separate review and is not attempted here.
 * No `.lean` file was edited. This session was read-only on Lean by instruction.
+
+---
+
+## Addendum (2026-09-07) — two gaps this inventory does not cover, and one claim it corrects
+
+Added while draining the vacuity surface (#7043, #7045, #7058). Each was
+reached by a repair that could not proceed, so each is a *measured* blocker
+rather than a survey item.
+
+### New — the Gröbner–Shirshov → `FilteredBialgebra` construction (RESEARCH)
+
+Zero mentions of Gröbner–Shirshov, bialgebra or divided powers appear above,
+and the gap is real. `UGB/GrobnerShirshov/StrongMultiplicativity.lean` carries
+`FilteredBialgebra`, whose field `comul_is_alg_hom` states
+`Δ(a·b) = Δ(a) ·_T Δ(b)`. [fred2005, Thm 4.12] asserts that a
+Gröbner–Shirshov basis for the rewriting system **yields** such a structure on
+`Dist(G)` — i.e. that the field can be *discharged* from GS data, via the
+explicit formal group law, the comultiplication on divided-power generators,
+and six S-polynomial checks on the tensor product.
+
+**Not a Mathlib gap and not upstreamable** — it is this corpus's own
+construction, and the missing pieces are local: a name for the divided-power
+comultiplication and a multiplication on `AlgElement G k`.
+
+**The multiplication half is VERIFIED absent (2026-09-07), not asserted.**
+`AlgElement` is declared twice — `UGB/GrobnerShirshov/Elem.lean:92` and its
+content-block mirror at `unital-groebner-bases-chapter/monomial-basis.lean:41`
+— and *neither* carries a `Mul`, `Ring` or `Semiring` instance; the only
+`AlgElement.mul` in the corpus is an **`axiom`** at
+`quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean:121`,
+in a different paper and over a differently-shaped `AlgElement`. That is why
+`strong_multiplicativity_on_generators` took `[Ring (AlgElement G k)]` as a
+*hypothesis* rather than finding an instance.
+
+The check was run because §"Why the second half of this audit is load-bearing"
+applies to claims made *in* this document too, and the addendum above was
+written from the shape of the difficulty. This one survives measurement.
+
+The two `AlgElement` declarations are **not** a defect, and that was checked
+rather than assumed: they are structurally identical, live in different
+namespaces (bare vs `QOU.GrobnerShirshov`), and the content-block copy's
+docstring cross-references the library one. A self-contained content-block
+sibling is the sanctioned pattern; the §0a shadowing hazard needs the *same*
+qualified name, which these do not share. Recorded because a
+theorem *over* a given `FilteredBialgebra` can never establish it (taking the
+structure as a hypothesis assumes the property), which is why the tautological
+`strong_multiplicativity_on_generators` was deleted rather than restated
+(#7058) — restating it truthfully would have produced a §3b-cond item-5
+self-assuming projection.
+
+### New — Slater's condition is unstatable over `LaurentPolynomial ℤ` (local, not U7)
+
+§U7 correctly records that Mathlib has no SDP/conic duality layer. There is a
+**second, independent** blocker at `QOU/Interactions/ConfinementSDP.lean`:
+`HasConfinementSDPData.slaterStrict` cannot be encoded even granting U7,
+because Slater's condition is `∃ Φ ≻ 0 feasible` and the class carries no
+constraint set **and no order at all** — `R_q` is `LaurentPolynomial ℤ`.
+Encoding it needs the constraint data plus an ordered evaluation layer, both
+local. Until then the field is a universe-`Prop` an instance chooses, and the
+hypothesis is dischargeable by `trivial` — proved in-file as
+`slaterStrict_is_freely_dischargeable` (#7045).
+
+### Corrects a claim of MINE, not of this inventory
+
+#7043's `frobeniusForm.lean` docstring said the categorical half of the
+Frobenius-pairing claim "needs the rigid-monoidal apparatus", which implies a
+Mathlib gap that **does not exist**. Verified on disk at the pin:
+`Mathlib/CategoryTheory/Monoidal/Rigid/` holds `Basic`, `Braided`,
+`FunctorCategory`, `OfEquivalence`, with `ExactPairing` and `rightDualIso`
+(`Basic.lean:541`) — matching §U6, which records `Monoidal/Rigid/` present and
+pivotal / spherical / ribbon absent.
+
+The real blocker is local and narrower: `FrobeniusFormContext` models `A` and
+`A_dual` as plain `Type`, so no category is in scope. **The categorical half is
+BUILDABLE**, by re-modelling the class over a `MonoidalCategory` with an
+`ExactPairing`. Corrected at the site.
+
+This is the failure mode §"Why the second half of this audit is load-bearing"
+names — a "Mathlib lacks X" note written from the shape of the difficulty
+rather than from a measurement — committed here two hours after reading that
+warning.

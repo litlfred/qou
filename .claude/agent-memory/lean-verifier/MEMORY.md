@@ -465,3 +465,48 @@ which the 22 `Archimedean/PauliWitness/*` at the end took ~30 min total (not
 in the script). So the library on that `main` is green except one module.
 Command to reproduce is the recipe above; expect ~4 h on this box.
 
+## TRAP — a segfaulting `lean` can be the TOOLCHAIN, not the olean cache (2026-09-06)
+
+`import Mathlib.*` exiting **139** here was diagnosed for days as a cache problem. It
+was not. The **toolchain's own core oleans** under `/tmp/lean-v4.24.0/lib/lean` were
+byte-inconsistent, and `gdb` put the fault in `ImportedModule_getData_x3f` — reading an
+imported module's mmapped region. Scope: `Init`, `Lean.Expr`, `Lean.Parser`,
+`Lean.Environment` all exit 0, but ~40 of 89 `Lean/Elab/*` modules segfault, so anything
+needing the elaborator dies, and every Mathlib module reaches it via `Mathlib.Init`.
+
+**The discriminator, and run it before touching any cache:** count the FOUR artifact
+types under the toolchain's `lib/lean`. A healthy 4.24 core has all four in near-equal
+numbers (measured: 1885 / 1884 / 1884 / 1884). Mathlib itself legitimately has
+`.olean` only and **zero** of the other three — it is not module-system'd at
+`f897ebcf72cd` — so zeros there are NOT a defect and the cache branch has never carried
+them. Do not "fix" the cache on the strength of that.
+
+**The repair, measured end to end, ~10 min and NON-destructive if staged:**
+
+```sh
+C=$(git rev-parse FETCH_HEAD)     # after: git fetch --depth=1 origin lake-cache/toolchain-v4-24-0
+P=$(git ls-tree --name-only "$C" | grep '^lean-toolchain\.tgz\.part' | sort)
+mkdir -p /tmp/lean-tc-stage
+( for p in $P; do git show "$C:$p"; done ) | tar xzf - -C /tmp/lean-tc-stage   # no archive stored
+# TEST the staged binary BEFORE swapping, then repoint both elan symlinks:
+ln -sfn /tmp/lean-tc-stage/leanprover--lean4---v4.24.0 /root/.elan/toolchains/lean-v4.24.0
+ln -sfn /tmp/lean-tc-stage/leanprover--lean4---v4.24.0 /root/.elan/toolchains/leanprover--lean4---v4.24.0
+```
+
+Same file, same `LEAN_PATH`: staged **EXIT 0**, old **EXIT 139**. Stage to a NEW path and
+test first — then nothing working is at risk, and a failed restore costs only disk.
+
+**`scripts/lean-toolchain-cache-restore.sh` will NOT do this for you.** It skips when a
+toolchain matching the pinned version is already installed, and a corrupt toolchain still
+prints `Lean (version 4.24.0, …)` perfectly. Version match is not health.
+
+**Budget ~2.2 G to stage.** This container hit **223 MB free**. Hardlinking the 28,063
+byte-identical oleans shared by the root and per-paper mathlib trees (SHA-256 compared,
+identical files only, neither tree deleted) reclaimed **2.76 GiB**.
+
+## TRAP — `pkill -f <script>` kills the shell running it (2026-09-06)
+
+The shell's own command line contains the pattern, so `pkill -f ptolemy_class_sweep`
+terminates the caller. `ps | awk '/[p]tolemy.../'` does not help: the bracket trick stops
+the awk PROGRAM matching itself, not the surrounding bash command line. Cost two turns.
+Kill by PID.
