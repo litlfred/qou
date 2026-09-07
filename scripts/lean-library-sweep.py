@@ -259,6 +259,19 @@ def main() -> int:
                          "measurement for 'how much of the library compiles', since "
                          "1863 of 2773 are outside the root build and so outside "
                          "every routine check.  Hours, not minutes.")
+    ap.add_argument("--only", metavar="PREFIX",
+                    help="restrict to modules whose name starts with PREFIX "
+                         "(e.g. QOU.BraidKnot).  Exists so a --all run can be "
+                         "CHUNKED: the shadow's newly-written oleans are the only "
+                         "real bytes it costs (0.22 MB/module), so a full run needs "
+                         "~610 MB at once, and reclaiming the shadow between chunks "
+                         "is what makes it fit a container at 99%.  NOTE this "
+                         "weakens the run slightly: modules in a later chunk resolve "
+                         "their earlier-chunk imports against the SNAPSHOT olean "
+                         "rather than one this run rebuilt.  That is the same "
+                         "snapshot-conditionality the sweep already carries for "
+                         "clean dependencies -- not a new hole -- but it means a "
+                         "chunked green is not identical to a single-run green.")
     ap.add_argument("--package", action="append", metavar="LIB",
                     help="library name (QOU, UGB, Fred2005); repeatable, "
                          "default all discovered")
@@ -292,6 +305,13 @@ def sweep_one(args) -> int:
     mod2path, imports = load_graph()
     dirty, changed, never_built = dirty_closure(mod2path, imports, oleans,
                                                 all_dirty=args.all)
+    if args.only:
+        # Filter the population to compile, NOT the import graph -- dependencies
+        # outside the prefix must stay resolvable.
+        dirty = {m for m in dirty if m.startswith(args.only)}
+        if not dirty:
+            print(f"  --only {args.only}: no modules match; nothing to do")
+            return 0
 
     print(f"library modules        {len(mod2path)}")
     if args.all:
