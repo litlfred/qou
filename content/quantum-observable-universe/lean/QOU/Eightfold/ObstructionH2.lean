@@ -36,10 +36,16 @@ restored cache does not carry, and building them is hours of compute against 2.6
 free disk.  The trivial-action case needs none of it — cocycles and coboundaries are
 submodules of `Γ × Γ → ZMod 3` and the quotient is a `Submodule` quotient.
 
-The cost of that choice, stated plainly: these are **our** `Z2`/`B2`/`H2`, agreeing with
-Mathlib's by transcription rather than by a proof of agreement.  Anyone linking this to
-the Mathlib development should prove `Z2 = cocycles₂` and `B2 = coboundaries₂` for the
-trivial representation first.
+**That gap is now CLOSED.**  `QOU.Eightfold.ObstructionH2Mathlib` proves
+`Z2 Γ = cocycles₂ (triv3 Γ)` and `B2 Γ = coboundaries₂ (triv3 Γ)` — literal equality, not
+isomorphism — so these are no longer merely "our" objects agreeing by transcription.  The
+79 oleans were built (`scripts/build-missing-mathlib-oleans.sh`, 79/79, no failures); the
+measured cost was ~40 minutes and **53 MB**, not the "hours against 2.6 GB of free disk"
+this file first claimed.  The disk half of that claim was simply wrong.
+
+The agreement lemmas need `Γ : Type` rather than `Type*`, because `Rep k G` puts `k` and
+`G` in the same universe and `ZMod 3` is in `Type 0`.  The results in THIS file stay
+universe-polymorphic; only the bridge to Mathlib is specialised.
 
 ## Scope
 
