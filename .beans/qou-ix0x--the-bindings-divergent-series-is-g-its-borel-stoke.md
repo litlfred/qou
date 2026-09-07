@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T08:46:20Z
-updated_at: 2026-09-07T08:46:20Z
+updated_at: 2026-09-07T08:48:33Z
 ---
 
 Owner pointer, 2026-09-07: *"On A_infty there was a divergent series..."*, against the standing target *"ultimate target is to close gap in binding"*.
@@ -57,3 +57,33 @@ The 09-05 audit derives the model's `b3 = 0` from pair-locality (`b3_eq_zero_of_
 Does the corpus's `b3 = 0` proof survive at a root of unity? `b3_eq_zero_of_pairLocal` derives `b3 = 0` from pair-locality as a **hypothesis**. So the question is not whether the theorem holds — it does — but whether **pair-locality itself** is derivable at a root of unity, where `HH^k ≠ 0`. If pair-locality is genuinely a generic-`q` fact, the theorem simply has no hypothesis to stand on there, and `b3` is unconstrained by it. That is a Lean-readable question about one hypothesis, needs no probe, and either answer is progress.
 
 Companion: `qou-dk8a` (the global connection matrix, the other unexcluded route).
+
+
+---
+**FIRST BRICK RUN, SAME SESSION — and it makes the resurgence route unnecessary for this purpose. The 3-body term is ALREADY AVAILABLE inside the framework, with a closed formula.**
+
+My brick question ("is pair-locality generic-q only?") was mis-posed and the corpus answers something better. `QOU/Mass/CrossingModelPairLocality.lean` is over a **generic `CommRing`** — `PairLocal` is not a statement about `H_n(q)` at generic `q` at all. It is a hypothesis on the crossing model: *does a pair's mutual energy depend on what else is in the assembly?*
+
+    def PairLocal := (∀ i j k, w3 i j k = w2 i j) ∧ (∀ i j, w4 i j = w2 i j)
+
+Three theorems already there, sorry-free:
+
+- **`not_pairLocal_of_b3_ne_zero`** — AME2020's `b₃ = +1.4262225` (`AmeBindingNotPairwise.ame_b3_eq`) **refutes pair-locality**. The file's own docstring: "a constraint on the carrier derived from data, not a modelling choice."
+- **`brunnian_not_pairLocal`** — a Brunnian carrier violates pair-locality whenever some `w3 ≠ 0`. And `qou-brng`'s 2026-08-30 update establishes the ³He/⁴He carrier **L6a4 IS Brunnian** (`QOU.Mass.BrunnianBindingChannel`).
+- **`b3_eq_neg_tripleMutual_of_brunnian`** — *on a Brunnian carrier*,
+
+      b₃(i,j,k) = − tripleMutual(i,j,k) = − ( w3 i j k + w3 i k j + w3 j k i )
+
+  exactly. Its docstring: "**No pair contamination and no free constant**: the pair terms vanish identically, so the whole of `b₃` is the irreducibly three-body channel. **Measuring `b₃` therefore pins that channel.**"
+
+**So `b₃ = 0` is not a shadow of semisimplicity that has to be broken.** It holds only for a **pair-local** model, and the corpus proves its own carrier is not pair-local. The 09-05 audit is not wrong — it explicitly flags the formality→pair-locality bridge as "a conjecture to prove, not a theorem" — but the nearer reading is that the framework **already permits** `b₃ ≠ 0` and does not need a non-semisimple home for it.
+
+**The open question therefore collapses**, from *"find somewhere a 3-body datum can live"* to a concrete in-framework computation:
+
+> **compute `w3` for L6a4** — the mutual crossing energy of a pair measured *inside the triple* — and check `−(w3 ijk + w3 ikj + w3 jki)` against `+1.4262225 MeV`.
+
+`CrossingEnergy.decomposition` (proved, cited in `qou-brng`) already splits mutual crossing energy into a signed writhe/linking channel `(n₊−n₋ = 2·lk)` and an unsigned count channel `(n₊+n₋)`, with the signed channel **zero** on a Brunnian pair. So `w3` is the unsigned count channel measured in the triple — a crossing count, not a fitted weight.
+
+**This is a PREDICTION, not a fit**, and that is what makes it worth doing: `w3` is determined by the carrier's crossing structure, and `b₃` is measured. Nothing is tuned. If the number misses, that is a real negative about the carrier or about `binding = −(mutual energy)`, and either is information.
+
+**Consequence for this bean and for `qou-dk8a`:** both remain unexcluded, and both are now **lower priority than computing `w3`**. The cyclotomic-summation route is a fallback for if the direct computation fails; it should not be worked ahead of it. My resurgence excursion this session produced a real negative (`BindingNoAlienPlane`) and pointed at a gap that has a nearer route — say so rather than dressing the excursion up as the plan.
