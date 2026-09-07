@@ -1191,3 +1191,89 @@ the second is the more relevant one.
 *Literature recalled — Watson et al. on the AT2017gfo strontium, Ji et al. on Reticulum II,
 Cayrel et al. on the CS 31082-001 uranium line. The library holds none of these, so none
 is checkable in-corpus.*
+
+---
+
+# 21. `qou-c041` resolved — it is a convention split, not duplication; and six defects in my own audit
+
+## 21.1 The finding
+
+A symbolic AST audit
+([`q_integer_duplication_audit.py`](../../computations/audits/q_integer_duplication_audit.py))
+compares every local `[n]_q` definition **in a sympy symbol `q`, never at `q₀`**:
+
+| | |
+|---|---|
+| definitions found | **366** in 363 files |
+| `q₀`-pinned (takes `n` only) | 179 |
+| `q`-parametric | 187 |
+| symbolically comparable | 158 |
+| not evaluable (pinned / needs module globals) | 208 |
+
+**Four distinct symbolic forms**, not one:
+
+| form | count | |
+|---|---|---|
+| $(q^n - q^{-n})/(q - q^{-1})$ | **126** | symmetric |
+| $(q^n - 1)/(q - 1)$ | **30** | **classical (Gaussian)** |
+| $(q^n-1)/(\sqrt q - 1/\sqrt q)$ | 1 | $\sqrt q$-normalised |
+| symmetric in $q^2$ | 1 | |
+
+So `qou-c041`'s premise was wrong: this is **not gratuitous duplication**, it is a
+**convention split under identical names** — `q_int`, `qint`, `qb` all mean both things.
+Several of the 30 classical ones are in `deltalambda/`, the Track-A blocker area.
+
+**Root cause, and it exonerates the 366.** The canonical
+`qou_substrate/constants.py::q_int(n)` takes **`n` only** — `Q`, `Q_INV`, `HA` are module
+globals — so it is `q₀`-pinned and **cannot serve any `q`-parametric caller**. The local
+copies exist because the canonical function has the wrong signature, not because nobody
+looked.
+
+## 21.2 Lean
+
+[`QOU/Substrate/QIntegerConventions.lean`](../../content/quantum-observable-universe/lean/QOU/Substrate/QIntegerConventions.lean)
+— 8 theorems, `lean`-direct **exit 0** with `-DautoImplicit=false -s 65536`, **0 sorry**,
+`#print axioms` on all eight `{propext, Classical.choice, Quot.sound}`.
+
+- `qClas_mul_sub_one` — the classical bracket is a geometric sum, hence **total**.
+- `qClas_two` / `qSymm_two` — $1+q$ and $(q^2+1)/q$.
+- `bridge_two`, `bridge_three` — **$q^{n-1}[n]_{\rm symm}(q) = [n]_{\rm clas}(q^2)$**,
+  verified symbolically at $n = 2,3,5,7$ and proved at $n=2,3$.
+- `qSymm_sub_qClas_two` — they differ by exactly $(1-q)/q$.
+- **`conventions_never_agree`** — the sharp one: $q - q^{-1} \neq 0$ already forces
+  $q \neq 1$, so the two **never take the same value anywhere both are defined**. "They
+  coincide at $q = 1$" is a statement about *limits*; at $q=1$ the symmetric bracket is
+  $0/0$ and has no value to coincide with.
+- `qClas_at_one` — the classical bracket *does* have the value $n$ there.
+
+That last pair is why the split matters: there is no $q$ at which substituting one for the
+other is harmless.
+
+## 21.3 Roast — six defects, five of them mine, in one audit
+
+1. **I ran it numerically at $q_0$ first.** A point evaluation merges functions that agree
+   there and cannot see where they diverge. The owner had to say *"make those symbolic,
+   not q_0"*. For a question about **definitions**, pinning an anchor was the wrong
+   instrument from the start.
+2. **I clustered on representation, not value** — reporting `q + 1/q` and `1.0*q + 1.0/q`
+   as two different forms. That is float-equality thinking in symbolic clothing.
+3. **I fixed the clustering and left the identical bug in the labeller, one line over** —
+   `sig == SYMMETRIC` on canonicalised-differently expressions mislabelled **126**
+   definitions `UNRECOGNISED`.
+4. **I guessed argument order from parameter names** (`args[0] in ("n","m","k")`),
+   producing a signature `4**q/2**q` — `q` in the *exponent*, which no `q`-integer has.
+   The fixed version tries both orders and keeps the one that is not nonsense.
+5. **I reported "131 symmetric vs 32 classical" from the broken numeric run as settled.**
+   The correct figures are **126 / 30**.
+6. **I reported "192 define their own, 21 import canonical" from a grep**, then "366 in
+   363 files" from the AST, without saying they are different populations answering
+   different questions. Both are defensible; quoting them as one sequence was not.
+
+The pattern across 2–5 is one thing: **I kept comparing the wrong object** — a value
+instead of a function, a printed form instead of a value, a parameter's *name* instead of
+its role. Each fix revealed the next, which is the argument for continuing to look rather
+than for the first number.
+
+**And the sixth is the session's recurring one:** two counts of different populations,
+reported as if one had superseded the other. §19 has the same defect against §14, and
+§15.3 has it against the corpus-grep. Three instances now.
