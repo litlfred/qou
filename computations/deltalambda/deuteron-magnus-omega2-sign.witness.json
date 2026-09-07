@@ -1,7 +1,7 @@
 {
  "computation": "deuteron-magnus-omega2-sign",
  "scriptFile": "deuteron_magnus_omega2_sign_probe.py",
- "computedAt": "2026-09-07T12:14:19.143718+00:00",
+ "computedAt": "2026-09-07T16:21:46.023465+00:00",
  "engine": "mpmath mpf at 140 dps (H\u2086 Hoefsmit seminormal; finite-diff germ; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -207,9 +207,9 @@
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
  "notes": "Magnus continuation (qou-dp32) of deuteron_interface_handle_curvature_probe.py (qou-jqof). The prior probe established F_q traceless \u21d2 quadrature \u2016F_q\u2016\u00b2\u22650, excluded from the negative-at-A=2 term. This tests whether the LINEAR Magnus pairing escapes that non-negativity.",
- "scriptHash": "b6f3d9771da3",
- "scriptCommitSha": "e41b647561499c5f54c3b63f31655ca74f55fbc0",
- "commitSha": "83d60a4ef91e400b6ff4c6b1bfe0e6144b1d3a9e",
+ "scriptHash": "2346e378e53a",
+ "scriptCommitSha": "5b2bd421824349e79ce13559752c1a83c4d3e37f",
+ "commitSha": "4e03604e68b897786166db895935d0baa468c84a",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"
