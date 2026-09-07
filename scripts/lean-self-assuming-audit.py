@@ -43,10 +43,23 @@ BINDER_INST = re.compile(
 BINDER_IMPL = re.compile(
     r"\{(?P<names>[^{}:]+?)\s*:\s*(?P<type>(?:[^{}]|\{[^{}]*\})*)\}"
 )
-# `class C ... where` followed by its indented field block.
+# `class C ... where` / `structure S ... where` + its indented field block.
+#
+# Matching `class` alone was NECESSARY but NOT SUFFICIENT to see the
+# structure-valued variant: widening this regex on its own moved the corpus
+# count 13 -> 13, because the comparison below then still failed on sibling
+# qualification.  Both changes are required; either alone reports nothing.
 CLASS_DECL = re.compile(
-    r"^\s*(?:@\[[^\]]*\]\s*)?class\s+(?P<name>[A-Za-z_][A-Za-z0-9_.']*)"
-    r"(?P<params>[^\n]*?)\bwhere\b(?P<body>(?:\n(?:[ \t]+[^\n]*|[ \t]*))*)",
+    r"^\s*(?:@\[[^\]]*\]\s*)?(?:class|structure)\s+(?P<name>[A-Za-z_][A-Za-z0-9_.']*)"
+    # `params` may span LINES: a structure often carries its typeclass binders
+    # over several.  It was `[^\n]*?` — single-line — so a declaration whose
+    # `where` sat on line 4 never matched at all, and its fields were absent
+    # from the map.  That was the THIRD independent reason the motivating case
+    # went undetected, after `class`-only matching and sibling qualification.
+    # Bounded to 6 lines and forbidden from crossing a blank line so it cannot
+    # run away into the next declaration.
+    r"(?P<params>(?:[^\n]*\n(?=[ \t]*\S)){0,6}[^\n]*?)\bwhere\b"
+    r"(?P<body>(?:\n(?:[ \t]+[^\n]*|[ \t]*))*)",
     re.M,
 )
 CLASS_FIELD = re.compile(
@@ -181,8 +194,24 @@ def analyze(path: Path):
         if not btype:
             continue
         base = btype.split()[0].lstrip("@")  # `C M q` -> `C`
-        ftype = classes.get(base, {}).get(fname)
-        if ftype and norm(ftype) == conclusion:
+        siblings = classes.get(base, {})
+        ftype = siblings.get(fname)
+        if not ftype:
+            continue
+        # A field type is written INSIDE the structure, where sibling fields are
+        # bare (`commutes : ... ≫ connection = prolonged_connection ≫ ...`).
+        # The conclusion is written at the USE SITE, where the same fields carry
+        # the binder prefix (`jp.connection`).  A raw comparison therefore never
+        # matches precisely for the interesting case -- a field whose type
+        # mentions its siblings, which is what a `commutes`/`claim` field is.
+        # Qualify the siblings before comparing.
+        qualified = norm(ftype)
+        for sib in siblings:
+            if sib == fname:
+                continue
+            qualified = re.sub(rf"(?<![.\w]){re.escape(sib)}\b",
+                               f"{bname}.{sib}", qualified)
+        if norm(ftype) == conclusion or qualified == conclusion:
             _hit(f"{bname}.{fname}", "class-field-is-conclusion")
     return out
 

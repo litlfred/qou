@@ -34,7 +34,7 @@ Lifting needs no induction once the subword property is available: a subword of 
 `w` ending in `s` either uses that final `s` or does not, and *both* branches already exhibit what
 is wanted.
 
-## 🛑 The converse bridge is NOT proved, and the obstacle is NOT lifting
+## The converse bridge — open when this file was written, CLOSED since
 
 `reflStep_of_eraseIdx` shows the atom: deleting **one** letter from a reduced word is exactly a
 downward reflection step, with the reflection read off Mathlib's right inversion sequence. The
@@ -44,15 +44,70 @@ temptation is to iterate it and get `BruhatLe → ReflLe` for free.
 **not reduced**, so their products need not have strictly decreasing lengths — the chain of
 reflection steps a `ReflLe` requires is not the chain of deletions.
 
-**An earlier version of this note said the repair was the lifting property. Lifting is now proved,
-in this file, and the converse still does not follow — so that diagnosis was wrong.** The obstacle
-that actually remains is one step down: an induction on `ℓ(w)` wants an intermediate `v` with
-`ReflStep v w` and `u ≤ v`, and the natural candidate `v = π (ω.eraseIdx j)` fails to deliver
-`u ≤ v` because `ω.eraseIdx j` is not reduced — so the subword of it witnessing `u` is not a
-witness in the sense `BruhatLe` demands. Bridging that needs "a subword of an *arbitrary* word for
-`w` still gives `u ≤ w`", which is not proved here.
+**Two diagnoses of this obstacle have now been written here and BOTH were wrong. They are recorded
+rather than deleted, because each one is a plausible thing to try next and each one is a dead end.**
 
-So: `ReflLe → BruhatLe` ✅, `BruhatLe → ReflLe` ❌ (open — and not for the reason first written).
+*First wrong diagnosis:* "the repair is the lifting property". Lifting is now proved, in this file,
+and the converse still does not follow.
+
+*Second wrong diagnosis:* "it needs a subword of an **arbitrary** word for `w` to give `u ≤ w`".
+That statement is not merely unproved — **it is FALSE**, and `not_forall_bruhatLe_of_sublist` below
+proves it false. Take `ω = [i, i]`, whose product is `1`, and the subword `[i]`, whose product is
+`sᵢ`: the claim would give `sᵢ ≤ 1`, and `bruhatLe_one_iff` forces `sᵢ = 1`, contradicting
+`ℓ(sᵢ) = 1`. Any route through it is dead.
+
+**Where the difficulty actually sits**, stated as precisely as it is currently understood. Induct on
+`ℓ(w)` with `ω = ω₁ ++ [s]` reduced for `w`, and split the reduced witness `ω'` for `u`:
+
+* `ω' <+ ω₁` — then `u ≤ w·s`, the induction hypothesis gives `u ≤ᵣ w·s`, and `w·s →ᵣ w` is one
+  reflection step. **This branch closes.**
+* `ω' = a ++ [s]` — then `u·s ≤ w·s` and the induction hypothesis gives `u·s ≤ᵣ w·s`. What is needed
+  is `u ≤ᵣ w`, i.e. an **upward lifting property for `≤ᵣ`**: if `x ≤ᵣ y` and `s` is a right *ascent*
+  of both `x` and `y`, then `x·s ≤ᵣ y·s`. **This branch is open.**
+
+The single-step case of that upward lifting **does** go through — if `y = x·t` with `ℓ(x) < ℓ(y)` and
+`s` is an ascent of both, then `y·s = (x·s)·(s t s)`, `s t s` is a reflection, and
+`ℓ(x·s) = ℓ(x) + 1 < ℓ(y) + 1 = ℓ(y·s)`. What fails is the **chain**: nothing forces `s` to remain
+an ascent at the intermediate elements of a `ReflTransGen` chain, and `ReflStep` is not defined for
+a descent.
+
+✅ **That third statement of the obstacle was the right one, and it is now proved** —
+`QOU.IwahoriHecke.BruhatConverse.reflLe_mul_simple_of_ascent`, and with it
+`reflLe_of_bruhatLe` and `bruhatLe_iff_reflLe`. **The two orders are the same relation.**
+
+What unblocked the chain: the intermediate elements of a `ReflTransGen` from `x` to `y` are all
+**shorter than `y`**, so the outer induction hypothesis of the converse applies to them. Carried into
+the lifting lemma, it closes the descent case — via `bruhatLe_of_reflLe` and this file's own
+`bruhatLe_mul_simple_of_isRightDescent`. So the lifting property **is** used, just not where the
+first wrong diagnosis put it: it resolves the descent case *inside* the chain, not the branch.
+
+So: `ReflLe → BruhatLe` ✅ (here), `BruhatLe → ReflLe` ✅ (`BruhatConverse`).
+
+The two wrong diagnoses above are kept anyway. `not_forall_bruhatLe_of_sublist` remains a true
+refutation and is worth having on the record; and the history of what did *not* work is the part a
+reader cannot reconstruct from the finished proof.
+
+## The LEFT-handed variant, and why it is here
+
+`ReflStep` multiplies on the **right** (`w = v · t`).  The tableau side of Mathas' Prop. 3.7
+produces the **left** one: swapping two entries of a tableau is the group action, and
+`TableauPerm.dOf_smul` gives `dOf (swap a b • t) = swap a b * dOf t` — transposition on the
+left.  A consumer that assumes the two are interchangeable fails at the point where
+`bruhatLe_of_reflLe_An` is applied: late, and looking like a hard obstruction.
+
+It is a bridge, not a wall.  `LeftReflStep` / `LeftReflLe` below are the mirrored definitions,
+and `bruhatLe_of_leftReflLe_An` is the mirrored conclusion, obtained by **transport through
+`⁻¹`** rather than by re-proving anything: a reflection is an involution
+(`IsReflection.inv`), `ℓ w⁻¹ = ℓ w`, and `CoxeterBruhat.bruhatLe_inv_iff` carries the
+conclusion back.  Nothing in the `≤ᵣ → ≤` proof is duplicated.
+
+✅ **The open direction is no longer open.** This paragraph read *"`BruhatLe → LeftReflLe`
+transports to `BruhatLe → ReflLe`, which is `qou-3k66` — still open"*, and that was true when it was
+written. `QOU.IwahoriHecke.BruhatConverse` closes `qou-3k66`, so the transport that paragraph
+describes now goes through: `BruhatConverse.leftReflLe_of_bruhatLe_An` and
+`bruhatLe_iff_leftReflLe_An` are the left-handed mirrors, obtained exactly as promised here — by
+`⁻¹`, with nothing re-proved. **The observation that the transport is faithful in both directions is
+what makes it free.**
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §2.1–2.2 (both definitions, Thm 2.2.2)
 -- Ref: [mathas1999] Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group, Prop 3.7
@@ -127,8 +182,9 @@ direction would iterate.
 
 🛑 **Iterating it does not give `BruhatLe → ReflLe`.** A subword deletes several letters, the
 intermediate words are not reduced, and `ReflStep` demands a *strict length increase* at every step
-— which the intermediate products need not provide. See the header: the missing input is **not**
-the lifting property (proved below), but a subword statement about non-reduced words. -/
+— which the intermediate products need not provide. The converse is proved in
+`QOU.IwahoriHecke.BruhatConverse`, and **not** by iterating this: it peels a right descent instead
+and lifts. This lemma is not the route; it is kept because it is the honest atom. -/
 theorem reflStep_of_eraseIdx {ω : List B} (hred : cs.IsReduced ω) {j : ℕ} (hj : j < ω.length) :
     ReflStep cs (π (ω.eraseIdx j)) (π ω) := by
   classical
@@ -223,6 +279,58 @@ theorem lifting (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j 
     have : π a * cs.simple s * cs.simple s = u * cs.simple s := by rw [← hpa, hu]
     rwa [mul_assoc, cs.simple_mul_simple_self, mul_one] at this
 
+/-! ## 🛑 A refuted repair — the converse does not go through this (and did not) -/
+
+/-- **The non-reduced-subword statement is FALSE.**
+
+An earlier note in this file proposed closing `BruhatLe → ReflLe` via *"a subword of an arbitrary
+(not necessarily reduced) word for `w` still gives `u ≤ w`"*. It does not hold, and this is the
+one-line reason: `π [i, i] = 1` while `π [i] = sᵢ`, and `[i]` is a subword of `[i, i]`.
+
+Recorded as a theorem rather than as prose because it is a plausible thing to reach for and the
+prose form of it stood in this file for one commit. -/
+theorem not_forall_bruhatLe_of_sublist (i : B) :
+    ¬ (∀ ω' ω : List B, ω' <+ ω → BruhatLe cs (π ω') (π ω)) := by
+  intro hall
+  have hsub : ([i] : List B) <+ [i, i] := (List.Sublist.refl [i]).cons i
+  have hii : π [i, i] = 1 := by
+    simp [cs.wordProd_cons, cs.simple_mul_simple_self]
+  have hi : π [i] = cs.simple i := by simp
+  have hle := hall [i] [i, i] hsub
+  rw [hii, hi] at hle
+  have heq : cs.simple i = 1 := (QOU.Machinery.CoxeterBruhatOrder.bruhatLe_one_iff cs).mp hle
+  have hlen : ℓ (cs.simple i) = 1 := cs.length_simple i
+  rw [heq, cs.length_one] at hlen
+  exact absurd hlen (by norm_num)
+
+/-! ## The half of the open branch that DOES work -/
+
+/-- **Upward lifting, one step.** If `y = x·t` is a single upward reflection step and `s` is a right
+*ascent* of both `x` and `y`, then `x·s → y·s` is a single upward reflection step too — the
+reflection being the conjugate `s t s`.
+
+This is the piece the converse bridge needs iterated, and it is stated here so that the header's
+claim about it is a theorem rather than an assertion. **What does not follow is the chain version**:
+a `ReflLe` is a `ReflTransGen`, nothing forces `s` to remain an ascent at the intermediate elements,
+and `ReflStep` is not defined for a descent. That gap is the open problem. -/
+theorem reflStep_mul_simple {x y : W} (h : ReflStep cs x y) {s : B}
+    (hx : ℓ x < ℓ (x * cs.simple s)) (hy : ℓ y < ℓ (y * cs.simple s)) :
+    ReflStep cs (x * cs.simple s) (y * cs.simple s) := by
+  obtain ⟨t, ht, hy', hlt⟩ := h
+  refine ⟨cs.simple s * t * cs.simple s, ?_, ?_, ?_⟩
+  · have := ht.conj (cs.simple s)
+    rwa [cs.inv_simple] at this
+  · rw [hy']
+    calc x * t * cs.simple s
+        = x * (cs.simple s * cs.simple s) * t * cs.simple s := by
+          rw [cs.simple_mul_simple_self, mul_one]
+      _ = x * cs.simple s * (cs.simple s * t * cs.simple s) := by simp [mul_assoc]
+  · have hxs : ℓ (x * cs.simple s) = ℓ x + 1 := by
+      rcases cs.length_mul_simple x s with h1 | h1 <;> omega
+    have hys : ℓ (y * cs.simple s) = ℓ y + 1 := by
+      rcases cs.length_mul_simple y s with h1 | h1 <;> omega
+    omega
+
 /-! ## Type `A`: hypothesis-free -/
 
 theorem bruhatLe_of_reflLe_An {n : ℕ} {W : Type*} [Group W]
@@ -238,5 +346,55 @@ theorem subword_property_of_reflLe_An {n : ℕ} {W : Type*} [Group W]
     {ω : List (Fin n)} (hred : cs.IsReduced ω) (hw : cs.wordProd ω = w) :
     ∃ ω' : List (Fin n), ω' <+ ω ∧ cs.wordProd ω' = u :=
   subword_property_An cs (bruhatLe_of_reflLe_An cs h) hred hw
+
+/-! ## The left-handed reflection order
+
+The mirror of everything above, for consumers whose step multiplies on the left.  Every proof
+here is a transport through `⁻¹`; no argument from the right-handed development is repeated. -/
+
+/-- One upward step **on the left**: `w = t · v` for a reflection `t`, with the length going up.
+
+The mirror of `ReflStep`.  It exists because the tableau side of Mathas' Prop. 3.7 produces
+left multiplications (`TableauPerm.dOf_smul`), while `ReflStep` is right-handed. -/
+def LeftReflStep (v w : W) : Prop := ∃ t : W, cs.IsReflection t ∧ w = t * v ∧ ℓ v < ℓ w
+
+/-- **The left-handed reflection-generated order.** -/
+abbrev LeftReflLe : W → W → Prop := Relation.ReflTransGen (LeftReflStep cs)
+
+/-- A left step inverts to a right step: `t⁻¹ = t` for a reflection, and `ℓ` is
+inversion-invariant. -/
+theorem reflStep_inv_of_leftReflStep {v w : W} (h : LeftReflStep cs v w) :
+    ReflStep cs v⁻¹ w⁻¹ := by
+  obtain ⟨t, ht, hw, hl⟩ := h
+  refine ⟨t, ht, ?_, ?_⟩
+  · rw [hw, mul_inv_rev, ht.inv]
+  · rwa [cs.length_inv, cs.length_inv]
+
+/-- The chain version of `reflStep_inv_of_leftReflStep`.  Note the chain does **not** reverse:
+`⁻¹` is applied pointwise, and `ReflTransGen` is closed under that. -/
+theorem reflLe_inv_of_leftReflLe {v w : W} (h : LeftReflLe cs v w) :
+    ReflLe cs v⁻¹ w⁻¹ := by
+  induction h with
+  | refl => exact Relation.ReflTransGen.refl
+  | tail _ hstep ih => exact ih.tail (reflStep_inv_of_leftReflStep cs hstep)
+
+/-- **`LeftReflLe → BruhatLe` in type `A`, hypothesis-free** — the left-handed mirror of
+`bruhatLe_of_reflLe_An`, and the lemma a Mathas Prop. 3.7 consumer actually needs.
+
+Proof: transport to the right-handed statement through `⁻¹`, apply
+`bruhatLe_of_reflLe_An`, transport the conclusion back with
+`CoxeterBruhat.bruhatLe_inv_iff`. -/
+theorem bruhatLe_of_leftReflLe_An {n : ℕ} {W : Type*} [Group W]
+    (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u w : W} (h : LeftReflLe cs u w) :
+    BruhatLe cs u w :=
+  (bruhatLe_inv_iff cs).mp (bruhatLe_of_reflLe_An cs (reflLe_inv_of_leftReflLe cs h))
+
+/-- The subword corollary in left-handed form. -/
+theorem subword_property_of_leftReflLe_An {n : ℕ} {W : Type*} [Group W]
+    (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u w : W} (h : LeftReflLe cs u w)
+    {ω : List (Fin n)} (hred : cs.IsReduced ω) (hw : cs.wordProd ω = w) :
+    ∃ ω' : List (Fin n), ω' <+ ω ∧ cs.wordProd ω' = u :=
+  subword_property_An cs (bruhatLe_of_leftReflLe_An cs h) hred hw
+
 
 end QOU.IwahoriHecke.BruhatReflection

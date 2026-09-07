@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 7-10
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 Formal power series with factorial growth lead, under some assumptions, to a universal mathe-
 matical structure described by the theory of resurgence, see [44, 45] for a formal description and

@@ -46,8 +46,10 @@ actually construct that q-difference `D_q` from Σ.
 ## What is missing (the real gap)
 
 Neither Mathlib nor the corpus has a **q-jet bundle / q-D-module prolongation of a
-connection on an algebraic curve**. There is no object `J^n_q E`, no q-difference
-connection lift, no q-symbol calculus at a ramified pole. This is genuine
+connection on an algebraic curve**. There is no object `J^n_q E` and no q-difference
+connection lift.
+
+> 🛑 **Correction (2026-09-06, `qou-p6m1`).** This sentence also said “no q-symbol calculus at a ramified pole”. That half is **false since 2026-09-03**: `QOU.Mathlib.RamifiedShiftCalculus` builds exactly that, sorry-free. `J^n_q E` and the connection lift remain absent, so **this gap stands** — narrowed, not closed. This is genuine
 mathematical-infrastructure construction, not a probe.
 
 ## Existing infra to build on
@@ -111,9 +113,11 @@ no fit, no conjecture-class asserting the identification:
 The **jet-tower lift** `D_q : Jⁿ E → Jⁿ⁺¹ E` over Σ compatible with the SW connection
 is still open, blocked on TWO things:
 
-- **(i) Missing infra.** No q-jet bundle / q-D-module prolongation of a connection on
-  an algebraic curve exists in Mathlib or the corpus (the ingredients above are the
-  *base* operator + the *curve* structure, not the bundle lift).
+- **(i) Missing infra.** No q-jet bundle prolongation of a connection on
+  an algebraic curve exists in Mathlib or the corpus (the ingredients above are
+  the *base* operator + the *curve* structure, not the bundle lift). The
+  *symbol calculus* half of this item's original wording is **PRESENT** since
+  2026-09-03 — `QOU.Mathlib.RamifiedShiftCalculus`, sorry-free; see `qou-p6m1`.
 - **(ii) q-chain-rule obstruction.** The classical jet uses implicit differentiation
   `X' = −(∂_z C)/(∂_X C)` of `C_z(X(z))=0`. The Jackson q-derivative has **no clean
   chain rule** for `D_q(C_z(X(z)))`, so the classical implicit-jet route does not

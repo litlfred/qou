@@ -8873,7 +8873,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
-    "rationale": "WRONG JOIN \u2014 LOUD. The seeded id names a two-author monograph on basic hypergeometric series published by a university press. This PDF's own front matter shows a single-author arXiv preprint from a different decade on the Stokes phenomenon for a q-difference equation. Different author count, different decade, different document type; no plausible relation. The join is a filename-era machine guess, and the same id is ALSO seeded on a second, entirely different document in this slice \u2014 the signature of a guess keyed on the phrase 'basic hypergeometric' appearing in an abstract. I set `id: null`: grep confirms no `ref()` entry exists for this author or arXiv id. NOT MERELY MIS-JOINED \u2014 GENUINELY RELEVANT AND UNREGISTERED. The corpus runs a substantial q-Borel / q-Stokes program (`QOU/MathlibExt/QBorelKernel.lean`, `QBorelKernelLevel.lean`, `QOU/QBeta/C1*.lean`, `computations/qbeta/qbeta_dladder_parity_split_resummation_probe.py`, `docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md`) whose only registered analytic frame is the Ramis\u2013Sauloy\u2013Zhang entry. Corpus-grep run per AGENTS.md \u00a7'Before declaring open': docs/, content/, computations/ and docs/coordination/ contain no entry for this document. Its explicit connection formulae obtained by TWO different q-Borel\u2013Laplace resummations, and its level-(r\u22121) higher-order q-Borel\u2013Laplace transformation, are exactly the missing-level machinery that attack plan needs \u2014 the registered RSZ entry is restricted to integral slopes and, as the registry itself records at references.ts:7652, supplies nothing for a module that is pure isoclinic at the point in question.",
+    "rationale": "Join CONFIRMED 2026-09-07 against the title page: arXiv:1404.2541v1, single author, 22 pp, matches the morita2014 entry (library block docId arxiv-1404.2541v1). HISTORY, kept because the row read the opposite for a month: the 2026-08-08 assessment recorded 'WRONG JOIN - LOUD' (the seeded id then named a two-author monograph) and set id: null; the id was backfilled to morita2014 on 2026-09-03 (note below) but this rationale and the add-reference action were not updated, so a reader of the row saw an unregistered orphan while references.ts held the entry. The add-reference action is DONE (bean qou-zdty completed); the cite-in-block action stays open (bean qou-hnuw, todo). Verdict unchanged, supporting: Thm 3.1 / Thm 7.1 give the connection formulae of the Ramanujan equation q x u(q^2 x) - u(q x) + u(x) = 0 between 0 and infinity by q-Borel-Laplace resummation, and Thm 8.3 / 9.3 the level r-1 extension for the divergent rphi0 - the explicit q-Stokes precedent the W2 attack needs, registered as the RSZ frame's complement (RSZ covers only integral slopes and gives dimension 0 for a single-slope module). Companion precedent one order down: morita2012b (arXiv:1205.1453, the bilateral 1psi0), triaged 2026-09-07.",
     "keyResults": [
      {
       "locator": "Thm 3.1 (and Thm 7.1)",
@@ -8896,7 +8896,7 @@
     "proposedActions": [
      {
       "action": "add-reference",
-      "rationale": "No ref() entry exists for this document; it is a directly usable q-Borel\u2013Laplace / q-Stokes source for the active W2 attack plan. Registering it is the prerequisite for any citation.",
+      "rationale": "DONE (bean qou-zdty completed 2026-08-21, PR #5384): the entry morita2014 exists with a library block pointing at this directory. Kept for the record; no further work.",
       "target": "content/schema/references.ts",
       "bean": "qou-zdty"
      },
@@ -8911,10 +8911,10 @@
      "kind": "agent",
      "model": "claude-opus-5"
     },
-    "assessed_at": "2026-08-08T23:34:05.459Z",
+    "assessed_at": "2026-09-07T08:38:46Z",
     "source_sha": "edb7c9b2b156"
    },
-   "note": "Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \"held but uncitable\"; the join already existed on the references.ts side.",
+   "note": "Bib key backfilled from library block in references.ts (2026-09-03). Row rationale corrected 2026-09-07 by the q-difference/Stokes triage: it still described the document as an unregistered wrong join.",
    "verified_at": "2026-09-03T04:37:40Z",
    "verified_by": {
     "kind": "agent",
@@ -17464,6 +17464,615 @@
    "source": {
     "kind": "upload",
     "file": "library/arxiv-math-9907032v1/9907032v1.pdf"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-0902.0350v1/0902.0350v1.pdf"
+   },
+   "id": "hales-etal2010",
+   "status": "uncited",
+   "note": "Identified from the arXiv title page (arXiv:0902.0350v1, math.MG, 2 Feb 2009): Hales, Harrison, McLaughlin, Nipkow, Obua, Zumkeller, 'A revision of the proof of the Kepler conjecture', 41 pp. No ref() entry existed before this triage (references.ts had no Kepler / sphere-packing entry; its only 'kissing' match was the surname Kissinger). Entry hales-etal2010 created 2026-09-06; no citation site yet \u2014 bib orphan pending the cite-in-block bean.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "Corpus-grepped before judging: docs/audits/2026-09-05-max-contact-sub-affine-negative.md \u00a75 states outright that 'references.ts has no packing entry' and that the Harborth/Bezdek/contact-number/sphere-packing forms were 'deliberately not cited' because nothing was held; rem:bk-coordination-multiplicity (lines 83-86) and QOU.Mass.CoordinationSaturation nonetheless appeal to 'a geometric close-packing count' / 'the close-packing / fcc picture'. This document is now the held source for the ONE thing it actually establishes for the folio: the Kepler theorem statement (Introduction, p. 2 \u2014 no packing of congruent balls in E^3 exceeds the fcc density), i.e. that fcc is the density-optimal reference configuration the coordination arc names. It does not prove the kissing number 12 or any contact-number bound (those are Sch\u00fctte\u2013van der Waerden 1953 and bezdek-reid2013 Theorem 1), so it cannot by itself source the bounded-degree k = 12 of prop:coordination-saturation. Part 1 (\u00a71\u2013\u00a77: Flyspeck, HOL Light / Isabelle formalisation of the nonlinear inequalities, tame-graph enumeration, LP verification) is a methodological precedent for this repository's blueprint-then-formalise discipline but supplies no mathematics the folio consumes; Part 2 (\u00a78 biconnected graphs, \u00a79 errata) is internal to the Kepler proof. Not 'core': the corpus records four standing objections to importing Euclidean packing geometry at all (internal derivation demanded by qou-rav3; ambient geometry hyperbolic; three-dimensionality underived; exponent imported) and a citation makes the import citable, not derived. Scope-(a): as read, the usable content is the density statement and nothing else.",
+    "keyResults": [
+     {
+      "locator": "Introduction, p. 2 (statement); \u00a72 blueprint edition; Part 2 \u00a78\u2013\u00a79 errata to the 2005 proof",
+      "statement": "No packing of congruent balls in three-dimensional Euclidean space has density greater than the face-centred cubic packing; the paper records the reorganised (blueprint) proof and the errata to the original.",
+      "useForFolio": "Gives rem:bk-coordination-multiplicity's 'geometric close-packing count' and prop:coordination-saturation's fcc picture a held citation for the density-optimality of fcc. It does not supply the coordination bound itself (see bezdek-reid2013) and does not touch the corpus's four objections to the geometric import.",
+      "targets": [
+       "rem:bk-coordination-multiplicity",
+       "prop:coordination-saturation"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "Relevant and no ref() entry existed; created in this triage pass as hales-etal2010 (journal volume/pages recalled, DOI omitted \u2014 Crossref unreachable in-sandbox).",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "The close-packing / fcc appeal in rem:bk-coordination-multiplicity and the CoordinationSaturation Lean docstring is unsourced; cite the density statement here and the contact bound from bezdek-reid2013 in the same edit (one combined bean for the two packing sources).",
+      "target": "rem:bk-coordination-multiplicity",
+      "bean": "qou-ywbd"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "4591687132c9"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-1210.5756v1/1210.5756v1.pdf"
+   },
+   "id": "bezdek-reid2013",
+   "status": "uncited",
+   "note": "Identified from the arXiv title page (arXiv:1210.5756v1, math.MG, 21 Oct 2012): Bezdek and Reid, 'Contact graphs of unit sphere packings revisited', 19 pp, 13 sections. No ref() entry existed (references.ts had no packing entry). Entry bezdek-reid2013 created 2026-09-06; no citation site yet \u2014 bib orphan pending the cite-in-block bean.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "The lead to check was that the contact-number bounds bear on QOU.Mass.CoordinationSaturation (bounded-degree coordination, bean qou-brng). Verified against the text: Theorem 1(i) (p. 2, proved in \u00a72 via Hales' 13-ball separation, Theorem 5, and an isoperimetric bound on the union of enlarged balls) gives touching pairs < 6n \u2212 0.926 n^{2/3} for ANY packing of n \u2265 2 unit balls in E^3; Theorem 1(ii) < 6n \u2212 3.665 n^{2/3} for lattice packings; and fcc packings with n = (2k^3+k)/3 balls achieve > 6n \u2212 7.862 n^{2/3}. That is precisely the affine-plus-sub-affine shape the corpus's saturation model assumes \u2014 bulk term 6n = 12\u00b7n/2 from the kissing number 12 (bounded degree k = 12) and a surface deficit \u221d n^{2/3} \u2014 and it brackets the coefficient of the n^{2/3} surface term the corpus computes for fcc facets in docs/audits/2026-09-05-coordination-surface-deficit.md. Theorem 2 (touching triplets \u2264 25n/3, quadruples \u2264 11n/4) bounds the higher-body-order contact counts that QOU.MassTheory.BodyOrderRecurrenceDepth says the extensive term needs (depth \u2265 3), IF a geometric packing model is adopted. Why not 'core': the corpus already declined to cite exactly these forms on principle (docs/audits/2026-09-05-max-contact-sub-affine-negative.md \u00a75 \u2014 qou-rav3 demands an internal packing argument; the ambient geometry is hyperbolic and using it consistently costs 2.64x; three-dimensionality is derived nowhere; the exponent is imported). Bezdek\u2013Reid is Euclidean and settles none of those; it converts an unreferenced import into a referenced one. Also verified: Theorems 4/5 (\u00a72) are where the kissing-number-12 rigidity enters, via Hales' result that a 13th ball must sit at distance \u2265 2.52 \u2014 so the 'k = 12' of the Lean has a theorem behind it here, not only a picture. Scope-(a) on the negative half: this document does not derive coordination from the framework; it constrains what any Euclidean-packing realisation of it could give.",
+    "keyResults": [
+     {
+      "locator": "Theorem 1(i), p. 2; proof \u00a72 (Theorem 4, Corollary 2, isoperimetric step)",
+      "statement": "The number of touching pairs in an arbitrary packing of n \u2265 2 unit balls in E^3 is less than 6n \u2212 0.926 n^{2/3}.",
+      "useForFolio": "The held, sharp form of the bounded-degree (k = 12) plus sub-affine surface-deficit shape that QOU.Mass.CoordinationSaturation and 2026-09-05-coordination-surface-deficit.md assume; cite it where the corpus currently says 'geometric close-packing count'. It makes the Euclidean import citable, not derived \u2014 the four recorded objections stand.",
+      "targets": [
+       "prop:coordination-saturation",
+       "rem:bk-coordination-multiplicity"
+      ]
+     },
+     {
+      "locator": "Theorem 1(ii) and the fcc lower bound quoted from Bezdek [2] on p. 2 (n = (2k^3+k)/3)",
+      "statement": "Lattice packings have fewer than 6n \u2212 3.665 n^{2/3} touching pairs, while explicit fcc clusters have more than 6n \u2212 7.862 n^{2/3}.",
+      "useForFolio": "Brackets the coefficient of the n^{2/3} surface term for fcc clusters, [0.926, 7.862] in general and [3.665, 7.862] for lattices \u2014 a cross-check target for the fcc-facet surface-deficit coefficients the corpus tabulates.",
+      "targets": [
+       "prop:coordination-saturation"
+      ]
+     },
+     {
+      "locator": "Theorem 2(i)\u2013(iii), p. 2; \u00a74\u2013\u00a76 (Theorem 3: \u2264 25 touching pairs / \u2264 11 triplets among caps of angular radius \u03c0/6 on S^2)",
+      "statement": "Touching triplets (resp. quadruples) in a packing of n unit balls in E^3 number at most 25n/3 (resp. 11n/4); fcc clusters realise > 8n \u2212 12(3n/2)^{2/3} + 4n^{1/3} triplets.",
+      "useForFolio": "Bounds the 3- and 4-body contact counts a geometric realisation of the extensive term would carry, relevant to the body-order depth \u2265 3 forcing (QOU.MassTheory.BodyOrderRecurrenceDepth) and the 3-body cumulant sign result (QOU.MassTheory.MayerThreeBodySign); a constraint on any packing model, not a derivation.",
+      "targets": [
+       "QOU.MassTheory.BodyOrderRecurrenceDepth"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "Relevant and no ref() entry existed; created in this triage pass as bezdek-reid2013 (journal volume/pages recalled, DOI omitted \u2014 Crossref unreachable in-sandbox).",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "prop:coordination-saturation's docstring and rem:bk-coordination-multiplicity invoke the close-packing count with no source; Theorem 1(i) is the statement they mean. Combined with the hales-etal2010 citation in one bean because both land in the same sentence.",
+      "target": "prop:coordination-saturation",
+      "bean": "qou-ywbd"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "c7546a79a85b"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-1610.02592v3/1610.02592v3.pdf"
+   },
+   "id": "martelli2016",
+   "status": "uncited",
+   "note": "Identified from the title page and arXiv stamp (arXiv:1610.02592v3, math.GT, 5 Apr 2022): Bruno Martelli, 'An Introduction to Geometric Topology', 494 pp, 68 sections (self-published graduate textbook). No ref() entry existed; docs/audits/2026-09-06-hyperbolic-surface-law.md line 144 and bean qou-j8hp listed it as 'absent \u2014 optional'. Entry martelli2016 created 2026-09-06; no citation site yet.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "A textbook, so 'supporting' by construction \u2014 it derives nothing the folio does not already take from thurston1978 / neumann-zagier1985 / benedetti-petronio / ratcliffe \u2014 but it is the first HELD, sectioned, greppable source for the exact statements the NZ-from-braid chain (docs/audits/2026-09-06-nz-gluing-data-from-braid-monodromy.md, beans qou-n2cl / qou-yvyd) checks against. Read for this triage: \u00a713.1 (Thm 13.1.3, Cor 13.1.4), \u00a714.1 (14.1.1\u201314.1.7: ideal tetrahedra as a single shape z, ideal triangulations, Prop 14.1.7 consistency + completeness \u21d2 complete finite-volume hyperbolic structure, Prop 14.1.8 valence-6 triangulations at z = e^{i\u03c0/3}, Fig 14.7 + \u00a714.1.7 identifying that two-tetrahedron triangulation as the figure-eight complement, Thm 14.1.10 the torus/satellite/hyperbolic trichotomy), \u00a715.1 (Thm 15.1.1 hyperbolic Dehn filling, Table 15.1 exceptional surgeries of 4_1), \u00a715.2 (Prop 15.2.1, Cor 15.2.8, Prop 15.2.9 / 15.2.11 Lagrangian rows, the solution space as a complex manifold parametrised by peripheral holonomy), and \u00a711.3\u201311.4 (Dehn surgery, torus bundles, Prop 11.4.14 Anosov monodromy). Each of these is a claim the corpus currently makes with a citation to Thurston's notes or NZ; Martelli gives numbered, held statements. What it does NOT contain, checked by grep: the Floyd\u2013Hatcher punctured-torus-bundle layering and Gu\u00e9ritaud's two-bridge layered triangulations (no 'punctured torus', 'Farey', 'two-bridge' or 'layered' hits outside a caption), so it cannot replace library arxiv-0808.2716v4 for qou-yvyd; and it treats only closed torus bundles in \u00a711.4. Per the owner's instruction the two-bridge work is not attempted here \u2014 this row records the citation only.",
+    "keyResults": [
+     {
+      "locator": "\u00a714.1.3\u201314.1.5, Prop 14.1.7 (pp. 429\u2013441)",
+      "statement": "For an ideal triangulation with n tetrahedra and c cusps, a shape vector with Im z_i > 0 satisfying the n consistency (edge) and 2c completeness (cusp) equations defines a complete finite-volume hyperbolic metric on M.",
+      "useForFolio": "The held statement behind prop:hyperbolic-knot-shape-fields and prop:gluing-equations-do-not-detect-hyperbolicity (both cite thurston1978 + neumann-zagier1985 only), and behind step 4 of the NZ-from-braid chain.",
+      "targets": [
+       "prop:hyperbolic-knot-shape-fields",
+       "prop:gluing-equations-do-not-detect-hyperbolicity"
+      ]
+     },
+     {
+      "locator": "Prop 14.1.8, Fig 14.7, \u00a714.1.7 (SnapPea)",
+      "statement": "A triangulation whose edges all have valence six is solved by z = e^{i\u03c0/3} throughout (all tetrahedra regular); the two-tetrahedron, two-edge instance is the figure-eight knot complement.",
+      "useForFolio": "Literature form of the audit's \u00a72 exact-solution check z_0 = z_1 = \u03c9 (\u03c9\u00b2 \u2212 \u03c9 + 1 = 0) and of QOU.Mass.FigureEightGluingFromMonodromy.figure_eight_gluing_at_sixth_root; a -- Ref: for that Lean docstring.",
+      "targets": [
+       "QOU.Mass.FigureEightGluingFromMonodromy"
+      ]
+     },
+     {
+      "locator": "Prop 15.2.1, Cor 15.2.8, Prop 15.2.9 and 15.2.11, \u00a715.2.4 (pp. 450\u2013456)",
+      "statement": "#edges = #tetrahedra; the incidence matrix A has rank 2n \u2212 c; its rows generate a Lagrangian subspace for the (degenerate) symplectic form on shape-parameter space; the solution space of the consistency equations is a complex manifold parametrised by peripheral holonomy.",
+      "useForFolio": "The audit's 'NZ symplectic' check (edge rows isotropic, \u03c9(\u03bc,\u03bb) = \u00b12) is Prop 15.2.9's statement; qou-yvyd's cross-knot gate can cite Cor 15.2.8 for the expected rank of the derived edge rows.",
+      "targets": [
+       "prop:hyperbolic-knot-shape-fields"
+      ]
+     },
+     {
+      "locator": "Thm 13.1.3, Cor 13.1.4 (pp. 407\u2013408)",
+      "statement": "Vol(\u0394) = \u039b(\u03b1) + \u039b(\u03b2) + \u039b(\u03b3) for an ideal tetrahedron with dihedral angles \u03b1, \u03b2, \u03b3 (Lobachevsky function \u039b), maximised by the regular ideal tetrahedron.",
+      "useForFolio": "A held source for the \u039b-form of the Vol(4_1) = 6\u039b(\u03c0/3) = 2\u00b7Cl_2(\u03c0/3) coefficient guard (AGENTS.md; bean qou-zdz5) \u2014 the corpus's '\u039b vs Cl_2' drain can cite the definition it is correcting to.",
+      "targets": [
+       "prop:thurston-volume-additivity"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "Relevant and no ref() entry existed (the hyperbolic-surface-law audit had already flagged it as absent); created in this triage pass as martelli2016.",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "prop:hyperbolic-knot-shape-fields and prop:gluing-equations-do-not-detect-hyperbolicity invoke Thurston's equations with only thurston1978 / neumann-zagier1985; add the numbered textbook statements, and a -- Ref: to the FigureEightGluingFromMonodromy Lean module docstring (Prop 14.1.8, Prop 15.2.9). Citation only \u2014 the two-bridge layering stays with qou-yvyd.",
+      "target": "prop:hyperbolic-knot-shape-fields",
+      "bean": "qou-6cu7"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "81020523d7d2"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-2305.07425v1/2305.07425v1.pdf"
+   },
+   "id": null,
+   "status": "unreviewed",
+   "note": "Identified from the arXiv title page (arXiv:2305.07425v1, math.GT, dated 15 May 2023): Abbott, Nguyen, Rasmussen, 'Largest hyperbolic actions of 3-manifold groups', 20 pp. No ref() entry, none created (tangential).",
+   "relevance": {
+    "verdict": "tangential",
+    "rationale": "Geometric group theory of 3-manifold groups: the poset of cobounded hyperbolic actions of \u03c0_1(M) (Abbott\u2013Balasubramanya\u2013Osin) and whether it has a largest element (H-accessibility). Read: Introduction (Thm 1.1 \u2014 a non-geometric 3-manifold whose JSJ decomposition contains a hyperbolic piece with a boundary torus of M, two hyperbolic pieces glued along a torus, an isolated non-elementary Seifert piece, or a non-elementary maximal graph-manifold component has H-inaccessible \u03c0_1; Cor 1.2(a) connected sums of cusped hyperbolic 3-manifolds are H-inaccessible; Thm 1.3 non-elementary graph/Seifert manifolds; Thm 1.4 Croke\u2013Kleiner admissible groups have an index \u2264 2 H-inaccessible subgroup; Cor 1.5) and \u00a72.1 (H-accessibility). Corpus-grep, all four content/docs/beans surfaces: zero hits for 'hyperbolic action', 'H-accessib', 'acylindrical', 'hierarchically hyperbolic', 'Croke-Kleiner'. The folio's objects are single hyperbolic knot complements S^3 \u2216 K (geometric, so outside Thm 1.1's non-geometric hypothesis) and its invariants come from the Hecke algebra / Markov trace and the NZ gluing data, never from group actions of \u03c0_1 on hyperbolic spaces; the one connection \u2014 that a hyperbolic group's largest action is its action on H^3 \u2014 is background the folio never invokes. Same broad field (3-manifold topology), no consumable result. Scope-(a): this document, as read, supplies nothing usable here; that is not a claim that geometric-group-theoretic invariants of knot groups are excluded from any future closure.",
+    "keyResults": [],
+    "proposedActions": [
+     {
+      "action": "no-action",
+      "rationale": "No result here attaches to any block, Lean declaration or script; no reference created.",
+      "target": "content/bib-qa-verifications.json"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "2f7d2ac5818b"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-2501.00914v2/2501.00914v2.pdf"
+   },
+   "id": null,
+   "status": "unreviewed",
+   "note": "Identified from the arXiv title page (arXiv:2501.00914v2, math.GT, 13 Mar 2026): Baldwin and Sivek, 'L-spaces and knot traces', 37 pp, 21 sections. No ref() entry, none created (tangential).",
+   "relevance": {
+    "verdict": "tangential",
+    "rationale": "Four-dimensional knot detection via traces X_n(K) = B^4 \u222a (n-framed 2-handle along K) and Heegaard Floer homology. Read: Introduction and \u00a71.1 (Thm 1.2 the 0-trace detects every L-space knot; Thm 1.3 any trace detects whether a knot is an L-space knot and its genus; Thm 1.4 L-space knots with diffeomorphic 0-surgeries are equal \u2014 via Lee\u2013Taubes / Kutluhan\u2013Lee\u2013Taubes symplectic-Floer \u2194 HF of the mapping torus; Thm 1.5 positive torus knots are detected by every n-trace with n \u2264 0; Thm 1.6 the positive-trace case for T_{2,2g+1} up to a knot-Floer coincidence). Corpus-grep, all surfaces: zero hits for 'L-space', 'knot trace', 'characterizing slope', 'Heegaard Floer', 'HFK'. The folio's knot invariants are the Jones / Markov trace tr_M of a braid closure in H_n(q) and the hyperbolic gluing data; it has no Floer theory and no 4-manifold layer. Homonym trap worth recording: 'knot trace' (the 4-manifold) is unrelated to the folio's 'Markov trace' and 'trace field', so a corpus-grep on 'trace' lands falsely. The nearest contact \u2014 \u00a72's fixed-point-free monodromy (FFPF) criterion for fibred knots, alongside the NZ-from-braid chain's use of the figure-eight fibre monodromy \u2014 is a Floer-theoretic input, not a gluing datum, and nothing here changes the corpus's monodromy computation. Scope-(a): as read, supplies nothing usable.",
+    "keyResults": [],
+    "proposedActions": [
+     {
+      "action": "no-action",
+      "rationale": "No result attaches to a block, Lean declaration or script; no reference created.",
+      "target": "content/bib-qa-verifications.json"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "d94bd6edf854"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-2601.07906v2/2601.07906v2.pdf"
+   },
+   "id": null,
+   "status": "unreviewed",
+   "note": "Identified from the title page (arXiv:2601.07906v2, hep-th, 25 Mar 2026; header 'March 2026'): Belin, Collier, Eberhardt, Liska, Post, 'A universal sum over topologies in 3d gravity', 117 pp, 31 sections. No ref() entry, none created (tangential).",
+   "relevance": {
+    "verdict": "tangential",
+    "rationale": "The lead was a possible bearing on the Stokes/resurgence arc (conj stokes-dt-bps-bridge, ecalle-borel-resurgence-vocabulary); the instruction was to be sceptical, and the scepticism is borne out. Read: Introduction (eq. 1.1 Z[\u03a3] = \u03a3_{\u2202M=\u03a3} Z_grav[M], the handlebody sum 1.2 over MCG(\u03a3_g)/H_g), \u00a74.3 'the gravitational machine is hyperbolic' (the surgery moves preserve hyperbolicity by Thurston's hyperbolisation criterion \u2014 prime, homotopically atoroidal), \u00a74.4 (not every hyperbolic 3-manifold is generated; acylindrical ones are excluded), \u00a75.3 handlebody knots, \u00a76 discussion. The object is a SUM OVER DISTINCT COMPACT HYPERBOLIC 3-MANIFOLDS with a genus-g conformal boundary, each weighted by an exact Virasoro-TQFT partition function, organised so that the boundary CFT_2 data form a consistent statistical ensemble. The folio's Stokes constant is a coefficient in the Borel-plane structure of the state integral (Teichm\u00fcller TQFT / Andersen\u2013Kashaev / DGG) of ONE cusped knot complement S^3 \u2216 K, conjecturally a DT/BPS integer of T[K]. Grep of all 31 sections: zero hits for 'Stokes', 'resurgen', 'Borel', 'state integral', 'knot complement', 'cusped'; 'Teichm\u00fcller' appears only as boundary moduli and in the bibliography. A sum over topologies is not a trans-series over the Borel-plane saddles of a single manifold, so the two 'sums over hyperbolic manifolds' are different objects and no result transfers. Shared background only: Thurston hyperbolisation (the folio cites thurston1978) and the handlebody-knot tables. Nothing in content/ or docs/audits cites Virasoro TQFT (one audit mentions Teichm\u00fcller TQFT in passing). Scope-(a): as read, supplies nothing usable to the resurgence arc; a Virasoro-TQFT-on-knot-complements bridge is not excluded by this reading, it is simply not in this paper.",
+    "keyResults": [],
+    "proposedActions": [
+     {
+      "action": "no-action",
+      "rationale": "No result attaches to the Stokes/resurgence blocks or any other block; no reference created. Re-triage only if a Virasoro-TQFT \u2194 state-integral identification enters the corpus.",
+      "target": "content/bib-qa-verifications.json"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "e69b1bf37f2c"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-2605.20846v1/2605.20846v1.pdf"
+   },
+   "id": "li2026-two-sphere",
+   "status": "uncited",
+   "note": "Identified from the title page (arXiv:2605.20846v1, math.AT, 20 May 2026): Chris Li, 'Topological Field Theories and the Algebraic Structures of the Two-Sphere', 99 pp, 17 sections, thesis-style (the text calls itself a thesis; no institution on the extracted pages). No ref() entry existed. Entry li2026-two-sphere created 2026-09-06; no citation site yet.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "The lead was the categorical-foundations chapter; the block that actually wants it is rem:tqft-context (content/quantum-observable-universe/quantum-observable-universes/tqft-context.md), which asserts that the Frobenius\u2013Hopf object A 'carries the 2d cobordism data' inside the 3d TQFT and that Hom(1, Ad(A)) = 0 is the 'categorical contact condition' for its irreducibility. Read: Introduction (Thms 1.0.3, 1.0.5\u20131.0.8), \u00a75.1 (Def 5.1.1, Lemma 5.1.2, Def 5.1.7 P/L-monoids), \u00a75.2 heading, \u00a7A.2. Thm 1.0.8 (= Thm 3.3.6) is the precise theorem behind the block's first sentence: a canonical isomorphism Cob(2) \u2245 Cob(3)_{S^2,CF} between the 2d bordism category and the commutative-Frobenius sub-bordism category of the S^2-sector of Cob(3), sending n circles to n spheres and multiplication/unit/trace/comultiplication to their S^2 counterparts, a genus-g bordism to g connect-sum factors of S^2 \u00d7 S^1. Thms 1.0.5/1.0.6 give the full presentation of Cob(3)_{S^2}: one extra generator per closed oriented irreducible prime 3-manifold (Kneser\u2013Milnor, Thm 1.0.7) plus 'legs' relations; \u00a75.1 packages a 3d TFT's Z(S^2) as a P-monoid \u2245 L-monoid (commutative Frobenius monoid with prime-labelled units). Corpus-grep: 'Cob(' / 'bordism' occur in content/ only in this block (quantum-universes, quantum-observable-universes, models-of-qous: one hit); references.ts has the general TQFT frame (atiyah1988, kock2004, lurie2009, turaev2010) but no statement of the S^2-sector. Why 'supporting' and not 'core': Li's monoids are commutative and sit in a symmetric monoidal target; QOU's A is a Hopf algebra in a braided category and is not assumed commutative, so the match is at the Frobenius-structure level and does not identify A with Z(S^2) of any TFT. The prime-labelled units are extra structure the QOU axioms do not use. Scope-(a) on that: nothing here says the Hopf half or the braiding is incompatible with an S^2-sector reading \u2014 it is simply not addressed.",
+    "keyResults": [
+     {
+      "locator": "Thm 1.0.8 (= Thm 3.3.6), Introduction p. 9 and \u00a73.3",
+      "statement": "There is a canonical isomorphism S : Cob(2) \u2192 Cob(3)_{S^2,CF}; the commutative-Frobenius part of the S^2-sector of the 3d oriented bordism category is exactly the 2d cobordism category.",
+      "useForFolio": "Makes rem:tqft-context's 'A carries the 2d cobordism data' a cited theorem: for every 3d TFT, Z(S^2) is a commutative Frobenius monoid whose Frobenius data is Cob(2). Cite with the caveat that QOU's A is braided-Hopf, not assumed commutative.",
+      "targets": [
+       "rem:tqft-context"
+      ]
+     },
+     {
+      "locator": "Thms 1.0.5, 1.0.6 (= Thms 4.4.13, 4.3.2); Def 5.1.7, Lemma 5.1.2",
+      "statement": "Cob(3)_{S^2} is presented by commutative Frobenius generators plus one generator per closed oriented irreducible prime 3-manifold (a unit \u2205 \u2192 S^2 or an endomorphism of S^2), subject to commutative-Frobenius and legs relations; P-monoids and L-monoids are in bijection.",
+      "useForFolio": "Names the structure the S^2-sector carries beyond Frobenius \u2014 prime-3-manifold-labelled units \u2014 which the QOU axioms do not use; a one-sentence remark in rem:tqft-context can record that scope honestly.",
+      "targets": [
+       "rem:tqft-context"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "Relevant and no ref() entry existed; created in this triage pass as li2026-two-sphere (preprint, no DOI).",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "rem:tqft-context's 2d-cobordism claim has only the general TQFT references; Thm 1.0.8 is the specific theorem. Add the citation and one caveat sentence (commutative/symmetric vs braided-Hopf).",
+      "target": "rem:tqft-context",
+      "bean": "qou-2re6"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "db27cb6d01c4"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/qt2pf5d0mn/qt2pf5d0mn.pdf"
+   },
+   "id": null,
+   "status": "unreviewed",
+   "note": "Identified from the abstract page (eScholarship id qt2pf5d0mn; PDF CreationDate 2016-06-09): Xingshan Cui, 'Higher Categories and Topological Quantum Field Theories', UC Santa Barbara PhD dissertation, 106 pp, 18 sections. The structure.json title 'UC Santa Barbara' is the repository banner, not the document title. No ref() entry, none created (tangential). A published version exists (Cui, 'Four dimensional topological quantum field theories from G-crossed braided categories', Algebr. Geom. Topol. 19, 2019 \u2014 recalled, not verified in-sandbox); cite that rather than the thesis if a citation is ever wanted.",
+   "relevance": {
+    "verdict": "tangential",
+    "rationale": "A (3+1)-dimensional Turaev\u2013Viro-type state-sum TQFT built from a G-crossed braided spherical fusion category (G finite), generalising Crane\u2013Yetter and Yetter's homotopy-2-type invariants, with a monoidal 2-category with duals extracted from the input. Read: Abstract, Introduction (survey of RT / TV / Kuperberg / Hennings / Crane\u2013Yetter constructions), \u00a72 headings, \u00a75 open questions (H^4(G,U(1)) obstruction; G-BSFC \u2194 ribbon fusion categories containing Rep(G) by equivariantisation; a (3+1) Kuperberg invariant; Walker\u2013Wang realisation). Corpus-grep: content/ and docs/audits have no 4-manifold invariant, no Crane\u2013Yetter, no G-crossed or G-graded fusion category; the single 'equivariantiz' hit is docs/audits/2026-08-25-gerbe-tannakian-intake-triage.md, which already holds a primary source on equivariantisation (Galindo\u2013Gallego\u2013Morales, arxiv-2607.10525v1) for the eightfold-way fibre-functor question. The folio uses ribbon fusion categories (Rep SU_q(2), braids-and-knots) at the (2+1) level, for which references.ts already holds turaev2010, bakalovkirillov2001 and etingof-ostrik; \u00a72.1's exposition adds nothing to those. The framework explicitly has no four-manifold layer. Scope-(a): as read, supplies nothing usable; not a claim that (3+1) or G-crossed structures are excluded from a future formulation.",
+    "keyResults": [],
+    "proposedActions": [
+     {
+      "action": "no-action",
+      "rationale": "No result attaches to a block, Lean declaration or script; no reference created.",
+      "target": "content/bib-qa-verifications.json"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "4c8581c3b463"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-math-0611521v1/0611521v1.pdf"
+   },
+   "id": "ramis-sauloy2006",
+   "status": "uncited",
+   "note": "Identified from the title page (arXiv:math/0611521v1, two authors, 22 pp, 16 sections). No ref() entry existed; ramis-sauloy2006 created 2026-09-07 by the triage. Owner upload for the Stokes / q-difference arc. No citation site yet; two cite-in-block beans queued.",
+   "relevance": {
+    "verdict": "core",
+    "rationale": "The object QOU/Mathlib/QAlienBridgeEquation.lean is named after and models \u2014 a q-native alien derivation, conjugated by the dilation automorphism, with the docstring claim that the adjoint action is 'the Levi decomposition of the local q-difference Galois group, a torus of characters q^n extended by a unipotent part that the q-logarithm generates' \u2014 has its source in this paper, and the file cites only [ramis-sauloy-zhang2013] for it. Read: Abstract, \u00a71, \u00a72.3 (Prop 2.5 and eq. (6): the Stokes operator S_{c,d} is the ambiguity between two q-directions of summation c, d in E_q, points of the elliptic curve rather than sectors; 'case of one level' assumes two integral slopes mu < nu with delta = nu - mu), \u00a73.1 (Thm 3.3: S_{c0,c} lies in the Stokes group St(A); Cor 3.4 its logarithm is Lie-like; Thm 3.5 DEFINES the q-alien derivations as residues of that logarithm in c, valued in the Stokes Lie algebra st(A) and graded by level, eq. (16); Thm 3.6 they are Lie-like tensor-endomorphisms of the fibre functor), \u00a73.2 (Thm 3.8: the level-delta q-Borel transform vanishing on the block entries is a complete analytic invariant within the formal class; Thm 3.9: the q-Borel invariant maps to the alien-derivation invariant by left multiplication by a theta power), \u00a74 (item 1: the programme of copying Ecalle's alien derivations to the q-case; items 2-3: global classification and confluence left open by the authors). Corpus-grep before judging (AGENTS.md paths 1-6): 'wild fundamental group' has ZERO hits in content/, docs/, computations/ and .beans/; 'Ramis'/'Sauloy' hits are all the RSZ Asterisque monograph or the Di Vizio-Ramis-Sauloy-Zhang survey; bean qou-vkg5 (open item 2, 'the q-native form ... whether the eigenvalue shift is additive or multiplicative is not settled') and the file's own 'Not claimed' paragraph ('exhibiting one from a resurgent q-series is untouched') are exactly the gap Thm 3.5 supplies the object for. Scope of the verdict: this paper supplies the OBJECT (the q-alien derivations and their Lie algebra) and the reading of the q-Borel kernel (Thm 3.8/3.9); it does NOT establish that QBridgeSystem's 'bridge' field holds for those derivations with any particular weight, so no aid-proof is proposed. Also relevant, one level down: RSZ-route caveat stands \u2014 \u00a72.3 is a two-slope, integral-slope setting, and C1 at infinity is pure isoclinic (docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md), so nothing here supplies C1 Stokes data.",
+    "keyResults": [
+     {
+      "locator": "\u00a72.3, Prop 2.5 and eq. (6)",
+      "statement": "For each q-direction c in E_q off the singular set there is a unique summation S_c of the formal isomorphism, and the Stokes operator S_{c,d} = (S_c)^{-1} S_d is the ambiguity between two directions.",
+      "useForFolio": "The q-Stokes operator is parameterised by points of the elliptic curve E_q, not by sectors \u2014 the structural fact behind the corpus's 'the Stokes data sits in the choice of theta / the theta torsor' reading (bean qou-wgnx).",
+      "targets": [
+       "QOU.Mathlib.QAlienBridgeEquation",
+       "qou-wgnx"
+      ]
+     },
+     {
+      "locator": "Thm 3.5, Thm 3.6, eq. (16)",
+      "statement": "The q-alien derivations are the residues in c of log S_{c0,c}; they lie in the Stokes Lie algebra st(A), decompose by level delta = mu_j - mu_i, and are Lie-like tensor-endomorphisms of the fibre functor.",
+      "useForFolio": "The source of the object QAlienBridgeEquation.lean abstracts as `alien : Omega -> Derivation R A A`; the level grading is the q-analogue of the weight grading the file's `weight` field carries.",
+      "targets": [
+       "QOU.Mathlib.QAlienBridgeEquation"
+      ]
+     },
+     {
+      "locator": "Thm 3.8, Thm 3.9 (\u00a73.2)",
+      "statement": "Equation (8) has a convergent solution iff the level-delta q-Borel transform of the block entries vanishes; the q-Borel invariants and the alien-derivation invariants are related by left multiplication by a theta power.",
+      "useForFolio": "Says what the level-d q-Borel kernel formalised in QBorelKernel.lean / QBorelKernelLevel.lean is an invariant OF, and ties it to the alien derivations \u2014 two corpus files currently linked only through RSZ \u00a73.3.",
+      "targets": [
+       "QOU.MathlibExt.QBorelKernel",
+       "QOU.MathlibExt.QBorelKernelLevel"
+      ]
+     },
+     {
+      "locator": "\u00a74 (Conclusion), item 1",
+      "statement": "Programme: define unpointed q-alien derivations acting on q-holonomic power series, replacing Ecalle's resurgence lattice by the singular sets in the q-Borel planes at each level.",
+      "useForFolio": "The literature statement of the open q-native bridge-equation question in bean qou-vkg5 \u2014 it is open in the source too, which scopes what a corpus derivation would be claiming.",
+      "targets": [
+       "qou-vkg5"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "No ref() entry existed for this document; created as ramis-sauloy2006 in this triage (done in the same commit series).",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "QAlienBridgeEquation.lean models the q-alien derivation and asserts the Levi-decomposition reading with only RSZ as its source; Prop 2.5 / Thm 3.5-3.6 are the source.",
+      "target": "content/quantum-observable-universe/lean/QOU/Mathlib/QAlienBridgeEquation.lean",
+      "bean": "qou-at59"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "Thm 3.8/3.9 say what the level-delta q-Borel kernel is an invariant of; the kernel files cite RSZ \u00a73.3 only.",
+      "target": "content/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernel.lean",
+      "bean": "qou-x0aa"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "claude-opus-5"
+    },
+    "assessed_at": "2026-09-07T08:38:46Z",
+    "source_sha": "65fcd77b7b0a"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-math-0409393v1/0409393v1.pdf"
+   },
+   "id": "sauloy2004",
+   "status": "uncited",
+   "note": "Identified from the title page (arXiv:math/0409393v1, single author, 26 pp; the ingestion produced 3 sections, the first of which holds the whole of \u00a71-2). No ref() entry existed; sauloy2004 created 2026-09-07 by the triage. Cited by ramis-sauloy2006 as its reference [28]. No citation site yet; one bean queued.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "An algebraic (no discrete summation, no Newlander-Nirenberg) route to the RSZ local classification, whose Prop 4.1 gives in one line the fact the corpus currently argues from RSZ \u00a74.4 / Thm 3.3.5: the sheaf underlying the Stokes sheaf is the vector bundle over E_q of End^{>0}(M0) = sum over mu_i > mu_j of Hom(P_j, P_i), so a single-slope (pure isoclinic) formal class has End^{>0} = 0 and a trivial Stokes sheaf. Read: \u00a71.1 (aims; three classical steps recalled), \u00a72.1 (devissage: flat bundles over E_q, F_A for A in GL_n(C)), Thm 2.1, Prop 2.3, Thm 2.5/2.6 (recalled from RSZ: F(M0) -> H^1(E_q, Lambda_I)), Lemma 2.7-Cor 2.10 (flatness and q-Gevrey decay), \u00a73 Thm 3.7 (canonical resummation F_D(U,V) along a divisor direction D, unique under a divisor bound on the over-diagonal blocks), Cor 3.8-3.9, Prop 3.12, Prop 3.14, Cor 3.16 (the (F_{D,D'}(U)) are a Cech cocycle), Thm 3.18 (F(M0) = H^1(E_q, Lambda_I(M0)) bijectively, algebraic proof), \u00a74 Prop 4.1-4.2 and Lemma 4.3-Prop 4.4 (q-Gevrey filtration; H^1 of a proper open subset of E_q is trivial). Corpus consumers: RSZIsoformalInterface.lean (rszIsoformalDim_one, 'a pure isoclinic module has no isoformal moduli'), the c1-infinity-has-no-stokes-multiplier audit \u00a7'Why, from RSZ' item 2 (the Stokes-sheaf argument), QGevreyOrder.lean (q-Gevrey order \u2014 this paper's \u00a74 filtration is the sheaf-level version). Not load-bearing: every corpus conclusion it supports is already sourced to RSZ; this is a cleaner and earlier citation for one of them. 'Stokes sheaf' greps: 1 content hit (references.ts note), 2 audits, 1 bean (qou-wgnx) \u2014 all RSZ-framed, none cites this paper.",
+    "keyResults": [
+     {
+      "locator": "Prop 4.1 (\u00a74.1)",
+      "statement": "lambda_I(M0) is the sheaf of sections of the holomorphic vector bundle over E_q associated to End^{>0}(M0), the sum of Hom(P_j, P_i) over mu_i > mu_j; the q-Gevrey filtration is the one inherited from End^{>0}(M0).",
+      "useForFolio": "With one slope End^{>0}(M0) = 0: the algebraic one-line form of 'pure isoclinic => trivial Stokes sheaf' behind rszIsoformalDim_one and the c1-infinity audit \u00a72.",
+      "targets": [
+       "QOU.MathlibExt.RSZIsoformalInterface",
+       "docs/audits/2026-08-08-c1-infinity-has-no-stokes-multiplier.md"
+      ]
+     },
+     {
+      "locator": "Thm 3.7, Thm 3.18",
+      "statement": "Canonical resummation of the formal isomorphism along a divisor 'direction' D on E_q, and the bijection F(M0) = H^1(E_q, Lambda_I(M0)) proved by the Cech cocycle of the F_{D,D'}.",
+      "useForFolio": "The 'direction of summation is a divisor on E_q' formulation, the algebraic counterpart of the theta-torsor reading in bean qou-wgnx.",
+      "targets": [
+       "qou-wgnx"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "No ref() entry existed; created as sauloy2004 in this triage.",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "rszIsoformalDim_one and the c1-infinity audit argue 'one slope => no Stokes data' from RSZ; Prop 4.1 is the algebraic form of the same fact and belongs beside the RSZ ref.",
+      "target": "content/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterface.lean",
+      "bean": "qou-vsho"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "claude-opus-5"
+    },
+    "assessed_at": "2026-09-07T08:38:46Z",
+    "source_sha": "2107d961f606"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-math-0612592v1/0612592v1.pdf"
+   },
+   "id": "vanderput2006",
+   "status": "uncited",
+   "note": "Identified from the title page (arXiv:math/0612592v1, math.AC, single author, 16 pp; the ingestion found no section breaks, so the single library section is the whole document). No ref() entry existed; vanderput2006 created 2026-09-07 by the triage. No citation site yet; one bean queued.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "A survey (proofs deferred to [P-S] and [P-R] = vanderput-reversat2007, already registered) that states in English two results the corpus already uses under other names. (i) Thm 3.4/3.5: E(cz^{t/n}) is pure, irreducible, of slope t/n, every irreducible module is one of these, and the indecomposable pure modules are E(cz^{t/n}) tensor U_m with (t/n, c^n, m) unique \u2014 the E(r,d,b) irreducibility that BindingScalarKernelParityExclusion.lean, binding-genfun-qdifference.md and qdifference-kernel-prolongation-symbol.md attribute to 'the van der Put-Reversat structure theorem'. FINDING: the Lean file points that theorem at library/crmath-2011-349-19-20-1037-0/, which is Bugeaud 2011 (bugeaud2011), not van der Put-Reversat (library/afst-2007-6-16-3-665-0/); no bean tracked the mis-pointer before this triage. (ii) \u00a75: the difference Galois groups case by case \u2014 (1) regular singular Gal(M) = Hom(L, C*) times G_a when A is not semisimple, (5) 1 -> U_xi -> Gal(M) -> Gal(gr M) -> 1 with U_xi unipotent and the sequence a semi-direct product; Remarks 5.1: Gal(M)^o is solvable, and the computation is algorithmic given the global lattice. That is the torus-extended-by-unipotent shape QAlienBridgeEquation.lean calls 'the Levi decomposition of the local q-difference Galois group' with only RSZ as its source. Also read: Thm 3.2 (slope filtration), Thm 3.8 (split modules -> vector bundles on E_q), Thm 4.1 (moduli), \u00a76 and Thm 6.3 (universal Picard-Vessiot ring, generators f_{m,c,mu} algebraically independent). Not core: nothing in it is used that vanderput-reversat2007 does not also carry; its value is the English statement and the correct pointer. 'van der Put' greps: 5 content files (references.ts, the two .md blocks, the Lean file, the ledger), 1 audit (branch-selection-birkhoff-connection-matrix, which cites the AFST paper correctly).",
+    "keyResults": [
+     {
+      "locator": "Thm 3.4, Thm 3.5 (\u00a73)",
+      "statement": "E(cz^{t/n}) is pure, irreducible, of slope t/n; every irreducible module over C({z}) is of this form; the indecomposable pure modules are E(cz^{t/n}) tensor U_m with (t/n, c^n, m) unique.",
+      "useForFolio": "The E(r,d,b) irreducibility the parity-exclusion argument corroborates itself with, stated in English; fixes the mis-pointer at library/crmath-2011 (Bugeaud) in BindingScalarKernelParityExclusion.lean.",
+      "targets": [
+       "QOU.Mass.BindingScalarKernelParityExclusion",
+       "prop:binding-genfun-qdifference",
+       "def:qdifference-kernel-prolongation-symbol"
+      ]
+     },
+     {
+      "locator": "\u00a75 (1) and (5); Remarks 5.1",
+      "statement": "Regular singular: Gal(M) = Hom(L, C*) (times G_a if A is not semisimple). General: 1 -> U_xi -> Gal(M) -> Gal(gr M) -> 1, U_xi unipotent, a semi-direct product; Gal(M)^o is solvable.",
+      "useForFolio": "The literature statement of the Levi-decomposition shape (torus of characters extended by a unipotent part) that QAlienBridgeEquation.lean asserts in its docstring.",
+      "targets": [
+       "QOU.Mathlib.QAlienBridgeEquation"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "No ref() entry existed; created as vanderput2006 in this triage.",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "Fix the crmath-2011 (Bugeaud) pointer in the Lean file to vanderput-reversat2007 and cite Thm 3.4/3.5 here as the English locator; mirror in the two .md blocks; add \u00a75 (1),(5) at QAlienBridgeEquation.lean.",
+      "target": "content/quantum-observable-universe/lean/QOU/Mass/BindingScalarKernelParityExclusion.lean",
+      "bean": "qou-86p5"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "claude-opus-5"
+    },
+    "assessed_at": "2026-09-07T08:38:46Z",
+    "source_sha": "a5d29fa15a0b"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-0705.2975v1/0705.2975v1.pdf"
+   },
+   "id": null,
+   "status": "unreviewed",
+   "note": "Identified from the title page via pypdf (arXiv:0705.2975v1, math.CA, 21 May 2007, three authors, 31 pp). The library directory holds ONLY the PDF: no structure.json, no sections/, no summary.json, no INDEX.md row \u2014 so corpus-grep path 5 cannot see its text; an ingestion pass is owed before any 'not held' claim about its content. No ref() entry, none created (tangential).",
+   "relevance": {
+    "verdict": "tangential",
+    "rationale": "Compares the definitions of the Galois group of a linear difference equation from algebra (Picard-Vessiot rings, van der Put-Singer), analysis/field theory (Franke; weak Picard-Vessiot fields), model theory (Chatzidakis-Hrushovski) and the tannakian side, and shows they agree over suitable fields. Read: Abstract, \u00a71, Thm 2.9 (for k with algebraically closed constants and K = k(C_K): the Picard-Vessiot ring over k and the ring K[V, 1/det V] built from a weak Picard-Vessiot field over K have isomorphic Galois groups over the algebraic closure of C_K), \u00a73 (Thm 3.1: the tannakian version for q-difference equations over C(x), Aut^tensor(omega_M) tensor C_K-bar = Aut^tensor(omega_{M_K}) tensor C_K-bar), \u00a74 (the model-theoretic group; Prop 4.8-4.15 on Picard-Vessiot rings over fields with non-algebraically-closed constants). Same field as the corpus's q-difference Galois usage, but no block varies the constant field, uses a weak Picard-Vessiot field, or invokes the model-theoretic group: 'difference Galois' has 3 content hits, all in QAlienBridgeEquation.lean / QOper.lean docstrings that name 'the local q-difference Galois group' without depending on which definition; 'Chatzidakis' / 'Hardouin' have zero hits anywhere. Scope-(a): as read, nothing here is consumed by a named block; it is the foundational reassurance that 'the' q-difference Galois group is definition-independent, which the corpus takes for granted and does not cite.",
+    "keyResults": [],
+    "proposedActions": [
+     {
+      "action": "no-action",
+      "rationale": "No block consumes a definition-comparison result; the one hygiene item (the directory is un-sectioned) belongs to library intake, not to a content change.",
+      "target": "library/arxiv-0705.2975v1"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "claude-opus-5"
+    },
+    "assessed_at": "2026-09-07T08:38:46Z",
+    "source_sha": "683d6bd44cea"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-1205.1453v2/1205.1453v2.pdf"
+   },
+   "id": "morita2012b",
+   "status": "uncited",
+   "note": "Identified from the title page (arXiv:1205.1453v2, single author, 12 pp, 4 sections). No ref() entry existed; morita2012b created 2026-09-07 by the triage (the suffix distinguishes it from morita2012 = arXiv:1203.3404, the Ramanujan-equation connection formulae). No citation site yet; one bean queued.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "A worked first-kind q-Borel-Laplace resummation of a divergent BILATERAL series whose connection coefficient is a q-elliptic theta quotient \u2014 the same shape as C1's connection-matrix entries ('elliptic per entry', bean qou-wgnx) and the precedent that bean's route (a) needs (resum in two directions lambda != mu, form S_q from the direction dependence). Read: \u00a71 (1psi0 and Ramanujan's 1psi1 summation, eq. (1); the intro theorem), \u00a72 (theta function, q-Borel and q-Laplace of first and second kind), \u00a73.1 (eq. (19) the degenerate first-order equation ((1/q - ax)sigma_q + x)u = 0 with formal solution 1psi0, eq. (20), and the theta-normalised solution at infinity), \u00a73.2 Thm 1 (the resummation in direction lambda equals (q;q)_inf/(q/a;q)_inf times theta(aq lambda)/theta(q lambda) times theta(ax/lambda)/theta(x/lambda) times 1/(1/ax;q)_inf off the q-spiral [-lambda;q]) and Cor 1 (C(x;q) is q-elliptic), \u00a74 Thm 2 (q -> 1 gives the bilateral 1H0). Corpus-grep: 'bilateral' has one Lean hit (BalancedThetaLimit.lean, a bilateral theta series) and one compute hit (the theta-kernel bilateral Laplace of qbeta_g3_5two_qborel_theta_laplace.py, a different object: the Masbaum bar-side series); '1psi0' / 'bilateral basic hypergeometric' have no hits. So no block or witness evaluates 1psi0 and there is nothing to compute-check; the value is as a citable precedent beside morita2014 (bean qou-hnuw, todo) at the level-1 q-Borel kernel file. Not inflated to core: one theorem, order one, and no corpus number depends on it.",
+    "keyResults": [
+     {
+      "locator": "Thm 1 (\u00a73.2), Cor 1",
+      "statement": "The first-kind q-Borel-Laplace resummation of 1psi0(a;-;q,x) in direction lambda is an explicit product of theta quotients times 1/(1/ax;q)_inf, valid off the q-spiral [-lambda;q]; the connection coefficient C(x;q) is q-elliptic.",
+      "useForFolio": "The simplest worked instance of the summation-direction dependence of a q-Borel-Laplace resummation sitting entirely in a theta quotient \u2014 the route-(a) precedent bean qou-wgnx names, one order below morita2014's.",
+      "targets": [
+       "QOU.MathlibExt.QBorelKernel",
+       "qou-wgnx"
+      ]
+     },
+     {
+      "locator": "eq. (19)-(20), \u00a73.1",
+      "statement": "1psi0 is the divergent formal solution of the degenerate first-order q-difference equation ((1/q - ax)sigma_q + x)u = 0.",
+      "useForFolio": "A first-order divergent model equation for the level-1 kernel t_n = q^{C(n,2)} formalised in QBorelKernel.lean.",
+      "targets": [
+       "QOU.MathlibExt.QBorelKernel"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "No ref() entry existed; created as morita2012b in this triage.",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "Cite beside the morita2014 citation qou-hnuw will add at the level-1 kernel file, as the bilateral / first-order precedent for a theta-quotient connection coefficient.",
+      "target": "content/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernel.lean",
+      "bean": "qou-89w7"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "claude-opus-5"
+    },
+    "assessed_at": "2026-09-07T08:38:46Z",
+    "source_sha": "29d1b1fd9466"
+   }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-2208.13448v2/2208.13448v2.pdf"
+   },
+   "id": null,
+   "status": "unreviewed",
+   "note": "Identified from the title page (arXiv:2208.13448v2, dated July 6 2023 in the header, two authors, 37 pp, 18 sections). No ref() entry, none created (tangential).",
+   "relevance": {
+    "verdict": "tangential",
+    "rationale": "An algorithm for the difference Galois group of an order-THREE equation over a large class of difference operators (shift, q-difference over C(z^{1/*}), Mahler, elliptic), reducing to ancillary problems (rational / hyperexponential solutions of Riccati-type equations), with criteria for the irreducible and imprimitive cases and a differential-transcendence corollary. Read: \u00a71, \u00a72.1 (Zudilin's Rogers-Ramanujan double sum U(z,t) and its order-3 q-difference equation (1.1); Thm 6.13: its Galois group over C(z^{1/*}) is GL_3(C) for all t != 0, hence no algebraic differential relations among U(z,t), U(qz,t), U(q^2z,t)), Thm 2.1 (reduction of the system into the Galois group), \u00a73.2 Thm 3.3/3.5 and Prop 3.7-3.10 (imprimitive case, prime order), \u00a73.3 Prop 3.18 (primitive case: SO_3 vs SL_3), \u00a76.4 (the algorithm summarised), \u00a77 Thm 7.1 (a three-condition partial-transcendence criterion for order 3). Corpus-grep for a consumer: the only order-3 q-difference objects are (a) the 4_1 strong-AJ operator in computations/figure_eight_aj_operator.py, cited to nguyen-tran-2021 and not re-derived, whose Galois group nobody asks for, and (b) the rank-3 base q-connection of the W1 wall, which QOU/Mass/ColorCubicIrreducible.lean and docs/audits/2026-09-04-w1-route1-base-qshift-rationality-prune.md PROVE does not exist as a rational system (so there is no order-3 equation there to compute a Galois group of); 'Rogers-Ramanujan' / 'Nahm sum' have no content-block consumer; 'Dreyfus' / 'Poulet' have zero hits. Scope-(a): no block, probe or bean wants an order-3 difference Galois group or a differential-transcendence statement, so this document as read supplies nothing consumable. Recorded for a future reader: if the Galois group of the order-3 AJ operator of 4_1 were ever wanted, \u00a76.4 is the algorithm (Case Q) and Thm 7.1 the transcendence criterion.",
+    "keyResults": [],
+    "proposedActions": [
+     {
+      "action": "no-action",
+      "rationale": "No named block computes an order-3 difference Galois group; the one candidate object (the rank-3 base q-connection) is proved not to exist and the other (the 4_1 AJ operator) has no Galois-group consumer.",
+      "target": "computations/figure_eight_aj_operator.py"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "claude-opus-5"
+    },
+    "assessed_at": "2026-09-07T08:38:46Z",
+    "source_sha": "8bfa244cf7ca"
    }
   }
  ]

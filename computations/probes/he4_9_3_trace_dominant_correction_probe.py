@@ -205,7 +205,7 @@ def main() -> int:
     h2 = h * h
     hbar_q = 1 - 1 / q
     G_val = mp.catalan
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
 
     candidates_str = [
         ("h²", h2),
@@ -271,21 +271,21 @@ def main() -> int:
     builder.add_data("m_e_MeV", str(m_e))
     builder.add_data("A", A)
     builder.add_data("B_AME_MeV", str(B_AME))
-    builder.add_data("rho_F_postulated", float(rho_F_postulated))
+    builder.add_data("rho_F_postulated", fmt(rho_F_postulated))
     builder.add_data("rho_F_required", fmt(rho_F_required))
     builder.add_data("gap_rho_F", fmt(gap_rho_F))
-    builder.add_data("gap_pct", float(gap_pct))
+    builder.add_data("gap_pct", fmt(gap_pct))
     builder.add_data("top_trace_dominant", [
         {
             "partition": list(e["partition"]),
             "dim": e["dim"],
-            "y": float(e["y"]),
-            "chi": float(e["chi"]),
-            "fraction_of_tr_M": float(e["fraction"]),
+            "y": fmt(e["y"]),
+            "chi": fmt(e["chi"]),
+            "fraction_of_tr_M": fmt(e["fraction"]),
         }
         for e in top
     ])
-    builder.add_data("nine_three_fraction", float(nine_three_frac))
+    builder.add_data("nine_three_fraction", fmt(nine_three_frac))
     builder.add_data("delta_rho_F_9_3_if_all_localized", fmt(delta_rho_93))
     builder.add_data("verdict", verdict)
     builder.add_data("framing_correction", (
@@ -299,7 +299,7 @@ def main() -> int:
         name="trace_dominant_top_8_extracted",
         computed=len(top),
         expected=8,
-        tolerance=0.0,
+        tolerance=mp.mpf(0),
         source="Top 8 trace-dominant partitions from H_12 cache",
     )
 

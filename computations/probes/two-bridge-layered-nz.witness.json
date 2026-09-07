@@ -1,0 +1,308 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T13:49:46.766459+00:00",
+  "commitSha": "8c638742236dcb481fbd26ce9cf80fe0cae4622c",
+  "assertions": [
+    {
+      "name": "fourone_geometric_with_reference_volume",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fourone_edge_rows_isotropic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fourone_h1_is_Z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fourone_two_bridge_cusp_modulus_2sqrt3i",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fourone_two_tetrahedra",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fourone_shapes_are_sixth_roots",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fivetwo_geometric_with_reference_volume",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fivetwo_edge_rows_isotropic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fivetwo_h1_is_Z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fivetwo_four_tetrahedra",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fivetwo_shapes_satisfy_cubic_relations",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fivetwo_cubic_discriminant_core_minus23",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "fivetwo_edge_rows_exact_in_Q_theta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    },
+    {
+      "name": "no_convention_dependence_imports",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_layered_nz_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 155608,
+  "computation": "two-bridge-layered-nz",
+  "scriptFile": "two_bridge_layered_nz_probe.py",
+  "scriptHash": "03f3aa74e4f2",
+  "scriptCommitSha": "8c638742236dcb481fbd26ce9cf80fe0cae4622c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/two_bridge_layered_nz_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/two_bridge_layered_nz_probe.py"
+  },
+  "description": "Two-bridge knot complements from the Farey word: pillowcase layering (two tetrahedra per letter, word length c−3) with the end folds found by exhaustive search under manifold / one-cusp / H₁=ℤ / geometric filters; validated on 4₁ (word R: volume, cusp modulus 2√3 i) and 5₂ (word RL: corpus volume, cubic shape field). Bean qou-yvyd.",
+  "contentBlock": "conj:stokes-dt-bps-bridge",
+  "data": {
+    "fourone_search_stats": {
+      "R": {
+        "total": 263,
+        "torus_cusps": 59,
+        "one_cusp": 59,
+        "h1_Z": 59,
+        "geometric": 1
+      }
+    },
+    "fourone_word": "R",
+    "fourone_tetrahedra": 2,
+    "fourone_edge_rows_rect": [
+      [
+        [
+          1,
+          -2
+        ],
+        [
+          -2,
+          1
+        ],
+        1
+      ],
+      [
+        [
+          -1,
+          2
+        ],
+        [
+          2,
+          -1
+        ],
+        1
+      ]
+    ],
+    "fourone_shapes": [
+      "(0.5 + 0.866025403784438646763723170752936183471402627j)",
+      "(0.5 + 0.866025403784438646763723170752936183471402627j)"
+    ],
+    "fourone_volume": "2.02988321281930725004240510854904057188337862",
+    "fourone_cusp_modulus": "(0.0 + 3.46410161513775458705489268301174473388561051j)",
+    "fourone_fold_bottom": [
+      "{'tet_a': 0, 'face_a': (0, 1, 2), 'tet_b': 1, 'face_b': (0, 1, 2), 'vmap': {0: 0, 1: 2, 2: 1}, 'same_tet': False, 'punctures_fixed': 0}",
+      "{'tet_a': 0, 'face_a': (0, 2, 3), 'tet_b': 1, 'face_b': (0, 2, 3), 'vmap': {0: 0, 2: 3, 3: 2}, 'same_tet': False, 'punctures_fixed': 2}"
+    ],
+    "fourone_fold_top": [
+      "{'tet_a': 0, 'face_a': (0, 1, 3), 'tet_b': 1, 'face_b': (1, 2, 3), 'vmap': {0: 1, 1: 3, 3: 2}, 'same_tet': False, 'punctures_fixed': 2}",
+      "{'tet_a': 0, 'face_a': (1, 2, 3), 'tet_b': 1, 'face_b': (0, 1, 3), 'vmap': {1: 3, 2: 1, 3: 0}, 'same_tet': False, 'punctures_fixed': 0}"
+    ],
+    "fivetwo_search_stats": {
+      "RL": {
+        "total": 718,
+        "torus_cusps": 202,
+        "one_cusp": 202,
+        "h1_Z": 132,
+        "geometric": 23
+      }
+    },
+    "fivetwo_word": "RL",
+    "fivetwo_tetrahedra": 4,
+    "fivetwo_edge_rows_rect": [
+      [
+        [
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        1
+      ],
+      [
+        [
+          0,
+          0,
+          -1,
+          -1
+        ],
+        [
+          -2,
+          -2,
+          -1,
+          -1
+        ],
+        1
+      ],
+      [
+        [
+          -1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        -1
+      ],
+      [
+        [
+          0,
+          -1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        -1
+      ]
+    ],
+    "fivetwo_shapes": [
+      "(0.662358978622373012980454427239048670367202028 + 0.562279512062301243899182144909373061497843003j)",
+      "(0.662358978622373012980454427239048670367202028 + 0.562279512062301243899182144909373061497843003j)",
+      "(-0.877438833123346380024754448179264345947303309 + 0.744861766619744236593170428604392367240163085j)",
+      "(-0.877438833123346380024754448179264345947303309 + 0.744861766619744236593170428604392367240163085j)"
+    ],
+    "fivetwo_volume": "2.82812208833078316276389880927663494277098132",
+    "fivetwo_cusp_modulus": "(0.490244667506614479900982207282942616210786764 + 2.97944706647897694637268171441756946896065234j)",
+    "fivetwo_fold_bottom": [
+      "{'tet_a': 0, 'face_a': (0, 1, 2), 'tet_b': 1, 'face_b': (0, 2, 3), 'vmap': {0: 2, 1: 0, 2: 3}, 'same_tet': False, 'punctures_fixed': 2}",
+      "{'tet_a': 0, 'face_a': (0, 2, 3), 'tet_b': 1, 'face_b': (0, 1, 2), 'vmap': {0: 1, 2: 0, 3: 2}, 'same_tet': False, 'punctures_fixed': 2}"
+    ],
+    "fivetwo_fold_top": [
+      "{'tet_a': 2, 'face_a': (0, 1, 3), 'tet_b': 3, 'face_b': (0, 1, 3), 'vmap': {0: 1, 1: 0, 3: 3}, 'same_tet': False, 'punctures_fixed': 2}",
+      "{'tet_a': 2, 'face_a': (1, 2, 3), 'tet_b': 3, 'face_b': (1, 2, 3), 'vmap': {1: 1, 2: 3, 3: 2}, 'same_tet': False, 'punctures_fixed': 2}"
+    ],
+    "fivetwo_shape_relations": [
+      "[-1, 1, 0, -1]",
+      "[-1, 1, 0, -1]",
+      "[1, 0, -1, -1]",
+      "[1, 0, -1, -1]"
+    ],
+    "fivetwo_minpoly": "x**3 - x + 1",
+    "fivetwo_cubic_discriminant": "-23",
+    "fivetwo_shapes_in_Q_theta": [
+      "x",
+      "x",
+      "x**2 - 1",
+      "x**2 - 1"
+    ]
+  },
+  "caveats": [
+    "The fold at each end is FOUND by exhaustive search under manifold, one-cusp, H₁ = ℤ and geometric filters, not transcribed from Guéritaud (not held). The volume references are checks, never inputs.",
+    "Word length is c − 3 (4₁: one letter, 5₂: two letters); the two clasps and one further crossing are absorbed by the folds. Other one-cusped manifolds with the same tetrahedra appear under other folds (m006, m009, … by volume) and are rejected only by the reference volume.",
+    "Orientation: 5₂ is chiral; which of S⁺/S⁻ the derived triangulation corresponds to is NOT settled here (the mirror has conjugate shapes and the same volume)."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "pure topology/geometry: no q, no Markov parameter, no anchor"
+}

@@ -292,9 +292,13 @@ def main():
         if math.isinf(tol_ppb):
             tol_ppb = 1.0  # anchor at perfect agreement
         passed = row["delta_ppb"] <= tol_ppb
-        print(f"{row['quantity']:>20}  {row['predicted']:>16.10g}  "
-              f"{row['codata_value']:>16.10g}  {row['delta_ppb']:>10.3f}  "
-              f"{row['codata_unc_ppb']:>14.3f}  {'OK' if passed else 'FAIL'}")
+        # float() for DISPLAY only — mpf has no __format__ for ">16.10g".
+        # The row values stay mpf; only the rendering is coerced. (qou-9q4h)
+        print(f"{row['quantity']:>20}  {float(row['predicted']):>16.10g}  "
+              f"{float(row['codata_value']):>16.10g}  "
+              f"{float(row['delta_ppb']):>10.3f}  "
+              f"{float(row['codata_unc_ppb']):>14.3f}  "
+              f"{'OK' if passed else 'FAIL'}")
         builder.add_assertion(
             name=f"codata_{row['quantity']}".replace(" ", "_")
                                             .replace("/", "_over_")

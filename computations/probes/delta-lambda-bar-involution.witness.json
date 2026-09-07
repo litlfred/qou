@@ -1,7 +1,7 @@
 {
   "engine": "python3/mpmath+numpy",
   "engineVersion": "50dps",
-  "computedAt": "2026-09-05T06:13:34.418802+00:00",
+  "computedAt": "2026-09-06T06:49:31.151798+00:00",
   "computation": "delta-lambda-bar-involution-multi-atom",
   "scriptFile": "delta_lambda_bar_involution_probe.py",
   "description": "\u0394_\u03bb with bar-involution (\u0394_\u03bb = \u0394_{\u03bb^T}) + minimum-norm selection on the deuteron. Reduces 11 free params to 8 via conjugate-pair identification. Single-atom minimum-norm gives the unique smallest-L2 bar-symmetric \u0394.",
@@ -105,7 +105,7 @@
   "allPassed": true,
   "scriptHash": "693a7dfc2ed9",
   "scriptCommitSha": "9949f304b17358b42742196f8733edac681fd82f",
-  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

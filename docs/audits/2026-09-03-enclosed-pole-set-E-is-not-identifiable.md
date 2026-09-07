@@ -124,6 +124,9 @@ with no instance, and it does not touch the q-difference prolongation, where
 W1–W3: q-jet-bundle / q-D-module symbol calculus, absent from Mathlib and the
 corpus).
 
+> 🛑 **Scope correction (2026-09-06, bean `qou-p6m1`).** The claim above bundles two objects. The **q-D-module symbol calculus is PRESENT** — `QOU.Machinery.QuantumTorusSymbol` (QDM-1/2, 19 decls, sorry-free, on `main` by 2026-07-24) and `QOU.Mathlib.RamifiedShiftCalculus` (the same calculus at the ramified pole `z = z_c + t²`, sorry-free, 2026-09-03, and it *imports* `RamificationParityMonodromy`, the file that declared it absent). Only the **q-jet bundle over `Σ`** is absent. **W1 (construct `D_q` from `Σ`) still stands** — this is a scoping split, not a downgrade.
+
+
 ## Two defects found in passing
 
 - **`sw_period_growth_probe.py` does not run on `main`.** It exits 1 before any

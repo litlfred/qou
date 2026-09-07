@@ -1,0 +1,356 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2605.20846v1",
+ "source": {
+  "file": "2605.20846v1.pdf",
+  "sha256": "db27cb6d01c4f2fbd5478f29532386c399aa0f7b8b2a223cf1a284567b48b3fb",
+  "bytes": 1047366,
+  "pages": 99,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2605.20846",
+   "version": "1",
+   "primary_class": "math.AT",
+   "stamp_date": "20 May 2026"
+  },
+  "doi": null,
+  "title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li",
+  "authors_raw": "May 21, 2026",
+  "title_lines": [
+   "Topological Field Theories and the Algebraic Structures",
+   "of the Two-Sphere",
+   "Chris Li"
+  ],
+  "abstract": "We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures onS 2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent. The new prime structures satisfy some countable relations with the commutative Frobenius structure, the most notable of which we call \u201clegs relations.\u201d We then restrict to the setting of algebras and show that the legs relations place strong constraints on the new prime endomorphisms which forces them to act by multiplications by prime units, rendering the additional prime structures remarkably simple. We also propose an\u221e-operad which encodes these prime structures and contains the\u221e-little 3-cube operad as a sub-operad. 1 arXiv:2605.20846v1 [math.AT] 20 May 2026",
+  "docinfo": {
+   "Author": "Chris Li",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Generators",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Commutative Frobenius Relations",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Outline of Strategy",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Existence and Spherical Morse Functions",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Spherical Morse Functions",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Local Models of Excellent Morse Failures",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Sufficiency of Commutative Frobenius Relations Among CF Generators",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Prime Relations",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "No Internal Relations",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "External Prime Relations",
+   "page": 49,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Sufficiency of External Relations",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Necessity of Legs Relations",
+   "page": 60,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Passing through TFTs",
+   "page": 70,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "P and L Monoids",
+   "page": 70,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Relations to J-Algebras",
+   "page": 74,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The -operad L",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix: Definitions and Common Results",
+   "page": 90,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Presentations of a Category",
+   "page": 90,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Towards",
+   "page": 92,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 13,
+   "n_chars": 26148,
+   "n_words": 4282
+  },
+  {
+   "id": "sec-001-generators",
+   "number": null,
+   "title": "Generators",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 21,
+   "n_chars": 14823,
+   "n_words": 2570
+  },
+  {
+   "id": "sec-002-commutative-frobenius-relations",
+   "number": null,
+   "title": "Commutative Frobenius Relations",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 589,
+   "n_words": 100
+  },
+  {
+   "id": "sec-003-outline-of-strategy",
+   "number": null,
+   "title": "Outline of Strategy",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 12042,
+   "n_words": 1868
+  },
+  {
+   "id": "sec-004-existence-and-spherical-morse-functions",
+   "number": null,
+   "title": "Existence and Spherical Morse Functions",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 32,
+   "n_chars": 12365,
+   "n_words": 2068
+  },
+  {
+   "id": "sec-005-spherical-morse-functions",
+   "number": null,
+   "title": "Spherical Morse Functions",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 38,
+   "n_chars": 11061,
+   "n_words": 1766
+  },
+  {
+   "id": "sec-006-local-models-of-excellent-morse-failures",
+   "number": null,
+   "title": "Local Models of Excellent Morse Failures",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 46,
+   "n_chars": 17800,
+   "n_words": 2973
+  },
+  {
+   "id": "sec-007-prime-relations",
+   "number": null,
+   "title": "Prime Relations",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-no-internal-relations",
+   "number": null,
+   "title": "No Internal Relations",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 49,
+   "n_chars": 7534,
+   "n_words": 1236
+  },
+  {
+   "id": "sec-009-external-prime-relations",
+   "number": null,
+   "title": "External Prime Relations",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 54,
+   "n_chars": 9004,
+   "n_words": 1465
+  },
+  {
+   "id": "sec-010-sufficiency-of-external-relations",
+   "number": null,
+   "title": "Sufficiency of External Relations",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 60,
+   "n_chars": 12495,
+   "n_words": 2117
+  },
+  {
+   "id": "sec-011-necessity-of-legs-relations",
+   "number": null,
+   "title": "Necessity of Legs Relations",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 70,
+   "n_chars": 14711,
+   "n_words": 2424
+  },
+  {
+   "id": "sec-012-passing-through-tfts",
+   "number": null,
+   "title": "Passing through TFTs",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-p-and-l-monoids",
+   "number": null,
+   "title": "P and L Monoids",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 74,
+   "n_chars": 9920,
+   "n_words": 1525
+  },
+  {
+   "id": "sec-014-relations-to-j-algebras",
+   "number": null,
+   "title": "Relations to J-Algebras",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 90,
+   "n_chars": 34037,
+   "n_words": 5427
+  },
+  {
+   "id": "sec-015-presentations-of-a-category",
+   "number": null,
+   "title": "Presentations of a Category",
+   "level": 2,
+   "page_start": 90,
+   "page_end": 92,
+   "n_chars": 6356,
+   "n_words": 980
+  },
+  {
+   "id": "sec-016-towards",
+   "number": null,
+   "title": "Towards",
+   "level": 2,
+   "page_start": 92,
+   "page_end": 99,
+   "n_chars": 12634,
+   "n_words": 1671
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 17,
+  "chars_total": 201519
+ }
+}

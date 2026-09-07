@@ -39,9 +39,20 @@ anywhere (repo NO-FLOAT64 rule).  Audit-only; nothing wired.
 from __future__ import annotations
 
 import json
+import sys
 from decimal import Decimal, getcontext
 from math import factorial
 from pathlib import Path
+
+# The provenance stamp at the end of main() does
+# `from qou_substrate.witness import WitnessBuilder`, which lives at
+# tools/qou-substrate/python and is not on the default path. Without this the
+# script computed everything and then died on its very last line with
+# ModuleNotFoundError, so its witness could never be regenerated — which is
+# why it still carried grouped-era values long after the 2026-09-05 ordering
+# ruling (bean qou-4383).
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: E402, F401
 
 getcontext().prec = 60
 

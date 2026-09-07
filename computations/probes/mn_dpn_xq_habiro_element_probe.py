@@ -33,7 +33,7 @@ def main():
     
     h_p = q_p - 1/q_p
     h_m = q_m - 1/q_m
-    alpha_em = mp.mpf(1)/mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1)/mp.mpf("137.035999084")
     
     basis = [mp.mpf(1), h_p**2, h_p**4, h_p**6, h_p**8]
     print("PSLQ on basis: 1, h^2, h^4, h^6, h^8, delta_target at q_p")

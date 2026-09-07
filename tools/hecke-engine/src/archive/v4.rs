@@ -666,7 +666,7 @@ fn main() {
                 println!("    tr_alt = Σ c_w × (−q⁻¹)^ℓ(w) = {:+.10}", tr_alt);
                 println!("    net    = Σ c_w = {:+.10}", net);
                 println!("    F_Pauli = |tr_alt| / |net| = {:.10} -/", f);
-                println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+                println!("-- Ref: [manuscript] appendix-mass-binding-algorithms (F_Pauli / Markov-trace witnesses)");
                 println!("theorem F_Pauli_{} :", lean_name);
                 println!("    F_Pauli_witness {} {} = {:.10} := by", z, n, f);
                 println!("  native_decide -- computed by hecke-engine v3");
@@ -674,7 +674,7 @@ fn main() {
                 println!("/-- The palindromic defect for {}{}.", a, sym);
                 println!("    δ = Σ_ℓ |W(ℓ) − W(L−ℓ)| / Σ_ℓ W(ℓ) = {:.10}", total_acc.palindromic_defect());
                 println!("    δ = 0 ↔ palindromic ↔ shell closure signature. -/");
-                println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+                println!("-- Ref: [manuscript] appendix-mass-binding-algorithms (F_Pauli / Markov-trace witnesses)");
                 println!("theorem palindromic_defect_{} :", lean_name);
                 println!("    pal_defect_witness {} {} = {:.10} := by", z, n, total_acc.palindromic_defect());
                 println!("  native_decide -- computed by hecke-engine v3");
@@ -686,7 +686,7 @@ fn main() {
                     print!("{:.6}", w);
                 }
                 println!("] -/");
-                println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+                println!("-- Ref: [manuscript] appendix-mass-binding-algorithms (F_Pauli / Markov-trace witnesses)");
                 println!("theorem weight_dist_{} :", lean_name);
                 print!("    weight_distribution {} {} = ![", z, n);
                 for (i, w) in total_acc.per_length_abs.iter().enumerate() {

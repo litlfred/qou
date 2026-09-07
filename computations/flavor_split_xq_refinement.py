@@ -103,10 +103,10 @@ def main() -> int:
         ("(a1) 1 + h²/N (N=∞)", mp.mpf(1)),  # placeholder, search N
         # (b) Habiro-element analog (α_em PR #1511 = [2]_q·(1-h²α))
         # For flavor-split, try (1 - h²·α_em·integer) or (1 + small·α_em)
-        ("(b1) 1 + α_em/π", 1 + mp.mpf(1) / mp.mpf("137.0359991") / mp.pi),
-        ("(b2) 1 - α_em·G/(4π)", 1 - mp.mpf(1) / mp.mpf("137.0359991") * G / (4 * mp.pi)),
+        ("(b1) 1 + α_em/π", 1 + mp.mpf(1) / mp.mpf("137.035999084") / mp.pi),
+        ("(b2) 1 - α_em·G/(4π)", 1 - mp.mpf(1) / mp.mpf("137.035999084") * G / (4 * mp.pi)),
         ("(b3) 1 - h²·α_em (Habiro)",
-         1 - h2 * mp.mpf(1) / mp.mpf("137.0359991")),
+         1 - h2 * mp.mpf(1) / mp.mpf("137.035999084")),
         # (c) Plancherel-weighted (Σd² = 6 at H_3, etc.)
         ("(c1) 1 + h²/6", 1 + h2 / 6),
         ("(c2) 1 - h²/[2]_q²", 1 - h2 / q2 ** 2),
@@ -120,7 +120,7 @@ def main() -> int:
          (3 * q ** 2 - 1) / (2 * q ** 2)),
         # (f) Substrate-mass-ratio-style corrections
         ("(f1) 1 + m_e/m_p", 1 + M_E_MEV / M_P_MEV),
-        ("(f2) 1 - α_em·ℏ_q", 1 - mp.mpf(1) / mp.mpf("137.0359991") * hbar_q),
+        ("(f2) 1 - α_em·ℏ_q", 1 - mp.mpf(1) / mp.mpf("137.035999084") * hbar_q),
     ]
 
     scored = []
@@ -149,7 +149,7 @@ def main() -> int:
     print(f"  (f-1)/α_em = {mp.nstr(fm1 / (mp.mpf(1) / mp.mpf('137.0359991')), 12)}")
     print(f"  (f-1)/(α_em/π) = {mp.nstr(fm1 / (mp.mpf(1) / mp.mpf('137.0359991') / mp.pi), 12)}")
 
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
     basis = {
         "1": mp.mpf(1),
         "h": h,

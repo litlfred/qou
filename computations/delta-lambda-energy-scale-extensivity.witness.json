@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T21:59:02.741924+00:00",
-  "commitSha": "07b03deb106f1ba4432f483ff999464021e4ae08",
+  "computedAt": "2026-09-06T06:47:26.105951+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "deuteron_residual_is_order_one_after_energy_scale",
@@ -22,13 +22,11 @@
     }
   ],
   "allPassed": true,
-  "allPassedBasis": "assertions",
-  "durationMs": 40,
-  "durationMsBaseline": "caller",
+  "durationMs": 25,
   "computation": "delta-lambda-energy-scale-extensivity",
   "scriptFile": "delta_lambda_energy_scale_extensivity_probe.py",
   "scriptHash": "481c2e93d5d8",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "2ac15a3627acca95"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -284,8 +282,8 @@
     "upstream_witness_hashes": [
       {
         "path": "binding-canonical.witness.json",
-        "sha256": "628bbb7650538f840715cd93cc7c7ff4ecf9451ca225ca2be52f506ae5ee75b7",
-        "size_bytes": 7736,
+        "sha256": "15a152ffe13ac200a12b5df60251e9032b91262d5c2ca0e8b89ca2129ca3dc91",
+        "size_bytes": 7737,
         "commitSha": "25f3aa31ccf21f0945a1485cbbb20d82c6aef208",
         "scriptCommitSha": "25f3aa31ccf21f0945a1485cbbb20d82c6aef208",
         "computedAt": "2026-09-03T03:42:17.567529+00:00"

@@ -1,0 +1,141 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-07T08:17:49.566349+00:00",
+  "commitSha": "88ff94a2659a5eea9fc5a8a0e7a48ceba29f455d",
+  "assertions": [
+    {
+      "name": "independent_path_agrees_at_q0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "one_dim_blocks_unchanged",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "sign_block_unchanged",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "two_dim_block_moved",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "q2_minus_1_factor_survives",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "classical_point_agrees",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "leading_coefficient_agrees",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "P_is_palindromic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "both_bar_odd_in_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "qbeta_per_block_chi_borromean_closed_forms_probe",
+  "scriptFile": "qbeta_per_block_chi_borromean_closed_forms_probe.py",
+  "scriptHash": "779313938e60",
+  "scriptCommitSha": "b309c80e02e1f259ecad710b430143e0e0f5d2ec",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_per_block_chi_borromean_closed_forms_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_per_block_chi_borromean_closed_forms_probe.py"
+  },
+  "description": "Derives the three per-block characters chi_lambda(Delta_T_beta) symbolically from the CANONICAL (borromean) nucleon words. The two one-dimensional blocks reproduce the published closed forms exactly; the 2-dimensional (2,1) block does not, and is the only block the intra-ordering can reach. States the corrected form and shows the classical-point results are unaffected.",
+  "contentBlock": "prop:qbeta-per-block-chi-closed-forms",
+  "data": {
+    "blocks": [
+      {
+        "lambda": [
+          3
+        ],
+        "canonical_closed_form": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q)",
+        "published_closed_form": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q)",
+        "identical_to_published": true,
+        "dim": 1
+      },
+      {
+        "lambda": [
+          2,
+          1
+        ],
+        "canonical_closed_form": "(q - 1)*(q + 1)*(q**4 + 1)*(2*q**12 - 5*q**10 + 5*q**8 - 5*q**6 + 5*q**4 - 5*q**2 + 2)/(4*q**9)",
+        "published_closed_form": "-(q - 1)*(q + 1)*(q**4 + 1)/(4*q**3)",
+        "identical_to_published": false,
+        "dim": 2
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1
+        ],
+        "canonical_closed_form": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q**5)",
+        "published_closed_form": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q**5)",
+        "identical_to_published": true,
+        "dim": 1
+      }
+    ],
+    "canonical_over_published_ratio_21": "-(2*q**12 - 5*q**10 + 5*q**8 - 5*q**6 + 5*q**4 - 5*q**2 + 2)/q**6",
+    "ratio_at_q_equals_1": "1",
+    "P_palindromic": true,
+    "limit_chi21_over_q2m1": {
+      "canonical": "-1/2",
+      "published": "-1/2"
+    },
+    "as_h_polynomial": {
+      "canonical_21": "t**9/2 + 11*t**7/4 + 17*t**5/4 + 5*t**3/4 - t/2",
+      "published_21": "-t**3/4 - t/2"
+    }
+  },
+  "caveats": [
+    "Derivation only. QBetaPerBlockChiClosedForms.lean is NOT edited here: chi_block_21 carries proof obligations (vanishing at q=1, the (q^2-1)*P21 factorisation, two downstream weighted sums) and seven files reference it. That migration is bean qou-eddc; this is its target.",
+    "The published forms remain correct for the GROUPED word, which is what qbeta_delta_vs_deltaTbeta_settled_probe verifies (pinned to intra_order='grouped'). This is a change of canonical braid, not a correction of an arithmetic error."
+  ]
+}

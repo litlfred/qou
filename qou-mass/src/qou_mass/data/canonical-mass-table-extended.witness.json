@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T18:31:52.425711+00:00",
-  "commitSha": "abdac9aeefae6338d53346144c8a10559058bd75",
+  "computedAt": "2026-09-07T06:43:25.567149+00:00",
+  "commitSha": "e8f196a688d9c442a6888073a6b006eacd3adeea",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24817,
+  "durationMs": 70361,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "40791121a9b0",
-  "scriptCommitSha": "f4a18cd3791ef27ca51661dcf05b0fa637183fd4",
+  "scriptHash": "f923eab01fca",
+  "scriptCommitSha": "465a555201c31a610fd4a554a9da7117a54b5309",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,13 +24,17 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
-      "computations/canonical_mass_table_extended.py"
+      "computations/canonical_mass_table_extended.py",
+      "--method",
+      "auto",
+      "--target-dps",
+      "60"
     ],
-    "reproduce": "python3 -u computations/canonical_mass_table_extended.py"
+    "reproduce": "python3 -u computations/canonical_mass_table_extended.py --method auto --target-dps 60"
   },
   "description": "Extended canonical mass table via per-atom route: A<2 -> direct H_3 Hoefsmit (laurent_q_rust, falling back to laurent_q when pyhecke_native is absent); A>=2 -> operator-valued Wenzl branching combiner; + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
@@ -62,12 +66,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -78,28 +94,16 @@
             "averaged"
           ],
           [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
             1,
             "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
           ]
         ],
         "markov_closure": "trefoil 3_1 = T(2,3)",
@@ -132,7 +136,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "1.14575969245730086968908159577411930594372806194352203945878",
+        "tr_M_q0_canonical_50dps": "0.629328402202921918165345746778485927600219400634369117488163",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -160,12 +164,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -176,28 +192,16 @@
             "averaged"
           ],
           [
+            1,
+            "sigma_inv"
+          ],
+          [
             0,
             "sigma"
           ],
           [
             0,
             "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
           ]
         ],
         "markov_closure": "trefoil 3_1 = T(2,3)",
@@ -230,17 +234,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.987743688115809571634020165501294982055048759062790056921782",
+        "tr_M_q0_canonical_50dps": "0.475133517155682212506090232675005799558407634708723835430579",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
-        "prediction_MeV_50dps": "939.5658930679812",
+        "prediction_MeV_50dps": "939.5658930678236",
         "B_AME_MeV": "939.565421940000000000000000000000000000000000000000000000000",
-        "err_MeV": "0.000471127981164676893968135118484497070312500000000000000000000",
-        "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
-        "err_ppb": "501.431800450786280633454702979165566281610067571108001092729",
-        "err_ppm": "0.501431800450786280633454702979165566281610067571108001092729",
+        "err_MeV": "0.000471127823594719811808317899703979492187500000000000000000000",
+        "err_pct": "0.0000501431632745639408783028058509119097507663650323712976124639",
+        "err_ppb": "501.431632745639408783028058509119097507663650323712976124639",
+        "err_ppm": "0.501431632745639408783028058509119097507663650323712976124639",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via laurent_q_rust)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -258,12 +262,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -274,28 +290,16 @@
             "averaged"
           ],
           [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
             1,
             "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
           ],
           [
             2,
@@ -306,12 +310,24 @@
             "sigma"
           ],
           [
-            3,
-            "sigma"
+            4,
+            "sigma_inv"
           ],
           [
             3,
             "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
           ],
           [
             3,
@@ -322,28 +338,16 @@
             "averaged"
           ],
           [
+            4,
+            "sigma_inv"
+          ],
+          [
             3,
             "sigma"
           ],
           [
             3,
             "sigma"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
           ]
         ],
         "markov_closure": "K_{6_2} (hyperbolic, vol 4.4008)",
@@ -403,7 +407,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.575172243917774052084841763492493025333615985339182583267599",
+        "tr_M_q0_canonical_50dps": "0.151968339204231630318531410156612274661410799076646651834715",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -431,12 +435,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -447,28 +463,16 @@
             "averaged"
           ],
           [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
             1,
             "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
           ],
           [
             2,
@@ -479,12 +483,24 @@
             "sigma"
           ],
           [
-            3,
-            "sigma"
+            4,
+            "sigma_inv"
           ],
           [
             3,
             "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
           ],
           [
             3,
@@ -495,28 +511,16 @@
             "averaged"
           ],
           [
+            4,
+            "sigma_inv"
+          ],
+          [
             3,
             "sigma"
           ],
           [
             3,
             "sigma"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
           ],
           [
             5,
@@ -527,12 +531,24 @@
             "sigma"
           ],
           [
-            6,
-            "sigma"
+            7,
+            "sigma_inv"
           ],
           [
             6,
             "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
           ],
           [
             6,
@@ -543,28 +559,16 @@
             "averaged"
           ],
           [
+            7,
+            "sigma_inv"
+          ],
+          [
             6,
             "sigma"
           ],
           [
             6,
             "sigma"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
           ]
         ],
         "markov_closure": "K_{8_11} (hyperbolic, vol 8.2863)",
@@ -651,17 +655,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.229310102104556507332090810268908879602801636456044701588122",
+        "tr_M_q0_canonical_50dps": "0.0291440423609720653572542187918698440658388035647366732120580",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
         "prediction_MeV_50dps": "8.468598397968137439766862761578",
         "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-0.0131978020318625602331372384219999999999999999999949801205468",
-        "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
-        "err_ppb": "-1556014.99029917274281327797312555092988440349462711476441429",
-        "err_ppm": "-1556.01499029917274281327797312555092988440349462711513663419",
+        "err_MeV": "-0.0131978020318625602331372384220000000000000000000000000000000",
+        "err_pct": "-0.155601499029917274281327797312555092988440349462770633418426",
+        "err_ppb": "-1556014.99029917274281327797312555092988440349462770633418426",
+        "err_ppm": "-1556.01499029917274281327797312555092988440349462770633418426",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -679,12 +683,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -695,28 +711,16 @@
             "averaged"
           ],
           [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
             1,
             "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
           ],
           [
             2,
@@ -727,12 +731,24 @@
             "sigma"
           ],
           [
-            3,
-            "sigma"
+            4,
+            "sigma_inv"
           ],
           [
             3,
             "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
           ],
           [
             3,
@@ -743,28 +759,16 @@
             "averaged"
           ],
           [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
             4,
             "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
           ],
           [
             5,
@@ -775,12 +779,24 @@
             "sigma"
           ],
           [
-            6,
-            "sigma"
+            7,
+            "sigma_inv"
           ],
           [
             6,
             "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
           ],
           [
             6,
@@ -791,28 +807,16 @@
             "averaged"
           ],
           [
+            7,
+            "sigma_inv"
+          ],
+          [
             6,
             "sigma"
           ],
           [
             6,
             "sigma"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
           ]
         ],
         "markov_closure": "L_{6a4} (link, vol 7.3277)",
@@ -899,17 +903,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.403767036851428170368670253333402541155087070591870456875555",
+        "tr_M_q0_canonical_50dps": "0.0585962536544363802189567154521302568308771072841812498487065",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "7.4889193198832206495234833469509444304899048613641",
+        "prediction_MeV_50dps": "7.488919319883220649523483346950944430489904861364072529740693311161264",
         "B_AME_MeV": "7.71804132000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-0.229122000116779350476516653049055569510095138635922789742849",
-        "err_pct": "-2.96865474823318710188657882242402363181563193076974778756194",
-        "err_ppb": "-29686547.4823318710188657882242402363181563193076974728054917",
-        "err_ppm": "-29686.5474823318710188657882242402363181563193076974482827686",
+        "err_MeV": "-0.229122000116779350476516653049055569510095138635927470259307",
+        "err_pct": "-2.96865474823318710188657882242402363181563193076980663611304",
+        "err_ppb": "-29686547.4823318710188657882242402363181563193076980663611304",
+        "err_ppm": "-29686.5474823318710188657882242402363181563193076980663611304",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -927,12 +931,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -943,28 +959,16 @@
             "averaged"
           ],
           [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
             1,
             "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
           ],
           [
             2,
@@ -975,12 +979,24 @@
             "sigma"
           ],
           [
-            3,
-            "sigma"
+            4,
+            "sigma_inv"
           ],
           [
             3,
             "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
           ],
           [
             3,
@@ -991,28 +1007,16 @@
             "averaged"
           ],
           [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
             4,
             "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
           ],
           [
             5,
@@ -1023,12 +1027,24 @@
             "sigma"
           ],
           [
-            6,
-            "sigma"
+            7,
+            "sigma_inv"
           ],
           [
             6,
             "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
           ],
           [
             6,
@@ -1039,28 +1055,16 @@
             "averaged"
           ],
           [
+            7,
+            "sigma_inv"
+          ],
+          [
             6,
             "sigma"
           ],
           [
             6,
             "sigma"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
           ],
           [
             8,
@@ -1071,12 +1075,24 @@
             "sigma"
           ],
           [
-            9,
-            "sigma"
+            10,
+            "sigma_inv"
           ],
           [
             9,
             "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
           ],
           [
             9,
@@ -1087,28 +1103,16 @@
             "averaged"
           ],
           [
+            10,
+            "sigma_inv"
+          ],
+          [
             9,
             "sigma"
           ],
           [
             9,
             "sigma"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
           ]
         ],
         "markov_closure": "magic A·8G shell (no single knot)",
@@ -1222,17 +1226,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.160974145442407381825873440980716853923607354133419963102312",
+        "tr_M_q0_canonical_50dps": "0.0112374176597674215641995493744106072696626960812607015503267",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "29.955677279532882598093933387803777721959619445456",
+        "prediction_MeV_50dps": "29.95567727953288259809393338780377772195961944545629011896277324464506",
         "B_AME_MeV": "28.2956624000000000000000000000000000000000000000000000000000",
-        "err_MeV": "1.66001487953288259809393338780377772195961944545630945751440",
-        "err_pct": "5.86667615716563892172368224114724284369331267345171233053359",
-        "err_ppb": "58666761.5716563892172368224114724284369331267345170907744110",
-        "err_ppm": "58666.7615716563892172368224114724284369331267345170774620756",
+        "err_MeV": "1.66001487953288259809393338780377772195961944545629011896277",
+        "err_pct": "5.86667615716563892172368224114724284369331267345163871817602",
+        "err_ppb": "58666761.5716563892172368224114724284369331267345163871817602",
+        "err_ppm": "58666.7615716563892172368224114724284369331267345163871817602",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -1250,12 +1254,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -1266,28 +1282,16 @@
             "averaged"
           ],
           [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
             1,
             "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
           ],
           [
             2,
@@ -1298,12 +1302,24 @@
             "sigma"
           ],
           [
-            3,
-            "sigma"
+            4,
+            "sigma_inv"
           ],
           [
             3,
             "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
           ],
           [
             3,
@@ -1314,28 +1330,16 @@
             "averaged"
           ],
           [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
             4,
             "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
           ],
           [
             5,
@@ -1346,12 +1350,24 @@
             "sigma"
           ],
           [
-            6,
-            "sigma"
+            7,
+            "sigma_inv"
           ],
           [
             6,
             "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
           ],
           [
             6,
@@ -1362,28 +1378,16 @@
             "averaged"
           ],
           [
-            6,
-            "sigma"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
             7,
             "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
           ],
           [
             8,
@@ -1394,12 +1398,24 @@
             "sigma"
           ],
           [
-            9,
-            "sigma"
+            10,
+            "sigma_inv"
           ],
           [
             9,
             "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
           ],
           [
             9,
@@ -1410,28 +1426,16 @@
             "averaged"
           ],
           [
+            10,
+            "sigma_inv"
+          ],
+          [
             9,
             "sigma"
           ],
           [
             9,
             "sigma"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
           ],
           [
             11,
@@ -1442,12 +1446,24 @@
             "sigma"
           ],
           [
-            12,
-            "sigma"
+            13,
+            "sigma_inv"
           ],
           [
             12,
             "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
           ],
           [
             12,
@@ -1458,28 +1474,16 @@
             "averaged"
           ],
           [
+            13,
+            "sigma_inv"
+          ],
+          [
             12,
             "sigma"
           ],
           [
             12,
             "sigma"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
           ]
         ],
         "markov_closure": null,
@@ -1620,7 +1624,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.113002764654032341178084944722516604819225248791078984813198",
+        "tr_M_q0_canonical_50dps": "0.00433294579029155676326202152259276695146286665843193241375298",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1648,12 +1652,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -1664,28 +1680,16 @@
             "averaged"
           ],
           [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
             1,
             "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
           ],
           [
             2,
@@ -1696,12 +1700,24 @@
             "sigma"
           ],
           [
-            3,
-            "sigma"
+            4,
+            "sigma_inv"
           ],
           [
             3,
             "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
           ],
           [
             3,
@@ -1712,28 +1728,16 @@
             "averaged"
           ],
           [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
             4,
             "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
           ],
           [
             5,
@@ -1744,12 +1748,24 @@
             "sigma"
           ],
           [
-            6,
-            "sigma"
+            7,
+            "sigma_inv"
           ],
           [
             6,
             "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
           ],
           [
             6,
@@ -1760,28 +1776,16 @@
             "averaged"
           ],
           [
-            6,
-            "sigma"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
             7,
             "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
           ],
           [
             8,
@@ -1792,12 +1796,24 @@
             "sigma"
           ],
           [
-            9,
-            "sigma"
+            10,
+            "sigma_inv"
           ],
           [
             9,
             "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
           ],
           [
             9,
@@ -1808,28 +1824,16 @@
             "averaged"
           ],
           [
+            10,
+            "sigma_inv"
+          ],
+          [
             9,
             "sigma"
           ],
           [
             9,
             "sigma"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
           ],
           [
             11,
@@ -1840,12 +1844,24 @@
             "sigma"
           ],
           [
-            12,
-            "sigma"
+            13,
+            "sigma_inv"
           ],
           [
             12,
             "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
           ],
           [
             12,
@@ -1856,28 +1872,16 @@
             "averaged"
           ],
           [
+            13,
+            "sigma_inv"
+          ],
+          [
             12,
             "sigma"
           ],
           [
             12,
             "sigma"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
           ],
           [
             14,
@@ -1888,12 +1892,24 @@
             "sigma"
           ],
           [
-            15,
-            "sigma"
+            16,
+            "sigma_inv"
           ],
           [
             15,
             "sigma"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            16,
+            "sigma_inv"
           ],
           [
             15,
@@ -1904,28 +1920,16 @@
             "averaged"
           ],
           [
+            16,
+            "sigma_inv"
+          ],
+          [
             15,
             "sigma"
           ],
           [
             15,
             "sigma"
-          ],
-          [
-            16,
-            "sigma_inv"
-          ],
-          [
-            16,
-            "sigma_inv"
-          ],
-          [
-            16,
-            "sigma_inv"
-          ],
-          [
-            16,
-            "sigma_inv"
           ]
         ],
         "markov_closure": null,
@@ -2093,7 +2097,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0450520270665527266978068001977781916100264193437729388235563",
+        "tr_M_q0_canonical_50dps": "0.000830959634890426034584542789296016077523884096355118866319662",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2121,12 +2125,24 @@
             "sigma"
           ],
           [
-            0,
-            "sigma"
+            1,
+            "sigma_inv"
           ],
           [
             0,
             "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
           ],
           [
             0,
@@ -2137,28 +2153,16 @@
             "averaged"
           ],
           [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
             1,
             "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
           ],
           [
             2,
@@ -2169,12 +2173,24 @@
             "sigma"
           ],
           [
-            3,
-            "sigma"
+            4,
+            "sigma_inv"
           ],
           [
             3,
             "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
           ],
           [
             3,
@@ -2185,28 +2201,16 @@
             "averaged"
           ],
           [
-            3,
-            "sigma"
-          ],
-          [
-            3,
-            "sigma"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
-            4,
-            "sigma_inv"
-          ],
-          [
             4,
             "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
           ],
           [
             5,
@@ -2217,12 +2221,24 @@
             "sigma"
           ],
           [
-            6,
-            "sigma"
+            7,
+            "sigma_inv"
           ],
           [
             6,
             "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
           ],
           [
             6,
@@ -2233,28 +2249,16 @@
             "averaged"
           ],
           [
-            6,
-            "sigma"
-          ],
-          [
-            6,
-            "sigma"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
-            7,
-            "sigma_inv"
-          ],
-          [
             7,
             "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
           ],
           [
             8,
@@ -2265,12 +2269,24 @@
             "sigma"
           ],
           [
-            9,
-            "sigma"
+            10,
+            "sigma_inv"
           ],
           [
             9,
             "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
           ],
           [
             9,
@@ -2281,28 +2297,16 @@
             "averaged"
           ],
           [
+            10,
+            "sigma_inv"
+          ],
+          [
             9,
             "sigma"
           ],
           [
             9,
             "sigma"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
-          ],
-          [
-            10,
-            "sigma_inv"
           ],
           [
             11,
@@ -2313,12 +2317,24 @@
             "sigma"
           ],
           [
-            12,
-            "sigma"
+            13,
+            "sigma_inv"
           ],
           [
             12,
             "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
           ],
           [
             12,
@@ -2329,28 +2345,16 @@
             "averaged"
           ],
           [
+            13,
+            "sigma_inv"
+          ],
+          [
             12,
             "sigma"
           ],
           [
             12,
             "sigma"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
-          ],
-          [
-            13,
-            "sigma_inv"
           ],
           [
             14,
@@ -2361,12 +2365,24 @@
             "sigma"
           ],
           [
-            15,
-            "sigma"
+            16,
+            "sigma_inv"
           ],
           [
             15,
             "sigma"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            16,
+            "sigma_inv"
           ],
           [
             15,
@@ -2377,28 +2393,16 @@
             "averaged"
           ],
           [
+            16,
+            "sigma_inv"
+          ],
+          [
             15,
             "sigma"
           ],
           [
             15,
             "sigma"
-          ],
-          [
-            16,
-            "sigma_inv"
-          ],
-          [
-            16,
-            "sigma_inv"
-          ],
-          [
-            16,
-            "sigma_inv"
-          ],
-          [
-            16,
-            "sigma_inv"
           ],
           [
             17,
@@ -2409,12 +2413,24 @@
             "sigma"
           ],
           [
-            18,
-            "sigma"
+            19,
+            "sigma_inv"
           ],
           [
             18,
             "sigma"
+          ],
+          [
+            19,
+            "sigma_inv"
+          ],
+          [
+            18,
+            "sigma"
+          ],
+          [
+            19,
+            "sigma_inv"
           ],
           [
             18,
@@ -2425,28 +2441,16 @@
             "averaged"
           ],
           [
+            19,
+            "sigma_inv"
+          ],
+          [
             18,
             "sigma"
           ],
           [
             18,
             "sigma"
-          ],
-          [
-            19,
-            "sigma_inv"
-          ],
-          [
-            19,
-            "sigma_inv"
-          ],
-          [
-            19,
-            "sigma_inv"
-          ],
-          [
-            19,
-            "sigma_inv"
           ]
         ],
         "markov_closure": null,
@@ -2641,7 +2645,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0179613759806625499996012671121512515025984778375315622634736",
+        "tr_M_q0_canonical_50dps": "0.000159359001528326978149310749810550152998888724845573002269073",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2665,7 +2669,7 @@
         "n_strands": 3,
         "prediction_type": "mass",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "1.14575969245730086968908159577411930594372806194352203945878",
+        "tr_M_q0_canonical_50dps": "0.629328402202921918165345746778485927600219400634369117488163",
         "prediction_MeV_50dps": "938.2720894273243",
         "B_AME_MeV": "938.272089430000000000000000000000000000000000000000000000000",
         "err_MeV": "-0.00000000267568248789757490158081054687500000000000000000000000000000",
@@ -2680,13 +2684,13 @@
         "n_strands": 3,
         "prediction_type": "mass",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.987743688115809571634020165501294982055048759062790056921782",
-        "prediction_MeV_50dps": "939.5658930679812",
+        "tr_M_q0_canonical_50dps": "0.475133517155682212506090232675005799558407634708723835430579",
+        "prediction_MeV_50dps": "939.5658930678236",
         "B_AME_MeV": "939.565421940000000000000000000000000000000000000000000000000",
-        "err_MeV": "0.000471127981164676893968135118484497070312500000000000000000000",
-        "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
-        "err_ppb": "501.431800450786280633454702979165566281610067571108001092729",
-        "err_ppm": "0.501431800450786280633454702979165566281610067571108001092729"
+        "err_MeV": "0.000471127823594719811808317899703979492187500000000000000000000",
+        "err_pct": "0.0000501431632745639408783028058509119097507663650323712976124639",
+        "err_ppb": "501.431632745639408783028058509119097507663650323712976124639",
+        "err_ppm": "0.501431632745639408783028058509119097507663650323712976124639"
       },
       "D": {
         "Z": 1,
@@ -2695,7 +2699,7 @@
         "n_strands": 6,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.575172243917774052084841763492493025333615985339182583267599",
+        "tr_M_q0_canonical_50dps": "0.151968339204231630318531410156612274661410799076646651834715",
         "prediction_MeV_50dps": "2.2488207979013090647629504720728859696833657096508",
         "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
         "err_MeV": "0.0242545979013090647629504720728859696833657096508468932095738",
@@ -2710,13 +2714,13 @@
         "n_strands": 9,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.229310102104556507332090810268908879602801636456044701588122",
+        "tr_M_q0_canonical_50dps": "0.0291440423609720653572542187918698440658388035647366732120580",
         "prediction_MeV_50dps": "8.468598397968137439766862761578",
         "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-0.0131978020318625602331372384219999999999999999999949801205468",
-        "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
-        "err_ppb": "-1556014.99029917274281327797312555092988440349462711476441429",
-        "err_ppm": "-1556.01499029917274281327797312555092988440349462711513663419"
+        "err_MeV": "-0.0131978020318625602331372384220000000000000000000000000000000",
+        "err_pct": "-0.155601499029917274281327797312555092988440349462770633418426",
+        "err_ppb": "-1556014.99029917274281327797312555092988440349462770633418426",
+        "err_ppm": "-1556.01499029917274281327797312555092988440349462770633418426"
       },
       "3He": {
         "Z": 2,
@@ -2725,13 +2729,13 @@
         "n_strands": 9,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.403767036851428170368670253333402541155087070591870456875555",
-        "prediction_MeV_50dps": "7.4889193198832206495234833469509444304899048613641",
+        "tr_M_q0_canonical_50dps": "0.0585962536544363802189567154521302568308771072841812498487065",
+        "prediction_MeV_50dps": "7.488919319883220649523483346950944430489904861364072529740693311161264",
         "B_AME_MeV": "7.71804132000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-0.229122000116779350476516653049055569510095138635922789742849",
-        "err_pct": "-2.96865474823318710188657882242402363181563193076974778756194",
-        "err_ppb": "-29686547.4823318710188657882242402363181563193076974728054917",
-        "err_ppm": "-29686.5474823318710188657882242402363181563193076974482827686"
+        "err_MeV": "-0.229122000116779350476516653049055569510095138635927470259307",
+        "err_pct": "-2.96865474823318710188657882242402363181563193076980663611304",
+        "err_ppb": "-29686547.4823318710188657882242402363181563193076980663611304",
+        "err_ppm": "-29686.5474823318710188657882242402363181563193076980663611304"
       },
       "4He": {
         "Z": 2,
@@ -2740,13 +2744,13 @@
         "n_strands": 12,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.160974145442407381825873440980716853923607354133419963102312",
-        "prediction_MeV_50dps": "29.955677279532882598093933387803777721959619445456",
+        "tr_M_q0_canonical_50dps": "0.0112374176597674215641995493744106072696626960812607015503267",
+        "prediction_MeV_50dps": "29.95567727953288259809393338780377772195961944545629011896277324464506",
         "B_AME_MeV": "28.2956624000000000000000000000000000000000000000000000000000",
-        "err_MeV": "1.66001487953288259809393338780377772195961944545630945751440",
-        "err_pct": "5.86667615716563892172368224114724284369331267345171233053359",
-        "err_ppb": "58666761.5716563892172368224114724284369331267345170907744110",
-        "err_ppm": "58666.7615716563892172368224114724284369331267345170774620756"
+        "err_MeV": "1.66001487953288259809393338780377772195961944545629011896277",
+        "err_pct": "5.86667615716563892172368224114724284369331267345163871817602",
+        "err_ppb": "58666761.5716563892172368224114724284369331267345163871817602",
+        "err_ppm": "58666.7615716563892172368224114724284369331267345163871817602"
       },
       "5Li": {
         "Z": 3,
@@ -2755,7 +2759,7 @@
         "n_strands": 15,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.113002764654032341178084944722516604819225248791078984813198",
+        "tr_M_q0_canonical_50dps": "0.00433294579029155676326202152259276695146286665843193241375298",
         "prediction_MeV_50dps": null,
         "B_AME_MeV": "26.3280000000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
@@ -2770,7 +2774,7 @@
         "n_strands": 18,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.0450520270665527266978068001977781916100264193437729388235563",
+        "tr_M_q0_canonical_50dps": "0.000830959634890426034584542789296016077523884096355118866319662",
         "prediction_MeV_50dps": null,
         "B_AME_MeV": "31.9939872000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
@@ -2785,7 +2789,7 @@
         "n_strands": 21,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.0179613759806625499996012671121512515025984778375315622634736",
+        "tr_M_q0_canonical_50dps": "0.000159359001528326978149310749810550152998888724845573002269073",
         "prediction_MeV_50dps": null,
         "B_AME_MeV": "39.2452200000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
@@ -2806,11 +2810,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "a2c4fba672ed0b8e17154c07585f31d71180f46de5720142d9d3cc8098b8905d",
-        "size_bytes": 11542,
-        "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
+        "sha256": "0b89a5f78fa8110ea9a14bc25361a234b3ad64b92ea20296559f1afd25b968d6",
+        "size_bytes": 11520,
+        "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
         "scriptCommitSha": "945b2edf2fb8d11552720c7e2aa3a1944797dfe4",
-        "computedAt": "2026-08-23T21:16:04.728212+00:00"
+        "computedAt": "2026-08-29T09:30:54.473879+00:00"
       }
     ]
   },

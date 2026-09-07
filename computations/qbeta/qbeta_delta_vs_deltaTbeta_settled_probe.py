@@ -73,17 +73,18 @@ Exact mpmath at 50 dps. NO fit, NO c_k, NO wiring.
 """
 import datetime, hashlib, json, os, subprocess, sys
 import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
-# `Path` was used below without ever being imported (bean qou-6inm's own fix,
-# 957a8b0da4, 2026-08-31): this module has raised `NameError: name 'Path' is
-# not defined` at import ever since, so the probe has not run in six days.
-from pathlib import Path
-# Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
-# DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
-# clone not at that exact path. A sys.path insert of a missing directory raises
-# NOTHING, so the failure was silent until an unrelated-looking import died.
-_QOU_ROOT = Path(__file__).resolve().parents[2]
-_COMP = _QOU_ROOT / "computations"
-sys.path[:0] = [str(_COMP), str(_COMP / "hecke"), str(_COMP / "substrate")]
+# Derived from __file__, not hardcoded. These were absolute
+# `/home/user/qou/computations/...` paths, so every import below raised
+# ModuleNotFoundError anywhere the repo is not checked out at that exact path.
+# Found independently on both sides of this merge (qou-y2o7's consumer sweep
+# and qou-6inm); the failure predates both. `parents[1]` IS `computations/`
+# for a file in `computations/qbeta/`, so the extra hop through the repo root
+# that the other fix took is equivalent and longer.
+from pathlib import Path as _Path
+_COMPUTATIONS = _Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(_COMPUTATIONS),
+                str(_COMPUTATIONS / "hecke"),
+                str(_COMPUTATIONS / "substrate")]
 import mpmath as mp
 mp.mp.dps = 50
 from chi_monotone_transfer import chi_all_lambda
@@ -121,14 +122,27 @@ def main():
     # CALIBRATION against the FIXED producer -- mandatory here, because the
     # first attempt at this probe calibrated against the PRE-FIX version and
     # "matched exactly" while both were wrong by 15.3 % / 27.3 %.
+    #
+    # `intra_order="grouped"` DELIBERATELY, 2026-09-06 (bean qou-y2o7).
+    # `_word` above builds the GROUPED word (all gen 0, then all gen 1), and so
+    # does everything this probe compares against: the qu2w calibration, the
+    # hardcoded pre/post-fix pin below, and the `paper` closed forms further
+    # down, which are stated in that frame and reproduce from it exactly.
+    # Since 2026-09-06 `compute_tau_M_nucleon_H3` defaults to the canonical
+    # BORROMEAN ordering, so the unqualified call would compare 0.629/0.475
+    # against this probe's 1.146/0.988 and fail all three — comparing two
+    # different braids, not detecting anything. Asking for the historical word
+    # keeps the comparison like-for-like.
     for nm, c in (("p", cp), ("n", cn)):
         mine = sum(y_lambda_wenzl_bridge_numeric(l, q, dps=50) * c.get(tuple(l), mp.mpf(0))
                    for l in [(3,), (2, 1), (1, 1, 1)])
         check(f"calibrates_against_fixed_compute_tau_M_nucleon_H3_{nm}",
-              abs(compute_tau_M_nucleon_H3(nm, q, dps=50) - mine) < mp.mpf("1e-40"))
+              abs(compute_tau_M_nucleon_H3(nm, q, dps=50, intra_order="grouped") - mine)
+              < mp.mpf("1e-40"))
     # and pin that it is the POST-fix value, not the pre-fix one
     check("post_fix_tau_p_not_the_pre_fix_value",
-          abs(compute_tau_M_nucleon_H3("p", q, dps=50) - mp.mpf("1.14575969245730087")) < mp.mpf("1e-15"))
+          abs(compute_tau_M_nucleon_H3("p", q, dps=50, intra_order="grouped")
+              - mp.mpf("1.14575969245730087")) < mp.mpf("1e-15"))
 
     paper = {(3,): -(q**2 - 1)*(q**2 + 1)**2/(4*q),
              (2, 1): (q**2 - 1)*(-(q**4) - 1)/(4*q**3),

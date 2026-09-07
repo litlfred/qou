@@ -1,0 +1,56 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0605242v1",
+ "source_sha256": "65fac7285e4a77f4",
+ "brief": "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel § — In this article we study a broad class of integer programming problem s in variable dimension.",
+ "extended": "**N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel §**\n\n16 pp, 7 sections.\n\n**Abstract.** In this article we study a broad class of integer programming problem s in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence of linear optimization and so-called directed augmentation, and the stabilization of certa in Graver bases. We discuss several applications of our algorithm to multiway transpo rtation problems and to packing problems. One important consequence of our results is a po lynomial time algorithm for the d-dimensional integer transportation problem for long multiway table s. Another interesting application is a new algorithm for the classical cutting stock problem.\n\n**Outline.** Introduction; Applications; High dimensional transportation problems; Some packing problems; Graver bases and directed augmentation; Graver bases of n-fold matrices; The polynomial time algorithm for n-fold integ",
+ "tokens": {
+  "brief": 48,
+  "extended": 273
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-applications",
+   "title": "Applications",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-high-dimensional-transportation-problems",
+   "title": "High dimensional transportation problems",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-some-packing-problems",
+   "title": "Some packing problems",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-graver-bases-and-directed-augmentation",
+   "title": "Graver bases and directed augmentation",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-005-graver-bases-of-n-fold-matrices",
+   "title": "Graver bases of n-fold matrices",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-006-the-polynomial-time-algorithm-for-n-fold-integer",
+   "title": "The polynomial time algorithm for n-fold integer programming",
+   "pages": "13-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

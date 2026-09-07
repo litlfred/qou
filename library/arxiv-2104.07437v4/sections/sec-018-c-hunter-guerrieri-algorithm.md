@@ -7,6 +7,7 @@ section_number: null
 pages: 45-52
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 The Hunter-Guerrieri algorithm [87] is concerned with the following problem. Let p(ζ) be a
 function analytic at the origin which has the following expansion

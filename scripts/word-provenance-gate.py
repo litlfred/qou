@@ -364,12 +364,14 @@ def main() -> int:
     ap.add_argument("--diff", nargs="*", help="gate only these files")
     ap.add_argument("--strict", action="store_true",
                     help="gate the whole scan root, not just --diff")
-    # BOTH spellings. `scripts/precision-gates.sh` invokes this with
-    # `--self-test` (hyphenated) and treats a non-zero exit as "a detector that
-    # cannot be shown to fire is a no-op". argparse exits 2 on the unrecognized
-    # flag, so this gate's self-test has never actually run and the harness has
-    # been reporting it failed for a reason unrelated to braid-word provenance.
-    ap.add_argument("--self-test", "--selftest", action="store_true",
+    # Both spellings on purpose. `.github/workflows/word-provenance-gate.yml`
+    # calls `--selftest`; `scripts/precision-gates.sh` calls `--self-test`, as 19
+    # of the other 20 self-testing gates accept. This gate was the sole outlier
+    # (measured 2026-09-07), so the runner reported "SELF-TEST FAILED -- a
+    # detector that cannot be shown to fire is a no-op" for a self-test that in
+    # fact passes 9/9. An argparse usage error and a real detector failure look
+    # the same from outside; this removes the one live case.
+    ap.add_argument("--selftest", "--self-test", action="store_true",
                     dest="selftest", help="self-test and exit")
     args = ap.parse_args()
 

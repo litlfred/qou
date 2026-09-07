@@ -7,6 +7,7 @@ section_number: 4
 pages: 13-14
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 In this section we review the notion of decorated representa tions introduced in Zickert [ 30].
 Throughout the section, G denotes an arbitrary group, not necessarily a Lie group. Let H be

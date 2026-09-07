@@ -20,7 +20,7 @@ class was inhabited by `Unit` and zero (bean `qou-z9ws`).
    resolution checks the **sibling first** — so the block already resolves to
    [`mass-theory/schur-weyl-mass-decomposition.lean`](../../mass-theory/schur-weyl-mass-decomposition.lean),
    never to this file.
-2. That sibling carries the real formalisation: `PartitionOfN`, `qHookProduct`, `schurAtQ`, `spechtCharacter`, `schurWeylWeight`, `a_eq_one_three_channels`.
+2. That sibling carries the real formalisation: `PartitionOfN`, `qHookProduct`, `schurAtQ`, `spechtCharacter`, `schurWeylWeight`, and (since 2026-09-06) the refutations `not_a_eq_one_three_channels` and `not_additive_wedderburn_missing_partitions` -- the `a_eq_one_three_channels` this line used to name was deleted as false.
 3. **Nothing imports this module** and nothing else in `content/` names the
    class (measured 2026-08-31 across every `.lean` in the tree).
 

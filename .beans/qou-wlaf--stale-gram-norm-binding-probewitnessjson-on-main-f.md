@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-30T13:57:29Z
+updated_at: 2026-09-06T09:20:57Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -1101,3 +1101,71 @@ nothing passing in its place.
 **Result on that sample: 0 genuine findings in 36 decidable.** The class is
 real — three hand-found instances across 15 days — but this slice is clean, and
 that is worth saying plainly rather than leaving the impression of a fire.
+
+
+## Not stale — and a measured FALSE NEGATIVE in this bean's own detector (2026-09-06)
+
+Reached by `scripts/bean-staleness-triage.py` (7th of 284 artifact beans).
+
+**The headline is fixed and this bean already says so.** `gram-norm-binding-probe.witness.json`
+on `main` carries the engine value `0.5751722439`, the stale `0.3883571887` is
+gone, `allPassed: True`, `computedAt: 2026-08-29T11:11:22`. The 2026-08-30
+update records it, with the discipline note worth repeating: *"a detector that
+reported a finding here would have been **wrong**, and I checked that before
+trusting it rather than after."*
+
+### 🔴 A fifth gap, and it is confirmed by execution rather than argued
+
+`witness_assertion_replay_audit` reports **`REPRODUCES`** on
+`computations/markov-identity-symbolic.witness.json` —
+*"✓ every decidable witness in this sample still reproduces"* — on a witness
+measured on **2026-09-05** to carry values the current code does not produce:
+
+| sample point | committed | recomputed |
+|---|---|---|
+| `proton_q0` | 1.1457596924573008697 | **0.62932840220292191817** |
+| `1.3` | 3.3688168001572002037 | **1.277736943233662226** |
+| `0.7` | −4.7449410256554617359 | **−0.3531913855255301353** |
+| `2` | 116.33458984375 | **51.77927734375** |
+
+Roughly **2× at every point**, at sample points that did not change. Run:
+`--only markov-identity-symbolic --limit 3 --timeout 900` (the default 120 s
+cannot replay this producer — its deuteron bridge alone is 520 s — so at the
+default it would have been a timeout, not a verdict).
+
+**Why it is missed, from the code rather than from guessing.** `VALUE_DRIFT`
+compares `recorded` against `fresh` **keyed by assertion name** (line 158). The
+drifted quantities here are `peel` values in the witness *payload*, not
+assertions. This witness has exactly **one** assertion —
+`identity_holds_identically_in_q_for_every_atom_tested` — and it is `True` both
+before and after, because the residual is identically zero **regardless of
+`peel`'s normalisation**. The assertion is robust to precisely the drift that
+moved the payload.
+
+**So the uncovered case is one step past this bean's own framing:** its
+docstring says *"recorded green, no longer true"*, and none of the five
+auditors covers **"assertions still hold, recorded non-assertion payload
+moved."** `witness_reproducibility_check` does byte-equality but only for
+`*.derivation.json`, so witness payload drift falls between them.
+
+The instance is in the **replayable 1779**, not the 1169 invisible — top-level
+`scriptFile`, green, has assertions — so this is a false negative inside the
+covered population, not a coverage-ceiling case.
+
+### Proposed close, with its cost stated
+
+Compare the **payload** under a volatile-field mask on a replay the detector is
+already doing (it restores the tree afterwards, so both versions are in hand).
+The mask is the one AGENTS.md already specifies for witness comparison —
+`timestamp`, `computedAt`, `elapsed_seconds`, `durationMs`, `measured_at`,
+`start_time_monotonic`, the `invocation` block.
+
+**Honest cost:** payload comparison is noisier than assertion comparison, which
+is presumably why it was not done. Timings and any incidentally-recorded
+environment detail will drift constantly, so an unmasked version would be
+useless and even a masked one may need per-producer tuning. Offered as a
+proposal for the detector's owner, not applied here — this bean's own posture
+is that a detector reporting a wrong finding is worse than one reporting none.
+
+**Not reopening the headline.** `gram-norm-binding-probe` is fixed; this is
+about the detector that grew out of it.

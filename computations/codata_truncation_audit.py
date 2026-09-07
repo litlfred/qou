@@ -75,6 +75,27 @@ from codata_constants import (  # noqa: E402
 )
 from q_parameter import Q_MP, Q_MUON_50_DIGIT_STR  # noqa: E402
 
+
+def _codata_value_str(quantity: str) -> str:
+    """The CODATA table's own string for `quantity`, normalised to a decimal.
+
+    Read from the table rather than typed, so a CANON row can never itself
+    become the hardcoded literal this gate exists to catch. The table ships
+    exponent form for small values (`7.2973525643e-3`); author-written source
+    carries the expanded decimal, so the comparison has to be made on the
+    expanded form or every literal reads as DIVERGENT against its own
+    canonical.
+    """
+    from decimal import Decimal  # noqa: PLC0415
+
+    from qou_substrate.codata import value_str  # noqa: PLC0415
+
+    raw = value_str(quantity)
+    d = Decimal(raw)
+    # `format(d, "f")` expands the exponent WITHOUT rounding, unlike float().
+    out = format(d, "f")
+    return out.rstrip("0").rstrip(".") if "." in out else out
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 
@@ -118,6 +139,48 @@ CANON: dict[str, tuple[str, str]] = {
     "m_pi":  (_canon_str(M_PI_PM_MEV_VALIDATION),
               "codata_constants.M_PI_PM_MEV_VALIDATION"),
     "u_MeV": (_canon_str(U_MEV), "codata_constants.U_MEV"),
+    # ALPHA WAS NEVER COVERED, and the reason was my own bad measurement:
+    # I grepped codata.py's SOURCE for `alpha`/`fine`, got only a docstring
+    # mention of "alpha particle mass", and concluded the registry had no
+    # fine-structure entry. It does -- in `data/allascii.txt`, which the parser
+    # reads. `codata("inverse fine-structure constant")` returns
+    # 137.035999177, i.e. CODATA 2022, already the canonical edition. Grepping
+    # the parser instead of the data it serves is the detector-blindness shape
+    # AGENTS.md catalogues; bean qou-rbdi.
+    #
+    # Sourced from the table rather than typed, so this row cannot itself
+    # become the hardcoded literal the gate exists to catch.
+    # 1/alpha HAS THREE LEGITIMATE VALUES, and they are three DETERMINATIONS,
+    # not three editions. This is the same shape as q0/q0_muon above, and for
+    # the same reason: with one canonical row, every literal written against a
+    # different determination is reported WRONG.
+    #
+    #   137.035999046  Parker et al. 2018, Cs recoil  (Berkeley)
+    #   137.035999206  Morel  et al. 2020, Rb recoil  (LKB)          2 files
+    #   137.035999084  CODATA 2018, Cs-weighted                     41 files
+    #   137.035999177  CODATA 2022, incorporating both              19 files
+    #
+    # Cs and Rb disagree at 7.6 sigma -- an OPEN experimental tension, not a
+    # currency question. experimental_constants.py says so in its own words:
+    # "DELIBERATE determination choice, not a stale edition. The Cs-recoil
+    # value is retained on purpose; CODATA-2022 would be a different
+    # determination, not merely newer digits."
+    #
+    # So a single CODATA-2022 canonical would encode one side of a live
+    # physics disagreement into a gate, and score 41 deliberate files as
+    # defects. Carrying all three lets classify() pick the NEAREST, which
+    # still catches what this gate is for -- a TRUNCATION of whichever
+    # determination the author chose -- without adjudicating between them.
+    "alpha_em_inv": (_codata_value_str("inverse fine-structure constant"),
+                     'codata.codata("inverse fine-structure constant")'),
+    "alpha_em_inv_codata2018": ("137.035999084",
+                                "experimental_constants.ALPHA_EM_INV"),
+    "alpha_em_inv_rb_morel2020": ("137.035999206",
+                                  "the LKB Rb-recoil determination"),
+    "alpha_em": (_codata_value_str("fine-structure constant"),
+                 'codata.codata("fine-structure constant")'),
+    "alpha_em_codata2018": ("0.0072973525693",
+                            "experimental_constants.ALPHA_EM_INV (inverted)"),
     "q0":    (_canon_str(Q_MP), "q_parameter.Q_MP"),
     # The MUON pin is a second legitimate anchor, not a botched proton one.
     # It sits 11.6 ppb from q0 -- inside DIVERGENT_REL_TOL -- so without its

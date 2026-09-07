@@ -95,7 +95,7 @@ def main() -> int:
     G = mp.catalan
 
     # f(q_0) such that correction = (α_em/π) · f(q_0) / 6 = residual
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
     f_target = residual / (alpha_em / mp.pi / 6)
     print(f"[Target] f(q_0) = {mp.nstr(f_target, 25)}")
     print(f"         f - 1  = {mp.nstr(f_target - 1, 18)}")

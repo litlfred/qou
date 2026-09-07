@@ -61,8 +61,7 @@ import mpmath as mp
 
 mp.mp.dps = 30
 
-M_INF = mp.mpf('0.300186614161')          # merged #5901 IO leading (CS) margin
-SIG_RATIO_INF = mp.mpf('0.679609581496')  # merged #5901 sigma_D/sigma_A limit
+from _m1_io_constants import M_INF, SIG_RATIO_INF  # merged #5901 IO leading constants -- single source, see that module
 
 
 def _load_UV():

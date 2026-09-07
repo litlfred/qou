@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T07:09:37Z
-updated_at: 2026-08-30T07:14:18Z
+updated_at: 2026-09-06T10:14:12Z
 ---
 
 Raised by a sibling on PR #6097, relayed as a coordination comment on #6093,
@@ -80,3 +80,85 @@ Both classes are library Lean under `content/**/lean/QOU/**`, so neither has a
 
 Deliberately NOT done on #6093: that PR drains the borrowed-name tiers and adds
 two kernel predicates; a third detector is new scope.
+
+
+## 2026-09-06 — HALF LANDED: the self-discharged `Prop` pair, 17 candidates
+
+Commit `dccab733a7`, PR #6930.
+
+### What shipped
+
+`detectSelfDischargedPropField` in
+`content/pipeline/lean-vacuity-axiom-audit.ts`, emitting under
+`proof-claims-unencoded` with pattern **`prop-field-self-discharged`**
+(MAJOR — a high-recall candidate for an agent verdict, matching the rest of
+this family; no new `Category` entry, so the registry is untouched).
+
+**The blind spot is in `detectPropUniverseField`'s exemption, not in its
+existence.** That detector fires only on an *unconsumed* `Prop`-universe field,
+and it is right to: firing on any `Prop` field over-reported 6× (101 carriers).
+But the exemption is satisfied by a consumer that adds nothing. When the only
+sibling mentioning `p` has type *literally `p`* —
+
+    blocks_sum_to_one : Prop
+    blocks_sum_holds  : blocks_sum_to_one
+
+— the instance still chooses the proposition and `⟨True, True.intro⟩` inhabits
+the pair. It asserts exactly what a bare `p : Prop` asserts, while looking
+twice as populated.
+
+**Narrower than "has a bare-assertion consumer", deliberately.** A field with a
+bare assertion *and* a relating sibling keeps its content and stays silent —
+which is what preserves `QOU.Torsion.BraneBoundaryContext`, the counter-example
+`detectPropUniverseField` is calibrated against (`brane_boundary_regular`
+carries `boundary_active : brane_boundary_regular` **and** an implication
+field, so the `every` test fails). The refinement narrows that exemption
+without overturning its calibration, and that was the design constraint.
+
+### 17 candidates, and the Hecke stack is in them
+
+`IwahoriHeckeAlgebra` (`hecke_relation`, `braid_relation`), `MarkovTrace`
+(`markov_axiom`), `WedderburnDecomposition` (`blocks_sum_to_one`,
+`blocks_orthogonal`), `WenzlBridge` (`bridge_identity`), `MarkovTraceRecursion`,
+`HasGeneratorAction`, `NonAbelianStokes`, `LieValuedStokes`,
+`OperatorSelectionLP`, `CanonicalKnotIdSDP`, `BorromeanQuark`,
+`BringWPlaneMonodromy`, `VorticityLowerBoundContext`,
+`EInfinityIdentificationsContext`, `SpectralSequenceH3ExplicitContext`,
+`QmnRecursiveMemoizedContext`, `WenzlQmnSynergyContext`.
+
+Several **say so in their own docstrings** — *"the bridge identity (placeholder
+Prop; instances discharge)"*, *"the Markov axiom (placeholder shape)"* — and
+`HeckeAlgebra.lean`'s `triv_wedderburn` discharges both Wedderburn fields with
+`:= True` / `:= True.intro` twelve lines below the class. The source is honest;
+nothing could see it.
+
+### Audit witness delta, and what is NOT mine
+
+    scanned_files            3658 -> 3686   (+28 landed on main since 2026-09-05)
+    proof-claims-unencoded     37 -> 54     (+17, this detector)
+    total_defects              75 -> 90
+
+`proof-no-unused-hypothesis-rfl` and `proof-no-provable-axiom` each went
+**1 → 0**. That is **not** this change: the diff adds one function and one
+`push` call, and `push` does not dedupe (`if (h && …) hits.push(h)`), so it can
+only add. Those two come from the 28 files.
+
+### STILL OPEN — the product shape, and the design question is answered
+
+They are **two criteria, not one**. The shape shipped here is decidable from
+the field graph by name lookup. The product shape —
+
+    y_lambda : Partition n → R        (free)
+    chi      : … → R                  (free)
+    frobenius_pairing : tr_M w = Σ_λ y_lambda λ * chi λ w
+
+— needs the *equation* parsed, and needs "occurs only as a factor of one
+product" rather than "occurs in a sibling's type". It is the more
+false-positive-prone of the two and it is left on this bean.
+
+### Ledger
+
+All 17 are library Lean under `content/**/lean/QOU/**` or content-block
+siblings, so verdicts belong in `docs/audits/lean-vacuity-review-ledger.json`.
+**Not seeded here** — seeding 17 `needs-agent` rows is a separate pass, and
+each wants the citing carrier read before a verdict.

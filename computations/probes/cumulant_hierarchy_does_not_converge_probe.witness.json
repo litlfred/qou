@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-02T21:54:27.464081+00:00",
-  "commitSha": "ba326aaffbddc38ba8b374f0d839e2326d975f83",
+  "computedAt": "2026-09-06T15:54:56.570160+00:00",
+  "commitSha": "30177dd40b850048ad0d947761314b154aa1985c",
   "assertions": [
     {
       "name": "A1_L_is_additive_on_disjoint_blocks",
@@ -18,7 +18,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "recursive vs direct Mobius agree to 2.66e-15"
+      "source": "recursive vs direct Mobius agree to 1.78e-15"
     },
     {
       "name": "A3_hierarchy_does_not_converge",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 83,
+  "durationMs": 14,
   "computation": "cumulant_hierarchy_does_not_converge_probe",
   "scriptFile": "cumulant_hierarchy_does_not_converge_probe.py",
-  "scriptHash": "6785530ae066",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9787c173b874",
+  "scriptCommitSha": "0d5c3f9972a8829b6fb762a157f33d27802a970c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -121,7 +124,7 @@
       "converges": false,
       "L_full": "3.860272620367",
       "reconstruction_residual": "0.00e+00",
-      "moebius_cross_check": "2.66e-15"
+      "moebius_cross_check": "1.78e-15"
     },
     "c5_noise_audit": {
       "c5": "1.604498983118",

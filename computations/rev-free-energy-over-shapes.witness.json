@@ -1,0 +1,528 @@
+{
+  "bean": "qou-hok7",
+  "checks": [
+    {
+      "check": "R1_free_energy_identity_reproduces_REV",
+      "detail": "(F) reproduces REV from the exact transfer-operator polynomial for every n=1..11; worst |difference| = 1.245e-60 against a 60-dps tolerance 1.0e-45. The shape sum has p(n) terms where the operator has ~I(n) paths.",
+      "pass": true
+    },
+    {
+      "check": "R2_entropy_term_bounded_by_log_dim",
+      "detail": "0 <= R_lambda <= log f^lambda verified for all 507 shapes with n <= 14 (0 violations). This is what makes (F) a free energy with a bounded entropy: R_lambda is the log of a reversed polynomial with non-negative coefficients summing to f^lambda.",
+      "pass": true
+    },
+    {
+      "check": "R3_neither_part_alone_reproduces_REV",
+      "detail": "at n=34: REV = 23.35147881, energy-only = 7.766955568, entropy-only = 24.28044496. Both differ from REV, so REV is a genuine competition between excess hook length and shape multiplicity -- not either alone.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 3,
+  "checks_total": 3,
+  "computedAt": "2026-09-07T06:27:49.524617+00:00",
+  "deficit_spectrum_identified_as": "excess total hook length H(lambda) - H_min(n)",
+  "dps": 60,
+  "growth_diagnostics_MEASURED_not_derived": [
+    {
+      "REV_over_log_I": "1.0",
+      "REV_over_n": "0.34657359",
+      "REV_over_sqrt_n": "0.49012907",
+      "n": 2
+    },
+    {
+      "REV_over_log_I": "0.92669652",
+      "REV_over_n": "0.42822472",
+      "REV_over_sqrt_n": "0.74170697",
+      "n": 3
+    },
+    {
+      "REV_over_log_I": "0.9150282",
+      "REV_over_n": "0.52673257",
+      "REV_over_sqrt_n": "1.0534651",
+      "n": 4
+    },
+    {
+      "REV_over_log_I": "0.88212403",
+      "REV_over_n": "0.57480905",
+      "REV_over_sqrt_n": "1.2853121",
+      "n": 5
+    },
+    {
+      "REV_over_log_I": "0.84708193",
+      "REV_over_n": "0.61141433",
+      "REV_over_sqrt_n": "1.4976531",
+      "n": 6
+    },
+    {
+      "REV_over_log_I": "0.83046275",
+      "REV_over_n": "0.6461875",
+      "REV_over_sqrt_n": "1.7096514",
+      "n": 7
+    },
+    {
+      "REV_over_log_I": "0.80902427",
+      "REV_over_n": "0.67134531",
+      "REV_over_sqrt_n": "1.8988513",
+      "n": 8
+    },
+    {
+      "REV_over_log_I": "0.78492265",
+      "REV_over_n": "0.68645233",
+      "REV_over_sqrt_n": "2.059357",
+      "n": 9
+    },
+    {
+      "REV_over_log_I": "0.76034655",
+      "REV_over_n": "0.69637296",
+      "REV_over_sqrt_n": "2.2021247",
+      "n": 10
+    },
+    {
+      "REV_over_log_I": "0.74557568",
+      "REV_over_n": "0.71051966",
+      "REV_over_sqrt_n": "2.3565271",
+      "n": 11
+    },
+    {
+      "REV_over_log_I": "0.72908701",
+      "REV_over_n": "0.72000276",
+      "REV_over_sqrt_n": "2.4941627",
+      "n": 12
+    },
+    {
+      "REV_over_log_I": "0.67545234",
+      "REV_over_n": "0.72734744",
+      "REV_over_sqrt_n": "2.8170045",
+      "n": 15
+    },
+    {
+      "REV_over_log_I": "0.63749095",
+      "REV_over_n": "0.73384332",
+      "REV_over_sqrt_n": "3.1134335",
+      "n": 18
+    },
+    {
+      "REV_over_log_I": "0.59731121",
+      "REV_over_n": "0.72560124",
+      "REV_over_sqrt_n": "3.3251226",
+      "n": 21
+    },
+    {
+      "REV_over_log_I": "0.56830783",
+      "REV_over_n": "0.72205346",
+      "REV_over_sqrt_n": "3.5373251",
+      "n": 24
+    },
+    {
+      "REV_over_log_I": "0.53836094",
+      "REV_over_n": "0.71072133",
+      "REV_over_sqrt_n": "3.6930164",
+      "n": 27
+    },
+    {
+      "REV_over_log_I": "0.51394845",
+      "REV_over_n": "0.70149113",
+      "REV_over_sqrt_n": "3.8422251",
+      "n": 30
+    },
+    {
+      "REV_over_log_I": "0.48418553",
+      "REV_over_n": "0.6868082",
+      "REV_over_sqrt_n": "4.0047456",
+      "n": 34
+    }
+  ],
+  "identity": "REV_n = log sum_{lambda|-n} exp(R_lambda - (H(lambda)-H_min) ln q0), R_lambda = log term_lambda(q0) - (n^2-H(lambda)) ln q0, 0 <= R_lambda <= log f^lambda",
+  "probe": "rev_free_energy_over_shapes_probe",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0_anchor": "physical_proton",
+  "rev_table": [
+    {
+      "H_min": 3,
+      "REV": "0.69314718055995",
+      "dominant_shape": [
+        2
+      ],
+      "energy_only": "0.69314718055995",
+      "entropy_only": "0.69314718055995",
+      "n": 2,
+      "n_partitions": 2
+    },
+    {
+      "H_min": 5,
+      "REV": "1.2846741535243",
+      "dominant_shape": [
+        2,
+        1
+      ],
+      "energy_only": "1.0302751192728",
+      "entropy_only": "1.3380631512274",
+      "n": 3,
+      "n_partitions": 3
+    },
+    {
+      "H_min": 8,
+      "REV": "2.1069302985336",
+      "dominant_shape": [
+        3,
+        1
+      ],
+      "energy_only": "1.5311103599325",
+      "entropy_only": "2.1517218489173",
+      "n": 4,
+      "n_partitions": 5
+    },
+    {
+      "H_min": 11,
+      "REV": "2.8740452534087",
+      "dominant_shape": [
+        3,
+        1,
+        1
+      ],
+      "energy_only": "1.8114640854899",
+      "entropy_only": "2.9437257667911",
+      "n": 5,
+      "n_partitions": 7
+    },
+    {
+      "H_min": 14,
+      "REV": "3.6684859605377",
+      "dominant_shape": [
+        3,
+        2,
+        1
+      ],
+      "energy_only": "2.1783162767903",
+      "entropy_only": "3.8024322554009",
+      "n": 6,
+      "n_partitions": 11
+    },
+    {
+      "H_min": 18,
+      "REV": "4.523312514362",
+      "dominant_shape": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "energy_only": "2.4715589573718",
+      "entropy_only": "4.6432795071489",
+      "n": 7,
+      "n_partitions": 15
+    },
+    {
+      "H_min": 22,
+      "REV": "5.3707624578377",
+      "dominant_shape": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "energy_only": "2.8117486361179",
+      "entropy_only": "5.5074279404374",
+      "n": 8,
+      "n_partitions": 22
+    },
+    {
+      "H_min": 26,
+      "REV": "6.1780709311752",
+      "dominant_shape": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "energy_only": "3.052761003157",
+      "entropy_only": "6.3566511373878",
+      "n": 9,
+      "n_partitions": 30
+    },
+    {
+      "H_min": 30,
+      "REV": "6.9637296484645",
+      "dominant_shape": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "energy_only": "3.2938645580018",
+      "entropy_only": "7.2099453184538",
+      "n": 10,
+      "n_partitions": 42
+    },
+    {
+      "H_min": 35,
+      "REV": "7.8157162176682",
+      "dominant_shape": [
+        5,
+        3,
+        2,
+        1
+      ],
+      "energy_only": "3.5686260884082",
+      "entropy_only": "8.048238649174",
+      "n": 11,
+      "n_partitions": 56
+    },
+    {
+      "H_min": 40,
+      "REV": "8.6400331307536",
+      "dominant_shape": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "energy_only": "3.8505865224361",
+      "entropy_only": "8.8819211055174",
+      "n": 12,
+      "n_partitions": 77
+    },
+    {
+      "H_min": 55,
+      "REV": "10.910211646453",
+      "dominant_shape": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "energy_only": "4.4464846579849",
+      "entropy_only": "11.305359359167",
+      "n": 15,
+      "n_partitions": 176
+    },
+    {
+      "H_min": 73,
+      "REV": "13.209179757212",
+      "dominant_shape": [
+        6,
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "energy_only": "5.1411343211484",
+      "entropy_only": "13.618656165698",
+      "n": 18,
+      "n_partitions": 385
+    },
+    {
+      "H_min": 91,
+      "REV": "15.237625979741",
+      "dominant_shape": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "energy_only": "5.620815835143",
+      "entropy_only": "15.819755255117",
+      "n": 21,
+      "n_partitions": 792
+    },
+    {
+      "H_min": 112,
+      "REV": "17.329283095949",
+      "dominant_shape": [
+        7,
+        6,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "energy_only": "6.2373452197044",
+      "entropy_only": "17.917595414397",
+      "n": 24,
+      "n_partitions": 1575
+    },
+    {
+      "H_min": 133,
+      "REV": "19.189475881357",
+      "dominant_shape": [
+        8,
+        6,
+        4,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "energy_only": "6.6816519935389",
+      "entropy_only": "19.920828465116",
+      "n": 27,
+      "n_partitions": 3010
+    },
+    {
+      "H_min": 156,
+      "REV": "21.044733826436",
+      "dominant_shape": [
+        8,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "energy_only": "7.1835243402448",
+      "entropy_only": "21.839380345785",
+      "n": 30,
+      "n_partitions": 5604
+    },
+    {
+      "H_min": 188,
+      "REV": "23.351478814821",
+      "dominant_shape": [
+        9,
+        7,
+        5,
+        4,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "energy_only": "7.7669555675059",
+      "entropy_only": "24.280444962906",
+      "n": 34,
+      "n_partitions": 12310
+    }
+  ],
+  "verification_rows": [
+    {
+      "REV": "0.0",
+      "dominant_shape": [
+        1
+      ],
+      "err": "0.0",
+      "n": 1,
+      "n_partitions": 1
+    },
+    {
+      "REV": "0.69314718056",
+      "dominant_shape": [
+        2
+      ],
+      "err": "0.0",
+      "n": 2,
+      "n_partitions": 2
+    },
+    {
+      "REV": "1.28467415352",
+      "dominant_shape": [
+        2,
+        1
+      ],
+      "err": "1.556e-61",
+      "n": 3,
+      "n_partitions": 3
+    },
+    {
+      "REV": "2.10693029853",
+      "dominant_shape": [
+        3,
+        1
+      ],
+      "err": "3.112e-61",
+      "n": 4,
+      "n_partitions": 5
+    },
+    {
+      "REV": "2.87404525341",
+      "dominant_shape": [
+        3,
+        1,
+        1
+      ],
+      "err": "0.0",
+      "n": 5,
+      "n_partitions": 7
+    },
+    {
+      "REV": "3.66848596054",
+      "dominant_shape": [
+        3,
+        2,
+        1
+      ],
+      "err": "3.112e-61",
+      "n": 6,
+      "n_partitions": 11
+    },
+    {
+      "REV": "4.52331251436",
+      "dominant_shape": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "err": "0.0",
+      "n": 7,
+      "n_partitions": 15
+    },
+    {
+      "REV": "5.37076245784",
+      "dominant_shape": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "err": "1.245e-60",
+      "n": 8,
+      "n_partitions": 22
+    },
+    {
+      "REV": "6.17807093118",
+      "dominant_shape": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "err": "6.223e-61",
+      "n": 9,
+      "n_partitions": 30
+    },
+    {
+      "REV": "6.96372964846",
+      "dominant_shape": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "err": "1.245e-60",
+      "n": 10,
+      "n_partitions": 42
+    },
+    {
+      "REV": "7.81571621767",
+      "dominant_shape": [
+        5,
+        3,
+        2,
+        1
+      ],
+      "err": "1.245e-60",
+      "n": 11,
+      "n_partitions": 56
+    }
+  ]
+}

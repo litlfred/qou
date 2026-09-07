@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-21T16:44:53.611126+00:00",
-  "commitSha": "0152258e43581bc19c9d14eb3a61acccf60104a2",
+  "computedAt": "2026-09-07T09:54:01.799250+00:00",
+  "commitSha": "b90d4a3bc8bee6ebf31d9f3a1d9f089fc47a95c0",
   "assertions": [
     {
       "name": "borromean_chi_21_reproduces_t17",
@@ -31,14 +31,20 @@
       "expected": true,
       "passed": true,
       "source": "Phase 1 + Phase 2 emit 3·H_3 + 3·H_3 + 3·H_2 = 12 cells (Borromean + Figure-eight + Hopf + Trefoil + Cinquefoil). Robust to merging with Phase-3 production cells."
+    },
+    {
+      "name": "rerun_is_idempotent_on_own_cells",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 942,
+  "durationMs": 1146,
   "computation": "derived-chi-catalogue",
   "scriptFile": "derived_chi_catalogue_build.py",
-  "scriptHash": "2949db167d3a",
-  "scriptCommitSha": "3269d0a33ac44bb501c92fa92c17b5e9585b4b7b",
+  "scriptHash": "ec16199be5ff",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,7 +58,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derived_chi_catalogue_build.py"
+    ],
+    "reproduce": "python3 -u computations/derived_chi_catalogue_build.py"
   },
   "description": "Phase 1 + 2 of the 3-axis (knot, partition, atom) derived-χ catalogue. Emits 12 cells across 5 census knots (Borromean, Figure-eight, Hopf, Trefoil, Cinquefoil). H_3 knots via R-matrix on V⊗³ + Schur-Weyl; B_2 knots via 1-dim Hecke reps. Borromean (2,1) cross-validates T17 (PR #1933) exactly.",
   "data": {
@@ -59779,6 +59792,28 @@
           "notes": "χ⁽¹,¹⁾(σ_1^5) = (−q⁻¹)^5 exactly (1-dim sign rep). Not palindromic; stored in q-Laurent form."
         }
       ]
+    },
+    "merge_outcome": {
+      "added": 0,
+      "unchanged": 2,
+      "replaced": 10
+    },
+    "merge_replaced_cells": [
+      "borromean/(3,)/borromean-baryon",
+      "borromean/(1, 1, 1)/borromean-baryon",
+      "figure-eight/(3,)/higgs-pion-half",
+      "figure-eight/(1, 1, 1)/higgs-pion-half",
+      "hopf/(2,)/diquark",
+      "hopf/(1, 1)/diquark",
+      "trefoil/(2,)/electron",
+      "trefoil/(1, 1)/electron",
+      "cinquefoil/(2,)/muon",
+      "cinquefoil/(1, 1)/muon"
+    ],
+    "idempotence_second_pass": {
+      "added": 0,
+      "unchanged": 12,
+      "replaced": 0
     },
     "schema_note": "chi_lambda_q_laurent stores χ^λ(β_K) as a list of (q_degree, coefficient) pairs; negative q-degrees allowed. Phase-2 schema migration (was h-degree). For palindromic cells (amphichiral knots), the h-form is cited in `notes`.",
     "rmatrix_traces_h3": {

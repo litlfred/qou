@@ -7,7 +7,7 @@ does NOT fit S (scope-(a); C14).
 
 Chain of facts (each computed or cited, none fitted):
 
-  1. Vol(4₁) = 2·Λ(π/3) = 2·D(e^{iπ/3})  (Bloch–Wigner dilog) — the bar-EVEN
+  1. Vol(4₁) = 2·Cl₂(π/3) = 2·D(e^{iπ/3}) = 6·Λ(π/3)  (Bloch–Wigner dilog) — the bar-EVEN
      part of c₃ (= −Vol(4₁)), SOLVED. Computed here.
   2. 4₁ is AMPHICHIRAL ⇒ CS(4₁) = 0 at the complete structure. So the bar-ODD
      S is NOT the knot's own Chern–Simons; it is a DEFORMATION phase induced by
@@ -96,10 +96,14 @@ def main() -> int:
     # ---- 1. Vol(4₁) = 2·Cl₂(π/3) (bar-even part, solved) ----
     z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)          # complete shape e^{iπ/3}
     vol = 2 * bloch_wigner(z0)
-    lam_pi3 = mp.im(mp.polylog(2, z0))               # Λ(π/3) = D(e^{iπ/3}) (|z0|=1 ⇒ log term 0)
+    cl2_pi3 = mp.im(mp.polylog(2, z0))               # Cl₂(π/3) = D(e^{iπ/3}) (|z0|=1 ⇒ log term 0)
+    # NOT Λ(π/3): Λ(θ) = Cl₂(2θ)/2, so Λ(π/3) = 0.33831 and Cl₂(π/3) = 1.01494.
+    # Vol(4₁) = 2·Cl₂(π/3) = 6·Λ(π/3); "2·Λ(π/3)" is 0.67662 and is the AGENTS.md
+    # coefficient-vs-function trap (bean qou-zdz5). The arithmetic below was
+    # always right; only this name was wrong.
     print(f"\n[1] Vol(4₁) = 2·D(e^{{iπ/3}}) = {mp.nstr(vol, 12)}")
-    print(f"    2·Λ(π/3)                 = {mp.nstr(2*lam_pi3, 12)}   (bar-EVEN part = −Vol(4₁), SOLVED)")
-    vol_ok = mp.fabs(vol - 2 * lam_pi3) < mp.mpf(10) ** (-30)
+    print(f"    2·Cl₂(π/3) = 6·Λ(π/3)    = {mp.nstr(2*cl2_pi3, 12)}   (bar-EVEN part = −Vol(4₁), SOLVED)")
+    vol_ok = mp.fabs(vol - 2 * cl2_pi3) < mp.mpf(10) ** (-30)
 
     # ---- 2. CS(4₁) = 0 at the complete structure (amphichiral) ----
     # log|z0| = 0 exactly (|z0|=1); the Bloch–Wigner is purely the volume, the
@@ -142,7 +146,7 @@ def main() -> int:
 
     ok_all = vol_ok and cs_ok and smooth_insufficient
 
-    wb.add_data("vol_4_1", {"value": mp.nstr(vol, 20), "eq_2_lambda_pi3": vol_ok,
+    wb.add_data("vol_4_1", {"value": mp.nstr(vol, 20), "eq_2_cl2_pi3": vol_ok,
                             "role": "bar-EVEN part = −Vol(4₁), SOLVED"})
     wb.add_data("cs_4_1_complete", {"value": mp.nstr(cs_complete, 8), "is_zero": cs_ok,
                                     "note": "amphichiral ⇒ S is a deformation phase"})
@@ -157,8 +161,8 @@ def main() -> int:
         "object": "Faddeev Phi_b (validated evaluator)",
         "geometry": "S = bar-odd projection of 4_1 NZ deformation phase",
         "open_single_link": "u(q0) complex meridian deformation = z->c_k evaluation map (PR #3458)"})
-    wb.add_assertion("vol_4_1_eq_2_lambda_pi3", computed=fmt(mp.fabs(vol - 2 * lam_pi3)),
-                     expected=0.0, tolerance=1e-30, source="Bloch-Wigner D(e^{iπ/3})=Λ(π/3)")
+    wb.add_assertion("vol_4_1_eq_2_cl2_pi3", computed=fmt(mp.fabs(vol - 2 * cl2_pi3)),
+                     expected=0.0, tolerance=1e-30, source="Bloch-Wigner D(e^{iπ/3})=Cl₂(π/3); Vol(4₁)=2·Cl₂(π/3)=6·Λ(π/3)")
     wb.add_assertion("cs_4_1_complete_zero", computed=fmt(mp.fabs(cs_complete)),
                      expected=0.0, tolerance=1e-30, source="4₁ amphichiral: CS=0 at complete structure")
     wb.add_assertion("smooth_deformation_ratio_is_unity_not_minus4",

@@ -1,5 +1,17 @@
 # q-Borel–Laplace resummation of the deuteron wall Z_n(q₀) — negative on the right object + right transform (2026-08-21)
 
+> **⚠ CONVENTION-C CONDITIONAL — scope note added 2026-09-06 (bean `qou-h6o3`).**
+> This document's conclusions depend on the `c_k` precision ladder / `Q_β`, which
+> AGENTS.md records as **convention-C-frame throughout and NOT re-derived** under
+> the owner ruling of 2026-08-15 making convention D (`z = q³/(q²+1)`) canonical.
+> Treat every `c_k`-dependent statement below as **C-conditional** until the
+> ladder is re-derived (bean `qou-cds1`). The numbers here are correct *for C*
+> and are kept as recorded — they need **scoping, not correction**. This note was
+> applied mechanically to the 45 documents in this arc that reference the ladder;
+> it asserts dependence on the ladder, not that any particular conclusion changes
+> under D.
+
+
 **Branch:** `claude/deuteron-qborel-2026-08-21`
 **Probe:** [`computations/deltalambda/deuteron_wall_qborel_resummation_probe.py`](../../computations/deltalambda/deuteron_wall_qborel_resummation_probe.py) (exit 0)
 **Witness:** `computations/deltalambda/deuteron-wall-qborel-resummation.witness.json`

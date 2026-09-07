@@ -416,3 +416,59 @@ TRAP: the 2026-09-05 survey §7g (pre-correction) cited the Gevrey result to Alg
 - **Library, closest held analogue**: `arxiv-0805.1447v2` (Ito, braid ordering) sec-004 Lemma 1 "Euler characteristic formula, Tiled case"
   `(ΣVᵢ) − E + R = −2g+2, 2R = E, ΣiVᵢ = 2E` on a tiled surface in a closed-braid complement; `0310279v5` (Birman–Menasco MTWS)
   sec-028 l.713 tile-vertex count `= 4χ(F) + …` on a tiled Seifert surface; `bm-markov-j` ocr p.10 (ocr-only). No `2−2g−μ` verbatim.
+
+## 2026-09-06 — external dialog: Bring's surface as a Lawson minimal surface in `S³`; "the CS 3-form vanishes on a surface"; Gromov norm (parent session on `claude/stokes-singular-count-scaling-2026-09-06`)
+
+- **Bring's surface embedded in `S³` (minimal / Lawson / Karcher–Pinkall–Sterling / Heller / Kapouleas–Wiygul / "minimal index")?** → **0 on all six paths (path 0 down).** Library `lawson` hit = Chanda Floer cohomology (`arxiv-2301.08311v4`); `karcher` = Karcher–Weber (Klein) / Heintze–Karcher; "minimal surface" hits are Rubinstein citations, an alg-geom homonym (`arxiv-1704.01735v4`) and `ihpmay2025:59` ("one cannot use minimal surfaces, since they are much more sparse"). **The corpus embeds KNOTS IN Bring** (`prop:cohomological-embedding`, `thm:embeddability-closure`, `torus-embeddable-complete`), never Bring in `S³`; nearest is topological — Heegaard genus / bridge ≤ 4 in `conj:bring-hyperbolic-knot-bloch-decomposition.md:77-88` (a `conjecture`), and the corpus already adjudicated a genus conflation there (`2026-08-01-tau-knot-discussion-review.md:33`). Metrics on Bring in the corpus are intrinsic: FS restricted from `ℙ⁴` (`brings-qou-4tuple.md:12`) and hyperbolic (2,4,5) (`EmCouplingBringZeroMode.lean`); none induced from `S³`. The QOU's Bring-based 3-manifold `M_S` is provably **not** `S³` (`CircleBundleBettiObstruction.lean`, `b₁ = 8`, sorry-free, scope-(b)). Surface-data → ideal-triangulation dictionary: wall stated in bean **`qou-n2cl`** (todo, 2026-09-06, another agent).
+- **CS / volume.** `prop:topological-mass-formula.md:38-44` states in prose "imaginary part of the Chern–Simons functional … equals Vol(S³∖K)"; its Lean `NonAbelianStokes.chernSimons_volume_correspondence` (`:736`) is a **discharged tautology** (`∃ vol, ∀ h, vol h = vol h`, witness `fun _ => 0`; docstring says the VC content "is NOT captured"). **No bean carries the restatement** (grep `.beans/` = 0; only two 2026-06/07 audits mention it). `𝔙 = Vol + i·CS` lives as §3b class `Mass/ComplexVolumeFibreDescent` + `Knot/FigureEightComplexVolume` (sorry-free, NZ leading form) + `CSEvaluationFaithful` (structure FIELD, `HyperbolicVolumeTranscendence.lean:401`). The corpus's CS **3-form** is the Reeb⌟tetraplectic contraction on `M_S` (`docs/scope/2026-08-01-reeb-tetraplectic-cs-threeform-identification.md`, `CartanContraction.lean`, Cartan formula a HYPOTHESIS) — not on the knot complement. "3-form vanishes on a surface" / transgression / WCS 2-form: **0 everywhere**; the corpus's surface-degree analysis is `CrossedModuleSurfaceHolonomy.lean` + `qou-20bk` (2-holonomy = boundary 1-holonomy × central; 3-body only as abelian `∫γ`).
+- **Gromov norm / simplicial volume:** prose + docstring only — `2026-08-25-vol-trm-division-of-labour-is-sound.md:696-699` (`‖S³∖K‖ = Vol/v₃`, additive, zero on Seifert), `LinearJSJVolume.lean:14-20` (`opaque Vol`, "Gromov norm"), `references.ts:13855` (torus knots ↔ Gromov norm 0). **No Lean object, no compute use**; `gromov1982` REGISTERED-ONLY. Held: `arxiv-1012.1039v2` (proportionality), `0803219`, `arxiv-1002.0126v1`, `arxiv-hep-th-0306165v1` (Gukov). **Simplicial volume of a SURFACE (`‖Σ₄‖ = 2|χ| = 12 = 12π/π`) — 0 on all six paths**; the dialog's "zero on a 2-manifold" is false.
+- **TRAP — NZ 1985 "held 3×" is three copies of the SAME 4-page tail.** All three dirs: `sections` = pp. 22–26, `chars_total 5437`, `likely_scanned False` (`structure.json`). The volume formula / gluing-equation / symplectic pages (307–328) are **not greppable**; `2026-09-04-citation-gap-inventory.md:92`'s H-rating is about registration. Same class as the `thurston1978` partial hold.
+- **BASELINE 2026-09-06:** 639 library dirs, 589 INDEX rows, 23 duplicate-marked ⇒ **27 real docs with no INDEX row** — INDEX.md is behind again (AGENTS.md path-5 trap); tier 1 is not a clean bill until `summarize-library.py --apply` runs.
+- **Uploads `4afe434526`** (on `claude/ingest-uploads-2026-09-06` and `origin/main`, NOT on the stokes branch): Martelli *Intro to Geometric Topology* §13.2 "Simplicial volume" p. 410 (the on-point C2(B) source); Hales et al. Kepler revision + Bezdek–Reid contact graphs (coordination/kissing arc, not C1/C2); Belin–Collier–Eberhardt–Liska–Post 3d gravity, Chris Li TFT/S², Cui thesis, Abbott–Nguyen–Rasmussen, Baldwin–Sivek — no bearing on C1/C2.
+
+## 2026-09-07 — `Σ_{λ⊢n} ∏_{c∈λ} f(h(c))`: sum over partitions of a product over HOOK LENGTHS (`qou-hok7`)
+
+**The object is CLOSED and is a named corpus proposition.** Do not re-open, and do not call it new.
+`prop:binding-period-involution-statistic`
+(`content/quantum-observable-universe/mass-theory/binding-period-involution-statistic.md:8-11`) states
+`S^bal(n;q) = Σ_{λ⊢n} ∏_k[k] / ∏_{c∈λ}[h(c)]`, balanced `[k]=(q^k−q^{-k})/(q−q^{-1})`.
+Since `q^h − q^{-h} = 2 sinh(h ln q) = (q−q^{-1})[h]`, **any** `Σ_λ ∏_c 1/(2 sinh(h ln q))` is
+`S^bal(n;q) / ((q−q^{-1})^n [n]_q!)` exactly — a rescaling, not a new object.
+`Z_n = S^bal·q^{n(n−1)/2}` on `qou-hok7` is the same thing again.
+**ARITY TRAP:** the `.md` is general-`n`; the Lean sibling proves only `n = 3,4,5`
+(`binding_period_involution_statistic_{three,four,five}`, `decide`-backed). General `n` rests on the
+narrative proof via Stanley EC2 + Schützenberger, both **registered-not-ingested**.
+Other carriers: `computations/_deprecated/q_variant_partition_sum.py:86-91` (literally `Σ 1/H_q(λ)`, n=3, refuted);
+`QOU/Mass/QHookDimension.lean` (`lw(c)=(1/(c+1))Σ_{λ⊢c+1} dim_q V_λ`, hook-derived, sorry-free);
+`binding_qhyperbolic_weight_probe.py` (`C_λ/∏[h]_q` over full p(3A), scope-(a) refuted);
+`alpha_em_2I_total_quantum_dimension_gate_test_probe.py` (`D=√(Σ_λ d_q(λ)²)`, hook-content, scope-(a) refuted);
+`docs/coordination/2026-05-18-lambda-scale-falsification.md:29` (Family A `(1/4)Σ_λ dim_q V_λ`, Lean-proved, refuted).
+`H_q(λ) = ∏_c[h(c)]_q` is a **registered notation-register symbol**.
+
+**What is GENUINELY OPEN (0 of 6 paths, path 0 down):**
+- **Nekrasov–Okounkov hook formula / Han's generalisations.** Zero hits corpus-wide AND library-wide.
+  `nekrasov2002` IS held (`library/arxiv-hep-th-0206161v1`, 31pp) but is instanton localisation and contains
+  **zero** occurrences of "hook". Every corpus "Okounkov" is Okounkov–**Vershik** (S_n rep theory) or
+  Borodin–Okounkov(–Olshanski); every "Westbury" is Barrett–Westbury. No "Han". No `∏_k(1−x^k)^{z−1}`,
+  no MacMahon *function*, no Dedekind eta. (Corpus "MacMahon" = the master theorem / driver (x), different object.)
+- **Chern–Simons / topological-string reading of `∏_c 1/(2 sinh(hζ/2))`.** No topological vertex,
+  no Gopakumar–Vafa hook product, no `Z(S³)` sinh formula. Corpus `2 sinh` is always the CROSSING variable
+  `h = q−q⁻¹ = 2 sinh(ln q)` (`QOU.Mass.MassVolDensity.h_crossing_eq_two_sinh_log`) or the Faddeev kernel — never a hook.
+  Nearest existing bridge: `docs/audits/2026-06-16-keystone-infinite-dim-full-hecke-realization.md`
+  (principal spec = gl_∞ infinite-wedge character = Jones II₁ = Habiro ring at q₀).
+- **Littlewood's identity** `Σ_λ s_λ = ∏1/(1−xᵢ)∏_{i<j}1/(1−xᵢxⱼ)`. Named ONCE, as a "classical anchor",
+  in `computations/lever1-kernel-maj-involution-identification.witness.json` — never stated, used or formalized.
+  (Every other "Littlewood" is Littlewood–**Richardson**.)
+
+**FOUND and central (do not re-derive):** the infinite-variable principal specialisation
+`s_λ(1,q,q²,…) = q^{n(λ)}/∏_c(1−q^{h(c)})` (Stanley EC2 7.21.2) at
+`docs/audits/2026-06-16-keystone-infinite-dim-full-hecke-realization.md:20` + its script;
+Stanley q-hook-maj `Σ_T q^{maj} = q^{n(λ)}[n]_q!/∏[h]_q` in `lever1_kernel_maj_involution_identification.py:14`;
+dual Cauchy at principal spec `Σ_λ f^λ s_λ(1,…,q^{N−1}) = [N]_q^n` (`ocneanu_parameter_is_fibre_qdim.py:48`).
+
+**HELD-BUT-UNREGISTERED, on point for the CS/matrix-model angle:**
+`library/arxiv-2105.09342v1` (Dutta et al., *A Unitary Matrix Model for q-deformed Plancherel Growth* — q-deformed
+hook measure ↔ GWW matrix model ↔ free-fermion droplets) and `library/arxiv-1909.06797v5` (*Quantum Mechanics of
+Plancherel Growth*). Neither appears in `references.ts`, so no block can cite them.
+**Registered-but-NOT-ingested** and load-bearing here: `stanley1999`, `macdonald1995`, `sagan2001`, `ooguri-vafa2007`,
+`jones1987`, `wenzl1988`, `macdonald1971` (verified by parsing the `library:` field, not by awk proximity).

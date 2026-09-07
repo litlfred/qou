@@ -170,53 +170,57 @@ class DerivedChiCatalogue:
     # ── Mutation ──
 
     def add(self, cell: KnotPartitionAtomCell) -> None:
+        """Insert a NEW cell. Raises on a repeated (knot, partition, atom).
+
+        Deliberately strict: a caller that did not expect a collision has a
+        bug, and silently overwriting would hide a changed derivation. A
+        caller that DOES mean to re-derive says so with `upsert()`.
+        """
         key = (cell.knot, cell.partition, cell.atom)
         if key in self._index:
             raise ValueError(
                 f"duplicate catalogue cell {key}; re-derive or update the "
-                "existing record explicitly (see `update`)."
+                "existing record explicitly with `upsert()`."
             )
         self._index[key] = len(self.cells)
         self.cells.append(cell)
 
-    def update(self, cell: KnotPartitionAtomCell) -> None:
-        """Replace an existing cell in place, keyed by (knot, partition, atom).
+    def upsert(self, cell: KnotPartitionAtomCell) -> str:
+        """Insert `cell`, or replace an existing one with the same key.
 
-        The explicit update `add`'s error message tells the caller to use, and
-        which until now did not exist. Without it a committed catalogue could
-        not be brought back in line with its own producer by ANY supported
-        operation: `add` raises on the duplicate, and deleting the witness and
-        rebuilding is not equivalent — the builder emits 12 cells while the
-        committed catalogue carries 342, so a fresh build silently drops the
-        330 Phase-3 cells that exist only in the artefact (bean `qou-j47t`).
+        Returns `"added"`, `"unchanged"`, or `"replaced"` — and the caller is
+        expected to act on the difference. `"replaced"` means a re-derivation
+        produced a DIFFERENT cell for a key already in the catalogue; that is
+        a finding, not routine, and a builder should surface it rather than
+        overwrite quietly.
 
-        Deliberately a SEPARATE method rather than an `add(..., replace=True)`
-        flag: replacing a derived cell is a different act from recording a new
-        one, and it should not be reachable by passing an extra argument to the
-        call every producer already makes. Raises if the cell is absent, so a
-        typo in the key fails loudly instead of silently appending.
+        WHY THIS EXISTS (bean qou-4sqq)
+        -------------------------------
+        `derived_chi_catalogue_build.py` states in its own comment that it
+        "merges into existing catalogue if present so Phase 2 sympy cells
+        coexist with Phase 3 Rust production cells in a single witness" — it
+        is a re-runnable merging builder by design. But it merged with
+        `add()`, which refuses a repeat, so from the moment it first wrote its
+        own cells it could no longer run against its own output. Measured: the
+        committed witness is dated 2026-06-07 and the builder had been unable
+        to run for three months, dying on a raw `ValueError` for
+        `('borromean', (3,), 'borromean-baryon')`.
+
+        The fix is not to relax `add()`. Foreign cells — Phase 3 Rust
+        production cells living in the same witness — must still be protected
+        from an accidental clobber. Only cells a caller is knowingly
+        re-deriving may be replaced, and only with a report.
         """
         key = (cell.knot, cell.partition, cell.atom)
         idx = self._index.get(key)
         if idx is None:
-            raise KeyError(
-                f"cannot update absent catalogue cell {key}; use `add` to "
-                "record a new one."
-            )
+            self._index[key] = len(self.cells)
+            self.cells.append(cell)
+            return "added"
+        if self.cells[idx] == cell:
+            return "unchanged"
         self.cells[idx] = cell
-
-    def upsert(self, cell: KnotPartitionAtomCell) -> bool:
-        """`update` if the cell exists, else `add`. Returns True if it replaced.
-
-        For producers that re-run over a catalogue they own and want to be
-        idempotent, which `add` alone cannot be.
-        """
-        key = (cell.knot, cell.partition, cell.atom)
-        if key in self._index:
-            self.update(cell)
-            return True
-        self.add(cell)
-        return False
+        return "replaced"
 
     # ── Lookup ──
 

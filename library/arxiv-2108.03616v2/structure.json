@@ -1,0 +1,462 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2108.03616v2",
+ "source": {
+  "file": "2108.03616v2.pdf",
+  "sha256": "63696ad045602440c42beb8060f70b027cebb8b0547b07d0027735f714a21b91",
+  "bytes": 579882,
+  "pages": 44,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2108.03616",
+   "version": "2",
+   "primary_class": "math.CO",
+   "stamp_date": "14 Dec 2021"
+  },
+  "doi": null,
+  "title": "Circuit imbalance measures and linear programming \u2217",
+  "authors_raw": "Farbod Ekbatani, Bento Natura, and L\u00e1szl\u00f3 A. V\u00e9gh",
+  "title_lines": [
+   "Circuit imbalance measures and linear programming \u2217"
+  ],
+  "abstract": "We study properties and applications of various circuit imbalance mea sures associated with linear spaces. These measures describe possible ratios betwee n nonzero entries of support-minimal nonzero vectors of the space. The fractional c ircuit imbalance measure turns out to be a crucial parameter in the context of linear progra mming, and two integer variants can be used to describe integrality properties of associat ed polyhedra. We give an overview of the properties of these measures, and surv ey classical and recent applications, in particular, for linear programming algorithms with run ning time dependence on the constraint matrix only, and for circuit augmentation algorith ms. We also present new bounds on the diameter and circuit diameter of polyhedra in terms of the fractional circuit imbalance measure.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211214222835-05'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Properties of the imbalance measures",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Bounds on subdeterminants",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Fractional integrality characterization",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Self-duality",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Matrix representations",
+   "page": 12,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The triangle inequality",
+   "page": 13,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Connections to other condition numbers",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The condition number chi bar and the lifting operator",
+   "page": 15,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The condition number  and bounds on diameters of polyhedra",
+   "page": 16,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Optimizing circuit imbalances",
+   "page": 18,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Perfect balancing: *W=1",
+   "page": 20,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "Hoffman proximity theorems",
+   "page": 22,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Linear programming with dependence on the constraint matrix only",
+   "page": 24,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "A black box algorithm",
+   "page": 25,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Layered least squares interior point methods",
+   "page": 26,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "The curvature of the central path",
+   "page": 28,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "Circuit diameter bounds and circuit augmentation algorithms",
+   "page": 28,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "An improved circuit diameter bound",
+   "page": 29,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Circuit augmentation algorithms",
+   "page": 29,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 3,
+   "title": "Augmenting directions for flow problems",
+   "page": 30,
+   "source": "outline",
+   "number": "8.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Convergence bounds",
+   "page": 31,
+   "source": "outline",
+   "number": "8.2.2"
+  },
+  {
+   "level": 2,
+   "title": "A circuit augmentation algorithm with logA dependence",
+   "page": 32,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 2,
+   "title": "An improved bound for steepest-descent augmentation",
+   "page": 33,
+   "source": "outline",
+   "number": "8.4"
+  },
+  {
+   "level": 1,
+   "title": "Circuits, integer proximity, and Graver bases",
+   "page": 36,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "A decomposition conjecture",
+   "page": 37,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "A Appendix: Proof of Proposition 3.20",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 6952,
+   "n_words": 1206
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 5643,
+   "n_words": 1121
+  },
+  {
+   "id": "sec-002-3-properties-of-the-imbalance-measures",
+   "number": "3",
+   "title": "Properties of the imbalance measures",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2821,
+   "n_words": 522
+  },
+  {
+   "id": "sec-003-31-bounds-on-subdeterminants",
+   "number": "3.1",
+   "title": "Bounds on subdeterminants",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4405,
+   "n_words": 844
+  },
+  {
+   "id": "sec-004-32-fractional-integrality-characterization",
+   "number": "3.2",
+   "title": "Fractional integrality characterization",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 5365,
+   "n_words": 1079
+  },
+  {
+   "id": "sec-005-33-self-duality",
+   "number": "3.3",
+   "title": "Self-duality",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3673,
+   "n_words": 784
+  },
+  {
+   "id": "sec-006-34-matrix-representations",
+   "number": "3.4",
+   "title": "Matrix representations",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 5270,
+   "n_words": 1052
+  },
+  {
+   "id": "sec-007-35-the-triangle-inequality",
+   "number": "3.5",
+   "title": "The triangle inequality",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4208,
+   "n_words": 845
+  },
+  {
+   "id": "sec-008-4-connections-to-other-condition-numbers",
+   "number": "4",
+   "title": "Connections to other condition numbers",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 10129,
+   "n_words": 1940
+  },
+  {
+   "id": "sec-009-5-optimizing-circuit-imbalances",
+   "number": "5",
+   "title": "Optimizing circuit imbalances",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 24,
+   "n_chars": 17676,
+   "n_words": 3493
+  },
+  {
+   "id": "sec-010-7-linear-programming-with-dependence-on-the-cons",
+   "number": "7",
+   "title": "Linear programming with dependence on the constraint matrix only",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1974,
+   "n_words": 346
+  },
+  {
+   "id": "sec-011-71-a-black-box-algorithm",
+   "number": "7.1",
+   "title": "A black box algorithm",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 3362,
+   "n_words": 606
+  },
+  {
+   "id": "sec-012-72-layered-least-squares-interior-point-methods",
+   "number": "7.2",
+   "title": "Layered least squares interior point methods",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 7158,
+   "n_words": 1383
+  },
+  {
+   "id": "sec-013-73-the-curvature-of-the-central-path",
+   "number": "7.3",
+   "title": "The curvature of the central path",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1603,
+   "n_words": 272
+  },
+  {
+   "id": "sec-014-8-circuit-diameter-bounds-and-circuit-augmentati",
+   "number": "8",
+   "title": "Circuit diameter bounds and circuit augmentation algorithms",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1798,
+   "n_words": 307
+  },
+  {
+   "id": "sec-015-81-an-improved-circuit-diameter-bound",
+   "number": "8.1",
+   "title": "An improved circuit diameter bound",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 2474,
+   "n_words": 463
+  },
+  {
+   "id": "sec-016-82-circuit-augmentation-algorithms",
+   "number": "8.2",
+   "title": "Circuit augmentation algorithms",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 5801,
+   "n_words": 986
+  },
+  {
+   "id": "sec-017-822-convergence-bounds",
+   "number": "8.2.2",
+   "title": "Convergence bounds",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 8022,
+   "n_words": 1386
+  },
+  {
+   "id": "sec-018-84-an-improved-bound-for-steepest-descent-augmen",
+   "number": "8.4",
+   "title": "An improved bound for steepest-descent augmentation",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 7137,
+   "n_words": 1403
+  },
+  {
+   "id": "sec-019-9-circuits-integer-proximity-and-graver-bases",
+   "number": "9",
+   "title": "Circuits, integer proximity, and Graver bases",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 2726,
+   "n_words": 495
+  },
+  {
+   "id": "sec-020-10-a-decomposition-conjecture",
+   "number": "10",
+   "title": "A decomposition conjecture",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 44,
+   "n_chars": 18240,
+   "n_words": 2939
+  },
+  {
+   "id": "sec-021-a-appendix-proof-of-proposition-320",
+   "number": null,
+   "title": "A Appendix: Proof of Proposition 3.20",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 1293,
+   "n_words": 344
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 28,
+  "sections": 22,
+  "chars_total": 127730
+ }
+}

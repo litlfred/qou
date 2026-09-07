@@ -760,7 +760,7 @@ fn write_lean_witness(z: usize, n: usize, a: usize, sym: &str,
     writeln!(file, "    Computed by hecke-engine {}, {}ms.", env!("CARGO_PKG_VERSION"), ms).ok();
     writeln!(file, "    F_Pauli(q₀) = {:.10}", f).ok();
     writeln!(file, "    Denominator: 2^{}. -/", pn_count).ok();
-    writeln!(file, "-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou").ok();
+    writeln!(file, "-- Ref: [manuscript] appendix-mass-binding-algorithms (F_Pauli / Markov-trace witnesses)").ok();
 
     // Write polynomials
     write!(file, "noncomputable def tr_alt_{}{} : LaurentPolynomial ℤ :=\n  ", a, lsym).ok();

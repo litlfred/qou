@@ -1,22 +1,21 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-05T19:22:28.356Z",
+  "generated": "2026-09-07T10:05:29.227Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3658,
-  "files_flagged": 116,
-  "total_defects": 75,
-  "total_exempt": 66,
-  "total_promoted_from_exempt": 19,
+  "scanned_files": 3722,
+  "files_flagged": 120,
+  "total_defects": 97,
+  "total_exempt": 59,
+  "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 37,
-    "proof-no-self-assuming-projection": 34,
-    "proof-no-unused-hypothesis-rfl": 1,
+    "proof-claims-unencoded": 52,
+    "proof-no-self-assuming-projection": 42,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1,
-    "proof-no-provable-axiom": 1
+    "proof-no-trivial-true": 1
   },
   "conjecture_graph": {
-    "total": 308,
+    "total": 310,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -211,12 +210,12 @@
       {
         "name": "CanonicalMarkovWeightsH3",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean",
-        "line": 1075
+        "line": 1271
       },
       {
         "name": "CanonicalMarkovWeightsH3",
         "file": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean",
-        "line": 399
+        "line": 445
       },
       {
         "name": "CasimirEpsilonVacuum",
@@ -314,6 +313,11 @@
         "line": 139
       },
       {
+        "name": "CPViolationSpectralForm",
+        "file": "content/quantum-observable-universe/observations/cp-violation-spectral-form.lean",
+        "line": 118
+      },
+      {
         "name": "CriticalExponent",
         "file": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean",
         "line": 44
@@ -341,7 +345,7 @@
       {
         "name": "CrystalGraphRealization",
         "file": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean",
-        "line": 120
+        "line": 181
       },
       {
         "name": "CumulativeErrorHarmonic",
@@ -577,6 +581,11 @@
         "name": "HeckeAnyonicSubstrate",
         "file": "content/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.lean",
         "line": 19
+      },
+      {
+        "name": "HeckeMonodromy",
+        "file": "content/quantum-observable-universe/lean/QOU/Mass/HeckeMonodromy.lean",
+        "line": 55
       },
       {
         "name": "HeckeQuadraticAllGenerators",
@@ -931,7 +940,7 @@
       {
         "name": "ProlongationPeriodMeanQuantumDim",
         "file": "content/quantum-observable-universe/lean/QOU/Mass/NaStokesKeystone.lean",
-        "line": 82
+        "line": 86
       },
       {
         "name": "ProtonBorromeanAssembly",
@@ -1021,7 +1030,7 @@
       {
         "name": "QbetaHabiroTaylorBridgeClass",
         "file": "content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean",
-        "line": 188
+        "line": 230
       },
       {
         "name": "QBetaTraceCounitConvergence",
@@ -1186,7 +1195,7 @@
       {
         "name": "SDPSlaterUniqueness",
         "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean",
-        "line": 429
+        "line": 324
       },
       {
         "name": "SecondCrossingInvariant",
@@ -1466,12 +1475,12 @@
       {
         "name": "ZRecursionCoeffs",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean",
-        "line": 1129
+        "line": 1325
       },
       {
         "name": "ZRecursionCoeffs",
         "file": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean",
-        "line": 453
+        "line": 499
       },
       {
         "name": "ZToCkMappingClass",
@@ -1683,6 +1692,15 @@
     ],
     "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean": [
       {
+        "line": 31,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class VorticityLowerBoundContext where",
+        "decl": "VorticityLowerBoundContext",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (bkmIntegralDiverges + bkm_diverges) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [VorticityLowerBoundContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
         "line": 75,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
@@ -1778,9 +1796,9 @@
         "snippet": "theorem ConfinementPhaseStratification_open (P : ConfinedParticleTy) [ctx : ConfinementPhaseStratificationContext P] :",
         "decl": "ConfinementPhaseStratification_open",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `ctx.isOpen` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+        "exempt": false,
+        "detail": "the projected field `ctx.isOpen` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
+        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
     "content/quantum-observable-universe/knots-particles-confinement/hadron-fibre-embedding.lean": [
@@ -1932,15 +1950,15 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/borromean_hopf_energy_crossover.lean": [
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/BringWPlaneMonodromy.lean": [
       {
-        "line": 26,
+        "line": 65,
         "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class BorromeanHopfEnergyCrossoverContext where",
-        "decl": "BorromeanHopfEnergyCrossoverContext",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class BringWPlaneMonodromy where",
+        "decl": "BringWPlaneMonodromy",
         "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (diquark_favoured) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [BorromeanHopfEnergyCrossoverContext]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (is_seifert_gauss_manin + seifert_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [BringWPlaneMonodromy]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean": [
@@ -2037,9 +2055,9 @@
         "snippet": "theorem shell_closure_monotone",
         "decl": "shell_closure_monotone",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `hi.monotone` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+        "exempt": false,
+        "detail": "the projected field `hi.monotone` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
+        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean": [
@@ -2066,6 +2084,15 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean": [
       {
+        "line": 27,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class EInfinityIdentificationsContext where",
+        "decl": "EInfinityIdentificationsContext",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_wenzl_bridge_correction + claim_wenzl_bridge_correction_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [EInfinityIdentificationsContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
         "line": 94,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
@@ -2075,6 +2102,15 @@
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean": [
+      {
+        "line": 19,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class SpectralSequenceH3ExplicitContext where",
+        "decl": "SpectralSequenceH3ExplicitContext",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_i_d1_differential + claim_i_d1_differential_holds, claim_ii_d2_differential + claim_ii_d2_differential_holds, claim_iii_page_identifications_concretised + claim_iii_page_identifications_concretised_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [SpectralSequenceH3ExplicitContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
       {
         "line": 58,
         "category": "proof-no-self-assuming-projection",
@@ -2132,12 +2168,32 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/qmn_recursive_memoized.lean": [
       {
+        "line": 21,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class QmnRecursiveMemoizedContext extends QOU.Shared.MarkovTraceContext where",
+        "decl": "QmnRecursiveMemoizedContext",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_ii_miss_computes_via + claim_ii_miss_computes_via_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [QmnRecursiveMemoizedContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
         "line": 66,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "def qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :",
         "decl": "qmn_recursive_memoized",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/wenzl_qmn_synergy.lean": [
+      {
+        "line": 22,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where",
+        "decl": "WenzlQmnSynergyContext",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_iii_atom_knot_identification + claim_iii_atom_knot_identification_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [WenzlQmnSynergyContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BringsSurface/TurningPoints.lean": [
@@ -2222,28 +2278,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/FrobeniusHopfData/frobeniusForm.lean": [
-      {
-        "line": 27,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class FrobeniusFormContext where",
-        "decl": "FrobeniusFormContext",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (is_iso) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [FrobeniusFormContext]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Hecke/CrossingConvexity.lean": [
-      {
-        "line": 191,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem sq_crossingCoord_snd {h : K} (hh : 0 < h) :",
-        "decl": "sq_crossingCoord_snd",
-        "severity": "major",
-        "detail": "proof is `rfl`, which uses no hypothesis, yet the statement binds `hh` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Information/ChiMinusSix.lean": [
@@ -2357,9 +2391,9 @@
         "snippet": "theorem whitehead_volume_conjecture",
         "decl": "whitehead_volume_conjecture",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `hi.limit` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+        "exempt": false,
+        "detail": "the projected field `hi.limit` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
+        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/KnotTheory/MetallicPiecewise.lean": [
@@ -2566,6 +2600,82 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean": [
+      {
+        "line": 63,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class IwahoriHeckeAlgebra (R : Type u) [CommRing R] (n : ℕ) (q : R) where",
+        "decl": "IwahoriHeckeAlgebra",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (hecke_relation + hecke_holds, braid_relation + braid_holds, far_commute + far_commute_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [IwahoriHeckeAlgebra]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
+        "line": 92,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class MarkovTrace (R : Type u) [CommRing R] (n : ℕ) (q z : R)",
+        "decl": "MarkovTrace",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (markov_axiom + markov_axiom_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [MarkovTrace]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
+        "line": 143,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class WedderburnDecomposition (R : Type u) [CommRing R] (n : ℕ) (q : R)",
+        "decl": "WedderburnDecomposition",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (blocks_sum_to_one + blocks_sum_holds, blocks_orthogonal + blocks_orthogonal_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [WedderburnDecomposition]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
+        "line": 161,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class WenzlBridge (R : Type u) [CommRing R] (n : ℕ) (q z : R)",
+        "decl": "WenzlBridge",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (bridge_identity + bridge_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [WenzlBridge]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
+        "line": 1147,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class MarkovTraceRecursion (R : Type u) [CommRing R] (n : ℕ) (q z : R) where",
+        "decl": "MarkovTraceRecursion",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (markov_axiom_holds + markov_axiom_witness) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [MarkovTraceRecursion]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
+        "line": 1279,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class HasGeneratorAction (n : ℕ) (q : ℝ) where",
+        "decl": "HasGeneratorAction",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (hecke_holds + hecke_holds_witness, braid_holds + braid_holds_witness, far_commute_holds + far_commute_witness) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [HasGeneratorAction]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Mathlib/NonAbelianStokes.lean": [
+      {
+        "line": 87,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class NonAbelianStokes (M G : Type u) [Group G] where",
+        "decl": "NonAbelianStokes",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (stokes_holds + stokes_holds_witness, finite_slice + finite_slice_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [NonAbelianStokes]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
+        "line": 363,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class LieValuedStokes (M : Type u) (𝔤 : Type u)",
+        "decl": "LieValuedStokes",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (stokes_identity + stokes_identity_witness) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [LieValuedStokes]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean": [
       {
         "line": 126,
@@ -2720,7 +2830,7 @@
         "detail": "doc enumerates 2 properties (trace-freeness, non-degeneracy); only 1 encoded as Prop field(s)"
       },
       {
-        "line": 339,
+        "line": 355,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem categorical_dq_squared_nonvanishing {C : Type u}",
@@ -2731,7 +2841,7 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
-        "line": 367,
+        "line": 383,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem kernelIncl_exact {C : Type u}",
@@ -2742,7 +2852,7 @@
         "detail": "the projected field `cj.exact` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 387,
+        "line": 403,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem categorical_jet_prolongation {C : Type u}",
@@ -2840,6 +2950,17 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
+    "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean": [
+      {
+        "line": 164,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "binder-echo",
+        "snippet": "theorem ordering_extends (_k : ℕ) (a b : MonomialBasis)",
+        "decl": "ordering_extends",
+        "severity": "critical",
+        "detail": "binds `(hab : degLex a b)` and concludes the same proposition, returning it verbatim — the statement stays true if every definition it mentions is swapped"
+      }
+    ],
     "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean": [
       {
         "line": 131,
@@ -2854,12 +2975,32 @@
     ],
     "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean": [
       {
+        "line": 41,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "structure OperatorSelectionLP where",
+        "decl": "OperatorSelectionLP",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (bounded + bounded_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [OperatorSelectionLP]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
+      },
+      {
         "line": 119,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "def strong_duality (lp : OperatorSelectionLP)",
         "decl": "strong_duality",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean": [
+      {
+        "line": 171,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class CanonicalKnotIdSDP (n : LightNucleus) where",
+        "decl": "CanonicalKnotIdSDP",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (constituentUniqueness + constituentUniqueness_holds, bindingKPSDFeasible + bindingKPSDFeasible_holds, bindingKMinimalLength + bindingKMinimalLength_holds, bindingKMatchesHistoricalMarkovTrace + bindingKMatchesHistoricalMarkovTrace_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [CanonicalKnotIdSDP]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean": [
@@ -2885,16 +3026,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.lean": [
-      {
-        "line": 79,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom gram_kappa_numerical_value_axiom :",
-        "decl": "gram_kappa_numerical_value_axiom",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean": [
@@ -2930,9 +3061,9 @@
         "snippet": "theorem mass_anchor_stable_forward",
         "decl": "mass_anchor_stable_forward",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `hC.swing_within_tolerance` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+        "exempt": false,
+        "detail": "the projected field `hC.swing_within_tolerance` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
+        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
         "line": 177,
@@ -2941,9 +3072,9 @@
         "snippet": "theorem mass_direction_sanity_forward",
         "decl": "mass_direction_sanity_forward",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `hC.magnitude_within_threshold` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+        "exempt": false,
+        "detail": "the projected field `hC.magnitude_within_threshold` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
+        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean": [
@@ -2978,9 +3109,9 @@
         "snippet": "theorem bar_even_kernel_implies_radius_of_convergence",
         "decl": "bar_even_kernel_implies_radius_of_convergence",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `hK.pole_at_u_substrate` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+        "exempt": false,
+        "detail": "the projected field `hK.pole_at_u_substrate` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
+        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
         "line": 122,
@@ -2999,9 +3130,9 @@
         "snippet": "theorem bar_even_kernel_implies_direction_sanity",
         "decl": "bar_even_kernel_implies_direction_sanity",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `hK.direction_match` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+        "exempt": false,
+        "detail": "the projected field `hK.direction_match` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
+        "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean": [
@@ -3101,6 +3232,17 @@
         "decl": "KnotOperator",
         "severity": "major",
         "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (is_knot) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [KnotOperator]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+      }
+    ],
+    "content/quantum-observable-universe/observations/borromean-quark.lean": [
+      {
+        "line": 87,
+        "category": "proof-claims-unencoded",
+        "pattern": "prop-field-self-discharged",
+        "snippet": "class BorromeanQuark where",
+        "decl": "BorromeanQuark",
+        "severity": "major",
+        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (is_baryon_realisation + is_baryon_realisation_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [BorromeanQuark]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/observations/magic-numbers-bring.lean": [
@@ -3233,6 +3375,16 @@
         "decl": "ClassicalRiemannZeta",
         "severity": "major",
         "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (adelic_assembly) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [ClassicalRiemannZeta]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+      }
+    ],
+    "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean": [
+      {
+        "line": 187,
+        "category": "proof-no-trivial-true",
+        "pattern": "reflexive-tautology",
+        "snippet": "theorem strong_multiplicativity_on_generators",
+        "decl": "strong_multiplicativity_on_generators",
+        "severity": "critical"
       }
     ],
     "content/unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial.lean": [

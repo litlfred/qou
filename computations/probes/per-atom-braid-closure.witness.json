@@ -1,0 +1,164 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T11:46:08.121673+00:00",
+  "commitSha": "cad22fb885eaf4bb66ea2fb573daa51f32a8a2fb",
+  "assertions": [
+    {
+      "name": "per_atom_words_all_pairwise_distinct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "all 10 sampled per-atom canonical braid words differ"
+    },
+    {
+      "name": "same_mass_number_atoms_have_different_words",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "atoms sharing a mass number A still get different words, so the word is a function of (Z,N) and not of A"
+    },
+    {
+      "name": "tritium_and_he3_differ_despite_same_A_and_length",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the sharp case: A=3 both, 35 crossings both, words still differ"
+    },
+    {
+      "name": "tritium_he3_exponent_sums_differ",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "and they differ in a word invariant, not merely in presentation (4 vs 8)"
+    },
+    {
+      "name": "word_length_is_a_function_of_A_alone",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "word LENGTH does factor through A (12 crossings per nucleon), which is why length alone cannot be the discriminator"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "per-atom-braid-closure",
+  "scriptFile": "per_atom_braid_closure_probe.py",
+  "scriptHash": "dca580e12889",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/per_atom_braid_closure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/per_atom_braid_closure_probe.py"
+  },
+  "data": {
+    "atoms": [
+      {
+        "name": "protium",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_crossings": 11,
+        "exponent_sum": 3
+      },
+      {
+        "name": "deuterium",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_crossings": 23,
+        "exponent_sum": 4
+      },
+      {
+        "name": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_crossings": 35,
+        "exponent_sum": 4
+      },
+      {
+        "name": "he3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_crossings": 35,
+        "exponent_sum": 8
+      },
+      {
+        "name": "he4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_crossings": 47,
+        "exponent_sum": 8
+      },
+      {
+        "name": "li6",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "n_crossings": 71,
+        "exponent_sum": 12
+      },
+      {
+        "name": "li7",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "n_crossings": 83,
+        "exponent_sum": 12
+      },
+      {
+        "name": "be9",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "n_crossings": 107,
+        "exponent_sum": 16
+      },
+      {
+        "name": "b11",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "n_crossings": 131,
+        "exponent_sum": 20
+      },
+      {
+        "name": "c12",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "n_crossings": 143,
+        "exponent_sum": 24
+      }
+    ],
+    "n_distinct_words": 10,
+    "n_atoms_sampled": 10,
+    "corrects": "docs/audits/2026-09-06-universal-triangulation-ep-route-assessment.md §3.4, which said identifying the per-atom closure is something 'the corpus does not currently do'. The per-atom WORD is computable and is a function of (Z,N).",
+    "scope": "Distinct braid WORDS do not imply distinct CLOSURES (Markov moves, conjugation) and this probe performs no knot recognition and no hyperbolicity test. It establishes only that the per-atom object exists and depends on (Z,N) rather than A. Whether the closures are distinct links, and whether they are hyperbolic, are the next two open questions."
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "combinatorics only: no q, no Markov parameter, no anchor"
+}

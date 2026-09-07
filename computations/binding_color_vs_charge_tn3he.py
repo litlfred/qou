@@ -45,7 +45,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps(30)
 q0 = mp.mpf(str(Q0))
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
-ALPHA_EM = mp.mpf("1") / mp.mpf("137.035999")    # for scale comparison
+ALPHA_EM = mp.mpf("1") / mp.mpf("137.035999084")    # for scale comparison
 
 _y6 = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
        for k, v in y_lambda_at(6, q0).items()}

@@ -55,7 +55,6 @@ chi value matches the 1-dim-rep evaluation.
 """
 from __future__ import annotations
 
-import argparse
 import sys
 import time
 from pathlib import Path
@@ -346,18 +345,6 @@ def derive_h3_knot(
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
-    ap.add_argument(
-        "--refresh", action="store_true",
-        help="Replace this builder's OWN 12 cells in an existing catalogue "
-             "instead of raising on the duplicate. Use when the committed "
-             "artefact has drifted from what this script now emits — e.g. a "
-             "field this builder has since withdrawn to '?' but the witness "
-             "still asserts. Only the (knot, partition, atom) keys this script "
-             "derives are touched; every other cell in the catalogue is left "
-             "exactly as loaded.",
-    )
-    a = ap.parse_args()
     t0 = time.monotonic()
     wb = WitnessBuilder(
         "derived-chi-catalogue", engine="sympy", start_time=t0
@@ -382,6 +369,13 @@ def main() -> int:
 
     # Merge into existing catalogue if present so Phase 2 sympy cells
     # coexist with Phase 3 Rust production cells in a single witness.
+    #
+    # Via `upsert`, not `add` (bean qou-4sqq). This script re-derives its own
+    # cells on every run, so `add`'s duplicate guard made it unable to run
+    # against its own output from the first time it wrote one — three months,
+    # measured. `upsert` replaces a cell this script derives while leaving
+    # foreign (Phase 3 Rust) cells untouched, and REPORTS any cell whose value
+    # actually moved, which is a finding rather than routine churn.
     try:
         cat = load_catalogue()
         print(f"  merging into existing catalogue: {len(cat.cells)} cells "
@@ -390,12 +384,16 @@ def main() -> int:
         cat = DerivedChiCatalogue()
         print("  no existing catalogue — starting fresh")
 
-    # `add` raises on a duplicate key by design, which makes a re-run over a
-    # populated catalogue impossible; `--refresh` swaps in `upsert` so this
-    # script can bring its own cells back in line without disturbing the rest.
-    record = cat.upsert if a.refresh else cat.add
-    if a.refresh:
-        print("  --refresh: replacing this builder's own cells in place")
+    upsert_tally: dict[str, int] = {"added": 0, "unchanged": 0, "replaced": 0}
+    replaced_keys: list[str] = []
+    derived_cells: list = []   # everything this run owns, for the idempotence check
+
+    def put(c) -> None:
+        derived_cells.append(c)
+        outcome = cat.upsert(c)
+        upsert_tally[outcome] += 1
+        if outcome == "replaced":
+            replaced_keys.append(f"{c.knot}/{c.partition}/{c.atom}")
 
     # ── B_3 knots: Borromean + Figure-eight ──
     # T17's value used as the cross-check on the (2,1) block of Borromean.
@@ -409,7 +407,7 @@ def main() -> int:
         derivation_self, cross_check_t17_chi_21=t17_chi_21,
     )
     for c in bor_cells:
-        record(c)
+        put(c)
     print(f"  borromean (B_3, β = {bor_pretty})")
     print(f"    tr_{{V⊗³}} = {tr_bor}")
     print(f"    χ⁽²,¹⁾   = {chi21_bor}   (matches T17 ✓)")
@@ -422,7 +420,7 @@ def main() -> int:
         derivation_self,
     )
     for c in fig8_cells:
-        record(c)
+        put(c)
     print(f"  figure-eight (B_3, β = {fig8_pretty})")
     print(f"    tr_{{V⊗³}} = {tr_fig8}")
     print(f"    χ⁽²,¹⁾   = {chi21_fig8}")
@@ -435,7 +433,7 @@ def main() -> int:
     ]:
         b2_cells = derive_b2_torus_knot(knot_name, atom, crossings, q, derivation_self)
         for c in b2_cells:
-            record(c)
+            put(c)
         chi_2 = chi_trivial_rep_at_braid([1] * crossings, q)
         chi_11 = chi_sign_rep_at_braid([1] * crossings, q)
         print(f"  {knot_name} (B_2, σ_1^{crossings}) → {atom}")
@@ -443,6 +441,30 @@ def main() -> int:
 
     print()
     print(f"  Catalogue: {cat.tier_counts()}  ({len(cat.cells)} cells)")
+    print(f"  This run: {upsert_tally['added']} added, "
+          f"{upsert_tally['unchanged']} unchanged, "
+          f"{upsert_tally['replaced']} REPLACED")
+    if replaced_keys:
+        # A replaced cell means this script now derives a different value for
+        # a key already in the catalogue. Loud on purpose: it is either a real
+        # correction or a regression, and either way somebody must look.
+        print("  !! re-derivation CHANGED these cells:")
+        for k in replaced_keys:
+            print(f"       {k}")
+
+    # IDEMPOTENCE, which is what bean qou-4sqq is actually about: applying the
+    # SAME cells a second time must change nothing. Asserting `replaced == 0`
+    # on the FIRST merge would be wrong — a legitimate one-time correction
+    # (e.g. the y_lambda_at_zero "1" -> "?" fix that this bug had blocked since
+    # 2026-06-07) shows up there and should not fail the build. What must hold
+    # is that the operation has a fixed point.
+    second_pass = {"added": 0, "unchanged": 0, "replaced": 0}
+    for c in derived_cells:
+        second_pass[cat.upsert(c)] += 1
+    idempotent = second_pass["added"] == 0 and second_pass["replaced"] == 0
+    print(f"  Idempotence re-run: {second_pass['unchanged']} unchanged, "
+          f"{second_pass['added']} added, {second_pass['replaced']} replaced"
+          f"  -> {'OK' if idempotent else 'NOT IDEMPOTENT'}")
 
     # ── Assertions ──
     wb.add_assertion(
@@ -481,6 +503,17 @@ def main() -> int:
 
     # ── Emit witness ──
     wb.add_data("catalogue", cat.to_dict())
+    # What this run did to the catalogue it merged into (bean qou-4sqq). The
+    # interesting case is a non-empty `replaced` list: the script derives a
+    # different value than the committed one for a key it owns.
+    wb.add_data("merge_outcome", dict(upsert_tally))
+    wb.add_data("merge_replaced_cells", replaced_keys)
+    wb.add_data("idempotence_second_pass", dict(second_pass))
+    wb.add_assertion(
+        "rerun_is_idempotent_on_own_cells",
+        computed=str(int(idempotent)),
+        expected="1",
+    )
     wb.add_data(
         "schema_note",
         "chi_lambda_q_laurent stores χ^λ(β_K) as a list of (q_degree, "

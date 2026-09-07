@@ -64,9 +64,24 @@ del _sys, _Path
 #     serializes with `json.dump(..., default=str)`, which renders an mpf at
 #     full precision. So the reason never covered the case it was invoked for.
 #   * "the importers' float arithmetic stays intact" -- mpf interoperates
-#     with float for arithmetic, comparison and f-string formatting, so the
-#     ordinary call sites are unaffected.
-#   * "~266 importers" -- 204 live (+4 in the generated qou-mass mirror).
+#     with float for arithmetic and comparison -- but NOT with f-string format
+#     specs. MEASURED 2026-09-07, operation by operation:
+#         x * 3.0      OK        3.0 / x      OK        x < 1.0   OK
+#         f"{x}"       OK        "%.6f" % x   OK
+#         f"{x:.6f}"   TypeError: unsupported format string passed to mpf.__format__
+#         format(x, ".6f")  same TypeError
+#     So the clause "and f-string formatting" was wrong, and it is the clause
+#     that bites: `{x:.3f}` in a table column is exactly the shape that made
+#     three producers un-runnable (qou-9q4h, merged in #6971). `"%.6f" % x`
+#     does work -- but it SILENTLY DOWNCASTS, byte-identical to `float(x)`, so
+#     it is a display route and never a value route. (Not a gate blind spot:
+#     `f64_into_mpmath_audit._is_display_only` already classifies `str % x` as
+#     a display sink, which is correct.)
+#   * "~266 importers" -- 213 live (+4 in the generated qou-mass mirror).
+#     This figure is on its SECOND correction: the original "~266" was fixed to
+#     "204", and 204 has since decayed to 213. Re-measure it with
+#     `computations/audits/experimental_constants_float64_rationale_probe.py`
+#     rather than trusting this line.
 #
 # THE ONE REAL HAZARD, and it is silent: `math.log(mpf)` and friends do NOT
 # raise, they DOWNCAST. A module doing `import math` and calling `math.sqrt`
@@ -195,8 +210,23 @@ G_A_PDG_ERR = 0.0013
 
 # ── Knot volumes (SnapPy 3.3.2) ─────────────────────────────────
 
-VOL_FIGURE_EIGHT     = 2.029883212819307  # ± 1e-12 (numerical precision)
-VOL_FIGURE_EIGHT_ERR = 1e-12
+# Vol(4_1) = 2·Cl_2(pi/3) is an EXACT closed form, not a SnapPy measurement.
+# It sat here as a float64 (1.49e-16 from exact, 0.15x the whole L1 budget for
+# one constant) under a "± 1e-12 (numerical precision)" banner, i.e. filed as a
+# measured quantity with an uncertainty. Nobody re-measures a measurement,
+# which is plausibly why it was never exactified. Bean qou-9ies.
+#
+# Computed at the caller's ambient precision, so it is exact to whatever dps is
+# in force rather than frozen at any digit count.
+VOL_FIGURE_EIGHT     = 2 * _mpm.clsin(2, _mpm.pi / 3)
+# Retained at 0: an exact constant has no measurement uncertainty, and the term
+# is consumed by mass-from-q-symbolic's error budget. Dropping the NAME would
+# break that import; giving it a fictitious 1e-12 inflates the budget with an
+# uncertainty that does not exist. Measured: the old term was 2.2e-5 of the
+# dominant m_mu/m_e term and its removal moves rel_hbar_sq by 2.45e-10
+# relative — negligible, which is why this is safe to correct rather than
+# something that silently restates a published error bar.
+VOL_FIGURE_EIGHT_ERR = 0.0
 
 VOL_THREE_TWIST      = 2.828122088330783  # ± 1e-12
 VOL_THREE_TWIST_ERR  = 1e-12

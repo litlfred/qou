@@ -353,7 +353,11 @@ print(f"  Borromean link (nucleon confinement):")
 print(f"    Vol(𝔅₃) = {VOL_BORROMEAN} ± {VOL_BORROMEAN_ERR}")
 print(f"    ℏ_q²    ≈ {HBAR_Q_SQ0:.15f}")
 print(f"    𝔪(𝔅₃)  ≈ {borromean_mass_ratio:.6f} m_e ± {borromean_mass_ratio_err:.2e}")
-print(f"             ≈ {borromean_mass_MeV:.3f} MeV ± {borromean_mass_MeV_err:.3f}")
+# float() for DISPLAY only: mpf has no __format__ for ".3f", and mp.nstr
+# cannot carry the width/alignment these columns need. The VALUES above are
+# untouched mpf. (qou-9q4h)
+print(f"             ≈ {float(borromean_mass_MeV):.3f} MeV "
+      f"± {float(borromean_mass_MeV_err):.3f}")
 print()
 print(f"  Figure-eight knot (Higgs field / muon mass mechanism):")
 print(f"    𝔪(4_1)  = Vol(4_1)/ℏ_q² = m_μ/m_e = {mu_e_from_vol:.6f} (definitional)")

@@ -54,6 +54,7 @@ but reduced to an in-corpus, tractable estimate.
 from __future__ import annotations
 import sys
 import mpmath as mp
+from _m1_io_constants import RHO_INF  # merged #5901 IO leading constants -- single source, see that module
 
 mp.mp.dps = 40
 
@@ -231,7 +232,6 @@ def dpp_poiss(theta, M):
 def main():
     thetas = [int(t) for t in (sys.argv[1:] or
               ["20", "40", "80", "160", "320", "640"])]
-    RHO_INF = mp.mpf("0.979796195657")     # merged #5901 IO leading constant
     print(f"# descent-DPP exact covariances (BOO discrete Bessel kernel); dps={mp.mp.dps}; NO float64")
 
     # ---- EXACT poissonized cross-check (validates kernel+weights, NO depoiss approx) ----

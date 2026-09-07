@@ -495,6 +495,7 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                          m_nn: int = 1, include_inter: bool = True,
                          pn_convention: str = "bring_color_weighted",
                          intra_order: str = "borromean",
+                         ordering: list | None = None,
                          q=None, allow_float64: bool = False):
     """Full 3A-strand word as a list of (c, d, gen_idx) triples.
 
@@ -661,7 +662,27 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
         n_w = nucleon_word_letters(['u', 'd', 'd'], q=q, intra_order=intra_order,
                                    allow_float64=allow_float64)
     word: list = []
-    ordering = ['p'] * Z + ['n'] * N
+    # `ordering` is the INTER-nucleon sequence. Default `None` reproduces the
+    # sorted `p…p n…n` this function has always built, so every existing caller
+    # is unaffected — asserted, not assumed, by
+    # `computations/probes/atom_word_explicit_ordering_probe.py`.
+    #
+    # Why it is a parameter at all: the corpus records that the character ratio
+    # is blind to INTRA-nucleon letter order (this function's own docstring, and
+    # `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe`). That
+    # says nothing about the inter-nucleon sequence, and until now no unsorted
+    # sequence could be built at all, so the bond model's per-interface product
+    # had never been tested on one. Hand-building such a word is exactly what
+    # this arc's history warns against; parameterising the canonical builder is
+    # the alternative.
+    if ordering is None:
+        ordering = ['p'] * Z + ['n'] * N
+    else:
+        ordering = list(ordering)
+        if sorted(ordering) != sorted(['p'] * Z + ['n'] * N):
+            raise ValueError(
+                f"ordering {ordering!r} does not have the content (Z={Z}, N={N}); "
+                "it must be a permutation of ['p']*Z + ['n']*N")
     for k, nuc in enumerate(ordering):
         base_g0 = 3 * k
         for c, d, off in (p_w if nuc == 'p' else n_w):

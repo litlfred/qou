@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T18:12:11Z
-updated_at: 2026-09-06T11:52:03Z
+updated_at: 2026-09-06T12:54:55Z
 ---
 
 ## Measured, not assumed (branch claude/atom-trace-nonmonotone-regression-2026-09-05)
@@ -268,3 +268,47 @@ derived from the dps figure. What changes is the size of the remaining lever:
 70 -> 60 is more headroom than 65 -> 50, so the unexplored option is larger
 than #6937 claims, not smaller. It remains a precision decision and not mine
 to take.
+
+## Block-and-bond factorisation SURVIVES the non-monotonicity — and it is O(A) (2026-09-06, PR #6920)
+
+Cross-reference from `qou-qqm4`. This bean and `qou-kru4` establish that **letter-level**
+factorisation is dead under the ruling: the canonical nucleon word is `[0,1,0,1,0,1,0,0,1,0,0]`, not
+ascending, so `MonotoneWordTraceFactorizes.tr_stabWord_eq_prod_tr` does not apply, the monotone
+transfer correctly refuses, and the general-word kernel that replaced it **loses the `O(A)` scaling**
+(`A = 4` at 621 s, ~1700×).
+
+**Measured on that same canonical word: a coarser factorisation still holds.**
+
+    tr(atom) = ∏_nucleons a(1 + rε + qε²) · ∏_bonds (1/2)(1 + ρ_b ε + τ_b ε²)
+
+with `(a, r, q) = (1/2, 3/2, 23/4)` proton, `(1/2, −1, 3)` neutron, measured at `n = 3`; and bond
+factors `(1/2)(1, 2, 1/2)` / `(1/2)(1, 0, 3/2)` / `(1/2)(1, −2, 5/2)` for `pp` / `pn` / `nn`,
+measured at `A = 3` by turning ONE interface on. **9/9** on `c₀`, `c₁` and `c₂` across `A = 2…5`
+(`pp, pn, nn, 3p, T, ³He, 3n, ⁴He, ⁵He`), zero fitted parameters.
+
+**Why both are true at once, which neither bean states.** The monotone theorem factorises over
+**letters** and needs an *ordering* hypothesis. This product factorises over **blocks**, and rests on
+the nucleons acting on **disjoint strand triples** — which is insensitive to how the letters inside a
+nucleon are ordered. **Disjointness is not monotonicity.** That is exactly why the ruling destroyed
+the first and left the second standing.
+
+**Why it may matter here.** The `O(A)` loss this bean records is the cost of recomputing, per word,
+something that is a product. The bond form gives `c₀, c₁, c₂` for arbitrary `A` in `O(A)` arithmetic
+from five small measured series. 🛑 It is **not** a drop-in replacement for
+`chi_general_word.chi_all_lambda_any`: it produces **ε-series coefficients**, not the character
+vector at `q₀`, and it is verified only at orders 0-2, `A ≤ 5`, on **sorted** orderings. Whether the
+same block/bond split can carry the full `χ_λ` computation is the question worth asking, and it is
+not answered here.
+
+Probe: `computations/probes/atom_bond_product_closed_form_probe.py` (exact `Fraction`s, no `q`, no
+witness, nothing wired). Full scope + the disjoint-block Lean gap in its docstring.
+
+### 🛑 Not in tension with #6937's cache measurement — different objects
+
+#6937 measured that the transfer STATE COUNT at nucleon boundaries is monotone and never collapses
+(4, 7, 19, 30, 67, 97, 195, 272, 508, 684, 1212, 1597), so a per-nucleon cache has nothing to hit.
+That stands, and this note does not contradict it. **A factorising trace does not require the state
+vector to collapse:** the claim here is about the VALUE of `tr` splitting as a product over blocks
+and bonds, not about the intermediate state space having a repeated element to cache. The two can
+both be true — and the fact that they are is a hint that whatever makes the product work is visible
+in the trace and not in the transfer's state list.

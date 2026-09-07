@@ -16,9 +16,9 @@
     },
     {
       "name": "held_out_atoms_predicted",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "note": "two parameters fixed on 2H and 3H; 3He and 4He are predictions"
     },
     {
@@ -29,7 +29,7 @@
       "note": "so the earlier symbolic r(q) is t_p(q).z(q); two derivations agree"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "dps": 40,
@@ -37,8 +37,8 @@
     "t_n": "0.98774368811580957163",
     "z_markov": "0.6126880371464652515958299",
     "b_pp": "0.6126880371464647940871992",
-    "b_pn": "0.5082297893767389625752212",
-    "b_nn": "0.4036277383508259361666264",
+    "b_pn": "0.1342812311310716633069144",
+    "b_nn": "0.1941567121628988436274346",
     "ordering": "['p']*Z + ['n']*N, read from mass_at_3A_proper.atom_braid_word_3A",
     "trace_convention": "D (SU(2)/Temperley-Lieb)"
   },
@@ -53,17 +53,17 @@
         "atom": "3He",
         "Z": 2,
         "N": 1,
-        "predicted": "0.40376703685142786887",
-        "measured": "0.40376703685142817037",
-        "rel_err": "7.46714e-16"
+        "predicted": "0.10668074940086544316",
+        "measured": "0.058596253654436380219",
+        "rel_err": "0.820607"
       },
       {
         "atom": "4He",
         "Z": 2,
         "N": 2,
-        "predicted": "0.16097414544240726162",
-        "measured": "0.16097414544240738183",
-        "rel_err": "7.46714e-16"
+        "predicted": "0.0204589212195094755",
+        "measured": "0.011237417659767421564",
+        "rel_err": "0.820607"
       }
     ],
     "delta_tr": [
@@ -71,29 +71,29 @@
         "atom": "2H",
         "Z": 1,
         "N": 1,
-        "delta_predicted": "0.55654466040443821191",
-        "delta_measured": "0.55654466040443821191"
+        "delta_predicted": "0.97974856511797847514",
+        "delta_measured": "0.97974856511797847514"
       },
       {
         "atom": "3H",
         "Z": 1,
         "N": 2,
-        "delta_predicted": "0.88853612687367007",
-        "delta_measured": "0.88853612687367007"
+        "delta_predicted": "1.088702186617254512",
+        "delta_measured": "1.088702186617254512"
       },
       {
         "atom": "3He",
         "Z": 2,
         "N": 1,
-        "delta_predicted": "0.89290857539351614889",
-        "delta_measured": "0.89290857539351584739"
+        "delta_predicted": "1.1899948628440785746",
+        "delta_measured": "1.2380793585905076375"
       },
       {
         "atom": "4He",
         "Z": 2,
         "N": 2,
-        "delta_predicted": "1.119809006086239149",
-        "delta_measured": "1.1198090060862390288"
+        "delta_predicted": "1.2603242303091369352",
+        "delta_measured": "1.2695457338688789891"
       }
     ],
     "r_homogeneous": "0.70199325701320135779",
@@ -105,14 +105,14 @@
     "derived_vs_measured": "DERIVED: the form (chain structure plus Ocneanu multiplicativity over disjoint strand ranges); t_p and t_n as H_3 traces; b_pp = z as an identification, not an imposition. NOT DERIVED: b_pn and b_nn are extracted from 2H and 3H and are two measured constants until the exact-Laurent treatment that produced r(q) is applied to them.",
     "scope": "Scope-(a). No content block edited."
   },
-  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "gitCommit": "59e69d2336607a931fc534fac5cbe16967715d2f",
   "durationMs": 0,
   "scriptFile": "qbeta_mixed_chain_closed_form_probe.py",
-  "scriptHash": "0e4802fc079e",
-  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
-  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "scriptHash": "78af873cb7ad",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "commitSha": "59e69d2336607a931fc534fac5cbe16967715d2f",
   "engine": "mpmath",
-  "computedAt": "2026-09-04T12:40:12.383845+00:00",
+  "computedAt": "2026-09-07T10:06:19.450955+00:00",
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

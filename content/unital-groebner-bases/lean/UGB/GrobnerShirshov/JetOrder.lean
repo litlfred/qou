@@ -380,28 +380,60 @@ noncomputable def bucketize {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
       (leadingMonomial ord r.relation r.nonzero).length = d
   }
 
-/-- **Degree-filtered reduction** (axiom stub): when reducing a
-    monomial of degree `d`, only rules with leading monomial degree
-    `≤ d` can apply (since reduction strictly decreases the leading
-    monomial under deg-lex).
+/-! ### Degree-filtered reduction — axiom deleted 2026-09-06, it COLLAPSED the type
 
-    This reduces per-step scanning from `O(|Σ|)` to `O(|B_{≤d}|)`.
+The axiom that stood here was
 
-    Axiomatised because the proof requires showing that
-    `SingleStepReduction` with a rule of LM degree `> d` cannot
-    match any monomial of degree `d` (the LM is too long to be
-    a subword). -/
--- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
+```
 axiom degree_filtered_reduction_correct
-    {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
-    (ord : AdmissibleOrder G)
-    (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    {G} {k} [Ring k] [DecidableEq G]
+    (ord) (sys) (hgs : IsGrobnerShirshovBasis G k ord sys)
     (f nf_full nf_filtered : AlgElement G k)
     (h_full : ReducesToNF ord sys f nf_full)
-    -- Restricting to rules with LM degree ≤ max degree of f's support
-    -- yields the same normal form:
     : nf_full = nf_filtered
+```
+
+`nf_filtered` is bound and then **never mentioned again** — not in a
+hypothesis, not in `h_full`, nowhere but the conclusion.  So the axiom
+says `nf_full = X` for *every* `X` of the type, and the degree
+restriction it is named for ("restricting to rules with LM degree ≤ max
+degree of `f`'s support") appears only in a **comment** beside the
+binder.
+
+This is stronger than false.  From the axiom alone, any single reduction
+makes every element of `AlgElement G k` equal to every other — proved
+below as `degree_filtered_reduction_collapses_type`, which needs no
+witness because it applies the axiom twice to the same `nf_full`.  An
+axiom of that shape proves anything about the algebra it quantifies
+over.
+
+Stating the intended claim requires `nf_filtered` to be **tied** to a
+degree-restricted rewriting system — something like
+`ReducesToNF ord (restrict sys d) f nf_filtered` with `d` the maximum
+support degree of `f`.  That is a real theorem, its proof is the
+subword-length argument the old docstring sketches, and it is
+deliberately not guessed at here. -/
+
+/-- **The deleted axiom collapsed `AlgElement G k` to a subsingleton.**
+
+    Stated as a hypothesis rather than proved outright, because the
+    axiom is gone: this records what it *would* give.  Note it needs no
+    witness for `IsGrobnerShirshovBasis` or `ReducesToNF` — the two
+    applications share one `nf_full`, so any inhabitant of the
+    hypothesis suffices. -/
+theorem degree_filtered_reduction_collapses_type
+    {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    (bad : ∀ (ord : AdmissibleOrder G) (sys : RewritingSystem G k),
+        IsGrobnerShirshovBasis G k ord sys →
+        ∀ f nf_full nf_filtered : AlgElement G k,
+        ReducesToNF ord sys f nf_full → nf_full = nf_filtered)
+    (ord : AdmissibleOrder G) (sys : RewritingSystem G k)
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (f nf_full : AlgElement G k)
+    (h_full : ReducesToNF ord sys f nf_full) :
+    ∀ x y : AlgElement G k, x = y := fun x y =>
+  ((bad ord sys hgs f nf_full x h_full).symm.trans
+    (bad ord sys hgs f nf_full y h_full))
 
 /-! ## §6  Combined Jet-Stratified + Degree-Bucketed Algorithm -/
 
