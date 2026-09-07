@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-07T19:37:02Z
+updated_at: 2026-09-07T19:47:23Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1238,3 +1238,49 @@ asymmetry of the expansions, the elementary basis construction, the two forms
 of the character sum).
 
 **Arc: four of five.** The fifth is Wenzl's theorem — authorised and open.
+
+
+### 2026-09-07 — Tier 1 proved for ALL n; the machinery was already in the corpus (`3be514bfdc`)
+
+`QOU/MathlibExt/WenzlCandidateNormalisation.lean`, sorry-free.
+
+```
+sum_dim_candidateWeight_eq_one :
+  Σ_{|ν|=n} f^ν · ((1−Q)^n · schurElement Q 0 ν.rowLens) = 1
+```
+
+The probe's **Tier 1**, which the Python checks symbolically for `n = 1…8`,
+proved in Lean for **every `n`**.
+
+**Corpus-grep found it; I did not build it.** Before starting I grepped for the
+Macdonald telescope, and the corpus already carries, sorry-free:
+
+| already there | |
+|---|---|
+| `MacdonaldTelescopeGeneralX.telescope_generalX` | the **general-X** telescope, by a polynomial-identity argument |
+| `WenzlSchurElementBridge` | the List ↔ YoungDiagram carrier bridge |
+| `SchurWeyl.sum_dim_wenzlWeight_eq_one` | the `X = Q^r` specialisation |
+
+Evaluating at `X = 0` and clearing `(1−Q)^n` is the whole content of the new
+file. **The `X = Q^r` form alone does not reach `X = 0`** (`Q^r` is never zero),
+so it is specifically the general-`X` version — already proved by someone else —
+that makes this reachable. Had I not grepped, I would have rebuilt a
+polynomial-identity argument that exists.
+
+**Scope, in the file:** it settles that the candidate system satisfies the *same
+single linear constraint* as τ's actual weights (`sum_dim_mul_traceWeight`). One
+constraint cannot pin a weight vector — which is why Tier 2 is separate,
+stronger, and still `n ≤ 3`. **Not** the Wenzl identification.
+
+**A checker blind spot, measured and DELIBERATELY NOT FIXED.**
+`check-sidecars.sh` flags the file `base-ring-minimal`; the `ℝ` is forced
+(`telescope_generalX` is ℝ-only, takes `1 < Q`). Its `WEAK` pattern
+`(0\s*<|<\s*1|≤|≥)` matches `0 < x` and `x < 1` but **not `1 < x`** — this
+corpus's substrate-regime idiom. **13 other library files** are flagged for the
+same reason. Adding `1\s*<` was considered and **rejected**: four of the 13
+(`MolienFakeDegreeGeneralN`, `HeckeGramFactorial`, `HeckeGenericSemisimple`,
+`H2TraceForm`) also declare a generic ring and would flip to **MIXED** — a worse
+verdict and the wrong edit. The script's comments record three prior rounds of
+exactly that over-firing (`qou-mr3q`, `qou-akb4`, `qou-aemx`); this would have
+been a fourth. Numbers recorded in the docstring so the next person can weigh it
+rather than rediscover it.
