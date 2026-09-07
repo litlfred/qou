@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:31:25Z
-updated_at: 2026-09-07T09:43:07Z
+updated_at: 2026-09-07T10:03:41Z
 parent: qou-2akx
 ---
 
@@ -36,3 +36,7 @@ ODD n RESOLVED same day (checks 24–26, 26/26): take the framework's q itself a
 
 
 2026-09-07 PLAN FILED: docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md §A (agent routec-log, parent-verified). Queue: A1 = exact-in-q bond factorisation of the canonical non-monotone word at n = 9 (the decisive compute), A2 = Lean quantisation of the classical b3 (E₀·ln2·m), A3 = convolution lemma. PR #7035.
+
+
+
+2026-09-07 A1 EXECUTED (agent routec-a1, parent re-run 76/76): bond factorisation holds EXACTLY at n = 9 on the canonical non-monotone word for ppn/pnn/ppp/nnn — C(β123)C(free) = C(β12)C(β23) identically in q; each bond contributes q·(z_D + d_bond) exactly. So b3 ≡ 0 on the production chain word at every q-adic order at A = 3 (scope (b), invariant = the identity; general A: MarkovBondFactor general case, qou-g8i1). A route-C b3 needs a non-chain word class or something outside the trace. S1 Lean landed (WeightedCountConvolution). Audit §0b. PR #7035.

@@ -49,6 +49,42 @@ chore, bean-worthy, not blocking).
 **What nobody acting would mean.** Both beans stay in-progress with plans attached; no number
 moves; the three prose sites keep asserting level-dependent flatness.
 
+## 0b. Execution results, same day (parent-verified: every probe re-run by the parent, every Lean file lean-direct by the parent)
+
+| step | result | evidence |
+|---|---|---|
+| **A1** exact bond factorisation, `n = 9` | **Holds identically** — `C(β₁₂₃)·C(β_free) = C(β₁₂)·C(β₂₃)` as Laurent polynomials in `q` for all four compositions `ppn, pnn, ppp, nnn`; `(q−1)`-adic order ∞, no leading coefficient. Stronger: each bond contributes exactly the Markov scalar of its interface letter, `C(β₁₂)/C(β_free) = q·(z_D + d_bond)` (`pp → q⁴/(q²+1)`, `nn → 1/(q²+1)`, `pn → q·(z_D − h(½ − δ/4))`), the same factor whether the other interface is on or off. The ε²-order series of `atom_bond_product_closed_form_probe.py` is the truncation of these exact factors (4/4). | `computations/probes/route_c_step3_bond_factorisation_exact_probe.py` (536 lines, big-integer evaluation on weight sectors + Newton interpolation over `Fraction`, verified at three unused `q`), witness `route-c-step3-bond-factorisation-exact.witness.json`, **76/76**, parent re-run exit 0 in 31 s. Words from `canonical_braid_crossings.atom_canonical_crossings` → `mass_at_3A_proper.atom_braid_word_3A` (`bring_color_weighted`), nothing re-typed. |
+| **A2/S2** classical quantisation | Folded into A1's diagnostic: with `Δ ≡ 0` there is no classical term to quantise on the chain word; the arithmetic `E₀·ln 2 = 2.902` MeV, `1.4262/2.902 = 0.491 ∉ ℤ` stands as recorded in §A. No Lean file: `log₂ 2^{c−n} = c − n` is definitional (Strict Lean Discipline rule 8), not a theorem. | — |
+| **S1/A3** convolution | `QOU/Mass/WeightedCountConvolution.lean`: `weighted (P*Q) (n₁+n₂) x = weighted P n₁ x · weighted Q n₂ x`, `weighted_pow`. Sorry-free, generic field. | commit `68301ad0d6` |
+| **B1/P5** lasso braid words | **All six lassos are positive half-twists**, conjugacy to `σ_i^{+1}` **established** (explicit ≤ 2-letter conjugators, verified in a hand-rolled `B₃` left-normal form and in the faithful Burau representation; super-summit set `{σ₁, σ₂}` for every lasso). Product of the six in departure order `= Δ²` = the independently continued loop at infinity. 50 dps continuation, 0 bisections, min root separation ≥ 0.45. | `computations/probes/colour_cubic_braid_monodromy_probe.py` (675 lines), witness `colour-cubic-braid-monodromy.witness.json`, **13/13**, `q0Anchor: independent`; parent re-run exit 0 in 17.5 s; parent grep: zero `float(`/`math`/`numpy`, zero `q_parameter` reads. |
+| **B2/P2** `z_D` is `𝔰𝔩₂` | `QOU/Mass/SL2QuantumTraceIsZD.lean`: `zSL2 = q³/(q²+1) = z_D`; `zSL3 = q⁵/(q⁴+q²+1)`; `zSL3 ≠ zD` over **every** field (equality forces `q³ = 0`) — no archimedean inequality needed. | commit `1e9962b189`, axioms standard |
+| **B3/P3** flatness level-independent | `QOU/Mass/KZFlatnessLevelIndependent.lean`: `InfinitesimalBraidRelations t → InfinitesimalBraidRelations (c • t)`; the two "flat at `q₀`" prose sites reworded to semisimplicity. | commit `7bfa2bc9d5`, axioms `propext, Quot.sound` |
+| **B5** bean hygiene | `qou-d0qq` retitled to the gate-clean question. | commit `68301ad0d6` |
+
+**What the two fronts now say, in physics-and-paper terms.**
+
+*Route C.* On the production chain word the fixed-point groupoid factors over bonds exactly, at every
+order in `q`, at `A = 3`: `b₃ ≡ 0` there is now a scope-(b) statement with the polynomial identity as
+its invariant (general `A` still wants the disjoint-block Lean lemma, `MarkovBondFactor` general
+case, bean `qou-g8i1`). So the measured `b₃ = 1.4262` MeV cannot come from the chain word's trace at
+any `q`-adic order — a route-C many-body term needs a **non-chain word class** (the Brunnian /
+component-changing classes of §7g) or something **outside the trace**. This closes route C on the
+production word honestly rather than by fatigue, exactly as the plan's recommendation anticipated.
+
+*KZ front.* Every prune passed in the positive direction: the target algebra is `𝔰𝔩₂` (and not
+`𝔰𝔩₃`, over any field), flatness cannot single out a level, and every monodromy generator of the
+`𝔰𝔩₂` KZ connection pulled back along the root map is a conjugate of `ϱ(σ_i)`, so by Kohno–Drinfeld
+(cited, `kohno1987`, not held) the Hecke quadratic `(σ − q)(σ + q⁻¹) = 0` follows with the level's `q`.
+The identification question of `qou-d0qq` is therefore reduced to a **conditional class with one
+named hypothesis** — that the substrate connection *is* that pulled-back KZ connection at the level
+`k + 2 = iπ/ln q₀` (Kohno's convention) — and `q₀` enters only as that label. What is *not* done: the
+content block `conj:hecke-monodromy-step-two` does not yet carry that hypothesis as a field (plan
+step 5), and Kohno 1987 / Drinfeld 1985 are not in `library/` (plan step 6).
+
+**Gates.** `precision-gates.sh --changed` (run four times on this branch): the red list is
+`main`'s standing set; the only mention of either new probe in any log is the branch name.
+Gate-regenerated audit witnesses were reverted by explicit lists excluding this branch's files.
+
 ---
 
 ## A. Route C step 3 — plan (agent `routec-log`, verbatim)
