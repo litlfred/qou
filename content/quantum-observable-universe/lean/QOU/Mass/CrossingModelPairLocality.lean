@@ -98,8 +98,22 @@ def PairLocal : Prop :=
   (∀ i j k, C.w3 i j k = C.w2 i j) ∧ (∀ i j, C.w4 i j = C.w2 i j)
 
 /-- A **Brunnian** crossing model: every two-component sublink is trivial, so a pair measured in
-isolation carries no mutual energy. (`QOU.Mass.BrunnianBindingChannel` establishes that the
-³He/⁴He carrier `L6a4` has this property.) -/
+isolation carries no mutual energy.
+
+**CORRECTED 2026-09-07 — this docstring cited `QOU.Mass.BrunnianBindingChannel` as
+establishing that the ³He/⁴He carrier `L6a4` "has this property". It does not; it proves
+the opposite.** That file establishes L6a4 has vanishing pairwise *Gauss linking number*
+(`n₊ = n₋`) and then proves `brunnian_binding_survives`: the mutual energy of such a pair
+is **strictly positive**, `0 < countChannel m m q` for `0 < m`, `1 < q`. Its whole point
+is that binding *survives* the Brunnian vanishing.
+
+So two distinct properties share one name — topological (linking number zero, TRUE of
+L6a4) and energetic (`w₂ = 0`, FALSE of it) — and the first does not imply the second.
+Consequently `b3_eq_neg_tripleMutual_of_brunnian` below is a correct theorem whose
+hypothesis **L6a4 does not satisfy**, and the measured `b₃` does not cleanly pin the
+triple channel. Independently, the measured `b₂ = 2.2245662` MeV refutes this hypothesis
+outright. Both refutations are formalised, sorry-free, in
+`QOU.Mass.BrunnianHypothesisNotSatisfied`. -/
 def Brunnian : Prop := ∀ i j, C.w2 i j = 0
 
 /-- The total mutual energy of the triple `{i,j,k}`: its three pairs, each measured inside the

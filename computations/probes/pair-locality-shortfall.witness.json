@@ -2,8 +2,8 @@
   "q0Anchor": "independent",
   "q0AnchorReason": "Reads no q0. The shortfall is a difference of AME2020 binding energies against a pairwise-additive model built from the same data; no substrate quantity enters. Established by import-cone trace (cone=1, no q0 import) and by computations/audits/producer_baked_pin_audit.py, which finds no q0-valued literal in the source. The witness carries no q0 field.",
   "schema": "witness/v1",
-  "computedAt": "2026-09-05T18:03:21.867535+00:00",
-  "description": "Quantifies the pair-locality refutation proved in QOU.Mass.CrossingModelPairLocality. A pair-local crossing model has b3 = b4 = 0 forced, so its binding ceiling is C(A,2)*b2. Against AME2020 that ceiling misses 4He by a factor 2.12 -- 52.8% of the binding is irreducibly many-body and no pairwise assembly reaches it, whatever bond functional is applied. With a Brunnian carrier the pair terms vanish and b3 is exactly the triple channel, so the measured b3 > 0 pins that channel to an attractive 1.4262225 MeV per triple.",
+  "computedAt": "2026-09-07T09:15:34.498619+00:00",
+  "description": "Quantifies the pair-locality refutation proved in QOU.Mass.CrossingModelPairLocality. A pair-local crossing model has b3 = b4 = 0 forced, so its binding ceiling is C(A,2)*b2. Against AME2020 that ceiling misses 4He by a factor 2.12 -- 52.8% of the binding is irreducibly many-body and no pairwise assembly reaches it, whatever bond functional is applied. CORRECTED 2026-09-07: this description previously continued 'With a Brunnian carrier the pair terms vanish and b3 is exactly the triple channel, so the measured b3 > 0 pins that channel to an attractive 1.4262225 MeV per triple.' That reads CrossingModel.Brunnian (w2 = 0, pairs carry no mutual energy) as satisfied by L6a4, which is topologically Brunnian (linking number 0). The corpus proves the first does not follow from the second: BrunnianBindingChannel.brunnian_binding_survives gives 0 < countChannel m m q for a crossing pair at q > 1, so w2 != 0. This witness refutes it a second way from its own data -- b2 != 0 -- by the same contrapositive the corpus uses for b3. So b3_eq_neg_tripleMutual_of_brunnian does NOT apply here and b3 does NOT cleanly pin the triple channel; the discarded pair contamination is nonzero. Both refutations are sorry-free in QOU.Mass.BrunnianHypothesisNotSatisfied. The shortfall numbers above are unaffected: they use no Brunnian hypothesis.",
   "q0_pin": "not applicable -- consumes no framework quantity",
   "free_parameters": 0,
   "cumulants_MeV": {
@@ -69,7 +69,7 @@
       "passed": true
     },
     {
-      "name": "with a Brunnian carrier b3 IS the triple channel, so b3 > 0 forces an ATTRACTIVE (negative) triple mutual energy of exactly |b3| per triple (tripleMutual_neg_of_b3_pos)",
+      "name": "CONDITIONAL, and its hypothesis is NOT satisfied here: IF a carrier had w2 = 0 (CrossingModel.Brunnian) then b3 would be the triple channel and b3 > 0 would force an ATTRACTIVE triple mutual energy of |b3| per triple (tripleMutual_neg_of_b3_pos). L6a4 is Brunnian TOPOLOGICALLY (linking number 0), which does NOT give w2 = 0: brunnian_binding_survives proves 0 < countChannel for a crossing pair at q > 1, and the b2 != 0 measured right here refutes it a second way. What is asserted below is only b3 > 0. See QOU.Mass.BrunnianHypothesisNotSatisfied (corrected 2026-09-07)",
       "passed": true
     },
     {
@@ -103,9 +103,9 @@
     "probes/mayer-threebody-sign-threshold.witness.json"
   ],
   "source": "AME2020 total nuclear binding energies",
-  "scriptHash": "3f73c244081d",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "scriptHash": "40874d53e288",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "commitSha": "22f82fa0754a3f1858b3f3c2aa9a37d7dcb98c55",
   "engine": "python",
   "durationMs": 0
 }
