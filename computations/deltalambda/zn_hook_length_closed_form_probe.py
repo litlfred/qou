@@ -13,6 +13,40 @@ Everything the corpus knows about `deg Z_n` comes from running that operator in 
 (`deuteron_qborel_slope_derivation_probe.py`, D1).  That is a MEASURED recursion.  This probe
 derives it, from a closed form.
 
+## 🛑 WHAT IS PRIOR WORK HERE, AND WHAT IS NOT (corpus-grep, 2026-09-07)
+
+Two of the three ingredients below are ALREADY IN THE CORPUS and are re-verified here as inputs,
+NOT claimed as new.  An earlier draft of this file presented both as derivations; that framing was
+wrong and a reviewer would have found the carriers immediately.
+
+  * (A) the weight decomposition `w(T) = [n(l')-n(l)] + 2 maj(T)` is stated verbatim, as a sum of
+    local weights along the growth path, at `lever1_descent_transfer_operator.py:18-24`
+    (`content(lam) = nstat(conj) - nstat(lam)` at :193-197), verified there against direct
+    involution enumeration to n <= 9; also `lever1_kernel_maj_involution_identification.py:23-25`
+    (exact to n = 8), audit `2026-07-12-alien-calculus-review-binding-gevrey-half.md` Addendum 3,
+    and the content block `mass-theory/binding-period-involution-statistic.md` with a sorry-free
+    Lean sibling.  SYT-indexed vs involution-indexed is the RSK re-indexing, which that file
+    states explicitly -- it is not a difference.
+  * (B) the hook-side closed form is the committed verification target **V2** at
+    `lever1_descent_transfer_operator.py:45`, exact for n <= 16, with the fake degree
+    `f~^lambda(q) = q^{n(lambda)} [n]_q!/prod[h]_q` implemented at :213-221.  What is written
+    below differs from V2 by ONE substitution the corpus also already proves sorry-free (twice):
+    `sum_c h(c) = n(lambda) + n(lambda') + n`
+    (`QOU/Common/HookSumComplete.lean`, `QOU/BraidKnot/HookSumClosedForm.lean`, consumed as
+    `contentSum_eq_hookSum_sub` in `QOU/MathlibExt/ContentSumNStatistic.lean:110`).  So (C2) below
+    is a RE-NORMALISATION of V2, not a new identity.
+  * (C) `deg Z_n = n^2 - min_lambda H(lambda)`, and the staircase explanation of the triangular
+    exceptions, is the part that is NOT in the corpus on any of the six grep paths.  The corpus
+    has the degree LAW (max-plus, measured) and its asymptotic consequence; it has no account of
+    WHY triangular n are exceptional.  That, and the application of the total hook length to the
+    degree and to REV, is what this probe contributes.
+
+Stanley's formula is cited as `[stanley1999]` Cor. **7.21.5**.  That reference is registered in
+`content/schema/references.ts:2380` but is NOT ingested into `library/`, so the statement cannot be
+grep-verified against a held copy; it is therefore also verified in-container here (R2), following
+the precedent of `lever1_kernel_maj_involution_identification.py`.  NOTE four corpus sites cite
+Cor. 7.12.5 for the hook-content telescope -- a different fact.  Do not copy that locator.
+
 ## The decomposition
 
 A growth path IS a standard Young tableau `T` of shape `lambda`.  Its weight splits exactly:
