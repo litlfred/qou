@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-07T12:23:01Z
+updated_at: 2026-09-07T12:37:06Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -218,3 +218,81 @@ Whether duality INDUCES the sigma-transport.  The index map above is a necessary
 ingredient, not the identification.  Next: work out what duality does to the
 `{1,1,1,0}` coordinates, since that is where it stops being a relabelling and is
 therefore where the content is.
+
+
+---
+
+## UPDATE 2026-09-07 (third pass) — what duality does on {1,1,1,0}: a NEGATIVE at bidegree (2,2)
+
+The second pass left the question "what does duality produce on the {1,1,1,0}
+coordinates, where it is not a relabelling".  Answered, negatively.
+
+### The object
+
+With the `w0` twist, `{g^{-T} w0}_1 = ({g}_2)^perp`, a line, which for n = 3 is spanned by
+`v_1 x v_2`.  So
+
+    c*_{1110} = det( a x b, c x d, e x f )
+
+with `(a,b), (c,d), (e,f)` the first two columns of `g0, g1, g2`.  The classical expansion
+(verified on 40 random 6-tuples; two other candidate expansions FAIL) is
+
+    det(axb, cxd, exf) = det(a,b,e) det(c,d,f) - det(a,b,f) det(c,d,e)
+
+Two of the four factors ARE Ptolemy coordinates: `det(a,b,e) = c_2010`,
+`det(c,d,e) = c_0210`.  The other two use **g2's second column alone**, not an initial
+segment.  That is the mechanism, not a defect: `v_2` is not N-invariant
+(`v_2 -> v_2 + lambda v_1`), but the two lambda terms cancel in the combination -- so
+`c*` is well defined while its factors are not.  This is exactly why `c*_{1110}` has no
+partner among the coordinates.
+
+### The result
+
+1. **`c*_{1110}` is NOT a degree-2 polynomial in the `c_t`.**  Rank 149 of 210 monomials,
+   121 inconsistent rows.
+2. **Nor a RATIO of degree-2 polynomials.**  The homogeneous system `c* A(c) = B(c)` has
+   kernel dimension 122, and **every** kernel vector has `A` vanishing identically on
+   decorations -- relations among the `c_t` in disguise, not formulas for `c*`.
+
+Producer: `computations/ptolemy/ptolemy_duality_1110_not_rational_probe.py`.
+
+### Validity gate (an earlier version of this was invalid)
+
+A decoration is by **SL(3) cosets**.  The first run sampled arbitrary invertible
+matrices; with `det != 1` the `c_t` are not Ptolemy coordinates and the verdict is about
+nothing.  Every sample is now normalised to `det = 1`, and the probe **refuses to run**
+unless the Ptolemy relation GGZ (5.2) holds on those samples -- measured **0 violations
+in 100 checks**.  Note the numbers changed materially once this was fixed (rank
+206 -> 149, inconsistent rows 64 -> 121), so the gate was not cosmetic.
+
+### TWO false positives this produced, kept because the failure mode is the point
+
+- "Kernel dimension 122" reads as *a rational form exists*.  It does not.
+- "122 - 61 relations = 61 genuine solutions" reads as a count of real formulas.  Also
+  wrong: that arithmetic assumed the only spurious family is `(A=0, B a relation)`, and
+  missed that `(A a relation, B=0)` is equally spurious.
+
+Both readings are about the **coefficient vector**.  `A(c)` can have nonzero coefficients
+and vanish identically on every decoration.  Testing `A` as a **function** on samples:
+**0 of 122** basis vectors survive, and 4000 random combinations produce none.  Same
+class as the near-vacuous subfield test in the previous pass, and as the
+over-substitution bug in `ptolemy_galois_point_transport.py`: a check satisfied by the
+representation rather than by the object.
+
+### SCOPE -- read before citing
+
+This is a structural exclusion **at bidegree (2,2)**, by exact linear algebra over `F_p`
+with the gate above (an identity with integer coefficients must hold mod p, so failure
+mod p refutes it over Q).  It says **nothing about degree 3 or higher**, which is
+untested.  Do not cite it as "duality is not rational in the Ptolemy coordinates"
+without the bidegree.
+
+### Where this leaves the bean -- still OPEN
+
+The sigma-transport sends each coordinate to its Galois conjugate: coordinate-wise, and
+staying in K.  Duality on the {1,1,1,0} coordinates is not even a low-degree rational
+function of the coordinates.  Those are different kinds of map, which makes the
+identification LESS likely than it looked two passes ago -- but that is a heuristic, not
+a refutation, and it must not be recorded as one.  What would settle it: push the fit to
+degree 3, or find the intrinsic characterisation of `c*_{1110}` (it is a Plucker-type
+bracket in the dual flags) and compare that with sigma directly.
