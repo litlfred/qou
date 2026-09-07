@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-07T08:05:19.223107+00:00",
-  "commitSha": "5df5f816a4ce1796bbefb069f9ac283b3cd4a053",
+  "computedAt": "2026-09-07T08:16:49.720996+00:00",
+  "commitSha": "34c5fd5872734fa7830be1792701cae82f9abcad",
   "assertions": [
     {
       "name": "reproduces_committed_H_coth_bound_only",
@@ -75,14 +75,23 @@
       "tolerance": 0,
       "unit": "boolean",
       "source": "A strong-bond drift of only delta = 0.05 moves the admissible kernel's predicted exponent by 0.035947, which is 6.562 times its 1-sigma statistical error 0.005478. The frozen B_pp unit (qou-gcmn) enters the measured slope additively, not as a scatter nuisance."
+    },
+    {
+      "name": "one_third_coincidence_requires_zero_bpp_drift",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "At delta = 0 the incumbent kernel predicts p = 0.330072, which is 1/3 to 0.343 sigma -- the whole of H_coth's apparent success. At the measured LOCAL drift delta = 0.209026 (from the committed corrections of probes/bpp_higher_a_sparse_probe.py, which established B_pp DECLINES with A) the same prediction is p = 0.0652206, 28.19 sigma from 1/3. The drift is 80.24% of the entire measured slope, so 0.26050 is an upper bound on s*p rather than a measurement of it."
     }
   ],
   "allPassed": true,
-  "durationMs": 6085,
+  "durationMs": 6110,
   "computation": "em-linking-kernel-exponent-degeneracy",
   "scriptFile": "em_linking_kernel_exponent_degeneracy_probe.py",
-  "scriptHash": "649c0b588b29",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "28274d44096d",
+  "scriptCommitSha": "34c5fd5872734fa7830be1792701cae82f9abcad",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -358,16 +367,28 @@
         "p_at_c0_1": "0.1153881230629543043019509275914439052588468692051698627693333583216366"
       }
     ],
+    "measured_bpp_drift_destroys_the_one_third_coincidence": {
+      "delta_local_A3_to_A4": "0.2090255813323294646090054493448054543692627623408422934177962275962774",
+      "share_of_the_measured_slope": "0.8024047647166808860302083398548530936577926791221145069392614967139964",
+      "p_at_c0_zero_delta_zero": "0.3300715914758474254247739398244542188591985784555311470137073544651222",
+      "sigma_from_one_third_delta_zero": "0.3429801215538934536984055744552855150079747452612493715774056712237006",
+      "p_at_c0_zero_delta_local": "0.06522057377800965969448931162028228596239038679030151981091897677709795",
+      "sigma_from_one_third_delta_local": "28.19271140399620555091318926882234196683670463400730805014405615473851",
+      "provenance": "Drift read from the committed corrections of probes/bpp_higher_a_sparse_probe.py (merged 2026-08-31, PR #6336), which established that B_pp DECLINES with A. This probe does not re-derive that; it quantifies what it does to the slope.",
+      "not_extrapolated": "That probe refuses to carry a three-point decline across a factor of ten in A, and the refusal is honoured: delta_local is used to show the confound is OF ORDER the signal, never as a value for delta over A = 3..63. No number here is corrected by it.",
+      "reading": "0.26050 is an UPPER BOUND on s*p, so every exponent reported here is an upper bound. H_coth's single coincidence -- c0 = 0 predicting 1/3 -- holds only at delta = 0, and the corpus has measured that delta > 0."
+    },
     "scope": {
       "b_structural_exclusion_UNTOUCHED": "Round 6's O2 exclusion of the unsubtracted kernel coth(alpha) is a structural argument from int(Laplacian u) = 0 with no data in it. Nothing here bears on it and it stands.",
       "a_scope_limited_negative_ON_A_TEST": "The kappa(A) mirror series, with the per-pair Coulomb unit frozen at A = 3, cannot rank kernels: it constrains one scalar against at least three unknowns (kernel log-slope, separation exponent, strong-bond drift; qou-u3vw adds flux scaling as a fourth). This is a statement about what the measurement can resolve, not about any hypothesis being true or false.",
-      "a_scope_limited_negative_ON_THE_BALL_LAW": "The additive hyperbolic-ball separation law is refuted on this series at every kernel in the scanned family. The ball model is an ASSUMPTION about the carrier, not a theorem, so what is excluded is the conjunction (O2-admissible kernel) AND (carrier is a metric ball of extensive hyperbolic volume).",
+      "a_scope_limited_negative_ON_THE_BALL_LAW": "The additive hyperbolic-ball law fails its two conditions by hundreds of percent at every kernel in the scanned family. This is scope (a), NOT a structural exclusion: no proved invariant is cited, and BOTH inputs are assumptions the corpus already flags -- V ~ A ('itself an assumption. The corpus cannot check it', em_linking_alpha_scaling_provenance_probe.py) and the one-term subtracted coth ('a model ... not the exact Green's function of a quotient', round 6). What fails is the CONJUNCTION.",
+      "prior_art_on_the_confound": "The B_pp drift is NOT discovered here. Its sign and low-A scale are established by probes/bpp_higher_a_sparse_probe.py (merged 2026-08-31, PR #6336) and sharpened by qou-23dn. What is new is the log-slope form s*p + delta = -dln(kappa)/dln(A), the observation that the drift is 80% of the measured slope, and the consequence for the 1/3 coincidence.",
       "NOT_claimed": "That any kernel is correct. That p = 0.187 is the separation exponent -- it is an OUTPUT of choosing c0 = 1, offered as a prediction target for a derived law, not an identification. That the metric Coulomb route fails: it is untouched, exactly as rounds 3 and 6 left it.",
       "not_a_fit": "No parameter is tuned to improve agreement with a target. The exponents are regression outputs used to demonstrate a degeneracy, and the conclusion drawn from them is that the observable cannot select -- so no hypothesis is promoted."
     },
     "what_would_close_this": {
       "statement": "Derive any TWO of {kernel log-slope s, separation exponent p, strong-bond drift delta} and the third is predicted by s*p + delta = 0.2604989. Scoring further kernels against kappa(A) cannot help: the observable has one degree of freedom and they compete for it.",
-      "cheapest_leg": "delta (bean qou-gcmn) -- it is a compute question about B_pp at higher A, not a geometry question, and Section F shows it dominates the statistical error."
+      "cheapest_leg": "delta (bean qou-gcmn) -- a compute question about B_pp at higher A, not a geometry question, already answered in sign and low-A scale by PR #6336. Section F shows it is ~80% of the measured slope, so extending it to A = 5, 6 (that probe's own named next step) would do more for this front than any further kernel."
     },
     "upstream_witness_hashes": [
       {
@@ -377,6 +398,14 @@
         "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
         "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
         "computedAt": "2026-08-24T14:40:43.555797+00:00"
+      },
+      {
+        "path": "bpp-higher-a-sparse.witness.json",
+        "sha256": "7a855992c99f9cbb1deae085c3e3c27e57bdd000e8d09d3d53590380e8cd5f99",
+        "size_bytes": 4836,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-09-04T20:47:06.664589+00:00"
       }
     ]
   }

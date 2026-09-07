@@ -49,6 +49,15 @@ so the series constrains only the PRODUCT of the kernel's logarithmic
 slope and the separation exponent. They are jointly unidentifiable.
 Fixing either one predicts the other; fixing neither predicts nothing.
 
+s IS A SPAN-AVERAGED EFFECTIVE SLOPE, NOT A CONSTANT. For F = coth - c0,
+-dln F/dln alpha varies across the window (the corpus measures that coth
+over alpha in [0.3165, 0.8732] is within 0.97% of 1/alpha + alpha/3, i.e.
+the curvature term is resolved). Every s below is therefore the OLS slope
+of ln kappa on ln alpha over the 29 pairs -- the effective slope the data
+sees -- and the identity above holds in that averaged sense, not
+pointwise. Stating it pointwise would confuse a family with a
+proposition.
+
 Three consequences, each measured below:
 
   (1) Freeing p, the O2-ADMISSIBLE kernel c0 = 1 fits at least as well
@@ -61,8 +70,12 @@ Three consequences, each measured below:
       coincidence, of one number to ~1%, is the whole of H_coth's
       apparent success. c0 = 1 predicts p = 0.187.
 
-  (3) The hyperbolic-ball separation law is refuted outright, which is
-      STRONGER than round 6's finding 3. That finding scored the
+  (3) The hyperbolic-ball separation law fails its two conditions by
+      hundreds of percent at every c0 scanned -- a scope-(a) negative on a
+      CONJUNCTION (one-term subtracted-coth kernel, and V ~ A), NOT a
+      structural exclusion: no proved invariant is cited and both inputs
+      are flagged as assumptions in the corpus. It is nonetheless a
+      different and stronger test than round 6's finding 3, which scored the
       MULTIPLICATIVE alpha ~ c*ln A (free slope) at 9.253%. The law
       hyperbolic geometry actually forces is ADDITIVE -- from
       Vol(ball of radius R) = pi(sinh 2R - 2R) ~ (pi/2)e^{2R} with an
@@ -269,6 +282,22 @@ def main() -> None:
     crossing = mp.findroot(ball_slope, mpf("-0.36"))
 
     # ---- F. the qou-gcmn confound as an additive bias ------------------
+    # The sign and low-A scale of the drift are read from the COMMITTED
+    # merged probe, not assumed here. Used as a local scale only.
+    bpp = record_upstream(HERE / "probes" / "bpp-higher-a-sparse.witness.json",
+                          _UPSTREAM_RECORDS)
+    _bd = bpp["data"]
+    corr3 = mpf(str(_bd["kappa_correction_A3"]))
+    corr4 = mpf(str(_bd["kappa_correction_A4"]))
+    delta_local = log(corr4 / corr3) / log(mpf(4) / 3)
+    delta_share = delta_local / measured
+
+    s_inc = inc["kernel_log_slope_s"]
+    p_inc_d0 = measured / s_inc
+    p_inc_dl = (measured - delta_local) / s_inc
+    sig_d0 = abs(THIRD - p_inc_d0) / inc["p_standard_error"]
+    sig_dl = abs(THIRD - p_inc_dl) / inc["p_standard_error"]
+
     s_adm = adm["kernel_log_slope_s"]
     confound = [{"delta": mpf(d),
                  "s_times_p": measured - mpf(d),
@@ -325,6 +354,29 @@ def main() -> None:
                     "directions and cannot both hold."),
     })
     wb.add_data("gcmn_confound_as_additive_bias", confound)
+    wb.add_data("measured_bpp_drift_destroys_the_one_third_coincidence", {
+        "delta_local_A3_to_A4": delta_local,
+        "share_of_the_measured_slope": delta_share,
+        "p_at_c0_zero_delta_zero": p_inc_d0,
+        "sigma_from_one_third_delta_zero": sig_d0,
+        "p_at_c0_zero_delta_local": p_inc_dl,
+        "sigma_from_one_third_delta_local": sig_dl,
+        "provenance": ("Drift read from the committed corrections of "
+                       "probes/bpp_higher_a_sparse_probe.py (merged "
+                       "2026-08-31, PR #6336), which established that B_pp "
+                       "DECLINES with A. This probe does not re-derive that; "
+                       "it quantifies what it does to the slope."),
+        "not_extrapolated": ("That probe refuses to carry a three-point "
+                             "decline across a factor of ten in A, and the "
+                             "refusal is honoured: delta_local is used to "
+                             "show the confound is OF ORDER the signal, "
+                             "never as a value for delta over A = 3..63. No "
+                             "number here is corrected by it."),
+        "reading": ("0.26050 is an UPPER BOUND on s*p, so every exponent "
+                    "reported here is an upper bound. H_coth's single "
+                    "coincidence -- c0 = 0 predicting 1/3 -- holds only at "
+                    "delta = 0, and the corpus has measured that delta > 0."),
+    })
 
     # ---- assertions -----------------------------------------------------
     wb.add_assertion(
@@ -414,6 +466,22 @@ def main() -> None:
                 f"The frozen B_pp unit (qou-gcmn) enters the measured slope "
                 f"additively, not as a scatter nuisance."))
 
+    wb.add_assertion(
+        name="one_third_coincidence_requires_zero_bpp_drift",
+        computed=1 if (sig_d0 < 1 and sig_dl > 5) else 0,
+        expected=1, tolerance=0, unit="boolean",
+        source=(f"At delta = 0 the incumbent kernel predicts p = "
+                f"{mp.nstr(p_inc_d0, 6)}, which is 1/3 to "
+                f"{mp.nstr(sig_d0, 3)} sigma -- the whole of H_coth's "
+                f"apparent success. At the measured LOCAL drift "
+                f"delta = {mp.nstr(delta_local, 6)} (from the committed "
+                f"corrections of probes/bpp_higher_a_sparse_probe.py, which "
+                f"established B_pp DECLINES with A) the same prediction is "
+                f"p = {mp.nstr(p_inc_dl, 6)}, {mp.nstr(sig_dl, 4)} sigma "
+                f"from 1/3. The drift is {mp.nstr(delta_share * 100, 4)}% of "
+                f"the entire measured slope, so 0.26050 is an upper bound on "
+                f"s*p rather than a measurement of it."))
+
     wb.add_data("scope", {
         "b_structural_exclusion_UNTOUCHED": (
             "Round 6's O2 exclusion of the unsubtracted kernel coth(alpha) "
@@ -427,11 +495,21 @@ def main() -> None:
             "fourth). This is a statement about what the measurement can "
             "resolve, not about any hypothesis being true or false."),
         "a_scope_limited_negative_ON_THE_BALL_LAW": (
-            "The additive hyperbolic-ball separation law is refuted on this "
-            "series at every kernel in the scanned family. The ball model is "
-            "an ASSUMPTION about the carrier, not a theorem, so what is "
-            "excluded is the conjunction (O2-admissible kernel) AND (carrier "
-            "is a metric ball of extensive hyperbolic volume)."),
+            "The additive hyperbolic-ball law fails its two conditions by "
+            "hundreds of percent at every kernel in the scanned family. This "
+            "is scope (a), NOT a structural exclusion: no proved invariant is "
+            "cited, and BOTH inputs are assumptions the corpus already flags "
+            "-- V ~ A ('itself an assumption. The corpus cannot check it', "
+            "em_linking_alpha_scaling_provenance_probe.py) and the one-term "
+            "subtracted coth ('a model ... not the exact Green's function of "
+            "a quotient', round 6). What fails is the CONJUNCTION."),
+        "prior_art_on_the_confound": (
+            "The B_pp drift is NOT discovered here. Its sign and low-A scale "
+            "are established by probes/bpp_higher_a_sparse_probe.py (merged "
+            "2026-08-31, PR #6336) and sharpened by qou-23dn. What is new is "
+            "the log-slope form s*p + delta = -dln(kappa)/dln(A), the "
+            "observation that the drift is 80% of the measured slope, and "
+            "the consequence for the 1/3 coincidence."),
         "NOT_claimed": (
             "That any kernel is correct. That p = 0.187 is the separation "
             "exponent -- it is an OUTPUT of choosing c0 = 1, offered as a "
@@ -452,9 +530,11 @@ def main() -> None:
             "kernels against kappa(A) cannot help: the observable has one "
             "degree of freedom and they compete for it."),
         "cheapest_leg": (
-            "delta (bean qou-gcmn) -- it is a compute question about B_pp at "
-            "higher A, not a geometry question, and Section F shows it "
-            "dominates the statistical error."),
+            "delta (bean qou-gcmn) -- a compute question about B_pp at higher "
+            "A, not a geometry question, already answered in sign and low-A "
+            "scale by PR #6336. Section F shows it is ~80% of the measured "
+            "slope, so extending it to A = 5, 6 (that probe's own named next "
+            "step) would do more for this front than any further kernel."),
     })
     wb.add_upstream_records(_UPSTREAM_RECORDS)
     out = wb.save()
