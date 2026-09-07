@@ -1,4 +1,5 @@
 import QOU.Hecke.TauStructureConstants
+import QOU.MathlibExt.CasimirBasisIndependence
 
 /-!
 # QOU.Hecke.TauDualBasis — the `τ`-dual of the `T_w` basis is `q^{-ℓ(w)} T_{w⁻¹}`
@@ -202,5 +203,21 @@ theorem mul_casimir_comm (hq : q ≠ 0) (a : QOU.Hecke.IwahoriHecke K q n) :
       = tau K q n (a * (Tw K q n v * TwDual K q n w)) := by rw [mul_assoc]
     _ = tau K q n (Tw K q n v * TwDual K q n w * a) := tau_mul_comm K q n _ _
     _ = tau K q n (Tw K q n v * (TwDual K q n w * a)) := by rw [mul_assoc]
+
+/-- **Any dual pair computes the same Casimir.**
+
+    Instantiates `QOU.MathlibExt.casimir_eq_of_expansions` with the `T_w` pair
+    on one side; the caller supplies only the *other* pair's left-expansion.
+    This is what makes `QOU.MathlibExt.CasimirBlockScalar` — which computes a
+    Casimir in the matrix-unit basis of a product of matrix algebras — say
+    something about `casimir` itself, once the matrix units are transported
+    along a splitting. -/
+theorem casimir_eq_of_dual_pair (hq : q ≠ 0) {κ : Type*} [Fintype κ]
+    (d d' : κ → QOU.Hecke.IwahoriHecke K q n)
+    (hd : ∀ y : QOU.Hecke.IwahoriHecke K q n,
+      ∑ p, tau K q n (d p * y) • d' p = y) :
+    ∑ p, d p * d' p = casimir K q n :=
+  QOU.MathlibExt.casimir_eq_of_expansions (tau K q n) (Tw K q n) (TwDual K q n) d d'
+    (sum_tau_mul_TwDual_smul_Tw K q n hq) hd
 
 end QOU.Hecke.TwBasis
