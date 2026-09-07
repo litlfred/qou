@@ -38,11 +38,25 @@ This probe is exactly that — entirely symbolic, NO fitting at q_0.
 ## Inputs (pre-archimedean, all from existing witnesses)
 
 1. Per-block closed forms `χ_λ(Δ_T_β)(q)` (from
-   `qbeta-per-block-paper-closed-forms.witness.json`):
+   `qbeta-per-block-paper-closed-forms.witness.json` for (3) and (1,1,1),
+   and from `qbeta_per_block_chi_borromean_closed_forms_probe.py` for (2,1)):
 
       χ_(3)    = -(q²-1)(q²+1)²/(4q)
-      χ_(2,1)  = (q²-1)(-q⁴-1)/(4q³)
+      χ_(2,1)  = (q²-1)(q⁴+1)·P(q)/(4q⁹),
+                 P = 2q¹²-5q¹⁰+5q⁸-5q⁶+5q⁴-5q²+2      [CANONICAL, borromean]
       χ_(1,1,1) = -(q²-1)(q²+1)²/(4q⁵)
+
+   **Intra-nucleon ordering, 2026-09-07 (beans `qou-hu1f`, `qou-eddc`).**
+   Exactly one of the three blocks is ordering-dependent, and it is the only
+   2-dimensional one: (3) and (1,1,1) are the 1-dimensional irreps, where the
+   generators act by scalars and therefore commute, so the order in which the
+   two nucleon strands are braided cannot matter. In (2,1) it does. The
+   grouped-era form `(q²-1)(-q⁴-1)/(4q³)` is retained behind
+   `intra_order="grouped"` so the 2026-06-03 numbers stay reproducible, but the
+   default is now the canonical borromean word `(σ₀σ₁⁻¹)³`.
+
+   The two frames agree at `q = 1` (`P(1) = -1`, both vanish) and on the
+   order-0/1/2 Taylor coefficients; they part company from order 3 on.
 
 2. The z-recursion (from `qbeta-prearchimedean-z-recursion.witness.json`):
 
@@ -135,11 +149,31 @@ import sympy as sp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-def per_block_chi_diff(q: sp.Symbol) -> dict[tuple[int, ...], sp.Expr]:
-    """Closed forms from qbeta-per-block-paper-closed-forms.witness.json."""
+def per_block_chi_diff(
+    q: sp.Symbol, *, intra_order: str = "borromean"
+) -> dict[tuple[int, ...], sp.Expr]:
+    """Per-block characters χ_λ(Δ_T_β)(q) over H_3(q).
+
+    `intra_order="borromean"` (default, CANONICAL) is the `(σ₀σ₁⁻¹)³` word
+    fixed by bean `qou-hu1f`; `"grouped"` is the superseded all-σ₀-then-all-σ₁
+    word, retained so the 2026-06-03 witness stays reproducible.
+
+    Only (2,1) differs. (3) and (1,1,1) are 1-dimensional, so their generators
+    act by scalars and commute — the intra-nucleon ordering cannot reach them,
+    and sympy confirms the difference is exactly 0 rather than merely small.
+    """
+    if intra_order not in ("borromean", "grouped"):
+        raise ValueError(f"intra_order must be borromean|grouped, got {intra_order!r}")
+    chi_21 = (
+        (q ** 2 - 1) * (q ** 4 + 1)
+        * (2 * q ** 12 - 5 * q ** 10 + 5 * q ** 8 - 5 * q ** 6
+           + 5 * q ** 4 - 5 * q ** 2 + 2) / (4 * q ** 9)
+        if intra_order == "borromean"
+        else (q ** 2 - 1) * (-q ** 4 - 1) / (4 * q ** 3)
+    )
     return {
         (3,): -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q),
-        (2, 1): (q ** 2 - 1) * (-q ** 4 - 1) / (4 * q ** 3),
+        (2, 1): chi_21,
         (1, 1, 1): -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q ** 5),
     }
 
@@ -179,7 +213,8 @@ def main() -> None:
     print("(NEAR-MATCH diagnostic; c_3 NOT derived — f-map keystone open)")
     print("=" * 70)
 
-    chi = per_block_chi_diff(q)
+    chi = per_block_chi_diff(q)                              # canonical
+    chi_g = per_block_chi_diff(q, intra_order="grouped")      # 2026-06-03 frame
     yL = y_lambda_h3_symbolic(q)
 
     # ── Step 1: sum the per-block characters ──────────────────────
@@ -188,10 +223,21 @@ def main() -> None:
     delta_tau_M = sp.simplify(delta_tau_M)
     print(f"  Δτ_M(q) = {sp.simplify(delta_tau_M)}")
 
+    delta_tau_M_g = sp.simplify(
+        sum(yL[L] * chi_g[L] for L in [(3,), (2, 1), (1, 1, 1)]))
+    print(f"  [grouped frame, superseded] = {delta_tau_M_g}")
+
     # ── Step 2: expand around w = q − 1 ───────────────────────────
     print("\nStep 2: Taylor expand Δτ_M around q = 1 (w = q - 1)")
     dt_w = sp.series(delta_tau_M.subs(q, 1 + w), w, 0, 12).removeO()
     coeffs = [sp.Poly(dt_w, w).nth(k) for k in range(12)]
+    dt_w_g = sp.series(delta_tau_M_g.subs(q, 1 + w), w, 0, 12).removeO()
+    coeffs_g = [sp.Poly(dt_w_g, w).nth(k) for k in range(12)]
+    # The two frames must agree through order 2 and part company at 3 — the
+    # claim the Lean file's classical-point results rest on. Asserted, not
+    # asserted-in-prose: a future re-derivation that broke it would show here.
+    assert coeffs[:3] == coeffs_g[:3], (coeffs[:3], coeffs_g[:3])
+    assert coeffs[3] != coeffs_g[3], coeffs[3]
     print(f"  Order 0:  {coeffs[0]}")
     print(f"  Order 1:  {coeffs[1]}")
     print(f"  Order 2:  {coeffs[2]}")
@@ -257,8 +303,10 @@ def main() -> None:
     )
     wn.set_description(
         "Multi-block Δτ_M probe (NOT a c_3 derivation). Combines the exact "
-        "pre-archimedean per-block closed forms χ_λ(Δ_T_β)(q) (from "
-        "qbeta-per-block-paper-closed-forms.witness.json) with a "
+        "pre-archimedean per-block closed forms χ_λ(Δ_T_β)(q) — (3) and "
+        "(1,1,1) from qbeta-per-block-paper-closed-forms.witness.json, "
+        "(2,1) in the CANONICAL borromean intra-nucleon ordering since "
+        "2026-09-07 (beans qou-hu1f / qou-eddc) — with a "
         "NON-CANONICAL rational surrogate for the Wenzl y_λ(q) weights "
         "(canonical y_λ involves √q) to emit Δτ_M(q) as a rational "
         "function of q. Reports: (1) the closed form, (2) its Taylor "
@@ -272,6 +320,21 @@ def main() -> None:
     wn.add_data("delta_tau_M_symbolic_q", str(delta_tau_M))
     wn.add_data("taylor_coeffs_w_expansion",
                 {str(k): str(coeffs[k]) for k in range(12)})
+    wn.add_data("intra_nucleon_ordering", "borromean")
+    # The superseded frame, kept so the 2026-06-03 numbers this witness used to
+    # carry stay reproducible from the file that replaced them, rather than
+    # only from git history.
+    wn.add_data("grouped_frame_superseded", {
+        "delta_tau_M_symbolic_q": str(delta_tau_M_g),
+        "taylor_coeffs_w_expansion": {str(k): str(coeffs_g[k]) for k in range(12)},
+        "note": (
+            "All-σ₀-then-all-σ₁ intra-nucleon word, canonical until the "
+            "qou-hu1f ruling of 2026-09-05. Only the 2-dimensional (2,1) block "
+            "differs; (3) and (1,1,1) are 1-dimensional, so their generators "
+            "commute and the ordering cannot reach them. The two frames agree "
+            "at orders 0-2 (asserted above) and diverge from order 3."
+        ),
+    })
     wn.add_data("delta_tau_M_q_proton", str(dt_proton))
     wn.add_data("delta_tau_M_q_muon", str(dt_muon))
     wn.add_data("cross_anchor_swing", str(abs(dt_proton - dt_muon)))
@@ -289,9 +352,14 @@ def main() -> None:
     wn.add_data(
         "structural_note",
         "Δτ_M(q) is a rational function of q (no √ — symbolic in q²). "
-        "Per the per-block witness, the linear-in-h structure of (2,1) "
-        "and the symmetric (3) ↔ (1,1,1) ↔ q ↔ 1/q pairing under "
-        "antipode are exact at the rational-function level. The "
+        "The symmetric (3) ↔ (1,1,1) ↔ q ↔ 1/q pairing under antipode is "
+        "exact at the rational-function level. NOTE (2026-09-07): the "
+        "earlier claim here that (2,1) is 'linear in h' described the "
+        "grouped frame, where χ_(2,1) = −h³/4 − h/2; in the canonical "
+        "borromean frame it is h⁹/2 + 11h⁷/4 + 17h⁵/4 + 5h³/4 − h/2. Both "
+        "are odd in h — bar-parity survives the reordering — and both have "
+        "the same −h/2 leading term, which is why the classical point and "
+        "the (q²−1) factor are frame-independent. The "
         "cross-anchor swing IS the order-of-magnitude diagnostic for "
         "whether c_3 derives from this object exactly or is a near-match."
     )
@@ -300,10 +368,27 @@ def main() -> None:
     # found no half-integer powers of q in delta_tau_M. If a future
     # edit swaps the rational surrogate for the canonical √q-bearing
     # y_λ, this assertion will trip and surface the regression.
+    # All three are 0/1 INDICATORS, not measurements, so they are carried as
+    # "0"/"1" strings — the raw-float64 gate is right to reject a bare float
+    # here even though no precision is at stake, and the repo's convention for
+    # an indicator is the string form (cf. `scan_completed` in
+    # `audits/intra_ordering_value_fingerprint_audit.py`).
     wn.add_assertion(
         "delta_tau_M_rational_in_q",
-        computed=has_no_sqrt_q,
-        expected=1.0,
+        computed=str(int(has_no_sqrt_q)),
+        expected="1",
+    )
+    # The frame-independence claim the Lean file's classical-point theorems
+    # rest on, measured rather than asserted in prose.
+    wn.add_assertion(
+        "orders_0_to_2_frame_independent",
+        computed=str(int(coeffs[:3] == coeffs_g[:3])),
+        expected="1",
+    )
+    wn.add_assertion(
+        "order_3_is_ordering_dependent",
+        computed=str(int(coeffs[3] != coeffs_g[3])),
+        expected="1",
     )
     out = wn.save()
     print(f"\nWitness: {out.name}")

@@ -873,9 +873,9 @@ theorem delta_tau_M_surrogate_deriv2_hasDerivAt_one :
 
 /-- **Theorem (order-3 Taylor coefficient = −23/9).** The third Taylor
 coefficient at `q = 1` of `delta_tau_M_surrogate` is `−23/9`
-(`= g'''(1)/3!`) in the canonical (borromean) frame. The
-`qbeta-c3-multiblock-recursion-attack.witness.json` value `−41/9` is the
-grouped-frame one and is not a cross-check for this. -/
+(`= g'''(1)/3!`) in the canonical (borromean) frame, matching the regenerated
+`qbeta-c3-multiblock-recursion-attack.witness.json`. Its `−41/9` is the
+grouped-frame value, now kept there under `grouped_frame_superseded`. -/
 theorem delta_tau_M_surrogate_taylor_coeff_3 :
     deriv (deriv (deriv delta_tau_M_surrogate)) 1 / 6 = -23/9 := by
   have h3 : deriv (deriv (deriv delta_tau_M_surrogate)) 1 = -46/3 := by
@@ -901,13 +901,14 @@ solving the `k=n` term against `D(1)=12` to recover `f⁽ⁿ⁾(1)` from the low
 derivatives. This yields `c₄ = 77/18`, `c₅ = 1349/108`, `c₆ = -191/4`,
 `c₇ = 26285/162`, sorry-free.
 
-These are the **canonical (borromean)** coefficients, recomputed 2026-09-07 with
-`chi_block_21`. They are NOT the values in
-`qbeta-c3-multiblock-recursion-attack.witness.json`, which was generated
-2026-06-03 in the grouped frame (`c₄ = 149/18`, `c₅ = -1729/108`, `c₆ = 111/4`,
-`c₇ = -3665/81`) and has not been regenerated; `c₀…c₂` are frame-independent and
-still agree. Do not treat that witness as this section's cross-check until it is
-re-run.
+These are the **canonical (borromean)** coefficients. They agree exactly with
+`qbeta-c3-multiblock-recursion-attack.witness.json`, regenerated 2026-09-07 in
+the same frame by an independent route — `sp.series` on the closed form, where
+the proofs below go through `iteratedDeriv` and the Leibniz recurrence. That
+witness also carries the superseded grouped-frame values under
+`grouped_frame_superseded` (`c₃ = -41/9`, `c₄ = 149/18`, `c₅ = -1729/108`,
+`c₆ = 111/4`, `c₇ = -3665/81`) and asserts what this migration turns on:
+`c₀…c₂` are frame-independent, `c₃` is not.
 
 The five private helpers below are general (monomial iterated derivative, a
 `ContDiffAt`-local iterated Leibniz, a Pascal reindex, and a polynomial
@@ -1181,36 +1182,32 @@ private lemma hF7 : iteratedDeriv 7 f0 1 = 7359800/9 := by
 -- ===== order-4..7 Taylor coefficients =====
 /-- **Theorem (order-4 Taylor coefficient).** The 4-th Taylor coefficient at
 `q = 1` of `delta_tau_M_surrogate` is `c_4`, via the iterated-Leibniz recurrence
-on `f·D = N`, in the canonical (borromean) frame. The
-`qbeta-c3-multiblock-recursion-attack` witness still records the grouped-frame
-value and is not a cross-check for this. -/
+on `f·D = N`, in the canonical (borromean) frame. Matches the regenerated
+`qbeta-c3-multiblock-recursion-attack` witness. -/
 theorem delta_tau_M_surrogate_taylor_coeff_4 :
     iteratedDeriv 4 delta_tau_M_surrogate 1 / 24 = 77 / 18 := by
   show iteratedDeriv 4 f0 1 / 24 = 77 / 18
   rw [hF4]; norm_num
 /-- **Theorem (order-5 Taylor coefficient).** The 5-th Taylor coefficient at
 `q = 1` of `delta_tau_M_surrogate` is `c_5`, via the iterated-Leibniz recurrence
-on `f·D = N`, in the canonical (borromean) frame. The
-`qbeta-c3-multiblock-recursion-attack` witness still records the grouped-frame
-value and is not a cross-check for this. -/
+on `f·D = N`, in the canonical (borromean) frame. Matches the regenerated
+`qbeta-c3-multiblock-recursion-attack` witness. -/
 theorem delta_tau_M_surrogate_taylor_coeff_5 :
     iteratedDeriv 5 delta_tau_M_surrogate 1 / 120 = 1349 / 108 := by
   show iteratedDeriv 5 f0 1 / 120 = 1349 / 108
   rw [hF5]; norm_num
 /-- **Theorem (order-6 Taylor coefficient).** The 6-th Taylor coefficient at
 `q = 1` of `delta_tau_M_surrogate` is `c_6`, via the iterated-Leibniz recurrence
-on `f·D = N`, in the canonical (borromean) frame. The
-`qbeta-c3-multiblock-recursion-attack` witness still records the grouped-frame
-value and is not a cross-check for this. -/
+on `f·D = N`, in the canonical (borromean) frame. Matches the regenerated
+`qbeta-c3-multiblock-recursion-attack` witness. -/
 theorem delta_tau_M_surrogate_taylor_coeff_6 :
     iteratedDeriv 6 delta_tau_M_surrogate 1 / 720 = -191 / 4 := by
   show iteratedDeriv 6 f0 1 / 720 = -191 / 4
   rw [hF6]; norm_num
 /-- **Theorem (order-7 Taylor coefficient).** The 7-th Taylor coefficient at
 `q = 1` of `delta_tau_M_surrogate` is `c_7`, via the iterated-Leibniz recurrence
-on `f·D = N`, in the canonical (borromean) frame. The
-`qbeta-c3-multiblock-recursion-attack` witness still records the grouped-frame
-value and is not a cross-check for this. -/
+on `f·D = N`, in the canonical (borromean) frame. Matches the regenerated
+`qbeta-c3-multiblock-recursion-attack` witness. -/
 theorem delta_tau_M_surrogate_taylor_coeff_7 :
     iteratedDeriv 7 delta_tau_M_surrogate 1 / 5040 = 26285 / 162 := by
   show iteratedDeriv 7 f0 1 / 5040 = 26285 / 162
