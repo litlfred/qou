@@ -67,6 +67,48 @@ theorem hookZ_succ_lt (μ : YoungDiagram) (i j : ℕ) :
   push_cast
   linarith
 
+/-- Hook lengths are strictly decreasing along a row: `j < j'` gives `h(i,j') < h(i,j)`.
+Induction on the one-step lemma. -/
+theorem hookZ_strictAnti_row (μ : YoungDiagram) (i : ℕ) :
+    ∀ {j j' : ℕ}, j < j' → hookZ μ (i, j') < hookZ μ (i, j) := by
+  intro j j' hjj'
+  induction j' with
+  | zero => exact absurd hjj' (Nat.not_lt_zero j)
+  | succ m ih =>
+    rcases Nat.lt_succ_iff_lt_or_eq.mp hjj' with hlt | heq
+    · exact lt_of_lt_of_le (by linarith [hookZ_succ_lt μ i m]) (le_of_lt (ih hlt))
+    · subst heq; linarith [hookZ_succ_lt μ i j]
+
+/-- **L1.** A row contains at most one cell of any given hook length. This is what bounds the
+hook-length multiplicity `N_m(λ)` by the number of rows, and (via the conjugate statement) by the
+number of columns — the input to `R_λ ≤ C · r(λ)` in the REV bound. -/
+theorem card_row_filter_hookZ_le_one (μ : YoungDiagram) (i : ℕ) (m : ℤ) :
+    ((μ.row i).filter (fun c => hookZ μ c = m)).card ≤ 1 := by
+  rw [Finset.card_le_one]
+  intro a ha b hb
+  simp only [Finset.mem_filter, YoungDiagram.mem_row_iff] at ha hb
+  obtain ⟨⟨-, ha1⟩, ha2⟩ := ha
+  obtain ⟨⟨-, hb1⟩, hb2⟩ := hb
+  -- both cells sit in row `i`, so they differ only in the column
+  have hab : a = (i, a.2) := by rw [← ha1]
+  have hbb : b = (i, b.2) := by rw [← hb1]
+  rcases lt_trichotomy a.2 b.2 with h | h | h
+  · exfalso
+    have := hookZ_strictAnti_row μ i h
+    rw [← hab, ← hbb] at this
+    omega
+  · rw [hab, hbb, h]
+  · exfalso
+    have := hookZ_strictAnti_row μ i h
+    rw [← hab, ← hbb] at this
+    omega
+
+/-- Non-vacuity witness for `card_row_filter_hookZ_le_one`: rows are not empty, so that bound is a
+real injectivity statement rather than a card-of-nothing triviality. The staircase `(3,2,1)` has
+three cells in row 0. -/
+example : (YoungDiagram.ofRowLens [3, 2, 1] (by decide)).rowLen 0 = 3 := by
+  simpa using YoungDiagram.rowLen_ofRowLens (w := [3, 2, 1]) (hw := by decide) ⟨0, by norm_num⟩
+
 /-- The first row length is dominated by the sum of squared row lengths. -/
 private theorem sq_rowLen_zero_le (μ : YoungDiagram) {N : ℕ} (hN0 : 0 < N) :
     (μ.rowLen 0 : ℤ) ^ 2 ≤ ∑ i ∈ range N, (μ.rowLen i : ℤ) ^ 2 :=
