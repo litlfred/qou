@@ -427,30 +427,51 @@ def main() -> int:
         return 0 if all_ok else 1
     try:
         wb = WitnessBuilder(Path(__file__).stem, engine="numpy")
+        # Every measured number below is INTERPOLATED, not retyped. It was a
+        # fixed string, and it drifted: the prose said the recursive-vs-direct
+        # Mobius agreement was `2.7e-15` while `data.convergence.
+        # moebius_cross_check` — the same quantity, written two dozen lines
+        # down from the same variable — had moved to 1.78e-15. Caught by the
+        # prose-drift ratchet (bean qou-n62l); the hardcode-vs-derive
+        # principle is bean qou-24i9.
+        #
+        # The partial sums are derived for the same reason even though they
+        # were still CORRECT when this was written: the ratchet flagged them
+        # too, and they are exactly the shape that goes stale silently,
+        # because a reader checking `3.49` against the data finds no such
+        # field and cannot tell a right answer from a wrong one.
+        _psum, _psums = 0.0, []
+        for _r in range(2, A + 1):
+            _psum += tot[_r]
+            _psums.append(f"{_psum:.2f}")
+        _cks = ", ".join(f"c_{_r} = {tot[_r]:+.9f}" for _r in range(2, A + 1))
+        _rts = ", ".join(f"{x:.6f}" for x in ratios[:-1])
+        _c5 = sum(terms)
         wb.set_description(
             "Establishes that the subset subtraction used throughout this arc is "
             "a genuine CUMULANT expansion, then measures its convergence. The "
             "Markov trace is multiplicative on disjoint strand blocks, so "
             "L = log(tr_free/tr_atom) is additive on them — measured here with "
             "bonds placed only inside each part and no cross bonds, residual "
-            "0.000e+00. That additivity is exactly the condition making a Mobius "
+            f"{res:.3e}. That additivity is exactly the condition making a Mobius "
             "inversion over subsets a cumulant expansion, so c_k is the k-th "
             "cumulant: what the k-body correlation contributes beyond every "
             "lower one. This is what licenses reading order-zero correlations as "
             "an indirect probe of higher tower orders. Cumulants verified two "
-            "independent ways (recursive and direct Mobius) agreeing to 2.7e-15 "
-            "across all 26 subsets. AT A=5 (5He, pnpnn, n=15) the hierarchy is "
-            "c_2 = +7.272615735, c_3 = -3.786046394, c_4 = -1.230795704, "
-            "c_5 = +1.604498983, reconstructing L_full = 3.860272620 exactly. "
-            "IT DOES NOT CONVERGE: successive ratios 0.520589, 0.325087, then "
-            "1.303627 — c_5 exceeds c_4 and is comparable to c_3, with partial "
-            "sums oscillating (7.27, 3.49, 2.26, 3.86). AND c_5 FLIPS SIGN "
-            "POSITIVE, correcting qou-bc09 and qou-38i9 which reported every "
+            f"independent ways (recursive and direct Mobius) agreeing to {worst:.2e} "
+            f"across all {len(Ls)} subsets. AT A={A} (5He, pnpnn, n={3 * A}) the "
+            f"hierarchy is {_cks}, reconstructing L_full = {full:.9f} exactly. "
+            f"IT DOES NOT CONVERGE: successive ratios {_rts}, then "
+            f"{ratios[-1]:.6f} — c_{A} exceeds c_{A - 1} and is comparable to "
+            f"c_{A - 2}, with partial sums oscillating ({', '.join(_psums)}). "
+            f"AND c_{A} FLIPS SIGN POSITIVE, "
+            "correcting qou-bc09 and qou-38i9 which reported every "
             "measured many-body term as negative and used that to argue a naive "
             "pairwise sum is an upper bound; both stopped at c_4 because 4He is "
             "A=4 and has no fifth order. 4He is unaffected — orders 2,3,4 "
-            "exhaust A=4 — but the general claim is false from A=5 on. c_5 is "
-            "not noise: cancellation only 26.3x and it sits 1.7e14 times the "
+            "exhaust A=4 — but the general claim is false from A=5 on. "
+            f"c_{A} is not noise: cancellation only {canc:.1f}x and it sits "
+            f"{abs(_c5) / floor:.1e} times the "
             "double-precision floor. The tower reading is that HIGHER ORDERS ARE "
             "NOT SUPPRESSED, so no A <= 4 measurement in this arc licenses "
             "extrapolation to larger A.")

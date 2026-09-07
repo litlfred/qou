@@ -219,6 +219,14 @@ def main() -> int:
     wb.add_data("proton_density_linking_weight", mp.nstr(lw, 12))
     wb.add_data("linking_weight_q_to_1_limit", mp.nstr(lw_near1, 12))
     wb.add_data("hbar_q_sq", mp.nstr(hbar2, 25))
+    # The description quotes this gap ("The two differ by 2.961 %") and the
+    # data did not contain it, so the prose-drift ratchet reported it as a
+    # candidate (bean qou-n62l). The number is CORRECT — it is exactly
+    # `gap_pct`, computed above and printed — but a reader checking it against
+    # the witness found no such field and could not tell a right answer from a
+    # stale one. Emitting it is the fix; editing the prose would not have been.
+    wb.add_data("mass_mult_vs_lambda_A_gap_pct", mp.nstr(gap_pct, 12))
+    wb.add_data("mass_mult_times_hbar_q_sq", mp.nstr(mass_mult * hbar2, 12))
     wb.add_assertion(
         name="rho_over_hbarsq_is_M_need_and_binding_is_M_hbarsq_not_universal_hbarsq",
         computed=bool(ok), expected=True, tolerance=0,
