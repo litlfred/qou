@@ -31,6 +31,25 @@ Both `H` and `r` are conjugation-invariant, so take `r = ell <= lambda_1` WLOG; 
 
 On the hook shape that refuted L2, L2' gives `111 <= 131`.  It is tight only at `lambda = (1)`.
 
+### 🟩 FORMALIZED, and the Lean bound is STRONGER than L2'
+
+`QOU.BraidKnot.HookSum.sq_min_le_sum_hookZ`
+(`content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumThicknessBound.lean`) proves
+`min(rowLen 0, colLen 0)^2 <= sum_c hookZ`, i.e. **`H >= r^2`**, for EVERY Young diagram --
+sorry-free (`lean`-direct exit 0 with `-DautoImplicit=false -s 65536`; axioms exactly
+`[propext, Classical.choice, Quot.sound]`).
+
+The Lean proof does not use the row+column count at all.  It reads one line off the corpus's own
+`two_mul_sum_hookZ_eq_sum_sq`, namely `2H = sum_i (rowLen i)^2 + sum_j (colLen j)^2`: every summand
+is a square, so each sum dominates its own 0-th term, giving
+`2H >= (rowLen 0)^2 + (colLen 0)^2 >= 2 r^2`.
+
+So the analytic chain below is stated with `r <= sqrt(H) + 1` from L2' (`r^2 - r + 1`), while the
+formalized bound `r^2` gives the slightly better `r <= sqrt(H)`.  The chain is left on L2' because
+that is what the exhaustive check R1 tests and what the constant in R6 was computed from; using the
+stronger bound would only improve the constant, never the exponent.  Companion lemma
+`hookZ_succ_lt` formalizes the per-row strict decrease that underlies L1.
+
 ## The chain to O(n^{3/4})
 
 From (E) + L1 (`rev_sublinearity_proof_probe.py`, both proved there):  `R_lambda <= C * r(lambda)`,
