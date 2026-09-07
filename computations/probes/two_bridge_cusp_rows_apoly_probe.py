@@ -642,8 +642,9 @@ def run_knot(knot, shapes_hint, check, wb):
               f"t_λ/t_μ − recorded = {mp.nstr(dtau, 8)}")
     hl = rect_eval(info["lam_row"], shapes); hm = rect_eval(info["mu_row"], shapes)
     check(f"{knot}_cusp_rows_trivial_at_complete", abs(hl - 1) < mp.mpf(10) ** -30 and abs(hm - 1) < mp.mpf(10) ** -30)
-    # M² = M₀² / L^{2k*}: reuse the μ₀-frame samples in the meridian frame
-    pts = [(x0 / L ** (2 * kstar), L, z) for (x0, L, z) in pts0]
+    # μ = μ₀ + k*λ, so H(μ) = H(μ₀)·H(λ)^{k*}: M² = M₀²·L^{2k*} (the sign of this exponent was
+    # inverted in an earlier version, which is why the 4₁ fit failed while 5₂, with k* = 0, did not)
+    pts = [(x0 * L ** (2 * kstar), L, z) for (x0, L, z) in pts0]
     fit = fit_apoly(pts)
     check(f"{knot}_apoly_recovered", fit is not None)
     if fit is None:
@@ -674,7 +675,7 @@ def run_knot(knot, shapes_hint, check, wb):
     # fresh-sample verification
     random.seed(23)
     fresh_pool = [t for t in grid if t not in pts0]
-    fresh = [(x0 / L ** (2 * kstar), L, z) for (x0, L, z) in random.sample(fresh_pool, min(30, len(fresh_pool)))]
+    fresh = [(x0 * L ** (2 * kstar), L, z) for (x0, L, z) in random.sample(fresh_pool, min(30, len(fresh_pool)))]
     resid = max(abs(sum(c * (L ** 2) ** i * x ** j for (i, j), c in P.items())) for (x, L, *_) in fresh) if fresh else None
     scale = max(abs(c) for c in P.values())
     check(f"{knot}_apoly_verified_on_fresh_samples", resid is not None and resid < mp.mpf(10) ** -28 * scale,
