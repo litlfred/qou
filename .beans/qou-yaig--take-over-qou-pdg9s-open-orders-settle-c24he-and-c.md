@@ -227,3 +227,39 @@ not be dropped as an outlier.
 Every gap this bean named is measured: c2(4He), c3 at all six cases, c4 at all
 three A. What remains unbounded by anything here is c5 and beyond, which would
 need P >= 7 throughout.
+
+## 🛑 RETRACTION 2026-09-07 — "nothing to predict from" was WRONG
+
+This bean concluded, from a zero-fit exhaustive search, that `c2`'s per-letter
+additivity does not propagate and "the number has to be computed". PR #6966
+carried that further: "c1's per-letter additivity is special to first order and
+does not propagate up the expansion."
+
+**A closed form for `c2` exists.** `atom_bond_product_closed_form_probe.py`
+(bean `qou-qqm4`, `369f4bb0a7`, landed while #6966 was open) gives
+
+    tr(atom) = PROD_nucleons a(1 + r.e + q.e^2)
+             * PROD_bonds  (1/2)(1 + rho_b.e + tau_b.e^2)
+
+reproducing **c0, c1 AND c2 for A = 2..5, 9/9, no free parameter**. Verified by
+running it here rather than trusting the commit message: `9/9 — c0, c1 and c2
+all reproduced`.
+
+**The measurement I made is fine; the conclusion I drew is not.** The zero-fit
+result stands exactly as measured — there is no closed form in a `(Z, N)` basis.
+But my basis contained no bond variable, so it could not have found this form
+however many subsets it enumerated, and **a negative about a basis is not a
+negative about the quantity**. Multiplicativity does propagate to second order;
+it propagates over BLOCKS and BONDS rather than per letter.
+
+This is the scope-(a)/(b) failure AGENTS.md is strict about, committed by an
+agent who quoted that very discipline in the same PR: I had scope-(a) evidence
+(this construction, in this basis, does not fit) and wrote something that reads
+scope-(b) (the quantity has no closed form).
+
+**`c2(4He) = 439/512` is unaffected and is now INDEPENDENTLY CORROBORATED** —
+their 9/9 covers 4He. Two routes, same number.
+
+Their form has its own limits: sorted orderings only, orders 0-2, `A <= 5`, not
+proved. So `c2` is not "solved" — but it is decisively more than "nothing to
+predict from".
