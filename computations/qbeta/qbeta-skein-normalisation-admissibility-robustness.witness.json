@@ -23,6 +23,16 @@
       "detail": "u^-1 != u/(u^2+1) as rational functions -- the transport does not collapse the two roots into one, which would have made 'no branch matches' vacuous"
     },
     {
+      "name": "H_and_J_generator_ratios_are_MINUS_q2_and_MINUS_q",
+      "passed": true,
+      "detail": "in the SAME variable q: (H) eigenvalues {q, -1/q} ratio -q^2; (J) eigenvalues {q^-1/2, -q^-3/2} ratio -q. The two Skein normalisations differ in the ratio, so they are not related by a rescale alone -- which is the ratio-side restatement of this probe's separation premise (bean qou-8bxv)"
+    },
+    {
+      "name": "the_u2_rescale_half_of_the_transport_is_INERT_on_the_ratio",
+      "passed": true,
+      "detail": "(u^-2 a)/(u^-2 b) = a/b for the (J) pair. NOT NEW and NOT MINE: this is QOU.Mass.KZLevelFromHeckeNormalisation.ratio_invariant, sorry-free over a generic field, landed on main in 492ad4221f6 (bean qou-d0qq). Recorded here because it closes the rescale half of sigma_J = u^-2 sigma~(u) with a Lean proof instead of this probe's arithmetic, leaving the reparametrisation q -> u as the whole content of the transport"
+    },
+    {
       "name": "C_reading_published_form_is_the_Z_equals_1_cell",
       "passed": true,
       "detail": "|h^2/2 - h| * E0 == published, exact over Q(q) on the branch 1 < q < 1+sqrt(2) where h < 2 -- reproduced here rather than carried over from #6722"
@@ -146,11 +156,11 @@
   ],
   "source": "beans qou-99qc (robustness) and qou-8bxv (the two normalisations)",
   "scriptFile": "qbeta_skein_normalisation_admissibility_robustness_probe.py",
-  "scriptHash": "4806f22ea834",
-  "scriptCommitSha": "d7edfe69d63f9032ea7e99b4495f1500a605207b",
-  "commitSha": "94f7a852466547b53fa4fd0a3348f94dedadfade",
+  "scriptHash": "c1babd05b537",
+  "scriptCommitSha": "3de7ecd93c139681d7e00bfa72e1c398a0e6f108",
+  "commitSha": "3de7ecd93c139681d7e00bfa72e1c398a0e6f108",
   "engine": "python+sympy",
-  "computedAt": "2026-09-06T10:12:50.846344+00:00",
+  "computedAt": "2026-09-07T16:40:09.696379+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

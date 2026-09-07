@@ -946,3 +946,60 @@ token-level fix would have broken a right number while repairing a wrong one —
 the failure mode AGENTS.md names for figures that differ only in what they count.
 
 No result changed: 13/13 before and after.
+
+## 2026-09-07 16:45Z — the transport's rescale half is now a sibling's Lean, not my arithmetic
+
+`492ad4221f6` (bean `qou-d0qq`) landed
+`QOU.Mass.KZLevelFromHeckeNormalisation.ratio_invariant` on main — sorry-free,
+generic field:
+
+```lean
+theorem ratio_invariant (c a b : K) (hc : c ≠ 0) (hb : b ≠ 0) : (c * a) / (c * b) = a / b
+```
+
+That is exactly the scalar-rescale half of #6832's transport
+`σ_J = u⁻²·σ̃(u)`. Two checks added to
+`qbeta_skein_normalisation_admissibility_robustness_probe.py` (now **15/15**,
+was 13/13; every prior check unchanged and still passing):
+
+- `H_and_J_generator_ratios_are_MINUS_q2_and_MINUS_q` — derived from each Skein
+  relation directly, not asserted. In the **same variable `q`**: (H)
+  `L₊ − L₋ = (q−q⁻¹)L₀` has eigenvalues `{q, −q⁻¹}`, ratio **`−q²`**; (J)
+  `q[L₊] − q⁻¹[L₋] = (q^½−q^−½)[L₀]` has `{q^{−1/2}, −q^{−3/2}}`, ratio
+  **`−q`**. The ratios differ, so the two normalisations are not rescalings of
+  each other — the ratio-side restatement of this probe's separation premise
+  (`qou-8bxv`).
+- `the_u2_rescale_half_of_the_transport_is_INERT_on_the_ratio` — cites the Lean
+  above rather than re-deriving it.
+
+**What this buys:** the transport has two parts, a rescale and a
+reparametrisation `q → u`. The rescale is now closed by someone else's Lean, so
+the **reparametrisation is the whole content** of the (H)→(J) move.
+
+## Same landing carries a scope over-claim — reported, not fixed by me
+
+`KZLevelFromHeckeNormalisation.lean` says its `e^{iπħ} = q²` is *"stated so no
+convention can move it"*. It guards the `ħ`-vs-`k` bookkeeping axis correctly,
+but the ratio `−q²` is read off **(H)**, and feeding (J)'s ratio `−q` into the
+same matching step `λ₁/λ₂ = −e^{iπħ}` gives `e^{iπħ} = q`, i.e. **`ħ` halves**
+(`|ħ|` `0.066425366` → `0.033212683` at the proton pin) and `k+2` doubles.
+
+Not a refutation: AGENTS.md §7a makes (H) STRICT, so their number is right under
+the canonical reading. The defect is the scope sentence — the relation is
+conditional on the Skein normalisation, and that is a live fork here
+(`qou-8bxv`: 8 content blocks, 5 chapters). Reported on #7088, comment
+5573521151; theirs to fix.
+
+## `qou-37j2` / #7084 scopes my own `ε` recommendation
+
+#7084 verified the merged `z = 1` inadmissibility at source (re-ran the probe,
+15/15) and wired it into the L2 dashboard as `functional_admissibility_qbeta`.
+Its framing adds a caveat I should carry: it names **Option E** — *keep an
+admissible functional and find the element it should act on* — as the only one
+of the seven options that could give a parameter-free admissible sub-1 % result.
+
+My standing recommendation (`z_D`) chooses between the two admissible roots **for
+the existing element `Δ = 𝓑_n − 𝓑_p`**. It should be stated with that scope:
+*if the element stays `Δ`, then `z_D`*. If the element is the thing that moves,
+the root question is downstream of a different choice and my recommendation does
+not bind.
