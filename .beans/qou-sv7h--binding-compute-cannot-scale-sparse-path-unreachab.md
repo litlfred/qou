@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-07T12:53:29Z
+updated_at: 2026-09-07T14:14:57Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -571,3 +571,37 @@ Two consequences:
 This is stronger than finding 6, which said the tier is unreachable at the defaults. It is also **inert when reachable**, and now has a mechanism rather than just a count.
 
 **Not fixed, deliberately, and this is a decision for the author, not a typo.** Pass 2 gates on `final_tr_sign`, which a Gaussian partition has no matrix to supply, so making the tier contribute requires deciding what its gate should be. Recorded at the code site; behaviour unchanged.
+
+
+## RETRACTION + resolution of the witness/return disagreement (2026-09-07, same PR #7082)
+
+### 🛑 RETRACTED: "the q-Gaussian tier is computed and DISCARDED"
+
+The entry above says the tier's contribution is computed in Pass 1, accumulated into `cumul_total`, and then dropped because Pass 2 rebuilds the answer from `state` (exact partitions only). **The mechanism is wrong. There is no contribution to drop.**
+
+`delta_g` in the Gaussian loop is a **hardcoded `0.0`**, deliberately, and the comment immediately above it says so: *"Extension to higher k via this approximation does NOT generate non-zero corrections — it correctly predicts that typical high-k partitions are SLACK and contribute nothing in the LP-dual framework."*
+
+The byte-identical `gauss=169` vs `gauss=0` measurements are **not retracted** — they are correct, and `k_max` genuinely does not affect the return value. What was wrong is the story about WHY. I inferred it from the two totals' definitions without reading the twenty lines that set `delta_g`, and the measurement is equally consistent with either story. **A measurement that matches your hypothesis is not evidence for its mechanism.**
+
+Consequence: there is no design decision here for the author after all. The tier contributing zero is intended, documented in place, and correct under complementary slackness.
+
+### The disagreement is REAL, and it is raw-vs-gated
+
+Measured at `k_exact=4`:
+
+| A | per-step running total | function returns | tight / exact |
+|---|---|---|---|
+| 2 | -0.4122121922450237 | -0.08955968305895068 | 4 / 10 |
+| 4 | -0.2742397716173970 | -0.08058674847769141 | 2 / 10 |
+
+**A factor of 3.4-4.6, not a rounding difference.** The per-step total is UNGATED; the return is GATED (Pass 2 keeps a partition only when `final_tr_sign <= 0`). Under the old field name `cumulative_MeV`, a reader taking the last row as "the answer so far" was several times off with nothing in the name to say so — `gated_total_MeV` exists but only on the LAST row.
+
+### Resolved by rename, and it has to be a rename
+
+`cumulative_MeV` -> **`cumulative_ungated_MeV`** in the per-step rows.
+
+**The gate cannot be applied per step**, which is why this is a rename and not a fix: `final_tr_sign` is a property of the atom's FINAL state, so at step k there is no fact of the matter about which partitions survive. An honest per-step running total is *necessarily* ungated; the defect was the name, not the number.
+
+**Safe: ZERO consumers.** Measured over the whole tree, tracked and untracked. `probe_9b_manybody_expansion.py` writes a `cumulative_MeV` of its own into its own witness and never reads this one. `where_the_a_dependence_is_lost_probe.py` reads `raw_total_MeV` / `gated_total_MeV` — untouched, and it already distinguishes the two correctly.
+
+Verified after the rename: old key absent; `cumulative_ungated_MeV == raw_total_MeV`; and `float(gated_total_MeV) == ` the returned value **exactly**.
