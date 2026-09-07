@@ -1,8 +1,8 @@
 {
   "engine": "numpy+scipy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:14:11.158386+00:00",
-  "commitSha": "791b6c9c21ee3e68f2b9616eefe34d1c46d30339",
+  "computedAt": "2026-09-07T16:28:31.641508+00:00",
+  "commitSha": "4e03604e68b897786166db895935d0baa468c84a",
   "assertions": [
     {
       "name": "lp_feasibility_at_q0_two_row",
@@ -13,25 +13,25 @@
     },
     {
       "name": "mirror_pair_invariance_T_eq_3He_two_row",
-      "computed": 1.992142825282471e-16,
-      "expected": 0.0,
+      "computed": "1.992142825282471e-16",
+      "expected": "0",
       "passed": true,
-      "tolerance": "1e-06"
+      "tolerance": "1e-6"
     },
     {
       "name": "crystal_limit_mirror_pair_invariance",
-      "computed": 1.992142825282471e-16,
-      "expected": 0.0,
+      "computed": "1.992142825282471e-16",
+      "expected": "0",
       "passed": true,
-      "tolerance": "1e-06"
+      "tolerance": "1e-6"
     }
   ],
   "allPassed": true,
-  "durationMs": 3170,
+  "durationMs": 1646,
   "computation": "alpha-5-lp-dual-crystal",
   "scriptFile": "alpha_5_lp_dual_crystal.py",
-  "scriptHash": "3330ed984e7d",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptHash": "76a09f4f33e4",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [

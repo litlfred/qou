@@ -80,6 +80,32 @@ except ImportError:  # pragma: no cover - portability fallback
 mp.dps = 60
 I_UNIT = mpc(0, 1)
 
+# `_precision` lives in `computations/substrate/`, and this file sits in the
+# `qbeta/` cluster, so `sys.path[0]` is its own directory and a bare
+# `from _precision import fmt` raises ModuleNotFoundError (the `_path_bridge`
+# bootstrap class, bean `qou-0e1t`). This file already walks up to `substrate/`
+# — at the very BOTTOM, just before it writes the witness. `fmt` is needed at
+# results-assembly time, so the walk is hoisted here and the one below reuses
+# the same already-inserted path.
+import os as _os_boot, sys as _sys_boot  # noqa: E402
+_d_boot = _os_boot.path.dirname(_os_boot.path.abspath(__file__))
+while (_d_boot != _os_boot.path.dirname(_d_boot)
+       and not _os_boot.path.isdir(_os_boot.path.join(_d_boot, "substrate"))):
+    _d_boot = _os_boot.path.dirname(_d_boot)
+_sys_boot.path.insert(0, _os_boot.path.join(_d_boot, "substrate"))
+from _precision import fmt  # noqa: E402
+
+
+def _fmt_or_none(v):
+    """`fmt` an mpf, pass `None` through.
+
+    The four fields this renders are legitimately `None` when the fit does not
+    run, and that `None` is meaningful — it is not the same as a residual of
+    zero.
+    """
+    return fmt(v) if v is not None else None
+
+
 results: dict = {}
 asserts: list[tuple[str, bool]] = []
 
@@ -122,9 +148,11 @@ check("bar-EVEN cosh(x sinh η) = J₀ + 2 Σ J_{2m} cosh(2mη)  (resid < 1e-40)
 results["jacobi_anger"] = {
     "identity_bar_odd": "sinh(x sinh η) = 2 Σ_{m≥0} J_{2m+1}(x) sinh((2m+1)η)",
     "identity_bar_even": "cosh(x sinh η) = J₀(x) + 2 Σ_{m≥1} J_{2m}(x) cosh(2mη)",
-    "max_residual_gen": float(max_gen),
-    "max_residual_bar_odd": float(max_odd),
-    "max_residual_bar_even": float(max_even),
+    # `float()` here floored the very numbers the VERDICT quotes as "<1e-40" —
+    # a residual asserted below 1e-40 cannot be recorded in f64 and mean it.
+    "max_residual_gen": fmt(max_gen),
+    "max_residual_bar_odd": fmt(max_odd),
+    "max_residual_bar_even": fmt(max_even),
     "truncation_M": M,
 }
 
@@ -233,13 +261,13 @@ if {1, 3, 5} <= set(comb_orders):
     # solve a1·J_3(x) = a3·J_1(x) for x, then test the over-determined a_5/a_1
     xb = findroot(lambda xx: a1 * besselj(3, xx) - a3 * besselj(1, xx),
                   mpf("4.5"))
-    single_x_star = float(xb)
+    single_x_star = xb
     pred = besselj(5, xb) / besselj(1, xb)
     act = a5 / a1
-    single_x_resid = float(fabs(pred - act))
-    print(f"  single-x fit: x* = {single_x_star:.6f}  "
+    single_x_resid = fabs(pred - act)
+    print(f"  single-x fit: x* = {float(single_x_star):.6f}  "
           f"J_5/J_1 predicted = {float(pred):.6f}  actual = {float(act):.6f}  "
-          f"residual = {single_x_resid:.4f}")
+          f"residual = {float(single_x_resid):.4f}")
 
 check(f"single-x Bessel over-determination FAILS on the "
       f"{len(comb_orders)}-order unit-weighted truncation "
@@ -260,12 +288,12 @@ if {1, 3, 5} <= set(b21["orders_present"]):
          for k in (1, 3, 5)}
     xb2 = findroot(lambda xx: c[1] * besselj(3, xx) - c[3] * besselj(1, xx),
                    mpf("4.5"))
-    block21_star = float(xb2)
+    block21_star = xb2
     pred2 = besselj(5, xb2) / besselj(1, xb2)
-    block21_resid = float(fabs(pred2 - c[5] / c[1]))
-    print(f"  χ_(2,1) alone: x* = {block21_star:.6f}  "
+    block21_resid = fabs(pred2 - c[5] / c[1])
+    print(f"  χ_(2,1) alone: x* = {float(block21_star):.6f}  "
           f"J_5/J_1 predicted = {float(pred2):.6f}  "
-          f"actual = {float(c[5] / c[1]):.6f}  residual = {block21_resid:.4f}")
+          f"actual = {float(c[5] / c[1]):.6f}  residual = {float(block21_resid):.4f}")
 check("single-x Bessel over-determination ALSO fails on the canonical χ_(2,1) "
       "block alone (newly testable: the borromean form carries 5 odd orders "
       "where the grouped form carried 2)",
@@ -275,10 +303,14 @@ results["n3_bar_odd_spectra"] = {
     "per_block": spectra,
     "unit_weighted_sum_orders": comb_orders,
     "unit_weighted_sum_coeffs": {str(k): str(combined[k]) for k in comb_orders},
-    "block_21_single_x_star": block21_star,
-    "block_21_over_determination_residual": block21_resid,
-    "single_x_star": single_x_star,
-    "single_x_over_determination_residual": single_x_resid,
+    # `float()` stood on all four of these where they are BUILT (the `xb` /
+    # `fabs(...)` lines above). They are an over-determination residual and the
+    # x* it is measured at -- the numbers this probe reports -- so they are
+    # carried as mpf and rendered here.
+    "block_21_single_x_star": _fmt_or_none(block21_star),
+    "block_21_over_determination_residual": _fmt_or_none(block21_resid),
+    "single_x_star": _fmt_or_none(single_x_star),
+    "single_x_over_determination_residual": _fmt_or_none(single_x_resid),
     "intra_nucleon_ordering": "borromean",
     "note": "Both truncations here are bar-odd, NOT the physical "
             "Wenzl-weighted Markov trace. Under the canonical borromean "
