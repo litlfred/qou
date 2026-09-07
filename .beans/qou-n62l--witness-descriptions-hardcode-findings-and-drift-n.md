@@ -254,3 +254,40 @@ on a net increase.
 Fixed by filtering WHOLE matches the plain pattern already found, which has no
 retry to exploit. Verified against those two witnesses specifically: no
 candidate the old pattern did not also produce.
+
+---
+
+## 2026-09-07 — a detector improvement I measured and did NOT build
+
+Hypothesis worth recording because it is the obvious one and it is wrong.
+
+Scanning the 172 baselined files, the candidates are dominated by
+low-precision quotes — `2.8`, `0.03`, `1.7`, `2.11`, `5.6`. That suggests the
+band edges are the problem: a number quoted to two significant figures cannot
+be judged against a full-precision value by a fixed relative threshold,
+because the best a correct quote can do is half a unit in its last quoted
+digit. `2.8` can only mean [2.75, 2.85), i.e. a relative tolerance of 1.8 %,
+not the 5 % the NEAR band allows.
+
+So: re-measure every baselined candidate against **its own quoted
+precision** instead of the fixed NEAR edge, and see how many drain.
+
+    baselined candidate numbers re-measured : 218
+      drain under quoted-precision tolerance:   3   (1 %)
+      remain a real candidate               : 215
+
+**Three.** The band edges are not the problem. Two of the three
+(`coulomb-mirror-killswitch-probe` 0.002, `flavor-split-alpha-bond-dilog`
+0.03) are one-significant-figure quotes where a half-ulp tolerance is 17-25 %
+and therefore nearly vacuous — so even those three would be drained by a rule
+that is too weak to be worth having.
+
+The keeps show why: `aj-masbaum-crosscheck` quotes `5.1` at rel 0.39 against a
+half-ulp of 0.0098 — forty times its own quoted precision. That is not a
+rounding, it is a different number.
+
+**Conclusion: the 172 are genuine per-item triage.** There is no bulk drain
+available from re-calibration, and the ~1-in-5 "quoted history" rate stands as
+the reason each one needs reading rather than a rule. Recorded so the next
+agent does not spend the same afternoon confirming it — the measurement is
+five minutes, the implementation is not.
