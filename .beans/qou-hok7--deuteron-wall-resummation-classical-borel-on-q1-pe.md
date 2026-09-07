@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-06T15:44:14Z
+updated_at: 2026-09-07T05:24:50Z
 ---
 
 
@@ -96,3 +96,49 @@ branch's tip or from main, and never force-push over it.
 Recording rather than taking it: reading a `status:` field as evidence of current
 activity is the same error class as everything else this bean corrects — a label
 quoted in place of a measurement.
+
+
+## THE SLOPE IS DERIVED (2026-09-06/07, owner asked "derive the slope")
+
+Not extrapolated. Chain, from symmetry to slope:
+
+| step | statement | status |
+|---|---|---|
+| per-step | `<content> = 0` and `P(descent) = 1/2` at every k=1..21 | EXACT (rational) |
+| ⟹ | `<delta_k> = 0 + 2k*(1/2) = k` ⟹ **`<w>_n = C(n,2)`** for every n=1..26 | EXACT — the MEAN |
+| degree | `d2(deg Z_n) = 2 - [n triangular]`, exceptions exactly 3,6,10,15,21,28,36 | EXACT to n=41, zero exceptions |
+| ⟹ | `deg_n = n^2 - (2*sqrt2/3) n^{3/2} + O(n)`, `c` from triangular density | DERIVED, confirmed 2.06% → 0.60% |
+| ⟹ | max/mean → `n^2/(n^2/2) = 2` | **this is why level 1 supplies half** |
+| ⟹ | **`d2 log Z_n → 2 ln q0`**, i.e. `Z_n = q0^{n^2 + o(n^2)}` | DERIVED |
+
+**The exact divisor is `q^{deg_n}`**, computable cheaply at any n by the max-plus
+recursion. `q^{n(n-1)}` is its leading term, short by `Theta(n^{3/2})`. Use `deg_n`
+in the resummation, not the asymptotic form.
+
+**The level-1 kernel now has a meaning it did not have in the corpus:** its exponent
+`C(n,2)` IS the mean path weight. "Apply the level-1 kernel" and "centre on the mean"
+are the same operation, and the Borel divisor centres on the max instead.
+
+Probes: `deuteron_qborel_kernel_level_probe.py` (10/10),
+`deuteron_qborel_slope_derivation_probe.py` (11/11). Lean:
+`QOU/MathlibExt/QBorelKernelSquared.lean`, 4 theorems, sorry-free.
+
+### Four routes to REV closed — REV's asymptotics remain the ONE open piece
+
+- **Palindromicity** (would have given `<w>` for free): REFUTED. `min deg Z_n = 0`
+  always, so `min+max = deg_n != n(n-1)`; no coefficient vector is palindromic.
+- **Extensivity** `REV ~ n*f(q0)`: NOT confirmed. `Delta REV` drifts 0.82 → 0.61
+  over n=12..30 rather than settling.
+- **2nd-order cumulant expansion** about q=1: tracks at n=8 (5.374 vs 5.371),
+  diverges by n=27 (20.63 vs 19.19). Distribution not Gaussian enough.
+- **`Var(w)` polynomial closed form**: none. Exact finite differences never vanish
+  through order 5; denominators are `I(n)`-related. `12*Var/n^3` drifts 0.70 → 1.16,
+  consistent with `Var ~ n^3/10`, unpursued.
+
+The `n^{3/2}` residual model **cannot** be REV's asymptotic form (`REV >= 0`, while
+`a*n - b*n^{3/2}` goes negative at finite n), so it describes the measured range only.
+
+**Suggested next attack, given those four:** they all failed through *moments*. Go at
+the deficit distribution `N_n(E)` directly — `REV_n = log sum_E N_n(E) x^E` with
+`x = 1/q0` is a free energy, and the exactness of `<w> = C(n,2)` suggests `N_n(E)`
+has exact combinatorial structure rather than merely asymptotic.
