@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T18:06:40Z
-updated_at: 2026-09-07T18:28:09Z
+updated_at: 2026-09-07T18:37:57Z
 parent: qou-6g7j
 ---
 
@@ -28,3 +28,4 @@ computations/probes/binding_volume_difference_probe.py reports a 'triple refutat
 **Corpus-grep before writing "refuted":** docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md (grouped word; addendum appended), 2026-07-04-he4-link-volume-braid-closure-refuted.md (different word builder, pre-alternating), computations/atom_word_braid_letter_census_probe.py (branch counts, consistent). 591 files mention snappy across computations/ docs/audits/ .beans/; none evaluated the live word's branch volumes.
 
 **Files:** computations/probes/binding_volume_difference_probe.py (helper replaced by `_snappy_leg_c`, ImportError ⇒ `status: unevaluated`; leg A errors now mpf/fmt, drains 12 raw floats from the ratchet baseline), its witness (regenerated, env mpmath 1.4.1 + clarabel 0.11.1 after installing them), mass_at_3A_proper.py docstring correction, audit addendum. Runtime 1m54s (⁴He 512 branches dominates).
+**ROAST 2026-09-07 (qou-pbwj) — verdict: KILL as a research front; keep a ≤10-line chore.** Already answered at scope (b): `docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md` installed SnapPy 3.3.2 and proved every branch closure of `atom_braid_word_3A` is a connected sum of (2,k) torus links, Vol = 0, verified 32/32 against `deconnect_sum` for all A ≤ 24 (invariants: one-run-per-generator normal form; connected sums non-prime; (2,k) torus links Seifert-fibred); `2026-07-04-he4-link-volume-braid-closure-refuted.md` already found the p/n/³H/³He/⁴He closures non-hyperbolic with the wrong component counts. Worse, the code this bean wants to run measures the wrong object: `binding_volume_difference_probe.py:93-111` builds `braid = [k + 1 for (_c, _d, k) in w]`, discarding every crossing sign and averaging weight — an all-positive braid that is none of the 2^(2A+1) branches. Fit exposure: latent selection against the target (choosing a branch/sign resolution to get Vol ≠ 0). L2 relevance: none. Residual value: make ImportError report 'unevaluated' rather than 'refuted' and cross-reference the 08-25 audit from the probe description. Full frame: docs/audits/2026-09-07-takeover-fronts-roast.md §Front 1.
