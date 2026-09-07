@@ -156,7 +156,7 @@ Two consequences, and the second is the sharp one.
 > option that could yield a parameter-free admissible sub-1 % result rather than a choice among
 > existing misses. The other six options are label changes or accept a 12.5 % / −43 % miss.
 >
-> **Landed the same day (PR #7092):** the L2 dashboard now carries a
+> **Landed the same day (PR #7084):** the L2 dashboard now carries a
 > `functional_admissibility_qbeta` block, and the `m_n` / `Δ_pn` rows carry the inherited scope on
 > themselves rather than by cross-reference from the `Q_β` row, where a reader of those rows never
 > saw it.
