@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T21:25:42Z
-updated_at: 2026-09-07T08:19:14Z
+updated_at: 2026-09-07T09:26:48Z
 ---
 
 ## Answered in sign and low-A scale (PR #6336) — the bean never recorded it
@@ -50,3 +50,72 @@ as a measured local SCALE, never as a value for `delta` over `A = 3..63`.
 Per the audit's constructive form — derive any TWO of {s, p, delta} and the
 third is predicted — this is the cheapest leg, and now the highest-leverage
 one on the whole EM-linking front.
+
+
+## A = 5 attempt, 2026-09-07: computable at 55 min, but this container cannot reproduce the A = 2 anchor — so no value is usable
+
+Ran `bpp_higher_a_sparse_probe.py 2 3 4 5` (backgrounded, `-u`, teed log).
+Two results, one useful and one blocking.
+
+**USEFUL — A = 5 is reachable, and here is its cost.** It completed:
+
+    A    n  cross  parts  maxdim       B_tot MeV       B_pp/bond    secs
+    5   15     59      8    2002  0.354993193547  0.0887482983868  3302.4
+
+55 minutes, `n = 15`, max 2-row dim **2002**. The probe previously topped out
+at A = 4 (max dim 297). So the route does extend, and the bean's "A = 5, 6 are
+the obvious continuation" is right about A = 5. **A = 6 is a different
+matter**: `n = 18`, max 2-row dim **13260**, so ≈45× the A = 5 cost again by
+the probe's own `O(dim^2 * nnz)` scaling — of order 40 hours. Not attempted,
+and not asserted as impossible; just budget for it.
+
+**BLOCKING — the method-validation check FAILED and the numbers are not
+usable.** The probe's first check reproduces the committed
+`B_pp(A=2) = 2.12836094575708`. This run gives **0.642115075408566**, and the
+disagreement is NOT a uniform normalisation:
+
+    A        committed    this run    committed/run
+    2          2.12836     0.64212           3.3146
+    3          1.96634     0.32584           6.0346
+    4          1.85159     0.16853          10.9866
+
+The factor grows by a constant **1.82 per unit A** (6.0346/3.3146 = 1.820,
+10.9866/6.0346 = 1.821), so the two disagree in **shape**, not just scale:
+committed declines 13.0 % over A = 2 → 4, this run declines 73.8 %. Whatever
+this container computed, it is a different quantity, and **every B_pp number
+from this run is discarded**.
+
+The witness was **reverted, not committed** — per the standing rule that
+leaving a witness honestly stale beats committing one that measures the
+harness. This container is missing `scipy` and `clarabel`; the committed
+witness's `environment` block is **empty**, so there is nothing to diff
+against, which is its own small defect.
+
+**So delta beyond A = 4 is still unmeasured, and the "cheapest leg"
+recommendation needs a caveat**: it is cheap in *compute* (55 min for A = 5)
+and currently blocked on *environment*. Reproducing the committed A = 2 anchor
+is the prerequisite for any further A.
+
+## A defect in the probe itself, found on the way
+
+Its PASS text and verdict are **hardcoded** and disagree with its own computed
+table:
+
+- line 225 (check 2 PASS): `"2.128 -> 1.966 -> 1.852 MeV, a {drop4} % drop by
+  A=4"` — quotes the COMMITTED values while the table shows 0.642 / 0.326 /
+  0.169, and `drop4` printed **86.179 %**, which is the **A = 5** row, not
+  A = 4 (A = 4 is 73.754 %). Two errors in one sentence.
+- line 285 (verdict): same three committed values, same problem.
+- line 206 (check 1 PASS text): *"agrees to <1e-10"* — printed under a check
+  that **FAILED**, because the text is a fixed string rather than derived from
+  the comparison.
+
+So a reader of the output sees a confident narrative that is not about the run
+in front of them. This is the same class AGENTS.md documents for
+`qbeta_ck_truncation_order_analysis.py` ("its hardcoded prose disagreed with
+its own computed table"). Worth fixing at the producer: derive the quoted
+numbers from the computed table, and gate the check-1 text on the check.
+
+## Still open (do not close)
+
+`delta` across the series — unchanged, and now with a named prerequisite.
