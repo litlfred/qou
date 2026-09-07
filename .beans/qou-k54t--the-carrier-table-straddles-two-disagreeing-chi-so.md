@@ -463,3 +463,55 @@ witnesses counts it.
 
 It needs re-running once the Li caches land; it is not in the chain I have been
 re-running, and nothing would have flagged it.
+
+## CORRECTION: all three of my re-pins were on bad data, not one (2026-09-07)
+
+Above I wrote *"Two of my three re-pins from the previous session were right and
+one was not."* **That is wrong, and the two I called right are the worse case.**
+
+`rederive_large_a` builds ⁵Li/⁶Li from two halves with different provenance:
+
+| half | source | computed | word |
+|---|---|---|---|
+| atom χ | `chi-lithium-{5,6}-h{15,18}-…-matrix-m.witness.json` | 2026-08-15 | **grouped** |
+| free χ | `chi_free_frobenius` → `chi-{proton,neutron}-h3-at-q0-50dps` | **2026-09-06 03:15** | **borromean** |
+
+The ruling landed 2026-09-05 07:53:55, so the free half is post-ruling and the
+atom half is three weeks pre-ruling. **⁵Li's and ⁶Li's `m_e·S` therefore straddle
+two braid words inside a single atom's value** — not across atoms, which is what
+I described earlier, but within one.
+
+So `anchor_kappa5Li_reproduced` (64.10282) and `li6_amplification_reproduced`
+(82.85481) are pinned to **straddled** quantities. They pass today only because
+the straddle is itself unchanged.
+
+**Falsifiable prediction, recorded before the answer arrives:** when the Li atom
+caches finish regenerating to the borromean word, both will move and both
+assertions will FAIL. If they do not move, my account of the mechanism is wrong
+and this whole section needs redoing.
+
+## And the A≤4 / A≥5 asymmetry I left "unmeasured" is a two-layer cache
+
+`b47a1b949d`'s own message ended *"Why the quantity is stable for A ≤ 4 and not
+A ≥ 5 is unmeasured."* Measured now, and it is not about the physics at all:
+
+    binding-reeb-phase-decomposition.witness.json  computedAt
+      on origin/main                               2026-07-06T15:51:08Z
+      at b47a1b949d (last session)                 2026-07-06T15:51:08Z
+      after this session's re-run                  2026-09-07T13:11:27Z
+
+Two months frozen, through last session's commit. The light atoms (A ≤ 4) read
+their per-partition data **from that witness**, so re-running the carrier table
+alone could not move them — their input was itself a stale cache. The Li legs
+(A ≥ 5) go through `rederive_large_a`, which recomputes from source **every run**
+with no intermediate witness, so they picked up drift immediately.
+
+**The general form:** a consumer that reads a witness is insulated from upstream
+change; one that recomputes is not. From outside they are indistinguishable —
+same script, same invocation, same output shape — and the insulated one is the
+dangerous one, because its stability reads as *agreement* rather than as *not
+having looked*.
+
+`origin/main`'s carrier witness is itself dated 2026-08-26 with the producers
+unchanged since, so main's committed numbers were eleven days stale against
+their own inputs before any of this started.
