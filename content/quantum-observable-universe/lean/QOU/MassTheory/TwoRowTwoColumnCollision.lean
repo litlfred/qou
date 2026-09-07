@@ -1,4 +1,5 @@
 import Mathlib.Combinatorics.Young.YoungDiagram
+import QOU.Mathlib.TwoRowDimCatalan
 
 /-!
 # ≤ 2 rows and ≤ 2 columns are different families, and nothing in this corpus said so
@@ -40,15 +41,31 @@ not the identity.
 involution, it carries each family onto the other, and the two families are
 genuinely distinct.
 
-**Not proved here:** that the two families have equal *dimension* sums. That
-needs `dim λ = dim λ'` (invariance of the standard-tableau count under
-conjugation), which this corpus does not have — `QOU.Mathlib.TwoRowDimCatalan`
-proves `Σ dim² = catalan n` for the ≤ 2-**row** family only, via
-`dimHLF_two_row_eq_ballot`, and there is no ≤ 2-column counterpart. So the
-`Σ dim² = 5` column of the table above is arithmetic on hand-computed
-dimensions, not a theorem, and it is stated as such. Naming that one missing
-lemma is deliberate: it is the whole remaining gap between the two halves of the
-corpus, and it is a Mathlib-shaped statement rather than a QOU-shaped one.
+**Proved at `n = 3, 4, 5, 6` only:** that the two families have equal
+*dimension* sums, and that the transposed pairs have equal dimension
+(`dim_eq_dim_transpose_three_to_six`, `sq_sum_agree_three`, `sq_sum_agree_six`).
+Every value there is computed by `decide` from `dimHLF`'s definition, so the
+`Σ dim² = 5` column above is a theorem at that size rather than hand arithmetic.
+
+**Not proved at general `n`:** `dim λ = dim λ'` — invariance of the
+standard-tableau count under conjugation. `QOU.Mathlib.TwoRowDimCatalan` proves
+`Σ dim² = catalan n` for the ≤ 2-**row** family at every `n`, via
+`dimHLF_two_row_eq_ballot`; there is no ≤ 2-column counterpart, so the column
+family's total is known only at the sizes decided above. Naming that one lemma is
+deliberate: it is the entire remaining gap between the two halves of the corpus,
+and it is a Mathlib-shaped statement rather than a QOU-shaped one.
+
+The route is not mysterious, and is recorded so the next attempt does not start
+cold. Both hook products factor into the *same three* products. For the two-row
+shape `(a, b)` with `a = k + m`, `b = k`, and its transpose `2^k 1^m`:
+
+    two-row:     ∏_{j<b}(a−j+1) · ∏_{b≤j<a}(a−j) · ∏_{j<b}(b−j)
+    two-column:  ∏_{i<k}(k+m−i+1) · ∏_{k≤i<k+m}(k+m−i) · ∏_{i<k}(k−i)
+
+which are termwise identical under `a = k+m`, `b = k`. So `prodHooks` agrees and
+therefore so does `n!/prodHooks` — no factorial manipulation is needed, only the
+`colLen` evaluation on `List.replicate k 2 ++ List.replicate m 1` and a
+`List.range` split. Tracked as a bean; not attempted here.
 
 -- Ref: [manuscript] rem:hecke-radical-is-temperley-lieb — the block this
 -- collision was found in; see also QOU.MathlibExt.WenzlSchurElement.
@@ -196,5 +213,88 @@ theorem families_differ_at_three :
     exists_atMostTwoCols_not_atMostTwoRows⟩
 
 end Distinct
+
+section Dimensions
+
+/-! ## The dimension half — and it lives in a *different encoding*
+
+Everything above is about `YoungDiagram`. The corpus's standard-tableau count,
+`QOU.BraidKnot.IdentityI.dimHLF` (Frame–Robinson–Thrall, `n!/∏ h_c`), is about
+`List ℕ`. That is a third encoding alongside `Nat.Partition`, and the gap between
+them is part of why the two conventions were never related: the transpose is
+cheap on `YoungDiagram` (Mathlib has it) and the dimensions are cheap on
+`List ℕ` (this corpus has them), and no file held both.
+
+What follows is the dimension side, on lists, at the sizes where the trap
+actually bites — `n = 3` is `A = 1` in the mass channel, which indexes at
+`n = 3A`. Every value is **computed by `decide`** from `dimHLF`'s definition, not
+quoted from a table: a transcription slip cannot survive.
+
+These are finite decidable checks, not the general theorem. The general theorem
+is `dimHLF λ = dimHLF λ'`, and it is **not proved anywhere in this corpus** — see
+the file header. What these establish is that the trap is real at the sizes in
+use, which is what a reader needs before wiring anything.
+-/
+
+open QOU.BraidKnot.IdentityI (dimHLF)
+
+/-- **Transposed shapes have equal dimension at `n = 3, 4, 5, 6`.**
+
+Left column: the ≤ 2-row shapes. Right column: their transposes, which are
+exactly the ≤ 2-column shapes. Each pair is one instance of the unproved general
+`dim λ = dim λ'`.
+
+Note `(2,1)` at `n = 3` and `(2,2)` at `n = 4` are **self**-conjugate — they lie in
+*both* families. That is why the two shape sets overlap rather than being
+disjoint, and it is what makes the collision hard to notice by inspection. -/
+theorem dim_eq_dim_transpose_three_to_six :
+    (dimHLF [3] = dimHLF [1, 1, 1] ∧ dimHLF [2, 1] = dimHLF [2, 1]) ∧
+    (dimHLF [4] = dimHLF [1, 1, 1, 1] ∧ dimHLF [3, 1] = dimHLF [2, 1, 1] ∧
+      dimHLF [2, 2] = dimHLF [2, 2]) ∧
+    (dimHLF [5] = dimHLF [1, 1, 1, 1, 1] ∧ dimHLF [4, 1] = dimHLF [2, 1, 1, 1] ∧
+      dimHLF [3, 2] = dimHLF [2, 2, 1]) ∧
+    (dimHLF [6] = dimHLF [1, 1, 1, 1, 1, 1] ∧ dimHLF [5, 1] = dimHLF [2, 1, 1, 1, 1] ∧
+      dimHLF [4, 2] = dimHLF [2, 2, 1, 1] ∧ dimHLF [3, 3] = dimHLF [2, 2, 2]) := by
+  decide
+
+/-- **Both readings give `catalan n`, over different shape sets** — `n = 3`.
+
+`catalan 3 = 5` is Mathlib's `catalan_three`; the two sums are computed. The
+row family is `{(3), (2,1)}` and the column family `{(2,1), (1,1,1)}`: they share
+only `(2,1)`, and both total `5`. A check that compares totals therefore passes
+under either reading, which is the whole trap. -/
+theorem sq_sum_agree_three :
+    dimHLF [3] ^ 2 + dimHLF [2, 1] ^ 2 = catalan 3 ∧
+    dimHLF [2, 1] ^ 2 + dimHLF [1, 1, 1] ^ 2 = catalan 3 := by
+  rw [catalan_three]
+  exact ⟨by decide, by decide⟩
+
+/-- The same at `n = 6`, i.e. `A = 2` in the mass channel: both total
+`catalan 6 = 132` over shape sets sharing **nothing at all** — at even `n` the
+self-conjugate shape can be absent, and here the two families are disjoint.
+Totals still agree. -/
+theorem sq_sum_agree_six :
+    dimHLF [6] ^ 2 + dimHLF [5, 1] ^ 2 + dimHLF [4, 2] ^ 2 + dimHLF [3, 3] ^ 2
+        = catalan 6 ∧
+    dimHLF [1, 1, 1, 1, 1, 1] ^ 2 + dimHLF [2, 1, 1, 1, 1] ^ 2
+        + dimHLF [2, 2, 1, 1] ^ 2 + dimHLF [2, 2, 2] ^ 2 = catalan 6 := by
+  have hc : catalan 6 = 132 := by
+    norm_num [catalan_eq_centralBinom_div, Nat.centralBinom, Nat.choose, Nat.factorial]
+  rw [hc]
+  exact ⟨by decide, by decide⟩
+
+/-- **The shape sets are different**, as lists, at `n = 3` and `n = 6`.
+
+Trivial to check and worth stating next to the equal totals: it is the
+conjunction of "different sets" with "same total" that is dangerous, and a
+theorem asserting only one half of it invites the reader to supply the wrong
+other half. -/
+theorem shape_sets_differ :
+    ([[3], [2, 1]] : List (List ℕ)) ≠ [[2, 1], [1, 1, 1]] ∧
+    ([[6], [5, 1], [4, 2], [3, 3]] : List (List ℕ))
+      ≠ [[1, 1, 1, 1, 1, 1], [2, 1, 1, 1, 1], [2, 2, 1, 1], [2, 2, 2]] := by
+  exact ⟨by decide, by decide⟩
+
+end Dimensions
 
 end QOU.MassTheory.TwoRowTwoColumn
