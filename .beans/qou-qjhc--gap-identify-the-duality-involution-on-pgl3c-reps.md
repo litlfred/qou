@@ -359,3 +359,46 @@ automorphism of K, while duality acts by the explicit rational formulas above.  
 step is a direct comparison on the exact class-1 point -- apply both and see whether they
 agree -- which needs no new theory, only the sigma from the second pass and the formulas
 from this one.
+
+---
+
+## UPDATE 2026-09-07 (fifth pass) — the direct comparison is INCONCLUSIVE, and that is the finding
+
+With sigma explicit (pass 2) and duality's index map explicit (pass 3/4), the two maps are
+directly comparable for the first time.  On {2,1,0,0} coordinates duality is the
+relabelling `pi`, so agreement would mean `sigma(x_t) = x_{pi(t)}` up to gauge.
+
+Measured (`computations/ptolemy/ptolemy_duality_vs_sigma_comparison.py`), same for both
+sigma:
+
+    c_1002_5, c_2001_5   ratio exactly 1
+    c_1002_1, c_2001_1   ratio not a root of unity
+    c_1002_3, c_2001_3   ratio not a root of unity
+    5 of 11 coordinates had no pi-partner present
+
+**This is not a refutation, and must not be recorded as one.**  A Ptolemy assignment is
+defined only up to GAUGE: rescaling the decoration at each vertex sends
+`c_t -> (prod_i lambda_{v_i}^{t_i}) c_t`, so ratios vary coordinate by coordinate and need
+not be roots of unity.  Ratio 1 on tetrahedron 5 and not on 1 and 3 is exactly what a
+non-trivial gauge looks like.
+
+Three further reasons the test cannot decide:
+
+1. the point comes from `eliminate_fixed_ptolemys=True`, which IS ALREADY a gauge choice,
+   possibly a different one for `P^c` and `P^-c`;
+2. only 6 of 11 `{2,1,0,0}` coordinates have their partner present;
+3. the first version compared up to `+-1` -- the SL(2) gauge.  For SL(3) it is `mu_3`.
+
+### The hazard on the other side
+
+With per-vertex gauge freedom, ANY discrepancy can be blamed on gauge, which would make
+"duality = sigma-transport" unfalsifiable.  That is not an argument for it.  The
+falsifiable form: **is the observed ratio a COBOUNDARY** -- do vertex scalars `lambda`
+exist with `ratio(t) = prod lambda_{v_i}^{t_i}`?  Definite yes/no; needs snappy's
+vertex-incidence data, not pulled here.
+
+### Bean stays OPEN
+
+Not closed, and specifically not closed as refuted.  Next step is the coboundary test
+above, which is a bounded piece of work: pull the vertex incidences from snappy, set up
+the multiplicative linear system, solve.
