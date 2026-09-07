@@ -1,5 +1,30 @@
 # The substrate branch $s = \pm\sqrt{q}$, the missing $\varphi^2$ degeneration, and the $q = 1$ interface
 
+
+> ## Read this first — live state, 2026-09-07
+>
+> This document accreted across one session and **§9 retracts or reframes five of its
+> own earlier claims**. Rather than renumber (which would break every cross-reference in
+> the PR and commit history), each superseded section carries a 🛑 banner pointing at its
+> retraction. The corrected state is:
+>
+> | | claim | status |
+> |---|---|---|
+> | **Live** | The modulus is `z = s − 1/s`; `r(z) = (5/27)(z+1)(4z²−z+4)`, matching `t-duality-elliptic.md` exactly | §9.4, Lean-verified |
+> | **Live** | `r(z) − r(−z) = (10/27)z(4z²+3)` — matter and antimatter colour fibres are **different curves**, 7.878 % at `q₀` | §10.1, Lean-verified |
+> | **Live** | They coincide **iff `q = 1`** — the interface has a derived meaning | §10.2, Lean-verified |
+> | **Live** | One degeneration, at `z = −1`; `4z²−z+4 > 0` | §9.5, Lean-verified |
+> | **Live** | Interfaces **cannot** be dark matter — codimension forces `ρ ∝ a⁻¹` | §11, scope-(b) |
+> | **Live** | `Σ_λ y_λ(H₃) → 3/4` exactly, so `ρ` does not vanish at `q = 1` | §4b (the measurement half) |
+> | Conditional | The `q = 1` **barrier** — needs `conj:mass-endomorphism` | §9.3 |
+> | Open | Is `s = −√q` physically reachable? Owner: *"don't exclude but maybe not observable"* | §13 |
+> | Reframed | §1 and §2 — true observations, wrong frame | §9.4, §9.5 |
+> | **Retracted** | "Nothing to emit at `q = 1`" — false for baryons | §9.2 |
+> | **Retracted** | "Five reasons antimatter can't be dark matter" — 2 of 5 | §9.1 |
+>
+> **Nothing under `content/` is modified by this document.** The four content changes it
+> implies are §7 proposals, awaiting the author.
+
 **Date:** 2026-09-07
 **Branch:** `claude/dark-matter-antimatter-feasibility-9rhx37`
 **Beans:** `qou-7r6d` (session), `qou-ndt5`, `qou-v1jg`, `qou-kyi3`, `qou-hjs8`
@@ -23,6 +48,13 @@ The second is the load-bearing one, and following it produced the algebra record
 here. Everything in §§1–4 is exact symbolic computation with no empirical input.
 
 ## 1. The second Weierstrass coefficient depends on $s$, not on $q$
+
+> **🛑 BADLY FRAMED — read §9.4 first.** The observation is true and the point is
+> elsewhere: the modulus is $z = s - s^{-1}$ and $r$ is a clean **polynomial in $z$**,
+> already written as $q_W(z)$ in `t-duality-elliptic.md`. Two blocks agree; one
+> sentence of presentation in a third is wrong. Formalised in
+> `QOU/BringsSurface/ColourCurveModulus.lean`.
+
 
 [`prop:descartes-elliptic-curve`](../../content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.md)
 gives the colour elliptic fibre with $s = \sqrt q$ and states that the Weierstrass
@@ -60,6 +92,12 @@ $$
 $$
 
 ## 2. The degeneration locus is bar-symmetric, and the corpus lists half of it
+
+> **🛑 BADLY FRAMED — read §9.5 first.** There is **one** degeneration, at $z = -1$.
+> The two $q$-values are its two preimages under $q = s^2$, so the regime table lists
+> one preimage of one point, not half of a two-point set. Whether the second preimage
+> is physically reachable is open — owner ruling, §13.
+
 
 $s^2 + s - 1$ vanishes at $s \in \{1/\varphi,\; -\varphi\}$. Squaring,
 
@@ -156,6 +194,12 @@ Tracked as `qou-v1jg`.
 
 ### 4a. What is emitted at the interface — nothing, and for a structural reason
 
+> **🛑 FALSE FOR BARYONS — read §9.2 first.** $V_L(1) = (-2)^{c-1}$ trivialises
+> **knots**, not **links**: Hopf $\to -2$, Borromean $\to 4$. The proton is a link.
+> The de-particling claim holds for leptons only, and §10.4 draws the (more
+> interesting) corrected consequence.
+
+
 Asked directly: at $q=1$ would we see photonic emission, or does it move out of the
 observable band? **Neither — at $q=1$ there is nothing left to emit.** From the Hecke
 relation $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$:
@@ -214,6 +258,13 @@ dark-matter budget arithmetic differs entirely from §6 and has not been done.
 
 ### 4b. Settled: the mass ratio diverges, so the interface is a BARRIER
 
+> **🛑 CONDITIONAL ON AN OPEN CONJECTURE — read §9.3 first.** The measured divergence
+> of $\mathrm{Vol}(K)\rho(K)/\hbar_q^2$ stands. The **barrier** does not: it is an
+> absolute-energy claim in a framework that excises absolute mass, and it needs
+> $m_e$'s own $q$-scaling, which comes from `conj:mass-endomorphism` because the
+> electron is a torus knot with $\mathrm{Vol} = 0$.
+
+
 §4 left "barrier or door" open, because `rem:cosmological-chirality-flip`'s
 "vanishing masses" contradicts $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$. The escape
 route for the prose was that the density $\rho$ might itself vanish at $q=1$, cancelling
@@ -269,6 +320,12 @@ Per AGENTS.md §"Before declaring refuted":
   interface; it says the limit is unspecified.
 
 ## 6. Retained from the first pass: why the fixed-$q$ antimatter route fails
+
+> **🛑 2 OF 5 SURVIVE — read §9.1 first.** The budget, CMB-vs-BBN and photon-coupling
+> arguments all presuppose fixed fundamental constants, which is what a varying-$q$
+> proposal denies. Only the Bullet-Cluster offset and the fixed-$q$ luminosity
+> objection are clean.
+
 
 Kept so the route is not re-proposed. All figures are recalled literature — **the
 library holds no source on antimatter cosmology or dark-matter phenomenology** (checked
@@ -493,6 +550,11 @@ done. But a charge-separating boundary is a strong, unusual prediction and is wo
 real calculation.
 
 ## 10.5 What this does NOT do for dark matter
+
+> **🛑 SUPERSEDED BY §11, which computes it.** The hedge below was a punt. Interfaces
+> **cannot** be dark matter: codimension alone forces $\rho \propto a^{-1}$ against
+> dark matter's $a^{-3}$.
+
 
 The budget objection is untouched: nothing here produces $\Omega_c/\Omega_b = 5.364$.
 And this is a **boundary** mechanism, so its energy content scales with interface *area*
