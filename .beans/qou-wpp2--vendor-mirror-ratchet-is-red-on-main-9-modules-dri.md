@@ -1,11 +1,11 @@
 ---
 # qou-wpp2
 title: 'Vendor mirror ratchet is RED on main: 9 modules drifted, 1 witness missing from the cone'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-19T21:03:40Z
-updated_at: 2026-09-06T13:19:34Z
+updated_at: 2026-09-07T06:11:34Z
 ---
 
 Measured on origin/main 5b158ef06c, 2026-08-19.
