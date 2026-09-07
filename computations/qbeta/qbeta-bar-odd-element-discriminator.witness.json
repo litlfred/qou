@@ -1,0 +1,209 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-07T17:47:40.972136+00:00",
+  "commitSha": "8dad7bd12792296976ff35a6c3e3b11c22d840ea",
+  "assertions": [
+    {
+      "name": "Delta_S_bar_odd_iff_admissible__z_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=1  (published): bar-odd=False, admissible=False — they agree"
+    },
+    {
+      "name": "Delta_S_bar_odd_iff_admissible__z_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=q  (augmentation): bar-odd=True, admissible=True — they agree"
+    },
+    {
+      "name": "Delta_S_bar_odd_iff_admissible__z_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_D  (Markov, conv D): bar-odd=True, admissible=True — they agree"
+    },
+    {
+      "name": "Delta_S_bar_odd_iff_admissible__z_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_C  (excised conv C): bar-odd=False, admissible=False — they agree"
+    },
+    {
+      "name": "Delta_L_not_bar_odd__z_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=1  (published): bar-odd=False on Delta_L (expected False for all four)"
+    },
+    {
+      "name": "Delta_L_not_bar_odd__z_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=q  (augmentation): bar-odd=False on Delta_L (expected False for all four)"
+    },
+    {
+      "name": "Delta_L_not_bar_odd__z_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_D  (Markov, conv D): bar-odd=False on Delta_L (expected False for all four)"
+    },
+    {
+      "name": "Delta_L_not_bar_odd__z_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_C  (excised conv C): bar-odd=False on Delta_L (expected False for all four)"
+    },
+    {
+      "name": "delta_L_second_branch_is_involution_consistent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Bbar(B(z)) - z vanishes identically on at least one branch, so the functional equation is not self-contradictory and Delta_L is NOT excluded — this is scope-(a), not scope-(b)"
+    },
+    {
+      "name": "delta_L_closed_form_reproduces_the_committed_witness",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|mine - witness|/witness = 8.5395e-51 at 60 dps"
+    },
+    {
+      "name": "q_beta_reference_is_truncated_to_eight_figures",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "codata_constants.Q_BETA_MEV = 0.7823334099999999999999999999999999999999999999999994098296040398407753 differs from the witness's own reference by 8.8209e-10 — a truncated reference in a corpus that computes at 60 dps. Recorded, not fixed."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1583,
+  "computation": "qbeta-bar-odd-element-discriminator",
+  "scriptFile": "qbeta_bar_odd_element_discriminator_probe.py",
+  "scriptHash": "d35949c94f30",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_bar_odd_element_discriminator_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_bar_odd_element_discriminator_probe.py"
+  },
+  "description": "The corpus establishes (qou-e58e, 11 nuclei, five q) that bar: q -> 1/q IS proton<->neutron conjugation, and at bond level p<->n is exactly z<->zbar. Q_beta's element Delta = B_n - B_p is a p<->n DIFFERENCE, so under that conjugation it should be bar-ODD: bar(tr_M(Delta)) = -tr_M(Delta). Tested on the two candidate elements the fork leaves open. Delta_S (normal-form difference, tr_M AFFINE in z): bar-odd iff bar(z) = z - h, ONE branch, satisfied by EXACTLY the two admissible functionals (z=q augmentation, z_D = q^3/(q^2+1)) and by neither z=1 (published) nor z_C (excised C). Delta_L (eleven-crossing word difference, tr_M QUADRATIC in z): two branches, satisfied by NONE of the four, the admissible pair included. So under the isospin reading Delta_S + admissible functional is bar-odd and Delta_L + admissible functional is not — a structural preference for Delta_S in a question the decision document records as open, reached with NO anchor and NO experimental input. SCOPE-(a), NOT (b): Delta_L is NOT excluded. Its first branch bar(z) = -z is vacuous for positive z, but the second is involution-consistent (Bbar(B(z)) - z = 0 identically), so a solution may exist and none was searched for. Nothing wired, no functional adopted, no element declared canonical.",
+  "contentBlock": "rem:qbeta-functional-admissibility",
+  "data": {
+    "elements": {
+      "Delta_S": {
+        "degree_in_z": 1,
+        "bar_odd_branches": [
+          "(-q**2 + q*z + 1)/q"
+        ],
+        "functionals": {
+          "z=1  (published)": {
+            "z": "1",
+            "bar_z": "1",
+            "bar_odd": false,
+            "admissible_under_D": false
+          },
+          "z=q  (augmentation)": {
+            "z": "q",
+            "bar_z": "1/q",
+            "bar_odd": true,
+            "admissible_under_D": true
+          },
+          "z_D  (Markov, conv D)": {
+            "z": "q**3/(q**2 + 1)",
+            "bar_z": "1/(q*(q**2 + 1))",
+            "bar_odd": true,
+            "admissible_under_D": true
+          },
+          "z_C  (excised conv C)": {
+            "z": "sqrt(q)/(q + 1)",
+            "bar_z": "sqrt(q)/(q + 1)",
+            "bar_odd": false,
+            "admissible_under_D": false
+          }
+        }
+      },
+      "Delta_L": {
+        "degree_in_z": 2,
+        "bar_odd_branches": [
+          "-z",
+          "(q**4*z + 2*q**3 - 2*q + z)/(q**4 + 1)"
+        ],
+        "functionals": {
+          "z=1  (published)": {
+            "z": "1",
+            "bar_z": "1",
+            "bar_odd": false,
+            "admissible_under_D": false
+          },
+          "z=q  (augmentation)": {
+            "z": "q",
+            "bar_z": "1/q",
+            "bar_odd": false,
+            "admissible_under_D": true
+          },
+          "z_D  (Markov, conv D)": {
+            "z": "q**3/(q**2 + 1)",
+            "bar_z": "1/(q*(q**2 + 1))",
+            "bar_odd": false,
+            "admissible_under_D": true
+          },
+          "z_C  (excised conv C)": {
+            "z": "sqrt(q)/(q + 1)",
+            "bar_z": "sqrt(q)/(q + 1)",
+            "bar_odd": false,
+            "admissible_under_D": false
+          }
+        }
+      }
+    },
+    "calibration": {
+      "delta_L_Q_pred_mine": "0.976161273530272642013692390411",
+      "delta_L_Q_pred_witness": "0.976161273530272642013692390410788241100103675098752245151156",
+      "rel_diff": "8.539481019e-51",
+      "q_beta_reference_implied_by_witness": "0.78233340930990850000",
+      "q_beta_reference_in_codata_constants": "0.78233341000000000000",
+      "reference_rel_diff": "8.820938633e-10"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "established": "Delta_S is bar-odd under EXACTLY the two admissible functionals; Delta_L is bar-odd under NONE of the four tested, the admissible pair included",
+      "NOT_established": "that Delta_L can never be bar-odd — its second branch is involution-consistent, so a solution z(q) may exist and none was searched for",
+      "premise": "bar is p<->n conjugation, measured in qou-e58e over 11 nuclei; a p<->n DIFFERENCE should therefore be bar-odd. If that reading is wrong, the criterion loses its motivation and this becomes an observation about two rational functions."
+    }
+  }
+}
