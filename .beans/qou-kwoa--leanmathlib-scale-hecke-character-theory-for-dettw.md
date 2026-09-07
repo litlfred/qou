@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-07T18:53:59Z
+updated_at: 2026-09-07T19:02:45Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1034,3 +1034,37 @@ theorem and the probe pins it only for `n ≤ 3`.
 
 **Next:** centrality of the Casimir, then its block scalar. `SchurElementCriterion`
 still has no instance.
+
+
+### 2026-09-07 — #7136: dual basis, τ-valued coordinates, central Casimir
+
+`QOU/Hecke/TauDualBasis.lean`, **12 declarations**, all `[propext,
+Classical.choice, Quot.sound]`, `lean`-direct exit 0 no warnings. PR out of
+draft.
+
+Two of the five classical steps to the Schur element are now done:
+
+> dual basis ✅ → **Casimir central ✅** → it acts on the λ-block by `s_λ` ❌ →
+> `s_λ` as a character sum ❌ → (Wenzl) the hook-length product ❌
+
+**`TwDualBasis` needs no nondegeneracy argument.** The dual family is
+`basisTwOfField` reindexed along the involution `w ↦ w⁻¹` and rescaled by units
+— `Basis.reindex` then `Basis.unitsSMul`. Smaller dependency than the usual
+`BilinForm.dualBasis` route, which would have required building the form and
+proving it nondegenerate first.
+
+**`repr_eq_tau_mul_TwDual` is the useful one**: the `T_w` coefficient of `y` is
+`τ(y · T^∨_w)` — a coefficient becomes one evaluation of the trace, which is
+what makes character computations finite.
+
+**Centrality is where `tau_mul_comm` is spent, and only there.** `a·c` and `c·a`
+both expand to the same double sum over `(v,w)`, with `τ(a T_v T^∨_w)` on one
+side and `τ(T_v T^∨_w a)` on the other; they agree by the trace property and by
+nothing else. **Third time in this arc** the trace property has been the
+load-bearing step rather than a formality — it also made block weights well
+defined and made `TraceIsWeighted` possible.
+
+**Next:** the block scalar — that the Casimir acts on the λ-block by `s_λ`.
+That is the step that connects centrality to the abstract Schur element of
+`TauSchurElement.lean`, and after it `s_λ` as a character sum. Wenzl's
+hook-length product remains the far end.
