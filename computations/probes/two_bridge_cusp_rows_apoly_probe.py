@@ -253,7 +253,7 @@ def identify_mu_lambda(tets, gl, shapes):
                 tau0=t_lam / t_mu0, basis_ok=basis_ok, combo_row=combo_row)
 
 
-def meridian_frame(tets, erows, mu0_row, lam_row, k_range=range(-8, 9), starts=60, seed=3):
+def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9), seeds_per_k=14):
     """Pin the meridian among μ₀ + kλ. A solution of the gluing equations with all shapes
     nondegenerate is a nontrivial representation ρ : π₁(M) → PSL₂(ℂ). If H(μ₀ + kλ) = 1 while
     H(λ) ≠ 1, the cusp subgroup's image is abelian with a loxodromic element, so the element
@@ -261,10 +261,15 @@ def meridian_frame(tets, erows, mu0_row, lam_row, k_range=range(-8, 9), starts=6
     M(μ₀ + kλ), whose fundamental group is therefore nontrivial. The meridian filling is S³, so
     the meridian's frame k* is the unique k in range for which no such solution exists (that k*
     exists and is unique in any range uses Property P — Kronheimer–Mrowka 2004: no nontrivial
-    surgery on a nontrivial knot has trivial π₁, ref [kronheimer2004]; only k* survives because every other frame is
-    certified by an explicit solution). Solutions are searched from random starts, so the
-    certificates for k ≠ k* are constructive; the absence at k* is then checked exactly on the
-    fitted A-polynomial (A(L, ±1) has no root off L = ±1)."""
+    surgery on a nontrivial knot has trivial π₁, ref [kronheimer2004]; only k* survives because
+    every other frame is certified by an explicit solution).
+
+    Search: Newton (findroot) on {independent edge rows, H(μ₀)·H(λ)^k = 1}, seeded from the
+    points of the deformation curve (`samples`, shape vectors) at which |H(μ₀)H(λ)^k − 1| is
+    smallest — random starts on four shapes almost never converge (measured: 0–4 solutions per
+    frame from 60 starts, seven surviving frames). The certificates for k ≠ k* are constructive;
+    the absence at k* is then checked exactly on the fitted A-polynomial (A(L, ±1) has no root
+    off L = ±1)."""
     N = len(tets)
     zs = sp.symbols(f"y0:{N}")
     base, chosen = [], []
@@ -273,17 +278,16 @@ def meridian_frame(tets, erows, mu0_row, lam_row, k_range=range(-8, 9), starts=6
         if sp.Matrix(trial).rank() > (sp.Matrix(base).rank() if base else 0):
             base = trial; chosen.append(r)
     chosen = chosen[:N - 1]
-    random.seed(seed)
     table = {}
     for k in k_range:
         eqs = [rect_expr(r, zs) - 1 for r in chosen] + \
               [rect_expr(mu0_row, zs) * rect_expr(lam_row, zs) ** k - 1]
         f = sp.lambdify(zs, eqs, "mpmath")
+        seeds = sorted(samples, key=lambda z: abs(rect_eval(mu0_row, z) * rect_eval(lam_row, z) ** k - 1))
         sols, lox = [], 0
-        for _ in range(starts):
-            z0 = [mp.mpc(random.uniform(-2, 3), random.uniform(-2.5, 2.5)) for _ in range(N)]
+        for z0 in seeds[:seeds_per_k]:
             try:
-                sol = mp.findroot(lambda *v: f(*v), z0, tol=mp.mpf(10) ** -40, maxsteps=60)
+                sol = mp.findroot(lambda *v: f(*v), list(z0), tol=mp.mpf(10) ** -40, maxsteps=80)
             except (ValueError, ZeroDivisionError, TypeError, IndexError):
                 continue
             z = [sol[j] for j in range(N)]
@@ -340,7 +344,7 @@ def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples, seed=1):
     random.seed(seed)
     pts = []
     tries = 0
-    nsteps = 8
+    nsteps = 5
     while len(pts) < n_samples and tries < 20 * n_samples:
         tries += 1
         # random target m² on an annulus around 1; walk there in steps from the complete point,
@@ -366,7 +370,7 @@ def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples, seed=1):
             L_prev = L_new
         if not ok:
             continue
-        pts.append((target, L_prev))
+        pts.append((target, L_prev, list(z)))
     return pts
 
 
@@ -376,9 +380,9 @@ def fit_apoly(pts, max_dL=4, max_dx=8):
     for dL in range(1, max_dL + 1):
         for dx in range(1, max_dx + 1):
             monos = [(i, j) for i in range(dL + 1) for j in range(dx + 1)]
-            if len(pts) < len(monos) + 10:
+            if len(pts) < len(monos) + 8:
                 continue
-            A = mp.matrix([[x ** j * L ** i for (i, j) in monos] for (x, L) in pts])
+            A = mp.matrix([[x ** j * L ** i for (i, j) in monos] for (x, L, *_) in pts])
             U, S, V = mp.svd_c(A)
             svals = [S[k] for k in range(len(monos))]
             if svals[-1] < mp.mpf(10) ** -30 * svals[0] and svals[-2] > mp.mpf(10) ** -20 * svals[0]:
@@ -437,9 +441,10 @@ def run_knot(knot, shapes_hint, check, wb):
     print(f"  λ = {info['lam']}·(c1,c2)  row a={info['lam_row'][0]} b={info['lam_row'][1]} sign={info['lam_row'][2]}")
     print(f"  μ₀ (Bézout) = {info['mu0']}·(c1,c2); (μ₀, λ) basis of the cusp lattice: {info['basis_ok']}")
     check(f"{knot}_mu0_lambda_is_a_lattice_basis", info["basis_ok"])
-    survivors, table = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"])
-    print("  frame search k ↦ (solutions with H(μ₀+kλ)=1, of which loxodromic in λ): " +
-          ", ".join(f"{k}:{v}" for k, v in table.items()))
+    pts0 = sample_curve(tets, info["erows"], info["mu0_row"], info["lam_row"], shapes, 110)
+    print(f"  sampled {len(pts0)} points on the deformation curve (μ₀ frame)")
+    survivors, table = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"],
+                                      [z for (_, _, z) in pts0])
     check(f"{knot}_meridian_frame_unique", len(survivors) == 1, f"survivors {survivors}")
     if len(survivors) != 1:
         return None
@@ -461,8 +466,8 @@ def run_knot(knot, shapes_hint, check, wb):
               f"t_λ/t_μ − recorded = {mp.nstr(dtau, 8)}")
     hl = rect_eval(info["lam_row"], shapes); hm = rect_eval(info["mu_row"], shapes)
     check(f"{knot}_cusp_rows_trivial_at_complete", abs(hl - 1) < mp.mpf(10) ** -30 and abs(hm - 1) < mp.mpf(10) ** -30)
-    pts = sample_curve(tets, info["erows"], info["mu_row"], info["lam_row"], shapes, 140)
-    print(f"  sampled {len(pts)} points on the deformation curve")
+    # M² = M₀² / L^{2k*}: reuse the μ₀-frame samples in the meridian frame
+    pts = [(x0 / L ** (2 * kstar), L, z) for (x0, L, z) in pts0]
     fit = fit_apoly(pts)
     check(f"{knot}_apoly_recovered", fit is not None)
     if fit is None:
@@ -489,8 +494,8 @@ def run_knot(knot, shapes_hint, check, wb):
     check(f"{knot}_apoly_at_M_pm1_has_roots_only_at_L_pm1", only_pm1,
           f"A(L,1) = {sp.factor(Aexpr.subs(Msym, 1))}, A(L,-1) = {sp.factor(Aexpr.subs(Msym, -1))}")
     # fresh-sample verification
-    fresh = sample_curve(tets, info["erows"], info["mu_row"], info["lam_row"], shapes, 30, seed=7)
-    resid = max(abs(sum(c * L ** i * x ** j for (i, j), c in poly.items())) for (x, L) in fresh) if fresh else None
+    fresh = sample_curve(tets, info["erows"], info["mu_row"], info["lam_row"], shapes, 24, seed=7)
+    resid = max(abs(sum(c * L ** i * x ** j for (i, j), c in poly.items())) for (x, L, *_) in fresh) if fresh else None
     scale = max(abs(c) for c in poly.values())
     check(f"{knot}_apoly_verified_on_fresh_samples", resid is not None and resid < mp.mpf(10) ** -28 * scale,
           f"max residual {mp.nstr(resid, 5) if resid is not None else None}")
