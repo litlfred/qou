@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-25T16:28:09Z
-updated_at: 2026-09-07T10:37:51Z
+updated_at: 2026-09-07T19:11:30Z
 ---
 
 ## Session state 2026-08-25 (PR #5765)
@@ -158,3 +158,36 @@ defect silently disabling a designed fallback. It is a real hazard in the
 abstract and is **not** what is happening here: that contract governs those two
 paths, not `tr_m_atomic_mpfr`, and no handler on this path attempts the catch.
 Corrected on the PR before it could mislead.
+
+
+### Correction 2026-09-07 (2) — my reason for leaving the last `Q0_FLIP` alone was REFUTED by a sibling, before I wrote it
+
+I recorded the residual `Q0_FLIP: 1` as *"`hadron-knot-table.witness.json` on
+the retired muon anchor; AGENTS.md records that producer takes > 50 min for one
+bound atom of nineteen and will not finish."* **The conclusion (do not re-run
+it) is right. Both halves of the reason are wrong**, and `qou-i7ju` had already
+established that.
+
+1. **The anchor attribution is refuted.** `qou-i7ju` §"RESOLVED 2026-09-05":
+   *"the anchor hypothesis is REFUTED. It is a stale extension build."* The
+   11.6 ppb anchor move does not explain the disagreement; a stale
+   `pyhecke_native` kernel does.
+2. **"Cannot finish" is obsolete.** `0c957c179b` (2026-09-05) made the producer
+   **checkpoint per atom** — its own message names my reason and retires it:
+   *"The witness was written ONCE, after all 19 atoms, so a run that did not
+   reach the end produced NOTHING … That — not the difficulty of the numbers —
+   is why it sat stale on main."*
+
+**And the real reason not to touch it is stronger than either.** `qou-i7ju`
+records that the producer currently yields a quantity **of the wrong sign**, at
+~840 s per bound atom, so a bounded run would replace a **complete** committed
+table — verified today: 19 atoms, 23 assertions, `computedAt 2026-06-17` — with
+a partial one flagged `NON-CANONICAL ROSTER`, publishing *"19 wrong-signed
+numbers that look freshly computed."*
+
+So: **not mine to drain, and not drainable by re-running.** `qou-i7ju` (high,
+todo) owns it; this is settled mechanical work with one owner and I am recording
+the correction, not duplicating the analysis.
+
+Live counts on `main` `2a6e0828b2` after the session's merges plus sibling
+drain: `Q0_OK` **1451**, `Q0_ANCHOR_UNRECOGNISED` **1**, `Q0_FLIP` **1**.
