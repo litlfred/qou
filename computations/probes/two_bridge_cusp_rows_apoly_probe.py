@@ -253,7 +253,7 @@ def identify_mu_lambda(tets, gl, shapes):
                 tau0=t_lam / t_mu0, basis_ok=basis_ok, combo_row=combo_row)
 
 
-def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9), seeds_per_k=12):
+def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9), seeds_per_k=10):
     """Pin the meridian among μ₀ + kλ. A solution of the gluing equations with all shapes
     nondegenerate is a nontrivial representation ρ : π₁(M) → PSL₂(ℂ). If H(μ₀ + kλ) = 1 while
     H(λ) ≠ 1, the cusp subgroup's image is abelian with a loxodromic element, so the element
@@ -264,14 +264,16 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
     surgery on a nontrivial knot has trivial π₁, ref [kronheimer2004]; only k* survives because
     every other frame is certified by an explicit solution).
 
-    Search: the deformation curve is one-dimensional, parametrised near any sample by
-    s = log H(λ); g_k(s) = H(μ₀)(z(s))·e^{ks} − 1 is holomorphic along the curve, and its zeros
-    are found by a complex secant iteration in s alone, the shapes z(s) re-solved from the
-    previous point at each step (continuation on the sheet the sample lies on). Seeds are the
-    samples with the smallest |g_k|. Four-variable Newton from random starts, and from
-    near-complete seeds, both failed to reach these points (measured: 0–4 solutions per frame,
-    then every frame surviving); the absence at k* is checked exactly afterwards on the fitted
-    A-polynomial (A(L, ±1) has no root off L = ±1)."""
+    Search: `samples` is a continuation GRID over the curve in s = log H(λ) (see sample_curve),
+    so g_k(s) = H(μ₀)(z(s))·e^{ks} − 1 is tabulated everywhere the grid reaches; from the grid
+    points with the smallest |g_k| (away from ℓ = 1, where every frame vanishes at the complete
+    point) an undeflated complex secant in s, with the shapes re-solved by continuation at each
+    step, converges to the zero. Earlier variants failed for measurable reasons: four-variable
+    Newton from random starts (0–4 hits per frame); seeds near the complete point (every frame
+    fell onto it); a deflated target (the secant converged to the deflator's own zero — at ℓ = ∞
+    for 1/(ℓ−1)², at ℓ = −3.7 for ((ℓ+3.7)/(ℓ−1))², linearly, while the genuine k = 0 roots of
+    4₁ sit at ℓ = 0.374, 2.675 and four points on the unit circle). The absence at k* is checked
+    exactly afterwards on the fitted A-polynomial (A(L, ±1) has no root off L = ±1)."""
     N = len(tets)
     zs = sp.symbols(f"y0:{N}")
     base, chosen = [], []
@@ -297,32 +299,25 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
             return None
         return z
 
+    far = [t for t in samples if abs(t[1] ** 2 - 1) > mp.mpf("0.15")]
     table = {}
     for k in k_range:
-        # deflate the parabolic zeros: every frame has H(μ₀+kλ) = 1 at the complete point (and
-        # its conjugates), where ℓ = 1; on 4₁ that zero is double (A₄₁(L, 1/L)·L⁷ has a double
-        # root at L = −1), so divide by (ℓ − 1)² — over-deflation only puts a pole there, which
-        # repels the secant instead of attracting it.
-        # The deflator must not decay at ℓ → ∞ or the secant runs off to a spurious zero at
-        # infinity (measured: |g| halving every step while Re s grew without bound). Use
-        # ((ℓ + c)/(ℓ − 1))², c = 3.7: → 1 at both ends, a pole at ℓ = 1, and a spurious zero at
-        # ℓ = −c that the UNDEFLATED verification below rejects.
-        cdef = mp.mpf("3.7")
-
-        def g_raw(s_, z):
-            return rect_eval(mu0_row, z) * mp.exp(k * s_) - 1
-
         def g(s_, z):
-            ell = mp.exp(s_)
-            return g_raw(s_, z) * ((ell + cdef) / (ell - 1)) ** 2
-        far = [t for t in samples if abs(t[1] ** 2 - 1) > mp.mpf("0.2")]
-        seeds = sorted(far, key=lambda t: abs((t[0] * t[1] ** (2 * k) - 1) * ((t[1] ** 2 + cdef) / (t[1] ** 2 - 1)) ** 2))[:seeds_per_k]
+            return rect_eval(mu0_row, z) * mp.exp(k * s_) - 1
+        ranked = sorted(far, key=lambda t: abs(t[0] * t[1] ** (2 * k) - 1))
+        # distinct seeds: skip grid points within 0.3 (in s) of an already chosen one
+        seeds = []
+        for t in ranked:
+            s_t = 2 * mp.log(-t[1])
+            if all(abs(s_t - 2 * mp.log(-u[1])) > mp.mpf("0.3") for u in seeds):
+                seeds.append(t)
+            if len(seeds) >= seeds_per_k:
+                break
         sols, lox = [], 0
         for (x0, L, z0) in seeds:
-            s0 = 2 * mp.log(-L)
-            z_a, s_a = list(z0), s0
+            s_a, z_a = 2 * mp.log(-L), list(z0)
             g_a = g(s_a, z_a)
-            s_b = s_a + mp.mpc("0.05", "0.03")
+            s_b = s_a + mp.mpc("0.02", "0.015")
             z_b = solve_at(s_b, z_a)
             if z_b is None:
                 continue
@@ -334,8 +329,8 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
                 if g_b == g_a:
                     break
                 step = -g_b * (s_b - s_a) / (g_b - g_a)
-                if abs(step) > mp.mpf("0.7"):
-                    step = step / abs(step) * mp.mpf("0.7")
+                if abs(step) > mp.mpf("0.25"):
+                    step = step / abs(step) * mp.mpf("0.25")
                 s_n = s_b + step
                 z_n = solve_at(s_n, z_b)
                 tries = 0
@@ -348,13 +343,12 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
             if found is None:
                 continue
             s_f, z_f = found
-            if abs(g_raw(s_f, z_f)) > mp.mpf(10) ** -34 or abs(mp.exp(s_f) - 1) < mp.mpf(10) ** -20:
-                continue                       # spurious deflator zero, or a parabolic point
+            if abs(mp.exp(s_f) - 1) < mp.mpf(10) ** -20:
+                continue                       # a parabolic point: no certificate
             if any(max(abs(z_f[j] - s_[j]) for j in range(N)) < mp.mpf(10) ** -20 for s_ in sols):
                 continue
             sols.append(z_f)
-            if abs(mp.exp(s_f) - 1) > mp.mpf(10) ** -20:
-                lox += 1
+            lox += 1
         table[k] = (len(sols), lox)
     survivors = [k for k, (n, lox) in table.items() if lox == 0]
     return survivors, table
@@ -378,16 +372,17 @@ def _bezout(a, b):
 # ─────────────────────────────────────────────────────────────────────────────
 # 3. Deformation-curve sampling and the A-polynomial
 # ─────────────────────────────────────────────────────────────────────────────
-def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples, seed=1):
-    """Continuation from the complete structure along the deformation curve, parametrised by the
-    λ-holonomy ℓ = H(λ) = e^s: for a random target s = log r + iθ (r log-uniform in [0.03, 30],
-    θ uniform) walk s from 0 to the target in straight-line steps, solving the independent edge
-    rows and H(λ) = e^s for the shapes from the previous point. The developing map returns
-    squared eigenvalues; L = −e^{s/2} is then continuous by construction, with L = −1 at the
-    complete point (the parabolic holonomy has trace −2 in SL₂; the other lift is L ↦ −L and is
-    checked separately for the 4₁ control). Wide coverage in ℓ is what the meridian-frame search
-    needs for its seeds: the filling points of a badly framed μ₀ + kλ sit far from the complete
-    structure. Returns (H(μ_row), L, shapes) triples."""
+def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples=None, seed=1, n_re=34, n_im=34):
+    """Continuation GRID over the deformation curve, parametrised by the λ-holonomy ℓ = H(λ) =
+    e^s on the rectangle Re s ∈ [−3.4, 3.4] (|ℓ| ∈ [0.03, 30]), Im s ∈ (−π, π]. Starting at the
+    complete structure (s = 0) the grid is walked as a snake — row Im s = 0 outwards, then row by
+    row upwards, then again from s = 0 downwards — solving the independent edge rows and
+    H(λ) = e^s for the shapes from the previous grid point, so every point lies on the sheet
+    reached continuously from the complete structure. The developing map returns squared
+    eigenvalues; L = −e^{s/2} is the continuous lift on the rectangle (ℓ never winds around 0
+    inside it), with L = −1 at the complete point (the parabolic holonomy has trace −2 in SL₂;
+    the other lift is L ↦ −L and is checked separately for the 4₁ control). Returns
+    (H(μ_row), L, shapes) triples — all grid points, or a random subset of n_samples."""
     N = len(tets)
     zs = sp.symbols(f"y0:{N}")
     base, chosen = [], []
@@ -399,29 +394,75 @@ def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples, seed=1):
     lsym = sp.symbols("ell")
     eqs = [rect_expr(r, zs) - 1 for r in chosen] + [rect_expr(lam_row, zs) - lsym]
     f = sp.lambdify([*zs, lsym], eqs, "mpmath")
-    random.seed(seed)
+
+    def solve_at(s_, z_guess):
+        ell = mp.exp(s_)
+        try:
+            sol = mp.findroot(lambda *v: f(*v, ell), z_guess, tol=mp.mpf(10) ** -40, maxsteps=40)
+        except (ValueError, ZeroDivisionError, TypeError, IndexError):
+            return None
+        z = [sol[j] for j in range(N)]
+        if any(abs(zj) < mp.mpf(10) ** -8 or abs(zj - 1) < mp.mpf(10) ** -8 or abs(zj) > mp.mpf(10) ** 8 for zj in z):
+            return None
+        if max(abs(e) for e in f(*z, ell)) > mp.mpf(10) ** -30:
+            return None
+        return z
+
+    re_max = mp.mpf("3.4")
+    re_vals = [re_max * (2 * i / (n_re - 1) - 1) for i in range(n_re)]
+    re_vals = sorted(set(re_vals + [mp.mpf(0)]), key=lambda v: v)
+    im_vals = [mp.pi * (2 * j / n_im - 1) + mp.pi / n_im for j in range(n_im)]   # symmetric about 0? no: half-offset
+    im_vals = sorted(set([mp.mpf(0)] + im_vals), key=lambda v: v)
+    i0 = re_vals.index(mp.mpf(0)); j0 = im_vals.index(mp.mpf(0))
     pts = []
-    tries = 0
-    nsteps = 6
-    while len(pts) < n_samples and tries < 20 * n_samples:
-        tries += 1
-        s_t = mp.mpc(random.uniform(mp.log(mp.mpf("0.03")), mp.log(mp.mpf(30))), random.uniform(-mp.pi, mp.pi))
-        ok = True
-        z = list(shapes0)
-        for step in range(1, nsteps + 1):
-            s_ = s_t * mp.mpf(step) / nsteps
-            ell = mp.exp(s_)
-            try:
-                sol = mp.findroot(lambda *v: f(*v, ell), z, tol=mp.mpf(10) ** -40)
-            except (ValueError, ZeroDivisionError, TypeError, IndexError):
-                ok = False; break
-            z = [sol[k] for k in range(N)]
-            if any(abs(zk) < mp.mpf(10) ** -8 or abs(zk - 1) < mp.mpf(10) ** -8 or abs(zk) > mp.mpf(10) ** 8 for zk in z):
-                ok = False; break
-        if not ok:
-            continue
-        L = -mp.exp(s_t / 2)
-        pts.append((rect_eval(mu_row, z), L, list(z)))
+
+    def walk(rows, start_z):
+        """rows: list of (im, re-sequence) visited in order; continuation from start_z at s=0."""
+        z = list(start_z)
+        prev_s = mp.mpc(0)
+        for (im, res) in rows:
+            for re_ in res:
+                s_ = mp.mpc(re_, im)
+                # sub-step from prev_s to s_ in up to 3 pieces if the direct solve fails
+                zn = solve_at(s_, z)
+                if zn is None:
+                    zt = z; ok = True
+                    for q in (1, 2, 3):
+                        st = prev_s + (s_ - prev_s) * mp.mpf(q) / 3
+                        zt = solve_at(st, zt)
+                        if zt is None:
+                            ok = False; break
+                    zn = zt if ok else None
+                if zn is None:
+                    continue                   # leave the point out; keep continuing from z
+                z, prev_s = zn, s_
+                pts.append((rect_eval(mu_row, z), -mp.exp(s_ / 2), list(z)))
+
+    right = re_vals[i0:]; left = re_vals[:i0][::-1]
+    # upward half: row j0 rightwards from 0, then leftwards from 0; then rows above, snaking
+    walk([(im_vals[j0], right)], shapes0)
+    walk([(im_vals[j0], left)], shapes0)
+    # snake from s = 0 upward through the rows, then downward; right half-plane then left
+    def snake(js):
+        rows = []
+        for n_, j in enumerate(js):
+            seq = right if n_ % 2 == 0 else right[::-1]
+            rows.append((im_vals[j], seq))
+        return rows
+    walk(snake(list(range(j0 + 1, len(im_vals)))), shapes0)
+    walk(snake(list(range(j0 - 1, -1, -1))), shapes0)
+    # left half-plane rows
+    def snake_left(js):
+        rows = []
+        for n_, j in enumerate(js):
+            seq = left if n_ % 2 == 0 else left[::-1]
+            rows.append((im_vals[j], seq))
+        return rows
+    walk(snake_left(list(range(j0 + 1, len(im_vals)))), shapes0)
+    walk(snake_left(list(range(j0 - 1, -1, -1))), shapes0)
+    if n_samples is not None and len(pts) > n_samples:
+        random.seed(seed)
+        pts = random.sample(pts, n_samples)
     return pts
 
 
@@ -492,10 +533,11 @@ def run_knot(knot, shapes_hint, check, wb):
     print(f"  λ = {info['lam']}·(c1,c2)  row a={info['lam_row'][0]} b={info['lam_row'][1]} sign={info['lam_row'][2]}")
     print(f"  μ₀ (Bézout) = {info['mu0']}·(c1,c2); (μ₀, λ) basis of the cusp lattice: {info['basis_ok']}")
     check(f"{knot}_mu0_lambda_is_a_lattice_basis", info["basis_ok"])
-    pts0 = sample_curve(tets, info["erows"], info["mu0_row"], info["lam_row"], shapes, 110)
-    print(f"  sampled {len(pts0)} points on the deformation curve (μ₀ frame)")
-    survivors, table = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"],
-                                      pts0)
+    grid = sample_curve(tets, info["erows"], info["mu0_row"], info["lam_row"], shapes)
+    print(f"  continuation grid: {len(grid)} points on the deformation curve (μ₀ frame)")
+    random.seed(11)
+    pts0 = random.sample(grid, min(150, len(grid)))
+    survivors, table = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"], grid)
     print("  frame search k ↦ (solutions with H(μ₀+kλ)=1, of which loxodromic in λ): " +
           ", ".join(f"{k}:{v}" for k, v in table.items()))
     check(f"{knot}_meridian_frame_unique", len(survivors) == 1, f"survivors {survivors}")
@@ -547,7 +589,9 @@ def run_knot(knot, shapes_hint, check, wb):
     check(f"{knot}_apoly_at_M_pm1_has_roots_only_at_L_pm1", only_pm1,
           f"A(L,1) = {sp.factor(Aexpr.subs(Msym, 1))}, A(L,-1) = {sp.factor(Aexpr.subs(Msym, -1))}")
     # fresh-sample verification
-    fresh = sample_curve(tets, info["erows"], info["mu_row"], info["lam_row"], shapes, 24, seed=7)
+    random.seed(23)
+    fresh_pool = [t for t in grid if t not in pts0]
+    fresh = [(x0 / L ** (2 * kstar), L, z) for (x0, L, z) in random.sample(fresh_pool, min(30, len(fresh_pool)))]
     resid = max(abs(sum(c * L ** i * x ** j for (i, j), c in poly.items())) for (x, L, *_) in fresh) if fresh else None
     scale = max(abs(c) for c in poly.values())
     check(f"{knot}_apoly_verified_on_fresh_samples", resid is not None and resid < mp.mpf(10) ** -28 * scale,
