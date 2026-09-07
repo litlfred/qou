@@ -316,3 +316,38 @@ Anyone picking this up: `chi_block_21` is load-bearing for `P21`,
 `HasDerivAt` chains whose numerator goes degree 11 → 17. Change them as one
 piece, and **compile before claiming anything** — including before claiming a
 baseline.
+
+### Third correction: the cause was a shadowed binder, not the tactic ordering
+
+I recorded that I had "tested and disproved" my own diagnosis — that reordering
+the `first` alternation changed nothing, 16 errors before and after, so the
+derivative tower needed "real work, not a tactic tweak."
+
+The observation was right and the conclusion was wrong. Reordering genuinely
+changed nothing, but not because the tactic was fine: **the funext branch was
+broken for a different reason and could never fire.** I wrote
+
+    funext q
+
+inside a proof where `q` is already bound by the enclosing theorem. The binder
+shadows, the rewritten goal does not match, the branch fails, and `first` falls
+through to the alternative — regardless of what order the alternatives are in.
+Renaming the bound variable is the entire fix:
+
+    convert hsum using 1 <;>
+      first
+        | (funext x; simp only [Pi.add_apply]; ring)
+        | ring            -- `norm_num` where the value goal is at q = 1
+
+**Isolated and proved before touching the real file.** A scratch file with the
+degree-17 chain in four shapes — N at general q, N at 1, N' at 1, N' at general
+q — compiles at **exit 0** under this idiom. Two alternatives were tried and
+rejected in the same run: `simpa using hsum` (type mismatch) and
+`convert hsum using 2 <;> ring` (unsolved goals).
+
+**Method note worth more than the fix.** The first attempt iterated by
+recompiling the whole 1300-line file — minutes per round, which is why three
+rounds produced three wrong diagnoses instead of one right one. Isolating the
+single hard lemma into a scratch file dropped the loop to seconds and settled
+three candidate tactics in one compile. Cheap iteration was the missing tool,
+not Lean knowledge.
