@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-06T09:45:12Z
+updated_at: 2026-09-07T07:03:28Z
 ---
 
 ## Landed (A + C)
@@ -80,3 +80,42 @@ Grepping `"proof field" | "not free data" | "does not enforce"` across
 not an open-ended class. That is a cheaper and far more specific detector than
 the over-quantification rules, because it keys on the author having ALREADY
 noticed the defect and written it down.
+
+
+## The class surface (2026-09-07, PR #6987)
+
+Two measurements, opposite directions, both new.
+
+**Vacuity — clean negative.** `scripts/lean-class-hypothesis-vacuity-probe.py`
+deletes the instance binder and asks Lean for the conclusion unaided:
+**0 of 27 scored provable** (FAIL=27, SKIP=14, NOBASE=0). The same question on
+the axiom surface found 8 of 112 (#6933). So the conditional-class surface is
+not vacuous — its problem is visibility.
+
+`NOBASE=0` is what makes that usable: every probe compiles the file UNCHANGED
+first, since a red baseline fails in the direction that reads as "the class is
+load-bearing". The 14 SKIPs are the explicit-structure-argument idiom, which
+has no instance binder and is also the idiom that does not hide.
+
+**Reach — 8 paper claims.** `scripts/lean-self-assuming-content-join.py` joins
+the 41 self-assuming declarations against every `lean.ref` in `content/`:
+8 blocks of provable kind (1 theorem, 6 propositions, 1 corollary, **zero
+conjectures**); 7 carry no §3b-cond item-3 banner signal.
+
+**Two of my own errors caught before shipping.** The join first said 9 — it
+matched last name segments and paired `prop:quantum-universe-exists` with
+`QuantumObservableUniverse.exists_instance`, two real distinct declarations.
+And "14 single-field classes are item-5 violations" was too strong: reading
+three shows honest §3b-cond carriers. Field count does not decide it.
+
+**Nothing repaired**, deliberately. The banner column measures phrasing, not
+honesty — `sw-period-residue-sum` scores NO BANNER over the most scrupulous
+narrative in the set, and `prop:quantum-observable-universe-exists` turned out
+to carry a worked narrative proof over four cited axiom lemmas.
+
+Audit: `docs/audits/2026-09-07-self-assuming-projection-reaches-the-paper.md`
+
+**Still open:** the opaque-operator disposition (now five, spanning
+`IwahoriHeckeAPI.lean` and the vertex-algebra file) needs an author decision.
+Follow-up tranche: read the seven no-banner blocks one at a time and add
+§3b-cond item-3 banners where genuinely absent — a `.md` repair, not Lean.

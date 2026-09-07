@@ -1,5 +1,8 @@
 # z-geometric scoping: is the C1 carrier the Seiberg–Witten prolongation symbol?
 
+> 🛑 **Dated update (2026-09-06, bean `qou-p6m1`).** This document is the **original scoping** and its W1–W3 statements were TRUE when written. Since then the **q-D-module symbol-calculus half has been built**: `QOU.Machinery.QuantumTorusSymbol` (QDM-1/2, sorry-free, by 2026-07-24 — four days after this doc) and `QOU.Mathlib.RamifiedShiftCalculus` (at the ramified pole, sorry-free, 2026-09-03). The **q-jet bundle over `Σ` remains absent and W1 still stands.** Later documents that cite this one's parenthetical as a current absence claim are stale; this one is not being rewritten, because it is a dated record.
+
+
 **Date:** 2026-07-20
 **Branch:** `claude/qlift-borel-kernel-derivation-2026-07-20` (PR #4139)
 **Bean:** `qou-h5cf` (z-geometric)

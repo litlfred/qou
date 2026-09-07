@@ -383,6 +383,16 @@ def main() -> int:
     builder = WitnessBuilder.wrap_legacy(
         "markov-trace-recursive", witness, script_path=__file__, engine="sympy"
     )
+    # Declared 2026-09-05 (qou-i229). This producer computes the two nucleon
+    # traces `prop:markov-trace-recursive-reducer` publishes -- proton
+    # tr_M(s1^7 s2^4) = 1.884319... and neutron tr_M(s1^6 s2^4 s1^-1) =
+    # 1.464034... -- but declared no contentBlock, so those figures had no
+    # declared provenance. The block's pointer sat instead on
+    # `probe_markov_trace_recursive_reducer.py`, which VERIFIES that the
+    # reducer agrees with the canonical engine and carries no trace value at
+    # all. Second block in a row where the pointer was on a verifier rather
+    # than a producer; see `scripts/witness-block-agreement.py`.
+    builder.set_content_block("prop:markov-trace-recursive-reducer")
     for a in assertions:
         builder.add_assertion(
             a["name"],

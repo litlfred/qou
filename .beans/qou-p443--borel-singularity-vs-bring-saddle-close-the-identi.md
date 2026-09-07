@@ -3,8 +3,9 @@
 title: 'Borel singularity vs Bring saddle: close the identification or refute it with the thimble action'
 status: todo
 type: task
+priority: normal
 created_at: 2026-09-06T09:30:03Z
-updated_at: 2026-09-06T09:30:03Z
+updated_at: 2026-09-06T13:55:45Z
 ---
 
 
@@ -32,3 +33,22 @@ the arc — but the machinery it points at has to be built.
 
 **Do not spend on these two as written.** Re-scope to the q-difference
 prolongation or close them.
+
+
+
+## 🛑 Correction (2026-09-06, bean `qou-p6m1`)
+
+The wall quoted above — "q-jet-bundle / q-D-module symbol calculus, **absent from
+Mathlib and the corpus**" — bundles two objects, and I repeated it without
+measuring it.
+
+- **q-D-module symbol calculus: PRESENT.** `QOU.Machinery.QuantumTorusSymbol`
+  (QDM-1/2, 19 decls, sorry-free, on `main` by 2026-07-24) and
+  `QOU.Mathlib.RamifiedShiftCalculus` (the same calculus at the ramified pole
+  `z = z_c + t²`, sorry-free, 2026-09-03). The latter **imports**
+  `RamificationParityMonodromy`, the file carrying the denial.
+- **q-jet bundle over `Σ`: ABSENT**, and **W1 stands.**
+
+Nothing in this correction changes this bean's own verdict — the classical-jet
+period is still Lean-proved zero. Only the description of what infrastructure
+is missing was wrong.

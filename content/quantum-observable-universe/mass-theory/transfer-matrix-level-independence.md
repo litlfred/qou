@@ -5,10 +5,11 @@ be the categorical transfer matrix
 ([categorical transfer matrix](#def:categorical-transfer-matrix)).
 Then:
 
-1. **Constituent-composite agreement.**  The Markov trace computed
-   from the constituent insertion points $(z_1, \ldots, z_n)$
-   and the Markov trace computed from the composite insertion
-   point $z_H$ yield the same Jones polynomial:
+1. **Constituent-composite agreement.**  The composite invariant is
+   *derived from* the constituents rather than independent of them:
+   the Markov trace computed from the constituent insertion points
+   $(z_1, \ldots, z_n)$ is the composite invariant, so two hadrons with
+   the same constituents have the same composite.  Concretely,
 
    $$
      \prod_{i=0}^{n-2} \hat{V}_i^{\mathrm{const}}(q)

@@ -1,11 +1,11 @@
 ---
 # qou-3k66
 title: 'Lean: BruhatLe (subword) -> ReflLe (reflection) — the converse bridge'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T11:10:51Z
-updated_at: 2026-09-06T12:01:42Z
+updated_at: 2026-09-06T12:49:57Z
 ---
 
 ## What is open
@@ -111,3 +111,47 @@ ascent of both, then `x·s → y·s` is one too, via the conjugate reflection
 **What fails is the chain.** A `ReflLe` is a `ReflTransGen`; nothing forces `s`
 to remain an ascent at the intermediate elements, and `ReflStep` is not defined
 for a descent. Closing that is the whole remaining problem.
+
+
+## ✅ CLOSED 2026-09-06 — the converse is proved
+
+`QOU.IwahoriHecke.BruhatConverse`:
+
+* `reflLe_mul_simple_of_ascent` — the upward lifting for `≤ᵣ` that the corrected
+  scoping above named as the blocker.
+* `reflLe_of_bruhatLe` — the converse.
+* `bruhatLe_iff_reflLe` — **the two Bruhat orders are the same relation.**
+* `reflLe_of_bruhatLe_An` / `bruhatLe_iff_reflLe_An` — hypothesis-free on type A.
+
+`#print axioms` on all five: `[propext, Classical.choice, Quot.sound]`.
+
+## What unblocked the chain
+
+The scoping above was right that the single-step case works and the chain does
+not. What it missed: **the intermediate elements of a `ReflTransGen` from `x` to
+`y` are all shorter than `y`**, so the converse's own outer induction hypothesis
+applies to them. Carrying that hypothesis into the lifting lemma (as
+`ConverseBelow`) closes the descent case:
+
+* `s` an **ascent** at the intermediate `z` — recurse along the chain, then
+  `reflStep_mul_simple` on the last step;
+* `s` a **descent** at `z` — then `x ≤ z` in the subword order, and
+  `bruhatLe_mul_simple_of_isRightDescent` (the lifting property from #6894)
+  gives `x·s ≤ z`; the carried hypothesis converts it to `x·s ≤ᵣ z`, and
+  `z →ᵣ y →ᵣ y·s` finishes.
+
+So the lifting property **is** load-bearing — which the FIRST wrong diagnosis on
+this bean guessed and misplaced. It resolves the descent case inside the chain,
+not the branch of the outer induction.
+
+## Consumer
+
+The Mathas / Dipper–James arc (PR #6932) can now state Prop 3.7 with `⊵` on
+either side and cite the subword results, or vice versa. Told them on #6894.
+
+## Third-time note
+
+Two wrong diagnoses were recorded on this bean before the right one. Both are
+kept in `BruhatReflection`'s header, and `not_forall_bruhatLe_of_sublist` keeps
+the second one refuted as a theorem — the finished proof does not show a reader
+which routes are dead.

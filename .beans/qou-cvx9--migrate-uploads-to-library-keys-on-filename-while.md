@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T13:48:45Z
-updated_at: 2026-09-06T14:15:06Z
+updated_at: 2026-09-07T04:56:58Z
 ---
 
 Found pre-merge on #6955 while probing its merge ordering against #6942. **A defect
@@ -141,3 +141,133 @@ is a bound journal **issue** — `container: true`, ten `container_children` car
 the content — and `summarize-library.py:98` skips containers and duplicates by
 design. A correct omission was counted as a defect because my scan did not know
 containers existed. The other 7 now have rows.
+
+
+---
+
+## Update 2026-09-07: Part A LANDED in #6978; Part B still gated
+
+**Part A (the guard) is written, calibrated and pushed** — PR #6978, issue #6976.
+`scripts/migrate-uploads-to-library.py` now refuses to create a `library/<doc-id>/`
+with no `structure.json`, at **both** entry points (a flat PDF, and a directory
+under `uploads/`), with a non-zero exit and a printed remedy.
+
+Three changes, and the split matters because they catch different things:
+
+1. the arXiv-id fallback checks **both** roots, not `uploads/` only;
+2. an unresolvable flat PDF is REFUSED, not moved;
+3. same refusal for an un-ingested directory under `uploads/`.
+
+**Calibration, because a guard never seen to fail is not evidence.** Each change
+was reverted ALONE and `--selftest` re-run: three distinct failure signatures,
+PASS only with all three. The selftest carries six cases including two negative
+controls (`0406242v4.pdf`, the bean's own old-style-id document that landed
+correctly, and an ordinary fresh ingest) — over-matching would block working
+cases.
+
+### CORRECTION to this bean: which half of the fix carries the measured case
+
+This bean's framing — `pdf-structure.py` skips an ALREADY-HELD document — needs
+one qualifier that changes the answer. In the measured incident the sectioned
+copy was on the **other branch**, not in the working tree `migrate` ran against;
+that is why `git merge-tree` reported `rename/rename` rather than a duplicate.
+So the both-roots fallback could **not** have recovered `1808.02836v2` or
+`2108.09349v2`: `library/arxiv-1808.02836v2/` was not there to be found.
+
+**The REFUSAL carries the measured case.** The fallback carries a different and
+larger class — where the held copy *is* local. Measured on `main`: `source.file`
+is the ingest-time basename, and **226 of 633** `structure.json` carry a `doc_id`
+that is neither the stem nor `arxiv-<stem>`, so `build_mapping`'s `source.file`
+loop misses a third of the corpus and the fallback is what runs. Both cases are
+in the selftest so the two are never conflated.
+
+My first selftest failed to make this distinction and PASSED against the
+un-fixed fallback — the held `structure.json` I wrote had a `source.file`
+matching the upload, so the first loop claimed it and the fallback was never
+reached. A selftest that passes on the broken code is worth nothing; it was only
+found by reverting the fix deliberately.
+
+### A self-inflicted defect, caught by the script's own `--verify`
+
+The first draft wrote `"uploads/1808.02836v2.pdf"` as a literal in the selftest.
+`rewrite_refs` scans every tracked `.py` **including this one**, so `--verify`
+reported it as a stale reference and `--apply` would have REWRITTEN the script's
+own source, silently breaking the test that guards the rewriter. Fixture names
+are now assembled. Found by running `--verify` on the real tree, not by reading
+the diff.
+
+### `--verify` now reports the class
+
+`library/ dirs with no structure.json: 22` — **reported, not counted**,
+following this file's own convention for pre-existing conditions. Counting them
+would make `--verify` permanently red, and a permanently-red gate gets ignored:
+the same end state as the unfalsifiable check this file's ledger comment already
+records the cost of.
+
+### Part B remains OPEN and gated
+
+#6962 and #6964 are both still open and both write `library/INDEX.md`. Verified
+`main` `805f11d62d` independently of any script: **22** orphan dirs, names
+matching this bean exactly. Intent posted on both siblings.
+
+### ~~`qou-b9c3` does not exist~~ — RETRACTED, see the section below
+
+This bean originally carried that claim and it was posted on #6964. It is
+**wrong**; `qou-b9c3` is real. Retracted there and corrected below.
+
+## 2026-09-07 — the ORPHAN half duplicates `qou-b9c3`, which was first. This bean keeps the GUARD.
+
+A dispatched agent reported that `qou-b9c3` "does not exist" and posted that as a
+correction on #6964. **That was wrong and is retracted on that PR.** Verified
+against `origin/main`:
+
+  .beans/qou-b9c3--22-pdfs-sit-in-library-never-sectioned-a-third-un.md
+    title:  22 PDFs sit in library/ never sectioned — a third un-ingested
+            population, invisible to every path-5 tier
+    status: todo,  created 2026-09-06T09:42:46Z,  landed d00bb1ba45
+
+The agent searched the stem `b9c3` and hit `.beans/b9c3--author-prove-
+chi21-garside-zero-...`, an unrelated COMPLETED Lean bean from 2026-07-05,
+rather than searching the full id `qou-b9c3`. Two beans whose ids differ only by
+the `qou-` prefix. **A stem-only grep in `.beans/` is not an existence check** —
+worth remembering, since the corpus-grep checklist's path 6 is exactly this
+directory.
+
+### Consequence: split the ownership
+
+`qou-b9c3` found the same 22 orphans **about eleven minutes before** this bean's
+finding (their own commit message records the priority). So:
+
+  * **`qou-b9c3` owns the DRAIN** — ingesting the 22. It was first, and a
+    mechanical job has one owner (AGENTS.md).
+  * **`qou-cvx9` (this bean) owns the GUARD** — the identity divergence between
+    `migrate-uploads-to-library.py` (keys on FILENAME) and `pdf-structure.py`
+    (keys on the page-1 arXiv stamp), which is what CREATES orphans. A different
+    defect: the drain clears the existing 22, the guard prevents the next ones.
+
+Part A (the guard) landed in **#6978**. Part B (the drain) is **withdrawn from
+this bean** rather than merely gated — it belongs to `qou-b9c3`.
+
+### Measurements that stand, independent of the retraction
+
+  * orphan count stable at **22** across `origin/main` at `805f11d62d` and
+    `3036bf171a`; `comm` on the two sets shows no additions, no removals. The
+    defect is NOT actively producing.
+  * index arithmetic closes with no residual:
+    **655 dirs − 609 rows = 46 = 23 duplicates + 22 orphans + 1 container**.
+  * the guard's `--selftest` was calibrated by reverting each of its three
+    changes ALONE and confirming three distinct failure signatures — not merely
+    by observing it pass.
+
+### Two further findings from that work, both live
+
+  * **`pdf-structure.py` is NOT in this repo.** It is
+    `folio-assistant/scripts/pdf-structure.py`, so any drain has a second
+    prerequisite: a folio-assistant clone with `scripts/fix-python-pdf-deps.sh`
+    run. Whoever takes `qou-b9c3` needs this.
+  * **Which half carries the measured case.** In the incident that opened this
+    bean the sectioned copy was on the OTHER branch, so the arXiv-id fallback
+    could not have recovered those two — **the refusal is what carries it.** The
+    fallback covers a larger latent class (226 of 633 `structure.json` have a
+    `doc_id` that is neither the stem nor `arxiv-<stem>`), but it is not what
+    fixed the observed failure.

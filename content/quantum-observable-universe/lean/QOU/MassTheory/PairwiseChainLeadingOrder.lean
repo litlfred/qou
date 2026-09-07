@@ -237,4 +237,30 @@ theorem c1_grouped_values_eq_closed :
   unfold c1Closed
   norm_num
 
+/-- **The `T` and `³He` chain-over-atom ratios really do depend on the ordering.**
+
+Stated as a **disequality** so it cannot be read as a claim about which value is
+right — both are correct, for their own word.
+
+    T     292/163 ≈ 1.7914  (grouped)  →  4      (Borromean)
+    ³He    30/17  ≈ 1.7647  (grouped)  →  3/2    (Borromean)
+
+This is the counterpoint that gives `chain_over_atom_He4_of_letters` its force.
+There the `(a + b)` cancels identically, so ⁴He's `24/7` holds for **every**
+letter weighting and survives any intra-nucleon reordering. `T` and `³He` have
+`Z ≠ N`, no such cancellation, and move — so the ⁴He invariance is a property of
+that combination, not a general feature of the chain ratios.
+
+Added on top of the `qou-j1e5` derivation rather than alongside it: a parallel
+branch (`qou-pdg9`, PR #6920) reached the same generic `24/7` independently and
+deferred to this file, and this disequality is the one statement that branch had
+which this file did not. -/
+theorem chain_ratios_T_He3_not_invariant :
+    (c1Closed 3 (-2) 1 1 + c1Closed 3 (-2) 0 2) / c1Closed 3 (-2) 1 2
+      ≠ (c1Closed 21 16 1 1 + c1Closed 21 16 0 2) / c1Closed 21 16 1 2
+    ∧ (c1Closed 3 (-2) 2 0 + c1Closed 3 (-2) 1 1) / c1Closed 3 (-2) 2 1
+      ≠ (c1Closed 21 16 2 0 + c1Closed 21 16 1 1) / c1Closed 21 16 2 1 := by
+  unfold c1Closed
+  norm_num
+
 end QOU.MassTheory

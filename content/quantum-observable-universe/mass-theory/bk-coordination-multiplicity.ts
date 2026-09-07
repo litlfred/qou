@@ -9,6 +9,7 @@ export default remark({
     "conj:binding-manybody-eq-jet-filtration",
     "prop:magic-A-binding-formula",
   ],
+  cites: ["bezdek-reid2013", "hales-etal2010"],
   tags: [
     "binding",
     "many-body",

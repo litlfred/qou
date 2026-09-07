@@ -687,6 +687,55 @@ level comes from `computations/h4_markov_weights_closed_form.py` and the rewritt
 re-derived here before being written down, and neither depends on trusting a
 sibling's summary.
 
+**🔵 UPDATED 2026-09-07 — D7's conclusion holds; one of its SUPPORTS does not
+discriminate, and a sibling proved exactly why.** `qou-cds1` landed
+`QOU/MassTheory/TwoRowTwoColumnCollision.lean` on `main` (ten declarations,
+**0 sorries**, verified here) after finding that the Lean tree quantifies over
+Temperley–Lieb survivors in **two opposite conventions**:
+
+    QBeta.TemperleyLiebTower, QBeta.TwoRowNormalisation   at most two ROWS
+    MathlibExt.WenzlSchurElement,
+    MassTheory.SelfConjugateStratumVanishes               at most two COLUMNS
+
+**The two families are equinumerous but are different sets.** At `n = 3` the row
+family is `{(3), (2,1)}` and the column family is `{(2,1), (1,1,1)}` — disjoint
+but for `(2,1)` — and **both dimension sums are 5 = catalan 3**. In the sibling's
+words: *"a proof transported by matching numbers rather than by transposing is
+wrong WITHOUT EVER PRODUCING A WRONG NUMBER."*
+
+**What this does to D7.** Checked rather than assumed:
+
+* **The conclusion stands, and more directly than first written here.**
+  `TemperleyLiebTower.lean` uses no `colLen`/`rowLen` predicate — but it does
+  not merely *imply* the row convention through the two-row form
+  `λ = (n − k, k)`. It **states it in prose**, at line 31:
+
+      1. **`y_λ = 0` exactly when `λ` has three or more rows.**
+
+  and again beside the closed form at line 56:
+
+      y₍ₙ₋ₖ,ₖ₎ = [n − 2k + 1]_q / [2]_q ⁿ,   y_λ = 0 for ≥ 3 rows.
+
+  So the file is unambiguous, and what it kills is the **three-strand
+  antisymmetriser**, weight `y₍₁³₎`. `(1,1,1)` is three rows, so it dies under
+  the ROW reading. D7's citation is on the right side of the collision, and no
+  transposition is needed to read it.
+* **The Catalan table above does NOT establish it.** `dim TL_n = Catalan(n)`,
+  and the 83.3 % / 0.043 % retention figures, are **dimension-based**, and the
+  sibling proves both readings give the same dimension sums. That table is
+  *consistent with* the row reading and cannot *distinguish* it. The
+  discriminating support is `TemperleyLiebTower`'s concrete `λ = (n − k, k)`
+  and `y₍₁³₎ = 0`, not the counts.
+* **It sharpens option 1 specifically.** Option 1 is "label each block by
+  regime". A labelling done by *counting* survivors — the obvious way — is
+  transposition-blind and would mislabel silently, because the counts agree
+  either way. Anyone implementing option 1 must label by the **predicate**
+  (`colLen 0 ≤ 2` vs `rowLen 0 ≤ 2`), and `transposeEquiv` in the new file makes
+  that transport mechanical rather than a judgement call.
+
+So D7 is unchanged as a decision and better equipped as an instruction. Nothing
+here is a reason to defer it.
+
 **My recommendation, marked as judgement:** option 1. It is the only one
 consistent with both rulings as written, the measurement supports it (83 % vs
 0.043 % is a real regime boundary, not a preference), and its cost is a

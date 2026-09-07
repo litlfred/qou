@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T06:49:37.947193+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "computedAt": "2026-09-07T06:21:30.284707+00:00",
+  "commitSha": "a4fcd0bbf680934345573a545e3f6084279ddcff",
   "assertions": [
     {
       "name": "cache_coverage_complete",
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.0,
+      "tolerance": "0.0",
       "source": "cached_sum / reported_tr_M"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 11,
   "computation": "he4-partition-dominance-audit-probe",
   "scriptFile": "he4_partition_dominance_audit_probe.py",
-  "scriptHash": "fd504afb55ed",
-  "scriptCommitSha": "f939635be7e3843e6cec36031f2dd1e2fcf08fda",
+  "scriptHash": "88e76683e515",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,16 +50,16 @@
     "total_partitions": 77,
     "tr_M_at_q0": "0.011237417659767421564199549374410607269662696081262",
     "cached_sum": "0.01123741765976742156419954937441060726966269608126248",
-    "cache_coverage_pct": 100.0,
+    "cache_coverage_pct": "100.000000000000000000000000000000000000000000000004271443979",
     "top_contributors": [
       {
         "partition": [
           12
         ],
         "dim": 1,
-        "contribution": 0.009596486910250087,
-        "abs_contribution": 0.009596486910250087,
-        "fraction_of_tr_M": 0.8539761714657763
+        "contribution": "0.00959648691025008613098222641782751320008353055340700000000000",
+        "abs_contribution": "0.00959648691025008613098222641782751320008353055340700000000000",
+        "fraction_of_tr_M": "0.853976171465776290560387882231153863863619375920739601371596"
       },
       {
         "partition": [
@@ -67,9 +67,9 @@
           3
         ],
         "dim": 154,
-        "contribution": 0.007237533554730902,
-        "abs_contribution": 0.007237533554730902,
-        "fraction_of_tr_M": 0.6440566484097998
+        "contribution": "0.00723753355473090191803075460304537854154196356017590000000000",
+        "abs_contribution": "0.00723753355473090191803075460304537854154196356017590000000000",
+        "fraction_of_tr_M": "0.644056648409799837045906028462361363454497033687231262592120"
       },
       {
         "partition": [
@@ -77,9 +77,9 @@
           1
         ],
         "dim": 11,
-        "contribution": -0.004594966254428089,
-        "abs_contribution": 0.004594966254428089,
-        "fraction_of_tr_M": -0.4088987695882427
+        "contribution": "-0.00459496625442808870522388347718952519101973509330280000000000",
+        "abs_contribution": "0.00459496625442808870522388347718952519101973509330280000000000",
+        "fraction_of_tr_M": "-0.408898769588242726350303316999241429232479940935823362554462"
       },
       {
         "partition": [
@@ -87,9 +87,9 @@
           4
         ],
         "dim": 275,
-        "contribution": -0.0035577087751812106,
-        "abs_contribution": 0.0035577087751812106,
-        "fraction_of_tr_M": -0.31659486929267017
+        "contribution": "-0.00355770877518121045316954665289555912944900711470040000000000",
+        "abs_contribution": "0.00355770877518121045316954665289555912944900711470040000000000",
+        "fraction_of_tr_M": "-0.316594869292670180299419786946361116479828979172759761061040"
       },
       {
         "partition": [
@@ -97,9 +97,9 @@
           2
         ],
         "dim": 54,
-        "contribution": 0.0012879598244500844,
-        "abs_contribution": 0.0012879598244500844,
-        "fraction_of_tr_M": 0.11461350493906454
+        "contribution": "0.00128795982445008444044090864627871343271797872239580000000000",
+        "abs_contribution": "0.00128795982445008444044090864627871343271797872239580000000000",
+        "fraction_of_tr_M": "0.114613504939064538617606520354593689109995121362255576084588"
       },
       {
         "partition": [
@@ -107,9 +107,9 @@
           6
         ],
         "dim": 132,
-        "contribution": 0.0009722456278416686,
-        "abs_contribution": 0.0009722456278416686,
-        "fraction_of_tr_M": 0.08651859860317686
+        "contribution": "0.000972245627841668534248399937355253401444981950457860000000000",
+        "abs_contribution": "0.000972245627841668534248399937355253401444981950457860000000000",
+        "fraction_of_tr_M": "0.0865185986031768525171265959797869600117175456427223360376612"
       },
       {
         "partition": [
@@ -117,9 +117,9 @@
           5
         ],
         "dim": 297,
-        "contribution": 0.0002958667721039797,
-        "abs_contribution": 0.0002958667721039797,
-        "fraction_of_tr_M": 0.026328715463095387
+        "contribution": "0.000295866772103979698890689899988833014342983502829120000000000",
+        "abs_contribution": "0.000295866772103979698890689899988833014342983502829120000000000",
+        "fraction_of_tr_M": "0.0263287154630953879086960769177066692724798434956770619693251"
       },
       {
         "partition": [
@@ -128,9 +128,9 @@
           1
         ],
         "dim": 320,
-        "contribution": -2.567760766252596e-73,
-        "abs_contribution": 2.567760766252596e-73,
-        "fraction_of_tr_M": -2.2850096383315707e-71
+        "contribution": "-2.56776076625259596105725873079144433804241706000440000000000e-73",
+        "abs_contribution": "2.56776076625259596105725873079144433804241706000440000000000e-73",
+        "fraction_of_tr_M": "-2.28500963833157052721351796643163888199063016529072554677310e-71"
       },
       {
         "partition": [
@@ -139,9 +139,9 @@
           1
         ],
         "dim": 55,
-        "contribution": -1.5804325841917934e-73,
-        "abs_contribution": 1.5804325841917934e-73,
-        "fraction_of_tr_M": -1.4064019261739387e-71
+        "contribution": "-1.58043258419179355515516124562007546082612947493650000000000e-73",
+        "abs_contribution": "1.58043258419179355515516124562007546082612947493650000000000e-73",
+        "fraction_of_tr_M": "-1.40640192617393864060116173920457953144615302326937990474716e-71"
       },
       {
         "partition": [
@@ -150,17 +150,17 @@
           1
         ],
         "dim": 1408,
-        "contribution": -1.5155889160884304e-73,
-        "abs_contribution": 1.5155889160884304e-73,
-        "fraction_of_tr_M": -1.3486985729066495e-71
+        "contribution": "-1.51558891608843027773615891982622290236902566671520000000000e-73",
+        "abs_contribution": "1.51558891608843027773615891982622290236902566671520000000000e-73",
+        "fraction_of_tr_M": "-1.34869857290664953195434739798683449946245453944053438033040e-71"
       }
     ],
     "by_row_count": {
-      "1-2_rows": 0.02754276771898602,
-      "3_rows": 7.031835452512685e-73,
-      "4+_rows": 4.0414164929684294e-73
+      "1-2_rows": "0.02754276771898601988098640963458077591060018049726888",
+      "3_rows": "7.0318354525126870854826673579625358674975763896604063e-73",
+      "4+_rows": "4.041416492968428776909969042469525293529637747634009696e-73"
     },
-    "partition_444_contribution_upper_bound": 4.8e-52,
+    "partition_444_contribution_upper_bound": "4.79999999999999999999443754710754119361267621125420642648834e-52",
     "verdict": "(4,4,4) is NOT PSD-dominant for tr_M(β_⁴He) at q_proton. Bulk is in 2-row partitions (100.0% of |contribs|), led by (12,) at +85.40%. PR #1289's (4,4,4) framing requires reconciliation: either (a) it refers to a different ⁴He braid frame than the canonical Hoefsmit cache, or (b) it refers to a non-tr_M observable (e.g. the magic-A binding form B = ρ_F·m_e·A·8G has its own PSD structure decoupled from the bare Hoefsmit decomposition). Re-frame the ⁴He interface-operator research direction accordingly.",
     "research_implication": "If (4,4,4) is not the dominant block of tr_M at q_proton, the categorical interface-operator research direction needs re-aiming: compute the H_12 A-operator extract at the actual top contributor ((9,3), (8,4), (10,2)) instead, and re-test the +5.87% gap closure against magic-A B = ρ_F·m_e·A·8G with structural ρ_F."
   },

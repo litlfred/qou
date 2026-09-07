@@ -10,9 +10,14 @@ The full formalization lives in the `UGB` library module
 resolves via the Lake package (candidate-2 resolution under the
 package's Lake root). It declares:
 
-- `jet_stratified_gs_criterion`, `descended_gs_inherited`,
-  `degree_filtered_reduction_correct` — axiomatised GS-criterion
-  results (each carries a `-- Ref:` to [fred2005] §3 / [bergman1978]);
+- `jet_stratified_gs_criterion`, `descended_gs_inherited` —
+  axiomatised GS-criterion results (each carries a `-- Ref:` to
+  [fred2005] §3 / [bergman1978]).  A third,
+  `degree_filtered_reduction_correct`, was **deleted 2026-09-06**: it
+  bound `nf_filtered` and never mentioned it again, so it asserted
+  `nf_full = X` for every `X` and collapsed `AlgElement G k` to a
+  subsingleton whenever any reduction existed.  The degree restriction
+  it was named for lived in a comment, not a hypothesis;
 - `jet_stratified_correct` — the conditional main theorem, proved
   from `jet_stratified_gs_criterion`;
 - `DegreeBucket`, `bucketize` — degree-bucketed reduction data;

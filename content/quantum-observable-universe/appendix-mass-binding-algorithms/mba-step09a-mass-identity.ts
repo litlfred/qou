@@ -20,6 +20,7 @@ export default algorithm({
     "prop:mass-identity-unique",
     "thm:knot-mass-formula-unified",
   ],
+  cites: ["martelli2016"],
   computation: {
     engine: "python+mpmath",
     script: "computations/canonical_mass.py",

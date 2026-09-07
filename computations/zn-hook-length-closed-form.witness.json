@@ -1,0 +1,131 @@
+{
+  "arithmetic": "exact integer polynomial arithmetic; no float anywhere; no tolerances",
+  "bean": "qou-hok7",
+  "checks": [
+    {
+      "check": "R1_weight_eq_content_plus_2maj",
+      "detail": "w(T) = [n(l')-n(l)] + 2*maj(T) verified path-by-path on ALL 1114 standard Young tableaux of sizes n=2..8; 0 disagreements. Exact integer equality, no tolerance.",
+      "pass": true
+    },
+    {
+      "check": "R2_closed_form_matches_transfer_operator",
+      "detail": "(C2) reproduces the transfer operator coefficient-for-coefficient for every n=1..11 (0 mismatches). Exact integer polynomial identity -- the transfer operator is a sum over ~I(n) paths, the closed form a sum over p(n) partitions.",
+      "pass": true
+    },
+    {
+      "check": "R3_closed_form_at_q1_is_involution_numbers",
+      "detail": "sum of coefficients of (C2) equals I(n) for every n=1..11 (0 failures); e.g. n=11: 35696 = I(11) = 35696.",
+      "pass": true
+    },
+    {
+      "check": "R4_degree_eq_nsq_minus_min_total_hook",
+      "detail": "deg Z_n = n^2 - min_lambda H(lambda) verified against the exact transfer-operator polynomial for n=1..11 (0 disagreements). Beyond that the formula is the definition of the degree used below (it needs only partitions, not the operator).",
+      "pass": true
+    },
+    {
+      "check": "R5_d2_degree_rule_derived_not_measured",
+      "detail": "d2 deg Z_n = 2 - [n triangular] for every n=2..25, computed from (C3) alone (partitions + hook lengths, no transfer operator). Exceptions found [3, 6, 10, 15, 21] vs triangular [3, 6, 10, 15, 21] -- identical. This is the corpus's MEASURED D1 recursion, now a consequence of the closed form.",
+      "pass": true
+    },
+    {
+      "check": "R6_staircase_minimises_total_hook_at_triangular_n",
+      "detail": "at every triangular n <= 26 the staircase (k,k-1,...,1) attains min_lambda H(lambda): n=1:H=1, n=3:H=5, n=6:H=14, n=10:H=30, n=15:H=55, n=21:H=91",
+      "pass": true
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6,
+  "closed_form": "Z_n(q) = q^{-n} sum_{lambda|-n} q^{H(lambda)} [n]_{q^2}! / prod_c [h(c)]_{q^2}",
+  "computedAt": "2026-09-07T06:38:59.872278+00:00",
+  "d2_deg": {
+    "10": 1,
+    "11": 2,
+    "12": 2,
+    "13": 2,
+    "14": 2,
+    "15": 1,
+    "16": 2,
+    "17": 2,
+    "18": 2,
+    "19": 2,
+    "2": 2,
+    "20": 2,
+    "21": 1,
+    "22": 2,
+    "23": 2,
+    "24": 2,
+    "25": 2,
+    "3": 1,
+    "4": 2,
+    "5": 2,
+    "6": 1,
+    "7": 2,
+    "8": 2,
+    "9": 2
+  },
+  "deg_Z": {
+    "1": 0,
+    "10": 70,
+    "11": 86,
+    "12": 104,
+    "13": 124,
+    "14": 146,
+    "15": 170,
+    "16": 195,
+    "17": 222,
+    "18": 251,
+    "19": 282,
+    "2": 1,
+    "20": 315,
+    "21": 350,
+    "22": 386,
+    "23": 424,
+    "24": 464,
+    "25": 506,
+    "26": 550,
+    "3": 4,
+    "4": 8,
+    "5": 14,
+    "6": 22,
+    "7": 31,
+    "8": 42,
+    "9": 55
+  },
+  "degree_formula": "deg Z_n = n^2 - min_{lambda|-n} H(lambda)",
+  "min_total_hook": {
+    "1": 1,
+    "10": 30,
+    "11": 35,
+    "12": 40,
+    "13": 45,
+    "14": 50,
+    "15": 55,
+    "16": 61,
+    "17": 67,
+    "18": 73,
+    "19": 79,
+    "2": 3,
+    "20": 85,
+    "21": 91,
+    "22": 98,
+    "23": 105,
+    "24": 112,
+    "25": 119,
+    "26": 126,
+    "3": 5,
+    "4": 8,
+    "5": 11,
+    "6": 14,
+    "7": 18,
+    "8": 22,
+    "9": 26
+  },
+  "probe": "zn_hook_length_closed_form_probe",
+  "triangular_exceptions_found": [
+    3,
+    6,
+    10,
+    15,
+    21
+  ]
+}

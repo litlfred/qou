@@ -80,29 +80,52 @@ class SchurWeylMassDecomposition (A : ℕ) where
 -- three-channel Wedderburn weights.  This recovers
 -- `thm:wedderburn-mass-formula`.
 -- Ref: [manuscript] `prop:three-parameters-wedderburn`.
-/-- **External axiom (Kassel 1995): partitions of 3 are (3),(2,1),(1,1,1)
-    — exactly 3 of them, so the H_3(q) Wedderburn has 3 channels.** -/
--- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
-axiom a_eq_one_three_channels_axiom :
-    ∀ (S : SchurWeylMassDecomposition 1), S.partitions.length = 3
+/-! ## The partition list is FREE DATA -- two axioms deleted 2026-09-06
 
-theorem a_eq_one_three_channels (S : SchurWeylMassDecomposition 1) :
-    S.partitions.length = 3 :=
-  a_eq_one_three_channels_axiom S
+`SchurWeylMassDecomposition` carries `partitions` as an ordinary field
+with no completeness condition, and `markovTrace` as another.  The only
+field relating them, `decomposition`, is satisfiable for **any**
+`partitions` by choosing `markovTrace` to be the corresponding sum.  So
+nothing forces `partitions` to be the partitions of `3A` -- it can be
+empty.
 
-/-- **External axiom (manuscript §Nuclear Binding): the fully-symmetric
-    partition `(3A)` has first row `3A > 3` for `A ≥ 2`, so the
-    additive-Wedderburn approximation drops it.** -/
--- Ref: [manuscript] §Nuclear Binding
-axiom additive_wedderburn_missing_partitions_axiom :
-    ∀ (A : ℕ) (_hA : 2 ≤ A) (S : SchurWeylMassDecomposition A),
-      ∃ lam ∈ S.partitions, lam.parts.head? = some (3 * A)
+Two axioms quantified over every instance as though it did:
 
-theorem additive_wedderburn_missing_partitions (A : ℕ) (hA : 2 ≤ A)
-    (S : SchurWeylMassDecomposition A) :
-    ∃ lam ∈ S.partitions, lam.parts.head? = some (3 * A) :=
-  additive_wedderburn_missing_partitions_axiom A hA S
+    a_eq_one_three_channels_axiom :
+      ∀ (S : SchurWeylMassDecomposition 1), S.partitions.length = 3
+
+    additive_wedderburn_missing_partitions_axiom :
+      ∀ (A : ℕ), 2 ≤ A → ∀ (S : SchurWeylMassDecomposition A),
+        ∃ lam ∈ S.partitions, lam.parts.head? = some (3 * A)
+
+Both are false at the empty instance below, and both are deleted.  The
+mathematics they cite is not in dispute -- 3 really is the number of
+partitions of 3 -- but neither Lean statement said that.  A statement
+that did would be about `Nat.Partition 3`, or would carry a
+completeness field on the structure; adding one is a structure refactor
+and is deliberately not guessed at here.
+-/
+
+/-- An instance whose partition list is empty.  `decomposition` holds
+    because the empty sum is `0`. -/
+def emptyDecomposition (A : ℕ) : SchurWeylMassDecomposition A where
+  atomicBraid := ()
+  q := 0
+  partitions := []
+  markovTrace := 0
+  decomposition := by simp
+
+/-- **`a_eq_one_three_channels_axiom` is false.** -/
+theorem not_a_eq_one_three_channels :
+    ¬ (∀ (S : SchurWeylMassDecomposition 1), S.partitions.length = 3) := by
+  intro h
+  simpa [emptyDecomposition] using h (emptyDecomposition 1)
+
+/-- **`additive_wedderburn_missing_partitions_axiom` is false.** -/
+theorem not_additive_wedderburn_missing_partitions :
+    ¬ (∀ (A : ℕ), 2 ≤ A → ∀ (S : SchurWeylMassDecomposition A),
+        ∃ lam ∈ S.partitions, lam.parts.head? = some (3 * A)) := by
+  intro h
+  simpa [emptyDecomposition] using h 2 (by norm_num) (emptyDecomposition 2)
 
 end QOU.BraidKnot

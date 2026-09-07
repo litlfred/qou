@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T12:48:30Z
+updated_at: 2026-09-07T06:20:54Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -518,3 +518,49 @@ nothing rests on it; it is the shape a derivation would have to produce.
    block.
 
 Probe: `computations/probes/atom_bond_product_closed_form_probe.py`.
+
+
+## 🛑 CORRECTION to the "goal (2) answered" section above — the bond half was ALREADY in the corpus
+
+Measured, not suspected: `computations/probes/bond_factors_are_z_plus_d_probe.py`, 3/3.
+
+The three bond factors that section calls "measured at `A = 3` by turning ONE interface on" are
+**exactly** the corpus's `∏ᵢ (z + dᵢ)`, coefficient for coefficient:
+
+    bond   the "measured" factor      z + d (interface letter kind)
+    pp     1/2,  1,  1/4              1/2,  1,  1/4    (sigma)
+    pn     1/2,  0,  3/4              1/2,  0,  3/4    (averaged_weighted)
+    nn     1/2, -1,  5/4              1/2, -1,  5/4    (sigma_inv)
+
+with `z_D = q³/(q²+1)` at `q = 1+ε` and the interface kinds read off `atom_canonical_crossings`.
+
+**And the mechanism was already stated too.** `atom_braid_word_3A`'s own docstring and
+`the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe` record that
+`tr_M(W_atom)/tr_M(W_free)` is identical under both orderings to `~1e-60` and equals
+`prod_i (z + d_i)` over the `A−1` interfaces, *because* "the chain closure is a connected sum, and
+connected-sum multiplicativity of the Markov trace does not care how each summand's word is
+internally ordered." That is "disjointness is not monotonicity" in other words — so my claim that the
+reconciliation is something "neither bean states" is **wrong**, and PR #6920's finding 9 and its
+`qou-wdij` cross-reference both need reading with that correction.
+
+**What survives as new, and it is the half that turns a ratio into an absolute.** The corpus's bond
+model is about the **ratio**, which cancels the free word entirely and therefore cannot give `c₀`,
+`c₁`, `c₂` — those are coefficients of the **difference** `Δ = tr(free) − tr(atom)`. The new part is
+
+    tr(free; Z,N) = tr(p)^Z · tr(n)^N,  (a,r,q) = (1/2, 3/2, 23/4) p, (1/2, −1, 3) n
+
+measured on single nucleons. `(S_p,S_n) = 4(r_p,r_n)` and `(37,20)` from `q_p,q_n` are downstream of
+that free half, so they are not re-derivations. Also new: the **ε-series** form of the bond factors
+(the corpus's is the ratio at `q₀`) and the `A = 5` verification.
+
+**Corrected framing to quote from here on:** the closed form is the corpus's bond half —
+independently re-derived, not new — **times** a free half that is new. Not "goal (2) answered", and
+not a mechanism nobody had stated.
+
+**Why the grep missed it, which is the reusable part.** The pre-#6920 checklist searched `.beans/`,
+`content/`, `docs/`, `computations/` and the library for the *topic*, and found `qou-kru4`,
+`qou-wdij` and `MonotoneWordTraceFactorizes`. It could not find this: the bond model lives in a
+**producer's docstring**, and in probe filenames phrased as what they refute
+(`..._moves_absolute_traces_not_the_bond_model`, `..._is_overstated`). Standing lesson: **read the
+docstring of the producer your result is about** — here, the one word builder every claim in this arc
+goes through.
