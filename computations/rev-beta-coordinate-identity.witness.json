@@ -1,0 +1,238 @@
+{
+  "A": "3.603377725719857264313303",
+  "C": "6.171405720079135120223185",
+  "argmax_bound_comparison": [
+    {
+      "C_times_r": "55.54265148",
+      "R": "19.85403054",
+      "beta_bound": "36.53503083",
+      "beta_over_R": "1.84018",
+      "crude_over_R": "2.79755",
+      "ell": 9,
+      "lam": [
+        10,
+        8,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 40,
+      "r": 9
+    },
+    {
+      "C_times_r": "61.7140572",
+      "R": "21.35487682",
+      "beta_bound": "39.69258058",
+      "beta_over_R": "1.85871",
+      "crude_over_R": "2.88993",
+      "ell": 10,
+      "lam": [
+        10,
+        8,
+        7,
+        5,
+        4,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 44,
+      "r": 10
+    },
+    {
+      "C_times_r": "67.88546292",
+      "R": "24.54701529",
+      "beta_bound": "43.65383958",
+      "beta_over_R": "1.77838",
+      "crude_over_R": "2.76553",
+      "ell": 11,
+      "lam": [
+        11,
+        9,
+        8,
+        6,
+        5,
+        4,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "n": 52,
+      "r": 11
+    },
+    {
+      "C_times_r": "74.05686864",
+      "R": "27.37242392",
+      "beta_bound": "47.57934798",
+      "beta_over_R": "1.73822",
+      "crude_over_R": "2.70553",
+      "ell": 12,
+      "lam": [
+        12,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "n": 60,
+      "r": 12
+    },
+    {
+      "C_times_r": "74.05686864",
+      "R": "29.6008388",
+      "beta_bound": "47.57933522",
+      "beta_over_R": "1.60736",
+      "crude_over_R": "2.50185",
+      "ell": 12,
+      "lam": [
+        12,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 68,
+      "r": 12
+    },
+    {
+      "C_times_r": "80.22827436",
+      "R": "32.65200143",
+      "beta_bound": "54.24378794",
+      "beta_over_R": "1.66127",
+      "crude_over_R": "2.45707",
+      "ell": 14,
+      "lam": [
+        13,
+        11,
+        10,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "n": 76,
+      "r": 13
+    }
+  ],
+  "bean": "qou-hok7",
+  "checks": [
+    {
+      "check": "R1_beta_identity_for_the_eps_weighted_hook_sum",
+      "detail": "sum_c eps_h(c) == sum_i F(beta_i) - sum_{i<j} eps_(beta_i-beta_j) on all 372 partitions of n <= 13; worst residual 3.314e-49 at (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1). So R_lambda is exactly one-body + two-body in the beta-coordinates, which is the structure C*r discards.",
+      "pass": true
+    },
+    {
+      "check": "R2_integer_companions_H_and_n_in_beta_coordinates",
+      "detail": "H(lambda) == sum_i beta_i(beta_i+1)/2 - sum_{i<j}(beta_i-beta_j) and n == sum_i beta_i - l(l-1)/2, EXACTLY (integer arithmetic), on all 914 partitions of n <= 16. So the energy E = (H - H_min) ln q_0 lives in the same coordinates as R, with its own pair term \u2014 the trade-off is now explicit in one variable set.",
+      "pass": true
+    },
+    {
+      "check": "R3_the_pair_term_converts_C_into_A_and_is_42pct_of_the_constant",
+      "detail": "on the staircase the one-body term per row -> C and the pair term removes 2.568028, landing on A. Raw values at k=128 are 6.0788132 and 3.5628358: both still ~1.5% low, because the smallest beta's (1, 3, 5, ...) have not saturated F and the approach is O(1/k). Richardson on k=64,128 gives 6.17140572008 against C = 6.17140572008 and 3.60337772572 against the PROVED A = 3.60337772572 \u2014 agreeing to 1.43e-13. The pair term is 41.61% of C: it is not a correction to C*r, it is the whole gap between C*r and the truth on the family that attains the Omega(sqrt n) lower bound.",
+      "pass": true
+    },
+    {
+      "check": "R4_convexity_lower_bound_on_the_pair_term_holds",
+      "detail": "(IV) sum_{i<j} eps >= sum_d (l-d) eps(d*W/(l-d)) holds on all 372 partitions of n <= 13, capturing up to 100.0% of the true pair term. This turns the identity into the bound R <= l*C - (IV) - F(n).",
+      "pass": true
+    },
+    {
+      "check": "R5_the_beta_bound_beats_C_times_r_at_every_argmax_shape_and_still_does_not_close_it",
+      "detail": "the beta-bound is tighter at ALL 6 empirical argmax shapes, cutting the over-statement of R from 2.457-2.89x down to 1.607-1.859x. I predicted the opposite (that the l*C prefactor would start it behind) and the measurement says otherwise: on these near-staircase shapes l EQUALS r in 5 of 6, so the prefactors tie and the pair term is pure gain. It is still ~1.8x the truth, so this is a tighter bound, NOT a closure \u2014 the Jensen step (mean of each distance class) is lossy, and R6 measures whether what survives is a better RATE or only a better constant.",
+      "pass": true
+    },
+    {
+      "check": "R6_the_maximized_beta_bound_is_uniformly_tighter_and_its_ratio_to_truth_FALLS",
+      "detail": "maximized over EVERY shape with the energy, the beta-bound over-states M_n by 4.3403x at n=16 FALLING to 3.0879x at n=40, against 5.9423x -> 5.2881x for C*r \u2014 uniformly tighter, by ~1.713x at n=40, and closing on the truth rather than drifting off it. I wrote this check expecting the ratio to GROW (an upper bound with too high an exponent must eventually outrun its target) and it falls; see R7 for what that does and does not license.",
+      "pass": true
+    },
+    {
+      "check": "R7_do_NOT_read_the_flat_sqrt_n_column_as_a_rate_the_control_forbids_it",
+      "detail": "the maximized beta-bound divided by sqrt(n) is flat to 9.76% over n=16..40 (8.7675, 9.4511, 9.7155, 9.6425) while divided by n^(3/4) it falls monotonically (4.3838, 4.27, 4.0849, 3.8342). That LOOKS like the bound itself is O(sqrt n), which would settle sharpness the other way \u2014 the 3/4 not sharp, REV = Theta(sqrt n). **It is not evidence.** #7065 measured a provably Theta(sqrt n) control whose n^(3/4) ratio RISES to a peak at n=55 and only then falls, so at n <= 40 both columns are being read below the peak of the very statistic in question, on a range even shorter than the one already shown not to discriminate. Recorded as an OBSERVATION with its refutation attached. What IS usable: the beta-bound depends on lambda only through (l, W, n) with W = beta_1 - beta_l, plus H through E \u2014 three small integers instead of a partition. Maximizing it therefore does NOT require enumerating p(n) shapes, which is exactly the wall #7065 hit at p(150). That reduction, not this table, is the route.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 7,
+  "checks_total": 7,
+  "computedAt": "2026-09-07T11:21:28.582729+00:00",
+  "dps": 50,
+  "identity": "R_lambda = sum_i F(beta_i) - sum_{i<j} eps_(beta_i-beta_j) - F(n); H = sum_i beta_i(beta_i+1)/2 - sum_{i<j}(beta_i-beta_j); n = sum_i beta_i - l(l-1)/2",
+  "pair_deficit_C_minus_A": "2.568027994359277855909882",
+  "pair_deficit_pct_of_C": "41.611719",
+  "probe": "rev_beta_coordinate_identity_probe",
+  "q0_anchor": "physical_proton",
+  "staircase_scaling": [
+    {
+      "R_plus_Fn_over_k": "2.52641959459",
+      "k": 4,
+      "n": 10,
+      "onebody_over_k": "3.7016048409",
+      "pair_over_k": "1.17518524631"
+    },
+    {
+      "R_plus_Fn_over_k": "2.97514265",
+      "k": 8,
+      "n": 36,
+      "onebody_over_k": "4.7355607545",
+      "pair_over_k": "1.76041810449"
+    },
+    {
+      "R_plus_Fn_over_k": "3.27940343667",
+      "k": 16,
+      "n": 136,
+      "onebody_over_k": "5.43147224803",
+      "pair_over_k": "2.15206881136"
+    },
+    {
+      "R_plus_Fn_over_k": "3.44121016728",
+      "k": 32,
+      "n": 528,
+      "onebody_over_k": "5.80103628442",
+      "pair_over_k": "2.35982611714"
+    },
+    {
+      "R_plus_Fn_over_k": "3.52229383284",
+      "k": 64,
+      "n": 2080,
+      "onebody_over_k": "5.98622074856",
+      "pair_over_k": "2.46392691572"
+    },
+    {
+      "R_plus_Fn_over_k": "3.56283577928",
+      "k": 128,
+      "n": 8256,
+      "onebody_over_k": "6.07881323432",
+      "pair_over_k": "2.51597745504"
+    }
+  ],
+  "status": "identity exact and new; sharpness of the 3/4 exponent remains OPEN"
+}
