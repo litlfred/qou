@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-07T10:18:58Z
+updated_at: 2026-09-07T11:13:26Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -669,3 +669,18 @@ PROCESS TRAP, cost me the edits once and worth recording. `git checkout -- compu
 command used all session to revert the contended audit witnesses that a precision-gates run
 rewrites. It is TREE-WIDE, so it also destroys uncommitted probe work in computations/. Scope it
 (`git checkout -- computations/audits computations/*.witness.json`) or commit before running gates.
+
+
+2026-09-07 (CORRECTION to the order-5 entry above): "evidence for the TwoSidedMarkov premise, a
+class with NO INSTANCE" is WRONG, both halves, and it is a category error. PR #7067 proves
+TwoSidedMarkov is DERIVABLE from MarkovTrace in four lines -- cyclicity + T3 + the fact that H n is
+a Subalgebra, so y merges with x into y*x in H n and T3 applies -- and registers a global instance.
+So the class has an instance for every MarkovTrace. Worse: tr(a.sigma) = tr(a).z for a in H n is T3
+ITSELF, an AXIOM of MarkovTrace. Offering numerical evidence for an axiom of the structure you are
+reasoning in is not a weak result, it is a category error.
+
+WHAT THE MEASUREMENT ACTUALLY SUPPORTS: that the CONCRETE Hecke Markov trace (the one [diamond]
+evaluates) satisfies Markov stabilisation at the atom word's interface positions with z = z_D. A
+fact about the concrete trace matching the abstract axioms -- classical (Jones/Ocneanu), unformalised
+here, strictly weaker and different. The numbers are unaffected; only their interpretation moved.
+Corrected in the probe's section 6, its docstring, and on #7023.
