@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T09:38:17Z
+updated_at: 2026-09-07T10:00:48Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7893,3 +7893,42 @@ first Lean attempt then went through.
 **Still open, unchanged.** n = 2 and n = 3 are not n. TL_n(δ) is not proved
 semisimple; the ideal equality is open for n ≥ 4. General n needs the planar
 diagram basis, which this arc reaches from a new side each tranche. NOT closed.
+
+
+## The diagram basis, measured before building it (2026-09-07, PR #7001, aae63bb6d8)
+
+`computations/tl_normal_form_basis_probe.py` — formalize-first applied to a
+Lean build: the wide search is the development, this is the prune. Exact
+integers only; the witness carries zero float-valued fields.
+
+**Settled.** The **Jones normal forms** — `(e_{i1}…e_{j1})(e_{i2}…e_{j2})…` with
+`i₁<…<i_k`, `j₁<…<j_k`, `j_m ≤ i_m` — number exactly `catalan n` (n=1..8) and
+map **bijectively onto all planar diagrams** (n=1..6), every one loop-free. Left
+multiplication by a generator **closes** in them (n=2..7, 2574 products at n=7).
+So the family to formalise is settled and is not in the corpus yet.
+
+**🛑 THE FINDING THAT CHANGES THE DESIGN — and it is a negative.** Closure holds
+and is **NOT length-monotone**: `Δ|word|` takes `+1`, `0` and **negative odd**
+values, reaching **−5** by n = 7. **A 'rewrite until shorter' termination measure
+does not exist**, and that is the first thing an agent reaches for. The proof
+must carry the `(I, J)` index data and prove the multiplication rule on that —
+a substantially different and larger design. Loop counts are always 0 or 1, so
+δ-bookkeeping is one factor per generator, never a power.
+
+**Two checker errors of mine, recorded because the class recurs.** My first
+planar enumerator recursed on the *concatenation* of the two sides rather than
+each side separately, counting `n!` not `catalan` — it printed `bijection=NO`
+for n ≥ 3, a **false negative about the corpus produced entirely by the
+checker**. The same script then printed `all bijections hold` while its own rows
+said NO, because the flag tracked only collisions. A summary disagreeing with
+the rows it summarises is worse than none.
+
+**Gate posture.** `precision-gates.sh --changed` is RED and the RED is
+**pre-existing corpus state, established not assumed**: this probe and its
+witness appear nowhere in the gate output, and `witness_raw_float64_audit.py`
+does not list the witness. Tree-measuring audit witnesses reverted per
+`qou-v0t8` (twice — the second time because *running the ratchet to check*
+rewrote one).
+
+**Scope.** Finite n; proves nothing at general n. Wires to nothing. The general
+theorem is NOT closed.
