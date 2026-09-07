@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-07T11:28:16Z
+updated_at: 2026-09-07T12:45:17Z
 ---
 
 
@@ -326,5 +326,65 @@ at every n, with no scan.
 
 One lossy step stands in the way and should be attacked first: the bound currently applies Jensen
 at the mean of each distance class, which is what leaves it ~1.8x above the truth at the argmax.
+
+Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+
+## 2026-09-07 (later) — the (l,W) reduction is TIGHT, so the beta-bound is the weak step (PR #7081)
+
+The section above proposed the (l, W) reduction as "the route". It was tried. **The transfer does
+not fire, and sharpness stays open** — but the negative locates the loss precisely, which the
+previous section could not.
+
+**The plan.** REV_n <= M_n + log p(n), and log p(n) ~ pi*sqrt(2n/3) = 2.5651*sqrt(n) is itself
+Theta(sqrt n). So an O(sqrt n) rate for max_(l,W) B(l,W) - E would give REV = O(sqrt n) and settle
+that the 3/4 is not sharp. The entropy cannot spoil it; the entropy IS Theta(sqrt n).
+
+**Measured to n = 4000** (p(n) ~ 1e64, so five of six points are unreachable by enumeration):
+
+    n            40      100      250      625     1600     4000
+    relaxed max  61.1   106.9    231.7    742.9   3070.9  13337.1
+    / sqrt(n)    9.67   10.69    14.66    29.72    76.77   210.88
+    / n^{3/4}    3.84    3.38     3.69     5.94    12.14    26.52   <- RISES
+    argmax (l,W) (22,37) (26,47) (27,62) (43,105) (78,192) (151,357)
+
+The n^{3/4} column rises, so the relaxation's own growth exceeds n^{3/4} and nothing transfers.
+REV_n stays in [Omega(sqrt n), O(n^{3/4})], unchanged. No claim either way.
+
+### 🛑 I diagnosed this backwards; the correction is the finding
+
+I asserted the Cauchy-Schwarz Hhat was the weak link — the maximizer runs to l = 151 at n = 4000
+against sqrt(2n) = 89, which looked like an energy credit handed out by a slack H bound. The
+measurement refutes it. At the maximizer's OWN (l, W), Hhat reaches the true minimum hook sum over
+partitions with exactly that (l, W) to 99.3-100% — exact at n = 24 and 32 — and the whole
+relaxation overshoots the ENUMERATED max(B - E) by at most 0.15 over n = 16..40.
+
+So passing from a partition to two integers costs essentially nothing. The relaxation is a
+**faithful instrument**, and what it faithfully reports is that the beta-bound of #7070 is itself
+too weak. The lossy step is **Jensen on the pair term**: at the mean of each distance class it
+under-counts badly for gap sequences of mostly 1s with a few large jumps — exactly what the
+maximizer selects (W/l ~ 1.7 at every n).
+
+### One sharpening kept
+
+The H lower bound now peels the known extreme part on BOTH halves of 2H = sum lambda_i^2 +
+sum lambda'_j^2:  2H >= [lambda_1^2 + (n-lambda_1)^2/(l-1)] + [l^2 + (n-l)^2/(lambda_1-1)]. The
+first attempt used the crude n^2/lambda_1 on the columns, which assumes equal column lengths and is
+catastrophic for one long row plus many short ones. Fixing it moved n=4000 from 17,309 to 13,337
+and the argmax l from 333 to 151. There is now under 1% left in H — **do not spend more on it**.
+
+### Anti-caveat
+
+This is NOT the #7065 situation. There a statistic could not discriminate because the range sat
+below its resolving point. Here the reading is a clear RISE across two orders of magnitude in n,
+not a flat column being over-read, so the negative does not depend on where that control's peak
+sits.
+
+### What the next attempt should do
+
+Replace the Jensen step, not the H bound. Target: a lower bound on sum_{i<j} eps_(beta_i - beta_j)
+that survives gap sequences of mostly 1s with a few large jumps. Any candidate is now testable at
+n = 4000 in polynomial time against an instrument calibrated to the truth at n <= 40
+(rev_beta_bound_polynomial_max_probe.py, R2 dominance + R6 tightness).
 
 Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
