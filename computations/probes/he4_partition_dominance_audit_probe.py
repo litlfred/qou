@@ -121,45 +121,49 @@ def main() -> int:
         entries.append({
             "partition": list(part),
             "dim": dim,
-            "contribution": float(contrib),
-            "abs_contribution": float(abs(contrib)),
-            "fraction_of_tr_M": float(contrib / tr_M_full),
+            "contribution": fmt(contrib),
+            "abs_contribution": fmt(abs(contrib)),
+            "fraction_of_tr_M": fmt(contrib / tr_M_full),
+            # the mpf the ranking below sorts on; stripped before the write
+            "_abs_mp": abs(contrib),
         })
 
-    entries.sort(key=lambda e: -e["abs_contribution"])
+    entries.sort(key=lambda e: -e["_abs_mp"])
     print(f"{'partition':28} {'dim':>6} {'contribution':>16} {'fraction':>10}")
     print("-" * 75)
     for e in entries[:15]:
+        # both are `fmt` strings now; float() here is display only
         print(f"  {str(tuple(e['partition'])):26} {e['dim']:>6} "
-              f"{e['contribution']:>16.6e} {e['fraction_of_tr_M']:>9.2%}")
+              f"{float(e['contribution']):>16.6e} "
+              f"{float(e['fraction_of_tr_M']):>9.2%}")
     print("  ...")
 
     print()
     cumulative_2row = sum(
-        e["abs_contribution"] for e in entries
+        e["_abs_mp"] for e in entries
         if len(e["partition"]) <= 2
     )
     cumulative_3row = sum(
-        e["abs_contribution"] for e in entries
+        e["_abs_mp"] for e in entries
         if len(e["partition"]) == 3
     )
     cumulative_4row = sum(
-        e["abs_contribution"] for e in entries
+        e["_abs_mp"] for e in entries
         if len(e["partition"]) >= 4
     )
-    total_abs = sum(e["abs_contribution"] for e in entries)
-    cache_coverage = float(cached_sum / tr_M_full)
+    total_abs = sum(e["_abs_mp"] for e in entries)
+    cache_coverage = cached_sum / tr_M_full
 
     print(f"|tr_M| breakdown by partition shape:")
-    print(f"  1-2 rows (λ_1 + λ_2 = 12): {cumulative_2row:.6e}  "
-          f"({cumulative_2row/total_abs:.2%} of |contributions|)")
-    print(f"  3 rows:                    {cumulative_3row:.6e}  "
-          f"({cumulative_3row/total_abs:.2%})")
-    print(f"  4+ rows:                   {cumulative_4row:.6e}  "
-          f"({cumulative_4row/total_abs:.2%})")
+    print(f"  1-2 rows (λ_1 + λ_2 = 12): {float(cumulative_2row):.6e}  "
+          f"({float(cumulative_2row/total_abs):.2%} of |contributions|)")
+    print(f"  3 rows:                    {float(cumulative_3row):.6e}  "
+          f"({float(cumulative_3row/total_abs):.2%})")
+    print(f"  4+ rows:                   {float(cumulative_4row):.6e}  "
+          f"({float(cumulative_4row/total_abs):.2%})")
     print()
     print(f"  cache coverage: cached_sum / reported_tr_M = "
-          f"{cache_coverage * 100:.6f}%")
+          f"{float(cache_coverage) * 100:.6f}%")
     print(f"  missing partitions (53/77) cumulative |contrib|: "
           f"{float(abs(tr_M_full - cached_sum)):.6e}")
 
@@ -175,26 +179,27 @@ def main() -> int:
         print("  Since cache sum already ≈ reported tr_M to 10⁻⁵⁰,")
         print("  (4,4,4)'s contribution must be ≤ |reported - cached|.")
         max_444 = abs(tr_M_full - cached_sum)
-        fraction_444 = float(max_444 / tr_M_full)
+        fraction_444 = max_444 / tr_M_full
         print(f"  ⟹ |(4,4,4) contribution| ≤ {float(max_444):.3e}")
-        print(f"  ⟹ fraction of tr_M:        ≤ {fraction_444:.2e}")
+        print(f"  ⟹ fraction of tr_M:        ≤ {float(fraction_444):.2e}")
     print()
 
     # Verdict
     top_partition = entries[0]
-    if cached_444 is not None and cached_444["abs_contribution"] / total_abs > 0.05:
+    if cached_444 is not None and cached_444["_abs_mp"] / total_abs > 0.05:
         verdict = (
             f"(4,4,4) IS dominant — contributes "
-            f"{cached_444['fraction_of_tr_M']*100:+.2f}% of tr_M. PR #1289's PSD-"
+            f"{float(cached_444['fraction_of_tr_M'])*100:+.2f}% of tr_M. PR #1289's PSD-"
             f"dominance framing is empirically upheld. Computing the full "
             f"H_12 A-operator extract at (4,4,4) is the right next step."
         )
     else:
         verdict = (
             f"(4,4,4) is NOT PSD-dominant for tr_M(β_⁴He) at q_proton. "
-            f"Bulk is in 2-row partitions ({cumulative_2row/total_abs*100:.1f}% of |contribs|), "
+            f"Bulk is in 2-row partitions "
+            f"({float(cumulative_2row/total_abs)*100:.1f}% of |contribs|), "
             f"led by {tuple(top_partition['partition'])} at "
-            f"{top_partition['fraction_of_tr_M']*100:+.2f}%. "
+            f"{float(top_partition['fraction_of_tr_M'])*100:+.2f}%. "
             f"PR #1289's (4,4,4) framing requires reconciliation: either "
             f"(a) it refers to a different ⁴He braid frame than the canonical "
             f"Hoefsmit cache, or (b) it refers to a non-tr_M observable "
@@ -237,7 +242,9 @@ def main() -> int:
     builder.add_data("total_partitions", 77)
     builder.add_data("tr_M_at_q0", cache["tr_M_at_q0"])
     builder.add_data("cached_sum", str(cached_sum))
-    builder.add_data("cache_coverage_pct", cache_coverage * 100)
+    builder.add_data("cache_coverage_pct", fmt(cache_coverage * 100))
+    for e in entries:
+        e.pop("_abs_mp", None)
     builder.add_data("top_contributors", entries[:10])
     builder.add_data("by_row_count", {
         "1-2_rows": cumulative_2row,
@@ -245,7 +252,7 @@ def main() -> int:
         "4+_rows": cumulative_4row,
     })
     builder.add_data("partition_444_contribution_upper_bound",
-                     float(abs(tr_M_full - cached_sum)))
+                     fmt(abs(tr_M_full - cached_sum)))
     builder.add_data("verdict", verdict)
     builder.add_data("research_implication", (
         "If (4,4,4) is not the dominant block of tr_M at q_proton, the "
@@ -259,7 +266,7 @@ def main() -> int:
         name="cache_coverage_complete",
         computed=cache_coverage > 0.999999,
         expected=True,
-        tolerance=0.0,
+        tolerance=mp.mpf(0),
         source="cached_sum / reported_tr_M",
     )
 
