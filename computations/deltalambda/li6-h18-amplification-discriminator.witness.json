@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:47:27.556414+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "computedAt": "2026-09-07T08:26:45.084901+00:00",
+  "commitSha": "2efe745cab538d0ae07b73098a1c09011c8a4b57",
   "assertions": [
     {
       "name": "anchor_kappaD_reproduced",
@@ -38,9 +38,9 @@
     },
     {
       "name": "lr_free_path_validated_at_4He",
-      "computed": "4.84584344534025552543196832628059694072550849683997406441142257988589",
+      "computed": "4.856919593977752843418766624499505628433860744952107555690912538193532e-49",
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": "1e-05",
       "source": "chi_free_lr(2,2) vs chi-helium-4-free-h12 MPFR witness; tolerance is the documented sign-only-vs-averaged convention gap (≤1e-5), which perturbs 𝒜 by ≪ 0.01 %"
     },
@@ -53,7 +53,7 @@
       "source": "Σ y_λ·χ_λ(atom) reproduces the ⁵Li witness's own tr_M_at_q0"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 4,
   "computation": "li6-h18-amplification-discriminator",
   "scriptFile": "li6_h18_amplification_discriminator_probe.py",
@@ -91,7 +91,7 @@
     },
     "provenance": {
       "li6_atom_chi": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json (cached canonical, producer rust-chi-q-via-gp-lossless, 1382 s original wall; sign-only convention, ≤4.4e-6 rel vs the anchors' color-weighted convention where both exist)",
-      "li6_free_chi": "chi_free_via_frobenius.chi_free_frobenius(3,3) — Frobenius characteristic map (power-sum expansion + Murnaghan–Nakayama; forms no LR coefficient). Agrees with the LR route to 1.3e-67 on all 385 blocks (chi-free-via-frobenius.witness.json), 0.08 s wall",
+      "li6_free_chi": "chi_free_via_frobenius.chi_free_frobenius(3,3) — Frobenius characteristic map (power-sum expansion + Murnaghan–Nakayama; forms no LR coefficient). Agrees with the LR route to 1.3e-67 on all 385 blocks (chi-free-via-frobenius.witness.json), 0.09 s wall",
       "li5_atom_chi": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json (cached canonical, producer rust-chi-q-via-gp-lossless, 67 s original wall) — SECONDARY out-of-sample point at A=5",
       "li5_free_chi": "chi_free_via_frobenius.chi_free_frobenius(3,2), 0.04 s wall",
       "anchors": "binding-reeb-phase-decomposition.witness.json θ vectors + chi-*-h*-at-q0-50dps y_λ (same as the audit probe)",
@@ -113,7 +113,7 @@
       "6Li": {
         "n_partitions": 385,
         "tr_M_consistency_rel": "1.2549e-51",
-        "free_chi_wall_sec": 0.08,
+        "free_chi_wall_sec": 0.09,
         "channel_stats": {
           "rotation_free": 384,
           "rotation_atom": 373,
@@ -124,7 +124,7 @@
       }
     },
     "lr_free_vs_he4_witness_max_rel": {
-      "value": "4.84584",
+      "value": "4.85692e-49",
       "bound": 1e-05,
       "note": "convention gap (sign-only nucleon cache vs averaged-crossings free witness); perturbs 𝒜 by ≪ 0.01 %"
     },
