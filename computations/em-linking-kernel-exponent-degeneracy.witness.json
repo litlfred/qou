@@ -1,0 +1,383 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-07T08:05:19.223107+00:00",
+  "commitSha": "5df5f816a4ce1796bbefb069f9ac283b3cd4a053",
+  "assertions": [
+    {
+      "name": "reproduces_committed_H_coth_bound_only",
+      "computed": "3.650257e-9",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-8",
+      "unit": "absolute deviation",
+      "source": "End-to-end: this probe's re-scoring of the incumbent under the COMMITTED statistic gives const 0.219445126 / scatter 0.0350461257 against committed 0.21944513 / 0.035046122. If this fails, nothing below is comparable to the published contest."
+    },
+    {
+      "name": "reproduces_committed_H_FH_A_bound_only",
+      "computed": "1.0219121e-9",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-8",
+      "unit": "absolute deviation",
+      "source": "Second end-to-end anchor, on a different hypothesis: const 5.28989047 / scatter 0.054985091 against committed 5.2898905 / 0.05498509."
+    },
+    {
+      "name": "product_s_times_p_is_constant_across_the_c0_scan",
+      "computed": "0.0148413",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.03",
+      "unit": "relative spread",
+      "source": "s*p spans 0.256649..0.260495 across c0 = 0..7.5, a relative spread of 1.484%, while p itself moves from 0.32906 to 0.054974. The product is what is measured; neither factor separately is. Including the three c0 < 0 bracket points the spread is 2.918%."
+    },
+    {
+      "name": "admissible_kernel_not_worse_once_the_exponent_is_freed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "With each kernel at its own exponent, c0 = 1 gives 2.755% against c0 = 0 at 2.807%, ratio 0.98143. The O2-admissible kernel is not disfavoured by this series."
+    },
+    {
+      "name": "round_six_gap_is_an_artifact_of_the_pinned_exponent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Pinned at p = 1/3 the admissible/incumbent rms ratio is 5.3742; freed it is 0.98143. The penalty round 6 reports is carried entirely by the pin, which its own third finding identifies as imported Euclidean phenomenology."
+    },
+    {
+      "name": "every_scanned_kernel_lands_within_noise_of_a_power_law",
+      "computed": "1.26508",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.35",
+      "unit": "ratio to the 2-parameter power-law floor",
+      "source": "Over the incumbent + admissible family (c0 >= 0) the worst free-exponent member is 3.361% against the bare 2-parameter power law's 2.656%. No member is resolved from a straight line in log-log, so the series cannot rank them. NARROWED POPULATION, stated so the narrowing is visible: the three c0 < 0 bracket points reach 4.098% and would fail this tolerance. They are anti-neutralised, lie outside the family O2 and round 6 concern, and are scanned only to locate the Section E crossing -- their values are in degeneracy_scan."
+    },
+    {
+      "name": "hyperbolic_ball_law_needs_an_anti_neutralised_kernel",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "alpha = (1/2)ln A + beta has its slope FIXED at 1 by hyperbolic ball volume with V ~ A. The data delivers that slope only at c0 = -0.359789, which is negative -- MORE positive than the unsubtracted kernel, so further from admissible than the incumbent. O2 requires c0 >= 1. The two geometric constraints are incompatible by 1.3598 in c0."
+    },
+    {
+      "name": "gcmn_systematic_dominates_the_statistical_error",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "A strong-bond drift of only delta = 0.05 moves the admissible kernel's predicted exponent by 0.035947, which is 6.562 times its 1-sigma statistical error 0.005478. The frozen B_pp unit (qou-gcmn) enters the measured slope additively, not as a scatter nuisance."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6085,
+  "computation": "em-linking-kernel-exponent-degeneracy",
+  "scriptFile": "em_linking_kernel_exponent_degeneracy_probe.py",
+  "scriptHash": "649c0b588b29",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_kernel_exponent_degeneracy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_kernel_exponent_degeneracy_probe.py"
+  },
+  "data": {
+    "measured_scalar": {
+      "minus_dln_kappa_dln_A": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
+      "standard_error": "0.007222462157188528422617283326824071221862358715321699961598962163514932",
+      "relative_standard_error": "0.02772549661612945443330184562016205883194869693820918148367234535939486",
+      "n_bound_pairs": 29,
+      "lever_arm_ln_Amax_over_Amin": "3.044522437723422996500597980365705434284575287404610640194084483575074",
+      "what_it_is": "The ONLY quantity this series constrains. For any kernel F and separation law alpha ~ A^p, -dln(kappa)/dln(A) = s*p with s = -dln F/dln alpha. Kernel and exponent are jointly unidentifiable; fixing either predicts the other."
+    },
+    "two_parameter_power_law_noise_floor": {
+      "exponent": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
+      "kappa_rms": "0.02656353256896967912426513775362961776510193512573902518246827129159277",
+      "why": "Every 1-parameter hypothesis on this series is competing against this. Any hypothesis reaching it has explained nothing beyond the slope."
+    },
+    "degeneracy_scan": [
+      {
+        "c0": "-0.3",
+        "admissible_under_O2": false,
+        "p_predicted_by_this_kernel": "0.4710650889041347246229431128216524522292110592714597147447960028444165",
+        "p_standard_error": "0.01985859083157525764590135354687112463467616046922610299332721051402341",
+        "kernel_log_slope_s": "0.5369835471831971752646589904869391444502718337263062680333986382182063",
+        "product_s_times_p": "0.2529542023939104010469291685555267650679296770201460527423409158205421",
+        "kappa_rms_exponent_FREE": "0.04098036248301780629928408824806832643179599149315334242431706941265392",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.05572430844206958143853631615145613111040111911472070868979045782782686"
+      },
+      {
+        "c0": "-0.2",
+        "admissible_under_O2": false,
+        "p_predicted_by_this_kernel": "0.4055903765111481585034960922854728945416677370577283308205232835156577",
+        "p_standard_error": "0.01396193532638755374058259506414560825726788052729067275844007225352828",
+        "kernel_log_slope_s": "0.6338162509013484288453554518882109162328146760955643539653627555891226",
+        "product_s_times_p": "0.2570697718419622576402110582613446527764208409614053635154158502948033",
+        "kappa_rms_exponent_FREE": "0.03330179394158547970427752424747913638357781333626491743295877652364403",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.0412038207248176816567185328145385607654461194960164543743990928889613"
+      },
+      {
+        "c0": "-0.1",
+        "admissible_under_O2": false,
+        "p_predicted_by_this_kernel": "0.3617732146571270324247448914813398272481435467873079031731496098206953",
+        "p_standard_error": "0.01113304570847721792230270776742399766243082187502424119705627294332496",
+        "kernel_log_slope_s": "0.7154297899421200381031107807299340889768469700415872116013491247544431",
+        "product_s_times_p": "0.2588233349688338949312887914606251420775176014124679205614742867677394",
+        "kappa_rms_exponent_FREE": "0.02982876430253654284717981763696132534083422489257100263382268423862326",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.03103401735473685458414626494440730636013451290428902205439624135968674"
+      },
+      {
+        "c0": "0.0",
+        "admissible_under_O2": false,
+        "p_predicted_by_this_kernel": "0.3290588020823125544457373160038140868596304468928364727073112438557011",
+        "p_standard_error": "0.009510002628456649556090817801788905160907260340708963821256404494601127",
+        "kernel_log_slope_s": "0.7892194757235246296950198701171476932338121860922745140654056980545689",
+        "product_s_times_p": "0.2596996152616137689300657448259867243145460309200130741746593409800252",
+        "kappa_rms_exponent_FREE": "0.02807395996267220380293494152486847971656647863572675597419780490134971",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.02844822353975603220511856158212954701771161859224835952732068537688365"
+      },
+      {
+        "c0": "0.25",
+        "admissible_under_O2": false,
+        "p_predicted_by_this_kernel": "0.2726079000145285108833817719376519807884752565550899421436636725832297",
+        "p_standard_error": "0.007489720205138652713966607741241885815041464812753688723717503798928916",
+        "kernel_log_slope_s": "0.9554253352658995422855078329373623158439345244582710242325169043361326",
+        "product_s_times_p": "0.2604564942675137232150827905510111475470855819721220259721032691300309",
+        "kappa_rms_exponent_FREE": "0.02662049849236888198025757773737378332543568260272418577716625497720375",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.05104828530110255353568253625080735217140464899317604038879531660905089"
+      },
+      {
+        "c0": "0.5",
+        "admissible_under_O2": false,
+        "p_predicted_by_this_kernel": "0.2352204442873378577148415766055275118112215444106319058245530310639595",
+        "p_standard_error": "0.006526014416265555624112683523351705984093557001524351762538583567093949",
+        "kernel_log_slope_s": "1.107449779007099057934932185577950453390669355167554896053787700198624",
+        "product_s_times_p": "0.2604948290439639665861110489321558768012272338659620306896562563850464",
+        "kappa_rms_exponent_FREE": "0.02662741193918789126948531480461958464258489937909425496893517822961284",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.08441801865097374048514149434347974056717967038005377332729129757965445"
+      },
+      {
+        "c0": "1.0",
+        "admissible_under_O2": true,
+        "p_predicted_by_this_kernel": "0.1869745916470726114157992108405998678776593564112764376373706219795123",
+        "p_standard_error": "0.005478047513184442591160950024530681585167836301831599792519053233015657",
+        "kernel_log_slope_s": "1.390948427926429790952136448405547020334492528810474124272188692534553",
+        "product_s_times_p": "0.2600720143136818198565467124081853738943128742716273025289026951220172",
+        "kappa_rms_exponent_FREE": "0.02755252626126305655757938381714551891007756090222671155206679404349317",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.1528861905888490436271653140016207180573141607440365634349865791158145"
+      },
+      {
+        "c0": "1.5",
+        "admissible_under_O2": true,
+        "p_predicted_by_this_kernel": "0.1563275801031832720097021233954283980884519535068761670885735295597026",
+        "p_standard_error": "0.004821563574106059491147717326584527858067328635696911795969249878967817",
+        "kernel_log_slope_s": "1.660338094970135954031402995809849187029252466701164901896340743605646",
+        "product_s_times_p": "0.2595566365398106432460946494370363889635208401273907027313891042627577",
+        "kappa_rms_exponent_FREE": "0.02856563903309919660965620161514068012253029505513759972171951466186392",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.2202603285863080869447447403064413602501470426587075664321324306236044"
+      },
+      {
+        "c0": "2.0",
+        "admissible_under_O2": true,
+        "p_predicted_by_this_kernel": "0.1347869978535792426755207301494745936311088661570945255737196569748044",
+        "p_standard_error": "0.004330727643970162153447642367300598454518679446613861745483258506682164",
+        "kernel_log_slope_s": "1.922212510851291315393260376378905055219315334559551479527925373419845",
+        "product_s_times_p": "0.2590892535742361692478938547184836352685168698261387369670412036610355",
+        "kappa_rms_exponent_FREE": "0.02943774945216479017548749210730313318354265261312903242503917840484225",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.2866188713742373849933830585349241429821459221462722825418653438877023"
+      },
+      {
+        "c0": "3.0",
+        "admissible_under_O2": true,
+        "p_predicted_by_this_kernel": "0.1061478715809976888062739904042077795144212594297500895377823945614493",
+        "p_standard_error": "0.003614664233270778406774896494192281400935542466097442263844694290517285",
+        "kernel_log_slope_s": "2.433777499981293911041572456941061973733635311886162480572193984124958",
+        "product_s_times_p": "0.2583403015247359910401696110260587364759117892235725863000906610565776",
+        "kappa_rms_exponent_FREE": "0.03077348689158971293927907595453687168644561705743933073554288936090288",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.4174229970142262012644087655241337285540472247635729578981966130413484"
+      },
+      {
+        "c0": "4.0",
+        "admissible_under_O2": true,
+        "p_predicted_by_this_kernel": "0.08778616698477310530881119219283955224314868061319503922746981357509719",
+        "p_standard_error": "0.003107179077634861428878130337884396605545538635682796509223413917811841",
+        "kernel_log_slope_s": "2.936516157982625365833675950869925455549649841793847807477589929142928",
+        "product_s_times_p": "0.2577854977981471111669353786172164157231853971076378728536411565584835",
+        "kappa_rms_exponent_FREE": "0.03172606802954008617882402379132905486525595653403154086951475128041359",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.5467530537059650045134788867027983335091791671294663833155423710225395"
+      },
+      {
+        "c0": "7.5",
+        "admissible_under_O2": true,
+        "p_predicted_by_this_kernel": "0.0549741312216768636668046627481566529681301774622651778840129052913269",
+        "p_standard_error": "0.002087819200063317356428780906656201796100380403507744407654158000117523",
+        "kernel_log_slope_s": "4.668542052326544424576116930673028804207049038115076845051593576120245",
+        "product_s_times_p": "0.2566490433985160680303029000154992743290920452290077649708095012023658",
+        "kappa_rms_exponent_FREE": "0.03360507455040174645695154526946610752656033300167234209339334806761953",
+        "kappa_rms_exponent_PINNED_at_one_third": "0.9946795125390927041809968413709353211205675809150472485958777362330575"
+      }
+    ],
+    "product_spread_across_scan": {
+      "relative_spread": "0.01484131145989506474284825589756315919786818270997724205959172471493435",
+      "min": "0.2566490433985160680303029000154992743290920452290077649708095012023658",
+      "max": "0.2604948290439639665861110489321558768012272338659620306896562563850464",
+      "population": "c0 >= 0 (incumbent + admissible family)",
+      "relative_spread_including_c0_negative_bracket": "0.02918019431487420536340627113302504857997388081354991095601939429322111",
+      "why": "s*p is near-constant across a 25-fold range of c0 while p itself moves by a factor of 6. That is the degeneracy, measured."
+    },
+    "round_six_reversal": {
+      "ratio_admissible_over_incumbent_PINNED": "5.374191129199773336223846693452077029318419127774109141033195675356016",
+      "ratio_admissible_over_incumbent_FREE": "0.9814264285443714482993177562988279932597583154113100723201809729449608",
+      "reading": "Pinned at the imported Euclidean p = 1/3 the admissible kernel looks far worse; with its own exponent it does not. Round 6's structural exclusion of the unsubtracted kernel stands; its numerical case against the admissible family does not survive freeing the pin."
+    },
+    "hyperbolic_ball_law_additive": [
+      {
+        "c0": "-0.3",
+        "fitted_slope_geometry_forces_1": "0.7819864142963121966490328481017058250251869102222711257878283726253162",
+        "best_beta": "-0.7083767412739711113829166736665386757698916501980537031824335919132512",
+        "kappa_rms": "0.5567240878321734225779358431136841871065930261695816882666243366056754"
+      },
+      {
+        "c0": "-0.2",
+        "fitted_slope_geometry_forces_1": "0.5878281391876998587778935712052061771758687910054428475670507082943976",
+        "best_beta": "-0.8367059567337944936069111692134760195928164017543950052144871005899605",
+        "kappa_rms": "0.5773157658947104290412656977729065780476254695045813120358720561848782"
+      },
+      {
+        "c0": "-0.1",
+        "fitted_slope_geometry_forces_1": "0.47268652055625669439726960503171724094676308594563753044696756166851",
+        "best_beta": "-0.9252237528111503504284504538069368170595909930546248171159673942105826",
+        "kappa_rms": "1.557598384815750565990157673184152284829485356246394468236595448708515"
+      },
+      {
+        "c0": "0.0",
+        "fitted_slope_geometry_forces_1": "0.3942792850307075184970536618566082858336179037759494401341957718992717",
+        "best_beta": "-0.9926595260351526740529410613628167128307038500492955948297940899441679",
+        "kappa_rms": "4.293844589664751368416222584211871159577389554978220980670072930022709"
+      },
+      {
+        "c0": "0.25",
+        "fitted_slope_geometry_forces_1": "0.2743844989046797797426020092915703071752103403480458534435440254100456",
+        "best_beta": "-1.11141398355105447029972077487368143719958814557596313175328672040309",
+        "kappa_rms": "1.180065647528157637164365094723564895350709514333750448669479125825772"
+      },
+      {
+        "c0": "0.5",
+        "fitted_slope_geometry_forces_1": "0.2060398003487586511815640996900003480549967390380611198824652581417593",
+        "best_beta": "-1.191352663784121567628850716557982032441218918790338932838644397074907",
+        "kappa_rms": "10.34545830745766466181379937958665733466753551841137255030122625053551"
+      },
+      {
+        "c0": "1.0",
+        "fitted_slope_geometry_forces_1": "0.1314639555246509198367470172519221258910591445256878612964766494121394",
+        "best_beta": "-1.295282371876794087622612274840274199039412759959595429050804617312436",
+        "kappa_rms": "7.407018072886290879891190116585024104428343739508073535202828186196669"
+      },
+      {
+        "c0": "1.5",
+        "fitted_slope_geometry_forces_1": "0.09238076704759476755440995332224677483322119504928861300881435419099201",
+        "best_beta": "-1.361285661370056166859242008947456666166855000784916141906062172004116",
+        "kappa_rms": "12.58832609762986051850492278765048979666187870387142043537254773145932"
+      },
+      {
+        "c0": "2.0",
+        "fitted_slope_geometry_forces_1": "0.06889239374735485648442904345869282084899272753845598006752822254434611",
+        "best_beta": "-1.407448607247902867463471972592809845556877045594218030041293151462994",
+        "kappa_rms": "10.88261225050723565060854121987335637840168741369426975029218178446126"
+      },
+      {
+        "c0": "3.0",
+        "fitted_slope_geometry_forces_1": "0.0428741382756920857172324041743411196126713301119504191791406773486542",
+        "best_beta": "-1.468280082325265531163449549469835835955391386635014605946223940004433",
+        "kappa_rms": "24.84526211808360745784338074515312778470964935365581883980673702737416"
+      },
+      {
+        "c0": "4.0",
+        "fitted_slope_geometry_forces_1": "0.0293756525493839369775699248543709755749539691341102497528202244943769",
+        "best_beta": "-1.506819578285692558958154900983169660396175711403099717124251384295463",
+        "kappa_rms": "7.590608176909028526442259750363703072295109279408966960607346052531357"
+      },
+      {
+        "c0": "7.5",
+        "fitted_slope_geometry_forces_1": "0.01154588383473297831197930151484832083606736050588136136262966825136533",
+        "best_beta": "-1.574475903002479702818633174929596407106158031435037864744633664191371",
+        "kappa_rms": "16.84761208017613925341461648345774822735146940797623540275785569363741"
+      }
+    ],
+    "hyperbolic_ball_law_crossing": {
+      "c0_where_forced_slope_equals_1": "-0.3597886091538435120660656217990158950062947415155925024307363775774695",
+      "admissible_floor": "1.0",
+      "reading": "O2 neutrality pushes c0 >= 1; hyperbolic-ball extensivity pulls it negative. The two geometric constraints on the same object point in opposite directions and cannot both hold."
+    },
+    "gcmn_confound_as_additive_bias": [
+      {
+        "delta": "0.0",
+        "s_times_p": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
+        "p_at_c0_1": "0.1872815146454704116841044403479078336699081397226233430314444799666941"
+      },
+      {
+        "delta": "0.01",
+        "s_times_p": "0.2504989283757977062692501263599057942919181947516129119673661834553306",
+        "p_at_c0_1": "0.1800921754872188009458890890722614408288020126708779950052333678021883"
+      },
+      {
+        "delta": "0.02",
+        "s_times_p": "0.2404989283757977062692501263599057942919181947516129119673661834553306",
+        "p_at_c0_1": "0.1729028363289671902076737377966150479876958856191326469790222556376826"
+      },
+      {
+        "delta": "0.05",
+        "s_times_p": "0.2104989283757977062692501263599057942919181947516129119673661834553306",
+        "p_at_c0_1": "0.1513348188542123579930276839696758694643775044638966029003889191441653"
+      },
+      {
+        "delta": "0.1",
+        "s_times_p": "0.1604989283757977062692501263599057942919181947516129119673661834553306",
+        "p_at_c0_1": "0.1153881230629543043019509275914439052588468692051698627693333583216366"
+      }
+    ],
+    "scope": {
+      "b_structural_exclusion_UNTOUCHED": "Round 6's O2 exclusion of the unsubtracted kernel coth(alpha) is a structural argument from int(Laplacian u) = 0 with no data in it. Nothing here bears on it and it stands.",
+      "a_scope_limited_negative_ON_A_TEST": "The kappa(A) mirror series, with the per-pair Coulomb unit frozen at A = 3, cannot rank kernels: it constrains one scalar against at least three unknowns (kernel log-slope, separation exponent, strong-bond drift; qou-u3vw adds flux scaling as a fourth). This is a statement about what the measurement can resolve, not about any hypothesis being true or false.",
+      "a_scope_limited_negative_ON_THE_BALL_LAW": "The additive hyperbolic-ball separation law is refuted on this series at every kernel in the scanned family. The ball model is an ASSUMPTION about the carrier, not a theorem, so what is excluded is the conjunction (O2-admissible kernel) AND (carrier is a metric ball of extensive hyperbolic volume).",
+      "NOT_claimed": "That any kernel is correct. That p = 0.187 is the separation exponent -- it is an OUTPUT of choosing c0 = 1, offered as a prediction target for a derived law, not an identification. That the metric Coulomb route fails: it is untouched, exactly as rounds 3 and 6 left it.",
+      "not_a_fit": "No parameter is tuned to improve agreement with a target. The exponents are regression outputs used to demonstrate a degeneracy, and the conclusion drawn from them is that the observable cannot select -- so no hypothesis is promoted."
+    },
+    "what_would_close_this": {
+      "statement": "Derive any TWO of {kernel log-slope s, separation exponent p, strong-bond drift delta} and the third is predicted by s*p + delta = 0.2604989. Scoring further kernels against kappa(A) cannot help: the observable has one degree of freedom and they compete for it.",
+      "cheapest_leg": "delta (bean qou-gcmn) -- it is a compute question about B_pp at higher A, not a geometry question, and Section F shows it dominates the statistical error."
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-mirror-series.witness.json",
+        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
+        "size_bytes": 10833,
+        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+      }
+    ]
+  }
+}
