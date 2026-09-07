@@ -62,3 +62,49 @@ move *this time*, whereas the cone intersection shows *why* they cannot have.
 `RuntimeError: tr_m_word_lq: Case C (multiple top-1 in segment) not
 implemented`. Pre-existing kernel gap, documented in the second probe's own
 docstring. Not a regeneration problem.
+
+---
+
+## 2026-09-07 — checkpoint re-stamp after the 78-commit merge (recorded as precedent)
+
+The merge changed `compound_shift_nf.py`, which `_ckpt_key()` hashes, so the
+14-atom checkpoint would have been discarded on the next resume. It was
+**re-stamped, not discarded**, and this is the procedure — the second time it
+has been used (the first is recorded in `_ckpt_key`'s own docstring).
+
+**The table must be STOPPED before merging a key file.** `_ckpt_save` calls
+`_ckpt_key()` on *every* save and the key reads the module files from disk, so
+merging under a live run writes a NEW-key checkpoint containing atoms computed
+by the OLD in-memory code — silent mixing, which is the exact thing the key
+exists to prevent. Harmless here (the change was a pure rename) but only
+because I had already read the diff; the guard would have been defeated either
+way.
+
+**Two-part justification, both required:**
+
+1. *Proof.* `hadron_knot_table` imports exactly one symbol from that module,
+   `build_atom_nf_mp`, and comparing the function's source across `HEAD^1` ->
+   `HEAD` shows it byte-identical. `compound_shift` differs only by
+   `categorical_mass` -> `nf_trace_pairing` (field + local variable), same
+   arithmetic.
+2. *Measurement.* 7 cached atoms x 6 NF components recomputed under the merged
+   code, all reproducing **exactly**.
+
+**Getting the measurement right took three attempts, and the two failures are
+the reusable part:**
+
+* First run used `QOU_Q0_ANCHOR=proton` (what a bare `python3 -c` defaults to).
+  `hadron_knot_table` is in the manifest's **`ideal_muon`** list. Values agreed
+  to 9 significant figures then diverged — which is the signature of a
+  different q₀, not of a precision difference, and is what stopped me
+  discarding 14 atoms on my own mistake.
+* Second run used `dps=mp.mp.dps` (70). The table computes at `_MP_DPS = 50`.
+  Values then agreed to ~50 digits and diverged after. **A boolean "identical"
+  check hides both of these; printing the values shows them immediately.**
+
+**Re-stamping the key safely.** `_ckpt_key()` cannot easily be called — importing
+`hadron_knot_table` does heavy work at module scope — so it was replicated, and
+the replication was **validated against the stored key**: computed with the
+PRE-merge `compound_shift_nf.py` it reproduces `2e178522a850…` exactly, which
+proves the replication before it is trusted to produce the new value
+`e52e75db8d50…`. Restarted, the table replays all 14 atoms at 0.00 s.
