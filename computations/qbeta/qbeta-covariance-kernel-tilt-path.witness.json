@@ -1,0 +1,153 @@
+{
+  "computation": "qbeta-covariance-kernel-tilt-path",
+  "assertions": [
+    {
+      "name": "g_is_nonpositive_on_the_whole_path",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "not just at t=1; the conjecture appears to hold for the whole tilt family"
+    },
+    {
+      "name": "derivative_is_nonpositive_on_[0,1]",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "Cov_{Q_t}(log f, Sigma_3) <= 0, which by E_Q[Sigma_3] = int_0^1 Cov_{Q_t} dt SUFFICES for the conjecture. Sufficient, not equivalent, and checked numerically only"
+    },
+    {
+      "name": "g_is_monotone_decreasing",
+      "computed": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "linear_response_overshoots_by_about_half",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "g'(0)/g(1) in [1.339, 1.526]. A first-order expansion in the tilt predicts about -0.245 where the truth is -0.164, so a first-order genus expansion cannot produce the constant"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "epic": "qou-x631",
+    "claim": "g is sublinear; the conjecture follows from Cov_{Q_t}(log f, Sigma_3) <= 0 on [0,1]"
+  },
+  "data": {
+    "g_by_k": {
+      "16": [
+        0.0,
+        -0.052849,
+        -0.097774,
+        -0.137332,
+        -0.173209
+      ],
+      "20": [
+        -0.0,
+        -0.051134,
+        -0.091791,
+        -0.124362,
+        -0.150545
+      ],
+      "24": [
+        0.0,
+        -0.053689,
+        -0.098188,
+        -0.136088,
+        -0.169098
+      ],
+      "28": [
+        -0.0,
+        -0.053082,
+        -0.095744,
+        -0.130548,
+        -0.15927
+      ],
+      "32": [
+        0.0,
+        -0.054643,
+        -0.099727,
+        -0.138021,
+        -0.171376
+      ],
+      "36": [
+        0.0,
+        -0.054138,
+        -0.097545,
+        -0.132769,
+        -0.161539
+      ],
+      "40": [
+        0.0,
+        -0.055328,
+        -0.10084,
+        -0.139479,
+        -0.17327
+      ]
+    },
+    "gprime_by_k": {
+      "16": [
+        -0.23185,
+        -0.19348,
+        -0.167599,
+        -0.149967,
+        -0.137773
+      ],
+      "20": [
+        -0.229702,
+        -0.181685,
+        -0.145138,
+        -0.116544,
+        -0.093752
+      ],
+      "24": [
+        -0.237852,
+        -0.194267,
+        -0.163419,
+        -0.140904,
+        -0.123915
+      ],
+      "28": [
+        -0.237746,
+        -0.189434,
+        -0.153536,
+        -0.126061,
+        -0.10456
+      ],
+      "32": [
+        -0.242699,
+        -0.197211,
+        -0.165267,
+        -0.142298,
+        -0.125366
+      ],
+      "36": [
+        -0.242655,
+        -0.193023,
+        -0.155892,
+        -0.127033,
+        -0.103936
+      ],
+      "40": [
+        -0.24619,
+        -0.199321,
+        -0.166699,
+        -0.143746,
+        -0.12751
+      ]
+    },
+    "t_values": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "provenance": {
+    "headSha": "ffe2e58249acfa00d6a3f436830c7c6e129c804d",
+    "producer": "computations/qbeta/qbeta_covariance_kernel_tilt_path_probe.py",
+    "elapsed_s": 1.04
+  }
+}
