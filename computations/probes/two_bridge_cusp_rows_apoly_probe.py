@@ -511,21 +511,25 @@ def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples=None, seed=1, 
     return pts
 
 
-def fit_apoly(pts, max_dL=4, max_dx=8):
-    """Smallest bidegree (dL, dx) in (L, x = M²) with a one-dimensional nullspace, integer
-    coefficients, verified on all points."""
-    for dL in range(1, max_dL + 1):
+def fit_apoly(pts, max_du=4, max_dx=14):
+    """The developing map returns squared eigenvalues, and a continuation grid can jump sheets
+    across a branch point, so the lift L = ±√ℓ of a grid point is not reliable. Fit instead the
+    lift-free polynomial P(u, x) = c·A(L, M)·A(−L, M) with u = L², x = M² (smallest bidegree
+    with a one-dimensional nullspace, integer coefficients), then factor P(L², x) over ℤ and take
+    the factor vanishing at the complete point (L, M) = (−1, 1); if P is irreducible, A is even
+    or odd in L and P itself is A up to sign. Returns (A(L, M) as a sympy expression in L, M,
+    and P as {(deg_u, deg_x): coeff}) or None."""
+    Lsym, Msym, usym, xsym = sp.symbols("L M u x")
+    for du in range(1, max_du + 1):
         for dx in range(1, max_dx + 1):
-            monos = [(i, j) for i in range(dL + 1) for j in range(dx + 1)]
+            monos = [(i, j) for i in range(du + 1) for j in range(dx + 1)]
             if len(pts) < len(monos) + 8:
                 continue
-            A = mp.matrix([[x ** j * L ** i for (i, j) in monos] for (x, L, *_) in pts])
+            A = mp.matrix([[x ** j * (L ** 2) ** i for (i, j) in monos] for (x, L, *_) in pts])
             U, S, V = mp.svd_c(A)
             svals = [S[k] for k in range(len(monos))]
             if svals[-1] < mp.mpf(10) ** -30 * svals[0] and svals[-2] > mp.mpf(10) ** -20 * svals[0]:
-                vec = [V[len(monos) - 1, k] for k in range(len(monos))]
-                # V is unitary: the null vector is the conjugate of the last row
-                vec = [mp.conj(v) for v in vec]
+                vec = [mp.conj(V[len(monos) - 1, k]) for k in range(len(monos))]
                 piv = max(range(len(vec)), key=lambda k: abs(vec[k]))
                 vec = [v / vec[piv] for v in vec]
                 for den in range(1, 64):
@@ -535,8 +539,19 @@ def fit_apoly(pts, max_dL=4, max_dx=8):
                         for c in ints:
                             g = gcd(g, abs(c))
                         ints = [c // g for c in ints]
-                        poly = {(i, j): c for (i, j), c in zip(monos, ints) if c != 0}
-                        return ("Lx", poly)
+                        P = {(i, j): c for (i, j), c in zip(monos, ints) if c != 0}
+                        Pexpr = sum(c * Lsym ** (2 * i) * Msym ** (2 * j) for (i, j), c in P.items())
+                        facs = sp.factor_list(sp.expand(Pexpr), Lsym, Msym)[1]
+                        cands = [f for (f, m) in facs if sp.degree(f, Lsym) > 0 or sp.degree(f, Msym) > 0]
+                        at_complete = [f for f in cands if f.subs({Lsym: -1, Msym: 1}) == 0]
+                        if len(cands) == 1:
+                            Aexpr = cands[0]
+                        elif len(at_complete) >= 1:
+                            # the two factors are A(L,M) and A(−L,M); take the one that vanishes at (−1, 1)
+                            Aexpr = at_complete[0]
+                        else:
+                            return None
+                        return sp.expand(Aexpr), P
     return None
 
 
@@ -624,12 +639,14 @@ def run_knot(knot, shapes_hint, check, wb):
     check(f"{knot}_apoly_recovered", fit is not None)
     if fit is None:
         return None
-    var, poly = fit
+    Aexpr, P = fit
     Lsym, Msym = sp.symbols("L M")
-    Aexpr = sum(c * Lsym ** i * Msym ** (2 * j) for (i, j), c in poly.items())
-    Aexpr = sp.expand(Aexpr)
+    # {(deg_L, deg_x): coeff} from the recovered A
+    poly = {}
+    for (i, j2), c in sp.Poly(Aexpr, Lsym, Msym).terms():
+        assert j2 % 2 == 0, "odd M-power in the recovered A"
+        poly[(i, j2 // 2)] = int(c)
     print(f"  A(L, M) = {Aexpr}")
-    # exact check at the complete point (holonomies 1): A(±1, ±1)
     vals = {(sL, sM): int(Aexpr.subs({Lsym: sL, Msym: sM})) for sL in (1, -1) for sM in (1, -1)}
     check(f"{knot}_apoly_vanishes_at_complete_point", any(v == 0 for v in vals.values()), f"A(±1,±1) = {vals}")
     # exact frame certificate on the polynomial: A(L, ±1) vanishes only at L = ±1
@@ -649,11 +666,11 @@ def run_knot(knot, shapes_hint, check, wb):
     random.seed(23)
     fresh_pool = [t for t in grid if t not in pts0]
     fresh = [(x0 / L ** (2 * kstar), L, z) for (x0, L, z) in random.sample(fresh_pool, min(30, len(fresh_pool)))]
-    resid = max(abs(sum(c * L ** i * x ** j for (i, j), c in poly.items())) for (x, L, *_) in fresh) if fresh else None
-    scale = max(abs(c) for c in poly.values())
+    resid = max(abs(sum(c * (L ** 2) ** i * x ** j for (i, j), c in P.items())) for (x, L, *_) in fresh) if fresh else None
+    scale = max(abs(c) for c in P.values())
     check(f"{knot}_apoly_verified_on_fresh_samples", resid is not None and resid < mp.mpf(10) ** -28 * scale,
           f"max residual {mp.nstr(resid, 5) if resid is not None else None}")
-    hull, slopes = newton_slopes(poly, var)
+    hull, slopes = newton_slopes(poly, None)
     print(f"  Newton polygon hull (deg_L, deg_M): {hull}; slopes Δdeg_M/Δdeg_L: {sorted(str(s) for s in slopes)}")
     wb.add_data(f"{knot}_lambda_row", list(info["lam_row"]))
     wb.add_data(f"{knot}_mu_row", list(info["mu_row"]))
@@ -667,7 +684,7 @@ def run_knot(knot, shapes_hint, check, wb):
     wb.add_data(f"{knot}_apoly", str(Aexpr))
     wb.add_data(f"{knot}_newton_hull", [list(p) for p in hull])
     wb.add_data(f"{knot}_newton_slopes", sorted(str(s) for s in slopes))
-    return dict(info=info, Aexpr=Aexpr, poly=poly, var=var, slopes=slopes, hull=hull)
+    return dict(info=info, Aexpr=Aexpr, poly=poly, P=P, slopes=slopes, hull=hull)
 
 
 def main() -> int:
