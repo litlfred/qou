@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T06:52:30Z
+updated_at: 2026-09-07T06:59:24Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7786,3 +7786,30 @@ determinant `−δ`, so that map is an iso only when δ is a unit.
 `TL₃(δ) = span {1, e₀, e₁, e₀e₁, e₁e₀}` (5 = catalan 3). 25 product cases, each a
 one-line consequence of `e_sq`/`e_adjacent`/`e_farCommute`; the two reduction
 lemmas above are reused unchanged. Then the general-`n` diagram basis.
+
+
+## 2026-09-07 (cont.) — TL₃ spanned by five (#7001, tranche 3)
+
+`tl3_span_eq_top` — `TL₃(δ) = span_R {1, e₀, e₁, e₀e₁, e₁e₀}`, sorry-free ⟹
+`dim TL₃(δ) ≤ 5 = catalan 3`.
+
+n = 3 is where `e_i e_j e_i = e_i` first has content (n = 2 has no adjacent
+pair). 25 products instead of 4. **The two reduction lemmas were reused
+unchanged** — the payoff of stating them at general index type.
+
+The six non-trivial products (A = e₀, B = e₁):
+`A(BA)=A`, `B(AB)=B`, `(AB)(AB)=AB`, `(BA)(BA)=BA` (adjacency);
+`(AB)(BA)=δA`, `(BA)(AB)=δB` (loop then adjacency).
+
+🛑 **Freeness NOT claimed at n = 3, and the reason is structural**: the corpus's
+`tl3Fam` representation lands in 2×2 matrices — a 4-dimensional target — so it
+*cannot* witness linear independence of five elements however chosen.
+`dim TL₃ = 5` needs a faithful rep of dimension ≥ 5, which does not exist here.
+Recorded in the docstring with the dimension count so the gap is legible.
+
+### Running state of the Wedderburn arc
+- downstream of the decomposition: DONE (`traceRadical_eq_zero_of_algEquiv_pi_matrix`)
+- `dim TL₂ = 2` exact (basis) — DONE
+- `dim TL₃ ≤ 5` — DONE; the matching lower bound is open
+- general `n`: needs the planar diagram basis — OPEN, and it is the real work
+- semisimplicity of `TL_n(δ)`: OPEN, the deep input
