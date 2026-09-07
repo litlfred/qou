@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T15:22:10Z
-updated_at: 2026-08-18T08:22:36Z
+updated_at: 2026-09-07T07:07:24Z
 ---
 
 
@@ -334,3 +334,56 @@ same probe (bean qou-580o).  I did not commit the regenerated witness, because
 doing so would ratify that flip and wire c_3 = -974 into the corpus.  So the
 witness keeps the old key until qou-580o resolves.  Naming fix landed; witness
 regeneration deferred with a named reason.
+
+
+## 2026-09-07 — re-measured; three producers drained; the 54/35 figure does not reproduce
+
+**AGENTS.md records "54 sites across 35 files" (measured 2026-08-15) and tells
+agents to assume the file they are editing still carries it. That figure does
+not reproduce today.** Re-measured on `main` with a coefficient-vs-function
+regex covering both spellings and their `·`/`*`/space/LaTeX variants, over the
+whole tree less `library/` and `.git/`:
+
+    live bad-name sites in CODE          3 files, 7 sites   (all fixed here)
+    guards / historical records          ~12 files          (correct; do NOT touch)
+    correct 2·Cl₂(π/3) / clsin(2,·)      ~90 files          (correct)
+
+So the drain has largely run. What was left:
+
+1. **`qbeta_c3_barodd_nz_deformation_probe.py`** — the sharp one, because it
+   reached the WITNESS as a false identity: `"source": "Bloch-Wigner
+   D(e^{iπ/3})=Λ(π/3)"`. `D(e^{iπ/3})` is `Cl₂(π/3)`, not `Λ(π/3)` — wrong by
+   a factor of 3 in a field a later reader would cite. Underneath it,
+   `lam_pi3 = mp.im(mp.polylog(2, z0))` computes `Cl₂(π/3)`: **name wrong,
+   arithmetic right**, exactly as AGENTS.md predicts. The file wrote
+   `2·Cl₂(π/3)` correctly at `:18`, `:96` and `:116` — it disagreed with itself.
+2. **`qbeta_c3_barodd_tetraplectic_reduction_probe.py:250`** — same string in a
+   `wb.add_data` payload; its own `:29` was correct.
+3. **`mu_substrate_tension_audit_100dps.py`** — carried the wrong header at
+   `:13`/`:29` while its own docstring at `:92` said that form is INCORRECT,
+   and its witness said so twice more. **Three places in one file knew.**
+
+**A class worth naming, from item 3:** a defect the corpus has ALREADY
+DIAGNOSED, in the same file, is not thereby fixed — and the diagnosis makes it
+*invisible* to a reviewer who greps, finds the guard text, and reads the file
+as clean. Its docstring also named `m_p_borromean_verification_50dps.py` as an
+offender; that file was fixed earlier and reads `2*Cl_2(pi/3)` at `:214`, so
+the cross-reference sent readers to a clean file.
+
+**All three producers re-run clean and NO NUMBER MOVED** — witness diffs are
+names plus `durationMs`/`scriptHash`/`environment`. That is the confirmation
+the arithmetic was right all along, not an absence of testing.
+`precision-gates.sh --changed` exits 0 (every blocking gate green); its five
+tree-measuring audit witnesses were reverted INDIVIDUALLY.
+
+**A near-miss worth recording, because it is this bean's own trap one level
+up.** My first pass grepped the fixed string `2Λ(π/3)` — no middle dot — got
+**2 hits, both documentation**, and nearly concluded the surface was clear.
+The live site is spelled `2·Λ(π/3)`. A guard against a spelling confusion,
+measured with a search that assumes one spelling.
+
+**Still open:** two Lean sites reading `3 · Cl₂(π/3)` (`KnotTheory.lean:193`,
+`KnotRegistry.lean:113`, the latter citing OEIS A091518) are UNTRIAGED here —
+`3·Cl₂(π/3) = 3.0448` is a legitimate volume for a 3-tetrahedron manifold, so
+whether these are defects depends on WHICH knot they annotate. Do not
+"fix" them without checking the manifold.
