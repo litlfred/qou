@@ -599,15 +599,6 @@ theorem eq_one_of_all_asc {w : Perm (Fin (n + 1))}
 
 open QOU.Hecke.SymmetricCoxeter QOU.Machinery.CoxeterBruhat QOU.IwahoriHecke.BruhatReflection
 
-/-- Type-`A` form of `bruhatLe_mul_simple_of_isRightDescent`, hypotheses discharged. -/
-theorem bruhatLe_mul_simple_of_isRightDescent_An {N : ℕ} {W : Type*} [Group W]
-    (cs : CoxeterSystem (CoxeterMatrix.Aₙ N) W) {u w : W} (h : BruhatLe cs u w)
-    {s : Fin N} (hs : cs.IsRightDescent w s) : BruhatLe cs (u * cs.simple s) w :=
-  bruhatLe_mul_simple_of_isRightDescent cs
-    (QOU.Machinery.CoxeterDihedralDescent.dihedralExact_le_three cs (QOU.IwahoriHecke.Matsumoto.An_le_three N))
-    (fun i j hij => QOU.IwahoriHecke.Matsumoto.An_ne_zero N i j hij) h hs
-
-
 
 theorem bruhatLe_of_rk_le_aux : ∀ (N : ℕ) (w u : Perm (Fin (n + 1))),
     (permCoxeterSystem n).length w ≤ N →
@@ -667,7 +658,7 @@ theorem bruhatLe_of_rk_le_aux : ∀ (N : ℕ) (w u : Perm (Fin (n + 1))),
             rw [hsw]; exact fun i m => rk_mul_swap_mono_desc u w j (Fin.lt_def.mp hu) h i m
           have hus := ih (w * s) (u * s) hlenw' hrk
           have hle := QOU.IwahoriHecke.BruhatSubword.bruhatLe_trans_An (permCoxeterSystem n) hus hw'w
-          have hfin := bruhatLe_mul_simple_of_isRightDescent_An (permCoxeterSystem n) hle hdesc
+          have hfin := bruhatLe_mul_simple_of_isRightDescent (permCoxeterSystem n) hle hdesc
           rwa [hs, mul_assoc, CoxeterSystem.simple_mul_simple_self, mul_one] at hfin
         · push_neg at hu
           have huasc : u j.castSucc < u j.succ :=
