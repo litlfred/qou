@@ -240,3 +240,34 @@ order-2 `5/6`. The reason is structural and worth keeping: `N(1) = 0`
 annihilates the `D'` term in the quotient rule, so the order-1 coefficient
 cannot see the denominator change at all. First difference is order 3
 (−23/9 canonical against −41/9 grouped).
+
+### Correction: I called the migration "done" before the compiler agreed
+
+I reported the Lean migration as "done, not deferred". That was premature. A
+syntax error I had introduced (a `ring` inserted *inside* `field_simp [hq_ne]`,
+splitting it) stopped the compile early, and the two errors I saw were not the
+whole list. With the syntax repaired the file reports **16** errors.
+
+The mathematics is not in question — every definition was verified by parsing it
+back out of the `.lean` source into sympy — but "verified in sympy" is not
+"compiles in Lean", and I presented the second on the strength of the first.
+
+**And the baseline matters more than the count.** Compiled at HEAD, before any
+of my edits, this file reports **17 errors**. It did not compile before either.
+`qou-lsib` already records that ~69 content-block Lean siblings do not build and
+that nothing builds them; this is one of them. So the migration did not break a
+working file — but neither can I claim it as verified, and the honest statement
+is 17 → 16 with the error *kinds* still to be compared.
+
+One real bug found and worth carrying: the file's own working idiom puts the
+`funext` branch **first** in the `first` alternation —
+
+    convert hsum using 1 <;>
+      first
+        | (funext q; simp only [Pi.add_apply, ...]; ring)
+        | norm_num
+
+I generated `norm_num` first. `norm_num` then takes the branch on the
+function-equality goal, makes partial progress, and leaves it unsolved. Copying
+the file's existing pattern exactly, rather than approximating it, would have
+avoided that.
