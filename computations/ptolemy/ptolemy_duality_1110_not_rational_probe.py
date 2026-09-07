@@ -1,4 +1,19 @@
-"""Duality takes the {1,1,1,0} Ptolemy coordinates OUT of the coordinate ring.
+"""c*_{1110} is not reachable at BIDEGREE (2,2) -- but it IS rational.  See the correction.
+
+🛑 CORRECTED, SAME DAY, BY DERIVATION.  This file's original title read "Duality takes
+the {1,1,1,0} Ptolemy coordinates OUT of the coordinate ring".  That is TOO STRONG and
+is retracted.  ptolemy_duality_1110_plucker_identity.py DERIVES
+
+    c*_1110 * c_0111 = det [[c_2100, c_2010, c_2001],
+                            [0,      c_0210, c_0201],
+                            [c_0120, 0,      c_0021]]
+
+confirmed 300/300.  So c*_1110 IS a rational function of the Ptolemy coordinates -- at
+BIDEGREE (1,3).  The negative below is correct exactly as scoped: no (2,2) form exists,
+and a (2,2) search cannot contain a (1,3) relation.  The failure was the SHAPE OF THE
+SEARCH SPACE, not the mathematics.  That is the lesson worth keeping: an exhaustive
+search at one bidegree says nothing about another, and reporting it as "not in the
+coordinate ring" over-reads it.
 
 WHERE THIS SITS (bean qou-qjhc).  ptolemy_duality_index_map_probe.py measured that
 duality acts on Ptolemy indices as the entrywise involution 0->0, 1->2, 2->1, 3->3, and
