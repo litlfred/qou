@@ -64,9 +64,17 @@ import time
 from fractions import Fraction
 from pathlib import Path
 
+import mpmath as _mpm  # NOT `mp`: this module already binds `mp` to a partition
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 from _mn_characters import partitions, chi, hook_dim   # noqa: E402
 
 
@@ -127,6 +135,8 @@ def main() -> int:
     print("2. THE CONJECTURE AS A CORRELATION COEFFICIENT")
     print("=" * 78)
     rho = {}
+    rho_mp: dict[int, object] = {}
+    exact_eq: dict[int, str] = {}
     for k in range(10, 43, 2):
         nf = 1
         for i in range(2, k + 1):
@@ -141,6 +151,16 @@ def main() -> int:
             cov += f3 * (c2 - b)
         r = float(Fraction(3 * cov, M)) / math.sqrt(3 * falling(k, 3))  # float64-ok: numerator is an exact Fraction, denominator an exact integer under one sqrt; the assertion tests rho against bounds with 0.03 of slack, far outside double precision
         rho[k] = r
+        # THE RECORD, separately from the test. The float above is untouched
+        # and its justification stands -- it decides an assertion with 0.03 of
+        # slack. But the witness is not a test: a probe's numbers are read
+        # later by things that never re-derive them, so the serialized rho is
+        # carried in mpf from the exact Fraction over the exact integer, and
+        # E_Q[Sigma_3] = 3cov/M is recorded EXACTLY as num/den. Same treatment
+        # as the sibling `qbeta_covariance_kernel_scale_probe`.
+        exact_eq[k] = f"{3 * cov}/{M}"
+        rho_mp[k] = (_mpm.mpf(3 * cov) / _mpm.mpf(M)
+                     / _mpm.sqrt(_mpm.mpf(3 * falling(k, 3))))
         print(f"    k={k:>3}  rho = {r:>+9.5f}")
 
     lo, hi = min(rho.values()), max(rho.values())
@@ -162,7 +182,10 @@ def main() -> int:
         "parameters": {"epic": "qou-x631",
                        "claim": "Var_P(Sigma_3) = 3(k)_3 exactly; the conjecture is "
                                 "rho(k) <= 0 with rho ~ -0.164"},
-        "data": {"rho_by_k": {str(k): round(v, 6) for k, v in rho.items()}},
+        "data": {
+            "rho_by_k": {str(k): fmt(rho_mp[k]) for k in sorted(rho_mp)},
+            "eq_sigma3_exact": exact_eq,
+        },
         "provenance": {"headSha": head,
                        "producer": "computations/qbeta/qbeta_covariance_kernel_exact_variance_probe.py",
                        "elapsed_s": round(time.monotonic() - t0, 3)},
