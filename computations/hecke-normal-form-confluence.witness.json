@@ -1,0 +1,271 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-07T18:26:41.038440+00:00",
+  "commitSha": "7a5971336490010fe25602926ca0ed2b2de20e79",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 1816,
+  "computation": "hecke-normal-form-confluence",
+  "scriptFile": "hecke_normal_form_confluence_probe.py",
+  "scriptHash": "0bf6b572da00",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke_normal_form_confluence_probe.py"
+    ],
+    "reproduce": "python3 -u computations/hecke_normal_form_confluence_probe.py"
+  },
+  "description": "def:hecke-normal-form asserts a confluence that UGB.GrobnerShirshov.HeckeGS.NotAGSBasis.hecke_not_gs_basis_four refutes sorry-free at n=4. This probe re-derives that refutation by executing the rewriting, finds two further defects in the block's printed rules, measures how rarely order-dependence bites (0 at n=3), and shows the Bokut-Shiao completion dissolves the obstruction. The completion result is SCOPE-(a) evidence at n<=5, length<=5 — NOT a Groebner-Shirshov basis theorem. Exact Laurent polynomials over Z; no floating point, q never evaluated.",
+  "bean": "qou-43co",
+  "refuted_claim": "This reduction is confluent, making the normal form independent of rule order.",
+  "lean_refutation": "UGB.GrobnerShirshov.HeckeGS.NotAGSBasis.hecke_not_gs_basis_four",
+  "checks": {
+    "defect_1_confluence_false": {
+      "overlap_word": [
+        3,
+        2,
+        3,
+        1
+      ],
+      "one_step_results": [
+        [
+          2,
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          3
+        ]
+      ],
+      "w1_irreducible": true,
+      "w2_irreducible": true,
+      "pass": true
+    },
+    "defect_2_rule2_nonterminating": {
+      "rows": [
+        {
+          "n": 4,
+          "terminates": false,
+          "steps": 4001
+        },
+        {
+          "n": 5,
+          "terminates": false,
+          "steps": 4001
+        }
+      ],
+      "pass": true
+    },
+    "defect_3_rule3_direction": {
+      "shortlex_smaller": [
+        2,
+        3,
+        2
+      ],
+      "decreasing_rewrites": "s_{i+1}s_i s_{i+1} -> s_i s_{i+1} s_i",
+      "block_prints": "s_i s_{i+1} s_i -> s_{i+1} s_i s_{i+1}",
+      "block_direction_is_increasing": true,
+      "pass": true
+    },
+    "order_dependence_lean_system": {
+      "rows": [
+        {
+          "n": 3,
+          "length": 3,
+          "words": 8,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 3,
+          "length": 4,
+          "words": 16,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 3,
+          "length": 5,
+          "words": 32,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 4,
+          "length": 3,
+          "words": 27,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 4,
+          "length": 4,
+          "words": 81,
+          "order_dependent": 1,
+          "non_terminating": 0
+        },
+        {
+          "n": 4,
+          "length": 5,
+          "words": 243,
+          "order_dependent": 9,
+          "non_terminating": 0
+        },
+        {
+          "n": 5,
+          "length": 3,
+          "words": 64,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 5,
+          "length": 4,
+          "words": 256,
+          "order_dependent": 2,
+          "non_terminating": 0
+        },
+        {
+          "n": 5,
+          "length": 5,
+          "words": 1024,
+          "order_dependent": 25,
+          "non_terminating": 0
+        }
+      ],
+      "words": 1751,
+      "order_dependent": 37,
+      "non_terminating": 0
+    },
+    "order_dependence_h3_deep": {
+      "rows": [
+        {
+          "n": 3,
+          "length": 3,
+          "words": 8,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 3,
+          "length": 4,
+          "words": 16,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 3,
+          "length": 5,
+          "words": 32,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 3,
+          "length": 6,
+          "words": 64,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 3,
+          "length": 7,
+          "words": 128,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 3,
+          "length": 8,
+          "words": 256,
+          "order_dependent": 0,
+          "non_terminating": 0
+        }
+      ],
+      "words": 504,
+      "order_dependent": 0,
+      "non_terminating": 0
+    },
+    "order_dependence_completed_system": {
+      "rows": [
+        {
+          "n": 3,
+          "length": 4,
+          "words": 16,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 3,
+          "length": 5,
+          "words": 32,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 4,
+          "length": 4,
+          "words": 81,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 4,
+          "length": 5,
+          "words": 243,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 5,
+          "length": 4,
+          "words": 256,
+          "order_dependent": 0,
+          "non_terminating": 0
+        },
+        {
+          "n": 5,
+          "length": 5,
+          "words": 1024,
+          "order_dependent": 0,
+          "non_terminating": 0
+        }
+      ],
+      "words": 1652,
+      "order_dependent": 0,
+      "non_terminating": 0
+    },
+    "completion_repair": {
+      "w1_redexes": 0,
+      "w2_redexes": 1,
+      "obstruction_dissolved": true
+    }
+  },
+  "scope": {
+    "completion_result": "(a) scope-limited positive — no order-dependence observed at n<=5, length<=5",
+    "not_claimed": "that the completed system is a Grobner-Shirshov basis for H_n(q)",
+    "primary_not_held": "qou-qspu (Kang-Lee-Lee-Oh 2002)"
+  },
+  "all_pass": true
+}

@@ -10447,6 +10447,29 @@ export const references: Reference[] = [
     note: "arXiv:1502.06472v1 [math.RA], 13 pp., survey. YEAR CAVEAT: the arXiv banner rendered on p. 1 reads '8 Nov 2014' but the 1502.* identifier is a February 2015 posting; recorded as 2015 with the printed banner date noted here. No DOI or journal line on the preprint; no published version sought. Read 2026-08-09 for §3.7 (p. 6), verified in the PDF: Shirshov 1953 and Cartier 1958 give counterexamples to PBW for Lie algebras over a commutative algebra, and Cohn's 1963 family L_p = Lie_K(x₁,x₂,x₃ | y₃x₃ = y₂x₂ + y₁x₁) over K = k[y₁,y₂,y₃ | yᵢᵖ = 0] is proved not to embed in its universal enveloping algebra for p = 2, 3, 5 (Bokut–Chen–Chen, J. Algebra 337 (2011) 82-102). That paragraph is why cor:pbw / cor:ugb-pbw cannot drop the 'free as an R-module' hypothesis their proofs use (bean qou-pwd4). §3.7 REPORTS those counterexamples and proves none of them — the primaries have not been read and are not in this file, so cite this entry as the collecting source, not as the proof.",
   }),
 
+  // ── Kang, Lee, Lee & Oh — the q-deformed type-A GS basis ──────
+  // Added 2026-09-07. NOT HELD and NOT READ (bean qou-qspu). Bibliographic
+  // data reconciled from two independent bibliographies read this session,
+  // which agree exactly: library/fd58d8e18…pdf ref [9] and
+  // library/arxiv-1808.05026v1/1808.05026v1.pdf ref [8]. Neither prints a
+  // DOI and no lookup was performed; do not synthesise one.
+  ref({
+    id: "kang2002",
+    type: "article-journal",
+    title: "Hecke algebras, Specht modules and Gröbner-Shirshov bases",
+    author: [
+      { family: "Kang", given: "Seok-Jin" },
+      { family: "Lee", given: "In-Sok" },
+      { family: "Lee", given: "Kyu-Hwan" },
+      { family: "Oh", given: "Hyekyung" },
+    ],
+    "container-title": "Journal of Algebra",
+    volume: "252",
+    page: "258-292",
+    issued: { "date-parts": [[2002]] },
+    note: "NOT READ — metadata only, reconciled from two agreeing bibliographies (see comment above); the paper itself is not held (bean qou-qspu). This is the PRIMARY for the q-deformed type-A Gröbner–Shirshov statement that this folio has repeatedly attributed to [bokut2001], which is a Coxeter-GROUP theorem at q = 1 and does not by itself license it — see that entry's note. Two documents in the 2026-08-09 batch say in the same words that 'the cases for Hecke algebras and Temperley-Lieb algebras of type A were calculated in' this paper, and both quote its Prop. 6.2 verbatim for the Temperley–Lieb half: the standard monomials E_{i₁,j₁}⋯E_{i_p,j_p} with i₁<⋯<i_p, j₁<⋯<j_p, j_r ≤ i_r, numbering C_n. That statement is transcribed here at second hand via [kimlee2018] Prop. 3.1; its rewriting rules have been VERIFIED against this folio's planar-diagram ground truth (computations/tl_gs_reduction_probe.py — 3456 products, 19,413 monomial pairs, confluence under 9 orders, all clean) but the paper's PROOF has not been read. Cite it as the source of the theorem, never as something this folio has checked in full.",
+  }),
+
   // ── Kim & Lee — GS bases for Temperley-Lieb algebras ──────────
   // Added 2026-08-09 from relevance triage (verdict: supporting);
   // library/fd58d8e182edda805fed0946606c5ab82f81/fd58d8e182edda805fed0946606c5ab82f81.pdf.

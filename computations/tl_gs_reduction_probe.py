@@ -101,11 +101,13 @@ from __future__ import annotations
 import json
 import random
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import tl_closure_rule_probe as tlc  # noqa: E402
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 WITNESS = Path(__file__).with_name("tl-gs-reduction.witness.json")
 
@@ -269,6 +271,7 @@ def check_paper_examples() -> dict:
 
 
 def main() -> int:
+    _t0 = time.time()
     prod = check_products()
     clos = check_closure()
     conf = check_confluence()
@@ -292,8 +295,6 @@ def main() -> int:
     all_pass = prod["pass"] and clos["pass"] and conf["pass"] and ex["pass"]
 
     witness = {
-        "$schema": "witness/v1",
-        "name": "tl-gs-reduction",
         "description": (
             "The Temperley-Lieb Gröbner-Shirshov reduction of Kim-Lee Prop. 3.1 "
             "(quoting Kang-Lee-Lee-Oh 2002 Prop. 6.2), checked against this folio's "
@@ -322,7 +323,10 @@ def main() -> int:
         },
         "all_pass": all_pass,
     }
-    WITNESS.write_text(json.dumps(witness, indent=1, ensure_ascii=False) + "\n")
+    WitnessBuilder.wrap_legacy(
+        "tl-gs-reduction", witness, script_path=__file__,
+        output_dir=WITNESS.parent, start_time=_t0,
+    ).save()
     print(f"\nWROTE {WITNESS.name} — all_pass={all_pass}")
     return 0 if all_pass else 1
 
