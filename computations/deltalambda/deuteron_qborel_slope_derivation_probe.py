@@ -125,6 +125,23 @@ def degrees(nmax: int) -> list:
     return D
 
 
+def weight_moments(nmax: int) -> list:
+    """Exact integer moments (count, sum w, sum w^2) of the path weight, same operator."""
+    states = {((1,), 0): (1, 0, 0)}
+    M = [None, (1, 0, 0)]
+    for k in range(1, nmax):
+        nxt: dict = {}
+        for (lam, r), (c, s1, s2) in states.items():
+            for (i, j) in LEVER1.corners(lam):
+                d = (j - i) + (2 * k if i > r else 0)
+                key = (LEVER1.add_cell(lam, i), i)
+                a, b, e = nxt.get(key, (0, 0, 0))
+                nxt[key] = (a + c, b + s1 + d * c, e + s2 + 2 * d * s1 + d * d * c)
+        states = nxt
+        M.append(tuple(sum(t[z] for t in states.values()) for z in range(3)))
+    return M
+
+
 def d2(f, n):
     return f[n + 1] - 2 * f[n] + f[n - 1]
 
@@ -269,6 +286,29 @@ def main() -> int:
         f"70-dps number -- but it is NOT cheap: the state space is p(n)*n, so n=90 is infeasible.",
     ))
 
+    # -- D9 THE MEAN WEIGHT IS EXACTLY C(n,2) -- which is what the level-1 kernel is.
+    #    This is the structural reason R2 found level 1 short by exactly a factor two:
+    #    the level-1 exponent is the MEAN of the weight, the Borel divisor is its MAX,
+    #    and max/mean -> n^2 / (n^2/2) = 2.
+    Mom = weight_moments(NMAX)
+    from fractions import Fraction as _F
+    mean_exceptions = []
+    for n in range(1, NMAX + 1):
+        c, s1, _ = Mom[n]
+        if _F(s1, c) != _F(n * (n - 1), 2):
+            mean_exceptions.append(n)
+    checks.append((
+        "D9_mean_weight_is_exactly_choose_two",
+        not mean_exceptions,
+        f"<w>_n = C(n,2) = n(n-1)/2 EXACTLY (rational arithmetic) for every n=1..{NMAX}, zero "
+        f"exceptions -- e.g. n={NMAX} gives <w>={_F(Mom[NMAX][1], Mom[NMAX][0])}=C({NMAX},2). "
+        f"So the level-1 q-Borel exponent C(n,2) "
+        f"IS the mean path weight, while the Borel divisor deg_n is the max. Their ratio tends to "
+        f"n^2/(n^2/2) = 2, which is exactly why R2 measured the level-1 kernel as supplying half "
+        f"and why the required divisor is that kernel SQUARED. The 'level-1 kernel' and 'centre on "
+        f"the mean weight' are the same operation.",
+    ))
+
     # -- D6 honesty gate: the sub-leading coefficient stays an empirical fit
     checks.append((
         "D6_subleading_coefficient_is_still_a_fit_scope_gate",
@@ -279,7 +319,11 @@ def main() -> int:
         f"a*n - b*n^1.5 with b>0 goes negative at finite n. So the n^1.5 model describes the "
         f"range measured, not the limit. What IS derived: the leading slope (D1-D3) and the "
         f"deficit coefficient 2sqrt2/3 (D7). No resummation is performed, B_D is not reached, "
-        f"nothing is wired.",
+        f"nothing is wired. Also measured and NOT confirmed: the extensivity hypothesis "
+        f"REV ~ n*f(q0) -- Delta REV drifts 0.82 -> 0.61 over n=12..30 rather than settling. And "
+        f"the 2nd-order cumulant expansion about q=1 tracks REV at small n (5.374 vs 5.371 at n=8) "
+        f"but diverges by n=27 (20.63 vs 19.19), so the weight distribution is not Gaussian enough "
+        f"for that route either.",
     ))
 
     print()
