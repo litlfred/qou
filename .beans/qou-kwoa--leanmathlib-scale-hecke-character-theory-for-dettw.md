@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-07T19:28:23Z
+updated_at: 2026-09-07T19:32:23Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1177,3 +1177,36 @@ product ❌.
 That is **three of the five** classical steps to the Geck–Pfeiffer Schur
 element. `SchurElementCriterion` still has no instance, and the Wenzl
 identification is verified only for `n ≤ 3`.
+
+
+### 2026-09-07 — `s_λ` as a character sum: **four of five** (`34a34a9200`)
+
+```
+sum_char_Tw_mul_TwDual            Σ_w χ_λ(T_w T^∨_w) = d_λ² / c_λ
+abstractSchurElement_eq_char_sum  s_λ = (Σ_w χ_λ(T_w T^∨_w)) / d_λ²
+```
+
+Taking the trace of `casimir_apply_block` on the λ-block turns the block
+*scalar* into a *sum over the Coxeter group*. Unlike the first three steps this
+one costs nothing beyond the trace of a scalar matrix — all the work was in
+getting the block value.
+
+**Two forms on purpose.** `sum_char_Tw_mul_TwDual` divides by nothing and holds
+in **any characteristic**; the `s_λ` form divides by `d_λ²` and takes
+`(d_λ : K) ≠ 0` as an **explicit hypothesis** rather than assuming `CharZero`.
+Nothing else in this development needs `CharZero` and I did not want to
+introduce it for one lemma.
+
+**Arc: four of five.**
+
+| step | |
+|---|---|
+| dual basis | ✅ |
+| Casimir central | ✅ |
+| Casimir acts on λ-block by a scalar | ✅ |
+| `s_λ` as a character sum | ✅ |
+| (Wenzl) the hook-length product | ❌ |
+
+The fifth is Wenzl's theorem; the probe pins it only for `n ≤ 3`.
+`SchurElementCriterion` still has no instance, and the criterion's *own*
+direction (all `s_λ ≠ 0` ⟹ semisimple) is Tits deformation, separate again.
