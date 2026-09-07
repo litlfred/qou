@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:47:33.680755+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "computedAt": "2026-09-07T13:03:39.661392+00:00",
+  "commitSha": "3710832811f74423affdeeb456aa59c2d0d4d6f7",
   "assertions": [
     {
-      "name": "per_knot_density_equiv_per_knot_density",
-      "computed": 0,
+      "name": "su2_density_gap_eq_lw_over_trM",
+      "computed": 1,
       "expected": 1,
-      "passed": false,
-      "source": "per_knot_density_equiv_per_knot_density: |Δ| = 1139.0 < 1.0e-40"
+      "passed": true,
+      "source": "su2_density_gap_eq_lw_over_trM: |Δ| = 1.811e-70 < 1.0e-40"
     },
     {
       "name": "h_eq_2sinh_log_q",
@@ -61,12 +61,12 @@
       "source": "per_knot_density_vd(density=tr_M) ≡ per_knot_density_per_block: |Δ| = 2.782e-68 < 1.0e-40"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 3,
   "computation": "mass-per-knot-density",
   "scriptFile": "mass_per_knot_density.py",
-  "scriptHash": "41f87573a7eb",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "9c5a0de79da6",
+  "scriptCommitSha": "3cd2ee40a8871cba73a58859d35df7696e51720c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -95,6 +95,22 @@
   },
   "data": {
     "bracket_2_q_at_q0": "2.010896866707122",
+    "su2_density_gap": {
+      "global_over_per_block": "2.51584686608501180290267402238",
+      "closed_form_lw_over_trM": "2.51584686608501180290267402238",
+      "identity_residual": "1.81114e-70",
+      "normalisation_used": "jones (q + 2 + q^-1 = 1/z_C^2) — CONVENTION C, deliberately the non-canonical column",
+      "docstring_claims_approx": "2.38",
+      "docstring_value_explained": "lw / 1.065 = 2.37819686; 1.065 is qou-soj6 tr_M claimant #4, UNEXPLAINED",
+      "trM_candidates_at_q0": {
+        "jones_q_plus_2_plus_qinv": "1.0067304534877074355",
+        "wenzl_bracket2_squared": "0.99856216383678726595",
+        "inv_zD_squared": "1.5157706817416908262",
+        "lean_trM_borromean_closed_form": "0.99992765814784169892",
+        "docstring_quoted": "1.065"
+      },
+      "note": "FOUR computed candidates for tr_M(B3) and no two agree; the docstring's 1.065 matches none of them. The identity above holds under any of them (same function both sides), but its reading as the SU(2) density gap is convention-C. The Lean closed form is 0.137%% from its closest numerical sibling (wenzl), which is itself unexplained. UNRESOLVED, qou-afjl."
+    },
     "su2_density_loss": {
       "density_global_H4_scalar": "1.006730453487707",
       "density_per_block_H3_trM_proton": "0.6293284022029219",

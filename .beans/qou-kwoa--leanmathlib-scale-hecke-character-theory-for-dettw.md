@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-04T20:53:08Z
+updated_at: 2026-09-05T20:24:35Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -724,3 +724,284 @@ head constant Equiv.Perm. Cost a build cycle; not obvious from the error text.
 3. 0 < d_lambda — small; discharges twGram_det_ne_zero_of_blocks's hypothesis.
 4. Small characteristic — unreachable by this route.
 5. The square root Q = q^2 — low priority, never bites.
+
+
+### 2026-09-05 — increment 2: `τ` exists, and my own blocker claim was wrong
+
+**Commit `e0f192c5e6`** on `claude/p-neq-np-gaps-n8dxxl`, PR #6758.
+`QOU/MathlibExt/InvMonomialDet.lean` + `QOU/Hecke/TauSymmetrizing.lean`, 11
+declarations, all `[propext, Classical.choice, Quot.sound]`, `lean`-direct
+exit 0 with no warnings.
+
+**CORRECTION of the previous increment's docstring (mine, one day old).**
+#6758 recorded that Mathlib has no symmetric-algebra theory — measured, and
+still true — and inferred from that that constructing the canonical
+symmetrizing trace `τ` would require building that theory first. **The
+inference does not follow.** `τ` is the `T_1`-coordinate in the `T_w` basis,
+and `basisTwOfField` already supplies the basis:
+
+    tau := (basisTwOfField K q n).coord 1
+
+`τ(T_w) = δ_{w,1}` then falls out of `Module.Basis.repr_self`. So the first of
+the two "open facts" named in #6758 is **closed**. Absence of a library is
+evidence about the library, not about the construction — the same shape as the
+`det_blockDiagonal'` retraction earlier in this arc.
+
+**What is genuinely open, narrower and newly legible.** The structure-constant
+identity
+
+    τ(T_v · T_w) = δ_{w, v⁻¹} · q^{ℓ(v)}
+
+— this is what makes the Gram monomial, and it is the whole remaining content.
+`QOU.Hecke.TwBasis.σ_mul_Tw` is the **full** structure-constant table (up and
+down cases in one identity), so the induction is available in principle. It
+does **not** close on `ℓ(v)` alone: `τ(σ_i · z) = q · [T_{s_i}-coefficient of
+z]`, a different coordinate. Geck–Pfeiffer 8.1.1 inducts on `ℓ(v) + ℓ(w)`
+instead, using a common descent `s` to write
+`T_v T_w = (q−1)·T_{vs}T_w + q·T_{vs}T_{sw}` — both terms of smaller total
+length, so the recursion closes on `τ` alone. Still missing: the descent
+decomposition in this corpus's handedness (`T_v T_w = T_{wv}`, **not**
+`T_{vw}` — `TwMul` docstring says this is the representation's handedness, not
+a typo), and the exchange fact supplying a common descent.
+
+**Proved outright:** `tau_Tw_mul_Tw_of_length_add` — the identity on its
+length-additive locus. Worth noting *why that is weak evidence*: on that locus
+`w = v⁻¹` forces `ℓ(w)+ℓ(v) = ℓ(1) = 0`, so `q^{ℓ(v)} = q^0 = 1` and the locus
+never exercises the `q`-powers at all. It is a consistency check, not a
+partial proof.
+
+**Proved conditionally:** `tauGram_det_of_structure_constants` and
+`tauGram_det_ne_zero_of_structure_constants` take the identity as an explicit
+**hypothesis** — never an axiom, never a `sorry`. Discharging it later makes
+both unconditional with no change to either proof.
+
+**Scope of the non-vanishing, stated so it is not over-read.** `det(τ-Gram) ≠ 0`
+for all `q ≠ 0` is **not** semisimplicity — that is false at roots of unity. It
+says `H_n(q)` is a *symmetric Frobenius* algebra, true for every `q ≠ 0`.
+Combined with #6758's `weightedGram_det_ne_zero_iff` at weights `1/s_λ` it
+would give **one** direction of the criterion: some `s_λ = 0` ⟹ not split
+semisimple. The converse (Tits deformation) is a separate argument, not here.
+
+`SchurElementCriterion` remains a cited class with **no instance**.
+
+**Remaining fact 2, unchanged:** that `τ`'s weights are `1/s_λ` for the Wenzl
+`schurElement` in `WenzlSchurElement.lean`. That identification is where `q`
+enters and is where the Schur elements do their work.
+
+
+### 2026-09-05 — CORRECTION: the induction does NOT need the exchange condition
+
+I wrote two hours ago that the remaining step needs *"the exchange fact
+supplying a common descent"*, following the usual statement of Geck–Pfeiffer
+8.1.1 (induct on `ℓ(v) + ℓ(w)`, pick a descent common to both). **Measured:**
+Mathlib's `Mathlib/GroupTheory/Coxeter/` has the descent API in full —
+`IsLeftDescent`, `IsRightDescent`, `isLeftDescent_inv_iff`,
+`exists_leftDescent_of_ne_one`, `length_inv`, `length_eq_zero_iff`, the `+1`
+characterisations — and **no exchange condition at all**: zero occurrences of
+`xchange` in the directory. So that route was blocked on a Mathlib gap I would
+have had to fill first.
+
+**It is not needed.** Worked on paper: induct on `ℓ(v)` **alone**, take *any*
+left descent `i` of `v` (`exists_leftDescent_of_ne_one`), and split on whether
+`i` is a right descent of `w`. With `v' = s v`, `w' = w s`, in this corpus's
+handedness (`T_a T_b = T_{ba}`, so `T_v = T_{v'} T_s`):
+
+* **ascent** (`i` not a right descent of `w`): `T_s T_w = T_{ws}`, so
+  `τ(T_v T_w) = τ(T_{v'} T_{w'})`, at `ℓ(v') = ℓ(v) − 1`. The IH's delta needs
+  `w s = v'⁻¹`, i.e. `w = v⁻¹`, which forces `ℓ(ws) < ℓ(w)` — contradicting the
+  ascent. Both sides vanish.
+* **descent**: `T_w = T_s T_{w'}`, so
+  `T_v T_w = T_{v'} T_s² T_{w'} = (q−1)·T_{v'}T_w + q·T_{v'}T_{w'}`, both at
+  `ℓ(v')`. The first term's delta needs `w = v'⁻¹ = v⁻¹s`, which forces
+  `ℓ(v⁻¹s) < ℓ(v⁻¹)` from the left descent and `ℓ(v⁻¹) < ℓ(v⁻¹s)` from the
+  right — contradictory, so it drops. The second gives `q · δ_{w,v⁻¹}
+  q^{ℓ(v)−1}` = the claim.
+
+Both branches turn on one observation: a left descent of `v` and a right
+descent of `w` at the **same** `i` are contradictory once `w` is pinned to
+`v⁻¹` or `v⁻¹s`, because `ℓ(sv) = ℓ(v⁻¹s)` (`length_inv`). The `(q−1)` term
+never contributes, which is why no common descent is required.
+
+**Remaining corpus obligations, now the whole list:**
+
+1. `Tw v = Tw (s*v) * Tw s` when `i` is a left descent of `v` — `Tw_mul_Tw`
+   under the right length hypothesis.
+2. `Tw s * Tw w = Tw (w*s)` when `i` is not a right descent of `w` — same
+   lemma.
+3. `Tw s * Tw s = (q−1)·Tw s + q·1` — the `v = swap` case of `σ_mul_Tw`,
+   plus `Tw (s i) = σ i`.
+4. The bridge from this corpus's concrete condition `v i.castSucc < v i.succ`
+   to `CoxeterSystem.IsLeftDescent` / `IsRightDescent`. `LengthAdditive.lean`'s
+   `length_mul_eq_add_iff` is the likely hook.
+
+Docstring in `QOU/Hecke/TauSymmetrizing.lean` corrected to match; `lean`-direct
+still exit 0.
+
+
+### 2026-09-05 — PROVED. `τ(T_v T_w) = δ_{w,v⁻¹} q^{ℓ(v)}`
+
+Commit `f7cfe5059a`. `QOU/Hecke/TauStructureConstants.lean`, 10 declarations,
+all `[propext, Classical.choice, Quot.sound]`, `lean`-direct exit 0 no
+warnings. The hypothesis `TauSymmetrizing` was carrying is discharged, so
+`tauGram_det` and `tauGram_det_ne_zero` are **unconditional**.
+
+The four obligations listed two hours ago all landed, and each was smaller than
+billed:
+
+| obligation | what it actually took |
+|---|---|
+| bridge `cs.simple i` ↔ `s n i` | `rw [CoxeterSystem.simple]; exact toPerm_simple n i` |
+| `Tw (s n i) = σ i` | `orbitMap_injective` + `Rs_single_perm` at `v = 1` |
+| `T_s² = (q−1)T_s + q` | the `v = s` case of `σ_mul_Tw` — it lands in the DOWN branch because `s_i` inverts its own pair by construction |
+| the three decompositions | all `Tw_mul_Tw` under the length hypothesis the descent supplies |
+
+Obligation 4 as I stated it ("bridge the concrete `v i.castSucc < v i.succ` to
+`IsLeftDescent`") **was not needed at all**: phrasing everything through
+`Tw_mul_Tw`, which takes a *length* hypothesis, keeps the concrete inversion
+condition out of the argument entirely. `σ_mul_Tw` is used exactly once, for
+the quadratic relation, where the condition is decidable on the spot.
+
+**The route is the result.** No exchange condition — Mathlib has none — and the
+`(q−1)` term never contributes. Both branches close on: a left descent of `v`
+and a right descent of `w` at the *same* `i` are contradictory once `w` is
+pinned to `v⁻¹` or `v⁻¹s_i`, since `ℓ(s_i v) = ℓ(v⁻¹ s_i)` (`length_inv`).
+
+**Scope unchanged, and this is worth restating because the result looks
+stronger than it is.** `det(τ-Gram) ≠ 0` for every `q ≠ 0` is **Frobenius-ness,
+not semisimplicity** — semisimplicity is false at roots of unity, so any
+reading of this as a semisimplicity criterion is wrong. Combined with
+`weightedGram_det_ne_zero_iff` at weights `1/s_λ` it gives one direction of the
+Schur criterion: some `s_λ = 0` ⟹ not split semisimple.
+
+**One fact remains between here and `SchurElementCriterion`:** that `τ`'s
+Wedderburn weights are `1/s_λ` for the Wenzl `schurElement`. That identification
+is where `q` enters and is where the Schur elements do their work. Plus, for the
+converse direction, Tits deformation. `SchurElementCriterion` still has **no
+instance**, and the `heckeWedderburn` shortcut is still refused in the file.
+
+
+### 2026-09-05 — option 2 under way (owner picked 2 **and** 3)
+
+Two bricks landed, both needed before an abstract Schur element is even
+*definable*.
+
+**`tau_mul_comm` (`15c28feb2a`)** — τ is a **trace**. Falls out of the structure
+constants: swapping `v,w` in `δ_{w,v⁻¹}q^{ℓ(v)}` gives `δ_{v,w⁻¹}q^{ℓ(w)}`, equal
+because `w = v⁻¹ ↔ v = w⁻¹` and `ℓ(v⁻¹) = ℓ(v)`. Extended off the basis with
+`LinearMap.ext_basis` on `(x,y) ↦ τ(xy)` against its flip. Not available before
+the identity.
+
+**`QOU/MathlibExt/TraceIsWeighted.lean` (`4d0e8a3468`)** — 8 declarations. Proves
+what `WeightedTraceGram`'s docstring had only **asserted** as motivation:
+
+> a linear `t` on `∏_i M_{d_i}(K)` with `t(xy) = t(yx)` is exactly
+> `weightedTrace c`, with `c i = t(E^{(i)}_{aa})` for any diagonal unit.
+
+Two matrix-unit identities, both *consequences* of the trace property:
+`E_ab = E_aa E_ab` with `E_ab E_aa = 0` for `b ≠ a` (kills off-diagonal units);
+`E_aa = E_ab E_ba` and `E_bb = E_ba E_ab` (a trace is **constant** on a block's
+diagonal units). The second is the load-bearing one: it is what makes "τ's
+weight on block λ" well defined independently of the chosen unit, hence what
+makes `1/c_λ` a definable object.
+
+Also: `weightedTraceₗ` (bundled as a `LinearMap` so `Basis.ext` applies) and
+`blockUnitBasis` (the matrix units **are** a basis, indexed by the same
+`Σ i, J i × J i` that `weightedGram` uses).
+
+**Next in option 2:** transport `eq_weightedTrace` along the Wedderburn
+equivalence to get τ's block weights `c_λ` for `H_n(q)`, define the abstract
+Schur element `s_λ := 1/c_λ`, and state the vanishing criterion on those. Then
+option 3: pin `X`, identify Wenzl's `schurElement Q X` with `s_λ`, and build
+Tits deformation for the criterion's forward direction.
+
+
+### 2026-09-05 — OPTION 2 COMPLETE (`a2484e8797`)
+
+`QOU/MathlibExt/TraceWeightsOfAlgEquiv.lean` (5) + `QOU/Hecke/TauSchurElement.lean`
+(7). Arc total **62 declarations across 7 files**, all `[propext,
+Classical.choice, Quot.sound]`, zero `sorryAx`.
+
+The abstract Schur element `s_λ := 1/c_λ` now **exists and is nonzero**, for any
+splitting and every `q ≠ 0`:
+
+`tau_eq_zero_of_forall_mul` (τ nondegenerate — the `T_w` coordinates of an
+annihilated `z` are a left null vector of `tauGram`, det ≠ 0) →
+`traceWeight_tau_ne_zero` (no block weight can vanish, since one would put a
+whole block in the radical) → `abstractSchurElement_ne_zero`, plus
+`tau_eq_weightedTrace_inv_abstractSchurElement` (`τ = Σ_λ (1/s_λ)χ_λ`, the
+identity they are named for) and `abstractSchurElement_indep`.
+
+**The conclusion side of the criterion, derived.** Contrapositively: a candidate
+weight system with a zero is realised by **no** splitting. Not the criterion
+itself — that is the converse (Tits deformation), and it is stated with Wenzl's
+two-parameter `schurElement Q X`, a different object from `s_λ`.
+
+**Splittings are a hypothesis `E`, never produced here** — so nothing depends on
+which `q` admit one. Deliberate.
+
+One hypothesis dropped on re-reading:
+`tau_eq_weightedTrace_inv_abstractSchurElement` needs no `q ≠ 0`, since
+`(c⁻¹)⁻¹ = c` holds in a field unconditionally; only the *interpretation* of
+`s_λ` as a Schur element needs the weights nonzero.
+
+PR #6758 is **out of draft** (sixth attempt; the rate-limit error is emitted by
+the GraphQL draft step *after* the REST body update succeeds) and
+`mergeable_state: clean` even with main 577 commits ahead.
+
+**Option 3, next, in order:** (i) pin `X` — `schurElement Q X` is Wenzl's
+*two-parameter* formula and the corpus uses `X ≤ 0` in
+`substrate_avoids_tl_locus` while the physical specialisation is `X = Q^{-N}`,
+so the statement is not even well posed until that is decided; (ii) prove the
+hook-length product equals `abstractSchurElement`; (iii) Tits deformation for
+the converse. Expect more gaps of the `xchange` kind — Mathlib has neither
+symmetric-algebra theory nor deformation theory.
+
+
+### 2026-09-05 — option 3 step (i) RESOLVED by measurement: `X = 0`, normalisation `(1−Q)^n`
+
+I flagged pinning `X` as possibly needing an owner ruling. It did not — the
+corpus answers it, and reading `WenzlSchurElement.lean` rather than inferring
+from the name turned up a **convention clash** I had been about to walk into.
+
+**The clash.** In this corpus `schurElement Q X` feeds
+`jonesMarkovCoeff Q X lam = schurElement / wenzlNormalisation`, documented as
+the **Jones–Markov coefficient `y_λ`** — i.e. a *weight* of the **Markov**
+trace. Geck–Pfeiffer's Schur element is a *reciprocal* weight of the
+**canonical** trace (`τ = Σ (1/s_λ) χ_λ`). So the two names denote
+reciprocal-flavoured objects **of two different traces**, and "τ's weights are
+`1/s_λ`" cannot be read off the names — which is exactly how I had been
+stating the remaining fact.
+
+**What pins X.** The content factors `(1 − X·Q^{c(x)})` are precisely what
+distinguishes the Markov trace from `τ`; they vanish identically at `X = 0`.
+Candidate: `c_λ = (1 − Q)^n · schurElement(Q, 0, λ)`.
+
+**Measured exactly**, [`computations/hecke/tau_weights_vs_wenzl_schur_probe.py`](computations/hecke/tau_weights_vs_wenzl_schur_probe.py)
+— sympy symbolic in `Q` throughout, no float anywhere; `probe-float64-guard
+--strict` clean:
+
+| tier | what | result |
+|---|---|---|
+| 1 | `Σ_λ f_λ c_λ = 1` (τ(1)=1), `n = 1…8` | **PASS**, all eight |
+| 2 | per-block weights at `n = 2` | **MATCH**, both |
+| 2 | per-block weights at `n = 3` | **MATCH**, all three |
+
+Tier 2 is the evidence: it builds the regular representation of `H_n(q)` in the
+`T_w` basis **from the corpus's own `σ_mul_Tw` structure constants**, reads the
+character table off it, solves `Σ_λ c_λ χ_λ(T_w) = δ_{w,1}`, and compares each
+weight. At `n = 3`, e.g. `c_{(2,1)} = Q/(Q²+Q+1)` from both sides.
+
+**Tier 1 is NOT independent evidence and the probe says so in its own output.**
+It is implied by the Macdonald hook telescope the corpus already carries, so it
+corroborates the *normalisation* and says nothing per-block.
+
+**Scope, stated as a scope-(a) limit.** Tier 2 stops at `n = 3` because the
+character table is recoverable from `χ_reg`, `χ_triv`, `χ_sign` alone only up to
+`n = 3` (at `n = 4` the dims are 1,3,2,3,1 and that trick no longer isolates
+them). So this **pins the statement option 3 must prove; it does not prove it**
+for general `n`.
+
+**Option 3 remaining:** (ii) prove `c_λ = (1−Q)^n · schurElement(Q,0,λ)` in Lean
+for all `n` — now a precise target rather than an ill-posed one; (iii) Tits
+deformation for the converse direction. `SchurElementCriterion` keeps no
+instance.

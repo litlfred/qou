@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-07T17:54:35.093Z",
+  "generated": "2026-09-07T18:57:30.530Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3745,
-  "files_flagged": 110,
-  "total_defects": 78,
+  "scanned_files": 3755,
+  "files_flagged": 106,
+  "total_defects": 73,
   "total_exempt": 59,
   "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 34,
+    "proof-claims-unencoded": 29,
     "proof-no-self-assuming-projection": 42,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1
@@ -1710,39 +1710,6 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
-    "content/quantum-observable-universe/glossary/glossary-categorical-q-torsion-leaf.lean": [
-      {
-        "line": 29,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure CategoricalQTorsionLeaf",
-        "decl": "CategoricalQTorsionLeaf",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (horizontal, flow_invariant) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [CategoricalQTorsionLeaf]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/glossary/glossary-categorical-transport.lean": [
-      {
-        "line": 21,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure CategoricalTransport where",
-        "decl": "CategoricalTransport",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (q_connection, transport_eq) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [CategoricalTransport]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/glossary/glossary-quantum-flatness.lean": [
-      {
-        "line": 20,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure QuantumFlatness where",
-        "decl": "QuantumFlatness",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (two_form_exists, curvature_absorbed) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [QuantumFlatness]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/information-theory/computational-horizon.lean": [
       {
         "line": 243,
@@ -2267,16 +2234,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean": [
       {
-        "line": 46,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class HasConfinementSDPData (n : ℕ) where",
-        "decl": "HasConfinementSDPData",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (slaterStrict) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [HasConfinementSDPData]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      },
-      {
-        "line": 176,
+        "line": 207,
         "category": "proof-no-self-assuming-projection",
         "pattern": "exact-field-projection",
         "snippet": "theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)",
@@ -2287,7 +2245,7 @@
         "detail": "the projected field `hi.strong_duality` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 259,
+        "line": 298,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem sdp_lp_projection (n : ℕ)",
@@ -2844,17 +2802,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean": [
-      {
-        "line": 171,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class CanonicalKnotIdSDP (n : LightNucleus) where",
-        "decl": "CanonicalKnotIdSDP",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (constituentUniqueness + constituentUniqueness_holds, bindingKPSDFeasible + bindingKPSDFeasible_holds, bindingKMinimalLength + bindingKMinimalLength_holds, bindingKMatchesHistoricalMarkovTrace + bindingKMatchesHistoricalMarkovTrace_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [CanonicalKnotIdSDP]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean": [
       {
         "line": 275,
@@ -2955,7 +2902,7 @@
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean": [
       {
-        "line": 105,
+        "line": 106,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem bar_even_kernel_implies_radius_of_convergence",
@@ -2966,7 +2913,7 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
-        "line": 122,
+        "line": 123,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "def bar_even_kernel_implies_q_one_shadow",
@@ -2976,7 +2923,7 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       },
       {
-        "line": 132,
+        "line": 133,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem bar_even_kernel_implies_direction_sanity",

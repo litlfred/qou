@@ -242,3 +242,39 @@ suffice, and at 3.35× it completed and exposed the stale witness.
 - [ ] Regenerate `he4-magnus-omega2-sign.witness.json` (source 2026-09-04) —
       until then A=4 is undetermined and no cross-A sign-change claim can be
       made under either weight.
+
+### ⁴He regeneration — 63/77 banked, not finished
+
+Run with `--workers 4 --checkpoint`, both of which the probe already supported
+and neither of which had been used — `--workers` **defaults to 1**, which is a
+large part of why A=4 had never been regenerated.
+
+    63 of 77 partitions in 90 minutes, then the budget expired.
+
+Progress is banked in `.he4_magnus_progress.jsonl` (gitignored, per the
+convention for the sibling checkpoints), so a resume needs only the remaining
+14. Those are the expensive ones: the sweep runs smallest-first, and the largest
+H₁₂ blocks reach d_λ = 7700 against d_λ = 2970 at the point it stopped. Cost
+goes as roughly d², so the remainder is several hours, not minutes.
+
+**A=4 therefore remains undetermined**, and no cross-A sign-change claim can be
+made under either weight family until it lands.
+
+Two things did come out of the attempt:
+
+- **The multiplicity fold applies here too.** The ⁴He word gives 145 adjacent
+  (i<j) pairs over 14 distinct keys, of which only **10** survive with a
+  nonzero net coefficient under antisymmetry. Folded. Verified by the probe's
+  own `--gate` (sparse vs dense across all 30 H₉ partitions) at rel diff
+  **3.06e-60** — and that gate independently reproduced the regenerated
+  canonical triton datum `+2.4701927083`, sign +1, which is a second confirmation
+  of the sign flip from an implementation that shares no code with the dense path.
+- **The sparse probe was already ahead of the dense ones** on the thing that
+  matters most: it uses far-commutativity, `[A_a, A_b] = 0` for `|a−b| ≥ 2`,
+  which `deuteron`/`triton` do not. Porting that to the dense probes is likely a
+  further large win and is not done.
+
+- [ ] Resume ⁴He (14 partitions, multi-hour) and re-run the robustness probe;
+      only then is A=4 in play.
+- [ ] Port far-commutativity from the sparse probe to the dense deuteron/triton
+      probes.

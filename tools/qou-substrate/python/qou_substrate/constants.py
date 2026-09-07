@@ -155,7 +155,21 @@ HBAR_Q_SQ = HBAR_Q * HBAR_Q
 # q is pinned from m_p/m_e via the substrate identity; sensitivity
 # S = dln(m_p)/dln(q) ≈ 21, so σ(q)/q = (1/S)·σ(m_p)/m_p. Vol(4_1) is a
 # math constant (zero experimental error); only the mass ratio enters.
-#   ⇒ σ(q₀) ≈ 0.0029 ppb = 2853 ppQ (vs 1.22 ppb on the old muon anchor).
+#   ⇒ σ(q₀) ≈ 0.00083 ppb = 830 ppQ (vs 1.22 ppb on the old muon anchor).
+#
+# STALE FIGURE CORRECTED 2026-08-31. This read "σ(q₀) ≈ 0.0029 ppb = 2853 ppQ",
+# which is 3.6× the value the formula on the next line actually produces. It is
+# reproduced exactly by the PRE-2026-08-21 σ(m_p/m_e) of 0.06 ppb (0.06/21 =
+# 0.00286) — the figure AGENTS.md already records as corrected to 0.017. The
+# CODE was never wrong: Q_ERR reads MASS_RATIO_P_E_ERR live, so it has tracked
+# the correction all along; only this human-readable comment did not. Measured
+# in computations/substrate/mmu_l2_reachability_scoping_probe.py (5/5), which
+# also measures S_proton = 20.9970 against the 21.0 literal below (0.014 %).
+# The 0.00083 above is what Q_ERR actually evaluates to; the live relative
+# σ(m_p/m_e) is 0.0174 ppb rather than the 0.017 quoted in prose, and this
+# figure is quoted from the code rather than recomputed from the rounded input
+# — the failure mode being corrected here is precisely a figure that disagreed
+# with the formula beside it.
 _S_PROTON = 21.0
 Q_ERR  = (Q / _S_PROTON) * (MASS_RATIO_P_E_ERR / MASS_RATIO_P_E)  # ~9.2e-13
 
@@ -391,6 +405,73 @@ try:
             _mp.mp.dps = prev
 
     HAS_MPMATH = True
+
+    # ── q-PARAMETRIC quantum integers (bean qou-c041) ────────────────
+    # The f64 `q_int(n)` above is PINNED to the module's Q: it takes n
+    # only, with Q/Q_INV/HA as globals, so it cannot be evaluated at any
+    # other q. A symbolic audit
+    # (computations/audits/q_integer_duplication_audit.py) found 366
+    # local reimplementations across computations/ and tools/, in 363
+    # files, and that pinning is why: callers that vary q had nothing to
+    # import. These two are what they can import instead.
+    #
+    # There are TWO conventions in the corpus and they are NOT
+    # interchangeable — 126 definitions use the symmetric form, 30 the
+    # classical one. They never take the same value anywhere both are
+    # defined (Lean: QOU.Substrate.QIntegerConventions, sorry-free), so
+    # pick deliberately:
+    #
+    #   symmetric  — quantum dimensions, Markov trace, Wedderburn
+    #                weights, normalised Hecke bases
+    #   classical  — the T_w (Iwahori, unnormalised) basis, Coxeter-length
+    #                and coinvariant Poincare gradings, Gaussian binomials
+    #
+    # Bridge, proved in that Lean file at n = 2,3 and checked symbolically
+    # to n = 7:   q^(n-1) * [n]_symmetric(q) = [n]_classical(q^2).
+
+    def q_int_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        """SYMMETRIC (balanced) quantum integer, q-parametric.
+
+            [n]_q = (q^n - q^-n) / (q - q^-1)
+
+        `q` defaults to the module's substrate value at `dps`. The
+        removable singularity at q = 1 is handled: [n]_q -> n there,
+        which the naive quotient reaches as 0/0 (a ZeroDivisionError in
+        several corpus copies).
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)
+            qq = q_at(dps + 10) if q is None else _mp.mpf(q)
+            if qq == 1:
+                _mp.mp.dps = max(prev, dps)
+                return +_mp.mpf(n)
+            val = (qq ** n - qq ** (-n)) / (qq - 1 / qq)
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def q_int_classical_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        """CLASSICAL (Gaussian) quantum integer, q-parametric.
+
+            [n]_q = (q^n - 1) / (q - 1) = 1 + q + ... + q^(n-1)
+
+        Computed as the geometric sum, so it is total: defined at every
+        q including q = 1, where it is n. This is NOT the symmetric
+        bracket — see the block comment above before choosing.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)
+            qq = q_at(dps + 10) if q is None else _mp.mpf(q)
+            val = _mp.fsum(qq ** i for i in range(n))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+
 except ImportError:
     HAS_MPMATH = False
 
@@ -419,6 +500,22 @@ except ImportError:
             "available as Q_MUON_50_DIGIT_STR"
         )
 
+    # These RAISE rather than falling back to f64, matching the four above.
+    # A q-integer is an input to quantum dimensions, Markov traces and
+    # Wedderburn weights; computing one in binary64 and returning it silently
+    # is the failure the NO-FLOAT64 discipline exists to prevent, and a caller
+    # cannot tell a degraded result from a good one. Failing loudly is the
+    # corpus convention here (cf. q_parameter.py, "Refusing to fall back to
+    # proton silently"). Owner directive, 2026-09-07.
+
+    def q_int_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("q_int_at requires mpmath; install it with `pip install mpmath`")
+
+    def q_int_classical_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError(
+            "q_int_classical_at requires mpmath; install it with `pip install mpmath`"
+        )
+
 # ── Experimental observable anchors (CODATA 2022) ─────────────
 # Mirrored from `computations/substrate/experimental_constants.py`
 # so consumers running outside the repo (Pyodide, Sage, PyPI installs)
@@ -432,6 +529,7 @@ except ImportError:
 # (2022: ...194), and M_N_MEV_ERR 0.00000054 (2022: 0.00000048). M_E_MEV_ERR
 # was 0.00000000015 against the table's 0.00000000016. Q_NEUTRON_MEV below is
 # DERIVED from all three, so it inherited the drift.
+
 _E_MEV  = _codata("electron mass energy equivalent in MeV")
 _P_MEV  = _codata("proton mass energy equivalent in MeV")
 

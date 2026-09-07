@@ -9,7 +9,7 @@ tags:
     - g3-aomega
     - research-programme
 created_at: 2026-08-11T00:35:00Z
-updated_at: 2026-09-07T10:15:05Z
+updated_at: 2026-09-07T17:03:38Z
 parent: qou-vr3q
 ---
 
@@ -62,3 +62,5 @@ constructing a cohomological Hall algebra — and it is now owned by `qou-m3ad`
 (in-progress, high). Treat that bean, not this text, as M3's live statement.
 
 2026-09-07 (owner "1 2 3", option 3): M3 Part 5 on qou-m3ad — H_floor's remainder inputs for 4_1 and 5_2 are derived from the corpus's own shape fields (real-root counts proved in Lean, Galois-conjugate CS value sets measured). Provenance upgrade only; the H_Ad/H_floor question and the Hecke-side derivation are unchanged. D4 (qou-1rjn) is already completed; the frame-dependent half of it — which chirality GGM's S+/S- are in the derived (mu, lambda) frame — is bean qou-lrvc (a source question). Sibling #7035 works step 3 (log-trace) and KZ; no file overlap.
+
+2026-09-07 option 2 (owner 2y): the (-2,3,7) rotated 3D-index family derived in-sandbox (GHHR engine + SnapPy m016), GGM (102) gate exact; the q->0 Stokes integers in GGM's normalisation are not derivable without the pretzel's holomorphic blocks, so qou-m3ad item 1 needs a basis-invariant restatement — see qou-m3ad Part 7 and audit §3f.

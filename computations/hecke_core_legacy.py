@@ -412,42 +412,72 @@ def _count_syts_by_12_relation(partition):
     to 1: same row, same column, or neither (→ part of a 2×2 mixing
     block in YSN).  Returns (n_row, n_col, n_mix_pairs) where each
     mixing pair contributes 2 SYTs so n_row + n_col + 2·n_mix_pairs = d(λ).
+
+    CLOSED FORM (replaced a factorial enumeration, 2026-09-05, bean
+    `qou-i7ju` / `qou-r4w5`).  This used to enumerate every SYT of shape λ
+    — f^λ of them — to obtain these counts.
+
+    WHERE THIS ACTUALLY HELPS, measured (and it is NOT the low-A atoms —
+    do not read this as unblocking the table on its own):
+
+        atom        A   n=3A   partitions   total SYTs enumerated   max f^λ
+        deuterium   2      6           11                      76        16
+        ⁴He         4     12           77                 140,152     7,700
+        ⁷Li         7     21          792     119,952,692,896  1,118,939,184
+
+    The old enumeration over ALL partitions of n = 6 costs 0.0002 s, so
+    deuterium is untouched by this change and its cost lies elsewhere
+    (`qou-r4w5`, `qou-sv7h`).  At n = 21 it is 1.2e11 tableaux — not slow
+    but impossible.  This removes an ABSOLUTE wall at high A; it is
+    necessary, not sufficient, for the 19-atom table to finish.
+
+    Two facts make the enumeration unnecessary, both verified exhaustively
+    against the old code on every partition of n = 1..10 (138 partitions,
+    0 mismatches) in `probes/syt_12_relation_closed_form_probe.py`:
+
+    * **`n_mix` is structurally 0.**  In a standard Young tableau entries
+      increase along rows and columns, so 1 occupies (0,0) and 2 must take
+      an addable cell of the one-cell shape — (0,1) or (1,0).  "Neither"
+      cannot occur.  (The old `fill` enforced exactly this, then spent
+      f^λ steps discovering it.)
+    * **The surviving two counts are closed-form.**  With f = f^λ from the
+      hook-length formula and `Sum_c` the sum of contents c(i,j) = j − i,
+      the q = 1 eigenvalues of the generator are +1 (row) and −1 (column),
+      so `n_row − n_col` is the symmetric-group character on a
+      transposition — the classical content result
+      `χ^λ((12)) = f · Sum_c / C(n,2)`.  With `n_row + n_col = f`:
+
+          n_row = f · (1 + Sum_c / C(n,2)) / 2
+          n_col = f · (1 − Sum_c / C(n,2)) / 2
+
+    Exact integer arithmetic throughout; `Fraction` guards the division so
+    a non-integral result raises rather than silently rounding.
     """
     n = sum(partition)
     if n < 2:
         return (0, 0, 0)
-    shape = list(partition)
-    counts = [0, 0, 0]  # row, col, mix
 
-    def fill(tab, val, rem):
-        if val > n:
-            pos_1 = pos_2 = None
-            for r, row in enumerate(tab):
-                for c, v in enumerate(row):
-                    if v == 1: pos_1 = (r, c)
-                    if v == 2: pos_2 = (r, c)
-            if pos_1[0] == pos_2[0]:
-                counts[0] += 1
-            elif pos_1[1] == pos_2[1]:
-                counts[1] += 1
-            else:
-                counts[2] += 1
-            return
-        for r in range(len(shape)):
-            if rem[r] == 0:
-                continue
-            col = len(tab[r])
-            if r > 0 and col >= len(tab[r-1]):
-                continue
-            tab[r].append(val)
-            rem[r] -= 1
-            fill(tab, val + 1, rem)
-            tab[r].pop()
-            rem[r] += 1
+    # f^λ by the hook-length formula
+    conj = [sum(1 for row in partition if row > j) for j in range(partition[0])]
+    denom = 1
+    for i, row in enumerate(partition):
+        for j in range(row):
+            denom *= (row - j) + (conj[j] - i) - 1
+    f_lambda = math.factorial(n) // denom
 
-    fill([[] for _ in shape], 1, list(shape))
-    # Mixing tableaux come in pairs (T and its (1↔2)-swap)
-    return (counts[0], counts[1], counts[2] // 2)
+    # Σ contents, c(i,j) = j − i
+    sum_c = sum(j - i for i, row in enumerate(partition) for j in range(row))
+
+    ratio = Fraction(sum_c, math.comb(n, 2))
+    n_row = Fraction(f_lambda) * (1 + ratio) / 2
+    n_col = Fraction(f_lambda) * (1 - ratio) / 2
+    if n_row.denominator != 1 or n_col.denominator != 1:
+        raise ArithmeticError(
+            f"_count_syts_by_12_relation: non-integral counts for {partition} "
+            f"(n_row={n_row}, n_col={n_col}) — the closed form's hypotheses "
+            f"do not hold here; do not round."
+        )
+    return (int(n_row), int(n_col), 0)
 
 
 def partition_character_sigma1(partition):
