@@ -1,0 +1,124 @@
+{
+  "computation": "qbeta-covariance-kernel-twist",
+  "assertions": [
+    {
+      "name": "self_dual_part_changes_sign",
+      "computed": [
+        7,
+        9
+      ],
+      "expected": [
+        7,
+        9
+      ],
+      "passed": true,
+      "note": "SC > 0 at k=7 (+800) and k=9 (+38416), so the self-dual part is not negative on its own"
+    },
+    {
+      "name": "paired_part_changes_sign",
+      "computed": [
+        3,
+        4,
+        6,
+        10
+      ],
+      "expected": [
+        3,
+        4,
+        6,
+        10
+      ],
+      "passed": true,
+      "note": "PR > 0 at four values, so the paired part is not negative on its own either. T_3 <= 0 is a genuine cancellation between the two twist orbits"
+    },
+    {
+      "name": "positive_definiteness_bounds_hold",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "sum_{h in H} A(h) >= 0 for H = Z/3 and H = A_4, where A = sum_lam f^lam e_lam is positive. BOTH ARE LOWER BOUNDS; the conjecture is an upper bound, so this structure is sign-blind in the needed direction"
+    },
+    {
+      "name": "odd_classes_vanish_by_omega_orthogonality",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "P_k = sum (f^lam)^2 s_lam is omega-invariant, p_mu is omega-anti-invariant for odd mu, and omega is an isometry of the Frobenius pairing -- so the two are orthogonal"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "epic": "qou-x631",
+    "claim": "the quadratic twist is conjugation; it proves the odd-class vanishing and gives lower bounds only",
+    "arithmetic": "exact integers and Fractions"
+  },
+  "data": {
+    "T3_SC_PR_by_k": {
+      "3": [
+        "-2",
+        "-4",
+        "2"
+      ],
+      "4": [
+        "-2",
+        "-4",
+        "2"
+      ],
+      "5": [
+        "-16",
+        "0",
+        "-16"
+      ],
+      "6": [
+        "-260",
+        "-512",
+        "252"
+      ],
+      "7": [
+        "-2336",
+        "800",
+        "-3136"
+      ],
+      "8": [
+        "-28792",
+        "-10584",
+        "-18208"
+      ],
+      "9": [
+        "-632972",
+        "38416",
+        "-671388"
+      ],
+      "10": [
+        "-19676288",
+        "-22691840",
+        "3015552"
+      ],
+      "11": [
+        "-536156728",
+        "-124353792",
+        "-411802936"
+      ],
+      "12": [
+        "-15073599368",
+        "-4395092800",
+        "-10678506568"
+      ],
+      "13": [
+        "-506810488304",
+        "-158943896320",
+        "-347866591984"
+      ],
+      "14": [
+        "-22172234503696",
+        "-3020453535744",
+        "-19151780967952"
+      ]
+    }
+  },
+  "provenance": {
+    "headSha": "4e031cefb1eab4ec9e6a42e4cc420342afe0afa6",
+    "producer": "computations/qbeta/qbeta_covariance_kernel_twist_probe.py",
+    "elapsed_s": 2.276
+  }
+}
