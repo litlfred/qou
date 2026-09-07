@@ -68,9 +68,10 @@ the binding series.
 > Newton-slope invariant: $L_{\mathcal{K}}$ is pure isoclinic of slope
 > $\tfrac12$ at infinity, every rank-1 $q$-difference module has *integer*
 > slope, and Newton slopes are additive on sub- and quotient modules.
-> Independently corroborated by the van der Put--Reversat structure theorem
-> (a pure module of non-integral slope $d/r$, $\gcd(d,r)=1$, and rank $r$ is
-> $E(r,d,b)$, which is irreducible).
+> Independently corroborated by the van der Put--Reversat classification of
+> pure modules \cite{vanderput-reversat2007,vanderput2006}: a pure module of
+> non-integral slope $d/r$, $\gcd(d,r)=1$, and rank $r$ is $E(r,d,b)$ in
+> Bugeaud's notation \cite{bugeaud2011}, and it is irreducible.
 >
 > **What survives.** Implications (1)--(2) are unaffected and the depth-$2$
 > prediction stands — but *depth $2$ means rank $2$*: the kernel is a $2\times2$
