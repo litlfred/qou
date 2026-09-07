@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T06:39:28Z
+updated_at: 2026-09-07T06:52:30Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7750,3 +7750,39 @@ Route 3's *combinatorial* half is partly done here already:
 `ballot_sq_sum_catalan`, `dimHLF_two_row_sq_sum`, `dimHLF_two_col_sq_sum`. What
 is missing is the planar-diagram basis itself (`dim TL_n = Catalan n` as an
 algebra fact, not a partition count).
+
+
+## 2026-09-07 (cont.) — TL₂ is FREE of rank two (PR #7001, tranche 2)
+
+`MathlibExt/TemperleyLiebAlgebra.lean` said twice, in its own words, that **no
+upper bound on `TL₂(δ)` is proved anywhere in this file** and therefore
+"freeness itself is not claimed". That is the structural gap: everything there
+bounds TL from BELOW, so no dimension count or Wedderburn statement could even
+be attempted.
+
+Closed, sorry-free:
+- `tl2_span_eq_top` — `TL₂(δ) = span_R {1, e₀}`
+- `tl2Basis` — a `Module.Basis (Fin 2) R (TL₂ δ)`
+
+⟹ `dim TL₂ = 2 = catalan 2`, the first `dim TL_n = catalan n` here proved as an
+ALGEBRA fact rather than a partition count.
+
+**The method generalises; the spanning SET does not.** `eq_top_of_one_mem_of_gen_mem_of_mul_mem`
+(a submodule with 1, the generators, and closed under `*` is everything — via
+`Submodule.toSubalgebra` + `adjoin_range_e_eq_top`) and `mul_mem_span_of_pairs`
+(closure reduces to products of spanning elements, via `Submodule.span_mul_span`)
+are both stated at general index type. What does not generalise is knowing WHAT
+spans: general `n` needs the planar diagram basis.
+
+**Both stale notes in `TemperleyLiebAlgebra.lean` updated**, not left to rot —
+kept as written (each is correctly scoped to that file) with a pointer to the
+complement. `≅ R × R` is still NOT claimed: the basis {1,e₀} ↦ {(1,1),(δ,0)} has
+determinant `−δ`, so that map is an iso only when δ is a unit.
+
+**Lean version trap:** `Basis` is `Module.Basis` in this Mathlib pin; a bare
+`Basis` does not resolve.
+
+### Next concrete step
+`TL₃(δ) = span {1, e₀, e₁, e₀e₁, e₁e₀}` (5 = catalan 3). 25 product cases, each a
+one-line consequence of `e_sq`/`e_adjacent`/`e_farCommute`; the two reduction
+lemmas above are reused unchanged. Then the general-`n` diagram basis.
