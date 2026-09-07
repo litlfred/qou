@@ -98,6 +98,29 @@ Read the two rightmost columns against each other. **`p` moves by a factor of
 6 across the family and `s·p` moves by 1.48 %.** That is the degeneracy,
 measured.
 
+**And that 1.48 % is the estimator, not the product — so the degeneracy is
+tighter still.** The chain rule is exact *pointwise*, but `s` and `p` are OLS
+slope estimates whose product attenuates when the intermediate fit is
+imperfect (`R² ≈ 0.973–0.978` for `ln α` on `ln A`). Measured against the
+direct slope `0.26049892`:
+
+| `c₀` | −0.3 | 0 | 0.25 | 0.5 | 1 | 2 | 7.5 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| gap | −2.896 % | −0.307 % | **−0.016 %** | **−0.002 %** | −0.164 % | −0.541 % | −1.478 % |
+
+Every gap is **negative**, and the magnitude is monotone away from `c₀ ≈ 0.4`
+where it vanishes — the attenuation signature exactly, since an attenuating
+estimator can only underestimate. Genuine variation in the product would have
+no reason to be signed. Max gap 1.478 % against a 1.484 % spread: the same
+size. Where the estimator is clean the product reproduces the direct slope to
+**2 parts in 10⁵**.
+
+So `s·p` is the *same number* for every kernel in the family, to better than
+this decomposition can resolve. (An earlier version of this probe asserted the
+attenuation was "an order of magnitude below" the spread — wrong, from a
+three-point spot check that missed the large-`c₀` end. The assertion written to
+check it is what caught it.)
+
 Three consequences:
 
 1. **The round-6 gap is carried entirely by the pin.** Admissible-over-incumbent
