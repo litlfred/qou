@@ -33,7 +33,10 @@ A *true* maximum-contact packing — one the corpus has never used — has a **s
 
     M(A) = κ·A − c·A^θ,        κ, c > 0,   0 < θ < 1                (`subAffineBondCount`)
 
-a linear bulk term minus a **sublinear** correction. Three consequences, all exact:
+a linear bulk term minus a **sublinear** correction — the shape a genuine packing has:
+-- Ref: [bezdek-reid2013] Thm 1(i), touching pairs < 6n − 0.926·n^{2/3} for any packing of
+   n unit balls in E³, and > 6n − 7.862·n^{2/3} for fcc — so θ = 2/3 with c ∈ [0.926, 7.862].
+Three consequences, all exact:
 
 * `subAffine_perNucleon` — `ε·M(A)/A = εκ − εc·A^(θ−1)`, the `perNucleonExp` family at
   **`p = 1 − θ`**: the per-nucleon exponent is the *complement* of the count's sublinear exponent.
