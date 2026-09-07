@@ -388,3 +388,13 @@ n = 4000 in polynomial time against an instrument calibrated to the truth at n <
 (rev_beta_bound_polynomial_max_probe.py, R2 dominance + R6 tightness).
 
 Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+---
+---
+# qou-hok7
+title: 'Deuteron-wall resummation: classical Borel on q=1 period is the WRONG transform (substrate object is q-Gevrey) -> reopen; needs q-Borel of Z_n(q0)'
+status: todo
+type: task
+priority: high
+created_at: 2026-08-21T15:02:55Z
+updated_at: 2026-09-07T06:14:21Z
