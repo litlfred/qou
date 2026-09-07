@@ -90,10 +90,26 @@ def _load_sigma_3A_table():
     Term 4 is m_e · Σ_{λ⊢3A} 1/dim_q(λ), NOT A · m_e · (2 + 1/[2]_q).
     The probe witness records Σ_{λ⊢3A} 1/dim_q(λ) at q_0 for A=1..4.
 
-    **That witness has never existed in this repository and no producer in
-    the tree writes it** (measured 2026-08-26, bean `qou-nk3h`; the identical
-    loader in `unified_low_isotope_predictor.py` has the same problem). Both
-    swallowing paths below now warn instead of returning `{}` in silence.
+    **That claim was wrong, and this is what a shallow clone costs.** It
+    read "that witness has never existed in this repository and no producer
+    in the tree writes it" (measured 2026-08-26, bean `qou-nk3h`; the
+    identical loader in `unified_low_isotope_predictor.py` has the same
+    problem). Against the full 36771-commit history BOTH existed:
+    `probe_term4_conventions.py` and `probe-term4-conventions.witness.json`,
+    at `computations/`, at `folio-assistant/computations/`, and finally under
+    `_deprecated/probes/`. The witness is recoverable with
+    `git show 530e326cab3:computations/probe-term4-conventions.witness.json`
+    and its shape is EXACTLY what the loader below reads —
+    `data.sigma_inv_dim_q_at_q0` keyed `n=3 … n=24` (A = 1…8) as 49-digit
+    strings — so the loader would work verbatim against it.
+
+    It is deliberately NOT restored here. Placing a witness from history is
+    hand-placing numbers no producer ran, which is the one thing this corpus
+    forbids outright; and switching Term 4 from the fallback to the real
+    table is a numbers-move in a live formula. Reviving the producer and
+    re-running it is the supported route and is bean `qou-nk3h`'s call.
+    Both swallowing paths below still warn instead of returning `{}` in
+    silence.
     The table is deliberately not reconstructed here — ten live `dim_q`
     implementations exist with differing signatures, so building it is a
     choice among conventions rather than a computation."""

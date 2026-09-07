@@ -183,13 +183,22 @@ def _load_canonical_t1_model_b() -> dict:
         return _T1_CACHE_B
     path = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
     if not path.exists():
-        # Model B is UNAVAILABLE, permanently, and this is not a missing run.
-        # `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in
-        # this repo and no commit in this clone's history touches it, so the
-        # instruction this branch used to raise with ("run it first") could
-        # not be followed by anyone. It cannot be written either: its input,
-        # the 6_2 deuteron assignment, was RETIRED by the owner ruling of
-        # 2026-08-29 (`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`).
+        # Model B is UNAVAILABLE and this is not a missing run — but the
+        # reason is the retired input, NOT a producer that never existed.
+        # `probe_sdp_canonical_paper_formula.py` is not on disk, and it did
+        # exist: 163 lines, added e99554d9912, deprecated aac4f0050a4,
+        # untracked 0763606e4f0, recoverable with
+        #   git show aac4f0050a4:_deprecated/probes/probe_sdp_canonical_paper_formula.py
+        # This comment previously said no commit in the clone's history
+        # touched it. That was measured on a SHALLOW clone, where "the oldest
+        # reachable commit is the boundary" and "it never existed" are
+        # indistinguishable; against the full 36771-commit history it is
+        # false. Left as a warning: a negative claim about history is only
+        # as good as the clone's depth.
+        # What stands is the substantive blocker: its input, the 6_2 deuteron
+        # assignment, was RETIRED by the owner ruling of 2026-08-29
+        # (`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`), so the
+        # recovered producer would compute from a retired assignment.
         #
         # Return EMPTY rather than raise. The caller already falls through to
         # Model A for any isotope absent from this table, so an empty table is

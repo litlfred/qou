@@ -121,15 +121,22 @@ def _load_model_b_t1() -> dict[str, mp.mpf]:
     if not path.exists():
         raise FileNotFoundError(
             f"missing Model B T1 witness: {path}. "
-            f"THE PRODUCER IT USED TO NAME DOES NOT EXIST. "
-            f"`probe_sdp_canonical_paper_formula.py` is not on disk anywhere "
-            f"in this repo, GitHub code search finds it only in these error "
-            f"strings, and no commit in this clone's history touches it — so "
-            f"the old instruction to 'run it first' could not be followed by "
-            f"anyone. Tracked as bean `qou-imkb`, which also records that the "
-            f"registry's deuteron row is blocked on the 2026-08-29 owner "
-            f"ruling retiring the 6_2 assignment. Model B is unavailable; "
-            f"Model A (3A-strand) is the live T1 route."
+            f"The producer is not on disk, but it DID exist: "
+            f"`probe_sdp_canonical_paper_formula.py`, 163 lines, added in "
+            f"e99554d9912, last modified in d2553e83c5b, moved to "
+            f"`_deprecated/probes/` in aac4f0050a4, and untracked with the "
+            f"root-level scratch dirs in 0763606e4f0. Recover it with "
+            f"`git show aac4f0050a4:_deprecated/probes/"
+            f"probe_sdp_canonical_paper_formula.py`. "
+            f"(The earlier text here said it had NEVER existed and that no "
+            f"commit touched it. That was measured on a SHALLOW clone, where "
+            f"every such answer is a graft artifact; it is false against the "
+            f"full 36771-commit history.) "
+            f"That does not make Model B available, and the reason is "
+            f"unchanged: its input, the 6_2 deuteron assignment, was RETIRED "
+            f"by the owner ruling of 2026-08-29. Reviving the producer is a "
+            f"decision on bean `qou-imkb`, not a missing run. Model A "
+            f"(3A-strand) is the live T1 route."
         )
     d = json.loads(path.read_text())
     out: dict[str, mp.mpf] = {}
