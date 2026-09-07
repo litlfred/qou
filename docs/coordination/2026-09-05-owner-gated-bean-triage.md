@@ -736,6 +736,72 @@ wrong WITHOUT EVER PRODUCING A WRONG NUMBER."*
 So D7 is unchanged as a decision and better equipped as an instruction. Nothing
 here is a reason to defer it.
 
+## 🟧 RULED 2026-09-07 — OPTION 1. CHANNEL-SCOPED.
+
+**The owner ruled: option 1.** Convention **D governs the decay / `Q_β`
+channel**; the **full tower governs mass and binding**. Both prior rulings
+stand, each in its own domain:
+
+* **2026-08-15** — convention D canonical, convention C excised — governs the
+  decay/`Q_β` channel.
+* **2026-09-03** — *"the QOU should be on the full tower in the derivations to
+  the standard model"*, settled the same day as meaning **both** all `n` of the
+  Hecke tower *and* all orders in `q` — governs mass and binding.
+
+So "canonical convention" is **channel-local, not corpus-global**, and the
+crossover is now stated rather than rediscovered one bean at a time.
+
+**Why the boundary is real rather than a preference** — D is the two-row
+Temperley–Lieb truncation (`QOU/QBeta/TemperleyLiebTower.lean`, sorry-free:
+`y_λ = 0` exactly for ≥ 3 rows), so its cost is `n`-dependent and was measured
+exactly: at `n = 3` — the `Q_β` ladder's `H₃` — D retains **83.3333 %** of the
+algebra; at `n = 12` (⁴He) it retains **0.0434 %**. A derivation carried in D
+is by construction not on the full tower, and that matters at `n = 3A` in a way
+it does not at `n = 3`.
+
+### 🛑 Implementation: label by the PREDICATE, never by counting survivors
+
+`qou-cds1` landed `QOU/MassTheory/TwoRowTwoColumnCollision.lean` (ten
+declarations, 0 sorries) showing the Lean tree quantifies over Temperley–Lieb
+survivors in **two opposite conventions**:
+
+    QBeta.TemperleyLiebTower, QBeta.TwoRowNormalisation      at most two ROWS
+    MathlibExt.WenzlSchurElement,
+    MassTheory.SelfConjugateStratumVanishes                  at most two COLUMNS
+
+The two families are **equinumerous with equal dimension sums** — at `n = 3` the
+row family is `{(3), (2,1)}` and the column family `{(2,1), (1,1,1)}`, disjoint
+but for `(2,1)`, and **both sum to 5 = catalan 3**. In the sibling's words:
+*"a proof transported by matching numbers rather than by transposing is wrong
+WITHOUT EVER PRODUCING A WRONG NUMBER."*
+
+So the obvious way to implement this ruling — count the survivors in a block and
+label it — is **transposition-blind and would mislabel silently**. Label by
+`colLen 0 ≤ 2` vs `rowLen 0 ≤ 2`, and use `transposeEquiv` in that file to
+transport between them; it makes the move mechanical rather than a judgement.
+
+Note also that the Catalan retention table above is **dimension-based**, so it is
+*consistent with* the row reading and cannot *distinguish* it. What discriminates
+is `TemperleyLiebTower`'s concrete `λ = (n − k, k)` and `y₍₁³₎ = 0`, stated in
+prose at `:31` and `:56` — not the counts.
+
+### Blast radius, and what is now unblocked
+
+* **D2 is unblocked.** It could not be posed until this was settled.
+* `y_lambda_symbolic` and the H₄ closed forms — the weight layer under every
+  mass and binding number.
+* The `Q_β` `c_k` ladder (`qou-cds1`): stays in D, and its C-frame results still
+  need the re-derivation that bean tracks. Per
+  `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`, `z_C → z_D` is **not** a valid
+  substitution there — the ruling does not make it one.
+* `q-hecke-seminormal-character-closure.md` (rewritten under D by `8d18aefe06`).
+* `y-lambda-mpfr-witness.json` already records `y_(1,1,1) = "0.0"` — the row cap
+  was **already in the shipped numbers**, so this ruling changes labels and
+  scope, not that value.
+
+**Beans:** `qou-cds1`, `qou-fq0f`. **Recommendation below was accepted as
+written; it is retained for the reasoning.**
+
 **My recommendation, marked as judgement:** option 1. It is the only one
 consistent with both rulings as written, the measurement supports it (83 % vs
 0.043 % is a real regime boundary, not a preference), and its cost is a

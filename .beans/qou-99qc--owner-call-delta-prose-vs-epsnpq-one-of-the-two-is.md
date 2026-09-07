@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-05T06:15:00Z
+updated_at: 2026-09-05T18:28:40Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -846,3 +846,160 @@ removes one option, it does not pick between the remaining two.
 **Not enacted.** Changing the published number touches ~8 content blocks and the
 `AGENTS.md` canonical-chain cheat-sheet line (`Q_β … ≈ 0.784 MeV (0.17 %)`), and
 which of the two derived values replaces it is the owner's call.
+
+
+### Robustness: the `z = 1` inadmissibility is not a Skein-normalisation artifact (2026-09-05, PR #6832)
+
+Bean `qou-8bxv` landed the same morning as #6722/#6763, measuring that **two Skein
+normalisations are live** and are provably not bracket rescalings:
+
+    (H)  L+ - L-           = (q - 1/q) L0            AGENTS.md §7a, STRICT
+    (J)  q[L+] - q^-1[L-]  = (q^1/2 - q^-1/2) [L0]   8 live blocks, 5 chapters
+
+**Both of this bean's merged results were computed in (H).** That made the shared
+finding — the published `Q_β` form sits at `z = 1`, inadmissible under convention D —
+a candidate convention artifact, which would have **dissolved** this bean's decision
+rather than answered it. Tested; it does not.
+
+**Transport.** Under (J) the generator has eigenvalues `u⁻¹, −u⁻³` with `u = √q`, so
+`σ_J = u⁻²·σ̃(u)` — the (J) algebra is the (H) algebra in the square-root variable with
+the *generator* rescaled. `ζ = u⁻²·z̃` carries convention D's roots to `ζ = u⁻¹`
+(= 0.9491671528 at `q₀`) and `ζ = kernel(u) = u/(u²+1)` (= 0.4993203342).
+
+**Result, both defensible readings of the element** (`Δ_S` is convention-laden — its
+typed-crossing shift `d ∈ {−h/2, −h}` is a multiple of the bridge, so there is no unique
+(J) counterpart):
+
+| reading | outcome |
+|---|---|
+| element unchanged | `z = 1` inadmissible under (J) at **every `q > 1`**, no pin needed — *stronger* than (H), which excludes it only because `q₀` is not the supergolden root of `q³ = q²+1` |
+| shift follows the bridge (`d → −s/2, −s`) | roots `−1.7411834668`, `+1.8455715251`; neither admissible |
+
+No (J) admissible cell lands within 1 % of CODATA (closest `−5.518 %`). A **negative
+control** (solver recovers an admissible parameter from a target synthesised at it) and a
+**calibration** (reproduces the merged `+12.470 %` / `−43.157 %` to eight figures) make the
+NONE mean something.
+
+**Byproduct, and it is NOT new:** `z_C(q) = z_D(√q)/q` is the one-line composition of
+`markovZC_eq_kernel_sqrt` and `markovZD_eq_sq_mul_kernel`, sorry-free on main in
+`QOU/BraidKnot/MarkovConventionSeparation.lean`. The contribution is reading that module's
+`q²` rescale as the (H)→(J) Skein normalisation — and it **supports** the convention-C
+excision rather than softening it: `z_C(q) = kernel(√q)` is correctly normalised for the
+algebra at `√q`, i.e. the *wrong specialisation point*, which is why `qou-cxjq` /
+`qou-lp5d` / `qou-pmkh` are right that substitution cannot repair such sites.
+
+Two arity gaps are machine-checked, not asserted:
+`no_kernel_instantiation_is_conventionD` quantifies no rescaling factor, and
+`no_rescaling_of_skein_weights` binds one constant on the **bracket** at fixed `q` while
+this map rescales the **generator** and substitutes `q = u²`. Both theorems stand.
+
+The symbol `z_J` is deliberately avoided — `qou-qlma` owns it for a different number
+(`0.0274199478`), and `1/δ = 0.497290545` already sits 0.408 % from `ζ` (`qou-98g5`).
+
+**This closes one way the decision could have been dissolved. It does not pick an option.**
+The owner call is unchanged: `z = q` (`0.8798906` MeV, +12.470 %) or `z_D` (`0.4447004` MeV,
+−43.157 %) against CODATA `0.7823334` MeV, decided by what `ε` *means* — not by residual,
+which §NO FITTING's corollary forbids.
+
+
+### Correction: the registry count is 13, not eight (2026-09-05, PR #6832)
+
+The `qou-99qc` write-ups — PR #6832's body, its probe docstring, and this bean's
+robustness section — cited **"eight `blocked_on_rederivation` rows of the
+trace-convention registry"** as support for *a convention-C site is not
+repairable by substituting `z_D`*.
+
+**Measured:** `docs/coordination/trace-convention-registry.json` carries
+`blocked_on_rederivation` as a **top-level array with 13 entries over 12 distinct
+files** (`deltalambda_bareven_b4_magnitude_probe.py` appears twice). It is not a
+per-row `status` value at all — a `status` histogram of that file returns
+`agreed 4 / agreed-migration-pending 3 / disputed 1` and **zero**
+`blocked_on_rederivation`, which is why a naive status-keyed count reads 0 and a
+naive `grep -c` reads 4 (the key, a note, and two prose mentions).
+
+**Not staleness — my error.** The array held **13 at this branch's own base
+commit** as well as on current `main`, so 181 commits of drift did not make the
+figure wrong. It came from a corpus-grep report and I relayed it without opening
+the file. The registry did move in that window (+44/−15 lines) and the count did
+not, so the coincidence that would have excused it does not exist either.
+
+**Substance unaffected.** The registry states the claim in its own words:
+*"Sites that must NOT stay on convention C but cannot be migrated by substituting
+`z_D`, because the substitution changes the site's asserted RESULT rather than
+its spelling."* Only the cardinality was wrong; the corrected text now quotes
+that sentence instead of paraphrasing it.
+
+**Contamination surface, all four checked:**
+
+| carrier | state |
+|---|---|
+| probe docstring (`qbeta_skein_normalisation_admissibility_robustness_probe.py`) | fixed, producer re-run 13/13 |
+| its witness `caveats` | fixed by the re-run |
+| #6832 PR body | fixed |
+| this bean | this entry |
+| #6820 sibling comment | **no edit needed** — it makes the claim without a cardinality |
+
+**Two different eights — do not sweep the token.** The same probe says the (J)
+Skein normalisation is live in *"eight content blocks across five chapters"*
+(lines 17 and 378). That eight is `qou-8bxv`'s and is **correct**. A
+token-level fix would have broken a right number while repairing a wrong one —
+the failure mode AGENTS.md names for figures that differ only in what they count.
+
+No result changed: 13/13 before and after.
+
+## 2026-09-07 16:45Z — the transport's rescale half is now a sibling's Lean, not my arithmetic
+
+`492ad4221f6` (bean `qou-d0qq`) landed
+`QOU.Mass.KZLevelFromHeckeNormalisation.ratio_invariant` on main — sorry-free,
+generic field:
+
+```lean
+theorem ratio_invariant (c a b : K) (hc : c ≠ 0) (hb : b ≠ 0) : (c * a) / (c * b) = a / b
+```
+
+That is exactly the scalar-rescale half of #6832's transport
+`σ_J = u⁻²·σ̃(u)`. Two checks added to
+`qbeta_skein_normalisation_admissibility_robustness_probe.py` (now **15/15**,
+was 13/13; every prior check unchanged and still passing):
+
+- `H_and_J_generator_ratios_are_MINUS_q2_and_MINUS_q` — derived from each Skein
+  relation directly, not asserted. In the **same variable `q`**: (H)
+  `L₊ − L₋ = (q−q⁻¹)L₀` has eigenvalues `{q, −q⁻¹}`, ratio **`−q²`**; (J)
+  `q[L₊] − q⁻¹[L₋] = (q^½−q^−½)[L₀]` has `{q^{−1/2}, −q^{−3/2}}`, ratio
+  **`−q`**. The ratios differ, so the two normalisations are not rescalings of
+  each other — the ratio-side restatement of this probe's separation premise
+  (`qou-8bxv`).
+- `the_u2_rescale_half_of_the_transport_is_INERT_on_the_ratio` — cites the Lean
+  above rather than re-deriving it.
+
+**What this buys:** the transport has two parts, a rescale and a
+reparametrisation `q → u`. The rescale is now closed by someone else's Lean, so
+the **reparametrisation is the whole content** of the (H)→(J) move.
+
+## Same landing carries a scope over-claim — reported, not fixed by me
+
+`KZLevelFromHeckeNormalisation.lean` says its `e^{iπħ} = q²` is *"stated so no
+convention can move it"*. It guards the `ħ`-vs-`k` bookkeeping axis correctly,
+but the ratio `−q²` is read off **(H)**, and feeding (J)'s ratio `−q` into the
+same matching step `λ₁/λ₂ = −e^{iπħ}` gives `e^{iπħ} = q`, i.e. **`ħ` halves**
+(`|ħ|` `0.066425366` → `0.033212683` at the proton pin) and `k+2` doubles.
+
+Not a refutation: AGENTS.md §7a makes (H) STRICT, so their number is right under
+the canonical reading. The defect is the scope sentence — the relation is
+conditional on the Skein normalisation, and that is a live fork here
+(`qou-8bxv`: 8 content blocks, 5 chapters). Reported on #7088, comment
+5573521151; theirs to fix.
+
+## `qou-37j2` / #7084 scopes my own `ε` recommendation
+
+#7084 verified the merged `z = 1` inadmissibility at source (re-ran the probe,
+15/15) and wired it into the L2 dashboard as `functional_admissibility_qbeta`.
+Its framing adds a caveat I should carry: it names **Option E** — *keep an
+admissible functional and find the element it should act on* — as the only one
+of the seven options that could give a parameter-free admissible sub-1 % result.
+
+My standing recommendation (`z_D`) chooses between the two admissible roots **for
+the existing element `Δ = 𝓑_n − 𝓑_p`**. It should be stated with that scope:
+*if the element stays `Δ`, then `z_D`*. If the element is the thing that moves,
+the root question is downstream of a different choice and my recommendation does
+not bind.

@@ -37,6 +37,10 @@ import QOU.MathlibExt.TraceRadicalNondegenerate
 import QOU.MathlibExt.TemperleyLiebSpanning
 import QOU.MathlibExt.TemperleyLiebWedderburn
 import QOU.MathlibExt.TemperleyLiebNormalForm
+import QOU.MathlibExt.TemperleyLiebClosure
+import QOU.MathlibExt.TemperleyLiebWordBlocks
+import QOU.MathlibExt.TemperleyLiebThresholdBridge
+import QOU.MathlibExt.TemperleyLiebDeltaRule
 import QOU.MathlibExt.MacdonaldTelescope
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite
@@ -1576,3 +1580,5 @@ import QOU.Mass.FigureEightGluingFromMonodromy
 import QOU.Mass.FiveTwoGluingFromFareyWord
 import QOU.Mass.AffineCumulantSecondDifference
 import QOU.Mass.FiveTwoAPolynomialFromFareyWord
+import QOU.QBeta.FloorRemainderFromDerivedShapeFields
+import QOU.QBeta.PretzelRemainderFromPtolemy

@@ -436,3 +436,64 @@ and 3 suggests a factor `tau*e^2/(1+e)`, whose order-4 term would be `+tau`, i.e
 
 **And what is NOT a finding:** `c4` is quadratic in `n` by construction — any
 three points are — so fitting a quadratic there has zero content. Not done.
+
+## c4 VERDICT 2026-09-07 — the product REACHES c4. 7/7 live, 6/6 recorded.
+
+    case   A     c4 = a3+a4    status
+    pp     2      -585/128     matches measured
+    pn     2       109/192     matches measured
+    nn     2         27/32     matches measured
+    3p     3      3197/256     open prediction
+    T      3       743/384     matches measured
+    3He    3    10001/1536     matches measured
+    3n     3     -1233/128     open prediction
+    4He    4    43079/6144     matches measured
+    5He    5   73097/24576     open prediction
+
+Two verifications, different in kind: the 14 h `--order=4` run compared the FULL
+coefficient vector (orders 0-4) live on all seven `n <= 9` cases, 7/7; and every
+`c4` this corpus has measured by another route is reproduced, 6/6.
+
+**4He carries the weight.** 43079/6144 came from an exact series at P=6 (465 s,
+12 controls) measured BEFORE this form was extended, feeding no input here.
+
+## Two corrections to my own reporting, both caught on arrival
+
+**The run's printed table is MISLABELLED** — headers `a4`/`c4` over `a3`/`c3`
+values, because the process started before the index fix. The verdict is
+unaffected (the pass/fail test compares the full vector); the table above is
+regenerated from the cached inputs with corrected indices.
+
+**I called 4He an "open prediction" and it is not.** True when I wrote the
+check-in guidance; false a few hours later once `c4_a3_a4_long_compute_probe`
+measured it — my own run, recorded in this very bean at line 201. Left
+uncorrected it would have UNDERSTATED the result by dropping its strongest row.
+Guidance written mid-arc goes stale inside the same session.
+
+## The ladder, complete
+
+    c0, c1, c2   product   (qou-qqm4)
+    c3           product   #7002, 8/8
+    c4           product   here, 7/7 live + 6/6 recorded
+
+The c2 claim retracted in #6983 — "c1's per-letter additivity is special to first
+order and does not propagate" — is now wrong at FOUR consecutive orders.
+
+## Scope, with one caveat now weaker than the probe's own text
+
+The probe still says "SORTED orderings only; pnp remains the discriminating
+untested case". **Stale as of `2aa6959078`** (sibling), which parameterised the
+inter-nucleon ordering and tested pnp at orders 0-2: 6/6, with a control that pnp
+and ppn genuinely differ. Partly discharged.
+
+Remaining: A <= 5 (A=5 unverified); NOT PROVED — the disjoint-block trace law has
+no Lean statement; unsorted orderings untested at orders 3-4; c5 unbounded and
+~13x per order (c3 23 min, c4 14 h); nothing wired, no q0, no witness.
+
+## Next — and it is NOT c5
+
+The cost curve makes c5 a poor trade and four orders settle what the ladder was
+asking. The gap that matters is the Lean one: the form is measured at five
+consecutive orders and rests on a trace law nothing has stated formally.
+`BraidJuxtapositionMonoid` proves the monoid and the commutation of disjoint
+blocks — not trace-multiplicativity over them.

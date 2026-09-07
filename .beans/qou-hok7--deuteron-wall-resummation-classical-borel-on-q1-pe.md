@@ -388,3 +388,92 @@ n = 4000 in polynomial time against an instrument calibrated to the truth at n <
 (rev_beta_bound_polynomial_max_probe.py, R2 dominance + R6 tightness).
 
 Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+---
+---
+# qou-hok7
+title: 'Deuteron-wall resummation: classical Borel on q=1 period is the WRONG transform (substrate object is q-Gevrey) -> reopen; needs q-Borel of Z_n(q0)'
+status: todo
+type: task
+priority: high
+created_at: 2026-08-21T15:02:55Z
+updated_at: 2026-09-07T06:14:21Z
+
+---
+# 🛑 MAJOR CORRECTION 2026-09-07 — THE RESUMMATION WAS ALREADY RUN, AND IT IS A NEGATIVE
+
+Everything this bean said today about "what is now open" is **wrong**, and my
+"correction by a square root" restates a divisor the corpus had already measured and
+used a month ago.
+
+## The run exists, on `main`, since 2026-08-21
+
+- audit `docs/audits/2026-08-21-deuteron-wall-qborel-resummation.md`
+- probe `computations/deltalambda/deuteron_wall_qborel_resummation_probe.py`
+- commit `d19014bb4f`, verified an ancestor of `origin/main`
+
+It resummed the **right object** (`Z_n(q₀)`) with a **q-Gevrey-matched divisor**, and got:
+
+> **best substrate value = 2.745 % of `B_D` — undershoots by ~36×**
+
+and, decisively for the anti-fit discipline, it reaches `B_D` only at `x ≈ 1.12`, *through*
+the Borel singularity — which the audit itself labels: *"Adopting that coupling would be
+tuning to the singularity — a fit, forbidden."*
+
+**So the deuteron q-Borel–Laplace resummation is a scope-(a) NEGATIVE, correctly
+labelled, and has been for a month.**
+
+## How this bean missed it — and it is the same defect twice in one day
+
+`grep` on this bean: it cites `2026-08-21-deuteron-wall-resummation-**wrong-transform**.md`
+(the **diagnostic**) **once**, and `2026-08-21-deuteron-wall-**qborel-resummation**.md`
+(the **run**) **zero** times. Two audits, same day, adjacent names; I read the one that
+says "this had never been run" and never checked whether it had been run *since*.
+
+That is the second prior-art miss today, after `qou-qbg2` recorded the growth-budget
+table a month before I re-derived it — **and I made this one after being burned by that
+one.**
+
+## What my #6968 R1 actually was
+
+R1 said the divisor is `q₀^{n²}`, not the `q₀^{n²/2}` this bean specified. **True, and
+already known**: the 08-21 run had measured and used it. R1 corrected *this bean's stale
+text*, not the corpus's understanding. That is a much smaller claim than the PR made.
+
+## My "use `deg_n`, not the asymptotic form" advice was WORSE, not wrong — measured
+
+I advised using the exact `q^{deg_n}` rather than `q^{n²}`. A sibling report predicted it
+would **diverge**. I checked rather than accepting; **the prediction is not confirmed**:
+
+| divisor | `|Z_n/div|^{1/n}` at n = 10, 14, 18, 22, 25 | radius |
+|---|---|---|
+| `q₀^{n²}` (08-21's choice) | 1.467, 1.426, 1.364, 1.298, **1.249** ↓ toward ~1.05 | ≈ **0.95** |
+| `q₀^{deg_n}` (my advice) | 2.006, 2.070, 2.083, 2.066, **2.052** — flat ≈ 2.06 | ≈ **0.49** |
+
+Both converge. But mine gives **half the radius**, pushing the sum further from the
+`x ≈ 1.12` where the run reaches `B_D`. **So: not divergent, but materially worse, and
+the advice is withdrawn.** Recording the direction because the sibling's prediction and
+mine were both wrong in different ways, and only the measurement settles it.
+
+## What genuinely survives from #6968
+
+The derivations, which are new and are untouched by any of this:
+
+- `d²(deg Z_n) = 2 − 𝟙[n triangular]`, exceptions exactly 3,6,10,15,21,28,36, zero
+  exceptions to n=41;
+- `deg_n = n² − (2√2/3)n^{3/2} + O(n)`, coefficient derived from triangular density;
+- `⟨w⟩ = C(n,2)` **exactly**, reducing to `⟨content⟩ = 0` and `P(descent) = ½` per step;
+- the five closed `REV` routes.
+
+**And one distinction the corpus did not have**, which the correction sharpens rather
+than removes: `deg_n` is the polynomial **degree** (max weight), while the resummation
+divisor must track the **value** growth `log_{q₀} Z_n(q₀) ~ n²` (mean-dominated). They
+differ by `Θ(n^{3/2})`, and the root test above is exactly the measurement of that gap.
+That is why `q₀^{n²}` is the right resummation divisor and `q^{deg_n}` is not — a
+question this bean previously got backwards.
+
+## Status
+
+**This bean is NOT closed** — but its open item is no longer "run the resummation." It is
+run and negative. What remains genuinely open is `REV`'s asymptotics, which is a
+statement about the *object*, not about a route to `B_D`.

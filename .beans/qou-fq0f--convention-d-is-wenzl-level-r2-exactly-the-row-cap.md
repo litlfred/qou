@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T10:24:30Z
-updated_at: 2026-09-06T10:39:23Z
+updated_at: 2026-09-07T16:51:36Z
 ---
 
 ## The measurement
@@ -221,3 +221,15 @@ three kernels plus the dispatcher. The marginal value is also lower than it
 first looks: a sibling's **window transfer** (`qou-wdij`) already removed the
 `d_λ` wall that made this urgent — 963× at ⁴He (kernel 401.41 s → 0.42 s), with
 ⁶Li/⁷Li reachable. Worth doing, not worth rushing.
+
+
+## 🟧 OWNER RULING 2026-09-07 — D7 = option 1, CHANNEL-SCOPED
+
+Convention **D governs the decay / `Q_β` channel**; the **full tower governs
+mass and binding**. This bean's Wenzl-level route (`Q^r = q⁴ ⇒ r = 2`,
+Orellana's row cap) is what establishes that D *is* the two-row truncation, and
+so is what makes the boundary computable: D retains **83.3333 %** of the algebra
+at `n = 3` (the `Q_β` ladder's `H₃`) and **0.0434 %** at `n = 12` (⁴He). That
+`n`-dependence is why the ruling is channel-scoped rather than global.
+
+Full ruling: `docs/coordination/2026-09-05-owner-gated-bean-triage.md` §D7.

@@ -146,6 +146,97 @@ rather than standing for a week.
 [`2026-08-01-uq0-map-resurgence-surreal-tool-assessment.md`](2026-08-01-uq0-map-resurgence-surreal-tool-assessment.md) §2),
 structurally done and quantitatively open.
 
+> 🛑 **The citation above points at a CLASSICAL-ONLY file, and the q-native carrier
+> it should point at goes unmentioned (added 2026-09-07, bean `qou-ctc3` /
+> `qou-frzo` Brick 0).**
+>
+> **The reasoning in this section is untouched and is why the correction is worth
+> making** — alien derivations genuinely need no slope filtration, which is exactly
+> why they survive where RSZ died. Only the pointer is wrong.
+>
+> `QBeta/OneInstantonNormalization.lean` states its theorems over `{M Z : ℝ → ℝ}`
+> with `HasDerivAt` **in the hypotheses** — real functions, classical derivatives,
+> no q-difference object anywhere. Triaged CLASSICAL-ONLY by
+> [`scripts/alien-surface-qnative-triage.py`](../../scripts/alien-surface-qnative-triage.py),
+> which decides on statement types rather than proofs. This section warns two
+> paragraphs below that C1 **cannot** be confluenced to the classical setting, so a
+> classical-only file cannot be the q-native route it recommends.
+>
+> **The carrier that fits is `QOU.Mathlib.QAlienBridgeEquation`**, unmentioned here:
+>
+> ```lean
+> structure QBridgeSystem (R A Ω : Type*) [CommSemiring R] [CommRing A] [Algebra R A] where
+>   dil    : A ≃ₐ[R] A                      -- the dilation automorphism σ
+>   alien  : Ω → Derivation R A A
+>   weight : Ω → R
+>   bridge : ∀ ω f, conjDeriv dil (alien ω) f = weight ω • alien ω f + unipotent ω f
+> ```
+>
+> with `conjDeriv σ D = σ ∘ D ∘ σ⁻¹`. Its own docstring makes this section's point:
+> *"in the q-setting the 'ordinary operator' is an automorphism, so the relation is a
+> **conjugation rather than a commutator**."* Sorry-free; import cone purely algebraic
+> (`RingTheory.Derivation.Basic`, `Tactic`) — no archimedean dependence, which is the
+> property this section's confluence warning demands.
+>
+> **What is NOT claimed.** This clone is **shallow**, so `git log --diff-filter=A`
+> reports the fetch boundary rather than true creation for both this audit and that
+> file — both return the same commit. **It is therefore undetermined here whether
+> the carrier predated this audit.** This note records that the audit *does not
+> mention* it (grep: 0 hits for `QAlienBridge`/`QBridgeSystem`/`conjDeriv`), which is
+> a fact about the text; it does not assert the author overlooked something
+> available at the time.
+>
+> **And the carrier has ZERO importers** — nothing instantiates `QBridgeSystem` at
+> any concrete object. So the honest state of this recommendation is not "the route
+> is untried" but "the route's algebra is built, sorry-free, and has never been
+> instantiated once." Tracked as `qou-frzo`.
+>
+> ---
+>
+> 🛑 **SECOND PASS, same day — the first version of this note named `qou-wgnx` as
+> "the live carrier". That is ALSO wrong, and the correction matters more than the
+> one above.**
+>
+> **C1's `∞` Stokes data does not exist — and this covers the CONNECTION-MATRIX
+> multipliers too, not only the local isoformal ones.** Four independent routes;
+> `qou-wgnx`'s own line 16 says it outright: *"multipliers are TRIVIAL — the target
+> dissolved rather than being computed."* Its item 1 is struck through: *"CLOSED —
+> trivial, by four independent routes. Not 'computed'; the object does not exist as a
+> separate invariant."*
+>
+> The sharpest of the four is machine-checked, in
+> [`RSZIsoformalInterface.lean:148`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/RSZIsoformalInterface.lean):
+> `c1_infinity_isoformalDim_eq_zero`, strengthened by `isoformalDim_eq_zero_of_pure`
+> — *"what kills the Stokes data is `k = 1` alone"*, so it is not an artefact of the
+> particular rank and slope.
+>
+> **That file's docstring anticipates this exact failure**, and is worth quoting
+> because it is the reason a third correction is being written today:
+>
+> > *"This instance exists because the general lemma above was not enough.
+> > `rszIsoformalDim_one`'s docstring already said 'no Stokes data to extract', and I
+> > still wrote 'the Stokes multiplier is the remaining open item' three times across
+> > PRs #4771 and #4783. A lemma naming C1 is harder to walk past than a lemma about
+> > an abstract `k = 1`."*
+>
+> An author wrote a concrete, C1-naming lemma **specifically so it could not be walked
+> past**, and it was still walked past — by `qou-wgnx`'s own status field, and then
+> nearly by this note.
+>
+> **So the genuinely open item is neither `qou-odh5` nor `qou-wgnx`.** Both target
+> dissolved objects. What remains is one sentence, `qou-vkg5` item 2 and the whole
+> residue since 2026-08-08:
+>
+> > **exhibit an analytic q-difference module satisfying the q-bridge relation, and
+> > compute its weights.**
+>
+> `QBridgeSystem` says what such a module must look like; **nothing exhibits one**. Its
+> own header: *"exhibiting one from a resurgent q-series is untouched."*
+>
+> **Do not aim a first instance at C1.** An instance at an object whose Stokes data is
+> provably a point is trivially satisfied — the `: True := trivial` failure one level
+> up. Recorded in `qou-frzo` as the constraint on brick B4.
+
 The reason it is *right* is the reason RSZ was wrong: `F(P₁,…,P_k)` is built on the
 slope filtration and needs `k ≥ 2`. **Alien derivations need no filtration** — they
 act on the resurgent function and read Borel-plane singularities directly, which is

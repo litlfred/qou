@@ -1,0 +1,105 @@
+{
+  "name": "aomega-m3-pretzel-remainder-from-ptolemy",
+  "description": "H_floor's inputs for the (-2,3,7) pretzel derived from SnapPy's m016 ptolemy varieties (sympy Groebner): |P_K| = 7, real embeddings 4, remainder 4.",
+  "computation": "aomega-m3-pretzel-remainder-from-ptolemy",
+  "engine": "python+snappy+sympy",
+  "scriptFile": "aomega_m3_pretzel_remainder_from_ptolemy_probe.py",
+  "computedAt": "2026-09-07T11:03:35.445691+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "snappy_version": "3.3.2",
+    "manifold": "m016",
+    "N": 2,
+    "census_tarball": "library/A_census.tgz"
+  },
+  "data": {
+    "components": [
+      {
+        "cls": 0,
+        "cubic": "x**3 + 4*x**2 + 3*x - 1",
+        "disc": 49,
+        "r1": 3,
+        "r2": 0,
+        "degree": 3,
+        "irreducible": true
+      },
+      {
+        "cls": 1,
+        "cubic": "x**3 - x - 1",
+        "disc": -23,
+        "r1": 1,
+        "r2": 1,
+        "degree": 3,
+        "irreducible": true
+      }
+    ],
+    "pk_size": 7,
+    "real_embeddings": 4,
+    "complex_pairs": 1,
+    "floor_remainder": 4,
+    "culler_K3_1_L_degree": 6,
+    "culler_K3_1_irreducible": true
+  },
+  "verdict": "The (-2,3,7) pretzel's H_floor inputs are DERIVED in-sandbox: SnapPy's census m016 (= K12n242 = K3_1) has two N=2 ptolemy obstruction classes whose Groebner bases are the cubics c^3-c-1 (disc -23, the 5_2 field Q(xi), one real root) and c^3+4c^2+3c-1 (disc 49, splits over Q(eta), three real roots). So |P_K| = 7, real embeddings 4, one complex pair, remainder 4 -- GZ §2.1's table reproduced from a held triangulation and exact algebra, and R1's count 7 confirmed by Culler's L-degree 6. Part 4's 'prediction 7' is now a check. Not separated: H_Ad vs H_floor (core 3 under both). Not obtained: the pretzel's q->0 Stokes matrix (level 2 per GGM; no held source), so qou-m3ad item 1 stays open.",
+  "assertions": [
+    {
+      "name": "m016-is-K12n242-and-K3_1",
+      "passed": true,
+      "identify": [
+        "m016(0,0)",
+        "K3_1(0,0)",
+        "K12n242(0,0)"
+      ]
+    },
+    {
+      "name": "two-components-both-irreducible-cubics",
+      "passed": true
+    },
+    {
+      "name": "discriminants-are-minus23-and-49 (Q(xi) and Q(eta) of GZ §2.1)",
+      "passed": true,
+      "discs": [
+        -23,
+        49
+      ]
+    },
+    {
+      "name": "disc-minus23-component-is-the-derived-5_2-shape-cubic-in-minus-c",
+      "passed": true,
+      "cubic": "x**3 - x - 1"
+    },
+    {
+      "name": "disc-49-component-splits-over-Q(eta), eta^3+eta^2-2eta-1=0 (GZ's field)",
+      "passed": true,
+      "cubic": "x**3 + 4*x**2 + 3*x - 1",
+      "factors": "(1, [(Poly(x + 3 - CRootOf(x**3 + x**2 - 2*x - 1, 0)**2, x, domain='QQ<CRootOf(x**3 + x**2 - 2*x - 1, 0)>'), 1), (Poly(x + 1 - CRootOf(x**3 + x**2 - 2*x - 1, 0), x, domain='QQ<CRootOf(x**3 + x**2 - 2*x - 1, 0)>'), 1), (Poly(x + CRootOf(x**3 + x**2 - 2*x - 1, 0) + CRootOf(x**3 + x**2 - 2*x - 1, 0)**2, x, domain='QQ<CRootOf(x**3 + x**2 - 2*x - 1, 0)>'), 1)])"
+    },
+    {
+      "name": "pk-size-seven",
+      "passed": true
+    },
+    {
+      "name": "real-embeddings-four-complex-pairs-one (AdjointIndexSetM3.realEmbeddings / complexPairs pretzel237)",
+      "passed": true
+    },
+    {
+      "name": "floor-remainder-four-equals-real-plus-2(pairs-1)",
+      "passed": true
+    },
+    {
+      "name": "culler-K3_1-L-degree-6-so-R1-count-7-matches-|P_K|",
+      "passed": true
+    },
+    {
+      "name": "culler-K3_1-irreducible-one-curve-carries-both-fields",
+      "passed": true
+    }
+  ],
+  "scriptHash": "02ce818fef13",
+  "scriptCommitSha": "unknown",
+  "commitSha": "78885540e574d870a10b588ebe0915393407faee",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

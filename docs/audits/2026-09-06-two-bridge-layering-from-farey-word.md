@@ -174,6 +174,114 @@ merely by the `10 ∉ {3,4}` miss.
 to, in the derived `(μ, λ)` frame, is the same convention question as which 5₂ is Rolfsen's; no held
 source settles it, and nothing here needs it. `qou-q3np` and the Route-C programme are untouched.
 
+## 3c. Route C, M3: `H_floor`'s remainder from the derived shape fields (2026-09-07)
+
+**Producer:** [`computations/probes/aomega_m3_floor_remainder_from_derived_shape_fields_probe.py`](../../computations/probes/aomega_m3_floor_remainder_from_derived_shape_fields_probe.py)
+(13/13); **Lean:** `QOU/QBeta/FloorRemainderFromDerivedShapeFields.lean` (sorry-free; the
+real-root theorems over `ℝ`).
+
+Bean `qou-m3ad` Part 4 found that the rival hypothesis `H_floor` — knot-independent core
+`{trivial, geometric, conjugate}`, knot-dependent remainder = number of real embeddings of the
+trace field — reproduces Garoufalidis–Zagier's `|P_K| = 3, 4, 7` and derives the "+1" of 5₂ from
+arithmetic. Its inputs were a transcribed table (`AdjointIndexSetM3.realEmbeddings`). On the two
+knots this corpus derives, they no longer need to be: §2's shape fields are `x² − x + 1` for 4₁
+(no real root, `fourOneShapePoly_ne_zero`) and `θ³ − θ + 1` for 5₂ (exactly one real root,
+`fiveTwoShapeCubic_existsUnique_root`: IVT on `(−2, −1)` for existence; every root lies below
+`−1`, where the cubic is strictly increasing, for uniqueness). So the signatures `(0,1)`, `(1,1)`,
+the sizes `|P_K| = 3, 4` and the remainders `0, 1` follow, and Part 1's forced unit remainder has
+a derived source (`floor_remainders_from_derived_fields`).
+
+The probe adds the piece `H_floor` grades by: every tetrahedron shape pushed through every
+embedding of the field and summed under the Bloch–Wigner dilogarithm gives the Chern–Simons value
+set of the Galois-conjugate structures — `{+V, −V}` for 4₁ (`V = 2·Cl₂(π/3)`, to 1e-40) and
+`{0, +V, −V}` for 5₂ (`V = 2.82812208833…`, the corpus value to 1e-18; the real embedding
+`θ ≈ −1.3247` has real shapes and volume exactly `0`).
+
+**What this does not do.** It does not separate `H_Ad` from `H_floor` — the core is `3` under both
+(`core_is_three_on_all_three`) and Part 3's meridian grading remains `H_Ad`'s only distinct
+content. It does not reach `(−2,3,7)`: that field is not derived here, so the prediction `7` stays
+a prediction. Nothing about `A_ω` is derived; the Hecke-side origin of the extra 5₂ ray
+(`qou-rtec` M3) is untouched.
+
+## 3d. The chirality convention, settled against SnapPy's Rolfsen table (2026-09-07, bean `qou-lrvc`)
+
+**Producer:** [`computations/probes/fivetwo_chirality_frame_vs_snappy_probe.py`](../../computations/probes/fivetwo_chirality_frame_vs_snappy_probe.py)
+(8/8; SnapPy 3.3.2 from PyPI, route 2 of `sandbox-egress.md`, and Culler's census tarball
+`library/A_census.tgz`, already held).
+
+§3 left open which chirality the Rolfsen 5₂ is in the derived frame. Two held sources answer it,
+and they agree to every digit compared:
+
+| source | its 5₂ | relation to the derived frame |
+|---|---|---|
+| Culler's census `A_{K3_2}` (SnapPy framing) | `1 + L(M¹⁰−M⁸+2M⁴+2M²−1) + L²(−M¹⁴+2M¹²+2M¹⁰−M⁶+M⁴) + L³M¹⁴` | **exactly** `L³·A(1/L, M)` — the mirror; the 4₁ control `K2_1` is identical to the derived `A₄₁` |
+| SnapPy `Manifold('5_2')` (= `m015` = `K3_2` = `K5a1`) | cusp shape `−2.49024466750661447990098220728294261621078676… + 2.97944706647897694637268171441756946896065234… i`, slopes `{0, 4, 10}` | `−conj(τ_derived)` to 38 digits; slopes negated. `reverse_orientation()` reproduces the derived shape and `{−10, −4, 0}` exactly |
+
+So **the derived Farey-word triangulation `RL` of `K(7,3)` is the mirror of the Rolfsen-table 5₂
+as SnapPy digitises it**, and its A-polynomial is the mirror's. "Rolfsen's 5₂" here means the
+digitised table (SnapPy's `LinkExteriors`, triangulations by Joe Christy); the book itself is not
+held, and the identification of SnapPy's table with the book's diagrams is SnapPy's claim, recorded
+as such. The mirror is obtained by conjugating the shapes, as §3 said.
+
+**Two more held sources, same answer (owner uploads of 2026-09-07).** Dunfield's revised
+Hatcher–Oertel table (`library/arxiv-math-9901120v3` §2, *notation follows [HO] and [Rol]*) gives
+`5₂ = K(3/7) : 0, 4, 10` — the negatives of the derived slopes, from a source independent of SnapPy
+and in Rolfsen's own notation (probe assertion 9/9). And Garoufalidis–Zagier state their convention
+outright (`arxiv-2111.06645v3` §10, *Orientation conventions*): *"We will be using the consistent
+orientation convention for `M_K` of the SnapPy program"*, with the trace field and complex volume
+taken from SnapPy — so every `5₂` quantity in GZ (the `Φ^{(5₂,σ)}` series, the Habiro-like functions,
+Appendix A's numerics) refers to SnapPy's `5_2`, i.e. the **mirror** of the derived triangulation.
+SnapPy's complex volume of `5_2` is `2.82812… − 3.02413… i` and of its mirror `+3.02413… i`; that
+sign is the invariant a source has to print to be pinned.
+
+**What remains open on the bean.** Which of GGM's `S⁺`/`S⁻` (the `(96)`/`(97)` factorisations,
+`FiveTwoDTSpectrumSplit`) attaches to which chirality. GGM build on GZ and cite their conventions,
+but none of the four held GGM papers (`arxiv-2007.10190v2`, `arxiv-2012.00062v3`,
+`arxiv-2111.04763v2`, `arxiv-2208.14188v2`) states an orientation or prints a signed complex volume
+or an A-polynomial for `5₂` in its sectioned text; inheritance by citation is not a held statement.
+What would close it: a signed `v(5₂)` or an `A_{5₂}(x, y)` in a GGM text, matched against SnapPy's
+`5_2` (`−3.02413… i`; Culler's `A_{K3_2}`) — one line, if a source carries it.
+
+## 3e. Route C, M3: the third knot's `H_floor` inputs, from the solved Ptolemy varieties (2026-09-07)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_remainder_from_ptolemy_probe.py`](../../computations/probes/aomega_m3_pretzel_remainder_from_ptolemy_probe.py)
+(10/10); **Lean:** `QOU/QBeta/PretzelRemainderFromPtolemy.lean` (sorry-free).
+
+`qou-m3ad` Part 4 had the `(−2,3,7)` row of Garoufalidis–Zagier's table as a transcription and called
+the count `7` *a prediction, not a check*, the Ptolemy database being firewalled. The variety is small
+enough to solve here. SnapPy's census `m016` (= `K12n242` = `(−2,3,7)` = Culler's `K3_1`; 3
+tetrahedra; the volume `2.82812…` it shares with `5₂`) has two `N = 2` obstruction classes, each with
+three Ptolemy coordinates and four equations; a lex Gröbner basis (sympy, exact) reduces each to one
+cubic:
+
+| class | cubic | disc | real roots | field |
+|---|---|---|---|---|
+| 1 | `c³ − c − 1` | `−23` | 1 | `ℚ(ξ)` — the `5₂` shape cubic in `−c` |
+| 0 | `c³ + 4c² + 3c − 1` | `49` | 3 | splits over `ℚ(η)`, `η³ + η² − 2η − 1 = 0` (checked by factoring over that field) |
+
+Boundary-unipotent representations are the nontrivial elements of `P_K`, one per solution, so
+`|P_K| = 1 + 3 + 3 = 7`, real embeddings `1 + 3 = 4`, one complex pair, `H_floor` remainder `4` —
+GZ §2.1 reproduced from a held triangulation and exact algebra, and `R1`'s count `7` matched by
+Culler's `A_{K3_1}` (geometric `L`-degree `6`, irreducible over `ℚ`: one curve carries both fields).
+The real-root counts are theorems (`geoCubic_existsUnique_root` inherits the `5₂` proof;
+`realCubic_three_real_roots` by IVT on `(−3,−2)`, `(−2,−1)`, `(−1,1)`), linked to the transcribed
+`realEmbeddings pretzel237 = 4`.
+
+**Honest scoring.** This is the third knot's *provenance*, not a discriminator: the core is `3` under
+both `H_Ad` and `H_floor`, and the pretzel's `q → 0` Stokes matrix — the one datum that could test
+`H_Ad`'s polynomial one-sidedly — is in no held source (GGM 2012.00062 §1.5 record that the pretzel
+has *level 2*, entries in `q^{1/2}`, so even that test would need the level-2 form of the claim). The
+triangulation is SnapPy's, not a Farey-word derivation: the pretzel is not two-bridge.
+
+**On the plan that prompted this** (a suggested attack, taken critically): GZ do *not* print the
+pretzel's Habiro-like matrix — §4.2 says explicitly that for `(−2,3,7)` they *"cannot give even
+conjectural explicit formulas"*; what they print is the seven-term modularity relation (4.3) with the
+periodic functions `Q_j` at roots of unity and Appendix A's series coefficients, which are not a
+`q → 0` Stokes matrix. The pretzel has six non-abelian boundary-parabolic representations, not
+five (`rank 6`, `|P_K| = 7`). Retrieving Ptolemy solutions from the database is blocked, but solving
+the variety is not, as above. And `H_Ad` versus `H_floor` is not decided by any count — they agree on
+every count — only by whether the Stokes entries are built from `s(x) = x + 1 + x⁻¹`.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
