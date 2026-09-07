@@ -391,6 +391,73 @@ try:
             _mp.mp.dps = prev
 
     HAS_MPMATH = True
+
+    # ── q-PARAMETRIC quantum integers (bean qou-c041) ────────────────
+    # The f64 `q_int(n)` above is PINNED to the module's Q: it takes n
+    # only, with Q/Q_INV/HA as globals, so it cannot be evaluated at any
+    # other q. A symbolic audit
+    # (computations/audits/q_integer_duplication_audit.py) found 366
+    # local reimplementations across computations/ and tools/, in 363
+    # files, and that pinning is why: callers that vary q had nothing to
+    # import. These two are what they can import instead.
+    #
+    # There are TWO conventions in the corpus and they are NOT
+    # interchangeable — 126 definitions use the symmetric form, 30 the
+    # classical one. They never take the same value anywhere both are
+    # defined (Lean: QOU.Substrate.QIntegerConventions, sorry-free), so
+    # pick deliberately:
+    #
+    #   symmetric  — quantum dimensions, Markov trace, Wedderburn
+    #                weights, normalised Hecke bases
+    #   classical  — the T_w (Iwahori, unnormalised) basis, Coxeter-length
+    #                and coinvariant Poincare gradings, Gaussian binomials
+    #
+    # Bridge, proved in that Lean file at n = 2,3 and checked symbolically
+    # to n = 7:   q^(n-1) * [n]_symmetric(q) = [n]_classical(q^2).
+
+    def q_int_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        """SYMMETRIC (balanced) quantum integer, q-parametric.
+
+            [n]_q = (q^n - q^-n) / (q - q^-1)
+
+        `q` defaults to the module's substrate value at `dps`. The
+        removable singularity at q = 1 is handled: [n]_q -> n there,
+        which the naive quotient reaches as 0/0 (a ZeroDivisionError in
+        several corpus copies).
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)
+            qq = q_at(dps + 10) if q is None else _mp.mpf(q)
+            if qq == 1:
+                _mp.mp.dps = max(prev, dps)
+                return +_mp.mpf(n)
+            val = (qq ** n - qq ** (-n)) / (qq - 1 / qq)
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def q_int_classical_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        """CLASSICAL (Gaussian) quantum integer, q-parametric.
+
+            [n]_q = (q^n - 1) / (q - 1) = 1 + q + ... + q^(n-1)
+
+        Computed as the geometric sum, so it is total: defined at every
+        q including q = 1, where it is n. This is NOT the symmetric
+        bracket — see the block comment above before choosing.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)
+            qq = q_at(dps + 10) if q is None else _mp.mpf(q)
+            val = _mp.fsum(qq ** i for i in range(n))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+
 except ImportError:
     HAS_MPMATH = False
 
@@ -432,6 +499,21 @@ except ImportError:
 # (2022: ...194), and M_N_MEV_ERR 0.00000054 (2022: 0.00000048). M_E_MEV_ERR
 # was 0.00000000015 against the table's 0.00000000016. Q_NEUTRON_MEV below is
 # DERIVED from all three, so it inherited the drift.
+
+    def q_int_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        """f64 fallback for the symmetric q-integer (see the mpmath
+        branch for the full contract). q = 1 returns n."""
+        qq = Q if q is None else float(q)
+        if qq == 1.0:
+            return float(n)
+        return (qq ** n - qq ** (-n)) / (qq - 1.0 / qq)
+
+    def q_int_classical_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        """f64 fallback for the classical (Gaussian) q-integer."""
+        qq = Q if q is None else float(q)
+        return sum(qq ** i for i in range(n))
+
+
 _E_MEV  = _codata("electron mass energy equivalent in MeV")
 _P_MEV  = _codata("proton mass energy equivalent in MeV")
 
