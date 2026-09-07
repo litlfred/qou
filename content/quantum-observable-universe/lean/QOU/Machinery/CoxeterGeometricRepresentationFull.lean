@@ -37,7 +37,16 @@ hypothesis, no per-system decidability, nothing:
 HONESTY (STRICT): sorry-free, hypothesis-free. What this does NOT
 prove: full Tits faithfulness (`ℓ` of arbitrary words / the order of
 `σᵢσⱼ` being exactly `mᵢⱼ`) — only simple-injectivity, which is all the
-transversal program consumes. Pair-canonicity of the τ-assignment
+transversal program consumes.
+
+✅ UPDATE (2026-09-07): the second of those two — **the order of `σᵢσⱼ`
+being exactly `mᵢⱼ`** — is now proved, in
+`QOU.Machinery.CoxeterDihedralOrder.dihedralExact_full`, off the scalar
+recursion in this file. It needs *less* than `reflEnd_pair_pow_eq_one`
+does, not more: tracking `⟨αᵢ, (fᵢfⱼ)^k αᵢ⟩` alone gives `cos (k·2π/m)`
+with no sine and no invertibility, so `m ≥ 2` suffices where the forward
+direction needs `m ≥ 3`. The FIRST half — `ℓ` of arbitrary words — is
+still not proved here. Pair-canonicity of the τ-assignment
 functor remains the one open item of the program. Base ring: `ℝ` by
 necessity (§7c); the module payoffs stay generic `[CommRing R]`.
 
