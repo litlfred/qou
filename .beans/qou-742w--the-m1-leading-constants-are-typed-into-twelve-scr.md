@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T06:28:48Z
-updated_at: 2026-09-07T05:00:17Z
+updated_at: 2026-09-07T09:11:40Z
 ---
 
 Found by the `qou-psjm` hand pass over the witness-copy audit. Full taxonomy:
@@ -138,3 +138,57 @@ downgrade this whole arc is auditing, reintroduced by the fix for it.
 
 Whether digits 7-12 of the #5901 extrapolation are converged. That is the M1
 epic's call and it is a conjecture, so this bean stays open per AGENTS.md 13a.
+
+
+---
+
+## DECIDED 2026-09-07 — it IS 2*sqrt(6)/5, and my own "undecidable" verdict is superseded
+
+Extending the ladder from theta=10240 to **theta=40960** drives the method error
+below the gap and resolves the question. Same probe, same calibration, longer
+ladder:
+
+    theta=10240   method error 5.861e-7   ratio to gap 1.92x   UNDECIDABLE
+    theta=20480   method error 1.189e-7
+    theta=40960   method error 9.933e-8   ratio to gap 0.326x  RESOLVES
+
+At theta=40960 the extrapolation lands at **0.9797958719839**:
+
+    vs 2*sqrt(6)/5 = 0.9797958971133   ->  2.565e-8   INSIDE one method error (0.26x)
+    vs recorded      0.979796195657    ->  3.303e-7   3.33x OUTSIDE it
+
+One candidate sits comfortably inside the method's demonstrated error and the
+other sits over three times outside it. **The closed form is supported; the
+recorded 12-digit literal is wrong past roughly its sixth digit.**
+
+So the annotation `# = 2 sqrt(6)/5` was RIGHT all along, and both of my earlier
+readings were wrong in turn: first "refuted at the recorded precision" (wrong),
+then "undecidable" (right for the ladder available at the time, superseded by a
+longer one). The literal is the thing that was wrong, not the identification.
+
+### The probe FAILED ON ITS OWN SUCCESS, and that is now fixed
+
+Its third check asserted `method_error > gap` -- i.e. that the ladder CANNOT
+decide. Correct while the arc's ladder was the only evidence; wrong the moment a
+longer one resolved it, and the run exited 1 while printing the answer. **An
+assertion that a question stays open is a prediction, not a check.** Replaced
+with a determinacy check that passes in either regime and refuses the genuinely
+bad middle case -- an error small enough to look decisive while the extrapolation
+is ambiguous between the two. Verified on both ladders: short (undecidable) PASS,
+long (decided) PASS.
+
+### What this does NOT establish
+
+The extrapolation supports the closed form; it does not PROVE it. `2*sqrt(6)/5 =
+sqrt(24/25)` remains a numerically-supported identification, not a derivation.
+Whatever makes `rho_inf^2 = 24/25` exact is still unexplained, and that is the
+part worth having.
+
+The decay-exponent spread WIDENED (2.302 vs 0.2589 pairwise, a 57x cost spread),
+so the probe's forward cost projection is less reliable than before -- moot here,
+since the question is answered, but do not quote that projection.
+
+**Bean stays open** per AGENTS.md 13a: the identification is supported, the
+derivation is not. What should close alongside it is the recorded literal --
+`0.979796195657` should carry only the digits it has earned, or be replaced by
+the closed form.

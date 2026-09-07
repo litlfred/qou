@@ -183,11 +183,38 @@ def main() -> int:
     print("#    NOTE the internal consistency: the known-answer case ALSO departs from truth in")
     print("#    its sixth significant digit.  Both are ~6-digit extrapolations written to 12.")
 
+    # The third check USED to assert `ratio > 1` -- i.e. that the ladder CANNOT decide.  That was
+    # right while the arc's own ladder (theta <= 2560) was the only evidence, and it is wrong now:
+    # extending to theta = 40960 drives the method error to 9.9e-08, a third of the gap, and the
+    # probe then FAILED ON ITS OWN SUCCESS.  An assertion that a question stays open is not a
+    # check, it is a prediction, and this one expired.
+    #
+    # What is checkable either way is that the run reaches a DETERMINATE verdict:
+    #   * undecidable  -- the method error covers the gap, so neither value is excluded; or
+    #   * decided      -- the method error is below the gap AND the extrapolation sits within one
+    #                     method error of exactly one candidate and more than one from the other.
+    # The failure mode this rules out is the middle case: an error small enough to look decisive
+    # while the extrapolation is ambiguous between the two, which would invite reading a coin flip
+    # as a result.
+    d_lit = abs(r_ext - RHO_LITERAL) / RHO_LITERAL
+    d_can = abs(r_ext - cand) / cand
+    near, far = min(d_lit, d_can), max(d_lit, d_can)
+    undecidable = ratio > 1
+    decided = (not undecidable) and near < method_err < far
     checks = [
         ("calibration ran", v_ext > 0),
         ("rho extrapolation ran", 0 < r_ext < 1),
-        ("method error exceeds the candidate gap", ratio > 1),
+        ("verdict is determinate (undecidable, or decided with one candidate inside the "
+         "method error and the other outside)", undecidable or decided),
     ]
+    if decided:
+        which = "2*sqrt(6)/5" if d_can < d_lit else "the recorded literal"
+        print("#")
+        print(f"#    DECIDED: this ladder converges to {which}.")
+        print(f"#      within one method error : {mp.nstr(near, 4)}  (method error "
+              f"{mp.nstr(method_err, 4)})")
+        print(f"#      outside it              : {mp.nstr(far, 4)}  = "
+              f"{mp.nstr(far / method_err, 3)}x the method error")
     print("#")
     for name, ok in checks:
         print(f"#   [{'PASS' if ok else 'FAIL'}] {name}")

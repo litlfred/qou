@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T02:13:12Z
-updated_at: 2026-09-07T06:26:31Z
+updated_at: 2026-09-07T09:12:15Z
 ---
 
 ---
@@ -144,3 +144,79 @@ this to their PR.
 initiative. It stays this bean's, on its own branch. What #6971 does carry is the
 establishment that **none** of the q0 gates' NEW findings intersect its diff —
 checked file by file, empty intersection on all three gates.
+
+
+---
+
+## 2026-09-07 — the named regression is a FALSE POSITIVE, and this bean's own finding is backwards
+
+I recorded the prior agent's reading on 2026-09-07 without checking it. Checked
+now, it does not hold.
+
+### The witness has NO producer, so "re-run the producer" was never the fix
+
+This bean says `9c2058f0bd` stripped `q0Anchor`/`q0Value` from
+`computations/chi-neutron-h3.witness.json`, that the stamp was correct, and that
+the remedy is to re-run `delta_lambda_empirical_tabulation.py` because "line 93
+is `from q_parameter import Q_MP` -- it *does* read the proton q0."
+
+Two errors in that:
+
+1. **That script READS this witness, it does not write it.** It appears in the
+   script's `chi_witness` list (line 119). Its `Q_MP` import is for its own
+   output. Grepped for a writer: every other reference in the tree is to the
+   *numeric* `chi-neutron-h3-at-q0-50dps.witness.json`, a different file. This
+   one has `producer: None`, `computation: None`, `scriptFile: None` and
+   `auditOnly: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`.
+   **Nothing produces it.**
+
+2. **Its content is purely SYMBOLIC, so it has no anchor to stamp.** Measured:
+
+       chi_q_symbolic: '(q**4 + 2*q**2 + 1)/(4*q)'
+       chi_q_symbolic: '(q**22 + q**20 + ... - 1)/(4*q**11)'
+       q0-literal occurrences in the whole file: 0
+       n_partitions 3/3, partial False
+
+   A chi^lambda in the formal variable q is anchor-independent by construction.
+
+**So the stamp asserted a dependence the object does not have, and removing it
+was CORRECT.** The drain commit was right; the regression is the ratchet
+reporting it, and the entry should be exempted rather than restored.
+
+### Sizing the rest of the ratchet's backlog -- and my own detector was wrong twice
+
+The interesting question is how much of the 110 NEW is the same false positive.
+Three passes, each one making my false-positive claim SMALLER:
+
+    pass 1  "no q0 literal in the payload"        -> 64 of 110  (58%)
+    pass 2  + producer's own source reads q0      -> 16 candidates
+    pass 3  + one-hop import cone, infra excluded ->  7 candidates  (6.4%)
+
+Pass 1 was wrong because a producer can compute at q0 and report only derived
+numbers -- `c5_sign_is_robust_convergence_claim_is_not_probe` reads `q_at()` and
+echoes no literal. Pass 2 was wrong because it ignored the import cone. Pass 3's
+first run was ALSO wrong: 14 of 15 "reached q0" through `_path_bridge`, which is
+a `sys.path` bootstrap and supplies nothing -- verified directly against its
+source. Excluding infra modules and stripping comments/docstrings before matching
+gave the 7.
+
+**Corrected totals for the 110 NEW:**
+
+    A  carries a q0 literal                      46   genuine
+    B  no literal, producer reads q0 directly    16   genuine
+    C  reaches q0 via a real one-hop import       8   genuine
+    C' no q0 reachable at one hop                 7   candidate anchor-free
+    D  no producer resolvable                    32   undetermined
+
+So **>= 70 of 110 are genuine** and at most 7 are false positives -- an upper
+bound, since the cone check is one hop deep. **This drain is real work, not a
+detector artifact.** That is the opposite of what pass 1 suggested and worth
+knowing before anyone budgets it.
+
+### The sibling blocker has weakened but the coordination note stands
+
+`origin/claude/anchor-followups-2026-08-08` is now **2 days idle with no PR**,
+and its `float(Q_MP)` -> `mp.mpf(Q_MP)` fix is still NOT on main (line 403 still
+casts). It is not a live claim by the stalled-claim rule, but porting their
+unmerged work is a separate decision from this bean's drain, and I have not taken
+it.
