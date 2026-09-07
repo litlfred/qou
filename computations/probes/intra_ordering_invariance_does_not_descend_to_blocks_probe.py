@@ -53,23 +53,47 @@ borromean (regenerated under the `qou-hu1f` ruling):
     quantity                              max relative change
     per-block χ, absolute                 5.562e+0   (4He)
     per-block ratio χ_atom / χ_free       4.332e+1   (T, at λ=(3,2,2,2))
-    aggregate tr_M(atom) / tr_M(free)     5.425e-18  (T)  [prior probe: ~1e-60]
+    aggregate tr_M(atom) / tr_M(free)     4.645e-50  (T)  [prior probe: ~1e-60]
 
 Nineteen orders between the last two rows, on the same underlying numbers.
 
-    D    trace ratio  0.508229789376738961855522  ->  0.508229789376738960877252
-    T    trace ratio  0.205135640448649768365013  ->  0.205135640448649767252137
-    3He  trace ratio  0.311386312072595651631708  ->  0.311386312072595650363816
+    (the per-atom trace-ratio values quoted here were the float64-q₀ run and are
+    superseded; re-run the probe for current figures rather than quoting them)
 
-THE RESIDUAL IS ~1e-18, NOT ~1e-50, AND THAT IS EXPECTED
----------------------------------------------------------
-The χ inputs are 50-dps strings, so an exactly-invariant quantity computed from
-them would agree near 1e-50.  It agrees at ~1e-18 because the trace is a sum of
-mixed-sign terms far larger than their total: roughly thirty digits are lost to
-cancellation before the ratio is taken.  So this is CONSISTENT WITH exact
-invariance and is not evidence of it — do not quote 1e-18 as a measurement of
-how exact the theorem is.  What it does establish, unambiguously, is the CONTRAST
-with 4.332e+1 one row up.
+🛑 THE RESIDUAL WAS ~1e-18 AND I EXPLAINED IT WRONG — IT WAS FLOAT64 q₀
+------------------------------------------------------------------------
+This section first read: *"the residual is ~1e-18, not ~1e-50, and that is
+expected — the trace is a sum of mixed-sign terms far larger than their total,
+so roughly thirty digits are lost to cancellation."*  **That explanation was
+wrong, and confidently stated.**
+
+The cause was this probe seeding `q` from `q_parameter.Q`, which is a **float64**,
+via `mp.mpf(str(Q0))` — carrying ~17 digits into a 60-dps computation and putting
+a 1e-17-ish floor under everything downstream of `y_lambda_su_n(n, q, 2)`.  It was
+caught by running `mpf_float_source_audit.py` on this probe, which named this
+file and this line.  Switching to `Q_50_DIGIT_STR`, same tree, same run, nothing
+else changed:
+
+    atom   with float64 q₀      with 50-digit q₀
+    D      1.92486e-18    ->    2.09057e-50
+    T      5.42507e-18    ->    4.64534e-50
+    3He    4.07177e-18    ->    5.47744e-51
+
+Thirty-two orders, from a one-line input change.  The per-block column did not
+move at all (15.57 / 43.32 / 121.5 before and after), because that column is
+dominated by the braid word rather than by q₀'s precision — which is itself the
+control showing the fix touched only what it should have.
+
+**This is the failure mode `AGENTS.md` names verbatim**: *"Agreement at 1e-16 in
+float64 is the floor of the arithmetic, not evidence about the mathematics."*  I
+had a residual sitting at the arithmetic floor and attributed it to a property of
+the trace.  The corrected ~1e-50 is the 50-dps input floor, which is what an
+exactly-invariant quantity computed from 50-dps strings should give — and it sits
+much closer to the prior probe's ~1e-60, obtained without going through the
+blocks at all.
+
+Even so, **quote 1e-60, not 1e-50**: the prior probe measures the same invariance
+by a better route, and this column remains a control rather than a result.
 
 THE CORRECT TRIAGE RULE
 -----------------------
@@ -106,7 +130,7 @@ sys.path.insert(0, str(COMP))
 import _path_bridge  # noqa: F401,E402
 from mpmath import mp  # noqa: E402
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 mp.dps = 60
 
@@ -133,7 +157,10 @@ def _blocks(w, leg):
 
 
 def main() -> int:
-    q = mp.mpf(str(Q0))
+    # Q_50_DIGIT_STR, not q_parameter.Q: the latter is a float64 and
+    # `mp.mpf(str(Q))` would carry ~17 digits into a 60-dps computation.
+    # Flagged by mpf_float_source_audit at this very line (2026-09-07).
+    q = mp.mpf(Q_50_DIGIT_STR)
     rows, failures = [], []
     for atom, stem, n in ATOMS:
         rel = f"computations/{stem}.witness.json"
