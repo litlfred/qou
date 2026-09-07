@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T15:12:00Z
-updated_at: 2026-09-07T04:32:20Z
+updated_at: 2026-08-30T16:56:09Z
 ---
 
 `computations/audits/braid_encoding_audit.py` runs to **exit 0** and writes a
@@ -107,18 +107,3 @@ Also noted: the derivation file carries **no provenance at all** — no
 `scriptFile`, no `commitSha`, no `engine` — and its producer
 `build_markov_trace_assembly_chain.py` is in `_deprecated/`, while its own
 docstring states a *third* value (≈2.12258) that contradicts the file it writes.
-
-
-
-## Cross-reference 2026-09-06 — a SEVENTH value, recorded on `qou-7zff`
-
-The canonical chi cache moved again on the 2026-09-05 intra-ordering ruling
-(`qou-hu1f`) and now holds `0.62932840220292191817…` (proton) /
-`0.47513351715568221251…` (neutron) — matching none of the five in this bean's
-census, nor the sixth. Cache-before/after ratios **1.82060** and **2.07887**.
-
-Two things worth carrying back here: the `1.0653` claimant has **two spellings**
-in the tree (`…62285923893` in the census, `…62380758782` in a live assertion),
-and `gap_a4_T2_per_knot_vol_probe_perknot_rerun`'s `*_matches_documented`
-assertions were **already red before** the regeneration — they report a real
-disagreement and must not be re-pinned. Full measurement on `qou-7zff`.

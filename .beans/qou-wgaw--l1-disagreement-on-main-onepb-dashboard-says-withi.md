@@ -1,11 +1,11 @@
 ---
 # qou-wgaw
 title: 'L1 disagreement on main: onepb dashboard says within_1ppb True, cross-check says False 6/6'
-status: completed
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T04:23:18Z
-updated_at: 2026-09-05T09:43:43Z
+updated_at: 2026-08-29T06:37:14Z
 ---
 
 Measured on origin/main, read-only, 2026-08-29.
@@ -110,57 +110,3 @@ surfaces as a changed field instead of silently reading 0.0 again.
 The decisive step was not reading the code — it was **replaying the dashboard's
 exact reduction against today's source witness**. That separates "stale" from
 "structurally wrong" in one command, and the two defects here are one of each.
-
-
----
-
-## CLOSED 2026-09-05 — both sides agree on `main`, and the fix was a real repair rather than a re-label
-
-Verified on `main` `262ee53eeea`, reading both witnesses this bean set against
-each other:
-
-| | field | value |
-|---|---|---|
-| dashboard `onepb-status-dashboard` | `all_within_1ppQ` | **True** |
-| | `max_rel_delta` | **1.2081923737e-49** |
-| | `any_diverge` | False |
-| cross-check `cross-check-trM-1ppb` | `within_1ppQ`, all 6 rows | **True** |
-| | `allPassed` | True |
-
-The disagreement this bean was opened on — dashboard True against cross-check
-**False 6/6** — is gone, and gone in the *right* direction.
-
-### It was NOT closed by reporting False
-
-The bean's own fix predicted `all_within_1ppb True → False`, `allPassed True →
-False`. Main shows True. That is not the bean being ignored: `93888aa4311`
-found and fixed the **root cause** — the χ combiner's numerical cache
-(`chi-<atom>-h<n>-at-q0-50dps`) is pinned at the **proton** q₀ while the muon
-L1 cross-check was combining it with **muon**-pinned `y_λ`. A pin straddle,
-i.e. the hazard AGENTS.md names verbatim. `canonical_tr_m()` now falls back to
-the symbolic path (χ evaluated at the *runtime* q₀) when the numerical cache's
-`q0Value` ≠ the runtime pin — but only when the symbolic cache is COMPLETE, so
-the partial-cache atoms (T / ³He / ⁴He) keep their complete numerical cache
-rather than regressing.
-
-So the 2.9e-7 peel↔χ gap was a layer straddle, not a real L1 failure, and
-removing it recovers agreement to **3e-50**. Tolerance unchanged at 1e-9; no
-baseline widened.
-
-### The naming half also landed
-
-`all_within_1ppQ`, `l1_target_note` ("L1 target is 1 ppQ (1e-15) since
-2026-05-26; the `*_1ppb` field names predate that upgrade and are kept for
-compatibility. Quote `all_within_1ppQ` for L1 status.") and
-`max_rel_delta_source_key` (= `exact_method_rel_delta`) are all present in the
-committed dashboard. That last one is the durable part: a future key rename now
-surfaces as a changed field instead of silently reading 0.0 again.
-
-### One observation, deliberately NOT folded in
-
-`computations/cross-check-trM-cw-seminormal.witness.json` reads `allPassed:
-False` with `within_1ppQ` False on all 6 rows. That is a **different**
-cross-check — the colour-weighted Wedderburn/seminormal third method, a
-genuinely independent decomposition — not the one this bean names, and it is
-already tracked in bean `qou-2wtx`. Recorded here so a reader seeing a red L1
-cross-check on main does not reopen this bean for it.

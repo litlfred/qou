@@ -1,11 +1,11 @@
 ---
 # qou-b3l8
 title: sublemma-2-1-alpha-shift-extract is a muon-era witness whose only regeneration path drops its provenance block
-status: completed
+status: todo
 type: bug
 priority: normal
 created_at: 2026-08-23T13:22:16Z
-updated_at: 2026-09-05T09:43:42Z
+updated_at: 2026-08-29T00:15:13Z
 ---
 
 Two independent defects on one witness, neither caused by #5517 — measured with
@@ -76,50 +76,3 @@ emitted, per `qou-4un2`'s reasoning.
 a correction rather than deferred as a risk — but it must be its own deliberate
 commit, not folded into a provenance change. #5923 leaves the witness
 byte-identical for exactly that reason.
-
-
----
-
-## CLOSED 2026-09-05 — the regeneration ran, and it reproduces this bean's predicted numbers exactly
-
-The one remaining item ("the regeneration itself … it must be its own deliberate
-commit, not folded into a provenance change") is done, as its own commit.
-
-Producer re-run unmodified on `main` `262ee53eeea`, exit 0. Diffed against the
-committed witness with ephemeral provenance masked:
-
-| quantity | committed | fresh | this bean predicted |
-|---|---|---|---|
-| `alpha_shift [3]\|[3]`, λ=(6,) | 1.005448433353… | **1.005520334981654518…** | `1.00552033…` ✓ |
-| `max_relative_residual`, λ=(5,1) | 25.35559859… | **25.52447626…** | `25.3556 -> 25.5245` ✓ |
-
-49 substantive fields moved, all in the same direction and all at the same
-~7.19e-5 absolute scale on the α_shift values. **The drift is the
-float64 → mpmath port** (`253e2ffaf5`: `chi_lambda_fast` → `chi_lambda_fast_mp`,
-`Q` float → `Q_MP` mpf), which landed **3 min 44 s after** this witness was
-stamped — so the committed values were the pre-port ones and the fresh values
-are the better ones. A correction, exactly as the bean argued.
-
-### Two provenance gains alongside, neither of them a re-pin
-
-- **`q0Value` added** — absent before, now `1.1099785827513808075916690956…`,
-  the **proton** pin, with `q0Anchor: proton`. Correct rather than assumed: the
-  producer appears on **no** list in `computations/q0_anchor_manifest.json`, so
-  it is not `ideal_muon` and the 2026-08-07 standing directive (proton is the
-  default for all compute) applies. Nothing was re-pinned; a field that recorded
-  nothing now records what the run actually used.
-- **`auditOnly` repointed** from `docs/audits/2026-05-04-…` to
-  `docs/audits/_deprecated/2026-05-04-…`, which §3 of this bean recorded as
-  dangling after the target moved.
-
-### Precision gate
-
-`witness_raw_float64_audit`: **NEW dirty 0, REGRESSED 0**. No baseline touched.
-
-### The warning in §2 still stands and is why this closure names its cause
-
-Do **not** re-attribute this drift to the muon re-pin. §2's `1.745e-7` /
-re-pin explanation is correct about a **different cause five days earlier in the
-same witness**; quoting it for what a re-run does today would be a confident
-wrong attribution. Two causes, one file — which is the reusable part of this
-bean.

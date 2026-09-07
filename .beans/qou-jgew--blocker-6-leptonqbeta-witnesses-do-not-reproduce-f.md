@@ -1,11 +1,11 @@
 ---
 # qou-jgew
 title: 'BLOCKER: 6 lepton/qbeta witnesses do not reproduce from main''s own producers'
-status: completed
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T22:03:21Z
-updated_at: 2026-09-05T09:21:00Z
+updated_at: 2026-08-22T01:14:17Z
 ---
 
 ## What was measured
@@ -273,72 +273,3 @@ PR read alone. Regenerating the six before that ruling would bake an
 unratified answer into six artifacts.
 
 So: do not regenerate the six on #5423's landing alone. Both gates.
-
-
----
-
-## CLOSED 2026-09-05 — both gates cleared, and all SIX reproduce. Measured by running.
-
-The bean's own last word was that the six were **re-gated on two things**, not one:
-
-1. #5423's CODATA source routing;
-2. **the A-vs-C ruling, an owner call** — because A (the frozen pin
-   `1.1099785955573347…`) is not reproducible from any published muon ratio,
-   so the choice was not "current vs stale CODATA".
-
-**Gate 2 cleared by owner ruling.** 2026-08-22, verbatim: *"2022 CODATA better
-than 2018. A --> CODATA 2022."* Re-confirmed 2026-08-30 (*"C."* / *"CODATA 2022
-for muon"*). Implemented `fca08de7d29` (2026-08-28) — and implemented by
-**deriving** the anchor from `constants.MASS_RATIO_MU_E_STR` rather than
-re-freezing a literal, which is what stopped the 2026-08-19 self-certification
-recurring.
-
-**Gate 1 cleared and the regeneration ran.** All five witnesses that carried the
-muon literal now hold `1.1099785956427390…` — the live CODATA-2022 anchor, i.e.
-exactly the "main today" value this bean measured as the *mismatch*. They were
-regenerated in `119885a4c61` (2026-08-29, the 154-producer re-run) and
-`b831ff34c3d`; `gap-a4-T2` was touched by `7208369ebe0` the same day.
-
-### Verified by running all six, not by reading the literal
-
-This bean's own lesson was *"Classify by running, not by grepping."* Applied to
-its own closure. Each producer run unmodified on `main` `262ee53eeea`, output
-diffed against the committed witness with ephemeral provenance masked
-(`computedAt`, `durationMs`, `commitSha`, `scriptHash`, `engineVersion`,
-`elapsed_seconds`, `timestamp`, `scriptCommitSha`, `measured_at`,
-`pyhecke_native_build`):
-
-| producer | was | now |
-|---|---|---|
-| `t6-lepton-h3-3channel-convention` | 54 diff lines | **0** |
-| `canonical-lepton-braid-words` | 54 | **0** |
-| `f-ell-derivation-via-per-braid-mass-tower` | 26 | **0** |
-| `per-generator-V-hat-general` | 73 | **0 numeric** (4 provenance fields ADDED — below) |
-| `q-beta-complex-q-test1-phasea-v2` | 16 | **0** |
-| `probes/gap-a4-T2-per-knot-vol-probe` | 106 | **0** |
-
-**Six of six.** The 8e-10 (~800 ppb) `q_0` move that made this a blocker is gone:
-committed was CODATA-2018 `…55541805…`, main-today is CODATA-2022 `…56427390…`,
-and the committed files now carry the latter.
-
-Note `q_beta_complex_q_test1_phaseA_v2` DID finish here (the bean recorded its
-`phaseA` sibling exceeding 300 s); run with `timeout 1500`, exit 0.
-
-All six witnesses reverted after diffing — a tree-measuring run is not a commit.
-
-### One thing found on the way, and it is NOT this bean's non-reproduction
-
-`per-generator-V-hat-general.witness.json` had **zero numeric movement** but was
-missing four provenance fields its producer now emits: `engine`, `scriptFile`,
-`q0Anchor` (`muon`), `q0Value`. That is the `qou-4un2` P30-provenance class, not
-the CODATA drift — a witness written before those fields existed. Refreshed in
-this PR as a pure provenance gain (`chore(witness)`); the numbers are unchanged
-and `q0Anchor: muon` records what the producer actually pins to rather than
-changing it.
-
-### Downstream
-
-The `qou-ckbv` OVER_CLAIMED `Vol(4₁)` drain was gated on this bean ("the volume
-fix for these six must wait"). **That gate is lifted.** The digit-10 drift the
-fix would have buried no longer exists; a volume correction at digit 21 is now
-the only thing such a commit would move.
