@@ -43,8 +43,29 @@
 # cache-subset miss never false-blocks a PR.
 #
 # Usage:  scripts/lean-verify-siblings.sh <file.lean> [more.lean ...]
-# Exit:   0 = all files pass or neutral-skip; 1 = ≥1 genuine error;
-#         2 = bad usage; 127 = `lean` not installed.
+# Exit:   0 = at least one file was actually compiled and none failed
+#         1 = >=1 genuine error
+#         2 = bad usage
+#         3 = VERIFIED NOTHING — no olean cache, or every file neutral-skipped.
+#             NOT a pass. See below.
+#         127 = `lean` not installed.
+#
+# WHY 3 EXISTS (bean qou-lsib, 2026-09-07)
+# ----------------------------------------
+# This used to `exit 0` when the olean cache could not be restored, printing
+# only a `::warning`. The neutral-skip itself is right — a cold runner must not
+# false-block a PR — but conflating it with 0 means a PERMANENTLY broken cache
+# makes this gate permanently green and useless, silently.
+#
+# Measured, not hypothesised: on 2026-09-07 `lean-cache-restore.sh` failed here
+# (`tar: Unexpected EOF in archive`) and this script reported success over 32
+# files it never opened, in a run whose whole purpose was to re-check them.
+# That is the same green-no-op that made `lean-content-siblings.yml` check zero
+# files under its only trigger, one layer down.
+#
+# So the SCRIPT reports what happened and the CALLER decides what it means: CI
+# maps 3 to a warning (never false-blocks, exactly as before), while an agent
+# running this locally sees that nothing was verified.
 set -uo pipefail
 source "$(dirname "$0")/lib/lean-env.sh"
 
@@ -54,7 +75,10 @@ has lean || { echo "lean-verify-siblings: 'lean' not on PATH" >&2; exit 127; }
 # Ensure oleans present (restore on demand; root .lake is the workspace).
 existing=$(find "$REPO_ROOT/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
 if [ "${existing:-0}" -lt 2000 ]; then
-  "$(dirname "$0")/lean-cache-restore.sh" || { echo "::warning::olean cache unavailable — skipping all" >&2; exit 0; }
+  "$(dirname "$0")/lean-cache-restore.sh" || {
+    echo "::warning::olean cache unavailable — VERIFIED NOTHING (exit 3), not a pass" >&2
+    exit 3
+  }
 else
   lean_mathlib_url_fix
 fi
@@ -111,4 +135,12 @@ for f in "$@"; do
   fi
 done
 echo "lean-verify-siblings: pass=$pass neutral-skip=$skip fail=$fail"
-[ "$fail" -eq 0 ]
+if [ "$fail" -gt 0 ]; then exit 1; fi
+if [ "$pass" -eq 0 ] && [ "$skip" -gt 0 ]; then
+  # Every file neutral-skipped: no genuine error was found because no file was
+  # actually type-checked. Reporting 0 here would be the same lie as the
+  # cache-restore path above.
+  echo "::warning::every file neutral-skipped — VERIFIED NOTHING (exit 3), not a pass" >&2
+  exit 3
+fi
+exit 0

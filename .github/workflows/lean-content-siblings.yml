@@ -198,4 +198,18 @@ jobs:
           # outside the cached olean cone (the cache ships only QOU's
           # dependency subset, not all of Mathlib) is neutral-skipped with a
           # ::warning so a cache-subset miss never false-blocks the PR.
+          #
+          # Exit 3 = VERIFIED NOTHING (no cache, or every file neutral-skipped).
+          # Mapped to a warning here — a cold runner still must not false-block
+          # a PR, which is unchanged — but the script no longer reports it as 0,
+          # so the "gate went permanently green because the cache broke" case is
+          # legible in the log instead of indistinguishable from a pass.
+          set +e
           scripts/lean-verify-siblings.sh ${{ steps.changed.outputs.files }}
+          rc=$?
+          set -e
+          case "$rc" in
+            0) echo "content siblings verified" ;;
+            3) echo "::warning::content-sibling compile VERIFIED NOTHING (infra: no olean cache, or all neutral-skipped) — not a pass, but not blocking" ;;
+            *) exit "$rc" ;;
+          esac
