@@ -486,6 +486,22 @@ except ImportError:
             "available as Q_MUON_50_DIGIT_STR"
         )
 
+    # These RAISE rather than falling back to f64, matching the four above.
+    # A q-integer is an input to quantum dimensions, Markov traces and
+    # Wedderburn weights; computing one in binary64 and returning it silently
+    # is the failure the NO-FLOAT64 discipline exists to prevent, and a caller
+    # cannot tell a degraded result from a good one. Failing loudly is the
+    # corpus convention here (cf. q_parameter.py, "Refusing to fall back to
+    # proton silently"). Owner directive, 2026-09-07.
+
+    def q_int_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("q_int_at requires mpmath; install it with `pip install mpmath`")
+
+    def q_int_classical_at(n: int, q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError(
+            "q_int_classical_at requires mpmath; install it with `pip install mpmath`"
+        )
+
 # ── Experimental observable anchors (CODATA 2022) ─────────────
 # Mirrored from `computations/substrate/experimental_constants.py`
 # so consumers running outside the repo (Pyodide, Sage, PyPI installs)
@@ -499,20 +515,6 @@ except ImportError:
 # (2022: ...194), and M_N_MEV_ERR 0.00000054 (2022: 0.00000048). M_E_MEV_ERR
 # was 0.00000000015 against the table's 0.00000000016. Q_NEUTRON_MEV below is
 # DERIVED from all three, so it inherited the drift.
-
-    def q_int_at(n: int, q=None, dps: int = _DPS_DEFAULT):
-        """f64 fallback for the symmetric q-integer (see the mpmath
-        branch for the full contract). q = 1 returns n."""
-        qq = Q if q is None else float(q)
-        if qq == 1.0:
-            return float(n)
-        return (qq ** n - qq ** (-n)) / (qq - 1.0 / qq)
-
-    def q_int_classical_at(n: int, q=None, dps: int = _DPS_DEFAULT):
-        """f64 fallback for the classical (Gaussian) q-integer."""
-        qq = Q if q is None else float(q)
-        return sum(qq ** i for i in range(n))
-
 
 _E_MEV  = _codata("electron mass energy equivalent in MeV")
 _P_MEV  = _codata("proton mass energy equivalent in MeV")
