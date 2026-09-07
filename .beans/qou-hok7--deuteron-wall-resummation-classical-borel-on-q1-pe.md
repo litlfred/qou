@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-07T10:28:27Z
+updated_at: 2026-09-07T11:28:16Z
 ---
 
 
@@ -258,3 +258,73 @@ are NOT enough on their own, since the LP relaxation over those alone has suprem
 linear and useless.
 
 Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved (#7014, #7018); tightness open.
+
+
+## 2026-09-07 — the structural handle this bean asked for: beta-coordinates (PR #7070)
+
+The "What would decide it" section above has now been answered on both halves.
+
+**The enumeration half is CLOSED, not merely hard** (#7065). It guessed "feasible to n ~ 60,
+probably still not enough". Measured: n = 76 was reached (p = 9,289,091, 17 min) and the answer is
+that the statistic itself does not discriminate there. A provably Theta(sqrt n) control — the
+staircase — has an n^{3/4} ratio that RISES to a peak at n = 55 and only then falls, so over
+n = 36..78 it is flat at 1.20-1.23, the same range and the same value the M_n scan shows. The
+control only leaves its peak past n ~ 150, and p(150)/p(84) = 1,539, roughly 52 days of scanning
+here. Do not spend more compute on this route.
+
+**The structural half now has coordinates.** This bean asked for "a bound on R_lambda that uses
+more than N_m <= r", having ruled out the two-moment LP. The answer is to change variables to the
+first-column hook lengths (beta-numbers) beta_i = lambda_i + l - i:
+
+    (I')  R_lambda = sum_i F(beta_i) - sum_{i<j} eps_(beta_i - beta_j) - F(n)
+    (II)  H        = sum_i beta_i(beta_i+1)/2 - sum_{i<j}(beta_i - beta_j)
+    (III) n        = sum_i beta_i - l(l-1)/2
+
+with F(k) = sum_{m<=k} eps_m. Both R and the energy are one-body plus a PAIR interaction in the
+same coordinates — a log-gas shape. Exact: verified on every partition of n <= 13 (eps-weighted,
+worst residual 3.3e-49) and n <= 16 (integer arithmetic, exact).
+
+**The pair term is not a correction — it is 41.6% of the constant.** The one-body term alone gives
+R <~ l*C, i.e. L1 recovered with nothing gained. On the staircase every gap is even, so the pair
+term is sum_d (k-d) eps_{2d} -> k * sum_d eps_{2d}, and
+
+    R_{delta_k} / k  ->  C - sum_d eps_{2d}  =  sum_{m odd} eps_m  =  A = 3.6034
+
+which is EXACTLY the constant proved in #7010. Richardson on k = 64,128 agrees with A to 1.4e-13.
+So the interaction is precisely what makes the staircase A and not C. At the other extreme (single
+column, all gaps 1) it takes R to exactly 0. The identity is tight at both ends.
+
+### Two things I predicted and got wrong
+
+Recorded because the corrections are the informative part, not as self-flagellation.
+
+- I expected the derived bound to LOSE to C*r, since it is applied with the rows while C*r takes
+  r = min(l, lambda_1) and so silently picks the better conjugate reading. It WINS at all six
+  empirical argmax shapes, cutting the over-statement of R from 2.46-2.89x to 1.61-1.86x. Those
+  shapes have l = r in five of six, so the prefactors tie and the pair term is pure gain.
+- I expected its ratio to the truth to GROW with n once maximized with the energy (an upper bound
+  with too high an exponent must eventually outrun its target). It FALLS: 4.34x at n=16 to 3.09x
+  at n=40, against 5.94x -> 5.29x for C*r.
+
+### 🛑 The inference NOT drawn
+
+Maximized, the bound over sqrt(n) is flat to 9.8% (8.77, 9.45, 9.72, 9.64 at n=16,24,32,40) while
+over n^{3/4} it falls monotonically (4.38, 4.27, 4.08, 3.83). That reads as "the bound itself is
+O(sqrt n)", which would settle sharpness the OTHER way — the 3/4 not sharp, REV = Theta(sqrt n).
+**Refused.** By the control above, n <= 40 sits below the peak of the very statistic being read, on
+a range shorter than the one already shown not to discriminate. Recorded as an observation with its
+refutation attached.
+
+### What is next, and why it is not another scan
+
+The bound depends on lambda only through (l, W, n), with W = beta_1 - beta_l — three small integers
+instead of a partition. So maximizing it does NOT require enumerating p(n) shapes, which is exactly
+the wall the enumeration route hit. The remaining work is the admissibility relation linking
+(l, W) to H: large W spreads the beta's, which costs H through (II), and that trade-off is now
+writable in one variable set. If that optimisation can be done in closed form the exponent follows
+at every n, with no scan.
+
+One lossy step stands in the way and should be attacked first: the bound currently applies Jensen
+at the mean of each distance class, which is what leaves it ~1.8x above the truth at the argmax.
+
+Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
