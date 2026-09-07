@@ -28,6 +28,13 @@ invariants close the two planes independently:
   Thm 3.3.5's isoformal dimension `∑_{i<j} rᵢrⱼ(μⱼ−μᵢ)` has an **empty index set**
   at one slope: the isoformal space is a point.
 
+  The same paper forces it a third way, from the *definition* rather than from a
+  count.  Ramis–Sauloy Thm 3.5 **defines** the q-alien derivations as residues
+  `Δ̇_c(A) = Res_{d=c} log S_{c₀,d}`, valued in the Stokes Lie algebra and
+  **graded by level `δ = μ_j − μ_i`** (eq. 16) — a *difference of two slopes*.
+  With one slope that grading has no valid index, so there is no graded piece for
+  an alien derivation to live in.  Three independent routes, one conclusion.
+
 **The dimension-count half of this is PRIOR ART and is not claimed here.**  The
 `references.ts` note on Bugeaud's non-integral generalisation already records
 (2026-08-08, bean `qou-qbp5`) that "neither RSZ §3.3 nor this note supplies Stokes
