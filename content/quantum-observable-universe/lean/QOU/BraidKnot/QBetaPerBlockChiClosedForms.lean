@@ -1243,4 +1243,75 @@ theorem unique (w1 w2 : ZRecursionCoeffs) :
                 = (4 : ℝ) * ((↑(k+1) : ℝ) + 1) * w2.a (k+1+1) := by linarith
       exact mul_left_cancel₀ h4 hmul
 
+/-! ## The canonical (borromean) `(2,1)` character — bean `qou-eddc`
+
+The 2026-09-05 intra-ordering ruling (`qou-hu1f`) reaches exactly one of the
+three blocks above. `chi_block_3` and `chi_block_111` are the one-dimensional
+irreps, where the generators act by scalars and therefore commute, so no
+reordering of the nucleon word can change them — both were verified symbolically
+to be IDENTICAL under either ordering. $V_{(2,1)}$ is the only 2-dimensional
+block of $H_3(q)$, and it is exactly where $\sigma_0$ and $\sigma_1$ fail to
+commute.
+
+This section states the canonical form and proves the structural facts about it.
+It is **additive**: `chi_block_21` and everything downstream of it are untouched
+and remain in the grouped frame. Migrating them means re-deriving the whole
+`HasDerivAt` tower (`P21`, `delta_tau_M_surrogate`, both explicit derivative
+functions, three monomial chains whose numerator goes degree 11 → 17), which is
+tracked separately in `qou-eddc`.
+
+Derivation, and a cross-check against a second implementation agreeing to
+~1e-40: `computations/qbeta/qbeta_per_block_chi_borromean_closed_forms_probe.py`.
+-/
+
+/-- The ordering-correction factor $P(q)$ relating the two frames. -/
+noncomputable def chi_block_21_P (q : ℝ) : ℝ :=
+  2*q^12 - 5*q^10 + 5*q^8 - 5*q^6 + 5*q^4 - 5*q^2 + 2
+
+/-- Per-block character $\chi_{(2,1)}(\Delta_{T_\beta})$ under the **canonical
+(borromean)** intra-nucleon ordering:
+
+$$\chi_{(2,1)} = \frac{(q^2-1)(q^4+1)\,P(q)}{4q^9}.$$ -/
+noncomputable def chi_block_21_canonical (q : ℝ) : ℝ :=
+  (q^2 - 1) * (q^4 + 1) * chi_block_21_P q / (4 * q^9)
+
+/-- **$P(1) = -1$.** This single value is why the classical-point results are
+frame-independent: it makes the two forms agree exactly at $q = 1$. -/
+theorem chi_block_21_P_at_one : chi_block_21_P 1 = -1 := by
+  unfold chi_block_21_P; norm_num
+
+/-- **$P$ is palindromic**, $q^{12}P(1/q) = P(q)$ — i.e. bar-involution
+symmetric. This is the consistency check on the derivation that depends on no
+numeric pin. -/
+theorem chi_block_21_P_palindromic (q : ℝ) (hq : q ≠ 0) :
+    q^12 * chi_block_21_P (1/q) = chi_block_21_P q := by
+  unfold chi_block_21_P; field_simp; ring
+
+/-- **Vanishing at the classical point** survives the ordering change, so
+`chi_blocks_vanish_at_one` holds in the canonical frame too. -/
+theorem chi_block_21_canonical_vanishes_at_one : chi_block_21_canonical 1 = 0 := by
+  unfold chi_block_21_canonical chi_block_21_P; norm_num
+
+/-- **The $(q^2-1)$ factor survives**, so
+`prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor` is unaffected in
+substance — only the cofactor `P21` changes. -/
+theorem chi_block_21_canonical_has_q2_minus_1_factor (q : ℝ) (hq : q ≠ 0) :
+    chi_block_21_canonical q = (q^2 - 1) *
+      ((2*q^16 - 5*q^14 + 7*q^12 - 10*q^10 + 10*q^8 - 10*q^6
+         + 7*q^4 - 5*q^2 + 2) / (4 * q^9)) := by
+  unfold chi_block_21_canonical chi_block_21_P; field_simp; ring
+
+/-- **The exact relation between the two frames**: canonical $\cdot\,q^6 =
+-P(q)\cdot$ published. With `chi_block_21_P_at_one` this is the whole content of
+"the orderings differ away from $q = 1$ and nowhere at it". -/
+theorem chi_block_21_canonical_eq_published (q : ℝ) (hq : q ≠ 0) :
+    chi_block_21_canonical q * q^6 = -(chi_block_21_P q) * chi_block_21 q := by
+  unfold chi_block_21_canonical chi_block_21_P chi_block_21; field_simp; ring
+
+/-- **The two frames agree at $q = 1$.** -/
+theorem chi_block_21_frames_agree_at_one :
+    chi_block_21_canonical 1 = chi_block_21 1 := by
+  unfold chi_block_21_canonical chi_block_21_P chi_block_21; norm_num
+
+
 end QOU.BraidKnot

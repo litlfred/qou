@@ -398,3 +398,44 @@ numerator and denominator blocks must be edited by hand and distinguished by
 what they prove, not by what they look like. That is a focused sitting with the
 file open, not a scripted pass — and it now has a fast feedback loop
 (scratch-file iteration, seconds per round) and a real 0-error baseline.
+
+---
+
+## The canonical form now HAS a Lean proof — additively
+
+Asked "lean.proof?", the honest answer was **no**: the result had a sympy
+derivation and an independent numerical cross-check, but no formal backing, and
+three failed attempts to put it in Lean.
+
+That was the wrong shape of attempt. The migration keeps failing because
+`chi_block_21` is load-bearing for the whole derivative tower. **Stating and
+proving the canonical form is purely additive** and touches none of it.
+
+Added to `QBetaPerBlockChiClosedForms.lean` — full file compiles at **0 errors**:
+
+| theorem | content |
+|---|---|
+| `chi_block_21_P_at_one` | `P(1) = -1` — the single fact making both frames agree at q = 1 |
+| `chi_block_21_P_palindromic` | `q¹²·P(1/q) = P(q)`, bar-involution symmetric; the pin-free check |
+| `chi_block_21_canonical_vanishes_at_one` | classical-point vanishing survives |
+| `chi_block_21_canonical_has_q2_minus_1_factor` | the `(q²−1)` factor survives, only the cofactor moves |
+| `chi_block_21_canonical_eq_published` | exact relation: canonical·q⁶ = −P(q)·published |
+| `chi_block_21_frames_agree_at_one` | the two frames agree at q = 1 |
+
+Every structural claim previously asserted from sympy is now proved. All six
+compiled first try — `field_simp; ring` and `norm_num` throughout, no
+`HasDerivAt`, which is exactly why this works where the migration does not.
+
+`chi_block_21` and everything downstream remain in the grouped frame,
+untouched and still compiling.
+
+### The lesson, three attempts late
+
+When a change is blocked by coupling, **prove the new thing alongside rather
+than trying to swap it in**. The formal content was available from the start; I
+was gated on a refactor I did not need to do first. Each failed attempt was an
+attempt at the *swap*, not at the *proof*.
+
+The swap remains open and is now clearly lower priority: the mathematical result
+is formally backed, and migrating `chi_block_21` is a refactor for consistency
+rather than the thing standing between the corpus and a verified statement.
