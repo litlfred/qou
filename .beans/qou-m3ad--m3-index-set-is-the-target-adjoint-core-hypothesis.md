@@ -8,7 +8,7 @@ tags:
     - g3-aomega
     - route-c
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-18T23:55:00Z
+updated_at: 2026-09-07T10:15:05Z
 parent: qou-rtec
 ---
 
@@ -194,3 +194,9 @@ still needs the ray to come out of the Hecke side.
 
 Until one lands: HYPOTHESIS ONLY, with a NAMED RIVAL that the data cannot exclude,
 and no derivation of the DT spectrum from Hecke data claimed.
+
+## Part 5 (2026-09-07): H_floor's inputs DERIVED for 4_1 and 5_2 (not a discriminator)
+
+Part 4's rule (remainder = real-embedding count of the trace field) ran on GZ's transcribed table. The two fields this corpus derives itself (two_bridge_layered_nz_probe.py, #6985: x^2-x+1 for 4_1 from the Farey word R, theta^3-theta+1 for 5_2 from RL) now supply the signatures by proof: no real root (nlinarith) and exactly one real root (IVT on (-2,-1) + strict monotonicity below -1), QOU/QBeta/FloorRemainderFromDerivedShapeFields.lean, sorry-free; link theorems say AdjointIndexSetM3.realEmbeddings' 4_1/5_2 entries ARE those counts. Probe aomega_m3_floor_remainder_from_derived_shape_fields_probe.py (13/13) adds the Chern-Simons value sets of the Galois-conjugate structures by pushing every shape through every embedding: {+V,-V} for 4_1, {0,+V,-V} for 5_2 with the real embedding at volume exactly 0.
+
+Scored honestly: this is PROVENANCE, not discrimination. Core is still 3 under both H_Ad and H_floor; (-2,3,7) is still not derived; nothing Hecke-side. It closes the "imported" caveat on Part 4 for the two knots the corpus owns. Audit: 2026-09-06-two-bridge-layering-from-farey-word.md §3c.

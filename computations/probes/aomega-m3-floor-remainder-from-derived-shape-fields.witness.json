@@ -1,0 +1,159 @@
+{
+  "name": "aomega-m3-floor-remainder-from-derived-shape-fields",
+  "description": "H_floor's remainder (real-embedding count of the trace field) for 4_1 and 5_2 derived from the two-bridge shape fields, with the Galois-conjugate Bloch-Wigner volumes {0, +/-V}.",
+  "computation": "aomega-m3-floor-remainder-from-derived-shape-fields",
+  "engine": "python",
+  "scriptFile": "aomega_m3_floor_remainder_from_derived_shape_fields_probe.py",
+  "computedAt": "2026-09-07T10:10:41.364521+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "source_witness": "two-bridge-layered-nz.witness.json",
+    "source_scriptHash": "03f3aa74e4f2",
+    "source_computedAt": "2026-09-06T13:49:46.766459+00:00",
+    "mp_dps": 50
+  },
+  "data": {
+    "fourone": {
+      "poly": "x**2 - x + 1",
+      "signature": [
+        0,
+        1
+      ],
+      "pk_size": 3,
+      "floor_remainder": 0,
+      "embeddings": [
+        "(0.5 - 0.866025403784438646763723170752936183471402627j)",
+        "(0.5 + 0.866025403784438646763723170752936183471402627j)"
+      ],
+      "conjugate_volumes": [
+        "-2.02988321281930725004240510854904057188337862",
+        "2.02988321281930725004240510854904057188337862"
+      ],
+      "chern_simons_value_set": [
+        "-2.029883212819307250042405108549040571883",
+        "2.029883212819307250042405108549040571883"
+      ]
+    },
+    "fivetwo": {
+      "poly": "x**3 - x + 1",
+      "signature": [
+        1,
+        1
+      ],
+      "pk_size": 4,
+      "floor_remainder": 1,
+      "embeddings": [
+        "(0.662358978622373012980454427239048670367202028 - 0.562279512062301243899182144909373061497843003j)",
+        "(-1.32471795724474602596090885447809734073440406 + 0.0j)",
+        "(0.662358978622373012980454427239048670367202028 + 0.562279512062301243899182144909373061497843003j)"
+      ],
+      "conjugate_volumes": [
+        "-2.82812208833078316276389880927663494277098132",
+        "0.0",
+        "2.82812208833078316276389880927663494277098132"
+      ],
+      "chern_simons_value_set": [
+        "-2.828122088330783162763898809276634942771",
+        "0",
+        "2.828122088330783162763898809276634942771"
+      ]
+    }
+  },
+  "verdict": "H_floor's two inputs for 4_1 and 5_2 -- the trace field and its signature -- are now DERIVED from the corpus's own Farey-word triangulations (#6985) rather than transcribed from Garoufalidis-Zagier: x^2-x+1 (disc -3, signature (0,1)) and theta^3-theta+1 (disc -23, signature (1,1)), so |P_K| = 3, 4 and the remainders 0, 1 follow by exact real-root counts, and the Galois-conjugate structures carry the Chern-Simons value sets {+V,-V} and {0,+V,-V} with the real embedding of 5_2 at volume exactly 0. This upgrades Part 4's rule from imported to derived on the two knots the corpus derives; it does NOT separate H_Ad from H_floor (core 3 under both) and does not reach (-2,3,7).",
+  "assertions": [
+    {
+      "name": "fivetwo-derived-cubic-discriminant-is-minus-23",
+      "passed": true,
+      "witness": -23
+    },
+    {
+      "name": "fourone-derived-shape-minimal-polynomial-disc-minus-3",
+      "passed": true
+    },
+    {
+      "name": "fourone-signature-matches-transcribed-lean-values",
+      "passed": true,
+      "derived": [
+        0,
+        1
+      ],
+      "lean": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "fourone-pk-size-and-floor-remainder",
+      "passed": true,
+      "pk": 3,
+      "remainder": 0
+    },
+    {
+      "name": "fourone-real-embeddings-have-volume-exactly-zero",
+      "passed": true,
+      "n_real": 0
+    },
+    {
+      "name": "fourone-complex-pair-carries-plus-minus-V",
+      "passed": true,
+      "pm": [
+        "-2.02988321281930725004240510855",
+        "2.02988321281930725004240510855"
+      ]
+    },
+    {
+      "name": "fivetwo-signature-matches-transcribed-lean-values",
+      "passed": true,
+      "derived": [
+        1,
+        1
+      ],
+      "lean": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "fivetwo-pk-size-and-floor-remainder",
+      "passed": true,
+      "pk": 4,
+      "remainder": 1
+    },
+    {
+      "name": "fivetwo-real-embeddings-have-volume-exactly-zero",
+      "passed": true,
+      "n_real": 1
+    },
+    {
+      "name": "fivetwo-complex-pair-carries-plus-minus-V",
+      "passed": true,
+      "pm": [
+        "-2.82812208833078316276389880928",
+        "2.82812208833078316276389880928"
+      ]
+    },
+    {
+      "name": "fourone-conjugate-volume-is-2Cl2(pi/3)",
+      "passed": true,
+      "v41": "2.02988321281930725004240510855",
+      "ref": "2.02988321281930725004240510855"
+    },
+    {
+      "name": "fivetwo-conjugate-volume-matches-corpus-Vol(5_2)",
+      "passed": true,
+      "v52": "2.82812208833078316276389880928",
+      "ref": "2.8281220883307831627"
+    },
+    {
+      "name": "core-three-both-knots-remainder-differs-by-one",
+      "passed": true
+    }
+  ],
+  "scriptHash": "22930a83a540",
+  "scriptCommitSha": "unknown",
+  "commitSha": "febdd3dca33ada590dc542f6751cb18cb7763c0c",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
