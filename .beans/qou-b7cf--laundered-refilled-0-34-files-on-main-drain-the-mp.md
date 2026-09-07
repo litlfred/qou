@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T12:46:17Z
-updated_at: 2026-09-03T20:20:19Z
+updated_at: 2026-09-06T21:59:06Z
 ---
 
 ## State (2026-09-03, PR #6489, branch claude/laundered-sweep-2026-09-03)
@@ -172,3 +172,124 @@ three verification runs answering the false version.
 
 **The general rule survives — never measure a gate on a tree your own runs
 have written to.** It is simply not what this gate does.
+
+
+## 2026-09-06 — re-measured: the drain HELD, but the tier is refilling. 3 → 0.
+
+Found by `scripts/bean-staleness-triage.py` (10th of 291 artifact beans). This
+is a **stale-claim assist, not a takeover**: `claude/laundered-sweep-2026-09-03`
+still exists on origin (`273e146819`) with no commit since 2026-09-03, and I
+have not touched it.
+
+### The drain landed and holds
+
+| | bean (2026-09-03) | merged `main` (2026-09-06) |
+|---|---|---|
+| LAUNDERED | 34 files | **3 files / 3 sites** |
+| F64_CAST | 195 sites | **none** |
+
+### 🛑 But one of the three landed TODAY
+
+`planck_symbolic_in_q_probe.py` first appears on `main` at `c46a91f599`,
+**2026-09-06**; the other two are 2026-09-02/03, contemporaneous with the
+sweep. So this is not residue — it is the pattern this bean's own title records
+once (*"refilled 0 → 34"*) happening again, hours old. **A `--strict` gate is
+what would stop it**, and nothing runs one today.
+
+### Fixed, 3 → 0, plus a fourth site the gate cannot see
+
+All three were the bean's class (a), `mpf(str(q_parameter.Q))`, fixed to the
+pattern the sweep itself established — `_Q = q_at(mp.mp.dps)`, matching
+`the_hull_exit_is_a_fractional_twist_probe.py`, which is a *line-for-line
+sibling* of two of them (same `_Q` / `_H` / `HF, DPN` block). `LAUNDERED — none.`
+
+The fourth is `planck_symbolic_in_q_probe.py:105`, `sp.Float(str(Q), 40)` —
+one of the **"three sites the `mpf(str(` regex cannot see"** this bean names.
+`str(Q)` is 17 digits and `sp.Float(…, 40)` pads with twenty-three zeros.
+Precedent for the correct form: `trm5_zcubed_live_producer_audit.py:152`.
+
+### Verified before/after, because the swept sibling says this substitution moved a verdict
+
+`hull_exit:217` carries *"printed `False / T=1 BINDS`; with `q_at` it printed
+`True`"*. So:
+
+| probe | before → after |
+|---|---|
+| `c5_sign` | **identical** |
+| `planck_symbolic_in_q` | **identical** |
+| `cumulant_hierarchy` | Möbius cross-check `2.66e-15 → 1.78e-15` |
+
+Seeded (`random.Random(11)`), so the diff is meaningful. **That line is not
+evidence the fix improved anything** — both sit at the float64 floor of an
+internal consistency check, where agreement is the arithmetic's resolution and
+not a measurement.
+
+The defect is visible in the witness instead:
+
+    - "ell_share_at_q0": "0.0990817160442585016773703941639"
+    + "ell_share_at_q0": "0.0990817160442585078391771175189"
+
+diverging at the **17th significant digit** — thirty digits published of a
+seventeen-digit value. Measured directly, `q_at(40) − mpf(str(Q))` =
+**7.59e-18**, the same order as this bean's own `6.8395e-18`.
+
+### Two things checked rather than assumed
+
+* `c5_sign`'s after-run exited **124** (timeout at 170 s) with byte-identical
+  output. I never captured the before-run's exit code, so I timed the
+  substitution instead: `q_at(40)` is **4.11 ms** against `mpf(str(Q))`'s
+  **0.019 ms**, called once at module level. A 4 ms delta cannot flip a 170 s
+  budget, so the timeout is pre-existing.
+* The raw-float64 ratchet's NEW list is unchanged at the one `main` landed
+  (`qbeta-covariance-kernel-scale`), so this adds nothing to it.
+
+### Scope deliberately not widened
+
+This corrects the **entry point** only. `c5_sign` and `cumulant` still do
+`HF, DPN = float(_H), float(D_PN)` and compute downstream in float64 — and so
+does the already-swept `hull_exit`, with **37** `float(` calls to their 5 and 6.
+That was the sweep's chosen scope. De-floating the probe bodies is a separate,
+larger job and is left open.
+
+Commit `d1413d5a1f`, PR #6930.
+
+
+## 🛑 CORRECTION 2026-09-06 (same day) — my "F64_CAST 195 → none" was an artifact of my own flag
+
+**The LAUNDERED result stands. The F64_CAST claim beside it does not.**
+
+I ran `f64_into_mpmath_audit.py --tier LAUNDERED` and read the `F64_CAST —
+none.` line in its output as a corpus fact. `--tier` is passed to
+`_iter_rows(a.tier)` and **filters the rows before the report is built**
+(`main()`:844-846), so with `--tier LAUNDERED` the `casts` list is empty *by
+construction* and the tier prints `none` regardless of the tree.
+
+Measured side by side, same tree, same minute:
+
+    f64_into_mpmath_audit.py                    ->  F64_CAST: 105 file(s), 188 site(s)
+    f64_into_mpmath_audit.py --tier LAUNDERED   ->  F64_CAST — none.
+
+So the true movement is **195 → 188 sites**, not 195 → 0. F64_CAST is the
+largest live tier in the whole audit and it is barely drained.
+
+**What is NOT affected.** `--tier LAUNDERED` *includes* LAUNDERED rows, so
+every LAUNDERED figure in this bean is correct: 34 files on main, 3 survivors,
+0 after the fix. The four sites I fixed are fixed, and the `sp.Float(str(Q), 40)`
+site the gate cannot see is still a real find. Only the neighbouring tier's
+count was wrong.
+
+**Where the wrong figure reached, so it can be chased:**
+
+* commit `d1413d5a1f`, message line 4 — *"34 files -> 3, F64_CAST 195 -> none"*
+* this bean, two places above — the `(the 195 sites there are pre-existing on
+  main)` parenthesis in the 2026-09-03 entry, and the `| F64_CAST | 195 sites |
+  **none** |` row in the 2026-09-06 entry
+* the chat report of that turn
+
+The commit message is immutable; this correction is the record. **Do not read
+the table row above as current** — it is superseded by this block.
+
+**The lesson, which this corpus already documents in a dozen other forms:** a
+filtered view printed in the same shape as the full one is indistinguishable
+from it. The audit is not at fault — `--tier` does exactly what it says. I
+quoted a number from a report I had narrowed myself.

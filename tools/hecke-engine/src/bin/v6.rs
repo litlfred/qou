@@ -567,7 +567,7 @@ fn main() {
                 println!("    tr_alt(q₀) = {:+.10e}", tr_alt);
                 println!("    net(q₀)    = {:+.10e}", net);
                 println!("    F_Pauli(q₀) = |tr_alt/net| = {:.10} -/", f);
-                println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+                println!("-- Ref: [manuscript] appendix-mass-binding-algorithms (F_Pauli / Markov-trace witnesses)");
                 println!("noncomputable def F_Pauli_{}{}_at_q0 : Float := {:.10}", a, lean_sym, f);
                 println!();
                 println!("/-- Shell factor for {}{}: W(ℓ≤1)/W(total). -/", a, sym);

@@ -1,34 +1,34 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:27:56.170328+00:00",
-  "commitSha": "f827bd67d6ef392f264c6d201ecfe7ef72aa0b2e",
+  "computedAt": "2026-09-06T14:02:43.660239+00:00",
+  "commitSha": "f1c9c647b28795ac8e7683efde3f9b8667633c23",
   "assertions": [
     {
       "name": "P_ell_is_central_scalar_on_V_lambda",
       "computed": "2.89781730522454795760291817308409336981840998340452422066643676477936e-70",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-40",
+      "tolerance": "1.0e-40",
       "unit": "max over (λ, ℓ, SYT pair) of |e_ℓ(J_1(T), …) − e_ℓ(J_1(T'), …)|  on V_λ",
       "source": "JM elements act diagonally on the Hoefsmit basis; elementary symmetric polynomials of diagonal matrices are also diagonal; centrality says they act as the SAME scalar across all SYTs of shape λ."
     },
     {
       "name": "P_ell_scalar_matches_closed_form_c_ell",
       "computed": "0.0",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-40",
+      "tolerance": "1.0e-40",
       "unit": "max over (λ, ℓ) of |e_ℓ(JM eigenvalues for any SYT) − e_ℓ({q^{2c(□)} : □ ∈ λ})|",
       "source": "Closed form c_ℓ(λ) = e_ℓ({q^{2c(□)}}) per the proposition; the JM-eigenvalue sum over an SYT visits each cell of λ exactly once."
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 20,
   "computation": "jucys-murphy-central-elements-qou-probe",
   "scriptFile": "jucys_murphy_central_elements_qou_probe.py",
-  "scriptHash": "6ee7a8f7fa73",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "b9d67b6374fc",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -51,14 +51,14 @@
     ],
     "reproduce": "python3 -u computations/probes/jucys_murphy_central_elements_qou_probe.py"
   },
-  "description": "I1 probe for prop:jucys-murphy-central-elements-qou.  Verifies for n ∈ {3, 4, 5} and ℓ ∈ {1, …, n}: (i) the elementary symmetric polynomial P_ℓ = e_ℓ(J_1, …, J_n) acts as a scalar on V_λ (all SYT diagonal entries equal — centrality); (ii) the scalar value matches the closed form c_ℓ(λ) = e_ℓ({q^{2c(□)} : □ ∈ λ}).  Uses JM-eigenvalue diagonal action on the Hoefsmit basis.  Tested across 19 irreps (3 + 5 + 11 partitions of n = 3, 4, 5).  All residues at ~1e-50 (mpmath 50 dps).",
+  "description": "I1 probe for prop:jucys-murphy-central-elements-qou.  Verifies for n ∈ {3, 4, 5} and ℓ ∈ {1, …, n}: (i) the elementary symmetric polynomial P_ℓ = e_ℓ(J_1, …, J_n) acts as a scalar on V_λ (all SYT diagonal entries equal — centrality); (ii) the scalar value matches the closed form c_ℓ(λ) = e_ℓ({q^{2c(□)} : □ ∈ λ}).  Uses JM-eigenvalue diagonal action on the Hoefsmit basis.  Tested across 19 irreps (3 + 5 + 11 partitions of n = 3, 4, 5).  Residues are at the arithmetic floor and are therefore a statement about the working precision, not about the mathematics: see max_centrality_residue / max_closed_form_residue, measured at the live compute precision (mp.dps = 70). The previous wording, '~1e-50 (mpmath 50 dps)', was written when the default was 50 dps and was stale by 20 orders once the floor moved to 70.",
   "contentBlock": "prop:jucys-murphy-central-elements-qou",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "total_irreps_tested": 15,
     "total_ell_tests": 64,
-    "max_centrality_residue": 2.897817305224548e-70,
-    "max_closed_form_residue": 0.0
+    "max_centrality_residue": "2.89781730522454795760291817308409336981840998340452422066644e-70",
+    "max_closed_form_residue": "0.0"
   },
   "data": {
     "per_irrep_per_ell_results": [
@@ -69,24 +69,24 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.75000570398511,
-            "closed_form_c_ell": 3.75000570398511,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.75000570398510986881691469631190982447046193243014655529916",
+            "closed_form_c_ell": "3.75000570398510986881691469631190982447046193243014655529916",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 4.620203730734218,
-            "closed_form_c_ell": 4.620203730734218,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "4.62020373073421788681624558021011973856895674007409352995799",
+            "closed_form_c_ell": "4.62020373073421788681624558021011973856895674007409352995799",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 1.870198026749108,
-            "closed_form_c_ell": 1.870198026749108,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "1.87019802674910801799933088389820991409849480764394697465882",
+            "closed_form_c_ell": "1.87019802674910801799933088389820991409849480764394697465882",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -97,24 +97,24 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.043706208532522,
-            "closed_form_c_ell": 3.043706208532522,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.04370620853252198940201933567738830976821396071350527578503",
+            "closed_form_c_ell": "3.04370620853252198940201933567738830976821396071350527578503",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 3.043706208532522,
-            "closed_form_c_ell": 3.043706208532522,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.04370620853252198940201933567738830976821396071350527578503",
+            "closed_form_c_ell": "3.04370620853252198940201933567738830976821396071350527578503",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 1.0,
-            "closed_form_c_ell": 1.0,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "1.00000000000000000000000000000000000000000000000000000000000",
+            "closed_form_c_ell": "1.00000000000000000000000000000000000000000000000000000000000",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -125,24 +125,24 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 2.4704355713417883,
-            "closed_form_c_ell": 2.4704355713417883,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "2.47043557134178837614351855668199162676198636979299987940301",
+            "closed_form_c_ell": "2.47043557134178837614351855668199162676198636979299987940301",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 2.0051383063982793,
-            "closed_form_c_ell": 2.0051383063982793,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "2.00513830639827906988517204968243950766241312202564549617312",
+            "closed_form_c_ell": "2.00513830639827906988517204968243950766241312202564549617312",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 0.5347027350564907,
-            "closed_form_c_ell": 0.5347027350564907,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "0.534702735056490693741653493000447880900426752232645616770110",
+            "closed_form_c_ell": "0.534702735056490693741653493000447880900426752232645616770110",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -153,31 +153,31 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 5.620203730734218,
-            "closed_form_c_ell": 5.620203730734218,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "5.62020373073421788681624558021011973856895674007409352995799",
+            "closed_form_c_ell": "5.62020373073421788681624558021011973856895674007409352995799",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 11.63345699862507,
-            "closed_form_c_ell": 11.63345699862507,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "11.6334569986250700372692295668063808420981457353343520887075",
+            "closed_form_c_ell": "11.6334569986250700372692295668063808420981457353343520887075",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 10.510893927147109,
-            "closed_form_c_ell": 10.510893927147109,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "10.5108939271471095000603889860016816796168108456270823234962",
+            "closed_form_c_ell": "10.5108939271471095000603889860016816796168108456270823234962",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 3.4976406592562572,
-            "closed_form_c_ell": 3.4976406592562572,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.49764065925625734960740499940542057608762185036682376474670",
+            "closed_form_c_ell": "3.49764065925625734960740499940542057608762185036682376474670",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -188,31 +188,31 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 4.561659458350868,
-            "closed_form_c_ell": 4.561659458350868,
-            "centrality_residue": 7.24454326306137e-71,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "4.56165945835086792694912951845366194938899447022665447158952",
+            "closed_form_c_ell": "4.56165945835086792694912951845366194938899447022665447158952",
+            "centrality_residue": "7.24454326306136989400729543271023342454602495851131055166609e-71",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 7.66390993926674,
-            "closed_form_c_ell": 7.66390993926674,
-            "centrality_residue": 7.24454326306137e-71,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "7.66390993926673987621826491588750804833717070078759880574302",
+            "closed_form_c_ell": "7.66390993926673987621826491588750804833717070078759880574302",
+            "centrality_residue": "7.24454326306136989400729543271023342454602495851131055166609e-71",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 5.620203730734218,
-            "closed_form_c_ell": 5.620203730734218,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "5.62020373073421788681624558021011973856895674007409352995799",
+            "closed_form_c_ell": "5.62020373073421788681624558021011973856895674007409352995799",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 1.517953249818346,
-            "closed_form_c_ell": 1.517953249818346,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "1.51795324981834593754711018277627363962078050951314919580449",
+            "closed_form_c_ell": "1.51795324981834593754711018277627363962078050951314919580449",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -223,31 +223,31 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 4.043706208532522,
-            "closed_form_c_ell": 4.043706208532522,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "4.04370620853252198940201933567738830976821396071350527578503",
+            "closed_form_c_ell": "4.04370620853252198940201933567738830976821396071350527578503",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 6.087412417065044,
-            "closed_form_c_ell": 6.087412417065044,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "6.08741241706504397880403867135477661953642792142701055157007",
+            "closed_form_c_ell": "6.08741241706504397880403867135477661953642792142701055157007",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 4.043706208532522,
-            "closed_form_c_ell": 4.043706208532522,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "4.04370620853252198940201933567738830976821396071350527578503",
+            "closed_form_c_ell": "4.04370620853252198940201933567738830976821396071350527578503",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 1.0,
-            "closed_form_c_ell": 1.0,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "1.00000000000000000000000000000000000000000000000000000000000",
+            "closed_form_c_ell": "1.00000000000000000000000000000000000000000000000000000000000",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -258,31 +258,31 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.7024880255085524,
-            "closed_form_c_ell": 3.7024880255085524,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.70248802550855230741332307021762781161166779270999723889768",
+            "closed_form_c_ell": "3.70248802550855230741332307021762781161166779270999723889768",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 5.048844514930801,
-            "closed_form_c_ell": 5.048844514930801,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "5.04884451493080105928719138535982781743062708273915077195815",
+            "closed_form_c_ell": "5.04884451493080105928719138535982781743062708273915077195815",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 3.0051383063982793,
-            "closed_form_c_ell": 3.0051383063982793,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.00513830639827906988517204968243950766241312202564549617312",
+            "closed_form_c_ell": "3.00513830639827906988517204968243950766241312202564549617312",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 0.6587818169760303,
-            "closed_form_c_ell": 0.6587818169760303,
-            "centrality_residue": 9.055679078826712e-72,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "0.658781816976030318011303734540239501843453831996491963112646",
+            "closed_form_c_ell": "0.658781816976030318011303734540239501843453831996491963112646",
+            "centrality_residue": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -293,31 +293,31 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.0051383063982793,
-            "closed_form_c_ell": 3.0051383063982793,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.00513830639827906988517204968243950766241312202564549617312",
+            "closed_form_c_ell": "3.00513830639827906988517204968243950766241312202564549617312",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 3.3260869631755776,
-            "closed_form_c_ell": 3.3260869631755776,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.32608696317557755366947591040943949340624916075737740749457",
+            "closed_form_c_ell": "3.32608696317557755366947591040943949340624916075737740749457",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 1.6068556716541902,
-            "closed_form_c_ell": 1.6068556716541902,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "1.60685567165419016567891407146569895114964273678831638279416",
+            "closed_form_c_ell": "1.60685567165419016567891407146569895114964273678831638279416",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 0.2859070148768917,
-            "closed_form_c_ell": 0.2859070148768917,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "0.285907014876891681894610210738698965405806698056584471472701",
+            "closed_form_c_ell": "0.285907014876891681894610210738698965405806698056584471472701",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -328,38 +328,38 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 7.924385799368296,
-            "closed_form_c_ell": 7.924385799368296,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "7.92438579936829563789710963872243532095170592280203744051411",
+            "closed_form_c_ell": "7.92438579936829563789710963872243532095170592280203744051411",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 24.583429657053202,
-            "closed_form_c_ell": 24.583429657053202,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "24.5834296570532015082763111835604380888098534951958204336223",
+            "closed_form_c_ell": "24.5834296570532015082763111835604380888098534951958204336223",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 37.31649693960461,
-            "closed_form_c_ell": 37.31649693960461,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "37.3164969396046127861643624908988365903044652176065667135441",
+            "closed_form_c_ell": "37.3164969396046127861643624908988365903044652176065667135441",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 27.71665397150345,
-            "closed_form_c_ell": 27.71665397150345,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "27.7166539715034494408539487975457907133288226758014264100226",
+            "closed_form_c_ell": "27.7166539715034494408539487975457907133288226758014264100226",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 8.059200889583742,
-            "closed_form_c_ell": 8.059200889583742,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "8.05920088958374252506878785148495689088250503058864268958673",
+            "closed_form_c_ell": "8.05920088958374252506878785148495689088250503058864268958673",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -370,38 +370,38 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 6.431857485099976,
-            "closed_form_c_ell": 6.431857485099976,
-            "centrality_residue": 7.24454326306137e-71,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "6.43185748509997594494846040235187186348748927787060144624835",
+            "closed_form_c_ell": "6.43185748509997594494846040235187186348748927787060144624835",
+            "centrality_residue": "7.24454326306136989400729543271023342454602495851131055166609e-71",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 16.19511645697594,
-            "closed_form_c_ell": 16.19511645697594,
-            "centrality_residue": 2.897817305224548e-70,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "16.1951164569759379642183590852600427914871402055610065602970",
+            "closed_form_c_ell": "16.1951164569759379642183590852600427914871402055610065602970",
+            "centrality_residue": "2.89781730522454795760291817308409336981840998340452422066644e-70",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 19.95323297633375,
-            "closed_form_c_ell": 19.95323297633375,
-            "centrality_residue": 2.897817305224548e-70,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "19.9532329763337510755046088075003906401892972779422689598148",
+            "closed_form_c_ell": "19.9532329763337510755046088075003906401892972779422689598148",
+            "centrality_residue": "2.89781730522454795760291817308409336981840998340452422066644e-70",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 12.028847176965455,
-            "closed_form_c_ell": 12.028847176965455,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "12.0288471769654554376074991687779553192375913551402315193007",
+            "closed_form_c_ell": "12.0288471769654554376074991687779553192375913551402315193007",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 2.8388731725076664,
-            "closed_form_c_ell": 2.8388731725076664,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "2.83887317250766638137278904418573560704794500488836767353454",
+            "closed_form_c_ell": "2.83887317250766638137278904418573560704794500488836767353454",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -412,38 +412,38 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 5.561659458350868,
-            "closed_form_c_ell": 5.561659458350868,
-            "centrality_residue": 7.24454326306137e-71,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "5.56165945835086792694912951845366194938899447022665447158952",
+            "closed_form_c_ell": "5.56165945835086792694912951845366194938899447022665447158952",
+            "centrality_residue": "7.24454326306136989400729543271023342454602495851131055166609e-71",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 12.225569397617608,
-            "closed_form_c_ell": 12.225569397617608,
-            "centrality_residue": 2.897817305224548e-70,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "12.2255693976176078031673944343411699977261651710142532773325",
+            "closed_form_c_ell": "12.2255693976176078031673944343411699977261651710142532773325",
+            "centrality_residue": "2.89781730522454795760291817308409336981840998340452422066644e-70",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 13.284113670000957,
-            "closed_form_c_ell": 13.284113670000957,
-            "centrality_residue": 1.448908652612274e-70,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "13.2841136700009577630345104960976277869061274408616923357010",
+            "closed_form_c_ell": "13.2841136700009577630345104960976277869061274408616923357010",
+            "centrality_residue": "1.44890865261227397880145908654204668490920499170226211033322e-70",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 7.138156980552564,
-            "closed_form_c_ell": 7.138156980552564,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "7.13815698055256382436335576298639337818973724958724272576247",
+            "closed_form_c_ell": "7.13815698055256382436335576298639337818973724958724272576247",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 1.517953249818346,
-            "closed_form_c_ell": 1.517953249818346,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "1.51795324981834593754711018277627363962078050951314919580449",
+            "closed_form_c_ell": "1.51795324981834593754711018277627363962078050951314919580449",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -454,38 +454,38 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 5.220441275326898,
-            "closed_form_c_ell": 5.220441275326898,
-            "centrality_residue": 7.24454326306137e-71,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "5.22044127532689824496043325299390145123244830222314643470217",
+            "closed_form_c_ell": "5.22044127532689824496043325299390145123244830222314643470217",
+            "centrality_residue": "7.24454326306136989400729543271023342454602495851131055166609e-71",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 10.669048245665019,
-            "closed_form_c_ell": 10.669048245665019,
-            "centrality_residue": 1.448908652612274e-70,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "10.6690482456650189461034369655699475559995838228132443019161",
+            "closed_form_c_ell": "10.6690482456650189461034369655699475559995838228132443019161",
+            "centrality_residue": "1.44890865261227397880145908654204668490920499170226211033322e-70",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 10.669048245665019,
-            "closed_form_c_ell": 10.669048245665019,
-            "centrality_residue": 1.448908652612274e-70,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "10.6690482456650189461034369655699475559995838228132443019161",
+            "closed_form_c_ell": "10.6690482456650189461034369655699475559995838228132443019161",
+            "centrality_residue": "1.44890865261227397880145908654204668490920499170226211033322e-70",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 5.220441275326898,
-            "closed_form_c_ell": 5.220441275326898,
-            "centrality_residue": 7.24454326306137e-71,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "5.22044127532689824496043325299390145123244830222314643470217",
+            "closed_form_c_ell": "5.22044127532689824496043325299390145123244830222314643470217",
+            "centrality_residue": "7.24454326306136989400729543271023342454602495851131055166609e-71",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 1.0,
-            "closed_form_c_ell": 1.0,
-            "centrality_residue": 1.8111358157653425e-71,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "1.00000000000000000000000000000000000000000000000000000000000",
+            "closed_form_c_ell": "1.00000000000000000000000000000000000000000000000000000000000",
+            "centrality_residue": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -496,38 +496,38 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 4.702488025508552,
-            "closed_form_c_ell": 4.702488025508552,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "4.70248802550855230741332307021762781161166779270999723889768",
+            "closed_form_c_ell": "4.70248802550855230741332307021762781161166779270999723889768",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 8.751332540439353,
-            "closed_form_c_ell": 8.751332540439353,
-            "centrality_residue": 1.448908652612274e-70,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "8.75133254043935336670051445557745562904229487544914801085583",
+            "closed_form_c_ell": "8.75133254043935336670051445557745562904229487544914801085583",
+            "centrality_residue": "1.44890865261227397880145908654204668490920499170226211033322e-70",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 8.05398282132908,
-            "closed_form_c_ell": 8.05398282132908,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "8.05398282132908012917236343504226732509304020476479626813126",
+            "closed_form_c_ell": "8.05398282132908012917236343504226732509304020476479626813126",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 3.6639201233743095,
-            "closed_form_c_ell": 3.6639201233743095,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.66392012337430938789647578422267900950586695402213745928576",
+            "closed_form_c_ell": "3.66392012337430938789647578422267900950586695402213745928576",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 0.6587818169760303,
-            "closed_form_c_ell": 0.6587818169760303,
-            "centrality_residue": 9.055679078826712e-72,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "0.658781816976030318011303734540239501843453831996491963112646",
+            "closed_form_c_ell": "0.658781816976030318011303734540239501843453831996491963112646",
+            "centrality_residue": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -538,38 +538,38 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 4.237190760565043,
-            "closed_form_c_ell": 4.237190760565043,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "4.23719076056504300115497656321807569251209454494264285566779",
+            "closed_form_c_ell": "4.23719076056504300115497656321807569251209454494264285566779",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 7.02857498868413,
-            "closed_form_c_ell": 7.02857498868413,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "7.02857498868412986108279898062706730501791695346737464639225",
+            "closed_form_c_ell": "7.02857498868412986108279898062706730501791695346737464639225",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 5.704769277406739,
-            "closed_form_c_ell": 5.704769277406739,
-            "centrality_residue": 7.24454326306137e-71,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "5.70476927740673946126911340290162646809016428109548146752326",
+            "closed_form_c_ell": "5.70476927740673946126911340290162646809016428109548146752326",
+            "centrality_residue": "7.24454326306136989400729543271023342454602495851131055166609e-71",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 2.2656374886302206,
-            "closed_form_c_ell": 2.2656374886302206,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "2.26563748863022048369021780600593845299309656878480834590680",
+            "closed_form_c_ell": "2.26563748863022048369021780600593845299309656878480834590680",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 0.3522524393425679,
-            "closed_form_c_ell": 0.3522524393425679,
-            "centrality_residue": 4.527839539413356e-72,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "0.352252439342567882348926820513303597408754696214058669108009",
+            "closed_form_c_ell": "0.352252439342567882348926820513303597408754696214058669108009",
+            "centrality_residue": "4.52783953941335618375455964544389589034126559906956909479131e-72",
+            "closed_form_residue": "0.0"
           }
         ]
       },
@@ -580,38 +580,38 @@
         "per_ell": [
           {
             "ell": 1,
-            "P_ell_diagonal_first_entry": 3.439131788776519,
-            "closed_form_c_ell": 3.439131788776519,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.43913178877651897757889559689568801509706771231067312161645",
+            "closed_form_c_ell": "3.43913178877651897757889559689568801509706771231067312161645",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 2,
-            "P_ell_diagonal_first_entry": 4.630297401797613,
-            "closed_form_c_ell": 4.630297401797613,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "4.63029740179761280163562085455464059587265196636984467767637",
+            "closed_form_c_ell": "4.63029740179761280163562085455464059587265196636984467767637",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 3,
-            "P_ell_diagonal_first_entry": 3.0503557354956237,
-            "closed_form_c_ell": 3.0503557354956237,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "3.05035573549562367148979952394454484445357012914756628259489",
+            "closed_form_c_ell": "3.05035573549562367148979952394454484445357012914756628259489",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 4,
-            "P_ell_diagonal_first_entry": 0.9832719034973193,
-            "closed_form_c_ell": 0.9832719034973193,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "0.983271903497319312711376063419273279821624776924725944319236",
+            "closed_form_c_ell": "0.983271903497319312711376063419273279821624776924725944319236",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           },
           {
             "ell": 5,
-            "P_ell_diagonal_first_entry": 0.12408178102278947,
-            "closed_form_c_ell": 0.12408178102278947,
-            "centrality_residue": 0.0,
-            "closed_form_residue": 0.0
+            "P_ell_diagonal_first_entry": "0.124081781022789465278301797133681016143638901836331217784262",
+            "closed_form_c_ell": "0.124081781022789465278301797133681016143638901836331217784262",
+            "centrality_residue": "0.0",
+            "closed_form_residue": "0.0"
           }
         ]
       }

@@ -42,10 +42,22 @@ identification [SW] (which the stage-1 probe verifies on the words themselves).
    the word with at most `k` diagonal insertions, carrying the scalar as an
    exact `ε`-polynomial (`Fraction` coefficients). Cost `2^n · C(L, ≤k)`.
 2. Checks `[ε⁰], [ε¹], [ε²]` of `Δtr` against the exact series values for the
-   six words (pp, pn, nn, T, ³He, ⁴He) — `Fraction ==`.
+   six words (pp, pn, nn, T, ³He, ⁴He) — `Fraction ==`. ⚠ Those targets are
+   **hardcoded snapshots** (`RECORDED_C1`, `EXACT_C2`), not recomputed here;
+   they were the pre-2026-09-05 `grouped` word's until 2026-09-06 and are now
+   the canonical word's. See the note at those tables — they are still
+   snapshots and will go stale the next time the word moves.
 3. Splits `c₂` into its insertion classes `|S| = 0, 1, 2` (after the normaliser
    is folded in) and reports them per word, so the structure is visible.
-4. Reports the second-order chain/atom ratios exactly.
+4. Reports the second-order chain/atom ratios exactly, against the first-order
+   ones **derived from `RECORDED_C1`**. That comparison table was itself a
+   hardcoded grouped-word snapshot (`{T: 292/163, ³He: 30/17, ⁴He: 24/7}`) until
+   2026-09-06 — a **third** stale table in this one file, which survived the
+   first repair because it sat below the two obvious ones. It is now computed.
+   ⁴He's `24/7` is unchanged by the ruling and that is not luck: `pp+pn+nn` and
+   `⁴He` carry the same nucleon content, so the ratio is ordering-invariant
+   (`content_cancellation_invariance_probe`). T and ³He have `Z ≠ N`, no such
+   balance, and moved — `292/163 → 4` and `30/17 → 3/2`.
 
 ## What is NOT claimed
 
@@ -211,10 +223,30 @@ def trace_expansion(Z: int, N: int, include_inter: bool, K: int, *, log=None) ->
     return coeffs, by_class
 
 
-RECORDED_C1 = {"pp": F(19, 8), "pn": F(37, 16), "nn": F(9, 4),
-               "T": F(163, 64), "3He": F(85, 32), "4He": F(259, 128)}
-EXACT_C2 = {"pp": F(357, 32), "pn": F(403, 32), "nn": F(217, 16),
-            "T": F(3285, 128), "3He": F(3451, 128), "4He": F(15307, 512)}
+# ⚠ REPAIRED 2026-09-06 — both tables were the PRE-2026-09-05 (`grouped`) atom word's.
+#
+# Owner ruling `qou-hu1f` reordered each nucleon's confinement core on 2026-09-05; these are
+# hardcoded SNAPSHOTS of quantities that moved, so on the canonical word this probe was checking
+# against the wrong targets. Same defect class as `letters_pnAtom` in
+# `QOU/MassTheory/LeadingOrderTraceCoefficient.lean` — a datum that was correct when written.
+#
+# Superseded values, for reference: c₁ = 19/8, 37/16, 9/4, 163/64, 85/32, 259/128;
+# c₂ = 357/32, 403/32, 217/16, 3285/128, 3451/128, 15307/512.
+#
+# c₁ below is PR #6920's closed form `(3Z − 2N)(2^(−A−1) − 2^(−2A)) − 4(I_pp − I_nn)2^(−2A)`
+# evaluated at each case; c₂ is the exact ε-series `[ε¹]+[ε²]` re-run on the canonical word
+# (`c2_is_stale_on_the_reordered_atom_word_probe`, whose grouped self-test reproduces the
+# superseded row above exactly, which is what makes these the right replacements).
+#
+# 🛑 These are still SNAPSHOTS, and that is the standing hazard: they go stale the next time the
+# word moves. Computing them live would cost the ⁴He order-4 series (~15 min) on every run, which
+# is presumably why they were frozen. Regenerate with:
+#     python3 computations/probes/c2_is_stale_on_the_reordered_atom_word_probe.py \
+#         --exact-cases pp pn nn T ³He ⁴He
+RECORDED_C1 = {"pp": F(1, 8), "pn": F(1, 16), "nn": F(0),
+               "T": F(1, 64), "3He": F(1, 8), "4He": F(7, 128)}
+EXACT_C2 = {"pp": F(33, 32), "pn": F(25, 32), "nn": F(1, 16),
+            "T": F(99, 128), "3He": F(157, 128), "4He": F(439, 512)}
 CASES = [("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2)),
          ("T", (1, 2)), ("3He", (2, 1)), ("4He", (2, 2))]
 
@@ -270,9 +302,9 @@ def main() -> int:
                     source="[ε¹] (|S| ≤ 1, normaliser folded) vs the six derived/recorded c1 values.")
     w.add_assertion("insertion_expansion_order2_equals_exact_series_c2",
                     computed="1" if ok2 else "0", expected="1",
-                    source="[ε¹]+[ε²] (|S| ≤ 2) vs the exact series c2 from "
-                           "c1_leading_coefficient_derived_probe (4He: 15307/512 from the order-4 "
-                           "run). Fraction == on all six. This is the derivation of c2: a "
+                    source="[ε¹]+[ε²] (|S| ≤ 2) vs the exact series c2 for the CANONICAL word "
+                           "(4He: 439/512 from the order-4 run; the pre-2026-09-05 grouped value "
+                           "was 15307/512). Fraction == on all six. This is the derivation of c2: a "
                            "fixed-point count over sub-words with ≤ 2 letters deleted, weighted by "
                            "the diagonal pattern scalars (q−1 on e11/e22, h on e21, d_ℓ).")
 
@@ -280,7 +312,18 @@ def main() -> int:
     chain = {"T": EXACT_C2["pn"] + EXACT_C2["nn"], "3He": EXACT_C2["pp"] + EXACT_C2["pn"],
              "4He": EXACT_C2["pp"] + EXACT_C2["pn"] + EXACT_C2["nn"]}
     ratios = {k: chain[k] / EXACT_C2[k] for k in chain}
-    first = {"T": F(292, 163), "3He": F(30, 17), "4He": F(24, 7)}
+    # The FIRST-order chain/atom ratios, DERIVED from RECORDED_C1 by the same pairwise sum, not
+    # hardcoded. They were a hardcoded grouped-word table ({T: 292/163, ³He: 30/17, ⁴He: 24/7})
+    # until 2026-09-06 — the third stale snapshot in this one file, and the only one that survived
+    # the first repair because it sat below the two obvious tables. Deriving it is what stops a
+    # fourth. Note ⁴He's 24/7 is unchanged by the ruling, which is not luck: `pp+pn+nn` and `⁴He`
+    # carry the same nucleon content, so the ratio is ordering-invariant
+    # (`content_cancellation_invariance_probe`, and `PairwiseChainLeadingOrder.chain_over_atom_He4_of_letters`
+    # proves it algebraically). T and ³He have Z ≠ N, no such balance, and duly moved.
+    first_chain = {"T": RECORDED_C1["pn"] + RECORDED_C1["nn"],
+                   "3He": RECORDED_C1["pp"] + RECORDED_C1["pn"],
+                   "4He": RECORDED_C1["pp"] + RECORDED_C1["pn"] + RECORDED_C1["nn"]}
+    first = {k: first_chain[k] / RECORDED_C1[k] for k in first_chain}
     # `float` is repr(), not the bare value: it is a readable RENDERING of the
     # exact `ratio` beside it, which is the datum. A raw float64 in a witness is
     # what the raw-float64 ratchet counts, and with the exact rational already
@@ -293,9 +336,14 @@ def main() -> int:
                     computed="1" if all(abs(ratios[k] - 1) < abs(first[k] - 1) for k in ratios) else "0",
                     expected="1",
                     source="|chain/atom − 1| at second order vs first order: "
-                           + ", ".join(f"{k}: {float(ratios[k]):.4f} vs {float(first[k]):.4f}" for k in ratios)
-                           + ". Smaller in every case, but NOT uniformly ≈ 1 (4He 1.248): the "
-                             "leading-order over-count is partly cancelled one order up, not removed.")
+                           + ", ".join(f"{k}: {float(abs(ratios[k] - 1)):.4f} vs "
+                                       f"{float(abs(first[k] - 1)):.4f}" for k in ratios)
+                           + f". Smaller in every case, but the over-count is not removed — 4He's "
+                             f"second-order excess is still {float(abs(ratios['4He'] - 1)):.4f} — so "
+                             "the leading-order over-count is partly cancelled one order up, not "
+                             "eliminated. (This line printed the RATIOS while calling them "
+                             "|ratio − 1|, and quoted a hardcoded grouped-word 1.248, until "
+                             "2026-09-06; both are now computed.)")
     w.add_data("rows", rows)
     w.add_data("verdict", (
         "c2 is DERIVED by the same mechanism as c0 and c1, one insertion deeper. The Hecke "

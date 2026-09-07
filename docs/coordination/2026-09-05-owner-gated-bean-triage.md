@@ -545,6 +545,203 @@ a re-derivation may exist by some other route — but the route a fresh agent
 would reach for first is gone, which lowers the expected return on authorising
 it now rather than raising it.
 
+**🔵 UPDATED AGAIN 2026-09-06 — my own update above was framed WRONGLY, and the
+correction is bigger than the finding it corrects.** Two siblings converged on
+`main` overnight from different directions, and between them they say the
+premise of D2's question is confused.
+
+**C and D are not two coordinates on one algebra. They are two algebras, and D
+is a QUOTIENT of C.** `336a35ff27` (`qou-cds1`) reads it off the trace-convention
+registry: at `n = 3`, C gives `y_(1^3) = 0.022745` and D gives `y_(1^3) = 0`
+*exactly* — `TL_n = H_n/⟨antisym⟩` annihilates every partition with more than two
+rows. `z_D(q) = q²·z_C(q²)` is true and is a **coincidence between parameter
+values**; no substitution carries a three-block trace to a two-block one. So
+"re-derive the C ladder under D" is not a re-parametrisation at all — and the
+rescaling route my update above called a *dead end* was **malformed**, which is a
+sharper verdict than the one I gave. `z` turns out to be indexed by **rank**
+(`z_N = q^N/[N]_q` satisfies the full-bar condition for every `N`, twist
+`q^(−2N)`); `z_2 = z_D`, and `z_C` is in the family for no `N`, so rescaling
+`z_D` to bar-evenness *strips the rank label*. My "third parameter that is
+neither `z_C` nor `z_D`" was right about the destination and wrong about why.
+
+**The same fact arrived independently from `qou-fq0f`** (`8d18aefe06`), which is
+what makes it worth acting on rather than merely noting: the Markov parameter
+fixes the Wenzl level via `Q^r = z_W/(1 − Q + z_W)`, and under D that is
+`Q^r = q⁴ = Q²`, so **`r = 2` exactly**. Wenzl's row cap then bites at two rows
+by construction. **Re-derived here independently before relaying** (sympy,
+`simplify(rhs − q⁴) == 0` is `True`); convention C gives the non-integer
+`r = 2.59952` at the proton pin and caps nothing.
+
+**Consequence for D2 itself: the recommendation is unchanged and the question is
+now better posed.** Do not authorise the compute. Not because the obvious route
+is closed — that was my earlier and weaker reason — but because *"the ladder
+re-derived under D"* does not name a well-formed object until D7 below is
+answered. Authorising it today would fund a search for something whose target is
+not yet defined.
+
+### D7 — Where does the C↔D crossover bite? "D canonical" vs "use the full tower"
+**Beans:** `qou-cds1`, `qou-fq0f`. **Raised by a sibling and explicitly NOT
+adjudicated by it** — *"which ruling governs the Q_β channel is an owner
+decision; this probe measures the truncation and does not resolve it."*
+
+**The decision.** Two owner rulings are in tension, and both are yours:
+
+* **2026-08-15** — convention D is canonical, convention C excised.
+* **2026-09-03** — *"the QOU should be on the full tower in the derivations to
+  the standard model."*
+
+D **is** the two-row Temperley-Lieb truncation (`r = 2` exactly, above). So a
+derivation carried in D is, by construction, not on the full tower. The two
+rulings cannot both govern the same channel.
+
+**What makes this answerable rather than a matter of taste: the cost is
+`n`-dependent, and it was measured exactly** — integer arithmetic, hook-length
+dimensions with `Σ_λ (f^λ)² = n!` asserted first, `dim TL_n` verified against
+`C(2n,n)/(n+1)` rather than quoted. **Reproduced here independently, to every
+digit:**
+
+| n | A | dim H_n = n! | dim TL_n | retained |
+|---:|---:|---:|---:|---:|
+| 3 | 1 | 6 | 5 | **83.3333 %** |
+| 6 | 2 | 720 | 132 | 18.3333 % |
+| 9 | 3 | 362,880 | 4,862 | 1.3398 % |
+| 12 | 4 | 479,001,600 | 208,012 | **0.0434 %** |
+| 15 | 5 | 1,307,674,368,000 | 9,694,845 | 0.0007 % |
+| 18 | 6 | 6,402,373,705,728,000 | 477,638,700 | ~0 % |
+
+So the tension is **not** global. The `Q_β` ladder is an `H_3` object where D
+discards one 1-dimensional block and keeps 83 % — which is exactly why C-vs-D
+shows up only in the 4th decimal of `β_Bor` (`0.99836662` vs `0.99856216`). The
+mass/binding work sits at `n = 3A`, where ⁴He keeps **0.043 %** and ⁶Li 7e-6.
+
+**Options.**
+
+1. **Channel-scoped: D governs the decay/`Q_β` channel, the full tower governs
+   mass/binding.** *Means:* both rulings stand, each in its own domain, and the
+   crossover is stated rather than left implicit. *Costs:* every affected block
+   and producer has to say which regime it is in — a labelling pass, bounded, no
+   recompute. *Risks:* a quantity that crosses the two channels needs a stated
+   rule, and there is no inventory of those today. *Commits to:* accepting that
+   "canonical convention" is channel-local, not corpus-global.
+2. **Full tower everywhere; D is a reporting convention only.** *Means:*
+   derivations run in C (or the full `H_n`) and D is used only where a two-row
+   answer is what is wanted. *Costs:* large — it partially un-does the 2026-08-15
+   excision, whose drain is already many PRs deep. *Risks:* re-opens a settled
+   convention question that cost a lot to settle. *Commits to:* the full-tower
+   ruling as the senior one.
+3. **D everywhere; the full-tower ruling is scoped to mean "all orders in q",
+   not "all rows".** *Means:* the 2026-09-03 ruling is read narrowly. *Costs:*
+   nothing now. *Risks:* at `n = 12` this keeps 0.043 % of the algebra and calls
+   it the derivation — and the owner's own settlement of that ruling was
+   explicitly **both** (all `n` of the tower *and* all orders in `q`,
+   `2026-09-03-sm-26-term-status.md` §10), so this option contradicts a
+   settlement already on the record. *Commits to:* a reading the owner has
+   already declined once.
+
+**Default if you say nothing:** nothing changes. Both rulings stay on the books,
+agents keep hitting the tension one bean at a time, and each resolves it locally
+— which is how the same question has now been raised three times on this arc.
+
+**Blast radius, in real terms.** `y_lambda_symbolic` and the H_4 closed forms
+(the weight layer under every binding and mass number), the `Q_β` `c_k` ladder
+(D2), `q-hecke-seminormal-character-closure.md` (just rewritten under D by
+`8d18aefe06`), and the production `y-lambda-mpfr-witness.json`, which already
+records `y_(1,1,1) = "0.0"` — i.e. the row cap is **already in the shipped
+numbers**, whichever way you rule.
+
+**🛑 AND THE TRUNCATION FACT IS NOT NEW — IT IS LEAN-PROVED, SORRY-FREE, ON
+`main`, AND FOUR WEEKS OLD.** Corpus-grepped rather than assumed. Bean
+`qou-8iru`, dated **2026-08-09** and titled *"H4/C5 answered: convention D IS
+Temperley-Lieb"*, already carries the whole result — `y_λ = 0` exactly for ≥ 3
+rows, `Σ dim²` over surviving blocks `= Catalan(n)` for `n = 2..7` (2, 5, 14,
+42, 132, 429), and the closed form `y_(n−k,k) = [n−2k+1]_q/[2]_q^n` — with a
+1027-line Lean file, `QOU/QBeta/TemperleyLiebTower.lean`, **0 real sorries**,
+on `main` since 2026-08-29 as far as this shallow clone can see.
+
+Two of its theorems bear directly on D7 and are stronger than anything measured
+overnight:
+
+* `conventionD_kills_antisymmetriser` — `z(q²+1) = q³ ⟹ y₍₁³₎ = 0`.
+* its converse, which **excludes convention C by derivation**: if the
+  antisymmetric weight vanishes then `z = q` or `z(q²+1) = q³`, and
+  `1/(q^{1/2}+q^{-1/2})` is neither root.
+
+So "D is the two-row truncation" is not a fresh probe result to be weighed — it
+is a proved theorem the corpus has held for a month, and D7 rests on it rather
+than on three overnight measurements.
+
+**This is corroboration, not waste, and the additions are real.** Per
+AGENTS.md's parallel-exploration rule, three independent routes to one fact
+strengthen it. `qou-fq0f` reached it through the **Wenzl level** (`Q^r = q⁴ ⇒
+r = 2`, Orellana's row cap) where `qou-8iru` reached it through SU(2)'s
+2-dimensional fundamental — genuinely different mechanisms. `qou-cds1` adds the
+rank indexing `z_N = q^N/[N]_q` and the `b² = [3]_q/[2]_q²` non-semisimplicity
+identification, and `2e00d7b8fa` extends the table from `n = 7` to `n = 18`
+with the per-atom mapping. What none of the three did was cite the Lean.
+
+**Where to check it.** The sibling probes are
+`computations/qbeta/qbeta_c_vs_d_are_different_algebras_probe.py` (5/5) and
+`computations/qbeta/qbeta_tl_truncation_cost_by_atom_probe.py` (4/4); the Wenzl
+level comes from `computations/h4_markov_weights_closed_form.py` and the rewritten
+`q-hecke-seminormal-character-closure.md`. The two claims relayed above were
+re-derived here before being written down, and neither depends on trusting a
+sibling's summary.
+
+**🔵 UPDATED 2026-09-07 — D7's conclusion holds; one of its SUPPORTS does not
+discriminate, and a sibling proved exactly why.** `qou-cds1` landed
+`QOU/MassTheory/TwoRowTwoColumnCollision.lean` on `main` (ten declarations,
+**0 sorries**, verified here) after finding that the Lean tree quantifies over
+Temperley–Lieb survivors in **two opposite conventions**:
+
+    QBeta.TemperleyLiebTower, QBeta.TwoRowNormalisation   at most two ROWS
+    MathlibExt.WenzlSchurElement,
+    MassTheory.SelfConjugateStratumVanishes               at most two COLUMNS
+
+**The two families are equinumerous but are different sets.** At `n = 3` the row
+family is `{(3), (2,1)}` and the column family is `{(2,1), (1,1,1)}` — disjoint
+but for `(2,1)` — and **both dimension sums are 5 = catalan 3**. In the sibling's
+words: *"a proof transported by matching numbers rather than by transposing is
+wrong WITHOUT EVER PRODUCING A WRONG NUMBER."*
+
+**What this does to D7.** Checked rather than assumed:
+
+* **The conclusion stands, and more directly than first written here.**
+  `TemperleyLiebTower.lean` uses no `colLen`/`rowLen` predicate — but it does
+  not merely *imply* the row convention through the two-row form
+  `λ = (n − k, k)`. It **states it in prose**, at line 31:
+
+      1. **`y_λ = 0` exactly when `λ` has three or more rows.**
+
+  and again beside the closed form at line 56:
+
+      y₍ₙ₋ₖ,ₖ₎ = [n − 2k + 1]_q / [2]_q ⁿ,   y_λ = 0 for ≥ 3 rows.
+
+  So the file is unambiguous, and what it kills is the **three-strand
+  antisymmetriser**, weight `y₍₁³₎`. `(1,1,1)` is three rows, so it dies under
+  the ROW reading. D7's citation is on the right side of the collision, and no
+  transposition is needed to read it.
+* **The Catalan table above does NOT establish it.** `dim TL_n = Catalan(n)`,
+  and the 83.3 % / 0.043 % retention figures, are **dimension-based**, and the
+  sibling proves both readings give the same dimension sums. That table is
+  *consistent with* the row reading and cannot *distinguish* it. The
+  discriminating support is `TemperleyLiebTower`'s concrete `λ = (n − k, k)`
+  and `y₍₁³₎ = 0`, not the counts.
+* **It sharpens option 1 specifically.** Option 1 is "label each block by
+  regime". A labelling done by *counting* survivors — the obvious way — is
+  transposition-blind and would mislabel silently, because the counts agree
+  either way. Anyone implementing option 1 must label by the **predicate**
+  (`colLen 0 ≤ 2` vs `rowLen 0 ≤ 2`), and `transposeEquiv` in the new file makes
+  that transport mechanical rather than a judgement call.
+
+So D7 is unchanged as a decision and better equipped as an instruction. Nothing
+here is a reason to defer it.
+
+**My recommendation, marked as judgement:** option 1. It is the only one
+consistent with both rulings as written, the measurement supports it (83 % vs
+0.043 % is a real regime boundary, not a preference), and its cost is a
+labelling pass rather than a recompute. It also unblocks D2, which cannot be
+posed until this is settled.
+
 ### D3 — Cluster 3b. May the binding channel use CAL-3 as an acknowledged anchor?
 **Bean:** `qou-2tuv`.
 

@@ -167,13 +167,28 @@ axiom tensor_gs_basis
     - Computation of Δ on divided-power generators
     - Six S-polynomial checks on the tensor product
 
-    Reference: [fred2005, Theorem 4.12]. -/
+    Reference: [fred2005, Theorem 4.12].
+
+    **The statement below asserts `X = X`.**  Its conclusion is
+    `bialg.comul f = bialg.comul f`, closed by `rfl`, so none of `ord`,
+    `sys`, `_hgs`, `bialg` or `_g` does anything.  Until 2026-09-06 it
+    was an `axiom` — a tautology dressed as an assumption, under the
+    paragraphs above citing [fred2005, Thm 4.12] and explaining why it
+    "requires" axiomatisation.
+
+    The file says so itself, on the conclusion line: *"placeholder for
+    the proper AlgElement multiplication"*, with the real statement
+    written out beneath it as a comment.  It is now a theorem, so the
+    tautology is visible.  The real claim
+    (`Δ(f · g) = Δ(f) ·_T Δ(g)`) needs multiplication on
+    `AlgElement G k`, which the corpus does not have, and is
+    deliberately not guessed at. -/
 -- Ref: [fred2005] Theorem 4.12 (strong multiplicativity: Δ is an algebra homomorphism on Dist(G))
-axiom strong_multiplicativity_on_generators
+theorem strong_multiplicativity_on_generators
     {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (_hgs : IsGrobnerShirshovBasis G k ord sys)
     (T : Type*) [Ring (AlgElement G k)] [Ring T]
     (bialg : FilteredBialgebra (AlgElement G k) T) :
     -- Δ is an algebra homomorphism on the full algebra
@@ -182,6 +197,7 @@ axiom strong_multiplicativity_on_generators
       -- The real statement: ∀ f g, Δ(f · g) = Δ(f) ·_T Δ(g)
       -- which is bialg.comul_is_alg_hom, but proved from the GS basis
       -- rather than assumed as an axiom.
+  := fun _ _ => rfl
 
 /-! ## §4  Frobenius Relation Preservation -/
 

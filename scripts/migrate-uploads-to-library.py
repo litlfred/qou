@@ -48,6 +48,27 @@ Usage:
     scripts/migrate-uploads-to-library.py            # dry run (default)
     scripts/migrate-uploads-to-library.py --apply
     scripts/migrate-uploads-to-library.py --verify   # post-migration checks
+    scripts/migrate-uploads-to-library.py --selftest # guard regression cases
+
+## The guard: never create a directory the corpus cannot read
+
+A `library/<doc-id>/` holding only a PDF — no `structure.json`, no
+`sections/` — is invisible at EVERY tier of the corpus-grep path-5
+checklist, so a "has the corpus got this?" check returns clean while
+the paper sits on disk. That is worse than not holding it.
+
+This script used to produce them, and the trigger is worth remembering
+because it fires when the upstream step behaves CORRECTLY:
+`pdf-structure.py` SKIPS an already-held document and emits nothing, so
+a skip and a fresh ingest are indistinguishable here. Two changes:
+
+1. the arXiv-id fallback checks BOTH roots, so a skipped document
+   resolves to the `arxiv-<id>/` already in library/ instead of to its
+   filename slug;
+2. anything still unresolved is REFUSED, loudly, with a non-zero exit —
+   the PDF stays in the queue for the next ingest.
+
+Bean `qou-cvx9`.
 """
 
 from __future__ import annotations
@@ -56,8 +77,10 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(REPO, "uploads")
@@ -115,7 +138,19 @@ def build_mapping() -> dict[str, str]:
             m = re.match(r"^(\d{4}\.\d{4,5})(v\d+)?", base)   # 2209.06973v1-foo
             if m:
                 cand = "arxiv-" + m.group(1) + (m.group(2) or "")
-                mapping[name] = cand if os.path.isdir(os.path.join(SRC, cand)) \
+                # BOTH roots. Looking only in uploads/ is what PRODUCED the
+                # orphans the guard below exists to stop, and the mechanism is
+                # worth stating because it fires when the upstream step
+                # behaves *correctly*: `pdf-structure.py` SKIPS an
+                # already-held document and emits nothing, so the real
+                # `arxiv-<id>/` sits in library/ and never appears in
+                # uploads/. This check then failed, the filename slug won,
+                # and `library/1808.02836v2/` was created beside the real
+                # `library/arxiv-1808.02836v2/` — same paper, one copy
+                # greppable, one invisible at every tier of corpus-grep
+                # path 5. Bean `qou-cvx9`.
+                mapping[name] = cand if any(
+                    os.path.isdir(os.path.join(r, cand)) for r in (SRC, LIB)) \
                     else re.sub(r"[^\w.-]+", "-", base.lower())[:60]
                 continue
             mapping[name] = re.sub(r"[^\w.-]+", "-", base.lower())[:60]
@@ -135,15 +170,50 @@ def tracked_text_files() -> list[str]:
     return out
 
 
-def move_files(mapping: dict[str, str], apply: bool) -> tuple[int, int]:
-    """Move artefact dirs and PDFs from uploads/ into library/<doc-id>/."""
+def has_structure(doc_id: str) -> bool:
+    """Does `<doc_id>` name an INGESTED document in either root?
+
+    Both roots, because the two modes disagree about where the artefacts
+    are at the moment this is asked: under `--apply` step 1 has already
+    moved them into library/, under a dry run they are still in uploads/.
+    Checking one root would make the guard mode-dependent, which is how
+    the bug it guards got in.
+    """
+    return any(os.path.exists(os.path.join(r, doc_id, "structure.json"))
+               for r in (LIB, SRC))
+
+
+def move_files(mapping: dict[str, str], apply: bool
+               ) -> tuple[int, int, list[tuple[str, str]]]:
+    """Move artefact dirs and PDFs from uploads/ into library/<doc-id>/.
+
+    REFUSES to create a `library/<doc-id>/` that holds no `structure.json`.
+    Such a directory is a document the corpus has on disk and cannot read:
+    no INDEX row (tier 1), no summary.json (tier 2), no sections/ (tier 3),
+    no ocr/ (tier 4) — invisible at EVERY tier of the corpus-grep path-5
+    checklist, which is strictly worse than not holding the paper at all,
+    because a "has the corpus got this?" check comes back clean.
+
+    The refusal is the whole point: this step cannot tell a fresh ingest
+    from a SKIPPED one (`pdf-structure.py` emits nothing either way), so
+    it must not guess a directory name. A loud skip leaves the PDF in the
+    intake queue where the next ingest run will find it; a silent move
+    buries it. Bean `qou-cvx9`.
+    """
     moved = missing = 0
+    refused: list[tuple[str, str]] = []
 
     # 1. the generated per-document artefact directories
     if os.path.isdir(SRC):
         for entry in sorted(os.listdir(SRC)):
             sdir = os.path.join(SRC, entry)
             if not os.path.isdir(sdir):
+                continue
+            if not os.path.exists(os.path.join(sdir, "structure.json")):
+                # Not ingested (e.g. `pdf-ocr.py` ran but `pdf-structure.py`
+                # has not). Moving it would plant an unreadable directory in
+                # library/; leaving it keeps it in the queue for the ingest.
+                refused.append((f"uploads/{entry}/", "directory has no structure.json"))
                 continue
             ddir = os.path.join(LIB, entry)
             if apply and not os.path.exists(ddir):
@@ -162,6 +232,12 @@ def move_files(mapping: dict[str, str], apply: bool) -> tuple[int, int]:
             if not os.path.exists(dst):
                 missing += 1
             continue                      # already migrated
+        if not has_structure(doc_id):
+            # The doc-id came from the filename fallback and names nothing
+            # ingested. Do NOT invent the directory.
+            refused.append((f"uploads/{name}",
+                            f"target {LIBNAME}/{doc_id}/ has no structure.json"))
+            continue
         if apply:
             os.makedirs(dstdir, exist_ok=True)
             r = subprocess.run(["git", "mv", "--", f"uploads/{name}", f"{LIBNAME}/{doc_id}/{name}"],
@@ -179,7 +255,7 @@ def move_files(mapping: dict[str, str], apply: bool) -> tuple[int, int]:
     # whitespace placeholder that keeps the empty directory tracked -- so a
     # successful ingest deleted the queue it exists to serve.
 
-    return moved, missing
+    return moved, missing, refused
 
 
 def rewrite_refs(mapping: dict[str, str], apply: bool) -> tuple[int, int]:
@@ -306,6 +382,25 @@ def verify(mapping: dict[str, str]) -> int:
         # Not counted as a migration problem: these rows cited files that do
         # not exist in the repo before the move either. Reported, not hidden.
 
+    # Directories the corpus holds and cannot read. Asked here because the
+    # cheapest place to see the orphan class is the same command that must
+    # never create one. REPORTED, NOT COUNTED, deliberately: 22 such dirs
+    # pre-date the guard (bean `qou-cvx9`), and a gate that is permanently
+    # red gets ignored — the same end state as one that is unfalsifiable,
+    # which this file's own ledger comment already records the cost of.
+    # Once the standing 22 are drained this line reads 0 and the guard above
+    # is what keeps it there.
+    orphans = sorted(d for d in os.listdir(LIB)
+                     if os.path.isdir(os.path.join(LIB, d))
+                     and not os.path.exists(os.path.join(LIB, d, "structure.json"))) \
+        if os.path.isdir(LIB) else []
+    print(f"library/ dirs with no structure.json: {len(orphans)}"
+          + ("  (invisible at every tier of corpus-grep path 5)" if orphans else ""))
+    for d in orphans[:5]:
+        print(f"    {LIBNAME}/{d}/")
+    if len(orphans) > 5:
+        print(f"    ... and {len(orphans) - 5} more")
+
     leftover = [f for f in os.listdir(SRC) if f.lower().endswith(".pdf")] if os.path.isdir(SRC) else []
     print(f"PDFs still flat in uploads/     : {len(leftover)}")
     for f in leftover[:5]:
@@ -315,11 +410,141 @@ def verify(mapping: dict[str, str]) -> int:
     return 0 if problems == 0 else 1
 
 
+# --------------------------------------------------------------- selftest
+
+def _mk(path: str, body: str = "") -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w", encoding="utf-8").write(body)
+
+
+def _selftest() -> int:
+    """Six cases from `qou-cvx9`, covering BOTH halves of the fix separately.
+
+    The two halves catch different things and the distinction is easy to
+    lose, so each has a case no other case can pass for it:
+
+    * `1808.02836v2.pdf` — the orphan the bean actually measured. Nothing
+      for it is ingested **in this working tree** (the sectioned copy was
+      on the other branch, which is why `git merge-tree` reported it as
+      `rename/rename` rather than as a duplicate). Nothing can recover a
+      doc-id here, so the only correct move is to REFUSE — this is the
+      case the guard, not the fallback, has to carry.
+    * `2108.09349v2.pdf` — held locally as `library/arxiv-2108.09349v2/`,
+      but ingested under a DIFFERENT filename, so `build_mapping`'s
+      `source.file` loop does not claim it and the arXiv-id fallback runs.
+      Measured on main: 226 of 633 `structure.json` carry a `doc_id` that
+      is neither the stem nor `arxiv-<stem>`, so this is a third of the
+      corpus, not a corner. Only the both-roots fallback recovers it; with
+      the uploads-only check it becomes `library/2108.09349v2/`.
+    * `0406242v4.pdf` — the bean's negative control. Its OLD-STYLE arXiv id
+      yields no `arxiv-` prefix, so both scripts already agreed and it
+      landed correctly. A guard that refuses this is over-matching.
+    * `fulltext.pdf` — never ingested, and its name carries no arXiv id, so
+      no recovery is even conceivable. `fulltext`, `m4-24` and `amc_2730`
+      are three of the 22 such directories standing on main.
+    * `arxiv-2209.06973v1/` — an ordinary fresh ingest; must still move.
+    * `pending-ocr/` — in the queue with OCR text but no `structure.json`.
+      Moving it plants an unreadable directory; it belongs in the queue.
+    """
+    global REPO, SRC, LIB
+    keep = (REPO, SRC, LIB)
+    tmp = tempfile.mkdtemp(prefix="_migrate_selftest_")
+    ok = True
+    try:
+        REPO, SRC, LIB = tmp, os.path.join(tmp, "uploads"), os.path.join(tmp, "library")
+
+        def sj(root, doc_id, srcfile):
+            _mk(os.path.join(root, doc_id, "structure.json"),
+                json.dumps({"doc_id": doc_id, "source": {"file": srcfile}}))
+
+        # the measured orphan: nothing ingested for it in this tree
+        _mk(os.path.join(SRC, "1808.02836v2.pdf"), "%PDF")
+        # held locally under the stamp id, ingested under another filename
+        sj(LIB, "arxiv-2108.09349v2", "2108.09349v2-final.pdf")
+        _mk(os.path.join(SRC, "2108.09349v2.pdf"), "%PDF")
+        # negative control: old-style id, both scripts already agree
+        sj(LIB, "0406242v4", "0406242v4.pdf")
+        _mk(os.path.join(SRC, "0406242v4.pdf"), "%PDF")
+        # fresh ingest, artefacts still in the queue
+        sj(SRC, "arxiv-2209.06973v1", "2209.06973v1.pdf")
+        _mk(os.path.join(SRC, "2209.06973v1.pdf"), "%PDF")
+        # never ingested, no arXiv id to recover from
+        _mk(os.path.join(SRC, "fulltext.pdf"), "%PDF")
+        # OCR ran, ingest did not
+        _mk(os.path.join(SRC, "pending-ocr", "ocr", "page-001.txt"), "text")
+
+        mapping = build_mapping()
+
+        want_map = {
+            "2108.09349v2.pdf": "arxiv-2108.09349v2",   # the fallback half
+            "0406242v4.pdf": "0406242v4",
+            "2209.06973v1.pdf": "arxiv-2209.06973v1",
+            "1808.02836v2.pdf": "1808.02836v2",         # unrecoverable, by design
+            "fulltext.pdf": "fulltext",
+        }
+        for name, doc in want_map.items():
+            if mapping.get(name) != doc:
+                print(f"  FAIL  mapping[{name}]: want {doc}, got {mapping.get(name)}")
+                ok = False
+
+        # dry run must refuse exactly what --apply refuses: mode-independence
+        # is the property the both-roots check in has_structure() buys, and a
+        # guard that fires in only one mode is the bug wearing a hat.
+        _, _, dry = move_files(mapping, apply=False)
+        moved, _, refused = move_files(mapping, apply=True)
+
+        # Assembled, never written as one literal. `rewrite_refs` scans every
+        # tracked .py including this one, so a contiguous "uploads/<name>.pdf"
+        # here is indistinguishable from a real citation: `--verify` reports
+        # it as a stale reference and `--apply` REWRITES it, silently breaking
+        # the test that guards the rewriter. Caught by running --verify on the
+        # real tree, which is the only reason it is not still in here.
+        up = "uploads/"
+        want_refused = {up + n for n in ("1808.02836v2.pdf", "fulltext.pdf",
+                                         "pending-ocr/")}
+        got = {w for w, _ in refused}
+        if got != want_refused:
+            print(f"  FAIL  refused: want {sorted(want_refused)}, got {sorted(got)}")
+            ok = False
+        if {w for w, _ in dry} != want_refused:
+            print(f"  FAIL  dry run refused a different set: {sorted(w for w, _ in dry)}")
+            ok = False
+
+        # no orphan may exist; the recoverable one must have joined the real dir
+        for d in ("2108.09349v2", "1808.02836v2", "fulltext", "pending-ocr"):
+            if os.path.exists(os.path.join(LIB, d)):
+                print(f"  FAIL  {LIBNAME}/{d}/ created — an unreadable directory")
+                ok = False
+        for doc, pdf in (("arxiv-2108.09349v2", "2108.09349v2.pdf"),
+                         ("0406242v4", "0406242v4.pdf"),
+                         ("arxiv-2209.06973v1", "2209.06973v1.pdf")):
+            if not os.path.exists(os.path.join(LIB, doc, pdf)):
+                print(f"  FAIL  {LIBNAME}/{doc}/{pdf} did not land")
+                ok = False
+        for f in ("1808.02836v2.pdf", "fulltext.pdf"):
+            if not os.path.exists(os.path.join(SRC, f)):
+                print(f"  FAIL  uploads/{f} left the queue despite the refusal")
+                ok = False
+        if moved != 3:
+            print(f"  FAIL  moved {moved} PDFs, want 3")
+            ok = False
+    finally:
+        REPO, SRC, LIB = keep
+        shutil.rmtree(tmp, ignore_errors=True)
+
+    print("  selftest PASS" if ok else "  selftest FAIL")
+    return 0 if ok else 1
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Migrate uploads/ to the per-document layout")
     ap.add_argument("--apply", action="store_true", help="perform the migration (default: dry run)")
     ap.add_argument("--verify", action="store_true", help="post-migration checks only")
+    ap.add_argument("--selftest", action="store_true",
+                    help="run the guard against the cases qou-cvx9 measured")
     args = ap.parse_args()
+
+    if args.selftest:
+        return _selftest()
 
     mapping = build_mapping()
     if not mapping:
@@ -339,17 +564,30 @@ def main() -> int:
     if args.verify:
         return verify(mapping)
 
-    moved, missing = move_files(mapping, args.apply)
+    moved, missing, refused = move_files(mapping, args.apply)
     files, subs = rewrite_refs(mapping, args.apply)
     verb = "moved" if args.apply else "would move"
     verb2 = "rewrote" if args.apply else "would rewrite"
     print(f"\n{verb} {moved} PDFs ({missing} mapped but absent)")
     print(f"{verb2} {subs} references across {files} files")
+
+    if refused:
+        # Loud, and non-zero. A silent orphan is the defect; a refusal that
+        # scrolls past in a bulk drain is the same defect with extra steps.
+        print(f"\nREFUSED {len(refused)} move(s) — target has no structure.json:")
+        for what, why in refused:
+            print(f"    {what}\n        {why}")
+        print("\nThese are NOT ingested. Moving them would create a directory the\n"
+              "corpus holds and cannot read — invisible at every tier of\n"
+              "corpus-grep path 5. Ingest them first, then re-run:\n"
+              "    python3 folio-assistant/scripts/pdf-structure.py --outdir library <pdf>\n"
+              "    python3 scripts/summarize-library.py --apply")
+
     if not args.apply:
         print("\ndry run — re-run with --apply")
     else:
         print("\nnow run: scripts/migrate-uploads-to-library.py --verify")
-    return 0
+    return 1 if refused else 0
 
 
 if __name__ == "__main__":

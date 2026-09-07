@@ -46,36 +46,65 @@ structure ArchimedeanMassData where
   /-- Mass is non-negative. -/
   mass_nonneg : 0 ≤ holonomy_norm
 
-/-- **Nonabelian Stokes theorem** (Yekutieli 2015):
-    the multiplicative integral equals the holonomy.
+/-! ## The three norms are FREE FIELDS -- two axioms deleted 2026-09-06
 
-    This is a deep analytic result about path-ordered exponentials
-    on principal bundles. It requires the theory of iterated
-    integrals and Chen's transport, not yet in Mathlib. -/
--- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
-axiom nonabelian_stokes (data : ArchimedeanMassData) :
-    data.mult_integral_norm = data.holonomy_norm
+`ArchimedeanMassData` carries `holonomy_norm`, `mult_integral_norm` and
+`categorical_mass_norm` as three independent real fields.  Its only
+relating field, `mass_nonneg`, constrains one of them to be
+non-negative and says nothing about the other two.  So
 
-/-- **Categorical-to-archimedean bridge**: the categorical mass
-    (defined abstractly as ‖tr((λ ⊗ id) ∘ Δ ∘ γ)‖) equals the
-    multiplicative integral when evaluated in the archimedean
-    realisation.
+    axiom nonabelian_stokes (data) :
+      data.mult_integral_norm = data.holonomy_norm
 
-    This bridges the abstract categorical definition
-    (mass-identity.lean) to the analytic computation. -/
--- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
--- Ref: [manuscript] §3, Corollary: Archimedean mass identity
-axiom categorical_equals_multiplicative_integral (data : ArchimedeanMassData) :
-    data.categorical_mass_norm = data.mult_integral_norm
+    axiom categorical_equals_multiplicative_integral (data) :
+      data.categorical_mass_norm = data.mult_integral_norm
 
-/-- **Full archimedean mass identity** (cor:mass-identity-C):
-    m(γ) = ‖Hol_{∇_A}(γ; 𝔊)‖.
+both fail at the record `⟨0, 1, 0, le_refl 0⟩`, and so did
+`mass_is_holonomy` -- the Lean backing `cor:mass-identity-C` -- which
+was derived from the two.
 
-    Combines the two axioms: categorical mass = MI∫ = holonomy. -/
--- Ref: [yekutieli2015], [manuscript] §3
-theorem mass_is_holonomy (data : ArchimedeanMassData) :
-    data.categorical_mass_norm = data.holonomy_norm := by
-  rw [categorical_equals_multiplicative_integral data,
-      nonabelian_stokes data]
+The mathematics is not in dispute.  Yekutieli's nonabelian Stokes
+theorem is a real and deep result about path-ordered exponentials, and
+the corollary's prose argument is the right one.  What was wrong is that
+the Lean asserted an equality between two numbers a record is free to
+choose independently: no path, no connection, no surface appears in
+`ArchimedeanMassData`, so nothing in the type could ever have made the
+equality hold.
+
+Stating it needs the connection and the multiplicative integral as
+constructions, with the norms **derived** from them -- the shape the
+repaired `transfer_matrix_level_independence` uses.  That is a real
+formalisation and is deliberately not guessed at here. -/
+
+/-- Three norms chosen independently; `mass_nonneg` is satisfied. -/
+def freeNormData : ArchimedeanMassData where
+  holonomy_norm := 0
+  mult_integral_norm := 1
+  categorical_mass_norm := 0
+  mass_nonneg := le_refl 0
+
+/-- **`nonabelian_stokes` is false as stated.** -/
+theorem not_nonabelian_stokes :
+    ¬ (∀ data : ArchimedeanMassData,
+        data.mult_integral_norm = data.holonomy_norm) := by
+  intro h
+  simpa [freeNormData] using h freeNormData
+
+/-- **`categorical_equals_multiplicative_integral` is false as stated.** -/
+theorem not_categorical_equals_multiplicative_integral :
+    ¬ (∀ data : ArchimedeanMassData,
+        data.categorical_mass_norm = data.mult_integral_norm) := by
+  intro h
+  simpa [freeNormData] using h freeNormData
+
+/-- **And so was the corollary derived from them**, `cor:mass-identity-C`. -/
+theorem not_mass_is_holonomy :
+    ¬ (∀ data : ArchimedeanMassData,
+        data.categorical_mass_norm = data.holonomy_norm) := by
+  intro h
+  -- the same witness does not separate these two (both are 0), so use one
+  -- that does: holonomy 1, categorical 0, with mass_nonneg still satisfied.
+  have hne : ((0 : ℝ)) ≠ 1 := by norm_num
+  exact hne (h ⟨1, 1, 0, by norm_num⟩)
 
 end QOU

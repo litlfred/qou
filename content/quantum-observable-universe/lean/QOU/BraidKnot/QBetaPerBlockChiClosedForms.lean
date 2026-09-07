@@ -81,6 +81,40 @@ noncomputable def chi_block_3 (q : ℝ) : ℝ :=
 Closed form: $(q^2 - 1)(-q^4 - 1) / (4q^3)$.
 
 ⚠ **ORDERING-DEPENDENT — this is the GROUPED-frame form** (bean `qou-eddc`).
+Of the three blocks here, this is the only one the 2026-09-05 intra-ordering
+ruling (`qou-hu1f`) can reach: `chi_block_3` and `chi_block_111` are the
+one-dimensional irreps, where the generators act by scalars and therefore
+commute, so no reordering of the word changes them — both were verified
+symbolically to be IDENTICAL under either ordering. $V_{(2,1)}$ is the only
+2-dimensional block of $H_3(q)$, and it is exactly where $\sigma_0$ and
+$\sigma_1$ fail to commute.
+
+Under the canonical (borromean) word the character is
+
+$$\chi_{(2,1)}(\Delta_{T_\beta}) = \frac{(q^2-1)(q^4+1)\,P(q)}{4q^9},
+  \qquad P(q) = 2q^{12}-5q^{10}+5q^{8}-5q^{6}+5q^{4}-5q^{2}+2,$$
+
+related to the form below by the exact factor $-P(q)/q^6$, with $P(1) = -1$ and
+$P$ palindromic. Derivation, and a cross-check against a second implementation
+agreeing to ~1e-40:
+`computations/qbeta/qbeta_per_block_chi_borromean_closed_forms_probe.py`.
+
+**Nothing at the classical point changes.** $P(1) = -1$ makes the two forms
+agree exactly at $q = 1$; the $(q^2-1)$ factor, the limit
+$\lim_{q\to1}\chi_{(2,1)}/(q^2-1) = -1/2$ and bar-oddness in $h = q - 1/q$ all
+survive (degree 3 → 9). `chi_block_vanishing_at_one`, the `(q^2-1) * P21`
+factorisation and the order-1/order-2 Taylor coefficients (−5/6 and 5/6) are
+frame-independent; the first divergence is at order 3.
+
+**Migration attempted 2026-09-07 and REVERTED.** Swapping the definition
+requires re-proving the whole derivative tower — `P21`,
+`delta_tau_M_surrogate`, both explicit derivative functions and three
+`HasDerivAt` chains whose numerator goes degree 11 → 17. That attempt left 16
+tactic errors in a file that compiles CLEANLY at 0 errors as written, so it was
+backed out rather than landed broken. Tracked in `qou-eddc`; the mathematics is
+settled and only the Lean plumbing remains.
+
+⚠ **ORDERING-DEPENDENT — this is the GROUPED-frame form** (bean `qou-eddc`).
 Of the three blocks in this file, this is the only one the 2026-09-05
 intra-ordering ruling (`qou-hu1f`) can reach. `chi_block_3` and
 `chi_block_111` are the one-dimensional irreps, where the generators act by

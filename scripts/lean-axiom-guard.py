@@ -133,6 +133,56 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- free-field axioms in mass-theory (bean `qou-9yt9`, PR #6933) ---
+# Three more axioms asserting facts about a structure field that the structure
+# leaves FREE:
+#   a_eq_one_three_channels_axiom / additive_wedderburn_missing_partitions_axiom
+#     quantified over every SchurWeylMassDecomposition as though `partitions`
+#     were the complete partition list; `decomposition` is satisfiable for ANY
+#     list by choosing markovTrace to match, so it can be empty.
+#   transfer_matrix_level_independence_axiom asserted the constituent product
+#     equals HadronConfig.compositePolynomial, a field tied to the constituents
+#     by nothing.
+#
+# The last is the corpus's SECOND false axiom of that name: a different one,
+# over CategoricalTransferMatrix, was found false and repaired in
+# categorical-transfer-matrix.lean, and the shared identifier is exactly what
+# let this one survive that fix -- a grep lands on the repaired copy.
+# NOT REGISTERED, and the reason is a coverage gap worth stating: all three
+# refutations live in CONTENT-BLOCK SIBLINGS, which are not library modules and
+# have no olean, so this guard cannot reach them --
+#   `Unknown constant QOU.BraidKnot.not_a_eq_one_three_channels`
+# even with the module column pointed at QOU.BraidKnot.schur_weyl_mass_decomposition
+# (a deliberately empty file that exists only so the block's lean.ref has a
+# second resolution candidate). The guard covers the library; the sibling tree
+# is covered by scripts/lean-content-sweep.sh instead, which type-checks but
+# does not pin axiom status. Registering an unreachable row would make the
+# guard fail rather than protect anything.
+# --- the q-analysis uniqueness family (bean `qou-9yt9`, PR #6933) ---
+# Six axioms across five display siblings, all FALSE, one defect: each of
+# QDilogarithm / QExponential / QLogarithm carries its ambient maps (coproduct,
+# counit, Jackson derivative) as FREE FUNCTION FIELDS with its axioms as proof
+# fields ABOUT those maps -- so choosing coprod := fun x => (x,x), a constant
+# counit and D_q := id satisfies every structure field for EVERY value of the
+# distinguished element. `Li2` is worse still: the `pentagon` field never
+# mentions it, so it is free data and the conclusion was about it.
+#
+# The existence axiom quantified over every carrier with an `Add`, including
+# Empty, where `log_q : H` cannot be supplied; over an AddZeroClass it is true
+# and now proved with no axiom (nonempty_of_addZeroClass).
+#
+# The three `*_of_*_rigid` rows are the REPAIR: each carries, as an explicit
+# hypothesis, the one rigidity step the block's own narrative proof already
+# asserted in prose, plus the additivity that proof silently used. Registered
+# because a future edit that drops a hypothesis back out would move the row.
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.not_qDilogarithm_unique | clean
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.not_qExponential_unique | clean
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.not_qLogarithm_unique | clean
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.not_qDilogarithm_exists_over_every_add_carrier | clean
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.QDilogarithm.nonempty_of_addZeroClass | clean
+QOU.QuantumObservableUniverses.QAnalysisUniqueness | QOU.QExponential.unique_of_flow_rigid | clean
+QOU.QuantumObservableUniverses.QAnalysisUniqueness | QOU.QLogarithm.unique_of_prim_rigid | clean
+QOU.QuantumObservableUniverses.QAnalysisUniqueness | QOU.QDilogarithm.eval_unique_of_pentagon_rigid | clean
 # --- the ConfinementLevel refactor (bean `qou-9yt9`, PR #6882) ---
 # `ConfinementLevel.level_canonical` asserted that two records agreeing on
 # braidIndex, nStrands and q share a level. It was FALSE -- `level` was a free

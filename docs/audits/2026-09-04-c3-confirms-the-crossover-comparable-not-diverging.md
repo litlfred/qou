@@ -7,9 +7,28 @@
 > `259/128 → 7/128` — and `c₁(nn)` becomes **exactly 0**.
 >
 > **Convention-scoped, not refuted:** `c₃` has not been re-measured under
-> Borromean (it needs `P = 5`). But it was built on #6559's crossover reading,
-> and that reading does not survive — so treat the comparable-not-diverging
-> conclusion as **grouped-conditional and open** until `c₃` is re-run.
+> Borromean (it needs `P = 5`). **UPDATE 2026-09-06 — `c₃` HAS now been re-measured under Borromean
+> at `A = 2` and `A = 3`, and THIS DOCUMENT'S CONCLUSION SURVIVES** (bean
+> `qou-yaig`). Four of five `c₃ℏ³/c₂ℏ²` ratios are well below 1 — `0.4023`,
+> `0.6817`, `0.8087`, `0.5295` — so the third order does NOT overtake the
+> second: the expansion overshoots once, at order 2, and then settles. The
+> sole exception is `nn` at `10.7008`, and that is the degenerate case where
+> `c₁ = 0`, which has no scale for later orders to be measured against.
+>
+> Its premise fared differently: #6559's crossover reading is **split** — the
+> ENDPOINT survives (`c₂(⁴He) = 439/512`, ratio `1.5535 > 1`), the LOCATION
+> does not (already above 1 at `A = 2` and `A = 3`), the argument stays
+> refuted (#6931).
+>
+> **`A = 4` — where this document's interest lies — is now MEASURED, and
+> THIS DOCUMENT'S CONCLUSION HOLDS THERE TOO**: `c₃(⁴He) = 1329/256`, ratio
+> **`0.5999 < 1`** (352 s at `P = 5`, three controls reproduced). Its grouped
+> counterpart was `0.8219`, likewise below 1 — so the conclusion is robust to
+> the convention change even though every number moved. The `c₃` column also
+> turns out to have **no `A` trend at all** (`0.4023, 0.6817, 0.8087, 0.5295,
+> 0.5999`), which is sharper than "comparable": the ratio is not drifting
+> toward 1 as `A` grows. Table and caveats:
+> [`2026-09-06-c3-under-borromean-the-second-order-is-the-only-bad-one.md`](2026-09-06-c3-under-borromean-the-second-order-is-the-only-bad-one.md).
 >
 > Full table under both orderings, and what survives:
 > [`2026-09-06-the-c1-c2-crossover-is-grouped-specific.md`](2026-09-06-the-c1-c2-crossover-is-grouped-specific.md).

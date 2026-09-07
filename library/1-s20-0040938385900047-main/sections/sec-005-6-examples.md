@@ -1,14 +1,67 @@
 ---
 doc_id: 1-s20-0040938385900047-main
-doc_title: "Volumes of hyperbolic three-manifolds"
-section_id: sec-000-4-a2-35a-i
-section_title: "( ‘A2 35A ,)($)“+ . ..I"
-section_number: 4
-pages: 22-25
+doc_title: "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS"
+section_id: sec-005-6-examples
+section_title: "Examples"
+section_number: 6
+pages: 21-25
 source_pdf: 1-s2.0-0040938385900047-main.pdf
 source_sha256: f0db9d97f2ae83c6
-doc_brief: "Volumes of hyperbolic three-manifolds — 2 sections: ( ‘A2 35A ,)($)“+ . ..I; References"
+doc_brief: "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS — 7 sections: Introduction; Combinatori"
 ---
+We shall illustrate our results on the example of the figure eight knot complement. We 
+first describe more explicitly what our results say in the case of one cusp. 
+As described in $1, if the expansion of u = vi as a power series in u = u1 is 
+0= 2 c,lA” (c, = 0 for n even), (52) n=1 
+then the volume formula is 
+Vol (M,) = Vol (M) + i Im (UC) + Im (J(u)) (53) 
+= vol(M)-i 8 Im(c,u”ii)-i 
+II 1 
+4 z *m(~c.u”+i). 
+I 1 
+We can also invert series (52): 
+u = C a,~” (a, = 0 for n even), 
+a=1 
+1 a, =-) *,=-C3 3c: cs 
+Cl C:’ 
+a, = 7-7, 
+Cl Cl 
+12c; 8~3~ a, = - -iT-- cl Cl 
+and write the volume as 
+Vol (M,) = Vol (M) - f z Im 
+( 
+n-l 
+a,u”C+ -a u n+l . 
+I) 1 n+l ” 1 
+On the other hand the Dehn surgery coefficients (p, q) are determined by 
+pu + qu = 2ni. 
+By (52) we can write this as 
+2ni A -_= --u + c$ + c$ + . . . 
+4 4 
+with 
+A = p+c,q 
+and applying the inversion formula (c.f. equation (54)) to solve for u gives 
+(54) 
+(55) 
+(56) 
+(57) 
+(58) 
+328 Walter D. Neumann and Don Zagier 
+Inserting into (56) and solving for u gives 
+_ (59) 
+2 
+lZc+8c~c,~+c,$ 2xi ’ 
++ A3 )( ) 
+A + . . . . 
+It is now a simple matter to express the ingredients of the volume formula (53) in terms of the 
+Dehn surgery coefficients. Since, by (56), we have Im (uU) = Im 
+we obtain from (59): 
+iIm(nV)= -Im(c,) ~+aIm[c,(~~+(3c~~-c~)(~)” (60) 
++(1zc:~-8c,c,~+c,)(~)s + . . .]. 
+A similar calculation yields 
++- 12c3d-8c c z+c 
+3 
+4 ( ‘A2 35A ,)($)“+ . ..I 
 (61) 
 n-l . 
 where the term of degree 2n is always - n+l times the corresponding term in (60). Thus the 

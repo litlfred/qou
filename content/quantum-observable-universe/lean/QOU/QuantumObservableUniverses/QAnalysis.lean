@@ -76,6 +76,56 @@ structure QDilogarithm (H : Type*) [Add H] where
       Li2_eval (div (mul x (compl y)) (compl (mul x y))) +
       Li2_eval (div (mul y (compl x)) (compl (mul x y)))
 
+
+/-- **q-Exponential data**: an abstract grouplike of the q-shuffle Hopf
+    algebra, characterised by the flow equation `D_q g = g`.
+
+    Relocated here 2026-09-06, completing the relocation this module was
+    created for: the 2026-06-09 audit moved `QDilogarithm` so that the
+    companion `*-unique.lean` display files could import a real structure,
+    but left `QExponential` and `QLogarithm` inlined in four siblings
+    apiece.  Their uniqueness axioms were refuted from those inline
+    copies; see `QAnalysisUniquenessCounterexamples`. -/
+-- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §III.3
+structure QExponential (H : Type*) where
+  /-- The grouplike element `e_q ∈ H`. -/
+  e_q : H
+  /-- Coproduct on `H`, encoded as `coprod : H → H × H`. -/
+  coprod : H → H × H
+  /-- Counit on `H`. -/
+  counit : H → Archimedean.R_q
+  /-- q-Jackson derivative on `H`. -/
+  D_q : H → H
+  /-- Grouplike axiom: `Δ_q(e_q) = (e_q, e_q)`. -/
+  grouplike : coprod e_q = (e_q, e_q)
+  /-- Counit: `ε(e_q) = 1`. -/
+  counit_eq_one : counit e_q = 1
+  /-- Flow equation: `D_q e_q = e_q`. -/
+  flow_invariant : D_q e_q = e_q
+
+/-- **q-Logarithm data**: an abstract primitive element of the q-shuffle
+    Hopf algebra, characterised by primitivity
+    `Δ_q(log_q) = log_q ⊗ 1 + 1 ⊗ log_q` and vanishing counit
+    `ε(log_q) = 0`.
+
+    Relocated here 2026-09-06 alongside `QExponential`. -/
+-- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IV.3
+structure QLogarithm (H : Type*) where
+  /-- The primitive element `log_q ∈ H`. -/
+  log_q : H
+  /-- Coproduct on `H`, encoded as `coprod : H → H × H`. -/
+  coprod : H → H × H
+  /-- Counit on `H`. -/
+  counit : H → Archimedean.R_q
+  /-- The unit / grouplike `1 ∈ H` against which primitivity is taken. -/
+  one : H
+  /-- Primitivity (left component). -/
+  primitive_left : (coprod log_q).1 = log_q
+  /-- Primitivity (right component). -/
+  primitive_right : (coprod log_q).2 = log_q
+  /-- Vanishing counit: `ε(log_q) = 0`. -/
+  counit_eq_zero : counit log_q = 0
+
 end
 
 end QOU

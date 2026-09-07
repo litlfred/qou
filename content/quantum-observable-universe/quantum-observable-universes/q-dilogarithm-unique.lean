@@ -1,64 +1,62 @@
-import QOU.Basic
-import QOU.QuantumObservableUniverses.QAnalysis
+import QOU.QuantumObservableUniverses.QAnalysisUniqueness
+import QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples
 
 
 /-!
-# QOU.QDilogarithm.unique — uniqueness of the q-dilogarithm up to shift
+# prop:q-dilogarithm-unique — witness extract
 
-The level-2 primitive satisfying the pentagon identity is unique up to
-a level-1 shift.
+The formalisation lives in the library:
 
-LaTeX: `\label{prop:q-dilogarithm-unique}`
+* `QOU.QDilogarithm.eval_unique_of_pentagon_rigid`
+  (`QOU/QuantumObservableUniverses/QAnalysisUniqueness.lean`)
 
-## Honest statement (2026-06-09 axiom audit)
+This file carries no declaration of its own -- per AGENTS.md §0a a
+sibling that re-declares a library result shadows it -- only `example`
+extracts pinning what the library proves.
 
-The previous version recorded an external axiom referencing an
-auto-bound `QDilogarithm` — never imported, hence unchecked, and the
-noted `Subsingleton` reading would have been too strong (uniqueness
-holds only *up to a level-1 shift*).
+## What changed 2026-09-06
 
-This file now imports the relocated `QDilogarithm` structure
-(`QOU.QuantumObservableUniverses.QAnalysis`) and states the genuine
-content as a single **honest §3b-cond conditional axiom**: two
-pentagon-satisfying level-2 primitives with the same level-1 data
-(`log_q`, `mul`, `compl`, `div`) have equal `Li2` first component.
-This is the universal property of the q-dilogarithm as the generator
-of the centre of `H_q^{⊗2}` modulo shuffle-products ([kassel1995]);
-it is retained as a named axiom pending a Mathlib formalisation of the
-pentagon universal property — not a false `Subsingleton`.
+This file previously held
 
-## References
+    axiom QDilogarithm.unique_axiom … : L₁.Li2.1 = L₂.Li2.1
 
-- [manuscript] §2-quantum-observable-universes/q-dilogarithm-unique
-- [kassel1995] Quantum Groups (Springer GTM 155), §IV
+together with a wrapper theorem `QDilogarithm.unique` consuming it.
+**The axiom is false.**  `Li2` is not mentioned by the `pentagon` field
+-- the pentagon constrains `Li2_eval`, a different field -- so `Li2` is
+free data, and two records agreeing on `log_q`, `mul`, `compl` and `div`
+can differ in it.  Refutation:
+`QOU.QAnalysisCounterexamples.not_qDilogarithm_unique`.
+
+The live statement therefore concludes about `Li2_eval`, the field the
+pentagon actually constrains, and is conditional on `pentagon_rigid` --
+the one-dimensionality step the narrative proof `prf:q-dilogarithm-unique`
+already asserts in prose.
 -/
 
-namespace QOU
+namespace QOU.QDilogarithmUniqueWitness
 
-/-- **Pentagon-normalised uniqueness of the q-dilogarithm (conditional,
-    named categorical input).**
+open QOU QOU.QAnalysisCounterexamples
 
-    Two `QDilogarithm H` with the same level-1 data agree on the
-    first component of `Li2`.  The §3b-cond conditional content
-    (pentagon universal property, [kassel1995]); replaces an unchecked
-    external axiom on an auto-bound carrier. -/
--- Ref: [kassel1995] Quantum Groups, §IV
-axiom QDilogarithm.unique_axiom {H : Type*} [Add H] (L₁ L₂ : QDilogarithm H)
-    (h_log : L₁.log_q = L₂.log_q)
-    (h_mul : L₁.mul = L₂.mul)
-    (h_compl : L₁.compl = L₂.compl)
-    (h_div : L₁.div = L₂.div) :
-    L₁.Li2.1 = L₂.Li2.1
+/-- The library statement is conditional on pentagon rigidity and
+    concludes about `Li2_eval`. -/
+example {H : Type*} [AddCommGroup H] (L₁ L₂ : QDilogarithm H)
+    (h_mul : L₁.mul = L₂.mul) (h_compl : L₁.compl = L₂.compl)
+    (h_div : L₁.div = L₂.div)
+    (pentagon_rigid : ∀ f : H → H,
+      (∀ x y : H, f y + f x =
+        f (L₁.mul x y) +
+        f (L₁.div (L₁.mul x (L₁.compl y)) (L₁.compl (L₁.mul x y))) +
+        f (L₁.div (L₁.mul y (L₁.compl x)) (L₁.compl (L₁.mul x y)))) →
+      f = 0) :
+    L₁.Li2_eval = L₂.Li2_eval :=
+  QDilogarithm.eval_unique_of_pentagon_rigid L₁ L₂ h_mul h_compl h_div pentagon_rigid
 
-/-- **Uniqueness of the q-dilogarithm up to shift (conditional).**
-    Wrapper over `unique_axiom`. -/
--- Ref: [kassel1995] Quantum Groups, §IV
-theorem QDilogarithm.unique {H : Type*} [Add H] (L₁ L₂ : QDilogarithm H)
-    (h_log : L₁.log_q = L₂.log_q)
-    (h_mul : L₁.mul = L₂.mul)
-    (h_compl : L₁.compl = L₂.compl)
-    (h_div : L₁.div = L₂.div) :
-    L₁.Li2.1 = L₂.Li2.1 :=
-  QDilogarithm.unique_axiom L₁ L₂ h_log h_mul h_compl h_div
+/-- The unconditional `Li2`-valued form that stood here as an axiom is
+    refuted in the library. -/
+example :
+    ¬ (∀ {H : Type} [Add H] (L₁ L₂ : QDilogarithm H),
+        L₁.log_q = L₂.log_q → L₁.mul = L₂.mul → L₁.compl = L₂.compl →
+        L₁.div = L₂.div → L₁.Li2.1 = L₂.Li2.1) :=
+  not_qDilogarithm_unique
 
-end QOU
+end QOU.QDilogarithmUniqueWitness

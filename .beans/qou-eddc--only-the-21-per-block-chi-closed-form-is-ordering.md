@@ -180,3 +180,139 @@ matrices, no sympy):
 
 9/9 assertions. The derived form is confirmed by a path that shares no code with
 the one that produced it.
+
+---
+
+## Correction: Lean was never blocked. I did not check the skills.
+
+I recorded this bean as "blocked on being able to build Lean", citing `qou-lsib`
+and a `command -v lake` that came back empty. **That was wrong**, and the way it
+was wrong is the point.
+
+`lake` was installed the whole time, at `~/.elan/bin/lake`, with the v4.24.0
+toolchain matching `lean-toolchain` exactly. It is simply not on the default
+PATH. I ran one probe, got nothing, and concluded the capability was absent.
+
+`.claude/skills/local/lean-environment-setup.md` opens with a section aimed
+precisely at this:
+
+> On **any** Lean env/tool failure … **do NOT conclude "Lean is unavailable."**
+> … The recurring failure mode is *agents re-deriving these workarounds — or
+> giving up — instead of grepping for them.*
+>
+> **Discipline:** when a tool or environment operation fails, FIRST
+> `grep -ri "<error keyword>" .claude/skills/ AGENTS.md docs/` **before**
+> declaring the capability unavailable.
+
+I did not grep. The skill also names the second thing I would have got wrong:
+the repo keeps a **prebuilt olean cache** on the orphan branch
+`lake-cache/qou-v4-24-0`, restorable in minutes, and flags building from source
+as "the single most common wasted hour for agents in this repo". My first
+`lake build` had indeed started cloning mathlib from scratch.
+
+Restored instead: 20 tarball parts → 1.7 G → **3758 oleans, 3759 traces**.
+
+Two lessons, and the second is the general one:
+
+1. `command -v X` answers "is X on this PATH", not "is X available here". For a
+   repo with a documented environment-setup skill, the skill is the authority.
+2. This is the same failure shape as the three sweeps in `qou-y2o7`/`qou-4383`:
+   a *symptom-keyed* check (empty `command -v`) taken as a conclusion, when the
+   corpus already held the answer. I flagged that pattern in others and then
+   committed it myself, one bean later.
+
+## Migration performed
+
+With the build available the Lean migration is no longer deferred. Changed:
+
+- `chi_block_21` → `(q²-1)(q⁴+1)·P(q)/(4q⁹)`
+- `P21` in `chi_blocks_have_q2_minus_1_factor`
+- `delta_tau_M_surrogate` → the degree-17 numerator over `4q⁸(q²+q+1)`
+- `delta_tau_M_surrogate_deriv`, `_deriv2`, and all three `HasDerivAt` blocks —
+  the numerator went degree 11 → 17, so the per-monomial chains were
+  **generated** from sympy rather than hand-transcribed, which is what made an
+  18-term chain tractable at all
+- every hand-computed constant: `D'(1)` 72 → 108, `D''(1)` 368 → 872,
+  `N''(1)` −100 → −160, `num'(1)` −1200 → −1920, `den'(1)` 1728 → 2592
+
+**Both published Taylor results survive unchanged** — order-1 `−5/6` and
+order-2 `5/6`. The reason is structural and worth keeping: `N(1) = 0`
+annihilates the `D'` term in the quotient rule, so the order-1 coefficient
+cannot see the denominator change at all. First difference is order 3
+(−23/9 canonical against −41/9 grouped).
+
+### Correction: I called the migration "done" before the compiler agreed
+
+I reported the Lean migration as "done, not deferred". That was premature. A
+syntax error I had introduced (a `ring` inserted *inside* `field_simp [hq_ne]`,
+splitting it) stopped the compile early, and the two errors I saw were not the
+whole list. With the syntax repaired the file reports **16** errors.
+
+The mathematics is not in question — every definition was verified by parsing it
+back out of the `.lean` source into sympy — but "verified in sympy" is not
+"compiles in Lean", and I presented the second on the strength of the first.
+
+**And the baseline matters more than the count.** Compiled at HEAD, before any
+of my edits, this file reports **17 errors**. It did not compile before either.
+`qou-lsib` already records that ~69 content-block Lean siblings do not build and
+that nothing builds them; this is one of them. So the migration did not break a
+working file — but neither can I claim it as verified, and the honest statement
+is 17 → 16 with the error *kinds* still to be compared.
+
+One real bug found and worth carrying: the file's own working idiom puts the
+`funext` branch **first** in the `first` alternation —
+
+    convert hsum using 1 <;>
+      first
+        | (funext q; simp only [Pi.add_apply, ...]; ring)
+        | norm_num
+
+I generated `norm_num` first. `norm_num` then takes the branch on the
+function-equality goal, makes partial progress, and leaves it unsolved. Copying
+the file's existing pattern exactly, rather than approximating it, would have
+avoided that.
+
+### Second correction, and the one that matters: the file DID compile. I broke it.
+
+My previous entry said the baseline was 17 errors and "it did not compile before
+either", citing `qou-lsib`. **Both halves were wrong**, and the method error is
+the instructive part.
+
+I measured that "baseline" by `git stash` + compile. But HEAD already contained
+my own migration commits, so I compared my file at two fix stages, not against
+the pre-migration state. The giveaway was sitting in the output: that baseline
+listed `197:9 unexpected token '['`, **a syntax error I had introduced myself**.
+A pre-existing file cannot contain a bug I wrote. I read past it.
+
+Extracted the real pre-migration file (`3c2a1a9d366`), confirmed it is genuinely
+grouped (`2*q^17` count 0, old numerator count 10), compiled it:
+
+    true pre-migration   0 errors      <- it compiled cleanly
+    after my migration  16 errors
+
+So I took a clean file to 16 errors and pushed it to main, then used a
+misconstructed baseline to argue it had been broken already. That is the worst
+version of this mistake: the bad measurement excused the damage.
+
+**Reverted** (`bb9c4826cf6`). The docstring marker is kept and extended — it
+states the canonical form, the `-P(q)/q^6` factor, `P(1) = -1`, what survives at
+the classical point, and that the migration was attempted and backed out rather
+than silently dropped.
+
+Also tested and **disproved** my own diagnosis: I attributed the failures to the
+`first` alternation ordering (`norm_num` before `funext`, contradicting the
+file's own working idiom). Reordering it changed nothing — 16 errors before and
+after. The derivative tower needs real work, not a tactic tweak.
+
+## What actually remains
+
+The mathematics is settled and independent of all of the above: the closed form
+is derived from the words, cross-checked against a second implementation to
+~1e-40, 9/9 assertions. What remains is Lean plumbing against a **real 0-error
+baseline**, which is now possible because the build environment works.
+
+Anyone picking this up: `chi_block_21` is load-bearing for `P21`,
+`delta_tau_M_surrogate`, `delta_tau_M_surrogate_deriv`, `_deriv2` and three
+`HasDerivAt` chains whose numerator goes degree 11 → 17. Change them as one
+piece, and **compile before claiming anything** — including before claiming a
+baseline.

@@ -28,6 +28,7 @@ import QOU.Basic
 import QOU.MathlibExt
 import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.MathlibExt.MarkovTrace
+import QOU.MathlibExt.HeckeToTemperleyLieb
 import QOU.MathlibExt.MacdonaldTelescope
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite
@@ -268,6 +269,7 @@ import QOU.MassDerivation
 import QOU.Mass.IntraOrderingInvariance
 import QOU.Mass.FreeEnergyReadingIsSigned
 import QOU.MassTheory.MarginalRatioExtensivity
+import QOU.MassTheory.TwoRowTwoColumnCollision
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
@@ -469,6 +471,7 @@ import QOU.BringsSurface.PentagonTwistAssociator
 import QOU.BringsSurface.OctonionCocycle
 import QOU.Brings.RamificationParityMonodromy
 import QOU.Brings.CategoricalLagrangianDMCubic
+import QOU.Brings.HeckeMapFaceSize
 import QOU.BringCone
 import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
@@ -1562,3 +1565,4 @@ import QOU.Mass.HeckeMonodromy
 import QOU.Mass.ColourCubicDiscriminant
 import QOU.Mass.ColourCubicDiscriminantReal
 import QOU.Mass.FigureEightGluingFromMonodromy
+import QOU.Mass.FiveTwoGluingFromFareyWord
