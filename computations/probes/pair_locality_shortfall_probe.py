@@ -18,10 +18,18 @@ QOU/Mass/CrossingModelPairLocality.lean (sorry-free, this PR) closes the gap:
   isPairwise_of_pairLocal      pair-local  =>  pairwise-additive
   b3_eq_zero_of_pairLocal      hence b3 == 0
   not_pairLocal_of_b3_ne_zero  hence a nonzero measured b3 REFUTES pair-locality
-  brunnian_not_pairLocal       a Brunnian carrier is exactly that violation
-  b3_eq_neg_tripleMutual_of_brunnian
+  not_pairLocal_of_noIsolatedPairEnergy
+                               a w2 = 0 carrier is exactly that violation
+  b3_eq_neg_tripleMutual_of_noIsolatedPairEnergy
                                with the pair terms gone, b3 IS the triple channel
   tripleMutual_neg_of_b3_pos   so b3 > 0 forces an attractive triple channel
+
+  RENAMED 2026-09-07: the hypothesis above was called `Brunnian`.  It is w2 = 0
+  (a pair carries no mutual energy in isolation), NOT the topological Brunnian
+  property (linking number zero) that L6a4 has -- and the corpus proves the
+  second does not imply the first (BrunnianBindingChannel.brunnian_binding_
+  survives).  So these three theorems are true and their hypothesis is NOT
+  satisfied by the carrier; see QOU.Mass.BrunnianHypothesisNotSatisfied.
 
 WHAT THIS PROBE MEASURES.  The Lean says the measured cumulants refute
 pair-locality.  It does not say by HOW MUCH, which is a question about numbers.
