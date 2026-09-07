@@ -101,6 +101,42 @@ available observable cannot check is still a prediction, falsifiable by any
 Per the NO-FITTING directive, `p ≈ 0.153` is reported as an **output** and
 deliberately not matched against any small rational.
 
+### And that is now measured, not inferred
+
+The paragraph above rests on the degeneracy *algebra*. It could have been
+over-modest: a derived `c₀` sitting at a sharp optimum of the fit landscape
+**would** be visible to the series. It is not, and the check is
+`em_linking_derived_c0_is_invisible_to_the_series_probe.py` (7/7).
+
+Scale-free, `R²` over the whole `c₀ = 0…7.5` scan spans **0.9625–0.9800** — a
+spread of **0.0175**, *smaller* than the **0.0200** of variance the best member
+leaves unexplained. Between-model variation is below within-model residual,
+which is the precise sense in which this observable cannot rank these kernels.
+The derived `c₀ = 1.5699` lands at `R² = 0.9746`: **sixth of nine**, 0.0054
+from the top of a 0.0175-wide range. The other two fibres sit alongside it.
+
+**A metric that says the opposite, and is wrong.** The natural measure — rms of
+`ln α` on `ln A`, with `α = acoth(κ + c₀)` — falls monotonically across the
+scan, `0.03461 → 0.00760`, a factor of **4.56**, appearing to rank the kernels
+decisively and pick the largest `c₀`. It is an artifact: as `c₀` grows,
+`acoth(κ + c₀) → 1/c₀`, a constant, and a constant lies on a power law
+trivially with `p → 0`. The `p` column collapses in lockstep,
+`0.3291 → 0.0550`. The metric rewards a kernel for flattening the very quantity
+whose variation it is meant to explain. Both halves are asserted, so the
+diagnosis is falsifiable — had `p` not collapsed alongside, it would be wrong.
+
+**Two side findings on round 6**, whose numerical case was computed with `p`
+pinned at 1/3. With `p` freed and the metric scale-free, the landscape is
+**flat**, not monotone rising; and its shallow optimum sits at `c₀ ≈ 0.25–0.50`
+— *inadmissible* (below the O2 floor) but *not* at `c₀ = 0` either, so it does
+not favour the unsubtracted incumbent. That is a **location, not a
+preference**: 0.0054 in `R²` over 29 points discriminates nothing.
+
+**One test recorded as vacuous rather than as a pass.** `α = acoth(κ + c₀)` is
+real only for `κ + c₀ > 1`, which looks like a falsification test. It cannot
+fail: `min(κ) = 1.4020 > 1` over the bound series, so it holds for *any*
+`c₀ ≥ 0`, admissible or not.
+
 ## Model inputs, stated rather than buried
 
 - **The mean uses a geodesic ball's distance distribution.** A closed
