@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """Symbolic NF q-degree: does the SURVIVING GRADING separate magic from non-magic?
 
@@ -82,6 +81,8 @@ no float, no mpmath, and no evaluation at any numerical q. The NO-FLOAT64
 discipline is satisfied trivially rather than by care.
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import argparse
 import json

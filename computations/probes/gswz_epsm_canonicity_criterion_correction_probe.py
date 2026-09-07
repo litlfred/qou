@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 """CORRECTION: m | Q is EXISTENCE, not canonicity — the canonicity criterion is per-factor; and a per-factor representative exists at every m | 24.
 
 Bean qou-y3xv. Corrects two merged statements of my own (PR #4983
@@ -79,6 +78,8 @@ increment. The correction here makes that increment WELL-POSED (the
 cocycle it will build is canonical) -- which the Addendum-23 version
 of the criterion did not guarantee.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

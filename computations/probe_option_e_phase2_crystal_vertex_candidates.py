@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: EXPLORATORY probe per
 #   `production-vs-exploratory-discipline`. Tests cheap crystal-vertex
@@ -91,6 +90,8 @@ Otherwise CI stays green.
 Emits: probe-option-e-phase2-crystal-vertex-candidates.witness.json
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 import json
 import sys
 import warnings
@@ -137,8 +138,13 @@ for entry in chi_w["by_partition"]:
 for key, h6_block in gram_w["data"]["h6"]["blocks"].items():
     if key not in per_partition:
         raise SystemExit(f"missing partition {key} in chi-deuteron witness")
-    chi_w0 = mp.mpf(repr(h6_block["chi_lambda_w0_direct"]))
-    w0_diag = [mp.mpf(repr(h6_block["w0_matrix_at_q0_re"][i][i]))
+    # `str`, not `repr`. These fields were floats when this was written and
+    # are now 50-digit `fmt` strings (NO-FLOAT64), and `repr` of a str keeps
+    # the QUOTES -- mpmath's MPZ then rejects "'4.783...'" outright, so this
+    # probe has been dead at line 141 since the upstream producer converted.
+    # `str` is right for both shapes and, unlike `float`, keeps every digit.
+    chi_w0 = mp.mpf(str(h6_block["chi_lambda_w0_direct"]))
+    w0_diag = [mp.mpf(str(h6_block["w0_matrix_at_q0_re"][i][i]))
                for i in range(h6_block["dim"])]
     max_abs_diag = max(abs(d) for d in w0_diag)
     per_partition[key]["chi_lambda_w0"] = chi_w0

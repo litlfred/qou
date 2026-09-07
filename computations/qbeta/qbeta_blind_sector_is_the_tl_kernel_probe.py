@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-i9gk hole 1: Step 27's "trace-blind sector" is the Temperley-Lieb KERNEL,
 and reading it as hidden information contradicts the convention it was measured in.
@@ -126,6 +125,8 @@ SCOPE. Scope-(a). No convention adjudicated — the premise is left open exactly
 `qou-n1dj` has it. Nothing proposed, wired or readmitted; no N >= 3 extension
 proposed (that is `qou-8pl3`'s). Anchor: experimental (proton) pin.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import math  # float64-ok: only comb/factorial, exact integer arithmetic

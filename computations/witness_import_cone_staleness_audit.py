@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """
 Witness staleness — the THIRD direction: imported-module drift.
@@ -95,6 +94,8 @@ day one, which is a backlog to drain, not a build to break.
 Bean qou-a2q5.
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import ast
 import json

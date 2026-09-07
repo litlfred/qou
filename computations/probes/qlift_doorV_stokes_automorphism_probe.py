@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """Door-v: is the residual between GGM and its C1-tensor-square {+1,-1}
 realization a STOKES AUTOMORPHISM -- a UNIPOTENT, CONSTANT (m-independent on the
@@ -84,6 +83,8 @@ well-conditioned.  Emits qlift_doorV_stokes_automorphism_probe.witness.json.
 Run: python3 -u computations/probes/qlift_doorV_stokes_automorphism_probe.py \
         2>&1 | tee /tmp/qlift-doorV.log
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

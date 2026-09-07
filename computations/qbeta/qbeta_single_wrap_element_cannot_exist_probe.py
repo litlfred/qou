@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-avt5 follow-through: the "single-wrap" element CANNOT be a typed-crossing
 word difference. Scope-(b) — a PROVED invariant, not a bounded search.
@@ -82,6 +81,8 @@ exclusion must not be quoted for words that do.
 
 Exact symbolic. NO fit, NO c_k, NO wiring.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 import datetime, hashlib, json, os, subprocess
 import sympy as sp
 

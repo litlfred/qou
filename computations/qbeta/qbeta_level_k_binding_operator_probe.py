@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1 Step 27: the level-k operator exists — it is BINDING, and 588 of the
 720 dimensions it lives in are the Temperley-Lieb KERNEL.
@@ -155,6 +154,8 @@ SCOPE. Scope-(a). Nothing derived, proposed, wired or readmitted; no convention
 adjudicated; no c_k value asserted. q* and the 0.13 % ratio are recorded as facts
 about the operator, never as criteria. Anchor: experimental (proton) pin.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import math  # float64-ok: only comb/factorial, exact integer arithmetic

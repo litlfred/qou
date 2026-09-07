@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """`det G_TL(n)` in closed form at n = 3, 4, 5 — non-singular for EVERY real q > 0.
 
@@ -101,6 +100,8 @@ no q_0 evaluation, no anchor — so the result is pin-independent and carries no
 muon/proton layer question (AGENTS.md: probes are not exempt from NO-FLOAT64).
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

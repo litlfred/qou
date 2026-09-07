@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 """Most of the non-central freedom is INERT on Delta_bind — and the mechanism
 says which part is not.
 
@@ -87,6 +86,8 @@ construction, and it proves nothing.** The seminormal-matrix route has no
 Case C and would settle it at n = 9; that is the next step, not a result here.
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

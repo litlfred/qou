@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 """The eps_m obstruction is a QUADRATIC FORM on symbols, its parity is a Bloch invariant, and the alpha-obstruction is CLEARABLE by a representative change.
 
 Bean qou-y3xv (the increment the alpha-order result left open). No fit;
@@ -110,6 +109,8 @@ per-m lattice agreement; an odd five-term value would break the parity
 claim (and is searched for exhaustively); a bad lift breaks the
 explicit-witness residue check.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

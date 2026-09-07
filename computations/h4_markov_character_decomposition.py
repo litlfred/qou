@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """h4_markov_character_decomposition.py — the Frobenius decomposition of the
 level-4 Markov trace, derived from the COMMITTED Lean block maps.
@@ -83,6 +82,8 @@ there is nothing for the NO-FLOAT64 family to catch.
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import itertools
 import json

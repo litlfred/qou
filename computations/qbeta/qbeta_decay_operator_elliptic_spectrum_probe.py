@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1: the decay OPERATOR Delta_L is ELLIPTIC — Step 21 was looking at
 traces, and traces cannot see a spectrum.
@@ -94,6 +93,8 @@ criterion, the fact that a real trace and real determinant admit a complex
 spectrum (the formal content of the Step-21 error), and that the two models
 differ in kind on the measured data.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

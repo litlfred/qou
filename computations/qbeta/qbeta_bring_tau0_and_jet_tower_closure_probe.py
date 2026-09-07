@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1 branch 3: tau_0 is NOT a CM point, and the jet tower is BLIND to decay.
 
@@ -103,6 +102,8 @@ honest division.
 SCOPE. Scope-(b) for both exclusions. Nothing derived, proposed, wired or
 readmitted; no convention adjudicated. Anchor: experimental (proton) pin.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

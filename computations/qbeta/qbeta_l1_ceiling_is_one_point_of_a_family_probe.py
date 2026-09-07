@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """The ell-1 binding ceiling bounds ONE evaluation point, not the family.
 
@@ -95,6 +94,8 @@ algebra, not about binding. The physical question is which functionals of
 `Delta_bind` are observables, and that is not settled by having many of them.
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

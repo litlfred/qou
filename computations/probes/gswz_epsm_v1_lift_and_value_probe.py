@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 """eps_3 on the alpha-line at the degree-1 place: the lift exists, is unique, and is computed.
 
 Beans qou-w4gn, qou-y3xv, qou-9p9y. Scope-(a); no fit; nothing wired;
@@ -79,6 +78,8 @@ construct CGZ's lift in general, and it does not resolve the m >= 3
 programme at the fields used in Addenda 27-29 (those fields are simply
 the wrong ones). The m = 2 result of PR #4968 is untouched.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import pathlib

@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1: the two decay functionals are ONE functional, and the protium
 element is refuted as the missing factor.
@@ -93,6 +92,8 @@ values. The `Delta_S` closed forms are the corpus's, valid for the SHORT model
 (`qbeta_delta_element_fork_pricing_probe.py`); this file inherits that scope.
 Anchor: the experimental (proton) pin, per the 2026-08-07 owner directive.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1 Step 25: real nuclear beta decays are HYPERBOLIC, the corpus never
 leaves H_3, and no species difference supplies the ladder phase.
@@ -91,6 +90,8 @@ the corpus does not currently have.
 SCOPE. Scope-(a). Nothing derived, proposed, wired or readmitted; no convention
 adjudicated; no c_k value asserted. Anchor: experimental (proton) pin.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import itertools
 import json

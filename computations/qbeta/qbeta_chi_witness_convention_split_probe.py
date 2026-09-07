@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """FOUR conventions live in the chi witness corpus, and only ONE reaches A >= 5.
 
@@ -95,6 +94,8 @@ is that nothing forces a CONSUMER to compare either, and the one convention that
 reaches the larger atoms is not the one the calibration atoms use.
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import glob
 import json

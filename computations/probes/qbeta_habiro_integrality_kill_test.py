@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qbeta_habiro_integrality_kill_test.py — PROBE 1 (§3.A of
 docs/audits/2026-07-11-qbeta-ck-untested-avenues-and-literature.md).
@@ -81,6 +80,8 @@ Run:
   python3 -u computations/probes/qbeta_habiro_integrality_kill_test.py
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import sys

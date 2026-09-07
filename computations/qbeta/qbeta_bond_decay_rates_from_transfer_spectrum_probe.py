@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1 Step 28: the all-pairs decay rates are DERIVED — they are the
 transfer matrix's spectral gap per bond.
@@ -145,6 +144,8 @@ What is removed is the three-free-parameter objection: the falloff is derived.
 SCOPE. Scope-(a). Nothing derived here is wired, proposed or readmitted; no
 convention adjudicated; no c_k value asserted. Anchor: experimental (proton) pin.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

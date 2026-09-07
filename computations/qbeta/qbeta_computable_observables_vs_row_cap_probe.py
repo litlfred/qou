@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """Does a COMPUTABLE observable escape the row cap? Two answers, and they differ.
 
@@ -81,6 +80,8 @@ physical number is either a trace (which the row cap zeroes) or a spectrum
 (which has no states)**.
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

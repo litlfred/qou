@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-buxs: is the Delta_lambda sign an isospin grading? YES on the physical
 stratum, NO in the SU(4) frame -- and the frame is the whole question.
@@ -94,6 +93,8 @@ SCOPE (per AGENTS.md "Before declaring refuted")
 
 audit-only, no fit, no production wiring.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 import os, sys
 import sympy as sp
 

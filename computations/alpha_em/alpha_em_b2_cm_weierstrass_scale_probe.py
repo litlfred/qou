@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """alpha_em_b2_cm_weierstrass_scale_probe.py — bean qou-m117 (Option B-backup):
 bypass the Braden-Northover normalization convention via CM theory /
@@ -81,6 +80,8 @@ certification path.
 -- Ref: [silverman-1986] The Arithmetic of Elliptic Curves (CM j integral:
 --       Thm II.6.1 in Silverman ATAEC / classical complex multiplication)
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 import datetime
 import hashlib
 import itertools

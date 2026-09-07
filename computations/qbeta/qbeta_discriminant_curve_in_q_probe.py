@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1 Step 26: the discriminant curve in q — the corpus's decay operator
 has a genus-8 spectral curve, not a tower of elliptic ones, and its phase misses
@@ -171,6 +170,8 @@ readmitted. q* is recorded as a fact ABOUT the curve, never as a candidate q.
 SCOPE. Scope-(a). Nothing derived, proposed, wired or readmitted; no convention
 adjudicated; no c_k value asserted. Anchor: experimental (proton) pin.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

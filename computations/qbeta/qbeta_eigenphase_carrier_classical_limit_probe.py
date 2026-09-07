@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-pdix: what the two carrier fields force at the classical point — three
 necessary conditions on M, and the exclusion of the corpus's only elliptic operator.
@@ -131,6 +130,8 @@ only one that clears D0.
 SCOPE. Scope-(a). Nothing derived, proposed, wired or readmitted. Anchor:
 experimental (proton) pin.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

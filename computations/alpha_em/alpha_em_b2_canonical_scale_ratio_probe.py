@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """alpha_em_b2_canonical_scale_ratio_probe.py — epic qou-k42c: attempt a
 NORMALIZATION-INDEPENDENT restatement of the "25 = deg(5-isogeny)^2"
@@ -147,6 +146,8 @@ sole open categorical input; 1/(8pi) stays phase-4. mpmath 50 dps
 --       Pacific J. Math. 154 (1992)
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import datetime
 import hashlib

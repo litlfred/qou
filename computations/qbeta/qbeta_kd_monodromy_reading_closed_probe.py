@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-pdix branch 3: the MONODROMY reading is CLOSED, by trace-invariance —
 no associator computation needed. Only the open-path/Stokes reading survives.
@@ -83,6 +82,8 @@ that holonomy to be algebraic in the first place.
 SCOPE. Scope-(a). Nothing derived, proposed, wired or readmitted; no convention
 adjudicated. Anchor: none required (exact symbolic identities in q).
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

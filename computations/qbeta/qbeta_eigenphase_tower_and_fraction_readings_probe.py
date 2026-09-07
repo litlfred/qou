@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1 Step 24: both readings of the 0.0566-vs-2.0204 gap are CLOSED.
 
@@ -87,6 +86,8 @@ standard representation theory, cited not proved -- what is verified here is tha
 the tower's measured spectra are consistent with it across k = 3..6.
 Anchor: experimental (proton) pin, per the 2026-08-07 directive.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

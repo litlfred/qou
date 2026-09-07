@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-cds1: the four determinations of z, priced against the CAL inputs — and
 there is no D-frame anchor for the c_k ladder.
@@ -85,6 +84,8 @@ permission to use that point — `one_not_root` stands, as does the derived cap.
 Anchor: the MUON pin, which is the only convention-free one — the proton pin is
 fixed *through* `F_Bor` and so presupposes what is under test.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 """Corpus sweep: which physical numbers are read off a block with l(lambda) > 2?
 
 Two instances of the same defect turned up this session without anybody looking
@@ -107,6 +106,8 @@ Specht modules exist for every partition and the eigenvalue ratio is not
 challenged. What is in question is what the EMPIRICAL content can mean.
 """
 from __future__ import annotations
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

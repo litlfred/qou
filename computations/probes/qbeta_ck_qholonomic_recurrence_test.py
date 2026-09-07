@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qbeta_ck_qholonomic_recurrence_test.py — PROBE 5: q-holonomic TEST of the
 P-C15 survivor on the empirical Q_beta rung sequence.
@@ -96,6 +95,8 @@ Anti-fitting: no parameter is tuned anywhere; the operator, the dictionary,
 the anchors and the empirical ladder are all fixed upstream objects. A clean
 negative is a full success (it sharpens P-C15). Audit-only; nothing wired.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

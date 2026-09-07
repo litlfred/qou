@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 """Resolving the (287) f-subscript: the printed f_5 is inconsistent with its own RHS.
 
 Bean qou-xx9f. Scope-(a); no fit; nothing wired; audit:
@@ -81,6 +80,8 @@ item in this bean -- the printed x^1..x^3 digits are still unreproduced under
 the f_1 reading, which remains a normalisation question (candidate 2), not a
 fibre-identification one. That is now the whole of qou-xx9f.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import pathlib

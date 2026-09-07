@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 """The alpha-obstruction is MAXIMAL: alpha generates the base Teichmuller group mu_24, so no canonical m-th root exists for any m > 1.
 
 Bean qou-y3xv (the sharpening of the m | 24 sweep). Scope-(a) for the
@@ -78,6 +77,8 @@ sweep witness would each break a specific check); the sweep's own
 per-m data is READ FROM ITS COMMITTED WITNESS rather than restated, so
 a drift between the two is caught.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os

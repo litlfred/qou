@@ -1,4 +1,3 @@
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-pdix route 5 / qou-cds1 branch 3: Im(q) is NOT the source of the elliptic
 generator — and what "retire the tower" means, in numbers.
@@ -81,6 +80,8 @@ readmitted; no convention adjudicated; conj:im-q-physical-role is NOT refuted.
 LEAN: `QOU/QBeta/ImQCannotSupplyEllipticGenerator.lean`, 4 theorems, sorry-free,
 axioms [propext, Classical.choice, Quot.sound]. Anchor: experimental (proton) pin.
 """
+
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import json
 import os
