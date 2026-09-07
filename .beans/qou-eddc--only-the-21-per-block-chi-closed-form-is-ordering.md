@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T13:05:29Z
-updated_at: 2026-09-06T13:05:55Z
+updated_at: 2026-09-07T08:07:53Z
 ---
 
 ## Measured
@@ -398,3 +398,130 @@ numerator and denominator blocks must be edited by hand and distinguished by
 what they prove, not by what they look like. That is a focused sitting with the
 file open, not a scripted pass — and it now has a fast feedback loop
 (scratch-file iteration, seconds per round) and a real 0-error baseline.
+
+---
+
+## The canonical form now HAS a Lean proof — additively
+
+Asked "lean.proof?", the honest answer was **no**: the result had a sympy
+derivation and an independent numerical cross-check, but no formal backing, and
+three failed attempts to put it in Lean.
+
+That was the wrong shape of attempt. The migration keeps failing because
+`chi_block_21` is load-bearing for the whole derivative tower. **Stating and
+proving the canonical form is purely additive** and touches none of it.
+
+Added to `QBetaPerBlockChiClosedForms.lean` — full file compiles at **0 errors**:
+
+| theorem | content |
+|---|---|
+| `chi_block_21_P_at_one` | `P(1) = -1` — the single fact making both frames agree at q = 1 |
+| `chi_block_21_P_palindromic` | `q¹²·P(1/q) = P(q)`, bar-involution symmetric; the pin-free check |
+| `chi_block_21_canonical_vanishes_at_one` | classical-point vanishing survives |
+| `chi_block_21_canonical_has_q2_minus_1_factor` | the `(q²−1)` factor survives, only the cofactor moves |
+| `chi_block_21_canonical_eq_published` | exact relation: canonical·q⁶ = −P(q)·published |
+| `chi_block_21_frames_agree_at_one` | the two frames agree at q = 1 |
+
+Every structural claim previously asserted from sympy is now proved. All six
+compiled first try — `field_simp; ring` and `norm_num` throughout, no
+`HasDerivAt`, which is exactly why this works where the migration does not.
+
+`chi_block_21` and everything downstream remain in the grouped frame,
+untouched and still compiling.
+
+### The lesson, three attempts late
+
+When a change is blocked by coupling, **prove the new thing alongside rather
+than trying to swap it in**. The formal content was available from the start; I
+was gated on a refactor I did not need to do first. Each failed attempt was an
+attempt at the *swap*, not at the *proof*.
+
+The swap remains open and is now clearly lower priority: the mathematical result
+is formally backed, and migrating `chi_block_21` is a refactor for consistency
+rather than the thing standing between the corpus and a verified statement.
+
+---
+
+## DONE (2026-09-07): the swap landed. 0 errors, no `sorry`.
+
+`chi_block_21` is now the canonical borromean form in
+`QBetaPerBlockChiClosedForms.lean`. `chi_block_21_grouped` keeps the superseded
+one, and the six additive theorems above stand unchanged — they now relate the
+definition to its own predecessor rather than to a form the file does not use.
+
+`QBetaCanonicalMarkovWeightsInstance.lean`, the only other Lean file that
+consumes it, also compiles at 0 errors.
+
+### What moved, and what provably did not
+
+`delta_tau_M_surrogate` becomes deg-17 over `4q⁸(q²+q+1)`. Sympy confirms it
+equals the y_λ-weighted block sum exactly (difference simplifies to 0), which is
+an independent check on the Lean `field_simp; ring`.
+
+| | grouped | borromean |
+|---|---|---|
+| c₀, c₁, c₂ | 0, −5/6, 5/6 | **same** |
+| c₃ | −41/9 | **−23/9** |
+| c₄ | 149/18 | **77/18** |
+| c₅ | −1729/108 | **1349/108** |
+| c₆ | 111/4 | **−191/4** |
+| c₇ | −3665/81 | **26285/162** |
+
+`c₀…c₂` being frame-independent is the load-bearing part, and it is now
+*asserted* in `qbeta_c3_multiblock_recursion_attack.py` rather than argued in
+prose: `orders_0_to_2_frame_independent` and `order_3_is_ordering_dependent`.
+
+Iterated-derivative values, all cross-checked against the Leibniz identity at
+every order: `D^(j)(1)` = 12, 108, 872, 6240, 38976, 208320, 927360, 3306240;
+`N^(j)(1)` = 0, −10, −160, −1824, −17472, −118680, −79200, 14656320.
+
+### The cross-check witness was regenerated, not abandoned
+
+`qbeta-c3-multiblock-recursion-attack.witness.json` was 2026-06-03 grouped-era,
+and the Lean file's four order-4..7 docstrings claimed to match it. Rather than
+delete the claim, its producer gained `intra_order` (default `"borromean"`,
+same Option-B shape as `compute_tau_M_nucleon_H3`) and was re-run. Its
+coefficients now agree with the Lean ones exactly, by a genuinely different
+route — `sp.series` on the closed form, where Lean goes through `iteratedDeriv`
+and the Leibniz recurrence. The grouped numbers are kept in the same witness
+under `grouped_frame_superseded`, so they stay reproducible from the file that
+replaced them rather than only from git history.
+
+Cross-anchor swing moved 9.996e-9 → 9.204e-9: same order of magnitude, so the
+probe's NEAR-MATCH verdict and `c_3 = NOT_DERIVED` are unaffected, exactly as
+its header predicted the conclusion would be robust.
+
+### How the swap finally went through — the method, not the luck
+
+Three earlier attempts failed and the last one made things worse (16 → 19
+errors). The cause was not the coupling; it was the tool. A regex over the file
+could not tell a numerator chain from a denominator chain — `h5`/`h2`/`h1`/`h0`
+→ `hquad` → `hprod` looks the same in both — so it silently overwrote five
+denominator proofs.
+
+What worked:
+
+1. **Compute the truth first.** One sympy script re-derived `N` and `D` from the
+   χ blocks and the y_λ surrogates, then produced every iterated-derivative
+   value, every Taylor coefficient, and a Leibniz cross-check on all of them.
+   Nothing below was transcribed from the old file.
+2. **Generate proof chains from coefficient lists**, in the one style the file
+   already proves works (all `.const_mul`/`.add`, constant via
+   `hasDerivAt_const`, `funext x` — `funext q` shadows the outer `q` and the
+   branch can then never fire, which cost an earlier session a wrong diagnosis).
+3. **Replace whole named blocks with an assert-once guard.** 27 edits, each
+   failing loudly if its anchor did not appear exactly once.
+
+Bulk substitution is fine for polynomial literals, which are unambiguous
+strings. It is the wrong tool for proof structure.
+
+### Still open — the Python side of the migration
+
+`computations/qbeta/qbeta_utils.py:chi_block_21` still returns the grouped
+form. 91 files import `qbeta_utils`, but only four reach that function:
+`delta_tau_M_canonical_explicit` (same module), `qbeta_reeb_tower_jacobi_anger.py`,
+`qbeta_fmap_power_class_prune.py` and `qbeta_hecke_mn_character_engine_probe.py`.
+Each needs its own read before flipping — some sites may be deliberate
+historical guards, the way `qbeta_delta_vs_deltaTbeta_settled_probe` is — and
+each needs its witness regenerated. Bounded, but not a one-line change, and
+deliberately not bundled into the verified Lean commit.

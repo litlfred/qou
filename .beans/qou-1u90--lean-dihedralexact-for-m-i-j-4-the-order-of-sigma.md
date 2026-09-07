@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:37Z
-updated_at: 2026-09-07T06:22:32Z
+updated_at: 2026-09-07T08:13:15Z
 ---
 
 ## What is open
@@ -102,3 +102,42 @@ correctly, since the infinite dihedral group has no relation to detect. Ruling
 `CoxeterGeometricRepresentationFull`'s HONESTY note is updated: of the two
 things it excluded, this closes the second; `ℓ` of arbitrary words is still open
 there.
+
+
+## Addendum 2026-09-07 — the infinite-bond half is proved too, and NOT spent
+
+`dihedralExact_full` (above) is vacuous at `M i j = 0`. The stronger true statement — at an
+infinite bond, **no** positive power of `fᵢfⱼ` is the identity — is now also proved:
+
+* `CoxeterDihedralOrder.xSeq_ySeq_of_infinite` — at `m = 0` the scalar pair is **constantly**
+  `(1, −1)` and therefore blind. The Gram matrix `[[1,c],[c,1]]` is singular at `c = −1`, so the
+  form values collapse onto one line. This is why the cosine argument cannot be pushed here.
+* `orbit_succ_of_infinite` / `orbit_coeff_of_infinite` — what works instead is the **coefficient**:
+  the composite is a shear, `(fᵢfⱼ)^k αᵢ = (1+2k)αᵢ + 2k·αⱼ`.
+* `reflEnd_pair_pow_ne_one_of_infinite` — hence infinite order.
+
+All four `#print axioms` clean.
+
+## Why `hfin` is still on 17 signatures
+
+This is exactly the input needed to delete `hfin`: the descent lemma
+(`CoxeterDihedralDescent.alternatingWord_reduced_of_both_descents`) already derives
+`(σᵢσⱼ)^k = 1` with `k ≥ 1`, and at `M i j = 0` that is now impossible — so its `m = 0` branch is
+**refuted** rather than excluded, and `M i j ≠ 0` stops being needed.
+
+**Measured before deciding, this time.**
+
+| | |
+|---|---|
+| theorem signatures taking `hfin`/`hm` | **17** |
+| call sites passing it | **79** |
+| merged files touched | **5** (`Matsumoto`, `BruhatSubword`, `BruhatReflection`, `BruhatConverse`, `CoxeterDihedralDescent`) |
+| of those, actively being extended by a sibling | **1** (`BruhatReflection`) |
+| Coxeter matrices in the corpus with an infinite bond | **0** — every one is `CoxeterMatrix.Aₙ` |
+
+So: real churn on merged public API, against no consumer. Left as a deliberate,
+separately-reviewable change rather than folded into this tranche. **The input is proved and
+sitting in `CoxeterDihedralOrder`; only the refactor remains.**
+
+Recorded in both file headers so a reader does not have to rediscover either the availability or
+the cost.

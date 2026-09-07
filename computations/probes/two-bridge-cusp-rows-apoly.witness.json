@@ -1,0 +1,488 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-07T07:15:04.415662+00:00",
+  "commitSha": "1bb66bf322105c97417cb7a3d023d750a0c895aa",
+  "assertions": [
+    {
+      "name": "fourone_mu0_lambda_is_a_lattice_basis",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_meridian_frame_unique",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_cusp_shape_from_mu_lambda_matches_recorded_mod_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_cusp_rows_trivial_at_complete",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_apoly_recovered",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_apoly_vanishes_at_complete_point",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_apoly_at_M_pm1_has_roots_only_at_L_pm1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_apoly_verified_on_fresh_samples",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_apoly_matches_bundle_route_A41",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fourone_slopes_pm4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_mu0_lambda_is_a_lattice_basis",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_meridian_frame_unique",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_cusp_shape_from_mu_lambda_matches_recorded_mod_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_cusp_rows_trivial_at_complete",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_apoly_recovered",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_apoly_vanishes_at_complete_point",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_apoly_at_M_pm1_has_roots_only_at_L_pm1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_apoly_verified_on_fresh_samples",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_slopes_integers",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    },
+    {
+      "name": "fivetwo_slopes_are_0_4_10_up_to_mirror",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "two_bridge_cusp_rows_apoly_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 444539,
+  "computation": "two-bridge-cusp-rows-apoly",
+  "scriptFile": "two_bridge_cusp_rows_apoly_probe.py",
+  "scriptHash": "5a2ef6020ced",
+  "scriptCommitSha": "1bb66bf322105c97417cb7a3d023d750a0c895aa",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/two_bridge_cusp_rows_apoly_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/two_bridge_cusp_rows_apoly_probe.py"
+  },
+  "description": "Cusp rows (λ homologically, μ by Bézout) of the derived two-bridge triangulations of 4₁ and 5₂, the A-polynomial recovered by sampling the deformation curve, and the Newton-polygon boundary slopes; 4₁ as control against the bundle-route A_{4₁}. Bean qou-yvyd.",
+  "contentBlock": "conj:stokes-dt-bps-bridge",
+  "data": {
+    "fourone_lambda_row": [
+      [
+        1,
+        2
+      ],
+      [
+        -2,
+        -1
+      ],
+      1
+    ],
+    "fourone_mu_row": [
+      [
+        1,
+        -1
+      ],
+      [
+        -1,
+        1
+      ],
+      1
+    ],
+    "fourone_h1_functional_on_cycles": [
+      1,
+      1
+    ],
+    "fourone_meridian_frame_kstar": -1,
+    "fourone_sheets_searched": 8,
+    "fourone_meridian_frame_table": {
+      "-8": [
+        10,
+        10
+      ],
+      "-7": [
+        10,
+        10
+      ],
+      "-6": [
+        10,
+        10
+      ],
+      "-5": [
+        10,
+        10
+      ],
+      "-4": [
+        10,
+        10
+      ],
+      "-3": [
+        9,
+        9
+      ],
+      "-2": [
+        4,
+        4
+      ],
+      "-1": [
+        0,
+        0
+      ],
+      "0": [
+        4,
+        4
+      ],
+      "1": [
+        9,
+        9
+      ],
+      "2": [
+        10,
+        10
+      ],
+      "3": [
+        10,
+        10
+      ],
+      "4": [
+        10,
+        10
+      ],
+      "5": [
+        10,
+        10
+      ],
+      "6": [
+        10,
+        10
+      ],
+      "7": [
+        10,
+        10
+      ],
+      "8": [
+        10,
+        10
+      ]
+    },
+    "fourone_mu_in_cycle_basis": [
+      1,
+      0
+    ],
+    "fourone_lambda_in_cycle_basis": [
+      -1,
+      1
+    ],
+    "fourone_cusp_shape_lambda_over_mu": "(-6.568606938198496399231554027789887895897e-46 + 3.464101615137754587054892683011744733886j)",
+    "fourone_apoly": "L**2*M**4 - L*M**8 + L*M**6 + 2*L*M**4 + L*M**2 - L + M**4",
+    "fourone_apoly_fit_method": "direct",
+    "fourone_newton_hull": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        1,
+        8
+      ]
+    ],
+    "fourone_newton_slopes": [
+      "-4",
+      "4"
+    ],
+    "fivetwo_lambda_row": [
+      [
+        0,
+        0,
+        5,
+        -1
+      ],
+      [
+        4,
+        4,
+        -3,
+        7
+      ],
+      1
+    ],
+    "fivetwo_mu_row": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      1
+    ],
+    "fivetwo_h1_functional_on_cycles": [
+      4,
+      -1
+    ],
+    "fivetwo_meridian_frame_kstar": 0,
+    "fivetwo_sheets_searched": 12,
+    "fivetwo_meridian_frame_table": {
+      "-8": [
+        10,
+        10
+      ],
+      "-7": [
+        10,
+        10
+      ],
+      "-6": [
+        10,
+        10
+      ],
+      "-5": [
+        10,
+        10
+      ],
+      "-4": [
+        10,
+        10
+      ],
+      "-3": [
+        10,
+        10
+      ],
+      "-2": [
+        10,
+        10
+      ],
+      "-1": [
+        7,
+        7
+      ],
+      "0": [
+        0,
+        0
+      ],
+      "1": [
+        8,
+        8
+      ],
+      "2": [
+        10,
+        10
+      ],
+      "3": [
+        10,
+        10
+      ],
+      "4": [
+        10,
+        10
+      ],
+      "5": [
+        10,
+        10
+      ],
+      "6": [
+        10,
+        10
+      ],
+      "7": [
+        10,
+        10
+      ],
+      "8": [
+        10,
+        10
+      ]
+    },
+    "fivetwo_mu_in_cycle_basis": [
+      0,
+      -1
+    ],
+    "fivetwo_lambda_in_cycle_basis": [
+      -1,
+      -4
+    ],
+    "fivetwo_cusp_shape_lambda_over_mu": "(2.490244667506614479900982207282942616211 + 2.979447066478976946372681714417569468961j)",
+    "fivetwo_apoly": "L**3 + L**2*M**10 - L**2*M**8 + 2*L**2*M**4 + 2*L**2*M**2 - L**2 - L*M**14 + 2*L*M**12 + 2*L*M**10 - L*M**6 + L*M**4 + M**14",
+    "fivetwo_apoly_fit_method": "direct",
+    "fivetwo_newton_hull": [
+      [
+        0,
+        14
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        1,
+        14
+      ]
+    ],
+    "fivetwo_newton_slopes": [
+      "-10",
+      "-4",
+      "0"
+    ],
+    "fivetwo_boundary_slopes_derived": [
+      -10,
+      -4,
+      0
+    ],
+    "fivetwo_chirality_note": "Frame: λ = the cusp class dying in H₁(M); μ = the unique complement whose filling admits no nondegenerate representation (Property P certificate, see meridian_frame); λ oriented so Im(t_λ/t_μ) > 0 for the Im z > 0 solution. The sign of the slopes then distinguishes the triangulated manifold from its mirror; which sign the Rolfsen 5₂ carries in this frame is not held in a source here (the corpus's {0,−4,−10} is literature-recalled with the same unverified sign)."
+  },
+  "caveats": [
+    "The 5₂ boundary slopes {0, ±4, ±10} are literature-recalled in the corpus, not held in a source; the comparison is a consistency check on the derived Newton polygon, not a derivation of the slopes from a held reference.",
+    "The developing map returns squared eigenvalues; L is tracked by continuity from L = −1 at the complete point along each continuation walk. The other lift is L ↦ −L (checked for the 4₁ control); Newton-polygon slopes are unaffected."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "pure topology/geometry: no q, no Markov parameter, no anchor"
+}

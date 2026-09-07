@@ -24,8 +24,44 @@ Proton (B₃ × uud + 2 gluon, 3 strands, 2 generators):
   11 crossings from 4-channel γγ→qq̄ production.
   Cross-term z² · Φ_q(V̂₀V̂₁) ≈ 82,000  (one pair for n = 2).
 
-Result: m_p/m_e ≈ 1870 (CODATA: 1836, error 1.8%).
-Zero fitted parameters.  Inputs: q₀ and m_e only.
+🛑 STALE RESULT CLAIM, CORRECTED 2026-09-06 (bean `qou-oots`).  This docstring
+read:
+
+    Result: m_p/m_e ≈ 1870 (CODATA: 1836, error 1.8%).
+    Zero fitted parameters.  Inputs: q₀ and m_e only.
+
+**That is contradicted by this module's own committed witness and by its own
+live run.**  `mass-endomorphism.witness.json` records
+
+    ratio      = 9310.32782814957
+    codata     = 1836.152
+    error_pct  = 407.0564870527914
+
+and a fresh run reproduces it, additionally printing `m_n/m_p = 0.014601`
+(CODATA 1.001378, error 98.54 %) and `Δm = -4688.11 MeV` against CODATA's
++1.293 MeV — a sign error as well as a magnitude one.  So the true figure is
+**407 %, not 1.8 %**: stale by 5× on the value and by 226× on the error.
+
+This was already visible and not acted on:
+`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md` tabulates
+`m_p/m_e via per-braid tower = 2.4845` beside "paper claims 1870", i.e. a prior
+agent found the docstring did not reproduce and recorded a THIRD number rather
+than correcting the source.  `docs/audits/2026-05-17-...-mass-endo.md` still
+repeats "m_p/m_e ≈ 1870" in a heading.
+
+Why it matters more than an ordinary stale number: the deleted line paired the
+figure with **"Zero fitted parameters"**, which is exactly the kind of claim
+that gets quoted onward, and this module has eight importers.
+
+The route is **not** a working prediction of `m_p/m_e`.  What the module is
+still good for is the structure it exhibits — the tower shape, the z²-weighted
+cross-term from the Markov factorization, and the atomic `tr_M` ascent it prints
+— none of which depends on the ratio landing anywhere near CODATA.
+
+Inputs remain q₀ and m_e only; no parameter is fitted.  That half of the
+deleted claim stands, and is worth keeping precisely because the number is bad:
+an honest parameter-free miss is a result, and it is the fitted kind of
+agreement the corpus forbids.
 
 Usage:
     python3 computations/mass_endomorphism.py
@@ -36,9 +72,16 @@ from functools import lru_cache
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from mpmath import mp  # noqa: E402 — the exact layer; see the _mp block below
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val
 from q_parameter import Q_MP as _Q_MP, Q_INV_MP as _QI_MP
 from witness_base import WitnessBuilder
+
+# Raise dps BEFORE the _mp constants below are built. A module-level mpf
+# constructed at the mpmath default (dps 15) truncates and then never recovers,
+# which is what module_const_precision_audit exists to catch.
+set_compute_dps()
 
 Q0 = q0  # alias for mass_from_tower
 HA = HA_val
@@ -175,6 +218,124 @@ def mass_from_tower(vols):
     return desc, single, cross, desc + single + cross
 
 
+# ── the mp tower: the half of this module's own policy that was never wired ──
+#
+# Lines 95-98 state the rule: "A producer that writes a witness should read
+# these [the _mp constants]; a producer doing bulk f64 linear algebra keeps the
+# ones above." The `_mp` constants were then defined and used NOWHERE -- five
+# names, zero consumers -- so the witness has always been written from the f64
+# side, against the module's own rule. The raw-float64 ratchet reports 17 fields
+# against a baseline of 16, i.e. it has grown.
+#
+# WHY THIS IS A DUPLICATE RATHER THAN A CONVERSION, and the reasoning is the
+# module's own: `q0` is f64 BY DESIGN because 18 importers read it, and flipping
+# it is "two regressions" -- json.dumps raises TypeError on mpf, and a numpy
+# array of mpf gets dtype=object, which cost a 4000x slowdown in hoefsmit_numpy
+# (bean qou-5qwb). So the f64 path below is left EXACTLY as it is and the exact
+# path runs beside it, which is what "live BESIDE the f64 ones" was for.
+#
+# THE EXEMPTION DOES NOT APPLY HERE, which is why the duplication is worth its
+# cost: there is no bulk linear algebra in this file at all. The only numpy
+# mention is the comment above explaining why numpy is NOT used. These are
+# scalar loops over a handful of crossings, so "bulk f64 linear algebra keeps
+# the ones above" describes a case this module does not contain.
+
+
+def qint_mp(k):
+    return (q0_mp ** k - qi0_mp ** k) / (q0_mp - qi0_mp) if k else mp.mpf(0)
+
+
+def qfact_mp(n):
+    r = mp.mpf(1)
+    for k in range(1, n + 1):
+        r *= qint_mp(k)
+    return r
+
+
+def qdim_mp(part, n):
+    hooks = []
+    for i, rl in enumerate(part):
+        for j in range(rl):
+            arm = rl - j - 1
+            leg = sum(1 for r2 in range(i + 1, len(part)) if part[r2] > j)
+            hooks.append(arm + leg + 1)
+    num = qfact_mp(n)
+    den = mp.mpf(1)
+    for h in hooks:
+        den *= qint_mp(h)
+    return num / den if den != 0 else mp.mpf(0)
+
+
+_nf3_mp = qfact_mp(3)
+w_sym_mp = qdim_mp((3,), 3) ** 2 / _nf3_mp
+w_std_mp = qdim_mp((2, 1), 3) ** 2 / _nf3_mp
+w_alt_mp = qdim_mp((1, 1, 1), 3) ** 2 / _nf3_mp
+_wt_mp = w_sym_mp + w_std_mp + w_alt_mp
+w_sym_mp /= _wt_mp
+w_std_mp /= _wt_mp
+w_alt_mp /= _wt_mp
+
+
+def Phi_q_mp(z_val, max_k=2000):
+    """Φ_q(z) = ∏ (1-q⁻ᵏz)⁻¹, exactly as Phi_q but carrying mpf.
+
+    The f64 version's early exits are kept but re-expressed: `1e-300` was an
+    f64-underflow guard and `1e-15` an f64-resolution break, neither of which
+    means anything at 50 dps. They become mp-scaled thresholds so the loop
+    terminates on the same MATHEMATICAL condition rather than on the old
+    arithmetic's floor.
+    """
+    z_val = mp.mpf(z_val)
+    if abs(z_val) >= q0_mp:
+        return mp.inf
+    product = mp.mpf(1)
+    qi_pow = qi0_mp
+    tiny = mp.mpf(10) ** (-(mp.dps + 5))
+    for _ in range(max_k):
+        term = qi_pow * z_val
+        factor = 1 - term
+        if abs(factor) < tiny:
+            return mp.inf
+        product /= factor
+        if abs(term) < tiny:
+            break
+        qi_pow *= qi0_mp
+    return product
+
+
+def additive_wedderburn_volumes_mp(n_strands, crossings_per_gen):
+    """Exact mirror of additive_wedderburn_volumes on the mp layer."""
+    vols = []
+    for gen in range(n_strands - 1):
+        a, b = mp.mpf(0), mp.mpf(1)
+        sp, ap = mp.mpf(1), mp.mpf(1)
+        for c, d in crossings_per_gen.get(gen, []):
+            c, d = mp.mpf(str(c)), mp.mpf(str(d))
+            a, b = a * c * HA_mp + a * d + b * c, a * c + b * d
+            sp *= c * q0_mp + d
+            ap *= -c * qi0_mp + d
+        Vs = z_mark_mp * a + b
+        Vf = w_sym_mp * sp + w_std_mp * Vs + w_alt_mp * ap
+        vols.append({"std": Vs, "sym": sp, "alt": ap, "full": Vf})
+    return vols
+
+
+def mass_from_tower_mp(vols):
+    """Exact mirror of mass_from_tower on the mp layer."""
+    n = len(vols)
+    desc = mp.mpf(1)
+    for v in vols:
+        desc *= v["full"]
+    desc = abs(desc)
+    single = mp.fsum(Phi_q_mp(v["full"]) for v in vols)
+    cross = mp.mpf(0)
+    for i in range(n):
+        for j in range(i + 1, n):
+            cross += z_mark_mp ** 2 * Phi_q_mp(
+                abs(vols[i]["full"] * vols[j]["full"]))
+    return desc, single, cross, desc + single + cross
+
+
 # === PARTICLES ===
 
 # Electron = trefoil σ₁³ on 2 strands
@@ -264,6 +425,23 @@ if __name__ == "__main__":
     neutron_vols = additive_wedderburn_volumes(3, neutron_cross)
     n_desc, n_single, n_cross, n_total = mass_from_tower(neutron_vols)
 
+    # The same tower on the exact layer, for the WITNESS only. The f64 results
+    # above are what the printed report and the 18 importers see and are left
+    # untouched; these are what gets serialized, per this module's own rule
+    # that "a producer that writes a witness should read these".
+    #
+    # Cross-checked, not assumed: the two towers agree to 2.89e-15 relative on
+    # m_p/m_e, which is f64 resolution -- so the mp path is a faithful mirror
+    # AND float64 was never the source of the 407% miss. Recording that here
+    # because "we made it exact" invites the reading that the number might
+    # move, and it does not.
+    e_vols_mp = additive_wedderburn_volumes_mp(2, electron_cross)
+    e_desc_x, e_single_x, e_cross_x, e_total_x = mass_from_tower_mp(e_vols_mp)
+    p_vols_mp = additive_wedderburn_volumes_mp(3, proton_cross)
+    p_desc_x, p_single_x, p_cross_x, p_total_x = mass_from_tower_mp(p_vols_mp)
+    n_vols_mp = additive_wedderburn_volumes_mp(3, neutron_cross)
+    n_desc_x, n_single_x, n_cross_x, n_total_x = mass_from_tower_mp(n_vols_mp)
+
     # === OUTPUT ===
 
     print("MASS ENDOMORPHISM: non-perturbative Φ_q tower")
@@ -332,38 +510,42 @@ if __name__ == "__main__":
         f"error {abs(p_total / e_total - 1836.152) / 1836.152 * 100:.2f}%). "
         "Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra."
     )
-    w.add_parameter("q0", str(q0))
-    w.add_parameter("w_sym", str(w_sym))
-    w.add_parameter("w_std", str(w_std))
-    w.add_parameter("w_alt", str(w_alt))
-    w.add_parameter("z_markov", str(z_mark))
-    w.add_parameter("z_squared", str(z_mark**2))
+    w.add_parameter("q0", fmt(q0_mp))
+    w.add_parameter("w_sym", fmt(w_sym_mp))
+    w.add_parameter("w_std", fmt(w_std_mp))
+    w.add_parameter("w_alt", fmt(w_alt_mp))
+    w.add_parameter("z_markov", fmt(z_mark_mp))
+    w.add_parameter("z_squared", fmt(z_mark_mp**2))
     w.add_data(
         "electron",
         {
-            "vols": [{"std": v["std"], "full": v["full"]} for v in electron_vols],
+            "vols": [{"std": fmt(v["std"]), "full": fmt(v["full"])}
+                     for v in e_vols_mp],
             "n_generators": 1,
-            "descended": e_desc,
-            "single": e_single,
-            "cross": e_cross,
-            "total": e_total,
+            "descended": fmt(e_desc_x),
+            "single": fmt(e_single_x),
+            "cross": fmt(e_cross_x),
+            "total": fmt(e_total_x),
         },
     )
     w.add_data(
         "proton",
         {
-            "vols": [{"std": v["std"], "full": v["full"]} for v in proton_vols],
+            "vols": [{"std": fmt(v["std"]), "full": fmt(v["full"])}
+                     for v in p_vols_mp],
             "n_generators": 2,
             "crossings": "3σ(B₃)+1σ(uu)+1½(ud)+2σ(gluon) | 3σ⁻¹(B₃)+1½(ud)",
-            "descended": p_desc,
-            "single": p_single,
-            "cross": p_cross,
-            "total": p_total,
+            "descended": fmt(p_desc_x),
+            "single": fmt(p_single_x),
+            "cross": fmt(p_cross_x),
+            "total": fmt(p_total_x),
         },
     )
-    w.add_data("ratio", p_total / e_total)
-    w.add_data("codata", 1836.152)
-    w.add_data("error_pct", abs(p_total / e_total - 1836.152) / 1836.152 * 100)
+    _ratio_x = p_total_x / e_total_x
+    _codata = mp.mpf("1836.152")
+    w.add_data("ratio", fmt(_ratio_x))
+    w.add_data("codata", str(_codata))
+    w.add_data("error_pct", fmt(abs(_ratio_x - _codata) / _codata * 100))
     # Production atomic Markov trace via recursive ascent (#508).
     # Cross-checked against `atomic-tr-m-mpfr-50dps.witness.json`
     # (Hoefsmit + Wenzl bridge) to ~1e-15 at q₀.

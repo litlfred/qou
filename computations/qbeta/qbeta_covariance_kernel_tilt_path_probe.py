@@ -57,14 +57,24 @@ figures against tolerances of 0.02.
 from __future__ import annotations
 
 import json
-import math  # float64-ok: exp/log/sqrt for the tilted sums, which are formed in log space with max-subtraction so nothing overflows; every assertion compares quantities carrying >=3 significant figures against tolerances of 0.02 or wider
+import math  # float64-ok: remaining uses are display and the exact-integer falling factorial; the tilted sums themselves are mpmath (see g_and_deriv)
 import subprocess
 import sys
 import time
 from pathlib import Path
 
+import mpmath as mp
+
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 sys.setrecursionlimit(10000)
 
 
@@ -104,16 +114,24 @@ def rows_for(k: int):
     for lam in partitions(k):
         f = hook_dim(lam, nf)
         s3 = 3 * (sum((j - i) ** 2 for i, r in enumerate(lam) for j in range(r)) - b)
-        out.append((math.log(f), s3))  # float64-ok: log of an exact integer; the tilted sums below are formed in log space and every comparison has >=0.02 of tolerance
+        # `mp.log` of the exact integer, not `math.log`. The tilted sums below
+        # ACCUMULATE these over every partition of k -- 37,338 of them at
+        # k = 40 -- which is an aggregate over a large sample, the case
+        # AGENTS.md names specifically. Measured before changing it: the old
+        # float64 accumulation was accurate to ~1.5e-14 relative, so this moves
+        # nothing the probe asserts (its tolerances are 0.02); what it changes
+        # is that the RECORD now carries digits that were actually computed
+        # rather than a 53-bit value rendered to 60 places.
+        out.append((mp.log(mp.mpf(f)), s3))
     return out
 
 
-def g_and_deriv(rows, t: float, sd: float):
-    e = 2.0 + t
+def g_and_deriv(rows, t, sd):
+    e = 2 + t
     m = max(e * lf for lf, _ in rows)
-    den = sL = sS = sLS = 0.0
+    den = sL = sS = sLS = mp.mpf(0)
     for lf, s3 in rows:
-        w = math.exp(e * lf - m)
+        w = mp.exp(e * lf - m)
         den += w
         sL += w * lf
         sS += w * s3
@@ -135,7 +153,10 @@ def main() -> int:
         return good
 
     ks = (16, 20, 24, 28, 32, 36, 40)
-    ts = (0.0, 0.25, 0.5, 0.75, 1.0)
+    # mpf from the literals, not floats: these are DECLARED path points that
+    # get written to the witness, and `e = 2 + t` feeds them into the tilted
+    # sums. Carrying them as mpf keeps the whole path in one arithmetic.
+    ts = tuple(mp.mpf(x) for x in ("0", "0.25", "0.5", "0.75", "1"))
     gvals, dvals = {}, {}
     print("=" * 78)
     print("g(t) = E_{Q_t}[Sigma_3]/sd_P(Sigma_3)   and   g'(t) = Cov_{Q_t}(log f, Sigma_3)/sd")
@@ -194,9 +215,9 @@ def main() -> int:
         "parameters": {"epic": "qou-x631",
                        "claim": "g is sublinear; the conjecture follows from "
                                 "Cov_{Q_t}(log f, Sigma_3) <= 0 on [0,1]"},
-        "data": {"g_by_k": {str(k): [round(v, 6) for v in gvals[k]] for k in ks},
-                 "gprime_by_k": {str(k): [round(v, 6) for v in dvals[k]] for k in ks},
-                 "t_values": list(ts)},
+        "data": {"g_by_k": {str(k): [fmt(v) for v in gvals[k]] for k in ks},
+                 "gprime_by_k": {str(k): [fmt(v) for v in dvals[k]] for k in ks},
+                 "t_values": [fmt(t) for t in ts]},
         "provenance": {"headSha": head,
                        "producer": "computations/qbeta/qbeta_covariance_kernel_tilt_path_probe.py",
                        "elapsed_s": round(time.monotonic() - t0, 3)},

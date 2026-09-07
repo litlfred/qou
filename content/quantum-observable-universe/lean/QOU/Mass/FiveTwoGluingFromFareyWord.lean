@@ -65,4 +65,26 @@ theorem all_rows {θ : K} (h : θ ^ 3 - θ + 1 = 0) :
     -(1 - θ) * (θ ^ 2 - 1) ^ 2 = θ :=
   ⟨row_one h, row_two h, row_three h⟩
 
+/-! ### The cusp rows (added 2026-09-07, PR #6985)
+
+`two_bridge_cusp_rows_apoly_probe.py` derives the meridian row `(0,0,1,0 | 1,1,0,1 ; +)` — the
+Bézout complement of the homological longitude, pinned as the meridian by the Dehn-filling test —
+and the longitude row `(0,0,5,−1 | 4,4,−3,7 ; +)`. At the cubic shape both are `1`; with
+`z₂ = z₃` the longitude row is the fourth power of the meridian row, so one identity carries
+both. -/
+
+/-- The meridian row at the cubic shape: `z₂ (1−z₀)(1−z₁)(1−z₃) = (θ²−1)(1−θ)²(2−θ²) = 1`. -/
+theorem meridian_row {θ : K} (h : θ ^ 3 - θ + 1 = 0) :
+    (θ ^ 2 - 1) * (1 - θ) ^ 2 * (2 - θ ^ 2) = 1 := by
+  linear_combination (-θ ^ 3 + 2 * θ ^ 2 + θ - 3) * h
+
+/-- The longitude row at the cubic shape, `z₂⁵ z₃⁻¹ (1−z₀)⁴(1−z₁)⁴(1−z₂)⁻³(1−z₃)⁷` with
+`z₂ = z₃`, cleared: `(θ²−1)⁴ (1−θ)⁸ (2−θ²)⁴ = 1` — the fourth power of the meridian identity. -/
+theorem longitude_row {θ : K} (h : θ ^ 3 - θ + 1 = 0) :
+    (θ ^ 2 - 1) ^ 4 * (1 - θ) ^ 8 * (2 - θ ^ 2) ^ 4 = 1 := by
+  have hm := meridian_row h
+  calc (θ ^ 2 - 1) ^ 4 * (1 - θ) ^ 8 * (2 - θ ^ 2) ^ 4
+      = ((θ ^ 2 - 1) * (1 - θ) ^ 2 * (2 - θ ^ 2)) ^ 4 := by ring
+    _ = 1 := by rw [hm]; ring
+
 end QOU.Mass.FiveTwoGluingFromFareyWord

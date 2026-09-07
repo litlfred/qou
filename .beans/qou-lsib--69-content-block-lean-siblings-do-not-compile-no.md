@@ -124,3 +124,38 @@ Three findings beyond the count:
 widen the gate. `lean-content-siblings.yml` already compiles content siblings,
 but diff-scoped and `workflow_dispatch:`-only, so it reaches neither the 34 nor
 anything on a push. Widening it — not re-enabling it — is what closes this.
+
+---
+
+## Note from `qou-eddc` / `qou-ox7y` (2026-09-07): "nothing builds them" ≠ "they do not build"
+
+Not a resolution — a correction to the premise, from a session that was
+**blocked by the stronger reading of this bean** and should not have been.
+
+`qbeta-per-block-chi-closed-forms.lean` is one of this population. It compiles
+at **0 errors** in this container, before and after a definition swap, with
+`lean` invoked directly:
+
+```sh
+cd content/quantum-observable-universe/lean
+export PATH="$HOME/.elan/bin:$PATH"
+LP=$(find "$PWD/.lake" -type d -path "*/build/lib/lean" | tr '\n' ':')
+export LEAN_PATH="${LP}${PWD}/.lake/build/lib/lean"
+lean -D autoImplicit=false --root="$PWD" ../mass-endomorphism/<block>.lean
+```
+
+The bean's own measurement is right and unchanged: these files are outside the
+package globs, so `lake build QOU` never touches them and nothing in CI does
+either. What does not follow — and what a reader takes away — is that they are
+broken. At least one is not.
+
+This mattered concretely. `qou-eddc` recorded itself as blocked on Lean, citing
+this bean, and left a definition unmigrated across three attempts. Both halves
+of that were wrong: `lake` was on disk the whole time at `~/.elan/bin`, and the
+sibling built.
+
+**Worth measuring before triaging:** run the invocation above across all 69 and
+split the population into *green but unwired* and *actually broken*. If most are
+green, this is a CI-wiring task, not a repair backlog, and the 66 declared
+`lean:` refs it backs are in better shape than the bean currently implies. I
+have not run that sweep — one file is one file.

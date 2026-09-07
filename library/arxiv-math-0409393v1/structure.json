@@ -1,0 +1,112 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0409393v1",
+ "source": {
+  "file": "0409393v1.pdf",
+  "sha256": "2107d961f60655395a65e6ced4d6874854f3e7e834c42c2c820adedb13912d17",
+  "bytes": 353392,
+  "pages": 26,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0409393",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "21 Sep 2004"
+  },
+  "doi": null,
+  "title": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS Jacques Sauloy",
+  "authors_raw": null,
+  "title_lines": [
+   "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF",
+   "FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS",
+   "Jacques Sauloy"
+  ],
+  "abstract": "\u2014 The local analytic classi\ufb01cation of irregular linear q-di\ufb00erence equa- tions has recently been obtained by J.-P. Ramis, J. Sauloy an d C. Zhang. Their description involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuy a type and is based on a discrete summation process due to C. Zha ng. W e show here another road to some of these results by algebraic means and w e describe the q-Gevrey devissage of the q-Stokes sheaf by holomorphic vector bundles over an ellipti c curve. R\u00b4 esum\u00b4 e(Construction alg\u00b4 ebrique du faisceau de Stokes pour les \u00b4 equations aux q-di\ufb00\u00b4 erences lin\u00b4 eaires irr\u00b4 eguli` eres) La classi\ufb01cation analytique locale des \u00b4 equations aux q-di\ufb00\u00b4 erences lin\u00b4 eaires irr\u00b4 eguli` eres a \u00b4 et\u00b4 e r\u00b4 ecemment r\u00b4 ealis\u00b4 ee par J.-P. Ramis, J. Sauloy et C. Zhang. Leur description fait intervenir un q-analogue du faisceau de Stokes et des th\u00b4 eor` emes de type Malgrange-Sibuya et elle s\u2019appuie sur la sommation dis cr` ete de C. Zhang. Nous montrons ici comment retrouver une partie de ces r\u00b4 esultats par voie alg\u00b4 ebrique et nous d\u00b4 ecrivons le d\u00b4 evissageq-Gevrey du q-faisceau de Stokes par des \ufb01br\u00b4 es vectoriels holomorphes sur une courbe elliptique. Je laisse aux nombreux avenirs (non ` a tous) mon jardin aux sentiers qui bifurquent (Jorge Luis Borges, Fictions).",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210414075618-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and general conventions",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Local analytic classification",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Algebraic summation",
+   "page": 15,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The q-Gevrey filtration on the Stokes sheaf",
+   "page": 22,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-general-conventions",
+   "number": "1",
+   "title": "Introduction and general conventions",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 15,
+   "n_chars": 33627,
+   "n_words": 6737
+  },
+  {
+   "id": "sec-001-3-algebraic-summation",
+   "number": "3",
+   "title": "Algebraic summation",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 25,
+   "n_chars": 21471,
+   "n_words": 4673
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 4674,
+   "n_words": 746
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 3,
+  "chars_total": 59772
+ }
+}

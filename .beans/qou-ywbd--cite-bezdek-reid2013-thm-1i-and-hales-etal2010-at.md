@@ -1,11 +1,11 @@
 ---
 # qou-ywbd
 title: Cite [bezdek-reid2013] Thm 1(i) and [hales-etal2010] at rem:bk-coordination-multiplicity / prop:coordination-saturation — the close-packing coordination bound is unsourced
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T13:41:14Z
-updated_at: 2026-09-07T06:41:23Z
+updated_at: 2026-09-07T06:55:14Z
 parent: qou-2akx
 ---
 
@@ -26,3 +26,7 @@ Claimed 2026-09-07 (session cite-wiring, branch claude/cite-wiring-6962-ids-2026
 
 
 PR #6999 (draft) carries the wiring: rem:bk-coordination-multiplicity + alg:mass-identity cites[] and .md clauses, -- Ref: lines in CoordinationSaturation / MaxContactSimplex / MaxContactHasBulk. Both sidecars refreshed; two Mathlib-only Lean files lean-direct exit 0; MaxContactHasBulk awaiting the QOU library sweep (its dependency olean is absent from the restored cache).
+
+
+
+Completed 2026-09-07: PR #6999 merged at 75c95dad50 (rebase). All five sites cited; three Lean files source-verified (sweep + hand-finished cone), sidecars refreshed.
