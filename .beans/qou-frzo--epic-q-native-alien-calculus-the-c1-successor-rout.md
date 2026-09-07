@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T06:24:35Z
-updated_at: 2026-09-07T06:27:44Z
+updated_at: 2026-09-07T06:34:29Z
 ---
 
 Owner directive 2026-09-07: *"Take up idle as relevant. Do q-native alien calculus.
@@ -171,3 +171,137 @@ suggests.
 **Note what Brick 0 is NOT:** it is not "check the files are sorry-free." They already
 are. Sorry-freeness says the proofs are complete; it says nothing about whether the
 statements apply to a q-difference object. That distinction is the whole of R2.
+
+
+---
+
+# BRICK 0 RESULT — and it changes the target
+
+`scripts/alien-surface-qnative-triage.py`, run on the Lean tree.
+
+## The population finding (my own warning, measured)
+
+| selection | files |
+|---|---|
+| by **filename** | 50 |
+| by **content** | 89 |
+| **content-only — filename MISSED** | **40 (44 % of the surface)** |
+
+Filename selection misses nearly half. That is the trap I fell into earlier in this
+same session; it is now a number rather than a memory.
+
+## The verdicts (90 files, criterion (D) on STATEMENTS, not proofs)
+
+| verdict | files |
+|---|---|
+| Q-NATIVE-CANDIDATE | **9** |
+| MIXED | 2 |
+| CLASSICAL-ONLY | **18** |
+| NEITHER (abstract or off-topic) | 61 |
+
+**Twice as many classical-only as q-native.** R2 is confirmed as a measurement.
+
+**The sharpest single row:** `QBeta/OneInstantonNormalization.lean` — the file the
+closure audit names as *"already the corpus's route"* — is **CLASSICAL-ONLY**. Its
+theorems are `{M Z : ℝ → ℝ}` with `HasDerivAt` **in the hypotheses**. So the successor
+pointer has the same defect as the `QBorelKernelLevel` note fixed this morning: **third
+instance of that class today.**
+
+# 🛑 BUT THE MAIN FINDING INVERTS THE PLAN
+
+`AlienDerivation` / `AlienBridgeEquation` classify NEITHER because they are **abstract**,
+not vacuous — `structure AlienDerivationSystem (R A Ω : Type*)`. And on the q side:
+
+**`QOU.Mathlib.QAlienBridgeEquation` already contains a genuinely q-native alien bridge.**
+
+```lean
+structure QBridgeSystem (R A Ω : Type*) [CommSemiring R] [CommRing A] [Algebra R A] where
+  dil       : A ≃ₐ[R] A                      -- the dilation automorphism σ
+  alien     : Ω → Derivation R A A
+  weight    : Ω → R
+  unipotent : Ω → Derivation R A A
+  bridge    : ∀ ω f, conjDeriv dil (alien ω) f = weight ω • alien ω f + unipotent ω f
+```
+
+with `conjDeriv σ D = σ ∘ D ∘ σ⁻¹`. Its own docstring: *"in the q-setting the 'ordinary
+operator' is an automorphism, so the relation is a **conjugation rather than a
+commutator**."*
+
+**Scored against this epic's own acceptance criteria:**
+
+| criterion | verdict |
+|---|---|
+| (A) growth class | **silent** — 0 growth references, purely algebraic. `QGevreyTaming` carries this side separately (`abs_qBorel_le_of_qGevrey`, `qBorelCoeff_dilate`) |
+| (B) twisted Leibniz | **PASSES** — `conjDeriv` via `σ ≃ₐ[R]`, genuine `leibniz'` |
+| (C) commutes with `σ_q`, not `d/dz` | **PASSES** — bridge stated as conjugation by `dil` |
+| (D) no archimedean / confluence in the cone | **PASSES** — imports only `Mathlib.RingTheory.Derivation.Basic`, `Mathlib.Tactic`, `QOU.Mathlib.AlienBridgeEquation` |
+
+**0 sorries. And ZERO IMPORTERS.** `QBridgeSystem` appears in its own file and
+`QGevreyTaming`, nowhere else. **Nothing instantiates it at any concrete object.**
+
+## What this does to the roast
+
+**R1 is sharpened, not refuted.** Its complaint — the machinery has moved nothing — is
+confirmed in the strongest possible form: *zero importers*. But its prescription changes
+completely. The problem is **not** that more theory is needed. It is that the theory
+exists, passes three of four criteria, is sorry-free, and **has never been instantiated
+once.**
+
+**R7 is answered by the corpus rather than by me.** "q-native" already has a carrier
+with a falsifiable shape. The criterion I wrote is satisfied by an object built months
+ago.
+
+**R2 stands and is now quantified.** 18 classical-only files, including the one the
+closure audit points at.
+
+**R4 (anti-fit) stands entirely, and moves closer.** An instance supplies `weight : Ω → R`
+— the Stokes weights. That is precisely the "small set of constants" shape the corpus
+has ruled against six times. The gate below is therefore not optional.
+
+**R6 (my calibration) stands.** Providing a first instance is still real work.
+
+# THE WORKPLAN
+
+Not "build q-native alien calculus" — that is largely built. The target is the
+**instance**, in the §3b class-with-no-instance sense.
+
+| brick | deliverable | falsifiable by | cost |
+|---|---|---|---|
+| **B0** ✅ **DONE** | the triage above | script re-runs | done |
+| **B1** | **Fix the stale successor pointer**: the closure audit names `OneInstantonNormalization` (classical-only) as the route. Correct it to `QAlienBridgeEquation` | grep the audit; lean-direct | small |
+| **B2** | **Relate the two carriers.** `QBridgeSystem` and the abstract `BridgeSystem` have the same signature and no proved relation. Either a forgetful map or a stated reason there is none | Lean, sorry-free | small |
+| **B3** | **Connect (A) to (B/C/D).** `QGevreyTaming` holds the growth side, `QBridgeSystem` the algebra, with nothing joining them. State the hypothesis under which a q-Gevrey series of class `deg_q(c_n) = n²` yields the `alien` field | Lean statement; may stay conditional | medium |
+| **B4** | **THE FIRST INSTANCE.** Any concrete object. Deliberately NOT C1 first — pick the cheapest honest one (candidate: the deuteron `Z_n`, whose divisor and degree law are now derived) | an `instance` that typechecks | **the real work** |
+| **B5** | Only then: read `weight` off the instance and compare to `A_ω` | — | **GATED — see below** |
+
+## 🛑 THE ANTI-FIT GATE, stated BEFORE any constant is computed (R4)
+
+`weight : Ω → R` **is** the Stokes-constant slot. So, binding on B5 and on anything
+downstream:
+
+1. A `weight` obtained by **choosing values so a downstream number lands** is a **fit**,
+   must be labelled one, and may **NOT** be wired as canonical. This is the `Φ₂`
+   seventh-ansatz precedent, which `qou-qbs4` invoked for exactly this object.
+2. `A_ω = 4√2·e^{−3/8}` may **NOT** be used to *define* the instance and then reported as
+   agreement. That is circular. It may only be a **cross-check computed after** the
+   instance is fixed by independent data.
+3. The `A_ω → S` identification is **literature-unsupported** (`qou-q3np`), so it cannot
+   be a premise. AGENTS.md §13a forbids closing that bean while it is open.
+4. If B4 cannot be done without choosing a constant, **the honest output is that B4 is
+   blocked**, recorded as such — not an instance with a tuned field.
+
+## What would kill this plan, stated in advance
+
+- **B4 needs data nobody has.** If no object supplies `dil`, `alien`, `weight` from
+  independently-known structure, the class stays instance-free and the route is
+  *correctly* open rather than merely unattempted.
+- **(A) cannot be bridged to (B/C/D).** If the `n²` growth class provably cannot produce
+  a `Derivation`, B3 fails and B4 is unreachable.
+- **The `Ω` index set is not determined.** `Ω` indexes the singularities; if the
+  Borel-plane singularity set for the q-object is not known, `alien : Ω → …` has no
+  domain. Note this is exactly where my `REV` work stalled — the deficit spectrum
+  `N_n(E)` does not stabilise, and that spectrum *is* the candidate `Ω`.
+
+That last one is the honest link between this epic and the deuteron work, and it is a
+warning rather than a synergy: **the thing I failed to characterise five ways this
+session is the same object this plan needs as an index set.**
