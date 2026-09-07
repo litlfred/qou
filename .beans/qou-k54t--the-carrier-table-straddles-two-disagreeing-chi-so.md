@@ -324,3 +324,44 @@ two mechanisms this session and been wrong twice; this one stays open.
 What is measured is the shape: **published value, three-day 12× excursion,
 recovery to 1.9 %** — and that the recovery required repairing the χ source,
 not touching the paper.
+
+## The triage rule DECIDES the 34, and the answer is the inconvenient one (2026-09-07)
+
+`computations/probes/one_dim_reps_are_blind_to_intra_order_probe.py` (6/6)
+establishes that the intra-ordering ruling leaves exactly the two 1-dimensional
+reps invariant — the trivial `(n)` and the sign `(1^n)` — and moves every
+higher-dimensional block. That is a theorem, not a heuristic: a 1-dim
+character is a product of per-letter scalars, and a product is commutative, so
+it is fixed by the letter multiset and blind to the order.
+
+So a producer reading only `(n)` or `(1^n)` is unaffected; anything else is
+stale. That was meant to shrink the re-run population. **It does not shrink it
+— it decides it, and the decision is "essentially all of them."**
+
+Measured over the 68 `atom-chi-rust-*` readers:
+
+| class | count |
+|---|---|
+| consumes higher-dimensional blocks — **STALE** | **64** |
+| 1-dim selectors only — safe | **0** |
+| reads the file but not the chi | 4 |
+
+The four exempt are `q0_witness_read_dataflow_audit.py`,
+`binding_log_scale_investigation.py`, `binding_reeb_ratio_rho_free.py`,
+`threerow_chi_sparse.py`.
+
+**The 64 is an UPPER BOUND on staleness, not a measurement of it.** The
+classifier is a regex over source and takes "consumes all blocks" as the
+conservative default — anything not provably 1-dim-only is called stale. A
+producer that iterates every block can still have the higher ones cancel in its
+output. So the honest reading is: *64 cannot be shown safe by inspection*, and
+each still needs either a re-run or an argument.
+
+What the rule is worth is that it closes the hope of an exempt subset. Nobody
+should now spend a pass looking for one — there is none above the ULP.
+
+**A second use, unmeasured.** The invariance is also a CHECK on any future
+regeneration: if a regeneration moves a 1-dim block by more than the `qou-07ts`
+ULP (~2e-50), it changed the letters and not merely their order, which is a
+different and larger claim than the ruling makes. The probe asserts this in
+both directions already.
