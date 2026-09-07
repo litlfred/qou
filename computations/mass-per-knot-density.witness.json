@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:47:33.680755+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "computedAt": "2026-09-07T10:16:22.453443+00:00",
+  "commitSha": "f20f15ebbec8df8b5bb860b67066b3d58f801b21",
   "assertions": [
     {
-      "name": "per_knot_density_equiv_per_knot_density",
-      "computed": 0,
+      "name": "su2_density_gap_eq_lw_over_trM",
+      "computed": 1,
       "expected": 1,
-      "passed": false,
-      "source": "per_knot_density_equiv_per_knot_density: |Δ| = 1139.0 < 1.0e-40"
+      "passed": true,
+      "source": "su2_density_gap_eq_lw_over_trM: |Δ| = 1.811e-70 < 1.0e-40"
     },
     {
       "name": "h_eq_2sinh_log_q",
@@ -61,11 +61,11 @@
       "source": "per_knot_density_vd(density=tr_M) ≡ per_knot_density_per_block: |Δ| = 2.782e-68 < 1.0e-40"
     }
   ],
-  "allPassed": false,
-  "durationMs": 3,
+  "allPassed": true,
+  "durationMs": 5,
   "computation": "mass-per-knot-density",
   "scriptFile": "mass_per_knot_density.py",
-  "scriptHash": "41f87573a7eb",
+  "scriptHash": "e3070c814f82",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -95,6 +95,13 @@
   },
   "data": {
     "bracket_2_q_at_q0": "2.010896866707122",
+    "su2_density_gap": {
+      "global_over_per_block": "2.51584686608501180290267402238",
+      "closed_form_lw_over_trM": "2.51584686608501180290267402238",
+      "identity_residual": "1.81114e-70",
+      "docstring_claims_approx": "2.38",
+      "note": "Vol/hbar_q^2 is common to both readings and cancels, so the gap is exactly linking_weight_family_a / borromean_markov_trace_h2. The docstring's 2.38 and this measured 2.5158 disagree; UNRESOLVED, see bean qou-afjl."
+    },
     "su2_density_loss": {
       "density_global_H4_scalar": "1.006730453487707",
       "density_per_block_H3_trM_proton": "0.6293284022029219",

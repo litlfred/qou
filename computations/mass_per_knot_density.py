@@ -64,6 +64,7 @@ if str(HERE) not in sys.path:
 import _path_bridge  # noqa: F401, E402
 from _li_2_q_util import (  # noqa: E402
     borromean_markov_trace_h2,
+    linking_weight_family_a,
     per_knot_density_borromean,
     per_knot_density_per_block,
 )
@@ -263,7 +264,27 @@ def _emit_witness() -> None:
         return
     from q_parameter import Q_50_DIGIT_STR as Qs
     q = mp.mpf(Qs)
-    eq = abs(per_knot_density_borromean(q) - per_knot_density_vd(vol_borromean(), q))
+    # ── SU(2) density gap (bean qou-afjl; owner disposition 2026-09-07) ──
+    # This line used to assert the two readings are EQUAL to 1e-40.  They are
+    # not, and `_li_2_q_util.per_knot_density_borromean`'s own docstring says
+    # so: the global-scalar route multiplies Vol/ℏ_q² by
+    # `linking_weight_family_a ≈ 2.53`, the per-block route by the H₃ Markov
+    # trace, and "the two differ by ≈ 2.38×".  The equality passed at 2.7e-48
+    # on 2026-06-28 and has read |Δ| = 1139.0 since 2026-08-21, when a commit
+    # described as "a documented rename" repointed the left side onto the
+    # global-scalar function.  A permanently-red equality is not a guard.
+    #
+    # Re-scoped to the RATIO, and asserted STRUCTURALLY rather than against a
+    # pinned numeral: Vol(𝓑₃)/ℏ_q² is common to both readings and cancels, so
+    # the gap is exactly `linking_weight_family_a / borromean_markov_trace_h2`.
+    # Verified to 6.2e-61 at 60 dps.  Nothing here is fitted — the identity
+    # holds for every q, and a change in EITHER density function breaks it.
+    global_reading = per_knot_density_borromean(q)
+    per_block_reading = per_knot_density_vd(vol_borromean(), q)
+    su2_gap_ratio = global_reading / per_block_reading
+    su2_gap_closed_form = (linking_weight_family_a(q)
+                           / borromean_markov_trace_h2(q))
+    eq = abs(su2_gap_ratio - su2_gap_closed_form)
     h_id = abs((q - 1 / q) - h_from_rapidity(q))
     b2_id = abs((q + 1 / q) - bracket2_from_rapidity(q))
     O0, th = mp.mpf("938.9"), mp.mpf("0.01")
@@ -300,6 +321,21 @@ def _emit_witness() -> None:
     w.set_audit_only("docs/workplans/2026-06-04-mass-per-knot-density-stokes-delta-formalization.md")
     w.add_parameter("q_0", Qs)
     w.add_data("bracket_2_q_at_q0", mp.nstr(bracket2_from_rapidity(q), 16))
+    # The gap itself, recorded so it is readable without re-deriving it, and
+    # so the SECOND discrepancy is visible: `per_knot_density_borromean`'s
+    # docstring states the two readings "differ by ≈ 2.38×", and the measured
+    # ratio is 2.5158.  Both are in the corpus; neither cites the other.  That
+    # is not resolved here and is left open deliberately (bean qou-afjl).
+    w.add_data("su2_density_gap", {
+        "global_over_per_block": mp.nstr(su2_gap_ratio, 30),
+        "closed_form_lw_over_trM": mp.nstr(su2_gap_closed_form, 30),
+        "identity_residual": mp.nstr(eq, 6),
+        "docstring_claims_approx": "2.38",
+        "note": ("Vol/hbar_q^2 is common to both readings and cancels, so the "
+                 "gap is exactly linking_weight_family_a / "
+                 "borromean_markov_trace_h2. The docstring's 2.38 and this "
+                 "measured 2.5158 disagree; UNRESOLVED, see bean qou-afjl."),
+    })
     if cmp_pb is not None:
         w.add_data("su2_density_loss", {
             "density_global_H4_scalar": mp.nstr(cmp_pb["density_global"], 16),
@@ -313,7 +349,7 @@ def _emit_witness() -> None:
         w.add_data("su2_density_loss",
                    {"skipped": True, "reason": skip_reason or "unknown"})
     for name, val in [
-        ("per_knot_density_equiv_per_knot_density", eq),
+        ("su2_density_gap_eq_lw_over_trM", eq),
         ("h_eq_2sinh_log_q", h_id),
         ("bracket2_eq_2cosh_log_q", b2_id),
         ("pair_average_eq_cosh", avg_id),
@@ -339,8 +375,12 @@ if __name__ == "__main__":
     q = mp.mpf(Qs)
     print("Mass = Vol × Density — wired-up compute")
     print(f"  [2]_q = 2cosh(log q₀) = {mp.nstr(bracket2_from_rapidity(q), 12)} (recurring Hecke weight)")
-    print(f"  per_knot_density ≡ Vol·ρ/ℏ²: |Δ| = "
-          f"{mp.nstr(abs(per_knot_density_borromean(q) - per_knot_density_vd(vol_borromean(), q)), 3)}")
+    # Prints the GAP, not a difference asserted to be zero. The two readings
+    # were never equal; see the note at the assertion site (bean qou-afjl).
+    _g = per_knot_density_borromean(q)
+    _pb = per_knot_density_vd(vol_borromean(), q)
+    print(f"  SU(2) density gap  global/per-block = {mp.nstr(_g / _pb, 12)}"
+          f"   (= linking_weight_family_a / borromean_markov_trace_h2)")
     try:
         _tr = _load_tr_M_proton_at_q0()
         _c = compare_density_readings(q, _tr)

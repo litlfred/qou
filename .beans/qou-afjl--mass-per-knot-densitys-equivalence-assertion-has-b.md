@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T04:49:12Z
-updated_at: 2026-09-07T04:50:02Z
+updated_at: 2026-09-07T10:17:01Z
 ---
 
 ## The claim
@@ -113,3 +113,47 @@ question of whether the alias should exist at all.
 **Default if nothing is done:** the witness stays red on `main`, and
 `check-sidecars.sh` keeps reporting `mass-per-knot-density` for anyone who
 touches a file near it — which is how this was found.
+
+
+
+## APPLIED 2026-09-07 — owner disposition: re-scope to the ratio
+
+Witness green for the first time since 2026-08-21: **8 assertions, all
+passed**.
+
+### Asserted STRUCTURALLY, not against a pinned numeral
+
+`Vol(𝓑₃)/ℏ_q²` is common to both readings and cancels, so the gap is
+**exactly**
+
+    global / per-block  =  linking_weight_family_a(q) / borromean_markov_trace_h2(q)
+
+Verified at 60 dps: residual **6.2e-61**. The new assertion
+`su2_density_gap_eq_lw_over_trM` checks that identity rather than a recorded
+constant — nothing is fitted, it holds for every `q`, and a change in
+**either** density function breaks it. That is a strictly stronger guard than
+pinning 2.5158 would have been, and it needs no tolerance argument.
+
+The assertion was **renamed**: `per_knot_density_equiv_per_knot_density` no
+longer exists, because what it asserted was false and keeping the name over a
+different claim is how this arc started.
+
+### The second discrepancy is now IN the witness, not buried
+
+New `su2_density_gap` data block records the measured **2.515846866085011803**
+beside the docstring's claimed **≈ 2.38**, with a note saying the two disagree
+and are **UNRESOLVED**. Both figures are in the corpus and neither cites the
+other; that is left open deliberately rather than silently reconciled.
+
+### Also fixed
+
+A `print` at line 378 still computed the old equality and reported
+`|Δ| = 1.14e+3` on every run — the same stale-literal class this bean is
+about. It now prints the gap.
+
+### NOT done, and still open
+
+The **29 callers** of `per_knot_density_borromean`. The name resolves to the
+global-scalar function and emits a `DeprecationWarning`; whether each caller
+wants that reading is untriaged, and files written after the meaning changed
+may be correct as they stand.
