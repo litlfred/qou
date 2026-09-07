@@ -89,4 +89,44 @@ theorem casimir_apply_block_schur (hq : q ≠ 0)
           • (1 : Matrix (J j) (J j) K) := by
   rw [casimir_apply_block hq E a j, abstractSchurElement, div_eq_mul_inv]
 
+/-! ### `s_λ` as a character sum
+
+Taking the trace of `casimir_apply_block` on the `λ`-block turns the block
+*scalar* into a *sum over the Coxeter group*: the left side is
+`Σ_w χ_λ(T_w T^∨_w)` and the right is `d_λ² / c_λ`.  That is the fourth of the
+five classical steps, and unlike the first three it costs nothing beyond the
+trace of a scalar matrix. -/
+
+/-- **The character sum.**  `Σ_w χ_λ(T_w T^∨_w) = d_λ² / c_λ`.
+
+    No hypothesis on the block dimension: this is the form to quote when `K`
+    may have positive characteristic, since nothing is divided by `d_λ`. -/
+theorem sum_char_Tw_mul_TwDual (hq : q ≠ 0)
+    (E : QOU.Hecke.IwahoriHecke K q n ≃ₐ[K] ∀ i, Matrix (J i) (J i) K)
+    (a : ∀ i, J i) (j : ι) :
+    (∑ w, Matrix.trace (E (Tw K q n w * TwDual K q n w) j))
+      = (Fintype.card (J j) : K) ^ 2 / traceWeight E (tau K q n) a j := by
+  classical
+  have hsum : (∑ w, Matrix.trace (E (Tw K q n w * TwDual K q n w) j))
+      = Matrix.trace (E (casimir K q n) j) := by
+    rw [casimir, map_sum, Finset.sum_apply, Matrix.trace_sum]
+  rw [hsum, casimir_apply_block hq E a j, Matrix.trace_smul, Matrix.trace_one,
+    smul_eq_mul]
+  ring
+
+/-- **The abstract Schur element as a character sum**,
+    `s_λ = (Σ_w χ_λ(T_w T^∨_w)) / d_λ²`.
+
+    `hd` is the block dimension being invertible in `K` — automatic in
+    characteristic zero with `J j` nonempty, but stated as a hypothesis rather
+    than assumed, since nothing else in this development needs `CharZero`. -/
+theorem abstractSchurElement_eq_char_sum (hq : q ≠ 0)
+    (E : QOU.Hecke.IwahoriHecke K q n ≃ₐ[K] ∀ i, Matrix (J i) (J i) K)
+    (a : ∀ i, J i) (j : ι) (hd : (Fintype.card (J j) : K) ≠ 0) :
+    abstractSchurElement E a j
+      = (∑ w, Matrix.trace (E (Tw K q n w * TwDual K q n w) j))
+          / (Fintype.card (J j) : K) ^ 2 := by
+  rw [sum_char_Tw_mul_TwDual hq E a j, abstractSchurElement]
+  field_simp
+
 end QOU.Hecke.TwBasis
