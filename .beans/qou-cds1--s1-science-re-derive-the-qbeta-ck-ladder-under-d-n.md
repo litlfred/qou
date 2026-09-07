@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T05:32:58Z
+updated_at: 2026-09-07T06:21:50Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7646,3 +7646,68 @@ not an isomorphism of algebras. Also `dim λ = dim λ'` for a *general* partitio
 halves of this corpus.
 
 Gap bean `qou-yhod` filed and closed the same session.
+
+
+## 2026-09-07 — the isomorphism front (PR #6986)
+
+#6965 merged. Continued onto `H_n(q)/rad ≅ TL_n(q)` itself.
+
+**Landed, sorry-free, general index type** — `QOU/MathlibExt/HeckeToTemperleyLieb.lean`:
+`heckeToTL : H_n(v²) →ₐ[R] TL_n(δ)` with `T_i ↦ v·e_i − 1`, and
+`heckeToTL_surjective`. Twelve declarations, `#print axioms` clean on every one.
+
+**Key facts worth keeping.**
+- The two files' normalisations (Iwahori vs balanced) do NOT match under any
+  shift `T_i ↦ a − e_i`: quadratic forces `δ = q+1`, braid forces `δ = q+q⁻¹`,
+  equal only at `q = 1`. The fix is `v` as primitive datum with the *polynomial*
+  hypothesis `v·δ = v²+1` — no inverse, no `Real.sqrt`, §7c-clean.
+- In the braid check `Q` **cancels**: both sides are `−u_iu_j − u_ju_i + u_i + u_j − 1`.
+  So no centrality hypothesis is needed, and the braid imposes nothing on `δ`
+  beyond the loop relation.
+- Use `•`, not `algebraMap _ * _`. `algebraMap v * e i * (algebraMap v * e j)`
+  cannot be reassociated by `noncomm_ring` — the second scalar is trapped between
+  generators; only centrality frees it. `smul_mul_smul_comm` does it in one rewrite.
+
+**Still open, and NOT laundered into a class:**
+1. *Mathematics* — `tlKernel = traceRadical tr_M`. `⊆` is a computation; `⊇` is
+   semisimplicity of `TL_n(δ)`, the Wedderburn input the construction avoids.
+2. *Engineering* — no first isomorphism theorem for NONCOMMUTATIVE rings in
+   Mathlib. `Ideal` is `Submodule R R` (commutative); `TwoSidedIdeal` has `ker`
+   but no quotient-equivalence. `RingCon` plumbing, deliberately not done badly.
+
+**Build trap recorded.** `MathlibExt.IwahoriHeckeAlgebra` and
+`MathlibExt.TemperleyLiebAlgebra` have no olean in `lake-cache/qou-v4-24-0` and
+are not reachable from `QOU.lean` (the lakefile glob builds them; the aggregator
+does not import them). Build lean-direct before verifying importers.
+
+
+## 2026-09-07 (cont.) — the isomorphism is PROVED, presentation-level
+
+`heckeTLEquiv` in `QOU/MathlibExt/HeckeToTemperleyLieb.lean`, sorry-free,
+general index type:
+
+    TL_n(δ)  ≅  H_n(v²) / ⟨ U_i U_j U_i − v²·U_i : i ~ j ⟩ ,   U_i = T_i + 1
+
+**The engineering blocker recorded earlier was routed around, not waited on.**
+Mathlib has no first isomorphism theorem for noncommutative rings (`Ideal` is
+`Submodule R R`, the commutative notion; `TwoSidedIdeal` has `ker` and no
+quotient-equiv). Quotienting by the NAMED RELATORS via `RingQuot` sidesteps it
+and gives a *stronger* statement — the ideal is presented by generators rather
+than merely named. `heckeQuotientEquivTL` was written against `Ideal`, failed
+instance synthesis, and was removed rather than forced.
+
+**`U_sq` is the load-bearing observation:** `U_i² = q·U_i + U_i` holds in `H`
+ALREADY (Iwahori quadratic relation rearranged), so the adjacency relator is the
+ONLY thing the quotient imposes.
+
+**Still open, and now exactly one thing:**
+`⟨U_i U_j U_i − v²·U_i⟩ = traceRadical tr_M`. `⊆` is a computation; `⊇` is
+semisimplicity of `TL_n(δ)` — the Wedderburn input the construction avoids. That
+is the whole remaining distance to `rem:hecke-radical-is-temperley-lieb`'s claim.
+
+**Lean traps recorded.** `map_smul` fails instance synthesis on these `AlgHom`s
+(use `Algebra.smul_def` then `map_mul`). `algebraMap v * e i * (algebraMap v * e j)`
+cannot be reassociated by `noncomm_ring` — the second scalar is trapped between
+generators; `smul_mul_smul_comm` in `•` form does it in one rewrite.
+
+PR #6986.

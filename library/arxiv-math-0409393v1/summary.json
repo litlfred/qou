@@ -1,0 +1,36 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0409393v1",
+ "source_sha256": "2107d961f6065539",
+ "brief": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS Jacques Sauloy — — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently",
+ "extended": "**ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS Jacques Sauloy**\n\n26 pp, 3 sections.\n\n**Abstract.** — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by J.-P. Ramis, J. Sauloy an d C. Zhang. Their description involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuy a type and is based on a discrete summation process due to C. Zha ng. W e show here another road to some of these results by algebraic means and w e describe the q-Gevrey devissage of the q-Stokes sheaf by holomorphic vector bundles over an ellipti c curve. R´ esum´ e(Construction alg´ ebrique du faisceau de Stokes pour les ´ equations aux q-diﬀ´ erences lin´ eaires irr´ eguli` eres) La classiﬁcation analytique locale des ´ equations aux q-diﬀ´ erences lin´ eaires irr´ eguli` eres a ´ et´ e r´ ecemment r´ ealis´ ee par J.-P. Ramis, J. Sauloy et C. Zhang.\n\n**Outline.** 1 Introduction and general conventions; 3 Algebraic summation; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 256
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-general-conventions",
+   "title": "Introduction and general conventions",
+   "pages": "1-15"
+  },
+  {
+   "id": "sec-001-3-algebraic-summation",
+   "title": "Algebraic summation",
+   "pages": "15-25"
+  },
+  {
+   "id": "sec-002-references",
+   "title": "References",
+   "pages": "25-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

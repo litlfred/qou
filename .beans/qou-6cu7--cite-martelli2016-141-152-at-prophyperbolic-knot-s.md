@@ -1,10 +1,11 @@
 ---
 # qou-6cu7
 title: Cite [martelli2016] §14.1 + §15.2 at prop:hyperbolic-knot-shape-fields and the NZ-from-braid Lean (qou-n2cl / qou-yvyd) — held source for Thurston's equations and the Lagrangian NZ rows
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-06T13:41:29Z
-updated_at: 2026-09-06T13:41:29Z
+updated_at: 2026-09-07T06:55:15Z
 parent: qou-2akx
 ---
 
@@ -19,3 +20,7 @@ WHAT. Martelli, An Introduction to Geometric Topology (arXiv:1610.02592v3, 494 p
 DO. (1) add 'martelli2016' to cites[] of hyperbolic-knot-shape-fields.ts and gluing-equations-do-not-detect-hyperbolicity.ts and cite §14.1 / Prop 14.1.7 in the .md where Thurston's equations are invoked; (2) add '-- Ref: [martelli2016] §14.1 (Prop 14.1.8), §15.2 (Prop 15.2.9)' to the module docstring of QOU/Mass/FigureEightGluingFromMonodromy.lean next to the existing FKP ref; (3) in docs/audits/2026-09-06-nz-gluing-data-from-braid-monodromy.md §2 attach Prop 15.2.9 to the symplectic check and Prop 14.1.8 to the sixth-root check (a dated audit — append, do not rewrite). Render-QA any touched .md.
 
 NOT IN THIS BOOK: the Guéritaud two-bridge layered triangulation and the Floyd–Hatcher punctured-torus-bundle layering — keep citing library arxiv-0808.2716v4 (Futer–Kalfagianni–Purcell) for those. §11.4 covers only closed torus bundles (Prop 11.4.14, Anosov iff |tr A| > 2).
+
+
+
+Claimed 2026-09-07 on branch claude/uploads-triage-chips-2026-09-07 (one PR for the three remaining citation/framing chips of the 2026-09-06 uploads triage).

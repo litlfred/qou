@@ -238,6 +238,56 @@ instance twoSidedMarkov_unit (u : Rˣ) : TwoSidedMarkov (OcneanuTrace.unitMarkov
     show x * ((u⁻¹ : Rˣ) : R) * y = ((u⁻¹ : Rˣ) : R) * (x * y)
     ring
 
+/-- **The mixed-crossing case: an arbitrary combination of the two generators.**
+
+`tr (a * (c • g n + c' • ginv n)) = tr a * (c * z + c' * z')` for `a ∈ H n`.
+
+Motivated by a measurement, not by symmetry. `computations/probes/
+bond_product_order_three_probe.py` expands the atom word's interface factors as
+`ε`-series to order 3 and finds all three to be **exactly** the two Markov
+parameters and their average — no offset and no free parameter:
+
+    pp   z             positive crossing        (c, c') = (1, 0)
+    pn   (z + z')/2    the average of the two   (c, c') = (1/2, 1/2)
+    nn   z'            negative crossing        (c, c') = (0, 1)
+
+`tr_mul_gen` and `tr_mul_geninv` already covered the two like-bonds; the mixed
+bond had no counterpart, and this supplies it for all three at once. The
+statement is deliberately in `c • g + c' • ginv` rather than `(g + ginv)/2` so
+that it needs **no** division and no hypothesis on `2 : R` — the caller supplies
+the coefficients, and `R` stays a bare `CommRing`. -/
+theorem tr_mul_gen_comb [TwoSidedMarkov T] (n : ℕ) (a : A) (ha : a ∈ T.H n)
+    (c c' : R) :
+    T.tr (a * (c • T.g n + c' • T.ginv n))
+      = T.tr a * (c * T.z + c' * T.zinv) := by
+  have hmul : a * (c • T.g n + c' • T.ginv n)
+      = c • (a * T.g n) + c' • (a * T.ginv n) := by
+    simp [mul_add]
+  rw [hmul, map_add, map_smul, map_smul,
+    markov_of_twoSided T n a ha, markov_inv_of_twoSided T n a ha]
+  simp only [smul_eq_mul]
+  ring
+
+/-- The `pn` bond, without division: `c = c' = 1` in `tr_mul_gen_comb`. The
+measured factor is half of this, and halving is the reader's step rather than a
+hypothesis on the ring. -/
+theorem tr_mul_gen_add_ginv [TwoSidedMarkov T] (n : ℕ) (a : A) (ha : a ∈ T.H n) :
+    T.tr (a * (T.g n + T.ginv n)) = T.tr a * (T.z + T.zinv) := by
+  have := tr_mul_gen_comb T n a ha 1 1
+  simpa using this
+
+/-- With the quadratic relation in force, `z'` is not independent
+(`OcneanuTrace.markovParam_inv_eq_sub`: `z' = z - h`), so every bond factor is a
+combination of `z` and `h` alone. This is the form in which the measurement's
+"no free parameter" reading is visible: two ring elements, `z` and `h`, generate
+all three factors. -/
+theorem tr_mul_gen_comb_of_quadratic [TwoSidedMarkov T] (n : ℕ) (a : A)
+    (ha : a ∈ T.H n) (h : R) (hq : T.g n * T.g n = h • T.g n + 1) (c c' : R) :
+    T.tr (a * (c • T.g n + c' • T.ginv n))
+      = T.tr a * ((c + c') * T.z - c' * h) := by
+  rw [tr_mul_gen_comb T n a ha c c', T.markovParam_inv_eq_sub n h hq]
+  ring
+
 /-- **A statement of what remains, so the gap is in the file rather than only in
 the bean.**
 

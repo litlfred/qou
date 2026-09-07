@@ -1,11 +1,11 @@
 ---
 # qou-hok7
 title: 'Deuteron-wall resummation: classical Borel on q=1 period is the WRONG transform (substrate object is q-Gevrey) -> reopen; needs q-Borel of Z_n(q0)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-07T05:24:50Z
+updated_at: 2026-09-07T06:43:27Z
 ---
 
 
@@ -142,3 +142,56 @@ The `n^{3/2}` residual model **cannot** be REV's asymptotic form (`REV >= 0`, wh
 the deficit distribution `N_n(E)` directly — `REV_n = log sum_E N_n(E) x^E` with
 `x = 1/q0` is a free energy, and the exactness of `<w> = C(n,2)` suggests `N_n(E)`
 has exact combinatorial structure rather than merely asymptotic.
+
+
+## 2026-09-07 — deg Z_n DERIVED in closed form; REV is a free energy over shapes; and D5's attribution is wrong
+
+Branch claude/zn-hook-length-closed-form-2026-09-07.
+
+**Prior work, cited not claimed** (corpus-grep, six paths): the path decomposition
+w(T) = [n(l')-n(l)] + 2 maj(T) is committed at lever1_descent_transfer_operator.py:18-24, and the
+hook-side closed form is committed verification target V2 at :45, exact to n<=16. What follows
+differs from V2 by the sorry-free substitution sum_c h(c) = n(l)+n(l')+n
+(contentSum_eq_hookSum_sub) — a re-normalisation, not a new identity.
+
+**NEW (not on any of the six paths): the degree in closed form.** Each summand of the hook-side
+form has degree exactly n^2 - H(lambda), coefficients non-negative, so
+
+    deg Z_n = n^2 - H_min(n),   H_min(n) = min_{lambda|-n} sum_c h(c)
+    H_min(n) = 2n - 1 + sum_{k>=2, T_k <= n-1} (n - T_k)  = (2 sqrt2/3) n^{3/2} + O(n)
+
+verified against brute-force minimisation n<=26, and against the exact transfer-operator
+polynomial n<=11. The corpus's MEASURED D1 recursion d2 deg = 2 - [n triangular] now FOLLOWS
+(exceptions {3,6,10,15,21}, zero disagreement, from partitions alone). The mechanism: H is
+minimised by the staircase (k,k-1,...,1), which is an exact partition of n precisely when n is
+triangular, where H_min = k(k+1)(2k+1)/6 (square pyramidal). H_min is now O(sqrt n) to compute at
+any n — no partition enumeration — so the divisor q^{d_n} this bean asks for is cheap at any n.
+
+**REV is a free energy over SHAPES.** Exactly, no approximation:
+
+    REV_n = log sum_{lambda|-n} exp( R_lambda - (H(lambda)-H_min) ln q0 ),  0 <= R_lambda <= log f^lambda
+
+This IDENTIFIES the deficit spectrum N_n(E) the bean asks to attack: at leading order E is the
+excess total hook length, a purely combinatorial object independent of q0. Energy = excess hook
+length; entropy = shape multiplicity; neither alone reproduces REV. REV extended to n=44 (p(n)
+partitions, not I(n) paths).
+
+**CORRECTION to D5 of deuteron_qborel_slope_derivation_probe.py.** D5 concludes 'the whole
+-0.165 n^{3/2} signal is therefore REV's' because d2(degree part) = 0 at the sampled
+non-triangular n. Premise right, inference wrong: d2 H_min = [n triangular], so the degree part's
+second difference is an indicator on a sparse set and generic-n sampling returns zero BY
+CONSTRUCTION. Summed twice that same indicator IS the n^{3/2}: coefficient -(2sqrt2/3) ln q0 =
+-0.098373, confirmed to 2e-7 at n=10^6. REV cannot supply it — REV >= 0 while the signal is
+negative, and REV is measured sub-linear (REV/n peaks at n=18, falls to 0.650 by n=44).
+
+**Honest limits.** REV's sub-linearity is MEASURED over n<=44, not proved — that is now the open
+piece, and it is a sharper one than before because the object is explicit. An earlier R5 asserted
+the degree part exceeds REV in magnitude and FAILED: they cross at almost exactly n=44 (24.21 vs
+28.60). 'Grows faster' != 'is already bigger'.
+
+**Also fixed:** binding-period-involution-statistic.md claimed the polynomial has degree n(n-1) —
+false for every n>=2 (degrees 1,4,8,14 vs 2,6,12,20). The block's own Lean already carried the
+counterexample (statExponents_three, max exponent 4).
+
+Probes: zn_hook_length_closed_form_probe.py (6/6), rev_free_energy_over_shapes_probe.py (3/3),
+hmin_closed_form_and_rev_sublinearity_probe.py (5/5). Exact integer / 60-dps mpmath, no float64.

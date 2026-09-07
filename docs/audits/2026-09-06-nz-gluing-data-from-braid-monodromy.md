@@ -43,6 +43,16 @@ which was **not** an input.
 | adjoint torsion | `\|det J_NZ\|` from derived rows | `√3` (corpus value, obtained from SnapPy rows) | equal to `10⁻³⁰` |
 | A-polynomial | resultant elimination of `z₀, z₁` from (edge, `H(μ) = M²`, `H(λ) = L²`) | `A_{4₁} = −M⁴ + L(1 − M² − 2M⁴ − M⁶ + M⁸) − L²M⁴` (memo §2c) | matches exactly, up to `L→±L^{±1}, M→±M^{±1}` |
 
+**Addendum 2026-09-07 (bean `qou-6cu7`, citation only; the table above is unchanged).** Two of the
+checks now have a held textbook form in Martelli, *An Introduction to Geometric Topology*
+(`[martelli2016]`, `library/arxiv-1610.02592v3`): the **exact solution** row is Prop 14.1.8 +
+Fig 14.7 (the two-tetrahedron, valence-6 triangulation with all shapes `e^{iπ/3}` is the
+figure-eight complement; §14.1, Prop 14.1.7 for consistency/completeness ⇒ complete structure),
+and the **NZ symplectic** row is Prop 15.2.9 / 15.2.11 (the incidence rows of an ideal
+triangulation generate a Lagrangian subspace), with Cor 15.2.8 (`rk A = 2n − c`) giving the rank
+a cross-knot gate should expect. The Guéritaud / Floyd–Hatcher layerings are *not* in that book
+(§11.4 covers closed torus bundles only); those stay on Futer–Kalfagianni–Purcell.
+
 The A-polynomial check is the one that pins the **cusp rows**: the meridian was identified as
 the shortest vector of the derived cusp lattice and the longitude as its `2√3 i` partner; a wrong
 `μ + kλ` would change the eliminated curve.
