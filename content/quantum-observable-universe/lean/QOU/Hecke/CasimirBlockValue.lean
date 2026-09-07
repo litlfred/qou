@@ -129,4 +129,31 @@ theorem abstractSchurElement_eq_char_sum (hq : q ≠ 0)
   rw [sum_char_Tw_mul_TwDual hq E a j, abstractSchurElement]
   field_simp
 
+/-! ### The normalisation identity `Σ_λ d_λ c_λ = 1`
+
+`τ(1) = 1` says the weights are not free: they satisfy one linear constraint,
+weighted by the block dimensions.  This is the Lean form of the identity that
+pins the normalisation in
+`computations/hecke/tau_weights_vs_wenzl_schur_probe.py` — the probe's Tier 1,
+checked there symbolically for `n = 1 … 8` against
+`c_λ = (1 - Q)^n · schurElement(Q, 0, λ)`.
+
+Note what it is and is not evidence for.  It is a genuine constraint on the
+weight *system*, and it is what makes the constant `(1 - Q)^n` the only
+possible normalisation for that candidate.  It says nothing per-block, which is
+why the probe's Tier 2 (the actual per-λ comparison, `n ≤ 3`) is a separate and
+stronger check. -/
+
+/-- **`Σ_λ d_λ · c_λ = 1`.**  The block dimensions weight `τ`'s weights to one,
+    because `τ(1) = 1`. -/
+theorem sum_dim_mul_traceWeight
+    (E : QOU.Hecke.IwahoriHecke K q n ≃ₐ[K] ∀ i, Matrix (J i) (J i) K)
+    (a : ∀ i, J i) :
+    (∑ i, (Fintype.card (J i) : K) * traceWeight E (tau K q n) a i) = 1 := by
+  have h := eq_weightedTrace_of_algEquiv E (tau K q n) (tau_mul_comm K q n) a 1
+  rw [tau_one, map_one, weightedTrace] at h
+  refine Eq.trans ?_ h.symm
+  exact Finset.sum_congr rfl fun i _ => by
+    rw [Pi.one_apply, Matrix.trace_one, mul_comm]
+
 end QOU.Hecke.TwBasis
