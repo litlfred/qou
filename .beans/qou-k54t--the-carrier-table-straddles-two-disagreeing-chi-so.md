@@ -365,3 +365,60 @@ regeneration: if a regeneration moves a 1-dim block by more than the `qou-07ts`
 ULP (~2e-50), it changed the letters and not merely their order, which is a
 different and larger claim than the ruling makes. The probe asserts this in
 both directions already.
+
+## The false green breaks — and one of my own three re-pins was on stale data (2026-09-07)
+
+With the rust family uniform and the chain re-run
+(`binding_reeb_phase_decomposition` → `carrier_table_convention_d_rederivation`),
+`carrier_saturation_mechanism_probe` goes **10 assertions, 3 FAILURES**:
+
+| assertion | computed | expected | verdict |
+|---|---|---|---|
+| `anchor_kappaD_reproduced` | 29.0753769712 | 6.4161462 | **FAIL** — the false green |
+| `anchor_kappa4He_reproduced` | 702.409002162 | 73.5943 | **FAIL** — the false green |
+| `carrier_band_ratio_pinned` | 10.1965869286 | 1.50250 | **FAIL** — *my re-pin, on stale data* |
+| `anchor_kappa5Li_reproduced` | 64.1028242404 | 64.10282 | PASS |
+| `li6_amplification_reproduced` | 82.8548137339 | 82.85481 | PASS |
+
+**Two of my three re-pins from the previous session were right and one was
+not.** ⁵Li (64.10282) and ⁶Li (82.85481) reproduce exactly, because those two
+atoms are not among the four whose caches changed. The third, `1.8375 →
+1.50250`, was derived from the light atoms while their caches were still on the
+grouped word — the same error class this whole arc is about, committed by me
+while fixing it.
+
+### But the replacement is NOT 10.1966, because that number straddles two words
+
+`carrier_band_ratio_pinned` is `max/min` of `m_e·S` over A=2…6. ⁵Li and ⁶Li take
+their **atom** χ from `chi-lithium-{5,6}-h{15,18}-at-q0-50dps-matrix-m.witness.json`,
+and both were last touched **2026-08-15** — twenty-one days before the ruling
+(`7db032fb48`, 2026-09-05 07:53:55). Neither carries a `computedAt` or a
+`scriptHash` at all, so the witness cannot date itself; git had to.
+
+Split by word, the ratio is not 10.2 under *either*:
+
+| population | max/min |
+|---|---|
+| all six — **what is pinned** | **10.196587** |
+| repaired four (borromean) | 1.899285 |
+| stale two (grouped) | 1.063736 |
+
+So the factor of ten is **the gap between the two groups**, not a property of
+either: the four light atoms sit at `m_e·S ≈ 0.040–0.077` while the two Li sit
+at `0.386–0.411`. Pinning 10.1966 would launder a mixed-word ratio into a
+regression anchor, which is worse than leaving the assertion red.
+
+### The producer-side fix exists and the producer already warned about it
+
+`chi_via_rust_lossless.py` regenerates both (`--fresh 5Li 6Li`), and its own
+source carries the warning this arc keeps re-deriving:
+
+> `--fresh` EXISTS BECAUSE THE REUSE BRANCH CANNOT SEE A CONVENTION CHANGE. It
+> gates on completeness … so a cache computed under a SUPERSEDED CONVENTION is
+> "complete" and is served forever. Worse, the hit still calls `_stamp_anchor`,
+> which rewrites the file — so a routine re-run leaves it looking freshly
+> regenerated while every number in it is stale.
+
+That last clause explains the missing `computedAt`: a re-run *touches* these
+files without recomputing them, so their git date is evidence about stamping,
+not about the numbers.
