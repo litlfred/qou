@@ -169,7 +169,7 @@ _INPUT_CACHE = {
                 "n": ["1/2", "-1/2", "3/2", "19/2", "-57/4"]},
         "bond": {"pp": ["1/2", "1", "1/4", "-1/4", "1/8"],
                  "pn": ["1/2", "0", "3/4", "-3/4", "31/24"],
-                 "nn": None},
+                 "nn": ["1/2", "-1", "5/4", "-5/4", "9/8"]},
     },
 }
 
@@ -248,7 +248,7 @@ def main() -> int:
     for name, (Z, N) in ZN.items():
         pf, pa = predict(Z, N, nuc, bond)
         d_pred = [pf[k] - pa[k] for k in range(K + 1)]
-        c3_pred = d_pred[2] + d_pred[3]
+        cK_pred = d_pred[K - 1] + d_pred[K]
         src, ok3 = None, None
         if name in LIVE_OK:
             lf = _series(Z, N, inter=False)
@@ -257,17 +257,18 @@ def main() -> int:
             src = "live"
             if d_pred != d_live:
                 failures.append(f"{name}: predicted {d_pred} != live {d_live}")
-            ok3 = (d_pred[2] + d_pred[3]) == (d_live[2] + d_live[3])
+            ok3 = (d_pred[K - 1] + d_pred[K]) == (d_live[K - 1] + d_live[K])
         elif name in RECORDED.get(K, {}):
             src = "recorded (qou-yaig, independent)"
-            ok3 = (c3_pred == RECORDED[K][name])
+            ok3 = (cK_pred == RECORDED[K][name])
             if not ok3:
-                failures.append(f"{name}: c{K} predicted {c3_pred} != "
+                failures.append(f"{name}: c{K} predicted {cK_pred} != "
                                 f"recorded {RECORDED[K][name]}")
         else:
             src = "prediction only (no target)"
-        rows.append((name, Z + N, d_pred[3], c3_pred, src, ok3))
-        log(f"    {name:>4s}  a3={str(d_pred[3]):>14s}  c3={str(c3_pred):>12s}  "
+        rows.append((name, Z + N, d_pred[K], cK_pred, src, ok3))
+        log(f"    {name:>4s}  a{K}={str(d_pred[K]):>14s}  "
+            f"c{K}={str(cK_pred):>12s}  "
             f"[{src}] {'' if ok3 is None else ('ok' if ok3 else 'MISMATCH')}")
 
     print()

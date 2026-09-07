@@ -348,3 +348,42 @@ cubic did not.
 The `ups = -tau` relation is the one worth watching: it was NOT fitted — it fell
 out of three independent measurements — so if a quartic analogue exists it should
 be visible without tuning.
+
+## PREDICTION REFUTED 2026-09-07 09:20 — as pre-registered, and that is the point
+
+    bond nn:  (1/2)(1, -2, 5/2, -5/2, 9/4)      chi_nn = 9/4
+
+**Predicted 59/12 (= 4.917). Measured 9/4 (= 2.25).** The linear-in-n /
+linear-in-tau family is dead. It was written down before the measurement
+precisely so it could die this way rather than be quietly replaced by whatever
+the number turned out to fit.
+
+**The quartic column is not even monotone:**
+
+    pp   1/4      pn   31/12      nn   9/4
+         0.25          2.583           2.25
+
+So `chi` rises then falls across the bonds. No linear rule in `n`, `tau`, or
+anything else two-parameter can produce that, and I will not go looking for a
+three-parameter one — three points and three parameters is not a finding.
+
+**`ups = -tau` SURVIVES, 3/3.** `ups_nn = -5/2` against `tau_nn = 5/2`. The
+relation that was NOT fitted holds; the one that WAS fitted broke. That
+asymmetry is the only thing here worth carrying forward.
+
+## 🛑 AND I FOUND A DEFECT IN MY OWN PROBE, mid-run
+
+At `K = 4` the table printed headers `a4` / `c4` over values that were `a3` /
+`c3`: lines 251, 260, 269 and 270 hardcoded indices 2 and 3 rather than
+`K-1` and `K`. This is the SAME mislabelling class I fixed in this file
+yesterday, reintroduced one commit later in code I wrote to avoid it.
+
+**The verdict is unaffected and the run is not wasted.** The failure check
+compares the FULL coefficient vector (`if d_pred != d_live`), so an order-4
+disagreement is still caught — it is the display and the per-row flag that were
+wrong, not the test. Fixed to derive both indices from `K`; `K = 3` is unchanged
+(`K-1, K` = 2, 3), so #7002's merged result is untouched.
+
+The nn row is now in the `K = 4` input cache, so the corrected table can be
+regenerated without re-earning the 2.7 h of bond measurement — which is exactly
+what that cache was added for, one commit before it was needed.
