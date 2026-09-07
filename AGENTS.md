@@ -741,6 +741,29 @@ user's last message, not the most recently mentioned file.
       > fourth independent run — **not one self-stale witness in the corpus is
       > safe to refresh**, and an idle pass should spend its budget on sidecars.
       > Recorded in `computations/witness-staleness-triage.witness.json`.
+      >
+      > **FIFTH run, 2026-09-07, and `cosmetic = 0` again — but one bucket
+      > MORE THAN DOUBLED and it is the one that matters.** Quote these:
+      > **603 decided**, **substantive 205 / 34.0 %**, **rewritten 333 /
+      > 55.2 %**, **unresolvable 55**, `cosmetic_env_differs` **1**,
+      > `cosmetic_import_infra_only` **0**, `cosmetic_strips_provenance` **0**,
+      > `unparseable` **0** — and **`cosmetic_import_cone_drift` 4 → 9**.
+      >
+      > The headline is stable across five runs and ~5 weeks: **zero self-stale
+      > witnesses are safe to refresh**, so an idle pass still spends its budget
+      > on sidecars. The *interesting* movement is that import-cone drift is the
+      > only growing bucket, and it is the one whose own label records
+      > "measured 2/2 moved" — a producer whose source is byte-stable while a
+      > NUMERIC-bearing module it calls changed. Those 9 are not "safe to
+      > refresh"; they are the opposite, the cases where a re-run is *expected*
+      > to move a number, and they are invisible to the `git diff <producer>`
+      > check AGENTS.md tells you to run. Everything else held its proportion
+      > (substantive 33.3 → 34.0 %, rewritten 55.3 → 55.2 %), so this is not
+      > drift in the denominator.
+      >
+      > Bean `qou-e9pp`, whose own record stopped at the third run
+      > (2026-08-19) and whose title still reads "~700 self-stale witnesses"
+      > against a decided population that has been 559–628 for a month.
 
       Source-
       identical is necessary but not sufficient, and the two extra gates are
