@@ -1347,13 +1347,27 @@ def _lp_kernel_steps(partition, chains):
 
     The kernel is then asked for 50-dps MPFR arithmetic over 15-digit inputs.
 
-    This fix does NOT move the producer's output, and that is expected rather
-    than a reason to skip it: `unified_iterative_correction` narrows to float64
-    inside its own accumulation loop (`math.log(abs(tr_run))`, see the note on
-    `binding_energy`'s return), so nothing downstream can resolve a change at
-    the 15th digit.  What it fixes is the claim: the boundary now carries what
-    it says it carries, and it stops being the binding constraint the moment
-    that separately-tracked narrowing is addressed.
+    This fix DOES move the output, and by more than the float64 floor.  A
+    three-way run on `unified_iterative_correction(1, 1, ·)` — pre-fix, this
+    fix alone, and this fix plus the exact `_NN_D_MP` / `_PN_D_MP` coefficients
+    — separates the two, each arm in its own process:
+
+        k_exact=4   truncating -0.08955968305895065
+                    full       -0.08955968305895065     rel 0
+        k_exact=5   truncating -0.7335499391634722
+                    full       -0.7335499391634975      rel 3.45e-14
+
+    So the truncation is invisible at k_exact=4 and worth 3.4e-14 relative at
+    k_exact=5 — about 150x the float64 floor, and above the framework's 1 ppQ
+    (1e-15) L1 target.  It grows with the partition set, which is what a
+    15-digit input truncation amplified through longer products should do, so
+    do NOT read the k=4 null as evidence this is cosmetic.
+
+    It is still not the BINDING constraint on this producer's accuracy:
+    `unified_iterative_correction` narrows to float64 inside its own
+    accumulation loop (`math.log(abs(tr_run))`, see the note on
+    `binding_energy`'s return) and returns a Python float.  That narrowing is
+    downstream of this one and is tracked separately.
     """
     if not _HAS_LP_KERNEL:
         return None
