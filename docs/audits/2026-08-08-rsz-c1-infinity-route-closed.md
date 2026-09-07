@@ -146,6 +146,51 @@ rather than standing for a week.
 [`2026-08-01-uq0-map-resurgence-surreal-tool-assessment.md`](2026-08-01-uq0-map-resurgence-surreal-tool-assessment.md) §2),
 structurally done and quantitatively open.
 
+> 🛑 **The citation above points at a CLASSICAL-ONLY file, and the q-native carrier
+> it should point at goes unmentioned (added 2026-09-07, bean `qou-ctc3` /
+> `qou-frzo` Brick 0).**
+>
+> **The reasoning in this section is untouched and is why the correction is worth
+> making** — alien derivations genuinely need no slope filtration, which is exactly
+> why they survive where RSZ died. Only the pointer is wrong.
+>
+> `QBeta/OneInstantonNormalization.lean` states its theorems over `{M Z : ℝ → ℝ}`
+> with `HasDerivAt` **in the hypotheses** — real functions, classical derivatives,
+> no q-difference object anywhere. Triaged CLASSICAL-ONLY by
+> [`scripts/alien-surface-qnative-triage.py`](../../scripts/alien-surface-qnative-triage.py),
+> which decides on statement types rather than proofs. This section warns two
+> paragraphs below that C1 **cannot** be confluenced to the classical setting, so a
+> classical-only file cannot be the q-native route it recommends.
+>
+> **The carrier that fits is `QOU.Mathlib.QAlienBridgeEquation`**, unmentioned here:
+>
+> ```lean
+> structure QBridgeSystem (R A Ω : Type*) [CommSemiring R] [CommRing A] [Algebra R A] where
+>   dil    : A ≃ₐ[R] A                      -- the dilation automorphism σ
+>   alien  : Ω → Derivation R A A
+>   weight : Ω → R
+>   bridge : ∀ ω f, conjDeriv dil (alien ω) f = weight ω • alien ω f + unipotent ω f
+> ```
+>
+> with `conjDeriv σ D = σ ∘ D ∘ σ⁻¹`. Its own docstring makes this section's point:
+> *"in the q-setting the 'ordinary operator' is an automorphism, so the relation is a
+> **conjugation rather than a commutator**."* Sorry-free; import cone purely algebraic
+> (`RingTheory.Derivation.Basic`, `Tactic`) — no archimedean dependence, which is the
+> property this section's confluence warning demands.
+>
+> **What is NOT claimed.** This clone is **shallow**, so `git log --diff-filter=A`
+> reports the fetch boundary rather than true creation for both this audit and that
+> file — both return the same commit. **It is therefore undetermined here whether
+> the carrier predated this audit.** This note records that the audit *does not
+> mention* it (grep: 0 hits for `QAlienBridge`/`QBridgeSystem`/`conjDeriv`), which is
+> a fact about the text; it does not assert the author overlooked something
+> available at the time.
+>
+> **And the carrier has ZERO importers** — nothing instantiates `QBridgeSystem` at
+> any concrete object. So the honest state of this recommendation is not "the route
+> is untried" but "the route's algebra is built, sorry-free, and has never been
+> instantiated once." Tracked as `qou-frzo`.
+
 The reason it is *right* is the reason RSZ was wrong: `F(P₁,…,P_k)` is built on the
 slope filtration and needs `k ≥ 2`. **Alien derivations need no filtration** — they
 act on the resurgent function and read Borel-plane singularities directly, which is
