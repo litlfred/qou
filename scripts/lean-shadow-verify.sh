@@ -67,11 +67,42 @@ LEAN_OPTS="${LEAN_OPTS:--DautoImplicit=false -s 65536}"
 # Measured 2026-09-05 on a correctly-restored container: 2442 QOU oleans at the
 # root, 0 at the per-paper path.  Hardcoding the per-paper path therefore made
 # this script exit 2 on exactly the tree it exists to verify against.
-# $OLEANS may be set to override.
+#
+# ...but "first candidate WITH a QOU/ dir" is not the same test as "the restored
+# tree", and what breaks it is the DEFAULT state of a fresh session here.
+#
+# Measured 2026-09-08.  The cache was restored to the ROOT (2442 QOU oleans),
+# and `scripts/lean-build-bg.sh` -- started by a SessionStart hook -- was running
+# `lake build` with cwd = $PKG, filling the PAPER tree from scratch.  So the
+# paper path HAD a QOU/ dir, the loop took it, and it held exactly TWO oleans.
+# The rebuild set was computed against that, and the run died on the first
+# Mathlib-importing module.  Watched over the next few minutes the same tree went
+# 2 -> 17 QOU oleans and 2352 -> 2950 mathlib oleans: not a stale stub, a tree
+# mid-build.  It is present, incomplete, and CHANGING, and "has a QOU/ dir"
+# cannot tell that from a restored cache.
+#
+# So pick by COMPLETENESS, not by order.  This is also the criterion that is
+# right in BOTH directions -- see the PKGROOTS note below, where the same
+# disagreement runs the other way.  $OLEANS may be set to override.
+#
+# LIMITATION, stated because it is real: the count is a snapshot of a tree
+# another process may be writing.  It is the right call at the moment it is
+# taken, and a build that finishes mid-run can make it the wrong one.  Hence the
+# warning below -- AGENTS.md §"QUIESCE THE SESSIONSTART BUILD" is the actual fix.
+if pgrep -f 'lake build' >/dev/null 2>&1; then
+  echo "WARNING: a 'lake build' is running (likely scripts/lean-build-bg.sh from" >&2
+  echo "  the SessionStart hook).  It writes into an olean tree this script reads," >&2
+  echo "  so the counts below are a snapshot of a MOVING target.  Prefer to let it" >&2
+  echo "  finish, or pass OLEANS=<dir> explicitly." >&2
+fi
 if [ -z "${OLEANS:-}" ]; then
+  _best_n=-1
   for cand in "$PKG/.lake/build/lib/lean" "$ROOT/.lake/build/lib/lean"; do
-    [ -d "$cand/QOU" ] && { OLEANS="$cand"; break; }
+    [ -d "$cand/QOU" ] || continue
+    _n=$(find "$cand/QOU" -name '*.olean' -size +0 2>/dev/null | wc -l)
+    if [ "$_n" -gt "$_best_n" ]; then _best_n=$_n; OLEANS="$cand"; fi
   done
+  [ -n "${OLEANS:-}" ] && echo "olean tree chosen by count: $_best_n QOU oleans"
 fi
 [ -n "${OLEANS:-}" ] && [ -d "$OLEANS/QOU" ] || {
   echo "no restored olean tree with a QOU/ dir — looked in:" >&2
@@ -130,13 +161,53 @@ SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
 # correct by luck of environment.  Bean `qou-tpdg`.
 # Build this with a LOOP, not `ls -d <pat1> <pat2>`: `ls` SORTS its arguments,
 # so it reorders the two patterns ("$ROOT/.lake/..." sorts before
-# "$ROOT/content/...") and the root tree would win the pinning above -- which is
-# exactly the bug being fixed, reintroduced by the fix.  Shell glob expansion
-# keeps the patterns in the order written.
+# "$ROOT/content/...") and the root tree would win the pinning above.  Shell
+# glob expansion keeps the patterns in the order written.
+#
+# BUT A FIXED ORDER IS WRONG IN ONE DIRECTION OR THE OTHER, and pinning PAPER
+# first was wrong here.  Measured 2026-09-08, same session as the note above:
+# paper mathlib held 2352 oleans and NO `Mathlib/Tactic.olean`; root held 3469
+# WITH it.  Since Lean resolves a package from the first LEAN_PATH root holding
+# that package directory, the incomplete paper tree SHADOWED the complete root
+# one and every `import Mathlib.Tactic` failed -- naming the paper path in an
+# error about a file that exists at the root.  That is the previous bug with the
+# two locations swapped, which is the tell that neither pin is the fix.
+#
+# The cause is the same in-flight `lake build`, so this is transient: half an
+# hour later `Mathlib/Tactic.olean` was present in the paper tree and its count
+# was 2950.  A gate that is correct only between builds is not correct.
+#
+# Order the LOCATIONS by completeness, on the same criterion the tree selection
+# above uses.  Non-empty oleans only, so the 0-byte `Mathlib/Tactic` recorded
+# above counts as the absence it behaves like.  Correct on all three measured
+# containers, and not by luck: it asks the question that matters.
+#
+# Score EVERY location individually and sort, rather than ordering two groups.
+# Two intermediate versions of this got it group-wise and both were right only
+# by magnitude: summing the paper locations read 2800 against root's 3469, and
+# taking their max read 2848 -- but that 2848 is a DIFFERENT paper's tree from
+# the one the glob would put first (qou's own is 2352), so neither number
+# describes the location that actually shadows.  There are four locations here,
+# not two; rank them and the question stops being which group to pin.
+#
+# Score = non-empty oleans under that location's `mathlib`, so the 0-byte
+# `Mathlib/Tactic.olean` recorded above counts as the absence it behaves like.
+# A location with no mathlib at all scores 0 and sinks, which is what we want:
+# it can still supply aesop or batteries from the tail of the path.
+_scored=""
+for _loc in "$ROOT"/.lake/packages "$ROOT"/content/*/lean/.lake/packages; do
+  [ -d "$_loc" ] || continue
+  _c=$(find "$_loc/mathlib/.lake/build/lib/lean" -name '*.olean' -size +0 2>/dev/null | wc -l)
+  _scored="$_scored$(printf '%08d\t%s\n' "$_c" "$_loc")
+"
+done
+echo "mathlib olean counts per package location (most complete goes first on LEAN_PATH):"
+printf '%s' "$_scored" | sort -rn | sed 's/^0*\([0-9]\)/  \1/;s/\t/  /' | grep -v '^ *$'
 PKGROOTS=""
-for d in "$ROOT"/content/*/lean/.lake/packages/*/.lake/build/lib/lean \
-         "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do
-  [ -d "$d" ] && PKGROOTS="$PKGROOTS$d:"
+for _loc in $(printf '%s' "$_scored" | sort -rn | cut -f2); do
+  for d in "$_loc"/*/.lake/build/lib/lean; do
+    [ -d "$d" ] && PKGROOTS="$PKGROOTS$d:"
+  done
 done
 LP="$SHADOW:$PKGROOTS$SIBLINGS$OLEANS"
 
