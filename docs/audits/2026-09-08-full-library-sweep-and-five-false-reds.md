@@ -95,11 +95,32 @@ does not (`qou-xumu`). The reason string names the missing *module*, not the fir
 One is live and consequential:
 `Mathlib.RepresentationTheory.Homological.GroupCohomology.LowDegree` is absent
 from **both** mathlib olean trees, which makes `QOU.Eightfold.ObstructionH2Mathlib`
-and therefore **the library root itself** unjudgeable here. Remedy is a sibling's
-`scripts/lean-restore-gap-oleans.sh`, deliberately not run mid-sweep: it fetches
-~1.7 GiB into a `.git` already at 13 GB, and that move is on record as having
-taken a container to 402 MB free, where the harness cannot write its own output
-and every command fails.
+and therefore **the library root itself** unjudgeable here.
+
+> **🛑 CORRECTED 2026-09-08 — this paragraph named the wrong remedy at a wildly
+> wrong price, and both errors were mine.** It read: *"Remedy is a sibling's
+> `scripts/lean-restore-gap-oleans.sh`, deliberately not run mid-sweep: it fetches
+> ~1.7 GiB into a `.git` already at 13 GB."* Two things are wrong.
+>
+> **It does not fetch 1.7 GiB.** That script fetches
+> `lake-cache/qou-<slug>-mathlib-gap-modules`, whose payload is a **2.3 MB**
+> tarball. I conflated it with the *full* olean cache branch, which is the 1.7 GiB
+> one. The estimate was off by ~700×, and I deferred the work for hours on it.
+>
+> **And it is not the remedy.** That branch ships **seven** prebuilt oleans for
+> content blocks; `LowDegree` is **not among them**, so running it would not have
+> made the root judgeable. It was run, and did not.
+>
+> **The actual remedy is to build from source**, and it is cheap: the missing cone
+> is **79 Mathlib modules**, all of whose sources are present, at **188 s and
+> 57 MB** — `scripts/lean-build-mathlib-gap-cone.py`. With them in place the sweep
+> reports `[101/101] ok QOU`: **101 ok, 0 RED, 0 UNVERIFIED, 0 skipped**.
+>
+> **So the library root is verifiable in this container**, and the standing
+> attribution to a container resource limit (bean `qou-ed8a`, repeated in a
+> sibling's merged audit) is wrong. The lesson is the cheap one: I priced a script
+> from its family resemblance to another script instead of reading its own
+> `git fetch`. Full write-up: PR #7157.
 
 ## The one real defect, and why nothing had caught it
 
