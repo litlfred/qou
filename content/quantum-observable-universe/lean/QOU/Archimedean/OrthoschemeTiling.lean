@@ -471,10 +471,21 @@ lines and STRICTLY INSIDE the third half-plane.
 
 This is what pins `inscribedTriangle` to the triangle whose vertices are the
 three named points of the circle.  Strictness in the third slot is where
-`0 < R` and acuteness are spent: the gap is `2R·sin·sin`. -/
+`0 < R` is spent: the gap is `2R·sin·sin`.
+
+**No acuteness.**  This statement held for every positive triple summing to `π`
+all along; the three `< π/2` hypotheses it used to carry were inherited from its
+neighbours and were consumed by nothing (dropped 2026-09-08, bean `qou-w3eg`).
+Each is spent only inside a `Real.sin_pos_of_pos_of_lt_pi` whose side goal is
+`X < π`, and `α + β + γ = π` with the other two positive already gives that.
+The gap `cos ψ' − cos(2ψ+ψ') = 2 sin(ψ+ψ') sin ψ` is positive whenever both
+sines are, which on the simplex is everywhere.
+
+That matters downstream rather than here: this lemma is the only place the
+`idealTet_eq_chimney` chain touched acuteness, so its removal carries the
+vertex-defined-region identity to obtuse triangles as well. -/
 theorem inscribedTriangle_vertex_incidence {R t α β γ : ℝ} (hR : 0 < R)
-    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ)
-    (hα : α < π / 2) (hβ : β < π / 2) (hγ : γ < π / 2) (hsum : α + β + γ = π) :
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ) (hsum : α + β + γ = π) :
     -- P₁, at angle `t`: on chord lines 1 and 3, strictly inside half-plane 2
     ((circlePoint R t).1 * Real.cos (t + γ) + (circlePoint R t).2 * Real.sin (t + γ)
         = R * Real.cos γ

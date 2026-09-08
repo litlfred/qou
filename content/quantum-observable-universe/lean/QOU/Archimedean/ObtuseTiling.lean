@@ -16,11 +16,18 @@
   triangle except the right-angled one, where `γ = π/2` degenerates `W_sub` to a
   half-plane and the `ψ < π/2` wedge machinery fails on both sides.
 
-  **SCOPE — this does not close the obtuse case of Milnor's identity.**  It is a
-  statement about the chimney over an inscribed triangle.  Identifying that
-  region with an ideal tetrahedron is `IdealTetEqChimney.idealTet_eq_chimney`,
-  which still carries `α, β, γ < π/2` and is a *set equality* — analytic
-  continuation cannot supply it, and neither can anything here.  Bean `qou-w3eg`.
+  and, at the end of the file, the identity itself on an ideal tetrahedron
+  (`idealTetVolume_of_vertices_obtuse`).
+
+  **This header said the opposite twice, and the retraction is the useful part.**
+  It read: *"SCOPE — this does not close the obtuse case … `idealTet_eq_chimney`
+  still carries `α, β, γ < π/2` and is a set equality — analytic continuation
+  cannot supply it, and neither can anything here."*  The premise was checked and
+  is false: that theorem's three acuteness hypotheses were **unused**, spent only
+  on `X < π` side goals the angle sum already gives.  Dropping them costs three
+  edits and closes the case.  The lesson is not about this file — a hypothesis
+  inherited down a chain is not evidence that the chain needs it, and I asserted
+  the gate twice without reading the proof that was supposed to enforce it.
 
   **Both** directions of the tiling are a.e. rather than strict, over two
   different null sets:
@@ -41,6 +48,7 @@
 -/
 import QOU.Archimedean.ObtuseWedgeDegenerate
 import QOU.Archimedean.IdealTetObtuseReduction
+import QOU.Archimedean.IdealTetEqChimney
 
 namespace QOU.Archimedean.HyperbolicVolume
 
@@ -550,5 +558,51 @@ theorem hypVolume_chimney_inscribedTriangle_obtuse {R t α β γ : ℝ} (hR : 0 
   rw [hTvol, lob_sum_eq_reflected hsum, show α + β = π - γ by linarith,
     ENNReal.ofReal_sub _ nc]
   exact hsub.symm
+
+/-! ### The obtuse case of Milnor's identity
+
+The chimney statement above becomes a statement about an **ideal tetrahedron**
+through `idealTet_eq_chimney`, which identifies the vertex-defined region (an
+intersection of four geodesic half-spaces) with the chimney over the inscribed
+triangle.
+
+That theorem used to carry `α, β, γ < π/2`, and this file's own header named it
+as the reason the obtuse case stayed open — a *set* equality, which no
+continuation argument can supply.  **Those hypotheses were unused.**  They were
+spent only inside `Real.sin_pos_of_pos_of_lt_pi` side goals of the form `X < π`,
+which `α + β + γ = π` already gives from the positivity of the other two; the
+whole chain — `inscribedTriangle_vertex_incidence`, `face1`/`face2`/`face3`,
+`idealTet_eq_chimney` — is acuteness-free once they are dropped.
+
+So the gate was inherited, not real, and the obtuse case closes here. -/
+
+/-- **MILNOR'S IDENTITY FOR AN OBTUSE IDEAL TETRAHEDRON.**
+
+    Vol(idealTetrahedron P₁ P₂ P₃) = Λ(α) + Λ(β) + Λ(γ)      (π/2 < γ)
+
+the obtuse counterpart of `idealTetVolume_of_vertices`.  The region is the
+independently-defined one — the intersection of four geodesic half-spaces built
+from the four ideal vertices — not a chimney by fiat.
+
+Together with the acute theorem this covers **every** admissible triple except
+the right-angled one, where `γ = π/2` degenerates the subtracted wedge to a
+half-plane and the `ψ < π/2` wedge machinery fails on both sides.
+
+`Λ(γ) < 0` here, which is Milnor's "one piece enters with a minus sign"; the
+subtraction is realised set-theoretically by `obtuseWedges_ae_eq_inscribedTriangle`
+and is carried out in `ℝ`, never in `ℝ≥0∞`.
+
+Closed modulo the same single cited totally-geodesic / normalized-position
+identification the acute theorem rests on (File A1's `geodesicPlaneThrough` — a
+definition with a citation, not an axiom or `sorry`).  No analytic continuation
+is used anywhere, and acuteness of `α` and `β` is derived rather than assumed. -/
+theorem idealTetVolume_of_vertices_obtuse {t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    hypVolume (idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
+        (circlePoint 1 (t + 2 * γ + 2 * α)))
+      = ENNReal.ofReal (Lob α + Lob β + Lob γ) := by
+  have hγ0 : 0 < γ := lt_trans (by positivity) hγ
+  rw [idealTet_eq_chimney hα0 hβ0 hγ0 hsum]
+  exact hypVolume_chimney_inscribedTriangle_obtuse (by norm_num) hα0 hβ0 hγ hsum
 
 end QOU.Archimedean.HyperbolicVolume
