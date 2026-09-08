@@ -48,6 +48,7 @@ never rebuilt.
 from __future__ import annotations
 
 import argparse
+import threading
 import os
 import pathlib
 import re
@@ -475,17 +476,35 @@ def sweep_one(args) -> int:
             src = PKG / (m.replace(".", "/") + ".lean")
             out = shadow / (m.replace(".", "/") + ".olean")
             out.parent.mkdir(parents=True, exist_ok=True)
-            # The shadow is hardlinked to the real tree, so REMOVE the target
-            # before `lean -o` writes it.  Writing through a shared inode would
-            # mutate the real olean tree -- the thing the shadow exists to
-            # prevent.  Also drop same-stem siblings that would then be stale.
-            for stale in (out, out.with_suffix(".olean.hash"), out.with_suffix(".ilean")):
+            # The shadow is hardlinked to the real tree, so the target must not be
+            # written THROUGH: that would mutate the real olean tree, which is the
+            # one thing the shadow exists to prevent.
+            #
+            # Write to a private temp path and `os.replace` it into place.  Do NOT
+            # unlink first, which is what this did and which is a RACE, MEASURED
+            # 2026-09-08:
+            #   [292/383] ok           QOU.Mathlib.SchenstedStandardTableau
+            #   [293/383] UNVERIFIED   QOU.Mathlib.SkewSYTBranchingBijection
+            #                          (missing olean QOU.Mathlib.SchenstedStandardTableau)
+            # The dependency built fine and its dependent could not find it, one
+            # line apart.  `layers()` orders on DIRECT imports, but Lean loads the
+            # whole TRANSITIVE closure, so two modules can share a layer while one
+            # needs the other's olean -- and with --jobs 3 the reader then hits the
+            # window between unlink and write.  `os.replace` is atomic: a concurrent
+            # reader sees the old hardlinked olean or the new one, never absence.
+            # It also breaks the hardlink (a fresh inode is moved into the name), so
+            # the real tree stays protected exactly as before.
+            #
+            # The failure was SAFE -- it understated coverage rather than inventing
+            # a defect, and the honest UNVERIFIED label is what made it findable.
+            for stale in (out.with_suffix(".olean.hash"), out.with_suffix(".ilean")):
                 try:
                     stale.unlink()
                 except (FileNotFoundError, IsADirectoryError):
                     pass
+            tmp = out.with_name(out.name + f".tmp{os.getpid()}.{threading.get_ident()}")
             try:
-                r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(out)],
+                r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(tmp)],
                                    cwd=PKG, env=env, capture_output=True, text=True,
                                    timeout=args.timeout)
             except subprocess.TimeoutExpired:
@@ -498,7 +517,12 @@ def sweep_one(args) -> int:
                 # 2026-09-07: QOU.Machinery.HeckeH4Semisimple exceeded 1800s at
                 # module 527 of 628, and the remaining 101 were never attempted AND
                 # no summary was printed -- bean qou-xumu).
+                tmp.unlink(missing_ok=True)
                 return m, None, f"TIMEOUT after {args.timeout}s"
+            if r.returncode == 0 and tmp.exists():
+                os.replace(tmp, out)     # atomic; no window where `out` is absent
+            else:
+                tmp.unlink(missing_ok=True)
             return m, r.returncode, (r.stdout + r.stderr)
 
         for layer in order:
