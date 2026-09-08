@@ -730,7 +730,7 @@ stays "chosen".
 
 | # | decision | recorded where | consequence |
 |---|---|---|---|
-| D1 | **ε(Δ) := the augmentation `σ ↦ q`** (option B of the 2026-09-05 decision doc). The owner selected the option "Decide ε … I recommend the augmentation"; the selection endorsed an option that carried the agent's recommendation, and the bean says where to overrule | `qou-99qc` (2026-09-08 append); AGENTS.md scoping note | Q_β base = 0.8798906 MeV (+12.470 %); the published 0.17 % is retired as the base and kept as the C-frame / z = 1 historical cross-check; `qou-cds1` has its base and S1 reduces to the phase (`qou-pdix`); dashboard rows Q_β / m_n / Δ_pn to be re-scored on the augmentation base — **not done here** (needs the producer under D; ask-before-change) |
+| D1 | **ε(Δ) := the augmentation `σ ↦ q`** (option B of the 2026-09-05 decision doc) — selected by the owner on the option "Decide ε … I recommend the augmentation". **🛑 In tension with D7, flagged the same hour:** `13bb8243d8` on `main` (`qbeta_augmentation_is_a_markov_trace_probe.py`, landed after this branch diverged and unknown to the option text) shows the augmentation *is* the Markov trace at `z = q`, so the choice is which Markov parameter; D7 (convention D = two-row truncation, governs the decay channel) then selects `z_D`, since the augmentation is the one-row truncation (`y_(2,1) = 0`) and is not convention D. Owner confirmation requested (§8.5) | `qou-99qc` (2026-09-08 appends); AGENTS.md scoping note | Q_β base = 0.8798906 MeV (+12.470 %); the published 0.17 % is retired as the base and kept as the C-frame / z = 1 historical cross-check; `qou-cds1` has its base and S1 reduces to the phase (`qou-pdix`); dashboard rows Q_β / m_n / Δ_pn to be re-scored on the augmentation base — **not done here** (needs the producer under D; ask-before-change) |
 | D2 | **Molien** — not a new decision: ruled 2026-09-05, re-affirmed today | `qou-oots` | this document's §5.3, §5.5, §7.1 said the choice was open; **that was my error**, corrected above |
 | D3 | not selected as such; the owner's ruling above supersedes it — the census rows are retired by the ruling, not by a bookkeeping close of `qou-e5jf` | `qou-ales` | `qou-e5jf` stays open (rule 13a) with a cross-reference |
 
@@ -756,3 +756,14 @@ body. C4 (the two live m_n values) and C5 (the L1 assertion tolerance) are noted
   `7.3e-50` and `1.2e-49` `[M]`. The only other fields that moved are `computedAt` / `commitSha` /
   `scriptHash`. The `raw-float64` warning on `structural_max_non_anchor_delta_ppb` is
   pre-existing on `main` (same `float` type there) and is not introduced here.
+
+### 8.5 Open on the owner: which Markov parameter is ε — the augmentation or `z_D`
+
+Commit `13bb8243d8` (bean `qou-99qc`, on `main` after this branch diverged) removes the dichotomy
+the D1 option was written on. Both admissible candidates are points of one Markov family
+(`ε = tr_M^z`, `z ∈ {q, z_D}`), so the decision is a *convention* question, and the owner's D7
+ruling (2026-09-07) already assigns convention D to the decay channel. Under D7 the consistent
+choice is `z_D` (Q_β = 0.4447004 MeV, −43.157 %); the augmentation (`z = q`, +12.470 %) is the
+strictly finer one-row truncation and is not convention D. The owner selected the augmentation
+on an option that did not carry this fact. Neither base is wired; the question is put in chat
+with both options framed, and this row records the outcome when it arrives.
