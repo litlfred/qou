@@ -1,0 +1,241 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-07T18:03:12.173054+00:00",
+  "commitSha": "916e42f892fda3f524fd7b7e08fd1ac2d4e2729a",
+  "assertions": [
+    {
+      "name": "Delta_S_bar_odd_iff_admissible__z_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=1  (published): bar-odd=False, admissible=False — they agree"
+    },
+    {
+      "name": "Delta_S_bar_odd_iff_admissible__z_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=q  (augmentation): bar-odd=True, admissible=True — they agree"
+    },
+    {
+      "name": "Delta_S_bar_odd_iff_admissible__z_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_D  (Markov, conv D): bar-odd=True, admissible=True — they agree"
+    },
+    {
+      "name": "Delta_S_bar_odd_iff_admissible__z_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_C  (excised conv C): bar-odd=False, admissible=False — they agree"
+    },
+    {
+      "name": "Delta_L_not_bar_odd__z_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=1  (published): bar-odd=False on Delta_L (expected False for all four)"
+    },
+    {
+      "name": "Delta_L_not_bar_odd__z_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=q  (augmentation): bar-odd=False on Delta_L (expected False for all four)"
+    },
+    {
+      "name": "Delta_L_not_bar_odd__z_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_D  (Markov, conv D): bar-odd=False on Delta_L (expected False for all four)"
+    },
+    {
+      "name": "Delta_L_not_bar_odd__z_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_C  (excised conv C): bar-odd=False on Delta_L (expected False for all four)"
+    },
+    {
+      "name": "delta_L_second_branch_is_involution_consistent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Bbar(B(z)) - z vanishes identically on at least one branch, so the functional equation is not self-contradictory and Delta_L is NOT excluded — this is scope-(a), not scope-(b)"
+    },
+    {
+      "name": "Delta_S_whole_admissible_span_is_bar_odd",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "both basis traces have vanishing bar-odd defect, so every admissible combination on Delta_S is bar-odd"
+    },
+    {
+      "name": "Delta_L_no_nonzero_constant_combination_is_bar_odd",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the two bar-odd defects on Delta_L are NOT proportional over Q (ratio (q^2+1)^2/(q^4+1) is q-dependent), so a*dA + b*dB = 0 forces a = b = 0 for constant a, b — only the zero trace"
+    },
+    {
+      "name": "delta_L_closed_form_reproduces_the_committed_witness",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|mine - witness|/witness = 8.5395e-51 at 60 dps"
+    },
+    {
+      "name": "q_beta_reference_is_truncated_to_eight_figures",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "codata_constants.Q_BETA_MEV = 0.7823334099999999999999999999999999999999999999999994098296040398407753 differs from the witness's own reference by 8.8209e-10 — a truncated reference in a corpus that computes at 60 dps. Recorded, not fixed."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2384,
+  "computation": "qbeta-bar-odd-element-discriminator",
+  "scriptFile": "qbeta_bar_odd_element_discriminator_probe.py",
+  "scriptHash": "3d217693e505",
+  "scriptCommitSha": "916e42f892fda3f524fd7b7e08fd1ac2d4e2729a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_bar_odd_element_discriminator_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_bar_odd_element_discriminator_probe.py"
+  },
+  "description": "The corpus establishes (qou-e58e, 11 nuclei, five q) that bar: q -> 1/q IS proton<->neutron conjugation, and at bond level p<->n is exactly z<->zbar. Q_beta's element Delta = B_n - B_p is a p<->n DIFFERENCE, so under that conjugation it should be bar-ODD: bar(tr_M(Delta)) = -tr_M(Delta). Tested on the two candidate elements the fork leaves open. Delta_S (normal-form difference, tr_M AFFINE in z): bar-odd iff bar(z) = z - h, ONE branch, satisfied by EXACTLY the two admissible functionals (z=q augmentation, z_D = q^3/(q^2+1)) and by neither z=1 (published) nor z_C (excised C). Delta_L (eleven-crossing word difference, tr_M QUADRATIC in z): two branches, satisfied by NONE of the four, the admissible pair included. So under the isospin reading Delta_S + admissible functional is bar-odd and Delta_L + admissible functional is not. AND THE WHOLE SPAN, which is the statement that matters: the admissible TRACES are 2-dimensional and the two Markov points span them, so testing only those points under-claims. Measured, on Delta_S BOTH basis traces have vanishing bar-odd defect => EVERY admissible trace is bar-odd; on Delta_L neither does and the two defects are NOT proportional over Q (ratio (q^2+1)^2/(q^4+1) is q-dependent) => a*dA + b*dB = 0 forces a = b = 0, so ONLY THE ZERO TRACE is bar-odd. That is a genuine exclusion of Delta_L WITHIN the admissible span over Q, not a sampling argument. NOT established: coefficients in Q(q) (bar acts on them too; scaling by f(q) rescales Q_beta, a different physical claim) and non-admissible z (Delta_L's second branch is involution-consistent, so some inadmissible z may work). Reached with NO anchor and NO experimental input. Nothing wired, no functional adopted, no element declared canonical.",
+  "contentBlock": "rem:qbeta-functional-admissibility",
+  "data": {
+    "admissible_span": {
+      "Delta_S": {
+        "defect_augmentation": "0",
+        "defect_z_D": "0",
+        "defects_proportional_over_Q": true,
+        "every_combination_bar_odd": true,
+        "verdict": "EVERY combination is bar-odd"
+      },
+      "Delta_L": {
+        "defect_augmentation": "-(q - 1)**2*(q + 1)**2*(q**2 + 1)**3/(4*q**5)",
+        "defect_z_D": "-(q - 1)**2*(q + 1)**2*(q**2 + 1)*(q**4 + 1)/(4*q**5)",
+        "defects_proportional_over_Q": false,
+        "every_combination_bar_odd": false,
+        "verdict": "ONLY the zero trace is bar-odd"
+      }
+    },
+    "elements": {
+      "Delta_S": {
+        "degree_in_z": 1,
+        "bar_odd_branches": [
+          "(-q**2 + q*z + 1)/q"
+        ],
+        "functionals": {
+          "z=1  (published)": {
+            "z": "1",
+            "bar_z": "1",
+            "bar_odd": false,
+            "admissible_under_D": false
+          },
+          "z=q  (augmentation)": {
+            "z": "q",
+            "bar_z": "1/q",
+            "bar_odd": true,
+            "admissible_under_D": true
+          },
+          "z_D  (Markov, conv D)": {
+            "z": "q**3/(q**2 + 1)",
+            "bar_z": "1/(q*(q**2 + 1))",
+            "bar_odd": true,
+            "admissible_under_D": true
+          },
+          "z_C  (excised conv C)": {
+            "z": "sqrt(q)/(q + 1)",
+            "bar_z": "sqrt(q)/(q + 1)",
+            "bar_odd": false,
+            "admissible_under_D": false
+          }
+        }
+      },
+      "Delta_L": {
+        "degree_in_z": 2,
+        "bar_odd_branches": [
+          "-z",
+          "(q**4*z + 2*q**3 - 2*q + z)/(q**4 + 1)"
+        ],
+        "functionals": {
+          "z=1  (published)": {
+            "z": "1",
+            "bar_z": "1",
+            "bar_odd": false,
+            "admissible_under_D": false
+          },
+          "z=q  (augmentation)": {
+            "z": "q",
+            "bar_z": "1/q",
+            "bar_odd": false,
+            "admissible_under_D": true
+          },
+          "z_D  (Markov, conv D)": {
+            "z": "q**3/(q**2 + 1)",
+            "bar_z": "1/(q*(q**2 + 1))",
+            "bar_odd": false,
+            "admissible_under_D": true
+          },
+          "z_C  (excised conv C)": {
+            "z": "sqrt(q)/(q + 1)",
+            "bar_z": "sqrt(q)/(q + 1)",
+            "bar_odd": false,
+            "admissible_under_D": false
+          }
+        }
+      }
+    },
+    "calibration": {
+      "delta_L_Q_pred_mine": "0.976161273530272642013692390411",
+      "delta_L_Q_pred_witness": "0.976161273530272642013692390410788241100103675098752245151156",
+      "rel_diff": "8.539481019e-51",
+      "q_beta_reference_implied_by_witness": "0.78233340930990850000",
+      "q_beta_reference_in_codata_constants": "0.78233341000000000000",
+      "reference_rel_diff": "8.820938633e-10"
+    },
+    "scope": {
+      "tier": "exclusion within the admissible span over Q; scope-(a) outside it",
+      "established": "Delta_S is bar-odd under EXACTLY the two admissible functionals and, more strongly, on the WHOLE admissible trace span; Delta_L is bar-odd under none of the four and, on the span with constant coefficients, ONLY at the zero trace (the two bar-odd defects are non-proportional over Q). A genuine exclusion within the span.",
+      "NOT_established": "(i) coefficients in Q(q) — bar acts on them too, and scaling a trace by f(q) rescales Q_beta, so it is a different physical claim, untested either way; (ii) that Delta_L can never be bar-odd for ANY z — its second branch is involution-consistent, so some INADMISSIBLE z may work, which is irrelevant to the physics but means the universal claim was not shown",
+      "premise": "bar is p<->n conjugation, measured in qou-e58e over 11 nuclei; a p<->n DIFFERENCE should therefore be bar-odd. If that reading is wrong, the criterion loses its motivation and this becomes an observation about two rational functions."
+    }
+  }
+}

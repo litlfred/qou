@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:27:04.995868+00:00",
-  "commitSha": "367b837d5f738cc4b3e306a71938f6cb2877d2bf",
+  "computedAt": "2026-09-07T18:23:39.308292+00:00",
+  "commitSha": "b72a624f84ebc1a7f744ac971b23b2ad6b19dc54",
   "assertions": [
     {
       "name": "split_Casimir_eigenvalues_on_Sym2_/_Lambda2_are_1/4_/_-3/4",
@@ -46,6 +46,14 @@
     },
     {
       "name": "at_the_proton_pin_hbar_=_(2/i_pi)_ln_q0_is_purely_imaginary",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "B1_witness_on_disk_mentions_all_six_words",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -110,11 +118,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 1,
   "computation": "kz-pullback-monodromy-exact",
   "scriptFile": "kz_pullback_monodromy_exact_probe.py",
-  "scriptHash": "165c74f576ba",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4ddc83bd71b6",
+  "scriptCommitSha": "492ad4221f6a8dc4f4f8f9d9f32d13e4fab12276",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -135,7 +143,7 @@
     ],
     "reproduce": "python3 -u computations/probes/kz_pullback_monodromy_exact_probe.py"
   },
-  "description": "qou-d0qq, the construction half of Step-2 option C, as far as it is computable. (1) The level is fixed convention-free by the eigenvalue RATIO of the KZ half-twist: split Casimir 1/4 on Sym², −3/4 on Λ² ⇒ ratio −e^{iπħ}; matching the Hecke ratio −q² gives q² = e^{iπħ}, i.e. ħ = (2/iπ) ln q — purely imaginary at the real proton pin (the 'imaginary level'); the two levels on the bean are the conventions ħ = 2/(k+2) and 1/(k+2). (2) The pulled-back monodromy ϱ: F₆ → B₃ → End(V^{⊗3}) is explicit from the six measured lasso words: every ϱ(w_j) satisfies the Hecke quadratic and has pivotal trace z_D; the image is that of B₃; ϱ(w₁⋯w₆) = ϱ(Δ²) is central with two distinct eigenvalues (the two isotypic blocks). (3) Nothing here evaluates the framework side: no connection object exists there; KZPullbackGenerators is the interface. q₀ is an input only; nothing outputs a q₀.",
+  "description": "qou-d0qq, the construction half of Step-2 option C, as far as it is computable. (1) The level is fixed convention-free by the eigenvalue RATIO of the KZ half-twist: split Casimir 1/4 on Sym², −3/4 on Λ² ⇒ ratio −e^{iπħ}; matching the Hecke ratio −q² gives q² = e^{iπħ}, i.e. ħ = (2/iπ) ln q — purely imaginary at the real proton pin (the 'imaginary level'), conditional on the §7a Skein normalisation (H) — under (J) the ratio is −q and ħ halves; k+2 = 15.05 i / 30.1 i / 60.2 i for ħ = 1/(k+2), 2/(k+2), 4/(k+2). (2) The pulled-back monodromy ϱ: F₆ → B₃ → End(V^{⊗3}) is explicit from the six measured lasso words: every ϱ(w_j) satisfies the Hecke quadratic and has pivotal trace z_D; the image is that of B₃; ϱ(w₁⋯w₆) = ϱ(Δ²) is central with two distinct eigenvalues (the two isotypic blocks). (3) Nothing here evaluates the framework side: no connection object exists there; KZPullbackGenerators is the interface. q₀ is an input only; nothing outputs a q₀.",
   "contentBlock": "conj:hecke-monodromy-step-two",
   "parameters": {
     "lasso_words": {
@@ -169,6 +177,7 @@
         "hbar_is_purely_imaginary": true,
         "k_plus_2_if_hbar_eq_1_over_k_plus_2": "(0.0 + 15.0544899631197995188319328322j)",
         "k_plus_2_if_hbar_eq_2_over_k_plus_2": "(0.0 + 30.1089799262395990376638656644j)",
+        "k_plus_2_if_hbar_eq_4_over_k_plus_2_ie_q_eq_exp_2pi_i_over_k_plus_2": "(0.0 + 60.2179598524791980753277313288j)",
         "route5_form_hbar_eq_2_ln_q": "0.208681440639039024631812559946"
       }
     },

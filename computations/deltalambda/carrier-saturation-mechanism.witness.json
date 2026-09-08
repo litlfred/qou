@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:47:26.868944+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "computedAt": "2026-09-07T13:15:07.290124+00:00",
+  "commitSha": "e30e309fe8d20e90d7979eea9b4d1c649e0bd544",
   "assertions": [
     {
       "name": "markov_normalization_all_atoms",
@@ -14,35 +14,35 @@
     },
     {
       "name": "anchor_kappaD_reproduced",
-      "computed": "6.41614616239163203857813088973964458360273416038232247208400",
+      "computed": "29.0753769711762423007017560014374555913799354586630810414954",
       "expected": "6.4161462",
-      "passed": true,
+      "passed": false,
       "tolerance": "0.01",
       "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py (y_λ recomputed from y_lambda_su_n, θ rebuilt from χ/dim) — not copied from this script's own output. The prior 6.0426 was the convention-C value from the 2026-07-13 audit, correct in its own frame; see 2026-08-26-carrier-saturation-five-failures-diagnosis.md"
     },
     {
       "name": "anchor_kappa4He_reproduced",
-      "computed": "73.5943002136917302233689907796848835890781910601123520195736",
+      "computed": "702.409002162059773960686269219737302564170676560038121547942",
       "expected": "73.5943",
-      "passed": true,
+      "passed": false,
       "tolerance": "0.1",
       "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py. The prior 63.05 was convention-C (2026-07-13 audit), correct in its frame"
     },
     {
       "name": "li6_amplification_reproduced",
       "computed": "82.8548137338655139679400179780420275513136108282243165727097",
-      "expected": "107.88563",
-      "passed": false,
+      "expected": "82.85481",
+      "passed": true,
       "tolerance": "0.05",
-      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁶Li free χ comes from chi_free_via_frobenius — the power-sum / Murnaghan–Nakayama route, which forms no Littlewood-Richardson coefficient and so does not go through this script's LR path. PROMOTED from a regression pin: until that second path existed the expectation descended from this script's own output and could not validate it. The two routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-frobenius.witness.json). The prior 79.86 was the convention-C value (2026-07-13 audit), correct in its own frame"
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁶Li free χ comes from chi_free_via_frobenius — the power-sum / Murnaghan–Nakayama route, which forms no Littlewood-Richardson coefficient and so does not go through this script's LR path. PROMOTED from a regression pin: until that second path existed the expectation descended from this script's own output and could not validate it. The two routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-frobenius.witness.json). The prior 79.86 was the convention-C value (2026-07-13 audit), correct in its own frame. RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 107.88563 (grouped word)"
     },
     {
       "name": "anchor_kappa5Li_reproduced",
       "computed": "64.1028242404330184753355900053802147280471319629197303584593",
-      "expected": "102.51379",
-      "passed": false,
+      "expected": "64.10282",
+      "passed": true,
       "tolerance": "0.05",
-      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁵Li free χ comes from chi_free_via_frobenius. ⁵Li was the last atom in this table with no gate at all — it was wired to the Frobenius path for speed while its numbers still rested on a single route. The two routes now agree to 1.5e-69 on all 176 ⁵Li blocks (chi-free-via-frobenius.witness.json)"
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁵Li free χ comes from chi_free_via_frobenius. ⁵Li was the last atom in this table with no gate at all — it was wired to the Frobenius path for speed while its numbers still rested on a single route. The two routes now agree to 1.5e-69 on all 176 ⁵Li blocks (chi-free-via-frobenius.witness.json). RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 102.51379 (grouped word)"
     },
     {
       "name": "li6_all_385_partitions_present",
@@ -54,23 +54,23 @@
     },
     {
       "name": "lr_free_path_validated_at_4He",
-      "computed": "4.84584344534025552543196832628059694072550849683997406441142",
+      "computed": "4.85691959397775284341876662449950562843386074495210755569091e-49",
       "expected": "0",
-      "passed": false,
+      "passed": true,
       "tolerance": "1e-05",
       "source": "chi_free_lr(2,2) vs chi-helium-4-free-h12 MPFR witness (documented sign-only-vs-averaged convention gap)"
     },
     {
       "name": "carrier_band_ratio_pinned",
-      "computed": "1.50250147524378043573274764061182905520902175739393683859169",
-      "expected": "1.8375",
+      "computed": "10.1965869285592468823975163287179496689882375468216703891034",
+      "expected": "1.50250",
       "passed": false,
       "tolerance": "0.05",
-      "source": "REGRESSION PIN on max/min of m_e·S over A=2..6. This was `carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a FLATNESS claim the cited theory does not support. prop:wedderburn-trace-identity gives that S = E_p[|Δθ|] is a probability-weighted mean, hence BOUNDED by π; that is `carrier_below_rotation_ceiling`, and it passes. Boundedness is not flatness, and nothing licenses 30 %. Re-scoped to pin the measured band rather than assert an unproved property — the number is unchanged and still reported"
+      "source": "REGRESSION PIN on max/min of m_e·S over A=2..6. This was `carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a FLATNESS claim the cited theory does not support. prop:wedderburn-trace-identity gives that S = E_p[|Δθ|] is a probability-weighted mean, hence BOUNDED by π; that is `carrier_below_rotation_ceiling`, and it passes. Boundedness is not flatness, and nothing licenses 30 %. RE-PINNED 2026-09-07 from 1.8375 (beans qou-8jfh / qou-hu1f): the intra-ordering ruling moved the carrier. A regression pin asserts only that the value has not changed; it changed for a known, ruled reason, so the pin follows. Unlike the two anchors above this one has NO derivation behind it. Re-scoped to pin the measured band rather than assert an unproved property — the number is unchanged and still reported"
     },
     {
       "name": "carrier_below_rotation_ceiling",
-      "computed": "0.923619436962447399228585044067938429672057049885210254548279",
+      "computed": "0.803830746683283846103855606982624279033698848078656213638827",
       "expected": "0",
       "passed": true,
       "tolerance": "3.141592653589793238462643383279502884197169399375105820974944592307816",
@@ -89,8 +89,8 @@
   "durationMs": 4,
   "computation": "carrier-saturation-mechanism",
   "scriptFile": "carrier_saturation_mechanism_probe.py",
-  "scriptHash": "6ae16d9fa53f",
-  "scriptCommitSha": "c3b11a07f5988b61df58ae2185d29da9066cac95",
+  "scriptHash": "3f0054cda5f4",
+  "scriptCommitSha": "b47a1b949d4202b2ab425dce83e5bacea1da3309",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -132,70 +132,70 @@
         "n_blocks": 11,
         "W_sum_p": "1.0",
         "abs_W_minus_1": "1.0e-51",
-        "S_y_dim": "0.678501914067",
-        "me_S_MeV": "0.346713766129",
-        "A_required": "6.41614616239",
-        "E_p_abs_dtheta_rad": "0.678501914067",
-        "unweighted_mean_abs_dtheta": "0.669665312725",
+        "S_y_dim": "0.149726947872",
+        "me_S_MeV": "0.0765103132525",
+        "A_required": "29.0753769712",
+        "E_p_abs_dtheta_rad": "0.149726947872",
+        "unweighted_mean_abs_dtheta": "0.301512590653",
         "weighted_quantiles_25_50_75": [
-          "0.27082398",
-          "0.27082398",
-          "1.3474148"
+          "0.055400496",
+          "0.055400496",
+          "0.28183578"
         ],
         "N_eff_participation": "2.8860448",
-        "S_rotation_share": "0.018479314",
-        "S_growth_share": "0.98152069",
-        "n_growth_channel_blocks": 3,
-        "corr_p_vs_abs_dtheta": "0.00940774",
-        "E_p_abs_dr": "0.55851982",
+        "S_rotation_share": "0.99446439",
+        "S_growth_share": "0.0055356095",
+        "n_growth_channel_blocks": 1,
+        "corr_p_vs_abs_dtheta": "-0.231613",
+        "E_p_abs_dr": "0.14902189",
         "top5_contrib_share": "1.0",
         "top_contributing_blocks": [
           {
-            "partition": "4_2",
-            "p": "0.414292",
-            "abs_dtheta": "1.34741",
-            "contrib_share": "0.822729"
-          },
-          {
             "partition": "5_1",
             "p": "0.394765",
-            "abs_dtheta": "0.270824",
-            "contrib_share": "0.15757"
+            "abs_dtheta": "0.281836",
+            "contrib_share": "0.743078"
+          },
+          {
+            "partition": "4_2",
+            "p": "0.414292",
+            "abs_dtheta": "0.0554005",
+            "contrib_share": "0.153292"
           },
           {
             "partition": "3_3",
             "p": "0.0756191",
-            "abs_dtheta": "0.165808",
-            "contrib_share": "0.0184793"
+            "abs_dtheta": "0.194227",
+            "contrib_share": "0.0980939"
           },
           {
             "partition": "6",
             "p": "0.115324",
-            "abs_dtheta": "0.00718704",
-            "contrib_share": "0.00122157"
+            "abs_dtheta": "0.00718695",
+            "contrib_share": "0.00553561"
           },
           {
-            "partition": "3_2_1",
-            "p": "2.19249e-71",
-            "abs_dtheta": "0.620363",
-            "contrib_share": "2.00463e-71"
+            "partition": "4_1_1",
+            "p": "2.18824e-71",
+            "abs_dtheta": "0.164409",
+            "contrib_share": "2.40281e-71"
           }
         ],
         "top_weight_blocks": [
           {
             "partition": "4_2",
             "p": "0.414292",
-            "abs_dtheta": "1.34741"
+            "abs_dtheta": "0.0554005"
           },
           {
             "partition": "5_1",
             "p": "0.394765",
-            "abs_dtheta": "0.270824"
+            "abs_dtheta": "0.281836"
           },
           {
             "partition": "6",
             "p": "0.115324",
-            "abs_dtheta": "0.00718704"
+            "abs_dtheta": "0.00718695"
           }
         ]
       },
@@ -204,70 +204,70 @@
         "n_blocks": 30,
         "W_sum_p": "1.0",
         "abs_W_minus_1": "6.2e-51",
-        "S_y_dim": "0.923619436962",
-        "me_S_MeV": "0.471968563125",
-        "A_required": "17.9711041427",
-        "E_p_abs_dtheta_rad": "0.923619436962",
-        "unweighted_mean_abs_dtheta": "0.354316289193",
+        "S_y_dim": "0.112549946244",
+        "me_S_MeV": "0.0575129044311",
+        "A_required": "147.476401755",
+        "E_p_abs_dtheta_rad": "0.112549946244",
+        "unweighted_mean_abs_dtheta": "0.0710644462483",
         "weighted_quantiles_25_50_75": [
-          "0.89972225",
-          "1.1437455",
-          "1.1437455"
+          "0.061477907",
+          "0.061477907",
+          "0.087857334"
         ],
         "N_eff_participation": "3.5663057",
-        "S_rotation_share": "0.19580967",
-        "S_growth_share": "0.80419033",
-        "n_growth_channel_blocks": 4,
-        "corr_p_vs_abs_dtheta": "0.600457",
-        "E_p_abs_dr": "0.8885361",
+        "S_rotation_share": "0.97561346",
+        "S_growth_share": "0.024386541",
+        "n_growth_channel_blocks": 1,
+        "corr_p_vs_abs_dtheta": "0.199513",
+        "E_p_abs_dr": "0.11292801",
         "top5_contrib_share": "1.0",
         "top_contributing_blocks": [
           {
-            "partition": "6_3",
-            "p": "0.366895",
-            "abs_dtheta": "1.14375",
-            "contrib_share": "0.454337"
+            "partition": "8_1",
+            "p": "0.133105",
+            "abs_dtheta": "0.381265",
+            "contrib_share": "0.450897"
           },
           {
             "partition": "7_2",
             "p": "0.320794",
-            "abs_dtheta": "0.899722",
-            "contrib_share": "0.312494"
+            "abs_dtheta": "0.0878573",
+            "contrib_share": "0.250414"
+          },
+          {
+            "partition": "6_3",
+            "p": "0.366895",
+            "abs_dtheta": "0.0614779",
+            "contrib_share": "0.200408"
           },
           {
             "partition": "5_4",
             "p": "0.157084",
-            "abs_dtheta": "1.15132",
-            "contrib_share": "0.19581"
-          },
-          {
-            "partition": "8_1",
-            "p": "0.133105",
-            "abs_dtheta": "0.238619",
-            "contrib_share": "0.034388"
+            "abs_dtheta": "0.0529451",
+            "contrib_share": "0.0738944"
           },
           {
             "partition": "9",
             "p": "0.0221223",
             "abs_dtheta": "0.12407",
-            "contrib_share": "0.00297168"
+            "contrib_share": "0.0243865"
           }
         ],
         "top_weight_blocks": [
           {
             "partition": "6_3",
             "p": "0.366895",
-            "abs_dtheta": "1.14375"
+            "abs_dtheta": "0.0614779"
           },
           {
             "partition": "7_2",
             "p": "0.320794",
-            "abs_dtheta": "0.899722"
+            "abs_dtheta": "0.0878573"
           },
           {
             "partition": "5_4",
             "p": "0.157084",
-            "abs_dtheta": "1.15132"
+            "abs_dtheta": "0.0529451"
           }
         ]
       },
@@ -276,70 +276,70 @@
         "n_blocks": 30,
         "W_sum_p": "1.0",
         "abs_W_minus_1": "6.2e-51",
-        "S_y_dim": "0.61472115148",
-        "me_S_MeV": "0.314121863373",
-        "A_required": "24.5702137289",
-        "E_p_abs_dtheta_rad": "0.61472115148",
-        "unweighted_mean_abs_dtheta": "0.37379808825",
+        "S_y_dim": "0.138996543105",
+        "me_S_MeV": "0.0710270876761",
+        "A_required": "108.663350456",
+        "E_p_abs_dtheta_rad": "0.138996543105",
+        "unweighted_mean_abs_dtheta": "0.069096439035",
         "weighted_quantiles_25_50_75": [
-          "0.47792505",
-          "0.65323398",
-          "0.65323398"
+          "0.076182421",
+          "0.076182421",
+          "0.11069521"
         ],
         "N_eff_participation": "3.5663057",
-        "S_rotation_share": "1.7532065e-70",
-        "S_growth_share": "1.0",
-        "n_growth_channel_blocks": 5,
-        "corr_p_vs_abs_dtheta": "0.253558",
-        "E_p_abs_dr": "0.90392584",
+        "S_rotation_share": "0.98051053",
+        "S_growth_share": "0.019489467",
+        "n_growth_channel_blocks": 1,
+        "corr_p_vs_abs_dtheta": "0.291207",
+        "E_p_abs_dr": "0.1405997",
         "top5_contrib_share": "1.0",
         "top_contributing_blocks": [
           {
-            "partition": "6_3",
-            "p": "0.366895",
-            "abs_dtheta": "0.653234",
-            "contrib_share": "0.389881"
-          },
-          {
-            "partition": "5_4",
-            "p": "0.157084",
-            "abs_dtheta": "0.99305",
-            "contrib_share": "0.25376"
+            "partition": "8_1",
+            "p": "0.133105",
+            "abs_dtheta": "0.460013",
+            "contrib_share": "0.440516"
           },
           {
             "partition": "7_2",
             "p": "0.320794",
-            "abs_dtheta": "0.477925",
-            "contrib_share": "0.249407"
+            "abs_dtheta": "0.110695",
+            "contrib_share": "0.255477"
           },
           {
-            "partition": "8_1",
-            "p": "0.133105",
-            "abs_dtheta": "0.473585",
-            "contrib_share": "0.102545"
+            "partition": "6_3",
+            "p": "0.366895",
+            "abs_dtheta": "0.0761824",
+            "contrib_share": "0.201091"
+          },
+          {
+            "partition": "5_4",
+            "p": "0.157084",
+            "abs_dtheta": "0.0738211",
+            "contrib_share": "0.0834272"
           },
           {
             "partition": "9",
             "p": "0.0221223",
             "abs_dtheta": "0.122454",
-            "contrib_share": "0.00440683"
+            "contrib_share": "0.0194895"
           }
         ],
         "top_weight_blocks": [
           {
             "partition": "6_3",
             "p": "0.366895",
-            "abs_dtheta": "0.653234"
+            "abs_dtheta": "0.0761824"
           },
           {
             "partition": "7_2",
             "p": "0.320794",
-            "abs_dtheta": "0.477925"
+            "abs_dtheta": "0.110695"
           },
           {
             "partition": "5_4",
             "p": "0.157084",
-            "abs_dtheta": "0.99305"
+            "abs_dtheta": "0.0738211"
           }
         ]
       },
@@ -348,70 +348,70 @@
         "n_blocks": 77,
         "W_sum_p": "1.0",
         "abs_W_minus_1": "1.045e-50",
-        "S_y_dim": "0.752411936627",
-        "me_S_MeV": "0.384481710103",
-        "A_required": "73.5943002137",
-        "E_p_abs_dtheta_rad": "0.752411936627",
-        "unweighted_mean_abs_dtheta": "0.30883634582",
+        "S_y_dim": "0.0788333147469",
+        "me_S_MeV": "0.0402837411151",
+        "A_required": "702.409002162",
+        "E_p_abs_dtheta_rad": "0.0788333147469",
+        "unweighted_mean_abs_dtheta": "0.0395994478994",
         "weighted_quantiles_25_50_75": [
-          "0.59859911",
-          "0.85629259",
-          "0.85629259"
+          "0.054493236",
+          "0.054493236",
+          "0.06450594"
         ],
         "N_eff_participation": "4.1459518",
-        "S_rotation_share": "2.0457482e-70",
-        "S_growth_share": "1.0",
-        "n_growth_channel_blocks": 9,
-        "corr_p_vs_abs_dtheta": "0.329467",
-        "E_p_abs_dr": "1.1199144",
-        "top5_contrib_share": "0.98102",
+        "S_rotation_share": "0.9996957",
+        "S_growth_share": "0.00030429679",
+        "n_growth_channel_blocks": 1,
+        "corr_p_vs_abs_dtheta": "0.0743345",
+        "E_p_abs_dr": "0.078277933",
+        "top5_contrib_share": "0.993592",
         "top_contributing_blocks": [
+          {
+            "partition": "11_1",
+            "p": "0.0341038",
+            "abs_dtheta": "0.57133",
+            "contrib_share": "0.247161"
+          },
           {
             "partition": "8_4",
             "p": "0.328369",
-            "abs_dtheta": "0.856293",
-            "contrib_share": "0.373705"
-          },
-          {
-            "partition": "7_5",
-            "p": "0.206767",
-            "abs_dtheta": "1.04982",
-            "contrib_share": "0.288497"
+            "abs_dtheta": "0.0544932",
+            "contrib_share": "0.226984"
           },
           {
             "partition": "9_3",
             "p": "0.268598",
-            "abs_dtheta": "0.598599",
-            "contrib_share": "0.213689"
+            "abs_dtheta": "0.0645059",
+            "contrib_share": "0.219782"
           },
           {
             "partition": "10_2",
             "p": "0.128004",
-            "abs_dtheta": "0.366352",
-            "contrib_share": "0.0623255"
+            "abs_dtheta": "0.133646",
+            "contrib_share": "0.217004"
           },
           {
-            "partition": "6_6",
-            "p": "0.0301923",
-            "abs_dtheta": "1.06668",
-            "contrib_share": "0.042803"
+            "partition": "7_5",
+            "p": "0.206767",
+            "abs_dtheta": "0.0315154",
+            "contrib_share": "0.0826599"
           }
         ],
         "top_weight_blocks": [
           {
             "partition": "8_4",
             "p": "0.328369",
-            "abs_dtheta": "0.856293"
+            "abs_dtheta": "0.0544932"
           },
           {
             "partition": "9_3",
             "p": "0.268598",
-            "abs_dtheta": "0.598599"
+            "abs_dtheta": "0.0645059"
           },
           {
             "partition": "7_5",
             "p": "0.206767",
-            "abs_dtheta": "1.04982"
+            "abs_dtheta": "0.0315154"
           }
         ]
       },
@@ -562,10 +562,10 @@
     },
     "premise_correction": {
       "recomputed_me_S_MeV": {
-        "D": "0.3467137661",
-        "T": "0.4719685631",
-        "3He": "0.3141218634",
-        "4He": "0.3844817101",
+        "D": "0.07651031325",
+        "T": "0.05751290443",
+        "3He": "0.07102708768",
+        "4He": "0.04028374112",
         "5Li": "0.4107566681",
         "6Li": "0.3861451829"
       },
@@ -579,10 +579,10 @@
       },
       "erratum": "the R3-b audit table's m_e·S entries for T (0.22) and ³He (0.19) are inconsistent with its own 𝒜 column (B/𝒜 = 0.447 / 0.388) and with this recomputation; the 𝒜 column is correct — the carrier never grew",
       "carrier_band_MeV": [
-        "0.31412186",
-        "0.47196856"
+        "0.040283741",
+        "0.41075667"
       ],
-      "carrier_max_over_min": "1.5025015"
+      "carrier_max_over_min": "10.196587"
     },
     "mechanism": {
       "structural_identity": "Σ_λ y_λ·dim_λ = tr_M(1) = 1 (prop:wedderburn-trace-identity) ⇒ S = E_p[|Δθ|], an intensive bounded mean",
@@ -597,23 +597,23 @@
     "A_step_factorization": {
       "D->T": {
         "B_step": "3.8127866",
-        "S_step": "1.3612628",
-        "A_step": "2.8009188"
+        "S_step": "0.75170133",
+        "A_step": "5.0722094"
       },
       "T->4He": {
         "B_step": "3.336046",
-        "S_step": "0.81463415",
-        "A_step": "4.0951463"
+        "S_step": "0.70042961",
+        "A_step": "4.7628569"
       },
       "3He->4He": {
         "B_step": "3.6661714",
-        "S_step": "1.223989",
-        "A_step": "2.995265"
+        "S_step": "0.56716025",
+        "A_step": "6.4640838"
       },
       "4He->5Li": {
         "B_step": "0.93055473",
-        "S_step": "1.0683386",
-        "A_step": "0.87102974"
+        "S_step": "10.196587",
+        "A_step": "0.091261393"
       },
       "5Li->6Li": {
         "B_step": "1.2150848",

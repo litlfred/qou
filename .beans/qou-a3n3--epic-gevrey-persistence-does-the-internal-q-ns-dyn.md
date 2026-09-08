@@ -1,11 +1,11 @@
 ---
 # qou-a3n3
 title: 'EPIC: Gevrey persistence — does the internal q-NS dynamics keep smooth data Gevrey as q→1⁺'
-status: completed
+status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-07-25T03:32:00Z
-updated_at: 2026-07-25T17:42:46Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 GP1 landed (PR #4193): discrete Gronwall + finite-rate horizon persistence. Epic stays OPEN — next bricks: GP2 rate improvement (does the q-damping [k]_q dissipation term cut Λ_q from ε⁻¹ to finite effective G — the analytic core), GP3 radius non-collapse (track the Gevrey radius r(t) itself, not just Ω).
@@ -276,3 +276,18 @@ trajectory_tail_collapse library decl, six declarations listed) +
 rem:qns-shell-tail-collapse-interpretation (eps-free physical-layer
 reading, five probe witnesses, spatial-advection boundary). Wired
 into sec:ns-approaches after def:qns-unit-layers. PR #5095.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

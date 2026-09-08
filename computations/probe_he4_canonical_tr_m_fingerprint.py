@@ -82,13 +82,26 @@ TWO_ROW = [
 # conflated; the old table appears to have used another one under the y_lambda
 # label. The block's prose was corrected to the computed values, and these
 # constants track the block, so the cross-check stays live for future drift.
+# REGENERATED 2026-09-06 (beans qou-85wn / qou-92u9). The
+# intra-nucleon confinement core of `atom_braid_word_3A` went from
+# GROUPED to alternating (`intra_order="borromean"`) on the
+# 2026-09-05 owner ruling (bean qou-hu1f), and the chi cache was
+# regenerated under the follow-up ruling. The trace fell by exactly
+# the 4He factor R_quark = 14.3248; two blocks flipped sign; the
+# ordering changed. The stratum ratio is unchanged (exactly 1) and
+# so is y_lambda, which depends only on the partition and q.
+# Superseded generations, so a reader meeting them can date them:
+#   pre-2026-08-23  (9,3) 29.0  (8,4) 23.6  (10,2) 13.5 ... ratio 86.6 %
+#   2026-08-23      (9,3) 29.617 (8,4) 22.452 (10,2) 15.407 ... ratio 1
+# All seven nonzero blocks are listed now, not six.
 CITED_PCT = {
-    (9, 3): 29.617,
-    (8, 4): 22.452,
-    (10, 2): 15.407,
-    (11, 1): 14.235,
-    (7, 5): 9.418,
-    (12,): 5.962,
+    (12,): 85.398,
+    (9, 3): 64.406,
+    (11, 1): -40.890,
+    (8, 4): -31.659,
+    (10, 2): 11.461,
+    (6, 6): 8.652,
+    (7, 5): 2.633,
 }
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -96,7 +109,11 @@ CITED_PCT = {
 # Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
 set_compute_dps()
 
-CITED_TR_M = mp.mpf("0.160974145442407381050787057621")
+# The two cumulatives are DIFFERENT QUANTITIES since 2026-09-05
+# (they coincided at 91.130 while every block was positive).
+CITED_TOP5_ABS_PCT = mp.mpf("233.814")     # sum of |c_lambda|
+CITED_TOP5_SIGNED_PCT = mp.mpf("88.715")   # sum of the table rows
+CITED_TR_M = mp.mpf("0.011237417659767421564199549374410607269662696081262")
 
 
 def main() -> int:
@@ -184,6 +201,7 @@ def main() -> int:
         per_block = []
         for part, v in ranked:
             pct = abs(v["contribution"]) / abs_tr_M * 100
+            signed_pct = v["contribution"] / abs_tr_M * 100
             per_block.append({
                 "partition": list(part),
                 "dim": v["dim"],
@@ -191,6 +209,12 @@ def main() -> int:
                 "chi_lambda": mp.nstr(v["chi_lambda"], 8),
                 "contribution": mp.nstr(v["contribution"], 12),
                 "pct_of_abs_tr_M": float(pct),
+                # SIGNED share. Identical to the line above until the
+                # 2026-09-05 intra-ordering ruling, because every block
+                # was positive; two are now negative, so the two figures
+                # diverge and the content block's table shows THIS one
+                # (bean qou-85wn).
+                "signed_pct_of_abs_tr_M": mp.nstr(signed_pct, 8),
                 "is_two_row": part in set(TWO_ROW),
             })
 
@@ -198,6 +222,14 @@ def main() -> int:
         top5 = ranked[:5]
         top5_sum = mp.fsum(abs(v["contribution"]) for _, v in top5)
         top5_cum_pct = top5_sum / abs_tr_M * 100
+        # The SIGNED cumulative, which is what summing the content
+        # block's table rows gives. The two agreed exactly (91.130)
+        # while every block was positive; post-2026-09-05 they are
+        # 233.814 (absolute) against 88.715 (signed). Emitting one
+        # alone would make the block and its own producer disagree
+        # by a factor of 2.6 with nothing naming the difference.
+        top5_signed_sum = mp.fsum(v["contribution"] for _, v in top5)
+        top5_signed_cum_pct = top5_signed_sum / abs_tr_M * 100
         top5_all_two_row = all(p in set(TWO_ROW) for p, _ in top5)
 
         # Trivial and sign rep.
@@ -207,15 +239,19 @@ def main() -> int:
             "contribution", mp.mpf(0)))
 
         print(f"  tr_M(β_⁴He)(q_0)      = {mp.nstr(tr_M, 12)}  "
-              f"[cited 0.160974145442]")
+              f"[cited {mp.nstr(CITED_TR_M, 12)}]")
         print(f"  |tr_M|                 = {mp.nstr(abs_tr_M, 12)}")
         print(f"  two-row stratum sum    = {mp.nstr(two_row_sum, 12)}")
         print(f"  two-row stratum ratio  = {mp.nstr(two_row_ratio, 8)} "
               f"(full Λ²; ≥0.80 claim)")
-        print(f"  top-5 cumulative       = {mp.nstr(top5_cum_pct, 6)}%  "
-              f"[cited 91.130%]  (all two-row: {top5_all_two_row})")
+        print(f"  top-5 cumulative |.|   = {mp.nstr(top5_cum_pct, 6)}%  "
+              f"[cited {float(CITED_TOP5_ABS_PCT)}%]  "
+              f"(all two-row: {top5_all_two_row})")
+        print(f"  top-5 cumulative signed= "
+              f"{mp.nstr(top5_signed_cum_pct, 6)}%  "
+              f"[cited {float(CITED_TOP5_SIGNED_PCT)}%]")
         print(f"  trivial rep (12)       = {mp.nstr(trivial_pct, 4)}%  "
-              f"[cited 5.962%]")
+              f"[cited {float(CITED_PCT[(12,)])}%]")
         print(f"  sign rep (1¹²)         = {mp.nstr(sign_contrib, 4)}  "
               f"[cited 0]")
         print()
@@ -246,6 +282,8 @@ def main() -> int:
         w.add_data("two_row_stratum_sum", mp.nstr(two_row_sum, 30))
         w.add_data("two_row_stratum_ratio", float(two_row_ratio))
         w.add_data("top5_cumulative_pct", float(top5_cum_pct))
+        w.add_data("top5_signed_cumulative_pct",
+                   mp.nstr(top5_signed_cum_pct, 12))
         w.add_data("top5_all_two_row", top5_all_two_row)
         w.add_data("trivial_rep_pct", float(trivial_pct))
         w.add_data("sign_rep_abs_contribution", float(sign_contrib))
@@ -278,13 +316,26 @@ def main() -> int:
         w.add_assertion(
             name="top5_cumulative_pct",
             computed=top5_cum_pct,
-            expected=91.130,
+            expected=CITED_TOP5_ABS_PCT,
             tolerance=0.2,
             source=(
-                "prop:he4-two-row-dominance: top-5 binding-receptive "
-                "blocks carry 91.130% cumulative (the two-row stratum "
-                "figure)"
+                "prop:he4-two-row-dominance: the five blocks of largest "
+                "|c_lambda|, summed in MAGNITUDE. Not the figure the "
+                "block's table adds up to -- see the signed assertion "
+                "below (bean qou-85wn)."
             ),
+        )
+        w.add_assertion(
+            name="top5_signed_cumulative_pct",
+            computed=top5_signed_cum_pct,
+            expected=CITED_TOP5_SIGNED_PCT,
+            tolerance=0.2,
+            source=(
+                "prop:he4-two-row-dominance: 'The five blocks of "
+                "largest magnitude sum to 88.715%.' This is the sum of "
+                "the block's table ROWS, which are signed; two are "
+                "negative since the 2026-09-05 intra-ordering ruling."
+            )
         )
         w.add_assertion(
             name="top5_all_two_row",
@@ -296,7 +347,7 @@ def main() -> int:
         w.add_assertion(
             name="trivial_rep_pct",
             computed=trivial_pct,
-            expected=5.962,
+            expected=85.398,
             tolerance=0.15,
             source="prop:he4-two-row-dominance: trivial rep (12) ~ 2.9%",
         )
@@ -310,7 +361,10 @@ def main() -> int:
         # Per-block percentage cross-checks (cited table).
         for part, cited in CITED_PCT.items():
             v = by_part[part]
-            pct = abs(v["contribution"]) / abs_tr_M * 100
+            # SIGNED, matching the content block's table. `abs` here
+            # would silently pass a sign flip -- and two blocks flipped
+            # on 2026-09-05 (bean qou-85wn).
+            pct = v["contribution"] / abs_tr_M * 100
             w.add_assertion(
                 name=f"pct_block_{'_'.join(map(str, part))}",
                 computed=pct,
@@ -318,7 +372,7 @@ def main() -> int:
                 tolerance=0.15,
                 source=(
                     f"prop:he4-two-row-dominance table: λ={part} carries "
-                    f"{cited}% of |tr_M|"
+                    f"{cited}% of |tr_M| (signed)"
                 ),
             )
 

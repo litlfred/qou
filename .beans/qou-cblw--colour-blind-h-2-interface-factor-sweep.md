@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-28T20:05:19Z
+updated_at: 2026-09-07T19:31:33Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -481,3 +481,59 @@ regeneration is not double-counted or mistaken for a regression.
 `1.41497e-4`, and that is not 3/2 (3/2 would need 2.12246e-4, outside the
 6-dp error bar). Either a multiplicity, or the sibling commit `879419b0ac`
 also contributing. Untested.
+
+
+## 2026-09-07 — counts re-measured (10 days on), and one detector false positive fixed
+
+The §"What is NOT done" figures are from 2026-08-28. Re-measured with
+`scripts/pn-convention-audit.py` on `main` `e17faad57c`:
+
+| | bean (2026-08-28) | now |
+|---|---|---|
+| blind-value **witnesses** | 17 (of 22, 3 deliberate) | **6** actionable |
+| deliberate two-value comparisons | 3 | **10** (`BOTH`, never drain) |
+| witnesses on the canonical value | — | **30** |
+| label-only | — | **4** |
+| source sites | "51 Python files" | **33 BLIND + 25 MIXED**, plus 35 `COMPARISON` and 5 `DECLARED_BLIND` |
+
+So the **witness side has drained 17 → 6** while the source side is broadly
+unchanged — consistent with the flip (`543e30adfd`) having landed and the
+deferred regenerations proceeding, and with the source flip still being
+owner-scoped.
+
+### A detector false positive, found and fixed
+
+`bond-extensivity-equal-weight.witness.json` was reported as an actionable
+**BLIND** witness. Its producer, `bond_extensivity_equal_weight.py:77`, is
+listed by the *same audit* as **DECLARED_BLIND** — *"the MODULE DOCSTRING
+declares a colour-blind regime: 'EQUAL-WEIGHT'"*. The source scan carved it out;
+the witness scan did not, because the two scans had no link.
+
+**A witness now inherits its producer's declared regime** — keyed on the
+witness's own `scriptFile` and running the *same* docstring test the source scan
+uses, so the two cannot drift apart. It can only ever REMOVE rows from the
+actionable list, and a witness whose producer is missing or does not declare is
+left BLIND. Result: witness `BLIND` **7 → 6**, new bucket `DECLARED_BLIND: 1`;
+source buckets unchanged at 33/5, confirming nothing else moved. `--selftest`
+PASS (both conventions reproduce, 14 Python AST probes, 3 Rust regex probes).
+
+Why it matters here rather than cosmetically: this bean's remaining decision is
+**owner-scoped**, and it was being presented against an inflated actionable
+count.
+
+### One known false positive left, NOT special-cased
+
+`witness-value-copy-audit.witness.json` is reported BLIND on
+`findings[152].literal` and `findings[155].literal`. It is a **tree-measuring
+audit that quotes literals found in other files** — it asserts no convention of
+its own. The producer-inheritance rule cannot catch it (its producer declares
+nothing), and keying on a `findings[` path prefix would be a guess about one
+file's shape rather than a property of the class. Left visible and named, on the
+same reasoning the dangling-path audit leaves PROPOSALS unfiltered.
+
+**True actionable witness count: 5.**
+
+### Unchanged
+
+The convention **flip** itself stays owner-scoped. Nothing here changes a
+number; this is a count and a classifier.

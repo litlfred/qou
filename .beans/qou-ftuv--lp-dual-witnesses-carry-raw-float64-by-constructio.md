@@ -1,11 +1,11 @@
 ---
 # qou-ftuv
 title: LP-dual witnesses carry raw float64 by construction — draining needs the shared contract changed
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-10T09:13:32Z
-updated_at: 2026-08-11T00:36:22Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 
@@ -2306,3 +2306,18 @@ correctness never depends on the assumption holding.
 - [ ] `rho-k-h3a-lp-dual` (67) — the last direct-`linprog` producer.
 - [ ] `onepb-status-dashboard` (48), `habiro-correction-shadow-price-test`
       (34, producer broken on an mpf format error).
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

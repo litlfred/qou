@@ -1,11 +1,11 @@
 ---
 # qou-8dlq
 title: Remark interpreting 2205.01282v2.pdf at QOU.QBeta.StokesDTBPSBridge
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:35:19Z
-updated_at: 2026-09-07T08:53:45Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 Record what would have to be checked before this changes any epistemic tier: whether the knot complements / 3-manifolds the folio's A_omega argument uses fall inside this document's plumbed, negative-definite-linking-matrix class. If they do not, the GPPV identification stays conjectural for the folio's purposes and the bridge's class fields must remain as they are.
@@ -37,3 +37,18 @@ The conjecture block `conj:stokes-dt-bps-bridge` already carries the interpretin
 Sharpening, with the source held: Li–Wang (library/arxiv-math-0604057v2 §5, `sec-012-5-an-example-the-figure-eight-knot.md` lines 197–263) record the TEN exceptional surgery slopes of 4₁ (0, ±1, ±2, ±3, ±4, ∞) and that M(0) is toroidal with non-abelian infinite π₁ — so some closed fillings of 4₁ are graph/Seifert manifolds that MAY lie in the plumbed negative-definite class (that 4₁(±1) is the Brieskorn sphere Σ(2,3,7), a Seifert manifold, is RECALLED, not held). This does not change the tier: the A_ω argument uses the state integral of the cusped complement (GGM Conj 3(d) for 4₁ itself), not a WRT invariant of a closed filling.
 
 Verdict: citation recorded (already in the block), no hypothesis discharged, bridge class fields unchanged. Completed as the remark/citation task it is; the conjecture it interprets stays open in its own block (AGENTS.md 13a does not apply: the bean's subject is the citation, not the conjecture).
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

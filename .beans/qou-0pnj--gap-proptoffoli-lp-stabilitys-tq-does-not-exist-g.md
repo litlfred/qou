@@ -1,11 +1,11 @@
 ---
 # qou-0pnj
 title: 'GAP: prop:toffoli-lp-stability''s t(q) does not exist — G is 6x6 Hecke-NF, P_77/P_76 are 8x8 strand-ordering entries'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:57:56Z
-updated_at: 2026-08-30T14:46:15Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 FOUND 2026-08-30 investigating what the q-GoL "stability condition" actually
@@ -248,3 +248,18 @@ REMAINING OPEN in this bean, unchanged: the index-space mismatch. G.t is a
 6-vector over the Hecke NF basis; P_77/P_76 are entries of an 8x8 matrix
 indexed by strand-type orderings. A correct reduction still needs a map, and
 none is recorded. Tracked forward as the next tranche.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

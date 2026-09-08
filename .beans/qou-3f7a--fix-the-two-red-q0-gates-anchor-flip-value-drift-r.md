@@ -1,11 +1,11 @@
 ---
 # qou-3f7a
 title: 'Fix the two RED q0 gates: anchor flip + value drift ratchet'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:13:12Z
-updated_at: 2026-09-07T09:12:15Z
+updated_at: 2026-09-07T10:56:03Z
 ---
 
 ---
@@ -220,3 +220,85 @@ and its `float(Q_MP)` -> `mp.mpf(Q_MP)` fix is still NOT on main (line 403 still
 casts). It is not a live claim by the stalled-claim rule, but porting their
 unmerged work is a separate decision from this bean's drain, and I have not taken
 it.
+
+
+--------
+
+## 2026-09-07 — the chi-neutron-h3 finding above is WRONG, and 45 % of the refill has no producer to fix
+
+Worked under PR #7061. Two corrections and one sizing, all measured.
+
+### 1. CORRECTION: `q0Anchor: proton` on `chi-neutron-h3.witness.json` was NOT right
+
+The section above states that the stamp's removal by `9c2058f0bd` "is a
+regression", establishing it from the *consumer*: `delta_lambda_empirical_tabulation.py`
+line 93 is `from q_parameter import Q_MP`, so it reads the proton q0.
+
+**That is a consumer's property, not the file's.** Read the file itself and it
+holds nothing but symbolic rational functions in `q`:
+
+    [3]      (q**4 + 2*q**2 + 1)/(4*q)
+    [2,1]    (q**22 + q**20 + q**18 + q**12 - q**10 - q**4 - q**2 - 1)/(4*q**11)
+    [1,1,1]  (-q**4 - 2*q**2 - 1)/(4*q**3)
+
+Its field is `chi_lambda_symbolic`; `partial: False`. The whole blob contains
+**no** `1.10997`, **no** `q0`, **no** `mpf`, **no** `50dps`. It is symbolic in
+`q` and does not evaluate at any pin.
+
+So the correct token is **`independent`**, not `proton`, and `9c2058f0bd`
+removed a **wrong** stamp. It was incomplete only in writing nothing in its
+place. The direction of the earlier finding is inverted: this was not a
+regression to revert, it was a half-finished correction to complete.
+
+The reasoning error is the documented provenance/arity conflation — inferring a
+file's anchor from a script that *reads* it. The consumer reads this cache and
+separately evaluates at q0; both facts are true and only one is about the file.
+
+### 2. CORRECTION: the stated remedy cannot work — that producer does not write it
+
+"The remedy is to re-run that producer" — measured, it is not. Re-ran
+`delta_lambda_empirical_tabulation.py` (exit 0, 2.1 s): it writes
+`delta-lambda-empirical-tabulation.witness.json` and `chi-neutron-h3.witness.json`
+still has NO q0 keys afterwards. That script only **reads** the chi caches
+(`_load_chi_cache`, and a config table at lines 117-139 naming the files to
+load).
+
+Nothing in live `computations/` writes it. Every writer is under
+`_deprecated/`. `hecke/hecke_character_symbolic.py` also only reads it
+(`_load_chi_witness`). It is a committed symbolic-character cache with no live
+producer.
+
+### 3. SIZING: the ratchet's instruction is unfollowable for 45 % of its own queue
+
+The ratchet prints "Each needs ONE of these **AT THE PRODUCER** (never hand-edit
+the JSON)". Measured over its full NEW list:
+
+| | count | share |
+|---|---|---|
+| NEW unstamped witnesses (the refill) | **110** | |
+| producer-stamped (has `scriptHash`/`commitSha`) | 60 | 55 % |
+| **NO stamp at all** — data cache or hand-maintained file | **50** | **45 %** |
+| contain no q0 literal anywhere | 64 | 58 % |
+
+For those 50 there is no producer to declare in the manifest and no `build()`
+to enter, so the only available action is the one the ratchet forbids. That is
+not a defect in the ratchet's advice for the 60; it is a category the advice
+does not cover.
+
+`Q0_AUDIT_EXEMPT` already exists and holds 90 entries, so there is precedent
+for scoping such files out rather than stamping them.
+
+### What is NOT done here, and why
+
+Nothing was hand-edited and no exemption was added. Both are scope decisions
+about what the ratchet is *for*, and they move a number other agents read.
+Framed for the owner on PR #7061.
+
+### Not to be confused with the sibling gate
+
+`q0_anchor_consistency_audit.py` is a **different** gate and is live work on
+PR #7048 (`qou-9ot5`) as of today. Independently re-measured here, agreeing
+with theirs exactly: `Q0_FLIP 1` (`hadron-knot-table`, documented not-drainable
+— >50 min for one bound atom of nineteen) and `Q0_ANCHOR_UNRECOGNISED 4` (all
+four in their scope, two already fixed on their branch). **Nothing in that gate
+was touched here**, per the one-owner rule for mechanical work.

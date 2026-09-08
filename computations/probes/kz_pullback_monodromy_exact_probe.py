@@ -10,10 +10,15 @@ What is now computable, and what this probe does with it:
       product −e^{−iπħ/2}.  The framework's Hecke normalisation (σ − q)(σ + q⁻¹) = 0 has ratio −q²
       and product −1.  A scalar rescaling of the generator moves the product, never the ratio, so
       the invariant matching condition is  q² = e^{iπħ}, i.e. ħ = (2/iπ) ln q — purely imaginary
-      for the framework's real q₀ > 1 (this IS the "imaginary level").  The two candidate levels on
-      the bean, k+2 = 2πi/ln q₀ and iπ/ln q₀, are the bookkeeping conventions ħ = 2/(k+2) and
-      ħ = 1/(k+2); the corpus's earlier "KD matching forces ħ = 2 ln q" (route-5 fibre probe) is the
-      same relation with iπħ renamed ħ.  Lean: QOU.Mass.KZLevelFromHeckeNormalisation.
+      for the framework's real q₀ > 1 (this IS the "imaginary level").  Level bookkeeping:
+      ħ = 1/(k+2) gives k+2 = iπ/(2 ln q₀) ≈ 15.05 i, ħ = 2/(k+2) gives k+2 = iπ/ln q₀ ≈ 30.1 i
+      (q = e^{iπ/(k+2)}), and the bean's other candidate 2πi/ln q₀ ≈ 60.2 i is q = e^{2πi/(k+2)},
+      i.e. ħ = 4/(k+2) — an earlier docstring mapped these off by a factor of two; the computed
+      values below were right.  The corpus's earlier "KD matching forces ħ = 2 ln q" (route-5 fibre
+      probe) is the same relation with iπħ renamed ħ.  SCOPE: the ratio −q² is read off the §7a Skein
+      normalisation (H); under the corpus's other normalisation (J) (bean qou-8bxv) the ratio is −q
+      and ħ halves — the relation is conditional on (H), which AGENTS.md makes canonical.
+      Lean: QOU.Mass.KZLevelFromHeckeNormalisation.
   (2) THE REPRESENTATION.  With the framework's R-matrix (eigenvalues q on Sym², −q⁻¹ on Λ² —
       exactly the rescaled KZ half-twist) on V^{⊗3}, and the six lasso words measured in
       colour_cubic_braid_monodromy_probe.py (all positive half-twists up to conjugacy), the
@@ -144,6 +149,7 @@ def main() -> int:
             "hbar_is_purely_imaginary": bool(abs(mp.re(hbar_val)) < mp.mpf(10) ** -45),
             "k_plus_2_if_hbar_eq_1_over_k_plus_2": mp.nstr(1 / hbar_val, 30),
             "k_plus_2_if_hbar_eq_2_over_k_plus_2": mp.nstr(2 / hbar_val, 30),
+            "k_plus_2_if_hbar_eq_4_over_k_plus_2_ie_q_eq_exp_2pi_i_over_k_plus_2": mp.nstr(4 / hbar_val, 30),
             "route5_form_hbar_eq_2_ln_q": mp.nstr(2 * mp.log(q0), 30),
         }
         checks.append(("at the proton pin hbar = (2/i pi) ln q0 is purely imaginary", level["hbar_is_purely_imaginary"]))
@@ -197,8 +203,9 @@ def main() -> int:
         "qou-d0qq, the construction half of Step-2 option C, as far as it is computable. (1) The level is "
         "fixed convention-free by the eigenvalue RATIO of the KZ half-twist: split Casimir 1/4 on Sym², "
         "−3/4 on Λ² ⇒ ratio −e^{iπħ}; matching the Hecke ratio −q² gives q² = e^{iπħ}, i.e. "
-        "ħ = (2/iπ) ln q — purely imaginary at the real proton pin (the 'imaginary level'); the two "
-        "levels on the bean are the conventions ħ = 2/(k+2) and 1/(k+2). (2) The pulled-back monodromy "
+        "ħ = (2/iπ) ln q — purely imaginary at the real proton pin (the 'imaginary level'), conditional on "
+        "the §7a Skein normalisation (H) — under (J) the ratio is −q and ħ halves; k+2 = 15.05 i / 30.1 i / "
+        "60.2 i for ħ = 1/(k+2), 2/(k+2), 4/(k+2). (2) The pulled-back monodromy "
         "ϱ: F₆ → B₃ → End(V^{⊗3}) is explicit from the six measured lasso words: every ϱ(w_j) satisfies "
         "the Hecke quadratic and has pivotal trace z_D; the image is that of B₃; ϱ(w₁⋯w₆) = ϱ(Δ²) is "
         "central with two distinct eigenvalues (the two isotypic blocks). (3) Nothing here evaluates "

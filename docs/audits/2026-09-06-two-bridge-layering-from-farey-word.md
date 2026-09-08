@@ -282,6 +282,61 @@ five (`rank 6`, `|P_K| = 7`). Retrieving Ptolemy solutions from the database is 
 the variety is not, as above. And `H_Ad` versus `H_floor` is not decided by any count — they agree on
 every count — only by whether the Stokes entries are built from `s(x) = x + 1 + x⁻¹`.
 
+## 3f. Option 2: the pretzel's Stokes data, as far as they are derivable here (2026-09-07)
+
+**Producer:** [`computations/probes/aomega_m3_rotated_index_three_knots_probe.py`](../../computations/probes/aomega_m3_rotated_index_three_knots_probe.py)
+(17/17; the corpus GHHR/GHRS 3D-index engine `borromean_3d_index.IndexTriangulation` on SnapPy's
+triangulations `m004`, `m015`, `m016`).
+
+**What GGM actually give** (`arxiv-2012.00062v3` §1.4, held): the rotated 3D-index
+`Ind^rot_K(m, ζ; q) = Σ_e I_K(m,e)(q) ζ^e` and Conjecture 4, `S⁺(x;q) ≐ (Ind^rot_K(j−i, q^{(j+i)/2}x; q))_{ij}`
+**up to left and right multiplication by `GL(r, ℤ(x,q))`**, with `S⁺_{σ₁σ₁}(x;q) = Ind^rot_K(0,x;q)`
+exact (their (21); `arxiv-2007.10190v2` (102) prints it for 5₂). So the rotated-index family is the
+invariant, derivable content; the printed q→0 integer matrices — the `{3,4}` this arc has been
+working with — sit in GGM's holomorphic-block normalisation, which fixes that `GL` freedom.
+
+**Gate.** Total index (`m = 0`, `ζ = 1`), computed two orders beyond the read order: 5₂ gives
+`1 − 12q + 3q² + 74q³ + 90q⁴`, GGM (102) exactly; 4₁ gives `1 − 8q − 9q² + 18q³ + 46q⁴`, the DGG
+index (recalled, not held). The gate also fixes the convention: `e` multiplies the meridian, `m` the
+longitude. (Read at its own top order a `q⁴` run gave `91`, not `90`; the top orders of a truncated
+lattice sum are unreliable, hence the margin.)
+
+**Derived: the pretzel family** `Ind^rot_{(−2,3,7)}(m, ζ; q)`, `m ∈ {−2,…,2}`, exact integers to
+`q³`; the `m = 0` member, i.e. `S⁺_{σ₁σ₁}(x;q)` exactly:
+
+    1 − q(2ζ + 4 + 2ζ⁻¹) + q²(ζ² + ζ − 1 + ζ⁻¹ + ζ⁻²) + q³(5ζ² + 12ζ + 16 + 12ζ⁻¹ + 5ζ⁻²) + …
+
+**In the adjoint variable** `s = ζ + 1 + ζ⁻¹` (every `m = 0` coefficient is `ζ ↔ ζ⁻¹` symmetric, hence
+a polynomial in `s`):
+
+| order | 4₁ | 5₂ | (−2,3,7) |
+|---|---|---|---|
+| `q¹` | `−(s−1)(s+1)` | `−s(s+1)` | `−2(s+1)` |
+| `q²` | `−s²` | `s(s²−2s−2)` | `s² − s − 3` |
+| `q³` | `s²(s²−2s−1)` | `s⁴ − 2s − 1` | `5s² + 2s − 1` |
+
+Recorded, not interpreted: the first-order coefficient carries a common factor `(s+1) =
+(ζ^{1/2} + ζ^{−1/2})²` on all three knots; at second order 4₁'s is `−s²`, so the factor is not
+universal. No half-integer powers of `q` appear in the pretzel's `m = 0` index to `q³` (its level-2
+structure is not visible there at this order).
+
+**What this settles and what it does not — CORRECTED 2026-09-07, same day.** The paragraph that
+stood here (and the title of PR #7101, and `qou-m3ad` Part 7 as first written) said item 1 is "not
+GL-invariant as posed". That overstates it. The Stokes matrix `S⁺(x;q)` is a canonical invariant of
+the knot once the Borel rays are ordered by volume; its q→0 entries are well-defined integers and
+`s(x)`-polynomials, and "are they built from `s(x)`?" is a well-posed question about them. What is
+**not** invariant is the *identification* in GGM's Conjecture 4: the rotated-index matrix determines
+`S⁺` only up to `GL(r, ℤ(x,q))` on both sides, and for a unipotent `S⁺` every determinantal (Fitting)
+invariant is trivial, so the index family fixes nothing of `S⁺` beyond the exact `σ₁σ₁` entry. So the
+correct statement is: **the question is well-posed; the index route cannot answer it.** The route
+that does is the holomorphic-block one, `Ind^rot(m,ζ;q) = Σ_α B^α(q^{m/2}ζ;q) B^α(q^{m/2}ζ⁻¹;q⁻¹)`
+(GGM (19)), whose blocks come from the state integral of the triangulation — for `m016` a
+2-dimensional integral at level 2, which GZ §4.2 declined to evaluate in closed form. The library
+holds the method (Garoufalidis–Kashaev, *From state integrals to q-series*, `arxiv-1304.2705v1`;
+*Evaluation of state integrals at rational points*, `arxiv-1411.6062v2`), and the corpus holds a
+4₁ instance (`qbeta_m1_rotated_index_from_blocks.py`); the pretzel instance is the tranche
+`qou-m3ad` Part 8 names. The `s`-polynomial table above is the exact `σ₁σ₁` entry and stands.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who

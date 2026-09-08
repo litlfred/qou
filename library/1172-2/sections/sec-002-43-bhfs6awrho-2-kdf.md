@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 19-26
 source_pdf: 1172-2.pdf
 source_sha256: 390665341d5b7522
+doc_brief: "$L^{2}$ -torsion of 3-manifolds KLLn98O/* (El5~9)6HBg3X) 9bBt8wI'(El5~9)6HBg3X) ?9F#9'G7\dagger (El5~Bg3X) — 4 sections: Front matter; L\'u; Bh$-$ 6a;w$\rho_{1}$ $K$D$$$F"
 ---
 <!$K$\rho_{2}$ $K$D$$$FD4$Y$F$_$^$7$?!#$3$l$O72$\pi_{a}$ $K!V@8@.85$x$ $H$y$ $O2D49$G
 $"$k!W$H$$$&4X78;R$rF~$l$?72>e$N$\pi_{a}$ $NI=8=$r9M$($k;v$K$J$j$^$9!#

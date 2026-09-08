@@ -48,6 +48,7 @@ never rebuilt.
 from __future__ import annotations
 
 import argparse
+import threading
 import os
 import pathlib
 import re
@@ -140,9 +141,56 @@ def last_commit_times() -> dict[str, int]:
     return times
 
 
-def dirty_closure(mod2path, imports, oleans):
+def _standard_dirty(mod2path, oleans, times, never_built):
+    """Modules the SNAPSHOT cannot vouch for: no olean, or source newer than it.
+
+    Separate from the --all population on purpose.  A dep of a --only chunk is
+    fine to take from the snapshot when the snapshot is current for it; it is
+    NOT fine when the snapshot predates a declaration the dependent needs.
+    MEASURED instance, and it nearly went out as a corpus defect against main:
+    `QOU.IwahoriHecke.BruhatReflection` failed with `Unknown identifier
+    bruhatLe_inv_iff`.  That lemma exists, in an imported module, in an opened
+    namespace -- and was added 2026-09-07 07:04 (`8ca51eb3ddc`) while the
+    snapshot olean for `QOU.Machinery.CoxeterBruhat` dates from 2026-09-06
+    07:04.  `strings` on that olean finds the symbol 0 times.  So the module is
+    fine and the slice was wrong.
+    """
+    out = set(never_built)
+    for m, p_ in mod2path.items():
+        if m in out:
+            continue
+        o = oleans / (m.replace(".", "/") + ".olean")
+        c = times.get(str(p_.relative_to(ROOT)))
+        src = max(c, p_.stat().st_mtime) if c is not None else None
+        if src is None or src > o.stat().st_mtime:
+            out.add(m)
+    return out
+
+
+def dirty_closure(mod2path, imports, oleans, all_dirty=False):
+    """Modules to compile.  With `all_dirty`, that is EVERY module.
+
+    The freshness rule below decides which modules the *snapshot* cannot vouch
+    for.  It is the right population for a gate run per-branch.  It is the wrong
+    population for one question: **how much of the library actually compiles at
+    all.**  A module the restored cache built weeks ago is "clean" here and has
+    still never been checked against today's source by anything in this repo --
+    `lake build QOU` reaches only the root's import closure, which is 910 of 2773
+    modules (`scripts/lean-root-coverage-audit.py`), so the other 1863 are outside
+    every routine build.  `--all` is for measuring that population; do not make it
+    the default, because it costs hours where the closure costs minutes.
+    """
     times = last_commit_times()
     changed, never_built = set(), set()
+    if all_dirty:
+        # --all says "verify every module"; it does NOT say every olean is wrong.
+        # Those are different facts and --only needs the second one, so compute
+        # the standard freshness verdict too and hand it back as `untrusted`.
+        for m, p_ in mod2path.items():
+            if not (oleans / (m.replace(".", "/") + ".olean")).exists():
+                never_built.add(m)
+        untrusted = _standard_dirty(mod2path, oleans, times, never_built)
+        return set(mod2path), set(mod2path), never_built, untrusted
     for m, p in mod2path.items():
         o = oleans / (m.replace(".", "/") + ".olean")
         if not o.exists():
@@ -205,7 +253,7 @@ def dirty_closure(mod2path, imports, oleans):
 
     for m in mod2path:
         is_dirty(m)
-    return dirty, changed, never_built
+    return dirty, changed, never_built, _standard_dirty(mod2path, oleans, times, never_built)
 
 
 def layers(need, imports):
@@ -236,6 +284,30 @@ def main() -> int:
                          "TIMEOUT (unverified) and the sweep CONTINUES")
     ap.add_argument("--limit", type=int, default=0,
                     help="stop after N modules (for a smoke test)")
+    ap.add_argument("--all", action="store_true",
+                    help="compile EVERY module, not just the dirty closure -- the "
+                         "measurement for 'how much of the library compiles', since "
+                         "1863 of 2773 are outside the root build and so outside "
+                         "every routine check.  Hours, not minutes.")
+    ap.add_argument("--only", metavar="PREFIX",
+                    help="restrict to modules whose name starts with PREFIX "
+                         "(e.g. QOU.BraidKnot).  Exists so a --all run can be "
+                         "CHUNKED: the shadow's newly-written oleans are the only "
+                         "real bytes it costs (0.22 MB/module), so a full run needs "
+                         "~610 MB at once, and reclaiming the shadow between chunks "
+                         "is what makes it fit a container at 99%.  NOTE this "
+                         "weakens the run slightly: modules in a later chunk resolve "
+                         "their earlier-chunk imports against the SNAPSHOT olean "
+                         "rather than one this run rebuilt.  That is the same "
+                         "snapshot-conditionality the sweep already carries for "
+                         "clean dependencies -- not a new hole -- but it means a "
+                         "chunked green is not identical to a single-run green.")
+    ap.add_argument("--only-exact", metavar="MODULE",
+                    help="like --only but matches ONE module exactly.  Needed for "
+                         "the library root: `--only QOU` is a prefix and EVERY "
+                         "module starts with it, so the root's chunk silently "
+                         "became the whole corpus (measured: `TO COMPILE 2774 "
+                         "[--only QOU + its untrusted deps]`).")
     ap.add_argument("--package", action="append", metavar="LIB",
                     help="library name (QOU, UGB, Fred2005); repeatable, "
                          "default all discovered")
@@ -267,13 +339,60 @@ def sweep_one(args) -> int:
     oleans = find_oleans()
     print(f"olean tree: {oleans}")
     mod2path, imports = load_graph()
-    dirty, changed, never_built = dirty_closure(mod2path, imports, oleans)
+    dirty, changed, never_built, untrusted = dirty_closure(mod2path, imports,
+                                                oleans, all_dirty=args.all)
+    sel = args.only or args.only_exact
+    if sel:
+        # Filter the population to compile, NOT the import graph -- dependencies
+        # outside the selection must stay resolvable.
+        if args.only_exact:
+            seeds = {m for m in dirty if m == args.only_exact}
+        else:
+            seeds = {m for m in dirty if m.startswith(args.only)}
+        if not seeds:
+            print(f"  selection {sel}: no modules match; nothing to do")
+            return 0
+        # ...but a dependency is only "resolvable from the snapshot" if the
+        # snapshot HAS it.  A never-built module has no olean at all, so a
+        # selection that drops it makes every importer a GUARANTEED spurious
+        # RED -- reported as a corpus failure when it is an artifact of how the
+        # run was sliced.  MEASURED, not hypothetical: the first chunked run
+        # reported `QOU.BraidKnot.DominanceIsBruhat` RED with
+        #   error: object file '.../QOU/Machinery/BruhatRankCriterion.olean' ...
+        #   of module QOU.Machinery.BruhatRankCriterion does not exist
+        # because that dep is one of the 60 never-built modules and sits in a
+        # different namespace.  So pull the never-built cone in regardless of
+        # prefix.  5 modules corpus-wide need this; 24 of them are dependencies
+        # of the library ROOT alone.
+        need, stack = set(seeds), list(seeds)
+        while stack:
+            for d in imports[stack.pop()]:
+                if d in untrusted and d not in need:
+                    need.add(d); stack.append(d)
+        pulled = need - seeds
+        if pulled:
+            nb = len(pulled & never_built)
+            print(f"  selection {sel}: +{len(pulled)} untrusted dep(s) pulled in "
+                  f"across namespaces ({nb} never built, {len(pulled) - nb} stale) "
+                  f"-- else they are spurious REDs")
+        dirty = need
 
     print(f"library modules        {len(mod2path)}")
-    print(f"  source-changed        {len(changed) - len(never_built)}")
-    print(f"  never built (new)     {len(never_built)}")
-    print(f"  DIRTY CLOSURE         {len(dirty)}")
-    print(f"  snapshot-current      {len(mod2path) - len(dirty)}")
+    if args.all:
+        # Under --all the freshness rule never runs, so `changed` is "everything"
+        # by construction.  Printing it as `source-changed` would report a
+        # fabricated measurement in the same column a real one normally occupies
+        # -- exactly the cannot-verify-vs-fails conflation this sweep exists to
+        # avoid.  `never_built` IS measured (olean presence), so it stays.
+        print(f"  never built (new)     {len(never_built)}   [measured]")
+        print(f"  source-changed        n/a  (--all: freshness rule not consulted)")
+        label = "[= every module]" if not sel else f"[{sel} + its untrusted deps]"
+        print(f"  TO COMPILE (--all)    {len(dirty)}   {label}")
+    else:
+        print(f"  source-changed        {len(changed) - len(never_built)}")
+        print(f"  never built (new)     {len(never_built)}")
+        print(f"  DIRTY CLOSURE         {len(dirty)}")
+        print(f"  snapshot-current      {len(mod2path) - len(dirty)}")
     if not dirty:
         print("nothing to sweep")
         return 0
@@ -347,7 +466,7 @@ def sweep_one(args) -> int:
             order = [[m for m in layer if m in todo_set] for layer in order]
             order = [l for l in order if l]
 
-        red, skipped, timed_out, ok = {}, {}, {}, 0
+        red, skipped, timed_out, unverified, ok = {}, {}, {}, {}, 0
         broken = set()
         t0 = time.time()
         n = sum(len(l) for l in order)
@@ -357,17 +476,35 @@ def sweep_one(args) -> int:
             src = PKG / (m.replace(".", "/") + ".lean")
             out = shadow / (m.replace(".", "/") + ".olean")
             out.parent.mkdir(parents=True, exist_ok=True)
-            # The shadow is hardlinked to the real tree, so REMOVE the target
-            # before `lean -o` writes it.  Writing through a shared inode would
-            # mutate the real olean tree -- the thing the shadow exists to
-            # prevent.  Also drop same-stem siblings that would then be stale.
-            for stale in (out, out.with_suffix(".olean.hash"), out.with_suffix(".ilean")):
+            # The shadow is hardlinked to the real tree, so the target must not be
+            # written THROUGH: that would mutate the real olean tree, which is the
+            # one thing the shadow exists to prevent.
+            #
+            # Write to a private temp path and `os.replace` it into place.  Do NOT
+            # unlink first, which is what this did and which is a RACE, MEASURED
+            # 2026-09-08:
+            #   [292/383] ok           QOU.Mathlib.SchenstedStandardTableau
+            #   [293/383] UNVERIFIED   QOU.Mathlib.SkewSYTBranchingBijection
+            #                          (missing olean QOU.Mathlib.SchenstedStandardTableau)
+            # The dependency built fine and its dependent could not find it, one
+            # line apart.  `layers()` orders on DIRECT imports, but Lean loads the
+            # whole TRANSITIVE closure, so two modules can share a layer while one
+            # needs the other's olean -- and with --jobs 3 the reader then hits the
+            # window between unlink and write.  `os.replace` is atomic: a concurrent
+            # reader sees the old hardlinked olean or the new one, never absence.
+            # It also breaks the hardlink (a fresh inode is moved into the name), so
+            # the real tree stays protected exactly as before.
+            #
+            # The failure was SAFE -- it understated coverage rather than inventing
+            # a defect, and the honest UNVERIFIED label is what made it findable.
+            for stale in (out.with_suffix(".olean.hash"), out.with_suffix(".ilean")):
                 try:
                     stale.unlink()
                 except (FileNotFoundError, IsADirectoryError):
                     pass
+            tmp = out.with_name(out.name + f".tmp{os.getpid()}.{threading.get_ident()}")
             try:
-                r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(out)],
+                r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(tmp)],
                                    cwd=PKG, env=env, capture_output=True, text=True,
                                    timeout=args.timeout)
             except subprocess.TimeoutExpired:
@@ -380,7 +517,12 @@ def sweep_one(args) -> int:
                 # 2026-09-07: QOU.Machinery.HeckeH4Semisimple exceeded 1800s at
                 # module 527 of 628, and the remaining 101 were never attempted AND
                 # no summary was printed -- bean qou-xumu).
+                tmp.unlink(missing_ok=True)
                 return m, None, f"TIMEOUT after {args.timeout}s"
+            if r.returncode == 0 and tmp.exists():
+                os.replace(tmp, out)     # atomic; no window where `out` is absent
+            else:
+                tmp.unlink(missing_ok=True)
             return m, r.returncode, (r.stdout + r.stderr)
 
         for layer in order:
@@ -406,18 +548,62 @@ def sweep_one(args) -> int:
                         print(f"  [{done_ct}/{n}] TIMEOUT  {m}  ({log})", flush=True)
                     else:
                         errs = [l for l in log.splitlines() if ": error:" in l]
-                        red[m] = errs[:5]
-                        broken.add(m)
-                        print(f"  [{done_ct}/{n}] RED  {m}", flush=True)
-                        for e in errs[:3]:
-                            print(f"        {e}", flush=True)
+                        # THREE ways a non-zero exit is NOT a failing module, and
+                        # reporting any of them as RED sends the next reader
+                        # hunting a defect that has not been shown to exist --
+                        # the same cannot-verify-vs-fails conflation `qou-xumu`
+                        # made this script separate TIMEOUT out for.
+                        #
+                        # 1. Killed by a signal (rc < 0), typically SIGSEGV on a
+                        #    large import closure.  A sibling measured 5 of these
+                        #    on QOU.Hecke.* H3A/H4A -- exit 139, zero bytes of
+                        #    output (audit `333e491eaa4`, bean qou-g5sp).
+                        # 2. Non-zero with NO diagnostic at all: nothing was
+                        #    judged, so there is no verdict to report.
+                        # 3. A missing object file.  For a Mathlib module that is
+                        #    the restored cache being short (MEASURED here:
+                        #    `Mathlib.RepresentationTheory.Homological.
+                        #    GroupCohomology.LowDegree` absent from BOTH mathlib
+                        #    trees, which made the library ROOT unjudgeable); for
+                        #    a QOU module it is a build-order or slicing problem.
+                        #    Neither is the module's source being wrong.
+                        missing = [l for l in errs if "does not exist" in l
+                                   and "object file" in l]
+                        if rc < 0 or not errs or missing:
+                            if rc < 0:
+                                why = f"killed by signal {-rc}"
+                            elif missing:
+                                # Name the MISSING MODULE, not the first 120
+                                # characters of its absolute path -- the path is
+                                # the same prefix for every hit and the module is
+                                # the only part that tells you what to fix.
+                                mo = re.search(r"of module ([\w.]+) does not exist",
+                                               missing[0])
+                                mm = mo.group(1) if mo else "?"
+                                where = "mathlib cache" if mm.startswith("Mathlib") \
+                                        else "build order"
+                                why = f"missing olean {mm} ({where})"
+                            else:
+                                why = f"exit {rc}, no diagnostic"
+                            unverified[m] = why
+                            broken.add(m)
+                            print(f"  [{done_ct}/{n}] UNVERIFIED  {m}  ({why})",
+                                  flush=True)
+                        else:
+                            red[m] = errs[:5]
+                            broken.add(m)
+                            print(f"  [{done_ct}/{n}] RED  {m}", flush=True)
+                            for e in errs[:3]:
+                                print(f"        {e}", flush=True)
 
         print(f"\n=== library sweep: {ok} ok, {len(red)} RED, "
-              f"{len(timed_out)} TIMEOUT (unverified, NOT failing), "
+              f"{len(timed_out)} TIMEOUT + {len(unverified)} UNVERIFIED (NOT failing), "
               f"{len(skipped)} skipped (dependency red), "
               f"{time.time() - t0:.0f}s ===")
         for m in sorted(timed_out):
             print(f"TIMEOUT {m} -- unverified; re-run with a larger --timeout to judge it")
+        for m, why in sorted(unverified.items()):
+            print(f"UNVERIFIED {m} -- {why}  (NOT a corpus defect on this evidence)")
         for m, errs in sorted(red.items()):
             print(f"\nRED {m}")
             for e in errs:

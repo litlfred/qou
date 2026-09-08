@@ -53,31 +53,31 @@
     "per_atom": {
       "2H": {
         "n": 6,
-        "dtr_pred": "0.5565446604044382",
+        "dtr_pred": "0.1470466779804085",
         "dtr_required": "2.843501215117498",
-        "shortfall_R": "2.28695655471306",
-        "fraction_supplied": "0.19572514"
+        "shortfall_R": "2.69645453713709",
+        "fraction_supplied": "0.051713246"
       },
       "3H": {
         "n": 9,
-        "dtr_pred": "0.8885361268736701",
+        "dtr_pred": "0.1129280144363327",
         "dtr_required": "10.84166660795012",
-        "shortfall_R": "9.953130481076449",
-        "fraction_supplied": "0.081955677"
+        "shortfall_R": "10.72873859351379",
+        "fraction_supplied": "0.010416112"
       },
       "3He": {
         "n": 9,
-        "dtr_pred": "0.8929085753935158",
+        "dtr_pred": "0.1295823893450524",
         "dtr_required": "9.865414039785334",
-        "shortfall_R": "8.972505464391818",
-        "fraction_supplied": "0.090508981"
+        "shortfall_R": "9.735831650440281",
+        "fraction_supplied": "0.013135018"
       },
       "4He": {
         "n": 12,
-        "dtr_pred": "1.119809006086239",
+        "dtr_pred": "0.07817256284216318",
         "dtr_required": "36.16830454033163",
-        "shortfall_R": "35.0484955342454",
-        "fraction_supplied": "0.030961059"
+        "shortfall_R": "36.09013197748947",
+        "fraction_supplied": "0.0021613555"
       }
     },
     "deciding_test": [
@@ -90,12 +90,12 @@
           "4He": "1.0"
         },
         "c_per_atom": {
-          "2H": "4.10920581477",
-          "3H": "11.2017172741",
-          "3He": "10.0486272746",
-          "4He": "31.2986369495"
+          "2H": "18.3374053339",
+          "3H": "95.005111416",
+          "3He": "75.1323671345",
+          "4He": "461.672620998"
         },
-        "spread": "1.9195412"
+        "spread": "2.7275977"
       },
       {
         "w": "interface sigma product",
@@ -106,12 +106,12 @@
           "4He": "-1.109886410649332"
         },
         "c_per_atom": {
-          "2H": "-4.47670197445",
-          "3H": "-12.9284487111",
-          "3He": "-8.3874255839",
-          "4He": "-28.1998559935"
+          "2H": "-19.977363599",
+          "3H": "-109.650036702",
+          "3He": "-62.7117636135",
+          "4He": "-415.963846902"
         },
-        "spread": "1.757517"
+        "spread": "2.6038765"
       },
       {
         "w": "interface sigma^-1 product",
@@ -122,12 +122,12 @@
           "4He": "-0.9278750045763797"
         },
         "c_per_atom": {
-          "2H": "-3.64624411875",
-          "3H": "-12.4686674836",
-          "3He": "-8.70477705004",
-          "4He": "-33.731522883"
+          "2H": "-16.2714303849",
+          "3H": "-105.750494723",
+          "3He": "-65.084562028",
+          "4He": "-497.559066384"
         },
-        "spread": "2.0553138"
+        "spread": "2.8118116"
       },
       {
         "w": "interface averaged product",
@@ -138,12 +138,12 @@
           "4He": "-1.028352914002476"
         },
         "c_per_atom": {
-          "2H": "-4.01902168461",
-          "3H": "-12.5391296548",
-          "3He": "-8.46452356061",
-          "4He": "-30.4356962705"
+          "2H": "-17.9349570206",
+          "3H": "-106.348105452",
+          "3He": "-63.2882158326",
+          "4He": "-448.943757257"
         },
-        "spread": "1.9053336"
+        "spread": "2.7085538"
       },
       {
         "w": "first interface only",
@@ -154,18 +154,18 @@
           "4He": "0.4360859195246651"
         },
         "c_per_atom": {
-          "2H": "-4.47670197445",
-          "3H": "48.6037861895",
-          "3He": "175.804607325",
-          "4He": "71.771721003"
+          "2H": "-19.977363599",
+          "3H": "412.223234097",
+          "3He": "1314.46972214",
+          "4He": "1058.67353273"
         },
-        "spread": "2.4721179"
+        "spread": "1.9302124"
       }
     ],
-    "control_spread": "1.9195412",
+    "control_spread": "2.7275977",
     "candidates_under_5pct": [],
     "candidates_beating_control_2x": [],
-    "worst_chi_error_vs_committed": "1.02634e-48"
+    "worst_chi_error_vs_committed": "1.06911e-49"
   },
   "context": {
     "axis": "does an INTERFACE-supported w supply the binding shortfall at every atom with one shared constant?",
@@ -173,14 +173,15 @@
     "anti_fit": "No candidate is put forward and every one is reported with its spread. A small spread is a target to check a future derivation against, never a derivation.",
     "scope": "Scope-(a). No content block is edited here."
   },
-  "gitCommit": "0da1cf94c3c51aae4344bf3de4b06775355abbf1",
+  "gitCommit": "9b009da0e6eb8a651efe59e06ae3919bbaf4b25d",
   "durationMs": 0,
   "scriptFile": "qbeta_interface_w_deciding_test_probe.py",
-  "scriptHash": "3da190c00dd7",
-  "scriptCommitSha": "0da1cf94c3c51aae4344bf3de4b06775355abbf1",
-  "commitSha": "0da1cf94c3c51aae4344bf3de4b06775355abbf1",
+  "scriptHash": "8c3424fe3b00",
+  "scriptCommitSha": "c415d81fe7af0de5d6506ddcf99a232844856cb0",
+  "commitSha": "9b009da0e6eb8a651efe59e06ae3919bbaf4b25d",
   "engine": "mpmath+pyhecke_native",
-  "computedAt": "2026-09-03T06:32:21.235338+00:00",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "computedAt": "2026-09-06T13:26:16.900919+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

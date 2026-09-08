@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T17:00:30Z
-updated_at: 2026-08-21T17:00:58Z
+updated_at: 2026-09-07T17:58:08Z
 ---
 
 Found while draining the 22 small-category vacuity defects (qou-h3ly).
@@ -40,3 +40,58 @@ class instead (`trace n = z ^ n` for an arbitrary instance).
 fields stating the actual Stokes identity, then re-derive the instances.
 Until then the Lie-valued Stokes obligation is NOT discharged; do not
 write a theorem asserting that it is.
+
+
+---
+
+## 2026-09-07 — the encoding landed (PR #7116); the bean stays open for ONE thing
+
+**Done, and do not redo it.** Both `Prop`+witness pairs are gone. The fields
+now state the identities:
+
+- `NonAbelianStokes.stokes` — `MI₁(α; ∂σ) = MI₂(α, d_α β; σ)`, with
+  `boundary`, `covariantD` and `slice` carried as fields (the class had
+  integrals and no boundary, no covariant derivative and no slicing, which is
+  why it could not state its own subject).
+- `NonAbelianStokes.finite_slice` — the multiplicative integral IS
+  `piecewiseAffineLineIntegral (slice γ)`, which this file already proves
+  theorems about.
+- `LieValuedStokes.stokes_identity` — `∫_{∂σ} α = ∫_σ d_α β`, with the three
+  integrals carried.
+
+The instances were re-derived as the bean asks. `punitInstance` survives and
+is now honest: it *satisfies* `1 = 1` and `piecewiseAffineLineIntegral [] = 1`
+by `rfl` rather than choosing them.
+
+**Two things found while doing it that the bean did not name.**
+
+1. `LieValuedStokes_canonical` was a global **`instance`**, so
+   `[LieValuedStokes M 𝔤]` was discharged corpus-wide with `(0 : 𝔤) = 0` —
+   the same defect `punitInstance` was demoted for on 2026-08-24, one class
+   up in the same file, left live. Demoted to `def`.
+2. `closedCellStokesIdentity` / `content_bearing_stokes` were a second model
+   holding a differently-spelled tautology (`(1 : G) = 1`). With the field
+   encoded there is no `Prop` field left for it to differ from
+   `punitInstance` in, so it had become that model under another name.
+   Deleted; nothing referenced either outside the file.
+
+## 🛑 STILL OPEN — and this is now the whole bean
+
+**The only model of `LieValuedStokes` is the zero one** (every integral
+constantly `0`). By the `qou-z9ws` inhabitation discriminator that is
+evidence the axioms are consistent and none that they constrain anything, so
+`Nonempty (LieValuedStokes M 𝔤)` is still as empty as the `∃ _, True` that
+`UpstreamSubstrateBridge.lean` deleted.
+
+**So the bean's closing instruction is UNCHANGED: the Lie-valued Stokes
+obligation is NOT discharged; do not write a theorem asserting that it is, and
+do not restore `lie_valued_stokes_discharged`.** What changed is that the
+carrier can now be *contradicted* by a non-zero model. What has not changed is
+that no such model exists here.
+
+What closing it needs: a `LieValuedStokes` model with a non-zero integral
+satisfying the identity — i.e. the analytic theory this file abstracts away, or
+a finite/combinatorial model on the braid surface where the integrals are
+literal finite products. The same gap applies to `NonAbelianStokes`, whose
+only model is likewise `punitInstance`. Related: `qou-ghc6` (build
+Lie-algebra-valued 1-forms on a normed space).

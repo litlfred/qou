@@ -1,9 +1,15 @@
 {
   "computation": "chi-lithium-6-h18-at-q0-50dps-matrix-m",
-  "description": "Lossless per-λ χ^λ(β_atomic(3,3))=lithium-6 at q_0, 50 dps, ALL 385 partitions of S_18 via the canonical Rust chi_q_via_gp path (sign-only crossings; matches the matrix-M backend to the 50-dps floor, PR #2062 §8). No max_dim cap — feasible at any n because χ_λ is dim-independent (~20 ms/λ). y_λ from the closed-form tower (y_lambda_tower_infra.py).",
-  "producer": "rust-chi-q-via-gp-lossless",
+  "description": "Lossless per-λ χ^λ(β_atomic(3,3))=lithium-6 at q_0, 50 dps, ALL 385 partitions of S_18 via the seminormal path-sum (chi_path_sum_seminormal.py: the atom word touches every seminormal level in one contiguous factor, so χ^λ is a transfer-matrix contraction over shapes, dim-free; agrees with Rust chi_lambdas_braid_mpfr and chi_q_via_gp to the 50-dps floor, bean qou-s7ld). Sign-only crossings; matches the matrix-M backend to the 50-dps floor (PR #2062 §8). No max_dim cap. Braid word: atom_braid_word_3A intra_order='borromean' (owner ruling 2026-09-05, qou-92u9). y_λ from the closed-form tower (y_lambda_tower_infra.py).",
+  "producer": "seminormal-path-sum-lossless",
+  "chi_backend": "path-sum",
+  "braid_word_intra_order": "borromean",
   "convention": "sign-only-crossings",
+  "pn_split_carried": false,
+  "pn_split_note": "isobars are degenerate by construction: the (sign, gen) wire format drops the crossing-type field. See beans qou-sgv5 (mechanism, measured) and qou-fv0s (representation; retargeted from the COMPLETED qou-gdtb, which closed the pair form, not the sign wire).",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "dps": 50,
   "n_strands": 18,
   "atom": "lithium-6",
@@ -15,8 +21,8 @@
   "n_skipped_max_dim": 0,
   "tr_M_partial": false,
   "partial": false,
-  "compute_time_sec": 1451,
-  "tr_M_at_q0": "3.8647749823824600176514999632797517349965146699502",
+  "compute_time_sec": 10,
+  "tr_M_at_q0": "1.15557589531859474633630189239359264294829682065917828155652320780058",
   "by_partition": [
     {
       "partition": [
@@ -33,8 +39,8 @@
         1
       ],
       "y_lambda": "0.000094704708660203944878806918474060456909028386387165",
-      "chi_lambda": "3654.9885118587028712481488332644194313350554839494",
-      "contribution": "0.34614462217197082669615312828163823714260347248622",
+      "chi_lambda": "2018.2030861257026381598647021663915002456347250204",
+      "contribution": "0.19113333528865915866853104039549022649078342857471",
       "compute_time_sec": 0
     },
     {
@@ -43,8 +49,8 @@
         2
       ],
       "y_lambda": "0.000075687043051962240880461501949882507899204675508186",
-      "chi_lambda": "6412.0446955871861590629065845742436999432088863142",
-      "contribution": "0.48530870292601348007838586174002994483640817805424",
+      "chi_lambda": "2155.1267426093019887886419863419846745062988322932",
+      "contribution": "0.16311517055030538675282036879592781165457860616758",
       "compute_time_sec": 0
     },
     {
@@ -54,9 +60,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1362.1365584705733109136482603753605705654134060997",
+      "chi_lambda": "-2.3484322238743455308031866009930737598914912429213",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -64,9 +70,9 @@
         3
       ],
       "y_lambda": "0.000059977371130559568128170856599614748299659750740834",
-      "chi_lambda": "10905.903176799735391563839547641468192642699029054",
-      "contribution": "0.65410740234886633109227470213313206258368164053464",
-      "compute_time_sec": 1
+      "chi_lambda": "3164.4031911005570970501158163906061022457934577189",
+      "contribution": "0.18979258459936512532995224869273726660337381635229",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -75,9 +81,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "3146.7019753047724134230344979247371201427128830441",
+      "chi_lambda": "-577.76043325633044148603583803233225553767420750492",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -87,9 +93,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1222.0803296856211646640097611111969920268783082514",
+      "chi_lambda": "188.38048150817900021487851058371056326672501224453",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -97,9 +103,9 @@
         4
       ],
       "y_lambda": "0.000046889082699021596010429040167606200908673084210921",
-      "chi_lambda": "14636.242236951118156611533108144896330574565542192",
-      "contribution": "0.68627997265131381730586976406467038340255976101033",
-      "compute_time_sec": 1
+      "chi_lambda": "3294.2272701914986845310732975077973332942647043965",
+      "contribution": "0.15446329490138134155220989200971573794456738739658",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -108,9 +114,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "8950.8273923727587661750835120503785524217676708631",
+      "chi_lambda": "504.12854853128680812510916494833464225645593656882",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -119,9 +125,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1453.5964418392979739929003553713940134806680383832",
+      "chi_lambda": "-777.4740480199342497751432260776506527597649748739",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -131,9 +137,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4128.1425988136889676375290420289495571321907938634",
+      "chi_lambda": "-553.90677992958917922216843215796625786739094593818",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -144,9 +150,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "207.67915499723402994567013601183249419621345700449",
+      "chi_lambda": "663.27619483335557146785571392884581165058269705075",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -154,9 +160,9 @@
         5
       ],
       "y_lambda": "0.000035850138293825730764529792073014325864928798583446",
-      "chi_lambda": "16996.865690662822410039978247724952317313335874764",
-      "contribution": "0.60933998557184397713499397656369231394229451799123",
-      "compute_time_sec": 1
+      "chi_lambda": "3173.828043651494822801396724259569731142525382537",
+      "contribution": "0.11378217428572845755057404534667373259110761971274",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -165,9 +171,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "12959.794160976316127167591290788194134672735445241",
+      "chi_lambda": "338.47836237346992426055970708562553427200438804239",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -176,9 +182,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "9996.5228478122254061354914764835713944860282861326",
+      "chi_lambda": "760.58975260407318482440775678241233352651621905954",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -188,9 +194,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4877.3807874493417408920237751359605355799578206254",
+      "chi_lambda": "-642.09486049259698269164408746499003953834302424935",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -200,9 +206,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4524.1216887044578841652827846791556656881745075415",
+      "chi_lambda": "-984.19644624360763594026315089540460366258394602097",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -213,9 +219,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-692.13484760117064471361135174383182883547351435525",
+      "chi_lambda": "754.39666784224778538166845022737169094779323738844",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -227,9 +233,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "806.90689813362330059485033626917914979975326928237",
+      "chi_lambda": "-55.534673716550678032742346580699594464125674299951",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -237,9 +243,9 @@
         6
       ],
       "y_lambda": "0.000026378067508819564987742675439894581130551535198119",
-      "chi_lambda": "18079.260233996358028296001103811090601540693024106",
-      "contribution": "0.47689594696187293738860155599553107472607143331583",
-      "compute_time_sec": 1
+      "chi_lambda": "3282.6833546877418859945377742969419814130359354188",
+      "contribution": "0.086590843140031536072190901001992609656513972965883",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -248,9 +254,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "15408.955027120090911252525883322327418864580165132",
+      "chi_lambda": "260.65032059850357410729322470298496490513745259979",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -259,9 +265,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "15130.96720820148583234368345013853500075490887887",
+      "chi_lambda": "533.99664382554285652727266764787982297040972184875",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -271,9 +277,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-6715.1107080722734489999717565824141190792151060229",
+      "chi_lambda": "-736.01812067420691390865235977344498173396555866704",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -282,9 +288,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "12155.743690263946707939731233172792564519283144482",
+      "chi_lambda": "1950.7961571031398807470777603506270691816432541228",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -294,9 +300,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3778.4766158888675556568691195145912435949385230147",
+      "chi_lambda": "-1103.3146619579021983109997502353606663336658537193",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -307,9 +313,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2156.1328272838064373340026827185703594915541371531",
+      "chi_lambda": "850.15873363144564021774262516005950580118637481922",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -319,9 +325,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1294.6329816067625455246915525070504104843342254073",
+      "chi_lambda": "122.94421341164663049434146210971798192741521205021",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -332,9 +338,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1872.6801331628851650794569397273009217652476057042",
+      "chi_lambda": "34.308778452725947686260098552077197109483205386589",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -346,9 +352,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "2158.5235867233497196462402306824268947532144056257",
+      "chi_lambda": "-77.557449620830576296436913970052855713744415633951",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -361,9 +367,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-226.93318475446242337180850216196723960669616630448",
+      "chi_lambda": "-37.797862525932661653306547722340237861464171441863",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -371,9 +377,9 @@
         7
       ],
       "y_lambda": "0.000018058882043038809939156720595763793318685865620391",
-      "chi_lambda": "15821.815274499854449340123962611937524278685183752",
-      "contribution": "0.28572429574894258100945422975037879304873457732263",
-      "compute_time_sec": 1
+      "chi_lambda": "2408.6636203356795688081236147309310258088848316357",
+      "contribution": "0.04349777220100085348590524053975123314077085988406",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -382,9 +388,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "17194.903513400344461545336468008995216055355729702",
+      "chi_lambda": "761.51475089964403464229028160988615955541885328021",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -393,9 +399,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "17610.054249019921144836172284464540701382872983161",
+      "chi_lambda": "160.17805981395244052514543778889479732850743509696",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -405,9 +411,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-7308.4879812267713810707894609821720661271958541794",
+      "chi_lambda": "-836.45412907353107835985932961997916594069229362938",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -416,9 +422,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "18640.914584440791408795186452641301246644819169196",
+      "chi_lambda": "1652.3471425340099892185286095954700855860004551416",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -428,9 +434,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-5707.2967836444905350657587862633135323218389373893",
+      "chi_lambda": "-1137.4629598549006128504826882490429430645408224315",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -441,9 +447,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3946.579551173518657478728470862086855714679126641",
+      "chi_lambda": "1030.5388330691317049142290521657977310170553605857",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -453,9 +459,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "5277.0551648313617424749712796662346416533583055728",
+      "chi_lambda": "355.23568754945063526905303024131586929601993454316",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -465,9 +471,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "557.85026418713371732386139420910463483595042201455",
+      "chi_lambda": "-6.397039599475644368662351257577327265224747783847",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -478,9 +484,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-5446.7894998260748737782350289387736246953090615042",
+      "chi_lambda": "-281.98376149476649857467035858904776787498925640831",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -492,9 +498,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "3545.9524177219254020275659752076077487502807774744",
+      "chi_lambda": "136.38252871430075966056331557514438255931983014471",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -505,9 +511,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-260.50376881422930280855803808433338113833364544529",
+      "chi_lambda": "339.47334332814960784663478710548345362167097429757",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -519,9 +525,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1963.9723860386133122062743268716983256503245694209",
+      "chi_lambda": "-103.02970464017255721071336257612020219104645959757",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -534,9 +540,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-427.93211750867487997175220543851055307502759418711",
+      "chi_lambda": "-126.34539684777016794735158326236675932354941167868",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -550,9 +556,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-135.59605192015794707069088176225278812434981107176",
+      "chi_lambda": "88.460842937010907148339127480705611396600370758331",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -560,9 +566,9 @@
         8
       ],
       "y_lambda": "0.000010528981841695325861779447161600826945217876225469",
-      "chi_lambda": "10734.596650570767629075319214749689625945741178047",
-      "contribution": "0.11302437321178307731887754566671271517059640199174",
-      "compute_time_sec": 1
+      "chi_lambda": "1552.2303070290810651771621806417136492232527636419",
+      "contribution": "0.016343404716838355070082449698536269524922893085639",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -571,9 +577,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "14041.281271302137055532532835824023253827822686942",
+      "chi_lambda": "318.46627838213156182568808930807504953553880946466",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -582,9 +588,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "19669.809973105437278417487198457782350076967684233",
+      "chi_lambda": "1038.2860057001850805887091357934243100830965590583",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -594,9 +600,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-5656.4271848973327482302392827748777641222406829207",
+      "chi_lambda": "-788.0650544632049618167922219313726105821174983063",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -605,9 +611,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "20847.794682334547656501444147281126634237643022243",
+      "chi_lambda": "1196.5384500191300270777634997978337923996438841516",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -617,9 +623,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-5927.9368277473961070181063248018950993056695788863",
+      "chi_lambda": "-1262.7174153882788427722385177723995176057774757583",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -630,9 +636,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4415.4165820226921887831651609073070154001788496955",
+      "chi_lambda": "898.33956829412622666328241693018831721068236193215",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -641,9 +647,9 @@
         4
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "5720.2609280431900407468749243971088456189562459025",
+      "chi_lambda": "-398.18115534640923665659641188719855332521499888844",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -653,9 +659,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4641.1977170242422177546328442090080733424493021651",
+      "chi_lambda": "213.80463119530805294334232093422861711461698773083",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -665,9 +671,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1138.3381046275160369002265790661723452835039415894",
+      "chi_lambda": "78.177535555464905758401382624560025873738209368139",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -678,9 +684,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-8742.254152644676571458795974990922357809555250141",
+      "chi_lambda": "-21.914424301763167818301063484958701379297463232395",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -692,9 +698,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4140.5678817933527696700539735597076854920973727512",
+      "chi_lambda": "22.342071921131864036658921650908202687427835920773",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -704,9 +710,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "7660.9716183724299149549170525342407391430006499812",
+      "chi_lambda": "460.90005495414173738764351164284662736682524267637",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -717,36 +723,36 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3679.9939537609277684870120204316206098242385486269",
+      "chi_lambda": "-345.30104178300474691027397226095166134338716094869",
       "contribution": "0.0",
-      "compute_time_sec": 4
-    },
-    {
-      "partition": [
-        10,
-        3,
-        2,
-        2,
-        1
-      ],
-      "y_lambda": "0.0",
-      "chi_lambda": "-2769.2903383424670490973795658529172283578276188217",
-      "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
         10,
         3,
         2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-281.35613233113450912698733016440475159945100248095",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        10,
+        3,
+        2,
         1,
         1,
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "3211.1854436308828785448667255492064201302221422634",
+      "chi_lambda": "296.36131422755659410066168645103481218797558544202",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -759,9 +765,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "43.356765066711204736941659316254549687795584388081",
+      "chi_lambda": "-159.35706548777117827450319991333839965717816621124",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -772,9 +778,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1031.0569840489451337570799411150144485414264641316",
+      "chi_lambda": "388.0854118001690068560953765108877628229442914173",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -786,9 +792,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "994.412094154852885687527337627604793337646011903",
+      "chi_lambda": "-47.295870822161796759531979785213856261416821659571",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -801,9 +807,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-174.61941484942622008181156601506171148323026012147",
+      "chi_lambda": "-138.10789468299637892189289549784799582972622996133",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -817,9 +823,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-560.84878758622673210161895587335722215366852673965",
+      "chi_lambda": "103.16785785358652881965052337846966803931181280605",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -834,9 +840,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "128.4796883641973795191405678803237127924912326471",
+      "chi_lambda": "-15.525095716082272081504910269396160890489771670417",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -844,9 +850,9 @@
         9
       ],
       "y_lambda": "0.000003459263516360115125862217840483365597892749309266",
-      "chi_lambda": "3915.315257221302486963430308970294056347019321926",
-      "contribution": "0.013544107224353771477797171257678116865598133710236",
-      "compute_time_sec": 1
+      "chi_lambda": "708.74683532784764268162265405415210418137475542528",
+      "contribution": "0.0024517420697853137049436780864796620637116829866193",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -855,9 +861,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "7641.2801618538688401325736493751581508059983390229",
+      "chi_lambda": "252.58537241768237637910996962301466611044362257024",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -866,9 +872,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "13919.796335487658109164777775250313207342498504773",
+      "chi_lambda": "421.77390043817155501930782737306897381428343923662",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -878,9 +884,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4261.0103246410923957486372297679902118713447899557",
+      "chi_lambda": "-507.91995007915837170787123535600736941479636117451",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -889,9 +895,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "21533.771019793711281980006936839102299420742982533",
+      "chi_lambda": "1751.592944207887055115921104127025756806096597451",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -901,9 +907,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3279.1736397545502542110499279041777297221720472615",
+      "chi_lambda": "-997.98729582819993043464493715280903093743533557807",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -914,9 +920,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4049.2820033046198609563068735989723711213561987362",
+      "chi_lambda": "651.86181750167257842981170451953731696389425170465",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -925,9 +931,9 @@
         4
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "7804.77912032960021929336635933148891023539617882",
+      "chi_lambda": "-450.90456839573527103142709430372242074334838246991",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -937,9 +943,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "3834.2148918196179707114489417002593182594526287816",
+      "chi_lambda": "-71.671475888467840500646800870560636076353254718546",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -949,9 +955,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1322.0885997906969278771248204575053883835860311781",
+      "chi_lambda": "28.512651789951116430591696240643930253851785894539",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -962,9 +968,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-8379.1137127686943848886898914176788035965080529993",
+      "chi_lambda": "33.219179386370995907836294019589643222262427811594",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -976,9 +982,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4178.6208011314186135528264158794563592649029225501",
+      "chi_lambda": "61.041981979168263942693223124778854365791405170442",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -988,9 +994,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1778.407823575607758171300490433041872292848363835",
+      "chi_lambda": "-167.77414088943573061448421638989425891868829523853",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1000,9 +1006,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "9786.2361880053773928699439826343338650368508585815",
+      "chi_lambda": "355.30425309617937776673266761054531812837439132991",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1013,9 +1019,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-7282.9195889661911167416778184662499573899662902153",
+      "chi_lambda": "-85.159983455570801372768138028210604073813923361572",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1026,9 +1032,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3409.1577724246718942707277812500525275809101355368",
+      "chi_lambda": "-135.05390524204735401244598570314831904120815104823",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1040,9 +1046,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "3694.6986273622415332109150679293439091056960966947",
+      "chi_lambda": "131.39959219420869828565401995177985009883964617554",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1055,9 +1061,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "219.56386375751969637061661961372835721215009932846",
+      "chi_lambda": "-169.21784516056226552515293140579392274984377559691",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1067,9 +1073,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "6899.2009317627910942531020100000234240821126703351",
+      "chi_lambda": "731.90540526657442249427079020077304392180168744384",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1080,9 +1086,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1985.4118474680402047870321907143220954270039817535",
+      "chi_lambda": "-569.57212429000277948888327509875424290633297847456",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1094,9 +1100,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "468.2009678698999377214880175693007749604153117037",
+      "chi_lambda": "332.21352258063247272848813944509523919158185996308",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1107,9 +1113,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "822.92995548391990669753630404611540558343594708611",
+      "chi_lambda": "318.24889658569584353072546590731169230549454475902",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1121,9 +1127,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "81.222086733148414287825162322932326606273566013635",
+      "chi_lambda": "7.6603943061892616546474857609739436361764366004681",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1136,9 +1142,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1013.5406338005024112244386246223232696200971794787",
+      "chi_lambda": "-104.96220892496555245114055109487290081462743018615",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1152,9 +1158,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-949.75492648621942750214893582316709885772261378651",
+      "chi_lambda": "80.865243768027841492328738861070898633033618796402",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1166,9 +1172,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "626.7887666477661247032325963612477336094491432949",
+      "chi_lambda": "-26.374332352373227417827980168779474866562774109506",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1181,9 +1187,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-48.103759027439116997652410021396285695222242927568",
+      "chi_lambda": "-13.617982596107285745153287644934495474154542049374",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1197,9 +1203,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-681.71509705535907866199287188944460428908851622523",
+      "chi_lambda": "13.726687787275504775163495991976857915332741561098",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1214,9 +1220,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "299.01236100335115677323210119862048849105140849738",
+      "chi_lambda": "-6.976166254419954120265917717587860508138231066681",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1232,9 +1238,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-12.961577873223242479143488780637986795256249552631",
+      "chi_lambda": "-6.2629064373399420649786178590786842933111094737096",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1243,9 +1249,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4317.9577841154343919342549902987892364950924118687",
+      "chi_lambda": "-197.47305819211425879633225037749639094427384195966",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1255,9 +1261,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1737.2178022263309807559679501185196995509536404807",
+      "chi_lambda": "-86.668069003704771493372460416826824051675028611234",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1266,9 +1272,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "11959.557405354309462771827005420175636552487740312",
+      "chi_lambda": "507.913369591548580780576102633132445862766031261",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1278,9 +1284,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2756.9903638728099614080126847214589085483041313431",
+      "chi_lambda": "-468.05110907907386160153597611695838860317962544745",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1291,9 +1297,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2692.9415529884433762824182581930113447417168510127",
+      "chi_lambda": "389.38424850395494713432418376376705899119206978342",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1302,9 +1308,9 @@
         4
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "9864.8892264580707925134428373641903959409147319129",
+      "chi_lambda": "264.45147770993408191850558108274291837602740465438",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1314,9 +1320,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4631.157221331891670693058530593233471198601851763",
+      "chi_lambda": "54.447524552527435436162528521797613214025042517275",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1326,9 +1332,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1438.9020547607846357274357170878631855687220778533",
+      "chi_lambda": "-15.115767875444414689210769021176228865880888101149",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1339,9 +1345,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-7091.1462222086248890087374925319815822848995573071",
+      "chi_lambda": "-100.16944246054249146262429840563117662228483363104",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1353,9 +1359,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "3062.1302116138614937728562835548333875759720424236",
+      "chi_lambda": "123.13795885827733438590231022023703452350334083142",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1364,9 +1370,9 @@
         5
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1980.277262723634507266632016286416618482845592044",
+      "chi_lambda": "-358.53706306501278600742342302505128000161126956522",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1376,9 +1382,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2616.1322682755428113928146221341319275611580489061",
+      "chi_lambda": "-372.74593978819944241717424514635652645549990361422",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1388,9 +1394,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "8490.3137302072921708624940129093578117747777948978",
+      "chi_lambda": "231.13059765387712509960538965878678134872142456324",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1401,9 +1407,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-6510.1893145042268197414788602635459999488260444037",
+      "chi_lambda": "9.0855572084854178895278264885938149639308852024421",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1414,9 +1420,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2484.405632104126165512135149440919648010328033951",
+      "chi_lambda": "100.44557400292811130204499331747643102593090161882",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1428,9 +1434,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "3677.6447559027383428230178327058786259435798967935",
+      "chi_lambda": "-40.130438220936242675856798059614759917135561046482",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1443,9 +1449,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "248.9913081130404373487333834930296531323053806049",
+      "chi_lambda": "-117.74394529246272069651074765739890590940407372114",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1455,9 +1461,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "944.60019469838144706567462230750400863000094897328",
+      "chi_lambda": "-78.427960762321526030963030312213908543024336765181",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1468,9 +1474,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4010.1325117662521352668630322498972770271820918001",
+      "chi_lambda": "303.6465929284038295425856440470662459398920253599",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1480,9 +1486,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "8272.5520557581407234903220806166303030474311092244",
+      "chi_lambda": "455.35742385256572273246425253519418139463548460158",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1493,9 +1499,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2591.0956831102517998808166297789355594512041402496",
+      "chi_lambda": "-495.74308715505306788142856367921741810934915338657",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1507,9 +1513,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "678.28474755480515907143840195234116029545214865284",
+      "chi_lambda": "212.44762564304856894865089898328339963349023699488",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1520,9 +1526,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1868.8682691706872533294036856141753066983353672859",
+      "chi_lambda": "340.87379144216707211446201040536412281175416019723",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1534,9 +1540,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "158.74176840905015055793506352897649648307292020616",
+      "chi_lambda": "-9.6374467709144065516721081357845893929836857529188",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1549,9 +1555,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1378.4454873087610507361073246740781493531683549142",
+      "chi_lambda": "-109.73731230987573514357937600490987154152150144771",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1565,9 +1571,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1064.4197794528715854191942187277165955922026375236",
+      "chi_lambda": "118.50596535742808436901073225066209025519077334575",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1578,9 +1584,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1783.4665143975741892002644579548392238769186444343",
+      "chi_lambda": "128.40824266208153205190156538866744067245211806165",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1591,9 +1597,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "447.0512611112628532755001118956568904008835535209",
+      "chi_lambda": "-47.322239053244418374928971307078349640677043414227",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1605,9 +1611,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2561.7507080892589745791888588784271915824435720335",
+      "chi_lambda": "-21.110397582233089848658475558640111222758072455146",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1620,9 +1626,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1660.8809479665228751461596037694800086866746758875",
+      "chi_lambda": "66.985868183950953191151114209836063138581681087215",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1634,9 +1640,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "109.74257944835143197160915517262827069241816004944",
+      "chi_lambda": "-7.719006207175926631821372285452709592131288716988",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1649,9 +1655,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "740.60912823160120799853592301918775090653581434034",
+      "chi_lambda": "18.92482856235425046210655802983928333901791624488",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1665,9 +1671,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1239.7755177261138811332165109966841950775165233589",
+      "chi_lambda": "-54.993206407065403717228690409144155480532780722223",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1682,9 +1688,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "317.46344774530816194235383781869020474927172877851",
+      "chi_lambda": "8.6779984299647194662428256686204968885325659094306",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1696,9 +1702,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "199.90784244153493974410215142147100636170481182828",
+      "chi_lambda": "-67.290870660940426904364276806792775275526576383209",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1711,9 +1717,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-220.06826172993272903351109887462561109853745998304",
+      "chi_lambda": "-15.458427686220755808465528260962883129166725501527",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1727,9 +1733,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-267.12001810462303039467760861487522067402014702268",
+      "chi_lambda": "52.647177329119323818765855284720106185411780057789",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1744,9 +1750,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "232.0307332794342775609733443856713277396017375973",
+      "chi_lambda": "-9.9717698244146496404495582295571623859686487502074",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1762,9 +1768,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "15.278268742267980341875820563565344554770880013976",
+      "chi_lambda": "-7.76711565499837158729285385350057910534093655594",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1781,9 +1787,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-18.940546867934536622497648297755871297966696024155",
+      "chi_lambda": "5.754821300212305378752952867834709123574880229515",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1792,9 +1798,9 @@
         4
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4103.5652927911930116727219631644193167282879530176",
+      "chi_lambda": "-70.5837405633376556562686824717166275190099560737",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1804,9 +1810,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1407.7323641851060663682127574892114532408259788273",
+      "chi_lambda": "-8.1600744750642739911847557594637110825115301193406",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1816,9 +1822,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "529.33230860802451045397855870775408930902902782479",
+      "chi_lambda": "84.267796678649129486845529838281743528399126663167",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1829,9 +1835,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3336.6458764816220102308455733374326777063332598666",
+      "chi_lambda": "-32.248225972275997274971122605020117981367959114681",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1843,9 +1849,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1033.3220873366990472798627972131993651360989943859",
+      "chi_lambda": "-11.758574665029842833206987721987270217213756568387",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1854,9 +1860,9 @@
         5
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4936.0021910734328858698014726985736942396149185708",
+      "chi_lambda": "548.82314996733901393911328987991458912897605922578",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1866,9 +1872,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "945.74676671009004770912109278701271489162754594753",
+      "chi_lambda": "-167.62825325835858887193494933732463456399798122843",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1878,9 +1884,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "6534.5256650631821614791016085035997842929397517349",
+      "chi_lambda": "325.53325012263593577959552981125581620483760256918",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1891,9 +1897,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4903.0398838485449910017454775431890687363463598157",
+      "chi_lambda": "-161.64462834020144208497840624667936366123017553255",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1904,9 +1910,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2737.6357133902349079683988122036951603266554708281",
+      "chi_lambda": "-274.04128872718733147209550897252631867075929844589",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1918,9 +1924,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "2018.1321900585373898172868862758910880702063558928",
+      "chi_lambda": "276.06398272865981661797467319196383567121941641563",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1933,9 +1939,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "317.24880925941892531018024171584747212111732227946",
+      "chi_lambda": "-116.82382688984270768443883133747535668651672161619",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1945,9 +1951,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-861.04305091070140092705739585929988614526590549653",
+      "chi_lambda": "-207.36134097538998812397324927450161629791264202091",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1957,9 +1963,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "498.64804579497526482740503560469113249438820722689",
+      "chi_lambda": "-124.65223781290178718851965852592930658639084313633",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1970,9 +1976,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3420.8385507408494087416877487600396670318221940429",
+      "chi_lambda": "221.72149993501098666635181765964235238572598931614",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1982,9 +1988,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "6162.0385505635907904820669362106266988333333641463",
+      "chi_lambda": "297.54912310012497761853212853101677188839872706068",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -1995,9 +2001,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1800.6371362493291458421821908853407965125027525508",
+      "chi_lambda": "-226.88464006564810629923691174290765441477520085117",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2009,9 +2015,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1086.0005865636220042976948365070383372332623903046",
+      "chi_lambda": "101.9065300531902567239993358211586086528981723207",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2022,9 +2028,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1461.2037544966704274349585125897266102516177064936",
+      "chi_lambda": "286.95743569356878635177179175774389710671940009643",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2036,9 +2042,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "240.27196847161656189635663518887904262700681813979",
+      "chi_lambda": "-18.515241125875414206720038146709137310195262086494",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2051,9 +2057,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1049.2025334914322097871444044598011125443541287328",
+      "chi_lambda": "-113.77330113560112996097247952018522499610521615511",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2067,9 +2073,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-836.93015312296049108036304520977621504342025664141",
+      "chi_lambda": "77.134652680096986327193782934335898103667646264731",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2079,9 +2085,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "357.85705784383727094148373167698955463601041616363",
+      "chi_lambda": "-185.461192661224949193566431022430714216761358212",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2092,9 +2098,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1124.6352290249342951500399532972438191222419309041",
+      "chi_lambda": "174.04718071441620477124889343949752865543794592492",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2106,9 +2112,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "165.79614741265345395501321713540816223027270797938",
+      "chi_lambda": "-174.20442584144075067137281805619769795070828012701",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2119,9 +2125,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1571.4840797492491646708875318010692940222069410815",
+      "chi_lambda": "-4.7339131015243394634393290769512063656988288298223",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2132,9 +2138,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1911.2431594758339757103269717135423910837100399856",
+      "chi_lambda": "-60.866655351061530980777252996416621700171963872056",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2146,9 +2152,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2698.9238307688111146108412424694464871187701346845",
+      "chi_lambda": "22.38434178342685547679407173031818395609636674702",
       "contribution": "0.0",
-      "compute_time_sec": 7
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2161,9 +2167,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1956.6401508010128598358398125313758265054393604395",
+      "chi_lambda": "35.322032826738004811830043905428293330331628356672",
       "contribution": "0.0",
-      "compute_time_sec": 7
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2175,9 +2181,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "336.87031799898731414712862017002186824184752168413",
+      "chi_lambda": "-44.27181642910242357722955230098513875608355862473",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2190,9 +2196,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1009.2226239594736246781752290260964697473087663021",
+      "chi_lambda": "24.760094668942120679168250744958745473173381944016",
       "contribution": "0.0",
-      "compute_time_sec": 7
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2206,9 +2212,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1307.3709235551774619050533772000293543002672960456",
+      "chi_lambda": "-1.2515120136655442586428973379794882358905671252157",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2223,9 +2229,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "245.80518633687714095286604375702122668877922502446",
+      "chi_lambda": "-12.541063964601940207857032677044838944809560270132",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2236,9 +2242,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "2124.8050718125803641723286961826308004525120618536",
+      "chi_lambda": "153.2780440445090660517603518975268402715619320428",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2250,23 +2256,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1595.7740963495771498245681651970578001274442110925",
+      "chi_lambda": "-102.05421870457778924498582006645264943130367189148",
       "contribution": "0.0",
-      "compute_time_sec": 5
-    },
-    {
-      "partition": [
-        7,
-        3,
-        3,
-        2,
-        2,
-        1
-      ],
-      "y_lambda": "0.0",
-      "chi_lambda": "-1477.0048373487889916695677567410558239639073573927",
-      "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2274,14 +2266,28 @@
         3,
         3,
         2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-78.074834816995490358767767278482707383879188118041",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        7,
+        3,
+        3,
+        2,
         1,
         1,
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1206.3714752753761249297880169065026155726718059691",
+      "chi_lambda": "101.3382307525871923523223899424214767585205712286",
       "contribution": "0.0",
-      "compute_time_sec": 7
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2295,9 +2301,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-399.46806584978690702585929653719538495292676504369",
+      "chi_lambda": "-64.512995158162088142050327689950874503188981754506",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2309,9 +2315,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "592.38281770293709847341816393354121369209378063798",
+      "chi_lambda": "107.38857078082278401592503570548732918102154112992",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2324,9 +2330,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-51.192211871511003798371803318361236953461669926194",
+      "chi_lambda": "-28.158293063075897827001637940572792089892074350785",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2340,9 +2346,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-434.00057412524536255380615063174854430006175044232",
+      "chi_lambda": "-35.567200145500525962241342008315568931281482109997",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2357,9 +2363,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "128.56109812483552924936265520409511081949332837605",
+      "chi_lambda": "40.391823498806893081347277414220029876917698307306",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2375,9 +2381,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "97.409262738665534162833171485992025046102770097358",
+      "chi_lambda": "-12.457221198621979064473797575457310387121193689158",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2390,9 +2396,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-208.73848255633170796550117897566221044380467822592",
+      "chi_lambda": "-53.526580987784985622126131446216390413020341964168",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2406,9 +2412,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-56.459527448240792426224370568380800590880504116616",
+      "chi_lambda": "49.743845991285878605501571775004778887962113202631",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2423,9 +2429,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "121.05469499727756626740842329378206442079710762527",
+      "chi_lambda": "-13.118052093200625573266643092930131390290339514128",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2441,9 +2447,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "58.013970811399260827497169568204501542502108357892",
+      "chi_lambda": "-7.3409780346523435539768289077976648313741580120928",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2460,9 +2466,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-61.317072380211263606843063901612705521763669700841",
+      "chi_lambda": "5.9889552227673079544471663195445542989139992208874",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2480,9 +2486,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "9.8756471138156056284020553334187233572126602860101",
+      "chi_lambda": "-1.4385077276783683829912758845226158774194037123303",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2491,9 +2497,9 @@
         6
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1529.5868430422173917966436884030255633632469982209",
+      "chi_lambda": "207.96898437586075181811525380642390459975332324511",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2503,9 +2509,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1238.6914273410401448692688983518574931011303908361",
+      "chi_lambda": "-18.011610142487650659930677475759219276349405813189",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2515,9 +2521,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1401.566344413766404052015726750728458471723170325",
+      "chi_lambda": "31.778494726025248654716541525030835920270420521188",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2528,9 +2534,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1353.7925790995194772216444786030365041239546948576",
+      "chi_lambda": "-39.68437836593015402740765911583999305683772418961",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2540,9 +2546,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "3042.5445418149669113306253275354997412055217070261",
+      "chi_lambda": "307.83989952418518135652719963435725298706978977265",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2553,9 +2559,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1221.5360774776102775872188043852782098397392558546",
+      "chi_lambda": "-189.35418411314290938051787160147005355900268895706",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2567,9 +2573,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "341.7395976361101594918552150770509105182101442796",
+      "chi_lambda": "141.68480179537069968495379011484504867601290058419",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2580,9 +2586,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-21.818382048237770501025488239865359255871083627329",
+      "chi_lambda": "57.810553920417496583129839795923280273108144784642",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2594,9 +2600,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-224.52535320632308331574048855970764992927836412422",
+      "chi_lambda": "13.830710154766392725843300062867294054546221427383",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2609,9 +2615,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "514.49738917836787008467693697311916405349918564483",
+      "chi_lambda": "-42.897434672774027595702091758031253102923731165386",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2625,9 +2631,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-337.08429981867503974700317593840387667930438555252",
+      "chi_lambda": "4.6057626808090591913752104072843519394500240893522",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2637,9 +2643,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-391.55268143317549785825011603834032891638591839849",
+      "chi_lambda": "-59.273063230724903884352225797440862786269694118859",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2650,9 +2656,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "79.949159735492865004376599488677936025320149432442",
+      "chi_lambda": "43.532256629807394428289284311964123599367568812964",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2662,9 +2668,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-517.36936364295925248577778640304324279333037251829",
+      "chi_lambda": "-127.0277399013910257296488353220789397224923907929",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2675,9 +2681,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-412.82893838751716435923369405477233384611054885711",
+      "chi_lambda": "91.11752326162869947602918343390989743486163402128",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2689,9 +2695,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "869.76641183209741154130227956990642463360179993309",
+      "chi_lambda": "-29.525883569249401431897670251631937421259721728524",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2702,9 +2708,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "637.87620493219928654655198101425494712081536173615",
+      "chi_lambda": "-18.020673230956274853959694440871608986849861600765",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2715,9 +2721,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "984.06102368983397235939253582395985956798148228456",
+      "chi_lambda": "10.139667548563753759614024052824859643574873994013",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2729,9 +2735,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1321.849295751116048792075151396497754417758577777",
+      "chi_lambda": "-15.526455720914342629714746187665484151533869610941",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2744,9 +2750,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "975.09377971505642146244076780560644784537668656873",
+      "chi_lambda": "-12.405006779178925088180607727267619939184420982489",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2758,9 +2764,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "108.48208798780192577136979844920660828310251686968",
+      "chi_lambda": "13.977677721985782680099844100859850630042811729112",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2773,9 +2779,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "341.69910290556642156462590307409720345213520751196",
+      "chi_lambda": "-8.1129222837088820573064344834369287493212534962071",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2789,9 +2795,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-754.20379810781059446106018030631731194824169290095",
+      "chi_lambda": "12.55262545217483320156086925779076919137055026407",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2806,9 +2812,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "179.28807200114836114104694591826452752805284655437",
+      "chi_lambda": "5.1497999525891980067473621861685580000894927418361",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2818,9 +2824,9 @@
         4
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1232.2185218188597875231625676828986887364752898067",
+      "chi_lambda": "-1.5514238035719858083901090783252661550442582037546",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2831,9 +2837,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-476.13312265613457785132649564700089224381244815473",
+      "chi_lambda": "15.374295904884624202701461901313825947915041564879",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2844,9 +2850,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1245.6972606790665635298109075292094621285216229323",
+      "chi_lambda": "0.44715242496226828020986197323946035894350145108716",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2858,9 +2864,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-264.28875374486971994929584971052263608999273327964",
+      "chi_lambda": "-4.5578058353702248289434788316135201189745374164025",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2873,9 +2879,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "365.85749129027119733350274745915721079492562525646",
+      "chi_lambda": "-34.035165122503474466148047625137175656928796149389",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2886,9 +2892,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "2130.8831892785982624098644100156396770705265454116",
+      "chi_lambda": "21.27458110222090404424734873740068761731825249452",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2900,23 +2906,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1762.3163143577640419749114277300462780908652183738",
+      "chi_lambda": "-18.066067314851715781956978209658876201226287437268",
       "contribution": "0.0",
-      "compute_time_sec": 6
-    },
-    {
-      "partition": [
-        6,
-        4,
-        3,
-        2,
-        2,
-        1
-      ],
-      "y_lambda": "0.0",
-      "chi_lambda": "-962.70292072675821504513603619941687120284396982974",
-      "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2924,14 +2916,28 @@
         4,
         3,
         2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-33.878761176594839243314911667408808280119551445433",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        6,
+        4,
+        3,
+        2,
         1,
         1,
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1182.5616656854548150421374271180470821878507362695",
+      "chi_lambda": "58.040244692605974419195623828262741627189312933873",
       "contribution": "0.0",
-      "compute_time_sec": 8
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2945,9 +2951,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-459.72554849136736251420185620249594823690830547612",
+      "chi_lambda": "-10.461331383091505795326017166460745747642923814475",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2959,9 +2965,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "557.5685021161532879292352356110440980406137494941",
+      "chi_lambda": "23.862480608400867010790780268120623100757715806694",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2974,9 +2980,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-126.61976526576300541809357897356316935578491104797",
+      "chi_lambda": "-19.838305765562585493331237456980423812174753275494",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -2990,9 +2996,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-282.06776389959714865963019610713777066483336046012",
+      "chi_lambda": "-9.0595731826640584082476907078488672230024693385602",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3007,9 +3013,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "51.089613797603600914384566847652477469962271823728",
+      "chi_lambda": "6.0551974872128925109391496752670027003799792779605",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3025,9 +3031,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "82.287733299820973396554811445512581685366846864921",
+      "chi_lambda": "-8.8070867640742147926781036794216059285114173417786",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3038,9 +3044,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1541.7027022643695541436092026177915344070649661873",
+      "chi_lambda": "162.09590081777403173555239343701540538783081029205",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3052,9 +3058,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-738.58424682810460899004804592251568220488525649976",
+      "chi_lambda": "-99.86862344193781152317962606239500158389939463047",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3067,9 +3073,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "302.74849751991226069400272884234726147017416516942",
+      "chi_lambda": "59.910568510526179991528435162775506573330256525274",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3081,9 +3087,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "275.3834127051790453108167534303549577198056159324",
+      "chi_lambda": "73.712697172781122010331525992522299086102900417926",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3096,9 +3102,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-29.6196990732206234159579028087000691892737713427",
+      "chi_lambda": "1.8570122077564676422654895945627808793503561546647",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3112,9 +3118,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "179.50657697755736878471635848387005927985634953565",
+      "chi_lambda": "-42.661732510968994279925170452854527101042725828938",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3129,9 +3135,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-178.28069810856517709978226786800770865957197698776",
+      "chi_lambda": "17.365753204167315953769379178944907726043275205578",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3144,9 +3150,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "21.63868397992742789784512080247052914782478446755",
+      "chi_lambda": "-24.249496891091764256756766911588182532975000483304",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3160,9 +3166,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-37.23808938982861532721730676324704315023321713063",
+      "chi_lambda": "20.506377917649520598816604603714918699373606827621",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3177,9 +3183,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-77.673355320251751280223885478769557556695581957372",
+      "chi_lambda": "3.0847760802491265683413466430408342276517198917216",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3195,9 +3201,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "185.91352655062230922095525688355549068224135900398",
+      "chi_lambda": "-2.97030826297984948560367396529504534464618632772",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3214,9 +3220,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-74.628162654961212886648994020252741434346253251085",
+      "chi_lambda": "2.1792506280743164815760659335555086417240406325856",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3229,9 +3235,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-61.747362200475923607997269805924463898222837476043",
+      "chi_lambda": "-3.1060660361685881044620390929499294200352252095551",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3245,9 +3251,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-55.756934655914665589323777968660412399989455684606",
+      "chi_lambda": "3.1242826935444137374099195045427889817454339532192",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3262,9 +3268,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "87.610270753745339015285588624055203608455925166906",
+      "chi_lambda": "-1.8137306253616335687969764871878358161516129578635",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3280,9 +3286,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "23.821995829500112581783691469869507439684095457263",
+      "chi_lambda": "-2.8747117752078765892514734582211560812112729985416",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3299,9 +3305,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-58.824304738013605269999052111449386357195722642925",
+      "chi_lambda": "1.2403408140154606730588408353689749829037493320968",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3319,9 +3325,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "18.548669771794327914318859074815714243018795503008",
+      "chi_lambda": "-0.18448865817303861581069236831016584531851362659157",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3340,9 +3346,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1.0942676679609184322870021414598141110863661486262",
+      "chi_lambda": "-0.26964730726156473664959857728420898828647432108353",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3352,9 +3358,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-793.15183543756515831234014879785957986423841115328",
+      "chi_lambda": "-95.746328755253482365281535491623177748358112711779",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3365,9 +3371,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "435.48256364781106234848791368477693903217976603352",
+      "chi_lambda": "167.34298515268114935803430999221135627690487406632",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3379,9 +3385,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "351.50102227043529784545703339616664798999536845627",
+      "chi_lambda": "-130.84629367961118202077166721073601848093705707195",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3391,9 +3397,9 @@
         4
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1017.9400652421236505940001826321157714942493378805",
+      "chi_lambda": "-13.326373682670951217607767322645414016178731434791",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3404,9 +3410,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-536.88809587270533945821187037554104952615116637828",
+      "chi_lambda": "-56.504458962683404743919829216836852932093638321177",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3417,9 +3423,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "639.53965167998543782104362910637192782539465923593",
+      "chi_lambda": "16.087577534816928852350008264928623362356560391416",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3431,9 +3437,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "420.60214526483165286127997702567958031923101191409",
+      "chi_lambda": "-1.0672868207229469827723811314165023522608366347443",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3446,9 +3452,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-41.466069690540744333601056605324014952425195223806",
+      "chi_lambda": "-17.476161968053105790866412397128993166163947481063",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3459,9 +3465,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "364.74724069289096756226333027579521016935276109972",
+      "chi_lambda": "-39.443430974406190196342086742068390650148355312388",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3473,23 +3479,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-564.42005197992904684602703852561820134464200242932",
+      "chi_lambda": "54.03666752731185258717699050731116733608253344937",
       "contribution": "0.0",
-      "compute_time_sec": 4
-    },
-    {
-      "partition": [
-        5,
-        5,
-        3,
-        2,
-        2,
-        1
-      ],
-      "y_lambda": "0.0",
-      "chi_lambda": "-247.26441074741161278994162749783266938464927290437",
-      "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3497,14 +3489,28 @@
         5,
         3,
         2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "12.695109877263277095207040933804669679569910455111",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        5,
+        5,
+        3,
+        2,
         1,
         1,
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "176.10464909823655703549176053011450890229564495456",
+      "chi_lambda": "-13.963768122335684415080373066934600709502321543675",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3518,9 +3524,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-162.65640373824197419866044804533422268332514614697",
+      "chi_lambda": "17.28813494111666249957431896265965384158247871944",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3532,9 +3538,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "92.420185403741932309242291047254495639411010198001",
+      "chi_lambda": "-84.001636978533707629260446975799678315695452553355",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3547,9 +3553,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-231.41001260360957097166246200873770672444522441141",
+      "chi_lambda": "5.8713797457552380300291476675639763159784198255753",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3563,9 +3569,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-58.77889782312751567178910581177482904315385166378",
+      "chi_lambda": "30.73705064609390540416586794227341307423754151115",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3580,9 +3586,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "57.410062595259717004094122770150112844419766509815",
+      "chi_lambda": "-25.435904620640653632970160312548326688751585297635",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3598,9 +3604,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "18.38616874653802522254940317579591649923055162021",
+      "chi_lambda": "2.1414521756715389431939130972555054191540140438021",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3611,9 +3617,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-391.98024398747491579071145734097483514355871602516",
+      "chi_lambda": "93.802572000983476315658522867484620544246587141286",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3624,9 +3630,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "225.76660035113325616771143074055099890949122728083",
+      "chi_lambda": "-64.484241140079822183775538802127313152346920994221",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3638,9 +3644,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-319.34259275601355458291774079918283685200121186364",
+      "chi_lambda": "5.344087479111074619334643740561770776670022984843",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3652,9 +3658,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "317.90997807984867138443973198173098214613916385972",
+      "chi_lambda": "16.112000256277169966371326281116722461669720932561",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3667,9 +3673,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "166.38619109953775310301284646258438792313610645801",
+      "chi_lambda": "-13.659154986424837977639438751583282586060685114309",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3683,9 +3689,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-100.55648869339763702491358194938182375435423430508",
+      "chi_lambda": "41.709201627128820753543121734537573957853690888706",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3696,9 +3702,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1007.2656071079577912110977554032936151616237949259",
+      "chi_lambda": "72.006817455335266711774551507590975026963574974617",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3710,9 +3716,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-555.58471077697952013344271347806885820365497105472",
+      "chi_lambda": "-22.130834886769830898957813237901692312490825773911",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3725,9 +3731,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "157.12681985622319261317397361050079828470070065927",
+      "chi_lambda": "14.670673898542444246067642452038314016746331053876",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3739,9 +3745,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "427.10279259025515433321773790874243425262599589109",
+      "chi_lambda": "52.723253606611500852271245689813445235303149870199",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3754,9 +3760,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-196.28213404886211921842533671380796301006627212398",
+      "chi_lambda": "-3.4536109023383228135041002434798162111823133421594",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3770,9 +3776,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "168.97429831512219226919937541665345987959918779484",
+      "chi_lambda": "-41.997165837993748686704864715429322771550043663737",
       "contribution": "0.0",
-      "compute_time_sec": 6
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3787,9 +3793,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-154.93151203783233602011030172248556250145182852902",
+      "chi_lambda": "9.7417138698199705208406961798747880850230209791926",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3802,9 +3808,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-191.78706785570521875825974541060375305776953607815",
+      "chi_lambda": "-22.25374224513189435376628088356065149578461869228",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3818,9 +3824,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "60.518954317374326831262318739988311828084959271453",
+      "chi_lambda": "29.854157500249005998522235125356621315266667123579",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3835,9 +3841,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-69.21254577921187769085718026355292904457645040726",
+      "chi_lambda": "-2.4151882143517898024950787330893941220112951765945",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3853,9 +3859,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "120.78237690999588438599118686199815046930675869836",
+      "chi_lambda": "-1.6671369592941575397456026403286208897764438772766",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3872,9 +3878,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-38.679988100624812905957274551547314460489282136486",
+      "chi_lambda": "4.9158288954920692692176639317377815855356505596111",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3886,9 +3892,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "282.27210554694351483601072725915856156491750896053",
+      "chi_lambda": "-3.0810639732969962104115346912002610706982276533238",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3900,9 +3906,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "79.177959441100787442318375550265990315644377726088",
+      "chi_lambda": "-20.94312839475775376344889226243172833503518633455",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3915,9 +3921,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-329.51486105584042584586289716464599614298515301228",
+      "chi_lambda": "-4.9229242938549829335659019304607435749659680030609",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3931,9 +3937,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "334.5108002993498484355438227329768245808110320605",
+      "chi_lambda": "22.553783328930097766724503462764169609230511121657",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3946,9 +3952,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "83.42494179934894416791144538594670787247268168533",
+      "chi_lambda": "6.2662653443421108577836850485705206944623263648157",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3962,9 +3968,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "188.14206713135857392891000283954219359105616115814",
+      "chi_lambda": "-1.4473340978016673555229203035798083490852332105099",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3979,9 +3985,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-263.76445555196666306811765557662590358656611305856",
+      "chi_lambda": "0.11242336294586933973379414713182575506081040960729",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -3997,9 +4003,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "115.45464173597861953015981875201318888074878259979",
+      "chi_lambda": "1.8438845890228571024530669613646541037287665932804",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4012,9 +4018,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "55.895783726708523511161524680147921569221626490055",
+      "chi_lambda": "4.6525868180015163932384671941136253328241731202572",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4028,9 +4034,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-58.205295999969050908642119463167933008807371572426",
+      "chi_lambda": "-6.48042424023882704194780529458737060059126457734",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4045,9 +4051,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "5.0407678276187747490499613410491456644197023764061",
+      "chi_lambda": "-1.6021047458992953561396494777223074855467608834031",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4063,9 +4069,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "83.066507761697052252151390719428052897720610189009",
+      "chi_lambda": "1.1181901947474368662533097370843741335570876840304",
       "contribution": "0.0",
-      "compute_time_sec": 5
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4082,9 +4088,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-63.463594763421872087527132788656605860075532260393",
+      "chi_lambda": "-2.9594638027179763367823227017736392912242529066264",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4102,9 +4108,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "9.2864223307380292718935365121714207937124699178307",
+      "chi_lambda": "0.12475014591137337368915472900773900914669049237882",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4118,9 +4124,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1.568172073822509398264162807166747512325336088264",
+      "chi_lambda": "12.875255493384332458185000369173584923545442530362",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4135,9 +4141,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "32.311738406474304175617662593260752798328977191864",
+      "chi_lambda": "-8.5658673283180483483818295021408934856281409773524",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4153,9 +4159,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-9.646927591442530029449046382802145203998789748095",
+      "chi_lambda": "0.53032734492185080158099392607454490204389247941138",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4172,9 +4178,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-21.456363785554704446691048709741092303626230673233",
+      "chi_lambda": "3.2012652918762762886999418602568197580777356583445",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4192,9 +4198,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "9.7312972990102008031067748108542830357985133822556",
+      "chi_lambda": "-0.84904134962714138426018005040019206259377721999102",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4213,9 +4219,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1.0524828564071936664353234690885331015180257069697",
+      "chi_lambda": "-0.058064763681163207483295293685704663763797045976871",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4235,9 +4241,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-0.69170110804474561215241799557492430752347597090162",
+      "chi_lambda": "0.17282150243682044249985503292102440868253955941032",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4248,9 +4254,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-45.076262787282418004407225642331354087385254491669",
+      "chi_lambda": "20.21552226793811434529514987400711452675227885259",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4262,9 +4268,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-21.875344637059814937840641445832849048185369071333",
+      "chi_lambda": "-43.969204947084390266156715955730650539230355577361",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4275,9 +4281,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4.7906123200870655986125281871453017092798014049182",
+      "chi_lambda": "-28.57024497040001585225732834964009962236168486872",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4289,9 +4295,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "23.210011711061359328762128406468003399527372659593",
+      "chi_lambda": "36.43565467679768984975830357295594401612176364156",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4304,9 +4310,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-46.105903488150830867005058022398705035445171263937",
+      "chi_lambda": "-9.2910166756199451484465165509646844888351043990503",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4318,9 +4324,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "117.16332041787142487168853790542196505534779193757",
+      "chi_lambda": "-49.070107952854178871456744272318281361664690151953",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4333,9 +4339,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-45.803215723295120577870670635923943367009467819241",
+      "chi_lambda": "3.3456329094155003365453735347424398441581943984109",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4349,9 +4355,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "76.277774110488440726176350696373574487745623905482",
+      "chi_lambda": "15.403828550711932051152356433482888132434119274476",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4366,9 +4372,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-58.780440881546319932977342965809975899295744505657",
+      "chi_lambda": "-21.455542924274312273610965774260261679959406439314",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4380,9 +4386,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "103.80537796359942322840498885954236533668419364345",
+      "chi_lambda": "-9.9107735224600559799980079878183147735506834096257",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4394,9 +4400,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "133.36587316086947963942223196003243178221858535701",
+      "chi_lambda": "0.12324501422252602358109144606023904890730937966061",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4409,9 +4415,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-254.70465605525791611249361453633530960316215865991",
+      "chi_lambda": "-3.7474460044787749633215603531071187333139877808382",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4425,9 +4431,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "182.76561197403093713038304009644899046393379164707",
+      "chi_lambda": "1.3952439480996555821353046943874284677013583472037",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4440,9 +4446,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-47.053305890602193723698609567224379525222273205538",
+      "chi_lambda": "8.6889944480041870560991899188635347466667461215739",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4456,9 +4462,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "132.13566234860415300592725416721462252176950945837",
+      "chi_lambda": "-5.2810685639434801909880663433828990485929391702893",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4473,9 +4479,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-162.31072654507464034484690648329792337038301948453",
+      "chi_lambda": "7.4441004395332060337859356163665987395915945645551",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4491,9 +4497,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "64.758778034200087407450228656639311256631548928224",
+      "chi_lambda": "1.6923418151163312050536271801262324341411437829505",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4506,9 +4512,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "19.560822115159484142594332176226719037275110224473",
+      "chi_lambda": "6.0985830221949097841479039859079397418822046400591",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4522,9 +4528,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-51.212460055495193369027763634178223876413756680635",
+      "chi_lambda": "-0.69878110404665798856275041442069624290217869110787",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4539,9 +4545,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-8.9644212159762410295883867152978221233426715077186",
+      "chi_lambda": "-6.7106421128577365217624770624039913693318723484089",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4557,9 +4563,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "52.061350034197049908906029174329578013469008015141",
+      "chi_lambda": "1.5188237765826055712369469549822967993278881387308",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4576,9 +4582,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-23.147619796472706280277653740199913705974728788061",
+      "chi_lambda": "-0.50246145144310809509721226641656859426206154084555",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4596,9 +4602,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "0.14439446045188058326023637247783954957478434577524",
+      "chi_lambda": "-1.055228464032798117553963891320603706440627122283",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4610,9 +4616,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "223.50703583662265005845850812625730727447324826006",
+      "chi_lambda": "26.304814588313681416035095837134640563608671607753",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4625,24 +4631,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-155.05084159852285192262866229270252777409295855151",
+      "chi_lambda": "-11.520134378679855694486083370249078827845207035815",
       "contribution": "0.0",
-      "compute_time_sec": 3
-    },
-    {
-      "partition": [
-        4,
-        3,
-        3,
-        3,
-        2,
-        2,
-        1
-      ],
-      "y_lambda": "0.0",
-      "chi_lambda": "-151.61508980264277109763576602696003072605783610207",
-      "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4651,14 +4642,29 @@
         3,
         3,
         2,
+        2,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-14.194552828162702609487189532340364903135135903823",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        3,
+        2,
         1,
         1,
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "176.5699488586647145877522771223872672330563141369",
+      "chi_lambda": "19.129447960831424627929810366493225141742248424218",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4673,9 +4679,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-78.701132504289553174144385552884230428156046885934",
+      "chi_lambda": "-15.561832451912398492340702547789047347681976447644",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4688,9 +4694,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "118.01315595701354725621081006531608430600032841673",
+      "chi_lambda": "11.41710471857091680217225394544967363905558861961",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4704,9 +4710,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4.333698738679448141441767614557471748598273150111",
+      "chi_lambda": "-5.6609093670400221479959220971805539572528685006978",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4721,9 +4727,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-77.946390639306070942233387896614990848066289902006",
+      "chi_lambda": "-3.464391685418013352656437834642945336935892734458",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4739,9 +4745,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "43.985379538255847908205589776964739191608414156002",
+      "chi_lambda": "5.1083551087179096450658776925922822406720463432417",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4758,9 +4764,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-5.0840744358832028227478410490867031357197655114918",
+      "chi_lambda": "-2.7733742690894777698556727674677589709954549361083",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4774,9 +4780,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-40.880653370449221910188348398965135495096668713997",
+      "chi_lambda": "-12.87706188490413224008514241047479559821382704164",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4791,9 +4797,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "19.827620732477395979766876941516211208441492232007",
+      "chi_lambda": "13.806223463523150161572035093077711355478316765603",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4809,9 +4815,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "18.819326894119191317444710861272951983369438501924",
+      "chi_lambda": "-2.7570213042480917907196808795094476546363012066453",
       "contribution": "0.0",
-      "compute_time_sec": 4
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4828,9 +4834,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-17.315399173092417423297063682980110797823042238955",
+      "chi_lambda": "-1.7544347671257978362780023965306988067937463259276",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4848,9 +4854,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3.1452612660218078688587417920042030374063401915029",
+      "chi_lambda": "2.2103179879872696861458257929939348894865803314343",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4869,9 +4875,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4.6501777248545163322269261965355071964019469189129",
+      "chi_lambda": "-0.36492411745722461946066634387290905557645481701681",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4885,9 +4891,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "9.3020673522208908209199122661248856284468651534669",
+      "chi_lambda": "5.1776795402312694770689324786242949210389812890252",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4902,9 +4908,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "12.001573885123259240313747404199002222465402102063",
+      "chi_lambda": "-1.927246385802592009892525271370032202910620891646",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4920,9 +4926,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-6.4313074186104887469509967282831766752468226270219",
+      "chi_lambda": "-1.9491003147595266164759200909483794618813937467053",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4939,9 +4945,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-9.435825131922120015736647970267921919403915819222",
+      "chi_lambda": "1.8151204725737555639008378110353416271373601810911",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4959,9 +4965,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4.7387238647781652446542952603914166180248959632194",
+      "chi_lambda": "-0.83987664740928418965968793871565212965388474624746",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -4980,9 +4986,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "2.839920551554696690230855707253957263874196431818",
+      "chi_lambda": "-0.12659989817786383240082155133100388534911667081766",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5002,9 +5008,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2.1520981201819582755066362727634287912462606708348",
+      "chi_lambda": "0.11850780416147456604690225728003949451712554404883",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5025,9 +5031,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "0.36571419951481893160646537267078749438291080359973",
+      "chi_lambda": "-0.05164284795636872192433572015002473931962646924149",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5039,9 +5045,9 @@
         3
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "59.976034062915196947243935902102491689227501634334",
+      "chi_lambda": "3.1911028651013667615418605886600132316955439403074",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5054,9 +5060,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-33.733995195612194668307570274833874716932808126466",
+      "chi_lambda": "-3.7453130381336978386494589330527830259284270507584",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5070,9 +5076,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "11.509466011456992337798883692195411003738344381131",
+      "chi_lambda": "0.42969011438607627930120194081124410030907632034548",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5085,9 +5091,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "0.74759873477714417184608984595112323110880261384399",
+      "chi_lambda": "2.0655807782432017592419786311425355923801429838786",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5101,9 +5107,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1.410199789436134405229987197737189560065633990934",
+      "chi_lambda": "0.52637216959193073617081049596391953661031122896787",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5118,9 +5124,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1.3156519408442779608592269301385355499346022401534",
+      "chi_lambda": "-0.23248087821181755322735989157160763073762007225035",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5136,9 +5142,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-8.8379915257463734811797343724452444051606608217853",
+      "chi_lambda": "0.87713486763258608512691645776029573945068203187199",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5152,9 +5158,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "9.0933415459772114433897007860979904949278929989285",
+      "chi_lambda": "2.5517692020527149111869069977341986864192825600072",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5169,9 +5175,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-15.835472897576979300153341719021050250559400458107",
+      "chi_lambda": "-2.6134672006319749921697085849107858353531246268601",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5187,9 +5193,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "0.59868131657689733919033057750838550393586623648212",
+      "chi_lambda": "0.74337115675191889094570571602827405390528228969381",
       "contribution": "0.0",
-      "compute_time_sec": 3
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5206,9 +5212,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "10.045165539532521874203653105786198604634145669549",
+      "chi_lambda": "0.45593704091080570782914885488013322771483735341931",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5226,9 +5232,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-6.1521804997877755592230318089817185142106839439018",
+      "chi_lambda": "-0.43638687921158015242002551561267360959921585179749",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5242,9 +5248,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-13.764331072421930180783729427705528406365238426262",
+      "chi_lambda": "-0.95937959171443911516901622406404811101391375711239",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5259,9 +5265,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3.7141047897302603981671595106979820913965223640136",
+      "chi_lambda": "0.57923818291676607403180039864831577421777227632855",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5277,9 +5283,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "11.353784712791332602501916281095171623412788648691",
+      "chi_lambda": "-0.28251616730523655284773032326310564656184707996545",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5296,9 +5302,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-5.9148525919961473184783056151150836931581967383316",
+      "chi_lambda": "-0.43415770735135387970577783766451550703482744475806",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5316,9 +5322,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-2.4241356947528358628860421407370082272269466507659",
+      "chi_lambda": "0.16598883880256762225022141340804954178783109441333",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5337,9 +5343,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4.3379814987115283143450298103059914748336828379793",
+      "chi_lambda": "-0.020976585821886553627333278593745839226705254130478",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5359,9 +5365,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1.5443626676074156730788350046817996110309097651964",
+      "chi_lambda": "-0.04665592977111836909400622167409602098274520563027",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5376,9 +5382,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "6.3491585894613252976603510203872756091289830558684",
+      "chi_lambda": "0.57424978687967192230936042704501787081544510834872",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5394,9 +5400,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-4.2898814527247287847450159655856060826100778777804",
+      "chi_lambda": "-0.45140154050381760500913692466719819517132702896204",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5413,9 +5419,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-3.2132105001516047841835336871389590305101443472903",
+      "chi_lambda": "0.23895771577030333135415615911934468875467805718411",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5433,9 +5439,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "4.0841699136835348310603296915463101998887518836521",
+      "chi_lambda": "0.14171734989935060713621941204038018856758287560309",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5454,9 +5460,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "0.058471943419740109884401497967863617188772403534173",
+      "chi_lambda": "-0.088672237536257470419592995201370405679675219277523",
       "contribution": "0.0",
-      "compute_time_sec": 2
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5476,38 +5482,14 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1.4168967357474459300815712726813810749280250727484",
+      "chi_lambda": "0.029456983886395574443420997892591254288322835345324",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
         3,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "y_lambda": "0.0",
-      "chi_lambda": "0.59916668750836649746984305101628870216479247125659",
-      "contribution": "0.0",
-      "compute_time_sec": 1
-    },
-    {
-      "partition": [
-        3,
-        1,
-        1,
         1,
         1,
         1,
@@ -5523,9 +5505,33 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-0.083975785841026211834137281255545248052531073048199",
+      "chi_lambda": "0.015175055893466163314063378319767788830314129833512",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "-0.0033694164402394393994981756358774685369932502148662",
+      "contribution": "0.0",
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5540,9 +5546,9 @@
         2
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1.8160095502231922701853608337133689666446912402023",
+      "chi_lambda": "-1.4923552101890200590947894985163209114788315134053",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5558,9 +5564,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-1.447503009423167963423835496368111630571890057703",
+      "chi_lambda": "0.25783392432126160784177841552186298456273887726145",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5577,9 +5583,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "1.3972396862857888525400750981924414738210738642004",
+      "chi_lambda": "0.59874956426772737981780290432044034470458802000272",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5597,9 +5603,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "0.5859589673733791665001183302838571402862197970497",
+      "chi_lambda": "-0.51457140869182583942556682172898676153770702468096",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5618,9 +5624,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-0.68808288291099399846908948201136624868482261252054",
+      "chi_lambda": "0.091837718939360144131403488649036890863397224544314",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5640,9 +5646,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-0.02064175677982234297867204401127638518467368108086",
+      "chi_lambda": "0.061177474384746982088581826799606726510539694390371",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
@@ -5663,39 +5669,14 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "0.17732719461715820160447827274960120922925829641904",
+      "chi_lambda": "-0.038349757646174777084057153297091499925418206624259",
       "contribution": "0.0",
-      "compute_time_sec": 1
+      "compute_time_sec": 0
     },
     {
       "partition": [
         2,
         2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ],
-      "y_lambda": "0.0",
-      "chi_lambda": "-0.068035519870982407142703594724305241212410192333452",
-      "contribution": "0.0",
-      "compute_time_sec": 1
-    },
-    {
-      "partition": [
-        2,
-        1,
-        1,
         1,
         1,
         1,
@@ -5712,7 +5693,32 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "0.010555865264772134361275831853288721832885158952528",
+      "chi_lambda": "0.0035626351955521267385299820407526063605601572516187",
+      "contribution": "0.0",
+      "compute_time_sec": 0
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "y_lambda": "0.0",
+      "chi_lambda": "0.0018403188980032122317457136253317782191637693431184",
       "contribution": "0.0",
       "compute_time_sec": 0
     },
@@ -5738,13 +5744,9 @@
         1
       ],
       "y_lambda": "0.0",
-      "chi_lambda": "-0.0006062663526179731240541696023817085451072119428837",
+      "chi_lambda": "-0.00060626635261797312405416960238170854510721194288369",
       "contribution": "0.0",
       "compute_time_sec": 0
     }
-  ],
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "pn_split_carried": false,
-  "pn_split_note": "isobars are degenerate by construction: the (sign, gen) wire format drops the crossing-type field. See beans qou-sgv5 (mechanism, measured) and qou-gdtb (representation)."
+  ]
 }

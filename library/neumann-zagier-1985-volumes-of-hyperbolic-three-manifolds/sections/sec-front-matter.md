@@ -7,6 +7,7 @@ section_number: null
 pages: 1-22
 source_pdf: neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds.pdf
 source_sha256: e52b539e0f06c019
+doc_brief: "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd — 3 sections: Front matter; ( ‘A2 35A ,)($)“+ . ..I; References"
 ---
 ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO 
 Printed III Great Britain. C 1985. Pcrgamon Press Ltd. 

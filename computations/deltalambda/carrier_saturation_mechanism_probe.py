@@ -517,23 +517,39 @@ def main() -> int:
                "(50-dps serialized y_λ)")
     wb.add_assertion(
         "anchor_kappaD_reproduced",
-        computed=fmt(res["D"]["A_req"]), expected="6.4161462", tolerance="0.01",
+        computed=fmt(res["D"]["A_req"]), expected="29.075377", tolerance="0.01",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py (y_λ recomputed "
                "from y_lambda_su_n, θ rebuilt from χ/dim) — not copied from "
                "this script's own output. The prior 6.0426 was the "
                "convention-C value from the 2026-07-13 audit, correct in its "
                "own frame; see 2026-08-26-carrier-saturation-five-failures-"
-               "diagnosis.md")
+               "diagnosis.md"
+               "  RE-PINNED 2026-09-07 (qou-k54t) from 6.4161462 to "
+               "29.075377. That 6.4161462 was itself derived while D's chi "
+               "caches were on the GROUPED word, and the computed side read "
+               "those same caches, so the assertion agreed for the wrong "
+               "reason -- a false green, not a passing test. D is now fully "
+               "borromean (reeb witness and rust cache both regenerated), so "
+               "this pin does not depend on the 5Li/6Li caches, which are "
+               "still grouped.")
     wb.add_assertion(
         "anchor_kappa4He_reproduced",
-        computed=fmt(res["4He"]["A_req"]), expected="73.5943", tolerance="0.1",
+        computed=fmt(res["4He"]["A_req"]), expected="702.409", tolerance="0.1",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py. The prior 63.05 "
-               "was convention-C (2026-07-13 audit), correct in its frame")
+               "was convention-C (2026-07-13 audit), correct in its frame"
+               "  RE-PINNED 2026-09-07 (qou-k54t) from 73.5943 to "
+               "702.409. That 73.5943 was itself derived while 4He's chi "
+               "caches were on the GROUPED word, and the computed side read "
+               "those same caches, so the assertion agreed for the wrong "
+               "reason -- a false green, not a passing test. 4He is now fully "
+               "borromean (reeb witness and rust cache both regenerated), so "
+               "this pin does not depend on the 5Li/6Li caches, which are "
+               "still grouped.")
     wb.add_assertion(
         "li6_amplification_reproduced",
-        computed=fmt(res["6Li"]["A_req"]), expected="107.88563",
+        computed=fmt(res["6Li"]["A_req"]), expected="82.85481",
         tolerance="0.05",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py, whose ⁶Li free χ "
@@ -546,10 +562,11 @@ def main() -> int:
                "routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-"
                "frobenius.witness.json). The prior "
                "79.86 was the convention-C value (2026-07-13 audit), correct "
-               "in its own frame")
+               "in its own frame"
+               ". RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 107.88563 (grouped word)")
     wb.add_assertion(
         "anchor_kappa5Li_reproduced",
-        computed=fmt(res["5Li"]["A_req"]), expected="102.51379",
+        computed=fmt(res["5Li"]["A_req"]), expected="64.10282",
         tolerance="0.05",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py, whose ⁵Li free χ "
@@ -557,7 +574,8 @@ def main() -> int:
                "this table with no gate at all — it was wired to the "
                "Frobenius path for speed while its numbers still rested on a "
                "single route. The two routes now agree to 1.5e-69 on all 176 "
-               "⁵Li blocks (chi-free-via-frobenius.witness.json)")
+               "⁵Li blocks (chi-free-via-frobenius.witness.json)"
+               ". RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 102.51379 (grouped word)")
     wb.add_assertion(
         "li6_all_385_partitions_present",
         computed=str(res["6Li"]["n_blocks"]), expected="385", tolerance="0",
@@ -570,7 +588,7 @@ def main() -> int:
                "(documented sign-only-vs-averaged convention gap)")
     wb.add_assertion(
         "carrier_band_ratio_pinned",
-        computed=fmt(flat_ratio), expected="1.8375", tolerance="0.05",
+        computed=fmt(flat_ratio), expected="1.50250", tolerance="0.05",
         source="REGRESSION PIN on max/min of m_e·S over A=2..6. This was "
                "`carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a "
                "FLATNESS claim the cited theory does not support. "
@@ -578,6 +596,12 @@ def main() -> int:
                "a probability-weighted mean, hence BOUNDED by π; that is "
                "`carrier_below_rotation_ceiling`, and it passes. "
                "Boundedness is not flatness, and nothing licenses 30 %. "
+               "RE-PINNED 2026-09-07 from 1.8375 (beans qou-8jfh / "
+               "qou-hu1f): the intra-ordering ruling moved the "
+               "carrier. A regression pin asserts only that the value "
+               "has not changed; it changed for a known, ruled "
+               "reason, so the pin follows. Unlike the two anchors "
+               "above this one has NO derivation behind it. "
                "Re-scoped to pin the measured band rather than assert an "
                "unproved property — the number is unchanged and still "
                "reported")

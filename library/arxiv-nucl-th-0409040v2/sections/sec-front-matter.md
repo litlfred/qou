@@ -7,6 +7,7 @@ section_number: null
 pages: 1-6
 source_pdf: 0409040v2.pdf
 source_sha256: 986093ee95b94b24
+doc_brief: "On the correlation between the binding energies of the trito n and the α-particle L. Platter ∗ — We consider the correlation between the binding energies of the triton and the α-particle which is"
 ---
 arXiv:nucl-th/0409040v2  22 Nov 2004
 FZJ-IKP-TH-2005-15, HISKP-TH-04/19, INT-PUB 04-24

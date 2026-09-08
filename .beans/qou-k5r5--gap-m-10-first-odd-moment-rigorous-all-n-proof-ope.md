@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-05T08:54:35Z
+updated_at: 2026-09-08T03:32:29Z
 ---
 
 
@@ -1147,3 +1147,201 @@ sqrt(PQ)` at every n; the reversal identities at every edge.
 target is a finite-n proof of `Q < P` -- both sides are explicit edge sums in `(g, delta)` over
 the Plancherel-weighted up-down chain, so this is where the Kerov-CLT-adjacent analysis should
 now be aimed.
+
+
+### 2026-09-05 — the CS relaxation is CLEANER but not EASIER (PR #6825)
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_pq_pointwise_census.py`.
+
+**Question settled BEFORE building on #6651's recommendation:** is `Q < P` pointwise nearly-true
+(per-edge argument + thin exceptional set) or aggregate-only (needs the joint law of `(g, delta)`
+under Plancherel)? Those need different proofs.
+
+**Integrand factors, no case split.** With `Delta(A) = g`, `Delta(D) = 2 delta - 2`:
+
+    g^2 - (2 - 2 delta)^2 = k (2g - k),   k := g + 2 delta - 2 = Delta(Sum h)
+
+So a `P-Q` edge is negative iff `k(2g-k) < 0` -- the SAME `k` as the `M_1` census (`g*k < 0`),
+tested differently. The two negative sets are NOT nested in either direction.
+
+**MEASURED: AGGREGATE.** Over `n >= 12`, negative-edge fraction 10.3-11.2 %, pos/neg MASS ratio
+**[20.33, 26.74]**. Not thin -- no per-edge argument closes it.
+
+**And WORSE than what it was meant to simplify.** `M_1`'s own census, computed on the SAME edge set
+over the SAME window (not cited from a differently-windowed figure), is **[41.51, 56.32]** -- about
+2x more favourable. So the relaxation bought a cleaner STATEMENT
+(`Q < P` is `E_nu[Delta(D)^2] < E_nu[Delta(A)^2]`, two second moments of one measure, no `V_A`) and
+NOT an easier problem. **My #6651 recommendation is weakened by its own follow-up**: `Q < P` stays
+the better-SHAPED target, not a locally-closeable one.
+
+Cross-check: the `M_1` figure here (41.5-56.3 over `n >= 12`) reproduces #6651's 44.1-56.3 over
+`n >= 16` on a wider window.
+
+**STRUCTURAL, and it is the one locally-priceable piece.** At `g = 0` the `P-Q` integrand is
+`-(2-2delta)^2 <= 0` for EVERY such edge, while `M_1`'s `g*k` vanishes identically there. The
+`|u| = |v|` edges contribute nothing to `M_1` and carry **11.55 %** of `P-Q`'s negative mass at
+`n = 20`. Cut out by `g = 0, delta != 1` -- no inequality to solve.
+
+Negative mass sits toward the **bulk**: mean `|u|+|v|` = 6.656 negative vs 9.025 positive at n=20.
+
+**Controls, all PASS, no verdict without them:** `P` == `Cov(A,W)` from the Plancherel measure with
+no edges (independent yardstick; `Q` has NO such yardstick and the module says so rather than
+faking one); per-edge terms sum to `P-Q` exactly; criterion matches sign at every edge; term
+reversal-invariant (so reverse-pairing cannot cancel this set either).
+
+**Still OPEN.** Sufficient never necessary. Window `n <= 20` vs requirement `n >= 79`. Both routes
+(`M_1 > 0` directly, and `Q < P`) now need the same thing: control of the joint distribution of
+`(g, delta)` under Plancherel. That is the Kerov-CLT-adjacent analysis, and it is where the next
+attempt should aim -- with the `g = 0` family priced separately as the one closed-form piece.
+
+--------
+
+## 2026-09-07 — a normalisation hazard for anyone deriving kappa, and the third basis in which Sum_c^2 is ONE mode
+
+Recorded from PR #7061 (the rho_inf derivation). Not a claim about kappa's value;
+a claim about a definition kappa depends on.
+
+### The hazard: kappa is defined through R_4, and the corpus carries two R_4 formulas
+
+This bean's kappa is `Cov(Sum_h, R_4)/(3 n^{5/2})`
+(`wlambda_covariance_epic_M1_IO_mode_decomposition.py`), so it inherits whatever
+normalisation `R_4` carries. Two are live in the corpus and they differ by a
+factor of 3 on `omega3`:
+
+| reading | formula | verdict |
+|---|---|---|
+| Lean `r4Value` | `R_4 = 3*omega3 - n` | **TRUE** |
+| "naive `Sigma_3 = R_4 + R_2`" | `R_4 = omega3 - n` | **FALSE** |
+
+**Already settled in the corpus, by exact rational arithmetic, not by me.**
+`wlambda_covariance_epic_M1_A1_sigmah_in_free_cumulants.py` builds the transition
+measure exactly (Fraction end to end, no float) and reports over all `lam` with
+`n <= 8`:
+
+    R_2 == n for all lam (n<=8):                True
+    R_4 == omega3 - n   (naive Sigma_3=R4+R2):  False
+    R_4 == 3*omega3 - n (Lean r4Value):         True
+
+**The textbook identity is NOT wrong — the trap is which symbol you put in it.**
+Biane/Kerov's `Sigma_3 = R_4 + R_2` is correct as stated. With the corpus's
+`omega3 = Sum_c^2 - C(n,2)` (the class-normalised central character) it gives
+`Sigma_3 = 3*omega3`, which reconciles exactly with the Lean form and with
+`wlambda_covariance_epic_M1_free_cumulant_reframing.py:10` (`omega3 =
+(R_4 + R_2)/3`). The factor 3 is the class-size convention: `Sigma_3` is
+normalised by `(k)_3` while `|C_{(3,1^{k-3})}| = (k)_3/3`.
+
+So "naive" labels the substitution of `omega3` for `Sigma_3`, not the identity.
+This is the normalisation-mistaken-for-a-discrepancy class AGENTS.md names, and
+it is worth flagging here because a factor of 3 in `R_4` puts a factor of 3 in
+kappa — and kappa's open question is a **0.3 %** one (`~0.0591` vs
+`sqrt(2)/24 = 0.058926`). A convention slip therefore does NOT explain that gap;
+it would produce a 3x miss, not a 0.3 % one. Anyone attacking kappa should state
+which `R_4` they used, and should not "explain" the 0.3 % by finding this factor.
+
+### The structural fact, now seen in three independent bases
+
+`Sum_c^2` couples to exactly ONE mode. Three bases, three derivations, no shared
+machinery:
+
+| basis | statement | source |
+|---|---|---|
+| sine / Chebyshev on [-2,2] | `G_k = pi * delta_{k,3}` | `wlambda_covariance_epic_M1_rho_inf_kerov_derivation.py` (PR #7061) |
+| free cumulants | `Sum_c^2 = R_4/3 + const` | `wlambda_covariance_epic_M1_IO_mode_decomposition.py` |
+| class / shifted-symmetric | `Sigma_3` is ONE orthonormal basis vector, so `Cov_P(ln f, Sigma_3)` is a single Fourier coefficient and every `d>=2` mode is orthogonal to it | `cb24799114` on main (bean `qou-vilx`) |
+
+The third arrived on main today from a **different arc** answering a different
+conjecture, which is what makes it worth recording: it is not a re-derivation.
+All three land on the degree-3 / 3-cycle object, and all three say the same
+thing — the higher modes contribute nothing to this covariance.
+
+That is the step the rho_inf closed form turns on (it is why the ratio is a
+finite closed form rather than a ratio of two sums), so it now has independent
+support in two bases the derivation does not use.
+
+### What this does NOT do
+
+It does not pin kappa. `Sum_h`, unlike `Sum_c^2`, is outside Lambda* and its
+fluctuation spreads over the whole even tower `R_4, R_6, R_8, ...` — that
+asymmetry is the actual difficulty and none of the three readings above touches
+it. Gap stays OPEN.
+
+
+--------
+
+## 2026-09-08 — the R_4 / omega3 question is RESOLVED (the two readings are one identity plus one convention)
+
+Owner instruction: "resolve R_4 issues". Done. Nothing about kappa is settled by
+this; a definition is.
+
+### What was wrong, and it was the WORDING, not the arithmetic
+
+My own note above (2026-09-07) and two probes recorded the two readings as rival
+formulas, one "naive" and wrong:
+
+    Lean r4Value                     R_4 = 3*omega3 - n     TRUE
+    "naive Sigma_3 = R_4 + R_2"      R_4 =   omega3 - n     FALSE
+
+That labelling reads as though **Biane/Kerov's identity were false in this
+corpus**, which is the more damaging of the two errors available here: an agent
+who believes it will avoid the entire Kerov-polynomial apparatus — the one tool
+both live routes to `M_1 > 0` now point at.
+
+### MEASURED, from characters, independent of both recorded formulas
+
+New producer, **6/6 PASS**, `Fraction` end to end, no float:
+`computations/deltalambda/wlambda_covariance_epic_M1_r4_sigma3_normalisation_reconciliation.py`
+
+It computes `chi^lam(3-cyc, 1^{n-3})` by Murnaghan-Nakayama (beta-number form)
+and `f^lam` by hook lengths, so `Sigma_3 := (n)_3 * chi / f` comes from the
+symmetric group, not from either formula under test. `R_2`, `R_4` are taken from
+the corpus's OWN transition-measure code (imported from the A1 probe) rather
+than reimplemented — a second implementation could agree with me and disagree
+with the corpus, which would prove nothing about the corpus. 63 partitions,
+n = 3..8:
+
+| check | result |
+|---|---|
+| **A** `Sigma_3 == 3 * omega3` | PASS — the class-size convention |
+| **B** `Sigma_3 == R_4 + R_2` | PASS — **Biane/Kerov is TRUE** |
+| **C** `R_4 == 3*omega3 - n` | PASS — the Lean form |
+| `R_2 == n` | PASS |
+| **D** `R_4 == omega3 - n` | FALSE on **57 of 63** partitions |
+| **E** (A and B and R_2=n) => C | PASS on every partition |
+
+### The resolution
+
+`Sigma_3` is normalised by the falling factorial `(n)_3`; the 3-cycle class has
+size `|C_{(3,1^{n-3})}| = (n)_3/3`. Hence `Sigma_3 = 3*omega3`, and
+
+    Sigma_3 = R_4 + R_2   ==>   3*omega3 = R_4 + n   ==>   R_4 = 3*omega3 - n
+
+i.e. **the Lean r4Value form IS Biane/Kerov's identity written in this corpus's
+normalisation.** They were never rival conventions. The defect is substituting
+`omega3` where `Sigma_3` belongs, which divides the omega3-coefficient by 3 and
+produces the false `R_4 = omega3 - n`. E verifies that as an implication on the
+data, so C is derived here rather than re-asserted.
+
+Note D fails on 57 of 63, not 63 of 63: the substitution is accidentally right
+on 6 small partitions. Smallest genuine failure `lam = [3]` (`R_4 = 3`,
+`omega3 - n = -1`, `3*omega3 - n = 3`). So a spot-check on one small diagram can
+"confirm" the wrong formula — which is plausibly how it entered.
+
+### Wording fixed at all four sites
+
+- `wlambda_covariance_epic_A1_sigmah_not_polynomial.py` — docstring and the
+  `R4_equals_3omega3_minus_n` assertion note (the latter is emitted INTO
+  `a1-sigma-h-not-polynomial.witness.json`, so the wrong claim was in a witness).
+- `wlambda_covariance_epic_M1_A1_sigmah_in_free_cumulants.py` — docstring, and
+  `rel_naive` renamed `rel_omega_substituted` with its printed label.
+
+Both re-run exit 0. The regenerated witness diff is the note text plus
+provenance stamps only — **no numeric value moved**, which is the expected
+signature of a wording-only change.
+
+### What this does NOT settle
+
+kappa. It inherits this normalisation (`kappa = Cov(Sum_h, R_4)/(3 n^{5/2})`), so
+anyone deriving it should state which `R_4` they used — but a slip here is a
+factor of **3**, and kappa's gap is **0.3 %** (`~0.0591` vs
+`sqrt(2)/24 = 0.058926`). It therefore cannot explain that gap, and finding it
+must not be reported as explaining it. Gap stays OPEN.

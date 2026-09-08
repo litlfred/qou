@@ -113,7 +113,15 @@ About **five** pass a bare name that could be a float
 reports all of them clean today. Closing the gap needs a detector that keys on
 the helper's call sites rather than on the literal — deliberately NOT built
 here, because a hasty one would add false positives to the very count this
-audit exists to keep honest. Tracked in bean `qou-9tqx`.
+audit exists to keep honest.
+
+**CLOSED — the tier below is that detector** (`_source_unguarded_param`, bean
+`qou-zq7b`). It resolves a parameter to its call sites instead of matching the
+token, excludes the stringified / integral / f-string forms, and carries a
+`--selftest` because it reports ZERO on the corpus: zero hits is not the same
+as verified sound. Calibrated against the pre-fix
+`qbeta_ck_qholonomic_recurrence_test.py`, where it finds 4 sites; 0 after the
+fix.
 
   UNRESOLVED   the source matches but no committed witness could be found. This
                is a limit of THIS TOOL, not a verdict about the corpus, and it
@@ -240,6 +248,164 @@ def _source_would_change(py: Path) -> list[tuple[int, object]]:
     return hits
 
 
+# Callables whose result is a STRING, so a tolerance routed through one is
+# already safe and must not be flagged. Measured: of the 16 hand-building files
+# passing a non-literal tolerance, 11 are safe for exactly this reason, and a
+# detector that ignored it would report eleven false positives against one true
+# one — the failure `docs/audits/2026-08-15-detector-blindness-taxonomy.md`
+# catalogues. `mp.nstr` is the corpus's usual spelling.
+_STRINGIFIERS = {"str", "repr", "format", "nstr", "mp.nstr"}
+
+
+def _call_name(node: ast.AST) -> str:
+    """Dotted name of a call target, or '' — `mp.nstr(x, 5)` -> 'mp.nstr'."""
+    if not isinstance(node, ast.Call):
+        return ""
+    f = node.func
+    if isinstance(f, ast.Name):
+        return f.id
+    if isinstance(f, ast.Attribute):
+        base = f.value.id if isinstance(f.value, ast.Name) else ""
+        return f"{base}.{f.attr}" if base else f.attr
+    return ""
+
+
+def _guard_would_change(value) -> bool:
+    return isinstance(value, (int, float)) and _tolerance_literal(value) is not None
+
+
+def _source_unguarded_param(py: Path) -> list[tuple[int, str, object]]:
+    """Sites where a tolerance reaches the payload through a VARIABLE.
+
+    THE GAP THIS CLOSES, and it is not hypothetical. `_source_would_change`
+    above literal-evals the token after `"tolerance":`, so a producer whose
+    assertion helper takes `tolerance` as a PARAMETER is invisible to it. On
+    2026-09-05 `3277607d39` re-ran exactly such a producer on `main` and undid
+    PR #5910's drain for one file while this pass reported the corpus
+    LATENT-free. Bean `qou-zq7b`.
+
+    It resolves rather than pattern-matches, in three steps:
+
+      1. A value that is an f-string, or a call to a STRINGIFIER, is SAFE — it
+         is already a string. This is what keeps the count honest: 11 of the 16
+         non-literal sites in the corpus are safe for this reason alone.
+      2. A value that is a PARAMETER of the enclosing function is resolved to
+         that function's call sites, and each argument (positional or keyword)
+         is literal-eval'd. A site is flagged only when a call site actually
+         passes a value the guard would change.
+      3. A value that is a plain name assigned a literal in the same function
+         or at module level is resolved to that literal.
+
+    Anything else — a computed expression, a name bound from a call — is left
+    UNREPORTED rather than guessed at. This audit's whole purpose is a count
+    that can be trusted, so a site it cannot decide is not a finding.
+    """
+    try:
+        src = py.read_text(encoding="utf-8", errors="replace")
+        tree = ast.parse(src)
+    except (OSError, SyntaxError):
+        return []
+
+    # name -> literal, for module-level and function-local `name = <literal>`
+    bindings: dict[str, object] = {}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign) and len(node.targets) == 1 \
+                and isinstance(node.targets[0], ast.Name):
+            try:
+                bindings[node.targets[0].id] = ast.literal_eval(node.value)
+            except (ValueError, SyntaxError):
+                pass
+
+    # function -> its call sites' arguments, keyed by parameter name
+    funcs: dict[str, ast.FunctionDef] = {
+        n.name: n for n in ast.walk(tree)
+        if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))
+    }
+    calls: dict[str, list[ast.Call]] = {}
+    for node in ast.walk(tree):
+        name = _call_name(node)
+        if name in funcs:
+            calls.setdefault(name, []).append(node)
+
+    def enclosing(lineno: int):
+        cands = [f for f in funcs.values() if f.lineno <= lineno <= (f.end_lineno or f.lineno)]
+        return min(cands, key=lambda f: (f.end_lineno or f.lineno) - f.lineno) if cands else None
+
+    hits: list[tuple[int, str, object]] = []
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Dict):
+            continue
+        for k, v in zip(node.keys, node.values):
+            if not (isinstance(k, ast.Constant) and k.value == "tolerance"):
+                continue
+            if isinstance(v, ast.Constant):
+                continue                      # the literal path already has it
+            if isinstance(v, ast.JoinedStr) or _call_name(v) in _STRINGIFIERS:
+                continue                      # already a string
+            if not isinstance(v, ast.Name):
+                continue                      # computed — not decidable here
+            fn = enclosing(v.lineno)
+            if fn and v.id in [a.arg for a in fn.args.args]:
+                idx = [a.arg for a in fn.args.args].index(v.id)
+                for call in calls.get(fn.name, []):
+                    passed = None
+                    if len(call.args) > idx:
+                        passed = call.args[idx]
+                    for kw in call.keywords:
+                        if kw.arg == v.id:
+                            passed = kw.value
+                    if passed is None or isinstance(passed, ast.JoinedStr) \
+                            or _call_name(passed) in _STRINGIFIERS:
+                        continue
+                    try:
+                        val = ast.literal_eval(passed)
+                    except (ValueError, SyntaxError):
+                        continue
+                    if _guard_would_change(val):
+                        hits.append((passed.lineno, f"{fn.name}({v.id}=)", val))
+            elif v.id in bindings and _guard_would_change(bindings[v.id]):
+                hits.append((v.lineno, v.id, bindings[v.id]))
+    return hits
+
+
+# A fixture in the SHAPE of the real defect: a helper taking `tolerance` as a
+# parameter, called with a guard-changing float, a stringified one, and an
+# integral one. `--selftest` fails unless the detector separates all three.
+#
+# This exists because the detector reports ZERO on the corpus, and zero hits is
+# not the same as verified sound — taxonomy row 34, where a tier that had fired
+# on nothing was asserted correct having measured only that. A future narrowing
+# that broke this detector would otherwise look like a clean tree.
+_SELFTEST_SRC = '''
+def gate(name, passed, computed, expected, tolerance, source):
+    rows.append({"name": name, "computed": computed, "expected": expected,
+                 "tolerance": tolerance, "source": source})
+
+gate("a", True, 1, 1, 1e-45, "flag: the guard would stringify this")
+gate("b", True, 1, 1, mp.nstr(TOL, 5), "safe: already a string")
+gate("c", True, 1, 1, 0.0, "safe: integral, the guard declines")
+gate("d", True, 1, 1, f"1e-{n}", "safe: f-string")
+'''
+
+
+def _selftest() -> int:
+    import tempfile
+    with tempfile.NamedTemporaryFile("w", suffix=".py", delete=False) as fh:
+        fh.write(_SELFTEST_SRC)
+        path = Path(fh.name)
+    try:
+        hits = _source_unguarded_param(path)
+    finally:
+        path.unlink(missing_ok=True)
+    vals = sorted(repr(v) for _, _, v in hits)
+    if vals != ["1e-45"]:
+        print(f"SELFTEST FAIL: expected exactly the 1e-45 site, got {vals}")
+        return 1
+    print("SELFTEST OK: flags the parameter-passed float; ignores the "
+          "stringified, integral and f-string forms.")
+    return 0
+
+
 def _iter_tolerances(obj):
     """Yield every value stored under a `tolerance` key, at any depth."""
     if isinstance(obj, dict):
@@ -292,7 +458,12 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any committed witness carries a float tolerance")
+    ap.add_argument("--selftest", action="store_true",
+                    help="check the parameter-resolving detector against a known-shape fixture")
     args = ap.parse_args()
+
+    if args.selftest:
+        return _selftest()
 
     src_sites: dict[Path, list[tuple[int, object]]] = {}
     for p in sorted(COMPUTATIONS.rglob("*.py")):
@@ -302,6 +473,17 @@ def main() -> int:
         if sites:
             src_sites[p] = sites
     sources = list(src_sites)
+
+    # The parameter-resolving tier (bean qou-zq7b). Separate from `sources`
+    # because it answers a different question: not "is the literal here wrong"
+    # but "does a float reach the payload through a variable".
+    param_sites: dict[Path, list[tuple[int, str, object]]] = {}
+    for p in sorted(COMPUTATIONS.rglob("*.py")):
+        if "_deprecated" in p.parts:
+            continue
+        h = _source_unguarded_param(p)
+        if h:
+            param_sites[p] = h
 
     rel = lambda p: p.relative_to(ROOT)  # noqa: E731
 
@@ -351,6 +533,7 @@ def main() -> int:
     print(f"          LATENT (clean now; a re-run re-dirties): {len(latent)}")
     print(f"          NO-TOLERANCE (docstring/fixture)     : {len(no_tolerance)}")
     print(f"          UNRESOLVED (tool limit, not a verdict): {len(unresolved)}")
+    print(f"  PASS 2b VARIABLE-PASSED (resolved to call sites)  : {len(param_sites)}")
 
     if live_dirty:
         print("\n--- LIVE-DIRTY: the drain is undone in these committed witnesses ---")
@@ -367,6 +550,14 @@ def main() -> int:
             sites = ", ".join(f"L{ln}={v!r}" for ln, v in src_sites[py])
             print(f"  {rel(py)}  ->  {', '.join(str(rel(w)) for w in ws)}")
             print(f"      {sites}")
+
+    if param_sites:
+        print("\n--- VARIABLE-PASSED: a float reaches the payload through a name ---")
+        print("    (resolved to the call site, not guessed from the token; the")
+        print("     stringified / integral / f-string forms are excluded)")
+        for py, hs in param_sites.items():
+            for ln, via, val in hs:
+                print(f"  {rel(py)}:{ln}  via {via}  -> {val!r}")
 
     if unresolved:
         print("\n--- UNRESOLVED: no committed witness found. NOT a clean bill. ---")

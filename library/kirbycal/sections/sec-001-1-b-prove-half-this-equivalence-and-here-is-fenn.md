@@ -7,6 +7,7 @@ section_number: 1
 pages: 20-21
 source_pdf: kirbycal.pdf
 source_sha256: 8dae9487ed32a3bd
+doc_brief: "Kirby, A calculus for framed links in S³ (Invent. Math. 45, 35–56, 1978) — the two moves generating equivalence of framed-link surgery presentations of a 3-manifold."
 ---
 other half. 
 Their operation, which they call a K-move, consists of introducing or removing 

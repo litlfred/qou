@@ -53,8 +53,30 @@ def leaves(o, p=""):
         yield p, o
 
 def restore():
-    subprocess.run(["git","checkout","--","computations/"],cwd=ROOT,capture_output=True)
-    subprocess.run(["git","clean","-fdq","computations/"],cwd=ROOT,capture_output=True)
+    """Restore producer-written artifacts — and NEVER source.
+
+    This ran `git checkout -- computations/` followed by an unrestricted
+    `git clean -fd computations/`.  This script lives under that tree, so its
+    own end-of-run restore reverted any uncommitted source edit AND deleted
+    any newly-written untracked `.py` beneath it.  That is the qou-jtc6
+    defect, one harness over: there it cost a fix that was written, tested
+    green, and gone from disk before `git add` ran, leaving a commit carrying
+    the message but not the change.
+
+    The blanket form is NOT simply wrong — it defends against the opposite
+    failure (a producer emits SIBLING witnesses, so restoring only the diffed
+    file leaks a drifted witness; the tnjb corruption).  Excluding `.py`
+    keeps that defence intact, because producers write data artifacts and
+    never source.
+    """
+    out = subprocess.run(["git", "diff", "--name-only", "--", "computations/"],
+                         cwd=ROOT, capture_output=True, text=True).stdout.split()
+    targets = [f for f in out if not f.endswith(".py")]
+    if targets:
+        subprocess.run(["git", "checkout", "--", *targets],
+                       cwd=ROOT, capture_output=True)
+    subprocess.run(["git", "clean", "-fdq", "-e", "*.py", "computations/"],
+                   cwd=ROOT, capture_output=True)
 
 def baseline(rel):
     r = subprocess.run(["git","show",f"{SHA}:{rel}"],cwd=ROOT,capture_output=True,text=True)
@@ -201,3 +223,5 @@ for i,(stem,ws) in enumerate(deferred,1):
 restore()
 print("\n=== SUMMARY ==="); print(f"pinned {SHA}")
 for k,v in Counter(x["verdict"] for x in results).most_common(): print(f"  {k:<16s} {v}")
+
+# SENTINEL_EDIT

@@ -33,8 +33,44 @@ way: it reports a carrier as UNINHABITED, which is the finding-shaped answer.
 It exists because the first version of this check passed nothing and reported
 a clean sweep of zeros.
 
+SECOND BLIND SPOT, MEASURED 2026-09-07: IT SCANNED `content/` ONLY.
+
+`builders()` defaulted to `root="content"`, so a witness anywhere else was
+invisible and the carrier read as UNINHABITED -- the finding-shaped answer
+again, exactly like the line-anchored bug above.
+
+That is not hypothetical.  Measured over the 58 distinct classes behind the
+corpus's flagged self-assuming projections: 18 are built inside `content/`,
+29 have no builder anywhere, and **11 are built ONLY outside it** -- all of
+them in three audit probes that, by their own headers, have no imports and are
+imported by nothing:
+
+    docs/audits/2026-08-30-context-classes-hand-adjudicated.lean   7
+    docs/audits/2026-08-30-gate-classes-admit-zero.lean            3
+    docs/audits/2026-08-31-h2s-and-the-inert-radius-gate.lean      1
+
+`BarEvenKernel` was a twelfth and was moved into `content/` on 2026-09-07
+(PR #7125), which is why it no longer appears in that list.
+
+SO THE FIX IS TO REPORT *WHERE*, NOT TO WIDEN THE SEARCH SILENTLY.
+
+Scanning everything and printing one count would be worse than the bug, and
+the reason is `2026-08-30-gate-classes-admit-zero.lean`: its instances are
+`DirectionSanityGateClass 0`, `MassAnchorStableGateClass 0`,
+`HasFiniteLPDuality emptyLP`, `HasMarkovTrace probeParticle 0`.  Those were
+built to show the gates ADMIT ZERO -- a demonstration that they are too weak,
+a negative result.  Counting them as "the bundle is built" would convert a
+negative result into a certificate of health, which is the laundering AGENTS.md
+§"Axiomatization is NOT a Proof" forbids.
+
+A probe witness answers "is this satisfiable at all"; a witness at the class
+answers "may a reader treat these projections as accessors".  They are
+different questions, so the output labels which one it found and never merges
+the counts.  `--probes` opts into the wider scan.
+
 Usage:
   scripts/lean-carrier-inhabited-check.py <Carrier> [<Carrier> ...]
+  scripts/lean-carrier-inhabited-check.py --probes <Carrier> [...]
   scripts/lean-carrier-inhabited-check.py --selftest
 """
 from __future__ import annotations
@@ -71,8 +107,16 @@ def builders(carrier: str, root: str = "content") -> list[str]:
     return out
 
 
+# Trees that are NOT the shipped formalization: probe / audit fragments which
+# by their own headers have no imports and are imported by nothing.  A witness
+# here is evidence of satisfiability, not of accessor legitimacy.
+PROBE_ROOTS = ["docs", "scripts/lean"]
+
+
 def main() -> int:
     args = sys.argv[1:]
+    probes = "--probes" in args
+    args = [a for a in args if a != "--probes"]
     if not args:
         print(__doc__)
         return 2
@@ -90,9 +134,24 @@ def main() -> int:
     worst = 0
     for c in args:
         b = builders(c)
-        print(f"{len(b):>2}  {c}" + ("" if b else "   <-- UNINHABITED: not the accessor idiom"))
+        pb = []
+        if probes:
+            for r in PROBE_ROOTS:
+                if pathlib.Path(r).is_dir():
+                    pb += builders(c, r)
+        if b:
+            note = ""
+        elif pb:
+            note = ("   <-- PROBE-ONLY: satisfiable, but every witness is in a "
+                    "fragment nothing imports; see the docstring before treating "
+                    "this as accessor legitimacy")
+        else:
+            note = "   <-- UNINHABITED: not the accessor idiom"
+        print(f"{len(b):>2}  {c}{note}")
         for h in b[:3]:
             print(f"      {h}")
+        for h in pb[:3]:
+            print(f"      [probe] {h}")
         worst = max(worst, 0 if b else 1)
     return 0
 

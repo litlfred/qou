@@ -182,41 +182,40 @@ class CanonicalKnotIdSDP (n : LightNucleus) where
       dominant Wedderburn summand of `bindingK n` at H_{n.n₀}(q₀). -/
   rho : ℕ
   rho_pos : 0 < rho
-  /-- The constituent-uniqueness sub-assertion (semantic):
-      at H_3(q₀), each nucleon's trefoil image is the unique
-      PSD-feasible canonical element.  Closed numerically by R5-minimal
-      (`joint_tower_sdp_solver_v2.py`).  Encoded as a `Prop` field
-      with placeholder witness pending Lean Hecke infra; the Lean
-      DECIDABLE proxy is `BraidWord.structurallyValidBinding bindingKWord n.n₀`
-      (constituent legitimacy is consistent with the binding-K
-      enumeration domain). -/
-  constituentUniqueness : Prop
-  constituentUniqueness_holds : constituentUniqueness
-  /-- The PSD-feasibility leg of binding-K uniqueness — semantic
-      Prop placeholder pending Lean Wedderburn-block infra; the
-      DECIDABLE structural proxy is `bindingKWord.evenPower` (every
-      generator power sums to even, the simplest necessary
-      condition for the σ_k^{2m} eigenvalues q^{2m}, q^{-2m} > 0
-      pattern to hold in every block — see binding-k-enumerator
-      witness). -/
-  bindingKPSDFeasible : Prop
-  bindingKPSDFeasible_holds : bindingKPSDFeasible
-  /-- The minimal-length leg of binding-K uniqueness.  The DECIDABLE
-      structural proxy is `bindingKWord.length ≤ 4` (the L_K_max ≤ 4
-      bound used by the enumerator search; minimum length is
-      guaranteed by the search returning a min-length candidate). -/
-  bindingKMinimalLength : Prop
-  bindingKMinimalLength_holds : bindingKMinimalLength
-  /-- The Markov-trace match leg.  The DECIDABLE structural proxy
-      is `BraidWord.structurallyValidBinding bindingKWord n.n₀` — Markov-trace
-      match cannot be checked at the type level without Hecke infra,
-      but structural validity is necessary.  Note: this duplicates
-      `constituentUniqueness`'s proxy at the class level — that's
-      correct since both Props share the same necessary structural
-      floor; per-instance categorical content (when the Hecke port
-      lands) will distinguish them. -/
-  bindingKMatchesHistoricalMarkovTrace : Prop
-  bindingKMatchesHistoricalMarkovTrace_holds : bindingKMatchesHistoricalMarkovTrace
+  -- ── The four semantic legs are NOT fields. ──────────────────
+  -- `constituentUniqueness`, `bindingKPSDFeasible`,
+  -- `bindingKMinimalLength` and `bindingKMatchesHistoricalMarkovTrace`
+  -- were `Prop`-universe fields, each with a sibling witness. A field
+  -- typed with the universe `Prop` holds a proposition as *data*, so the
+  -- instance chose what each leg meant and `True` would have discharged
+  -- all four.
+  --
+  -- They were also **duplicates**. Measured against the three
+  -- instances: each set its semantic field to exactly the decidable
+  -- proxy that is already a separate field below —
+  --
+  -- constituentUniqueness              := structurallyValidBinding …
+  -- bindingKPSDFeasible                := evenPower …
+  -- bindingKMinimalLength              := length ≤ 4
+  -- bindingKMatchesHistoricalMarkovTrace := structurallyValidBinding …
+  --
+  -- — so the same three propositions appeared twice per instance, once
+  -- *chosen* and once *required*. Nothing was lost by deleting the
+  -- chosen copies; the required copies are the same statements with the
+  -- freedom removed.
+  --
+  -- **What remains open is the semantic content, and it was never in
+  -- these fields.** At H_3(q₀) the trefoil image being the unique
+  -- PSD-feasible canonical element; PSD-feasibility across every
+  -- Wedderburn block; genuine minimality rather than a length bound;
+  -- and the Markov-trace match — none is stateable without Hecke-block
+  -- infrastructure this framework does not have. The structural fields
+  -- below are *necessary conditions* for them, which is what the class
+  -- can honestly require today. Closure is conjectural: see
+  -- `binding-k-enumerator.witness.json` and `conj:canonical-knot-id-sdp`.
+  --
+  -- Retaining a `Prop` field per leg did not preserve that openness — it
+  -- recorded a name and let the instance answer it.
   /-- ── Decidable structural sub-Props (Lean-checkable). ─────────
       These are the concrete, kernel-verifiable predicates over
       `bindingKWord` that the per-nucleus instances actually
@@ -263,12 +262,20 @@ verified explicit braid word from the inter-nucleon enumerator search
     minimum-length PSD-feasible search at H_6 in the inter-nucleon
     generator subset {σ_3, σ_3^{-1}} is `[3, 3]` (Hopf σ_3²).  This
     matches the historical `L_H Hopf` identification recorded in
-    `joint-tower-sdp-h6-h9.witness.json`.  The bindingKPSDFeasible
-    Prop is empirically verified: σ_3² has positive eigenvalues
+    `joint-tower-sdp-h6-h9.witness.json`.  PSD-feasibility is
+    empirically verified for this word: σ_3² has positive eigenvalues
     (q², q^{-2}) in the standard (2,1) block of H_6 and trivially
-    positive eigenvalues elsewhere.  The bindingKMinimalLength Prop
-    is similarly verified: no length-1 PSD-feasible inter-nucleon
-    word exists in {σ_3, σ_3^{-1}}.
+    positive eigenvalues elsewhere.  Minimality is similarly verified:
+    no length-1 PSD-feasible inter-nucleon word exists in
+    {σ_3, σ_3^{-1}}.
+
+    Both statements are EMPIRICAL, about this one word, and neither is
+    a class field — the semantic legs they belong to were deleted on
+    2026-09-07 (see the note in the class). What the class requires is
+    `bindingKEvenPower` and `bindingKLengthBounded`, which are the
+    decidable necessary conditions, kernel-verified per instance. The
+    empirical facts above are why those proxies were chosen; they are
+    not what the proxies assert.
 
   * **³H, ³He (L = 3 enumeration RUN — honest negative)** — the
     extended-generator (σ_3..σ_8) search at L_K_max = 3 enumerated 1596
@@ -298,20 +305,6 @@ instance instCanonicalKnotIdSDP_deuterium : CanonicalKnotIdSDP .deuterium where
   bindingKWord := [3, 3]                       -- σ_3² = Hopf link
   rho := 1
   rho_pos := by decide
-  -- Placeholder semantic Props are encoded as the kernel-verifiable
-  -- DECIDABLE structural proxies documented in the class definition
-  -- (necessary conditions for the full SDP-uniqueness statements;
-  -- closure to the full Hecke-block claims is conjectural — see
-  -- `binding-k-enumerator.witness.json`).
-  constituentUniqueness := BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.deuterium.n₀
-  constituentUniqueness_holds := by decide
-  bindingKPSDFeasible := BraidWord.evenPower ([3, 3] : BraidWord)
-  bindingKPSDFeasible_holds := by decide
-  bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
-  bindingKMinimalLength_holds := by decide
-  bindingKMatchesHistoricalMarkovTrace :=
-    BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.deuterium.n₀
-  bindingKMatchesHistoricalMarkovTrace_holds := by decide
   -- The DECIDABLE structural Props below are KERNEL-VERIFIED for
   -- bindingKWord = [3, 3] at LightNucleus.deuterium.n₀ = 6:
   --   structurallyValidBinding: [3, 3] ≠ [], 3 ≠ 0, 3 ∈ [3, 6).
@@ -332,17 +325,6 @@ instance instCanonicalKnotIdSDP_tritium : CanonicalKnotIdSDP .tritium where
   bindingKWord := [3, 3]                       -- L=3-confirmed min-length winner (σ_3² Hopf)
   rho := 2
   rho_pos := by decide
-  -- Placeholder semantic Props as decidable structural proxies — see
-  -- the deuteron instance above for the full justification.
-  constituentUniqueness := BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.tritium.n₀
-  constituentUniqueness_holds := by decide
-  bindingKPSDFeasible := BraidWord.evenPower ([3, 3] : BraidWord)
-  bindingKPSDFeasible_holds := by decide
-  bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
-  bindingKMinimalLength_holds := by decide
-  bindingKMatchesHistoricalMarkovTrace :=
-    BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.tritium.n₀
-  bindingKMatchesHistoricalMarkovTrace_holds := by decide
   bindingKStructurallyValid := by decide
   bindingKEvenPower := by decide
   bindingKLengthBounded := by decide
@@ -358,17 +340,6 @@ instance instCanonicalKnotIdSDP_helium3 : CanonicalKnotIdSDP .helium3 where
   bindingKWord := [3, 3]                       -- L=3-confirmed min-length winner (σ_3² Hopf)
   rho := 2
   rho_pos := by decide
-  -- Placeholder semantic Props as decidable structural proxies — see
-  -- the deuteron instance above for the full justification.
-  constituentUniqueness := BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.helium3.n₀
-  constituentUniqueness_holds := by decide
-  bindingKPSDFeasible := BraidWord.evenPower ([3, 3] : BraidWord)
-  bindingKPSDFeasible_holds := by decide
-  bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
-  bindingKMinimalLength_holds := by decide
-  bindingKMatchesHistoricalMarkovTrace :=
-    BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.helium3.n₀
-  bindingKMatchesHistoricalMarkovTrace_holds := by decide
   bindingKStructurallyValid := by decide
   bindingKEvenPower := by decide
   bindingKLengthBounded := by decide
@@ -557,16 +528,6 @@ def helium3_canonical_uniqueness_via_strict_complementarity
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
-    constituentUniqueness :=
-      BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.helium3.n₀
-    constituentUniqueness_holds := by decide
-    bindingKPSDFeasible := BraidWord.evenPower ([3, 3] : BraidWord)
-    bindingKPSDFeasible_holds := by decide
-    bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
-    bindingKMinimalLength_holds := by decide
-    bindingKMatchesHistoricalMarkovTrace :=
-      BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.helium3.n₀
-    bindingKMatchesHistoricalMarkovTrace_holds := by decide
     bindingKStructurallyValid := by decide
     bindingKEvenPower := by decide
     bindingKLengthBounded := by decide
@@ -607,16 +568,6 @@ def deuterium_canonical_uniqueness_pending_multiterm_cost
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
-    constituentUniqueness :=
-      BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.deuterium.n₀
-    constituentUniqueness_holds := by decide
-    bindingKPSDFeasible := BraidWord.evenPower ([3, 3] : BraidWord)
-    bindingKPSDFeasible_holds := by decide
-    bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
-    bindingKMinimalLength_holds := by decide
-    bindingKMatchesHistoricalMarkovTrace :=
-      BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.deuterium.n₀
-    bindingKMatchesHistoricalMarkovTrace_holds := by decide
     bindingKStructurallyValid := by decide
     bindingKEvenPower := by decide
     bindingKLengthBounded := by decide
@@ -651,16 +602,6 @@ def tritium_canonical_uniqueness_pending_hoefsmit_h5
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
-    constituentUniqueness :=
-      BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.tritium.n₀
-    constituentUniqueness_holds := by decide
-    bindingKPSDFeasible := BraidWord.evenPower ([3, 3] : BraidWord)
-    bindingKPSDFeasible_holds := by decide
-    bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
-    bindingKMinimalLength_holds := by decide
-    bindingKMatchesHistoricalMarkovTrace :=
-      BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.tritium.n₀
-    bindingKMatchesHistoricalMarkovTrace_holds := by decide
     bindingKStructurallyValid := by decide
     bindingKEvenPower := by decide
     bindingKLengthBounded := by decide
@@ -720,16 +661,6 @@ theorem helium3_existence_with_witness_rho
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
-    constituentUniqueness :=
-      BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.helium3.n₀
-    constituentUniqueness_holds := by decide
-    bindingKPSDFeasible := BraidWord.evenPower ([3, 3] : BraidWord)
-    bindingKPSDFeasible_holds := by decide
-    bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
-    bindingKMinimalLength_holds := by decide
-    bindingKMatchesHistoricalMarkovTrace :=
-      BraidWord.structurallyValidBinding ([3, 3] : BraidWord) LightNucleus.helium3.n₀
-    bindingKMatchesHistoricalMarkovTrace_holds := by decide
     bindingKStructurallyValid := by decide
     bindingKEvenPower := by decide
     bindingKLengthBounded := by decide

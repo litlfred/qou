@@ -1,11 +1,11 @@
 ---
 # qou-y82a
 title: 'RESULT: qbeta composite single_anchor_near_matches collapses 25 -> 4 from muon to proton'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-24T19:23:23Z
+updated_at: 2026-09-05T09:29:10Z
 ---
 
 ## The number
@@ -124,3 +124,50 @@ Spun out: **qou-1w90** -- the environment guard's `_version_tuple` orders opaque
 hex hashes, so `pyhecke_native_build` reports a false "downgrade" (the same pair
 reads as an "upgrade" in the other direction). Not fixed here:
 `tools/qou-substrate/` is the qou-aj91 agent's scope.
+
+
+---
+
+## CLOSED 2026-09-05 — every item verified live on `main` `262ee53eeea`
+
+This bean measured a result, then corrected three of its own numbers, then landed
+the producer hardening. All of it is on main; only the status was never moved.
+
+Confirmed in `computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py`:
+
+| item | site |
+|---|---|
+| refuse-guard when the two anchors are closer than 1e-9 relative | `:306-311` |
+| `anchor_separation_relative` carried in the witness | `:430` |
+| `near_match_window` (the two disjoint windows) | `:431` |
+| `scope_classification` — the (a) vs (b) record | `:479-490` |
+
+The three self-corrections are the part worth keeping, and they are the reason
+this bean should not be read by its title:
+
+1. the count was **27, not 25** (the witness truncated at `near_matches[:25]`);
+2. survivors are **0, not 4** — the two sets are **disjoint**;
+3. and the framing was wrong: `single_anchor_near_matches` is by construction the
+   candidates within `TOL_NEAR = 1 %` of the target, so moving the target 2.4 %
+   moves a half-width-1 % window clean off its old position
+   (`[-2.0403900, -1.9999862]` → `[-2.0900360, -2.0486491]`). The 27 → 4 change is
+   **a corrected measurement, not evidence about any candidate** — the candidate
+   values barely moved (`q_at` shifts 1.2e-8 relative); the *window* moved.
+
+The 27 departures were the `c_3 ≈ -2` neighbourhood re-reporting one already-known
+fact 27 times: under the correct proton target `-2` misses by 3.351e-2, which is
+the `c_3`-normalised form of the 3.47 % gap AGENTS.md records for
+`c_3 = -2 = J_Hopf(q=1)`. That agreement is an independent check that the
+corrected run is right.
+
+Scope **(a)**, correctly: no 2-factor composite of *these* atoms, alone, hits the
+`c_3` target at both anchors within 1 ppm. Not (b) — no proved invariant excludes
+any ingredient, and the departures are a window artifact.
+
+**Nothing was left for an agent.** The one spin-out, `qou-1w90` (the environment
+guard's `_version_tuple` ordering opaque hex hashes, so `pyhecke_native_build`
+reads as a false "downgrade"), was deliberately scoped out to the `qou-aj91`
+agent's `tools/qou-substrate/` territory and carries its own bean. The shape
+guard was inspected candidate-by-candidate and **not** widened; `--tolerance`
+widening and a `SELF_DESCRIBING` exemption were both considered and rejected in
+the body, which is the correct disposition under the anti-baseline-widening rule.
