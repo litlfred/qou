@@ -1,11 +1,11 @@
 ---
 # qou-q0zk
 title: 'DRAIN: 99 witnesses may be convention-C-frame under D producers (#4899 sweep tail)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-19T20:13:39Z
-updated_at: 2026-08-23T17:04:24Z
+updated_at: 2026-09-08T08:16:44Z
 ---
 
 PR #4899 excised convention C from the producer layer ("178 sites -> 0") and
@@ -232,3 +232,86 @@ will break controls that no witness-level test can see.
 
 `wedderburn-pair-volumes` (confirmed #3) still moves a content-cited number by
 13% and still needs the scope decision. Unchanged from 2026-08-23.
+
+
+---
+
+## CLOSED 2026-09-08 — the drain is done on this bean's own instrument: **99 → 73 → 63 → 1**, and the 1 is float64 noise.
+
+Two instruments, named separately, because this bean's series and the triage
+answer different questions and conflating them would repeat the definition
+mismatch this arc keeps hitting.
+
+### `y_lambda_convention_c_fingerprint_audit.py` — the detector behind the 99/73/63 series
+
+Re-run on `main` today:
+
+```
+  witnesses scanned          : 3704
+  live files with fingerprint: 1
+     1  computations/probes/sdp-o3-falsifier.witness.json
+        lambda=(1, 1, 1)  y=0.00000000000000001450940527416494137947
+```
+
+**99 (2026-08-19) → 73 (08-23) → 63 (08-24) → 1 (09-08).** `main` kept draining
+exactly as this bean predicted it would.
+
+**And the survivor is almost certainly not a convention-C value.** The criterion
+is *"nonzero `y_lambda` on a ≥3-row partition"*, which under D should be exactly
+zero — the TL/GNS quotient kills that block. A genuine C fingerprint is **O(1)**;
+this is **1.45e-17**, float64 noise about zero. Flagged rather than swept: a
+witness carrying 1.45e-17 where the mathematics says exact 0 is a small
+NO-FLOAT64 item in its own right (the producer should emit an exact zero, or an
+`mpf`), and it is the kind of residue that reads as a convention hit forever.
+Not opened as a bean — recorded here so whoever runs this detector next does not
+re-litigate it.
+
+### `convention_c_witness_triage.py` — a DIFFERENT instrument, different question
+
+Producer-side classification rather than witness fingerprint. Current:
+
+```
+  live-C-producer 2 | deliberate-comparison 1 | stale-output 1 | unresolved 9
+  mechanical (re-run) 1 | MUST NOT be swept 1 | needs source migration 2 | needs an agent 9
+```
+
+13 items, of which **9 are `unresolved` — "producer not resolvable from
+scriptFile"**, i.e. they need a reader, not a sweep. **Do not read 13 against
+the 1 above**; they are not the same measure.
+
+### The one blocker this bean named is gone, and it landed harmlessly
+
+The bean's standing carve-out was:
+
+> *"Regenerating this one moves a **content-cited** number by 13%, which stales
+> the block's `.qa.json` sidecar and may contradict figures quoted in the `.md`.
+> … it needs a scope decision before it runs."*
+> *"Still not drained, deliberately. Unchanged from 2026-08-23."*
+
+**That text is stale.** `computations/wedderburn-pair-volumes.witness.json` was
+regenerated **2026-08-24T19:09:59** and now carries the D value —
+`"full": 0.6803696542238019`, against the C value 0.60 the bean cites as the 13 %
+gap. Whether the scope decision was taken or the drain simply ran after this
+text was written, I cannot establish from the record.
+
+**Both feared harms were checked and neither occurred:**
+
+| feared | measured |
+|---|---|
+| the `.md` contradicts the new figure | the block's `.md` quotes **no** such figure — grep for `0.6…` returns nothing |
+| the `.qa.json` sidecar goes stale | **hashes match**: recorded `md 7e676c0137d2` / `ts 04bb82ed1f52` both equal the files today |
+
+The reason is structural and worth keeping: `knot-operator-lp-selection.ts` cites
+the witness as `computation.witness` — a **path**, not a quoted number — and the
+`.md` carries no `:val` pin. So a 13 % move in the witness has nowhere to leak.
+The caution was sound; the coupling it assumed was not there.
+
+### Verdict
+
+Closed. The drain is complete on this bean's own detector, its one deliberate
+carve-out is resolved, and the residual 13 triage items are a different
+instrument's queue — `qou-t9r1` and `qou-pmkh` carry the remaining convention-C
+surface, and `qou-1c4y` the pin migration this bean compared itself to.
+
+**Not closed by this**: nothing here touches the *source* convention-C surface,
+which AGENTS.md says to treat as UNMEASURED rather than clear.
