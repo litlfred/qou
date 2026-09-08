@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-08-11T01:00:00Z
+updated_at: 2026-09-08T04:37:29Z
 ---
 
 Owner picked front 2. Per 2026-08-02-1ppq-lever-map: Δ_λ (partition-level) and A_ω (knot-level) are
@@ -34,3 +34,29 @@ constant (-1)^dim, so no smooth moduli with chi=-2 can supply 3. This excludes t
 route has taken — and explains structurally WHY they land on -2: an unweighted/constant-weighted
 count has no mechanism to be odd. Does NOT supply the count, does NOT close A_omega/Delta_lambda/
 bwse, and (lever map #4601) closing it would NOT close binding anyway. Bounded characterization.
+
+
+---
+
+## 2026-09-08 — NOT closeable: the bean says so itself. Read for the completion-candidate queue.
+
+`scripts/bean-completion-candidates.py` flags this on `c949eb6a516`,
+*"fix(qou-dt14): correct notation (χ is characters, not Euler char) + generalize
+parity to all even"*. The completion verb governs a **notation correction**, not
+the probe this bean is about.
+
+What landed is real and bounded — `DTBehrendParityObstruction.lean`, lean-direct
+exit 0 and **Mathlib-free**, so machine-verified independently of the olean
+cache: `no_constant_weight_yields_three` (`c·(−2) ≠ 3` for every integer `c`),
+`at_least_two_strata`, `odd_count_needs_odd_stratum`, plus a genuine scope-(b)
+prune with the invariant **named** (parity): the Behrend function of a *smooth*
+moduli is the constant `(−1)^dim`, so no smooth moduli with `χ = −2` can supply
+3. That excludes the whole "smooth moduli + (signed) Euler characteristic"
+family — the shape every QOU-internal route has taken — and explains structurally
+why they all land on −2.
+
+**But the bean's own closing lines are the verdict**: it *"Does NOT supply the
+count, does NOT close A_ω/Δ_λ/bwse, and (lever map #4601) closing it would NOT
+close binding anyway. Bounded characterization."* A characterization of what any
+supplier must satisfy is not a supplier. Rule 13a: the subject — the
+irreducibly-external Behrend-weighted DT count — is open. Stays `todo`.
