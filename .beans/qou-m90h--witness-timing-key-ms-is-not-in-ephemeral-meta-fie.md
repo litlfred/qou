@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T11:01:32Z
-updated_at: 2026-09-07T11:10:00Z
+updated_at: 2026-09-08T03:41:37Z
 ---
 
 Found on PR #7061 while classifying witness churn from verification runs.
@@ -100,3 +100,63 @@ stable observation while a sweep may still be alive.** Check `pgrep` for the
 producers before concluding that a revert held, or you will attribute your own
 still-running loop to a nondeterministic producer. This cost three revert
 rounds here.
+
+
+--------
+
+## 2026-09-08 — the stray-job hazard recurred the SAME session, and a second trap beside it
+
+Two methodology findings from the session that filed this bean. Neither moves a
+number; both are about measurements being wrong for reasons outside the thing
+measured, which is this bean's subject.
+
+### 1. A background job outliving its wrapper — SECOND instance, same session
+
+This bean already records one: a sweep kept running after `TaskStop` reported it
+stopped, and `git status` was therefore not a stable observation. It happened
+again a few hours later with a different command.
+
+`scripts/precision-gates.sh --changed` was started in the background. Its
+harness task reported **completed, exit 0**. Fifteen minutes later a stop-hook
+flagged four dirty witnesses, and `pgrep -af` found the script **still alive**
+across four PIDs (wrapper, `timeout`, the script, and a `witness_provenance_audit.py`
+child), still writing. It took `kill -9` on the PIDs to stop it.
+
+So: **a completion notification is not evidence the process is gone.** Twice in
+one session, two different commands. Treat "the task said it finished" as a
+claim about the wrapper only, and confirm with `pgrep -af` before reading
+`git status` as a measurement of your own work.
+
+### 2. `GATE EXIT=$?` after a pipeline reports the PIPE, not the script
+
+The same run was invoked as
+
+    bash scripts/precision-gates.sh --changed 2>&1 | tail -25; echo "GATE EXIT=$?"
+
+`$?` there is `tail`'s status, which is 0 essentially always. It printed
+`GATE EXIT=0` while the gate was **RED** — and that 0 was quoted in a report
+before the error was caught.
+
+Run directly for the verdict: `python3 computations/witness_raw_float64_audit.py
+--strict` exits **1**. Same class as everything else in this bean: a number that
+looks like the measurement but is about the harness.
+
+Use `PIPESTATUS[0]`, or `set -o pipefail`, or do not pipe the thing whose exit
+code you intend to read.
+
+### 3. A useful thing the gate says that is easy to miss
+
+Its output ends with an instruction not to commit the witnesses it regenerates:
+
+> DO NOT COMMIT THESE. Revert them: `git checkout -- computations/` … contended
+> files that main regenerates on its own cadence, so committing one from a
+> feature branch either walks a drain-only ratchet backwards (if this tree is
+> behind main) or acquires a conflict that recurs until the branch merges (even
+> at 0 behind). Both failure modes are measured; see bean `qou-v0t8`.
+
+Worth knowing BEFORE running it, because the instruction arrives at the end of a
+three-minute run whose output is easy to skim past — and the reflex on seeing
+dirty witnesses is to inspect and decide, not to revert on sight. It also adds
+the useful caveat that the diff is still worth READING: if the movement is your
+own producer's, that is a real finding; it is the commit that is wrong, not the
+measurement.
