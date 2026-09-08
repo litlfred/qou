@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:25:01Z
-updated_at: 2026-09-08T08:11:58Z
+updated_at: 2026-09-08T08:20:19Z
 ---
 
 Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (round 2 of the stalled-agent takeover; sibling round 1 is #7121 / qou-6g7j with fronts observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces — NOT duplicated here). This session: merge every clean open PR; take over the fronts #7121 left: the chi producer scaling wall (#7083), the Q_β ℚ(q)-coefficient leg (#7118), and the binding SHAPE residual (symmetry-energy term of the additive log law), which the owner names as where most of the binding gap sits. Goal statement: L2 toward 1 ppQ; binding is not an L2 row and must not be quoted as one (1ppQ reanalysis §5 item 3).
@@ -25,3 +25,5 @@ Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (
 ## Tranche 2 (2026-09-08 ~08:00Z) — after 'merge and continue': #7160 43e3e1b305a, #7164 d32f83379f5, #7165 e928329504d, #7129 5566ddffd69 all rebase-merged, replay-verified. Held merges #6178/#6025 NOT merged (recommended against; the generic 'merge' is read as the four session PRs). CAL-3 dataset decision (#7164 §4) still open. Dispatched: qou-nmuz (deltalambda consumer re-runs), qou-hxz4 (binding-word level-locality), qou-v8ct (E₀ factor 2.656).
 
 - 08:11Z qou-nmuz DONE → PR #7172 (all four deltalambda consumers moved on borromean Li; saturation probe stays 3-red with a rotated set; re-pin of two Li assertions is an owner option). bind-local (qou-hxz4) and e0-scale (qou-v8ct) still running.
+
+- 08:20Z qou-hxz4 DONE → PR #7173 (honest negative: binding words not level-local, obstruction is the fixed-H_k embedding; re-embedding on 3A strands is an owner-level re-derivation, option 2). e0-scale (qou-v8ct) still running.
