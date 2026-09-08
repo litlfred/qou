@@ -2,13 +2,28 @@
   The obtuse tiling — assembling the a.e. decomposition (bean `qou-w3eg`, H4-5).
 
   The ingredients are proved in `ObtuseWedgeDegenerate.lean`; this file is the
-  assembly.  Target:
+  assembly.  It reaches, for `π/2 < γ`:
 
       inscribedTriangle R t α β γ
         =ᵐ (wedgeAt R (t+2γ+α) α ∪ wedgeAt R (t+2γ+2α+β) β)
-             \ wedgeAt R (t+γ+π) (π−γ)          (γ obtuse)
+             \ wedgeAt R (t+γ+π) (π−γ)            (`obtuseWedges_ae_eq_…`)
 
-  **Both** directions are a.e. rather than strict, over two different null sets:
+      Vol(chimney (inscribedTriangle R t α β γ) R) = Λ(α) + Λ(β) + Λ(γ)
+                                    (`hypVolume_chimney_inscribedTriangle_obtuse`)
+
+  the second being the obtuse counterpart of `hypVolume_chimney_inscribedTriangle`
+  (which assumes all three angles acute).  Between them the two cover every
+  triangle except the right-angled one, where `γ = π/2` degenerates `W_sub` to a
+  half-plane and the `ψ < π/2` wedge machinery fails on both sides.
+
+  **SCOPE — this does not close the obtuse case of Milnor's identity.**  It is a
+  statement about the chimney over an inscribed triangle.  Identifying that
+  region with an ideal tetrahedron is `IdealTetEqChimney.idealTet_eq_chimney`,
+  which still carries `α, β, γ < π/2` and is a *set equality* — analytic
+  continuation cannot supply it, and neither can anything here.  Bean `qou-w3eg`.
+
+  **Both** directions of the tiling are a.e. rather than strict, over two
+  different null sets:
 
   * `T \ RHS` is controlled by the wedge EDGE LINES, exactly as in the acute
     `milnorWedges_ae_eq_inscribedTriangle` — lines through the origin, killed by
@@ -25,6 +40,7 @@
   -- Ref: [manuscript] bean qou-w3eg (H4-5 obtuse)
 -/
 import QOU.Archimedean.ObtuseWedgeDegenerate
+import QOU.Archimedean.IdealTetObtuseReduction
 
 namespace QOU.Archimedean.HyperbolicVolume
 
@@ -258,6 +274,81 @@ theorem inscribedTriangle_subset_obtuseWedges_of_ne {R t α β γ : ℝ}
       exact hx
     · rw [show t + 2 * γ + 2 * α + β - β = t + (2 * γ + 2 * α) by ring]; exact hzs
 
+/-- **The subtracted wedge sits inside the union it is subtracted from** — off
+the same single edge line.
+
+Without this the set difference `(W_α ∪ W_β) \ W_sub` would be arithmetically
+smaller than Milnor's signed sum `W_α + W_β − W_sub`: subtracting a set removes
+only the part that was there.  With it, the two agree, and the volume identity
+can be read off by additivity rather than by a signed-measure argument.
+
+The proof is the two certificates read BACKWARDS.  `W_sub` is an *acute* wedge —
+its half-angle is `π − γ ∈ (0, π/2)` precisely because `γ` is obtuse — so
+`wedgeAt_lower` / `_upper` give it the same two cone bounds the triangle has,
+`perp_{t+2γ} > 0` and `perp_t < 0`.  What it has instead of the triangle's
+`γ`-chord is the OPPOSITE inequality `⟨w,u_{t+γ}⟩ > R cos γ`, and feeding that
+sign into
+
+    cos γ·(α-chord slack) = cos α·(γ-chord slack) − perp_{t+2γ}·sin β
+    cos γ·(β-chord slack) = perp_t·sin α + cos β·(γ-chord slack)
+
+makes both left sides negative, hence — `cos γ` being negative — both chord
+slacks positive.  So a point of `W_sub` satisfies the `α`- and `β`-chords even
+though it fails the `γ`-chord, which is exactly the geometry of a circumcentre
+that has left the triangle across one edge. -/
+theorem wedgeAt_sub_subset_alphaBeta_of_ne {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π)
+    {w : ℝ × ℝ} (hw : w ∈ wedgeAt R (t + γ + π) (π - γ))
+    (hz : -(w.1 * Real.sin (t + (2 * γ + 2 * α)))
+            + w.2 * Real.cos (t + (2 * γ + 2 * α)) ≠ 0) :
+    w ∈ wedgeAt R (t + 2 * γ + α) α ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β := by
+  obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  have hπ : 0 < π := Real.pi_pos
+  have hsα : 0 < Real.sin α := Real.sin_pos_of_pos_of_lt_pi hα0 (by linarith)
+  have hsβ : 0 < Real.sin β := Real.sin_pos_of_pos_of_lt_pi hβ0 (by linarith)
+  have hcα : 0 < Real.cos α := Real.cos_pos_of_mem_Ioo ⟨by linarith, hα⟩
+  have hcβ : 0 < Real.cos β := Real.cos_pos_of_mem_Ioo ⟨by linarith, hβ⟩
+  have hcγ : Real.cos γ < 0 := Real.cos_neg_of_pi_div_two_lt_of_lt hγ (by linarith)
+  -- `W_sub` is acute: its half-angle is `π − γ`, and `γ` obtuse puts it under `π/2`
+  have hψ0 : 0 < π - γ := by linarith
+  have hψ : π - γ < π / 2 := by linarith
+  -- the two cone bounds, from `W_sub`'s own edges
+  have hy : 0 < -(w.1 * Real.sin (t + 2 * γ)) + w.2 * Real.cos (t + 2 * γ) := by
+    have h := wedgeAt_lower hψ0 hψ w hw
+    rwa [show t + γ + π - (π - γ) = t + 2 * γ by ring] at h
+  have hx : -(w.1 * Real.sin t) + w.2 * Real.cos t < 0 := by
+    have h := wedgeAt_upper hψ0 hψ w hw
+    rwa [show t + γ + π + (π - γ) = t + 2 * π by ring,
+      Real.sin_add_two_pi, Real.cos_add_two_pi] at h
+  -- and the REVERSED γ-chord, which is `W_sub`'s own chord condition
+  have hA : R * Real.cos γ
+      - (w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ)) < 0 := by
+    have hs := hw.1
+    rw [show Real.cos (t + γ + π) = -Real.cos (t + γ) by simp [Real.cos_add],
+      show Real.sin (t + γ + π) = -Real.sin (t + γ) by simp [Real.sin_add],
+      show Real.cos (π - γ) = -Real.cos γ by simp [Real.cos_pi_sub]] at hs
+    linarith
+  -- the α-chord, from the second certificate
+  have hB : 0 < R * Real.cos α
+      - (w.1 * Real.cos (t + 2 * γ + α) + w.2 * Real.sin (t + 2 * γ + α)) := by
+    have hcert := perp_second_certificate (R := R) (t := t) hsum w
+    nlinarith [mul_neg_of_pos_of_neg hcα hA, mul_pos hy hsβ]
+  -- the β-chord, from the first
+  have hC : 0 < R * Real.cos β
+      - (w.1 * Real.cos (t + 2 * γ + 2 * α + β)
+          + w.2 * Real.sin (t + 2 * γ + 2 * α + β)) := by
+    have hcert := perp_start_certificate (R := R) (t := t) hsum w
+    nlinarith [mul_neg_of_neg_of_pos hx hsα, mul_neg_of_pos_of_neg hcβ hA]
+  rcases hz.lt_or_gt with hzs | hzs
+  · refine Or.inl (mem_wedgeAt_of_halfplanes hα0 hα (by linarith) ?_ ?_)
+    · rw [show t + 2 * γ + α + α = t + (2 * γ + 2 * α) by ring]; exact hzs
+    · rw [show t + 2 * γ + α - α = t + 2 * γ by ring]; exact hy
+  · refine Or.inr (mem_wedgeAt_of_halfplanes hβ0 hβ (by linarith) ?_ ?_)
+    · rw [show t + 2 * γ + 2 * α + β + β = t + 2 * π by linarith,
+        Real.sin_add_two_pi, Real.cos_add_two_pi]
+      exact hx
+    · rw [show t + 2 * γ + 2 * α + β - β = t + (2 * γ + 2 * α) by ring]; exact hzs
+
 /-! ### The obtuse decomposition -/
 
 /-- **Milnor's obtuse figure**: the two surviving wedges, minus the one the
@@ -341,5 +432,123 @@ theorem obtuseWedges_ae_eq_inscribedTriangle {R t α β γ : ℝ}
     simp only [Set.mem_setOf_eq] at hcon
     exact hw.2 ⟨inscribedTriangle_subset_obtuseWedges_of_ne hα0 hβ0 hγ hsum hw.1 hcon,
       notMem_sub_of_mem_inscribedTriangle hw.1⟩
+
+/-! ### The Λ-sum on an obtuse triangle
+
+The set-level tiling above becomes the volume identity by additivity.  The one
+thing worth watching is that **the subtraction never happens in `ℝ≥0∞`** — it is
+carried out in `ℝ` at the very end.  Rather than computing
+`Vol(W_α) + Vol(W_β) − Vol(W_sub)`, which would need truncated subtraction and a
+finiteness side-condition at every step, the argument reads the partition the
+other way round:
+
+    W_α ∪ W_β  =ᵐ  T ⊔ W_sub          (disjointly)
+
+so `Vol(W_α) + Vol(W_β) = Vol(T) + Vol(W_sub)` is a statement about **sums**, and
+`Vol(T)` is recovered by cancelling the finite term `Vol(W_sub)`.  That the
+union is a.e. the *disjoint* union of the two is exactly what
+`wedgeAt_sub_subset_alphaBeta_of_ne` and `notMem_sub_of_mem_inscribedTriangle`
+supply: containment one way, strict disjointness the other. -/
+
+/-- **MILNOR'S Λ-SUM ON AN OBTUSE TRIANGLE.**
+
+    Vol(chimney (inscribedTriangle R t α β γ) R)  =  Λ(α) + Λ(β) + Λ(γ)
+
+for `π/2 < γ` — the obtuse counterpart of `hypVolume_chimney_inscribedTriangle`,
+whose hypotheses are `α, β, γ < π/2`.  Together the two cover every triangle
+except the right-angled one, where `γ = π/2` makes `W_sub` degenerate to a
+half-plane and both statements' wedge machinery (`ψ < π/2`) fails.
+
+`Λ(γ)` is negative here — `γ` obtuse puts `Λ(γ) = −Λ(π−γ)` with `π−γ` acute —
+which is the analytic face of Milnor's "one piece enters with a minus sign".
+The identity is the same one the acute case proves; only its realisation changes.
+
+Note that no analytic continuation is used, and none of the three angles is
+required to be acute in the *statement*: acuteness of `α` and `β` is derived
+from `γ` obtuse via `acute_of_obtuse_third`. -/
+theorem hypVolume_chimney_inscribedTriangle_obtuse {R t α β γ : ℝ} (hR : 0 < R)
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    hypVolume (chimney (inscribedTriangle R t α β γ) R)
+      = ENNReal.ofReal (Lob α + Lob β + Lob γ) := by
+  obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  have hπ : 0 < π := Real.pi_pos
+  have hψ0 : 0 < π - γ := by linarith
+  have hψ : π - γ < π / 2 := by linarith
+  have mα := measurableSet_wedgeAt R (t + 2 * γ + α) α
+  have mβ := measurableSet_wedgeAt R (t + 2 * γ + 2 * α + β) β
+  have ms := measurableSet_wedgeAt R (t + γ + π) (π - γ)
+  have mT := measurableSet_inscribedTriangle R t α β γ
+  have mO := measurableSet_obtuseWedges R t α β γ
+  have hUsub : ∀ w ∈ wedgeAt R (t + 2 * γ + α) α ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β,
+      w.1 ^ 2 + w.2 ^ 2 < R ^ 2 := by
+    rintro w (hw | hw)
+    · exact wedgeAt_subset_disk hα0 hα w hw
+    · exact wedgeAt_subset_disk hβ0 hβ w hw
+  -- (1) the union of the two surviving wedges is a.e. the DISJOINT union `T ⊔ W_sub`
+  have hae : (wedgeAt R (t + 2 * γ + α) α ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β
+        : Set (ℝ × ℝ))
+      =ᵐ[(volume : Measure (ℝ × ℝ))]
+        ((inscribedTriangle R t α β γ ∪ wedgeAt R (t + γ + π) (π - γ)) : Set (ℝ × ℝ)) := by
+    rw [ae_eq_set]
+    constructor
+    · refine measure_mono_null ?_ (volume_chordLine (t + γ) (R * Real.cos γ))
+      intro w hw
+      by_contra hcon
+      simp only [Set.mem_setOf_eq] at hcon
+      have hmem : w ∈ obtuseWedges R t α β γ := ⟨hw.1, fun h => hw.2 (Or.inr h)⟩
+      exact hw.2 (Or.inl
+        (obtuseWedges_subset_inscribedTriangle_of_ne hα0 hβ0 hγ hsum hmem hcon))
+    · refine measure_mono_null ?_ (volume_perpLine (t + (2 * γ + 2 * α)))
+      intro w hw
+      by_contra hcon
+      simp only [Set.mem_setOf_eq] at hcon
+      rcases hw.1 with hwT | hwS
+      · exact hw.2 (inscribedTriangle_subset_obtuseWedges_of_ne hα0 hβ0 hγ hsum hwT hcon)
+      · exact hw.2 (wedgeAt_sub_subset_alphaBeta_of_ne hα0 hβ0 hγ hsum hwS hcon)
+  have hdisjW : Disjoint (wedgeAt R (t + 2 * γ + α) α)
+      (wedgeAt R (t + 2 * γ + 2 * α + β) β) :=
+    disjoint_wedgeAt_adjacent hα0 hα hβ0 hβ (by ring)
+  have hdisjT : Disjoint (inscribedTriangle R t α β γ) (wedgeAt R (t + γ + π) (π - γ)) :=
+    Set.disjoint_left.mpr fun _ hw => notMem_sub_of_mem_inscribedTriangle hw
+  -- (2) additivity turns that into a statement about SUMS, never a difference
+  have key : ENNReal.ofReal (Lob α) + ENNReal.ofReal (Lob β)
+      = (∫⁻ w in inscribedTriangle R t α β γ,
+            ENNReal.ofReal (1 / (2 * (R ^ 2 - w.1 ^ 2 - w.2 ^ 2))))
+        + ENNReal.ofReal (Lob (π - γ)) := by
+    have h1 : (∫⁻ w in wedgeAt R (t + 2 * γ + α) α
+          ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β,
+          ENNReal.ofReal (1 / (2 * (R ^ 2 - w.1 ^ 2 - w.2 ^ 2))))
+        = ENNReal.ofReal (Lob α) + ENNReal.ofReal (Lob β) := by
+      rw [lintegral_union mβ hdisjW, lintegral_wedgeAt hR hα0 hα,
+        lintegral_wedgeAt hR hβ0 hβ]
+    have h2 : (∫⁻ w in inscribedTriangle R t α β γ ∪ wedgeAt R (t + γ + π) (π - γ),
+          ENNReal.ofReal (1 / (2 * (R ^ 2 - w.1 ^ 2 - w.2 ^ 2))))
+        = (∫⁻ w in inscribedTriangle R t α β γ,
+              ENNReal.ofReal (1 / (2 * (R ^ 2 - w.1 ^ 2 - w.2 ^ 2))))
+          + ENNReal.ofReal (Lob (π - γ)) := by
+      rw [lintegral_union ms hdisjT, lintegral_wedgeAt hR hψ0 hψ]
+    rw [← h1, ← h2]
+    exact setLIntegral_congr hae
+  -- (3) the triangle's own volume, via the a.e. tiling (its vertices are ON the
+  -- circle, so only an a.e. disk bound is available)
+  have hTvol : hypVolume (chimney (inscribedTriangle R t α β γ) R)
+      = ∫⁻ w in inscribedTriangle R t α β γ,
+          ENNReal.ofReal (1 / (2 * (R ^ 2 - w.1 ^ 2 - w.2 ^ 2))) := by
+    refine hypVolume_chimney_of_ae_lt mT ?_
+    rw [Measure.restrict_congr_set
+      (obtuseWedges_ae_eq_inscribedTriangle (R := R) (t := t) hα0 hβ0 hγ hsum).symm]
+    exact (ae_restrict_iff' mO).mpr
+      (Filter.Eventually.of_forall fun w hw => hUsub w hw.1)
+  -- (4) cancel the finite `Vol(W_sub)`; the subtraction happens in ℝ, not ℝ≥0∞
+  have na : 0 ≤ Lob α := Lob_nonneg_of_lt_pi_div_two hα0 hα
+  have nb : 0 ≤ Lob β := Lob_nonneg_of_lt_pi_div_two hβ0 hβ
+  have nc : 0 ≤ Lob (π - γ) := Lob_nonneg_of_lt_pi_div_two hψ0 hψ
+  rw [← ENNReal.ofReal_add na nb] at key
+  have hsub := ENNReal.sub_eq_of_eq_add ENNReal.ofReal_ne_top key
+  -- `lob_sum_eq_reflected` is the corpus's own statement of Milnor's reduction;
+  -- its docstring named this geometric realisation as the open step.
+  rw [hTvol, lob_sum_eq_reflected hsum, show α + β = π - γ by linarith,
+    ENNReal.ofReal_sub _ nc]
+  exact hsub.symm
 
 end QOU.Archimedean.HyperbolicVolume

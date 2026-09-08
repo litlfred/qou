@@ -99,8 +99,20 @@ theorem third_angle_acute_of_obtuse {α β γ : ℝ} (hγ : π / 2 ≤ γ)
 No acuteness needed for the identity; combined with `third_angle_acute_of_obtuse`
 the right-hand side has all three arguments (`α`, `β`, `α+β`) acute exactly when
 `γ` is the obtuse one.  This is Milnor's "one piece enters with a minus sign" at
-the analytic level — the geometric subdivision that realises it is `qou-w3eg`
-H4-5 and stays open. -/
+the analytic level.
+
+**The geometric subdivision that realises it is no longer open** (this docstring
+said it was, until `qou-w3eg` H4-5 landed).  It is
+`ObtuseTiling.obtuseWedges_ae_eq_inscribedTriangle` — the triangle is a.e. the
+two surviving wedges minus the reflected one — and this lemma is what that
+file's `hypVolume_chimney_inscribedTriangle_obtuse` spends to turn the resulting
+sum of volumes into the Λ-sum.
+
+What remains open in `qou-w3eg` is one step further down: the identification of
+the region with the chimney over the inscribed triangle
+(`IdealTetEqChimney.idealTet_eq_chimney`) still carries `α, β, γ < π/2`, and is a
+*set equality* rather than an analytic statement, so neither this reduction nor
+any continuation argument supplies it. -/
 theorem lob_sum_eq_reflected {α β γ : ℝ} (hsum : α + β + γ = π) :
     Lob α + Lob β + Lob γ = Lob α + Lob β - Lob (α + β) := by
   have hγ : γ = π - (α + β) := by linarith
