@@ -62,6 +62,21 @@ docstring gives. So the honest status of the corpus claim is unchanged in one
 respect — nothing here exhibits a Hecke tower in Lean — while the *hypothesis*
 has moved from an unproved structure theorem to a list of defining relations.
 
+What *is* supplied is a bracket on the class, in two halves that no single
+witness combines:
+
+* `braidedTower_unit` — an instance in which the quadratic scalar `h = u - u⁻¹`
+  is genuinely non-zero (`unit_quad_scalar_ne_zero`), i.e. the relations are
+  consistent with the Hecke case `h = q - q⁻¹`; its filtration is constant.
+* the symmetric-group algebra tower (bean `qou-fq1i`) — a growing filtration and
+  a non-multiplicative trace, but `h = 0`, and its `SandwichReduces` is proved by
+  support arguments in the permutation model rather than by rewriting with the
+  relations, so it does not reach `q ≠ 1`.
+
+A witness with **both** a growing filtration and `h ≠ 0` is an Iwahori-Hecke
+tower, which Mathlib does not supply. That, and only that, is what stands between
+this theorem and an unconditional disjoint-block law for the production trace.
+
 **Nothing here derives the bond product.** That reading of the atom word remains
 measured, per `DisjointBlockTraceLaw`'s own statement of scope.
 
@@ -279,5 +294,33 @@ theorem braid_forces_eq_of_commuting_involutions (m : ℕ)
     rw [← hcomm, mul_assoc, hi, mul_one]
   rw [hl, hr] at hbraid
   exact hbraid
+
+/-! ### An instance, with the quadratic scalar genuinely non-zero
+
+`OcneanuTrace.unitMarkovTrace u` — the one-point tower on `R` with every
+generator equal to a fixed unit `u` — satisfies all three relations, with
+`h = u - u⁻¹`. Its filtration is constant (`H = ⊤`), so it witnesses the
+*relations* and not the *tower*; but it does establish that `BraidedTower` does
+not secretly force `h = 0`, which is the one thing a reader might suspect after
+`braid_forces_eq_of_commuting_involutions`. -/
+
+instance braidedTower_unit {R₀ : Type*} [CommRing R₀] (u : R₀ˣ) :
+    BraidedTower (OcneanuTrace.unitMarkovTrace u) where
+  quad _ := ⟨(u : R₀) - ((u⁻¹ : R₀ˣ) : R₀), by
+    show (u : R₀) * (u : R₀) = ((u : R₀) - ((u⁻¹ : R₀ˣ) : R₀)) • (u : R₀) + 1
+    rw [smul_eq_mul, sub_mul, u.inv_mul, sub_add_cancel]⟩
+  far _ _ _ := mul_comm _ _
+  braid _ := rfl
+
+/-- In that instance the quadratic scalar is `u - u⁻¹`, and it is non-zero as
+soon as `u² ≠ 1` — so the three relations are consistent with `h ≠ 0`, which is
+the Hecke case `h = q - q⁻¹`. -/
+theorem unit_quad_scalar_ne_zero {R₀ : Type*} [CommRing R₀] (u : R₀ˣ)
+    (hu : (u : R₀) * (u : R₀) ≠ 1) : (u : R₀) - ((u⁻¹ : R₀ˣ) : R₀) ≠ 0 := by
+  intro h
+  apply hu
+  have h' : (u : R₀) = ((u⁻¹ : R₀ˣ) : R₀) := sub_eq_zero.1 h
+  calc (u : R₀) * (u : R₀) = ((u⁻¹ : R₀ˣ) : R₀) * (u : R₀) := by rw [← h']
+    _ = 1 := u.inv_mul
 
 end QOU.MathlibExt.HeckeSandwichReduces
