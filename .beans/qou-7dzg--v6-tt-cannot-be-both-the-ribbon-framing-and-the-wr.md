@@ -1,10 +1,11 @@
 ---
 # qou-7dzg
 title: 'V6: T(t) cannot be BOTH the ribbon framing AND the writhe-separating coordinate -- the block''s two load-bearing sentences are incompatible'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-16T13:33:51Z
-updated_at: 2026-08-16T13:33:51Z
+updated_at: 2026-09-08T05:10:00Z
 ---
 
 
@@ -206,3 +207,44 @@ A twist datum DERIVED from the braid word (qou-kebu, T2b) is neither free nor a
 function of the writhe alone, so neither horn applies to it. That is the route
 with content left in it. This file narrows the search; it does not close it, and
 it does not refute conj:sm-hypercharge-invariant.
+
+
+---
+
+## CLOSED 2026-09-08 — the dilemma is proved on both horns, sorry-free, and verified at the file rather than from this bean.
+
+This bean's subject is a **contradiction**: the block read `T(t)` as both the
+ribbon framing and the writhe-separating coordinate, and those cannot be the same
+object. That is now settled by proof, not by argument.
+
+`QOU/StandardModel/TwistSeparationContent.lean` on `main` — checked directly,
+**0 `sorry`**, all five declarations present:
+
+| declaration | line | what it does |
+|---|---|---|
+| `exists_same_writhe_ne_totalTwist` | 18 | |
+| `separation_at_fixed_word` | 96 | the docstring's sentence formalised **with** a word and a writhe — both arguments entirely unused in the proof |
+| `separation_holds_with_one_word` | 116 | the concrete kill: instantiate `Word := Unit`, one word, constant writhe, separation still holds |
+| `factoring_twist_cannot_separate` | 130 | the other horn — a twist factoring through the writhe is constant on writhe-degenerate pairs |
+| `twist_dilemma` | 143 | both horns as one statement |
+
+The verdict recorded here stands and is the reusable part: **the independence
+claim is TRUE and BRAID-FREE** — not false, not vacuous in the `: True` sense; it
+simply cannot be evidence about braid framings, because it survives collapsing
+the braid group to a point. So the corpus faces the dilemma squarely: a *free*
+twist puts the separating power in by hand, and a *canonical* twist separates
+nothing.
+
+Axioms as recorded: `factoring_twist_cannot_separate` depends on **nothing**; the
+other three on `[propext, Classical.choice, Quot.sound]` only — standard Mathlib
+from `by_cases`/`push_neg`/`Finset.sum`, not laundering.
+
+### What this closure does NOT claim, stated explicitly for rule 13a
+
+The bean's own last lines: *"This file narrows the search; it does not close it,
+and it does not refute `conj:sm-hypercharge-invariant`."* That conjecture stays
+open and is **not** this bean's subject — the subject is the two-readings
+contradiction, which is proved. The live route the bean names is a twist datum
+**derived** from the braid word (`qou-kebu`, T2b), to which neither horn applies
+because it is neither free nor a function of the writhe alone. That bean carries
+it; nothing open is closed by this status change.
