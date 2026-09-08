@@ -6,11 +6,39 @@
   for the Q_β precision ladder must have its log-correction generating
   function g(u) = Σ_{k≥2} c_k u^k admit a simple pole at u_substrate.
 
-  PR #1727 (asymptotic-pole test, `qbeta_singularity_type_probe.py`)
-  established this for the canonical SDP-pinned c_k:
-    c_k · u_subst^k → 2.118e-13   for k = 8, 9, 10   (0.02% spread)
-    branch-fit β = 0.999          (β = 1 IS the simple-pole case)
-    cross-anchor shift = 210 ppb  (fibre-level tolerance 1 ppm)
+  🛑 THE EMPIRICAL JUSTIFICATION BELOW IS WITHDRAWN (2026-08-23). The pole
+  itself is NOT refuted — what is withdrawn is that these numbers establish
+  it. Do not quote them as evidence for the pole's TYPE or its RESIDUE.
+
+  `qou-8ofm` / `qou-frch` established that the SDP c_k extractor emits the
+  model's accuracy floor as data, and that R(q0) being a single scalar means
+  at most ONE rung is determinable at all. k = 8, 9, 10 are deep inside the
+  stalled range, where `c_k := (R_k − 1)/u^k` with `R_k − 1` pinned at a
+  constant floor f. So all three "independent" signatures are one arithmetic
+  identity stated three ways: `c_k·u^k = f`; `(f/u^{k+1})/(f/u^k) = 1/u`; and
+  a pure geometric sequence has β = 1. The residue `A = 1.804e-15` is `f·u`,
+  the floor rescaled. Measured against the extractor's own quotients, the
+  first two hold to 1e-21 and 2.4e-15 respectively.
+
+  The quoted floor `2.118e-13` is also CONVENTION-C and muon-pinned. The floor
+  IDENTITY is arithmetic and frame-independent; only its magnitude is not.
+
+  Withdrawn text, kept visible rather than deleted:
+
+    PR #1727 (asymptotic-pole test, `qbeta_singularity_type_probe.py`)
+    established this for the canonical SDP-pinned c_k:
+      c_k · u_subst^k → 2.118e-13   for k = 8, 9, 10   (0.02% spread)
+      branch-fit β = 0.999          (β = 1 IS the simple-pole case)
+      cross-anchor shift = 210 ppb  (fibre-level tolerance 1 ppm)
+
+  Independent support for the pole's EXISTENCE survives and is untouched by
+  this: PR #1713 (radius of convergence) and PR #2454 (algebraic
+  Q_A(silver) = 0). The conditional class and the gate theorem below are
+  likewise unaffected — a §3b-cond class axiomatises its hypothesis and does
+  not depend on this justification being sound.
+
+  Audit: docs/audits/2026-08-23-qbeta-simple-pole-evidence-is-the-residual-floor.md
+  Bean: qou-tv6l (this is 1 of the ~8 durable artifacts it scopes)
 
   Two ingredients in this file:
 
@@ -37,6 +65,7 @@
        [jones1987] https://doi.org/10.2307/1971403
        docs/audits/2026-06-02-qbeta-1ppq-singularity-simple-pole-fibre-level.md
        docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md
+       docs/audits/2026-08-23-qbeta-simple-pole-evidence-is-the-residual-floor.md
 -/
 
 import Mathlib.Data.Real.Basic
@@ -69,7 +98,11 @@ axiom qBetaCandidatePoleLocation : ℝ
 
     Numerical constant from the canonical SDP extraction at
     proton-pinned q_0, verified at 210 ppb fibre-level tolerance
-    against q_muon (PR #1727 / `qbeta_singularity_cross_anchor_probe.py`). -/
+    against q_muon (PR #1727 / `qbeta_singularity_cross_anchor_probe.py`).
+
+    See the withdrawal banner at the head of this file before citing any
+    PR #1727 figure. The VALUE here is a substrate quantity (`b·ℏ_q²`) and
+    is not what was withdrawn; the pole-type / residue evidence is. -/
 -- Ref: [manuscript] prop:q-beta-radius-of-convergence-gate
 -- Ref: [pr1727] https://github.com/litlfred/qou/pull/1727
 noncomputable def u_substrate : ℝ := 0.008517234550156142
@@ -82,7 +115,13 @@ noncomputable def u_substrate : ℝ := 0.008517234550156142
     test `c_{k+1} / c_k → 1/u_substrate` (the simple-pole signature
     at `u = u_substrate`). The class is purely conditional (no
     instance); production wires only the verified PR #1727 asymptotic
-    constants. -/
+    constants.
+
+    See the withdrawal banner at the head of this file: those asymptotic
+    constants are the residual-floor identity, so they do not establish the
+    pole's type. The class is a §3b-cond hypothesis and is unaffected —
+    axiomatising a property does not depend on the property's empirical
+    justification being sound. -/
 -- Ref: [manuscript] prop:q-beta-radius-of-convergence-gate
 -- Ref: [pr1727] https://github.com/litlfred/qou/pull/1727
 class RadiusOfConvergenceGateClass : Prop where
