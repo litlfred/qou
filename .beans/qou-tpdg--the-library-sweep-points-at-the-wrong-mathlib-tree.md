@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-09-06T07:53:12Z
+updated_at: 2026-09-08T08:58:09Z
 ---
 
 ## 2026-09-05 — measured, fixed, verified. PR #6827
@@ -170,3 +170,72 @@ experiment'. Given the cache gap (reproducible with no shadow), that attribution
 is unestablished and most likely wrong.
 
 Audit: docs/audits/2026-09-06-full-content-sweep-938-and-the-cache-gap.md
+
+
+## 2026-09-08 — first full QOU run since the fixes: 0 RED, and two things the summary line hides
+
+Ran `scripts/lean-library-sweep.py --package QOU` on this container after editing
+nine `QOU/Archimedean/*` modules (bean `qou-w3eg`). Verdict line:
+
+```
+=== library sweep: 539 ok, 0 RED, 0 TIMEOUT + 10 UNVERIFIED (NOT failing),
+    31 skipped (dependency red), 961s ===
+library modules 2787 | source-changed 161 | never built (new) 276
+DIRTY CLOSURE 580 | snapshot-current 2207
+```
+
+**The fixes hold.** 0 RED across a 580-module closure, against the 22 false REDs
+this bean was opened for. All nine edited modules green, including the two whose
+signatures changed. 961 s wall.
+
+### 1. `skipped (dependency red)` says RED when it means UNVERIFIED
+
+The summary reads `0 RED … 31 skipped (dependency red)`, which contradicts
+itself, and the per-line form is `SKIPPED X (red dependency: Y)`. Every one of
+the 31 traces back to one of the 10 UNVERIFIED (environment) roots, directly or
+through another skipped module — `TraceIsWeighted` and `RegTraceGramProduct` are
+named as "red dependency" and appear nowhere in the log as ok/RED/UNVERIFIED,
+i.e. they were themselves skipped.
+
+So **zero** of the 31 is a corpus failure, and the word a reader sees is "red".
+This is the same defect class the bean already documents one level up: an
+environment condition formatted like a finding. A reader who trusts the summary
+line concludes 31 modules are broken; the true count is 0.
+
+Not fixed here — a label change to the shared gate is an owner call under the
+2026-09-07 ASK-BEFORE-CHANGING directive, and this is a report, not a sweep.
+
+### 2. The Mathlib cache gap is NOT closed for the library tree
+
+[`docs/audits/2026-09-07-mathlib-cache-gap-closed.md`](docs/audits/2026-09-07-mathlib-cache-gap-closed.md)
+is titled *"the gap is 3 targets / 7 modules … and it is closed"*, and its own
+§ notes the population it measured: `import` lines of **content blocks**.
+
+The **library** tree has a different, unrecorded gap. Four of the 10 UNVERIFIED
+are `missing olean … (mathlib cache)` naming modules that appear nowhere in that
+audit:
+
+| absent Mathlib module | blocked QOU module |
+|---|---|
+| `LinearAlgebra.CrossProduct` | `QOU.Mass.TorusInflection` |
+| `LinearAlgebra.PiTensorProduct` | `QOU.MassTheory.PiTensorMonomialBasis` |
+| `RepresentationTheory.Homological.GroupCohomology.LowDegree` | `QOU.Eightfold.ObstructionH2Mathlib` |
+| `RingTheory.SimpleRing.Matrix` | `QOU.MathlibExt.RegTraceGramNondegenerate` |
+
+Verified absent from **every** mathlib olean tree in the container (`find -path
+'*/mathlib/Mathlib/<m>.olean'` → 0 copies each).
+
+**Do not read this as a retraction of that audit.** Its three targets are also
+absent here, because `scripts/lean-restore-gap-oleans.sh` has not been run in
+this container — so this run says nothing about whether the restore works. The
+correction is to the audit's *scope*, not its result: "closed" is closed for
+content blocks, and the library sweep needs four more targets nobody has seeded.
+
+### 3. Six segfaults (`killed by signal 11`)
+
+`QBetaWenzlDecomposition`, `WhiteheadLinkScaffold`, `PivotalCategory`,
+`TwistedQuantumDimension`, `HeckeAlgebra.MarkovTrace`, `BraidKnot`. This is the
+truncated-olean class already on the record (a 192512-byte
+`ComplexDilogarithmSlit.olean` against a true 279688 killed its whole cone with
+exit 139 and zero output). Six more cones, not yet diagnosed to a specific
+truncated file. Container-scoped like everything else here.
