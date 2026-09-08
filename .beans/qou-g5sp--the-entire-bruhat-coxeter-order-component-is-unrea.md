@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-07T10:18:08Z
+updated_at: 2026-09-07T17:08:22Z
 ---
 
 ## The finding
@@ -210,3 +210,54 @@ Two thirds of the QOU library sits outside `lake build QOU`, and that held acros
 sha you ran it on; do not quote a number from this bean as current.
 
 That is the whole reason the script is in the PR rather than just the numbers.
+
+
+## 🛑 THE CORPUS TYPECHECK CANNOT SIZE THE GAP. My own tool's RED is unsound.
+
+I built `scripts/lean-corpus-typecheck.py` to answer "how many of the modules outside
+the root are actually broken", ran it to 1131 of 2752 modules, and got **10 REDs**.
+
+**Zero of the 10 are corpus defects.** Every one is an artifact:
+
+| count | what it actually was |
+|---|---|
+| 5 | **stale dependency oleans** -- Bruhat/Coxeter chain |
+| 5 | **SIGSEGV**, `exit 139`, zero bytes of output -- `QOU.Hecke.*` H3A/H4A family |
+| 1 | timeout, which is not a verdict either |
+
+**The stale-olean five, traced to the root.**  `CoxeterDihedralDescent` reported
+`unknown identifier bond_ne_zero_of_pow_eq_one`.  That identifier IS in the source
+(`CoxeterDihedralOrder.lean:322`) and IS on main -- it was absent only from the OLEAN,
+which I had built hours earlier at `490064f240`, before main added it.  Everything
+downstream then reported `Application type mismatch` against the old signature.
+**Rebuilding the six modules root-first made all six exit 0 with no source change.**
+
+**The SIGSEGV five** are the same container resource limit that makes the library root
+unverifiable (`qou-ed8a`) -- zero bytes of diagnostic, which is the tell.
+
+### The methodological point, which is the real finding
+
+The script compiles each module against **whatever oleans happen to be on disk**.  In
+this container the olean tree is a patchwork -- restored cache, plus my hand rebuilds at
+several different commits, plus whatever a partial SessionStart `lake build` left.  So a
+RED is a statement about the disk, not about the corpus.
+
+I had documented the PASS side of this ("not current, merely not-self-broken") and wrote
+the exact opposite for the RED side: *"a FAIL is unconditional: the file does not
+typecheck as it stands."*  **That sentence was wrong**, and it is now replaced in the
+docstring, with the measurement, plus a warning printed above every RED list.
+
+**This is the SECOND unsound sizing method I have proposed for this bean**, after the
+olean-existence proxy further up.  Both were mine, and both failed the same way: they
+inferred a property of the CORPUS from a property of this container's BUILD STATE.
+
+### What would actually answer it
+
+Rebuild each module's dependency chain from source before judging it -- which is exactly
+what `scripts/lean-library-sweep.py` does, and why that is the repo's gate and this is
+not.  On the dirty closure it reports **196 ok / 1 RED**, the 1 being the root's SIGSEGV.
+
+Extending that to all 1853 means a full from-source build in topological order.  This
+container cannot do it: large closures SIGSEGV, and disk is ~860 MB.  **So the sizing
+question stands unanswered, and it is now unanswered for a measured reason rather than
+an assumed one.**  That is the third estimate of its cost and the first with evidence.

@@ -7,6 +7,7 @@ section_number: null
 pages: 20-26
 source_pdf: 0405028v2.pdf
 source_sha256: 90a0e4ba456988d6
+doc_brief: "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES — We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ( p1, p 2"
 ---
 τ∞
 (

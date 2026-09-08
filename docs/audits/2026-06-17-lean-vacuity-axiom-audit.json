@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-07T18:57:30.530Z",
+  "generated": "2026-09-07T19:38:01.153Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3755,
-  "files_flagged": 106,
-  "total_defects": 73,
+  "files_flagged": 104,
+  "total_defects": 71,
   "total_exempt": 59,
   "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 29,
+    "proof-claims-unencoded": 27,
     "proof-no-self-assuming-projection": 42,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1
@@ -3077,17 +3077,6 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       }
     ],
-    "content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.lean": [
-      {
-        "line": 31,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure MaxIdeal where",
-        "decl": "MaxIdeal",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (isFundamental) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [MaxIdeal]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean": [
       {
         "line": 63,
@@ -3132,26 +3121,15 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean": [
-      {
-        "line": 31,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure RigidDualizingComplex (A : Type u) [Ring A] where",
-        "decl": "RigidDualizingComplex",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (rigidifying_iso, finite_inj_dim, vdb_duality) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [RigidDualizingComplex]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/quantum-observable-universes/tannaka-krein-reconstruction.lean": [
       {
-        "line": 74,
+        "line": 76,
         "category": "proof-claims-unencoded",
         "pattern": "prop-universe-field",
         "snippet": "structure TannakaKreinReconstruction",
         "decl": "TannakaKreinReconstruction",
         "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (monoidal_equiv, universal_property) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [TannakaKreinReconstruction]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (universal_property) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [TannakaKreinReconstruction]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
       }
     ]
   }

@@ -452,6 +452,29 @@ def _walk(node, path=""):
         yield path, node
 
 
+def _producer_is_declared_blind(witness: dict) -> bool:
+    """True when the witness's own producer declares a colour-blind regime.
+
+    Keyed on the witness's recorded ``scriptFile`` and the SAME docstring test
+    the source scan uses, so the two scans cannot drift apart. A witness whose
+    producer is missing, unreadable, or does not declare is left BLIND -- the
+    conservative direction, since this function can only ever REMOVE rows from
+    the actionable list.
+    """
+    stem = witness.get("scriptFile")
+    if not isinstance(stem, str) or not stem:
+        return False
+    name = Path(stem).name
+    for cand in ROOT.glob(f"computations/**/{name}"):
+        try:
+            text = cand.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        if DECLARED_BLIND_RE.search(_module_docstring(text)):
+            return True
+    return False
+
+
 def scan_witnesses() -> list[dict]:
     out: list[dict] = []
     for path in sorted(ROOT.glob("computations/**/*.witness.json")):
@@ -484,6 +507,17 @@ def scan_witnesses() -> list[dict]:
             verdict = "BOTH"          # deliberate comparison -- NEVER drain
         elif blind_at:
             verdict = "BLIND"
+            # A witness INHERITS its producer's declared regime. The source scan
+            # already carves out DECLARED_BLIND (a module docstring saying
+            # 'equal-weight' / 'colour-blind'), but until now the witness scan
+            # did not, so the OUTPUT of a deliberately colour-blind producer was
+            # reported as an actionable BLIND witness -- an owner-scoped flip
+            # decision made against an inflated count. Measured: 1 of 7
+            # (bond-extensivity-equal-weight, whose producer
+            # bond_extensivity_equal_weight.py:77 the source scan already lists
+            # as DECLARED_BLIND).
+            if _producer_is_declared_blind(data):
+                verdict = "DECLARED_BLIND"
         elif canon_at:
             verdict = "CANONICAL"
         else:
@@ -617,9 +651,11 @@ def main() -> int:
 
     if both or args.witness:
         print(f"WITNESSES CARRYING A p-n FACTOR VALUE ({len(wit)})")
-        for v in ("BLIND", "CANONICAL", "BOTH", "LABEL_ONLY"):
+        for v in ("BLIND", "DECLARED_BLIND", "CANONICAL", "BOTH", "LABEL_ONLY"):
             rows = [r for r in wit if r["verdict"] == v]
-            note = "  <- deliberate comparison, NEVER drain" if v == "BOTH" else ""
+            note = ("  <- deliberate comparison, NEVER drain" if v == "BOTH"
+                    else "  <- producer declares colour-blind, NOT actionable"
+                    if v == "DECLARED_BLIND" else "")
             print(f"  {v}: {len(rows)}{note}")
             for r in rows:
                 print(f"    {r['file']}")

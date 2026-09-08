@@ -7,6 +7,7 @@ section_number: null
 pages: 24-25
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spa ces."
 ---
 [AH] P. Achar and A. Henderson; Orbit closures in the enhanced nilpo tent cone, Adv. in
 Math.219 (2008), 27-62, Corrigendum ibid 228 (2011), 2984-2988.

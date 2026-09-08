@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: s00601-022-01745-1.pdf
 source_sha256: 9badfa30f706f4ee
+doc_brief: "Few-Body Syst (2022) 63:46 EDITORIAL Alejandro Kievsky · Luca Girlanda Celebrating 30 Y ears of Steven Weinberg’s Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the — 2 sections: Fr"
 ---
 Few-Body Syst (2022) 63:46
 https://doi.org/10.1007/s00601-022-01745-1
