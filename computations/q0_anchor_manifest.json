@@ -765,6 +765,7 @@
     "qbeta_nf_counit_gap_order_probe",
     "qbeta_nucleon_crossing_count_contradiction_probe",
     "qbeta_nucleon_selection_rule_probe",
+    "qbeta_option_e_required_level_probe",
     "qbeta_phase_block_resolution_probe",
     "qbeta_phase_fails_log_functional_equation_probe",
     "qbeta_precision_ladder_n5",
@@ -947,5 +948,5 @@
     "tau_dictionary_fricke_spin_probe"
   ],
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }
