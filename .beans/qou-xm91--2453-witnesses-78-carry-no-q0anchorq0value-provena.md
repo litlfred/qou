@@ -3,8 +3,9 @@
 title: 2453 witnesses (78%) carry no q0Anchor/q0Value provenance pair
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-15T10:35:54Z
-updated_at: 2026-08-15T10:35:54Z
+updated_at: 2026-09-08T05:20:30Z
 ---
 
 
@@ -157,3 +158,79 @@ bigger than "add a field".
 Full per-file classification and producer lists are in the agent's scratchpad
 output (`classB_producers.txt`, `classE_producers.txt`,
 `q0anchor_missing_classified.json`).
+
+
+---
+
+## 2026-09-08 — NOT closeable (the revised item is a large open task). Both headline numbers re-measured with their definitions PINNED, as this bean asks.
+
+Read for the `qou-bstl` queue. The tool flagged this on
+`b57252a4bd3`, *"fix(qou-xm91): the false-precision check was comparing strings,
+not numbers"* — a commit about a **different** defect in the same area, so the
+flag is cause 2/3 and says nothing about this bean's subject. What follows is the
+measurement it explicitly asks for: *"the exact definition needs pinning before
+either number is quoted as a baseline."*
+
+### Witness side — real progress, ~18 points
+
+Measured two ways on `main` `a61496dbc82`, and they agree:
+
+| method | tracked | carry BOTH `q0Anchor` + `q0Value` | missing the pair |
+|---|---|---|---|
+| `git ls-tree -r origin/main` | 3702 | 1483 | **2219 (59.9 %)** |
+| filesystem glob (working tree) | 3702 | 1484 | 2218 (59.9 %) |
+
+The ±1 is explained rather than noise: it is
+`computations/qbeta/qbeta-chain-closed-form.witness.json`, which is **0 bytes on
+`main`** and restored in this same PR.
+
+**Against this bean's 2453 of 3138 (78.2 %)**: the corpus grew by 564 witnesses
+and the missing count *fell* by 234, so the rate improved from **78.2 % → 59.9 %**.
+Both the rate and the absolute count moved the right way.
+
+The strict-pair definition splits further, which the old figure could not show:
+
+    BOTH fields                    1484   40.1 %
+    anchor present, value missing    239
+    value present, anchor missing      5
+    NEITHER field                   1974   53.3 %
+
+So the bulk is **neither field**, not a half-populated pair — which matters for
+the fix, because those files were never stamped at all rather than stamped badly.
+(The 239 anchor-without-value are further split in `qou-ns02`: most are
+`independent` / `comparison` / `ambiguous`, which correctly carry no single
+value; **18** declare a single named pin and omit the value.)
+
+### Manifest coverage — also improved, and my first count was wrong
+
+This bean's revised actionable item: *"1897 producers with witnesses use
+`WitnessBuilder`, only **391 (21 %)** are declared."*
+
+| definition | count |
+|---|---|
+| files **mentioning** `WitnessBuilder` anywhere | 3207 |
+| files that **import it and call `WitnessBuilder(`** | **2029** |
+| of those, declared in `q0_anchor_manifest.json` | **688 (33.9 %)** |
+| undeclared | 1341 |
+
+**I first reported 3207 / 29.2 % and that is wrong** — it counted every `.py`
+containing the string, including audits, probes and files that merely name it in
+a comment. Same mention-vs-use error as the `sorry` counting corrected on
+`qou-w0zn` today, fifth instance of the class this session. The defensible line
+is import-plus-call: **2029**, against this bean's 1897 three weeks ago, and
+coverage **21 % → 33.9 %**.
+
+One thing the old framing does not capture: **253 declared stems are not
+WitnessBuilder producers under this definition.** Either they are producers
+emitting provenance another way, or they are stale manifest entries. Not
+adjudicated here; whoever works the coverage item should classify them first,
+because they inflate the numerator.
+
+### Verdict
+
+Stays `todo`. The bean's own scoping is right and unchanged: *"each entry
+requires establishing that producer's actual pin, which is a judgement call per
+producer, not a sweep."* At 1341 undeclared that is a large piece of work, and
+under the 2026-09-07 ask-first override it needs owner sign-off before anyone
+starts. What has changed is only that the baseline is now current and its
+definitions are stated.

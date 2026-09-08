@@ -321,3 +321,108 @@ Measured: `computations/probes/q6pp_unique_n_is_reading_dependent_probe.py`,
 10/10, exit 0, exact integers, no witness. Check 2 reproduces this bean's own
 `n` column at 5 of 5 atoms before departing from it. Naming decision framed for
 the author on PR #6821.
+
+## 2026-09-08 — THE SANCTIONED TEST IS RUN. D is not exact: right sign, 2.79× too large
+
+This bean's terminus asks for exactly one thing and forbids the rest:
+
+> *"DO NOT build the M_i constructor as a research project. … If it is built at
+> all, build it as a TEST: D (n = 3) should come out exact, not 45 % high."*
+
+**It is run. D is not exact.** Under the corrected reading it is *worse* than
+the 45 % this bean recorded, and in the same direction.
+
+| | value |
+|---|---|
+| `α(Φ₁ − 2[3]_q Φ₂ + h²Φ₃)` at D | **−6.213929627 MeV** |
+| `−B_AME(D)` | −2.224566 MeV |
+| residual | **−179.33 %** — right sign, magnitude 2.79× too large |
+
+Anchor-robust: the producer's recorded `q = 1.10998` gives −6.213945612 MeV,
+−179.333 %. Probe
+`computations/probes/deuterium_is_the_untested_exact_point_probe.py`, **7/7**,
+convention D, all-pairs, mpmath 50 dps, no witness, no fitted parameter.
+
+### First: three things in this bean are SUPERSEDED, and the next agent should not redo them
+
+This bean says *"A verified constructor for the formula's M_i … I did not find
+one and did not write one."* **One exists**, and the arc went two rounds
+further:
+
+1. **`computations/wedderburn_Mi_constructor_test.py`** was built and merged —
+   under an **adjacent-suffix** reading of *"chaining the crossing matrices of
+   all strands j > i"*.
+2. That reading is **RETRACTED** (`b2701f33c`, 2026-08-29). The prose is
+   ALL-PAIRS: for strand `i`, cross with every `j > i`. Four variants of the
+   misreading were tested and the plain reading never was. Its residuals
+   (54 %–2653 %) are the record of a refuted reading and are not evidence about
+   the formula.
+3. Under the correct reading (`computations/phi_allpairs_reconstruction.py`),
+   **Φ₂ and Φ₃ are re-derived exactly**: `Φ₃ = w ln q` with
+   `w = −2Z − N(N−1)` on **19/19** non-hydrogen rows including Ar (the row that
+   refuted the previous candidate), and `Φ₂ = Z·N·ln(1+h²/4)` on 19/19 to
+   5.0e-6, entirely publication precision.
+4. **Φ₁ is a convention-C artifact** (`phi1_convention_d_probe.py`): 0 of 5
+   carried values are reachable under convention D, each lying 27–42 % **below**
+   D's minimum. So the published mass table is C-derived and must be recomputed
+   under D — an owner decision, not taken.
+
+Point 4 **converges with this bean's own retracted finding from the opposite
+direction.** This bean concluded *"PHI_1 IS THE WHOLE PROBLEM"* and then
+withdrew it as input-dependent. The sibling arc reaches the same object by
+measurement: Φ₁ is the only one of the three that uses the Markov parameter `z`,
+hence the only convention-dependent one, and its carried values are unreachable
+under the canonical convention. Two independent routes, same term.
+
+### The gap that was actually left, and why it is D
+
+Every one of those results runs over **elemental rows Z = 1…20** — and their
+"H" row is `(Z=1, N=0)`, i.e. protium. `phi1_convention_d_probe` covers He, Li,
+Be, B, C. **Deuterium `(Z=1, N=1)` appears in none of them.** So the one atom at
+which the formula claims exactness had never been evaluated under the correct
+reading. That is what this probe fills, and it is a TEST, not a research route:
+it proposes no closure, fits nothing, and adds no ansatz.
+
+`n = 3` is confirmed structurally: both ground-state orderings (`epn`, `nep`)
+have exactly 3 strands `= A+Z`, and `p(3) = 3` is the unique partition count
+equal to the extremal count.
+
+### A caveat this probe RETIRES rather than inherits
+
+`phi_allpairs_reconstruction` documents the H row as an **exception** to the Φ₃
+closed form (recorded `w = 10` against the all-pairs `−2`), attributed to the
+`pe` crossing. D is also `Z = 1`, so the exception plausibly extends to it.
+**Measured: it does not.** At D both closed forms reproduce the direct
+all-pairs computation to **4e-50 / 2e-51** — i.e. exactly, at the full working
+precision. The Z=1 exception is specific to `N = 0`.
+
+### Two defects in my own probe, caught before the numbers were reported
+
+1. **A float64-seeded anchor.** The first run used
+   `qou_substrate.constants.Q`, which is solved by `_solve_q_proton_f64`, and
+   every comparison capped at **3.44e-15** — float64 resolution presented by a
+   50-dps script. Re-seeded from `Q_50_DIGIT_STR`, the same comparisons return
+   **4e-50**. AGENTS.md forbids reporting a float64 agreement as exact; this is
+   what that looks like when it nearly happens.
+2. **Φ₃'s sign convention, and it inverted a conclusion.** `Σ log|alt/sym|`
+   gives the opposite sign to the closed form's `w < 0` (He: `w = −6`). With the
+   wrong convention, check 3 read *"the closed forms do NOT extend to D"* — the
+   caveat above, asserted backwards. The correct convention is `Σ log|sym/alt|`.
+   Φ₃ enters the formula **signed**, so this also moved the headline
+   (−176.26 % → −179.33 %).
+
+### Scope — (a), not (b)
+
+**This does not refute `thm:wedderburn-mass-formula`.** It measures one
+construction, at one atom, under one convention, against one experimental
+number. It constrains magnitude, not ingredients. What it does establish is the
+falsifiable check this bean asked for and answers it in the negative: at the
+single point where the formula's own stated domain says it is exact, and where
+the strand count and both auxiliary invariants are independently confirmed
+correct, the correction overshoots the deuteron binding by **2.79×**.
+
+**Do NOT read this as licence for a seventh Δ_λ ansatz.** AGENTS.md names that
+explicitly and arriving here by a fresh route is not a licence to retry it.
+
+**Status stays open.** The subject — why the parameter-free construction misses
+— is unresolved mathematics, and §13a forbids closing on a recorded measurement.
