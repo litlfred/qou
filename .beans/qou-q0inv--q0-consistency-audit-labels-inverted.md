@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:25:00Z
-updated_at: 2026-09-08T08:03:52Z
+updated_at: 2026-09-08T08:20:29Z
 ---
 
 `computations/audits/q0_consistency_audit.py` scans `computations/**/*.py` and
@@ -309,3 +309,68 @@ Recorded because the second is a reusable trap:
 Stays `todo`, on the title. The next honest step is the classifier's own
 old-vs-current q₀ table, not the resolvers: whatever list it treats as "old"
 contains the canonical value.
+
+
+---
+
+## 2026-09-08 — ROOT CAUSE: the audit's docstring asserts a premise the corpus RETIRED. It is not a pattern typo; the two values are exactly backwards.
+
+Following the title defect to its source. `computations/audits/q0_consistency_audit.py`
+lines 7-11, verbatim:
+
+> *"Canonical q₀ is the proton-anchored, habiro-refined value
+> **C = 1.10997859555733471…** (`q_parameter.Q`). The stale value is the
+> pre-habiro proton solution **A = 1.10997858275138…**, differing from C at the
+> 8th sig-fig (~1.2e-8). Scripts that hardcoded A — instead of importing the
+> canonical q₀ from `q_parameter` — silently keep computing at the stale
+> constant."*
+
+and line 70:
+
+```python
+OLD_Q0_PATTERNS = [re.compile(r"10997858275"), re.compile(r"(?<!\d)858275(?!\d)")]
+```
+
+**Both assignments are inverted against the corpus today**, checked three ways:
+
+| the audit calls it | value | what the corpus says |
+|---|---|---|
+| **"Canonical q₀ … `q_parameter.Q`"** | `1.10997859555733471…` | **RETIRED.** AGENTS.md:2649 — *"**A** former frozen pin (retired)"*; :3155 — *"the **RETIRED** pin"* |
+| **"the stale value … pre-habiro"** | `1.10997858275138…` | **THE LIVE DEFAULT.** AGENTS.md:3120 — *"q₀ ≈ 1.1099785827513808 — **this is the DEFAULT for all new compute and all production code**"*; and `qou_substrate.constants.Q` returns exactly `1.1099785827513808` |
+
+So the pattern `10997858275` matches the canonical pin's own digit string, and
+the audit flags every correct use of it — **264 production-hardcode hits of
+414**, including `tools/qou-substrate/tests/test_q0_anchor.py` and
+`test_codata_table.py`, the tests whose job is to pin that value.
+
+### It is CROSS-LAYER, not merely stale
+
+The audit's "canonical" is a **muon**-layer value; its "stale" is the **proton**
+pin. So it does not just quote an out-of-date number — it demands that compute
+use a muon value where the 2026-08-07 owner directive says proton is the default
+for all production code. Two directives passed it by: the proton default
+(2026-08-07) and the frozen-pin retirement (ruled 2026-08-22, implemented
+2026-08-28). Its own citation is
+`docs/audits/2026-06-21-q0-clusterA-migration-plan.md` — June, before both.
+
+### 🛑 I did NOT fix this, deliberately
+
+Correcting the docstring alone would leave the file self-inconsistent the other
+way; correcting the pattern requires deciding **what "stale q₀" should mean
+now**, and that is a judgement the corpus does not settle. AGENTS.md's
+ask-first override does not exempt it: it neither increases precision nor is
+fixed by a corpus artifact I can point a reviewer at. The blast radius is
+recorded above so the decision can be made without re-measuring.
+
+**What happens if nobody acts:** the audit keeps reporting 264 false
+production-hardcodes and stays unusable as the `--strict` CI gate its own
+docstring proposes (*"Run with `--strict` to exit non-zero when any
+production-hardcode remains (CI gate once the backlog is cleared)"*). The
+backlog can never clear, because the backlog is the canonical value.
+
+**My judgement, marked as judgement:** retire the `old-q0` half of this audit
+rather than re-point it. The value it was built to chase (pre-habiro A) is three
+directives out of date, and the two live q₀ questions — anchor consistency and
+the muon/proton flip — already have dedicated, current instruments in
+`q0_anchor_consistency_audit.py` and `muon_pin_stored_vs_live_gate.py`. The
+`stale-trM` half is a separate detector and is untouched by this.
