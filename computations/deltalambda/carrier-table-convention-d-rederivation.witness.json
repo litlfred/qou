@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T13:13:38.572467+00:00",
-  "commitSha": "4f2b3bcd70a496a6e1ca932de2f0388dccbc0e08",
+  "computedAt": "2026-09-08T08:00:30.770967+00:00",
+  "commitSha": "9df38bc4548fb05ed626e51e2605446a04caf161",
   "assertions": [
     {
       "name": "markov_normalization_recomputed_weights",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 491,
+  "durationMs": 666,
   "computation": "carrier-table-convention-d-rederivation",
   "scriptFile": "carrier_table_convention_d_rederivation.py",
   "scriptHash": "ed652d68f893",
-  "scriptCommitSha": "57a4cda06563f58fa2f42d939b7dc73de6c872c2",
+  "scriptCommitSha": "3b95e967cd8269dd2067a7db7a6961228a698f98",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,10 +50,10 @@
     "A_req_3He": "108.663350454635489935054941011749290196545338511949648262839",
     "me_S_MeV_4He": "0.0402837411144582207793958966851045664558730944124716051629434",
     "A_req_4He": "702.409002172949015630237257059509579098889305928003359590309",
-    "me_S_MeV_5Li": "0.410756668087517243122497659931394043648737878517653973919102",
-    "A_req_5Li": "64.1028242404330184753355900053802147280471319629201566955554",
-    "me_S_MeV_6Li": "0.386145182858856574995118723631037173577567003206437881139286",
-    "A_req_6Li": "82.8548137338655139679400179780420275513136108282241405941074",
+    "me_S_MeV_5Li": "0.183621265925826874580158554108879553722185350392267465745638",
+    "A_req_5Li": "143.396585178952926385201224106940520308588955949484736741386",
+    "me_S_MeV_6Li": "0.194666300634013132960079740994996106858611107041877088693375",
+    "A_req_6Li": "164.352983006293592331312890099908325913683372220789956903186",
     "scope_note": "D/T/3He/4He rebuild theta from the cached per-block free AND atom chi. 6Li has no cached free chi, so its free half comes from chi_free_via_frobenius -- the power-sum/Murnaghan-Nakayama route, which forms no Littlewood-Richardson coefficient and is therefore independent of the probe's LR path. 5Li is still excluded: no independent check was built for it."
   },
   "q0Anchor": "proton",
