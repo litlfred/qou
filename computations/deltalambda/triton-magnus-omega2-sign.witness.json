@@ -1,7 +1,7 @@
 {
  "computation": "triton-magnus-omega2-sign",
  "scriptFile": "triton_magnus_omega2_sign_probe.py",
- "computedAt": "2026-09-07T16:32:38.679493+00:00",
+ "computedAt": "2026-09-08T06:39:45.507366+00:00",
  "engine": "mpmath mpf at 140 dps (H\u2089 Hoefsmit seminormal; finite-diff germ; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -441,7 +441,7 @@
   "P_total_wenzl": "-13.9305624538075731404180552517117496835131199151501772774679",
   "P_total_wenzl_sign": -1,
   "P_total_wenzl_note": "Sum over lambda of y_lambda^Wenzl * tr(rho.Omega2), the production Markov weight (row cap at level r=2 zeroes every shape with >=3 rows). tr(1)=1 at every n, so values ARE comparable across A -- which the Plancherel arm is not (tr(1) = 11.1 / 184.2 / 6751.5 at n = 6 / 9 / 12). See docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.",
-  "P_total": "2.47019270829893338491487511880018646850639746844847340088048",
+  "P_total": "2.47019270829893338491487511880018646850639746844847340088050",
   "P_total_sign": 1,
   "P_control_rho_identity": "0.0",
   "control_tr_M_Omega2_vanishes": true,
@@ -455,9 +455,9 @@
  "scope": "scope-(a): decides the A=3 SIGN of tr_M(\u03c1\u00b7\u03a9\u2082) and its relation to the A=2 sign. Dimensionless structural datum. Does NOT reproduce any MeV (open \u0394_\u03bb gate \u2014 a number would be a fit). Does NOT assert a physical binding-sign convention (qou-v7ro / PR #6077, cited not re-derived). No fit; nothing inverted; nothing wired.",
  "wired": false,
  "notes": "Thread-A takeover follow-on: the A\u22653 half the merged deuteron-magnus-omega2 audit (2026-08-29) left untested. Same construction as deuteron_magnus_omega2_sign_probe.py (qou-dp32) on the triton (H\u2089). Cites qou-v7ro/#6077 for the sign convention; does not re-derive it.",
- "scriptHash": "bcda4a09a7db",
- "scriptCommitSha": "cc6801d013061ea73cd17e83b1aec909ff1f9298",
- "commitSha": "cc6801d013061ea73cd17e83b1aec909ff1f9298",
+ "scriptHash": "985a14b56711",
+ "scriptCommitSha": "7e6afb070b8798f5f44fcf318ed4ae663d0e2248",
+ "commitSha": "aeec20567813b4ca17917581905b39bdb9a8d9a5",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"
