@@ -31,3 +31,5 @@ Probe `computations/probes/uic_word_level_locality_probe.py` (11/11, 29 s, mpmat
 **Decision framed for the owner (default = no-op):** (1) leave as is — the wall stays at kernel speed (deuterium 942 s kernel-live); (2) re-embed the binding word on 3A strands and use the path-sum — a new producer, every recorded binding number moves (hadron-knot-table, the A-series −7.27…−8.14), the fixed partition table and C_λ / Pass-2 gate need re-definition on λ ⊢ 3A; whether the 3A-strand element is the right binding object is the owner's call and NOT chosen here because it is faster; (3) kernel-side speedups per qou-sv7h. Judgement: 1 now, 2 only as owner-authorised re-derivation.
 
 Calibration: reversing the cycle (s_i ↦ s_{k−i}, conjugation by T_{w0}) preserves every χ^λ to ≤ 3e-50 on the kernel — a genuine trace identity, and still single-segment.
+
+PR: https://github.com/litlfred/qou/pull/7173
