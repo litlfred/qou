@@ -2845,3 +2845,31 @@ Note for whoever picks row D up: the UIC layout is the COMPLETE GRAPH
 `QOU.Mass.CoordinationSaturation.complete_graph_no_saturation` already refutes
 on saturation grounds. So even a valley found here would have sat on an excluded
 layout.
+
+---
+**2026-09-08 — TOOK OVER qou-qqm4's unanswered target and computed it. The answer is NO: the derived kind-dependent bond weight is real but FAR TOO WEAK.**
+
+**Takeover.** `qou-qqm4` was `in-progress`, last updated `2026-09-07T11:13Z`, **16 h stale** against the 3 h threshold, with no response to the target posted on #7000 at 17:09Z. Owner instruction: *"take over — No ρ_pp yet."*
+
+**Method — right-to-left, as the rule required.** `ρ_pp` computed **independently** from the corpus's own derived bond factors and then compared. Nothing inverted from `rMeasured`.
+
+Inputs, both from the corpus: `bond_pn_kind_order_four_discriminator_probe.py`'s exact rational series in `ε = q−1` (`pp = z` exactly; `pn` = the `averaged_weighted` kind; `nn = z′`), and `CarrierCrossingQuantisation.rMeasured = 950815/1483044`. Seeded from `Q_50_DIGIT_STR`, **not** the float64 `q_parameter.Q` — the exact defect a sibling fixed in this cone on 2026-09-07 (`87bf88379`).
+
+**Result — four identifications, and the PRINCIPLED one misses worst:**
+
+| identification | ρ_pp | miss |
+|---|---|---|
+| A multiplicative `pp/pn` | 1.2056 | 26.5 % |
+| **B additive `log pp / log pn`** | **0.7238** | **55.9 %** ← principled |
+| C shifted additive | 1.1869 | 27.7 % |
+| D inverse | 0.8295 | 49.5 % |
+
+against `target = 1 + rMeasured = 1.64112393`. **B is the principled one** — the binding law is `B = E₀·log(tr ratio)`, so interface factors multiply in the trace and their *logs* add; an additive per-pair weight must be a log, not a ratio. Reporting A because it is closest would be selection against the target, which §NO FITTING names.
+
+**And no carrier rescues it.** Scanning every `m_pp, m_pn ∈ 1..6` (³He = ppn → pairs pp, pn, pn): A's closest miss is **67.9 %** (*worse* than uniform's 55.98 %); B's is **30.2 %**, at `(m_pp, m_pn) = (2,1)`. That is reported as a **bound** — "even the best small carrier misses by 30 %" — not as a carrier determination; reading a carrier off the residual is the same fit one level down.
+
+**Verdict: real structurally, insufficient quantitatively.** `kind_ratio_not_determined_by_sum` stands — a kind-dependent weight *does* break the integrality that made the exhaustion exhaustive. But the kind-dependence the corpus derives needs `ρ_pp ≈ 1.64` and delivers 0.72–1.21. The **sign** is right (`bond_pp > bond_pn`); the magnitude is roughly half what is needed under the most favourable reading and wrong-way under the principled one.
+
+**What this does and does not change.** It does **not** restore `no_carrier_reproduces_b3` — that exclusion's premise is still derived-false, and #7097's re-scoping stands unaltered. What it removes is the hope that the *already-derived* kind-dependence closes the three-body gap. So `qou-brng`'s surviving route now needs a **further** source of per-pair variation beyond the bond kind, or the count channel is not where `b₃` lives.
+
+Probe: `computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py`, 7/7, witness alongside.
