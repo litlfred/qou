@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T18:59:27Z
+updated_at: 2026-09-08T07:45:32Z
+parent: qou-x631
 ---
 
 **RESCOPED 2026-09-05 (owner: "rescope and continue"), after PR #6822. Read this header, not the historical one below it.**
@@ -584,3 +585,7 @@ trace to a norm of the same block did not rescue the decay for the correct rho.
 **Not duplicating.** The sibling's Lean is about trace functionals at a single partition; nothing
 here re-derives or extends it. Recorded so the next agent on o6ov meets the structural reason
 alongside this arc's measurements, rather than rediscovering the connection.
+
+## 2026-09-08 coordination: same kernel as qou-x631, qou-k5r5, qou-za3q, qou-omr7
+
+Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 1 / §7.3 C2: `k5r5` (99 commits, 08-21 → 09-08) and `o6ov` (99 commits, 08-30 → 09-05) both work the odd-moment / Magnus `tr(ρ_λ Ω₂)` kernel, and before this note there were **zero** cross-citations among k5r5 / o6ov / x631 / za3q / omr7 (measured 2026-09-08 by grepping each body for the other four ids). Shared ledger: epic `qou-x631`, now parent of the other four. Roles — x631: epic, Cov_Planch(f^λ, Σc²) ≤ 0 / T₃(k) kernel; k5r5: M₁ > 0 (first odd moment), all-n proof OPEN, identity Lean-proved; o6ov: does |tr(ρ_λ Ω₂)|/dim decay in b across the ≤2-row column (open mathematics, rescoped 2026-09-05, PR #6822); za3q: Magnus-Ω₂ probes use the Plancherel weight y_λ, 91 % of their work on shapes tr_M annihilates; omr7: Magnus probes' d_q was the hook product, weight inverted (4 files, PR #6442). Statuses are unchanged by this note; a result landing on any of the five should be cited in the other four.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T22:39:50Z
-updated_at: 2026-09-06T06:16:15Z
+updated_at: 2026-09-08T07:45:38Z
 parent: qou-pq8k
 ---
 
@@ -266,3 +266,5 @@ leak the fix targets is not occurring on this path at all**, which is why the
 `d_for_ctype`'s callers is the open half.
 
 **Bean stays open on the fourth witness only.** Three of its four are closed.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

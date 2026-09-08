@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T01:17:44Z
-updated_at: 2026-08-30T09:12:30Z
+updated_at: 2026-09-08T07:45:41Z
 ---
 
 Found while diagnosing a declaration/content mismatch under `qou-5wng`. NOT a
@@ -193,3 +193,5 @@ delta_q0_ppb = -11.6118, residual_ppb_at_canonical_q0 = 211.1649. Not edited
 here (outside the PR's scope and inside this bean's); the new block's
 authorNotes records the disagreement so the two do not read as a contradiction
 without explanation.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

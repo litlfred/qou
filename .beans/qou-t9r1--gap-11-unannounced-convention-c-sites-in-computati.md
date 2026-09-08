@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T08:04:35Z
-updated_at: 2026-08-30T07:56:32Z
+updated_at: 2026-09-08T07:45:34Z
 ---
 
 THE FINDING behind PR #5972. `scripts/convention-c-producer-audit.py` reports 9
@@ -167,3 +167,5 @@ variable resolver.
 Three entries are marked as resting on **inferred** rather than declared C-frame
 status (`eval_map_bar_decomposition`, `eta_singularity`, `t3_carrier`) so they can
 be re-examined specifically rather than trusted equally with the rest.
+
+## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.

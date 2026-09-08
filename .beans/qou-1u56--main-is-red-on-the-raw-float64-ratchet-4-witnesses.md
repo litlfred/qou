@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T13:28:11Z
-updated_at: 2026-09-07T06:23:04Z
+updated_at: 2026-09-08T07:45:48Z
 ---
 
 ## Measured on `main`, not on a branch
@@ -124,3 +124,5 @@ Its single assertion `proton_per_block_under_uniform_within_1pct` was failing
 before this change and still is (`allPassed: false` → `false`). That is the
 probe's own documented point — per-block undershoots m_p by ≈ 2.38×, stated in
 its docstring as the owner-gated finding — not a regression.
+
+## 2026-09-08: canonical tracker for the recurring "raw-float64 ratchet is RED on main" event is qou-sknx (most recent OPEN one, 2026-09-04); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7. Seven beans (08-11 … 09-06) record one recurring event; this one is kept as-is because its body carries its own finding.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-10T02:20:19Z
-updated_at: 2026-09-06T03:59:13Z
+updated_at: 2026-09-08T07:45:38Z
 ---
 
 
@@ -288,3 +288,5 @@ bean's own if the difference is load-bearing.
 
 **The producer figure (2384 of 2785 undeclared) was NOT re-measured.** Do not
 quote it as current.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

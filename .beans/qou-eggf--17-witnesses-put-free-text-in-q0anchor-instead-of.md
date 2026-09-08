@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:57:50Z
-updated_at: 2026-09-04T22:01:48Z
+updated_at: 2026-09-08T07:45:39Z
 ---
 
 ## The finding
@@ -271,3 +271,5 @@ What is unchanged: four attempts, zero completions, so the two witnesses
 (`qbeta-derived-w-overdetermined-test`, `qbeta-interface-w-deciding-test`) are not
 reachable in this session by any method tried. Their producers are fixed on
 `main`; a run in an environment that can hold a > 50 min compute closes them.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

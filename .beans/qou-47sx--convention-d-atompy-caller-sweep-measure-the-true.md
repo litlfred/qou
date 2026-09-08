@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T12:34:42Z
-updated_at: 2026-09-06T16:11:20Z
+updated_at: 2026-09-08T07:45:36Z
 ---
 
 ## The caller count: "31" is refuted — the true live figure is 20 modules, 15 of them producers
@@ -256,3 +256,5 @@ The wider H_3-vs-H_3A question already has a carrier in **`qou-2tuv`** (*"the
 proper sum is infeasible past A=12"*), so this is not a new front; **27 live
 non-deprecated modules** still reach `atom_per_generator_volumes`, and this one
 is simply the instance this bean's tally happened to name.
+
+## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.
