@@ -548,3 +548,23 @@ it is the stronger claim — an `exit 0` against the restored cache is a stateme
 the snapshot, this one is about the source. Mind the partial-overlay rule already in this
 file: the scratch root captures the namespace it contains, so it must hold every
 `QOU.<Ns>.*` module the file imports.
+
+## TRAP — an "incomplete" olean tree may be one a `lake build` is WRITING (2026-09-08)
+
+`scripts/lean-build-bg.sh` is started by a **SessionStart hook** and runs `lake
+build` with cwd = the paper package, so the per-paper tree is under construction
+from minute one of a fresh session. Measured over ~40 min, one session: per-paper
+went 2 -> 17 QOU oleans and 2352 -> 3007 mathlib oleans while root sat unchanged
+at 2442 / 3469. So a count is a snapshot of a moving target, and a "missing"
+`Mathlib/Tactic.olean` can be a TIMING fact rather than a fact about the restore.
+The root restore is NOT evicted by this build (its cwd is the paper package).
+
+It reached the GATE: `lean-shadow-verify.sh` picked a **2**-olean tree over the
+restored **2442**-olean one and died on the first Mathlib import, reporting a
+failure entirely its own. Fixed on
+`claude/w1-route2-fibre-monodromy-order-2026-09-07` (pick by count, rank package
+locations, warn on a running build).
+
+**First move in a fresh session: `pgrep -f 'lake build'`.** Full detail, and why
+§17's union mirror is still the stronger tool than ranking:
+`verification-harness.md` §17a.
