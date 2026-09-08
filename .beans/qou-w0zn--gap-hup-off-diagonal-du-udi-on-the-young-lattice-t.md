@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T19:57:29Z
-updated_at: 2026-09-08T05:09:59Z
+updated_at: 2026-09-08T05:15:30Z
 ---
 
 ## What landed (2026-08-21, bean qou-wtny, PR #5403)
@@ -153,3 +153,30 @@ derivation. Anyone picking it up should read `qou-3c2j` first and cite
 count is **0** — all three are the strings "sorry-free" and "sorryAx" inside
 docstrings. Same false-positive shape as `qou-0a0z` and `qou-1n7g`. Count with
 `grep -E "^\s*sorry\s*$|:= *sorry|by sorry"`, never the bare word.
+
+
+### 🛑 Correction to the method note above, same day — the regex I recommended is ALSO wrong
+
+The note above says to count with `grep -E "^\s*sorry\s*$|:= *sorry|by sorry"`.
+**Do not use it.** Measured on
+`QOU/BraidKnot/SnWedderburnPartitionBridge.lean`: it returns **1**, and the hit
+is line 27, *"projection bundle — by sorry-free linear algebra."* — the `by
+sorry` alternative matches the prefix of **`by sorry-free`**. So the "fixed"
+pattern reproduces the exact false positive it was written to remove, one
+spelling over.
+
+The token form is closer — `grep -nE '(^|[^A-Za-z-])sorry([^A-Za-z-]|$)'`, which
+rejects `sorry-free` and `sorryAx` — but it is **not sound either**: on the same
+file it returns 4, and all four are backtick-quoted `` `sorry` `` inside prose
+describing a *different* file's gap (lines 24, 76, 330).
+
+**The honest conclusion is that no text match settles this.** A `sorry` term and
+a `sorry` mention are lexically identical in this corpus, which documents its own
+gaps in prose beside the code. Grep can only *narrow*: a file with **zero** hits
+under both patterns is clean, and anything above zero has to be read or compiled.
+The authority is Lean — `#print axioms` on the declaration, or a `lean`-direct
+compile — exactly as AGENTS.md says.
+
+Recorded here rather than quietly fixed because I put the defective pattern in
+this bean an hour earlier while correcting someone else's count, which is the
+fourth instance of this class in one session and the second one I authored.
