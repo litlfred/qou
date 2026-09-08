@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T19:57:29Z
-updated_at: 2026-08-21T19:58:02Z
+updated_at: 2026-09-08T05:09:59Z
 ---
 
 ## What landed (2026-08-21, bean qou-wtny, PR #5403)
@@ -71,3 +71,85 @@ honest move is to verify rather than re-derive (AGENTS.md "converge on landing")
 OVTopAssembly.sum_numSYT_sq_eq_factorial states the identity and, per qou-wtny's
 own refinement, carries a sorryAx. NOT re-verified in this session — treat the
 sorryAx claim as unconfirmed until someone runs #print axioms on it.
+
+
+---
+
+## 2026-09-08 — NOT closeable (13a: the hup identity is open math). But both things this bean flags as UNVERIFIED are now measured, and both change its purpose.
+
+Read for the `qou-bstl` queue. The completion-candidate tool flagged this on
+`a1a077671a3`, *"beans(wtny): release the claim — SW-3 not closed, remainder is
+qou-w0zn"* — a commit on a **different** bean that names this one as the
+*remainder*. Cause 2, and the subject is an open `GAP:`, so it stays `todo` under
+rule 13a regardless. What follows is the two measurements it asks for.
+
+### 1. The `sorryAx` this bean says to treat as unconfirmed is RETIRED
+
+The bean records:
+
+> *"`OVTopAssembly.sum_numSYT_sq_eq_factorial` states the identity and, per
+> `qou-wtny`'s own refinement, carries a `sorryAx`. NOT re-verified in this
+> session — treat the `sorryAx` claim as unconfirmed until someone runs
+> `#print axioms` on it."*
+
+Someone did. `QOU/BraidKnot/BurnsideDischarge.lean:35-42` carries a dated
+correction:
+
+> *"**Correction (2026-08-23).** The paragraph that stood here said
+> `burnside_proved` is *not* sorry-free, because
+> `OVTopAssembly.sum_numSYT_sq_eq_factorial` carried `sorryAx` from two named
+> sorries. That is no longer the state of the world, and neither half of it is:
+> `centralC2_acts_by_contentSqSum` is proved, and `sn_rational_specht_split`'s
+> `sorry` was replaced by the class `SnIsotypicSpechtSplit`, which is now
+> **inhabited** (`SnIsotypicSpechtSplitInstance`, from the RSK correspondence
+> rather than from any assumption). Measured: `#print axioms` on
+> `burnside_proved` reports `[propext, Classical.choice, Quot.sound]`."*
+
+So the `sorryAx` is gone, and by an instance derived from RSK rather than
+assumed.
+
+### 2. Route 2 has LANDED, and unconditionally — which is what this bean says to check first
+
+The bean's own instruction:
+
+> *"Bean `qou-3c2j` … reaches the same identity by the representation-theoretic
+> route and was closer as of 2026-08-19: one brick left
+> (`sSup_isotypicComponents` → a finrank sum over `PartitionIndex`). If that
+> landed, this route's value is as an independent combinatorial CONFIRMATION,
+> and the honest move is to verify rather than re-derive."*
+
+It landed. `QOU/BraidKnot/WedderburnUnconditional.lean` (**0 real sorries**)
+carries, under the docstring *"The Wedderburn dimension sum, with no
+hypothesis"*:
+
+```lean
+theorem sum_numSYT_sq_eq_factorial (n : ℕ) :
+    ∑ i : SpechtClassification.PartitionIndex n, (numSYT i.diagram) ^ 2
+      = Nat.factorial n :=
+  OVTopAssembly.sum_numSYT_sq_eq_factorial n
+```
+
+**No instance binder.** The file discharges the `SnIsotypicSpechtSplit ℚ` class
+that the `OVTopAssembly` version at line 227 still takes, by supplying
+`sn_isotypic_specht_split` — i.e. exactly the "one brick" the bean names. So
+there are two declarations of this name: the **conditional** one in
+`OVTopAssembly` and the **unconditional** one here. Resolve which you mean before
+citing it.
+
+### What that changes for this bean
+
+Its purpose, not its status. The hup off-diagonal `DU − UD = I` on the Young
+lattice is still unproved, so the bean stays open — but the RSK-free route is no
+longer the *supplier* of `Σ_λ (f^λ)² = n!`; that identity is proved
+unconditionally on `main`. Per the bean's own citation of "converge on landing",
+this route's remaining value is an **independent combinatorial confirmation**,
+and it should be pursued as verification rather than as the load-bearing
+derivation. Anyone picking it up should read `qou-3c2j` first and cite
+`WedderburnUnconditional`, not re-derive against it.
+
+### Method note, third instance this session
+
+`grep -c '\bsorry\b'` on `BurnsideViaBranching.lean` returns **3** and the real
+count is **0** — all three are the strings "sorry-free" and "sorryAx" inside
+docstrings. Same false-positive shape as `qou-0a0z` and `qou-1n7g`. Count with
+`grep -E "^\s*sorry\s*$|:= *sorry|by sorry"`, never the bare word.
