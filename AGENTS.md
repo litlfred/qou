@@ -2210,7 +2210,16 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > form is retired as the base (it is the `z = 1` cell) and stays citable only as
   > the historical C-frame cross-check. The c_k ladder is to be re-derived on this
   > base (`qou-cds1`, blocked on the phase `qou-pdix`); the dashboard rows
-  > Q_β / m_n / Δ_pn are NOT yet re-scored on it. Same day, the owner also ruled
+  > Q_β / m_n / Δ_pn are NOT yet re-scored on it. **🛑 IN TENSION WITH D7 —
+  > flagged the same hour, owner confirmation pending.** `13bb8243d8`
+  > (`qbeta_augmentation_is_a_markov_trace_probe.py`, on `main`) shows the
+  > augmentation IS the Markov trace at `z = q` (basis-wide, `z = q` the only
+  > solution), so the choice is *which Markov parameter*, and D7 (2026-09-07:
+  > convention D = the two-row truncation, governs the decay channel) then picks
+  > `z_D` (−43.157 %), because the augmentation is the strictly finer one-row
+  > truncation (`y_(2,1) = 0`) and is **not** convention D. The selection above
+  > was made on an option that did not know this. Until the owner confirms,
+  > neither base is wired. Same day, the owner also ruled
   > that every canonical **braid word** is to be selected via γγ (pair-production)
   > construction + the confinement SDP at q₀, never by census (bean `qou-ales`).
   > Record: [`docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md`](docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md) §8.
@@ -2382,7 +2391,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is **70 dps compute / 60 dps serialization** (10⁻⁶⁰ absolute truncation, guard 10). **Do not quote 65/50/10⁻⁵⁰** — that was this row until 2026-09-06 and had been stale since at least 2026-08-30 (bean `qou-0z4i`). Measure, do not quote: `python3 -c "import qou_substrate.precision as P; print(P.COMPUTE_DPS, P.OUTPUT_DPS, P.PRECISION_GUARD)"`. The change was a strict tightening — recomputed values agree with committed ones over their whole shared prefix, so no recorded result was invalidated; only this figure was wrong. It reached durable artifacts twice, most recently PR #6937, whose body names "65 dps" and "the 50-dps floor" and thereby **understates** the remaining optimisation headroom (70 → 60 is more than 65 → 50). |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 970.2× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/6 scoreable met (`m_K/m_π` alone; `scoreable_total = 6` (α_em⁻¹ row added 2026-09-07, `d626761a34`; 238.3×)) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/6 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 970.2× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -2423,20 +2432,20 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   +242 ppb regression) and was **dropped**; the honest documented-pin
   round-trip is +1.35 ppb, a ~437× miss. Full analysis:
   [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
-- **🛑 The authoritative count is 1/5 SCOREABLE, not 2/7 (corrected
-  2026-08-18).** `beats_100x_count = 2` counts **calibration inputs**
+- **🛑 The authoritative count is 1/6 SCOREABLE, not 2/7 (corrected
+  2026-08-18; 1/5 → 1/6 with `scoreable_total = 6` (α_em⁻¹ row added 2026-09-07, `d626761a34`; 238.3×)).** `beats_100x_count = 2` counts **calibration inputs**
   alongside predictions. The dashboard already excludes `m_p` from scoring
   as an anchor round-trip ("the framework content cancels"), but **scores
   `m_e`**, whose `err_ppb` is not measured but *defined* zero — `m_e` is the
   CAL-1 input that fixes the MeV unit, so its ratio to itself is 1 by
   construction. That is the same argument `m_p` is excluded for, only
-  stronger. Separating inputs from predictions, **1 of 5 scoreable
+  stronger. Separating inputs from predictions, **1 of 6 scoreable
   predictions meets L2, and it is `m_K/m_π`** — the only *ratio* among the
-  five. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
+  six. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
   **never** bare `beats_100x_count`. Full analysis:
   [`docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md`](docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md).
-- **🛑 Even the 1/5 is inflated — the UNCONDITIONAL parameter-free count is
-  0/5 (red-team 2026-08-22).** The single "scoreable win" `m_K/m_π` is itself
+- **🛑 Even the 1/6 is inflated — the UNCONDITIONAL parameter-free count is
+  0/6 (red-team 2026-08-22; denominators 5 → 6 on 2026-09-07).** The single "scoreable win" `m_K/m_π` is itself
   **not** a parameter-free prediction. Its derived core `√([3]_q·[4]_q)` (a
   legitimate ~0.1 % categorical postdiction of the strong ratio) misses this
   observable's own — unusually loose, 264 ppb — 100× target by **385×** on its
@@ -2446,8 +2455,8 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   caught) and whose `α_em` input is **conditional on an open Lean `sorry`**
   (Witten-κ Gram determinant). So `beats_100x_scoreable = 1` is the dashboard's
   arithmetic metric; the count of **unconditional, parameter-free** sub-100×
-  predictions is **0**. State it as "1/5 scoreable — and that 1 is
-  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/5 unconditional**". Full
+  predictions is **0**. State it as "1/6 scoreable — and that 1 is
+  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/6 unconditional**". Full
   analysis:
   [`docs/audits/2026-08-22-mK-mpi-l2-red-team.md`](docs/audits/2026-08-22-mK-mpi-l2-red-team.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
@@ -3121,7 +3130,7 @@ above already carries the tighter σ).
    the CAL-1 input that fixes the MeV unit; its `err_ppb` is *defined*
    zero, not measured. Scoring it as a "beat" is the identical tautology
    this rule forbids one line above. The canonical L2 count is therefore
-   **1/5 scoreable** — `m_K/m_π` alone — **not** 2/7, and not 3/7 or 4/7.
+   **1/6 scoreable** — `m_K/m_π` alone; `scoreable_total = 6` (α_em⁻¹ row added 2026-09-07, `d626761a34`; 238.3×) — **not** 1/5, 2/7, 3/7 or 4/7.
    Quote `beats_100x_scoreable` / `scoreable_total`; `beats_100x_count = 2`
    is retained in the witness for consumer compatibility and **must not be
    quoted as an accuracy result** (corrected 2026-08-18).
