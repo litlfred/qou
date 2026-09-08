@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-28T18:18:52Z
-updated_at: 2026-08-28T18:28:10Z
+updated_at: 2026-09-08T07:43:12Z
 ---
 
 ## Found 2026-08-28, by restoring the p/n rows (qou-7e1t option 3)
@@ -156,3 +156,5 @@ labelling change, not a physics one, and it is the whole of what is left here.
 The physics question — why the flavour-split identity sits 555x off the
 categorical route — is real but is not this bean's, and is not new: it predates
 the drain by however long the two routes have coexisted.
+
+## 2026-09-08 — C4 of the programme audit (docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §2, §7.3): two m_n values are live on main — the facade witness m-p-substrate-identity-50dps (2026-08-29) carries Q_beta = 0.78280469 (+602 ppm, the N2 form at z_D) and m_n at +501 ppb, while per-observable-100x-status (2026-09-07) carries the c_k-cache Q_N2 (1279 ppb, convention C, z = 1 inadmissible) and m_n at 0.903 ppb / 176.7x — a factor ~550 apart, both Path C m_n = m_p + Q_beta + m_e. Owner decision 2026-09-08 (qou-99qc): epsilon := augmentation, base 0.8798906 MeV (+12.470 %). Both witnesses are therefore to be re-scored on the augmentation base and stamped with functional + frame; until then neither m_n is canonical. Not done in this session (producer re-run under D; ask-before-change).

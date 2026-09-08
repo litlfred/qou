@@ -3,8 +3,9 @@
 title: 'GAP(knot-solver): canonical knot-assignment SDP admits 0/3558 at Frobenius level — open R5 gap (finitude/search-bounds/K(H) structural id)'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-02T13:56:51Z
-updated_at: 2026-08-02T13:56:51Z
+updated_at: 2026-09-08T07:40:04Z
 ---
 
 ## Finding (2026-08-02) — the solver runs; the Frobenius selector is empty
@@ -75,3 +76,5 @@ Gram/knot machinery can't select operators. The fix targets the net constraint
 (drop the redundant row, or use the consistent net), NOT the Gram. **This does
 NOT derive ν_SDP** — it removes a spurious "obstruction" reading and re-points
 the open R5 work at the net normalization + the mpfr overflow for heavy A.
+
+## 2026-09-08 — re-activated by owner ruling (bean qou-ales): word selection goes through γγ production + the confinement SDP at q₀, no census. The 'cheap next step' (fix the net-row over-determination, per-constraint diagnostic) is now on the critical path.
