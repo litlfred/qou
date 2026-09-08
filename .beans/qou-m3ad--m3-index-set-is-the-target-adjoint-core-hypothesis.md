@@ -8,7 +8,7 @@ tags:
     - g3-aomega
     - route-c
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-09-07T19:22:16Z
+updated_at: 2026-09-08T03:39:25Z
 parent: qou-rtec
 ---
 
@@ -216,3 +216,5 @@ CONSEQUENCE FOR ITEM 1: "are the Stokes entries built from s(x)?" is a statement
 ## Part 8 (2026-09-07): CORRECTION of Part 7's framing, and the tranche that actually answers item 1
 
 Part 7 said item 1 is "not GL-invariant as posed" (also PR #7101's title, audit §3f's first draft, and my rtec append). Overstated: S^+(x;q) is canonical once the Borel rays are ordered by volume, so "are its q->0 entries built from s(x)?" is well-posed. What is NOT invariant is Conjecture 4's identification index-matrix -> S^+ (up to GL(r,Z(x,q)) both sides); for unipotent S^+ every Fitting invariant is trivial, so the index fixes only the exact sigma1-sigma1 entry. Correct statement: the question is well-posed; the INDEX route cannot answer it; the BLOCK route can — Ind^rot(m,zeta;q) = sum_alpha B^alpha(q^{m/2}zeta;q) B^alpha(q^{m/2}/zeta;1/q) (GGM eq 19), with the blocks from the state integral of the triangulation. For m016 that is a 2-dim state integral at level 2 (GZ §4.2 declined the closed form). Held method: Garoufalidis-Kashaev arxiv-1304.2705 (state integrals -> q-series), arxiv-1411.6062; corpus instance for 4_1: qbeta_m1_rotated_index_from_blocks.py. Audit §3f corrected in place. Contamination list: PR #7101 title/body (merged; cannot edit the commit), issue #7100 (noted), bean qou-rtec (append), this bean's Part 7.
+
+Part 9 (2026-09-08): the sister hypothesis (pretzel = (1,3) member of the GK 1-dim family, q<->q~ swap of 5_2) is REFUTED in the 5_2 configuration by the derived index — the swap is invisible in sigma1-sigma1, so the candidate reproduces 5_2's index, not the pretzel's. Item 1 still needs the pretzel's blocks; the 1-dim shortcut is closed in this configuration. qou-x3iv, audit §3g.
