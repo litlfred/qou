@@ -1,10 +1,11 @@
 ---
 # qou-7bv5
 title: Deuteron matrix-M chi cross-checks 0/11 against chi_q_via_gp; helium-3 is 30/30
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-16T00:16:17Z
-updated_at: 2026-08-16T00:16:17Z
+updated_at: 2026-09-08T05:03:36Z
 ---
 
 
@@ -162,3 +163,61 @@ caches, so the deuteron was the only stale member.
 harness records `ok`. Two independent detectors — this cross-check and
 `qou-9d6h`'s probe — both reported real defects into a channel nothing reads.
 That is the pattern worth fixing generally, not the deuteron number.
+
+
+---
+
+## CLOSED 2026-09-08 — artifact repaired and root cause guarded. The residual this bean calls "the pattern worth fixing generally" is SPLIT OUT to `qou-li9a`, still live.
+
+Verified on `main` `a61496dbc82`, both halves.
+
+### 1. The artifact carries the fresh value
+
+Both deuteron caches — 50 dps and 90 dps — read
+`tr_M_at_q0 = 2.17544681693623666235393297…` with 11 partitions. That is this
+bean's **post**-repair number, not the stale `1.33178255505578273520…` it opened
+on. The 63 % move is landed.
+
+### 2. The root cause is guarded, and guarded the right way
+
+`chi_at_q0_via_matrix_m_mpfr.py:186-206` no longer resumes unconditionally. The
+resume is now **q₀-conditional** — it discards the cache when `prev_q` differs
+from the requested `q_str` — with an explicit `--fresh` repair path for a cache
+that was *already* relabelled. The comment records the incident with this bean's
+own measurements (0 of 11, 63 %) and, better, records that the guard was
+**ported** from `chi_at_q0_via_hoefsmit_mpfr` rather than invented, *"so the two
+producers of the same χ family behave the same way"*. Its quoted line is the
+durable part:
+
+> *a stale cache wearing a fresh label is indistinguishable by inspection; only
+> recomputation can reveal it*
+
+Which is also why the guard-digit theory this bean investigated and rejected
+stays rejected — the table showing a roughly constant 2-4 digit loss (not 43,
+not scaling with n) still stands, and nobody should add a guard-digit fix here.
+
+### 3. The silence is NOT fixed — and it is the half this bean says matters
+
+Read at the source rather than inferred. `chi_at_q0_via_matrix_m_mpfr.py:503-523`
+computes `n_match` against a 1e-(dps-5) tolerance and **only prints it**; the
+function ends
+
+```python
+    return 0 if last_record is not None else 1
+```
+
+so the exit code turns on whether a record was *produced*, never on whether it
+*matched*. `0/11` and `11/11` both exit 0 today.
+
+That is exactly what this bean warned about, and it is why the deuteron staleness
+survived: the detector was firing on every run into a channel nothing reads.
+
+**Split out as `qou-li9a`** rather than held here, because it is a different
+scope — a contract change on every caller of this producer, not a repair to the
+deuteron. `qou-9d6h` (`completed`) is the same defect in
+`deuteron_tower_fusion_frame_probe` and is the precedent to follow; the new bean
+says to measure the caller set before changing the exit code, and not to widen
+the tolerance to keep callers green.
+
+**Blast radius as recorded stands**: tritium 30/30 and helium-4 77/77 on their
+existing caches, so the deuteron was the only stale member.
