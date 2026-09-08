@@ -19,8 +19,8 @@ produce is a **linear-layout graph**: a subgraph of the path on the ordering. Th
 what such a graph can and cannot be, over `Fin n` with Mathlib's `SimpleGraph`:
 
 * `degree_le_two` — every vertex has at most two neighbours (`k−1` and `k+1`);
-* `not_linearLayout_of_degree_ge_three` — any graph with a vertex of degree `≥ 3` is **not** a
-  linear-layout graph. The corpus's one bulk-carrying edge set — the max-contact sphere packing,
+* `not_linearLayout_of_degree_ge_three`, `card_edgeFinset_le` — any graph with a vertex of degree
+  `≥ 3`, or with more than `n` edges, is **not** a linear-layout graph. The corpus's one bulk-carrying edge set — the max-contact sphere packing,
   degree up to 12 (`MaxContactHasBulk`) — is therefore **not expressible** by this encoding, for
   any `A ≥ 4`; neither is the complete graph the pyhecke normal-form count corresponds to;
 * `chained_linearLayout_adj_succ` — a **connected** linear-layout graph contains every
@@ -128,6 +128,21 @@ theorem not_linearLayout_of_degree_ge_three (v : Fin n) (hv : 3 ≤ G.degree v) 
     ¬ LinearLayout G := fun hL => by
   have := degree_le_two G hL v
   omega
+
+/-- **Any linear layout has at most `n` edges** (degree sum `≤ 2n`). So an edge set with more
+than `n` bonds — the max-contact / deltahedron count `3n − 6` for `n ≥ 4`, the complete graph's
+`n(n−1)/2` for `n ≥ 4`, the sub-affine true packing's `≈ 6n` — is not a linear-layout graph, and
+the encoding cannot express it. -/
+theorem card_edgeFinset_le (hL : LinearLayout G) : G.edgeFinset.card ≤ n := by
+  have hsum := G.sum_degrees_eq_twice_card_edges
+  have hle : ∑ v : Fin n, G.degree v ≤ ∑ _v : Fin n, 2 :=
+    Finset.sum_le_sum fun v _ => degree_le_two G hL v
+  simp only [Finset.sum_const, card_univ, Fintype.card_fin, smul_eq_mul] at hle
+  omega
+
+/-- An edge set with more than `n` bonds is not a linear layout. -/
+theorem not_linearLayout_of_card_edge_gt (h : n < G.edgeFinset.card) : ¬ LinearLayout G :=
+  fun hL => absurd (card_edgeFinset_le G hL) (not_le.mpr h)
 
 omit [DecidableRel G.Adj] in
 /-- In a linear layout with the edge `{k, k+1}` absent, no chain of adjacencies from a vertex
@@ -275,6 +290,7 @@ theorem linearLayout_family_not_hasBulk
   have hfloor : 2 ≤ ⌊A⌋₊ := Nat.le_floor (by exact_mod_cast hA2)
   rw [surface_eq_two (G ⌊A⌋₊) (hL _) (hc _) hfloor] at hA3
   norm_num at hA3
+
 
 
 end QOU.Mass.LinearLayoutNoBulk
