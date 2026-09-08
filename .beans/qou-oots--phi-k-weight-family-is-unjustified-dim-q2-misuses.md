@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-06T10:51:57Z
+updated_at: 2026-09-08T07:40:03Z
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -669,3 +669,5 @@ needed, and it is precisely *not* a derivation of the answer.
 stayed open** — the exact shape §13a names. Routes 2 and 3 of the Φ_k audit §7
 are still live; §7 route 2 (a same-`n`, within-stratum observable) is the
 nearest actionable one.
+
+## 2026-09-08 — re-affirmed by the owner (chat): Molien. The 2026-09-05 ruling stands; the agent's audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §7.1 D2 wrongly listed the choice as open and is corrected on the same branch. Remaining in-progress scope is the α_EM-axis triage (PR #6840), not the choice.

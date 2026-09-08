@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:42:55.575105+00:00",
-  "commitSha": "c1412d907c1485375d057862695434af1c6f7843",
+  "computedAt": "2026-09-08T07:43:39.837018+00:00",
+  "commitSha": "75ed7daaaecb4c5206bff58a97790c4bb5b55706",
   "assertions": [
     {
       "name": "lp_max_duality_gap",
       "computed": "7.31028857805082131024114451266713565358651312243290000000000e-50",
       "expected": "0",
       "passed": true,
-      "tolerance": "1e-09",
+      "tolerance": "1e-15",
       "source": "prop:operator-selection-lp strong duality"
     },
     {
@@ -17,16 +17,16 @@
       "computed": "1.20819237374015567898223585856413088285795870629260000000000e-49",
       "expected": "0",
       "passed": true,
-      "tolerance": "1e-9",
+      "tolerance": "1e-15",
       "source": "cross-check-trM-1ppb (color-weighted exact methods: markov_peel vs chi-cache)"
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 26,
   "computation": "onepb-status-dashboard",
   "scriptFile": "onepb_status_dashboard.py",
-  "scriptHash": "568ff9e3df67",
-  "scriptCommitSha": "bf08fd156f9415996f30561aed317edf8561f22b",
+  "scriptHash": "98a8503e8757",
+  "scriptCommitSha": "4772365d6c4ca9fb2f666a6584c51e6f9c8ee195",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

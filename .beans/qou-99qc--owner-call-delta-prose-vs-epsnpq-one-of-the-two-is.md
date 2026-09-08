@@ -1068,3 +1068,7 @@ THE OWNER CALL IS UNCHANGED. This narrows Option E; it does not decide which
 functional eps is. That is still yours, and still the question of whether D7's
 scoping of convention D to the decay channel reaches the choice of functional
 WITHIN that channel or only the convention its objects are expressed in.
+
+## 2026-09-08 — OWNER DECISION (chat, AskUserQuestion on PR #7159 session): the AUGMENTATION.
+Option presented and selected: *'1. Decide ε in Q_β (qou-99qc) — Augmentation σ↦q (+12.47 %), z_D trace (−43.16 %), or retract Q_β; I recommend the augmentation.'* The owner selected it (together with three other items). Recorded reading: ε(Δ) := the augmentation σ ↦ q (option B of 2026-09-05-qbeta-functional-decision-options.md §3), i.e. Q_β base = 0.8798906 MeV, +12.470 %. Note the selection endorsed an option that carried the agent's recommendation; if the owner intended only 'decide it', this line is the place to overrule.
+Consequences: (i) the published 0.17 % closed form is retired as the base — cite it only as the C-frame / z=1 historical cross-check; (ii) qou-cds1's ladder re-derivation now has its base (the augmentation), so S1 can start on the phase question (qou-pdix); (iii) dashboard rows Q_β / m_n / Δ_pn are to be re-scored on the augmentation base and stamped ADMISSIBLE-AUGMENTATION — NOT done in this session (witness sweep needs the producer under D; ask-before-change); (iv) AGENTS.md scoping note updated to record the ruling. Status stays todo until (iii) lands.

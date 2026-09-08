@@ -459,7 +459,7 @@ instances, with the corpus's own words:
 | **ρ(q)** (λ_A) | `5/2 + 3h²/4` | `mass_vol_density.py:17` | a CODATA-implied fit; deprecated for absolute mass; replacement `ρ ≈ dim_q(λ*)` conjectural |
 | **c₃** | `−2 = J_Hopf(1)` | `qbeta-ck-truncation-canonical.md:15`; `q-beta-c3-hopf…md:65` "near-match, not Taylor-exact" | 3.47 % off; the class field axiomatises it |
 | **α_em Habiro element** | `H(q) = [2]_q(1 − h²α)` | `alpha-em-habiro-bar-involution.md:1` "Let H(q) = … be" | bar-invariance proved *of* the form; the form posited; `1/(4π)` "remains a near-match fit"; the `[10]_q` linchpin `δ_q(T_{3,5}) = q¹⁰ − q⁻¹⁰` asserted (`qou-15sj`) |
-| **Plancherel weight in Φ_k** | `dim_q²` | `2026-09-05-phi-k-weight-family.md` | `y_λ` and `d_q²/[n]_q!` pruned in Lean; choice between `d_q²/D²` (RT) and Molien `f^λ dim_q/[n]_q!` (sums to `[n]_q!`, proved) is **the author's call** (`qou-oots`) |
+| **Plancherel weight in Φ_k** | `dim_q²` | `2026-09-05-phi-k-weight-family.md` | `y_λ` and `d_q²/[n]_q!` pruned in Lean; **ruled 2026-09-05: Molien canonical**, `d_q²/D²` a labelled comparison arm (`qou-oots`; the audit first listed this as open — corrected in §8) |
 | **4-body weight** | `w₄ ≈ 15.6016` from a depth-2 q-difference operator | `universal-binding-architecture.md:21–27` "Organizing ansatz" | matches ⁴He to 1.2e-4 — flagged in-block as a substrate-value match, not a derivation |
 | **deuteron binding** | `B(²H) ≈ 5g·E_unit` | `reeb-linking-cwf-normalization.md:36` | near-match, unit anchor open (`qou-i4pz`) |
 
@@ -495,7 +495,7 @@ instances, with the corpus's own words:
 | `qou-99qc` | todo | **owner call**: what ε means in `Q_β = \|ε(Δ)\|·E₀` |
 | `qou-cds1` / `qou-pdix` | in-progress | the D-frame ladder; the phase it needs has no derivation |
 | `qou-cds2` | in-progress | the Gram singularity under D; `G_PINV` pseudoinverse still live in `gram.py` / `gram.rs` / `confinement-operator-selection.py` |
-| `qou-oots` | in-progress | **author's call**: RT `d_q²/D²` vs Molien weight family |
+| `qou-oots` | in-progress | ruled Molien 2026-09-05; remaining scope is the α_em-axis triage |
 | `qou-e5jf` | todo | three inconsistent deuteron knots; owner ruling A picked braid closure; bean body not updated since 08-21 |
 | `qou-q3np` | todo (high) | `A_ω → S(μ)/S(p)` has no precedent and a structural obstruction (do not close: rule 13a) |
 | `qou-n1dj` | todo | does the mass fibre functor land in `Rep(SU_q(2)) ≅ TL` or full `H₃(q)`? corpus self-contradiction, 197 ppm on m_p |
@@ -610,7 +610,7 @@ rate is itself the largest single drag on the programme.
 | # | decision | bean | what it unblocks | default if nothing is decided |
 |---|---|---|---|---|
 | D1 | **what ε means** in `Q_β = \|ε(Δ)\|·E₀` (augmentation `σ ↦ q`, or a non-trace element, or retract Q_β as a prediction) | `qou-99qc` | the only lever on **three of six** L2 rows; `qou-cds1`'s ladder cannot start without a base | the published 0.17 % keeps being read as live and re-derived (it has been once) |
-| D2 | the **Plancherel weight family** in Φ_k: RT `d_q²/D²` (mass-one by construction) vs Molien `f^λ dim_q/[n]_q!` (mass-one by theorem) | `qou-oots` | every cross-atom metric | `dim_q²` stays, with a measured non-normalisation of 1.517 at n = 12 |
+| D2 | ~~the **Plancherel weight family** in Φ_k~~ — **ALREADY RULED (owner, 2026-09-05, `qou-oots`): Molien `f^λ q^{−κ} dim_q/[n]_q!` is canonical, `d_q²/D²` kept as a labelled comparison arm.** This row was written as open by mistake; corrected 2026-09-08 (§8). Re-affirmed by the owner the same day. | `qou-oots` | the α_em-axis triage (PR #6840) is what remains in the bean | — |
 | D3 | **close or re-scope `qou-e5jf`** against ruling A, and retire the census rows from the production table (`prediction_method: canonical-trace` on selected numbers) | `qou-e5jf`, `qou-fcn8` | stops the retired ²H `Vol(6₂)` number and the census A = 3 rows being republished as derived | the 2026-09-07 witness keeps publishing them |
 
 ### 7.2 Research — the four un-derived objects, in order
@@ -681,3 +681,71 @@ is below the calibration floor at the proton pin in any case (§1.3).
   or audit doc is marked `[W]` / `[D]`, and the ones re-measured here `[M]`.
 - Session beans: milestone `qou-tonv`; tasks `qou-zw8t`, `qou-tatx`, `qou-xyqh`, `qou-xzo8`,
   `qou-b9xt`, `qou-lxdq`, `qou-z024`.
+
+---
+
+## 8. Owner response and rulings (2026-09-08) — recorded, with what changed in this document
+
+The owner answered the §7 option list the same day. All four items were selected, with one
+ruling added. Verbatim, from the structured reply:
+
+> *"All selection of great words should be done through gamma gamma production and the
+> semi-definite product solutions at q_0. Shouldn't use census."*
+
+Reading (agent's, marked as a reading): *braid* words. Every canonical braid word is to be
+**selected** by the γγ (Breit–Wheeler pair-production) construction — words assembled from
+pair-production vertices, the `σ₀σ₁⁻¹ = γγ̄` reading already in
+`gamma_gamma_pair_production_decomposition.py` and `breit-wheeler-pair-production-derivation.md`
+— with the **confinement SDP at q₀** (PSD Wedderburn projections; `sdp_gamma_gamma_to_qqbar.py`,
+`nucleus_operator_selection_sdp.py`, `prop:confinement-sdp`) picking the canonical `T_w`. Census
+volume-matching is excluded as a selection mechanism. **Carrier bean: `qou-ales`.**
+
+### 8.1 What the ruling bears on in this document
+
+- §2.2 items 1–3 — the nucleon word, the quark → crossing template and the colour-weighted atom
+  word — are exactly the *chosen* joints the ruling says are to be *selected*. Under the ruling
+  they stop being template assignments and become outputs of step 10.
+- §3.1 knot-id "admitted fit" and `conj:canonical-knot-id-sdp`: the SDP route is the one named.
+- §3.4 / `qou-vbyi` (the diproton sign): every in-algebra direction is closed and the bean asks
+  for a "structural change"; a pp word *selected* by γγ + SDP rather than *assigned* by
+  `uu → σ` is that candidate. R2 "signs first" therefore runs through `qou-ales`.
+
+### 8.2 Corpus state of the named route `[M]`
+
+| piece | state |
+|---|---|
+| `sdp_gamma_gamma_to_qqbar.py` | a **starter scaffold** (witness 2026-08-29): the H₂ γγ → e⁺e⁻ demo only (`σ₀³` has `tr_M ≈ 0.73` at q₀); the H₃ skeleton is outlined; "full SDP solve deferred". Its own discipline line already reads "NO Vol_hyp. NO census." |
+| `nucleus_operator_selection_sdp.py` | sweeps `n_target = \|tr_M(W_atom)\|` taken **from the existing atom word** — circular as a selector; and the LP it solves is proved degenerate (§3.1) |
+| `qou-vd7j` | the 0/3558 admissibility result is an **over-determination artifact** — the net row `1ᵀx = A` is inconsistent with the six Frobenius rows for every nucleus; the cheap fix (drop the redundant row or use the consistent net) was named 2026-08-02 and never done; heavy-A f64 overflow is separate |
+| `breit-wheeler-pair-production-derivation.md` | bare `γγ = σ₀²` lands 1.6 % short of `2m_e`; the "colored photon" admixture carries parameters `φ₀, φ₁, φ₀₁` that must be **derived**, not fitted to `2m_e` |
+
+**What closing means, formalize-first:** (1) state in Lean what makes a word γγ-produced and
+what the SDP selects, before any search; (2) fix the `qou-vd7j` net-row over-determination and
+re-run admissibility, reporting per nucleus which words survive **without reading AME**; (3) only
+then compare the surviving words for p, n, ²H, pp, nn against the template — the diproton sign is
+the first falsifiable output. Default if nothing is done: words stay template-assigned and §2.2
+stays "chosen".
+
+### 8.3 The three decisions
+
+| # | decision | recorded where | consequence |
+|---|---|---|---|
+| D1 | **ε(Δ) := the augmentation `σ ↦ q`** (option B of the 2026-09-05 decision doc). The owner selected the option "Decide ε … I recommend the augmentation"; the selection endorsed an option that carried the agent's recommendation, and the bean says where to overrule | `qou-99qc` (2026-09-08 append); AGENTS.md scoping note | Q_β base = 0.8798906 MeV (+12.470 %); the published 0.17 % is retired as the base and kept as the C-frame / z = 1 historical cross-check; `qou-cds1` has its base and S1 reduces to the phase (`qou-pdix`); dashboard rows Q_β / m_n / Δ_pn to be re-scored on the augmentation base — **not done here** (needs the producer under D; ask-before-change) |
+| D2 | **Molien** — not a new decision: ruled 2026-09-05, re-affirmed today | `qou-oots` | this document's §5.3, §5.5, §7.1 said the choice was open; **that was my error**, corrected above |
+| D3 | not selected as such; the owner's ruling above supersedes it — the census rows are retired by the ruling, not by a bookkeeping close of `qou-e5jf` | `qou-ales` | `qou-e5jf` stays open (rule 13a) with a cross-reference |
+
+### 8.4 Coordination repairs authorised (C1–C7) — what landed on this branch
+
+Recorded in the commit log of PR #7159 as they land; the bean-hygiene items (C2, C3, C7) and
+the document refreshes (C1, C6) were run as two parallel tranches and are itemised in the PR
+body. C4 (the two live m_n values) and C5 (the L1 assertion tolerance) are noted below.
+
+- **C4 — the two live m_n values.** Recorded on `qou-khue`: neither is canonical until both
+  witnesses are re-scored on the augmentation base (D1) and stamped with functional + frame. Not
+  a witness edit in this PR (producer re-run under D; ask-before-change).
+- **C5 — the L1 gate now gates at the 1 ppQ it claims.** `onepb_status_dashboard.py`'s two
+  assertions tightened `1e-9 → 1e-15` (tightened, never widened); producer re-run with `clarabel`
+  restored to the environment so the provenance block does not degrade; both assertions pass at
+  `7.3e-50` and `1.2e-49` `[M]`. The only other fields that moved are `computedAt` / `commitSha` /
+  `scriptHash`. The `raw-float64` warning on `structural_max_non_anchor_delta_ppb` is
+  pre-existing on `main` (same `float` type there) and is not introduced here.
