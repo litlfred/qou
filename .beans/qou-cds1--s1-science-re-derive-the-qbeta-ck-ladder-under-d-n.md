@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T17:44:11Z
+updated_at: 2026-09-08T08:55:40Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8061,3 +8061,5 @@ proved through `descRun_le` + `elems_sorted` (#7103) + `threshold_to_pointwise`
 (2378 products, no candidate); the tower map itself; `card = catalan` at general
 m (route: bicoloured Motzkin, absent from Mathlib); and therefore
 `dim TL_n = catalan n` and the semisimplicity it feeds. NOT closed.
+
+## 2026-09-08 — BASE SETTLED by owner ruling (qou-99qc): ε := tr_M at z_D. The D-frame ladder is to be re-derived on the z_D base (0.4447004 MeV, −43.157 %). Structural c₂ = −1 remains the self-consistency check; the blocker is still the N=1 phase (qou-pdix). No z-swap of the C ladder (decayLadder_zC_threeRow_ne_zero).

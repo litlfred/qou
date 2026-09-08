@@ -2203,26 +2203,28 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > forbidden — the choice turns on what `ε` **means** in `Q_β = |ε(Δ)|·E₀`,
   > which is bean `qou-99qc` and is an owner call.
   >
-  > **🟧 OWNER DECISION 2026-09-08 — ε is the AUGMENTATION `σ ↦ q` (option B).**
-  > Selected in chat on the option *"Decide ε in Q_β (qou-99qc) — Augmentation σ↦q
-  > (+12.47 %), z_D trace (−43.16 %), or retract Q_β; I recommend the augmentation"*.
-  > Base value `0.8798906` MeV, **+12.470 %** against CODATA. The published 0.17 %
-  > form is retired as the base (it is the `z = 1` cell) and stays citable only as
-  > the historical C-frame cross-check. The c_k ladder is to be re-derived on this
+  > **🟧 OWNER RULING 2026-09-08 (final, same day) — ε is the MARKOV TRACE AT
+  > `z_D = q³/(q²+1)`, i.e. option C; convention D governs the decay channel
+  > (D7).** Sequence, for the record: the owner first selected the augmentation
+  > on an option that carried the agent's recommendation; the same hour
+  > `13bb8243d8` (`qbeta_augmentation_is_a_markov_trace_probe.py`, on `main`)
+  > showed the augmentation IS the Markov trace at `z = q`, so the choice is
+  > *which Markov parameter*, and under D7 (convention D = the two-row
+  > truncation, scoped to the decay channel) the consistent point is `z_D` —
+  > the augmentation is the strictly finer one-row truncation (`y_(2,1) = 0`)
+  > and is **not** convention D. Put back to the owner with both options
+  > framed; **the owner chose `z_D`.** Base value `0.4447004` MeV,
+  > **−43.157 %** against CODATA. The published 0.17 % form is retired as the
+  > base (it is the `z = 1` cell) and stays citable only as the historical
+  > C-frame cross-check; the augmentation cell (+12.470 %) is the other
+  > admissible point and is proportional to `z_D`'s
+  > (`α = (q⁴+1)/(q²+1)²`). The c_k ladder is to be re-derived on the `z_D`
   > base (`qou-cds1`, blocked on the phase `qou-pdix`); the dashboard rows
-  > Q_β / m_n / Δ_pn are NOT yet re-scored on it. **🛑 IN TENSION WITH D7 —
-  > flagged the same hour, owner confirmation pending.** `13bb8243d8`
-  > (`qbeta_augmentation_is_a_markov_trace_probe.py`, on `main`) shows the
-  > augmentation IS the Markov trace at `z = q` (basis-wide, `z = q` the only
-  > solution), so the choice is *which Markov parameter*, and D7 (2026-09-07:
-  > convention D = the two-row truncation, governs the decay channel) then picks
-  > `z_D` (−43.157 %), because the augmentation is the strictly finer one-row
-  > truncation (`y_(2,1) = 0`) and is **not** convention D. The selection above
-  > was made on an option that did not know this. Until the owner confirms,
-  > neither base is wired. Same day, the owner also ruled
-  > that every canonical **braid word** is to be selected via γγ (pair-production)
-  > construction + the confinement SDP at q₀, never by census (bean `qou-ales`).
-  > Record: [`docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md`](docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md) §8.
+  > Q_β / m_n / Δ_pn are NOT yet re-scored on it. Same day, the owner also
+  > ruled that every canonical **braid word** is to be selected via γγ
+  > (pair-production) construction + the confinement SDP at q₀, never by
+  > census (bean `qou-ales`). Record:
+  > [`docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md`](docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md) §8.
   >
   > **Until it is made, cite this number with its scope**: it is a recorded
   > cross-check whose functional is inadmissible under the canonical

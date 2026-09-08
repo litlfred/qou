@@ -29,9 +29,9 @@
 > dashboard on 2026-09-07** (`d626761a34`, bean `qou-37j2`), so
 > `scoreable_total` is **6**, not 5; and the scored Q_β rests on a functional
 > that is **inadmissible under convention D** (`z = 1`), with the owner deciding
-> on 2026-09-08 that ε is the augmentation (bean `qou-99qc`) — **flagged the same
-> hour as in tension with D7** (`13bb8243d8`: the augmentation is the Markov trace
-> at `z = q`; D7 then selects `z_D`), confirmation pending — see §L1 below.
+> on 2026-09-08 that ε is the Markov trace at `z_D` (bean `qou-99qc`; the
+> augmentation was selected first, then `13bb8243d8` showed it is the Markov trace
+> at `z = q`, and the owner chose `z_D` to follow D7) — see §L1 below.
 
 ## TL;DR
 
@@ -226,16 +226,15 @@ truncation is ~10⁻⁶⁰ absolute (10⁻⁵¹ ppb), far exceeding 1 ppQ.
 >   sorry-free; witness field `functional_admissibility_qbeta.status =
 >   INADMISSIBLE_FUNCTIONAL`; AGENTS.md "SCOPING NOTE (2026-09-05)"). The 0.17 %
 >   is therefore selection against the target, not a derived prediction.
-> - **Owner decision 2026-09-08 (bean `qou-99qc`): ε is the augmentation
->   `σ ↦ q`**, base `0.8798906` MeV, **+12.470 %**. The published form is
+> - **Owner ruling 2026-09-08 (bean `qou-99qc`): ε is the Markov trace at
+>   `z_D = q³/(q²+1)`**, base `0.4447004` MeV, **−43.157 %** (the augmentation,
+>   `0.8798906` MeV / +12.470 %, is the other admissible point and was chosen
+>   first before `13bb8243d8` showed the two are one Markov family; the owner then
+>   followed D7). The published form is
 >   retired as the base and citable only as the C-frame / `z = 1` historical
->   cross-check; the ladder is to be re-derived on the augmentation base
+>   cross-check; the ladder is to be re-derived on the `z_D` base
 >   (`qou-cds1`, blocked on the phase, `qou-pdix`), and the Q_β / m_n / Δ_pn
->   rows are **not yet re-scored** on it. **🛑 In tension with D7 (flagged
->   2026-09-08, `13bb8243d8` on `main`):** the augmentation *is* the Markov trace
->   at `z = q`, so the choice is which Markov parameter, and D7 (convention D =
->   two-row truncation, governs the decay channel) selects `z_D` (−43.157 %);
->   owner confirmation requested, neither base wired.
+>   rows are **not yet re-scored** on it.
 > - "Exact" below refers to the *trace* — the terminating Habiro sum, an L1
 >   statement — never to the Q_β *prediction*. The `c_k` are not "a compute
 >   artefact with no independent mathematical role": `c₃` is extracted from
