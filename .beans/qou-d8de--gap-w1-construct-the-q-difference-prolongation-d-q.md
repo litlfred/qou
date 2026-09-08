@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-09-07T18:17:58Z
+updated_at: 2026-09-08T05:01:14Z
 ---
 
 
@@ -210,3 +210,43 @@ that form, so the dilation rigidity says nothing about it. That involution is th
 natural next automorphism to test.
 
 Audit: docs/audits/2026-09-07-w1-route2-fibre-monodromy-is-order-two.md.
+
+
+## Route 2, second reading (2026-09-08, bean `qou-ei4q`) — the involution lifts, and the base route is now closed ENTIRELY
+
+The `z -> 1/z` opening this bean recorded after #7114 is resolved, and it went
+both ways at once.
+
+**It lifts.** `z^3 * P(X/z, 1/z) = P(X, z)`, so `iota~ : (X,z) |-> (X/z, 1/z)` is
+an automorphism of Sigma. Unlike every dilation, `iota` passes the branch-locus
+test #6769 uses -- because `D` is palindromic -- and unlike the eigenvalue reading
+of #7114 it produces a real object. Sigma's **first recorded nontrivial
+automorphism**.
+
+**It is the elliptic involution.** 4 fixed points, genus-1 Sigma, quotient `P^1`.
+Independently: the `w = z + 1/z` reciprocal cubic `16w^3+24w^2-13w+2` that the
+corpus has used since 2026-05-19 to index the three Galois orbits IS the base
+quotient coordinate for exactly this involution. That connection was not recorded.
+
+**But the base-automorphism route is now closed entirely, not narrowed.** This is
+the part that supersedes rather than extends #6769: a Moebius map is determined by
+three points, so `Stab(B)` embeds in `Sym(B) = S_6` and EVERY base automorphism
+preserving the branch locus has order at most 6 -- for any squarefree sextic
+branch locus, not just this `D`. The substrate shift has infinite order
+(`q_0 = 1.10997858... > 1`). So no automorphism of the base supplies the W1
+q-shift, dilation or not, root of unity or not.
+
+Explicitly, `Stab(B) = {id, iota} = Z/2` (120 dps, labelled numerical).
+
+**What that leaves for W1.** Route 3 (Ramis-Sauloy-Zhang / Sauloy) is the live
+one, and it is now better supplied than it has ever been: Sigma has a genus (1), a
+distinguished involution, and an identified quotient (`P^1`). The three
+alternatives still open at scope (a) are unchanged from #7114 -- a structure not
+arising from a base automorphism at all, one built from the monodromy
+REPRESENTATION rather than an automorphism, and one built at `z = infinity`.
+
+`D_q` is still NOT constructed. The verdict of this bean -- import the framework
+before hand-rolling an operator -- is unchanged and is now better founded: four
+tranches have each closed a way of hand-rolling one.
+
+Audit: `docs/audits/2026-09-08-w1-palindromic-involution-lifts-and-is-elliptic.md`.
