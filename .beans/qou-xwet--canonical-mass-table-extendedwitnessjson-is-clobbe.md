@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-15T22:43:14Z
-updated_at: 2026-08-15T23:42:40Z
+updated_at: 2026-09-08T08:40:08Z
 ---
 
 Found 2026-08-15 on the post-merge reorientation pass (PR #4961 landed; this was
@@ -192,3 +192,40 @@ regressions 2 -> 1; only rho-k remains.
 Validator extended to check nuclide identity on KEYED pins too, not only
 positional ones -- otherwise it would verify nothing once this migration
 finished. Negative control reproduces the historical bug verbatim.
+
+
+## 2026-09-08 — re-measured against main: the CLOBBER is confirmed fixed; only the owner call is left
+
+Pulled off the `qou-bstl` completion-candidate queue (flagged by
+`0c027be468a`). Verified at the files rather than on the bean's own word,
+because "CORE FIX COMPLETE" above is a heading and the clobber — this bean's
+TITLE — is not in the four-item list that heading closes.
+
+**The clobber is genuinely gone.** `low_isotope_mass_table.py:104-106` now
+reads *"Invoke canonical_mass_table_extended.py end-to-end, at FULL coverage.
+Deliberately does **not** pass `--atoms` (bean `qou-xwet`)."* — so the
+subprocess writes the fixed output path with the full nine-row table and the
+"whoever runs the low-isotope table last wins" race is closed at the source
+rather than papered over downstream. The mechanism this bean opened on cannot
+recur through that path.
+
+**Item 3 is still open and is still the owner's.** `content/values/registry.ts`
+still carries `rho_q -> derived_50_digit.rho_q`, and that key still does not
+exist in `q-pinning-50-digit.witness.json`. Unchanged since 2026-08-15.
+
+**Item 4 is still blocked by item 3, as the bean predicted.**
+`computations/registry_witness_pin_validator.py` exists and is NOT referenced
+anywhere in `scripts/precision-gates.sh` — wiring it in would ship a red gate
+for a defect nobody is authorised to resolve.
+
+So this bean is a **false positive on the completion-candidate list** (cause 1,
+partial completion, compounded by cause 4, parked on an owner call). It stays
+`todo`. What it is waiting on is one decision, not any work:
+
+> delete the `rho_q` registry entry, or point it at a live producer once one
+> emits the intended quantity. Neither `rho_q` nor `B_2H_AME_MeV` has ever
+> been consumed by a `:val[...]` directive, so the no-op costs nothing today —
+> it costs the validator staying unwired, which is the guard against the next
+> pin going dead unnoticed.
+
+Nothing measured here changes any number.
