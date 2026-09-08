@@ -337,6 +337,44 @@ holds the method (Garoufalidis–Kashaev, *From state integrals to q-series*, `a
 4₁ instance (`qbeta_m1_rotated_index_from_blocks.py`); the pretzel instance is the tranche
 `qou-m3ad` Part 8 names. The `s`-polynomial table above is the exact `σ₁σ₁` entry and stands.
 
+## 3g. The sister hypothesis, tested and refuted in its natural configuration (2026-09-08)
+
+**Producer:** [`computations/probes/aomega_m3_sister_i13_block_index_certification_probe.py`](../../computations/probes/aomega_m3_sister_i13_block_index_certification_probe.py)
+(bean `qou-x3iv`; owner: "compute the pretzel's state-integral asymptotics in-sandbox").
+
+**The hypothesis (H-I13).** GK `arxiv-1304.2705v1` §1.3: `I_{1,2} = I_{4₁}`, `I_{2,3} = I_{5₂}`. The
+pretzel (−2,3,7) is the 5₂ *sister* (same volume, same trace field), so the natural candidate is the
+other member `(A,B) = (1,3)` of the same one-dimensional family, i.e. the same two q-series towers
+with the roles of `q` and `q̃` exchanged. If true, GGM `arxiv-2012.00062v3` Theorem 28 gives the
+pretzel's holomorphic blocks explicitly and item 1 runs.
+
+**The test, entirely from held text.** GGM (315)–(316): `S⁺₁₁(x;q) = Σ_k H_k(x;q)·H_k(x⁻¹;q⁻¹)`
+over the three 5₂ blocks `H(x,y,z;q) = Σ_n q^{n(n+1)} zⁿ (q^{1+n}x;q)_∞ (q^{1+n}y;q)_∞ / (q;q)_n`
+(pinned by their (270) `lim_{z→0} H = (qx)_∞(qy)_∞`; it is `G_{2,3}` of (325) at `y₃ = 1`), block
+arguments from (326) with `x = (1,x,1/x)`, `w = 1`; the `q⁻¹` side by their (106)
+`(u;q⁻¹)_∞ = (qu;q)_∞⁻¹`. Gates: the (106) rule reproduces their printed `J₋` from `J₊`
+(4₁, (127a/b)); the `(2,3)` bilinear reproduces their printed (316) to q² and the **derived** 5₂
+index (§3f) to q³. The `(1,3)` candidate is the same construction with `A = 1`.
+
+**Result.** The `(1,3)` bilinear is **identical** to the `(2,3)` bilinear at every order computed
+(to q³, symbolically in `x`): `1 − (x⁻²+3x⁻¹+4+3x+x²)q + (x⁻³+x⁻²−1+x²+x³)q² + (s⁴−2s−1)q³`, i.e.
+the 5₂ index, `1 − 12q + 3q² + 74q³` at `x = 1`; the pretzel's derived index is
+`1 − (2x+4+2/x)q + …`, `1 − 8q + 3q² + 50q³`. So **H-I13 is refuted in the 5₂ configuration**
+`u = (0,u,−u)`, `t = 0`, and the mechanism is structural rather than numerical: the `A ↔ r−A`
+exchange (the `q ↔ q̃` swap) is invisible in the `σ₁σ₁` entry — GK Lemma 1.5(a),
+`F_{A,B}(q⁻¹,x) = F_{B−A,B}(q,x)`, is exactly the symmetry that makes the two bilinears
+coincide. Hence no member of the one-dimensional family *with this `u`-configuration* can
+separate the pretzel from 5₂ in `σ₁σ₁`, and the pretzel is not the "`q ↔ q̃` sister" of 5₂
+inside the GK family. Scope-(a) with respect to the configuration only: a `(1,3)` or other
+one-dimensional integral with a *different* `u`-configuration is not excluded by this test, and the
+three-dimensional DG (5.2) integral for `m016` is untouched.
+
+**What this leaves.** The derived pretzel index is now known to be *not* reproducible by the
+one-dimensional sister construction, so the honest route to the pretzel's blocks is the
+three-dimensional state integral of `m016` (DG `arxiv-1202.6268v2` eq (5.2)) evaluated by
+residues, or a one-dimensional reduction derived (not guessed) from its NZ datum. Both are
+research computations with the same certificate: the derived index family of §3f.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
