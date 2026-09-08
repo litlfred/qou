@@ -1,33 +1,46 @@
 #!/usr/bin/env python3
-"""Lossless per-λ χ at q₀ via the Rust `chi_q_via_gp` path — ANY atom (Z,N).
+"""Lossless per-λ χ at q₀ for ANY atom (Z,N) — seminormal PATH SUM by default,
+Rust `chi_q_via_gp` on request.
 
 Generalizes `chi_4he_via_rust_lossless.py` (hard-coded ⁴He) to any nuclide. The
 pure-Python matrix-M producer (`chi_at_q0_via_matrix_m_mpfr.py`) builds the full
-dim×dim seminormal per partition — infeasible past H₁₂ (the ⁵Li H₁₅ mpmath run
-spends ~9 s on a single dim-90 λ; dims reach the thousands). The canonical Rust
-`pyhecke_native.chi_q_via_gp` returns the exact Laurent character per λ in ~20 ms
-**independent of dim V_λ**, so a whole nucleus is seconds:
+dim×dim seminormal per partition — infeasible past H₁₂.
 
-    ⁴He H₁₂ (77 λ) ≈ 2 s · ⁵Li H₁₅ (176 λ) ≈ 4 s · ⁶Li H₁₈ (385 λ) ≈ 8 s
+COST — MEASURED, NOT ESTIMATED (bean qou-s7ld, 2026-09-07; the two earlier
+sentences here read "~20 ms per λ independent of dim V_λ, so ⁵Li ≈ 4 s" and
+were refuted by a 3 h 35 m run that finished < 40 of 176 partitions, bean qou-d9wf):
 
-The matrix-M backend was verified to MATCH `chi_q_via_gp` to the 50-dps floor
-(18/18 partitions D/T/³He/⁴He, PR #2062 §8), so this Rust producer yields the
-SAME values the matrix-M producer would — fast and lossless (no max_dim cap, no
-skipped-max-dim placeholders). It consumes the closed-form y_λ tower
-(`y_lambda_tower_infra.py`, n>12) so tr_M(q₀) = Σ_λ y_λ·χ_λ is the complete
-1-ppQ Wedderburn trace.
+    backend                 n=6        n=9        n=12       n=15      n=18
+    Rust chi_q_via_gp/λ    1.2 ms     26 ms      5.6 s      (~21 min extrapolated)
+    path-sum, ALL λ        17 ms      131 ms     655 ms     2.5 s     8.8 s
 
-Convention: sign-only crossings (chi_q_via_gp) — matches the D/T/³He/⁴He lossless
-matrix-M caches (#2089). NOT the averaged-crossing binding trace.
+The Rust route's cost is `reduce_basis_to_minimal_length_complete` (Hecke
+conjugation of the T_w expansion toward minimal-length class representatives),
+not dim V_λ and not the expansion itself — the borromean atom word's T_w support
+is exactly 6^A.  The path sum (`chi_path_sum_seminormal.py`) uses the fact that
+the atom word touches every seminormal level in exactly one contiguous factor,
+so χ^λ(T_β) = Σ_{T∈SYT(λ)} Π_j ⟨T|F_j|T⟩ contracts as a transfer matrix over
+shapes and never sees dim V_λ.  It agrees with the Rust seminormal kernel and
+with `chi_q_via_gp` to the 50-dps floor on every partition of D/T/³He/⁴He.
+
+It consumes the closed-form y_λ tower (`y_lambda_tower_infra.py`, n>12) so
+tr_M(q₀) = Σ_λ y_λ·χ_λ is the complete 1-ppQ Wedderburn trace.
+
+Convention: sign-only crossings — matches the lossless matrix-M caches (#2089).
+NOT the averaged-crossing binding trace.  Braid word: `atom_braid_word_3A`
+with its default `intra_order="borromean"` (owner ruling 2026-09-05, qou-92u9);
+the word ordering is recorded in the witness as `braid_word_intra_order`.
 
 Output: chi-{atom}-h{n}-at-q0-50dps-matrix-m.witness.json (one per atom; the
-active-set consumers read this format transparently).
+active-set consumers read this format transparently).  Written atomically
+(tmp + os.replace) so a kill mid-write cannot truncate a cache.
 
-Usage:  python3 chi_via_rust_lossless.py 5Li 6Li [7Li 8Be ...]
+Usage:  python3 chi_via_rust_lossless.py 5Li 6Li [7Li 8Be ...] [--fresh] [--backend path-sum|gp]
 """
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -51,7 +64,16 @@ from tr_m_wenzl_bridge_mpfr import _Y_LAMBDA_DEFAULT, _load_y_lambda  # noqa: E4
 from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
 from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
+from chi_path_sum_seminormal import (  # noqa: E402
+    NotLevelLocal, build_segments, chi_lambda_path_sum, segments_of,
+)
 from witness_base import WitnessBuilder  # noqa: E402
+
+BACKENDS = ("path-sum", "gp")
+# The word producer's default; recorded in every witness so a reader can tell
+# a borromean-word cache from a pre-2026-09-05 grouped-word one without
+# recomputing (the two differ at the first non-trivial partition).
+INTRA_ORDER = "borromean"
 
 
 def _ensure_y_lambda(n: int) -> None:
@@ -120,8 +142,25 @@ def _stamp_anchor(out: Path, cached: dict) -> None:
                        encoding="utf-8")
 
 
-def compute_atom(atom: str, q: mp.mpf, fresh: bool = False) -> dict:
-    """Lossless χ cache for one atom via Rust chi_q_via_gp. Writes the witness."""
+def _atomic_write(out: Path, payload: dict) -> None:
+    """tmp + os.replace: a kill inside the write leaves the old cache intact
+    (bean qou-d9wf named this gap; the old bare write_text could truncate)."""
+    tmp = out.with_suffix(out.suffix + ".tmp")
+    tmp.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    os.replace(tmp, out)
+
+
+def compute_atom(atom: str, q: mp.mpf, fresh: bool = False,
+                 backend: str = "path-sum") -> dict:
+    """Lossless χ cache for one atom. Writes the witness.
+
+    `backend="path-sum"` (default): `chi_path_sum_seminormal` — dim-free, seconds
+    at H₁₈. Falls back to `gp` only if the word is not level-local (it always is
+    for `atom_braid_word_3A`; the check is cheap and loud).
+    `backend="gp"`: the Rust `chi_q_via_gp` route (minutes per λ at n ≥ 12).
+    """
+    if backend not in BACKENDS:
+        raise ValueError(f"backend must be one of {BACKENDS}, got {backend!r}")
     Z, N = ATOMS[atom]
     n_strands, word = _word_for_braid_word_3a(Z, N)
     n = n_strands
@@ -166,15 +205,33 @@ def compute_atom(atom: str, q: mp.mpf, fresh: bool = False) -> dict:
     t0 = time.monotonic()
     per_partition = []
     running = mp.mpf(0)
-    print(f"  {atom:>10} H{n}: {len(shapes)} partitions via Rust chi_q_via_gp",
-          flush=True)
+    segs = None
+    if backend == "path-sum":
+        try:
+            segs = build_segments(word, q)
+        except NotLevelLocal as e:
+            print(f"     word is not level-local ({e}); falling back to Rust "
+                  f"chi_q_via_gp", flush=True)
+            backend = "gp"
+    if backend == "path-sum":
+        seg_sizes = [len(s["gens"]) for s in segments_of(word)]
+        print(f"  {atom:>10} H{n}: {len(shapes)} partitions via seminormal path-sum "
+              f"({len(seg_sizes)} level-local segments, gens/segment {seg_sizes})",
+              flush=True)
+    else:
+        print(f"  {atom:>10} H{n}: {len(shapes)} partitions via Rust chi_q_via_gp "
+              f"(measured 5.6 s/λ at n=12 and >5 min/λ at n=15 — budget accordingly)",
+              flush=True)
     for i, shape in enumerate(shapes):
         shape_t = tuple(shape)
         y_lam = y_table.get(shape_t)
         if y_lam is None:
             continue
         t1 = time.monotonic()
-        chi = chi_rust_at_q_mpf(shape_t, n_strands, word, q)
+        if backend == "path-sum":
+            chi = chi_lambda_path_sum(shape_t, n, word, q, _segs=segs)
+        else:
+            chi = chi_rust_at_q_mpf(shape_t, n_strands, word, q)
         contrib = mp.mpf(str(y_lam)) * chi
         running += contrib
         per_partition.append({
@@ -185,20 +242,34 @@ def compute_atom(atom: str, q: mp.mpf, fresh: bool = False) -> dict:
             "compute_time_sec": int(time.monotonic() - t1),
         })
         if (i + 1) % 40 == 0:
-            print(f"     [{i+1}/{len(shapes)}] {time.monotonic()-t0:.1f}s", flush=True)
+            el = time.monotonic() - t0
+            print(f"     [{i+1}/{len(shapes)}] {el:.1f}s  ETA {el/(i+1)*(len(shapes)-i-1):.1f}s",
+                  flush=True)
     elapsed = time.monotonic() - t0
 
+    backend_note = (
+        "seminormal path-sum (chi_path_sum_seminormal.py: the atom word touches "
+        "every seminormal level in one contiguous factor, so χ^λ is a transfer-"
+        "matrix contraction over shapes, dim-free; agrees with Rust "
+        "chi_lambdas_braid_mpfr and chi_q_via_gp to the 50-dps floor, bean qou-s7ld)"
+        if backend == "path-sum" else
+        "canonical Rust chi_q_via_gp path (T_w expansion + minimal-length "
+        "reduction + q-MN; 5.6 s/λ at n=12, bean qou-d9wf)"
+    )
     payload = {
         "computation": f"chi-{atom}-h{n}-at-q0-50dps-matrix-m",
         "description": (
             f"Lossless per-λ χ^λ(β_atomic({Z},{N}))={atom} at q_0, 50 dps, ALL "
-            f"{len(per_partition)} partitions of S_{n} via the canonical Rust "
-            f"chi_q_via_gp path (sign-only crossings; matches the matrix-M "
-            f"backend to the 50-dps floor, PR #2062 §8). No max_dim cap — "
-            f"feasible at any n because χ_λ is dim-independent (~20 ms/λ). "
+            f"{len(per_partition)} partitions of S_{n} via the {backend_note}. "
+            f"Sign-only crossings; matches the matrix-M backend to the 50-dps "
+            f"floor (PR #2062 §8). No max_dim cap. Braid word: atom_braid_word_3A "
+            f"intra_order={INTRA_ORDER!r} (owner ruling 2026-09-05, qou-92u9). "
             f"y_λ from the closed-form tower (y_lambda_tower_infra.py)."
         ),
-        "producer": "rust-chi-q-via-gp-lossless",
+        "producer": ("seminormal-path-sum-lossless" if backend == "path-sum"
+                     else "rust-chi-q-via-gp-lossless"),
+        "chi_backend": backend,
+        "braid_word_intra_order": INTRA_ORDER,
         "convention": "sign-only-crossings",
         # ⚠ Δ(tr_M) between isobars is ZERO BY CONSTRUCTION here — not physics.
         # `_word_for_braid_word_3a` takes the sign from the `c` field of
@@ -235,7 +306,7 @@ def compute_atom(atom: str, q: mp.mpf, fresh: bool = False) -> dict:
         "tr_M_at_q0": str(running),
         "by_partition": per_partition,
     }
-    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    _atomic_write(out, payload)
     print(f"  {atom:>10} LOSSLESS: {len(per_partition)} λ, "
           f"tr_M(q0)={mp.nstr(running,16)}, {elapsed:.1f}s  →  {out.name}",
           flush=True)
@@ -246,32 +317,43 @@ def compute_atom(atom: str, q: mp.mpf, fresh: bool = False) -> dict:
 
 def main() -> int:
     set_compute_dps()
-    raw = [a for a in sys.argv[1:] if a != "--fresh"] or ["5Li", "6Li"]
-    fresh = "--fresh" in sys.argv[1:]
+    argv = sys.argv[1:]
+    backend = "path-sum"
+    if "--backend" in argv:
+        i = argv.index("--backend")
+        backend = argv[i + 1]
+        argv = argv[:i] + argv[i + 2:]
+    raw = [a for a in argv if a != "--fresh"] or ["5Li", "6Li"]
+    fresh = "--fresh" in argv
     atoms = [ATOM_ALIASES.get(a, a) for a in raw]
     q = mp.mpf(Q_50_DIGIT_STR)
     t0 = time.monotonic()   # WitnessBuilder durationMs = monotonic() − start_time
     print("=" * 84)
-    print(" Lossless per-λ χ at q₀ via Rust chi_q_via_gp — general (any atom)")
-    print(f"   q₀ = {Q_50_DIGIT_STR[:22]}…")
+    print(f" Lossless per-λ χ at q₀ — general (any atom), backend={backend}")
+    print(f"   q₀ = {Q_50_DIGIT_STR[:22]}…   word intra_order={INTRA_ORDER}")
     print("=" * 84)
     results = []
     for atom in atoms:
         if atom not in ATOMS:
             print(f"  {atom}: not in ATOMS, skip", flush=True)
             continue
-        results.append(compute_atom(atom, q, fresh=fresh))
+        results.append(compute_atom(atom, q, fresh=fresh, backend=backend))
 
     wb = WitnessBuilder("chi-via-rust-lossless-general", engine="python",
                         start_time=t0)
     wb.set_description(
-        "Lossless per-λ χ(q₀) caches via Rust chi_q_via_gp for arbitrary nuclides "
-        "(generalizes chi_4he_via_rust_lossless.py). χ_λ is dim-independent "
-        "(~20 ms/λ) so any H_n is seconds; consumes the closed-form y_λ tower for "
-        "n>12. Produces the canonical chi-{atom}-h{n}-...-matrix-m.witness.json "
-        "the active-set / binding consumers read. Sign-only convention; matches "
-        "the matrix-M backend to the 50-dps floor (#2062 §8)."
+        "Lossless per-λ χ(q₀) caches for arbitrary nuclides (generalizes "
+        "chi_4he_via_rust_lossless.py). Default backend is the dim-free "
+        "seminormal path-sum (chi_path_sum_seminormal.py; ⁵Li H₁₅ 176 λ in ~3 s, "
+        "⁶Li H₁₈ 385 λ in ~9 s); `--backend gp` selects the Rust chi_q_via_gp "
+        "route (5.6 s/λ at n=12, infeasible at n=15 — bean qou-d9wf). Consumes "
+        "the closed-form y_λ tower for n>12. Produces the canonical "
+        "chi-{atom}-h{n}-...-matrix-m.witness.json the active-set / binding "
+        "consumers read. Sign-only convention; borromean intra-nucleon word "
+        "(qou-92u9); matches the matrix-M backend to the 50-dps floor (#2062 §8)."
     )
+    wb.add_data("chi_backend", backend)
+    wb.add_data("braid_word_intra_order", INTRA_ORDER)
     wb.add_data("atoms", [r["atom"] for r in results])
     wb.add_data("results", results)
     wb.add_data("total_time_sec", int(time.monotonic() - t0))
