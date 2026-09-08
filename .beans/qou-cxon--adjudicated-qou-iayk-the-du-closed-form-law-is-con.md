@@ -1,11 +1,11 @@
 ---
 # qou-cxon
 title: 'ADJUDICATED (qou-iayk): the D(u) closed-form law is convention-C by construction and must be re-derived in D'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T19:34:02Z
-updated_at: 2026-08-23T19:35:38Z
+updated_at: 2026-09-08T08:29:09Z
 ---
 
 Adjudicates `qou-iayk`, which blocked the Habiro convention-D regeneration on
@@ -417,3 +417,61 @@ the Field version I set out to write.
   CLOSED (co-location rule, 12/12), and the mechanism now PROVED in Lean.
 
 Nothing in this bean is left at "interpretation".
+
+
+---
+
+## CLOSED 2026-09-08 — the bean's own last line says "fully closed"; the status field had not been moved. Lean verified at the file.
+
+This is the cleanest kind of candidate: the author wrote the closure and left the
+field at `todo`. Its own closing section:
+
+> *"**qou-cxon is now fully closed.** Q1 — DERIVED: the interface 12 is the
+> denominator of 1/2 − delta/4, 12 = 4*3 (PR #5666). Q2 — ANSWERED (3A−1 minus 2
+> per neutron, by cancellation), residue CLOSED (co-location rule, 12/12), and
+> the mechanism now PROVED in Lean. Nothing in this bean is left at
+> 'interpretation'."*
+
+### Verified at the Lean rather than from the bean
+
+`QOU/BraidsAndKnots/AveragedCrossingCollapse.lean`:
+
+| check | result |
+|---|---|
+| `sorry`, term-shaped pattern | **0** |
+| `sorry`, token-shaped pattern | **0** |
+| `axiom` declarations | **0** |
+| base ring | `variable {R : Type*} [CommRing R]` (:57) — generic, §7c |
+
+Both patterns at zero is the standard this session established: a `sorry` term
+and a `sorry` mention are lexically identical in this corpus, so only zero under
+both is clean. Here it is zero under both.
+
+The named declarations are all present: `sq_sigma_coeff` (:61),
+`sq_sigma_coeff_vanishes` (:68), `sigmaCoeff_full_ne_zero` (:77),
+`sigmaCoeff_identity_ne_zero` (:84), `four_sq_add_sub_one_sq` (:89),
+`scaledCollapseScalar_eq_cyclotomicSq` (:97), `cube_eq_scalar_mul` (:105).
+
+**One reading not to misreport**: grepping the file for `/ 2`, `⁻¹` or `Field`
+returns 5 hits, which looks like it contradicts the "division-free" claim. It
+does not — all five are in the **docstring** (lines 46-47), where the file
+explains that an earlier draft stated these over a `Field` using `h/2` and
+`h²/4` and why that was replaced. The code is division-free; the prose is
+describing what it is *not* doing. Same mention-vs-use shape as the `sorry`
+counting, recorded so the next reader does not re-open this on a grep.
+
+### The characteristic-2 correction is worth keeping visible
+
+The bean records that `ring` refused the first draft and **the refusal was
+right**: at characteristic 2, `2 = 0` and `h/2` is not the averaged coefficient,
+so the statement was *unsound* there, not merely unprovable. Carrying the
+hypothesis as `2 * d = -h` and scaling the cyclotomic identity by `q²` removed
+the characteristic assumption instead of patching it with `(2 : K) ≠ 0` — which
+is why the file ends up stronger (generic `CommRing`) than the `Field` version it
+set out to be. A tactic failure treated as information rather than an obstacle.
+
+### 13a
+
+The subject — *"the D(u) closed-form law is convention-C by construction and must
+be re-derived"* — is a re-derivation, and it is done and machine-checked. The
+mathematics closed, not merely its openness recorded.
