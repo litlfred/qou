@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-07T20:30:00Z
+updated_at: 2026-09-13T05:45:00Z
 ---
 
 ## Context
@@ -265,3 +265,71 @@ Taken over 2026-09-07 by claude/stalled-agents-em-linking-jilmbv after the #7079
 **2026-09-07 (witness 2, bean qou-fq1i, PR #7131): the "trace is a homomorphism" objection to InvolutionTowerWitness is CLOSED.** `QOU/MathlibExt/SymmetricGroupTowerWitness.lean`: symmetric-group algebra tower `MonoidAlgebra R (Equiv.Perm ℕ)`, `g = ginv = t m = of (swap m (m+1))`, trace = coefficient of the identity, z = zinv = 0, all MarkovTrace axioms hold. The trace is NOT a hom (`tr(t t) = 1 ≠ 0`), the filtration grows (`t_not_mem_shiftedUpTo`), and `SandwichReduces` is PROVED at every level (`sandwichReduces_sym`) via the double-coset decomposition `S_{k+1} = S_k ∪ S_k s_k S_k`, itself from "adjacent transpositions generate interval-supported permutations" (double induction). Hence `TowerSpan` and `DisjointBlockMultiplicative` through the #7079 chain, cross-checked by a direct proof from `W_{<n} ∩ W_{≥n} = {1}`. Non-trivial pair: `a = 1 + t n`, `b = 1 + t(n+1)`: tr(ab) = 1 = tr a·tr b, while tr(a·a) = 2 ≠ 1 — the law is about disjointness, not multiplicativity. 0 sorry; lean-direct exit 0; #print axioms clean on 18 decls.
 
 What remains: q = 1 / z = 0 / h = 0 only. The double coset is proved in the permutation model, never by rewriting with the braid + quadratic relations, so SandwichReduces for a Hecke tower at q ≠ 1 is still unproved and the bond-product reading of the atom word remains MEASURED, NOT DERIVED. Bean stays open.
+--------
+
+**2026-09-08 (PR #7153, branch `claude/hecke-sandwich-reduces-2026-09-08`): `TowerSpan` is PROVED from the braid relations. The gap this bean names is discharged as a hypothesis on the tower; what remains is an instance, not a proof.**
+
+New module `QOU/MathlibExt/HeckeSandwichReduces.lean` (~250 lines, 10 decls, 0 sorry).
+
+`class BraidedTower (T : MarkovTrace R A)` carries exactly three equations, each a
+defining relation of `H_n(q)` and none of them mentioning the trace:
+
+    quad   ∀ m, ∃ h : R, g m * g m = h • g m + 1      (Hecke: h = q − q⁻¹)
+    far    ∀ m k, k + 1 < m → g m * g k = g k * g m
+    braid  ∀ m, g (m+1) * g m * g (m+1) = g m * g (m+1) * g m
+
+`sandwichReduces_all` proves `SandwichReduces T (shiftedUpTo T n M) (M+1)` for
+every `n, M`, by induction on `M`. With `g₁ = g (M+1)`, `g₂ = g (M+2)` and the
+previous level's decomposition `c = u + Σ vᵢ g₁ wᵢ` at level ≤ M:
+
+  * `shiftedUpTo_commute` — everything at level ≤ M commutes with `g₂` (`far`,
+    since `M+1 < M+2`); `ginv_far` carries this to `ginv` via `quad`.
+  * `base_conj` — `g₂ u g₂ = u g₂² = h • (u g₂) + u`, the quadratic relation.
+  * `sandwich_conj` — `g₂ (v g₁ w) g₂ = v (g₂ g₁ g₂) w = v (g₁ g₂ g₁) w
+    = (v g₁) g₂ (g₁ w)`, the braid relation, and both outer factors have risen
+    exactly one level.
+
+Base case: the bottom stage of the full shift window is affine in `g 0` (`quad`
+makes `ginv 0` affine), so one `quad` + one `braid` at `m = 0` suffice; below the
+window the stage is `⊥` and `quad` alone does it.
+
+`towerSpan_of_braided` / `disjointBlock_of_braided` compose it with #7079 and
+`disjointBlock_of_towerSpan`.
+
+**This is the thing qou-fq1i's own closing note said was still missing** — that
+bean records "the double coset is proved in the permutation model, never by
+rewriting with the braid + quadratic relations, so SandwichReduces for a Hecke
+tower at q ≠ 1 is still unproved". This proof IS the rewriting proof, generic in
+the tower, so it holds at q ≠ 1. The two results are complements, not duplicates.
+
+Refactor: `TowerSpanReduction.step_of_sandwichReduces` extracted from the body of
+`towerSpan_of_sandwichReduces` (now a one-line repackaging). The induction needs
+the per-level form to feed level M's conclusion into level M+1's hypothesis. No
+proof step changed.
+
+**🛑 WHAT IS STILL OPEN, and the bean stays open for it.** No `BraidedTower`
+instance on a Hecke tower is constructed. The class is bracketed by two witnesses
+that no single object combines:
+
+  * `braidedTower_unit` (this PR) — `unitMarkovTrace u` satisfies all three with
+    `h = u − u⁻¹`, non-zero as soon as `u² ≠ 1` (`unit_quad_scalar_ne_zero`). So
+    the relations do NOT force `h = 0`. Filtration constant.
+  * the symmetric-group tower (qou-fq1i / #7131) — filtration grows,
+    non-multiplicative trace, but `h = 0`.
+
+`braid_forces_eq_of_commuting_involutions` proves the third existing witness
+cannot be braided: for commuting involutions the braid relation collapses to
+`g m = g (m+1)`, so `InvolutionTowerWitness` satisfies `SandwichReduces` for
+reasons unrelated to this argument.
+
+A witness with a growing filtration AND `h ≠ 0` is an Iwahori-Hecke tower, which
+Mathlib does not supply. That is now the whole remaining distance, and the
+bond-product reading of the atom word remains MEASURED, NOT DERIVED.
+
+Verification: `lean -DautoImplicit=false -s 65536` against restored
+`lake-cache/qou-v4-24-0` with `DisjointBlockTraceLaw` (29 s) and
+`TowerSpanReduction` (6 s) rebuilt from main source into a hardlinked shadow —
+exit 0, no errors, no warnings. `InvolutionTowerWitness` re-checked against the
+refactored `TowerSpanReduction`: exit 0. `#print axioms` on all ten new
+declarations plus both refactored ones: `[propext, Classical.choice, Quot.sound]`
+(`unit_quad_scalar_ne_zero`: `[propext]` alone). Zero `sorryAx`.
