@@ -1,11 +1,11 @@
 ---
 # qou-omiu
 title: 'check-sidecars JUST regex: bare ≤/≥ make ℕ index comparisons read as archimedean (§7c false positive)'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T21:56:07Z
-updated_at: 2026-08-24T13:21:54Z
+updated_at: 2026-09-08T08:57:58Z
 ---
 
 FOUND while my own new Lean file took a §7c MIXED advisory it does not deserve.
@@ -189,3 +189,47 @@ wiring it is already owned by bean `qou-8plu` ("reach strict green and wire it")
 Left alone.
 
 **This half of qou-omiu closes as measured-and-declined, not as work.**
+
+
+## 2026-09-08 — CLOSED. Both halves verified at the tools, not on the bean's word.
+
+Pulled off the `qou-bstl` completion-candidate queue. Same shape as `qou-cxon`:
+the author wrote both closures in prose and left the status field at `todo`.
+
+**§7c half — the false positive is gone, and the sibling's design is better than
+either of the two I considered.** `scripts/check-sidecars.sh:220-221` no longer
+has the flat marker list this bean opened on. It is now two tiers:
+
+    ORDERED='(\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered)'   STRONG
+    WEAK='(0\s*<|<\s*1|≤|≥)'
+
+So the internal inconsistency this bean diagnosed — `<` counted only in its
+TYPED shapes (`0 <`, `< 1`) while `<=` counted BARE — is resolved not by
+narrowing `≤`/`≥` to typed shapes (my reverted fix, which reclassified 252 files
+and 98 R-touching ones) but by demoting them to a weak tier that cannot flag
+alone. The bare ASCII `<=` / `>=` spellings are gone from the marker set
+entirely.
+
+**Decisive check — the originating file.** Ran the checker on the file whose
+undeserved advisory opened this bean:
+
+    ▸ QOU/MathlibExt/MarkovUnusedGenerator.lean  [library Lean — no ℝ, generic OK]
+    check-sidecars: no un-sidecar'd §7c flags.
+
+Previously `[WARN §7c MIXED generic + archimedean -> split into two files]` on
+two ℕ generator-index comparisons. The prescribed remedy would have been
+actively wrong, and it is no longer prescribed.
+
+**Suffix half — closed as measured-and-declined, which is a result, not a
+deferral.** The bean measured the proposed widening at 26.6 % of the scan
+surface lost against **zero** false positives prevented: of the deprecated-figure
+citations the guard actually catches, none is in a suffix-named file, and
+several of the hits that DO end in `_probe.py` are already excluded by
+directory, so the rule would only have removed coverage from top-level files
+that cite nothing. `--strict` being off by default is by design and its wiring
+is owned elsewhere (`qou-8plu`), correctly left alone.
+
+Nothing here changes a number, a proof, or a physics claim. Both halves reached
+a verdict; neither is waiting on anyone.
+
+**qou-omiu closes.**
