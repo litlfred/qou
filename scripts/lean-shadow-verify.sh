@@ -161,54 +161,48 @@ SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
 # correct by luck of environment.  Bean `qou-tpdg`.
 # Build this with a LOOP, not `ls -d <pat1> <pat2>`: `ls` SORTS its arguments,
 # so it reorders the two patterns ("$ROOT/.lake/..." sorts before
-# "$ROOT/content/...") and the root tree would win the pinning above.  Shell
-# glob expansion keeps the patterns in the order written.
+# "$ROOT/content/...") and the root tree would win the pinning above -- which is
+# exactly the bug being fixed, reintroduced by the fix.  Shell glob expansion
+# keeps the patterns in the order written.
 #
-# BUT A FIXED ORDER IS WRONG IN ONE DIRECTION OR THE OTHER, and pinning PAPER
-# first was wrong here.  Measured 2026-09-08, same session as the note above:
-# paper mathlib held 2352 oleans and NO `Mathlib/Tactic.olean`; root held 3469
-# WITH it.  Since Lean resolves a package from the first LEAN_PATH root holding
-# that package directory, the incomplete paper tree SHADOWED the complete root
-# one and every `import Mathlib.Tactic` failed -- naming the paper path in an
-# error about a file that exists at the root.  That is the previous bug with the
-# two locations swapped, which is the tell that neither pin is the fix.
+# THE PIN STAYS. `scripts/lean-sync-olean-trees.sh` (`182c59191`, bean
+# `qou-4h26`) reached this same asymmetry independently and answered it the
+# right way round: instead of choosing an order, hardlink the UNION of every
+# package tree into every package tree, so which one wins stops mattering.  Its
+# header says explicitly that this script's paper-first pinning "is correct and
+# is NOT changed here", and an earlier version of this file reordered anyway.
+# Reverted -- their fix removes the asymmetry, ordering only re-aims it.
 #
-# The cause is the same in-flight `lake build`, so this is transient: half an
-# hour later `Mathlib/Tactic.olean` was present in the paper tree and its count
-# was 2950.  A gate that is correct only between builds is not correct.
+# So this block only DIAGNOSES.  It is worth diagnosing because the union script
+# has no callers: nothing runs it, so until an agent does by hand, an incomplete
+# paper `Mathlib/` still shadows a complete root one and every `import
+# Mathlib.Tactic` still fails naming a path for a file that exists in the other
+# tree.  Measured here 2026-09-08: paper mathlib 2352 oleans with NO
+# `Mathlib/Tactic.olean`, root 3469 with it.
 #
-# Order the LOCATIONS by completeness, on the same criterion the tree selection
-# above uses.  Non-empty oleans only, so the 0-byte `Mathlib/Tactic` recorded
-# above counts as the absence it behaves like.  Correct on all three measured
-# containers, and not by luck: it asks the question that matters.
-#
-# Score EVERY location individually and sort, rather than ordering two groups.
-# Two intermediate versions of this got it group-wise and both were right only
-# by magnitude: summing the paper locations read 2800 against root's 3469, and
-# taking their max read 2848 -- but that 2848 is a DIFFERENT paper's tree from
-# the one the glob would put first (qou's own is 2352), so neither number
-# describes the location that actually shadows.  There are four locations here,
-# not two; rank them and the question stops being which group to pin.
-#
-# Score = non-empty oleans under that location's `mathlib`, so the 0-byte
-# `Mathlib/Tactic.olean` recorded above counts as the absence it behaves like.
-# A location with no mathlib at all scores 0 and sinks, which is what we want:
-# it can still supply aesop or batteries from the tail of the path.
-_scored=""
-for _loc in "$ROOT"/.lake/packages "$ROOT"/content/*/lean/.lake/packages; do
-  [ -d "$_loc" ] || continue
-  _c=$(find "$_loc/mathlib/.lake/build/lib/lean" -name '*.olean' -size +0 2>/dev/null | wc -l)
-  _scored="$_scored$(printf '%08d\t%s\n' "$_c" "$_loc")
-"
-done
-echo "mathlib olean counts per package location (most complete goes first on LEAN_PATH):"
-printf '%s' "$_scored" | sort -rn | sed 's/^0*\([0-9]\)/  \1/;s/\t/  /' | grep -v '^ *$'
+# Non-empty oleans only, so the 0-byte `Mathlib/Tactic.olean` of bean
+# `qou-tpdg` counts as the absence it behaves like.
 PKGROOTS=""
-for _loc in $(printf '%s' "$_scored" | sort -rn | cut -f2); do
-  for d in "$_loc"/*/.lake/build/lib/lean; do
-    [ -d "$d" ] && PKGROOTS="$PKGROOTS$d:"
-  done
+for d in "$ROOT"/content/*/lean/.lake/packages/*/.lake/build/lib/lean \
+         "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do
+  [ -d "$d" ] && PKGROOTS="$PKGROOTS$d:"
 done
+
+_mlfirst=""; _mlworst=""; _mlbest=""
+for _loc in "$ROOT"/content/*/lean/.lake/packages "$ROOT"/.lake/packages; do
+  [ -d "$_loc/mathlib/.lake/build/lib/lean" ] || continue
+  _c=$(find "$_loc/mathlib/.lake/build/lib/lean" -name '*.olean' -size +0 2>/dev/null | wc -l)
+  [ -z "$_mlfirst" ] && _mlfirst=$_c            # the one that actually shadows
+  { [ -z "$_mlbest" ] || [ "$_c" -gt "$_mlbest" ]; } && _mlbest=$_c
+  { [ -z "$_mlworst" ] || [ "$_c" -lt "$_mlworst" ]; } && _mlworst=$_c
+done
+if [ -n "$_mlfirst" ] && [ -n "$_mlbest" ] && [ "$_mlfirst" -lt "$_mlbest" ]; then
+  echo "WARNING: the mathlib tree FIRST on LEAN_PATH has $_mlfirst non-empty oleans," >&2
+  echo "  but another location has $_mlbest.  Lean resolves a package from the first" >&2
+  echo "  root holding that PACKAGE dir, so the smaller one answers for all of" >&2
+  echo "  Mathlib and you will see MISSING-OLEAN errors naming files that exist." >&2
+  echo "  Fix: scripts/lean-sync-olean-trees.sh   (bean qou-4h26)" >&2
+fi
 LP="$SHADOW:$PKGROOTS$SIBLINGS$OLEANS"
 
 ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
