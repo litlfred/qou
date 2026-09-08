@@ -1,11 +1,11 @@
 ---
 # qou-8p1g
 title: 'qou-8p1x/g: tetraplectic reaches SU(2), not SU(3) — and that SU(2) is already spent'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-24T19:22:02Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 Parent: `qou-8p1x`. Assessment of the tetraplectic / quaternionic layer
@@ -207,3 +207,18 @@ route, and per `qou-cauj` that register does not belong in the paper. If the
 owner wants the exclusion in the paper it would be a `remark` in
 `brings-surface` interpreting `rem:tetraplectic-su2-gauge-reading` — an
 authoring call, deliberately not taken here.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

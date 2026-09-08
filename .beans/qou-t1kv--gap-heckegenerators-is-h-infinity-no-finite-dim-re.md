@@ -1,11 +1,11 @@
 ---
 # qou-t1kv
 title: 'GAP: HeckeGenerators is H_infinity — Schur cascade (PROVED, #5766) blocks stdRep3; dim>1 IsJMWeight witness needs a bounded-index class variant'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-29T16:37:57Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 ## The defect
@@ -338,3 +338,18 @@ that does not happen.
 
 Successors: `qou-0o6j` (bridge the arc onto the real H_n(q)), `qou-ayyi` (the `Quotient.lean`
 header defect found while scoping it).
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

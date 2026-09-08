@@ -85,3 +85,61 @@ Whether to drain this at all, and how. Options, with what each costs:
 a bean whose *title* is "Prove X" or "GAP: X" while its body says X is open is
 mechanically identifiable and is where the whole risk sits. (a) is a defensible
 place to stop; (c) is not.
+## 2026-09-08 — ADJUDICATED. The drainable core is **18**, and it needs no judgement at all
+
+The n=8 hand-read above proposed a title-vs-body discriminator. Reading the
+candidates turned up a **better** one, and the number it gives is smaller and
+far harder to argue with.
+
+**The discriminator: does the bean's own body say THIS BEAN is open?** Not
+"something is open" — *this bean*. That is a self-contradiction against its own
+`status: completed` field, decidable by reading one sentence, and it requires
+judging no mathematics whatsoever.
+
+| bucket | count |
+|---|---|
+| candidates (strong open-language, `completed`) | 103 |
+| sentences asserting **this bean** is open | 20 |
+| — genuine self-contradictions | **18** |
+| — false positives on reading | 2 |
+| rejected by the negation / delegation guard | 4 |
+
+**The two false positives, and why a machine cannot drop them.** `qou-2yrn`'s
+*"it does not close the conjecture, which remains open"* is a correct scope
+note — that bean's subject was a status question ("is `res≠0 ⇒ P≠NP` a theorem
+or an assumption in the corpus?"), which it answered. `qou-b5yi` quotes **its
+own closing line** about a *different* bean (`qou-0hdx`, since scrapped).
+
+**Four more were caught by guards that the first pass did not have**, and one
+was my own error of exactly the kind this bean is about: `qou-1ucq` matched on
+*"remains open on this bean"* when the sentence reads **"Nothing remains open
+on this bean."** — the negation ran in an `elif` and was shadowed by the match
+it was meant to veto. `j7j2` and `qou-looi` say *"stays open (bean qou-b2ie)"*,
+i.e. the open item is **delegated to another bean**, which is correct practice.
+`qou-qb8f` says *"stays open (NOT this bean's to close)"* — it anticipated the
+misreading in its own text.
+
+### The sharpest case
+
+`qou-8dlq` was updated **2026-09-07**, the day *after* §13a landed, and its body
+cites the rule verbatim — *"Bean stays OPEN per owner rule (AGENTS.md 13a): its
+subject is the bridge's tier, which is an open conjecture."* — above a
+`status: completed`. **The rule was applied in the prose and not in the field.**
+
+Two others name the status they should carry and do not have it: `qou-j6gb`
+(*"Bean stays open with status in-progress until the `literal` count reaches
+0"*) and `qou-qexu` (*"the reason this bean is in-progress, not completed"*).
+
+### What was done
+
+All 18 set `completed` → `in-progress`, each with a note recording that only the
+status field moved. **No finding was revisited and no mathematics was judged** —
+the body already said what the status should be.
+
+### What was NOT done, and remains the author's call
+
+The other **79** candidates are the genuine judgement tier: a bean whose body
+says something *adjacent* is open (a sibling's scope, a downstream question, a
+residue of a mechanical subject). §13a is an agent judgement there by
+construction, and n=8 gave roughly half genuine — too thin to act on. Draining
+that tier is a real tranche and is still unclaimed.
