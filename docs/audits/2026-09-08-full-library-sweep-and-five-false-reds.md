@@ -1,9 +1,7 @@
 # The full-library sweep: five false reds, one real one, and what "outside the root build" costs
 
 **Bean:** `qou-g5sp`. **PR:** #7124. **Date:** 2026-09-08.
-**Status of the counts below: PROVISIONAL — the run is still in flight.** Every
-figure marked `[PENDING]` is unfilled on purpose; do not quote this document's
-aggregate until they are replaced and this line is deleted.
+**The run is complete: all 163 chunks, all 2774 library modules.**
 
 ## What was being measured, and why it needed measuring
 
@@ -11,13 +9,21 @@ aggregate until they are replaced and this line is deleted.
 
 ```
 modules on disk    2773
-imported by root    910
-NOT in the root    1863   (67%)
+root closure       1449   (TRANSITIVE — what `lake build` builds)
+NOT in the root    1324   (48%)
 ```
 
-`lake build QOU` builds the root's import closure and nothing else, so two thirds
-of the QOU library is outside every routine build. Bean `qou-g5sp` established
-that and asked the obvious next question — *how many of the 1863 are actually
+**🛑 Those are the CORRECTED figures, and the correction is this document's own.**
+The script measured the root's **direct import lines** (910) and called everything
+else "not in the root", giving **1863 (67 %)**. `lake build QOU` builds the
+**transitive closure**, which is **1450** modules including the root — so the gap
+is **1324 (47.7 %)**, and the overstated figure had reached `qou-g5sp`'s headline,
+the script's own docstring, an earlier revision of this document and a PR body
+before anyone checked. The script's docstring said "import closure" while its code
+summed one line each. Fixed in the same PR; **quote the transitive number.**
+
+Half the library outside every routine build is still the finding. Bean
+`qou-g5sp` established it and asked the obvious next question — *how many of the 1863 are actually
 broken?* — then recorded, correctly, that it could not answer it. Its author's
 own words: the sizing question "stands unanswered, now for a measured reason."
 
@@ -55,11 +61,14 @@ chunks is what fits the run into a container at 99 %.
 | full corpus disk, unchunked | ~800 MB | **~640 MB** at once |
 | full corpus disk, chunked | — | **one chunk's transient allocation**, which is why it fits a container at 99 % |
 
-## Five false reds, each of which taught the classifier something
+## Six gate defects against one real corpus defect
 
-Six modules came back red. **Five were the gate, not the corpus.** They are
-listed in the order they were found, because each one was indistinguishable from a
-real defect until the specific check beside it was run.
+**That ratio is the honest headline of this work.** A gate this young reporting on
+2774 modules is mostly reporting on itself, which is exactly why every red was
+triaged before it was believed. Six modules came back red; five were the gate. A
+sixth gate defect had no red at all and is the worst of them — see the table's
+last row. They are listed in the order found, because each was indistinguishable
+from a real defect until the specific check beside it was run.
 
 | # | symptom | what it actually was | fix |
 |---|---|---|---|
@@ -68,6 +77,7 @@ real defect until the specific check beside it was run.
 | 3 | `Unknown identifier bruhatLe_inv_iff` | **the snapshot.** The lemma exists at `CoxeterBruhat.lean:149`, that module *is* in the 24-module import closure, its namespace *is* opened — and it was added 2026-09-07 07:04 (`8ca51eb3ddc`) while the snapshot olean dates from 2026-09-06 07:04. `strings` finds the symbol 0 times. | `_standard_dirty`: `--only` closes over **stale** deps too |
 | 4 | root chunk selected all **2774** modules | `--only QOU` is a **prefix** and every module starts with it. Would have ENOSPC'd at 489 MB free — the exact failure chunking exists to prevent, caused by the mechanism meant to prevent it. | `--only-exact` → 101 |
 | 5 | `exit 139`, zero bytes of output | SIGSEGV on a large closure. **Not mine** — a sibling measured 5 of these on `QOU.Hecke.*` H3A/H4A (`333e491eaa4`); my sweep would have called every one RED. | new `UNVERIFIED` verdict |
+| 6 | **no red at all — silence** | the driver listed every top-level entry under `QOU/`, which includes plain `.lean` **files**. `--only QOU.Basic.lean` matches nothing, so **65 chunks were silent no-ops**; worse, `${ns%.lean}.log` sent `BraidKnot.lean` to `BraidKnot.log` and a one-module no-op **overwrote a real 456-module result**. Caught only because the driver claimed 139 chunks while 69 logs carried a summary. | distinct log names + exact selector per kind |
 
 Defect 3 deserves emphasis. It is `--all`'s own conflation, written into the flag
 by the author of this document: **`--all` says *verify* every module; it does not
@@ -128,13 +138,58 @@ not a duplicate — checked because #6909 had been made obsolete exactly that wa
 
 ## Results
 
+All 163 chunks completed. Counts are **distinct modules, unioned by name** — never
+a sum of per-chunk totals, because a chunk reports its pulled-in cross-namespace
+deps as `ok` too (the naive sum reached 2200 with 2193 still outstanding against a
+library of 2774, which is how that was caught).
+
 | | count |
 |---|---|
-| chunks completed | `[PENDING]` of 163 |
-| modules `ok` | `[PENDING]` |
-| **RED** (corpus defects) | `[PENDING]` |
-| **UNVERIFIED** (cannot judge here) | `[PENDING]` |
-| **TIMEOUT** (not judged) | `[PENDING]` |
+| chunks completed | **163 of 163** |
+| library modules **covered** | **2774 of 2774** — none unseen |
+| `ok` | **2754** |
+| **RED — corpus defects** | **0** |
+| UNVERIFIED — cannot judge here | 1 |
+| TIMEOUT — not judged | 4 |
+| SKIPPED — behind one of the above | 16 |
+
+### The residue is four clusters, none of them a defect
+
+Twenty modules were never seen `ok`. They are three timeout cascades and one
+missing Mathlib olean:
+
+| cluster | n | why |
+|---|---|---|
+| `QOU` (the root) + `Eightfold.ObstructionH2Mathlib` | 2 | the **mathlib cache gap** — `…GroupCohomology.LowDegree` absent from both trees; the root is skipped behind it |
+| `Machinery.HeckeH4*` | 10 | `HeckeH4BlockMap211` / `…31` TIMEOUT, 8 skipped behind them — **the same `QOU.Hecke*` H4 family a sibling measured as SIGSEGV** |
+| `MathlibExt.Octonion*` | 6 | `OctonionDerivationsUpperBound` TIMEOUT, 5 behind it |
+| `Archimedean.PauliWitness*` | 2 | `Witness12B` TIMEOUT, parent behind it |
+
+**So the library root is not broken — it is unverifiable in this container for want
+of one Mathlib olean.** That distinction is the whole purpose of the UNVERIFIED
+class; under the classification this branch started with, it would have read as a
+red root.
+
+### The answer to `qou-g5sp`, on the corrected denominator
+
+| | count |
+|---|---|
+| modules outside `lake build QOU`'s transitive closure | **1324** |
+| of those, **verified ok** | **1323** |
+| of those, not ok | **1** — `Machinery.HeckeH4RepDecomp`, a timeout cascade |
+| **real corpus defects found in the blind spot** | **1** — `Machinery.BruhatRankCriterion`, fixed |
+
+And the defect was genuinely in the blind spot: `BruhatRankCriterion` is **not** in
+the transitive closure, so `lake build QOU` would not have compiled it — nor would
+it have compiled `DominanceIsBruhat`, `BruhatReflection` or `CoxeterBruhat`. The
+whole Bruhat/Coxeter component sits outside. That check matters because had the
+module turned out to be *inside* the closure, this instance would not have
+supported the bean's thesis at all.
+
+**The scoping question `qou-g5sp` raises — whether to add the missing imports to
+`QOU.lean` — now has its measurement: the blind spot held exactly one real defect
+across 1324 modules.** That is the owner's decision and this document does not
+make it.
 
 ## What this result is NOT
 
