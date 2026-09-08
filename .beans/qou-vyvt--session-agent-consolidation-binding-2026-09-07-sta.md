@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:25:01Z
-updated_at: 2026-09-08T08:20:19Z
+updated_at: 2026-09-08T08:25:25Z
 ---
 
 Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (round 2 of the stalled-agent takeover; sibling round 1 is #7121 / qou-6g7j with fronts observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces — NOT duplicated here). This session: merge every clean open PR; take over the fronts #7121 left: the chi producer scaling wall (#7083), the Q_β ℚ(q)-coefficient leg (#7118), and the binding SHAPE residual (symmetry-energy term of the additive log law), which the owner names as where most of the binding gap sits. Goal statement: L2 toward 1 ppQ; binding is not an L2 row and must not be quoted as one (1ppQ reanalysis §5 item 3).
@@ -27,3 +27,5 @@ Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (
 - 08:11Z qou-nmuz DONE → PR #7172 (all four deltalambda consumers moved on borromean Li; saturation probe stays 3-red with a rotated set; re-pin of two Li assertions is an owner option). bind-local (qou-hxz4) and e0-scale (qou-v8ct) still running.
 
 - 08:20Z qou-hxz4 DONE → PR #7173 (honest negative: binding words not level-local, obstruction is the fixed-H_k embedding; re-embedding on 3A strands is an owner-level re-derivation, option 2). e0-scale (qou-v8ct) still running.
+
+- 08:25Z qou-v8ct DONE → PR #7174 (scope-(a) negative: uniform factor is 98.6 % of the log-residual and undecidable vs bond factors at fixed law; scale is downstream of shape). TRANCHE 2 COMPLETE: #7172 #7173 #7174 open, mergeable, awaiting owner merge permission; ledger #7168.
