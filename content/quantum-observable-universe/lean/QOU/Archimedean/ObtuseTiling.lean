@@ -258,4 +258,88 @@ theorem inscribedTriangle_subset_obtuseWedges_of_ne {R t α β γ : ℝ}
       exact hx
     · rw [show t + 2 * γ + 2 * α + β - β = t + (2 * γ + 2 * α) by ring]; exact hzs
 
+/-! ### The obtuse decomposition -/
+
+/-- **Milnor's obtuse figure**: the two surviving wedges, minus the one the
+obtuse angle turns subtractive.
+
+The acute `milnorWedges` is a union of three; here the `γ`-wedge is replaced by
+`W_sub = wedgeAt R (t+γ+π) (π−γ)`, which sits on the far side of the `γ`-chord
+and enters with a minus sign.  This is a set difference, not a signed sum: the
+subtracted wedge is contained in the union up to the chord line, so the
+arithmetic of Milnor's signed subdivision is realised set-theoretically. -/
+def obtuseWedges (R t α β γ : ℝ) : Set (ℝ × ℝ) :=
+  (wedgeAt R (t + 2 * γ + α) α ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β)
+    \ wedgeAt R (t + γ + π) (π - γ)
+
+theorem measurableSet_obtuseWedges (R t α β γ : ℝ) :
+    MeasurableSet (obtuseWedges R t α β γ) :=
+  ((measurableSet_wedgeAt _ _ _).union (measurableSet_wedgeAt _ _ _)).diff
+    (measurableSet_wedgeAt _ _ _)
+
+/-- **The reverse inclusion.**  A point of the obtuse figure off the `γ`-chord
+LINE lies in the triangle.
+
+Its own wedge supplies one chord directly and the neighbouring one through
+`wedgeAt_lt_chord_next` / `_prev` — both usable because `α` and `β` are acute.
+The `γ`-chord is the one that cannot be proved directly (`γ` obtuse puts
+`R cos γ < 0`, outside every chord helper's range, and `W_α ⊄ chordHalfplane R
+(t+γ) γ` in fact); it is extracted from `w ∉ W_sub` by
+`gamma_chord_of_mem_alpha` / `_beta`, which conclude `≤`.  Ruling out the
+equality case is exactly the hypothesis `hchord`, and is why this direction is
+a.e. rather than strict. -/
+theorem obtuseWedges_subset_inscribedTriangle_of_ne {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π)
+    {w : ℝ × ℝ} (hw : w ∈ obtuseWedges R t α β γ)
+    (hchord : w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ) ≠ R * Real.cos γ) :
+    w ∈ inscribedTriangle R t α β γ := by
+  obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  obtain ⟨hmem, hnot⟩ := hw
+  rcases hmem with hwα | hwβ
+  · -- in `W_α`: the α-chord is its own, the β-chord is its NEXT neighbour's
+    refine ⟨⟨?_, hwα.1⟩, ?_⟩
+    · exact lt_of_le_of_ne
+        (gamma_chord_of_mem_alpha hα0 hβ0 hγ hsum hwα hnot) hchord
+    · have h := wedgeAt_lt_chord_next hα0 hα hβ0 hβ w hwα
+      rwa [show t + 2 * γ + α + α + β = t + 2 * γ + 2 * α + β by ring] at h
+  · -- in `W_β`: the β-chord is its own, the α-chord is its PREVIOUS neighbour's
+    refine ⟨⟨?_, ?_⟩, hwβ.1⟩
+    · exact lt_of_le_of_ne
+        (gamma_chord_of_mem_beta hα0 hβ0 hγ hsum hwβ hnot) hchord
+    · have h := wedgeAt_lt_chord_prev hβ0 hβ hα0 hα w hwβ
+      rwa [show t + 2 * γ + 2 * α + β - β - α = t + 2 * γ + α by ring] at h
+
+/-- **THE OBTUSE TILING.**  Milnor's obtuse figure is the inscribed triangle, up
+to a null set — the counterpart of `milnorWedges_ae_eq_inscribedTriangle`.
+
+The two directions are controlled by two *different* null sets, and neither is
+avoidable:
+
+* `obtuseWedges \ T` sits in the `γ`-chord **line**, an AFFINE line (it does not
+  pass through the circumcentre, since `R cos γ ≠ 0`), killed by
+  `volume_chordLine`.  `volume_perpLine` cannot reach it.
+* `T \ obtuseWedges` sits in the single edge line `perp_{t+2γ+2α} = 0`, through
+  the origin, killed by `volume_perpLine`.  The acute statement needs three such
+  lines here; the obtuse covering needs one.
+
+`T ∩ W_sub = ∅` is strict (`notMem_sub_of_mem_inscribedTriangle`), so the
+subtraction costs no null set of its own. -/
+theorem obtuseWedges_ae_eq_inscribedTriangle {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    obtuseWedges R t α β γ
+      =ᵐ[(volume : Measure (ℝ × ℝ))] inscribedTriangle R t α β γ := by
+  rw [ae_eq_set]
+  constructor
+  · refine measure_mono_null ?_ (volume_chordLine (t + γ) (R * Real.cos γ))
+    intro w hw
+    by_contra hcon
+    simp only [Set.mem_setOf_eq] at hcon
+    exact hw.2 (obtuseWedges_subset_inscribedTriangle_of_ne hα0 hβ0 hγ hsum hw.1 hcon)
+  · refine measure_mono_null ?_ (volume_perpLine (t + (2 * γ + 2 * α)))
+    intro w hw
+    by_contra hcon
+    simp only [Set.mem_setOf_eq] at hcon
+    exact hw.2 ⟨inscribedTriangle_subset_obtuseWedges_of_ne hα0 hβ0 hγ hsum hw.1 hcon,
+      notMem_sub_of_mem_inscribedTriangle hw.1⟩
+
 end QOU.Archimedean.HyperbolicVolume
