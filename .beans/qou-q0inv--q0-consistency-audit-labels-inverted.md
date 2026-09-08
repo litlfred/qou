@@ -1,11 +1,11 @@
 ---
 # qou-q0inv
-title: 'q0_consistency_audit labels the LIVE canonical q0 as "stale" — and contradicts itself'
+title: q0_consistency_audit labels the LIVE canonical q0 as "stale" — and contradicts itself
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T17:25:00Z
-updated_at: 2026-08-23T17:25:00Z
+updated_at: 2026-09-08T08:03:52Z
 ---
 
 `computations/audits/q0_consistency_audit.py` scans `computations/**/*.py` and
@@ -219,3 +219,93 @@ needs a per-tool re-run and diff.
 Three tools have now needed the same one-line guard. A shared
 `resolve_producer(name)` helper — excluding `_deprecated`, `.claude`, `.git`,
 `node_modules` — would end the recurrence. Not attempted here.
+
+
+---
+
+## 2026-09-08 — NOT closeable: the TITLE defect is live on `main`. The resolver sub-thread is fully fixed; the headline is not.
+
+Read for the `qou-bstl` queue. The tool flagged this on `338a2acdc36`,
+*"drain result — 2 resolvers fixed, 3 misresolutions measured"* — cause 1, and
+the commit's own subject scopes itself to the resolvers, not the title.
+
+### The title claim is CONFIRMED, live, today
+
+`computations/audits/q0_consistency_audit.py` on `main`, run unmodified:
+
+```
+  [HARDCODE] computations/y_lambda_su_n.py:271  (old-q0)
+             _Q = "1.1099785827513808075916690956107688798744991218736"
+  [HARDCODE] tools/qou-substrate/tests/test_q0_anchor.py:251  (old-q0)
+             b.add_data("q0", "1.1099785827513808075916690956107688798744991218736")
+  [HARDCODE] tools/qou-substrate/tests/test_codata_table.py:112  (old-q0)
+             assert repr(constants.Q) == "1.1099785827513808"
+
+  production-hardcode    264
+  TOTAL hits: 414  | production-hardcode: 264
+```
+
+`1.1099785827513808…` is **the live canonical proton pin**. Verified two ways
+rather than assumed:
+
+- `qou_substrate.constants.Q` → `1.1099785827513808`, and
+  `Q_50_DIGIT_STR` → `1.1099785827513808075916690956107688798744991218736`.
+- AGENTS.md §"q₀ anchor convention" names it verbatim as the experimental pin:
+  *"proton, `m_p/m_e`, `q₀ ≈ 1.1099785827513808`, i.e. `q_parameter.Q`"*.
+
+So the audit labels the canonical value `old-q0` — and the sharpest instance is
+that it flags **`test_q0_anchor.py` and `test_codata_table.py`**, the tests whose
+whole job is to pin that value, as hardcoding a stale one. The tests are right;
+the classifier is inverted. 264 of 414 hits carry the label.
+
+### The resolver sub-thread IS fully fixed — including the recurrence this bean predicted
+
+The bean's closing line: *"Three tools have now needed the same one-line guard. A
+shared `resolve_producer(name)` helper … would end the recurrence. Not attempted
+here."*
+
+Measured today, and the news is better than the bean feared:
+
+| site | guard | mechanism |
+|---|---|---|
+| `q0_producer_pin_classifier.py:444` | ✅ | inline `_deprecated` / `.git` / `.claude` exclusion, with a comment citing the 3-of-7 measurement |
+| `tnjb_stale_stamp_migrate.py:164` | ✅ | same, cross-referencing the classifier |
+| `scripts/migrate_bare_producer_provenance.py:136` | ✅ | inline exclusion **plus** refuses on ambiguity (`len(cands) == 1`) |
+| `audits/witness_producer_resolution_audit.py:189` | ✅ | filters `_deprecated`, and *reports* `PRODUCER_DEPRECATED_ONLY` as its own verdict rather than resolving silently |
+| `scripts/regen-witnesses-mpmath141.py:95` | ✅ | exclusion at **index build time** (`_py_index`, line 87) |
+
+**Live-tested** on the three names this bean measured as misresolving —
+`path_b_habiro_mass_probe`, `rho_k_markov_multiplicativity_probe`,
+`term5_aK_audit` — through the one resolver whose own body has no filter: all
+three return the **live** copy.
+
+So the *defect* has not recurred. What has recurred is the **duplication**: there
+are now five independent implementations, correct by three different mechanisms,
+and still no shared helper. That is the bean's actual open item, and it is a
+maintainability item rather than a live bug.
+
+### 🛑 Two wrong conclusions of mine on the way here, both caught by insisting on a live test
+
+Recorded because the second is a reusable trap:
+
+1. I ran an `awk`-range extraction over the three `resolve_producer` bodies and
+   got **`guarded: 0`** for all three. The extraction was broken — it printed no
+   `rglob` lines either, which is what made the zero suspect. **A zero from a
+   detector written seconds earlier is not evidence.**
+2. Reading `regen-witnesses-mpmath141.py::resolve_producer` directly, I found no
+   `_deprecated` filter and was about to report it as an unguarded *regeneration*
+   script — higher blast radius than a classifier. **Wrong: the guard is in
+   `_py_index()`, one call up**, which excludes `_deprecated`, `.lake`,
+   `/_internal/` and `/.git/` when building the basename map, so the resolver
+   never sees a retired candidate.
+
+   **For a resolver, read the index it consults, not only the function.** A
+   filter applied at index-build time is invisible in the resolver's body and is
+   strictly better engineering than the inline form — the correct implementation
+   is the one that looks unguarded.
+
+### Verdict
+
+Stays `todo`, on the title. The next honest step is the classifier's own
+old-vs-current q₀ table, not the resolvers: whatever list it treats as "old"
+contains the canonical value.
