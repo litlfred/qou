@@ -3,8 +3,9 @@
 title: 'qou-nmuz: four deltalambda consumers re-run on the borromean 5Li/6Li chi caches (#7160 follow-up)'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-08T08:04:05Z
-updated_at: 2026-09-08T08:20:00Z
+updated_at: 2026-09-08T08:11:15Z
 parent: qou-vyvt
 ---
 
@@ -122,3 +123,9 @@ Two grep hits in `recursive-atom-knot-atlas-registry.md` (87216.6121, 250.9095) 
 4. `delta_lambda_empirical_tabulation.py` tier 2 is float64 (`q0_float = float(Q_MP)`),
    engine label "python" by its own admission. Pre-existing; in scope for the
    precision exemption but out of scope for this bean.
+
+
+
+## PR
+
+https://github.com/litlfred/qou/pull/7172 (non-draft, opened 2026-09-08). Commits f63d8a0d50b / 78abdeef74b / 11cf449f38f / 1c75a957356 (one per producer) + 54dc0affd2a (this bean). Precision gates: every RED is on files this PR does not touch (list in the PR body); audit witnesses reverted per the gate.
