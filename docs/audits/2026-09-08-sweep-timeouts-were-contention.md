@@ -11,10 +11,10 @@ behind them. Re-run **alone**, they compile.
 |---|---|---|
 | `QOU.Archimedean.PauliWitness.Witness12B` | TIMEOUT @1800 s | **ok, 1471 s** |
 | `QOU.Machinery.HeckeH4BlockMap211` | TIMEOUT @1800 s | **ok, 1049 s** |
-| `QOU.Machinery.HeckeH4BlockMap31` | TIMEOUT @1800 s | *running* |
+| `QOU.Machinery.HeckeH4BlockMap31` | TIMEOUT @1800 s | **ok, 974 s** |
 | `QOU.MathlibExt.OctonionDerivationsUpperBound` | TIMEOUT @1800 s | *queued* |
 
-Both completed runs report `1 ok, 0 RED, 0 TIMEOUT + 0 UNVERIFIED, 0 skipped`.
+Every completed run reports `1 ok, 0 RED, 0 TIMEOUT + 0 UNVERIFIED, 0 skipped`.
 
 ## Two corrections this forces
 
@@ -32,8 +32,9 @@ separately measured fact — no run was done at `--jobs 3` in isolation to confi
 
 **2. The H4 family is NOT the SIGSEGV class, and #7124's audit says it is.** That
 audit lists the `Machinery.HeckeH4*` cluster as *"the same `QOU.Hecke*` H4 family a
-sibling measured as SIGSEGV"*. `HeckeH4BlockMap211` compiles clean in 1049 s — no
-signal, no error. The sibling's SIGSEGV measurement may well be right about
+sibling measured as SIGSEGV"*. **Both** H4 modules compile clean — `HeckeH4BlockMap211`
+in 1049 s and `HeckeH4BlockMap31` in 974 s — no signal, no error, so the refutation
+covers the cluster rather than one member of it. The sibling's SIGSEGV measurement may well be right about
 whatever it measured, but it does not transfer to these modules, and #7124 carried
 it across on family resemblance rather than on a run. That is the same move as the
 ~700× cost error corrected in #7157: **a property inferred from a neighbour instead
