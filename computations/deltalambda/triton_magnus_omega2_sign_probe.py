@@ -211,6 +211,16 @@ def main() -> None:
             _a, _b = gens[_i], gens[_j]
             if _a == _b:
                 continue
+            # FAR-COMMUTATIVITY (ported from he4_magnus_omega2_sign_sparse_probe.py).
+            # [A_a, A_b] = 0 whenever |a-b| >= 2: sigma_a and sigma_b commute, so
+            # their germs A_g = q(d_q sigma_g)sigma_g^-1 do.  The pair table kept
+            # these terms and the code below built each one as a dense matrix
+            # commutator that is identically zero.  MEASURED before skipping, not
+            # assumed.  Verified end-to-end by witness equality against the
+            # committed run (see the commit for the H9 figures).  Drops every
+            # non-adjacent pair build.
+            if abs(_a - _b) >= 2:
+                continue
             _key = (_a, _b) if _a < _b else (_b, _a)
             _net[_key] = _net.get(_key, 0) + (1 if _a < _b else -1)
     _net = {k: v for k, v in _net.items() if v}
