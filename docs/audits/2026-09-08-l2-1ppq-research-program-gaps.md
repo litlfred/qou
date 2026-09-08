@@ -96,3 +96,89 @@ nothing except the two anchors. And one target is unreachable at the proton pin 
 (0.317 ppb)**. Only a tighter m_p/m_e measurement, or re-pinning to the muon (which makes
 m_μ the tautological anchor and moves the 211 ppb onto m_p), changes that.
 
+---
+
+## 2. The mass chain, steps 1–9a: what is proved, what is chosen
+
+The owner's suspicion — *"starting from the categorical action everything seems to be
+defined … except the word; guessing some symbolic forms somewhere"* — is **confirmed with
+one sharpening**: it is not only the word. **Every joint between the Lean-proved pieces of
+step 9a is a selection**, and the word itself is chosen at three levels. The proved pieces
+are real; what is not derived is how they are joined.
+
+### 2.1 Per-step status `[M]` (grep of the named files this session)
+
+| step | proved (sorry-free Lean) | derived, not formalised | asserted / chosen | bean |
+|---|---|---|---|---|
+| 1 categorical action | `braid-action-tensor.lean` (`BraidActionTensor`, `braiding_is_iso`; 0 sorry) | — | the Hecke quadratic is **definitional** in `def:categorical-action` | — |
+| 2 Stokes → Hecke | `stokes_curvature_factors` (a `field_simp; ring` identity); `HeckeQuadraticClassicalShadow.lean` (the q = 1 shadow is an involution) | Picard–Lefschetz monodromy of the colour cubic is S₃ (`colour_cubic_branch_monodromy_probe.py`) — derives only the q = 1 shadow | **the geometry is a §3b conjecture class** `HeckeMonodromy` (`Mass/HeckeMonodromy.lean:55–63`); the deformation `1 ↦ q` is stipulated; KZ realisation pruned at real q₀ | `qou-0jcd`, `qou-d0qq` in-progress; `qou-denm` |
+| 3 Alexander + Markov | `borromean_markov_trace_closed_form` (0 sorry) — **given** the Borromean Jones polynomial cited `[murasugi1996]`, not computed | y_λ closed forms at n = 3 | **two external axioms**: `markov_trace_unique_axiom` (`Hecke/MarkovTrace.lean:177`, whose own docstring says the class "is too weak"), `jones_markov_trace_exists` (`jones-markov-trace.lean:193`). `MarkovTrace.lean:131` docstring still writes convention C | `qou-juz3`, `qou-ar7f` |
+| 4 Bring χ = −6 | χ = −6 as data; `seifert_genus_bound` for 7 torus-knot generators | — | "dim H₃(q) = 6 = # embeddable torus knots" is **not a Lean statement**: `prop:spectral-sequence-h3-explicit` has no `.lean` sibling; `embeddability-closure.lean` lists **7** generators; the particle ↔ knot dictionary is a hard-coded list | `qou-k8ek`, `qou-i229` |
+| 5 Wedderburn / y_λ | `blockDim_eq_numSYT`; `trace_decomposition`, `yLambda_unique`, per-λ Frobenius orthogonality — **all conditional on `class WedderburnDecomp`** | Wenzl bridge numeric n = 3, 4, 5 | central-idempotent orthogonality and Schur orthogonality are **class axioms** (cheat-sheet §9.4 L-1/L-2, Mathas §3.43, not in Mathlib) | `qou-juz3`, `qou-mpq5` |
+| 6 Frobenius pairing | the pairing is a **structure** (data); per-λ block orthogonality is step 5's conditional theorem | chirality `a_K = 1 + w(K)h + …` (no `.lean` sibling) | `Ψ = S² = id` is recorded "✅ proved (D3/D23)" in the cheat sheet; grep of `lean/QOU` for `antipode_sq` / `S_sq` / `Ψ = ` found **no theorem** — the "proof" is the structure declaration | none |
+| 7 GB filtration | `centralIdempotent_idem` | `derivation_chain.py` tracker | `prop:gb-spectral-sequence` has no `.lean`; collapse at E₂ is a class field; `atom-knot-mass-derivation.lean:94–104` defines `gbSpectralCollapsePage := 2` and `GbSpectralSequenceCollapseAtE2 := (2 = 2)` — **true by definition** | `wpdb` |
+| 8 jet order | `SkewSYT.lean` C1/C2 proved | jet-order log | `conj:jet-convergence-classical-limit` is a conjecture with no `.lean`; and the corpus now says production **has no tower** (`qou-tower`: H₃ GS reduction after every crossing ⇒ 6 dims for every nucleus) | `qou-tower`, `qou-hu1f` |
+| 9a m_p/m_e | `dim V_(2,1) = 2`; Borromean closed form; `[3]_q!`; `proton_mass_substrate_identity` — a `rw; ring` from **class fields** | Vol(4₁) = 2·Cl₂(π/3) (KVC for 4₁ is a literature theorem); convention D forced by fibre N = 2 | **everything joining the proved pieces is chosen** — §2.2 | `qou-n04i`, `qou-24w9`, `qou-mrel`, `ovud`, `qou-6gf9`, `qou-4paj`, `qou-7loj` |
+
+### 2.2 The chosen symbolic forms, in order of leverage on m_p/m_e
+
+1. **The nucleon word `β_Bor = (σ₀σ₁⁻¹)³`.** Stated by definition in
+   `def:categorical-proton`; hard-coded as `borromeanBraid` in
+   `kashaev-volume-conjecture.lean:133`; labelled SELECTED / CONJECTURAL by the 2026-08-22
+   red-team (`conj:proton-borromean-assembly`). The cheat sheet's "per-knot answer to why
+   Bor" is prose; no Lean or content proposition derives the word from the categorical
+   action of steps 1–2.
+2. **The quark → crossing template.** `pyhecke/atom.py:462–530`: `uu → σ`, `dd → σ⁻¹`,
+   `ud → averaged (σ − h/2)`, plus the confinement block. The p/n distinction is
+   **assigned** by quark content; `thm:averaging-resonance-rule` proves arithmetic on the
+   recipe (`kRes n w = n/2 + w` by `decide`), not the recipe. The intra-nucleon ordering was
+   changed by owner ruling on 2026-09-05 (grouped → alternating), moving absolute traces by
+   3.8–14× — a quantity a ruling can move is a chosen one.
+3. **The atom word and the colour-weighted p–n interface.** `atom_braid_word_3A` with
+   `pn_convention = "bring_color_weighted"`: interface factor `z − h(1/2 − δ/4)`. Two
+   facts: (a) the object is **not a braid word** — the `2A+1` averaged letters lie outside
+   `ρ(B_n)` (`qou-hkwd`); (b) δ = `(q−1)²(1−q⁻⁴)/3` is `prop:flavor-split-substrate`, which
+   has no `.lean` and is fixed by matching `(m_n − m_p)/M_N` to −0.10 %. And `qou-nlw5`:
+   the live interface value implies a q₀ matching **neither** pin (7.2e-5 off both).
+4. **`F_Bor = |tr_M(β_Bor)|·[3]_q!/q³`.** A `def`; the producer's own `## Status` says
+   *"F_Bor identification as natural categorical observable — open"*. `[3]_q!` is already
+   bar-symmetric and `/q³` **breaks** bar-symmetry; removing it moves m_p by **+37 %**; the
+   writhe of β_Bor is 0 so there is no `q^writhe` source; with one instance any exponent
+   rationalises as f(3) (`qou-24w9`).
+5. **The integers 2 and 6 in `m_p = 2(m_μ F_Bor − 6 m_e)`.** `ProtonBorromeanAssembly.lean:56–64`
+   carries `multiplicity_eq_two`, `bindingCount_eq_six` and the assembly law as **class
+   fields**; the "theorem" distributes them. This is AGENTS.md §3b-cond item 5 territory
+   (a class carrying its own conclusion). The red-team probe: `2·m_μ·F_Bor = 1848.1527 m_e`
+   and the subtraction reaching `m_p/m_e` is `12.0 m_e` to the last digit — i.e. 12 is the
+   residual the pre-normalised F_Bor leaves, re-labelled `dim V_(2,1)·|S₃|`. The earlier
+   `1/(−1/12)` Ocneanu provenance was refuted and scrubbed (`qou-mrel` records the owner's
+   own question on the `−6 m_e` term).
+6. **The muon anchor `m_μ = m_e·Vol(4₁)/ℏ_q²` and `ℏ_q = 1 − 1/q`.**
+   `figure-8-muon-mass-cross-check.lean:44–47` proves `cal2_identity_pinned` **from the
+   hypothesis that is its conclusion**; `vol_4_1` is a hard-coded literal (:19); `hbarQ` is
+   a `def` with no derivation of `1 − q⁻¹` from steps 1–8. Vol(4₁) itself is a theorem
+   (KVC for 4₁ in the literature). *Why the muon is 4₁* is the `skeinDescendants` list entry
+   `"figure-eight (4₁)"` — a dictionary, not a theorem. `qou-6gf9` treats the relation as the
+   leading term of an unknown series.
+7. **Two kernel-false axioms still on `main`** (`qou-4paj`): `categorical-proton.lean` /
+   `categorical-neutron.lean:71` assert `|neutron_mass q₀ − 939.565| < 1` while the
+   definition evaluates to ≈ 746; the negations are provable. No consumers, but they are the
+   `lean.ref` targets of `def:categorical-proton/neutron`.
+
+**Reading.** Steps 1, 3 (closed form), 5 (block dimensions), 9a (the algebra of the
+assembly) are genuinely proved. Steps 2, 4, 6, 7, 8 are proved *conditionally on classes
+or definitions that carry the content*, and the m_p/m_e assembly is an exact identity
+whose ingredients (word, template, interface, `/q³`, 2, 6, ℏ_q, the 4₁ dictionary) are each
+chosen. Because q₀ is pinned by inverting this very identity against m_p/m_e, none of
+those choices is *tested* by m_p — the ratio reproduces by construction. The only step-9a
+predictions are m_μ (structural, §1.2) and m_n/Δ_pn, and those are Q_β propagation.
+
+**What the m_n / Δ_pn rows inherit from steps 1–9a: only the m_p round-trip.** Both
+production routes are Path C, `m_n = m_p + Q_β + m_e`. Two different m_n are live on
+`main`: the facade witness (2026-08-29) carries `Q_β = 0.78280469` (**+602 ppm**, the
+Kashiwara-N2 form evaluated at `z_D`) and `m_n` at **+501 ppb**; the L2 dashboard carries
+the c_k-ladder `Q_β` (1279 ppb, convention C) and m_n at 0.903 ppb / 176.7×. A factor
+~550 apart, and the dashboard's own note says
+`reproducible_under_canonical_convention: false`. So the quoted 176.7× / 151.7× are
+C-frame numbers with no canonical replacement yet (`qou-khue`, `qou-cds1`).
+
