@@ -465,7 +465,7 @@ def sweep_one(args) -> int:
             order = [[m for m in layer if m in todo_set] for layer in order]
             order = [l for l in order if l]
 
-        red, skipped, timed_out, ok = {}, {}, {}, 0
+        red, skipped, timed_out, unverified, ok = {}, {}, {}, {}, 0
         broken = set()
         t0 = time.time()
         n = sum(len(l) for l in order)
@@ -524,18 +524,62 @@ def sweep_one(args) -> int:
                         print(f"  [{done_ct}/{n}] TIMEOUT  {m}  ({log})", flush=True)
                     else:
                         errs = [l for l in log.splitlines() if ": error:" in l]
-                        red[m] = errs[:5]
-                        broken.add(m)
-                        print(f"  [{done_ct}/{n}] RED  {m}", flush=True)
-                        for e in errs[:3]:
-                            print(f"        {e}", flush=True)
+                        # THREE ways a non-zero exit is NOT a failing module, and
+                        # reporting any of them as RED sends the next reader
+                        # hunting a defect that has not been shown to exist --
+                        # the same cannot-verify-vs-fails conflation `qou-xumu`
+                        # made this script separate TIMEOUT out for.
+                        #
+                        # 1. Killed by a signal (rc < 0), typically SIGSEGV on a
+                        #    large import closure.  A sibling measured 5 of these
+                        #    on QOU.Hecke.* H3A/H4A -- exit 139, zero bytes of
+                        #    output (audit `333e491eaa4`, bean qou-g5sp).
+                        # 2. Non-zero with NO diagnostic at all: nothing was
+                        #    judged, so there is no verdict to report.
+                        # 3. A missing object file.  For a Mathlib module that is
+                        #    the restored cache being short (MEASURED here:
+                        #    `Mathlib.RepresentationTheory.Homological.
+                        #    GroupCohomology.LowDegree` absent from BOTH mathlib
+                        #    trees, which made the library ROOT unjudgeable); for
+                        #    a QOU module it is a build-order or slicing problem.
+                        #    Neither is the module's source being wrong.
+                        missing = [l for l in errs if "does not exist" in l
+                                   and "object file" in l]
+                        if rc < 0 or not errs or missing:
+                            if rc < 0:
+                                why = f"killed by signal {-rc}"
+                            elif missing:
+                                # Name the MISSING MODULE, not the first 120
+                                # characters of its absolute path -- the path is
+                                # the same prefix for every hit and the module is
+                                # the only part that tells you what to fix.
+                                mo = re.search(r"of module ([\w.]+) does not exist",
+                                               missing[0])
+                                mm = mo.group(1) if mo else "?"
+                                where = "mathlib cache" if mm.startswith("Mathlib") \
+                                        else "build order"
+                                why = f"missing olean {mm} ({where})"
+                            else:
+                                why = f"exit {rc}, no diagnostic"
+                            unverified[m] = why
+                            broken.add(m)
+                            print(f"  [{done_ct}/{n}] UNVERIFIED  {m}  ({why})",
+                                  flush=True)
+                        else:
+                            red[m] = errs[:5]
+                            broken.add(m)
+                            print(f"  [{done_ct}/{n}] RED  {m}", flush=True)
+                            for e in errs[:3]:
+                                print(f"        {e}", flush=True)
 
         print(f"\n=== library sweep: {ok} ok, {len(red)} RED, "
-              f"{len(timed_out)} TIMEOUT (unverified, NOT failing), "
+              f"{len(timed_out)} TIMEOUT + {len(unverified)} UNVERIFIED (NOT failing), "
               f"{len(skipped)} skipped (dependency red), "
               f"{time.time() - t0:.0f}s ===")
         for m in sorted(timed_out):
             print(f"TIMEOUT {m} -- unverified; re-run with a larger --timeout to judge it")
+        for m, why in sorted(unverified.items()):
+            print(f"UNVERIFIED {m} -- {why}  (NOT a corpus defect on this evidence)")
         for m, errs in sorted(red.items()):
             print(f"\nRED {m}")
             for e in errs:
