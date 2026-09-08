@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-19T20:54:16Z
-updated_at: 2026-09-08T04:58:16Z
+updated_at: 2026-09-08T07:52:50Z
 ---
 
 
@@ -197,3 +197,51 @@ script. What is certain is that the item is **not** resolved.
 
 Stays `todo`. Two of four items closed, one replaced by a different live
 instance (now fixed), one open and larger than recorded.
+
+
+### 🛑 Correction, 2026-09-08 — the 0-byte restoration is NOT mine; PR #7166 owns it and found the cause I missed
+
+The section above says the 0-byte `qbeta-chain-closed-form.witness.json` is
+*"Fixed in this PR"*. **Withdrawn.** Sibling PR **#7166** (branch
+`claude/fervent-noether-zssd1k`, bean **`qou-oyde`**) restores the same file and
+was opened at 04:29Z, before my commit. My restoration is dropped; theirs is
+strictly better, and the difference is not cosmetic.
+
+**They found the mechanism; I only found the symptom.** I checked that the
+producer runs and reproduces the bytes, and concluded *"the truncation was the
+sweep's, not the producer's."* That is **wrong**, and `qou-oyde` shows why:
+
+```python
+with open(out_p, "w") as f:                # <- TRUNCATES HERE
+    from qou_substrate.witness import ...  # <- can raise
+    _WB.stamp_staleness_metadata(...)      # <- can raise
+    json.dump(witness, f, ...)             # first byte only here
+```
+
+`open(path, "w")` truncates at open, so anything raising between the truncation
+and the dump destroys the committed witness and writes nothing back —
+and `qou_substrate` is **not on PyPI**, so a bare container is the default and
+that import is the likely raiser. They reproduced it deterministically with a
+shim: 6018 → 0 before the fix, 6018 → 6018 after. So **any** producer re-run
+would have done it; the sweep was the occasion, not the cause. My run succeeded
+only because my container *has* `qou_substrate`.
+
+**Two more things they fixed that I did not look for:**
+
+- **The class**: 252 other producers in `computations/` carry the identical
+  template (measured by AST — an import inside a truncating `with open(…,"w")`).
+  Latent, not fired. Explicitly *"NOT a one-PR job"*.
+- **Why it reached `main` unseen**: `q0_anchor_consistency_audit.py` tallied
+  `Q0_PARSE_ERROR` into its counter table and did nothing else — no print block
+  naming the file, and `--strict` gated on `(n_flip or n_unrec)` only, so an
+  unparseable witness was a bare integer on a console with a green gate. Now
+  named, asserted, and in the gate.
+
+**And they measured a blast radius I did not**: the zero propagated into **24
+branches**.
+
+This is the "converge on landing" case AGENTS.md describes — two agents reached
+the same artifact from different directions, one route went deeper, and the
+right move is to cite rather than re-derive. The finding recorded here stands as
+*this bean's* evidence (the unparseable count of 3702 is 1, and it is that file);
+the fix belongs to `qou-oyde`.
