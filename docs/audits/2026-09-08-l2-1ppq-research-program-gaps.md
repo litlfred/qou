@@ -560,7 +560,7 @@ docs do, 28 of them outright retractions. The cases where a correction itself ne
 3. **q₀ gates: sixteen beans**, cross-reference density ~10 %; `3f7a`'s own finding is that the two red q₀ gates are *one* unfinished migration.
 4. **Programme-articulation sessions: five in 25 days, none citing a predecessor** — `1qug` (08-14, SM-26 cheat sheet), `vibo` (08-29, m_n(K) magnitude gap), `m2ay` (08-30, canonical-derivation magnitude cheat sheet), `ggdk`/`65jh` (09-03, SM-26 status), `37j2` (09-07, the 1 ppQ reanalysis). This document is the sixth; §0 names all five and states what it adds.
 5. **Trace-tower c₁/c₂ vs the χ-carrier caches**: `hu1f`, `9yt9`, `eddc`, `k54t`, `92u9` do not cite `pdg9`/`qqm4`, and `92u9`/`eddc`'s intra-ordering change is what staled `pdg9`'s c₁.
-6. **Byte-identical duplicate beans** (same day, both `todo`): `yh08`/`zo4i`, `rcgi`/`1lh4`, `9552`/`0xmm`, `82ur`/`5380`, `vkmt`/`c8p8`, `ifot`/`wxg1`; **seven separate "raw-float64 ratchet is red on main" beans** (08-11 … 09-06) for one recurring event.
+6. **Duplicate beans** — **corrected 2026-09-08 (C7 pass, front-matter-stripped `diff`)**: only `yh08`/`zo4i` is byte-identical (`zo4i` scrapped); `rcgi`/`1lh4` and `9552`/`0xmm` are an empty stub beside the landed record, `vkmt`/`c8p8` and `ifot`/`wxg1` already self-declare the duplication, `82ur`/`5380` are different findings — cross-referenced, not scrapped. The thread-clustering pass over-stated this item. Plus **seven "raw-float64 ratchet is red on main" beans** (08-11 … 09-06) for one recurring event, each with its own offender list — now cross-referenced to `qou-sknx`.
 7. `edt7` vs `bhzt` ("what replaces the multiplicative assembly", both 08-30, no cross-reference).
 8. Fourteen beans with a byte-identical "Infra-blocked" next-step, 13 created in six seconds (`2026-08-30-infra-blocked-is-one-verdict-stamped-fourteen-times.md`).
 
@@ -740,6 +740,13 @@ Recorded in the commit log of PR #7159 as they land; the bean-hygiene items (C2,
 the document refreshes (C1, C6) were run as two parallel tranches and are itemised in the PR
 body. C4 (the two live m_n values) and C5 (the L1 assertion tolerance) are noted below.
 
+- **C2 / C3 / C7 — landed.** Magnus fronts `k5r5`, `o6ov`, `za3q`, `omr7` parented to the epic
+  `qou-x631` with cross-references (zero existed); convention-C family (9 beans + `cds2`) cross-
+  referenced to the canonical ledger `qou-wgta` (not `cds2`, whose own body names `wgta` as its
+  predecessor); q₀-gate family (16) to `qou-1c4y`; ratchet-red beans (7) to `qou-sknx`; one
+  byte-identical duplicate scrapped (`zo4i`). 49 bean files, one status change, four parent
+  changes. Three empty-stub duplicates (`0xmm`, `vkmt`, `1lh4`) are left open with a note — the
+  owner may scrap them.
 - **C4 — the two live m_n values.** Recorded on `qou-khue`: neither is canonical until both
   witnesses are re-scored on the augmentation base (D1) and stamped with functional + frame. Not
   a witness edit in this PR (producer re-run under D; ask-before-change).
