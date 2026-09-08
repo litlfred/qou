@@ -195,7 +195,12 @@ make it.
 
 - **Not a single-run green.** A chunked run resolves an earlier chunk's imports
   against the snapshot, so it is strictly weaker. Stated, not buried.
-- **Not about current `main`.** This tree is 149 commits behind.
+- **Measured on a slightly older tree.** The sweep ran before this branch was
+  rebased onto `main`; it covered **2774** modules, and the rebase brought the
+  library to **2786**. So ~12 modules that landed in those 172 commits are
+  unmeasured here, and the coverage split moved 1324 → **1337 of 2786** (still
+  48 %). The cheap standing check for the remainder is the sweep's normal
+  dirty-closure mode, not another full pass.
 - **Not a single-version measurement, unless the re-run completed.** The root and
   BraidKnot chunks ran before the `UNVERIFIED` class and the caller fix landed;
   their logs are kept as `*.log.PRE-FIX` and both were staged for a clean re-run.
