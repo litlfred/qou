@@ -605,3 +605,8 @@ Measured at `k_exact=4`:
 **Safe: ZERO consumers.** Measured over the whole tree, tracked and untracked. `probe_9b_manybody_expansion.py` writes a `cumulative_MeV` of its own into its own witness and never reads this one. `where_the_a_dependence_is_lost_probe.py` reads `raw_total_MeV` / `gated_total_MeV` — untouched, and it already distinguishes the two correctly.
 
 Verified after the rename: old key absent; `cumulative_ungated_MeV == raw_total_MeV`; and `float(gated_total_MeV) == ` the returned value **exactly**.
+
+
+## The #7160 path-sum is NOT a route past this wall (2026-09-08, qou-hxz4)
+
+Measured on the words `unified_iterative_correction` actually hands the kernel (captured by instrumenting `_lp_kernel_steps`): for every atom D/T/³He/⁴He/⁵Li and every k = 3..11 the word is a single seminormal segment covering all k−1 generators (generator index cycles `g mod (k−1)` through every letter), no cyclic rotation is multi-segment, and the T_w-support of the element lies in no 2-block parabolic product (k ≤ 7, rotations k ≤ 5) — so no Hecke-relation rewriting is level-local either. On such a word `chi_lambda_path_sum` degenerates to the O(L·dim²) direct seminormal trace in mpmath: 23–40× SLOWER than `lp_accumulator_step_traces_mpfr` at k = 6..8, while agreeing with it to 8.6e-50. The remaining cost is the kernel's O(L·dim²) at dims ≤ 2310 — steps 2–4 above stay the live plan. A level-local binding word would be the 3A-strand `atom_braid_word_3A` element, i.e. a different producer with different numbers (owner decision, framed in qou-hxz4). Probe `computations/probes/uic_word_level_locality_probe.py` (11/11); audit `docs/audits/2026-09-08-binding-word-not-level-local.md`.
