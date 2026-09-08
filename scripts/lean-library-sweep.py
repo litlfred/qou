@@ -295,7 +295,7 @@ def main() -> int:
                          "CHUNKED: the shadow's newly-written oleans are the only "
                          "real bytes it costs (0.22 MB/module), so a full run needs "
                          "~610 MB at once, and reclaiming the shadow between chunks "
-                         "is what makes it fit a container at 99%.  NOTE this "
+                         "is what makes it fit a container at 99%%.  NOTE this "
                          "weakens the run slightly: modules in a later chunk resolve "
                          "their earlier-chunk imports against the SNAPSHOT olean "
                          "rather than one this run rebuilt.  That is the same "
