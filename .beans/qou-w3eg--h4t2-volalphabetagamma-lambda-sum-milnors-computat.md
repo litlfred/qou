@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T09:03:40Z
+updated_at: 2026-09-08T04:35:38Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -829,3 +829,76 @@ That works, via a two-step route:
 | `γ`-chord from `w ∉ W_sub` (gives `≤`) | reduces to the above |
 | the a.e. identity, over **two** null sets (shared ray + `γ`-chord line) | open |
 | composition with `hypVolume_chimney_wedgeAt` + `lob_sum_eq_reflected` | open |
+
+
+## 2026-09-08 — H4-5 obtuse CLOSED at the triangle level (PR #7163)
+
+Three sorry-free landings in `ObtuseTiling.lean`, all `lean -DautoImplicit=false
+-s 65536` exit 0:
+
+1. **`inscribedTriangle_subset_obtuseWedges_of_ne`** — the covering.
+2. **`obtuseWedges_ae_eq_inscribedTriangle`** — the tiling,
+   `T =ᵐ (W_α ∪ W_β) \ W_sub`.
+3. **`hypVolume_chimney_inscribedTriangle_obtuse`** —
+   `Vol(chimney T R) = Λ(α) + Λ(β) + Λ(γ)` for `π/2 < γ`.
+
+### The finding that mattered: "a similar argument" is not available
+
+Milnor's parenthesis offers two routes and this bean recorded both. The
+**"similar argument"** route turns out to be blocked in a way that is worth
+recording, because it looks like an adaptation problem and is not one.
+
+The acute covering runs entirely on `perp_sign_relation`, whose three
+coefficients `sin 2α, sin 2β, sin 2γ` are positive, so two of eight sign
+patterns are impossible and each of the six survivors is a sector. With `γ`
+obtuse, `sin 2γ < 0` and the relation forbids only two patterns — **four** of
+the six survivors put the point in neither remaining wedge. The *fact* the
+acute argument establishes is insufficient; no rearrangement of it closes the
+obtuse covering.
+
+What replaces it is stronger and makes the sign relation unnecessary: `T` lies
+in the cone spanned by `O→V₁` and `O→V₂`, i.e. `perp_t < 0` and
+`perp_{t+2γ} > 0` on the whole triangle. Each is a **two-term certificate**
+against the two chords meeting at that vertex, obtained by eliminating
+`R − ⟨w,u⟩` between the two chord slacks:
+
+    perp_t · sin α      = cos γ·(β-chord slack) − cos β·(γ-chord slack)
+    perp_{t+2γ} · sin β = cos α·(γ-chord slack) − cos γ·(α-chord slack)
+
+`R` cancels; both hold for ANY triple summing to π, acute or not. Only the sign
+reading uses `cos γ < 0` — in the acute case the two terms have opposite signs
+and the conclusion is false, which is the honest statement of what obtuseness
+buys. The same two identities read BACKWARDS give
+`wedgeAt_sub_subset_alphaBeta_of_ne`, i.e. that `W_sub` really is inside the
+union it is subtracted from (without which the set difference would be
+arithmetically smaller than Milnor's signed sum).
+
+### Two things better than the acute case, one worse
+
+- The covering needs **one** edge functional nonzero, not three.
+- The subtraction never happens in `ℝ≥0∞`: reading the partition as
+  `W_α ∪ W_β =ᵐ T ⊔ W_sub` makes additivity a statement about sums, and `Vol(T)`
+  falls out by cancelling the finite `Vol(W_sub)`.
+- Worse: the `RHS \ T` direction needs an **affine** null line (the γ-chord),
+  which `volume_perpLine` cannot reach — hence `volume_chordLine`.
+
+### What is still open — and it is now a SINGLE gate
+
+`IdealTetEqChimney.idealTet_eq_chimney` carries `α, β, γ < π/2` and is a **set
+equality**. Neither the analytic-continuation route (which is why the three-step
+plan cannot finish on its own) nor anything in this tranche supplies it. This
+is now the only thing between the corpus and the obtuse case of Milnor's
+identity, and it is a *geometry* problem, not an analysis one.
+
+Also corrected on main: `lob_sum_eq_reflected`'s docstring said the geometric
+subdivision "stays open". It no longer does; that lemma is now what the volume
+theorem spends.
+
+### Superseded within this bean
+
+The **analytic-continuation** route (steps 1-3: `analyticOnNhd_Lob`,
+`analyticOnNhd_tetVol`, identity theorem) is NOT what closed this. Those
+results stand and are on main, but they address the identity's RHS and a
+hypothetical LHS carrier that does not exist — see `TetVolAnalytic.lean`'s
+scope note. The obtuse case was closed by direct geometry instead. Recording
+this so a later reader does not credit the continuation route with the result.
