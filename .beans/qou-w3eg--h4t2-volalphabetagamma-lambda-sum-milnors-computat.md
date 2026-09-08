@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-08T04:35:38Z
+updated_at: 2026-09-08T08:28:15Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -902,3 +902,61 @@ results stand and are on main, but they address the identity's RHS and a
 hypothetical LHS carrier that does not exist — see `TetVolAnalytic.lean`'s
 scope note. The obtuse case was closed by direct geometry instead. Recording
 this so a later reader does not credit the continuation route with the result.
+
+
+## 2026-09-08 (later) — H4-5 CLOSED on the ideal tetrahedron; the "fourth gate" did not exist
+
+`ObtuseTiling.idealTetVolume_of_vertices_obtuse` — `Vol(idealTetrahedron P₁P₂P₃)
+= Λ(α)+Λ(β)+Λ(γ)` for `π/2 < γ`, on the vertex-defined region, sorry-free.
+
+### Retracting my own claim from earlier today
+
+The entry above, this session's two prior commits, and four durable scope notes
+all said the same thing:
+
+> the identification of the region with the chimney
+> (`IdealTetEqChimney.idealTet_eq_chimney`) still carries `α, β, γ < π/2` and is
+> a **set equality**, which analytic continuation cannot supply — so it is now
+> the single remaining gate, and it is a geometry problem.
+
+**False, and cheaply falsifiable.** Those hypotheses were carried and never used.
+Acuteness enters that proof at exactly one shape — `Real.sin_pos_of_pos_of_lt_pi
+hX0 (by linarith)`, whose side goal is `X < π` — and `α+β+γ = π` with the other
+two positive already discharges it. The strictness gap is `cos ψ′ − cos(2ψ+ψ′) =
+2 sin(ψ+ψ′)·sin ψ`, positive wherever both sines are, i.e. everywhere on the open
+simplex. Deleting `hα hβ hγ` from `inscribedTriangle_vertex_incidence`,
+`face1/2/3` and `idealTet_eq_chimney` and fixing the three `MostowIdealTetVolume`
+call sites is the entire change.
+
+**Why the corpus-grep discipline could not catch it.** The claim was true of the
+*signature* and false of the *proof*. Every check I ran — grep the topic, grep the
+claim shape, read the docstring — confirmed the hypotheses were present. Only
+reading the proof body settles whether they are consumed, and I asserted the gate
+twice before doing that.
+
+**What was NOT the closer.** The analytic-continuation route (steps 1-3:
+`analyticOnNhd_Lob`, `analyticOnNhd_tetVol`, the identity theorem's topological
+hypotheses) did not close this and is marked as not closing it in
+`TetVolAnalytic.lean` and `IdealTetObtuseReduction.lean`. Those results stand;
+their left half — a real-valued carrier for the LHS — is still open and is now
+moot for this case. Signed subdivision closed it, which is the route this bean
+had *foreclosed* early on and then re-scoped from (b) to (a). The re-scoping is
+what made it available; had the (b) claim stood, this would still be open.
+
+### Coverage
+
+Acute (`idealTetVolume_of_vertices`) + obtuse (new) cover every admissible triple
+**except `γ = π/2` exactly**, where `W_sub = wedgeAt R (t+γ+π) (π−γ)` degenerates
+to a half-plane and the `ψ < π/2` wedge machinery fails on both sides. That is a
+measure-zero slice of the simplex and a genuinely separate limiting argument; it
+is not claimed.
+
+### Residual, and it is shared with the acute case
+
+Both rest on the same single cited totally-geodesic / normalized-position
+identification (`geodesicPlaneThrough`, File A1 — a definition with a citation,
+not an axiom or `sorry`). Nothing new is assumed by the obtuse half.
+
+**Not closing this bean.** Whether the `γ = π/2` slice and the shared A1 citation
+leave H4-5 "done" is an owner call, and per AGENTS.md rule 13a a bean is not
+completed because the recording of its state is complete.
