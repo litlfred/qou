@@ -12,7 +12,10 @@ transition measure. This probe:
   2. moments M_k = sum mu_i x_i^k and free cumulants R_k (free moment-cumulant
      relation over Q), EXACT,
   3. VERIFIES R_2 = n and settles the R_4 <-> omega3 normalisation
-     (Lean r4Value says R_4 = 3*omega3 - n; naive Sigma_3=R_4+R_2 says R_4=omega3-n),
+     (Lean r4Value says R_4 = 3*omega3 - n; substituting omega3 for Sigma_3 in
+      Biane/Kerov's Sigma_3 = R_4 + R_2 says R_4 = omega3 - n. The identity is
+      NOT wrong -- Sigma_3 = 3*omega3, the class-size convention; see
+      wlambda_covariance_epic_M1_r4_sigma3_normalisation_reconciliation.py),
   4. solves for the EXACT R_k-expansion of Sigma_h by exact rational linear algebra
      over enough partitions (this is an exact identity extraction, NOT a numerical
      fit: a polynomial function on Young diagrams has a unique free-cumulant
@@ -187,7 +190,7 @@ def main():
     print(f"# {'lam':<16}{'n':>3}{'R_2':>6}{'R_3':>8}{'R_4':>10}{'omega3':>8}"
           f"{'R4-(o3-n)':>11}{'R4-(3o3-n)':>12}")
     okR2 = True
-    rel_naive = True   # R_4 == omega3 - n ?
+    rel_omega_substituted = True   # R_4 == omega3 - n ?  (the WRONG substitution)
     rel_lean = True    # R_4 == 3*omega3 - n ?
     for n in range(1, 9):
         for lam in partitions(n):
@@ -197,14 +200,14 @@ def main():
             if R[2] != n:
                 okR2 = False
             if R[4] != o3 - n:
-                rel_naive = False
+                rel_omega_substituted = False
             if R[4] != 3 * o3 - n:
                 rel_lean = False
             if n <= 5:
                 print(f"  {str(lam):<16}{n:>3}{str(R[2]):>6}{str(R[3]):>8}{str(R[4]):>10}"
                       f"{str(o3):>8}{str(R[4]-(o3-n)):>11}{str(R[4]-(3*o3-n)):>12}")
     print(f"\n# R_2 == n for all lam (n<=8): {okR2}")
-    print(f"# R_4 == omega3 - n   (naive Sigma_3=R4+R2): {rel_naive}")
+    print(f"# R_4 == omega3 - n   (omega3 substituted for Sigma_3): {rel_omega_substituted}")
     print(f"# R_4 == 3*omega3 - n (Lean r4Value):        {rel_lean}")
 
     # (c): solve Sigma_h = sum_monomials coeff * (monomial in R_2,R_3,R_4,R_5,R_6), exact.
@@ -261,7 +264,7 @@ def main():
                     ok = False
         print(f"# identity verified exactly on all lam, n=10,11 (out-of-sample): {ok}")
     print("\nRESULT: R_2=n:%s ; R_4=omega3-n:%s ; R_4=3omega3-n:%s ; Sigma_h-in-R:%s" % (
-        okR2, rel_naive, rel_lean, coeffs is not None))
+        okR2, rel_omega_substituted, rel_lean, coeffs is not None))
     print("EXIT: 0")
     return 0
 
