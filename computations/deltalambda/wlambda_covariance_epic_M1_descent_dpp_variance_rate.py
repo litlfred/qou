@@ -278,12 +278,13 @@ def main():
             a = -(mp.log(abs(d1)) - mp.log(abs(d0))) / (mp.log(th1) - mp.log(th0))
             print(f"#   theta {th0:>5} -> {th1:<5}  a = {mp.nstr(a,4)}")
     print()
-    print("# INTERPRETATION: rho_P(n) -> the merged IO constant 0.979796 at a MEASURED algebraic")
+    print("# INTERPRETATION: rho_P(n) -> RHO_INF = 2*sqrt(6)/5 = 0.9797958971 (DERIVED from")
+    print("#   Kerov's CLT, not extrapolated; see _m1_io_constants) at a MEASURED algebraic")
     print("#   rate a~1 (no fit). Content statistics ARE descent-DPP linear statistics, so this")
     print("#   is the standard DPP kernel asymptotic BOO deliver rigorously (Airy edge/sine bulk).")
     print("#   The (CS) closure needs only a crude a>0 (leading margin 0.30) -- amply satisfied.")
     print("RESULT: content-stats = descent-DPP linear statistics; DPP covariances match EXACT")
-    print("        combinatorial; rho_P(n) -> 0.979796 at measured algebraic rate. qou-k5r5 OPEN, reduced.")
+    print("        combinatorial; rho_P(n) -> 2*sqrt(6)/5 at measured algebraic rate. qou-k5r5 OPEN, reduced.")
     print("EXIT: 0")
     return 0
 

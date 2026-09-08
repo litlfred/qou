@@ -38,8 +38,16 @@ WHAT SURVIVES, AND IS USEFUL
   * `Sigma_c = R_3 / 2` exactly -- the content sum IS in Lambda*, unlike the
     hook sum. (Verified below; both sides conjugation-odd, consistent with (ii).)
   * `omega_3 = (R_4 + n)/3`, i.e. `R_4 = 3 omega_3 - n`. The Lean `r4Value` is
-    right and the naive `Sigma_3 = R_4 + R_2` reading (`R_4 = omega_3 - n`) is
-    wrong -- settled by the sibling A1 probe and re-checked here.
+    right -- settled by the sibling A1 probe and re-checked here.
+
+    NOT because Biane/Kerov's `Sigma_3 = R_4 + R_2` is wrong; it holds on every
+    partition tested. `Sigma_3` is normalised by the falling factorial `(n)_3`
+    while `|C_{(3,1^{n-3})}| = (n)_3/3`, so `Sigma_3 = 3 omega_3` and the
+    identity IS the Lean form once written in this corpus's normalisation.
+    Substituting `omega_3` where `Sigma_3` belongs is what yields the false
+    `R_4 = omega_3 - n` (it fails on 57 of 63 partitions, n = 3..8; smallest
+    failure `lam = [3]`). Measured from characters in
+    `wlambda_covariance_epic_M1_r4_sigma3_normalisation_reconciliation.py`.
   * **`M_1 = Cov(p_2, omega_3) = Cov(Sigma_h, omega_3)`.** `p_2 = Sigma_h +
     R_3/2`, and `Cov(R_3, omega_3) = 0` because `R_3` is conjugation-odd,
     `omega_3` conjugation-even, and Plancherel conjugation-invariant. So the
@@ -157,7 +165,9 @@ def main() -> int:
         "R_k(lam') = (-1)^k R_k(lam) for k = 2..%d" % KMAX)
     chk("R2_equals_n", r2, len(lams))
     chk("R4_equals_3omega3_minus_n", r4, len(lams),
-        "the Lean r4Value normalisation; the naive R_4 = omega_3 - n is wrong")
+        "the Lean r4Value normalisation. Biane/Kerov Sigma_3 = R_4 + R_2 is TRUE; "
+        "Sigma_3 = 3*omega_3 (class-size convention), so substituting omega_3 for "
+        "Sigma_3 is what gives the false R_4 = omega_3 - n")
     chk("sigma_c_equals_R3_over_2", sc, len(lams),
         "the CONTENT sum is in Lambda*, unlike the hook sum")
 
