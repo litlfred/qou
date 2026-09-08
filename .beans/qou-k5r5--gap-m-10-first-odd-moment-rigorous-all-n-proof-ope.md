@@ -1405,3 +1405,69 @@ symmetric on its own, or any combination that is not `Sum h` itself?
 live phase-3 routes are `qou-t5m1` (Sniady genus expansion, todo) and `qou-0ml9` (RSK, todo, Lean
 dependency landed in `qou-t181`). `M_1` sits under `qou-ogrk`. Before any further edge-coordinate
 work here, grep `qou-ogrk` and `qou-v8t7`, not just `k5r5`.
+
+
+---
+
+## 2026-09-08 — the R_4 landing does NOT fall to my shifted-symmetry negative; and √2/24 came back
+
+Two separate things, both about claims that landed on `main` while this branch was open.
+
+**1. The cheap unasked question at the end of the previous entry is ANSWERED: no.** Neither
+`Sum h`, nor `A = Sum|c|`, nor `D = Sum_u d_u^2` is shifted-symmetric — tested by exact Gaussian
+elimination over Q against the span of monomials in the Kerov–Olshanski shifted power sums
+`p_k^*`, pooled over every partition of every `n` in [1,12] (271 partitions), at degree bounds
+6, 8 and 10 (30 / 67 / 139 monomials). Every verdict UNCHANGED as the bound rises, so the
+negative is not a bound artifact. Controls `n`, `Sum c`, `Sum c^2`, `Sum h^2` all come back IN,
+so a negative is a fact about the statistic, not about my elimination. PR #7126,
+`wlambda_covariance_epic_M1_shifted_symmetry_membership.py`.
+
+**What that forecloses, precisely.** `qou-ogrk`'s ONE proved positivity technique — shifted-
+symmetric ⟹ exact polynomial in n (Ivanov–Olshanski Prop 5.1) ⟹ finite positivity check — applies
+to *no part* of the split `Sum h = D + A`. Not to the sum, and not to either summand separately,
+which was the remaining hope. Fourth sighting of the same wall.
+
+**What it does NOT foreclose, and I nearly recorded it as if it did.** `106a6784c5f`
+(2026-09-08, `resolve(qou-k5r5)`) establishes from characters, 6/6 PASS, that Biane/Kerov holds
+here: `Sigma_3 = R_4 + R_2`, `R_2 = n`, and hence `R_4 = 3*omega_3 - n` — the Lean `r4Value`
+form. The corpus's "naive `Sigma_3 = R_4 + R_2` ⟹ `R_4 = omega_3 - n`" wording was a
+normalisation slip (`Sigma_3 = 3*omega_3`), not a failure of the identity. So the
+**Kerov-polynomial / free-cumulant apparatus is live for `omega_3`**, and my negative says
+nothing against it: `omega_3` IS shifted-symmetric (my own control confirms `Sum c^2` is IN).
+The wall is on the `Sum h` side of the covariance only. An agent reading my negative as "the
+Kerov machinery is out" would be reading it one factor too broadly.
+
+**2. √2/24 is back on `main`, and it was retired on 2026-08-21.** The same commit closes with
+*"kappa's gap is 0.3 % (~0.0591 vs sqrt(2)/24 = 0.058926)"*. Both halves are stale:
+
+- `~0.0591` is `kappa_n` in its **peak region** (peak `kappa_32 = 0.0591961`, then descending),
+  not `kappa`. The limit is DERIVED: `kappa = 128/(225 pi^2) = 0.0576404956` (PR #5428, VKLS
+  Chebyshev-mode integral, quadrature-verified to 1e-42).
+- `sqrt(2)/24` was **refuted on 2026-08-21** as a fit to n = 400..800 float64 data —
+  `wlambda_covariance_epic_M1_kappa_structure.py:63` says "BOTH ARE WRONG" in as many words, and
+  `..._kerov_clt_leading_kappa.py:212` prints "sqrt(2)/24 NOT confirmed".
+
+It lives only in that commit *message*, not in any file, so this is a note for the next reader
+rather than a sweep. But the two 2026-08-21 audits left one thing genuinely open and a committed
+window now closes it, which is the only new content here:
+
+**`kappa_n` CROSSES `sqrt(2)/24` between n = 68 and n = 69.** `kappa_68 = 0.0589313` (+0.0098 %),
+`kappa_69 = 0.0589230` (−0.0044 %), falling monotonically to `kappa_78 = 0.0588572` (−0.116 %).
+No new compute — the exact rationals are already in `b1-kappa-window-extension.json`; what is new
+is the comparison. The exact-anchor audit had exact data only to n = 50 and correctly said
+"sqrt(2)/24, 1/17 and neighbours are all within the still-moving window"; the window has since
+moved past this one. And the IO-derivation audit's parenthetical *"the finite-n data never
+reaches it because the corrections are large"* is **false** and is corrected in place.
+
+**Two things the crossing does not establish**, stated because the class verdict differs by
+constant: `1/17 = 0.0588235` is **NOT** crossed by n = 78 (`kappa_78` is still 0.057 % above it);
+and a crossing is not a bound — nothing here constrains `kappa_n` for `n > 78`, which is exactly
+what this gap needs. Probe (6/6 PASS, gated on recomputing every stored decimal from the stored
+exact rational, worst disagreement 8.05e-26):
+`computations/deltalambda/wlambda_covariance_epic_M1_kappa_sqrt2_24_crossing.py`.
+
+**Standing unchanged.** `qou-k5r5` OPEN. The live reduction is the ONE-SIDED effective claim
+`kappa_n >= kappa` for all `n >= 13` (verified exactly to n = 78, crossing at exactly n = 13,
+non-monotone with a peak at n = 32 — so monotonicity is not available and an effective bound is
+required). My edge-measure route (`Q < P ⟹ M_1 > 0`, PRs #6651/#6825) attacks the SIGN directly
+and would bypass the effective bound entirely; it is not competing with it.
