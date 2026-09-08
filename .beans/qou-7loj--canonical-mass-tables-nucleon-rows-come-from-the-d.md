@@ -1,10 +1,11 @@
 ---
 # qou-7loj
 title: Canonical mass table's nucleon rows come from the DEPRECATED Vol·ρ witness (+2.89%)
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T22:39:53Z
-updated_at: 2026-08-08T22:39:53Z
+updated_at: 2026-09-08T04:15:34Z
 ---
 
 Found 2026-08-08 while triaging `qou-efcv` (PR #4822 follow-on). **Not a prose
@@ -218,3 +219,76 @@ against a canonical baseline, with the arithmetic re-verified at 30 dps:
 The `m_qclt_approx` assertion text is accurate as written (it is scoped to
 that channel); the over-reach was in the PR summary and in this bean, and the
 audit now carries a dated §"Re-read against a canonical baseline".
+
+
+---
+
+## CLOSED 2026-09-08 — the whole chain is canonical on `main`, and BOTH deferred items have since been closed by others
+
+Verified on `main` `29126ed0ed6`, at every hop this bean traced.
+
+### The core defect: fixed at the producer, not papered over
+
+`canonical_mass_table_extended.py::lookup_nucleon_mass_borromean` no longer
+reads a witness. It calls the facade:
+
+```python
+from canonical_mass import nucleon_mass_mev  # noqa: E402 — facade
+return (float(nucleon_mass_mev(species)),
+        "canonical_mass facade (muon-anchored Hecke energy)")
+```
+
+`del borromean  # retained for call-site compatibility; no longer consulted`,
+and the pre-2026-08-08 name is kept as a loud-failure alias *"so an older call
+site fails loudly at review time rather than silently resurrecting the +2.89 %
+route"*. The 24-line HISTORY docstring records the defect and — the part worth
+keeping — **why no guard saw it**: the value crossed as data, so
+`noncanonical_reentry_audit.py` had no AST edge.
+
+Every witness downstream in the chain this bean drew now carries CODATA:
+
+| witness | m_p | m_n |
+|---|---|---|
+| `canonical-mass-table-extended` | 938.27 | 939.56 |
+| `low-isotope-mass-table` | 938.27 | 939.56 |
+| `m-qclt-approx` | 938.27 | 939.56 |
+
+Not 965.38 / 966.71 anywhere. The 2.89 % disagreement between two committed
+production mass tables is gone.
+
+### The two things this bean deliberately left — both now closed, by others
+
+- **The wart** (*"the wrapper re-runs the producer restricted to 5 atoms and so
+  overwrites the 7-atom extended witness … Worth fixing separately"*) is fixed
+  and carries its own bean: `low_isotope_mass_table.py:104-106` —
+  *"Invoke canonical_mass_table_extended.py end-to-end, at FULL coverage.
+  Deliberately does **not** pass `--atoms` (bean `qou-xwet`)."* Corroborated by
+  the artifact: the committed extended witness holds **9 rows**, not a
+  truncated 5.
+- **`multi-layer-gap-decomposition`** (*"Needs re-scoping first, not a re-run"*)
+  was re-scoped **and** re-run on 2026-08-23, two weeks after this bean's last
+  entry. Its L1 layer now reads `pred 938.2720894273243` against
+  `actual 938.27208943` — **err −2.7e-09 MeV**, and `total_L1_MeV` is
+  **8.22e-07**, down from ~27 MeV/nucleon. Its own per-row `reason` says it:
+  *"L1 closed: observed gap −0.000000 % is already below the projected 1.948 %
+  (canonical_mass facade; the projection assumes a Vol·ρ-era gap)."*
+
+### One thing found while verifying, NOT part of this bean — filed separately
+
+That same producer's **emitted strings** were not updated with its numbers.
+`multi_layer_gap_decomposition.py`'s module docstring is correct
+(*"L1 measures **+0.0000 MeV for every atom**"*, *"the Markov × 5/2 projection
+is correspondingly **inapplicable**"*), but the two strings it writes INTO the
+witness still say *"L1 dominates free-nucleon errors (+27 MeV per nucleon)"* and
+*"Structural Markov × 5/2 closes ~14.5 MeV of L1 per free nucleon — a 1.5× gap
+closure"*. So the witness — the artifact a downstream reader actually consumes —
+contradicts both the file's own docstring and its own computed
+`total_L1_MeV = 8.22e-07`. Fixed in this PR under AGENTS.md's
+corpus-derived exemption (the file's own docstring fixes the answer).
+
+### The 2026-08-09 self-correction stands and is not disturbed
+
+*"the spectral audit's result was NOT invalidated"* — the −819 ppm / ~35×
+closure is correct and independent of this defect; what changed is its **role**
+(do not compose that factor with the canonical absolute mass). Nothing here
+re-opens that.
