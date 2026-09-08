@@ -49,9 +49,11 @@ chunks is what fits the run into a container at 99 %.
 | quantity | projected | measured |
 |---|---|---|
 | per-module wall | 4.0 s | **1.5 s** |
-| real shadow bytes per module | — | **0.23 MB** (`df`; `du` says 2.4 GB for the hardlinked tree) |
+| shadow cost per module, TRANSIENT | — | **0.22–0.29 MB** — a `df` delta during a chunk, reclaimed at chunk end |
+| shadow cost, STEADY STATE | — | **11 MB total** — 38 files with link count 1; `du`'s 2.4 GB is ~all shared inodes |
 | full corpus | 3.1 h | **~70 min** |
-| full corpus disk | ~800 MB | **~640 MB**, or one namespace at a time when chunked |
+| full corpus disk, unchunked | ~800 MB | **~640 MB** at once |
+| full corpus disk, chunked | — | **one chunk's transient allocation**, which is why it fits a container at 99 % |
 
 ## Five false reds, each of which taught the classifier something
 
@@ -148,13 +150,27 @@ not a duplicate — checked because #6909 had been made obsolete exactly that wa
 
 ## Two measurement lessons, both from getting them wrong here
 
-**Disk: check your own output captures before blaming the compute.** Free fell
-640 MB → 380 MB mid-run and the sweep was the obvious suspect, having just been
-measured at 0.23 MB/module. It was innocent: the real olean tree stayed **static
-at 2718** the whole run — the shadow's no-write-through invariant holding — and the
-growth was **233 MB of this agent's own harness `tasks/*.output` captures**.
-Pruning the ones already read freed 160 MB. Test shadows freed only 22 MB, being
-nearly all hardlink.
+**Disk: I misread it twice, in opposite directions, and both errors are the same
+mistake — trusting a `df` delta.**
+
+First, free fell 640 MB → 380 MB and the sweep was the obvious suspect, having
+just been measured at 0.23 MB/module. It was innocent: the real olean tree stayed
+**static at 2718** all run — the shadow's no-write-through invariant holding — and
+the growth was **233 MB of this agent's own harness `tasks/*.output` captures**.
+Pruning the ones already read freed 160 MB.
+
+Then a later reading of **138 MB free** was called critical, and the recovery plan
+was to delete `/tmp/lean-v4.24.0` (2.5 GB). **That directory IS the live
+toolchain** — both `~/.elan/toolchains/*` entries are symlinks into it, so removing
+it breaks `lean` and kills the sweep. Looking at the target before deleting is the
+only thing that caught it. And the alarm was itself false: 138 MB was a **mid-chunk
+trough**, and free returned to **773 MB** once the driver reclaimed the shadow.
+
+**What to measure instead.** Take disk readings at **chunk boundaries**, and cost
+the shadow by counting files whose link count is 1 rather than by `du` or a `df`
+difference: **38 files, 11 MB**. Everything larger is shared inodes. A projection
+built on the transient figure — that the three staged re-runs "need ~216 MB and
+will not fit" — was wrong for exactly this reason.
 
 **`nohup` does not survive here.** Two runs were reaped when the session idled,
 one 363 of 436 modules into chunk 1 of 162, with no abort line and no summary — a
