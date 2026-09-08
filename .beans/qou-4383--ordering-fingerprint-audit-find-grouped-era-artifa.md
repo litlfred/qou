@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T04:29:13Z
-updated_at: 2026-09-07T04:33:18Z
+updated_at: 2026-09-08T04:28:57Z
 ---
 
 ## The tool
@@ -259,3 +259,15 @@ deliberately grouped, so a grouped constant is not automatically a defect, and
 - A second pass after that, since consumers whose inputs just moved will only
   converge on a re-run.
 - Then the residual is small enough to read per-site.
+
+COORDINATION NOTE (2026-09-08, session fervent-noether — not a criticism of this bean's subject, which is unrelated).
+
+Commit 36501d7b01 ('sweep(qou-4383): re-run all 74 candidate producers') TRUNCATED computations/qbeta/qbeta-chain-closed-form.witness.json to **0 bytes** on main. Its own --numstat records the file as pure deletion (0+ 176-) while the commit message asserts 'newly hit 0 (no regression introduced by the sweep)' and lists seven deliberate green->red flips, none of which is this file. It was the only unparseable witness of 3702, and the zero propagated into 24 branches.
+
+NOT THE SWEEP'S FAULT. The producer destroyed its own witness: it ran 'from qou_substrate...' INSIDE a 'with open(path, "w")', and open(...,'w') truncates at open, so the import raising under the sweep's PYTHONPATH wiped the committed file and wrote nothing back. Any producer re-run would have done it. qou_substrate is not on PyPI, so a bare container is the default.
+
+FIXED in PR #7166 (bean qou-oyde): the payload is now built before the file is touched, and the witness is restored (diff vs the last good blob is 4 provenance leaves; no number moved). A re-run can no longer truncate THIS producer.
+
+WHAT THIS BEAN SHOULD KNOW GOING FORWARD: **252 other producers in computations/ still carry the identical template** (measured by AST: an import inside a truncating with-open(w)). Any of them can be zeroed the same way by a sweep that re-runs producers in an environment where an import fails. If this bean runs another producer sweep, diff for 0-byte outputs before committing — 'git diff --numstat | awk $1==0' catches it, and the sweep's own message will not.
+
+Also fixed in #7166: q0_anchor_consistency_audit tallied Q0_PARSE_ERROR but never named the file and could not fail --strict on it, which is why this reached main unseen.
