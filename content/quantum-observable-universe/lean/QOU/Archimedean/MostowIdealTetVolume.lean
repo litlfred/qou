@@ -157,9 +157,9 @@ instance instMostowIdealTetVolume : MostowIdealTetVolume where
     idealTetrahedron (circlePoint 1 0) (circlePoint 1 (0 + 2 * γ))
       (circlePoint 1 (0 + 2 * γ + 2 * α))
   region_eq_chimney := fun hα0 hβ0 hγ0 hα hβ hγ hsum =>
-    ⟨0, idealTet_eq_chimney hα0 hβ0 hγ0 hα hβ hγ hsum⟩
+    ⟨0, idealTet_eq_chimney hα0 hβ0 hγ0 hsum⟩
   tetDihedralAngles := fun hα0 hβ0 hγ0 hα hβ hγ hsum =>
-    ⟨0, idealTet_eq_chimney hα0 hβ0 hγ0 hα hβ hγ hsum,
+    ⟨0, idealTet_eq_chimney hα0 hβ0 hγ0 hsum,
       (chimney_infedge_dihedral_eq_vertexAngle hα0 hβ0 hγ0 hα hβ hγ hsum).1,
       (chimney_infedge_dihedral_eq_vertexAngle hα0 hβ0 hγ0 hα hβ hγ hsum).2.1,
       (chimney_infedge_dihedral_eq_vertexAngle hα0 hβ0 hγ0 hα hβ hγ hsum).2.2⟩
@@ -176,7 +176,13 @@ chimney's volume is the already-proved `hypVolume_chimney_inscribedTriangle`.  T
 class above is now *optional* — a labelled §3b-cond packaging — since the volume
 identity holds unconditionally for the concrete region.  Closed modulo the single
 cited totally-geodesic model-faithfulness fact (File A1); everything else is
-Lean-proved, sorry-free. -/
+Lean-proved, sorry-free.
+
+The acuteness here is REAL, unlike the acuteness `idealTet_eq_chimney` used to
+carry: it is consumed by `hypVolume_chimney_inscribedTriangle`, whose wedges need
+`ψ < π/2`.  The obtuse companion is
+`ObtuseTiling.idealTetVolume_of_vertices_obtuse`, which swaps that one step for
+the obtuse tiling and is otherwise the same two lines. -/
 theorem idealTetVolume_of_vertices {t α β γ : ℝ}
     (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ)
     (hα : α < Real.pi / 2) (hβ : β < Real.pi / 2) (hγ : γ < Real.pi / 2)
@@ -184,7 +190,7 @@ theorem idealTetVolume_of_vertices {t α β γ : ℝ}
     hypVolume (idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
         (circlePoint 1 (t + 2 * γ + 2 * α)))
       = ENNReal.ofReal (Lob α + Lob β + Lob γ) := by
-  rw [idealTet_eq_chimney hα0 hβ0 hγ0 hα hβ hγ hsum]
+  rw [idealTet_eq_chimney hα0 hβ0 hγ0 hsum]
   exact hypVolume_chimney_inscribedTriangle (by norm_num) hα0 hβ0 hγ0 hα hβ hγ hsum
 
 /-- **`idealTetVolume_eq_lambda_sum` fires unconditionally** — confirming the
