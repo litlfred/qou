@@ -2873,3 +2873,11 @@ against `target = 1 + rMeasured = 1.64112393`. **B is the principled one** — t
 **What this does and does not change.** It does **not** restore `no_carrier_reproduces_b3` — that exclusion's premise is still derived-false, and #7097's re-scoping stands unaltered. What it removes is the hope that the *already-derived* kind-dependence closes the three-body gap. So `qou-brng`'s surviving route now needs a **further** source of per-pair variation beyond the bond kind, or the count channel is not where `b₃` lives.
 
 Probe: `computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py`, 7/7, witness alongside.
+
+
+
+2026-09-08 (owner): Avenue 2 sharpened — both derived edge sets on main are affine in A, and an affine count can never be a surface term, so the prior question is: what edge set has a BULK at all? Decide by a proved invariant, not a fit; a negative closes Avenue 2 outright. Claimed on branch claude/brng-avenue2-bulk-edge-set-2026-09-08.
+
+
+
+2026-09-08 (Avenue 2 CLOSED over the encoding — branch claude/brng-avenue2-bulk-edge-set-2026-09-08). Invariant: LINEAR LAYOUT. atom_braid_word_3A emits every inter-nucleon letter at generator 3k+2, so the coordination graph of any word it can build (any ordering, any multiplicities) is a subgraph of the path on the ordering. Lean QOU/Mass/LinearLayoutNoBulk.lean (sorry-free, lean-direct exit 0): degree ≤ 2; |E| ≤ n; connected ⇒ the path, |E| = n−1, surface = 2; linearLayout_family_not_hasBulk. Probe linear_layout_no_bulk_probe.py 4/4: all 246 words A=2..8 × all orderings are the path (position-based AND strand-tracked); max-contact 3A−6, complete graph C(A,2) and the sub-affine true packing all violate |E| ≤ A and are inexpressible. Scope-(b): no edge set the encoding can express has a bulk. STILL OPEN (do not close this bean): the extensive term itself — a bulk needs either a different encoding with a DERIVED non-linear strand layout, or an extensive term that is not a coordination count; neither is derived, and choosing a layout to match the surface term would be selection against the target. Audit docs/audits/2026-09-08-linear-layout-no-bulk.md.
