@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:04Z
-updated_at: 2026-09-05T06:13:12Z
+updated_at: 2026-09-08T07:45:48Z
 ---
 
 ## Measured, and re-measured after main took 55 commits
@@ -374,3 +374,5 @@ branch); never quote it as a gate result.
   is deliberately NOT declared. It needs BOTH halves of the two-half trap
   (the mask entry AND the substring test, which `"dur"`/`"elapsed"` do not
   reach), so declaring it blind would be a no-op that reads as a fix.
+
+## 2026-09-08: canonical tracker for the recurring "raw-float64 ratchet is RED on main" event is qou-sknx (most recent OPEN one, 2026-09-04); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7. Seven beans (08-11 … 09-06) record one recurring event; this one is kept as-is because its body carries its own finding.

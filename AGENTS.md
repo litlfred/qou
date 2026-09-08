@@ -2203,6 +2203,18 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > forbidden — the choice turns on what `ε` **means** in `Q_β = |ε(Δ)|·E₀`,
   > which is bean `qou-99qc` and is an owner call.
   >
+  > **🟧 OWNER DECISION 2026-09-08 — ε is the AUGMENTATION `σ ↦ q` (option B).**
+  > Selected in chat on the option *"Decide ε in Q_β (qou-99qc) — Augmentation σ↦q
+  > (+12.47 %), z_D trace (−43.16 %), or retract Q_β; I recommend the augmentation"*.
+  > Base value `0.8798906` MeV, **+12.470 %** against CODATA. The published 0.17 %
+  > form is retired as the base (it is the `z = 1` cell) and stays citable only as
+  > the historical C-frame cross-check. The c_k ladder is to be re-derived on this
+  > base (`qou-cds1`, blocked on the phase `qou-pdix`); the dashboard rows
+  > Q_β / m_n / Δ_pn are NOT yet re-scored on it. Same day, the owner also ruled
+  > that every canonical **braid word** is to be selected via γγ (pair-production)
+  > construction + the confinement SDP at q₀, never by census (bean `qou-ales`).
+  > Record: [`docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md`](docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md) §8.
+  >
   > **Until it is made, cite this number with its scope**: it is a recorded
   > cross-check whose functional is inadmissible under the canonical
   > convention, not a derived prediction. Do **not** quote the 0.17 % as

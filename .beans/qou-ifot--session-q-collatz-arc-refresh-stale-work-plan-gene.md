@@ -5,7 +5,7 @@ status: completed
 type: milestone
 priority: normal
 created_at: 2026-08-29T16:28:38Z
-updated_at: 2026-08-30T09:24:15Z
+updated_at: 2026-09-08T07:45:46Z
 ---
 
 TURN 1 (2026-08-29). Reviewed the arc against main -- main's collatz substance is IDENTICAL to the working tree (only .qa.json sidecar churn differs on those paths), so 'lots landed on main' is true corpus-wide but did not move this arc. What HAD moved is the arc's own record: six beans listed as open work that had already landed. Refreshed all six (commit 4c8d75a98a) and opened + landed the successor chip qou-rcgi (commit 13d3d51bbb, PR #6042).
@@ -53,3 +53,5 @@ Durable results:
 - scripts/lean-olean-staleness-check.py (tranche 12, bean qou-ruo1).
 
 STILL OPEN: v=0 across all of D_inf, which is equivalent to the convergence conjecture (qcz7 A1). No bounded chip remains in this arc.
+
+## 2026-09-08: twin qou-wxg1 (identical title, duplicate session milestone, completed) cross-referenced; this bean is the record. Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7.

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:28:52Z
-updated_at: 2026-08-29T18:20:23Z
+updated_at: 2026-09-08T07:45:43Z
 parent: qou-ifot
 ---
 
@@ -55,3 +55,5 @@ Bean 'follow-on 2' (composing the exclusion with qcollatz_word_forces into a sin
 Scope unchanged: a criterion, not a proof it is met. For a general word the height can exceed 2^k - 3^m; deciding when it does not IS the open problem.
 
 FOLLOW-ON LIST NOW EMPTY (commit d065c32f74). qcollatz_no_periodic_orbit_of_height_lt and qcollatz_no_front_loaded_periodic_orbit compose each exclusion with qcollatz_word_forces, so the hypotheses are a step relation, a return P k = P 0, and finite integer computations -- what a consumer actually holds -- rather than the intermediate forced cycle equation. One-line compositions, no new mathematics. lean-direct exit 0 first pass; axioms [propext, Classical.choice, Quot.sound], no sorryAx.
+
+## 2026-09-08: twin qou-1lh4 (identical title, empty body, still marked in-progress) cross-referenced; this bean is the record. Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7.

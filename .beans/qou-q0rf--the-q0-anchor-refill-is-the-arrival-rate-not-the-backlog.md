@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-09-04T06:44:37Z
+updated_at: 2026-09-08T07:45:39Z
 ---
 
 `scripts/precision-gates.sh` has a **blocking** gate red on `main`. Nothing
@@ -154,3 +154,5 @@ verified. The live regression rate is ~1 per 130 commits, and that one is a
 producer defect rather than a committer error — so **do not upgrade the hook to
 blocking on the strength of it.** The remaining work is the backlog, which this
 bean already says not to drain.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

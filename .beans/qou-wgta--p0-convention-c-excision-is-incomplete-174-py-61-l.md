@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-09-07T09:35:42Z
+updated_at: 2026-09-08T07:45:37Z
 ---
 
 
@@ -461,3 +461,22 @@ Three of those four have C in their *purpose* (a convention probe, an
 old-vs-new comparison, a two-`z` discrepancy probe), so they are likely
 deliberate-but-undeclared, the same shape as the Lean site fixed above. Not
 triaged individually here.
+
+## 2026-09-08: this bean is the canonical ledger for the convention-C excision family (audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3)
+
+Chosen because it is the oldest in-progress full-surface tracker and is cited as predecessor by `qou-cds2` and `qou-eea0`; the owner-ruling milestone is `qou-cdx1` (todo) and the S2 science blocker is `qou-cds2`. Family members and statuses as of 2026-09-08 (each now carries a one-line pointer back here; no status changed):
+
+| bean | status | subject |
+|---|---|---|
+| qou-wgta | in-progress | P0: excision INCOMPLETE — 174 py + 61 lean + tools/ Rust core (this ledger) |
+| qou-janm | in-progress | Session: convention-C full excision (owner directive 2026-08-29) |
+| qou-htsi | in-progress (parent qou-2akx) | sibling-found stale C sites + compute-closed gates to re-examine (owner 2026-09-06) |
+| qou-t9r1 | completed | 8 unannounced C sites in computations/ (detector-blind spelling); successors qou-dbau, qou-cds1; blocked sites qou-pmkh (todo) |
+| qou-eea0 | in-progress | CAMPAIGN: regenerate all 84 convention-C witnesses under D |
+| qou-okkz | in-progress | consumer-side detector for deliberate convention-C control arms |
+| qou-jyqd | in-progress | audit skips _deprecated, but two deprecated producers are still named by content |
+| qou-fq0f | in-progress | convention D is Wenzl level r=2 exactly — the row cap the closure block argues against |
+| qou-47sx | in-progress | convention-D atom.py caller sweep — true blast radius |
+| qou-cds2 | in-progress (parent qou-cdx1) | S2 (SCIENCE): pyhecke.gram.z and the Gram singularity |
+
+Related, not in the audit's nine: qou-8iru (in-progress, D is Temperley-Lieb), qou-cds1 (in-progress, S1 ladder re-derivation), qou-cdx1 (todo, milestone). Previously measured cross-citation: cds2↔8iru, htsi→t9r1, htsi→cds2, eea0→wgta, cds2→wgta only.
