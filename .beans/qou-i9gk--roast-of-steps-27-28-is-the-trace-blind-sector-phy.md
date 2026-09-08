@@ -1,11 +1,11 @@
 ---
 # qou-i9gk
 title: 'ROAST of Steps 27-28: is the trace-blind sector physical, and is E_2/E_1 a vertex or only a propagator?'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-01T04:19:34Z
-updated_at: 2026-09-01T04:40:49Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 Two self-identified holes in this session's Steps 27-28 (qou-cds1), either of which would deflate the headline. Both are checkable and neither has been checked.
@@ -239,3 +239,18 @@ finding.
 
 Found by a dispatched audit of the Standard-Model work against the full tower;
 verified against `qou-fvzm` directly rather than taken on the agent's word.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

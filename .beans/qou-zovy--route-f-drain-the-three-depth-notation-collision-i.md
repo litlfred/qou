@@ -1,11 +1,11 @@
 ---
 # qou-zovy
 title: 'ROUTE F: drain the three-depth notation collision in the notation register'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:42:09Z
-updated_at: 2026-09-05T05:49:04Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 ROUTE F of epic qou-2q85. Cheap hygiene, worth doing regardless of which route is chosen, and it is the direct countermeasure to an error class that produced SEVEN corrections in one session.
@@ -88,3 +88,18 @@ MEASUREMENT DONE, EDIT NOT STARTED. The register edit is a content change to the
 paper's authoritative notation register with corpus-wide reach, and two of the
 seven names are one-or-two depending on a proposition's status -- so it is an
 owner decision, not idle hygiene. Bean stays open on the edit.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.
