@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T22:39:53Z
-updated_at: 2026-09-08T04:15:34Z
+updated_at: 2026-09-08T04:26:40Z
 ---
 
 Found 2026-08-08 while triaging `qou-efcv` (PR #4822 follow-on). **Not a prose
@@ -292,3 +292,52 @@ corpus-derived exemption (the file's own docstring fixes the answer).
 closure is correct and independent of this defect; what changed is its **role**
 (do not compose that factor with the canonical absolute mass). Nothing here
 re-opens that.
+
+
+### 🛑 CORRECTION, same day — the `8.22e-07 MeV` I quoted above is a STALE WITNESS value, and the true figure is 571× larger
+
+I wrote *"`total_L1_MeV` is **8.22e-07**, down from ~27 MeV/nucleon"* as evidence
+that L1 is closed. **That number is off the committed witness, and the committed
+witness disagrees with its own documented input.**
+
+Measured by re-running `multi_layer_gap_decomposition.py` unmodified on `main`
+`29126ed0ed6`, ephemeral provenance masked:
+
+| | committed witness (2026-08-23) | fresh run | source of truth |
+|---|---|---|---|
+| neutron `pred_MeV` | 939.5654227645324 | **939.5658930678236** | `low-isotope-mass-table.witness.json` **and** `canonical_mass.nucleon_mass_mev("neutron")`, both exactly the latter |
+| neutron `err_MeV` | 8.245324e-07 | **4.711278236e-04** | |
+| neutron err | **0.878 ppb** | **501.43 ppb** | |
+| `summary.total_L1_MeV` | 8.218567e-07 | **4.711251479e-04** | |
+
+**571.4× understated.** The producer's own docstring says it *"Reads the 5-atom
+mass table … from `low-isotope-mass-table.witness.json`"*, and that witness — on
+`main`, regenerated 2026-09-07 — carries `939.5658930678236`. So the stale value
+is not a different convention or a different pin; it is the witness being two
+weeks behind its input.
+
+**The verdict this bean closes on is UNCHANGED, and that is worth being explicit
+about rather than glossing.** 501 ppb is still five orders of magnitude below the
++2.89 % (≈ 2.89e7 ppb) this bean was opened on, and the producer's own guard
+still fires with the corrected number: `5.014e-05 % < 1.948 %` ⇒
+`applies: False, "L1 closed"`. So `qou-7loj` stays closed. What was wrong was my
+*evidence figure*, not the conclusion — but a wrong figure quoted as the reason
+for a closure is exactly the failure mode this corpus keeps paying for, so it is
+corrected here rather than left to be found later.
+
+**Where it is NOT established.** I cannot say *when* the neutron value diverged.
+`git log -S "939.5654227645324" -- computations/low-isotope-mass-table.witness.json`
+returns empty and the gap-decomposition witness shows only ONE commit in history —
+but this clone is **shallow**, so "not in the fetched window" and "never happened"
+are not the same claim and only the first is measured. The value does appear on
+`main` in `landauer-crossing-energy-probe.witness.json` and
+`codata-corpus-vintage-scan.witness.json`, and it sits **0.88 ppb** from CODATA
+`939.565421940` — near enough that the stale row was effectively CODATA-shaped
+rather than a framework prediction. Whether that is coincidence or a former
+CODATA read is **not** settled here.
+
+**What it changes for the reader.** `m_n` is one of the five scoreable L2
+observables AGENTS.md lists as missing its 100× target; the honest current
+round-trip is **501 ppb**, not sub-ppb. Anything downstream that read
+`multi-layer-gap-decomposition.witness.json`'s L1 total before this regeneration
+was reading a residual understated by 571×.
