@@ -603,9 +603,12 @@ open QOU.Hecke.SymmetricCoxeter QOU.Machinery.CoxeterBruhat QOU.IwahoriHecke.Bru
 theorem bruhatLe_mul_simple_of_isRightDescent_An {N : ℕ} {W : Type*} [Group W]
     (cs : CoxeterSystem (CoxeterMatrix.Aₙ N) W) {u w : W} (h : BruhatLe cs u w)
     {s : Fin N} (hs : cs.IsRightDescent w s) : BruhatLe cs (u * cs.simple s) w :=
-  bruhatLe_mul_simple_of_isRightDescent cs
-    (QOU.Machinery.CoxeterDihedralDescent.dihedralExact_le_three cs (QOU.IwahoriHecke.Matsumoto.An_le_three N))
-    (fun i j hij => QOU.IwahoriHecke.Matsumoto.An_ne_zero N i j hij) h hs
+  -- `bruhatLe_mul_simple_of_isRightDescent` became UNCONDITIONAL in `9151ad46ee5`
+  -- (`qou-1u90`): its `DihedralExact` and `M i j ≠ 0` hypotheses were discharged
+  -- and removed.  That commit ported its callers across ten files and missed this
+  -- one, because this module is not in `QOU.lean`'s import closure, so
+  -- `lake build QOU` never compiles it.  Drop the two obsolete arguments.
+  bruhatLe_mul_simple_of_isRightDescent cs h hs
 
 
 
