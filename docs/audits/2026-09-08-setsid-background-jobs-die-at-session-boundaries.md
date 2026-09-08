@@ -42,14 +42,32 @@ logging. It says nothing about **which backgrounding mechanism** to use, and the
 obvious shell idiom is the one that loses the work. Both can be had at once —
 the harness task runs the `| tee` pipeline as its foreground command.
 
-## What is NOT established
+## Follow-up measurement, same day: the harness tasks SURVIVED — partially decisive
 
-- **That a harness-tracked task survives a session RESUME specifically.** The
-  30-minute observation was across turn boundaries *within* a session. Whether it
-  survives the resume that killed the `setsid` jobs is being tested by the
-  current relaunch and is **not** yet measured. If it also dies, the real rule is
-  narrower: only checkpointing saves a long compute, and the interval between
-  boundaries bounds how long a single unit of work may take.
+Relaunched through `run_in_background` and re-checked 31 minutes later, across a
+scheduled check-in boundary:
+
+| | before | after 31 min |
+|---|---|---|
+| ⁴He banked partitions | 52/77 | **58/77** |
+| triton banked rows | 13/30 | **19/30** |
+
+Both process groups were alive with ~1870 s elapsed, i.e. they ran continuously
+through the gap. Under `setsid`, the comparable gap produced **zero** banked
+units. So the mechanism is the difference, and the rule stands.
+
+## What is STILL not established — and it is the discriminating case
+
+**This boundary did not fire a `SessionStart:resume` hook; the ones that killed
+the `setsid` jobs did.** So what has been shown is that a harness-tracked task
+survives a ~31-minute idle gap. It has *not* been shown to survive the heavier
+resume that reaped the detached jobs, because that event did not occur here.
+
+Do not read "survived a boundary" as "survives a resume" — they are different
+claims and only the weaker one is measured. If a harness task is later observed
+dying at a resume, the rule narrows to: only per-unit checkpointing preserves
+anything, and the interval between boundaries bounds how long a single work unit
+may take.
 - **Why** the detached jobs die. Container suspension, process-group reaping and
   cgroup cleanup are all consistent with the observation; nothing here separates
   them.
