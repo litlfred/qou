@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-28T14:08:26Z
-updated_at: 2026-08-28T14:28:09Z
+updated_at: 2026-09-08T08:54:55Z
 ---
 
 ## Measured 2026-08-28, on origin/main at cdbdc84af1
@@ -205,3 +205,121 @@ scopes.
   1. tree-level provenance ratchet in precision-gates.sh   (was steps 1 + 2)
   2. restore the 17 from git (JSON merge, not a re-run)     (was step 3)
   3. route the 281 through WitnessBuilder                   (was step 4, the real fix)
+
+
+## 2026-09-08 — re-measured: the DAMAGE is repaired, the GATE is not. 2 of 3, and the missing one is step 1.
+
+Pulled off the `qou-bstl` completion-candidate queue, flagged by `c29e0752bbd`
+("P30 provenance on 17 hand-rolled producers"). Measured all three steps of the
+revised plan against `main`.
+
+### Step 2 — restore the 17: **DONE**
+
+Worked case from this bean's own opening, `sublemma-2-1-alpha-shift-extract.witness.json`:
+
+    scriptFile PRESENT   commitSha PRESENT   engine PRESENT   auditOnly PRESENT
+
+against the bean's recorded `present: NONE` at `253e2ffaf5`. And it was fixed at
+the producer, not by a JSON merge: `sublemma_2_1_alpha_shift_extract.py:344`
+emits `"scriptFile": Path(__file__).name` in its own payload, and `:385-388`
+imports `WitnessBuilder as _WB` and calls `_WB.stamp_staleness_metadata(...)`.
+Landed by `7decba09cf1` on bean `1j39` ("the strip-provenance blocker was a
+producer defect — fixed 5, stamped 4"), i.e. by a *different* arc than the one
+flagged here — two beans converged on this without either citing the other.
+
+### Step 3 — route the at-risk population: **281 -> 0**
+
+Same measurement, re-run today: 2990 witnesses carry `scriptFile`, and the
+number whose producer emits no provenance **by any route** is **1**. That one,
+`per_irrep_pole_proton_h3.py`, is a false positive of my own test — its witness
+carries all four fields, and its docstring says `per_irrep_pole_atom.py` is now
+the de-facto owner and `WitnessBuilder.save()` handles it. It is a retired
+intruder, not an exposure. **The real count is 0.**
+
+Both remaining named casualties verified individually, since they are the only
+controls this bean supplies:
+
+    sweeps/low_isotope_binding_sweep.py   :294 setdefault scriptFile, :295 _WB.stamp
+    probes/gt_matrix_pslq_probe.py        :236 setdefault scriptFile, :237 _WB.stamp
+
+### 🛑 Three measurements, three answers, and two of them were mine and wrong
+
+Worth recording because the failure is this corpus's most common one and I hit
+it twice inside twenty minutes:
+
+| test | at-risk | why it is wrong |
+|---|---|---|
+| `"WitnessBuilder" in code_only(src)` | **3** | too permissive — the bare NAME is present as an import in 906 producers that never construct one |
+| `"WitnessBuilder(" in code_only(src)` | **909** | too strict — misses `_WB.stamp_staleness_metadata`, a static call through an ALIASED import, which is exactly how all three named casualties were repaired |
+| emits `scriptFile` / `stamp_staleness_metadata` / `WitnessBuilder(` / `wrap_legacy` | **1 (really 0)** | asks the question the bean asks — does the producer emit provenance — instead of asking which helper it names |
+
+The first two disagree by 300x on the same tree at the same commit. The
+discriminator was not a better regex: it was checking the three producers the
+bean had already measured, and finding that the answer my test gave for them
+contradicted their source.
+
+### Step 1 — the tree-level provenance-deletion ratchet: **NOT BUILT**
+
+`scripts/precision-gates.sh` has no gate comparing a changed witness's
+provenance keys against `git show HEAD:<path>`. The two provenance rows it does
+carry answer a different question:
+
+    witness scriptFile provenance          computations/witness_provenance_audit.py
+    witness provenance completeness (adv)  computations/audits/witness_provenance_audit.py
+
+Both ask *"does the named `scriptFile` actually write this witness?"* — neither
+can see a key that was present yesterday and is absent today. So this bean's own
+central finding stands verbatim and unaddressed: **a provenance regression is
+still structurally unobservable to the checks meant to police provenance.**
+
+### So the shape is the one this session keeps finding
+
+The 17 casualties are repaired and the 281-witness pool is drained — real work by
+two independent arcs. What was not built is the thing that stops it recurring,
+and the bean had already designed it in full. The next producer re-run that drops
+a provenance key will land exactly as the first 17 did.
+
+### 🟡 DECISION for the owner — this is the one thing this bean is waiting on
+
+**What is being decided:** whether to add a blocking pre-commit ratchet that
+refuses any commit in which a `*.witness.json` loses a provenance key
+(`scriptFile`, `commitSha`, `engine`, `auditOnly`) it carries in `HEAD`.
+
+**Why it needs you rather than me.** Under the 2026-09-07 ask-first directive
+this is neither exemption: it does not increase precision, and no corpus
+artifact fixes what the gate should be — a bean's design is a proposal, not a
+corpus decision. More to the point, a new BLOCKING gate changes what every other
+agent's commits are allowed to do, which is a policy change, not a repair.
+
+**Option A — build it as a blocking gate in `precision-gates.sh`.**
+*Means:* one new script, one row in the gate table, `--changed` makes it free
+when no witness was touched. *Costs:* ~1 h; the gate table gains a row.
+*Risks:* a legitimate schema evolution that intentionally drops a field now
+needs an override; false reds annoy siblings mid-sweep and that is precisely
+"how a guard like this earns a reputation for crying wolf and gets switched
+off", which this bean already quotes about the neighbouring guard.
+*Commits to:* provenance keys becoming append-only in practice.
+
+**Option B — build it as WARN-only, on the commit hook.**
+*Means:* same check, printed not enforced, alongside
+`precommit-precision-warn.sh`. *Costs:* the same hour. *Risks:* a warning that
+nobody reads is what the existing provenance audits already are. *Commits to:*
+nothing; reversible in one line.
+
+**Option C — do nothing.** *Means:* the 17 stay repaired and the 18th is
+unguarded. *Costs:* nothing today. *Risks:* the corpus has now executed this
+exact regression once at scale, unattended; the `qou-aj91` reroute is still
+recorded to be picked up cold, and each reroute is a producer re-run.
+*Commits to:* re-doing the repair work when it happens again.
+
+**The default if you say nothing is C** — the bean stays `todo`, the damage
+stays repaired, and nothing is at risk *right now* because the migration
+batches converged.
+
+**My judgement, marked as judgement:** B. The measured harm was 17 files that
+were fully recoverable from git, so the blast radius does not justify a blocking
+gate that can red-line a sibling mid-sweep; but the class recurred twice under
+two different beans without either noticing, which is what a warning at the
+commit boundary would have surfaced. It is also the reversible one.
+
+Bean stays `todo`, waiting on that call.
