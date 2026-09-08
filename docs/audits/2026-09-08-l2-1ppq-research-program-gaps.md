@@ -312,6 +312,17 @@ set of sorry-free exclusions that fence the problem sharply.
 | a convex weight `w*` between B and C exists but fails on 3 of 6 basis elements | **fitted → excluded** | `qou-99qc` 2026-08-28 |
 | option E (a different element): requires `χ_(2,1) = 2χ_(3)`; both `Δ_S` and `Δ_L` fail for every q > 1 | scope-(b) exclusion of both candidates | `qbeta-option-e-forced-class` 9/9 |
 
+**The two admissible points are one Wenzl tower `[PR]`.** Sibling work on `qou-99qc` (#7115,
+`13bb8243d8`, on `main`; extended to all `n` by #7167) shows the augmentation *is* the Markov
+trace at `z = q`, and that solving the corpus's own Wenzl relation for `z` gives
+`z(r) = q^(2r−1)(q²−1)/(q^(2r)−1)`: `r = 1` is the augmentation, `r = 2` is convention D. So
+"which functional" is "which Wenzl level"; the row cap gives one-row support at `r = 1` and
+two-row at `r = 2` for every `n` (checked `n = 3…7`), which is why there are exactly two
+admissible roots; and the published `z = 1` corresponds to `r ≈ 1.1239` — a non-integer level,
+so no cap applies and it annihilates nothing. That is the structural reason it fails, stronger
+than the local `(1³)`-numerator argument. D7's "convention D = the two-row truncation" is thereby
+derived rather than assumed.
+
 **The decision that is pending is what ε *means*** in `Q_β = |ε(Δ)|·E₀`: the augmentation
 (an algebra map that descends to the TL quotient `H₃/rad`, where `prf:algebraic-gns-embedding`
 puts the theory) or the coordinate sum (not an algebra map unless h = 0 —
