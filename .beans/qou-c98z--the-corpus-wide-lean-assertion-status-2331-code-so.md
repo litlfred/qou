@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-11T14:48:36Z
-updated_at: 2026-09-11T15:11:59Z
+updated_at: 2026-09-11T15:14:14Z
 ---
 
 **Question asked (owner, 2026-09-11): "all assertions proved in lean?"** Answer: **no**,
@@ -195,3 +195,37 @@ honest statement of what the paper proves, and nothing in the corpus currently r
 Filed as the real next step here rather than in a new bean. **Not started** — it is a
 measurement, so the 2026-09-07 ASK-THE-OWNER directive does not gate it, but it is a real
 piece of work and should not be started while the owner may want something else.
+
+
+### The number that actually answers the question: **187**
+
+Measured directly — for every `class … : Prop` in the corpus, does *any* `instance` of it
+exist anywhere in `content/**`?
+
+| | count |
+|---|---|
+| conjecture-carrier `class … : Prop` **declarations** | 237 |
+| of those, **distinct names** | 234 |
+| names with **at least one instance** | 47 |
+| names with **NO instance** — the honest open state | **187** |
+
+A class with no instance is an assumption that is **stated and not discharged**. Every
+`[C]`-conditional theorem downstream of one is sorry-free, passes `#print axioms` with no
+`sorryAx`, and is still **conditional on an open conjecture**. That is the whole content of
+AGENTS.md §"Axiomatization is NOT a Proof", and **187 is its size**.
+
+So the answer to *"all assertions proved in lean?"* is: **no — 187 open class-carried
+assumptions**, not 2331 sorries and not 4 either. The `sorry` count answered a different
+question, and both of my answers to it were wrong before this one.
+
+Sample of the 187, to make clear these are not bookkeeping stubs but the framework's own
+open problems: `AlphaEmFixedPointNormalization`, `BindingFollowsQBesselKernel`,
+`BlochSuslinUniqueness`, `BlochWignerInjective`, `BarOddLadderShape`,
+`ArchimedeanRemainderExponentialDecay`, `AtomicJSJDecomposition`.
+
+**Caveat, stated because it bounds the number in the direction that matters:** the instance
+search is a textual `instance … : Name` match over the stripped corpus, so it can miss an
+instance supplied by `derive`, by an anonymous-constructor `instance` whose type is a
+definitional alias, or from outside `content/**`. Every such miss moves a class from the
+187 into the 47, so **187 is an upper bound on the open set** — and 47 is a lower bound on
+the discharged set, which is the conservative direction for a claim about what is proved.
