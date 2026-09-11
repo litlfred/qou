@@ -383,3 +383,64 @@ cost from (b)'s side of the ledger, nothing more.
 checks 8–10, part of **22/22**, exit 0.
 
 **Bean stays open** (rule 13a).
+
+## 2026-09-11 — RETRACTION of my own entry above: the A+Z surface is ≥ 4, not 1
+
+The entry immediately above concludes *"exactly one consumer carries the `A+Z`
+reading"* and re-prices option (b) on it. **That is wrong as a dependency claim,
+and I flagged the exact gap it falls into in its own scope note** — *"whether a
+block could depend on the count without writing it; that is not detected here."*
+Three do.
+
+**All three are in `molecular-construction`, and the arithmetic is spelled out in
+words:**
+
+| block | says | that is |
+|---|---|---|
+| `co-molecular-braid-carbon-monoxide.md` | *"`𝒜_C ∈ H_{18}(q)` has 18 strands (12 nucleons + 6 electrons)"* (`Z=6,N=6,A=12`) | `A+Z = 18`; `3A` would be **36** |
+| same | *"24 strands (16 nucleons + 8 electrons)"* (`Z=8,N=8,A=16`) | `A+Z = 24`; `3A` would be **48** |
+| same + its `.ts` | *"`H_{42}(q)` (`18 + 24 = 42` strands)"* | under `3A`: `36 + 48 = 84` |
+| `h2-molecular-braid.md` | *"an atomic braid in `H_2(q)`: one proton and one electron"*, then `H_4` for the molecule | `A+Z = 2`; `3A` would be **3** |
+
+**"nucleons + electrons" IS the `A+Z` construction.** None of these blocks writes
+the string `A+Z`, so the textual classification counted all of them as *"no strand
+count at all"*.
+
+### This reverses the re-pricing, and it strengthens reading (a)
+
+Option (b) does **not** cost one block. The molecular chapter is built on
+`A + Z` numerically, and under (b) — `3A`, **no electrons** — it has no electrons
+to bond with. That is not a rehoming; it is a structural problem for (b).
+
+It also answers this bean's own *"The electron content has nowhere to go"*: it
+does have somewhere to go. It goes into `molecular-construction`, which is
+entirely built on it.
+
+### The full numeric census, exhaustive
+
+Seven of the 24 citing blocks carry a bare numeric `H_n`, and **a numeric `H_3`
+means three different things** among them:
+
+| kind | n | blocks |
+|---|---|---|
+| `A+Z` arithmetic | **3** | the molecular ones above |
+| **per-nucleon** `H_3` (the quark triple) | 2 | `atom-knot-exists-proof.md` (*"each nucleon … canonical NF in `H_3(R,q)` on 3 strands"*, and it writes `H_{3(Z+N)}` for the atom), `active-set-trace-concentration.ts` (`(H_3)^{⊗A}`) |
+| the **trefoil's** `H_3` (`T_{2,3} = σ₀σ₁σ₀`) | 1 | `electron-shell-braid-capacity.md` |
+| catalogue | 1 | `definition-index.md` (18× `H_3` from other entries' titles) |
+
+The last two are false positives for any scan that reads a numeric `H_n` as a
+strand count, and both were caught by reading the block rather than by the regex.
+
+### What stands from the entry above
+
+The **16 blocks that use no strand count at all** and the **5 on the production
+side** are unchanged. What is retracted is only the final step: *citations (24) ≫
+dependencies (1)*. The correct figure is **≥ 4**, and "≥" is deliberate — the
+numeric scan keys on `H_n`, so a block depending on the count through prose or a
+witness would still be missed.
+
+**Verification:** `strand_count_reading_is_load_bearing_probe.py` checks 11–14,
+part of **31/31**, exit 0. Check 11's first assertion failed at 4 and was corrected
+to the measured 7 before this was written.
+
+**Bean stays open** (rule 13a).
