@@ -1,10 +1,11 @@
 ---
 # qou-16yn
 title: 'MAIN IS BROKEN: 70ae502091 gutted the deuteron chi witness 2h ago -- consumer crashes, values match nothing'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-05T20:28:09Z
-updated_at: 2026-09-05T20:28:09Z
+updated_at: 2026-09-11T14:42:36Z
 ---
 
 
@@ -96,3 +97,50 @@ it does not fix.
    three weeks, and leaves `qou-49vn`'s question exactly as open as it was.
 3. Do **not** regenerate it from a producer until `qou-49vn` settles which
    kernel is canonical.
+
+
+## 2026-09-11 — CLOSED. Main is not broken; verified by running the consumer this bean names.
+
+Pulled off the `qou-bstl` completion-candidate queue. This bean's title is a
+claim about a *state* — "MAIN IS BROKEN" — so the honest test is the state, not
+the commit log.
+
+**The file is whole.** `computations/chi-deuteron-h6-at-q0-50dps.witness.json`:
+
+    tr_M_at_q0 present            : True
+    per-partition keys            : chi_lambda, compute_time_sec, contribution,
+                                    dim, partition, y_lambda
+
+All eight top-level keys this bean lists as LOST are back, and all four
+per-partition keys (`dim`, `y_lambda`, `contribution`, `compute_time_sec`) —
+against the gutted `{partition, chi_lambda}` it recorded.
+
+**The named consumer runs.** `option_e_multi_isotope_delta_lambda_probe_v3.py`,
+which this bean caught dying at `KeyError: 'dim'` (line 65) and would have died
+again at line 129 on `tr_M_at_q0`, now completes: **exit 0**, full offset-family
+table printed, `best = minus_dim_max_over_A`, max rel error 81.39 % across D/T/³He.
+(That 81 % is the probe's own scientific result — Option-E offsets do not close
+— not a symptom of this bug.)
+
+**How it was resolved, and by whom.**
+
+    70ae502091a  drain(qou-psjm)  the gutting — 290 files, 7537 deletions
+    a4f59e43b47  fix(qou-16yn)    "un-break main -- restore the two witnesses
+                                   70ae502091 damaged (OWNER-AUTHORISED, option 2)"
+    0a03025fe44  regen(qou-92u9)  7 of 8 chi caches rebuilt on owner ruling
+
+So the bean's own **option 2** was taken, with owner authorisation — exactly the
+"minimal un-break" it recommended. Its **item 3** ("do not regenerate from a
+producer until `qou-49vn` settles which kernel is canonical") was then superseded
+**by an owner ruling** under `qou-92u9`, not by an agent's choice; that is the
+right way for that item to be overtaken. Its **item 1** ("ask `qou-psjm`'s author
+what wrote that file") is answered in effect: the owner authorised the restore
+rather than the schema change, which settles that the gutting was collateral.
+
+**One thing noticed in passing, NOT this bean's subject and not fixed here:** the
+restored witness carries `scriptFile: None`. That is the provenance class of
+`qou-4un2` — which I re-measured today as 281 → 0 at-risk producers, so this is
+a witness-side residue rather than a live producer exposure. Recorded, not
+actioned; it does not affect the consumer, which reads payload keys.
+
+**qou-16yn closes.**
