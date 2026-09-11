@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-11T15:32:44Z
+updated_at: 2026-09-11T15:53:41Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -41,3 +41,8 @@ Step 1: QOU/Mass/GammaGammaWordSelection.lean — GammaGammaWord (product of sig
 
 ## 2026-09-11 — step 3 CLAIMED on branch claude/ales-step3-h3-sdp-selector-2026-09-11 (stacks on PR #7184)
 Instantiating SDPSelected at H_3 over the gamma-gamma candidate set (Lean sibling module), running the PSD/Frobenius-positivity selection over (sigma_0 sigma_1^-1)^k at the proton pin in a probe, and computing the pp binding sign with the selected bond vs the template. Bean stays in-progress.
+
+
+
+## 2026-09-11 — step 3 landed on PR #7192 (branch claude/ales-step3-h3-sdp-selector-2026-09-11, stacks on #7184)
+Lean QOU/Mass/GammaGammaSelectorH3.lean (26 theorems, no sorryAx): inside H_3 every gamma-gamma word is (sigma_0 sigma_1^-1)^k; PSD feasibility of a gamma-gamma word reduces to the (2,1) block; the single vertex is NOT Matrix.PosSemidef (off-diagonals q b vs -b/q, b^2 = [3]/[2]^2 > 0 derived); the literal SDPSelected selects the empty word under crossing-count cost. Probe gamma_gamma_h3_psd_selector_probe.py (proton pin, 60 dps, 8/8): literal reading -> identity only; form / Frobenius-positivity readings -> minimal NON-ZERO survivor k = 3 = beta_Bor (nucleon) and G^3 = (sigma_2 sigma_3^-1)^3 (pp bond); with G^3 the log-law diproton is UNBOUND, B_pp = -0.004469 MeV vs template +2.0710 MeV (scope-(a); recorded on qou-vbyi). OPEN, owner call: which reading of PSD the confinement SDP means on braid words (a word's image is never self-adjoint, so the literal reading admits no non-trivial word). Bean stays in-progress. Audit: docs/audits/2026-09-11-gamma-gamma-word-selection-step3.md.
