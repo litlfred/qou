@@ -1,11 +1,11 @@
 ---
 # qou-brng
 title: 'OPEN KERNEL: derive that the saturated nuclear binding fraction = ℏ_q² (mass/binding rung)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-07T10:25:43Z
+updated_at: 2026-09-08T09:01:27Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2491,3 +2491,5 @@ So the forward route I proposed one turn earlier — *compute `w₃` for L6a4 fr
 **What that means for this bean's surviving route.** The route is *"why the coordination count `M` is the binding multiplier while the mass carries the self-linking weight `lw`"*. It is **not refuted** — `CrossingEnergy.decomposition` and `brunnian_binding_survives` stand. But the count channel **alone**, with a uniform per-crossing weight, provably cannot produce the measured three-body cumulant, for *any* carrier. `pairDependent_weight_not_a_count` in the same file is the shape of the escape: a weight that varies per pair is not a count. So the open question sharpens to whether there is a *derived* per-pair weight — and per the anti-fit rule, a per-pair weight chosen to hit `b₃` is a fit with three free numbers, which is worse than the honest miss.
 
 Verification note for whoever touches this next: a bare `lean`-direct pass is **not** sufficient after a rename — a dependent compiles against the cached olean, which still carries the old name. Build the renamed module into a hardlinked shadow first, then compile the dependents against that. All four are green; axioms unchanged; no `sorryAx`.
+
+## Claimed 2026-09-08 ~09:00Z by session qou-vyvt (owner authorised overlap with sibling #7155 Avenue 2). Angle: the SURVIVING route named in this bean — linking (mutual) vs self-energy (self-linking) amplitudes — approached from the three bounds that landed today: #7165 (bond-cut identity: all layout dependence of a positive pair-additive count is delta*n_pn, and no convex interface supplies the symmetry energy), #7174 (the residual is 98.6 percent a UNIFORM factor, undecidable against a uniform bond rescaling at fixed law), #7155 (every expressible edge set is a linear layout, and a linear layout has no bulk). Distinct from #7155: that PR excludes edge sets; this front asks what object supplies the extensive term GIVEN the exclusion, i.e. why the binding multiplier is the mutual linking count while the mass multiplier is the self-linking weight lw.

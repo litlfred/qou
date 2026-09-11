@@ -605,3 +605,234 @@ Measured at `k_exact=4`:
 **Safe: ZERO consumers.** Measured over the whole tree, tracked and untracked. `probe_9b_manybody_expansion.py` writes a `cumulative_MeV` of its own into its own witness and never reads this one. `where_the_a_dependence_is_lost_probe.py` reads `raw_total_MeV` / `gated_total_MeV` — untouched, and it already distinguishes the two correctly.
 
 Verified after the rename: old key absent; `cumulative_ungated_MeV == raw_total_MeV`; and `float(gated_total_MeV) == ` the returned value **exactly**.
+
+
+## The #7160 path-sum is NOT a route past this wall (2026-09-08, qou-hxz4)
+
+Measured on the words `unified_iterative_correction` actually hands the kernel (captured by instrumenting `_lp_kernel_steps`): for every atom D/T/³He/⁴He/⁵Li and every k = 3..11 the word is a single seminormal segment covering all k−1 generators (generator index cycles `g mod (k−1)` through every letter), no cyclic rotation is multi-segment, and the T_w-support of the element lies in no 2-block parabolic product (k ≤ 7, rotations k ≤ 5) — so no Hecke-relation rewriting is level-local either. On such a word `chi_lambda_path_sum` degenerates to the O(L·dim²) direct seminormal trace in mpmath: 23–40× SLOWER than `lp_accumulator_step_traces_mpfr` at k = 6..8, while agreeing with it to 8.6e-50. The remaining cost is the kernel's O(L·dim²) at dims ≤ 2310 — steps 2–4 above stay the live plan. A level-local binding word would be the 3A-strand `atom_braid_word_3A` element, i.e. a different producer with different numbers (owner decision, framed in qou-hxz4). Probe `computations/probes/uic_word_level_locality_probe.py` (11/11); audit `docs/audits/2026-09-08-binding-word-not-level-local.md`.
+## The exactness stopped at the builder — PR #6807 (2026-09-05)
+
+#6794 made `_build_ysn_matrices` exact and I wrote step 3 up as done. It was
+not: the *consumers* threw the exactness away twice, and the second one is a
+defect I had walked past twice in this same file.
+
+**1. Ambient `mp.dps`.** mpmath rounds every operation to the ambient
+precision, which is **15** on a bare import — float64's significand. So an
+exact input multiplied in `unified_iterative_correction` is a float64
+computation. Measured on one sigma entry:
+
+| | |
+|---|---|
+| builder entry, significand bits | **167** (float64 has 53) |
+| `v*v` at ambient dps 15 | **53** |
+| `v*v` inside `workdps(COMPUTE_DPS=70)` | **234** |
+| relative difference per operation | 2.5722e-17 |
+
+**2. The log layer.** `math.log`, `float(np.trace(M))`,
+`float(np.max(np.abs(M)))` and `0.0` seeds narrowed every step back to 53 bits
+on top of matrices carrying 167. `_trace_dim` no longer casts (all three other
+call sites already cast at their own boundary). The accumulation now reaches
+the public boundary carrying **236 significand bits** where it carried 53.
+
+**Neither half is sufficient alone, and that is the finding worth keeping.**
+Switching `atom_character_raw`'s `math.log` to `mp.log` FIRST moved nothing —
+`0.00e+00` on four partitions — because at dps 15 the two agree. The type
+change buys nothing without the precision context, and the context buys
+nothing while the log narrows. I measured the type change alone, saw zeros,
+and nearly recorded "no effect".
+
+A/B against a real `origin/main` worktree, `_HAS_LP_KERNEL = False`:
+
+    atom_character_raw (3,2,1)   -0.019884149989698813 -> -0.01988414998969862   9.77e-15
+    atom_character_raw (3,3)        0.6073914694654984 ->   0.6073914694654982   3.66e-16
+    atom_character_raw (4,2)       -0.7237754619142504 ->  -0.7237754619142498   7.67e-16
+    atom_character_raw (4,2,1)     -0.8256259468119244 ->  -0.8256259468119246   2.69e-16
+    unified_iterative k=5          -0.7335499391635036 ->  -0.7335499391634975   8.32e-15
+    unified_iterative k=6          -1.3656848170878857 ->  -1.36568481708788     4.23e-15
+    unified_iterative k=7          -2.0200008149814717 ->  -2.020000814981466    2.86e-15
+
+**Retracting my own first A/B**: I ran it with `git stash`, which does not undo
+an already-made commit, so its "main" column was the post-fix tree and it
+reported `0.00e+00` on six of seven rows. A stash is not a baseline.
+
+## The stale fallback banner is corrected — and only half of it could be
+
+`_warn_if_kernel_absent` told every reader the fallback family "VIOLATES the
+braid relation ... not a representation of H_n(q)". **False since #6708**;
+`ysn_braid_relation_audit.py` exits 0. The banner was asserting a retired
+defect in the one place a reader meets it cold.
+
+**The 17.3 % is re-scoped, not deleted.** It was measured against the
+*pre-#6708* fallback — the braid-violating family, i.e. the mechanism it was
+attributed to and which no longer exists. Whether a gap remains AT
+`binding_energy(1,1)` is **unmeasured**: that arm is 6.3 h and was not re-run.
+
+What was re-measured, both arms live (`pyhecke_native` IS available in this
+container — `_HAS_LP_KERNEL = True`), on the accumulator inside it:
+
+    k=4   -0.08955968305895066  vs  -0.08955968305895066   0.000e+00
+    k=5   -0.7335499391634975   vs  -0.7335499391634975    0.000e+00
+    k=6   -1.36568481708788     vs  -1.36568481708788      0.000e+00
+    k=7   -2.020000814981466    vs  -2.020000814981466     0.000e+00
+    k=8   -3.295330502259572    vs  -3.2953305022595725    1.348e-16
+    k=9   -4.813650493402828    vs  -4.813650493402828     0.000e+00
+
+Speed is the surviving reason to prefer the kernel: 56x at k=8, 48x at k=9 —
+on the accumulator, NOT the banner's 24x on `binding_energy`. Different
+quantities; do not quote one as the other. Production is k_max = 11 and
+neither arm was run to it.
+
+**Do not read the agreement as proof the families are interchangeable.**
+`ysn_trace_blindness_probe.py` proves the trace cannot see a braid defect at
+all, so trace agreement is weak evidence about matrices. It is the braid
+audit that establishes the fallback is a representation.
+
+## Two of the bean's own six findings are now stale
+
+- **Finding 1** (the `if s['sparse'] and not exact_chain:` guard) is **already
+  fixed on `main`** by a prior session; `exact_chain` survives only in a
+  comment. The "order of work" list still has it as step 1.
+- **The scipy sparse-BLAS branch is now DEAD CODE.** Since #6794 the partition
+  table holds **69 tuple + 124 `_ExactCOO` carriers and zero `csr_matrix`**, so
+  `_sigma_is_exact` is always true: measured **276 dispatch decisions at k=8,
+  0 to scipy**. Both `else: Msig = sig_sparse.T.dot(M_run.T).T` arms are
+  unreachable. Not removed here — that is a separate change and this branch is
+  already four commits of precision work.
+
+
+## Finding 5 is REFUTED — the `dim>=8` numpy branch is ~2.1x FASTER (2026-09-05)
+
+The bean's order of work lists step 4 as *"Delete the dim>=8 numpy branch"*,
+on finding 5: *"measured at dim 16 it is 31% SLOWER than the Python loop
+(0.0126s vs 0.0096s). object dtype has no BLAS."* **Measured on the real
+accumulator inputs, that is backwards** — deleting the branch would roughly
+DOUBLE the dense-path matmul cost.
+
+`_matmul_dim(M0, M_cross, dim)` against the loop-only body that deleting the
+branch would leave, on every dense partition with 8 <= dim <= 28, best of 3,
+at `COMPUTE_DPS`:
+
+    partition        dim   _matmul_dim    loop-only    ratio
+    (8, 1)             8      0.001085     0.002171    0.50x
+    (9, 1)             9      0.001451     0.003059    0.47x
+    (10, 1)           10      0.001996     0.004188    0.48x
+    (2, 2, 2, 1)      14      0.005423     0.011382    0.48x
+    (6, 2)            20      0.016047     0.032929    0.49x
+    (6, 1, 1)         21      0.018227     0.039182    0.47x
+    (7, 2)            27      0.039314     0.080775    0.49x
+    (5, 3)            28      0.043957     0.092222    0.48x
+
+Uniform ~0.48x — numpy is about 2.1x faster at every dim, on every dense
+partition. The `object dtype has no BLAS` premise is CORRECT and the
+conclusion does not follow: numpy's object-dtype path still runs the k-loop
+in C rather than in the interpreter, and that alone is worth ~2x.
+
+Synthetic check on the two dtypes separately (same direction, and it widens):
+
+    dim   dtype      numpy @      py loop   numpy/loop
+      8   object    0.001166     0.001391        0.84x
+     16   object    0.009686     0.011401        0.85x
+     35   object    0.104086     0.112232        0.93x
+     60   object    0.541059     0.550651        0.98x
+     16  float64    0.000004     0.000475        0.01x
+
+**I tested the one mechanism that would have made BOTH measurements right,
+and it does not hold.** Finding 5 predates PR #6794, which made every sigma
+exact, and #6807, which raises the ambient precision — so "the bean measured
+at dps 15, where the relative overheads differ" was the obvious
+reconciliation. Measured at the bean's own stated dim on partition (3,2,1):
+
+    dps=15   numpy 0.008222   loop 0.017834   ratio 0.46x   numpy FASTER
+    dps=70   numpy 0.008118   loop 0.016902   ratio 0.48x   numpy FASTER
+
+The verdict does not flip. So #6807 is not what changed the answer, and the
+**cause of the discrepancy with the recorded 0.0126 / 0.0096 is
+UNDETERMINED** — the bean does not record its harness, and I did not
+reconstruct it. What is established is that the figure does not reproduce on
+the real inputs at the dim it names; what is NOT established is why.
+
+**Step 4 is refused as specified.** Do not delete the branch. If the intent
+behind step 4 was "the dense path is slow", the live target is step 2 (export
+`dense_dense_mul_mpfr` via PyO3) — a measured >=24x, against a branch that is
+already winning 2.1x over the alternative it was to be replaced by.
+
+
+## Step 2's stated payoff does not hold for the accumulator — RE-SCOPED (2026-09-05)
+
+Step 2 is *"Export `dense_dense_mul_mpfr` via PyO3, route `_matmul_dim` + the
+COO accumulator through it (>=24x, on top of 1). **This is what makes higher
+isotopes reachable.**"* The `>=24x` is not disputed here. The **reachability
+claim is**, and it is measured rather than argued.
+
+`_matmul_dim` call counts, instrumented, `pyhecke_native` 0.9.0 present:
+
+    unified_iterative_correction(1,1,k=7), kernel ON      0 calls
+    unified_iterative_correction(1,1,k=7), kernel OFF  1025 calls
+    atom_character_raw (4,2) dim 9,        kernel ON      0 calls
+    _contrib_single_partition,             kernel ON     25 calls
+
+**Two of the three consumers never reach `_matmul_dim` in the configuration
+step 2 targets.** `unified_iterative_correction` short-circuits on
+`s['kernel_steps']`, and `atom_character_raw` has its own Rust
+LP-accumulator path (its own comment, "Same recurrence, same rescale") — so
+both take the Rust route and the dense matmul is dead in production.
+
+**And the fallback cannot be helped by this at all.** The 1025 calls happen
+precisely when `pyhecke_native` is unavailable — and
+`dense_dense_mul_mpfr` lives in that same extension. Exporting a function
+from a library whose absence defines the fallback path does not speed that
+path up. This is self-defeating as stated, not merely optional.
+
+**What step 2 would actually buy** is `_contrib_single_partition` — the one
+live consumer at 25 calls per partition — and through it
+`unified_iterative_correction_jet` and `conjugate_pair_cross_term`. That may
+well be worth doing; it is simply not the accumulator, and it is not what
+makes higher isotopes reachable.
+
+**Scope, per the refuted/ruled-out discipline: this is (a), a scope-limited
+negative.** The `>=24x` measurement stands, the PyO3 export remains a
+legitimate piece of work, and nothing here excludes it. What is refuted is
+the specific claim that routing `_matmul_dim` through it unblocks the
+isotope table. The isotope-table bottleneck is whatever the Rust kernel
+itself costs, which this did not measure.
+
+
+## The dead-branch claim is now ESTABLISHED, not assumed — and two of my own defects (2026-09-05)
+
+I published *"both `else: Msig = sig_sparse.T.dot(M_run.T).T` arms are
+unreachable"* in this bean and in #6807's body on the strength of a
+measurement over `_PARTITION_TABLE` only: zero `csr_matrix` carriers, 276
+dispatch decisions at k=8 and none to scipy. **That is a corpus-wide claim
+from a table-wide measurement** — it says nothing about a caller that builds
+its own sigmas and passes them in.
+
+Closed by measurement:
+
+- `entry['ysn']` is assigned in **exactly one place** — `_ensure_ysn_attached`,
+  from `_build_ysn_matrices` (`hecke_core_legacy.py:1391`, and `= []` at 1393).
+  Nothing else in the repo writes that key.
+- All three dispatch sites take `sigmas = entry['ysn']` (lines 1703, 1984,
+  2097) and index it (`sig_sparse = sigmas[gen]` at 1752, 2025, 2138). None
+  accepts a sigma family from a parameter.
+- The builder can no longer construct a scipy matrix at all: `csr_matrix(` is
+  **called nowhere** in the file.
+
+The 25 other `csr_matrix` sites in `computations/` build their own matrices
+in their own modules (`threerow_chi_sparse`, `aoperator_a5_crosscheck`, four
+probes, …) and never reach this dispatch.
+
+**Two defects found doing it, both introduced by #6794, both mine.**
+
+1. `_build_ysn_matrices_exact`'s docstring said *"For dim >= sparse_threshold,
+   returns scipy.sparse.csr_matrix objects"*. It returns `_ExactCOO`. #6794
+   changed the emit — csr_matrix is float64 and cannot hold mpf — and left the
+   docstring describing the behaviour it had replaced. Same shape as the
+   `markovZ` docstring that read convention C over a convention-D body: **a
+   label that agrees with its own history instead of with its body.**
+2. `from scipy.sparse import csr_matrix` inside that function is dead. Removed.
+   The three *comments* mentioning csr_matrix stay — they explain why it is
+   not used, which is still the live reason.
+
+Verified unchanged after the edit: 69 tuple + 124 `_ExactCOO` carriers,
+`unified_iterative_correction(1,1,k=7) = -2.020000814981466`,
+`atom_character_raw (4,2,1) = -0.8256259468119246`.

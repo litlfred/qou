@@ -1345,3 +1345,175 @@ anyone deriving it should state which `R_4` they used — but a slip here is a
 factor of **3**, and kappa's gap is **0.3 %** (`~0.0591` vs
 `sqrt(2)/24 = 0.058926`). It therefore cannot explain that gap, and finding it
 must not be reported as explaining it. Gap stays OPEN.
+
+### 2026-09-07 — CONVERGENCE with the epic's A2 leg, and TWO of my results were re-derivations
+
+Prompted by reviewing 1298 commits that landed on `main` while this arc ran. This entry is a
+correction to my own arc's standing, not a new result.
+
+**`M_1` is already IN the epic, as a sub-item of `qou-ogrk` (A2 leg 1, in-progress, priority
+high, parent `qou-v8t7`) -- and the epic bean `qou-x631` does not mention `k5r5` at all.** The
+carrier is `qou-ogrk`'s "M_1 REFORMULATION (2026-08-21)": `M_1 = Cov_Planch(Sum(i+j), Sum c^2) =
+Cov(Sum h, Sum h^2)`, "Route = Kerov CLT integral (open)". That was written **two weeks before**
+#6825 concluded the same thing. I corpus-grepped `k5r5`, `M_1` and `covariance-kernel`; I did not
+grep `qou-ogrk`, which is where the reformulation lives. The k5r5 bean already records a prior
+agent making this exact mistake on this exact epic.
+
+**Two of my results are re-derivations, and mine are the weaker derivations.**
+
+1. `V_W = Var(omega_3) = n(n-1)(n-2)/3`. I found it in #6627 by exact Lagrange interpolation
+   (degree 3, held-out points). `qou-ogrk` had it on **2026-07-25** from the classical identity
+   `Sum h^2 = Sum c^2 + n^2`; and `f02c2dcba45` (2026-09-06) re-derives it from **character column
+   orthogonality**: `Var_P(Sigma_p) = (k)_p^2/|C_p|`, so `Var(Sigma_3) = 3k(k-1)(k-2)` and
+   `omega_3 = Sigma_3/3` gives `k(k-1)(k-2)/3`. VERIFIED here: all three agree exactly. An
+   interpolant that fits is not a derivation; two of the three are.
+2. "The route is the Kerov-CLT integral." `qou-ogrk` line 32, 2026-08-21.
+
+**What my arc DID add, and the epic does not hold**: the Fulman edge decomposition `M_1 = P - N`
+with both signs measured per edge; the eigenfunction-reach negative (`A`, `D` are not
+eigenfunctions at any non-degenerate n, so the identity reaches `P`/`N` but not `V_A`/`V_D`); the
+falsification of the 2026-08-21 audit's Fact B; the exact negative-edge criterion
+`g(g + 2(d_u-d_v) - 2) < 0`; the reversal-closure proof; and the `Q < P` census. The epic's A2 leg
+works in HOOK-VALUE coordinates (`nu_v`, `H_s`, the polynomial `R`); mine works in EDGE
+coordinates. Those are genuinely different and the edge results are not duplicated anywhere.
+
+**MY RECOMMENDED NEXT STEP WAS AIMED AT A ROUTE THE EPIC HAD ALREADY ELIMINATED -- partly.**
+#6825 closed with "control of the joint distribution of (g, delta) under Plancherel ... the
+Kerov-CLT-adjacent analysis, and it is where the next attempt should aim". `qou-ujil` (route 7,
+2026-09-06) eliminates **concentration / limit-shape** arguments for the epic's object, because
+`E_P[Sigma_3] = 0` exactly, so replacing lambda by the limit shape "discards exactly the term
+being computed and proves 0 <= 0". **That objection transfers to `M_1` verbatim**: `E_P[omega_3] = 0`
+is what makes `M_1 = E_P[Sum h * omega_3]` in the first place. So my recommendation was ambiguous
+between an eliminated reading (limit-shape/concentration) and the one the epic endorses (a
+CLT-SCALE CORRELATION computation, `qou-t5m1`'s Sniady genus expansion). Read it as the second only.
+
+**THE UNEXPLORED ROUTE WITH THE BEST WARRANT, and I have not touched it.** `qou-ogrk` PROVED the
+EVEN members of the moment tower `M_k = Cov(Sum h^k, omega_3)` positive for all n >= 3 (2026-07-25)
+with manifest certificates -- `M_2 = n(n-1)(n-2)/3`, `M_4 = M_2 * 5(n - 8/3)`,
+`M_6 = M_2 * 7(3n-8)^2` -- by: even hook-power moments are SHIFTED-SYMMETRIC, hence exact
+polynomials in n by Ivanov-Olshanski Prop 5.1, hence provable by a finite positivity check.
+`M_1` is the first ODD member; odd-k is empirical only, because `Sum h` is not shifted-symmetric.
+
+**That is the SAME boundary my own arc kept hitting from two other directions**, which is why it
+is worth stating as one fact rather than three: `V_W` has a closed form and `V_A` does not (#6627);
+`W` is an eigenfunction of the up-down chain and `A`, `D` are not (#6651); and even-k moments are
+shifted-symmetric while odd-k are not (`qou-ogrk`). Shifted-symmetric <=> closed form <=> reachable,
+three times over. Cheap unasked question: is either piece of the split `Sum h = D + A` shifted-
+symmetric on its own, or any combination that is not `Sum h` itself?
+
+**Standing:** `qou-k5r5` stays OPEN and is NOT on `qou-x631`'s stated critical path -- the epic's
+live phase-3 routes are `qou-t5m1` (Sniady genus expansion, todo) and `qou-0ml9` (RSK, todo, Lean
+dependency landed in `qou-t181`). `M_1` sits under `qou-ogrk`. Before any further edge-coordinate
+work here, grep `qou-ogrk` and `qou-v8t7`, not just `k5r5`.
+
+
+---
+
+## 2026-09-08 — the R_4 landing does NOT fall to my shifted-symmetry negative; and √2/24 came back
+
+Two separate things, both about claims that landed on `main` while this branch was open.
+
+**1. The cheap unasked question at the end of the previous entry is ANSWERED: no.** Neither
+`Sum h`, nor `A = Sum|c|`, nor `D = Sum_u d_u^2` is shifted-symmetric — tested by exact Gaussian
+elimination over Q against the span of monomials in the Kerov–Olshanski shifted power sums
+`p_k^*`, pooled over every partition of every `n` in [1,12] (271 partitions), at degree bounds
+6, 8 and 10 (30 / 67 / 139 monomials). Every verdict UNCHANGED as the bound rises, so the
+negative is not a bound artifact. Controls `n`, `Sum c`, `Sum c^2`, `Sum h^2` all come back IN,
+so a negative is a fact about the statistic, not about my elimination. PR #7126,
+`wlambda_covariance_epic_M1_shifted_symmetry_membership.py`.
+
+**What that forecloses, precisely.** `qou-ogrk`'s ONE proved positivity technique — shifted-
+symmetric ⟹ exact polynomial in n (Ivanov–Olshanski Prop 5.1) ⟹ finite positivity check — applies
+to *no part* of the split `Sum h = D + A`. Not to the sum, and not to either summand separately,
+which was the remaining hope. Fourth sighting of the same wall.
+
+**What it does NOT foreclose, and I nearly recorded it as if it did.** `106a6784c5f`
+(2026-09-08, `resolve(qou-k5r5)`) establishes from characters, 6/6 PASS, that Biane/Kerov holds
+here: `Sigma_3 = R_4 + R_2`, `R_2 = n`, and hence `R_4 = 3*omega_3 - n` — the Lean `r4Value`
+form. The corpus's "naive `Sigma_3 = R_4 + R_2` ⟹ `R_4 = omega_3 - n`" wording was a
+normalisation slip (`Sigma_3 = 3*omega_3`), not a failure of the identity. So the
+**Kerov-polynomial / free-cumulant apparatus is live for `omega_3`**, and my negative says
+nothing against it: `omega_3` IS shifted-symmetric (my own control confirms `Sum c^2` is IN).
+The wall is on the `Sum h` side of the covariance only. An agent reading my negative as "the
+Kerov machinery is out" would be reading it one factor too broadly.
+
+**2. √2/24 is back on `main`, and it was retired on 2026-08-21.** The same commit closes with
+*"kappa's gap is 0.3 % (~0.0591 vs sqrt(2)/24 = 0.058926)"*. Both halves are stale:
+
+- `~0.0591` is `kappa_n` in its **peak region** (peak `kappa_32 = 0.0591961`, then descending),
+  not `kappa`. The limit is DERIVED: `kappa = 128/(225 pi^2) = 0.0576404956` (PR #5428, VKLS
+  Chebyshev-mode integral, quadrature-verified to 1e-42).
+- `sqrt(2)/24` was **refuted on 2026-08-21** as a fit to n = 400..800 float64 data —
+  `wlambda_covariance_epic_M1_kappa_structure.py:63` says "BOTH ARE WRONG" in as many words, and
+  `..._kerov_clt_leading_kappa.py:212` prints "sqrt(2)/24 NOT confirmed".
+
+It lives only in that commit *message*, not in any file, so this is a note for the next reader
+rather than a sweep. But the two 2026-08-21 audits left one thing genuinely open and a committed
+window now closes it, which is the only new content here:
+
+**`kappa_n` CROSSES `sqrt(2)/24` between n = 68 and n = 69.** `kappa_68 = 0.0589313` (+0.0098 %),
+`kappa_69 = 0.0589230` (−0.0044 %), falling monotonically to `kappa_78 = 0.0588572` (−0.116 %).
+No new compute — the exact rationals are already in `b1-kappa-window-extension.json`; what is new
+is the comparison. The exact-anchor audit had exact data only to n = 50 and correctly said
+"sqrt(2)/24, 1/17 and neighbours are all within the still-moving window"; the window has since
+moved past this one. And the IO-derivation audit's parenthetical *"the finite-n data never
+reaches it because the corrections are large"* is **false** and is corrected in place.
+
+**Two things the crossing does not establish**, stated because the class verdict differs by
+constant: `1/17 = 0.0588235` is **NOT** crossed by n = 78 (`kappa_78` is still 0.057 % above it);
+and a crossing is not a bound — nothing here constrains `kappa_n` for `n > 78`, which is exactly
+what this gap needs. Probe (6/6 PASS, gated on recomputing every stored decimal from the stored
+exact rational, worst disagreement 8.05e-26):
+`computations/deltalambda/wlambda_covariance_epic_M1_kappa_sqrt2_24_crossing.py`.
+
+**Standing unchanged.** `qou-k5r5` OPEN. The live reduction is the ONE-SIDED effective claim
+`kappa_n >= kappa` for all `n >= 13` (verified exactly to n = 78, crossing at exactly n = 13,
+non-monotone with a peak at n = 32 — so monotonicity is not available and an effective bound is
+required). My edge-measure route (`Q < P ⟹ M_1 > 0`, PRs #6651/#6825) attacks the SIGN directly
+and would bypass the effective bound entirely; it is not competing with it.
+
+### 2026-09-07 — the even-moment route is SHUT: neither piece of `Sum h = D + A` is shifted-symmetric (PR #7126)
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_shifted_symmetry_membership.py`.
+Executes the cheap question #7120 identified. The answer is negative and closes a route.
+
+**Why it mattered.** `qou-ogrk` PROVED the EVEN moments `M_k = Cov(Sum h^k, omega_3) > 0` by
+shifted-symmetric => exact polynomial in n (Ivanov-Olshanski Prop 5.1) => finite positivity check --
+the epic's ONLY proved positivity technique. `M_1` is the first ODD member. If either summand of
+`Sum h = D + A` were in `Lambda*`, that machinery would apply to it and reduce `M_1` to the other.
+
+**The test.** `Lambda* = Q[p_1^*, p_2^*, ...]` with Kerov-Olshanski shifted power sums
+`p_k^*(lam) = sum_i [(lam_i - i + 1/2)^k - (-i + 1/2)^k]` -- elementary, NO characters. So
+membership is exact linear algebra over Q on monomials `prod p_{mu_j}^*`, `|mu| <= D`, with
+n-INDEPENDENT coefficients, pooled over every partition of every n in [1,12] (271 partitions).
+
+**MEASURED: `Sum h`, `A = Sum|c|`, `D = Sum d_u^2` are ALL OUT.** A rational linear functional
+separates each from the whole subalgebra, so OUT is conclusive at the bound, not a failed search.
+**Not a bound artifact:** the probe re-runs itself at `|mu| <= 8` and `<= 10` (30 -> 67 -> 139
+monomials) and every verdict is UNCHANGED.
+
+**Controls, all PASS, no verdict without them:** `n`, `Sum c`, `Sum c^2`, `Sum h^2` -- four
+functions of KNOWN shifted-symmetric status -- must all land IN, and do. Plus `p_2^* == 2 Sum c`
+and the split identity `Sum h == D + A`, both at every pooled partition.
+
+**CONSEQUENCE.** The even-moment route to `M_1` is shut: ogrk's proved technique applies to no part
+of the split.
+
+**And it is the FOURTH independent sighting of ONE wall** -- worth carrying as one fact:
+  1. `V_W` has a closed form, `V_A` does not (#6627)
+  2. `W` is an eigenfunction of the up-down chain, `A` and `D` are not (#6651)
+  3. even hook-power moments are shifted-symmetric, odd are not (`qou-ogrk`)
+  4. neither summand of the odd one is either (this probe)
+Shifted-symmetric <=> closed form <=> reachable, four times over. A fifth attempt that routes
+around this wall rather than through it should expect the same answer.
+
+**Scope.** OUT is exact at these bounds; it does NOT exclude higher-degree membership, and says
+NOTHING about whether `M_1 > 0` -- only that this technique cannot reach it. scope-(a).
+
+**What is left, after this.** Of the routes the epic names, `M_1` is reachable by none that are
+proved. The live epic routes remain `qou-t5m1` (Sniady genus expansion on the `(f^lam)^3`-biased
+measure, todo) and `qou-0ml9` (RSK, todo, Lean dependency landed in `qou-t181`), and `qou-ujil`
+says a proof must operate at the CLT scale and produce a correlation coefficient. `M_1`'s own next
+move, if any, is the integrated-covariance form `f668c434a97` introduced for the epic
+(`E_Q[X] = integral_0^1 Cov_{Q_t}(log f^lam, X) dt`), which restores first order where the direct
+tilt expansion is ~1/3 nonlinear. That is untested for `M_1` and is the one un-eliminated lead.

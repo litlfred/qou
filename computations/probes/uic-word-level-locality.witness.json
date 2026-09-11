@@ -1,0 +1,4009 @@
+{
+  "engine": "python+mpmath+rust",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-08T08:11:01.112765+00:00",
+  "commitSha": "9df38bc4548fb05ed626e51e2605446a04caf161",
+  "assertions": [
+    {
+      "name": "Rust kernel present (the words captured are the ones it receives)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "every partition of a given k receives identical chains, equal to _step_chain_generic(ordering[i], ordering[:i], k-1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "NO (atom, k) word is level-local: segments_of returns ONE segment covering every generator, for every atom and every k",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "every adjacent generator pair (g, g+1) interleaves in every word — far commutation cannot separate them",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "no cyclic rotation of any word has > 1 segment",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "p–n crossings carry the colour-weighted offset _PN_D_MP, not −h/2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "single-segment path-sum reproduces the kernel's final trace on every λ ⊢ k, k ≤ 6, all four light atoms (worst rel 8.62e-50)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "T_w expansion validated at k=3: Σ_w x_w χ^λ(T_w) = seminormal χ^λ(x) for all λ ⊢ 3 (Rust characters of T_w)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "reduction: every ordered ≥2-interval product set W_{I_1}⋯W_{I_m} lies in some 2-block W_J·W_K or W_K·W_J (k = 3..6, exhaustive)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "T_w expansion reproduces the trivial and sign representations (Π(q+d), Π(−q⁻¹+d)) at every k expanded",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    },
+    {
+      "name": "support of the word's Hecke element lies in NO 2-block parabolic product W_J·W_K / W_K·W_J, for every atom, every k ≤ 7, and every cyclic rotation for k ≤ 5 — no Hecke-relation rewriting of the word or of any rotation is level-local with ≥ 2 segments",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_word_level_locality_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "uic-word-level-locality",
+  "scriptFile": "uic_word_level_locality_probe.py",
+  "scriptHash": "2324d5850372",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/uic_word_level_locality_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/uic_word_level_locality_probe.py"
+  },
+  "description": "qou-hxz4: the braid words hecke_core_legacy.unified_iterative_correction hands its Rust kernel (captured by instrumenting _lp_kernel_steps) are NOT level-local for any atom or any partition size k: the generator index cycles g mod (k-1) through every letter of every step, so the first letter that breaks locality is the third (σ_1 σ_2 σ_1 …), every adjacent generator pair interleaves, and segments_of returns a single segment covering all k-1 generators. No trace-preserving reordering restores it: every cyclic rotation is single-segment, and the T_w-support of the word's Hecke element (and of every rotation's) lies in NO 2-block parabolic product W_J.W_K / W_K.W_J, which excludes every Hecke-relation rewriting into >= 2 disjoint-interval factors (the T_{w0} coefficient alone is not decisive: it vanishes for 2H at k = 6, 7 because the 23-letter word cannot reach w0). The #7160 path-sum therefore degenerates to the O(L·dim^2) direct seminormal trace on this producer — measured slower than the Rust kernel — and is not a route past qou-sv7h's wall. Word transcription verified against the kernel at <= 1e-45 relative.",
+  "auditOnly": "docs/audits/2026-09-08-binding-word-not-level-local.md",
+  "parameters": {
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "compute_dps": 70,
+    "k_xcheck": 6,
+    "k_tw": 7,
+    "k_rot": 5
+  },
+  "data": {
+    "per_atom_k": [
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 2,
+        "n_gens": 1,
+        "n_partitions": 2,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 23
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 1,
+        "level_local_nontrivial": false,
+        "first_break": null,
+        "adjacent_pairs_interleave": [],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 3,
+        "n_gens": 2,
+        "n_partitions": 3,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 12,
+          "2": 11
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 2,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 2,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 4,
+        "n_gens": 3,
+        "n_partitions": 5,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 8,
+          "2": 8,
+          "3": 7
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 3,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 3,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 5,
+        "n_gens": 4,
+        "n_partitions": 7,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 5
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 4,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 4,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 6,
+        "n_gens": 5,
+        "n_partitions": 11,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          1,
+          2,
+          3,
+          4,
+          5,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 5,
+          "3": 4,
+          "4": 4,
+          "5": 4
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 5,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 5,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 7,
+        "n_gens": 6,
+        "n_partitions": 15,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "generator_multiplicity": {
+          "1": 4,
+          "2": 4,
+          "3": 4,
+          "4": 4,
+          "5": 4,
+          "6": 3
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 6,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 6,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 8,
+        "n_gens": 7,
+        "n_partitions": 22,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          1,
+          2,
+          3,
+          4
+        ],
+        "generator_multiplicity": {
+          "1": 4,
+          "2": 4,
+          "3": 4,
+          "4": 4,
+          "5": 3,
+          "6": 2,
+          "7": 2
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 7,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 7,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 9,
+        "n_gens": 8,
+        "n_partitions": 30,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 4,
+          "2": 4,
+          "3": 4,
+          "4": 3,
+          "5": 2,
+          "6": 2,
+          "7": 2,
+          "8": 2
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 8,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 8,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 10,
+        "n_gens": 9,
+        "n_partitions": 42,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 4,
+          "2": 4,
+          "3": 3,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 2,
+          "8": 2,
+          "9": 2
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 9,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 9,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 11,
+        "n_gens": 10,
+        "n_partitions": 56,
+        "word_length": 23,
+        "letters_per_step": [
+          11,
+          12
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 4,
+          "2": 3,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 2,
+          "8": 2,
+          "9": 2,
+          "10": 2
+        },
+        "letter_classes": {
+          "sigma": 11,
+          "avg(-h/2)": 4,
+          "sigma_inv": 7,
+          "pn(bring_color_weighted)": 1
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 10,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 10,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 23
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 2,
+        "n_gens": 1,
+        "n_partitions": 2,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 36
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 1,
+        "level_local_nontrivial": false,
+        "first_break": null,
+        "adjacent_pairs_interleave": [],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 3,
+        "n_gens": 2,
+        "n_partitions": 3,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 19,
+          "2": 17
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 2,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 2,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 4,
+        "n_gens": 3,
+        "n_partitions": 5,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 13,
+          "2": 12,
+          "3": 11
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 3,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 3,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 5,
+        "n_gens": 4,
+        "n_partitions": 7,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 10,
+          "2": 9,
+          "3": 9,
+          "4": 8
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 4,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 4,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 6,
+        "n_gens": 5,
+        "n_partitions": 11,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          1,
+          2,
+          3,
+          4,
+          5,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 9,
+          "2": 8,
+          "3": 7,
+          "4": 6,
+          "5": 6
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 5,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 5,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 7,
+        "n_gens": 6,
+        "n_partitions": 15,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "generator_multiplicity": {
+          "1": 7,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 6,
+          "6": 5
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 6,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 6,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 8,
+        "n_gens": 7,
+        "n_partitions": 22,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          1,
+          2,
+          3,
+          4
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 5,
+          "6": 4,
+          "7": 3
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 7,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 7,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 9,
+        "n_gens": 8,
+        "n_partitions": 30,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 5,
+          "5": 4,
+          "6": 3,
+          "7": 3,
+          "8": 3
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 8,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 8,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 10,
+        "n_gens": 9,
+        "n_partitions": 42,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 6,
+          "3": 5,
+          "4": 4,
+          "5": 3,
+          "6": 3,
+          "7": 3,
+          "8": 3,
+          "9": 3
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 9,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 9,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 11,
+        "n_gens": 10,
+        "n_partitions": 56,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 5,
+          "3": 4,
+          "4": 3,
+          "5": 3,
+          "6": 3,
+          "7": 3,
+          "8": 3,
+          "9": 3,
+          "10": 3
+        },
+        "letter_classes": {
+          "sigma": 16,
+          "avg(-h/2)": 6,
+          "sigma_inv": 12,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 10,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 10,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 2,
+        "n_gens": 1,
+        "n_partitions": 2,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 36
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 1,
+        "level_local_nontrivial": false,
+        "first_break": null,
+        "adjacent_pairs_interleave": [],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 3,
+        "n_gens": 2,
+        "n_partitions": 3,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 19,
+          "2": 17
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 2,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 2,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 4,
+        "n_gens": 3,
+        "n_partitions": 5,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 13,
+          "2": 12,
+          "3": 11
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 3,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 3,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 5,
+        "n_gens": 4,
+        "n_partitions": 7,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 10,
+          "2": 9,
+          "3": 9,
+          "4": 8
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 4,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 4,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 6,
+        "n_gens": 5,
+        "n_partitions": 11,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          1,
+          2,
+          3,
+          4,
+          5,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 9,
+          "2": 8,
+          "3": 7,
+          "4": 6,
+          "5": 6
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 5,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 5,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 7,
+        "n_gens": 6,
+        "n_partitions": 15,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "generator_multiplicity": {
+          "1": 7,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 6,
+          "6": 5
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 6,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 6,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 8,
+        "n_gens": 7,
+        "n_partitions": 22,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          1,
+          2,
+          3,
+          4
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 5,
+          "6": 4,
+          "7": 3
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 7,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 7,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 9,
+        "n_gens": 8,
+        "n_partitions": 30,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 5,
+          "5": 4,
+          "6": 3,
+          "7": 3,
+          "8": 3
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 8,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 8,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 10,
+        "n_gens": 9,
+        "n_partitions": 42,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 6,
+          "3": 5,
+          "4": 4,
+          "5": 3,
+          "6": 3,
+          "7": 3,
+          "8": 3,
+          "9": 3
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 9,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 9,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "k": 11,
+        "n_gens": 10,
+        "n_partitions": 56,
+        "word_length": 36,
+        "letters_per_step": [
+          11,
+          12,
+          13
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 6,
+          "2": 5,
+          "3": 4,
+          "4": 3,
+          "5": 3,
+          "6": 3,
+          "7": 3,
+          "8": 3,
+          "9": 3,
+          "10": 3
+        },
+        "letter_classes": {
+          "sigma": 18,
+          "avg(-h/2)": 6,
+          "sigma_inv": 10,
+          "pn(bring_color_weighted)": 2
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 10,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 10,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 36
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 2,
+        "n_gens": 1,
+        "n_partitions": 2,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 50
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 1,
+        "level_local_nontrivial": false,
+        "first_break": null,
+        "adjacent_pairs_interleave": [],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 3,
+        "n_gens": 2,
+        "n_partitions": 3,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 26,
+          "2": 24
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 2,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 2,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 4,
+        "n_gens": 3,
+        "n_partitions": 5,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 18,
+          "2": 17,
+          "3": 15
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 3,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 3,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 5,
+        "n_gens": 4,
+        "n_partitions": 7,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 14,
+          "2": 13,
+          "3": 12,
+          "4": 11
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 4,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 4,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 6,
+        "n_gens": 5,
+        "n_partitions": 11,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          1,
+          2,
+          3,
+          4,
+          5,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 12,
+          "2": 11,
+          "3": 10,
+          "4": 9,
+          "5": 8
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 5,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 5,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 7,
+        "n_gens": 6,
+        "n_partitions": 15,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "generator_multiplicity": {
+          "1": 10,
+          "2": 9,
+          "3": 8,
+          "4": 8,
+          "5": 8,
+          "6": 7
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 6,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 6,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 8,
+        "n_gens": 7,
+        "n_partitions": 22,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          1,
+          2,
+          3,
+          4
+        ],
+        "generator_multiplicity": {
+          "1": 8,
+          "2": 8,
+          "3": 8,
+          "4": 8,
+          "5": 7,
+          "6": 6,
+          "7": 5
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 7,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 7,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 9,
+        "n_gens": 8,
+        "n_partitions": 30,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 8,
+          "2": 8,
+          "3": 8,
+          "4": 7,
+          "5": 6,
+          "6": 5,
+          "7": 4,
+          "8": 4
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 8,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 8,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 10,
+        "n_gens": 9,
+        "n_partitions": 42,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 8,
+          "2": 8,
+          "3": 7,
+          "4": 6,
+          "5": 5,
+          "6": 4,
+          "7": 4,
+          "8": 4,
+          "9": 4
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 9,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 9,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "k": 11,
+        "n_gens": 10,
+        "n_partitions": 56,
+        "word_length": 50,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 8,
+          "2": 7,
+          "3": 6,
+          "4": 5,
+          "5": 4,
+          "6": 4,
+          "7": 4,
+          "8": 4,
+          "9": 4,
+          "10": 4
+        },
+        "letter_classes": {
+          "sigma": 23,
+          "avg(-h/2)": 8,
+          "sigma_inv": 15,
+          "pn(bring_color_weighted)": 4
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 10,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 10,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 50
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 2,
+        "n_gens": 1,
+        "n_partitions": 2,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 65
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 1,
+        "level_local_nontrivial": false,
+        "first_break": null,
+        "adjacent_pairs_interleave": [],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 3,
+        "n_gens": 2,
+        "n_partitions": 3,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 34,
+          "2": 31
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 2,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 2,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 4,
+        "n_gens": 3,
+        "n_partitions": 5,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 23,
+          "2": 22,
+          "3": 20
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 3,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 3,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 5,
+        "n_gens": 4,
+        "n_partitions": 7,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 18,
+          "2": 17,
+          "3": 16,
+          "4": 14
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 4,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 4,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 6,
+        "n_gens": 5,
+        "n_partitions": 11,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          1,
+          2,
+          3,
+          4,
+          5,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 15,
+          "2": 14,
+          "3": 13,
+          "4": 12,
+          "5": 11
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 5,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 5,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 7,
+        "n_gens": 6,
+        "n_partitions": 15,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "generator_multiplicity": {
+          "1": 13,
+          "2": 12,
+          "3": 11,
+          "4": 10,
+          "5": 10,
+          "6": 9
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 6,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 6,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 8,
+        "n_gens": 7,
+        "n_partitions": 22,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          1,
+          2,
+          3,
+          4
+        ],
+        "generator_multiplicity": {
+          "1": 11,
+          "2": 10,
+          "3": 10,
+          "4": 10,
+          "5": 9,
+          "6": 8,
+          "7": 7
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 7,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 7,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 9,
+        "n_gens": 8,
+        "n_partitions": 30,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          1,
+          2,
+          3
+        ],
+        "generator_multiplicity": {
+          "1": 10,
+          "2": 10,
+          "3": 10,
+          "4": 9,
+          "5": 8,
+          "6": 7,
+          "7": 6,
+          "8": 5
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 8,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 8,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 10,
+        "n_gens": 9,
+        "n_partitions": 42,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          1,
+          2
+        ],
+        "generator_multiplicity": {
+          "1": 10,
+          "2": 10,
+          "3": 9,
+          "4": 8,
+          "5": 7,
+          "6": 6,
+          "7": 5,
+          "8": 5,
+          "9": 5
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 9,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 9,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "k": 11,
+        "n_gens": 10,
+        "n_partitions": 56,
+        "word_length": 65,
+        "letters_per_step": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "generator_sequence_step0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          1
+        ],
+        "generator_multiplicity": {
+          "1": 10,
+          "2": 9,
+          "3": 8,
+          "4": 7,
+          "5": 6,
+          "6": 5,
+          "7": 5,
+          "8": 5,
+          "9": 5,
+          "10": 5
+        },
+        "letter_classes": {
+          "sigma": 31,
+          "avg(-h/2)": 10,
+          "sigma_inv": 18,
+          "pn(bring_color_weighted)": 6
+        },
+        "n_segments": 1,
+        "largest_segment_gens": 10,
+        "level_local_nontrivial": false,
+        "first_break": {
+          "pos": 10,
+          "gen": 1,
+          "prev_pos": 0,
+          "intervening_gens": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "adjacent_pairs_interleave": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rotations_with_gt1_segments": 0,
+        "n_rotations": 65
+      }
+    ],
+    "transcription_vs_kernel": [
+      {
+        "atom": "2H",
+        "k": 3,
+        "worst_rel": "1.40268501084403608298450022991884806821622607448721032377848e-50",
+        "t_path_sum": "0.001",
+        "t_kernel": "0.001",
+        "n_shapes": 3
+      },
+      {
+        "atom": "2H",
+        "k": 4,
+        "worst_rel": "1.78995196253746035143025858903156205485544527768784284391720e-50",
+        "t_path_sum": "0.003",
+        "t_kernel": "0.001",
+        "n_shapes": 5
+      },
+      {
+        "atom": "2H",
+        "k": 5,
+        "worst_rel": "3.62187353690476203872646007436089556907859870935127506707320e-50",
+        "t_path_sum": "0.018",
+        "t_kernel": "0.002",
+        "n_shapes": 7
+      },
+      {
+        "atom": "2H",
+        "k": 6,
+        "worst_rel": "4.83871681277981808285598006638633980513830007446408431544030e-50",
+        "t_path_sum": "0.117",
+        "t_kernel": "0.006",
+        "n_shapes": 11
+      },
+      {
+        "atom": "3H",
+        "k": 3,
+        "worst_rel": "3.95436461783972777366925316274709631577302951632242421284367e-50",
+        "t_path_sum": "0.001",
+        "t_kernel": "0.001",
+        "n_shapes": 3
+      },
+      {
+        "atom": "3H",
+        "k": 4,
+        "worst_rel": "2.98689447139006444220942074922962471955470836600769235191084e-50",
+        "t_path_sum": "0.004",
+        "t_kernel": "0.001",
+        "n_shapes": 5
+      },
+      {
+        "atom": "3H",
+        "k": 5,
+        "worst_rel": "2.75357789137614758143463294936315450412049399645416948030107e-50",
+        "t_path_sum": "0.023",
+        "t_kernel": "0.003",
+        "n_shapes": 7
+      },
+      {
+        "atom": "3H",
+        "k": 6,
+        "worst_rel": "3.23106153297932099523766972697807495532881118836200144892010e-50",
+        "t_path_sum": "0.148",
+        "t_kernel": "0.010",
+        "n_shapes": 11
+      },
+      {
+        "atom": "3He",
+        "k": 3,
+        "worst_rel": "6.40884246789554603539819097576695204689548568276922346965872e-50",
+        "t_path_sum": "0.001",
+        "t_kernel": "0.001",
+        "n_shapes": 3
+      },
+      {
+        "atom": "3He",
+        "k": 4,
+        "worst_rel": "6.40884246789554603539819097576695204689548568276922346965872e-50",
+        "t_path_sum": "0.007",
+        "t_kernel": "0.002",
+        "n_shapes": 5
+      },
+      {
+        "atom": "3He",
+        "k": 5,
+        "worst_rel": "6.40884246789554603539819097576695204689548568276922346965872e-50",
+        "t_path_sum": "0.032",
+        "t_kernel": "0.003",
+        "n_shapes": 7
+      },
+      {
+        "atom": "3He",
+        "k": 6,
+        "worst_rel": "6.40884246789554603539819097576695204689548568276922346965872e-50",
+        "t_path_sum": "0.146",
+        "t_kernel": "0.009",
+        "n_shapes": 11
+      },
+      {
+        "atom": "4He",
+        "k": 3,
+        "worst_rel": "8.61870334951323180735667996052535352583629815748035401666037e-50",
+        "t_path_sum": "0.001",
+        "t_kernel": "0.001",
+        "n_shapes": 3
+      },
+      {
+        "atom": "4He",
+        "k": 4,
+        "worst_rel": "8.61870334951323180735667996052535352583629815748035401666037e-50",
+        "t_path_sum": "0.005",
+        "t_kernel": "0.002",
+        "n_shapes": 5
+      },
+      {
+        "atom": "4He",
+        "k": 5,
+        "worst_rel": "8.61870334951323180735667996052535352583629815748035401666037e-50",
+        "t_path_sum": "0.028",
+        "t_kernel": "0.003",
+        "n_shapes": 7
+      },
+      {
+        "atom": "4He",
+        "k": 6,
+        "worst_rel": "8.61870334951323180735667996052535352583629815748035401666037e-50",
+        "t_path_sum": "0.180",
+        "t_kernel": "0.013",
+        "n_shapes": 11
+      }
+    ],
+    "tw0_coefficient": [
+      {
+        "atom": "2H",
+        "k": 3,
+        "word_length": 23,
+        "support": 6,
+        "k_factorial": 6,
+        "coef_w0": "0.0110535396853163184435407774927063642737977846062007149570821",
+        "coef_w0_over_max": "0.0106975758623937413286171457739361894162470246031837513467049",
+        "rotations_tested": 22,
+        "rotation_min_rel_coef_w0": "0.000216683137313895308909356480481952170537504990921466366595760",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 6,
+        "min_support_outside_two_block": 2,
+        "closest_two_block_set": "W[1..1]·W[2..2]",
+        "rotations_min_support_outside": 2,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.001",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "2H",
+        "k": 4,
+        "word_length": 23,
+        "support": 24,
+        "k_factorial": 24,
+        "coef_w0": "0.00235976725085405127513540166807244914787335777829170842751127",
+        "coef_w0_over_max": "0.00209603970354416408523130004547014657903472258738078599934942",
+        "rotations_tested": 22,
+        "rotation_min_rel_coef_w0": "0.0000444008964952543089976391848849808977943307639709276668976627",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 18,
+        "min_support_outside_two_block": 6,
+        "closest_two_block_set": "W[2..3]·W[1..1]",
+        "rotations_min_support_outside": 5,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.003",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "2H",
+        "k": 5,
+        "word_length": 23,
+        "support": 120,
+        "k_factorial": 120,
+        "coef_w0": "-0.000000521964485267430073259696773642258780859929324906980956455811",
+        "coef_w0_over_max": "0.000000516446419818933631851249436718586094715135186464694215651872",
+        "rotations_tested": 22,
+        "rotation_min_rel_coef_w0": "2.02325092350422399217359212297860671167978696450250804769065e-65",
+        "rotations_with_zero_coef_w0": 3,
+        "support_size": 94,
+        "min_support_outside_two_block": 46,
+        "closest_two_block_set": "W[1..3]·W[4..4]",
+        "rotations_min_support_outside": 36,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.010",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "2H",
+        "k": 6,
+        "word_length": 23,
+        "support": 720,
+        "k_factorial": 720,
+        "coef_w0": "-6.69274964236907439414188512205289944410696427862838728638898e-125",
+        "coef_w0_over_max": "6.69274964236907439414188512205289944410696427862838728638898e-125",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 536,
+        "min_support_outside_two_block": 334,
+        "closest_two_block_set": "W[2..5]·W[1..1]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.035",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "2H",
+        "k": 7,
+        "word_length": 23,
+        "support": 3000,
+        "k_factorial": 5040,
+        "coef_w0": "0.0",
+        "coef_w0_over_max": "0.0",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 836,
+        "min_support_outside_two_block": 480,
+        "closest_two_block_set": "W[1..5]·W[6..6]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.117",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3H",
+        "k": 3,
+        "word_length": 36,
+        "support": 6,
+        "k_factorial": 6,
+        "coef_w0": "0.00490748536947910728933636552923371362308862503213285211376042",
+        "coef_w0_over_max": "0.00450022165178741817635384890365158544620441026750245748507523",
+        "rotations_tested": 35,
+        "rotation_min_rel_coef_w0": "0.00109672469203112427632190397753404504047423476531497320798600",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 6,
+        "min_support_outside_two_block": 2,
+        "closest_two_block_set": "W[1..1]·W[2..2]",
+        "rotations_min_support_outside": 2,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.002",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3H",
+        "k": 4,
+        "word_length": 36,
+        "support": 24,
+        "k_factorial": 24,
+        "coef_w0": "0.00127981581350979318403371592271258359914996765475426061516751",
+        "coef_w0_over_max": "0.000954804933923135363018640258673546859869402127318273000568828",
+        "rotations_tested": 35,
+        "rotation_min_rel_coef_w0": "0.000542815764438969138070562478058336066081419401811123389605626",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 24,
+        "min_support_outside_two_block": 12,
+        "closest_two_block_set": "W[1..1]·W[2..3]",
+        "rotations_min_support_outside": 12,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.005",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3H",
+        "k": 5,
+        "word_length": 36,
+        "support": 120,
+        "k_factorial": 120,
+        "coef_w0": "0.0000263742327398599434672604225697333739437504553096776770460005",
+        "coef_w0_over_max": "0.0000244663669455524273355564101549923693813169933413850921783264",
+        "rotations_tested": 35,
+        "rotation_min_rel_coef_w0": "0.000000407145959349327493260273118300408710623991770785024419340067",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 120,
+        "min_support_outside_two_block": 72,
+        "closest_two_block_set": "W[1..1]·W[2..4]",
+        "rotations_min_support_outside": 72,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.021",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3H",
+        "k": 6,
+        "word_length": 36,
+        "support": 720,
+        "k_factorial": 720,
+        "coef_w0": "0.0000258018556347009767168812105971659093309495843073947790601435",
+        "coef_w0_over_max": "0.0000242450883644746134048205107062492489085354767849980649480039",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 712,
+        "min_support_outside_two_block": 472,
+        "closest_two_block_set": "W[1..4]·W[5..5]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.110",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3H",
+        "k": 7,
+        "word_length": 36,
+        "support": 5040,
+        "k_factorial": 5040,
+        "coef_w0": "-1.04244309116487256063598679275709687599000587166053707295774e-53",
+        "coef_w0_over_max": "8.78629216116230361607255626362604463951906117130003479933690e-54",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 4470,
+        "min_support_outside_two_block": 3103,
+        "closest_two_block_set": "W[6..6]·W[1..5]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.555",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3He",
+        "k": 3,
+        "word_length": 36,
+        "support": 6,
+        "k_factorial": 6,
+        "coef_w0": "0.138406540808456833513644846725631500896811166403155687338542",
+        "coef_w0_over_max": "0.118031050512064340406790960358939489242943744073246310891179",
+        "rotations_tested": 35,
+        "rotation_min_rel_coef_w0": "0.0177535724860949408659959685452109175811524033403965045366164",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 6,
+        "min_support_outside_two_block": 2,
+        "closest_two_block_set": "W[1..1]·W[2..2]",
+        "rotations_min_support_outside": 2,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.002",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3He",
+        "k": 4,
+        "word_length": 36,
+        "support": 24,
+        "k_factorial": 24,
+        "coef_w0": "0.000901046149663075647053387866504374566738014862057971388980069",
+        "coef_w0_over_max": "0.000643500104197873754537609733445303372995626269739644656979661",
+        "rotations_tested": 35,
+        "rotation_min_rel_coef_w0": "0.000249103891902960428116392962596399909943743155625349724460984",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 24,
+        "min_support_outside_two_block": 12,
+        "closest_two_block_set": "W[1..1]·W[2..3]",
+        "rotations_min_support_outside": 12,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.005",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3He",
+        "k": 5,
+        "word_length": 36,
+        "support": 120,
+        "k_factorial": 120,
+        "coef_w0": "0.0000293567599413302465549467517072053616520214610831162192045440",
+        "coef_w0_over_max": "0.0000275491340786761082542549225658647023857239214832555626914430",
+        "rotations_tested": 35,
+        "rotation_min_rel_coef_w0": "0.00000455668917757254235630802268196227652032867794248279795908070",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 120,
+        "min_support_outside_two_block": 72,
+        "closest_two_block_set": "W[1..1]·W[2..4]",
+        "rotations_min_support_outside": 71,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.021",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3He",
+        "k": 6,
+        "word_length": 36,
+        "support": 720,
+        "k_factorial": 720,
+        "coef_w0": "-0.000102128737594013167394568315426842050986995328792740866998697",
+        "coef_w0_over_max": "0.0000979950458517132983406551229246955971835428496016875646578990",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 716,
+        "min_support_outside_two_block": 476,
+        "closest_two_block_set": "W[1..4]·W[5..5]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.099",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "3He",
+        "k": 7,
+        "word_length": 36,
+        "support": 5040,
+        "k_factorial": 5040,
+        "coef_w0": "-0.000113566161151660684393792278519387322894613774062155031159096",
+        "coef_w0_over_max": "0.0000988571442820122224575679544493382464435582390786370849695810",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 4724,
+        "min_support_outside_two_block": 3356,
+        "closest_two_block_set": "W[6..6]·W[1..5]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.770",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "4He",
+        "k": 3,
+        "word_length": 50,
+        "support": 6,
+        "k_factorial": 6,
+        "coef_w0": "0.360982980801898619669761696785548345422418431513579176768199",
+        "coef_w0_over_max": "0.327636503359478577459090689819372717625442983275269794718763",
+        "rotations_tested": 49,
+        "rotation_min_rel_coef_w0": "0.222528307139357395848979124570835707504117862948943190219419",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 6,
+        "min_support_outside_two_block": 2,
+        "closest_two_block_set": "W[1..1]·W[2..2]",
+        "rotations_min_support_outside": 2,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.003",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "4He",
+        "k": 4,
+        "word_length": 50,
+        "support": 24,
+        "k_factorial": 24,
+        "coef_w0": "-0.0559050441882135091648229123112792746026596880326787403938653",
+        "coef_w0_over_max": "0.0367120540565434234542410706490946263045512925129596215946423",
+        "rotations_tested": 49,
+        "rotation_min_rel_coef_w0": "0.00438751286909254493288639994263802653876413342884423764366425",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 24,
+        "min_support_outside_two_block": 12,
+        "closest_two_block_set": "W[1..1]·W[2..3]",
+        "rotations_min_support_outside": 12,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.007",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "4He",
+        "k": 5,
+        "word_length": 50,
+        "support": 120,
+        "k_factorial": 120,
+        "coef_w0": "0.000694969731655277695342899083927166549401849783100033504443929",
+        "coef_w0_over_max": "0.000632224628366420390189320532063724953421017680994835298858619",
+        "rotations_tested": 49,
+        "rotation_min_rel_coef_w0": "0.000198249756953830266951217314344478476064337517948034703375738",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 120,
+        "min_support_outside_two_block": 72,
+        "closest_two_block_set": "W[1..1]·W[2..4]",
+        "rotations_min_support_outside": 72,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.033",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "4He",
+        "k": 6,
+        "word_length": 50,
+        "support": 720,
+        "k_factorial": 720,
+        "coef_w0": "0.0000504786423207969782154273342021448676496379642773179258878634",
+        "coef_w0_over_max": "0.0000440168172111508088280439389379653628691660966695941883589820",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 720,
+        "min_support_outside_two_block": 480,
+        "closest_two_block_set": "W[1..1]·W[2..5]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.184",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "4He",
+        "k": 7,
+        "word_length": 50,
+        "support": 5040,
+        "k_factorial": 5040,
+        "coef_w0": "0.0000498212659134741817475035790528745723758215775313032476858155",
+        "coef_w0_over_max": "0.0000423965866742904239042907660084331168450957933071335061221124",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 5040,
+        "min_support_outside_two_block": 3600,
+        "closest_two_block_set": "W[1..1]·W[2..6]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "1.316",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "5Li",
+        "k": 3,
+        "word_length": 65,
+        "support": 6,
+        "k_factorial": 6,
+        "coef_w0": "1.45625548665393298778234151189618878520585424523486505944089",
+        "coef_w0_over_max": "1.00000000000000000000000000000000000000000000000000000000000",
+        "rotations_tested": 64,
+        "rotation_min_rel_coef_w0": "0.218070721941016212841136237544403164149815011581536666669344",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 6,
+        "min_support_outside_two_block": 2,
+        "closest_two_block_set": "W[1..1]·W[2..2]",
+        "rotations_min_support_outside": 2,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.004",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "5Li",
+        "k": 4,
+        "word_length": 65,
+        "support": 24,
+        "k_factorial": 24,
+        "coef_w0": "0.160891149916351767554125278880373204079451272491114412201686",
+        "coef_w0_over_max": "0.0949840987708725968695626615312025599270065488063488671980018",
+        "rotations_tested": 64,
+        "rotation_min_rel_coef_w0": "0.000135425752023707824101248349282896638699601077379122762002762",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 24,
+        "min_support_outside_two_block": 12,
+        "closest_two_block_set": "W[1..1]·W[2..3]",
+        "rotations_min_support_outside": 12,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.010",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "5Li",
+        "k": 5,
+        "word_length": 65,
+        "support": 120,
+        "k_factorial": 120,
+        "coef_w0": "-0.0259150458100308463486793524427787249121979291463310790280101",
+        "coef_w0_over_max": "0.0221083441352152488125870441171341741142630322535690893454564",
+        "rotations_tested": 64,
+        "rotation_min_rel_coef_w0": "0.000000647728091285758766882324136566753757829231237871746554665019",
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 120,
+        "min_support_outside_two_block": 72,
+        "closest_two_block_set": "W[1..1]·W[2..4]",
+        "rotations_min_support_outside": 72,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.043",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "5Li",
+        "k": 6,
+        "word_length": 65,
+        "support": 720,
+        "k_factorial": 720,
+        "coef_w0": "0.0174653274487365138967476976990780689276375030155925951351741",
+        "coef_w0_over_max": "0.0152370010606002308421553128197108654407822234277018565723187",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 720,
+        "min_support_outside_two_block": 480,
+        "closest_two_block_set": "W[1..1]·W[2..5]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "0.246",
+        "trivial_and_sign_rep_ok": true
+      },
+      {
+        "atom": "5Li",
+        "k": 7,
+        "word_length": 65,
+        "support": 5040,
+        "k_factorial": 5040,
+        "coef_w0": "0.0000549090214951011327338684216667982042515394459827449648292307",
+        "coef_w0_over_max": "0.0000433100966762607877136527870969918747844029666315764381378505",
+        "rotations_tested": 0,
+        "rotation_min_rel_coef_w0": null,
+        "rotations_with_zero_coef_w0": 0,
+        "support_size": 5040,
+        "min_support_outside_two_block": 3600,
+        "closest_two_block_set": "W[1..1]·W[2..6]",
+        "rotations_min_support_outside": null,
+        "level_local_rewriting_excluded": true,
+        "t_expand": "1.937",
+        "trivial_and_sign_rep_ok": true
+      }
+    ],
+    "degenerate_path_sum_cost": [
+      {
+        "k": 6,
+        "shape": [
+          3,
+          2,
+          1
+        ],
+        "dim": 16,
+        "L": 23,
+        "t_path_sum": "0.043",
+        "t_kernel": "0.002"
+      },
+      {
+        "k": 7,
+        "shape": [
+          4,
+          2,
+          1
+        ],
+        "dim": 35,
+        "L": 23,
+        "t_path_sum": "0.238",
+        "t_kernel": "0.008"
+      },
+      {
+        "k": 8,
+        "shape": [
+          4,
+          2,
+          1,
+          1
+        ],
+        "dim": 90,
+        "L": 23,
+        "t_path_sum": "1.723",
+        "t_kernel": "0.043"
+      }
+    ],
+    "crossing_offsets_2H_k11": {
+      "PN_D_MP": "-0.104458247769726289017834066290005644128000000628500035074528",
+      "NN_D_MP": "-0.209060298795639315430846213129674943859757495263023055933074",
+      "minus_h_over_2": "-0.104530149397819657715423106564837471929878747631531539127607",
+      "distinct_d": [
+        "-0.104458247769726289017834066290005644128000000628500035074528",
+        "-0.104530149397819657715423106564837471929878747631531539127607",
+        "-0.209060298795639315430846213129674943859757495263063078255215",
+        "0.0"
+      ]
+    }
+  },
+  "caveats": [
+    "Timings are wall-clock strings (seconds), provenance only. scope-(b) for cyclic rotation at every k and for Hecke-relation rewriting at k <= k_tw; scope-(a) for rewriting at k > k_tw. Conjugation by an arbitrary invertible element of H_k(q) is trace-preserving and is NOT tested: choosing such a conjugator to reach a level-local word would be selection, not derivation."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:25:01Z
-updated_at: 2026-09-08T04:27:23Z
+updated_at: 2026-09-08T08:25:25Z
 ---
 
 Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (round 2 of the stalled-agent takeover; sibling round 1 is #7121 / qou-6g7j with fronts observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces — NOT duplicated here). This session: merge every clean open PR; take over the fronts #7121 left: the chi producer scaling wall (#7083), the Q_β ℚ(q)-coefficient leg (#7118), and the binding SHAPE residual (symmetry-energy term of the additive log law), which the owner names as where most of the binding gap sits. Goal statement: L2 toward 1 ppQ; binding is not an L2 row and must not be quoted as one (1ppQ reanalysis §5 item 3).
@@ -21,3 +21,11 @@ Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (
 - qou-qve5 binding SHAPE: PR #7165 (2 commits, 20 sorry-free theorems in QOU/Hecke/BondCutSymmetry.lean + BondCutSymmetryLogBound.lean, axioms propext/choice/Quot.sound only; probe 14/14). HONEST NEGATIVE, scope-(b): cut identity B = (e_pp d_P + e_nn d_N)/2 + δ·n_pn, δ = e_pn − (e_pp+e_nn)/2 — all layout dependence is the p–n cut times δ. Segregated layouts (corpus chain, constant cut) ⇒ affine in (Z,N), no (N−Z)² at all; well-mixed ⇒ one symmetry term E₀δk/4 with SEMF sign iff δ>0; corpus δ = −0.02176 (wrong sign); convex interface bounds δ ≤ 2 ln q₀ = 0.2087 so max a_A^eff = 2.65 MeV at k=12 vs 23.7 target; positivity forbids neutron-matter unbinding on any graph/interface. The symmetry energy needs a term OUTSIDE positive pair-additive bond counts = the qou-brng extensive object. Bean qou-qve5 stays OPEN (rule 13a; positive target unclosed). The branch carries the superset copy of the qou-qve5 bean; on rebase keep it.
 - Agent notes: SessionStart lake-build-bg had filled the disk twice (killed by agents; 875M partial .lake left in main checkout); q_at() in qou_substrate.constants returns float64 — precision item for that module's arc.
 - Open PRs from this session: #7129 (ledger), #7160, #7164, #7165 — all non-draft, mergeable, agent-verified; merge awaits owner permission (rule 7).
+
+## Tranche 2 (2026-09-08 ~08:00Z) — after 'merge and continue': #7160 43e3e1b305a, #7164 d32f83379f5, #7165 e928329504d, #7129 5566ddffd69 all rebase-merged, replay-verified. Held merges #6178/#6025 NOT merged (recommended against; the generic 'merge' is read as the four session PRs). CAL-3 dataset decision (#7164 §4) still open. Dispatched: qou-nmuz (deltalambda consumer re-runs), qou-hxz4 (binding-word level-locality), qou-v8ct (E₀ factor 2.656).
+
+- 08:11Z qou-nmuz DONE → PR #7172 (all four deltalambda consumers moved on borromean Li; saturation probe stays 3-red with a rotated set; re-pin of two Li assertions is an owner option). bind-local (qou-hxz4) and e0-scale (qou-v8ct) still running.
+
+- 08:20Z qou-hxz4 DONE → PR #7173 (honest negative: binding words not level-local, obstruction is the fixed-H_k embedding; re-embedding on 3A strands is an owner-level re-derivation, option 2). e0-scale (qou-v8ct) still running.
+
+- 08:25Z qou-v8ct DONE → PR #7174 (scope-(a) negative: uniform factor is 98.6 % of the log-residual and undecidable vs bond factors at fixed law; scale is downstream of shape). TRANCHE 2 COMPLETE: #7172 #7173 #7174 open, mergeable, awaiting owner merge permission; ledger #7168.
