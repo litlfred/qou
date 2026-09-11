@@ -272,3 +272,60 @@ the cheap instrument for whichever cell wins is a scoping note plus a
 notation-register entry — not a rename. #6952 excluded
 `mass-endomorphism/atomic-mass-gb-nf.md:3` by name, recording that this bean's
 decision governs it.
+
+## 2026-09-11 — ANSWERS one "Not established" item: the mass-formula citation IS load-bearing
+
+This bean's own list says:
+
+> *"That the 7 mass-chapter citations are load-bearing; whether any **depends**
+> on the `A+Z` count for a result was not measured."*
+
+**Measured for `wedderburn-mass-formula.md`: yes — and the dependence is not a
+shift in a number, it is a change of subject.**
+
+| reading | strand count | unique atom with `p(n) = 3` |
+|---|---|---|
+| **(a)** `def:atomic-braid` | `A + Z = 2Z + N` | **deuterium** (`n = 3`) |
+| **(b)** production | `3A = 3(Z+N)` | **hydrogen-1** (`n = 3`) |
+
+`p(n) = 3` is the condition that the **three extremal Wedderburn blocks exhaust
+the partitions of `n`** — the whole reason the `n = 3` point is interesting, since
+it is the one place where "the three extremal invariants" are not a truncation of
+a longer list. Under (b), deuterium sits at `n = 6` where `p(6) = 11`, so it is
+**not** an exhaustion point at all.
+
+**Exact, not swept.** `p` is strictly increasing on `n ≥ 1`, so `p(n) = 3` iff
+`n = 3`. Then `2Z + N = 3` with `Z ≥ 1` has the unique solution `(1,1)`, and
+`3(Z+N) = 3` with `Z ≥ 1` has the unique solution `(1,0)`. The `Z ≥ 1` restriction
+is load-bearing: admitting `Z = 0` manufactures a spurious `(0,3)` under (a).
+
+### Where this bites right now
+
+PR #7171 (merged, `20671dcc1`) added `rem:level-zero-discards-braid-noncommutativity`,
+which states flatly:
+
+> *"Deuterium is the unique atom with `n = A + Z = 3`."*
+
+True under (a). Under (b) that sentence names the wrong atom. The remark does not
+mention the `3A` reading or this bean — verified mechanically, check 6. The same
+applies to `deuterium_is_the_untested_exact_point_probe.py` check 1 (*"D sits in
+`H_{A+Z}` = `H_3`"*) and to the whole framing of #7162.
+
+So those artifacts are **(a)-conditional and assert their premise flatly** — the
+"conditional-proved ≠ premise-established" defect, in content I authored hours
+before measuring this.
+
+### Scope
+
+**This does NOT adjudicate (a) vs (b)**, which this bean reserves to the author,
+and it does not claim either object is wrong. It measures what turns on the
+choice. Scope (a): it constrains what depends on the reading; it excludes nothing.
+
+**Not established here:** whether the other six mass-chapter citations are
+load-bearing. Only `wedderburn-mass-formula.md` was measured.
+
+**Verification:** `computations/probes/strand_count_reading_is_load_bearing_probe.py`,
+**15/15**, exit 0. Every quantity is an exact integer (partition counts, strand
+counts) — no float64 is reachable, no mpmath, no witness.
+
+**Bean stays open** (rule 13a): the (a)/(b) decision is unresolved mathematics.

@@ -494,3 +494,40 @@ reproduces the merged residual. mpmath 50 dps throughout, anchored on
 nothing here derives the missing non-commutative contribution, and the
 `Φ₁`-is-a-convention-C-artifact finding from the sibling arc is unaffected. What
 changed is that the D residual now has a mechanism attached to it.
+
+## 2026-09-11 — my merged remark is (a)-CONDITIONAL on qou-jgg0 and does not say so
+
+`rem:level-zero-discards-braid-noncommutativity` (PR #7171, merged `20671dcc1`)
+states *"Deuterium is the unique atom with `n = A + Z = 3`."* That is true under
+`def:atomic-braid`'s strand count and **false under the production one**.
+
+Bean `qou-jgg0` established (2026-09-05) that the corpus carries **two different
+objects sharing the name "atomic braid" and the symbol `𝒜`** — `H_{A+Z}(q)` in
+`def:atomic-braid`, `H_{3A}(q)` in production — and reserves the choice between
+them to the author. Measured now:
+
+| reading | D's strand count | unique atom with `p(n) = 3` |
+|---|---|---|
+| `A + Z` | 3 | **deuterium** |
+| `3A` | 6 (`p(6) = 11`) | **hydrogen-1** |
+
+So the two readings name **different atoms** as the unique point where the three
+extremal blocks exhaust the partitions. Exact: `p` is strictly increasing, so
+`p(n)=3` iff `n=3`; then `2Z+N=3` with `Z≥1` gives `(1,1)` and `3(Z+N)=3` gives
+`(1,0)`.
+
+**This does not invalidate the Level-0 finding.** The mechanism — Step 2 chains
+crossings of different strand pairs inside the commutative `R[σ]`, while
+`σ₁σ₂ ≠ σ₂σ₁` — holds at every `n ≥ 3` under either reading, and the `−179.33 %`
+was computed from the mass formula's own construction. What is (a)-conditional is
+the *uniqueness* claim and the identification of D as the separating point.
+
+**Not fixed here, deliberately.** Adding a scope sentence to the remark is close
+to picking (a), which is `qou-jgg0`'s author decision. Raised to the owner rather
+than edited.
+
+**Verification:** `computations/probes/strand_count_reading_is_load_bearing_probe.py`,
+15/15, exit 0. Check 6 asserts mechanically that the merged remark makes the claim
+and mentions neither `3A` nor `qou-jgg0`.
+
+**Bean stays open** (rule 13a).
