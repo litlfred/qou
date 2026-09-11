@@ -12,12 +12,29 @@
                                     (`hypVolume_chimney_inscribedTriangle_obtuse`)
 
   the second being the obtuse counterpart of `hypVolume_chimney_inscribedTriangle`
-  (which assumes all three angles acute).  Between them the two cover every
-  triangle except the right-angled one, where `γ = π/2` degenerates `W_sub` to a
-  half-plane and the `ψ < π/2` wedge machinery fails on both sides.
+  (which assumes all three angles acute); the identity itself on an ideal
+  tetrahedron (`idealTetVolume_of_vertices_obtuse`); and the RIGHT-ANGLED case
+  `γ = π/2` (`…_right`), which completes the coverage.
 
-  and, at the end of the file, the identity itself on an ideal tetrahedron
-  (`idealTetVolume_of_vertices_obtuse`).
+  **THE WHOLE ANGLE SIMPLEX IS NOW COVERED**: acute (`α, β, γ < π/2`, on `main`),
+  obtuse (`π/2 < γ`), right-angled (`γ = π/2`).  Every admissible triple falls in
+  exactly one.
+
+  This header said otherwise, and was wrong in two independent ways.  It read:
+  *"Between them the two cover every triangle except the right-angled one, where
+  `γ = π/2` degenerates `W_sub` to a half-plane and the `ψ < π/2` wedge machinery
+  fails on both sides."*
+
+  * `W_sub` does **not** degenerate to a half-plane — it degenerates to the EMPTY
+    SET (`wedgeAt_pi_div_two_eq_empty`).  Its chord bound `⟨w,u⟩ < R cos(π−γ) = 0`
+    cuts away exactly the half-plane its half-turn opening would sweep.
+  * Because there is then nothing to subtract, the right-angled case is not the
+    hard leftover it was billed as — it is the EASIEST of the three.  It needs no
+    subtraction and, unlike the obtuse case, no `γ`-chord null set either: the two
+    certificates give that chord strictly.
+
+  Both errors are the same one twice: reasoning about a degeneration from its
+  description instead of evaluating it.
 
   **This header said the opposite twice, and the retraction is the useful part.**
   It read: *"SCOPE — this does not close the obtuse case … `idealTet_eq_chimney`
@@ -205,22 +222,25 @@ acute.  In the acute case both terms have the opposite sign and the conclusion
 is false — the circumcentre is then inside the triangle and `perp_t` takes both
 signs on it. -/
 theorem perp_start_neg_of_obtuse {R t α β γ : ℝ}
-    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ)
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 ≤ γ)
     (hsum : α + β + γ = π) {w : ℝ × ℝ} (hw : w ∈ inscribedTriangle R t α β γ) :
     -(w.1 * Real.sin t) + w.2 * Real.cos t < 0 := by
   obtain ⟨⟨h₁, -⟩, h₃⟩ := hw
-  obtain ⟨-, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  -- `β < π/2` from `γ ≥ π/2` and the angle sum; `acute_of_obtuse_third` wants
+  -- the strict `γ > π/2` and is not needed for this.
+  have hβ : β < π / 2 := by linarith
   have hπ : 0 < π := Real.pi_pos
   have hsα : 0 < Real.sin α := Real.sin_pos_of_pos_of_lt_pi hα0 (by linarith)
   have hcβ : 0 < Real.cos β := Real.cos_pos_of_mem_Ioo ⟨by linarith, hβ⟩
-  have hcγ : Real.cos γ < 0 := Real.cos_neg_of_pi_div_two_lt_of_lt hγ (by linarith)
+  have hcγ : Real.cos γ ≤ 0 :=
+    Real.cos_nonpos_of_pi_div_two_le_of_le hγ (by linarith)
   have hF : w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ) < R * Real.cos γ := h₁
   have hG : w.1 * Real.cos (t + 2 * γ + 2 * α + β)
       + w.2 * Real.sin (t + 2 * γ + 2 * α + β) < R * Real.cos β := h₃
   have hcert := perp_start_certificate (R := R) (t := t) hsum w
   have hkey : (-(w.1 * Real.sin t) + w.2 * Real.cos t) * Real.sin α < 0 := by
     rw [hcert]
-    nlinarith [mul_pos (neg_pos.mpr hcγ) (sub_pos.mpr hG),
+    nlinarith [mul_nonneg (neg_nonneg.mpr hcγ) (sub_pos.mpr hG).le,
       mul_pos hcβ (sub_pos.mpr hF)]
   by_contra hcon
   push_neg at hcon
@@ -229,15 +249,16 @@ theorem perp_start_neg_of_obtuse {R t α β γ : ℝ}
 /-- **The triangle lies strictly above the second vertex ray** — the mirror,
 from `perp_second_certificate` with `α` acute in place of `β`. -/
 theorem perp_second_pos_of_obtuse {R t α β γ : ℝ}
-    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ)
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 ≤ γ)
     (hsum : α + β + γ = π) {w : ℝ × ℝ} (hw : w ∈ inscribedTriangle R t α β γ) :
     0 < -(w.1 * Real.sin (t + 2 * γ)) + w.2 * Real.cos (t + 2 * γ) := by
   obtain ⟨⟨h₁, h₂⟩, -⟩ := hw
-  obtain ⟨hα, -⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  have hα : α < π / 2 := by linarith
   have hπ : 0 < π := Real.pi_pos
   have hsβ : 0 < Real.sin β := Real.sin_pos_of_pos_of_lt_pi hβ0 (by linarith)
   have hcα : 0 < Real.cos α := Real.cos_pos_of_mem_Ioo ⟨by linarith, hα⟩
-  have hcγ : Real.cos γ < 0 := Real.cos_neg_of_pi_div_two_lt_of_lt hγ (by linarith)
+  have hcγ : Real.cos γ ≤ 0 :=
+    Real.cos_nonpos_of_pi_div_two_le_of_le hγ (by linarith)
   have hF : w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ) < R * Real.cos γ := h₁
   have hH : w.1 * Real.cos (t + 2 * γ + α) + w.2 * Real.sin (t + 2 * γ + α)
       < R * Real.cos α := h₂
@@ -246,7 +267,7 @@ theorem perp_second_pos_of_obtuse {R t α β γ : ℝ}
       * Real.sin β := by
     rw [hcert]
     nlinarith [mul_pos hcα (sub_pos.mpr hF),
-      mul_pos (neg_pos.mpr hcγ) (sub_pos.mpr hH)]
+      mul_nonneg (neg_nonneg.mpr hcγ) (sub_pos.mpr hH).le]
   by_contra hcon
   push_neg at hcon
   nlinarith [mul_nonneg (neg_nonneg.mpr hcon) hsβ.le]
@@ -260,12 +281,15 @@ functional and each branch is one application of `mem_wedgeAt_of_halfplanes`
 
 Compare the acute statement, which needs all THREE edge functionals nonzero. -/
 theorem inscribedTriangle_subset_obtuseWedges_of_ne {R t α β γ : ℝ}
-    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ)
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 ≤ γ)
     (hsum : α + β + γ = π) {w : ℝ × ℝ} (hw : w ∈ inscribedTriangle R t α β γ)
     (hz : -(w.1 * Real.sin (t + (2 * γ + 2 * α)))
             + w.2 * Real.cos (t + (2 * γ + 2 * α)) ≠ 0) :
     w ∈ wedgeAt R (t + 2 * γ + α) α ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β := by
-  obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  -- `α, β < π/2` needs only `γ ≥ π/2`, so it is derived here rather than via
+  -- `acute_of_obtuse_third`, whose hypothesis is strict.
+  have hα : α < π / 2 := by linarith
+  have hβ : β < π / 2 := by linarith
   have hπ : 0 < π := Real.pi_pos
   have hx := perp_start_neg_of_obtuse hα0 hβ0 hγ hsum hw
   have hy := perp_second_pos_of_obtuse hα0 hβ0 hγ hsum hw
@@ -438,7 +462,7 @@ theorem obtuseWedges_ae_eq_inscribedTriangle {R t α β γ : ℝ}
     intro w hw
     by_contra hcon
     simp only [Set.mem_setOf_eq] at hcon
-    exact hw.2 ⟨inscribedTriangle_subset_obtuseWedges_of_ne hα0 hβ0 hγ hsum hw.1 hcon,
+    exact hw.2 ⟨inscribedTriangle_subset_obtuseWedges_of_ne hα0 hβ0 hγ.le hsum hw.1 hcon,
       notMem_sub_of_mem_inscribedTriangle hw.1⟩
 
 /-! ### The Λ-sum on an obtuse triangle
@@ -511,7 +535,7 @@ theorem hypVolume_chimney_inscribedTriangle_obtuse {R t α β γ : ℝ} (hR : 0 
       by_contra hcon
       simp only [Set.mem_setOf_eq] at hcon
       rcases hw.1 with hwT | hwS
-      · exact hw.2 (inscribedTriangle_subset_obtuseWedges_of_ne hα0 hβ0 hγ hsum hwT hcon)
+      · exact hw.2 (inscribedTriangle_subset_obtuseWedges_of_ne hα0 hβ0 hγ.le hsum hwT hcon)
       · exact hw.2 (wedgeAt_sub_subset_alphaBeta_of_ne hα0 hβ0 hγ hsum hwS hcon)
   have hdisjW : Disjoint (wedgeAt R (t + 2 * γ + α) α)
       (wedgeAt R (t + 2 * γ + 2 * α + β) β) :=
@@ -558,6 +582,166 @@ theorem hypVolume_chimney_inscribedTriangle_obtuse {R t α β γ : ℝ} (hR : 0 
   rw [hTvol, lob_sum_eq_reflected hsum, show α + β = π - γ by linarith,
     ENNReal.ofReal_sub _ nc]
   exact hsub.symm
+
+/-! ### The RIGHT-ANGLED case — `γ = π/2`, where there is nothing to subtract
+
+The two theorems above and the acute `hypVolume_chimney_inscribedTriangle` left
+exactly one slice uncovered, and this file's header used to say it "degenerates
+`W_sub` to a half-plane and the `ψ < π/2` wedge machinery fails on both sides".
+Half right. The machinery does fail — but not into a half-plane:
+
+    `wedgeAt R θ (π/2) = ∅`.
+
+Lean's `tan (π/2) = 0` (division by `cos (π/2) = 0`, the junk value), so the
+wedge's second condition reads `|⟨w,v_θ⟩| < 0` and no point satisfies it. That is
+not a defect of the junk value — it is geometrically right: `W_sub`'s chord
+bound is `⟨w,u⟩ < R cos(π−γ) = 0` and its opening is a half-turn, so the
+half-plane it would sweep is cut away by its own chord.
+
+So at `γ = π/2` **there is nothing to subtract**, which is the analytic shadow of
+`Λ(π/2) = 0`: the circumcentre sits exactly ON the hypotenuse `V₁V₂` (the
+`γ`-chord is a diameter), the boundary case between inside and outside, and the
+two surviving wedges tile the triangle outright.
+
+The one step that does not survive is the `γ`-chord. Above it is extracted from
+`w ∉ W_sub` (`gamma_chord_of_notMem_sub`), and with `W_sub = ∅` that hypothesis
+is free and carries no information. It is replaced by the SAME two certificates,
+used a third time: at `cos γ = 0` each collapses to a single term,
+
+    perp_{t+2γ}·sin β = cos α·(γ-chord slack)      (so `w ∈ W_α` ⟹ slack > 0)
+    perp_t·sin α      = −cos β·(γ-chord slack)     (so `w ∈ W_β` ⟹ slack > 0)
+
+and the chord comes out STRICT rather than `≤`. This direction therefore needs
+**no** null set at all — unlike the obtuse case, where the `≤` of
+`gamma_chord_of_mem_alpha` is what forces `volume_chordLine`. -/
+
+/-- **A half-angle of `π/2` gives the EMPTY wedge**, not a half-plane.
+
+`Real.tan (π/2) = 0` by Lean's division-by-zero convention, so the wedge's
+angular condition is `|⟨w,v_θ⟩| < 0`. -/
+theorem wedgeAt_pi_div_two_eq_empty (R θ : ℝ) : wedgeAt R θ (π / 2) = ∅ := by
+  ext w
+  simp only [wedgeAt, Set.mem_setOf_eq, Set.mem_empty_iff_false, iff_false, not_and]
+  intro _
+  rw [Real.tan_pi_div_two, mul_zero]
+  exact not_lt.mpr (abs_nonneg _)
+
+/-- **The `γ`-chord for a point of `W_α`, at `γ = π/2`** — strict, and with no
+appeal to `W_sub` (which is empty here).  The second certificate at `cos γ = 0`
+reads `perp_{t+2γ}·sin β = cos α·(γ-chord slack)`, and `W_α`'s lower edge gives
+`perp_{t+2γ} > 0`. -/
+theorem gamma_chord_of_mem_alpha_right {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : γ = π / 2) (hsum : α + β + γ = π)
+    {w : ℝ × ℝ} (hw : w ∈ wedgeAt R (t + 2 * γ + α) α) :
+    w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ) < R * Real.cos γ := by
+  have hπ : 0 < π := Real.pi_pos
+  have hα : α < π / 2 := by linarith
+  have hsβ : 0 < Real.sin β := Real.sin_pos_of_pos_of_lt_pi hβ0 (by linarith)
+  have hcα : 0 < Real.cos α := Real.cos_pos_of_mem_Ioo ⟨by linarith, hα⟩
+  have hcγ : Real.cos γ = 0 := by rw [hγ]; exact Real.cos_pi_div_two
+  have hlo : 0 < -(w.1 * Real.sin (t + 2 * γ)) + w.2 * Real.cos (t + 2 * γ) := by
+    have h := wedgeAt_lower hα0 hα w hw
+    rwa [show t + 2 * γ + α - α = t + 2 * γ by ring] at h
+  have hcert := perp_second_certificate (R := R) (t := t) hsum w
+  rw [hcγ] at hcert ⊢
+  rw [mul_zero]
+  nlinarith [mul_pos hlo hsβ]
+
+/-- **The `γ`-chord for a point of `W_β`, at `γ = π/2`** — the mirror, from the
+FIRST certificate and `W_β`'s upper edge (`perp_t < 0` after the `2π` shift). -/
+theorem gamma_chord_of_mem_beta_right {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : γ = π / 2) (hsum : α + β + γ = π)
+    {w : ℝ × ℝ} (hw : w ∈ wedgeAt R (t + 2 * γ + 2 * α + β) β) :
+    w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ) < R * Real.cos γ := by
+  have hπ : 0 < π := Real.pi_pos
+  have hβ : β < π / 2 := by linarith
+  have hsα : 0 < Real.sin α := Real.sin_pos_of_pos_of_lt_pi hα0 (by linarith)
+  have hcβ : 0 < Real.cos β := Real.cos_pos_of_mem_Ioo ⟨by linarith, hβ⟩
+  have hcγ : Real.cos γ = 0 := by rw [hγ]; exact Real.cos_pi_div_two
+  have hup : -(w.1 * Real.sin t) + w.2 * Real.cos t < 0 := by
+    have h := wedgeAt_upper hβ0 hβ w hw
+    rwa [show t + 2 * γ + 2 * α + β + β = t + 2 * π by linarith,
+      Real.sin_add_two_pi, Real.cos_add_two_pi] at h
+  have hcert := perp_start_certificate (R := R) (t := t) hsum w
+  rw [hcγ] at hcert ⊢
+  rw [mul_zero]
+  nlinarith [mul_pos (neg_pos.mpr hup) hsα]
+
+/-- **THE RIGHT-ANGLED TILING.**  At `γ = π/2` the triangle is a.e. the union of
+the two surviving wedges — no subtraction, and only ONE null set (the single edge
+line the covering needs), because both chord directions are strict here. -/
+theorem union_ae_eq_inscribedTriangle_right {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : γ = π / 2) (hsum : α + β + γ = π) :
+    (wedgeAt R (t + 2 * γ + α) α ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β
+        : Set (ℝ × ℝ))
+      =ᵐ[(volume : Measure (ℝ × ℝ))] inscribedTriangle R t α β γ := by
+  have hπ : 0 < π := Real.pi_pos
+  have hα : α < π / 2 := by linarith
+  have hβ : β < π / 2 := by linarith
+  rw [ae_eq_set]
+  constructor
+  · -- `W_α ∪ W_β ⊆ T` is STRICT here: each wedge supplies its own chord, its
+    -- neighbour's by `wedgeAt_lt_chord_next`/`_prev`, and the γ-chord by the
+    -- certificates above.
+    refine measure_mono_null (fun w hw => absurd ?_ hw.2) measure_empty
+    rcases hw.1 with hwα | hwβ
+    · refine ⟨⟨gamma_chord_of_mem_alpha_right hα0 hβ0 hγ hsum hwα, hwα.1⟩, ?_⟩
+      have h := wedgeAt_lt_chord_next hα0 hα hβ0 hβ w hwα
+      rwa [show t + 2 * γ + α + α + β = t + 2 * γ + 2 * α + β by ring] at h
+    · refine ⟨⟨gamma_chord_of_mem_beta_right hα0 hβ0 hγ hsum hwβ, ?_⟩, hwβ.1⟩
+      have h := wedgeAt_lt_chord_prev hβ0 hβ hα0 hα w hwβ
+      rwa [show t + 2 * γ + 2 * α + β - β - α = t + 2 * γ + α by ring] at h
+  · refine measure_mono_null ?_ (volume_perpLine (t + (2 * γ + 2 * α)))
+    intro w hw
+    by_contra hcon
+    simp only [Set.mem_setOf_eq] at hcon
+    exact hw.2 (inscribedTriangle_subset_obtuseWedges_of_ne hα0 hβ0
+      (le_of_eq hγ.symm) hsum hw.1 hcon)
+
+/-- **MILNOR'S Λ-SUM ON A RIGHT-ANGLED TRIANGLE.**  `Λ(π/2) = 0`, so the
+identity is just the two wedge volumes — which is what "nothing to subtract"
+means analytically. -/
+theorem hypVolume_chimney_inscribedTriangle_right {R t α β γ : ℝ} (hR : 0 < R)
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : γ = π / 2) (hsum : α + β + γ = π) :
+    hypVolume (chimney (inscribedTriangle R t α β γ) R)
+      = ENNReal.ofReal (Lob α + Lob β + Lob γ) := by
+  have hπ : 0 < π := Real.pi_pos
+  have hα : α < π / 2 := by linarith
+  have hβ : β < π / 2 := by linarith
+  have mα := measurableSet_wedgeAt R (t + 2 * γ + α) α
+  have mβ := measurableSet_wedgeAt R (t + 2 * γ + 2 * α + β) β
+  have hae := union_ae_eq_inscribedTriangle_right (R := R) (t := t) hα0 hβ0 hγ hsum
+  have hUsub : ∀ w ∈ wedgeAt R (t + 2 * γ + α) α ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β,
+      w.1 ^ 2 + w.2 ^ 2 < R ^ 2 := by
+    rintro w (hw | hw)
+    · exact wedgeAt_subset_disk hα0 hα w hw
+    · exact wedgeAt_subset_disk hβ0 hβ w hw
+  have hres : (volume : Measure (ℝ × ℝ)).restrict (inscribedTriangle R t α β γ)
+      = (volume : Measure (ℝ × ℝ)).restrict
+          (wedgeAt R (t + 2 * γ + α) α ∪ wedgeAt R (t + 2 * γ + 2 * α + β) β) :=
+    Measure.restrict_congr_set hae.symm
+  rw [hypVolume_chimney_of_ae_lt (measurableSet_inscribedTriangle R t α β γ)
+      (by rw [hres]
+          exact (ae_restrict_iff' (mα.union mβ)).mpr
+            (Filter.Eventually.of_forall hUsub)),
+    setLIntegral_congr hae.symm,
+    lintegral_union mβ (disjoint_wedgeAt_adjacent hα0 hα hβ0 hβ (by ring)),
+    lintegral_wedgeAt hR hα0 hα, lintegral_wedgeAt hR hβ0 hβ,
+    ← ENNReal.ofReal_add (Lob_nonneg_of_lt_pi_div_two hα0 hα)
+      (Lob_nonneg_of_lt_pi_div_two hβ0 hβ),
+    show Lob α + Lob β + Lob γ = Lob α + Lob β by rw [hγ, Lob_pi_div_two]; ring]
+
+/-- **MILNOR'S IDENTITY FOR A RIGHT-ANGLED IDEAL TETRAHEDRON**, on the
+vertex-defined region.  With this the acute, obtuse and right-angled theorems
+cover the WHOLE open angle simplex. -/
+theorem idealTetVolume_of_vertices_right {t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : γ = π / 2) (hsum : α + β + γ = π) :
+    hypVolume (idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
+        (circlePoint 1 (t + 2 * γ + 2 * α)))
+      = ENNReal.ofReal (Lob α + Lob β + Lob γ) := by
+  have hγ0 : 0 < γ := by rw [hγ]; positivity
+  rw [idealTet_eq_chimney hα0 hβ0 hγ0 hsum]
+  exact hypVolume_chimney_inscribedTriangle_right (by norm_num) hα0 hβ0 hγ hsum
 
 /-! ### The obtuse case of Milnor's identity
 
