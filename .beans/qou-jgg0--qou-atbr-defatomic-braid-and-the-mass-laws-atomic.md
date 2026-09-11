@@ -444,3 +444,69 @@ part of **31/31**, exit 0. Check 11's first assertion failed at 4 and was correc
 to the measured 7 before this was written.
 
 **Bean stays open** (rule 13a).
+
+## 2026-09-11 — a FOURTH surface (Lean), and the pattern that ties all of them together
+
+This bean measured **content blocks** and **Python**. The `.lean` surface was
+never counted — the same omission AGENTS.md records for the convention-C audit,
+whose detector walked the tree four times and every pass was `rglob("*.py")`.
+
+**Both readings have Lean carriers. `3A` dominates numerically; every `A+Z`
+carrier is in the electron domain.**
+
+| reading | Lean files | character |
+|---|---|---|
+| `3A` | **20** | incl. `conj-rho-prefactor-structural.lean`'s *"Sanity: the strand count is exactly `3 * (Z + N)`"* — a **constraint** |
+| `A + Z` | **3** | below |
+
+The three `A+Z` carriers:
+
+1. **`knots-particles-confinement/atomic-braid.lean`** — the definition's own
+   sibling. It encodes `A+Z` as a **field default** (`totalStrands : Nat := A + Z`)
+   and its one theorem is `rfl` on that default. Its own docstring says *"for an
+   arbitrary `NeutralAtom` the `A` and `totalStrands` fields are independent and
+   may be set to non-default values"* — so a `NeutralAtom` with
+   `totalStrands := 3*A` is well-typed. **The Lean does not force (a); it defaults
+   to it.** Per AGENTS.md rule 8, a proposition true by unfolding is notation
+   rather than a theorem; flagged as a shape, not declared a violation.
+   It also carries the six `PairType` constructors **including `pe`, `ne`, `ee`**.
+2. **`lean/QOU/BraidKnot/ElectronShell.lean`** — a **library** file, and a real
+   construction rather than a default: the cabling `H_A(q) ↪ H_{A+Z}(q)` plus an
+   SDP-selected binding subword `W_bind ∈ BraidWord (A+Z)`, *"Total strand count
+   `A + Z` after cabling"*. 24 mentions of "electron".
+3. **`molecular-construction/h2o-molecular-braid.lean`** — water, with the
+   arithmetic explicit: *"oxygen `O(8,8)` (A+Z = 16+8 = 24 strands)"*.
+
+### The pattern, across all four surfaces
+
+Of the **seven** `A+Z` carriers now identified — 3 Lean, 3 content
+(`co-molecular-braid-carbon-monoxide.{md,ts}`, `h2-molecular-braid.md`), 1
+mass-theory (`wedderburn-mass-formula.md`) — **six are electron-shell or
+molecular.** Only `wedderburn-mass-formula.md` is not.
+
+That is the sharpest form of this bean's own evidence for (a): the `A+Z` reading
+is not scattered residue, it is **the reading the electron/molecular/shell domain
+is built in** — and reading (b) is `3A` with **no electrons**, so it cannot serve
+that domain at all.
+
+**The Lean count itself cuts the other way** (20 vs 3), and that is recorded as
+found. The two observations are not in conflict: `3A` is where the *mass* pipeline
+lives, `A+Z` is where the *electron* content lives. That is closer to this bean's
+option (a) — two real objects needing two names — than to (b).
+
+### Two scan errors of mine, both the same class
+
+- I grepped `lean/QOU/` for `NeutralAtom`, got **zero**, and nearly reported the
+  definition's Lean ref as dangling. It is the **content-block sibling**
+  (resolution path 1, AGENTS.md §0a); `lean/QOU/` is path 2 only.
+- I then asserted the sole `A+Z` Lean carrier was that sibling. The counting check
+  fired and returned **three**. The two extras are the substantive ones.
+
+Both were caught by making the probe count rather than assert. Recorded because
+this is the third and fourth time in this arc that a scan's *scope* — not its
+pattern — was the defect.
+
+**Verification:** `strand_count_reading_is_load_bearing_probe.py` checks 15–19,
+part of **44/44**, exit 0.
+
+**Bean stays open** (rule 13a). (a)/(b) still the author's.

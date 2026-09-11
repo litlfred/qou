@@ -281,7 +281,97 @@ def main() -> int:
           all(d.startswith("molecular-construction/") for d in numeric_dep),
           "the chapter is built on 'nucleons + electrons', which IS the A+Z construction")
 
-    total = 31
+    print("\nCHECK 15 -- a FOURTH surface: Lean. qou-jgg0 measured content + Python only")
+    CBR = REPO / "content/quantum-observable-universe"
+    az_lean = CBR / "knots-particles-confinement/atomic-braid.lean"
+    az = az_lean.read_text()
+    check("def:atomic-braid HAS a Lean sibling (it is not under lean/QOU/)",
+          az_lean.exists() and not (CBR / "lean/QOU/AtomicBraid").exists(),
+          "grepping lean/QOU/ alone reports ZERO hits for NeutralAtom -- a scan-scope "
+          "blind spot, and I hit it before checking resolution path 1")
+    check("it encodes A+Z as a FIELD DEFAULT, not a constraint",
+          "totalStrands : Nat := A + Z" in az and "A : Nat := Z + N" in az)
+    check("it carries the six pair types INCLUDING the three electronic ones",
+          all(f"| {k} : PairType" in az for k in ("pp", "nn", "pn", "pe", "ne", "ee")),
+          "pe / ne / ee -- qou-jgg0's own evidence for reading (a), also present in Lean")
+
+    print("\nCHECK 16 -- but that carrier does NOT force A+Z, and says so itself")
+    check("its single theorem is proved by rfl on the defaults",
+          "totalStrands = Z + N + Z := by" in " ".join(az.split())
+          and az.rstrip().endswith("rfl"),
+          "AGENTS.md rule 8: a proposition true by unfolding is notation, not a theorem")
+    check("its docstring states the fields are INDEPENDENT and may be non-default",
+          "the `A` and `totalStrands` fields are independent" in " ".join(az.split()),
+          "so a NeutralAtom with totalStrands := 3*A is well-typed -- (a) is a "
+          "default, not a constraint")
+
+    print("\nCHECK 17 -- the 3A reading ALSO has Lean carriers, and more of them")
+    lean_3a = {
+        "knots-particles-confinement/fusion-process.lean":
+            "Hecke strand count: three strands per nucleon (`H_{3A}`)",
+        "mass-theory/conj-rho-prefactor-structural.lean":
+            "the strand count is exactly `3 * (Z + N)`",
+        "mass-theory/habiro-expansion-atomic.lean":
+            "H_{3A}(q)",
+        "mass-theory/schur-weyl-mass-decomposition.lean":
+            "H_{3A}(q)",
+    }
+    missing = [f for f, q in lean_3a.items()
+               if q not in " ".join((CBR / f).read_text().split())]
+    check("4 named Lean files carry the 3A reading verbatim", not missing, str(missing))
+    check("one of them states it as a CONSTRAINT, not a default",
+          "Sanity: the strand count is exactly `3 * (Z + N)`" in
+          " ".join((CBR / "mass-theory/conj-rho-prefactor-structural.lean").read_text().split()))
+
+    print("\nCHECK 18 -- so the Lean surface carries BOTH, and leans the OTHER way")
+    # Not a bare True: count the Lean files that actually carry each reading as a
+    # STRAND COUNT (the phrase must sit on a line mentioning strands/braid/atom, so
+    # an unrelated "3 * A" in an inequality does not inflate the 3A side).
+    ctx = re.compile(r"strand|braid|atom", re.I)
+    az_files, b_files = set(), set()
+    for f in CBR.rglob("*.lean"):
+        for line in f.read_text().splitlines():
+            if not ctx.search(line):
+                continue
+            if re.search(r"A \+ Z|A\+Z", line):
+                az_files.add(str(f.relative_to(CBR)))
+            if re.search(r"3 ?\* ?A\b|3 ?\* ?\(Z \+ N\)|H_\{3A\}", line):
+                b_files.add(str(f.relative_to(CBR)))
+    check("the 3A reading has strictly MORE Lean carriers than A+Z",
+          len(b_files) > len(az_files),
+          f"A+Z: {len(az_files)} file(s) {sorted(az_files)}  |  3A: {len(b_files)} file(s)")
+    check("A+Z's Lean carriers are exactly three, and I under-counted them twice",
+          az_files == {
+              "knots-particles-confinement/atomic-braid.lean",
+              "lean/QOU/BraidKnot/ElectronShell.lean",
+              "molecular-construction/h2o-molecular-braid.lean",
+          },
+          f"{sorted(az_files)}")
+
+    print("\nCHECK 19 -- the pattern across ALL surfaces: A+Z lives in the ELECTRON domain")
+    esl = " ".join((CBR / "lean/QOU/BraidKnot/ElectronShell.lean").read_text().split())
+    h2o = " ".join((CBR / "molecular-construction/h2o-molecular-braid.lean").read_text().split())
+    check("ElectronShell.lean is a real CONSTRUCTION, not a default: H_A -> H_{A+Z} cabling",
+          "H_A(q) \u21aa H_{A+Z}(q)" in esl or "H_{A+Z}(q)" in esl,
+          "plus `BraidWord (A+Z)` and an SDP-selected binding subword")
+    check("h2o-molecular-braid.lean does A+Z arithmetic explicitly",
+          "A+Z = 16+8 = 24 strands" in h2o, "oxygen O(8,8) for water")
+    # Every A+Z carrier found on ANY surface is about electrons, shells, or molecules.
+    az_all = sorted(az_files) + [
+        "molecular-construction/co-molecular-braid-carbon-monoxide.md",
+        "molecular-construction/co-molecular-braid-carbon-monoxide.ts",
+        "molecular-construction/h2-molecular-braid.md",
+        "mass-theory/wedderburn-mass-formula.md",
+    ]
+    domain = [f for f in az_all
+              if f.startswith("molecular-construction/")
+              or "ElectronShell" in f
+              or f.endswith("knots-particles-confinement/atomic-braid.lean")]
+    check("6 of the 7 A+Z carriers are electron-shell or molecular; the 7th is the mass formula",
+          len(domain) == 6 and len(az_all) == 7,
+          "the one domain reading (b) -- 3A with NO electrons -- cannot serve")
+
+    total = 44
     print(f"\n{total - len(fails)}/{total} checks passed")
     if fails:
         print("FAILED: " + "; ".join(fails))
