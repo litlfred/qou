@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-11T15:10:38Z
+updated_at: 2026-09-11T15:32:44Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -36,3 +36,8 @@ Claimed 2026-09-08 by session on branch claude/ales-gg-word-selection-2026-09-08
 
 ## 2026-09-08 — steps 1+2 landed on PR #7184 (branch claude/ales-gg-word-selection-2026-09-08)
 Step 1: QOU/Mass/GammaGammaWordSelection.lean — GammaGammaWord (product of sigma_i sigma_{i+1}^-1 vertices) + SDPSelected (Matrix.PosSemidef on every Wedderburn block + cost-minimal); sorry-free, lean-direct exit 0, no sorryAx. Step 2: computations/probes/frobenius_admissibility_net_row_probe.py — vd7j net-row fix under D at the proton pin, no AME: 0/4238 candidate words survive for p,n,2H,pp,nn,3H,3He,4He, and the reason is the Gram radical (alternating character eps(W) != 0), NOT the net row (1'v != 0 makes it satisfiable). Scope-(a): the Gx=nf demand formulation; the PSD confinement SDP itself has NOT been run. Step 3 (H3 SDPSelected instance, template comparison, diproton sign qou-vbyi) remains OPEN — bean stays in-progress (rule 13a). Audit: docs/audits/2026-09-08-gamma-gamma-word-selection-step1.md.
+
+
+
+## 2026-09-11 — step 3 CLAIMED on branch claude/ales-step3-h3-sdp-selector-2026-09-11 (stacks on PR #7184)
+Instantiating SDPSelected at H_3 over the gamma-gamma candidate set (Lean sibling module), running the PSD/Frobenius-positivity selection over (sigma_0 sigma_1^-1)^k at the proton pin in a probe, and computing the pp binding sign with the selected bond vs the template. Bean stays in-progress.
