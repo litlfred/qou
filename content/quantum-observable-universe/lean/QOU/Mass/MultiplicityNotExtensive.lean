@@ -106,9 +106,12 @@ counting, whatever program is written.
 
 ## What is proved and what is hypothesis
 
-Everything below is proved. Part 1 is generic over a linearly ordered ring
-(§7c); the archimedean parts are over `ℝ` because `Real.log` and `Real.sqrt`
-are archimedean constructs. The Hardy–Ramanujan bound is **not** proved here —
+Everything below is proved. Everything in *this* file is over `ℝ`, because
+`Real.log` and `Real.sqrt` are archimedean constructs; the counting bound the
+whole argument rests on needs no ordering beyond a linearly ordered ring and
+lives in the sibling `QOU/Mass/MultiplicityCountingBound.lean` per §7c — the
+same split as `BondCutSymmetry` / `BondCutSymmetryLogBound`. The
+Hardy–Ramanujan bound is **not** proved here —
 it enters `hardyRamanujan_gives_sqrt_law` as an explicit hypothesis, named and
 citable, in the `_of_` style of AGENTS.md §"Conditional-proved ≠
 premise-established". No nuclear datum appears in any statement; `A₁`, `A₂`,
@@ -128,40 +131,18 @@ Bean `qou-brng`. Companion exclusions that this one does not overlap:
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
+import QOU.Mass.MultiplicityCountingBound
 
 namespace QOU.Mass.MultiplicityNotExtensive
 
-/-! ## Part 1 — the counting bound, over a generic ordered ring (§7c)
+open QOU.Mass.MultiplicityCountingBound
 
-Nothing here knows about partitions, traces, or `q`. The only input is that the
-summands are bounded in absolute value; the signs are arbitrary, which is what
-lets this apply to `Σ_λ y_λ χ^λ Δ_λ` where `BondCutSymmetry.bondSum_nonneg`
-cannot. -/
+/-! ## Part 1 — the counting bound
 
-section Ring
-
-variable {R : Type*} [Ring R] [LinearOrder R] [IsStrictOrderedRing R]
-
-/-- **Many summands buy at most a factor of their number.** A signed sum whose
-summands are bounded by `M` is bounded by `card · M`. This is the entire
-multiplicity channel: the triangle inequality, and no more is available. -/
-theorem abs_sum_le_card_mul {ι : Type*} (s : Finset ι) (a : ι → R) (M : R)
-    (hM : ∀ i ∈ s, |a i| ≤ M) :
-    |∑ i ∈ s, a i| ≤ (s.card : R) * M := by
-  calc |∑ i ∈ s, a i| ≤ ∑ i ∈ s, |a i| := Finset.abs_sum_le_sum_abs _ _
-    _ ≤ s.card • M := Finset.sum_le_card_nsmul _ _ _ hM
-    _ = (s.card : R) * M := nsmul_eq_mul _ _
-
-/-- The same bound stated against the dominant summand: if `a i₀` attains the
-maximum absolute value, the whole sum is at most `card` times it. Cancellation
-can only make the left side smaller, so the inequality is one-sided by design —
-and one-sided in the direction the extensivity question asks about. -/
-theorem abs_sum_le_card_mul_dominant {ι : Type*} (s : Finset ι) (a : ι → R)
-    (i₀ : ι) (hdom : ∀ i ∈ s, |a i| ≤ |a i₀|) :
-    |∑ i ∈ s, a i| ≤ (s.card : R) * |a i₀| :=
-  abs_sum_le_card_mul s a _ hdom
-
-end Ring
+`MultiplicityCountingBound.abs_sum_le_card_mul` supplies `|Σ a| ≤ card · M`
+over a generic linearly ordered ring: the whole multiplicity channel, for
+arbitrary signs. Everything in this file turns that into an archimedean
+statement about growth in `A`. -/
 
 /-! ## Part 2 — the log form: the multiplicity surplus -/
 
