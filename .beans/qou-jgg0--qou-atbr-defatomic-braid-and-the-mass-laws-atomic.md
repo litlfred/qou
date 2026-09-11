@@ -329,3 +329,57 @@ load-bearing. Only `wedderburn-mass-formula.md` was measured.
 counts) — no float64 is reachable, no mpmath, no witness.
 
 **Bean stays open** (rule 13a): the (a)/(b) decision is unresolved mathematics.
+
+## 2026-09-11 — the blast-radius line counts CITATIONS; the dependency surface is ~1 block
+
+This bean's blast-radius section reads *"24 citing blocks, 7 in the mass chapters"*
+and lists them. **Citing `def:atomic-braid` is not the same as depending on its
+strand count**, and measured, almost none of them do.
+
+The 24 (re-derived independently — same count) classify by the strand count each
+block actually uses:
+
+| bucket | n | blocks |
+|---|---|---|
+| **no strand count at all** | **16** | they cite the crossing table or the ground-state ordering, both reading-independent |
+| `3A` | 4 | `atom-knot-exists-proof.md`, `active-set-trace-concentration.ts`, `canonical-closure-torus-chain.md`, `subset-cumulant-recursion.md` |
+| `3A + Z` (the third count) | 1 | `mass-endomorphism/atomic-mass-gb-nf.md` |
+| `A + Z` | 3 | see below |
+
+Of the three `A+Z` hits, **two are not consumers**:
+
+- `knots-particles-confinement/atomic-braid.ts` is **the definition's own
+  manifest** (`label: "def:atomic-braid"`), whose `title` is
+  *"Atomic braid `$H_{A+Z}(q)$`"*;
+- `index-of-definitions/definition-index.md` is a **catalogue echoing that
+  title** on one row — its `3A` hits belong to unrelated entries
+  (`rho-k-h3a-refinement`, `atom-braid-exterior-algebra`,
+  `psd-trace-orthogonality`).
+
+**So exactly one consumer carries the `A+Z` reading: `mass-theory/wedderburn-mass-formula.md`.**
+
+### Why this matters for the (a)/(b) decision
+
+It re-prices option **(b)** — *"`def:atomic-braid` is superseded; retire it and
+rehome its 24 citations"*. The content-side rehoming is **one consumer block,
+plus the definition's own title and one index row**, not 24 and not 7. The other
+five counted blocks have already committed to the production side (`3A`, or `3A+Z`),
+and 16 never touch a strand count.
+
+That does **not** argue for (b) — the electron rows in Table 1 are still specific
+and physically motivated, which is this bean's own evidence for (a). It removes a
+cost from (b)'s side of the ledger, nothing more.
+
+### Scope, and what is NOT measured
+
+- **Content blocks only.** The code side is already this bean's: 824 strand-count
+  lines across 377 files on `3A` against 9 lines across 4 files on `A+Z`.
+- **"Uses a strand count" is a textual classification**, ordered so that `3A + Z`
+  is matched before `3A` and `A + Z` (it contains both). A block could depend on
+  the count without writing it; that is not detected here.
+- Still **not** adjudicating (a) vs (b).
+
+**Verification:** `computations/probes/strand_count_reading_is_load_bearing_probe.py`
+checks 8–10, part of **22/22**, exit 0.
+
+**Bean stays open** (rule 13a).
