@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-09-08T08:58:09Z
+updated_at: 2026-09-11T14:31:54Z
 ---
 
 ## 2026-09-05 — measured, fixed, verified. PR #6827
@@ -239,3 +239,74 @@ truncated-olean class already on the record (a 192512-byte
 `ComplexDilogarithmSlit.olean` against a true 279688 killed its whole cone with
 exit 139 and zero output). Six more cones, not yet diagnosed to a specific
 truncated file. Container-scoped like everything else here.
+
+
+## 2026-09-11 — RETRACTING two things from my 2026-09-08 entry above
+
+Both are mine, both were inferred rather than measured, and a sibling session
+(`qou-ed8a` / `qou-g5sp`, commits `ef2e7d9d710`, `61d93c97ff0`, `9df38bc4548`)
+independently named the move on the same day: *"a property inferred from a
+neighbour instead of measured on the thing itself."*
+
+### 1. The six `signal 11` modules — attribution WITHDRAWN
+
+I wrote that they are *"the truncated-olean class already on the record"*. I did
+not measure that on any of the six. I matched a symptom (SIGSEGV) to a cone I had
+diagnosed earlier in a different area and carried the attribution across.
+
+The sibling refuted the structurally identical inference the same day: `#7124`'s
+audit had listed the `QOU.Hecke*` H4 cluster as *"the same H4 family a sibling
+measured as SIGSEGV"*, and both members then compiled **clean** — `HeckeH4BlockMap211`
+ok in 1049 s, `HeckeH4BlockMap31` ok in 974 s. Whatever was measured elsewhere did
+not transfer.
+
+**A second hypothesis I never excluded, and it is now the more likely one.** I ran
+`lean-library-sweep.py --package QOU` with **no `--jobs`**, i.e. the default 3, so
+three `lean` processes shared this container. The sibling established that the
+sweep's four TIMEOUTs were exactly that — `Witness12B` needs 1471 s of exclusive
+CPU against an 1800 s budget charged as WALL CLOCK. Contention is a live
+alternative for a signal-11 under memory pressure too, and my run cannot
+distinguish it.
+
+**So the standing claim is only:** six modules were killed by signal 11 under a
+3-job sweep in this container, cause unmeasured. Re-running them alone
+(`--jobs 1`) is what would settle it, and that is the sibling's in-flight work on
+`qou-ed8a` — not duplicated here.
+
+### 2. "Four more targets nobody has seeded" — STALE, by hours
+
+That clause was wrong when written. `beec4c420ef` landed
+[`scripts/lean-build-mathlib-gap-cone.py`](scripts/lean-build-mathlib-gap-cone.py)
+the same day: it builds missing Mathlib oleans **from source** (79 modules,
+188 s, 57 MB for its cone) and is additive by construction. One of my four —
+`Mathlib.RepresentationTheory.Homological.GroupCohomology.LowDegree` — is the
+exact case it was written for.
+
+**The scope correction to the 2026-09-07 audit still stands**: that audit measured
+content-block `import` lines, and the library tree has its own gap. What does not
+stand is that nobody had addressed it.
+
+**One measurement to hand back rather than act on.** Run on my three remaining
+seeds in this container, the script fails in about a second:
+
+```
+$ python3 scripts/lean-build-mathlib-gap-cone.py QOU.Mass.TorusInflection
+dest     .../lean/.lake/packages/mathlib/.lake/build/lib/lean
+MISSING  1 module(s) in 1 layer(s)
+  [1/1] FAIL QOU.Mass.TorusInflection  (exit 1)
+```
+
+It classifies the **seed itself** as the missing module and tries to build a `QOU`
+module into the *mathlib* destination tree; the Mathlib modules actually absent
+(`LinearAlgebra.CrossProduct`, `LinearAlgebra.PiTensorProduct`,
+`RingTheory.SimpleRing.Matrix`) are never reached. Same on all three.
+
+The premise is fine — Mathlib **sources are present** here (6996 `.lean` against
+3472 oleans), so these are buildable gaps, not container limits, exactly as
+`beec4c420ef` argues. The difference from the case it was written for is that my
+seeds have **no olean of their own** (they are in the sweep's dirty closure),
+which is what appears to put the seed into the missing set.
+
+Not fixed here: it is a sibling's script on a sibling's live bean, and the
+duplication rule reserves settled mechanical work to one owner. Handing over the
+repro.
