@@ -2379,6 +2379,33 @@ def _contrib_single_partition_exact(Z, N, entry):
     cumul = _mp.mpf(0)
     tr_run = dim  # initial trace of identity
 
+    # Rust LP-accumulator kernel (qou-sv7h).  This is the SAME wiring
+    # `unified_iterative_correction` (line ~1913) and `atom_character_raw`
+    # (line ~2243) already carry; this was the one consumer of the three that
+    # never got it, which is why #6807 measured it making 25 `_matmul_dim`
+    # calls per partition against 0 for the other two.  Exactly the shape of
+    # the note two blocks down: "this loop was left behind".
+    #
+    # `_lp_kernel_steps` returns the trace and the CUMULATIVE log-norm for
+    # every step, with the same `max|M| > 1e80` rescale the Python loop below
+    # applies, so `M` is never materialised here at all.
+    #
+    # As in `unified_iterative_correction`, the kernel replaces ONLY the matrix
+    # maintenance.  Every line of the accumulation -- `log_cur`, the
+    # `scale * (log_cur - log_prev)` delta, `final_tr_sign` -- is the Python
+    # below, unchanged and shared.
+    _ks = _lp_kernel_steps(entry['partition'], [
+        _step_chain_generic(ordering[_k], ordering[:_k], n_gens)
+        for _k in range(A)])
+    if _ks:
+        for _tr, _ln in _ks:
+            tr_run = _tr
+            log_cur = (_ln + _exact_log(abs(_tr)) if abs(_tr) > 1e-300
+                       else log_prev)
+            cumul += scale * (log_cur - log_prev)
+            log_prev = log_cur
+        return (+1 if tr_run > 0 else -1, cumul)
+
     for kkk in range(A):
         nuc = ordering[kkk]
         prev_types = ordering[:kkk]
