@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
-updated_at: 2026-09-08T07:45:33Z
+updated_at: 2026-09-11T14:46:19Z
 parent: qou-x631
 ---
 
@@ -283,3 +283,21 @@ Two things did come out of the attempt:
 ## 2026-09-08 coordination: same kernel as qou-x631, qou-k5r5, qou-o6ov, qou-omr7
 
 Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 1 / §7.3 C2: `k5r5` (99 commits, 08-21 → 09-08) and `o6ov` (99 commits, 08-30 → 09-05) both work the odd-moment / Magnus `tr(ρ_λ Ω₂)` kernel, and before this note there were **zero** cross-citations among k5r5 / o6ov / x631 / za3q / omr7 (measured 2026-09-08 by grepping each body for the other four ids). Shared ledger: epic `qou-x631`, now parent of the other four. Roles — x631: epic, Cov_Planch(f^λ, Σc²) ≤ 0 / T₃(k) kernel; k5r5: M₁ > 0 (first odd moment), all-n proof OPEN, identity Lean-proved; o6ov: does |tr(ρ_λ Ω₂)|/dim decay in b across the ≤2-row column (open mathematics, rescoped 2026-09-05, PR #6822); za3q: Magnus-Ω₂ probes use the Plancherel weight y_λ, 91 % of their work on shapes tr_M annihilates; omr7: Magnus probes' d_q was the hook product, weight inverted (4 files, PR #6442). Statuses are unchanged by this note; a result landing on any of the five should be cited in the other four.
+
+## MEASURED 2026-09-08/11: A=4 = +34.126027, sign +1 — no flip at the alpha particle
+
+77/77 partitions, max dim 7700, 28661s (8.0h) on 3 workers.
+  P_total(A=4) = 34.1260272853576529271380692762741452981457684651471317452205
+  sign +1, control (rho=I) = 0.0 vanishes True, split 33+/42-, sign_flip_vs_A3 = False
+
+Sign map: A2 = -1, A3 = +1, A4 = +1. Exactly ONE sign change in A=2,3,4 and it
+sits between the deuteron and the triton, NOT at the alpha particle.
+
+Survived four session-boundary kills via per-partition checkpointing; the two
+earlier attempts that did NOT survive used setsid/nohup (qou-6cm9). The dim-7700
+partition (~3h on one worker, unbankable until complete) was expected to make A=4
+unreachable. It landed.
+
+scope-(a): dimensionless SIGN datum. NOT a MeV (Δ_λ gate open), NOT a physical
+binding-sign assertion (qou-v7ro/#6077 cited, not re-derived). Per-partition
+sign-indefinite.
