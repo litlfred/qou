@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-11T15:01:36Z
+updated_at: 2026-09-11T15:25:39Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -1018,3 +1018,66 @@ right-angled halves assume nothing the acute one does not.
 **Still not closing this bean.** Whether that shared citation leaves H4-5 "done"
 is an owner call, not mine — rule 13a. What has changed since the last entry is
 that the coverage caveat I attached to that question is gone.
+
+
+## 2026-09-11 (later) — the identity is UNCONDITIONAL
+
+`ObtuseTiling.idealTetVolume_of_vertices_unconditional`, sorry-free:
+
+    Vol(idealTetrahedron P₁ P₂ P₃) = Λ(α) + Λ(β) + Λ(γ)
+
+for **every** positive triple summing to `π`. No acuteness, no distinguished
+angle, no case hypothesis. This is H4-5's actual target rather than a
+case-parametrised family, and it is the first statement in this arc that a reader
+can cite without checking which branch they are in.
+
+### A gap in my own headline claim, two hours old
+
+The entry above says "the whole angle simplex is covered: acute, obtuse,
+right-angled — every admissible triple falls in exactly one". All three theorems
+are stated with **`γ`** as the distinguished angle. A triple whose non-acute
+angle is `α` or `β` satisfies **none of them as written**. The claim was really
+about a relabelling step, and that step had not been taken.
+
+That is the third instance in this bean of one shape: something true of the parts
+asserted of the whole without checking the join —
+
+1. a hypothesis inherited down a chain, assumed to be needed (the "fourth
+   acuteness gate");
+2. a degeneration reasoned about from its description rather than evaluated
+   (`W_sub` "becomes a half-plane", when it becomes `∅`);
+3. three cases assumed to compose into a cover, when composing them needs a
+   relabelling lemma nobody had proved.
+
+### What closes it
+
+The relabel is **exact**, not approximate. With `α+β+γ = π`, sending
+`(α,β,γ) ↦ (β,γ,α)` and `t ↦ t+2γ` names the *same three circle points* — the
+third lands on `t + 2π`. So it is literally the same region, given that
+`idealTetrahedron` ignores vertex order, which reduces to one observation:
+
+    verticalHalfSpaceThrough b c i = {p | 0 < sarea b c i * sarea b c (p 0, p 1)}
+
+is a product of two signed areas **sharing the edge `b c`**, so swapping the
+edge's endpoints negates both factors and changes nothing. Hence
+`verticalHalfSpaceThrough_swap` → `idealTetrahedron_cyclic`. `Λ(α)+Λ(β)+Λ(γ)` is
+symmetric outright.
+
+New: `verticalHalfSpaceThrough_swap`, `idealTetrahedron_cyclic`,
+`circlePoint_add_two_pi`, `idealTetVolume_of_vertices_nonacute` (obtuse + right
+in one, `π/2 ≤ γ`), and the unconditional theorem.
+
+`at_most_one_obtuse` turned out not to be needed — the split is by cases rather
+than by exclusion, so a triple with two non-acute angles lands in a branch whose
+hypotheses `linarith` refutes on its own.
+
+### Residual — unchanged, and now genuinely the only one
+
+The single cited totally-geodesic / normalized-position identification
+(`geodesicPlaneThrough`, File A1 — a definition with a citation, not an axiom or
+`sorry`). The acute theorem already rested on it; everything added in this arc
+assumes nothing further.
+
+**Still not closing this bean** (rule 13a): whether that citation leaves H4-5
+"done" is an owner call. What has changed is that there is no longer any
+coverage caveat attached to that question.
