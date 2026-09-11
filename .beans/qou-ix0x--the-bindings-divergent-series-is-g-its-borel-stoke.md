@@ -87,3 +87,37 @@ Three theorems already there, sorry-free:
 **This is a PREDICTION, not a fit**, and that is what makes it worth doing: `w3` is determined by the carrier's crossing structure, and `b₃` is measured. Nothing is tuned. If the number misses, that is a real negative about the carrier or about `binding = −(mutual energy)`, and either is information.
 
 **Consequence for this bean and for `qou-dk8a`:** both remain unexcluded, and both are now **lower priority than computing `w3`**. The cyclotomic-summation route is a fallback for if the direct computation fails; it should not be worked ahead of it. My resurgence excursion this session produced a real negative (`BindingNoAlienPlane`) and pointed at a gap that has a nearer route — say so rather than dressing the excursion up as the plan.
+
+
+---
+**THE COMPUTATION RAN — 2026-09-11. It is a scope-(a) NEGATIVE, and it fails on the SIGN, which is the cheapest possible way for it to fail.**
+
+[`b3_brunnian_count_channel_probe.py`](../computations/deltalambda/b3_brunnian_count_channel_probe.py), 6/6 PASS, exit 0, mpmath 50 dps, proton pin.
+
+The entry above asked for exactly this and called it "a PREDICTION, not a fit". It is, and it is falsified:
+
+| quantity | value |
+|---|---|
+| `signedChannel(1,1,q₀)` | `0` exactly (Brunnian) |
+| `countChannel(1,1,q₀) = w3` | `+0.209060298796` |
+| `tripleMutual = 3·w3` | `+0.627180896387` |
+| `b₃ = −tripleMutual` (predicted) | **`−0.627180896387`** |
+| `b₃` (AME2020) | **`+1.4262225` MeV** |
+
+**The disagreement is a sign, so no energy scale can repair it.** `q₀ > 1 ⇒ q₀ − q₀⁻¹ > 0 ⇒` every `w3 > 0 ⇒ tripleMutual > 0 ⇒ b₃ = −tripleMutual < 0`. AME measures it positive. This is scale-independent: the construction supplies no MeV scale at all (`countChannel` is dimensionless), and that second gap is on the record too — scaling by CAL-1 `m_e` gives `|b₃| = 0.32048878` MeV against `1.4262225`, **4.45× short**. Reporting both so the sign is not mistaken for the only problem.
+
+**The obvious escape is closed, and closing it is the part worth keeping.** My first write-up said the residual gap was that I had used the *isolated pair's* crossing numbers rather than the pair *inside the triple* — which is literally what the entry above asked for. That escape does not exist. Brunnian means every pairwise linking number is zero, so `n₊ − n₋ = 2·lk = 0` forces `n₊ = n₋ = m` for **whatever** `m` an inside-the-triple count produces, and
+
+    countChannel(m, m, q₀) = m(q₀ − q₀⁻¹) > 0   for every m ≥ 1
+
+Swept `m ∈ {1,2,3,5,8,13,100}` (FINDING 1b): all positive, from `0.209060299` to `20.9060299`. Re-counting **rescales** the prediction; it cannot flip it. Note the direction of that sweep — it is a check that *no* value works, not a search for one that does, which is why it is not a fit.
+
+**What this does NOT touch**, and none of it is in question: the Lean channel decomposition; `b3_eq_neg_tripleMutual_of_brunnian`; that L6a4 is Brunnian; that the signed channel is empty on it; or `countChannel` as a *term* in some other combination — a compositional object is not excluded by one term of it failing alone (AGENTS.md §"Before declaring refuted"). What is excluded is the **identification `w3 = countChannel` at `q > 1`**.
+
+**The open question changes shape rather than closing.** What survives is narrower and sharper: the identification presumes `w3` has the **pair-energy shape** `n₊q − n₋q⁻¹` with triple-adjusted counts. If the irreducibly three-body channel is instead a genuinely 3-body object *not* of that form, nothing above applies to it and the framework's 3-body channel is simply not yet computed. **That is a question about the FORM of `w3`, not about its numbers**, and it is what `qou-ix0x` now points at.
+
+**Consequence for priority.** The previous entry demoted the cyclotomic-summation route below "compute `w3`". That computation is now done and has failed, so the demotion lapses — but it does **not** promote resurgence by default. The nearer question is the form of `w3`, and neither this bean's Habiro route nor `qou-dk8a`'s connection-matrix route is aimed at it. Both stay unexcluded and both stay open; neither is now "the plan".
+
+Two sign-source questions, stated as open, **not** as candidates to try until one works:
+- `binding = −(mutual energy)` makes a positive `b₃` require an **attractive** (negative) mutual channel, and `countChannel` at `q > 1` is repulsive by construction. Is the sign convention in `b3_eq_neg_tripleMutual_of_brunnian` the intended one for a *binding*?
+- The `q < 1` branch flips it, but the substrate pin is `q₀ > 1` and is not free (and deriving `q₀` is forever-gated). So this is not a route.
