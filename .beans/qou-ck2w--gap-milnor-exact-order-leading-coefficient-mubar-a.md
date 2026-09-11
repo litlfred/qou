@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T19:16:41Z
-updated_at: 2026-08-31T04:21:15Z
+updated_at: 2026-09-11T14:37:44Z
 ---
 
 
@@ -76,3 +76,41 @@ LEAN INSTANCE (formalize the TL Markov-trace representation on tensor powers to 
 BrunnianDeficitRecursion), which is DEFERRED with a documented feasibility roast: bricks 1-2 landed
 (#6268, #6326), brick 3 roasted #6334 (docs/audits/2026-08-31-milnor-brick3-roast.md) — the instance
 stays unfabricated (anti-laundering). Track the Lean side under qou-v7ro.
+
+
+## 2026-09-11 — artifacts verified present; deliberately NOT closed (rule 13a)
+
+Pulled off the `qou-bstl` completion-candidate queue. Every artifact this bean's
+closing section cites exists on `main`:
+
+    docs/audits/2026-08-30-milnor-recursion-forall-A-PROVED.md      present
+    docs/audits/2026-08-31-milnor-brick3-roast.md                   present
+    computations/deltalambda/milnor_recursion_forall_A_proof_probe.py  present
+    bean qou-v7ro                                                   status: in-progress
+
+So the hand-off is real and live — `qou-v7ro` is genuinely holding the Lean
+residual, not a dangling pointer.
+
+**I am not closing this, and the reason is a rule rather than a doubt about the
+work.** AGENTS.md rule 13a (owner directive 2026-09-06, verbatim *"Don't close
+beans with open conjectures!!!"*): a bean tracking a conditional-class hypothesis
+stays open until the mathematics closes, not until the *recording* of its status
+is done. The Lean chain here runs through `[BrunnianDeficitRecursion D]`, a
+conditional class whose instance is explicitly **unfabricated** — the bean says
+so itself, citing anti-laundering, after brick 3 was roasted in #6334.
+
+That is precisely the "conditional-proved ≠ premise-established" shape: 
+`tight_slice_of_recursion` proves the implication, and the premise is the thing
+still being formalised. Whether the TL structural induction of #6217 counts as
+"the mathematics closed" when its Lean premise is undischarged is the author's
+call, not mine — and 13a exists because agents get that call wrong in the
+permissive direction.
+
+**What is settled and should not be re-attacked:** the ∀A nonvanishing does not
+need Route B (leading-coefficient tracking). That route hit the
+cyclic-trace-kills-commutator sub-wall and is superseded by the closed-form
+solution from the proved A=3 base, whose leading coefficient
+`(3/4)(−2)^{A−3} ≠ 0 ∀A` is exactly what was wanted.
+
+Bean stays `todo`. If the author judges the math-side closed, this is a
+one-keystroke close; the artifacts are all verified above.

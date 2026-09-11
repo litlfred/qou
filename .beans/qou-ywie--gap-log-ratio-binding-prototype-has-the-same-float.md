@@ -1,11 +1,11 @@
 ---
 # qou-ywie
 title: 'GAP: log_ratio_binding_prototype has the same float64 defect as qou-vsqh, in the log channel'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T04:26:46Z
-updated_at: 2026-08-31T04:27:28Z
+updated_at: 2026-09-11T14:36:57Z
 ---
 
 ## Second instance of `qou-vsqh`, in the log channel
@@ -44,3 +44,52 @@ re-run and refresh `log-ratio-binding-prototype.witness.json`. Expect the physic
 numbers not to move and the derivation residual to.
 
 Not fixed in the taxonomy PR: it is a producer + witness change and wants its own.
+
+
+## 2026-09-11 — CLOSED. Fix landed, verified by running it, witness reproduces exactly.
+
+Pulled off the `qou-bstl` completion-candidate queue. The bean's last line said
+*"Not fixed in the taxonomy PR: it is a producer + witness change and wants its
+own."* It got its own: `c4cb60b0922` — *"log_ratio_binding_prototype float64 —
+67 -> 0 drained, and the refresh exposes a 68-day-stale witness whose assertion
+was passing because of it"*.
+
+**Verified at the source, not on the commit message.** The producer now does
+exactly what this bean's `**Fix**` paragraph prescribed:
+
+    :92   from q_parameter import Q_50_DIGIT_STR
+    :98   q0 = mp.mpf(Q_50_DIGIT_STR)
+    :117  mp.mpf(r["tr_M_atom"]...)      # was float() on a 50-digit string
+    :121  L = mp.log(tf / ta)            # was math.log
+
+`grep` for `math.log`, `import math`, bare `sum(` and `float(` returns **three
+hits, all in comments** describing the defect in the past tense. Zero in code.
+
+**Runs clean:** exit 0, full output block, the log-ratio spread reported
+(0.6118–1.63× all-pairs against the linear channel's 19.34–3999.0×).
+
+**And the witness reproduces byte-identically on substantive content.** `git
+status computations/` is empty after the run, and the file's mtime and
+`computedAt` are unchanged.
+
+🛑 That last fact nearly became a false finding of mine. A producer that prints
+`Witness: <path>` while writing nothing looks exactly like the silent-producer
+class (`qou-li9a`, `qou-9d6h`), and I was one step from filing it. It is not:
+`WitnessBuilder.save()` is **content-diff-aware** by design — its docstring says
+*"if the on-disk witness already exists and differs from the new one ONLY in
+ephemeral meta fields (commitSha, scriptCommitSha, computedAt, durationMs), the
+on-disk file is PRESERVED unchanged"*, to break the CI drift loop. So an
+unchanged mtime after a re-run is the **strongest** available reproduction
+result, not a missing write. Worth knowing before diffing any witness re-run in
+this corpus.
+
+`allPassed: False` in the committed witness is the honest exposure the fix
+commit names — a 68-day-stale assertion that had been passing *because* of the
+float64 — not a regression introduced here.
+
+The bean's own reason this mattered stands and is now on exact arithmetic: this
+is the **log-ratio** channel, one of only two extensive candidates, whose binding
+is an accumulation of `A−1` logarithms — the thing float64 degrades, and the
+thing the saturation verdict is read off.
+
+**qou-ywie closes.**
