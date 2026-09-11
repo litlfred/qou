@@ -2183,8 +2183,8 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # accumulation "keeps its precision ... because math.log already narrows
     # inside the loop", which states the defect and then draws the opposite
     # conclusion from it: a log that narrows inside the loop is exactly what
-    # stops the accumulation keeping anything.  Every log on this path is
-    # `mp.log` as of 2026-09-05.
+    # stops the accumulation keeping anything.  Every log on this path goes
+    # through `_exact_log` as of 2026-09-07.
     return float(gated_total)
 
 
@@ -2316,7 +2316,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
             else:
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
-            log_norm += _mp.log(m_max)
+            log_norm += _exact_log(m_max)
     chi = _trace_dim(M, dim)
     return (float(chi), float(log_norm), int(dim))
 
@@ -2365,7 +2365,7 @@ def _contrib_single_partition_exact(Z, N, entry):
         M = _identity(dim)
 
     log_norm = _mp.mpf(0)
-    log_prev = _mp.log(dim)
+    log_prev = _exact_log(dim)
     scale = entry['C_lambda_resolvent_MeV']
     cumul = _mp.mpf(0)
     tr_run = dim  # initial trace of identity
@@ -2430,11 +2430,11 @@ def _contrib_single_partition_exact(Z, N, entry):
             else:
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
-            log_norm += _mp.log(m_max)
+            log_norm += _exact_log(m_max)
 
         tr_run = _trace_dim(M, dim)
         if abs(tr_run) > 1e-300:
-            log_cur = log_norm + _mp.log(abs(tr_run))
+            log_cur = log_norm + _exact_log(abs(tr_run))
         else:
             log_cur = log_prev
         cumul += scale * (log_cur - log_prev)
@@ -3013,12 +3013,16 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     # through the whole accumulation. Casting at the public return keeps the
     # precision everywhere it can still be used.
     #
-    # It costs nothing measurable either way: `log_cur = s['log_norm'] +
-    # math.log(abs(tr_run))` already narrows to float64 INSIDE the accumulator
-    # (math.log returns a Python float whatever it is handed), so this path is
-    # float64-limited well upstream of here. That narrowing is a real,
-    # PRE-EXISTING precision defect and is tracked separately — it is not
-    # introduced, or fixed, by this cast.
+    # The note that stood here said the cast "costs nothing measurable either
+    # way" because `log_cur = s['log_norm'] + math.log(abs(tr_run))` already
+    # narrowed to float64 inside the accumulator, so this path was
+    # "float64-limited well upstream of here".  That was true when written and
+    # is FALSE now: the narrowing it describes is fixed — `_exact_log` at the
+    # three accumulator sites, plus the `workdps(COMPUTE_DPS)` wrapper that
+    # stops the ambient dps 15 undoing it.  So this cast is now the ONLY
+    # narrowing on the path, and it costs whatever the accumulation carried,
+    # which is measured in the hundreds of significand bits rather than 53.
+    # It stays because the public contract is a float (bean `qou-sv7h`).
     return float(B)
 
 
