@@ -1,11 +1,11 @@
 ---
 # qou-q0inv
 title: q0_consistency_audit labels the LIVE canonical q0 as "stale" — and contradicts itself
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T17:25:00Z
-updated_at: 2026-09-08T08:20:29Z
+updated_at: 2026-09-11T14:58:57Z
 ---
 
 `computations/audits/q0_consistency_audit.py` scans `computations/**/*.py` and
@@ -374,3 +374,63 @@ directives out of date, and the two live q₀ questions — anchor consistency a
 the muon/proton flip — already have dedicated, current instruments in
 `q0_anchor_consistency_audit.py` and `muon_pin_stored_vs_live_gate.py`. The
 `stale-trM` half is a separate detector and is untouched by this.
+
+
+## 2026-09-11 — RESOLVED ON MAIN by a sibling. The inverted classifier is gone entirely.
+
+I filed this against `main` at `b4dbaacd9e1`. Main has since moved 28 commits,
+and `computations/audits/q0_anchor_consistency_audit.py` is one of the files that
+changed:
+
+    82b2535ce8f  q0-anchor audit: 17 of the 18 "flips" were unmappable LABELS,
+                 not disagreements
+
+**The `old-q0` machinery this bean is about no longer exists.** Verified on
+main's version of the file: no `OLD_Q0_PATTERNS`, no `old-q0` verdict, no
+`production-hardcode` tally. The audit was not patched — it was **re-scoped**.
+It now checks *pin self-consistency* (does a witness claiming `q0Anchor: muon`
+carry the muon `q0Value`?) and never classifies a value as "old" at all, which
+dissolves the defect rather than correcting it: there is no longer a list that
+can contain the canonical value.
+
+**Measured, running main's version in place** (see the trap below):
+
+    Q0_FLIP                 1   hadron-knot-table.witness.json — anchor=muon but
+                                q0Value=1.10997859555733… (the RETIRED pin).
+                                The same single instance AGENTS.md already names.
+    Q0_ANCHOR_UNRECOGNISED  1   qbeta-derived-w-overdetermined-test — q0Anchor is
+                                the prose 'proton (experimental pin)' rather than
+                                the token; a labelling defect, not a disagreement.
+    Q0_PARSE_ERROR          1   qbeta-chain-closed-form.witness.json
+
+against the **264 production-hardcode of 414 hits** this bean recorded, which
+included `test_q0_anchor.py` and `test_codata_table.py` — the two tests whose job
+is to pin the canonical proton value.
+
+**The `Q0_PARSE_ERROR` is my branch's staleness, not a main defect.** That witness
+is 0 bytes here and **6018 bytes on main**, fixed by `9af18d43a5f fix(qou-oyde)`
+— PR #7166, the sibling I coordinated with earlier and whose deeper root cause
+(an import inside a truncating `with open(..., "w")`) I had missed. Dropping my
+duplicate restoration was the right call.
+
+### 🛑 Trap, and I walked into it before catching it
+
+My first run of main's version reported **every counter 0** — which reads as
+"the audit finds nothing now" and would have been a much stronger claim than the
+truth. It was measuring nothing: I ran it from `/tmp/claude-0/mainaudit/`, and
+the script resolves its scan root as `Path(__file__).resolve().parent.parent`
+(`:78`, `:303`). From there it rglob'd `/tmp/claude-0/` and found zero witnesses.
+
+Same shape as this session's other misfires, and the same discriminator applies:
+**a zero from a detector you just moved is not evidence.** Re-run in place, it
+reports the three findings above.
+
+### Consequence for the decision this bean was holding
+
+The decision I framed — *retire the old-q₀ half, or re-point it* — is **moot**:
+a sibling took a third option I had not listed, re-scoping the audit so the
+question does not arise. Nothing is owed to the owner here.
+
+Correcting PR #7170's body, which presents this as a live finding.
+
+**qou-q0inv closes.**
