@@ -3,8 +3,9 @@
 title: '24 producers on main cannot complete: 14 crash, 10 exceed 240s'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-23T20:16:11Z
-updated_at: 2026-08-23T20:16:11Z
+updated_at: 2026-09-11T15:07:55Z
 ---
 
 
@@ -395,3 +396,64 @@ returns to **0 outstanding** — reached, this time, by reading the code.
     14 -> 12 -> 8 -> 4 -> 2 -> 0 -> 1 -> 0
 
 Seven corrections. Six mine.
+
+
+## 2026-09-11 — the TIMEOUT half is being re-run at 900 s. Partial: 6 of 10, and it is NOT the crash half's story.
+
+This bean's crash half unwound 14 → 0 across seven corrections. Its **timeout
+half was never re-run**, though the bean itself says to: *"Re-run them with a
+real budget before calling any of them broken."* Doing that now, at 900 s per
+cwd, honouring all seven harness requirements this bean bought.
+
+**Results so far — 6 of 10:**
+
+| producer | verdict |
+|---|---|
+| `atom_mass_derived` | **exit 0 in 495.6 s** — long, not broken |
+| `bar_pairing_binding_observable` | **exit 0 in 5.0 s** |
+| `binding_depth_stratified` | **exit 0 in 2.5 s** |
+| `chi_4he_binding_lossless` | **exit 0 in 712.1 s** — genuinely long |
+| `chi_at_q_inv_via_native_mpfr` | **TIMEOUT at 900 s, both cwds** |
+| `delta_lambda_v_hat_z_transfer_phase5d_4` | **exit 0 in 2.7 s** |
+| `gram_transfer_quadratic` | **exit 1 in 0.3 s, TRACEBACK, both cwds** ← real |
+
+Four remain: `ground_state_ordering_a3_probe`, `ksel2id_sw_identification_probe`,
+`qbeta_c4even_exact_sseries_probe`, and the tail of the list.
+
+### The timeout half is a DIFFERENT story from the crash half — do not generalise
+
+The crash half's lesson was that a naive runner false-positives ~6 in 7. The
+tempting inference is that the timeout bucket is the same kind of artifact. It
+is **not**, and the split so far is three-way:
+
+  * **two were never long at all** — 2.5 s and 5.0 s, nowhere near the 240 s
+    that classified them, so those two classifications were the harness;
+  * **two are genuinely long** — 495.6 s and 712.1 s, i.e. real compute that a
+    240 s budget could never have finished, exactly as this bean's caveat
+    predicted ("timeout is a budget artifact, not necessarily a defect");
+  * **one is genuinely stuck** — 900 s twice over;
+  * **one is a REAL DEFECT that the timeout was hiding.**
+
+### `gram_transfer_quadratic` — filed as `qou-w942`
+
+It raises on its own guard, `ValueError: non-monotone word: gen 0 after 1`, at
+`gram_all_lambda:181`, reached from `main:353` at the deuteron. Reproduced from
+both cwds with `PYTHONPATH` set.
+
+It is `qou-y2o7`'s class (a monotone-only transfer kernel meeting a canonical
+word that is non-monotone by construction — verified, **every** atom's word is
+non-monotone now) but is **not** in that completed bean's scope, which covers the
+*silent* cases that build their own word. This one consumes `atom_braid_word_3A`
+and raises loudly, through its own `gram_all_lambda` kernel rather than
+`chi_monotone_transfer.chi_all_lambda`.
+
+And the provenance detector `qou-y2o7` asked for — `self_built_braid_word_audit.py`
+— **cannot see it**: 71 χ-kernel call sites enumerated, `gram_transfer_quadratic`
+named **zero** times, because a *gram* kernel is not a `chi_*` name. Full
+evidence and the not-established list in `qou-w942`.
+
+**Note what this says about the bucket.** A 0.3 s crash cannot have been a 240 s
+timeout, so this producer's input changed between 2026-08-23 and today. The
+timeout bucket was not merely unmeasured — it was **masking** a defect that
+arrived later, and re-running it is how the defect surfaced at all. Not
+bisected; not asserting which commit.
