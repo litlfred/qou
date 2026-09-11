@@ -454,9 +454,48 @@ def sweep_one(args) -> int:
         pkg_roots = ([str(p) for p in ROOT.glob("content/*/lean/.lake/packages/*/.lake/build/lib/lean")]
                      + [str(p) for p in ROOT.glob(".lake/packages/*/.lake/build/lib/lean")])
         lean_path = ":".join([str(shadow)] + pkg_roots + siblings + [str(oleans)])
+
+        # BOUND TOTAL PARALLELISM, not process count.  `--jobs N` spawns N `lean`
+        # processes, and EACH ONE sizes its own task pool from hardware concurrency
+        # -- measured 7-8 OS threads per process, ~198% CPU apiece.  So `--jobs 3`
+        # on a 4-core box is not "3 of 4 cores used, one spare"; it is three
+        # processes each trying to take all four, ~24 threads on 4 cores, and each
+        # module gets about a THIRD of the machine instead of the whole of it.
+        #
+        # That is what produced the sweep's four false TIMEOUTs (bean `qou-ed8a`):
+        # every one of them compiles clean when run alone, and the worst case needs
+        # 459s with 4 cores against an 1800s budget -- ~1400s at a third of the
+        # machine, so the budget is reached by starvation, not by any property of
+        # the module.  The timeout then reports the harness, and 14 further modules
+        # were SKIPPED behind the cascade.
+        #
+        # Memory compounds it: per-process RSS was measured climbing to 5.3 GB, so
+        # three concurrent would be ~16 GB on a 16 GB box with NO SWAP -- i.e. at
+        # the OOM ceiling, which would surface as a signal death (UNVERIFIED), a
+        # different and equally misleading label.
+        #
+        # `jobs * threads <= nproc` keeps a module's share predictable, which is
+        # what a per-module wall-clock budget needs in order to mean anything.
+        # Respect an explicit LEAN_NUM_THREADS from the caller.
+        cores = os.cpu_count() or 1
+        lean_threads = max(1, cores // max(1, args.jobs))
         env = dict(os.environ,
                    LEAN_PATH=lean_path,
                    PATH=f"{os.path.expanduser('~')}/.elan/bin:{os.environ['PATH']}")
+        env.setdefault("LEAN_NUM_THREADS", str(lean_threads))
+        if "LEAN_NUM_THREADS" in os.environ:
+            print(f"  parallelism: --jobs {args.jobs}, LEAN_NUM_THREADS="
+                  f"{os.environ['LEAN_NUM_THREADS']} (from caller), {cores} cores")
+        else:
+            print(f"  parallelism: --jobs {args.jobs} x {lean_threads} thread(s) "
+                  f"= {args.jobs * lean_threads} of {cores} cores")
+        # Integer division bottoms out at one thread, so --jobs > cores still
+        # oversubscribes and a wall-clock budget is again measuring starvation
+        # rather than the module.  Say so rather than silently under-delivering.
+        if args.jobs > cores:
+            print(f"  WARNING: --jobs {args.jobs} exceeds {cores} cores; even at "
+                  f"1 thread each that is {args.jobs}/{cores} oversubscribed, so "
+                  f"a TIMEOUT here may report the harness (bean qou-ed8a).")
 
         order = layers(dirty, imports)
         todo = list(dirty)
