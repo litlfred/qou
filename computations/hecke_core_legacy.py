@@ -63,7 +63,7 @@ from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 # call sites that are display or float-domain; the seminormal builder
 # uses ONLY these (AGENTS.md: never compute in float).
 from q_parameter import Q_MP as _Q_MP, Q_INV_MP as _QI_MP, HA_MP as _H_MP
-from mpmath import mp as _mp, mpf as _mp_mpf_type
+from mpmath import mp as _mp
 
 
 # pyhecke bootstrap (mirrors hecke_core.py) — note `_os` and `_sys`
@@ -1148,26 +1148,32 @@ class _ExactCOO:
 
 
 def _is_sparse_sigma(x):
-    """True for either sparse carrier — scipy float64, or `_ExactCOO`."""
-    if isinstance(x, _ExactCOO):
-        return True
-    try:
-        from scipy.sparse import issparse
-    except ImportError:
-        return False
-    return issparse(x)
+    """True for the sparse sigma carrier, which is `_ExactCOO` alone.
 
+    This tested `scipy.sparse.issparse(x)` as well until 2026-09-11.  That
+    arm was unreachable, and it is removed rather than kept as a defensive
+    check: a guard against a state the code cannot enter reads to the next
+    author as evidence that it can.
 
-def _sigma_is_exact(x):
-    """True when sigma carries mpf, so the caller must NOT use float64 BLAS.
+    Three facts close it, and all three are needed:
 
-    The dispatch in the accumulators keys on the RUNNING matrix's dtype, which
-    starts as `np.eye` (float64); on an exact sigma that sends the very first
-    crossing into a scipy call that raises.  Key on sigma instead.
+    1. `_build_ysn_matrices_exact` emits `_ExactCOO` or a dense tuple of
+       `mpf`, and nothing else — #6794 changed the sparse emit precisely
+       because `csr_matrix` is float64 and cannot hold an `mpf`.
+    2. `csr_matrix(` is CALLED nowhere in this file.
+    3. `entry['ysn']` is assigned in exactly one place
+       (`_ensure_ysn_attached`), from `_build_ysn_matrices`; all three
+       dispatch sites read `entry['ysn']` and none takes a sigma family as
+       a parameter, so no caller can inject one.
+
+    MEASURED over the whole `_PARTITION_TABLE`, every sigma rather than
+    `[0]` of each family: **1528 matrices — 408 dense tuples, 1120
+    `_ExactCOO`, 0 scipy, 0 carrying `.toarray`.**
+
+    The 25 other `csr_matrix` sites under `computations/` build their own
+    matrices in their own modules and never reach this dispatch.
     """
-    if isinstance(x, _ExactCOO):
-        return True
-    return isinstance(x, tuple) and bool(x) and isinstance(x[0][0], _mp_mpf_type)
+    return isinstance(x, _ExactCOO)
 
 
 def _build_ysn_matrices(partition, sparse_threshold=32):
@@ -1551,16 +1557,9 @@ def _identity(dim):
 def _crossing_in_partition(c, d, gen_index, sigmas, dim):
     """Matrix of c·σ_{gen} + d·I  in YSN representation of a partition."""
     sig = sigmas[gen_index]
-    # Densify a scipy sparse sigma FIRST.  `np.asarray(csr_matrix)` does NOT
-    # densify -- it returns a 0-d object array wrapping the matrix -- so the
-    # old `np.asarray(sig)` produced an object scalar, `c * sig_np` stayed
-    # object, and `+ d * np.eye(dim)` dispatched back into scipy and raised
-    # "no supported conversion for types: (dtype('float64'), dtype('O'))".
-    # The `dim < 8` branch below is worse: `sig[i][j]` is not valid indexing
-    # on a csr_matrix at all.  Latent until an exact (mpf) chain routed a
-    # sparse-sigma state down this path.
-    if hasattr(sig, "toarray"):
-        sig = sig.toarray()
+    # A `.toarray()` densify stood here for a scipy sparse sigma.  No carrier
+    # in this module has that method (measured: 0 of 1528), and all three
+    # callers are in the DENSE arm of their dispatch, so `sig` is a tuple.
     if dim >= 8:
         # Work in numpy for large dims
         sig_np = sig if isinstance(sig, np.ndarray) else np.asarray(sig)
@@ -1893,12 +1892,6 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # Kerov-damped scale (same as before):
     #   C_λ^kerov = w_λ · y_λ · H_q(λ) · m_e
 
-    # Detect sparse YSN matrices and import scipy lazily.
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:  # pragma: no cover
-        _issparse = lambda x: False  # noqa: E731
-
     state = []
     for e in active:
         first = e['ysn'][0]
@@ -2021,29 +2014,30 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
                     # Dispatch on SIGMA, not on M_run: M_run starts as
                     # np.eye (float64), so keying on it would send the FIRST
                     # crossing of an exact sigma into a scipy float64 call.
-                    if (_sigma_is_exact(sig_sparse)
-                            or (isinstance(M_run, np.ndarray)
-                                and M_run.dtype == object)):
-                        # Keep the SPARSITY, lose only the BLAS. Densifying σ
-                        # and doing `M_run @ sig_d` is O(dim³) in object
-                        # arithmetic and does not finish — measured, >10 min on
-                        # the A=2 atom alone. Accumulating over σ's nonzeros is
-                        # O(dim·nnz), the same complexity the float64 branch
-                        # gets from sparse BLAS.
-                        coo = _sig_coo.get(gen)
-                        if coo is None:
-                            m = sig_sparse.tocoo()
-                            coo = (m.row, m.col, m.data)
-                            _sig_coo[gen] = coo
-                        rows_i, cols_j, vals = coo
-                        # object dtype: a float64 Msig would truncate mpf.
-                        Msig = np.zeros(M_run.shape, dtype=object)
-                        for i, j, v in zip(rows_i, cols_j, vals):
-                            Msig[:, j] += M_run[:, i] * v
-                    else:
-                        # scipy sparse: dense @ sparse returns dense ndarray,
-                        # computed as a sparse BLAS operation in O(dim·nnz).
-                        Msig = sig_sparse.T.dot(M_run.T).T  # = M_run @ sig_sparse
+                    # Keep the SPARSITY, lose only the BLAS. Densifying σ
+                    # and doing `M_run @ sig_d` is O(dim³) in object
+                    # arithmetic and does not finish — measured, >10 min on
+                    # the A=2 atom alone. Accumulating over σ's nonzeros is
+                    # O(dim·nnz), the same complexity the float64 branch
+                    # used to get from sparse BLAS.
+                    #
+                    # Unconditional since 2026-09-11.  The `else` here was the
+                    # scipy sparse-BLAS arm, guarded by a predicate that asked
+                    # whether sigma carries `mpf` (`_sigma_is_exact`, itself
+                    # removed with this change — the guards were its only
+                    # callers).  Every sparse carrier IS exact, 1120 of 1120,
+                    # so the guard was always true and the arm never ran —
+                    # instrumented, 184 hits on this branch and 0 on the other.
+                    coo = _sig_coo.get(gen)
+                    if coo is None:
+                        m = sig_sparse.tocoo()
+                        coo = (m.row, m.col, m.data)
+                        _sig_coo[gen] = coo
+                    rows_i, cols_j, vals = coo
+                    # object dtype: a float64 Msig would truncate mpf.
+                    Msig = np.zeros(M_run.shape, dtype=object)
+                    for i, j, v in zip(rows_i, cols_j, vals):
+                        Msig[:, j] += M_run[:, i] * v
                     M_run = c * Msig + d * M_run
                 s['M'] = M_run
             else:
@@ -2250,10 +2244,6 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
         The resulting braid is the disconnected product of
         intra-nucleon blocks, corresponding to H_3(q)^⊗A ↪ H_{3A}(q).
     """
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:
-        _issparse = lambda x: False
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
         return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))
@@ -2307,22 +2297,20 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
             _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                # Dispatch on SIGMA, not on M_run -- see note above.
-                if (_sigma_is_exact(sig_sparse)
-                        or (isinstance(M_run, np.ndarray)
-                            and M_run.dtype == object)):
-                    coo = _sig_coo.get(gen)
-                    if coo is None:
-                        _m = sig_sparse.tocoo()
-                        coo = (_m.row, _m.col, _m.data)
-                        _sig_coo[gen] = coo
-                    rows_i, cols_j, vals = coo
-                    # object dtype: a float64 Msig would truncate mpf.
-                    Msig = np.zeros(M_run.shape, dtype=object)
-                    for i, j, v in zip(rows_i, cols_j, vals):
-                        Msig[:, j] += M_run[:, i] * v
-                else:
-                    Msig = sig_sparse.T.dot(M_run.T).T
+                # Unconditional since 2026-09-11 -- see the note in
+                # `unified_iterative_correction`.  The scipy sparse-BLAS
+                # `else` that stood here was unreachable: every sparse
+                # carrier is `_ExactCOO`, so the guard never failed.
+                coo = _sig_coo.get(gen)
+                if coo is None:
+                    _m = sig_sparse.tocoo()
+                    coo = (_m.row, _m.col, _m.data)
+                    _sig_coo[gen] = coo
+                rows_i, cols_j, vals = coo
+                # object dtype: a float64 Msig would truncate mpf.
+                Msig = np.zeros(M_run.shape, dtype=object)
+                for i, j, v in zip(rows_i, cols_j, vals):
+                    Msig[:, j] += M_run[:, i] * v
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
@@ -2361,10 +2349,6 @@ def _contrib_single_partition_exact(Z, N, entry):
     Separate from the multi-partition accumulator so we can process
     partitions one at a time (needed for the jet-incremental loop).
     """
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:
-        _issparse = lambda x: False
 
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
@@ -2420,22 +2404,20 @@ def _contrib_single_partition_exact(Z, N, entry):
             _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                # Dispatch on SIGMA, not on M_run -- see note above.
-                if (_sigma_is_exact(sig_sparse)
-                        or (isinstance(M_run, np.ndarray)
-                            and M_run.dtype == object)):
-                    coo = _sig_coo.get(gen)
-                    if coo is None:
-                        _m = sig_sparse.tocoo()
-                        coo = (_m.row, _m.col, _m.data)
-                        _sig_coo[gen] = coo
-                    rows_i, cols_j, vals = coo
-                    # object dtype: a float64 Msig would truncate mpf.
-                    Msig = np.zeros(M_run.shape, dtype=object)
-                    for i, j, v in zip(rows_i, cols_j, vals):
-                        Msig[:, j] += M_run[:, i] * v
-                else:
-                    Msig = sig_sparse.T.dot(M_run.T).T
+                # Unconditional since 2026-09-11 -- see the note in
+                # `unified_iterative_correction`.  The scipy sparse-BLAS
+                # `else` that stood here was unreachable: every sparse
+                # carrier is `_ExactCOO`, so the guard never failed.
+                coo = _sig_coo.get(gen)
+                if coo is None:
+                    _m = sig_sparse.tocoo()
+                    coo = (_m.row, _m.col, _m.data)
+                    _sig_coo[gen] = coo
+                rows_i, cols_j, vals = coo
+                # object dtype: a float64 Msig would truncate mpf.
+                Msig = np.zeros(M_run.shape, dtype=object)
+                for i, j, v in zip(rows_i, cols_j, vals):
+                    Msig[:, j] += M_run[:, i] * v
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
