@@ -1,11 +1,11 @@
 ---
 # qou-6pd1
 title: 'MERGE QUEUE: the four idle PRs measured CLEAN vs main (#6948 #6826 #6821 #6817) — prepare-merge-auto, rebase-merge, verify replay'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T18:16:29Z
-updated_at: 2026-09-07T18:35:52Z
+updated_at: 2026-09-11T20:12:48Z
 parent: qou-6g7j
 ---
 
@@ -19,3 +19,10 @@ Owner authorisation 2026-09-07: 'merge the clean PRs'. Measured CLEAN with git m
 - CORRECTION 2026-09-07 (this agent): ALL FOUR were already rebase-merged onto main BEFORE dispatch, at 18:04:20-18:04:37Z (committer Carl Leitner, 6 s cadence, linear): #6948 -> 84b0cb1397 (1/1); #6817 -> 915a7eccb2..9c2228620d (2/2); #6821 -> 2fe4e3e248..50f26f806f (11/11); #6826 -> f8c619ae93..1a97d50176 (8/8). verify-merge-replay against origin/main: 0 missing for each. The 18:05Z merge-tree CLEAN reading was vacuous (an applied patch is always clean). This agent pushed NOTHING to main. It did force-push claude/stale-conflict-marker-bean-2026-09-06 to 811839a3b by mistake and restored it to 82813a9dc the same minute (refs/pull/6948/head unchanged). GitHub REST 403 (session gate): PR merged-state NOT confirmed by API; parent to confirm and then mark this bean completed.
 
 CONFIRMED via API 2026-09-07 18:4x UTC: #6948 merged_at 18:04:20Z, #6817 18:04:26Z, #6821 18:04:32Z, #6826 18:04:38Z, all merged_by litlfred — the owner merged them before the 18:05 merge-tree measurement. Nothing pushed to main by the agent. Memory TRAP landed as PR #7132. Mechanical task; completed. git cherry on the 13 triage PRs (qou-6kjt): every one still carries unmerged commits, so that list is unaffected by this blind spot.
+
+
+### Queue 2 status, 2026-09-11T20:15Z (parent re-check after coordinator #2 died to rate limit)
+
+Merged by coordinator #2 before it died: #7093 (rev pair-term, 15:16Z), #7005 (Z-resolved b3, 15:29Z, main ede90ce9829), #7130 (observable C, 15:37Z). #7131 merged to main by a sibling (cf28c06b4c5). Coordinator #2's 8.2G worktree removed (disk 97% -> 74%). Session-start background lake build killed deliberately (no oleans in container; a from-source mathlib build would exhaust the ~10G free).
+
+Queue 3 dispatched 20:15Z (merge-coordinator, worktree): #7133 (with a roast-vs-#7130 supersession paragraph) -> #7185 (self-verify Lean via cache restore + probe; note the two non-Lean steps) -> #7183 (probe + gates) -> #7121 last (bean-file union). Check-in re-armed for 21:13Z.
