@@ -509,3 +509,28 @@ proton pin) was computed in-session from the production functions
 `closed_form_tau_M.markov_z`, `hecke_h` and `_li_2_q_util.flavor_split_leading`
 at `mp.dps = 30`, agrees with the sibling's independent $1.74707$ MeV once
 multiplied by $E_0$, and is not committed anywhere as a witness.
+
+## Addendum (2026-09-11, merge-coordinator, on the owner's instruction at merge time) — the Front 1 verdict is superseded by measurement
+
+Row 5 of the adjudication table and Front 1 above say observable C is "already
+answered, scope (b)" because `2026-08-25-atom-word-closures-are-not-hyperbolic.md`
+found $\mathrm{Vol} = 0$ for every atom-closure branch. **That premise is stale,
+and #7130 (merged `ec645c5a538`) overrules it by running leg C on the live
+word**: the 2026-08-25 result is the *grouped* word, whose core is monotone;
+the live alternating core (2026-09-05) is not, and sign-faithfully every
+per-nucleon 3-strand branch closure is a **hyperbolic** 2-component link —
+proton branches L9n10 ($9.9665$), L11a252 ($16.1911$), L7a6 ($4.7495$),
+L9a21 ($11.9429$); neutron branches L11a252, L9a21 (twice), L11n202 ($8.1957$).
+What #7130 establishes instead is stronger on the quantity leg C actually
+prices: each inter-nucleon interface is a single letter, so every atom-branch
+closure is the connected sum of its $A$ nucleon pieces (`deconnect_sum`,
+800/800 branches), and by additivity of simplicial volume over the JSJ pieces
+$\Delta\mathrm{Vol} = \mathrm{Vol}(\text{atom}) - \mathrm{Vol}(\text{free}) \equiv 0$
+on every branch, hence $B_C = 0$ — **scope (b) on the difference only**, not
+on hyperbolicity, and the absolute-volume reading is a separate open question
+(bean `qou-l99f`, carried by #7121). So the verdict for Front 1 (the difference reading is dead;
+do not start it as a research front) survives; its stated *reason*
+("non-hyperbolic, $\mathrm{Vol} = 0$", "run leg C produces a number about
+nothing") does not, and the "already answered" cell of row 5 should be read as
+"answered by #7130, on the difference". Measurement outranks the roast; the
+text above is left as the dated record of the roast as delivered.
