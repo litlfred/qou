@@ -40,10 +40,8 @@ intermediate-value argument, which needs the order and the topology.
 
 -- Ref: [manuscript] `docs/audits/2026-09-05-qbeta-functional-decision-options.md` §3, Option E
 -/
-import Mathlib.Algebra.BigOperators.Group.List
-import Mathlib.Algebra.Order.Ring.Lemmas
-import Mathlib.Topology.Algebra.Order.IntermediateValue
-import Mathlib.Topology.Algebra.Polynomial
+import Mathlib.Tactic
+import Mathlib.Topology.Order.IntermediateValue
 
 namespace QOU.QBeta
 
@@ -129,11 +127,19 @@ level 1 cannot distinguish two words built from the same multiset of crossings
 in a different order — and hence why an Option E element must differ in the
 **multiset**, not the braid. -/
 
-/-- **A multiplicative functional is blind to the order of a word.** -/
+/-- **A multiplicative functional is blind to the order of a word.**
+
+The commutativity that does the work is the **target's**, not the braid
+monoid's. `w.prod = w'.prod` is *false* in `M`: a braid monoid is not
+commutative, and a permuted word is a different braid. What is true is that `ε`
+carries the product to a product of images, and *that* product lives in a
+commutative ring where reordering is free. So order-blindness is a property of
+the functional, not of the words — which is why it is level 1 that has it. -/
 theorem monoidHom_order_blind {M R : Type*} [Monoid M] [CommMonoid R]
     (ε : M →* R) {w w' : List M} (hperm : w.Perm w') :
     ε w.prod = ε w'.prod := by
-  rw [hperm.prod_eq]
+  rw [map_list_prod, map_list_prod]
+  exact (hperm.map ε).prod_eq
 
 /-- **Order-blindness passes to a difference of two words.**
 
