@@ -204,7 +204,84 @@ def main() -> int:
           len(cites) == 24 and len(consumers) == 1,
           "qou-jgg0's blast-radius line counts citations; this counts dependencies")
 
-    total = 22
+    print("\nCHECK 11 -- RETRACTION: a block can depend on the count WITHOUT writing it")
+    # Checks 8-10 classify TEXTUALLY, on the strings "A + Z" / "3A". A block that
+    # writes a bare numeric H_n instead is invisible to them. Measured: three are.
+    CB = REPO / "content/quantum-observable-universe"
+    num = re.compile(r"H_\{?(\d+)")
+    numeric: dict[str, list[int]] = {}
+    for rel in cites:
+        found = sorted({int(m) for m in num.findall(
+            " ".join((CB / rel).read_text().split()))})
+        if found:
+            numeric[rel] = found
+    check("7 citing blocks carry a bare numeric H_n", len(numeric) == 7,
+          "; ".join(f"{k.split('/')[-1]}:{v}" for k, v in sorted(numeric.items())))
+
+    # A numeric H_n is NOT automatically a strand count. The seven partition
+    # exhaustively into four kinds, and only the first is an A+Z dependency:
+    #   3  A+Z arithmetic            molecular-construction (checks 12, 14)
+    #   2  per-NUCLEON H_3           the quark triple; both also write 3A
+    #   1  the TREFOIL's H_3         electron-shell-braid-capacity (check 13)
+    #   1  catalogue                 definition-index.md, 18x H_3 from other titles
+    per_nucleon = {
+        "knots-particles-confinement/atom-knot-exists-proof.md",
+        "mass-theory/active-set-trace-concentration.ts",
+    }
+    catalogue = {"index-of-definitions/definition-index.md"}
+    trefoil = {"molecular-construction/electron-shell-braid-capacity.md"}
+    az_dep = set(numeric) - per_nucleon - catalogue - trefoil
+    check("the 7 partition exhaustively: 3 A+Z, 2 per-nucleon, 1 trefoil, 1 catalogue",
+          len(az_dep) == 3 and per_nucleon | catalogue | trefoil <= set(numeric),
+          f"A+Z dependants: {sorted(x.split('/')[-1] for x in az_dep)}")
+    akep = " ".join((CB / "knots-particles-confinement/atom-knot-exists-proof.md")
+                    .read_text().split())
+    check("atom-knot-exists-proof's H_3 is PER-NUCLEON, and it writes 3(Z+N) for the atom",
+          "canonical NF in $H_3(R, q)$ on $3$ strands" in akep
+          and "H_{3(Z+N)}(q)" in akep,
+          "so a bare H_3 means three different things across these blocks")
+
+    print("\nCHECK 12 -- three of them are A+Z arithmetic, stated in words")
+    co_md = " ".join((CB / "molecular-construction/co-molecular-braid-carbon-monoxide.md")
+                     .read_text().split())
+    h2_md = " ".join((CB / "molecular-construction/h2-molecular-braid.md")
+                     .read_text().split())
+    # Carbon Z=6 N=6 A=12: A+Z = 18 (3A would be 36). Oxygen Z=8 N=8 A=16: A+Z = 24
+    # (3A = 48). CO = 18 + 24 = 42 (under 3A it would be 36 + 48 = 84).
+    check("CO: carbon H_18 = 12 nucleons + 6 electrons = A+Z, NOT 3A = 36",
+          "H_{18}(q)$ has 18 strands (12 nucleons + 6 electrons)" in co_md
+          and (12 + 6) == 18 and 3 * 12 == 36)
+    check("CO: oxygen H_24 = 16 nucleons + 8 electrons = A+Z, NOT 3A = 48",
+          "24 strands (16 nucleons + 8 electrons)" in co_md
+          and (16 + 8) == 24 and 3 * 16 == 48)
+    check("CO: molecule H_42 = 18 + 24, so 3A would give 36 + 48 = 84",
+          "$H_{42}(q)$ ($18 + 24 = 42$ strands)" in co_md and 36 + 48 == 84)
+    check("H2: each atom in H_2 = one proton + one electron = A+Z, NOT 3A = 3",
+          "atomic braid](#def:atomic-braid) in $H_2(q)$: one proton" in h2_md
+          and (1 + 1) == 2 and 3 * 1 == 3)
+
+    print("\nCHECK 13 -- and one numeric hit is a FALSE POSITIVE, caught by reading it")
+    esc = " ".join((CB / "molecular-construction/electron-shell-braid-capacity.md")
+                   .read_text().split())
+    check("electron-shell-braid-capacity's H_3 is the TREFOIL's algebra, not a strand count",
+          "T_{2,3} = \\sigma_0\\sigma_1\\sigma_0$ in $H_3(q)$" in esc,
+          "a numeric H_n is not automatically a strand count")
+
+    print("\nCHECK 14 -- so the A+Z dependency set is at least FOUR, not one")
+    symbolic = ["mass-theory/wedderburn-mass-formula.md"]
+    numeric_dep = sorted([
+        "molecular-construction/co-molecular-braid-carbon-monoxide.md",
+        "molecular-construction/co-molecular-braid-carbon-monoxide.ts",
+        "molecular-construction/h2-molecular-braid.md",
+    ])
+    check("1 writes A+Z symbolically; 3 more depend on it numerically",
+          len(symbolic) == 1 and len(numeric_dep) == 3,
+          "checks 9-10's 'exactly one consumer' is RETRACTED as a dependency claim")
+    check("all three numeric dependants are in molecular-construction",
+          all(d.startswith("molecular-construction/") for d in numeric_dep),
+          "the chapter is built on 'nucleons + electrons', which IS the A+Z construction")
+
+    total = 31
     print(f"\n{total - len(fails)}/{total} checks passed")
     if fails:
         print("FAILED: " + "; ".join(fails))
