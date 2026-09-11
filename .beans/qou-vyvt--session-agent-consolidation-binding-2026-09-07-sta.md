@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:25:01Z
-updated_at: 2026-09-08T08:25:25Z
+updated_at: 2026-09-11T14:35:25Z
 ---
 
 Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (round 2 of the stalled-agent takeover; sibling round 1 is #7121 / qou-6g7j with fronts observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces — NOT duplicated here). This session: merge every clean open PR; take over the fronts #7121 left: the chi producer scaling wall (#7083), the Q_β ℚ(q)-coefficient leg (#7118), and the binding SHAPE residual (symmetry-energy term of the additive log law), which the owner names as where most of the binding gap sits. Goal statement: L2 toward 1 ppQ; binding is not an L2 row and must not be quoted as one (1ppQ reanalysis §5 item 3).
@@ -29,3 +29,11 @@ Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (
 - 08:20Z qou-hxz4 DONE → PR #7173 (honest negative: binding words not level-local, obstruction is the fixed-H_k embedding; re-embedding on 3A strands is an owner-level re-derivation, option 2). e0-scale (qou-v8ct) still running.
 
 - 08:25Z qou-v8ct DONE → PR #7174 (scope-(a) negative: uniform factor is 98.6 % of the log-residual and undecidable vs bond factors at fixed law; scale is downstream of shape). TRANCHE 2 COMPLETE: #7172 #7173 #7174 open, mergeable, awaiting owner merge permission; ledger #7168.
+
+## Tranche 2 MERGED 2026-09-11 ~14:35Z (owner: 'merge. and continue / ok to overlap')
+All four rebase-merged and replay-verified by patch-id, every commit replayed: #7172 92d5cd579a5 (6/6) · #7173 463668610c1 (4/4) · #7174 fe8fd214c73 (3/3) · #7168 ledger 438df617985 (5/5).
+Phase-4 gate evidence (no CI exists; agent-owned verification IS the gate): precision-gates.sh --changed on all three substantive PRs — exit 1 on the standing corpus-wide ratchets, ZERO red lines naming any branch file (grepped per-branch stem). #7174 Lean QOU/Hecke/BindingScaleCandidates.lean compiled FROM SOURCE against the pinned Mathlib olean tree, lean -DautoImplicit=false -s 65536 exit 0 (154 s), and #print axioms on ALL 18 theorem/lemma declarations = [propext, Classical.choice, Quot.sound], no sorryAx. NOTE: the PR body says '15 decls / 12 theorems'; the file actually carries 18 theorem+lemma decls and all 18 are axiom-clean — the body UNDERSTATES its own coverage. mirror-drift-audit --baseline clean (no new live shadows). #7172 and #7173 touch no Lean. Copilot requested on all three; none arrived in ~18 min and again after 3 days idle (0 reviews, 0 threads) — merged on agent verification per the zero-live-external-gates rule.
+Re-verified before merging that main had moved only 1 commit (ef2e7d9d710 -> 61d93c97ff0) touching 1 file, no overlap with any PR and no .lean, so the 3-day-old gate results still described what was merged.
+Session branch restarted from main at 438df617985. Worktrees reclaimed; disk 9.2 GB free.
+STILL OPEN FOR THE OWNER (all default to no-op): repin li on the two carrier_saturation_mechanism_probe Li assertions; CAL-3 dataset AME-2020 vs CODATA-2022 registry (#7164 §4); held merges #6178 / #6025; 3A-strand re-embedding of the binding producer (#7173 option 2).
+TRANCHE 3 dispatched: qou-brng (extensive-term route) with owner-authorised overlap on #7155.
