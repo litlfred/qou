@@ -1,11 +1,11 @@
 ---
 # qou-isu5
 title: 'DEFECT: the H_3 TR_M weight vector [1,z,z,z2,z2,z3] is NOT A TRACE — not cyclic'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T08:58:36Z
-updated_at: 2026-08-30T15:48:57Z
+updated_at: 2026-09-11T14:31:32Z
 ---
 
 ## What is ESTABLISHED (two independent proofs)
@@ -258,3 +258,57 @@ symbol reaches these consumers*.
 
 **No scoped pass is needed. Nothing is owed here.** What the audit flagged is
 the module's mtime, not a stale number.
+
+
+## 2026-09-11 — CLOSED. Guard verified by running it, and the one UNMEASURED item is now measured.
+
+Pulled off the `qou-bstl` completion-candidate queue. The bean's own last line is
+*"No scoped pass is needed. Nothing is owed here."* with the field at `todo`.
+Verified rather than trusted.
+
+**Ran the guard, both modes.**
+
+    trm5_zcubed_live_producer_audit.py --selftest   ->  exit 0
+      [PASS] all four bug spellings caught
+      [PASS] correct weight not flagged
+      [PASS] deliberate comparison not flagged
+      [PASS] six-vector inside a string literal not flagged
+
+    trm5_zcubed_live_producer_audit.py              ->  exit 0
+      REGRESSION GUARD — all five fixed : True
+      [ok] compound_shift_nf.py / electron_sigma_f_chain.py /
+           jet_knot_invariants.py / atom_mass_derived.py / basis_knot_tables.py
+
+The selftest is the part that matters, and it is the bean's own durable
+contribution: the previous guard checked a hardcoded five-file list and printed
+"all five fixed: True" while seven other files on the same H₃ NF basis carried
+the bug, two in spellings (`z ** 3` inside `np.array`, `z * z * z`) no pattern in
+it could match. The replacement is shape-keyed with a selftest that fails unless
+**all four** spellings are detected — so it cannot go quietly blind the way its
+predecessor did. That is the difference between fixing an instance and fixing the
+detector, which is the thing this session keeps finding missing elsewhere.
+
+**The one item this bean left UNMEASURED is now measured — by a different bean's
+sweep, today.** `### NOT MEASURED — 1` reads `atom_mass_derived.py (timeout at
+240 s)`. Re-run under `qou-geqa`'s 900 s re-measurement of that census's TIMEOUT
+bucket: **exit 0 in 495.6 s**. Not broken — merely over a 240 s budget, which is
+what that bean's own caveat said to expect ("timeout is a budget artifact, not
+necessarily a defect"). It also appears in the guard's `[ok]` list above, so its
+weight vector is correct as well as its run.
+
+Final state: 12 sites, all 12 correct as of `f1047c2f9c`; Rust `gram.rs:146` was
+already correct (the pyhecke test docstring claiming otherwise was stale, and was
+fixed); the 121 apparently-stale downstream witnesses resolved as false positives
+by the `qou-a2q5` module-diff rule, with the single real consumer re-run and not
+one non-ephemeral field moved.
+
+**What is handed off, explicitly, and is not left dangling:** the corrected trace
+withdraws the scope-(a) negative published by
+`qbeta_c3_barodd_hs_matrix_resolvent_probe` — its finding 2 is falsified at μ=0
+(BAR-ODD, 18.38 vs 6.86) and finding 3 goes degenerate on the now-singular Gram.
+That re-run is **`qou-cds1`**'s: the probe is convention-C and inverts a singular
+Gram in float64, so re-running it here would publish a laundered number. Closing
+this bean does not close that, and does not assert a positive result in its
+place.
+
+**qou-isu5 closes.**

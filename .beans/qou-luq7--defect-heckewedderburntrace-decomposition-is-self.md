@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T18:03:43Z
-updated_at: 2026-08-30T07:53:19Z
+updated_at: 2026-09-11T14:28:46Z
 ---
 
 
@@ -350,3 +350,40 @@ FRT takes. So:
 qou-luq7 now carries no free parameter and no cited-but-unproved classical
 input. I previously said the remaining gap was "proving FRT, a standalone
 formalisation" -- that was wrong too, and for the same reason.
+
+
+## 2026-09-11 — re-measured at the LEAN: the title defect IS fixed; the bean is not
+
+Pulled off the `qou-bstl` completion-candidate queue. Verified at
+`QOU/Hecke/Wedderburn.lean` rather than on the bean's word, because the subject
+is a self-assumption claim and that is the class where a bean's own summary is
+least safe to trust.
+
+**The title's first half — "`tr_M = Σ y_λ χ_λ` is a class FIELD" — is gone.**
+
+  * `:302` `trace_decomposition` is now a **theorem**, not a field.
+  * `:156-162` `rho` is an `AlgHom` field, replacing the free `chi_lambda` field.
+  * `:194` `chi_lambda` is a **def** — `Matrix.trace (WD.rho lam x)` — computed,
+    not carried.
+  * `:182` the surviving hypothesis is `block_scaling`
+    (`tr_M(x · π_λ) = y_λ · Matrix.trace (ρ_λ x)`), a per-block statement from
+    which `trace_decomposition` derives the sum together with `complete` — and
+    neither input is the identity being derived. That is §3b-cond point 5
+    satisfied: the class carries hypotheses, the theorem composes them.
+  * `:98` `blockDim_eq_numSYT` and `:215` `yLambda_determined` are theorems, so
+    the FRT formula is no longer a commitment and `y_λ` is no longer free.
+
+**But the bean is not the title.** Its own `## What is actually still open (this
+is the live remainder)` at :179 stands, and :236 says *"Item 2 is now the whole
+remaining gap"*. The title's second half — the class still has no instance — is
+unchanged, and :88 already calls that *"the larger debt"*.
+
+**Do NOT close this on the strength of the title being fixed**, and note that
+"no instance" is not by itself a defect: §3b-tax says a content-bearing class
+with no instance is the honest representation of an open state. What makes it a
+debt here is what :127 records — that the absence has a substantive explanation
+about block traces, not merely that nobody has written one.
+
+False positive on the completion-candidate list, cause 1 (partial completion).
+Bean stays `todo` with item 2 as the live remainder. Nothing measured here moves
+a number.
