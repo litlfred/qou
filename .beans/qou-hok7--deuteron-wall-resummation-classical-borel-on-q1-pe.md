@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-07T16:58:43Z
+updated_at: 2026-09-11T15:31:24Z
 ---
 
 
@@ -548,3 +548,51 @@ decisive next step, and it needs a way to compute or bound P_min at moderate l w
   inequality can help; that is what refutation 3 establishes.
 
 Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+## 2026-09-11 — SHARPNESS SETTLED: REV_n = Θ(√n); the 3/4 exponent is NOT sharp (PR #7185)
+
+The one open piece of this bean since 2026-09-07 — "is the 3/4 sharp?" — is closed on the
+side the (ℓ,W)-route sections above refused to read off their flat columns. Not by a sharper
+bound on `R_λ` (which "What would decide it" asked for) but by a sharper bound on the ENERGY
+as a function of the number of rows, which every prior route threw away when it passed to
+`r ≤ √H`.
+
+**The mechanism.** `R_λ = Σ_c ε_{h(c)} − F(n) ≤ (ℓ−1)C` (hooks strictly decrease along a row,
+#7018). And with the row form `2H = Σ_{i<ℓ} λ_i(λ_i + 2i + 1)`, tangent lines on the convex row
+terms give, for `n = T_k + r`, the polynomial identity
+
+    2(H(λ) − H⁺) ≥ (ℓ − k)² − r,      H⁺ = P_k + r(k+1) = H(λ⁺),   for EVERY λ ⊢ n, every ℓ.
+
+Entropy linear in ℓ, energy quadratic in `ℓ − √(2n)`:
+
+    M_n ≤ (C + L/2)√(2n) + C²/(2L) − C = 8.80√n + 176.3,
+    REV_n ≤ M_n + log p(n) ≤ 11.37√n + 176.3.
+
+With #7014's Ω(√n): **Θ(√n).** Lean: `QOU/BraidKnot/HookSumRowTangentBound.lean`,
+`two_mul_sum_hookZ_sub_hminClosed_ge`, sorry-free, axioms `propext, Classical.choice,
+Quot.sound`. Probe `rev_sqrt_n_upper_bound_probe.py` 7/7: every step exact on all partitions
+n ≤ 30; every link of the chain at n = 2..44 (60 dps). Details and the flaw hunt on `qou-0ie7`.
+
+**What this corrects in the sections above.**
+
+- 2026-09-07 "the data cannot yet distinguish": correct at the time; the discriminator was
+  never going to be data — the route is a two-line convexity argument the enumerations could
+  not see because they never grouped by ℓ.
+- #7070 / #7081 "the lossy step is Jensen on the pair term" and #7093 "the (ℓ,W) route is close
+  to exhausted": both right about the β-bound and both beside the point. The pair term was
+  never needed; `(ℓ−1)C` with the row-indexed energy suffices.
+- **#7081's relaxation RISING above `n^{3/4}` to n = 4000 is an instrument artefact**, not a
+  fact about REV. Its Cauchy–Schwarz `Ĥ` is **48.9 % of `H_min(4000)`** at its own argmax
+  `(ℓ,W) = (151, 357)`: the column half spreads `n − ℓ` cells evenly over `λ₁ − 1` columns,
+  impossible with 151 rows, so the maximiser fed on a negative energy no partition has. Its
+  99–100 % calibration was at n ≤ 40 where `ℓ − k` is small. The "anti-caveat" in that section
+  ("a clear RISE ... not a flat column being over-read") is therefore withdrawn: it was a rise
+  in a quantity that is not an upper bound on anything at that n. Reproduced at n = 44 (R5b).
+- #7081's argmax drift `ℓ = 151` vs `√(2n) = 89` is explained: the bound's maximiser sits
+  `x = C/L = 59` rows above the staircase at every n.
+
+**Still open on this bean** (unchanged, and none of it is the sharpness question): the
+substrate-side reading of REV's Θ(√n) coefficient — the bound's `(C + L/2)√2 = 8.80` is an
+upper constant, the true `M_n/√n` is 3.19 at n = 44 and still rising toward its limit, which
+is not identified; and the q-Borel resummation negative (2026-08-21) stands. **Do not close
+this bean.**
