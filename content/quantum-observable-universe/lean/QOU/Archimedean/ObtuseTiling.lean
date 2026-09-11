@@ -16,9 +16,24 @@
   tetrahedron (`idealTetVolume_of_vertices_obtuse`); and the RIGHT-ANGLED case
   `γ = π/2` (`…_right`), which completes the coverage.
 
-  **THE WHOLE ANGLE SIMPLEX IS NOW COVERED**: acute (`α, β, γ < π/2`, on `main`),
-  obtuse (`π/2 < γ`), right-angled (`γ = π/2`).  Every admissible triple falls in
-  exactly one.
+  **THE IDENTITY IS UNCONDITIONAL** —
+  `idealTetVolume_of_vertices_unconditional`, at the end of the file: no
+  acuteness, no distinguished angle, no case hypothesis.  Just `0 < α, β, γ` and
+  `α + β + γ = π`.
+
+  Getting there needed one step beyond the three cases, and it is worth naming
+  because an earlier revision of this header asserted the conclusion without it.
+  The three cases are stated with `γ` as the distinguished angle, so a triple
+  whose non-acute angle is `α` or `β` satisfies none of them **as written**.
+  "Every admissible triple is covered" was therefore a claim about a relabelling
+  that had not been taken.
+
+  It is now taken, and it is exact rather than approximate: with `α+β+γ = π` a
+  cyclic relabel of the angles plus the matching shift of the base angle names
+  the *same three circle points* (the third lands on `t + 2π`), so it is the same
+  region — `idealTetrahedron_cyclic`, which in turn is just
+  `verticalHalfSpaceThrough_swap`: that half-space is a product of two signed
+  areas sharing an edge, and swapping the edge's endpoints negates both.
 
   This header said otherwise, and was wrong in two independent ways.  It read:
   *"Between them the two cover every triangle except the right-angled one, where
@@ -66,6 +81,7 @@
 import QOU.Archimedean.ObtuseWedgeDegenerate
 import QOU.Archimedean.IdealTetObtuseReduction
 import QOU.Archimedean.IdealTetEqChimney
+import QOU.Archimedean.MostowIdealTetVolume
 
 namespace QOU.Archimedean.HyperbolicVolume
 
@@ -788,5 +804,122 @@ theorem idealTetVolume_of_vertices_obtuse {t α β γ : ℝ}
   have hγ0 : 0 < γ := lt_trans (by positivity) hγ
   rw [idealTet_eq_chimney hα0 hβ0 hγ0 hsum]
   exact hypVolume_chimney_inscribedTriangle_obtuse (by norm_num) hα0 hβ0 hγ hsum
+
+/-! ### MILNOR'S THEOREM, unconditional — and the gap in "covers the whole simplex"
+
+The three cases above are stated with `γ` as the distinguished angle. A triple
+whose non-acute angle is `α` or `β` satisfies none of them as written, so
+"every admissible triple is covered" was, strictly, a claim about a relabelling
+step that had not been taken. This section takes it.
+
+The relabelling is exact rather than approximate, because the three vertices are
+literally the same points. With `α + β + γ = π`,
+
+    Region(α,β,γ) at `t`   has vertices  t, t+2γ, t+2γ+2α
+    Region(β,γ,α) at `t+2γ`     "        t+2γ, t+2γ+2α, t+2γ+2α+2β = t+2π
+
+and `t + 2π` is `t` on the circle. So a cyclic relabel of the angles, together
+with the matching shift of the base angle, names the *same* ideal tetrahedron —
+provided `idealTetrahedron` does not care about the order of its three vertices,
+which is `idealTetrahedron_cyclic` below. `Λ(α)+Λ(β)+Λ(γ)` is symmetric outright.
+
+The whole thing rests on one observation: `verticalHalfSpaceThrough b c i` is a
+product of two signed areas sharing the edge `b c`, so swapping `b` and `c`
+negates both and changes nothing. -/
+
+/-- **The oriented half-space does not care which end of its edge is first.**
+Both factors of `sarea b c i * sarea b c (p 0, p 1)` flip under the swap. -/
+theorem verticalHalfSpaceThrough_swap (b c i : ℝ × ℝ) :
+    verticalHalfSpaceThrough c b i = verticalHalfSpaceThrough b c i := by
+  ext p
+  simp only [verticalHalfSpaceThrough, Set.mem_setOf_eq, sarea_swap b c i,
+    sarea_swap b c (p 0, p 1), neg_mul_neg]
+
+/-- **The ideal tetrahedron is invariant under cycling its vertices.**  Its three
+vertical faces are the same three half-spaces, listed in a different order, once
+`verticalHalfSpaceThrough_swap` is used to align the two that appear with their
+edge reversed. -/
+theorem idealTetrahedron_cyclic (P₁ P₂ P₃ : ℝ × ℝ) :
+    idealTetrahedron P₂ P₃ P₁ = idealTetrahedron P₁ P₂ P₃ := by
+  simp only [idealTetrahedron, verticalHalfSpaceThrough_swap P₁ P₃ P₂,
+    verticalHalfSpaceThrough_swap P₁ P₂ P₃]
+  ext p
+  simp only [Set.mem_inter_iff]
+  tauto
+
+/-- `circlePoint` is `2π`-periodic — the step that turns the third relabelled
+vertex `t + 2γ + 2α + 2β` back into the first. -/
+theorem circlePoint_add_two_pi (R a : ℝ) :
+    circlePoint R (a + 2 * π) = circlePoint R a := by
+  simp [circlePoint, Real.cos_add_two_pi, Real.sin_add_two_pi]
+
+/-- **The non-acute case in one statement** — obtuse and right-angled together,
+`π/2 ≤ γ`. -/
+theorem idealTetVolume_of_vertices_nonacute {t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 ≤ γ) (hsum : α + β + γ = π) :
+    hypVolume (idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
+        (circlePoint 1 (t + 2 * γ + 2 * α)))
+      = ENNReal.ofReal (Lob α + Lob β + Lob γ) := by
+  rcases eq_or_lt_of_le hγ with h | h
+  · exact idealTetVolume_of_vertices_right hα0 hβ0 h.symm hsum
+  · exact idealTetVolume_of_vertices_obtuse hα0 hβ0 h hsum
+
+/-- **MILNOR'S IDENTITY, UNCONDITIONAL.**
+
+    Vol(idealTetrahedron P₁ P₂ P₃) = Λ(α) + Λ(β) + Λ(γ)
+
+for EVERY positive triple summing to `π` — no acuteness, no distinguished angle,
+no case hypothesis at all.  The region is the independently-defined one (four
+geodesic half-spaces from the four ideal vertices).
+
+The proof is a four-way split.  All three acute is
+`MostowIdealTetVolume.idealTetVolume_of_vertices` (File A4).  `γ` non-acute is
+`idealTetVolume_of_vertices_nonacute`.  The other two are that same theorem after
+a cyclic relabel, which `idealTetrahedron_cyclic` and `circlePoint_add_two_pi`
+show is the identity on the region.  `at_most_one_obtuse` is not needed: the
+split is by cases rather than by exclusion, and a triple with two non-acute
+angles simply lands in a branch whose hypotheses `linarith` refutes.
+
+Closed modulo the single cited totally-geodesic / normalized-position
+identification (File A1's `geodesicPlaneThrough`), which the acute theorem
+already rested on; the non-acute cases add nothing to it. -/
+theorem idealTetVolume_of_vertices_unconditional {t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ) (hsum : α + β + γ = π) :
+    hypVolume (idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
+        (circlePoint 1 (t + 2 * γ + 2 * α)))
+      = ENNReal.ofReal (Lob α + Lob β + Lob γ) := by
+  rcases le_or_gt (π / 2) γ with hγ | hγ
+  · exact idealTetVolume_of_vertices_nonacute hα0 hβ0 hγ hsum
+  rcases le_or_gt (π / 2) α with hα | hα
+  · -- relabel `(α,β,γ) ↦ (β,γ,α)` and shift the base angle to `t + 2γ`
+    have hregion : idealTetrahedron (circlePoint 1 (t + 2 * γ))
+          (circlePoint 1 (t + 2 * γ + 2 * α))
+          (circlePoint 1 (t + 2 * γ + 2 * α + 2 * β))
+        = idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
+            (circlePoint 1 (t + 2 * γ + 2 * α)) := by
+      rw [show t + 2 * γ + 2 * α + 2 * β = t + 2 * π by linarith,
+        circlePoint_add_two_pi]
+      exact idealTetrahedron_cyclic _ _ _
+    have := idealTetVolume_of_vertices_nonacute (t := t + 2 * γ) (α := β)
+      (β := γ) (γ := α) hβ0 hγ0 hα (by linarith)
+    rw [hregion] at this
+    rw [this]; ring_nf
+  rcases le_or_gt (π / 2) β with hβ | hβ
+  · -- relabel twice: `(α,β,γ) ↦ (γ,α,β)`, base angle `t + 2γ + 2α`
+    have hregion : idealTetrahedron (circlePoint 1 (t + 2 * γ + 2 * α))
+          (circlePoint 1 (t + 2 * γ + 2 * α + 2 * β))
+          (circlePoint 1 (t + 2 * γ + 2 * α + 2 * β + 2 * γ))
+        = idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
+            (circlePoint 1 (t + 2 * γ + 2 * α)) := by
+      rw [show t + 2 * γ + 2 * α + 2 * β = t + 2 * π by linarith,
+        show t + 2 * π + 2 * γ = (t + 2 * γ) + 2 * π by ring,
+        circlePoint_add_two_pi, circlePoint_add_two_pi]
+      rw [idealTetrahedron_cyclic, idealTetrahedron_cyclic]
+    have := idealTetVolume_of_vertices_nonacute (t := t + 2 * γ + 2 * α) (α := γ)
+      (β := α) (γ := β) hγ0 hα0 hβ (by linarith)
+    rw [hregion] at this
+    rw [this]; ring_nf
+  · -- all three acute
+    exact MostowIdealTetVolume.idealTetVolume_of_vertices hα0 hβ0 hγ0 hα hβ hγ hsum
 
 end QOU.Archimedean.HyperbolicVolume
