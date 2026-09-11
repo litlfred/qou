@@ -5,9 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-11T15:25:46Z
-
-updated_at: 2026-09-08T07:45:32Z
+updated_at: 2026-09-11T15:46:32Z
 parent: qou-x631
 ---
 
@@ -1622,3 +1620,28 @@ tree. A separate shadow root shadows `QOU` and does NOT fall through to the real
 that cost one failed attempt. Shadow removed afterwards; real olean tree untouched.
 
 **`qou-k5r5` stays OPEN.**
+## Cross-citation from qou-za3q (2026-09-11): the A=4 Magnus sign is measured
+
+Per the 2026-09-08 coordination note on qou-za3q ("a result landing on any of the
+five should be cited in the other four"), this is such a result.
+
+`he4_magnus_omega2_sign_sparse_probe.py`, 77/77 partitions of H_12, max dim 7700,
+28661s:
+
+    P_total(A=4) = 34.1260272853576529271380692762741452981457684651471317452205
+    sign = +1    control (rho = I) = 0.0 vanishes    33+/42-    sign_flip_vs_A3 = False
+
+Sign map across the light nuclei: A2 = -1, A3 = +1, A4 = +1. There is exactly ONE
+sign change in A = 2,3,4 and it sits between the deuteron and the triton, NOT at
+the alpha particle.
+
+Load-bearing for anyone reading the older framing: the he4 probe's docstring
+asserted "A=3: P<0, NO flip vs A=2" and that premise had propagated into its
+GENERATED VERDICT string. It is false — A=3 is +2.4701927, confirmed by the
+committed witness and a fresh 30/30 re-run. Fixed under qou-rfhj. If any of the
+five beans reasons from "negative through the deuteron and triton", that premise
+is stale.
+
+scope-(a): a dimensionless SIGN datum. NOT a MeV (the Delta_lambda magnitude gate
+is open and untouched), NOT a physical binding-sign assertion (qou-v7ro / #6077,
+cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-).
