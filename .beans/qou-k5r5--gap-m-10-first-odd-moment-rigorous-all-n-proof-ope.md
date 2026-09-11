@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-08T03:32:29Z
+updated_at: 2026-09-11T15:25:46Z
 ---
 
 
@@ -1517,3 +1517,52 @@ says a proof must operate at the CLT scale and produce a correlation coefficient
 move, if any, is the integrated-covariance form `f668c434a97` introduced for the epic
 (`E_Q[X] = integral_0^1 Cov_{Q_t}(log f^lam, X) dt`), which restores first order where the direct
 tilt expansion is ~1/3 nonlinear. That is untested for `M_1` and is the one un-eliminated lead.
+
+
+---
+
+## 2026-09-11 — the tilt derivative is now PROVED in Lean, sorry-free (PR #7178)
+
+Owner asked, of PRs #7120/#7126: *"all assertions proved in lean?"* **The answer was
+NO** — both were Python probes whose controls are arithmetic self-checks, not theorems.
+This entry records the promotion of the one assertion that warranted it.
+
+**`content/quantum-observable-universe/lean/QOU/MassTheory/TiltDerivativeCovariance.lean`**,
+for an ARBITRARY finite family over an ARBITRARY field (not for `n <= 22`):
+
+| declaration | statement | base ring |
+|---|---|---|
+| `tiltNum_derivative_eval_one` | `N'(1) = sum_i w_i f_i h_i` | `[CommRing R]` |
+| `tiltNum_eval_one_eq_zero_iff` | `N(1) = 0 <-> wMean w f = 0` | `[Field R]` |
+| `tilt_deriv_eq_wCov` | `N'(1)/D(1) = wCov w h f` | `[Field R]` |
+
+So the probe's `n <= 22` check is now a fact about the CONSTRUCTION rather than about
+the range sampled.
+
+**The content is not the quotient rule.** It is that the derivative of the tilted mean
+at `x = 1` is a COVARIANCE rather than a weighted moment, and that it is so PRECISELY
+BECAUSE the tilted statistic has vanishing weighted mean. With `f = omega_3` that
+hypothesis is exactly `E_Planch[omega_3] = 0` — the same fact `qou-ujil` uses to
+ELIMINATE limit-shape arguments. The obstruction is re-used as the asset.
+
+**Anti-vacuity.** `tilt_deriv_ne_wCov_of_mean_ne_zero` gives a concrete two-point family
+with nonzero total weight and nonzero `wMean` where the conclusion is FALSE — so the
+hypothesis is demonstrably load-bearing rather than inert.
+
+**A hypothesis I wrote and then removed.** The first version carried
+`(hw : sum_i w_i /= 0)`. The linter flagged it unused; checking rather than silencing,
+the statement is TRUE without it (Lean's `x/0 = 0` makes both sides 0 in the degenerate
+case), so dropping it STRENGTHENS the theorem. An unused hypothesis inside a theorem
+about when a hypothesis is load-bearing would have been the wrong thing to ship.
+
+**Verification as run:** `lean -DautoImplicit=false -s 65536` exit 0, ZERO warnings
+(a bare `lean` is a weaker check — autoImplicit defaults true off-lakefile);
+`#print axioms` on all four declarations gives `[propext, Classical.choice, Quot.sound]`,
+no `sorryAx`; `grep -c sorry` = 0. Library file, no sidecar, so nothing but this covers it.
+
+**Import note for the next agent:** `Mathlib.Algebra.BigOperators.Ring` is ABSENT from
+the restored lake-cache olean set — a fresh instance of the documented cache-gap class.
+Imports routed through `Algebra.Polynomial.Derivative` + `Order.Field.Basic` + `Tactic`.
+
+**Scope, unchanged.** This proves the REFORMULATION, not the gap. Nothing bounds `R'(1)`
+below; no claim is made about its sign. **`qou-k5r5` stays OPEN.**
