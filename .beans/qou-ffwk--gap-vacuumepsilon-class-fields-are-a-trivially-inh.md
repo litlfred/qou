@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-08T15:15:21Z
-updated_at: 2026-08-30T07:59:10Z
+updated_at: 2026-09-11T15:13:48Z
 ---
 
 
@@ -817,3 +817,75 @@ The instance itself is fixed in PR #6133 (the `.md` re-synced to the `.lean`). W
 done, and belongs to this bean: re-running the search under both generalisations — any field
 whose conjunction admits a witness, not just a constant; and across `.md` lean blocks as well
 as `.lean` files.
+
+
+## 2026-09-11 — the `.md` half is MEASURED and the answer is a clean NEGATIVE: 2 carriers, both agreeing
+
+This bean's closing section names the open item: *"re-running the search under
+both generalisations — any field whose conjunction admits a witness, not just a
+constant; and across `.md` lean blocks as well as `.lean` files."* The **`.md`
+half** is done here. The conjunction generalisation is **not**.
+
+### Result
+
+The whole `content/` tree holds **two** `.md` lean-block `Prop` carriers, and
+**both agree with their `.lean` sibling**:
+
+    conj-rho-k-pair-gen-canonical-form.md       class PairGenCanonical
+        .md and .lean class bodies are IDENTICAL (one field, `content`, a
+        parameter-quantified ∃/∀ inequality — a content-bearing field, not a
+        placeholder)
+
+    kashaev-density-equals-sdp-multiplicity.md  class KashaevDensityEqualsSdpMultiplicity
+        both carry the same five fields — mE_pos, vol_pos, nuSdp_pos, identity,
+        binding_formula — each a real Prop
+
+So the *"`.md` is a second, unscanned surface"* hazard this bean identified is
+real as a hazard and **currently empty as a population**. The instance that
+prompted it (PR #6133, an `.md` left stale against a corrected `.lean`) was the
+only one, and no second case exists today.
+
+**State that as what it is.** This is "I searched the `.md` surface with a scan I
+then had to correct three times, and it is clean", not "there is nothing there".
+The surface is tiny (2 carriers), so a scan of it is cheap to redo — and worth
+redoing whenever a new conjecture block lands.
+
+### 🛑 The scan was wrong three times on a population of TWO, and the third is the one to remember
+
+Recording in full, because a scan this small getting this many things wrong is
+the most transferable thing measured here.
+
+1. **Fence case.** The corpus uses **both** ` ```lean ` and ` ```Lean `. A
+   lowercase-only fence pattern sees **1 of 2**.
+2. **Multi-line signature.** `KashaevDensityEqualsSdpMultiplicity` declares its
+   parameters across three lines, so `class NAME` and `: Prop where` are not on
+   one line. A `[^\n]*` between them sees **1 of 2** — the same 50 % miss, a
+   different cause, and it is the taxonomy's "the interesting text is assumed to
+   be on one line" class again.
+3. **Block-scoped field collection produced TWO FALSE DISAGREEMENTS.** Collecting
+   "field-looking lines" from the whole fenced block rather than from the carrier
+   body attributed `AtomicBraid`'s `vols` to `PairGenCanonical`. And in the
+   `.lean` it matched a **fenced quotation inside a docstring** — lines 20-21 of
+   `kashaev-density-equals-sdp-multiplicity.lean` show the OLD defective
+   `holds : Prop` form as part of the written explanation of why it was removed;
+   the live class is at `:142`.
+
+**That third error was one step from a false alarm of the worst available
+kind**: I would have reported that a published five-field conjecture
+axiomatisation is backed in Lean by a single opaque `holds : Prop`. It is not —
+and what my detector matched was *a quotation of a vacuous carrier inside the
+text that fixed it*. Measuring for vacuity, it found the fix and called it the
+defect.
+
+The discriminator was not a better regex. It was opening the file.
+
+### Still open on this bean
+
+The **conjunction generalisation** — *any field whose conjunction admits a
+witness, not just a constant*. Not attempted. Note that a scan for it must not
+repeat error 3: `qou-tsnp` and
+[`docs/audits/2026-08-23-free-prop-field-census.md`](docs/audits/2026-08-23-free-prop-field-census.md)
+are the corpus-wide census, and several carriers now **document their own former
+defect in a quoted block**, so any text-keyed pass over that population will
+match fixes as though they were defects at a rate that grows as the drain
+succeeds.
