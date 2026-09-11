@@ -152,6 +152,69 @@ theorem augmentation_difference_order_blind {M R : Type*} [Monoid M] [CommRing R
     ε n.prod - ε p.prod = ε n'.prod - ε p'.prod := by
   rw [monoidHom_order_blind ε hn, monoidHom_order_blind ε hp]
 
+/-! ### Which levels *can* be multiplicative
+
+`monoidHom_order_blind` says multiplicativity buys order-blindness. The
+converse question — which Markov parameters are multiplicative at all — has a
+sharp answer, and it is what separates the two admissible levels.
+
+A unital multiplicative map on `H₃(q)` sends a Hecke generator `σᵢ` to its
+Markov weight `z`, and the Hecke relation `σ² = hσ + 1` then forces
+`z² = hz + 1`. That quadratic has exactly two roots, and `z_D` is neither.
+
+The corpus already has the `z ↦ 1` case (`QOU.QBeta.CounitSigmaOne`); this is
+the general statement it is an instance of. -/
+
+/-- **The Hecke image equation factors.** Over any commutative ring, with
+`h = q - q⁻¹`, `z² - hz - 1 = (z - q)(z + q⁻¹)`. -/
+theorem hecke_image_factor {R : Type*} [Field R] (q z : R) (hq : q ≠ 0) :
+    z ^ 2 - (q - q⁻¹) * z - 1 = (z - q) * (z + q⁻¹) := by
+  field_simp
+  ring
+
+/-- **Only two Markov parameters can be multiplicative.** If a unital
+multiplicative functional sends the Hecke generator to `z`, then `z = q` or
+`z = -q⁻¹` — the two eigenvalues of `σ`. -/
+theorem multiplicative_forces_eigenvalue {R : Type*} [Field R] (q z : R)
+    (hq : q ≠ 0) (hrel : z ^ 2 = (q - q⁻¹) * z + 1) :
+    z = q ∨ z = -q⁻¹ := by
+  have hz : (z - q) * (z + q⁻¹) = 0 := by
+    rw [← hecke_image_factor q z hq]
+    linear_combination hrel
+  rcases mul_eq_zero.mp hz with h | h
+  · exact Or.inl (by linear_combination h)
+  · exact Or.inr (by linear_combination h)
+
+/-- **The convention-D parameter is strictly below `q`.** `q³/(q²+1) < q` for
+every `q > 0`, since `q³ < q³ + q`. -/
+theorem zD_lt_self {q : ℝ} (hq : 0 < q) : q ^ 3 / (q ^ 2 + 1) < q := by
+  rw [div_lt_iff₀ (by positivity)]
+  nlinarith [sq_nonneg q]
+
+/-- **The convention-D parameter is positive**, hence above `-q⁻¹`. -/
+theorem zD_pos {q : ℝ} (hq : 0 < q) : 0 < q ^ 3 / (q ^ 2 + 1) := by positivity
+
+/-- **Level 2 is not multiplicative.**
+
+`z_D = q³/(q²+1)` is neither eigenvalue: it is strictly below `q` and strictly
+above `-q⁻¹`. So no unital multiplicative functional has `z_D` as its Markov
+parameter, and the argument that makes level 1 order-blind is unavailable at
+level 2.
+
+🛑 **Scope.** This *removes the obstruction*; it does **not** prove that level 2
+is order-sensitive. Non-multiplicativity permits sensitivity, it does not force
+it. That level 2 actually distinguishes two specific same-multiset words is a
+measurement (`qbeta_option_e_required_level_probe`, the interleaved vs
+gen-grouped models), not a consequence of this theorem. -/
+theorem conventionD_not_multiplicative {q : ℝ} (hq : 0 < q) :
+    ¬ ((q ^ 3 / (q ^ 2 + 1)) ^ 2 = (q - q⁻¹) * (q ^ 3 / (q ^ 2 + 1)) + 1) := by
+  intro hrel
+  rcases multiplicative_forces_eigenvalue q _ (ne_of_gt hq) hrel with h | h
+  · exact absurd h (ne_of_lt (zD_lt_self hq))
+  · have hneg : -q⁻¹ < 0 := by
+      simpa using inv_pos.mpr hq
+    exact absurd (h ▸ zD_pos hq) (by simpa using not_lt.mpr hneg.le)
+
 /-! ### The acceptance test
 
 If a candidate overshoots the target at one admissible level and undershoots it
