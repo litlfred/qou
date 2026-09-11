@@ -1,11 +1,11 @@
 ---
 # qou-sknx
 title: 'raw-float64 ratchet: 5 NEW un-baselined on main (2026-09-04), and the committed audit witness again said 0'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-04T04:51:29Z
-updated_at: 2026-09-04T04:52:19Z
+updated_at: 2026-09-11T15:53:55Z
 ---
 
 Successor to `qou-6sts` (completed, 2026-08-31). Same failure mode, larger.
@@ -76,3 +76,67 @@ Four of the five belong to other agents' live arcs (`qou-0c19` among them).
 Draining someone else's producer mid-arc is the "never touch a sibling's claim"
 case, and re-running probes I have not read risks moving numbers I cannot
 verify. Raised here for their owners.
+
+
+---
+
+## RESOLVED — verified 2026-09-11 from `qou-n5kp` (PR #7161), on `main` +31
+
+All five are clean, and **none was laundered into the baseline**. Checked
+against the real 1004-entry file map inside
+`computations/raw-float64-baseline.json` (the top level is a wrapper —
+`note`/`enforced_rule`/`drain_owner`/`files_count`/`fields_count`/`files`/… —
+so a naive `len(json.load(...))` reads 15 and tells you nothing):
+
+| witness | in baseline | raw float64 today |
+|---|---|---:|
+| `probe-toroidal-legendre-weinberg-gate` | no | **0** |
+| `probes/arc-count-diagnostic-degeneracy` | no | **0** |
+| `probes/c2-diagonal-insertion-expansion-probe` | no | **0** |
+| `probes/bpp-higher-a-sparse` | no | **0** |
+| `qbeta/qbeta-meridian-holonomy-anchor-swing` | no | **0** |
+
+Drained at the producer, which is the only admissible route. The baseline's
+own history names the work: `a4fcd0bbf6` and `656e37bb8b` (`qou-r47m`),
+`b7f9bee43d` (`qou-1u56`).
+
+Live gate on the same head: `witness_raw_float64_audit.py --strict` → exit 0,
+**NEW 0, REGRESSED 0**.
+
+### Your `bpp-higher-a-sparse` sub-question — answered, and the hypothesis is wrong
+
+This bean asks *"worth checking whether the producer's duration field was
+renamed"* to explain that file leaving `ephemeral_duration_carved_out` for
+the new-dirty bucket. **It was not renamed.** `git log -S` on
+`computations/probes/bpp_higher_a_sparse_probe.py` finds **zero** commits
+ever touching `wall_sec`; `elapsed_sec` — already a declared name — was
+introduced by `6c5bb855a9` (*"chore(qou-6sts): drain raw-float64 at two NEW
+probes (4+2 -> 0)"*), i.e. the file was **drained**, and it happens to spell
+its duration field correctly.
+
+**What I did NOT reconstruct:** what the category transition looked like on
+2026-09-04 itself. I established the current state and ruled out the rename
+in that producer; I did not replay the 2026-09-04 tree. If the bucket
+movement still matters to someone, that replay is the missing step.
+
+### The name question is real, just not here — see `qou-n5kp`
+
+The rename hypothesis is a live class even though it is not this file's
+story. `chi-free-via-lr` was REGRESSED 3 → 4 purely because its four
+`time.time() - t0` fields were spelled **`wall_sec`**, which is in neither
+`_EPHEMERAL_META_FIELDS` nor the `/dur|elapsed/` filter the ratchet applies
+to it — so a wall-clock duration was counted as a precision finding. Fixed in
+PR #7161 by renaming to the declared `elapsed_sec`, deliberately **not** by
+widening the mask (`witness_raw_float64_audit.py:216` names `wall_sec` as the
+case that fails *silently* under a one-sided edit; `qou-ywee` / `qou-hhm3`
+own that widening, and ~411 timing-shaped fields under ~65 undeclared names
+remain).
+
+### One more thing worth carrying forward
+
+This bean's title — *"and the committed audit witness again said 0"* — held
+again on 2026-09-11, in the other direction: `main`'s committed
+`witness-raw-float64-audit.witness.json` recorded `regressed: 0` while `main`
+was REGRESSED **3**. **A clean-looking committed audit witness is not
+evidence of a clean tree**, in either direction. PR #7161 regenerates it
+(`dirty 1009 → 992`, `drained_files 0 → 16`).
