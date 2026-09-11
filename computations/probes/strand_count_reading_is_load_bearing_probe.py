@@ -150,7 +150,61 @@ def main() -> int:
     else:
         check("schur-weyl-mass-decomposition.md present", False, "file missing")
 
-    total = 15
+    print("\nCHECK 8 -- CITING a definition is not DEPENDING on its strand count")
+    # qou-jgg0's blast-radius line reads "24 citing blocks, 7 in the mass
+    # chapters". That counts CITATIONS. This counts DEPENDENCIES: which citing
+    # blocks actually use a strand count, and which one.
+    cites = sorted(
+        str(p_.relative_to(REPO / "content/quantum-observable-universe"))
+        for p_ in (REPO / "content/quantum-observable-universe").rglob("*")
+        if p_.suffix in (".ts", ".md") and "def:atomic-braid" in p_.read_text()
+    )
+    check("24 blocks cite def:atomic-braid (qou-jgg0's count, re-derived)",
+          len(cites) == 24, f"{len(cites)} blocks")
+
+    # Order matters: "3A + Z" contains both "3A" and "A + Z".
+    pat_c = re.compile(r"3\s*A\s*\+\s*Z")
+    pat_b = re.compile(r"3\s*A\b|3\s*\\cdot\s*A|3\s*\(\s*Z\s*\+\s*N\s*\)|H_\{3A\}")
+    pat_a = re.compile(r"A\s*\+\s*Z|H_\{A\+Z\}")
+    buckets: dict[str, list[str]] = {"c": [], "b": [], "a": [], "ab": [], "none": []}
+    for rel in cites:
+        flat = " ".join((REPO / "content/quantum-observable-universe" / rel).read_text().split())
+        has_c = bool(pat_c.search(flat))
+        rest = pat_c.sub(" ", flat)
+        has_b, has_a = bool(pat_b.search(rest)), bool(pat_a.search(rest))
+        key = "c" if has_c else "ab" if (has_a and has_b) else "b" if has_b else "a" if has_a else "none"
+        buckets[key].append(rel)
+
+    check("16 of the 24 use NO strand count at all",
+          len(buckets["none"]) == 16,
+          "they cite the crossing table or the ground-state ordering, both "
+          "reading-independent")
+    check("5 commit to the production side: 4 use 3A, 1 uses 3A+Z",
+          len(buckets["b"]) == 4 and len(buckets["c"]) == 1,
+          f"3A: {buckets['b']}  |  3A+Z: {buckets['c']}")
+
+    print("\nCHECK 9 -- exactly ONE CONSUMER carries the A+Z reading")
+    a_hits = set(buckets["a"]) | set(buckets["ab"])
+    own_manifest = "knots-particles-confinement/atomic-braid.ts"
+    index_row = "index-of-definitions/definition-index.md"
+    consumers = sorted(a_hits - {own_manifest, index_row})
+    check("atomic-braid.ts is the DEFINITION's own manifest, not a consumer",
+          own_manifest in a_hits
+          and 'label: "def:atomic-braid"' in
+              (REPO / "content/quantum-observable-universe" / own_manifest).read_text(),
+          "its title is 'Atomic braid $H_{A+Z}(q)$'")
+    check("definition-index.md is a catalogue echoing that title",
+          index_row in a_hits,
+          "its 3A hits belong to unrelated entries (rho-k-h3a, exterior-algebra, psd-trace)")
+    check("the remaining A+Z consumer set is exactly {wedderburn-mass-formula.md}",
+          consumers == ["mass-theory/wedderburn-mass-formula.md"], f"{consumers}")
+
+    print("\nCHECK 10 -- so the dependency surface is ~1 block, not 24 or 7")
+    check("citations (24) far exceed dependencies on the A+Z count (1)",
+          len(cites) == 24 and len(consumers) == 1,
+          "qou-jgg0's blast-radius line counts citations; this counts dependencies")
+
+    total = 22
     print(f"\n{total - len(fails)}/{total} checks passed")
     if fails:
         print("FAILED: " + "; ".join(fails))
