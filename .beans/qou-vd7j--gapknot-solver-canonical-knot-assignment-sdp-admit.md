@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-02T13:56:51Z
-updated_at: 2026-09-08T07:40:04Z
+updated_at: 2026-09-11T14:56:33Z
 ---
 
 ## Finding (2026-08-02) — the solver runs; the Frobenius selector is empty
@@ -78,3 +78,7 @@ NOT derive ν_SDP** — it removes a spurious "obstruction" reading and re-point
 the open R5 work at the net normalization + the mpfr overflow for heavy A.
 
 ## 2026-09-08 — re-activated by owner ruling (bean qou-ales): word selection goes through γγ production + the confinement SDP at q₀, no census. The 'cheap next step' (fix the net-row over-determination, per-constraint diagnostic) is now on the critical path.
+
+
+## 2026-09-08 (qou-ales step 2) — the cheap fix was run, and D changed the diagnosis
+computations/probes/frobenius_admissibility_net_row_probe.py (proton pin, 60 dps, no AME): under convention D the H3 Gram is rank 5 (radical = q-antisymmetriser v) and 1'v = 0.0902 != 0, so the net row 1'x=A is ALWAYS satisfiable along the kernel whenever Gx=nf is — the over-determination above (a rank-6, convention-C diagnosis) is gone. The obstruction is now <v, nf(W)> = eps(W), the alternating character of the word, a product of nonzero factors for every crossing type (S: -1/q, I: -q, C: -1/q+D_PN, gamma-gamma vertex: 1 exactly, Lean altChar_eq_one). Result: 0/4238 candidate words survive for p,n,2H,pp,nn,3H,3He,4He. Scope-(a): about the Gx=nf demand formulation, NOT the PSD confinement SDP. Audit: docs/audits/2026-09-08-gamma-gamma-word-selection-step1.md.
