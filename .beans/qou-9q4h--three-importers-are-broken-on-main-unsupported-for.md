@@ -1,11 +1,11 @@
 ---
 # qou-9q4h
 title: 'Three importers are broken on main: unsupported format string passed to mpf.__format__'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-06T10:08:46Z
-updated_at: 2026-09-06T10:09:29Z
+updated_at: 2026-09-11T15:18:47Z
 ---
 
 Found while verifying the `qou-9ies` Vol(4_1) exactification by running all 8
@@ -63,3 +63,28 @@ managed deliberately.
 
 The three stay unrunnable. Nothing regresses; they simply cannot be executed to
 refresh their own witnesses, so those witnesses can only go staler.
+
+
+## 2026-09-11 — CLOSED. All three run; the "default if nobody acts" no longer applies.
+
+Off the `qou-bstl` queue. This bean's closing section reads *"**Default if nobody
+acts:** the three stay unrunnable"* — someone acted (`0e2e79981ae`, *"three
+producers could not run — mpf has no `__format__` for `.3f`"*).
+
+Verified the only way this bean allows, by **running all three**, which it
+correctly flagged as the awkward part (they write witnesses, so the run has to be
+reverted — the `qou-v0t8` contended-file hazard):
+
+    computations/mass-from-q-symbolic.py        exit 0
+    computations/rho_f_volume_binding_gap.py    exit 0
+    computations/codata_reconciliation.py       exit 0
+
+No `TypeError: unsupported format string passed to mpf.__format__`, no traceback,
+in any of the three. Tree restored afterwards (`git checkout -- computations` +
+`git clean`); **0 files changed**, nothing committed.
+
+The consequence this bean was actually worried about is what lifts: these three
+can now be executed to refresh their own witnesses, so those witnesses are no
+longer condemned to go staler with no way back.
+
+**qou-9q4h closes.**

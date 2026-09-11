@@ -124,6 +124,12 @@ float noise*, not certifying precision. Rules:
    `qou_substrate.precision`, bean `qou-0z4i`) gives ~45
    digits of headroom below 1 ppQ — adequate. Raise via
    `QOU_COMPUTE_DPS=<n>` when bounding higher-order residuals.
+   **Measure, do not quote** (bean `qou-0z4i`):
+   `python3 -c "import qou_substrate.precision as P; print(P.COMPUTE_DPS, P.OUTPUT_DPS, P.PRECISION_GUARD)"`
+   → `70 60 10`. The `~45` is headroom below 1 ppQ measured from the
+   **serialized** 60, i.e. what reaches a consumer; measured from the
+   compute 70 it is ~55. Say which, since this line's pre-2026-09-08 text
+   (`= 50` → `~35`) used the compute figure.
 3. **The L1 cross-method gate must be tightened 1 ppb → 1 ppQ** once all
    methods are float-clean. As of 2026-05-29, `cross_check_trM_1ppb.py`
    still gates at 1 ppb because the `markov_peel` *fast path* computes in
