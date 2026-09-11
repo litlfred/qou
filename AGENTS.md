@@ -5263,6 +5263,35 @@ re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 > With them restored, the seven blocks that import them compile **plain
 > `lean`-direct, no shadow, exit 0** — confirming the diagnosis above exactly.
 >
+> **🟩 THAT BRANCH IS NOW 7 → 86 OLEANS (2026-09-11, commit `d7e3ae8c662`), and the
+> 79 added are what make the LIBRARY ROOT verifiable.** The seven above unblock
+> seven content blocks. They do **not** cover
+> `Mathlib.RepresentationTheory.Homological.GroupCohomology.LowDegree`, which
+> `QOU.Eightfold.ObstructionH2Mathlib` needs — and the library root `QOU` is
+> **SKIPPED behind that module**, so the single module `lake build QOU` gates on
+> could not be checked in a stock container at all. That was attributed to a
+> container resource limit (bean `qou-ed8a`, repeated in a sibling's merged audit);
+> **it is not one** — it is 79 missing oleans, 188 s to build, 22 MB to fetch.
+>
+> **How the set was identified, and it is NOT by mtime** (an `mtime` discriminator
+> fails here: `shutil.copy2` and a restore both preserve it). An olean in the paper
+> mathlib tree with **no paired `.trace`** is exactly one the main cache did not
+> provide, because `lake-cache/qou-v4-24-0` is 100 % trace-paired while both this
+> branch's restore and a `lean`-direct build write plain oleans. That found **87**;
+> one — `Mathlib/Data/Multiset/ZeroCons.olean`, mtime 2026-08-28, eleven days before
+> the cone was built — is an untraced leftover from an earlier session and is
+> **deliberately excluded**, so the 86 are exactly the 7 + the 79-module cone.
+>
+> **Verify with the SWEEP, not bare `lean`-direct, and the reason is instructive.**
+> Two attempts to verify `ObstructionH2Mathlib` by hand both failed for reasons
+> that were about the command rather than the cache: `lean-direct-env.sh` pins the
+> **ROOT** tree (1298 oleans here against the paper tree's 3563), so it reported a
+> missing *Mathlib* olean; re-pinned to the **paper** tree it reported a missing
+> **QOU** olean (`QOU.Eightfold.ObstructionH2`), which is a sibling library module
+> the sweep builds into its shadow and a bare `lean` never does. Neither was
+> evidence about the gap. `scripts/lean-library-sweep.py --all --only-exact QOU`
+> is the gate.
+>
 > **Seven, not eight, and the difference is NOT settled.** The 8 above came from a
 > full content sweep; the 7 from grepping `import` lines, so a block blocked
 > *transitively* through a `QOU` module would not appear in it. One block remains
