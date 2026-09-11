@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-07T16:20:36Z
+updated_at: 2026-09-11T15:25:52Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -402,3 +402,79 @@ vertex-incidence data, not pulled here.
 Not closed, and specifically not closed as refuted.  Next step is the coboundary test
 above, which is a bounded piece of work: pull the vertex incidences from snappy, set up
 the multiplicative linear system, solve.
+
+
+---
+
+## UPDATE 2026-09-11 (sixth pass) — the COBOUNDARY TEST ran (#7092): YES for sigma_b, NO for sigma_a
+
+Probe `computations/ptolemy/ptolemy_duality_sigma_coboundary_test.py` (+ witness alongside),
+PR #7183, exact in `K = Q[T]/(f)`, decided by the Z-KERNEL of the gauge exponent lattice
+(unimodular column reduction; a Q-basis scaled to integers would only span a finite-index
+sublattice and could miss a root-of-unity obstruction).  Inputs re-confirmed against snappy
+3.3.2: same triangulation as the corpus point (isosig `ivLAPQccddfghghhoooaaaooo`, the 26
+canonical variables match exactly, 34 equations), **6** coordinates eliminated by
+`eliminate_fixed_ptolemys` (not 5 — `c_0012_0, c_0012_1, c_0102_1, c_0111_0, c_1002_0,
+c_2001_0`), and the same 6 for `P^{-c}`, differing only by `u -> u^2`.
+
+### Set-up that had to be settled first
+
+- **Duality on ALL 16 index shapes with SIGNS, derived not measured.** With the dual
+  decoration `g* = (v1 x v2, v1 x v3, v2 x v3)` (det g* = det(g)^2 = 1; this is `g^{-T} J`
+  with `J = antidiag(1,-1,1) in SL(3)`), the `{2,1,0,0}` relabelling has sign **+1** on all
+  twelve indices (`det(a x b, a x c, X) = det(a,b,c) (a . X)`), and the pass-4 (1,3) formula
+  generalises to every `{1,1,1,0}` index: `D_t * x_{s(k)} = det[x_{2 at i, 1 at m}]_{i != j,
+  m != k}` for ANY omitted column-vertex `k` (all four `k` agree on the point — an extra
+  consistency check).  Verified exactly on 25/25 random SL(3) decorations before touching the
+  point.  Different `J`'s differ by a `{+-1}`-valued torus element, i.e. a gauge, so the
+  verdict is `J`-independent.
+- **D(x) is a genuine `P^{-c}` point**: all 32 per-tetrahedron GGZ (5.2) relations hold, and
+  the 128 face identifications hold at `u = u_1` (0 failures) and fail at `u = u_2` (16) —
+  the pass-1 class negation, now at the point level and through duality's own formulas.
+- **The gauge is the decoration torus, 2 parameters per cusp**, `snappy`'s
+  `_ptolemy_equations_action_by_decoration_change` (128 x 6), checked row by row against
+  the GGZ action.  The issue's `lambda_v^{t_i}` is the 1-parameter-per-cusp scalar sub-torus.
+- **The verdict is gauge-invariant** (kernel products of `sigma(x)/D(x)` unchanged under a
+  random exact gauge of `x`; a pure gauge has all 122 kernel products = 1), so treating the
+  6 eliminated coordinates "as unknowns" is automatic — no representative matters.
+
+### Result
+
+- **`Gal(K/Q) = Z/2 x Z/2`.**  `sigma_a^2 = sigma_b^2 = 1`; `tau = sigma_a sigma_b` fixes
+  `Q(zeta_3)`.  This is load-bearing: `D` is an involution (`g** = g`), so `D(x) ~ sigma(x)`
+  forces `sigma^2(x) ~ x`; with `sigma` of order 4 the two verdicts below would contradict
+  each other.  They do not.
+- **`sigma_a`: NOT a coboundary**, for the torus (91 of 122 kernel relations fail) and for
+  the scalars.  Simplest obstruction: `c_0210_0` and `c_0120_0` have IDENTICAL gauge
+  exponents (vertices 1 and 2 of tet 0 both lie on cusp 1) yet
+  `[sigma_a(x)/D(x)](c_0210_0) / [same](c_0120_0) = -128 T^3/113642578125 - 53507/46548`,
+  not a root of unity.  Scope (a): these two explicit maps differ on this point by
+  something that is not a gauge.
+- **`sigma_b`: COBOUNDARY of the PGL(3) decoration gauge over K.**  All 122 torus kernel
+  relations have product exactly 1, so `r = sigma_b(x)/D(x)` is a homomorphism on the row
+  lattice `L = {e in Z^6 : sum e = 0 mod 3}` (every row has entry-sum 3 — the centre `mu_3`
+  acts trivially).  `L` is the character lattice of `T_SL(3)/mu_3 = T_PGL(3)`, the group
+  that actually acts on Ptolemy coordinates, so `r in T_PGL(3)(K)`.  Recorded on a Z-basis:
+  `r(3e_0) = 256 T^3/189404296875 + 308/3879`, `r(e_1-e_0) = r(e_3-e_0) = r(e_5-e_0) =
+  16315/23274 - 256 T^3/113642578125`, `r(e_2-e_0) = 1`, `r(e_4-e_0) = -256 T^3/113642578125
+  - 6959/23274` (columns: `d0,d1` on cusps 0,1,2); all 128 equations re-verified from it.
+  The ratio takes 4 distinct values; 48 of 128 coordinates have ratio exactly 1.
+- **What `sigma_b` does NOT give: an SL(3) lift over K.**  `L` has index 3 in `Z^6`; a
+  diagonal `det = 1` matrix over K needs a cube root of `w = r(3e_0)`, and `Y^3 - w` is
+  IRREDUCIBLE over K (exact algebraic-field factorisation).  So an SL(3) decoration change
+  exists only over `K(w^{1/3})`.  The class of `w` in `K^x/(K^x)^3 = H^1(K, mu_3)` is
+  invariant under K-gauge changes of `x` and under the choice of `J`, so it is a property
+  of the pair `(x, sigma_b)`.
+- **Scalar ansatz (the issue as literally written): NOT a coboundary for either sigma**
+  (first obstruction `c_0021_0` vs `c_0111_0`), with or without the vertex coordinates
+  `c_3000 = 1` (which force `lambda_v in mu_3`).
+
+### Where this leaves the bean — still OPEN, and sharper
+
+"The sigma-transport" is not one map: the two automorphisms inverting `zeta_3` differ by
+`tau`, and `tau(x)` is not gauge-equivalent to `x`.  On this point duality IS the
+`sigma_b`-transport modulo the PGL(3) gauge and is NOT the `sigma_a`-transport modulo any
+gauge.  This is a point-level fact about the class-1 point, not an identity of maps on the
+variety; it says nothing yet about whether `rho -> rho^{-T}` on REPRESENTATIONS induces
+`sigma_b` (the remaining content of this bean), and it selects which sigma that
+identification would have to name.  Rule 13a: not closed.
