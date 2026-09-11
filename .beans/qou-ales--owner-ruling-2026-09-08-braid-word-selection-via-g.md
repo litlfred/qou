@@ -1,11 +1,11 @@
 ---
 # qou-ales
 title: 'OWNER RULING 2026-09-08: braid-word selection via gamma-gamma production + confinement SDP at q0 — no census'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-08T07:40:03Z
+updated_at: 2026-09-11T14:31:29Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -30,3 +30,5 @@ Charitable reading (agent's, marked as reading): *braid* words. Every canonical 
 2. Fix the vd7j net-row over-determination; re-run admissibility; report per-nucleus which words survive, WITHOUT reading AME.
 3. Only then compare the surviving word for p, n, ²H, pp, nn to the template words — the diproton sign is the first falsifiable output.
 Default if nothing is done: words stay template-assigned; §2.2 stays 'chosen'.
+
+Claimed 2026-09-08 by session on branch claude/ales-gg-word-selection-2026-09-08 (step 1+2 only).
