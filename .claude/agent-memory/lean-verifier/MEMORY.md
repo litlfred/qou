@@ -126,6 +126,28 @@ writing "3.2 G recoverable" into a report. Only the **697 M
 `/tmp/lean-v4.24.0-linux.zip`** is genuinely reclaimable. `readlink -f
 ~/.elan/toolchains/*` before proposing any `/tmp` cleanup.
 
+## STABLE — stream the parts INTO `tar`; do not materialise the tarball (2026-09-11)
+
+The leak trap below exists only because the documented recipe writes one
+~1.7 GiB temp file. It does not have to. Fetch into a **throwaway** repo under
+`/tmp` (a fetch into the real `.git` is unreclaimable without gc — and `.git`
+here is already 12 G), then pipe:
+
+```sh
+T=/tmp/cachefetch; rm -rf $T; git init -q $T
+git -C $T remote add origin https://github.com/litlfred/qou   # proxy supplies auth
+git -C $T fetch --depth=1 -q origin lake-cache/qou-v4-24-0    # 95 s, 1.7 G
+C=$(git -C $T rev-parse FETCH_HEAD)
+P=$(git -C $T ls-tree --name-only $C | grep '^lake-oleans\.tgz\.part' | sort)
+( for p in $P; do git -C $T show "$C:$p"; done ) | tar xzf - -C /home/user/qou
+echo "PIPESTATUS=${PIPESTATUS[*]}"   # must be '0 0'; a truncated stream is silent
+rm -rf $T
+```
+
+Measured 2026-09-11 on a fresh container: fetch 1m35s, extract **50 s**, peak
+disk 32 G used / 6.0 G free, back to 7.7 G free after `rm -rf $T`. **Nothing to
+leak, so no `trap` needed** — but keep the `trap` if you do use `$TGZ`.
+
 ## TRAP — the restore's temp tarball is ~1.6G and nothing reaps it
 
 One leaked `/tmp/tmp.*` survived thirteen days and drove the container to
@@ -211,7 +233,22 @@ shared disk pressure, a one-core box running two heavy `lean`s, and a
 half-written olean visible through your hardlink mirror (exit 139, harness §3).
 Check `ps aux | grep '[l]ean -o'` before blaming your own harness.
 
-## STABLE — UGB is NOT in the qou cache; build it lean-direct in ~4 min (2026-09-05)
+## STABLE — UGB *IS* in the qou cache as of the 2026-09-06 reseed (corrected 2026-09-11)
+
+**The heading below is SUPERSEDED; the recipe under it is still the fallback.**
+`lake-cache/qou-v4-24-0` head **`a792c46d01b`** (the 2026-09-06 gap-filled,
+20-part, 1.70 GiB seed) extracts **6492 oleans** and carries all three paper
+packages: root packages **3758**, QOU **2703**, **UGB 29**, **Fred2005 2** —
+plus the seven `mathlib-gap` modules (`RingTheory/HopfAlgebra/Basic`,
+`Topology/FiberBundle/Basic`, `Analysis/Complex/UpperHalfPlane/Basic`, … all
+verified PRESENT). So on a fresh container **one restore is the whole job**:
+no `lake-cache/ugb-v4-24-0`, no `…-root-import-closure`, no
+`scripts/lean-restore-gap-oleans.sh`. Verify by counting before fetching an
+addon. Trace coverage measured **100.0 % in all three trees** (3758/3758,
+2703/2703, 29/29) — so `.lake/RESTORED-NO-TRACES` is correctly ABSENT, and
+the old blanket "a restored tree has no traces" is false for this seed.
+
+### superseded (2026-09-05): UGB is NOT in the qou cache; build it lean-direct in ~4 min
 
 `lake-cache/qou-v4-24-0` carries Mathlib + QOU oleans and **no UGB**, so `lean`
 on anything doing `import QOU` dies at `unknown module prefix 'UGB'` —
@@ -424,8 +461,10 @@ merge is not a current claim.
 
 | what | command | last seen | when |
 |---|---|---|---|
-| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3470** (6990 on 2026-09-03; 3407 on the 2026-08-29 seed) | 2026-09-04 |
-| per-paper mathlib oleans (the OTHER half — always check both) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **2846**; union mirror 5733 | 2026-09-04 |
+| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3480** on the `a792c46d01b` seed (3470 on 2026-09-04; 6990 on 2026-09-03) | 2026-09-11 |
+| per-paper mathlib oleans (the OTHER half — check, but it may not EXIST) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **0 — `content/*/lean/.lake` had `build/` and NO `packages/`**, so ONE mathlib tree, no shadowing, no union mirror (2846 on 2026-09-04) | 2026-09-11 |
+| whole restore, fresh container | `find . -name '*.olean' \| wc -l` | **6492** = root 3758 + QOU 2703 + UGB 29 + Fred2005 2 | 2026-09-11 |
+| cold vs warm lean-direct, `QBeta/ConventionDAdmissibleRoots.lean` | `time lean -DautoImplicit=false -s 65536 <f>` | **1m05s cold / 4.5 s warm**; `user` 3.3 s both — cold PAGE CACHE, not a rebuild | 2026-09-11 |
 | cold vs warm `lean`-direct, one Mathlib file | `time lean <file>` | 1m52s cold / 4.7 s warm; `user` 29 s / 4 s | 2026-09-03 |
 | lean-direct rebuild of the H3-Gram cone (cold) | `lean -o … QOU/{Shared/DetFin,Machinery/MarkovTraceOnHecke,Machinery/HeckeH3GramNondegeneracy,Interactions/GramMatrixH3Symbolic}.lean` | 330 / 245 / 69 / 207 s | 2026-09-03 |
 | whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate | 2026-08 |
@@ -474,7 +513,16 @@ imported module's mmapped region. Scope: `Init`, `Lean.Expr`, `Lean.Parser`,
 `Lean.Environment` all exit 0, but ~40 of 89 `Lean/Elab/*` modules segfault, so anything
 needing the elaborator dies, and every Mathlib module reaches it via `Mathlib.Init`.
 
-**The discriminator, and run it before touching any cache:** count the FOUR artifact
+**🛑 The artifact-count discriminator OVER-FIRES — measured 2026-09-11.** This
+container's `/tmp/lean-v4.24.0/lib/lean` holds **1885 `.olean` / 1885 `.ilean` /
+0 `.trace` / 0 `.c`** — two of the four at zero, which the rule below calls
+corrupt — and the toolchain is **healthy**: `theorem t : 1+1=2 := by decide` plus
+`#eval` exits 0, and every Mathlib-importing file compiles. The GitHub-release
+zip simply does not ship `.trace`/`.c`. **Run the elaborator, don't count files:**
+a 2-line scratch with a `by decide` and an `#eval` is the sound 15-second test;
+fall back to counting only to explain a segfault you have already observed.
+
+**The (weaker) count check:** count the FOUR artifact
 types under the toolchain's `lib/lean`. A healthy 4.24 core has all four in near-equal
 numbers (measured: 1885 / 1884 / 1884 / 1884). Mathlib itself legitimately has
 `.olean` only and **zero** of the other three — it is not module-system'd at
