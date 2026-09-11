@@ -1,0 +1,197 @@
+/-
+# The Option E acceptance test, formalised
+
+`qou-99qc`. The decay ansatz is `Q_β = |ε(Δ)| · E₀`, with `Δ` an element of
+`H₃(q)` and `ε` a functional. Convention D admits exactly two `ε`, the Wenzl
+levels `r = 1` (the augmentation, `z = q`) and `r = 2` (`z_D = q³/(q²+1)`) —
+`QOU.QBeta.ConventionDAdmissibleRoots` and `QOU.SchurWeyl.WenzlWeightLevelR`.
+
+*Option E* is the proposal to keep an admissible functional and change the
+**element**. The compute probe
+`computations/qbeta/qbeta_option_e_required_level_probe.py` measured that every
+candidate `Δ` the corpus has built fails the test, and produced two structural
+statements that are not about any particular candidate. This file proves those,
+so the argument does not rest on the numerics:
+
+* `trAt_eq_quadratic` — on the normal-form basis the Markov trace at parameter
+  `z` is a **quadratic** in `z` with explicit coefficients. Hence a fixed `Δ`
+  together with a target *determines* `z`: "which element" and "which
+  functional" are one question, not two.
+* `brackets_forces_interior_root` / `endpoints_not_roots_of_brackets` — if a
+  candidate **overshoots** at one admissible level and **undershoots** at the
+  other, then the parameter it needs lies strictly *between* them, and neither
+  admissible level is a solution. This is the acceptance test in its usable,
+  contrapositive form: *a candidate that brackets the target is rejectable
+  without solving anything.*
+* `monoidHom_order_blind` / `augmentation_difference_order_blind` — a
+  **multiplicative** functional is invariant under reordering the letters of a
+  word, so it sees only the multiset of crossings. Level 1 is multiplicative
+  (`qbeta_augmentation_is_a_markov_trace_probe`), so an Option E element that
+  differs from an existing one only by re-ordering, or by a different
+  generator assignment, is **at level 1 the same number**.
+* `coordSum_sub_trAt_one` — the corpus's `net` is the *coordinate sum*, and it
+  differs from the trace at `z = 1` by exactly `h · (e⁻ coordinate)`. So the
+  identification "coordinate sum = tr at z = 1" holds exactly on elements with
+  vanishing `e⁻`, which is a property of the element, not a convention.
+
+Nothing here selects an element or proposes a value. Base ring is generic
+`CommRing` wherever the statement is algebraic; `ℝ` appears only in the
+intermediate-value argument, which needs the order and the topology.
+
+-- Ref: [manuscript] `docs/audits/2026-09-05-qbeta-functional-decision-options.md` §3, Option E
+-/
+import Mathlib.Algebra.BigOperators.Group.List
+import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Topology.Algebra.Order.IntermediateValue
+import Mathlib.Topology.Algebra.Polynomial
+
+namespace QOU.QBeta
+
+/-! ### The normal-form basis and the Markov trace on it -/
+
+/-- Coordinates of an element of `H₃(q)` in the normal-form basis
+`[γ, σ₀, σ₁, L₋, L₊, e⁻]` used by the corpus's `Δ`-candidate census. -/
+structure NFVec (R : Type*) where
+  gamma : R
+  s0 : R
+  s1 : R
+  Lminus : R
+  Lplus : R
+  eminus : R
+
+namespace NFVec
+
+variable {R : Type*} [CommRing R]
+
+/-- The Markov trace at parameter `z`, read off the basis weights
+`[1, z, z, z², z², z(hz+1)]`. -/
+def trAt (h z : R) (v : NFVec R) : R :=
+  v.gamma + z * v.s0 + z * v.s1 + z ^ 2 * v.Lminus + z ^ 2 * v.Lplus
+    + z * (h * z + 1) * v.eminus
+
+/-- The **coordinate sum**: every basis element weighted by `1`. This is the
+functional the corpus calls `net`. -/
+def coordSum (v : NFVec R) : R :=
+  v.gamma + v.s0 + v.s1 + v.Lminus + v.Lplus + v.eminus
+
+/-- **The trace is a quadratic in `z`, with explicit coefficients.**
+
+This is the structural fact behind the acceptance test: for a *fixed* element
+the map `z ↦ trAt h z v` is a quadratic, so requiring it to take a prescribed
+value does not leave a free choice of `z` — it determines `z` up to which of
+two roots. "Which element" and "which functional" are therefore one question. -/
+theorem trAt_eq_quadratic (h z : R) (v : NFVec R) :
+    v.trAt h z =
+      v.gamma
+        + (v.s0 + v.s1 + v.eminus) * z
+        + (v.Lminus + v.Lplus + h * v.eminus) * z ^ 2 := by
+  simp only [trAt]
+  ring
+
+/-- **The coordinate sum is not the trace at `z = 1`.** They differ by exactly
+`h` times the `e⁻` coordinate, because the trace weights `e⁻` by `z(hz+1)`,
+which is `h + 1` at `z = 1`, not `1`. -/
+theorem coordSum_sub_trAt_one (h : R) (v : NFVec R) :
+    v.coordSum - v.trAt h 1 = -(h * v.eminus) := by
+  simp only [coordSum, trAt]
+  ring
+
+/-- The two functionals agree exactly on elements whose `e⁻` coordinate
+vanishes — a property of the element, not a choice of convention. -/
+theorem coordSum_eq_trAt_one_of_eminus_eq_zero (h : R) (v : NFVec R)
+    (he : v.eminus = 0) : v.coordSum = v.trAt h 1 := by
+  have := coordSum_sub_trAt_one h v
+  rw [he] at this
+  linear_combination this
+
+end NFVec
+
+/-! ### Level 1 is the augmentation
+
+At `z = q` with `h = q - q⁻¹` the basis weights collapse to
+`1, q, q, q², q², q³` — the augmentation `σᵢ ↦ q` on the basis
+`1, σ₀, σ₁, σ₁σ₀, σ₀σ₁, σ₀σ₁σ₀`. The only weight that is not visibly a power
+of `q` is the last, and it is one. -/
+
+/-- **The `e⁻` weight at level 1 is `q³`.** With `h = q - q⁻¹`,
+`q·(h·q + 1) = q³` — so the trace at `z = q` really is the augmentation on the
+whole basis, not merely on the short words. -/
+theorem eminus_weight_at_level_one {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
+    q * ((q - q⁻¹) * q + 1) = q ^ 3 := by
+  field_simp
+  ring
+
+/-! ### Multiplicativity forces order-blindness
+
+The augmentation is an algebra map, so it is a product over the letters of a
+word; a product over a list is invariant under permuting the list. This is why
+level 1 cannot distinguish two words built from the same multiset of crossings
+in a different order — and hence why an Option E element must differ in the
+**multiset**, not the braid. -/
+
+/-- **A multiplicative functional is blind to the order of a word.** -/
+theorem monoidHom_order_blind {M R : Type*} [Monoid M] [CommMonoid R]
+    (ε : M →* R) {w w' : List M} (hperm : w.Perm w') :
+    ε w.prod = ε w'.prod := by
+  rw [hperm.prod_eq]
+
+/-- **Order-blindness passes to a difference of two words.**
+
+`Δ = 𝓑_n - 𝓑_p` is a difference of two words. If each is re-ordered — which is
+what a different generator assignment or a different interleaving does — the
+value of a multiplicative functional on the difference is unchanged. So at
+level 1 those variants are not different candidates at all. -/
+theorem augmentation_difference_order_blind {M R : Type*} [Monoid M] [CommRing R]
+    (ε : M →* R) {n n' p p' : List M} (hn : n.Perm n') (hp : p.Perm p') :
+    ε n.prod - ε p.prod = ε n'.prod - ε p'.prod := by
+  rw [monoidHom_order_blind ε hn, monoidHom_order_blind ε hp]
+
+/-! ### The acceptance test
+
+If a candidate overshoots the target at one admissible level and undershoots it
+at the other, the parameter it needs is strictly between them. Since the
+admissible parameters are exactly the two endpoints, such a candidate cannot be
+closed at either — and that is checkable from the two endpoint values alone,
+with no solving. -/
+
+/-- **Bracketing forces an interior root.** -/
+theorem brackets_forces_interior_root {f : ℝ → ℝ} {a b T : ℝ} (hab : a < b)
+    (hf : ContinuousOn f (Set.Icc a b)) (hlo : f a < T) (hhi : T < f b) :
+    ∃ c ∈ Set.Ioo a b, f c = T := by
+  have hsub := intermediate_value_Ioo hab.le hf
+  have hmem : T ∈ Set.Ioo (f a) (f b) := ⟨hlo, hhi⟩
+  obtain ⟨c, hc, hfc⟩ := hsub hmem
+  exact ⟨c, hc, hfc⟩
+
+/-- **The acceptance test, in the form a reader can apply.** A candidate that
+brackets the target takes the target value at *neither* admissible parameter.
+No continuity is needed for this half: the two strict inequalities are the
+whole argument, which is what makes the test cheap. -/
+theorem endpoints_not_roots_of_brackets {f : ℝ → ℝ} {a b T : ℝ}
+    (hlo : f a < T) (hhi : T < f b) :
+    f a ≠ T ∧ f b ≠ T :=
+  ⟨ne_of_lt hlo, (ne_of_lt hhi).symm⟩
+
+/-- The quadratic of `trAt_eq_quadratic`, as a function of `z` over `ℝ`. -/
+noncomputable def traceCurve (A B C : ℝ) : ℝ → ℝ := fun z => A + B * z + C * z ^ 2
+
+theorem continuous_traceCurve (A B C : ℝ) : Continuous (traceCurve A B C) := by
+  unfold traceCurve
+  fun_prop
+
+/-- **Capstone.** For the actual trace curve of a fixed element: bracketing the
+target across the two admissible parameters forces the required parameter into
+the open interval between them, and excludes both admissible parameters.
+
+`a` and `b` stand for the two admissible Markov parameters (`z_D` and `q`), `T`
+for `Q_β / E₀`. The hypotheses are exactly what the probe measures per
+candidate; the conclusion is what it reports. -/
+theorem option_E_rejected_of_brackets {A B C a b T : ℝ} (hab : a < b)
+    (hlo : traceCurve A B C a < T) (hhi : T < traceCurve A B C b) :
+    (∃ c ∈ Set.Ioo a b, traceCurve A B C c = T) ∧
+      traceCurve A B C a ≠ T ∧ traceCurve A B C b ≠ T := by
+  refine ⟨brackets_forces_interior_root hab ?_ hlo hhi,
+    endpoints_not_roots_of_brackets hlo hhi⟩
+  exact (continuous_traceCurve A B C).continuousOn
+
+end QOU.QBeta
