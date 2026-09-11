@@ -1573,3 +1573,52 @@ below; no claim is made about its sign. **`qou-k5r5` stays OPEN.**
 ## 2026-09-08 coordination: same kernel as qou-x631, qou-o6ov, qou-za3q, qou-omr7
 
 Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 1 / §7.3 C2: `k5r5` (99 commits, 08-21 → 09-08) and `o6ov` (99 commits, 08-30 → 09-05) both work the odd-moment / Magnus `tr(ρ_λ Ω₂)` kernel, and before this note there were **zero** cross-citations among k5r5 / o6ov / x631 / za3q / omr7 (measured 2026-09-08 by grepping each body for the other four ids). Shared ledger: epic `qou-x631`, now parent of the other four. Roles — x631: epic, Cov_Planch(f^λ, Σc²) ≤ 0 / T₃(k) kernel; k5r5: M₁ > 0 (first odd moment), all-n proof OPEN, identity Lean-proved; o6ov: does |tr(ρ_λ Ω₂)|/dim decay in b across the ≤2-row column (open mathematics, rescoped 2026-09-05, PR #6822); za3q: Magnus-Ω₂ probes use the Plancherel weight y_λ, 91 % of their work on shapes tr_M annihilates; omr7: Magnus probes' d_q was the hook product, weight inverted (4 files, PR #6442). Statuses are unchanged by this note; a result landing on any of the five should be cited in the other four.
+
+---
+
+## 2026-09-11 (cont.) — the tilt identity is now proved AT THE REAL OBJECTS (PR #7189)
+
+PR #7178 proved the tilt identity for an arbitrary finite family over an arbitrary field.
+That is a lemma about polynomials: on its own it says nothing about Plancherel measure,
+`omega_3`, or `M_1`. #7189 discharges its hypothesis at the corpus's own Plancherel datum.
+
+**The hypothesis is DERIVED, not assumed.** `tilt_deriv_eq_wCov` needs `wMean w f = 0` with
+`w = dim^2`, `f = omega_3 = Sum_c c^2 - binom(n,2)`. From the two `PlancherelSnData` fields
+already in the corpus — `sum_dim_sq : Sum dim^2 = n!` and `two_sum_dim_sq_content :
+2 Sum dim^2 Sum c^2 = n(n-1) n!` — we get `Sum dim^2 omega_3 = 0` EXACTLY.
+
+Four theorems in `QOU/MassTheory/PlancherelTiltDerivative.lean`, all with axioms
+`[propext, Classical.choice, Quot.sound]`, no `sorryAx`:
+
+| declaration | statement |
+|---|---|
+| `plancherel_weighted_omega3_sum_eq_zero` | `Sum dim^2 omega_3 = 0` |
+| `plancherel_wMean_omega3_eq_zero` | `wMean = 0` |
+| `plancherel_tilt_deriv_eq_wCov` | `R'(1) = Cov_Planch(hgt, omega_3)` |
+| `plancherel_tiltNum_eval_one_eq_zero` | `R(1) = 0` |
+
+**The fourth is the one worth citing.** It says the quantity a limit-shape evaluation
+computes is IDENTICALLY ZERO at the point where such an evaluation happens — `qou-ujil`'s
+objection as a theorem rather than a remark, and the reason the derivative is the
+informative object.
+
+**EPISTEMIC STATUS — do not over-read.** `[PlancherelSnData n]` is a CLASS HYPOTHESIS
+(§3b-cond), so all four are CONDITIONAL. The class is not a hole (the corpus inhabits it at
+every `n` from RSK + Okounkov-Vershik, and its unlabelled Wedderburn form is unconditional
+and sorry-free), but **conditional-proved is not premise-established** — cite as "modulo
+`PlancherelSnData`", never flatly.
+
+`hgt` is left ARBITRARY deliberately: the identity does not need `hgt = Sum_h`, and pinning
+it there would claim less while looking like more.
+
+**What is still NOT Lean.** `M_1 > 0` (the gap). The `kappa_n` crossing of `sqrt(2)/24`
+(a numerical comparison over a committed window). The shifted-symmetry negative (exact
+Gaussian elimination in Python at degree bounds 6/8/10). `R(x) > 0` for `x > 1` and the
+nonlinearity tail (measured to `n <= 22`). **The reformulation is formalised; the
+measurements are not.**
+
+**Build note for the next agent:** compile against a HARDLINKED MIRROR of the QOU olean
+tree. A separate shadow root shadows `QOU` and does NOT fall through to the real tree —
+that cost one failed attempt. Shadow removed afterwards; real olean tree untouched.
+
+**`qou-k5r5` stays OPEN.**
