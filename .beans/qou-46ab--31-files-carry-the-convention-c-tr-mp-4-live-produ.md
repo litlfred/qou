@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T06:41:11Z
-updated_at: 2026-08-30T14:28:05Z
+updated_at: 2026-09-11T14:53:37Z
 ---
 
 Generalised from qou-5ll9, where `atomic-tr-m-helium4.witness.json` was shown
@@ -472,3 +472,72 @@ convention-independent and are marked as such.
 
 **Residues after this pass:** one — the `qou-mass/.../data/_deprecated/`
 mirror, correctly left alone.
+
+
+## 2026-09-11 — both reopened sites are FIXED; the rounding-aware re-scan is now RUN, and 31 was low by 2.3x
+
+Pulled off the `qou-bstl` completion-candidate queue. The flagging commit matches
+the 2026-08-30 *"Residues after this pass: one"* section — but that section was
+**superseded five days later** by the 2026-09-05 reopening above, so the bean is
+a partial-completion false positive. Two things measured today.
+
+### Both live sites of the 2026-09-05 reopening have landed
+
+    QOU/Interactions/MarkovPeelH3.lean       :29-40  correction block present —
+        "This comment previously stated +1.065306228592389333... and claimed it
+         'matches ... to ~4·10⁻¹⁶'. Both halves were wrong", with the true
+         1.1457597823152389404 and the 7.02·10⁻² gap stated, C value excised.
+
+    prop:q-hecke-seminormal-character-closure  :96-105  "Migrated C → D,
+        2026-09-05 (qou-i229 → qou-46ab, owner-approved)", with the full
+        was/now/ratio table — Proton 1.06530622859 → 1.14575978232, ratio 1.0755.
+
+So the two sites that published a convention-C value under a claim of
+verification no longer do.
+
+### The re-scan this bean ASKED FOR has now been run — and confirms its own prediction
+
+The standing instruction was: *"Anything relying on that 31 should be re-derived
+with a rounding-aware match, and `content/` and `lean/` belong in scope."* Never
+done; the two sites above were found by `scripts/witness-block-agreement.py`, not
+by any scan. Run now — match any decimal literal of ≥10 significant digits that
+agrees with the target on its shared prefix, across `content/ docs/ computations/
+tools/`, excluding `_deprecated`, `__pycache__`, `.lake`, `.claude`, `_internal`:
+
+| | bean's literal scan | rounding-aware | split |
+|---|---|---|---|
+| `tr_M(proton)` C-frame | 31 | **70** | computations/ 50, content/ 9, docs/ 11 |
+| `tr_M(neutron)` C-frame | 20 | **23** | computations/ 11, content/ 6, docs/ 6 |
+
+**31 → 70 is 2.3x**, and it lands exactly where the bean predicted: the literal
+`1.06530622861316` cannot see `1.06530622859`, `1.0653062286` or
+`1.065306228592389333`, which are the same number at three renderings.
+
+Reproduce (kept here rather than added as a script — it is a measurement, not
+infrastructure):
+
+    NUM = re.compile(r'(?<![\w.])(\d\.\d{9,})')
+    # accept when |v - target| < 10^-(n-1), n = shared decimal places, n >= 9
+
+### 🛑 70 is a CANDIDATE count, not a defect count — do not sweep it
+
+Spot-checked, and a large share are **correct records that must not be
+"fixed"**:
+
+  * `MarkovPeelH3.lean:36,40` are *inside the correction block*, which quotes
+    both renderings by design — the fix is why they match.
+  * `q-hecke-seminormal-character-closure.md:104,111` are *inside the migration
+    table*, whose left column is headed "was (convention C)".
+  * the `.qa.json` sidecars mirror block content, so they inherit both.
+  * `docs/audits/*` are dated records of their own analyses — the same decision
+    `qou-3nva` took on the `4.66e6` drain, and it stands.
+  * `the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py`
+    is the probe *about* this defect; its hit is the point.
+
+The interesting subset remains what this bean already called it: **live
+producers hardcoding the C value as a reference**, which the 2026-08-30 pass
+recorded as drained. What the re-scan adds is that the *denominator* those
+passes worked against was 2.3x too small, so "drained" should be re-verified
+against 70 rather than 31 before anyone calls the code side done.
+
+Bean stays `todo`. Nothing changed; this measures.
