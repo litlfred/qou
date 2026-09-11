@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-08T08:28:15Z
+updated_at: 2026-09-11T15:01:36Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -960,3 +960,61 @@ not an axiom or `sorry`). Nothing new is assumed by the obtuse half.
 **Not closing this bean.** Whether the `γ = π/2` slice and the shared A1 citation
 leave H4-5 "done" is an owner call, and per AGENTS.md rule 13a a bean is not
 completed because the recording of its state is complete.
+
+
+## 2026-09-11 — the `γ = π/2` slice is closed; the whole simplex is covered
+
+`idealTetVolume_of_vertices_right` plus its chimney and tiling companions
+(`ObtuseTiling.lean`, sorry-free). With the acute theorem on `main` and the
+obtuse one from 2026-09-08, every admissible triple now falls in exactly one of
+three cases — **acute** (`α, β, γ < π/2`), **obtuse** (`π/2 < γ`),
+**right-angled** (`γ = π/2`).
+
+### Retracting the reason I left it out
+
+The 2026-09-08 entry says the acute and obtuse theorems "cover every admissible
+triple **except `γ = π/2` exactly**, where `W_sub` degenerates to a half-plane
+and the `ψ < π/2` wedge machinery fails on both sides. That slice is not
+claimed." Two things wrong with that, independently:
+
+1. **`W_sub` does not degenerate to a half-plane — it degenerates to the empty
+   set.** `wedgeAt_pi_div_two_eq_empty`: Lean's `tan (π/2) = 0` makes the angular
+   condition `|perp| < 0`. That is not a junk-value artifact; it is right. The
+   chord bound `⟨w,u⟩ < R cos(π−γ) = 0` cuts away precisely the half-plane the
+   half-turn opening would sweep.
+2. **It is therefore the EASIEST of the three, not the hard leftover.** Nothing
+   to subtract, and — unlike the obtuse case — no `γ`-chord null set either.
+
+Both are the same error twice: reasoning about a degeneration from its
+*description* rather than evaluating it. Structurally identical to the "fourth
+acuteness gate" retracted the same week, which reasoned about a hypothesis from
+its *signature* rather than reading the proof. Third instance of this class in
+this bean.
+
+### What carries it
+
+The two certificates again, a third use. At `cos γ = 0` each collapses to one
+term, and the `γ`-chord comes out **strict**:
+
+    perp_{t+2γ}·sin β = cos α·(γ-chord slack)     W_α's lower edge ⟹ slack > 0
+    perp_t·sin α      = −cos β·(γ-chord slack)    W_β's upper edge ⟹ slack > 0
+
+In the obtuse case that chord is extracted from `w ∉ W_sub`
+(`gamma_chord_of_notMem_sub`) and concludes `≤`, which is exactly what forces
+`volume_chordLine`. Here `W_sub` is empty, so that hypothesis carries no
+information and the certificates supply the chord directly.
+
+Also generalised: the two cone bounds and the covering now take `π/2 ≤ γ` (they
+only ever needed `cos γ ≤ 0`), with `α, β < π/2` derived inline since
+`acute_of_obtuse_third`'s hypothesis is strict.
+
+### Residual — unchanged, and it is the only one left
+
+All three cases rest on the same single cited totally-geodesic /
+normalized-position identification (`geodesicPlaneThrough`, File A1 — a
+definition with a citation, not an axiom or `sorry`). The obtuse and
+right-angled halves assume nothing the acute one does not.
+
+**Still not closing this bean.** Whether that shared citation leaves H4-5 "done"
+is an owner call, not mine — rule 13a. What has changed since the last entry is
+that the coverage caveat I attached to that question is gone.
