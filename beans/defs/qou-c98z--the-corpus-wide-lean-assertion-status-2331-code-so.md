@@ -1,11 +1,11 @@
 ---
 # qou-c98z
-title: 'The corpus-wide Lean assertion status: 2331 code sorries, 435 files with no -- Ref: anywhere'
+title: 'What is actually proved in Lean: 4 sorry files corpus-wide, but 182 open conjectures — sorryAx is the wrong detector'
 status: todo
 type: task
 priority: normal
 created_at: 2026-09-11T14:48:36Z
-updated_at: 2026-09-11T14:50:01Z
+updated_at: 2026-09-11T15:11:59Z
 ---
 
 **Question asked (owner, 2026-09-11): "all assertions proved in lean?"** Answer: **no**,
@@ -102,3 +102,96 @@ is why this bean exists.
    that belongs in any honest statement of what the paper proves.
 2. **The 435** are a discipline sweep and want one owner and a scoped sign-off; do not
    start it off this bean.
+
+
+---
+
+## 🛑 CORRECTION, SAME SESSION — every Lean figure above is WRONG, and all of them by a lot
+
+The counts above came from a `sorry` scan that stripped **only `--` line comments**. Lean
+also has **nestable `/- … -/` block comments, `/-- … -/` docstrings, and string literals**,
+and *this corpus discusses `sorry` constantly in prose* — "sorry-free", "carries `sorry`
+per §1a", "a naked `sorry`". Overwhelmingly the word is a **mention**, not a use.
+
+Re-measured with a real stripper (nesting, docstrings and strings handled;
+**self-tested** on a case carrying a docstring mention, a line-comment mention, a
+block-comment mention, a string-literal mention and two genuine sorries — it returns
+exactly the two):
+
+| figure | reported above | **actual** |
+|---|---|---|
+| files with a code-position `sorry` | 1051 | **4** |
+| `sorry` occurrences | 2331 | **9** |
+| provable-kind blocks carrying one | 99 | **1** |
+| files with **no** `-- Ref:` | 435 | **0** |
+| declared `axiom` | 184 | **112** |
+| conjecture-carrier `class … : Prop` | 238 | **237** |
+| corpus `.lean` files | 3761 | 3761 ✓ |
+
+**The `-- Ref:` finding was the worst of them and is fully retracted.** AGENTS.md §1 is
+**kept**: all four sorry-carrying files cite. There is no 435-file discipline violation and
+no sweep to propose. The whole "§1 is not being kept" section above is void.
+
+### The four, in full
+
+| file | block kind | reading |
+|---|---|---|
+| `observations/higgs-t28.lean` | conjecture | 3 sorries in the conjecture **instance** — §3b honest open-state |
+| `nuclear-interactions/periodic-table-demand-conjecture.lean` | remark | 4, same pattern, canonical instance |
+| `mass-theory/gram-determinant-plancherel-ratio.lean` | proposition | 1, in the **auxiliary** `gram_kappa_numerical_value`, two `-- Ref:` and a "**What is open**" docstring — §1a disposition 2, textbook |
+| `fred2005-formal-groups/lean/Fred2005/FormalGroups.lean` | (library) | 1, cited to the literature, "stated here with `sorry`, cited, not re-derived" |
+
+### Independent corroboration: a per-declaration `sorryAx` pass
+
+Ran `#print axioms <lean.ref>` on all 99 of the (wrongly) flagged blocks, `lean`-direct
+against the restored olean cache, `-DautoImplicit=false -s 65536`. Result: **77 resolved,
+0 `sorryAx`, 0 compile errors**; 22 returned `Unknown constant` because their `lean.ref`
+resolves to the library rather than the sibling (§0a candidate 2), not because anything
+failed.
+
+**The detector was self-tested before that number was believed**, because a test that has
+never fired is not a verified test: on `theorem t : 2+2=5 := by sorry` it prints
+`depends on axioms: [sorryAx]`, and on a `decide`-discharged twin `does not depend on any
+axioms`. It fires.
+
+## 🛑 And the corrected numbers do NOT mean the corpus is proved
+
+This is the part that matters, and it is the reason `sorryAx` is the **wrong** detector for
+the owner's question.
+
+Under **§3b-cond**, an open conjecture is carried as a `class C : Prop` with **no
+instance**, and downstream results take `[C]` as a hypothesis. Such a theorem is genuinely
+sorry-free *and* `#print axioms` reports **no** `sorryAx` — there is no `sorry` anywhere,
+the conjecture is simply *assumed*. That is precisely AGENTS.md
+§"Axiomatization is NOT a Proof": *"creating an `axiom`, `sorry`, or a conditional `class`
+… does NOT count as proving it."*
+
+So **"0 sorryAx" measures that the corpus uses classes, not that it proves things.** The
+unproved content lives in:
+
+| | count |
+|---|---|
+| content blocks of kind **`conjecture`** (declared open) | **182** |
+| conjecture-carrier `class … : Prop` | **237** |
+| declared `axiom` | **112** |
+
+against **770** provable-claim blocks (632 proposition, 67 theorem, 52 lemma, 19 corollary)
+of 3193 total.
+
+**Answer to "all assertions proved in lean?": no — but the gap is not `sorry`, it is the
+182 declared conjectures and the class-conditional results downstream of them.** The
+corpus is honest about this by construction; the `sorry` count was never the right place to
+look, and my first pass looked there and then miscounted it.
+
+## What would actually answer the question
+
+Not another `sorry` scan. The real measurement is: **for each of the 770 provable-claim
+blocks, is its Lean declaration unconditional, or does its signature bind a conjecture
+class?** A `[C]` binder in the type *is* the dependency edge (§3b-tax says the taxonomy is
+derived from exactly this), so it is statically extractable from the declaration signature —
+no elaboration needed. That number — unconditional vs conditional-on-an-open-class — is the
+honest statement of what the paper proves, and nothing in the corpus currently reports it.
+
+Filed as the real next step here rather than in a new bean. **Not started** — it is a
+measurement, so the 2026-09-07 ASK-THE-OWNER directive does not gate it, but it is a real
+piece of work and should not be started while the owner may want something else.
