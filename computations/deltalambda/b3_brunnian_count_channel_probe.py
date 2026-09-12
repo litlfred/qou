@@ -1,55 +1,99 @@
 #!/usr/bin/env python3
-"""b_3 from the Brunnian count channel: the framework's own prediction, and it FAILS ON SIGN.
+"""The count channel gives the triple mutual energy the WRONG SIGN -- and the first
+version of this probe reached that conclusion through a hypothesis its carrier fails.
 
 Bean `qou-ix0x` (its FIRST BRICK RUN entry), companion `qou-brng`. Under `qou-x631`.
 
-WHAT THE BEAN ASKED FOR, verbatim:
+===============================================================================
+CORRECTION, 2026-09-12, TO THIS PROBE'S OWN FIRST VERSION -- read this first
+===============================================================================
 
-    compute `w3` for L6a4 -- the mutual crossing energy of a pair measured *inside the
-    triple* -- and check `-(w3 ijk + w3 ikj + w3 jki)` against `+1.4262225 MeV`.
+The first version concluded "predicted b_3 = -0.627 against AME +1.4262" by citing
 
-and calls it "a PREDICTION, not a fit ... `w3` is determined by the carrier's crossing
-structure, and `b_3` is measured. Nothing is tuned."  That is right, and it is exactly why
-the result below is worth recording: the prediction is falsifiable and it is falsified, on
-a sign, before any question of magnitude arises.
+    QOU.Mass.CrossingModelPairLocality.b3_eq_neg_tripleMutual_of_brunnian
 
-THE INPUTS, none of them chosen here.
+as though its hypothesis held for L6a4.  **It does not**, and the corpus had already
+said so four days earlier.  That theorem's hypothesis was RENAMED on 2026-09-07 from
+`Brunnian` to `NoIsolatedPairEnergy` precisely because two unrelated properties shared
+one name.  `QOU.Mass.BrunnianTierDisambiguation` lists four tiers:
 
-  * The carrier is `L6a4` = the Borromean rings (`computations/binding_link_volumes.py`:
-    "L6a4 IS the Borromean link", Vol = 8G = 7.3277248), the 3He/4He building block.
-  * It is BRUNNIAN: every pairwise Gauss linking number is zero. In the standard 6-crossing
-    diagram each of the 3 component pairs carries 2 inter-component crossings, and lk = 0
-    forces n_+ = n_- = 1 on each pair.
-  * The channel split is PROVED in Lean, sorry-free
-    (`QOU.Mass.BrunnianBindingChannel`, mirroring `QOU.Braiding.CrossingEnergy.decomposition`):
+    T1  TRUE BRUNNIAN           every proper sub-link is the UNLINK
+    T2  LINKING VANISHES        every pairwise Gauss linking number is 0
+    T3  LINKING VANISHES AT k   the same, localised at one component
+    T4  NO ISOLATED PAIR ENERGY a pair carries no mutual ENERGY in isolation
 
-        pairEnergy(n+,n-,q)    = n+ q - n- q^-1
-        signedChannel(n+,n-,q) = (n+ - n-)(q + q^-1)/2      <- writhe = 2 lk
-        countChannel(n+,n-,q)  = (n+ + n-)(q - q^-1)/2      <- crossing COUNT
+L6a4 satisfies T1 and T2.  The theorem's hypothesis is **T4**, and
+`QOU.Mass.BrunnianHypothesisNotSatisfied` proves L6a4 fails it, twice over: the
+corpus's own `brunnian_binding_survives` gives `0 < countChannel m m q`, and the
+measured `b_2 = 2.2245662` MeV is a nonzero isolated-pair binding outright.
 
-    and `brunnian_signedChannel_zero` gives signedChannel(m,m,q) = 0, so on a Brunnian pair
-    the mutual energy IS the count channel.
-  * `b_3 = -tripleMutual` on a Brunnian carrier is likewise PROVED
-    (`QOU.Mass.CrossingModelPairLocality.b3_eq_neg_tripleMutual_of_brunnian`), with its own
-    docstring: "No pair contamination and no free constant".
-  * The target is AME2020's `b_3 = +1.4262225` MeV (`AmeBindingNotPairwise.ame_b3_eq`).
+That file's own words: *"a correct theorem whose hypothesis L6a4 does not satisfy"*,
+and the tier file's: *"on 2026-09-07 that cost a wrong reading of the three-body
+binding channel: a theorem whose hypothesis is tier 4 was applied to a carrier that
+satisfies only tier 2, on the strength of the shared name."*  The first version of
+this probe is a second instance of the identical error, committed after the fix was
+on `main` and reachable by a corpus-grep of the theorem name.
 
-THE RESULT.  The count channel is strictly POSITIVE for q > 1 -- `q - q^-1 > 0` -- so every
-`w3` is positive, `tripleMutual` is positive, and `b_3 = -tripleMutual` is NEGATIVE.  AME
-measures it POSITIVE.  The disagreement is in the sign and is independent of any energy
-scale: no positive scale factor can repair it.
+**The conclusion survives the correction and gets STRONGER, which is why the
+correction is worth making carefully rather than quietly.**  Dropping T4 does not
+weaken the negative -- it raises the target the count channel has to hit, from
+1.4262 MeV to 8.0999 MeV, and leaves the sign failure untouched.
 
-That is a scope-(a) negative about THIS construction -- `b_3 = -(unsigned count channel)`
-on the Brunnian carrier -- and it is NOT a structural exclusion of the count channel, of
-the Brunnian carrier, or of `b3_eq_neg_tripleMutual_of_brunnian`, which is a theorem and
-stays true.  What it excludes is the identification of `w3` with `countChannel` at q > 1.
+===============================================================================
+WHAT THIS PROBE NOW DOES -- no T4 anywhere
+===============================================================================
 
-AND THE MAGNITUDE WAS NEVER DETERMINED ANYWAY -- report this too, or the sign result reads
-as the only problem.  `countChannel` is DIMENSIONLESS; turning it into MeV needs a scale
-this construction does not supply.  The probe prints the two obvious candidates (the CAL-1
-electron scale `m_e`, and `m_e` times nothing else) and shows the |b_3| they give, so the
-size of the second gap is on the record alongside the first.  A probe that reported only
-"sign wrong" would hide that even the sign-corrected magnitude misses by ~4.5x.
+The connected cumulant is defined without any hypothesis
+(`QOU.Mass.PairwiseCumulantVanishing.BindingMap.b3`):
+
+    b_3(i,j,k) = triple(i,j,k) - ( pair(i,j) + pair(i,k) + pair(j,k) )
+
+and the crossing model's `toBindingMap` sets `pair = -w2`, `triple = -tripleMutual`.
+Substituting, with no hypothesis at all:
+
+    b_3 = -tripleMutual + ( w2_ij + w2_ik + w2_jk )
+
+T4 is the special case `w2 = 0`, which collapses this to `b_3 = -tripleMutual`.  We
+do not need it: the corpus MEASURES both cumulants, in one witness
+(`computations/probes/pair-locality-shortfall.witness.json`):
+
+    b_2 = 2.2245662   MeV      (the isolated-pair binding; this is what refutes T4)
+    b_3 = 1.42622016  MeV      (A=3 shortfall: B_AME 8.09991876 - 3 x b_2 6.6736986)
+
+so `pair = b_2` gives `w2 = -b_2`, and the triple's TOTAL mutual energy is fixed:
+
+    tripleMutual = -( b_3 + 3 b_2 ) = -8.09991876 MeV
+
+which is just `-B_AME(A=3)`, as it must be.  **The corpus's own data therefore
+requires a strongly ATTRACTIVE (negative) triple mutual channel**, and says how
+negative.  Nothing here is fitted: both cumulants are measured, and the relation is
+the definition of the cumulant.
+
+===============================================================================
+THE RESULT
+===============================================================================
+
+The count channel is strictly POSITIVE for q > 1 -- `q - q^-1 > 0` -- so under the
+identification `w3 = countChannel` every `w3 > 0` and `tripleMutual > 0`.  The
+requirement is `tripleMutual = -8.09991876` MeV.  **Sign wrong**, and the sign is
+independent of any positive energy scale.
+
+The magnitude misses too, and by more than the first version reported, because the
+target moved up: `countChannel` is dimensionless, and the nearest candidate scale
+(CAL-1 `m_e`) gives `|tripleMutual| = 0.3205` MeV against `8.0999` -- about 25x
+short, where the T4 reading made it look like 4.5x.  The scale is NOT derived by
+this construction; `m_e` is a candidate, not a result, and is reported so the sign
+is not mistaken for the only gap.
+
+===============================================================================
+SCOPE -- read before citing
+===============================================================================
+
+Scope (a), a scope-limited negative.  UNTOUCHED: the Lean channel decomposition;
+`b3_eq_neg_tripleMutual_of_brunnian` (a correct theorem, simply not applicable here);
+`brunnian_binding_survives`; that L6a4 is T1/T2; that its signed channel is empty;
+`countChannel` as a TERM in some other combination.  EXCLUDED: the identification
+`w3 = countChannel` at `q > 1`, for this carrier.
 
 NO FLOAT64: mpmath at 50 dps throughout; `float()` appears only inside f-strings.
 """
@@ -65,8 +109,11 @@ Q0 = mpf("1.1099785827513808")
 # CAL-1 electron scale, CODATA, MeV.
 M_E_MEV = mpf("0.51099895000")
 
-# AME2020 connected 3-body cumulant, MeV (QOU.MassTheory.AmeBindingNotPairwise.ame_b3_eq).
-AME_B3 = mpf("1.4262225")
+# Both cumulants, MeV, from computations/probes/pair-locality-shortfall.witness.json.
+# b_2 is the one that refutes T4; b_3 is the A=3 shortfall.
+AME_B2 = mpf("2.2245662")
+AME_B3 = mpf("1.42622016")
+AME_B_A3 = mpf("8.09991876")            # B_AME(A=3) = b_3 + 3 b_2, checked below
 
 # L6a4 = Borromean: 3 component pairs, 2 inter-component crossings each, lk = 0 => n+ = n- = 1.
 N_PLUS, N_MINUS = 1, 1
@@ -96,73 +143,107 @@ def main():
                    abs(lhs - rhs) < mpf(10) ** -45,
                    f"|lhs - rhs| = {nstr(abs(lhs - rhs), 3)} at q0"))
 
-    # -- CONTROL 2: Brunnian empties the signed channel ----------------------------------
+    # -- CONTROL 2: vanishing pairwise linking (T2) empties the signed channel -----------
     sc = signed_channel(N_PLUS, N_MINUS, q)
-    checks.append(("CONTROL 2: Brunnian (n+ = n-) => signedChannel == 0 exactly",
+    checks.append(("CONTROL 2: T2 (n+ = n-) => signedChannel == 0 exactly",
                    sc == 0,
-                   f"signedChannel(1,1,q0) = {nstr(sc, 3)} -- so the mutual energy IS the "
-                   f"count channel, which is the whole premise"))
+                   f"signedChannel(1,1,q0) = {nstr(sc, 3)} -- so the mutual energy of a "
+                   f"pair IS its count channel. This is tier T2, NOT tier T4."))
 
     # -- CONTROL 3: q0 > 1, so the count channel is strictly positive --------------------
     cc = count_channel(N_PLUS, N_MINUS, q)
     checks.append(("CONTROL 3: q0 > 1 => countChannel > 0",
                    q > 1 and cc > 0,
                    f"q0 = {nstr(q, 12)}, q0 - 1/q0 = {nstr(q - 1/q, 12)}, "
-                   f"countChannel(1,1,q0) = {nstr(cc, 12)}"))
+                   f"countChannel(1,1,q0) = {nstr(cc, 12)}. This is the corpus's own "
+                   f"brunnian_binding_survives, and it is exactly why L6a4 FAILS T4."))
 
-    # -- THE PREDICTION ------------------------------------------------------------------
-    w3 = cc                                   # one pair's mutual energy inside the triple
-    triple_mutual = N_PAIRS * w3              # w3 ijk + w3 ikj + w3 jki, equal by symmetry
-    b3_dimensionless = -triple_mutual         # b3_eq_neg_tripleMutual_of_brunnian
-    b3_me_scaled = b3_dimensionless * M_E_MEV
+    # -- CONTROL 4: the cumulant arithmetic is consistent, so b_2/b_3 are usable ---------
+    # B_AME(A=3) must equal b_3 + 3 b_2 -- if it does not, the two cumulants are not the
+    # same decomposition and nothing below is licensed.
+    recon = AME_B3 + 3 * AME_B2
+    checks.append(("CONTROL 4: the witness's own cumulants reconstruct B_AME(A=3)",
+                   abs(recon - AME_B_A3) < mpf("1e-8"),
+                   f"b_3 + 3 b_2 = {nstr(recon, 10)} vs B_AME(A=3) = "
+                   f"{nstr(AME_B_A3, 10)}, |diff| = {nstr(abs(recon - AME_B_A3), 3)}"))
+
+    # -- WHAT THE DATA REQUIRES, with NO T4 hypothesis -----------------------------------
+    # b_3 = -tripleMutual + 3 w2  and  pair = -w2 = b_2  =>  tripleMutual = -(b_3 + 3 b_2)
+    w2_required = -AME_B2
+    triple_mutual_required = -(AME_B3 + 3 * AME_B2)
+
+    # -- WHAT THE COUNT-CHANNEL IDENTIFICATION GIVES -------------------------------------
+    w3 = cc
+    triple_mutual_pred = N_PAIRS * w3
+    triple_mutual_pred_mev = triple_mutual_pred * M_E_MEV
 
     # -- FINDING 1: the sign is wrong, and no positive scale repairs it ------------------
-    checks.append(("FINDING 1: predicted b_3 is NEGATIVE; AME measures it POSITIVE",
-                   b3_dimensionless < 0 < AME_B3,
-                   f"b_3(pred, dimensionless) = -3(q0 - 1/q0) = {nstr(b3_dimensionless, 12)}; "
-                   f"AME b_3 = +{nstr(AME_B3, 8)} MeV. Every w3 > 0 because q0 > 1, so "
-                   f"tripleMutual > 0 and b_3 = -tripleMutual < 0. SCALE-INDEPENDENT: no "
-                   f"positive energy scale can flip it."))
+    checks.append(("FINDING 1: required tripleMutual is NEGATIVE; countChannel gives POSITIVE",
+                   triple_mutual_pred > 0 > triple_mutual_required,
+                   f"required tripleMutual = -(b_3 + 3 b_2) = "
+                   f"{nstr(triple_mutual_required, 12)} MeV (attractive); count-channel "
+                   f"tripleMutual = 3(q0 - 1/q0) = {nstr(triple_mutual_pred, 12)} "
+                   f"(dimensionless, repulsive). Every w3 > 0 because q0 > 1. "
+                   f"SCALE-INDEPENDENT: no positive energy scale flips a sign."))
 
     # -- FINDING 1b: the sign failure does NOT depend on the crossing count ---------------
     # The bean asked for w3 measured INSIDE the triple, and this probe used the isolated
-    # pair's numbers.  That looks like the escape hatch, and it is NOT one: Brunnian means
-    # every pairwise linking number is zero, so n+ - n- = 2 lk = 0 forces n+ = n- = m for
+    # pair's numbers. That looks like the escape hatch, and it is NOT one: T2 means every
+    # pairwise linking number is zero, so n+ - n- = 2 lk = 0 forces n+ = n- = m for
     # WHATEVER m the inside-the-triple count turns out to be, and
     #     countChannel(m, m, q) = m (q - 1/q) > 0  for every m >= 1.
     # Sweeping m here is not a search for a value that works -- it is a check that NO value
     # works, which is the opposite move and is what makes the negative robust.
     ms = [1, 2, 3, 5, 8, 13, 100]
     m_all_pos = all(count_channel(m, m, q) > 0 for m in ms)
-    checks.append(("FINDING 1b: no Brunnian crossing count repairs the sign",
+    checks.append(("FINDING 1b: no crossing count repairs the sign",
                    m_all_pos,
                    f"countChannel(m,m,q0) = m(q0 - 1/q0) > 0 for every m in {ms} "
                    f"(smallest {nstr(count_channel(min(ms), min(ms), q), 9)}, largest "
-                   f"{nstr(count_channel(max(ms), max(ms), q), 9)}). Brunnian forces "
+                   f"{nstr(count_channel(max(ms), max(ms), q), 9)}). T2 forces "
                    f"n+ = n- = m, so re-counting crossings inside the triple cannot flip "
                    f"the sign -- it only rescales it. The residual escape is NOT the count: "
                    f"it is whether w3 has the pairEnergy shape at all."))
 
-    # -- FINDING 2: the magnitude was never determined either ----------------------------
-    ratio = abs(b3_me_scaled) / AME_B3
-    checks.append(("FINDING 2: even |b_3| misses -- the construction supplies no MeV scale",
-                   True,
-                   f"countChannel is DIMENSIONLESS. Scaling by CAL-1 m_e = "
-                   f"{nstr(M_E_MEV, 9)} MeV gives |b_3| = {nstr(abs(b3_me_scaled), 9)} MeV "
-                   f"against AME {nstr(AME_B3, 8)} -- a factor {nstr(1/ratio, 6)} short. "
-                   f"The scale is NOT derived by this construction; m_e is the nearest "
-                   f"candidate, not a result. Reporting it so the sign is not the only "
-                   f"gap on the record."))
+    # -- FINDING 2: dropping T4 RAISES the target, so the magnitude gap grows -------------
+    ratio_t4 = abs(triple_mutual_pred_mev) / AME_B3          # what the first version compared
+    ratio_true = abs(triple_mutual_pred_mev) / abs(triple_mutual_required)
+    checks.append(("FINDING 2: dropping the T4 hypothesis makes the magnitude gap WORSE",
+                   ratio_true < ratio_t4,
+                   f"countChannel is DIMENSIONLESS; the nearest candidate scale is CAL-1 "
+                   f"m_e = {nstr(M_E_MEV, 9)} MeV, giving |tripleMutual| = "
+                   f"{nstr(abs(triple_mutual_pred_mev), 9)} MeV. Under the (inapplicable) "
+                   f"T4 reading the target was b_3 = {nstr(AME_B3, 9)}, a factor "
+                   f"{nstr(1/ratio_t4, 6)} short. Without T4 the target is "
+                   f"{nstr(abs(triple_mutual_required), 9)} MeV, a factor "
+                   f"{nstr(1/ratio_true, 6)} short. The correction costs the framework "
+                   f"{nstr((1/ratio_true)/(1/ratio_t4), 4)}x more, not less. m_e is a "
+                   f"candidate, not a derived scale."))
 
-    print("b_3 from the Brunnian unsigned count channel on L6a4 (= Borromean rings)")
-    print(f"  carrier          L6a4, 3 pairs, n+ = n- = {N_PLUS} per pair (lk = 0, Brunnian)")
+    # -- FINDING 3: T4 is refuted for this carrier, which is why the above is needed ------
+    checks.append(("FINDING 3: L6a4 fails T4 (NoIsolatedPairEnergy), so b_3 = -tripleMutual "
+                   "is NOT available here",
+                   AME_B2 != 0 and cc > 0,
+                   f"Two independent refutations, both already in the corpus: the measured "
+                   f"isolated-pair binding b_2 = {nstr(AME_B2, 9)} MeV is nonzero, and "
+                   f"brunnian_binding_survives gives countChannel(m,m,q0) = "
+                   f"{nstr(cc, 9)} > 0. L6a4 is T1/T2, not T4 "
+                   f"(QOU.Mass.BrunnianTierDisambiguation). The first version of this "
+                   f"probe cited b3_eq_neg_tripleMutual_of_brunnian as if T4 held -- the "
+                   f"same conflation the corpus fixed on 2026-09-07."))
+
+    print("The triple mutual channel: what the data requires vs what the count channel gives")
+    print(f"  carrier          L6a4 (Borromean rings), 3 pairs, n+ = n- = {N_PLUS} per pair")
+    print(f"  tier             T1 + T2 (true Brunnian, linking 0). NOT T4.")
     print(f"  q0 (proton pin)  {nstr(q, 20)}")
     print()
-    print(f"  signedChannel    {nstr(sc, 12):>18}   (zero: Brunnian)")
-    print(f"  countChannel     {nstr(cc, 12):>18}   = w3 per pair")
-    print(f"  tripleMutual     {nstr(triple_mutual, 12):>18}   = 3 * w3")
-    print(f"  b_3 (predicted)  {nstr(b3_dimensionless, 12):>18}   = -tripleMutual   <-- NEGATIVE")
-    print(f"  b_3 (AME2020)    {nstr(AME_B3, 12):>18}   MeV              <-- POSITIVE")
+    print(f"  b_2 (measured)   {nstr(AME_B2, 12):>18}   MeV   -- nonzero, so T4 FAILS")
+    print(f"  b_3 (measured)   {nstr(AME_B3, 12):>18}   MeV")
+    print(f"  w2 = -b_2        {nstr(w2_required, 12):>18}   MeV   -- attractive")
+    print()
+    print(f"  tripleMutual REQUIRED  {nstr(triple_mutual_required, 12):>12}   MeV  <-- NEGATIVE")
+    print(f"  tripleMutual from cc   {nstr(triple_mutual_pred, 12):>12}   (dimensionless)")
+    print(f"    ... scaled by m_e    {nstr(triple_mutual_pred_mev, 12):>12}   MeV  <-- POSITIVE")
     print()
 
     for name, ok, detail in checks:
@@ -174,34 +255,41 @@ def main():
     print("""
 VERDICT -- scope (a), and read the scope line before citing this.
 
-REFUTED, as an identification: w3 = countChannel on the Brunnian carrier predicts
-b_3 < 0 where AME measures b_3 > 0. The failure is on the SIGN and is therefore
-independent of the undetermined energy scale.
+REFUTED, as an identification: w3 = countChannel predicts a POSITIVE (repulsive)
+triple mutual channel where the corpus's own measured cumulants require a strongly
+NEGATIVE (attractive) one, -8.09991876 MeV. The failure is on the SIGN and is
+therefore independent of the undetermined energy scale.
 
-NOT refuted, and none of it is touched: the Lean channel decomposition; the theorem
-b3_eq_neg_tripleMutual_of_brunnian; that L6a4 is Brunnian; that the signed channel is
-empty on it; or the count channel as an ingredient in some other combination. A
-compositional object is not excluded by one term of it failing alone (AGENTS.md
-"Before declaring refuted"). What IS excluded is this one identification at q > 1.
+NOT refuted, and none of it is touched: the Lean channel decomposition;
+b3_eq_neg_tripleMutual_of_brunnian (a correct theorem, simply not applicable to this
+carrier); brunnian_binding_survives; that L6a4 is T1/T2; that its signed channel is
+empty; or the count channel as one TERM in some other combination. A compositional
+object is not excluded by one term of it failing alone (AGENTS.md "Before declaring
+refuted"). What IS excluded is this one identification at q > 1.
 
 WHERE THE SIGN COULD COME FROM -- stated as open questions, not as candidates to try
 until one works, which would be fitting:
-  (i)  b_3 = -tripleMutual carries a sign convention; if binding is -(mutual energy)
-       then a POSITIVE b_3 needs a NEGATIVE mutual energy, i.e. an attractive channel,
-       and countChannel at q > 1 is repulsive by construction.
-  (ii) the q < 1 branch would flip it, but the substrate pin is q0 > 1 and is not free.
-  (iii) w3 is the pair energy measured INSIDE the triple; this probe used the isolated
-       pair's crossing numbers.  This is the obvious escape and FINDING 1b closes it:
-       Brunnian forces n+ = n- = m, so any inside-the-triple count still gives
-       m(q0 - 1/q0) > 0.  Re-counting rescales the answer; it cannot flip it.
+  (i)  the requirement is now explicit and quantitative: an ATTRACTIVE three-body
+       mutual channel of -8.09991876 MeV. countChannel at q > 1 is repulsive by
+       construction, so the question is what supplies attraction, not what supplies
+       magnitude.
+  (ii) the q < 1 branch would flip it, but the substrate pin is q0 > 1 and is not
+       free (and deriving q0 is forever-gated). Not a route.
+  (iii) re-counting crossings inside the triple cannot help -- FINDING 1b.
 
-SO WHAT ACTUALLY SURVIVES is narrower and sharper than "measure it inside the triple":
-the identification w3 = countChannel presumes w3 has the PAIR-ENERGY SHAPE -- that the
-irreducibly three-body channel is a sum of pairwise crossing energies with triple-adjusted
-counts.  If w3 is instead a genuinely 3-body object not of the form n+ q - n- q^-1, then
-nothing above applies to it and the framework's 3-body channel is simply not yet computed.
-That is the real gap, and it is a question about the FORM of w3, not about its numbers.
-qou-ix0x stays OPEN, with the open question changed, not answered.""")
+SO WHAT ACTUALLY SURVIVES: the identification presumes w3 has the PAIR-ENERGY SHAPE
+n+ q - n- q^-1, i.e. that the irreducibly three-body channel is built from pairwise
+crossing energies with triple-adjusted counts. If w3 is instead a genuinely 3-body
+object not of that form, nothing above applies to it and the framework's 3-body
+channel is simply not yet computed. That is a question about the FORM of w3, not
+about its numbers. qou-ix0x stays OPEN, with the open question changed, not answered.
+
+A NOTE ON THE TIER TRAP, because it cost this probe a wrong conclusion: the corpus
+now carries QOU.Mass.BrunnianTierDisambiguation precisely so this cannot happen
+again, and it happened anyway, four days after that file landed. Its rule for
+authors is worth repeating here -- use "Brunnian" ONLY for T1; say "vanishing
+pairwise linking" for T2/T3; say NoIsolatedPairEnergy for T4, and expect it to be
+FALSE on any carrier with crossings.""")
     return 0 if npass == len(checks) else 1
 
 

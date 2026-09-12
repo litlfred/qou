@@ -141,3 +141,84 @@ So the crossing-energy result **may discharge the hypothesis the Ursell route ha
 **Not recorded, deliberately.** Neither branch has met `qou-rwhv`'s own settling condition — *"exhibit the polymer / cluster model whose activity expansion has the corpus's `b₃` as its third Ursell coefficient — name the polymer set, the weight, and the compatibility relation"*. Until that exists, *"two shadows of the classical Mayer sign"* claims the classical theorem applies here, which is the thing `qou-rwhv` was opened to decide. Both branches support only: **two arguments within pairwise-generated models, agreeing.** Posted to #7193 and #7198.
 
 **Net effect on this bean's open question: unchanged in content, sharper in scope.** It was *"does `w3` have the pair-energy shape at all?"*. The convergence says the whole pairwise class gives the wrong sign, so the question is now *"is the framework's 3-body channel pairwise-generated at all?"* — same question, one level up, and now with two independent-vocabulary reasons to expect the answer must be no. `qou-ix0x` stays OPEN.
+
+
+---
+**🛑 I MADE THE TIER-CONFLATION ERROR THE CORPUS FIXED ON 2026-09-07 — corrected 2026-09-12. The conclusion survives and gets STRONGER, which is why the correction is worth spelling out rather than quietly patching.**
+
+**What I asserted.** Two entries above, and in PR #7193's body, its commit message, and coordination comments on #7193 and #7198: *"b₃(predicted) = −0.627180896387 against AME +1.4262225"*, citing `QOU.Mass.CrossingModelPairLocality.b3_eq_neg_tripleMutual_of_brunnian`.
+
+**What is actually true.** That theorem's hypothesis was **renamed on 2026-09-07** from `Brunnian` to `NoIsolatedPairEnergy`, precisely because two unrelated properties shared one name. `QOU.Mass.BrunnianTierDisambiguation` lists four tiers:
+
+| tier | condition | true of L6a4? |
+|---|---|---|
+| T1 true Brunnian | every proper sub-link is the UNLINK | **yes** |
+| T2 linking vanishes | every pairwise Gauss linking number `= 0` | **yes** |
+| T3 linking vanishes at `k` | the same, localised | yes |
+| **T4 `NoIsolatedPairEnergy`** | a pair carries no mutual **ENERGY** in isolation | **NO** |
+
+The theorem's hypothesis is **T4**. L6a4 fails it, and the corpus proves so twice over (`QOU.Mass.BrunnianHypothesisNotSatisfied`): its own `brunnian_binding_survives` gives `0 < countChannel m m q`, and the measured `b₂ = 2.2245662` MeV is a nonzero isolated-pair binding outright. That file's words: *"a correct theorem whose hypothesis L6a4 does not satisfy"*.
+
+**So my step `b₃ = −tripleMutual` was not licensed, and the `−0.627` figure should not be quoted.** The tier file exists *because this exact mistake was made on 2026-09-07*; I repeated it four days later, on a theorem name a corpus-grep would have resolved. Recorded as a TRAP, not as a footnote.
+
+**The fix needs no hypothesis at all.** The cumulant is defined unconditionally (`PairwiseCumulantVanishing.BindingMap.b3`) as `b₃ = triple − (pair+pair+pair)`, and `toBindingMap` sets `pair = −w₂`, `triple = −tripleMutual`. Substituting:
+
+    b₃ = −tripleMutual + (w₂ᵢⱼ + w₂ᵢₖ + w₂ⱼₖ)
+
+T4 is just the special case `w₂ = 0`. We do not need it, because the corpus **measures both cumulants in one witness** (`computations/probes/pair-locality-shortfall.witness.json`): `b₂ = 2.2245662`, `b₃ = 1.42622016`, and `B_AME(A=3) = 8.09991876 = b₃ + 3b₂` (CONTROL 4, exact to 0.0). Hence `w₂ = −b₂` and
+
+> **the data REQUIRES `tripleMutual = −(b₃ + 3b₂) = −8.09991876` MeV** — a strongly **attractive** three-body mutual channel, and it says how attractive.
+
+Nothing is fitted: both cumulants are measured and the relation is the cumulant's definition.
+
+**The correction goes AGAINST the framework, not for it.**
+
+| | under the (inapplicable) T4 reading | corrected, no T4 |
+|---|---|---|
+| target | `b₃ = 1.42622016` MeV | `tripleMutual = −8.09991876` MeV |
+| count channel gives | `+0.627180896` (dimensionless) | same |
+| scaled by CAL-1 `m_e` | `+0.320488780` MeV | same |
+| magnitude short by | **4.45×** | **25.27×** |
+
+So dropping the bad hypothesis **raises the target 5.68×**. The sign failure is untouched — `q₀ > 1 ⇒ countChannel > 0` is arithmetic — and the magnitude gap is nearly six times worse than I reported. I had the error in my favour and it was still a negative; correcting it makes the negative sharper.
+
+**Probe rewritten**, [`b3_brunnian_count_channel_probe.py`](../computations/deltalambda/b3_brunnian_count_channel_probe.py), now **8/8 PASS** — four controls (decomposition identity; T2 ⇒ signed channel zero; `q₀>1 ⇒ countChannel>0`; the cumulants reconstruct `B_AME(A=3)`) and four findings, one of which (FINDING 3) records the tier refutation *inside the probe* so the conflation cannot be walked past again.
+
+**Contamination check** (AGENTS.md: say what else the error may have reached). The `−0.627 vs +1.4262` framing reached: this bean (two entries above), PR #7193's body and commit message, and coordination comments on #7193 and #7198. All corrected. **What does NOT change**, because it never depended on T4: `countChannel(m,m,q₀) = m(q₀−q₀⁻¹) > 0` for every `m ≥ 1`; the `m` sweep; that both routes are pairwise-generated; that the escapes coincide; and the scoping of the `qou-rwhv` convergence.
+
+**And it sharpens the requirement into something falsifiable.** Item (i) is no longer "what supplies the sign" in the abstract — the corpus now names the number: **an attractive three-body mutual channel of `−8.09991876` MeV.** The question is what supplies *attraction*, not what supplies magnitude. `qou-ix0x` stays OPEN.
+
+
+---
+**THE OBVIOUS NEXT IDEA — the Milnor triple linking number `μ̄₁₂₃` — IS ALREADY CLOSED, and closed precisely where I wanted it to help. Corpus-grepped 2026-09-12 BEFORE writing any of it.**
+
+The correction above sharpened the open question to *"what supplies an attractive `−8.09991876` MeV three-body channel?"*, and the natural candidate is the invariant that is nonzero on a Brunnian link exactly because all pairwise linkings vanish — Milnor's `μ̄₁₂₃`, which is **signed**, i.e. carries the one freedom `countChannel` lacks. I ran the six-path checklist on it rather than building it. **The corpus proposed it, built it, and refuted it on 2026-08-30.**
+
+**It is not a small prior art.** `μ̄` / Brunnian / Massey material spans ~184 `content/` files, 222 `computations/`, 114 beans, 50+ audit docs and ~20 Lean modules — including a **working producer**, `computations/binding_mn_milnor_linking.py`, whose header already reads *"`M_3(K) = triple linking μ̄_ijk` (irreducible 3-body) … Milnor DISTINGUISHES the genuine 3-body (Borromean) from a chain of pairwise bonds"*, validated on Hopf (`lk=1`), Borromean (`lk_ij=0, μ̄₁₂₃=+1`) and the 3-chain (`μ̄₁₂₃=0`).
+
+**R1 — the type refutation.** Bean `qou-edt7` (in-progress, 1063 lines) line 355, its author correcting themselves:
+
+> *"I proposed Milnor `μ̄₁₂₃` as the last candidate — 'three-body by construction' … **Right about the SHAPE, wrong about the TYPE** … **`μ̄` is NORMALISED. It has no size.** If `b_A = c_A·μ̄` then `|b_A| = |c_A|` — the magnitude is entirely `c_A`'s."*
+
+Durable carrier `QOU/Mass/MilnorCarriesOrderNotMagnitude.lean` (sorry-free): `muBar_no_magnitude`, `geometric_order_forces_square` (`b₃² = b₂·b₄`, which **fails by 10.11×** isospin-averaged / 5.25× Coulomb-corrected), `not_geometric_order`. Correctly scoped **(a)**.
+
+**R2 — and this is the one that matters for MY question, because it blocks the SIGN, not the magnitude.** Bean **`qou-lq6k`** (todo, 2026-08-01, untouched), title verbatim:
+
+> *"`μ̄₁₂₃` is TOTALLY ANTISYMMETRIC under component permutation, but a per-pair repulsion energy is SYMMETRIC in its pair — so no symmetric pair energy can be read off the triple-linking integral directly."*
+
+Formalised sorry-free in `QOU/Mass/MilnorSignRepObstruction.lean`: `μ̄` is the **sign rep of S₃**, and `equivariant_linearMap_eq_zero` proves every S₃-equivariant linear map from the sign rep to pair-functions is **zero**. The surviving corollary is that the coupling can enter only through `|μ̄|` or `μ̄²` — **unsigned again**. So the sign freedom that made `μ̄` attractive to me is exactly what the equivariance kills. Verified exactly (integer Magnus, all 6 permutations) by `computations/deltalambda/mirror_split_s3_em_functional_probe.py`, 5/5.
+
+**R3 — the Massey detour is the same object.** `docs/audits/2026-08-30-helicity-ladder-cannot-supply-the-he4-surplus.md` §"Rung 3 — third-order helicity IS the Milnor `μ̄` route, in different notation". Scope (b), and correctly confined to the max-contact all-`lk=1` configuration, so it does **not** exclude low-`lk` configurations — the triton's triple is genuinely Borromean.
+
+**So I do not pursue `μ̄`, and this entry exists so the next agent does not either.** What the corpus leaves standing is stated by the file that closed it: *"a multi-term closure in which `μ̄` fixes each term's sign and order while separate coefficients carry the sizes is untouched — and is, on this evidence, the only shape left for it."* `qou-edt7` adds the discipline line: *"Nothing tested supplies those coefficients, and I am not proposing a candidate — proposing one because it would fit is the anti-fit violation."* I hold to that.
+
+**Independent confirmation of the correction above.** The same grep pass reached the T4 conflation on its own and called my probe's first version *"the fourth independent sighting of one conflation … a known recurring defect, not a novel slip"*. Two routes to the same correction, one of which did not know the other's conclusion.
+
+**Two library notes worth keeping.**
+- **`library/1992evansberger/` (*A Hierarchy of Linking Integrals*) is the most on-point held source and a `sections/` grep cannot see it** — `sections/` is 878 B against 20,305 B of `ocr/` (4.3 %), and the `ocr/` text carries the construction outright: *"A third order linking integral (based on the Massey product) describes the subtle interlocking of the Borromean rings"*, *"§2. Third Order Linking"*, *"for the Borromean rings, L12, L23 and L31, all vanish"*. Exactly the `ocr/`-tier blind spot AGENTS.md warns about.
+- **AGENTS.md's other named `ocr/` example does NOT hold this material.** `library/procrsoclondona92/` (Moffatt & Ricca, *Helicity and the Călugăreanu invariant*) contains **0** occurrences of Milnor, Massey or "triple linking" (against 14 `Călugăreanu`, 19 `writhe`) — it is **self**-linking, 1-body data. AGENTS.md names it as "the single most on-point held source for the mass/binding self-vs-mutual linking question", which is right for *self-vs-mutual* and wrong if read as a triple-invariant source.
+- **Not held**: Laurence & Stredulinsky, *Asymptotic Massey products, induced currents and Borromean torus links* (J. Math. Phys. 41 (2000) 3170) — named by `qou-hrz3` as *"the ONLY Borromean-specific energy result"*, likely paywalled. Milnor 1954/1957 are in `references.ts` and not ingested.
+
+**Homonym warning for anyone re-running this grep**: ~45 of the 184 `content/` hits are the **Milnor–Lobachevsky function** `Л(θ)` (`QOU/Archimedean/{Lob*,IdealTet*,BlochWigner*,Orthoscheme*}`), a different Milnor object. Filter before quoting a count.
+
+**Path 0 was NOT run**: the `paper-assistant` MCP server failed to connect this session, so `corpus_search` was unavailable and `emptyRoots` could not be checked. The vocabulary blind spot the graph exists to cover is therefore **not** ruled out — this is a grep-measured result, not a graph-measured one.
