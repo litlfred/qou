@@ -105,9 +105,23 @@ does not re-check them:
   `pyhecke_native.lp_accumulator_step_traces_mpfr` reproduces a pure-mpmath
   reference of the *matrix recurrence*. It solves no program and says nothing
   about the gate.
-- **A partition-indexed LP.** There is none. Every operator-selection program in
-  the corpus is indexed by **basis elements of `H_n(q)`**, not by partitions —
-  see §4.
+- **A partition-indexed LP.** No *program* in the corpus is declared with
+  partition-indexed Frobenius constraints. Every operator-selection program that
+  is stated as a proposition or a definition — `prop:operator-selection-lp`,
+  `knot-operator-lp-selection`, the confinement SDP, `lp_dual_solver`'s two entry
+  points — is indexed by **basis elements of `H_n(q)`**.
+
+  **Stated precisely, because this is an absence claim.** What does exist is a
+  handful of *instances* fed to that same basis-indexed solver with the
+  Wedderburn blocks playing the role of the basis:
+  `computations/probes/h6_block_selection_lp_probe.py` builds one at `H_6`, and
+  this branch's probe builds one at `k ≤ 4`. Those are instantiations, not a
+  second program, and §5 shows why the instantiation is degenerate — so the
+  distinction does not rescue the gate. **What would separate "I did not find it"
+  from "it is not there":** a proposition or Lean declaration whose Frobenius
+  constraint is indexed by `λ ⊢ n` with a non-diagonal Gram. Nothing in
+  `content/`, `computations/`, `docs/` or `.beans/` matched that shape under the
+  searches in the table above.
 
 ---
 
@@ -145,8 +159,9 @@ Each is independently fatal to the comment's inference.
 
 1. **Index set.** The LP's constraints are indexed by NF basis elements,
    `d = n!` of them. The gate is indexed by partitions, `p(n)` of them. At
-   `n = 3` that is 6 against 3. No LP in the corpus has partition-indexed
-   Frobenius constraints, and §5 explains why one would not help.
+   `n = 3` that is 6 against 3. No LP in the corpus is *declared* with
+   partition-indexed Frobenius constraints (§3 states that absence precisely),
+   and §5 explains why instantiating one on the blocks does not help.
 
 2. **Argument.** `(Gx*)_i` is a function of the LP's *decision variable* — the
    operator being selected. `tr(M_λ(W_atom))` is a datum of the atom, fixed
