@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T11:44:24Z
-updated_at: 2026-09-12T11:52:27Z
+updated_at: 2026-09-12T12:03:42Z
 ---
 
 # The only option that ANSWERS the question rather than choosing
@@ -88,3 +88,135 @@ Markov-trace uniqueness is Jones/Ocneanu, so part of this may be a CITATION
 rather than a derivation — a corpus-grep is establishing which, because
 re-deriving a held result would be waste and passing a citation off as a
 derivation would be worse.
+
+
+## 🟩 ALREADY PROVED — 2026-09-12. Cite it; do NOT re-derive. And two of my own framings were WRONG.
+
+Corpus-grep (all six paths) before writing any Lean, per formalize-first. The
+derivation this bean was promoted to perform **already exists in the corpus,
+sorry-free**, and the classical source is held too. Verified from the primary
+files, not from the agent report.
+
+### The citation
+
+`QOU.SchurWeyl.HeckeCoset.markovTrace_unique` —
+`content/quantum-observable-universe/lean/QOU/SchurWeyl/MarkovTraceUnique.lean:103`
+
+    theorem markovTrace_unique (T S : MarkovTraceFamily K q qi z) :
+        ∀ (n : ℕ) (x : Hecke K q qi n), T.tr n x = S.tr n x
+
+`QOU.SchurWeyl.SeminormalRep.eq_wtrace_of_markov` —
+`.../QOU/SchurWeyl/MarkovTraceInstance.lean:191`, which carries **z_D in its
+own type** and proves *every* Markov trace at that parameter is the
+Ocneanu-weighted seminormal trace:
+
+    theorem eq_wtrace_of_markov (q : ℝ) (hq0 : q ≠ 0) … 
+        (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ (q ^ 3 / (q ^ 2 + 1)))
+        (n : ℕ) (x : Hecke ℝ q q⁻¹ n) : T.tr n x = wtrace q hq0 hq2 n x :=
+      HeckeCoset.markovTrace_unique T (ocneanuMarkovTrace q hq0 hq2 hq21 hgen) n x
+
+and `wtrace` IS the Frobenius decomposition,
+`Σ_ν ocneanuWeight q (q^3/(q^2+1)) ν · (seminormalRep … ν x).trace`.
+
+**Classical source HELD:** Chlouveraki HDR **Theorem 6.20**,
+`library/hdr/sections/sec-025-knot-invariants.md` lines 24-37, key
+`[chlouveraki2016-hdr]`. Quoted verbatim from the file: *"There exists a unique
+linear Markov trace … (1) tr(ab) = tr(ba) (2) tr(1) = 1 (3) tr(ag_n) = z tr(a)
+(Markov property) … **For d = 1** … it is the Ocneanu trace on the
+Iwahori-Hecke algebra H_n(q) ≅ Y_{1,n}(q)."* So this is a **citation**, not a
+derivation — which is exactly what the grep was for.
+
+Level-r sibling, if wanted: `eq_wenzlWtrace_of_markov`,
+`.../WenzlMarkovTraceInstance.lean:249`.
+
+### 🛑 CORRECTION 1 — my hypothesis set was INCOMPLETE
+
+I wrote the target as four conditions: cyclicity, Markov property, tr(1)=1, and
+z fixed. **That is not what is proved.** Read from the structure
+(`MarkovTraceUnique.lean:75-81`), it is **five**:
+
+    tr        : (n : ℕ) → Hecke K q qi n →ₗ[K] K      ← LINEAR, not any function
+    tr_one    : ∀ n, tr n 1 = 1
+    tr_cyclic : ∀ n x y, tr n (x * y) = tr n (y * x)
+    tr_incl   : ∀ n x, tr (n+1) (heckeIncl … x) = tr n x   ← TOWER CONSISTENCY
+    tr_markov : ∀ n x, tr (n+1) (heckeIncl … x * σ …) = z * tr n x
+
+**`tr_incl` is the one I missed**, and linearity I did not state at all. The
+file says the induction uses all four Prop fields and dropping any one breaks
+it. HDR carries the consistency implicitly — its trace is *"defined
+inductively"* on the union — so the Lean encoding is faithful; my *statement*
+of it was not. Anyone citing this must say **five**.
+
+### 🛑 CORRECTION 2 — "Plancherel is not a Markov trace" is WRONG
+
+I wrote that the Plancherel measure fails normalisation and is therefore not a
+normalised trace. The sharper and correct statement: **it IS a Markov trace —
+at z = 0.**
+
+Two independent carriers agree. `q_plancherel_vs_y_lambda_probe.py` computes
+`z = tr(σ₁) = y_(2)·q + y_(1,1)·(−q⁻¹)` for the q-Plancherel weights and gets
+**exactly 0, symbolically, for every q**, because that measure decomposes the
+REGULAR trace and `τ_q(T_σ) = 0` for σ ≠ id. And HDR **Remark 6.21**, one line
+below Thm 6.20: *"The canonical symmetrising form … coincides with the Markov
+trace with parameters z = x₁ = ⋯ = 0."*
+
+This is **stronger** than what I claimed, not weaker: Plancherel is not a
+malformed trace, it is the *right kind of object at the wrong parameter*. So
+uniqueness at z_D excludes it with no extra argument — the exclusion follows
+from the convention-D ruling alone.
+
+### What this means for the arc
+
+Chain, every link already held:
+
+    owner ruling 2026-08-15 (R1)  fixes  z = z_D = q³/(q²+1)
+    eq_wtrace_of_markov (sorry-free)  ⇒  the Markov trace at z_D IS the
+                                         Ocneanu/Wenzl weight family
+    ⇒ the Ω₂ pairing's weight family is FORCED, not chosen
+
+So `qou-q2q7`'s Wenzl adoption is now a **derived conclusion**, and the owner's
+*"probably"* is discharged. The Plancherel arm the probes aggregate with is the
+z = 0 trace — i.e. the wrong parameter for a corpus committed to convention D.
+
+### Scope — what is NOT settled
+
+* The Ω₂ pairing is `tr_M(ρ·Ω₂)`, the Markov trace evaluated at an algebra
+  element. The uniqueness fixes the *weights*; it says nothing about whether
+  `ρ·Ω₂` is the right element, which is a separate question.
+* Two uniqueness questions exist and neither implies the other (`qou-4a68`):
+  *trace given parameter* (= this) and *level given parameter*
+  (`level_unique_of_markovParameter`). Do not cite one for the other.
+* HDR proves it for `z` an **indeterminate** over C(q); the corpus wants the
+  **specialised** value z_D. The Lean proves the specialised case outright, so
+  nothing is missing — but they are formally distinct statements.
+* **No fresh `lean`-direct run.** The lean-lsp MCP failed to connect this
+  session. I verified the declarations and the structure by reading the files;
+  the exit-0 / `#print axioms` record is `qou-4a68` (2026-08-24, PR #5705),
+  quoted as a dated record, NOT re-measured.
+* Genericity `q²` not-a-root-of-unity is **vacuous over ℝ** beyond `q² ≠ 1`
+  (`qou-4a68`), so `q₀` is in scope.
+
+### 🛑 DECOYS — three declarations that look like the answer and are not
+
+A name-grep in `content/**` finds these first. Do not cite any of them:
+
+* `wenzl_bridge_unique_definitional` / `_categorical` / `wenzl_bridge_unique`
+  (`y-lambda-closed-form-wenzl-bridge.lean:241,272,293`) — all three conclude
+  the same `wenzlQ q = q^2 ∧ wenzlZ q = q * jonesMarkovZ q` and all three are
+  `refine ⟨rfl, rfl⟩`. About the *convention shift*, not the weights.
+* `y_lambda_unique_in_qou` (`wenzl-bridge-applicability-qou.lean:126`) — its
+  conclusion is verbatim the `unique` field of the class it takes as a
+  hypothesis, discharged by `exact U.unique …`. The §3b-cond rule-5
+  self-assuming projection. That class's `unique : True`, and **no instance of
+  it exists anywhere**.
+
+The real theorem sits in a **library** file with no `.qa.json` sidecar, and
+`thm:markov-trace-unique` appears in no `.md`/`.ts` block — which is exactly
+why a content-tree grep returns the decoys and misses it.
+
+### Fixed on the way
+
+`jonesMarkovZ`'s docstring read `z = 1/(q^(1/2) + q^(-1/2))` — convention **C**
+— above a body computing `q^3/(q^2+1)`, convention **D**. Name and docstring
+agreed with each other and both disagreed with the body; only the body was
+right. Corrected.
