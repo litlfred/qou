@@ -27,9 +27,19 @@ prefer, and the arc's `shift 2` (step 6) picks one of the two without deriving i
 
 ## The arity obstruction
 
-Measured in `two_nucleon_bond_response_arity_probe` (exactly over `ℚ(q)`, deviation `0` rather
-than a tolerance): at `V1` the response satisfies `r_pp = r_np` and `r_nn = r_pn`. It is a
-function of the **borrowed** nucleon alone. That is exactly the hypothesis of
+Measured in `two_nucleon_bond_response_arity_probe` (exactly over `ℚ(q)`, deviations `0` rather
+than tolerances), over all **four** interface vertices × all four ordered channels: **every
+vertex's response is one-body, in the slot it borrows from.** `V1` and `V2` borrow right and
+satisfy `r_pp = r_np`, `r_nn = r_pn`; `V3` and `V4` borrow left and satisfy `r_pp = r_pn`,
+`r_nn = r_np`. So the obstruction below is not a defect of the canonical placement — it holds
+at every placement and both orientations.
+
+Note which comparisons decide this. `r_pn ≠ r_np` discriminates **nothing**: if `f a b = g b`
+then `r_pn = g n` and `r_np = g p`, which *should* differ. Only the **like-pair** comparisons
+test arity, and an earlier version of the probe omitted them off `V2`–`V4` and so could not
+have decided the question it was built for.
+
+That measured one-body property is exactly the hypothesis of
 `no_signMixed_of_rightDependent` below, and the conclusion is that such a response can **never**
 carry the two-body pattern bean `qou-q8vl` requires:
 
@@ -46,16 +56,35 @@ the wrong way round and invites looking for a letter that fixes them. This says 
 form cannot express the distinction at all, whatever the letters are, for as long as the
 response depends on one nucleon.
 
-## Scope — (a), not (b)
+## Scope — (a), not (b), and what the corpus already said
 
 `placement_sign_not_determined_by_channel` records the second measured fact: on the **same**
-channel, `V1` gives a trace ratio above one (unbound) and `V3 = σ₁σ₂⁻¹` gives one below
-(bound). So the *sign* of the two-nucleon binding is not a function of the channel; it is a
-function of the placement, and the placement is not derived. Under the repo's
-refuted/ruled-out discipline this is a **scope-(a)** negative — "this construction, at this
-placement, does not give the pattern" — and nothing here excludes the γγ ingredient from a
-closure. What it does exclude, and this part *is* structural, is a **one-body** response
-carrying the isospin pattern.
+channel, `V1` gives a trace ratio above one (unbound) and `V3` gives one below (bound), so the
+binding *sign* is not a function of the channel. Measured: the discriminator is **which of the
+vertex's two letters carries the inverse** — inverse on the borrowed letter (`V1`, `V4`)
+unbinds, inverse on the interface letter (`V2`, `V3`) binds, 4/4 — and **not** which side is
+borrowed, which sets only the magnitude.
+
+**Do not restate that as "`σ₂` versus `σ₂⁻¹` flips the binding".** That is false and contradicts
+`QOU.QBeta.SingleCrossingAlwaysBinds.interface_mem_Ioo` (sorry-free), which proves the
+single-crossing family `μ = z + d`, `d ∈ [−h, 0]`, lies wholly in `(0,1)` — both orientations
+bind. Nor is `V2` that substitution: `σ₂ → σ₂⁻¹` in `σ₂σ₃⁻¹` gives `σ₂⁻¹σ₃⁻¹`, not a γγ word
+at all. `V2 = V1⁻¹` is the **group inverse** (reverse *and* invert), a third map distinct from
+both the bar involution and the isospin `ℤ/2` swap — two of which the corpus has already had to
+retract a conflation of. The rows are consistent with `interface_mem_Ioo` only because a γγ word
+has length 6, which step 8 established.
+
+**The placement being underived is the corpus's own position, not a new finding here.**
+`docs/coordination/2026-05-24-low-isotope-mass-anatomy-ledger.md` records the `pp ↦ σ`,
+`nn ↦ σ⁻¹`, `pn ↦ σ_avg` rule as *asserted without a `prop:` block*, a Rule-14 escalation
+candidate, since 2026-05-24; `brings-surface/inter-nucleon-channel-color-tube.md` carries a live
+conjectural derivation route for it. Because that route exists, this stays **scope-(a)** —
+"this construction, at these placements, against these words" — and excludes no ingredient.
+
+What *is* structural is the implication below: a one-body response cannot carry the isospin
+pattern. The **premise** (one-body) is measured at four vertices against the canonical words;
+promoting the whole to scope-(b) would need a proof that `tr_M(W·G^k)` always factorises over
+the strand split, which is the open question this file hands forward.
 
 ## What is NOT affected
 
@@ -130,8 +159,9 @@ def SignMixed (f : Nucleon → Nucleon → ℝ) : Prop :=
   f .p .n * f .p .p < 0 ∧ f .p .n * f .n .n < 0
 
 /-- **A response that depends only on its RIGHT argument cannot be sign-mixed.** This is the
-measured situation at `V1`: `r_pp = r_np` and `r_nn = r_pn`, so `r` is `g` of the borrowed
-(right) nucleon. Then `f p n = g n = f n n`, and a real times itself is never negative. -/
+measured situation at `V1` **and `V2`**: `r_pp = r_np` and `r_nn = r_pn`, so `r` is `g` of the
+borrowed (right) nucleon. Then `f p n = g n = f n n`, and a real times itself is never
+negative. -/
 theorem no_signMixed_of_rightDependent {f : Nucleon → Nucleon → ℝ} {g : Nucleon → ℝ}
     (h : ∀ a b, f a b = g b) : ¬ SignMixed f := by
   rintro ⟨-, h2⟩
@@ -139,17 +169,19 @@ theorem no_signMixed_of_rightDependent {f : Nucleon → Nucleon → ℝ} {g : Nu
   nlinarith [sq_nonneg (g Nucleon.n)]
 
 /-- **The mirror**: a response depending only on its LEFT argument cannot be sign-mixed
-either, via `f p n = g p = f p p`. This is the `V3` placement, which borrows from the left. -/
+either, via `f p n = g p = f p p`. This is the measured situation at `V3` and `V4`, which
+borrow from the left. -/
 theorem no_signMixed_of_leftDependent {f : Nucleon → Nucleon → ℝ} {g : Nucleon → ℝ}
     (h : ∀ a b, f a b = g a) : ¬ SignMixed f := by
   rintro ⟨h1, -⟩
   rw [h .p .n, h .p .p] at h1
   nlinarith [sq_nonneg (g Nucleon.p)]
 
-/-- **Either way.** Since every interface placement borrows from exactly one side
-(`interfaceVertex_borrows_exactly_one_side`) and the measured response is a function of the
-borrowed nucleon alone, no placement of a γγ vertex at this interface can carry the two-body
-isospin pattern. The obstruction is the *arity* of the response, not the sign of any number. -/
+/-- **Either way, and this is the headline.** Every interface placement borrows from exactly
+one side (`interfaceVertex_borrows_exactly_one_side`), and the response is measured to be a
+function of that borrowed nucleon alone at **all four** vertices. So no placement of a γγ
+vertex at this interface — either position, either orientation — can carry the two-body isospin
+pattern. The obstruction is the *arity* of the response, not the sign of any number. -/
 theorem no_signMixed_of_oneBody {f : Nucleon → Nucleon → ℝ}
     (h : (∃ g : Nucleon → ℝ, ∀ a b, f a b = g b) ∨ (∃ g : Nucleon → ℝ, ∀ a b, f a b = g a)) :
     ¬ SignMixed f := by

@@ -176,8 +176,12 @@ def main() -> int:
 
     # Grid A: all four ordered channels at the canonical vertex V1.
     # Grid B: the two unlike channels at V2, V3, V4 (the placement experiment).
-    plan = [(lbl, "V1") for lbl, _, _ in CH] + \
-           [(lbl, v) for lbl in ("pn", "np") for v in ("V2", "V3", "V4")]
+    # The FULL grid: every vertex against every ordered channel. The like-pair rows are
+    # what decide each vertex's arity -- r_pp vs r_np (both right = p) and r_nn vs r_pn
+    # (both right = n) test right-dependence; r_pp vs r_pn and r_nn vs r_np test left.
+    # An earlier version computed only pn and np off V2/V3/V4, which cannot decide either:
+    # pn != np is CONSISTENT with right-dependence (the right nucleon differs).
+    plan = [(lbl, v) for v in ("V1", "V2", "V3", "V4") for lbl, _, _ in CH]
 
     for label, left, right in CH:
         free = nucleon(left, 0) + nucleon(right, 3)
@@ -209,14 +213,35 @@ def main() -> int:
         print(f"    B = {mp.nstr(B * 1000, 12)} keV   "
               f"{'BOUND' if B > 0 else 'unbound'}", flush=True)
 
-    # ---------------- FINDING 1: arity at V1 ----------------
-    d_pp_np = sp.simplify(rows[("pp", "V1")]["r"] - rows[("np", "V1")]["r"])
-    d_nn_pn = sp.simplify(rows[("nn", "V1")]["r"] - rows[("pn", "V1")]["r"])
+    # ---------------- FINDING 1: arity, per vertex ----------------
+    print("\n  FINDING 1 — every vertex's response is ONE-BODY, in the slot it borrows from:")
+    print(f"    {'vertex':>7} {'borrows':>8} {'right-dependent':>16} {'left-dependent':>15}"
+          f" {'two-body?':>10}")
+    arity: dict[str, dict] = {}
+    for vname in ("V1", "V2", "V3", "V4"):
+        dr1 = sp.simplify(rows[("pp", vname)]["r"] - rows[("np", vname)]["r"])
+        dr2 = sp.simplify(rows[("nn", vname)]["r"] - rows[("pn", vname)]["r"])
+        dl1 = sp.simplify(rows[("pp", vname)]["r"] - rows[("pn", vname)]["r"])
+        dl2 = sp.simplify(rows[("nn", vname)]["r"] - rows[("np", vname)]["r"])
+        right = bool(dr1 == 0 and dr2 == 0)
+        left = bool(dl1 == 0 and dl2 == 0)
+        arity[vname] = {"right_dependent": right, "left_dependent": left,
+                        "borrows": VERTICES[vname][2],
+                        "dev_pp_np": sp.sstr(dr1), "dev_nn_pn": sp.sstr(dr2),
+                        "dev_pp_pn": sp.sstr(dl1), "dev_nn_np": sp.sstr(dl2)}
+        print(f"    {vname:>7} {VERTICES[vname][2]:>8} {str(right):>16} {str(left):>15}"
+              f" {str(not (right or left)):>10}")
+    all_one_body = all(arity[v]["right_dependent"] or arity[v]["left_dependent"]
+                       for v in ("V1", "V2", "V3", "V4"))
+    borrowed_slot_matches = all(
+        (arity[v]["right_dependent"] if VERTICES[v][2] == "right"
+         else arity[v]["left_dependent"]) for v in ("V1", "V2", "V3", "V4"))
     d_p_n = sp.simplify(rows[("pp", "V1")]["r"] - rows[("nn", "V1")]["r"])
-    print("\n  FINDING 1 — at V1 the response is blind to the LEFT nucleon:")
-    print(f"    r_pp - r_np = {d_pp_np}    (0 expected: both borrow from a p)")
-    print(f"    r_nn - r_pn = {d_nn_pn}    (0 expected: both borrow from an n)")
-    print(f"    r_pp - r_nn : {'ZERO — collapsed entirely!' if d_p_n == 0 else 'nonzero'}")
+    print(f"    every vertex one-body            : {all_one_body}")
+    print(f"    and in the slot it BORROWS from  : {borrowed_slot_matches}")
+    print(f"    not zero-body (r_pp != r_nn at V1): {d_p_n != 0}")
+    d_pp_np = arity["V1"]["dev_pp_np"]
+    d_nn_pn = arity["V1"]["dev_nn_pn"]
 
     # ---------------- FINDING 2: placement flips the sign ----------------
     print("\n  FINDING 2 — the sign tracks the placement, not the species:")
@@ -232,10 +257,9 @@ def main() -> int:
     print(f"    sign tracks the BORROWED SIDE      : {sign_by_side}")
     print(f"    sign tracks WHICH GEN IS INVERTED  : {sign_by_inverse}")
     v1_v3_flip = bool(rows[("pn", "V1")]["B"] * rows[("pn", "V3")]["B"] < 0)
-    # at a left-borrowing vertex the response should see the LEFT nucleon instead
-    d_left = sp.simplify(rows[("pn", "V3")]["r"] - rows[("np", "V3")]["r"])
-    print(f"    r_pn(V3) - r_np(V3) = {'0' if d_left == 0 else 'nonzero'}"
-          "   (nonzero expected: V3 borrows LEFT, so it sees the left nucleon)")
+    print("    NOTE: r_pn != r_np does NOT discriminate arity -- it is consistent with"
+          " right-dependence, since the right nucleon differs. Only the LIKE-pair"
+          " comparisons in finding 1 decide it.")
 
     # ---------------- FINDING 3: the dineutron order ----------------
     print("\n  FINDING 3 — order in (q^2 - 1) of c = r/h^2 at V1:")
@@ -309,17 +333,21 @@ def main() -> int:
                         computed=sp.sstr(mult_dev[label]), expected="0", tolerance="0",
                         source="disjoint-union multiplicativity tr_M(W_l W_r) = tr_M(l) tr_M(r)")
     w.add_assertion(name="V1_response_blind_to_left_when_right_is_p",
-                    computed=sp.sstr(d_pp_np), expected="0", tolerance="0",
+                    computed=d_pp_np, expected="0", tolerance="0",
                     source="r_pp(V1) - r_np(V1): V1 borrows right, so the left cancels")
     w.add_assertion(name="V1_response_blind_to_left_when_right_is_n",
-                    computed=sp.sstr(d_nn_pn), expected="0", tolerance="0",
+                    computed=d_nn_pn, expected="0", tolerance="0",
                     source="r_nn(V1) - r_pn(V1)")
     w.add_assertion(name="V1_response_does_depend_on_the_borrowed_nucleon",
                     computed=str(int(d_p_n != 0)), expected="1", tolerance="0",
                     source="r_pp(V1) != r_nn(V1) -- one-body, not zero-body")
-    w.add_assertion(name="V3_response_sees_the_left_nucleon_instead",
-                    computed=str(int(d_left != 0)), expected="1", tolerance="0",
-                    source="r_pn(V3) != r_np(V3) -- V3 borrows LEFT, mirroring finding 1")
+    w.add_data("arity_by_vertex", arity)
+    w.add_assertion(name="every_vertex_response_is_one_body",
+                    computed=str(int(all_one_body)), expected="1", tolerance="0",
+                    source="per vertex: the two LIKE-pair deviations vanish in one slot")
+    w.add_assertion(name="one_body_slot_is_the_borrowed_slot",
+                    computed=str(int(borrowed_slot_matches)), expected="1", tolerance="0",
+                    source="right-borrowing vertices are right-dependent; left ones left")
     w.add_assertion(name="placement_reverses_the_binding_sign",
                     computed=str(int(v1_v3_flip)), expected="1", tolerance="0",
                     source="B_pn(V1) < 0 < B_pn(V3): the sign is a placement artifact")
