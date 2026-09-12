@@ -5,10 +5,16 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 The Lean vacuity ledger (`docs/audits/lean-vacuity-review-ledger.json`) records four
 patterns whose common defect is that the context class **carries its own conclusion** —
-`proof-decoy-hypothesis`, `field-projection`, `exact-field-projection` and
-`tuple-projection`, **46 live `genuine` entries between them**. The ledger records each as
-prose, per entry, with a heuristic verdict. This file states the criterion once and proves
-that all four shapes meet it, and that the genuine §3b-cond conditional shape does not.
+`proof-decoy-hypothesis` (13), `field-projection` (22), `exact-field-projection` (2) and
+`tuple-projection` (11): **48 live `genuine` entries between them**. A fifth,
+`prop-universe-field` (19), is worse still and is treated at the end of this file, for
+**67 across five patterns**. The ledger records each as prose, per entry, with a heuristic
+verdict. This file states the criterion once and proves that every one of those shapes
+meets it, and that the genuine §3b-cond conditional shape does not.
+
+Counts are of entries whose recorded `file_sha` still matches the file on disk, so stale
+verdicts are excluded — 44 of the ledger's 149 `genuine` entries are stale and at least
+four of those are demonstrably already fixed (bean `qou-wsx3`).
 
 **The criterion** is `Contentless K C : Nonempty K ↔ C` — the class is inhabited exactly
 when the conclusion holds, so instantiating it is logically identical to assuming `C`,
@@ -226,5 +232,56 @@ theorem separation :
   refine ⟨?_, decoy_of_false_not_inhabited⟩
   rw [conditional_nonempty_iff]
   exact id
+
+/-! ## The bare-`Prop`-field carrier — worse than self-assuming
+
+`proof-claims-unencoded` / `prop-universe-field`, **19 live `genuine` entries**. The ledger
+states the defect the same way in every one of them:
+
+> *"Every field of this carrier is typed bare `: Prop` — the UNIVERSE of propositions, not
+> a proposition. An instance therefore supplies a proposition rather than a proof of one,
+> so `instance := ⟨True⟩` type-checks and discharges the class, and every `[C]`-conditional
+> theorem downstream is conditional on nothing."*
+
+That is a **type-level** error rather than a judgement about intent, so it is provable
+outright — and the resulting carrier is strictly worse than the self-assuming shapes
+above, which at least assert their conclusion. -/
+
+/-- **A carrier whose field is typed `: Prop`.** The field supplies a *proposition* — an
+inhabitant of the sort `Prop` — not a *proof* of one. Contrast `SelfAssumingContext C`,
+whose field is typed by the proposition `C` itself. -/
+structure PropUniverseContext where
+  /-- A proposition, not a proof of one. `True` is a perfectly good value. -/
+  claim : Prop
+
+/-- Such a carrier is inhabited **outright** — take the field to be `True`. No hypothesis,
+no conclusion, nothing to establish. -/
+theorem propUniverse_inhabited : Nonempty PropUniverseContext := ⟨⟨True⟩⟩
+
+/-- So it is contentless for the **trivial** conclusion: it asserts nothing whatever. The
+self-assuming shapes above are contentless for `C`; this one is contentless for `True`,
+which is a strictly weaker thing to be. -/
+theorem propUniverse_contentless : Contentless PropUniverseContext True :=
+  ⟨fun _ => trivial, fun _ => propUniverse_inhabited⟩
+
+/-- **The harm, exactly.** Every theorem stated conditional on such a carrier is
+**unconditional** — the hypothesis discharges itself. So a `[C]`-conditional result
+downstream of one of these 19 carriers is conditional on nothing, and the §3b-cond
+conditional-class exception does not apply to it however the block is labelled. -/
+theorem conditional_on_propUniverse_is_unconditional {P : Prop}
+    (h : PropUniverseContext → P) : P :=
+  h ⟨True⟩
+
+/-- **The discriminator is the field's TYPE, and it is mechanically checkable.**
+`PropUniverseContext` is always inhabited; `SelfAssumingContext False` never is. So
+`claim : Prop` versus `claim : C` is the entire difference, and a reader settles it by
+looking at the field's type rather than at the docstring — which is what makes
+`prop-universe-field` a criterion a machine can run, unlike the intent questions the rest
+of this file's patterns raise. -/
+theorem propUniverse_vs_propField :
+    Nonempty PropUniverseContext ∧ ¬ Nonempty (SelfAssumingContext False) := by
+  refine ⟨propUniverse_inhabited, ?_⟩
+  rintro ⟨ctx⟩
+  exact ctx.claim
 
 end QOU.ProofHygiene
