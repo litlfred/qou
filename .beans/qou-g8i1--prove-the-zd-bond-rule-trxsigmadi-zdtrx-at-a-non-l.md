@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T13:42:04Z
-updated_at: 2026-08-23T18:13:53Z
+updated_at: 2026-09-12T20:51:08Z
 ---
 
 The one thing left from qou-kgsx, and much smaller than what that bean started with.
@@ -156,3 +156,27 @@ SCOPE, HONESTLY: this is still not a construction of H_n(q) with its
 Wedderburn decomposition. It is the trace-level layer, which is all the bond
 product ever needed. The remaining open thing in the chain is one citation,
 not one derivation.
+
+
+--------
+**2026-09-12: this may already be DONE — check before working it.**
+
+QOU/SchurWeyl/MarkovTraceInstance.lean (CODE-sorry 0) proves wtrace_markov:
+the Markov stabilisation tr_{n+1}(incl x * sigma_last) = z * tr_n x, at
+CONVENTION D z = q^3/(q^2+1), for general n, under genericity (q != 0,
+q^2 != 1, q^2+1 != 0, q^2 not a root of unity). ocneanuMarkovTrace bundles it
+with T1/T2 and tr_incl into HeckeCoset.MarkovTraceFamily, and
+MarkovTraceUnique.markovTrace_unique (CODE-sorry 0) proves any two such traces
+agree -- so eq_wtrace_of_markov identifies EVERY convention-D Markov trace with
+the Ocneanu-weighted seminormal one.
+
+If this bean's z_d bond rule IS that statement, it is proved and the bean is
+mechanical bookkeeping. If it is a DIFFERENT statement (a different channel, a
+non-generic q, a root of unity, or the rule at the level of the single-algebra
+OcneanuTrace.MarkovTrace rather than the level-indexed MarkovTraceFamily), say
+which -- the difference is the whole content.
+
+NOT closed here: per rule 13a I am not completing a bean I did not verify line
+by line, and the two abstractions are genuinely different objects (see qou-0fmb).
+Whoever picks this up should first read MarkovTraceInstance.lean and decide
+whether this bean's subject is that theorem or its bridge.
