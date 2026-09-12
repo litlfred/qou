@@ -246,3 +246,27 @@ This closes the linear-in-`μ̄` route from the **symmetry** side, independently
 **Scope (a), narrowly.** Excludes `tripleMutual = (linear functional of μ̄)`. Does **not** exclude: `μ̄` through `|μ̄|` or `μ̄²`; `μ̄` fixing sign and order in a multi-term closure whose sizes come from elsewhere (the shape `MilnorCarriesOrderNotMagnitude` explicitly leaves standing); any non-`μ̄` three-body invariant; or **a channel that is not S₃-symmetric because the components are distinguishable**.
 
 **That last one is the live escape, and it is `qou-lq6k`'s actual subject** — an explicit antisymmetry-breaking weight. Note the physical opening: a triton is `(p,n,n)` and ³He is `(p,p,n)`, so the components are **not** interchangeable and the full S₃-equivariance this theorem assumes is stronger than the physics requires. `MilnorSignRepObstruction.coupling_vanishes_on_charge_bilinears` already closes the obvious charge-bilinear form of that idea, so the opening is narrower than it first looks. **I am not proposing a candidate weight** — proposing one because it would fit is the anti-fit violation, and `qou-edt7` says so in as many words. Recorded as where the door still is, not as a plan.
+
+
+---
+**🛑 I RETRACT TWO OF THE THREE THINGS I TOLD `qou-rwhv` — 2026-09-12. Both retractions go in THEIR favour, and one of them told a sibling not to record a result they had earned.**
+
+My convergence entry above scoped #7198's result on the strength of bean `qou-rwhv` **as it stands on `main`**, not on their branch. Reading their PR body shows two of my three points were answering questions they had already closed.
+
+**RETRACTED (1) — "neither branch has met `qou-rwhv`'s settling condition, so *two shadows of the classical Mayer sign* should not be recorded."** They met it. The bean asks to *"exhibit the polymer / cluster model whose activity expansion has the corpus's `b₃` as its third Ursell coefficient — name the polymer set, the weight, and the compatibility relation"*. Their body names all four plus the ensemble: sites = the nucleons of one fixed nucleus; activity `z_i` with hard core `z_i² = 0`; pair weight `μ_e` = the interface-letter trace; Mayer-graph compatibility; grand canonical over sub-clusters `T ⊆ S`. Matched as `Z_T = ∏_{e⊆T} μ_e = tr_M(atom T)/tr_M(free T)` to **2.5e-60** at A = 2,3,4, with `ln Ξ = Σ z^T φᵀ_T` verified symbolically through n = 4. **This is the worst of the two**: I told a sibling to withhold a claim on the grounds that a condition was unmet, when their own branch had discharged it.
+
+**RETRACTED (2) — "your route assumes repulsiveness where mine derives it."** I took `qou-rwhv`'s flag (*"nothing in the corpus identifies them with an exponentiated potential"*) to mean the Boltzmann reading was load-bearing for them. It is not. The hypothesis their result needs is in **Mayer variables** — `g_e = μ_e − 1 ∈ (−1,0)`, i.e. `μ_e ∈ (0,1)` — and they **measured** it: pp `0.61269`, pn `0.50823`, nn `0.40363`, with `phi3_pos` proved on `(0,1)³`. The Boltzmann identification is interpretation, not premise. So there was no hypothesis of theirs for my arithmetic to discharge, and my offered bridge answered a closed question.
+
+**STANDS (3) — the routes are not independent**, and their body says it more plainly than I did: `Z_T = ∏_{e⊆T} μ_e` is a product over pair bonds, and they write *"the log assembly is exactly pairwise"*. Class-level agreement, which is a strengthening rather than a caveat.
+
+**The lesson is the one this corpus keeps re-learning, one level out:** a bean on `main` is a snapshot, and scoping a sibling's *live* result against it is the same error class as quoting a stale figure. AGENTS.md already says a sibling's bean is not a primary source; the branch is.
+
+**What their measurement buys my side, which is more than I expected.** Their scope-(a) escape (*"an attractive Mayer channel — a letter with trace > 1; none in the production word, measured"*) and mine (*"a positive `b₃` needs an attractive channel; `countChannel` at `q > 1` is repulsive by construction"*) are **the same escape** — and they have **measured that the production word contains no letter that could supply it**. That is strictly stronger than my arithmetic, which only rules out `countChannel`.
+
+**JOINT STATE, supported by neither branch alone:**
+
+> The attraction the data requires has **no source in the production word's letters** (theirs, measured) and **no source in a symmetric channel linear in `μ̄`** (mine, proved sorry-free).
+
+Both remaining doors are the same shape: something **not pairwise-generated**, or **not S₃-symmetric because the components are distinguishable** — which is `qou-lq6k`, open since 2026-08-01.
+
+**Flagged, not adjudicated:** their `b₃` is per-species (³H `+1.8081`, ³He `+1.0443`) while `pair-locality-shortfall.witness.json` carries the isospin-symmetric `b₃ = 1.42622016` against `b₂ = 2.2245662`. Two decompositions, both in the corpus; not a discrepancy, and not mine to settle.
