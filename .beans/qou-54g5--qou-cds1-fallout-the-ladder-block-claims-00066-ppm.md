@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-26T23:21:11Z
-updated_at: 2026-08-30T04:50:37Z
+updated_at: 2026-09-12T07:31:54Z
 ---
 
 ## What was measured
@@ -483,3 +483,90 @@ would mean re-litigating the c_5 question the task ruled settled.
   * The headline's original magnitude — unrecoverable, now superseded.
 
 Everything here is C-frame.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — the "RESOLVED" commit is CONTRADICTED BY THE PROBE IT ADDED. STAYING OPEN.
+
+`13c23ec9016` is subject-line `research(qou-54g5): RESOLVED`. I ran the probe
+that commit added — `qbeta/qbeta_ladder_c5_slot_provenance_probe.py`, 12/12,
+exit 0 — and its **finding 5 reverses that commit's conclusion**, in its own
+words: *"DIRECTION SETTLED, and it is the reverse of how the question was
+posed."*
+
+| | commit `13c23ec9016` message | probe TODAY | AGENTS.md (2026-09-05) |
+|---|---|---|---|
+| current `c_5` | `3c_3²+b` (3 sites) | **`−(b²+½) = −1.2527`**, 6 sites | **`−(b²+½)`** |
+| superseded | `−(b²+½)` (2 sites: box, `ladder()`) | `3c_3²+b = +12.8676`, 2 sites | `3c_3²+b`, wrong sign |
+| sign of `3c_3²+b` | **negative** (−12.8676) | **positive** (+12.8676) | positive |
+
+**The probe and AGENTS.md agree; the commit message is the outlier**, and the
+probe says why an earlier pass of itself got it backwards: *"An earlier pass of
+this file proposed rewriting the six to match the two; that would have
+propagated a superseded coefficient into the framework's formalized family."*
+The decisive evidence is the SDP extraction, not agreement with a published
+column: `qbeta_decay_sdp_full_ck.py` records **−1.2229**, which `−(b²+½)` misses
+by **2.4 %** and `3c_3²+b` misses by **~10× and in sign**.
+
+**So a completion-verb commit was accurate when written and its own artifact was
+later corrected against it.** That is a FIFTH structural false-positive cause
+for `scripts/bean-completion-candidates.py`, not on its list of four — and the
+worst-behaved, because the commit message stays in `git log` forever asserting
+a conclusion the file it added now denies. Noted separately below.
+
+### The circularity, which is the actual defect
+
+Three artifacts still argue `3c_3²+b` **from agreement with published figures**:
+the commit message, and three duplicated copies of one note in
+`mass-theory/q-beta-categorical-precision-ladder-context.qa.json` (lines ~965,
+~1000, ~1035) which say *"I recomputed and THIS BLOCK IS THE CORRECT ONE …
+c_5 = +12.8675841 … matching the published '~0 ppb' and table 3's '+0.04 ppb';
+the −(b²+½) form contributes only −0.0561 ppb and would leave −0.63 ppb."*
+
+The probe answers exactly this: *"the 0.202 % agreement … is NOT evidence that
+`3c_3²+b` is right. It is evidence that the **PUBLISHED HEADLINE WAS COMPUTED BY
+THE DEPRECATED PRODUCER** and never recomputed when c_5 changed."* `3c_3²+b`
+lives in exactly one place in the tree: `computations/_deprecated/
+precision-ladder-superseded/`. So the sidecar validates a superseded coefficient
+against numbers that same coefficient produced.
+
+**And AGENTS.md reads the SAME −0.0561 figure the opposite way, correctly.** Its
+2026-09-05 correction: with the live `c_5`, `|c_5·u⁵| = 0.0561` ppb against the
+measured **0.055** ppb — *"2 % apart, exactly what an exact series predicts"*.
+The sidecar treats that 2 % agreement as disqualifying. Same number, and the
+sidecar is running the argument AGENTS.md retired a week later.
+
+### Residuals — precise, and none of them applied
+
+1. **The headline and table 3 are stale**, computed by the deprecated producer.
+   Correcting them moves a published number (**37.707 → 37.187 ppb**). The probe
+   refuses to apply it: *"its SIGN is unresolved (hypothesis 4). Settle the sign,
+   then recompute the headline and table 3 together from a producer that
+   actually reaches N=5."* The block's own declared producer,
+   `probe_q_beta_operator_valued_N3.py`, **stops at N=3** and cannot generate
+   those rows at all.
+2. **The Lean carries the retired form at the RETIRED POSITION** — spun out to
+   its own bean, below.
+3. Three duplicated sidecar notes argue the superseded side.
+
+**NOT SWEPT, deliberately.** Every one of these moves a published number, which
+the 2026-09-07 ask-first override puts behind the owner and neither exemption
+covers (it is not a precision increase, and the corpus does not fix the answer —
+it holds three incompatible ones). The probe's own closing line is the same
+instruction: *"Not to be closed by fitting: do not tune w, the pin, or CODATA to
+make a column come out."*
+
+**My recommendation, marked as judgement:** correct the three sidecar notes
+first. They are the only residual that moves NO published number — they are
+review commentary, not content — and leaving them is what will make the next
+agent re-derive the superseded side for a third time. The headline/table-3
+recomputation should wait for the sign, as the probe says.
+
+### Corrected in passing
+
+The bean's original framing — *"opposite sign and an order of magnitude apart"*
+— is right about the sign and I should not have doubted it; commit
+`13c23ec9016`'s "correction" of it (*"both candidates are NEGATIVE … the
+recorded 'opposite sign' compared one with the leading minus folded in"*) is
+itself the error. The probe prints `+12.8676`.
