@@ -141,10 +141,10 @@ section OrderedField
 
 variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
 
+omit [LinearOrder K] [IsStrictOrderedRing K] in
 /-- **The bond sum at pure neutron matter is `e_nn · n_nn`.** With `Z = 0` there
 are no p–p and no p–n bonds; this is the composition at which `bondSum_nonneg`
 did its work. -/
-omit [LinearOrder K] [IsStrictOrderedRing K] in
 theorem bondSum_neutronMatter (epp epn enn nnn : K) :
     bondSum epp epn enn 0 0 nnn = enn * nnn := by
   unfold bondSum
