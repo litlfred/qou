@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T18:04:33.235257+00:00",
-  "commitSha": "1e278eebac6bc0dfb5e498b2ee57452dae10627b",
+  "computedAt": "2026-09-12T18:21:33.695705+00:00",
+  "commitSha": "8e5b71ced9a2188b4abffecc3d12e3fc963820ea",
   "assertions": [
     {
       "name": "interleaved_core_is_vertex_cubed",
@@ -67,14 +67,46 @@
       "passed": true,
       "tolerance": "0",
       "source": "|direct − expansion| = 3.8894e-62 at 60 dps"
+    },
+    {
+      "name": "blocks_sum_to_the_crossing_budget",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "11 crossings, the qou-1qsw budget"
+    },
+    {
+      "name": "the_budget_is_ODD_so_no_full_word_is_gamma_gamma",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "a γγ-word has even length (gammaGamma_length_even), so NO 11-crossing word is γγ-produced — in any order, for any candidate"
+    },
+    {
+      "name": "gluon_block_is_even_but_still_not_gamma_gamma",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "both letters positive (d = 0 ⇒ σ₀), and a vertex pairs positive with negative — gluonPair_not_gammaGamma"
+    },
+    {
+      "name": "quark_block_is_odd",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "3 letters ⇒ not γγ either (three_not_gammaGamma)"
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 29,
   "computation": "qbeta-gamma-gamma-ruling-selects-ordering",
   "scriptFile": "qbeta_gamma_gamma_ruling_selects_ordering_probe.py",
-  "scriptHash": "58208b7bdfb1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "25467d28038b",
+  "scriptCommitSha": "3a76d49fc9ea7bd5111c9f4ef6015347648e1afd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -132,12 +164,26 @@
       "abs_gap": "3.8893845e-62",
       "s2_over_s_pct": "4.874410281"
     },
+    "parity_bound": {
+      "core_letters": 6,
+      "quark_letters": 3,
+      "gluon_letters": 2,
+      "total": 11,
+      "budget_is_odd": true,
+      "reached_by_the_ruling": 6,
+      "left_free": 5
+    },
     "lean_declarations": [
       "QOU.QBeta.GammaGammaDelta.gammaGamma_snd_neg",
       "QOU.QBeta.GammaGammaDelta.not_gammaGamma_of_snd_pos",
       "QOU.QBeta.GammaGammaDelta.interleavedCore_isGammaGamma",
       "QOU.QBeta.GammaGammaDelta.not_gammaGamma_genGroupedCore",
-      "QOU.QBeta.GammaGammaDelta.cores_ne"
+      "QOU.QBeta.GammaGammaDelta.cores_ne",
+      "QOU.QBeta.GammaGammaDelta.gammaGamma_length_even",
+      "QOU.QBeta.GammaGammaDelta.not_gammaGamma_of_odd_length",
+      "QOU.QBeta.GammaGammaDelta.eleven_not_gammaGamma",
+      "QOU.QBeta.GammaGammaDelta.gluonPair_not_gammaGamma",
+      "QOU.QBeta.GammaGammaDelta.three_not_gammaGamma"
     ]
   },
   "caveats": [
@@ -145,6 +191,7 @@
     "The -15.4514 % that #7188 and #7212 calibrate against is the GEN-GROUPED (unruled) order. Nothing there is retracted -- both state their ordering -- but the CANONICAL residual under the ruling is -17.4959 %, and this witness is the record of which figure is which.",
     "🛑 TRAP. 'Interleaved' reconstructed by zipping the two _GEN_CHAINS lists alternately gives -13.5712 %, which is NEITHER census model. The census's interleaved model emits the core as three (sigma_0, sigma_1^-1) pairs, then an ORDERED quark block, then two gluon letters. Reproducing the documented -17.496 % is the calibration that catches a lookalike reconstruction.",
     "Scope: (b) on the EXCLUSION -- it cites a proved invariant (a gamma-gamma word's second letter is negative), not a bad number. (a) on the RESIDUALS -- two census models at one pin. The ruling constrains the CORE; the flavour and gluon letters are not gamma-gamma words and their placement is not settled here.",
+    "THE PARITY BOUND IS A LIMIT ON THE RULING, not a defect in it. The crossing budget is 11 (odd) and every gamma-gamma word has even length, so NO 11-crossing word is gamma-gamma-produced -- for any candidate, in any order. The principle settles the 6-letter core and provably cannot settle the other 5. Do not read this as the construction failing to apply the ruling.",
     "#7212's 3.13x gap result is UNAFFECTED: it prices differences of vertex powers V^k, a gamma-gamma-only construction that contains no nucleon ordering at all."
   ],
   "q0Anchor": "proton",

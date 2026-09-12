@@ -211,4 +211,79 @@ proton `q₀`). The Lean statement is the weaker, decidable one: the two words
 are not equal as lists. -/
 theorem cores_ne : interleavedCore ≠ genGroupedCore := by decide
 
+/-! ## How far the ruling can reach — a parity bound
+
+The ordering result above settles the **core**. This settles how much of the
+nucleon word the γγ principle can settle *at all*, and the answer is bounded
+by parity rather than by effort.
+
+Every vertex contributes exactly two letters, so **a γγ-word has even length**
+(`gammaGamma_length_even`). The nucleon crossing budget is **11** (`qou-1qsw`),
+which is odd. So no 11-crossing word is γγ-produced — not this one, not any
+reordering of it, not any other candidate with that budget
+(`eleven_not_gammaGamma`). At least one letter necessarily lies outside the
+principle's reach, and that is a structural fact about the budget, not a gap in
+the construction.
+
+Concretely, for the census word `core(6) + quark(3) + gluon(2)`:
+
+| block | letters | γγ-produced? |
+|---|---|---|
+| core `(σ₀σ₁⁻¹)³` | 6 | **yes** — `interleavedCore_isGammaGamma` |
+| quark | 3 | no — odd length |
+| gluon `σ₀σ₀` | 2 | no — second letter positive |
+
+So the ruling reaches **6 of 11** letters. The remaining five are the freedom
+that survives it, and the two gluon letters are excluded twice over: by
+`gluonPair_not_gammaGamma` directly, and by the parity of the quark block they
+follow.
+
+**Scope-(b) throughout** — each exclusion cites a proved invariant (vertex
+length, or the vertex sign pattern), never a measured miss.
+-/
+
+/-- **A γγ-word has even length.** Each pair-production vertex contributes
+exactly two letters, so the length of any concatenation of them is even. -/
+theorem gammaGamma_length_even {w : Word} (h : GammaGammaWord w) :
+    2 ∣ w.length := by
+  induction h with
+  | nil => simp
+  | cons i _ ih =>
+      simp only [vertex, List.length_append, List.length_cons, List.length_nil]
+      omega
+
+/-- **Odd length excludes γγ production.** The contrapositive, in the form the
+crossing-budget argument uses. -/
+theorem not_gammaGamma_of_odd_length {w : Word} (h : ¬ (2 ∣ w.length)) :
+    ¬ GammaGammaWord w := fun hg => h (gammaGamma_length_even hg)
+
+/-- **No 11-crossing word is γγ-produced.**
+
+`qou-1qsw` fixes the nucleon crossing budget at 11, which is odd. So the γγ
+ruling cannot determine a nucleon word in full — for *any* candidate at that
+budget, in any order. This bounds the principle's reach from above without
+computing anything. -/
+theorem eleven_not_gammaGamma {w : Word} (h : w.length = 11) :
+    ¬ GammaGammaWord w := by
+  refine not_gammaGamma_of_odd_length ?_
+  rw [h]; decide
+
+/-- The two-letter gluon block `σ₀σ₀` of the census word. -/
+def gluonPair : Word := [⟨0, true⟩, ⟨0, true⟩]
+
+/-- **The gluon pair is not γγ-produced** — both its letters are positive, and
+a vertex pairs a positive crossing with a negative one. So the ruling does not
+reach the gluon letters even though their block has even length. -/
+theorem gluonPair_not_gammaGamma : ¬ GammaGammaWord gluonPair := by
+  intro h
+  exact not_gammaGamma_of_snd_pos (c₀ := ⟨0, true⟩) (c₁ := ⟨0, true⟩) rfl h
+
+/-- **The quark block's length is odd**, so it is not γγ-produced either. Stated
+for a general three-letter word since the census's quark block is three typed
+crossings whose generators are not fixed by the corpus. -/
+theorem three_not_gammaGamma {w : Word} (h : w.length = 3) :
+    ¬ GammaGammaWord w := by
+  refine not_gammaGamma_of_odd_length ?_
+  rw [h]; decide
+
 end QOU.QBeta.GammaGammaDelta

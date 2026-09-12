@@ -229,6 +229,25 @@ def main() -> int:
           "(gen-grouped: 2.045 %) — the identity is exact either way; only "
           "the term sizes are order-dependent")
 
+    # ---- CHECK 6: how much of the word the ruling can reach at all --------
+    print("\nCHECK 6 — the parity bound: the ruling reaches 6 of 11 letters")
+    n_core, n_quark, n_gluon = len(CORE), len(QUARK["p"]), len(GLUON)
+    total = n_core + n_quark + n_gluon
+    print(f"    core {n_core} (γγ) + quark {n_quark} + gluon {n_gluon} = {total}")
+    check("blocks_sum_to_the_crossing_budget", total == 11,
+          "11 crossings, the qou-1qsw budget")
+    check("the_budget_is_ODD_so_no_full_word_is_gamma_gamma", total % 2 == 1,
+          "a γγ-word has even length (gammaGamma_length_even), so NO "
+          "11-crossing word is γγ-produced — in any order, for any candidate")
+    check("gluon_block_is_even_but_still_not_gamma_gamma",
+          n_gluon % 2 == 0 and all(d == Z for _, d in GLUON),
+          "both letters positive (d = 0 ⇒ σ₀), and a vertex pairs positive "
+          "with negative — gluonPair_not_gammaGamma")
+    check("quark_block_is_odd", n_quark % 2 == 1,
+          "3 letters ⇒ not γγ either (three_not_gammaGamma)")
+    print(f"    → the ruling reaches {n_core}/{total} letters; "
+          f"{n_quark + n_gluon} remain free")
+
     ok = all(r[1] for r in RESULTS)
     print()
     print(f"{sum(1 for r in RESULTS if r[1])}/{len(RESULTS)} checks passed")
@@ -245,6 +264,14 @@ def main() -> int:
     print("3.13x gap is untouched (it prices V^k differences, which carry no")
     print("nucleon ordering). Scope-(b) on the exclusion: it cites a proved")
     print("invariant. Scope-(a) on the residuals: two models, one pin.")
+    print()
+    print("AND A BOUND ON THE RULING ITSELF — the crossing budget is 11, which")
+    print("is ODD, while every γγ-word has EVEN length. So no 11-crossing word")
+    print("is γγ-produced, for any candidate in any order: the principle")
+    print("settles the 6-letter core and provably CANNOT settle the other 5.")
+    print("The two gluon letters are excluded twice over (both positive, and")
+    print("following an odd-length quark block). That remaining 5 is where a")
+    print("closing Delta would have to come from.")
 
     try:
         from witness_base import WitnessBuilder
@@ -282,12 +309,23 @@ def main() -> int:
                     "expansion": mp.nstr(exp_il, 30),
                     "abs_gap": mp.nstr(gap, 8),
                     "s2_over_s_pct": mp.nstr(ratio_il, 10)})
+        w.add_data("parity_bound",
+                   {"core_letters": n_core, "quark_letters": n_quark,
+                    "gluon_letters": n_gluon, "total": total,
+                    "budget_is_odd": total % 2 == 1,
+                    "reached_by_the_ruling": n_core,
+                    "left_free": n_quark + n_gluon})
         w.add_data("lean_declarations",
                    ["QOU.QBeta.GammaGammaDelta.gammaGamma_snd_neg",
                     "QOU.QBeta.GammaGammaDelta.not_gammaGamma_of_snd_pos",
                     "QOU.QBeta.GammaGammaDelta.interleavedCore_isGammaGamma",
                     "QOU.QBeta.GammaGammaDelta.not_gammaGamma_genGroupedCore",
-                    "QOU.QBeta.GammaGammaDelta.cores_ne"])
+                    "QOU.QBeta.GammaGammaDelta.cores_ne",
+                    "QOU.QBeta.GammaGammaDelta.gammaGamma_length_even",
+                    "QOU.QBeta.GammaGammaDelta.not_gammaGamma_of_odd_length",
+                    "QOU.QBeta.GammaGammaDelta.eleven_not_gammaGamma",
+                    "QOU.QBeta.GammaGammaDelta.gluonPair_not_gammaGamma",
+                    "QOU.QBeta.GammaGammaDelta.three_not_gammaGamma"])
         w.add_caveat(
             "🛑 THE RULED ORDER IS THE LESS ACCURATE ONE. -17.4959 % against "
             "-15.4514 %. Do NOT prefer the gen-grouped figure because it is "
@@ -316,6 +354,14 @@ def main() -> int:
             "(a) on the RESIDUALS -- two census models at one pin. The ruling "
             "constrains the CORE; the flavour and gluon letters are not "
             "gamma-gamma words and their placement is not settled here."
+        )
+        w.add_caveat(
+            "THE PARITY BOUND IS A LIMIT ON THE RULING, not a defect in it. "
+            "The crossing budget is 11 (odd) and every gamma-gamma word has "
+            "even length, so NO 11-crossing word is gamma-gamma-produced -- "
+            "for any candidate, in any order. The principle settles the "
+            "6-letter core and provably cannot settle the other 5. Do not "
+            "read this as the construction failing to apply the ruling."
         )
         w.add_caveat(
             "#7212's 3.13x gap result is UNAFFECTED: it prices differences of "
