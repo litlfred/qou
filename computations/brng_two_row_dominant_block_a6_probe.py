@@ -134,7 +134,16 @@ AME_SET: dict[tuple[int, int], tuple[str, bool]] = {
     (2, 4): ("6He", False), (3, 3): ("6Li", False), (4, 2): ("6Be", True),
     (2, 5): ("7He", True), (3, 4): ("7Li", False), (4, 3): ("7Be", False),
 }
-#: the committed 6Li per-partition cache the live recompute is checked against
+#: committed per-partition caches of the LIVE word (post-ruling, computedAt
+#: 2026-09-06, PR #7200's provenance set) -- the word identity check
+CACHES_A_LE_4 = {
+    (1, 1): "chi-deuteron-h6-at-q0-50dps.witness.json",
+    (1, 2): "chi-tritium-h9-at-q0-50dps.witness.json",
+    (2, 1): "chi-helium-3-h9-at-q0-50dps.witness.json",
+    (2, 2): "chi-helium-4-h12-at-q0-50dps.witness.json",
+}
+#: the only committed 6Li per-partition cache: the sign-only `matrix-m` family,
+#: a different object (see the provenance block in main)
 CACHE_6LI = "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json"
 
 
@@ -185,8 +194,8 @@ def cluster(Z: int, N: int, y: dict) -> dict:
     t0 = time.monotonic()
     w_atom = atom_braid_word_3A(Z, N, include_inter=True)
     w_free = atom_braid_word_3A(Z, N, include_inter=False)
-    chi_a = chi_all_lambda_any(w_atom, n)
-    chi_f = chi_all_lambda_any(w_free, n)
+    chi_a = chi_all_lambda_any(w_atom, n, dps=DPS)
+    chi_f = chi_all_lambda_any(w_free, n, dps=DPS)
     ta = {lam: y[lam] * chi_a.get(lam, mp.mpf(0)) for lam in y}
     tf = {lam: y[lam] * chi_f.get(lam, mp.mpf(0)) for lam in y}
     tr_a, tr_f = mp.fsum(ta.values()), mp.fsum(tf.values())
@@ -264,7 +273,7 @@ def subset_cumulants(w_atom, n: int, blocks: list, subsets: list[tuple[int, ...]
         keep = {ifs[i] for i in S}
         w = _drop(w_atom, set(ifs) - keep)
         t0 = time.monotonic()
-        chi = chi_all_lambda_any(w, n)
+        chi = chi_all_lambda_any(w, n, dps=DPS)
         for lam in blocks:
             F[lam][S] = mp.log(abs(chi[lam]))
         F["trace"][S] = mp.log(abs(mp.fsum(y[lam] * chi.get(lam, mp.mpf(0)) for lam in y)))
@@ -321,19 +330,50 @@ def main() -> int:
                   f"sameblock {_s(r['dL_sameblock'], 10)} logtr {_s(r['L_tr_free'] - r['L_tr_atom'], 10)}",
                   flush=True)
 
-    # ---- provenance: live 6Li == committed cache ----
-    print("\n== cache provenance (6Li live alternating-core word vs committed cache)")
+    # ---- provenance of the WORD: live recompute == the four committed post-ruling caches (A <= 4) ----
+    print("\n== word provenance (live alternating-core word vs committed caches)")
+    worst4 = mp.mpf(0)
+    for zn, fname in CACHES_A_LE_4.items():
+        w = json.loads((HERE / fname).read_text())
+        chk(f"cache_{fname}_postdates_ruling",
+            w["computedAt"] >= "2026-09-05" and w["q0Anchor"] == "proton")
+        r = rows[zn]
+        for rec in w["by_partition"]:
+            part = rec["partition"]
+            lam = tuple(json.loads(part) if isinstance(part, str) else part)
+            worst4 = max(worst4, abs(mp.mpf(rec["chi_lambda"]) - r["chi_a"][lam]),
+                         abs(mp.mpf(rec["y_lambda"]) - Y[r["n"]][lam]))
+    print(f"  max |cache - live| over chi, y_lambda, 2H/3H/3He/4He: {_s(worst4, 5)}")
+    chk("live_word_reproduces_committed_A_le_4_caches_1e-40", worst4 < mp.mpf("1e-40"))
+    # The only committed 6Li per-partition cache is the `matrix-m` family, which is
+    # a DIFFERENT OBJECT: its wire format is sign-only (`pn_split_carried: False`;
+    # beans qou-sgv5 / qou-fv0s), so the averaged interface and intra letters are
+    # replaced by bare crossings and isobars are degenerate. It cannot reproduce
+    # the live word and is not expected to; the difference is RECORDED, not asserted.
     w6 = json.loads((HERE / CACHE_6LI).read_text())
-    chk("cache_6Li_is_proton_alternating_core",
-        w6.get("q0Anchor") == "proton" and w6.get("braid_word_intra_order") == "borromean")
-    worst6 = mp.mpf(0)
+    chk("6Li_matrix_m_cache_declares_sign_only_wire",
+        w6.get("q0Anchor") == "proton" and w6.get("braid_word_intra_order") == "borromean"
+        and w6.get("pn_split_carried") is False)
     r6 = rows[(3, 3)]
+    worst6 = mp.mpf(0)
+    cache6_onerow = None
     for rec in w6["by_partition"]:
         part = rec["partition"]
         lam = tuple(json.loads(part) if isinstance(part, str) else part)
         worst6 = max(worst6, abs(mp.mpf(rec["chi_lambda"]) - r6["chi_a"][lam]))
-    print(f"  max |cache chi - live chi| over 385 partitions: {_s(worst6, 5)}")
-    chk("live_6Li_word_reproduces_committed_cache_1e-40", worst6 < mp.mpf("1e-40"))
+        if lam == (18,):
+            cache6_onerow = mp.mpf(rec["chi_lambda"])
+    print(f"  6Li matrix-m (sign-only) cache vs live word: max |chi diff| {_s(worst6, 5)}; "
+          f"one-row chi: cache {_s(cache6_onerow, 12)} vs live {_s(r6['chi_a'][(18,)], 12)}  "
+          f"(different object by construction, qou-sgv5)")
+    # live self-consistency: the one-row character is the letter product (PR #7200) at EVERY cluster
+    onerow_err = mp.mpf(0)
+    for r in rows.values():
+        for w_, key in ((r["w_atom"], "chi_a"), (r["w_free"], "chi_f")):
+            prod = mp.fprod(mp.mpf(str(c)) * Q0 + mp.mpf(str(d)) for (c, d, g) in w_)
+            onerow_err = max(onerow_err, abs(prod - r[key][(r["n"],)]))
+    print(f"  one-row character == product over letters of (c q + d), all clusters x 2 words: max err {_s(onerow_err, 5)}")
+    chk("onerow_character_is_letter_product_all_clusters_1e-40", onerow_err < mp.mpf("1e-40"))
 
     # ---- which block dominates, and its margin ----
     print("\n== dominant summand (trace's argmax), per cluster")
@@ -446,6 +486,8 @@ def main() -> int:
     # round trip at (3,4)
     rt = mp.fsum(mp.binomial(3, z) * mp.binomial(4, m) * bv for (z, m), bv in inv["dL"].items()
                  if z <= 3 and m <= 4)
+    # the cumulants at A = 7 reach |b| ~ 37 with binomial weights up to 35 and
+    # cancel to 2.7, so ~4 digits of the 60 are spent; 1e-50 is the honest floor
     chk("ursell_roundtrip_7Li_1e-50", abs(rt - dL[(3, 4)]) < mp.mpf("1e-50"))
     chk("switch_is_nonneg_to_rounding", all(v > mp.mpf("-1e-45") for v in switch.values()))
     print("\n== typed Ursell cumulants (log units; MeV = E0 x), complete-graph typed basis")
@@ -594,7 +636,11 @@ def main() -> int:
         },
         "data": {
             "clusters": cluster_rows,
-            "cache_provenance_6Li_max_abs_diff": _s(worst6, 10),
+            "word_provenance_A_le_4_caches_max_abs_diff": _s(worst4, 10),
+            "onerow_character_max_abs_err_vs_letter_product": _s(onerow_err, 10),
+            "6Li_matrix_m_sign_only_cache_max_abs_chi_diff": _s(worst6, 10),
+            "6Li_matrix_m_cache_note": ("sign-only wire (pn_split_carried False, qou-sgv5/qou-fv0s): "
+                                        "a different object; not a provenance check of the live word"),
             "dominant_rows_A_ge_5": {f"{k[0]},{k[1]}": v for k, v in dom_rows_A56.items()},
             "two_row_dominant_chain_additive_fixed_n": two_row_additive,
             "two_row_dominant_chain_residual": {"6Li": _s(r6, 15), "7Li": _s(r7, 15)},
