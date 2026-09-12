@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-08T04:25:11Z
-updated_at: 2026-09-08T04:26:25Z
+updated_at: 2026-09-12T07:04:20Z
 ---
 
 FOUND 2026-09-08 by triage, then verified independently. Priority: the CLASS is latent; ONE member has already fired and is RED on main.
@@ -58,3 +58,77 @@ Do not blanket-rewrite 252 files. Cheapest real reduction, in order:
 ## Coordination
 
 The truncating commit belongs to qou-4383 (in-progress, idle >24 h at the time of writing). Its SUBJECT is grouped-era |tr_M| by fingerprint, not witness I/O, and it did not notice the loss -- so scope does not overlap. But its sweep RE-RUNS PRODUCERS, so a re-run before this fix lands would re-truncate. Flagged on that PR.
+
+
+## 2026-09-12 — class re-measured at 252 EXACTLY; and step 1 is NOT executable from the corpus as it stands
+
+Off the `qou-bstl` queue, on a tree freshly rebased onto `main` (74 + 41
+commits since this bean was written). **Nothing swept** — this bean says
+`## THE CLASS -- DO NOT SWEEP IT` and the 2026-09-07 ask-first directive says
+the same, so this is measurement only.
+
+### The class reproduces exactly
+
+Re-run with this bean's own AST criterion — an `Import`/`ImportFrom` anywhere
+inside a `with` whose context is a truncating `open(…, 'w')`, excluding
+`_deprecated` and `__pycache__`:
+
+    252 producers   [bean recorded 252 after its own fix removed the 253rd]
+
+Exact agreement across two months of `main` movement. The class is neither
+growing nor being drained.
+
+### 🛑 But this bean's step 1 cannot be run — 247 of 252 have no recorded cost
+
+Step 1 asks to *"rank by BLAST RADIUS: a producer whose witness is expensive to
+regenerate (long compute) loses more than one that re-runs in 0.8 s."* The only
+corpus-visible proxy for that is the witness's own recorded runtime
+(`durationMs` / `elapsed_seconds`, top level or under `summary`). Measured:
+
+    >= 60 s recorded regeneration :   3
+    >=  5 s recorded              :   4
+    no runtime recorded at all    : 247
+    no witness attributable       :  57
+
+So **98 % of the class carries no cost signal**, and the ranking the bean
+prescribes is not derivable without running 252 producers — which is precisely
+the sweep it forbids. That is a finding about the bean's plan, not a criticism
+of it: the plan was written before anyone checked whether the ranking input
+exists.
+
+### The head of the ranking, for the 5 that do carry one
+
+    603.0 s   probes/qbeta_m1_rotated_index_from_blocks.py:304
+    137.0 s   probes/qbeta_m1_index_stokes_dictionary.py:212
+     65.0 s   qbeta/qbeta_kc21_parity_convention_immunity_probe.py:489
+      7.0 s   probes/qbeta_phib_2loop_bdictionary_probe.py:353   (2 witnesses)
+      4.9 s   probes/qbeta_qsqrt3_borel_pslq_probe.py:483
+
+**These three over a minute are where a truncation actually costs something**,
+and they are a tractable unit — three files, the one-line
+`out_p.write_text(json.dumps(...) + "\n")` form this bean already recommends,
+no shared helper needed, no migration. That is a far smaller ask than the
+252-file decision the bean currently holds.
+
+The contrast with the one that **fired** is worth keeping: it re-ran in 0.8 s,
+which this bean already calls *"luck, not design"*. The three above are the
+un-lucky cases.
+
+### Two caveats on my own numbers, both load-bearing
+
+- **`no witness attributable: 57` is not the same as "writes nothing".** My
+  attribution is by `scriptFile` basename, so a producer whose witness records
+  a different `scriptFile`, or which writes a non-witness JSON, counts as 0
+  here. It bounds what I could see, not what those 57 stand to lose.
+- **A recorded runtime is the cost of the LAST run, not of a cold one.** Three
+  of the five are `qbeta` probes whose cost depends on `pyhecke_native` being
+  built; a container without it may be far slower or refuse outright.
+
+### What I did NOT do
+
+No file was edited, no producer run, no sweep started, no shared helper
+proposed. The 252 stay as they are.
+
+Bean stays `todo`. If the owner wants a first cut, the three ≥ 60 s files above
+are the defensible unit — everything beyond them needs the cost data that does
+not currently exist.
