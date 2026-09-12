@@ -181,8 +181,21 @@ noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
     Numerical: `2.82812208833078` (15 dps, from
     `computations/hyperbolic-volumes.witness.json`
-    field `vol_5_2_decimal_15`, cross-checked against
-    `QOU.Encounter.MostowRigidity` which uses the identical value).
+    field `vol_5_2_decimal_15`).
+
+    🛑 THIS PARAGRAPH ALSO CLAIMED THE VALUE IS "cross-checked against
+    `QOU.Encounter.MostowRigidity` which uses the identical value".
+    That has been FALSE since 2026-08-30: `MostowRigidity.knot5_2`
+    was exactified by bean `qou-f8lit` and now carries
+    `QOU.Knot.FiveTwoVolume.VOL_5_2 = 3·D(fiveTwoShape)`, which
+    differs from this literal at the 16th significant digit.  So the
+    two carriers no longer agree, and the cross-check that was this
+    literal's stated warrant no longer exists.
+
+    **This def is therefore the last surviving `vol_5_2` truncation**,
+    and exactifying it is the open residual on `qou-f8lit` — not done
+    here because `QOU.Archimedean.HyperbolicVolumeIndependence`
+    consumes it and its proofs may discharge on the decimal.
 
     **Precision upgrade 2026-06-12**: witness now carries 50 dps from
     SnapPy ManifoldHP 3.3.2 (`vol_5_2_decimal_50`); the former AHW-1991
