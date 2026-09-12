@@ -161,7 +161,21 @@ deuteron-pinned scale is the 2026-08-30 convention ($B_{\text{AME}}(D)/(1-\mu_{p
 | ³H | pn, nn | 0.293278 | **−1.2277 MeV** | −1.3267 MeV | +1.8081 | 0.679 / 0.734 |
 | ³He | pp, pn | 0.190468 | **−0.7973 MeV** | −0.8616 MeV | +1.0443 | 0.763 / 0.825 |
 
-**Sign wrong at both; magnitude 68–83 % of AME.** The uniform-triangle figures
+**Sign wrong at both; magnitude 68–83 % of AME.**
+
+> **Frame note (2026-09-12, after #7193's flag), so two $b_3$'s are not quoted
+> at each other.** The AME column above is the **per-nucleus** target under the
+> uniform-$e_2$ inversion $b_3(X) = B_{\text{AME}}(X) - 3\,B_{\text{AME}}(^2\mathrm{H})$
+> with $B(^2\mathrm{H}) = 2.2245662$: $1.8081$ (³H) and $1.0443$ (³He). The
+> corpus witness `pair-locality-shortfall.witness.json` carries the **same**
+> decomposition and sign convention (binding positive) on the **isospin-averaged**
+> $A = 3$ target, $B_{\text{AME}}(A{=}3) = 8.09991876 = \tfrac12(8.4817962 + 7.7180413)$,
+> giving $b_3 = 1.42622016$ — exactly the mean of the two per-nucleus values.
+> The model side here is **typed** (pn + nn for ³H, pp + pn for ³He), which is
+> why it is quoted per nucleus; against the averaged target the Mayer coefficient
+> averages to $-1.0125$ MeV ($\alpha$-scaled). Frame difference, not an error.
+
+The uniform-triangle figures
 of 2026-08-30 reproduce exactly — $\varphi^T_3 = 0.3919$ at $f_{pn} = z_D$
 ($2.2511$ MeV) and $0.6066$ at $f_{pn} = \mu_{pn}$ ($2.7439$ MeV) — and are
 the **negative-activity** coefficients; the Mayer-sign values are $-2.2511$ and
