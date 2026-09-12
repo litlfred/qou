@@ -294,7 +294,7 @@ isolates the functional from the selector.
 |---|---|---|---|---|
 | **total-trace log** — the live law `E₀·log(tr_free/tr_atom)`, additive over bonds | grouped chain | **0** at every interior centre `2 ≤ Z ≤ A−2`; two endpoint kinks (§3) | 0 | no — cannot, by `additive_census` (#7223) |
 | census-affine reference on the UIC's own layout | all pairs | `L_pp + L_nn − 2L_pn = +0.04351846501566097275` (constant) | **0** | no — convex, `N=Z` is the **minimum** |
-| **UIC per-block log, ungated** | all pairs | nonzero, varies with `Z` | **nonzero in all 36 cells** | no — argmax never tracks `N = Z` |
+| **UIC per-block log, ungated** | all pairs | nonzero, varies with `Z` | **nonzero in all 36 cells** | no — argmax does not track `N = Z` (§5.2) |
 | **UIC per-block log, gated** (the production return) | all pairs | nonzero, varies with `Z` | **nonzero in all 36 cells** | no — and argmax not converged in `k_exact` |
 
 **`Δ³_Z ≠ 0` in every cell, gated and ungated alike.** By `census_thirdDiff` that is exactly
@@ -403,7 +403,8 @@ ingredients.**
    `A = 3..8`, `k_exact = 4..9`, proton pin, convention D. This establishes non-additivity;
    it says nothing about the *shape* of the correlation, and it does not extend to
    `k_exact = 10, 11`, which were not run.
-5. *No valley: `argmax_Z` never tracks `N = Z`, and is not converged in `k_exact`.*
+5. *No valley: `argmax_Z` does not track `N = Z` — 3 coincidences in 36 cells, never more
+   than one tier per `A`, endpoint in 15 of 36 — and is not converged in `k_exact`.*
    Same grid. A seventh tier could move the argmax again; it could not make the sequence
    retroactively convergent, and claim 3 is independent of the tier.
 
@@ -434,7 +435,7 @@ enumeration asked whether anything outside that class could. This audit answers 
   the per-block log carries an exact, closed-form, offset-independent non-multiplicativity
   defect (§4). The #7223 theorem genuinely does not reach it.
 * What comes through is not a valley. The forced component has the anti-valley sign for
-  every `q > 1`, and the measured argmax never tracks `N = Z`.
+  every `q > 1`, and the measured argmax does not track `N = Z`.
 
 So the two negatives have **different characters and should not be quoted as one.** The
 additive class cannot carry a pair term — a theorem. The UIC per-block log can and does —
