@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-11T15:46:32Z
+updated_at: 2026-09-12T11:29:30Z
 parent: qou-x631
 ---
 
@@ -1727,3 +1727,37 @@ The second was the more plausible (Fulman's method *is* a Stein exchangeable-pai
 So the honest status is stronger than before, not weaker: the Poincaré/Dirichlet gap for this weighted form is real **and the corpus does not hold a source that fills it** — so it is an analytic build, not a citation, which is exactly the conclusion the 2026-09-03 entry reached for the Olver/Bessel route by a different road.
 
 **Method disclosure, so this is re-checkable and not over-read:** I read section titles and term frequencies across each paper's `sections/`, not full proofs. That is enough to establish setting (1-d absolutely continuous / Monte-Carlo estimation) and therefore inapplicability to a discrete Dirichlet form; it is **not** a claim that the papers contain nothing else of use.
+
+
+## 2026-09-12 — Poincare degeneracy worry REMOVED; gap still OPEN
+
+`content/quantum-observable-universe/lean/QOU/MassTheory/WeightedDirichletPoincare.lean`
+(8 declarations, sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, zero
+warnings, `#print axioms` sorryAx 0).
+
+**The claim.** `1 <= |u| + |v|` on every up-down edge of the Young lattice, so
+the Fulman edge measure `dmu = pi(lam) J(lam,lam*) (|u|+|v|)` gives a weighted
+Dirichlet form that **dominates** the unweighted one, and any unweighted
+Poincare inequality transfers **at the same constant**.
+
+**The evidence.** `|u| + |v| = 0` forces `u = v = 0`, i.e. one diagonal carrying
+both a removable and an addable corner. `no_removable_addable_same_diagonal`
+proves no partition does — three cases on the row indices, using only that row
+lengths are antitone. Contents are carried in `Z`, so no `Nat` subtraction and
+no Durfee square is needed.
+
+**What it does NOT do, and this is the half that matters.** Poincare
+lower-bounds a **quadratic** form. `M1 = E(A, Sum h)` is **bilinear**, and the
+live sufficient condition `Q < P` needs an **UPPER** bound on `Q = E(D)`.
+Poincare bounds `P` and `Q` both from **below**, so it cannot deliver `Q < P`.
+The measured `P/Q ~ 2.24` is a structural fact about the joint law of
+`(g, Delta m)`; a one-sided bound does not reach it.
+
+It also does not supply the unweighted gap — `poincare_transfer` takes it as a
+hypothesis, because the corpus does not have one (the recorded `tau_1 = 2/n`,
+`tau_3 = 3/n` are eigenvalues of named eigenfunctions, not a spectral gap over
+all of `L^2`).
+
+**Status: OPEN.** This closes a *worry*, not the gap. The remaining routes are
+unchanged: an upper bound on `Q = Sum dmu (2 - 2 delta)^2`, or a direct
+termwise/support argument on `M1 = Sum dmu g k`.
