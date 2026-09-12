@@ -523,9 +523,42 @@ def _qbeta_ruled_base() -> dict:
     from qbeta_e0 import canonical as _e0_canonical, order_zero as _e0_order_zero
     q = mpf(Q_50_DIGIT_STR)
     z_D = q ** 3 / (q ** 2 + 1)
-    # tr^z(Delta_S) = h^2/2 - z*h exactly, h = q - 1/q. Written in the audit's
-    # affine form so a reader can match it to the probe line for line.
-    tr_M = q ** 2 / 2 - q * z_D - 1 + z_D / q + 1 / (2 * q ** 2)
+    # ── ELEMENT: THE gamma-gamma-SELECTED NUCLEON WORD (bean qou-wfvl) ────────
+    # MIGRATED 2026-09-12. This scored `Delta_S`, the short normal-form element,
+    # whose provenance is the census / NF construction. The owner ruled the SAME
+    # DAY as the eps ruling (`qou-ales`, 2026-09-08): "All selection of great
+    # words should be done through gamma gamma production and the semi-definite
+    # product solutions at q0. Shouldn't use census." So `Delta_S` was not an
+    # admissible element and the functional had been migrated without it.
+    #
+    # THE CHAIN, every link on main or committed -- NOT depending on the open
+    # sibling PR #7212:
+    #   1. `QOU.Mass.GammaGammaWordSelection.vertex i = [(i, +), (i+1, -)]`, so
+    #      every gamma-gamma word has a NEGATIVE second letter. The gen-grouped
+    #      core begins `sigma_0 sigma_0` (positive second letter) and is therefore
+    #      excluded; the interleaved core `(sigma_0 sigma_1^-1)^3` is three
+    #      vertices and is admitted.
+    #   2. `qbeta-option-e-required-level.witness.json` (on main, q0_anchor
+    #      proton, BOTH admissible parameters evaluated) carries `tr_conv_D` for
+    #      all four candidate elements.
+    # PR #7212 proves (1) as an explicit Lean lemma; it is OPEN, so it is cited
+    # as corroboration, not as the authority. The authority is the ruling plus
+    # `vertex`'s definition on main.
+    #
+    # NOT CHOSEN BY RESIDUAL, and that must stay true if a later agent revisits
+    # this: the gamma-gamma-selected element happens to be 2.5x closer to CODATA
+    # than `Delta_S`, but it is selected because it is DERIVED. Were it further
+    # away it would still be the right element. Ranking candidates by residual is
+    # the selection-against-the-target AGENTS.md forbids.
+    _CENSUS = json.loads(
+        (COMPUTE_DIR / "qbeta" / "qbeta-option-e-required-level.witness.json"
+         ).read_text())
+    _cand = _CENSUS["data"]["per_candidate"]
+    _ELEMENT = "nuc11_interleaved"
+    tr_M = mpf(_cand[_ELEMENT]["tr_conv_D"])
+    # tr^{z_D}(Delta_S) = h^2/2 - z_D*h exactly (h = q - 1/q), kept so the
+    # superseded cell stays reproducible and the delta is measurable.
+    _tr_M_delta_S = q ** 2 / 2 - q * z_D - 1 + z_D / q + 1 / (2 * q ** 2)
     # E_0 THROUGH THE UNIFIED MODULE (owner instruction 2026-09-12). It had two
     # live forms differing by 1/(1 - hbar_q^2) = +0.9915 %, with no signal at
     # either call site; qbeta_e0 is now the single definition and the
@@ -545,8 +578,11 @@ def _qbeta_ruled_base() -> dict:
     # So: calibrate the TRACE against the recorded cell at the E_0 that cell was
     # computed with, then publish at the CANONICAL E_0. One check per claim.
     adm = _functional_admissibility_check()
-    recorded = (adm.get("err_pct_by_functional") or {}).get(
-        "z=z_D (Markov, convention D)")
+    # Calibrate against the CENSUS witness's own recorded pct for the element
+    # actually scored -- not against the Delta_S cell, which is a different
+    # element. Both are at order-zero E_0, so the trace/E_0 separation below
+    # still holds.
+    recorded = _cand[_ELEMENT]["pct_D"]
     err_pct = (pred - Q_BETA_MEV) / Q_BETA_MEV * 100
     err_pct_order_zero = (pred_order_zero - Q_BETA_MEV) / Q_BETA_MEV * 100
     calibrated = False
@@ -601,8 +637,20 @@ def _qbeta_ruled_base() -> dict:
         # rounding.
         # So the figure is scoped twice over, not once: no ladder (above), AND
         # an unsettled element. Do not read it as the framework's Q_beta.
-        "element_scored": "delta_S (short NF)",
-        "element_is_ruled": False,
+        "element_scored": _ELEMENT + " (gamma-gamma-selected nucleon word)",
+        "element_is_ruled": True,
+        "element_authority": "owner gamma-gamma ruling qou-ales 2026-09-08 + "
+                             "GammaGammaWordSelection.vertex on main (a "
+                             "gamma-gamma word's 2nd letter is negative, which "
+                             "excludes the gen-grouped core)",
+        "element_superseded": "delta_S (short NF) -- census-derived, "
+                              "inadmissible under the gamma-gamma ruling; its "
+                              "cell was -43.157175%",
+        "Q_beta_MeV_on_superseded_delta_S": fmt(
+            abs(_tr_M_delta_S) * _e0_canonical(q=q, m_e=M_E_MEV)),
+        "element_ordering_proof_open_in": "PR #7212 (Lean lemma for the "
+                                          "2nd-letter exclusion; corroboration, "
+                                          "not the authority)",
         "element_candidates_level2_pct": {
             "delta_S short NF": "-43.157",
             "nuc9 build_nucleon_nf": "-30.936",
@@ -1234,6 +1282,15 @@ def main() -> dict:
         "anchor_layer_qbeta": qbeta_anchor,
         "convention_frame_qbeta": qbeta_convention,
         "functional_admissibility_qbeta": _functional_admissibility_check(),
+        # EMITTED 2026-09-12. `_qbeta_ruled_base()` computes the element, the
+        # E_0 form, the calibration verdict, the four candidate elements and the
+        # superseded cell -- and NONE of it reached the witness: the dict was
+        # consumed for `pred` and for the row's `note` string and then dropped.
+        # A previous PR of mine claimed "the row now carries `element_scored` /
+        # `element_is_ruled`" as structured fields. It did not; they were in
+        # prose only. A field a consumer cannot read is not a record.
+        "qbeta_ruled_base": {k: v for k, v in _qbeta_ruled_base().items()
+                             if not k.startswith("_")},
         "summary": {
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
@@ -1348,6 +1405,7 @@ if __name__ == "__main__":
     w.add_data("anchor_layer_qbeta", out["anchor_layer_qbeta"])
     w.add_data("convention_frame_qbeta", out["convention_frame_qbeta"])
     w.add_data("functional_admissibility_qbeta", out["functional_admissibility_qbeta"])
+    w.add_data("qbeta_ruled_base", out["qbeta_ruled_base"])
     if out["convention_frame_qbeta"].get("status") == "INHERITED_C":
         w.add_caveat(
             "Q_β / m_n / Δ_pn rows: these figures were built in Markov "

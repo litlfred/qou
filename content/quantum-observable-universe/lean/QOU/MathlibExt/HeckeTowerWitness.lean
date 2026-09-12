@@ -71,11 +71,20 @@ constant, and in particular not `⊤`. The proof is by the collapse map — if
 `0 = 1` in `R`.
 
 🛑 **NOT proved.** `H n < H (n+1)` for `n ≥ 1`. The collapse map sends every
-generator to the same element, so it cannot separate `H 1` from `H 2`; a finer
-separating quotient (rank 6, i.e. `H₃`) or the Iwahori-Hecke coset basis is
-needed. The upper half of that basis theorem is already in the corpus
-(`IwahoriHecke` `finrank_le_factorial`, bean `qou-uoal`); the lower bound is
-open. Do not read `twH_mono` as strict growth at every level — it is `≤`.
+generator to the same element, so it cannot separate `H 1` from `H 2`. Do not
+read `twH_mono` as strict growth at every level — it is `≤`.
+
+**And the obvious repair does not work** — this is proved below, not merely
+suspected. The corpus does hold a rank-6 separating candidate with its basis
+established (`SchurWeyl.HeckeDim3Dim.sixBasis`, `SchurWeyl.HeckeDim3Indep`), so
+it is tempting to map the tower there and send the tail `g m`, `m ≥ 2`, to a
+central scalar. `scalar_tail_forces_central` shows that any such map forces the
+adjacent generator to be **central**, which `σ₁` is not — so the whole
+"tail-to-scalars" family is excluded, not just one member. What strict growth
+actually needs is the Iwahori-Hecke coset basis, or the direct limit of
+`SchurWeyl.HeckeInclusion.heckeIncl` with injectivity. The upper half of that
+basis theorem is in the corpus (`finrank_le_factorial`, bean `qou-uoal`); the
+`n!` lower bound is the open half. Tracked as bean `qou-p8yg`.
 
 -- Ref: [manuscript] beans qou-cins / qou-0fmb / qou-301d; Jones, *Hecke algebra
 --      representations of braid groups and link polynomials*, Ann. of Math. 126
@@ -296,12 +305,87 @@ theorem heckeTower_nontrivial [Nontrivial R] (h : R) :
   have : (0 : R) = 1 := congrArg Hecke2.const hc
   exact zero_ne_one this
 
-/-- **The quadratic scalar is genuinely free.** Unlike the symmetric-group tower
-(where the generators are involutions and `h = 0` is forced), `h` here is a
-parameter: for every `h` there is a tower whose generators satisfy `σ² = h·σ + 1`.
-Together with `twH_zero_lt_one` this is the missing quadrant. -/
-theorem exists_tower_with_nonzero_h (h : R) (hne : h ≠ 0) :
-    ∃ T : ℕ → HeckeTower R h, (∀ m, T m * T m = h • T m + 1) ∧ h ≠ 0 :=
-  ⟨twGen h, twGen_quad h, hne⟩
+/-- **The missing quadrant, in one statement.** For *every* `h` — in particular
+every `h ≠ 0`, unlike the symmetric-group tower where the generators are
+involutions and `h = 0` is forced — there is a tower whose generators satisfy
+`σ² = h·σ + 1` **and** whose filtration is non-constant, unlike
+`unitMarkovTrace`. -/
+theorem tower_nondegenerate [Nontrivial R] (h : R) :
+    (∀ m : ℕ, twGen h m * twGen h m = h • twGen h m + 1) ∧ twH h 0 < twH h 1 :=
+  ⟨twGen_quad h, twH_zero_lt_one h⟩
+
+/-! ## 🛑 Why the cheap finite separator cannot give strict growth
+
+The obvious route to `H 1 < H 2` is to map the tower into a small algebra in
+which `g 0` and `g 1` stay independent — the corpus has a rank-6 candidate with
+its basis proved (`SchurWeyl.HeckeDim3Dim.sixBasis`, `HeckeDim3Indep`) — sending
+the tail `g m`, `m ≥ 2`, to a central scalar so that `far` is satisfied for free.
+
+**That route is structurally blocked, and the obstruction is the braid relation
+rather than anything about the target.** The two results below are the proof; the
+same genre as `braid_forces_eq_of_commuting_involutions`, which rules out the
+involution witness for its own reasons.
+
+The moral for the next attempt: a tail assignment checked only at the *boundary*
+(`far`, and `braid` at the bottom index) looks complete and is not — the
+*interior* braid relation, between the last non-scalar generator and the first
+scalar one, is what fails. -/
+
+/-- **A generator adjacent to a central scalar satisfies a scalar relation.**
+If `y = c·1` and `(x, y)` satisfies the braid relation while `x` satisfies the
+Hecke quadratic, then `c·(c − h)·x = c·1`. No hypothesis on `c` is needed. -/
+theorem braid_scalar_forces_scalar {A : Type*} [Ring A] [Algebra R A]
+    (x : A) (h c : R)
+    (hquad : x * x = h • x + 1)
+    (hbraid : algebraMap R A c * x * algebraMap R A c
+        = x * algebraMap R A c * x) :
+    algebraMap R A (c * (c - h)) * x = algebraMap R A c := by
+  have hcomm : ∀ a : A, algebraMap R A c * a = a * algebraMap R A c :=
+    fun a => Algebra.commutes c a
+  have hL : algebraMap R A c * x * algebraMap R A c
+      = algebraMap R A (c * c) * x := by
+    rw [mul_assoc, ← hcomm x, ← mul_assoc, ← map_mul]
+  have hR : x * algebraMap R A c * x = algebraMap R A c * (x * x) := by
+    rw [← hcomm x, mul_assoc]
+  have key : algebraMap R A (c * c) * x
+      = algebraMap R A (c * h) * x + algebraMap R A c := by
+    rw [← hL, hbraid, hR, hquad, mul_add, mul_one, Algebra.mul_smul_comm,
+      Algebra.smul_def, ← mul_assoc, ← map_mul, mul_comm h c]
+  have hcc : c * (c - h) = c * c - c * h := by ring
+  rw [hcc, map_sub, sub_mul, key]
+  abel
+
+/-- **The tail-to-scalars route is dead.** If the scalar `c` is a unit, the
+adjacent generator `x` is forced to be *central* — so it commutes with every
+other generator's image, and no such map can separate `g 1` from the subalgebra
+generated by `g 0` in any algebra where those two fail to commute.
+
+Applied to the rank-6 candidate: `σ₁` would have to commute with `σ₀`, which it
+does not. Hence strict growth needs the Iwahori-Hecke coset basis, or the direct
+limit of `SchurWeyl.HeckeInclusion.heckeIncl` together with injectivity — not a
+finite separator. -/
+theorem scalar_tail_forces_central {A : Type*} [Ring A] [Algebra R A]
+    (x : A) (h : R) (u : Rˣ)
+    (hquad : x * x = h • x + 1)
+    (hbraid : algebraMap R A (u : R) * x * algebraMap R A (u : R)
+        = x * algebraMap R A (u : R) * x) :
+    ∀ a : A, x * a = a * x := by
+  set d : A := algebraMap R A ((u : R) - h) with hd
+  have hdc : ∀ a : A, d * a = a * d := fun a => Algebra.commutes _ a
+  have hkey := braid_scalar_forces_scalar x h (u : R) hquad hbraid
+  -- cancel the unit `algebraMap u` on the left of `algebraMap (u * (u - h)) * x`
+  have hdx : d * x = 1 := by
+    have hcancel : algebraMap R A ((u⁻¹ : Rˣ) : R) * (algebraMap R A ((u : R) * ((u : R) - h)) * x)
+        = algebraMap R A ((u⁻¹ : Rˣ) : R) * algebraMap R A (u : R) := by
+      rw [hkey]
+    rw [← mul_assoc, ← map_mul, ← map_mul] at hcancel
+    simpa [hd, ← mul_assoc, Units.inv_mul] using hcancel
+  have hxd : x * d = 1 := by rw [← hdc x]; exact hdx
+  intro a
+  calc x * a = x * a * (d * x) := by rw [hdx, mul_one]
+    _ = x * (a * d) * x := by simp only [mul_assoc]
+    _ = x * (d * a) * x := by rw [hdc a]
+    _ = (x * d) * a * x := by simp only [mul_assoc]
+    _ = a * x := by rw [hxd, one_mul]
 
 end QOU.MathlibExt.HeckeTowerWitness

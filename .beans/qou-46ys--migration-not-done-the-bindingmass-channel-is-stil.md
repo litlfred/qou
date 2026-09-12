@@ -1,11 +1,11 @@
 ---
 # qou-46ys
 title: 'MIGRATION NOT DONE: the binding/mass channel is still convention C while the decay channel is on D'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-09-12T19:04:20Z
-updated_at: 2026-09-12T19:06:21Z
+updated_at: 2026-09-12T19:53:56Z
 ---
 
 **What is wrong.** The owner ruled convention D canonical on 2026-08-15 and
@@ -62,3 +62,114 @@ exclusive). So this is a re-derivation, not a substitution.
 
 Nobody owns this. Full analysis:
 `docs/audits/2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md` §4 and §5(b).
+
+
+## 2026-09-12 — MIGRATED. And the A3-overshoot trend DOES NOT SURVIVE it.
+
+**The migration was cheap, not "authorial work".** The file's own banner said
+re-deriving under D is authorial and didn't do it. The convention-D values at the
+proton pin were **already committed** in
+`canonical-mass-table-extended.witness.json` (`q0Anchor: proton`, nine nuclides,
+computed 2026-09-07). So it is a **read**, and it fixes convention *and* anchor
+at once. `gap_a3_overshoot_robustness_check.py` now reads by `(Z,N)` instead of
+hardcoding C literals, and `Q0` comes from the table's `q0Value`.
+
+**Rederived independently before being trusted.** `tr_M = Σ_λ y_λ χ_λ`, and the
+`χ_λ` are representation characters — **independent of the Markov parameter**, so
+only `y_λ` carries the convention. (The swap *is* legitimate here, unlike the
+`c_k` ladder, whose offset mixes bar-weights — so `decayLadder_zC_threeRow_ne_zero`
+does not apply.) Recomputing from the committed 50-digit `χ_λ` in
+`atom-chi-rust-{d,3he,4he}` against `y_λ^D = [n−2k+1]_q/[2]_q^n` (ℓ(λ) ≤ 2, else
+0) reproduces the table **exactly** for all three: `0.1519683392042316` /
+`0.05859625365443638` / `0.01123741765976742`. Both live `y_λ` implementations
+(`y_lambda_su_n`, `regenerate_chi_atom_conventionD.y_lambda`) agree to 60 dps, so
+there is no second convention-D weight in the corpus.
+
+### The result is NEGATIVE
+
+| | C (muon) | **D (proton)** |
+|---|---|---|
+| O(D) | 2.050 | **0.8021** |
+| O(³He) | 2.861 | **0.8116** |
+| O(⁴He) | 3.364 | **0.6829** ← *below* ³He |
+| D<³He bands disjoint | True | **False** |
+| ³He<⁴He bands disjoint | True | **False** |
+| flatten needs | −28 % / −39 % | **−1.17 % / +17.5 %** |
+
+- **No overshoot**: every `O < 1` — an *undershoot*.
+- **The A-trend inverts** at ⁴He, so there is no monotone atom-dependence to explain.
+- **Flattening needs shifts inside the ±20 % knot-ID ambiguity the file itself cites** — its own robustness criterion, failed.
+
+**The script was printing "ROBUST" unconditionally.** Three hardcoded blocks,
+including a six-line VERDICT asserting *"the overshoot is EXACT"*, *"the GROWTH
+with A is robust D→³He under every error model"*, *"the atom-dependence is REAL,
+not a calibration artifact"*. All were the C-frame answer and printed regardless
+of the computed table. **Every conclusion is now computed**, including against the
+file's own ±20 % threshold.
+
+**🛑 SCOPE-(a), NOT (b).** One pin, one convention, one knot/Vol assignment, one
+error model. It refutes the trend **as computed here**. It does **not** prove no
+atom-dependence exists.
+
+**Trap, and it cost me a wrong conclusion first:** do **not** calibrate against
+`docs/audits/2026-08-15-rho-k-co-casimir-stale-convention-c-needs-d-refresh.md`,
+which records the D deuteron as `0.5751`. That was correct on 2026-08-15 and is
+**stale** — the table was regenerated at the proton pin and the value moved to
+`0.15197`. Calibrating against it reads as a failure of a *correct* computation.
+
+### What this bean does NOT close — successor work
+
+`Vol_hyp` and `B_over_me` in that file are **unchanged C-era assignments**. So the
+binding channel is migrated in its `tr_M` but **not in its knot assignment**; a
+D-consistent knot assignment is `qou-e5jf`'s arc. A successor bean should carry
+that, plus the wider sweep: this migrated the one file that *documented* its C
+dependence, and `scripts/convention-c-value-audit.py` reports 85 confirmed
+convention-C bindings in `computations/` (`qou-t9r1`).
+
+PR #7235, commit `65401dce5bd`.
+
+
+## 2026-09-12 (drain) — the SECOND producer, the sign flip, and both audits. PR #7236.
+
+Reopened-in-spirit as a drain pass; the migration proper is above.
+
+**`gap_a3_deuteron_A_D_overshoot.py`** — the matched pair of the file migrated in
+#7235, same muon `Q0`, same C `TRM`. Migrated the same way (both constants from
+`canonical-mass-table-extended.witness.json`). Both files now independently give
+**0.8021**, so the pair stayed matched.
+
+**THE SUBSTANTIVE FINDING: the required `P_λ` correction FLIPS SIGN.**
+
+| | C (muon) | **D (proton)** |
+|---|---|---|
+| flat baseline vs deuteron binding | **overshoots** ×2.05 | **undershoots** ×0.8021 |
+| required `P_λ` | **SUPPRESS** to 48.79 % | **ENHANCE** to 124.7 % |
+
+**Any `P_λ` search inheriting the "suppression" framing is aimed the wrong way.**
+The probe now prints that in its own output rather than leaving it to be inferred.
+
+**Three more hardcoded claims, now computed.** The script printed
+unconditionally: `"OVERSHOOT factor"`; *"the bar-even `P_λ` must **SUPPRESS** the
+effective trace to ~124.7 % of flat"* (suppression to 124.7 % is not
+suppression); *"the flat baseline **OVERSHOOTS** … by ~0.8021×"*; and
+*"consistent with **EXACTLY 2** … Reporting ≈2.05"*.
+
+**🛑 The header's "48 %" warning is on a stale figure AND points the wrong way.**
+It says substituting the live value "would **inflate** the overshoot by 48 %" —
+that 48 % is the ratio to `0.5751` (the 2026-08-15 `rho-k` audit's D deuteron,
+correct then, stale now). The live value is `0.15197`, so migrating **deflates by
+~2.56×**.
+
+**Both A3 audits bannered SUPERSEDED** — kept as dated records per the `4.66e6`
+precedent, but their *titles* asserted the refuted conclusion (*"the cross-atom
+binding-overshoot trend is REAL"*, *"it GROWS with A"*) and a cold reader took
+them as live. Each now opens with the C-vs-D table, the scope-(a) marker, the
+`P_λ` sign note and the stale-`0.5751` trap. The producers had been migrated
+while their own authority still asserted the old conclusion — the
+"fixed in one place, survives in the others" failure.
+
+**REMAINING, and it is the successor work:** `VOL_D` / `Vol_hyp` and `B/m_e` are
+still **C-era assignments**, so both files are now **D in their trace and C in
+their geometry**. A D-consistent knot/volume assignment is undone —
+`qou-e5jf`'s arc. Coordinated to PR #7229 (end-to-end binding), which may consume
+either.

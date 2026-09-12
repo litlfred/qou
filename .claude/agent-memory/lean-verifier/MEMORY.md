@@ -350,6 +350,19 @@ block's sidecar (128 files for one block) — revert all but yours.
 6. **`lean -o` refuses a source outside its root** (cwd, or `--root`): stand-in /
    mutant modules go under a scratch root laid out `QOU/…/Mod.lean` — harness §10.
 
+## TRAP — a theorem that IS a refutation needs more than the gate → `verification-harness.md` §19
+
+`exit 0` + clean `#print axioms` does **not** detect an unused or unsatisfiable
+hypothesis, and for a refutation that failure mode "proves" a route dead on
+nothing. A red mutant proves only **syntactic** dependence (`rewrite failed`);
+the claim worth making needs a concrete instance where the hypothesis **fails
+and the conclusion fails with it** — `A = R = ℚ` + `norm_num` does it in three
+lines. Also check whether a restrictive-looking binder is actually *free* (here
+`u : Rˣ` is forced by the quadratic, which WIDENS the refutation), and
+`grep` every backticked declaration the docstring cites: one was dangling, and
+a `section` name is not part of a full name. Guard the mutation harness — a
+`sed` that matches nothing yields a green run reported as a pass.
+
 ## STABLE — the honest dispositions when a proof will not close
 
 Exactly three (AGENTS.md §1a / §"Strict Lean Discipline"): **prove it**;
@@ -465,8 +478,8 @@ merge is not a current claim.
 | per-paper mathlib oleans (the OTHER half — check, but it may not EXIST) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **0 — `content/*/lean/.lake` had `build/` and NO `packages/`**, so ONE mathlib tree, no shadowing, no union mirror (2846 on 2026-09-04) | 2026-09-11 |
 | whole restore, fresh container | `find . -name '*.olean' \| wc -l` | **6492** = root 3758 + QOU 2703 + UGB 29 + Fred2005 2 | 2026-09-11 |
 | restore ALREADY present + bg build running | as above | **10408** = root packages 3758 + per-paper build 2806 + per-paper packages 3813. Root count 3758 matched the seed EXACTLY, so the restore was in place and **no fetch was needed** — check before spending 1.7 GiB | 2026-09-12 |
-| union mirror over both trees, one `MathlibExt` file | `cp -aln` per §17 | **6648 oleans, 5.1 G apparent, `df` free UNMOVED** (12 G before and after) — hardlinks; also immune to the concurrent `lake build` | 2026-09-12 |
-| lean-direct, `MathlibExt/HeckeTowerWitness.lean` (warm) | `time lean -DautoImplicit=false -s 65536 <f>` | **2.5 s** wall / 3.3 s user; each rebuilt dep 2.7-2.9 s | 2026-09-12 |
+| union mirror over both trees, one `MathlibExt` file | `cp -aln` per §17 | **6687 oleans, 5.1 G apparent, `df` free UNMOVED** (12 G before AND after `rm -rf`) — hardlinks; also immune to the concurrent `lake build`. Real trees unchanged after removal (3758 / 2816 / 3813), so the `rm -f`-before-write rule held | 2026-09-12 |
+| lean-direct, `MathlibExt/HeckeTowerWitness.lean` (warm) | `time lean -DautoImplicit=false -s 65536 <f>` | **2.9 s** wall / 4.0 s user; dep rebuilds 51 s cold (user 5.6 s — page cache) and 2.8 s warm | 2026-09-12 |
 | cold vs warm lean-direct, `QBeta/ConventionDAdmissibleRoots.lean` | `time lean -DautoImplicit=false -s 65536 <f>` | **1m05s cold / 4.5 s warm**; `user` 3.3 s both — cold PAGE CACHE, not a rebuild | 2026-09-11 |
 | cold vs warm `lean`-direct, one Mathlib file | `time lean <file>` | 1m52s cold / 4.7 s warm; `user` 29 s / 4 s | 2026-09-03 |
 | lean-direct rebuild of the H3-Gram cone (cold) | `lean -o … QOU/{Shared/DetFin,Machinery/MarkovTraceOnHecke,Machinery/HeckeH3GramNondegeneracy,Interactions/GramMatrixH3Symbolic}.lean` | 330 / 245 / 69 / 207 s | 2026-09-03 |
@@ -582,6 +595,18 @@ lean-direct gate found, at the same `188:59`. One `grep '✖'` turned a single-h
 into two agreeing methods, and simultaneously showed the other **6641** modules building.
 A `status: failed` in that JSON is therefore not a reason to ignore the log — read it
 *first* and check whether the sole failure is the file you were sent to verify.
+
+**🛑 DATE THE LOG BEFORE BELIEVING IT — measured the SAME DAY, on the same file.** The
+entry above is true of the run that produced it and reads as though the log is always
+current. It is not: it is written **once per session start** and never refreshed. Second
+pass on `HeckeTowerWitness.lean`, the log was stamped **18:43 UTC** against a fix commit at
+**19:00** and a further edit at **19:08**, so its `✖` — same module, same `188:59`, same
+`Set.image_subset` deprecation — described a file **two revisions dead**. Quoting it would
+have reported a fixed defect as live, with the authority of "two agreeing methods".
+Discriminator, three cheap fields: `ls -la /tmp/qou-lake-build.log` vs
+`git log -1 --format=%ci` on the file **and** its `ls -la` mtime. Older than either ⇒ it is
+history, not a second opinion. (The `timestamp` in `/tmp/qou-lean-build-status.json` dates
+the same run.)
 
 ## TRAP — `lean-library-sweep.py` measures the CONTAINER when the olean tree is empty (2026-09-07)
 

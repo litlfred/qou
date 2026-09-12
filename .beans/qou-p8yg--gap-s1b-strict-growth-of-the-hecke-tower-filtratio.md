@@ -1,0 +1,88 @@
+---
+# qou-p8yg
+title: 'GAP S1b: strict growth of the Hecke tower filtration -- H 1 < H 2 is a WIRE (H3 exists sorry-free); general n needs the (n+1)! lower bound'
+status: todo
+type: task
+priority: normal
+created_at: 2026-09-12T19:02:09Z
+updated_at: 2026-09-12T19:05:58Z
+---
+
+Parent: qou-cins / plan qou-0fmb, epic qou-08a2. Opened 2026-09-12 after S1 merged (#7228, 3653e9ce).
+
+## What S1 left open
+QOU/MathlibExt/HeckeTowerWitness.lean proves twH_mono (<=) and twH_zero_lt_one (H 0 < H 1, via the rank-2 collapse). It does NOT prove H n < H (n+1) for n >= 1: the collapse map sends every generator to the same element, so it cannot separate H 1 from H 2.
+
+## H 1 < H 2 is a WIRING job, not a build -- the separator already exists sorry-free
+Corpus-grep 2026-09-12 (path 3) found the rank-6 object this needs, already proved:
+  QOU/SchurWeyl/HeckeDim3Dim.lean   finrank_hecke3 : finrank R (Hecke R q q^-1 2) = 6
+                                    sixBasis : Module.Basis (Fin 6), sixFamily_indep
+  QOU/SchurWeyl/HeckeDim3Indep.lean sixWords_indep
+  QOU/SchurWeyl/HeckeDim3.lean      braid3 : s0*s1*s0 = s1*s0*s1
+All sorry-free (verified: the 10 'sorry' grep hits in HeckeCoset.lean are ALL the words "sorry-free" in docstrings -- prose, not code; qou-uoal's sorry-free claim HOLDS).
+
+PROOF SKETCH (worked out, not guessed). Define phi : HeckeTower R h -> Hecke R q q^-1 2 by
+    g0 |-> sigma0,  g1 |-> sigma1,  g m |-> q*1  for m >= 2.
+Relation check:
+  * far(m,k) for m >= 3 forces phi(g m) to commute with BOTH sigma0 and sigma1, i.e. to be central. A scalar is.
+  * quad on a scalar c needs c^2 = h*c + 1; with h = q - q^-1 the root c = q works exactly.
+  * braid(0) is g1 g0 g1 = g0 g1 g0 |-> sigma1 sigma0 sigma1 = sigma0 sigma1 sigma0 = HeckeDim3.braid3.
+  * braid(m>=1) and far(2,0) reduce to scalar identities.
+Then phi(twH 1) = adjoin{sigma0} = span{1, sigma0} (2-dim) while phi(g 1) = sigma1, and sigma1 is not in span{1,sigma0} by sixWords_indep. Hence twH 1 < twH 2.
+
+NOTE the h = q - q^-1 specialisation: this separator needs a base ring carrying q, so the wired theorem is at R = the Hecke base ring, not the fully generic {R : CommRing}. That is a real scope narrowing and must be stated, not glossed.
+
+## What is GENUINELY open: general n
+H n < H (n+1) for all n needs dim H_n(q) >= n! -- the LOWER half of the Iwahori-Hecke basis theorem. qou-uoal (COMPLETED) supplies only the upper half, finrank_le_factorial <= (n+1)!, and its own closing note names the blocker: "Lower bound dim>=(n+1)! needs general Hoefsmit (qou-im9l)".
+
+LEAD, not a claim: qou-im9l is itself now COMPLETED (general-lambda Hoefsmit seminormal rep + braid; residual qou-gjg6 also completed). So the stated blocker may already be discharged and the lower bound may ALSO be a wire. NOT verified -- whoever picks this up should corpus-grep whether the (n+1)! lower bound was ever derived from the completed Hoefsmit rep before assuming it is open.
+
+## Also fix while here (minor, from the #7228 verification)
+exists_tower_with_nonzero_h takes hne : h != 0 and concludes (forall m, quad) AND h != 0 -- the second conjunct merely restates the hypothesis. Not vacuous (the first conjunct is real content) but it is noise. Restate as the two genuine non-degeneracy facts: (forall m, twGen quad with the given h) AND twH 0 < twH 1, with no restated hypothesis.
+
+## Discipline
+No fit. Per rule 13a this stays open until the mathematics closes. Do NOT close it on the strength of the H 1 < H 2 wire alone -- that is one level, not the filtration.
+
+
+--------
+**2026-09-12, SAME DAY: THE PROOF SKETCH ABOVE IS REFUTED. Do not attempt it.**
+
+The sketch sends g m |-> q*1 for m >= 2 and checks quad, far and braid(0). It does
+NOT check braid(1), and braid(1) is what kills it.
+
+With phi(g 2) = c*1 central and phi(g 1) = x:
+
+    braid(1)   g2 g1 g2 = g1 g2 g1   =>   c^2 x = c x^2
+    quad       x^2 = h x + 1         =>   c^2 x = c(h x + 1) = c h x + c
+                                     =>   c (c - h) x = c
+
+so if c is a unit, (c - h) x = 1 and x is a SCALAR. But x = sigma_1 is not a
+scalar in H_3 (sixWords_indep). Contradiction: the algebra map DOES NOT EXIST.
+
+This is not special to c = q. It is scope (b), a STRUCTURAL exclusion, and the
+invariant is named: the braid relation together with the quadratic forces a
+generator adjacent to a central-scalar generator to be a scalar itself. So EVERY
+assignment sending all but finitely many generators to scalars collapses the low
+generators too, and the whole "cheap finite separator" family is dead, not just
+this member.
+
+**Consequence: H 1 < H 2 is NOT a wire.** The rank-6 objects (HeckeDim3Dim /
+HeckeDim3Indep) are real and sorry-free, but they cannot RECEIVE a map from the
+N-indexed tower, so they do not yield strict growth. Strict growth needs the
+Iwahori-Hecke coset basis, or the direct limit of HeckeInclusion.heckeIncl
+together with injectivity of that inclusion -- i.e. exactly what the merged
+HeckeTowerWitness docstring said before this bean narrowed it. The merged
+docstring is CORRECT as written; this bean's narrowing was the error.
+
+What survives from the narrowing, and is still worth having:
+* HeckeMarkov3.markovTrace3 (finding 2) is untouched by this -- it is about the
+  TRACE (S2 / qou-g8i1), not about separating the filtration, and remains a
+  materially better S2 starting point than the rank-2 collapse.
+* the obstruction itself is a formalize-first result worth recording in Lean,
+  alongside #7153's braid_forces_eq_of_commuting_involutions, which is the same
+  genre: a proved statement about which cheap witnesses CANNOT work.
+
+Method note for the next agent: this was caught by reading the target's actual
+API before writing the map, not by a probe. The sketch had been checked against
+quad, far and braid(0) and looked complete; braid(m) for the INTERIOR index m=1
+is the case a boundary-only check misses.
