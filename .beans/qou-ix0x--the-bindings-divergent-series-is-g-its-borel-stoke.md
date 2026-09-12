@@ -317,3 +317,31 @@ And it is a **second** nail in a coffin the corpus had already closed — `Milno
 **The reusable part is the pigeonhole, and it generalises past `μ̄`.** Nothing in `linear_in_muBar_vanishes_of_identical_pair` is about Milnor: it applies to **any** invariant that flips under exchanging two components. So the statement worth carrying forward is *no antisymmetric-under-component-exchange invariant, coupled linearly, can carry a channel that is invariant under exchanging two same-species nucleons* — and species can never break that, only a finer label (spin) can.
 
 **Coordination performed, recorded because it is durable work:** #7200 shipped `QOU/Mass/OneRowBlockLetterProduct.lean` marked **⚠ NOT COMPILED** (their container had 7.8 GB free against the ≥ 8 GB a cache restore needs) and asked a reviewer to verify it. I had a live olean cache, so I did: branch head `39cd170452f`, `lean -DautoImplicit=false -s 65536` **exit 0**, `#print axioms` on `map_letter` / `map_word_eq_prod` / `map_word_append` all `propext` + `Quot.sound`, **`sorryAx` 0** — not even `Classical.choice`. Their anticipated `simp`-set gap did not materialise. Verified by copying to its real path, compiling, and deleting; nothing of theirs is committed here and I did not touch their branch.
+
+
+---
+**THE LAST DOOR IS OPEN BUT UNBUILT — and the one route to building it is PROVED not to lift. Corpus-grepped 2026-09-12; I am stopping the arc here rather than manufacturing the missing object.**
+
+I recorded spin as the surviving escape and greped it before touching it. Six paths (path 0 `corpus_search` **DOWN** again — `paper-assistant` `ENOENT` — so `emptyRoots` unchecked and a vocabulary blind spot is **not** ruled out; everything below is grep-derived).
+
+**Spin IS represented — in FOUR inequivalent, unreconciled senses**: `SpinLabels`/`SU2SpinLabels` (SU(2) label `j`); `BoundedPartition.spin` (`j = (λ₁−λ₂)/2`, from a two-row Wedderburn partition); `LocalizedKnot.intrinsicAngularMomentum` (`J = c(K)/2`, crossing number over two); and the `SpinFromSo3Fiber` conjecture class. Plus `nuclear-spin-parity-proof.md`'s spin-statistics from **writhe** (`w` even ⟺ bosonic ⟺ `J ∈ ℤ`; odd ⟺ fermionic ⟺ `J ∈ ℤ+½`).
+
+**🛑 THE TRAP, AND IT IS EXACTLY MY RESULT'S SUBJECT.** The corpus's single most spin-named object — `knots-particles-confinement/spin-involution`, 15 Lean declarations — **is not about spin**. It is a `*`-antiautomorphism whose output is **isospin**: `T₃(a) = ½·sgn_σ(a) ∈ {−½,0,+½}`, grading `A = A₊ ⊕ A₋` while calling the sectors "spin-singlet/spin-doublet". An agent grepping `spin` lands on it first, and would reach for it as the antisymmetry-breaking label.
+
+**It cannot be that label, and my own pigeonhole is what says so.** Isospin **is** the species label — it is `p` vs `n`. `muBar_cannot_carry_nucleon_triple_channel` excludes exactly the species-dependent weighting, so the most inviting "spin" object in the corpus is precisely the one already closed. Worth stating loudly, because the name points the wrong way. (Counts confirm the naming hazard: `isospin` 313 files against `spin-singlet` 28, and `isospin` *contains* `spin`, so every non-word-boundary grep is dominated by it.)
+
+**What genuinely exists, and it has the right SHAPE.** `qou-m896` (**completed**): the antisymmetric Hecke block carries a negative eigenvalue — T=1 (symmetric) gives `|μ| = q > 1` ⇒ UNBOUND; T=0 (antisymmetric) gives `|μ| = 1/q < 1` ⇒ BOUND, at `β = 0`, *"a pure σ crossing carrying NO FLAVOUR INFORMATION AT ALL"*. **Species-free exchange antisymmetry producing a sign** — exactly the shape the pigeonhole leaves room for. Its cap is **exactly 1**, attained only at `β = 0`, against nature's 33.7055.
+
+**And here is why I stop.** `qou-r1yj` (**completed**) proves the Pauli forcing **does not lift to the arity my triple lives at**:
+
+> *"AND THE IDENTIFICATION STOPS BEING FORCED. At n=2, Pauli forced it… Here exchange parity is NOT locked to magnitude — `q², q³, q⁵, q⁶` each carry BOTH signs — so the two labels no longer pick out two channels with two values."* *"Recovering the sign pattern at six strands requires choosing an unbound channel **BY HAND**, and nothing forces which."*
+
+Three strands per nucleon is exactly where a three-body channel lives. So the route that *would* build a species-free spin antisymmetry is proved not to reach it, and the only way through is a **hand-chosen channel** — which is selection against the target, forbidden by §NO FITTING.
+
+**The object itself is absent, not merely unused.** `qou-o43i` (in-progress), measured from field lists rather than names: *"`fIso` is available; **`fSpin` does not exist**… no other `.lean` in the tree carries one… the equal-scalars identification is **un-instantiable at present** — stronger than un-instantiated."*
+
+**So the honest status of the last door is neither "open" nor "closed": it is UNBUILT.** Saying "spin is the remaining route" overstates it — there is no spin function to weight with, and the one construction that forced the spin↔exchange link is proved not to lift to this arity. **I am not building `fSpin` and not choosing a channel.** Doing either to get the sign would be the anti-fit violation, and `qou-r1yj` has already established that nothing forces the choice.
+
+**Scope discipline for whoever writes this up:** the grep found **no named proved invariant** forbidding a spin-dependent weight in a triple channel. The four existing spin refutations are a 2-body magnitude degeneracy (`InterfaceScalar.separable_interface_degenerate` — different arity, and it constrains magnitude degeneracy, **not** a sign under component swap), a `Δ_λ` magnitude failure (Pauli/Wigner-SU(4) plethysm, zero free parameters, deuteron −92.69 %), an SU(4) row bound (correctly scope-(b), and **vacuous for `n ≤ 4`**), and a dimension-count coincidence. **Any refutation written here is scope-(a).** Do not write (b).
+
+**One library note.** `arxiv-1906.12122v2` (Hammer–König–van Kolck) is held, registered and already cited by `T3WritheVsDeltaLambdaSign.lean` as the `τ₁·τ₂` exchange-symmetry template — so the literature side of this is not a gap. And Moffatt–Ricca is already used, in `fluid-dynamics/helicity-conservation.lean`, as **hypotheses** (`hCWF`, `hSelf`, cited not proved) and in the **fluid** chapter rather than the nuclear one.
