@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-26T21:41:57Z
-updated_at: 2026-09-04T09:25:00Z
+updated_at: 2026-09-12T07:59:24Z
 ---
 
 Proposed on [#5857](https://github.com/litlfred/qou/pull/5857) by the sibling
@@ -144,3 +144,70 @@ by `zero_mul`"*, body exactly that) and `nLambda` (*"Content-bearing via `n`
 (the partition's size)"*, body `:= n`). The convention works when it is
 maintained; `hookDim` is what happens when a later pass edits the body without
 it.
+
+
+---
+
+## 2026-09-12 — a SECOND detector tried and also a NEGATIVE; and the class is live, found by hand 5× today
+
+### The sub-shape this bean did not name
+
+All five instances I hit today are the same class — *docstring states something
+the body does not carry* — but a different **cause** from `schurElement` and
+`hookDim`. Those were authored wrong, or sharpened out from under their prose.
+These were **invalidated by a later fix to the thing they describe**, and the
+fix's own commit never re-read the prose above it:
+
+| file | claimed | reality |
+|---|---|---|
+| `Torsion/skein_generation.lean` | "no hadron restriction … `scratch_skein.lean` is closer" | the restriction is 140 lines **below**, added by the commit that deleted `scratch_skein.lean` |
+| `Encounter/MostowRigidity.lean` | field "stores the 15-digit truncation … via `:leanval`" | 12 lines above a field whose own comment says the sync "is gone" |
+| `MathlibExt/ManifoldVolumeBridge.lean` | "`= 2.0298…` holds by `rfl`" | **the `rfl` does not hold** — it is a Clausen value |
+| `Encounter/FigureEightVolumeBridge.lean` | present tense: "Those differ at the 16th digit" | they no longer differ |
+| `Archimedean/HyperbolicVolumeTranscendence.lean` | value "cross-checked against `MostowRigidity` which uses the identical value" | the cross-check that was this literal's **warrant** evaporated |
+
+The mechanism generalises this bean's own: it recorded that *sharpening a body
+to silence a detector* staled its docstring. The wider rule is that **any fix to
+a body invalidates prose about that body, and nothing re-reads it** — and the
+prose is what a reader meets first.
+
+### Detector attempt 2, and it fails for YOUR measured reason
+
+I tried the mechanical signature: *a decimal literal appearing in a file's
+COMMENTS but in none of its CODE lines* (≥8 significant digits, skipping lines
+that self-mark as struck/superseded).
+
+    files scanned   2796
+    candidates       400
+
+**Do not build it.** It cannot separate prose about *this* declaration's value
+from prose citing *another* constant for comparison — `FiveTwoOhtsukiBridge`
+alone contributes ~16 legitimate intermediate values. That is exactly the wall
+this bean already hit at 1-in-8, reached from a different direction. Two
+independent attempts, same conclusion: **the general form of this detector does
+not exist.**
+
+### What IS high-precision — and it is a registry, not a parser
+
+Grep for a **specifically retired literal**. `2.02988321281930` (the 15-digit
+`Vol_4_1` truncation `qou-f8lit` retired) gives **9 sites in 5 files**, every one
+adjudicable by eye in seconds: **7 correct records, 2 genuinely stale** (both
+fixed today).
+
+That is the shippable shape — not "parse a claimed value out of prose" but
+"maintain a list of values the corpus has retired, and grep for them". It needs
+no NLP, its precision is set by the curation of the list rather than by a
+heuristic, and its false positives are a *readable* class (a quotation
+explaining the retirement) rather than *correct documentation*, which is what
+made attempt 1 and attempt 2 unshippable.
+
+**The 9→2 is the finding, not the 9.** A docstring quoting a retired value to
+explain why it was retired is indistinguishable under grep from one still
+asserting it — the "quoted defect inside its own fix" trap this corpus has now
+hit in `qou-ffwk`, in `qou-hok7`'s scare quotes, and here.
+
+**Recommendation, marked as judgement:** close the "build a detector" question
+NEGATIVE on the strength of two independent attempts, and open the retired-value
+registry separately if anyone wants it. I have not built the registry — it is a
+new tool, not a drain item, and under the ask-first override it is the owner's
+call whether a sixth audit script earns its maintenance.
