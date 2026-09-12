@@ -402,10 +402,86 @@ for the next agent is much narrower than "derive `α`":
   steepness**;
 - `z`, or whatever plays its role, must be **derived** from the braiding.
 
-**Concrete next step:** compute the holonomy log-slope of the step-② non-abelian
-Stokes connection at `q₀` and check it against 2.176 **before** attempting any
-closed form. That is the formalize-first move — one number, and it either
-brackets or it does not.
+**🛑 That next step, as first written here, was NOT RUNNABLE — corrected the
+same day, and the correction is the finding.** This section closed with *"compute
+the holonomy log-slope of the step-② non-abelian Stokes connection at `q₀`"*.
+**There is no constructed step-② connection.** Verified at the Lean rather than
+from the cheat sheet, whose own §2a warns that its status column was the thing
+that was wrong:
+
+- `QOU.Mass.HeckeStokes.stokes_curvature_factors` is
+  `X² − (q − 1/q)X − 1 = (X − q)(X + 1/q)`, discharged by `field_simp; ring` over
+  a generic field. Sound, and it is where the two Hecke eigenvalues come from —
+  but it is an algebraic factorisation. No connection, no curvature form, no
+  surface, no multiplicative integral.
+- The curvature reading lives in a **docstring** in `NaStokesKeystone.lean`: the
+  2-form is *stipulated* to be the Hecke quadratic, so imposing flatness recovers
+  it tautologically. AGENTS.md *Derive-then-check* item 8 verbatim — if it is
+  true by `ring`, it is notation.
+
+So "take its holonomy" presupposes exactly step ②'s acknowledged scope-(a) gap.
+
+### 8.4 What IS measurable, and it is flat — the `lw` period ladder
+
+`NaStokesKeystone.lean` carries more than the stipulation: a content-bearing §3b
+class whose open core is a genuine **period**, `aD(c+1) = lw c` with
+`lw c = (1/(c+1))·Σ_{λ⊢c+1} dim_q V_λ`, and it states closed forms as hypotheses
+to a sorry-free conditional theorem. Measured at the proton pin against the
+ladder's **second** target number:
+
+| step-② object | value | `\|d ln f/dq\|` | vs 2.176 |
+|---|---|---|---|
+| `lw 1 = 1` | 1 | 0 | constant |
+| `lw 2 = (q+1)²/(3q)` | 1.33696562 | 0.046958636 | **46.3× too flat** |
+| `lw 3 = (3q²+4+3/q²)/4` | 2.53277966 | 0.22430586 | **9.70× too flat** |
+| `tauOf` | 2.64238631 | 0.11385448 | **19.1× too flat** |
+| `2χ^(2,1)/[2]_q` | 1.983379502 | 0.1954502 | **11.1× too flat** |
+
+**Per-rep normalisation does not escape it, and that is the sharpest line here.**
+The corpus's standing claim is that the carrier is the per-rep q-Reeb phase
+`θ_λ = arccos(χ^λ/d_λ)` and that the scalar `tr_M` *collapses* it — which
+predicts the per-rep object should behave differently from the average. It does
+move: dividing by `d_λ` takes the slope `0.1018 → 0.1955`, a factor 1.92. It is
+still **11.1× short**. So **the collapse is not what costs the slope.**
+
+**The value-only trap, caught explicitly.** `λ = (3)` and `λ = (1³)` have
+`d_λ = 1` and `χ = 1` on the Borromean, so `2χ/d = 2` **exactly** — 0.137 % from
+the target *value*, better than most of the declared basket — with slope
+identically **zero**. A value-only comparison would promote them; the second
+target number rejects them outright. This is why §D's two-number target matters.
+
+**Calibrated, not self-consistent:** the probe's central-difference method
+reproduces the bean's independently-recorded bare-`χ^(2,1)` entry `0.1018` as
+`0.101787393` (rel 1.2e-4).
+
+**Scope (a), and conditional.** These *declared* forms lack the steepness; no
+proved invariant forbids a holonomy of a genuinely derived connection, and there
+is simply none in the corpus to test. And that `lw` **is** the step-② period is
+the unproved keystone class — assumed in the measurement, not shown
+(*conditional-proved ≠ premise-established*).
+
+### 8.5 The bracket is now a SPECIFICATION, not a list of exclusions
+
+```
+step-2 / Laurent family   0.047 .. 0.224      9.7x - 46x TOO FLAT
+best declared basket      1.7363              1.25x too flat
+TARGET                    2.176                 --
+modular dual q~         816.73                375x TOO STEEP
+```
+
+Both sides are real corpus objects and the middle is empty. The flatness is not
+bad luck in which forms were tried: a low-degree rational in `q` at `q₀ ≈ 1.11`
+**cannot** be steep, and a non-perturbative `exp(−1/t)` **cannot** be shallow. So
+the carrier must be an **intermediate transcendental** — which is what an ordered
+exponential (a real holonomy) supplies and a polynomial average cannot.
+
+**That is why the stipulated curvature is the blocker rather than a bookkeeping
+complaint: 5b needs step ② CONSTRUCTED, not stipulated.** The honest next step is
+therefore step ②'s own gap — a multiplicative-integral construction whose
+curvature is *computed* to be `σ² − (q−q⁻¹)σ − 1`, or an honest §3b restatement
+with the geometric step as hypothesis — not another candidate-form sweep.
+
+Probe: `computations/qbeta/qbeta_pdix_step2_holonomy_slope_probe.py` (7/7).
 
 `qou-pdix` remains **OPEN**. Attack B removed two candidate mechanisms and left
 the gap where it was. PR #7252; probe

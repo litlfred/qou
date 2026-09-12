@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-12T22:08:06Z
+updated_at: 2026-09-12T23:35:15Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1865,3 +1865,104 @@ Two traps for the next agent, both cost me time here:
     alone the ROOT tree shadows it and the import fails on a Mathlib olean that is
     present in the paper tree and absent from the root one — and the error names a
     root-tree path, so it reads like a missing dependency rather than a shadowing.
+
+
+## 2026-09-12 (2) — 5b measured. Step-2 is FLAT too, and my own "next step" was not runnable.
+
+SELF-CORRECTION FIRST. My entry above closed with "compute the holonomy log-slope
+of the step-2 non-abelian Stokes connection at q0". **That is not runnable as
+worded** — there is no constructed step-2 connection — and establishing that is
+the useful half of this entry.
+
+PR #7252 (same branch). Probe 7/7:
+`computations/qbeta/qbeta_pdix_step2_holonomy_slope_probe.py`
+
+### There is no step-2 connection to take a holonomy of
+
+Verified at the Lean, NOT from the cheat sheet — whose own §2a records that its
+status column was the thing that was wrong, so it is not a primary source here
+either:
+
+  * `QOU.Mass.HeckeStokes.stokes_curvature_factors` is
+    `X^2 - (q - 1/q)X - 1 = (X - q)(X + 1/q)`, discharged by `field_simp; ring`
+    over a generic field. Sound and load-bearing (it is where the eigenvalues
+    `q`, `-1/q` come from) but it is an algebraic factorisation. No connection,
+    no curvature form, no surface, no multiplicative integral in that file.
+  * The curvature reading is a DOCSTRING in `NaStokesKeystone.lean`: the 2-form
+    is STIPULATED to be the Hecke quadratic, so imposing flatness recovers it
+    tautologically. AGENTS.md Derive-then-check item 8, verbatim.
+
+So branch 3 / 5b's escape from circularity — "a connection defined WITHOUT
+reference to alpha" — has no instance in the corpus. The only candidate has its
+curvature put in by hand, which is the same defect `circularWitness` already
+proves for branch 2, one level up.
+
+### What IS measurable: the keystone `lw` period ladder — and it is FLAT
+
+`NaStokesKeystone.lean` carries more than the stipulation: a content-bearing §3b
+class whose open core is a genuine PERIOD, `aD(c+1) = lw c` with
+`lw c = (1/(c+1)) sum_{lam|-c+1} dim_q V_lam`, stating closed forms as hypotheses
+to a sorry-free conditional theorem. Measured at the proton pin against §D's
+SECOND number, `|P'/P|(q0) = 2.176`:
+
+    lw 1                1.0            slope 0        constant
+    lw 2                1.33696562     0.046958636    46.3x TOO FLAT
+    lw 3                2.53277966     0.22430586      9.7x TOO FLAT
+    tauOf               2.64238631     0.11385448     19.1x TOO FLAT
+    2*chi^(2,1)/[2]_q   1.983379502    0.1954502      11.1x TOO FLAT
+
+**PER-REP NORMALISATION DOES NOT ESCAPE IT — the sharpest line, and it bears on
+this bean's own standing structural claim.** The corpus says the carrier is the
+per-rep q-Reeb phase `theta_lam = arccos(chi^lam/d_lam)` and that scalar `tr_M`
+COLLAPSES it, which predicts per-rep behaves differently from the average. It
+does move — dividing by `d_lam` takes the slope `0.1018 -> 0.1955`, factor 1.92 —
+and is STILL 11.1x short. So **the collapse is not what costs the slope.** The
+per-rep structural claim survives as a claim about WHERE the carrier lives; it
+does not supply the steepness.
+
+**The value-only trap, caught explicitly.** `lam=(3)` and `lam=(1^3)` have
+`d_lam = 1`, `chi = 1` on the Borromean, so `2*chi/d = 2` EXACTLY — 0.137 % from
+the target VALUE, better than most of the declared basket — with slope
+identically ZERO. A value-only comparison promotes them; the second number
+rejects them. This is the concrete payoff of §D being a two-number target.
+
+CALIBRATED rather than self-consistent: the central-difference method reproduces
+this bean's own recorded bare-`chi^(2,1)` entry `0.1018` as `0.101787393`
+(rel 1.2e-4). A slope method that could not reproduce a known entry would be no
+evidence about the unknown ones.
+
+### The bracket is now a SPECIFICATION, not a list of exclusions
+
+    step-2 / Laurent family   0.047 .. 0.224      9.7x - 46x TOO FLAT
+    best declared basket      1.7363              1.25x too flat
+    TARGET                    2.176                 --
+    modular dual q~         816.73                375x TOO STEEP
+
+Both sides are real corpus objects; the middle is empty. And the flatness is not
+bad luck in which forms were tried — a low-degree rational in `q` at `q0 ~ 1.11`
+CANNOT be steep, and a non-perturbative `exp(-1/t)` CANNOT be shallow. So the
+carrier must be an INTERMEDIATE transcendental: what an ordered exponential (a
+real holonomy) supplies and a polynomial average cannot.
+
+### Consequence for the route table — no row changes, the DEPENDENCY changes
+
+    5a  modular-double / q~ ....... PRUNED (previous entry)
+    5b  holonomy / monodromy ...... OPEN, and now BLOCKED ON STEP 2 ITSELF
+
+5b is not merely open; it is blocked on the framework's single acknowledged
+geometry->algebra gap. So the honest next step is **step 2's gap**, not another
+candidate-form sweep: a multiplicative-integral construction whose curvature is
+COMPUTED to be `sigma^2 - (q-q^-1)sigma - 1`, or an honest §3b restatement with
+the geometric step as its hypothesis. Cheat-sheet §2a already names both options.
+
+Scope (a) throughout, and CONDITIONAL: that `lw` IS the step-2 period is the
+unproved keystone class — assumed in the measurement, not shown.
+
+### Chain this sits in, for whoever picks it up
+
+    qou-pdix (alpha carrier)  ->  blocked on step 2 (NaStokes geometric derivation)
+    qou-cds1 (c_k ladder on the z_D base)  ->  blocked on qou-pdix
+    qou-iagg (2nd dashboard re-score)      ->  blocked on qou-cds1
+
+So the Q_beta L2 row cannot move until step 2 is constructed. That is worth
+stating plainly rather than leaving qou-iagg looking like a scheduling item.
