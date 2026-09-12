@@ -1,11 +1,11 @@
 ---
 # qou-6pd1
 title: 'MERGE QUEUE: the four idle PRs measured CLEAN vs main (#6948 #6826 #6821 #6817) — prepare-merge-auto, rebase-merge, verify replay'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-07T18:16:29Z
-updated_at: 2026-09-11T20:12:48Z
+updated_at: 2026-09-11T20:57:23Z
 parent: qou-6g7j
 ---
 
@@ -26,3 +26,19 @@ CONFIRMED via API 2026-09-07 18:4x UTC: #6948 merged_at 18:04:20Z, #6817 18:04:2
 Merged by coordinator #2 before it died: #7093 (rev pair-term, 15:16Z), #7005 (Z-resolved b3, 15:29Z, main ede90ce9829), #7130 (observable C, 15:37Z). #7131 merged to main by a sibling (cf28c06b4c5). Coordinator #2's 8.2G worktree removed (disk 97% -> 74%). Session-start background lake build killed deliberately (no oleans in container; a from-source mathlib build would exhaust the ~10G free).
 
 Queue 3 dispatched 20:15Z (merge-coordinator, worktree): #7133 (with a roast-vs-#7130 supersession paragraph) -> #7185 (self-verify Lean via cache restore + probe; note the two non-Lean steps) -> #7183 (probe + gates) -> #7121 last (bean-file union). Check-in re-armed for 21:13Z.
+
+
+### Queue 3 complete, 2026-09-11T20:50Z — all seven PRs merged (rebase, branches retained)
+
+| PR | main sha | note |
+|---|---|---|
+| #7093 | 464f1ffcea9 (head) | coordinator #2 |
+| #7005 | ede90ce9829 | coordinator #2 |
+| #7130 | 760dc7a279f (head) | coordinator #2 |
+| #7131 | cf28c06b4c5 | merged by sibling |
+| #7133 | 349a4cc1858 | + 60703485d01 supersession paragraph (roast vs #7130 measurement) |
+| #7185 | e1fa2fc2f5e | Lean re-verified lean-direct, 7 theorems no sorryAx; probe 7/7 |
+| #7183 | caf9210bfcf | probe exit 0, verdicts reproduced |
+| #7121 | 5408f53d2bc | 8 commits (2 became empty), 14/14 bean unions checked |
+
+Verified by the parent with git cherry origin/main: 0 unmerged on all four queue-3 branches. Coordinator #3 opened memory PR #7195 (TRAPs: worktree hook, toolless MCP + REST, gates exit 2 without qou_substrate, disk arithmetic) — NOT merged, outside queue authorisation; owner's call, alongside #7132.
