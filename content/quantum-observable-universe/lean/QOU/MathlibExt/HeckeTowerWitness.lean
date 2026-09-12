@@ -350,7 +350,7 @@ theorem braid_scalar_forces_scalar {A : Type*} [Ring A] [Algebra R A]
   have key : algebraMap R A (c * c) * x
       = algebraMap R A (c * h) * x + algebraMap R A c := by
     rw [← hL, hbraid, hR, hquad, mul_add, mul_one, Algebra.mul_smul_comm,
-      Algebra.smul_def, ← mul_assoc, ← map_mul]
+      Algebra.smul_def, ← mul_assoc, ← map_mul, mul_comm h c]
   have hcc : c * (c - h) = c * c - c * h := by ring
   rw [hcc, map_sub, sub_mul, key]
   abel
