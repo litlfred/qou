@@ -2,10 +2,11 @@
 
 **Date.** 2026-09-12
 **Branch.** `claude/uic-functional-resolution-2026-09-12` · **PR** #7237
-**Beans.** `qou-zlra` (found the mismatch, PR #7230), `qou-uicf` (this resolution),
+**Beans.** `qou-zlra` (found the mismatch, PR #7230), `qou-t6be` (this resolution),
 `qou-sv7h` and `qou-brng` — both **stay open**.
-**Lean.** `QOU.MassTheory.UICFunctionalSelection`, `QOU.MassTheory.UICLogSummandEven`
-— ten declarations, all sorry-free, `lean`-direct exit 0.
+**Lean.** `QOU.MassTheory.UICFunctionalSelection`, `QOU.MassTheory.UICLogSummandEven`,
+and the block's own sibling `unified-iterative-correction.lean` — sixteen
+axiom-audited declarations across three files, all sorry-free, `lean`-direct exit 0.
 **Probe.** `computations/probes/uic_functional_resolution_probe.py` — 16/16.
 
 ---
@@ -121,13 +122,14 @@ Measured, not merely proved — flipping every final trace's sign:
 | ²H | `-0.412212192245026906` (**identical**) | `-0.0895596830589506807` | `-0.3226525091860762` |
 | ⁴He | `-0.274239771617400126` (**identical**) | `-0.0805867484776914329` | `-0.1936530231397087` |
 
-### 2.2 The three divergences, scored
+### 2.2 The four divergences, scored
 
 | # | claim | what the criterion finds | verdict |
 |---|---|---|---|
 | 1 | $u_\lambda$ is *"its Frobenius positivity LP shadow price"* | **Refuted, twice.** The net-constraint dual is provably 0 (`y_0_eq_zero_of_radical`, sorry-free) and the Frobenius duals of that LP are `e₀` (`qou-8na1`), so nothing is indexed by $\lambda$ at all. The one surviving reading the corrected upstream block allows — the *partition-indexed* solve, $y^\ast = (1,1,0)$ at $H_3$ — is also not it: the producer's closed form measures $(0,\ 0.166953658774,\ 0)$. Making this "provable" would require **assuming it as a class field**, which §"Axiomatization is NOT a Proof" counts *against* a reading. | **block moves** |
 | 2 | the weight is $m_e H_q(\lambda) u_\lambda$, with no resolvent | $\varrho_\lambda(s) = 1/(\mu_\lambda + s)$ is a plain closed-form scalar with a corpus definition (`def:q-resolvent`), provably sign-free (`resolventScale_nonneg`), and the producer applies it. The block's formula is the producer's with one non-negative factor **deleted**. | **block moves** |
 | 3 | *"sums these strictly over all $\lambda$"* | Both a gated and an ungated sum are Lean-*statable*. What the criterion settles is narrower and sharper: (i) the block's text is **factually false** about what runs; (ii) §2.1 shows the block's formula cannot even express the gate; (iii) the gate's *stated justification* is **disproved** — see §2.3. What it does **not** settle is which functional the physics should keep. | **block moves; producer does NOT** |
+| 4 | *(not in #7230's list — see §2.5)* the block's **own Lean sibling** carries a third scale | `stepDelta` is `m_e · H_q((2,2)) · w_{(2,2)}`, matching neither the producer's superseded Kerov scale (`:535`) nor its live resolvent one (`:548`) — it omits $y_\lambda$ entirely. Directly in scope for a criterion about what is Lean-provable: the block's formalisation modelled a scale nothing computes. | **block's `.lean` gains the live convention** |
 
 ### 2.3 Complementary slackness justifies nothing that varies with the nucleus
 
@@ -148,6 +150,36 @@ for both atoms. So the CS-justified gate is the empty sum.
 
 Combined with `y_0_eq_zero_of_radical` — the LP prices nothing in the first place
 — the gate has **no derivation at all**. It is a bare assertion.
+
+### 2.5 A fourth divergence, found by the sidecar sweep rather than by the analysis
+
+`qa-sweep --only proof-statement-integrity` went `needs-agent` on the restated
+block, and the reason was real: the sibling
+[`unified-iterative-correction.lean`](../../content/quantum-observable-universe/mass-theory/unified-iterative-correction.lean)
+defines
+
+$$\texttt{stepDelta} = \Delta_{(2,2)}(q,m_e)\cdot w_{(2,2)}(q)\cdot\Delta L
+  = m_e\,H_q((2,2))\,w_\lambda\,\Delta L,$$
+
+which is **neither** of the producer's two scales — not the superseded
+`C_lambda_kerov_MeV = w_λ · y_λ · H_q · m_e` (`:535`) and not the live
+`C_lambda_resolvent_MeV = H_q · y_λ · ρ_λ · m_e` (`:548`). It omits $y_\lambda$
+altogether. So three distinct objects were in play, not two, and the block's own
+formalisation was the third.
+
+Added, sorry-free and generic `[Field F]`: `qResolvent`, `stepDeltaResolvent`,
+`unified_telescope_resolvent`, and — the one that says something —
+`stepDeltaResolvent_eq_partition`: **the resolvent occupies the weight slot**, so
+every structural result already proved about `stepDeltaPartition` transfers
+verbatim. That is precisely why restoring the omitted factor to the content block
+is a *restatement* and not a new derivation. `stepDelta` is kept, with a docstring
+saying what it is; its theorems are true of it, and deleting correct mathematics
+to tidy a naming problem would be the wrong trade.
+
+**This is worth recording as a method point.** The analysis found three
+divergences by reading the two sides against each other; the fourth came from a
+mechanical sidecar criterion firing on the *result* of the fix. Neither would have
+found it alone.
 
 ### 2.4 The one thing PR #7230 ranked wrong
 
@@ -215,6 +247,10 @@ decision `6b7d2ec4a8` declined to make one level up. It stays with `qou-sv7h`
   present, $u_\lambda$ defined in closed form rather than named as a dual, the
   summation range stated as the gated set, plus a new **Scope of the selection
   rule** section carrying the three facts of §2.3 and the epistemic mark.
+- `unified-iterative-correction.lean` — gains `qResolvent`, `stepDeltaResolvent`,
+  `stepDeltaResolvent_eq_partition` and `unified_telescope_resolvent` (§2.5);
+  `stepDelta` keeps its theorems and gains a docstring naming it the historical
+  scale.
 - `unified-iterative-correction.ts` — `uses[]` gains `def:q-resolvent` (now
   hyperlinked from the prose; `prop:operator-selection-lp` is deliberately **not**
   added, being transitively reachable through `prop:mass-coefficient-shadow-price`
@@ -240,7 +276,7 @@ relative gap over the ten active blocks is **2.54432e-16**, at $\lambda = (2)$.
 ~1e-16 and cannot distinguish "correctly rounded" from "slightly wrong" — it is
 not evidence that the path is harmless, only that its effect here is small.
 Fixing it moves every binding number in the corpus and is out of scope for a
-resolution PR; carried on `qou-uicf`.
+resolution PR; carried on `qou-t6be`.
 
 ---
 
@@ -248,8 +284,13 @@ resolution PR; carried on `qou-uicf`.
 
 - **Lean.** `lean -DautoImplicit=false -s 65536`, `LEAN_PATH` = the restored
   `.lake/packages/*/.lake/build/lib/lean` trees — **exit 0** on both files.
-  `#print axioms` on all ten declarations reports `propext` / `Classical.choice` /
-  `Quot.sound` and **no `sorryAx`**. `check-sidecars.sh` classifies
+  `#print axioms` on all sixteen declarations across the three files reports
+  `propext` / `Classical.choice` / `Quot.sound` and **no `sorryAx`**. No restored
+  QOU olean tree exists in this container and restoring `lake-cache` (~9 GB)
+  exceeds free disk, so the block sibling's four-module QOU import cone
+  (`QHookDimension`, `QHookDimensionBalanced`, `QIntegerBarParity`,
+  `QIntegerCanonical`) was built from source into a scratch shadow — `lake` was
+  never invoked. `check-sidecars.sh` classifies
   `UICFunctionalSelection` as *"no ℝ, generic OK"* and `UICLogSummandEven` as
   *"archimedean construct present, ℝ justified"*.
 - **Probe.** 16/16, `mp.dps = 70`, proton pin (`q_at()`, agreement 7.6e-18),

@@ -3,7 +3,7 @@
 discriminator is that one of them cannot be written in the other's variables.
 
 Owner ruling 2026-09-12, verbatim: **"resolve functionals ... what lean
-provable"**.  Beans qou-zlra (which found the mismatch, PR #7230), qou-uicf
+provable"**.  Beans qou-zlra (which found the mismatch, PR #7230), qou-t6be
 (this resolution).  Lean: `QOU.MassTheory.UICFunctionalSelection` and
 `QOU.MassTheory.UICLogSummandEven`, both sorry-free, lean-direct exit 0.
 
@@ -72,7 +72,7 @@ A PRECISION FINDING ABOUT THE PRODUCER, reported and NOT fixed here.  `mu_lambda
 `C_lambda_resolvent_MeV` carries a float64-limited factor.  Measurement 5
 quantifies the gap against an mpf recomputation.  Fixing it would move every
 binding number in the corpus and is out of scope for a resolution PR; bean
-qou-uicf carries it.
+qou-t6be carries it.
 
 scope-(a); no fit; nothing wired; no c_k; L2 unchanged.
 """
@@ -374,7 +374,7 @@ def main() -> int:
         "worst_partition": list(worst_lam) if worst_lam else None,
         "note": ("mu_lambda and s_* are accumulated in float64 by the producer "
                  "(hecke_core_legacy.py:292, :520); reported, not fixed -- a fix "
-                 "moves every binding number in the corpus. Bean qou-uicf."),
+                 "moves every binding number in the corpus. Bean qou-t6be."),
     })
     for nm, ok, _d in CHECKS:
         w.add_assertion(nm, computed="1" if ok else "0", expected="1",

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-12T12:33:09Z
+updated_at: 2026-09-12T20:24:20Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2770,3 +2770,39 @@ Row D was left "live, not attacked". Attacked at Vassiliev type two, on the chai
 What row D still has, and it is the only live thread this leaves: `unified-iterative-correction`'s per-BLOCK log `ln|tr_lambda(prod (c sigma + d))|` is NOT product-additive even on the chain (single-block `[h^2] log` has nonzero, non-constant second differences in Z for (3,1), (3,2), (4,1); computed signs, mixed). That functional is a different object from the live law (two inequivalent log readings coexist — recorded as a collision, not resolved), and the production accumulator was not scanned (> 300 s at A = 4 here). Row D is therefore narrowed to: the per-block log functional, if the framework means it, is the one place a type-two two-bond correlation survives on the chain. Scope (b) for the live law (invariant `additive_census` + `L_chain_eq_sum_of_intra`); scope (a) for the per-block rows (11 shapes, A <= 8, UIC-shaped word).
 
 Also, for `qou-eqwg`'s open item: there is no non-commutativity inside a generator (transfer matrices commute exactly); the within-generator non-multiplicativity is the two-branch state sum, exercised only when two interface letters share a generator, which the chain never does. Audit: `docs/audits/2026-09-12-graded-binding-sign-convention.md`.
+
+
+## 2026-09-12 — note from the UIC functional resolution (PR #7237, bean `qou-t6be`)
+
+Not a step on this bean's open problem; recorded because it changes what a reader
+of `unified_iterative_correction`'s output is looking at.
+
+Under the owner's ruling *"resolve functionals ... what lean provable"*,
+`prop:unified-iterative-correction` was restated to match the producer: the
+q-Laplacian resolvent `rho_lambda(s_*)` the block omitted is now in the formula,
+`u_lambda` is stated as the closed form rather than as an "LP shadow price"
+(refuted on both available readings), and the summation range is stated as the
+gated set rather than "strictly over all lambda". **No producer changed and no
+number moved.**
+
+**What this bean should take from it.** The gate — Pass 2's restriction to
+`tr M_lambda <= 0` — is now marked in the corpus as **asserted, not derived**,
+with the disproof cited: genuine complementary slackness for `<Phi, pi> >= 0`
+makes "tight" mean `tr = 0`, under which the functional collapses to
+`(sum c_lambda) * f(0)` and reads NOTHING about the atom
+(`QOU.MassTheory.UICFunctionalSelection.uicGated_cs_eq`, sorry-free); measured,
+0 of 10 active blocks sit at `tr = 0`. Combined with `y_0_eq_zero_of_radical`
+(the LP prices nothing), the gate has no derivation at all.
+
+That matters here because `uic_sign_forced_by_gate_probe` already showed the
+gate FORCES `B < 0` for any nucleus and explains the measured A-independence. So
+the wrong-signed, A-independent binding that this bean's extensive-term frontier
+is trying to explain is, to that extent, a property of an **undefended selection
+rule** rather than of the nucleus. Whether to keep the gate is an owner call and
+was deliberately NOT taken in #7237 — dropping it moves every binding number by
+3.4-4.6x on an argument that only refutes a justification (scope-(a), not
+scope-(b)).
+
+**This bean stays OPEN.**
+
+Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.

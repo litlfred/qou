@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:02:10Z
-updated_at: 2026-09-12T12:33:09Z
+updated_at: 2026-09-12T20:24:19Z
 ---
 
 
@@ -118,3 +118,41 @@ an unresolved collision, not a mechanical task).
       A = 3..8 across Z with a real budget (> 300 s per atom at A = 4 here) and
       report argmax_Z per A; compare against the UIC-shaped single-block rows
       of the probe.
+
+
+## 2026-09-12 — the block/producer mismatch this bean REPORTED is now RESOLVED (PR #7237, bean `qou-t6be`)
+
+PR #7230 measured three divergences between `prop:unified-iterative-correction`
+and `hecke_core_legacy.unified_iterative_correction` and deliberately did not
+resolve them, because picking one would be choosing a functional. The owner then
+ruled, verbatim: **"resolve functionals ... what lean provable"**.
+
+**The criterion settles it, and the discriminator is sharper than "pick one".**
+The block's displayed summand reads the trace only through `ln|tr|`, so it is
+EVEN in the trace; the producer's gate reads `sign(tr)`. Proved sorry-free
+(`QOU.MassTheory.UICFunctionalSelection.gate_not_a_function_of_displayed_data`)
+and measured: flipping every trace's sign leaves the ungated total BIT-IDENTICAL
+and moves the gated one `-0.0895596831 -> -0.3226525092` (2H). So the block's
+formula could not DENOTE the producer's functional at all — the mismatch was
+structural, not editorial, and something had to move whatever the physics.
+
+**All three divergences resolved against the content side; the producer is
+untouched and no number moves.** A FOURTH was found by `qa-sweep
+proof-statement-integrity` firing on the fix: the block's own `.lean` sibling
+`stepDelta` carries `m_e * H_q * w_lambda`, a third scale matching neither of
+the producer's two.
+
+**One correction to this bean's own report.** #7230's table ranks the omitted
+q-Laplacian resolvent as the lesser divergence (*"a per-partition factor spanning
+~100x"*) and the summation range as *"the serious one"*. Measured on the TOTALS
+rather than on the factor's range, that ordering is backwards: deleting `rho`
+moves the gated total **4.1208754x** (A=2) and **9.8660639x** (A=4), against the
+gate's own 4.6026535x / 3.4030381x. At A=4 the omission is ~2.9x the gate's
+effect.
+
+**What stays open:** whether the gate belongs in the physics. The criterion shows
+it is underived and its stated justification false; it does NOT show it is wrong.
+`qou-sv7h` / `qou-brng`.
+
+Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.
+Probe: `computations/probes/uic_functional_resolution_probe.py` (16/16).
