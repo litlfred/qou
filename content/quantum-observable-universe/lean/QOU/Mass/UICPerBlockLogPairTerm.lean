@@ -38,18 +38,17 @@ multiplicative over the word even when the total is, so the additive-census theo
    this layout — the layout supplies it. `Δ³_Z ≠ 0` is the clean separator
    (`census_secondDiff`, `census_thirdDiff`, `not_censusAffine_of_thirdDiff_ne_zero`).
 
-3. **The forced sign (§3).** The `pn` interface letter of convention D is the pp/nn
-   average shifted upward (`ChainTraceFactor.deltaPN_nonneg`), so `b_pn ≥ (b_pp+b_nn)/2`.
-   For the additive letters `L = −log b` that forces the symmetry curvature
-   `L_pp + L_nn − 2·L_pn` to be **strictly positive** whenever `b_pp ≠ b_nn`
-   (`symmetryCurvature_pos`). Positive curvature in `Z` means the symmetric nucleus is a
-   **minimum** of the binding, not a maximum — an anti-valley — and the sign is forced for
-   every `q > 1` rather than measured at `q₀`.
+3. **The forced sign** lives in the sibling `UICPerBlockLogSymmetryCurvature.lean`,
+   because it is a statement about `Real.log` and an ordering and cannot be generic
+   (§7c: the archimedean specialisation goes in its own file). It proves that the
+   all-pairs symmetry curvature `L_pp + L_nn − 2·L_pn` is strictly **positive**, i.e.
+   the symmetric nucleus is a **minimum** of the binding — an anti-valley — forced for
+   every `q > 1`.
 
 ## Scope
 
-§1 and §2 are exact algebraic identities and hold in any commutative ring; §3 is over `ℝ`
-because it is a statement about `Real.log` and an ordering (§7c: archimedean by necessity).
+Everything in THIS file is an exact algebraic identity holding in any commutative ring;
+the archimedean half is the sibling file named above (§7c).
 §1 describes a **two-branch** block; the UIC's general `λ`-block spreads crossings over
 several generators via the cyclic map, where the matrices do not commute and the
 two-branch form does not apply. §1 is therefore the *mechanism* by which a per-block log
@@ -61,7 +60,6 @@ Nothing here asserts that the UIC has, or lacks, a valley. That is measured in t
 -- Ref: [manuscript] prop:unified-iterative-correction (mass-theory chapter); the
 -- convention-D letters are `QOU/Mass/ChainTraceFactor.lean`.
 -/
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
@@ -179,51 +177,6 @@ theorem not_censusAffine_of_thirdDiff_ne_zero {g : R → R} {Z : R}
 
 end Census
 
-/-! ## 3. The forced sign: the all-pairs symmetry curvature is positive -/
-
-section Sign
-
-/-- **The `pn` letter's position forces an anti-valley.** With bond factors `b > 0` and
-the additive letters `L = −log b`, if the `pn` factor is at least the midpoint of the
-`pp` and `nn` factors — which convention D guarantees, since the `pn` interface letter is
-the pp/nn average shifted by `h·δ_pn/4 ≥ 0` (`ChainTraceFactor.deltaPN_nonneg`) — and the
-`pp` and `nn` factors differ, then
-
-    L_pp + L_nn − 2·L_pn > 0.
-
-By `census_secondDiff` that is (half) the second difference of the all-pairs additive
-binding in `Z`, so the binding is **strictly convex** in `Z`: the symmetric nucleus is a
-**minimum**, not a maximum. No valley of stability, and the sign is forced for every
-`q > 1` rather than measured at `q₀`. -/
-theorem symmetryCurvature_pos {bpp bpn bnn : ℝ}
-    (hpp : 0 < bpp) (hnn : 0 < bnn) (hne : bpp ≠ bnn)
-    (hmid : (bpp + bnn) / 2 ≤ bpn) :
-    0 < (-Real.log bpp) + (-Real.log bnn) - 2 * (-Real.log bpn) := by
-  have hm : (0:ℝ) < (bpp + bnn) / 2 := by linarith
-  have hbpn : 0 < bpn := lt_of_lt_of_le hm hmid
-  have hsq : (0:ℝ) < (bpp - bnn) ^ 2 :=
-    lt_of_le_of_ne (sq_nonneg _) (Ne.symm (pow_ne_zero 2 (sub_ne_zero.mpr hne)))
-  have hstep : bpp * bnn < bpn ^ 2 := by
-    nlinarith [mul_nonneg (sub_nonneg.mpr hmid)
-      (by linarith : (0:ℝ) ≤ bpn + (bpp + bnn) / 2)]
-  have hlog : Real.log (bpp * bnn) < Real.log (bpn ^ 2) :=
-    Real.log_lt_log (by positivity) hstep
-  rw [Real.log_mul hpp.ne' hnn.ne', Real.log_pow] at hlog
-  push_cast at hlog
-  linarith
-
-/-- The same statement read as the second difference of the all-pairs additive binding:
-strictly positive, i.e. strictly convex in `Z`. -/
-theorem allPairs_additive_secondDiff_pos {bpp bpn bnn A Z : ℝ}
-    (hpp : 0 < bpp) (hnn : 0 < bnn) (hne : bpp ≠ bnn)
-    (hmid : (bpp + bnn) / 2 ≤ bpn) (c : ℝ) :
-    0 < fwd (fwd (census c (-Real.log bpp) (-Real.log bpn) (-Real.log bnn) A)) Z := by
-  rw [census_secondDiff]
-  have := symmetryCurvature_pos hpp hnn hne hmid
-  linarith
-
-end Sign
-
 #print axioms twoCrossing_defect
 #print axioms twoCrossing_defect_offset_independent
 #print axioms twoCrossing_defect_eq_wPlus
@@ -231,7 +184,5 @@ end Sign
 #print axioms census_secondDiff
 #print axioms census_thirdDiff
 #print axioms not_censusAffine_of_thirdDiff_ne_zero
-#print axioms symmetryCurvature_pos
-#print axioms allPairs_additive_secondDiff_pos
 
 end QOU.Mass.UICPerBlockLogPairTerm

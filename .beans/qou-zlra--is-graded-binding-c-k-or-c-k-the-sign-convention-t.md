@@ -156,8 +156,14 @@ rationals). For n crossings, `log|tr_n|` factorises through ONE multiplicative
 statistic -- a nonlinear function of an additive quantity, which is exactly how
 a per-block log leaves the additive class.
 
-**(2) It still gives no valley.** argmax_Z never tracks N = Z at any A, and under
-the production gate it is not converged in k_exact. And the one FORCED fact
+**(2) It still gives no valley.** argmax_Z does NOT track N = Z -- it coincides
+with N=Z in only 3 of the 36 cells and never at more than one truncation order
+per A (it is NOT true that it never lands there; that weaker claim is the
+correct one), it sits at an ENDPOINT in 15 of 36, and it has not converged in
+k_exact. Before any of that the functional gets the SIGN of the binding wrong
+(negative for every atom, reproducing 2026-09-05-uic-sign-forced-by-gate) and
+the A-scaling wrong (|B| falls 4.81 -> 3.71 MeV across 2H..4He while AME rises
+2.22 -> 28.30, a factor 12.7). And the one FORCED fact
 points the wrong way: the all-pairs symmetry curvature
 `L_pp + L_nn - 2 L_pn = +0.04351846501566097275` is POSITIVE, so the additive
 part makes the symmetric nucleus the LEAST bound -- an anti-valley. That sign

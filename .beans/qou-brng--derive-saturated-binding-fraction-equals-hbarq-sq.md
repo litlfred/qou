@@ -2824,8 +2824,11 @@ itself, not the Pass-2 selector. Mechanism proved sorry-free
 non-multiplicativity defect `wP*wM*(x-y)^2`, which under convention D is exactly
 `wP(q)` and is INDEPENDENT OF BOTH BOND OFFSETS.
 
-**Nothing comes through it.** No valley: argmax_Z never tracks N=Z at any A and
-is not converged in k_exact. And the one FORCED fact points the wrong way — the
+**Nothing comes through it.** No valley: argmax_Z does not track N=Z (it
+coincides in only 3 of 36 cells, never at more than one tier per A -- it is not
+true that it never lands there), sits at an endpoint in 15 of 36, and is not
+converged in k_exact. The functional also has the wrong SIGN and the wrong
+A-scaling before the Z-shape is reached. And the one FORCED fact points the wrong way — the
 all-pairs symmetry curvature `L_pp + L_nn - 2 L_pn = +0.0435` is positive
 (`symmetryCurvature_pos`, sorry-free, holds for every q > 1 given
 `deltaPN_nonneg`), so the additive part makes the symmetric nucleus the LEAST
