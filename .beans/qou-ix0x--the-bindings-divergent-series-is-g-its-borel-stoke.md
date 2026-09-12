@@ -121,3 +121,23 @@ Swept `m ∈ {1,2,3,5,8,13,100}` (FINDING 1b): all positive, from `0.209060299` 
 Two sign-source questions, stated as open, **not** as candidates to try until one works:
 - `binding = −(mutual energy)` makes a positive `b₃` require an **attractive** (negative) mutual channel, and `countChannel` at `q > 1` is repulsive by construction. Is the sign convention in `b3_eq_neg_tripleMutual_of_brunnian` the intended one for a *binding*?
 - The `q < 1` branch flips it, but the substrate pin is `q₀ > 1` and is not free (and deriving `q₀` is forever-gated). So this is not a route.
+
+
+---
+**CONVERGENCE WITH `qou-rwhv` — 2026-09-12, and the convergence is NARROWER than it first reads.**
+
+A sibling session (#7198, bean `qou-rwhv`) reached the **same sign** by an entirely different vocabulary: the corpus's connected 3-body cumulant read as `−φᵀ₃` of a hard-core lattice gas on the nucleon sites, negative for every bond triple in `(0,1)` by the Jansen–Kolesnikov Ursell alternation (their Lean `UrsellPartitionFunctionB3.b3corpus_neg`, sorry-free; their Mayer coefficient `−1.23` MeV ³H / `−0.80` MeV ³He against AME `+1.81` / `+1.04`). Their framing: *"two shadows of the classical Mayer sign"*.
+
+**It is agreement, and it is not independence.** Both routes are **pairwise-generated**. Theirs: a partition function that is a product over pair bonds. Mine: `w3` assumed to have the pair-energy shape `n₊q − n₋q⁻¹`. *Neither computes an irreducibly 3-body object* — both compute what pair data implies about one. So this is two arguments **inside one class**, not two attacks on `b₃` from outside it.
+
+That is worth more than it sounds, in the right direction: it upgrades the negative from *"this construction fails"* to *"pairwise-generated constructions fail"*, which is a wider scope-(a) than either branch had alone. It does **not** make the negative structural, and it must not be written as two confirmations.
+
+**The escapes coincide as well**, which is the tell that the premise is shared. My verdict's item (i) — *"a positive `b₃` needs an **attractive** (negative) mutual channel, and `countChannel` at `q > 1` is repulsive by construction"* — is their *"a positive `b₃` needs a bond factor above 1"* in the other vocabulary. **One obstruction, two spellings.**
+
+**Where the routes genuinely differ, and this is the part that might be worth something.** The alternation theorem requires a **non-negative (purely repulsive) pair potential** *as a hypothesis*, and on their route repulsiveness arrives through a Boltzmann reading `f = e^{−βU}` that `qou-rwhv` itself marks as unmade: *"the corpus's `f` are Markov factors built from `z`, and nothing in the corpus identifies them with an exponentiated potential. That identification is the concrete next measurement."* My route needs no such reading: `countChannel(m,m,q₀) = m(q₀ − q₀⁻¹) > 0` is arithmetic at `q₀ > 1`, for every `m ≥ 1`.
+
+So the crossing-energy result **may discharge the hypothesis the Ursell route has to assume** — modulo exactly one identification, which I am **flagging, not claiming**: that *"positive crossing energy"* and *"non-negative pair potential"* are the same predicate. Under `binding = −energy` they line up, but that convention is item (i), i.e. the open question itself, so asserting the bridge would be circular. Establishing that identification is a concrete, falsifiable next step and is more valuable than a third instance of the sign.
+
+**Not recorded, deliberately.** Neither branch has met `qou-rwhv`'s own settling condition — *"exhibit the polymer / cluster model whose activity expansion has the corpus's `b₃` as its third Ursell coefficient — name the polymer set, the weight, and the compatibility relation"*. Until that exists, *"two shadows of the classical Mayer sign"* claims the classical theorem applies here, which is the thing `qou-rwhv` was opened to decide. Both branches support only: **two arguments within pairwise-generated models, agreeing.** Posted to #7193 and #7198.
+
+**Net effect on this bean's open question: unchanged in content, sharper in scope.** It was *"does `w3` have the pair-energy shape at all?"*. The convergence says the whole pairwise class gives the wrong sign, so the question is now *"is the framework's 3-body channel pairwise-generated at all?"* — same question, one level up, and now with two independent-vocabulary reasons to expect the answer must be no. `qou-ix0x` stays OPEN.
