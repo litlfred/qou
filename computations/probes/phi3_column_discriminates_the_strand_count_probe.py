@@ -169,9 +169,11 @@ def phi3_over_lnq():
     from mpmath import mp, mpf
 
     mp.dps = 40                                  # before the first mpf, always
-    from qou_substrate.constants import Q
+    # `q_at(dps)` re-solves the proton pin AT that precision; `constants.Q` is
+    # `_solve_q_proton_f64`, so `mpf(str(Q))` launders float64 into mpmath.
+    from qou_substrate.constants import q_at
 
-    lnq = mp.log(mpf(str(Q)))
+    lnq = mp.log(q_at(40))
     out = []
     for el, _Z, _N, p3 in NONH:
         v = mpf(p3) / lnq
