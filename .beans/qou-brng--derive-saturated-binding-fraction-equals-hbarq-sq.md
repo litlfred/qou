@@ -2744,3 +2744,7 @@ answers nothing.
 
 **Bean stays OPEN** (rule 13a — its subject is an open conjecture). Classes A, C
 (dominant-summand sub-channel) and D remain as #7181 left them.
+
+## 2026-09-12 — the live remainder (dominant summand's own log-weight) is being TESTED — bean qou-m8f3
+
+Branch `claude/dominant-summand-extensive-test-2026-09-12`. Ursell inversion of `L(A) = log|y_λ* χ^λ*(β_A)|` (largest |term| of the trace, no choice) on the live alternating-core word for A = 2, 3, 4, proton pin, convention D. Result appended to `qou-m8f3` and, on completion, below this entry. Append-only.
