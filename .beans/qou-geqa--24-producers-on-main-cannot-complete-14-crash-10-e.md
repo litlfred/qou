@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T20:16:11Z
-updated_at: 2026-09-12T07:26:09Z
+updated_at: 2026-09-12T12:04:18Z
 ---
 
 
@@ -518,3 +518,29 @@ one so far is either genuinely long (240 s budget too short) or a guard/assertio
 working as designed. The bucket is looking like a harness artifact end to end.
 
 Tree restored after each run (`git status` clean); no witness committed.
+
+
+---
+
+## 🛑 ENVIRONMENTAL LIMIT, measured twice 2026-09-12 — a >60-minute producer is not reliably completable in this container
+
+Two of this bucket's producers could not be finished, and **the cause is the container, not the producer.** Recording it because the failure shape is exactly the one this bean warns about: a killed long-compute leaves **no output and no traceback**, which is indistinguishable from a silent crash.
+
+| attempt | producer | budget | elapsed when killed | cause |
+|---|---|---|---|---|
+| 1 | `qbeta_interface_w_deciding_test_probe.py` | 5400 s | **~62 min** | container restart |
+| 2 | same, relaunched from zero | 5400 s | **~15 min** | container restart |
+
+Plus `binding_from_frobenius_pairing(2,2)` killed both times alongside it.
+
+**Both restarts left `git status --porcelain` empty**, so neither killed run committed or left a dirty witness — the runner's restore-before-and-after held.
+
+### What this establishes, and what it does not
+
+**Establishes:** the restart cadence here is **variable and can be well under an hour**, so a producer whose budget exceeds ~60 min cannot be relied on to finish in one session. Two independent attempts, 62 min and 15 min. This is a *scheduling* fact about the environment.
+
+**Does NOT establish** anything about the producer. It did not crash, did not hang, and emitted no diagnostic — it was simply stopped. Per this bean's own rule that *a non-zero exit is not a defect and stdout carries the answer*, the mirror-image rule applies: **an absent result from a killed run is not evidence of anything at all.** Do not fold these two into any "cannot complete" count; the TIMEOUT bucket's standing figure remains **8 of 10 measured, 0 defects**.
+
+### For the next agent
+
+Relaunching a third time in an interactive session is the move that has now failed twice. The producers that *did* complete here all ran **under ~17 minutes** (`ksel2id` 852 s, `ground_state_ordering_a3` 558 s, `binding_from_frobenius_pairing` deuterium 577 s / tritium 987 s). Treat ~15 min as the reliable budget and ~60 min as the optimistic one; anything longer needs either a resumable checkpoint or a run outside an interactive session.

@@ -3,8 +3,9 @@
 title: The chi caches are 26 days stale to the intra-ordering change, and it refutes the O3' atom-independence result
 status: todo
 type: task
+priority: normal
 created_at: 2026-09-05T19:25:18Z
-updated_at: 2026-09-05T19:25:18Z
+updated_at: 2026-09-12T12:04:19Z
 ---
 
 
@@ -295,3 +296,25 @@ is not read as confirmed.
 
 Re-running it needs a budget well past 40 minutes and is the last open item on
 this bean.
+
+
+---
+
+## Deciding probe attempted twice 2026-09-12 — killed by container restarts, NOT run to a verdict
+
+`computations/qbeta/qbeta_interface_w_deciding_test_probe.py` was launched twice
+at a 5400 s budget and killed by container restarts at **~62 min** and **~15 min**
+respectively. No output either time; `git status` clean after both, so nothing
+was committed and no witness was dirtied.
+
+**So this bean is unchanged — no verdict was reached, in either direction.** It
+would be wrong to read the absence as a result: the probe did not crash, hang,
+or refuse; it was stopped. Measurement and the environmental limit are recorded
+on `qou-geqa`; the short version is that ~15 min is the reliable budget in this
+container and ~60 min the optimistic one, so this probe needs a resumable
+checkpoint or a non-interactive run.
+
+The bean's substance — six `chi-<atom>-h<n>-at-q0-50dps` caches computed
+2026-08-10 against an `atom_braid_word_3A` intra-ordering that changed
+2026-09-05, with the producer calling it at line 96 with no `intra_order` — is
+untouched by this and still stands as recorded.
