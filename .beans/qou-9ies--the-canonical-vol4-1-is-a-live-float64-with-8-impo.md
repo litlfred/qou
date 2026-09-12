@@ -1,11 +1,11 @@
 ---
 # qou-9ies
 title: The canonical Vol(4_1) is a live float64 with 8 importers, and a 2026-06 audit called it a comment
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T07:17:23Z
-updated_at: 2026-09-07T09:13:21Z
+updated_at: 2026-09-12T08:36:28Z
 ---
 
 Found while hand-reading the 13 witness-copy findings whose source is a RETIRED
@@ -178,3 +178,42 @@ measures **213 live** (+4 generated). That figure is on its second correction:
 so and points at the probe instead of restating a number.
 
 Probe now exits 0 with 11 named checks.
+
+
+---
+
+## VERIFIED FIXED on both import paths 2026-09-12. CLOSING.
+
+**The float64 is gone.** `computations/substrate/experimental_constants.py:265`:
+
+```python
+with _mpm.workdps(_CONST_DPS):
+    VOL_FIGURE_EIGHT     = 2 * _mpm.clsin(2, _mpm.pi / 3)
+```
+
+Not a literal at all — computed at the caller's ambient precision, so exact to
+whatever `dps` is in force rather than frozen at any digit count. The file cites
+this bean by name and records the diagnosis this bean made, including the
+camouflage: the value was filed with `± 1e-12 (numerical precision)`, i.e. as a
+**measured** quantity, and nobody re-measures a measurement.
+
+**`VOL_FIGURE_EIGHT_ERR = 0.0`**, with the name deliberately retained and the
+reasoning measured: dropping it breaks `mass-from-q-symbolic`'s error-budget
+import, a fictitious `1e-12` would inflate that budget with an uncertainty that
+does not exist, and removing the term moves `rel_hbar_sq` by 2.45e-10 relative.
+
+**Both paths clean.** The generated mirror
+`qou-mass/src/qou_mass/_internal/experimental_constants.py:221` carries the same
+expression — checked directly, because this bean's own framing is that the
+defect was live on both paths and a source-only fix would leave `qou-mass`
+consumers on the float.
+
+**Second half done too.** The audit sentence this bean falsified independently of
+`qou-f8lit` now carries its own correction section in
+`docs/audits/2026-06-21-constant-consistency-axis2-clean.md` — *"the SAME
+sentence's OTHER clause was also false"* — recording that the two defects are
+different classes (wrong-tailed vs a correct-but-float truncation) and that the
+detector here was never blind, just unread.
+
+**Closeable under rule 13a**: a float64 constant and a false audit clause are
+mechanical defects; nothing here turns on unproved mathematics.
