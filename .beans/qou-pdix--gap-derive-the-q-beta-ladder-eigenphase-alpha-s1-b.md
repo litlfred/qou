@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-12T23:40:56Z
+updated_at: 2026-09-12T23:47:08Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2027,3 +2027,83 @@ wherever the carrier is cited (conditional-proved != premise-established).
 
 I did NOT open a step-2 bean: `qou-6ers` and `qou-ba73` already cover both
 options, and `beans create` is not idempotent.
+
+
+### 2026-09-12 (4) — CORRECTION 2: `qou-6ers` is the WRONG bean; the state of the art is `qou-d0qq`, and it is far ahead of what entry (3) said
+
+Entry (3) concluded "**5b is blocked on `qou-6ers`**". **That is wrong.** `qou-6ers`
+is *"Formalize multiplicative-integral/non-abelian Stokes for
+**tm_transient_localisation**"* — a **Ch 7 lemma** in the lifting-descent arc
+(`QOU.LiftingDescent.tm_transient_localisation`, "Transient terms localise to
+exceptional divisors"), with an **empty body**, created 2026-08-21. I matched it
+on the phrase "non-abelian Stokes" in a bean that had no body to check the match
+against: match-by-shape-not-subject, the error the detector-blindness taxonomy
+records for beans specifically.
+
+THE REAL FAMILY is the `qou-2akx` step-2 tranche, and it is much further along:
+
+    qou-0jcd  in-progress  Step-2 plan: close cheat-sheet §2a
+    qou-ba73  completed    Step-2 A: HeckeMonodromy §3b class
+    qou-xipk  completed    Step-2 B: Picard-Lefschetz classical shadow
+    qou-74ip  completed    Step-2 C-prune: unit-modulus KZ vs the real pin q0
+    qou-d0qq  in-progress  Step-2 C: sl2 KZ on Conf3(C) pulled back along the
+                           colour cubic's root map -- does its monodromy
+                           reproduce the Hecke quadratic and z_D?
+
+`qou-d0qq` is branch 3's question verbatim, and it is largely DONE on the KZ side.
+
+### Two relationships to THIS bean's work that are worth recording
+
+**(i) `qou-74ip` is the KZ analogue of my own locus theorem, and KZ ESCAPES where
+Faddeev does not.** `unit_modulus_ne_real_gt_one`: `‖exp(iθ)‖ = 1 ≠ q` for real
+`q > 1` — a real-level KZ monodromy eigenvalue cannot be the real pin. That is
+structurally the same obstruction as `modular_cannot_bridge` (2026-09-12 entry 1),
+reached independently. **But KZ survives it by moving to an IMAGINARY level**
+(`ħ = (2/iπ) ln q ≈ −0.0664i`; `k+2 = 15.05i / 30.11i / 60.22i` under the three
+`ħ` conventions). That escape is exactly what my Faddeev result shows is NOT
+available to the modular double, because inversion *preserves* each locus. So the
+two routes diverge precisely at the point my theorem measures, and the comparison
+**favours KZ** — worth stating, since my entry (1) pruned the Faddeev sibling.
+
+**(ii) A finding neither bean draws: the KZ MONODROMY cannot be the alpha carrier,
+by the same rationality invariant that closed routes 2-4.** `qou-d0qq` records
+that each `ϱ(w_j)` satisfies the Hecke quadratic (eigenvalues `q`, `−1/q`) and
+that `ϱ(w₁⋯w₆) = ϱ(Δ²)` is central with eigenvalue `q⁶` on spin-3/2 and `1` on
+both spin-1/2 blocks. **Every one of those is in `ℤ[q,q⁻¹]`**, so any normalised
+trace of them is in `ℚ(q)` — and `2cos((z−1)h/2)` is transcendental over
+`ℚ(q,z)`. Hence a **closed-loop monodromy** of the KZ connection, however
+correctly it derives `HeckeMonodromy.quad`, **cannot carry alpha**.
+
+This does NOT refute `qou-d0qq`. Its purpose is step 2 — deriving the Hecke
+quadratic — and for that the monodromy is exactly right. The point is that the
+SAME construction cannot double as the alpha carrier: branch 3 needs the
+**OPEN-PATH holonomy** of that connection (an ordered exponential, transcendental
+in the level), not its monodromy. Grepped: the monodromy-vs-open-path distinction
+appears nowhere in `qou-d0qq` — the only corpus hit is this bean, where I wrote it
+in entry (1) about `Φ_b`.
+
+**And that is consistent with my bracket, which is the satisfying part.** The
+monodromy eigenvalues are Laurent, so they land in the FLAT basket — the same
+place `lw`, `tauOf` and the per-rep Reeb objects landed (46.3x / 19.1x / 11.1x
+short). An open-path holonomy at an imaginary level is a genuine ordered
+exponential and is not constrained to be Laurent, so it is the one shape that can
+sit at the intermediate steepness the bracket specifies. Two independent lines —
+the rationality invariant and the log-slope bracket — point at the same object.
+
+### Corrected status of 5b
+
+    5b  holonomy / monodromy .... monodromy half EXCLUDED (rationality, this entry)
+                                  open-path half OPEN, and the KZ connection at
+                                  imaginary level is the concrete candidate
+                                  (qou-d0qq has the construction; the framework-
+                                  side connection is its open remainder, with
+                                  C1/C2/C3 already scope-(b) dead and the
+                                  survivor C3' requiring the deformation as an
+                                  INPUT -- forever-gate-consistent)
+
+So the honest next step is **not** a new route: it is the open-path holonomy of
+`qou-d0qq`'s KZ connection, measured against `P(q0) = 1.99726` and
+`|P'/P| = 2.176`. That is a well-posed computation on an object that now exists.
+
+I did NOT create a bean for this: `qou-d0qq` is the carrier and is in-progress. A
+cross-link note has been appended there, status untouched.

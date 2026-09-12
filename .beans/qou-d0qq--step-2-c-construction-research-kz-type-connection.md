@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-09-07T18:13:25Z
+updated_at: 2026-09-12T23:47:08Z
 parent: qou-2akx
 ---
 
@@ -40,3 +40,51 @@ parent: qou-2akx
 
 
 2026-09-07 CORRECTION (qou-99qc review on #7088): q² = e^{iπħ} is conditional on Skein normalisation (H) — under (J) the ratio is −q and ħ halves; and the level mapping is k+2 = 15.05 i / 30.1 i / 60.2 i for ħ = 1/(k+2), 2/(k+2), 4/(k+2) (the earlier '60.2 i ↔ 2/(k+2), 30.1 i ↔ 1/(k+2)' was off by two; the probe's numbers were right). Fixed in KZLevelFromHeckeNormalisation.lean, the kz_pullback probe and audit §B′.
+
+
+---
+2026-09-12 CROSS-LINK from `qou-pdix` (the Q_beta ladder's alpha eigenphase carrier),
+session pdix-attack-b. Status deliberately untouched; this is coordination, not a
+claim on the bean.
+
+**Two things from the pdix side that bear on this bean.**
+
+**(1) Your `qou-74ip` prune has a Faddeev twin, and YOUR route is the one that
+escapes it.** I proved (sorry-free, `QOU/QBeta/ModularDoubleLocusSeparation.lean`,
+PR #7252) that the Faddeev modular involution `b² ↦ 1/b²` fixes BOTH the
+`|q| = 1` fibre locus and the real substrate locus setwise, so it cannot bridge
+them — `modular_cannot_bridge` / `modular_cannot_bridge'`. That is structurally
+the same obstruction as `unit_modulus_ne_real_gt_one`. The difference is that KZ
+escapes it by moving to an imaginary level, and the modular double CANNOT, because
+inversion preserves the locus rather than crossing it. So route 5a (modular
+double) is pruned and 5b (yours) is not, for a reason that is now proved on both
+sides.
+
+**(2) A caveat this bean does not currently draw: the MONODROMY cannot be the
+alpha carrier, even though it correctly derives `HeckeMonodromy.quad`.** This bean
+records eigenvalues `q`, `−1/q` for each `ϱ(w_j)` and `q⁶` / `1` for `ϱ(Δ²)`.
+All are in `ℤ[q,q⁻¹]`, so any normalised trace is in `ℚ(q)`. `qou-pdix`'s
+rationality invariant — the one that closes its routes 2-4 — says the required
+`2cos((z−1)h/2)` is **transcendental over `ℚ(q,z)`**. So a closed-loop monodromy
+of this connection cannot be the eigenphase carrier.
+
+Nothing here is a problem for this bean's own goal: for step 2 the monodromy is
+exactly the right object. The point is that the same construction cannot ALSO
+serve `qou-pdix`; that needs the **open-path holonomy** of the connection (an
+ordered exponential, transcendental in the imaginary level), not its monodromy.
+I grepped and the monodromy-vs-open-path distinction appears nowhere in this
+bean.
+
+**Corroborating measurement, independent of the rationality argument.**
+`qou-pdix` §D pins the carrier by two numbers, `P(q0) = 1.997259194490263` and
+`|P'/P|(q0) = 2.176`. Measured at the proton pin
+(`computations/qbeta/qbeta_pdix_step2_holonomy_slope_probe.py`, 7/7): every
+Laurent-type step-2 object is far too FLAT — `lw 2` 46.3x, `lw 3` 9.7x, `tauOf`
+19.1x, per-rep `2χ^(2,1)/[2]_q` 11.1x — while the modular-dual scale is 375x too
+STEEP. The target is bracketed with nothing declared near it. Laurent monodromy
+eigenvalues fall on the flat side; an open-path holonomy is the one shape not
+constrained to be Laurent. Two independent lines point at the same object.
+
+**No ask.** Recorded so that whoever closes the framework-side connection knows
+the alpha-carrier consumer wants the open-path holonomy, and knows the bracket it
+has to land in.

@@ -508,10 +508,77 @@ from circularity requires the connection to be defined **without** reference to
 the thing it is meant to produce, so the honest restatement does not supply it;
 only the geometric discharge does.
 
-**5b is therefore blocked on `qou-6ers`**, and not on another candidate-form
-sweep. Alternatively 5b can be carried openly as conditional on `HeckeMonodromy`
-— which is legitimate, but then the α carrier is conditional on an unproved
-primary conjecture, and that has to be stated wherever the carrier is cited.
+**🛑 "`qou-6ers`" IS THE WRONG BEAN — corrected the same day.** `qou-6ers` is
+*"multiplicative-integral/non-abelian Stokes for **tm_transient_localisation**"*, a
+**Ch 7 lifting-descent lemma**, with an **empty body**. I matched it on the phrase
+"non-abelian Stokes" in a bean with no body to check the match against —
+match-by-shape-not-subject.
+
+### 8.6 The real state of the art is the `qou-2akx` step-2 tranche, and it is far ahead
+
+```
+qou-0jcd  in-progress  Step-2 plan: close cheat-sheet §2a
+qou-ba73  completed    Step-2 A: HeckeMonodromy §3b class
+qou-xipk  completed    Step-2 B: Picard–Lefschetz classical shadow
+qou-74ip  completed    Step-2 C-prune: unit-modulus KZ vs the real pin q₀
+qou-d0qq  in-progress  Step-2 C: sl₂ KZ on Conf₃(ℂ) pulled back along the colour
+                       cubic's root map — does its monodromy reproduce the Hecke
+                       quadratic and z_D?
+```
+
+`qou-d0qq` is branch 3's question verbatim and is largely **done on the KZ side**:
+`KZLevelFromHeckeNormalisation` (sorry-free) fixes the level convention-free from
+the half-twist eigenvalue *ratio*; `ϱ: F₆ → B₃ → End(V^⊗3)` is explicit, each
+`ϱ(w_j)` satisfies the Hecke quadratic with pivotal trace `z_D`, and `quad_of_kz`
+**derives** `HeckeMonodromy.quad`. Its open remainder is the *framework-side*
+connection, where C1/C2/C3 are already **scope-(b) dead**
+(`UntwistedMonodromyPrune.lean`; `colour_cubic_abelian_twist_holonomy_probe` 8/8)
+and the survivor C3′ requires the deformation as an **input** — forever-gate
+consistent.
+
+**Two relationships to the work in §8.1–8.5.**
+
+**(i) `qou-74ip` is the KZ twin of §8.1's locus theorem, and KZ escapes where
+Faddeev cannot.** `unit_modulus_ne_real_gt_one` (`‖exp(iθ)‖ = 1 ≠ q` for real
+`q > 1`) is structurally the same obstruction as `modular_cannot_bridge`, reached
+independently. **KZ survives it by moving to an imaginary level**
+(`ħ = (2/iπ)ln q ≈ −0.0664i`). That escape is precisely what §8.1 shows is
+*unavailable* to the modular double, because inversion **preserves** each locus
+rather than crossing it. So the two routes diverge exactly where §8.1 measures, and
+the comparison **favours KZ**.
+
+**(ii) A finding neither bean draws: the KZ MONODROMY cannot be the α carrier.**
+`qou-d0qq` records eigenvalues `q`, `−1/q` per generator and `q⁶` / `1` for
+`ϱ(Δ²)`. All lie in `ℤ[q,q⁻¹]`, so any normalised trace is in `ℚ(q)` — and
+`2cos((z−1)h/2)` is **transcendental over `ℚ(q,z)`**, the invariant that closes
+routes 2–4. So a **closed-loop monodromy**, however correctly it derives
+`HeckeMonodromy.quad`, cannot carry `α`.
+
+This is no problem for `qou-d0qq`'s own goal — for step ② the monodromy is exactly
+right. The point is that the same construction cannot *also* serve `qou-pdix`:
+branch 3 needs the **open-path holonomy** (an ordered exponential, transcendental
+in the level), not the monodromy. Grepped: that distinction appears nowhere in
+`qou-d0qq`.
+
+**And it agrees with §8.5's bracket, which is the satisfying part.** Laurent
+monodromy eigenvalues fall on the **flat** side, with `lw`, `tauOf` and the per-rep
+Reeb objects. An open-path holonomy at an imaginary level is not constrained to be
+Laurent, so it is the one shape that can sit at the intermediate steepness the
+bracket specifies. **Two independent lines — the rationality invariant and the
+log-slope bracket — point at the same object.**
+
+### 8.7 Corrected status of 5b
+
+```
+5b  monodromy half ..... EXCLUDED (rationality; §8.6(ii))
+    open-path half ..... OPEN, and the KZ connection at imaginary level is the
+                         concrete candidate (qou-d0qq holds the construction)
+```
+
+So the honest next step is **not a new route**: it is the **open-path holonomy of
+`qou-d0qq`'s KZ connection**, measured against `P(q₀) = 1.99726` and
+`|P'/P| = 2.176`. That is a well-posed computation on an object that now exists.
+Cross-link note appended to `qou-d0qq`, status untouched.
 
 Probe: `computations/qbeta/qbeta_pdix_step2_holonomy_slope_probe.py` (7/7).
 
