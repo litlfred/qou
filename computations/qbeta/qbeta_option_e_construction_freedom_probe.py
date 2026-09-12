@@ -225,7 +225,7 @@ def main() -> int:
     # ---- CHECK 3: the headline count ---------------------------------------
     print("\nCHECK 3 — the falsifiability price of the recipe as stated")
     print(f"    configurations examined : {total_pairs:,} ordering pairs "
-          f"across 16 readings")
+          f"across {len(per_reading)} distinct multisets")
     print(f"    inside the 1 sigma window: {total_hits:,}")
     nearest_pct = (best_overall[0] / TARGET) * 100
     print(f"    nearest approach overall : {mp.nstr(nearest_pct, 10)} % of target")
