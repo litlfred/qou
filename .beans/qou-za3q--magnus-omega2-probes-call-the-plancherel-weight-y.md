@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
-updated_at: 2026-09-11T14:46:19Z
+updated_at: 2026-09-12T03:55:51Z
 parent: qou-x631
 ---
 
@@ -301,3 +301,77 @@ unreachable. It landed.
 scope-(a): dimensionless SIGN datum. NOT a MeV (Δ_λ gate open), NOT a physical
 binding-sign assertion (qou-v7ro/#6077 cited, not re-derived). Per-partition
 sign-indefinite.
+
+
+## MEASURED 2026-09-12 (PR #7197): the A=2 -> A=3 sign change is a PLANCHEREL ARTIFACT
+
+The checklist item `[ ] Resume 4He ... and re-run the robustness probe; only
+then is A=4 in play` is now discharged in full. Its first half landed in #7179;
+**this is the second half**, and it is the half that carries the result.
+
+All three sources are post-ruling (2026-09-08 / 2026-09-08 / 2026-09-11), so for
+the first time nothing is excluded by the ORDERING_RULING guard.
+
+ atom     | A | P_total Plancherel                  | sg | P_total Wenzl                 | sg | agree
+----------|---|-------------------------------------|----|-------------------------------|----|------
+ deuteron | 2 | -15.095241437873283771              | -1 | -6.9212506527                 | -1 | yes
+ triton   | 3 | +2.470192708                        | +1 | -13.930562450                 | -1 | NO
+ 4He      | 4 | +34.126027285357652927              | +1 | -20.466481428076021593        | -1 | NO
+
+**Read the sign COLUMNS:**
+
+    Plancherel   -, +, +    one sign change, between deuteron and triton
+    Wenzl        -, -, -    NO sign change anywhere in A = 2, 3, 4
+
+So the measures do not merely disagree on a magnitude — they disagree on
+**whether the programme's target phenomenon exists.** It is present only under
+the measure these probes aggregate with, absent under the production weight.
+
+### This STRENGTHENS the earlier reading rather than changing it
+
+The 2026-09-07 correction already said, on triton alone: *"under the principled
+pairing the A=2 -> A=3 sign change is not yet exhibited, and 4He is needed before
+even that is settled."* 4He has now landed and it does not rescue it — Wenzl is
+negative there too. The honest statement is no longer "not yet exhibited at
+A=3" but **not exhibited at any of A=2,3,4.**
+
+And Plancherel again gives the wanted sign at A=4, as it did at A=3. Preferring
+it on that basis is selection against the target (AGENTS.md NO FITTING), so the
+pattern of it being the convenient answer twice is a reason for more suspicion,
+not less.
+
+### Decision 1 is STILL OPEN — and this bean does NOT close
+
+Which measure is the correct pairing for a Magnus Omega2 question is unsettled;
+nothing here chooses it. What changed is that the choice is **no longer
+cosmetic** — the 2026-09-07 note said "the choice is not urgent: no published
+sign conclusion moves either way", and that is **now false**: at A=3 and A=4 the
+conclusion moves. Options qou-q2q7 (A, Wenzl — recommended) / qou-smvw (C, report
+both — recommended) / qou-94yt (B) / qou-ia4w (D) / qou-gba1 (E) are unchanged in
+substance but have gained urgency.
+
+Per AGENTS.md §13a this bean stays open: its subject is an open question about
+the correct pairing, not a mechanical task.
+
+### Two stale assertions fixed in the same PR
+
+Both were contradicted by the witness's own data, which is the defect class this
+corpus keeps hitting:
+
+1. Caveat 2 read "Establishes only that the published SIGN does not distinguish
+   the two measures" — true when only the deuteron was canonical, and the exact
+   opposite of the result now sitting three fields away in the same file.
+2. The docstring header/table still had 4He as pre-ruling and "undetermined".
+
+### Verification
+
+Witness `data` byte-identical across mpmath 1.3.0 and 1.4.1 (volatile keys
+masked; full `data`+`assertions` compared, not display digits — the truncation
+trap). mpmath 1.4.1 installed and re-run rather than committing the downgraded
+environment record; clarabel verified genuinely unused by this producer.
+`precision-gates.sh --changed` RED set byte-identical to pristine main
+(stash/compare), so nothing newly red. The probe exits 1 BY DESIGN —
+`sign_robust_to_weight_family` computed 0 expected 1; the failure is the result.
+The 10 audit witnesses the gate run dirtied were restored, not committed.
+
+Siblings to cite per qou-x631: qou-k5r5, qou-o6ov, qou-omr7.
