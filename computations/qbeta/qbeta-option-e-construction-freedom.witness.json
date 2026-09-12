@@ -1,0 +1,122 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T08:51:35.029859+00:00",
+  "commitSha": "41be3a4da65e743c3e5b2d6c8394d0a1f1f2721d",
+  "assertions": [
+    {
+      "name": "imported_machinery_reproduces_the_gen_grouped_residual",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "-15.451387 % — hm_num/tr_at come from the committed order probe, which calibrates against the census before enumerating"
+    },
+    {
+      "name": "the_16_readings_collapse_to_6_distinct_multisets",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "6 distinct, 10 duplicates — hopf is subsumed by the ordering enumeration (16->8), and the two ud shifts both carry d = -h/2 so swapping their generators leaves the multiset fixed, collapsing 001==010 and 101==110 (8->6)"
+    },
+    {
+      "name": "the_recipe_as_stated_does_NOT_reach_Q_beta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "0 of 37,459,422,000 configurations the source blocks permit reach Q_beta within experimental error — the construction is FALSIFIABLE and, at level 2, currently refuted"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 34,
+  "computation": "qbeta-option-e-construction-freedom",
+  "scriptFile": "qbeta_option_e_construction_freedom_probe.py",
+  "scriptHash": "1a92638f854b",
+  "scriptCommitSha": "41be3a4da65e743c3e5b2d6c8394d0a1f1f2721d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_option_e_construction_freedom_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_option_e_construction_freedom_probe.py"
+  },
+  "description": "Prices the ENTIRE declared freedom of the corpus's nucleon-element recipe against Q_beta at the ruled functional (tr at z_D): 8 quark-generator assignments x 2 Hopf orientations, and within each every ordering of the 11 letters. Reports how many configurations reach Q_beta within experimental error. Names no configuration; scope-(a).",
+  "data": {
+    "markov_convention": "D — the ruled functional, z_D = q^3/(q^2+1)",
+    "q0_anchor": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "target_abs_eps": "0.18689366772151209875426177648",
+    "sigma_rel_ppb": "779.7187135",
+    "configurations_examined": 37459422000,
+    "configurations_inside_window": 0,
+    "nearest_approach_pct_of_target": "0.0145712577473",
+    "per_reading": {
+      "000/10": {
+        "n_orderings": 138600,
+        "p_orderings": 27720,
+        "pairs": 3841992000,
+        "hits_in_window": 0,
+        "nearest_pct_of_target": "0.01457125775"
+      },
+      "001/10": {
+        "n_orderings": 277200,
+        "p_orderings": 55440,
+        "pairs": 15367968000,
+        "hits_in_window": 0,
+        "nearest_pct_of_target": "0.01457125775"
+      },
+      "011/10": {
+        "n_orderings": 138600,
+        "p_orderings": 27720,
+        "pairs": 3841992000,
+        "hits_in_window": 0,
+        "nearest_pct_of_target": "0.04095413828"
+      },
+      "100/10": {
+        "n_orderings": 34650,
+        "p_orderings": 69300,
+        "pairs": 2401245000,
+        "hits_in_window": 0,
+        "nearest_pct_of_target": "0.01457125775"
+      },
+      "101/10": {
+        "n_orderings": 69300,
+        "p_orderings": 138600,
+        "pairs": 9604980000,
+        "hits_in_window": 0,
+        "nearest_pct_of_target": "0.01457125775"
+      },
+      "111/10": {
+        "n_orderings": 34650,
+        "p_orderings": 69300,
+        "pairs": 2401245000,
+        "hits_in_window": 0,
+        "nearest_pct_of_target": "0.1633394"
+      }
+    },
+    "distinct_multisets": 6,
+    "readings_that_were_duplicates": 10
+  },
+  "caveats": [
+    "Scope-(a). Prices the freedom the SOURCE BLOCKS declare — the 16 readings the census already flags, plus ordering. It does not enumerate arbitrary multisets and does not exclude Option E: an element derived from somewhere other than this recipe is outside it.",
+    "Names no configuration. A configuration exhibited because it lands on Q_beta would be selection against the target — a fit under AGENTS.md NO FITTING — which is exactly why the useful output is a COUNT rather than a candidate.",
+    "The readings are PAIRED: gens/hopf is one recipe, so the same assignment applies to both nucleons, as the census's constructed_variants does. Pairing a proton reading with a different neutron reading would be a 17th choice nobody has made."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

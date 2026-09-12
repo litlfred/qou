@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-11T15:07:15Z
+updated_at: 2026-09-12T07:26:09Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2585,3 +2585,162 @@ Classes B and D are untouched and stay live.
 and no route was ranked by its residual.** Nothing existing moved.
 
 **Bean stays OPEN** (rule 13a — its subject is an open conjecture).
+
+--------
+
+## 2026-09-12 (session class-b, PR #7204) — CLASS B attacked. It escapes invariant (2) and NOT invariant (1). Bean stays open.
+
+Row B of this bean's own escape enumeration: *"a bond energy that is not
+sign-definite (`e_t < 0`, i.e. `b_t > 1`) — live, smallest escape, and the one
+the physics wants."* Attacked against the named hypotheses of #7165.
+
+### The decisive reading, and it was available without any new mathematics
+
+`BondCutSymmetryLogBound.energySlope_convex_le` takes `0 < b_nn`, `b_nn ≤ b_pp`,
+`0 ≤ w ≤ 1` — and **never `b ≤ 1`**. `b ≤ 1` is exactly what makes the energies
+non-negative, so **invariant (1), the `δ ≤ 2 ln q` cap, was never a consequence
+of positivity.** Class B escapes `bondSum_nonneg` and is capped by the same
+number as the positive class, *identically*. Positivity was the binding
+constraint on ONE thing only — the layout-free neutron-matter argument,
+invariant (2).
+
+Of #7165's twenty declarations exactly **two** carry a sign hypothesis on an
+energy: `bondSum_nonneg` and, through it, `bondSum_ne_semf_neutronMatter`.
+Every other statement — the cut identity, the segregated and well-mixed
+decompositions, `symmetryCoeff_pos_iff`, `cut_le_degree_bound`, and the whole
+log-bound file — quantifies over the energies with no sign constraint, and so
+is a class-B theorem already.
+
+### Lean (20 declarations, sorry-free, `lean`-direct exit 0 in import order)
+
+`QOU/Hecke/BondCutSymmetryNoSignDefinite.lean` (generic, §7c) +
+`QOU/Hecke/BondCutSymmetryNoSignDefiniteLogBound.lean` (archimedean). Verified
+with `lean -DautoImplicit=false -s 65536`; `#print axioms` on all 20 gives
+`[propext, Classical.choice, Quot.sound]` on 19 and `[propext]` alone on
+`bondSum_energyShift` (strictly weaker, not a defect). **No `sorryAx`
+anywhere.** Counted from an UNTRUNCATED log: the first capture was piped through
+`tail -50` and showed only 16 of the 20, which is exactly the kind of
+overstatement worth not making -- re-run and count.
+
+* **`energySlope_energyShift` / `symmetryCoeff_energyShift`** — a **uniform**
+  energy shift leaves `δ` and the symmetry coefficient *identically* fixed.
+  `δ` is a second difference; a common additive constant cancels.
+* **`bondSum_wellMixed_totalCount` / `bondSum_wellMixed_energyShift`** — the
+  well-mixed layout's total bond count is `k·A/2` *independently of the mixing
+  density `μ`*, so the shift contributes `s·k·A/2`: a **pure volume term**. It
+  cannot produce, cancel or rescale a `(N−Z)²`.
+* **`enn_neg_of_semf_neutronMatter`** — the escape is real and it is **priced**:
+  any bond count reproducing the SEMF at pure neutron matter *forces*
+  `e_nn < 0`, i.e. `b_nn > 1`. A falsifiable condition on a derived quantity,
+  which converts a structural exclusion into a measurement.
+* **`energySlope_gt_convexCap_iff`** — beating the cap is **equivalent** to
+  `e_pn > e_nn`, i.e. `b_pn` strictly below *both* like-species bonds and
+  outside the convex hull `weight_of_convention` derives it in.
+* **`exists_bondRescale_all_energies_neg`** — from any positive law there is a
+  common `c > 0` making all three energies negative, with `δ` unchanged.
+* **`classB_symmetryCoeff_le_of_convex` / `classB_rescaled_symmetryCoeff_le`** —
+  the composition: class B's cap **equals** the positive class's cap.
+
+### Measured (`computations/qbeta/qbeta_class_b_nonsigndefinite_bond_probe.py`, 20/20, 50 dps, proton pin, convention D, mpmath + exact `Fraction`, no float64)
+
+Every bond factor is *derived* — the two-strand convention-D Markov trace
+`tr(a·σ + b) = a·z_D + b` of the canonical interface letter, `z_D = q³/(q²+1)`,
+with the letters as `atom_braid_word_3A` emits them. Nothing chosen.
+
+* **R1** `b_pp = z_D` **exactly** — the p–p bond factor *is* the convention-D
+  Markov parameter — and `(q²+1)` divides all three denominators, checked
+  exactly over `Fraction` at a rational sample `q` (the convention test that
+  keys on the ANSWER, per AGENTS.md).
+* **R3 — the headline. At the canonical multiplicity the derived energies are
+  ALL POSITIVE:** `b_pp = 0.6126880371`, `b_pn = 0.5082297894`,
+  `b_nn = 0.4036277384`, giving `e = +0.4899 / +0.6768 / +0.9073`. **The
+  corpus's own law is not in class B.** Class B is a hypothesis about a
+  construction the framework does not have.
+* **R4** `δ = −0.0217592325` (wrong SEMF sign), matching the #7165 record.
+* **R5** cap `2 ln q₀ = 0.2086814406`; `a_A^eff ≤ 0.441 MeV` at `k = 2` and
+  `2.647 MeV` at `k = 12`, i.e. **53.7× and 9.0× short** of the SEMF 23.7 MeV —
+  **with no sign hypothesis anywhere in the derivation.**
+* **R6** the class-B rescaling `c = 1/b_pp + 1/b_pn + 1/b_nn = 6.0773` drives all
+  three to `b' = (3.723, 3.089, 2.453)`, every energy negative, and `δ` moves by
+  `< 1e-40` — the numerical companion to `energySlope_bondRescale`.
+* **R7** the price: `b_nn > 1` required, `b_nn = 0.4036` derived — **short by
+  2.478×**. The escape's necessary condition fails on the derived number.
+* **R8** to supply `a_A` at `k = 12` a law needs `δ = 1.8687` (9.0× the cap) and
+  hence `b_pn = 0.07674`, **5.26× below** `b_nn` — far outside the convex hull.
+  Choosing that number is a one-parameter fit and is forbidden.
+* **R9 — the sharpest cell.** The only mechanism in the corpus that produces
+  `b > 1` is the interface multiplicity `m` (this bean's own `qou-ib3g`, already
+  REFUTED there: repeating a letter on the SAME generator stays in a 2-dim
+  subalgebra, so `m` is not a multiplicity of bond strength). Scanning
+  `m = 1..12` — the **whole table**, no `m` selected, since selecting one for
+  its residual is the discrete-parameter fit the directive names — **class B
+  DOES flip the sign**, `δ > 0` from `m = 2` on, and at `m = 12` all three bonds
+  are repulsive with `δ = +0.4702`. **And `a_A^eff` reaches only 5.963 MeV, still
+  4.0× short.** `m = 7, 9, 11` are undefined (a bond factor crosses zero).
+  Flipping the sign is cheap; the magnitude is not on offer.
+
+### A correction to my own verification claim, and it is the sharper one
+
+I first reported `scripts/precision-gates.sh --changed` as **exit 0**. That was
+the exit status of `tail`, not of the gate: re-run with the output redirected to
+a file, **`GATE_EXIT=1`**. The gate is RED on this tree.
+
+**It is not red because of this branch, and that part IS measured rather than
+inferred.** Every red list in that gate enumerates its offenders, and
+`qbeta_class_b_nonsigndefinite_bond_probe` appears in **none** of them (grep
+count 0 over the whole 494-line log). The probe **writes no witness at all** — it
+prints its JSON to stdout — so it is structurally invisible to every
+witness-keyed ratchet, and both extra-root scans report `NEW dirty witnesses: 0`.
+The two `.lean` files cannot move a Python/witness ratchet. The reds are
+corpus-wide baseline state: 994 witnesses carrying raw float64 (28,151 fields),
+130 NEW q0-anchor-missing, 5 NEW stale.
+
+**What was NOT measured:** the gate was not separately run on `origin/main` to
+confirm the same reds there. The observation that decides it is the weaker but
+sufficient one — the offender lists name no file from this branch.
+
+Recorded because the pattern is the one AGENTS.md names twice: a pipeline's exit
+status is not the command's, and a gate's red is not evidence about your diff
+until you have read WHICH files it names.
+
+### A normalisation trap, recorded because it cost a red assertion
+
+`qou-ib3g`'s *"factors at m=3: 0.335 (pp), 0.984 (pn), 1.709 (nn)"* are **energy
+ratios `L(m)/L(1)`**, not bond factors. As bond factors `b(3) = 0.8485 / 0.5139
+/ 0.2122`, and comparing the two disagrees by 8× on the nn leg. Reproduced
+against the quantity each claim actually names: the `m = 3` figures as ratios
+(0.335281 / 0.983526 / 1.70864) and the `m = 2` `b > 1` claim as bond factors
+(1.12809 / 1.011). Same error class as the `c₃` 3.47 %/3.35 % pair AGENTS.md
+flags.
+
+### Scope, stated per the (a)/(b) rule
+
+* **scope-(b), structural.** *Class B does not escape invariant (1).* Invariant:
+  `energySlope_convex_le` + `half_splitting_pinned`, whose hypotheses are
+  `0 < b_nn ≤ b_pp` and `0 ≤ w ≤ 1` — no sign condition. Composed in
+  `classB_symmetryCoeff_le_of_convex` / `classB_rescaled_symmetryCoeff_le`.
+* **scope-(b), structural.** *A uniform passage into class B is powerless on the
+  symmetry term.* Invariant: `energySlope_energyShift`, a ring identity; the
+  shift is a pure volume term by `bondSum_wellMixed_energyShift`.
+* **scope-(b), structural.** *Beating the cap is equivalent to leaving the
+  convex hull.* Invariant: `energySlope_gt_convexCap_iff`, an iff with no sign
+  hypothesis.
+* **scope-(a), scope-limited negative.** *The corpus's derived law is not in
+  class B, and the one mechanism that reaches it supplies no magnitude.* This is
+  a measurement of one construction at `m = 1..12`; it constrains this
+  construction's magnitudes, not the ingredient. A different derived interface —
+  one landing `b_pn` below the hull for a reason — is **not** excluded by it.
+
+### What class B genuinely buys, and it is not nothing
+
+It **does** escape invariant (2): at `Z = 0` the bond sum is `e_nn·n_nn`, which
+a negative `e_nn` makes negative, so a class-B law *can* unbind neutron matter —
+which is what the physics wants and what #7165 forbade. The exclusion of class B
+is therefore **weaker** than the exclusion of the positive class: it is not
+layout-free, it runs through the magnitude cap instead. **The open question is
+unchanged and now sharper: what derived object puts `b_pn` more than 5× below
+both like-species bonds?** Nothing here answers it, and picking the number
+answers nothing.
+
+**Bean stays OPEN** (rule 13a — its subject is an open conjecture). Classes A, C
+(dominant-summand sub-channel) and D remain as #7181 left them.

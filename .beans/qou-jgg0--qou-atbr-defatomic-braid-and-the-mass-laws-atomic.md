@@ -272,3 +272,241 @@ the cheap instrument for whichever cell wins is a scoping note plus a
 notation-register entry — not a rename. #6952 excluded
 `mass-endomorphism/atomic-mass-gb-nf.md:3` by name, recording that this bean's
 decision governs it.
+
+## 2026-09-11 — ANSWERS one "Not established" item: the mass-formula citation IS load-bearing
+
+This bean's own list says:
+
+> *"That the 7 mass-chapter citations are load-bearing; whether any **depends**
+> on the `A+Z` count for a result was not measured."*
+
+**Measured for `wedderburn-mass-formula.md`: yes — and the dependence is not a
+shift in a number, it is a change of subject.**
+
+| reading | strand count | unique atom with `p(n) = 3` |
+|---|---|---|
+| **(a)** `def:atomic-braid` | `A + Z = 2Z + N` | **deuterium** (`n = 3`) |
+| **(b)** production | `3A = 3(Z+N)` | **hydrogen-1** (`n = 3`) |
+
+`p(n) = 3` is the condition that the **three extremal Wedderburn blocks exhaust
+the partitions of `n`** — the whole reason the `n = 3` point is interesting, since
+it is the one place where "the three extremal invariants" are not a truncation of
+a longer list. Under (b), deuterium sits at `n = 6` where `p(6) = 11`, so it is
+**not** an exhaustion point at all.
+
+**Exact, not swept.** `p` is strictly increasing on `n ≥ 1`, so `p(n) = 3` iff
+`n = 3`. Then `2Z + N = 3` with `Z ≥ 1` has the unique solution `(1,1)`, and
+`3(Z+N) = 3` with `Z ≥ 1` has the unique solution `(1,0)`. The `Z ≥ 1` restriction
+is load-bearing: admitting `Z = 0` manufactures a spurious `(0,3)` under (a).
+
+### Where this bites right now
+
+PR #7171 (merged, `20671dcc1`) added `rem:level-zero-discards-braid-noncommutativity`,
+which states flatly:
+
+> *"Deuterium is the unique atom with `n = A + Z = 3`."*
+
+True under (a). Under (b) that sentence names the wrong atom. The remark does not
+mention the `3A` reading or this bean — verified mechanically, check 6. The same
+applies to `deuterium_is_the_untested_exact_point_probe.py` check 1 (*"D sits in
+`H_{A+Z}` = `H_3`"*) and to the whole framing of #7162.
+
+So those artifacts are **(a)-conditional and assert their premise flatly** — the
+"conditional-proved ≠ premise-established" defect, in content I authored hours
+before measuring this.
+
+### Scope
+
+**This does NOT adjudicate (a) vs (b)**, which this bean reserves to the author,
+and it does not claim either object is wrong. It measures what turns on the
+choice. Scope (a): it constrains what depends on the reading; it excludes nothing.
+
+**Not established here:** whether the other six mass-chapter citations are
+load-bearing. Only `wedderburn-mass-formula.md` was measured.
+
+**Verification:** `computations/probes/strand_count_reading_is_load_bearing_probe.py`,
+**15/15**, exit 0. Every quantity is an exact integer (partition counts, strand
+counts) — no float64 is reachable, no mpmath, no witness.
+
+**Bean stays open** (rule 13a): the (a)/(b) decision is unresolved mathematics.
+
+## 2026-09-11 — the blast-radius line counts CITATIONS; the dependency surface is ~1 block
+
+This bean's blast-radius section reads *"24 citing blocks, 7 in the mass chapters"*
+and lists them. **Citing `def:atomic-braid` is not the same as depending on its
+strand count**, and measured, almost none of them do.
+
+The 24 (re-derived independently — same count) classify by the strand count each
+block actually uses:
+
+| bucket | n | blocks |
+|---|---|---|
+| **no strand count at all** | **16** | they cite the crossing table or the ground-state ordering, both reading-independent |
+| `3A` | 4 | `atom-knot-exists-proof.md`, `active-set-trace-concentration.ts`, `canonical-closure-torus-chain.md`, `subset-cumulant-recursion.md` |
+| `3A + Z` (the third count) | 1 | `mass-endomorphism/atomic-mass-gb-nf.md` |
+| `A + Z` | 3 | see below |
+
+Of the three `A+Z` hits, **two are not consumers**:
+
+- `knots-particles-confinement/atomic-braid.ts` is **the definition's own
+  manifest** (`label: "def:atomic-braid"`), whose `title` is
+  *"Atomic braid `$H_{A+Z}(q)$`"*;
+- `index-of-definitions/definition-index.md` is a **catalogue echoing that
+  title** on one row — its `3A` hits belong to unrelated entries
+  (`rho-k-h3a-refinement`, `atom-braid-exterior-algebra`,
+  `psd-trace-orthogonality`).
+
+**So exactly one consumer carries the `A+Z` reading: `mass-theory/wedderburn-mass-formula.md`.**
+
+### Why this matters for the (a)/(b) decision
+
+It re-prices option **(b)** — *"`def:atomic-braid` is superseded; retire it and
+rehome its 24 citations"*. The content-side rehoming is **one consumer block,
+plus the definition's own title and one index row**, not 24 and not 7. The other
+five counted blocks have already committed to the production side (`3A`, or `3A+Z`),
+and 16 never touch a strand count.
+
+That does **not** argue for (b) — the electron rows in Table 1 are still specific
+and physically motivated, which is this bean's own evidence for (a). It removes a
+cost from (b)'s side of the ledger, nothing more.
+
+### Scope, and what is NOT measured
+
+- **Content blocks only.** The code side is already this bean's: 824 strand-count
+  lines across 377 files on `3A` against 9 lines across 4 files on `A+Z`.
+- **"Uses a strand count" is a textual classification**, ordered so that `3A + Z`
+  is matched before `3A` and `A + Z` (it contains both). A block could depend on
+  the count without writing it; that is not detected here.
+- Still **not** adjudicating (a) vs (b).
+
+**Verification:** `computations/probes/strand_count_reading_is_load_bearing_probe.py`
+checks 8–10, part of **22/22**, exit 0.
+
+**Bean stays open** (rule 13a).
+
+## 2026-09-11 — RETRACTION of my own entry above: the A+Z surface is ≥ 4, not 1
+
+The entry immediately above concludes *"exactly one consumer carries the `A+Z`
+reading"* and re-prices option (b) on it. **That is wrong as a dependency claim,
+and I flagged the exact gap it falls into in its own scope note** — *"whether a
+block could depend on the count without writing it; that is not detected here."*
+Three do.
+
+**All three are in `molecular-construction`, and the arithmetic is spelled out in
+words:**
+
+| block | says | that is |
+|---|---|---|
+| `co-molecular-braid-carbon-monoxide.md` | *"`𝒜_C ∈ H_{18}(q)` has 18 strands (12 nucleons + 6 electrons)"* (`Z=6,N=6,A=12`) | `A+Z = 18`; `3A` would be **36** |
+| same | *"24 strands (16 nucleons + 8 electrons)"* (`Z=8,N=8,A=16`) | `A+Z = 24`; `3A` would be **48** |
+| same + its `.ts` | *"`H_{42}(q)` (`18 + 24 = 42` strands)"* | under `3A`: `36 + 48 = 84` |
+| `h2-molecular-braid.md` | *"an atomic braid in `H_2(q)`: one proton and one electron"*, then `H_4` for the molecule | `A+Z = 2`; `3A` would be **3** |
+
+**"nucleons + electrons" IS the `A+Z` construction.** None of these blocks writes
+the string `A+Z`, so the textual classification counted all of them as *"no strand
+count at all"*.
+
+### This reverses the re-pricing, and it strengthens reading (a)
+
+Option (b) does **not** cost one block. The molecular chapter is built on
+`A + Z` numerically, and under (b) — `3A`, **no electrons** — it has no electrons
+to bond with. That is not a rehoming; it is a structural problem for (b).
+
+It also answers this bean's own *"The electron content has nowhere to go"*: it
+does have somewhere to go. It goes into `molecular-construction`, which is
+entirely built on it.
+
+### The full numeric census, exhaustive
+
+Seven of the 24 citing blocks carry a bare numeric `H_n`, and **a numeric `H_3`
+means three different things** among them:
+
+| kind | n | blocks |
+|---|---|---|
+| `A+Z` arithmetic | **3** | the molecular ones above |
+| **per-nucleon** `H_3` (the quark triple) | 2 | `atom-knot-exists-proof.md` (*"each nucleon … canonical NF in `H_3(R,q)` on 3 strands"*, and it writes `H_{3(Z+N)}` for the atom), `active-set-trace-concentration.ts` (`(H_3)^{⊗A}`) |
+| the **trefoil's** `H_3` (`T_{2,3} = σ₀σ₁σ₀`) | 1 | `electron-shell-braid-capacity.md` |
+| catalogue | 1 | `definition-index.md` (18× `H_3` from other entries' titles) |
+
+The last two are false positives for any scan that reads a numeric `H_n` as a
+strand count, and both were caught by reading the block rather than by the regex.
+
+### What stands from the entry above
+
+The **16 blocks that use no strand count at all** and the **5 on the production
+side** are unchanged. What is retracted is only the final step: *citations (24) ≫
+dependencies (1)*. The correct figure is **≥ 4**, and "≥" is deliberate — the
+numeric scan keys on `H_n`, so a block depending on the count through prose or a
+witness would still be missed.
+
+**Verification:** `strand_count_reading_is_load_bearing_probe.py` checks 11–14,
+part of **31/31**, exit 0. Check 11's first assertion failed at 4 and was corrected
+to the measured 7 before this was written.
+
+**Bean stays open** (rule 13a).
+
+## 2026-09-11 — a FOURTH surface (Lean), and the pattern that ties all of them together
+
+This bean measured **content blocks** and **Python**. The `.lean` surface was
+never counted — the same omission AGENTS.md records for the convention-C audit,
+whose detector walked the tree four times and every pass was `rglob("*.py")`.
+
+**Both readings have Lean carriers. `3A` dominates numerically; every `A+Z`
+carrier is in the electron domain.**
+
+| reading | Lean files | character |
+|---|---|---|
+| `3A` | **20** | incl. `conj-rho-prefactor-structural.lean`'s *"Sanity: the strand count is exactly `3 * (Z + N)`"* — a **constraint** |
+| `A + Z` | **3** | below |
+
+The three `A+Z` carriers:
+
+1. **`knots-particles-confinement/atomic-braid.lean`** — the definition's own
+   sibling. It encodes `A+Z` as a **field default** (`totalStrands : Nat := A + Z`)
+   and its one theorem is `rfl` on that default. Its own docstring says *"for an
+   arbitrary `NeutralAtom` the `A` and `totalStrands` fields are independent and
+   may be set to non-default values"* — so a `NeutralAtom` with
+   `totalStrands := 3*A` is well-typed. **The Lean does not force (a); it defaults
+   to it.** Per AGENTS.md rule 8, a proposition true by unfolding is notation
+   rather than a theorem; flagged as a shape, not declared a violation.
+   It also carries the six `PairType` constructors **including `pe`, `ne`, `ee`**.
+2. **`lean/QOU/BraidKnot/ElectronShell.lean`** — a **library** file, and a real
+   construction rather than a default: the cabling `H_A(q) ↪ H_{A+Z}(q)` plus an
+   SDP-selected binding subword `W_bind ∈ BraidWord (A+Z)`, *"Total strand count
+   `A + Z` after cabling"*. 24 mentions of "electron".
+3. **`molecular-construction/h2o-molecular-braid.lean`** — water, with the
+   arithmetic explicit: *"oxygen `O(8,8)` (A+Z = 16+8 = 24 strands)"*.
+
+### The pattern, across all four surfaces
+
+Of the **seven** `A+Z` carriers now identified — 3 Lean, 3 content
+(`co-molecular-braid-carbon-monoxide.{md,ts}`, `h2-molecular-braid.md`), 1
+mass-theory (`wedderburn-mass-formula.md`) — **six are electron-shell or
+molecular.** Only `wedderburn-mass-formula.md` is not.
+
+That is the sharpest form of this bean's own evidence for (a): the `A+Z` reading
+is not scattered residue, it is **the reading the electron/molecular/shell domain
+is built in** — and reading (b) is `3A` with **no electrons**, so it cannot serve
+that domain at all.
+
+**The Lean count itself cuts the other way** (20 vs 3), and that is recorded as
+found. The two observations are not in conflict: `3A` is where the *mass* pipeline
+lives, `A+Z` is where the *electron* content lives. That is closer to this bean's
+option (a) — two real objects needing two names — than to (b).
+
+### Two scan errors of mine, both the same class
+
+- I grepped `lean/QOU/` for `NeutralAtom`, got **zero**, and nearly reported the
+  definition's Lean ref as dangling. It is the **content-block sibling**
+  (resolution path 1, AGENTS.md §0a); `lean/QOU/` is path 2 only.
+- I then asserted the sole `A+Z` Lean carrier was that sibling. The counting check
+  fired and returned **three**. The two extras are the substantive ones.
+
+Both were caught by making the probe count rather than assert. Recorded because
+this is the third and fourth time in this arc that a scan's *scope* — not its
+pattern — was the defect.
+
+**Verification:** `strand_count_reading_is_load_bearing_probe.py` checks 15–19,
+part of **44/44**, exit 0.
+
+**Bean stays open** (rule 13a). (a)/(b) still the author's.

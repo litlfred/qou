@@ -1038,8 +1038,33 @@ def _step_chain_22(nucleon_type, prev_types):
 #
 # All matrix entries are q-rational, evaluated numerically here using
 # the substrate q₀.  The character χ_λ(σ_k) is independent of k
-# (class function), so any embedding of crossings into σ_1, σ_2, …
-# yields the same trace.
+# (class function).
+#
+# 🛑 THAT DOES NOT EXTEND TO A WORD, and this comment said it did until
+# 2026-09-12 (bean `qou-w6x3`).  It read: "…so any embedding of crossings into
+# σ_1, σ_2, … yields the same trace."  The premise is true — all σ_k are
+# conjugate — and the conclusion is false, because χ is a class function on the
+# GROUP, not a function of the multiset of letters: χ_λ(σ_1 σ_2) ≠ χ_λ(σ_1 σ_3)
+# in general, since σ_1 σ_2 and σ_1 σ_3 are not conjugate.
+#
+# Measured, at the one place both embeddings of the binding word exist.  The
+# deuteron word under the fixed-H_k embedding and under the 3A embedding are
+# the SAME 23 letters in the SAME H_6, with the same (c, d) offsets, differing
+# only in which generator each letter is assigned to.  χ^λ then differs on 9 of
+# the 11 partitions of 6 — max relative 1.43, and λ = [5,1] goes −0.827 →
+# +3.216, a sign change.  Only the two 1-dimensional irreps are blind to the
+# embedding (ρ(σ_i) = q resp. −q⁻¹ independent of i, so χ = Π(q + d)).
+# `computations/probes/binding_word_3A_reembedding_probe.py`, 18/18.
+#
+# Why this mattered: the sentence, read at face value, says a re-embedding is
+# free.  It is not — it is a re-derivation, and every recorded binding number
+# would move.  `docs/audits/2026-09-12-binding-word-3A-reembedding.md`.
+#
+# `_step_chain_22`'s docstring above makes the NARROW version of this claim,
+# for λ = (2,2) only, and that one is TRUE — but for a stronger reason than it
+# gives.  In λ = (2,2) the matrices ρ(σ_1) and ρ(σ_3) are EQUAL (both
+# diag(q, −q⁻¹)), so σ_1 ↔ σ_3 may be substituted inside any word.  Equal
+# characters of single generators would not have sufficed.
 
 def _standard_tableaux(partition):
     """Enumerate standard Young tableaux of the given shape."""

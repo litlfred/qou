@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-08T08:02:23.192931+00:00",
-  "commitSha": "11cf449f38f783b5d151c50702ce1768517c4495",
+  "computedAt": "2026-09-12T07:12:59.071299+00:00",
+  "commitSha": "396baaeb4ead9a206031e86665f989d503ab0cc3",
   "assertions": [
     {
       "name": "markov_normalization_all_atoms",
@@ -31,18 +31,18 @@
     {
       "name": "li6_amplification_reproduced",
       "computed": "164.352983006293592331312890099908325913683372220790269357353",
-      "expected": "82.85481",
-      "passed": false,
+      "expected": "164.35298",
+      "passed": true,
       "tolerance": "0.05",
-      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁶Li free χ comes from chi_free_via_frobenius — the power-sum / Murnaghan–Nakayama route, which forms no Littlewood-Richardson coefficient and so does not go through this script's LR path. PROMOTED from a regression pin: until that second path existed the expectation descended from this script's own output and could not validate it. The two routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-frobenius.witness.json). The prior 79.86 was the convention-C value (2026-07-13 audit), correct in its own frame. RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 107.88563 (grouped word)"
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁶Li free χ comes from chi_free_via_frobenius — the power-sum / Murnaghan–Nakayama route, which forms no Littlewood-Richardson coefficient and so does not go through this script's LR path. PROMOTED from a regression pin: until that second path existed the expectation descended from this script's own output and could not validate it. The two routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-frobenius.witness.json). The prior 79.86 was the convention-C value (2026-07-13 audit), correct in its own frame. RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 107.88563 (grouped word). RE-PINNED 2026-09-12 (beans qou-nmuz / qou-37kk; PRs #7160 / #7172): commit 07d6584d94e regenerated the 5Li and 6Li matrix-m ATOM chi caches onto the BORROMEAN canonical word -- the last five of six such caches still on the superseded grouped word. The 2026-09-07 4He re-pin note above had already flagged this as outstanding ('this pin does not depend on the 5Li/6Li caches, which are still grouped'), so until now the computed side read grouped-word caches while the expectation descended from them -- the same false-green the 4He pin was corrected for. BOTH routes moved together and still agree (3.1e-49 absolute on A_req, all 385 blocks), so this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 82.85481 (5Li/6Li atom caches on the grouped word)"
     },
     {
       "name": "anchor_kappa5Li_reproduced",
       "computed": "143.396585178952926385201224106940520308588955949484668628326",
-      "expected": "64.10282",
-      "passed": false,
+      "expected": "143.39659",
+      "passed": true,
       "tolerance": "0.05",
-      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁵Li free χ comes from chi_free_via_frobenius. ⁵Li was the last atom in this table with no gate at all — it was wired to the Frobenius path for speed while its numbers still rested on a single route. The two routes now agree to 1.5e-69 on all 176 ⁵Li blocks (chi-free-via-frobenius.witness.json). RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 102.51379 (grouped word)"
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁵Li free χ comes from chi_free_via_frobenius. ⁵Li was the last atom in this table with no gate at all — it was wired to the Frobenius path for speed while its numbers still rested on a single route. The two routes now agree to 1.5e-69 on all 176 ⁵Li blocks (chi-free-via-frobenius.witness.json). RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 102.51379 (grouped word). RE-PINNED 2026-09-12 (beans qou-nmuz / qou-37kk; PRs #7160 / #7172): commit 07d6584d94e regenerated the 5Li and 6Li matrix-m ATOM chi caches onto the BORROMEAN canonical word -- the last five of six such caches still on the superseded grouped word. The 2026-09-07 4He re-pin note above had already flagged this as outstanding ('this pin does not depend on the 5Li/6Li caches, which are still grouped'), so until now the computed side read grouped-word caches while the expectation descended from them -- the same false-green the 4He pin was corrected for. BOTH routes moved together and still agree (6.8e-50 absolute on A_req, all 176 blocks), so this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 64.10282 (5Li/6Li atom caches on the grouped word)"
     },
     {
       "name": "li6_all_385_partitions_present",
@@ -63,10 +63,10 @@
     {
       "name": "carrier_band_ratio_pinned",
       "computed": "4.83237890140068637007395462910742468788693676728011211410993",
-      "expected": "1.50250",
-      "passed": false,
+      "expected": "4.83238",
+      "passed": true,
       "tolerance": "0.05",
-      "source": "REGRESSION PIN on max/min of m_e·S over A=2..6. This was `carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a FLATNESS claim the cited theory does not support. prop:wedderburn-trace-identity gives that S = E_p[|Δθ|] is a probability-weighted mean, hence BOUNDED by π; that is `carrier_below_rotation_ceiling`, and it passes. Boundedness is not flatness, and nothing licenses 30 %. RE-PINNED 2026-09-07 from 1.8375 (beans qou-8jfh / qou-hu1f): the intra-ordering ruling moved the carrier. A regression pin asserts only that the value has not changed; it changed for a known, ruled reason, so the pin follows. Unlike the two anchors above this one has NO derivation behind it. Re-scoped to pin the measured band rather than assert an unproved property — the number is unchanged and still reported"
+      "source": "REGRESSION PIN on max/min of m_e·S over A=2..6. This was `carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a FLATNESS claim the cited theory does not support. prop:wedderburn-trace-identity gives that S = E_p[|Δθ|] is a probability-weighted mean, hence BOUNDED by π; that is `carrier_below_rotation_ceiling`, and it passes. Boundedness is not flatness, and nothing licenses 30 %. RE-PINNED 2026-09-07 from 1.8375 (beans qou-8jfh / qou-hu1f): the intra-ordering ruling moved the carrier. A regression pin asserts only that the value has not changed; it changed for a known, ruled reason, so the pin follows. Unlike the two anchors above this one has NO derivation behind it. Re-scoped to pin the measured band rather than assert an unproved property — the number is unchanged and still reported. RE-PINNED 2026-09-12 (beans qou-nmuz / qou-37kk; PRs #7160 / #7172) from 1.50250 to 4.83238, for the SAME cause as the two Li anchors above: 07d6584d94e regenerated the 5Li/6Li matrix-m atom chi caches onto the borromean word. This ratio is max/min of m_e·S over A=2..6, and both moving entries are exactly those two Li rows -- 6Li is now the max (0.19466630) and 4He remains the min (0.04028374), so the band widened rather than shifted. NOT NAMED in the owner option, which said 'two Li assertions'; re-pinned anyway because leaving it red would leave a FALSE RED attributable to a correction already accepted upstream. Corroboration here is weaker than for the two anchors and the difference is worth stating: the independent Frobenius-route table (carrier_table_convention_d_rederivation) gives 4.8323789015 against this script's 4.8323789014, agreeing to 1.6e-11 RELATIVE, not to the 1e-49 the two anchors reach. The gap is carried entirely by 4He, the MINIMUM: its A_req differs between the two routes by 1.09e-8 absolute (1.55e-11 rel), a pre-existing LR-vs-Frobenius difference at 4He that this change neither introduces nor repairs. Tolerance 0.05 is seven orders looser, so the pin is unaffected"
     },
     {
       "name": "carrier_below_rotation_ceiling",
@@ -85,11 +85,11 @@
       "source": "m_e·S × 𝒜 = B_AME, the defining identity, checked at T. Replaces `erratum_T_me_S_matches_A_column`, which compared this convention-D m_e·S(T) against the 2026-07-13 audit's convention-C 𝒜 column — a CROSS-CONVENTION comparison, so its 5.7 %% gap measured the C→D re-derivation, not an erratum. The C-vs-D gap is still reported in the table and in data below; it is simply no longer asserted to be zero"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 5,
   "computation": "carrier-saturation-mechanism",
   "scriptFile": "carrier_saturation_mechanism_probe.py",
-  "scriptHash": "f57d0e3ed39b",
+  "scriptHash": "243591754a0f",
   "scriptCommitSha": "be09ef66f14306aa67d2295f82af61f503031670",
   "precisionMetadata": {
     "compute_dps": 70,
