@@ -49,15 +49,25 @@ polynomial"*, which the previous encoding dropped.
 ## What is still NOT formalised
 
 Stated so the formalisation is not read as stronger than it is. The narrative
-sentence has four content words and this file carries two of them:
+sentence has four content words and this file now carries three of them:
 
-* **no hadron restriction** — the conclusion is for every `h : Skein`, whereas
-  the prose says *"every **hadron**"*. `QOU/scratch_skein.lean` carries a
-  `Hadron : Skein → Prop` restriction and is closer on this point.
-* **no `ℤ[q^{±1}]` coefficient ring** — `R` is an arbitrary `CommRing`.
+* ✅ **hadron restriction** — carried by `HadronSkeinResolution` below, as a
+  derived strong induction rather than a projection. Added in the same commit
+  that deleted `QOU/scratch_skein.lean`, whose only worthwhile content it was.
+* ✅ **"finite polynomial"** — the `Finset` in `resolve`.
+* 🛑 **no `ℤ[q^{±1}]` coefficient ring** — `R` is an arbitrary `CommRing`.
+  This is the one content word still missing.
 
-Both are recorded in bean `qou-skgn` as route (3), a strictly harder
-formalisation than either copy in the corpus has.
+🛑 THIS PARAGRAPH READ "carries two of them" AND POINTED AT
+`QOU/scratch_skein.lean` AS THE CLOSER COPY UNTIL 2026-09-12. That file had
+been deleted 9 days earlier, in commit `9684dbd281c` — the same commit, and the
+same timestamp, as the one that added `HadronSkeinResolution` to this file. So
+the section listing what this file lacks named as missing a thing sitting 140
+lines below it, and cited a dangling path for it. Corrected against this file's
+own contents; bean `qou-skgn`.
+
+The remaining coefficient-ring gap is recorded in bean `qou-skgn` as route (3),
+a strictly harder formalisation than any copy in the corpus has had.
 
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/skein-generation.md
 -/
