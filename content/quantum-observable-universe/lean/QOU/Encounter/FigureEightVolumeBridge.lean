@@ -20,12 +20,24 @@
       VOL_4_1        := 2 · Cl₂(π/3)                        -- exact
       VOL_4_1_decimal := 2.029883212819307250042405108549   -- the approximation carrier
 
-  and `MostowRigidity.figureEight.volume := 2.02988321281930`.  Those differ at the
-  16th significant digit, so `volumeInvariant FigureEight ≠ VOL_4_1`.  Instantiating the
-  sibling theorem at the corpus's own `figureEightTriangulation`, whose volume IS
-  `VOL_4_1` by a sorry-free theorem, therefore forces a false conclusion — meaning its
-  hypotheses are jointly unsatisfiable there and no correct bridge instance for
-  `FigureEight` can ever discharge them.
+  and `MostowRigidity.figureEight.volume` **used to be** that same
+  `2.02988321281930`.  Those differ at the 16th significant digit, so
+  `volumeInvariant FigureEight ≠ VOL_4_1` held, and instantiating the sibling theorem at
+  the corpus's own `figureEightTriangulation`, whose volume IS `VOL_4_1` by a sorry-free
+  theorem, forced a false conclusion — meaning its hypotheses were jointly unsatisfiable
+  there and no correct bridge instance for `FigureEight` could ever discharge them.
+
+  🛑 PAST TENSE SINCE 2026-08-30, AND THIS PARAGRAPH USED THE PRESENT UNTIL 2026-09-12.
+  `qou-f8lit` exactified the instance — it now reads `volume := VOL_4_1` — and the
+  sibling theorem was rekeyed the same day.  So `volumeInvariant FigureEight = VOL_4_1`,
+  the two no longer differ, and the unsatisfiability is gone.
+
+  **Which does not make this file redundant, and that is why only the tense changed.**
+  The correction is what the sibling was rekeyed *to*: this file's exact-constant
+  statements are the shape the fix adopted, and its `vol_pos_of_realises` still supplies
+  positivity that the bridge module leaves open.  The diagnosis below stands as the
+  record of a defect class — a theorem sound, derived, sorry-free, and naming hypotheses
+  nothing can satisfy — which is the durable lesson and is not repealed by the repair.
 
   **This is the vacuity trap the sibling file itself documents, one file later.**  That
   file records catching a degenerate `Realises := fun _ _ => False` by writing the model
