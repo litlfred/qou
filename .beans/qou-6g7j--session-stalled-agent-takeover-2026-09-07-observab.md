@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:06:39Z
-updated_at: 2026-09-12T05:39:45Z
+updated_at: 2026-09-12T11:52:35Z
 ---
 
 Branch claude/stalled-agents-em-linking-jilmbv. Owner instruction 2026-09-07: several agents stalled; bean up, take up their work, dispatch agents, consolidate toward L2 with the binding gap read as SHAPE (PR #7005: 5.81 digits of b3 resolution lost to the mirror convention, none to experiment; qou-hok7: REV_n is a free energy over partition shapes).
@@ -22,3 +22,6 @@ Stale-branch measurement at session start (age of head commit, 30 open PRs): 11 
 - **qou-m8f3 / PR #7200 — NO at A ≤ 4, scope (b).** The trace's dominant summand is the one-row block [3A] for all ten typed clusters (runner-up ≤ 0.754); its character is a ring homomorphism so the log-weight is exactly chain-edge additive (7.4e-51): b3(ppn) = b3(pnn) = −b2(pn), mirror pair opposite signs. Stops at ⁶Li (two-row [15,3]) — scope (a) for A ≥ 6. Secondary binding-sum argmax gives right-sign b3 at 0.56×/0.72× but wrong-sign b4 and an N−Z artefact — reported, NOT wired. Lean OneRowBlockLetterProduct.lean verified by the parent (exit 0, propext/Quot.sound); probe 14/14.
 
 Net for the goal (L2 binding shape): the Mayer/Ursell vocabulary is now CLOSED on this arc with a proved invariant, and the dominant-summand channel is closed at A ≤ 4. The extensive term's live remainder narrows to: A ≥ 6 two-row dominant blocks, classes B/D of qou-brng, an attractive channel (letter trace > 1 — none in the production word), or a non-Mayer assembly.
+
+
+2026-09-12T11:55Z: queue 5 merged (#7200, #7198, #7201 — 17 PRs total). AGENTS.md Extensive-term bullet 4 now carries the owner-adopted Mayer-sign wording (73f8cdc7444). Live front: qou-vn6h / PR #7211 (two-row dominant block at A ≥ 6, agent a762e6fbc053f8e04) — first probe run 14/16 with ⁶Li cache round-trip (1e-40) and ⁷Li Ursell round-trip (1e-50) failing; agent re-running, tolerances are to be root-caused not loosened. Remaining doors after it: classes B/D of qou-brng, non-pairwise-generated object, distinguishable components (qou-lq6k).
