@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:06:39Z
-updated_at: 2026-09-12T11:52:35Z
+updated_at: 2026-09-12T12:06:46Z
 ---
 
 Branch claude/stalled-agents-em-linking-jilmbv. Owner instruction 2026-09-07: several agents stalled; bean up, take up their work, dispatch agents, consolidate toward L2 with the binding gap read as SHAPE (PR #7005: 5.81 digits of b3 resolution lost to the mirror convention, none to experiment; qou-hok7: REV_n is a free energy over partition shapes).
@@ -25,3 +25,10 @@ Net for the goal (L2 binding shape): the Mayer/Ursell vocabulary is now CLOSED o
 
 
 2026-09-12T11:55Z: queue 5 merged (#7200, #7198, #7201 — 17 PRs total). AGENTS.md Extensive-term bullet 4 now carries the owner-adopted Mayer-sign wording (73f8cdc7444). Live front: qou-vn6h / PR #7211 (two-row dominant block at A ≥ 6, agent a762e6fbc053f8e04) — first probe run 14/16 with ⁶Li cache round-trip (1e-40) and ⁷Li Ursell round-trip (1e-50) failing; agent re-running, tolerances are to be root-caused not loosened. Remaining doors after it: classes B/D of qou-brng, non-pairwise-generated object, distinguishable components (qou-lq6k).
+
+
+### 2026-09-12T12:20Z — A ≥ 6 front answered (qou-vn6h, PR #7211, head 1e02a8ed7b9)
+
+YES the one-row letter-product argument of #7200 stops: from A = 5 the trace's dominant summand is a two-row block ([12,3] at A=5, [15,3] at A=6, [18,3]/[15,6] at A=7) and its log-weight carries connected many-edge terms — `mixedSpectrum_not_rightLetterMultiplicative` (sorry-free; parent re-verified lean-direct exit 0 against Mathlib oleans, no sorry) + 32-subset Möbius cumulants at ⁶Li (non-local pp–nn pair cumulant 22× the adjacent one). NO it is not the extensive term: the connected content is anti-binding, −3.50 MeV at ⁶Li and −3.62 MeV at ⁷Li against AME shortfalls of +23.5 / +27.8, and the dominant summand's B/A grows linearly (no plateau). Scope (b) for "the letter-product argument extends", (a) for the physics. Probe 21/21 (672 s), 60 dps, proton pin, convention D. Audit `docs/audits/2026-09-12-two-row-dominant-block-a6.md`. Found on the way: the only committed ⁶Li per-partition cache is the sign-only wire (qou-sgv5) and differs from the live word by up to 3.3e3 in χ; `chi_all_lambda_any` pins dps=50 regardless of ambient mp.dps (TRAP added to compute-precision-auditor memory).
+
+Net for the goal: every order-zero channel of the trace (Mayer/Ursell pairwise, one-row dominant summand at A ≤ 4, two-row dominant summand at A = 5–7, attractive-bond class B) now has a measured or proved answer, and none supplies the extensive positive term. Live: class D (the tower) — dispatched as qou-zlra (sign convention the type-2 pair-convolution quadratic hangs on).
