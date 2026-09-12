@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:25:01Z
-updated_at: 2026-09-11T15:21:25Z
+updated_at: 2026-09-12T07:40:06Z
 ---
 
 Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (round 2 of the stalled-agent takeover; sibling round 1 is #7121 / qou-6g7j with fronts observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces — NOT duplicated here). This session: merge every clean open PR; take over the fronts #7121 left: the chi producer scaling wall (#7083), the Q_β ℚ(q)-coefficient leg (#7118), and the binding SHAPE residual (symmetry-energy term of the additive log law), which the owner names as where most of the binding gap sits. Goal statement: L2 toward 1 ppQ; binding is not an L2 row and must not be quoted as one (1ppQ reanalysis §5 item 3).
@@ -44,3 +44,83 @@ The reusable part is the ENUMERATION: four classes outside #7165, each against a
 Live remainder, sharper: an extensive term in the trace sum must live in the DOMINANT SUMMAND's log-weight log|y_λ χ^λ(β_A)| — the 3A-strand word has length Θ(A), the right growth class. This is an unconditional counting reason for the concentration BindingConcentration.lean argues from LP sparsity: there it is a property of the chosen LP, here it holds whatever LP is written.
 PARENT-SESSION INDEPENDENT VERIFICATION (not taken on the agent's report): both Lean files compiled FROM SOURCE in import order against the pinned Mathlib tree, lean -DautoImplicit=false -s 65536 exit 0 (3 s + 4 s); #print axioms on all 11 declarations = [propext, Classical.choice, Quot.sound], 0 sorryAx, 0 errors. check-sidecars exit 0 and CONFIRMS the §7c split (generic file 'no ℝ, generic OK'; ℝ file 'archimedean construct present, ℝ justified'). precision-gates --changed exit 1, and a grep for all four branch stems across the full log returns ZERO lines. mirror-drift --baseline clean. (Minor: the PR body says '11 RED gates', my run counted 9 RED headings — a grep-shape difference, not a disagreement; both agree zero reds name a branch file.)
 Bean qou-brng STAYS OPEN (rule 13a). The 0.95·ℏ_q² match was not used, wired, or forced, and no route was ranked by residual.
+
+
+## Tranche 4 (2026-09-12, owner: 'do all') — the five open decisions
+
+Branch restarted at main 396baaeb4ea (41 commits behind). Three fronts dispatched
+in parallel; two settled locally.
+
+- **repin li — DONE, PR #7206.** Three pins, not two: li6_amplification_reproduced
+  82.85481->164.35298, anchor_kappa5Li_reproduced 64.10282->143.39659, and
+  carrier_band_ratio_pinned 1.50250->4.83238 (NOT in the owner option; flagged as
+  such in its source note — it is max/min of m_e.S and both moving entries are the
+  two Li rows, so leaving it red is a false red). Cause: 07d6584d94e (#7160)
+  regenerated the 5Li/6Li matrix-m ATOM chi caches onto the borromean word. NOT a
+  goalpost move: main's COMMITTED independent-route witness
+  (carrier-table-convention-d-rederivation, Frobenius/MN, shares no path) already
+  carried 143.39658.../164.35298..., so main was internally inconsistent; re-running
+  that route leaves its witness byte-identical. Two-route agreement 6.8e-50 (5Li),
+  3.1e-49 (6Li). Band ratio corroborated only to 1.6e-11 REL, gap carried entirely
+  by 4He the minimum (1.55e-11 rel, pre-existing LR-vs-Frobenius); stated in the note.
+  Probe 7/10 -> 10/10. Gates exit 1 on standing ratchets, ZERO reds naming either file.
+
+- **CAL dataset — PR #7205 (agent), NOT merged.** Q_beta is the CAL-2 proxy, not
+  CAL-3 (label corrected). AME-2020 0.78233341(61) vs CODATA-2022 registry
+  0.78233355931(38), +190.85 ppb = 0.208 sigma. c_3 -2.0693 -> -1.7605 (-14.93 %);
+  the |-2-c_3|/2 near-match DEGRADES 3.47 % -> 11.98 %. **L2 Q_beta miss 164.0 ->
+  223.9x, WORSE** — the agent's own correction of a figure #7164 sec4 and its first
+  two commits had as 139.5x/'closer': that holds the target at the AME sigma, but the
+  dashboard scores each determination against 1/100 of ITS OWN sigma and the registry
+  is more precise, so the target tightens faster than the residual improves. Exactly
+  one dashboard row moves; headline stays 1/6 scoreable. Blast radius re-measured:
+  187 tracked files (NOT 116) — 120 live .py consumers, 126 .json carrying the
+  literal, 19 dated audit docs deliberately left. New cost found: under the registry
+  codata_constants' own m_n-m_p-m_e cross-check becomes CIRCULAR (7.4e-17 by
+  construction) where under AME it was a real 0.22-sigma comparison. Separate
+  exemption-1 commit: CodataEntry.value is ALREADY mpf so float() was an active
+  downcast; Q_NEUTRON_MEV error 9.15e-14 -> 4.24e-59 MeV (the 9.15e-14 is 117x the
+  L1 1-ppQ target). Prior claim corrected: q_at() returns mpf, not float64.
+
+- **class B — DONE, PR #7204 (agent).** Class B escapes bondSum_nonneg and NOT the
+  cap: BondCutSymmetryLogBound.energySlope_convex_le never takes b <= 1, so
+  delta <= 2 ln q was never a consequence of positivity. Of #7165's 20 declarations
+  exactly two carry an energy sign hypothesis. 20 new sorry-free declarations,
+  sec7c split, lean -DautoImplicit=false -s 65536 exit 0, #print axioms clean on all
+  20. Derived bond factors (convention D, proton pin, exact Fraction):
+  b_pp = 0.6126880371 = z_D EXACTLY; all three energies POSITIVE, so the corpus's own
+  law is not in class B at all. a_A^eff <= 2.647 MeV at k=12 with NO sign hypothesis
+  (9.0x short of 23.7). Sweeping m=1..12 DOES flip the sign from m=2 and still reaches
+  only 5.963 MeV, 4.0x short. Three scope-(b) + one scope-(a). Class B's exclusion is
+  WEAKER than the positive class's — it runs through the magnitude cap, not layout.
+  Open question sharpened: what derived object puts b_pn more than 5x below both
+  like-species bonds? Also: qou-ib3g's '0.335/0.984/1.709' are ENERGY RATIOS
+  L(m)/L(1), not bond factors (b(3) = 0.8485/0.5139/0.2122).
+
+- **reembed 3A — running** (agent, branch claude/binding-word-3a-reembedding-2026-09-12).
+
+- **held merges — BOTH measured; my earlier recommendation on #6025 was WRONG.**
+  #6025 does NOT widen raw-float64-baseline.json: it DRAINS it (files 1100->1098,
+  fields 46467->35400) via the sanctioned deprecated-f64 carve-out, both required
+  fields present, reported by name. But it is fully SUPERSEDED: 10 of its 12 files are
+  byte-identical on main (Rust sources, the 429,020-line witness, the stamping script),
+  main's audit witness already lists joint-tower-sdp-rust 11057 in
+  deprecated_f64_carved_out_by_file, and the only 2 differing files are ones where the
+  branch is BEHIND (1098/35400 vs main's 1004/30990). Merging would re-inflate the
+  baseline ~94 files. Recommend CLOSE as already-landed; comment posted.
+  #6178: 3,881 commits of main since its merge-base, 238 conflicts INCLUDING .py
+  sources, 0 of 404 files matching main. Its central claim ('every witness compared
+  against a fresh run of the same producer in the same container') is void on a
+  resolved tree. Re-execution, not a rebase. Comment posted recommending extraction
+  of its live findings instead.
+
+- **Extracted from #6178 and FIXED — PR #7206 commit 2.**
+  probe_chirality_delta_lambda_the3_diagnostic has raised TypeError on every run
+  since c86e55ec9; reproduced on main. The other two producers #6178 named were
+  repaired independently since. ALSO A PRECISION FIX: Q0_PROTON is
+  qou_substrate.constants.Q, the float64 constant, so passing it injected binary64
+  into a 50-dps computation; the closure's q0 comes from the witness at full
+  precision and is the same anchor (q0Anchor 'proton', q0Value == Q_50_DIGIT_STR to
+  22 digits). Redundancy now CHECKED by assertion at rel_eps 1e-15, so a muon-pinned
+  witness fails loudly instead of straddling. Probe exit 0, 1/1, witness regenerated
+  for the first time since the breakage.
