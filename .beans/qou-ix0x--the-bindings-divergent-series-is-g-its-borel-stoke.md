@@ -222,3 +222,27 @@ Formalised sorry-free in `QOU/Mass/MilnorSignRepObstruction.lean`: `μ̄` is the
 **Homonym warning for anyone re-running this grep**: ~45 of the 184 `content/` hits are the **Milnor–Lobachevsky function** `Л(θ)` (`QOU/Archimedean/{Lob*,IdealTet*,BlochWigner*,Orthoscheme*}`), a different Milnor object. Filter before quoting a count.
 
 **Path 0 was NOT run**: the `paper-assistant` MCP server failed to connect this session, so `corpus_search` was unavailable and `emptyRoots` could not be checked. The vocabulary blind spot the graph exists to cover is therefore **not** ruled out — this is a grep-measured result, not a graph-measured one.
+
+
+---
+**THE D2 OBSTRUCTION HAD A HOLE EXACTLY WHERE `b₃` SITS — closed in Lean, sorry-free, 2026-09-12. Companion bean: `qou-lq6k`.**
+
+Having recorded that `μ̄₁₂₃` is closed, I read `QOU/Mass/MilnorSignRepObstruction.lean` rather than taking the summary on trust — and the theorem does **not** cover the case this arc needs.
+
+**What it proves:** any S₃-equivariant linear map from the sign rep into the **pair-channel** module `Fin 3 → R` is zero. That target is the permutation module on 3 points, *trivial ⊕ standard*, and it is the right target for a **charge-bilinear / per-pair** coupling — which is what finding D2 was about.
+
+**What this arc needs is a different target.** `CrossingModelPairLocality.tripleMutual(i,j,k) = w3 ijk + w3 ikj + w3 jki` sums over **all three** pairs, so it is a **scalar**, invariant under relabelling the components — the **trivial** rep, not `trivial ⊕ standard`. No instance of the existing theorem has it as a target. So between the corpus's two `μ̄` refutations there was a gap: `MilnorCarriesOrderNotMagnitude` argues about **size** and is silent on sign; `MilnorSignRepObstruction` argues about **symmetry** but only into the pair channel. **Neither says a symmetric scalar channel cannot be linear in `μ̄`.**
+
+**Closed:** [`QOU/Mass/MilnorSignRepObstructionTripleChannel.lean`](../content/quantum-observable-universe/lean/QOU/Mass/MilnorSignRepObstructionTripleChannel.lean), six declarations, **`lean -DautoImplicit=false -s 65536` exit 0**, `#print axioms` on all six showing only `propext` / `Classical.choice` / `Quot.sound` — **no `sorryAx`**.
+
+- `sign_equivariant_scalar_eq_zero` — a transposition has `signR = −1`, so `signR g · c = c` forces `c + c = 0`.
+- `equivariant_linearMap_to_trivial_eq_zero` — the companion of `equivariant_linearMap_eq_zero` with the target changed to a scalar carrying the trivial action.
+- `muBar_cannot_carry_symmetric_channel` — and this is the one that bites: the probe above establishes the data requires `tripleMutual = −8.09991876` MeV **≠ 0**, which discharges the theorem's `hne` hypothesis **from measurement**. So the required attractive channel **cannot be a linear functional of `μ̄`**, for any coefficient, over any commutative ring without 2-torsion.
+
+This closes the linear-in-`μ̄` route from the **symmetry** side, independently of `μ̄`'s normalisation — i.e. it does not rely on the type argument at all, so the two refutations are now genuinely independent rather than adjacent.
+
+**Anti-vacuity, both directions, because a Schur argument is easy to over-read.** `sq_functional_is_equivariant_and_nonzero` exhibits `x ↦ x²` as equivariant into the trivial rep and not identically zero — so **linearity is load-bearing**, and the surviving coupling is through `μ̄²` / `|μ̄|` exactly as `muBarFamily_sq_invariant` says (unsigned, which is why it does not rescue attraction — but that is a separate argument, not this theorem's). `exists_nonzero_equivariant_into_trivial_of_trivial_source` shows the conclusion comes from the **sign source**, not from the target being small.
+
+**Scope (a), narrowly.** Excludes `tripleMutual = (linear functional of μ̄)`. Does **not** exclude: `μ̄` through `|μ̄|` or `μ̄²`; `μ̄` fixing sign and order in a multi-term closure whose sizes come from elsewhere (the shape `MilnorCarriesOrderNotMagnitude` explicitly leaves standing); any non-`μ̄` three-body invariant; or **a channel that is not S₃-symmetric because the components are distinguishable**.
+
+**That last one is the live escape, and it is `qou-lq6k`'s actual subject** — an explicit antisymmetry-breaking weight. Note the physical opening: a triton is `(p,n,n)` and ³He is `(p,p,n)`, so the components are **not** interchangeable and the full S₃-equivariance this theorem assumes is stronger than the physics requires. `MilnorSignRepObstruction.coupling_vanishes_on_charge_bilinears` already closes the obvious charge-bilinear form of that idea, so the opening is narrower than it first looks. **I am not proposing a candidate weight** — proposing one because it would fit is the anti-fit violation, and `qou-edt7` says so in as many words. Recorded as where the door still is, not as a plan.
