@@ -1,11 +1,11 @@
 ---
 # qou-w2vy
 title: 'GAP: binding_from_frobenius_pairing raises on object dtype -- latent behind term 1''s hang'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-31T04:44:27Z
-updated_at: 2026-09-12T08:12:55Z
+updated_at: 2026-09-12T11:27:22Z
 ---
 
 Blocks qou-i7ju together with qou-4m9u. Evidence:
@@ -446,3 +446,29 @@ Tritium `(1,2)` and ⁴He `(2,2)` are still running at ~10 min each; the bean's
 "4 of 4" evidence was for `binding_energy` with term 1 stubbed, whereas
 `(1,1)` above is the direct call this bean's title and headline name, so the
 headline is refuted on its own terms already.
+
+
+### Tritium confirms it too — 2 of 3, and the third was lost to a container restart
+
+```
+  deuterium  OK   in   576.6s -> 1.87663410614414
+  tritium    OK   in   987.2s -> 0.22162298056811
+```
+
+Both complete and return values where this bean records `TypeError` in 0.52 s.
+The ⁴He leg was mid-run when the container restarted and is re-launched; it is
+**corroboration, not the test** — `(1,1)` is the exact call this bean's title and
+headline name, so the refutation stands on deuterium alone.
+
+**Recording the loss rather than quietly re-running it**, because AGENTS.md's
+long-compute discipline is explicit that a background compute dies on a
+container restart and a silent 0-byte result must not be read as a crash. The
+tree was clean afterwards (`git status --porcelain` empty), so the killed run
+left no dirty witness.
+
+**Closing on the headline.** The subject of this bean is the object-dtype crash
+in `binding_from_frobenius_pairing`, and it is gone — reproduced twice,
+independently of the fix commit. The **cost** half (576.6 s for term 3 alone at
+A=2) is real and is `qou-4m9u`'s subject, not this one; `qou-i7ju`, which this
+bean blocks jointly with `qou-4m9u`, does **not** unblock on this result alone
+and stays open.
