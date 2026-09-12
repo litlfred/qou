@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-31T04:44:27Z
-updated_at: 2026-08-31T05:11:06Z
+updated_at: 2026-09-12T08:12:55Z
 ---
 
 Blocks qou-i7ju together with qou-4m9u. Evidence:
@@ -399,3 +399,50 @@ recorded.
 Caught by the pre-merge file listing, not by any checker. A near-miss slug is
 indistinguishable from a new bean to anything that globs `.beans/*.md`, and
 nothing validates that a bean file carries the header its name implies.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — the crash is GONE. Reproduced at this bean's own named case.
+
+This bean's headline: *"`binding_from_frobenius_pairing(1,1)` raises on main in
+0.52s: `TypeError: no supported conversion for types: (dtype('float64'),
+dtype('O'))`."*
+
+Run directly against the current tree, `PYTHONPATH=computations`, importing
+`hecke_core_legacy.binding_from_frobenius_pairing` — the exact function this bean
+names:
+
+```
+import OK in 0.4s
+  deuterium  OK   in   576.6s -> 1.87663410614414
+```
+
+**No `TypeError`. It computes and returns a value.** The object-dtype crash was
+fixed by `d335e70402e` the same day this bean was filed, which is what its
+completion-verb commit says, and this is an independent reproduction rather than
+a reading of that commit.
+
+`bean-completion-candidates.py`'s own footer had flagged this bean as one of only
+two genuinely stale in a prior agent's 12-bean read. That prediction is now
+confirmed by measurement.
+
+### What this does NOT close, stated because the bean is careful about it
+
+The bean's wider point — *"`binding_energy` for A≥2 has TWO independent blockers,
+and fixing only the performance one converts a hang into a crash"* — is only half
+addressed. **The crash half is gone; the cost is the other half**, and it is
+substantial: **576.6 s for term 3 alone at A=2.** Term 1
+(`unified_iterative_correction`) is `qou-4m9u`'s subject and is untouched by
+this. So `binding_energy(1,1)` end-to-end is still not demonstrated here, and
+`qou-i7ju` (which this bean blocks jointly with `qou-4m9u`) does not unblock on
+this result alone.
+
+The corroborating stale witness this bean cites,
+`computations/hadron-knot-table.witness.json`, is also unaffected — it is
+`qou-i7ju`'s subject.
+
+Tritium `(1,2)` and ⁴He `(2,2)` are still running at ~10 min each; the bean's
+"4 of 4" evidence was for `binding_energy` with term 1 stubbed, whereas
+`(1,1)` above is the direct call this bean's title and headline name, so the
+headline is refuted on its own terms already.
