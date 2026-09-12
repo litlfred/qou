@@ -59,6 +59,21 @@ TWO FINDINGS, both negative, and the SECOND is the one that generalises.
     the two `arg b` branches; the log-slope does not), so this is a fact about
     the modular-dual SCALE, not about a convention choice.
 
+    SCOPE THIS CORRECTLY -- it is a statement about an INHERITED FACTOR, not a
+    like-for-like comparison.  The basket column is `|P'/P|` of a CANDIDATE `P`;
+    816.73 is `|d ln q~/dq|` of `q~` ITSELF.  For a candidate `P = f(q~)` the
+    chain rule gives
+
+        d ln P / dq = (d ln P / d ln q~) * (d ln q~ / dq)
+
+    so any `q~`-carrying term inherits the ~817 factor UNLESS the prefactor
+    `d ln P / d ln q~` is small enough to cancel it -- which needs it tuned to
+    ~2.7e-3, and tuning it against the target is exactly the selection this
+    corpus forbids.  So the honest claim is: `q~` cannot carry the phase WITHOUT
+    a suppression that would itself be a fit.  That is scope-(a), and it is
+    weaker than "no function of q~ can have slope 2.176", which is false and is
+    NOT claimed here.
+
 WHAT SURVIVES, and it is deliberately NOT pruned here.  `Phi_b`'s `b`-shift
 relation
 
@@ -216,6 +231,16 @@ def main() -> int:
         steep > 100,
         f"|d ln q~/dq| = {mp.nstr(slope_dual, 10)} vs target "
         f"{mp.nstr(SLOPE_TARGET, 6)}  ->  {mp.nstr(steep, 6)}x TOO STEEP",
+    )
+
+    # the suppression a q~-carrying candidate would need, and why taking it is a fit
+    needed_prefactor = SLOPE_TARGET / slope_dual
+    check(
+        "a q~-carrying candidate would need its prefactor tuned to ~2.7e-3",
+        needed_prefactor < mp.mpf("0.01"),
+        f"d ln P/d ln q~ would have to be {mp.nstr(needed_prefactor, 6)} to cancel "
+        "the inherited 816.73 -- tuning it against the target is selection, so the "
+        "claim is 'not without a fit', NOT 'no function of q~ can work'",
     )
 
     # branch independence: the OTHER sign of Im b^2 flips the exponent, not the slope
