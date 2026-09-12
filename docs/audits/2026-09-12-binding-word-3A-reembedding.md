@@ -171,21 +171,47 @@ The two one-dimensional irreps are **blind** to the embedding: `ρ(σ_i) = q` fo
 `χ = Π_pos (q + d_pos)` and `Π_pos (−q⁻¹ + d_pos)` exactly. The whole move sits
 in `dim ≥ 2`.
 
-### A latent trap in the corpus
+### A latent trap in the corpus — at ONE of two sites, not both
 
-`_step_chain_22`'s docstring (`hecke_core_legacy.py:995`) reads:
+There are two nearby claims in `hecke_core_legacy.py` and they are **not** the
+same claim. An earlier draft of this document quoted them as one sentence from
+`_step_chain_22`'s docstring; that was wrong, and the difference is the whole
+point.
+
+**`hecke_core_legacy.py:1040–1042`** — the comment before the seminormal matrix
+code — is the false one, and it is now corrected in place:
+
+> *"The character χ_λ(σ_k) is independent of k (class function), so any
+> embedding of crossings into σ_1, σ_2, … yields the same trace."*
+
+The premise is true: all `σ_k` are conjugate. The conclusion does **not**
+follow, because `χ` is a class function on the *group*, not a function of the
+multiset of letters — `σ_1 σ_2` and `σ_1 σ_3` are not conjugate. The `A = 2`
+table above is how false: 9 of 11 partitions move, by `O(1)` relative amounts,
+with sign changes. Read at face value the sentence says a re-embedding is free;
+it is a re-derivation.
+
+**`hecke_core_legacy.py:1004`** — `_step_chain_22`'s docstring — makes only the
+narrow claim, and that one is **TRUE**:
 
 > *"(2,2) characters are independent of which σ_j we use because
 > χ_{(2,2)}(σ_j) = h for all j."*
 
-and generalises to:
+Measured: in `λ = (2,2)` at `n = 4`, `ρ(σ_1)` and `ρ(σ_3)` are the **same
+matrix**, both `diag(q, −q⁻¹)` — because 1,2 share a row and 3,4 share a row in
+one tableau, and share a column in the other. So `σ_1 ↔ σ_3` substitutes inside
+**any** word without changing `χ^{(2,2)}`. The conclusion stands; the *reason*
+given is weaker than the fact, since equal characters of single generators would
+not suffice for a word. That distinction is exactly what the sentence two
+paragraphs up gets wrong.
 
-> *"any embedding of crossings into σ_1, σ_2, … yields the same trace."*
-
-The premise is true for a **single generator** — all `σ_j` are conjugate and `χ`
-is a class function. The conclusion is **false for a word**, and the table above
-is how false. Anyone reading that sentence would conclude the re-embedding is
-free. It is not; it is a re-derivation.
+**One thing this audit does not claim.** An attempt to exhibit a direct
+counterexample to the general claim inside `H_4` — `χ^{(3,1)}(σ_1σ_2)` against
+`χ^{(3,1)}(σ_3σ_2)` — is **not** one: those two are equal by the `w₀`
+conjugation `σ_i ↦ σ_{n−i}`, which `qou-hxz4` had already recorded as a genuine
+trace identity, and the residual difference observed was ~1e-70, i.e. the floor
+of the arithmetic and not a mathematical fact. The refutation rests on the
+`A = 2` `H_6` measurement alone, where the moves are `O(1)`.
 
 ## 5. Scope classification
 
