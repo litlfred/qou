@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:06:39Z
-updated_at: 2026-09-12T12:06:46Z
+updated_at: 2026-09-12T18:02:40Z
 ---
 
 Branch claude/stalled-agents-em-linking-jilmbv. Owner instruction 2026-09-07: several agents stalled; bean up, take up their work, dispatch agents, consolidate toward L2 with the binding gap read as SHAPE (PR #7005: 5.81 digits of b3 resolution lost to the mirror convention, none to experiment; qou-hok7: REV_n is a free energy over partition shapes).
@@ -32,3 +32,24 @@ Net for the goal (L2 binding shape): the Mayer/Ursell vocabulary is now CLOSED o
 YES the one-row letter-product argument of #7200 stops: from A = 5 the trace's dominant summand is a two-row block ([12,3] at A=5, [15,3] at A=6, [18,3]/[15,6] at A=7) and its log-weight carries connected many-edge terms — `mixedSpectrum_not_rightLetterMultiplicative` (sorry-free; parent re-verified lean-direct exit 0 against Mathlib oleans, no sorry) + 32-subset Möbius cumulants at ⁶Li (non-local pp–nn pair cumulant 22× the adjacent one). NO it is not the extensive term: the connected content is anti-binding, −3.50 MeV at ⁶Li and −3.62 MeV at ⁷Li against AME shortfalls of +23.5 / +27.8, and the dominant summand's B/A grows linearly (no plateau). Scope (b) for "the letter-product argument extends", (a) for the physics. Probe 21/21 (672 s), 60 dps, proton pin, convention D. Audit `docs/audits/2026-09-12-two-row-dominant-block-a6.md`. Found on the way: the only committed ⁶Li per-partition cache is the sign-only wire (qou-sgv5) and differs from the live word by up to 3.3e3 in χ; `chi_all_lambda_any` pins dps=50 regardless of ambient mp.dps (TRAP added to compute-precision-auditor memory).
 
 Net for the goal: every order-zero channel of the trace (Mayer/Ursell pairwise, one-row dominant summand at A ≤ 4, two-row dominant summand at A = 5–7, attractive-bond class B) now has a measured or proved answer, and none supplies the extensive positive term. Live: class D (the tower) — dispatched as qou-zlra (sign convention the type-2 pair-convolution quadratic hangs on).
+
+
+### 2026-09-12T12:36Z — queue 6 merged (#7211, #7217, #7219); 20 PRs across six queues
+
+| PR | note |
+|---|---|
+| #7211 (A >= 6 two-row dominant block, qou-vn6h) | merged 12:33Z, head 0951b1acee9 on main; parent cherry-verified 0 unmerged |
+| #7217 (queue-5 ledger beans) | merged 12:34Z |
+| #7219 (merge-coordinator memory, queue 5) | merged 12:36Z, main tip 9af91480d79 |
+
+Coordinator a8e6ef7440ea877d5 hit a session rate limit after the three merges; nothing was left half-done (all three verified with `git cherry origin/main origin/<branch>` by the parent). Branch restarted from main 9af91480d79.
+
+### 2026-09-12T12:35Z — class D answered (qou-zlra, PR #7223)
+
+**The `+c_k / -c_k` sign question is EMPTY for the functional the corpus actually uses.** Every binding law in the corpus is a LOGARITHM of a trace, and for any product-additive functional (`log`, `-log`, `a*log`) the type-two pair convolution `sum_{i<j} b_i b_j` -- the term that carries `(N-Z)^2` -- is absent, for BOTH signs. It is present in the bare product for either sign, but no corpus artifact reads *binding* as a bare Vassiliev coefficient: the one bare binding law (`Q_beta * Delta tr`) was refuted 2026-09-05, and the surviving bare `|tr_M|` readings are MASS functionals. So `qou-oooq`'s valley belonged to the product under an assumed sign; `+c_2` makes it a hill; the log removes it. Sharper: the functional the owner ruled in FOR EXTENSIVITY ("log is the unique multiplicative->additive map") is, by the same theorem, the one that cannot carry a two-bond correlation at type two.
+
+Lean `QOU/Mass/GradedBindingFunctionalPairTerm.lean` (generic CommRing; formal log over Field + NeZero 2): `prod_c2`, `e2_append`, `two_mul_e2_census`, `additive_census`, `neg_additive`/`smul_additive`, `logJet_c2_prod`, `logJet_c2_census`. Parent re-verified lean-direct (`-DautoImplicit=false -s 65536`) exit 0, 0 `sorry`, seven `#print axioms` on propext / Classical.choice / Quot.sound only. Probe 21/21, 44 s, dps 70, proton pin, convention D, exact `Fraction` h-series, no float64: 2nd difference in Z of `[h^2] prod` = 4 at every A = 3..12, of `[h^2](+/-log)` = 0; `c_2/c_0 = (N-Z)^2/2 + (5-A)/8` reproduced exactly; valley scan -- live law endpoint at every A, `-c_2/c_0` interior max at N=Z, `+c_2/c_0` a hill. `qou-eqwg`'s open question ANSWERED: transfer matrices on one generator COMMUTE exactly, so "non-commutativity inside a generator" is empty.
+
+**Collision found, not resolved (no functional picked by its numbers):** the corpus carries two inequivalent log readings -- log of the Markov-weighted TOTAL trace (bond-additive on the chain) vs `unified-iterative-correction`'s weighted sum of PER-BLOCK logs. A single Wedderburn block is not multiplicative even on the chain. The production UIC scan exceeded 300 s/atom and is left as the one open measurement on `qou-zlra`; it is the only corpus functional outside the additive class, so it is the one place a type-two two-bond correlation could still live.
+
+Net: classes A, B, C of `qou-brng` are closed or narrowed by proved invariants, and class D is narrowed to the per-block log. `qou-brng` stays OPEN (rule 13a).
