@@ -1710,3 +1710,20 @@ first bracket unconditionally non-negative, all negative edges confined to the s
 **🛑 And the price kills it as a route.** The unconditional part is **12.33 % of `M₁` at n=20, with a DECLINING share**: `0.356` (n=8), `0.271` (n=10), `0.225` (n=12), `0.173` (n=15), `0.123` (n=20). The free family **shrinks as `n` grows** and cannot carry a large-`n` proof; `87.67 %` of `M₁` sits on depth-changing edges and is uncontrolled here. Quoting the 12.33 % without the trend would suggest a foothold that is not there.
 
 **What the depth reading does buy** is a sharper statement of the open problem than `(g, δ)`: `m ≥ 0` is a *hard pointwise constraint* (`b ≥ |c|` for every cell), `m = 0` picks out the first row and column exactly, and the gap is now *"the `g`–`Δm` anti-correlation stays above `−1` uniformly"* — which is the bean's own opening `ratio → −0.62; need ratio > −1` in geometric rather than algebraic terms. CONTROL 6 checks the split is exact **and** that every `Δm = 0` edge is non-negative per edge, not in aggregate.
+
+### 2026-09-12 (cont.) — 🛑 I RETRACT my own "held and uncited machinery" recommendation: both papers are the WRONG machinery
+
+Two entries up I wrote that nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap or Poincaré inequality, and that *"the machinery for it is **held and uncited**"* — naming `library/arxiv-1804.03926v3` and `library/arxiv-1704.00850v3`. **I named them from their titles without opening them. Opened now, neither applies.**
+
+| paper | what it actually does | verdict |
+|---|---|---|
+| `arxiv-1704.00850v3` *Estimating the spectral gap of a trace-class Markov operator* | a **Monte-Carlo estimator** for MCMC diagnostics — §5 "Classical Monte Carlo", examples are a Gaussian chain, Bayesian probit and linear regression; term counts: Monte Carlo 37, estimat* 110+ | **inapplicable** — estimates a gap statistically from simulation; supplies **no analytic lower bound** on a Dirichlet form |
+| `arxiv-1804.03926v3` *Weighted Poincaré inequalities … Stein kernels in dimension one* | one-dimensional, **absolutely continuous** setting; the Stein kernel `τ` comes from a covariance identity for a real random variable **with a density**. Term counts: density 51, "dimension one" 28, absolutely continuous 9, **discrete 0, lattice 0, Markov chain 0** | **inapplicable** — the object here is a Dirichlet form on a **discrete** lattice, not a 1-d density |
+
+The second was the more plausible (Fulman's method *is* a Stein exchangeable-pair method), and it is still the wrong setting: a weighted Poincaré inequality for a 1-d density says nothing about the joint law of `(g, Δm)` on the up-down chain, which is the whole difficulty. I am not proposing a projection-to-1-d rescue; that would need the Stein kernel of the relevant marginal, which is the same unknown.
+
+**What survives and what does not.** The *measurement* stands: nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap, Poincaré inequality, or `Var_Planch(f)` — zero hits across `docs/`, `computations/`, `.beans/`, `content/`; and these two papers genuinely have **0 citations** each. What falls is my **inference** that an uncited on-topic *title* meant the missing tool was already in the building. **Title match is not applicability**, and I recommended a route on a title.
+
+So the honest status is stronger than before, not weaker: the Poincaré/Dirichlet gap for this weighted form is real **and the corpus does not hold a source that fills it** — so it is an analytic build, not a citation, which is exactly the conclusion the 2026-09-03 entry reached for the Olver/Bessel route by a different road.
+
+**Method disclosure, so this is re-checkable and not over-read:** I read section titles and term frequencies across each paper's `sections/`, not full proofs. That is enough to establish setting (1-d absolutely continuous / Monte-Carlo estimation) and therefore inapplicability to a discrete Dirichlet form; it is **not** a claim that the papers contain nothing else of use.
