@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T18:09:44Z
+updated_at: 2026-09-12T19:07:09Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1291,3 +1291,51 @@ open). PR body corrected.
 
 **Status stays `todo`** per §13a — the element half (Option E) and the phase
 (`qou-pdix`) are open questions. What has closed is item (iii).
+
+
+## 2026-09-12 — 🛑 CORRECTION to my own re-score entry above, plus the anatomy of the 257x and three undone migrations
+
+**The entry above quoted "1279 ppb → 4.316e+8 ppb" as the re-score's effect. That
+comparison is the one the corpus forbids, and I made it.** 1279 ppb is
+**post-ladder** on `z = 1`; 4.316e+8 ppb is a **base**. The apparent 337,429× is
+two factors:
+
+| factor | what it is |
+|---|---|
+| **1312×** | the **missing `c_k` ladder** (`z=1` base 1 678 440 ppb → `z=1` published 1279 ppb) |
+| **257×** | the **functional** (`z=1` base → `z_D` base) |
+
+So **most of the degradation is "no ladder yet"** (`qou-cds1` / `qou-pdix`), not
+convention D. **Base to base, D costs 257×. Never quote the 337,429×.**
+
+**Why the gap is structural, not a botched substitution.** `tr^z(Δ_S)` rewrites
+exactly as `h²/2 − z·h` with `h = q − 1/q` (verified to 1e-60 against the
+2026-08-29 affine form). The `z` term dominates by **5.86×**, so `Q_β` is nearly
+*proportional* to `z`. Inverting for CODATA gives **`z* = 0.99850`** — **0.15 %
+from the inadmissible `z = 1`**, while `z = q` is +11.17 % and `z_D` is −38.64 %
+away. **The published 0.168 % was reachable only at `z ≈ 1`, the coordinate sum.**
+It was a property of an inadmissible functional, not of the framework. Scope-(a):
+this excludes `Δ_S` *paired with an admissible functional*, not convention D.
+
+**The missing-normalisation hypothesis is REFUTED** — `Σ_λ y_λ f^λ = 1.0` exactly
+under D at n = 3, 6, 9, 12 (worst |·−1| < 1e-50). It is the first thing a next
+agent will reach for; do not spend a session on it.
+
+**Three migrations the ruling did not get** — new beans, all directions recorded:
+
+- **`qou-wfvl` (high)** — the **element** is census-derived (`Δ_S`, short NF) while
+  the owner's γγ ruling the same day forbids census selection. The γγ-selected
+  nucleon word gives **−17.496 %**, 2.5× closer *and* derived (PR #7212).
+  **Owner decision; subsumes the accuracy question.**
+- **`qou-46ys` (high)** — the **binding/mass channel is still convention C**, by
+  its own source comments (`gap_a3_overshoot_robustness_check.py:52-67`). And it
+  is the most exposed channel: `z` *is* the `y_λ`, binding is the same Frobenius
+  pairing, and D's two-row truncation keeps **7 of 77 blocks at A=4** (0.043 % of
+  the dimension). Nobody owned this.
+- **`qou-y3bm`** — `E₀` had two live forms (+0.9915 %); **unified 2026-09-12 on
+  owner instruction** in `qbeta_e0.py`, tower-summed canonical. The tower
+  **series** is assumed, not derived — canonical by ruling, open by proof.
+
+Probe: `qbeta_zd_gap_anatomy_probe.py` (9/9). Audit:
+`docs/audits/2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md`.
+**Status stays `todo`** (§13a).
