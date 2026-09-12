@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T07:24:18Z
+updated_at: 2026-09-12T11:30:34Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1179,3 +1179,49 @@ the multiset is the only thing that moves level 1, and it moves level 2 too.
 
 SCOPE: measured on THESE two multisets. It prices the order lever; it does not
 exclude Option E.
+
+
+## 2026-09-12 — BOTH routes to Delta are now priced, and both are negative
+
+PR #7212. The owner's word-selection ruling (2026-09-08, qou-ales) applied to
+the DECAY channel for the first time — #7192 applied it to mass/binding.
+
+PROVED (sorry-free, QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean, lean-direct
+exit 0 first attempt): a functional multiplicative over concatenation and equal
+to 1 on a pair-production vertex is 1 on EVERY γγ-word, hence annihilates every
+γγ DIFFERENCE. Both one-dimensional blocks of H_3 are of that shape. Therefore:
+
+  * LEVEL 1 gives EXACTLY ZERO — the augmentation's support is the (3) block
+    alone, so a γγ-selected Delta predicts Q_beta = 0 identically, for every
+    pair of words, with no computation to do.
+  * LEVEL 2, the ruled functional, is carried ENTIRELY by the (2,1) block, which
+    is what makes the scan one-dimensional and finite.
+
+MEASURED (5/5), V^k with k <= 5 from the 11-crossing budget, 36 pairs:
+
+  level 1, max over all 36 pairs   1.34e-51        (the proof, confirmed)
+  reachable below target           7 values, all <= 0.0985019929
+  reachable above target           8 values, all >= 0.6841593612
+  the GAP                          0.5856573683 = 3.13364x the target
+  Q_beta target                    0.1868936677    -- INSIDE the gap
+  nearest reachable                47.295168 % away
+
+The γγ sector does not merely miss; it CANNOT COME CLOSE. Structural.
+
+THE TWO ROUTES, SIDE BY SIDE:
+
+  re-read the existing recipe (#7188)   0 of 37,459,422,000 configurations
+  the ruled γγ selection (#7212)        target in a 3.13x gap, nearest 47.3 %
+
+Neither reaches Q_beta. The live conclusion is that Delta needs the FLAVOUR
+LETTERS: γγ-words carry no flavour index at all (the corpus's Crossing is
+(gen, pos) and nothing else), so a flavour-blind principle cannot distinguish a
+proton word from a neutron word. That is the open point GammaGammaSelectorH3
+names for itself.
+
+SCOPE-(a) on both: #7188 prices the freedom the SOURCE BLOCKS declare; #7212
+prices the ruled principle APPLIED ALONE. Neither refutes the ruling, and an
+element combining γγ selection WITH flavour letters is outside both.
+
+Bean stays todo. The element question is SHARPER, not closed — two routes
+priced, both negative, and what is missing is now named.
