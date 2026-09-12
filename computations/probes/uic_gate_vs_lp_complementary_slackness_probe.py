@@ -92,6 +92,44 @@ def _as_mpf(v):
     return mp.mpf(repr(v))
 
 
+_LP_DUAL_FIELDS = ("x_star", "y0_star", "y_star",
+                   "primal_obj", "dual_obj", "duality_gap")
+
+
+def _prefer_str_fields(d):
+    """Carry the solver's full-precision decimals under the mandated key names.
+
+    `solve_operator_selection_lp` returns each LP-dual field twice: once as an
+    f64 (for consumers that do arithmetic on it) and once as a `<field>_str`
+    decimal, when the clarabel-MPFR backend supplied one. Writing the f64 copy
+    into a witness is exactly the raw-float64 defect the precision ratchet
+    exists to catch, and stringifying it would be worse — it would dress 53
+    bits up as 50 digits.
+
+    So where a `_str` companion exists, it BECOMES the value of the mandated
+    key (`y0_star`, `y_star`, `primal_obj`, `dual_obj`, `duality_gap`,
+    `x_star`), which is what `lp_dual_witness_validator.py` looks for. The f64
+    duplicate is dropped. `active_set` is a list of indices and stays as-is.
+
+    If a `_str` companion is missing the field is dropped rather than
+    down-converted, and `lp_dual_fields_downgraded` records that — a witness
+    should not silently carry a less precise number under a key a reader will
+    assume is canonical.
+    """
+    out = dict(d)
+    missing = []
+    for f in _LP_DUAL_FIELDS:
+        key = f + "_str"
+        if key in out and out[key] is not None:
+            out[f] = out[key]
+        elif f in out:
+            missing.append(f)
+            out.pop(f)
+    if missing:
+        out["lp_dual_fields_downgraded"] = missing
+    return out
+
+
 def _gate_measurement(Z, N, k_exact=4):
     """Run the producer read-only and recover its gate's behaviour."""
     import hecke_core_legacy as HC
@@ -184,7 +222,7 @@ def _lp_on_the_same_blocks(Z, N, k_exact=4):
                  mp.mpf("0.75"), mp.mpf("0.95")):
         n_target = float(frac * total)
         r = solve_operator_selection_lp(t_np, G_np, n_target)
-        d = r.to_dict()
+        d = _prefer_str_fields(r.to_dict())
         d["n_target_fraction_of_sum_t"] = mp.nstr(frac, 4)
         d["n_active"] = len(d["active_set"])
         d["active_partitions"] = [list(lams[i]) for i in d["active_set"]
@@ -195,6 +233,14 @@ def _lp_on_the_same_blocks(Z, N, k_exact=4):
         "blocks": [list(l) for l in lams],
         "n_blocks": len(lams),
         "gram_is_diagonal": True,
+        "cost_is_not_a_gram_row": all(
+            any(i != j and tvals[j] != 0 for j in range(len(tvals)))
+            for i in range(len(tvals))) and len(tvals) > 1,
+        "cost_is_not_a_gram_row_note":
+            "A diagonal Gram has row lambda = (0,...,t_lambda,...,0), which is "
+            "not the cost vector t unless d = 1. So the NF-basis degeneracy "
+            "(t = G row 0, forcing optimal value 0 and y0* = 0) does NOT carry "
+            "over to the Wedderburn-block instance -- measured y0* != 0 here.",
         "gram_diagonal_reason":
             "Wedderburn block projectors are orthogonal idempotents: "
             "G_lm = tr_M(P_l P_m) = delta_lm tr_M(P_l).",
@@ -265,14 +311,26 @@ def main() -> int:
             str(bigger), "1")
         ok &= bool(bigger)
 
-    # 3. The net-constraint shadow price is zero, as y_0_eq_zero_of_radical says.
+    # 3. The block instance's net-constraint shadow price is NOT zero -- and
+    #    that is correct, not a defect. `y_0_eq_zero_of_radical` and the
+    #    block's own degeneracy argument both need the cost vector to BE a row
+    #    of the Gram (the NF basis contains the identity, so row 0 is `t`).
+    #    A diagonal Wedderburn Gram has row `lambda` equal to
+    #    `(0,...,t_lambda,...,0)`, so that hypothesis fails and y0* is free.
+    #    Asserting it here was MY error; the measurement corrected it.
     for label in ("2H", "4He"):
         if not lp[label]:
             continue
-        zero = 1 if all(abs(s["y0_star"]) < 1e-6 for s in lp[label]["solves"]) else 0
-        w.add_assertion(f"LP net-constraint shadow price y0* is zero [{label}]",
-                        str(zero), "1")
-        ok &= bool(zero)
+        nz = 1 if all(mp.mpf(s["y0_star"]) != 0 for s in lp[label]["solves"]) else 0
+        w.add_assertion(
+            f"block-instance y0* is NON-zero (cost is not a Gram row) [{label}]",
+            str(nz), "1")
+        ok &= bool(nz)
+        notrow = 1 if lp[label]["cost_is_not_a_gram_row"] else 0
+        w.add_assertion(
+            f"diagonal Gram: no row equals the cost vector [{label}]",
+            str(notrow), "1")
+        ok &= bool(notrow)
 
     # 4. Strong duality actually held on the solves we are reading.
     for label in ("2H", "4He"):

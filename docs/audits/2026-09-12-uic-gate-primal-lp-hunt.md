@@ -162,15 +162,33 @@ Each is independently fatal to the comment's inference.
    zero. The producer keeps 4 of 10 at `A = 2` and returns `−0.0896`, so its
    quantity is not a constraint value of any feasible point of this LP.
 
-4. **`y_0* = 0`, and the optimum is not unique.** The block proves its own
-   optimal value is identically zero for every `n`, `q` and trace convention
-   (the NF basis contains the identity, so `G`'s first row *is* the cost vector
-   and the program minimises `t·x` subject to `t·x ≥ 0`); strong duality then
-   forces `y_0* = 0` — `QOU.ParticleInteractions.y_0_eq_zero_of_radical`. The
-   minimiser set is a positive-dimensional face carrying at least six vertices
-   at `n = 3`, in mirror pairs, none mirror-symmetric. So "the OPTIMAL
-   primal-dual pair `(Φ*, y*)`" that the comment invokes is **not well defined**:
-   which `y*` a solver returns is a property of its pivoting rule.
+4. **The optimum is not unique, so "the OPTIMAL primal-dual pair" is not well
+   defined.** On the NF basis the block proves its own optimal value is
+   identically zero for every `n`, `q` and trace convention — the basis contains
+   the identity, so `G`'s first row *is* the cost vector and the program
+   minimises `t·x` subject to `t·x ≥ 0` — and strong duality then forces
+   `y_0* = 0` (`QOU.ParticleInteractions.y_0_eq_zero_of_radical`). The minimiser
+   set is a positive-dimensional face carrying at least six vertices at `n = 3`,
+   in mirror pairs, none mirror-symmetric. So which `y*` a solver returns is a
+   property of its pivoting rule, and the comment's "`(Φ*, y*)`" does not name a
+   unique object.
+
+   > **Scope this to the NF basis — I did not, and the measurement corrected
+   > me.** The draft of this document asserted `y_0* = 0` of the
+   > Wedderburn-block instance too. **It is false there, and measurably so:**
+   > the probe records `y_0* = 0.0347` (²H) and `0.0130` (⁴He), identical across
+   > all five targets. The reason is the hypothesis, not the arithmetic —
+   > `y_0_eq_zero_of_radical` requires `t_j = G_{i₀ j}`, the cost vector to *be*
+   > a row of the Gram. A diagonal Gram has row `λ` equal to
+   > `(0, …, t_λ, …, 0)`, which is the cost vector only when `d = 1`. So the
+   > degeneracy is a property of the identity-containing NF basis and does not
+   > transfer.
+   >
+   > This **strengthens** the separation rather than weakening it: the two
+   > programs differ in their dual behaviour as well as their index set. It is
+   > recorded because the failing assertion was mine, and because "the LP's
+   > `y_0*` is zero" is exactly the kind of claim that gets quoted one basis
+   > over.
 
 ---
 
