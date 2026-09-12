@@ -519,24 +519,57 @@ def _qbeta_ruled_base() -> dict:
     mislabelling bean `qou-99qc` already had to retract once.
     """
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    sys.path.insert(0, str(COMPUTE_DIR / "qbeta"))
+    from qbeta_e0 import canonical as _e0_canonical, order_zero as _e0_order_zero
     q = mpf(Q_50_DIGIT_STR)
     z_D = q ** 3 / (q ** 2 + 1)
+    # tr^z(Delta_S) = h^2/2 - z*h exactly, h = q - 1/q. Written in the audit's
+    # affine form so a reader can match it to the probe line for line.
     tr_M = q ** 2 / 2 - q * z_D - 1 + z_D / q + 1 / (2 * q ** 2)
-    pred = abs(tr_M) * (M_E_MEV / (q * (q - 1)))
+    # E_0 THROUGH THE UNIFIED MODULE (owner instruction 2026-09-12). It had two
+    # live forms differing by 1/(1 - hbar_q^2) = +0.9915 %, with no signal at
+    # either call site; qbeta_e0 is now the single definition and the
+    # tower-summed form is canonical per the 2026-09-03 full-tower ruling.
+    # NOTE the tower SERIES is itself an open derivation (bean qou-y3bm) --
+    # canonical by ruling, not by proof.
+    pred = abs(tr_M) * _e0_canonical(q=q, m_e=M_E_MEV)
+    pred_order_zero = abs(tr_M) * _e0_order_zero(q=q, m_e=M_E_MEV)
 
-    # Calibrate against the committed probe witness's own recorded cell.
+    # CALIBRATE THE TRACE, NOT THE E_0 CHOICE -- and this distinction is not
+    # cosmetic: it was found by the guard firing. The probe witness's recorded
+    # cell (-43.157175 %) was computed with the ORDER-ZERO E_0, so when E_0 was
+    # unified onto the tower-summed form (+0.9915 %) the comparison missed by
+    # ~0.56 points, `calibrated` went False, and the producer correctly refused
+    # to publish -- silently reverting the whole row to the retired z = 1 cell.
+    # The guard did its job; the calibration was asking the wrong question.
+    # So: calibrate the TRACE against the recorded cell at the E_0 that cell was
+    # computed with, then publish at the CANONICAL E_0. One check per claim.
     adm = _functional_admissibility_check()
     recorded = (adm.get("err_pct_by_functional") or {}).get(
         "z=z_D (Markov, convention D)")
     err_pct = (pred - Q_BETA_MEV) / Q_BETA_MEV * 100
+    err_pct_order_zero = (pred_order_zero - Q_BETA_MEV) / Q_BETA_MEV * 100
     calibrated = False
     if recorded is not None:
-        calibrated = abs(err_pct - mpf(str(recorded))) < mpf("1e-4")
+        calibrated = abs(err_pct_order_zero - mpf(str(recorded))) < mpf("1e-4")
     return {
         "Q_beta_MeV": fmt(pred),
         "markov_parameter": "z_D = q^3/(q^2+1)",
+        "E0_form": "tower_summed (canonical, qbeta_e0.canonical)",
+        "E0_MeV": fmt(_e0_canonical(q=q, m_e=M_E_MEV)),
+        "E0_tower_series_is_open": "qou-y3bm -- canonical by the 2026-09-03 "
+                                   "full-tower ruling, series not derived",
+        "Q_beta_MeV_at_order_zero_E0": fmt(pred_order_zero),
+        "E0_choice_moves_row_pct": fmt(
+            (pred / pred_order_zero - 1) * 100, 6),
         "err_pct": fmt(err_pct),
+        "err_pct_at_order_zero_E0": fmt(err_pct_order_zero),
         "recorded_err_pct_in_probe_witness": recorded,
+        "calibration_compares": "err_pct_at_order_zero_E0 vs the recorded cell -- "
+                                "the cell was computed at order-zero E_0, so "
+                                "calibrating the published (tower-E_0) value "
+                                "against it would conflate the trace with the "
+                                "E_0 choice and fail by ~0.56 points",
         "calibrated_against_probe_witness": bool(calibrated),
         "ck_rungs_applied": 0,
         "ladder_on_admissible_base_exists": False,
