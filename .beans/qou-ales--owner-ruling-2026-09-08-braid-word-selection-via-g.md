@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-12T10:26:56Z
+updated_at: 2026-09-12T10:46:49Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -53,3 +53,8 @@ What is on main: Lean QOU/Mass/GammaGammaWordSelection (step 1) and QOU/Mass/Gam
 Cross-support from #7188 (qbeta_option_e_construction_freedom_probe.py, scope-(a)): re-reading the existing nucleon recipe is exhausted — 37,459,422,000 ordering pairs over 6 multisets, 0 within ±780 ppb of Q_beta, nearest 187× outside — so a closing element must be derived from elsewhere, which is what gamma-gamma + SDP selection is. Level 1 is order-blind (monoidHom_order_blind), so the selector's result is a level-2 (z_D) statement.
 STILL OPEN, owner call (asked in chat 2026-09-11, unanswered): which reading of PSD the confinement SDP means on a braid word — literal Matrix.PosSemidef (never met by a non-trivial word, w* = reverse(w)), symmetric-part PSD, or Frobenius positivity chi_lambda >= 0 on y_lambda > 0 blocks (constraint (1) of prop:confinement-sdp; my recommendation). Default while unanswered: words stay template-assigned; the records stand as scope-(a).
 NEXT (step 4, branch claude/ales-step4-vertex-order-2026-09-12): the k >= 2 non-symmetry, formalize-first — (i) at q = 1 the vertex is the 3-cycle s_0 s_1 of S_3, so V^3 = 1 exactly there; the k = 3 survivor at q_0 is its q-deformation (within 0.11 of the identity), which is WHY B_pp is only 4.5 keV; (ii) for real 2x2 V with det V = 1 and |tr V| < 2, V^k symmetric ⇔ V^k = ±1, so the literal reading admits a non-trivial gamma-gamma word in H_3 iff some V^k = ±1, i.e. iff theta/pi is rational with cos theta = tr V / 2.
+
+
+## 2026-09-12 — step 4 on PR #7207 (branch claude/ales-step4-vertex-order-2026-09-12): the k >= 2 non-symmetry closed by algebra; the vertex is the q-deformed 3-cycle
+Lean QOU/Mass/GammaGammaVertexOrder.lean (31 theorems, no sorryAx): from the Hoefsmit relations alone det V = 1, tr V = -1 - h^2; Cayley-Hamilton gives V^k = alpha_k V + beta_k 1; on the reals V^k symmetric <=> alpha_k = 0 <=> V^k = +-1 (so the LITERAL PSD reading admits a non-trivial gamma-gamma word in H_3 iff some vertex power is scalar, i.e. iff theta/pi in Q with 2 cos theta = tr V). V^3 = (2h^2 + h^4) V + (1 + h^2) 1, so V^3 = 1 iff h = 0: the k = 3 survivor (beta_Bor, and the pp bond G^3) is the q-deformation of the 3-cycle s_0 s_1 of S_3, which is WHY |V^3 - 1|_F = 0.1126 at q_0 and why the selected pp bond moves the diproton by only 4.47 keV. The step-3 chi_(2,1) table is the Chebyshev recurrence in closed form (chi_3 = 2 - 3h^4 - h^6); its sign pattern (-,-,+,-,-) and alpha_k != 0 for k = 1..5 are proved for every 0 < h^2 <= 1/10, which covers 1 < q <= 23/20 and hence the proton pin (h^2 = 0.0437). Probe gamma_gamma_vertex_order_probe.py (8/8, 60 dps) matches the step-3 witness column to 2.6e-60. Audit: docs/audits/2026-09-12-gamma-gamma-word-selection-step4.md.
+Still open: whether some V^k is ever scalar (theta/pi = 0.6747590908..., informational: closest approach |alpha_k| = 0.0355 at k = 40, no claim); the PSD-reading owner call (the literal reading now provably selects nothing non-trivial for k <= 5 at any q in the interval; the Frobenius reading selects k = 3 on the whole interval); the non-gamma-gamma letters. Bean stays in-progress.
