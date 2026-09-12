@@ -136,11 +136,11 @@ instance : Algebra R (Hecke2 R h) where
   algebraMap :=
     { toFun := fun r => ⟨r, 0⟩
       map_one' := by ext <;> simp
-      map_mul' := by intro _ _; ext <;> simp <;> ring
+      map_mul' := by intro _ _; ext <;> simp
       map_zero' := by ext <;> simp
       map_add' := by intro _ _; ext <;> simp }
   commutes' _ _ := by ext <;> simp <;> ring
-  smul_def' _ _ := by ext <;> simp <;> ring
+  smul_def' _ _ := by ext <;> simp
 
 /-! ### The generator and the quadratic relation -/
 
