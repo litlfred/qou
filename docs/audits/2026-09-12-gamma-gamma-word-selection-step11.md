@@ -73,13 +73,56 @@ come out the wrong way round and invites hunting for a letter that fixes them. T
 **functional form cannot express the distinction**, whatever the letters are, for as long as
 the response stays one-body.
 
-**Epistemic split, stated precisely.** The *implication* (one-body ⇒ not sign-mixed) is proved
-in Lean. The *premise* (each vertex is one-body) is **measured**, on four vertices against the
-canonical 11-letter words at one pin. Generalising to all vertices and all words would need a
-proof that `tr_M(W·G^k)` always factorises over the strand split — which is not obvious,
-because the bond *crosses* the interface and multiplicativity has no right to survive it, yet
-measurably does. **That is the open question this step generates**, and it is sharper than
-"which placement is canonical".
+### Where the one-body property comes from — and it is the corpus's own mechanism
+
+The species table above cannot distinguish a mechanism from a coincidence, and the mechanism is
+already stated in
+[`mass-theory/canonical-trace-factorises-over-chain.md`](../../content/quantum-observable-universe/mass-theory/canonical-trace-factorises-over-chain.md):
+
+> *"a closed braid whose word is a product of sub-words on strand sets **overlapping in one
+> strand** is a connected sum, and the Markov trace — like every multiplicative link invariant —
+> is multiplicative under connected sum"*
+
+This geometry satisfies that hypothesis. `W₁` lies in `⟨σ₀,σ₁⟩` (strands 1–3); `W₂` *and a
+right-borrowing bond* both lie in `⟨σ₂,σ₃,σ₄⟩` (strands 3–6). The two strand sets overlap in
+**one** strand, so `tr_M(W₁·W₂G³) = tr_M(W₁)·tr_M(W₂G³)`, the left factor cancels in the ratio,
+and the response depends on `W₂` alone — for **any** `W₁`, not merely for a proton or a neutron.
+
+**Tested, and this is much stronger than the species table.**
+`bond_response_junction_factorisation_probe` holds the right nucleon and the bond fixed and
+varies the left word over six words on `⟨σ₀,σ₁⟩` unlike a nucleon — the **empty** word, a single
+letter, an all-positive length-5 word, an inverse-heavy one, an averaged-heavy one, and the
+nucleon reference. **7/7**, every response the same rational function as a symbolic identity,
+`r = 0.0139840866412832240063492549091184388667922041310786488455123` in all six. A
+species-only coincidence does not survive the empty word.
+
+Lean now **derives** the premise rather than asserting it:
+`response_oneBody_of_junctionFactorisation` (the shared left factor cancels, so
+`f a b = (tL a · tRb b)/(tL a · tR⁰ b)` is a function of `b`) composed with the no-sign-mixed
+result gives `no_signMixed_of_junctionFactorisation`.
+
+**That same block already draws the stronger conclusion**, in its own words: *"The canonical
+closure therefore carries **no many-body binding at all** — not by measurement, by theorem."*
+So this step's arity finding is the **two-body isospin corollary** of something the corpus
+knows, not a discovery about γγ vertices.
+
+**Two things it is not.** (i) `QOU.MathlibExt.MarkovTraceMultiplicative` models the **disjoint
+union**, and bean `qou-bsfg` exists because the two were once conflated: here the *free*
+two-nucleon trace is a disjoint union (supports `{0,1}` and `{3,4}` share no strand) while the
+*bonded* one is a connected sum. Different properties, asserted separately by the two probes.
+(ii) That block's per-generator product formula requires **chain form** — one polynomial per
+generator in Coxeter order — and says explicitly that interleaved bonds *"destroy the chain
+form"*. `G³ = σ₂σ₃⁻¹σ₂σ₃⁻¹σ₂σ₃⁻¹` **is** interleaved, so the product formula does not cover it,
+and the junction factorisation survives the interleaving anyway. **That refinement is the part
+that is genuinely new here.**
+
+**Epistemic split, stated precisely.** The *implication* (one-body ⇒ not sign-mixed) and the
+*derivation of the premise from junction factorisation* are both proved in Lean. What is **not**
+proved is junction factorisation itself: that block's own status note records *"Not formalised,
+as ever, is the connected-sum multiplicativity itself."* So the chain rests on a cited standard
+property, which is a better explanation than a measured table at the **same** epistemic tier —
+not a promotion. **Formalising connected-sum multiplicativity is the one route to scope-(b)**,
+and that block has been asking for it since it was written.
 
 ## 3. The sign: which letter carries the inverse, not which side is borrowed
 
@@ -213,10 +256,21 @@ documents and 3 `ocr/` ones; `signed crossing` in one. The intersection of `writ
 `binding energy` / `bound state` is **zero documents**. So the crossing-sign topology is
 citable from the literature; tying it to a *binding* sign is QOU-internal.
 
-**What is genuinely new** is therefore narrow and specific: **the one-body arity of the
-response at all four placements** (§2, with its Lean consequence), and **the answer to the
-discriminator question this arc's own bean posed and left open** — it is which letter carries
-the inverse, not which side is borrowed (§3).
+**And the mechanism for the arity is the corpus's own too** — §2's junction-factorisation
+subsection, from `canonical-trace-factorises-over-chain.md`, which also already concludes that
+*"the canonical closure carries no many-body binding at all — not by measurement, by theorem."*
+The orientation-scoped corpus-grep did not surface that block (it is not about orientation); it
+was found by reading the one block the grep did return. **A second reason a topic-scoped grep is
+not a clean bill.**
+
+**What is genuinely new** is therefore narrower than the first draft of this document claimed:
+
+1. **the two-body isospin corollary** — that the same factorisation forbids the sign-mixed
+   pattern, `no_signMixed_of_oneBody` and its junction-factorisation derivation (§2);
+2. **that the junction factorisation survives an INTERLEAVED bond**, which the chain product
+   formula explicitly does not cover (§2);
+3. **the answer to the discriminator question this arc's own bean posed and left open** — it is
+   which letter carries the inverse, not which side is borrowed (§3).
 
 ## 7. Scope — (a), and deliberately nothing stronger
 
@@ -234,6 +288,10 @@ cannot flip the sign for a **single-crossing** interface, invariant = `interface
 step's contribution there is only that the exclusion is *vacuous on γγ words* — which is step
 8's theorem.
 
+3. And the arity premise itself now rests on **connected-sum multiplicativity, which is not
+   formalised** (§2). Formalising it would make the arity obstruction scope-(b) — that is the
+   single highest-value follow-up this step identifies, and it is a larger job than step 11.
+
 **Nothing here retracts step 10.** Its closed form, `Θ(h⁴)` bracket and `α/100` ceiling are
 correct statements about the word they are about. What narrows is the interpretation of `r` as a
 *pair* quantity.
@@ -249,12 +307,16 @@ committed witnesses is owner-gated.
 
 ## 9. Two reasoning errors of mine, recorded because the shape recurs
 
-1. **"`r_pn ≠ r_np` rules out right-dependence."** It rules out nothing. If `r(a,b) = g(b)`
+1. **"The mechanism is unknown, so the premise is measured."** Wrong twice: the mechanism is
+   stated in a corpus block (§2) and it is *derivable*, and a species table could never have
+   settled it. Caught by following a citation rather than by a grep — the orientation-scoped
+   grep could not have found it.
+2. **"`r_pn ≠ r_np` rules out right-dependence."** It rules out nothing. If `r(a,b) = g(b)`
    then `r_pn = g(n)` and `r_np = g(p)`, which *should* differ. Only the **like-pair**
    comparisons discriminate, and the first version of the probe did not compute them off
    V2/V3/V4 — so it could not have decided the arity it was built to decide. Fixed by extending
    to the full 4 × 4 grid.
-2. **"The orientation choice is underived, i.e. unaddressed."** Right about derivation, wrong
+3. **"The orientation choice is underived, i.e. unaddressed."** Right about derivation, wrong
    about silence — §6 above. The corpus had said "asserted, not derived" in a coordination
    ledger since 2026-05-24, and the corpus-grep is what found it. Had I written the record
    first, it would have re-declared a four-month-old known gap as a new finding.
