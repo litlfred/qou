@@ -54,6 +54,28 @@ string over {p, n, e} giving the atom's strand sequence.
    z = -0.78 and 120 % instead, because the basin is shallow and ragged. What
    is robust is that both miss by more than 100 %; check 6 asserts only that.
 
+4b. AND THE WHOLE ADJACENT CLASS FAILS, not just the z-parametrised one.
+   The test above assumes a functional form -- ln|z*c + d| -- and searches ONE
+   parameter. The general question is whether Phi_1 is ADDITIVE IN
+   ADJACENT-PAIR COUNTS at all: is there ANY assignment of six constants
+   f(pp), f(nn), f(ee), f(pn), f(pe), f(ne) with
+
+       Phi_1 = sum over adjacent pairs of f(type) ?
+
+   Six free parameters against thirteen equations -- and it still fails. Best
+   least-squares residual 2.62 in Phi_1 units, 11.5 % at 11B. The 1H row
+   settles it on its own: "ep" has exactly ONE adjacent pair, so it states
+   f(pe) = -0.007015 directly, against a fitted -0.505 (all 13) or -0.710
+   (excluding 1H).
+
+   🛑 MEASURE THIS ABSOLUTELY, NOT RELATIVELY. Including 1H the worst RELATIVE
+   residual is 49.8, which looks decisive and is an artifact: Phi_1(1H) =
+   -0.007015, so any relative metric explodes there. Excluding 1H the worst
+   relative residual is 11.5 % while the worst ABSOLUTE barely moves
+   (2.637 -> 2.616) -- that stability is what makes the exclusion real. My
+   first pass reported 71 on the relative metric, a verdict one row would have
+   carried by itself.
+
    So the missing ingredient was never the arrangement. This closes the one
    loose end left by `phi1_recorded_column_matches_no_reading_probe.py`, which
    could only test a BLOCKED arrangement it had to assume.
@@ -262,6 +284,60 @@ def readings():
 
 
 
+
+def adjacent_additivity():
+    """Is Phi_1 = sum over adjacent pairs of a per-type constant?
+
+    Six free constants against thirteen equations -- no assumed functional form,
+    so this excludes the whole adjacent class rather than one parametrisation.
+    Reported ABSOLUTELY as well as relatively: Phi_1(1H) = -0.007015, so a
+    relative metric explodes on that row for reasons about its magnitude, not
+    about the model.
+    """
+    from mpmath import mp, mpf
+
+    mp.dps = 40
+    TYPES = ["pp", "nn", "ee", "pn", "pe", "ne"]
+    rows = [(a, o, p1) for a, Z, N, o, p1 in WITNESS if Z + N + Z <= 40]
+
+    def counts(o):
+        c = dict.fromkeys(TYPES, 0)
+        for i in range(len(o) - 1):
+            for t in TYPES:
+                if sorted(t) == sorted(o[i] + o[i + 1]):
+                    c[t] += 1
+                    break
+        return [c[t] for t in TYPES]
+
+    def fit(rs):
+        A = [counts(o) for _, o, _ in rs]
+        Am = mp.matrix([[mpf(v) for v in r] for r in A])
+        ym = mp.matrix([mpf(p) for _, _, p in rs])
+        c = mp.lu_solve(Am.T * Am, Am.T * ym)
+        wa, wael, wr, wrel = mpf(0), None, mpf(0), None
+        for (el, _o, pv), r in zip(rs, A):
+            pred = sum(ci * mpf(ri) for ci, ri in zip(c, r))
+            res = abs(pred - mpf(pv))
+            if res > wa:
+                wa, wael = res, el
+            rr = res / max(abs(mpf(pv)), mpf("0.01"))
+            if rr > wr:
+                wr, wrel = rr, el
+        return c, wa, wael, wr, wrel
+
+    c_a, wa_a, _ea, wr_a, wrel_a = fit(rows)
+    c_b, wa_b, _eb, wr_b, wrel_b = fit(rows[1:])
+    return {
+        "abs_all": mp.nstr(wa_a, 6), "rel_all": mp.nstr(wr_a, 6),
+        "rel_all_at": wrel_a,
+        "abs_no1h": mp.nstr(wa_b, 6), "rel_no1h": mp.nstr(wr_b, 6),
+        "rel_no1h_at": wrel_b,
+        "f_pe_all": mp.nstr(c_a[4], 6), "f_pe_no1h": mp.nstr(c_b[4], 6),
+        "h1_direct": rows[0][2],
+        "fails": bool(wr_a > mpf("0.05")),
+        "fails_without_1h": bool(wr_b > mpf("0.05") and wa_b > mpf("2")),
+    }
+
 def params_vs_codata():
     """All check 7/8 arithmetic, in a FUNCTION.
 
@@ -312,6 +388,23 @@ try:
     check("both miss by more than 100 % on the 13 complete rows",
           all(w > 1 for _, w, _ in R.values()),
           "so the arrangement was never the missing ingredient")
+
+    print()
+    print("CHECK 6b -- nor is Phi_1 ADDITIVE in adjacent-pair counts, with SIX "
+          "free constants")
+    Ad = adjacent_additivity()
+    print(f"      all 13 rows      worst abs {Ad['abs_all']:>10}  "
+          f"worst rel {Ad['rel_all']:>10} (at {Ad['rel_all_at']})")
+    print(f"      12 rows, no 1H   worst abs {Ad['abs_no1h']:>10}  "
+          f"worst rel {Ad['rel_no1h']:>10} (at {Ad['rel_no1h_at']})")
+    check("a fully free 6-parameter additive model still misses", Ad["fails"],
+          "excludes the whole adjacent class, not just the z-parametrised one")
+    check("and the verdict is NOT carried by 1H alone", Ad["fails_without_1h"],
+          "worst ABSOLUTE barely moves when 1H is dropped; the relative metric "
+          "explodes at 1H only because Phi_1 there is -0.007015")
+    check("1H states f(pe) directly -- 'ep' has exactly one adjacent pair",
+          Ad["h1_direct"] == "-0.007015",
+          f"against a fitted {Ad['f_pe_all']} (13 rows) / {Ad['f_pe_no1h']} (12)")
 
     print()
     print("CHECK 7 -- the published alpha and Vol ARE implemented correctly")
