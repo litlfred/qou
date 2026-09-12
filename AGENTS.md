@@ -2400,8 +2400,16 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
 - **L2 is variable per observable.** Q_β target is 7.8 ppb; currently
-  measured at 1279 ppb (164.0× miss) per the dashboard (fresh run
-  2026-05-31) — the Habiro-exact 5.7 ppb result was against the
+  measured at **4.316e+8 ppb (5.535e+7× miss)** per the dashboard
+  (`per-observable-100x-status.witness.json`, 2026-09-12) — the RULED base,
+  `ε` = the Markov trace at `z_D = q³/(q²+1)`, with **zero `c_k` rungs**. This
+  read "1279 ppb (164.0× miss) per the dashboard (fresh run 2026-05-31)" until
+  2026-09-12, when item (iii) of the 2026-09-08 ruling was re-scored on owner
+  authorisation (`qou-99qc`); that figure was convention-C on the retired
+  `z = 1` cell. **Do not quote the new figure as convention D's accuracy** —
+  no ladder exists on an admissible base (`qou-cds1`, blocked on the phase
+  `qou-pdix`), and a second re-score is authorised for when one does
+  (`qou-iagg`). Quote the witness, not this paragraph — the Habiro-exact 5.7 ppb result was against the
   pre-re-pin (muon-anchored) q₀ and has not been refreshed since the
   2026-05-28 proton-anchor re-pin
   (see [`docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`](docs/audits/2026-05-30-q0-repin-stale-witness-audit.md)).
