@@ -575,9 +575,18 @@ The 2026-09-05 entry says, as evidence *for* (b):
 `computations/unified-mass-molecular.py` emits a witness and says so in its own header
 (*"Full atomic braid `H_{A+Z}(q)`: nucleons + electrons"*).
 
-Measured: **23** importers of the `A+Z` family against **378** of `atom_braid_word_3A`,
-and **5 files import BOTH** — including `tools/pyhecke/python/pyhecke/atom.py` (a library
-module) and `scripts/word-provenance-gate.py` (a gate), a live layer-straddle surface.
+Measured on `main` `03d6c9485`: **23** importers of the `A+Z` family against **380** of
+`atom_braid_word_3A`, and **5 files import BOTH** — including
+`tools/pyhecke/python/pyhecke/atom.py` (a library module) and
+`scripts/word-provenance-gate.py` (a gate), a live layer-straddle surface.
+
+**Re-measure; do not quote those integers.** The `3A` figure was **378** at `1c443dddc`
+the same morning and reached 380 when two sibling probes landed
+(`brng_dominant_summand_ursell_probe.py`, `binding_word_3A_reembedding_probe.py`) —
+nothing in this analysis moved. The durable fact is the **shape**: both objects are
+implemented, `3A` by ~16× as many files, and a handful import both. Check 16 of the
+probe recomputes the counts against whatever base it runs on and asserts only that
+shape, so it cannot go stale the way this sentence can.
 So the ledger line reading "(a) has the definition, (b) has all the code" was wrong in
 its second half: both objects are implemented, and they serve different things.
 
