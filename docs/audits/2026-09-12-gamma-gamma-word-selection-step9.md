@@ -68,7 +68,40 @@ removes from the measurement is the *scale*: for any `r` of order `10⁻²` or s
 binding is forced to keV. For contrast the probe records that a *first*-order deviation would
 give `α·h·r = 21.389` keV, `4.79 ×` larger — the `h²` is what buys the keV.
 
-## 4. What is NOT derived
+## 4. Why the `Θ(h²)` is not circular — a correction to this record's own first draft
+
+**This section was missing when step 9 was first committed (`ca33a5971b`), and its absence
+was a real defect in the framing, not a presentational gap.** `r` is *defined* as
+`(μ − 1)/h²`, so the bracket in §2 holds for **any** ratio whatever. Stated alone it says
+nothing about a scale, and the first draft of this record — and of PR #7233's body — asserted
+that step 9 "removes the scale from the measurement" without saying what that rests on.
+
+What it rests on: `r` is bounded **independently of `h`**. Step 4's identity gives the
+deviation as `h²·D` with `D = (2 + h²)·V + 1`, whose scalar factor is at most `21/10` on the
+interval (`deviation_coefficient_le`), so `D`'s size is controlled by `V`'s alone; then
+`r = tr(W·D)/tr(W)` is bounded whenever the free trace is bounded away from zero
+(`response_bounded_of_deviation_bounded`, giving `|r| ≤ K/m` with no `h` in it). Measured at
+the pin, `‖V³ − 1‖_F / h² = 2.577` — an order-one coefficient, so the `h²` is the real scale
+rather than an artifact of the definition.
+
+**And do not check the order on the character.** `bond_character_deviation` gives
+
+    χ_(2,1)(V³) − 2 = −h⁴·(3 + h²),
+
+because `tr D = −3h² − h⁴` is itself `O(h²)`. So the bond's **matrix** deviates at second
+order while its **character** deviates at fourth. The interface ratio is controlled by the
+matrix, since `tr(W·D)` carries no such cancellation — anyone verifying the order on
+characters will get `h⁴` and be wrong about the binding by two powers of `h`. This is the
+sharpest trap in the step and it is worth the line.
+
+**What the correction contaminated, and what it did not.** The Lean theorem
+`binding_magnitude_second_order` was and is correct — `r` is a free positive hypothesis there,
+so nothing proved needed changing; the three lemmas above are additions. The defect was in
+this record's §3 wording and in the PR body, both of which claimed the scale result without
+its condition; both are corrected, and the bean entry for step 9 carries the correction. The
+probe's numbers are unaffected.
+
+## 5. What is NOT derived
 
 * **`r` itself.** It is the trace-weighted response over the eleven `H₆` blocks with the
   eleven-letter nucleon words, carried as a hypothesis in the Lean; no value is asserted
@@ -77,7 +110,7 @@ give `α·h·r = 21.389` keV, `4.79 ×` larger — the `h²` is what buys the ke
 * The dineutron channel, and anything about whether the two-nucleon sector matches nature.
   `SingleCrossingAlwaysBinds`'s own subject stands as recorded (step 8 §5).
 
-## 5. Verification
+## 6. Verification
 
 Shadow compile, exit 0; `#print axioms` on all 8 declarations clean. Probe 5/5, with the
 log-law reproduction of the step-3 `B_pp` at `2.0e−59` MeV as the calibration that the ratio
