@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-11T15:43:35.364054+00:00",
-  "commitSha": "6f2b56cc169f18360b57a197051c0d655064d1a0",
+  "computedAt": "2026-09-12T08:53:16.098757+00:00",
+  "commitSha": "642a7c1848bf9bf65a7d14679ed421f6fd0b76b7",
   "assertions": [
     {
       "name": "hoefsmit_21_matches_closed_form",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3303,
+  "durationMs": 3686,
   "computation": "gamma-gamma-h3-psd-selector-probe",
   "scriptFile": "gamma_gamma_h3_psd_selector_probe.py",
-  "scriptHash": "a8771cbc3998",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9da75c0c4237",
+  "scriptCommitSha": "5bfe8f72810af2c229f01a5772bf1f2a0af95e7d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -107,7 +107,8 @@
     "tolerance": "1.00000000000000000000000000000000000000000000000000000000000e-40",
     "cost": "crossing count (word length), SDPSelected.cost",
     "E_0_MeV": "4.22748335562903055026805602658721115361518419806473100034162",
-    "E_0_formula": "m_e c_q^2 hbar_q/(1 - hbar_q^2), c_q = 1/(q-1), hbar_q = 1 - 1/q"
+    "E_0_formula": "m_e c_q^2 hbar_q/(1 - hbar_q^2), c_q = 1/(q-1), hbar_q = 1 - 1/q",
+    "E_0_register_name": "E_0^full (tower-summed hadronic scale, notation-collisions.md); NOT the Q_beta base E_0^(N=0) = m_e/(q(q-1)) = 4.1860 MeV"
   },
   "data": {
     "h": "0.209060298795639315430846213129674943859757495263063078255215",

@@ -58,6 +58,11 @@ gamma-gamma-produced. The gamma-gamma bond candidates are the vertex powers
         B_pp = E_0 . ln( tr_M(W_free) / tr_M(W_atom) ),
         E_0  = m_e . c_q^2 . hbar_q / (1 - hbar_q^2),   c_q = 1/(q-1), hbar_q = 1 - 1/q,
 
+    where this E_0 is the notation register's TOWER-SUMMED hadronic scale
+    E_0^full = 4.2275 MeV (notation-collisions.md). It is NOT the Q_beta base
+    E_0^(N=0) = m_e/(q(q-1)) = 4.1860 MeV, 0.99 % smaller, which shares the
+    bare name `E_0` in the Q_beta producers; the printout carries both.
+
     on the full six-strand words `W_free = p(0,1) p(3,4)` and
     `W_atom = W_free . bond`, for the template bond and for each gamma-gamma
     bond `m = 1..kmax`. The nucleon block `p(.,.)` is the 11-letter
@@ -67,7 +72,7 @@ gamma-gamma-produced. The gamma-gamma bond candidates are the vertex powers
     `QOU.QBeta.SingleCrossingAlwaysBinds`), negative = unbound.
 
 Nothing here reads AME2020 or a CODATA binding energy; m_e (CAL-1) enters
-only as the MeV scale E_0 > 0, which cannot change a sign.
+only as the MeV scale E_0 = E_0^full > 0, which cannot change a sign.
 
 ## Precision
 
@@ -349,7 +354,7 @@ def main() -> int:
     c_q = 1 / (q - 1)
     E0 = me * c_q ** 2 * hbar_q / (1 - hbar_q ** 2)
     E0_n0 = me / (q * (q - 1))
-    print(f"\n  E_0 (ruled 2026-09-05) = {mp.nstr(E0, 12)} MeV   [E_0^(N=0) = m_e/(q(q-1)) = {mp.nstr(E0_n0, 10)}]")
+    print(f"\n  E_0 = E_0^full (ruled 2026-09-05) = {mp.nstr(E0, 12)} MeV   [NOT the Q_beta base E_0^(N=0) = m_e/(q(q-1)) = {mp.nstr(E0_n0, 10)}]")
 
     w_free = nucleon_block("p", h, 0) + nucleon_block("p", h, 3)
     tr_free = tr_m6(w_free)
@@ -411,6 +416,7 @@ def main() -> int:
     w.add_parameter("cost", "crossing count (word length), SDPSelected.cost")
     w.add_parameter("E_0_MeV", fmt(E0))
     w.add_parameter("E_0_formula", "m_e c_q^2 hbar_q/(1 - hbar_q^2), c_q = 1/(q-1), hbar_q = 1 - 1/q")
+    w.add_parameter("E_0_register_name", "E_0^full (tower-summed hadronic scale, notation-collisions.md); NOT the Q_beta base E_0^(N=0) = m_e/(q(q-1)) = 4.1860 MeV")
     w.add_data("h", fmt(h))
     w.add_data("z_D", fmt(z_d))
     w.add_data("y_lambda_3", {str(lam): fmt(y3[lam]) for lam in parts3})
