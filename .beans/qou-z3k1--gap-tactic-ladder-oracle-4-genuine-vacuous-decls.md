@@ -8,7 +8,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-09-05T09:08:08Z
+updated_at: 2026-09-12T08:10:46Z
 ---
 
 Four provable declarations assert nothing about the objects they name, and two
@@ -257,3 +257,53 @@ re-work item 1. The file is also candid about it in its own docstring
    has an `isDefProof` arm that opts Prop-valued `def`s in (`PROP_CONCLUSION`
    includes `=`), added because "36/99 placeholder-canonical projections are
    `def`-kind". This declaration is precisely what that arm was written for.
+
+
+---
+
+## 2026-09-12 — FIVE more definitional restatements found, and in one of them the restated value is RETIRED. Tracked separately as `qou-cl8m`.
+
+Found during the `qou-bstl` drain, not by looking for this class.
+`content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean`
+carries **five** `ckFromReduction_eq_cN` "theorems", every one `:= rfl` over the
+corresponding arm of its own `match`:
+
+```lean
+noncomputable def ckFromReduction (q : ℝ) : ℕ → ℝ
+  | 3 => jonesHopfLocal
+  | 4 => (hoefsmitB_local q)^2 + 1/2
+  | _ => 0
+
+theorem ckFromReduction_eq_c4 (q : ℝ) :
+    ckFromReduction q 4 = (hoefsmitB_local q)^2 + 1/2 := rfl
+```
+
+Same shape as this bean's two: no `sorry`, no `axiom`, no `True`, type-checks
+and always will, and asserts nothing about the objects it names. AGENTS.md
+§Strict Lean Discipline item 8 puts it exactly — *"if the answer is 'no, it's
+true by definition / by unfolding / by `rfl`,' then it is not a theorem — it is
+notation."*
+
+**Confirmed not already tracked:** `grep -rl ckFromReduction .beans/` returns
+**nothing**, so these are additional to this bean's six, not a rediscovery.
+Recorded here for the class count; the bean is `qou-cl8m`.
+
+### Why that one is worse than a hygiene defect
+
+`b² + 1/2` is the **retired** `c_4`. The corpus superseded it — the narrative
+table gives `c_4 = c_3·b⁴ = −2b⁴` and puts `−(b²+½)` at `k = 5`, where this
+`def` returns `0`. So `ckFromReduction_eq_c4` gives a **retired coefficient at a
+retired position** the *appearance of a proved result*: a reader's natural check
+("is it proved?") returns yes.
+
+That sharpens this bean's own framing. A definitional restatement is normally
+harmless-but-misleading; here the restatement is load-bearing in the wrong
+direction, because what it launders is a value the corpus has retired rather
+than merely a value the `def` already fixes. Worth carrying into whatever
+disposition this bean reaches: **rank restatements by whether the value they
+restate is current**, not only by whether the proof is vacuous.
+
+The defect has been sitting in a QA sidecar
+(`stochastic-mechanics/ck-extraction-from-algebraic-rules-table2-data.qa.json:1050`,
+marked *"STRUCTURAL FINDING (do not fix inline)"*) with two proposed routes and
+no tracker, which is why nothing moved on it.
