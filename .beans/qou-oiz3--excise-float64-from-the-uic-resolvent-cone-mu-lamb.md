@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-09-12T21:52:06Z
+updated_at: 2026-09-12T22:13:34Z
 ---
 
 ## Measured surface and the residual (2026-09-12)
@@ -58,3 +58,22 @@ exemption, so it is put to the owner rather than run.
 9.9102461e-52 from `q_at(90)` — ~50 digits, BELOW `OUTPUT_DPS = 60`.
 
 PR #7245; audit `docs/audits/2026-09-12-uic-float64-excision.md`.
+
+## The A-series witness staleness is NOT this change's (measured, both arms)
+
+`uic-binding-a-series-kernel-live.witness.json` carries
+`B_pred_MeV = -7.271102124876717` for 2H. Post-fix this container gives
+`-7.271102124876745` (1233.9 s). The obvious inference — that the excision
+moved it — is **wrong**, and the baseline run says so: `origin/main`'s
+`binding_energy(1, 1)` also gives **`-7.271102124876745`** (1278.5 s). So the
+committed value is 3.9e-15 from BOTH arms and the staleness is upstream drift on
+`main`, not this PR. Left untouched; re-running the whole probe needs five atoms
+at A = 3..5 against a 20-minute-per-atom floor at A = 2.
+
+**And the two arms agreeing is not evidence the numbers agree.**
+`binding_energy` returns `float(B)`, so both were compared after a cast to 53
+bits; the UIC leg's own move at A = 2 is 1.66e-17 MeV, about a fiftieth of a
+float64 ulp at 7.27. The public `float()` return ABSORBS this entire excision at
+this atom. That boundary is deliberate and documented (bean `qou-sv7h`, #6427:
+an mpf raises TypeError at `hadron_knot_table`'s `round(B, 4)`), so it is
+recorded here, not changed.

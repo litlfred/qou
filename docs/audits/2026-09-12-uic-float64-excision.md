@@ -226,24 +226,43 @@ sweep.
 | `probes/uic_per_block_log_valley_scan_probe.witness.json` | payload **IDENTICAL** (only `durationMs`, 12 → 15 ms) — **reverted, not committed.** Committing a witness whose only diff is a timing field is noise. |
 | `probes/uic-float64-excision.witness.json` | new, committed with its probe. |
 | `probes/uic-binding-a-series-kernel-live.witness.json` | **NOT refreshed — too slow here, deliberately left.** See below. |
+| `probes/binding-word-3A-reembedding.witness.json` | re-run 18/18, payload moved in **4 fields and all four are wall-clock timings** (`A2_path_sum_cost_s`, plus two seconds-figures embedded in an assertion's prose). **Reverted, not committed** — a timing in prose is reachable by no field-name mask, which is the documented false-mover class. |
+| `probes/where-the-a-dependence-is-lost.witness.json` | re-run 6/6, unchanged. |
+| `audits/lp_accumulator_kernel_gate`, `audits/ysn_braid_relation_audit`, `audits/ysn_trace_blindness_probe` | re-run, exit 0, no witness change. |
 
 **The one that could not be re-run, and exactly why.**
 `uic_binding_a_series_kernel_live_probe.py` calls `binding_energy(Z, N)` — the
 production entry point, not the accumulator — for five atoms at A = 3…5.
 Measured in this container, **`binding_energy(1, 1)` alone takes 1233.9 s**
 (20.6 min) for the *smallest* bound atom, and A = 3…5 are strictly larger. The
-probe did not produce its first row within the session's window. Its witness is
+probe was launched with a 2400 s budget and **exited 124** without emitting its
+first row. Its witness is
 left **untouched**: hand-patching the five `B_pred_MeV` strings would be exactly
 the move AGENTS.md forbids, and a partial re-run is worse than none. Tracked on
 `qou-oiz3`.
 
-That witness is stale in a quantifiable way: post-fix,
-`binding_energy(1, 1) = -7.271102124876745` against the committed
-`-7.271102124876717`, a relative move of **3.9e-15**. **That figure is NOT
-attributed to this change** — no baseline `binding_energy` run completed in this
-container either, and the committed value was produced on a different `main`
-with a different import cone. What can be said is that the witness is stale and
-by roughly how much; what produced the staleness is undetermined.
+That witness is stale in a quantifiable way, and **the staleness is measured
+NOT to be this change's.** Both arms were run — the baseline one took a second
+20-minute slot for the one atom — and they return the same thing:
+
+| | `binding_energy(1, 1)` | wall |
+|---|---|---|
+| `origin/main` | `-7.271102124876745` | 1278.5 s |
+| this branch | `-7.271102124876745` | 1233.9 s |
+| **committed witness** | `-7.271102124876717` | — |
+
+So the committed value is **3.9e-15** relative from *both* arms, and this PR did
+not move it. The cause is upstream drift on `main` between the witness's run and
+today — an import-cone question, not this one. Tracked on `qou-oiz3`.
+
+**The two arms agreeing is NOT evidence that the underlying numbers agree.**
+`binding_energy` returns `float(B)`, so both arms were compared *after* a cast
+to 53 bits, and the UIC leg's own move at A = 2 is 1.66e-17 MeV — roughly a
+fiftieth of a float64 ulp at 7.27. The honest reading is that **the public
+`float()` return absorbs this entire excision at this atom**, which is a fact
+about the boundary and not about the arithmetic behind it. It is also the
+sharpest available illustration of why that boundary is the last float64 site
+on the path (below).
 
 **An independent defect in that same witness, not caused here and not fixed
 here.** `binding_energy` returns `float(B)` at the public boundary — a
