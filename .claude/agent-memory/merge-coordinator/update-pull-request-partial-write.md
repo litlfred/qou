@@ -2,6 +2,16 @@
 
 Referenced from `MEMORY.md`. Measured on `litlfred/qou#6264`, 2026-08-31.
 
+> **🛑 READ THE LAST SECTION FIRST — the diagnosis in §1-§3 below is WRONG and
+> both of its prescriptions are retracted (settled 2026-09-12, `qou#7230`).**
+> The draft toggle is not rate-limited and there is no wait to sit out: GraphQL
+> is **403-blocked outright** from Claude Code sessions, and the 403 body names a
+> REST replacement that works first try —
+> **`POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review`**. Do not wait,
+> and do not close-and-reopen (owner ruling 2026-09-05, AGENTS.md §8a). What
+> survives from §1 is only this: send the flip **alone** and **re-read** before
+> reporting failure. Full measurement: §`qou#7230` at the end of this file.
+
 ## TRAP — `update_pull_request` is a PARTIAL write, and its rate-limit error lies
 
 Measured on `qou#6264`, 2026-08-31. A single `update_pull_request` carrying
@@ -153,3 +163,59 @@ in the same windows, while `get_status` and `get_check_runs` (REST) answered.
 An empty review list obtained during the outage is therefore **not** evidence
 that no review exists — re-check after it clears before concluding anything
 about Copilot.
+
+---
+
+## `qou#7230` 2026-09-12 — SETTLED: it was never a rate limit, and one REST call fixes it
+
+Everything above diagnosed a **rate-limited GraphQL budget** and prescribed either
+waiting (~2-4 h, measured three times) or the all-REST close-and-recreate route.
+**Both prescriptions are now retracted, and for the same reason: the premise was
+wrong.** GraphQL is not rationed from here — it is **blocked outright**.
+
+### What is actually happening
+
+Three calls, one PR, one minute apart:
+
+| call | result |
+|---|---|
+| `PATCH /pulls/7230` `{"draft": false}` | **200** — and the re-read says `draft: true`. REST accepts the field and **silently discards it**, no error, no warning. |
+| `POST /graphql` `markPullRequestReadyForReview` (with the node_id already in hand, so **no** node lookup) | **403** — *"GitHub GraphQL is not available from Claude Code sessions; use the REST API … For review threads, auto-merge, and draft/ready-for-review use the CCR routes on api.github.com"* |
+| `POST /pulls/7230/ccr/ready_for_review` | **200 `{"draft": false}`** — first try, no retry, no wait. |
+
+So the *"API rate limit already exceeded for user ID 662242"* surfaced by the MCP
+tool is a **misleading skin over a hard block**. That explains the one thing the
+three earlier measurements could not: why the "limit" lasted 2 h on one PR and 4 h
+on another with no consistent window. It was not a limiter draining — it was a
+block, and the PRs that "cleared" cleared for some other reason.
+
+Note the node-ID detail, because it kills the leading hypothesis: AGENTS.md §8a
+attributes the failure to the **node-ID lookup** being rate-limited. The 403 above
+was obtained *supplying* the node_id from a prior REST read, i.e. with the lookup
+skipped entirely. The lookup is not the problem; the transport is.
+
+### The routes, from the 403 body itself
+
+    GET  /repos/{owner}/{repo}/pulls/{n}/ccr/review_threads
+    POST /repos/{owner}/{repo}/pulls/{n}/ccr/comments/{comment_id}/resolve   (or /unresolve)
+    PUT  /repos/{owner}/{repo}/pulls/{n}/ccr/auto_merge                      (or DELETE)
+    POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
+    POST /repos/{owner}/{repo}/pulls/{n}/ccr/convert_to_draft
+
+`ccr/review_threads` is worth as much as the draft flip: the *"review threads are
+GraphQL, therefore unreadable during an outage"* problem this file spends a whole
+section routing around has a direct REST answer too.
+
+**The generalisable habit: read the body of a 403 before believing its status
+line.** This one contains its own fix, in full, and had been discarded unread
+across at least five sessions — the cost was three multi-hour waits, one
+close-and-recreate that destroyed a PR's review history, and a memory entry that
+told the next agent to do it again.
+
+### Still true from the sections above
+
+- Send the flip **alone** and **re-READ** before reporting failure — the partial
+  write on `qou#6264` (title and body landed, `draft` did not) is real and the
+  CCR route does not change it.
+- **Never close-and-reopen** — now on an owner ruling (2026-09-05, AGENTS.md §8a)
+  as well as on the review-history argument.
