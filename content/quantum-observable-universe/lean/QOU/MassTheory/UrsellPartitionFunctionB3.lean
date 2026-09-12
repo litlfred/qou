@@ -187,7 +187,7 @@ theorem b4corpus_eq (f12 f13 f14 f23 f24 f34 : R) :
     b4corpus f12 f13 f14 f23 f24 f34
       = -phi4 (mayer f12) (mayer f13) (mayer f14) (mayer f23) (mayer f24) (mayer f34)
         - (mayer f12 * mayer f34 + mayer f13 * mayer f24 + mayer f14 * mayer f23) := by
-  unfold b4corpus b3corpus W Z4 Z3 phi4 phi3 mayer; ring
+  unfold b4corpus b3corpus W phi4 Z4 Z3 phi3 mayer; ring
 
 /-- The matching defect is not zero: at uniform `f = 1/2` it is `3/4`. -/
 theorem matching_defect :
@@ -260,6 +260,7 @@ theorem b3corpus_neg {f12 f13 f23 : K} (h12 : 0 < f12 ∧ f12 < 1) (h13 : 0 < f1
   have := phi3_pos h12 h13 h23
   linarith
 
+omit [LinearOrder K] [IsStrictOrderedRing K] in
 /-- On uniform bonds this file's `b₃` is `MayerThreeBodySign.b3` with `P₃ = f³` — the same object,
 so `lt_of_b3_pos` and `b3corpus_neg` are about one quantity. -/
 theorem b3corpus_uniform_eq_mayerSign (f : K) :
