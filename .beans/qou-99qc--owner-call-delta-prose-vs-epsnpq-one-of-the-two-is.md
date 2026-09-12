@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T07:24:18Z
+updated_at: 2026-09-12T12:17:21Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1179,3 +1179,62 @@ the multiset is the only thing that moves level 1, and it moves level 2 too.
 
 SCOPE: measured on THESE two multisets. It prices the order lever; it does not
 exclude Option E.
+
+
+## 2026-09-12 — item (iii) is PRICED. It degrades three rows by ~5–7 orders, and that is the ruling working as designed.
+
+Consequence (iii) of the 2026-09-08 ruling — re-score the L2 dashboard rows
+`Q_β` / `m_n` / `Δ_pn` on the ruled base — has been declined twice as
+ask-before-change, which is correct: it moves the L2 headline, so it is neither
+a precision increase nor corpus-derived. But it was declined **without the
+numbers**, i.e. the owner was being asked to authorise a change whose size
+nobody had measured. Measured now, changing nothing:
+[`qbeta_zd_rescore_price_probe.py`](computations/qbeta/qbeta_zd_rescore_price_probe.py)
+(6/6), witness `qbeta-zd-rescore-price.witness.json`.
+
+**Calibration first, because the numbers are worthless without it.** The probe
+reproduces the dashboard's CURRENT `m_n` and `Δ_pn` rows from its CURRENT
+`Q_β` row through the producer's own relation
+`m_n = m_p(substrate) + Q_β + m_e`: predicted 0.895408 / 650.486 ppb against
+the committed 0.9029 / 658.0 ppb — **ratios 0.9917 / 0.9886**. So the dependent
+rows ARE a plain function of the scored `Q_β`, and the re-score below is the
+row, not a sketch.
+
+| cell | `Q_β` ppb | `m_n` ppb | `Δ_pn` ppb |
+|---|---|---|---|
+| `z = 1` (published, **inadmissible**) | 1 678 440.4 | 1 397.3915 | 1 015 161.0 |
+| **`z_D` (RULED)** | **4.3157176e+8** | **359 350.35** | **2.6105673e+8** |
+| `z = q` (augmentation) | 1.2470029e+8 | 103 832.09 | 75 430 750.0 |
+
+**The ruled cell is the worse admissible one — 3.4609× farther from CODATA than
+the augmentation.** That is not an argument against the ruling; it is the
+anti-fit directive visible in the numbers. Ranking these cells by residual is
+exactly the selection-against-the-target the directive forbids, and the ruling
+turned on what `ε` *means* under D7, not on which column is smaller.
+
+**🛑 THE LOAD-BEARING CAVEAT: these are BASE figures, zero `c_k` rungs.** No
+ladder exists on an admissible base (`qou-cds1`, blocked on the phase
+`qou-pdix`). On the `z = 1` base the five rungs bought 1 677 569 → 37.7 ppb —
+about 4.5 orders — so a `z_D` ladder could move these a long way. **Do not
+quote the `z_D` column as "convention D's accuracy"**; that is the same
+mislabelling this bean already had to retract once.
+
+**Producer staleness found, reported not fixed.**
+[`per_observable_100x_status.py`](computations/per_observable_100x_status.py)
+still says *"Which functional to adopt is an open owner decision (bean
+qou-99qc)"* — ruled four days ago — and its emitted
+`best_admissible_err_pct` names **`z=q (augmentation)`** as the best admissible
+cell. The second is the sharper one: a reader of that witness field takes the
+augmentation for the adopted functional, and the ruling chose `z_D`. Both are
+one edit away, and both change an emitted witness field, so they go to the
+owner with (iii) rather than under exemption 2.
+
+**Correction to my own earlier count in this bean's arc:** I reported this probe
+as "8/8 checks". The total was a hardcoded `5 + 3`; there are **six**
+`check()` calls. It is now derived from the recorded list, and the six verdicts
+are carried in the witness as assertions (it previously emitted **0
+assertions** for a probe whose entire content is checks).
+
+**Status stays `todo`** per §13a — the element half (Option E / the phase
+`qou-pdix`) is an open question, and (iii) is now waiting on the owner rather
+than on a measurement.

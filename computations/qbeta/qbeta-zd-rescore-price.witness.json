@@ -1,0 +1,125 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T12:00:54.174214+00:00",
+  "commitSha": "e7a4b91cb7525971c85e6823a6e0b93215a820db",
+  "assertions": [
+    {
+      "name": "dashboard carries an admissibility annotation",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "m_n / Delta_pn reproduce from Q_beta within 10x -- ratios 0.9917 / 0.9886",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "the RULED cell is priced",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "z_D is farther from CODATA than the augmentation -- z_D 4.31572e+8 ppb  >  aug 1.247e+8 ppb  (ratio 3.4609x)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "producer still calls the functional an open owner decision -- ruled 2026-09-08 -- this is a staleness, reported not fixed here",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "producer names the augmentation as the best admissible cell -- the ruling chose z_D, the worse-fitting cell",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "qbeta-zd-rescore-price",
+  "scriptFile": "qbeta_zd_rescore_price_probe.py",
+  "scriptHash": "05dac519259d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_zd_rescore_price_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_zd_rescore_price_probe.py"
+  },
+  "description": "Prices consequence (iii) of the 2026-09-08 owner ruling (eps := Markov trace at z_D): what the L2 dashboard rows Q_beta / m_n / Delta_pn become on the ruled base. Measures only -- no row is moved. The z_D figures are the BASE: no c_k ladder exists on an admissible base (qou-cds1, blocked on qou-pdix), and on the z=1 base five rungs bought ~4.5 orders, so these are NOT convention D's accuracy.",
+  "data": {
+    "cells": {
+      "z=1 (published, INADMISSIBLE)": {
+        "Q_beta_MeV": "0.7836465",
+        "Q_beta_err_ppb": "1678440.4",
+        "m_n_err_ppb": "1397.3915",
+        "Delta_pn_err_ppb": "1015161.0",
+        "Q_beta_miss": "215267.5",
+        "m_n_miss": "273515.6",
+        "Delta_pn_miss": "234123.8"
+      },
+      "z_D (RULED 2026-09-08)": {
+        "Q_beta_MeV": "0.4447004",
+        "Q_beta_err_ppb": "4.3157176e+8",
+        "m_n_err_ppb": "359350.35",
+        "Delta_pn_err_ppb": "2.6105673e+8",
+        "Q_beta_miss": "5.5351e+7",
+        "m_n_miss": "7.033673e+7",
+        "Delta_pn_miss": "6.020681e+7"
+      },
+      "z=q (augmentation)": {
+        "Q_beta_MeV": "0.8798906",
+        "Q_beta_err_ppb": "1.2470029e+8",
+        "m_n_err_ppb": "103832.09",
+        "Delta_pn_err_ppb": "75430750.0",
+        "Q_beta_miss": "1.599337e+7",
+        "m_n_miss": "2.032337e+7",
+        "Delta_pn_miss": "1.739639e+7"
+      }
+    },
+    "dashboard_current": {
+      "Q_beta": {
+        "err_ppb": "1279.",
+        "miss_factor": "164.0"
+      },
+      "m_n": {
+        "err_ppb": "0.9029",
+        "miss_factor": "176.7"
+      },
+      "Delta_pn": {
+        "err_ppb": "658.0",
+        "miss_factor": "151.7"
+      }
+    },
+    "calibration_ratios": {
+      "m_n": "0.991702",
+      "Delta_pn": "0.98858"
+    },
+    "ruled_cell_is_worse_admissible": true,
+    "producer_prose_stale_against_ruling": true,
+    "ladder_on_zD_base_exists": false
+  }
+}
