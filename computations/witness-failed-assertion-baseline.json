@@ -1,5 +1,5 @@
 {
-  "count": 111,
+  "count": 110,
   "note": "Witnesses committed with a recorded assertion failure. This baseline DRAINS, never grows: fix the producer, the tolerance, or the schema misuse (see the module docstring's three categories) and re-run. Adding a file here to silence it defeats the mechanism.",
   "witnesses": {
     "computations/all-nuclides-wedderburn-spectral-v2.witness.json": 1,
@@ -96,7 +96,6 @@
     "computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json": 1,
     "computations/qbeta/qbeta-composite-crossanchor-2factor-sweep.witness.json": 2,
     "computations/qbeta/qbeta-cosh-avatar-crossanchor-multicoeff-probe.witness.json": 1,
-    "computations/qbeta/qbeta-counit-substrate-consistency.witness.json": 1,
     "computations/qbeta/qbeta-habiro-wenzl-tower-zeta-n.witness.json": 1,
     "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json": 1,
     "computations/qbeta/qbeta-phib-fibre-heat-boundary.witness.json": 1,
