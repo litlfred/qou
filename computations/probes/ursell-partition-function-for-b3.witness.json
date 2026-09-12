@@ -1,0 +1,279 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-09-12T05:29:26.236049+00:00",
+  "description": "The partition function whose Mayer expansion has the corpus b3 as its third Ursell coefficient is the hard-core lattice gas on the nucleon sites with pair weight mu_e = tr(interface letter), grand-canonical over the sub-clusters of a fixed nucleus: Xi_S(z) = SUM_T z^T PROD_{e in T} mu_e, ln Xi_S = SUM_T z^T phi^T_T. The corpus cumulants are Boolean-lattice inversions of 1 - Z and equal -phi^T_n exactly while n <= 3 (no disconnected isolated-vertex-free graph below 4 vertices); at n = 4 they differ by the 3 perfect matchings. The Mayer coefficients of B = -alpha ln(Xi/Xi_free) are -phi^T_T at every order, so the corpus's negative b3 IS the classical sign; the 2026-08-30 'restore (-1)^(n-1)' prescription is the same expansion at negative activity and names no ensemble. Fixed-A (canonical) binding -alpha ln Z_S is exactly pairwise. No production letter has trace > 1, so no attractive Mayer channel is present (scope a).",
+  "convention": "D (z = q^3/(q^2+1)), canonical per owner ruling R1 2026-08-15",
+  "precision": {
+    "exact_layer": "fractions.Fraction / sympy, no tolerance",
+    "framework_layer": "gmpy2 MPFR 200 bits, tolerance 1e-40"
+  },
+  "exact": [
+    {
+      "n": 2,
+      "trials": 100,
+      "boolean_inversion_eq_no_isolated_vertex_sum": 100,
+      "connected_sum_eq_cluster_property": 100,
+      "corpus_b_eq_minus_boolean_inversion": 100,
+      "boolean_minus_ursell_eq_disconnected_remainder": 100,
+      "disconnected_isolated_free_graphs": 0,
+      "corpus_b_eq_minus_ursell": true
+    },
+    {
+      "n": 3,
+      "trials": 200,
+      "boolean_inversion_eq_no_isolated_vertex_sum": 200,
+      "connected_sum_eq_cluster_property": 200,
+      "corpus_b_eq_minus_boolean_inversion": 200,
+      "boolean_minus_ursell_eq_disconnected_remainder": 200,
+      "disconnected_isolated_free_graphs": 0,
+      "corpus_b_eq_minus_ursell": true
+    },
+    {
+      "n": 4,
+      "trials": 100,
+      "boolean_inversion_eq_no_isolated_vertex_sum": 100,
+      "connected_sum_eq_cluster_property": 100,
+      "corpus_b_eq_minus_boolean_inversion": 100,
+      "boolean_minus_ursell_eq_disconnected_remainder": 100,
+      "disconnected_isolated_free_graphs": 3,
+      "corpus_b_eq_minus_ursell": false
+    },
+    {
+      "n": 5,
+      "trials": 20,
+      "boolean_inversion_eq_no_isolated_vertex_sum": 20,
+      "connected_sum_eq_cluster_property": 20,
+      "corpus_b_eq_minus_boolean_inversion": 20,
+      "boolean_minus_ursell_eq_disconnected_remainder": 20,
+      "disconnected_isolated_free_graphs": 40,
+      "corpus_b_eq_minus_ursell": false
+    }
+  ],
+  "symbolic": {
+    "n3_exponential_formula_remainder_mod_z_sq": "0",
+    "n3_d3_logXi_at_0_minus_phi3": "0",
+    "n3_d2_logXi_at_0_minus_g12": "0",
+    "n3_restored_minus_mayerBinding_at_negative_activity": "0",
+    "n4_exponential_formula_remainder_mod_z_sq": "0",
+    "n4_cluster_property_phi4_minus_connected_sum": "0"
+  },
+  "framework": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "z_D": "0.6126880371464652515958299",
+    "alpha_MeV": "4.18598136329448",
+    "interface_letter_traces": {
+      "pp": "0.6126880371464652515958299",
+      "pn": "0.5082297893767389625779958",
+      "nn": "0.4036277383508259361649837"
+    },
+    "all_letters_below_one": true,
+    "trace_ratio_is_bond_product": [
+      {
+        "atom": "pn",
+        "n_strands": 6,
+        "tr_free": "0.2990150171846400767021604",
+        "tr_atom": "0.1519683392042316075926657",
+        "Z_S": "0.5082297893767389625779958",
+        "prod_mu": "0.5082297893767389625779958",
+        "abs_dev": "0.0000000000000000000000000000000000000000000000000000000000024892"
+      },
+      {
+        "atom": "pnn",
+        "n_strands": 9,
+        "tr_free": "0.1420720567973047974704986",
+        "tr_atom": "0.02914404236097206535725422",
+        "Z_S": "0.2051356404486497689268500",
+        "prod_mu": "0.2051356404486497689268500",
+        "abs_dev": "0.0000000000000000000000000000000000000000000000000000000000015558"
+      },
+      {
+        "atom": "ppn",
+        "n_strands": 9,
+        "tr_free": "0.1881786429994887792634790",
+        "tr_atom": "0.05859625365443638021895672",
+        "Z_S": "0.3113863120725956524128884",
+        "prod_mu": "0.3113863120725956524128884",
+        "abs_dev": "0.00000000000000000000000000000000000000000000000000000000000062230"
+      },
+      {
+        "atom": "ppnn",
+        "n_strands": 12,
+        "tr_free": "0.08940998050193060038204757",
+        "tr_atom": "0.01123741765976742156419955",
+        "Z_S": "0.1256841528952662694138785",
+        "prod_mu": "0.1256841528952662694138785",
+        "abs_dev": "0.00000000000000000000000000000000000000000000000000000000000015558"
+      }
+    ],
+    "ok_multiplicative": true,
+    "A3_chains": [
+      {
+        "atom": "3H",
+        "bonds": [
+          "pn",
+          "nn"
+        ],
+        "Z_01": "0.5082297893767389625779958",
+        "Z_12": "0.4036277383508259361649837",
+        "Z_012": "0.2051356404486497689268500",
+        "Z_012_minus_Z01_Z12": "-0.00000000000000000000000000000000000000000000000000000000000015558",
+        "phi_T_3_chain": "0.2932781127210848701838706",
+        "equals_g01_g12": true,
+        "b3_corpus_W_units": "-0.2932781127210848701838706",
+        "log_binding_3body_cumulant": "-0.0000000000000000000000000000000000000000000000000000000000012446",
+        "mayer_third_coeff_alpha_scaled_MeV": "-1.22765671411",
+        "mayer_third_coeff_deuteron_pinned_MeV": "-1.32666957588",
+        "negative_activity_coeff_alpha_scaled_MeV": "1.22765671411",
+        "negative_activity_coeff_deuteron_pinned_MeV": "1.32666957588",
+        "ame_b3_MeV": "1.80809760000",
+        "abs_ratio_alpha_scaled_to_ame": "0.67897702",
+        "abs_ratio_deuteron_pinned_to_ame": "0.73373781"
+      },
+      {
+        "atom": "3He",
+        "bonds": [
+          "pp",
+          "pn"
+        ],
+        "Z_01": "0.6126880371464652515958299",
+        "Z_12": "0.5082297893767389625779958",
+        "Z_012": "0.3113863120725956524128884",
+        "Z_012_minus_Z01_Z12": "-0.0000000000000000000000000000000000000000000000000000000000012446",
+        "phi_T_3_chain": "0.1904684855493914382390627",
+        "equals_g01_g12": true,
+        "b3_corpus_W_units": "-0.1904684855493914382390627",
+        "log_binding_3body_cumulant": "-0.0000000000000000000000000000000000000000000000000000000000049784",
+        "mayer_third_coeff_alpha_scaled_MeV": "-0.797297530805",
+        "mayer_third_coeff_deuteron_pinned_MeV": "-0.861601101420",
+        "negative_activity_coeff_alpha_scaled_MeV": "0.797297530805",
+        "negative_activity_coeff_deuteron_pinned_MeV": "0.861601101420",
+        "ame_b3_MeV": "1.04434272000",
+        "abs_ratio_alpha_scaled_to_ame": "0.76344433",
+        "abs_ratio_deuteron_pinned_to_ame": "0.82501758"
+      }
+    ],
+    "ok_log_pairwise": true,
+    "ok_sign": true,
+    "uniform_triangle_2026_08_30": {
+      "chi_typing_f_pn_eq_z_D": {
+        "f_pn": "0.6126880371464652515958299",
+        "phi_T_3_triangle": "0.3919307865947056986716587",
+        "b3_corpus_triangle": "-0.3919307865947056986716587",
+        "deuteron_pinned_MeV_mayer_sign": "-2.25109489047",
+        "deuteron_pinned_MeV_negative_activity": "2.25109489047"
+      },
+      "probe2_typing_f_pn": {
+        "f_pn": "0.5082297893767389625779958",
+        "phi_T_3_triangle": "0.6065851254510852848824700",
+        "b3_corpus_triangle": "-0.6065851254510852848824700",
+        "deuteron_pinned_MeV_mayer_sign": "-2.74394165883",
+        "deuteron_pinned_MeV_negative_activity": "2.74394165883"
+      },
+      "reading": "the 2026-08-30 '2.2511' (chi) and '2.7439' (probe-2) MeV are the negative-activity coefficients; the Mayer sign is the negative of each"
+    },
+    "per_block_2H": [
+      {
+        "partition": [
+          6
+        ],
+        "chi_atom": "1.559870199564151592706167",
+        "chi_free": "1.551306468200477573340004",
+        "ratio": "1.005520334981654518573835",
+        "abs_dev_from_mu_pn": "0.497291"
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "chi_atom": "-0.6822850127605704464123995",
+        "chi_free": "0.7222231954766334325134789",
+        "ratio": "-0.9447010522976824929538015",
+        "abs_dev_from_mu_pn": "1.45293"
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "chi_atom": "0.3290803475396132377570415",
+        "chi_free": "0.8265916670255464812900218",
+        "ratio": "0.3981171849019411231757650",
+        "abs_dev_from_mu_pn": "0.110113"
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "chi_atom": "0.7139451517513857464225213",
+        "chi_free": "1.655674939749390622116547",
+        "ratio": "0.4312109428070773678171031",
+        "abs_dev_from_mu_pn": "0.0770188"
+      }
+    ],
+    "per_block_worst_dev": "1.45293",
+    "per_block_not_multiplicative": true
+  },
+  "assertions": [
+    {
+      "name": "Boolean inversion of a bond-multiplicative Z is the no-isolated-vertex graph sum (n=2..5)",
+      "passed": true
+    },
+    {
+      "name": "connected-graph sum equals the cluster-property definition of phi^T (n=2..5)",
+      "passed": true
+    },
+    {
+      "name": "corpus b_n = -(Boolean inversion of Z) (n=2..5)",
+      "passed": true
+    },
+    {
+      "name": "Boolean - Ursell = disconnected isolated-vertex-free remainder: 0,0,3,40 terms",
+      "passed": true
+    },
+    {
+      "name": "exponential formula holds mod (z_i^2) at n=3 and n=4; d^3 ln Xi|0 = phi^T_3",
+      "passed": true
+    },
+    {
+      "name": "the 'restored alternation' equals the Mayer binding at negative activity",
+      "passed": true
+    },
+    {
+      "name": "live word: tr(atom)/tr(free) = PROD mu_bond to 1e-40 at A=2,3,4",
+      "passed": true
+    },
+    {
+      "name": "A=3 chains: ln-binding 3-body cumulant is 0 to 1e-40 (canonical ensemble is pairwise)",
+      "passed": true
+    },
+    {
+      "name": "A=3 chains: phi^T_3 > 0 and corpus b3 = -phi^T_3 < 0 (the Mayer sign)",
+      "passed": true
+    },
+    {
+      "name": "every production interface letter has trace in (0,1): no attractive Mayer channel",
+      "passed": true
+    },
+    {
+      "name": "per-block chi ratios on 2H are NOT the bond factor: the identification is tr_M-only",
+      "passed": true
+    }
+  ],
+  "free_parameters": 0,
+  "scope": "(a) for the identification and the letter measurement; (b) for the sign: invariant = the Ursell alternation (-1)^(n-1) phi^T_n >= 0 on bond factors in (0,1), Lean QOU.MassTheory.UrsellPartitionFunctionB3.b3corpus_neg. Excludes a positive connected 3-body coefficient in the Mayer expansion of -ln Xi at positive activity for ANY bond triple in (0,1). Does not exclude an attractive channel (a letter with trace > 1) or a non-Mayer assembly.",
+  "source": "Jansen & Kolesnikov, J. Stat. Phys. 189:33 (2022), library/s10955-022-02992-6/",
+  "lean": "QOU/MassTheory/UrsellPartitionFunctionB3.lean",
+  "bean": "qou-rwhv",
+  "allPassed": true,
+  "scriptFile": "ursell_partition_function_for_b3_probe.py",
+  "scriptHash": "65b89c017687",
+  "scriptCommitSha": "unknown",
+  "commitSha": "2aff372890472521ec3e71c534383b01ba800e62",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "proton pin per owner directive 2026-08-07; every framework number is evaluated at Q_50_DIGIT_STR"
+}
