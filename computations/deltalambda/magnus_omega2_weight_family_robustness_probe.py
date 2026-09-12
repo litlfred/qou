@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Does the Magnus Ω₂ sign conclusion depend on WHICH partition-weight family
-is used to aggregate it?  Measured: **yes at A=3**, no at A=2, undetermined at
-A=4 until its source witness is regenerated.
+is used to aggregate it?  Measured: **yes at A=3 and A=4**, no at A=2. All
+three sources are now post-ruling, so nothing is excluded from the gate.
 
 WHY THIS EXISTS (bean qou-za3q)
 -------------------------------
@@ -39,7 +39,20 @@ at A=3 it does:
     atom      source        P_plancherel   P_wenzl     agree?
     deuteron  canonical         -15.095     -6.921     yes
     triton    canonical          +2.470    -13.931     NO
-    ⁴He       pre-ruling        -57.803   -100.827     undetermined
+    ⁴He       canonical         +34.126    -20.466     NO
+
+Read down the sign columns rather than across the rows. Plancherel gives
+-, +, + over A = 2, 3, 4 — one sign change, between the deuteron and the
+triton. Wenzl gives -, -, - — no sign change anywhere. The programme's target
+is a sign change in A, so the two measures do not merely disagree on a number:
+they disagree on whether the target phenomenon is present.
+
+That is a finding about the measures, NOT a reason to prefer Plancherel. It
+yields the wanted sign, and picking it for that reason is fitting. Note also
+that Plancherel's tr(1) is 11.139 / 184.233 / 6751.541 at n = 6, 9, 12 against
+Wenzl's exact 1.0 — it is not a normalised trace and its scale drifts ~600x
+from A=2 to A=4, which is precisely what makes a cross-A statement under it
+hard to read.
 
 METHOD
 ------
@@ -181,11 +194,26 @@ def main() -> int:
         "its sign."
     )
     wb.add_caveat(
-        "Establishes only that the published SIGN does not distinguish the two "
-        "measures. It does NOT establish that either is the correct pairing for "
-        "a Magnus Omega2 question, and the MAGNITUDES differ substantially — so "
-        "any conclusion drawn from |P_total| rather than its sign is still "
-        "weight-family dependent."
+        "The published SIGN DOES distinguish the two measures, at A=3 and A=4 "
+        "both. Plancherel runs -,+,+ over A=2,3,4 (one sign change, between "
+        "deuteron and triton); Wenzl runs -,-,- (no sign change anywhere). So "
+        "the A-dependent sign change exists only under the measure the probes "
+        "aggregate with, not under the production Markov weight. This caveat "
+        "previously read 'the published SIGN does not distinguish the two "
+        "measures' — true when only the deuteron had a canonical source, and "
+        "contradicted by this witness's own per_atom rows once triton and "
+        "helium-4 did."
+    )
+    wb.add_caveat(
+        "Does NOT establish that either measure is the correct pairing for a "
+        "Magnus Omega2 question — that is bean qou-za3q decision 1, still "
+        "open. It establishes that the choice is no longer cosmetic: it "
+        "determines whether the programme's target sign change is exhibited at "
+        "all. Choosing the measure that yields the wanted sign would be "
+        "fitting (AGENTS.md: selection against the target), so the honest "
+        "reading is that under the production weight the sign change is NOT "
+        "exhibited in A=2,3,4. Magnitudes remain weight-family dependent and "
+        "non-monotone."
     )
     wb.add_assertion(
         name="sign_robust_to_weight_family",
