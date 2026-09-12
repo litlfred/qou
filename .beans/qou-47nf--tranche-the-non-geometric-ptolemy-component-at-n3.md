@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T19:26:04Z
+updated_at: 2026-09-12T07:41:33Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -827,3 +827,26 @@ points. test_guard_rejects_spurious.py now pins the rejecting direction.
   * Complex type is the NECESSARY condition the Sym^2 gate demands, NOT sufficient.
     Nothing here connects these representations to the eightfold's N=3 problem.
   * Classes 2-13 unsolved (c2 segfaulted on msolve's internal ceiling).
+
+
+---
+
+## READ 2026-09-12 during the `qou-bstl` drain — correctly OPEN, no action taken.
+
+Flagged by `bean-completion-candidates.py` on `d5012346aa9`
+(*"RESOLVED — Borromean rings carry complex-type reps"*). The bean's own §(xliv)
+already states why that is not a closure, and it is right:
+
+* **mod 32003 only** — *"Proper mod p ⇒ proper over Q unless p is bad ⇒ non-empty
+  over C by the Nullstellensatz. Strong, not a proof. Char-0 run in flight."*
+* degree 4 is the mod-p count; over ℂ it may differ.
+* the obstruction argument's two topological inputs are **GGZ results carried as
+  HYPOTHESES**; only its ℤ/3 arithmetic is lean-verified.
+* complex type is **necessary, not sufficient** for the Sym² gate, and nothing
+  connects these reps to the eightfold's N=3 problem.
+* **classes 2–13 unsolved** (c2 segfaulted on msolve's internal ceiling).
+
+Per rule 13a a bean whose subject rests on carried hypotheses does not close on
+the recording of that fact. No re-measurement attempted — the char-0 run is
+another session's in-flight work and re-running it here would duplicate a
+multi-hour solve, not verify it.

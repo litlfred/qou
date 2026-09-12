@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-08-30T09:55:00Z
-updated_at: 2026-08-31T05:07:16Z
+updated_at: 2026-09-12T07:41:32Z
 ---
 
 `cites-resolve` — the check that validates every content block's `cites[]`
@@ -382,3 +382,43 @@ citation's *identity* is not something to change casually.
 The other five (`feigin-hashizume2009`, `dimofte-gaiotto-gukov2014`,
 `terashima-yamazaki2011`, `macdonald1971`, `lusztig1989`) match their key years
 and carry distinct titles from their near-misses.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — 1 of 13 fixed, **12 remain cited and unresolvable**. STAYING OPEN.
+
+The completion-verb commit `f86729562a7` (*"repoint the champanerkar phantom key
+— the corpus already adjudicated it"*) fixed **exactly the one key its own
+subject names**. It is a partial completion, cause 1 on
+`bean-completion-candidates.py`'s list.
+
+**Measured the right way — "still CITED by a block", not "absent from
+`references.ts`".** Those are different questions and only one is the defect: a
+*repointed* citation is SUPPOSED to leave the old key absent from the registry.
+Checking absence alone would have called `champanerkar-kofman-mullen2008`
+unfixed (it is fixed) and is the mention-vs-use error this corpus keeps paying
+for.
+
+| key | still cited by | verdict |
+|---|---|---|
+| `champanerkar-kofman-mullen2008` | — | **FIXED** (repointed) |
+| `faddeev1996` | `brings-surface/inter-nucleon-channel-color-tube.ts`, `mass-theory/pachner-pentagon-borromean.ts` | still broken |
+| `bokut1978` | `mass-theory/phi-q-tower-algebraic-stratification.ts` | still broken |
+| `manuscript` | `knots-particles-confinement/categorical-proton.ts`, `…/categorical-proton-properties.ts` | still broken |
+
+`feigin-hashizume2009`, `dimofte-gaiotto-gukov2014` and `terashima-yamazaki2011`
+**are** present in `content/schema/references.ts` — so those three may already be
+resolvable and the true remaining count could be under 12. I did not run the
+gate itself to settle it, because `cites-resolve` lives in the platform and needs
+`scripts/setup-folio-assistant.sh` plus the `configureReferenceRegistry` wiring
+this bean is *about*. **Quote "at least 3 confirmed still-broken", not "12", from
+this measurement** — the 12 is arithmetic on the bean's own table, and only 4 of
+13 keys were re-checked here.
+
+**Note the bean's own root cause is the more durable half.** `run-validate.ts`
+never called `configureReferenceRegistry`, so the gate no-opped while printing
+*"no reference registry configured — cites-resolve did not run"* on every run for
+months. Repointing keys does not fix that; until the wiring lands, the count can
+regrow silently and nothing will say so. Whoever closes this should check the
+wiring, not the key list.
