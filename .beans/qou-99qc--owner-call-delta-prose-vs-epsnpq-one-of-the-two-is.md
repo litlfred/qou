@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T12:17:21Z
+updated_at: 2026-09-12T18:09:44Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1238,3 +1238,56 @@ assertions** for a probe whose entire content is checks).
 **Status stays `todo`** per §13a — the element half (Option E / the phase
 `qou-pdix`) is an open question, and (iii) is now waiting on the owner rather
 than on a measurement.
+
+
+## 2026-09-12 (same day, later) — item (iii) is DONE. The owner authorised the re-score; the three rows are on the ruled z_D base.
+
+Put to the owner with the prices above. Answer: **both** "re-score now to z_D"
+**and** "re-score after qou-pdix" — read as *move now, and move again once a
+ladder exists*. First half landed (PR #7221, `606e7e304b1`); second half is bean
+**`qou-iagg`**, blocked on `qou-pdix` → `qou-cds1`.
+
+| row | before (`z = 1`, laddered) | after (`z_D` base) | miss factor |
+|---|---|---|---|
+| `Q_β` | 1279 ppb | **4.316e+8 ppb** | 5.535e+7 |
+| `m_n` | 0.9029 ppb | **3.594e+5 ppb** | 7.034e+7 |
+| `Δ_pn` | 658.0 ppb | **2.611e+8 ppb** | 6.021e+7 |
+
+Landed figures match the prices to <1e-3 relative; the probe's new CHECK 6
+asserts it against the live witness, so a future drift is caught rather than
+assumed. **The L2 headline is unchanged at 1/6 scoreable** — all three already
+failed, so this degrades three misses without moving the count.
+
+**Derived from q₀, not inverted from CODATA.** `_qbeta_ruled_base()` evaluates
+`|tr_M(Δ_S)(z_D)|·E₀` with `tr_M(Δ_S)(z) = q²/2 − qz − 1 + z/q + 1/(2q²)` and
+`E₀ = m_e/(q(q−1))`, then calibrates against this bean's own probe witness
+(`−43.157175 %`, agreement 2.9e-7). Reading that recorded residual and
+inverting it would have been arithmetically exact and circular — the row's
+residual would have been a pass-through of a number computed against CODATA.
+If the calibration fails, the producer publishes the **old** row and says so.
+
+**Question 2 answered too: fix both, renaming the field.**
+`best_admissible_err_pct` → **`ruled_cell_err_pct`**, repointed from the
+augmentation to `z_D`, and the "open owner decision" prose is gone from the
+producer (0 occurrences). The rename was the owner's pick for a reason worth
+recording: the old name carried *two* defects, not one — it named a functional
+the ruling did not choose, **and** "best" ranked the admissible cells **by
+residual**, which is the selection-against-the-target the anti-fit directive
+forbids. Both cells stay visible in `err_pct_by_functional`.
+
+**🛑 Still a base, zero rungs.** Every affected row now carries that scope in
+its own `note` rather than cross-referenced from the `Q_β` row — the
+"fixed in one place, survives in the others" failure this corpus keeps
+recording. Do not quote these as convention D's accuracy.
+
+**Correction to my own verification claim, and it reached the PR body.** I
+reported the first `precision-gates.sh --changed` run as **exit 0**. It was
+not: that run was piped through `tail`, so the 0 was `tail`'s status. Re-run
+un-piped it is **exit 1** — but the reds are pre-existing, not mine: the `RED:`
+line is byte-identical before and after the producer change, both ratchets
+report `NEW dirty 0 / REGRESSED 0`, none of the gate's NEW items names either
+of my files, and `main` is independently recorded red on the ratchet (#7161
+open). PR body corrected.
+
+**Status stays `todo`** per §13a — the element half (Option E) and the phase
+(`qou-pdix`) are open questions. What has closed is item (iii).
