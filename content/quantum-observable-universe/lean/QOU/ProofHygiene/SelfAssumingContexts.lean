@@ -114,6 +114,28 @@ The negation is the practical test, and it is the one a reviewer can actually ru
 **exhibit an instance without already having the conclusion** (`not_contentless_of_witness`). -/
 def Contentless (K : Sort*) (C : Prop) : Prop := Nonempty K ↔ C
 
+/-! **🛑 Contentless is not automatically a defect — read this before applying it.**
+
+A **conjecture carrier** is *supposed* to be contentless for its conjecture. That is what
+AGENTS.md §3b means by *"the class instance is the conjectural witness (sorry =
+conjecture), not a missing proof"*: assuming the class is meant to be exactly assuming the
+conjecture, and `Nonempty K ↔ C` is the correct semantics, not a finding.
+
+The defect is a **theorem** that extracts `C` from such a carrier and is then presented,
+named, or cited as though `C` had been *derived*. The ledger's own wording for the
+`field-projection` entries makes the same distinction: *"a projection like this is the
+legitimate Mathlib accessor idiom ONLY when something builds the bundle"* — i.e. when the
+carrier is inhabited by real mathematics somewhere, rather than never inhabited at all.
+
+So the criterion below answers *"does this class carry content?"*. It does **not** by
+itself answer *"is this declaration wrong?"*. For that, ask the two questions the ledger
+asks: **is anything ever going to inhabit the carrier**, and **is a downstream declaration
+presenting the projection as a derivation?**
+
+The one case that is unconditionally a defect regardless of intent is the bare-`Prop`-field
+carrier at the end of this file — there, the carrier asserts nothing *even as a
+conjecture*, so it cannot serve as a conjectural witness either. -/
+
 /-- **The reviewer's test.** If the class can be instantiated while the conclusion fails,
 it is not contentless — it carries something. Contrapositively, a class you can only
 instantiate by already having `C` proves nothing about `C`. -/
