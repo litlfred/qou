@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:25:01Z
-updated_at: 2026-09-12T07:52:49Z
+updated_at: 2026-09-12T11:27:41Z
 ---
 
 Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (round 2 of the stalled-agent takeover; sibling round 1 is #7121 / qou-6g7j with fronts observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces — NOT duplicated here). This session: merge every clean open PR; take over the fronts #7121 left: the chi producer scaling wall (#7083), the Q_β ℚ(q)-coefficient leg (#7118), and the binding SHAPE residual (symmetry-energy term of the additive log law), which the owner names as where most of the binding gap sits. Goal statement: L2 toward 1 ppQ; binding is not an L2 row and must not be quoted as one (1ppQ reanalysis §5 item 3).
@@ -164,3 +164,41 @@ in parallel; two settled locally.
 
 - **#7204 was left as a DRAFT by its agent although the work was complete** — undrafted
   here. #7202 likewise ready. Both awaiting owner merge permission (rule 7).
+
+
+## Tranche 4 MERGED 2026-09-12 ~11:30Z (owner: 'merge and contune')
+
+Three rebase-merged onto main (which had moved 30 commits since the PRs opened) and
+replay-verified by patch-id, every commit replayed:
+  #7204 class B          -> 1c443dddc03   (6/6)
+  #7202 3A re-embedding  -> 6c5354bf40f   (7/7)
+  #7206 carrier re-pins  -> c46a3622894   (4/4)
+
+Phase-4 gate evidence (no CI exists; agent-owned verification IS the gate):
+- Conflict check against the CURRENT main (59489e97888) immediately before merging:
+  0 conflicts on all three.
+- **File-overlap check**, which is the one that makes the earlier verification still
+  valid: main's 26 changed files since divergence overlap ZERO files on all three
+  branches. So the gate results described exactly what merged, rather than a tree that
+  had moved underneath them.
+- #7204's Lean was independently re-verified by the parent session at the exact merged
+  head 777a0d3ecc5 (4-module cone from source, lean-direct, 20/20 axiom-clean).
+- #7202 probe 18/18 + ContiguousCouplingGraph.lean 7 decls sorry-free (agent-reported;
+  parent did not re-run, and says so).
+- #7206 precision-gates --changed: exit 1 on standing ratchets, ZERO reds naming either
+  changed file.
+
+**#7205 (Q_beta dataset) deliberately NOT merged.** It is the one PR explicitly staged
+for an owner decision and its own body says 'Do not merge without an explicit owner
+decision'; the session's established convention is that a generic 'merge' means the work
+PRs and not an explicitly-held item. Still open, still conflict-free.
+
+Held: #6178 (re-execution, not a rebase) and #6025 (superseded — 10 of 12 files already
+byte-identical on main) — both have the measurement posted as a PR comment and await a
+close decision.
+
+TRANCHE 5 dispatched: qou-brng class D (fibre-level / higher order in q) — the last
+untouched row of the four-class enumeration, made non-optional by the 2026-09-03
+full-tower ruling. Coordination note for that agent: qou-m8f3 / PR #7200 is a live
+sibling on the dominant-summand test; overlap is permitted but must be deliberate and
+must state its distinct angle.
