@@ -488,7 +488,10 @@ def main() -> int:
             "L_atom": _s(r["L_atom"], 40), "L_free": _s(r["L_free"], 40),
             "dL_dominant": _s(dL[(Z, N)], 40),
             "log_tr_ratio_full": _s(Ltr[(Z, N)], 40),
-            "wall_s": round(r["wall_s"], 3),
+            # per-cluster wall time deliberately NOT serialised: `wall_s` is not
+            # in qou_substrate's `_EPHEMERAL_META_FIELDS`, so the raw-float64
+            # ratchet would read it as a payload float. `provenance.elapsed_s`
+            # (declared ephemeral 2026-09-05, bean qou-m549) carries the total.
         })
 
     witness = {
