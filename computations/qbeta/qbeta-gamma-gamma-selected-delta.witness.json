@@ -1,0 +1,120 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T11:28:07.126430+00:00",
+  "commitSha": "c46a36228949b7b462b1313b170787b8aa5735d6",
+  "assertions": [
+    {
+      "name": "V_cubed_is_11_crossing_budget_compatible",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "V^3 = 6 crossings, the B_3 confinement core; the census builds exactly this by `for _ in range(3): hm(.,1,0,0); hm(.,1,-h,1)`"
+    },
+    {
+      "name": "level_1_annihilates_every_gamma_gamma_difference",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "max |tr_q(V^a - V^b)| over all 36 pairs = 1.33638e-51 — the augmentation gives EXACTLY zero, as oneDim_annihilates_gammaGamma_difference proves it must"
+    },
+    {
+      "name": "the_candidate_set_is_small_and_enumerated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "15 distinct values from 36 ordered pairs — a finite derived set, not a search space"
+    },
+    {
+      "name": "no_gamma_gamma_difference_reaches_Q_beta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "0 of 15 reachable values land within the 779.72 ppb window"
+    },
+    {
+      "name": "the_target_sits_in_a_GAP_of_the_reachable_set",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the set has nothing between 0.09850199287 and 0.6841593612, a gap of width 0.5856573683 = 3.13364x the target, and Q_beta falls inside it — the miss is STRUCTURAL, not a matter of which words were tried"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "qbeta-gamma-gamma-selected-delta",
+  "scriptFile": "qbeta_gamma_gamma_selected_delta_probe.py",
+  "scriptHash": "43300bcf3450",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_gamma_gamma_selected_delta_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_selected_delta_probe.py"
+  },
+  "description": "Applies the owner's 2026-09-08 γγ+SDP word-selection ruling to the DECAY channel. Inside H_3 every γγ-word is a vertex power, so the candidate Delta set is finite and derived rather than searched. At level 1 the difference vanishes identically (proved in GammaGammaSelectedDeltaVanishes); at the ruled level 2 the reachable set has a gap containing Q_beta. Scope-(a).",
+  "data": {
+    "markov_convention": "D — the ruled functional, z_D = q^3/(q^2+1)",
+    "q0_anchor": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "target_abs_eps": "0.18689366772151209875426177648",
+    "kmax": 5,
+    "tr_zD_of_vertex_powers": {
+      "0": "1.0",
+      "1": "0.2472978867480345984062206",
+      "2": "0.2801956422726949814331226",
+      "3": "0.9985621638367872659512131",
+      "4": "0.2159008097537719265047588",
+      "5": "0.3144028026245932804305255"
+    },
+    "reachable_abs_differences": [
+      "0.001437836163212734048786865",
+      "0.03139707699426267190146189",
+      "0.03289775552466038302690193",
+      "0.03420716035189829899740294",
+      "0.06429483251892305492836382",
+      "0.06710491587655868202430487",
+      "0.09850199287082135392576676",
+      "0.6841593612121939855206876",
+      "0.6855971973754067195694745",
+      "0.7183665215640922845180906",
+      "0.7198043577273050185668774",
+      "0.7512642770887526675449925",
+      "0.7527021132519654015937794",
+      "0.7826613540830153394464544",
+      "0.7840991902462280734952412"
+    ],
+    "level_1_max_abs_difference": "1.336382355e-51",
+    "gap_containing_target": {
+      "below": "0.09850199287082135392576676",
+      "above": "0.6841593612121939855206876",
+      "target": "0.1868936677215120987542618"
+    }
+  },
+  "caveats": [
+    "Scope-(a). γγ-words carry NO FLAVOUR INDEX (the corpus's Crossing is (gen, pos)), so this prices the ruled principle APPLIED ALONE. It is evidence that the principle underdetermines Delta and needs the flavour letters — the open point GammaGammaSelectorH3 names for itself — NOT a refutation of the ruling.",
+    "The level-1 vanishing is PROVED, not merely measured: QOU.QBeta.GammaGammaDelta.oneDim_annihilates_gammaGamma_difference, sorry-free. CHECK 2 confirms the arithmetic agrees with the proof; it is a calibration of the numerics, not the evidence for the claim.",
+    "k is capped at 5 by the 11-crossing nucleon budget (qou-1qsw). A larger budget would extend the reachable set; the gap statement is made for this budget and is not claimed beyond it."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
