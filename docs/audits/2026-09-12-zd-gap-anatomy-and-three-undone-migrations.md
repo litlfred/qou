@@ -414,10 +414,30 @@ that was wrong:
   a generic field. Sound, and it is where the two Hecke eigenvalues come from —
   but it is an algebraic factorisation. No connection, no curvature form, no
   surface, no multiplicative integral.
-- The curvature reading lives in a **docstring** in `NaStokesKeystone.lean`: the
-  2-form is *stipulated* to be the Hecke quadratic, so imposing flatness recovers
-  it tautologically. AGENTS.md *Derive-then-check* item 8 verbatim — if it is
-  true by `ring`, it is notation.
+- 🛑 **The second half of this bullet was STALE and is corrected here.** It read:
+  *"the curvature reading lives in a docstring in `NaStokesKeystone.lean`: the
+  2-form is stipulated to be the Hecke quadratic, so imposing flatness recovers it
+  tautologically."* That is cheat-sheet §2a's text, dated **2026-08-25**, and it
+  had already been fixed on **2026-09-06** by bean `qou-ba73` (status
+  `completed`). Measured directly: `QOU/Mass/HeckeMonodromy.lean` carries a
+  content-bearing **primary §3b conjecture class** `HeckeMonodromy` with four
+  content fields — `quad` (the Hecke quadratic on every generator), `braid`,
+  `far_comm`, `shadow_involution` — and `hecke_factor` **derives**
+  `(g − q)(g + q⁻¹) = 0` *from* `quad`, sorry-free. The docstrings at
+  `NaStokesKeystone.lean:23` and `HeckeStokesEigenvalues.lean:14` are both
+  re-scoped to cite it. So the Stokes eigenvalues are now a **consequence of a
+  named conjecture**, not a stipulation.
+
+  **How the stale claim got in, since the route matters more than the claim:** it
+  was taken from cheat-sheet §2a *after* that section's own warning that its
+  status column had been the thing that was wrong, and without running
+  corpus-grep **path 6 (the beans)** — which is precisely the path that catches
+  it. §2a itself is still stale on `main`; a dated correction is added there.
+
+  What this does **not** change: `stokes_curvature_factors` really is a
+  `field_simp; ring` factorisation, and there is still no multiplicative-integral
+  construction. The conjecture is honestly stated and has **no instance**, which
+  per §3b-tax is the correct representation of an open primary.
 
 So "take its holonomy" presupposes exactly step ②'s acknowledged scope-(a) gap.
 
@@ -475,11 +495,23 @@ bad luck in which forms were tried: a low-degree rational in `q` at `q₀ ≈ 1.
 the carrier must be an **intermediate transcendental** — which is what an ordered
 exponential (a real holonomy) supplies and a polynomial average cannot.
 
-**That is why the stipulated curvature is the blocker rather than a bookkeeping
-complaint: 5b needs step ② CONSTRUCTED, not stipulated.** The honest next step is
-therefore step ②'s own gap — a multiplicative-integral construction whose
-curvature is *computed* to be `σ² − (q−q⁻¹)σ − 1`, or an honest §3b restatement
-with the geometric step as hypothesis — not another candidate-form sweep.
+**So the blocker is locatable, and it is one of the two beans — not "step ② is
+stipulated".** Of §2a's two admissible closures, the honest §3b restatement is
+**already done** (`qou-ba73`, completed 2026-09-06). What remains is the
+*geometric discharge*: a multiplicative-integral construction whose curvature is
+**computed** to be `σ² − (q−q⁻¹)σ − 1`, which is bean **`qou-6ers`** (`todo`).
+
+And that distinction is load-bearing for 5b specifically. `HeckeMonodromy`'s
+`quad` field **is** the Hecke quadratic, taken as a hypothesis — so a holonomy
+built on the class inherits the Hecke relation *by assumption*. Branch 3's escape
+from circularity requires the connection to be defined **without** reference to
+the thing it is meant to produce, so the honest restatement does not supply it;
+only the geometric discharge does.
+
+**5b is therefore blocked on `qou-6ers`**, and not on another candidate-form
+sweep. Alternatively 5b can be carried openly as conditional on `HeckeMonodromy`
+— which is legitimate, but then the α carrier is conditional on an unproved
+primary conjecture, and that has to be stated wherever the carrier is cited.
 
 Probe: `computations/qbeta/qbeta_pdix_step2_holonomy_slope_probe.py` (7/7).
 

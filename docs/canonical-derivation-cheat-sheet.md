@@ -246,6 +246,32 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 > core is the geometric `period = lw` equality, and it states the τ assembly is
 > conditional on it. What was wrong was this document's status column, not that file's
 > self-description.
+> **🛑 §2a IS ITSELF NOW STALE ON ITS CENTRAL CLAIM — corrected 2026-09-12.** The
+> text above says the 2-form is *stipulated* and that flatness recovers it
+> tautologically. That was true when written (2026-08-25) and was **fixed on
+> 2026-09-06** by bean `qou-ba73` (`completed`), which this section does not
+> mention. Measured directly: `QOU/Mass/HeckeMonodromy.lean` carries a
+> content-bearing **primary §3b conjecture class** `HeckeMonodromy` with four
+> content fields (`quad`, `braid`, `far_comm`, `shadow_involution`), and
+> `hecke_factor` **derives** `(g − q)(g + q⁻¹) = 0` from `quad`, sorry-free. The
+> docstrings in `NaStokesKeystone.lean:23` and `HeckeStokesEigenvalues.lean:14`
+> are both re-scoped to cite it. So the Stokes eigenvalues are a **consequence of
+> a named conjecture**, not a stipulation.
+>
+> **What still stands from §2a:** `stokes_curvature_factors` is a
+> `field_simp; ring` factorisation; there is still **no** multiplicative-integral
+> construction; the class has **no instance** (the correct open state per
+> §3b-tax); and `prop:hecke-spectral-sequence` still does not resolve — the
+> `conj:` content block replacing it is explicitly flagged in `qou-ba73` as the
+> owner's call.
+>
+> **So of §2a's two admissible closures, the second is DONE and the first is
+> OPEN**: the geometric discharge is bean **`qou-6ers`** (`todo`). Do not read
+> §2a as saying step ② is a stipulation; read it as saying step ② is an honestly
+> stated open conjecture awaiting a geometric instance. Recorded because this
+> section was quoted as current on 2026-09-12 and sent an agent looking for a
+> connection that does not exist — the failure was skipping corpus-grep path 6
+> (the beans), which names the fix.
 
 | **3. Alexander+Markov** | Unique trace $\mathrm{tr}_M$ invariant under braid + stabilization moves; $J_K(q) = \mathrm{tr}_M(\beta)$ | `thm:jones-markov-trace`, [jones1987] | `hecke/hecke_characters.chi_lambda_braid`; `pyhecke_native` (Rust) | per-witness. $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ closed form **Lean-proved** (`BorromeanMarkovTrace.lean`, modulo cited $V$). **Cross-method checkpoint:** the *narrative-only* per-rep $\chi^\lambda(\beta_{\mathrm{Bor}})$ ($\chi^{(3)}{=}\chi^{(1^3)}{=}1$, $\chi^{(2,1)}{=}2{-}3h^4{-}h^6$) confirmed numerically to $\le 4\mathrm{e}{-}50$ by the skein-validated seminormal engine (`borromean-chi-independent-crosscheck`; proof-status audit [`2026-06-07`](audits/2026-06-07-borromean-chi-crossmethod-proof-status.md)) |
 | **4. Bring χ=−6** | $\dim H_3(q) = 6 = $ # embeddable torus knots in $\Sigma_4$; particle content fixed | `prop:x5-bring-weight-identification`, `prop:spectral-sequence-h3-explicit` | `hecke_core._PROTON_G0/G1`, `_NEUTRON_G0/G1` (canonical H_3 chains) | — |

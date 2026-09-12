@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-12T23:35:15Z
+updated_at: 2026-09-12T23:40:56Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1966,3 +1966,64 @@ unproved keystone class — assumed in the measurement, not shown.
 
 So the Q_beta L2 row cannot move until step 2 is constructed. That is worth
 stating plainly rather than leaving qou-iagg looking like a scheduling item.
+
+
+### 2026-09-12 (3) — CORRECTION to entry (2): step 2 is NOT a stipulation, and 5b's blocker is `qou-6ers`
+
+Entry (2) above asserted, quoting cheat-sheet §2a, that *"the curvature reading
+lives in a DOCSTRING ... the 2-form is STIPULATED to be the Hecke quadratic, so
+imposing flatness recovers it tautologically."* **That was stale by six days.**
+
+MEASURED DIRECTLY (2026-09-12): `QOU/Mass/HeckeMonodromy.lean` (8687 B) carries a
+content-bearing **primary §3b conjecture class** `HeckeMonodromy` with four
+content fields — `quad` (the Hecke quadratic on every generator), `braid`,
+`far_comm`, `shadow_involution` — and `hecke_factor` **DERIVES**
+`(g − q)(g + q^-1) = 0` from `quad`, sorry-free. `NaStokesKeystone.lean:23` and
+`HeckeStokesEigenvalues.lean:14` are both re-scoped to cite it. Bean `qou-ba73`
+did this on **2026-09-06** and is `completed`.
+
+So the Stokes eigenvalues are a **consequence of a named conjecture**, not a
+stipulation. Step 2 is honestly stated, with **no instance** — the correct open
+state per §3b-tax.
+
+HOW I GOT IT WRONG, and the route matters more than the claim: I took §2a as
+current *after* quoting its own warning that its status column had been the thing
+that was wrong, and I did **not** run corpus-grep **path 6 (the beans)**. Path 6
+is exactly what catches this — `qou-ba73` is `completed` and its body states the
+fix in one line. Same class of error as everything else in this bean's history,
+committed in the entry that was correcting someone else's staleness.
+
+WHAT THE ERROR CONTAMINATED, since a fix in one place is not a fix: commit
+`89ec14181ce`, audit-doc §8.3 and §8.5, the PR #7252 body, and entry (2) above —
+all said "stipulated" and "5b needs step 2 CONSTRUCTED". All four are corrected.
+Cheat-sheet §2a is itself still stale on `main` and now carries a dated
+correction.
+
+WHAT DOES NOT CHANGE — the measurement. The `lw` slopes (46.3x / 9.7x / 19.1x
+short; per-rep 0.1018 -> 0.1955, still 11.1x short) are computed from the
+keystone's own closed forms and are independent of how the curvature is scoped.
+`stokes_curvature_factors` really is a `field_simp; ring` factorisation, and
+there is still no multiplicative-integral construction.
+
+WHAT DOES CHANGE — the blocker is now locatable, and it is not "step 2 is
+stipulated". Of §2a's two admissible closures:
+
+    honest §3b restatement ...... DONE      qou-ba73 (completed 2026-09-06)
+    geometric discharge ......... OPEN      qou-6ers (todo)
+
+**And the distinction is load-bearing for 5b specifically.** `HeckeMonodromy`'s
+`quad` field IS the Hecke quadratic, taken as a hypothesis — so a holonomy built
+on the class inherits the Hecke relation BY ASSUMPTION. Branch 3's whole escape
+from circularity is that the connection is defined WITHOUT reference to what it
+is meant to produce, so the honest restatement does not supply it; only the
+geometric discharge does. That is the same circularity `circularWitness` proves
+for branch 2, one level up.
+
+**So 5b is blocked on `qou-6ers`** — not on another candidate-form sweep, and not
+on "constructing step 2" in the vague sense. The alternative is to carry 5b
+openly as conditional on `HeckeMonodromy`, which is legitimate, but then the alpha
+carrier is conditional on an unproved primary conjecture and that must be stated
+wherever the carrier is cited (conditional-proved != premise-established).
+
+I did NOT open a step-2 bean: `qou-6ers` and `qou-ba73` already cover both
+options, and `beans create` is not idempotent.
