@@ -1645,3 +1645,50 @@ is stale.
 scope-(a): a dimensionless SIGN datum. NOT a MeV (the Delta_lambda magnitude gate
 is open and untouched), NOT a physical binding-sign assertion (qou-v7ro / #6077,
 cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-).
+
+
+## 2026-09-12 — the CS step is taken on the WRONG EDGE SET (free, but small); an exact identity; and a prediction of mine refuted
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_support_restricted_cs.py`, **7/7 PASS, exit 0**, exact `Fraction` throughout, mpmath only for √ and display. Reuses #6651/#6825's edge enumeration; no new chain code. Corpus-greped first (six paths): **all three items below are absent from the committed corpus** — the algebra is one line from `qou-k5r5:1165` and nobody had taken it.
+
+### FINDING 1 — restrict Cauchy-Schwarz to `supp(g)`. It is free, and it is small.
+
+At a `g = 0` edge (`|u| = |v|`, i.e. `v = −u`) **both** `M₁`'s integrand `g·k` and `P`'s integrand `g²` vanish identically, while `Q`'s `(2−2δ)²` does not. Those edges load `Q` and nothing else. CS only ever needed the support of `g`:
+
+    M₁ = Σ_{g≠0} dμ g k = P + Σ_{g≠0} dμ g(2−2δ) ≥ P − √(P·Q'),   Q' := Σ_{g≠0} dμ (2−2δ)²
+
+so the live sufficient condition is **`Q' < P`**, strictly weaker than `Q < P`, and `supp(g)` is the **optimal** restriction in this family (CS is insensitive to any `g = 0` edge; no other edge can be dropped without changing `M₁`).
+
+**MEASURED at `n = 20`: `Q'/Q = 0.9943`**, raising `P/Q` `2.2615 → 2.2743` (**+0.57 %**) and the CS-certified share of the true margin `0.8615 → 0.8663` (+0.0048).
+
+**Do NOT read #6825's 11.55 % as this number.** That entry says the `g = 0` edges *"carry 11.55 % of `P−Q`'s negative mass at `n = 20`"* — a different denominator. Both are right: 11.55 % of `P−Q`'s **negative** mass, 0.57 % of **`Q`**. So adopting `Q' < P` costs nothing and should be done, but it improves headroom by half a percent, **not by an order**, and does not change the difficulty. The open problem is still the joint law of `(g, δ)` under Plancherel.
+
+### FINDING 2 — an exact identity, new to the corpus, and circular as a route
+
+From #6825's recorded `g² − (2−2δ)² = k(2g−k)` together with `M₁ = Σ dμ g k`:
+
+> **`2 M₁ = E_k + (P − Q)`,  `E_k := Σ dμ k² = Σ dμ (Δ Σh)²`**
+
+Verified as CONTROL 1: exact `Fraction` equality at every `n` in 4..20, no tolerance. Two readings: `E_k ≥ 0` trivially gives **`M₁ ≥ (P−Q)/2` with no Cauchy-Schwarz at all** (weaker than CS's `P − √(PQ)` at the measured `P/Q ≈ 2.24` — `0.277P` against `0.332P`, reported so the weaker bound is not mistaken for a gain); and `E_k` is the exact slack, the Dirichlet energy of `Σh` under `dμ`.
+
+**It yields no new sufficient condition by itself** — substituting `E_k = P + 2Σdμ(ΔA)(ΔD) + Q` turns `E_k > Q − P` back into `M₁ > 0`. Circular, and recorded as an identity rather than a route.
+
+### FINDING 3 — 🛑 my own stated prediction was WRONG
+
+`k = g + 2(d_u − d_v) − 2` is an **integer**, so `k² ≥ 1` off `{k = 0}` and `E_k ≥ μ({k ≠ 0})`. I wrote the prediction into the docstring *before* measuring, expecting the bound to be **cosmetic**: contents run to `O(√n)`, so `|k|` should too, and `E_k/μ` should grow like `n`.
+
+**It does not.** `E_k/μ({k≠0})` runs `1.80` (n=5) → `4.10` (n=20), global log-log slope **0.594**. The dμ-weighted mean of `k²` stays near 4, i.e. `|k| ~ 2`: **`Δ(Σh)` does not inherit the `O(√n)` scale of the contents, because `ΔA` and `ΔD` largely cancel in `k = ΔA + ΔD`.** That is a structural fact about this edge set worth keeping independently of the bound.
+
+**The exponent is NOT pinned** — the last six local slopes span `[0.315, 0.788]`, a factor 2.5, on a window ending at `n = 20`. Do not quote `√n`. And it still yields no route: the condition it buys (`Q − P < μ({k≠0})`) only helps where `Q > P`, which is not the measured regime.
+
+### What the corpus-grep found that matters MORE than any of the above
+
+**Nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap, a Poincaré inequality, or `Var_Planch(f)`** — measured zero across `docs/`, `computations/`, `.beans/`, `content/` (Lean included) for *Poincaré*, *log-Sobolev*, *conductance*. What exists is a Dirichlet-**form** identity for the **`qou-x631` kernel** (`f = dim`), **bilinear not energy**, on the **plain conductance without the `(|u|+|v|)` factor** (`..._phase5b_dirichlet_peredge.py`), plus exact chain eigenvalues `τ₁ = 2/n` (`Σc`) and `τ₃ = 3/n` (`ω₃`). Both routes now want the same missing thing, and the machinery for it is **held and uncited**: `library/arxiv-1804.03926v3` (*Weighted Poincaré inequalities … Stein kernels in dimension one*) and `library/arxiv-1704.00850v3` (*Estimating the spectral gap of a trace-class Markov operator*) — **0 citations each** across `docs/` + `.beans/` + `computations/`. Fulman's own held paper has zero hits for spectral gap / Poincaré / Dirichlet.
+
+### 🛑 CORRECTION to a figure I was carrying, caught by the same grep
+
+**`Var(Σh)/n² = 0.0099743` is the ANALYTIC ASYMPTOTIC LIMIT, not a measurement.** I had it as measured. The exact finite-`n` data is **`0.0191` (n=4) → `0.0140` (n=22)** — about **1.4× the limit** at the top of the window, still descending. Anyone using `0.00997` as a finite-`n` input is off by ~40 % at every `n` the exact table reaches. Source: `2026-08-21-covariance-kernel-M1-kappa-analytic-IO-derivation.md:92` for the limit, `..._kappa_analytic_IO.py:110` for the data.
+
+### Scope
+
+Sufficient is never necessary. Window `n ≤ 20` against a requirement of `n ≥ 79`; **nothing here is a bound over all `n`** and none of the three findings closes the gap. Finding 1 improves the live route's headroom by 0.57 %; Findings 2 and 3 are recorded results that buy no route. Path 0 (`corpus_search`) was **down** (`paper-assistant` `ENOENT`), so `emptyRoots` is unchecked and a vocabulary blind spot is not ruled out. **`qou-k5r5` stays OPEN.**
