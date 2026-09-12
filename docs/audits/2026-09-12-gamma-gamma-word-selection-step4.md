@@ -107,6 +107,9 @@ with `h² = 0.0437` and `min_{k≤5} |α_k| = 0.0893` (at `k = 3`).
    record sharpens the choice: the literal reading selects nothing non-trivial for any `k ≤ 5`
    at any `q` in the interval, and its general content is "some vertex power is `±1`"; the
    Frobenius reading selects `k = 3` on the whole interval.
+   **Ruled 2026-09-12** — *"try PSD confinement 3 for now, but keep 1 2 for later"*: reading 3
+   adopted provisionally and formalised in step 5
+   (`2026-09-12-gamma-gamma-word-selection-step5.md`); readings 1 and 2 stay on record.
 3. The non-γγ letters (step-3 §4.2) are untouched.
 
 ## 6. Verification
