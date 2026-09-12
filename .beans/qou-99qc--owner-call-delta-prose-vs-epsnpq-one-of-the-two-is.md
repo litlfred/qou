@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T18:29:59Z
+updated_at: 2026-09-12T19:41:51Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1449,5 +1449,58 @@ different principle. That is a much sharper statement of the open problem than
 the bean carried before.
 
 Probe 12/12 (CHECK 6 added to qbeta_gamma_gamma_ruling_selects_ordering_probe).
+
+BEAN STAYS todo (§13a).
+
+
+
+## 2026-09-12 — the SDP half applied, and the scope question ANSWERED (A, core only)
+
+PR #7212, commit 426af792b8 + follow-up. The gamma-gamma half was applied above
+(ordering 3a76d49fc9, parity bound 49bae3625e). This is the SDP half.
+
+METHOD, needing no new machinery. chi_(3) is the 1-dim character sigma -> q, so
+a letter (sigma_g + dc*h) has value q + dc*h and chi_(3)(w) = prod(q + dc_i*h)
+-- multiplicative and GENERATOR-INDEPENDENT. From
+tr_{z_D} = y_(3) chi_(3) + y_(2,1) chi_(2,1) at level 2 (y_(1^3) = 0),
+chi_(2,1) = (tr - y_(3) chi_(3)) / y_(2,1). Calibrated three ways before use:
+chi_(2,1)(1) = 2 exactly (block dimension), chi_(3)(V^k) = 1 exactly for all k
+(reproducing the sorry-free unit_on_vertices_eq_one from the OPPOSITE
+direction), y_(3) + 2 y_(2,1) = 1.
+
+RESULT 1 -- the (3) block is STRUCTURALLY SILENT. chi_(3) depends only on the
+shift multiset, and flavour determines the shifts (pairCounts_determined), so
+it is one positive number per nucleon (1.3825 p / 1.1221 n) across all 32
+generator assignments, spread exactly 0. The whole content of reading 3 here is
+chi_(2,1) >= 0.
+
+RESULT 2 -- it NARROWS AND DOES NOT CLOSE. 20/32 proton and 16/32 neutron
+assignments survive: 320 admissible Delta pairs of 1024, a 3.2x narrowing. The
+target (0 %) is INSIDE the admissible range [-98.57 %, +35.17 %], and the
+nearest admissible pair misses the ~780 ppb window by 122573x. Falsifiable and
+currently failing -- the same shape as #7188's ordering result, NOT a rescue.
+
+RESULT 3 -- THE SCOPE FORK, now answered. Reading 3 applied to the gg-selected
+CORE admits V^3 (chi_(2,1) = +1.9942) and selects k = 3 = beta_Bor. Applied to
+the WHOLE 11-crossing word it EXCLUDES the census assignment (chi_(2,1) =
+-0.2806 proton, -0.3720 neutron) -- which would make every residual on this
+bean inadmissible. Both fit the ruling as relayed.
+
+ANSWER, recorded verbatim: **"test,A — core only (Recommended)"** -- option (A)
+plus a free-text token `test`. Recorded as SELECTED, not as a clean ruling: that
+token reads as much like exercising the question UI as like a directive, and an
+ambiguous answer should not be laundered into an owner ruling in a bean that
+later agents read as authority.
+
+Acting on it is safe either way because (A) IS THE STATUS QUO -- the sibling
+applied it on #7207 (frobeniusSelected_borromean), and adopting it moves no
+number and re-runs no producer. If the intent was otherwise, nothing has to be
+undone; only this paragraph is wrong.
+
+CONSEQUENCE UNDER (A). The census element stands, and so does every residual on
+this bean. Reading 3 constrains 6 of the word's 11 letters and prunes NOTHING
+among the 5 the parity bound leaves free -- so the SDP half does no work on the
+open part of the problem, and the 5 letters still have no derived constraint.
+That is the live gap.
 
 BEAN STAYS todo (§13a).

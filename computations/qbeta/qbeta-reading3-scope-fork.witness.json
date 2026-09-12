@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T18:59:47.180734+00:00",
-  "commitSha": "b607c7ad351a7eb395137f8b34bfe801b85c54cb",
+  "computedAt": "2026-09-12T19:41:54.183224+00:00",
+  "commitSha": "426af792b837f58034e60bc309bc15f5fc623b82",
   "assertions": [
     {
       "name": "y_weights_normalise",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 25,
   "computation": "qbeta-reading3-scope-fork",
   "scriptFile": "qbeta_reading3_scope_fork_probe.py",
-  "scriptHash": "4b79364fda6e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "74709fecfa6f",
+  "scriptCommitSha": "426af792b837f58034e60bc309bc15f5fc623b82",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

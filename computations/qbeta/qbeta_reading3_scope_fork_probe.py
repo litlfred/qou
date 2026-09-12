@@ -68,6 +68,24 @@ selects neither -- picking the one whose numbers survive would be selection
 against the target, and picking the one that invalidates the arc would be
 equally unearned.
 
+SCOPE SELECTED 2026-09-12 — (A), CORE ONLY. Put to the owner with both
+readings framed; the answer came back verbatim as:
+
+    "test,A — core only (Recommended)"
+
+i.e. option (A) plus a free-text token `test`. Recorded as selected rather than
+as a clean ruling, because that token reads as much like exercising the
+question UI as like a directive, and this file will not launder an ambiguous
+answer into an owner ruling. What makes it safe to act on either way: (A) IS
+the status quo — the sibling applied it on #7207, and adopting it moves no
+number and re-runs no producer. If the intent was otherwise, nothing here has
+to be undone; only this paragraph is wrong.
+
+Under (A) the census element STANDS and every residual on this bean stands with
+it. The (B) measurement below is kept in full, because it is the thing that
+would have to be re-examined if the scope is ever revisited, and because the
+320-of-1024 narrowing is a fact about reading 3 under either scope.
+
 WHAT IS NOT CLAIMED. That reading (B) refutes anything. It is a scope-(a)
 observation about ONE assignment under ONE reading. The `chi_(2,1)` extraction
 is exact but derived by subtraction from `tr_{z_D}`, so it inherits that
