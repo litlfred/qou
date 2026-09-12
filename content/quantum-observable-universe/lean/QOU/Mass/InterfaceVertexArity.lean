@@ -200,6 +200,59 @@ theorem signMixed_is_genuinely_two_body {f : Nucleon → Nucleon → ℝ} (hs : 
   · intro h
     exact no_signMixed_of_oneBody (Or.inr h) hs
 
+/-! ## Where the one-body property COMES FROM: junction factorisation -/
+
+/-- **From junction factorisation to one-body.** The reason the response is one-body is not a
+coincidence about nucleon species. `W₁` lies in the parabolic `⟨σ₀,σ₁⟩` (strands 1–3) while
+`W₂` *and a right-borrowing bond* both lie in `⟨σ₂,σ₃,σ₄⟩` (strands 3–6); the two strand sets
+**overlap in one strand**, so the closure is a connected sum and the Markov trace is
+multiplicative across it. Both traces then carry the same left factor, which cancels:
+
+    f a b = (tL a · tR^bond b) / (tL a · tR⁰ b) = tR^bond b / tR⁰ b.
+
+Stated here abstractly, so it applies at either placement by swapping the roles.
+
+The premise is the standard multiplicativity of a link invariant under connected sum, which
+`mass-theory/canonical-trace-factorises-over-chain.md` states and relies on — *"a closed braid
+whose word is a product of sub-words on strand sets overlapping in one strand is a connected
+sum, and the Markov trace … is multiplicative under connected sum"* — and which that block's
+own §Status records as **not formalised**. So this file derives the one-body property *from* a
+cited principle rather than asserting it from a table; the principle itself remains unproved
+here, which is why nothing below is scope-(b).
+
+**Do not read this as `MarkovTraceMultiplicative`.** That models the **disjoint union**, and
+bean `qou-bsfg` exists because the two were once conflated. The *free* two-nucleon trace is a
+disjoint union (supports `{0,1}` and `{3,4}` share no strand); the *bonded* one is a connected
+sum (the bond reaches across strand 3). Different properties. -/
+theorem response_oneBody_of_junctionFactorisation
+    {tL tRb tR0 : Nucleon → ℝ} (hL : ∀ a, tL a ≠ 0)
+    (f : Nucleon → Nucleon → ℝ)
+    (hf : ∀ a b, f a b = (tL a * tRb b) / (tL a * tR0 b)) :
+    ∃ g : Nucleon → ℝ, ∀ a b, f a b = g b := by
+  refine ⟨fun b => tRb b / tR0 b, fun a b => ?_⟩
+  rw [hf]
+  rcases eq_or_ne (tR0 b) 0 with h0 | h0
+  · simp [h0]
+  · rw [mul_div_mul_left _ _ (hL a)]
+
+/-- **The chain, end to end.** Junction factorisation ⇒ one-body ⇒ not sign-mixed. So the
+isospin pattern's failure is a *consequence* of the connected-sum structure of the two-nucleon
+closure, not a property of the particular bond word, the particular placement, or the numbers.
+
+Measured corroboration (step-11 probe): holding the right nucleon fixed and replacing the left
+nucleon by six unrelated words on `⟨σ₀,σ₁⟩` — including the **empty** word, a single letter, an
+all-positive word and an averaged-heavy one — leaves the response a **symbolic identity**
+`0.0139840866412832240` in every case. The response is independent of the entire left word, not
+merely of its species, which is what this theorem predicts and what a species-only coincidence
+would not. -/
+theorem no_signMixed_of_junctionFactorisation
+    {tL tRb tR0 : Nucleon → ℝ} (hL : ∀ a, tL a ≠ 0)
+    {f : Nucleon → Nucleon → ℝ}
+    (hf : ∀ a b, f a b = (tL a * tRb b) / (tL a * tR0 b)) :
+    ¬ SignMixed f :=
+  no_signMixed_of_rightDependent
+    (Classical.choose_spec (response_oneBody_of_junctionFactorisation hL f hf))
+
 /-! ## The placement record: the sign is not a function of the channel -/
 
 /-- **The measured placement fact, carried as a hypothesis.** `ratioV1` and `ratioV3` are the
