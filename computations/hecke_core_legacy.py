@@ -560,13 +560,19 @@ def partition_spectral_log_rate(partition):
     (For partitions where ρ_λ < 1, the character ratio is less than
     unity and the trace shrinks exponentially — consistent with the
     partition being "far from the mean" in the Plancherel sense.)
+
+    PRECISION (2026-09-12, "excise float64"): `math.log` returns a Python
+    float WHATEVER it is handed, so this narrowed an mpf ratio to 53 bits in
+    its last line.  `_exact_log` instead, which carries its own `workdps` --
+    the ambient `mp.dps` is 15 in a bare import of this module, so a bare
+    `mp.log` would trade a float64 narrowing for a 15-digit one.
     """
     d = partition_dimension(partition)
     if d == 0:
-        return 0.0
+        return _mp.mpf(0)
     chi = partition_character_sigma1(partition)
     ratio = abs(chi) / d
-    return math.log(ratio) if ratio > 0 else 0.0
+    return _exact_log(ratio) if ratio > 0 else _mp.mpf(0)
 
 
 # Canonical Reeb-time spectral parameter s_*.
@@ -630,7 +636,9 @@ def _partition_table_exact() -> list[dict]:
             _rho = abs(_chi) / _d if _d > 0 else _mp.mpf(0)
             # `_exact_log`, not `math.log`: `math.log` returns a Python float
             # WHATEVER it is handed, so on an mpf it discards every digit past
-            # the 16th (see `_exact_log`'s docstring).
+            # the 16th (see `_exact_log`'s docstring).  The -30 floor is the
+            # table's own sentinel for an unrepresentably small rate and is
+            # deliberately NOT a computed log.
             _log_rho = _exact_log(_rho) if _rho > 1e-300 else _mp.mpf(-30)
             # q-Laplacian eigenvalue and resolvent weight (def:q-heat-equation,
             # def:categorical-laplace-transform): categorical damping derived
