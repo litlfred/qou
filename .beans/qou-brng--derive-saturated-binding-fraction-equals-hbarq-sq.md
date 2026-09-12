@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-12T07:26:09Z
+updated_at: 2026-09-12T12:33:09Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2744,3 +2744,29 @@ answers nothing.
 
 **Bean stays OPEN** (rule 13a — its subject is an open conjecture). Classes A, C
 (dominant-summand sub-channel) and D remain as #7181 left them.
+
+## 2026-09-12 — the live remainder (dominant summand's own log-weight) is being TESTED — bean qou-m8f3
+
+Branch `claude/dominant-summand-extensive-test-2026-09-12`. Ursell inversion of `L(A) = log|y_λ* χ^λ*(β_A)|` (largest |term| of the trace, no choice) on the live alternating-core word for A = 2, 3, 4, proton pin, convention D. Result appended to `qou-m8f3` and, on completion, below this entry. Append-only.
+
+
+### 2026-09-12 RESULT (qou-m8f3, PR #7200) — the dominant-summand log-weight is NOT the extensive term at A ≤ 4: scope (b)
+
+For every typed cluster with A ≤ 4 the trace's dominant summand on the live alternating-core word is the ONE-ROW block `[3A]` (margin ≥ 24.6 %); its character is a product over letters (ring hom; verified 1.2e-49; `QOU/Mass/OneRowBlockLetterProduct.lean`, generic ring, uncompiled here), so `log|y_λ* χ^λ*|` = word-free `log y_(3A)` + an EXACTLY chain-edge-additive letter sum (7.4e-51). Complete-graph cumulants are the chain's missing-edge accounting (`b₃ = −b₂`, ratio −1 exactly; AME +0.81/+0.47); the only other piece of `ΔL` is the free-side argmax switch (bond-free), which is 100.6 % of ⁴He's `E₀·ΔL = 3.93 MeV`. Uniform-e₂: e₂ = −0.023 MeV, b₃(³H) = +0.483, b₃(³He) = −0.391 MeV (opposite signs on the mirror pair). No connected many-body term with nuclear content. The live remainder named on 2026-09-11 is CLOSED at A ≤ 4; at ⁶Li the dominant block is two-row `[15,3]` (E₀·ΔL = 8.5 vs 32.0 MeV) and the channel is scope (a) there. Classes B and D untouched and live. Secondary (binding-sum argmax `|yχΔ|` = BindingConcentration's `(5,1)/(6,3)/(9,3)`, two-row): uniform b₃(³H) = +1.016, b₃(³He) = +0.747 MeV (0.56×/0.72×) but typed b₃(ppn) < 0, b₄(⁴He) = −4.27 (wrong sign), b₃ monotone in N−Z — reported, NOT wired. Audit: `docs/audits/2026-09-12-dominant-summand-extensive-test.md`. Bean stays OPEN.
+
+
+---
+**Update 2026-09-12 (session ursell-partition-function, PR #7198, bean `qou-rwhv`).** The Mayer/Ursell vocabulary on the 3-body cumulant is now CLOSED, and closed the other way from the 2026-08-30 reading. The corpus `b3` is the third Ursell coefficient (with the Mayer sign, `−phi^T_3`) of the hard-core lattice gas on the nucleon sites with the interface-letter traces as pair weights, grand-canonical over sub-clusters; `b3 < 0` for EVERY bond triple in (0,1) — no 2/3 threshold — by the Ursell alternation (Lean `UrsellPartitionFunctionB3`, sorry-free). The "missing (−1)^(n−1)" is the same expansion at negative activity. So the extensive-term frontier's bullet 4 is STRENGTHENED, not contradicted: the multiplicative assembly cannot give `b3 > 0` at any `f_pn`. Within Mayer, a positive term needs an attractive channel (a letter with trace > 1; none present, scope a); outside it, a non-Mayer assembly. Magnitude untouched: the Mayer coefficient at the live chain bonds is −1.23 MeV (3H) / −0.80 MeV (3He) against AME +1.81 / +1.04. Audit: docs/audits/2026-09-12-ursell-partition-function-for-b3.md.
+
+2026-09-12 pointer: the A ≥ 6 remainder (two-row dominant block at 6Li, scope (a) in PR #7200 §5) is being tested in bean qou-vn6h, branch claude/two-row-dominant-block-a6-2026-09-12. Append-only; nothing here changes.
+
+2026-09-12 (qou-vn6h, PR #7211): dominant-summand channel measured at 5 <= A <= 7. The trace's dominant block is two-row from A = 5 ([12,3]; [15,3]; [18,3] / [15,6]), it is NOT letter-multiplicative (Lean MixedSpectrumCharacterNotLetterMultiplicative + fixed-n residual 0.09 log units + Moebius interface cumulants non-zero at every order, non-local: non-adjacent pp-nn pair 22x the adjacent pp-pp), and its connected content is ANTI-binding: -3.50 MeV at 6Li, -3.62 MeV at 7Li, against AME shortfalls of +23.5 / +27.8 MeV. B/A of the dominant summand grows 0.98 -> 1.63 from A = 4 to 7 with no plateau. So the channel supplies no positive extensive term at any A tested (A <= 4: none, #7200; A = 5-7: negative, small). Scope (a) on the physics, (b) on the non-extension of the one-row argument. Classes B and D remain the live remainder. Audit: docs/audits/2026-09-12-two-row-dominant-block-a6.md.
+
+---
+**Update 2026-09-12 (session graded-binding-sign-convention, PR #7223, bean `qou-zlra`) — a note on row D of the escape enumeration (fibre-level / higher order in q). Bean stays OPEN.**
+
+Row D was left "live, not attacked". Attacked at Vassiliev type two, on the chain, with the corpus's own functional: it does NOT supply the symmetry term through the live law. `QOU.Mass.GradedBindingFunctionalPairTerm` (sorry-free): the pair convolution `sum_{i<j} b_i b_j` that carries `(N-Z)^2` at type two is present in the BARE product for either sign and absent from EVERY product-additive functional (log, -log, alpha log) — and the live binding law is such a functional by owner ruling ("log is the unique map carrying multiplicative to additive"). So under the live law the higher orders in `q` inherit additivity order by order: the tower does not reopen row D for the chain. Measured: second differences in Z of `[h^2] log(tr_free/tr_atom)` are 0 at every A = 3..12 (both signs); of the bare `[h^2]` product they are 4.
+
+What row D still has, and it is the only live thread this leaves: `unified-iterative-correction`'s per-BLOCK log `ln|tr_lambda(prod (c sigma + d))|` is NOT product-additive even on the chain (single-block `[h^2] log` has nonzero, non-constant second differences in Z for (3,1), (3,2), (4,1); computed signs, mixed). That functional is a different object from the live law (two inequivalent log readings coexist — recorded as a collision, not resolved), and the production accumulator was not scanned (> 300 s at A = 4 here). Row D is therefore narrowed to: the per-block log functional, if the framework means it, is the one place a type-two two-bond correlation survives on the chain. Scope (b) for the live law (invariant `additive_census` + `L_chain_eq_sum_of_intra`); scope (a) for the per-block rows (11 shapes, A <= 8, UIC-shaped word).
+
+Also, for `qou-eqwg`'s open item: there is no non-commutativity inside a generator (transfer matrices commute exactly); the within-generator non-multiplicativity is the two-branch state sum, exercised only when two interface letters share a generator, which the chain never does. Audit: `docs/audits/2026-09-12-graded-binding-sign-convention.md`.

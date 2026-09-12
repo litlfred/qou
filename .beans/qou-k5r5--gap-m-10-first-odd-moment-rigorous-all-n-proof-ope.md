@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-11T15:46:32Z
+updated_at: 2026-09-12T11:29:30Z
 parent: qou-x631
 ---
 
@@ -1645,3 +1645,119 @@ is stale.
 scope-(a): a dimensionless SIGN datum. NOT a MeV (the Delta_lambda magnitude gate
 is open and untouched), NOT a physical binding-sign assertion (qou-v7ro / #6077,
 cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-).
+
+
+## 2026-09-12 — the CS step is taken on the WRONG EDGE SET (free, but small); an exact identity; and a prediction of mine refuted
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_support_restricted_cs.py`, **7/7 PASS, exit 0**, exact `Fraction` throughout, mpmath only for √ and display. Reuses #6651/#6825's edge enumeration; no new chain code. Corpus-greped first (six paths): **all three items below are absent from the committed corpus** — the algebra is one line from `qou-k5r5:1165` and nobody had taken it.
+
+### FINDING 1 — restrict Cauchy-Schwarz to `supp(g)`. It is free, and it is small.
+
+At a `g = 0` edge (`|u| = |v|`, i.e. `v = −u`) **both** `M₁`'s integrand `g·k` and `P`'s integrand `g²` vanish identically, while `Q`'s `(2−2δ)²` does not. Those edges load `Q` and nothing else. CS only ever needed the support of `g`:
+
+    M₁ = Σ_{g≠0} dμ g k = P + Σ_{g≠0} dμ g(2−2δ) ≥ P − √(P·Q'),   Q' := Σ_{g≠0} dμ (2−2δ)²
+
+so the live sufficient condition is **`Q' < P`**, strictly weaker than `Q < P`, and `supp(g)` is the **optimal** restriction in this family (CS is insensitive to any `g = 0` edge; no other edge can be dropped without changing `M₁`).
+
+**MEASURED at `n = 20`: `Q'/Q = 0.9943`**, raising `P/Q` `2.2615 → 2.2743` (**+0.57 %**) and the CS-certified share of the true margin `0.8615 → 0.8663` (+0.0048).
+
+**Do NOT read #6825's 11.55 % as this number.** That entry says the `g = 0` edges *"carry 11.55 % of `P−Q`'s negative mass at `n = 20`"* — a different denominator. Both are right: 11.55 % of `P−Q`'s **negative** mass, 0.57 % of **`Q`**. So adopting `Q' < P` costs nothing and should be done, but it improves headroom by half a percent, **not by an order**, and does not change the difficulty. The open problem is still the joint law of `(g, δ)` under Plancherel.
+
+### FINDING 2 — an exact identity, new to the corpus, and circular as a route
+
+From #6825's recorded `g² − (2−2δ)² = k(2g−k)` together with `M₁ = Σ dμ g k`:
+
+> **`2 M₁ = E_k + (P − Q)`,  `E_k := Σ dμ k² = Σ dμ (Δ Σh)²`**
+
+Verified as CONTROL 1: exact `Fraction` equality at every `n` in 4..20, no tolerance. Two readings: `E_k ≥ 0` trivially gives **`M₁ ≥ (P−Q)/2` with no Cauchy-Schwarz at all** (weaker than CS's `P − √(PQ)` at the measured `P/Q ≈ 2.24` — `0.277P` against `0.332P`, reported so the weaker bound is not mistaken for a gain); and `E_k` is the exact slack, the Dirichlet energy of `Σh` under `dμ`.
+
+**It yields no new sufficient condition by itself** — substituting `E_k = P + 2Σdμ(ΔA)(ΔD) + Q` turns `E_k > Q − P` back into `M₁ > 0`. Circular, and recorded as an identity rather than a route.
+
+### FINDING 3 — 🛑 my own stated prediction was WRONG
+
+`k = g + 2(d_u − d_v) − 2` is an **integer**, so `k² ≥ 1` off `{k = 0}` and `E_k ≥ μ({k ≠ 0})`. I wrote the prediction into the docstring *before* measuring, expecting the bound to be **cosmetic**: contents run to `O(√n)`, so `|k|` should too, and `E_k/μ` should grow like `n`.
+
+**It does not.** `E_k/μ({k≠0})` runs `1.80` (n=5) → `4.10` (n=20), global log-log slope **0.594**. The dμ-weighted mean of `k²` stays near 4, i.e. `|k| ~ 2`: **`Δ(Σh)` does not inherit the `O(√n)` scale of the contents, because `ΔA` and `ΔD` largely cancel in `k = ΔA + ΔD`.** That is a structural fact about this edge set worth keeping independently of the bound.
+
+**The exponent is NOT pinned** — the last six local slopes span `[0.315, 0.788]`, a factor 2.5, on a window ending at `n = 20`. Do not quote `√n`. And it still yields no route: the condition it buys (`Q − P < μ({k≠0})`) only helps where `Q > P`, which is not the measured regime.
+
+### What the corpus-grep found that matters MORE than any of the above
+
+**Nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap, a Poincaré inequality, or `Var_Planch(f)`** — measured zero across `docs/`, `computations/`, `.beans/`, `content/` (Lean included) for *Poincaré*, *log-Sobolev*, *conductance*. What exists is a Dirichlet-**form** identity for the **`qou-x631` kernel** (`f = dim`), **bilinear not energy**, on the **plain conductance without the `(|u|+|v|)` factor** (`..._phase5b_dirichlet_peredge.py`), plus exact chain eigenvalues `τ₁ = 2/n` (`Σc`) and `τ₃ = 3/n` (`ω₃`). Both routes now want the same missing thing, and the machinery for it is **held and uncited**: `library/arxiv-1804.03926v3` (*Weighted Poincaré inequalities … Stein kernels in dimension one*) and `library/arxiv-1704.00850v3` (*Estimating the spectral gap of a trace-class Markov operator*) — **0 citations each** across `docs/` + `.beans/` + `computations/`. Fulman's own held paper has zero hits for spectral gap / Poincaré / Dirichlet.
+
+### 🛑 CORRECTION to a figure I was carrying, caught by the same grep
+
+**`Var(Σh)/n² = 0.0099743` is the ANALYTIC ASYMPTOTIC LIMIT, not a measurement.** I had it as measured. The exact finite-`n` data is **`0.0191` (n=4) → `0.0140` (n=22)** — about **1.4× the limit** at the top of the window, still descending. Anyone using `0.00997` as a finite-`n` input is off by ~40 % at every `n` the exact table reaches. Source: `2026-08-21-covariance-kernel-M1-kappa-analytic-IO-derivation.md:92` for the limit, `..._kappa_analytic_IO.py:110` for the data.
+
+### Scope
+
+Sufficient is never necessary. Window `n ≤ 20` against a requirement of `n ≥ 79`; **nothing here is a bound over all `n`** and none of the three findings closes the gap. Finding 1 improves the live route's headroom by 0.57 %; Findings 2 and 3 are recorded results that buy no route. Path 0 (`corpus_search`) was **down** (`paper-assistant` `ENOENT`), so `emptyRoots` is unchecked and a vocabulary blind spot is not ruled out. **`qou-k5r5` stays OPEN.**
+
+### 2026-09-12 (cont.) — the DEPTH reading: the whole difficulty is depth-changing edges, and the free family is SHRINKING
+
+Same probe, now **9/9 PASS**. In cell coordinates with `b = i+j` (anti-diagonal) and `c = j−i` (content), `Σh = Σ_cells b + n`, so **`k = Δb` exactly**, and
+
+> **`b = |c| + 2m`, `m := min(i,j) ≥ 0`** — the cell's **depth** along its diagonal.
+
+Hence `k = g + 2Δm` and **`M₁ = P + 2Σ dμ·g·Δm`**. Both halves of the decomposition are already in the corpus (`d = m+1` in `..._edge_ratio_monotonicity.py:158` and `..._kappa_large_n_sampler.py:100`; *"a cell on diagonal c at depth k is (k, k+c), so i+j+1 = 2k+c+1"* in `..._kappa_derivation.py:26`) — what is new is reading `k` through it.
+
+**Two consequences.** If every cell sat at depth 0 (a hook), `k = g` and `M₁ = P > 0` **termwise** — so the entire obstruction *is* the depth. And on any edge with `Δm = 0` the integrand is `g·k = g² ≥ 0` with no inequality to solve:
+
+    M₁ = [Σ_{Δm=0} dμ g²]  +  [Σ_{Δm≠0} dμ g k]
+
+first bracket unconditionally non-negative, all negative edges confined to the second. `Δm = 0` is `δ = 1`, the value #6825 already singles out, and its recorded integer criterion independently implies no `δ = 1` edge is negative — so this derives a known fact **and prices it**.
+
+**🛑 And the price kills it as a route.** The unconditional part is **12.33 % of `M₁` at n=20, with a DECLINING share**: `0.356` (n=8), `0.271` (n=10), `0.225` (n=12), `0.173` (n=15), `0.123` (n=20). The free family **shrinks as `n` grows** and cannot carry a large-`n` proof; `87.67 %` of `M₁` sits on depth-changing edges and is uncontrolled here. Quoting the 12.33 % without the trend would suggest a foothold that is not there.
+
+**What the depth reading does buy** is a sharper statement of the open problem than `(g, δ)`: `m ≥ 0` is a *hard pointwise constraint* (`b ≥ |c|` for every cell), `m = 0` picks out the first row and column exactly, and the gap is now *"the `g`–`Δm` anti-correlation stays above `−1` uniformly"* — which is the bean's own opening `ratio → −0.62; need ratio > −1` in geometric rather than algebraic terms. CONTROL 6 checks the split is exact **and** that every `Δm = 0` edge is non-negative per edge, not in aggregate.
+
+### 2026-09-12 (cont.) — 🛑 I RETRACT my own "held and uncited machinery" recommendation: both papers are the WRONG machinery
+
+Two entries up I wrote that nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap or Poincaré inequality, and that *"the machinery for it is **held and uncited**"* — naming `library/arxiv-1804.03926v3` and `library/arxiv-1704.00850v3`. **I named them from their titles without opening them. Opened now, neither applies.**
+
+| paper | what it actually does | verdict |
+|---|---|---|
+| `arxiv-1704.00850v3` *Estimating the spectral gap of a trace-class Markov operator* | a **Monte-Carlo estimator** for MCMC diagnostics — §5 "Classical Monte Carlo", examples are a Gaussian chain, Bayesian probit and linear regression; term counts: Monte Carlo 37, estimat* 110+ | **inapplicable** — estimates a gap statistically from simulation; supplies **no analytic lower bound** on a Dirichlet form |
+| `arxiv-1804.03926v3` *Weighted Poincaré inequalities … Stein kernels in dimension one* | one-dimensional, **absolutely continuous** setting; the Stein kernel `τ` comes from a covariance identity for a real random variable **with a density**. Term counts: density 51, "dimension one" 28, absolutely continuous 9, **discrete 0, lattice 0, Markov chain 0** | **inapplicable** — the object here is a Dirichlet form on a **discrete** lattice, not a 1-d density |
+
+The second was the more plausible (Fulman's method *is* a Stein exchangeable-pair method), and it is still the wrong setting: a weighted Poincaré inequality for a 1-d density says nothing about the joint law of `(g, Δm)` on the up-down chain, which is the whole difficulty. I am not proposing a projection-to-1-d rescue; that would need the Stein kernel of the relevant marginal, which is the same unknown.
+
+**What survives and what does not.** The *measurement* stands: nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap, Poincaré inequality, or `Var_Planch(f)` — zero hits across `docs/`, `computations/`, `.beans/`, `content/`; and these two papers genuinely have **0 citations** each. What falls is my **inference** that an uncited on-topic *title* meant the missing tool was already in the building. **Title match is not applicability**, and I recommended a route on a title.
+
+So the honest status is stronger than before, not weaker: the Poincaré/Dirichlet gap for this weighted form is real **and the corpus does not hold a source that fills it** — so it is an analytic build, not a citation, which is exactly the conclusion the 2026-09-03 entry reached for the Olver/Bessel route by a different road.
+
+**Method disclosure, so this is re-checkable and not over-read:** I read section titles and term frequencies across each paper's `sections/`, not full proofs. That is enough to establish setting (1-d absolutely continuous / Monte-Carlo estimation) and therefore inapplicability to a discrete Dirichlet form; it is **not** a claim that the papers contain nothing else of use.
+
+
+## 2026-09-12 — Poincare degeneracy worry REMOVED; gap still OPEN
+
+`content/quantum-observable-universe/lean/QOU/MassTheory/WeightedDirichletPoincare.lean`
+(8 declarations, sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, zero
+warnings, `#print axioms` sorryAx 0).
+
+**The claim.** `1 <= |u| + |v|` on every up-down edge of the Young lattice, so
+the Fulman edge measure `dmu = pi(lam) J(lam,lam*) (|u|+|v|)` gives a weighted
+Dirichlet form that **dominates** the unweighted one, and any unweighted
+Poincare inequality transfers **at the same constant**.
+
+**The evidence.** `|u| + |v| = 0` forces `u = v = 0`, i.e. one diagonal carrying
+both a removable and an addable corner. `no_removable_addable_same_diagonal`
+proves no partition does — three cases on the row indices, using only that row
+lengths are antitone. Contents are carried in `Z`, so no `Nat` subtraction and
+no Durfee square is needed.
+
+**What it does NOT do, and this is the half that matters.** Poincare
+lower-bounds a **quadratic** form. `M1 = E(A, Sum h)` is **bilinear**, and the
+live sufficient condition `Q < P` needs an **UPPER** bound on `Q = E(D)`.
+Poincare bounds `P` and `Q` both from **below**, so it cannot deliver `Q < P`.
+The measured `P/Q ~ 2.24` is a structural fact about the joint law of
+`(g, Delta m)`; a one-sided bound does not reach it.
+
+It also does not supply the unweighted gap — `poincare_transfer` takes it as a
+hypothesis, because the corpus does not have one (the recorded `tau_1 = 2/n`,
+`tau_3 = 3/n` are eigenvalues of named eigenfunctions, not a spectral gap over
+all of `L^2`).
+
+**Status: OPEN.** This closes a *worry*, not the gap. The remaining routes are
+unchanged: an upper bound on `Q = Sum dmu (2 - 2 delta)^2`, or a direct
+termwise/support argument on `M1 = Sum dmu g k`.

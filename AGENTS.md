@@ -2400,8 +2400,16 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
 - **L2 is variable per observable.** Q_β target is 7.8 ppb; currently
-  measured at 1279 ppb (164.0× miss) per the dashboard (fresh run
-  2026-05-31) — the Habiro-exact 5.7 ppb result was against the
+  measured at **4.316e+8 ppb (5.535e+7× miss)** per the dashboard
+  (`per-observable-100x-status.witness.json`, 2026-09-12) — the RULED base,
+  `ε` = the Markov trace at `z_D = q³/(q²+1)`, with **zero `c_k` rungs**. This
+  read "1279 ppb (164.0× miss) per the dashboard (fresh run 2026-05-31)" until
+  2026-09-12, when item (iii) of the 2026-09-08 ruling was re-scored on owner
+  authorisation (`qou-99qc`); that figure was convention-C on the retired
+  `z = 1` cell. **Do not quote the new figure as convention D's accuracy** —
+  no ladder exists on an admissible base (`qou-cds1`, blocked on the phase
+  `qou-pdix`), and a second re-score is authorised for when one does
+  (`qou-iagg`). Quote the witness, not this paragraph — the Habiro-exact 5.7 ppb result was against the
   pre-re-pin (muon-anchored) q₀ and has not been refreshed since the
   2026-05-28 proton-anchor re-pin
   (see [`docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`](docs/audits/2026-05-30-q0-repin-stale-witness-audit.md)).
@@ -2558,9 +2566,65 @@ discipline review will catch it. Full framing:
 >   is exactly that order-independent (physical) regime.
 > - **Body-order recurrence depth ≥ 3 is forced**, and 3 terms cannot test it
 >   (`QOU.MassTheory.BodyOrderRecurrenceDepth`).
-> - **The connected 3-body Mayer/Ursell cumulant sign is threshold-forced and
->   wrong against AME**, independent of the bond set
->   (`QOU.MassTheory.MayerThreeBodySign`, bean `qou-rraz`).
+> - **The connected 3-body cumulant of the multiplicative assembly is the third
+>   Mayer coefficient of a lattice gas, and it is negative for every bond
+>   triple — no threshold** (owner-adopted wording, 2026-09-12, PR #7198).
+>   `b₃ = −φᵀ₃` exactly, where `φᵀ₃` is the third Ursell function of the
+>   hard-core lattice gas on the nucleon sites with the interface-letter traces
+>   `μ_e ∈ (0,1)` as pair weights (`QOU.MassTheory.UrsellPartitionFunctionB3`,
+>   sorry-free); by the Ursell alternation `φᵀ₃ > 0`, so `b₃ < 0` for every
+>   `f ∈ (0,1)³` — the `fpn > 2/3` escape of `MayerThreeBodySign.lt_of_b3_pos`
+>   came from leaving `P₃` free and is never met. Scope (b), invariant = the
+>   alternation. The 2026-08-30 "missing `(−1)^{n−1}`" reading is withdrawn:
+>   restoring it is the same expansion at negative activity. Within Mayer a
+>   positive term needs a bond factor above 1 (attractive channel; none in the
+>   production word — measured in #7198 and independently in #7204, whose one
+>   mechanism reaching `b > 1` is 4.0× short **against the SEMF asymmetry
+>   coefficient `a_A` (23.7 / 5.963), NOT against `b₃`** — that arc is the
+>   `δ ≤ 2 ln q` cap of #7165, a different quantity; scope a); the log assembly
+>   is exactly pairwise (`b₃ = 0`). Zero-parameter magnitudes at the live chain
+>   bonds: `−1.2277` MeV (³H) vs AME `+1.8081`, `−0.7973` MeV (³He) vs
+>   `+1.0443`. Audit: `docs/audits/2026-09-12-ursell-partition-function-for-b3.md`,
+>   beans `qou-rwhv` / `qou-rraz`.
+>
+>   🛑 **"A bond factor above 1" is NECESSARY, NOT SUFFICIENT — do not read the
+>   sentence above as "find an attractive letter and the sign follows"** (owner
+>   ruling 2026-09-12, PR #7226, bean `qou-q8vl`). The production `A = 3` word is
+>   a **chain** (`atom_braid_word_3A` lays `A−1` interfaces in a line), so `φᵀ₃`
+>   collapses to a **product**, `φᵀ₃ = g₀₁·g₁₂` — and a product does not change
+>   sign when **both** factors flip. Measured: reflecting every live bond to
+>   attractive leaves `b₃` **byte-identical** (`−0.293278112721` ³H,
+>   `−0.190468485549` ³He). A two-bond chain needs **exactly one** bond above 1,
+>   i.e. a **sign-mixed** pair (`b3corpus_chain_pos_iff`).
+>
+>   Two further traps on this bullet. **The chain is covered by NEITHER standing
+>   theorem**: `b3corpus_neg` needs all three bonds strictly inside `(0,1)` and a
+>   chain's absent bond sits at exactly `f = 1`; `wMult_b3_nonpos` is the
+>   **equal-bond** case and the chain bonds differ by ~0.105 — use
+>   `QOU.MassTheory.B3SignOneRoot.b3corpus_chain_neg`. And **a bond above 1 is not
+>   the only escape**: `AggregatorConvexity.b3Agg_nonneg_of_convexOn` gives
+>   `b₃ ≥ 0` from an aggregator convex through the origin with every bond still
+>   inside `(0,1)` (bean `qou-82mc`).
+>
+>   **The required sign-mixed pattern is the two-nucleon spectrum.** Both `A = 3`
+>   chains impose the same one — `g_pn` opposite to both like-pair bonds — which,
+>   since `B = −α·log μ > 0` iff `μ < 1`, reads *the unlike pair binds and the
+>   like pairs do not*: deuteron bound, diproton and dineutron unbound. The live
+>   model binds all three (dineutron **most** bound), so `b₃ > 0` and the correct
+>   two-body isospin structure are **one condition, not two**. Both derived bond
+>   families are excluded from supplying it — production letters by `d ≤ 0`
+>   (`SingleCrossingAlwaysBinds.interface_mem_Ioo`), isospin projectors by an
+>   **identity**, `μ₊ + μ₋ = 1` (`InterfaceScalar.mu_sum_eq_one`), so an
+>   attractive channel forces its partner to `μ < 0` where the log is not real.
+>
+>   **Do NOT "fix" this by adopting `σ²`.** It does reach `μ = (q⁴+1)/(q²+1) > 1`
+>   for every `q > 1`, but the topological argument that selects it assigns it to
+>   the *distinguishable* pair, which bean `qou-kj4v` records as running backwards
+>   (it **binds the diproton and unbinds the deuteron**); choosing it because it
+>   yields `b₃ > 0` is selection against the target. And **`μ(σ^m)` does not
+>   alternate by parity** — measured `m = −2…+8`, `μ > 1` at `m = 2, 4, 5, 6, 7, 8`,
+>   so `+5` and `+7` are odd. Audit:
+>   `docs/audits/2026-09-12-b3-sign-one-root-and-the-insufficient-escape.md`.
 >
 > **Deuteron leg — 🟧 OWNER RULING A (2026-08-29):** the deuteron knot is the
 > canonical braid closure (trefoil / Hopf, `Vol = 0`); **the deuteron binding is

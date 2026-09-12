@@ -836,3 +836,142 @@ probes, …) and never reach this dispatch.
 Verified unchanged after the edit: 69 tuple + 124 `_ExactCOO` carriers,
 `unified_iterative_correction(1,1,k=7) = -2.020000814981466`,
 `atom_character_raw (4,2,1) = -0.8256259468119246`.
+
+
+## Steps 4b and 2 resolved (2026-09-11, PR #7187) — one by removal, one by a refusal
+
+Both were put to the owner first under the 2026-09-07 ask-the-owner directive
+(neither increases precision; neither is corpus-derived) and both approved.
+
+### The dead scipy arms are gone
+
+#6807 established the branch unreachable and left the removal out as
+behavioural. Removed now, **measured twice before touching anything**:
+
+    CENSUS, every sigma of every family in _PARTITION_TABLE
+      sigma matrices examined   1528
+      carrier types             tuple 408, _ExactCOO 1120
+      sparse AND exact          1120 / 1120
+      carriers with .toarray    0
+
+    INSTRUMENTED arm counts, kernel off, uic k=4..7 + acr/csp on 3 sparse
+      exact COO arm     184 hits
+      scipy BLAS arm      0 hits
+      .toarray densify    0 hits
+
+Six sites, one class: 3 never-read `_issparse` bindings, `_is_sparse_sigma`'s
+`issparse` arm, the 3 sparse-BLAS `else` arms with their vacuous guards,
+`_crossing_in_partition`'s `toarray` densify, and the two symbols that died
+with them (`_sigma_is_exact`, the `mpf` type import). 98 deletions.
+A/B vs `origin/main`: **byte-identical on all nine quantities**.
+
+I told the owner "~20 lines". It was 98 across 6 sites — the class was right,
+the size understated ~5x.
+
+### Step 2 is REFUSED as specified, and the real gap was a missing wire
+
+Step 2 says *"export `dense_dense_mul_mpfr` via PyO3, route `_matmul_dim`
+through it"*. Two measurements say don't.
+
+**A per-call FFI cannot pay at the dims that reach `_matmul_dim`.** Only
+DENSE carriers reach it, and they are small — dims {1:20, 2:2, 3:2, 4:2, 5:6,
+6:3, 7:2, 8:2, 9:4, 10:4, 14:6, 15:2, 16:1, 20:3, 21:4, 27:2, 28:4}, max 28,
+69 families. The boundary convention is decimal strings, so a call marshals
+two matrices in and one out. Python-side marshalling as a fraction of the
+multiply it replaces: **4.18x at dim 1, 1.06x at dim 6, 0.57x at 14, 0.26x at
+28.** At dim <= 6 the marshalling costs more than the whole multiply — 35 of
+the 69 dense families — so the call is a net loss however fast Rust is.
+
+**The batched primitive that WOULD pay already exists and is already
+exported.** `lp_accumulator_step_traces_mpfr` takes one chain per step as
+`(c_str, d_str, gen)` and applies `M <- c*(M @ sigma) + d*M`, returning
+per-step `(trace, log_norm)` with the `max|M| > 1e80` rescale inside. That is
+this loop: `M @ (c*sigma + d*I)` is the same operation.
+`unified_iterative_correction` and `atom_character_raw` both call it through
+`_lp_kernel_steps`. **`_contrib_single_partition` never did** — which is
+exactly why #6807 measured it at 25 `_matmul_dim` calls per partition against
+0 for the other two. The file already carries the note for the same defect one
+fix earlier ("this loop was left behind"); it was left behind twice.
+
+Wired, no new Rust. Measured same-process, `_HAS_LP_KERNEL` toggled per arm:
+
+    dim  sparse   kernel_s   python_s   speedup     rel_diff
+      1   False     0.0005     0.0004      0.9x          0.0
+     14   False     0.0017     0.1031     61.5x    4.042e-50
+     27   False     0.0041     0.7883    192.7x    1.144e-49
+     27   False     0.0042     0.5847    138.7x    6.004e-50
+     35    True     0.0079     0.2062     26.1x    4.487e-50
+     35    True     0.0076     0.3983     52.6x      1.0e-50
+    TOTAL           0.0260     2.0811     80.1x
+
+**Two things not to skip.** At dim 1 the kernel is 0.5-0.9x — at best a wash,
+sometimes SLOWER, and 20 of 69 dense families are dim 1 (0.2 ms each, ~4 ms
+total against 2.08 s saved, so no guard, but it is a real regression on those
+families). And the result MOVES by ~1e-49: the kernel computes over the RUST
+seminormal family, the Python path over `_build_ysn_matrices`. Far below the
+1 ppQ L1 target, not zero. A first pass compared through `mp.nstr(., 25)` and
+read "byte-identical" — that was the rendering, not the values, the same
+measure-at-the-wrong-precision trap this bean's own memory entry records.
+
+The honest framing is CONSISTENCY: `_contrib_single_partition` was the only
+one of the three consumers still on a different seminormal family from its
+two siblings.
+
+### Where that leaves the bean's five steps
+
+    1  fixed on main by a prior session (the bean's list still says step 1)
+    2  REFUSED as specified; the gap it names closed by wiring the existing
+       kernel — 80x, no new Rust
+    3  landed, #6794 + #6807
+    4  REFUSED — the dim>=8 numpy branch measures 2.1x FASTER, not 31% slower
+    5  the q-Gaussian tier is documented-unreachable-by-DEFAULT on main, and
+       deleting it would remove a parameterised capability, not dead code:
+       it is live at a smaller k_exact (169 partitions at k_exact=4, 164 at 5,
+       155 at 6). Do NOT delete it.
+
+The engineering arc is complete. **Bean left OPEN** — its title claims
+"binding compute cannot scale", and nothing here measures the scaling claim
+end to end; that is the owner's call, not a consequence of these two commits.
+
+---
+
+## 2026-09-12 — the first number in this arc that speaks to the bean's TITLE
+
+Re-running the kernel A/B after the third rebase reached a partition every
+earlier run of it had missed: **dim 2310**, the largest in `_PARTITION_TABLE`.
+
+       dim  sparse    kern_s       py_s   speedup     rel_diff   sign
+         1   False    0.0006     0.0004      0.7x          0.0     ok
+        14   False    0.0017     0.1034     60.6x    4.042e-50     ok
+        27   False    0.0042     0.5821    138.2x    1.144e-49     ok
+        27   False    0.0044     0.8336    191.1x    6.004e-50     ok
+        35    True    0.0079     0.2105     26.7x    4.487e-50     ok
+        35    True    0.0080     0.4255     53.4x      1.0e-50     ok
+        70    True    0.0261     1.4024     53.7x    3.761e-49     ok
+      2310    True   35.5638  1106.0876     31.1x    3.486e-51     ok
+     TOTAL           35.6167  1109.6456     31.2x
+
+**On dim 2310 the Python arm takes 18 min 26 s for a SINGLE partition; the
+kernel takes 35.6 s.** That is the regime the bean's title is about. Every
+figure this bean has carried until now — the 80x, the 25-calls-per-partition,
+the whole dead-scipy census — was measured at dim <= 35, where a partition
+costs under a second either way. They are not wrong; they were answering a
+smaller question than the title asks.
+
+**The 80x and the 31.2x are NOT a regression and must not be read as one.**
+They are totals over different selections: 6 rows topping out at dim 35 vs
+8 rows topping out at 2310, where one row is 99.7% of both arms' time. Quote
+the per-row figures. The `rel_diff` column — the correctness claim — is
+identical to every digit shown across all four runs on every shared dim.
+
+**TRAP, and it cost a 20-minute run today.** `timeout N python3 ... | tail`
+turns a partial result into a BLANK one: the cap fires, `tail` never flushes,
+and the output file is empty. The first re-run died exactly this way at 1200 s
+and reported nothing at all — not a truncated table, nothing. Since the
+dim-2310 row alone costs ~18.4 min, any short-budget run of this A/B loses
+precisely the row that matters and looks like a clean small-dim result.
+Launch it unbuffered, straight to a file, with a real budget.
+
+**What this still does NOT establish.** It measures one partition at both
+arms, not the end-to-end binding compute the title claims cannot scale. The
+bean stays OPEN.

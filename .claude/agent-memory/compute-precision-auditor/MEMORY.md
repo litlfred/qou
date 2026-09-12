@@ -158,6 +158,18 @@ CWD-relative write that strays the witness to the repo root, and one genuinely
 stale consumer. **Zero were environment drift.** Full worked cases:
 `measurement-hygiene-traps.md`.
 
+## TRAP — `chi_all_lambda_any` carries its OWN `dps=50`, not the ambient `mp.dps`
+
+`chi_general_word.chi_all_lambda_any(word, n, *, dps=50, …)` computes at its
+keyword default whatever `mp.mp.dps` the caller set, so a probe at 60 dps
+that omits `dps=` gets 50-digit characters and only its `y_λ` at 60. Symptom
+(measured 2026-09-12, bean `qou-vn6h`): an Ursell round-trip at A = 7 —
+cumulants of magnitude ~37 with binomial weights up to 35 cancelling to 2.7 —
+failed a `1e-50` check at ~1e-48 while the same check passed at A = 4 in
+#7200, because four digits of cancellation ate the 50 that were actually
+there. Pass `dps=DPS` explicitly at every call site; a green at small A is
+not evidence the precision is what the header says.
+
 ## STABLE — long-compute logging discipline
 
 Any background Python expected to run > 5 min (mass table beyond ⁴He,

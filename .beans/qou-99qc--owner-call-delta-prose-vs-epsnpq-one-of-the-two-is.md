@@ -1181,6 +1181,164 @@ SCOPE: measured on THESE two multisets. It prices the order lever; it does not
 exclude Option E.
 
 
+## 2026-09-12 — item (iii) is PRICED. It degrades three rows by ~5–7 orders, and that is the ruling working as designed.
+
+Consequence (iii) of the 2026-09-08 ruling — re-score the L2 dashboard rows
+`Q_β` / `m_n` / `Δ_pn` on the ruled base — has been declined twice as
+ask-before-change, which is correct: it moves the L2 headline, so it is neither
+a precision increase nor corpus-derived. But it was declined **without the
+numbers**, i.e. the owner was being asked to authorise a change whose size
+nobody had measured. Measured now, changing nothing:
+[`qbeta_zd_rescore_price_probe.py`](computations/qbeta/qbeta_zd_rescore_price_probe.py)
+(6/6), witness `qbeta-zd-rescore-price.witness.json`.
+
+**Calibration first, because the numbers are worthless without it.** The probe
+reproduces the dashboard's CURRENT `m_n` and `Δ_pn` rows from its CURRENT
+`Q_β` row through the producer's own relation
+`m_n = m_p(substrate) + Q_β + m_e`: predicted 0.895408 / 650.486 ppb against
+the committed 0.9029 / 658.0 ppb — **ratios 0.9917 / 0.9886**. So the dependent
+rows ARE a plain function of the scored `Q_β`, and the re-score below is the
+row, not a sketch.
+
+| cell | `Q_β` ppb | `m_n` ppb | `Δ_pn` ppb |
+|---|---|---|---|
+| `z = 1` (published, **inadmissible**) | 1 678 440.4 | 1 397.3915 | 1 015 161.0 |
+| **`z_D` (RULED)** | **4.3157176e+8** | **359 350.35** | **2.6105673e+8** |
+| `z = q` (augmentation) | 1.2470029e+8 | 103 832.09 | 75 430 750.0 |
+
+**The ruled cell is the worse admissible one — 3.4609× farther from CODATA than
+the augmentation.** That is not an argument against the ruling; it is the
+anti-fit directive visible in the numbers. Ranking these cells by residual is
+exactly the selection-against-the-target the directive forbids, and the ruling
+turned on what `ε` *means* under D7, not on which column is smaller.
+
+**🛑 THE LOAD-BEARING CAVEAT: these are BASE figures, zero `c_k` rungs.** No
+ladder exists on an admissible base (`qou-cds1`, blocked on the phase
+`qou-pdix`). On the `z = 1` base the five rungs bought 1 677 569 → 37.7 ppb —
+about 4.5 orders — so a `z_D` ladder could move these a long way. **Do not
+quote the `z_D` column as "convention D's accuracy"**; that is the same
+mislabelling this bean already had to retract once.
+
+**Producer staleness found, reported not fixed.**
+[`per_observable_100x_status.py`](computations/per_observable_100x_status.py)
+still says *"Which functional to adopt is an open owner decision (bean
+qou-99qc)"* — ruled four days ago — and its emitted
+`best_admissible_err_pct` names **`z=q (augmentation)`** as the best admissible
+cell. The second is the sharper one: a reader of that witness field takes the
+augmentation for the adopted functional, and the ruling chose `z_D`. Both are
+one edit away, and both change an emitted witness field, so they go to the
+owner with (iii) rather than under exemption 2.
+
+**Correction to my own earlier count in this bean's arc:** I reported this probe
+as "8/8 checks". The total was a hardcoded `5 + 3`; there are **six**
+`check()` calls. It is now derived from the recorded list, and the six verdicts
+are carried in the witness as assertions (it previously emitted **0
+assertions** for a probe whose entire content is checks).
+
+**Status stays `todo`** per §13a — the element half (Option E / the phase
+`qou-pdix`) is an open question, and (iii) is now waiting on the owner rather
+than on a measurement.
+
+
+## 2026-09-12 (same day, later) — item (iii) is DONE. The owner authorised the re-score; the three rows are on the ruled z_D base.
+
+Put to the owner with the prices above. Answer: **both** "re-score now to z_D"
+**and** "re-score after qou-pdix" — read as *move now, and move again once a
+ladder exists*. First half landed (PR #7221, `606e7e304b1`); second half is bean
+**`qou-iagg`**, blocked on `qou-pdix` → `qou-cds1`.
+
+| row | before (`z = 1`, laddered) | after (`z_D` base) | miss factor |
+|---|---|---|---|
+| `Q_β` | 1279 ppb | **4.316e+8 ppb** | 5.535e+7 |
+| `m_n` | 0.9029 ppb | **3.594e+5 ppb** | 7.034e+7 |
+| `Δ_pn` | 658.0 ppb | **2.611e+8 ppb** | 6.021e+7 |
+
+Landed figures match the prices to <1e-3 relative; the probe's new CHECK 6
+asserts it against the live witness, so a future drift is caught rather than
+assumed. **The L2 headline is unchanged at 1/6 scoreable** — all three already
+failed, so this degrades three misses without moving the count.
+
+**Derived from q₀, not inverted from CODATA.** `_qbeta_ruled_base()` evaluates
+`|tr_M(Δ_S)(z_D)|·E₀` with `tr_M(Δ_S)(z) = q²/2 − qz − 1 + z/q + 1/(2q²)` and
+`E₀ = m_e/(q(q−1))`, then calibrates against this bean's own probe witness
+(`−43.157175 %`, agreement 2.9e-7). Reading that recorded residual and
+inverting it would have been arithmetically exact and circular — the row's
+residual would have been a pass-through of a number computed against CODATA.
+If the calibration fails, the producer publishes the **old** row and says so.
+
+**Question 2 answered too: fix both, renaming the field.**
+`best_admissible_err_pct` → **`ruled_cell_err_pct`**, repointed from the
+augmentation to `z_D`, and the "open owner decision" prose is gone from the
+producer (0 occurrences). The rename was the owner's pick for a reason worth
+recording: the old name carried *two* defects, not one — it named a functional
+the ruling did not choose, **and** "best" ranked the admissible cells **by
+residual**, which is the selection-against-the-target the anti-fit directive
+forbids. Both cells stay visible in `err_pct_by_functional`.
+
+**🛑 Still a base, zero rungs.** Every affected row now carries that scope in
+its own `note` rather than cross-referenced from the `Q_β` row — the
+"fixed in one place, survives in the others" failure this corpus keeps
+recording. Do not quote these as convention D's accuracy.
+
+**Correction to my own verification claim, and it reached the PR body.** I
+reported the first `precision-gates.sh --changed` run as **exit 0**. It was
+not: that run was piped through `tail`, so the 0 was `tail`'s status. Re-run
+un-piped it is **exit 1** — but the reds are pre-existing, not mine: the `RED:`
+line is byte-identical before and after the producer change, both ratchets
+report `NEW dirty 0 / REGRESSED 0`, none of the gate's NEW items names either
+of my files, and `main` is independently recorded red on the ratchet (#7161
+open). PR body corrected.
+
+**Status stays `todo`** per §13a — the element half (Option E) and the phase
+(`qou-pdix`) are open questions. What has closed is item (iii).
+
+
+## 2026-09-12 — 🛑 CORRECTION to my own re-score entry above, plus the anatomy of the 257x and three undone migrations
+
+**The entry above quoted "1279 ppb → 4.316e+8 ppb" as the re-score's effect. That
+comparison is the one the corpus forbids, and I made it.** 1279 ppb is
+**post-ladder** on `z = 1`; 4.316e+8 ppb is a **base**. The apparent 337,429× is
+two factors:
+
+| factor | what it is |
+|---|---|
+| **1312×** | the **missing `c_k` ladder** (`z=1` base 1 678 440 ppb → `z=1` published 1279 ppb) |
+| **257×** | the **functional** (`z=1` base → `z_D` base) |
+
+So **most of the degradation is "no ladder yet"** (`qou-cds1` / `qou-pdix`), not
+convention D. **Base to base, D costs 257×. Never quote the 337,429×.**
+
+**Why the gap is structural, not a botched substitution.** `tr^z(Δ_S)` rewrites
+exactly as `h²/2 − z·h` with `h = q − 1/q` (verified to 1e-60 against the
+2026-08-29 affine form). The `z` term dominates by **5.86×**, so `Q_β` is nearly
+*proportional* to `z`. Inverting for CODATA gives **`z* = 0.99850`** — **0.15 %
+from the inadmissible `z = 1`**, while `z = q` is +11.17 % and `z_D` is −38.64 %
+away. **The published 0.168 % was reachable only at `z ≈ 1`, the coordinate sum.**
+It was a property of an inadmissible functional, not of the framework. Scope-(a):
+this excludes `Δ_S` *paired with an admissible functional*, not convention D.
+
+**The missing-normalisation hypothesis is REFUTED** — `Σ_λ y_λ f^λ = 1.0` exactly
+under D at n = 3, 6, 9, 12 (worst |·−1| < 1e-50). It is the first thing a next
+agent will reach for; do not spend a session on it.
+
+**Three migrations the ruling did not get** — new beans, all directions recorded:
+
+- **`qou-wfvl` (high)** — the **element** is census-derived (`Δ_S`, short NF) while
+  the owner's γγ ruling the same day forbids census selection. The γγ-selected
+  nucleon word gives **−17.496 %**, 2.5× closer *and* derived (PR #7212).
+  **Owner decision; subsumes the accuracy question.**
+- **`qou-46ys` (high)** — the **binding/mass channel is still convention C**, by
+  its own source comments (`gap_a3_overshoot_robustness_check.py:52-67`). And it
+  is the most exposed channel: `z` *is* the `y_λ`, binding is the same Frobenius
+  pairing, and D's two-row truncation keeps **7 of 77 blocks at A=4** (0.043 % of
+  the dimension). Nobody owned this.
+- **`qou-y3bm`** — `E₀` had two live forms (+0.9915 %); **unified 2026-09-12 on
+  owner instruction** in `qbeta_e0.py`, tower-summed canonical. The tower
+  **series** is assumed, not derived — canonical by ruling, open by proof.
+
+Probe: `qbeta_zd_gap_anatomy_probe.py` (9/9). Audit:
+`docs/audits/2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md`.
+**Status stays `todo`** (§13a).
 ## 2026-09-12 — BOTH routes to Delta are now priced, and both are negative
 
 PR #7212. The owner's word-selection ruling (2026-09-08, qou-ales) applied to

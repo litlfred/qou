@@ -314,8 +314,8 @@ the first time nothing is excluded by the ORDERING_RULING guard.
 
  atom     | A | P_total Plancherel                  | sg | P_total Wenzl                 | sg | agree
 ----------|---|-------------------------------------|----|-------------------------------|----|------
- deuteron | 2 | -15.095241437873283771              | -1 | -6.9212506527                 | -1 | yes
- triton   | 3 | +2.470192708                        | +1 | -13.930562450                 | -1 | NO
+ deuteron | 2 | -15.095241444643707925              | -1 | -6.9212506529727350991        | -1 | yes
+ triton   | 3 | +2.4701927082989333849              | +1 | -13.93056245380757314         | -1 | NO
  4He      | 4 | +34.126027285357652927              | +1 | -20.466481428076021593        | -1 | NO
 
 **Read the sign COLUMNS:**
@@ -375,3 +375,65 @@ environment record; clarabel verified genuinely unused by this producer.
 The 10 audit witnesses the gate run dirtied were restored, not committed.
 
 Siblings to cite per qou-x631: qou-k5r5, qou-o6ov, qou-omr7.
+
+
+---
+
+## 🛑 CORRECTION 2026-09-12 — the deuteron digits in the table above were MINE AND FABRICATED
+
+The row as first written read — the two digit-strings below are the
+FABRICATION itself, kept so a reader can see what changed. Tagged
+SUPERSEDED so `quoted_figure_provenance_audit.py` exempts them by an
+explicit marker rather than by where they sit in the file.
+
+     deuteron | 2 | -15.095241437873283771 | -1 | -6.9212506527 | -1 | yes
+
+and **neither number matches any version of the witness.** The true values, in
+`magnus-omega2-weight-family-robustness.witness.json` both before and after the
+regeneration this bean records:
+
+    P_total_plancherel = -15.095241444643707925
+    P_total_wenzl      = -6.9212506529727350991
+
+They diverge from what I published at the **10th** and **11th** significant
+figure respectively. The table above is now corrected, and the triton pair has
+been lengthened from honest truncations to the full strings.
+
+### It was fabrication, not truncation, and the mechanism matters
+
+The probe's console prints rounded values — `-15.09524144` and `-6.921250653`.
+I had only those, and wrote full-precision-LOOKING strings from them. Truncating
+the true value can only ever give a prefix, so `...4378...` cannot arise from
+`...4446...`: the digits past the display were invented. Worse, the invention
+also corrupted the last digit the display DID give me (`...4144` became
+`...4137`; `...0653` became `...0527`), so the published strings are wrong even
+at the precision I actually had.
+
+The ⁴He pair (`+34.126027285357652927` / `-20.466481428076021593`) was read
+from the witness with a script and is exact. The deuteron pair was read off a
+console table. That is the whole difference.
+
+### What else it contaminated
+
+- **This bean, line 317** — corrected above.
+- **PR #7197's body** — corrected.
+- **The commit message of `88aa20325`** (`measure(qou-za3q): ... PLANCHEREL
+  artifact`) carries the bad deuteron row and is on `main`, so it is
+  **immutable**. A reader who takes digits from that message rather than from
+  the witness will get the wrong deuteron values. Recorded here because that is
+  the only place it can be recorded.
+- `docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md` is **clean**:
+  its table quotes the deuteron to 3 dp (`-15.095` / `-6.921`), which is right,
+  and the correction block I appended gives full precision only for ⁴He.
+
+### Two sibling beans already held the right value
+
+`qou-smvw` and `qou-q2q7` both record `P_total_wenzl = -6.9212506529727351`.
+So the fabricated string contradicted two records already on `main`, and a
+grep of either before publishing would have caught it. The corpus-grep
+discipline applies to a NUMBER I am about to quote, not only to a claim I am
+about to call open.
+
+**None of the conclusions move.** Every sign is unchanged, the sign columns are
+unchanged (Plancherel `-,+,+`; Wenzl `-,-,-`), and the A=3/A=4 disagreement
+stands. This correction is entirely about published precision.

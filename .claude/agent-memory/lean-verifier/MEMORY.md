@@ -464,6 +464,9 @@ merge is not a current claim.
 | root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3480** on the `a792c46d01b` seed (3470 on 2026-09-04; 6990 on 2026-09-03) | 2026-09-11 |
 | per-paper mathlib oleans (the OTHER half — check, but it may not EXIST) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **0 — `content/*/lean/.lake` had `build/` and NO `packages/`**, so ONE mathlib tree, no shadowing, no union mirror (2846 on 2026-09-04) | 2026-09-11 |
 | whole restore, fresh container | `find . -name '*.olean' \| wc -l` | **6492** = root 3758 + QOU 2703 + UGB 29 + Fred2005 2 | 2026-09-11 |
+| restore ALREADY present + bg build running | as above | **10408** = root packages 3758 + per-paper build 2806 + per-paper packages 3813. Root count 3758 matched the seed EXACTLY, so the restore was in place and **no fetch was needed** — check before spending 1.7 GiB | 2026-09-12 |
+| union mirror over both trees, one `MathlibExt` file | `cp -aln` per §17 | **6648 oleans, 5.1 G apparent, `df` free UNMOVED** (12 G before and after) — hardlinks; also immune to the concurrent `lake build` | 2026-09-12 |
+| lean-direct, `MathlibExt/HeckeTowerWitness.lean` (warm) | `time lean -DautoImplicit=false -s 65536 <f>` | **2.5 s** wall / 3.3 s user; each rebuilt dep 2.7-2.9 s | 2026-09-12 |
 | cold vs warm lean-direct, `QBeta/ConventionDAdmissibleRoots.lean` | `time lean -DautoImplicit=false -s 65536 <f>` | **1m05s cold / 4.5 s warm**; `user` 3.3 s both — cold PAGE CACHE, not a rebuild | 2026-09-11 |
 | cold vs warm `lean`-direct, one Mathlib file | `time lean <file>` | 1m52s cold / 4.7 s warm; `user` 29 s / 4 s | 2026-09-03 |
 | lean-direct rebuild of the H3-Gram cone (cold) | `lean -o … QOU/{Shared/DetFin,Machinery/MarkovTraceOnHecke,Machinery/HeckeH3GramNondegeneracy,Interactions/GramMatrixH3Symbolic}.lean` | 330 / 245 / 69 / 207 s | 2026-09-03 |
@@ -558,6 +561,27 @@ The shell's own command line contains the pattern, so `pkill -f ptolemy_class_sw
 terminates the caller. `ps | awk '/[p]tolemy.../'` does not help: the bracket trick stops
 the awk PROGRAM matching itself, not the surrounding bash command line. Cost two turns.
 Kill by PID.
+
+**Same defect in the DETECTION direction, and AGENTS.md hands it to you (2026-09-12).**
+§17a says *"First move in a fresh session: `pgrep -f 'lake build'`"* — and that command
+**self-matches**, because the harness wraps every call in a `bash -c` whose command line
+contains the pattern. Measured: it returned two PIDs, both my own shell, alongside a
+`lean -o` query that did the same; the genuinely-running `lake` was a *third* process the
+noise nearly buried. **Filter the harness out** —
+`ps -eo pid,etime,cmd | grep -E '(lake|lean) ' | grep -v shell-snapshots` — or read
+`/tmp/qou-lean-build-status.json`, which names the step (`update`/`build`) and the attempt
+count without any matching at all.
+
+## STABLE — the SessionStart `lake build` log may already CONFIRM your diagnosis (2026-09-12)
+
+AGENTS.md notes `/tmp/qou-lake-build.log` is kept; the point worth having is that it is an
+**independent second opinion from the canonical path**, free. Verifying one new file, the
+background build (not commissioned by me, and *failed* — status `attempts: 5`) had reached
+`✖ [6641/6642] Building QOU.MathlibExt.HeckeTowerWitness` with the **identical** error my
+lean-direct gate found, at the same `188:59`. One `grep '✖'` turned a single-harness claim
+into two agreeing methods, and simultaneously showed the other **6641** modules building.
+A `status: failed` in that JSON is therefore not a reason to ignore the log — read it
+*first* and check whether the sole failure is the file you were sent to verify.
 
 ## TRAP — `lean-library-sweep.py` measures the CONTAINER when the olean tree is empty (2026-09-07)
 

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-07T18:16:29Z
-updated_at: 2026-09-11T20:57:23Z
+updated_at: 2026-09-12T11:52:35Z
 parent: qou-6g7j
 ---
 
@@ -42,3 +42,25 @@ Queue 3 dispatched 20:15Z (merge-coordinator, worktree): #7133 (with a roast-vs-
 | #7121 | 5408f53d2bc | 8 commits (2 became empty), 14/14 bean unions checked |
 
 Verified by the parent with git cherry origin/main: 0 unmerged on all four queue-3 branches. Coordinator #3 opened memory PR #7195 (TRAPs: worktree hook, toolless MCP + REST, gates exit 2 without qou_substrate, disk arithmetic) — NOT merged, outside queue authorisation; owner's call, alongside #7132.
+
+
+### Queue 4, 2026-09-12T05:10Z — the memory PRs and #7196 merged on the owner's 'merge and continue' (04:42Z)
+
+| PR | main sha |
+|---|---|
+| #7132 (merge-coordinator memory: git cherry first) | 91923763f9d |
+| #7195 (merge-coordinator memory: worktree hook / REST / gates exit 2) | f56e1f17f81 — MEMORY.md union, 200 lines |
+| #7196 (queue-3 bean records) | 396baaeb4ea |
+
+All three replay-verified 1/1; parent confirmed 0 unmerged with git cherry. The line above saying #7195 was 'NOT merged, owner's call' is a dated record; superseded here. Takeover ledger closed: 14 PRs merged across queues 1–4.
+
+
+### Queue 5, 2026-09-12T11:50Z — the two next-front PRs and the ledger/AGENTS.md PR merged on the owner's 'merge, adapt agents, continue' (11:18Z)
+
+| PR | main sha | note |
+|---|---|---|
+| #7200 (dominant-summand extensive test, qou-m8f3) | e7a4b91cb75 (head) | probe 14/14; OneRowBlockLetterProduct.lean parent-verified |
+| #7198 (Ursell partition function for b3, qou-rwhv) | 03baa603e87 (head) | 5 commits; UrsellPartitionFunctionB3.lean sorry-free, probe 11/11 |
+| #7201 (ledger beans + AGENTS.md bullet-4 rewording) | 73f8cdc7444 (head) | 'adapt agents' = the owner adopted the #7198 wording; landed as its own commit |
+
+Parent verified each with git cherry origin/main: 0 unmerged on all three branches. Branch claude/stalled-agents-em-linking-jilmbv restarted from main 73f8cdc7444. Running total: 17 PRs merged across queues 1–5.
