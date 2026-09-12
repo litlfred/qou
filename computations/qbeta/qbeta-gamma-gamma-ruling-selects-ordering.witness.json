@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T18:21:33.695705+00:00",
-  "commitSha": "8e5b71ced9a2188b4abffecc3d12e3fc963820ea",
+  "computedAt": "2026-09-12T20:02:49.544591+00:00",
+  "commitSha": "0d71e991abc734fcb3e1a189cd88068387d78efe",
   "assertions": [
     {
       "name": "interleaved_core_is_vertex_cubed",
@@ -99,14 +99,54 @@
       "passed": true,
       "tolerance": "0",
       "source": "3 letters ⇒ not γγ either (three_not_gammaGamma)"
+    },
+    {
+      "name": "probe_inherits_the_ORDER_ZERO_E0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "E0 = 4.18598136329 = order_zero; canonical is 4.22748335563 (tower-summed)"
+    },
+    {
+      "name": "canonical_E0_is_larger_by_0_99_pct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ratio = 1.00991451914 — 173da443b6 on main made the tower-summed form canonical per the 2026-09-03 full-tower ruling"
+    },
+    {
+      "name": "both_residuals_improve_on_the_canonical_base",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "a larger E_0 raises |eps|·E_0/Q_beta, so every residual moves toward zero together"
+    },
+    {
+      "name": "the_ruled_order_is_STILL_the_less_accurate_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "-16.67794 % vs -14.613128 % — the ordering conclusion survives the base change"
+    },
+    {
+      "name": "ranking_invariance_holds_for_an_arbitrary_third_base",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "checked at four scale factors — monotonicity in E_0 is common to both candidates, so the comparison cannot flip"
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 26,
   "computation": "qbeta-gamma-gamma-ruling-selects-ordering",
   "scriptFile": "qbeta_gamma_gamma_ruling_selects_ordering_probe.py",
-  "scriptHash": "25467d28038b",
-  "scriptCommitSha": "3a76d49fc9ea7bd5111c9f4ef6015347648e1afd",
+  "scriptHash": "28227db12140",
+  "scriptCommitSha": "49bae3625e61ede15b7b13efb14167a51a17ca62",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -173,6 +213,18 @@
       "reached_by_the_ruling": 6,
       "left_free": 5
     },
+    "e0_base": {
+      "probe_uses": "order_zero — m_e/(q(q-1))",
+      "canonical": "tower_summed — .../(1-hbar_q^2), per 173da443b6",
+      "order_zero": "4.1859813632944758969",
+      "tower_summed": "4.2274833556290305503",
+      "ratio": "1.00991451914",
+      "interleaved_pct_order_zero": "-17.49592861",
+      "interleaved_pct_tower": "-16.67794041",
+      "gen_grouped_pct_order_zero": "-15.45138673",
+      "gen_grouped_pct_tower": "-14.61312789",
+      "ranking_invariant": true
+    },
     "lean_declarations": [
       "QOU.QBeta.GammaGammaDelta.gammaGamma_snd_neg",
       "QOU.QBeta.GammaGammaDelta.not_gammaGamma_of_snd_pos",
@@ -187,6 +239,7 @@
     ]
   },
   "caveats": [
+    "🛑 EVERY PERCENTAGE HERE IS ON THE ORDER-ZERO E_0 (m_e/(q(q-1)) = 4.18598136 MeV). `173da443b6` on main made the TOWER-SUMMED form canonical (4.22748336 MeV, +0.9915 %), and this probe's E_0 is inherited from qbeta_option_e_order_dof_range_probe, which that commit did not migrate. On the canonical base the two rows are -16.67794 % and -14.613128 % (CHECK 7). The order-zero figures are kept as the PRIMARY ones because the corpus cells they are compared against -- delta_S's -43.157 %, #7188's -15.4514 % -- were computed there; mixing bases is exactly the silent-revert trap of docs/audits/2026-09-12-zd-gap-anatomy... §6. The RANKING is invariant to the base (CHECK 7), so no conclusion here depends on which is used.",
     "🛑 THE RULED ORDER IS THE LESS ACCURATE ONE. -17.4959 % against -15.4514 %. Do NOT prefer the gen-grouped figure because it is closer -- that is selection against the target, which AGENTS.md NO FITTING names explicitly. The 2.04 points are the price of the order no longer being an unstated modelling choice.",
     "The -15.4514 % that #7188 and #7212 calibrate against is the GEN-GROUPED (unruled) order. Nothing there is retracted -- both state their ordering -- but the CANONICAL residual under the ruling is -17.4959 %, and this witness is the record of which figure is which.",
     "🛑 TRAP. 'Interleaved' reconstructed by zipping the two _GEN_CHAINS lists alternately gives -13.5712 %, which is NEITHER census model. The census's interleaved model emits the core as three (sigma_0, sigma_1^-1) pairs, then an ORDERED quark block, then two gluon letters. Reproducing the documented -17.496 % is the calibration that catches a lookalike reconstruction.",

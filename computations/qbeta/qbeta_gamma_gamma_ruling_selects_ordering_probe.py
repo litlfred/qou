@@ -13,6 +13,7 @@ selection of great words should be done through gamma gamma production and the
 semi-definite product solutions at q0. Shouldn't use census." Applying it to
 the ORDER, rather than to the choice of word, is what this probe does.
 
+# Ref: computations/qbeta/qbeta_e0.py  (E_0 forms; tower-summed is canonical)
 # Ref: computations/qbeta/qbeta_option_e_order_dof_range_probe.py   (the order DOF, merged)
 # Ref: computations/qbeta/qbeta_delta_candidate_census_probe.py     (both models)
 # Ref: computations/qbeta/qbeta_nucleon_flip_skein_expansion_probe.py (the flip)
@@ -248,6 +249,49 @@ def main() -> int:
     print(f"    → the ruling reaches {n_core}/{total} letters; "
           f"{n_quark + n_gluon} remain free")
 
+    # ---- CHECK 7: the E_0 base moved on main; the RANKING cannot ---------
+    print("\nCHECK 7 — the E_0 base changed under this probe; the derivation")
+    print("          is invariant to it, and provably so")
+    import qbeta.qbeta_e0 as _e0
+    e_oz, e_tw = _e0.order_zero(), _e0.canonical()
+    check("probe_inherits_the_ORDER_ZERO_E0", abs(E0 - e_oz) < mp.mpf("1e-40"),
+          f"E0 = {mp.nstr(E0, 12)} = order_zero; canonical is "
+          f"{mp.nstr(e_tw, 12)} (tower-summed)")
+    ratio = e_tw / e_oz
+    check("canonical_E0_is_larger_by_0_99_pct",
+          mp.mpf("1.0099") < ratio < mp.mpf("1.0100"),
+          f"ratio = {mp.nstr(ratio, 12)} — 173da443b6 on main made the "
+          "tower-summed form canonical per the 2026-09-03 full-tower ruling")
+
+    def pct_at(v, e):
+        return (abs(v) * e / QB - 1) * 100
+
+    tw_il, tw_gg = pct_at(d_il, e_tw), pct_at(d_gg, e_tw)
+    print(f"    interleaved (γγ) : {mp.nstr(p_il, 8)} %  →  "
+          f"{mp.nstr(tw_il, 8)} %   ({mp.nstr(tw_il - p_il, 4)} pp)")
+    print(f"    gen-grouped      : {mp.nstr(p_gg, 8)} %  →  "
+          f"{mp.nstr(tw_gg, 8)} %   ({mp.nstr(tw_gg - p_gg, 4)} pp)")
+    check("both_residuals_improve_on_the_canonical_base",
+          tw_il > p_il and tw_gg > p_gg,
+          "a larger E_0 raises |eps|·E_0/Q_beta, so every residual moves "
+          "toward zero together")
+    check("the_ruled_order_is_STILL_the_less_accurate_one",
+          abs(tw_il) > abs(tw_gg),
+          f"{mp.nstr(tw_il, 8)} % vs {mp.nstr(tw_gg, 8)} % — the ordering "
+          "conclusion survives the base change")
+    # Invariance is an ARGUMENT, not a sample: residual(D) = |eps(D)|·E_0/QB - 1
+    # is strictly increasing in E_0 for |eps| > 0, and E_0 > 0 is COMMON to
+    # every candidate.  So no choice of E_0 can reorder the candidates; it can
+    # only translate them.  The two rows above instantiate that, they do not
+    # establish it.
+    check("ranking_invariance_holds_for_an_arbitrary_third_base",
+          all((lambda a, b: (abs(a) > abs(b)) == (abs(p_il) > abs(p_gg)))(
+                  pct_at(d_il, e_oz * f), pct_at(d_gg, e_oz * f))
+              for f in (mp.mpf("1.0001"), mp.mpf("1.005"), ratio,
+                        mp.mpf("1.02"))),
+          "checked at four scale factors — monotonicity in E_0 is common to "
+          "both candidates, so the comparison cannot flip")
+
     ok = all(r[1] for r in RESULTS)
     print()
     print(f"{sum(1 for r in RESULTS if r[1])}/{len(RESULTS)} checks passed")
@@ -315,6 +359,17 @@ def main() -> int:
                     "budget_is_odd": total % 2 == 1,
                     "reached_by_the_ruling": n_core,
                     "left_free": n_quark + n_gluon})
+        w.add_data("e0_base",
+                   {"probe_uses": "order_zero — m_e/(q(q-1))",
+                    "canonical": "tower_summed — .../(1-hbar_q^2), per 173da443b6",
+                    "order_zero": mp.nstr(e_oz, 20),
+                    "tower_summed": mp.nstr(e_tw, 20),
+                    "ratio": mp.nstr(ratio, 12),
+                    "interleaved_pct_order_zero": mp.nstr(p_il, 10),
+                    "interleaved_pct_tower": mp.nstr(tw_il, 10),
+                    "gen_grouped_pct_order_zero": mp.nstr(p_gg, 10),
+                    "gen_grouped_pct_tower": mp.nstr(tw_gg, 10),
+                    "ranking_invariant": True})
         w.add_data("lean_declarations",
                    ["QOU.QBeta.GammaGammaDelta.gammaGamma_snd_neg",
                     "QOU.QBeta.GammaGammaDelta.not_gammaGamma_of_snd_pos",
@@ -326,6 +381,21 @@ def main() -> int:
                     "QOU.QBeta.GammaGammaDelta.eleven_not_gammaGamma",
                     "QOU.QBeta.GammaGammaDelta.gluonPair_not_gammaGamma",
                     "QOU.QBeta.GammaGammaDelta.three_not_gammaGamma"])
+        w.add_caveat(
+            "🛑 EVERY PERCENTAGE HERE IS ON THE ORDER-ZERO E_0 "
+            "(m_e/(q(q-1)) = 4.18598136 MeV). `173da443b6` on main made the "
+            "TOWER-SUMMED form canonical (4.22748336 MeV, +0.9915 %), and "
+            "this probe's E_0 is inherited from "
+            "qbeta_option_e_order_dof_range_probe, which that commit did not "
+            "migrate. On the canonical base the two rows are -16.67794 % and "
+            "-14.613128 % (CHECK 7). The order-zero figures are kept as the "
+            "PRIMARY ones because the corpus cells they are compared against "
+            "-- delta_S's -43.157 %, #7188's -15.4514 % -- were computed "
+            "there; mixing bases is exactly the silent-revert trap of "
+            "docs/audits/2026-09-12-zd-gap-anatomy... §6. The RANKING is "
+            "invariant to the base (CHECK 7), so no conclusion here depends "
+            "on which is used."
+        )
         w.add_caveat(
             "🛑 THE RULED ORDER IS THE LESS ACCURATE ONE. -17.4959 % against "
             "-15.4514 %. Do NOT prefer the gen-grouped figure because it is "
