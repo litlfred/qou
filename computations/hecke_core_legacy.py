@@ -1837,7 +1837,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     (float, list-of-dicts) if return_per_step.
 
     🛑 THE RETURN VALUE CHANGED ON 2026-09-12 (owner ruling, bean
-    `qou-jgx7`; PR #7251).  Until then this function returned a GATED sum
+    `qou-21oc`; PR #7251).  Until then this function returned a GATED sum
     admitting only partitions with `final_tr_sign <= 0`, on a
     complementary-slackness argument that is now REFUTED sorry-free.  It
     now returns the UNGATED sum over every enumerated partition, which is
@@ -2134,7 +2134,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             # The per-step tightness filter would be a heuristic approximation
             # of this; ... the final sign gate is applied in Pass 2 below."
             #
-            # CORRECTED 2026-09-12 (bean `qou-jgx7`; PR #7251).  There is no
+            # CORRECTED 2026-09-12 (bean `qou-21oc`; PR #7251).  There is no
             # final sign gate any more, and the complementary-slackness
             # justification for the one that used to be here is REFUTED
             # sorry-free -- see the Pass-2 block below for the four
@@ -2175,7 +2175,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
         # is a Perron-Frobenius ASYMPTOTIC approximation that supplies a
         # `log_trace` and no matrix, so there is no derived rule saying what
         # its contribution should be, and inventing one to move the number
-        # would be selection, not derivation.  Tracked as bean `qou-jgx8`.
+        # would be selection, not derivation.  Tracked as bean `qou-ai7v`.
         #
         # Consequence for a reader: the fallback tier contributes exactly
         # zero to every total this function returns, at every k in
@@ -2207,7 +2207,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             # `cumulative_ungated_MeV`, NOT `cumulative_MeV` (renamed
             # 2026-09-07, bean `qou-sv7h`).
             #
-            # UPDATED 2026-09-12 (bean `qou-jgx7`): this running total and the
+            # UPDATED 2026-09-12 (bean `qou-21oc`): this running total and the
             # function's return value now AGREE at the last row, because the
             # Pass-2 sign gate has been removed.  The rename is kept: the name
             # still says truthfully what the field is, and the field's whole
@@ -2297,7 +2297,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # not look for a replacement selection that restores the old numbers --
     # that is selection against the target.
     #
-    # Owner ruling 2026-09-12 (bean `qou-jgx7`).  #7237 independently marks
+    # Owner ruling 2026-09-12 (bean `qou-21oc`).  #7237 independently marks
     # the gate asserted-not-derived in the content block.
     #
     # The gated sum is still COMPUTED and reported, under a name that says
@@ -2701,7 +2701,7 @@ def unified_iterative_correction_jet(Z, N, jet_max,
     `docs/audits/2026-05-24-hecke-core-canonical-audit.md` row 63), so
     changing it would move no published number while costing a re-run
     nobody consumes.  Do not read the gate's survival here as evidence it
-    is justified.  Tracked as bean `qou-jgx9`.
+    is justified.  Tracked as bean `qou-px38`.
 
     Architecture:
       For j = 1, 2, ..., jet_max:

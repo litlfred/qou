@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The wrong sign is BIASED by the Pass-2 gate -- but NOT forced by it.
 
-RETRACTION 2026-09-12 (bean `qou-jgx7`).  THE TITLE CLAIM OF THIS PROBE IS
+RETRACTION 2026-09-12 (bean `qou-21oc`).  THE TITLE CLAIM OF THIS PROBE IS
 REFUTED, by the experiment its own subject made available.
 
 The Pass-2 gate was DROPPED from `unified_iterative_correction` on 2026-09-12
@@ -157,7 +157,7 @@ def main() -> int:
             logratio = l + mp.log(abs(t)) - mp.log(e["dim"])
             big = logratio >= 0                      # |Tr| >= d
             # The UNGATED sum: every partition contributes, no sign filter.
-            # Added 2026-09-12 with the gate drop (bean `qou-jgx7`) -- see the
+            # Added 2026-09-12 with the gate drop (bean `qou-21oc`) -- see the
             # RETRACTION in this file's docstring.  Same terms, no selection.
             ungated_sum += mp.mpf(str(e["C_lambda_resolvent_MeV"])) * logratio
             if t > 0:
@@ -223,7 +223,7 @@ def main() -> int:
         "C_lambda >= 0 on every partition; the gate kept exactly Tr<=0; and "
         "Tr<=0 almost never has |Tr| >= d (3.4% against 34.1%) because "
         "Tr(I) = +d, so the gated subset is more negative than the slack one. "
-        "RETRACTED 2026-09-12 (bean qou-jgx7): the earlier conclusion that "
+        "RETRACTED 2026-09-12 (bean qou-21oc): the earlier conclusion that "
         "B < 0 is FORCED by the gate is refuted. The gate was dropped (owner "
         "ruling; its CS justification refuted sorry-free in PR #7251) and every "
         "atom's UNGATED sum is negative too, and LARGER in magnitude, so "
@@ -234,7 +234,7 @@ def main() -> int:
     w.add_data("per_atom", rows)
     w.add_data("retraction_2026_09_12",
                "The Pass-2 gate was DROPPED from the producer on 2026-09-12 "
-               "(owner ruling, bean qou-jgx7) after its complementary-slackness "
+               "(owner ruling, bean qou-21oc) after its complementary-slackness "
                "justification was refuted sorry-free (PR #7251). This probe's "
                "title claim -- that the wrong sign is FORCED BY the gate -- is "
                "thereby refuted: every atom's UNGATED sum is negative too, and "

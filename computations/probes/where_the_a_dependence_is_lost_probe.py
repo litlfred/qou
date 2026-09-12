@@ -36,7 +36,7 @@ traces are strongly A-dependent.**
 `unified_iterative_correction` accumulates `cumul_total` over partitions in
 Pass 1.  When this probe was written, Pass 2 then replaced it with
 `gated_total`, the sum over the partitions whose final trace is "tight"; that
-sign gate was DROPPED 2026-09-12 (owner ruling, bean `qou-jgx7`) after its
+sign gate was DROPPED 2026-09-12 (owner ruling, bean `qou-21oc`) after its
 complementary-slackness justification was refuted sorry-free (PR #7251), so
 `cumul_total` is now the return value and the gated sum survives only as the
 diagnostic `gated_total_DISPROVED_SELECTION_MeV`.  **This probe's conclusion is
@@ -186,7 +186,7 @@ def main() -> int:
             _, steps = H.unified_iterative_correction(
                 Z, N, return_per_step=True, k_max=k, k_exact=k)
             last = steps[-1]
-            # Key renamed 2026-09-12 (bean `qou-jgx7`): the Pass-2 sign gate
+            # Key renamed 2026-09-12 (bean `qou-21oc`): the Pass-2 sign gate
             # was dropped, so `raw_total_MeV` is now also the return value and
             # the gated sum survives only as an explicitly-scoped diagnostic.
             # This probe's Layer 3 compares the two DELIBERATELY, so it keeps
