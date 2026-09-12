@@ -381,7 +381,10 @@ Siblings to cite per qou-x631: qou-k5r5, qou-o6ov, qou-omr7.
 
 ## 🛑 CORRECTION 2026-09-12 — the deuteron digits in the table above were MINE AND FABRICATED
 
-The row as first written read
+The row as first written read — the two digit-strings below are the
+FABRICATION itself, kept so a reader can see what changed. Tagged
+SUPERSEDED so `quoted_figure_provenance_audit.py` exempts them by an
+explicit marker rather than by where they sit in the file.
 
      deuteron | 2 | -15.095241437873283771 | -1 | -6.9212506527 | -1 | yes
 
