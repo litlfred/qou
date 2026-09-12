@@ -3,8 +3,9 @@
 title: convention-C audit skips _deprecated, but two deprecated producers are still named by content
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-29T19:36:56Z
-updated_at: 2026-08-29T19:36:56Z
+updated_at: 2026-09-08T07:45:35Z
 ---
 
 
@@ -115,3 +116,5 @@ braid-word error. A citation.
 So the convention-C blind spot has **no live dependency today**. The detector
 stays, because the category will recur the next time a producer is deprecated
 while its numbers are already written into a block.
+
+## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.

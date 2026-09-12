@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-05T18:28:40Z
+updated_at: 2026-09-08T08:50:42Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1003,3 +1003,76 @@ the existing element `Δ = 𝓑_n − 𝓑_p`**. It should be stated with that s
 *if the element stays `Δ`, then `z_D`*. If the element is the thing that moves,
 the root question is downstream of a different choice and my recommendation does
 not bind.
+
+
+## 2026-09-08 — Option E has a SHARP acceptance test, and it is aimable
+
+`computations/qbeta/qbeta_option_e_required_level_probe.py` (23/23), witness
+`qbeta-option-e-required-level.witness.json`. Scope-(a). Wires nothing, selects
+nothing, proposes no element.
+
+THE REFRAME. On the H_3(q) normal-form basis the Markov trace is
+`TR(z) = [1, z, z, z^2, z^2, z(hz+1)]`, so for a FIXED element `Delta` the
+prediction is QUADRATIC in z. Requiring it to reproduce Q_beta therefore does
+not leave a free choice -- it DETERMINES z. So "which element" and "which
+functional" are not independent questions: each candidate Delta names the
+functional it would need, and by the Wenzl relation that functional is a LEVEL
+(r = 1 augmentation, r = 2 convention D; r = 1.1238831038 is why z = 1 fails).
+
+MEASURED, on the corpus's own candidates (imported from
+`qbeta_delta_candidate_census_probe`, not re-derived):
+
+    candidate                  level 1      level 2     required r
+    delta_S short NF           +12.470 %    -43.157 %     1.1257859
+    nuc9 build_nucleon_nf      +13.083 %    -30.936 %     1.1343880
+    nuc11 interleaved          +39.324 %    -17.496 %     1.4600767
+    nuc11 gen-grouped          +39.324 %    -15.451 %     1.4912011
+    16 constructed readings    +39.324 %       (varies)   1.1948 .. 1.2165
+
+20 required levels; ZERO within 1e-3 of an admissible one; closest approach
+0.126 away.
+
+TWO RESULTS THAT WERE NOT WHAT I WENT LOOKING FOR.
+
+1. LEVEL 1 IS BLIND TO BRAID ORDER. eps_aug is multiplicative, hence a product
+   over letters, hence order-independent. Interleaved and gen-grouped carry the
+   same typed-crossing multiset in a different order and agree to 20 digits at
+   level 1 (-0.26038764179012080207) while differing in the third digit at
+   level 2. All 16 assignment readings likewise share ONE augmentation. So an
+   Option E element differing from an existing one only by ordering or by quark-
+   generator assignment is, at level 1, the same number. To move the level-1
+   value you must change the crossing MULTISET, not the braid.
+
+2. THE BRACKETING IS UNIVERSAL, AND THAT IS THE OBSTRUCTION. On every candidate
+   level 1 overshoots Q_beta and level 2 undershoots it, so by IVT the required
+   level lies strictly BETWEEN the two admissible ones -- which is exactly why
+   it is never one of them. This makes Option E's acceptance test aimable:
+
+       AN ELEMENT THAT CLOSES OPTION E MUST HAVE ITS LEVEL-1 AND LEVEL-2 VALUES
+       ON THE SAME SIDE OF Q_beta.
+
+   A candidate that brackets is rejectable without solving anything.
+
+DELIBERATELY NOT A SEARCH. Enumerating elements until one lands on r = 1 or 2
+would be selection against the target, i.e. a fit under AGENTS.md NO FITTING.
+The 16-variant family is reported as a RANGE for that reason; its best-landing
+member is not a result.
+
+A CALIBRATION DEFECT FOUND EN ROUTE, already flagged by the census but worth
+stating in one line: the census's \`net\` is the COORDINATE SUM, and it differs
+from tr^{z=1} by exactly h*(e^- coordinate) -- proved symbolically here, before
+any pin. Only the gen-grouped model has e^- = 0, so the corpus's "coordinate sum
+= tr at z=1" identification holds on that model alone.
+
+THE OWNER CALL IS UNCHANGED. This narrows Option E; it does not decide which
+functional eps is. That is still yours, and still the question of whether D7's
+scoping of convention D to the decay channel reaches the choice of functional
+WITHIN that channel or only the convention its objects are expressed in.
+
+## 2026-09-08 — OWNER DECISION (chat, AskUserQuestion on PR #7159 session): the AUGMENTATION.
+Option presented and selected: *'1. Decide ε in Q_β (qou-99qc) — Augmentation σ↦q (+12.47 %), z_D trace (−43.16 %), or retract Q_β; I recommend the augmentation.'* The owner selected it (together with three other items). Recorded reading: ε(Δ) := the augmentation σ ↦ q (option B of 2026-09-05-qbeta-functional-decision-options.md §3), i.e. Q_β base = 0.8798906 MeV, +12.470 %. Note the selection endorsed an option that carried the agent's recommendation; if the owner intended only 'decide it', this line is the place to overrule.
+Consequences: (i) the published 0.17 % closed form is retired as the base — cite it only as the C-frame / z=1 historical cross-check; (ii) qou-cds1's ladder re-derivation now has its base (the augmentation), so S1 can start on the phase question (qou-pdix); (iii) dashboard rows Q_β / m_n / Δ_pn are to be re-scored on the augmentation base and stamped ADMISSIBLE-AUGMENTATION — NOT done in this session (witness sweep needs the producer under D; ask-before-change); (iv) AGENTS.md scoping note updated to record the ruling. Status stays todo until (iii) lands.
+
+## 2026-09-08 (later) — the selection above is IN TENSION with D7, per 13bb8243d8 on main (qbeta_augmentation_is_a_markov_trace_probe.py): the augmentation IS the Markov trace at z = q, so 'which functional' = 'which Markov parameter', and D7 (convention D governs the decay channel; D = two-row truncation) selects z_D (−43.157 %), the augmentation being the one-row truncation (y_(2,1) = 0) and not D. The owner selected the augmentation on an option written before that commit was known. Owner confirmation requested in chat; neither base wired until it arrives. Default if nothing: the record stands as 'augmentation selected, D7-tension flagged', and no witness moves.
+
+## 2026-09-08 (final) — OWNER RULING: ε := the Markov trace at z_D = q³/(q²+1) (option C), following D7. Put to the owner with both options framed after 13bb8243d8; answer: 'A. z_D — follow D7'. Base 0.4447004 MeV, −43.157 % vs CODATA — a documented honest miss on the canonical base, not a fit. The augmentation (+12.470 %) is the other admissible point, proportional (α=(q⁴+1)/(q²+1)²). Consequences: (i) published 0.17 % retired as base (z=1 cell), historical C-frame cross-check only; (ii) qou-cds1's ladder base is z_D; S1 reduces to the phase (qou-pdix); (iii) dashboard rows Q_β / m_n / Δ_pn to be re-scored on z_D and stamped ADMISSIBLE-zD — NOT done this session (producer under D; ask-before-change); (iv) AGENTS.md scoping note, precision-goals.md, cheat-sheet row 11 and the 2026-09-08 audit §8 all record this. Status stays todo until (iii) lands.

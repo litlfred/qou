@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-08T09:01:27Z
+updated_at: 2026-09-11T15:07:15Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2493,3 +2493,95 @@ So the forward route I proposed one turn earlier — *compute `w₃` for L6a4 fr
 Verification note for whoever touches this next: a bare `lean`-direct pass is **not** sufficient after a rename — a dependent compiles against the cached olean, which still carries the old name. Build the renamed module into a hardlinked shadow first, then compile the dependents against that. All four are green; axioms unchanged; no `sorryAx`.
 
 ## Claimed 2026-09-08 ~09:00Z by session qou-vyvt (owner authorised overlap with sibling #7155 Avenue 2). Angle: the SURVIVING route named in this bean — linking (mutual) vs self-energy (self-linking) amplitudes — approached from the three bounds that landed today: #7165 (bond-cut identity: all layout dependence of a positive pair-additive count is delta*n_pn, and no convex interface supplies the symmetry energy), #7174 (the residual is 98.6 percent a UNIFORM factor, undecidable against a uniform bond rescaling at fixed law), #7155 (every expressible edge set is a linear layout, and a linear layout has no bulk). Distinct from #7155: that PR excludes edge sets; this front asks what object supplies the extensive term GIVEN the exclusion, i.e. why the binding multiplier is the mutual linking count while the mass multiplier is the self-linking weight lw.
+
+--------
+
+## 2026-09-11 (session qou-vyvt, front `brng`, PR #7181) — the extensive term, attacked from the complement of #7165. One class DECIDED, scope-(b). The bean stays open.
+
+Owner-authorised overlap with #7155; intent posted there naming the distinct
+angle. #7155 excludes edge sets *inside* the bond-count class; this front asks
+what lives *outside* it.
+
+### The candidate enumeration, and which #7165 hypothesis each escapes
+
+`QOU/Hecke/BondCutSymmetry.lean` excludes **positive pair-additive bond
+counts**. Its two load-bearing theorems name their hypotheses, so the live
+complement is readable off them rather than guessed:
+
+| # | class | hypothesis of #7165 it escapes | status |
+|---|---|---|---|
+| A | genuine 3-body / higher connected cumulant | the `bondSum` SHAPE — `bondSum` is literally `e_pp·n_pp + e_pn·n_pn + e_nn·n_nn`, three terms | **heavily blocked already.** `MayerThreeBodySign` (sign threshold-forced, wrong against AME, bond-set independent); `BrunnianTripleExhaustion.no_carrier_reproduces_b3` (`b₃/b₂ = M−3` is an integer for every crossing count `M`, measured ratio is in (0,1) — no carrier of any `M`); `BodyOrderRecurrenceDepth` (depth ≥ 3 forced, 3 terms cannot test it) |
+| B | a bond energy that is **not sign-definite** (`e_t < 0`, i.e. `b_t > 1`) | `bondSum_nonneg`'s `0 ≤ epp`, `0 ≤ epn`, `0 ≤ enn`; hence `bondSum_ne_semf_neutronMatter` | **live, smallest escape, and it is the one the physics wants** — a repulsive bond is what unbinds neutron matter. Not attacked here. Note `qou-ib3g` already measured that the framework *can* produce `b > 1`: at crossing multiplicity `m = 2` both `b_pp` and `b_pn` exceed 1, i.e. a negative bond energy. So the class is not merely conceivable, it is realised. |
+| C | not a bond count at all — a **trace / spectral** object, `Σ_λ y_λ χ^λ Δ_λ` | BOTH at once: not the `bondSum` shape, and `0 ≤ n_t` fails because `Δ_λ = (−1)^{n(λ)}·dim V_λ` is **signed** | **this is what I attacked.** Its *multiplicity* sub-channel is now excluded (below); its *dominant-summand* sub-channel is untouched and is the live remainder |
+| D | fibre-level / higher order in `q` (a Habiro element whose order-zero rendering is the observable) | every #7165 statement is at order zero | live, not attacked here. Note the 2026-09-03 owner ruling makes the full tower mandatory, so this class is not optional in the long run |
+
+### What was decided, and it is a negative
+
+**`QOU/Mass/MultiplicityCountingBound.lean` + `QOU/Mass/MultiplicityNotExtensive.lean`
+— 11 theorems, sorry-free, `lean`-direct exit 0 (`-DautoImplicit=false -s 65536`)
+in import order, every declaration on exactly `[propext, Classical.choice,
+Quot.sound]`, no `sorryAx`.**
+
+A trace sum over `λ ⊢ 3A` can be large two ways: one summand large, or many
+summands. The second — the **multiplicity channel** — is capped by the triangle
+inequality at `log(card)`, for any signs, any weights, any braid word. That
+bound is one-sided *in the direction that decides it*: cancellation only makes
+the sum smaller, and the claim under test is that many summands make the
+binding bigger.
+
+With `card = p(3A)` and Hardy–Ramanujan `log p(n) ≤ π√(2n/3)` — carried as an
+explicit `_of_` hypothesis, not proved — the channel is `O(√A)`.
+**Sub-extensive. It cannot be the extensive term.**
+
+Three forms, none turning on the undetermined `E₀`:
+
+* `sqrt_lt_linear_of_sq_lt` — explicit threshold `A > (c/a)²`, not a limit;
+* `card_ge_exp_of_linear_le_log_card` — to supply rate `a` the summand count
+  must be `≥ exp(a·A)`, **exponential**, against `p(3A) = exp(O(√A))`;
+* `sqrt_law_shortfall` / `sqrt_per_nucleon_antitone` — the scale-free form.
+
+### Measured (`computations/brng_multiplicity_channel_bound_probe.py`, 9/9, 70 dps, proton pin, exact integer partition counts, AME2020 as `Decimal`)
+
+* **R1** discharges the Hardy–Ramanujan hypothesis numerically for every
+  `A ∈ 2..400` with exact counts — tightest at `A = 2`, slack 3.885.
+* **R2** exact counts sit strictly *below* the asymptotic bound everywhere
+  (ratio 0.382 at ²H → 0.876 at ²³⁸U), so using them is conservative.
+* **R3** (`E₀`-dependent, labelled): cap/B = 0.449 (¹²C), 0.225 (⁵⁶Fe),
+  0.141 (²³⁸U) — falling.
+* **R4** ⁵⁶Fe needs `10^50.6` summands, `p(168)` gives `10^11.4` — short by
+  **39.2 orders**; ²³⁸U short by **159.0 orders**.
+* **R5 headline, `E₀` cancels**: normalising at ¹²C, the measured binding ratio
+  outruns the multiplicity ratio by **1.140 at ¹⁶O rising monotonically to
+  3.191 at ²³⁸U**. A constant mismatch would be a *scale* error; a growing one
+  is a *shape* error — and per #7174 / `qou-v8ct` the scale is undecidable at
+  fixed law, so only a scale-free argument can settle this.
+
+**Where it does NOT bite, recorded as its own assertion rather than buried in a
+table: at `A = 2` the cap EXCEEDS the binding by 4.56×** — `p(6) = 11` summands
+is more than the `exp(B/E₀) = 1.7` required. That is not a defect; it is what
+the explicit threshold says. With exact counts the crossing falls between
+`A = 2` and `A = 4`, so the exclusion bites from ⁴He up and strengthens
+monotonically.
+
+### Scope, and what stays open
+
+**Scope-(b) structural exclusion** — the invariant is the triangle inequality
+plus sub-exponential growth of `p(n)`, so it excludes the *ingredient*
+(multiplicity of the partition sum), not one construction's magnitude. It
+excludes that channel **alone**.
+
+**The live remainder, and it is now sharper than before**: the extensive term,
+if the trace sum carries one, must live in the **dominant summand's own
+log-weight** `log|y_λ χ^λ(β_A)|`. The atom word on `3A` strands has length
+`Θ(A)`, so a single character's log *can* grow linearly — right growth class.
+This is an **independent, unconditional** reason for the concentration that
+`QOU/BraidKnot/BindingConcentration.lean` argues from LP sparsity: there,
+concentration is a property of the chosen linear program; here it is forced by
+counting, whatever program is written.
+
+Classes B and D are untouched and stay live.
+
+**The saturated-fraction ≈ 0.95·ℏ_q² match was not used, not wired, not forced,
+and no route was ranked by its residual.** Nothing existing moved.
+
+**Bean stays OPEN** (rule 13a — its subject is an open conjecture).

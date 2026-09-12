@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T15:43:09Z
-updated_at: 2026-09-04T02:24:50Z
+updated_at: 2026-09-11T14:54:24Z
 ---
 
 ## Measured 2026-09-03 on main `26bd234527` — and mostly already owned
@@ -311,3 +311,23 @@ This container needed `mpmath`, `numpy`, `scipy`, `sympy` and `pip install -e
 tools/qou-substrate` before the gate would run at all — without them the
 preflight **refuses** rather than reporting green, which is the guard behaving
 correctly and is worth not "fixing".
+
+
+## RE-MEASURED 2026-09-11: pristine main is ELEVEN blocking gates, was ten
+
+Full `scripts/precision-gates.sh` (no --changed) in a throwaway worktree at
+origin/main 492a90a42, unpiped exit = 1:
+
+  RED: q0-anchor flip | q0-anchor refill ratchet | import-time dps ratchet |
+       never-raises-dps ratchet | float64-padding ratchet | raw-float64 ratchet |
+       reference-literal ratchet | witness-value copy ratchet |
+       q0-value drift ratchet | CODATA stale-edition | mixed mpf/f64 -> serializer
+
+Eleven. The bean's own lesson applies to its own figure: quote the LIST, not the
+count, so the next re-measure computes a delta against named gates instead of
+inheriting a number. Ten -> eleven cannot be attributed here because the earlier
+entry recorded nine/ten names only partially.
+
+TRAP measured the same day: `precision-gates.sh | tail -N` returns TAIL's exit
+code. A run piped that way reports `exit 0` while the script itself exits 1.
+Read the `^RED:` line; never the exit status of a pipeline.

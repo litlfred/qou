@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-18T20:53:26Z
-updated_at: 2026-08-18T22:13:49Z
+updated_at: 2026-09-08T07:45:44Z
 ---
 
 Found by running the FULL `scripts/precision-gates.sh` (not `--changed`) on
@@ -52,3 +52,5 @@ knot-trace-field-degree-guard-counterexample, this branch's
 gswz_epsm_per_element_representative, and main's
 gswz_epsm_root_ambiguity_criterion — so neither side's count was right for
 it. Regenerated rather than hand-picked, since it is a generated audit output.
+
+## 2026-09-08: audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 lists this with qou-82ur as a byte-identical pair. Diffed: NOT identical — this bean is the one-count case (gswz_program_convention_immunity), 82ur the general staleness + 08-25 re-measurement. Cross-referenced, neither scrapped.

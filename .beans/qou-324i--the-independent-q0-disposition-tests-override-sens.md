@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-09-07T18:07:32Z
+updated_at: 2026-09-08T07:45:37Z
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
@@ -327,3 +327,5 @@ After draining qbeta-ck-basis-constrained-pslq / a3-magnitude / toffoli-lp-stabi
 The 10th, deltalambda/s5so3-geometric-wlambda-a4-helium (NEW, landed in the interim 1289 commits), is INDETERMINATE by anchor-diff and is THIS BEAN'S detector territory, not a bounded fix: boilerplate reason + parameters.q0 = the PROTON value, but the anchor-diff shows 0 substantive fields move — AND even parameters.q0 does not change muon vs proton, so the QOU_Q0_ANCHOR override does NOT reach its q0 (a hardcoded literal or an import path). That is exactly defeater #1/#2: a byte-identical flip does NOT prove independence when the override is not in the path. Needs q0_independence_checker --flip-validity (which names the defeater), not an anchor-diff. Handed here.
 
 CHEAP PRE-FILTER for the systematic sweep: all 3 genuine drains carried the identical copy-paste stamp block — the comment '# no q0 in this producer's cone; stamp provenance only.' + q0_anchor=False. That signature spans 372 producers (grep), MOST legitimately independent (the q0_anchor=False branch exists for the ~196/287 that never reach q0, qou-iph3). It is not a defect list — but it is a cheap first sieve: intersect it with 'producer actually reads q0 / witness carries a load-bearing q0 field' before spending an anchor-diff. The mechanical 372-producer sweep is this bean's single-owner drain; not overlapping it.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

@@ -5,7 +5,8 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-08T03:32:29Z
+updated_at: 2026-09-11T15:46:32Z
+parent: qou-x631
 ---
 
 
@@ -1517,3 +1518,130 @@ says a proof must operate at the CLT scale and produce a correlation coefficient
 move, if any, is the integrated-covariance form `f668c434a97` introduced for the epic
 (`E_Q[X] = integral_0^1 Cov_{Q_t}(log f^lam, X) dt`), which restores first order where the direct
 tilt expansion is ~1/3 nonlinear. That is untested for `M_1` and is the one un-eliminated lead.
+
+
+---
+
+## 2026-09-11 — the tilt derivative is now PROVED in Lean, sorry-free (PR #7178)
+
+Owner asked, of PRs #7120/#7126: *"all assertions proved in lean?"* **The answer was
+NO** — both were Python probes whose controls are arithmetic self-checks, not theorems.
+This entry records the promotion of the one assertion that warranted it.
+
+**`content/quantum-observable-universe/lean/QOU/MassTheory/TiltDerivativeCovariance.lean`**,
+for an ARBITRARY finite family over an ARBITRARY field (not for `n <= 22`):
+
+| declaration | statement | base ring |
+|---|---|---|
+| `tiltNum_derivative_eval_one` | `N'(1) = sum_i w_i f_i h_i` | `[CommRing R]` |
+| `tiltNum_eval_one_eq_zero_iff` | `N(1) = 0 <-> wMean w f = 0` | `[Field R]` |
+| `tilt_deriv_eq_wCov` | `N'(1)/D(1) = wCov w h f` | `[Field R]` |
+
+So the probe's `n <= 22` check is now a fact about the CONSTRUCTION rather than about
+the range sampled.
+
+**The content is not the quotient rule.** It is that the derivative of the tilted mean
+at `x = 1` is a COVARIANCE rather than a weighted moment, and that it is so PRECISELY
+BECAUSE the tilted statistic has vanishing weighted mean. With `f = omega_3` that
+hypothesis is exactly `E_Planch[omega_3] = 0` — the same fact `qou-ujil` uses to
+ELIMINATE limit-shape arguments. The obstruction is re-used as the asset.
+
+**Anti-vacuity.** `tilt_deriv_ne_wCov_of_mean_ne_zero` gives a concrete two-point family
+with nonzero total weight and nonzero `wMean` where the conclusion is FALSE — so the
+hypothesis is demonstrably load-bearing rather than inert.
+
+**A hypothesis I wrote and then removed.** The first version carried
+`(hw : sum_i w_i /= 0)`. The linter flagged it unused; checking rather than silencing,
+the statement is TRUE without it (Lean's `x/0 = 0` makes both sides 0 in the degenerate
+case), so dropping it STRENGTHENS the theorem. An unused hypothesis inside a theorem
+about when a hypothesis is load-bearing would have been the wrong thing to ship.
+
+**Verification as run:** `lean -DautoImplicit=false -s 65536` exit 0, ZERO warnings
+(a bare `lean` is a weaker check — autoImplicit defaults true off-lakefile);
+`#print axioms` on all four declarations gives `[propext, Classical.choice, Quot.sound]`,
+no `sorryAx`; `grep -c sorry` = 0. Library file, no sidecar, so nothing but this covers it.
+
+**Import note for the next agent:** `Mathlib.Algebra.BigOperators.Ring` is ABSENT from
+the restored lake-cache olean set — a fresh instance of the documented cache-gap class.
+Imports routed through `Algebra.Polynomial.Derivative` + `Order.Field.Basic` + `Tactic`.
+
+**Scope, unchanged.** This proves the REFORMULATION, not the gap. Nothing bounds `R'(1)`
+below; no claim is made about its sign. **`qou-k5r5` stays OPEN.**
+
+## 2026-09-08 coordination: same kernel as qou-x631, qou-o6ov, qou-za3q, qou-omr7
+
+Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 1 / §7.3 C2: `k5r5` (99 commits, 08-21 → 09-08) and `o6ov` (99 commits, 08-30 → 09-05) both work the odd-moment / Magnus `tr(ρ_λ Ω₂)` kernel, and before this note there were **zero** cross-citations among k5r5 / o6ov / x631 / za3q / omr7 (measured 2026-09-08 by grepping each body for the other four ids). Shared ledger: epic `qou-x631`, now parent of the other four. Roles — x631: epic, Cov_Planch(f^λ, Σc²) ≤ 0 / T₃(k) kernel; k5r5: M₁ > 0 (first odd moment), all-n proof OPEN, identity Lean-proved; o6ov: does |tr(ρ_λ Ω₂)|/dim decay in b across the ≤2-row column (open mathematics, rescoped 2026-09-05, PR #6822); za3q: Magnus-Ω₂ probes use the Plancherel weight y_λ, 91 % of their work on shapes tr_M annihilates; omr7: Magnus probes' d_q was the hook product, weight inverted (4 files, PR #6442). Statuses are unchanged by this note; a result landing on any of the five should be cited in the other four.
+
+---
+
+## 2026-09-11 (cont.) — the tilt identity is now proved AT THE REAL OBJECTS (PR #7189)
+
+PR #7178 proved the tilt identity for an arbitrary finite family over an arbitrary field.
+That is a lemma about polynomials: on its own it says nothing about Plancherel measure,
+`omega_3`, or `M_1`. #7189 discharges its hypothesis at the corpus's own Plancherel datum.
+
+**The hypothesis is DERIVED, not assumed.** `tilt_deriv_eq_wCov` needs `wMean w f = 0` with
+`w = dim^2`, `f = omega_3 = Sum_c c^2 - binom(n,2)`. From the two `PlancherelSnData` fields
+already in the corpus — `sum_dim_sq : Sum dim^2 = n!` and `two_sum_dim_sq_content :
+2 Sum dim^2 Sum c^2 = n(n-1) n!` — we get `Sum dim^2 omega_3 = 0` EXACTLY.
+
+Four theorems in `QOU/MassTheory/PlancherelTiltDerivative.lean`, all with axioms
+`[propext, Classical.choice, Quot.sound]`, no `sorryAx`:
+
+| declaration | statement |
+|---|---|
+| `plancherel_weighted_omega3_sum_eq_zero` | `Sum dim^2 omega_3 = 0` |
+| `plancherel_wMean_omega3_eq_zero` | `wMean = 0` |
+| `plancherel_tilt_deriv_eq_wCov` | `R'(1) = Cov_Planch(hgt, omega_3)` |
+| `plancherel_tiltNum_eval_one_eq_zero` | `R(1) = 0` |
+
+**The fourth is the one worth citing.** It says the quantity a limit-shape evaluation
+computes is IDENTICALLY ZERO at the point where such an evaluation happens — `qou-ujil`'s
+objection as a theorem rather than a remark, and the reason the derivative is the
+informative object.
+
+**EPISTEMIC STATUS — do not over-read.** `[PlancherelSnData n]` is a CLASS HYPOTHESIS
+(§3b-cond), so all four are CONDITIONAL. The class is not a hole (the corpus inhabits it at
+every `n` from RSK + Okounkov-Vershik, and its unlabelled Wedderburn form is unconditional
+and sorry-free), but **conditional-proved is not premise-established** — cite as "modulo
+`PlancherelSnData`", never flatly.
+
+`hgt` is left ARBITRARY deliberately: the identity does not need `hgt = Sum_h`, and pinning
+it there would claim less while looking like more.
+
+**What is still NOT Lean.** `M_1 > 0` (the gap). The `kappa_n` crossing of `sqrt(2)/24`
+(a numerical comparison over a committed window). The shifted-symmetry negative (exact
+Gaussian elimination in Python at degree bounds 6/8/10). `R(x) > 0` for `x > 1` and the
+nonlinearity tail (measured to `n <= 22`). **The reformulation is formalised; the
+measurements are not.**
+
+**Build note for the next agent:** compile against a HARDLINKED MIRROR of the QOU olean
+tree. A separate shadow root shadows `QOU` and does NOT fall through to the real tree —
+that cost one failed attempt. Shadow removed afterwards; real olean tree untouched.
+
+**`qou-k5r5` stays OPEN.**
+## Cross-citation from qou-za3q (2026-09-11): the A=4 Magnus sign is measured
+
+Per the 2026-09-08 coordination note on qou-za3q ("a result landing on any of the
+five should be cited in the other four"), this is such a result.
+
+`he4_magnus_omega2_sign_sparse_probe.py`, 77/77 partitions of H_12, max dim 7700,
+28661s:
+
+    P_total(A=4) = 34.1260272853576529271380692762741452981457684651471317452205
+    sign = +1    control (rho = I) = 0.0 vanishes    33+/42-    sign_flip_vs_A3 = False
+
+Sign map across the light nuclei: A2 = -1, A3 = +1, A4 = +1. There is exactly ONE
+sign change in A = 2,3,4 and it sits between the deuteron and the triton, NOT at
+the alpha particle.
+
+Load-bearing for anyone reading the older framing: the he4 probe's docstring
+asserted "A=3: P<0, NO flip vs A=2" and that premise had propagated into its
+GENERATED VERDICT string. It is false — A=3 is +2.4701927, confirmed by the
+committed witness and a fresh 30/30 re-run. Fixed under qou-rfhj. If any of the
+five beans reasons from "negative through the deuteron and triton", that premise
+is stale.
+
+scope-(a): a dimensionless SIGN datum. NOT a MeV (the Delta_lambda magnitude gate
+is open and untouched), NOT a physical binding-sign assertion (qou-v7ro / #6077,
+cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-).

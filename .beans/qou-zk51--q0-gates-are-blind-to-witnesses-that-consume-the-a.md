@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T08:24:15Z
-updated_at: 2026-09-04T08:25:03Z
+updated_at: 2026-09-08T07:45:39Z
 ---
 
 
@@ -396,3 +396,5 @@ this bean's earlier sections (COMPARISON 6, ANCHOR_MISSING 1602) because main
 advanced ~150 commits in between, so **quoting them would have looked like my
 change did far more than it did.** Measure the delta; never diff an absolute
 against a figure recorded on a different base.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

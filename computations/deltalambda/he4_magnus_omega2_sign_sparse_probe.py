@@ -5,10 +5,19 @@
 THE QUESTION (extends the A=2 deuteron and A=3 triton probes).
   A=2 (deuteron_magnus_omega2_sign_probe.py, qou-dp32): P<0, control tr_M(Ω₂)=0,
        sign-indefinite. A viable negative-at-A=2 sign-carrier.
-  A=3 (triton_magnus_omega2_sign_probe.py, PR #6107): P<0 — NO flip vs A=2. The
-       simple "negative→positive at A≥3" reading fails at the triton.
-  A=4 (this probe, ⁴He = 2p2n, 12 strands, H₁₂): does P(A=4) continue the negative
-       run, or does the sign finally move at the alpha particle? This is the next
+  A=3 (triton_magnus_omega2_sign_probe.py): P = +2.4701927, sign +1 — the sign
+       DOES flip vs A=2, confirmed by the committed witness and by a fresh 30/30
+       re-run (sign_flip_vs_A2 = True).  This line previously read "P<0 — NO flip
+       vs A=2", which was stale: it contradicted this probe's own gate2 output
+       (`sparse P_total = 2.4701927083 ... sign sparse=+1 committed=+1`) and the
+       stale premise had propagated into the generated verdict string below,
+       which asserted "A=2 and A=3 were both negative" without checking. Fixed
+       2026-09-11, bean qou-rfhj.
+  A=4 (this probe, ⁴He = 2p2n, 12 strands, H₁₂): the sign already moved at A=3,
+       so the live question is whether P(A=4) STAYS positive or flips back at the
+       alpha particle.  MEASURED 2026-09-08: P(A=4) = +34.126027, sign +1, control
+       0.0, 33+/42- — it stays positive, so the one sign change in A=2,3,4 sits
+       between the deuteron and the triton. This is the next
        point on the sign-vs-A map the owner asked to extend.
 
 WHY A SPARSE ROUTE (owner directive 2026-08-30). The A=3→A=4 jump is H₉→H₁₂:
@@ -57,6 +66,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as _dt
+import hashlib
 import json
 import os
 import sys
@@ -511,19 +521,45 @@ def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, worke
     parts_sorted = sorted(parts, key=_dim_estimate)
     rows_by_shape = {}
     worst_hcheck = mp.mpf(0)
+    # qou-rfhj follow-on, 2026-09-11: worst_hcheck only accumulates over partitions
+    # COMPUTED THIS RUN.  On a full resume nothing is computed, so it stays 0 and the
+    # witness reported `germ_hecke_check_worst_residual: 0.0` -- which reads as a
+    # perfect residual and actually means NOT MEASURED.  Count the computed ones so
+    # the field can be emitted as null instead of a flattering zero.
+    n_hcheck_measured = 0
     t0 = time.time()
 
-    # resume from checkpoint
+    # resume from checkpoint — STAMPED on q0 AND on this producer's own source
+    # (qou-z3q9, 2026-09-11).  Previously this keyed on the partition shape ALONE:
+    # no q stamp, no source stamp, so a cached row was served whenever it was
+    # PRESENT, never asked whether it was CURRENT.  The sibling triton probe had
+    # the q half and still lost the source half — measured, a patched run over an
+    # existing cache printed `resumed 14/30` and served rows computed by the
+    # UNPATCHED code, which would have made an "is the output identical?" check
+    # circular.  Rows written before this stamp existed carry no `_st` and are
+    # dropped, which costs one full recompute exactly once.
+    _ck_src = hashlib.sha256(open(__file__, "rb").read()).hexdigest()
+    _ck_stamp = hashlib.sha256(f"{_Q0_RESOLVED}|12|{_ck_src}".encode()).hexdigest()[:12]
     ckpt_fh = None
     if checkpoint:
         if os.path.exists(checkpoint):
+            _dropped = 0
             with open(checkpoint) as fh:
                 for line in fh:
                     line = line.strip()
                     if not line:
                         continue
-                    rec = json.loads(line)
+                    try:                        # a torn final line from a hard kill
+                        rec = json.loads(line)  # is skipped, never fatal
+                    except Exception:
+                        continue
+                    if rec.get("_st") != _ck_stamp:
+                        _dropped += 1
+                        continue
                     rows_by_shape[tuple(rec["lambda"])] = rec
+            if _dropped:
+                print(f"{log_prefix}  dropped {_dropped} cached partitions computed at a "
+                      f"different q0 or by a different version of this producer", flush=True)
             print(f"{log_prefix}  resumed: {len(rows_by_shape)}/{len(parts)} partitions "
                   f"already in {os.path.basename(checkpoint)}", flush=True)
         ckpt_fh = open(checkpoint, "a")
@@ -532,13 +568,14 @@ def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, worke
     done = len(rows_by_shape)
 
     def _record(res):
-        nonlocal worst_hcheck, done
+        nonlocal worst_hcheck, done, n_hcheck_measured
         row, dP, dC, tr_rO, hcheck, dim, nnz = res
         rows_by_shape[tuple(row["lambda"])] = row
         worst_hcheck = max(worst_hcheck, hcheck)
+        n_hcheck_measured += 1
         done += 1
         if ckpt_fh is not None:
-            ckpt_fh.write(json.dumps(row) + "\n")
+            ckpt_fh.write(json.dumps({**row, "_st": _ck_stamp}) + "\n")
             ckpt_fh.flush()
             os.fsync(ckpt_fh.fileno())
         el = time.time() - t0
@@ -570,6 +607,7 @@ def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, worke
         "P_wenzl": P_wenzl,
         "P_sign": P_sign, "npos": npos, "nneg": nneg,
         "worst_hcheck": worst_hcheck,
+        "n_hcheck_measured": n_hcheck_measured,
     }
 
 
@@ -645,23 +683,25 @@ def run_he4(workers=1, checkpoint=None):
         verdict = ("DECOUPLED — the Magnus pairing vanishes against the ⁴He density at A=4.")
     elif flip_vs_a3 is True:
         verdict = (
-            f"SIGN MOVES AT A=4 — P(A=4) is {run_desc[P_sign].upper()} while A=2 and A=3 were "
-            f"both negative ({pat}). The 2nd-order Magnus pairing, negative through the deuteron "
-            f"and triton, reverses at the alpha particle. Control tr_M(Ω₂)=0 holds; per-partition "
+            f"SIGN MOVES AT A=4 — P(A=4) is {run_desc[P_sign].upper()} while A=3 was "
+            f"{run_desc[a3_sign]} ({pat}); A=2 was {run_desc[a2_sign]}. The 2nd-order Magnus "
+            f"pairing changes sign at the alpha particle. Control tr_M(Ω₂)=0 holds; per-partition "
             f"sign-indefinite ({npos}+/{nneg}-). scope-(a): dimensionless SIGN datum only — NOT a "
             f"MeV (open Δ_λ gate), NOT a physical binding-sign assertion (qou-v7ro/#6077, cited). "
             f"Whether a move precisely at the doubly-magic A=4 is meaningful needs the sign "
             f"convention; the datum itself is the fact that the sign is not constant in A.")
     elif flip_vs_a3 is False:
+        _a2_agrees = (a2_sign == P_sign)
+        _a2_clause = (
+            f"and A=2 was {run_desc[a2_sign]} too, so the sign is constant over A=2,3,4"
+            if _a2_agrees else
+            f"while A=2 was {run_desc[a2_sign]}, so the single sign change sits between A=2 and "
+            f"A=3 and NOT at the alpha particle")
         verdict = (
-            f"NO MOVE — P(A=4) has the SAME sign as A=2 and A=3 (all {run_desc[P_sign]}; {pat}). "
-            f"The 2nd-order Magnus pairing is sign-STABLE across the deuteron, triton and alpha "
-            f"particle: A=2,3,4 all {run_desc[P_sign]}. This strengthens the A=3 finding — the "
-            f"'flips positive at A≥3' reading fails not just at the triton but at ⁴He too — and "
-            f"makes a constant-sign Magnus carrier the working hypothesis through the light nuclei. "
-            f"Control tr_M(Ω₂)=0 holds; per-partition sign-indefinite ({npos}+/{nneg}-). scope-(a): "
-            f"dimensionless SIGN datum; NOT a MeV (open Δ_λ gate), NOT a physical binding-sign "
-            f"convention (qou-v7ro/#6077, cited not re-derived).")
+            f"NO MOVE AT A=4 — P(A=4) is {run_desc[P_sign].upper()}, the same sign as A=3 "
+            f"({pat}), {_a2_clause}. Control tr_M(Ω₂)=0 holds; per-partition sign-indefinite "
+            f"({npos}+/{nneg}-). scope-(a): dimensionless SIGN datum; NOT a MeV (open Δ_λ gate), "
+            f"NOT a physical binding-sign convention (qou-v7ro/#6077, cited not re-derived).")
     else:
         verdict = (f"A=4 sign measured (P {'>' if P_sign>0 else '<'} 0) but an A≤3 baseline "
                    f"was unreadable, so no full sign-vs-A comparison. scope-(a).")
@@ -682,7 +722,12 @@ def run_he4(workers=1, checkpoint=None):
             "correctness_gate": ("sparse σ and germ reproduce the dense builder to <1e-60/<1e-55 on "
                                  "λ⊢4..7; sparse method reproduces the COMMITTED triton H₉ P_total "
                                  "to <1e-30; germ passes the differentiated-Hecke identity per block "
-                                 f"(worst residual {mp.nstr(res['worst_hcheck'],3)})."),
+                                 + (f"(worst residual {mp.nstr(res['worst_hcheck'],3)} over "
+                                    f"{res['n_hcheck_measured']} partitions computed this run)."
+                                    if res.get("n_hcheck_measured") else
+                                    "(per-block residual NOT measured this run — every partition "
+                                    "was served from the checkpoint, so no germ was rebuilt; this "
+                                    "is an absence, not a zero).")),
         },
         "inputs": {
             "q0": _Q0_RESOLVED, "q0_pin": "proton (experimental pin, resolved)", "h": fmt(H),
@@ -732,7 +777,11 @@ def run_he4(workers=1, checkpoint=None):
             "A3_P_total_sign": a3_sign,
             "sign_flip_vs_A3": flip_vs_a3,
             "sign_vs_A": {"A2": a2_sign, "A3": a3_sign, "A4": P_sign},
-            "germ_hecke_check_worst_residual": fmt(res["worst_hcheck"]),
+            # null, not 0.0, when no partition was computed this run (full resume):
+            # absence of a measurement is not a measurement of zero.
+            "germ_hecke_check_worst_residual": (
+                fmt(res["worst_hcheck"]) if res.get("n_hcheck_measured") else None),
+            "germ_hecke_check_partitions_measured": res.get("n_hcheck_measured", 0),
         },
         "verdict": verdict,
         "scope": (

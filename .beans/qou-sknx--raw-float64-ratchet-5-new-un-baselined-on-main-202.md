@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-04T04:51:29Z
-updated_at: 2026-09-04T04:52:19Z
+updated_at: 2026-09-08T07:45:48Z
 ---
 
 Successor to `qou-6sts` (completed, 2026-08-31). Same failure mode, larger.
@@ -76,3 +76,19 @@ Four of the five belong to other agents' live arcs (`qou-0c19` among them).
 Draining someone else's producer mid-arc is the "never touch a sibling's claim"
 case, and re-running probes I have not read risks moving numbers I cannot
 verify. Raised here for their owners.
+
+## 2026-09-08: this bean is the canonical tracker for the recurring "raw-float64 ratchet is RED on main" event (audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7)
+
+Chosen as the most recent OPEN bean of the seven. The others, each cross-referenced here, none scrapped because each carries a distinct finding (no older bean is a content-free `todo`):
+
+| bean | status | date | distinct content |
+|---|---|---|---|
+| qou-6d9w | scrapped (parent qou-1nvh) | 08-10 | handed off to qou-oflu / PR #4945; a-K-via-lp-dual-full 395→867 |
+| qou-xgbe | completed | 08-11 | a-K-via-lp-dual-full drained below baseline; LESSON: run the gate, do not read the committed witness |
+| qou-7kq3 | in-progress | 08-14 | 4 new + 1 regressed inherited from main; half drained, other half a different class (PR #5025) — the only other OPEN one |
+| qou-6sts | completed | 08-31 | arc-count-diagnostic-degeneracy + braid-encoding-audit; two measuring traps recorded |
+| qou-m549 | completed | 09-03 | 5 witnesses drained at the producer (PR #6453); four TRAPs incl. "ratchet does not self-perturb" |
+| qou-sknx | todo | 09-04 | 5 NEW un-baselined; committed audit witness again said 0 (this tracker) |
+| qou-1u56 | completed | 09-06 | 4 regressed from bulk regeneration (9b009da0e6e, 3cc4b2aab10); resolved 09-07 as a downstream symptom of an owner-ruled change |
+
+`qou-n5kp` (PR #7161) does not exist on this branch. Root cause is settled policy, not an open item: nothing runs the ratchet on a push (`witness-staleness.yml` dispatch-only, reaffirmed 2026-08-09; `qou-mnrd`). Future occurrences: append here rather than opening an eighth bean.

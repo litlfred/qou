@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T12:56:54Z
-updated_at: 2026-08-25T18:37:27Z
+updated_at: 2026-09-08T07:45:44Z
 ---
 
 Surfaced by running scripts/precision-gates.sh on a clean checkout of main (PR #5229 branch, no relevant changes of my own — my new file is not even scanned; 'wenzl' appears 0 times in the diff). So this is PRE-EXISTING staleness on main, not branch drift.
@@ -180,3 +180,5 @@ because CI is `workflow_dispatch`-only.
 
 Closing this bean anyway. Its three stated strands are answered; what remains
 is not a q0-anchor question at all, it is the absent-enforcement item.
+
+## 2026-09-08: audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 lists this with qou-5380 as a byte-identical pair. Diffed: NOT identical — 5380 records the single-count staleness (gswz_program_convention_immunity lacks a q0 anchor, 08-18); this bean records the general staleness of the q0-anchor-consistency audit witness and its 08-25 re-measurement. Same defect family (`qou-6sts`/`qou-sknx` cite it as such); both completed; cross-referenced, neither scrapped.

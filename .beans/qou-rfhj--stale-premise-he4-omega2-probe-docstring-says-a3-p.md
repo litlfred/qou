@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-08T06:44:54Z
-updated_at: 2026-09-08T06:44:54Z
+updated_at: 2026-09-11T14:46:20Z
 parent: qou-9c80
 ---
 
@@ -39,3 +39,19 @@ The he4 probe is mid-run and its checkpoint is source-blind (qou-z3q9), so
 editing the file risks a later resume mixing code versions. Docstring-only edits
 cannot move a number, but the hazard is exactly the one qou-z3q9 documents, so
 the edit waits for 77/77 rather than relying on "it's only a comment".
+
+
+## RESOLVED 2026-09-11 — and the premise had reached the GENERATED VERDICT
+
+Not just the docstring. Both verdict branches hardcoded "A=2 and A=3 were both
+negative", so the A=4 run emitted, beside its own printed `A2=-1 A3=+1 A4=+1`:
+
+  "NO MOVE — P(A=4) has the SAME sign as A=2 and A=3 (all positive; A2=-1 ...)
+   the 'flips positive at A>=3' reading fails not just at the triton but at He4 too"
+
+Three errors: A=2 does not share the sign; they are not all positive (contradicted
+inside the same string); and A=3,A=4 both positive CONFIRMS "flips positive at
+A>=3" rather than failing it. The comparison logic was always right
+(flip = P_sign != a3_sign) — only the prose asserted an unchecked claim about A=2.
+Verdict now derived from the measured signs; docstring corrected with the measured
+A=3 value and the A=4 result.
