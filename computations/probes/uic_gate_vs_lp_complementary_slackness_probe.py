@@ -337,7 +337,11 @@ def main() -> int:
     for label in ("2H", "4He"):
         if not lp[label]:
             continue
-        tight = 1 if all(abs(s["duality_gap"]) < 1e-6 for s in lp[label]["solves"]) else 0
+        # `duality_gap` is a 50-dps decimal STRING (see `_prefer_str_fields`),
+        # so compare as mpf against an mpf bound -- not `abs()` on the str, and
+        # not `float()` on it either.
+        tight = 1 if all(abs(mp.mpf(s["duality_gap"])) < mp.mpf("1e-30")
+                         for s in lp[label]["solves"]) else 0
         w.add_assertion(f"LP duality gap vanishes on every solve [{label}]",
                         str(tight), "1")
         ok &= bool(tight)
