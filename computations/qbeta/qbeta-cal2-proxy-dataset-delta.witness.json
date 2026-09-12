@@ -1,0 +1,133 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-12T07:13:33.771154+00:00",
+  "commitSha": "396baaeb4ead9a206031e86665f989d503ab0cc3",
+  "assertions": [
+    {
+      "name": "registry value is route-independent (does not inherit the stale proton)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5"
+    },
+    {
+      "name": "the two determinations agree within 1 sigma (this is NOT an accuracy choice)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5"
+    },
+    {
+      "name": "only ONE rung is extracted: c_4..c_7 vanish identically under both datasets (greedy_rung_exact)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5"
+    },
+    {
+      "name": "dc_3 is the 1/u^3 amplification of the input move",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5"
+    },
+    {
+      "name": "derived-tier Q_N2 is anchor-independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-cal2-proxy-dataset-delta",
+  "scriptFile": "qbeta_cal2_proxy_dataset_delta_probe.py",
+  "scriptHash": "5e3d9deede74",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_cal2_proxy_dataset_delta_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_cal2_proxy_dataset_delta_probe.py"
+  },
+  "description": "Measures the CAL-2-proxy (Q_beta) dataset delta between the AME-2020 direct value 0.78233341(61) and the CODATA-2022 registry value (m_n - m_p) - m_e = 0.78233355931(38), and the downstream move it produces in the convention-C c_k ladder and the L2 derived-tier Q_beta residual. Audit-only: changes no default, wires nothing. The two determinations agree to 0.2 sigma, so this is a dataset-consistency question (one experimental dataset across CAL-1/2/3, per the 2026-08-22 muon ruling), NOT an accuracy question; the residual direction is reported as an outcome and must not be used to rank the routes.",
+  "auditOnly": "docs/audits/2026-09-12-qbeta-cal2-proxy-dataset-delta.md",
+  "parameters": {
+    "convention": "C (historical ladder frame; D has no derived ladder -- bean qou-cds1)",
+    "q0_anchor": "proton (experimental pin, AGENTS.md 2026-08-07)",
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "Q_beta_ame_MeV": "0.78233341",
+    "Q_beta_ame_err_MeV": "6.1e-7",
+    "Q_beta_registry_MeV": "0.782333559309999926334455722099",
+    "Q_beta_registry_err_MeV": "3.8e-7",
+    "separation_ppb": "190.852132885817129709568376043309145523345148125746679533267",
+    "separation_sigma": "0.207756075222536410666534899257440946498809308064509818475725",
+    "registry_route_gap": "7.3666e-17",
+    "u": "0.00851723455015614218925557360331",
+    "ck_rows": [
+      {
+        "k": 3,
+        "c_k_ame": "-2.06934257711516783787971951725",
+        "c_k_registry": "-1.76045485848483804256288315392",
+        "delta": "0.30888771863032979532",
+        "delta_pct": "-14.9268527138191126960434958718058990461822703602156709033638"
+      },
+      {
+        "k": 4,
+        "c_k_ame": "0.0",
+        "c_k_registry": "0.0",
+        "delta": "0.0",
+        "delta_pct": "0.0"
+      },
+      {
+        "k": 5,
+        "c_k_ame": "0.0",
+        "c_k_registry": "0.0",
+        "delta": "0.0",
+        "delta_pct": "0.0"
+      },
+      {
+        "k": 6,
+        "c_k_ame": "0.0",
+        "c_k_registry": "0.0",
+        "delta": "0.0",
+        "delta_pct": "0.0"
+      },
+      {
+        "k": 7,
+        "c_k_ame": "0.0",
+        "c_k_registry": "0.0",
+        "delta": "0.0",
+        "delta_pct": "0.0"
+      }
+    ],
+    "QN2_derived_tier_MeV": "0.782334410277840137760143636388",
+    "QN2_residual_vs_ame_ppb": "1278.58254211303610775920717688493177173470744682505157911613",
+    "QN2_residual_vs_registry_ppb": "1087.73020163158999234076510503781635312310891701796603400981",
+    "L2_target_ppb": "7.79718713534169530098426960955176387008705150403842435506297",
+    "L2_miss_vs_ame": "163.979973793075433383014427801452762393205785610989303416284",
+    "L2_miss_vs_registry": "139.502898000398256136036827316925089588945237516732967496920"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
