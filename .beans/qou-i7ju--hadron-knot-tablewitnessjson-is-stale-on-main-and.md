@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-09-05T06:29:13Z
+updated_at: 2026-09-12T12:24:54Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -420,3 +420,52 @@ provably blind to a braid defect.
 
 So the witness would record the same numbers either way. Regenerating it is a
 staleness question, not a correctness one.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — the closed-form SYT fix did NOT make the producer finishable. "Cannot finish" stands.
+
+`qou-i7ju` was flagged as a completion candidate by `57ce35896ed`
+(*"perf(qou-i7ju/qou-r4w5): replace the factorial SYT enumeration with an exact
+closed form"*). That is a **performance** fix, so the honest question is whether
+the producer now completes — measured rather than assumed:
+
+```
+computations/hadron_knot_table.py     TIMEOUT at 780s
+
+        Atom   A           tr_M     B(MeV)   cross_sum    δ_xchan  Frob
+      proton   1       0.629328     0.0000   +0.000000    +0.0000    OK
+     neutron   1       0.475134     0.0000   +0.000000    +0.0000    OK
+     protium   1       1.146338     0.0000   +0.000000    +0.0000    OK
+```
+
+**3 of 19 atoms in 13 minutes, and deuterium — the first bound atom — was never
+reached.** That reproduces AGENTS.md's recorded shape exactly: *"the three `A=1`
+atoms complete, then deuterium … ran for a full 50 minutes and was killed by its
+own timeout."* The perf fix changed the SYT enumeration; it did not move the
+wall, which is downstream of it.
+
+**This is a LOWER BOUND, not a verdict**, and the distinction is the one
+`qou-geqa` insists on. What is established: the producer does **not** complete in
+13 min, and does not reach A=2 in that time. What is **not** established: that it
+cannot complete at all. It did not crash, hang or refuse — it was stopped by my
+budget, and a timeout is not proof of anything except its own duration.
+
+**Scale check, so nobody re-runs this hoping:** 3 atoms of 19 in 13 min, with
+AGENTS.md recording >50 min for deuterium *alone* under the previous code. Against
+this container's measured budget (~15 min reliable, ~60 min optimistic — see
+`qou-geqa`), the full table is **not runnable here** by a wide margin.
+
+**Clean run:** the runner restored `computations/` afterwards and `git status
+--porcelain` is empty, so the partial witness this wrote mid-run was not
+committed. Noting it because the producer rewrites
+`hadron-knot-table.witness.json` **per atom** — three times in 13 minutes above —
+so any measuring run of it leaves a dirty tree that reads as real work unless
+restored.
+
+**So this bean stays open on both legs.** The witness is still stale on `main`,
+and the producer still cannot be run to completion here. Its two blockers are
+unchanged: `qou-w2vy` is closed (the object-dtype crash is gone, reproduced) but
+that only converted a crash into a **cost** — 576.6 s for term 3 alone at A=2 —
+and `qou-4m9u` owns that cost.
