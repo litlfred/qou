@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-11T15:25:39Z
+updated_at: 2026-09-12T11:29:40Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -1081,3 +1081,50 @@ assumes nothing further.
 **Still not closing this bean** (rule 13a): whether that citation leaves H4-5
 "done" is an owner call. What has changed is that there is no longer any
 coverage caveat attached to that question.
+
+
+## MERGED to main — PR #7163 (2026-09-12), rebase-merge, 13 commits
+
+`ac105d50e39`. All 13 commits verified on `main` by `git cherry`, and both the
+headline declaration and the final binder fix confirmed present in the merged
+tree.
+
+**What landed.** H4-5 (obtuse) AND the right-angled slice, plus the
+cyclic-relabel lemma that makes the coverage claim true rather than asserted:
+
+- `obtuseWedges_ae_eq_inscribedTriangle` — the signed tiling
+  `T =ᵐ (W_α ∪ W_β) \ W_sub`, the a.e. set identity `IdealTetObtuseReduction`'s
+  header had anticipated.
+- `hypVolume_chimney_inscribedTriangle_obtuse` / `_right`, and
+  `idealTetVolume_of_vertices_obtuse` / `_right` on the vertex-defined region.
+- `idealTetVolume_of_vertices_unconditional` — every positive triple summing to
+  π, by `rcases le_or_gt (π/2) γ / α / β` with cyclic relabelling.
+
+All sorry-free. `#print axioms` on all six headline declarations returns
+`[propext, Classical.choice, Quot.sound]`.
+
+**The route.** Signed subdivision, not analytic continuation. The mechanism is a
+two-term certificate got by eliminating `R − ⟨w,u⟩` between the two chord slacks
+at a vertex; `R` cancels and the identity holds for ANY triple summing to π.
+Only reading off its SIGN uses `cos γ ≤ 0`. Read backwards it gives the
+subtracted-wedge containment; at `cos γ = 0` it gives the right-angled chord
+strictly.
+
+**Three retractions of my own claims, all in the PR body.** (1) The "fourth
+acuteness gate" in `idealTet_eq_chimney` did not exist — the three hypotheses
+were carried and never used; dropping them carries the whole vertex-incidence →
+face → region chain to obtuse triangles. (2) `W_sub` at `γ = π/2` degenerates to
+the EMPTY SET, not a half-plane, making that the easiest case rather than the
+hard leftover. (3) "The whole simplex is covered" needed a lemma nobody had
+proved, since all three case theorems distinguish `γ`.
+
+Findings 1 and 2 are one error class twice: reasoning about a thing from its
+signature or description instead of evaluating it.
+
+**STAYS in-progress, per AGENTS.md rule 13a.** The mathematics of H4-5 is
+closed, but all three cases rest on the same single cited totally-geodesic /
+normalized-position identification (`geodesicPlaneThrough`, File A1 — a
+definition with a citation, not an axiom or `sorry`). Whether that shared
+citation leaves H4-5 "done" is an owner call, not an agent one. The obtuse and
+right-angled halves assume nothing the acute one does not; the coverage caveat
+that used to sit beside that question is gone.
