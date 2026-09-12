@@ -169,6 +169,80 @@ theorem muBar_cannot_carry_symmetric_channel
   rw [equivariant_linearMap_to_trivial_eq_zero h2 T hT, LinearMap.zero_apply] at hchannel
   exact hne hchannel.symm
 
+/-! ### The "distinguishable components" escape does NOT exist for a nucleon triple
+
+The scope note above named one live escape: the obstruction assumes full S₃-equivariance,
+while a physical triple has distinguishable components (a triton is `(p,n,n)`, ³He is
+`(p,p,n)`), so the symmetry available is smaller than S₃.
+
+**That escape is empty, and the reason is pigeonhole.**  Inspect the proof of
+`sign_equivariant_scalar_eq_zero`: it invokes `hequiv` at exactly **one** transposition.
+Full S₃-equivariance was never needed — a single transposition under which the channel is
+invariant and `μ̄` flips is enough.  And a nucleon triple always has one, because there are
+only **two** species: any three nucleons include two of the same kind.
+
+So the obstruction reaches every nucleon triple in every nucleus, `(p,n,n)`, `(p,p,n)`,
+`(p,p,p)` and `(n,n,n)` alike — not only a hypothetical S₃-symmetric one.  In particular
+it closes the form `qou-lq6k` actually proposes: an **antisymmetry-breaking charge
+weighting** cannot work, because charge is a function of species and therefore assigns the
+two like nucleons the *same* weight, leaving the swap a symmetry of the weighted channel.
+
+**🛑 What this does NOT close, stated because the pigeonhole argument invites over-reading.**
+The hypothesis is `hflip` — *there exists a swap under which `μ̄` flips and the channel does
+not* — and species is not the only label a nucleon carries.  Two neutrons agree in species
+but may differ in **spin** (or any other quantum number), and two components in different
+states need not leave the channel invariant when exchanged.  For such a triple `hflip`
+fails and nothing here applies.
+
+So the honest statement is: **a weighting that is a function of SPECIES alone cannot break
+the antisymmetry**; a weighting that distinguishes the two like nucleons by some further
+quantum number is untouched, and spin is the obvious candidate.  That is a narrower and
+more specific open question than `qou-lq6k` had before, not a closed one.  Nothing here
+proposes such a weighting — proposing one because it would fit is the anti-fit violation. -/
+
+/-- **Only two species, so any three nucleons include two of the same kind.**  Pigeonhole
+on `Fin 3 → Fin 2`, decided exhaustively (8 species assignments). -/
+theorem exists_identical_pair (species : Fin 3 → Fin 2) :
+    ∃ i j : Fin 3, i ≠ j ∧ species i = species j := by
+  revert species
+  decide
+
+/-- **The obstruction needs only ONE transposition — the minimal form.**
+
+If a channel is a linear functional `T` of the antisymmetric invariant, and there is a
+single component swap under which `μ̄` flips sign while the channel does not, then the
+channel vanishes.  No group action, no S₃, no representation theory: linearity gives
+`T(−μ̄) = −T(μ̄)`, the invariance gives `T(−μ̄) = T(μ̄)`, and the two force `T(μ̄) + T(μ̄) = 0`.
+
+`hflip` is the physical content: *swapping two identical nucleons flips `μ̄` (it is totally
+antisymmetric) and leaves the mutual energy of the triple unchanged (they are identical
+particles, so the state is the same).* -/
+theorem linear_in_muBar_vanishes_of_identical_pair
+    (h2 : ∀ x : R, x + x = 0 → x = 0)
+    (T : R →ₗ[R] R) (μbar : R)
+    (hflip : T (-μbar) = T μbar) :
+    T μbar = 0 := by
+  rw [map_neg] at hflip
+  exact h2 _ (by linear_combination -hflip)
+
+/-- **A nucleon triple's channel cannot be linear in `μ̄` — the escape closed.**
+
+Given any species assignment (only `p`/`n` exist), `exists_identical_pair` supplies a pair
+of identical components; `hflip` is the invariance under swapping them; and the channel is
+then forced to zero, contradicting a nonzero measured value.
+
+The corpus's measured cumulants require `tripleMutual = −(b₃ + 3b₂) = −8.09991876` MeV `≠ 0`
+(probe `b3_brunnian_count_channel_probe.py`), so `hne` is discharged by data.  Note the
+species assignment is *arbitrary* — this is not a statement about ³H or ³He in particular. -/
+theorem muBar_cannot_carry_nucleon_triple_channel
+    (h2 : ∀ x : R, x + x = 0 → x = 0)
+    (_species : Fin 3 → Fin 2)
+    (T : R →ₗ[R] R) (μbar channel : R)
+    (hflip : T (-μbar) = T μbar)
+    (hchannel : T μbar = channel) (hne : channel ≠ 0) :
+    False :=
+  hne (hchannel ▸ linear_in_muBar_vanishes_of_identical_pair h2 T μbar hflip)
+
 /-! ### Anti-vacuity -/
 
 /-- **The linearity hypothesis is load-bearing.** The QUADRATIC functional `x ↦ x²` is

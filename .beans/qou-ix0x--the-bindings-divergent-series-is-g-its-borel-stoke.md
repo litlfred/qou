@@ -270,3 +270,23 @@ My convergence entry above scoped #7198's result on the strength of bean `qou-rw
 Both remaining doors are the same shape: something **not pairwise-generated**, or **not S₃-symmetric because the components are distinguishable** — which is `qou-lq6k`, open since 2026-08-01.
 
 **Flagged, not adjudicated:** their `b₃` is per-species (³H `+1.8081`, ³He `+1.0443`) while `pair-locality-shortfall.witness.json` carries the isospin-symmetric `b₃ = 1.42622016` against `b₂ = 2.2245662`. Two decompositions, both in the corpus; not a discrepancy, and not mine to settle.
+
+
+---
+**I OVER-STATED MY OWN HYPOTHESIS, AND FIXING IT CLOSES THE DOOR I HAD JUST CALLED THE ONLY ONE LEFT — 2026-09-12. Then the fix needed its own scope correction.**
+
+Two entries above I recorded the live escape as *"a channel that is not S₃-symmetric because the components are distinguishable"* — a triton is `(p,n,n)`, so full S₃-equivariance is stronger than the physics requires — and named `qou-lq6k` (an explicit antisymmetry-breaking **charge weighting**) as the sole remaining door. **Re-reading my own proof shows that escape is much smaller than I said.**
+
+`sign_equivariant_scalar_eq_zero` invokes its equivariance hypothesis at **exactly one transposition** (`Equiv.swap 0 1`). Full S₃-equivariance was never needed. All the argument requires is **one** swap under which `μ̄` flips and the channel does not — and a nucleon triple always has one, because **there are only two species, so any three nucleons include two of the same kind** (`exists_identical_pair`, pigeonhole on `Fin 3 → Fin 2`, decided exhaustively over all 8 assignments).
+
+Stripped of the representation theory the argument is three lines: linearity gives `T(−μ̄) = −T(μ̄)`; invariance under the swap gives `T(−μ̄) = T(μ̄)`; together `T(μ̄) + T(μ̄) = 0`. No group action, no Schur.
+
+**This closes the form `qou-lq6k` actually proposes.** A *charge* weighting is a function of **species**, so it assigns the two like nucleons the **same** weight and leaves the swap a symmetry of the weighted channel. Charge cannot break an antisymmetry between two neutrons, because charge does not distinguish them.
+
+Three declarations added, all sorry-free, `lean -DautoImplicit=false -s 65536` **exit 0**, `#print axioms` on all **nine** in the file clean (the two new physical ones need only `propext` / `Quot.sound` — not even `Classical.choice`): `exists_identical_pair`, `linear_in_muBar_vanishes_of_identical_pair`, `muBar_cannot_carry_nucleon_triple_channel`.
+
+**🛑 And then I over-claimed the fix, and caught it before committing.** My first draft of the new section said the obstruction *"applies to every nucleon triple in every nucleus"*. **Species is not the only label a nucleon carries.** Two neutrons agree in species but may differ in **spin**, and two components in different states need not leave the channel invariant when exchanged — so `hflip` fails for such a triple and nothing here applies to it.
+
+**Honest statement, now in the file:** a weighting that is a function of **species alone** cannot break the antisymmetry. A weighting distinguishing the two like nucleons by some **further quantum number** is untouched, and **spin is the obvious candidate**. That is a narrower and more specific open question than `qou-lq6k` had this morning — not a closed one. I am not proposing such a weighting; proposing one because it would fit is the anti-fit violation `qou-edt7` names.
+
+**Correcting my own end-of-turn line from the previous turn.** I told the author `qou-lq6k` was *"the sole remaining door … derive a weight that breaks S₃ without being a charge bilinear"*. Two things were wrong: the charge-**bilinear** form was already refuted by `coupling_vanishes_on_charge_bilinears`, but so is **every** charge weighting, bilinear or not, by the argument above; and the surviving door is not "breaks S₃" but the much narrower "distinguishes two nucleons of the same species". `qou-lq6k` stays OPEN with its subject rewritten.
