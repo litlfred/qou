@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T18:14:46Z
+updated_at: 2026-09-12T18:29:59Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1400,3 +1400,54 @@ expected to.
 STILL OPEN: the ruling constrains the CORE. The flavour letters are determined
 (this branch) but their PLACEMENT, and the two gluon letters, are not gg-words
 and are not settled by the ruling. That is the remaining freedom.
+
+
+
+## 2026-09-12 PARITY BOUND — the ruling reaches 6 of 11 letters, provably
+
+PR #7212, commit 49bae3625e. Companion to the ordering derivation above: that
+one settles the CORE, this settles how much the gg principle can settle AT ALL.
+
+Every pair-production vertex contributes exactly TWO letters, so a gg-word has
+EVEN length. The nucleon crossing budget is 11 (qou-1qsw), which is ODD.
+Therefore NO 11-crossing word is gg-produced -- not this one, not any
+reordering of it, not any other candidate at that budget. At least one letter
+necessarily lies outside the principle's reach, and that is a fact about the
+budget, not a shortfall in the construction.
+
+Block decomposition of the census word:
+
+  core (sigma_0 sigma_1^-1)^3    6 letters   gg-produced (constructor x3)
+  quark                          3 letters   NOT -- odd length
+  gluon sigma_0 sigma_0          2 letters   NOT -- 2nd letter positive
+                                ----
+                                11 = the budget
+
+So the ruling reaches 6 of 11; the other 5 are the freedom that survives it.
+The gluon pair is excluded twice over -- directly by the vertex sign pattern,
+and by following an odd-length block.
+
+LEAN (lean-direct exit 0, no sorryAx):
+  gammaGamma_length_even        2 | w.length for any gg-word
+  not_gammaGamma_of_odd_length  the contrapositive
+  eleven_not_gammaGamma         no 11-crossing word is gg-produced
+  gluonPair_not_gammaGamma      NO AXIOMS AT ALL
+  three_not_gammaGamma          the quark block's length is odd
+
+Scope-(b) throughout: every exclusion cites a proved invariant (vertex length,
+or the vertex sign pattern), never a measured miss.
+
+🛑 THIS IS A LIMIT ON THE RULING, NOT A DEFECT IN IT, and not the construction
+failing to apply it. The principle does what it can; what it cannot do is fix
+an odd number of letters out of even-length building blocks.
+
+WHY IT MATTERS FOR THIS BEAN. It converts "the flavour placement and gluon
+letters are still open" from an observation into a THEOREM about where the
+remaining freedom lives: exactly 5 letters, and no amount of gg reasoning will
+reduce that number. Any closing Delta has to come from those 5 or from a
+different principle. That is a much sharper statement of the open problem than
+the bean carried before.
+
+Probe 12/12 (CHECK 6 added to qbeta_gamma_gamma_ruling_selects_ordering_probe).
+
+BEAN STAYS todo (§13a).
