@@ -387,20 +387,52 @@ def lp_shadow_price(partition):
 
 
 # Pre-compute all partitions of k = 2..K_PARTITION_MAX with q-hook,
-# weight, dimension, shadow price.  K = 6 covers H₂..H₆ (24 partitions
-# in total: 2 + 3 + 5 + 7 + 11) — enough to host every Wedderburn
-# channel that contributes a BW term in the dedicated formulation
-# (volume, surface, Coulomb, asymmetry, pairing, exchange, shell,
-# hook, Wigner, form factor, pn correlation, [3,2,1] pn-invisible,
-# [4,1,1]+[3,1,1,1] isospin, [4,2]+[2,2,1,1] codim-4 form factor).
-# K_PARTITION_MAX is capped at 8 because empirical sweeps show the
-# Empirical sweep with q-heat resolvent damping (post-PR #368) shows
-# K = 6 is the OPTIMAL partition cutoff — extending to k = 7, 8, 9
-# introduces sub-leading spectral modes that degrade accuracy (e.g.
-# 40Ca: 0.001 at K=6 → 0.012 at K=9).  K = 3 is also very strong for
-# light atoms.  The resolvent's built-in damping envelope does not
-# benefit from further partitions — q-heat already absorbs higher-k
-# contributions via (μ_λ + s)⁻¹ decay.
+# weight, dimension, shadow price.  The live cap is 11, one line below,
+# and every production call site passes it as the default: :1724/:1725,
+# :1750/:1751 (the two accumulator signatures) and :2727, :2901, :2949,
+# :3090 (`k_cap = K_PARTITION_MAX`).  That is
+# sum_{k=2}^{11} p(k) = 193 partitions.
+#
+# REWRITTEN 2026-09-12 (bean `qou-xkjt`).  What stood here named THREE
+# different values for this one constant and got its own arithmetic wrong:
+#
+#   - "K = 6 covers H2..H6 (24 partitions in total: 2 + 3 + 5 + 7 + 11)"
+#     — that sum is 28, not 24.  (Those are p(2..6); at the live cap it is
+#     193.)  Both sums verified by direct computation.
+#   - "K_PARTITION_MAX is capped at 8 because empirical sweeps show the"
+#     — a sentence truncated mid-clause, with no verb.
+#   - "Empirical sweep with q-heat resolvent damping (post-PR #368) shows
+#     K = 6 is the OPTIMAL partition cutoff — extending to k = 7, 8, 9
+#     introduces sub-leading spectral modes that degrade accuracy (e.g.
+#     40Ca: 0.001 at K=6 -> 0.012 at K=9)."
+#   - and `K_PARTITION_MAX = 11`.
+#
+# THE SWEEP WAS RUN, IT RECOMMENDED 6, AND 6 WAS NOT ADOPTED.  Measured:
+# no production caller truncates at 6.  The only live `k=6` call sites are
+# `probes/uic_per_block_log_valley_scan_probe.py:167-168`, which pass
+# `k_max=6` and `k_max=11` side by side precisely to COMPARE them, and
+# `_deprecated/heavy_atom_opts.py:280` (a different parameter).  The
+# accuracy figures the old text cited ("40Ca: 0.001 at K=6 -> 0.012 at
+# K=9") appear nowhere else in the tree — no witness, no producer, no
+# audit.  Comment-only.
+#
+# RECORD IT AS THE HONEST NEGATIVE IT IS.  "Sweeping a discrete parameter
+# for accuracy" is named verbatim as fitting in AGENTS.md "NO FITTING,
+# EXCEPT CAL-1/2/3", and accuracy is explicitly not the ranking criterion
+# there.  So the correct reading of the sweep is: a cutoff selected
+# against the data was measured to be more accurate, and was REJECTED in
+# favour of the full compiled partition set.  That is the discipline
+# working, not a fit — but the old wording read as an endorsement, and an
+# agent running the anti-fit audit reported a live fit in the binding
+# compute on the strength of it.
+#
+# The channel inventory the old text listed (volume, surface, Coulomb,
+# asymmetry, pairing, exchange, shell, hook, Wigner, form factor, pn
+# correlation, [3,2,1] pn-invisible, [4,1,1]+[3,1,1,1] isospin,
+# [4,2]+[2,2,1,1] codim-4 form factor) is retained: those are the
+# Wedderburn channels that carry a BW term, and they live at k <= 6.  At
+# the live cap of 11 they are a subset of what is enumerated, not the
+# whole of it.
 K_PARTITION_MAX = 11
 # Metadata-only partitions reach up to K_GAUSSIAN_MAX for the
 # q-Gaussian fallback (no YSN matrices built — just d_q, shadow_price,
@@ -1804,6 +1836,27 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     float (total correction, MeV) or
     (float, list-of-dicts) if return_per_step.
 
+    🛑 THE RETURN VALUE CHANGED ON 2026-09-12 (owner ruling, bean
+    `qou-jgx7`; PR #7251).  Until then this function returned a GATED sum
+    admitting only partitions with `final_tr_sign <= 0`, on a
+    complementary-slackness argument that is now REFUTED sorry-free.  It
+    now returns the UNGATED sum over every enumerated partition, which is
+    3.4-4.6x larger in magnitude:
+
+        A=2 (²H)   -0.0895596830589507  ->  -0.412212192245027
+        A=4 (⁴He)  -0.0805867484776914  ->  -0.2742397716174
+
+        (k_exact = 4; identical at the k_exact = k_max = 11 default up to
+         the partition set.)
+
+    THIS IS NOT AN ACCURACY IMPROVEMENT.  At ²H the AME2020 binding is
+    +2.2246 MeV, so both the old and the new number have the WRONG SIGN,
+    and the new one is further from AME.  The drop removes a selection
+    step whose only justification is disproved; see the Pass-2 block for
+    the four mismatches and the scope-(b) invariant.  The historical gated
+    sum is still reported, as
+    `per_step[-1]['gated_total_DISPROVED_SELECTION_MeV']`.
+
     References
     ----------
     Kerov 1996 (q-hook walk) [kerov1996],
@@ -2076,16 +2129,23 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             log_cur = (s['log_norm'] + _exact_log(abs(tr_run))
                        if abs(tr_run) > 1e-300 else s['log_prev'])
             raw_delta = s['scale'] * (log_cur - s['log_prev'])
-            # LP complementary slackness is a FINAL-STATE condition:
-            # y_λ* × tr(Φ_λ*) = 0 on the SOLVED LP.  The per-step
-            # tightness filter would be a heuristic approximation of
-            # this; experimentally it over-gates (k-instability).
-            # Here we accumulate raw deltas at every step; the final
-            # sign gate is applied in Pass 2 below.
+            # This comment used to read: "LP complementary slackness is a
+            # FINAL-STATE condition: y_λ* × tr(Φ_λ*) = 0 on the SOLVED LP.
+            # The per-step tightness filter would be a heuristic approximation
+            # of this; ... the final sign gate is applied in Pass 2 below."
+            #
+            # CORRECTED 2026-09-12 (bean `qou-jgx7`; PR #7251).  There is no
+            # final sign gate any more, and the complementary-slackness
+            # justification for the one that used to be here is REFUTED
+            # sorry-free -- see the Pass-2 block below for the four
+            # mismatches and the scope-(b) invariant.  Every partition's
+            # accumulated delta now reaches the total.
             delta = raw_delta
             s['cumul_partition'] += delta
             s['log_prev'] = log_cur
-            # Store raw trace sign for final-state complementary slackness.
+            # Final trace sign: retained as DIAGNOSTIC data only.  It is a
+            # real property of the atom's final state and is reported in
+            # `per_step`; it is no longer an admission filter on the sum.
             s['final_tr_sign'] = 1 if tr_run > 0 else -1
             step_delta_total += delta
             partitions_step[str(entry['partition'])] = {
@@ -2098,30 +2158,36 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
         # beyond the explicit-YSN cutoff.  Each gives a cheap
         # per-step estimate (no matrix product required).
         #
-        # Per-step tightness gate: sign of approximated trace.  The
-        # approximation gives log_trace directly; the TRACE sign is
-        # positive (trace ~ exp(log_trace)).  Positive trace ⇒ SLACK
-        # Frobenius constraint ⇒ y_λ* = 0 by complementary slackness.
-        # In this approximation the trace is always +ve, so by LP
-        # duality the partition contributes ZERO at this step.
-        # Below-threshold partitions (where the spectral rate is
-        # NEGATIVE, |χ/d| < 1) have log_trace shrinking; their
-        # "effective trace" approaches 0⁺ from above — still slack.
+        # 🛑 THE ZEROING BELOW IS ASSERTED, NOT DERIVED (2026-09-12).
         #
-        # Conclusion: the Perron-Frobenius q-Gaussian fallback
-        # contributes 0 after the complementary slackness gate.
-        # Extension to higher k via this approximation does NOT
-        # generate non-zero corrections — it correctly predicts
-        # that typical high-k partitions are SLACK and contribute
-        # nothing in the LP-dual framework.
+        # This block used to justify `delta_g = 0.0` by the SAME
+        # complementary-slackness argument the Pass-2 sign gate used
+        # ("positive trace ⇒ SLACK Frobenius constraint ⇒ y_λ* = 0 by
+        # complementary slackness ... the categorically correct outcome").
+        # That argument is refuted sorry-free in
+        # `QOU.MassTheory.UICGateNotFromComplementarySlackness` (PR #7251) --
+        # see the Pass-2 block below for the four mismatches -- so the
+        # justification stated here is GONE, and the zeroing is now an
+        # unexplained modelling choice inherited from it.
+        #
+        # It has NOT been changed here, deliberately.  Dropping it is a
+        # behaviour change with no derived replacement: the q-Gaussian tier
+        # is a Perron-Frobenius ASYMPTOTIC approximation that supplies a
+        # `log_trace` and no matrix, so there is no derived rule saying what
+        # its contribution should be, and inventing one to move the number
+        # would be selection, not derivation.  Tracked as bean `qou-jgx8`.
+        #
+        # Consequence for a reader: the fallback tier contributes exactly
+        # zero to every total this function returns, at every k in
+        # (k_exact, k_max].  Do not read that zero as a derived prediction
+        # that high-k partitions are negligible.
         gaussian_delta_total = _mp.mpf(0)
         for eg in active_gaussian:
             eg_info = eg
             log_trace_approx = _q_gaussian_character_approx(eg_info, None, kk)
-            # By LP complementary slackness: tr > 0 ⇒ slack ⇒ y_λ* = 0
-            # ⇒ delta = 0.  This is the categorically correct outcome
-            # for partitions with no evidence of the Frobenius
-            # constraint being tight at any step.
+            # Asserted zero -- see the banner above.  `log_trace_approx` IS
+            # computed and IS reported in `per_step`, so the diagnostic is
+            # not lost; only its contribution to the sum is stipulated.
             delta_g = 0.0
             gaussian_delta_total += delta_g
             if return_per_step:
@@ -2141,25 +2207,25 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             # `cumulative_ungated_MeV`, NOT `cumulative_MeV` (renamed
             # 2026-09-07, bean `qou-sv7h`).
             #
-            # This running total is UNGATED and the function's return value is
-            # GATED, so the two are different numbers — and not slightly.
-            # Measured at k_exact=4:
+            # UPDATED 2026-09-12 (bean `qou-jgx7`): this running total and the
+            # function's return value now AGREE at the last row, because the
+            # Pass-2 sign gate has been removed.  The rename is kept: the name
+            # still says truthfully what the field is, and the field's whole
+            # history is that it once differed from the return by 3.4-4.6x.
             #
-            #     A=2   ungated -0.4122121922450237   returned -0.08955968305895068
-            #           4 of 10 exact partitions tight at the final state
-            #     A=4   ungated -0.2742397716173970   returned -0.08058674847769141
-            #           2 of 10 tight
+            # The measurement that motivated the rename, at k_exact=4, is
+            # preserved here because it is the size of the change this file
+            # just made:
             #
-            # a factor of 3.4-4.6, not a rounding difference. Under the old
-            # name a reader taking the last row's `cumulative_MeV` as "the
-            # answer so far" was several times off, with nothing in the field
-            # name to say so; `gated_total_MeV` exists but only on the LAST row.
+            #     A=2   ungated -0.412212192245027    then-returned -0.0895596830589507
+            #           4 of 10 exact partitions "tight" at the final state
+            #     A=4   ungated -0.2742397716174      then-returned -0.0805867484776914
+            #           2 of 10 "tight"
             #
-            # The gate CANNOT be applied per step, which is why this is a
-            # rename and not a fix: Pass 2 keeps a partition only when
-            # `final_tr_sign <= 0`, a property of the atom's FINAL state, so at
-            # step k there is no fact of the matter about which partitions
-            # survive. An honest per-step running total is necessarily ungated.
+            # The ungated value is now what is returned in both rows.  Note it
+            # is NOT closer to AME: at A=2 the AME binding is +2.2246 MeV and
+            # the ungated total is -0.4122 MeV, still wrong in sign.  Dropping
+            # the gate buys honesty, not accuracy (AGENTS.md "NO FITTING").
             #
             # Safe to rename: measured on `main`, this key had ZERO consumers.
             # `probe_9b_manybody_expansion.py` writes a `cumulative_MeV` of its
@@ -2173,30 +2239,94 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
                 'n_gaussian_partitions': len(active_gaussian),
             })
 
-    # ── Pass 2: final-state complementary slackness gate ─────────
-    # LP duality theorem: on the OPTIMAL primal-dual pair (Φ*, y*),
-    #   y_λ* × ⟨Φ*, π_λ⟩_F = 0  for every partition λ.
-    # So y_λ* > 0 only when the Frobenius constraint is TIGHT at the
-    # atom's FINAL state, i.e. tr(M_λ(W_atom)) ≤ 0.  Partitions with
-    # positive final trace are SLACK → y_λ* = 0 → zero contribution.
-    # Replace cumul_total with the gated sum over tight partitions.
-    gated_total = _mp.mpf(0)
+    # ── Pass 2: the final-state sign gate is GONE (2026-09-12) ───────
+    #
+    # WHAT USED TO BE HERE.  A gate that admitted a Wedderburn block to the
+    # sum only when `final_tr_sign <= 0`:
+    #
+    #     if s.get('final_tr_sign', 1) <= 0:
+    #         gated_total += s['cumul_partition']
+    #
+    # justified in this comment by LP complementary slackness -- "on the
+    # OPTIMAL primal-dual pair (Φ*, y*), y_λ* × ⟨Φ*, π_λ⟩_F = 0 ... so
+    # y_λ* > 0 only when the Frobenius constraint is TIGHT at the atom's
+    # FINAL state, i.e. tr(M_λ(W_atom)) ≤ 0."  The function returned that
+    # gated sum.
+    #
+    # WHY IT IS GONE.  That justification is REFUTED, sorry-free, in
+    # `QOU.MassTheory.UICGateNotFromComplementarySlackness` (PR #7251, 8
+    # declarations, `#print axioms` clean).  The LP it invokes exists --
+    # `prop:operator-selection-lp`, `QOU.ParticleInteractions.
+    # operator_selection_lp` -- and complementary slackness on it does not
+    # give this gate, by four independent mismatches:
+    #
+    #   1. INDEX SET.  LP constraints are indexed by NF basis elements
+    #      (d = n!); the gate is indexed by partitions (p(n)).  At n = 3
+    #      that is 6 against 3.
+    #   2. ARGUMENT.  CS constrains `(Gx*)_i`, a function of the operator
+    #      being SELECTED.  The gate reads `t_λ = tr(M_λ(W_atom))`, an
+    #      INPUT, which enters the LP only as a cost coefficient.
+    #   3. DIRECTION.  `IsFeasible` demands `0 ≤ (Gx)_i`, so on any feasible
+    #      point `≤ 0` and `= 0` are the same predicate: a sign gate there
+    #      IS the tightness gate, keeping only blocks at exactly zero --
+    #      while this producer kept 4 of 10 at ²H.
+    #   4. NO UNIQUE OPTIMUM.  The minimiser set is a positive-dimensional
+    #      face, so "the OPTIMAL primal-dual pair" names no unique object.
+    #
+    # A partition-indexed repair is excluded scope (b).  INVARIANT: primal
+    # feasibility of the Frobenius constraints plus orthogonality of the
+    # Wedderburn projectors.  The projectors are orthogonal idempotents, so
+    # `G_{λμ} = tr_M(P_λ P_μ) = δ_{λμ} tr_M(P_λ)` is diagonal, CS decouples
+    # to `s_λ · G_{λλ} · x_λ = 0`, and the atom's traces never appear.
+    # Independent of n, q and trace convention.
+    #
+    # See also `lp_shadow_price` (:328) -- an owner-ruled correction of
+    # 2026-09-05 (PR #6752) already states that this module's `y_λ` are NOT
+    # LP duals and that the net-constraint dual `y_0*` is identically zero.
+    # That ruling landed at the site carrying the offending NAME and never
+    # reached the reasoning here, 1 800 lines down; one file asserted both
+    # for a week.
+    #
+    # WHAT THIS BUYS, STATED PLAINLY.  Not accuracy.  At ²H the AME binding
+    # is +2.2246 MeV; the ungated total is -0.4122 MeV, wrong in sign, as
+    # the gated -0.0896 MeV also was.  What it buys is that the producer now
+    # reports what its functional actually gives, instead of a subset chosen
+    # by a rule nobody can derive.  Per AGENTS.md "NO FITTING": a documented
+    # honest miss is a result; a more accurate selected route is worth less
+    # than a less accurate derived one.  DO NOT reinstate this gate, and do
+    # not look for a replacement selection that restores the old numbers --
+    # that is selection against the target.
+    #
+    # Owner ruling 2026-09-12 (bean `qou-jgx7`).  #7237 independently marks
+    # the gate asserted-not-derived in the content block.
+    #
+    # The gated sum is still COMPUTED and reported, under a name that says
+    # what it is, so the historical number stays reproducible and any
+    # consumer that wants it must now say out loud that it wants it.
+    gated_total_DISPROVED_SELECTION = _mp.mpf(0)
     n_tight = 0
     for s in state:
         if s.get('final_tr_sign', 1) <= 0:
-            gated_total += s['cumul_partition']
+            gated_total_DISPROVED_SELECTION += s['cumul_partition']
             n_tight += 1
 
     if return_per_step:
         if per_step:
             per_step[-1]['raw_total_MeV'] = cumul_total
-            per_step[-1]['gated_total_MeV'] = gated_total
+            # `gated_total_MeV` is RENAMED, not merely deprecated: a neutral
+            # name on a disproved selection is what let it be read as the
+            # answer.  Two consumers on `main` read the old key
+            # (`probes/where_the_a_dependence_is_lost_probe.py:182`,
+            # `probes/uic_per_block_log_valley_scan_probe.py:134`); both are
+            # updated in the same commit.
+            per_step[-1]['gated_total_DISPROVED_SELECTION_MeV'] = \
+                gated_total_DISPROVED_SELECTION
             per_step[-1]['n_active_exact'] = len(active_exact)
             per_step[-1]['n_active_gaussian'] = len(active_gaussian)
             per_step[-1]['n_tight_final'] = n_tight
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
-        return float(gated_total), per_step
+        return float(cumul_total), per_step
     # float, as this function has always returned -- the cast is at the public
     # boundary, and NOW that is true.  The note that stood here said the
     # accumulation "keeps its precision ... because math.log already narrows
@@ -2204,7 +2334,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # conclusion from it: a log that narrows inside the loop is exactly what
     # stops the accumulation keeping anything.  Every log on this path goes
     # through `_exact_log` as of 2026-09-07.
-    return float(gated_total)
+    return float(cumul_total)
 
 
 def _jet_witness_path(Z, N, jet, witness_dir):
@@ -2557,6 +2687,21 @@ def unified_iterative_correction_jet(Z, N, jet_max,
                                      resume=True,
                                      k_cap=None):
     """Jet-filtered iterative LP-dual accumulator with per-jet witnesses.
+
+    🛑 THIS FUNCTION STILL CARRIES THE DISPROVED SIGN GATE (2026-09-12).
+    `tight = (tr_sign <= 0)` below, and the conjugate-pair cross terms
+    gated on it, are the same selection that was removed from
+    `unified_iterative_correction`, on the same complementary-slackness
+    argument, which is refuted sorry-free in
+    `QOU.MassTheory.UICGateNotFromComplementarySlackness` (PR #7251).
+
+    It was NOT changed in that pass because this function has **zero code
+    callers** anywhere in the tree (measured 2026-09-12; classified
+    EXPLORATORY with "no canonical caller" in
+    `docs/audits/2026-05-24-hecke-core-canonical-audit.md` row 63), so
+    changing it would move no published number while costing a re-run
+    nobody consumes.  Do not read the gate's survival here as evidence it
+    is justified.  Tracked as bean `qou-jgx9`.
 
     Architecture:
       For j = 1, 2, ..., jet_max:

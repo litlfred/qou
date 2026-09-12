@@ -34,9 +34,15 @@ traces are strongly A-dependent.**
 ## Layer 3 — the weighted sum: A-dependence is GONE, and Pass 2 is not the cause
 
 `unified_iterative_correction` accumulates `cumul_total` over partitions in
-Pass 1, then Pass 2 replaces it with `gated_total`, the sum over the partitions
-whose final trace is tight. If the flatness were introduced by that gate, the
-raw sum would be extensive and the gated one flat. It is not:
+Pass 1.  When this probe was written, Pass 2 then replaced it with
+`gated_total`, the sum over the partitions whose final trace is "tight"; that
+sign gate was DROPPED 2026-09-12 (owner ruling, bean `qou-jgx7`) after its
+complementary-slackness justification was refuted sorry-free (PR #7251), so
+`cumul_total` is now the return value and the gated sum survives only as the
+diagnostic `gated_total_DISPROVED_SELECTION_MeV`.  **This probe's conclusion is
+unaffected and its numbers do not move** — it computed both columns itself and
+its finding is about the RAW one.  If the flatness were introduced by that gate,
+the raw sum would be extensive and the gated one flat. It is not:
 
     k   he4 raw      li6 raw      RAW ratio   he4 gated    li6 gated   GATED ratio
     5   -0.736660    -0.923253      1.2533    -0.375110    -0.539213     1.4375
@@ -60,7 +66,8 @@ exclude any ingredient from a corrected closure.
 
 ## Precision note
 
-`raw_total_MeV` and `gated_total_MeV` are `mpmath.mpf` **containers**, but they
+`raw_total_MeV` and `gated_total_DISPROVED_SELECTION_MeV` (named
+`gated_total_MeV` when this probe was written) are `mpmath.mpf` **containers**, but they
 carry only ~17 significant digits: `repr` at `mp.dps = 50` returns
 `mpf('-0.73665972744972374')`. The information was narrowed to float64 upstream
 by the `math.log(abs(tr_run))` inside the step loop — pre-existing, recorded in
@@ -169,7 +176,7 @@ def main() -> int:
                   f"|{mp.nstr(a, 8)} - {mp.nstr(b, 8)}| = {mp.nstr(abs(a-b), 6)}")
 
     # ---- Layer 3: raw vs gated total -----------------------------------
-    print("\nLAYER 3 -- the weighted sum, before and after Pass 2's gate")
+    print("\nLAYER 3 -- the weighted sum, ungated vs the DISPROVED Pass-2 selection")
     print(f"  {'k':>2s} {'he4 raw':>12s} {'li6 raw':>12s} {'RAW':>7s} "
           f"{'he4 gated':>12s} {'li6 gated':>12s} {'GATED':>7s} {'tight':>11s}")
     raw_ratio = {}
@@ -179,7 +186,14 @@ def main() -> int:
             _, steps = H.unified_iterative_correction(
                 Z, N, return_per_step=True, k_max=k, k_exact=k)
             last = steps[-1]
-            got[nm] = (last['raw_total_MeV'], last['gated_total_MeV'],
+            # Key renamed 2026-09-12 (bean `qou-jgx7`): the Pass-2 sign gate
+            # was dropped, so `raw_total_MeV` is now also the return value and
+            # the gated sum survives only as an explicitly-scoped diagnostic.
+            # This probe's Layer 3 compares the two DELIBERATELY, so it keeps
+            # reading both; nothing it concludes depended on which one the
+            # producer happened to return.
+            got[nm] = (last['raw_total_MeV'],
+                       last['gated_total_DISPROVED_SELECTION_MeV'],
                        last['n_tight_final'])
         rr = got['li6'][0] / got['he4'][0]
         gr = got['li6'][1] / got['he4'][1]
