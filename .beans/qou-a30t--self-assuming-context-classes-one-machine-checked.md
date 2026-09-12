@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-12T12:02:39Z
+updated_at: 2026-09-12T12:06:50Z
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -72,3 +72,37 @@ mathematics.
   directive gates.
 
 Left in-progress: the artifact exists; the 46 entries are not drained.
+
+
+## Correction and a fifth pattern (same day)
+
+**The count above is wrong. It is 48, not 46** — `field-projection` 22 +
+`exact-field-projection` 2 + `tuple-projection` 11 + `decoy-hypothesis` 13. The 46 came
+from my own arithmetic, not from a stale measurement, and it reached the Lean docstring,
+a commit message and this bean before being re-counted. Recount with the script rather
+than quoting any of the three.
+
+**A fifth pattern is now covered: `prop-universe-field` (19 live), for 67 across five.**
+It is the sharpest of them and the only one that is a *type-level* error rather than a
+judgement about intent. The ledger states it identically in all 19:
+
+> *"Every field of this carrier is typed bare `: Prop` — the UNIVERSE of propositions, not
+> a proposition. An instance therefore supplies a proposition rather than a proof of one,
+> so `instance := ⟨True⟩` type-checks and discharges the class."*
+
+Proved rather than trusted:
+
+- `propUniverse_inhabited` — the carrier is inhabited **outright**, `⟨True⟩`.
+- `propUniverse_contentless` — so it is contentless for **`True`**: it asserts nothing
+  whatever, which is strictly worse than the self-assuming shapes, which at least assert
+  their conclusion.
+- `conditional_on_propUniverse_is_unconditional` — **the harm, exactly**: every theorem
+  stated conditional on such a carrier is unconditional, because the hypothesis discharges
+  itself. A `[C]`-conditional result downstream of one of these 19 is conditional on
+  nothing, and the §3b-cond exception does not apply to it however the block is labelled.
+- `propUniverse_vs_propField` — the discriminator is the field's **type**, mechanically:
+  `PropUniverseContext` is always inhabited, `SelfAssumingContext False` never is. So
+  `claim : Prop` versus `claim : C` is the whole difference, settled by looking at the
+  field rather than the docstring.
+
+All five new declarations depend on **no axioms at all**.
