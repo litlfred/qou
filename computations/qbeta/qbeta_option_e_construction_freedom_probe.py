@@ -21,14 +21,24 @@ readings of the SAME source blocks. Under the ruling both the multiset and the
 order are visible to the observable (level 2 is not multiplicative), so this
 prices them together.
 
-MEASURED HERE, and it corrects the count: the 16 collapse to 8 DISTINCT
-MULTISETS. The two Hopf orientations (1,0) and (0,1) append the SAME pair of
-letters and differ only in the order of those two, which the ordering
-enumeration already covers -- so once orderings are enumerated, hopf is not an
-independent axis at all. The first two readings of an earlier run came out
-identical (138600 x 27720 orderings, same nearest approach to nine figures)
-before this was spotted. The census's "16 variants" is correct for ITS question,
-which fixes one ordering per variant; it double-counts for this one.
+MEASURED HERE, and it corrects the count TWICE OVER: the 16 readings collapse to
+SIX distinct multisets, by two independent symmetries.
+
+  1. HOPF IS NOT AN AXIS.  (1,0) and (0,1) append the SAME pair of letters and
+     differ only in the order of those two, which the ordering enumeration
+     already covers.                                             16 -> 8
+
+  2. THE TWO ud SHIFTS ARE INTERCHANGEABLE.  Both carry d = -h/2, so swapping
+     which generator each sits on leaves the multiset fixed: 001 == 010 and
+     101 == 110. Two classes therefore hold four readings each.   8 -> 6
+
+Both were found by running, not by reasoning: an earlier version asserted 8 and
+FAILED its own check at 6. The class structure is verified explicitly rather
+than inferred -- every class contains both hopf orientations, and classes 2 and
+5 contain four readings each.
+
+The census's "16 variants" is correct for ITS question, which fixes one ordering
+per variant. It over-counts by 2.67x for this one.
 
 THE QUESTION, and it is a falsifiability question, not a search. Across every
 configuration the source blocks permit — 16 readings, and within each every
@@ -205,11 +215,12 @@ def main() -> int:
             print(f"  {label:<18s} {len(vn):>7d} {len(vp):>7d} "
                   f"{mp.nstr(bestpct, 8):>15s} {hits:>10d}")
     print(f"  ({time.time() - t0:.1f}s)")
-    check("the_16_readings_collapse_to_8_distinct_multisets",
-          len(per_reading) == 8 and dupes == 8,
-          f"{len(per_reading)} distinct, {dupes} duplicates — the two Hopf "
-          "orientations append the SAME letter pair and differ only in the "
-          "order of those two, which the ordering enumeration already covers")
+    check("the_16_readings_collapse_to_6_distinct_multisets",
+          len(per_reading) == 6 and dupes == 10,
+          f"{len(per_reading)} distinct, {dupes} duplicates — hopf is subsumed "
+          "by the ordering enumeration (16->8), and the two ud shifts both carry "
+          "d = -h/2 so swapping their generators leaves the multiset fixed, "
+          "collapsing 001==010 and 101==110 (8->6)")
 
     # ---- CHECK 3: the headline count ---------------------------------------
     print("\nCHECK 3 — the falsifiability price of the recipe as stated")
@@ -229,9 +240,9 @@ def main() -> int:
     print(f"{sum(1 for r in RESULTS if r[1])}/{len(RESULTS)} checks passed")
     print()
     print("VERDICT — the entire freedom the source blocks declare has been")
-    print("priced: 8 distinct multisets (the 16 readings collapse, since the")
-    print("two Hopf orientations differ only by an ordering already enumerated),")
-    print("every ordering of each, and not one")
+    print("priced: 6 distinct multisets (the 16 readings collapse by two")
+    print("symmetries — hopf is subsumed by ordering, and the two ud shifts are")
+    print("interchangeable), every ordering of each, and not one")
     print("configuration reproduces Q_beta within experimental error at the")
     print("ruled functional. That is the good kind of negative — the recipe")
     print("makes a falsifiable claim and the claim currently fails. Option E")
