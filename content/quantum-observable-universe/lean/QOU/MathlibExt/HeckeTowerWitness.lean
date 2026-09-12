@@ -76,10 +76,11 @@ read `twH_mono` as strict growth at every level — it is `≤`.
 
 **And the obvious repair does not work** — this is proved below, not merely
 suspected. The corpus does hold a rank-6 separating candidate with its basis
-established (`SchurWeyl.HeckeDim3Dim.sixBasis`, `SchurWeyl.HeckeDim3Indep`), so
+established (`QOU.SchurWeyl.sixBasis`, `QOU.SchurWeyl.sixWords_indep`), so
 it is tempting to map the tower there and send the tail `g m`, `m ≥ 2`, to a
 central scalar. `scalar_tail_forces_central` shows that any such map forces the
-adjacent generator to be **central**, which `σ₁` is not — so the whole
+adjacent generator to be **central**, which `σ₁` is not — and
+`tail_scalar_is_automatically_a_unit` closes the one apparent escape, so the whole
 "tail-to-scalars" family is excluded, not just one member. What strict growth
 actually needs is the Iwahori-Hecke coset basis, or the direct limit of
 `SchurWeyl.HeckeInclusion.heckeIncl` with injectivity. The upper half of that
@@ -318,13 +319,19 @@ theorem tower_nondegenerate [Nontrivial R] (h : R) :
 
 The obvious route to `H 1 < H 2` is to map the tower into a small algebra in
 which `g 0` and `g 1` stay independent — the corpus has a rank-6 candidate with
-its basis proved (`SchurWeyl.HeckeDim3Dim.sixBasis`, `HeckeDim3Indep`) — sending
-the tail `g m`, `m ≥ 2`, to a central scalar so that `far` is satisfied for free.
+its basis proved (`QOU.SchurWeyl.sixBasis`, `QOU.SchurWeyl.sixWords_indep`) —
+sending the tail `g m`, `m ≥ 2`, to a central scalar so that `far` is satisfied
+for free.
 
 **That route is structurally blocked, and the obstruction is the braid relation
-rather than anything about the target.** The two results below are the proof; the
-same genre as `braid_forces_eq_of_commuting_involutions`, which rules out the
-involution witness for its own reasons.
+rather than anything about the target.** The three results below are the proof.
+
+The same genre of argument — braid plus a degeneracy hypothesis forcing the
+generators to collapse — appears in `QOU.Eightfold.braid_forces_eq` (for a
+commutative image) and in `braid_forces_eq_of_commuting_involutions` of open PR
+#7153, which rules out the involution witness. **That second name is not yet on
+`main`**; it is cited here as forthcoming sibling work, not as a corpus
+declaration, and will not resolve until #7153 lands.
 
 The moral for the next attempt: a tail assignment checked only at the *boundary*
 (`far`, and `braid` at the bottom index) looks complete and is not — the
@@ -387,5 +394,28 @@ theorem scalar_tail_forces_central {A : Type*} [Ring A] [Algebra R A]
     _ = x * (d * a) * x := by rw [hdc a]
     _ = (x * d) * a * x := by simp only [mul_assoc]
     _ = a * x := by rw [hxd, one_mul]
+
+/-- **The unit hypothesis above is free, so the exclusion is total.**
+
+`scalar_tail_forces_central` assumes the tail scalar is a unit, and the one
+apparent escape from it would be to send the tail to a *non*-unit scalar. There
+is no such escape: the tail generator `g m` is itself sent to `c·1` and must
+satisfy the **same** Hecke quadratic, which forces `c·(c − h) = 1` outright —
+so `c` is a unit automatically, whenever `algebraMap` is injective (true for the
+rank-6 candidate, which is an algebra over a field).
+
+Consequently every tail-to-scalars assignment is excluded, not merely the
+invertible ones. -/
+theorem tail_scalar_is_automatically_a_unit {A : Type*} [Ring A] [Algebra R A]
+    (h c : R) (hinj : Function.Injective (algebraMap R A))
+    (hquadc : algebraMap R A c * algebraMap R A c
+        = h • algebraMap R A c + 1) :
+    c * (c - h) = 1 := by
+  have hmap : algebraMap R A (c * c) = algebraMap R A (h * c + 1) := by
+    rw [map_mul, map_add, map_mul, map_one]
+    rw [Algebra.smul_def] at hquadc
+    exact hquadc
+  have hcc : c * c = h * c + 1 := hinj hmap
+  linear_combination hcc
 
 end QOU.MathlibExt.HeckeTowerWitness
