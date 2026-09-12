@@ -1330,16 +1330,28 @@ def _build_ysn_matrices_exact(partition, sparse_threshold=32):
 try:                                                    # pragma: no cover
     import pyhecke_native as _PHN
     _HAS_LP_KERNEL = hasattr(_PHN, "lp_accumulator_step_traces_mpfr")
+    # Keep WHY, not just whether.  The bool below collapses three distinct
+    # situations into one, and the fallback warning used to report the middle
+    # one unconditionally -- telling a caller to rebuild a wheel that is
+    # already correct.  See `_warn_if_kernel_absent`.
+    _KERNEL_ABSENCE = None if _HAS_LP_KERNEL else "stale-wheel"
 except ImportError:                                     # pragma: no cover
     _PHN = None
     _HAS_LP_KERNEL = False
+    _KERNEL_ABSENCE = "not-installed"
 
 
 _FALLBACK_WARNED = False
 
 
 def _warn_if_kernel_absent():
-    """Say, once per process, that this run is on braid-violating matrices.
+    """Say, once per process, that this run is on the fallback matrices.
+
+    🛑 This docstring read "that this run is on braid-violating matrices" until
+    2026-09-12, and the message it introduces says the opposite one line down:
+    since PR #6708 the `_build_ysn_matrices` family DOES satisfy the braid
+    relation (`audits/ysn_braid_relation_audit.py` exits 0).  The summary line
+    is what a reader skims, so it asserted a defect the body retracts.
 
     When `_HAS_LP_KERNEL` is False the accumulator falls back to matrices from
     `_build_ysn_matrices`. The fallback exists so this module still imports in a
@@ -1401,9 +1413,24 @@ def _warn_if_kernel_absent():
     if _HAS_LP_KERNEL or _FALLBACK_WARNED:
         return
     _FALLBACK_WARNED = True
+    # Report the cause we actually established, never a guess.  `_HAS_LP_KERNEL`
+    # being False has three causes and this function can only distinguish them
+    # via `_KERNEL_ABSENCE`, recorded at import.  A caller that sets the flag
+    # False by hand (an A/B arm, a regression probe) leaves it None, and the
+    # old text then told that caller to rebuild an already-correct wheel.
+    _cause = {
+        "not-installed": "pyhecke_native is NOT INSTALLED",
+        "stale-wheel": ("pyhecke_native is installed but does NOT export "
+                        "lp_accumulator_step_traces_mpfr (stale wheel)"),
+    }.get(_KERNEL_ABSENCE,
+          "the LP kernel was DISABLED BY THE CALLER (pyhecke_native itself is "
+          "fine; nothing needs rebuilding)")
+    _fix = ("*** Fix: cd tools/pyhecke-native && maturin build --release && pip "
+            "install --force-reinstall --no-deps target/wheels/*.whl\n"
+            "*** (pyhecke-native is not on PyPI, so a default container has a "
+            "stale wheel.)\n") if _KERNEL_ABSENCE else ""
     print(
-        "\n*** WARNING: pyhecke_native.lp_accumulator_step_traces_mpfr is "
-        "UNAVAILABLE.\n"
+        f"\n*** WARNING: the LP accumulator kernel is not in use -- {_cause}.\n"
         "*** Falling back to _build_ysn_matrices. Since PR #6708 that family "
         "DOES satisfy\n"
         "*** the braid relation (audits/ysn_braid_relation_audit.py exits 0), "
@@ -1415,10 +1442,7 @@ def _warn_if_kernel_absent():
         "*** since #6708 (its fallback arm is 6.3 h). Prefer the kernel; treat "
         "a witness\n"
         "*** from this run as unverified rather than as wrong.\n"
-        "*** Fix: cd tools/pyhecke-native && maturin build --release && pip "
-        "install --force-reinstall --no-deps target/wheels/*.whl\n"
-        "*** (pyhecke-native is not on PyPI, so a default container has a stale "
-        "wheel.)\n",
+        + _fix,
         file=_sys.stderr,
     )
 
