@@ -510,3 +510,114 @@ pattern — was the defect.
 part of **44/44**, exit 0.
 
 **Bean stays open** (rule 13a). (a)/(b) still the author's.
+
+## 2026-09-12 — 🟧 OWNER RULING: option (a). `𝒜` is the `A+Z` object. And the corpus already held the deciding measurement.
+
+**Ruling (owner, verbatim instruction: *"try Recommendation 1 + 5"*).** `𝒜 ∈ H_{A+Z}(q)`
+— the atom with its electron shell, as `def:atomic-braid` states — is canonical for the
+symbol. The production `3A` word is the electron-free nuclear core and is written
+`𝓑_K ∈ H_{3A}(q)`, the name it already has in `notation-register-table3-data.md:7`.
+
+**It is a SCOPING decision, not a rename, and that is what makes it cheap.** No call
+site moves. #6952 measured renaming the `3A` object at **685 call sites across 382
+files**, considered and rejected in #5765. Under (a) no rename is needed, because the
+`3A` object was never missing a name — what was missing was the statement that the two
+are different objects.
+
+### What decided it, and it was already here
+
+This bean spent 2026-09-05 → 09-11 measuring **where** each reading is carried and
+**what turns on** the choice, and repeatedly said no reading is free. It never found a
+quantity that **decides**. There is one: the recorded **Φ₃ column** of the Z=1–20 mass
+table, sitting in `phi_allpairs_reconstruction.py` (on `main`, `1fe569c05`) since before
+this bean opened.
+
+**Parameter-free** — Table 1's crossing signs, each cell's own pair counts, exact
+integers, no tolerance:
+
+| cell | Φ₃ column | He, against a recorded −6 |
+|---|---|---|
+| `A` (nucleons only) | **0/19** | 0 |
+| **`A+Z` (a)** | **19/19** | **−6** |
+| `3A` (b) | **0/19** | 0 |
+| `3A+Z` (c) | **0/19** | −22 |
+
+The `ee` count `C(Z,2)` and the `pe` count `Z²` presuppose `Z` electron strands. The
+electron contribution has an exact closed form on all 20 rows:
+`w(A+Z) − w(A) = 2[C(Z,2) − Z²] = −Z(Z+1)`, which at Ar is **342**.
+
+**Then GRANT each cell three fitted coefficients** — deliberately generous, run
+symmetrically, labelled a fit; exact rational Cramer over all 969 anchor triples:
+
+| cell | best fit | coefficients | integral? |
+|---|---|---|---|
+| `A` | 18/19 | `(2, 0, −2)` | yes — **misses Ar, and only Ar** |
+| **`A+Z` (a)** | **19/19** | **`(4, −2, −2)`** | **yes** |
+| `3A` (b) | 10/19 | `(7/15, 1/5, −4/9)` | no |
+| `3A+Z` (c) | 10/19 | `(13/15, −1/5, −4/3)` | no |
+
+**The second table is the sharper half.** A three-parameter search on (a)'s basis
+**recovers the parameter-free answer** — `(4, −2, −2)` is `2(pp+ee)`, `2·nn`, `2·pe`
+read straight off Table 1 — while (b) and (c) cannot reach the column even when fitted,
+and want coefficients no crossing table produces. Under the owner's no-fitting directive
+that is the ranking that counts: (a) wins the *derivational* test, not an accuracy
+tie-break.
+
+### 🛑 CORRECTION to this bean's own evidence for (b)
+
+The 2026-09-05 entry says, as evidence *for* (b):
+
+> *"For (b): nothing in `computations/` has ever built the `A+Z` object."*
+
+**That is FALSE.** `atom_gen_chains` / `atom_gen_chains_sym`
+(`computations/substrate/hecke_core_symbolic.py:271`) build all-pairs nucleon crossings
+**plus `Z` electrons each contributing `(1, −h)`** — the `pe` crossing.
+`computations/unified-mass-molecular.py` emits a witness and says so in its own header
+(*"Full atomic braid `H_{A+Z}(q)`: nucleons + electrons"*).
+
+Measured: **23** importers of the `A+Z` family against **378** of `atom_braid_word_3A`,
+and **5 files import BOTH** — including `tools/pyhecke/python/pyhecke/atom.py` (a library
+module) and `scripts/word-provenance-gate.py` (a gate), a live layer-straddle surface.
+So the ledger line reading "(a) has the definition, (b) has all the code" was wrong in
+its second half: both objects are implemented, and they serve different things.
+
+### Instruments landed (PR #7215)
+
+- `notation-collisions.md` — a `𝒜` vs `𝓑_K` entry, the register being authoritative
+  for symbols per AGENTS.md §7aa.
+- `def:atomic-braid.md` — a scope paragraph in the definition's own voice (the electron
+  rows are part of the definition; `H_{A+Z}` cannot contain a `3A` word at any `A`).
+- `atomic-braid.ts` `authorNotes` — the dated ruling and its provenance, per §4d. The
+  first draft put the ruling in prose as a dated banner and `voice-author-notes-pollution`
+  flagged it; baseline for that block is **1** pre-existing hit (line 11) and the
+  rewrite is back at 1.
+- Probe `computations/probes/phi3_column_discriminates_the_strand_count_probe.py`, 35/35,
+  and `docs/audits/2026-09-12-phi3-column-discriminates-the-strand-count.md`.
+
+The probe **derives** the six Φ₃ signs from Table 1's own `(c, d)` by exact symbolic
+arithmetic rather than transcribing them — `phi_allpairs_reconstruction.py` hardcodes
+them. It also caught two of my own scan defects: the row parser could not see `ee` (a
+lookaround on a bare `e` cannot separate two adjacent `e`s), and the importer scan
+counted the probe itself as a layer straddle.
+
+### 🛑 SCOPE — what the ruling does NOT settle, and why this bean STAYS OPEN (rule 13a)
+
+- **Scope-(a), not a structural exclusion.** *These* pair-count constructions on *these*
+  bases fail. A colour-weighted quark-level construction on `3A` is **untested** and is
+  not excluded.
+- **The third count `3A+Z` is still live** in `mass-endomorphism/atomic-mass-gb-nf.md:3`,
+  which cites `def:atomic-braid` while using a count that definition contradicts. The
+  ruling names two cells; it does not resolve that citation, and it was deliberately not
+  edited.
+- **Φ₂ does not discriminate** (`Z·N` is identical under `A` and `A+Z`); **Φ₁ is not
+  closed** under any reading.
+- **The target is a recovered producer's intermediate**, not the published paper table:
+  the witness `atom-mass-complete-wedderburn` is out of tree since the miga split, and
+  its own `β₃ = 0.0499` disagrees with the published `h_A² = 0.0437073` by **14.2 %**.
+  Verified rather than assumed that the column is `w·ln q₀` with integer `w` at the
+  proton pin (worst rel dev **1.23e-5**, uniform — the six-decimal recording precision).
+- **#6919's `f₁/f₀` disjoint-support additivity is only statable under `3A`/`3A+Z`** —
+  the counter-pressure recorded on 2026-09-06 is unchanged by this ruling, and under (a)
+  that question has no referent rather than a different answer.
+- **`qou-q6pp`'s wrong-signed p–n splitting is untouched.** Its leading explanation is
+  stated in the `A+Z` reading already, so the ruling leaves it where it was — open.
