@@ -71,7 +71,7 @@ WHAT IS MEASURED, AND WHAT IS NOT
 Measured: the production accumulator itself, at the proton pin, convention D,
 `mp.dps = COMPUTE_DPS`, mpmath end to end. The gated total (the function's return
 value when this probe was written; a diagnostic since the 2026-09-12 gate drop,
-bean `qou-jgx7`) AND the ungated raw total (the return value now) are both read
+bean `qou-21oc`) AND the ungated raw total (the return value now) are both read
 from the per-step rows as `mpf`,
 so the producer's float64 boundary cast is never taken -- see S0.
 
@@ -131,7 +131,7 @@ def maxabs(vals):
 def uic_pair(Z, N, ke):
     """(gated_total, ungated_total, n_tight) as mpf -- never the float return.
 
-    KEY RENAMED 2026-09-12 (bean `qou-jgx7`).  The Pass-2 sign gate was
+    KEY RENAMED 2026-09-12 (bean `qou-21oc`).  The Pass-2 sign gate was
     DROPPED from the producer after its complementary-slackness justification
     was refuted sorry-free (PR #7251), so the producer now RETURNS the ungated
     total and reports the gated sum as the explicitly-scoped diagnostic
