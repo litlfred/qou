@@ -1,0 +1,215 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T12:30:22.305413+00:00",
+  "commitSha": "3bd6c2eedd79bce5d9497342d721f0b3a00e0eb1",
+  "assertions": [
+    {
+      "name": "b_nn = 1/(q(q^2+1))  (ChainTraceFactor.markovZ_sub_heckeH)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "L_pp + L_nn = 2 log(q + 1/q)  (ChainTraceFactor.L_pp_add_L_nn)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "b_pp > b_pn > b_nn > 0 at q0  (ChainTraceFactor.factors_strict_mono)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the h-series q(h) satisfies q - 1/q = h exactly to order h^4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "all three h-series have constant term z(0) = 1/2 (shared, so the Lean normalisation applies)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "c_2/c_0 = (N-Z)^2/2 + (5-A)/8 EXACTLY for every A = 3..12 and every Z (reproduces qou-oooq)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "[h^2] of the chain PRODUCT has second difference 4 in Z at every A (a quadratic, vertex N = Z)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "[h^2] of +log and of -log of the same product has ALL second differences 0 (linear in Z)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "[h^2] log P = sum_i (c_i - b_i^2/2) exactly  (Lean logJet_c2_prod / logJet_c2_census)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "[h^2] prod = sum c_i + e2(b) and (sum b)^2 = sum b^2 + 2 e2(b)  (Lean prod_c2, sq_sum_eq)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "live log-ratio law: maximum of B at an ENDPOINT (Z = 1) for every A = 3..12 — no valley",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "refuted bare difference: no interior maximum at any A = 3..12",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "-c_2/c_0 alone: interior maximum at N = Z (even A) / |N-Z| = 1 (odd A) for A = 4..12",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "+c_2/c_0 alone: maximum at an endpoint for every A — the sign flips the valley into a hill",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "bare resummed product, either sign: no interior maximum (monotone in Z)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "(a) transfer matrices T(c,d) = [[ch+d, c],[c, d]] of letters on ONE generator commute exactly (they are the regular representation of the commutative algebra R[sigma]/(sigma^2 - h sigma - 1))",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "(b) stacking two interface letters on ONE generator is NOT multiplicative: tr(stack) has constant term 1 against (1/2)^2, and the [h^2] log cross term is nonzero for every pair",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "(c) the rational Hoefsmit seminormal form satisfies the Hecke, braid and far-commutation relations exactly at q = 3/2 for all 11 shapes used",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "(c) block characters agree with hecke_core_legacy's numeric YSN at q0 to < 1e-40 on four shapes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "(c) on the CHAIN layout, at least one single Wedderburn block's [h^2] log tr_lambda has nonzero second differences in Z — a single block is NOT multiplicative and its type-two piece is NOT linear in the bond counts (the second differences are nonzero and not constant: not a quadratic either, because the cyclic generator map makes the word structure depend on Z)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "(c) control: the Wenzl-weighted H_2 sum w+ (q+d) + w- (-1/q+d) equals z + d as an h-series (ChainTraceFactor.twoStrandTrace_eq)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "graded_binding_sign_convention_probe",
+  "scriptFile": "graded_binding_sign_convention_probe.py",
+  "scriptHash": "80d48d65f311",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/graded_binding_sign_convention_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/graded_binding_sign_convention_probe.py"
+  },
+  "description": "Is graded binding +c_k or -c_k (bean qou-zlra)? On the corpus's own convention-D chain letters at the proton pin: the type-two pair convolution sum_{i<j} b_i b_j that carries (N-Z)^2 lives in the BARE product (second difference 4 in Z, exact, A = 3..12) and in NEITHER sign of its logarithm (second differences 0), so for every log-type binding functional — the live log-ratio law and unified-iterative-correction's ln|tr M_lambda| — the sign question is empty. Valley scan at q0: log-ratio law endpoint-maximal (no valley); -c_2/c_0 alone has an interior maximum at N = Z, +c_2/c_0 alone does not; the resummed bare product is monotone either way. Within-generator (qou-eqwg): transfer matrices on one generator commute exactly (no non-commutativity to carry anything); stacking interface letters on one generator is non-multiplicative but the chain never does it; a SINGLE Wedderburn block tr_lambda(prod(c sigma+d)) — the UIC's object — is non-multiplicative on the chain layout and its [h^2] log is not linear in Z (nonzero, non-constant second differences). Lean invariant: QOU.Mass.GradedBindingFunctionalPairTerm (sorry-free). No fit, nothing wired.",
+  "data": {
+    "b_pp": "0.612688037146465251595829863945899248026308391545064759724287",
+    "L_pp": "0.489899384255134851406550167494621948230433967860617067281223",
+    "b_pn": "0.508229789376738962577995797655893603898308390916563976937421",
+    "L_pn": "0.676821592386343389663118784043651784349612198568976889845694",
+    "b_nn": "0.403627738350825936164983650816224304166550896282040204342591",
+    "L_nn": "0.907262265533212900670175287386911536445411091176554280284672",
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "E0_N0_MeV": "4.18598136329447589694506215875900841014348689087960498278367",
+    "E0_full_MeV": "4.22748335562903055026805602658721115361518419806561475207637",
+    "prod_h2_second_difference_in_Z": "4 (all A = 3..12)",
+    "log_h2_second_difference_in_Z": "0 (both signs, all A = 3..12)",
+    "b1_over_z0": {
+      "pp": "1",
+      "pn": "0",
+      "nn": "-1"
+    },
+    "c2_over_z0": {
+      "pp": "3/8",
+      "pn": "3/8",
+      "nn": "3/8"
+    },
+    "argmax_Z_A3to12__log-ratio (live law, owner 2026-09-04/05)": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]",
+    "argmax_Z_A3to12__bare difference Q_beta.(tr_free - tr_atom) (REFUTED 2026-09-05)": "[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]",
+    "argmax_Z_A3to12__-c_2/c_0 alone (the qou-oooq reading)": "[1, 2, 2, 3, 3, 4, 4, 5, 5, 6]",
+    "argmax_Z_A3to12__+c_2/c_0 alone (the opposite sign)": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]",
+    "argmax_Z_A3to12__bare truncation -(1 + c_1 h + c_2 h^2)": "[1, 1, 1, 1, 1, 2, 2, 3, 3, 4]",
+    "argmax_Z_A3to12__bare truncation +(1 + c_1 h + c_2 h^2)": "[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]",
+    "argmax_Z_A3to12__bare -prod(f/z0) resummed": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]",
+    "argmax_Z_A3to12__bare +prod(f/z0) resummed": "[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]",
+    "one_generator_stack_h2_log_cross_terms": {
+      "pp,pp": "5/8",
+      "pn,pp": "-1/32",
+      "pn,pn": "-1/2",
+      "nn,pp": "1/4",
+      "nn,pn": "-1/32",
+      "nn,nn": "5/8"
+    },
+    "single_block_shapes_with_quadratic_h2": [
+      "(3, 1)",
+      "(2, 1, 1)",
+      "(3, 2)",
+      "(4, 1)",
+      "(2, 2, 1)"
+    ]
+  },
+  "caveats": [
+    "Shape result. No binding number is produced and no functional is endorsed; the scan reports argmax_Z per functional with the corpus's own scales as labels.",
+    "The single-block test (S4c) uses the canonical eleven-letter intra block and the chain interface letters mapped cyclically into H_k as hecke_core_legacy does; it is UIC-SHAPED, not a run of the production accumulator (which exceeded 300 s at A = 4 in this container and was not scanned).",
+    "The free-nucleon factors t_p, t_n enter only the refuted difference law's scan and are the derived closed forms of the 2026-09-05 arc synthesis; Q_beta there is a label for that law's own scale, not an input to any live quantity."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
