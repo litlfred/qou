@@ -112,6 +112,41 @@ with `n`, and the condition it buys (`Q - P < mu({k != 0})`) is only useful wher
 which is not the measured regime.  Recorded as a corrected measurement, not as a door.
 
 ===============================================================================
+FINDING 4 -- the DEPTH reading, and it localises the whole difficulty
+===============================================================================
+
+In cell coordinates write `b = i + j` (anti-diagonal) and `c = j - i` (content).  Then
+`Sum h = Sum_cells b + n`, so `k = Delta b` exactly, and
+
+    **b = |c| + 2 m,   m := min(i, j) >= 0**
+
+-- the cell's DEPTH along its diagonal.  (The corpus already has both halves: `d = m + 1`
+in `..._edge_ratio_monotonicity.py:158` and `..._kappa_large_n_sampler.py:100`, and
+"a cell on diagonal c at depth k is (k, k+c), so i+j+1 = 2k+c+1" in
+`..._kappa_derivation.py:26`.)  Hence `k = g + 2 Delta_m`, and
+
+    **M_1 = Sum dmu g (g + 2 Delta_m) = P + 2 Sum dmu g Delta_m**
+
+Two things follow.  If every cell sat at depth 0 (a hook), `k = g` and `M_1 = P > 0`
+TERMWISE -- the entire obstruction is the depth.  And more usefully, on any edge with
+`Delta_m = 0` the integrand is `g k = g^2 >= 0` with no inequality to solve, so
+
+    **M_1 = [Sum_{Delta_m = 0} dmu g^2]  +  [Sum_{Delta_m != 0} dmu g k]**
+
+with the first bracket unconditionally non-negative and all negative edges confined to the
+second.  `Delta_m = 0` is `delta = 1`, the value PR #6825 already singles out; its
+recorded integer criterion independently implies no `delta = 1` edge is negative, so this
+is a derivation of a known fact plus its price.
+
+**MEASURED, and it prices the family OUT as a route.**  The unconditional part is
+`12.33 %` of `M_1` at `n = 20`, and its share is **DECLINING**: `0.356` (n=8), `0.271`
+(n=10), `0.225` (n=12), `0.173` (n=15), `0.123` (n=20).  So the free family shrinks as `n`
+grows and cannot carry a large-`n` proof; `87.67 %` of `M_1` sits on depth-changing edges
+and is not controlled here.  Reported because a 12 % family whose share is falling is a
+decomposition, not a foothold -- and quoting the 12.33 % without the trend would suggest
+otherwise.
+
+===============================================================================
 SCOPE -- read before citing
 ===============================================================================
 
@@ -170,6 +205,7 @@ def main():
     ctrl_P = True               # edge P == Cov(A,W)
     ctrl_integrality = True     # E_k >= mu(k != 0)
     ctrl_g0 = True              # g = 0 edges contribute 0 to both M_1 and P
+    ctrl_depth = True           # Delta_m = 0 family is termwise >= 0 and the split is exact
 
     rows = []
     for n in range(4, NMAX + 1):
@@ -203,6 +239,13 @@ def main():
         sum_Q_supp = F(0)          # Q restricted to supp(g)
         mass_k_nonzero = F(0)      # mu({k != 0})
         g0_M1 = g0_P = F(0)        # control: the g = 0 edges' contribution to M_1 and P
+        # FINDING 4: the DEPTH decomposition.  With b = i+j the anti-diagonal coordinate,
+        # Sum h = Sum_cells b + n, so k = Delta b; and b = |c| + 2m with m = min(i,j) >= 0 the
+        # cell's depth along its diagonal (the corpus already has d = m + 1 and
+        # "a cell on diagonal c at depth k is (k, k+c)").  Hence k = g + 2*Delta_m, and on an
+        # edge with Delta_m = 0 the M_1 integrand is g*k = g^2 >= 0 TERMWISE.
+        m1_dm0 = m1_dmne = F(0)
+        dm0_all_nonneg = True
 
         for a in parts:
             for b, jab in J[a].items():
@@ -236,6 +279,14 @@ def main():
                     g0_P += dmu * g * g
                 if k != 0:
                     mass_k_nonzero += dmu
+                # depth decomposition: Delta_m = delta - 1 (since d = m + 1 on both cells,
+                # with d_v read before v is added -- see the sign-convention note in the report)
+                if delta - 1 == 0:
+                    m1_dm0 += dmu * g * k
+                    if g * k < 0:
+                        dm0_all_nonneg = False      # would falsify k = g on this family
+                else:
+                    m1_dmne += dmu * g * k
 
         # The identity's divisor, common to BOTH halves: 2(1 - beta_3) = 6/(n+1).  Taken from
         # the reference probe `..._edge_cauchy_schwarz.py`.  It multiplies P, Q, M_1, E_k and
@@ -250,6 +301,8 @@ def main():
         mass_k_nonzero *= scale
         g0_M1 *= scale
         g0_P *= scale
+        m1_dm0 *= scale
+        m1_dmne *= scale
 
         # --- controls ---
         if 2 * sum_M1 != sum_Ek + sum_P - sum_Q:
@@ -262,8 +315,11 @@ def main():
             ctrl_integrality = False
         if g0_M1 != 0 or g0_P != 0:
             ctrl_g0 = False
+        if m1_dm0 + m1_dmne != sum_M1 or not dm0_all_nonneg or m1_dm0 < 0:
+            ctrl_depth = False
 
-        rows.append((n, sum_P, sum_Q, sum_Q_supp, sum_M1, sum_Ek, mass_k_nonzero))
+        rows.append((n, sum_P, sum_Q, sum_Q_supp, sum_M1, sum_Ek, mass_k_nonzero,
+                     m1_dm0, m1_dmne))
 
     # ---------------- report ----------------
     print("M_1 > 0: the Cauchy-Schwarz step restricted to supp(g), plus an exact identity")
@@ -273,7 +329,7 @@ def main():
     print()
     print(f"  {'n':>3} {'P/Q':>8} {'P/Q(supp)':>10} {'Q(supp)/Q':>10} "
           f"{'CS_full':>9} {'CS_supp':>9} {'gain':>7} {'E_k/mu(k!=0)':>13}")
-    for (n, P, Q, Qs, M1, Ek, mk) in rows:
+    for (n, P, Q, Qs, M1, Ek, mk, _dm0, _dmne) in rows:
         pq = mp.mpf(P.numerator) / P.denominator / (mp.mpf(Q.numerator) / Q.denominator)
         pqs = mp.mpf(P.numerator) / P.denominator / (mp.mpf(Qs.numerator) / Qs.denominator)
         qratio = mp.mpf(Qs.numerator) / Qs.denominator / (mp.mpf(Q.numerator) / Q.denominator)
@@ -288,7 +344,7 @@ def main():
               f"{mp.nstr(cs_full, 5):>9} {mp.nstr(cs_supp, 5):>9} "
               f"{mp.nstr(cs_supp - cs_full, 4):>7} {mp.nstr(ekr, 5):>13}")
 
-    n_last, P, Q, Qs, M1, Ek, mk = rows[-1]
+    n_last, P, Q, Qs, M1, Ek, mk, dm0, dmne = rows[-1]
     checks = []
 
     checks.append(("CONTROL 1: the identity  2 M_1 = E_k + (P - Q)  holds EXACTLY at every n",
@@ -303,6 +359,10 @@ def main():
                    "this is what licenses restricting the CS step to supp(g)"))
     checks.append(("CONTROL 5: integrality  E_k >= mu({k != 0})", ctrl_integrality,
                    "k is an integer, so k^2 >= 1 off {k = 0}"))
+    checks.append(("CONTROL 6: depth split is exact AND the Delta_m = 0 family is termwise >= 0",
+                   ctrl_depth,
+                   "b = |c| + 2m with m = min(i,j) >= 0, so k = g + 2 Delta_m; at Delta_m = 0 the "
+                   "M_1 integrand is g*k = g^2. Checked per edge, not in aggregate."))
 
     pq = mp.mpf(P.numerator) / P.denominator / (mp.mpf(Q.numerator) / Q.denominator)
     pqs = mp.mpf(P.numerator) / P.denominator / (mp.mpf(Qs.numerator) / Qs.denominator)
@@ -344,6 +404,29 @@ def main():
                    f"So the bound gives away a sub-linear factor, and is weaker than the exact "
                    f"E_k but NOT by the order I claimed. Window n<=20 is short -- this is a "
                    f"measured local slope, not an asymptotic."))
+
+    d0 = mp.mpf(dm0.numerator) / dm0.denominator
+    dn = mp.mpf(dmne.numerator) / dmne.denominator
+    M1f = mp.mpf(M1.numerator) / M1.denominator
+    checks.append((f"FINDING 3: the Delta_m = 0 family alone is {mp.nstr(100*d0/M1f, 4)} % of M_1 "
+                   f"at n = {n_last}, and it is UNCONDITIONALLY non-negative",
+                   d0 > 0,
+                   f"M_1 = {mp.nstr(M1f, 6)} splits as {mp.nstr(d0, 6)} (Delta_m = 0, termwise "
+                   f"g^2 >= 0, needs NO inequality) + {mp.nstr(dn, 6)} (Delta_m != 0, the only "
+                   f"place negative edges can live). So the whole difficulty sits on "
+                   f"depth-CHANGING edges. This is a decomposition, not a bound: the second term "
+                   f"is {mp.nstr(100*dn/M1f, 4)} % of M_1 and is not controlled here."))
+
+    print()
+    print(f"  depth split of M_1 (b = |c| + 2m, k = g + 2*Delta_m):")
+    print(f"    {'n':>3} {'M_1':>14} {'Delta_m=0 (>=0)':>16} {'Delta_m!=0':>14} {'share':>8}")
+    for r in rows:
+        nn, _, _, _, mm, _, _, a0, an = r
+        mf = mp.mpf(mm.numerator) / mm.denominator
+        af = mp.mpf(a0.numerator) / a0.denominator
+        anf = mp.mpf(an.numerator) / an.denominator
+        print(f"    {nn:>3} {mp.nstr(mf, 6):>14} {mp.nstr(af, 6):>16} {mp.nstr(anf, 6):>14} "
+              f"{mp.nstr(af/mf, 5):>8}")
 
     print()
     for name, ok, detail in checks:

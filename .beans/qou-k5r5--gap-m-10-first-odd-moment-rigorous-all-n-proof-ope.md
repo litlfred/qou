@@ -1692,3 +1692,21 @@ Verified as CONTROL 1: exact `Fraction` equality at every `n` in 4..20, no toler
 ### Scope
 
 Sufficient is never necessary. Window `n ≤ 20` against a requirement of `n ≥ 79`; **nothing here is a bound over all `n`** and none of the three findings closes the gap. Finding 1 improves the live route's headroom by 0.57 %; Findings 2 and 3 are recorded results that buy no route. Path 0 (`corpus_search`) was **down** (`paper-assistant` `ENOENT`), so `emptyRoots` is unchecked and a vocabulary blind spot is not ruled out. **`qou-k5r5` stays OPEN.**
+
+### 2026-09-12 (cont.) — the DEPTH reading: the whole difficulty is depth-changing edges, and the free family is SHRINKING
+
+Same probe, now **9/9 PASS**. In cell coordinates with `b = i+j` (anti-diagonal) and `c = j−i` (content), `Σh = Σ_cells b + n`, so **`k = Δb` exactly**, and
+
+> **`b = |c| + 2m`, `m := min(i,j) ≥ 0`** — the cell's **depth** along its diagonal.
+
+Hence `k = g + 2Δm` and **`M₁ = P + 2Σ dμ·g·Δm`**. Both halves of the decomposition are already in the corpus (`d = m+1` in `..._edge_ratio_monotonicity.py:158` and `..._kappa_large_n_sampler.py:100`; *"a cell on diagonal c at depth k is (k, k+c), so i+j+1 = 2k+c+1"* in `..._kappa_derivation.py:26`) — what is new is reading `k` through it.
+
+**Two consequences.** If every cell sat at depth 0 (a hook), `k = g` and `M₁ = P > 0` **termwise** — so the entire obstruction *is* the depth. And on any edge with `Δm = 0` the integrand is `g·k = g² ≥ 0` with no inequality to solve:
+
+    M₁ = [Σ_{Δm=0} dμ g²]  +  [Σ_{Δm≠0} dμ g k]
+
+first bracket unconditionally non-negative, all negative edges confined to the second. `Δm = 0` is `δ = 1`, the value #6825 already singles out, and its recorded integer criterion independently implies no `δ = 1` edge is negative — so this derives a known fact **and prices it**.
+
+**🛑 And the price kills it as a route.** The unconditional part is **12.33 % of `M₁` at n=20, with a DECLINING share**: `0.356` (n=8), `0.271` (n=10), `0.225` (n=12), `0.173` (n=15), `0.123` (n=20). The free family **shrinks as `n` grows** and cannot carry a large-`n` proof; `87.67 %` of `M₁` sits on depth-changing edges and is uncontrolled here. Quoting the 12.33 % without the trend would suggest a foothold that is not there.
+
+**What the depth reading does buy** is a sharper statement of the open problem than `(g, δ)`: `m ≥ 0` is a *hard pointwise constraint* (`b ≥ |c|` for every cell), `m = 0` picks out the first row and column exactly, and the gap is now *"the `g`–`Δm` anti-correlation stays above `−1` uniformly"* — which is the bean's own opening `ratio → −0.62; need ratio > −1` in geometric rather than algebraic terms. CONTROL 6 checks the split is exact **and** that every `Δm = 0` edge is non-negative per edge, not in aggregate.
