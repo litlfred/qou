@@ -83,11 +83,13 @@ theorem energySlope_bondRescale {bpp bpn bnn c : ℝ}
   unfold energySlope
   ring
 
-private lemma one_lt_scaled {x y z : ℝ} (hx : 0 < x) (hy : 0 < y) (hz : 0 < z) :
+/-- `(1/x + 1/y + 1/z)·x = 1 + x/y + x/z > 1` for positive `x, y, z`: the scale
+used below to push every bond factor above one. Stated rather than kept private
+so the axiom audit covers it. -/
+theorem one_lt_scaled {x y z : ℝ} (hx : 0 < x) (hy : 0 < y) (hz : 0 < z) :
     1 < (1 / x + 1 / y + 1 / z) * x := by
   have h : (1 / x + 1 / y + 1 / z) * x = 1 + x / y + x / z := by
     field_simp
-    ring
   have h1 : 0 < x / y := div_pos hx hy
   have h2 : 0 < x / z := div_pos hx hz
   rw [h]
@@ -204,7 +206,7 @@ theorem interface_below_of_gt_two_log {q bpn : ℝ} (hq : 0 < q)
     bpn < (q ^ 2)⁻¹ / (q + 1 / q) := by
   have hsum : 0 < q + 1 / q := by positivity
   have hbnn : 0 < (q ^ 2)⁻¹ / (q + 1 / q) := by positivity
-  refine interface_below_of_gt_convexCap hbnn ?_
+  refine interface_below_of_gt_convexCap (bpp := q ^ 2 / (q + 1 / q)) hbnn ?_
   rw [show (Real.log (q ^ 2 / (q + 1 / q)) - Real.log ((q ^ 2)⁻¹ / (q + 1 / q))) / 2
         = 2 * Real.log q from half_splitting_pinned hq]
   exact h
