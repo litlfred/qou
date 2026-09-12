@@ -2,7 +2,7 @@
 Copyright (c) 2026 QOU authors. Released under the Apache 2.0 license.
 -/
 import Mathlib.Algebra.Algebra.Basic
-import Mathlib.LinearAlgebra.Basic
+import Mathlib.Algebra.Module.LinearMap.Defs
 import Mathlib.Algebra.Field.Rat
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum
@@ -124,8 +124,8 @@ instance : CommRing (Hecke2 R h) where
   npow := @npowRec _ ⟨(1 : Hecke2 R h)⟩ ⟨(· * ·)⟩
   mul_zero _ := by ext <;> simp
   zero_mul _ := by ext <;> simp
-  mul_one _ := by ext <;> simp <;> ring
-  one_mul _ := by ext <;> simp <;> ring
+  mul_one _ := by ext <;> simp
+  one_mul _ := by ext <;> simp
   mul_comm _ _ := by ext <;> simp <;> ring
   mul_assoc _ _ _ := by ext <;> simp <;> ring
   left_distrib _ _ _ := by ext <;> simp <;> ring
@@ -133,11 +133,12 @@ instance : CommRing (Hecke2 R h) where
 
 instance : Algebra R (Hecke2 R h) where
   smul r x := ⟨r * x.const, r * x.gen⟩
-  toFun r := ⟨r, 0⟩
-  map_one' := by ext <;> simp
-  map_mul' _ _ := by ext <;> simp <;> ring
-  map_zero' := by ext <;> simp
-  map_add' _ _ := by ext <;> simp
+  algebraMap :=
+    { toFun := fun r => ⟨r, 0⟩
+      map_one' := by ext <;> simp
+      map_mul' := by intro _ _; ext <;> simp <;> ring
+      map_zero' := by ext <;> simp
+      map_add' := by intro _ _; ext <;> simp }
   commutes' _ _ := by ext <;> simp <;> ring
   smul_def' _ _ := by ext <;> simp <;> ring
 
@@ -156,14 +157,14 @@ def sigmaInv : Hecke2 R h := ⟨-h, 1⟩
 
 /-- **The Hecke quadratic relation** `σ² = h·σ + 1`. -/
 theorem sigma_sq : (sigma : Hecke2 R h) * sigma = h • sigma + 1 := by
-  ext <;> simp <;> ring
+  ext <;> simp
 
 /-- `σ⁻¹` is a genuine two-sided inverse of `σ` (using the quadratic relation). -/
 theorem sigma_mul_sigmaInv : (sigma : Hecke2 R h) * sigmaInv = 1 := by
-  ext <;> simp <;> ring
+  ext <;> simp
 
 theorem sigmaInv_mul_sigma : (sigmaInv : Hecke2 R h) * sigma = 1 := by
-  ext <;> simp <;> ring
+  ext <;> simp
 
 /-- `σ` is a unit; its inverse is `σ - h·1`. -/
 def sigmaUnit : (Hecke2 R h)ˣ where
@@ -210,7 +211,7 @@ the tower `H₁ = R·1`, `tr((c·1) · σ) = z · tr(c·1)`. -/
 theorem ocneanuTrace_markov (z c : R) :
     ocneanuTrace z ((c • (1 : Hecke2 R h)) * sigma) = z * ocneanuTrace z (c • (1 : Hecke2 R h)) := by
   simp only [ocneanuTrace_apply, mul_const, mul_gen, smul_const, smul_gen,
-    one_const, one_gen]; ring
+    one_const, one_gen, sigma_const, sigma_gen]; ring
 
 /-- **(T3') Markov stabilisation by the inverse generator**, with parameter
 `zinv = z - h`. -/
@@ -238,7 +239,7 @@ Hecke quadratic `X² - h·X - 1`.  Generically it is not, so the trace is a
 genuinely non-multiplicative functional — the whole point of a Markov trace. -/
 theorem ocneanuTrace_mul_defect (z : R) :
     ocneanuTrace z ((sigma : Hecke2 R h) * sigma)
-      - ocneanuTrace z sigma * ocneanuTrace z sigma
+      - ocneanuTrace z (sigma : Hecke2 R h) * ocneanuTrace z (sigma : Hecke2 R h)
       = h * z + 1 - z * z := by
   rw [sigma_sq]
   simp only [ocneanuTrace_apply, add_const, add_gen, smul_const, smul_gen,
@@ -250,7 +251,7 @@ genuinely **non-multiplicative** functional (witnessing non-vacuity of
 `ocneanuTrace_mul_defect`). -/
 theorem exists_nonmultiplicative :
     ∃ (h z : ℚ), ocneanuTrace (h := h) z (sigma * sigma)
-      - ocneanuTrace z sigma * ocneanuTrace z sigma ≠ 0 := by
+      - ocneanuTrace (h := h) z sigma * ocneanuTrace (h := h) z sigma ≠ 0 := by
   refine ⟨1, 0, ?_⟩
   rw [ocneanuTrace_mul_defect]; norm_num
 
