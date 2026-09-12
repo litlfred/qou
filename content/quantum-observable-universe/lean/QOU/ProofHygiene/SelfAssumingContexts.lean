@@ -7,8 +7,9 @@ The Lean vacuity ledger (`docs/audits/lean-vacuity-review-ledger.json`) records 
 patterns whose common defect is that the context class **carries its own conclusion** —
 `proof-decoy-hypothesis` (13), `field-projection` (22), `exact-field-projection` (2) and
 `tuple-projection` (11): **48 live `genuine` entries between them**. A fifth,
-`prop-universe-field` (19), is worse still and is treated at the end of this file, for
-**67 across five patterns**. The ledger records each as prose, per entry, with a heuristic
+`prop-universe-field`, is worse still; it is covered by the criterion here and
+*demonstrated* in `docs/audits/` rather than in this file (see the closing section for
+why). The ledger records each as prose, per entry, with a heuristic
 verdict. This file states the criterion once and proves that every one of those shapes
 meets it, and that the genuine §3b-cond conditional shape does not.
 
@@ -100,8 +101,8 @@ namespace QOU.ProofHygiene
 /-! ## The criterion
 
 All four of the ledger's self-assuming patterns — `proof-decoy-hypothesis`,
-`field-projection`, `exact-field-projection`, `tuple-projection`, **46 live `genuine`
-entries between them** — are instances of one property, and it is worth naming because it
+`field-projection` (22), `exact-field-projection` (2), `tuple-projection` (11),
+**48 live `genuine` entries between them** — are instances of one property, and it is worth naming because it
 is checkable rather than aesthetic. -/
 
 /-- **A context class is contentless for `C` when it is inhabited exactly when `C` holds.**
@@ -133,8 +134,8 @@ asks: **is anything ever going to inhabit the carrier**, and **is a downstream d
 presenting the projection as a derivation?**
 
 The one case that is unconditionally a defect regardless of intent is the bare-`Prop`-field
-carrier at the end of this file — there, the carrier asserts nothing *even as a
-conjecture*, so it cannot serve as a conjectural witness either. -/
+carrier (closing section) — there, the carrier asserts nothing *even as a conjecture*, so
+it cannot serve as a conjectural witness either. -/
 
 /-- **The reviewer's test.** If the class can be instantiated while the conclusion fails,
 it is not contentless — it carries something. Contrapositively, a class you can only
@@ -255,94 +256,39 @@ theorem separation :
   rw [conditional_nonempty_iff]
   exact id
 
-/-! ## The bare-`Prop`-field carrier — worse than self-assuming
+/-! ## The bare-`Prop`-field carrier — worse than self-assuming, and demonstrated elsewhere
 
-`proof-claims-unencoded` / `prop-universe-field`, **19 live `genuine` entries**. The ledger
-states the defect the same way in every one of them:
+`proof-claims-unencoded` / `prop-universe-field`. The ledger states the defect the same
+way in every instance:
 
 > *"Every field of this carrier is typed bare `: Prop` — the UNIVERSE of propositions, not
 > a proposition. An instance therefore supplies a proposition rather than a proof of one,
 > so `instance := ⟨True⟩` type-checks and discharges the class, and every `[C]`-conditional
 > theorem downstream is conditional on nothing."*
 
-That is a **type-level** error rather than a judgement about intent, so it is provable
-outright — and the resulting carrier is strictly worse than the self-assuming shapes
-above, which at least assert their conclusion.
+It is a **type-level** error rather than a judgement about intent, and it is strictly worse
+than the self-assuming shapes above — those at least assert their conclusion; this one
+asserts nothing *even as a conjecture*, so it cannot serve as a §3b conjectural witness
+either.
 
-**Prior art, and a correction to this file's own framing.** Unlike the four patterns
-above, this one was **not** prose-only:
-[`docs/audits/2026-08-23-free-prop-field-triviality-probe.lean`](../../../../../docs/audits/2026-08-23-free-prop-field-triviality-probe.lean)
-already demonstrated it in Lean on 2026-08-23, reproducing three carriers verbatim,
-discharging each with `⟨True, …⟩`, and exhibiting the unconditional consequence. What this
-section adds is **generality and placement** — the probe is a self-contained demonstration
-in `docs/audits/` over three named classes, whereas these declarations abstract the shape
-and live in the library tree where a block can cite them — plus the `Contentless`
-criterion that ties this pattern to the other four. It is not a new discovery, and the
-probe deserves the credit. -/
+**It is demonstrated in `docs/audits/`, deliberately, and not here.**
 
-/-- **A carrier whose field is typed `: Prop`.** The field supplies a *proposition* — an
-inhabitant of the sort `Prop` — not a *proof* of one. Contrast `SelfAssumingContext C`,
-whose field is typed by the proposition `C` itself. -/
-structure PropUniverseContext where
-  /-- A proposition, not a proof of one. `True` is a perfectly good value. -/
-  claim : Prop
+* [`2026-08-23-free-prop-field-triviality-probe.lean`](../../../../../docs/audits/2026-08-23-free-prop-field-triviality-probe.lean)
+  — the original, which has priority: three real carriers reproduced verbatim, each
+  discharged with `⟨True, …⟩`, and a conditional theorem shown unconditional.
+* [`2026-09-12-prop-universe-carrier-shape.lean`](../../../../../docs/audits/2026-09-12-prop-universe-carrier-shape.lean)
+  — the same for the abstract *shape*, plus the conjunction case (a field conjoining
+  `Prop`-typed fields changes nothing, since `True ∧ True` discharges it) and the
+  discriminator: `claim : Prop` is always inhabited, `claim : C` at `C = False` never is.
 
-/-- Such a carrier is inhabited **outright** — take the field to be `True`. No hypothesis,
-no conclusion, nothing to establish. -/
-theorem propUniverse_inhabited : Nonempty PropUniverseContext := ⟨⟨True⟩⟩
+**Why not in this file.** `scripts/free-prop-field-audit.py` globs `content/**/*.lean`, so
+a demonstration carrier placed here is by construction an instance of the very defect that
+audit counts — a permanent false positive in an active drain queue (bean `qou-tsnp`). It
+was here briefly and did exactly that, reported as `PropUniverseWithConjunction`,
+2 fields. The `docs/audits/` convention exists for this reason and the 2026-08-23 probe
+already followed it.
 
-/-- So it is contentless for the **trivial** conclusion: it asserts nothing whatever. The
-self-assuming shapes above are contentless for `C`; this one is contentless for `True`,
-which is a strictly weaker thing to be. -/
-theorem propUniverse_contentless : Contentless PropUniverseContext True :=
-  ⟨fun _ => trivial, fun _ => propUniverse_inhabited⟩
-
-/-- **The harm, exactly.** Every theorem stated conditional on such a carrier is
-**unconditional** — the hypothesis discharges itself. So a `[C]`-conditional result
-downstream of one of these 19 carriers is conditional on nothing, and the §3b-cond
-conditional-class exception does not apply to it however the block is labelled. -/
-theorem conditional_on_propUniverse_is_unconditional {P : Prop}
-    (h : PropUniverseContext → P) : P :=
-  h ⟨True⟩
-
-/-- **The discriminator is the field's TYPE, and it is mechanically checkable.**
-`PropUniverseContext` is always inhabited; `SelfAssumingContext False` never is. So
-`claim : Prop` versus `claim : C` is the entire difference, and a reader settles it by
-looking at the field's type rather than at the docstring — which is what makes
-`prop-universe-field` a criterion a machine can run, unlike the intent questions the rest
-of this file's patterns raise. -/
-theorem propUniverse_vs_propField :
-    Nonempty PropUniverseContext ∧ ¬ Nonempty (SelfAssumingContext False) := by
-  refine ⟨propUniverse_inhabited, ?_⟩
-  rintro ⟨ctx⟩
-  exact ctx.claim
-
-/-- **A conjunction field does not rescue it** — the case the 2026-08-23 probe exhibits and
-the shape above misses.
-
-`QOU.Habiro.FlowSolution`'s carrier adds a fourth field conjoining its three
-`Prop`-typed ones (`all_hold : p ∧ q ∧ r`), which *looks* like it forces them to hold. It
-does not: the three are **propositions**, so `⟨True, True, ⟨trivial, trivial⟩⟩` discharges
-the whole carrier including the conjunction.
-
-This is the trap worth naming, because a conjunction field is exactly what an author adds
-on being told the carrier asserts nothing — and it changes nothing at all while looking
-like a fix. The repair is to type the fields by actual propositions, not to conjoin
-propositions-as-values. -/
-structure PropUniverseWithConjunction where
-  /-- A proposition, not a proof. -/
-  p : Prop
-  /-- Another proposition, not a proof. -/
-  q : Prop
-  /-- The apparent fix: a conjunction of the two — which is discharged by `True ∧ True`. -/
-  all_hold : p ∧ q
-
-theorem propUniverseWithConjunction_inhabited : Nonempty PropUniverseWithConjunction :=
-  ⟨⟨True, True, ⟨trivial, trivial⟩⟩⟩
-
-/-- So the conjunction field buys nothing: the carrier is still contentless for `True`. -/
-theorem propUniverseWithConjunction_contentless :
-    Contentless PropUniverseWithConjunction True :=
-  ⟨fun _ => trivial, fun _ => propUniverseWithConjunction_inhabited⟩
+The criterion above still covers the pattern: such a carrier is `Contentless` for `True`,
+which is the degenerate case of `Contentless K C`. -/
 
 end QOU.ProofHygiene

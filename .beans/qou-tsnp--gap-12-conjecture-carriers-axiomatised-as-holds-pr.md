@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T00:12:10Z
-updated_at: 2026-09-05T06:05:54Z
+updated_at: 2026-09-12T18:57:46Z
 ---
 
 
@@ -477,3 +477,68 @@ sweep of `p-from-braid-mirror` printed `0 critical, 0 major, 0 minor` while its 
 would have gone into a PR body as "all seven blocks clean". Read the sidecar entry, not the
 summary. Same lesson as the stale sidecars one entry up, one level higher: the artifact that
 reports the verdict is not the verdict.
+
+
+## 2026-09-12 — contribution from `claude/w1-route3-…` (PR #7208), plus three corrections I owe this bean
+
+Not a takeover. I found this bean **after** doing four repairs, which is itself the finding.
+
+### Corrections to what I published before reading this bean
+
+1. **"The right population query is a detector run over the tree, not a ledger query — that
+   has not been done here."** **Wrong.** `scripts/free-prop-field-audit.py` has existed
+   since 2026-08-23 and this bean carries its census. I reached the 2026-08-23 *probe* by
+   corpus-grep and never asked whether a *detector* had followed it.
+
+2. **My repair shape is weaker than this bean's target.** This bean says: replace
+   `holds : Prop` with fields that *encode the conjecture's content*, and *"Not mechanical.
+   Each requires reading the block's `.md` and stating its actual claim."* I
+   **parameterised** — `class C (P : Prop) where holds : P` — which makes `⟨True⟩` fail to
+   type-check and moves the triviality to a *visible* instantiation site, but supplies no
+   mathematics. Measured: all four **do clear the detector**. Whether that counts as closed
+   for this bean's purposes is the bean owner's call, not mine.
+
+   Where I judged the claim genuinely unstatable against existing types, I said so in the
+   docstring rather than fabricating content — which is this bean's own **Guard**. That
+   applies to `WenzlPositivityImpliesSubstratePositivity` and `OSReflectionPositivity`
+   (no Frobenius pairing, no Reeb `U(1)`, no antipode in the import cone).
+
+3. **I polluted the census and mis-measured my own pollution.** I put demonstration
+   carriers in `content/…/QOU/ProofHygiene/SelfAssumingContexts.lean`, which the audit
+   globs. I then said "only `PropUniverseWithConjunction` pollutes" — that grep was against
+   a **truncated log**. Measured properly it was **both** carriers: 3 fields, 2 carriers.
+   Both are now moved to `docs/audits/2026-09-12-prop-universe-carrier-shape.lean`,
+   alongside the 2026-08-23 probe, which is where such demonstrations belong precisely
+   because the audit globs `content/**` only.
+
+### Measurements
+
+**Census is down by a third since this bean's August entry**, and four of that is mine:
+
+| | 2026-08-23 | 2026-09-12 |
+|---|---|---|
+| free `: Prop` fields | 166 | **104** |
+| carriers | 113 | **72** |
+| files | 101 | **71** |
+
+Cleared by this PR (each verified absent from a fresh audit run):
+`WenzlPositivityImpliesSubstratePositivity`, `OSReflectionPositivity`,
+`DeltaLambdaPiecewise`, `BringSurfaceSmoothness`.
+
+### `--self-test` reports 3/4, and it is a STALE TEST, not a regression
+
+`CoreLeviFormContext.levi_form_regular: (carrier not found)`. The carrier was **removed
+deliberately** as part of this very drain —
+`QOU/FluidDynamics/core_levi_form.lean` now opens *"This module used to hold
+`CoreLeviFormContext` together with a projection that … **Why the declaration was
+empty.**"* So the test case was fixed out of existence. Left alone here because retargeting
+another bean's detector is that bean's call, but worth knowing: a future agent reading
+`self-test: 3/4` will otherwise conclude the detector is broken and distrust its counts.
+
+### The one that is NOT like the others
+
+`prop:brings-smoothness-resolution` is a **`proposition`**, not a conjecture sibling, and
+its cited Lean proof was `⟨⟨True, True, True⟩, trivial, trivial, trivial⟩` — the triviality
+*cashed into a claimed proof of a paper proposition*. Separate bean `qou-c46w`, priority
+high, awaiting an owner decision on the block kind. Scanned the other live carriers for
+that shape (self-tested against this known positive): **no others**.
