@@ -1160,3 +1160,49 @@ replacement `z` or coefficient is proposed.
 **Still open, so this bean stays open (rule 13a):** what the recorded Φ₁ column
 actually *is*, if not the theorem's Φ₁; the β₃ vs `h_A²` authoring question
 (owner's call); whether a quark-level crossing table would change the `z` scan.
+
+## 2026-09-12 (later) — the recorded Φ₁ column matches NO reading of the theorem's Φ₁
+
+Probe [`phi1_recorded_column_matches_no_reading_probe.py`](../computations/probes/phi1_recorded_column_matches_no_reading_probe.py), 15/15; PR #7232.
+
+The entry above showed no real `z` reproduces the recorded column under the
+**all-pairs** reading. This asks whether it is some *other* reading — the four
+`wedderburn_Mi_constructor_test.py` swept and then retracted were tested against
+the **deuteron**, never against the **Φ₁ column** — and the answer is no.
+
+**The growth exponents settle it with no fit.** Log-log least squares over the
+table's own range `n = 6..60`: recorded column **0.911** (essentially linear),
+theorem's Φ₁ at `z_D` **2.704** (faster than quadratic). `z` cannot move an
+exponent — it enters each of the `n−1` terms as a bounded factor, `O(n)` total.
+
+**And no reading fits**, each at its own best `z` over a 401-point scan on
+`[−20,20]`: chain length `L=1` 33.8 %, `L=2` 95.2 %, `L=3` 33.0 %, `L=5` 64.8 %,
+`L=all` 604 %; any linear-in-`(Z,N)` form 146 % (at He); the all-pairs counts
+with three free coefficients 59.9 % (at C). The linear family needs only **one**
+least-squares: the adjacent-pair counts for `p^Z n^N e^Z` span the same affine
+space as `(Z, N, 1)`, and the two give byte-identical residuals (check 4 asserts
+this rather than assuming it).
+
+**🛑 Corrects the entry above, and its audit doc and PR body.** Both said *"Φ₁ is
+Θ(n²) — its per-pair density varies only 6.1× across n = 6..60"*. The label is
+right asymptotically; the parenthetical offered as **evidence** shows the
+opposite, since a density that *rises* 6.1× is growing faster than `n²`. The
+conclusion (incompatible growth) is unaffected and is stronger. Fixed in the
+audit doc, the probe docstring and the PR body — not in one place only.
+
+**What it means.** With the recorded **Φ₃** column being the theorem's Φ₃ at the
+documented anchor, the recovered producer shares **two of three** invariants with
+the published formula and its Φ₁ is a different object. Identifying that object
+now needs the **recovered witness itself**: every reading the definition admits
+is excluded.
+
+**Scope.** Scope-(a) on a named class — readings expressible as a product of
+Table 1 crossings along `p^Z n^N e^Z`, via the theorem's bilinear form, real `z`
+in `[−20,20]`. **Not excluded:** a different crossing table; a **complex** `z`; a
+reading that is **not a product of crossings at all** — the theorem's own table
+calls Φ₁ *"trace of Markov-weighted product"*, and a **single trace** rather than
+a sum over generators is **untested**; or a transcription error in the column. No
+candidate generator is proposed or adopted.
+
+**Bean stays open** (rule 13a): the single-trace reading is untested, and what
+the column actually is remains unknown.
