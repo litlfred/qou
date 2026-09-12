@@ -630,3 +630,41 @@ counted the probe itself as a layer straddle.
   that question has no referent rather than a different answer.
 - **`qou-q6pp`'s wrong-signed p–n splitting is untouched.** Its leading explanation is
   stated in the `A+Z` reading already, so the ruling leaves it where it was — open.
+
+## 2026-09-12 (later) — the producer's own recorded ORDERING is A+Z
+
+Probe [`recovered_witness_ordering_confirms_a_plus_z_probe.py`](../computations/probes/recovered_witness_ordering_confirms_a_plus_z_probe.py), 22/22; PR #7232.
+
+**Independent corroboration of the owner's ruling, from a direction this arc has
+not used.** The recovered witness `atom-mass-complete-wedderburn` (commit
+`1359fe23ac`) carries an `ordering` field the published table does not — a
+per-atom string over `{p, n, e}`. For **all 13** atoms with `A+Z ≤ 40`,
+`len(ordering) == A+Z` exactly **and** the letter counts are exactly
+`(#p, #n, #e) == (Z, N, Z)`. Thirteen of thirteen, no exceptions.
+
+That is not a content block, not a Lean declaration, not an importer count — it
+is the recorded **internal state of the producer that generated the published
+numbers**. `A` is excluded on every row (`len ≠ A`); `3A` and `3A+Z` exceed
+`A+Z` for every `Z ≥ 1`.
+
+**🛑 `git show` cannot reach the witness here.** Agent clones are shallow, so
+`1359fe23ac` is absent (`fatal: Not a valid object name`), and per AGENTS.md a
+direct `git fetch origin <sha>` does not help. The GitHub contents API does:
+`mcp__github__get_file_contents(path=…, sha="1359fe23ac")`. Recorded so the next
+agent does not repeat the dead end.
+
+**Two limits on the data.** The last 7 rows (28Si onward, `A+Z ≥ 42`) are
+**truncated at exactly 40 characters**, so their orderings are unrecoverable and
+their letter counts no longer match — do not read that as contradicting the
+result above. And the orderings are **interleaved**, never blocked (`4He` is
+`enpepn`, `7Li` is `epenpenpnn`).
+
+**A side finding that is not about `jgg0`:** the producer's nucleon masses are
+**not CODATA** — `m_p` 41.6 keV low, `m_n` 33.4 keV low, while `m_e` matches to
+1e-7 — so the table's `Z·m_p + N·m_n` baseline carries a systematic on every row.
+Their difference is 0.64 % high, which is `qou-q6pp`'s p–n splitting. Provenance
+unknown and not guessed. Tracked in `qou-1jw9`.
+
+**Bean stays open** (rule 13a): the `3A+Z` third cell in
+`mass-endomorphism/atomic-mass-gb-nf.md:3` is still untouched — the owner ruled
+on two cells.
