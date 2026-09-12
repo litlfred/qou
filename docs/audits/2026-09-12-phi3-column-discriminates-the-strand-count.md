@@ -140,11 +140,21 @@ the same row that carried the held-out confirmation in §2.
 **That is false** (check 16). `atom_gen_chains` / `atom_gen_chains_sym`
 (`computations/substrate/hecke_core_symbolic.py:271`) build all-pairs nucleon
 crossings **plus `Z` electrons each contributing `(1, −h)`** — the `pe` crossing.
-That family has **23** importers; `atom_braid_word_3A` has **378**; and **5
-files import both**, among them `tools/pyhecke/python/pyhecke/atom.py` (a library
-module) and `scripts/word-provenance-gate.py` (a gate) — a live layer-straddle
-surface. `computations/unified-mass-molecular.py` emits a witness and says so in
-its own header: *"Full atomic braid `H_{A+Z}(q)`: nucleons + electrons."*
+Measured on `main` `03d6c9485`: that family has **23** importers; `atom_braid_word_3A`
+has **380**; and **5 files import both**, among them
+`tools/pyhecke/python/pyhecke/atom.py` (a library module) and
+`scripts/word-provenance-gate.py` (a gate) — a live layer-straddle surface.
+`computations/unified-mass-molecular.py` emits a witness and says so in its own
+header: *"Full atomic braid `H_{A+Z}(q)`: nucleons + electrons."*
+
+**Re-measure the counts; do not quote this line.** They are live file counts and
+they move: the `3A` figure was **378** at `1c443dddc` a few hours earlier, and
+two new sibling probes (`brng_dominant_summand_ursell_probe.py`,
+`binding_word_3A_reembedding_probe.py`) took it to 380 without anything in this
+analysis changing. What is durable is the **shape** — both objects are
+implemented, `3A` by roughly sixteen times as many files, and a handful import
+both — not the integers. Check 16 of the probe recomputes them on whatever base
+it is run against, and asserts only the shape.
 
 So the ledger entry that read "(a) has the definition, (b) has all the code" was
 wrong in its second half. Both objects are implemented; they serve different
