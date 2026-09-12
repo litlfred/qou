@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-09-05T08:12:57Z
+updated_at: 2026-09-08T05:01:14Z
 ---
 
 
@@ -173,3 +173,80 @@ Route 1 is now excluded in BOTH coordinates. Routes 2 (root-of-unity fibre monod
 The 2026-09-04 entry above closed route 1 in the base and local COORDINATES, by the coefficient field. It left an operator on Sigma itself untouched. That is now closed for the dilation: no nontrivial z -> lambda z lifts to an automorphism of Sigma at all, because such a lift would permute the six finite branch points and hence satisfy D(lambda z) = c D(z), whose constant and linear coefficients force c = 1 then lambda = 1 (Lean QOU.Mass.DilationBranchLocusRigidity, sorry-free). Holds for every lambda including roots of unity, so it is complementary to Bezivin-Ramis rather than dependent on it.
 
 Route 1 is therefore closed in all three charts. ROUTE 2 (root-of-unity FIBRE monodromy) is untouched — it acts on the fibre, not the z-line — and is now the live route; route 3 (RSZ/Sauloy framework import) likewise.
+
+
+## Route 2's EIGENVALUE reading is closed (2026-09-07, bean qou-hmrm, PR #7114)
+
+Route 2 above proposes building D_q from the "root-of-unity fibre monodromy". Which
+root of unity that datum supplies is now settled, and it is `-1`.
+
+The branch sextic is squarefree, and the colour cubic has **no triple root for any
+z** (Lean `QOU.Mass.FibreMonodromyOrderTwo.colorCubic_no_triple_root`, sorry-free:
+matching against `(X-r)^3` and eliminating r forces both `2z^2+z+2 = 0` and
+`26z^3+24z^2+24z+26 = 0`, which give `15z = 30` and then `12 = 0`). So no THREE
+sheets ever collide: every branch point is simple, its local monodromy is a
+transposition, order exactly 2, eigenvalue `-1`.
+
+And `q = -1` is exactly where C1 cannot live: `[2]_{-1} = 0` FALSIFIES the standing
+hypothesis `forall k >= 1, [k]_q != 0` of `qlift_normalized_kernel_exists`, so that
+carrier does not apply there rather than merely degenerating
+(`c1_hypothesis_fails_at_neg_one`).
+
+Scope (b) over ONE identification: q = the eigenvalue of the local fibre monodromy.
+Still open at scope (a) at most, and NOT pruned: a structure using the monodromy
+*representation* without setting q to an eigenvalue; a construction at `z = infinity`;
+one from the global S_3 rather than a local generator.
+
+**NEW STRUCTURAL FACT, and route 3 wants it: SIGMA IS AN ELLIPTIC CURVE, g = 1.**
+The fibre at infinity is `(Y+1)(Y^2+1)`, disc = -16 — three distinct sheets, so the
+cover is unramified there; Riemann-Hurwitz gives `2g-2 = 3*(-2) + 6 = 0`. The corpus
+had not computed the genus of Sigma before. Route 3 (Ramis-Sauloy-Zhang / Sauloy) is
+stated against a curve of known genus, so it now has its input.
+
+**And a symmetry none of the route-1 work covers.** The fibre at infinity coinciding
+with the fibre at `z = 0` is the palindromic `z -> 1/z` symmetry of the branch sextic
+appearing geometrically. #6769 closed dilations `z -> lambda z`; `z -> 1/z` is not of
+that form, so the dilation rigidity says nothing about it. That involution is the
+natural next automorphism to test.
+
+Audit: docs/audits/2026-09-07-w1-route2-fibre-monodromy-is-order-two.md.
+
+
+## Route 2, second reading (2026-09-08, bean `qou-ei4q`) — the involution lifts, and the base route is now closed ENTIRELY
+
+The `z -> 1/z` opening this bean recorded after #7114 is resolved, and it went
+both ways at once.
+
+**It lifts.** `z^3 * P(X/z, 1/z) = P(X, z)`, so `iota~ : (X,z) |-> (X/z, 1/z)` is
+an automorphism of Sigma. Unlike every dilation, `iota` passes the branch-locus
+test #6769 uses -- because `D` is palindromic -- and unlike the eigenvalue reading
+of #7114 it produces a real object. Sigma's **first recorded nontrivial
+automorphism**.
+
+**It is the elliptic involution.** 4 fixed points, genus-1 Sigma, quotient `P^1`.
+Independently: the `w = z + 1/z` reciprocal cubic `16w^3+24w^2-13w+2` that the
+corpus has used since 2026-05-19 to index the three Galois orbits IS the base
+quotient coordinate for exactly this involution. That connection was not recorded.
+
+**But the base-automorphism route is now closed entirely, not narrowed.** This is
+the part that supersedes rather than extends #6769: a Moebius map is determined by
+three points, so `Stab(B)` embeds in `Sym(B) = S_6` and EVERY base automorphism
+preserving the branch locus has order at most 6 -- for any squarefree sextic
+branch locus, not just this `D`. The substrate shift has infinite order
+(`q_0 = 1.10997858... > 1`). So no automorphism of the base supplies the W1
+q-shift, dilation or not, root of unity or not.
+
+Explicitly, `Stab(B) = {id, iota} = Z/2` (120 dps, labelled numerical).
+
+**What that leaves for W1.** Route 3 (Ramis-Sauloy-Zhang / Sauloy) is the live
+one, and it is now better supplied than it has ever been: Sigma has a genus (1), a
+distinguished involution, and an identified quotient (`P^1`). The three
+alternatives still open at scope (a) are unchanged from #7114 -- a structure not
+arising from a base automorphism at all, one built from the monodromy
+REPRESENTATION rather than an automorphism, and one built at `z = infinity`.
+
+`D_q` is still NOT constructed. The verdict of this bean -- import the framework
+before hand-rolling an operator -- is unchanged and is now better founded: four
+tranches have each closed a way of hand-rolling one.
+
+Audit: `docs/audits/2026-09-08-w1-palindromic-involution-lifts-and-is-elliptic.md`.

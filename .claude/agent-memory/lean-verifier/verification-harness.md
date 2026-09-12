@@ -646,3 +646,52 @@ window-wide bounds are `c₃ ≤ 313205/1259712 = 0.2486322` (stated: `1/4`) and
 the `norm_num` margin step; pristine control passes. That converts "the constant
 is the content" from an assertion into a measurement, and simultaneously reports
 how much slack the stated constant leaves.
+
+## 17a. TRAP — the incomplete tree may be one a `lake build` is WRITING RIGHT NOW (2026-09-08)
+
+§17 has the symptom and the better fix. What it does not have is **why** the two
+trees are partial, and the answer changes what you can trust.
+
+§17 reads them as "two *different partial builds*" — static, so a measurement of
+either is stable and a union mirror settles it. Measured 2026-09-08: one of them
+was **being filled while I watched**. `scripts/lean-build-bg.sh`, started by a
+**SessionStart hook**, runs `lake build` with cwd = `content/quantum-observable-
+universe/lean`, so the per-paper tree is under construction from the first minute
+of a fresh session. Confirmed by `ls -l /proc/<pid>/cwd`, not inferred.
+
+Over roughly forty minutes, one session, no action of mine:
+
+| tree | QOU oleans | mathlib oleans |
+|---|---|---|
+| per-paper | **2 → 17** | **2352 → 3007** |
+| root | 2442 (unchanged) | 3469 (unchanged) |
+
+Three consequences:
+
+- **A count is a snapshot of a moving target.** Two measurements minutes apart
+  legitimately disagree, and neither is wrong. If you record one, record the time.
+- **The root tree is NOT at risk from this build** — its cwd is the paper package,
+  so the restored root cache is untouched. That is worth knowing before panicking
+  about §11-style eviction: this particular build does not evict the root restore.
+- **`Mathlib/Tactic.olean` "missing" can be a TIMING fact.** It was genuinely
+  absent from the per-paper tree, and present there half an hour later. So an
+  error naming it is not evidence about the restore at all — do not "route around
+  a missing olean" (§17's cautionary tale) on the strength of it.
+
+**It reached the GATE, not just hand-run `lean`.** `scripts/lean-shadow-verify.sh`
+chose its olean tree as "the first candidate holding a `QOU/` dir", which during
+that window was the tree with **two** oleans in it, over the restored 2442. It
+computed its rebuild set against the 2-module tree and died on the first
+Mathlib-importing module — a failure entirely its own. Fixed on
+`claude/w1-route2-fibre-monodromy-order-2026-09-07`: it now picks by non-empty
+olean **count**, ranks package locations by their mathlib count instead of pinning
+paper-first, and **warns when a `lake build` is running**.
+
+**But prefer §17's union mirror for hand verification.** Ranking picks the best
+single location; the union has *every* module from both. Ranking is what a script
+that must also rebuild into a shadow can do cheaply; it is not the stronger tool.
+
+**The cheapest first move in a fresh session is therefore:** `pgrep -f 'lake
+build'`. If one is running, either wait, or pass `OLEANS=<dir>` explicitly, or
+build the union — but do not read a count, or an absent olean, as a fact about the
+restore.
