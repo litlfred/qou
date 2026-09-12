@@ -1104,3 +1104,59 @@ was the wrong one. Queuing a lead with a reason it will fail is still better
 than queuing it bare -- it made the test obvious -- but the reason has to be
 checked against the code, not inferred from the shape of the formula. Reading
 V() took two minutes and overturned it.
+
+## 2026-09-12 — Φ₁ IS closed, and no real *z* makes it the recorded column
+
+Probe [`phi1_closed_form_and_no_z_reproduces_it_probe.py`](../computations/probes/phi1_closed_form_and_no_z_reproduces_it_probe.py),
+19/19; audit [`2026-09-12-phi1-closed-form-and-no-z-reproduces-it.md`](../docs/audits/2026-09-12-phi1-closed-form-and-no-z-reproduces-it.md).
+
+**Φ₁ was recorded as "NOT closed" in `phi_allpairs_reconstruction.py`'s own
+header. It is closed.** Every crossing in Table 1 is `c·σ + d·1` in the *same*
+`σ = [[h,1],[1,0]]`, so one diagonalisation gives
+
+    Φ₁(z) = Σ_i ln|P_i(z + 1/q) + Q_i(q − z)| − (n−1)·ln(q + 1/q),
+    P_i = Π_{j>i}(c q + d),   Q_i = Π_{j>i}(−c/q + d)
+
+verified against the literal 2×2 matrix product to **3.1e-39**. Φ₁ is closed in
+exactly the per-pair data that closed Φ₂ and Φ₃; what it is not is per-pair
+*additive*. At `z ∈ {q, −1/q}` one factor drops and it collapses to
+`Σ_{i<j} ln|c q + d|` — the sibling probe's eigenvalue condition, confirmed
+numerically (3.3e-39).
+
+**🛑 And I predicted the opposite about ordering.** From the non-multiplicativity
+of `f` I expected Φ₁ to depend on the strand arrangement and on the order of `j`
+inside `M_i`, and said so before measuring. Measured: identical to 10 digits
+across five arrangements and both `j`-orders (spread 1.3e-39). The inference was
+invalid — the matrices commute exactly (max commutator **0** over all 81 ordered
+pairs), being polynomials in one `σ`; the transfer algebra is `ℝ[x]/(x²−hx−1)`.
+So this bean's own retraction (*"an ALL-PAIRS braid with no ordering
+dependence"*) is right, and right for a stronger reason than it gives: it covers
+Φ₁ too, not only the two multiplicative invariants.
+
+**No real `z` reproduces the recorded Φ₁ column.** Φ₁(z) has `n−1` poles and is
+unbounded below, so the test is consistency — one parameter, 19 constraints.
+Best achievable worst-miss ≈ **5.2 (520 %)** at Ar on `A+Z`, ≈ **6.4 (640 %)** on
+the electron-free `A` reading. **Quote the order of magnitude, not the
+minimiser** — the best `z` moves with the scan grid (1.0537 at 2001 points, 0.926
+at 401) because the basin is shallow and ragged. The three documented `z` fail
+two ways independently: Φ₁ > 0 at C, D and `z=q` on every row from B up while
+every recorded value is negative; and Φ₁ is Θ(n²) (density varies 6.1× over
+`n = 6..60`) while the recorded column is Θ(n) (12.4×, falling monotonically).
+
+**What it relocates.** The β₃ probe established the recorded **Φ₃** column *is*
+the theorem's Φ₃ at the documented anchor. So the recovered producer agrees with
+the published formula on **Φ₂ and Φ₃** and disagrees on **Φ₁** — two of three
+invariants shared. The 14.2 % β₃ departure and the Φ₁ disagreement sit on the
+same object and neither is explained by the anchor: the table is neither the
+formula's output nor unrelated to it.
+
+**Scope.** Scope-(a) turning on a named class — the theorem's own Φ₁, all-pairs
+reading, Table 1's crossings, any **real** `z`, on `A+Z` and `A`. Not excluded: a
+different `M_i` reading, a complex `z`, a different crossing table, or the
+recorded column being some other quantity. The quark readings (`3A`, `3A+Z`) are
+**not testable here** — Table 1's rows are nucleon- and electron-typed. No
+replacement `z` or coefficient is proposed.
+
+**Still open, so this bean stays open (rule 13a):** what the recorded Φ₁ column
+actually *is*, if not the theorem's Φ₁; the β₃ vs `h_A²` authoring question
+(owner's call); whether a quark-level crossing table would change the `z` scan.
