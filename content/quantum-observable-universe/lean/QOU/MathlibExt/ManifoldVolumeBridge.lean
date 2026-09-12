@@ -17,12 +17,22 @@
 
   ⚠ **The corpus DOES carry a second "volume of M", and it is not this one.**
   `QOU.Encounter.MostowRigidity` has a class field `volume : ℝ` with *instances* --
-  `figureEight` sets it to the literal `2.02988321281930`, synced from a witness by
-  `codemod-leanval.ts`.  So `volumeInvariant FigureEight = 2.0298…` holds by `rfl`.
-  That is a manifold-side number, but an ENTERED one: nothing in that module mentions a
-  triangulation, and no theorem there relates it to `Σ D(zᵢ)`.  Two carriers for one
-  quantity is the collision the notation discipline warns about, so read this file as
-  supplying the missing TRANSPORT rather than a third notion.
+  `figureEight` sets it to `QOU.Knot.FigureEightVolume.VOL_4_1 = 2·Cl₂(π/3)`, the same
+  exact term this corpus uses everywhere else for that volume.  That is a manifold-side
+  number, and nothing in that module mentions a triangulation or relates it to
+  `Σ D(zᵢ)` — so two carriers for one quantity is still the collision the notation
+  discipline warns about, and this file still supplies the missing TRANSPORT rather than
+  a third notion.
+
+  🛑 THIS PARAGRAPH READ "`figureEight` sets it to the literal `2.02988321281930`,
+  synced from a witness by `codemod-leanval.ts`.  So `volumeInvariant FigureEight =
+  2.0298…` holds by `rfl`.  That is a manifold-side number, but an ENTERED one" UNTIL
+  2026-09-12.  All three claims went false on 2026-08-30 when `qou-f8lit` exactified the
+  field: there is no literal, the `:leanval` sync is gone, and the `rfl` does **not**
+  hold — the field is a Clausen value, not a decimal.  Note the correction *strengthens*
+  this file's point rather than weakening it: the Mostow-side number is no longer
+  "entered" but definitionally the same object, so the two carriers now agree exactly
+  and only the missing transport remains.
   `QOU.Encounter.MostowTriangulationBridge` spends it on exactly that, and is where the
   two are finally connected.
 

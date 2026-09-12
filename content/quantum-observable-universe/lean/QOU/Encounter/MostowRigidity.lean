@@ -216,12 +216,20 @@ instance unknot : MostowRigidity Unknot where
     `Vol(4_1) = 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.02988...`
 
     where `Cl₂` is the Clausen function and `Λ` the Lobachevsky
-    function, `Λ(θ) = Cl₂(2θ)/2`.  The class field
-    stores the 15-significant-digit truncation
-    `2.02988321281930` (kept in lock-step with the canonical
-    50-dps witness via `:leanval[Vol_4_1]{precision=15}`); the
-    direction of the truncation does not affect the class
-    invariants.
+    function, `Λ(θ) = Cl₂(2θ)/2`.  The class field stores the
+    **exact** `QOU.Knot.FigureEightVolume.VOL_4_1 = 2·Cl₂(π/3)`
+    — not a decimal.
+
+    🛑 THIS PARAGRAPH READ "the class field stores the
+    15-significant-digit truncation `2.02988321281930` (kept in
+    lock-step with the canonical 50-dps witness via
+    `:leanval[Vol_4_1]{precision=15}`)" UNTIL 2026-09-12.  Both
+    halves were false from 2026-08-30, when `qou-f8lit`
+    exactified the field 12 lines below: there is no truncation
+    here to describe, and the inline comment on that very field
+    says the `:leanval` sync "has nothing to sync and is gone".
+    A docstring naming a value its own body does not carry — the
+    `qou-z9fx` class, one file over from the fix that created it.
 
     The Mostow gap is bounded below by `0.5`, a conservative
     under-approximation of the next-smallest gap
