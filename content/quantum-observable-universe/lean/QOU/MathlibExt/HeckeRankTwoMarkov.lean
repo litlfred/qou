@@ -197,7 +197,7 @@ theorem ocneanuTrace_sigma (z : R) : ocneanuTrace z (sigma : Hecke2 R h) = z := 
 parameter `zinv` (matching `OcneanuTrace.markovParam_inv_eq_sub`). -/
 theorem ocneanuTrace_sigmaInv (z : R) :
     ocneanuTrace z (sigmaInv : Hecke2 R h) = z - h := by
-  simp; ring
+  simp only [ocneanuTrace_apply, sigmaInv_const, sigmaInv_gen]; ring
 
 /-- **(T1) The trace property** `tr(xy) = tr(yx)` — automatic here because `H₂`
 is commutative. -/
@@ -209,23 +209,28 @@ theorem ocneanuTrace_mul_comm (z : R) (x y : Hecke2 R h) :
 the tower `H₁ = R·1`, `tr((c·1) · σ) = z · tr(c·1)`. -/
 theorem ocneanuTrace_markov (z c : R) :
     ocneanuTrace z ((c • (1 : Hecke2 R h)) * sigma) = z * ocneanuTrace z (c • (1 : Hecke2 R h)) := by
-  simp; ring
+  simp only [ocneanuTrace_apply, mul_const, mul_gen, smul_const, smul_gen,
+    one_const, one_gen]; ring
 
 /-- **(T3') Markov stabilisation by the inverse generator**, with parameter
 `zinv = z - h`. -/
 theorem ocneanuTrace_markov_inv (z c : R) :
     ocneanuTrace z ((c • (1 : Hecke2 R h)) * sigmaInv)
       = (z - h) * ocneanuTrace z (c • (1 : Hecke2 R h)) := by
-  simp; ring
+  simp only [ocneanuTrace_apply, mul_const, mul_gen, smul_const, smul_gen,
+    one_const, one_gen, sigmaInv_const, sigmaInv_gen]; ring
 
 /-! ### Non-degeneracy — why this is a genuine `q ≠ 1` Hecke functional -/
 
 /-- The two Markov parameters differ **iff** the bandwidth is nonzero, i.e. iff
 `q ≠ 1`.  (The symmetric-group witness has `h = 0`, so there `z = zinv`.) -/
 theorem markovParam_ne_iff (z : R) : z ≠ z - h ↔ h ≠ 0 := by
+  rw [ne_eq, ne_eq, not_iff_not]
   constructor
-  · intro hne hh; exact hne (by rw [hh, sub_zero])
-  · intro hh hne; exact hh (by linarith [sub_eq_iff_eq_add.mp (by linarith [hne] : z - h = z)])
+  · intro he
+    have h0 : z - (z - h) = z - z := by rw [← he]
+    simpa using h0
+  · intro hh; rw [hh, sub_zero]
 
 /-- **The multiplicativity defect equals the Hecke quadratic.**  The trace is
 multiplicative on `σ` (`tr(σ²) = tr(σ)²`) exactly when `z` is a root of the
@@ -235,13 +240,18 @@ theorem ocneanuTrace_mul_defect (z : R) :
     ocneanuTrace z ((sigma : Hecke2 R h) * sigma)
       - ocneanuTrace z sigma * ocneanuTrace z sigma
       = h * z + 1 - z * z := by
-  rw [sigma_sq]; simp; ring
+  rw [sigma_sq]
+  simp only [ocneanuTrace_apply, add_const, add_gen, smul_const, smul_gen,
+    sigma_const, sigma_gen, one_const, one_gen]; ring
 
 /-- A concrete non-degenerate instance over `ℚ`: at `h = 1`, `z = 0` the
-multiplicativity defect is `1 ≠ 0`, so the Ocneanu trace on `H₂(ℚ)` is not
-multiplicative, and `z = 0 ≠ -1 = zinv`. -/
-example : (ocneanuTrace (h := (1 : ℚ)) 0 (sigma * sigma)
-    - ocneanuTrace 0 sigma * ocneanuTrace 0 sigma) = 1 := by
+multiplicativity defect is `1 ≠ 0`, so the Ocneanu trace on `H₂(ℚ)` is a
+genuinely **non-multiplicative** functional (witnessing non-vacuity of
+`ocneanuTrace_mul_defect`). -/
+theorem exists_nonmultiplicative :
+    ∃ (h z : ℚ), ocneanuTrace (h := h) z (sigma * sigma)
+      - ocneanuTrace z sigma * ocneanuTrace z sigma ≠ 0 := by
+  refine ⟨1, 0, ?_⟩
   rw [ocneanuTrace_mul_defect]; norm_num
 
 end Hecke2
