@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T11:30:34Z
+updated_at: 2026-09-12T12:30:04Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1225,3 +1225,93 @@ element combining γγ selection WITH flavour letters is outside both.
 
 Bean stays todo. The element question is SHARPER, not closed — two routes
 priced, both negative, and what is missing is now named.
+
+
+
+## 2026-09-12 CORRECTION — 'Delta differs in one letter' was WRONG; it retypes TWO
+
+PR #7212, commit c2b8c7e8c0. This retracts a claim I made the same day, which
+reached that PR's TITLE, its BODY, a Lean docstring and a comment on the PR.
+
+THE CLAIM: the nucleon words 'differ in exactly one letter: a single sigma
+becomes a single sigma^-1'. Wrong at the LETTER level. The corpus's own data,
+_GEN_CHAINS in qbeta_delta_candidate_census_probe.py:
+
+  p : gen0 [0,0,0,   0,-1/2,0,0]   gen1 [-1,-1,-1,-1/2]
+  n : gen0 [0,0,0,-1/2,-1/2,0,0]   gen1 [-1,-1,-1,  -1]
+
+TWO slots differ, gen0[3] and gen1[3], each by exactly -1/2.
+
+WHAT WAS AND WAS NOT WRONG. The COUNTS are correct and unchanged: proton
+(1,2,0), neutron (0,2,1), and the Lean theorem about them stands. The READING
+was wrong. Beta-decay flips ONE quark, and each quark sits in TWO of a
+nucleon's three pair-crossings, so one uu becomes ud and one ud becomes dd:
+
+  (u1,u2)  uu -> ud     retyped
+  (u2,d3)  ud -> dd     retyped
+  (u1,d3)  ud -> ud     untouched
+
+The preserved ud count is a CANCELLATION -- one gained against one lost -- not
+evidence the mixed crossings are untouched. (1,2,0) -> (0,2,1) is consistent
+with a single uu |-> dd substitution AND with the flip that actually happens,
+and only the second is a possible decay. I read the weaker hypothesis off the
+counts without checking it against the chains. The misleading theorem name
+nucleon_difference_is_one_letter is renamed
+nucleon_pairCounts_differ_by_one_uu_and_one_dd; the statement is unchanged.
+
+WHAT THE CORRECTION BOUGHT, which is worth more than the retraction cost. Both
+retyped letters pick up the SAME central scalar s = -h/2, so Delta expands
+EXACTLY:
+
+  Delta = s*(S_A + S_B) + s^2*S_AB
+
+with S_A, S_B the proton word with ONE flavour crossing SMOOTHED (10 crossings)
+and S_AB with BOTH (9). Measured, 60 dps, proton pin, convention D:
+
+  direct tr(Delta) vs expansion     agree to 7.8e-62
+  s = -h/2                          -0.1045301493978196577
+  tr(S_A) / tr(S_B) / tr(S_AB)      1.271097000 / 0.272140496 / 0.301910575
+  s^2 term / s term                 2.045 %
+  crossings                         11 -> 10 -> 9
+  residual                          -15.451387 %  -- UNCHANGED
+
+THE OLD READING IS REFUTED NUMERICALLY, not merely withdrawn: under it Delta
+would be -h times ONE smoothed word, and both candidates sit 68.2 % and 64.0 %
+from Delta. CHECK 4 of the probe.
+
+ALSO: the typing table is ONE scalar, not three conventions. sigma - h =
+sigma^-1 follows straight from the Hecke relation (skein_letter_inv), so the dd
+letter IS the inverse crossing and the ud letter is exactly (sigma+sigma^-1)/2
+(ud_letter_is_average). Both sorry-free.
+
+LEAN, all sorry-free, lean-direct -DautoImplicit=false -s 65536 exit 0:
+  flip_retypes_pairs                general form, any (m+1 ups, n downs)
+  nucleon_flip_retypes_two_of_three the proton case: 2 of 3
+  two_shift_expansion               the element identity, over a NONCOMMUTATIVE
+                                    ring with centrality of s explicit -- a
+                                    CommRing proof would be unsound for the
+                                    braid algebra
+  skein_letter_inv                  needs only the Hecke relation
+  ud_letter_is_average              needs (2:R) != 0, stated explicitly
+  succChooseTwo                     C(m+1,2) = C(m,2) + m
+#print axioms: no sorryAx anywhere; two_shift_expansion needs only [propext].
+
+WHAT DOES NOT MOVE. No number: this is an exact rewriting of the same element,
+so the residual and everything downstream are identical. The 3.13x gap result
+of #7212 Part 1 is untouched -- it prices the whole reachable set and never
+used the letter count.
+
+WHAT IT CHANGES FOR THIS BEAN. Delta's FORM inside this construction is now
+known exactly: a fixed rational combination of 10- and 9-crossing traces rather
+than an opaque 11-crossing difference, and |s| ~ 0.1045 is the quantitative
+reason the two nucleon traces sit so close together. Whether those lower-
+crossing words are more tractable, or coincide with words the mass channel
+already computes, is NOT claimed and is the live question.
+
+BEAN STAYS todo. The epsilon/Delta fork is an open conjecture; per AGENTS.md
+13a a bean whose subject is an open conjecture is not closed because the
+recording of its openness is done.
+
+SCOPE-(a): two_shift_expansion holds for ANY two slots carrying a common
+central shift; that the nucleon words are in that shape is read off _GEN_CHAINS
+and re-verified numerically, not proved.
