@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T22:59:38.088352+00:00",
-  "commitSha": "07bd748fdc6e54b80f8c0bd75126f8197101847a",
+  "computedAt": "2026-09-12T23:24:53.236488+00:00",
+  "commitSha": "8d7ee2a2ec75d7597084c2b21be0a0c7ceb06b88",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition",
@@ -65,8 +65,8 @@
   "durationMs": 10,
   "computation": "uic-sign-forced-by-gate",
   "scriptFile": "uic_sign_forced_by_gate_probe.py",
-  "scriptHash": "ebbfda75d16e",
-  "scriptCommitSha": "07bd748fdc6e54b80f8c0bd75126f8197101847a",
+  "scriptHash": "508870deae9b",
+  "scriptCommitSha": "312262d53dd298c0123d3d94bf6ca59ac5b8ca24",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

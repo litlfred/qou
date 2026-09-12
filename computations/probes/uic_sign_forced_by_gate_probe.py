@@ -22,6 +22,23 @@ and independently, through the producer itself at k_exact = 4:
     2H      gated -0.0895596830589507  ->  ungated -0.412212192245027
     4He     gated -0.0805867484776914  ->  ungated -0.2742397716174
 
+QUOTE THE TIER WITH EVERY ONE OF THESE.  The producer's return is strongly
+`k_exact`-dependent: 2H ungated runs -0.412 / -1.227 / -2.251 / -17.691 at
+`k_exact` = 4 / 5 / 6 / 11, a 43x spread, and 11 is the PRODUCTION DEFAULT.  The
+two rows above are the `k_exact = 4` tier; at the default they are
+`-9.14773623102088 -> -17.6908290020795` (2H) and
+`-8.20155846836239 -> -15.9926510049258` (4He).
+
+**These five are the PROBE'S OWN reconstruction, not the producer's return.** It
+sums over partitions with `k <= 6` only, reading `C_lambda_resolvent_MeV` from
+the partition table with one kernel call per partition and no per-step
+accumulation, and it orders nucleons `["p"]*Z + ["n"]*N` where the producer uses
+the alternating ground-state ordering. Cross-checked: at 2H (where the two
+orderings coincide) the probe's `-2.251132` matches the producer's
+`k_exact = 6` return `-2.251131977321312` to 8 significant figures; at 4He they
+differ by 5.39 % (`-1.3701187` against `-1.448199112790757`) for exactly that
+reason. Do NOT quote these five as `unified_iterative_correction` values.
+
 Every ungated sum is negative, and LARGER in magnitude.  The AME2020 2H
 binding is +2.2246 MeV, so dropping the gate moves the prediction AWAY from
 the data, not toward it.

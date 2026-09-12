@@ -1840,14 +1840,26 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     `qou-21oc`; PR #7251).  Until then this function returned a GATED sum
     admitting only partitions with `final_tr_sign <= 0`, on a
     complementary-slackness argument that is now REFUTED sorry-free.  It
-    now returns the UNGATED sum over every enumerated partition, which is
-    3.4-4.6x larger in magnitude:
+    now returns the UNGATED sum over every enumerated partition.
 
-        A=2 (²H)   -0.0895596830589507  ->  -0.412212192245027
-        A=4 (⁴He)  -0.0805867484776914  ->  -0.2742397716174
+    🛑 QUOTE THE TIER.  This quantity is STRONGLY `k_exact`-dependent -- ²H
+    ungated spans 43x across the tiers -- so a bare figure is meaningless:
 
-        (k_exact = 4; identical at the k_exact = k_max = 11 default up to
-         the partition set.)
+        k_exact   atom   gated (before)         ungated (after)        factor
+        -------   ----   --------------------   --------------------   ------
+           4      ²H     -0.0895596830589507    -0.412212192245027      4.603
+           4      ⁴He    -0.0805867484776914    -0.2742397716174        3.403
+           5      ²H     -0.7335499391634978    -1.2268740026260945     1.672
+           6      ²H     -1.3656848170878801    -2.251131977321312      1.648
+           6      ⁴He    -0.8387490758934286    -1.448199112790757      1.727
+        11 = DEFAULT ²H  -9.14773623102088     -17.6908290020795        1.934
+        11 = DEFAULT ⁴He -8.20155846836239     -15.9926510049258        1.950
+
+    The PRODUCTION number is the last two rows.  The widely-quoted "4.6x /
+    3.4x" is the `k_exact = 4` tier and is 2.4x too large for the default;
+    the gate's grip LOOSENS as the partition set grows (22 % of the
+    magnitude admitted at k_exact = 4, 52 % at the default).  Wall cost at
+    the default: 425.5 s for ²H, 1165.1 s for ⁴He.
 
     THIS IS NOT AN ACCURACY IMPROVEMENT.  At ²H the AME2020 binding is
     +2.2246 MeV, so both the old and the new number have the WRONG SIGN,
@@ -2211,7 +2223,13 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             # function's return value now AGREE at the last row, because the
             # Pass-2 sign gate has been removed.  The rename is kept: the name
             # still says truthfully what the field is, and the field's whole
-            # history is that it once differed from the return by 3.4-4.6x.
+            # history is that it once differed from the return by 3.4-4.6x
+            # at k_exact=4 -- and by 1.93x at the k_exact=11 PRODUCTION
+            # DEFAULT, which is the number a reader of the production path
+            # needs (²H -9.14773623102088 -> -17.6908290020795, 94 of 193
+            # blocks admitted; ⁴He -8.20155846836239 -> -15.9926510049258,
+            # 90 of 193).  The full tier table is in the docstring above;
+            # NEVER quote this quantity without its k_exact.
             #
             # The measurement that motivated the rename, at k_exact=4, is
             # preserved here because it is the size of the change this file
@@ -2224,8 +2242,10 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             #
             # The ungated value is now what is returned in both rows.  Note it
             # is NOT closer to AME: at A=2 the AME binding is +2.2246 MeV and
-            # the ungated total is -0.4122 MeV, still wrong in sign.  Dropping
-            # the gate buys honesty, not accuracy (AGENTS.md "NO FITTING").
+            # the ungated total is -0.4122 MeV at k_exact=4 (-17.69 MeV at the
+            # production default), still wrong in sign at every tier and
+            # FURTHER from AME than the gated value was.  Dropping the gate
+            # buys honesty, not accuracy (AGENTS.md "NO FITTING").
             #
             # Safe to rename: measured on `main`, this key had ZERO consumers.
             # `probe_9b_manybody_expansion.py` writes a `cumulative_MeV` of its
@@ -2284,8 +2304,16 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # 2026-09-05 (PR #6752) already states that this module's `y_λ` are NOT
     # LP duals and that the net-constraint dual `y_0*` is identically zero.
     # That ruling landed at the site carrying the offending NAME and never
-    # reached the reasoning here, 1 800 lines down; one file asserted both
+    # reached the reasoning here, ~1 900 lines down; one file asserted both
     # for a week.
+    #
+    # One refinement of that ruling, from #7251 and worth not losing:
+    # `y_0* = 0` is BASIS-DEPENDENT.  It holds for the NF-basis instance,
+    # whose cost vector IS a Gram row; the block-indexed instance measures
+    # `y_0* = 0.0346905` (²H) and `0.0129979` (⁴He).  The version that
+    # applies to `lp_shadow_price` is the NF one, so that ruling stands as
+    # written -- but do not quote "the dual is identically zero" of an
+    # arbitrary instance.
     #
     # WHAT THIS BUYS, STATED PLAINLY.  Not accuracy.  At ²H the AME binding
     # is +2.2246 MeV; the ungated total is -0.4122 MeV, wrong in sign, as

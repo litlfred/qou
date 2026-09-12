@@ -20,9 +20,24 @@
 > | ⁴He | −0.80209171 | **−1.3701187** | 0.585 |
 > | ⁶Li | −1.0769706 | **−1.9696784** | 0.547 |
 >
-> and through the producer itself at `k_exact = 4`: ²H `−0.0896 → −0.4122`,
-> ⁴He `−0.0806 → −0.2742`. Every ungated total is negative and **larger in
-> magnitude**, so dropping the gate moves *away* from AME (²H: `+2.2246 MeV`).
+> **Those five are this probe's own reconstruction** — partitions with `k ≤ 6`
+> only, read from the partition table with one kernel call each and no per-step
+> accumulation, and ordered `["p"]*Z + ["n"]*N` rather than the producer's
+> alternating ground state. At ²H (where the orderings coincide) `−2.251132`
+> matches the producer's `k_exact = 6` return `−2.251131977321312` to 8 s.f.; at
+> ⁴He they differ by 5.39 %. Do not quote them as producer returns.
+>
+> Through the **producer** itself, tier-labelled because it is not a small knob
+> (²H ungated spans 43× across the tiers):
+>
+> | `k_exact` | ²H gated → ungated | ⁴He gated → ungated |
+> |---|---|---|
+> | 4 | `−0.0896 → −0.4122` | `−0.0806 → −0.2742` |
+> | 6 | `−1.3657 → −2.2511` | `−0.8387 → −1.4482` |
+> | **11 = production default** | `−9.1477 → −17.6908` | `−8.2016 → −15.9927` |
+>
+> Every ungated total is negative and **larger in magnitude**, so dropping the
+> gate moves *away* from AME (²H: `+2.2246 MeV`) at every tier.
 >
 > **What survives:** steps **1** and **3** — `C_λ ≥ 0` on all 682 partitions,
 > and `|Tr| ≥ d` in 3.4 % of `Tr ≤ 0` against 34.1 % of `Tr > 0`. Together they

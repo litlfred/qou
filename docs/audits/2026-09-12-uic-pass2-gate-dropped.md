@@ -9,6 +9,58 @@ Asked *"only gate on lean proved — resolution options?"*, the owner chose two 
 [#7251](https://github.com/litlfred/qou/pull/7251) and it does **not** reverse the
 drop. This document records the drop.
 
+## 🛑 WHICH NUMBER IS WHICH — read this before quoting any figure here
+
+Three different quantities are called "the ²H total" in this arc, and they
+differ by up to **43×**. Every figure below names its quantity **and its
+`k_exact`**; do the same wherever you cite one.
+
+**Q1 — the producer's return.** `unified_iterative_correction(Z, N, k_exact=·)`.
+**Strongly `k_exact`-dependent** — it is not a small knob:
+
+| `k_exact` | atom | Q2 gated (before) | **Q1 ungated (after)** | factor | admitted | wall |
+|---|---|---|---|---|---|---|
+| 4 | ²H | `−0.0895596830589507` | `−0.412212192245027` | 4.603× | 4 / 10 | 10 s |
+| 4 | ⁴He | `−0.0805867484776914` | `−0.2742397716174` | 3.403× | 2 / 10 | — |
+| 5 | ²H | `−0.7335499391634978` | `−1.2268740026260945` | 1.672× | — | — |
+| 6 | ²H | `−1.3656848170878801` | `−2.251131977321312` | 1.648× | 15 / 28 | 10 s |
+| 6 | ⁴He | `−0.8387490758934286` | `−1.448199112790757` | 1.727× | 10 / 28 | — |
+| **11 = default** | ²H | `−9.14773623102088` | `−17.6908290020795` | 1.934× | 94 / 193 | **425.5 s** |
+| **11 = default** | ⁴He | `−8.20155846836239` | `−15.9926510049258` | 1.950× | 90 / 193 | **1165.1 s** |
+
+So ²H ungated runs `−0.412 → −1.227 → −2.251 → −17.69` across
+`k_exact = 4 / 5 / 6 / 11`, a spread of 43×. **A bare "the ungated total is
+−0.4122 MeV" is the `k_exact = 4` figure and must not be read as the production
+number**, which is `−17.69`. Every prior statement of the gate's size — the old
+code comment, #7251's table, #7237's content-block rewrite — quotes `k_exact = 4`
+without saying so.
+
+**Q2 — the gated companion of Q1**, same run, reported as
+`per_step[-1]['gated_total_DISPROVED_SELECTION_MeV']` (was `gated_total_MeV`).
+This is what the producer *returned* before this PR.
+
+**Q3 — `uic_sign_forced_by_gate_probe`'s local reconstruction**, and it is **not
+Q1**. It sums `C_λ · (ln|Tr_final| − ln d_λ)` over partitions with `k ≤ 6`
+directly from the partition table, with one kernel call per partition and no
+per-step accumulation. Reconciled here for the first time:
+
+| atom | Q3 ungated (probe) | Q1 ungated at `k_exact = 6` | |
+|---|---|---|---|
+| ²H | `−2.251132` | `−2.251131977321312` | **agree to 8 s.f.** |
+| ⁴He | `−1.3701187` | `−1.448199112790757` | **differ by 5.39 %** |
+
+The agreement at ²H and the disagreement at ⁴He have **one** cause, read off the
+two sources rather than inferred: the probe orders nucleons
+`["p"]*Z + ["n"]*N` (`:145`) while the producer builds the alternating
+ground-state ordering (`p n p n`). At `A = 2` those coincide; at `A = 4` they do
+not. So **Q3 is Q1 at `k_exact = k_max = 6` under a different nucleon ordering**,
+and the valley scan's own check S4.1c — *"the SAME letters on the producer's
+ALTERNATING ordering have Δ²_Z ≠ 0"* — is the independent statement that the
+ordering is a real second source of variation.
+
+None of this changes any conclusion: **every ungated figure in every row above is
+negative, and AME2020 ²H binding is `+2.2246 MeV`.**
+
 ## 🛑 The headline, stated so it cannot be misread
 
 **Dropping the gate does not fix the sign, does not improve accuracy, and moves
@@ -34,22 +86,17 @@ forbids.
 
 ## Two figures that were not on the record
 
-**1. The production-default factor is 1.93, not 3.4–4.6.** Every prior statement of
-the gate's size — the code comment, #7251's table, #7237's content-block rewrite —
-quotes `k_exact = 4`. Measured at the production default (193 partitions, one atom,
-**425.5 s** wall):
+**1. The production-default factor is 1.93, not 3.4–4.6** — see the Q1 table
+above. The gate's grip **loosens** as the partition set grows: it admitted 22 % of
+the magnitude at `k_exact = 4` and 52 % at the default. A reader of the production
+path needs this number and neither the comment nor the audits carried it.
 
-```
-²H   ungated −17.6908290020795   gated −9.14773623102088   94 of 193 admitted
-```
+**2. `k_exact` is not a small knob on this quantity** — 43× across the four tiers
+measured. Quote the tier with any UIC number.
 
-So the gate's grip **loosens** as the partition set grows: it admitted 22 % of the
-magnitude at `k_exact = 4` and 52 % at the default. A reader of the production path
-needs this number and neither the comment nor the audits carried it.
-
-**2. `k_exact` is not a small knob on this quantity.** ²H ungated runs
-`−0.412 → −1.227 → −17.69` across `k_exact = 4 / 5 / 11`. Quote the tier with any
-UIC number.
+**3. ⁴He at the default costs 1165 s** — 2.7× ²H's 425 s, for one extra step. The
+A-scaling of this producer is the subject of bean `qou-sv7h`; this is one more data
+point for it, and it is why the A-series beyond ⁴He was not re-run here.
 
 ## Why the gate goes — refuted sorry-free, not merely doubted
 
@@ -112,7 +159,8 @@ Re-measured over the same terms with no sign filter
 | ⁴He | `−0.80209171` | **`−1.3701187`** | 0.585 |
 | ⁶Li | `−1.0769706` | **`−1.9696784`** | 0.547 |
 
-Every ungated sum is negative and larger in magnitude.
+Every ungated sum is negative and larger in magnitude. **These are Q3** — see
+the disambiguation section at the top; they are not producer returns.
 
 **What survives, and it is most of it.** Step 1 (`C_λ ≥ 0` on all **682**
 partitions) and step 3 (`|Tr| ≥ d` in **3.4 %** of `Tr ≤ 0` against **34.1 %** of
