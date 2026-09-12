@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-12T07:26:09Z
+updated_at: 2026-09-12T11:28:50Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2757,3 +2757,5 @@ For every typed cluster with A ≤ 4 the trace's dominant summand on the live al
 
 ---
 **Update 2026-09-12 (session ursell-partition-function, PR #7198, bean `qou-rwhv`).** The Mayer/Ursell vocabulary on the 3-body cumulant is now CLOSED, and closed the other way from the 2026-08-30 reading. The corpus `b3` is the third Ursell coefficient (with the Mayer sign, `−phi^T_3`) of the hard-core lattice gas on the nucleon sites with the interface-letter traces as pair weights, grand-canonical over sub-clusters; `b3 < 0` for EVERY bond triple in (0,1) — no 2/3 threshold — by the Ursell alternation (Lean `UrsellPartitionFunctionB3`, sorry-free). The "missing (−1)^(n−1)" is the same expansion at negative activity. So the extensive-term frontier's bullet 4 is STRENGTHENED, not contradicted: the multiplicative assembly cannot give `b3 > 0` at any `f_pn`. Within Mayer, a positive term needs an attractive channel (a letter with trace > 1; none present, scope a); outside it, a non-Mayer assembly. Magnitude untouched: the Mayer coefficient at the live chain bonds is −1.23 MeV (3H) / −0.80 MeV (3He) against AME +1.81 / +1.04. Audit: docs/audits/2026-09-12-ursell-partition-function-for-b3.md.
+
+2026-09-12 pointer: the A ≥ 6 remainder (two-row dominant block at 6Li, scope (a) in PR #7200 §5) is being tested in bean qou-vn6h, branch claude/two-row-dominant-block-a6-2026-09-12. Append-only; nothing here changes.

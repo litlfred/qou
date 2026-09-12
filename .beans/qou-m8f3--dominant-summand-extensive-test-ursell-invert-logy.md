@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T05:08:33Z
-updated_at: 2026-09-12T05:23:52Z
+updated_at: 2026-09-12T11:28:50Z
 ---
 
 Claimed 2026-09-12 by branch claude/dominant-summand-extensive-test-2026-09-12. Front: the live remainder named in qou-brng (2026-09-11, PR #7181 section) — the dominant summand's own log-weight L(A) = log|y_λ* χ^λ*(β_A)|, Ursell-inverted alone, on the live post-2026-09-05 alternating-core atom word (qou-hu1f), proton pin, convention D. Caches chi-<atom>-h<n>-at-q0-50dps (computedAt 2026-09-06) verified against a live recompute of the deuteron: max |cache − live| over χ and y_λ = 1.4e-49.
@@ -26,3 +26,5 @@ Producer `computations/brng_dominant_summand_ursell_probe.py` (14/14, 60 dps, pr
 **Next (judgement).** Default: record and stop. Honest continuation of THIS channel: A ≥ 6 on the two-row dominant with the typed decomposition from the start (21 typed words, seconds each). Do not follow the secondary's b₃ > 0 — fit signature.
 
 Bean stays OPEN pending merge of #7200; its subject (qou-brng's extensive term) is an open conjecture and qou-brng stays open regardless (rule 13a).
+
+2026-09-12 pointer: option 2 of the audit's §8 (extend to A ≥ 6 on the two-row dominant, typed decomposition from the start) is being run as bean qou-vn6h, branch claude/two-row-dominant-block-a6-2026-09-12. Append-only.
