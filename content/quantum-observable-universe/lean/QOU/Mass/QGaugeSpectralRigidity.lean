@@ -81,6 +81,16 @@ The bridge "the sought `D_q` would have `Σ` as its spectral curve" is an
 phrase *"a q-difference prolongation of `Σ`"* means, but it is stated as a
 hypothesis, never used as a fact.
 
+> **Currency note (2026-09-12).** This file originally closed by recording the
+> covering/gauge dictionary as "not formalised, prose only … cited rather than
+> re-proved in Lean". It is now proved, in `QOU.Mass.QDifferenceGaugeMatrix`:
+> `scalar_gauge_eq` (DVRSZ eq. 2.4.1 for a scalar gauge, cleared of the inverse),
+> `det_charMatrix_smul` (scaling the system matrix substitutes `X ↦ X/t` in the
+> characteristic polynomial — the curve *moves*), and `det_charMatrix_conj` (the
+> contrast: conjugation does not move it, which is why a Higgs field has a
+> well-defined Seiberg–Witten spectral curve). `charCubic_smul` below remains the
+> coefficient-level form; the matrix-level statements are the step before it.
+
 Ground ring: `[CommRing K]` for the weight algebra, `[Field K] [CharZero K]`
 where the two halves of an evaluation pair are divided (§7c). Nothing
 archimedean appears except in the explicitly real substrate corollary.
