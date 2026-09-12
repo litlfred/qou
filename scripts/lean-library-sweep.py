@@ -278,7 +278,16 @@ def lib_slug() -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--shadow")
-    ap.add_argument("--jobs", type=int, default=3)
+    ap.add_argument("--jobs", type=int, default=2,
+                    help="concurrent lean processes.  DEFAULT 2, NOT 3, and the "
+                         "reason is arithmetic: LEAN_NUM_THREADS is derived as "
+                         "nproc//jobs (see the parallelism block below), so a "
+                         "jobs that does not DIVIDE nproc wastes the remainder.  "
+                         "On the 4-core container this repo runs in, --jobs 3 "
+                         "gives 1 thread each = 3 of 4 cores, leaving one idle; "
+                         "--jobs 2 gives 2 threads each = 4 of 4, AND halves "
+                         "per-module wall-clock.  It dominates on both axes.  "
+                         "Prefer a divisor of nproc when overriding.")
     ap.add_argument("--timeout", type=int, default=1800,
                     help="per-module seconds; on expiry the module is reported "
                          "TIMEOUT (unverified) and the sweep CONTINUES")
