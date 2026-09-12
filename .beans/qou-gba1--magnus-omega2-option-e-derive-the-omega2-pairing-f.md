@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T11:44:24Z
-updated_at: 2026-09-12T12:03:42Z
+updated_at: 2026-09-12T12:23:09Z
 ---
 
 # The only option that ANSWERS the question rather than choosing
@@ -189,10 +189,13 @@ z = 0 trace — i.e. the wrong parameter for a corpus committed to convention D.
 * HDR proves it for `z` an **indeterminate** over C(q); the corpus wants the
   **specialised** value z_D. The Lean proves the specialised case outright, so
   nothing is missing — but they are formally distinct statements.
-* **No fresh `lean`-direct run.** The lean-lsp MCP failed to connect this
-  session. I verified the declarations and the structure by reading the files;
-  the exit-0 / `#print axioms` record is `qou-4a68` (2026-08-24, PR #5705),
-  quoted as a dated record, NOT re-measured.
+* ~~**No fresh `lean`-direct run.**~~ **DISCHARGED 2026-09-12 — see
+  §DISCHARGED at the foot of this bean.** Both declarations have since been
+  rebuilt from source (`lean-library-sweep.py`, 95 ok / 0 RED) and their axioms
+  re-measured sorry-free. Superseded text: *the lean-lsp MCP failed to connect
+  this session; I verified the declarations and the structure by reading the
+  files; the exit-0 / `#print axioms` record is `qou-4a68` (2026-08-24,
+  PR #5705), quoted as a dated record, NOT re-measured.*
 * Genericity `q²` not-a-root-of-unity is **vacuous over ℝ** beyond `q² ≠ 1`
   (`qou-4a68`), so `q₀` is in scope.
 
@@ -220,3 +223,75 @@ why a content-tree grep returns the decoys and misses it.
 — above a body computing `q^3/(q^2+1)`, convention **D**. Name and docstring
 agreed with each other and both disagreed with the body; only the body was
 right. Corrected.
+
+
+---
+
+## 🟩 DERIVED AND VERIFIED 2026-09-12 — the control is weight-BLIND, proved
+
+Two additions to
+`content/quantum-observable-universe/lean/QOU/MassTheory/MagnusCurvatureCommutator.lean`
+(a **library** file — no `.qa.json` sidecar, so nothing but the agent checks it):
+
+```lean
+theorem trace_commSum_eq_zero (tr : A →ₗ[R] R)
+    (hcyc : ∀ x y : A, tr (x * y) = tr (y * x)) (σ : ℕ → A) (m : ℕ) :
+    tr (commSum σ m) = 0
+
+theorem trace_commSum_indep_of_cyclic (tr₁ tr₂ : A →ₗ[R] R)
+    (h₁ : ∀ x y : A, tr₁ (x * y) = tr₁ (y * x))
+    (h₂ : ∀ x y : A, tr₂ (x * y) = tr₂ (y * x)) (σ : ℕ → A) (m : ℕ) :
+    tr₁ (commSum σ m) = tr₂ (commSum σ m)
+```
+
+Both generic over `{R} [CommRing R] {A} [Ring A] [Algebra R A]` (§7c — no `ℝ`,
+no ordering, no `Real.sqrt`). The first is `ρ = 1` in the pre-existing
+`trace_mul_commSum_eq_zero_of_commute`; the second is two applications of it.
+
+### What it establishes, and why it is the thing worth proving here
+
+The three Magnus-Ω₂ sign probes each report a `ρ = I` control confirming
+`tr(Ω₂) = 0`, and read it — correctly — as *"any nonzero sign REQUIRES the
+density"*. **`trace_commSum_indep_of_cyclic` refutes the tempting next step**:
+a passing control is NOT evidence that the aggregation measure is the right one.
+It passes for the quantum Plancherel weight, for the Ocneanu/Wenzl family, and
+for **any** cyclic linear functional whatever — including ones nobody would
+propose. So decision 1 of `qou-za3q` cannot be settled on the control's
+strength, from either side.
+
+Scope, precisely: this says the control cannot **discriminate**. It does not say
+the control is worthless — a control that *failed* would mean the germ or the
+trace was broken, which is exactly how the probes use it.
+
+What fixes the weight family is therefore the Markov-trace characterisation
+recorded above, and nothing else on the probe side.
+
+### Verification — fresh this session, not a quoted record
+
+`scripts/lean-library-sweep.py` (library file ⇒ not `lean-content-sweep.sh`;
+not bare `lean`-direct, which is snapshot-conditional per `qou-56qy`):
+
+* `--all --only-exact QOU.MassTheory.MagnusCurvatureCommutator` → **1 ok, 0 RED**, 7 s.
+* `#print axioms` on both new theorems →
+  `[propext, Classical.choice, Quot.sound]`. **No `sorryAx`.**
+* `lean` invoked with `-DautoImplicit=false -s 65536` throughout, per `qou-56qy`
+  — a bare `lean` is a strictly weaker check than the lakefile's options.
+
+### The "No fresh `lean`-direct run" caveat above is now DISCHARGED
+
+That scope item said the two cited uniqueness declarations were verified by
+*reading*, with the exit-0 record quoted from `qou-4a68` (2026-08-24). Both have
+now been **rebuilt from source** and re-measured:
+
+`lean-library-sweep.py --package QOU --only QOU.SchurWeyl.MarkovTrace` →
+**95 ok, 0 RED, 0 TIMEOUT, 0 skipped**, 296 s. Both `QOU.SchurWeyl.MarkovTraceUnique`
+and `QOU.SchurWeyl.MarkovTraceInstance` were in the dirty closure and were
+rebuilt (confirmed by the absence of a hardlinked `.olean.hash` beside them in
+the shadow, which the snapshot copies carry). `#print axioms` against those
+freshly-built oleans:
+
+* `QOU.SchurWeyl.HeckeCoset.markovTrace_unique` → `[propext, Classical.choice, Quot.sound]`
+* `QOU.SchurWeyl.SeminormalRep.eq_wtrace_of_markov` → `[propext, Classical.choice, Quot.sound]`
+
+So the forcing argument rests on a **re-measured** sorry-free pair, not on a
+three-week-old record. Every other scope item above stands unchanged.
