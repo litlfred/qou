@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-09-12T19:04:20Z
-updated_at: 2026-09-12T19:40:12Z
+updated_at: 2026-09-12T19:53:56Z
 ---
 
 **What is wrong.** The owner ruled convention D canonical on 2026-08-15 and
@@ -127,3 +127,49 @@ dependence, and `scripts/convention-c-value-audit.py` reports 85 confirmed
 convention-C bindings in `computations/` (`qou-t9r1`).
 
 PR #7235, commit `65401dce5bd`.
+
+
+## 2026-09-12 (drain) — the SECOND producer, the sign flip, and both audits. PR #7236.
+
+Reopened-in-spirit as a drain pass; the migration proper is above.
+
+**`gap_a3_deuteron_A_D_overshoot.py`** — the matched pair of the file migrated in
+#7235, same muon `Q0`, same C `TRM`. Migrated the same way (both constants from
+`canonical-mass-table-extended.witness.json`). Both files now independently give
+**0.8021**, so the pair stayed matched.
+
+**THE SUBSTANTIVE FINDING: the required `P_λ` correction FLIPS SIGN.**
+
+| | C (muon) | **D (proton)** |
+|---|---|---|
+| flat baseline vs deuteron binding | **overshoots** ×2.05 | **undershoots** ×0.8021 |
+| required `P_λ` | **SUPPRESS** to 48.79 % | **ENHANCE** to 124.7 % |
+
+**Any `P_λ` search inheriting the "suppression" framing is aimed the wrong way.**
+The probe now prints that in its own output rather than leaving it to be inferred.
+
+**Three more hardcoded claims, now computed.** The script printed
+unconditionally: `"OVERSHOOT factor"`; *"the bar-even `P_λ` must **SUPPRESS** the
+effective trace to ~124.7 % of flat"* (suppression to 124.7 % is not
+suppression); *"the flat baseline **OVERSHOOTS** … by ~0.8021×"*; and
+*"consistent with **EXACTLY 2** … Reporting ≈2.05"*.
+
+**🛑 The header's "48 %" warning is on a stale figure AND points the wrong way.**
+It says substituting the live value "would **inflate** the overshoot by 48 %" —
+that 48 % is the ratio to `0.5751` (the 2026-08-15 `rho-k` audit's D deuteron,
+correct then, stale now). The live value is `0.15197`, so migrating **deflates by
+~2.56×**.
+
+**Both A3 audits bannered SUPERSEDED** — kept as dated records per the `4.66e6`
+precedent, but their *titles* asserted the refuted conclusion (*"the cross-atom
+binding-overshoot trend is REAL"*, *"it GROWS with A"*) and a cold reader took
+them as live. Each now opens with the C-vs-D table, the scope-(a) marker, the
+`P_λ` sign note and the stale-`0.5751` trap. The producers had been migrated
+while their own authority still asserted the old conclusion — the
+"fixed in one place, survives in the others" failure.
+
+**REMAINING, and it is the successor work:** `VOL_D` / `Vol_hyp` and `B/m_e` are
+still **C-era assignments**, so both files are now **D in their trace and C in
+their geometry**. A D-consistent knot/volume assignment is undone —
+`qou-e5jf`'s arc. Coordinated to PR #7229 (end-to-end binding), which may consume
+either.
