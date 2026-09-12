@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:02:09Z
-updated_at: 2026-09-12T19:02:10Z
+updated_at: 2026-09-12T19:05:58Z
 ---
 
 Parent: qou-cins / plan qou-0fmb, epic qou-08a2. Opened 2026-09-12 after S1 merged (#7228, 3653e9ce).
@@ -42,3 +42,47 @@ exists_tower_with_nonzero_h takes hne : h != 0 and concludes (forall m, quad) AN
 
 ## Discipline
 No fit. Per rule 13a this stays open until the mathematics closes. Do NOT close it on the strength of the H 1 < H 2 wire alone -- that is one level, not the filtration.
+
+
+--------
+**2026-09-12, SAME DAY: THE PROOF SKETCH ABOVE IS REFUTED. Do not attempt it.**
+
+The sketch sends g m |-> q*1 for m >= 2 and checks quad, far and braid(0). It does
+NOT check braid(1), and braid(1) is what kills it.
+
+With phi(g 2) = c*1 central and phi(g 1) = x:
+
+    braid(1)   g2 g1 g2 = g1 g2 g1   =>   c^2 x = c x^2
+    quad       x^2 = h x + 1         =>   c^2 x = c(h x + 1) = c h x + c
+                                     =>   c (c - h) x = c
+
+so if c is a unit, (c - h) x = 1 and x is a SCALAR. But x = sigma_1 is not a
+scalar in H_3 (sixWords_indep). Contradiction: the algebra map DOES NOT EXIST.
+
+This is not special to c = q. It is scope (b), a STRUCTURAL exclusion, and the
+invariant is named: the braid relation together with the quadratic forces a
+generator adjacent to a central-scalar generator to be a scalar itself. So EVERY
+assignment sending all but finitely many generators to scalars collapses the low
+generators too, and the whole "cheap finite separator" family is dead, not just
+this member.
+
+**Consequence: H 1 < H 2 is NOT a wire.** The rank-6 objects (HeckeDim3Dim /
+HeckeDim3Indep) are real and sorry-free, but they cannot RECEIVE a map from the
+N-indexed tower, so they do not yield strict growth. Strict growth needs the
+Iwahori-Hecke coset basis, or the direct limit of HeckeInclusion.heckeIncl
+together with injectivity of that inclusion -- i.e. exactly what the merged
+HeckeTowerWitness docstring said before this bean narrowed it. The merged
+docstring is CORRECT as written; this bean's narrowing was the error.
+
+What survives from the narrowing, and is still worth having:
+* HeckeMarkov3.markovTrace3 (finding 2) is untouched by this -- it is about the
+  TRACE (S2 / qou-g8i1), not about separating the filtration, and remains a
+  materially better S2 starting point than the rank-2 collapse.
+* the obstruction itself is a formalize-first result worth recording in Lean,
+  alongside #7153's braid_forces_eq_of_commuting_involutions, which is the same
+  genre: a proved statement about which cheap witnesses CANNOT work.
+
+Method note for the next agent: this was caught by reading the target's actual
+API before writing the map, not by a probe. The sketch had been checked against
+quad, far and braid(0) and looked complete; braid(m) for the INTERIOR index m=1
+is the case a boundary-only check misses.
