@@ -77,8 +77,27 @@ reading as a strong pass.
 MEASURED DOWNSTREAM MOVE (convention C, proton pin; see PR #7205):
   c_3   -2.0693425771 -> -1.7604548585  (+0.3089, -14.93 %)
   the `c_3 ≈ -2 = J_Hopf(q=1)` near-match DEGRADES, 3.4671 % -> 11.9773 %
-  L2 derived-tier Q_β residual 1278.58 -> 1087.73 ppb, 164.0x -> 139.5x
-Reported as outcomes in both directions, not as reasons.
+  L2 derived-tier Q_β residual 1278.58 -> 1087.73 ppb (improves)
+  L2 Q_β MISS FACTOR **164.0x -> 223.9x (WORSE)**
+
+🛑 That last line corrects an earlier version of this docstring, which
+read "164.0x -> 139.5x" and called it closer.  **That was wrong**, and the
+error is worth keeping visible because it is a normalisation trap of
+exactly the kind AGENTS.md warns about two sections apart.  139.5x holds
+the 100x target FIXED at the AME σ, which isolates the residual; the
+dashboard `per_observable_100x_status.py` scores each determination
+against **1/100 of its own σ**, and the registry is the MORE PRECISE
+determination (σ 3.8e-7 vs AME's 6.1e-7).  Its own target therefore
+tightens by ~1.6x — faster than the residual improves — so the miss gets
+**worse**, 164.0 -> 223.9.  Confirmed by running the dashboard: `Q_beta`
+is the ONLY row that moves, `err_ppb` 1279 -> 1088, `target_100x_ppb`
+7.797 -> 4.857, `miss_factor` 164.0 -> 223.9.  The headline count is
+unchanged at **1/6 scoreable** (and 0/6 unconditional).
+
+So the two defensible normalisations disagree in SIGN.  Under the
+anti-fit directive that is not a problem — accuracy is a diagnostic and
+neither number may pick the dataset — but it is exactly why the direction
+must not be quoted casually, in either direction.
 
 -- Ref: [manuscript] beans qou-0e2p, qou-cds1; PRs #7205, #7164, #4860
 """

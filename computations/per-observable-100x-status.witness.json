@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T12:39:23.791629+00:00",
-  "commitSha": "6e310490a1329a86ceb1898669aada8800871d36",
+  "computedAt": "2026-09-12T07:28:28.057575+00:00",
+  "commitSha": "b276ed94b1b7a96d2477f0600c3792cb368c7da0",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "66f1e9466de8",
-  "scriptCommitSha": "d626761a34ecba5c017ee0db5ceab543ccc87a86",
+  "scriptCommitSha": "8bd7b39ac5f80d3a2bac6cdd99b1d6d5f3cc95c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,12 +89,12 @@
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
         "pred_MeV": "0.782334410278",
-        "codata_MeV": "0.782333410000",
-        "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "1279.",
-        "sigma_exp_ppb": "779.7",
-        "target_100x_ppb": "7.797",
-        "miss_factor": "164.0",
+        "codata_MeV": "0.782333559310",
+        "sigma_exp_MeV": "3.80000e-7",
+        "err_ppb": "1088.",
+        "sigma_exp_ppb": "485.7",
+        "target_100x_ppb": "4.857",
+        "miss_factor": "223.9",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": null,
@@ -288,11 +288,11 @@
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "30b2e42b3cf4b32de981e78f131aded9c1f946499ef91d3a52cd3e359b0a8cf7",
-        "size_bytes": 2720,
-        "commitSha": "9455db71d5fc8f322e8f199ad62dead1427cca4b",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-03T01:10:37.092327+00:00"
+        "sha256": "65bc16a7912549d32951965700239e3c653ef1f2c0e905fcf69407b5a92e39c0",
+        "size_bytes": 4570,
+        "commitSha": "f132e5d9b9dfeecefc889bb93ce124ea59f61b7e",
+        "scriptCommitSha": "3b95e967cd8269dd2067a7db7a6961228a698f98",
+        "computedAt": "2026-09-12T07:22:53.333513+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
