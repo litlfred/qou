@@ -143,7 +143,6 @@ theorem colorCubic_scale_eq (t X z : K) (ht : t ≠ 0) :
     colorCubic (t * X) z = t ^ 3 * gaugedColorCubic t⁻¹ X z := by
   unfold colorCubic gaugedColorCubic
   field_simp
-  ring
 
 end FieldScaling
 
@@ -246,10 +245,8 @@ theorem colorCubic_weighted_rigid (l m n : K)
   have d11 := h 1 1
   have dm1 := h (-1) 1
   simp only [colorCubic] at d01 d11 dm1
-  have hm2 : m ^ 2 = 1 := by
-    linear_combination (1 / 2 : K) * d11 + (1 / 2 : K) * dm1 - d01
-  have hm1 : m ^ 3 + m ^ 2 + m = 3 := by linear_combination d01
-  linear_combination (1 / 2 : K) * hm1 - (1 / 2 : K) * m * hm2 - (1 / 2 : K) * hm2
+  -- `(±1, 1)` averaged is `m³+m²+2m−4`; subtracting `(0,1)`'s `m³+m²+m−3` leaves `m−1`.
+  linear_combination (1 / 2 : K) * d11 + (1 / 2 : K) * dm1 - d01
 
 end Field
 
@@ -261,9 +258,11 @@ theorem no_scaling_survives_of_one_lt (t a₂ a₁ a₀ : ℝ) (ht : 1 < t)
     (h : ∀ X : ℝ, (t * X) ^ 3 + a₂ * (t * X) ^ 2 + a₁ * (t * X) + a₀
           = t ^ 3 * (X ^ 3 + a₂ * X ^ 2 + a₁ * X + a₀)) :
     a₂ = 0 ∧ a₁ = 0 ∧ a₀ = 0 := by
-  refine coeffs_vanish_of_scaling t a₂ a₁ a₀ (by linarith) (by linarith) ?_ ?_ h
-  · nlinarith
-  · nlinarith
+  have ht0 : (0 : ℝ) < t := by linarith
+  have h2t : (1 : ℝ) < t ^ 2 := by nlinarith
+  have h3t : (1 : ℝ) < t ^ 3 := by nlinarith
+  exact coeffs_vanish_of_scaling t a₂ a₁ a₀ (ne_of_gt ht0) (ne_of_gt ht)
+    (ne_of_gt h2t) (ne_of_gt h3t) h
 
 /-- **The colour cubic is not degenerate**, so the previous theorem bites: its
 fibre over `z = 0` has all three non-leading coefficients equal to `1`. -/
