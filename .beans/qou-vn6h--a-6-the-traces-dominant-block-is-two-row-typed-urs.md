@@ -1,11 +1,11 @@
 ---
 # qou-vn6h
 title: 'A ≥ 6: the trace''s dominant block is two-row — typed Ursell decomposition of its log-weight on ⁶Li/⁷Li (qou-brng remainder after qou-m8f3)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-12T11:28:36Z
-updated_at: 2026-09-12T11:53:31Z
+updated_at: 2026-09-12T12:04:33Z
 ---
 
 Claimed by branch claude/two-row-dominant-block-a6-2026-09-12 (2026-09-12). Scope: the A ≥ 6 remainder of qou-brng after qou-m8f3 (PR #7200): at 6Li the trace's dominant summand is the two-row block [15,3] whose character is not a ring homomorphism, so PR #7200's letter-product argument (scope (b) at A ≤ 4) does not reach it. This session: all typed clusters (Z,N) with Z+N ≤ 6 (+ 7Li if the path-sum kernel makes n = 21 feasible), live alternating-core word, proton pin, convention D; the dominant summand as the trace defines it; per-block chain-edge additivity at FIXED n across the 7 typed words on 18 strands; typed Ursell inversion to order 6 against uniform-e2 and typed AME targets; a generic-ring Lean lemma on when a Hecke character with mixed sigma-spectrum cannot be letter-multiplicative. Report only; nothing wired.
@@ -15,3 +15,5 @@ CLAIM. The trace's dominant summand argmax|y chi| is two-row from A = 5 on (not 
 SCOPE. (b) the #7200 one-row argument does not extend past A = 4 — invariant: mixedSpectrum_not_rightLetterMultiplicative (a character with both Hecke eigenvalues admits no per-letter factor) + measured two-row dominance at 5 <= A <= 7. (a) the two-row dominant summand's connected content, alone, is anti-binding and ~7x too small for the shortfall; not an exclusion of a two-row block from a multi-term closure. Classes B/D untouched. Nothing wired.
 NOTE. The only committed 6Li per-partition cache (chi-lithium-6-h18-at-q0-50dps-matrix-m) is the sign-only wire (pn_split_carried False, qou-sgv5) and differs from the live word by up to 3.3e3 in chi; it is not a provenance check. Also: chi_all_lambda_any defaults to dps=50 regardless of ambient mp.dps (memory TRAP added).
 Bean stays in-progress until the witness/gates land; then completed — the question asked was answered (yes, a connected term exists; no, it is not the extensive term). qou-brng stays open (rule 13a).
+
+2026-09-12 close-out: witness 21/21 committed (e5a77b21178), precision-gates run (tree-wide reds only; none of this PR's three files in any detail list; NEW dirty 0, REGRESSED 0; contended audit witnesses reverted per qou-v0t8), branch rebased onto main after #7200 merged. The bean's question — does the two-row dominant block's log-weight carry the extensive term at A >= 6 — is answered (it carries connected terms; they are anti-binding and ~7x too small), so this measurement bean completes. The CONJECTURE it serves (a positive extensive term exists) lives in qou-brng and stays OPEN (rule 13a); nothing here closes it.
