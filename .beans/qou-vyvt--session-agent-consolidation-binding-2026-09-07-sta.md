@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:25:01Z
-updated_at: 2026-09-12T07:40:06Z
+updated_at: 2026-09-12T07:52:49Z
 ---
 
 Branch claude/agent-consolidation-binding-1jtf80. Owner instruction 2026-09-07 (round 2 of the stalled-agent takeover; sibling round 1 is #7121 / qou-6g7j with fronts observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces — NOT duplicated here). This session: merge every clean open PR; take over the fronts #7121 left: the chi producer scaling wall (#7083), the Q_β ℚ(q)-coefficient leg (#7118), and the binding SHAPE residual (symmetry-energy term of the additive log law), which the owner names as where most of the binding gap sits. Goal statement: L2 toward 1 ppQ; binding is not an L2 row and must not be quoted as one (1ppQ reanalysis §5 item 3).
@@ -124,3 +124,43 @@ in parallel; two settled locally.
   22 digits). Redundancy now CHECKED by assertion at rel_eps 1e-15, so a muon-pinned
   witness fails loudly instead of straddling. Probe exit 0, 1/1, witness regenerated
   for the first time since the breakage.
+
+
+### Tranche 4 closeout (2026-09-12)
+
+- **reembed 3A — DONE, PR #7202.** The obstruction is NOT what #7173 named. #7173 blamed
+  the fixed-H_k embedding; measured, the decider is the COUPLING GRAPH, which changing the
+  embedding does not touch. _step_chain_generic emits one inter-nucleon letter per previous
+  nucleon = C(A,2), the COMPLETE graph K_A; atom_braid_word_3A bonds only consecutive
+  nucleons = A-1, the PATH P_A (measured A=2..6: 1/3/6/10/15 vs 1/2/3/4/5). Exhaustive over
+  all A! orderings A=2..7: contiguity implies path, K_A reachable iff A<=2. Dropping
+  contiguity does not rescue it — K_A is layout-realisable iff A<=6, but over EVERY
+  K_A-realising layout the max contiguous nucleon triples is 2/3 at A=3 and ZERO at A=4,5
+  (234 / 5736 / 64986 layouts). A=2 is the sole exception and IS level-local (~8x faster),
+  and the value MOVES: same H_6, same 23 letters, chi^lambda differs on 9 of 11 partitions
+  of 6, max rel 1.43, lambda=[5,1] going -0.827 -> +3.216. So option 2 is a re-derivation,
+  as the owner was told. Probe 18/18, 70 dps, cross-checked <1e-45; ContiguousCouplingGraph.lean
+  7 decls sorry-free. Corpus defect found and fixed: hecke_core_legacy.py:1040-1042 asserted
+  'chi_lambda(sigma_k) is independent of k (class function), so any embedding ... yields the
+  same trace' — premise true, conclusion FALSE (chi is a class function on the GROUP, not of
+  the multiset of letters); that one sentence answers this PR's question wrongly. Note the
+  sibling site at :1004 is TRUE (in (2,2), rho(sigma_1) and rho(sigma_3) are the same matrix)
+  — the agent caught its own misattribution before it landed. Bean qou-w6x3 completed;
+  residual owner decision framed in qou-8274 (default: do nothing).
+
+- **PARENT-SESSION INDEPENDENT VERIFICATION of class B (#7204), not taken on the agent's
+  report.** The agent verified inside its own worktree, which was reclaimed, so this was
+  re-done from scratch in the main checkout. Built the 4-module cone from source with
+  lean-direct against the restored Mathlib tree (3480 oleans; NO lake build):
+  BondCutSymmetry 8s, BondCutSymmetryLogBound 4s, BondCutSymmetryNoSignDefinite 5s,
+  BondCutSymmetryNoSignDefiniteLogBound 4s — all exit 0 under
+  'lean -DautoImplicit=false -s 65536'. #print axioms on all 20 declarations by
+  fully-qualified name: 20 checked, 0 sorryAx, 0 errors, 19 on
+  [propext, Classical.choice, Quot.sound] and bondSum_energyShift alone on [propext] —
+  reproducing the agent's report EXACTLY, including that one strictly-weaker outlier.
+  (Note for the next agent: scripts/lean-library-sweep.py needs --package QOU here and
+  still bails — this container has no QOU olean tree at all, only dependency packages, so
+  the 4-module lean-direct cone is the route that works.)
+
+- **#7204 was left as a DRAFT by its agent although the work was complete** — undrafted
+  here. #7202 likewise ready. Both awaiting owner merge permission (rule 7).
