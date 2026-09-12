@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T19:41:51Z
+updated_at: 2026-09-12T20:20:00Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1662,3 +1662,70 @@ open part of the problem, and the 5 letters still have no derived constraint.
 That is the live gap.
 
 BEAN STAYS todo (§13a).
+
+## 2026-09-12 — the element migration LANDED on main, and `element_is_ruled: true` over-reaches by 5 letters
+
+**Not a numerical dispute. The migration is right, the number is right, and my own
+work is what supports it.** What is wrong is one provenance field, and it is the
+field an owner reads.
+
+**What landed.** `573b2ece24` moved the scored `Q_β` element from `delta_S` (short
+normal form) to `nuc11_interleaved`, and `b021216ab6` closed `qou-wfvl` as
+`completed`. The row improved 2.55× (4.259e+8 → 1.668e+8 ppb). The producer writes
+
+    "element_is_ruled": true,
+    "element_authority": "owner gamma-gamma ruling qou-ales 2026-09-08 +
+       GammaGammaWordSelection.vertex on main (a gamma-gamma word's 2nd letter is
+       negative, which excludes the gen-grouped core)"
+
+and it calibrates at `err_pct_at_order_zero_E0 = -17.4959286063` against my
+`-17.495929`. Their `delta_S` `tr_conv_D = -0.106235639848` reproduces mine to ten
+digits. The exclusion argument they cite **is** my Lean lemma
+`not_gammaGamma_of_snd_pos`. None of that is in question.
+
+**The over-claim, measured.** `nuc11_interleaved` is **11 letters** — read off
+`_GEN_CHAINS`, `gen0 = 7`, `gen1 = 4`, for both `p` and `n`. Every γγ word has
+**even** length: a γγ word is a concatenation of 2-letter vertices
+(`gammaGamma_length_even`, sorry-free). 11 is odd. **Therefore
+`nuc11_interleaved` is not a γγ word** — `eleven_not_gammaGamma`, sorry-free, on
+this branch.
+
+So the ruling does not select the element. It selects the **6-letter core**
+`(σ₀σ₁⁻¹)³` = three γγ vertices, and provably cannot reach the other five:
+
+| block | letters | γγ-reachable? |
+|---|---|---|
+| core | 6 | **yes** — three vertices |
+| quark | 3 | no — odd (`three_not_gammaGamma`) |
+| gluon | 2 | no — even, but both positive (`gluonPair_not_gammaGamma`) |
+
+The gluon pair is excluded **twice over**: its second letter is positive, and it
+follows an odd-length block so no vertex boundary can align with it.
+
+**Why this matters rather than being pedantry.** `qou-ales` says *"Shouldn't use
+census."* The element now scored is **6/11 γγ-derived and 5/11 census-derived**.
+`qou-wfvl` — whose title is *"the Q_β element is census-derived"* — is therefore
+closed on an element that is still census-derived in 5 of its 11 letters. The
+migration is 6/11 done, not done.
+
+**What the correct label would say.** The binary field cannot express this. Either
+`element_is_ruled` becomes scoped (`"core"`), or it keeps `true` alongside
+`element_ruled_letters: 6` / `element_census_letters: 5`. **My judgement, marked as
+judgement:** the second — keep the boolean for consumers, add the two counts, and
+open a successor bean for the 5 free letters, because that is where a closing `Δ`
+would have to come from and it is now the only place left.
+
+**I have not changed it.** It is a sibling's producer and an owner-facing
+provenance label; §"ASK THE OWNER BEFORE CHANGING THINGS" covers it and it is
+neither a precision increase nor corpus-derived (the corpus currently *asserts*
+`true`). Recorded here; surfaced to the owner.
+
+**Second item, smaller.** `173da443b6` made the tower-summed `E₀` canonical. This
+probe and `qbeta_option_e_order_dof_range_probe` still inherit the **order-zero**
+form, so every percentage on this bean is on the retired base, low by 0.9915 %. On
+the canonical base: interleaved `-16.677940 %`, gen-grouped `-14.613128 %`. CHECK 7
+reports both and does not switch, because the cells these are calibrated against
+were computed at order-zero and mixing bases is the silent-revert trap that
+commit's own audit records at §6. **The ranking is invariant** — residual is
+strictly increasing in `E₀`, and `E₀ > 0` is common to every candidate — so no
+conclusion on this bean depends on the base.
