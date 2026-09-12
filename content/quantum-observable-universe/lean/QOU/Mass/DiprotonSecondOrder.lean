@@ -46,6 +46,24 @@ and the log law of step 8 turns that into a two-sided bound on the binding.
 * `ratio_eq_one_add_of_linear_response` — the bookkeeping step: a trace that is linear in
   the bond and a bond of the form `1 + h²·D` give a ratio of the form `1 + h²·r`.
 
+## Why this is not circular — read this before quoting the `Θ(h²)`
+
+`r` is *defined* as `(μ − 1)/h²`, so the bracket above holds for **any** ratio whatever, and
+on its own it says nothing about a scale. The statement has content only because `r` is
+bounded **independently of `h`**, and that is what step 4's identity supplies: the deviation
+is `h²·D` with `D = (2 + h²)·V + 1`, whose size is controlled by `V`'s on the interval
+(`deviation_coefficient_le`), so `r = tr(W·D)/tr(W)` is bounded whenever the free trace is
+bounded away from zero (`response_bounded_of_deviation_bounded`). Measured at the pin:
+`‖V³ − 1‖_F / h² = 2.577`, an order-one coefficient, so the `h²` is the real scale and not an
+artifact of the definition.
+
+**And do not reason from the character instead.** `bond_character_deviation` gives
+`χ_(2,1)(V³) − 2 = −h⁴·(3 + h²)`: the bond's *character* deviates at **fourth** order,
+because `tr D = −3h² − h⁴` is itself `O(h²)`. The *matrix* deviates at second order and the
+*character* at fourth, and it is the matrix that controls the interface ratio, since `tr(W·D)`
+carries no such cancellation. Anyone who checks the order on characters will get `h⁴` and be
+wrong about the binding.
+
 ## What is NOT derived
 
 **`r` itself.** It is the trace-weighted response `tr(W·D)/tr(W)` over the eleven `H₆`
@@ -172,5 +190,42 @@ theorem bound_on_q_interval {α q r : ℝ} (hα : 0 < α) (hr : 0 < r) (hq1 : 1 
     have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq1
     linarith
   exact bound_at_small_h_sq hα hr (ne_of_gt hpos) (h_sq_le_of_q_le hq1.le hq2)
+
+/-! ## Why the `Θ(h²)` is not circular: the response is bounded independently of `h` -/
+
+/-- **The deviation's coefficient is bounded on the interval.** `D = (2 + h²)·V + 1`, and on
+`h² ≤ 1/10` the scalar factor is at most `21/10` — an `h`-free bound, so `D`'s size is
+controlled by `V`'s alone. -/
+theorem deviation_coefficient_le {h : ℝ} (hsmall : h ^ 2 ≤ 1 / 10) : 2 + h ^ 2 ≤ 21 / 10 := by
+  linarith
+
+/-- **The relative response is bounded independently of `h`.** If the numerator `tr(W·D)` is
+bounded by `K` and the free trace is bounded away from zero by `m > 0`, then `|r| ≤ K/m` — a
+bound with no `h` in it. This is what makes `binding_magnitude_second_order` a statement about
+a *scale*: without it, `r := (μ − 1)/h²` is a definition and the bracket is vacuous. -/
+theorem response_bounded_of_deviation_bounded {trWD trW K m : ℝ} (hm : 0 < m)
+    (hlow : m ≤ |trW|) (hK : |trWD| ≤ K) : |trWD / trW| ≤ K / m := by
+  have hW : trW ≠ 0 := by
+    intro h0
+    rw [h0, abs_zero] at hlow
+    linarith
+  rw [abs_div]
+  have hKnn : 0 ≤ K := le_trans (abs_nonneg _) hK
+  have hWpos : 0 < |trW| := lt_of_lt_of_le hm hlow
+  rw [div_le_div_iff₀ hWpos hm]
+  calc |trWD| * m ≤ K * m := mul_le_mul_of_nonneg_right hK hm.le
+    _ ≤ K * |trW| := mul_le_mul_of_nonneg_left hlow hKnn
+
+/-- **The bond's CHARACTER deviates at fourth order, not second.** From step 4's
+`trace_vtx_pow_three`, `χ_(2,1)(V³) − 2 = −h⁴·(3 + h²)`, because `tr D = −3h² − h⁴` is itself
+`O(h²)`. The *matrix* deviation is `h²`; the *character* deviation is `h⁴`. The interface
+ratio is controlled by the matrix, since `tr(W·D)` carries no such cancellation — so checking
+the order on characters gives the wrong answer for the binding. -/
+theorem bond_character_deviation {q a b a' h : ℝ} (hqinv : q * q⁻¹ = 1) (hh : h = q - q⁻¹)
+    (ha : a * (1 - q ^ 4) = h) (ha' : a' = -q ^ 4 * a) (hb : b ^ 2 = a * a' + 1)
+    (hq1 : q ^ 2 ≠ 1) :
+    (vtx q a b a' h ^ 3).trace - 2 = -(h ^ 4) * (3 + h ^ 2) := by
+  rw [trace_vtx_pow_three hqinv hh ha ha' hb hq1]
+  ring
 
 end QOU.Mass.DiprotonSecondOrder
