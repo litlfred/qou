@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-12T12:21:57Z
+updated_at: 2026-09-12T18:01:07Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -75,3 +75,7 @@ Step 6 claimed on branch claude/ales-step6-h6-pp-bond-2026-09-12. Scope: the H_6
 
 ## 2026-09-12 — step 6 on PR #7222 (08036130df): H_6 pp bond selected through branching, on 1 < q <= 23/20
 Lean QOU/Mass/GammaGammaH6Interface.lean (36 declarations, no sorryAx): each H_6 character on G^m = (sigma_2 sigma_3^-1)^m is a + b chi_(2,1)(V^m) + c with (a,b,c) Young-lattice path counts (decide): (6):(1,0,0), (5,1):(3,1,0), (4,2):(3,3,0), (3,3):(1,2,0); f = a + 2b + c on all 11 blocks; Burnside 720. InterfaceBranching = the branching rule as a HYPOTHESIS (not derived; probe verifies 24 step-3 characters to 7.2e-60). Convention D two-row support (probe: y exactly 0 off two-row) makes (3,3) decisive: feasible iff 1 + 2 chi_m >= 0. Interval is h^2 <= 1/12, NOT 1/10 (1 + 2 chi_5 flips at x* = 0.0923); 1 < q <= 23/20 gives 0.0787, pin 0.0437. interface_frobenius_table + interfaceSelected_three: G^3 selected for every such q, B, y with y_(3,3) > 0. Probe 7/7. Record docs/audits/2026-09-12-gamma-gamma-word-selection-step6.md. Not proved: the branching rule; the diproton sign (-4.47 keV, needs full nucleon words); m > 5. Bean stays in-progress. NEXT (owner's '2'): H_3 candidates to k <= 10.
+
+
+## 2026-09-12 — step 7 on PR #7222 (6e38bd8a20): candidates to ten vertices; reading-3 survivors are exactly 3 | k
+Owner order '1 3 2' item 2 delivered. Lean QOU/Mass/GammaGammaSelectionTen.lean (21 declarations, no sorryAx): Chebyshev closed forms to k = 10; chi_signs_six_to_ten gives (+,-,-,+,-) on 0 < x <= 1/10, so the k = 1..10 pattern is - - + - - + - - + - and vertexPow_frobeniusFeasible_iff_three_dvd holds (reading-3 feasible IFF 3 | k, for every 1 < q <= 23/20) — the survivors are the powers of V^3, the q-deformed 3-cycle. frobeniusSelected_borromean_ten: beta_Bor still selected (k = 6, 9 cost 12 and 18). On H_6 the (3,3) condition has the same signs only on 0 < x <= 1/18 (1 + 2 chi_8 flips at x* = 0.0581, INSIDE step 6's 1/12), so h_sq_le_eighteenth_of_q_le + 1 < q <= 10/9 (h^2 <= 0.0446, pin 0.0437); interface_frobeniusFeasible_iff_three_dvd on that interval, and interfaceSelected_three_ten on the WIDE 1 < q <= 23/20 (only G^1, G^2 infeasible + G^3 feasible are needed). Interval pattern 1/10 -> 1/12 -> 1/18: the TABLE shrinks with the candidate set, the SELECTION does not. Probe 5/5 (closed forms vs direct powers 9.3e-61; feasible sets {3,6,9} both channels). Record docs/audits/2026-09-12-gamma-gamma-word-selection-step7.md. Open: k > 10; whether 3 | k persists for all k (= the theta/pi question); the branching rule hypothesis. Bean stays in-progress (rule 13a).
