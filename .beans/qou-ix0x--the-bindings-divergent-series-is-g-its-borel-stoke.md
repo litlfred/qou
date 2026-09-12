@@ -290,3 +290,30 @@ Three declarations added, all sorry-free, `lean -DautoImplicit=false -s 65536` *
 **Honest statement, now in the file:** a weighting that is a function of **species alone** cannot break the antisymmetry. A weighting distinguishing the two like nucleons by some **further quantum number** is untouched, and **spin is the obvious candidate**. That is a narrower and more specific open question than `qou-lq6k` had this morning — not a closed one. I am not proposing such a weighting; proposing one because it would fit is the anti-fit violation `qou-edt7` names.
 
 **Correcting my own end-of-turn line from the previous turn.** I told the author `qou-lq6k` was *"the sole remaining door … derive a weight that breaks S₃ without being a charge bilinear"*. Two things were wrong: the charge-**bilinear** form was already refuted by `coupling_vanishes_on_charge_bilinears`, but so is **every** charge weighting, bilinear or not, by the argument above; and the surviving door is not "breaks S₃" but the much narrower "distinguishes two nucleons of the same species". `qou-lq6k` stays OPEN with its subject rewritten.
+
+
+---
+**THREE INDEPENDENT ROUTES NOW GIVE `b₃ < 0` — and that pattern, not any one of them, is the finding. 2026-09-12.**
+
+As of this morning the corpus has three routes to the connected three-body channel, on three different branches, by three different constructions, and **all three give the wrong sign**:
+
+| route | branch | three-body result | AME |
+|---|---|---|---|
+| crossing count channel (`w3 = countChannel`) | #7193 (this) | `tripleMutual = +0.627` (needs `−8.09991876` MeV) | — |
+| Mayer/Ursell cluster expansion of the lattice gas | #7198 | `b₃ = −1.2277` MeV (³H), `−0.7973` (³He) | `+1.8081` / `+1.0443` |
+| trace's dominant summand, Ursell-inverted | #7200 | `b₃ = +0.4829` (³H), **`−0.3907`** (³He) | `+1.8081` / `+1.0443` |
+
+#7200's mirror pair carries **opposite signs**, which is its own defect. And its deuteron comes out **anti-bound** (`e₂ = −0.0230` MeV against AME `+2.2246`).
+
+**The honest headline is about the model, not about any one construction:** *as it currently stands, the framework's three-body channel is systematically repulsive, across every construction anyone has tried.* That is a real negative about the physics, and it is worth more than any of the three individually — three constructions failing the same way is evidence about a shared premise, not three separate accidents. The shared premise is visible in at least two of them (pairwise generation); whether #7200's dominant-summand route shares it is **not established here**.
+
+**🛑 RED-TEAM OF MY OWN CONTRIBUTION, since I should not let it read as bigger than it is.** The theorem I proved today is **three lines** and mathematically near-trivial: `T(−x) = −T(x)` by linearity, `T(−x) = T(x)` by invariance, done. Its value is entirely in two observations, neither deep:
+
+1. the existing corpus theorem (`MilnorSignRepObstruction`) had the **wrong target** — the pair-channel module, not the scalar the binding channel lives in;
+2. **pigeonhole**: only two species exist, so species can never supply the breaking.
+
+And it is a **second** nail in a coffin the corpus had already closed — `MilnorCarriesOrderNotMagnitude` refuted `μ̄` on type in August. Do not cite today's work as *refuting the Milnor route*; it was refuted. What is new is that the exclusion now runs through **symmetry** as well as type, so it survives if anyone ever repairs the normalisation objection.
+
+**The reusable part is the pigeonhole, and it generalises past `μ̄`.** Nothing in `linear_in_muBar_vanishes_of_identical_pair` is about Milnor: it applies to **any** invariant that flips under exchanging two components. So the statement worth carrying forward is *no antisymmetric-under-component-exchange invariant, coupled linearly, can carry a channel that is invariant under exchanging two same-species nucleons* — and species can never break that, only a finer label (spin) can.
+
+**Coordination performed, recorded because it is durable work:** #7200 shipped `QOU/Mass/OneRowBlockLetterProduct.lean` marked **⚠ NOT COMPILED** (their container had 7.8 GB free against the ≥ 8 GB a cache restore needs) and asked a reviewer to verify it. I had a live olean cache, so I did: branch head `39cd170452f`, `lean -DautoImplicit=false -s 65536` **exit 0**, `#print axioms` on `map_letter` / `map_word_eq_prod` / `map_word_append` all `propext` + `Quot.sound`, **`sorryAx` 0** — not even `Classical.choice`. Their anticipated `simp`-set gap did not materialise. Verified by copying to its real path, compiling, and deleting; nothing of theirs is committed here and I did not touch their branch.
