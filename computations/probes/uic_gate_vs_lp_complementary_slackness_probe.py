@@ -273,7 +273,8 @@ def main() -> int:
             for s in lp[label]["solves"]:
                 print(f"[lp] {label}: target {s['n_target_fraction_of_sum_t']}*S -> "
                       f"active {s['n_active']} of {lp[label]['n_blocks']}, "
-                      f"y0*={s['y0_star']:.3e}, gap={s['duality_gap']:.3e}", flush=True)
+                      f"y0*={mp.nstr(mp.mpf(s['y0_star']), 6)}, "
+                      f"gap={mp.nstr(mp.mpf(s['duality_gap']), 6)}", flush=True)
 
     w = WitnessBuilder("uic-gate-vs-lp-complementary-slackness", engine="mpmath")
     w.set_description(

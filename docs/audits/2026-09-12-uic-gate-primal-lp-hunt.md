@@ -340,3 +340,38 @@ Verification: `lean -DautoImplicit=false -s 65536`, toolchain `v4.24.0`, against
 the restored olean cache with the corpus LP module shadow-compiled first.
 `#print axioms` on all eight reports `[propext, Classical.choice, Quot.sound]` —
 no `sorryAx`.
+
+---
+
+## 10. Independent confirmation from the sibling branch, and one bean that could not be appended
+
+**A second agent reached "tight means `tr = 0`, not `tr ≤ 0`" by a different
+route, and this was verified rather than taken on trust.** The task framing named
+`QOU.MassTheory.UICFunctionalSelection.uicGated_cs_eq` as already established.
+It is **not on `main`** — `git ls-tree origin/main` finds no
+`UICFunctionalSelection` — so it was read where it actually lives, on
+`origin/claude/uic-functional-resolution-2026-09-12` (PR #7237). Its own
+docstring, lines 31-32 and 129:
+
+> `uicGated_cs_eq` — under **genuine** complementary slackness for a constraint
+> `⟨Φ, π_λ⟩ ≥ 0`, "tight" means `tr = 0`, and then the gated functional collapses
+> …
+> makes "tight" mean `tr = 0` — not `tr ≤ 0`, which is what the producer codes.
+
+That is the same conclusion as §4 item 3 here, reached from the **functional's
+own structure**. This document reaches it from the **corpus LP's feasible set**:
+`IsFeasible` carries `0 ≤ (Gx)_i` as a defining conjunct, so `le_antisymm` gives
+`(Gx)_i ≤ 0 ↔ (Gx)_i = 0` directly. Two independent confirmations of one
+negative, which AGENTS.md §"Parallel exploration" counts as strengthening it.
+
+What this document adds beyond that overlap: the index-set mismatch (§4.1), the
+diagonal-Gram exclusion of any partition-indexed repair (§5), and the explicit
+in-LP counterexample (§6).
+
+**`qou-t6be` could not be appended, and that is recorded rather than silently
+skipped.** It does not exist on `main` either — it is
+`.beans/qou-t6be--resolve-the-uic-functional-mismatch-under-the-owne.md` on that
+same unmerged branch. Creating it here would mint a second copy that conflicts on
+merge, so the append was posted as a comment on PR #7237 instead
+(`#7237#issuecomment-5648945079`). `qou-zlra` and `qou-brng` are on `main` and
+were appended normally. All three stay **open** per AGENTS.md rule 13a.
