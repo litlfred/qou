@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-12T12:33:09Z
+updated_at: 2026-09-12T19:12:09Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2770,3 +2770,38 @@ Row D was left "live, not attacked". Attacked at Vassiliev type two, on the chai
 What row D still has, and it is the only live thread this leaves: `unified-iterative-correction`'s per-BLOCK log `ln|tr_lambda(prod (c sigma + d))|` is NOT product-additive even on the chain (single-block `[h^2] log` has nonzero, non-constant second differences in Z for (3,1), (3,2), (4,1); computed signs, mixed). That functional is a different object from the live law (two inequivalent log readings coexist — recorded as a collision, not resolved), and the production accumulator was not scanned (> 300 s at A = 4 here). Row D is therefore narrowed to: the per-block log functional, if the framework means it, is the one place a type-two two-bond correlation survives on the chain. Scope (b) for the live law (invariant `additive_census` + `L_chain_eq_sum_of_intra`); scope (a) for the per-block rows (11 shapes, A <= 8, UIC-shaped word).
 
 Also, for `qou-eqwg`'s open item: there is no non-commutativity inside a generator (transfer matrices commute exactly); the within-generator non-multiplicativity is the two-branch state sum, exercised only when two interface letters share a generator, which the chain never does. Audit: `docs/audits/2026-09-12-graded-binding-sign-convention.md`.
+
+
+## 2026-09-12 (session stalled-agent-takeover) — class B's open "third bond family" is narrowed: the pn letter is an AVERAGE
+
+This bean excludes the two derived families at the VALUE level (production letters
+by `d <= 0`; isospin projectors by `mu_+ + mu_- = 1`) and records as open: *"a THIRD
+bond family that supplies the sign-mixed pattern by derivation"*.
+
+**The pn letter is not an independent third value — it is an AVERAGE, and an average
+is never an extremum.** The required pattern `mu_pn > 1 > mu_pp, mu_nn` makes `mu_pn`
+the strict MAXIMUM of the three. But `d_pn = (1/2 + delta/4) d_pp + (1/2 - delta/4) d_nn`
+with both weights strictly positive for `delta in (-2,2)`, and the interface law
+`mu = z + d` is affine, so `mu_pn` is a strict convex combination of `mu_pp` and
+`mu_nn` — strictly between them, for EVERY `q`, EVERY admissible `delta`, and every
+pair of like-pair offsets, whatever their values.
+
+**Consequence for the open item:** a third bond family cannot rescue the pattern by
+moving letters above 1. It must break the AVERAGING of the pn letter, or break
+AFFINENESS of the interface law. Those are the only two hypotheses used, and neither
+mentions a numerical value.
+
+Lean `QOU/MassTheory/PnBetweennessBlocksSignMixed.lean` (6 decls, sorry-free,
+lean-direct `-DautoImplicit=false -s 65536` exit 0, zero warnings, axioms
+propext/Classical.choice/Quot.sound only). Probe
+`computations/probes/pn_betweenness_blocks_sign_mixed_probe.py` 8/8, 70 dps, proton
+pin, convention D, no float64 — including a CONTROL row showing the pattern becomes
+satisfiable the moment `mu_pn` is unpinned from the average, which is what
+establishes that the hypothesis and not the values carries the exclusion. Audit
+`docs/audits/2026-09-12-pn-betweenness-blocks-sign-mixed.md`.
+
+Scope (b); invariant = strict convexity + affineness. NOT claimed: that no third
+family exists. Magnitude untouched. Composes with the existing
+`the_pn_bond_is_an_average_and_cannot_be_extremal_probe`, which established the
+ordering `L_pp < L_pn < L_nn`; this adds what it means for the `b_3 > 0` requirement
+specifically, which that probe predates.
