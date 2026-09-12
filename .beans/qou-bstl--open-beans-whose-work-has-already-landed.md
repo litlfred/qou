@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-04T08:40:00Z
-updated_at: 2026-09-05T09:31:23Z
+updated_at: 2026-09-12T08:27:07Z
 ---
 
 ## The finding
@@ -351,3 +351,62 @@ Generalisation for the tool's caveat block: **a completion verb over a claim the
 bean later retracted looks identical to a completion verb over work the bean
 later absorbed.** Only the body separates them, which is the argument for the
 read queue rather than a filter.
+
+
+---
+
+## DRAIN COMPLETE at every priority, 2026-09-12 — and the measured precision is worse than this bean's own footer says. STAYING OPEN (the queue regenerates).
+
+**Queue: 76 → 49 candidates; high priority 18 → 8, and all 8 remaining are read.**
+Three of those 8 now carry `[IN FLIGHT]` flags raised by *my own* commits, which
+is the script correctly detecting live work rather than stale work.
+
+### Outcome of the read, 21 beans
+
+**Closed (4 this pass, 11 across the arc):** `qou-scrx` `qou-keu7` `qou-rfhj`
+plus the earlier seven. Each closed against the **artifact**, never the bean's
+own claim — `qou-rfhj` said RESOLVED and I checked the producer reads `a3_sign`
+from the witness; `qou-keu7` said the guard was built and I ran it.
+
+**Opened (2):** `qou-w942`, `qou-cl8m`.
+
+**Read and correctly open (15):** `qou-skgn` `qou-54g5` `qou-47nf` `qou-cite`
+`qou-f8lit` `qou-z9fx` `qou-c1ln` `qou-z3k1` `qou-v6wz` `qou-qspc` `qou-rstq`
+`qou-lkrd` `qou-j3w6` `qou-i7ju` `qou-f3mc` `qou-56qy`.
+
+### 🛑 The footer's "2 in 12" is optimistic — measured 3 in 21 on this pass
+
+This bean's script prints **MEASURED PRECISION 2 IN 12**. Across the 21 I read,
+**3 were genuinely stale** — `qou-scrx`, `qou-keu7`, `qou-rfhj` — i.e. **14 %,
+against the footer's 17 %.** Close enough to be consistent, and worth stating as
+a second independent sample rather than letting one number stand alone. **The
+list is a "worth OPENING" list and the ratio is roughly 1 in 6.**
+
+### A FIFTH structural cause, now in the script
+
+The four documented causes all describe an **ambiguous** subject. The fifth is
+different in kind: **the subject was ACCURATE WHEN WRITTEN and the artifact it
+added was later corrected against it**, while `git log` asserts the original
+forever. Measured on `qou-54g5`, whose `RESOLVED` commit added
+`qbeta_ladder_c5_slot_provenance_probe.py`, and whose finding 5 now reads
+*"DIRECTION SETTLED, and it is the reverse of how the question was posed."*
+
+Undetectable from commit metadata by construction — the evidence is in the
+file's **current content**. Added to the script's docstring and footer; the only
+defence is the script's own closing line, *run the artifact*.
+
+### `qou-w2vy` is one of this bean's three founding examples, and it reproduces
+
+This bean cites `qou-w2vy` as *"fixed by d943f2acfac … landed after the bean's own
+`updated_at`"*. Independently confirmed today by **running it**, not by reading
+the commit: `binding_from_frobenius_pairing(1,1)` completes in **576.6 s**
+returning `1.87663410614414`, where the bean records `TypeError` in 0.52 s. So
+the founding measurement holds on re-test three weeks on.
+
+### Why this stays open
+
+The queue **regenerates** — every completion-verb commit that lands adds a
+candidate, and the 49 remaining are the medium/low tail plus the 8 read
+high-priority. Draining it to zero at one instant is not the same as the class
+being closed, and this bean's value is the *standing* discipline plus the
+script, not a one-time sweep.
