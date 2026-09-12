@@ -323,3 +323,28 @@ rule, and it ran ~1760 Mathlib modules for 40 minutes before I stopped it. It
 did **not** evict the restore — it was building a *second* mathlib tree local to
 that directory — which is the detail now in `MEMORY.md`. The 5-second
 alternative was one `source scripts/lean-direct-env.sh` away the whole time.
+
+## 2026-09-12 (2nd pass) — `MathlibExt/HeckeTowerWitness.lean`, branch `claude/hecke-tower-followup-2026-09-12`
+
+Second verification of the same file the same day (first pass: 618 lines, blob
+`5ca5adbda`, merged to main as `21c5179f0`). Three additions verified: two new
+refutation theorems (`braid_scalar_forces_scalar`, `scalar_tail_forces_central`)
+and the `exists_tower_with_nonzero_h` → `tower_nondegenerate` restatement.
+
+- **before** exit 1 / 1 error / 0 warnings; **after** exit 0 / 0 / 0, 2.9 s.
+- One real defect, one line: `abel` left `algebraMap (h*c)*x = algebraMap (c*h)*x`.
+  `mul_comm h c` added to the `rw` chain. Commit `739ba86fb`.
+- **Both** QOU deps were stale on disk (`OcneanuTrace` olean 8 days older than its
+  source; `HeckeRankTwoMarkov` 3 h older) — rebuilt from source into the union
+  mirror before gating. The first-pass note that OcneanuTrace goes stale held.
+- `#print axioms` × 31 public decls: no `sorryAx`.
+- 5/5 mutants RED; both hypotheses shown **semantically** necessary over `ℚ`;
+  premises satisfiable; conclusion non-tautological; check (c) discharged
+  generically (at `h=0,c=1` the hypotheses force `x=1`).
+- Found: `u : Rˣ` is **free**, not restrictive — the tail generator's own
+  quadratic forces `c*(c-h)=1` under injective `algebraMap`. Widens the refutation.
+- Found: docstring cites `braid_forces_eq_of_commuting_involutions`, which does
+  **not exist** (real: `QOU.Eightfold.braid_forces_eq`, and about a commutative
+  image, not involutions). Reported, not rewritten — the gloss is authorial.
+- The SessionStart `lake build` log was **17 min stale** and its `✖` on this exact
+  module described a two-revisions-dead file. See the dated caveat in MEMORY.md.
