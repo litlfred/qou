@@ -1,0 +1,347 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T21:10:05.553157+00:00",
+  "commitSha": "857c80b5f2f00ab1cdbcea6fcffddb697533ca70",
+  "assertions": [
+    {
+      "name": "tr_H3_proton_matches_closed_form",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tr_M_canonical(11-letter p, 3) vs (q^4+1)P_P/(4q^9(q^2+1)^2)"
+    },
+    {
+      "name": "tr_H3_neutron_matches_closed_form",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tr_M_canonical(11-letter n, 3) vs (q^4+1)P_N/(4q^9)"
+    },
+    {
+      "name": "free_trace_multiplicative_pp",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "disjoint-union multiplicativity tr_M(W_l W_r) = tr_M(l) tr_M(r)"
+    },
+    {
+      "name": "free_trace_multiplicative_nn",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "disjoint-union multiplicativity tr_M(W_l W_r) = tr_M(l) tr_M(r)"
+    },
+    {
+      "name": "free_trace_multiplicative_pn",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "disjoint-union multiplicativity tr_M(W_l W_r) = tr_M(l) tr_M(r)"
+    },
+    {
+      "name": "free_trace_multiplicative_np",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "disjoint-union multiplicativity tr_M(W_l W_r) = tr_M(l) tr_M(r)"
+    },
+    {
+      "name": "V1_response_blind_to_left_when_right_is_p",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "r_pp(V1) - r_np(V1): V1 borrows right, so the left cancels"
+    },
+    {
+      "name": "V1_response_blind_to_left_when_right_is_n",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "r_nn(V1) - r_pn(V1)"
+    },
+    {
+      "name": "V1_response_does_depend_on_the_borrowed_nucleon",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "r_pp(V1) != r_nn(V1) -- one-body, not zero-body"
+    },
+    {
+      "name": "V3_response_sees_the_left_nucleon_instead",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "r_pn(V3) != r_np(V3) -- V3 borrows LEFT, mirroring finding 1"
+    },
+    {
+      "name": "placement_reverses_the_binding_sign",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "B_pn(V1) < 0 < B_pn(V3): the sign is a placement artifact"
+    },
+    {
+      "name": "proton_response_coeff_order_zero_at_V1",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "c_P does not vanish at q = 1, so mu - 1 ~ h^4 (step 10)"
+    },
+    {
+      "name": "neutron_response_coeff_order_one_at_V1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "c_N vanishes to first order at q = 1, so mu - 1 ~ h^5"
+    },
+    {
+      "name": "all_four_channels_unbound_at_V1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "every V1 ratio > 1, so B < 0 in all four channels"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 610406,
+  "computation": "two-nucleon-bond-response-arity-probe",
+  "scriptFile": "two_nucleon_bond_response_arity_probe.py",
+  "scriptHash": "a7d3a09abd1e",
+  "scriptCommitSha": "424faa61703bd69610018b0f578414de0b5c48e4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/two_nucleon_bond_response_arity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/two_nucleon_bond_response_arity_probe.py"
+  },
+  "description": "qou-ales step 11: extends step 10's exact H_6 convention-D response computation to all four ORDERED two-nucleon channels and to all four gamma-gamma vertices at the interface. FINDING 1 (arity): at the canonical vertex V1 = sigma_2 sigma_3^-1 the response r is a function of the RIGHT nucleon ALONE -- r_pp = r_np and r_nn = r_pn exactly, r_pp != r_nn -- because a gamma-gamma vertex needs two adjacent generators and so must BORROW one from a nucleon; it sees only the one it borrows from. So it cannot distinguish a like pair from an unlike one, which is an ARITY obstruction to the sign-mixed two-body pattern qou-q8vl requires, stronger than a sign objection. FINDING 2: moving the borrowed generator to the other nucleon REVERSES the binding sign (V1 unbinds the deuteron by 4.469 keV; V3 = sigma_1 sigma_2^-1 BINDS it by ~57 keV, 13x larger), so the 'unbound' reading carried by steps 8-10 is scope-(a) -- true of V1 and reversed by the equally underived V3. FINDING 3: c_N carries one more factor (q^2-1) than c_P, so at V1 the dineutron deviates at h^5 against the diproton's h^4. Step 10's closed form and Lean are unaffected; what narrows is the interpretation. By-product: a fourth confirmation of qou-sikd. No AME/CODATA binding value or census read.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "convention": "D (z = q^3/(q^2+1); two-row weight support at H_6)",
+    "dps": 60,
+    "nucleon_generators": "left (0,1); right (3,4); interface generator 2",
+    "interface_letters": "colour-blind -h/2 (NOT the colour-weighted variant)",
+    "vertices": {
+      "V1": {
+        "positive_gen": 2,
+        "inverted_gen": 3,
+        "borrows_from": "right"
+      },
+      "V2": {
+        "positive_gen": 3,
+        "inverted_gen": 2,
+        "borrows_from": "right"
+      },
+      "V3": {
+        "positive_gen": 1,
+        "inverted_gen": 2,
+        "borrows_from": "left"
+      },
+      "V4": {
+        "positive_gen": 2,
+        "inverted_gen": 1,
+        "borrows_from": "left"
+      }
+    },
+    "canonical_vertex": "V1 = sigma_2 sigma_3^-1 (step 6 shift 2 vertexPow)"
+  },
+  "data": {
+    "weight_support": [
+      [
+        6
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "tr_M_H3_proton_symbolic": "(q**4 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)/(4*q**9*(q**2 + 1)**2)",
+    "tr_M_H3_neutron_symbolic": "(q**4 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1)/(4*q**9)",
+    "tr_M_H3_proton_at_q0": "0.629328402202921918165345746778485927600219400634368730727028",
+    "tr_M_H3_neutron_at_q0": "0.475133517155682212506090232675005799558407634708723719495244",
+    "free_trace_pp": {
+      "symbolic": "(q**4 + 1)**2*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)**2/(16*q**18*(q**2 + 1)**4)",
+      "at_q0": "0.396054237819282657020720926067105669758472127608276624674652"
+    },
+    "free_trace_nn": {
+      "symbolic": "(q**4 + 1)**2*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1)**2/(16*q**18)",
+      "at_q0": "0.225751859124728963348957023631239085124173016382818898243830"
+    },
+    "free_trace_pn": {
+      "symbolic": "(q**4 + 1)**2*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)/(16*q**18*(q**2 + 1)**2)",
+      "at_q0": "0.299015017184640076702160426770983832274949474397016651907331"
+    },
+    "free_trace_np": {
+      "symbolic": "(q**4 + 1)**2*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)/(16*q**18*(q**2 + 1)**2)",
+      "at_q0": "0.299015017184640076702160426770983832274949474397016651907331"
+    },
+    "response_pp_V1": {
+      "left": "p",
+      "right": "p",
+      "borrows_from": "right",
+      "ratio_at_q0": "1.00105775254515984363438899056087562030410819249458685927826",
+      "r_symbolic": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - q**8 + 4*q**6 - 4*q**4 + 2*q**2 - 1)/((q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "q**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - q**8 + 4*q**6 - 4*q**4 + 2*q**2 - 1)/((q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "0.0242014253964117050815132474470324887810525785552221662413724",
+      "c_at_q0": "0.553729692164977291529198347133250089217644868616966303160461",
+      "B_keV": "-4.46926800571304380374820701180731622704735458006504849953226",
+      "bound": false
+    },
+    "response_nn_V1": {
+      "left": "n",
+      "right": "n",
+      "borrows_from": "right",
+      "ratio_at_q0": "1.00061119140688077961351843903748032751389873619015012204805",
+      "r_symbolic": "(q - 1)**3*(q + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/((q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "q**2*(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/((q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "0.0139840866412832240063492549091184388667922041310786488455123",
+      "c_at_q0": "0.319956525876125842915405597464320797531879652985416888014730",
+      "B_keV": "-2.58301222263833163666203965063952056894719167174832443967374",
+      "bound": false
+    },
+    "response_pn_V1": {
+      "left": "p",
+      "right": "n",
+      "borrows_from": "right",
+      "ratio_at_q0": "1.00061119140688077961351843903748032751389873619015012204805",
+      "r_symbolic": "(q - 1)**3*(q + 1)**3*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/((q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "q**2*(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/((q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "0.0139840866412832240063492549091184388667922041310786488455123",
+      "c_at_q0": "0.319956525876125842915405597464320797531879652985416888014730",
+      "B_keV": "-2.58301222263833163666203965063952056894719167174832443967374",
+      "bound": false
+    },
+    "response_np_V1": {
+      "left": "n",
+      "right": "p",
+      "borrows_from": "right",
+      "ratio_at_q0": "1.00105775254515984363438899056087562030410819249458685927826",
+      "r_symbolic": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - q**8 + 4*q**6 - 4*q**4 + 2*q**2 - 1)/((q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "q**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - q**8 + 4*q**6 - 4*q**4 + 2*q**2 - 1)/((q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "0.0242014253964117050815132474470324887810525785552221662413724",
+      "c_at_q0": "0.553729692164977291529198347133250089217644868616966303160461",
+      "B_keV": "-4.46926800571304380374820701180731622704735458006504849953226",
+      "bound": false
+    },
+    "response_pn_V2": {
+      "left": "p",
+      "right": "n",
+      "borrows_from": "right",
+      "ratio_at_q0": "0.996899062916721919111055972698282408422191702698914018334019",
+      "r_symbolic": "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**14 - 3*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + 2*q**2 - 1)/(q**4*(q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "-(q**2 - q + 1)*(q**2 + q + 1)*(q**14 - 3*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + 2*q**2 - 1)/(q**2*(q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "-0.0709495787302314141800175774703134719158628513972426002717667",
+      "c_at_q0": "-1.62332952485314548794042604105463274848468818504212200269640",
+      "B_keV": "13.1295273628189354202498173022930752360485120784411125618854",
+      "bound": true
+    },
+    "response_pn_V3": {
+      "left": "p",
+      "right": "n",
+      "borrows_from": "left",
+      "ratio_at_q0": "0.986699733783403858704131147025257764529330127751105930284786",
+      "r_symbolic": "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(4*q**12 - 6*q**10 + 12*q**8 - 11*q**6 + 8*q**4 - 4*q**2 + 1)/(q**2*(q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "-(q**2 - q + 1)*(q**2 + q + 1)*(4*q**12 - 6*q**10 + 12*q**8 - 11*q**6 + 8*q**4 - 4*q**2 + 1)/((q - 1)*(q + 1)*(q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "-0.304310684069045990426144720026208370192860777867678074247893",
+      "c_at_q0": "-6.96264202012871970895082330410814911629253211892168920355611",
+      "B_keV": "56.6039176615227963047698192685535320399186285133394835179666",
+      "bound": true
+    },
+    "response_pn_V4": {
+      "left": "p",
+      "right": "n",
+      "borrows_from": "left",
+      "ratio_at_q0": "1.01317729989643986932297717696341150628248989100611473140294",
+      "r_symbolic": "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**20 - 4*q**18 + 10*q**16 - 19*q**14 + 24*q**12 - 31*q**10 + 30*q**8 - 24*q**6 + 13*q**4 - 5*q**2 + 1)/(q**2*(q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "-(q**2 - q + 1)*(q**2 + q + 1)*(q**20 - 4*q**18 + 10*q**16 - 19*q**14 + 24*q**12 - 31*q**10 + 30*q**8 - 24*q**6 + 13*q**4 - 5*q**2 + 1)/((q - 1)*(q + 1)*(q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "0.301497209181038439453127994010097185170841256226613783851267",
+      "c_at_q0": "6.89826958924366521016054820070481588946185166906921672268616",
+      "B_keV": "-55.3429760737501394404180110835796457725606679615909192215921",
+      "bound": false
+    },
+    "response_np_V2": {
+      "left": "n",
+      "right": "p",
+      "borrows_from": "right",
+      "ratio_at_q0": "0.996536609892283870364135793286463930982399958965807891709712",
+      "r_symbolic": "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**18 - 3*q**16 + 7*q**14 - 7*q**12 + 9*q**10 - 5*q**8 + 6*q**6 - 4*q**4 + 2*q**2 - 1)/(q**4*(q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "-(q**2 - q + 1)*(q**2 + q + 1)*(q**18 - 3*q**16 + 7*q**14 - 7*q**12 + 9*q**10 - 5*q**8 + 6*q**6 - 4*q**4 + 2*q**2 - 1)/(q**2*(q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "-0.0792425200904582065793472025841524749923447087753815919189165",
+      "c_at_q0": "-1.81307239294146243390137867299926383130868113654225574860714",
+      "B_keV": "14.6668372101294320192891987089307995150522597615047621784945",
+      "bound": true
+    },
+    "response_np_V3": {
+      "left": "n",
+      "right": "p",
+      "borrows_from": "left",
+      "ratio_at_q0": "0.983607473777356281249691057053329106417229610804031506485476",
+      "r_symbolic": "(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - 5*q**8 + 7*q**6 - 7*q**4 + 4*q**2 - 1)/(q**2*(q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - 5*q**8 + 7*q**6 - 7*q**4 + 4*q**2 - 1)/((q - 1)*(q + 1)*(q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "-0.375061730885349277399630434595639983246049173159671100466213",
+      "c_at_q0": "-8.58142912593903290219423072370233411776114039256966514725314",
+      "B_keV": "69.8734102459144251194509625428700474083721872940723827705362",
+      "bound": true
+    },
+    "response_np_V4": {
+      "left": "n",
+      "right": "p",
+      "borrows_from": "left",
+      "ratio_at_q0": "1.01698712642581251940159204650529377347227040803841638515358",
+      "r_symbolic": "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)*(q**12 - 3*q**10 + 4*q**8 - 6*q**6 + 6*q**4 - 4*q**2 + 1)/(q**2*(q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "c_symbolic": "-(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)*(q**12 - 3*q**10 + 4*q**8 - 6*q**6 + 6*q**4 - 4*q**2 + 1)/((q - 1)*(q + 1)*(q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+      "r_at_q0": "0.388666210045932514085618024371638257545129288283600930961900",
+      "c_at_q0": "8.89270021573077454005846136738498443669794295961067922623526",
+      "B_keV": "-71.2096683855553609214576076333552415003450990545037113223734",
+      "bound": false
+    },
+    "c_numer_vanishing_order_at_V1": {
+      "pp": 0,
+      "nn": 1,
+      "pn": 1,
+      "np": 0
+    },
+    "alpha_E0_full_MeV": "4.22748335562903055026805602658721115361518419806473100034162"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
