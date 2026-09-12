@@ -70,7 +70,9 @@ WHAT IS MEASURED, AND WHAT IS NOT
 ---------------------------------
 Measured: the production accumulator itself, at the proton pin, convention D,
 `mp.dps = COMPUTE_DPS`, mpmath end to end. The gated total (the function's return
-value) AND the ungated raw total are both read from the per-step rows as `mpf`,
+value when this probe was written; a diagnostic since the 2026-09-12 gate drop,
+bean `qou-jgx7`) AND the ungated raw total (the return value now) are both read
+from the per-step rows as `mpf`,
 so the producer's float64 boundary cast is never taken -- see S0.
 
 `k_exact` is a first-class documented parameter of the producer and is swept; the
@@ -127,11 +129,21 @@ def maxabs(vals):
 
 
 def uic_pair(Z, N, ke):
-    """(gated_total, ungated_total, n_tight) as mpf -- never the float return."""
+    """(gated_total, ungated_total, n_tight) as mpf -- never the float return.
+
+    KEY RENAMED 2026-09-12 (bean `qou-jgx7`).  The Pass-2 sign gate was
+    DROPPED from the producer after its complementary-slackness justification
+    was refuted sorry-free (PR #7251), so the producer now RETURNS the ungated
+    total and reports the gated sum as the explicitly-scoped diagnostic
+    `gated_total_DISPROVED_SELECTION_MeV`.  This probe's whole subject is the
+    difference between the two columns, so it deliberately keeps reading both;
+    what changes is only which one the producer hands to a caller.
+    """
     _v, steps = H.unified_iterative_correction(
         Z, N, k_exact=ke, k_max=ke, return_per_step=True)
     last = steps[-1]
-    return last["gated_total_MeV"], last["raw_total_MeV"], last["n_tight_final"]
+    return (last["gated_total_DISPROVED_SELECTION_MeV"],
+            last["raw_total_MeV"], last["n_tight_final"])
 
 
 def main() -> int:
@@ -169,15 +181,23 @@ def main() -> int:
     check("S0.2 k_max does not move the return value (producer note verified)",
           a == b)
 
-    # The gated total (returned) and the ungated total (per-step) differ: Pass 2
-    # is a real selector, not a formality.  Compare at the SAME tier as _g1.
+    # The gated total and the ungated total differ: the dropped Pass 2 was a
+    # real selector, not a formality.  Compare at the SAME tier as _g1.
+    #
+    # UPDATED 2026-09-12: the producer's float return is now the UNGATED total
+    # (`_r1`), not the gated one.  S0.3 therefore checks the identity against
+    # `_r1`; checking it against `_g1`, as it did until the gate was dropped,
+    # would now fail -- and that failure is the point of the change, so it is
+    # retargeted rather than relaxed.
     a5 = H.unified_iterative_correction(1, 1, k_exact=5, k_max=5)
-    check("S0.3 gated total is an mpf carrying more than the float return",
-          isinstance(_g1, mp.mpf) and float(_g1) == a5)  # float64-ok: identity check against the producer's own float return
-    check("S0.4 Pass-2 gate actually changes the total (gated != ungated)",
+    check("S0.3 the returned (now UNGATED) total is an mpf carrying more than "
+          "the float return",
+          isinstance(_r1, mp.mpf) and float(_r1) == a5)  # float64-ok: identity check against the producer's own float return
+    check("S0.4 the dropped Pass-2 gate really did change the total "
+          "(gated != ungated)",
           _g1 != _r1)
-    print(f"    A=2 k_exact=5:  gated {mp.nstr(_g1, 18)}   "
-          f"ungated {mp.nstr(_r1, 18)}   tight {_t1}")
+    print(f"    A=2 k_exact=5:  gated(DISPROVED) {mp.nstr(_g1, 18)}   "
+          f"ungated/returned {mp.nstr(_r1, 18)}   tight {_t1}")
 
     # ── S1: the corpus's convention-D bond letters ──────────────────────
     print("\nS1. Convention-D letters (QOU/Mass/ChainTraceFactor.lean)")
