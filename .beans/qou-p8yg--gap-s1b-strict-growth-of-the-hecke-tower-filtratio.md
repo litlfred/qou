@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:02:09Z
-updated_at: 2026-09-12T20:12:36Z
+updated_at: 2026-09-12T20:45:34Z
 ---
 
 Parent: qou-cins / plan qou-0fmb, epic qou-08a2. Opened 2026-09-12 after S1 merged (#7228, 3653e9ce).
@@ -177,3 +177,50 @@ H_infinity over the Coxeter group S_infinity, which for this carrier means
 establishing a basis for the PRESENTED N-tower -- the analogue of qou-uoal's
 spanning argument plus the Wedderburn lower bound, at S_infinity rather than S_n.
 That is a build, and should be scoped as one.
+
+
+--------
+**2026-09-12: the sub-question this bean asked is ANSWERED -- NO tail assignment exists, for ANY finite target. The bean stays open; only the method question closes.**
+
+The previous entry asked: "Whether ANY tail assignment into a finite H_n exists is OPEN and is worth settling first, because a NEGATIVE there would be informative." Settled, negative, and the proof is one identity.
+
+  braid_central_forces_eq: if y is CENTRAL, x and y both satisfy the Hecke
+  quadratic, and the two braid, then x = y.
+
+    y x y = y (y x) = y^2 x = (h y + 1) x = h(yx) + x
+    x y x = (y x) x = y x^2 = y (h x + 1) = h(yx) + y
+
+  The braid relation equates them, so it IS x = y.
+
+Centrality therefore does NOT stay put -- it propagates DOWN the tower, dragging
+each generator onto the one above (central_step, central_forces_below), so
+
+  central_tail_collapses_all: x n central  =>  x k = x n for EVERY k <= n.
+
+In any finite target the `far` relations force every sufficiently high generator
+to commute with all the low ones -- i.e. to be central -- and the collapse then
+drags the ENTIRE image onto that single element. So no map from the N-tower into
+a finite stage separates g 0 from g 1, whatever the target and whatever the tail
+assignment. The retraction route is dead, not merely unpromising.
+
+This SUBSUMES scalar_tail_forces_central (#7231/#7238): a scalar is central, so
+that theorem is the special case, and this is strictly stronger -- it concludes
+x = y rather than merely that x is central. The older theorem is kept because it
+is cited.
+
+Verified in-session: lean -DautoImplicit=false -s 65536, exit 0 (captured
+directly, not through a pipe), 0 errors, 0 warnings. All four new declarations
+are [propext, Quot.sound] -- no Classical.choice, no sorryAx. 0 code-level sorry,
+0 axiom declarations.
+
+**WHAT THIS BEAN STILL NEEDS, and why it stays open.** Strict growth
+twH n < twH (n+1) is NOT proved and is not closed by this. What is now settled is
+the METHOD: it cannot come from mapping into a finite stage, by any route. It has
+to come from the Iwahori-Hecke coset basis for the PRESENTED N-tower -- the
+analogue of qou-uoal's spanning argument plus the Wedderburn lower bound at
+S_infinity rather than S_n -- or from the direct limit of
+SchurWeyl.HeckeInclusion.heckeIncl together with injectivity of that inclusion.
+Note finrank_hecke_eq_factorial supplies every DIMENSION fact already; it is the
+identification of twH n with Hecke (n-1) that is missing, and per the entry above
+that identification inherits generic-q hypotheses (Field, CharZero, q != 0,
+NotRootOfUnity).
