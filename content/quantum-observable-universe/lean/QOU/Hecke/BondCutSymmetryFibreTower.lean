@@ -246,6 +246,34 @@ theorem interface_affine_map (τ : R →+* S) (z h u : R) :
   have hmap := congrArg τ (interface_affine z h u)
   simpa only [letterTrace, map_add, map_mul, map_sub, map_neg, map_one] using hmap
 
+/-! ### The same argument reaches the dominant-summand channel
+
+`QOU/Mass/OneRowBlockLetterProduct.lean` (#7200, bean `qou-m8f3`) proves that a
+one-dimensional block's character of a word of letters `c·σ_g + d·1` is the
+**product over the letters** of `c·q + d` — an algebra-homomorphism identity,
+stated there over a generic `[CommRing R]`. Its consequence is that the dominant
+summand's log-weight `L = log|y_λ χ^λ(β_A)|` is a **sum over letters**, hence
+chain-edge additive with no connected many-body term.
+
+`bondSum_tower` does not reach that channel directly, because `Real.log` is not
+linear in the bond factors, so the per-order decomposition has to be taken on
+the *letter contributions* rather than on the factors. The statement below is
+what carries it: a sum over letters whose summands are each expanded in the
+tower is, at every order, **again a sum over the same letters**.
+
+The algebra is elementary — it is `Finset.sum_comm` plus distributivity. What is
+not elementary is *which index set survives*, and the answer is: the letters. So
+"all orders in `q`" leaves the dominant-summand channel pair-additive on exactly
+the bond set it was pair-additive on at order zero, and #7200's scope-(b)
+negative is inherited by every order rather than being an order-zero artefact.
+It says nothing about the *size* of any order's coefficient. -/
+theorem letterSum_tower {ι κ : Type*} (s : Finset ι) (t : Finset κ)
+    (c : κ → R) (f : ι → κ → R) :
+    ∑ i ∈ s, ∑ k ∈ t, c k * f i k = ∑ k ∈ t, c k * ∑ i ∈ s, f i k := by
+  rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl fun k _ => ?_
+  rw [Finset.mul_sum]
+
 end Ring
 
 /-! ## Part 4 — the slope splits order by order (field) -/
