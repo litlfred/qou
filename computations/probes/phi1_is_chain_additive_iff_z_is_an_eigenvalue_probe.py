@@ -203,9 +203,13 @@ def residuals_at_q0():
     from mpmath import mp, mpf
 
     mp.dps = 50
-    from qou_substrate.constants import Q
+    # `q_at(dps)` re-solves the proton pin AT that precision.  `constants.Q` is
+    # `_solve_q_proton_f64`, so `mpf(str(Q))` would be float64 wearing an mpf
+    # costume -- the f64-into-mpmath tier names that spelling a LAUNDERING
+    # defect, and it flagged this exact line.
+    from qou_substrate.constants import q_at
 
-    q0 = mpf(str(Q))
+    q0 = q_at(50)
     hh = q0 - 1 / q0
     out = {}
     for nm, zz in (("C", mp.sqrt(q0) / (q0 + 1)), ("D", q0**3 / (q0**2 + 1))):
