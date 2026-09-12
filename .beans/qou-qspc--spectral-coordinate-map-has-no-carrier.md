@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-29T17:00:00Z
-updated_at: 2026-08-31T07:31:14Z
+updated_at: 2026-09-12T08:20:53Z
 ---
 
 The cheapest real gap in the q-Riemann-hypothesis arc. Review:
@@ -527,3 +527,49 @@ explicitly to (1) and names the other two.
 That is the exact failure AGENTS.md flags — *"attributes do not transfer across
 overloaded symbols … distinct objects sharing a glyph is a recurring root
 cause"*.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — disposition 1 landed for the half that CAN be proved; the Reeb identification is untouched. STAYING OPEN.
+
+`spectral_coord` is **still a hypothesis** at
+`q-geometric-langlands/spectral-half-line.lean:71`, so this bean's headline
+stands. What changed is that three sorry-free theorems now sit beneath it and
+**isolate** the gap instead of leaving it diffuse:
+
+| declaration | what it settles |
+|---|---|
+| `exists_spectral_coord` | the map **always exists** — `ρ := log α / log q` on the principal branch, from `q > 1` and `α ≠ 0` (the latter is a `LocalQZetaFunction` field) |
+| `spectral_coord_re_unique` | **`Re(ρ)` is branch-independent** — any two exponents with the same `q`-power share a real part, so `Re(ρᵢ) = 1/2` is well-posed although `α ↦ ρ` is not |
+| `spectral_coord_re_eq` | the closed form `Re(ρ) = log ‖α‖ / log q` |
+
+So **disposition 1 was taken for the coordinate relation**, including the part
+this bean flagged as needing separate proof (*"Prove Re(ρ) is branch-independent
+separately"*) — that is `spectral_coord_re_unique`.
+
+### The file states the residual better than this bean did — adopt its framing
+
+Its section docstring:
+
+> **What is NOT proved, and is the open part.** Nothing here identifies these
+> `ρᵢ` with the spectrum of the Reeb derivation `ξ_q`. `spectral_coord` in
+> `spectral_half_line` is doing **double duty**: it asserts a coordinate
+> relation (supplied below) *and* that the exponents are Reeb eigenvalues (not
+> supplied anywhere in the corpus). **Existence does not close that gap — it
+> isolates it.**
+
+This bean said *"nothing ties the ρ i to the Reeb spectrum"*, which is true but
+diffuse. The sharper statement is that **one hypothesis carries two claims**,
+and exactly one of them is now discharged. That is what makes the remainder
+actionable: the open item is no longer "construct or assume a map" — it is
+"supply the Reeb identification, or name it as a declared assumption in the
+`IsWeilZeta` style", with the coordinate half already off the table.
+
+### Why this does not close
+
+Per rule 13a (owner, 2026-09-06): a bean tracking a
+**literature-unsupported identification** stays open until the mathematics
+closes, not until its openness is recorded. The Reeb identification is exactly
+that class — the `A_ω → S` case rule 13a names by example. The file recording
+the gap precisely is excellent and is not a closure.
