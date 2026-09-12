@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-12T11:39:32Z
+updated_at: 2026-09-12T12:06:50Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -67,3 +67,7 @@ Verbatim: "try PSD condfinement 3 for now, but keep 1 2 for later". Reading 3 = 
 ## 2026-09-12 — step 5 landed on PR #7207 (0d0a803af0): reading 3 formalised; it selects beta_Bor on the whole interval
 Lean QOU/Mass/GammaGammaFrobeniusSelection.lean (23 declarations, no sorryAx, lean-direct exit 0 with 0 warnings first compile). FrobeniusFeasible / FrobeniusSelected = reading 3 over a generic [Ring R] [PartialOrder R]; SymPSDFeasible = reading 2 recorded; 1 => 3 and 2 => 3 proved (PSD trace >= 0; symmetric part has trace 2 tr), so the reading-3 minimum is a LOWER BOUND on whatever 1 or 2 select later on the same candidates (FrobeniusSelected.cost_le_of_psdFeasible / _of_symPSDFeasible, SDPSelected.frobenius_cost_le). On H_3 only the (2,1) block decides for a gamma-gamma word; hoefsmit_vertexPow_frobenius_table: for EVERY 1 < q <= 23/20 and every y with y_(2,1) > 0, k = 1,2,4,5 infeasible, k = 3 feasible; frobeniusSelected_borromean: candidates = non-zero vertex powers k <= 5, cost = crossing count => beta_Bor selected on the whole interval; frobeniusSelected_length_eq_six. Only the SIGN of y_(2,1) (0.2473 under D at the pin, step-3 witness) enters. No new probe: the numbers are the step-4 witness. Record: docs/audits/2026-09-12-gamma-gamma-word-selection-step5.md.
 Still open (bean stays in-progress, rule 13a): k > 5 candidates (chi_signs_of_small stops at 5); reading 2 has no selection theorem; the H_6 pp bond (sigma_2 sigma_3^-1)^3 is measured, not in Lean; non-gamma-gamma letters; theta/pi rationality (informational); and which reading the SDP MEANS is still the owner's call — 3 is provisional.
+
+
+## 2026-09-12 — #7207 MERGED (03d6c9485c, rebase, 5/5 patch-ids replayed). Owner order for the rest: 1 (merge) DONE, then 3 (H_6 pp bond in Lean), then 2 (H_3 candidates to k <= 10).
+Step 6 claimed on branch claude/ales-step6-h6-pp-bond-2026-09-12. Scope: the H_6 interface bond G^m = (sigma_2 sigma_3^-1)^m lives in the parabolic H_3 = <sigma_2, sigma_3>, and each H_6 block character on G^m is a_lam + b_lam chi_(2,1)(V^m) + c_lam with (a,b,c) the multiplicities of (3),(2,1),(1^3) in V_lam restricted to that H_3 — by the branching rule these are Young-lattice path counts (3)->lam etc. (middle-strand embedding conjugate to the first-strand one by T_d, Dipper-James). Convention D = two-row truncation gives y > 0 exactly on (6),(5,1),(4,2),(3,3); path counts there: (1,0,0),(3,1,0),(3,3,0),(1,2,0). Feasibility of G^m under reading 3 is then decided by (3,3): 1 + 2 chi_m >= 0 — the tightest interval is 0 < h^2 <= 1/12 (G^5 flips feasible near h^2 = 0.0924), still covering 1 < q <= 23/20. Plan: Lean path counter (decide), H6Branching hypothesis structure carrying the character formula, selection theorem; probe cross-checks the formula against the step-3 witness chi_by_block (24 values). The diproton sign (-4.47 keV) needs the full 11-letter nucleon words and stays probe-only.
