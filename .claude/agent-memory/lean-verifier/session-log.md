@@ -4,6 +4,27 @@ One line-block per session: what was verified, by what method, and any
 `MEMORY.md` entry confirmed or corrected. Moved out of `MEMORY.md` 2026-09-03 so
 the injected file stays under 200 lines. Newest first.
 
+- 2026-09-12 (verify ONE new file, branch `claude/hecke-tower-witness-2026-09-12`,
+  `QOU/MathlibExt/HeckeTowerWitness.lean` — the presented infinite Hecke tower as a
+  `MarkovTrace`): **before 1 error + 1 warning (exit 1) → after 0/0 (exit 0)**; 29
+  `#print axioms`, all std-3, **no `sorryAx`**; source has 0 `sorry` and 0 `axiom`
+  *declarations* (the 2 raw `axiom` hits are prose, "Markov axioms" — and the brief's
+  claim that "sorry" appears in the docstring was wrong, it appears **nowhere**).
+  Restore was ALREADY present (root 3758 = the seed exactly) so no fetch; built the §17
+  union mirror instead. **`OcneanuTrace.olean` was 2026-09-03 against a 2026-09-11
+  source** — the §1/§11 false-green setup — so both QOU deps were rebuilt from current
+  source into the mirror first; green reproduced against the real trees too. Cone was
+  only 3 modules, no UGB, no non-Mathlib imports. Two mutation tests rejected (exit 1):
+  `h -> h+1` in the quadratic, and zeroing the `linear_combination` coefficient that
+  consumes the Markov-root hypothesis. Non-vacuity checked rather than assumed:
+  `MarkovTrace ℚ (HeckeTower ℚ (3/2))` is inhabited with `h ≠ 0`, `z ≠ zinv` and
+  `twH 0 < twH 1`, so the module's "missing quadrant" claim has an instance.
+  **Both fixes were proof-only; no statement touched** — the error was a missing binary-
+  `sub` simp projection on `Hecke2` (fix: `sub_eq_add_neg`), the warning was
+  `Set.image_subset` → `Set.image_mono` with `f` now implicit. Both recorded in
+  `authoring-traps`. The concurrent SessionStart `lake build` independently reached the
+  same single error (`✖ [6641/6642]`, same line:col) — new `MEMORY.md` entry.
+
 - 2026-09-04 (post-merge re-verification, branch `claude/standard-model-terms-status-ftoejr`
   at HEAD `219672e496`; 8 files, all blobs == HEAD): **8/8 lean-direct EXIT 0, zero
   diagnostics**; 94 `#print axioms` lines, all std-3 or "no axioms", **no `sorryAx`**.
