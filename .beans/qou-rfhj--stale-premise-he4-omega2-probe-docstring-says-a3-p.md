@@ -1,11 +1,11 @@
 ---
 # qou-rfhj
 title: 'STALE PREMISE: he4 Omega2 probe docstring says A=3 P<0 ''NO flip vs A=2''; both committed and fresh triton witnesses say sign=+1, sign_flip_vs_A2=True'
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-09-08T06:44:54Z
-updated_at: 2026-09-11T14:46:20Z
+updated_at: 2026-09-12T08:23:31Z
 parent: qou-9c80
 ---
 
@@ -55,3 +55,36 @@ A>=3" rather than failing it. The comparison logic was always right
 (flip = P_sign != a3_sign) — only the prose asserted an unchecked claim about A=2.
 Verdict now derived from the measured signs; docstring corrected with the measured
 A=3 value and the A=4 result.
+
+
+---
+
+## VERIFIED 2026-09-12 — the fix is in the producer, not only in the bean body. CLOSING.
+
+This bean's own `## RESOLVED 2026-09-11` section is a claim; checked against the
+file it names:
+
+* `computations/deltalambda/he4_magnus_omega2_sign_sparse_probe.py:658` —
+  `a3_sign = _sign("triton-magnus-omega2-sign.witness.json")`. The baseline sign
+  is **read from the witness**, not hardcoded, and is passed at `:664` as
+  `a_baseline_sign=a3_sign`.
+* `triton_magnus_omega2_sign_probe.py:338-339` — `flip = (P_sign != a2_sign)`,
+  guarded on both signs being non-zero, with a separate `P_sign == 0` branch. So
+  "an absence" is no longer reported as a sign.
+* The hardcoded premise survives **only** as a historical note in the `he4`
+  docstring at `:14` — *"which asserted 'A=2 and A=3 were both negative' without
+  checking. Fixed"* — which is a record, not a live assertion.
+
+So all three errors this bean identified are gone from the verdict path: A=2's
+sign is no longer assumed to match, the string can no longer contradict itself,
+and the A≥3 reading is no longer reported as failing on data that confirms it.
+
+**The deferral this bean recorded also resolved correctly.** It says the edit
+waits for 77/77 because the he4 probe was mid-run with a source-blind
+checkpoint (`qou-z3q9`) — the fix landed in the same commit that stamped both
+caches on source, which is the condition the deferral was waiting on rather than
+a decision to override it.
+
+**Closeable under rule 13a**: the subject is a stale premise in a docstring and
+a generated verdict — a mechanical defect, not an open conjecture. Nothing here
+turns on unproved mathematics.
