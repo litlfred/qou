@@ -1,11 +1,11 @@
 ---
 # qou-rwhv
 title: Is the corpus b3 an Ursell function? The alternating-sign theorem says the sign obstruction is the positivity hypothesis
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:39:42Z
-updated_at: 2026-08-30T09:55:37Z
+updated_at: 2026-09-12T05:04:43Z
 ---
 
 ## Where this came from
@@ -142,3 +142,8 @@ statement in both remains true of the object it is about.
 
 Producer: `computations/probes/ursell_alternation_sign_identity_probe.py`, 6/6.
 Audit rewritten: `docs/audits/2026-08-30-ursell-alternating-sign-and-the-b3-obstruction.md`
+
+
+
+---
+**Takeover 2026-09-12** (session claude/ursell-partition-function-b3-2026-09-12). Attacking §"What would settle it": exhibit (or refute) the trace-side partition function whose Mayer expansion has the corpus b3 as its third Ursell coefficient — polymer set, weight g = mu_bond − 1, compatibility, canonical ensemble. Formalize-first Lean under QOU/MassTheory/, then an exact probe under computations/, then audit doc 2026-09-12-ursell-partition-function-for-b3.md.
