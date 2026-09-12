@@ -21,6 +21,31 @@ infrastructure, not by its own budget, and the session was idle across the
 window so the process may not have been running throughout. It establishes
 NEITHER "3H takes > 5 h" NOR "3H completes".
 
+SCOPE — what the timing is and is not a claim about (added after sibling
+coordination on PR #7229, from #7221 / #7235 / #7236).
+
+**The wall-time rows are convention-independent.** A second is a second; nothing
+about `z` changes how long the accumulator runs.
+
+**The `value` field is not**, and a reader should not lift it as a canonical
+binding number. The sibling raised that the binding/mass channel is still
+convention C. MEASURED against this probe's own cone rather than taken on
+trust, and the answer is more specific than that:
+
+  - the C literals the sibling names (`TRM`, `TRM["D"] = 0.38835725751524`)
+    live in `computations/gap_a3_overshoot_robustness_check.py`, and
+    `hecke_core_legacy` neither references them nor imports that module
+    (AST scan of all 20 imports: no `gap_a3` / `overshoot`);
+  - `hecke_core_legacy` carries convention-D markers in its own source --
+    line ~1288 `q^3/(q^2+1) = z_D, the convention-D Markov parameter`, and
+    line ~86 `G_INV is gone under convention D`.
+
+So the C exposure the sibling found is in the A3-overshoot producers, NOT in
+`binding_energy`'s cone. What this probe does NOT establish is that every
+constant reached downstream of `binding_energy` is D-consistent -- the sibling
+separately reports `Vol_hyp` and `B/m_e` as C-era assignments (`qou-e5jf`
+open), and that was not audited here.
+
 To finish the measurement, re-run this with a budget you can sit through, or
 checkpoint per isotope so a reclaim leaves partial evidence rather than none.
 Do NOT pipe it through `tail` -- a buffered pipe turns a partial result into a
