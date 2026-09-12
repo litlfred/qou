@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-12T07:09:28Z
-updated_at: 2026-09-12T07:39:26Z
+updated_at: 2026-09-12T07:46:04Z
 ---
 
 ## ANSWERED 2026-09-12 (branch claude/binding-word-3a-reembedding-2026-09-12, PR #7202)
@@ -87,3 +87,11 @@ comparison is reported, not acted on: choosing an embedding by the number it
 produces is selection against the target.
 
 **Residual owner decision** (framed, not enacted) — see qou-8274.
+
+
+**Timing caveat (re-run 2026-09-12, same tree).** The A=3 ratio is wall-clock
+and varies: two runs gave 0.349/41.311 s (118x) and 0.335/41.685 s (124x).
+Every mathematical assertion in the witness is byte-identical between them;
+only timings and provenance stamps move. Quote "roughly 120x", and note the
+load-bearing figure is the SEGMENT SIZE -- 3A-3 of 3A-1 generators against a
+constant 2 -- which is exact combinatorics and does not vary.
