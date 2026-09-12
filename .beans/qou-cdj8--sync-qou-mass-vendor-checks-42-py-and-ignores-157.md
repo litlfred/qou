@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:44:29Z
-updated_at: 2026-08-25T07:35:11Z
+updated_at: 2026-09-12T08:37:46Z
 ---
 
 Split from `qou-hp3g`, whose sync-drift half turned out already fixed
@@ -219,3 +219,59 @@ Two facts for whoever picks up step 3:
   `computations/_li_2_q_util.py`, which is in the cone. Re-running `--check`
   against `origin/main`'s copy of that file still gives 23, so `_li_2_q_util`
   was already drifted and the branch did not inflate the number.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — drift is 23 → **6**, a real drain, but the population TURNED OVER. Gate still exits 1.
+
+`python3 scripts/sync-qou-mass-vendor.py --check` on `origin/main` today:
+
+```
+exit 1
+MISSING: (none)
+DRIFTED from source (6):
+  atomic-tr-m-mpfr-50dps.witness.json
+  markov_weights_symbolic.witness.json
+  codata_2022_source
+  experimental_constants
+  mass_at_3A_proper
+  wedderburn_jones_markov
+```
+
+**Measured on `main`, not on a branch.** My branch touched neither
+`computations/` nor `qou-mass/` — `git diff origin/main -- computations/
+qou-mass/` is empty — and both named files are byte-identical to `main`. So this
+is the base branch's state, and no in-flight edit inflates it. That is the same
+control this bean already ran for PR #5750 on `_li_2_q_util`.
+
+**The count fell, and that is real progress**: 23 → 6, and `MISSING` is now
+**empty** where `qou-hp3g` recorded 1 and this bean recorded 3.
+
+**But it is not the same six.** Against `qou-hp3g`'s nine
+(`_li_2_q_util`, `_precision`, `canonical_braid_crossings`, `codata_constants`,
+`hecke_character_symbolic`, `markov_peel`, `markov_trace_canonical`,
+`wedderburn_jones_markov`, plus one witness), only **`wedderburn_jones_markov`**
+survives. Four of today's six — `codata_2022_source`, `experimental_constants`,
+`mass_at_3A_proper`, `markov_weights_symbolic` — are **new names**.
+
+So the shape is **drain-and-recur, not a shrinking backlog**: sources advance,
+the mirror is regenerated in a batch, and a different set drifts before the next
+batch. That is the same pattern AGENTS.md records for dirty witnesses
+(`qou-mnrd` / `qou-82ur` reaching it from opposite directions), and it argues
+that a periodic `--apply` sweep does not close this — only running `--check` as
+a gate at the point a cone module changes does, which is what AGENTS.md already
+prescribes and what evidently is not happening.
+
+**One of the six is a fix that landed correctly on both paths**, worth recording
+because it shows the drift is not always a stale *value*: `experimental_constants`
+is flagged, yet its `VOL_FIGURE_EIGHT` exactification (bean `qou-9ies`) IS
+present in the mirror at line 221. So a `DRIFTED` verdict means the files differ,
+not that the mirror is carrying a superseded number — do not read the six as six
+stale constants.
+
+**NOT run `--apply`.** Under the 2026-09-07 ask-first override this is
+"regenerating a derived artifact that belongs to someone else's arc" and neither
+exemption covers it. This bean already establishes `--apply` is safe (facade
+outputs byte-identical before and after), so the hold is about ownership, not
+risk — it is this bean's sweep to run, not a passing session's.
