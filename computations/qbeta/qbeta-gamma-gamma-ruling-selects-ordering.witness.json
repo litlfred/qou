@@ -1,0 +1,152 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T18:04:33.235257+00:00",
+  "commitSha": "1e278eebac6bc0dfb5e498b2ee57452dae10627b",
+  "assertions": [
+    {
+      "name": "interleaved_core_is_vertex_cubed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(σ₀σ₁⁻¹)³ = vertex 0 three times — γγ-produced by the constructor"
+    },
+    {
+      "name": "the_two_cores_are_different_elements",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ratio 5.54558× — same multiset, different element (H₃ is noncommutative across generators)"
+    },
+    {
+      "name": "orderings_share_the_multiset",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "11 letters each; nothing but the ORDER differs"
+    },
+    {
+      "name": "interleaved_reproduces_minus_17_496",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "matches the figure #7188's docstring records — so this transcription IS the census's interleaved model, not a lookalike"
+    },
+    {
+      "name": "gen_grouped_reproduces_minus_15_4514",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "matches the merged Option-E witness"
+    },
+    {
+      "name": "the_ruled_order_is_the_LESS_accurate_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ruling costs 2.04454 points — correct under NO FITTING: derivational cleanliness ranks above accuracy"
+    },
+    {
+      "name": "flip_is_two_slots_each_minus_half_in_ruled_order",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "order-independent, as a flavour statement should be"
+    },
+    {
+      "name": "expansion_exact_on_the_ruled_order",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "|direct − expansion| = 3.8894e-62 at 60 dps"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "qbeta-gamma-gamma-ruling-selects-ordering",
+  "scriptFile": "qbeta_gamma_gamma_ruling_selects_ordering_probe.py",
+  "scriptHash": "58208b7bdfb1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_gamma_gamma_ruling_selects_ordering_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_ruling_selects_ordering_probe.py"
+  },
+  "description": "The 2026-09-08 gamma-gamma ruling decides the nucleon braid ORDERING that #7188 identified as owed. Of the census's two models only the interleaved one has a gamma-gamma-produced core -- (sigma_0 sigma_1^-1)^3 is three pair-production vertices, while the gen-grouped core carries a positive crossing in second position, which no vertex concatenation produces (sorry-free, no axioms). The ruled order's residual is -17.4959 % against the gen-grouped -15.4514 %: the derivation costs 2.04 points, which is the correct trade under NO FITTING.",
+  "data": {
+    "markov_convention": "D — the ruled functional, z_D = q^3/(q^2+1)",
+    "q0_anchor": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "core_traces": {
+      "interleaved_V3": "0.998562163836787265951213135147",
+      "gen_grouped": "0.180064539535501098303629925134",
+      "ratio": "5.54557919295"
+    },
+    "residual_pct": {
+      "interleaved_RULED": "-17.4959286063",
+      "gen_grouped_unruled": "-15.4513867335",
+      "cost_of_the_ruling_points": "2.044541873"
+    },
+    "flip_slots_ruled_order": [
+      {
+        "index": 6,
+        "p": "0.0",
+        "n": "-0.5"
+      },
+      {
+        "index": 8,
+        "p": "-0.5",
+        "n": "-1.0"
+      }
+    ],
+    "skein_expansion_ruled_order": {
+      "s": "-0.104530149397819657715423106565",
+      "S_A": "0.337679307801148343098328165974",
+      "S_B": "1.21303228749146036090189908234",
+      "S_AB": "0.723121949665214792299682879452",
+      "direct": "-0.154194885047239705659255514103",
+      "expansion": "-0.154194885047239705659255514103",
+      "abs_gap": "3.8893845e-62",
+      "s2_over_s_pct": "4.874410281"
+    },
+    "lean_declarations": [
+      "QOU.QBeta.GammaGammaDelta.gammaGamma_snd_neg",
+      "QOU.QBeta.GammaGammaDelta.not_gammaGamma_of_snd_pos",
+      "QOU.QBeta.GammaGammaDelta.interleavedCore_isGammaGamma",
+      "QOU.QBeta.GammaGammaDelta.not_gammaGamma_genGroupedCore",
+      "QOU.QBeta.GammaGammaDelta.cores_ne"
+    ]
+  },
+  "caveats": [
+    "🛑 THE RULED ORDER IS THE LESS ACCURATE ONE. -17.4959 % against -15.4514 %. Do NOT prefer the gen-grouped figure because it is closer -- that is selection against the target, which AGENTS.md NO FITTING names explicitly. The 2.04 points are the price of the order no longer being an unstated modelling choice.",
+    "The -15.4514 % that #7188 and #7212 calibrate against is the GEN-GROUPED (unruled) order. Nothing there is retracted -- both state their ordering -- but the CANONICAL residual under the ruling is -17.4959 %, and this witness is the record of which figure is which.",
+    "🛑 TRAP. 'Interleaved' reconstructed by zipping the two _GEN_CHAINS lists alternately gives -13.5712 %, which is NEITHER census model. The census's interleaved model emits the core as three (sigma_0, sigma_1^-1) pairs, then an ORDERED quark block, then two gluon letters. Reproducing the documented -17.496 % is the calibration that catches a lookalike reconstruction.",
+    "Scope: (b) on the EXCLUSION -- it cites a proved invariant (a gamma-gamma word's second letter is negative), not a bad number. (a) on the RESIDUALS -- two census models at one pin. The ruling constrains the CORE; the flavour and gluon letters are not gamma-gamma words and their placement is not settled here.",
+    "#7212's 3.13x gap result is UNAFFECTED: it prices differences of vertex powers V^k, a gamma-gamma-only construction that contains no nucleon ordering at all."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

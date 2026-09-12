@@ -131,4 +131,84 @@ theorem borromean_is_covered {R : Type*} [Field R] {q : R} (hq : q ≠ 0) :
     altChar q borromean - altChar q borromean = 0 :=
   altChar_difference_vanishes hq borromean_gammaGamma borromean_gammaGamma
 
+/-! ## The ruling DECIDES the braid ordering the corpus owed
+
+`qou-99qc` / #7188 measured that under the ruled functional at `z_D` the braid
+ORDER of the nucleon word is visible and unconstrained, and concluded that the
+corpus owes a *derivation* of it. The γγ ruling supplies one, and the lemmas
+below are what make it a derivation rather than a preference.
+
+The census carries two orderings of the same eleven-letter multiset
+(`qbeta_delta_candidate_census_probe.py`). Their confinement cores are:
+
+* **interleaved** — `nuc9`'s `for _ in range(3): σ₀ ; (σ₁ − h)`, and
+  `σ₁ − h = σ₁⁻¹` by the Hecke relation
+  (`QOU.QBeta.NucleonFlavour.skein_letter_inv`), so the core is `(σ₀σ₁⁻¹)³`
+  — which is `vertex 0` three times, i.e. **γγ-produced**;
+* **gen-grouped** — `_GEN_CHAINS`, all `σ₀` letters first, so the core is
+  `σ₀σ₀σ₀σ₁⁻¹σ₁⁻¹σ₁⁻¹`, whose first two letters are both **positive**.
+
+`not_gammaGamma_of_snd_pos` excludes the second. So the ruling selects the
+interleaved order, and that is a structural exclusion, not a scope-(a) miss.
+
+🛑 **The ruled order is the LESS accurate one**, and that is the correct
+outcome under AGENTS.md §NO FITTING ("rank by derivational cleanliness first,
+and treat accuracy as a diagnostic"). Measured at the proton pin, convention D:
+interleaved **−17.4959 %** against gen-grouped **−15.4514 %**. The ruling costs
+2.04 points of residual and buys the one thing the residual cannot: the order
+is no longer an unstated modelling choice.
+-/
+
+/-- **The second letter of a γγ-word is a negative crossing.**
+
+Immediate from the constructor — `vertex i` is `⟨i, true⟩ :: ⟨i+1, false⟩ :: _`
+— but it is the whole content of the ordering exclusion below. -/
+theorem gammaGamma_snd_neg {c₀ c₁ : Crossing} {t : Word}
+    (h : GammaGammaWord (c₀ :: c₁ :: t)) : c₁.pos = false := by
+  cases h with
+  | cons i _ => rfl
+
+/-- **A word whose SECOND crossing is positive is not γγ-produced.**
+
+This is the lemma that rules out the gen-grouped ordering. It was first stated
+with both of the first two letters positive as hypotheses; the linter caught
+that the first is never used, so the lemma is strictly stronger than the
+exclusion needs — the sign of `c₀` is irrelevant. A γγ-word's letters come in
+`(positive, negative)` pairs, so *any* positive letter in second position is
+already impossible. -/
+theorem not_gammaGamma_of_snd_pos {c₀ c₁ : Crossing} {t : Word}
+    (h₁ : c₁.pos = true) : ¬ GammaGammaWord (c₀ :: c₁ :: t) := by
+  intro h
+  rw [gammaGamma_snd_neg h] at h₁
+  exact Bool.noConfusion h₁
+
+/-- The interleaved confinement core `(σ₀σ₁⁻¹)³`, as the census's `nuc9` builds
+it: three pair-production vertices on strands `(0,1,2)`. -/
+def interleavedCore : Word := vertex 0 ++ (vertex 0 ++ (vertex 0 ++ []))
+
+/-- The gen-grouped core — the **same six letters**, all `σ₀` first. -/
+def genGroupedCore : Word :=
+  [⟨0, true⟩, ⟨0, true⟩, ⟨0, true⟩, ⟨1, false⟩, ⟨1, false⟩, ⟨1, false⟩]
+
+/-- **The interleaved core IS γγ-produced.** -/
+theorem interleavedCore_isGammaGamma : GammaGammaWord interleavedCore :=
+  GammaGammaWord.cons 0 (GammaGammaWord.cons 0
+    (GammaGammaWord.cons 0 GammaGammaWord.nil))
+
+/-- **The gen-grouped core is NOT γγ-produced**, so the ruling excludes it.
+
+Together with `interleavedCore_isGammaGamma` this settles the ordering: of the
+census's two models, exactly one has a γγ-produced core. -/
+theorem not_gammaGamma_genGroupedCore : ¬ GammaGammaWord genGroupedCore := by
+  intro h
+  exact not_gammaGamma_of_snd_pos (c₀ := ⟨0, true⟩) (c₁ := ⟨0, true⟩) rfl h
+
+/-- **The two cores are different elements, not merely different spellings** —
+recorded so a reader does not assume the orderings are interchangeable. They
+share a letter multiset; `H₃(q)` is noncommutative across generators, and the
+measured traces differ by a factor of 5.5 (`0.9986` against `0.1801` at the
+proton `q₀`). The Lean statement is the weaker, decidable one: the two words
+are not equal as lists. -/
+theorem cores_ne : interleavedCore ≠ genGroupedCore := by decide
+
 end QOU.QBeta.GammaGammaDelta
