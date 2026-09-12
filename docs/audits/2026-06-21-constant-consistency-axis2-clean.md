@@ -80,6 +80,58 @@ none has been re-run against `content/`.
 
 ---
 
+## ⚠ SECOND CORRECTION — the SAME sentence's OTHER clause was also false
+
+Bean `qou-9ies`. Independent of the correction above, and on the other half of
+the same quoted sentence.
+
+The correction above falsifies *"wrong-tail variants only in `_deprecated/`"* by
+finding the bad Borromean value live in Lean. It does **not** test the sentence's
+first clause, *"survives only as a comment in `experimental_constants.py`"* — and
+that clause was false too, for a different constant and a different reason.
+
+`computations/substrate/experimental_constants.py` carried
+
+    VOL_FIGURE_EIGHT     = 2.029883212819307   # ± 1e-12 (numerical precision)
+    VOL_FIGURE_EIGHT_ERR = 1e-12
+
+as a **live `ast.Assign` whose value is a Python `float`** — not a comment — and
+it was the canonical import target, reached by the `qou-substrate` package's own
+public API. Relative error `1.488e-16` against exact `2·Cl₂(π/3)`: **0.149× the
+entire 1 ppQ L1 budget, spent on one constant.**
+
+**This is a different defect from the one above, and the difference is the
+point.** That one is *wrong-tailed* — wrong from digit 21, a typo class. This one
+is **correct as far as it goes**: a 16-digit truncation at float64 epsilon. Its
+problem is not that the digits are wrong but that it is a `float` and everything
+imports it. A detector tuned to wrong digits cannot see it.
+
+It also shows *why* it survived, which no digit-checking audit would have
+surfaced: the value was filed with an uncertainty (`± 1e-12`, "numerical
+precision"), i.e. as a **measured** quantity. `Vol(4₁) = 2·Cl₂(π/3)` is an exact
+closed form and has no measurement uncertainty — but nobody re-measures a
+measurement, so the banner was its own camouflage.
+
+**Both are now fixed.** The constant is computed rather than stored —
+`VOL_FIGURE_EIGHT = 2 * mpmath.clsin(2, mpmath.pi/3)` inside a
+`workdps(_CONST_DPS)` block, so it is exact to whatever precision is in force
+instead of frozen at any digit count — and `VOL_FIGURE_EIGHT_ERR` is `0.0`, with
+the name retained deliberately (dropping it breaks `mass-from-q-symbolic`'s error
+budget import; a fictitious `1e-12` would inflate that budget with an uncertainty
+that does not exist). The generated `qou-mass/_internal/` mirror carries the same
+fix, so both import paths are clean.
+
+**What this adds to the lesson above.** That section's rule is *"a clean verdict
+is only as wide as the surface the detector walked"*. This case sharpens it: the
+detector here **did** walk the right file. `scripts/known-constant-literal-audit.py`
+scans that path by default and had been reporting the sibling
+`VOL_4_1_50DPS_STR` line correctly, with the right first-wrong-digit, as one of
+90 candidates nobody worked. **A finding that is printed and unread fails in the
+same place as one never generated** — so a verdict is only as wide as the surface
+walked *and* only as good as the pile someone actually reads.
+
+---
+
 ## RE-VERIFICATION 2026-08-30 — the other five rows, and my own flag was wrong
 
 Bean `qou-f8lit`, same session as the correction above.
