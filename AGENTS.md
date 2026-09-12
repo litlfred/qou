@@ -2558,9 +2558,24 @@ discipline review will catch it. Full framing:
 >   is exactly that order-independent (physical) regime.
 > - **Body-order recurrence depth ≥ 3 is forced**, and 3 terms cannot test it
 >   (`QOU.MassTheory.BodyOrderRecurrenceDepth`).
-> - **The connected 3-body Mayer/Ursell cumulant sign is threshold-forced and
->   wrong against AME**, independent of the bond set
->   (`QOU.MassTheory.MayerThreeBodySign`, bean `qou-rraz`).
+> - **The connected 3-body cumulant of the multiplicative assembly is the third
+>   Mayer coefficient of a lattice gas, and it is negative for every bond
+>   triple — no threshold** (owner-adopted wording, 2026-09-12, PR #7198).
+>   `b₃ = −φᵀ₃` exactly, where `φᵀ₃` is the third Ursell function of the
+>   hard-core lattice gas on the nucleon sites with the interface-letter traces
+>   `μ_e ∈ (0,1)` as pair weights (`QOU.MassTheory.UrsellPartitionFunctionB3`,
+>   sorry-free); by the Ursell alternation `φᵀ₃ > 0`, so `b₃ < 0` for every
+>   `f ∈ (0,1)³` — the `fpn > 2/3` escape of `MayerThreeBodySign.lt_of_b3_pos`
+>   came from leaving `P₃` free and is never met. Scope (b), invariant = the
+>   alternation. The 2026-08-30 "missing `(−1)^{n−1}`" reading is withdrawn:
+>   restoring it is the same expansion at negative activity. Within Mayer a
+>   positive term needs a bond factor above 1 (attractive channel; none in the
+>   production word — measured in #7198 and independently in #7204, whose one
+>   mechanism reaching `b > 1` is 4.0× short, scope a); the log assembly is
+>   exactly pairwise (`b₃ = 0`). Zero-parameter magnitudes at the live chain
+>   bonds: `−1.2277` MeV (³H) vs AME `+1.8081`, `−0.7973` MeV (³He) vs
+>   `+1.0443`. Audit: `docs/audits/2026-09-12-ursell-partition-function-for-b3.md`,
+>   beans `qou-rwhv` / `qou-rraz`.
 >
 > **Deuteron leg — 🟧 OWNER RULING A (2026-08-29):** the deuteron knot is the
 > canonical braid closure (trefoil / Hopf, `Vol = 0`); **the deuteron binding is
