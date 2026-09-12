@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:02:09Z
-updated_at: 2026-09-12T19:05:58Z
+updated_at: 2026-09-12T20:09:34Z
 ---
 
 Parent: qou-cins / plan qou-0fmb, epic qou-08a2. Opened 2026-09-12 after S1 merged (#7228, 3653e9ce).
@@ -86,3 +86,58 @@ Method note for the next agent: this was caught by reading the target's actual
 API before writing the map, not by a probe. The sketch had been checked against
 quad, far and braid(0) and looked complete; braid(m) for the INTERIOR index m=1
 is the case a boundary-only check misses.
+
+
+--------
+**2026-09-12, THIRD PASS: the "genuinely open" item above is ALREADY DONE. Re-scope.**
+
+This bean said general-n strict growth "needs the (n+1)! LOWER bound" and recorded
+a LEAD that qou-im9l being completed might mean it exists. Measured: it does, and
+it is not merely the lower bound but the EQUALITY.
+
+  QOU/SchurWeyl/HeckeWedderburnGeneral.lean:77
+    theorem finrank_hecke_eq_factorial {K} [Field K] [CharZero K] (q : K)
+        (hq0 : q != 0) (hq2 : NotRootOfUnity q) (n : N) :
+      Module.finrank K (Hecke K q q^-1 n) = (n + 1).factorial
+
+Sorry-free, measured raw AND code-stripped: 0 sorry, 0 axiom declarations. Its own
+docstring explains why the hard half was cheap -- "the lower bound is not proved by
+hand here: it is forced by the surjection onto a space of dimension (n+1)!", via
+heckeProduct_surjective onto the Wedderburn block product (finrank_blocks_eq_factorial,
+which rests on sum_dLambda_sq / RSK-Burnside). So the Groebner-Shirshov route
+(qou-auq3) was never on the critical path, and general Hoefsmit was not needed either.
+
+**qou-uoal's closing note is STALE and is what misdirected this bean.** It reads
+"Lower bound dim>=(n+1)! needs general Hoefsmit (qou-im9l)". That has been false
+since HeckeWedderburnGeneral landed. Anyone reading qou-uoal for the state of the
+basis theorem will conclude a build is required when the theorem is on main.
+
+## The frontier, re-scoped -- ONE question, not a theory
+
+No dimension theorem is missing. What is missing is the IDENTIFICATION between the
+N-indexed presented tower and the finite Hecke algebras:
+
+  There is a natural algebra map  Hecke K q q^-1 n  ->  HeckeTower R h
+  sending sigma_i |-> twGen h i. The relations match exactly:
+    - SchurWeyl HeckeRel.quadratic  sigma_i^2 = (q - qi) sigma_i + (q*qi) 1
+      is twGen_quad with h = q - q^-1, using q*q^-1 = 1;
+    - HeckeRel.braid                matches twGen_braid;
+    - HeckeRel.commute (j+2 <= i)   matches twGen_far (k+1 < m).
+  Its image is exactly twH n (adjoin of the first n generators).
+
+  **OPEN: is that map INJECTIVE?**
+
+If yes, then dim (twH n) = n! < (n+1)! = dim (twH (n+1)) by finrank_hecke_eq_factorial,
+and twH n < twH (n+1) follows immediately for every n -- the whole of this bean,
+discharged. If no, the presented N-tower is NOT the colimit of the finite ones and
+that is itself a significant (and surprising) finding worth recording.
+
+This is the classical embedding H_n -> H_infinity. It is one well-posed statement
+about one map, not a program. Note the scope it carries: finrank_hecke_eq_factorial
+needs [Field K] [CharZero K], q != 0 and NotRootOfUnity q, so any strict-growth
+theorem derived this way inherits the GENERIC-q hypothesis and is not available over
+a bare CommRing. State that, do not gloss it.
+
+Do NOT re-attempt the tail-to-scalars route: it is refuted, and the refutation is now
+a theorem on main (scalar_tail_forces_central + tail_scalar_is_automatically_a_unit,
+#7231 / #7238), covering every tail assignment rather than the invertible ones.
