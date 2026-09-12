@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T07:08:56Z
+updated_at: 2026-09-12T07:24:18Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1126,3 +1126,56 @@ not dressed as theorems in the Lean.
 re-score is still outstanding, AND the element half of this bean is open. Per
 §13a a bean whose subject includes an open question does not close because one
 half of it was answered.
+
+
+## 2026-09-12 — the ORDER lever, measured exhaustively: WIDE BUT COARSE
+
+`computations/qbeta/qbeta_option_e_order_dof_range_probe.py` (8/8), witness
+`qbeta-option-e-order-dof-range`. Scope-(a). Names no ordering.
+
+WHY THE QUESTION EXISTS AT ALL, AND ONLY SINCE THE RULING. Level 2 is not
+multiplicative (proved, #7188), so unlike the augmentation it CAN see the order
+of the letters in a braid word. Braid order became a live degree of freedom for
+the observable on the day of the z_D ruling. Under the augmentation it was
+provably invisible, so it never needed deriving.
+
+MEASURED, exhaustively over both nucleon multisets — 6930 neutron orderings and
+9240 proton, 64,033,200 pairs (tr is linear on the NF vector, so the words
+enumerate separately rather than as pairs):
+
+    tr_{z_D}(Delta) reachable   [-0.7795980, +0.5476330]   span 1.3272311
+    target                      +-0.1868937
+    span / target               7.1015x
+    pairs within 1 sigma (780 ppb)              0  of 64,033,200
+    NEAREST approach                2.7232758e-5  = 0.014571 % of target
+                                                  = 186.88x the window
+    the canonical gen-grouped neutron ordering ranks 6667 of 6930
+
+🛑 I WAS WRONG TWICE AND BOTH GUESSES ARE RECORDED BECAUSE THE SHAPE MATTERS.
+First I wrote the probe to show order was TOO SMALL a lever, on the strength of
+the single order pair the corpus had measured (interleaved -17.496 % vs
+gen-grouped -15.451 %, a 2.04-point move). Wrong by two orders of magnitude —
+the span is 7.1x the target. Then I expected it to be so free as to be
+UNFALSIFIABLE. Also wrong: zero of 64 million pairs land in the window.
+
+THE ACTUAL SHAPE IS WIDE BUT COARSE, and that is the good outcome: reordering
+CANNOT manufacture agreement with Q_beta, so an ordering claim here would be
+falsifiable rather than fitted.
+
+🛑 LIVE FIT HAZARD, and it is the sharpest thing in this entry. "Order cannot
+manufacture agreement" is true against the EXPERIMENTAL WINDOW and badly
+misleading as a summary: some ordering reaches 0.0146 % of the target against
+the canonical ordering's -15.45 %. Anyone exhibiting it would be quoting a
+result an order of magnitude better than the retired published 0.17 %, and it
+would be PURE SELECTION — no continuous parameter tuned, an object chosen
+because it reproduces the measured value, exactly what NO FITTING names. What
+makes it refutable rather than unfalsifiable is only that it misses the window
+by 187x. The probe deliberately does not name it, and neither does this bean.
+
+CONSEQUENCE FOR OPTION E. Order is priced and it is not the lever: it cannot
+reach Q_beta from these multisets. The freedom is in the MULTISET, which is
+where augmentation_difference_order_blind already said it had to be — changing
+the multiset is the only thing that moves level 1, and it moves level 2 too.
+
+SCOPE: measured on THESE two multisets. It prices the order lever; it does not
+exclude Option E.
