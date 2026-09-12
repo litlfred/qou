@@ -1,0 +1,110 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T20:25:37.580354+00:00",
+  "commitSha": "19288cfc002803f6986d93fdb36268bf8d592d15",
+  "assertions": [
+    {
+      "name": "at L_q = sqrt(hbar_q) the leading eigenvalue is exactly 1 -- lambda_1 - 1 = 0.0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "and the tower factor there equals the implemented 1/(1 - hbar^2) -- both = 1.00991451914",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "the L_q choice moves E_0 by at least as much as the tower correction itself -- widest departure 9.908% against a total tower correction of 0.9915% -- so the choice of L_q is not a detail, it IS the effect",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "all four sampled L_q keep hbar^2*lambda_1 < 1 (the series converges) -- non-convergent samples: none",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "the divergence threshold is well below every sampled L_q -- so the series converges across the plausible range; the issue is the VALUE, not convergence",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "qbeta_e0.canonical() still returns the tower_summed value -- 4.22748335563 MeV -- measured, not modified",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "qbeta-e0-tower-lq-dependence",
+  "scriptFile": "qbeta_e0_tower_lq_dependence_probe.py",
+  "scriptHash": "f3700417a86d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_e0_tower_lq_dependence_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_e0_tower_lq_dependence_probe.py"
+  },
+  "description": "Resolves the one hypothesis qou-y3bm left open, with a NEGATIVE: Delta^{(n)} is NOT level-independent. prop:brane-tower-q-laplacian-decay Step 3 is an EQUALITY, |<e_k, Delta^{(n)} e_k>| = (lambda_k)^n, so Delta^{(n)} is the n-th ITERATE of the q-Laplacian. The tower is therefore geometric in hbar_q^2*lambda_k and sums to 1/(1 - hbar_q^2*lambda_k); the implemented 1/(1 - hbar_q^2) is the lambda_k = 1 member, which pins L_q = sqrt(hbar_q). L_q is a FREE geometric scale, so qbeta_e0.tower_summed does carry a hidden parameter -- now named and priced. Lean: towerSum_iterated / towerSum_iterated_eq_simple_iff / leadingMode_lam_eq_one_iff, sorry-free. Measures only; qbeta_e0 unchanged.",
+  "data": {
+    "implemented_pins_Lq": "0.3147724829845495053",
+    "tower_factor_family": {
+      "sqrt(hbar_q)  [implemented]": {
+        "L_q": "0.314772482985",
+        "lambda_1": "1.0",
+        "tower_factor": "1.00991451914",
+        "E0_MeV": "4.22748335563",
+        "rel_vs_implemented_pct": "0.0"
+      },
+      "1  (Kelvin L_q = L, L=1)": {
+        "L_q": "1.0",
+        "lambda_1": "0.0990817160443",
+        "tower_factor": "1.00097365075",
+        "E0_MeV": "4.19005704721",
+        "rel_vs_implemented_pct": "-0.885309"
+      },
+      "hbar_q": {
+        "L_q": "0.0990817160443",
+        "lambda_1": "10.0926794562",
+        "tower_factor": "1.10997858275",
+        "E0_MeV": "4.64634966105",
+        "rel_vs_implemented_pct": "9.90817"
+      },
+      "q - 1/q  ( = h )": {
+        "L_q": "0.209060298796",
+        "lambda_1": "2.26699408096",
+        "tower_factor": "1.02276208525",
+        "E0_MeV": "4.28126302795",
+        "rel_vs_implemented_pct": "1.27214"
+      }
+    },
+    "total_tower_correction_pct": "0.9914519137",
+    "divergence_threshold_Lq": "0.0311881977776",
+    "hypothesis_of_towerSum_of_const_is_false": true,
+    "open_question_is_a_modelling_call": "is L_q = sqrt(hbar_q) the right q-deformed filament length? Choosing it because it reproduces the current E_0 would be selection against the target. Owner call."
+  }
+}

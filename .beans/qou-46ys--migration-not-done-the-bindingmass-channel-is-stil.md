@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-09-12T19:04:20Z
-updated_at: 2026-09-12T19:53:56Z
+updated_at: 2026-09-12T20:15:27Z
 ---
 
 **What is wrong.** The owner ruled convention D canonical on 2026-08-15 and
@@ -173,3 +173,48 @@ still **C-era assignments**, so both files are now **D in their trace and C in
 their geometry**. A D-consistent knot/volume assignment is undone —
 `qou-e5jf`'s arc. Coordinated to PR #7229 (end-to-end binding), which may consume
 either.
+
+
+## 2026-09-12 — 🛑 the "remaining straddle" this bean named DOES NOT EXIST. Correcting myself twice.
+
+PR #7240. Probe
+[`a3_vol_is_pseudovolume_not_convention_probe.py`](../computations/probes/a3_vol_is_pseudovolume_not_convention_probe.py)
+(7/7). The entry above says *"`VOL_D` / `Vol_hyp` and `B/m_e` are still C-era
+assignments … D in their trace and C in their geometry."* Both halves are wrong.
+
+**(i) `B_OVER_ME` is not an assignment.** It is `|−B/m_e|` from the AME
+**experimental** binding energies — the *comparison target*: `2.224566` /
+`7.718058` / `28.295673` MeV over `m_e` reproduce the literals to <2.6e-4. It
+carries no convention and never did. **Calling the measured side a modelling
+assumption is the wrong direction of error** in a corpus whose point is keeping
+the comparison boundary clean.
+
+**(ii) `VOL` carries no Markov parameter.** SnapPy triangulation output on a
+braid closure; nothing in it touches `z`. **So this bean's migration is
+COMPLETE** — `tr_M` and `Q0` were the only convention-bearing inputs.
+
+**(iii) But `VOL` is MISLABELLED `Vol_hyp`, and the corpus said so on
+2026-05-19.** Per `2026-05-19-delta-lambda-thread-closure.md`: 12.776 / 12.554
+are *"Not legitimate hyperbolic volumes (degenerate tetrahedra)"*, they are
+*"SnapPy's pseudo-volume sum across the degenerate triangulation"*, *"NOT a
+Mostow-rigidity-protected hyperbolic invariant"*. Four live producers carry the
+wrong name. Λ-vs-Cl₂ class.
+
+**(iv) And it is a DIFFERENT OBJECT from the `Vol` the owner retired.** The
+2026-08-29 ruling retires `Vol(6₂) = 4.40083251612` and rules the closure flat
+(`Vol = 0`). `VOL(D) = 12.776` is neither; `12.776/4.40083 = 2.9031`, not an
+integer multiple. **The ruling does not reach this input** — but reading it beside
+a variable named `Vol_hyp` says it does, and **I nearly concluded that.**
+
+**SUCCESSOR, and it is a MODELLING call for the owner, not a migration:** is a
+**Z-clustered pseudo-volume of a degenerate triangulation** the right geometric
+input at all? `VOL(³He) == VOL(⁴He)` exactly while `VOL(D)` differs — clustering
+by `Z`, not by knot — flagged in `2026-06-05-gap-a4-L1-retrospective.md` as
+*"suggesting they are not the genuine Path B Vol(K)"*, still unresolved.
+
+**It bears on the A3 refutation:** if `VOL` is the wrong input, the refuted trend
+was computed on a wrong geometry *as well as* the wrong convention — which makes
+the negative about the **route**, not only the frame.
+
+Audit doc §6b + §7 item 2 updated:
+[`2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md`](../docs/audits/2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md).

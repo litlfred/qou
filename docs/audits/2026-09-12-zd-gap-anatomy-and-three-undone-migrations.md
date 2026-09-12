@@ -160,11 +160,135 @@ The guard did its job. **The calibration was asking the wrong question** — it 
 `E₀` the recorded cell used, then publishing at the canonical `E₀`: one check per claim.
 Worth internalising, because the failure mode is a *silent revert*, not an error.
 
+## 6b. 🛑 CORRECTION to §5(b)'s "remaining straddle" — it does not exist, and the real defect is different
+
+Added 2026-09-12, after the migration landed. Reporting the binding migration I
+wrote that *"`Vol_hyp` and `B/m_e` remain C-era assignments, so the files are D in
+their trace and C in their geometry"*. **Both halves are wrong.** Probe:
+[`a3_vol_is_pseudovolume_not_convention_probe.py`](../../computations/probes/a3_vol_is_pseudovolume_not_convention_probe.py)
+(7/7), witness `a3-vol-is-pseudovolume-not-convention.witness.json`.
+
+**(i) `B_OVER_ME` is not an assignment at all.** It is `|−B/m_e|` from the AME
+**experimental** binding energies — the *comparison target*:
+
+| | `B_exp` (MeV) | `B_exp/m_e` | literal in producer | rel |
+|---|---|---|---|---|
+| D | 2.224566 | 4.35336706 | 4.353 | 8.4e-5 |
+| ³He | 7.718058 | 15.1038627 | 15.10 | 2.6e-4 |
+| ⁴He | 28.295673 | 55.3732507 | 55.37 | 5.9e-5 |
+
+It carries no convention and never did. In a corpus whose whole point is keeping
+the comparison boundary clean, **calling the measured side a modelling assumption
+is the wrong direction of error.**
+
+**(ii) `VOL` carries no Markov parameter either.** It is a SnapPy triangulation
+output on a braid closure; nothing in its derivation touches `z`. So **the binding
+channel's convention migration is COMPLETE** — `tr_M` and `Q0` were the only
+convention-bearing inputs and both are migrated. There is no "D in the trace, C in
+the geometry".
+
+**(iii) But `VOL` is MISLABELLED, and the corpus said so on 2026-05-19.** Four live
+producers call it `Vol_hyp` / `VOL_HYP`
+(`gap_a3_overshoot_robustness_check.py`, `gap_a3_deuteron_A_D_overshoot.py`,
+`probes/gap_a3_plambda_bar_even_admissibility_probe.py`,
+`probes/gap_a4_cross_isotope_residual_probe.py`). But
+[`2026-05-19-delta-lambda-thread-closure.md`](2026-05-19-delta-lambda-thread-closure.md)
+says of 12.776 / 12.554, verbatim:
+
+> **Not legitimate hyperbolic volumes** (degenerate tetrahedra) … SnapPy's
+> **pseudo-volume** sum across the degenerate triangulation … a combinatorial-braid
+> invariant of the **simplification path**, NOT a Mostow-rigidity-protected
+> hyperbolic invariant.
+
+Same defect class as the **Λ-vs-Cl₂** trap this document's parent AGENTS.md records:
+right number, wrong name, and **the wrong name invites the wrong inference.**
+
+**(iv) And it is a DIFFERENT OBJECT from the `Vol` the owner retired.** The
+2026-08-29 ruling retires `Vol(6₂) = 4.40083251612` (the census-assigned Bloch leg)
+and rules the deuteron knot flat (`Vol = 0`). `VOL(D) = 12.776` is neither, and
+`12.776 / 4.40083 = 2.9031` is not an integer multiple. **So that ruling does not
+reach this input** — but an agent reading *"the deuteron binding is NOT a
+hyperbolic-volume term"* beside a variable named `Vol_hyp` will conclude it does.
+**I nearly did**, and stopping that inference is why this section exists.
+
+**What is therefore still open, and it is NOT a convention question:** whether a
+**Z-clustered pseudo-volume of a degenerate triangulation** is the right geometric
+input at all. `VOL(³He) == VOL(⁴He)` exactly while `VOL(D)` differs — clustering by
+`Z`, not by knot — which
+[`2026-06-05-gap-a4-L1-retrospective.md`](2026-06-05-gap-a4-L1-retrospective.md)
+already flagged as *"suggesting they're not the genuine Path B `Vol(K)`"*. That is
+a **modelling question for the owner**, not a migration.
+
+## 6c. 🛑 §3/§5(c) RESOLVED — with a NEGATIVE. `Δ^{(n)}` is not level-independent, and the tower factor names a hidden parameter
+
+Added 2026-09-12. §5(c) closed `qou-y3bm` leaving **one** hypothesis isolated: is
+`Δ^{(n)}` level-independent? **It is not — and the corpus already said so.**
+[`brane-tower-q-laplacian-decay-proof.md`](../../content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay-proof.md)
+Step 3 states an **equality**, not a bound:
+
+```
+|⟨e_k, Δ^{(n)} e_k⟩| = (λ_k^{(q)})^n ,      λ_k^{(q)} = [k]_q² · ℏ_q / L_q²
+```
+
+So `Δ^{(n)}` is the **n-th iterate of the q-Laplacian**. `towerSum_of_const` is a
+true theorem whose hypothesis this object does not satisfy — which is exactly what
+isolating the hypothesis was for.
+
+**The true sum is geometric in `ℏ_q²·λ_k`, not `ℏ_q²`**, and it equals the
+implemented `1/(1−ℏ_q²)` **iff `λ_k = 1`**. At the leading mode `[1]_q = 1`, so that
+pins
+
+```
+L_q = √ℏ_q = 0.314772482985
+```
+
+Three new sorry-free theorems in
+[`TowerGeometricSum.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/TowerGeometricSum.lean)
+(`lean`-direct exit 0, axioms `[propext, Classical.choice, Quot.sound]`):
+`towerSum_iterated`, `towerSum_iterated_eq_simple_iff`, `leadingMode_lam_eq_one_iff`.
+Probe:
+[`qbeta_e0_tower_lq_dependence_probe.py`](../../computations/qbeta/qbeta_e0_tower_lq_dependence_probe.py)
+(6/6).
+
+**So `qbeta_e0.tower_summed` DOES carry a hidden parameter — now named and priced.**
+`L_q` is the *q-deformed filament length*, a **free geometric scale**
+(`fluid-dynamics/discrete-vortex-spectrum`; the Kelvin derivation takes `L_q = L`,
+the period). The factor is a one-parameter family and the implemented value selects
+one member:
+
+| `L_q` | `λ₁` | tower factor | `E₀` (MeV) | vs implemented |
+|---|---|---|---|---|
+| **`√ℏ_q`  — implemented** | **1.0** | **1.00991452** | **4.22748336** | — |
+| `1` (Kelvin `L_q = L`, `L = 1`) | 0.09908172 | 1.00097365 | 4.19005705 | **−0.8853 %** |
+| `ℏ_q` | 10.0926795 | 1.10997858 | 4.64634966 | **+9.908 %** |
+| `q − 1/q` ( = `h`) | 2.26699408 | 1.02276209 | 4.28126303 | **+1.272 %** |
+
+**The choice of `L_q` is not a detail — it IS the effect.** The widest sampled
+departure is **9.908 %** against a *total* tower correction of **0.9915 %**.
+Convergence is not the issue (the divergence threshold is `L_q ≤ √(ℏ_q³) =
+0.0311882`, far below every plausible value); the **value** is.
+
+**🛑 And the tempting move is forbidden.** Picking `L_q = √ℏ_q` *because it
+reproduces the current `E₀`* is the selection-against-the-target the anti-fit
+directive forbids, one level up from the cell-ranking case in §2. Whether
+`√ℏ_q` is the right filament length is a **modelling question for the owner**.
+`qbeta_e0` is untouched by this probe.
+
 ## 7. What a next agent should do, in order
 
 1. **`qou-wfvl`** — put the element decision to the owner once #7212 lands. Highest value; subsumes the accuracy question.
-2. **`qou-46ys`** — migrate the binding/mass channel off convention C, or scope every figure it publishes as C-conditional. Largest unmeasured surface.
-3. **`qou-y3bm`** — derive the tower series, or record that it is assumed wherever `E₀` is quoted.
+2. ~~**`qou-46ys`** — migrate the binding/mass channel off convention C~~ **DONE**
+   (#7235, #7236 merged). The A3 overshoot **did not survive** it, and the
+   "remaining straddle" this list first named **does not exist** — see §6b. What
+   replaces it: the `Vol_hyp` **mislabelling** in four producers, and the open
+   modelling question of whether a Z-clustered pseudo-volume is the right
+   geometric input (owner call, not a migration).
+3. ~~**`qou-y3bm`** — derive the tower series~~ **DONE, then RESOLVED NEGATIVELY**
+   (§5(c) then §6c). The series is derived; its one remaining hypothesis is
+   **false**, and the factor instead pins `L_q = √ℏ_q` — a free scale. What
+   replaces it is an **owner modelling call**, not agent work: is `√ℏ_q` the right
+   q-deformed filament length? The choice moves `E₀` by up to 9.9 % against a
+   0.99 % total correction.
 4. **`qou-iagg`** — the second dashboard re-score, once a ladder exists on the `z_D` base.
 
 **Do not** rank routes by residual to choose among them (§2 is exactly why), and **do not**

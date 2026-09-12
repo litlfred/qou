@@ -74,6 +74,31 @@ _TBL = _json.loads(
     (_Path(__file__).resolve().parent / "canonical-mass-table-extended.witness.json"
      ).read_text())
 Q0 = mp.mpf(str(_TBL["q0Value"]))        # PROTON pin (owner ruling R2, 2026-08-15)
+# 🛑 THE NAME `Vol_hyp` IS WRONG, AND THE CORPUS SAID SO ON 2026-05-19.
+# 12.776 / 12.554 are NOT hyperbolic volumes. Per
+# `docs/audits/2026-05-19-delta-lambda-thread-closure.md`, verbatim: "Not
+# legitimate hyperbolic volumes (degenerate tetrahedra)", they are "SnapPy's
+# pseudo-volume sum across the degenerate triangulation", encoding "a
+# combinatorial-braid invariant of the simplification path, NOT a
+# Mostow-rigidity-protected hyperbolic invariant". They cluster by Z, not by knot
+# (Vol(3He) == Vol(4He) exactly), which `2026-06-05-gap-a4-L1-retrospective.md`
+# flags as "suggesting they are not the genuine Path B Vol(K)".
+#
+# WHY THE LABEL MATTERS, not just the number. The owner ruled on 2026-08-29 that
+# "the deuteron binding is NOT a hyperbolic-volume term", retiring
+# Vol(6_2) = 4.40083251612 and ruling the canonical closure flat (Vol = 0). An
+# agent reading that ruling beside a variable named `Vol_hyp` concludes the input
+# below is retired. IT IS NOT: 12.776 is neither 4.40083 nor 0, and
+# 12.776/4.40083 = 2.9031 is not an integer multiple, so the ruling does not reach
+# it. Same defect class as the Lambda-vs-Cl_2 trap AGENTS.md records -- right
+# number, wrong name, wrong inference invited.
+#
+# NOT RENAMED HERE. The identifier appears across 4+ producers and renaming is a
+# sweep, which needs asking (AGENTS.md 2026-09-07). The label is corrected in
+# place; the open question -- whether a Z-clustered pseudo-volume is the right
+# geometric input at all -- is a modelling call for the owner, NOT a convention
+# migration. Measured in
+# `computations/probes/a3_vol_is_pseudovolume_not_convention_probe.py` (7/7).
 VOL_D = mp.mpf("12.776")            # Vol_hyp(D), PR #787 Phase-3 (Z=1 cluster)
 # 🛑 VOL_D IS STILL A C-ERA ASSIGNMENT. The convention migration covers tr_M and
 # the anchor; a convention-D-consistent knot/volume assignment has NOT been

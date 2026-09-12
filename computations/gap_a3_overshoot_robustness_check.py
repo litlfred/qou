@@ -108,6 +108,31 @@ _BY_ZN = {(r["Z"], r["N"]): r["tr_M_q0_canonical_50dps"] for r in _TBL["data"]["
 # CONVENTION D, proton pin — read from the committed table, not hardcoded.
 TRM = {lbl: mp.mpf(_BY_ZN[zn])
        for lbl, zn in (("D", (1, 1)), ("3He", (2, 1)), ("4He", (2, 2)))}
+# 🛑 THE NAME `Vol_hyp` IS WRONG, AND THE CORPUS SAID SO ON 2026-05-19.
+# 12.776 / 12.554 are NOT hyperbolic volumes. Per
+# `docs/audits/2026-05-19-delta-lambda-thread-closure.md`, verbatim: "Not
+# legitimate hyperbolic volumes (degenerate tetrahedra)", they are "SnapPy's
+# pseudo-volume sum across the degenerate triangulation", encoding "a
+# combinatorial-braid invariant of the simplification path, NOT a
+# Mostow-rigidity-protected hyperbolic invariant". They cluster by Z, not by knot
+# (Vol(3He) == Vol(4He) exactly), which `2026-06-05-gap-a4-L1-retrospective.md`
+# flags as "suggesting they are not the genuine Path B Vol(K)".
+#
+# WHY THE LABEL MATTERS, not just the number. The owner ruled on 2026-08-29 that
+# "the deuteron binding is NOT a hyperbolic-volume term", retiring
+# Vol(6_2) = 4.40083251612 and ruling the canonical closure flat (Vol = 0). An
+# agent reading that ruling beside a variable named `Vol_hyp` concludes the input
+# below is retired. IT IS NOT: 12.776 is neither 4.40083 nor 0, and
+# 12.776/4.40083 = 2.9031 is not an integer multiple, so the ruling does not reach
+# it. Same defect class as the Lambda-vs-Cl_2 trap AGENTS.md records -- right
+# number, wrong name, wrong inference invited.
+#
+# NOT RENAMED HERE. The identifier appears across 4+ producers and renaming is a
+# sweep, which needs asking (AGENTS.md 2026-09-07). The label is corrected in
+# place; the open question -- whether a Z-clustered pseudo-volume is the right
+# geometric input at all -- is a modelling call for the owner, NOT a convention
+# migration. Measured in
+# `computations/probes/a3_vol_is_pseudovolume_not_convention_probe.py` (7/7).
 VOL = {"D": mp.mpf("12.776"), "3He": mp.mpf("12.554"), "4He": mp.mpf("12.554")}
 B_OVER_ME = {"D": mp.mpf("4.353"), "3He": mp.mpf("15.10"), "4He": mp.mpf("55.37")}
 ZN = {"D": (1, 1), "3He": (2, 1), "4He": (2, 2)}
@@ -233,9 +258,17 @@ def main():
         print("  🛑 SCOPE-(a), NOT (b) (AGENTS.md §'Before declaring refuted'):")
         print("    this is one pin, one convention, one knot/Vol assignment and one")
         print("    error model. It refutes the trend AS COMPUTED HERE. It does NOT")
-        print("    prove no atom-dependence exists — the Vol_hyp and B/m_e inputs")
-        print("    are unchanged C-era assignments, and a D-consistent knot")
-        print("    assignment has not been derived (that is bean qou-e5jf's arc).")
+        print("    prove no atom-dependence exists — Vol_hyp is still an")
+        print("    unchanged C-era assignment and a D-consistent knot assignment")
+        print("    has not been derived (bean qou-e5jf's arc).")
+        # CORRECTED 2026-09-12, same day: this said "the Vol_hyp and B/m_e inputs
+        # are unchanged C-era assignments". B_OVER_ME is NOT an assignment -- it
+        # is |-B/m_e| from the AME EXPERIMENTAL binding energies (2.224566 /
+        # 7.718058 / 28.295673 MeV over m_e, reproduced to <0.2%), i.e. the
+        # comparison target. It carries no convention. Naming it as a C-era input
+        # overstated the remaining straddle, and in a corpus whose whole point is
+        # keeping the comparison boundary clean, calling the measured side a
+        # modelling assumption is the wrong direction of error.
         print("    What is established is that the previous ROBUSTNESS argument")
         print("    fails on its own stated criterion.")
     else:

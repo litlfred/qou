@@ -2805,3 +2805,43 @@ family exists. Magnitude untouched. Composes with the existing
 `the_pn_bond_is_an_average_and_cannot_be_extremal_probe`, which established the
 ordering `L_pp < L_pn < L_nn`; this adds what it means for the `b_3 > 0` requirement
 specifically, which that probe predates.
+
+## 2026-09-12 — class D order-zero leg: the UIC per-block log measured (`qou-zlra`, PR #7230)
+
+Row D of the escape enumeration asked whether any corpus functional outside the
+product-additive class can carry the two-bond correlation a valley needs. #7223
+closed the additive class by theorem; the ONE functional outside it was
+`prop:unified-iterative-correction`'s per-block log, unmeasured because the
+production call exceeded 300 s per atom.
+
+Measured now, A = 3..8, every Z, k_exact = 4..9 (36 cells), proton pin,
+convention D, mpmath end to end.
+
+**It IS outside the additive class.** Third difference in Z nonzero in every
+cell, GATED AND UNGATED alike — so the non-additivity is the per-block log
+itself, not the Pass-2 selector. Mechanism proved sorry-free
+(`QOU/Mass/UICPerBlockLogPairTerm.lean`): a two-branch block trace has
+non-multiplicativity defect `wP*wM*(x-y)^2`, which under convention D is exactly
+`wP(q)` and is INDEPENDENT OF BOTH BOND OFFSETS.
+
+**Nothing comes through it.** No valley: argmax_Z does not track N=Z (it
+coincides in only 3 of 36 cells, never at more than one tier per A -- it is not
+true that it never lands there), sits at an endpoint in 15 of 36, and is not
+converged in k_exact. The functional also has the wrong SIGN and the wrong
+A-scaling before the Z-shape is reached. And the one FORCED fact points the wrong way — the
+all-pairs symmetry curvature `L_pp + L_nn - 2 L_pn = +0.0435` is positive
+(`symmetryCurvature_pos`, sorry-free, holds for every q > 1 given
+`deltaPN_nonneg`), so the additive part makes the symmetric nucleus the LEAST
+bound.
+
+`qou-brng` STAYS OPEN (rule 13a): the extensive-term coefficient/mechanism is
+untouched by this. What is closed is the order-zero leg of row D, and it closes
+for a DIFFERENT reason than the additive class — the additive class cannot carry
+a pair term at all, whereas this one can and does, but carries the wrong shape
+and the wrong sign.
+
+Note for whoever picks row D up: the UIC layout is the COMPLETE GRAPH
+(`_step_chain_generic` crosses each nucleon with every previous one), which
+`QOU.Mass.CoordinationSaturation.complete_graph_no_saturation` already refutes
+on saturation grounds. So even a valley found here would have sat on an excluded
+layout.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:02:10Z
-updated_at: 2026-09-12T12:33:09Z
+updated_at: 2026-09-12T18:06:52Z
 ---
 
 
@@ -118,3 +118,74 @@ an unresolved collision, not a mechanical task).
       A = 3..8 across Z with a real budget (> 300 s per atom at A = 4 here) and
       report argmax_Z per A; compare against the UIC-shaped single-block rows
       of the probe.
+
+---
+
+## 2026-09-12 — the last leg: the UIC per-block log, measured (PR #7230)
+
+PR #7223 answered the headline question — the `+c_k / -c_k` sign is EMPTY for
+every product-additive functional, so the live binding law `E0*log(tr_free/tr_atom)`
+cannot carry the pair term whatever sign it takes. It left one item: the third
+possibility this bean's own checklist named, `B_lambda = m_e H_q(lambda) u_lambda
+(ln|tr M_lambda| - ln d_lambda)` -- a LOG, and a log of a SINGLE Wedderburn block,
+which is not multiplicative over the word even when the total is. The production
+call exceeded 300 s per atom and the scan was recorded as unmeasured.
+
+Measured now: A = 3..8, every Z, k_exact = 4..9 (36 cells), proton pin,
+convention D, mp.dps = 70, mpmath end to end, reading the gated and ungated
+totals as `mpf` from the per-step rows so the producer's float64 boundary cast
+is never taken.
+
+### The answer, both halves
+
+**(1) The per-block log IS outside the additive class.** Third difference in Z
+nonzero in every cell -- GATED AND UNGATED alike, which is the decisive
+decomposition: the non-additivity is the functional, not the Pass-2 selector.
+
+The discriminator is the THIRD difference and not the second, because
+`_step_chain_generic` (hecke_core_legacy.py:1622-1630) crosses each nucleon with
+every PREVIOUS one, so the UIC word is the ALL-PAIRS layout, on which
+`n_pn = Z(A-Z)` makes even a census-affine functional exactly quadratic in Z.
+Proved sorry-free: `census_secondDiff`, `census_thirdDiff`.
+
+Mechanism, exact and proved: a two-branch block trace has non-multiplicativity
+defect `T2(d1,d2) - T(d1)T(d2) = wP*wM*(x-y)^2`, which under convention D's
+normalisation is exactly `wP(q) = 0.75270211325196540159`, INDEPENDENT OF BOTH
+BOND OFFSETS (verified to 2.1e-70 over 25 offset pairs including two arbitrary
+rationals). For n crossings, `log|tr_n|` factorises through ONE multiplicative
+statistic -- a nonlinear function of an additive quantity, which is exactly how
+a per-block log leaves the additive class.
+
+**(2) It still gives no valley.** argmax_Z does NOT track N = Z -- it coincides
+with N=Z in only 3 of the 36 cells and never at more than one truncation order
+per A (it is NOT true that it never lands there; that weaker claim is the
+correct one), it sits at an ENDPOINT in 15 of 36, and it has not converged in
+k_exact. Before any of that the functional gets the SIGN of the binding wrong
+(negative for every atom, reproducing 2026-09-05-uic-sign-forced-by-gate) and
+the A-scaling wrong (|B| falls 4.81 -> 3.71 MeV across 2H..4He while AME rises
+2.22 -> 28.30, a factor 12.7). And the one FORCED fact
+points the wrong way: the all-pairs symmetry curvature
+`L_pp + L_nn - 2 L_pn = +0.04351846501566097275` is POSITIVE, so the additive
+part makes the symmetric nucleus the LEAST bound -- an anti-valley. That sign
+holds for every q > 1 (`symmetryCurvature_pos`, sorry-free), not just at q0,
+because convention D's pn letter is the pp/nn average shifted upward
+(`ChainTraceFactor.deltaPN_nonneg`).
+
+### A finding this bean did not ask for: the block and the producer disagree
+
+`unified-iterative-correction.md` and `hecke_core_legacy.py` describe DIFFERENT
+functionals, in three ways: the block's `u_lambda` is named an LP shadow price
+which the producer's own `lp_shadow_price` docstring disclaims ("solves no
+program"); the producer carries an extra q-Laplacian resolvent `rho_lambda(hbar_q)`
+the block never mentions; and the block says "sums these strictly over all
+lambda" while the producer sums only the Pass-2 gated subset (the producer's own
+note measures 3.4-4.6x between them). Reported, not resolved -- picking one
+would be choosing a functional.
+
+### Status
+
+The bean's three checklist items are all discharged: the combination rule was
+read (it is a log, per-block, gated, with a resolvent); the sign question is
+empty for the additive class (#7223) and, for this non-additive one, is not a
+convention at all but a computed quantity whose forced component has the
+anti-valley sign. Nothing is wired; nothing is fitted; AME enters nowhere.
