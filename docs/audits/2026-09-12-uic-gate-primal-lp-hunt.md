@@ -390,3 +390,48 @@ same unmerged branch. Creating it here would mint a second copy that conflicts o
 merge, so the append was posted as a comment on PR #7237 instead
 (`#7237#issuecomment-5648945079`). `qou-zlra` and `qou-brng` are on `main` and
 were appended normally. All three stay **open** per AGENTS.md rule 13a.
+
+---
+
+## 11. Measured results
+
+`computations/probes/uic_gate_vs_lp_complementary_slackness_probe.py`,
+`mp.dps = 70`, proton pin `q₀ = 1.109978582751380807591669`, convention D
+`z_D = 0.6126880371464652515958299`. **12 assertions, all passed.**
+
+### The gate, read from the producer
+
+| atom | blocks | kept by the gate | ungated total (MeV) | gated total (MeV) | non-zero kept blocks |
+|---|---|---|---|---|---|
+| ²H | 10 | **4** | `−0.41221219224502691` | `−0.089559683058950681` | `(2,1,1)` |
+| ⁴He | 10 | **2** | `−0.27423977161740013` | `−0.080586748477691433` | `(2,2)`, `(3,1)` |
+
+The kept *identities* are not exported by the producer (`final_tr_sign` is
+local), so they were recovered by matching subset sums of the per-step per-block
+deltas against the gated total and intersecting over all matching subsets. They
+reproduce the identities stated independently in the task framing, which is a
+check on the method rather than a coincidence.
+
+### The LP, on the same ten blocks
+
+| atom | target | active | `y_0*` | duality gap |
+|---|---|---|---|---|
+| ²H | 0.05·S … 0.95·S (5 targets) | **9 of 10**, every target | `0.0346905` | `1.4e-43` … `1.1e-40` |
+| ⁴He | 0.05·S … 0.95·S (5 targets) | **9 of 10**, every target | `0.0129979` | `2.8e-43` … `8.2e-42` |
+
+Solved through `lp_dual_solver.solve_operator_selection_lp`, clarabel-MPFR
+backend at `prec_bits = 167`. The witness carries `y0_star`, `y_star`,
+`active_set`, `primal_obj`, `dual_obj` and `duality_gap` at the solver's 50-dps
+decimals — not its f64 duplicates, which is what the raw-float64 ratchet catches
+and which an earlier draft of this probe tripped with 240 fields.
+
+**The comparison.** The gate keeps 4 and 2; the LP activates 9 and 9. They do not
+coincide at any target, for either atom. Under outcome (a) they would have had to.
+
+### Gates
+
+| gate | result |
+|---|---|
+| `precision-gates.sh --changed` | **NEW dirty witnesses: 0** at both ratchets; zero occurrences of this branch's probe, witness or Lean file anywhere in the output. The tree-wide RED is pre-existing (`qou-v0t8`) and is not from this branch. |
+| `check-sidecars.sh` | only the pre-existing `docs/precision-goals.md:82` ⚠ |
+| `lean`-direct | exit 0; `#print axioms` clean on all 8 declarations |
