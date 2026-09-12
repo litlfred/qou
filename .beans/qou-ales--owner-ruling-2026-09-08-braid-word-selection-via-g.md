@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-11T15:53:41Z
+updated_at: 2026-09-12T10:26:56Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -46,3 +46,10 @@ Instantiating SDPSelected at H_3 over the gamma-gamma candidate set (Lean siblin
 
 ## 2026-09-11 — step 3 landed on PR #7192 (branch claude/ales-step3-h3-sdp-selector-2026-09-11, stacks on #7184)
 Lean QOU/Mass/GammaGammaSelectorH3.lean (26 theorems, no sorryAx): inside H_3 every gamma-gamma word is (sigma_0 sigma_1^-1)^k; PSD feasibility of a gamma-gamma word reduces to the (2,1) block; the single vertex is NOT Matrix.PosSemidef (off-diagonals q b vs -b/q, b^2 = [3]/[2]^2 > 0 derived); the literal SDPSelected selects the empty word under crossing-count cost. Probe gamma_gamma_h3_psd_selector_probe.py (proton pin, 60 dps, 8/8): literal reading -> identity only; form / Frobenius-positivity readings -> minimal NON-ZERO survivor k = 3 = beta_Bor (nucleon) and G^3 = (sigma_2 sigma_3^-1)^3 (pp bond); with G^3 the log-law diproton is UNBOUND, B_pp = -0.004469 MeV vs template +2.0710 MeV (scope-(a); recorded on qou-vbyi). OPEN, owner call: which reading of PSD the confinement SDP means on braid words (a word's image is never self-adjoint, so the literal reading admits no non-trivial word). Bean stays in-progress. Audit: docs/audits/2026-09-11-gamma-gamma-word-selection-step3.md.
+
+
+## 2026-09-12 — step 3 MERGED (#7192 → main 6a593ed858, 6/6 replayed); steps 1+2 merged earlier (#7184 → 4605571fda). Bean stays in-progress.
+What is on main: Lean QOU/Mass/GammaGammaWordSelection (step 1) and QOU/Mass/GammaGammaSelectorH3 (step 3), both sorry-free; probes frobenius_admissibility_net_row_probe (0/4238 under D, scope-(a)) and gamma_gamma_h3_psd_selector_probe (8/8; literal PSD selects only the identity, form/Frobenius readings select k = 3 = beta_Bor and the pp bond G^3, under which the diproton is unbound by 4.47 keV, scope-(a)); audit records 2026-09-08-…-step1.md and 2026-09-11-…-step3.md. The binding scale is named E_0^full at every point of use (sibling #7188 flagged the 0.99 % E_0 name collision with the Q_beta base E_0^(N=0); register-derived fix, bfb7585871).
+Cross-support from #7188 (qbeta_option_e_construction_freedom_probe.py, scope-(a)): re-reading the existing nucleon recipe is exhausted — 37,459,422,000 ordering pairs over 6 multisets, 0 within ±780 ppb of Q_beta, nearest 187× outside — so a closing element must be derived from elsewhere, which is what gamma-gamma + SDP selection is. Level 1 is order-blind (monoidHom_order_blind), so the selector's result is a level-2 (z_D) statement.
+STILL OPEN, owner call (asked in chat 2026-09-11, unanswered): which reading of PSD the confinement SDP means on a braid word — literal Matrix.PosSemidef (never met by a non-trivial word, w* = reverse(w)), symmetric-part PSD, or Frobenius positivity chi_lambda >= 0 on y_lambda > 0 blocks (constraint (1) of prop:confinement-sdp; my recommendation). Default while unanswered: words stay template-assigned; the records stand as scope-(a).
+NEXT (step 4, branch claude/ales-step4-vertex-order-2026-09-12): the k >= 2 non-symmetry, formalize-first — (i) at q = 1 the vertex is the 3-cycle s_0 s_1 of S_3, so V^3 = 1 exactly there; the k = 3 survivor at q_0 is its q-deformation (within 0.11 of the identity), which is WHY B_pp is only 4.5 keV; (ii) for real 2x2 V with det V = 1 and |tr V| < 2, V^k symmetric ⇔ V^k = ±1, so the literal reading admits a non-trivial gamma-gamma word in H_3 iff some V^k = ±1, i.e. iff theta/pi is rational with cos theta = tr V / 2.
