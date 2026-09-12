@@ -7,7 +7,32 @@ levels `r = 1` (the augmentation, `z = q`) and `r = 2` (`z_D = q³/(q²+1)`) —
 `QOU.QBeta.ConventionDAdmissibleRoots` and `QOU.SchurWeyl.WenzlWeightLevelR`.
 
 *Option E* is the proposal to keep an admissible functional and change the
-**element**. The compute probe
+**element**.
+
+**🟧 OWNER RULING, 2026-09-08 (`2a13dbd85d`), verbatim "A. z_D — follow D7":
+`ε := the Markov trace at z_D`, i.e. level 2.** The base is `0.4447004` MeV,
+`-43.157 %` against CODATA, recorded as a documented honest miss. Nothing below
+is invalidated by it — admissibility is still exactly the two levels, and the
+ruling *selects* between them — but three things are re-weighted, and the
+re-weighting is the reason this note is here rather than in a PR body:
+
+1. **`conventionD_not_multiplicative` is now load-bearing, not a side remark.**
+   The canonical `ε` is the one that is NOT multiplicative, so under the ruling
+   braid ORDER is a live degree of freedom for the observable.
+2. **`monoidHom_order_blind` becomes a statement about a NON-canonical
+   functional**, and its value changes accordingly: it explains why the
+   augmentation route looked deceptively insensitive to modelling choices — all
+   sixteen readings of the properties blocks' recipe share one level-1 number —
+   and therefore why agreement there was never evidence about the element.
+3. **The acceptance test goes one-sided.** With `ε` pinned there is no second
+   endpoint to run to, so `endpoints_not_roots_of_brackets` is stronger than the
+   ruling now needs. What remains is that every candidate the corpus has built
+   UNDERSHOOTS at level 2 — measured `-15.451 %` (gen-grouped) to `-43.157 %`
+   (`Δ_S`) — so a closing element needs a strictly LARGER `|tr_{z_D}|`, by
+   `×1.1828` in the best case and `×1.7592` for `Δ_S`.
+
+Those multipliers are arithmetic on the measured residuals, not theorems, and
+they are deliberately not dressed as theorems here. The compute probe
 `computations/qbeta/qbeta_option_e_required_level_probe.py` measured that every
 candidate `Δ` the corpus has built fails the test, and produced two structural
 statements that are not about any particular candidate. This file proves those,
