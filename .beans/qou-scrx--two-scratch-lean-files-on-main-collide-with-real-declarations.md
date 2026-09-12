@@ -1,11 +1,11 @@
 ---
 # qou-scrx
 title: Two scratch_*.lean files on main duplicate real declarations — 6 collisions, 0 importers
-status: todo
+status: completed
 type: task
 priority: medium
 created_at: 2026-08-30T08:00:00Z
-updated_at: 2026-09-02T22:07:14Z
+updated_at: 2026-09-12T07:18:15Z
 ---
 
 Found while running the `/prepare-merge` §4a duplicate-declaration gate on the
@@ -233,3 +233,53 @@ strictly redundant.
 
 The `ℤ[q^{±1}]` coefficient ring — `R` is still an arbitrary `CommRing`. That
 is the remaining half of `qou-skgn` route (3), recorded in the module docstring.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — the subject is DONE; the ratchet half rests on a wrong premise and is unreachable here. CLOSING.
+
+**Part 1 (delete both files): done, verified two independent ways.**
+
+* Neither `QOU/scratch_pmass.lean` nor `QOU/scratch_skein.lean` is on
+  `origin/main` (`git ls-tree -r origin/main`). Deleted by `9684dbd281c`
+  (2026-09-03).
+* An independent FQN scanner (namespace-stack walk over all 42,271 declarations
+  under `QOU/`) reports **0 duplicated FQNs involving a scratch file**. That is
+  the instrument-independent half of the finding and it agrees.
+
+**The hadron restriction was PRESERVED, not lost.** This bean and `qou-skgn`
+conflicted — one said delete, the other said keep `scratch_skein.lean` as the
+corpus's only hadron-restricted statement. The fix resolved it by doing the
+work: `HadronSkeinResolution` + `hadron_mem_adjoin_of_complexity_eq` now live in
+`QOU/Torsion/skein_generation.lean`, derived rather than projected.
+
+**Part 2 (lower `--baseline` 57 → 51) is NOT actionable, for three separate
+reasons — recording them rather than silently dropping it:**
+
+1. **Wrong file.** The bean says
+   `.claude/skills/local/prepare-merge-auto.md §4a`. That file contains no
+   `baseline` string and no §4a. The live gate is
+   `.claude/commands/prepare-merge.md:558`.
+2. **The arithmetic 57 − 6 is wrong.** It assumed 6 scratch collisions. The fix
+   commit measured **2** (both from `scratch_skein.lean`; `scratch_pmass.lean`
+   had already been namespaced one level deeper by the `qou-kfcl` fix and no
+   longer collided). Its own message says "THE COUNT IN qou-scrx IS STALE BY 4".
+3. **The gate's instrument is not in this checkout.**
+   `scripts/check-duplicate-decls.ts` is PIN-HIDDEN — it lives in
+   `folio-assistant` and was added *after* `.folio-assistant-pin`, which
+   `scripts/bean-dangling-path-audit.py` cause 6 names explicitly. So the
+   baseline cannot be re-measured here at all.
+
+**And my own scanner is NOT a substitute.** It reports **131** duplicated FQNs
+against the gate's baseline of 57 and the fix commit's 62 — a different
+instrument, so its number must not be used to re-calibrate a threshold
+belonging to a tool I cannot run. Proposing a `--baseline` edit off it would be
+the detector-blindness trap, not a fix.
+
+**What would settle it:** run
+`bun run <folio-assistant>/scripts/check-duplicate-decls.ts --package qou` after
+`scripts/setup-folio-assistant.sh`, and lower the baseline to whatever it
+reports — from the gate's own instrument, never from a hand-rolled scan. Left
+unfiled as a separate bean because it is one command on a pin advance, not a
+tranche.

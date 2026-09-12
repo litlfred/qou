@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: medium
 created_at: 2026-08-30T08:20:00Z
-updated_at: 2026-09-02T21:58:32Z
+updated_at: 2026-09-12T07:19:03Z
 ---
 
 Found on `origin/main` while diffing the `qou-scrx` collision pairs. Not a
@@ -160,3 +160,55 @@ formalised", so the file no longer reads as stronger than it is.
 
 **No cascade from this change**: the block stays a `proposition`, so nothing
 propagates. Its `lean.ref` (`qou:QOU.Torsion.skein_generation`) is unchanged.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — routes (1)/(2) are settled; route (3) is now ONE item, not two. STAYING OPEN.
+
+**The self-assuming projection is gone.** `178eb9533cc` took route (2), the
+§3b-cond item-5 remedy: `SkeinGenerationContext` no longer carries
+`generation_top` (the block's own conclusion) but the INPUTS —
+`complexity : Skein → ℕ`, `base`, and a `resolve` producing a `Finset` of
+strictly simpler elements. `skein_generation` is a strong induction on
+`complexity`; `skein_generation_top` — the `= ⊤` statement that used to BE the
+hypothesis — is now a CONSEQUENCE. Verified on the live file.
+
+**Route (1) is permanently off the table, and the measurement is worth keeping.**
+Transitive closure over `uses[]`: `prop:skein-generation` has **437 downstream
+blocks**, of which **63 propositions, 5 theorems, 3 lemmas** would be forced to
+demote under §3b, plus 44 proof blocks becoming remarks — ~115 provable blocks,
+including `thm:knot-mass-formula-unified`, `prop:categorical-proton-*`,
+`prop:markov-trace-*`, `prop:three-calibration-discipline` and the mass-formula
+spine. The bean had recommended (1) as "cheap and reversible" *in the same
+breath as* recording the blast radius as unmeasured. It was 115 blocks.
+
+**Route (3) has HALVED, and this bean did not know it.** The commit's closing
+note listed two survivors — no hadron restriction, no `ℤ[q^{±1}]` coefficient
+ring. The **hadron restriction has since been formalised**, in the very next
+commit (`9684dbd281c`, same timestamp, the `qou-scrx` fix):
+`HadronSkeinResolution` + `hadron_mem_adjoin_of_complexity_eq` in
+`QOU/Torsion/skein_generation.lean` — a content-bearing class with `base` and
+`resolve` required only of hadrons and **producing** hadrons (so the induction
+cannot leave the restricted class), and a genuine strong induction. Derived, not
+projected: this is the thing `scratch_skein.lean` got right in subject and wrong
+in method.
+
+**And the file's own docstring said otherwise for 9 days.** §"What is still NOT
+formalised" claimed no hadron restriction and named `QOU/scratch_skein.lean` as
+the closer copy — a file the same commit had DELETED, and a gap the same commit
+had CLOSED 140 lines below the paragraph asserting it. Two commits landed in one
+push; the second obsoleted a paragraph in the first and nothing re-read it.
+Corrected 2026-09-12 (`d31d86ed5fb`, `lean -DautoImplicit=false -s 65536`
+exit 0); the section now reads three of four content words carried.
+
+**What is actually left — one item.** `R` is an arbitrary `CommRing`; the
+narrative says coefficients in `ℤ[q^{±1}]`. That is a real formalisation, not a
+rename: it means instantiating over `LaurentPolynomial ℤ` and showing the
+resolution's coefficients stay there, which neither copy in the corpus has ever
+had. Not a projection defect and not a §3b-cond violation — the file is honest
+about it — so it does not block anything; it bounds how strong the Lean may be
+read as being.
+
+**Staying open on that one item.** Per rule 13a the recording of an openness is
+not its completion.
