@@ -1,11 +1,11 @@
 ---
 # qou-keu7
 title: 'TRAP: checkout -B from origin/main silently discards beans committed on the old branch'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-30T10:41:27Z
-updated_at: 2026-08-30T10:42:09Z
+updated_at: 2026-09-12T08:17:42Z
 ---
 
 ## TRAP — measured, 2026-08-30, cost: two beans lost from main for ~40 minutes
@@ -167,3 +167,66 @@ stating plainly: git blocks a checkout that would overwrite *uncommitted*
 changes. The silent loss happens only for work that is **committed on the branch
 and absent from the target** — which is why it is invisible, and why `git status`
 is clean afterwards.
+
+
+---
+
+## VERIFIED 2026-09-12 — the guard is wired, passes its selftest, and FIRES on live state. CLOSING.
+
+This bean's own lesson is *"a gate nobody invokes is documentation"*, so the
+close is on three measurements, not on the fix commit's say-so.
+
+**1. Wired.** `scripts/prebranch-bean-loss-warn.sh` is the **7th** `PreToolUse`
+hook in `.claude/settings.json` (the bean says "sixth"; a `tolerance-tautology`
+guard landed since).
+
+**2. Passes its own selftest — 13 cases, all green.**
+
+```
+added bean detected      -> YES     silent with nothing new  -> YES
+modified bean detected   -> YES     unknown base is silent   -> YES
+matcher: 9/9 ok  (4 must-fire forms; 5 must-NOT-fire, incl. all three
+                  quoted-mention shapes the narrowing fix added)
+PASS
+```
+
+The must-not-fire rows are the fix commit's subject made executable — a
+`git commit -m 'docs: explains git checkout -b claude/foo origin/main'`, a
+`grep -rn "git checkout -b …"`, and an `echo "run git switch -c …"` all
+correctly stay silent.
+
+**3. Fires on THIS session's live state**, which is the test that matters —
+a selftest passes in a fixture, and the bean's whole point is behaviour in the
+real tree. Given `git checkout -B claude/cool-johnson-t1wveh origin/main`:
+
+```
+WOULD VANISH (exist only on this branch — 3):
+  qou-3jdl, qou-cl8m, qou-w942
+WOULD REVERT to the base's version (34):
+  qou-0z4i, qou-16yn, qou-46ab, qou-47nf, qou-4un2, qou-54g5, …
+```
+
+Two of those three are beans **I opened this session**. So the guard would have
+caught, in advance, precisely the loss this bean records — including the
+second-order half, since `WOULD REVERT` covers the modified-body case that
+`git add -A` cannot re-stage.
+
+### 🛑 My own error, recorded because it would make the next agent call this guard dead
+
+My first live test **piped the hook's JSON to stdin** and got `exit 0`, silent,
+against 37 diverging bean files. I was one step from filing "the guard does not
+fire". It reads `CMD="${*:-}"` — **positional arguments, not stdin** — so the
+empty `CMD` hit the cheap pre-filter and exited before any git work.
+
+That is a false negative produced entirely by the invocation, and it is
+indistinguishable from a broken guard by exit code alone. **Invoke it as
+`./scripts/prebranch-bean-loss-warn.sh "<the command>"`.** The `--selftest`
+path is the reliable check precisely because it bypasses the question.
+
+### What stays true regardless
+
+The **detection rule** in this bean is still the thing to reach for by hand —
+`git merge-base --is-ancestor <old-remote-tip> HEAD`, exit 1 meaning the old tip
+carries something `main` does not. The hook covers the `checkout -B` path; that
+one-liner covers any other way a branch gets restarted, and it is what found the
+original loss.
