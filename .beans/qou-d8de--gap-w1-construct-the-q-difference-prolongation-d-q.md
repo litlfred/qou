@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-09-08T05:01:14Z
+updated_at: 2026-09-12T11:01:35Z
 ---
 
 
@@ -250,3 +250,50 @@ before hand-rolling an operator -- is unchanged and is now better founded: four
 tranches have each closed a way of hand-rolling one.
 
 Audit: `docs/audits/2026-09-08-w1-palindromic-involution-lifts-and-is-elliptic.md`.
+
+
+## Route 3's spectral-curve reading is closed (2026-09-12, `qou-ar4v`, PR #7208)
+
+The "honest next step" of this bean was: *import the q-difference D-module framework
+from the literature before attempting routes 1–2.* Done, from the sources this corpus
+holds (RSZ Astérisque 355 §2.1.1; DVRSZ §2.4–2.5).
+
+**The framework's input is a difference field `(K, σ)`, and a system is read modulo a
+TWISTED gauge** — DVRSZ eq. (2.4.1), `B = (σ_q F)⁻¹ A F`, **not** conjugation. That
+single fact decides the obvious instantiation:
+
+- `F = z^k·1` gives `A ↦ q^{-k}A`, and a scalar multiple **moves** the characteristic
+  cubic (`X^{3−k}` coefficient picks up `t^k`).
+- Stability of ANY monic cubic under `X ↦ tX` forces
+  `a₀(1−t³) = a₁t(1−t²) = a₂t²(1−t) = 0`; at any non-root-of-unity `t` — every real
+  `t > 1`, so every `q₀^{-k}` — all three non-leading coefficients **vanish**.
+- So **the only gauge-stable monic cubic is `X³ = 0`**, and Σ is not it: its `z = 0`
+  fibre is `X³+X²+X+1`.
+
+**Consequence for obstruction (ii) of this bean.** The bean states the geometric heart
+as *"a single-valued `D_q` on the jet bundle requires CHOOSING A BRANCH of the `z↦qz`
+correspondence on Σ."* Taken with #6769 and #7185 (no base automorphism preserving the
+branch locus has infinite order) and with this tranche (no fibre motion preserves the
+cubic), the honest restatement is stronger: **there is no branch to choose.** The
+difficulty is not selection, it is non-existence — for the reading in which Σ carries
+the structure.
+
+**What is still open, and it is now a sharper question than before.** Route 3 is NOT
+dead. A q-difference module over `(ℂ(z), σ_q)` is a perfectly good object, and this
+corpus already uses RSZ that way for scalar kernels
+(`docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md`). What has been removed is
+the reading everything upstream was pointing at. So the question this bean now carries
+is:
+
+> **If Σ is not the spectral curve of the q-difference module, what is it?**
+
+Candidates the framework itself offers, none tested: Newton polygon / slope data, the
+Birkhoff connection matrix, the bundle on the Tate curve `E_q = ℂ*/q^ℤ` (RSZ §6.3) —
+noting that Σ is itself genus 1 (#7114) with its elliptic involution identified
+(#7185), so a comparison of the two elliptic structures is available and has not been
+made. Treat any numerical coincidence between them as suspect until derived.
+
+**The bridge remains an assumption.** *"The sought `D_q` would have Σ as its spectral
+curve"* is what `λ_SW = X dz` sets up, but it is a hypothesis, carried as one in the
+Lean and the probe. A tranche that gives Σ a different role in the module is not
+obstructed by any of this. `D_q` is still NOT constructed.
