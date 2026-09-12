@@ -289,7 +289,124 @@ directive forbids, one level up from the cell-ranking case in §2. Whether
    replaces it is an **owner modelling call**, not agent work: is `√ℏ_q` the right
    q-deformed filament length? The choice moves `E₀` by up to 9.9 % against a
    0.99 % total correction.
-4. **`qou-iagg`** — the second dashboard re-score, once a ladder exists on the `z_D` base.
+4. **`qou-pdix`** — the `α` eigenphase carrier. This is the REAL blocker: no
+   ladder can be rederived on the `z_D` base without it, so it gates item 5.
+   **Attack B (the Faddeev modular double) is now pruned — see §8**, which also
+   splits route 5 and hands you a two-sided bracket on the carrier's steepness.
+   The live target is the step-② holonomy; measure its log-slope against 2.176
+   before attempting a closed form.
+5. **`qou-iagg`** — the second dashboard re-score, once a ladder exists on the
+   `z_D` base. Blocked behind `qou-pdix`, and that is a genuine dependency.
 
 **Do not** rank routes by residual to choose among them (§2 is exactly why), and **do not**
 quote the 337 429× (§1).
+
+## 8. The ladder blocker itself — attack B on `qou-pdix`, and route 5 SPLITS
+
+§1's decomposition put **1312×** of the Q_β miss on the *missing ladder* and 257×
+on the functional. The ladder cannot be rederived on the `z_D` base until
+`qou-pdix` — the `α` eigenphase carrier — has one, so `qou-pdix` is the real
+blocker behind item 4 of §7, and `qou-iagg` sits behind it as a genuine
+dependency rather than a scheduling accident.
+
+`qou-pdix`'s route table has one survivor, **route 5 (a transcendental
+construction)**: the required phase is transcendental over `ℤ[q,q⁻¹]`, which
+closes routes 2–4 in one stroke, and route 1 was already pruned numerically.
+Route 5 named four candidates — *"a q-exponential, Faddeev's `Φ_q`, a
+holonomy/monodromy, a matrix exponential"*. **Attack B tested the second.**
+
+### 8.1 Two independent negatives
+
+**B1 — inversion-as-a-bridge is EXCLUDED, scope-(b), with a proved invariant.**
+The mechanism was that `Φ_b`'s modular duality `b ↦ 1/b` (with `q = exp(iπb²)`,
+`q̃ = exp(iπ/b²)`) carries the fibre-level `|q| = 1` elliptic regime, where an
+eigenphase is natural, over to the real `q > 1` substrate where the ladder is
+evaluated. But the two regimes are cut out by
+
+| regime | condition on `b²` |
+|---|---|
+| fibre / elliptic, `\|q\| = 1` | `b²` **real** (`arg b = 0`) |
+| substrate, `q` real positive | `b²` **imaginary** (`arg b = π/4`) |
+
+and `z ↦ 1/z` fixes **both** the real axis and the imaginary axis setwise. Each
+locus maps into itself; neither is reachable from the other. Six sorry-free
+theorems in `QOU/QBeta/ModularDoubleLocusSeparation.lean`
+(`modular_cannot_bridge` and its symmetric twin being the payload;
+`loci_inter_eq_zero` rules out passing through a shared point, since the loci
+meet only at `b² = 0` and `FaddeevPhi.hb`'s `0 < Re b` excludes it).
+
+**The separation is the corpus's own.** `FaddeevPhi`'s class docstring already
+draws this line and records that only one side is discharged — *"on the
+`Im b² > 0` substrate branch this is discharged by the modular-double product …
+the `|q| = 1` fibre regime, real `b`, remains open."* Worth flagging as a trap:
+`hb : 0 < b.re` reads like a mild positivity hypothesis and is in fact what keeps
+the two branches apart.
+
+**B2 — `q̃` as a carrier is pruned on the ladder's SECOND target number,
+scope-(a).** This is the finding that generalises. The required phase is pinned
+by two numbers, not one:
+
+```
+P(q0)       = 1.997259194490263    (± 5.7e-7 relative)
+|P'/P|(q0)  = 2.176                (~4 figures)
+```
+
+`q̃ = exp(±π²/ln q)`, so `|d ln q̃/dq| = π²/(q ln²q) = 816.73` at `q₀`:
+
+| candidate | `\|P'/P\|(q₀)` | verdict |
+|---|---|---|
+| `[2]_q` | 0.0937 | 23.2× too flat |
+| `2 − 3h⁴` | 0.0996 | 21.8× too flat |
+| `χ^(2,1)(𝓑₃)` | 0.1018 | 21.4× too flat |
+| `tr M_4_1` | 1.7363 | 1.25× too flat |
+| **target** | **2.176** | — |
+| **`q̃` (modular dual)** | **816.73** | **375.3× too STEEP** |
+
+**So the target is bracketed: `1.7363 < 2.176 < 816.73`.** The declared Laurent
+forms are all too flat; the modular-dual scale is far too steep. Branch-independent
+— the two `arg b` branches flip the sign of `ln q̃`, not the slope — so this is a
+fact about the modular-dual *scale*, not a convention choice.
+
+That bracket is **reusable**: it says the carrier's steepness is *intermediate*,
+which is a positive constraint on route 5 rather than one more exclusion.
+
+### 8.2 Route 5 splits, and `Φ_b` is NOT pruned
+
+```
+5a  modular-double / q~ family ...... PRUNED (B1 mechanism, B2 magnitude)
+5b  holonomy / monodromy family ..... OPEN — unchanged, and it IS branch 3
+```
+
+Per *Before declaring "refuted"*, the scope-(b) exclusion must not over-narrow.
+`Φ_b`'s `b`-shift relation `Φ(z − ib/2) = (1 + exp(2πbz))·Φ(z + ib/2)` carries no
+`exp(−1/t)` non-perturbative scale at all — its prefactor is an ordinary
+exponential in `z` — so B2's overshoot does not touch it. `Φ_b` stays a live
+transcendental **ingredient** for 5b. What is excluded is the *inversion* as a
+bridge and `q̃` as a *carrier*.
+
+**And the obvious next move is a fit, so it is named rather than taken:** the
+shift prefactor's log-slope in `q` depends on `z`, so `z` is a dial that could be
+set to hit 2.176. That is selection against the target, banned outright by
+§NO FITTING. `z` has to come out of the braiding.
+
+### 8.3 The most useful output is a pointer, not a prune
+
+Branch 3 / 5b is the Kohno–Drinfeld / KZ picture — and `qou-pdix`'s own
+2026-08-22 entry already noted that **the canonical chain invokes exactly that
+shape at step ②, "Yekutieli non-abelian Stokes."** With the bracket, the target
+for the next agent is much narrower than "derive `α`":
+
+- the carrier is a **holonomy** of the step-② connection — not a character value
+  (excluded by rationality) and not a modular-dual scale (excluded by B1/B2);
+- it must land at `P(q₀) = 1.99726` with `|P'/P| = 2.176`, i.e. **intermediate
+  steepness**;
+- `z`, or whatever plays its role, must be **derived** from the braiding.
+
+**Concrete next step:** compute the holonomy log-slope of the step-② non-abelian
+Stokes connection at `q₀` and check it against 2.176 **before** attempting any
+closed form. That is the formalize-first move — one number, and it either
+brackets or it does not.
+
+`qou-pdix` remains **OPEN**. Attack B removed two candidate mechanisms and left
+the gap where it was. PR #7252; probe
+`computations/qbeta/qbeta_pdix_modular_double_locus_probe.py` (13/13).

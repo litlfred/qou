@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-12T20:43:29Z
+updated_at: 2026-09-12T22:08:06Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1740,3 +1740,128 @@ A is the better structural fit but risks circularity.
 `qou-cds1`, which waits on this. The dashboard's `Q_β`/`m_n`/`Δ_pn` rows are
 base-only at ~1.7e+8 ppb precisely because no ladder exists on an admissible base;
 on the retired `z = 1` base the ladder was worth 1312×.
+
+
+## 2026-09-12 — attack B (the Faddeev MODULAR DOUBLE): pruned twice over. Route 5 SPLITS.
+
+Owner asked for attack B. Result: **two independent negatives, and route 5 now
+has internal structure** — its candidate list splits into a modular-double family
+(pruned here) and the holonomy family (branch 3, untouched). qou-pdix STAYS OPEN.
+
+PR #7252. Probe 13/13:
+`computations/qbeta/qbeta_pdix_modular_double_locus_probe.py`
+Lean sorry-free: `QOU/QBeta/ModularDoubleLocusSeparation.lean`
+
+### B1. Inversion-as-a-bridge — EXCLUDED, scope-(b), proved invariant
+
+Attack B's mechanism was that `Phi_b`'s duality `b -> 1/b` (with `q = exp(i pi b^2)`,
+`q~ = exp(i pi / b^2)`) carries the fibre-level `|q| = 1` elliptic regime, where an
+eigenphase is natural, over to the real `q > 1` substrate where the ladder is
+evaluated. The two regimes are cut out by
+
+    fibre / elliptic  |q| = 1          <->  b^2 REAL       (arg b = 0)
+    substrate         q real positive  <->  b^2 IMAGINARY  (arg b = pi/4)
+
+and `z -> 1/z` fixes BOTH the real axis and the imaginary axis setwise. Each locus
+maps into itself; neither is reachable from the other. On the substrate branch
+inversion's only motion is to flip `sign(Im b^2)`, sending the PhiBProd-supported
+`Im b^2 > 0` branch to its own reflection.
+
+Six sorry-free theorems (lean-direct exit 0, `-DautoImplicit=false -s 65536`,
+PAPER olean tree, 0 warnings, axioms `[propext, Classical.choice, Quot.sound]`):
+`fibre_inv_mem`, `substrate_inv_mem`, `substrate_inv_im_neg`,
+`loci_inter_eq_zero` (the loci meet only at `b^2 = 0`, which `FaddeevPhi.hb`'s
+`0 < Re b` excludes — no shared point to pass through), `modular_cannot_bridge`,
+`modular_cannot_bridge'`.
+
+**THIS SEPARATION IS ALREADY IN THE CORPUS — I did not discover it, I walked into
+it.** `FaddeevPhi`'s own class docstring draws exactly this line and records that
+only one side is discharged: *"on the `Im b^2 > 0` substrate branch this is
+discharged by the modular-double product — see QOU.MathlibExt.PhiBProd; the
+`|q| = 1` fibre regime, real `b`, remains open."* Anyone reaching for inversion as
+a bridge is reaching across a boundary the class definition already draws. Worth
+recording as a trap: the class's `hb : 0 < b.re` reads like a mild positivity
+hypothesis and is in fact the thing that keeps the two branches apart.
+
+### B2. `q~` as a CARRIER — pruned on the SECOND target number, scope-(a)
+
+This is the finding that generalises, and it is the first use I have made of
+section D's `|P'/P|` constraint against a non-Laurent candidate. Target:
+
+    P(q0)       = 1.997259194490263    (+/- 5.7e-7 relative)
+    |P'/P|(q0)  = 2.176                (~4 figures)
+
+`q~ = exp(+- pi^2 / ln q)`, so `|d ln q~/dq| = pi^2/(q ln^2 q) = 816.73` at q0.
+
+    [2]_q                0.0937     23.2x too flat
+    2 - 3h^4             0.0996     21.8x too flat
+    chi^(2,1)(B_3)       0.1018     21.4x too flat
+    tr M_4_1             1.7363     1.25x too flat
+    TARGET               2.176        --
+    q~ (modular dual)  816.73      375.3x too STEEP
+
+**So the target is BRACKETED: basket max 1.7363 < 2.176 < 816.73.** The declared
+Laurent forms are all too flat; the modular-dual scale is far too steep. The
+overshoot is branch-independent (the two `arg b` branches flip the sign of
+`ln q~`, not the slope), so this is a fact about the modular-dual SCALE and not a
+convention choice. Cross-checked closed form vs central difference to 15 digits.
+
+That bracket is a reusable filter: it says the carrier's steepness is
+intermediate, which is a real constraint on route 5 and not merely another
+exclusion.
+
+### ROUTE 5 SPLITS — update the route table's reading, not its rows
+
+Route 5 ("TRANSCENDENTAL construction") named four candidates: *"a q-exponential,
+Faddeev's Phi_q, a holonomy/monodromy, a matrix exponential."* Those are not
+interchangeable. After this session:
+
+    5a  modular-double / q~ family ...... PRUNED (B1 mechanism, B2 magnitude)
+    5b  holonomy / monodromy family ..... OPEN — unchanged, and it IS branch 3
+
+Rows 1-4 and 6 are untouched.
+
+### WHAT IS DELIBERATELY NOT PRUNED — `Phi_b` survives as an INGREDIENT
+
+Per "Before declaring refuted", a scope-(b) exclusion must not over-narrow.
+`Phi_b`'s `b`-shift relation
+
+    Phi(z - i b/2) = (1 + exp(2 pi b z)) * Phi(z + i b/2)
+
+carries NO `exp(-1/t)` non-perturbative scale — its prefactor is an ordinary
+exponential in `z`, so B2's 375x overshoot does not touch it. `Phi_b` remains a
+live transcendental ingredient for 5b/branch 3. What is excluded is the
+INVERSION as a bridge and `q~` as a carrier.
+
+### AND THE NEXT MOVE IS A FIT — naming it rather than taking it
+
+The shift prefactor's log-slope in `q` depends on `z`, so `z` is a dial that can
+be set to hit 2.176. That is selection against the target, banned outright by
+§NO FITTING. `z` has to come out of the braiding.
+
+### THE SHARPEST THING THIS SESSION FOUND IS A POINTER, NOT A PRUNE
+
+Branch 3 / 5b is the Kohno-Drinfeld / KZ picture, and this bean's own 2026-08-22
+entry already noted that **the canonical chain invokes exactly that shape at
+step ②, "Yekutieli non-abelian Stokes."** Combined with the bracket above, the
+target for the next agent is much narrower than "derive alpha":
+
+  - the carrier is a HOLONOMY of the step-② connection, not a character value
+    and not a modular-dual scale;
+  - it must land at `P(q0) = 1.99726` with `|P'/P| = 2.176` — intermediate
+    steepness, between the Laurent basket and the modular-dual scale;
+  - `z` (or whatever plays its role) must be DERIVED from the braiding, since
+    fitting it is what is being refused.
+
+The concrete next step I would take: compute the holonomy log-slope of the
+step-② non-abelian Stokes connection at q0 and check it against 2.176 BEFORE
+attempting any closed form. That is the formalize-first move — the slope is one
+number and it either brackets or it does not.
+
+Two traps for the next agent, both cost me time here:
+  - **A bare `lean` is a WEAKER check than `lake`.** Without `-DautoImplicit=false`
+    this file's first draft would have auto-bound rather than errored.
+  - **`LEAN_PATH` must put the PAPER tree FIRST.** With `scripts/lean-direct-env.sh`
+    alone the ROOT tree shadows it and the import fails on a Mathlib olean that is
+    present in the paper tree and absent from the root one — and the error names a
+    root-tree path, so it reads like a missing dependency rather than a shadowing.
