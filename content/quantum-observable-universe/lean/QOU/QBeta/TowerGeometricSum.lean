@@ -108,9 +108,77 @@ theorem towerSum_le_of_uniform_bound {q : ℝ} (hq : 1 < q) (Δ : ℕ → ℝ) (
   rw [abs_mul, abs_of_nonneg (pow_nonneg hlb _)]
   exact mul_le_mul_of_nonneg_left (hM n) (pow_nonneg hlb _)
 
+/-! ## 🛑 RESOLVED 2026-09-12: the hypothesis of `towerSum_of_const` is FALSE
+
+`qou-y3bm` left one gap — is `Δ^{(n)}` level-independent?  It is **not**, and the
+corpus already said so.  `prop:brane-tower-q-laplacian-decay`'s Step 3 states an
+**equality**, not a bound:
+
+    |⟨e_k, Δ^{(n)} e_k⟩| = (λ_k^{(q)})^n ,      λ_k^{(q)} = [k]_q² ℏ_q / L_q²
+
+so `Δ^{(n)}` is the **n-th iterate of the q-Laplacian** and its eigenvalue grows
+(or decays) geometrically in `n`.  `towerSum_of_const` is a true theorem whose
+hypothesis this object does not satisfy.
+
+The true sum is therefore geometric in `ℏ_q² · λ_k`, not in `ℏ_q²`
+(`towerSum_iterated` below), and it **coincides with `1/(1 - ℏ_q²)` exactly when
+`λ_k = 1`** (`towerSum_iterated_eq_simple_iff`).  At the leading mode `k = 1`,
+`[1]_q = 1`, so `λ_1 = ℏ_q / L_q²` and `λ_1 = 1` iff
+
+    L_q = √ℏ_q .
+
+**So `qbeta_e0.tower_summed` does carry a hidden parameter after all, and it is
+now named: it fixes the q-deformed filament length to `√ℏ_q`.**  That is a choice,
+not a derivation — `L_q` is a free geometric scale (`fluid-dynamics/discrete-vortex-spectrum`
+calls it "the q-deformed filament length"; the Kelvin-dispersion derivation takes
+`L_q = L`, the period).  The honest statement is that the tower factor is a
+one-parameter family in `L_q` and the implemented value selects one member.
+-/
+
+/-- **The tower of an ITERATED residual.**  With `Δ^{(n)}` the `n`-th iterate,
+eigenvalue `lam ^ n`, the tower is geometric in `ℏ_q² · lam`. -/
+-- `1 < q` is deliberately ABSENT: the linter flagged it unused, and it is -- the
+-- geometric sum needs only `0 ≤ ℏ_q² · lam < 1`, so the theorem is STRONGER
+-- without it and holds wherever the ratio is admissible, not only above the
+-- substrate. Keeping an unused hypothesis would understate it.
+theorem towerSum_iterated {q : ℝ} (lam : ℝ) (hlam : 0 ≤ lam)
+    (h : hbarQ q ^ 2 * lam < 1) :
+    ∑' n : ℕ, hbarQ q ^ (2 * n) * lam ^ n = (1 - hbarQ q ^ 2 * lam)⁻¹ := by
+  have hr0 : (0:ℝ) ≤ hbarQ q ^ 2 * lam := mul_nonneg (sq_nonneg _) hlam
+  have hpow : ∀ n : ℕ, hbarQ q ^ (2 * n) * lam ^ n = (hbarQ q ^ 2 * lam) ^ n := by
+    intro n
+    rw [mul_pow, ← pow_mul, Nat.mul_comm]
+  calc ∑' n : ℕ, hbarQ q ^ (2 * n) * lam ^ n
+      = ∑' n : ℕ, (hbarQ q ^ 2 * lam) ^ n := tsum_congr hpow
+    _ = (1 - hbarQ q ^ 2 * lam)⁻¹ := tsum_geometric_of_lt_one hr0 h
+
+/-- **The implemented factor `1/(1 - ℏ_q²)` is the `lam = 1` member of that
+family, and only that one.**  So adopting it is adopting `λ_k = 1`. -/
+theorem towerSum_iterated_eq_simple_iff {q : ℝ} (lam : ℝ)
+    (hne : hbarQ q ^ 2 ≠ 0) :
+    (1 - hbarQ q ^ 2 * lam)⁻¹ = (1 - hbarQ q ^ 2)⁻¹ ↔ lam = 1 := by
+  constructor
+  · intro h
+    have h' := inv_inj.mp h
+    have hstep : hbarQ q ^ 2 * lam = hbarQ q ^ 2 * 1 := by
+      rw [mul_one]; linarith
+    exact mul_left_cancel₀ hne hstep
+  · intro h; rw [h, mul_one]
+
+/-- At the leading mode `[1]_q = 1`, so `λ_1 = ℏ_q / L_q²`, and `λ_1 = 1` pins
+`L_q² = ℏ_q`.  Stated on `L_q²` so no square root is needed. -/
+theorem leadingMode_lam_eq_one_iff {q Lq : ℝ} (hL : Lq ≠ 0) :
+    hbarQ q / Lq ^ 2 = 1 ↔ Lq ^ 2 = hbarQ q := by
+  have hL2 : Lq ^ 2 ≠ 0 := pow_ne_zero 2 hL
+  rw [div_eq_one_iff_eq hL2]
+  exact ⟨fun h => h.symm, fun h => h.symm⟩
+
 /-- The gap between the two results above, as a statement rather than a comment:
 a uniform bound does NOT give level-independence.  Witnessed by an alternating
-residual, which is uniformly bounded by `1` and not constant. -/
+residual, which is uniformly bounded by `1` and not constant.
+
+(Still true and still the right statement — but note the ACTUAL residual is not
+merely non-constant, it is `lam ^ n`; see `towerSum_iterated`.) -/
 theorem uniform_bound_not_const :
     ∃ Δ : ℕ → ℝ, (∀ n, |Δ n| ≤ 1) ∧ ¬ (∀ n, Δ n = Δ 0) := by
   refine ⟨fun n => (-1 : ℝ) ^ n, fun n => ?_, ?_⟩

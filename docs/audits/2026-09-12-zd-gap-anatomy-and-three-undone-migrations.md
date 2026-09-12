@@ -219,6 +219,61 @@ input at all. `VOL(³He) == VOL(⁴He)` exactly while `VOL(D)` differs — clust
 already flagged as *"suggesting they're not the genuine Path B `Vol(K)`"*. That is
 a **modelling question for the owner**, not a migration.
 
+## 6c. 🛑 §3/§5(c) RESOLVED — with a NEGATIVE. `Δ^{(n)}` is not level-independent, and the tower factor names a hidden parameter
+
+Added 2026-09-12. §5(c) closed `qou-y3bm` leaving **one** hypothesis isolated: is
+`Δ^{(n)}` level-independent? **It is not — and the corpus already said so.**
+[`brane-tower-q-laplacian-decay-proof.md`](../../content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay-proof.md)
+Step 3 states an **equality**, not a bound:
+
+```
+|⟨e_k, Δ^{(n)} e_k⟩| = (λ_k^{(q)})^n ,      λ_k^{(q)} = [k]_q² · ℏ_q / L_q²
+```
+
+So `Δ^{(n)}` is the **n-th iterate of the q-Laplacian**. `towerSum_of_const` is a
+true theorem whose hypothesis this object does not satisfy — which is exactly what
+isolating the hypothesis was for.
+
+**The true sum is geometric in `ℏ_q²·λ_k`, not `ℏ_q²`**, and it equals the
+implemented `1/(1−ℏ_q²)` **iff `λ_k = 1`**. At the leading mode `[1]_q = 1`, so that
+pins
+
+```
+L_q = √ℏ_q = 0.314772482985
+```
+
+Three new sorry-free theorems in
+[`TowerGeometricSum.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/TowerGeometricSum.lean)
+(`lean`-direct exit 0, axioms `[propext, Classical.choice, Quot.sound]`):
+`towerSum_iterated`, `towerSum_iterated_eq_simple_iff`, `leadingMode_lam_eq_one_iff`.
+Probe:
+[`qbeta_e0_tower_lq_dependence_probe.py`](../../computations/qbeta/qbeta_e0_tower_lq_dependence_probe.py)
+(6/6).
+
+**So `qbeta_e0.tower_summed` DOES carry a hidden parameter — now named and priced.**
+`L_q` is the *q-deformed filament length*, a **free geometric scale**
+(`fluid-dynamics/discrete-vortex-spectrum`; the Kelvin derivation takes `L_q = L`,
+the period). The factor is a one-parameter family and the implemented value selects
+one member:
+
+| `L_q` | `λ₁` | tower factor | `E₀` (MeV) | vs implemented |
+|---|---|---|---|---|
+| **`√ℏ_q`  — implemented** | **1.0** | **1.00991452** | **4.22748336** | — |
+| `1` (Kelvin `L_q = L`, `L = 1`) | 0.09908172 | 1.00097365 | 4.19005705 | **−0.8853 %** |
+| `ℏ_q` | 10.0926795 | 1.10997858 | 4.64634966 | **+9.908 %** |
+| `q − 1/q` ( = `h`) | 2.26699408 | 1.02276209 | 4.28126303 | **+1.272 %** |
+
+**The choice of `L_q` is not a detail — it IS the effect.** The widest sampled
+departure is **9.908 %** against a *total* tower correction of **0.9915 %**.
+Convergence is not the issue (the divergence threshold is `L_q ≤ √(ℏ_q³) =
+0.0311882`, far below every plausible value); the **value** is.
+
+**🛑 And the tempting move is forbidden.** Picking `L_q = √ℏ_q` *because it
+reproduces the current `E₀`* is the selection-against-the-target the anti-fit
+directive forbids, one level up from the cell-ranking case in §2. Whether
+`√ℏ_q` is the right filament length is a **modelling question for the owner**.
+`qbeta_e0` is untouched by this probe.
+
 ## 7. What a next agent should do, in order
 
 1. **`qou-wfvl`** — put the element decision to the owner once #7212 lands. Highest value; subsumes the accuracy question.
@@ -228,7 +283,12 @@ a **modelling question for the owner**, not a migration.
    replaces it: the `Vol_hyp` **mislabelling** in four producers, and the open
    modelling question of whether a Z-clustered pseudo-volume is the right
    geometric input (owner call, not a migration).
-3. **`qou-y3bm`** — derive the tower series, or record that it is assumed wherever `E₀` is quoted.
+3. ~~**`qou-y3bm`** — derive the tower series~~ **DONE, then RESOLVED NEGATIVELY**
+   (§5(c) then §6c). The series is derived; its one remaining hypothesis is
+   **false**, and the factor instead pins `L_q = √ℏ_q` — a free scale. What
+   replaces it is an **owner modelling call**, not agent work: is `√ℏ_q` the right
+   q-deformed filament length? The choice moves `E₀` by up to 9.9 % against a
+   0.99 % total correction.
 4. **`qou-iagg`** — the second dashboard re-score, once a ladder exists on the `z_D` base.
 
 **Do not** rank routes by residual to choose among them (§2 is exactly why), and **do not**
