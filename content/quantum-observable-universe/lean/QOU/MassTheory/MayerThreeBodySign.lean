@@ -44,24 +44,40 @@ Three things this does *not* depend on, which is the whole point:
   (bean `qou-302y`, the interface scale being ~2.70× too large) is a *magnitude*
   question and cannot bear on this sign either.
 
-## What it excludes
+## What it excludes — re-scoped 2026-09-12 (bean `qou-rwhv`)
 
-Scope **(b)**, invariant named: positivity of a product of positive bond
-factors. It excludes **the multiplicative assembly `W = 1 − ∏f` as the source of
-the three-body term, at any `fpn ≤ 2/3`** — for every edge set, every like-pair
-typing, every convention, and every energy scale.
+Scope **(b)**, invariant named: **the Ursell alternation `(−1)^{n−1} φᵀ_n ≥ 0` on
+bond factors in `(0,1)`**, proved at `n = 3` in strict form as
+`QOU.MassTheory.UrsellPartitionFunctionB3.phi3_pos`. It excludes **the
+multiplicative assembly `W = 1 − ∏f` as the source of a positive three-body
+term, for every bond triple in `(0,1)³`** — every edge set, every like-pair
+typing, every convention, every energy scale, and **no threshold**.
 
-The framework's own derived `fpn` is below the threshold in all four
-combinations the 2026-08-29 probe measured (convention D and the excised C,
-under both the `probe2` and `chi` typings) — the largest of them being
-`fpn = z_D = 0.6126880…` against `2/3 = 0.6666…`. `chi_typing_below_threshold`
-records that comparison; the companion probe carries all four at 50 dps.
+This file's own bound is weaker than that, and the reason is worth keeping on
+record. `b3_le_of_nonneg` uses only `P₃ ≥ 0`, which leaves `P₃` free and yields
+the escape `fpn > 2/3` of `lt_of_b3_pos`. Once `P₃` is the bond product the
+escape closes: `b₃(f,f,f) = −(1−f)²(f+2)` (`b3corpus_uniform_closed_form`,
+`b3corpus_uniform_eq_mayerSign` ties the two `b₃`s on the nose), and for
+non-uniform bonds `b₃ = −φᵀ₃ < 0` (`b3corpus_neg`). The threshold reading —
+"clear `fpn > 2/3` or abandon `1 − ∏f`" — is therefore withdrawn: **there is no
+`fpn` that clears it.** `chi_typing_below_threshold` stays as the recorded
+comparison; it is no longer the operative bound.
 
-So the defect is located **upstream of any weight**: it is in the assembly, not
-in the body-order coefficients `a_D^(n)`. A replacement must change the
-functional form, not the edge set, the typing, or the scale. Equivalently, the
-falsifiable target for any replacement is that it clear `fpn > 2/3` or abandon
-`1 − ∏f`.
+What the sign *is*: `b₃ = −φᵀ₃` is the third Mayer coefficient of
+`−ln(Ξ/Ξ_free)` for the hard-core lattice gas on the nucleon sites with the
+interface-letter traces as pair weights (`UrsellPartitionFunctionB3`,
+`docs/audits/2026-09-12-ursell-partition-function-for-b3.md`). That expansion
+carries `−φᵀ_T` at every order, so the negative sign here is the classical one.
+The 2026-08-30 reading of it as "a missing `(−1)^{n−1}`" is withdrawn: restoring
+that factor is the same expansion at negative activity
+(`restored_eq_neg_activity`), and names no ensemble.
+
+So the defect is still located **upstream of any weight** — in the assembly, not
+in the body-order coefficients `a_D^(n)` — but the falsifiable target for a
+replacement is now sharper: within the Mayer vocabulary a positive connected
+three-body term at positive activity needs a bond factor **above `1`** (an
+attractive channel, `g > 0`), which no letter of the production word has
+(scope (a), measured); outside it, a non-Mayer assembly.
 
 Stated over an ordered field per AGENTS.md §7c — the ordering is genuinely
 needed, the content is the inequality. Nothing else archimedean appears.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:39:42Z
-updated_at: 2026-09-12T05:04:43Z
+updated_at: 2026-09-12T05:36:15Z
 ---
 
 ## Where this came from
@@ -147,3 +147,21 @@ Audit rewritten: `docs/audits/2026-08-30-ursell-alternating-sign-and-the-b3-obst
 
 ---
 **Takeover 2026-09-12** (session claude/ursell-partition-function-b3-2026-09-12). Attacking §"What would settle it": exhibit (or refute) the trace-side partition function whose Mayer expansion has the corpus b3 as its third Ursell coefficient — polymer set, weight g = mu_bond − 1, compatibility, canonical ensemble. Formalize-first Lean under QOU/MassTheory/, then an exact probe under computations/, then audit doc 2026-09-12-ursell-partition-function-for-b3.md.
+
+
+
+---
+# 🛑 RESOLVED AGAIN 2026-09-12 — the partition function exists, and it REVERSES the sign reading above (PR #7198)
+
+**The answer to §"What would settle it".** Polymer set = the nucleons of one fixed nucleus; hard-core activity `z_i` per site; pair weight `mu_e = z_D + d_e` = the interface-letter trace (0.61269 pp / 0.50823 pn / 0.40363 nn, proton pin, convention D); Mayer variable `g = mu − 1`; compatibility = the Mayer graph expansion on the word's bond set; ensemble = **grand canonical over the sub-clusters** of the fixed nucleus:
+`Xi_S(z) = SUM_{T ⊆ S} z^T PROD_{e ⊆ T} mu_e`, with `PROD mu = tr_M(atom)/tr_M(free)` re-measured on the LIVE alternating-core word to 2.5e-60 at A = 2,3,4. `ln Xi = SUM z^T phi^T_T` verified symbolically through n = 4. The corpus cumulants are Boolean-lattice inversions of `1 − Z` (= minus the no-isolated-vertex graph sum); the Ursell functions are partition-lattice inversions of `Z` (connected graphs); they coincide iff n ≤ 3, and at n = 4 differ by exactly the three perfect matchings (`b4corpus_eq`). That is the closed form of the 400/400 + 200/200 above.
+
+**The sign.** `B = −alpha ln(Xi/Xi_free)` has Mayer coefficients `−phi^T_T` at EVERY order, so the corpus's `b2 = −phi2 > 0`, `b3 = −phi3 < 0` **is the Mayer expansion**. `phi^T_3 > 0` on (0,1)³ strictly (`phi3_pos`), hence `b3 < 0` for every triple — **no 2/3 threshold** (`b3(f,f,f) = −(1−f)²(f+2)`). The "restore (−1)^(n−1)" prescription in the section above is EXACTLY the same expansion at negative activity `z → −z` (`restored_eq_neg_activity`) and names no ensemble; it chose one sign per order against the data. **§"The consequence" above is withdrawn.** The fixed-A (canonical) partition function is the top coefficient `Z_S`, whose log is exactly pairwise (ln-cumulant 1e-60) — `PairwiseCumulantVanishing` and `MayerThreeBodySign` are the canonical / grand-canonical faces of one lattice gas, neither with a sign error.
+
+**Magnitudes, no fit, sign WRONG at both:** Mayer 3rd coefficient at the live chain bonds, alpha-scaled: **−1.2277 MeV (3H)** vs AME +1.8081; **−0.7973 MeV (3He)** vs AME +1.0443 (68–83 % in magnitude). The 2.2511 / 2.7439 MeV above reproduce exactly and are negative-activity coefficients.
+
+**Scope (b), invariant = Ursell alternation on (0,1).** Not excluded (scope a): an attractive Mayer channel (a letter with trace > 1 — none in the production word, measured), or a non-Mayer assembly. Per-block `chi_lambda` ratios are NOT the bond factor (worst dev 1.45 on 2H): the identification is tr_M-only.
+
+Lean `QOU/MassTheory/UrsellPartitionFunctionB3.lean` — lean-direct exit 0, 13 decls, no sorryAx. Probe `computations/probes/ursell_partition_function_for_b3_probe.py` 11/11. Audit `docs/audits/2026-09-12-ursell-partition-function-for-b3.md`. `MayerThreeBodySign.lean` docstring re-scoped on the same branch; AGENTS.md bullet 4 wording proposed in the PR body.
+
+**Still open:** the extensive term itself (`qou-brng`) — this closes the vocabulary question, not the magnitude.
