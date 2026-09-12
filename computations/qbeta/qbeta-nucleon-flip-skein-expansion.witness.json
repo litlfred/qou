@@ -1,0 +1,132 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T12:23:58.595612+00:00",
+  "commitSha": "e8c04d2b49fd5c0a492e5d3ed8964d5a73dd3765",
+  "assertions": [
+    {
+      "name": "exactly_two_slots_differ",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "2 — NOT one; the one-letter reading is false"
+    },
+    {
+      "name": "both_shifts_are_minus_one_half",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "each retyped letter picks up the SAME central scalar s = −h/2"
+    },
+    {
+      "name": "three_term_expansion_is_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "|direct − expansion| = 7.7788e-62 at 60 dps"
+    },
+    {
+      "name": "residual_still_minus_15_4514_pct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "-15.451387 % — matches the merged Option-E witness exactly"
+    },
+    {
+      "name": "one_letter_reading_is_refuted",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "neither single-smoothing candidate is within 10 % of Δ; the one-letter reading is not a rounding difference, it is wrong"
+    },
+    {
+      "name": "smoothed_words_are_shorter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "11 → 10 → 9 crossings"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "qbeta-nucleon-flip-skein-expansion",
+  "scriptFile": "qbeta_nucleon_flip_skein_expansion_probe.py",
+  "scriptHash": "9c2dd0a90fd1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nucleon_flip_skein_expansion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nucleon_flip_skein_expansion_probe.py"
+  },
+  "description": "beta-decay flips ONE quark, which retypes TWO of a nucleon's three pair-crossings, each by the same central scalar s = -h/2. Delta is therefore an exact three-term expansion s(S_A + S_B) + s^2 S_AB in the proton word with one and both flavour crossings smoothed, verified to 60 dps. Corrects this author's earlier one-letter claim, which CHECK 4 refutes numerically. Changes no number.",
+  "data": {
+    "markov_convention": "D — the ruled functional, z_D = q^3/(q^2+1)",
+    "q0_anchor": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "differing_slots": [
+      {
+        "gen": 0,
+        "index": 3,
+        "flat": 3,
+        "p": "0",
+        "n": "-1/2"
+      },
+      {
+        "gen": 1,
+        "index": 3,
+        "flat": 10,
+        "p": "-1/2",
+        "n": "-1"
+      }
+    ],
+    "central_shift_s": "-0.104530149397819657715423106565",
+    "smoothed_traces": {
+      "S_A": "1.27109700000602825846665016142",
+      "S_B": "0.272140495670614205339571623302",
+      "S_AB": "0.301910575057136212529371375253"
+    },
+    "delta": {
+      "direct": "-0.158016004341491298055061430273",
+      "three_term_expansion": "-0.158016004341491298055061430273",
+      "abs_gap": "7.7787691e-62",
+      "s_term": "-0.161314845979396504865080121471",
+      "s2_term": "0.00329884163790520681001869119864",
+      "s2_over_s_pct": "2.044970888"
+    },
+    "residual_pct_unchanged": "-15.4513867335",
+    "one_letter_reading_refuted": {
+      "minus_h_times_S_A": "-0.2657359186195010164424576",
+      "minus_h_times_S_B": "-0.05689377333929199328770269",
+      "nearest_rel_error_pct": "63.99492977"
+    }
+  },
+  "caveats": [
+    "🛑 CORRECTION OF THIS AUTHOR'S OWN EARLIER CLAIM. PR #7212's title, body, the Lean docstring and a comment on this PR all said the two nucleon words 'differ in exactly one letter: a single sigma becomes a single sigma^-1'. Wrong at the letter level. The COUNTS it was read off -- (1,2,0) vs (0,2,1) -- are correct and unchanged; the reading was wrong because the preserved ud count is a cancellation, not an absence of change. CHECK 4 refutes the one-letter reading numerically rather than merely retracting it.",
+    "Changes no number. The residual is -15.451387 %, identical to the merged Option-E witness, because this is an exact rewriting of the same element rather than a new model. Nothing downstream moves.",
+    "Scope-(a): measured on the census typed-crossing multisets in the gen-grouped ordering. two_shift_expansion is proved for ANY two slots carrying a common central shift; that the nucleon words are in that shape is read off _GEN_CHAINS and re-verified here, not proved.",
+    "The expansion does NOT reduce the open question to a solved one. It restates Delta in terms of 10- and 9-crossing traces; whether those are more tractable, or connect to the mass channel's own words, is not claimed."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
