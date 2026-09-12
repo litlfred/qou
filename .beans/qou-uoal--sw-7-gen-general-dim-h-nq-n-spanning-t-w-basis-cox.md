@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-11T00:33:45Z
-updated_at: 2026-08-18T16:06:15Z
+updated_at: 2026-09-12T20:10:19Z
 parent: qou-59vq
 ---
 
@@ -45,3 +45,26 @@ Note (n+1)! because Hecke ... n = classical H_{n+1} (n generators, n+1 strands).
 ## CLOSED (verified 2026-08-18 by the originating session)
 finrank_le_factorial : Module.finrank K (Hecke K q qi n) ≤ (n+1)! is SORRY-FREE on main (HeckeCoset.lean, 441 lines). Verified lean-direct exit 0 + #print axioms -> [propext, Classical.choice, Quot.sound] (no sorryAx) for finrank_le_factorial, span_cosetFam_eq_top, span_mul_gen_mem.
 KEY: the closure came via RIGHT-multiplication (span_mul_gen_mem + descProd_mul_σ_of_{add_lt,add_eq,add_eq_succ,le_add}) rather than the left-mult framing this bean originally scoped — r_j·σ_i reductions are tractable where σ_i·r_j was not. Child gap qou-j6f9 also completed. The general spanning half of the Iwahori-Hecke basis theorem is DONE.
+
+
+--------
+**2026-09-12: the closing note above is STALE. The lower bound is done.**
+
+This bean's CLOSED section ends "Lower bound dim>=(n+1)! needs general Hoefsmit
+(qou-im9l)". That is no longer true, and the note is load-bearing: it is what a
+reader consults for the state of the Iwahori-Hecke basis theorem, and it sent a
+2026-09-12 session (bean qou-p8yg) looking to BUILD something that is on main.
+
+  QOU/SchurWeyl/HeckeWedderburnGeneral.lean:77
+    finrank_hecke_eq_factorial : Module.finrank K (Hecke K q q^-1 n) = (n+1)!
+
+is the EQUALITY -- both bounds -- for [Field K] [CharZero K], q != 0,
+NotRootOfUnity q. Sorry-free, measured raw and code-stripped (0 sorry, 0 axiom
+declarations). Per its own docstring the lower half is NOT proved by hand and does
+NOT need Hoefsmit: it is forced by heckeProduct_surjective onto the Wedderburn block
+product (finrank_blocks_eq_factorial <- sum_dLambda_sq <- RSK-Burnside). The
+docstring says explicitly that the Groebner-Shirshov route (qou-auq3) "is not on the
+critical path for this statement".
+
+The bean stays COMPLETED -- its own subject, the spanning half, was and is done.
+This note corrects only the forward-looking remark about what remained.
