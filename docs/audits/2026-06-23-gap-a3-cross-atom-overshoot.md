@@ -31,9 +31,17 @@
 > **🛑 Scoped (a), not (b)** (AGENTS.md §"Before declaring refuted"): one pin,
 > one convention, one knot/Vol assignment, one error model. This refutes the
 > trend **as computed**; it does **not** prove no atom-dependence exists —
-> `Vol_hyp` and `B/m_e` remain C-era assignments and a D-consistent knot
-> assignment is not derived (`qou-e5jf`). What *is* established is that the
-> robustness argument fails on its own stated criterion.
+> **`Vol_hyp` remains a C-era assignment** and a D-consistent knot assignment is
+> not derived (`qou-e5jf`). What *is* established is that the robustness argument
+> fails on its own stated criterion.
+>
+> **🛑 Correction to this banner as first written (2026-09-12, same day):** it
+> said *"`Vol_hyp` and `B/m_e` remain C-era assignments"*. **`B/m_e` is not an
+> assignment at all** — it is `|−B/m_e|` from the AME **experimental** binding
+> energies (`2.224566` / `7.718058` / `28.295673` MeV over `m_e`, reproduced to
+> <0.2 %), i.e. the *comparison target*. It carries no convention and never did.
+> Only the knot/volume assignment is a modelling choice, so the remaining
+> straddle is **narrower** than this banner first claimed.
 >
 > **Do not calibrate against the 2026-08-15 `rho-k` audit's D deuteron
 > `0.5751`** — correct then, stale now; the live value is `0.15197`.
