@@ -2679,6 +2679,30 @@ with the letters as `atom_braid_word_3A` emits them. Nothing chosen.
   4.0× short.** `m = 7, 9, 11` are undefined (a bond factor crosses zero).
   Flipping the sign is cheap; the magnitude is not on offer.
 
+### A correction to my own verification claim, and it is the sharper one
+
+I first reported `scripts/precision-gates.sh --changed` as **exit 0**. That was
+the exit status of `tail`, not of the gate: re-run with the output redirected to
+a file, **`GATE_EXIT=1`**. The gate is RED on this tree.
+
+**It is not red because of this branch, and that part IS measured rather than
+inferred.** Every red list in that gate enumerates its offenders, and
+`qbeta_class_b_nonsigndefinite_bond_probe` appears in **none** of them (grep
+count 0 over the whole 494-line log). The probe **writes no witness at all** — it
+prints its JSON to stdout — so it is structurally invisible to every
+witness-keyed ratchet, and both extra-root scans report `NEW dirty witnesses: 0`.
+The two `.lean` files cannot move a Python/witness ratchet. The reds are
+corpus-wide baseline state: 994 witnesses carrying raw float64 (28,151 fields),
+130 NEW q0-anchor-missing, 5 NEW stale.
+
+**What was NOT measured:** the gate was not separately run on `origin/main` to
+confirm the same reds there. The observation that decides it is the weaker but
+sufficient one — the offender lists name no file from this branch.
+
+Recorded because the pattern is the one AGENTS.md names twice: a pipeline's exit
+status is not the command's, and a gate's red is not evidence about your diff
+until you have read WHICH files it names.
+
 ### A normalisation trap, recorded because it cost a red assertion
 
 `qou-ib3g`'s *"factors at m=3: 0.335 (pp), 0.984 (pn), 1.709 (nn)"* are **energy
