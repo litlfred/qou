@@ -43,6 +43,17 @@ The complementary half — that `Σ → P¹` has full `S₃` monodromy, hence no
 single-valued algebraic branch — is **already held in the corpus** and is cited
 rather than re-derived: `computations/qbeta/c3_w1_cover_monodromy.py`.
 
+> **Currency note (2026-09-12).** The paragraph above says "the geometric step is
+> stated here in prose and is not formalised". That step is **two** halves, and only
+> one is still prose. *An automorphism of `Σ` permutes `B`* remains prose — genuinely
+> geometric, about coverings and ramification. *A map sending a finite set of nonzero
+> points into itself has finite order* is now proved:
+> `QOU.Mass.BranchLocusFiniteOrder.exists_pow_eq_one_of_stabilizes`, with the
+> substrate corollaries `not_stabilizes_of_one_lt_real` / `..._complex` ruling out
+> every real `l > 1`. The general-Möbius determinacy behind `Stab(B) ↪ Sym(B)` is
+> also proved, in `QOU.Mass.MoebiusThreePointRigidity`. So the prose chain from here
+> to the conclusion is **one link long, not two**.
+
 Ground ring: `[Field K] [CharZero K]` (§7c). Characteristic zero is used exactly
 to invert `16` and `24`; nothing archimedean appears.
 -/
