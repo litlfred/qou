@@ -2616,7 +2616,11 @@ is a class-B theorem already.
 `QOU/Hecke/BondCutSymmetryNoSignDefinite.lean` (generic, §7c) +
 `QOU/Hecke/BondCutSymmetryNoSignDefiniteLogBound.lean` (archimedean). Verified
 with `lean -DautoImplicit=false -s 65536`; `#print axioms` on all 20 gives
-exactly `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
+`[propext, Classical.choice, Quot.sound]` on 19 and `[propext]` alone on
+`bondSum_energyShift` (strictly weaker, not a defect). **No `sorryAx`
+anywhere.** Counted from an UNTRUNCATED log: the first capture was piped through
+`tail -50` and showed only 16 of the 20, which is exactly the kind of
+overstatement worth not making -- re-run and count.
 
 * **`energySlope_energyShift` / `symmetryCoeff_energyShift`** — a **uniform**
   energy shift leaves `δ` and the symmetry coefficient *identically* fixed.
