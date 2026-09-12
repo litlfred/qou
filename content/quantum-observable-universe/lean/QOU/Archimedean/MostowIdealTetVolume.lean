@@ -156,7 +156,11 @@ instance instMostowIdealTetVolume : MostowIdealTetVolume where
   tetRegion := fun α _β γ =>
     idealTetrahedron (circlePoint 1 0) (circlePoint 1 (0 + 2 * γ))
       (circlePoint 1 (0 + 2 * γ + 2 * α))
-  region_eq_chimney := fun hα0 hβ0 hγ0 hα hβ hγ hsum =>
+  -- The three acuteness binders `_hα _hβ _hγ` are demanded by the class field's
+  -- type, not by the proof: `idealTet_eq_chimney` dropped them (they were carried
+  -- but never used — see its docstring), so this instance discharges the field
+  -- from positivity and `hsum` alone.
+  region_eq_chimney := fun hα0 hβ0 hγ0 _hα _hβ _hγ hsum =>
     ⟨0, idealTet_eq_chimney hα0 hβ0 hγ0 hsum⟩
   tetDihedralAngles := fun hα0 hβ0 hγ0 hα hβ hγ hsum =>
     ⟨0, idealTet_eq_chimney hα0 hβ0 hγ0 hsum,
