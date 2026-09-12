@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-12T19:04:21Z
-updated_at: 2026-09-12T19:39:17Z
+updated_at: 2026-09-12T20:26:35Z
 ---
 
 **What is wrong.** `E₀`, the Q_β energy scale, had **two live forms** in
@@ -103,3 +103,42 @@ bean's.
    undeserved. Its real home is the brane-tower decay.
 
 PR #7235, commit `a56364abc24`.
+
+
+## 2026-09-12 (later) — 🛑 the isolated hypothesis is FALSE. The factor pins `L_q = √ℏ_q`, a free scale.
+
+Reopened in substance, though the bean's own task (derive-or-record) is done.
+Lean: `towerSum_iterated`, `towerSum_iterated_eq_simple_iff`,
+`leadingMode_lam_eq_one_iff` — sorry-free, `lean`-direct exit 0. Probe:
+`qbeta_e0_tower_lq_dependence_probe.py` (6/6).
+
+**`Δ^{(n)}` is NOT level-independent, and the corpus said so.**
+`brane-tower-q-laplacian-decay-proof.md` Step 3 is an **equality**:
+`|⟨e_k, Δ^{(n)} e_k⟩| = (λ_k^{(q)})^n` with `λ_k = [k]_q²ℏ_q/L_q²`. So `Δ^{(n)}` is
+the **n-th iterate of the q-Laplacian**. `towerSum_of_const` is a true theorem
+whose hypothesis this object does not satisfy — which is what isolating it was for.
+
+**The true sum is `1/(1 − ℏ_q²λ_k)`**, equal to the implemented `1/(1 − ℏ_q²)`
+**iff `λ_k = 1`**, which at the leading mode (`[1]_q = 1`) pins
+**`L_q = √ℏ_q = 0.314772482985`**.
+
+| `L_q` | `λ₁` | tower factor | `E₀` (MeV) | vs implemented |
+|---|---|---|---|---|
+| **`√ℏ_q` — implemented** | **1.0** | **1.00991452** | **4.22748336** | — |
+| `1` (Kelvin `L_q = L`) | 0.09908172 | 1.00097365 | 4.19005705 | **−0.8853 %** |
+| `ℏ_q` | 10.0926795 | 1.10997858 | 4.64634966 | **+9.908 %** |
+| `h = q − 1/q` | 2.26699408 | 1.02276209 | 4.28126303 | **+1.272 %** |
+
+**The choice of `L_q` is not a detail — it IS the effect**: widest departure
+**9.908 %** against a total tower correction of **0.9915 %**. Convergence is fine
+(threshold `L_q ≤ √(ℏ_q³) = 0.0311882`); the **value** is the question.
+
+**🛑 So `qbeta_e0.tower_summed` carries a hidden parameter — now named.** And the
+tempting move is forbidden: adopting `L_q = √ℏ_q` *because it reproduces the
+current `E₀`* is selection-against-the-target, one level up from the cell-ranking
+case. `qbeta_e0` is untouched.
+
+**SUCCESSOR: an owner modelling call** — is `√ℏ_q` the right q-deformed filament
+length? `L_q` is free in the corpus (`discrete-vortex-spectrum` calls it "the
+q-deformed filament length"; the Kelvin derivation takes `L_q = L`, the period).
+Audit doc §6c.
