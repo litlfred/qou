@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-07T22:20:00Z
-updated_at: 2026-08-08T13:00:00Z
+updated_at: 2026-09-12T08:08:18Z
 ---
 
 > **⏸ PAUSED by owner, 2026-08-08.** Rows 1–3 are proved; rows 4, 5 and 6 are
@@ -281,3 +281,52 @@ already landed. Both are *summaries that went stale against work recorded
 elsewhere in the same corpus*, and both were read as current by a later agent
 (PR #4790, then this one). The per-bean fixes are in; the pattern is worth a
 systemic look — a stale-summary check has no owner today.
+
+
+---
+
+## READ 2026-09-12 during the `qou-bstl` drain — correctly open, but it is PARKED, not pending. No action taken.
+
+Flagged by `bean-completion-candidates.py`. Reading it: rows 1-3 proved, rows
+4-6 open **and every one of them explicitly recorded as having no downstream
+consumer** — row 5 carries a do-not-work marker, rows 4 and 6 were "deliberately
+not started" on that ground. The bean's own reading is the right one: *"the axis
+is finished as far as anything needs it"*, and what remains is optional
+completeness work against a known-empty consumer set.
+
+That is **cause 4** on the candidate script's list — deliberately parked, reason
+stated — which the script itself says no commit-message heuristic can
+distinguish from forgotten, "because the difference is intent and lives in the
+body." It does. Left open; whether an axis with no consumers should be closed
+rather than parked is the author's call, not a drain decision.
+
+### Cross-link: this bean's closing observation now has SIX instances, not three
+
+Its last section names *"the third instance of the same staleness failure in two
+days"* — a summary going stale against work recorded elsewhere in the same
+corpus, then read as current by a later agent — and says *"a stale-summary check
+has no owner today."*
+
+**Five more turned up today, all in Lean docstrings, all of one sub-shape: prose
+invalidated by a later fix to the very thing it describes, with the fix's own
+commit never re-reading the prose above it.**
+
+| file | claimed | reality |
+|---|---|---|
+| `Torsion/skein_generation.lean` | "no hadron restriction … `scratch_skein.lean` is closer" | the restriction is 140 lines **below**, added by the commit that deleted that file |
+| `Encounter/MostowRigidity.lean` | field "stores the 15-digit truncation … via `:leanval`" | 12 lines above a field whose comment says the sync "is gone" |
+| `MathlibExt/ManifoldVolumeBridge.lean` | "`= 2.0298…` holds by `rfl`" | the `rfl` does not hold |
+| `Encounter/FigureEightVolumeBridge.lean` | present tense: "Those differ at the 16th digit" | they no longer differ |
+| `Archimedean/HyperbolicVolumeTranscendence.lean` | "cross-checked against `MostowRigidity` which uses the identical value" | the cross-check that was the literal's **warrant** evaporated |
+
+So the pattern this bean spotted in *bean summaries* is the same one running in
+*docstrings*, and in `qou-54g5` it runs in **commit messages** — a `RESOLVED`
+subject whose own added artifact now says the reverse.
+
+**And a detector for it was tried twice and is a negative** (`qou-z9fx`, both
+attempts recorded there): the general form cannot separate prose about *this*
+declaration from prose citing *another* thing, at ~1-in-8 precision either way.
+What works is a **registry, not a parser** — grep for values/claims the corpus
+has explicitly retired. Worth knowing before anyone takes the "systemic look"
+this bean asks for: the obvious mechanical version has already been measured and
+does not work.
