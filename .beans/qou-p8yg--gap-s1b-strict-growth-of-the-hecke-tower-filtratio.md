@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:02:09Z
-updated_at: 2026-09-12T20:09:34Z
+updated_at: 2026-09-12T20:12:36Z
 ---
 
 Parent: qou-cins / plan qou-0fmb, epic qou-08a2. Opened 2026-09-12 after S1 merged (#7228, 3653e9ce).
@@ -141,3 +141,39 @@ a bare CommRing. State that, do not gloss it.
 Do NOT re-attempt the tail-to-scalars route: it is refuted, and the refutation is now
 a theorem on main (scalar_tail_forces_central + tail_scalar_is_automatically_a_unit,
 #7231 / #7238), covering every tail assignment rather than the invertible ones.
+
+
+**Method caveat on the re-scope above, added the same hour -- read before starting.**
+
+The re-scope calls the injectivity of Hecke K q q^-1 n -> HeckeTower R h "one
+well-posed statement, not a program". The STATEMENT is well-posed. The METHOD is
+not obvious, and this bean has already over-narrowed once today, so state the
+difficulty rather than discovering it.
+
+The tempting route is a RETRACTION: build psi : HeckeTower R h -> Hecke K q q^-1 n
+with psi . phi_n = id, which gives injectivity of phi_n immediately. But psi is an
+algebra map OUT of a PRESENTED tower, so it must assign EVERY generator g m,
+m in N, to an element of the finite H_n(q), satisfying quad + braid + far
+throughout, with g m |-> sigma_m for m < n. The two obvious tail assignments are
+both dead:
+
+  * tail |-> a central scalar -- refuted by scalar_tail_forces_central, together
+    with tail_scalar_is_automatically_a_unit (this bean's own theorems, merged in
+    #7231 / #7238). They cover EVERY scalar, not just the invertible ones.
+  * tail |-> sigma_{n-1} -- dies at far(m, n-2), which for m >= n demands
+    sigma_{n-1} sigma_{n-2} = sigma_{n-2} sigma_{n-1}. False: adjacent generators
+    do not commute.
+
+So the obstruction this bean proved for the SEPARATOR route obstructs the
+RETRACTION route too. That is a recurring structural feature of the presented
+N-tower -- the infinite tail has to go somewhere and the relations constrain it
+hard -- not a coincidence of one attempt. Whether ANY tail assignment into a
+finite H_n exists is OPEN and is worth settling first, because a NEGATIVE there
+would be informative: it would say the presented N-tower admits no algebra
+retraction onto its finite stages, and injectivity must then come from a basis.
+
+The classical route does not use a retraction at all: it uses the T_w basis of
+H_infinity over the Coxeter group S_infinity, which for this carrier means
+establishing a basis for the PRESENTED N-tower -- the analogue of qou-uoal's
+spanning argument plus the Wedderburn lower bound, at S_infinity rather than S_n.
+That is a build, and should be scoped as one.
