@@ -5,7 +5,7 @@ Follow-on to [`2026-09-05-uic-sign-forced-by-gate.md`](2026-09-05-uic-sign-force
 
 > ## ✅ ACTED ON, 2026-09-12 — the gate is gone
 >
-> **Bean `qou-jgx7`; PR #7253.** This document's conclusion was enacted: the
+> **Bean `qou-21oc`; PR #7253.** This document's conclusion was enacted: the
 > owner ruled to drop the Pass-2 sign gate, and
 > `unified_iterative_correction` now returns the **ungated** sum. PR #7251
 > additionally *hunted the primal LP* and refuted CS-on-it sorry-free

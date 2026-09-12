@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T22:50:22.827593+00:00",
-  "commitSha": "b6dc7b7f827742d712ffd55106b83767f0d0d4d6",
+  "computedAt": "2026-09-12T22:59:38.088352+00:00",
+  "commitSha": "07bd748fdc6e54b80f8c0bd75126f8197101847a",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition",
@@ -65,8 +65,8 @@
   "durationMs": 10,
   "computation": "uic-sign-forced-by-gate",
   "scriptFile": "uic_sign_forced_by_gate_probe.py",
-  "scriptHash": "04b56956991b",
-  "scriptCommitSha": "bad597ca516561fd759f6bec5f6a5725fba37428",
+  "scriptHash": "ebbfda75d16e",
+  "scriptCommitSha": "07bd748fdc6e54b80f8c0bd75126f8197101847a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +89,7 @@
     ],
     "reproduce": "python3 -u computations/probes/uic_sign_forced_by_gate_probe.py"
   },
-  "description": "Gap qou-sv7h: the wrong sign of unified_iterative_correction is BIASED by the Pass-2 complementary-slackness gate but NOT forced by it. C_lambda >= 0 on every partition; the gate kept exactly Tr<=0; and Tr<=0 almost never has |Tr| >= d (3.4% against 34.1%) because Tr(I) = +d, so the gated subset is more negative than the slack one. RETRACTED 2026-09-12 (bean qou-jgx7): the earlier conclusion that B < 0 is FORCED by the gate is refuted. The gate was dropped (owner ruling; its CS justification refuted sorry-free in PR #7251) and every atom's UNGATED sum is negative too, and LARGER in magnitude, so dropping it moves away from AME. Steps 1 and 3 stand; the inference from bias to forcing does not.",
+  "description": "Gap qou-sv7h: the wrong sign of unified_iterative_correction is BIASED by the Pass-2 complementary-slackness gate but NOT forced by it. C_lambda >= 0 on every partition; the gate kept exactly Tr<=0; and Tr<=0 almost never has |Tr| >= d (3.4% against 34.1%) because Tr(I) = +d, so the gated subset is more negative than the slack one. RETRACTED 2026-09-12 (bean qou-21oc): the earlier conclusion that B < 0 is FORCED by the gate is refuted. The gate was dropped (owner ruling; its CS justification refuted sorry-free in PR #7251) and every atom's UNGATED sum is negative too, and LARGER in magnitude, so dropping it moves away from AME. Steps 1 and 3 stand; the inference from bias to forcing does not.",
   "auditOnly": "docs/audits/2026-09-05-uic-sign-forced-by-gate.md",
   "data": {
     "per_atom": [
@@ -144,7 +144,7 @@
         "ungated_sum": "-1.96967839280866103092423321255782127070482288902725871395914"
       }
     ],
-    "retraction_2026_09_12": "The Pass-2 gate was DROPPED from the producer on 2026-09-12 (owner ruling, bean qou-jgx7) after its complementary-slackness justification was refuted sorry-free (PR #7251). This probe's title claim -- that the wrong sign is FORCED BY the gate -- is thereby refuted: every atom's UNGATED sum is negative too, and larger in magnitude. What survives is steps 1 and 3 (C_lambda >= 0 everywhere; |Tr| >= d is ~10x rarer when Tr <= 0), i.e. the gate BIASED the sign, it did not create it.",
+    "retraction_2026_09_12": "The Pass-2 gate was DROPPED from the producer on 2026-09-12 (owner ruling, bean qou-21oc) after its complementary-slackness justification was refuted sorry-free (PR #7251). This probe's title claim -- that the wrong sign is FORCED BY the gate -- is thereby refuted: every atom's UNGATED sum is negative too, and larger in magnitude. What survives is steps 1 and 3 (C_lambda >= 0 everywhere; |Tr| >= d is ~10x rarer when Tr <= 0), i.e. the gate BIASED the sign, it did not create it.",
     "pooled_big_trace_fraction": {
       "Tr_pos_total": 82,
       "Tr_pos_big": 28,

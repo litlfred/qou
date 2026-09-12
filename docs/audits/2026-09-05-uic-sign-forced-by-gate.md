@@ -4,7 +4,7 @@
 
 > ## 🛑 RETRACTED IN PART, 2026-09-12 — the title claim is refuted
 >
-> **Bean `qou-jgx7`; PR #7253.** The gate this document says forces the sign has
+> **Bean `qou-21oc`; PR #7253.** The gate this document says forces the sign has
 > been **removed** from `unified_iterative_correction` (owner ruling, after its
 > complementary-slackness justification was refuted sorry-free in
 > `QOU.MassTheory.UICGateNotFromComplementarySlackness`, PR #7251). If the sign
