@@ -1493,6 +1493,13 @@ def _lp_kernel_steps(partition, chains):
     15-digit input truncation amplified through longer products should do, so
     do NOT read the k=4 null as evidence this is cosmetic.
 
+    [2026-09-12, bean `qou-21oc`: the four figures in that table are the GATED
+    return; the Pass-2 sign gate has since been dropped and the ungated values
+    are -0.412212192245027 (k=4) and -1.2268740026260945 (k=5).  The FINDING is
+    unaffected -- it is a relative comparison between two arms of the same run,
+    and both arms move identically under the gate drop.  The absolute values are
+    kept as the record of what was measured.]
+
     It is still not the BINDING constraint on this producer's accuracy:
     `unified_iterative_correction` narrows to float64 inside its own
     accumulation loop (`math.log(abs(tr_run))`, see the note on
@@ -1919,9 +1926,18 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     #     A=2 k=5   gauss=164 -> -0.7335499391634976    gauss=0 -> same
     #     A=4 k=4   gauss=169 -> -0.08058674847769143   gauss=0 -> same
     #
-    # — because `delta_g` in the Gaussian loop below is a HARDCODED 0.0, by
-    # complementary slackness, as the comment there says. Raising `k_max` buys
+    # — because `delta_g` in the Gaussian loop below is a HARDCODED 0.0.  Its
+    # justification WAS complementary slackness; that argument is refuted
+    # sorry-free (PR #7251) and the zeroing is now asserted-not-derived, bean
+    # `qou-ai7v` — see the banner at the Gaussian loop.  The BEHAVIOUR is
+    # unchanged, so this note's conclusion stands: raising `k_max` buys
     # `log_trace` values for the per-step rows and nothing else.
+    #
+    # [2026-09-12, bean `qou-21oc`: the three figures above are the GATED
+    # return; ungated they are -0.412212192245027 (A=2 k=4),
+    # -1.2268740026260945 (A=2 k=5) and -0.2742397716174 (A=4 k=4).  The
+    # byte-identical gauss=169 vs gauss=0 finding is unaffected — both arms
+    # move identically.]
     #
     # RETRACTION, same day. This note first read "the Gaussian contribution is
     # computed and DISCARDED", on the theory that `state` excludes Gaussian

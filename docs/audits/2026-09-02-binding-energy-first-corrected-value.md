@@ -1,5 +1,40 @@
 # The first `binding_energy` value the corrected framework has ever produced
 
+> ## 🛑 SUPERSEDED NUMBER, 2026-09-12 — the Pass-2 sign gate is gone
+>
+> **Bean `qou-21oc`; PR #7253.** The `−7.271102125 MeV` below is a **gated**
+> value. Its term 1, `unified_iterative_correction`, admitted a partition only
+> when `final_tr_sign ≤ 0`; that gate has been **removed** (owner ruling; its
+> complementary-slackness justification refuted sorry-free in PR #7251), and the
+> accumulator now returns the ungated sum.
+>
+> **Derived, NOT measured** — `binding_energy` is additive in its three terms and
+> the gate touches only term 1, so:
+>
+> | | gated (this doc) | ungated (post-drop) |
+> |---|---|---|
+> | term 1 `unified_iterative_correction` | `−9.1477362310` | **`−17.6908290020795`** (measured) |
+> | term 2 `sdp_cross_channel_contribution` | `0.0` | `0.0` (unchanged) |
+> | term 3 `binding_from_frobenius_pairing` | `+1.876634106` | `+1.876634106` (unchanged) |
+> | **`binding_energy(1, 1)`** | **`−7.271102125`** | **`≈ −15.814194896`** |
+>
+> The last cell is **arithmetic on this document's own decomposition, not a
+> re-run.** `binding_energy(1,1)` took **942 s** here and that has not been
+> repeated; the term-1 figure above is a fresh 425.5 s measurement at the same
+> `k_exact = k_max = 11` production default. Treat `−15.814` as derived and
+> re-measure before publishing it.
+>
+> **Everything this document concludes is unchanged and, if anything,
+> reinforced.** The sign was wrong at `−7.271` and is still wrong at `−15.814`;
+> it is still carried by term 1; the `|ratio|` against AME `+2.224566` goes from
+> 3.27× to **7.11×**, i.e. *worse*. Dropping the gate buys honesty, not accuracy
+> — see
+> [`2026-09-12-uic-pass2-gate-dropped.md`](2026-09-12-uic-pass2-gate-dropped.md).
+>
+> The ⁴He figures in §"the A-series" move the same way: term 1 goes
+> `−8.201558468 → −15.9926510049258` (measured, 1165.1 s), a shift of
+> `−7.791092536563411`.
+
 **Measured 2026-09-02.** Completes the `qou-sv7h` arc: the Rust LP-accumulator
 kernel is wired into both loops, and `binding_energy` runs end to end for the
 first time.
