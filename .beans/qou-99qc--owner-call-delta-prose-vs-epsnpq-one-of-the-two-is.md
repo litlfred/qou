@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T12:30:04Z
+updated_at: 2026-09-12T18:14:46Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1315,3 +1315,88 @@ recording of its openness is done.
 SCOPE-(a): two_shift_expansion holds for ANY two slots carrying a common
 central shift; that the nucleon words are in that shape is read off _GEN_CHAINS
 and re-verified numerically, not proved.
+
+
+
+## 2026-09-12 DERIVATION — the gg ruling DECIDES the braid ordering, and picks the WORSE one
+
+PR #7212, commit 3a76d49fc9. This CLOSES the ordering question #7188 raised.
+
+WHAT #7188 LEFT OPEN, in its own words: "the corpus now owes a DERIVATION of
+the braid ordering of the nucleon word. Until it has one, tr_{z_D}(Delta) is
+not predicted by the framework -- it is selected by an unstated modelling
+choice." The owner's gamma-gamma ruling (2026-09-08, qou-ales) supplies it.
+
+THE ARGUMENT, STRUCTURAL NOT NUMERICAL. The census carries two orderings of the
+SAME eleven-letter multiset (verified: identical Counter for both nucleons).
+Their confinement cores are:
+
+  interleaved  nuc9:        for _ in range(3): sigma_0 ; (sigma_1 - h)
+  gen-grouped  _GEN_CHAINS: all sigma_0 letters first, then all sigma_1
+
+sigma_1 - h = sigma_1^-1 by the Hecke relation (skein_letter_inv, proved on
+this branch), so the interleaved core is (sigma_0 sigma_1^-1)^3 = `vertex 0`
+three times -- a GAMMA-GAMMA WORD. The gen-grouped core has a POSITIVE crossing
+in SECOND position, and a gg-word's second letter is always negative. So of the
+two models exactly one is gg-produced and the ruling selects it. Scope-(b): it
+cites a proved invariant, not a bad number.
+
+LEAN, all five depend on NO AXIOMS AT ALL (lean-direct exit 0):
+  gammaGamma_snd_neg             a gg-word's second letter is negative
+  not_gammaGamma_of_snd_pos      hence a positive 2nd letter excludes it
+  interleavedCore_isGammaGamma   three applications of the constructor
+  not_gammaGamma_genGroupedCore  the exclusion
+  cores_ne                       the two cores are different words
+
+The linter earned its keep: the exclusion lemma was first stated with BOTH of
+the first two letters positive as hypotheses and the first is never used, so it
+was restated STRONGER (the first letter's sign is irrelevant) and renamed.
+
+🛑 THE RULED ORDER IS THE LESS ACCURATE ONE, and that is the correct outcome.
+Proton pin, convention D, 60 dps:
+
+  interleaved (RULED)   -17.495929 %      <- reproduces #7188's documented -17.496
+  gen-grouped (unruled) -15.451387 %      <- the merged Option-E witness
+  cost of the ruling      2.04454 points
+
+Under AGENTS.md NO FITTING, "rank by derivational cleanliness first, treat
+accuracy as a diagnostic, never as a tie-breaker that promotes a fitted route."
+Preferring -15.45 % BECAUSE it is closer is selection against the target. Do
+not revert this.
+
+CONSEQUENCE FOR THIS BEAN. The -15.4514 % that #7188 and #7212 calibrate
+against is the GEN-GROUPED, i.e. UNRULED, order. Nothing there is retracted --
+both state their ordering -- but the CANONICAL residual under the ruling is
+-17.4959 %, and the witness qbeta-gamma-gamma-ruling-selects-ordering is the
+record of which figure is which.
+
+WHAT SURVIVES THE ORDER CHANGE, checked rather than assumed:
+  * the two-letter flip is ORDER-INDEPENDENT: two slots, each -h/2, in both
+    orderings (expected for a flavour statement, but measured);
+  * the three-term skein expansion is EXACT on the ruled order too, 3.9e-62 at
+    60 dps -- only the term sizes move, s^2/s going 2.045 % -> 4.874 %;
+  * the 3.13x gap of #7212 Part 1 is UNTOUCHED: it prices V^k differences, a
+    gg-only construction carrying no nucleon ordering at all.
+
+CROSS-CHECK WORTH NOTING, two independent routes to the same k. The sibling's
+Frobenius-positivity selection (owner ruling 2026-09-12, reading 3) picks
+k = 3 = beta_Bor on #7207. The census's confinement core is independently V^3.
+Same k, from two different principles -- recorded as a coincidence of two
+derivations, NOT offered as evidence for either.
+
+🛑 TRAP, recorded in the probe. "Interleaved" reconstructed by ZIPPING the two
+_GEN_CHAINS lists alternately gives -13.5712 %, which is NEITHER census model
+-- a third ordering, invented, and plausible-looking. I produced it before
+reading nuc9. The census's interleaved model emits the core as three
+(sigma_0, sigma_1^-1) PAIRS, then an ORDERED quark block, then two gluon
+letters. Reproducing the documented -17.496 % is the calibration that catches a
+lookalike reconstruction; CHECK 3 asserts it.
+
+BEAN STAYS todo. The epsilon/Delta fork is an open conjecture (§13a). What is
+closed is the ORDERING sub-question, which is a genuine narrowing: the order is
+no longer a free modelling choice. The residual did not improve and was not
+expected to.
+
+STILL OPEN: the ruling constrains the CORE. The flavour letters are determined
+(this branch) but their PLACEMENT, and the two gluon letters, are not gg-words
+and are not settled by the ruling. That is the remaining freedom.
