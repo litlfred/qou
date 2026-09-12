@@ -49,6 +49,24 @@ small.** Measured on the 12 high-priority candidates in the first run, at least
     No commit-message heuristic can tell a parked bean from a forgotten one,
     because the difference is intent and lives in the body.
 
+  * **THE ARTIFACT WAS LATER CORRECTED AGAINST ITS OWN COMMIT** -- added
+    2026-09-12, and the worst-behaved of the five, because unlike the four above
+    the subject is not merely ambiguous: it was ACCURATE WHEN WRITTEN and is
+    false now, while `git log` keeps asserting it forever. `qou-54g5`'s later
+    subject is "research(qou-54g5): RESOLVED -- the c_5 slot carries the retired
+    c_4". That commit added
+    `computations/qbeta/qbeta_ladder_c5_slot_provenance_probe.py`; three
+    revisions on, THAT FILE'S OWN finding 5 reads "DIRECTION SETTLED, and it is
+    the reverse of how the question was posed", and its earlier pass -- the one
+    the commit message reports -- "would have propagated a superseded
+    coefficient into the framework's formalized family". Nothing in the subject,
+    the bean body, or any later subject records the reversal.
+
+    Undetectable from commit metadata by construction: the evidence lives in the
+    CURRENT CONTENT of a file the commit added, not in any message. The only
+    defence is the one this script's closing line already gives -- open the
+    artifact, and prefer running it to reading about it.
+
 **MEASURED PRECISION: 2 in 12, on the full high-priority list.** An earlier
 version of this docstring said "~4 in 10 false positives" -- estimated from
 subjects. Reading all twelve bodies gives TEN false positives: only `qou-vtau`
@@ -405,7 +423,7 @@ def main() -> int:
     print("\nCANDIDATES, NOT VERDICTS. MEASURED PRECISION 2 IN 12 on the full "
           "high-priority list\n(all twelve bodies read): only qou-vtau and qou-w2vy "
           "were genuinely stale.\nThis is a 'worth OPENING' list, NOT a staleness "
-          "list. Four structural causes,\nall unfixable by regex because they are "
+          "list. Five structural causes,\nall unfixable by regex because they are "
           "semantic:")
     print("  1. partial completion  -- 'ITEM 4 CLOSED', 'item 3 fully closed; the "
           "remaining item is ...'")
@@ -416,6 +434,12 @@ def main() -> int:
           "wrong-transform artifact\"")
     print("  4. the bean is DELIBERATELY PARKED and says so -- e.g. qou-mln9's "
           "'Left todo\n     deliberately ... Closing is the author's call.'")
+    print("  5. THE ARTIFACT WAS LATER CORRECTED AGAINST ITS OWN COMMIT -- the "
+          "subject was\n     ACCURATE WHEN WRITTEN and is false now. qou-54g5's "
+          "'RESOLVED' commit added a probe\n     whose own finding 5 now reads "
+          "'the reverse of how the question was posed'.\n     Invisible to commit "
+          "metadata by construction: the evidence is in the file's\n     CURRENT "
+          "CONTENT, not in any message. Run the artifact; don't read about it.")
     print("\nOpen each one and read it. Do NOT bulk-close from this output.")
     return 0
 
