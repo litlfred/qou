@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-12T12:28:22Z
+updated_at: 2026-09-12T12:30:45Z
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -181,3 +181,47 @@ Nine of the 15 have **zero consumers** and are one-file mechanical fixes
 - The instance scan greps `instance … : <Carrier>`; an instance introduced by `haveI`,
   `letI` or `deriving` would be missed.
 - Both are cheap re-runs, so re-measure rather than quoting these.
+
+
+## 🛑 Two corrections from checking the 2026-08-23 probe's own carriers
+
+The probe names three carriers. I checked what became of the two that are **not** in my
+live-15 list, and both answers correct something I told the author.
+
+### 1. `DimMasterPentagon` was already fixed — by a sibling, better than I have been fixing them
+
+Commit `bff4027fc`: *"lean(qou-tsnp D17): DimMasterPentagon asserted nothing; encode the
+master identity + the specialisation, prove the transport"*. The live class is
+`class DimMasterPentagon {F : Type uF} (master : PentagonDatum.{uA, uO})`; the old
+`holds : Prop` survives only as a quoted historical line inside the new docstring, which
+diagnoses the defect in almost the same words I used.
+
+**Their fix is strictly stronger than mine.** They *encoded the identity and proved the
+transport*; I *parameterised*, which removes the `⟨True⟩` discharge but supplies no
+mathematics. Parameterising is the right move when nothing in the import cone can state
+the proposition (the Wenzl and OS-reflection cases genuinely cannot). It is the **weaker**
+move where the content is statable — and `bff4027fc` shows that is sometimes the case.
+
+So this drain was **already underway under bean `qou-tsnp`**, and I did not find it: my
+corpus-grep reached the probe but never asked what had happened to the carriers the probe
+names. That is the checklist's own point, missed twice in one session.
+
+### 2. `HabiroFlowSolution` is still broken and has NO ledger entry at all
+
+`content/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean` still carries three
+bare `: Prop` fields plus the `all_hold` conjunction — the exact shape
+`propUniverseWithConjunction_inhabited` now covers. Searching the ledger for
+`Habiro`/`FlowSolution` returns **one** entry, an unrelated `borrowed-name` in a different
+file.
+
+**So the ledger does not track it**, and therefore:
+
+> **"19 live `prop-universe-field` entries" is a LOWER BOUND, not a population count.**
+
+I have been quoting 19 (and 15 remaining, and 67 across five patterns) as if they were
+counts of the defect. They are counts of *what the ledger holds*. At least one carrier the
+corpus's own probe named in August is outside them. Anyone drain-planning from those
+figures will finish the list and still have carriers left.
+
+The right population query is a **detector run over the tree**, not a ledger query. That
+has not been done here and the figures above should not be quoted until it is.
