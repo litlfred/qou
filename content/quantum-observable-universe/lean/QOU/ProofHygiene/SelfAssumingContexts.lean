@@ -1,11 +1,23 @@
 /-
 Copyright (c) 2026 litlfred. All rights reserved.
 
-# The decoy-hypothesis pattern is provably contentless
+# The self-assuming context patterns are provably contentless
 
-The Lean vacuity ledger (`docs/audits/lean-vacuity-review-ledger.json`) carries a
-`proof-decoy-hypothesis` finding, currently **13 live `genuine` entries** across the
-fluid-dynamics and appendix-surreals trees, all of one shape. A context class
+The Lean vacuity ledger (`docs/audits/lean-vacuity-review-ledger.json`) records four
+patterns whose common defect is that the context class **carries its own conclusion** —
+`proof-decoy-hypothesis`, `field-projection`, `exact-field-projection` and
+`tuple-projection`, **46 live `genuine` entries between them**. The ledger records each as
+prose, per entry, with a heuristic verdict. This file states the criterion once and proves
+that all four shapes meet it, and that the genuine §3b-cond conditional shape does not.
+
+**The criterion** is `Contentless K C : Nonempty K ↔ C` — the class is inhabited exactly
+when the conclusion holds, so instantiating it is logically identical to assuming `C`,
+however the conclusion is extracted (projection, application, or a chain of either). Its
+negation is the reviewer's test: **exhibit an instance without already having the
+conclusion** (`not_contentless_of_witness`).
+
+The subtlest of the four is the decoy-hypothesis shape, because it extracts by
+*application*. A context class
 
 ```
 structure FooContext where
@@ -79,6 +91,59 @@ import Mathlib.Tactic
 
 namespace QOU.ProofHygiene
 
+/-! ## The criterion
+
+All four of the ledger's self-assuming patterns — `proof-decoy-hypothesis`,
+`field-projection`, `exact-field-projection`, `tuple-projection`, **46 live `genuine`
+entries between them** — are instances of one property, and it is worth naming because it
+is checkable rather than aesthetic. -/
+
+/-- **A context class is contentless for `C` when it is inhabited exactly when `C` holds.**
+
+Instantiating such a class is then logically identical to assuming `C`, whatever the
+class's fields are named and however the conclusion is extracted from them — by a
+projection, by an application, or by a chain of either.
+
+The negation is the practical test, and it is the one a reviewer can actually run:
+**exhibit an instance without already having the conclusion** (`not_contentless_of_witness`). -/
+def Contentless (K : Sort*) (C : Prop) : Prop := Nonempty K ↔ C
+
+/-- **The reviewer's test.** If the class can be instantiated while the conclusion fails,
+it is not contentless — it carries something. Contrapositively, a class you can only
+instantiate by already having `C` proves nothing about `C`. -/
+theorem not_contentless_of_witness {K : Sort*} {C : Prop}
+    (hK : Nonempty K) (hC : ¬ C) : ¬ Contentless K C := by
+  intro h
+  exact hC (h.mp hK)
+
+/-- **The bluntest shape: a field of the conclusion's own type**, with the "theorem"
+`ctx.claim`. This is `proof-field-projection` / `exact-field-projection`, and it is what
+AGENTS.md §3b-cond item 5 calls a *"vacuous self-assuming projection"* — stated there in
+prose, machine-checked here. -/
+structure SelfAssumingContext (C : Prop) where
+  /-- The conclusion, carried as a hypothesis. -/
+  claim : C
+
+theorem selfAssuming_contentless (C : Prop) : Contentless (SelfAssumingContext C) C := by
+  constructor
+  · rintro ⟨ctx⟩; exact ctx.claim
+  · intro hC; exact ⟨⟨hC⟩⟩
+
+/-- **The tuple shape**: several conclusions bundled, the "theorem" projecting one out.
+This is `proof-tuple-projection`. Bundling does not dilute the defect — the class is
+inhabited iff *both* hold, so it is contentless for the conjunction, and projecting either
+component is still assuming it. -/
+structure TupleContext (C D : Prop) where
+  /-- First conclusion, carried as a hypothesis. -/
+  fst : C
+  /-- Second conclusion, likewise. -/
+  snd : D
+
+theorem tuple_contentless (C D : Prop) : Contentless (TupleContext C D) (C ∧ D) := by
+  constructor
+  · rintro ⟨ctx⟩; exact ⟨ctx.fst, ctx.snd⟩
+  · rintro ⟨hC, hD⟩; exact ⟨⟨hC, hD⟩⟩
+
 /-- **The decoy-hypothesis shape.** A named premise, an assertion that it holds, and an
 implication into the conclusion. This is the shape of `B1TorusKnotRowsContext`,
 `AcousticHorizonConditionsContext`, `DiscreteVortexSpectrumContext`,
@@ -109,6 +174,11 @@ theorem decoy_nonempty_iff (C : Prop) : Nonempty (DecoyContext C) ↔ C := by
   · intro hC
     exact ⟨⟨True, trivial, fun _ => hC⟩⟩
 
+/-- The decoy shape in the criterion's vocabulary: contentless, like the projection and
+tuple shapes, despite extracting its conclusion by application rather than projection. -/
+theorem decoy_contentless (C : Prop) : Contentless (DecoyContext C) C :=
+  decoy_nonempty_iff C
+
 /-- **The named premise carries no logical weight.** Given the conclusion, a decoy context
 exists with premise `True` — so `bloch_suslin`, `peter_weyl_holds` and the rest are decor.
 The apparent content of these declarations lives in the *name*, not in the Lean. -/
@@ -135,6 +205,13 @@ theorem conditional_nonempty_iff (H C : Prop) :
   constructor
   · rintro ⟨ctx⟩; exact ctx.impl
   · intro h; exact ⟨⟨h⟩⟩
+
+/-- **A genuine conditional class is NOT contentless for the conclusion**, witnessed at
+`H = C = False` — it is inhabited there while the conclusion fails. This is the reviewer's
+test (`not_contentless_of_witness`) run on the shape that should pass it. -/
+theorem conditional_not_contentless :
+    ¬ Contentless (ConditionalContext False False) False :=
+  not_contentless_of_witness ⟨⟨fun h => h⟩⟩ (fun h => h)
 
 /-- **The separation.** At `H = C = False` the conditional class is inhabited and the
 decoy class is not. Same conclusion, opposite inhabitedness — so the two shapes are
