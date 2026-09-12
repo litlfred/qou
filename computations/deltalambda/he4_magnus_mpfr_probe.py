@@ -343,9 +343,89 @@ def run_gate():
     print("[gate] PASS — mpfr reproduces the committed triton P_total to <1e-30.")
 
 
+_ALLOW_CLOBBER = False
+
+
+def _smap(s):
+    """Render a sibling sign for display without inventing one when it is absent."""
+    return "?" if s is None else f"{s:+d}"
+
+
+# The fields the SPARSE probe writes into this same witness path that THIS
+# producer does not compute.  Overwriting the file would delete them silently.
+_SPARSE_ONLY_FIELDS = (
+    "weight_family", "weight_family_note", "headline_pairing",
+    "P_total_wenzl", "P_total_wenzl_sign", "P_total_wenzl_note",
+    "sign_indefinite_across_partitions", "sign_flip_vs_A3",
+)
+
+
+def _refuse_to_clobber(out):
+    """Refuse to overwrite a committed witness carrying fields we cannot produce.
+
+    THE HAZARD, measured 2026-09-12.  Two producers write
+    `he4-magnus-omega2-sign.witness.json`: the sparse probe
+    (`he4_magnus_omega2_sign_sparse_probe.py`, which the committed witness names
+    in its own `scriptFile`) and this one.  The sparse probe emits BOTH weight
+    families and declares `headline_pairing = "P_total_wenzl"`.  This producer
+    does not mention Wenzl anywhere, so a plain re-run would drop the entire
+    Wenzl column and the headline declaration -- the whole basis of the A=4
+    weight-family result -- while looking like a routine refresh.
+
+    Guard rather than redirect: which producer SHOULD own this path is a design
+    question (this file is 4x faster and describes itself as the same math on a
+    different backend, so it may be the intended successor), and that is not an
+    agent's call to make by moving a filename.  Refusing loudly loses nothing and
+    is reversible; a silent overwrite is neither.
+
+    `--allow-clobber` is the deliberate override, for when the answer is "this
+    producer owns the path now".
+    """
+    if not os.path.exists(out):
+        return
+    try:
+        with open(out) as fh:
+            cur = json.load(fh)
+    except Exception:
+        return
+    res = cur.get("results", {})
+    lost = [k for k in _SPARSE_ONLY_FIELDS if k in res]
+    if not lost:
+        return
+    owner = cur.get("scriptFile", "(unstated)")
+    raise SystemExit(
+        f"\nREFUSING to overwrite {os.path.basename(out)}.\n"
+        f"  Its own scriptFile names the owner: {owner}\n"
+        f"  This producer would DELETE {len(lost)} field(s) it cannot compute:\n"
+        + "".join(f"    - {k}\n" for k in lost)
+        + "  Among them the Wenzl/Ocneanu column and the headline-pairing\n"
+        "  declaration, which is the A=4 weight-family result itself.\n"
+        "  Run the sparse probe to refresh this witness, or pass\n"
+        "  --allow-clobber if this producer is meant to own the path now.\n"
+    )
+
+
+def _sibling_sign(path):
+    """Plancherel `P_total_sign` from a committed sibling witness, or None.
+
+    Mirrors `he4_magnus_omega2_sign_sparse_probe.py::_sign` deliberately: the
+    cross-A signs are MEASURED data held in the A=2 and A=3 witnesses, never
+    constants.  Hardcoding them is how this file came to assert
+    `A3_P_total_sign = -1` while the triton witness it loads in `run_gate()`
+    records `P_total_sign = 1`.
+    """
+    try:
+        with open(os.path.join(os.path.dirname(__file__), path)) as fh:
+            return int(json.load(fh)["results"]["P_total_sign"])
+    except Exception:
+        return None
+
+
 def run_he4(workers, checkpoint):
     from mass_at_3A_proper import atom_braid_word_3A
     gens = [int(t[2]) for t in atom_braid_word_3A(2, 2)]
+    a2_sign = _sibling_sign("deuteron-magnus-omega2-sign.witness.json")
+    a3_sign = _sibling_sign("triton-magnus-omega2-sign.witness.json")
     if checkpoint is None:
         checkpoint = os.path.join(os.path.dirname(__file__), "he4-magnus-mpfr.checkpoint.jsonl")
     rows, P, C, worst = run_word(gens, 12, "[he4mpfr]", workers=workers, checkpoint=checkpoint)
@@ -363,12 +443,16 @@ def run_he4(workers, checkpoint):
             "per_partition": rows, "P_total": fmt(P), "P_total_sign": P_sign,
             "P_control_rho_identity": fmt(C), "control_tr_M_Omega2_vanishes": bool(ctrl_ok),
             "n_partitions_positive": npos, "n_partitions_negative": nneg,
-            "A2_P_total_sign": -1, "A3_P_total_sign": -1,
-            "sign_vs_A": {"A2": -1, "A3": -1, "A4": P_sign},
+            "A2_P_total_sign": a2_sign, "A3_P_total_sign": a3_sign,
+            "sign_vs_A": {"A2": a2_sign, "A3": a3_sign, "A4": P_sign},
             "germ_hecke_check_worst_residual": fmt(worst),
         },
         "verdict": (f"A=4 EXACT (mpfr): P(A=4)={_fmt_decimal(P,10)}, sign={P_sign:+d}. "
-                    f"Map A2/A3/A4 = {-1}/{-1}/{P_sign}. Control tr(Ω₂)=0 holds "
+                    f"Map A2/A3/A4 = {_smap(a2_sign)}/{_smap(a3_sign)}/{P_sign:+d} "
+                    f"(A2, A3 read from the committed sibling witnesses, not assumed). "
+                    f"QUANTUM-PLANCHEREL arm only -- this producer does not compute the "
+                    f"Wenzl/Ocneanu column, so it is NOT the headline pairing the sparse "
+                    f"probe declares. Control tr(Ω₂)=0 holds "
                     f"({ctrl_ok}); per-partition {npos}+/{nneg}-. scope-(a)."),
         "scope": "scope-(a): A=4 sign of tr_M(ρ·Ω₂). No MeV; nothing wired.",
         "wired": False,
@@ -379,11 +463,14 @@ def run_he4(workers, checkpoint):
     except Exception:
         pass
     out = os.path.join(os.path.dirname(__file__), "he4-magnus-omega2-sign.witness.json")
+    if not _ALLOW_CLOBBER:
+        _refuse_to_clobber(out)
     with open(out, "w") as f:
         json.dump(witness, f, indent=1); f.write("\n")
     print(f"\nP(A=4) = {_fmt_decimal(P,10)}   sign={P_sign:+d}   (per-partition {npos}+/{nneg}-)")
     print(f"control (must be 0) = {_fmt_decimal(C,6)} -> {ctrl_ok}")
-    print(f"sign-vs-A: A2=-1 A3=-1 A4={P_sign:+d}")
+    print(f"sign-vs-A: A2={_smap(a2_sign)} A3={_smap(a3_sign)} A4={P_sign:+d}  "
+          f"(A2/A3 from the committed witnesses)")
     print(f"wrote {out}")
     assert ctrl_ok, "control must vanish"
 
@@ -394,7 +481,12 @@ def main():
     ap.add_argument("--workers", type=int, default=1)
     ap.add_argument("--skip-gate", action="store_true")
     ap.add_argument("--checkpoint", default=None)
+    ap.add_argument("--allow-clobber", action="store_true",
+                    help="overwrite the committed witness even though this producer "
+                         "cannot emit the Wenzl column the sparse probe writes there")
     args = ap.parse_args()
+    global _ALLOW_CLOBBER
+    _ALLOW_CLOBBER = args.allow_clobber
     if args.gate:
         run_gate(); return
     if not args.skip_gate:
