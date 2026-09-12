@@ -218,9 +218,17 @@ theorem response_bounded_of_deviation_bounded {trWD trW K m : ℝ} (hm : 0 < m)
 
 /-- **The bond's CHARACTER deviates at fourth order, not second.** From step 4's
 `trace_vtx_pow_three`, `χ_(2,1)(V³) − 2 = −h⁴·(3 + h²)`, because `tr D = −3h² − h⁴` is itself
-`O(h²)`. The *matrix* deviation is `h²`; the *character* deviation is `h⁴`. The interface
+`O(h²)`. The *matrix* deviation is `h²`; the *character* deviation is `h⁴`.
+
+**CORRECTED (step 10, `DiprotonResponseClosedForm`).** This docstring continued: "the interface
 ratio is controlled by the matrix, since `tr(W·D)` carries no such cancellation — so checking
-the order on characters gives the wrong answer for the binding. -/
+the order on characters gives the wrong answer for the binding." **The second clause is false.**
+Exact symbolic evaluation of the `H₆` convention-D Markov trace on the two 11-letter nucleon
+words gives `r = h²·c(q)` with `c` order one, so `tr(W·D)` *does* carry a cancellation and the
+ratio deviates at `h⁴`, not `h²`. A single block's mixed response carries one factor `q² − 1`;
+the second appears only after `y`-weighting. So there are three distinct orders here (matrix
+`h²`, per-block mixed response `h¹`, `y`-weighted response `h²`, hence ratio `h⁴`) and the
+`h⁴` below agrees with the ratio's `h⁴` by arithmetic rather than by mechanism. -/
 theorem bond_character_deviation {q a b a' h : ℝ} (hqinv : q * q⁻¹ = 1) (hh : h = q - q⁻¹)
     (ha : a * (1 - q ^ 4) = h) (ha' : a' = -q ^ 4 * a) (hb : b ^ 2 = a * a' + 1)
     (hq1 : q ^ 2 ≠ 1) :
