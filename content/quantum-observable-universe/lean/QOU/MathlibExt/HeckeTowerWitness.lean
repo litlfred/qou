@@ -418,4 +418,94 @@ theorem tail_scalar_is_automatically_a_unit {A : Type*} [Ring A] [Algebra R A]
   have hcc : c * c = h * c + 1 := hinj hmap
   linear_combination hcc
 
+/-! ## 🛑 No finite stage receives the tower at all
+
+The two results above exclude sending the tail to *scalars*. The question they
+leave open — bean `qou-p8yg` — is whether **any** assignment of the tail into a
+finite `H_n(q)` exists. It does not, and the reason is one identity.
+
+`braid_central_forces_eq` says that braiding with a **central** element forces
+equality. Centrality therefore does not stay put: it propagates down the tower,
+collapsing each generator onto the one above it
+(`central_forces_below`, `central_tail_collapses_all`).
+
+That settles the question. In any finite target the `far` relations force every
+sufficiently high generator to commute with all the low ones — i.e. to be
+central — and the collapse then drags **every** generator onto that one element.
+So no such map separates `g 0` from `g 1`, whatever the target, and strict
+growth of the filtration cannot be obtained this way at all. It has to come from
+the Iwahori-Hecke coset basis, or from the direct limit of
+`SchurWeyl.HeckeInclusion.heckeIncl` with injectivity.
+
+These results **subsume** `scalar_tail_forces_central` above, which is the
+special case where the central element is a scalar — and are strictly stronger,
+concluding `x = y` rather than merely that `x` is central. That theorem is kept
+because it is cited. -/
+
+/-- **Braiding with a central element forces equality.** If `y` is central, both
+`x` and `y` satisfy the Hecke quadratic, and the two braid, then `x = y`.
+
+Both sides of the braid relation collapse onto `h • (y * x)` plus one leftover
+term — `x` on the left, `y` on the right — so the relation *is* `x = y`. -/
+theorem braid_central_forces_eq {A : Type*} [Ring A] [Algebra R A]
+    (x y : A) (hh : R)
+    (hcen : ∀ a : A, y * a = a * y)
+    (hqx : x * x = hh • x + 1)
+    (hqy : y * y = hh • y + 1)
+    (hbraid : y * x * y = x * y * x) :
+    x = y := by
+  have hL : y * x * y = hh • (y * x) + x := by
+    rw [mul_assoc, ← hcen x, ← mul_assoc, hqy, add_mul, one_mul, smul_mul_assoc]
+  have hR : x * y * x = hh • (y * x) + y := by
+    rw [← hcen x, mul_assoc, hqx, mul_add, mul_one, mul_smul_comm]
+  rw [hL, hR] at hbraid
+  exact add_left_cancel hbraid
+
+/-- One step of the collapse: a central generator drags the generator below it
+onto itself. -/
+theorem central_step {A : Type*} [Ring A] [Algebra R A]
+    (x : ℕ → A) (hh : R)
+    (hquad : ∀ m, x m * x m = hh • x m + 1)
+    (hbraid : ∀ m, x (m + 1) * x m * x (m + 1) = x m * x (m + 1) * x m)
+    (m : ℕ) (hcen : ∀ a : A, x (m + 1) * a = a * x (m + 1)) :
+    x m = x (m + 1) :=
+  braid_central_forces_eq (x m) (x (m + 1)) hh hcen (hquad m) (hquad (m + 1))
+    (hbraid m)
+
+/-- **A central generator collapses the whole tower below it**, by induction on
+the distance. -/
+theorem central_forces_below {A : Type*} [Ring A] [Algebra R A]
+    (x : ℕ → A) (hh : R)
+    (hquad : ∀ m, x m * x m = hh • x m + 1)
+    (hbraid : ∀ m, x (m + 1) * x m * x (m + 1) = x m * x (m + 1) * x m) :
+    ∀ (d k : ℕ), (∀ a : A, x (k + d) * a = a * x (k + d)) → x k = x (k + d) := by
+  intro d
+  induction d with
+  | zero => intro k _; simp
+  | succ d ih =>
+      intro k hcen
+      have hcen' : ∀ a : A, x (k + d + 1) * a = a * x (k + d + 1) := hcen
+      have hstep : x (k + d) = x (k + d + 1) :=
+        central_step x hh hquad hbraid (k + d) hcen'
+      have hcend : ∀ a : A, x (k + d) * a = a * x (k + d) := by
+        intro a; rw [hstep]; exact hcen' a
+      calc x k = x (k + d) := ih k hcend
+        _ = x (k + d + 1) := hstep
+
+/-- **The answer to `qou-p8yg`'s open question: no tail assignment exists.**
+
+If any generator of the tower maps to a central element, every generator below it
+maps to that *same* element. In a finite target the `far` relations make the high
+generators central, so the entire image collapses to one element and `g 0` cannot
+be separated from `g 1`. -/
+theorem central_tail_collapses_all {A : Type*} [Ring A] [Algebra R A]
+    (x : ℕ → A) (hh : R)
+    (hquad : ∀ m, x m * x m = hh • x m + 1)
+    (hbraid : ∀ m, x (m + 1) * x m * x (m + 1) = x m * x (m + 1) * x m)
+    (n : ℕ) (hcen : ∀ a : A, x n * a = a * x n) :
+    ∀ k ≤ n, x k = x n := by
+  intro k hk
+  obtain ⟨d, rfl⟩ := Nat.exists_eq_add_of_le hk
+  exact central_forces_below x hh hquad hbraid d k hcen
+
 end QOU.MathlibExt.HeckeTowerWitness
