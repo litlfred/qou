@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-12T10:46:49Z
+updated_at: 2026-09-12T11:19:35Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -58,3 +58,7 @@ NEXT (step 4, branch claude/ales-step4-vertex-order-2026-09-12): the k >= 2 non-
 ## 2026-09-12 — step 4 on PR #7207 (branch claude/ales-step4-vertex-order-2026-09-12): the k >= 2 non-symmetry closed by algebra; the vertex is the q-deformed 3-cycle
 Lean QOU/Mass/GammaGammaVertexOrder.lean (31 theorems, no sorryAx): from the Hoefsmit relations alone det V = 1, tr V = -1 - h^2; Cayley-Hamilton gives V^k = alpha_k V + beta_k 1; on the reals V^k symmetric <=> alpha_k = 0 <=> V^k = +-1 (so the LITERAL PSD reading admits a non-trivial gamma-gamma word in H_3 iff some vertex power is scalar, i.e. iff theta/pi in Q with 2 cos theta = tr V). V^3 = (2h^2 + h^4) V + (1 + h^2) 1, so V^3 = 1 iff h = 0: the k = 3 survivor (beta_Bor, and the pp bond G^3) is the q-deformation of the 3-cycle s_0 s_1 of S_3, which is WHY |V^3 - 1|_F = 0.1126 at q_0 and why the selected pp bond moves the diproton by only 4.47 keV. The step-3 chi_(2,1) table is the Chebyshev recurrence in closed form (chi_3 = 2 - 3h^4 - h^6); its sign pattern (-,-,+,-,-) and alpha_k != 0 for k = 1..5 are proved for every 0 < h^2 <= 1/10, which covers 1 < q <= 23/20 and hence the proton pin (h^2 = 0.0437). Probe gamma_gamma_vertex_order_probe.py (8/8, 60 dps) matches the step-3 witness column to 2.6e-60. Audit: docs/audits/2026-09-12-gamma-gamma-word-selection-step4.md.
 Still open: whether some V^k is ever scalar (theta/pi = 0.6747590908..., informational: closest approach |alpha_k| = 0.0355 at k = 40, no claim); the PSD-reading owner call (the literal reading now provably selects nothing non-trivial for k <= 5 at any q in the interval; the Frobenius reading selects k = 3 on the whole interval); the non-gamma-gamma letters. Bean stays in-progress.
+
+
+## 2026-09-12 — OWNER RULING (chat): PSD reading = FROBENIUS POSITIVITY (option 3) FOR NOW; readings 1 (literal Matrix.PosSemidef) and 2 (symmetric-part PSD) KEPT for later
+Verbatim: "try PSD condfinement 3 for now, but keep 1 2 for later". Reading 3 = chi_lambda(w) >= 0 on every block with y_lambda > 0 (constraint (1) of prop:confinement-sdp read on a word). Consequences: (i) the H_3 selector picks k = 3 = beta_Bor as the minimal non-zero survivor, and by GammaGammaVertexOrder this holds for every 1 < q <= 23/20, not just at the pin; (ii) on the H_6 interface the selected pp bond is G^3 = (sigma_2 sigma_3^-1)^3 (measured, step 3), under which the diproton is unbound by 4.47 keV; (iii) readings 1 and 2 stay recorded in the step-3/4 records and probes as alternatives — nothing is deleted; reading 1 provably selects nothing non-trivial for k <= 5 on the interval, reading 2 agrees with 3 at H_3. Step 5 (this branch, PR #7207): formalise reading 3 as FrobeniusSelected and prove the H_3 selection theorem on the interval. Bean stays in-progress (theta/pi question; non-gamma-gamma letters; H_6 bond selection not yet in Lean).
