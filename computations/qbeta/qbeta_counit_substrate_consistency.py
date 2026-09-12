@@ -23,13 +23,27 @@ h = q − q⁻¹):
     ε − tr_M|z    = h·(z − 1)         (exact gap; the two agree iff z = 1)
 
 This script instantiates z at the physical substrate Markov loop value
-    z_sub = 1/(√q + 1/√q) = √q/(q + 1) ≈ 0.4993
+    z_sub = q³/(q² + 1) ≈ 0.6127          (convention D, canonical)
+
+🛑 LABEL CORRECTED 2026-09-12. This docstring read `z_sub = 1/(√q + 1/√q) =
+√q/(q + 1) ≈ 0.4993` — convention **C** — while the CODE below has computed
+convention D (`q³/(q²+1)`) since the 2026-08-09 excision. The code was migrated
+and the prose was not, so this file described the wrong functional and PRINTED
+the wrong formula beside the right number (see the `z_sub = …` print, also
+fixed). Corpus-derived: line ~90 declares convention D one line above the
+computation, and the 2026-08-15 owner ruling makes D canonical.
 and multiplies the dimensionless N=0 reduction content by the per-Hecke-step
 energy 𝔈₀ = m_e · c_q² · ℏ_q^E = m_e/(q(q−1)) to get the two N=0 Q_β
 predictions:
 
     counit:  Q_β = |ε(Δ)·𝔈₀| = m_e(q+1)|q²−2q−1|/(2q³)   → +0.17 %  (right tool)
-    trace :  Q_β = |tr_M(Δ)|_{z_sub}·𝔈₀|                  → −56 %    (wrong tool)
+    trace :  Q_β = |tr_M(Δ)|_{z_sub}·𝔈₀|                  → −43.157 % (wrong tool)
+
+The `−43.157 %` is the convention-D figure and matches the committed census
+witness `qbeta-option-e-required-level.witness.json` (`delta_S_short_normal_form`,
+`pct_D`). This line read `−56 %` until 2026-09-12: that is the convention-C
+value (measured −55.8385 % at `z_C = √q/(q+1) = 0.4993203342`), i.e. the same
+stale-frame defect as the `z_sub` formula above.
 
 Reproducing BOTH signatures at the live q₀ validates the substrate loop value
 (z_sub) and confirms the merged framing is current. It then checks the audit's
@@ -83,7 +97,17 @@ def main():
     hbar_q = 1 - 1 / q                 # ℏ_q = 1 − q⁻¹
     hbar_q_sq = hbar_q ** 2
     # 𝔈₀ = m_e · c_q² · ℏ_q^E = m_e/(q−1)² · (q−1)/q = m_e/(q(q−1)).
-    E0 = me / (q * (q - 1))
+    # E_0 THROUGH THE UNIFIED MODULE, explicitly at ORDER ZERO (2026-09-12).
+    # Number-preserving: `order_zero()` is exactly `m_e/(q(q-1))`, the formula this
+    # line had inline. Routed so the choice is explicit rather than implicit -- the
+    # module now has two forms differing by 1/(1-ℏ_q²) = +0.9915 %, and an inline
+    # formula silently selects one. Order-zero is correct HERE because this file's
+    # own analysis is about the N=0 truncation remainder and its ~1 % bound; the
+    # tower form would double-count the very correction being characterised.
+    import sys as _sys
+    _sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    from qbeta_e0 import order_zero as _e0_order_zero
+    E0 = _e0_order_zero(q=q, m_e=me)
 
     # ── N=0 reduction content (two functionals) ───────────────────────
     eps = h ** 2 / 2 - h               # ε(Δ): Frobenius counit
@@ -123,7 +147,10 @@ def main():
     print(f"h = q − q⁻¹               = {mp.nstr(h, 20)}")
     print(f"ℏ_q² = (1−q⁻¹)²           = {mp.nstr(hbar_q_sq, 20)}")
     print(f"𝔈₀ = m_e/(q(q−1))         = {mp.nstr(E0, 20)} MeV")
-    print(f"z_sub = √q/(q+1)          = {mp.nstr(z_sub, 20)}")
+    # Was `z_sub = √q/(q+1)` -- a convention-C FORMULA printed beside a
+    # convention-D VALUE. The sharpest form of the prose-contradicts-its-own-number
+    # defect: a reader checking the formula against the number finds they disagree.
+    print(f"z_sub = q³/(q²+1)  [conv D]  = {mp.nstr(z_sub, 20)}")
     print(f"ε(Δ) = h²/2 − h           = {mp.nstr(eps, 20)}")
     print(f"tr_M(Δ)|z_sub = h²/2−h·z  = {mp.nstr(trM_zsub, 20)}")
     print(f"gap = ε − tr_M = h(z−1)   = {mp.nstr(gap, 20)}")
@@ -162,34 +189,45 @@ def main():
         "counit_eps_E0_eq_closed_form",
         computed=mp.nstr(counit_qbeta, DPS),
         expected=mp.nstr(counit_closed, DPS),
-        tolerance=1e-40,
+        tolerance="1e-40",
         unit="MeV",
         source="Lean Qbeta_closed (qbeta_energy_scale.lean)",
     )
     # Counit residual reproduces the merged +0.17 % at the live anchor.
+    # The counit ε = h²/2 − h is the augmentation and is z-INDEPENDENT, so this
+    # target is convention-free and unaffected by the D migration.
     w.add_assertion(
         "counit_residual_pct",
-        computed=counit_res,
-        expected=0.17,
-        tolerance=0.02,
+        computed=mp.nstr(counit_res, DPS),
+        expected="0.17",
+        tolerance="0.02",
         unit="percent",
         source="PR #2363 audit (+0.17 %)",
     )
-    # Trace-at-substrate reproduces the merged −56 % wrong-tool signature.
+    # Trace-at-substrate reproduces the wrong-tool signature.
+    #
+    # 🛑 TARGET CORRECTED 2026-09-12: this expected −56.0 ± 1.0, which is the
+    # CONVENTION-C value (−55.8385 % at z_C = √q/(q+1) = 0.4993203342). The code
+    # has computed convention D since the 2026-08-09 excision, so this assertion
+    # was FAILING against a stale-frame target — the witness has been shipping
+    # `allPassed: false` for that reason, not because anything is wrong with the
+    # computation. Under D the value is −43.157 %, which the committed census
+    # witness `qbeta-option-e-required-level.witness.json` records independently
+    # as `delta_S_short_normal_form.pct_D = -43.157175`. Corpus-derived.
     w.add_assertion(
         "trace_substrate_residual_pct",
-        computed=trace_res,
-        expected=-56.0,
-        tolerance=1.0,
+        computed=mp.nstr(trace_res, DPS),
+        expected="-43.157175",
+        tolerance="0.001",
         unit="percent",
-        source="PR #2363 audit (−56 %)",
+        source="qbeta-option-e-required-level.witness.json "
+               "(delta_S_short_normal_form.pct_D); was PR #2363's C-frame −56 %",
     )
     # The +0.17 % counit residual is within the N=0 truncation bound.
     w.add_assertion(
         "counit_residual_within_N0_bound",
-        computed=1.0 if abs(counit_res) <= n0_bound_pct else 0.0,
-        expected=1.0,
-        tolerance=0.0,
+        computed="1" if abs(counit_res) <= n0_bound_pct else "0",
+        expected="1",
         source="ℏ_q²/(1−ℏ_q²) ≈ 1 % truncation bound",
     )
 
@@ -202,10 +240,10 @@ def main():
     w.add_data("gap_eps_minus_trM", mp.nstr(gap, DPS))
     w.add_data("counit_qbeta_MeV", mp.nstr(counit_qbeta, DPS))
     w.add_data("trace_qbeta_MeV", mp.nstr(trace_qbeta, DPS))
-    w.add_data("counit_residual_pct", float(counit_res))
-    w.add_data("trace_residual_pct", float(trace_res))
-    w.add_data("N0_truncation_bound_pct", float(n0_bound_pct))
-    w.add_data("E0_derived_vs_cal_gap_pct", float(E0_gap_pct))
+    w.add_data("counit_residual_pct", mp.nstr(counit_res, DPS))
+    w.add_data("trace_residual_pct", mp.nstr(trace_res, DPS))
+    w.add_data("N0_truncation_bound_pct", mp.nstr(n0_bound_pct, DPS))
+    w.add_data("E0_derived_vs_cal_gap_pct", mp.nstr(E0_gap_pct, DPS))
 
     w.add_caveat(
         "N=0 only. The counit value ε(Δ)·𝔈₀ is built from the N=0 neutron−"
