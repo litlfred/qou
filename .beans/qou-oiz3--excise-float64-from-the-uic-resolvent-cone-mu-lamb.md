@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-09-12T22:13:34Z
+updated_at: 2026-09-12T22:30:21Z
 ---
 
 ## Measured surface and the residual (2026-09-12)
@@ -77,3 +77,20 @@ float64 ulp at 7.27. The public `float()` return ABSORBS this entire excision at
 this atom. That boundary is deliberate and documented (bean `qou-sv7h`, #6427:
 an mpf raises TypeError at `hadron_knot_table`'s `round(B, 4)`), so it is
 recorded here, not changed.
+
+## Two housekeeping notes
+
+**`qou-t6be` could not be appended to.** Its bean FILE exists only on the
+unmerged branch `claude/uic-functional-resolution-2026-09-12` (PR #7237); it is
+not on `origin/main`, so writing to it here would have created a conflicting
+copy. The cross-reference — including the correction that its 2.54432e-16
+per-block bound does not transfer to a per-atom total — was posted as a comment
+on #7237 instead. Intent was also posted on #7229 (`qou-sv7h`, same file).
+
+**This container's clone is SHALLOW and a sibling process moved the graft
+boundary mid-session.** `git log --oneline` locally shows 5 of this branch's 7
+commits and `git merge-base origin/main HEAD` returns EMPTY, while both missing
+commits exist as objects (`git cat-file -t` = commit) and GitHub reports the PR
+at **7 commits / 11 files / +1238 -107**. Nothing was lost; a local
+`merge-base` / `log` result is simply not evidence about the branch here.
+Verify against the API, not the walk.
