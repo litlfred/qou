@@ -115,3 +115,40 @@ Then run `check_union.py origin/main <pre-rebase-sha> --changed`: per file,
 every non-blank line of both sources must be in the result and no line may
 occur more often than in either source. 14/14 on #7121; the check is what
 makes "union, no text dropped" a claim rather than an intention.
+
+## 6. Lean-direct when the QOU olean tree is gone, and three small traps (queue 5, 2026-09-12)
+
+Queue 5 (#7200, #7198, #7201 — beans `qou-m8f3` / `qou-rwhv`) ran with **no QOU
+oleans in the container**: the parent deleted the sibling worktree's 3.4 G
+`content/quantum-observable-universe/lean/.lake/build` to get disk back (1.6 G
+→ 5.0 G free), leaving only `.lake/packages/*/.lake/build/lib/lean` (Mathlib
+3480 + aesop/batteries/…). Everything still verified without `lake` and without
+a restore:
+
+- **A library file whose only QOU import is a module the same PR modifies:
+  compile the import first into a scratch shadow, then the file against it.**
+  `lean -DautoImplicit=false -s 65536 Dep.lean -o $SHADOW/QOU/…/Dep.olean`
+  (create the dir), then `LEAN_PATH=$SHADOW:<package dirs> lean … File.lean`.
+  #7198's `UrsellPartitionFunctionB3` (imports `MayerThreeBodySign`, docstring
+  re-scoped on the branch): 77 s + 4 s, both exit 0. A file importing Mathlib
+  only (#7200's `OneRowBlockLetterProduct`) needs no shadow. Use the toolchain
+  binary directly (`/root/.elan/toolchains/leanprover--lean4---v4.24.0/bin/lean`)
+  — `elan`'s shim errors on the override outside the repo. Scripts:
+  `lean_verify.sh <file> [shadow-olean] [extra LEAN_PATH dir]`, `lean_7198.sh`.
+- **`#print axioms` appended AFTER `end <namespace>` fails with `Unknown
+  constant`** for every unqualified name; the run reads as a red on a green file.
+  Insert the lines *before* the closing `end <ns>` (`axioms_only.sh` does; it
+  greps the namespace and splices at that line). Cost one round trip.
+- **`git cherry origin/main pr/N` against the LOCAL pre-rebase ref shows `+`
+  after the merge for exactly the union-resolved commits** (2 on #7200, 1 on
+  #7198) — their patch-ids changed in the conflict resolution, so they are not
+  "unmerged". The evidence is `verify-merge-replay.py` against the *pushed*
+  `origin/<branch>` head (4/4, 5/5, 3/3) and `git cherry` against that same
+  ref (0 `+`). Do not re-merge or "rescue" on the local-ref reading.
+- **`mergeable_state: unknown` right after `main` moves is GitHub recomputing,
+  not a blocker** — on #7201 it read `unknown` at 11:49:5xZ and `clean` on the
+  very next `GET` ~30 s later; the `PUT …/merge` with the head-sha guard then
+  returned 200. `merge-tree --write-tree HEAD origin/main` (exit 0) is the
+  local proof to hold while it recomputes. `main` landed 14 and 8 commits under
+  the queue in ~15 min; none overlapped, and no re-rebase was needed because the
+  API rebase-merge replays onto the current tip itself.
