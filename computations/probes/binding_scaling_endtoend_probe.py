@@ -21,6 +21,31 @@ infrastructure, not by its own budget, and the session was idle across the
 window so the process may not have been running throughout. It establishes
 NEITHER "3H takes > 5 h" NOR "3H completes".
 
+CONFIGURATION the numbers above were taken at -- state this whenever you quote
+them (added 2026-09-12 after a sibling on #7245 reported an apparently
+conflicting figure; bean `qou-sv7h`).
+
+`binding_energy(Z, N)` takes no `k_exact`, so this probe runs the DEFAULTS,
+and the defaults are the expensive end:
+
+    k_exact = k_max = K_PARTITION_MAX = 11
+    active EXACT set     193 partitions,  sum(dim) = 48926,  max dim = 2310
+    active GAUSSIAN set    0 partitions   (the window k_exact < k <= k_max is
+                                           empty when they are equal)
+
+For contrast, k_exact=4 is 10 partitions / sum(dim) 16, and k_exact=5 is 17 /
+42. So a cost measured at k_exact=4 is NOT comparable to the rows above, and
+816.811 s is the FULLY-EXACT figure rather than a cheap configuration.
+
+**The kernel arm is asserted, not assumed** (`assert H._HAS_LP_KERNEL`), and
+that is the discriminator against the sibling's number. #7245 reports the same
+default `k_exact = 11` not finishing its first atom in ~25 min; the dim-2310
+A/B on this branch measured the Python fallback at 31.2x the kernel, and
+13.6 min x 31.2 ~ 7.1 h, so a 25-minute non-finish is what the FALLBACK arm
+predicts and is not in tension with 816.811 s. `pyhecke_native` is not on PyPI,
+so a container without it is the default state -- print `H._HAS_LP_KERNEL`
+before comparing any wall-time row to these.
+
 SCOPE — what the timing is and is not a claim about (added after sibling
 coordination on PR #7229, from #7221 / #7235 / #7236).
 
