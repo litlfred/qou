@@ -44,12 +44,11 @@ Recipes: [`worktree-hook-and-rest-recipes.md`](worktree-hook-and-rest-recipes.md
 shell variable, loop, `export`, `$(...)` or `cd` near `git`/`python`, and even a
 URL containing `github` — put the step in a script file with **literal** paths
 and run `bash /abs/x.sh`. (2) `mcp__github__*` can be "connected" and offer
-**no** PR tools — REST (`urllib` + `$GITHUB_TOKEN`) did every read, body write,
-review request and merge, 4/4 (2026-09-11). (3) `precision-gates.sh` exits
-**2 "PREFLIGHT FAILED"** without `qou_substrate` importable — **not a red**;
-wrap with `PYTHONPATH=tools/qou-substrate/python:…`. (4) A dead coordinator's
-hardlinked `shadow/` in the scratchpad held 2.4G; the cache restore bottomed at
-**139M free** from 8.5G — reclaim first, stream to `tar`.
+**no** PR tools — REST did every read, body write, review request and merge,
+7/7 (2026-09-11/12). (3) `precision-gates.sh` exits **2 "PREFLIGHT FAILED"**
+without `qou_substrate` importable — **not a red**; wrap with `PYTHONPATH=…`.
+(4) A dead sibling's 2.4G `shadow/` survives in the scratchpad; the restore
+bottomed at **139M free** from 8.5G. (5) No QOU oleans? shadow-compile — §6.
 
 ## STABLE — the Phase-4 verification gate (what replaces "CI green")
 
