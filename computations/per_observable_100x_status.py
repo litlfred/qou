@@ -546,6 +546,38 @@ def _qbeta_ruled_base() -> dict:
         "price_witness": "qbeta/qbeta-zd-rescore-price.witness.json",
         "second_rescore_due_after": "qou-pdix (phase) -> qou-cds1 (ladder); "
                                     "bean qou-iagg",
+        # 🛑 THE ELEMENT IS NOT RULED, ONLY THE FUNCTIONAL. The 2026-09-08
+        # ruling fixes `eps` (the Markov trace at z_D); it does NOT fix which
+        # element `Delta` is. The bean's own candidate census (witness
+        # qbeta-option-e-required-level) carries FOUR, all undershooting at
+        # level 2 = z_D:
+        #     delta_S short NF        -43.157 %   <- what this row scores
+        #     nuc9 build_nucleon_nf   -30.936 %
+        #     nuc11 interleaved       -17.496 %
+        #     nuc11 gen-grouped       -15.451 %
+        # This row uses delta_S because that is the element the admissibility
+        # probe SOLVED (it is the one whose z = 1 trace reproduces the published
+        # closed form) and the element the ruling entry recorded a base value
+        # for (0.4447004 MeV). It is NOT the gamma-gamma-selected nucleon word.
+        # PR #7212 (OPEN at the time of writing, so cited as a claim and not as
+        # corpus) argues the gamma-gamma word-selection ruling DECIDES the
+        # nucleon ordering in favour of `nuc11 interleaved`, whose level-2
+        # residual is -17.496 % -- 2.5x closer than what is scored here. If that
+        # lands and the canonical Delta is a nucleon word rather than the short
+        # element, THIS ROW MOVES AGAIN, by a factor of ~2.5 rather than a
+        # rounding.
+        # So the figure is scoped twice over, not once: no ladder (above), AND
+        # an unsettled element. Do not read it as the framework's Q_beta.
+        "element_scored": "delta_S (short NF)",
+        "element_is_ruled": False,
+        "element_candidates_level2_pct": {
+            "delta_S short NF": "-43.157",
+            "nuc9 build_nucleon_nf": "-30.936",
+            "nuc11 interleaved (gamma-gamma-selected per PR #7212, OPEN)": "-17.496",
+            "nuc11 gen-grouped": "-15.451",
+        },
+        "element_tracked_by": "qou-99qc (the Delta/eps fork, open); "
+                              "PR #7212 narrows the nucleon-word branch",
     }
 
 
@@ -893,7 +925,18 @@ def main() -> dict:
                     f"which is admissible but is the finer one-row truncation and is "
                     f"NOT convention D -- recorded because a referee will notice, "
                     f"not as an argument: ranking cells by residual is the "
-                    f"selection-against-the-target the anti-fit directive forbids."
+                    f"selection-against-the-target the anti-fit directive forbids. "
+                    f"🛑 AND THE ELEMENT IS NOT RULED, ONLY THE FUNCTIONAL: "
+                    f"this row scores Delta = {_ruled['element_scored']}, the "
+                    f"element whose z = 1 trace reproduces the published closed "
+                    f"form, but the corpus carries FOUR candidate Delta and all "
+                    f"undershoot at z_D -- delta_S -43.157%, nuc9 -30.936%, "
+                    f"nuc11 interleaved -17.496%, nuc11 gen-grouped -15.451%. PR "
+                    f"#7212 (OPEN, cited as a claim not as corpus) argues the "
+                    f"gamma-gamma selection ruling picks nuc11 interleaved, which "
+                    f"would move this row by ~2.5x, not a rounding. So the figure "
+                    f"is scoped TWICE: no ladder, and an unsettled element "
+                    f"({_ruled['element_tracked_by']})."
                 )
             elif _adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
                 _adm_note = (
