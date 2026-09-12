@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-12T12:06:50Z
+updated_at: 2026-09-12T12:15:41Z
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -106,3 +106,34 @@ Proved rather than trusted:
   field rather than the docstring.
 
 All five new declarations depend on **no axioms at all**.
+
+
+## 🛑 Correction: the fifth pattern was NOT prose-only, and I said it was
+
+`docs/audits/2026-08-23-free-prop-field-triviality-probe.lean` already demonstrated the
+`prop-universe-field` triviality **in Lean**, on 2026-08-23 — reproducing three carriers
+verbatim (`DimMasterPentagon`, `BringSurfaceSmoothness`, `HabiroFlowSolution`), discharging
+each with `⟨True, …⟩`, and exhibiting the unconditional consequence
+(`conditional_on_habiro [HabiroFlowSolution] (P : Prop) (hP : P) : P := hP`).
+
+I wrote that this file "turns the finding into a theorem" and that the ledger recorded it
+"as prose". **That is true of the four self-assuming patterns and false of this fifth
+one.** I ran the corpus-grep against the *ledger* and not against the tree for prior
+formalizations of the pattern, which is the checklist's own point.
+
+What this file genuinely adds for the fifth pattern is **generality and placement**, not
+discovery: the probe is a self-contained demonstration in `docs/audits/` over three named
+classes; these declarations abstract the shape, live in the library tree where a block can
+cite them, and connect the pattern to the other four through `Contentless`. The probe
+deserves the credit and now has it, in the file's own §.
+
+## And the probe carries a trap this file was missing
+
+`HabiroFlowSolution` has a **fourth field conjoining the three** (`all_hold : p ∧ q ∧ r`),
+which looks like it forces them to hold. It does not — the three are *propositions*, so
+`⟨True, True, True, ⟨trivial, trivial, trivial⟩⟩` discharges the whole carrier.
+
+That is exactly what an author adds on being told the carrier asserts nothing, and it
+changes nothing while looking like a fix. Now stated for the shape:
+`propUniverseWithConjunction_inhabited` / `_contentless`. The repair is to type the fields
+by actual propositions, never to conjoin propositions-as-values.

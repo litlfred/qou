@@ -245,7 +245,18 @@ states the defect the same way in every one of them:
 
 That is a **type-level** error rather than a judgement about intent, so it is provable
 outright — and the resulting carrier is strictly worse than the self-assuming shapes
-above, which at least assert their conclusion. -/
+above, which at least assert their conclusion.
+
+**Prior art, and a correction to this file's own framing.** Unlike the four patterns
+above, this one was **not** prose-only:
+[`docs/audits/2026-08-23-free-prop-field-triviality-probe.lean`](../../../../../docs/audits/2026-08-23-free-prop-field-triviality-probe.lean)
+already demonstrated it in Lean on 2026-08-23, reproducing three carriers verbatim,
+discharging each with `⟨True, …⟩`, and exhibiting the unconditional consequence. What this
+section adds is **generality and placement** — the probe is a self-contained demonstration
+in `docs/audits/` over three named classes, whereas these declarations abstract the shape
+and live in the library tree where a block can cite them — plus the `Contentless`
+criterion that ties this pattern to the other four. It is not a new discovery, and the
+probe deserves the credit. -/
 
 /-- **A carrier whose field is typed `: Prop`.** The field supplies a *proposition* — an
 inhabitant of the sort `Prop` — not a *proof* of one. Contrast `SelfAssumingContext C`,
@@ -283,5 +294,33 @@ theorem propUniverse_vs_propField :
   refine ⟨propUniverse_inhabited, ?_⟩
   rintro ⟨ctx⟩
   exact ctx.claim
+
+/-- **A conjunction field does not rescue it** — the case the 2026-08-23 probe exhibits and
+the shape above misses.
+
+`QOU.Habiro.FlowSolution`'s carrier adds a fourth field conjoining its three
+`Prop`-typed ones (`all_hold : p ∧ q ∧ r`), which *looks* like it forces them to hold. It
+does not: the three are **propositions**, so `⟨True, True, ⟨trivial, trivial⟩⟩` discharges
+the whole carrier including the conjunction.
+
+This is the trap worth naming, because a conjunction field is exactly what an author adds
+on being told the carrier asserts nothing — and it changes nothing at all while looking
+like a fix. The repair is to type the fields by actual propositions, not to conjoin
+propositions-as-values. -/
+structure PropUniverseWithConjunction where
+  /-- A proposition, not a proof. -/
+  p : Prop
+  /-- Another proposition, not a proof. -/
+  q : Prop
+  /-- The apparent fix: a conjunction of the two — which is discharged by `True ∧ True`. -/
+  all_hold : p ∧ q
+
+theorem propUniverseWithConjunction_inhabited : Nonempty PropUniverseWithConjunction :=
+  ⟨⟨True, True, ⟨trivial, trivial⟩⟩⟩
+
+/-- So the conjunction field buys nothing: the carrier is still contentless for `True`. -/
+theorem propUniverseWithConjunction_contentless :
+    Contentless PropUniverseWithConjunction True :=
+  ⟨fun _ => trivial, fun _ => propUniverseWithConjunction_inhabited⟩
 
 end QOU.ProofHygiene
