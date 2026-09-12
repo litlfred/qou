@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-12T12:06:50Z
+updated_at: 2026-09-12T12:21:57Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -71,3 +71,7 @@ Still open (bean stays in-progress, rule 13a): k > 5 candidates (chi_signs_of_sm
 
 ## 2026-09-12 — #7207 MERGED (03d6c9485c, rebase, 5/5 patch-ids replayed). Owner order for the rest: 1 (merge) DONE, then 3 (H_6 pp bond in Lean), then 2 (H_3 candidates to k <= 10).
 Step 6 claimed on branch claude/ales-step6-h6-pp-bond-2026-09-12. Scope: the H_6 interface bond G^m = (sigma_2 sigma_3^-1)^m lives in the parabolic H_3 = <sigma_2, sigma_3>, and each H_6 block character on G^m is a_lam + b_lam chi_(2,1)(V^m) + c_lam with (a,b,c) the multiplicities of (3),(2,1),(1^3) in V_lam restricted to that H_3 — by the branching rule these are Young-lattice path counts (3)->lam etc. (middle-strand embedding conjugate to the first-strand one by T_d, Dipper-James). Convention D = two-row truncation gives y > 0 exactly on (6),(5,1),(4,2),(3,3); path counts there: (1,0,0),(3,1,0),(3,3,0),(1,2,0). Feasibility of G^m under reading 3 is then decided by (3,3): 1 + 2 chi_m >= 0 — the tightest interval is 0 < h^2 <= 1/12 (G^5 flips feasible near h^2 = 0.0924), still covering 1 < q <= 23/20. Plan: Lean path counter (decide), H6Branching hypothesis structure carrying the character formula, selection theorem; probe cross-checks the formula against the step-3 witness chi_by_block (24 values). The diproton sign (-4.47 keV) needs the full 11-letter nucleon words and stays probe-only.
+
+
+## 2026-09-12 — step 6 on PR #7222 (08036130df): H_6 pp bond selected through branching, on 1 < q <= 23/20
+Lean QOU/Mass/GammaGammaH6Interface.lean (36 declarations, no sorryAx): each H_6 character on G^m = (sigma_2 sigma_3^-1)^m is a + b chi_(2,1)(V^m) + c with (a,b,c) Young-lattice path counts (decide): (6):(1,0,0), (5,1):(3,1,0), (4,2):(3,3,0), (3,3):(1,2,0); f = a + 2b + c on all 11 blocks; Burnside 720. InterfaceBranching = the branching rule as a HYPOTHESIS (not derived; probe verifies 24 step-3 characters to 7.2e-60). Convention D two-row support (probe: y exactly 0 off two-row) makes (3,3) decisive: feasible iff 1 + 2 chi_m >= 0. Interval is h^2 <= 1/12, NOT 1/10 (1 + 2 chi_5 flips at x* = 0.0923); 1 < q <= 23/20 gives 0.0787, pin 0.0437. interface_frobenius_table + interfaceSelected_three: G^3 selected for every such q, B, y with y_(3,3) > 0. Probe 7/7. Record docs/audits/2026-09-12-gamma-gamma-word-selection-step6.md. Not proved: the branching rule; the diproton sign (-4.47 keV, needs full nucleon words); m > 5. Bean stays in-progress. NEXT (owner's '2'): H_3 candidates to k <= 10.
