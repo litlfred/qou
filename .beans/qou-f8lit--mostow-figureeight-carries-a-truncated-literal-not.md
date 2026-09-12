@@ -9,7 +9,7 @@ tags:
     - lean
     - precision
 created_at: 2026-08-29T19:10:00Z
-updated_at: 2026-08-30T15:06:04Z
+updated_at: 2026-09-12T07:52:55Z
 parent: qou-8mtd
 ---
 
@@ -845,3 +845,79 @@ overload of one name, exactly the `markovZ` pattern AGENTS.md tracks.
 has 0 mathlib oleans and 1.9 G free against a 2.4 G cache restore, so
 `lean`-direct cannot run. Established instead: the diff is comment-only, the
 comment delimiters balance (8 `/-` / 8 `-/`), and the value is byte-identical.
+
+
+---
+
+## RE-MEASURED 2026-09-12 — item 1 is DONE for BOTH knots; the residual is ONE literal and TWO of my own errors are recorded below. STAYING OPEN.
+
+### What is done
+
+**Item 1 (exactify the Mostow instances) — complete, both knots.**
+`figureEight.volume := QOU.Knot.FigureEightVolume.VOL_4_1` and
+`knot5_2.volume := QOU.Knot.FiveTwoVolume.VOL_5_2`. Both carry real
+`volume_nonneg` proofs (`Cl_2_pi_div_three_pos`; `BlochWignerPositive` at
+`fiveTwoShape_im_pos`), and `figureEight_volume_lt_knot5_2_volume` is now
+`exact QOU.Knot.FiveTwoVolumeChord.VOL_4_1_lt_VOL_5_2` — the corpus's proved
+chord inequality, nothing approximated.
+
+**Item 3 (audit the other `:leanval` literals) — complete** (2026-08-30, 16
+sites / 7 keys).
+
+**Three stale docstrings, fixed today** — all created *by* the fix, all asserting
+the pre-fix state, and the third was the worst:
+
+| site | claimed | actually |
+|---|---|---|
+| `MostowRigidity.lean:219` | field "stores the 15-digit truncation … via `:leanval[Vol_4_1]{precision=15}`" | 12 lines above a field whose own comment says the sync "has nothing to sync and is gone" |
+| `ManifoldVolumeBridge.lean:20` | "sets it to the literal …, synced by `codemod-leanval.ts`. So `volumeInvariant FigureEight = 2.0298…` holds by `rfl`" | no literal, no sync, and **the `rfl` does not hold** |
+| `HyperbolicVolumeTranscendence.lean:182` | value is "cross-checked against `QOU.Encounter.MostowRigidity` which uses the identical value" | MostowRigidity now uses the exact term; **the cross-check that was this literal's warrant no longer exists** |
+
+### The one real residual
+
+`QOU/Archimedean/HyperbolicVolumeTranscendence.lean:204`
+
+```lean
+noncomputable def vol_5_2 : ℝ := 2.82812208833078   -- 15-digit truncation
+```
+
+is the **last surviving `vol_5_2` truncation**, with the exact
+`VOL_5_2 := 3 * BlochWigner_lob fiveTwoShape` already in
+`Knot/FiveTwoVolumeConstant.lean:114`. Exactifying it is **exemption 1** under
+the ask-first override (a truncated literal → a derived value), so it needs no
+permission — what it needs is the proof work, because
+`QOU.Archimedean.HyperbolicVolumeIndependence` consumes it and its proofs may
+discharge on the decimal. Not attempted here; sized, not started.
+
+### Item 2 may be MOOT rather than open — worth deciding before anyone spends on it
+
+Item 2 asks for a Lean proof that `2.02988321281930 ≠ VOL_4_1`, needing a
+rigorous 16-digit lower bound on `Cl₂(π/3)` the corpus does not have. But the
+*reason* it was wanted was that bridge statements keyed on the literal were
+unsatisfiable at the corpus's own triangulation — and **there is no literal
+left to be unequal to**, as both instance comments now say in as many words.
+So this looks like a guard against a defect that has since been removed by
+construction, not a live obligation. **Recommendation, marked as judgement:**
+retire item 2 rather than fund a 16-digit Clausen bound for it. I have not
+retired it myself — that is a call about what the bean is for.
+
+### TWO ERRORS OF MINE, both caught by the file rather than by me
+
+1. **I inferred the 5₂ exactification was "unblocked by the chord
+   inequality".** It was not, and `MostowRigidity.lean:322-328` corrects exactly
+   that inference in advance: *"What unblocked it was NOT the chord inequality.
+   `VOL_4_1_lt_VOL_5_2` bounds `VOL_5_2` **below** by `VOL_4_1`, which is the
+   quantity on the **left** of the comparison below, so it proves that
+   comparison and **supplies nothing for this field**."* A lower bound by
+   another constant is not a non-negativity proof — the direction conflation
+   AGENTS.md §"Grep the claim SHAPE" names. What actually supplied it was
+   general upper-half-plane positivity (`qou-0ag0`), *"which the 5₂ shape gets
+   for free precisely because it does NOT go through a Clausen special value"*.
+2. **I was about to report the 5₂ instance as an unfixed residual**, on the
+   strength of `FiveTwoVolumeBridge.lean:12` reading
+   `MostowRigidity.knot5_2.volume := 2.82812208833078 -- entered, 15 digits`.
+   That line is itself a stale comment describing the pre-fix state; the
+   instance 300 lines away is exact. **A comment quoting a defect is
+   indistinguishable from the defect under grep** — the same trap this session
+   hit on `qou-ffwk`, where a fenced quotation of an old form inside a docstring
+   was nearly reported as the live class.
