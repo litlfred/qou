@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-04T10:44:01Z
+updated_at: 2026-09-12T20:43:29Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1682,3 +1682,61 @@ the mass shape is invariant to the last digit. Requiring `Im Q_β = 0` then forc
 extension of `Q_β` is mine, not the corpus's.
 
 Scope (a) throughout — no `α` derived, no construction proposed, nothing wired.
+
+
+## 2026-09-12 — route-option triage for the BRIDGE, after entry (2026-09-04 (2)) reshaped the gap
+
+**Not a new result** — no `α` derived, nothing wired. This records which attacks the
+corpus is already *equipped* for, so the next agent does not re-survey. **Scope:
+read from this bean's section headers and its latest entry, not all 1684 lines.**
+
+**The gap as it now stands.** Routes 1–4 closed; route 5's only survivor is the
+open-path reading. Entry 2026-09-04 (2) establishes that **ellipticity is free at
+`|q| = 1` and impossible at real `q`**, so the previously-recorded frontier
+("find one elliptic at real q") asks for what the proved argument forbids. The
+gap is the **bridge**: a fibre-level object at `|q| = 1` whose archimedean
+evaluation lands at `|q₀| = 1.10998` — **11.0 % in modulus**. AGENTS.md's
+fibre-vs-observable banner names this structure and its resolution shape.
+
+**A — Habiro ring / roots of unity.** A Habiro element is *determined by its
+values at roots of unity*, i.e. on `|q| = 1` — exactly the elliptic locus — and
+extends to real `q`. Assets on main: `qbeta_habiro_wenzl_tower_zeta_n.py`,
+`qbeta_habiro_delta_am_partial_sum_scan.py`, `qbeta_ohtsuki_sixone_kappa_series.py`,
+`def:qz-bicompletion`. AGENTS.md names this as the right reformulation.
+*Best structural fit; risks circularity — the Habiro-element construction is part
+of what `qou-cds1` waits on.*
+
+**B — Faddeev quantum dilogarithm / modular double.** `Φ_q` lives on **both**
+sides (`|q| = 1` and `|q| ≠ 1`), related by modular inversion `b → 1/b`: the
+textbook bridge for this exact modulus gap. **And the corpus has Lean:**
+`QOU/Mathlib/FaddeevRatioPeriodic.lean`, `FaddeevSolutionSet.lean`,
+`QOU/MathlibExt/FaddeevPhiBRealIntegral.lean`, plus
+`stochastic-mechanics/phi-q-aj-machinery-identification-details.md` and
+`quantum-observable-universes/q-dilogarithm-pentagon-associator.md`.
+*Cheapest formalize-first step of the four.*
+
+**C — Stokes / resurgence.** If `α` is a **Stokes constant** rather than an
+evaluation, it is complex by nature and *defined by continuation across the gap* —
+which dissolves the "elliptic at real q" impossibility instead of fighting it.
+AGENTS.md lists Stokes-constant extraction as open research, so parallel attack is
+permitted.
+
+**D — two evaluation points** (`α` at `|q| = 1`, mass at real `q₀`).
+**Listed to mark it as the trap:** a second anchor is a fourth calibration under
+CAL-1/2/3. Cheap and almost certainly forbidden.
+
+**Two traps already in this bean, restated so they are not re-run as results:**
+1. `θ = arccos(target)` reproduces **any** sub-unit target exactly — this bean
+   already says that is *"a tautology, not evidence"*.
+2. `qou-c66b`'s Im(q)-sensitivity of `Q_β` (`∂Im(Q_β)/∂Im(q) ≈ 3.418`) carries its
+   own caveat: the complex extension of `Q_β` is the recording agent's, not the
+   corpus's.
+
+**Judgement, not a finding: attack B.** The Lean assets exist, so formalize-first
+is cheap, and the modular double is the standard tool for this modulus bridge.
+A is the better structural fit but risks circularity.
+
+**Why this matters downstream:** `qou-iagg` (the second dashboard re-score) waits on
+`qou-cds1`, which waits on this. The dashboard's `Q_β`/`m_n`/`Δ_pn` rows are
+base-only at ~1.7e+8 ppb precisely because no ladder exists on an admissible base;
+on the retired `z = 1` base the ladder was worth 1312×.
