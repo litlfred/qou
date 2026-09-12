@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
-updated_at: 2026-09-12T03:55:51Z
+updated_at: 2026-09-12T11:51:30Z
 parent: qou-x631
 ---
 
@@ -437,3 +437,64 @@ about to call open.
 **None of the conclusions move.** Every sign is unchanged, the sign columns are
 unchanged (Plancherel `-,+,+`; Wenzl `-,-,-`), and the A=3/A=4 disagreement
 stands. This correction is entirely about published precision.
+
+
+## 🟧 OWNER RULING 2026-09-12 — FORMALIZE AND DERIVE FIRST; Wenzl is a LEANING, not an adoption
+
+Verbatim: *"qou-za3q formalize and derive first.  probably adopt wenzl"*.
+
+### What this decides, and what it deliberately does NOT
+
+**Decides:** decision 1 is settled by **derivation**, not by selection. Option E
+(`qou-gba1`, derive the Omega2 pairing) is promoted to the live route and the
+Formalize-first policy applies in full — Lean structure first, before any
+Python.
+
+**Does NOT decide:** which family wins. *"probably"* is a stated leaning toward
+option A (`qou-q2q7`, adopt Wenzl), and it is recorded as exactly that. It is
+**not** authority to wire Wenzl canonical. Enacting a "probably" would be the
+move the anti-fit directive forbids one level up: adopting a family because it
+is expected to be right rather than because it was shown to be.
+
+So: `qou-q2q7` stays **open, not enacted**; `qou-smvw` (option C, report both)
+stays **open** — the owner did not rule on it, and reporting both arms remains
+the honest interim state while the derivation is open; `qou-94yt` / `qou-ia4w`
+remain not-recommended.
+
+### The formalize-first target, and why the existing control cannot supply it
+
+The probes' own control is **weight-blind** and therefore cannot pick the
+measure. `rho = I` gives `tr(Omega2_lambda) = 0` for EACH lambda separately —
+the matrix trace of a commutator vanishes by cyclicity — so
+`Sum_lambda w(lambda) * 0 = 0` for **any** weight family `w` whatsoever. The
+deuteron probe's docstring states this ("any nonzero sign REQUIRES the
+density"), and the 2026-09-07 analysis records it as measurement 3. It is
+evidence for cyclicity and none at all about `w`.
+
+The candidate invariant that DOES constrain `w` is the characterisation of the
+Markov trace itself:
+
+    (i)   cyclicity              tr(ab) = tr(ba)
+    (ii)  Markov property       tr_{n+1}(x sigma_n) = z * tr_n(x),  x in H_n
+    (iii) normalisation         tr(1) = 1
+    (iv)  the parameter z       FIXED ALREADY: convention D, z_D = q^3/(q^2+1)
+                                (owner ruling 2026-08-15, R1)
+
+If (i)-(iv) force the weight family, then the family is **derived** from a
+ruling the corpus already made, and the owner's leaning would be the
+*conclusion* rather than the premise. Note the two normalisation facts already
+measured point the same way: Wenzl's `tr(1)` is exactly `1.0` at n = 6, 9, 12,
+while the Plancherel measure gives `11.139 / 184.233 / 6751.541` and so fails
+(iii) outright — its scale drifts ~600x across A.
+
+**Not yet claimed.** Whether (i)-(iv) are jointly sufficient, and whether the
+resulting family IS the row-capped Wenzl family, is precisely what has to be
+proved. A corpus-grep is running to establish whether this uniqueness is
+already held in Lean or citable from the library — classical Markov-trace
+uniqueness is Jones/Ocneanu, so it may be a CITATION rather than a derivation,
+and that distinction changes the work.
+
+### Status
+
+This bean stays **open** (AGENTS.md 13a): its subject is an open question, and
+recording the ruling is not closing it.

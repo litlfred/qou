@@ -3,8 +3,9 @@
 title: 'Magnus Omega2 option A: adopt the Wenzl y_lambda as the pairing'
 status: todo
 type: task
+priority: normal
 created_at: 2026-09-07T11:44:22Z
-updated_at: 2026-09-07T11:44:22Z
+updated_at: 2026-09-12T11:52:27Z
 ---
 
 # RECOMMENDED (as headline, with option C kept as a guard)
@@ -107,3 +108,27 @@ session's tail — or, better, profile them first: a 40-minute H₉ probe is its
 worth a look, and `qou-4383` independently found `atomic_tr_m_helium4.py` and
 `binding_combiner_markov_peel_fallback.py` exceeding 1200 s, so slow producers
 in this tree are a pattern rather than a one-off.
+
+
+## 2026-09-12 — owner LEANS here, but this is NOT enacted
+
+Owner, verbatim: *"qou-za3q formalize and derive first.  probably adopt wenzl"*.
+
+Read precisely: **"probably"**. This is a stated leaning toward adopting the
+Wenzl family, and it is recorded as a leaning. It is **not** authority to wire
+Wenzl canonical, and nothing has been wired.
+
+The ruling's operative half is *formalize and derive first* — `qou-gba1`, now
+promoted. If that derivation shows the Markov-trace characterisation
+((i) cyclicity, (ii) Markov property, (iii) tr(1)=1, (iv) z = z_D = q^3/(q^2+1),
+already fixed by the 2026-08-15 ruling) FORCES this family, then this bean is
+discharged as a **conclusion**. Adopting it now, ahead of that, would make the
+owner's expectation the premise — which is the anti-fit failure one level up:
+picking a family because it is expected to be right rather than shown to be.
+
+One fact already in this bean's favour, and it is about normalisation rather
+than about any residual: Wenzl's `tr(1)` is exactly `1.0` at n = 6, 9, 12, while
+the Plancherel alternative gives `11.139 / 184.233 / 6751.541` and is therefore
+not a normalised trace at all.
+
+Stays **open** pending `qou-gba1`.
