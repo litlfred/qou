@@ -932,3 +932,46 @@ two siblings.
 The engineering arc is complete. **Bean left OPEN** — its title claims
 "binding compute cannot scale", and nothing here measures the scaling claim
 end to end; that is the owner's call, not a consequence of these two commits.
+
+---
+
+## 2026-09-12 — the first number in this arc that speaks to the bean's TITLE
+
+Re-running the kernel A/B after the third rebase reached a partition every
+earlier run of it had missed: **dim 2310**, the largest in `_PARTITION_TABLE`.
+
+       dim  sparse    kern_s       py_s   speedup     rel_diff   sign
+         1   False    0.0006     0.0004      0.7x          0.0     ok
+        14   False    0.0017     0.1034     60.6x    4.042e-50     ok
+        27   False    0.0042     0.5821    138.2x    1.144e-49     ok
+        27   False    0.0044     0.8336    191.1x    6.004e-50     ok
+        35    True    0.0079     0.2105     26.7x    4.487e-50     ok
+        35    True    0.0080     0.4255     53.4x      1.0e-50     ok
+        70    True    0.0261     1.4024     53.7x    3.761e-49     ok
+      2310    True   35.5638  1106.0876     31.1x    3.486e-51     ok
+     TOTAL           35.6167  1109.6456     31.2x
+
+**On dim 2310 the Python arm takes 18 min 26 s for a SINGLE partition; the
+kernel takes 35.6 s.** That is the regime the bean's title is about. Every
+figure this bean has carried until now — the 80x, the 25-calls-per-partition,
+the whole dead-scipy census — was measured at dim <= 35, where a partition
+costs under a second either way. They are not wrong; they were answering a
+smaller question than the title asks.
+
+**The 80x and the 31.2x are NOT a regression and must not be read as one.**
+They are totals over different selections: 6 rows topping out at dim 35 vs
+8 rows topping out at 2310, where one row is 99.7% of both arms' time. Quote
+the per-row figures. The `rel_diff` column — the correctness claim — is
+identical to every digit shown across all four runs on every shared dim.
+
+**TRAP, and it cost a 20-minute run today.** `timeout N python3 ... | tail`
+turns a partial result into a BLANK one: the cap fires, `tail` never flushes,
+and the output file is empty. The first re-run died exactly this way at 1200 s
+and reported nothing at all — not a truncated table, nothing. Since the
+dim-2310 row alone costs ~18.4 min, any short-budget run of this A/B loses
+precisely the row that matters and looks like a clean small-dim result.
+Launch it unbuffered, straight to a file, with a real budget.
+
+**What this still does NOT establish.** It measures one partition at both
+arms, not the end-to-end binding compute the title claims cannot scale. The
+bean stays OPEN.
