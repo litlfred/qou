@@ -15,7 +15,7 @@ gamma gamma production and the semi-definite product solutions at q_0. Shouldn't
 use census."*
 
 Nothing below reads AME2020 or a CODATA binding energy. `m_e` (CAL-1) enters only
-as the positive MeV scale `E₀`, which cannot move a sign.
+as the positive MeV scale `𝔈₀^full` (the notation register's tower-summed hadronic scale, 4.2275 MeV; it is **not** the `Q_β` base `𝔈₀^(N=0) = m_e/(q₀(q₀−1)) = 4.1860` MeV, which is 0.99 % smaller and shares the bare name `E₀` in several producers), which cannot move a sign.
 
 ## 0. What the corpus already held (corpus-grep, reused not re-derived)
 
@@ -28,7 +28,7 @@ as the positive MeV scale `E₀`, which cannot move a sign.
 | `computations/hoefsmit_mpmath.py`, `pyhecke.syt_prefix_cache.BlockCache` | Hoefsmit orthogonal form in mpmath: `a = h/(1−q^{−2ρ})`, `a' = h/(1−q^{2ρ})`, `b = √|aa'+1|` | the `(2,1)` and all `H₆` block images |
 | `computations/y_lambda_su_n.py`, `wedderburn_jones_markov.y_lambda_at` | convention-D `y_λ` (`y_(1³) = 0`; `(3) → 0.5054`, `(2,1) → 0.2473`) | `tr_M = Σ y_λ χ_λ` |
 | `computations/borromean_h3_2_1_irrep_derivation.py`, Lean closed form `(4+h²−3h⁴−h⁶)/(h²+4)` | `tr_M(β_Bor)` from the `(2,1)` irrep | cross-check target |
-| `computations/binding_log_free_energy.py`; `binding_canonical.py` banner (ruling 2026-09-05) | live law `B = E₀·ln(tr_M(W_free)/tr_M(W_atom))`, `E₀ = m_e c_q² ℏ_q/(1−ℏ_q²) = 4.227483` MeV | the pp functional |
+| `computations/binding_log_free_energy.py`; `binding_canonical.py` banner (ruling 2026-09-05) | live law `B = 𝔈₀^full·ln(tr_M(W_free)/tr_M(W_atom))`, `𝔈₀^full = m_e c_q² ℏ_q/(1−ℏ_q²) = 4.227483` MeV (register name; `binding_canonical.py` spells it `E_0`) | the pp functional |
 | `computations/mass_at_3A_proper.atom_braid_word_3A` | template inter-nucleon bond = one `σ` at gen `3k+2`; ratio `tr_M(W_atom)/tr_M(W_free) = ∏(z + dᵢ)` by connected-sum multiplicativity | the template pp bond and a cross-check |
 | `computations/probes/frobenius_admissibility_net_row_probe.py` (#7184) | the 11-letter nucleon block, cross-checked to `build_atom_nf` at 5e−16 | the nucleon block on six strands |
 | `computations/lp_dual_solver.py::solve_psd_operator_selection_sdp` | the generic PSD operator-selection SDP (needs a cost vector `t`, Gram `G`, `n_target`) | **not used**: it optimises coefficients on the NF basis, not a choice among words; its `n_target` is the circularity `qou-ales` names in `nucleus_operator_selection_sdp.py` |
@@ -142,8 +142,8 @@ positivity — its eigenvalues `q, −q⁻¹` fail both matrix readings.
 ### 2.3 The diproton sign
 
 `W_free = p(σ₀,σ₁)·p(σ₃,σ₄)` (two 11-letter nucleon blocks, no bond),
-`W_atom = W_free·bond`, `tr_M` over all 11 `H₆` blocks, `B = E₀ ln(tr_free/tr_atom)`,
-`E₀ = 4.22748335563` MeV. `tr_M(W_free) = 0.39605423781928265702`.
+`W_atom = W_free·bond`, `tr_M` over all 11 `H₆` blocks, `B = 𝔈₀^full ln(tr_free/tr_atom)`,
+`𝔈₀^full = 4.22748335563` MeV (not the `Q_β` base `𝔈₀^(N=0) = 4.18598136` MeV). `tr_M(W_free) = 0.39605423781928265702`.
 
 | bond | `tr_M(W_atom)` | `tr_atom/tr_free` | **`B_pp` [MeV]** | sign |
 |---|---|---|---|---|
