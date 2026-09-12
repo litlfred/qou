@@ -1,11 +1,11 @@
 ---
 # qou-o0pa
 title: 'nucleon_h3_marshalling_divergence_probe fails on main: the grouped pin is inverted AND its two arms now confound d-dropping with ordering'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-07T08:35:25Z
-updated_at: 2026-09-07T10:08:07Z
+updated_at: 2026-09-12T12:07:26Z
 ---
 
 Found while adding a deliberate/actionable split to
@@ -143,3 +143,51 @@ The three arms now guard three separate things, all on the same canonical word:
 The last one is new and is what makes the title honest again. A collapse toward
 0 would mean the marshaller stopped dropping `d`; a large jump would mean the
 crossing census changed.
+
+
+---
+
+## RE-RUN 2026-09-12 — BOTH defects are fixed. `exit 0 in 3.3 s`, 5 assertions, all passed. CLOSING.
+
+Ran the producer directly rather than reading the fix commit:
+
+```
+exit 0 in 3.3s  traceback=False
+
+  p: census = {'sigma': 6, 'sigma_inv': 3, 'averaged': 2}
+     marshalled EXPLICIT    0.807031394861838756   rel vs habiro = 0.282   (ratio 1.28237)
+     d-preserving           0.629328402202921918   rel vs habiro = 6.37e-51
+     habiro atomic (target) 0.629328402202921918
+     marshalled (current)   0.629328402202921918   rel vs habiro = 6.37e-51
+
+  n: census = {'sigma': 5, 'sigma_inv': 4, 'averaged': 2}
+     marshalled EXPLICIT    0.535061853071076283   rel vs habiro = 0.126   (ratio 1.12613)
+     d-preserving           0.475133517155682213   rel vs habiro = 2.39e-50
+     habiro atomic (target) 0.475133517155682213
+     marshalled (current)   0.475133517155682213   rel vs habiro = 2.39e-50
+
+  implied 4He ratio (Z=N=2): 1.0
+✓ Witness: nucleon-h3-marshalling-divergence.witness.json  (5 assertions, all passed)
+```
+
+**Defect 1 — the inverted pin — is gone.** `marshalled (current)` now equals the
+habiro target to **6.37e-51** (p) and **2.39e-50** (n). Those are exactly the
+figures this bean recorded for the *borromean* arm, so the `intra_order="grouped"`
+pin that made the probe compare GROUPED against a CANONICAL target has been
+removed and the probe now runs on the canonical ordering. Its assertions pass
+rather than fail.
+
+**Defect 2 — the confounded arms — is gone, and the fix is the one this bean
+implied.** There are now **three** arms where there were two, and
+`marshalled EXPLICIT` isolates the d-dropping effect on its own: ratio
+**1.28237** (p) and **1.12613** (n) against the target. So d-dropping and
+ordering are no longer entangled in a single comparison — the quantity this bean
+said was unmeasurable is now measured and printed.
+
+**Clean re-run.** The producer reports *"unchanged — kept on-disk commitSha for
+staleness"* and `git status --porcelain` was empty afterwards, so the
+verification committed nothing and dirtied no witness.
+
+**Closeable under rule 13a**: an inverted pin and a confounded comparison are
+mechanical defects in a probe's wiring; nothing here turns on unproved
+mathematics.
