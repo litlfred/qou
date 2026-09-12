@@ -1,11 +1,11 @@
 ---
 # qou-y3bm
 title: 'OPEN DERIVATION: the E_0 tower sum 1/(1-hbar_q^2) is canonical by ruling but never derived'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-12T19:04:21Z
-updated_at: 2026-09-12T19:06:21Z
+updated_at: 2026-09-12T19:39:17Z
 ---
 
 **What is wrong.** `E₀`, the Q_β energy scale, had **two live forms** in
@@ -58,3 +58,48 @@ publishing at the canonical `E₀` — **one check per claim**. The failure mode
 a *silent revert*, not an error.
 
 Full analysis: `docs/audits/2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md` §5(c), §6.
+
+
+## 2026-09-12 — DERIVED, modulo one hypothesis now isolated in Lean. Closing.
+
+**The series is not assumed.** Corpus-grep found two propositions nobody had
+connected:
+
+- **`prop:brane-tower-q-laplacian-decay`** writes the tower as
+  `Σ_n ℏ_q^{2n}·Δ^{(n)}(ρ)`. The `ℏ_q^{2n}` is the tower's own **grading** — the
+  bound in that proof is a *separate* factor `Cⁿq^{2nk}` on `Δ^{(n)}`.
+- **`prop:delta-max-uniform-bound`** gives `|Δ^{(n)}| ≤ Δ_max`
+  **independent of the jet level `n`**.
+
+Together they give `1/(1−ℏ_q²)`. Formalised in
+[`QOU/QBeta/TowerGeometricSum.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/TowerGeometricSum.lean),
+four sorry-free theorems, `lean`-direct exit 0, axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+| theorem | content |
+|---|---|
+| `hbarQ_sq_lt_one` | ratio in `[0,1)` for `q>1` ⇒ converges (`ℏ_q² ≈ 0.0098` at the pin) |
+| `towerSum_of_const` | `Δ^{(n)}` level-independent ⇒ tower is **exactly** `Δ/(1−ℏ_q²)` |
+| `towerSum_le_of_uniform_bound` | uniform bound only ⇒ bounds the **magnitude**, termwise |
+| `uniform_bound_not_const` | the gap as a statement, not a comment |
+
+**The remaining hypothesis, stated precisely:** `delta_max_uniform_bound` proves
+a bound uniform in `n`, **not** that `Δ^{(n)}` is *constant* in `n`. So
+`E₀/(1−ℏ_q²)` is the tower **at saturation** and a magnitude bound otherwise.
+That is a far smaller and sharper gap than "assumed", which is what this bean
+asked for, so it closes here. **A successor bean should prove `Δ^{(n)}`
+level-independence or compute its `n`-dependence** — that is new work, not this
+bean's.
+
+**Two traps recorded in the Lean file:**
+1. The decay proof's ratio is `ℏ_q²·C·q²` with `C = ℏ_q/((q−q⁻¹)²L_q²)`, and
+   **`L_q` is the q-deformed filament length — a free geometric scale.** It sits
+   in the *bound* on `Δ^{(n)}`, not the grading, so it does not contaminate
+   `towerSum_of_const`. Deriving the ratio *as* `ℏ_q²Cq²` **would** smuggle in a
+   choice of `L_q` — a hidden parameter. Do not do that.
+2. `computations/_deprecated/jet_level_geometric_series.py` attributes the
+   `ℏ_q^{2n}` damping to `delta-max-uniform-bound`, which explicitly says its
+   bound is *independent of n*. That misattribution is why the series looked
+   undeserved. Its real home is the brane-tower decay.
+
+PR #7235, commit `a56364abc24`.
