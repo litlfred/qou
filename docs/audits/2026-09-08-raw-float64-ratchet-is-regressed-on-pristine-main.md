@@ -1,7 +1,15 @@
 # The raw-float64 ratchet reports `REGRESSED: 3` on PRISTINE main
 
-> **🟩 DRAINED — all three are fixed at the producer by PR #7161 (`qou-n5kp`),
-> independently of this document (2026-09-11).** That branch reports
+> **🟨 A FIX EXISTS ON A BRANCH — `main` is still RED. All three are fixed at
+> the producer on PR #7161 (`qou-n5kp`), which is OPEN and unmerged as of
+> 2026-09-12 05:09Z.** So `REGRESSED: 3` remains the correct reading of `main`
+> until that PR lands; this note records where the fix is, not that it has
+> arrived. (This heading read *"🟩 DRAINED"* until 2026-09-12. The body below
+> always said "that branch reports" and "once #7161 lands", but a heading a
+> skimmer takes as state, contradicting its own body, is the defect AGENTS.md
+> records against the Phase-4 merge-gate table — and "fixed on a branch" read as
+> "fixed in the product" is the distinction bean `qou-3v8h` refused to close on.)
+> That branch reports
 > `witness_raw_float64_audit.py --strict` exit **0**, `NEW 0`, **`REGRESSED 0`**,
 > with `bar-pairing-binding-observable-extension` 20 → 0,
 > `binding-rotation-phase-lead` 12 → 0, `chi-free-via-lr` 4 → 0. No baseline was
