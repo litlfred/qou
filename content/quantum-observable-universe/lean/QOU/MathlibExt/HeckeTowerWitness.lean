@@ -164,7 +164,7 @@ theorem twGenInv_mem (h : R) (n : ℕ) : twGenInv h n ∈ twH h (n + 1) :=
 /-- The filtration is increasing. **This is `≤`, not strict** — see the module
 docstring. -/
 theorem twH_mono (h : R) : Monotone (twH h) := fun _ _ hab =>
-  Algebra.adjoin_mono (Set.image_subset _ fun _ hm => lt_of_lt_of_le hm hab)
+  Algebra.adjoin_mono (Set.image_mono fun _ hm => lt_of_lt_of_le hm hab)
 
 /-! ## The collapse map onto the rank-2 algebra -/
 
@@ -187,7 +187,9 @@ def collapse (h : R) : HeckeTower R h →ₐ[R] Hecke2 R h :=
 @[simp] theorem collapse_twGenInv (h : R) (m : ℕ) :
     collapse h (twGenInv h m) = (sigmaInv : Hecke2 R h) := by
   rw [twGenInv, map_sub, collapse_twGen, map_smul, map_one]
-  ext <;> simp [sigma, sigmaInv]
+  -- `Hecke2` carries `@[simp]` projections for `+` and `-ᵢ` but none for `-`,
+  -- so `(x - y).const` does not reduce until the subtraction is unfolded.
+  ext <;> simp [sigma, sigmaInv, sub_eq_add_neg]
 
 /-! ## The Markov axioms on `H₂`, for a general element
 
