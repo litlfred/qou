@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-12T12:15:41Z
+updated_at: 2026-09-12T12:28:22Z
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -137,3 +137,47 @@ That is exactly what an author adds on being told the carrier asserts nothing, a
 changes nothing while looking like a fix. Now stated for the shape:
 `propUniverseWithConjunction_inhabited` / `_contentless`. The repair is to type the fields
 by actual propositions, never to conjoin propositions-as-values.
+
+
+## Damage bound: the 15 remaining carriers are LATENT, not active (2026-09-12)
+
+Measured two things after fixing four of the nineteen, and both correct my earlier framing
+that the remaining drain was high-value-urgent.
+
+**1. No other carrier has its triviality cashed into a claimed proof.** Scanned all 15
+remaining live `prop-universe-field` files for a `theorem`/`lemma` whose proof term feeds
+`True` into the carrier — the `brings_smoothness_resolution` shape. **0 hits.**
+
+The scan is **self-tested against the known positive**: run against
+`brings-smoothness-resolution.lean` at its pre-fix revision it reports
+`CAUGHT: brings_smoothness_resolution`. So the 0 is evidence rather than a vacuous
+detector reporting on nothing — which is the distinction AGENTS.md demands and which a
+bare "I found none" would not have earned.
+
+**2. None of the 15 carriers has an instance anywhere in the tree.** So no downstream
+`[C]`-conditional theorem is *actually* discharged today; the hazard is that writing
+`instance := ⟨True⟩` would silently make every one of them unconditional, and nothing
+stops that.
+
+### What this changes
+
+`prop:brings-smoothness-resolution` (bean `qou-c46w`) was the **only** one of the nineteen
+where the defect had been cashed — a paper proposition with `True ∧ True ∧ True` as its
+cited proof. The other 15 are a **latent hazard**: real, worth fixing, but not currently
+making any false claim. I called them "the best-specified drain in the ledger" and implied
+urgency; that was right about specification and wrong about urgency.
+
+Nine of the 15 have **zero consumers** and are one-file mechanical fixes
+(`BorromeanHopfEnergyCrossoverContext`, `BringPeriodSublattice`, `ClassicalRiemannZeta`,
+`DegreeZeroDatum`, `DescentData`, `HadronFibreEmbedding`, `HorizonStructure`,
+`ObstructionParallel`, `SaddleTrajectory`). Three have one consumer, one has two.
+`HeckeAnyonicSubstrate` (6) and `KnotOperator` (14) are not chips and need their own call.
+
+### Limits of the measurement, stated
+
+- The `True`-theorem scan is one regex validated against **one** known positive. A
+  differently-spelled discharge (`⟨trivial⟩` via a `have`, a `decide`, an instance-argument
+  route) would not be caught. It bounds the obvious shape, not the class.
+- The instance scan greps `instance … : <Carrier>`; an instance introduced by `haveI`,
+  `letI` or `deriving` would be missed.
+- Both are cheap re-runs, so re-measure rather than quoting these.
