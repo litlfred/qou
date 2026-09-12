@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-08T08:50:42Z
+updated_at: 2026-09-12T07:08:56Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1076,3 +1076,53 @@ Consequences: (i) the published 0.17 % closed form is retired as the base — ci
 ## 2026-09-08 (later) — the selection above is IN TENSION with D7, per 13bb8243d8 on main (qbeta_augmentation_is_a_markov_trace_probe.py): the augmentation IS the Markov trace at z = q, so 'which functional' = 'which Markov parameter', and D7 (convention D governs the decay channel; D = two-row truncation) selects z_D (−43.157 %), the augmentation being the one-row truncation (y_(2,1) = 0) and not D. The owner selected the augmentation on an option written before that commit was known. Owner confirmation requested in chat; neither base wired until it arrives. Default if nothing: the record stands as 'augmentation selected, D7-tension flagged', and no witness moves.
 
 ## 2026-09-08 (final) — OWNER RULING: ε := the Markov trace at z_D = q³/(q²+1) (option C), following D7. Put to the owner with both options framed after 13bb8243d8; answer: 'A. z_D — follow D7'. Base 0.4447004 MeV, −43.157 % vs CODATA — a documented honest miss on the canonical base, not a fit. The augmentation (+12.470 %) is the other admissible point, proportional (α=(q⁴+1)/(q²+1)²). Consequences: (i) published 0.17 % retired as base (z=1 cell), historical C-frame cross-check only; (ii) qou-cds1's ladder base is z_D; S1 reduces to the phase (qou-pdix); (iii) dashboard rows Q_β / m_n / Δ_pn to be re-scored on z_D and stamped ADMISSIBLE-zD — NOT done this session (producer under D; ask-before-change); (iv) AGENTS.md scoping note, precision-goals.md, cheat-sheet row 11 and the 2026-09-08 audit §8 all record this. Status stays todo until (iii) lands.
+
+
+## 2026-09-12 — what the ruling re-weights in the Lean layer (PR #7188)
+
+The ruling is recorded above; this does not restate it. What it adds is the
+effect on the acceptance-test side, which is not a restatement.
+
+**1. The canonical eps is the NON-multiplicative one, so braid ORDER is now a
+live degree of freedom for the observable.** Sorry-free in #7188:
+
+    multiplicative_forces_eigenvalue   a unital multiplicative functional sends
+                                       the Hecke generator to z, and s^2 = hs+1
+                                       forces z^2 = hz + 1, so z is one of the
+                                       TWO eigenvalues q, -1/q.
+    zD_lt_self, zD_pos                 z_D = q^3/(q^2+1) is strictly below q and
+                                       strictly positive, hence above -1/q.
+    conventionD_not_multiplicative     therefore z_D is neither eigenvalue.
+
+The corpus had only the z -> 1 instance (QOU.QBeta.CounitSigmaOne); this is the
+general statement it is a case of.
+
+SCOPE: this REMOVES THE OBSTRUCTION, it does not prove order-sensitivity.
+Non-multiplicativity permits a functional to see order; it does not force it.
+That level 2 actually separates two same-multiset words stays a measurement
+(#7176), not a corollary.
+
+**2. Level-1 order-blindness is now a statement about a NON-canonical
+functional — and that is its value.** monoidHom_order_blind and its difference
+form explain why the augmentation route looked deceptively insensitive to
+modelling choices: all sixteen readings of the properties blocks' recipe share
+ONE level-1 number. So agreement there was never evidence about the element.
+Under the ruling that insensitivity is gone.
+
+**3. The Option E target is now ONE-SIDED, and aimable.** With eps pinned there
+is no second admissible endpoint to run to. Every candidate the corpus has built
+UNDERSHOOTS at level 2, so a closing element needs a strictly LARGER |tr_{z_D}|:
+
+    nuc11 gen-grouped   -15.4514 %   x 1.182752
+    nuc11 interleaved   -17.4959 %   x 1.212061
+    nuc9                -30.9364 %   x 1.447941
+    Delta_S             -43.1572 %   x 1.759237
+
+Read from the committed witness on main (qbeta-option-e-required-level), not
+from memory. Arithmetic on measured residuals, NOT theorems, and deliberately
+not dressed as theorems in the Lean.
+
+**Status stays todo**, for two reasons and not one: (iii) the dashboard
+re-score is still outstanding, AND the element half of this bean is open. Per
+§13a a bean whose subject includes an open question does not close because one
+half of it was answered.
