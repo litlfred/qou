@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-12T11:19:35Z
+updated_at: 2026-09-12T11:39:32Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -62,3 +62,8 @@ Still open: whether some V^k is ever scalar (theta/pi = 0.6747590908..., informa
 
 ## 2026-09-12 — OWNER RULING (chat): PSD reading = FROBENIUS POSITIVITY (option 3) FOR NOW; readings 1 (literal Matrix.PosSemidef) and 2 (symmetric-part PSD) KEPT for later
 Verbatim: "try PSD condfinement 3 for now, but keep 1 2 for later". Reading 3 = chi_lambda(w) >= 0 on every block with y_lambda > 0 (constraint (1) of prop:confinement-sdp read on a word). Consequences: (i) the H_3 selector picks k = 3 = beta_Bor as the minimal non-zero survivor, and by GammaGammaVertexOrder this holds for every 1 < q <= 23/20, not just at the pin; (ii) on the H_6 interface the selected pp bond is G^3 = (sigma_2 sigma_3^-1)^3 (measured, step 3), under which the diproton is unbound by 4.47 keV; (iii) readings 1 and 2 stay recorded in the step-3/4 records and probes as alternatives — nothing is deleted; reading 1 provably selects nothing non-trivial for k <= 5 on the interval, reading 2 agrees with 3 at H_3. Step 5 (this branch, PR #7207): formalise reading 3 as FrobeniusSelected and prove the H_3 selection theorem on the interval. Bean stays in-progress (theta/pi question; non-gamma-gamma letters; H_6 bond selection not yet in Lean).
+
+
+## 2026-09-12 — step 5 landed on PR #7207 (0d0a803af0): reading 3 formalised; it selects beta_Bor on the whole interval
+Lean QOU/Mass/GammaGammaFrobeniusSelection.lean (23 declarations, no sorryAx, lean-direct exit 0 with 0 warnings first compile). FrobeniusFeasible / FrobeniusSelected = reading 3 over a generic [Ring R] [PartialOrder R]; SymPSDFeasible = reading 2 recorded; 1 => 3 and 2 => 3 proved (PSD trace >= 0; symmetric part has trace 2 tr), so the reading-3 minimum is a LOWER BOUND on whatever 1 or 2 select later on the same candidates (FrobeniusSelected.cost_le_of_psdFeasible / _of_symPSDFeasible, SDPSelected.frobenius_cost_le). On H_3 only the (2,1) block decides for a gamma-gamma word; hoefsmit_vertexPow_frobenius_table: for EVERY 1 < q <= 23/20 and every y with y_(2,1) > 0, k = 1,2,4,5 infeasible, k = 3 feasible; frobeniusSelected_borromean: candidates = non-zero vertex powers k <= 5, cost = crossing count => beta_Bor selected on the whole interval; frobeniusSelected_length_eq_six. Only the SIGN of y_(2,1) (0.2473 under D at the pin, step-3 witness) enters. No new probe: the numbers are the step-4 witness. Record: docs/audits/2026-09-12-gamma-gamma-word-selection-step5.md.
+Still open (bean stays in-progress, rule 13a): k > 5 candidates (chi_signs_of_small stops at 5); reading 2 has no selection theorem; the H_6 pp bond (sigma_2 sigma_3^-1)^3 is measured, not in Lean; non-gamma-gamma letters; theta/pi rationality (informational); and which reading the SDP MEANS is still the owner's call — 3 is provisional.
