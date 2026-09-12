@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:12:34.281765+00:00",
-  "commitSha": "785f6eb11a735caf866163b0a0d0d53d91505a10",
+  "computedAt": "2026-09-12T21:28:13.054715+00:00",
+  "commitSha": "bf9586059847a1f0b1aad1f79ca3e366aa962788",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 11,
   "computation": "uic-sign-forced-by-gate",
   "scriptFile": "uic_sign_forced_by_gate_probe.py",
   "scriptHash": "382d8af79d39",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bad597ca516561fd759f6bec5f6a5725fba37428",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -84,7 +84,7 @@
         "gated_negative": 15,
         "n_slack": 13,
         "slack_negative": 8,
-        "gated_sum": "-1.36568481708788027734298877477531935336285597854871963014210"
+        "gated_sum": "-1.36568481708787983488824552517391627048808482049417832304465"
       },
       {
         "atom": "3H",
@@ -93,7 +93,7 @@
         "gated_negative": 9,
         "n_slack": 19,
         "slack_negative": 13,
-        "gated_sum": "-0.970408945618667555955615249086707331905884622230539681193669"
+        "gated_sum": "-0.970408945618667063118543921161231375965812032343274721543680"
       },
       {
         "atom": "3He",
@@ -102,7 +102,7 @@
         "gated_negative": 9,
         "n_slack": 19,
         "slack_negative": 13,
-        "gated_sum": "-0.807940426483001106014580952136063161444283075436726780207677"
+        "gated_sum": "-0.807940426483000953381708240147814964099658291249277836017115"
       },
       {
         "atom": "4He",
@@ -111,7 +111,7 @@
         "gated_negative": 9,
         "n_slack": 18,
         "slack_negative": 12,
-        "gated_sum": "-0.802091711635766065547999516570786965083947724598770591685197"
+        "gated_sum": "-0.802091711635765904934343561405220905152528533696837174543659"
       },
       {
         "atom": "6Li",
@@ -120,7 +120,7 @@
         "gated_negative": 14,
         "n_slack": 13,
         "slack_negative": 8,
-        "gated_sum": "-1.07697056503999882623817655094833650856525652773982186586923"
+        "gated_sum": "-1.07697056503999892320670440926302376759543981853903302840460"
       }
     ],
     "pooled_big_trace_fraction": {
