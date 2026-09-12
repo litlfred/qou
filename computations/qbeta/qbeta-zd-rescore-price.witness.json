@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T12:00:54.174214+00:00",
-  "commitSha": "e7a4b91cb7525971c85e6823a6e0b93215a820db",
+  "computedAt": "2026-09-12T17:58:08.331195+00:00",
+  "commitSha": "f608c9341eaadb546d7cd87e7dbb5e899eb7bf21",
   "assertions": [
     {
       "name": "dashboard carries an admissibility annotation",
@@ -11,7 +11,7 @@
       "passed": true
     },
     {
-      "name": "m_n / Delta_pn reproduce from Q_beta within 10x -- ratios 0.9917 / 0.9886",
+      "name": "m_n / Delta_pn reproduce from Q_beta within 10x -- ratios 0.9999 / 0.9999",
       "computed": "true",
       "expected": "true",
       "passed": true
@@ -29,13 +29,25 @@
       "passed": true
     },
     {
-      "name": "producer still calls the functional an open owner decision -- ruled 2026-09-08 -- this is a staleness, reported not fixed here",
+      "name": "producer no longer calls the functional an open owner decision -- ruled 2026-09-08, prose fixed 2026-09-12",
       "computed": "true",
       "expected": "true",
       "passed": true
     },
     {
-      "name": "producer names the augmentation as the best admissible cell -- the ruling chose z_D, the worse-fitting cell",
+      "name": "producer no longer publishes a `best admissible` ranking by residual -- renamed to ruled_cell_err_pct -- ranking admissible cells by residual is the selection-against-the-target the anti-fit directive forbids",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "producer scores the RULED cell",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "dashboard Q_beta row is the priced z_D figure -- dashboard 4.316e+8 ppb vs priced 4.3157176e+8 ppb",
       "computed": "true",
       "expected": "true",
       "passed": true
@@ -45,8 +57,8 @@
   "durationMs": 3,
   "computation": "qbeta-zd-rescore-price",
   "scriptFile": "qbeta_zd_rescore_price_probe.py",
-  "scriptHash": "05dac519259d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "de694083d560",
+  "scriptCommitSha": "f608c9341eaadb546d7cd87e7dbb5e899eb7bf21",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -102,24 +114,27 @@
     },
     "dashboard_current": {
       "Q_beta": {
-        "err_ppb": "1279.",
-        "miss_factor": "164.0"
+        "err_ppb": "4.316e+8",
+        "miss_factor": "5.535e+7"
       },
       "m_n": {
-        "err_ppb": "0.9029",
-        "miss_factor": "176.7"
+        "err_ppb": "3.594e+5",
+        "miss_factor": "7.034e+7"
       },
       "Delta_pn": {
-        "err_ppb": "658.0",
-        "miss_factor": "151.7"
+        "err_ppb": "2.611e+8",
+        "miss_factor": "6.021e+7"
       }
     },
     "calibration_ratios": {
-      "m_n": "0.991702",
-      "Delta_pn": "0.98858"
+      "m_n": "0.999926",
+      "Delta_pn": "0.999899"
     },
     "ruled_cell_is_worse_admissible": true,
-    "producer_prose_stale_against_ruling": true,
+    "producer_current_with_ruling": true,
+    "rescore_landed_in_dashboard": true,
+    "dashboard_Q_beta_err_ppb_after_rescore": "4.316e+8",
+    "followup_second_rescore_bean": "qou-iagg",
     "ladder_on_zD_base_exists": false
   }
 }

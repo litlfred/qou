@@ -12,8 +12,12 @@ been declined in two sessions as "ask-before-change", which is correct: it moves
 the L2 headline.  But it was declined WITHOUT THE NUMBERS, so the owner has been
 asked to authorise a change whose size nobody had measured.  This measures it.
 
-IT CHANGES NOTHING.  No witness is re-scored, no producer is edited, no row is
-moved.  Measuring is not changing (AGENTS.md).
+WHAT CHANGED AFTER IT WAS WRITTEN.  This probe changed nothing when it ran --
+measuring is not changing (AGENTS.md) -- and that is still all it does.  But the
+owner then read the numbers and AUTHORISED the re-score (2026-09-12), so the
+dashboard IS now on the ruled base.  CHECK 6 confirms the landed row matches
+what was priced here, and CHECK 5 is inverted from a staleness detector into a
+regression guard.  The probe is therefore the price AND the audit of the move.
 
 THE CALIBRATION THAT MAKES IT TRUSTWORTHY, and it can fail.  CHECK 2 reproduces
 the dashboard's CURRENT m_n and Delta_pn rows from its CURRENT Q_beta via the
@@ -129,20 +133,50 @@ print("       So re-scoring on the ruling DEGRADES the headline. That is the")
 print("       anti-fit directive working as designed: derivational cleanliness")
 print("       first, accuracy as a diagnostic -- not a tie-breaker.")
 
-print("\nCHECK 5 - the producer's own prose is STALE against the ruling")
+print("\nCHECK 5 - the producer is CURRENT with the ruling (was stale; fixed 2026-09-12)")
+# These two checks were written the other way round, as staleness DETECTORS:
+# the producer called the functional "an open owner decision" four days after
+# it was ruled, and its emitted `best_admissible_err_pct` named the
+# augmentation. The owner authorised both fixes, so the detectors are now
+# inverted into regression guards -- a future edit that reintroduces either
+# phrasing fails here instead of quietly shipping.
 src = (ROOT / "computations/per_observable_100x_status.py").read_text()
-stale_open = "open owner decision" in src
-names_aug_best = "best_admissible_err_pct" in src and "augmentation" in src
-check("producer still calls the functional an open owner decision", stale_open,
-      "ruled 2026-09-08 -- this is a staleness, reported not fixed here")
-check("producer names the augmentation as the best admissible cell", names_aug_best,
-      "the ruling chose z_D, the worse-fitting cell")
+check("producer no longer calls the functional an open owner decision",
+      "open owner decision" not in src, "ruled 2026-09-08, prose fixed 2026-09-12")
+check("producer no longer publishes a `best admissible` ranking by residual",
+      "\"best_admissible_err_pct\":" not in src,
+      "renamed to ruled_cell_err_pct -- ranking admissible cells by residual is "
+      "the selection-against-the-target the anti-fit directive forbids")
+check("producer scores the RULED cell", '"ruled_cell_err_pct"' in src
+      and "z=z_D (Markov, convention D)" in src)
+
+print("\nCHECK 6 - the re-score LANDED, and the dashboard now matches this pricing")
+zd_row = mpf(priced["z_D (RULED 2026-09-08)"]["Q_beta_err_ppb"])
+live_qb = mpf(str(rows["Q_beta"]["err_ppb"]))
+# rows[] was read from the committed witness at import; re-read so this check
+# sees the CURRENT file rather than the value the pricing was computed against.
+live = json.load(open(ROOT / "computations/per-observable-100x-status.witness.json"))
+live_rows = {r["obs"]: r for r in (live.get("data", {}).get("rows") or live.get("rows"))}
+now_qb = mpf(str(live_rows["Q_beta"]["err_ppb"]))
+landed = abs(now_qb - zd_row) / zd_row < mpf("1e-3")
+check("dashboard Q_beta row is the priced z_D figure", landed,
+      f"dashboard {nstr(now_qb,8)} ppb vs priced {nstr(zd_row,8)} ppb")
+if not landed:
+    print(f"       (was {nstr(live_qb,8)} ppb when this probe was written)")
 
 print(f"\n=== {len(ASSERTS) - len(failures)}/{len(ASSERTS)} checks ok" if not failures
       else f"\n=== FAILURES: {failures}")
 
+# A bare `except Exception` around the witness block reports a NameError in my
+# own code as "witness skipped", which reads as a missing dependency. Catch only
+# the import; let a programming error fail loudly.
 try:
     from witness_base import WitnessBuilder
+except ImportError as e:
+    print(f"witness skipped: witness_base unavailable ({e})")
+    WitnessBuilder = None
+
+if WitnessBuilder is not None:
     w = WitnessBuilder("qbeta-zd-rescore-price")
     w.set_description(
         "Prices consequence (iii) of the 2026-09-08 owner ruling (eps := Markov trace "
@@ -157,7 +191,13 @@ try:
                                      for k in ("Q_beta", "m_n", "Delta_pn")})
     w.add_data("calibration_ratios", {"m_n": nstr(mn_ratio, 6), "Delta_pn": nstr(dpn_ratio, 6)})
     w.add_data("ruled_cell_is_worse_admissible", bool(zd > aug))
-    w.add_data("producer_prose_stale_against_ruling", bool(stale_open))
+    w.add_data("producer_current_with_ruling",
+               "open owner decision" not in src
+               and '"best_admissible_err_pct":' not in src)
+    w.add_data("rescore_landed_in_dashboard", bool(landed))
+    w.add_data("dashboard_Q_beta_err_ppb_after_rescore",
+               str(live_rows["Q_beta"]["err_ppb"]))
+    w.add_data("followup_second_rescore_bean", "qou-iagg")
     w.add_data("ladder_on_zD_base_exists", False)
     # Boolean checks carry no numeric pair, so they are recorded as the
     # string verdict against the string "true" -- with tolerance None,
@@ -168,7 +208,5 @@ try:
                         computed="true" if ok else "false", expected="true")
     w.save()
     print("witness written")
-except Exception as e:                                    # pragma: no cover
-    print(f"witness skipped: {type(e).__name__}: {e}")
 
 sys.exit(1 if failures else 0)
