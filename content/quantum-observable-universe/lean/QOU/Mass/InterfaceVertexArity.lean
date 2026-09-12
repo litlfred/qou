@@ -195,4 +195,41 @@ theorem placement_sign_not_determined_by_channel {α ratioV1 ratioV3 : ℝ} (hα
   · have hlog : Real.log ratioV3 < 0 := Real.log_neg h3 h.v3_below_one
     nlinarith
 
+/-! ## Why the SELECTION survives the orientation swap and the BINDING does not -/
+
+section Orientation
+
+variable {R : Type*} [CommRing R]
+
+/-- **The Cayley–Hamilton inverse of a `2×2` matrix of determinant one has the SAME trace.**
+For `M : Matrix (Fin 2) (Fin 2) R`, Cayley–Hamilton reads `M² − (tr M)·M + (det M)·1 = 0`, so
+when `det M = 1` the matrix `N = (tr M)·1 − M` satisfies `M·N = 1`. Its trace is
+`2·tr M − tr M = tr M`. Step 4 proves `det V = 1` for the Hoefsmit `(2,1)` vertex image, so
+this applies to every vertex power. -/
+theorem trace_cayleyInverse (M : Matrix (Fin 2) (Fin 2) R) :
+    ((M.trace) • (1 : Matrix (Fin 2) (Fin 2) R) - M).trace = M.trace := by
+  simp [Matrix.trace_sub, Matrix.trace_smul, Matrix.trace_one]
+  ring
+
+/-- **But a MIXED trace is not protected, and that is a theorem, not a measurement.** There
+exist `W`, `M`, `N` over `ℝ` with `M·N = 1` and `tr N = tr M` — so no character can tell `M`
+from `N` — while `tr(W·M) ≠ tr(W·N)`. Exhibited concretely:
+`W = !![1,0;0,0]`, `M = !![2,1;1,1]`, `N = !![1,-1;-1,2]`, giving traces `2` against `1`.
+
+That is exactly the `H₆` situation. The interface bond's own character cannot see the
+orientation swap (`trace_cayleyInverse`), but `tr_M(W·G³)` is a **mixed** trace against the
+nucleon word `W`, so nothing protects it — and the step-11 probe measures it flipping the
+binding sign across the swap. The selection and the binding are guarded by different things,
+and only one of them is guarded. -/
+theorem mixed_trace_not_inverse_invariant :
+    ∃ (W M N : Matrix (Fin 2) (Fin 2) ℝ),
+      M * N = 1 ∧ N.trace = M.trace ∧ (W * M).trace ≠ (W * N).trace := by
+  refine ⟨!![1, 0; 0, 0], !![2, 1; 1, 1], !![1, -1; -1, 2], ?_, ?_, ?_⟩
+  · rw [Matrix.one_fin_two]
+    norm_num [Matrix.mul_fin_two]
+  · norm_num [Matrix.trace_fin_two]
+  · norm_num [Matrix.mul_fin_two, Matrix.trace_fin_two]
+
+end Orientation
+
 end QOU.Mass.InterfaceVertexArity
