@@ -134,6 +134,15 @@ not.
 The path sum has degenerated into the dense seminormal trace the route existed
 to avoid.
 
+**The ratio is wall-clock and varies between runs — do not quote it as a
+constant.** Two runs of the same probe on the same tree gave `0.349 s / 41.311 s`
+(118×) and `0.335 s / 41.685 s` (124×). Every *mathematical* assertion in the
+witness is byte-identical between them; only the timings and the provenance
+stamps move. The load-bearing figure is the **segment size** — `3A−3` of `3A−1`
+generators against a constant 2, which is exact combinatorics and does not
+vary — and the two-orders-of-magnitude gap it produces. "Roughly 120×" is the
+honest phrasing.
+
 ## 4. `A = 2` works — and the value moves
 
 At `A = 2` the binding coupling `C(2,2) = 1` **is** the chain `A−1 = 1`, so the

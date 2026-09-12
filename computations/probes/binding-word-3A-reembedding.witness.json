@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T07:25:52.258096+00:00",
-  "commitSha": "12d995016caa9a9bb0ecc1e2516ecb6f493e4069",
+  "computedAt": "2026-09-12T07:45:12.450948+00:00",
+  "commitSha": "45257b8d50584ec5188aca7b00f11cc5287f93a4",
   "assertions": [
     {
       "name": "binding word couples EVERY nucleon pair: inter letters = C(A,2), all pairs distinct (A = 2..6, measured from _step_chain_generic)",
@@ -141,7 +141,7 @@
       "source": "binding_word_3A_reembedding_probe"
     },
     {
-      "name": "the collapse has a measured price at A = 3: the level-local mass word costs 0.349 s over all 30 partitions of 9 while the conjugated binding word, in the SAME algebra over the SAME partitions, costs 41.311 s (118x) -- the path sum has degenerated to the dense seminormal trace the route was meant to avoid",
+      "name": "the collapse has a measured price at A = 3: the level-local mass word costs 0.335 s over all 30 partitions of 9 while the conjugated binding word, in the SAME algebra over the SAME partitions, costs 41.685 s (124x) -- the path sum has degenerated to the dense seminormal trace the route was meant to avoid",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -150,11 +150,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 20,
   "computation": "binding-word-3A-reembedding",
   "scriptFile": "binding_word_3A_reembedding_probe.py",
   "scriptHash": "fa6b5a33b43f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "7160dfb856103d6156939aad6e6e1216a8d05da8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -570,8 +570,8 @@
       }
     ],
     "A2_path_sum_cost_s": {
-      "fixed_Hk": "0.118245669999851088505238294601440429687500000000000000000000",
-      "three_A": "0.0151664979998713533859699964523315429687500000000000000000000"
+      "fixed_Hk": "0.124648386999979265965521335601806640625000000000000000000000",
+      "three_A": "0.0148198269998829346150159835815429687500000000000000000000000"
     }
   },
   "caveats": [
