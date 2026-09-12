@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-28T15:47:38Z
-updated_at: 2026-09-03T04:41:44Z
+updated_at: 2026-09-12T18:49:38Z
 ---
 
 Parent: `qou-cds1`. Surfaced by
@@ -335,3 +335,51 @@ error). Consumers must name their builder.
 
 Scope-(a) throughout. No observable moves -- not Q_beta, not a mass, not a
 binding, not L2.
+
+
+
+## 🛑 CORRECTION 2026-09-12 (from PR #7212) — the "exact vs float64" attribution in this bean is REFUTED
+
+This bean states: *"Its **exact** net is **-0.1883216147**. The stored float64
+coordinate-sum difference is -0.188290601. The coordinate sum IS net and the
+residual is float64 h versus exact _H_FRAC. So the third model is real, it is
+the 9-crossing one, and -0.188291 is its net. The flag can come off."*
+
+The CONCLUSION is right — the third model is real, it is the 9-crossing one,
+and the coordinate sum IS net. **The stated REASON is wrong, and so is the
+figure called "exact".**
+
+BOTH of those numbers are exact. They are at DIFFERENT q:
+
+  -0.18832161472187   at q = 111/100      <- what this bean calls "exact"
+  -0.18829060147138   at the proton pin   <- what this bean calls "float64"
+
+Float64 rounding shows at ~1e-16, not the 1.6e-4 seen here. The gap is the
+185 ppm `_Q_FRAC` device in `pyhecke.gram` (q = 111/100, an exactness choice
+that is ~16000x the 11.54 ppb mu-p tension), NOT float64 arithmetic.
+
+This was already diagnosed on 2026-09-04 in
+`docs/audits/2026-09-04-delta-net-canon-and-crossing-count-analysis.md` §(ii),
+which names it "the same 185 ppm `_Q_FRAC` trap", and is asserted in
+`qbeta_delta_candidate_census_probe`'s check
+`bg3w_nuc9_residual_is_the_pin_not_float64`. The correction never reached this
+bean.
+
+THE TABLE IN THIS BEAN IS AT q = 111/100. All three figures:
+
+  model                                quoted (q=111/100)   substrate proton
+  build_nucleon_nf     ( 9 crossings)  -0.1883216147        -0.1882906015
+  build_atom_nf_exact  (11, interl.)   -0.2272041420        -0.2271597118
+  nucleon_gen_chains   (11, gen-grp)   -0.2332458961        -0.2331977113
+
+Cross-check that fixes them: the gen-grouped substrate figure is the
+calibration constant `qbeta_option_e_order_dof_range_probe` (merged) asserts at
+1e-30, -0.23319771131565870204...
+
+Also corrected 2026-09-12 in `qbeta_d1_eleven_crossing_exclusion_probe`'s
+docstring table (commit 4694165f19), which carried the same three 1.11 figures
+while its own runtime assertion printed the substrate value — the earlier fix
+had reached that probe's code and not its prose.
+
+NOT closing this bean; only recording the correction. Status left as the owning
+agent set it.
