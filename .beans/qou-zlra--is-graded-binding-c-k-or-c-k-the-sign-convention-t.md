@@ -1,10 +1,11 @@
 ---
 # qou-zlra
 title: Is graded binding +c_k or -c_k? The sign convention the type-two result hangs on
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-04T12:02:10Z
-updated_at: 2026-09-04T12:02:10Z
+updated_at: 2026-09-12T12:06:42Z
 ---
 
 
