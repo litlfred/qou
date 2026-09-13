@@ -23,18 +23,37 @@ carries the fraction
 
     |Σ_{λ ∈ Λ²(12)} c_λ| / |tr_M(β_⁴He)|.
 
-Cited values (prop:he4-two-row-dominance):
-    tr_M(β_⁴He)(q_0) = 0.160974145442
-    top-5 binding-receptive blocks (all two-row):
-        (9,3) 29.0%, (8,4) 23.6%, (10,2) 13.5%, (7,5) 10.3%, (11,1) 10.2%
-        top-5 cumulative = 91.130%
-    trivial rep (12) = 5.962%; sign rep (1¹²) vanishes
-    formal claim: two-row stratum ratio ≥ 0.80.
+Cited values (prop:he4-two-row-dominance), against the chi cache as
+regenerated 2026-09-06 (qou-92u9, owner ruling "regen"):
+    tr_M(β_⁴He)(q_0) = 0.0112374176598
+    top-5 binding-receptive blocks by |c_λ| (all in Λ²(12)):
+        (12) 85.398%, (9,3) 64.406%, (11,1) -40.890%,
+        (8,4) -31.659%, (10,2) 11.461%
+        top-5 cumulative: 233.814% of |tr_M| by MAGNITUDE,
+                           88.715% SIGNED  -- see below, they differ now
+    also in the stratum: (6,6) 8.652%, (7,5) 2.633%
+    sign rep (1¹²) vanishes
+    formal claim: two-row stratum ratio ≥ 0.80 (computed: exactly 1).
 
-NOTE on "86.6%": the proposition headline figure 86.6% is the TOP-5
-cumulative (= 91.130% here); the FULL 7-member two-row stratum Λ²(12)
-ratio is ~92.7%. Both satisfy the ≥ 80% claim. This witness records
-both the full-stratum ratio and the top-5 cumulative explicitly.
+SUPERSEDED, kept because the gap is the point (pre-2026-09-06 cache):
+tr_M = 0.160974145442, a factor R_quark = 14.3248 above the current
+value; (9,3) 29.0%, (8,4) 23.6%, (10,2) 13.5%, (7,5) 10.3%,
+(11,1) 10.2%; top-5 cumulative 91.130%; trivial rep 5.962%. Two
+contributions have since flipped SIGN ((11,1) and (8,4)), and the
+trivial rep went from 5.962% to leading the ranking at 85.398%.
+
+NOTE on "86.6%": that proposition headline figure belongs to the same
+superseded generation and no longer names anything computed here. The
+two-row stratum ratio is now exactly 1, and the top-5 cumulative has
+split into two distinct quantities -- the producer sums MAGNITUDES
+(233.814%) while the block's table rows are SIGNED (88.715%). While
+every block was positive the two coincided at 91.130 and nothing named
+the difference; two blocks are now negative and they do not. Both are
+emitted, under distinct names. Bean qou-85wn.
+
+NOTE on "two-row": IsTwoRow is `length ≤ 2`, so the ONE-row partition
+(12) is in Λ²(12). "All top-5 are two-row" is true with (12) leading;
+it is not a claim that the trivial rep was excluded.
 
 Upstream: `chi-helium-4-h12-at-q0-50dps.witness.json` (must be
 complete — 77/77 partitions, partial=false).
@@ -129,11 +148,17 @@ def main() -> int:
         "y_λ(q_0)·χ^λ_q(β_⁴He) over the full 77 partitions of 12 "
         "(canonical word atom_braid_word_3A(2,2), 50 dps Hoefsmit), "
         "and forms the two-row stratum ratio |Σ_{λ∈Λ²(12)} c_λ| / "
-        "|tr_M|. Reproduces tr_M = 0.160974145442, the top-5 binding-"
-        "receptive blocks (all two-row: (9,3) 29.0%, (8,4) 23.6%, "
-        "(10,2) 15.4%, (11,1) 14.2%, (7,5) 9.4%; top-5 cum 91.1%), "
-        "the trivial-rep 5.96% and vanishing sign rep, and verifies the "
-        "two-row stratum ≥ 80% claim of prop:he4-two-row-dominance."
+        "|tr_M|. Reproduces tr_M = 0.0112374176598, the top-5 "
+        "binding-receptive blocks by |c_λ| (all in Λ²(12), which is "
+        "length ≤ 2 and so contains the one-row (12)): (12) 85.398%, "
+        "(9,3) 64.406%, (11,1) -40.890%, (8,4) -31.659%, "
+        "(10,2) 11.461%; top-5 cumulative 233.814% by magnitude and "
+        "88.715% signed -- distinct since two blocks went negative. "
+        "The sign rep (1¹²) vanishes, and the two-row stratum ratio is "
+        "exactly 1, satisfying the ≥ 80% claim of "
+        "prop:he4-two-row-dominance. Superseded pre-2026-09-06 figures "
+        "(tr_M 0.160974145442, trivial rep 5.96%, top-5 cum 91.1%) are "
+        "recorded in the producer docstring; bean qou-85wn."
     )
     w.set_content_block("prop:he4-two-row-dominance")
 
@@ -297,7 +322,10 @@ def main() -> int:
             tolerance=5e-7,
             source=(
                 "prop:he4-two-row-dominance cites tr_M(β_⁴He)(q_0) = "
-                "0.160974145442 (canonical Markov trace, Σ_{λ⊢12} y_λ χ^λ)"
+                "0.0112374176598 (canonical Markov trace, Σ_{λ⊢12} y_λ "
+                "χ^λ), re-pinned to the 2026-09-06 chi regeneration "
+                "(qou-92u9); the pre-regeneration 0.160974145442 was a "
+                "factor R_quark = 14.3248 higher"
             ),
         )
         # Record the ≥ 0.80 claim as a 0/1 boolean assertion (a bare
@@ -349,7 +377,9 @@ def main() -> int:
             computed=trivial_pct,
             expected=85.398,
             tolerance=0.15,
-            source="prop:he4-two-row-dominance: trivial rep (12) ~ 2.9%",
+            source=("prop:he4-two-row-dominance: trivial rep (12) "
+                    "85.398% -- it LEADS the ranking post-regeneration; "
+                    "the ~2.9% this cited is pre-2026-09-06"),
         )
         w.add_assertion(
             name="sign_rep_sub_1e9",

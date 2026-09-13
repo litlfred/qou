@@ -79,3 +79,28 @@ Re-measured 2026-09-13; neither needs a producer fix any more.
 
 Both still serialise `allPassed: true` over exception text because they
 predate the error-row gate. Re-running is what makes that verdict visible.
+
+## 6. `qou-85wn` leftovers — `probe_he4_canonical_tr_m_fingerprint.py` — RE-RUN ONLY
+
+Producer prose fixed 2026-09-13; the witness still carries the old
+`description` until it is re-run. **No code owed beyond the prose edit** — no
+computed value, assertion or tolerance was touched.
+
+`qou-85wn` (a sibling session's bean, still `todo`) regenerated the `.md`
+table, the `.ts` title and docstring, `CITED_PCT`/`CITED_TR_M`, and the
+producer's two `[cited …]` print literals against the 2026-09-06 chi
+regeneration. It missed four prose sites **inside the producer**, which is why
+the witness's own `description` still read `tr_M = 0.160974145442` against data
+of `0.0112374176598` — a factor R_quark = 14.3248, with two blocks sign-flipped
+and the trivial rep going 5.96 % → 85.398 %, i.e. from near-nothing to leading
+the ranking.
+
+Fixed: the module docstring's "Cited values" block and its "86.6 %" note,
+`w.set_description(...)`, and the `source=` strings on the `tr_M_at_q0` and
+`trivial_rep_pct` assertions. Superseded figures kept and dated, per 85wn's own
+convention — the gap is the evidence, and overwriting it would have destroyed
+the only record that the producer's prose and its pinned constants had parted.
+
+Cheap: reads one upstream cache and sums 77 partitions of 12. Queued rather
+than run only because the `qou-uiut` table holds the checkout and two producers
+must never run concurrently here.
