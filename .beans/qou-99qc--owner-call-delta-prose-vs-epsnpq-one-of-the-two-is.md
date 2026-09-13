@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T20:20:00Z
+updated_at: 2026-09-13T13:30:05Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1729,3 +1729,266 @@ were computed at order-zero and mixing bases is the silent-revert trap that
 commit's own audit records at §6. **The ranking is invariant** — residual is
 strictly increasing in `E₀`, and `E₀ > 0` is common to every candidate — so no
 conclusion on this bean depends on the base.
+
+
+
+## 2026-09-13 — the element question: ordering is provably not the lever (PR #7295)
+
+The alternating character `sigma_i |-> -1/q` is a 1-dim rep of `H_3(q)`, so a
+word's character is a product of SCALARS and depends only on the MULTISET of
+its letter shifts. Measured on 3840 (permutation, generator-assignment) pairs:
+exactly ONE distinct value. Lean `wordChar_of_perm` (sorry-free).
+
+Consequence for this bean's element half. R2 of the gamma-gamma ruling
+(`qou-ales`, #7212) picked the nucleon ORDERING. **An ordering choice cannot
+make a word gamma-gamma-produced** — the invariant that `altChar_eq_one` pins
+at +1 cannot see one. So the 5 census-derived letters of `nuc11_interleaved`
+are not repairable by re-ordering or by re-assigning generators; a
+gamma-gamma-derived replacement has to change WHICH letters are present.
+
+Closed form over the three-shift alphabet the census uses, with a/b/c counting
+the shifts 0 / -h / -h/2:
+
+    altChar(w) = (-1)^(a+b+c) q^(b-a-c) ((q^2+1)/2)^c  = 1  <=>  c = 0 and a = b
+
+Every corpus nucleon carries c = 2, and `-h/2` — the mixed ud crossing — is
+BOTH the unique bar-fixed shift (#7283) and the unique shift whose character
+pairs with nothing to give 1. One letter, two independent obstructions;
+`qou-e58e` measured that bar IS p<->n conjugation, so that is not a notational
+coincidence.
+
+Coverage, stated honestly: FIVE of the census's six Delta families —
+four at word level (`nuc9`, `nuc11_interleaved`, `nuc11_gen_grouped`, the 16
+`blocks CONSTRUCTED` readings = 19 readings = 38 words), one (`delta_S`, the
+short model) only at the Delta level because it is given as an NF vector and has
+no shift multiset. `blocks AS STATED` is NOT covered — nothing constructs it.
+
+NOT NEW: `qou-avt6` (2026-08-26) already has the monomial shape
+`q^m ([2]_q/2)^c`, for the COUNIT rep `sigma |-> q`. This is the ALTERNATING
+rep, which is the one the gamma-gamma lemma pins — a different functional, same
+shape.
+
+OPEN, spun out as `qou-efqx`: the fourth (`averaged_weighted`, colour-weighted)
+template, which R3 makes canonical. Its character carries an irreducible sextic,
+so the argument does not extend; only the pin-level pairing fact is measured.
+
+Bean stays `todo` (AGENTS.md §13a — the element is an open conjecture; this
+narrows it, it does not close it).
+
+
+
+### Same day, the positive half (PR #7295 part 2)
+
+On three strands the gamma-gamma ruling leaves **one integer**. `H_3(q)` has two
+Artin generators, so a vertex `sigma_i sigma_{i+1}^-1` needs `i+1 < 2`, i.e.
+`i = 0`: every gamma-gamma word is `(sigma_0 sigma_1^-1)^k`. Lean
+`gammaGamma_threeStrand`, sorry-free. `k = 3` is `borromean`.
+
+Two structural findings. Every member has a **vanishing `e^-` coordinate**
+(symbolic, k = 0..24) — so `qbeta-counit-closed-form.md`'s "which both nucleon
+models happen to satisfy" is FORCED under gamma-gamma, not accidental; and
+`tr_M|_{z=1} - net = h*nf[e^-]` identically, so net and the retired z=1 cell
+COINCIDE on every gamma-gamma word.
+
+**The derived member misses by 440 %.** `|tr_M^{z_D}(core^3)|*E_0 = 4.22140`
+MeV against `Q_beta = 0.78233`: **+439.592 %**. That is the honest number for
+the route as a single-word Q_beta carrier on three strands.
+
+**And the matching members are selected, measurably.** The k=1 (mod 3) band
+descends monotonically THROUGH the target (k=7 gives +0.610 %); the difference
+grid over k,l <= 24 is 300 pairs straddling it, local spacing 1.29 %, best
+(8,23) at +0.455 % — against **0.322 % expected by chance** from that spacing.
+The best match is not even better than chance. Choosing k or (k,l) by residual
+is selection against the target and is forbidden.
+
+So the live question is sharper: **either `k` is derived from something other
+than the residual, or the gamma-gamma carrier for Q_beta is not a single
+three-strand word.** Both open. Scope-(a) — no invariant here forbids the
+gamma-gamma route; what is excluded is the METHOD.
+
+
+
+### Part 3, same day — the H_3 collapse is an ACCIDENT OF THREE STRANDS (PR #7295)
+
+The three-strand collapse was never about the Hecke algebra. Lean, sorry-free:
+`gammaGamma_iff_vertexWord` — the gamma-gamma words are EXACTLY the free monoid
+on the vertices; `gammaGamma_index_lt` — on n strands only n-2 vertex indices
+exist. ONE at n=3 (hence the cyclic monoid), TWO at n=4.
+
+Measured (general-n T-basis reducer, validated against the corpus's hand-coded
+H_3 tables, and independently recovering growth k+1 at n=3):
+
+                      n = 3                 n = 4
+  vertices            1                     2
+  growth (k <= 8)     k+1 = 1..9            2^(k+1)-1 = 1,3,7,...,511
+  span rank           3 of 6                21 of 24
+
+At n=4 EVERY one of the 2^k words of length 2k is a distinct element of H_4 —
+the Hecke relations impose no collapse at all — and the span goes from half the
+algebra to seven eighths.
+
+**So the +439.592 % H_3 miss must NOT be quoted for H_4.** It is a fact about a
+one-integer family. At four strands the family is free and nearly fills the
+algebra.
+
+Caveat stated: growth and rank are measured at a generic rational h, so both
+are LOWER bounds on the symbolic answer — the safe direction, since reaching
+the maximum establishes it exactly. Two generic values agree.
+
+NOT claimed: no four-strand Markov trace is computed, so nothing is said about
+whether an H_4 gamma-gamma element reproduces an observable. And which 3 of the
+24 dimensions are missing from the span is not measured.
+
+
+
+### Part 4, same day — the general-n Ocneanu trace, and the H_4 trace set (PR #7295)
+
+The corpus had NO general-n Markov trace: `pyhecke.gram` carries the H_3 vector
+`[1, z, z, z^2, z^2, z(hz+1)]` as a hand-coded literal and nothing generalises
+it. Built one from the three defining properties via the S_{n-1}-coset
+decomposition, validated three ways — it reproduces the H_3 literal exactly
+(symbolic in h AND z), satisfies tr(xy)=tr(yx) on H_4 pairs, and satisfies the
+Markov property at n=4 against n=3. The latter two are NOT inputs to the
+recursion, so they are real tests; the first `coset_factor` failed them.
+
+Measured, gamma-gamma trace sets at z_D, proton pin, k <= 8 vertices:
+
+                  count    range                    median gap
+    n = 3            9     [0.18618696, 1.0]        0.032897756
+    n = 4          511     [0.11139758, 1.1374052]  0.0025322918
+
+**13.0x denser**, so the anti-fit conclusion sharpens — selection by residual
+was already forbidden at n=3 and at n=4 is not even tempting.
+
+**And barely wider.** 511 distinct elements spanning 21 of 24 dimensions have
+traces confined to a band only ~1.3x the n=3 one. The trace is a very LOSSY
+functional on the gamma-gamma set: free growth in the algebra does not buy a
+wide trace image. That is a constraint in its own right and was invisible
+before this.
+
+Scope-(a). NO four-strand Q_beta prediction — E_0 and the
+element-to-observable map are H_3 constructions and the corpus does not define
+their n=4 analogue. The n=4 set is compared to ITSELF at n=3, structurally.
+
+
+
+### Part 5, same day — the SDP half of qou-ales, and it is a REAL selector (PR #7295)
+
+The ruling says selection is via gamma-gamma production AND the confinement SDP.
+Parts 1-4 did the gamma-gamma half; this is the SDP half, and it is the first
+DERIVED selector on this arc (PSD feasibility is structural, not a residual).
+
+**Three strands: the conjunction is EMPTY.** In the (2,1) block, exactly:
+`a = -1/(q(q^2+1))`, `a' = q^3/(q^2+1)` — **a' IS z_D** — and the gamma-gamma
+vertex has `det V = 1`, `tr V = -1 - h^2`. So V is an ELLIPTIC SL_2(R) element,
+and `V^3 = 1` forces `q = 1`: **the Borromean baryon is SDP-feasible only in the
+classical limit.** New Lean `QOU.Mass.PsdDetOneTrace` (sorry-free) proves a real
+PSD 2x2 of det 1 has trace >= 2 with equality only at the identity, and measured
+`tr(V^k) < 2` for k = 1..200 — so the exclusion is a theorem about the PSD cone,
+not arithmetic. This also EXPLAINS the k mod 3 banding of Part 2: a near-order-3
+rotation, exactly order 3 only at q = 1, so the bands drift.
+
+**Four strands: NON-empty and very selective — and my first draft was wrong.**
+It asserted infeasibility at n=4 too, having tested only the powers of ONE
+vertex; over all 2^k words the assertion FAILED. Of **8190** words to 12
+vertices, exactly **5** are feasible: `(v0v1)^2`, `(v0v1)^4`, `(v0v1)^6`, and two
+sporadic 10-vertex words. `(v0v1)^m` is feasible **iff m is even**.
+
+**The mechanism, not an analogy.** In BOTH 3-dim blocks the spectrum of `v0v1` is
+exactly `{-q^2, -q^-2, 1}` — two NEGATIVE eigenvalues — so odd powers cannot be
+PSD and even powers have spectrum `{q^-4, 1, q^4}`. Same cause as the H_2 rule
+(`sigma_0` has eigenvalue `-1/q`). The 1-dim and (2,2) blocks send every power to
+the identity; all discrimination lives in the two 3-dim blocks. And `(v0v1)^2` is
+NOT the identity there (max |M-I| = 0.348, 0.518), so its feasibility is genuine
+positivity rather than triviality.
+
+So the ruling's two halves are NOT in conflict — they simply have no common
+solution on three strands. **Smallest derived candidate: `(v0 v1)^2`, four
+vertices, eight letters.**
+
+NOT claimed: the feasible set is not characterised (only enumerated to 12
+vertices; the two sporadic words are unexplained); no cost/minimality is
+computed, so this NARROWS the candidate set without selecting a word; no
+observable is computed.
+
+
+
+### Part 6, same day — SDPSelected has a UNIQUE solution (PR #7295)
+
+Part 5 did the feasibility half and said it did not compute minimality. This is
+minimality, and it closes the selection.
+
+The cost is the corpus's: `mba-step10-confinement-sdp.md` states
+`minimize Sum_i t_i x_i` with `t_i = tr_M(b_i)`, so the objective on a word is
+its Markov trace. Evaluated with the general-n Ocneanu recursion from Part 4
+(re-verified against pyhecke.gram's H_3 vector so this cannot inherit a silent
+breakage).
+
+Costs at z_D, proton pin, over the five PSD-feasible words:
+
+    (v0 v1)^2    (0,1,0,1)                   1.032897755524660383   <- MIN
+    sporadic A   (0,0,1,1,0,1,1,0,0,1)       1.073238807935729209
+    sporadic B   (0,1,1,0,0,1,0,0,1,1)       1.073238807935729209
+    (v0 v1)^4    (0,1,0,1,0,1,0,1)           1.137405209118677445
+    (v0 v1)^6    (0,1,0,1,0,1,0,1,0,1,0,1)   1.331992492573499969
+
+The minimum is STRICT and ATTAINED, not merely least-in-a-truncation: cost on
+the even alternating family is strictly increasing in m (1.0329 -> 4.0944 for
+m = 2..14), so extending the enumeration cannot beat m = 2.
+
+**SDPSelected -> `(v0 v1)^2`: four vertices, eight letters, four strands.**
+DERIVED — no continuous parameter tuned, no discrete choice made against a
+measured value, no observable entering at any point. This is the arc's first
+complete derived selection.
+
+Observation flagged as such: the two sporadic words have EXACTLY equal cost
+(< 1e-30) while their `net` differs (1.1426 vs 0.9495), so whatever relates
+them does not preserve net. Unexplained; two data points are not a pattern.
+
+TWO GAPS, and the result may not be quoted without them:
+1. the LP's `net(x) = n_target` constraint is NOT imposed (it belongs to the
+   mixture formulation; net is reported per word so it can be applied later);
+2. "unique" means among gamma-gamma words of at most 12 vertices on four
+   strands — a cheaper feasible word at 13+ vertices is not excluded, though a
+   cheaper ALTERNATING one is, by monotonicity.
+
+NOT DONE, deliberately: no Q_beta comparison. E_0 and the
+element-to-observable map are H_3 constructions with no corpus-defined n = 4
+analogue, and reporting a residual would re-introduce the
+selection-against-the-target the earlier parts measured and rejected. The word
+is derived; what it predicts is a separate question.
+
+
+
+### 🛑 Part 6 RETRACTED, same day (PR #7295)
+
+Part 6 above claimed SDPSelected has a unique solution, `(v0 v1)^2`. **It does
+not, and I withdraw that.**
+
+The EMPTY gamma-gamma word — zero vertices, `GammaGammaWord.nil`, the identity
+of `H_n` — is PSD-feasible in every block (the identity matrix is PSD) and its
+Markov trace is exactly **1.0**, against 1.032897755524660383 for `(v0 v1)^2`.
+So over the candidate set as the Lean states it, **SDPSelected selects the empty
+word**, vacuously. Part 6 silently restricted to words with >= 1 vertex.
+
+**The corpus already proved this one level up, and I cited the block without
+reading it.** `prop:operator-selection-lp` §"Degeneracy of this program":
+`b_1 = 1` so `G_1j = t_j`, hence the first Frobenius positivity constraint IS
+the objective bounded below by zero — optimal value identically 0 for every n,
+q and trace convention; and the minimiser set is a positive-dimensional
+mirror-closed face, so which vertex a solver returns is its pivoting rule. That
+block states outright that *"downstream blocks have read the program as a
+selection principle, which it is not"*. I became one of those readers before
+becoming an independent confirmation of it in the discrete setting.
+
+**WHAT SURVIVES, quote these separately:**
+1. **Feasibility does the real work and is untouched** — Part 5's 5-of-8190 at
+   n=4, none at n=3. A genuine structural zero-parameter filter.
+2. Among **NON-EMPTY** gamma-gamma words of <= 12 vertices on four strands,
+   `(v0 v1)^2` is the strict minimiser with the minimum ATTAINED. True about a
+   RESTRICTED set; **not** SDPSelected.
+
+So the arc does NOT have a complete derived selection. It has a derived
+*filter* (feasibility) and no derived *selector*. The open problem is what
+breaks the tie among the 5 — and the corpus's own degeneracy result says the LP
+objective cannot be it.

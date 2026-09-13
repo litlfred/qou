@@ -1,0 +1,223 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T13:28:13.147941+00:00",
+  "commitSha": "8687a99a3e74d7796af14b5816ab23402e616e81",
+  "assertions": [
+    {
+      "name": "trace_still_reproduces_the_corpus_h3_vector",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all six slots of pyhecke.gram's TR_M, symbolic in (h, z); mismatches: none -- re-verified here so this file cannot inherit a silent breakage of the imported recursion"
+    },
+    {
+      "name": "empty_word_is_feasible_and_strictly_cheapest_so_minimality_is_degenerate",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr_M(empty word) = 1.0 exactly (the trace normalisation), against 1.032897755524660383 for the cheapest non-empty feasible word. The empty word is a gamma-gamma word (GammaGammaWord.nil) and is PSD-feasible in every block, so SDPSelected over the candidate set AS STATED selects it -- vacuously. Minimality does not select"
+    },
+    {
+      "name": "among_non_empty_words_the_minimiser_is_the_two_fold_alternating_word",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "costs over the 5 PSD-feasible NON-EMPTY words: [('(v0 v1)^2', '1.03289775552466'), ('sporadic A (10 vertices)', '1.073238807935729'), ('sporadic B (10 vertices)', '1.073238807935729'), ('(v0 v1)^4', '1.137405209118677'), ('(v0 v1)^6', '1.3319924925735')] -- strict minimum (v0 v1)^2 at 1.032897755524660383. A true statement about a RESTRICTED candidate set; it is not SDPSelected, and calling it that needs an exclusion of the identity that nothing in the corpus licenses"
+    },
+    {
+      "name": "cost_is_strictly_increasing_on_the_even_alternating_family",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "(v0 v1)^m for m = [2, 4, 6, 8, 10, 12, 14]: ['1.03289775552', '1.13740520912', '1.33199249257', '1.65105000243', '2.150966389', '2.92009440825', '4.09436595205'] -- strictly increasing, so extending the enumeration cannot produce a cheaper member of this family and the minimum at m = 2 is ATTAINED rather than merely least-so-far"
+    },
+    {
+      "name": "the_two_sporadic_words_have_equal_cost",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sporadic A and B both cost 1.0732388079357292085 (agreeing to < 1e-30). Recorded as an OBSERVATION -- nothing here explains it, and two data points are not a pattern"
+    },
+    {
+      "name": "net_is_reported_for_every_feasible_word",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "net(x) = coordinate sum per feasible word: [('(v0 v1)^2', '1.0091372330150335676'), ('sporadic A (10 vertices)', '1.142610201106029444'), ('sporadic B (10 vertices)', '0.94947035915981701564'), ('(v0 v1)^4', '1.038163801547362008'), ('(v0 v1)^6', '1.0922097181253579281')]. The LP's net(x) = n_target constraint is NOT imposed here -- it belongs to the mixture formulation and SDPSelected carries no single-word analogue -- so these are reported for a later pass, and applied to nothing"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 266,
+  "computation": "qbeta-sdp-minimality-is-degenerate",
+  "scriptFile": "qbeta_sdp_minimality_is_degenerate_probe.py",
+  "scriptHash": "afb228edb3e9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_sdp_minimality_is_degenerate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_sdp_minimality_is_degenerate_probe.py"
+  },
+  "description": "RETRACTION: the SDP's minimality half does NOT select a word. The EMPTY gamma-gamma word is PSD-feasible with Markov trace exactly 1.0, strictly below every non-empty candidate, so SDPSelected over the candidate set as stated selects it -- vacuously. This is the discrete form of the degeneracy prop:operator-selection-lp already proves for the continuous LP (b_1 = 1 makes the first Frobenius positivity constraint coincide with the objective), and that block warns downstream readers against reading the program as a selection principle. What survives: FEASIBILITY does the work (5 of 8190 at n=4, none at n=3, sibling probe, untouched); and among NON-EMPTY words of <= 12 vertices (v0 v1)^2 is the strict minimiser with the minimum attained. Scope-(a).",
+  "data": {
+    "cost_definition": "t_i = tr_M(b_i), the Markov-trace vector of mba-step10-confinement-sdp's LP `minimize Sum_i t_i x_i`; evaluated at z_D = q^3/(q^2+1), proton pin",
+    "feasible_words_by_cost": [
+      {
+        "word": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "label": "(v0 v1)^2",
+        "cost_tr_M": "1.032897755524660383026902",
+        "net": "1.009137233015033567632833"
+      },
+      {
+        "word": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "label": "sporadic A (10 vertices)",
+        "cost_tr_M": "1.07323880793572920852933",
+        "net": "1.142610201106029443971201"
+      },
+      {
+        "word": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "label": "sporadic B (10 vertices)",
+        "cost_tr_M": "1.07323880793572920852933",
+        "net": "0.9494703591598170156402581"
+      },
+      {
+        "word": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "label": "(v0 v1)^4",
+        "cost_tr_M": "1.137405209118677445379408",
+        "net": "1.038163801547362008047782"
+      },
+      {
+        "word": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "label": "(v0 v1)^6",
+        "cost_tr_M": "1.331992492573499969441476",
+        "net": "1.092209718125357928117681"
+      }
+    ],
+    "degeneracy": {
+      "empty_word_cost": "1.0",
+      "empty_word_is_psd_feasible": true,
+      "verdict": "SDPSelected over the gamma-gamma candidate set as stated selects the EMPTY word; minimality does not select",
+      "corpus_already_proves_this_for_the_LP": "prop:operator-selection-lp §'Degeneracy of this program': b_1 = 1 makes G_1j = t_j, so the first Frobenius positivity constraint IS the objective bounded below by zero; optimal value identically 0 for every n, q and trace convention, and the minimiser set is a positive-dimensional mirror-closed face. That block states downstream readers have wrongly taken the program as a selection principle",
+      "what_survives": "FEASIBILITY (5 of 8190 at n=4, none at n=3) is untouched and does the real work"
+    },
+    "restricted_minimiser": {
+      "word": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "label": "(v0 v1)^2",
+      "cost_tr_M": "1.032897755524660383026902",
+      "vertices": 4,
+      "letters": 8,
+      "strands": 4,
+      "derivation": "SDPSelected = mem + psd + minimal, with cost the corpus's LP objective; no continuous parameter tuned, no discrete choice made against a measured value, no observable entering at any point"
+    },
+    "alternating_family_costs": [
+      {
+        "m": 2,
+        "cost": "1.032897755524660383026902"
+      },
+      {
+        "m": 4,
+        "cost": "1.137405209118677445379408"
+      },
+      {
+        "m": 6,
+        "cost": "1.331992492573499969441476"
+      },
+      {
+        "m": 8,
+        "cost": "1.651050002427852239631625"
+      },
+      {
+        "m": 10,
+        "cost": "2.150966388997090564795056"
+      },
+      {
+        "m": 12,
+        "cost": "2.920094408253132501154419"
+      },
+      {
+        "m": 14,
+        "cost": "4.094365952052620927212629"
+      }
+    ],
+    "scope": "a",
+    "gaps_stated": [
+      "the LP's net(x) = n_target constraint is NOT imposed; net is reported per word so it can be applied later",
+      "'unique' means unique among gamma-gamma words of at most 12 vertices on four strands; the feasible set is not characterised, so a cheaper feasible word at 13+ vertices is not excluded -- what IS excluded is a cheaper member of the alternating family, by monotonicity",
+      "NO Q_beta comparison is made or implied: E_0 and the element-to-observable map are H_3 constructions with no corpus-defined n = 4 analogue, and reporting a residual would re-introduce the selection-against-the-target the sibling probes rejected"
+    ],
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "z_convention": "D, z_D = q^3/(q^2+1)"
+  }
+}

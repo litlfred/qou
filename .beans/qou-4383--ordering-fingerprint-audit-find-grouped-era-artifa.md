@@ -661,3 +661,71 @@ you can see rather than the one that carries the claim.
 - `qou-nhkv` (the orphan) gates the mass table red until it lands.
 - The witness arm is still at 48 candidates; the downstream-reflection taxonomy
   remains unbuilt.
+
+## 2026-09-13 — the third category is BUILT, and the count converges
+
+`10118c90b7f`. This closes the bean's own open ask: *"The taxonomy needs a third
+category … otherwise the number never converges, because an audit that reports
+the corpus will always mirror it."*
+
+    46 candidates  ->  28 ACTIONABLE  +  16 downstream reflections  +  2 unresolved
+
+(48 → 46 came from this session's earlier regenerations, not from the taxonomy.)
+
+### The discriminator, and why it can be mechanical
+
+**What can the producer possibly know?** A module that never calls the trace
+machinery cannot have computed a |tr_M|, so any it emits came from something it
+read. That is a fact about the code, not a judgement about intent — which is
+exactly what a curated list can never be, and why this one will not rot the way
+`SOURCE_DELIBERATE` nearly did.
+
+**Validated against the bean's own examples**, which was the check available for
+free: all three sites this bean named as reflections —
+`witness_value_copy_audit`, `derivation_chain_validator`, `atomic_mass_via_rho_k`
+— classify as `reflects`. **3/3.**
+
+**AST, not substring**, same lesson as the source arm: eight candidate producers
+*mention* `atom_braid_word_3A` in a docstring while never calling it. A grep
+files them as computing their own traces, which is the opposite of true.
+
+### "Actionable" is deliberately not called "computes"
+
+Ten producers land in `neither` — no trace call, no artifact read. I checked
+what that bucket actually holds rather than assuming it was one thing:
+
+- **Hardcoders** — `path_b_defect_binding_probe`, `qbeta_chain_closed_form_probe`.
+  Both are *independently* flagged by this same audit's SOURCE arm for carrying
+  grouped literals. **Two detectors agreeing from opposite directions**, which
+  is the strongest evidence either of them is right.
+- **Computers by an unlisted idiom** — `vhat_per_crossing_chain` builds Hoefsmit
+  matrices and takes the trace inline, calling nothing in `_COMPUTE_CALLS`.
+
+Both own their value, so both are actionable. But a bucket labelled "computes"
+would be false for the hardcoders, so it is named for the property they share
+and the mixture is documented at the classifier. A bucket named for a property
+it does not have is worse than a coarse one.
+
+### What the number now means
+
+**28** is the first figure this bean has produced that is a count of *work*
+rather than a count of the corpus. The 16 reflections resolve when their inputs
+do — and today already demonstrated that, twice: `graded-hecke-energy-probe` and
+`skein-proton-canonical` went green the moment `canonical_trm_reference` served
+canonical values, without either being touched.
+
+The **2 unresolved** name no `scriptFile`. That is now a fixable class rather
+than a mystery: `stamp_staleness_metadata` sets the field (fixed earlier in this
+bean), so re-running each producer stamps it and moves it into a real bucket.
+
+### Suggested order for the 28
+
+1. The ones whose producers are already known here: the six hardcoded sites,
+   most of which are recorded above with verdicts.
+2. Then re-run and re-scan, because reflections resolve for free and the number
+   should drop again without further work.
+3. Only then read the residue per-site.
+
+Do **not** re-run producers in bulk without the 0-byte diff the 2026-09-08
+coordination note asks for — 252 producers still carry the truncating
+open-with-import template.
