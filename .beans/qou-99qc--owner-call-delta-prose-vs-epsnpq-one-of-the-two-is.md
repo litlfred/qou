@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T15:13:29Z
+updated_at: 2026-09-13T15:34:53Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2257,3 +2257,56 @@ convention, which is what it was when I read `tr_conv_D` as one word's trace.
 
 Scope-(a) + one structural observation. No pair is selected; doing so by
 residual would be selection against the target.
+
+
+## Part 13 (PR #7304) — BAR PARITY forces a unique Q_β from the un-ruled letter, and the census assignment FAILS it
+
+`computations/qbeta/qbeta_bar_parity_forces_a_unique_quark_letter_probe.py` (6/6).
+
+Working this bean's own open problem: the parity bound proves 5 of 11 letters
+lie outside the ruling; of those, the two bar-fixed (`−h/2`) and the gluon pair
+are **shared** between the nucleons, so **one** quark letter carries the whole
+p/n asymmetry. What selects it?
+
+**The hypothesis is the corpus's, not mine.** AGENTS.md line 2182: Q_β is *"the
+bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π"*. That is
+attached to the **published closed form** — the `z = 1` cell the 2026-09-08
+ruling retired as a base — so whether it survives to `z_D` is precisely the
+open question. Impose it and see.
+
+**The freedom.** Odd letter in any of 3 quark slots, either member of the
+bar-pair (`σ` shift 0, `σ⁻¹` shift `−h`). Slots 0 and 1 are both generator 0
+and give **exactly** the same trace ⟹ only **4 distinct elements**, and 26 of
+the 30 ordered (p,n) pairs have nonzero Δ.
+
+**The result.** Requiring `tr^{z_D}(Δ)(1/q) = −tr^{z_D}(Δ)(q)` leaves **8 of
+26**, and **the census assignment is NOT among them**. Every survivor gives both
+nucleons the **same** member of the bar-pair, differing only in generator; the
+census gives them **opposite** members — exactly what destroys the parity.
+
+**And the 8 need no choosing between.** Symbolically
+`Δ(σ,σ) = −Δ(σ⁻¹,σ⁻¹)` **exactly**, so all eight share one magnitude:
+
+    |tr(Δ)| = (q⁶−1)(q⁴+1)(q¹²−4q¹⁰+6q⁸−7q⁶+6q⁴−4q²+1) / (4q⁹(q²+1)²)
+
+forcing **Q_β = 0.353415698 MeV, −54.825 %**.
+
+🛑 **No selection was made** — the constraint is a parity in `q`, never
+proximity to the measured value; it narrows 26 → 8; the 8 collapse. Nothing
+left to pick. And the forced answer is **worse** than the census's −16.678 %,
+which is the ranking AGENTS.md mandates: report what the specification gives
+even when worse; rank by derivational cleanliness, never by residual.
+
+🛑 **It does not close Q_β.** All four distinct elements **FAIL PSD**, so the
+SDP half rejects this entire one-letter family — census and bar-odd alike.
+Narrows the problem; does not solve it.
+
+**Calibrated first** (the check whose absence caused part 11's retraction): the
+(slot, kind) coordinates reproduce `tr_conv_D = -0.1541948850472397056592555`
+to 1.4e-26.
+
+Scope-(a). **Unconditional:** the census assignment is not bar-odd; the bar-odd
+family collapses to one magnitude; no member is PSD-feasible. **Conditional:**
+that bar-oddness transfers from the retired `z = 1` cell to `z_D`.
+
+**BEAN STAYS todo (§13a)** — the subject is an open derivation.
