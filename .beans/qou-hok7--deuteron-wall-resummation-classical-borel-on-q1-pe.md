@@ -983,3 +983,58 @@ values; it says nothing about whether the climb found the optimum.
 **Still open, unchanged:** the **pair-term lower bound**.
 
 **Do not close this bean.**
+
+---
+
+## 2026-09-13 — the staircase leg is CLOSED FORM, and the asymptotic is an IDENTITY
+
+**This needed no new mathematics** — only reading the padding-invariance theorem above in the
+direction it already points. `betaSide_eq_hookSum` makes the objective **cell-local**:
+
+$$V(\mu) \;=\; \sum_{c\in\mu}\varphi(h(c)) \;+\; \mathrm{const}(n),\qquad
+\varphi(h) := \varepsilon(h) - h\ln q_0 .$$
+
+On the staircase `H = H_min` kills the second term outright, leaving `Σ_c ε(h(c)) − F(n)`. The
+staircase's hook multiset is elementary — **`2j−1` with multiplicity `k+1−j`, and no even hook
+length at all** — so the sum telescopes:
+
+$$V(\delta_k) \;=\; \sum_{j=1}^{k}(k+1-j)\,\varepsilon(2j-1) \;-\; F(n)
+\;=\; A\,k \;-\; B \;-\; F(n) \;+\; \mathrm{rem}_k$$
+
+with `A = Σ_j ε(2j−1) = 3.6033777` (the arc's constant) and **`B = Σ_j (j−1)ε(2j−1) =
+5.1893691`**, new. The series form reproduces #7294's committed `V_staircase` column at **all 11
+points to 1e-19** — computed from hooks, with no β anywhere, so it checks `betaSide_eq_hookSum`
+as much as it checks the multiset.
+
+**And it is an IDENTITY, not an asymptotic.** At triangular `n`, `k + 1/2 = √(2n + 1/4)` exactly:
+
+$$M_n \;=\; A\sqrt{2n + \tfrac14} \;-\; \tfrac{A}{2} \;-\; B \;-\; C \;+\; e_n \;+\; \text{(i)} + \text{(ii)}$$
+
+with `C = Σ_m ε(m)`, `e_n` the excess over the staircase, and two exponentially small remainders
+— (i) the series tail `Σ_{j>k}(j−1−k)ε(2j−1)`, (ii) `C − F(n)` — **together 5.1e-16 at
+n = 3916**. From `n = 990` up the residual *is* the excess gap to six figures.
+
+$$\kappa \;=\; -A/2 - B - C + e_\infty \;=\; -10.7231689187$$
+
+**Write the √ exactly.** Plain `A√(2n)` carries an extra `A/(8√(2n)) = 0.0051` at n = 3916 —
+about **1e13×** the residual it would be explaining. The constant term is only well-defined in
+the `√(2n+1/4)` form, and my first pass used the loose one.
+
+**What this does to the open problem.** The entire gap between this and a closed asymptotic is
+the single sequence `e_n`. Not the coefficient (settled, #7294). Not the staircase baseline
+(exact as of here). **One number** — and it is the same number the pair-term lower bound is
+about. That bound's target is now stated in its sharpest form: `e_∞ ≈ 2.43929`.
+
+Two corroborations that do not reuse each other: the predicted multiset's total is
+`Σ_j (k+1−j)(2j−1) = k(k+1)(2k+1)/6 = H_min` exactly (integers, k = 1..40), against the
+independently-established square-pyramidal closed form; and the remainder is tested against its
+**derived** decay rate `q₀⁴` per unit `k` rather than an absolute threshold — converging to
+`1.517759` against a predicted `1.517763`.
+
+**Does not make `M_n` a theorem**: the maximiser is still heuristic, so `M_n` is a lower bound,
+and `e_∞` is measured at a single `n` rather than proved to be a limit. What is exact is the
+**baseline**.
+
+Probe: [`rev_staircase_closed_form_and_constant_term_probe.py`](computations/deltalambda/rev_staircase_closed_form_and_constant_term_probe.py), 7/7.
+
+**Do not close this bean.**
