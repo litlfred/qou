@@ -16,6 +16,7 @@ import QOU.Eightfold.FlavourColourDiscriminator
 import QOU.Eightfold.ObstructionClassForcesComplexType
 import QOU.Eightfold.ObstructionH2
 import QOU.Eightfold.ObstructionH2Mathlib
+import QOU.Eightfold.GaugeAnsatzNesting
 import QOU.Eightfold.PtolemyTwist
 -- This project formalizes the mathematical content of the QOU manuscript.
 -- Each chapter has a corresponding Lean file.
