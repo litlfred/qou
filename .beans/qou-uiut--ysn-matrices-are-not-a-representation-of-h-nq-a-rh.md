@@ -3,8 +3,9 @@
 title: 'YSN matrices are not a representation of H_n(q): a_rho uses h/[rho] where Hoefsmit needs q^rho/[rho] — braid defect 0.7315 at every partition'
 status: in-progress
 type: bug
+priority: normal
 created_at: 2026-09-02T21:39:40Z
-updated_at: 2026-09-02T21:39:40Z
+updated_at: 2026-09-13T12:03:45Z
 ---
 
 Found while reviewing main (bean qou-9ay6 / qou-sv7h), branch
@@ -1407,3 +1408,73 @@ fixed — the memo is re-ported with a key that covers the Python numeric path.
 **Rule of thumb this leaves:** on this producer, judge throughput by
 wall-clock per atom, never by CPU %. The two have moved in opposite
 directions here for a legitimate reason.
+
+
+---
+
+## 2026-09-13 — container reset at 6/19, resumed; plus one TRAP and one measurement
+
+**Reset.** The run died at 11:38:02 with no traceback, mid-⁴He, when the session
+resumed into a fresh container. Per-atom checkpointing (`qou-i7ju`) held: 6
+atoms preserved, committed as `3f2e6574102 chore(qou-uiut): checkpoint 6/19`.
+Resumed via `scripts/hkt-resume.sh --commit` — LP-kernel gate passed, *"no
+fallback warning in the started run"*, memo found with **1329 entries** (so
+`.work/` survives a container recycle and the restart is warm, contrary to the
+script header's "rebuilt from scratch after a reset").
+
+Walls so far, this kernel: deuterium 278.8 s, tritium 928.4 s, he3 926.9 s.
+
+**Key validity confirmed the cheap way.** Rather than recompute `_ckpt_key()`, I
+checked that none of its seven files differs between `046ed12986d` (where the
+run started) and `HEAD`, and that none has uncommitted changes. All seven clean,
+so the key matches by construction.
+
+### 🛑 TRAP — importing `hadron_knot_table` to READ a function STARTS THE RUN
+
+I wanted `_ckpt_key()`'s value, so I did
+`spec.loader.exec_module(m)` on `computations/hadron_knot_table.py`. **The module
+is a script**: executing it began a fresh 19-atom run. Caught it at 2:07 elapsed
+and killed it by PID; the checkpoint was untouched (mtime unchanged, key
+unchanged).
+
+It was harmless only because the real run had *already died*. **Had the table
+still been running, this would have been two producers in one checkout** — the
+exact thing the discipline forbids, entered while trying to verify that very
+discipline.
+
+**Do it this way instead:** `ast.parse` the file and `ast.get_source_segment` the
+function, or diff the seven key files against the commit the run started from.
+Neither imports anything. And `pkill -f hadron_knot_table` is *not* the way out —
+that pattern matches its own command line (this bit once already, exit 144).
+Find the PID with `ps -eo pid,args | grep -F` and `kill` it.
+
+### `_ckpt_key()`'s coverage vs the table's real import cone — measured
+
+The key hashes q₀ plus 7 files. The table's statically-reachable cone is **114
+modules**, of which the key covers 4 (`hadron_knot_table`, `hecke_core_legacy`,
+`hecke_core`, `compound_shift_nf`); the other 3 key files are `pyhecke/*`, which
+a static AST walk cannot see because they arrive as an installed package.
+
+A curated key is the right design — hashing all 114 would churn on every
+unrelated edit. But the curation is worth re-checking when a numeric module
+moves, and the reachability that matters runs through **function-local**
+imports a module-level scan misses:
+
+```
+hadron_knot_table → hecke_core_legacy:3089 → binding_canonical:564 → hecke/hecke_characters
+```
+
+Both of those edges are imports *inside functions*, and neither intermediate
+module is in the key.
+
+**Not a live gap, and I checked rather than assumed.** That path is reached only
+through `binding_from_frobenius_pairing(..., canonical: bool = False)`; the table
+calls it without the argument, and the only `canonical=True` caller in the tree
+is `computations/phase5/phase3_triton_binding_convention_b.py:169`, a different
+producer. The one symbol `binding_canonical` imports from `hecke_characters` is
+`specht_dim`, which is pure integer arithmetic (`math.factorial`, integer
+floor-division by hook lengths) and cannot move under any float64 change.
+
+So: editing `hecke/hecke_characters.py` is safe with respect to this run, on
+three independent grounds. Recorded because the *method* — read the gate, not
+the cone — is what settles questions like this, and `_ckpt_key` does not do it.
