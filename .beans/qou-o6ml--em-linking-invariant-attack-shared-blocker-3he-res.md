@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T15:48:22Z
+updated_at: 2026-09-13T16:34:15Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1630,3 +1630,44 @@ objects should be treated as the target.
 
 Volume and geometricity are **NOT** re-measured (`snappy`/`spherogram` absent in
 this container); the component count alone decides the identification question.
+
+## 2026-09-13 (later) — the carrier alternative is CLOSED BY MEASUREMENT: the closure is not hyperbolic
+
+The entry above left one question for the owner: since the census carrier is an
+admitted AME fit that the 2026-09-08 ruling excludes as a selection mechanism,
+should the `A + 1`-component closure of the canonical word become the target
+instead? It named the missing input: **is that closure hyperbolic?**
+
+Measured (`computations/probes/atom_closure_geometry_probe.py`, 5/5, SnapPy
+calibrated against `Vol(4_1) = 2.0298832128`): **no, and not marginally.** 3H,
+3He and 4He are non-geometric with volume exactly 0 in all SIX settings — both
+intra-orderings crossed with all three averaging modes — returning `contains
+degenerate tetrahedra` on 12/12 randomised attempts each. The 2026-07-04 rows
+reproduce exactly under the live word.
+
+**So there is no second candidate.** The closure has no hyperbolic volume to
+feed the volume-based binding route; promoting it would delete the route's input
+rather than re-base it. This bean's long-standing reading — that the component
+mismatch refutes the closure — is correct, and now for a second, independent
+reason.
+
+**The blocker restated, sharper than before.** It is not *"which of two objects
+is the carrier"*. It is: **the only available carrier is the fitted one**, the
+selection mechanism that produced it has been ruled out, and the framework's own
+canonical word cannot supply a replacement — refuted from two directions now
+(component count, `qou-mbbf`; non-geometricity, here). Route (2)'s machinery
+still has nothing un-fitted to consume, and that is now established rather than
+inferred from the A<=4 assignment's provenance alone.
+
+**What is still genuinely open**, unchanged: `qou-ales`'s gamma-gamma route
+selects WORDS (beta_Bor, the H_6 bond `G^3`) and has not been asked to produce a
+binding LINK; the flux leg (eq. 43's topological factor is A-independent, so it
+relocates kappa(A) into the per-component flux — a fall of 1.449 across
+A = 3...41, derivable from corpus braid geometry, not derived); and `qou-bn8e`'s
+self-energy channel via its route (ii).
+
+By-product, filed separately as `qou-v5sr`: the producer's baked `CLOSURE` table
+is stale for the two NUCLEON rows (hyperbolic under the live word, recorded
+non-geometric), and its own "every mode agrees" comment is false for them. The
+volumes are mode-dependent by 2x and are NOT derived quantities — see that bean
+before quoting any of them.

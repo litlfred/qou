@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T15:47:03Z
-updated_at: 2026-09-13T15:47:43Z
+updated_at: 2026-09-13T16:34:15Z
 ---
 
 ## What was asked, and what I nearly got wrong
@@ -101,3 +101,47 @@ census assignment is itself an admitted fit that the owner ruled out on 2026-09-
 - `qou-5vhf` -- carriers are an admitted AME-driven census search.
 - `qou-ales` -- the owner's replacement selection route (gamma-gamma + confinement
   SDP), now at step 10.
+
+## 2026-09-13 (later) — THE CARRIER QUESTION IS ANSWERED BY MEASUREMENT, not left to the owner
+
+The entry above closed with *"whether a nucleus should close to an `A + 1`-component
+link at all is the open question"* and named one missing input: **is the closure
+hyperbolic?** I could not get it — `snappy`/`spherogram` were absent. They
+`pip install` cleanly (`snappy 3.3.2`, `spherogram 2.4.1`); the assumption that
+they were unavailable was never tested.
+
+`computations/probes/atom_closure_geometry_probe.py`, 5/5, calibrated against
+`Vol(4_1) = 2.0298832128` before trusting any of its output:
+
+**Every ATOM is non-geometric with volume exactly 0, in all SIX settings** — both
+intra-orderings crossed with all three averaging modes (`averaged -> +sigma`,
+`-> -sigma`, `-> drop`). 3H, 3He and 4He all return `contains degenerate
+tetrahedra` on 12/12 randomised attempts.
+
+So the 2026-07-04 witness's atom rows **reproduce exactly under the live word**,
+and the option of promoting the `A + 1` closure to a binding carrier is not an
+owner judgement call — it is **closed by measurement**. The closure has no
+hyperbolic volume, so it cannot feed the volume-based binding route at all.
+Retiring the census assignment in its favour would not re-base the binding
+numbers; it would delete their input.
+
+**What that leaves for `qou-o6ml`.** The census carrier survives as the framework's
+binding input by default — but it survives as an object the owner ruled out as a
+SELECTION mechanism (2026-09-08) with no derived replacement available from this
+direction. That is a sharper statement of the arc's blocker than "which of two
+objects is the target": there is only one candidate, and it is the fitted one.
+The `A + 1` closure is not a rival; it is not a carrier at all.
+
+## By-product: two rows of the producer's own baked table are stale
+
+The NUCLEON rows flipped. Under the live `"borromean"` word the proton and
+neutron closures are **hyperbolic in all three modes**, where the baked
+`CLOSURE` dict records `geometric: False, vol 0.0` — and the producer's comment
+*"Every mode gives the same non-geometric outcome"* is now false for them. It
+holds under `"grouped"`, which reproduces the baked table exactly, all five rows.
+
+🛑 The volume is **mode-dependent** (proton 9.966512 / 11.942872 / 10.215606 —
+a 2x spread), so it is NOT a derived nucleon volume and must not be quoted as
+one. Only the qualitative flip is mode-independent. Filed as `qou-v5sr`, not
+fixed — it is a producer-output change gated by the ask-first rule, and it is
+the same commit and the same open question as `qou-sikd`.
