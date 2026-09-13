@@ -331,11 +331,29 @@ exactly, **independent of the `pn` convention**: `δ` does not appear. Verified
 symbolically at `(Z,N) = (1,2), (2,3), (1,3), (2,4), (3,5), (4,6)` and at the
 self-mirror `(1,1), (2,2)`, where it gives `1`.
 
-This is the sharp form of the claim that the `pp → σ` / `nn → σ⁻¹` assignment
-**is** the mirror asymmetry: swapping the two letters swaps `a` and `b`, which
-inverts the ratio. Nothing else in the bond model distinguishes a proton from a
-neutron. Why the assignment has that orientation rather than the reverse is
-`qou-qqm4`'s upstream open item. -/
+Swapping the two like-pair letters swaps `a` and `b`, which inverts the ratio.
+Nothing else **in the bond model** distinguishes a proton from a neutron — that
+scope is exact and load-bearing; see the correction below.
+
+🛑 **The bond letters are NOT the only p/n injection in the framework.**
+`appendix-mass-binding-algorithms/mba-sidecar-mirror-cancellation` records a
+second one, upstream of this file: the **intra**-nucleon writhe asymmetry,
+*"proton `+3` > neutron `+1`"* per nucleon, which fixes the sign of its mirror
+split `ζ`. So an unqualified "the p/n asymmetry is injected at the bond
+letters" is wrong; the correct statement is that it is injected at the bond
+letters **and** in the per-nucleon blocks, and this file only sees the first.
+
+That block also states the total writhe `w = σ − σ⁻¹ = 4Z`, hence
+`w(Z,N) − w(N,Z) = 4(Z−N)` — numerically **the same exponent** this theorem
+produces, so the mirror ratio here is `q` raised to the writhe difference.
+🛑 Whether that is structural or a coincidence of two different counts is
+**NOT established**: the writhe there is over the whole word, intra letters
+included, while `a` and `b` here count only the `A−1` inter-nucleon bonds.
+Do not cite the agreement as a derivation.
+
+And that block already declares the mirror-split **magnitude** *"open and
+unfitted"*, so the open item this file points at is in part one the corpus had
+already named. Bean `qou-qqm4`. -/
 theorem likePairBondProduct_eq_z_pow {R : Type*} [CommRing R]
     (zpp znn c : R) (hrel : znn * c = zpp) (a b : ℕ) :
     zpp ^ a * znn ^ b * c ^ b = zpp ^ (a + b) := by
