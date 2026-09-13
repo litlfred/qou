@@ -28,14 +28,22 @@ WHAT THE STRUCTURE ACTUALLY IS -- measured, not assumed.  Two facts, each cheap:
     vanishing and 9 failing (ptolemy_eliminated_gauge_is_ones_probe.py).
 
   * Every equation that mentions an unknown is degree 1 in EVERY unknown it mentions
-    -- 27 such equations, all deg 1.  Each Ptolemy relation is a sum of products of
-    two coordinates, and no relation pairs two eliminated coordinates, so the whole
-    system is LINEAR in the 6.
+    -- 27 such equations.  That is NOT the same as linear, and reading it as linear
+    was a third error of mine, caught by this file's own assertion: a Ptolemy relation
+    pairs two coordinates, and some relations pair two ELIMINATED ones, e.g.
+    c_0012_0 = c_0111_0 * c_1002_0.  The system is multilinear, total degree 2.
 
-So this is exact linear algebra over K, not a nonlinear solve, and it is settled by a
-rank computation rather than by a search.  Gaussian elimination is done in K directly
-(inverses via sympy.invert modulo the minimal polynomial); nothing is done over Q(T)
-and reduced afterwards, which would answer a generic question rather than this one.
+  * But each of the six appears ALONE, to degree 1, in at least one equation.  So the
+    system is TRIANGULAR: every unknown is pinned by a single-unknown equation
+    a*x + b = 0 over K, with a and b built only from recorded coordinates.
+
+So the solve is a fixed point, not a search: repeatedly take any equation with exactly
+one remaining unknown and degree 1 in it, solve x = -b/a exactly in K, substitute,
+repeat.  Every unknown is pinned by more than one such equation, so each value is
+cross-checked against an independent equation at the moment it is derived rather than
+only in the final sweep.  Inverses are taken in K directly (sympy.invert modulo the
+minimal polynomial); nothing is solved over Q(T) and reduced afterwards, which would
+answer a generic question rather than this one.
 
 VERIFICATION.  The recovered assignment is accepted only if ALL 39 un-eliminated
 equations reduce to the zero polynomial in K.  Note 30 of them contain no unknown at
@@ -105,69 +113,51 @@ def main():
     print("pre-check PASSES -- the recorded 26 and the reduction machinery are sound.",
           flush=True)
 
-    # --- build the linear system A x = b over K --------------------------------
+    # --- triangular fixed point: pin one unknown at a time ---------------------
     live = [p for p in parsed if set(Xs) & p.free_symbols]
-    A, b = [], []
-    for p in live:
-        poly = sp.Poly(p, *Xs)
-        for mon in poly.monoms():
-            assert max(mon) <= 1 and sum(mon) <= 1, \
-                f"equation is not linear in the unknowns: {p}"
-        row = [red(p.coeff(x, 1)) for x in Xs]
-        const = red(p.subs({x: 0 for x in Xs}))
-        A.append(row)
-        b.append(red(-const))
-    print(f"linear system over K: {len(A)} equations, {len(Xs)} unknowns; "
-          f"homogeneous: {all(c == 0 for c in b)}", flush=True)
+    print(f"equations mentioning an unknown: {len(live)}", flush=True)
 
-    # --- Gaussian elimination in K ---------------------------------------------
-    n = len(Xs)
-    rows = [list(r) + [bb] for r, bb in zip(A, b)]
-    piv_col = []
-    r = 0
-    for c in range(n):
-        p = next((i for i in range(r, len(rows)) if rows[i][c] != 0), None)
-        if p is None:
-            continue
-        rows[r], rows[p] = rows[p], rows[r]
-        s = inv(rows[r][c])
-        rows[r] = [red(x * s) for x in rows[r]]
-        for i in range(len(rows)):
-            if i != r and rows[i][c] != 0:
-                fac = rows[i][c]
-                rows[i] = [red(a - fac * bb) for a, bb in zip(rows[i], rows[r])]
-        piv_col.append(c)
-        r += 1
-        if r == len(rows):
-            break
-    rank = len(piv_col)
-    free_col = [c for c in range(n) if c not in piv_col]
-    incons = [i for i in range(rank, len(rows))
-              if all(x == 0 for x in rows[i][:n]) and rows[i][n] != 0]
-    print(f"rank {rank} / {n}; free columns {[unknown[c] for c in free_col]}; "
-          f"inconsistent rows: {len(incons)}", flush=True)
-    if incons:
-        print("\nThe system is INCONSISTENT over K: the recorded 26 do not extend.")
-        print("That is a real finding about the artifact, not a solver artifact --")
-        print("the 30 unknown-free equations already passed.")
-        return 1
-
-    # --- solve; a free column is the residual decoration gauge -----------------
-    if len(free_col) > 1:
-        print(f"\n{len(free_col)} free columns -- the solution is not determined up to")
-        print("a single scale.  Report rather than pick one.")
-        return 1
     sol = {}
-    if free_col:
-        fc = free_col[0]
-        print(f"\none free column: {unknown[fc]} is the residual gauge; "
-              f"normalising it to 1.", flush=True)
-        sol[unknown[fc]] = sp.Integer(1)
-        for i, c in enumerate(piv_col):
-            sol[unknown[c]] = red(rows[i][n] - rows[i][fc])
-    else:
-        for i, c in enumerate(piv_col):
-            sol[unknown[c]] = red(rows[i][n])
+    pinned_by = {}
+    remaining = set(Xs)
+    progress = True
+    while remaining and progress:
+        progress = False
+        for p in live:
+            q = red(p.subs({X[v]: sol[v] for v in unknown if v in sol}))
+            free = set(Xs) & q.free_symbols
+            if len(free) != 1:
+                continue
+            x = free.pop()
+            name = next(v for v in unknown if X[v] is x)
+            if sp.Poly(q, x).degree() != 1:
+                continue
+            a = red(q.coeff(x, 1))
+            b = red(q.subs(x, 0))
+            if a == 0:
+                continue
+            val = red(-b * inv(a))
+            if name in sol:
+                # an independent equation pinning an already-derived value
+                if red(sol[name] - val) != 0:
+                    print(f"\nCONTRADICTION: {name} is pinned to two different values "
+                          f"in K by two equations.  The recorded 26 do not extend.")
+                    return 1
+                pinned_by[name] += 1
+                continue
+            sol[name] = val
+            pinned_by[name] = 1
+            remaining.discard(x)
+            progress = True
+            print(f"   pinned {name}", flush=True)
+
+    if remaining:
+        left = sorted(next(v for v in unknown if X[v] is x) for x in remaining)
+        print(f"\nfixed point stalled with {len(left)} unpinned: {left}")
+        print("Report rather than guess -- the triangular structure does not close.")
+        return 1
+    print(f"\nall {len(unknown)} pinned; cross-checks per coordinate: "
+          f"{ {k: pinned_by[k] for k in sorted(pinned_by)} }", flush=True)
 
     # --- accept only on ALL 39 ---------------------------------------------------
     sub = {X[v]: sol[v] for v in unknown}
@@ -194,8 +184,9 @@ def main():
             'recovered': unknown,
             'method': 'exact linear solve over K; every equation mentioning an '
                       'unknown is degree 1 in it, so the system is linear',
-            'gauge': ('one free column, normalised to 1'
-                      if free_col else 'determined, no free column'),
+            'gauge': 'fully determined by the triangular system; '
+                     'no free parameter',
+            'cross_checks_per_coordinate': pinned_by,
             'equations_verified': len(eqs),
             'unknown_free_equations_precheck': len(free_eqs),
         },
