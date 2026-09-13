@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T09:13:48Z
+updated_at: 2026-09-13T14:55:00Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -737,3 +737,462 @@ a map on the variety.
 `[(1,1,4), (2,1,2)]`, not quoted — so unique factorisation fails and `[w]` cannot be read
 off by factoring; the ideal class group enters. Identifying `[w]` in the cube-class group
 of `Q(sqrt(-15))` is the next step, and it must stay derived.
+
+
+---
+
+## UPDATE 2026-09-13d — the point-level fact is now a VARIETY-level one, and the roast's objection is split
+
+The priority-1 next step of this bean ("test whether `sigma_b` is the duality map ON THE
+VARIETY, not at a point") has RUN.  `computations/ptolemy/ptolemy_duality_variety_level_orbit.py`,
+report `L6a4-c1-duality-variety-level.json`, exact in K throughout.
+
+### The lever: the orbit IS the variety, and that was not recorded before
+
+Three facts already on main line up, and nobody had joined them:
+
+- the class-1 saturated ideal is zero-dimensional of **degree 4** over Q with `u` carried
+  as a VARIABLE, mod p and in characteristic zero, `degrees_agree: true`
+  (`L6a4-c1-sweep.json`);
+- `f` is **irreducible** of degree 4 and the Ptolemy field equals the trace field with
+  `span_dimension 4`, so `x` generates `K` (`L6a4-c1-irreducibility.json`,
+  `L6a4-c1-trace-field.json`);
+- `Gal(K/Q) = Z/2 x Z/2` is **abelian** (#7092).
+
+MEASURED here (G1/G2): the four conjugates are pairwise DISTINCT and each is a genuine
+variety point -- 0/32 GGZ (5.2) failures and 0/128 identification failures, each at its
+own cube root (`id`, `tau` at `u2`; `sigma_a`, `sigma_b` at `u1`).  Four distinct points
+inside a degree-4 zero-dimensional scheme leaves no room: **the orbit is the whole
+variety, and the scheme is reduced.**  This also closes `qou-47nf`'s caveat *"degree 4 is
+the mod-p count; over C it may differ"* -- the char-zero run answers it and the two are
+now joined.
+
+### The result
+
+    point      sigma_a                sigma_b
+    id         NOT (91/122 fail)      coboundary, PGL3 only (0/122 fail)
+    sigma_a    NOT (91/122 fail)      coboundary, PGL3 only (0/122 fail)
+    sigma_b    NOT (91/122 fail)      coboundary, PGL3 only (0/122 fail)
+    tau        NOT (91/122 fail)      coboundary, PGL3 only (0/122 fail)
+
+Both columns constant down the orbit.  Guards: G3 measures that **D IS Galois-equivariant**
+-- `D(sigma x) = sigma(D x)` on 128/128 coordinates at all four points, which is the
+load-bearing leg and is checked rather than argued; G4 calibrates the identity row against
+#7092; G5 is the refutation control (the `sigma_a` column is NO everywhere, so the test
+CAN fail).
+
+### The roast's objection, split three ways -- only one is answered
+
+`docs/audits/2026-09-07-takeover-fronts-roast.md:102-116` anticipated this move.  It makes
+three points and this result touches ONE:
+
+- **(A) pointwise vs universal closure — ANSWERED.**  The sharp half is where the
+  quantifier sits.  A per-point test can only give `for all x, exists sigma`; each point
+  could a priori be self-dual up to a DIFFERENT Galois element.  The measurement gives
+  `exists sigma, for all x`, with `sigma_b` exhibited and `sigma_a` excluded at every
+  point.  That arity upgrade is the whole content.
+- **(B) "two distinct rational self-maps can agree on a Galois orbit" — NOT ANSWERED.**
+  Four points impose four conditions.  This is an identity of maps ON V, never of rational
+  maps, and it carries NO implication for another obstruction class or manifold.
+- **(C) whether `rho -> rho^{-T}` INDUCES `sigma_b` — NOT ANSWERED**, and it is still this
+  bean's subject.  What sits between is the Ptolemy-to-representation direction: `V`
+  modulo gauge corresponds to the class-1 boundary-unipotent PGL(3,C) representations
+  (GGZ), and IF that correspondence is a bijection here, agreement on all of `V` modulo
+  gauge is agreement of the induced maps on representations.  **The probe does not
+  establish that bijection and does not assume it.**
+
+Honest one-line form: **every point of the L6a4 class-1 variety is self-dual up to
+Gal(K/Q), by one and the same element `sigma_b`.**  Strictly stronger than #7092's single
+point; strictly weaker than "D = sigma_b as maps"; silent on representations.
+
+### A cross-check that cost nothing
+
+`w = r(3 e_0)`, whose cube-root-ness decides the SL(3) lift, transports by Galois
+(`w(sigma x) = sigma(w x)`, verified) and takes exactly TWO values across the four points,
+constant on the cosets of `{1, sigma_a}`.  That reproduces PR #7273 section 4 -- `sigma_a`
+fixes `w`, `w` lies in `Q(sqrt(-15))` -- from the orbit side, which shares no machinery
+with the subfield-descent route that found it.
+
+### Lean
+
+`QOU/Eightfold/GaloisOrbitTransport.lean`, sorry-free; three of its four results depend on
+**no axioms at all**, the fourth on `propext`.  `eq_smul_of_transitive_orbit` is the
+upgrade; `rel_of_transitive_orbit` is its version modulo an action-stable relation, stated
+as an **Iff** so it propagates the `sigma_a` NO exactly as it propagates the `sigma_b`
+YES; `exists_not_forall_eq_of_not_central` shows **commutativity cannot be dropped** (for
+any non-central `b` in any group, right multiplication by `b` is a counterexample).  No
+numbers in the Lean.
+
+### A bug the calibration guard caught, worth keeping
+
+The first run read the verdict off `gauge is not None` from `coboundary_test`'s second
+return value.  That is a PROXY for a different fact: in the index-3 case the function
+returns `None` when `w` has no cube root in `K`, meaning *"the PGL(3) gauge element does
+not LIFT to SL(3)"*, NOT *"there is no gauge element"* -- the very distinction PR #7273
+exists to draw.  The table printed `NOT a coboundary (0 of 122 kernel relations fail)`,
+self-contradictory on its face, and it was the G4 CALIBRATION row that failed, not the
+mathematics.  Same class as blindness-taxonomy rows 27-32: a structural proxy substituted
+for the structural fact.  The verdict is now read from the integer kernel, which is the
+definition.
+
+### Still OPEN (rule 13a)
+
+(B) and (C) above.  The next honest step is (C): establish, or refute, that the Ptolemy
+point-to-representation correspondence is injective modulo gauge on this class, which is
+what would carry the variety-level identity across to representations.
+
+
+---
+
+## UPDATE 2026-09-13e — (C) attacked DIRECTLY, on characters: only `sigma_b` survives
+
+Pass 13d left three things open, of which (C) -- whether `rho -> rho^{-T}` INDUCES
+`sigma_b` on REPRESENTATIONS -- is this bean's actual subject.  It is now attacked
+directly, and the route goes AROUND the Ptolemy-to-representation gap rather than through
+it: `computations/ptolemy/ptolemy_duality_is_sigma_on_characters.py` never mentions gauge,
+duality formulas or coboundaries.  It compares CHARACTERS.
+
+### The identity
+
+If `rho^{-T} ~ sigma(rho)` as PGL(3) reps then `A sigma(rho(w)) A^-1 = lambda(w) rho(w)^-T`.
+Traces give `sigma(chi(w)) = lambda(w) chi(w^-1)`; determinants give
+`sigma(det w) = lambda(w)^3 / det(w)`.  Cube the first, substitute the second, `lambda`
+cancels:
+
+    sigma( chi(w)^3 / det(w) )  ==  chi(w^-1)^3 / det(w^-1)      for every w.
+
+`I(w) = chi(w)^3/det(w)` is the PGL-invariant: a non-trivial obstruction class says the
+rep does NOT lift to SL(3), so each matrix is defined only up to a scalar and `chi` alone
+is not an invariant.  Same invariant, same reason, as `exact_character_selfduality.py`.
+
+### Result -- 4686 reduced words, length <= 5, exact in K
+
+    id       REFUTED   3504 witnesses   shortest  ac
+    tau      REFUTED   3952 witnesses   shortest  ab
+    sigma_a  REFUTED   4068 witnesses   shortest  ab
+    sigma_b  HOLDS on every word tested
+
+Only `sigma_b` survives.  `tau` and `id` fix `zeta_3`, so they sit at the wrong obstruction
+class; `sigma_a` is refuted here exactly as it is on the Ptolemy side -- **the two levels
+agree, which they were not obliged to.**
+
+### Two EXACT calibration matches
+
+The `id` row IS the self-duality test, and it reproduces the corpus to the digit: **94**
+witnesses with shortest `ac` at length <= 3 against `L6a4-c1-character-selfduality.json`
+(`pgl_witnesses` 94, `shortest_witness.word` `ac`), and **3504** at length <= 5 against
+`exact_character_selfduality.py`'s own recorded figure.  It is also the REFUTATION
+CONTROL: it proves the test can fail, so `sigma_b` passing is not vacuous.
+
+### Stage 2 -- closing what the cube hides
+
+`I(w)` is a cube, losing one cube root of unity per word.  Computing the intertwiner
+scalar directly, `lambda(w) = sigma_b(chi(w))/chi(w^-1)`:
+
+    defined on                        936 of 936 words (no chi(w^-1) vanishes)
+    lambda(w)^3 == 1                  936 of 936
+    lambda(vw) = lambda(v)lambda(w)  2580 of 2580 concatenations
+
+So `lambda` is a **mu_3-valued HOMOMORPHISM** on everything tested.  This is the step worth
+having, because **a mu_3 scalar is TRIVIAL IN PGL(3)** -- twisting `rho^{-T}` by `lambda`
+changes nothing there.  With the rep recorded ABSOLUTELY IRREDUCIBLE (Burnside;
+`L6a4-c1-irreducibility.json`, `span_rank 9 = full_rank 9`) the argument closes to:
+
+> **IF** the character identity holds for ALL `w`, **THEN** `sigma_b(rho) ~ lambda (x)
+> rho^{-T} = rho^{-T}` as PGL(3) representations.
+
+### STILL NOT PROVED, and rule 13a keeps this bean OPEN
+
+**"All w" versus "the 4686 tested."**  A finite sweep cannot give the full character, and
+stage 2's multiplicativity is likewise measured on a finite set.  The visible route to
+closing it: the image SPANS `M_3(K)` (`matrices_spanned 31`, `span_rank 9`), so a
+character is determined by finitely many words -- turning that into a bound on word length
+is the remaining work and is NOT done.  Also still one manifold, one obstruction class;
+roast point (B) (two distinct rational self-maps can agree on an orbit) is untouched.
+
+### (B) is BLOCKED, not untried
+
+Obstruction class 2 was investigated.  **No exact class-2 point exists in the repo**, and
+three recorded solve routes each hit a measured wall -- msolve RUR > 3000 s; GB-only mod p
+> 2700 s producing 0 bytes; Singular full system > 5400 s (`qou-0y6l`) -- while the
+upstream `ptolemy.unhyperbolic.org` object returns **403** from this container (re-tested).
+So class-specificity is untouched.  Useful structural note: the whole blocker is ONE input
+file -- `ptolemy_duality_sigma_coboundary_test.py` is already class-parameterised, and the
+orbit producer hardcodes class 1 in three places, so adapting is a small edit if
+`L6a4-c2-ptolemy-in-K.json` ever lands.
+
+### Next honest step
+
+Bound the word length at which the character is determined, using the spanning fact -- that
+is what would turn the corroboration into a proof for class 1.
+
+
+---
+
+## UPDATE 2026-09-13f — (C) is PROVED for class 1.  The word-length bound is ONE.
+
+Pass 13e ended with the honest gap *"all `w` versus the 4686 tested"* and named the route
+to closing it as a word-length bound from the invariant theory of 3x3 matrices
+(Procesi/Razmyslov degree `n^2`, Teranishi's sharper 6 for two generic matrices).  **That
+route was not taken, because the bound is 1** and a sweep was never the right instrument.
+
+### Why the bound is 1
+
+Set `rho_1(w) = sigma_b(rho(w))` and `rho_2(w) = lambda(w) rho(w)^{-T}`.  **Both are
+HOMOMORPHISMS**: transpose-inverse is an anti-anti-automorphism, so
+`(rho(v)rho(w))^{-T} = rho(v)^{-T} rho(w)^{-T}`, and `lambda` is multiplicative (measured
+in 13e).  So a single `A` with `A rho_1(g) A^{-1} = rho_2(g)` on the three GENERATORS makes
+`w -> A rho_1(w) A^{-1}` and `w -> rho_2(w)` two homomorphisms agreeing on a generating
+set -- hence **equal on every word**.  Not corroborated: equal.  No characters, no absolute
+irreducibility, no trace algebra, no word length.
+
+### The solve, and the result
+
+`A rho_1(g) = lambda(g) rho(g)^{-T} A` is LINEAR in the nine entries of `A`; each
+`K`-element is four rationals, so 36 unknowns and 108 rational equations over three
+generators, nullspace exact over `Q`
+(`computations/ptolemy/ptolemy_duality_sigma_intertwiner.py`).
+
+    id       nullspace dim 0    no intertwiner
+    tau      nullspace dim 0    no intertwiner
+    sigma_a  nullspace dim 0    no intertwiner
+    sigma_b  nullspace dim 4    INVERTIBLE INTERTWINER FOUND
+
+**PROVED, for L6a4 obstruction class 1 over `K`: `sigma_b(rho)` and `rho^{-T}` are
+conjugate in `PGL(3,K)`.**  `lambda` is `mu_3`-valued on every generator, and `mu_3`
+scalars are TRIVIAL in `PGL(3)`, so the twist is invisible there -- the statement is
+exactly *"duality induces the `sigma_b` transport on this representation"*.
+
+### Four checks the solve had to pass
+
+- **Controls at dim 0.**  `id`, `tau`, `sigma_a` admit **no nonzero solution at all** --
+  stronger than "no invertible one".  `id` failing is independently required: a solution
+  there would mean `rho` is SELF-DUAL, contradicting the recorded COMPLEX TYPE verdict.
+- **Schur.**  `dim_Q = 4 = [K:Q]`, i.e. `dim_K = 1`: the intertwiner is unique up to a
+  `K`-scalar, exactly as Schur forces for an absolutely irreducible `rho`.  A LARGER
+  dimension would have meant the system was under-constrained -- a tripwire, not a remark.
+- **Relators 2/2.**  The intertwining holds on both relators, so it descends to `pi_1`
+  rather than living only on the free group.
+- **Longer words 8/8**, including words with inverse letters.  These MUST hold
+  automatically if multiplicativity is applied correctly.
+
+### Lean
+
+`QOU/Eightfold/IntertwinerFromGenerators.lean`, sorry-free, arbitrary groups, no matrices
+or fields in it: `eqOn_of_eqOn_generators` (two homomorphisms agreeing on a generating set
+are equal), `conjHom`, `conj_eq_of_eqOn_generators` (**the bound is one**), and
+`twist_trivial_of_mem` (a twist by a homomorphism into a normal `N` vanishes in `H/N` --
+with `N` the scalars, a character twist is invisible projectively).
+
+### What is STILL open -- rule 13a keeps this bean open
+
+- **Other obstruction classes.**  Class 2 is BLOCKED, not untried: no exact point exists in
+  the repo and three solve routes have measured walls (`qou-0y6l`), with the upstream
+  object 403 from this container.
+- **Other manifolds.**  Nothing here generalises; L6a4 only.
+- **Duality as a map on a moduli space.**  Roast point (B) -- two distinct rational
+  self-maps can agree on a finite set -- is untouched, and the proof above is about ONE
+  representation (up to its Galois orbit), not about a map of varieties.
+
+The bean's title asks for the identification in general.  For the L6a4 class-1
+representation it is now a theorem; in general it is open.
+
+
+---
+
+## UPDATE 2026-09-13g — the lambda class question: the twist is ABSENT, not invisible
+
+Pass 13f closed (C) for class 1 and left one question: is `lambda`'s class canonical, or an
+artifact of the decoration?  **Measured answer: `lambda == 1` on every generator, hence on
+every word.  There is no twist to have a class** — and that is a stronger result, not a
+null one.
+
+### The stronger theorem
+
+With `lambda == 1` the intertwining is
+
+    A sigma_b(rho(w)) A^{-1} = rho(w)^{-T}        exactly, no scalar
+
+an equality of **GL(3,K)** representations, not merely the PGL(3,K) statement of 13f.
+Re-solved with `lambda` pinned to 1 (nullspace dim 4, invertible `A` found), 9/9 words
+including inverse letters.  As characters: `sigma_b(chi(w)) = chi(w^{-1})` **untwisted**,
+1554 words of length <= 4, **zero** skipped.
+
+### The triviality is FORCED — this is the actual content
+
+`lambda = 1` could have been luck of the decoration.  It is not.
+
+- The lift is **SL(3)**: `det rho(g) = 1` on all three generators, measured.
+- So det of both sides **forces** `lambda(g)^3 = 1`.  mu_3-valued is a consequence of the
+  normalisation, never a discovery.
+- The only freedom is the lift, `rho -> mu.rho`, under which
+  `lambda' = lambda . mu . sigma_b(mu)`.  The law is **measured**, by re-solving the
+  intertwiner for rescaled `rho'` against the predicted `lambda'`, with a deliberately
+  wrong `lambda'.u` as control — nullspace dim 0 every time, correctly rejected.  Three
+  `mu` tested: mu_3, rational, generic.
+- An SL(3)-preserving redecoration has `mu` in mu_3, and since `sigma_b(zeta_3) =
+  zeta_3^2` the coboundary is `N_b(mu) = mu.sigma_b(mu) = mu.mu^2 = mu^3 = 1`
+  **identically**.
+
+So `lambda' = lambda` for **every** admissible `mu`: no decoration could have made the
+twist nontrivial.  Untwistedness is a property of the representation.
+
+### Supporting measurements, none assumed
+
+- `Gal(K/Q)` is **Klein four** — full multiplication table; every element an involution, so
+  `sigma_b^2 = id`, which is what puts `N_b`'s image in the fixed field `K^sigma_b`.
+- `sigma_b(zeta_3) = zeta_3^2` (and `sigma_a` too; `id` and `tau` fix it).  `sigma_b`
+  **negating the obstruction class** is why it is the automorphism that works at all, and
+  the same fact is what kills the coboundaries.
+- `lambda` is trivial on **both relators**, so it descends to `pi_1` and "class in
+  `Hom(pi_1, mu_3)`" type-checks — it is the trivial class.
+
+### Correction to my own prior claim
+
+Pass 13f wrote *"lambda is mu_3-valued and mu_3 scalars are TRIVIAL in PGL(3), so the twist
+is invisible there"*.  True as stated and **misleading**: it implies a twist exists that
+PGL(3) does not see.  Corrected in `ptolemy_duality_sigma_intertwiner.py` (docstring, the
+mu_3 check — now reporting `lambda == 1` separately from `lambda^3 == 1` — and the verdict)
+and in its report; it also stands in commit `e7211e61b7` (immutable) and in the PR #7290
+comment, which a follow-up comment corrects.
+
+**The sharper point: both earlier passes already held the refutation and neither read it.**
+13f reported only `lambda(g)^3 == 1`; stage 2's witness records
+`stage2_intertwiner_scalar.distinct_values: 1` across 936 words, which with its own
+multiplicativity check forces `lambda == 1`.  The data was there; the summary word
+"mu_3-valued" was chosen instead.
+
+### Scope, and one thing that must be quoted with it
+
+One manifold, one obstruction class, one representation up to its Galois orbit.  The
+rational and generic `mu` rows **do** move `lambda`, correctly — those lifts leave SL(3),
+where `lambda` need not be a cube root at all.  **The rigidity claim is scoped to SL(3)
+and must be quoted that way.**  Bean stays open under rule 13a: the general identification
+in the title is untouched.
+
+
+---
+
+## UPDATE 2026-09-13h — the orbit survives it; and roast point (B) is NARROWED, not closed
+
+Two fronts, taken together.
+
+### 1. The untwisted GL(3,K) duality is a fact about the CLASS, not the point
+
+The prediction was written into the probe **before** the run, as an argument rather than a
+guess: at `x_g = g(x)` the representation is `rho_g = g(rho)`, so `sigma(rho_g) =
+(sigma.g)(rho)`; applying `g` to the base intertwining gives
+`g(A).(g.sigma_b)(rho).g(A)^{-1} = rho_g^{-T}`. Matching needs `sigma = g sigma_b g^{-1}`,
+which is `sigma_b` itself because **`Gal(K/Q)` is Klein four** — measured, not assumed.
+
+Measured, 16 solves with `lambda` **pinned to 1** (so a success is untwisted GL(3,K), not
+projective):
+
+    point          id       tau   sigma_a   sigma_b
+    x_id      none(0)   none(0)   none(0)  FOUND(4)
+    x_tau     none(0)   none(0)   none(0)  FOUND(4)
+    x_sigma_a none(0)   none(0)   none(0)  FOUND(4)
+    x_sigma_b none(0)   none(0)   none(0)  FOUND(4)
+
+Every control at **dim 0** — no nonzero solution at all. Every `sigma_b` cell at
+**dim 4 = [K:Q]**, Schur at each point. And `A_g == g(A)` up to a K-scalar at all four: the
+intertwiner is the Galois **transport** of the base one, not merely some matrix per point.
+
+Since the orbit **is** the whole variety, this is the representation-level twin of §1's
+variety-level *"exists sigma, for all x"*. It is also a real test of
+`GaloisOrbitTransport.lean`, whose sharpness theorem says commutativity cannot be dropped —
+had `sigma_b` not been uniform, either that hypothesis fails here or the Klein-four
+measurement is wrong. Guards first: relator gate at all four points, and `det rho_g(g) = 1`
+at all four, so the SL(3) normalisation is not an artifact of the base point.
+
+### 2. Roast point (B): NARROWED to two hypotheses, one of them newly found
+
+*"Two distinct rational self-maps of a variety can agree on a Galois orbit."* Splitting it:
+
+- **(B1), as functions on the points — closed and TRIVIAL.** The orbit is all of `V(Kbar)`,
+  so two functions on a four-element set agreeing at all four are equal. No algebra needed
+  and none should be claimed; this reading carries no content.
+- **(B2), as scheme / rational maps — the substantive one.** Pointwise agreement upgrades to
+  equality exactly when (i) the points **exhaust** the space and (ii) the coordinate ring is
+  **reduced**. Both are measured true for this variety in §1.
+
+`QOU/Eightfold/PointwiseAgreementOnReduced.lean` (sorry-free, arbitrary commutative rings)
+isolates (ii): `eq_of_sub_mem_all_primes`, `eq_of_apply_sub_mem_all_primes`, and the
+sharpness `exists_ne_of_not_isReduced` with the concrete witness `(2 : ZMod 4)` — a nonzero
+nilpotent lies in every prime, so without reducedness two genuinely different maps agree at
+every point.
+
+**The second gap, which the roast does not name and which I had not either.** Applying that
+to `D` versus `sigma_b` needs them to be morphisms **in the same category**, and they are
+not obviously so: `sigma_b` is a field automorphism of `K` (semilinear over `K`), while `D`
+is a `K`- or `Q`-rational map. *"Equal as rational self-maps"* does not yet type-check for
+this pair. So the status is:
+
+> **(B) is NARROWED to two named hypotheses — reducedness + exhaustion, MEASURED TRUE, and
+> a common category for the two maps, NOT ESTABLISHED — rather than closed.**
+
+Attacking the objection surfaced an extra hypothesis instead of removing one. Recorded that
+way deliberately; the bean stays open under rule 13a.
+
+
+---
+
+## UPDATE 2026-09-13i — costing the second manifold, and my "same wall" claim RETRACTED
+
+### What I claimed, and why it was wrong
+
+I told the author a second manifold *"needs the exact Ptolemy point that blocked class 2"* —
+i.e. that it inherits class 2's walls (msolve RUR >3000 s, GB-only mod p >2700 s, Singular
+>5400 s) and the upstream 403. **Wrong.** The class-2 wall is a **variable-count** wall, not
+a wall about obstruction classes or exactness. L6a4: 8 tetrahedra, **27** variables after
+elimination. `m004`: 2 tetrahedra, **7**. Gröbner cost is super-exponential in that count.
+
+    m004 class 1    7 vars    dim 0, degree  4     0.9 s
+    m003 class 1    7 vars    dim 0, degree 18     0.0 s
+    5_2  class 1   11 vars    dim 0, degree 10     0.4 s
+    L6a4 class 2   27 vars    ---                  >5400 s (known wall)
+
+Nontrivial N=3 classes are **ubiquitous, not scarce** — 19 of 19 small manifolds enumerated
+carry one. And `m004` class 1 is **degree 4, the same as L6a4 class 1**, so directly
+comparable.
+
+### The real cost: two of three structural conditions are NOT generic
+
+|  | L6a4 c1 | `m004` c1 | `5_2` c1 |
+|---|---|---|---|
+| ζ₃ ∈ K | yes | yes | yes — generic so far |
+| **Gal abelian** | yes (Klein 4) | yes (C₂) | **NO (order 12)** |
+| **orbit = variety** | yes (1 orbit of 4) | **NO (2 comps of deg 2)** | — |
+
+`5_2` c1 breaking abelian-ness is `exists_not_forall_eq_of_not_central` biting on a **real
+example** rather than in principle; `m004` c1 breaking single-orbit means the "for all x"
+upgrade must be redone per component. Both are findings rather than obstacles — a
+non-abelian manifold where the per-point intertwiner still exists would show the transport
+argument is *sufficient but not necessary*.
+
+### An honest unknown
+
+A naive `std()` over ℚ on **L6a4 class 1 itself** times out, yet the corpus holds its exact
+point — so that point did not come from this pipeline's cheapest route and I do not know
+what route produced it. Small manifolds are unaffected (elimination demonstrably works:
+`m004`'s primitive-element eliminant is `x²+2x+4`, so **K = ℚ(ζ₃)**), but I cannot claim the
+L6a4-scale route is reproducible here.
+
+### A misread caught before it reached the report
+
+sympy's `galois_group(f)` returns `(G, alt)` where the second value is *"lies in Aₙ"*, **not
+"abelian"**. Reading it as abelian reported `m004`'s C₂ — an abelian group — as non-abelian.
+Abelian-ness is `G.is_abelian`.
+
+### Estimate and recommendation
+
+Compute is free; the cost is **porting the probes**, which hardcode L6a4's field and its two
+automorphism polynomials, to compute `Gal(K/ℚ)` as explicit substitutions. Roughly a
+session, dominated by point-extraction plumbing.
+
+Recommendation (agent judgement): **both, `m004` first** — `m004` gives the reproduction
+check cheaply though its C₂ is a weak test of the transport; `5_2` is the sharper test and
+is the same ported code with a different input.
+
+Probe: `computations/ptolemy/ptolemy_second_manifold_cost.py`. Bean stays open under rule 13a.
+

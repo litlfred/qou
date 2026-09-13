@@ -1,5 +1,43 @@
 # A=4 measured: the 2nd-order Magnus pairing stays POSITIVE at the alpha particle
 
+> # 🛑 SUPERSEDED IN ITS HEADLINE — OWNER RULING 2026-09-13: **Wenzl adopted**
+>
+> **Every number in this document is the PLANCHEREL arm, and Plancherel is no
+> longer the pairing.** Decision 1 of `qou-za3q` was resolved on 2026-09-13:
+> the Magnus Ω₂ pairing is
+> $P = \sum_\lambda y_\lambda^{\text{Wenzl}} \operatorname{tr}(\rho_\lambda \Omega_{2,\lambda})$,
+> the production Markov weight.
+>
+> Under the adopted weight, on the same committed per-partition traces:
+>
+> | A | nucleus | $P$ (Wenzl, **adopted**) | sign | $P$ (Plancherel, this doc) | sign |
+> |---|---|---:|:---:|---:|:---:|
+> | 2 | deuteron | −6.921 | **−1** | −15.095 | −1 |
+> | 3 | triton | −13.931 | **−1** | +2.470 | +1 |
+> | 4 | ⁴He | −20.466 | **−1** | +34.126 | +1 |
+>
+> **So this document's headline claim — "there is exactly one sign change in
+> A = 2, 3, 4" — does not hold under the adopted measure. There is NO sign
+> change anywhere in A = 2, 3, 4.** The one sign change was a property of the
+> rejected weight family, not of the object.
+>
+> **The ruling did not turn on that.** It rests on the Markov characterisation
+> (`tr(1)=1`, cyclicity, and the stabilisation axiom
+> $\operatorname{tr}_{n+1}(x\sigma_{n-1}) = z\operatorname{tr}_n(x)$), which
+> Plancherel fails — it has no $z$, the ratio it would need moving from
+> $-10.867$ to $+0.179$ between two stabilisations of one word. The sign never
+> entered the argument, which is what makes the ruling honest rather than
+> fitting: the measure was chosen on principle and the phenomenon did not
+> survive it.
+>
+> **What in this document still stands:** the A=4 measurement itself (77/77
+> partitions, control exactly 0, split 33+/42−) is untouched — it is the
+> per-partition traces, which are weight-independent. Only the aggregation and
+> every conclusion drawn from it move.
+>
+> Full ruling: bean `qou-za3q`. Derivation: `qou-gba1`. Analysis:
+> [`2026-09-07-magnus-omega2-weight-family-analysis.md`](2026-09-07-magnus-omega2-weight-family-analysis.md).
+
 Bean `qou-za3q`. Producer `computations/deltalambda/he4_magnus_omega2_sign_sparse_probe.py`,
 witness `computations/deltalambda/he4-magnus-omega2-sign.witness.json`.
 

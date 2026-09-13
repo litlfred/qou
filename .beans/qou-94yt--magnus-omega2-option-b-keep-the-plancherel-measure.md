@@ -1,10 +1,11 @@
 ---
 # qou-94yt
 title: 'Magnus Omega2 option B: keep the Plancherel measure, rename and justify it'
-status: todo
+status: scrapped
 type: task
+priority: normal
 created_at: 2026-09-07T11:44:23Z
-updated_at: 2026-09-07T11:44:23Z
+updated_at: 2026-09-13T16:17:01Z
 ---
 
 # NOT RECOMMENDED on its own
@@ -82,3 +83,16 @@ sign statement DOES depend on it. Choosing the family because it yields the
 wanted sign would be selection against the target (AGENTS.md), which is why the
 honest reading is that under the production Markov weight the sign change is
 **not** exhibited in A = 2, 3, 4.
+
+---
+
+# REFUSED — OWNER RULING 2026-09-13: Wenzl adopted
+
+Keeping the Plancherel measure is refused. It satisfies neither tr(1)=1 nor the Markov stabilisation axiom — it has no z at all, the ratio it would need moving from −10.867 to +0.179 between two stabilisations of one word (bean qou-gba1). Its only advantage was that it yields the wanted A-dependent sign change, and choosing on that basis is selection against the target.
+
+Full ruling, its basis and its consequence: parent bean `qou-za3q`.
+
+**The consequence travels with the ruling.** Under the adopted Wenzl weight the
+programme's target A-dependent sign change is **not** exhibited in A = 2, 3, 4
+(−, −, −); it appeared only under the rejected measure (−, +, +). Anyone citing
+the Magnus sign result must state that.

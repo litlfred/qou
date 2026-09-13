@@ -1,0 +1,106 @@
+{
+ "probe": "ptolemy_duality_lambda_class_rigidity",
+ "manifold": "L6a4",
+ "obstruction_class": 1,
+ "question": "is the mu_3 twist lambda canonical, or an artifact of the decoration",
+ "galois": {
+  "table": {
+   "id": {
+    "id": "id",
+    "tau": "tau",
+    "sigma_a": "sigma_a",
+    "sigma_b": "sigma_b"
+   },
+   "tau": {
+    "id": "tau",
+    "tau": "id",
+    "sigma_a": "sigma_b",
+    "sigma_b": "sigma_a"
+   },
+   "sigma_a": {
+    "id": "sigma_a",
+    "tau": "sigma_b",
+    "sigma_a": "id",
+    "sigma_b": "tau"
+   },
+   "sigma_b": {
+    "id": "sigma_b",
+    "tau": "sigma_a",
+    "sigma_a": "tau",
+    "sigma_b": "id"
+   }
+  },
+  "orders": {
+   "id": 1,
+   "tau": 2,
+   "sigma_a": 2,
+   "sigma_b": 2
+  },
+  "klein_four": true,
+  "sigma_b_is_involution": true
+ },
+ "zeta3_action": {
+  "id": "u",
+  "tau": "u",
+  "sigma_a": "u^2 = -1-u",
+  "sigma_b": "u^2 = -1-u"
+ },
+ "sigma_b_negates_obstruction_class": true,
+ "det_rho": {
+  "a": "1",
+  "b": "1",
+  "c": "1"
+ },
+ "lift_is_SL3": true,
+ "dets_are_cube_roots_of_unity": true,
+ "lambda_powers_of_zeta3": {
+  "a": 0,
+  "b": 0,
+  "c": 0
+ },
+ "lambda_nontrivial": false,
+ "lambda_on_relators": {
+  "aBAcabABCb": 0,
+  "aCBcbABCbc": 0
+ },
+ "lambda_descends_to_pi1": true,
+ "transformation_law": [
+  {
+   "mu": "mu in mu_3   (a->u, b->1, c->u^2)",
+   "predicted_dim": 4,
+   "predicted_ok": true,
+   "control_dim": 0,
+   "control_rejected": true,
+   "law_holds": true,
+   "lambda_unchanged": true
+  },
+  {
+   "mu": "mu rational  (a->2, b->3, c->1)",
+   "predicted_dim": 4,
+   "predicted_ok": true,
+   "control_dim": 0,
+   "control_rejected": true,
+   "law_holds": true,
+   "lambda_unchanged": false
+  },
+  {
+   "mu": "mu generic   (a->t, b->1, c->1)",
+   "predicted_dim": 4,
+   "predicted_ok": true,
+   "control_dim": 0,
+   "control_rejected": true,
+   "law_holds": true,
+   "lambda_unchanged": false
+  }
+ ],
+ "transformation_law_verified": true,
+ "mu3_forced_by_determinant": true,
+ "untwisted_in_GL3": true,
+ "untwisted_words_checked": 9,
+ "coboundaries_land_in_fixed_field": true,
+ "zeta3_not_a_coboundary": true,
+ "mu3_lift_gives_trivial_coboundary": true,
+ "lambda_class_is_canonical": false,
+ "lambda_trivial_and_rigid": true,
+ "verdict": "UNTWISTED AND RIGID: lambda == 1 on every generator, so the intertwining is A sigma_b(rho(w)) A^-1 = rho(w)^-T EXACTLY -- an equality of GL(3,K) representations, strictly stronger than the PGL(3,K) statement. And the triviality is FORCED, not chosen: the lift is SL(3), so det forces lambda(g)^3 = 1, and any redecoration preserving SL(3) has mu in mu_3, where N_b(mu) = mu.sigma_b(mu) = mu.mu^2 = 1 IDENTICALLY because sigma_b(zeta_3) = zeta_3^2. So lambda' = lambda for EVERY admissible mu: no decoration could have made the twist nontrivial. The mu_3 twist does not merely vanish in PGL(3) -- it is absent."
+}

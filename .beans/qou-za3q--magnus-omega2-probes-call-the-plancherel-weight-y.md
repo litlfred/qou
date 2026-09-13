@@ -1,11 +1,11 @@
 ---
 # qou-za3q
 title: magnus-Omega2 probes call the Plancherel weight y_lambda; 91% of their work is on shapes tr_M annihilates
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
-updated_at: 2026-09-12T03:55:51Z
+updated_at: 2026-09-13T16:19:37Z
 parent: qou-x631
 ---
 
@@ -516,3 +516,70 @@ production Markov weight the sign change is not exhibited in A = 2, 3, 4.
 `qou-gba1` (option E — derive the pairing from what Ω₂ *is*) is now the only
 path that resolves this, and materially more important than when it was beaned:
 it no longer settles a label, it settles whether the phenomenon exists.
+
+---
+
+# 🛑 DECISION 1 — RESOLVED. OWNER RULING 2026-09-13: **ADOPT WENZL.**
+
+The Magnus Ω₂ pairing is `P = Σ_λ y_λ^Wenzl · tr(ρ_λ Ω₂_λ)`, the production
+Markov weight. The quantum Plancherel measure `d_q(λ)²/[n]_q!` is **not** the
+pairing.
+
+## What the ruling rests on
+
+Not consistency-with-production, and not which answer it yields. `qou-gba1`
+(option E) derived it: a nucleus is a **link**, a braid word only presents it,
+and the Markov trace is *characterised* (Jones–Ocneanu) by `tr(1)=1`,
+cyclicity, and `tr_{n+1}(x·σ_{n-1}) = z·tr_n(x)`. Wenzl realises all three at
+`z = q³/(q²+1)`; Plancherel satisfies neither the first (tr(1) = 11.1 / 26.3 /
+66.3 at n = 6 / 7 / 8) nor the third, **having no z at all** — the ratio it
+would need moves from −10.867 to +0.179 between two stabilisations of the same
+word.
+
+The pairing inherits an exact, parameter-free stabilisation law under Wenzl,
+confirmed to a relative **4.4e-141** and falsified at the two wrong values a
+reader might substitute (z = q: 49 % / 69 % off; z = 1: 38 % / 54 %). Witness
+`computations/deltalambda/magnus-omega2-markov-stabilisation.witness.json`,
+6/6 assertions.
+
+**The sign never enters that argument.** That is what makes the ruling usable:
+it is not selection against the target.
+
+## THE CONSEQUENCE, WHICH TRAVELS WITH THE RULING
+
+    atom      P (Wenzl, adopted)      P (Plancherel, rejected)
+    deuteron   −6.921                  −15.095
+    triton    −13.931                   +2.470
+    ⁴He       −20.466                  +34.126
+
+    adopted   −, −, −    NO sign change anywhere in A = 2, 3, 4
+    rejected  −, +, +    one sign change, deuteron → triton
+
+**Under the adopted measure the programme's target A-dependent sign change is
+NOT exhibited in A = 2, 3, 4.** This must be stated wherever the Magnus sign
+result is cited. The measure was chosen on principle and the phenomenon did not
+survive it; reporting the ruling without the consequence would be the fitting
+this ruling exists to avoid.
+
+What survives untouched: **sign-indefiniteness at A=2** — the property that
+cleared the non-negativity wall the quadrature ‖F_q‖² could not — holds under
+both weight families and under both intra-nucleon words, because it is a
+statement about a commutator's trace pairing. `qou-dp32` is unaffected.
+
+## Status of the five options
+
+| | | |
+|---|---|---|
+| `qou-q2q7` | A — adopt Wenzl | **ADOPTED**, already completed |
+| `qou-94yt` | B — keep Plancherel | **REFUSED by the ruling** |
+| `qou-smvw` | C — report both families | **SUBSUMED** — both arms are computed and emitted; `headline_pairing` names the adopted one |
+| `qou-ia4w` | D — normalise Plancherel | **REFUSED by the ruling** |
+| `qou-gba1` | E — derive the pairing | **the ruling's basis**; its remaining item (identify the functional whose stationarity gives the binding correction) stays open but no longer blocks anything |
+
+## Code state at the ruling
+
+Already aligned: all three sign probes declare `headline_pairing:
+"P_total_wenzl"` and emit both arms, `weight_family` is declared beside every
+`y_lambda` column, and the naming rule has a blocking detector
+(`computations/audits/y_lambda_conflation_audit.py`). Option A landed the
+mechanics; this ruling makes them principled rather than provisional.

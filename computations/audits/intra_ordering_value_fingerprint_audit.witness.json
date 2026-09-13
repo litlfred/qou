@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T14:49:37.116671+00:00",
-  "commitSha": "1660c49f2ffe48802c11fb6d79993b6b460c27ab",
+  "computedAt": "2026-09-13T16:24:19.896633+00:00",
+  "commitSha": "008a66176c469b5a6d54177586c463edbd817a16",
   "assertions": [
     {
       "name": "scan_completed",
@@ -18,7 +18,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
   "scriptHash": "6e54d4ce93c4",
@@ -48,7 +48,7 @@
   "description": "Scans every committed witness for grouped-era |tr_M| values, matched to 15 significant digits against fingerprints computed live from atom_braid_word_3A under both orderings at both documented pins. Keys on the VALUE rather than on a symptom, because the ordering ruling has escaped three symptom-keyed sweeps.",
   "data": {
     "significant_digits_required": 15,
-    "witness_files_scanned": 3657,
+    "witness_files_scanned": 3666,
     "grouped_candidates": {
       "computations/applied-uniqueness-mass-table.witness.json": [
         [
@@ -396,20 +396,6 @@
           "proton"
         ]
       ],
-      "computations/probes/binding-production-route-c-vs-d-trit-heli.witness.json": [
-        [
-          "/data/helium-3/tr_M_atom_D",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/binding-sum-c-vs-d-trit-heli.witness.json": [
-        [
-          "/data/helium-3/tr_M_D",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "computations/probes/path-b-defect-binding-probe.witness.json": [
         [
           "/rows[0]/tr_M_free",
@@ -597,8 +583,6 @@
       "computations/markov/markov-peel-atomic-tr-m-muon.witness.json",
       "computations/markov/markov-peel-atomic-tr-m.witness.json",
       "computations/probes/b-pred-mirror-slope-closed-form.witness.json",
-      "computations/probes/binding-production-route-c-vs-d-trit-heli.witness.json",
-      "computations/probes/binding-sum-c-vs-d-trit-heli.witness.json",
       "computations/probes/path-b-defect-binding-probe.witness.json",
       "computations/qbeta/qbeta-chain-closed-form.witness.json",
       "computations/qbeta/qbeta-option-e-order-dof-range.witness.json",
@@ -748,16 +732,6 @@
         "why": "calls tr_M_via_wenzl_bridge_mpfr",
         "scriptFile": "b_pred_mirror_slope_closed_form.py"
       },
-      "computations/probes/binding-production-route-c-vs-d-trit-heli.witness.json": {
-        "kind": "computes",
-        "why": "calls atom_braid_word_3A",
-        "scriptFile": "binding_production_route_C_vs_D_probe.py"
-      },
-      "computations/probes/binding-sum-c-vs-d-trit-heli.witness.json": {
-        "kind": "computes",
-        "why": "calls atom_braid_word_3A",
-        "scriptFile": "binding_sum_C_vs_D_per_isotope_probe.py"
-      },
       "computations/probes/path-b-defect-binding-probe.witness.json": {
         "kind": "neither",
         "why": "no trace call and no artifact read — hardcodes, or computes inline",
@@ -878,8 +852,10 @@
       "computations/probes/path-b-habiro-mass-probe.witness.json",
       "computations/probes/qbeta-habiro-element-probe.witness.json",
       "computations/probes/rho-k-h3a-co-casimir-perknot-rerun.witness.json",
+      "computations/qbeta/qbeta-bar-parity-forces-a-unique-quark-letter.witness.json",
       "computations/qbeta/qbeta-habiro-pochhammer-convention.witness.json",
       "computations/qbeta/qbeta-habiro-taylor-investigation.witness.json",
+      "computations/qbeta/qbeta-qbeta-scores-a-difference.witness.json",
       "computations/sweeps/paper-six-term-isotope-sweep.witness.json",
       "computations/symmetrized-constituent-general.witness.json",
       "computations/term6-full-pole-sum.witness.json",
