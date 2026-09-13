@@ -1038,3 +1038,55 @@ and `e_∞` is measured at a single `n` rather than proved to be a limit. What i
 Probe: [`rev_staircase_closed_form_and_constant_term_probe.py`](computations/deltalambda/rev_staircase_closed_form_and_constant_term_probe.py), 7/7.
 
 **Do not close this bean.**
+
+---
+
+## 2026-09-13 — the staircase leg is no longer an enumeration: the multiset is PROVED
+
+The closed form recorded above, `V(δ_k) = A·k − B − F(n) + rem_k`, rested on exactly one
+combinatorial fact — **hook length `2j−1` occurs `k+1−j` times, no even hook** — and that fact
+was *enumerated*, checked for `k = 1..40`. It is now a theorem for every `k`.
+
+**The presentation is what makes it short.** Present `δ_k` as the **sublevel set**
+`{(i,j) : i+j < k}` rather than through `YoungDiagram.ofRowLens`. That form is visibly symmetric
+in `i` and `j`, so `colLen` costs nothing — no separate transpose argument — and both lengths
+fall out of the matching `mem_iff_lt_*` by the same `omega`. Then, since
+`hook = (rowLen − j) + (colLen − i) − 1`:
+
+$$h(i,j) \;=\; 2\,(k - i - j) - 1 .$$
+
+The hook depends only on the **antidiagonal index** `s = i+j`, and antidiagonal `s` carries
+`s+1` cells. That *is* the multiset statement. Telescoping it:
+
+$$\sum_{c\in\delta_k} g(h(c)) \;=\; \sum_{s<k} (s+1)\cdot g\!\left(2(k-s)-1\right)$$
+
+for any `g` into an additive commutative monoid — and at `g = ε`, via `betaSide_eq_hookSum`,
+that **is** the staircase's β-side.
+
+[`StaircaseHookMultiset.lean`](content/quantum-observable-universe/lean/QOU/BraidKnot/StaircaseHookMultiset.lean),
+0 `sorry`, axioms `[propext, Classical.choice, Quot.sound]`, shadow-verified against current
+library source (32 modules had changed since the olean snapshot, so a bare-`lean` green would
+have been a claim about the snapshot — `qou-56qy`).
+
+**What the corpus already had, and why it did not cover this.** Checked before writing:
+`QOU.StaircaseCornerHook.staircase_corner_hook_eq_two_k_sub_one` proves the **corner** hook is
+`2k−1` — the `s = 0` case and nothing more; the rest of that file is the EW-residual conjecture.
+And `QOU.Hecke.staircasePartition` is a `Nat.Partition`, so the arc's `YoungDiagram`-indexed
+hook machinery cannot reach it at all. Hence a diagram here rather than a bridge.
+
+**A lead for `e_∞`, and a first guess of mine it already killed.** Reading the recorded
+maximiser gap profiles (`rev-optimal-gap-profile.witness.json`), `#3-gaps = #1-gaps = d` and
+`ℓ = k + d − 1` at all five points, with the gap sum `2ℓ−2` — the staircase span at `ℓ` rows.
+That suggested a two-parameter family `(ℓ, d)`. **It is not one.** The 1-gaps are
+*interleaved*, not a contiguous bottom block (`n = 78`: `…,1,2,1,2,1`), and `Σβ` depends on gap
+*positions*, so `(ℓ,d)` does not determine the shape — a family built with contiguous blocks
+reproduces **none** of the measured excesses (only `d = 0` members hit `n` at all, giving
+excess 0). The correct statement of the family is the constraint
+
+$$\sum_j (j+1)\,\delta_j \;=\; \tfrac{k(k+1)}{2} - \tfrac{\ell(\ell-1)}{2}, \qquad
+\delta \in \{-1,0,+1\}, \quad \textstyle\sum_j \delta_j = 0 ,$$
+
+with the objective also position-dependent. Structured and far smaller than "all partitions",
+but not two-parameter. Recorded so the next attempt does not re-make the guess.
+
+**Do not close this bean.**
