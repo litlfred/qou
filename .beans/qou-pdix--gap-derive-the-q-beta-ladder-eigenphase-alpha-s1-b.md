@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-12T20:43:29Z
+updated_at: 2026-09-13T19:55:00Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1740,3 +1740,105 @@ A is the better structural fit but risks circularity.
 `qou-cds1`, which waits on this. The dashboard's `Q_β`/`m_n`/`Δ_pn` rows are
 base-only at ~1.7e+8 ppb precisely because no ladder exists on an admissible base;
 on the retired `z = 1` base the ladder was worth 1312×.
+
+---
+
+## 2026-09-13 (later still) — attack C is closed too, by two results already on `main`
+
+With A and B measured earlier today, **C (Stokes / resurgence) was the one route
+I recommended as having no measured negative against it.** That recommendation
+was also wrong. The corpus already carries **two independent negatives**, and
+neither needed a new probe — this entry is a synthesis with citations, not a
+measurement.
+
+**No new compute was written for this entry.** Every figure below is read from
+an existing artifact and re-derived only where re-deriving was one line.
+
+### C-negative 1 — the channel where `α` lives is CONVERGENT
+
+[`2026-07-12-borel-alien-calculus-utilization-audit.md` §C4](../docs/audits/2026-07-12-borel-alien-calculus-utilization-audit.md)
+records the three-probe contradiction as resolved into a **channel dichotomy**,
+scope-**(b)** with cited invariant (the bridge growth-obstruction audit):
+
+| channel | growth | resurgent structure |
+|---|---|---|
+| **even** (4₁ / Ohtsuki) | Gevrey-1 **divergent**, ratios 1.32 → 3.63 → 4.93 rising without bound | yes |
+| **odd** (the **Q_β ladder**) | **convergent**, KC8 simple pole, `c_{k+1}/c_k → 1/u = 117.41` plateau | **no** |
+
+**A convergent series has no Stokes constant to extract.** The Stokes phenomenon
+*is* the resummation ambiguity of a divergent asymptotic series; where the sum is
+unambiguous there is no ambiguity for `α` to be. So "`α` is a Stokes constant"
+has nothing to attach to **in the channel the Q_β ladder occupies**. The *even*
+channel does have resurgent structure — but that is the 4₁/Ohtsuki object, not
+where `α` lives.
+
+### C-negative 2 — and "resurgence at the anchor" is refuted outright
+
+[`qbeta_c3_uq0_radius_branchpoint_probe.py`](../computations/qbeta/qbeta_c3_uq0_radius_branchpoint_probe.py)
+(bean `qou-iyj5`) computes the radius of convergence of the figure-8 argument map
+`u(q₀)` directly, from the branch points of the A-polynomial's longitude
+discriminant — exact algebra, no numerical integration:
+
+    disc_L A = (M−1)²(M+1)²(M²+1)²·(M²−M−1)(M²+M−1)(M²−M+1)(M²+M+1)
+    nearest geometric branch point: M² = φ² = (3+√5)/2
+    ⇒ R = 2·log φ = 0.962423650119        (the GOLDEN RATIO)
+    anchor u = ln q₀ = 0.10434072032 = 0.108·R      — deep inside
+
+and validates its own A-polynomial + `u`-convention against the corpus's
+**sorry-free** leading coefficient `(√3/4)u²`
+(`FigureEightComplexVolume.lean`) via a Puiseux expansion at `u = 0`. Its verdict,
+verbatim: *"The on-anchor-singularity / resurgence-at-anchor reading is
+REFUTED."* There is no singularity near the anchor for a Stokes phenomenon to
+live at.
+
+### What is NOT settled — and it is a specific, cheap measurement
+
+**The two negatives govern two different objects, and neither touches a third.**
+Per the notation register's `u` ruling, say which `u` you mean:
+
+| `u` | value | governed by |
+|---|---|---|
+| `u = ln q₀` (geometric argument map) | **0.10434072032** | C-negative 2 — analytic, R = 0.9624 |
+| `u_ladder = b·ℏ_q²` | **0.00851999999989** | C-negative 1 — convergent channel |
+
+They differ by **12.25×**. Now the loose end: C-negative 1's own recorded plateau
+is `c_{k+1}/c_k → 117.41`, and `1/u_ladder = 117.370892020289747`. Those agree to
+**0.033 %**. If the plateau really is `1/u_ladder`, the ladder's generating
+function has its nearest singularity at radius `≈ u_ladder` — i.e. **the ladder
+is evaluated at or extremely near its own radius of convergence**, where the term
+ratio `(c_{k+1}u^{k+1})/(c_k u^k) → 1` and the ratio test is inconclusive. Which
+side of the boundary is **not determined** by a plateau quoted to four figures:
+117.41 > 117.3709 would put the pole *inside* the evaluation point.
+
+**I am flagging this, not claiming it.** It is a candidate, it is cheap to
+settle (re-read the extracted `c_k` and compute the ratio to full precision
+rather than to a rounded plateau), and it sits in a *third* object that neither
+existing negative covers. It also does **not** rescue attack C: a pole at the
+evaluation radius is a convergence problem, not a Stokes constant.
+
+### Where that leaves the triage — all four routes are now accounted for
+
+| route | status |
+|---|---|
+| **A** Habiro | bridge closed at both admissible functionals (this bean, earlier today) |
+| **B** Faddeev / modular double | inert at the real substrate inside the derivable `z`-window (earlier today); intact on the root-of-unity face |
+| **C** Stokes / resurgence | closed by two independent results already on `main` (this entry) |
+| **D** two evaluation points | the trap — a fourth calibration under CAL-1/2/3 |
+
+**Recommendation — judgement, and it is the third I have given today; read that
+as a reason to trust it less, not more.** The triage's four routes are
+exhausted, so the honest next step is **not** to pick among them: it is to
+accept that `α` needs a route the triage does not list, and to say so in the
+bean rather than keep re-ranking four options that have each been measured out.
+The one structural fact that survives all of today's measurements is the
+replacement carrier the bean already states and leaves uninstantiated —
+`TransferMatrixSpectrum (q) (M) : M.trace = 2·cos(eigenphase q) ∧ M.det = 1` —
+whose discharge needs `M` produced from the **Hecke seminormal representation on
+V_(2,1)**, the "downstream work" the original docstring defers. That is the
+target; it is not one of A-D.
+
+**Default if nothing is done:** the triage still reads "attack B, cheapest
+formalize-first step of the four", and now all four have been measured against.
+
+**Bean stays `in-progress`.** `α` is underived and this entry derives nothing —
+per rule 13a it is not closeable while the conjecture is open.
