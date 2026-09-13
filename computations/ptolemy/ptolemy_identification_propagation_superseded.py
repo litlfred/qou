@@ -1,33 +1,44 @@
-"""BLOCKED: the coboundary test needs the UN-eliminated assignment, which the recorded
-artifact cannot supply.  Diagnosis, so the next attempt does not repeat it.
+"""SUPERSEDED, and its headline was WRONG.  Kept for the one measurement that survives.
 
-THE GOAL (issue #7092).  Decide whether the duality/sigma ratio is a COBOUNDARY -- do
-gauge scalars exist with ratio(t) = prod z_k^{M[t][k]}, M being snappy's
-_ptolemy_equations_action_by_decoration_change (128 x 6: 3 cusps x 2 diagonal entries).
-That is the falsifiable form of "duality = sigma-transport"; the naive comparison cannot
-decide it because per-vertex gauge freedom absorbs any discrepancy.
+WHAT THIS FILE CLAIMED.  It was titled "BLOCKED: the coboundary test needs the
+UN-eliminated assignment, which the recorded artifact cannot supply."  Both halves of
+that are false, and each was refuted by a different piece of work:
 
-WHY IT CANNOT RUN ON THE RECORDED POINT.  L6a4-c1-ptolemy-in-K.json holds 26 coordinates
-from a variety built with eliminate_fixed_ptolemys=True.  The {1,1,1,0} duality formula
-needs 8 coordinates per tetrahedron; MEASURED, at most 2 of the 8 are present on ANY
-tetrahedron.  So the test is starved of data.
+  * The coboundary test does NOT need the un-eliminated assignment.  A sibling session
+    answered issue #7092 on this very point (main f7fee734c3) by taking the integer
+    kernel of the gauge exponent lattice -- which uses only the ELIMINATED coordinates,
+    because a kernel relation forces prod_t r_t^{n_t} = 1 with no unknowns at all.
+    Verdict there: sigma_b's ratio IS a PGL(3)-gauge coboundary on the class-1 point,
+    sigma_a's is not.
 
-THE RECONSTRUCTION ATTEMPT, AND WHY IT IS UNVERIFIABLE.  snappy's
+  * The recorded artifact CAN supply the un-eliminated assignment.
+    ptolemy_class1_full_assignment.py recovers all six missing coordinates exactly in
+    K -- five 1s and one u^2 -- because the six-unknown system is TRIANGULAR (each
+    appears alone, to degree 1, in several equations), each pinned by 6 to 10
+    independent equations, all 39 verified.  The identifications are never needed.
+
+So this route was not blocked by the data; it was blocked by ITSELF.  Propagating along
+identifications first was the wrong move, and the diagnosis below correctly says why --
+it just drew the wrong conclusion from it, generalising "my route cannot be verified"
+into "the test cannot be run."  A route being unverifiable is a fact about the route.
+
+THE MEASUREMENT THAT STANDS, and it is why propagation was the wrong move.  snappy's
 _ptolemy_equations_identified_coordinates gives 112 relations, and propagating along them
-takes 26 known coordinates to 98, leaving 6 unknown -- which 27 uneliminated equations
-constrain, so it looks determined.  It is not usable, for a reason that only shows up when
-you look for it:
+takes 26 known coordinates to 98.  But:
 
     identifications relating TWO coordinates I already know:  0
 
 The recorded 26 are exactly one REPRESENTATIVE PER IDENTIFICATION CLASS -- that is what
 the elimination does.  So not one propagated value can be cross-checked against the file,
-and when the 6-unknown system comes back with 0 solutions there is no way to tell whether
-the cause is (a) the identifications being the UNTWISTED ones (snappy returns only +-1
-factors, while a nontrivial generalized obstruction class twists them by cube roots of
-unity), (b) an orientation convention on the sign, or (c) something else.  An
-unverifiable reconstruction feeding an inconsistent solve is not evidence about the
-mathematics.
+and an inconsistent solve downstream cannot be attributed to any cause: not to the
+identifications being the UNTWISTED ones (snappy returns only +-1 factors, while a
+nontrivial generalized obstruction class twists them by cube roots of unity), not to an
+orientation convention on the sign, not to anything else.  Prefer a route whose own
+equations are the check.
+
+The {1,1,1,0} starvation count also stands as measured -- at most 2 of the 8 coordinates
+that formula needs are present on ANY tetrahedron -- but it bounds only that formula, not
+the coboundary test, and reading it as the latter is the error above.
 
 TWO BUGS OF MY OWN ON THE WAY, both found by the solve returning 0:
   1. The first propagation ignored the sign field entirely -- 8 of the 112 relations
@@ -36,7 +47,9 @@ TWO BUGS OF MY OWN ON THE WAY, both found by the solve returning 0:
   2. 'u' -- the cube root of unity, which is KNOWN -- was left in the unknowns list,
      so it was simultaneously solved for and substituted.  6 unknowns, not 7.
 
-Neither bug is the blocker; fixing both still leaves the reconstruction unverifiable.
+Neither bug was the blocker, and neither was the unverifiability: the route simply
+was not needed.  Both are still worth recording -- a solver returning 0 solutions was
+the symptom every time, and three separate causes produced it.
 
 THE FIX, and it is at the producer, not here.  Re-run the exact-point producer with
 eliminate_fixed_ptolemys=False (or record BOTH forms), so the full assignment is on disk
