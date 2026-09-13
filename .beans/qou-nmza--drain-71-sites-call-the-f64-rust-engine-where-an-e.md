@@ -226,3 +226,74 @@ is its own change with 8 importers.
      2  ... and the call is not a deliberate f64-tolerance cross-check
 
 Two of the four reductions came from measurement catching my own over-claim.
+
+
+## Re-measured 2026-09-13 — the class drained modestly, and the title is still wrong
+
+Run before starting any drain, because the figures above are 20 days old.
+`python3 computations/f64_into_mpmath_audit.py --tier F64_ENGINE_ENTRY`:
+
+| bucket | 2026-08-24 | **2026-09-13** |
+|---|---|---|
+| candidates | 71 sites / 46 files | **63 / 43** |
+| deliberate | 7 / 5 | **9 / 6** |
+| harmless | 46 / 33 | **38 / 26** |
+| **actionable** | **18 / 13** | **16 / 11** |
+
+Modest drain, not a collapse — so the correction this bean already made to its
+own headline (71 → 18 actionable) is the one that matters, and **the title still
+says 71**. Quote `actionable`, and re-run rather than quoting this table too.
+
+### The priority rule the audit prints, which this bean's body does not
+
+> Fix the propagating ones FIRST — they carry the f64 floor into another
+> producer's numbers. A terminal probe publishing 50 digits of a 15-digit value
+> is a documentation defect: worth fixing, not worth the 10-30x MPFR cost ahead
+> of these.
+
+Of the 16 actionable, **2 PROPAGATE and 9 are TERMINAL**:
+
+    PROPAGATES  1x  computations/all_nuclides_wedderburn_spectral_v2.py
+    PROPAGATES  1x  computations/fr_pullback_cosh_h_test.py
+    terminal    4x  computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py
+    terminal    3x  computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py
+    terminal    1x  computations/qbeta/qbeta_stage_c_per_block_chi_closed_form_probe.py
+    terminal    1x  computations/deltalambda/convention_systematic_audit_probe.py
+    terminal    1x  computations/deltalambda/delta1g_deuteron_measurement_probe.py
+    terminal    1x  computations/deltalambda/mu3_abs_choice_robustness_probe.py
+    terminal    1x  computations/deltalambda/mu3_anchor_consistency_probe.py
+    terminal    1x  computations/deltalambda/mu3_door_budget_probe.py
+    terminal    1x  computations/deltalambda/mu3_frechet_perblock_probe.py
+
+**Only one of the two propagators is a clean target.** `fr_pullback_cosh_h_test`
+is in the family the audit's own HALF-FIX WARNING names: `mass_at_3A_proper.dim_q`
+and `qfac` return Python **floats** (`math.prod` over f64 `q_int`) and `dim_q`
+multiplies into every weight, so swapping the Rust entry to MPFR alone leaves
+the result f64-capped. 8 modules import them; the mpmath equivalent is
+`delta_lambda_empirical_tabulation.dim_q_at_q0`. So that one is a two-part fix.
+`all_nuclides_wedderburn_spectral_v2.py` is the single clean propagator.
+
+### A site of this bean I hit from the other direction, and a claim I got wrong
+
+`qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py` — **4 of the 16**,
+terminal — is the probe PR #7271 fixes the *anchors* of (bean `qou-gqt5`). In
+that PR I wrote that `chi_lambda_braid` "takes a float `q_value` by **engine
+contract**, so every χ there is float64". **That is false and is corrected on
+the PR.** Measured:
+
+    hecke_characters.py:479  def chi_lambda_braid(shape, word, q_value=None,
+                                                  precision=None, ...)
+    hecke_characters.py:610  def chi_lambda_braid_mpf(... dps=None)
+    dir(pyhecke_native) -> ['chi_lambda_braid', 'chi_lambda_braid_mpfr']
+
+float64 **by default**, not by contract — exactly the wrapper hop this bean
+counts. I reached the wrong claim by grepping `def chi_lambda_braid` and reading
+**string literals inside `f64_into_mpmath_audit.py`'s own selftest fixtures**
+(`"def chi_lambda_braid(a, b, c):\n    return 0\n"`), inferring a
+three-positional-argument API from a test input without opening the real
+definition.
+
+**Routing that probe to MPFR is blocked, not declined:** it PANICS in the Rust
+engine before completing (`invalid generator index 0 for n = 3`, bean
+`qou-2t9y`), verified against pristine `origin/main`, so no MPFR route can be
+verified there end-to-end today.
