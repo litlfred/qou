@@ -2,95 +2,95 @@
  "computation": "cross-check-trM-cw-seminormal",
  "description": "L1 defense-in-depth THIRD method: color-weighted Wedderburn/seminormal tr_M(beta_atom) with exact delta=(q-1)^2(1-q^-4)/3, cross-checked vs the markov_peel reference at 1ppQ. Genuinely independent decomposition (Sigma y_lambda chi_lambda) from peel's Markov-axiom recursion.",
  "audit_only": true,
- "computedAt": "2026-08-29T06:44:17.155113+00:00",
+ "computedAt": "2026-09-13T19:33:50.164915+00:00",
  "engine": "pyhecke_native seminormal-mpfr 50dps (chi_lambda_all_partitions_mpfr); two-branch color-weighting with exact symbolic delta.",
  "dps": 50,
  "q_pin": {
   "used": "canonical muon (QOU_Q0_ANCHOR=ideal)",
-  "value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "value": "1.1099785827513808075916690956107688798744991218736"
  },
- "exact_delta_at_q0": "0.001375711252930691750631152926874639540624",
+ "exact_delta_at_q0": "0.001375710807027096008551109274106550622225",
  "tolerance_1ppQ": "1.0e-15",
- "worst_rel_diff": "2.98839e-7",
+ "worst_rel_diff": "1.22824e-49",
  "results": [
   {
    "atom": "proton",
    "Z": 1,
    "N": 0,
    "A": 1,
-   "trM_cw_seminormal": "1.145759782886925318714927926598527367822",
-   "peel_reference": "1.145759692457300869689081595774119305944",
-   "rel_diff": "7.893e-8",
-   "within_1ppQ": false
+   "trM_cw_seminormal": "0.6293284022029219181653457467784859276002",
+   "peel_reference": "0.6293284022029219181653457467784859276002",
+   "rel_diff": "1.839e-50",
+   "within_1ppQ": true
   },
   {
    "atom": "neutron",
    "Z": 0,
    "N": 1,
    "A": 1,
-   "trM_cw_seminormal": "0.9877437571449744076267679490921246994406",
-   "peel_reference": "0.987743688115809571634020165501294982055",
-   "rel_diff": "6.989e-8",
-   "within_1ppQ": false
+   "trM_cw_seminormal": "0.4751335171556822125060902326750057995584",
+   "peel_reference": "0.4751335171556822125060902326750057995584",
+   "rel_diff": "6.573e-50",
+   "within_1ppQ": true
   },
   {
    "atom": "deuteron",
    "Z": 1,
    "N": 1,
    "A": 2,
-   "trM_cw_seminormal": "0.5751723315987641981003139915551146547244",
-   "peel_reference": "0.5751722439177718708265353439861808891525",
-   "rel_diff": "1.524e-7",
-   "within_1ppQ": false
+   "trM_cw_seminormal": "0.1519683392042316075926656977510661412712",
+   "peel_reference": "0.1519683392042316075926656977510661412712",
+   "rel_diff": "8.013e-50",
+   "within_1ppQ": true
   },
   {
    "atom": "triton",
    "Z": 1,
    "N": 2,
    "A": 3,
-   "trM_cw_seminormal": "0.2293101474834588942170092853659007442561",
-   "peel_reference": "0.2293101021045565073320908102689088796028",
-   "rel_diff": "1.979e-7",
-   "within_1ppQ": false
+   "trM_cw_seminormal": "0.02914404236097206535725421879186984406584",
+   "peel_reference": "0.02914404236097206535725421879186984406584",
+   "rel_diff": "9.206e-50",
+   "within_1ppQ": true
   },
   {
    "atom": "helium-3",
    "Z": 2,
    "N": 1,
    "A": 3,
-   "trM_cw_seminormal": "0.4037671391616290872052573590334537874269",
-   "peel_reference": "0.4037670368514281703686702533334025411551",
-   "rel_diff": "2.534e-7",
-   "within_1ppQ": false
+   "trM_cw_seminormal": "0.05859625365443638021895671545213025683088",
+   "peel_reference": "0.05859625365443638021895671545213025683088",
+   "rel_diff": "6.212e-50",
+   "within_1ppQ": true
   },
   {
    "atom": "helium-4",
    "Z": 2,
    "N": 2,
    "A": 4,
-   "trM_cw_seminormal": "0.1609741935478148955886714302556118296173",
-   "peel_reference": "0.1609741454424073818258734409807168539236",
-   "rel_diff": "2.988e-7",
-   "within_1ppQ": false
+   "trM_cw_seminormal": "0.01123741765976742156419954937441060726966",
+   "peel_reference": "0.01123741765976742156419954937441060726966",
+   "rel_diff": "1.228e-49",
+   "within_1ppQ": true
   }
  ],
  "scope": "(a) \u2014 independent third method for the L1 color-weighted atomic trace; no AME input; no fit; nothing wired.",
  "assertions": [
   {
    "label": "all 6 atoms agree with peel at 1ppQ (rel < 1e-15)",
-   "passed": false
+   "passed": true
   },
   {
    "label": "exact symbolic delta used (not flavor_split_leading)",
    "passed": true
   }
  ],
- "allPassed": false,
+ "allPassed": true,
  "scriptFile": "cross_check_trM_cw_seminormal_leg.py",
- "scriptHash": "f87a39247dec",
- "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
- "commitSha": "8ca6e6e17d85dad8aec31cf7464e01713b24e3ed",
+ "scriptHash": "4f61c8895f34",
+ "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+ "commitSha": "42c5e8b8b2a27dfac41b3dca73d006c7adddad4e",
  "durationMs": 0,
- "q0Anchor": "muon",
- "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
