@@ -164,6 +164,26 @@ dilogarithms, **four** from the doubled one. That is the pretzel's rank 6 — th
 twelve Garoufalidis–Zagier level-2 series `H_j^±`, `j = 0…5`, six per side — derived
 here from the state integral alone, independently of GZ.
 
+> **This is a third independent route to `r = 6`, and the corpus already held two.**
+> [`computations/probes/gz_third_knot_rank_grading.py`](../../computations/probes/gz_third_knot_rank_grading.py)
+> (on `main`) establishes the same rank from GZ §3.5's printed grading — weights
+> `0,1,2` of dimensions `1,4,1` — and cross-checks it against Dimofte–Garoufalidis
+> `1511.05628` §6 trace-field signatures and against A-polynomial Newton-polygon
+> L-degrees. This arc's degree-6 is **not** a re-derivation of that: it comes from
+> the state integral's contour shift, touches no census, no trace field and no
+> A-polynomial, and would still hold if every one of those inputs were withdrawn.
+> Three routes, nothing in common but the knot.
+>
+> **🛑 Two different objects are called "Newton polygon" in this arc — do not
+> conflate them.** That probe's is the **L-degree of the census A-polynomial's**
+> Newton polygon, a statement about a plane curve in `(L, M)`. Mine is the
+> **`q`-valuation** polygon of the descendant operator's coefficients, a statement
+> about a `q`-difference equation. They answer different questions and agree on the
+> number 6 for independent reasons. The prior probe's verdict explicitly logs three
+> instances of a neighbouring conflation trap ("DG Table 2 Level column is the
+> Chern–Simons level, NOT GZ level `N`"); this note exists so this arc does not
+> supply a fourth.
+
 ## 4. Where `s(x)` comes from
 
 Take the Newton polygon of `N(X)` in `q` and read the leading polynomial of each
