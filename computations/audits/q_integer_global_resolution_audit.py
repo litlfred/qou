@@ -43,6 +43,15 @@ LIBS = {'mp', 'mpmath', 'sp', 'sympy', 'np', 'numpy', 'math'}
 ROOT_SOURCES = ('Q_50_DIGIT_STR', 'q_at', 'Q_MUON_50_DIGIT_STR', 'q_muon_at',
                 'q_muon_frozen_at', 'Q_STR')
 
+# Modules AGENTS.md designates as the canonical q0 accessors.  Inside one of
+# these -- and ONLY inside one -- a subscript keyed "q" is the substrate
+# modulus: `q_parameter` builds its anchor block as Q_MP = mpf(_d["q"]) from
+# the anchor witness.  Scoping it to these modules is the difference between
+# citing the corpus's own designation and inferring meaning from a spelling,
+# which this audit otherwise refuses to do.
+ANCHOR_MODULES = ('q_parameter', 'constants')
+_ANCHOR_KEYS = ('"q"', "'q'")
+
 
 class _Shim:
     """mpmath/numpy stand-in that keeps everything exact and symbolic."""
@@ -62,28 +71,109 @@ class _Shim:
 
 
 def top_level_assignments(tree: ast.Module) -> dict[str, ast.expr]:
+    """Module-scope bindings, INCLUDING those inside a module-level try/if/with.
+
+    `q_parameter` binds the whole anchor block inside a try, so a scan of
+    unindented statements alone misses `Q_MP` -- the single most-imported
+    modulus name in the corpus -- and reports every definition downstream of it
+    as unmeasurable.  A name bound in a module-level `try:` body is a module
+    binding; indentation is not scope in Python.
+    """
     out: dict[str, ast.expr] = {}
-    for node in tree.body:
-        if isinstance(node, ast.Assign):
-            for t in node.targets:
-                if isinstance(t, ast.Name):
-                    out[t.id] = node.value
+
+    def walk_block(body):
+        for node in body:
+            if isinstance(node, ast.Assign):
+                for t in node.targets:
+                    if isinstance(t, ast.Name):
+                        out.setdefault(t.id, node.value)
+            elif isinstance(node, (ast.Try, ast.If, ast.With)):
+                for attr in ('body', 'orelse', 'finalbody'):
+                    walk_block(getattr(node, attr, []) or [])
+                for h in getattr(node, 'handlers', []) or []:
+                    walk_block(h.body)
+
+    walk_block(tree.body)
     return out
 
 
-def resolve(name: str, assigns: dict[str, ast.expr], seen: frozenset[str]):
+def top_level_imports(tree: ast.Module) -> dict[str, str]:
+    """name -> module it is imported FROM, for `from M import name [as alias]`.
+
+    Also walks function bodies: this corpus routinely defers an import into a
+    function to dodge a circular import, and `from q_parameter import Q_MP as
+    _Q` inside a def is exactly as much a binding as one at module level.
+    """
+    out: dict[str, str] = {}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ImportFrom) and node.module:
+            for a in node.names:
+                out[a.asname or a.name] = f'{node.module}::{a.name}'
+    return out
+
+
+_MODULE_CACHE: dict[str, tuple[dict, dict] | None] = {}
+
+
+def _find_module(modname: str) -> pathlib.Path | None:
+    """Locate a corpus module by its bare import name.
+
+    The corpus imports flat (`from q_parameter import ...`) because
+    `_path_bridge` puts `computations/` on sys.path, so the import name is the
+    file stem rather than a package path.
+    """
+    stem = modname.split('.')[-1]
+    for r in (pathlib.Path('computations'), pathlib.Path('tools')):
+        for cand in r.rglob(f'{stem}.py'):
+            if '_deprecated' not in str(cand):
+                return cand
+    return None
+
+
+def module_tables(modname: str):
+    if modname in _MODULE_CACHE:
+        return _MODULE_CACHE[modname]
+    path = _find_module(modname)
+    res = None
+    if path is not None:
+        try:
+            t = ast.parse(path.read_text())
+            res = (top_level_assignments(t), top_level_imports(t))
+        except Exception:
+            res = None
+    _MODULE_CACHE[modname] = res
+    return res
+
+
+def resolve(name: str, assigns: dict[str, ast.expr], seen: frozenset[str],
+            imports: dict[str, str] | None = None, depth: int = 0,
+            in_anchor_module: bool = False):
     """Symbolic value of a module global, or None if not determinable.
 
     Returns (value, why) where why names the route -- 'root' for a name
     assigned from a published q0 entry point, 'derived' for one computed from
     other resolvable names.
     """
-    if name in seen or name not in assigns:
+    imports = imports or {}
+    if name in seen or depth > 6:
+        return None, 'import cycle or depth limit'
+    if name not in assigns:
+        # Not assigned here -- is it IMPORTED?  Resolve it in its own module.
+        if name in imports:
+            mod, orig = imports[name].split('::')
+            tables = module_tables(mod)
+            if tables is None:
+                return None, f'source module `{mod}` not found'
+            a2, i2 = tables
+            return resolve(orig, a2, seen | {name}, i2, depth + 1,
+                           any(m in mod for m in ANCHOR_MODULES))
         return None, 'no top-level assignment'
     expr = assigns[name]
     src = ast.unparse(expr)
     if any(r in src for r in ROOT_SOURCES):
         return Q, 'root'                      # this name IS the substrate modulus
+    if in_anchor_module and any(k in src for k in _ANCHOR_KEYS) and '[' in src:
+        return Q, 'root (anchor-module q key)'
     ns: dict[str, object] = {'sp': sp, 'sympy': sp}
     shim = _Shim()
     ns['mp'] = ns['mpmath'] = shim
@@ -92,7 +182,8 @@ def resolve(name: str, assigns: dict[str, ast.expr], seen: frozenset[str]):
         if isinstance(sub, ast.Name) and isinstance(sub.ctx, ast.Load):
             if sub.id in ns or sub.id in BUILTIN:
                 continue
-            v, _ = resolve(sub.id, assigns, seen | {name})
+            v, _ = resolve(sub.id, assigns, seen | {name}, imports, depth,
+                           in_anchor_module)
             if v is None:
                 return None, f'depends on unresolvable `{sub.id}`'
             ns[sub.id] = v
@@ -162,6 +253,7 @@ def main() -> int:
             except Exception:
                 continue
             assigns = top_level_assignments(tree)
+            imports = top_level_imports(tree)
             for node in tree.body:
                 if not (isinstance(node, ast.FunctionDef)
                         and any(k in node.name.lower() for k in NAMEPAT)):
@@ -192,7 +284,7 @@ def main() -> int:
                     if g == 'lru_cache':
                         ns[g] = lambda *a, **k: (lambda f: f)
                         continue
-                    v, why = resolve(g, assigns, frozenset())
+                    v, why = resolve(g, assigns, frozenset(), imports)
                     if v is None:
                         why_fail = f'`{g}`: {why}'
                         break
@@ -233,6 +325,11 @@ def main() -> int:
         print(f'   {c:>4}  {k}')
     pct = 100.0 * resolved / blocked if blocked else 0.0
     print(f'\n   RESOLVED {resolved}/{blocked} ({pct:.1f}%) — previously 0')
+    sq = [(p, n, v) for p, n, v, _ in results if 'sqrt_q' in v or 'q2' in v]
+    if sq:
+        print('\nSQRT-VARIABLE / q^2 SPELLINGS — symmetric convention at a\n  DIFFERENT ARGUMENT. qou-9nn0 found one of these to be a real defect\n  (the file needed [n]_q and computed [n]_sqrt(q)), so each needs its\n  own check against what its caller expects:')
+        for p, n, v in sq:
+            print(f'   {p}::{n}  -> {v}')
     cls = [(p, n) for p, n, v, _ in results if v.startswith('classical')]
     if cls:
         print('\nCLASSICAL — newly measured, previously invisible to the'

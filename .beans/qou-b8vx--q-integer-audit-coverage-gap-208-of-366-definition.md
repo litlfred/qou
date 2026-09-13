@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-09-13T06:16:22Z
+updated_at: 2026-09-13T06:38:25Z
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.
@@ -78,3 +78,58 @@ FULL TEXT OF WHAT WAS EATEN:
     3+1/3 and classifies noise.
   - the four self-declaring classical definitions are named qint_geo; the
     fifth, needing a basis determination, is named q_int.
+
+EXTENDED 2026-09-13, same session: 63 -> 81 of 173 resolved (36.4% -> 46.8%).
+
+Three blockers removed, each a real gap in the resolver rather than a corpus fact:
+
+1. IMPORTS. resolve() read only a module's OWN assignments, so any name bound
+   by "from M import X" was invisible. Now follows the import to M and resolves
+   there, with a cycle guard and depth limit. Also walks function bodies,
+   because this corpus routinely defers an import into a def to dodge a
+   circular import, and such a binding is as real as a module-level one.
+
+2. INDENTATION IS NOT SCOPE. q_parameter binds its entire anchor block inside a
+   module-level try:, so a scan of unindented statements missed Q_MP -- the
+   single most-imported modulus name in the corpus -- and every definition
+   downstream of it read as unmeasurable. Now walks module-level try/if/with
+   bodies and except handlers.
+
+3. THE ANCHOR ROOT. q_parameter builds the block as Q_MP = mpf(_d["q"]) from
+   the anchor witness, which no ROOT_SOURCES entry matched. Now recognised --
+   but ONLY inside modules AGENTS.md designates as the canonical q0 accessors
+   (q_parameter, qou_substrate.constants). Scoping it that way is the
+   difference between citing the corpus's own designation and inferring
+   meaning from a spelling, which this audit otherwise refuses to do.
+
+TALLY NOW:
+    70  symmetric
+     5  classical
+     3  symmetric[n=2]        (fixed-n; argument is the modulus)
+     1  symmetric_in_sqrt_q
+     2  OTHER                 (not q-integers: a dilogarithm bracket and a
+                               log-derivative -- name-pattern false positives)
+    92  UNRESOLVED
+
+THE ONE sqrt-VARIABLE HIT IS CORRECT, AND THE FILE IS EXEMPLARY.
+deuteron_trefoil_qinvariant_closed_form_probe.py defines BOTH, adjacently:
+    qint(n)    in A = sqrt(q)
+    qint_q(n)  in q, under the comment "balanced quantum integer in q (not
+               sqrt q): [n]_{q} = (q^n - q^-n)/(q-q^-1)"
+The author was aware of exactly the distinction that made the q-Hankel probe a
+defect (qou-9nn0) and handled it explicitly. This is the corpus getting it
+right; recorded so a future sweep does not "fix" it.
+
+WHAT THE REMAINING 92 ARE, and the first bucket is an ANSWER not a gap:
+    29  q-independent -- the global resolves to a CONSTANT, so the definition
+        is genuinely q0-pinned in the strong sense. Its convention is not
+        symbolically askable; it is a number. That is the answer for those 29,
+        not a failure to measure them.
+    25  no top-level assignment (bound in a function, or a parameter)
+    14  Q_MP chain still failing -- the anchor-module root fires, so these
+        reach Q_MP by some route other than a module-level import; UNDIAGNOSED
+     3  import cycle or depth limit
+     2  _TBL   2  HERE   2  Q   1  json   (data-file loads; correctly opaque)
+
+So the honest split of 173 is: 81 classified, 29 established as genuinely
+q0-pinned, 63 still dark. Bean stays IN-PROGRESS.
