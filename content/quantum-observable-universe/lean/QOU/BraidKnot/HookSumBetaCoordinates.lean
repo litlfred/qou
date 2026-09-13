@@ -272,6 +272,62 @@ theorem sum_hookF_add_pairF {N : Type*} [AddCommMonoid N] (g : ℕ → N)
   simp only [QOU.Mathlib.SYTBeta.descFactF] at h
   simpa only [ofAdd_add, ofAdd_sum] using h
 
+/-! ## The β-side does not see the padding
+
+(I') has `L` on its right-hand side and on one summand of its left, but the *other*
+summand — the cell sum — has no `L` at all.  Rearranged over a group that is the whole
+statement of the two results below: **the one-body sum minus the pair sum is the cell
+sum**, hence is the same for every admissible padding.
+
+This is exactly the quantity the `REV_n` arc calls the β-side,
+`Σ_i F(β_i) − Σ_{i<j} ε(β_i − β_j)` with `F` the partial sums of `ε` — take
+`g = ε` and note `Σ_{j<β_i} g(β_i − j) = Σ_{m=1}^{β_i} ε(m) = F(β_i)`.  Since the
+hook sum `H = Σ_c h(c)` is cell-indexed and likewise `L`-free, the arc's whole
+objective `V` is padding-invariant.
+
+**Why this is worth a name.** A maximisation of `V` over shapes *at fixed row count*
+`ℓ` is a real search; a maximisation *over* `ℓ` above the shape's own row count is
+not a search at all — it is re-reading one number.  PR #7294 scanned `ℓ ∈ [k, k+5]`
+and recorded a caveat that three of its eleven points "sit at the cap, so those three
+are censored downward".  That caveat is **withdrawn**: the theorem says the scan was
+over padding, so a value at the cap is the same value as at every larger `ℓ`, and the
+only content in the scan is that `ℓ` must be at least the maximiser's row count (which
+is why `ℓ = k` and `ℓ = k+1` genuinely lose).  Measured in agreement afterwards —
+`rev_l_cap_is_padding_invariance_probe.py`, where the residual across `ℓ` is `1e-49`
+at `mp.dps = 50`. -/
+
+/-- **The β-side is the cell sum.**  For any `g` into an additive commutative *group*,
+
+    Σ_{i<L} Σ_{m=1}^{β_i} g(m) − Σ_{i<j<L} g(β_i − β_j) = Σ_{c∈μ} g(h(c)) .
+
+The right-hand side carries no `L`, so the left-hand side is the same for every
+padding `L ≥ ℓ(μ)`. -/
+theorem betaSide_eq_hookSum {N : Type*} [AddCommGroup N] (g : ℕ → N)
+    (μ : YoungDiagram) {L : ℕ} (hL : μ.colLen 0 ≤ L) :
+    (∑ i ∈ range L, ∑ j ∈ range (QOU.SchurWeyl.betaR L μ i),
+          g (QOU.SchurWeyl.betaR L μ i - j))
+        - ∑ i ∈ range L, ∑ k ∈ range (L - (i + 1)),
+            g (QOU.SchurWeyl.betaR L μ i - QOU.SchurWeyl.betaR L μ (i + 1 + k))
+      = ∑ c ∈ μ.cells, g (QOU.QBeta.WenzlWeight.hook μ c) := by
+  rw [← sum_hookF_add_pairF g μ hL]
+  abel
+
+/-- **Padding invariance, subtraction-free.**  The same statement over a mere additive
+commutative *monoid*: the β-side at `L` and at `L'` agree, written without subtraction
+by adding the other padding's pair sum to each. -/
+theorem betaSide_padding_invariant {N : Type*} [AddCommMonoid N] (g : ℕ → N)
+    (μ : YoungDiagram) {L L' : ℕ} (hL : μ.colLen 0 ≤ L) (hL' : μ.colLen 0 ≤ L') :
+    (∑ i ∈ range L, ∑ j ∈ range (QOU.SchurWeyl.betaR L μ i),
+          g (QOU.SchurWeyl.betaR L μ i - j))
+        + ∑ i ∈ range L', ∑ k ∈ range (L' - (i + 1)),
+            g (QOU.SchurWeyl.betaR L' μ i - QOU.SchurWeyl.betaR L' μ (i + 1 + k))
+      = (∑ i ∈ range L', ∑ j ∈ range (QOU.SchurWeyl.betaR L' μ i),
+            g (QOU.SchurWeyl.betaR L' μ i - j))
+        + ∑ i ∈ range L, ∑ k ∈ range (L - (i + 1)),
+            g (QOU.SchurWeyl.betaR L μ i - QOU.SchurWeyl.betaR L μ (i + 1 + k)) := by
+  rw [← sum_hookF_add_pairF g μ hL, ← sum_hookF_add_pairF g μ hL']
+  abel
+
 /-! ## (II) again, from the hook multiset — an independent second proof
 
 Everything above (II) went through `HookSumClosedForm`'s `2Σ_h = p₂(λ) + p₂(λ')`.
