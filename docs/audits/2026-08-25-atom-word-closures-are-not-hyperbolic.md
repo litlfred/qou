@@ -211,3 +211,67 @@ Two consequences worth having:
 > conclusion are untouched** — they rest on monotonicity, and Proposition 4 read
 > forwards supports them. Full working:
 > [`2026-08-25-ito-dehornoy-hyperbolicity-criterion.md` §Addendum 3](2026-08-25-ito-dehornoy-hyperbolicity-criterion.md).
+
+
+---
+
+## Addendum 2026-09-07 — §3 is true of the GROUPED word and stale for the live one; the connected-sum half survives, the Vol = 0 half does not
+
+Bean `qou-m6gp`; producer
+[`binding_volume_difference_probe.py`](../../computations/probes/binding_volume_difference_probe.py)
+(leg C, evaluated for the first time on 2026-09-07 — until then its SnapPy
+helper returned `(None, None, False)` on `ImportError` and the leg had never
+run).
+
+**What changed underneath §3.** Step 1 ("each branch braid is monotone") relied
+on the per-nucleon confinement core being laid down grouped (`σ₀³ σ₁⁻³`). Bean
+`qou-hu1f` (2026-09-05, owner ruling) made the core alternating, `(σ₀σ₁⁻¹)³`,
+which is not monotone — `σ₀` recurs. So steps 1–2 no longer apply to the live
+word, and the measurement was repeated rather than inherited.
+
+**Measured on the live word, SnapPy 3.3.2, ManifoldHP (quad-double, unverified —
+`verified=True` needs Sage):**
+
+| nucleon | branch signs | closure | components | Vol |
+|---|---|---|---|---|
+| proton | (+,+) | L9n10 | 2 | 9.9665118837 |
+| proton | (+,−) | L11a252 | 2 | 16.1911429640 |
+| proton | (−,+) | L7a6 (= 7²₁) | 2 | 4.7494999819 |
+| proton | (−,−) | L9a21 | 2 | 11.9428724495 |
+| neutron | (+,+) | L11a252 | 2 | 16.1911429640 |
+| neutron | (+,−), (−,+) | L9a21 | 2 | 11.9428724495 |
+| neutron | (−,−) | L11n202 | 2 | 8.1957030826 |
+
+Every per-nucleon branch closure is **hyperbolic** (all tetrahedra positively
+oriented, census-identified). The 2H "Vol = 0 for every one" of §3 is therefore
+**retracted for the live word**; it stands as a record of the grouped one.
+
+**What survives, and it is the load-bearing half.** Each inter-nucleon interface
+is a single letter, so `closure(β₁·σ_k^±·β₂) = closure(β₁) # closure(β₂)`:
+`deconnect_sum` on all **800** atom branches (32 + 128 + 128 + 512 for
+²H/³H/³He/⁴He) returns exactly `A` summands, every one matched to the table
+above. A connected sum is non-prime hence non-hyperbolic (0/800 whole closures
+find a geometric solution), and the simplicial volume of a link exterior is the
+sum of the hyperbolic volumes of its JSJ pieces (Gromov; Soma), the JSJ pieces of
+a connected sum / split union being those of the summands, so
+
+```
+Vol(atom branch) − Vol(free branch) ≡ 0      (max over 800 branches: 2e-63, summation rounding at 70 dps)
+```
+
+for every branch, every weighting, and every ρ: the volume-DIFFERENCE binding
+`B_C = ρ·[Vol(atom) − Vol(free)]` is **0**, residual −100 % on all four nuclei.
+That is scope-(b) with the invariants named (single-letter-interface closure
+identity; connected-sum additivity of simplicial volume), and it is narrower than
+§6: it excludes a *difference* reading, not a volume reading. An absolute-volume
+reading (branch volumes 12.9–64.8, weight-averaged 22.78 / 34.85 / 33.49 / 45.56
+for ²H/³H/³He/⁴He), a non-additive functional of the pieces, or a multi-letter
+interface are **not** excluded here.
+
+**Consequence for §4–§6.** The KVC "discharge to 0" argument of §4 depended on
+the branch closures being non-hyperbolic; on the live word they are not, so §4
+does not go through as written — the atom object is still a weighted sum of 2^(2A+1)
+link invariants with no single closure (that part is unchanged), but the
+per-branch volumes it averages are now nonzero. Option (c) in §7 ("replace the
+averaged interfaces with genuine braid letters") is unaffected; option (a)/(b)
+should be re-read against the table above.

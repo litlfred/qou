@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-31T03:49:09Z
-updated_at: 2026-09-03T11:06:59Z
+updated_at: 2026-09-08T07:45:47Z
 ---
 
 MEASURED on `main` `83f5e6482e`, 2026-08-31T03:5xZ, by running
@@ -143,3 +143,5 @@ witnesses `option-b-proton-mass-full-chain.witness.json` and
 quote. This is the 'float64 input poisons the result' case. Draining to 0 needs
 the upstream producers fixed -> follow-up bean (see below). The sub-agent
 deliberately did NOT stringify the upstream floats to fake a pass.
+
+## 2026-09-08: canonical tracker for the recurring "raw-float64 ratchet is RED on main" event is qou-sknx (most recent OPEN one, 2026-09-04); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7. Seven beans (08-11 … 09-06) record one recurring event; this one is kept as-is because its body carries its own finding.

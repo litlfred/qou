@@ -5,7 +5,8 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:40:28Z
-updated_at: 2026-09-04T14:11:20Z
+updated_at: 2026-09-11T15:46:33Z
+parent: qou-x631
 ---
 
 ## The defect (PR #6442)
@@ -226,3 +227,34 @@ refused to resume when the parameter stamp would not have matched.
   silence per partition is normal at these dimensions.
 - Gate 2 reproduces the COMMITTED triton to 3.03e-60 by a separate sparse route --
   two independent confirmations of the #6442 weight fix.
+
+## 2026-09-08 coordination: same kernel as qou-x631, qou-k5r5, qou-o6ov, qou-za3q
+
+Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 1 / §7.3 C2: `k5r5` (99 commits, 08-21 → 09-08) and `o6ov` (99 commits, 08-30 → 09-05) both work the odd-moment / Magnus `tr(ρ_λ Ω₂)` kernel, and before this note there were **zero** cross-citations among k5r5 / o6ov / x631 / za3q / omr7 (measured 2026-09-08 by grepping each body for the other four ids). Shared ledger: epic `qou-x631`, now parent of the other four. Roles — x631: epic, Cov_Planch(f^λ, Σc²) ≤ 0 / T₃(k) kernel; k5r5: M₁ > 0 (first odd moment), all-n proof OPEN, identity Lean-proved; o6ov: does |tr(ρ_λ Ω₂)|/dim decay in b across the ≤2-row column (open mathematics, rescoped 2026-09-05, PR #6822); za3q: Magnus-Ω₂ probes use the Plancherel weight y_λ, 91 % of their work on shapes tr_M annihilates; omr7: Magnus probes' d_q was the hook product, weight inverted (4 files, PR #6442). Statuses are unchanged by this note; a result landing on any of the five should be cited in the other four.
+
+
+## Cross-citation from qou-za3q (2026-09-11): the A=4 Magnus sign is measured
+
+Per the 2026-09-08 coordination note on qou-za3q ("a result landing on any of the
+five should be cited in the other four"), this is such a result.
+
+`he4_magnus_omega2_sign_sparse_probe.py`, 77/77 partitions of H_12, max dim 7700,
+28661s:
+
+    P_total(A=4) = 34.1260272853576529271380692762741452981457684651471317452205
+    sign = +1    control (rho = I) = 0.0 vanishes    33+/42-    sign_flip_vs_A3 = False
+
+Sign map across the light nuclei: A2 = -1, A3 = +1, A4 = +1. There is exactly ONE
+sign change in A = 2,3,4 and it sits between the deuteron and the triton, NOT at
+the alpha particle.
+
+Load-bearing for anyone reading the older framing: the he4 probe's docstring
+asserted "A=3: P<0, NO flip vs A=2" and that premise had propagated into its
+GENERATED VERDICT string. It is false — A=3 is +2.4701927, confirmed by the
+committed witness and a fresh 30/30 re-run. Fixed under qou-rfhj. If any of the
+five beans reasons from "negative through the deuteron and triton", that premise
+is stale.
+
+scope-(a): a dimensionless SIGN datum. NOT a MeV (the Delta_lambda magnitude gate
+is open and untouched), NOT a physical binding-sign assertion (qou-v7ro / #6077,
+cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-).

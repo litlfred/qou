@@ -181,7 +181,7 @@ states (next section).
 
 | observable | canonical formula | Lean proof | production | residual | status |
 |---|---|---|---|---|---|
-| **Q_β (free neutron)** | Form A `m_e · |q²−2q−1| · (q+1) / (2q³)` × c_k ladder; **only c_2 = −1 Taylor-exact** | `prop:q-beta-categorical-precision-ladder` (c_2 via Kashiwara N2_factor, PROVED); c_3 §3b-cond conditional `QbetaC3StructuralFormClass` | `per_observable_100x_status.py` wires **Q_N2 only** | **1279 ppb (Q_N2)** — ✗ 100×, ✗ 1× | **DERIVED through c_2 only**; at μ-p floor |
+| **Q_β (free neutron)** | Form A `m_e · |q²−2q−1| · (q+1) / (2q³)` × c_k ladder; **only c_2 = −1 Taylor-exact** | `prop:q-beta-categorical-precision-ladder` (c_2 via Kashiwara N2_factor, PROVED); c_3 §3b-cond conditional `QbetaC3StructuralFormClass` | `per_observable_100x_status.py` scores the **RULED `z_D` base** (`_qbeta_ruled_base`, 2026-09-12); the `Q_N2` rung is recorded on the row as the retired `z = 1` cell | **4.316e+8 ppb (`z_D` base, 0 rungs)** — ✗ 100×, ✗ 1× | **DERIVED, no rungs.** Was `1279 ppb (Q_N2)` — convention-C on the inadmissible `z = 1` cell — until item (iii) of the 2026-09-08 ruling was re-scored on the 2026-09-12 owner authorisation (`qou-99qc`). Not D's accuracy: no ladder on an admissible base (`qou-cds1`, blocked on `qou-pdix`; second re-score `qou-iagg`) |
 | Q_β c_k (k≥3) | structural forms (J_Hopf, J−ℏ², c_3·b⁴) — **stale-q₀ near-matches, NOT Taylor-exact** | §3b-cond `QbetaC3StructuralFormClass`, `QbetaHabiroTaylorBridgeClass` (conditional, no instance) | NOT wired | item-1: 3.35% off at canonical q₀, q₀-drifting | **NOT derivations** — `qbeta-delta-tr-vs-formA.witness.json` |
 | **bridge `f`: Q_β = m_e·f(Δtr_M, q)** | — | — | — | item-1 bounds what it is NOT (not the Form-A slot) | **OPEN** — the genuine derivation target (multi-block Habiro q-difference) |
 | **τ_n (neutron lifetime)** | depends on `(ft)`, `g_A`, Q_β | — | — | — | OPEN — only the Q_β leg is wired |
@@ -196,6 +196,10 @@ states (next section).
   — item 1 showed it is NOT the canonical Form-A-slot substitution; the
   multi-Wedderburn-block Habiro q-difference solution is the research
   target (`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`).
+- **Superseded 2026-09-12:** Q_β is no longer at the μ-p substrate tension
+  floor — it is on the RULED `z_D` base at 4.316e+8 ppb with zero `c_k` rungs
+  (`qou-99qc` item (iii), owner-authorised). The floor statement below described
+  the laddered `z = 1` figure and is kept as the record of that state.
 - Q_β at the μ-p substrate tension floor (1279 ppb); this is the honest
   production state, not a wiring gap.
 

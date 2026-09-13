@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-09-04T02:22:39Z
+updated_at: 2026-09-08T07:45:45Z
 ---
 
 Epic to close conjectural class fields that are standard math (not manuscript claims). Three axes: LP/SDP duality, parallelogram contour, RSK combinatorics.
@@ -136,3 +136,5 @@ while the decl is `delta_max_uniform_bound`, so §0a candidate 2 (path) misses
 and resolution falls to candidate 3 (grep). §0a says align a mis-named
 library file — but it carries five declarations, so renaming it for one is
 wrong.
+
+## 2026-09-08: twin qou-vkmt (identical title, in-progress, self-declared duplicate) cross-referenced; this bean is the record. Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7.

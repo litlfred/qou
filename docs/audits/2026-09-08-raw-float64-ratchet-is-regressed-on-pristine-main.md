@@ -1,5 +1,52 @@
 # The raw-float64 ratchet reports `REGRESSED: 3` on PRISTINE main
 
+> **🟨 A FIX EXISTS ON A BRANCH — `main` is still RED. All three are fixed at
+> the producer on PR #7161 (`qou-n5kp`), which is OPEN and unmerged as of
+> 2026-09-12 05:09Z.** So `REGRESSED: 3` remains the correct reading of `main`
+> until that PR lands; this note records where the fix is, not that it has
+> arrived. (This heading read *"🟩 DRAINED"* until 2026-09-12. The body below
+> always said "that branch reports" and "once #7161 lands", but a heading a
+> skimmer takes as state, contradicting its own body, is the defect AGENTS.md
+> records against the Phase-4 merge-gate table — and "fixed on a branch" read as
+> "fixed in the product" is the distinction bean `qou-3v8h` refused to close on.)
+> That branch reports
+> `witness_raw_float64_audit.py --strict` exit **0**, `NEW 0`, **`REGRESSED 0`**,
+> with `bar-pairing-binding-observable-extension` 20 → 0,
+> `binding-rotation-phase-lead` 12 → 0, `chi-free-via-lr` 4 → 0. No baseline was
+> touched and there is no `--rebaseline` on it, so this is a real drain and not a
+> laundering.
+>
+> **This document remains correct as a dated measurement and is NOT retracted.**
+> Its claim is that `REGRESSED: 3` was *main's*, not any feature branch's, and
+> that claim is what #7161 confirms by fixing it at the three producers. But do
+> **not** quote the `REGRESSED: 3` figure as current once #7161 lands.
+>
+> **Two things from #7161 worth carrying, neither of which is in this document:**
+>
+> 1. **One of the three was never a precision defect.** `chi-free-via-lr`'s four
+>    fields are `time.time() - t0` wall-clock durations. The ratchet already
+>    excuses durations — but **by name**, against a closed six-name vocabulary
+>    (`_EPHEMERAL_META_FIELDS`), and the producer spelled it `wall_sec`, which is
+>    in neither that mask nor the `/dur|elapsed/` filter. So a duration field
+>    spelled one legal-English way was counted as a precision finding while an
+>    identical field one name over was silently excused. Fixed by renaming to the
+>    declared `elapsed_sec`, deliberately **not** by widening the mask
+>    (`qou-ywee` / `qou-hhm3` own that; ~411 timing-shaped fields under ~65
+>    undeclared names remain). That is a *carve-out* blindness rather than a
+>    detector blindness — a distinct entry for the taxonomy.
+> 2. **A latent ordering bug the drain exposed.**
+>    `binding_rotation_phase_lead.py` picked its headline with
+>    `min(..., key=lambda a: results[a]["spread_pct"])`. Once that field is a
+>    serialized string, `min` is **lexicographic**: `"17254.05…"` sorts before
+>    `"417.02…"`, so the string key would have named the **worst** aggregation as
+>    the tightest. This is a hazard for *any* producer being converted from
+>    `float` to `_precision.fmt` — the conversion is what creates it.
+>
+> Independent corroboration, which is this document's remaining value: the same
+> three were reproduced here at **two different main heads** in a separate
+> session from #7161's, so the premise was not an artifact of one tree.
+
+
 Bean `qou-nwhg`. Measured 2026-09-08 on `origin/main` `e05244611`, in a tree with
 **zero branch changes**.
 

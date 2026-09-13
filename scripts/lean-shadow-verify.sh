@@ -67,11 +67,42 @@ LEAN_OPTS="${LEAN_OPTS:--DautoImplicit=false -s 65536}"
 # Measured 2026-09-05 on a correctly-restored container: 2442 QOU oleans at the
 # root, 0 at the per-paper path.  Hardcoding the per-paper path therefore made
 # this script exit 2 on exactly the tree it exists to verify against.
-# $OLEANS may be set to override.
+#
+# ...but "first candidate WITH a QOU/ dir" is not the same test as "the restored
+# tree", and what breaks it is the DEFAULT state of a fresh session here.
+#
+# Measured 2026-09-08.  The cache was restored to the ROOT (2442 QOU oleans),
+# and `scripts/lean-build-bg.sh` -- started by a SessionStart hook -- was running
+# `lake build` with cwd = $PKG, filling the PAPER tree from scratch.  So the
+# paper path HAD a QOU/ dir, the loop took it, and it held exactly TWO oleans.
+# The rebuild set was computed against that, and the run died on the first
+# Mathlib-importing module.  Watched over the next few minutes the same tree went
+# 2 -> 17 QOU oleans and 2352 -> 2950 mathlib oleans: not a stale stub, a tree
+# mid-build.  It is present, incomplete, and CHANGING, and "has a QOU/ dir"
+# cannot tell that from a restored cache.
+#
+# So pick by COMPLETENESS, not by order.  This is also the criterion that is
+# right in BOTH directions -- see the PKGROOTS note below, where the same
+# disagreement runs the other way.  $OLEANS may be set to override.
+#
+# LIMITATION, stated because it is real: the count is a snapshot of a tree
+# another process may be writing.  It is the right call at the moment it is
+# taken, and a build that finishes mid-run can make it the wrong one.  Hence the
+# warning below -- AGENTS.md §"QUIESCE THE SESSIONSTART BUILD" is the actual fix.
+if pgrep -f 'lake build' >/dev/null 2>&1; then
+  echo "WARNING: a 'lake build' is running (likely scripts/lean-build-bg.sh from" >&2
+  echo "  the SessionStart hook).  It writes into an olean tree this script reads," >&2
+  echo "  so the counts below are a snapshot of a MOVING target.  Prefer to let it" >&2
+  echo "  finish, or pass OLEANS=<dir> explicitly." >&2
+fi
 if [ -z "${OLEANS:-}" ]; then
+  _best_n=-1
   for cand in "$PKG/.lake/build/lib/lean" "$ROOT/.lake/build/lib/lean"; do
-    [ -d "$cand/QOU" ] && { OLEANS="$cand"; break; }
+    [ -d "$cand/QOU" ] || continue
+    _n=$(find "$cand/QOU" -name '*.olean' -size +0 2>/dev/null | wc -l)
+    if [ "$_n" -gt "$_best_n" ]; then _best_n=$_n; OLEANS="$cand"; fi
   done
+  [ -n "${OLEANS:-}" ] && echo "olean tree chosen by count: $_best_n QOU oleans"
 fi
 [ -n "${OLEANS:-}" ] && [ -d "$OLEANS/QOU" ] || {
   echo "no restored olean tree with a QOU/ dir — looked in:" >&2
@@ -133,11 +164,45 @@ SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
 # "$ROOT/content/...") and the root tree would win the pinning above -- which is
 # exactly the bug being fixed, reintroduced by the fix.  Shell glob expansion
 # keeps the patterns in the order written.
+#
+# THE PIN STAYS. `scripts/lean-sync-olean-trees.sh` (`182c59191`, bean
+# `qou-4h26`) reached this same asymmetry independently and answered it the
+# right way round: instead of choosing an order, hardlink the UNION of every
+# package tree into every package tree, so which one wins stops mattering.  Its
+# header says explicitly that this script's paper-first pinning "is correct and
+# is NOT changed here", and an earlier version of this file reordered anyway.
+# Reverted -- their fix removes the asymmetry, ordering only re-aims it.
+#
+# So this block only DIAGNOSES.  It is worth diagnosing because the union script
+# has no callers: nothing runs it, so until an agent does by hand, an incomplete
+# paper `Mathlib/` still shadows a complete root one and every `import
+# Mathlib.Tactic` still fails naming a path for a file that exists in the other
+# tree.  Measured here 2026-09-08: paper mathlib 2352 oleans with NO
+# `Mathlib/Tactic.olean`, root 3469 with it.
+#
+# Non-empty oleans only, so the 0-byte `Mathlib/Tactic.olean` of bean
+# `qou-tpdg` counts as the absence it behaves like.
 PKGROOTS=""
 for d in "$ROOT"/content/*/lean/.lake/packages/*/.lake/build/lib/lean \
          "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do
   [ -d "$d" ] && PKGROOTS="$PKGROOTS$d:"
 done
+
+_mlfirst=""; _mlworst=""; _mlbest=""
+for _loc in "$ROOT"/content/*/lean/.lake/packages "$ROOT"/.lake/packages; do
+  [ -d "$_loc/mathlib/.lake/build/lib/lean" ] || continue
+  _c=$(find "$_loc/mathlib/.lake/build/lib/lean" -name '*.olean' -size +0 2>/dev/null | wc -l)
+  [ -z "$_mlfirst" ] && _mlfirst=$_c            # the one that actually shadows
+  { [ -z "$_mlbest" ] || [ "$_c" -gt "$_mlbest" ]; } && _mlbest=$_c
+  { [ -z "$_mlworst" ] || [ "$_c" -lt "$_mlworst" ]; } && _mlworst=$_c
+done
+if [ -n "$_mlfirst" ] && [ -n "$_mlbest" ] && [ "$_mlfirst" -lt "$_mlbest" ]; then
+  echo "WARNING: the mathlib tree FIRST on LEAN_PATH has $_mlfirst non-empty oleans," >&2
+  echo "  but another location has $_mlbest.  Lean resolves a package from the first" >&2
+  echo "  root holding that PACKAGE dir, so the smaller one answers for all of" >&2
+  echo "  Mathlib and you will see MISSING-OLEAN errors naming files that exist." >&2
+  echo "  Fix: scripts/lean-sync-olean-trees.sh   (bean qou-4h26)" >&2
+fi
 LP="$SHADOW:$PKGROOTS$SIBLINGS$OLEANS"
 
 ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'

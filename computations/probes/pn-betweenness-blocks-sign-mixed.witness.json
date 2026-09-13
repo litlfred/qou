@@ -1,0 +1,219 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T19:00:45.989095+00:00",
+  "commitSha": "1e60488960e000b52c36c0de07bfafbe61be5ee6",
+  "assertions": [
+    {
+      "name": "convex_combination_exact_1e_60",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "affine_preserves_combination_1e_60",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "pn_strictly_between_every_delta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "pn_never_strict_max_every_delta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "no_letter_exceeds_one_at_proton_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "betweenness_holds_off_the_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "sign_mixed_pattern_unreachable",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "pattern_reachable_once_pn_is_free",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "pn-betweenness-blocks-sign-mixed",
+  "scriptFile": "pn_betweenness_blocks_sign_mixed_probe.py",
+  "scriptHash": "9dfdf6376642",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pn_betweenness_blocks_sign_mixed_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pn_betweenness_blocks_sign_mixed_probe.py"
+  },
+  "description": "The pn interface letter is a strict convex combination of the pp and nn letters and the two-strand interface law is affine, so the pn bond factor is strictly between the like-pair factors and can never be the strict maximum. The sign-mixed pattern qou-q8vl shows a positive b_3 requires (mu_pn > 1 > mu_pp, mu_nn) is therefore unreachable for any q and any admissible colour weight. Scope (b); invariant = strict convexity + affineness. A third bond family must break one of those two hypotheses.",
+  "caveats": [
+    "NOT claimed: that no third bond family exists. Only that any such family must break the averaging of the pn letter or the affineness of tr_2. The binding magnitude (qou-brng) is untouched and nothing here is wired."
+  ],
+  "q0_proton": "1.10997858275138080759166909561",
+  "convention": "D",
+  "rows": [
+    {
+      "delta": "-1.9999",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.40363296485829582715",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    },
+    {
+      "delta": "-1.5",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.42976027570028085059",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    },
+    {
+      "delta": "-1",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.45589281304973576502",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    },
+    {
+      "delta": "-0.5",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.48202535039919067945",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    },
+    {
+      "delta": "0",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.50815788774864559388",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    },
+    {
+      "delta": "0.5",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.53429042509810050831",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    },
+    {
+      "delta": "1",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.56042296244755542274",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    },
+    {
+      "delta": "1.5",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.58655549979701033717",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    },
+    {
+      "delta": "1.9999",
+      "mu_pp": "0.6126880371464652516",
+      "mu_pn": "0.61268281063899536061",
+      "mu_nn": "0.40362773835082593616",
+      "pn_strictly_between": true,
+      "pn_is_strict_max": false,
+      "any_letter_above_one": false
+    }
+  ],
+  "worst_convex_residual": "0.0",
+  "worst_affine_residual": "4.527839539e-72",
+  "scope": "b",
+  "invariant": "strict convexity of the averaged pn letter + affineness of tr_2",
+  "narrows": "qou-q8vl open item: a third bond family supplying the sign-mixed pattern",
+  "checks": [
+    {
+      "name": "convex_combination_exact_1e_60",
+      "pass": true,
+      "detail": "worst |d_pn - combo| = 0.0"
+    },
+    {
+      "name": "affine_preserves_combination_1e_60",
+      "pass": true,
+      "detail": "worst |mu_pn - combo(mu)| = 4.5278395e-72"
+    },
+    {
+      "name": "pn_strictly_between_every_delta",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pn_never_strict_max_every_delta",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no_letter_exceeds_one_at_proton_pin",
+      "pass": true,
+      "detail": "consistent with qou-q8vl's value-level d<=0 exclusion"
+    },
+    {
+      "name": "betweenness_holds_off_the_pin",
+      "pass": true,
+      "detail": "5 values of q x 3 of delta"
+    },
+    {
+      "name": "sign_mixed_pattern_unreachable",
+      "pass": true,
+      "detail": "mu_pn > 1 > mu_pp, mu_nn requires pn to be the strict max"
+    },
+    {
+      "name": "pattern_reachable_once_pn_is_free",
+      "pass": true,
+      "detail": "so the averaging hypothesis, not the values, is what excludes it"
+    }
+  ]
+}

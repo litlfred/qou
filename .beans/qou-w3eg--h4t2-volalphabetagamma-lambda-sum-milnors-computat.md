@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T09:03:40Z
+updated_at: 2026-09-12T11:29:40Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -829,3 +829,302 @@ That works, via a two-step route:
 | `γ`-chord from `w ∉ W_sub` (gives `≤`) | reduces to the above |
 | the a.e. identity, over **two** null sets (shared ray + `γ`-chord line) | open |
 | composition with `hypVolume_chimney_wedgeAt` + `lob_sum_eq_reflected` | open |
+
+
+## 2026-09-08 — H4-5 obtuse CLOSED at the triangle level (PR #7163)
+
+Three sorry-free landings in `ObtuseTiling.lean`, all `lean -DautoImplicit=false
+-s 65536` exit 0:
+
+1. **`inscribedTriangle_subset_obtuseWedges_of_ne`** — the covering.
+2. **`obtuseWedges_ae_eq_inscribedTriangle`** — the tiling,
+   `T =ᵐ (W_α ∪ W_β) \ W_sub`.
+3. **`hypVolume_chimney_inscribedTriangle_obtuse`** —
+   `Vol(chimney T R) = Λ(α) + Λ(β) + Λ(γ)` for `π/2 < γ`.
+
+### The finding that mattered: "a similar argument" is not available
+
+Milnor's parenthesis offers two routes and this bean recorded both. The
+**"similar argument"** route turns out to be blocked in a way that is worth
+recording, because it looks like an adaptation problem and is not one.
+
+The acute covering runs entirely on `perp_sign_relation`, whose three
+coefficients `sin 2α, sin 2β, sin 2γ` are positive, so two of eight sign
+patterns are impossible and each of the six survivors is a sector. With `γ`
+obtuse, `sin 2γ < 0` and the relation forbids only two patterns — **four** of
+the six survivors put the point in neither remaining wedge. The *fact* the
+acute argument establishes is insufficient; no rearrangement of it closes the
+obtuse covering.
+
+What replaces it is stronger and makes the sign relation unnecessary: `T` lies
+in the cone spanned by `O→V₁` and `O→V₂`, i.e. `perp_t < 0` and
+`perp_{t+2γ} > 0` on the whole triangle. Each is a **two-term certificate**
+against the two chords meeting at that vertex, obtained by eliminating
+`R − ⟨w,u⟩` between the two chord slacks:
+
+    perp_t · sin α      = cos γ·(β-chord slack) − cos β·(γ-chord slack)
+    perp_{t+2γ} · sin β = cos α·(γ-chord slack) − cos γ·(α-chord slack)
+
+`R` cancels; both hold for ANY triple summing to π, acute or not. Only the sign
+reading uses `cos γ < 0` — in the acute case the two terms have opposite signs
+and the conclusion is false, which is the honest statement of what obtuseness
+buys. The same two identities read BACKWARDS give
+`wedgeAt_sub_subset_alphaBeta_of_ne`, i.e. that `W_sub` really is inside the
+union it is subtracted from (without which the set difference would be
+arithmetically smaller than Milnor's signed sum).
+
+### Two things better than the acute case, one worse
+
+- The covering needs **one** edge functional nonzero, not three.
+- The subtraction never happens in `ℝ≥0∞`: reading the partition as
+  `W_α ∪ W_β =ᵐ T ⊔ W_sub` makes additivity a statement about sums, and `Vol(T)`
+  falls out by cancelling the finite `Vol(W_sub)`.
+- Worse: the `RHS \ T` direction needs an **affine** null line (the γ-chord),
+  which `volume_perpLine` cannot reach — hence `volume_chordLine`.
+
+### What is still open — and it is now a SINGLE gate
+
+`IdealTetEqChimney.idealTet_eq_chimney` carries `α, β, γ < π/2` and is a **set
+equality**. Neither the analytic-continuation route (which is why the three-step
+plan cannot finish on its own) nor anything in this tranche supplies it. This
+is now the only thing between the corpus and the obtuse case of Milnor's
+identity, and it is a *geometry* problem, not an analysis one.
+
+Also corrected on main: `lob_sum_eq_reflected`'s docstring said the geometric
+subdivision "stays open". It no longer does; that lemma is now what the volume
+theorem spends.
+
+### Superseded within this bean
+
+The **analytic-continuation** route (steps 1-3: `analyticOnNhd_Lob`,
+`analyticOnNhd_tetVol`, identity theorem) is NOT what closed this. Those
+results stand and are on main, but they address the identity's RHS and a
+hypothetical LHS carrier that does not exist — see `TetVolAnalytic.lean`'s
+scope note. The obtuse case was closed by direct geometry instead. Recording
+this so a later reader does not credit the continuation route with the result.
+
+
+## 2026-09-08 (later) — H4-5 CLOSED on the ideal tetrahedron; the "fourth gate" did not exist
+
+`ObtuseTiling.idealTetVolume_of_vertices_obtuse` — `Vol(idealTetrahedron P₁P₂P₃)
+= Λ(α)+Λ(β)+Λ(γ)` for `π/2 < γ`, on the vertex-defined region, sorry-free.
+
+### Retracting my own claim from earlier today
+
+The entry above, this session's two prior commits, and four durable scope notes
+all said the same thing:
+
+> the identification of the region with the chimney
+> (`IdealTetEqChimney.idealTet_eq_chimney`) still carries `α, β, γ < π/2` and is
+> a **set equality**, which analytic continuation cannot supply — so it is now
+> the single remaining gate, and it is a geometry problem.
+
+**False, and cheaply falsifiable.** Those hypotheses were carried and never used.
+Acuteness enters that proof at exactly one shape — `Real.sin_pos_of_pos_of_lt_pi
+hX0 (by linarith)`, whose side goal is `X < π` — and `α+β+γ = π` with the other
+two positive already discharges it. The strictness gap is `cos ψ′ − cos(2ψ+ψ′) =
+2 sin(ψ+ψ′)·sin ψ`, positive wherever both sines are, i.e. everywhere on the open
+simplex. Deleting `hα hβ hγ` from `inscribedTriangle_vertex_incidence`,
+`face1/2/3` and `idealTet_eq_chimney` and fixing the three `MostowIdealTetVolume`
+call sites is the entire change.
+
+**Why the corpus-grep discipline could not catch it.** The claim was true of the
+*signature* and false of the *proof*. Every check I ran — grep the topic, grep the
+claim shape, read the docstring — confirmed the hypotheses were present. Only
+reading the proof body settles whether they are consumed, and I asserted the gate
+twice before doing that.
+
+**What was NOT the closer.** The analytic-continuation route (steps 1-3:
+`analyticOnNhd_Lob`, `analyticOnNhd_tetVol`, the identity theorem's topological
+hypotheses) did not close this and is marked as not closing it in
+`TetVolAnalytic.lean` and `IdealTetObtuseReduction.lean`. Those results stand;
+their left half — a real-valued carrier for the LHS — is still open and is now
+moot for this case. Signed subdivision closed it, which is the route this bean
+had *foreclosed* early on and then re-scoped from (b) to (a). The re-scoping is
+what made it available; had the (b) claim stood, this would still be open.
+
+### Coverage
+
+Acute (`idealTetVolume_of_vertices`) + obtuse (new) cover every admissible triple
+**except `γ = π/2` exactly**, where `W_sub = wedgeAt R (t+γ+π) (π−γ)` degenerates
+to a half-plane and the `ψ < π/2` wedge machinery fails on both sides. That is a
+measure-zero slice of the simplex and a genuinely separate limiting argument; it
+is not claimed.
+
+### Residual, and it is shared with the acute case
+
+Both rest on the same single cited totally-geodesic / normalized-position
+identification (`geodesicPlaneThrough`, File A1 — a definition with a citation,
+not an axiom or `sorry`). Nothing new is assumed by the obtuse half.
+
+**Not closing this bean.** Whether the `γ = π/2` slice and the shared A1 citation
+leave H4-5 "done" is an owner call, and per AGENTS.md rule 13a a bean is not
+completed because the recording of its state is complete.
+
+
+## 2026-09-11 — the `γ = π/2` slice is closed; the whole simplex is covered
+
+`idealTetVolume_of_vertices_right` plus its chimney and tiling companions
+(`ObtuseTiling.lean`, sorry-free). With the acute theorem on `main` and the
+obtuse one from 2026-09-08, every admissible triple now falls in exactly one of
+three cases — **acute** (`α, β, γ < π/2`), **obtuse** (`π/2 < γ`),
+**right-angled** (`γ = π/2`).
+
+### Retracting the reason I left it out
+
+The 2026-09-08 entry says the acute and obtuse theorems "cover every admissible
+triple **except `γ = π/2` exactly**, where `W_sub` degenerates to a half-plane
+and the `ψ < π/2` wedge machinery fails on both sides. That slice is not
+claimed." Two things wrong with that, independently:
+
+1. **`W_sub` does not degenerate to a half-plane — it degenerates to the empty
+   set.** `wedgeAt_pi_div_two_eq_empty`: Lean's `tan (π/2) = 0` makes the angular
+   condition `|perp| < 0`. That is not a junk-value artifact; it is right. The
+   chord bound `⟨w,u⟩ < R cos(π−γ) = 0` cuts away precisely the half-plane the
+   half-turn opening would sweep.
+2. **It is therefore the EASIEST of the three, not the hard leftover.** Nothing
+   to subtract, and — unlike the obtuse case — no `γ`-chord null set either.
+
+Both are the same error twice: reasoning about a degeneration from its
+*description* rather than evaluating it. Structurally identical to the "fourth
+acuteness gate" retracted the same week, which reasoned about a hypothesis from
+its *signature* rather than reading the proof. Third instance of this class in
+this bean.
+
+### What carries it
+
+The two certificates again, a third use. At `cos γ = 0` each collapses to one
+term, and the `γ`-chord comes out **strict**:
+
+    perp_{t+2γ}·sin β = cos α·(γ-chord slack)     W_α's lower edge ⟹ slack > 0
+    perp_t·sin α      = −cos β·(γ-chord slack)    W_β's upper edge ⟹ slack > 0
+
+In the obtuse case that chord is extracted from `w ∉ W_sub`
+(`gamma_chord_of_notMem_sub`) and concludes `≤`, which is exactly what forces
+`volume_chordLine`. Here `W_sub` is empty, so that hypothesis carries no
+information and the certificates supply the chord directly.
+
+Also generalised: the two cone bounds and the covering now take `π/2 ≤ γ` (they
+only ever needed `cos γ ≤ 0`), with `α, β < π/2` derived inline since
+`acute_of_obtuse_third`'s hypothesis is strict.
+
+### Residual — unchanged, and it is the only one left
+
+All three cases rest on the same single cited totally-geodesic /
+normalized-position identification (`geodesicPlaneThrough`, File A1 — a
+definition with a citation, not an axiom or `sorry`). The obtuse and
+right-angled halves assume nothing the acute one does not.
+
+**Still not closing this bean.** Whether that shared citation leaves H4-5 "done"
+is an owner call, not mine — rule 13a. What has changed since the last entry is
+that the coverage caveat I attached to that question is gone.
+
+
+## 2026-09-11 (later) — the identity is UNCONDITIONAL
+
+`ObtuseTiling.idealTetVolume_of_vertices_unconditional`, sorry-free:
+
+    Vol(idealTetrahedron P₁ P₂ P₃) = Λ(α) + Λ(β) + Λ(γ)
+
+for **every** positive triple summing to `π`. No acuteness, no distinguished
+angle, no case hypothesis. This is H4-5's actual target rather than a
+case-parametrised family, and it is the first statement in this arc that a reader
+can cite without checking which branch they are in.
+
+### A gap in my own headline claim, two hours old
+
+The entry above says "the whole angle simplex is covered: acute, obtuse,
+right-angled — every admissible triple falls in exactly one". All three theorems
+are stated with **`γ`** as the distinguished angle. A triple whose non-acute
+angle is `α` or `β` satisfies **none of them as written**. The claim was really
+about a relabelling step, and that step had not been taken.
+
+That is the third instance in this bean of one shape: something true of the parts
+asserted of the whole without checking the join —
+
+1. a hypothesis inherited down a chain, assumed to be needed (the "fourth
+   acuteness gate");
+2. a degeneration reasoned about from its description rather than evaluated
+   (`W_sub` "becomes a half-plane", when it becomes `∅`);
+3. three cases assumed to compose into a cover, when composing them needs a
+   relabelling lemma nobody had proved.
+
+### What closes it
+
+The relabel is **exact**, not approximate. With `α+β+γ = π`, sending
+`(α,β,γ) ↦ (β,γ,α)` and `t ↦ t+2γ` names the *same three circle points* — the
+third lands on `t + 2π`. So it is literally the same region, given that
+`idealTetrahedron` ignores vertex order, which reduces to one observation:
+
+    verticalHalfSpaceThrough b c i = {p | 0 < sarea b c i * sarea b c (p 0, p 1)}
+
+is a product of two signed areas **sharing the edge `b c`**, so swapping the
+edge's endpoints negates both factors and changes nothing. Hence
+`verticalHalfSpaceThrough_swap` → `idealTetrahedron_cyclic`. `Λ(α)+Λ(β)+Λ(γ)` is
+symmetric outright.
+
+New: `verticalHalfSpaceThrough_swap`, `idealTetrahedron_cyclic`,
+`circlePoint_add_two_pi`, `idealTetVolume_of_vertices_nonacute` (obtuse + right
+in one, `π/2 ≤ γ`), and the unconditional theorem.
+
+`at_most_one_obtuse` turned out not to be needed — the split is by cases rather
+than by exclusion, so a triple with two non-acute angles lands in a branch whose
+hypotheses `linarith` refutes on its own.
+
+### Residual — unchanged, and now genuinely the only one
+
+The single cited totally-geodesic / normalized-position identification
+(`geodesicPlaneThrough`, File A1 — a definition with a citation, not an axiom or
+`sorry`). The acute theorem already rested on it; everything added in this arc
+assumes nothing further.
+
+**Still not closing this bean** (rule 13a): whether that citation leaves H4-5
+"done" is an owner call. What has changed is that there is no longer any
+coverage caveat attached to that question.
+
+
+## MERGED to main — PR #7163 (2026-09-12), rebase-merge, 13 commits
+
+`ac105d50e39`. All 13 commits verified on `main` by `git cherry`, and both the
+headline declaration and the final binder fix confirmed present in the merged
+tree.
+
+**What landed.** H4-5 (obtuse) AND the right-angled slice, plus the
+cyclic-relabel lemma that makes the coverage claim true rather than asserted:
+
+- `obtuseWedges_ae_eq_inscribedTriangle` — the signed tiling
+  `T =ᵐ (W_α ∪ W_β) \ W_sub`, the a.e. set identity `IdealTetObtuseReduction`'s
+  header had anticipated.
+- `hypVolume_chimney_inscribedTriangle_obtuse` / `_right`, and
+  `idealTetVolume_of_vertices_obtuse` / `_right` on the vertex-defined region.
+- `idealTetVolume_of_vertices_unconditional` — every positive triple summing to
+  π, by `rcases le_or_gt (π/2) γ / α / β` with cyclic relabelling.
+
+All sorry-free. `#print axioms` on all six headline declarations returns
+`[propext, Classical.choice, Quot.sound]`.
+
+**The route.** Signed subdivision, not analytic continuation. The mechanism is a
+two-term certificate got by eliminating `R − ⟨w,u⟩` between the two chord slacks
+at a vertex; `R` cancels and the identity holds for ANY triple summing to π.
+Only reading off its SIGN uses `cos γ ≤ 0`. Read backwards it gives the
+subtracted-wedge containment; at `cos γ = 0` it gives the right-angled chord
+strictly.
+
+**Three retractions of my own claims, all in the PR body.** (1) The "fourth
+acuteness gate" in `idealTet_eq_chimney` did not exist — the three hypotheses
+were carried and never used; dropping them carries the whole vertex-incidence →
+face → region chain to obtuse triangles. (2) `W_sub` at `γ = π/2` degenerates to
+the EMPTY SET, not a half-plane, making that the easiest case rather than the
+hard leftover. (3) "The whole simplex is covered" needed a lemma nobody had
+proved, since all three case theorems distinguish `γ`.
+
+Findings 1 and 2 are one error class twice: reasoning about a thing from its
+signature or description instead of evaluating it.
+
+**STAYS in-progress, per AGENTS.md rule 13a.** The mathematics of H4-5 is
+closed, but all three cases rest on the same single cited totally-geodesic /
+normalized-position identification (`geodesicPlaneThrough`, File A1 — a
+definition with a citation, not an axiom or `sorry`). Whether that shared
+citation leaves H4-5 "done" is an owner call, not an agent one. The obtuse and
+right-angled halves assume nothing the acute one does not; the coverage caveat
+that used to sit beside that question is gone.

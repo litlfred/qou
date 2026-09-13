@@ -46,8 +46,7 @@ open QOU.Archimedean.HyperbolicVolume
 /-- **Face opposite `P₃`** (through `∞, P₁, P₂`), oriented toward `P₃`, projects to
 chord 1 of the inscribed triangle. -/
 theorem face1 {t α β γ : ℝ}
-    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ)
-    (hα : α < π / 2) (hβ : β < π / 2) (hγ : γ < π / 2) (hsum : α + β + γ = π)
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ) (hsum : α + β + γ = π)
     (w : ℝ × ℝ) :
     (0 < sarea (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
         (circlePoint 1 (t + 2 * γ + 2 * α)) *
@@ -58,7 +57,7 @@ theorem face1 {t α β γ : ℝ}
   have hw := sarea_circlePoint_unit t γ w
   have hP3 := sarea_circlePoint_unit t γ (circlePoint 1 (t + 2 * γ + 2 * α))
   have hinc := (inscribedTriangle_vertex_incidence (R := 1) (t := t)
-      one_pos hα0 hβ0 hγ0 hα hβ hγ hsum).2.2.2.2
+      one_pos hα0 hβ0 hγ0 hsum).2.2.2.2
   simp only [chordHalfplane, Set.mem_setOf_eq, one_mul] at hinc ⊢
   have hpos : 0 < sarea (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
       (circlePoint 1 (t + 2 * γ + 2 * α)) := by
@@ -74,8 +73,7 @@ theorem face1 {t α β γ : ℝ}
 /-- **Face opposite `P₁`** (through `∞, P₂, P₃`), oriented toward `P₁`, projects to
 chord 2 of the inscribed triangle. -/
 theorem face2 {t α β γ : ℝ}
-    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ)
-    (hα : α < π / 2) (hβ : β < π / 2) (hγ : γ < π / 2) (hsum : α + β + γ = π)
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ) (hsum : α + β + γ = π)
     (w : ℝ × ℝ) :
     (0 < sarea (circlePoint 1 (t + 2 * γ)) (circlePoint 1 (t + 2 * γ + 2 * α))
         (circlePoint 1 t) *
@@ -86,7 +84,7 @@ theorem face2 {t α β γ : ℝ}
   have hw := sarea_circlePoint_unit (t + 2 * γ) α w
   have hP1 := sarea_circlePoint_unit (t + 2 * γ) α (circlePoint 1 t)
   have hinc := (inscribedTriangle_vertex_incidence (R := 1) (t := t)
-      one_pos hα0 hβ0 hγ0 hα hβ hγ hsum).1.2.2
+      one_pos hα0 hβ0 hγ0 hsum).1.2.2
   simp only [chordHalfplane, Set.mem_setOf_eq, one_mul] at hinc ⊢
   have hpos : 0 < sarea (circlePoint 1 (t + 2 * γ)) (circlePoint 1 (t + 2 * γ + 2 * α))
       (circlePoint 1 t) := by
@@ -126,8 +124,7 @@ chord 3 of the inscribed triangle.  Here the half-angle `γ + α = π − β` ex
 `π/2`, so the signed area appears with the OPPOSITE sign; the orientation vertex
 `P₂` (negative side) still pins the half-space to chord 3. -/
 theorem face3 {t α β γ : ℝ}
-    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ)
-    (hα : α < π / 2) (hβ : β < π / 2) (hγ : γ < π / 2) (hsum : α + β + γ = π)
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ) (hsum : α + β + γ = π)
     (w : ℝ × ℝ) :
     (0 < sarea (circlePoint 1 t) (circlePoint 1 (t + 2 * γ + 2 * α))
         (circlePoint 1 (t + 2 * γ)) *
@@ -138,7 +135,7 @@ theorem face3 {t α β γ : ℝ}
   have hw := sareaP1P3 (t := t) (α := α) (β := β) (γ := γ) hsum w
   have hP2 := sareaP1P3 (t := t) (α := α) (β := β) (γ := γ) hsum (circlePoint 1 (t + 2 * γ))
   have hinc := (inscribedTriangle_vertex_incidence (R := 1) (t := t)
-      one_pos hα0 hβ0 hγ0 hα hβ hγ hsum).2.1.2.2
+      one_pos hα0 hβ0 hγ0 hsum).2.1.2.2
   simp only [chordHalfplane, Set.mem_setOf_eq, one_mul] at hinc ⊢
   have hneg : sarea (circlePoint 1 t) (circlePoint 1 (t + 2 * γ + 2 * α))
       (circlePoint 1 (t + 2 * γ)) < 0 := by
@@ -167,15 +164,14 @@ now an independent object, and its coincidence with the chimney is a proved theo
 not an adopted convention.  Sorry-free; the only cited input is the totally-geodesic
 classification adopted as a definition in File A1. -/
 theorem idealTet_eq_chimney {t α β γ : ℝ}
-    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ)
-    (hα : α < π / 2) (hβ : β < π / 2) (hγ : γ < π / 2) (hsum : α + β + γ = π) :
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ0 : 0 < γ) (hsum : α + β + γ = π) :
     idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
         (circlePoint 1 (t + 2 * γ + 2 * α))
       = chimney (inscribedTriangle 1 t α β γ) 1 := by
   ext p
-  have hf1 := face1 (t := t) hα0 hβ0 hγ0 hα hβ hγ hsum (p 0, p 1)
-  have hf2 := face2 (t := t) hα0 hβ0 hγ0 hα hβ hγ hsum (p 0, p 1)
-  have hf3 := face3 (t := t) hα0 hβ0 hγ0 hα hβ hγ hsum (p 0, p 1)
+  have hf1 := face1 (t := t) hα0 hβ0 hγ0 hsum (p 0, p 1)
+  have hf2 := face2 (t := t) hα0 hβ0 hγ0 hsum (p 0, p 1)
+  have hf3 := face3 (t := t) hα0 hβ0 hγ0 hsum (p 0, p 1)
   -- membership in the four half-spaces (LHS) and in the chimney (RHS), unfolded
   have hL : p ∈ idealTetrahedron (circlePoint 1 t) (circlePoint 1 (t + 2 * γ))
         (circlePoint 1 (t + 2 * γ + 2 * α)) ↔

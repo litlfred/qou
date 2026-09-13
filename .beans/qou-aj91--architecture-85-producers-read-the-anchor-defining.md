@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-09-06T10:21:41Z
+updated_at: 2026-09-08T07:45:38Z
 ---
 
 ## What
@@ -966,3 +966,5 @@ The option-1 tranche is landed and holding; the open item is unchanged and is
 the one this bean says must not be resolved by editing 85 files — **which of
 the two readings of the anchor-read idiom is intended.** Nothing here settles
 that, and nothing here needs it settled.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

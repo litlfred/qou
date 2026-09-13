@@ -526,3 +526,42 @@ more explicit, but neither was necessary. **The error log names every failure it
 found; a tactic that does not appear in it succeeded.** Read the whole log
 before theorising about a tactic — the failing hypotheses printed *above* the
 error are a free proof that everything producing them worked.
+
+## TRAP — a structure with `add_*`/`neg_*` simp projections but NO binary-`sub` ones
+
+`QOU.MathlibExt.HeckeRankTwoMarkov.Hecke2` carries `@[simp]` projections for
+`0`, `1`, `+`, unary `-`, `*` and `•` — and **none for binary `-`**. So after a
+`map_sub` the goal `(σ - h • 1).const = -h` is stuck: `ext <;> simp [...]` leaves
+`unsolved goals` with the subtraction sitting unreduced, and the error names the
+*projection* goals, which reads like a missing `sigma`/`sigmaInv` unfolding
+rather than a missing `Sub` lemma. (Measured 2026-09-12, `HeckeTowerWitness.lean`
+`collapse_twGenInv`; it was the only error in the file.)
+
+**Fix at the consumer: add `sub_eq_add_neg` to the `simp` set.** `Sub` comes from
+`AddCommGroup`'s default `a + -b`, so that one rewrite routes the goal through
+the `add_*`/`neg_*` projections that *do* exist:
+`ext <;> simp [sigma, sigmaInv, sub_eq_add_neg]`.
+
+Prefer this to adding `sub_const`/`sub_gen` upstream when the defining file is
+already merged on `main` — the consumer-side fix touches one branch, the
+upstream one re-opens a file other branches are importing.
+
+**Generalisable check:** before debugging a stuck projection goal, list which
+operations the structure actually has `@[simp]` lemmas for. An absent one is
+invisible in the error message, which shows only the un-reduced term.
+
+## STABLE — `Set.image_subset` is deprecated at mathlib `f897ebcf72cd`
+
+→ **`Set.image_mono`**, and the signature changed shape: `f` went from an
+**explicit** argument to an **implicit** one.
+
+```lean
+Set.image_subset : ∀ {α β} {a b : Set α} (f : α → β), a ⊆ b → f '' a ⊆ f '' b   -- old
+Set.image_mono   : ∀ {α β} {f : α → β} {s t : Set α}, s ⊆ t → f '' s ⊆ f '' t   -- new
+```
+
+So the migration is not a rename alone — **drop the explicit `_` placeholder**:
+`Set.image_subset _ hsub` becomes `Set.image_mono hsub`. Leaving the `_` in
+gives a confusing arity error rather than a deprecation notice. The deprecation
+itself is a **warning**, so it passes `lake build` and only fails a
+zero-warnings gate.

@@ -120,7 +120,8 @@ reconstructs that trace from its twist pair: `θ + θ⁻¹ = tr M`. This states 
 in monodromy language against the corpus's actual `M` — the categorical "`continuation = M acts`",
 modulo the open geometric identification `mon.is_seifert_gauss_manin`. -/
 theorem framing_reconstructs_monodromy_trace
-    [mon : QOU.BraidKnot.BringWPlaneMonodromy]
+    {is_seifert_gauss_manin : Prop}
+    [mon : QOU.BraidKnot.BringWPlaneMonodromy is_seifert_gauss_manin]
     (self : StokesMonodromyFraming mon.M.trace) :
     self.theta + (self.theta)⁻¹ = mon.M.trace :=
   self.theta_add_inv_eq_tau

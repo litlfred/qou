@@ -126,6 +126,28 @@ writing "3.2 G recoverable" into a report. Only the **697 M
 `/tmp/lean-v4.24.0-linux.zip`** is genuinely reclaimable. `readlink -f
 ~/.elan/toolchains/*` before proposing any `/tmp` cleanup.
 
+## STABLE — stream the parts INTO `tar`; do not materialise the tarball (2026-09-11)
+
+The leak trap below exists only because the documented recipe writes one
+~1.7 GiB temp file. It does not have to. Fetch into a **throwaway** repo under
+`/tmp` (a fetch into the real `.git` is unreclaimable without gc — and `.git`
+here is already 12 G), then pipe:
+
+```sh
+T=/tmp/cachefetch; rm -rf $T; git init -q $T
+git -C $T remote add origin https://github.com/litlfred/qou   # proxy supplies auth
+git -C $T fetch --depth=1 -q origin lake-cache/qou-v4-24-0    # 95 s, 1.7 G
+C=$(git -C $T rev-parse FETCH_HEAD)
+P=$(git -C $T ls-tree --name-only $C | grep '^lake-oleans\.tgz\.part' | sort)
+( for p in $P; do git -C $T show "$C:$p"; done ) | tar xzf - -C /home/user/qou
+echo "PIPESTATUS=${PIPESTATUS[*]}"   # must be '0 0'; a truncated stream is silent
+rm -rf $T
+```
+
+Measured 2026-09-11 on a fresh container: fetch 1m35s, extract **50 s**, peak
+disk 32 G used / 6.0 G free, back to 7.7 G free after `rm -rf $T`. **Nothing to
+leak, so no `trap` needed** — but keep the `trap` if you do use `$TGZ`.
+
 ## TRAP — the restore's temp tarball is ~1.6G and nothing reaps it
 
 One leaked `/tmp/tmp.*` survived thirteen days and drove the container to
@@ -211,7 +233,22 @@ shared disk pressure, a one-core box running two heavy `lean`s, and a
 half-written olean visible through your hardlink mirror (exit 139, harness §3).
 Check `ps aux | grep '[l]ean -o'` before blaming your own harness.
 
-## STABLE — UGB is NOT in the qou cache; build it lean-direct in ~4 min (2026-09-05)
+## STABLE — UGB *IS* in the qou cache as of the 2026-09-06 reseed (corrected 2026-09-11)
+
+**The heading below is SUPERSEDED; the recipe under it is still the fallback.**
+`lake-cache/qou-v4-24-0` head **`a792c46d01b`** (the 2026-09-06 gap-filled,
+20-part, 1.70 GiB seed) extracts **6492 oleans** and carries all three paper
+packages: root packages **3758**, QOU **2703**, **UGB 29**, **Fred2005 2** —
+plus the seven `mathlib-gap` modules (`RingTheory/HopfAlgebra/Basic`,
+`Topology/FiberBundle/Basic`, `Analysis/Complex/UpperHalfPlane/Basic`, … all
+verified PRESENT). So on a fresh container **one restore is the whole job**:
+no `lake-cache/ugb-v4-24-0`, no `…-root-import-closure`, no
+`scripts/lean-restore-gap-oleans.sh`. Verify by counting before fetching an
+addon. Trace coverage measured **100.0 % in all three trees** (3758/3758,
+2703/2703, 29/29) — so `.lake/RESTORED-NO-TRACES` is correctly ABSENT, and
+the old blanket "a restored tree has no traces" is false for this seed.
+
+### superseded (2026-09-05): UGB is NOT in the qou cache; build it lean-direct in ~4 min
 
 `lake-cache/qou-v4-24-0` carries Mathlib + QOU oleans and **no UGB**, so `lean`
 on anything doing `import QOU` dies at `unknown module prefix 'UGB'` —
@@ -312,6 +349,19 @@ block's sidecar (128 files for one block) — revert all but yours.
    consumers is not a blast-radius check.
 6. **`lean -o` refuses a source outside its root** (cwd, or `--root`): stand-in /
    mutant modules go under a scratch root laid out `QOU/…/Mod.lean` — harness §10.
+
+## TRAP — a theorem that IS a refutation needs more than the gate → `verification-harness.md` §19
+
+`exit 0` + clean `#print axioms` does **not** detect an unused or unsatisfiable
+hypothesis, and for a refutation that failure mode "proves" a route dead on
+nothing. A red mutant proves only **syntactic** dependence (`rewrite failed`);
+the claim worth making needs a concrete instance where the hypothesis **fails
+and the conclusion fails with it** — `A = R = ℚ` + `norm_num` does it in three
+lines. Also check whether a restrictive-looking binder is actually *free* (here
+`u : Rˣ` is forced by the quadratic, which WIDENS the refutation), and
+`grep` every backticked declaration the docstring cites: one was dangling, and
+a `section` name is not part of a full name. Guard the mutation harness — a
+`sed` that matches nothing yields a green run reported as a pass.
 
 ## STABLE — the honest dispositions when a proof will not close
 
@@ -424,8 +474,13 @@ merge is not a current claim.
 
 | what | command | last seen | when |
 |---|---|---|---|
-| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3470** (6990 on 2026-09-03; 3407 on the 2026-08-29 seed) | 2026-09-04 |
-| per-paper mathlib oleans (the OTHER half — always check both) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **2846**; union mirror 5733 | 2026-09-04 |
+| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3480** on the `a792c46d01b` seed (3470 on 2026-09-04; 6990 on 2026-09-03) | 2026-09-11 |
+| per-paper mathlib oleans (the OTHER half — check, but it may not EXIST) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **0 — `content/*/lean/.lake` had `build/` and NO `packages/`**, so ONE mathlib tree, no shadowing, no union mirror (2846 on 2026-09-04) | 2026-09-11 |
+| whole restore, fresh container | `find . -name '*.olean' \| wc -l` | **6492** = root 3758 + QOU 2703 + UGB 29 + Fred2005 2 | 2026-09-11 |
+| restore ALREADY present + bg build running | as above | **10408** = root packages 3758 + per-paper build 2806 + per-paper packages 3813. Root count 3758 matched the seed EXACTLY, so the restore was in place and **no fetch was needed** — check before spending 1.7 GiB | 2026-09-12 |
+| union mirror over both trees, one `MathlibExt` file | `cp -aln` per §17 | **6687 oleans, 5.1 G apparent, `df` free UNMOVED** (12 G before AND after `rm -rf`) — hardlinks; also immune to the concurrent `lake build`. Real trees unchanged after removal (3758 / 2816 / 3813), so the `rm -f`-before-write rule held | 2026-09-12 |
+| lean-direct, `MathlibExt/HeckeTowerWitness.lean` (warm) | `time lean -DautoImplicit=false -s 65536 <f>` | **2.9 s** wall / 4.0 s user; dep rebuilds 51 s cold (user 5.6 s — page cache) and 2.8 s warm | 2026-09-12 |
+| cold vs warm lean-direct, `QBeta/ConventionDAdmissibleRoots.lean` | `time lean -DautoImplicit=false -s 65536 <f>` | **1m05s cold / 4.5 s warm**; `user` 3.3 s both — cold PAGE CACHE, not a rebuild | 2026-09-11 |
 | cold vs warm `lean`-direct, one Mathlib file | `time lean <file>` | 1m52s cold / 4.7 s warm; `user` 29 s / 4 s | 2026-09-03 |
 | lean-direct rebuild of the H3-Gram cone (cold) | `lean -o … QOU/{Shared/DetFin,Machinery/MarkovTraceOnHecke,Machinery/HeckeH3GramNondegeneracy,Interactions/GramMatrixH3Symbolic}.lean` | 330 / 245 / 69 / 207 s | 2026-09-03 |
 | whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate | 2026-08 |
@@ -474,7 +529,16 @@ imported module's mmapped region. Scope: `Init`, `Lean.Expr`, `Lean.Parser`,
 `Lean.Environment` all exit 0, but ~40 of 89 `Lean/Elab/*` modules segfault, so anything
 needing the elaborator dies, and every Mathlib module reaches it via `Mathlib.Init`.
 
-**The discriminator, and run it before touching any cache:** count the FOUR artifact
+**🛑 The artifact-count discriminator OVER-FIRES — measured 2026-09-11.** This
+container's `/tmp/lean-v4.24.0/lib/lean` holds **1885 `.olean` / 1885 `.ilean` /
+0 `.trace` / 0 `.c`** — two of the four at zero, which the rule below calls
+corrupt — and the toolchain is **healthy**: `theorem t : 1+1=2 := by decide` plus
+`#eval` exits 0, and every Mathlib-importing file compiles. The GitHub-release
+zip simply does not ship `.trace`/`.c`. **Run the elaborator, don't count files:**
+a 2-line scratch with a `by decide` and an `#eval` is the sound 15-second test;
+fall back to counting only to explain a segfault you have already observed.
+
+**The (weaker) count check:** count the FOUR artifact
 types under the toolchain's `lib/lean`. A healthy 4.24 core has all four in near-equal
 numbers (measured: 1885 / 1884 / 1884 / 1884). Mathlib itself legitimately has
 `.olean` only and **zero** of the other three — it is not module-system'd at
@@ -510,3 +574,94 @@ The shell's own command line contains the pattern, so `pkill -f ptolemy_class_sw
 terminates the caller. `ps | awk '/[p]tolemy.../'` does not help: the bracket trick stops
 the awk PROGRAM matching itself, not the surrounding bash command line. Cost two turns.
 Kill by PID.
+
+**Same defect in the DETECTION direction, and AGENTS.md hands it to you (2026-09-12).**
+§17a says *"First move in a fresh session: `pgrep -f 'lake build'`"* — and that command
+**self-matches**, because the harness wraps every call in a `bash -c` whose command line
+contains the pattern. Measured: it returned two PIDs, both my own shell, alongside a
+`lean -o` query that did the same; the genuinely-running `lake` was a *third* process the
+noise nearly buried. **Filter the harness out** —
+`ps -eo pid,etime,cmd | grep -E '(lake|lean) ' | grep -v shell-snapshots` — or read
+`/tmp/qou-lean-build-status.json`, which names the step (`update`/`build`) and the attempt
+count without any matching at all.
+
+## STABLE — the SessionStart `lake build` log may already CONFIRM your diagnosis (2026-09-12)
+
+AGENTS.md notes `/tmp/qou-lake-build.log` is kept; the point worth having is that it is an
+**independent second opinion from the canonical path**, free. Verifying one new file, the
+background build (not commissioned by me, and *failed* — status `attempts: 5`) had reached
+`✖ [6641/6642] Building QOU.MathlibExt.HeckeTowerWitness` with the **identical** error my
+lean-direct gate found, at the same `188:59`. One `grep '✖'` turned a single-harness claim
+into two agreeing methods, and simultaneously showed the other **6641** modules building.
+A `status: failed` in that JSON is therefore not a reason to ignore the log — read it
+*first* and check whether the sole failure is the file you were sent to verify.
+
+**🛑 DATE THE LOG BEFORE BELIEVING IT — measured the SAME DAY, on the same file.** The
+entry above is true of the run that produced it and reads as though the log is always
+current. It is not: it is written **once per session start** and never refreshed. Second
+pass on `HeckeTowerWitness.lean`, the log was stamped **18:43 UTC** against a fix commit at
+**19:00** and a further edit at **19:08**, so its `✖` — same module, same `188:59`, same
+`Set.image_subset` deprecation — described a file **two revisions dead**. Quoting it would
+have reported a fixed defect as live, with the authority of "two agreeing methods".
+Discriminator, three cheap fields: `ls -la /tmp/qou-lake-build.log` vs
+`git log -1 --format=%ci` on the file **and** its `ls -la` mtime. Older than either ⇒ it is
+history, not a second opinion. (The `timestamp` in `/tmp/qou-lean-build-status.json` dates
+the same run.)
+
+## TRAP — `lean-library-sweep.py` measures the CONTAINER when the olean tree is empty (2026-09-07)
+
+The sweep's value comes from its *dirty closure*: rebuild only modules whose olean
+predates their source. In a container whose QOU olean tree was never populated, every
+module is "never built (new)", so the closure is the **whole library** and the sweep
+becomes a full from-source rebuild without Lake's ordering. Measured here:
+
+```
+library modules        2775
+  source-changed          1
+  never built (new)    2773
+  DIRTY CLOSURE        2774
+```
+
+In the ~12 % it covered before being stopped it reported **195 RED / 147 ok**. That is
+irreconcilable with the **0 red** whole-corpus result recorded on `main` on 2026-09-05
+(261 content blocks + 74 dirty library modules), and the discriminator is the closure
+size, not the code. **A high red rate from this script is a symptom of an empty olean
+tree — do not report it as a corpus finding.**
+
+Two further mechanics worth having:
+
+- **Read the header before the verdicts.** `DIRTY CLOSURE` ≈ `library modules` means the
+  run is a full rebuild and its runtime and reds are both about the container.
+- **Do not pipe it through `tail`.** The per-module verdicts stream but the summary is at
+  the TOP; `| tail -30` discards every verdict before the alphabetical tail and leaves
+  only `SKIPPED … (red dependency: …)` lines, which read as a corpus-wide failure. Cost a
+  15-minute re-run.
+
+**What to do instead when the branch touches few files.** Verify the changed module's
+actual import cone from source. `LEAN_PATH` with a scratch dir FIRST, rebuild each QOU
+dependency from source into it, then compile the changed file against that. For a module
+whose only QOU import was one file this was **55 s + 5 s** against an hour of sweep, and
+it is the stronger claim — an `exit 0` against the restored cache is a statement about
+the snapshot, this one is about the source. Mind the partial-overlay rule already in this
+file: the scratch root captures the namespace it contains, so it must hold every
+`QOU.<Ns>.*` module the file imports.
+
+## TRAP — an "incomplete" olean tree may be one a `lake build` is WRITING (2026-09-08)
+
+`scripts/lean-build-bg.sh` is started by a **SessionStart hook** and runs `lake
+build` with cwd = the paper package, so the per-paper tree is under construction
+from minute one of a fresh session. Measured over ~40 min, one session: per-paper
+went 2 -> 17 QOU oleans and 2352 -> 3007 mathlib oleans while root sat unchanged
+at 2442 / 3469. So a count is a snapshot of a moving target, and a "missing"
+`Mathlib/Tactic.olean` can be a TIMING fact rather than a fact about the restore.
+The root restore is NOT evicted by this build (its cwd is the paper package).
+
+It reached the GATE: `lean-shadow-verify.sh` picked a **2**-olean tree over the
+restored **2442**-olean one and died on the first Mathlib import, reporting a
+failure entirely its own. Fixed on
+`claude/w1-route2-fibre-monodromy-order-2026-09-07` (pick by count, rank package
+locations, warn on a running build).
+
+**First move in a fresh session: `pgrep -f 'lake build'`.** Full detail, and why
+§17's union mirror is still the stronger tool than ranking:
+`verification-harness.md` §17a.

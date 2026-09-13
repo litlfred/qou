@@ -1,0 +1,197 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T12:13:37.819211+00:00",
+  "commitSha": "03d6c9485cfe1c086dadef169caae3356146bc3f",
+  "assertions": [
+    {
+      "name": "path_counts_match_lean_table",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean branchOf_six..branchOf_threeThree (decide)"
+    },
+    {
+      "name": "dim_eq_branch_all_eleven",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean dim_eq_branch"
+    },
+    {
+      "name": "burnside_720",
+      "computed": "720",
+      "expected": "720",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean fDim_sq_sum"
+    },
+    {
+      "name": "branched_formula_matches_step3_h6_characters",
+      "computed": "7.15646756954031296321567366184714287667878999402934220306628e-60",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "step-3 witness h6_bond_candidates[*].chi_by_block vs Lean InterfaceBranching"
+    },
+    {
+      "name": "convention_D_weight_supported_on_two_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean H6Block.twoRow hypothesis"
+    },
+    {
+      "name": "pin_inside_lean_interval",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean h_sq_le_twelfth_of_q_le: 1 < q <= 23/20 => h^2 <= 1/12"
+    },
+    {
+      "name": "three_three_sign_pattern",
+      "computed": "--+--",
+      "expected": "--+--",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean h6_signs_of_small; interface_frobenius_table"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "gamma-gamma-h6-interface-branching-probe",
+  "scriptFile": "gamma_gamma_h6_interface_branching_probe.py",
+  "scriptHash": "4dae832940af",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gamma_gamma_h6_interface_branching_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gamma_gamma_h6_interface_branching_probe.py"
+  },
+  "description": "qou-ales step 6: the H_6 interface bond G^m = (sigma_2 sigma_3^-1)^m is decided by the H_3 (2,1) character through the branching rule. Cross-checks QOU/Mass/GammaGammaH6Interface.lean: Young-lattice path counts (independent recursion) equal the Lean table; the branched formula a + b chi_m + c reproduces the step-3 witness chi_by_block on the four two-row blocks for m = 0..5; the convention-D weight is supported exactly on the two-row blocks; the pin lies in the Lean interval and the (3,3) condition 1 + 2 chi_m has signs (-,-,+,-,-). No AME/CODATA binding value or census is read.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "convention": "D (two-row truncation; SU(2) Markov weight y_lambda_su_n(6, q, 2))",
+    "dps": 60,
+    "tolerance": "1.00000000000000000000000000000000000000000000000000000000000e-40",
+    "step3_witness": "computations/probes/gamma-gamma-h3-psd-selector-probe.witness.json"
+  },
+  "data": {
+    "h_sq": "0.0437062085325219894020193356773883097682139607135222162428474",
+    "branching_table": {
+      "(6,)": [
+        1,
+        0,
+        0
+      ],
+      "(5, 1)": [
+        3,
+        1,
+        0
+      ],
+      "(4, 2)": [
+        3,
+        3,
+        0
+      ],
+      "(4, 1, 1)": [
+        3,
+        3,
+        1
+      ],
+      "(3, 3)": [
+        1,
+        2,
+        0
+      ],
+      "(3, 2, 1)": [
+        2,
+        6,
+        2
+      ],
+      "(3, 1, 1, 1)": [
+        1,
+        3,
+        3
+      ],
+      "(2, 2, 2)": [
+        0,
+        2,
+        1
+      ],
+      "(2, 2, 1, 1)": [
+        0,
+        3,
+        3
+      ],
+      "(2, 1, 1, 1, 1)": [
+        0,
+        1,
+        3
+      ],
+      "(1, 1, 1, 1, 1, 1)": [
+        0,
+        0,
+        1
+      ]
+    },
+    "f_lambda": {
+      "(6,)": 1,
+      "(5, 1)": 5,
+      "(4, 2)": 9,
+      "(4, 1, 1)": 10,
+      "(3, 3)": 5,
+      "(3, 2, 1)": 16,
+      "(3, 1, 1, 1)": 10,
+      "(2, 2, 2)": 5,
+      "(2, 2, 1, 1)": 9,
+      "(2, 1, 1, 1, 1)": 5,
+      "(1, 1, 1, 1, 1, 1)": 1
+    },
+    "burnside_sum_f_sq": 720,
+    "y_lambda_two_row": {
+      "(6,)": "0.115324224902066166110369069890190531513760477331516775988521",
+      "(5, 1)": "0.0789529624759266789877196313922109985250813198538362583216537",
+      "(4, 2)": "0.0460324346920204269365201537865815444993168134807711627754234",
+      "(3, 3)": "0.0151238100980233193044702778139041150733963204144722934848800"
+    },
+    "y_lambda_positive_support": [
+      "(6,)",
+      "(5, 1)",
+      "(4, 2)",
+      "(3, 3)"
+    ],
+    "three_three_condition_1_plus_2chi": {
+      "1": "-1.08741241706504397880403867135477661953642792142704443248569",
+      "2": "-0.821354700541335446491249508076526956144387159834668061861881",
+      "3": "4.98837162595992817345639873603743340017827916502362103693526",
+      "4": "-1.34133352740799114011004216677818943907717620628731697746460",
+      "5": "-0.544707287158858083845599117715731557519321052857782233112974"
+    },
+    "three_three_condition_signs": "--+--",
+    "root_of_1_plus_2chi5_informational": "0.0923354359440870157576434481337066671480929972674885590357510"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

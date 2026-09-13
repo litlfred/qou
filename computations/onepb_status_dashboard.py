@@ -490,25 +490,31 @@ def main() -> None:
             # regression came in with 755ab8a5b7 (0.0 -> 7.31e-50).
             computed=fmt(max_gap),
             expected="0",
-            tolerance=1e-9,
+            # 1e-15 = the L1 target (1 ppQ) this dashboard reports as
+            # `all_within_1ppQ`; until 2026-09-08 the assertion gated at 1e-9
+            # while the boolean claimed 1e-15, so a regression to 1e-12 would
+            # have passed `allPassed`. Tightened, never widened (C5 of
+            # docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §7.3).
+            tolerance="1e-15",
             source="prop:operator-selection-lp strong duality",
         )
     # Markov-trace consistency: max relative difference < 1ppb.
     # NOTE: this reads `max_rel_delta`, which until 2026-08-29 was 0.0 by
     # key-miss (see the `_DELTA_KEYS` note above), so this assertion passed
     # unconditionally.  It now carries the measured value and can fail.
-    # The tolerance stays 1e-9 -- it is NOT widened to accommodate the
-    # measurement it now sees.  AGENTS.md: baselines drain, never grow.
+    # The tolerance is NOT widened to accommodate the measurement it now
+    # sees (AGENTS.md: baselines drain, never grow). It was TIGHTENED 1e-9 ->
+    # 1e-15 on 2026-09-08 so the gate matches the 1 ppQ claim it reports.
     if trm_summary["max_rel_delta"] is not None:
         builder.add_assertion(
             name="markov_trace_max_rel_delta",
             # Strings, per `add_assertion`'s drained convention. `expected` and
-            # `tolerance` are exact spec constants (0 and 1e-9), so a decimal
+            # `tolerance` are exact spec constants (0 and 1e-15), so a decimal
             # string is faithful, not float64-padding. `computed` is already an
             # mpf carried from the 50-digit source.
             computed=fmt(trm_summary["max_rel_delta"]),
             expected="0",
-            tolerance="1e-9",
+            tolerance="1e-15",
             source="cross-check-trM-1ppb (color-weighted exact methods: markov_peel vs chi-cache)",
         )
     builder.add_data("summary", summary)

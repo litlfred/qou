@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-14T17:05:00Z
-updated_at: 2026-08-14T22:05:29Z
+updated_at: 2026-09-08T07:45:47Z
 ---
 
 ## What is red
@@ -131,3 +131,5 @@ float64 integrator output be carved out (as solver output already is), or
 should the q-NS probes carry a precision tier that the ratchet accepts? Until
 that is answered the ratchet stays red on these three, and it is red for a true
 reason.
+
+## 2026-09-08: canonical tracker for the recurring "raw-float64 ratchet is RED on main" event is qou-sknx (most recent OPEN one, 2026-09-04); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7. Seven beans (08-11 … 09-06) record one recurring event; this one is kept as-is because its body carries its own finding.

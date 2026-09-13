@@ -112,6 +112,14 @@ def main() -> int:
     parts = sorted(T, reverse=True)
     assert set(parts) == set(H)
     dim_q = make_dim_q(q0)
+    # q0 comes from the chi witness at full 50-dps precision and IS the
+    # proton pin; Q0_PROTON (qou_substrate.constants.Q) is the float64
+    # convenience constant naming the same anchor. Check rather than assume:
+    # a witness built at a different pin must fail loudly, not silently
+    # weight the variants below by the wrong q.
+    assert mp.almosteq(q0, mp.mpf(Q0_PROTON), rel_eps=mp.mpf("1e-15")), (
+        f"chi witness q0={mp.nstr(q0, 20)} is not the proton pin "
+        f"{mp.nstr(mp.mpf(Q0_PROTON), 20)}")
 
     target_mev = AME_B["tritium"] - AME_B["helium-3"]          # +0.7638
     target_me = target_mev / M_E_MEV                            # +1.4947
@@ -120,7 +128,7 @@ def main() -> int:
         ("1(raw)",   lambda lam: mp.mpf(1)),
         ("sgn",      lambda lam: mp.mpf(delta_sign(lam))),
         ("sgn·dim",  lambda lam: mp.mpf(delta_sign(lam) * hook_dim(lam))),
-        ("sgn·dimq", lambda lam: mp.mpf(delta_sign(lam)) * dim_q(lam, Q0_PROTON)),
+        ("sgn·dimq", lambda lam: mp.mpf(delta_sign(lam)) * dim_q(lam)),
     ]
 
     print(f"target  B_T − B_³He = {mp.nstr(target_mev, 6)} MeV "

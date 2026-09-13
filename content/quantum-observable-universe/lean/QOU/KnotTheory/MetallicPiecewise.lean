@@ -109,11 +109,28 @@ the metallic intervals `(δ_{n-1}, δ_n)`.  The option-e v1-v7 failures
 are explained by attempting a single global closure where a piecewise
 one is required. -/
 
-/-- Conjectural witness for (M3). -/
-class DeltaLambdaPiecewise where
+/-- Conjectural witness for (M3).
+
+    **Fixed 2026-09-12 (`prop-universe-field`).** The field was typed bare
+    `: Prop` — the *universe* of propositions, not a proposition — so an instance
+    supplied a proposition rather than a proof of one and `instance := ⟨True⟩`
+    discharged the class. A carrier in that state cannot serve as a §3b
+    conjectural witness either: it asserts nothing *even as a conjecture*. The
+    statement is now a **parameter**, so assuming the conjecture costs a proof of
+    it rather than costing nothing.
+
+    Note the contrast with `MetallicSDPJumps` directly above, whose fields are
+    genuine propositions (`blindSDPCount (metallic n - ε) ≠ blindSDPCount (metallic
+    n + ε)`, `count_at_substrate : … = 252`) — the defect was local to this
+    carrier, not a habit of the file.
+
+    Proved for the shape in
+    `QOU.ProofHygiene.SelfAssumingContexts.propUniverse_inhabited`. The conjecture
+    is untouched and still open; no instance is supplied. -/
+class DeltaLambdaPiecewise (PiecewiseClosureExists : Prop) : Prop where
   /-- There exist distinct closed-form expressions on `(1, φ)` vs
       `(φ, δ_silver)` that each match the deuteron Δ_λ to within
       Wenzl-positivity bounds on their respective intervals. -/
-  piecewise_closure_exists : Prop
+  piecewise_closure_exists : PiecewiseClosureExists
 
 end QOU.KnotTheory.MetallicPiecewise

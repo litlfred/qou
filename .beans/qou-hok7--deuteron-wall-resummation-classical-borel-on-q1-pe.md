@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-07T16:58:43Z
+updated_at: 2026-09-13T06:28:19Z
 ---
 
 
@@ -478,6 +478,8 @@ question this bean previously got backwards.
 run and negative. What remains genuinely open is `REV`'s asymptotics, which is a
 statement about the *object*, not about a route to `B_D`.
 
+Taken over 2026-09-07 by claude/stalled-agents-em-linking-jilmbv; the #7093 session ended awaiting merge permission (last c0704640e2e). Child task qou-0ie7 attacks the Σβ constraint on the same branch; nothing force-pushed.
+
 ## 2026-09-07 (later still) — the Jensen step attacked; three refutations and a price (PR #7093)
 
 The section above says: "Replace the Jensen step, not the H bound." Done. It is **not replaced**,
@@ -548,3 +550,113 @@ decisive next step, and it needs a way to compute or bound P_min at moderate l w
   inequality can help; that is what refutation 3 establishes.
 
 Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+## 2026-09-11 — SHARPNESS SETTLED: REV_n = Θ(√n); the 3/4 exponent is NOT sharp (PR #7185)
+
+The one open piece of this bean since 2026-09-07 — "is the 3/4 sharp?" — is closed on the
+side the (ℓ,W)-route sections above refused to read off their flat columns. Not by a sharper
+bound on `R_λ` (which "What would decide it" asked for) but by a sharper bound on the ENERGY
+as a function of the number of rows, which every prior route threw away when it passed to
+`r ≤ √H`.
+
+**The mechanism.** `R_λ = Σ_c ε_{h(c)} − F(n) ≤ (ℓ−1)C` (hooks strictly decrease along a row,
+#7018). And with the row form `2H = Σ_{i<ℓ} λ_i(λ_i + 2i + 1)`, tangent lines on the convex row
+terms give, for `n = T_k + r`, the polynomial identity
+
+    2(H(λ) − H⁺) ≥ (ℓ − k)² − r,      H⁺ = P_k + r(k+1) = H(λ⁺),   for EVERY λ ⊢ n, every ℓ.
+
+Entropy linear in ℓ, energy quadratic in `ℓ − √(2n)`:
+
+    M_n ≤ (C + L/2)√(2n) + C²/(2L) − C = 8.80√n + 176.3,
+    REV_n ≤ M_n + log p(n) ≤ 11.37√n + 176.3.
+
+With #7014's Ω(√n): **Θ(√n).** Lean: `QOU/BraidKnot/HookSumRowTangentBound.lean`,
+`two_mul_sum_hookZ_sub_hminClosed_ge`, sorry-free, axioms `propext, Classical.choice,
+Quot.sound`. Probe `rev_sqrt_n_upper_bound_probe.py` 7/7: every step exact on all partitions
+n ≤ 30; every link of the chain at n = 2..44 (60 dps). Details and the flaw hunt on `qou-0ie7`.
+
+**What this corrects in the sections above.**
+
+- 2026-09-07 "the data cannot yet distinguish": correct at the time; the discriminator was
+  never going to be data — the route is a two-line convexity argument the enumerations could
+  not see because they never grouped by ℓ.
+- #7070 / #7081 "the lossy step is Jensen on the pair term" and #7093 "the (ℓ,W) route is close
+  to exhausted": both right about the β-bound and both beside the point. The pair term was
+  never needed; `(ℓ−1)C` with the row-indexed energy suffices.
+- **#7081's relaxation RISING above `n^{3/4}` to n = 4000 is an instrument artefact**, not a
+  fact about REV. Its Cauchy–Schwarz `Ĥ` is **48.9 % of `H_min(4000)`** at its own argmax
+  `(ℓ,W) = (151, 357)`: the column half spreads `n − ℓ` cells evenly over `λ₁ − 1` columns,
+  impossible with 151 rows, so the maximiser fed on a negative energy no partition has. Its
+  99–100 % calibration was at n ≤ 40 where `ℓ − k` is small. The "anti-caveat" in that section
+  ("a clear RISE ... not a flat column being over-read") is therefore withdrawn: it was a rise
+  in a quantity that is not an upper bound on anything at that n. Reproduced at n = 44 (R5b).
+- #7081's argmax drift `ℓ = 151` vs `√(2n) = 89` is explained: the bound's maximiser sits
+  `x = C/L = 59` rows above the staircase at every n.
+
+**Still open on this bean** (unchanged, and none of it is the sharpness question): the
+substrate-side reading of REV's Θ(√n) coefficient — the bound's `(C + L/2)√2 = 8.80` is an
+upper constant, the true `M_n/√n` is 3.19 at n = 44 and still rising toward its limit, which
+is not identified; and the q-Borel resummation negative (2026-08-21) stands. **Do not close
+this bean.**
+
+
+## 2026-09-13 — #7081 repaired at the source; TWO defects, not one; and an independent check of #7185
+
+The 2026-09-11 append correctly identified #7081's rise as an instrument artefact. The probe
+itself still asserted the false conclusion in its docstring, R3, R4 and R6 — a producer that
+gets re-run and quoted — so it is repaired here rather than only annotated. 6/6.
+
+**Defect 1 (as #7185 reported), reproduced independently.** `Hhat/H_min(n)` at this probe's own
+argmax: 1.7051 (n=40) -> 0.7005 (250) -> 0.5658 (1600) -> **0.48947** (4000, argmax (151,357)),
+matching the reported 48.9 %. The missing energy at n=4000 is 12,705.8 against the 13,337 the
+probe reported — i.e. essentially the entire figure. Every partition has `H >= H_min(n)`, so a
+lower bound falling below it feeds the maximiser energy no shape can have.
+
+**Defect 2, NEW and independent — the search under-explores every row.** The heuristic
+`if v < best - 50: break` is keyed on the GLOBAL best, but the value is UNIMODAL in `W`. At
+n = 4000, l = 88 it runs 57 -> 126 -> 260 -> 326 -> 362 -> 438 -> 507 before collapsing, so the
+break fires at W = 87 and abandons the row. `(88,174)` alone gives **326.4**, above the staircase
+floor `A*sqrt(2n) = 322.3`, and the search never saw it. Caught by asserting the staircase floor
+as a validity check — a first repair pass reported 169.4 at n = 4000, *below* that floor, hence
+not a bound at all.
+
+The two defects push in OPPOSITE directions, which is why neither surfaced as an absurdity: the
+reported figure was neither an upper nor a lower bound on anything.
+
+**The methodological error is the reusable part.** R6 calibrated `Hhat` against the true minimum
+`H` at that exact `(l,W)` and got 99.3-100 % — at n <= 40, where brute force reaches and `l - k`
+is small — then read the RATE at n = 4000. The calibration was sound; extrapolating it was not.
+Same shape as #7093's even-gap conjecture, whose two hand-checks both had all-equal gaps.
+Sharper still: R6 was written to test *"the weak link is Hhat"*, which was RIGHT, and inverted it
+on that measurement.
+
+### Independent confirmation of #7185, and a refinement of its constant
+
+Swapping the row-tangent floor `2(H - H^+) >= (l-k)^2 - r` into this probe's own maximiser, with
+no other change (same eps table, same entropy term, same search):
+
+    n            40      250     1600     4000    10000    40000
+    max         225.9    306.9    522.1    723.8   1047.1   1921.7
+    / sqrt(n)   35.72    19.41    13.05    11.44    10.47     9.609   <- falls
+    / n^{3/4}   14.20     4.882    2.064    1.439    1.047    0.679   <- falls
+    argmax l-k     59       59       59       59       59       59
+
+Richardson on the last two (the correction is `O(1/sqrt n)`) gives **8.7462**. The argmax sits
+`l - k = 59` at every n against the predicted `C/L = 59.147`.
+
+**Refinement: the coefficient is a BAND, not 8.80.** Maximising `(l-1)C - ((l-k)^2 - r)L/2`
+exactly gives `(k-1)C + C^2/(2L) + rL/2`, so the ratio oscillates with `r` in
+`[C*sqrt2, (C+L/2)*sqrt2] = [8.7277, 8.8015]`. The 8.80 on this bean is the `r = k` upper
+envelope, attained only when `n` sits just below a triangular number; Richardson's 8.7462 is
+inside the band. This bears on the open coefficient question below — it is an upper band for the
+BOUND, still well above the true `M_n/sqrt n` (3.19 at n=44).
+
+Also checked, since #7185 names it as its one honest Lean gap: `H^+ = P_k + r(k+1)` equals
+`H_min_closed(n)` at all eight test n. Numerically confirmed, not proved.
+
+**Withdrawn from this bean's 2026-09-07 sections:** "the (l,W) relaxation is faithful", "the loss
+is the Jensen step", the "anti-caveat" defending the rise, and the impact arithmetic computed
+against the inflated ~3x. **Surviving:** R1/R2 of #7081; #7093's three refutations about `P_min`
+(brute-forced, independent of `Hhat`); and the coupling factor shrinking with `l`.
+
+Status unchanged: **do not close.** The Theta(sqrt n) coefficient and the q-Borel negative stay open.

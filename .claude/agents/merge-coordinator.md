@@ -26,14 +26,14 @@ Read .claude/agent-memory/merge-coordinator/MEMORY.md
 ```
 
 That is **200 lines** (~2.8k tokens) — cheap, and it is the file every
-"see memory" reference below points at. Your whole directory is 655 lines
-across 5 files, then `api-down-and-shared-worktree.md`, `copilot-review-arrival.md`, `diff-stat-omits-untracked.md`, `update-pull-request-partial-write.md` as the task needs them.
+"see memory" reference below points at. Your whole directory is ~770 lines
+across 6 files, then `api-down-and-shared-worktree.md`, `copilot-review-arrival.md`, `diff-stat-omits-untracked.md`, `update-pull-request-partial-write.md`, `worktree-hook-and-rest-recipes.md` as the task needs them.
 
 **Then open your report with a compliance line**, so a reader can tell a
 memory-informed run from a memory-less one rather than taking it on trust:
 
 ```
-memory: MEMORY.md (200 lines, <short sha of its last commit>) + api-down-and-shared-worktree.md, copilot-review-arrival.md, diff-stat-omits-untracked.md, update-pull-request-partial-write.md
+memory: MEMORY.md (200 lines, <short sha of its last commit>) + api-down-and-shared-worktree.md, copilot-review-arrival.md, diff-stat-omits-untracked.md, update-pull-request-partial-write.md, worktree-hook-and-rest-recipes.md
 ```
 
 A report without that line should be presumed to have run without memory. This
