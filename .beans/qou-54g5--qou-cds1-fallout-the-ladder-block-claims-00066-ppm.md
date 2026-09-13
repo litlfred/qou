@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-26T23:21:11Z
-updated_at: 2026-09-13T14:15:00Z
+updated_at: 2026-09-13T17:30:00Z
 ---
 
 ## What was measured
@@ -561,3 +561,62 @@ headline corrected to `+0.0071` ppm). **I recommended it on its title without
 reading its body**, which is the same defect as quoting a stale figure: the
 title has not been updated in three revisions of the finding underneath it.
 
+---
+
+## 2026-09-13 — the "stale witness" claim is itself stale, at four sites
+
+This bean states at four places (lines ~99, ~192, ~339, ~479) that
+`qbeta-ladder-convention-fee.witness.json` *"still holds the 7.336484 figure,
+so that witness is **substantively stale**, not merely drifted."*
+
+**Measured on this tree — the witness holds the LIVE value and does not contain
+7.336484 at all:**
+
+| check | result |
+|---|---|
+| occurrences of `7.336484` in the witness | **0** |
+| `/data/MUON_pin_(the_block's_own_-0.0066_ppm_frame)` | `7.1339366413953373436674732111283365208692987644780979634675` |
+| `/data/published_frame_err_ppb` | `37.707489855749324657226491936959909548054647606026893018012` |
+| recorded `scriptHash` vs live producer hash | `e8a05d91384c` vs `e8a05d91384c` — **MATCH** |
+| `computedAt` | `2026-09-04T12:28:14Z` |
+
+So the witness carries **exactly the `7.133937` this bean calls "live"**, and it
+is **not stale by the corpus's own definition** — `scriptHash` is the field
+`witness_dependency_drift.py` keys self-staleness on, and it agrees to the byte.
+The `37.70749` cross-check also matches this bean's own line 22.
+
+### What is settled, and what is NOT
+
+**Settled:** the claim is false *as a statement about the current tree*, at all
+four sites. Anyone acting on it would re-run a producer that needs no re-running
+— and that is not free: this is exactly the idle-pass waste AGENTS.md's
+witness-triage section is about.
+
+**Not settled: whether the witness ever held `7.336484`.** `git log -S "7.336484"`
+on the file returns **nothing**, and the only commit touching it in the fetched
+history is `87bf883793` (2026-09-07, `qou-k54t`, *"my own probe had a float64 q0,
+and my explanation of the residual was wrong"*) — at which the value is already
+absent. **Agent clones here are shallow**, so an empty `-S` result is consistent
+both with "never held it" and with "the removing commit is outside the fetched
+window". This is the same shallow-boundary ambiguity AGENTS.md documents for
+`scriptCommitSha`, and it cannot be resolved from this container. I am
+therefore **not** claiming the original entry was wrong when written — only that
+it has been wrong about the tree for at least the six days since `87bf883793`,
+and the bean was never refreshed.
+
+### Correcting my own handling of this bean, twice over
+
+1. Earlier this session I **reported this witness as stale to the user, from this
+   bean's text, without opening the witness.** The bean is not a primary source —
+   AGENTS.md says exactly that about beans, including recent specific ones — and
+   I applied the rule to my own claims all session while suspending it for this
+   one.
+2. Separately and earlier, I **recommended this bean to the user twice from its
+   TITLE without reading its body**, where the sign contradiction had already
+   been settled on 2026-08-31 (sign POSITIVE, headline corrected to `+0.0071` ppm).
+
+Both are the same failure: treating a bean's surface as its state.
+
+**No producer was re-run and no witness was committed as a result of this
+check** — the only change a re-run would have produced is a provenance
+downgrade, and the tree was reverted.
