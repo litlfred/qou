@@ -1,0 +1,125 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-ph-0605041v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "12cccb408b6810f1808f8ccde3f418f37020a2edd4b4bc5b86217d5ceccb0b3a",
+  "file": "0605041v2.pdf"
+ },
+ "provenance": {
+  "title": "Cluster expansion for abstract polymer models. New bounds from an old approach",
+  "authors": "Roberto Fern\u00e1ndez1 and Aldo Procacci 1,2",
+  "arxiv": {
+   "id": "math-ph/0605041",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "16 Oct 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "theorem": 2,
+   "corollary": 1,
+   "proposition": 3,
+   "remark": 1
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Let \u03c1 \u2208 [0, \u221e)P . If there exists a \u00b5 \u2208 [0, \u221e)P such that",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2",
+   "name": null,
+   "statement": "Let \u03c1 \u2208 [0, \u221e)P . If there exists a \u00b5 \u2208 [0, \u221e)P such that",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3",
+   "name": null,
+   "statement": "Suppose 0 \u2264 \u03bb \u2264 1 and let us denote",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": null,
+   "statement": "Let \u03c1 \u2208 [0, \u221e)P be \ufb01xed and let T\u03c1 be a map of the form (3.12)/(3.7). Assume there",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "6",
+   "name": null,
+   "statement": "As the number of Penrose trees grows with the disappearance o f triangle diagrams,",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-15",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "7",
+   "name": null,
+   "statement": "Let G = (P, E) be a polymer system and assume there exist functions cn : P n+1 \u2192",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "8",
+   "name": null,
+   "statement": "For some \ufb01xed \u03c1 \u2208 [0, \u221e)P let T\u03c1 be a map of the form (3.12)/(4.8) and assume",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

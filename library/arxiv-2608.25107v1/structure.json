@@ -1,0 +1,364 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2608.25107v1",
+ "source": {
+  "file": "2608.25107v1.pdf",
+  "sha256": "6dca8b99a1f32db4eda7f780e3e31f5ad403be23d6ea268df5472513dcf21c04",
+  "bytes": 1280353,
+  "pages": 22,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2608.25107",
+   "version": "1",
+   "primary_class": "hep-ex",
+   "stamp_date": "25 Aug 2026"
+  },
+  "doi": null,
+  "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples C\u00e9sar Jes\u00fas-Valls1,\u2217 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland",
+  "authors_raw": "Neutrino interaction generators are central to precision oscillation analyses, but conventional imple-",
+  "title_lines": [
+   "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+   "C\u00e9sar Jes\u00fas-Valls1,\u2217",
+   "1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "C\u00e9sar Jes\u00fas-Valls",
+   "Creator": "arXiv GenPDF (tex2pdf:4af3385)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Differentiable programming in particle physics",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Differentiable Neutrino Event Generator",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Differentiability by reweighting",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Nuclear ground-state reweighting",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Hard-scattering amplitudes",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Intranuclear cascade",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Channel normalisations",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Differentiable events and observables",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Gradients and higher-order derivatives",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Validation",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Gradient information",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Parameter Inference and Uncertainty Quantification",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Computational cost",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Unfolding",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Conclusions",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Additional validation distributions",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-adonis-a-differentiable-generator-of-neutrino-in",
+   "number": null,
+   "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1671,
+   "n_words": 220
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 7292,
+   "n_words": 1040
+  },
+  {
+   "id": "sec-002-differentiable-programming-in-particle-physics",
+   "number": null,
+   "title": "Differentiable programming in particle physics",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 5306,
+   "n_words": 768
+  },
+  {
+   "id": "sec-003-differentiability-by-reweighting",
+   "number": null,
+   "title": "Differentiability by reweighting",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3178,
+   "n_words": 507
+  },
+  {
+   "id": "sec-004-nuclear-ground-state-reweighting",
+   "number": null,
+   "title": "Nuclear ground-state reweighting",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2410,
+   "n_words": 383
+  },
+  {
+   "id": "sec-005-hard-scattering-amplitudes",
+   "number": null,
+   "title": "Hard-scattering amplitudes",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 7629,
+   "n_words": 1218
+  },
+  {
+   "id": "sec-006-intranuclear-cascade",
+   "number": null,
+   "title": "Intranuclear cascade",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 4700,
+   "n_words": 738
+  },
+  {
+   "id": "sec-007-channel-normalisations",
+   "number": null,
+   "title": "Channel normalisations",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 238,
+   "n_words": 38
+  },
+  {
+   "id": "sec-008-differentiable-events-and-observables",
+   "number": null,
+   "title": "Differentiable events and observables",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1876,
+   "n_words": 316
+  },
+  {
+   "id": "sec-009-gradients-and-higher-order-derivatives",
+   "number": null,
+   "title": "Gradients and higher-order derivatives",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 969,
+   "n_words": 155
+  },
+  {
+   "id": "sec-010-validation",
+   "number": null,
+   "title": "Validation",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 4158,
+   "n_words": 749
+  },
+  {
+   "id": "sec-011-gradient-information",
+   "number": null,
+   "title": "Gradient information",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 21623,
+   "n_words": 3570
+  },
+  {
+   "id": "sec-012-computational-cost",
+   "number": null,
+   "title": "Computational cost",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 6422,
+   "n_words": 952
+  },
+  {
+   "id": "sec-013-unfolding",
+   "number": null,
+   "title": "Unfolding",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 7525,
+   "n_words": 1159
+  },
+  {
+   "id": "sec-014-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 2929,
+   "n_words": 404
+  },
+  {
+   "id": "sec-015-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 22,
+   "n_chars": 22031,
+   "n_words": 3215
+  },
+  {
+   "id": "sec-016-additional-validation-distributions",
+   "number": null,
+   "title": "Additional validation distributions",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1776,
+   "n_words": 393
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 17,
+  "chars_total": 101733
+ }
+}

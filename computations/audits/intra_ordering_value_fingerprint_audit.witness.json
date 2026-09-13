@@ -1,21 +1,27 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:46:52.212166+00:00",
-  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
+  "computedAt": "2026-09-13T10:28:16.133060+00:00",
+  "commitSha": "8a8e89767992304d78b082d963956de76907d5d0",
   "assertions": [
     {
       "name": "scan_completed",
       "computed": "1",
       "expected": "1",
       "passed": true
+    },
+    {
+      "name": "source_files_scanned_for_literals",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
-  "scriptHash": "10d33efab559",
+  "scriptHash": "782412b12f92",
   "scriptCommitSha": "4b40a0f9fd664167e09bae1035d6f173aa1621f2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -42,7 +48,7 @@
   "description": "Scans every committed witness for grouped-era |tr_M| values, matched to 15 significant digits against fingerprints computed live from atom_braid_word_3A under both orderings at both documented pins. Keys on the VALUE rather than on a symptom, because the ordering ruling has escaped three symptom-keyed sweeps.",
   "data": {
     "significant_digits_required": 15,
-    "witness_files_scanned": 3572,
+    "witness_files_scanned": 3643,
     "grouped_candidates": {
       "computations/atomic-mass-via-rho-k.witness.json": [
         [
@@ -100,6 +106,73 @@
         ],
         [
           "/data/rows[9]/issues[0]/literal",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/audits/intra_ordering_value_fingerprint_audit.witness.json": [
+        [
+          "/data/source_hardcoded_grouped/computations/audits/h3_transition_cache_q_key_audit.py[0][1]",
+          "helium-3",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/audits/word_to_mpfr_template_scale_audit.py[0][1]",
+          "helium-3",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/derivation_chain.py[0][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/derivation_chain.py[1][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/derivation_chain.py[2][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/markov/assembly_chain_11_letter_recompute_probe.py[0][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/probes/path_b_defect_binding_probe.py[0][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/probes/path_b_defect_binding_probe.py[1][1]",
+          "helium-3",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_bond_factors_derived_probe.py[0][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_chain_closed_form_probe.py[0][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_chain_closed_form_probe.py[1][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_chain_closed_form_probe.py[2][1]",
+          "proton",
+          "proton"
+        ],
+        [
+          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_mixed_chain_closed_form_probe.py[0][1]",
           "proton",
           "proton"
         ]
@@ -493,9 +566,23 @@
           "proton"
         ]
       ],
+      "computations/qbeta/qbeta-chain-closed-form.witness.json": [
+        [
+          "/parameters/t_p",
+          "proton",
+          "proton"
+        ]
+      ],
       "computations/qbeta/qbeta-mixed-chain-closed-form.witness.json": [
         [
           "/parameters/t_p",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/qbeta/qbeta-option-e-order-dof-range.witness.json": [
+        [
+          "/data/tr_zD_range_per_word/p/max",
           "proton",
           "proton"
         ]
@@ -531,8 +618,18 @@
           "proton"
         ],
         [
+          "/rows[4]/term1_canonical_tr_M",
+          "helium-3",
+          "proton"
+        ],
+        [
           "/all_modes/brane-legacy/rows[0]/term1_canonical_tr_M",
           "proton",
+          "proton"
+        ],
+        [
+          "/all_modes/brane-legacy/rows[4]/term1_canonical_tr_M",
+          "helium-3",
           "proton"
         ],
         [
@@ -541,8 +638,18 @@
           "proton"
         ],
         [
+          "/all_modes/drop/rows[4]/term1_canonical_tr_M",
+          "helium-3",
+          "proton"
+        ],
+        [
           "/all_modes/q1-base/rows[0]/term1_canonical_tr_M",
           "proton",
+          "proton"
+        ],
+        [
+          "/all_modes/q1-base/rows[4]/term1_canonical_tr_M",
+          "helium-3",
           "proton"
         ],
         [
@@ -551,13 +658,28 @@
           "proton"
         ],
         [
+          "/all_modes/r-side-bare/rows[4]/term1_canonical_tr_M",
+          "helium-3",
+          "proton"
+        ],
+        [
           "/all_modes/li2q/rows[0]/term1_canonical_tr_M",
           "proton",
           "proton"
         ],
         [
+          "/all_modes/li2q/rows[4]/term1_canonical_tr_M",
+          "helium-3",
+          "proton"
+        ],
+        [
           "/all_modes/habiro/rows[0]/term1_canonical_tr_M",
           "proton",
+          "proton"
+        ],
+        [
+          "/all_modes/habiro/rows[4]/term1_canonical_tr_M",
+          "helium-3",
           "proton"
         ],
         [
@@ -708,7 +830,6 @@
       ]
     },
     "grouped_deliberate": [
-      "computations/probes/nucleon-h3-marshalling-divergence.witness.json",
       "computations/probes/the_character_closure_block_and_a_lean_file_publish_convention_c_probe.witness.json"
     ],
     "borromean_hits": [
@@ -718,6 +839,8 @@
       "computations/atomic-tr-m-helium4-canonical.witness.json",
       "computations/atomic-tr-m-mpfr-50dps.witness.json",
       "computations/binding-triangle-3body-cluster.witness.json",
+      "computations/brng-dominant-summand-ursell.witness.json",
+      "computations/brng-two-row-dominant-block-a6.witness.json",
       "computations/canonical-mass-table-extended.witness.json",
       "computations/canonical-tr-m-via-chi-cache.witness.json",
       "computations/chi-neutron-h3-at-q0-50dps.witness.json",
@@ -760,10 +883,94 @@
       "qou-mass/src/qou_mass/atomic-tr-m-mpfr-50dps.witness.json",
       "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json",
       "qou-mass/src/qou_mass/habiro-coefficients-atomic.witness.json"
+    ],
+    "source_hardcoded_grouped": {
+      "computations/derivation_chain.py": [
+        [
+          149,
+          "1.1457596924573008",
+          "proton",
+          "proton"
+        ],
+        [
+          168,
+          "1.145759692457300869689081",
+          "proton",
+          "proton"
+        ],
+        [
+          213,
+          "1.1457596924573008",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/markov/assembly_chain_11_letter_recompute_probe.py": [
+        [
+          73,
+          "1.145759692457300869689081",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/probes/path_b_defect_binding_probe.py": [
+        [
+          121,
+          "1.145759692457300869689081",
+          "proton",
+          "proton"
+        ],
+        [
+          125,
+          "0.403767036851428170368670",
+          "helium-3",
+          "proton"
+        ]
+      ],
+      "computations/qbeta/qbeta_bond_factors_derived_probe.py": [
+        [
+          139,
+          "1.1457596924573008697",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/qbeta/qbeta_chain_closed_form_probe.py": [
+        [
+          108,
+          "1.1457596924573008697",
+          "proton",
+          "proton"
+        ],
+        [
+          113,
+          "1.14575969245730086",
+          "proton",
+          "proton"
+        ],
+        [
+          115,
+          "1.14575969245730086",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/qbeta/qbeta_mixed_chain_closed_form_probe.py": [
+        [
+          120,
+          "1.1457596924573008697",
+          "proton",
+          "proton"
+        ]
+      ]
+    },
+    "source_deliberate_grouped": [
+      "computations/qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py"
     ]
   },
   "caveats": [
     "A hit says the WITNESS payload is grouped-era; it does not say the producer is. Re-run the producer to tell a stale artifact from a live source defect. A non-hit is not a clean bill: a witness recording only derived quantities carries no |tr_M| for this to match.",
+    "The SOURCE scan reads literals reachable as code, with docstrings excluded (comments never enter an AST). That exclusion is load-bearing, not a convenience: mass_at_3A_proper's docstring quotes both the grouped and the borromean |tr_M| precisely because it EXPLAINS the 2026-09-05 ruling, and flagging it would be flagging the documentation of the fix. Strings are not skipped wholesale, because mp.mpf(\"1.1457...\") is how this corpus writes a high-precision constant.",
     "Fingerprints are computed live, never transcribed, so a re-pin moves them rather than silently invalidating the scan. Only the five atoms at A <= 3 and the two documented pins are covered."
   ]
 }
