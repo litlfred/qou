@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T11:56:16Z
-updated_at: 2026-09-13T13:59:16Z
+updated_at: 2026-09-13T14:52:46Z
 ---
 
 ## THE PREMISE WAS WRONG, AND IT WAS MY CLAIM (2026-09-13)
@@ -142,3 +142,85 @@ Unicode, BIDIRECTIONALLY. `O'Hara` ASCII 0 vs Unicode 48; but `Poincare`
 ASCII 190 vs Unicode 145, where ASCII wins. Search both forms; do not
 normalise one way. My first reading (`use Unicode`) was wrong and the row
 records it.
+
+
+## 🟩 THE FHW CROSSING BOUND IS NOW IN THE LIBRARY — via the BAMS announcement
+
+This bean stays open on one item: *"FREEDMAN-HE-WANG 1994 WAS NOT UPLOADED … the
+crossing bound `E(K) ≥ 2πc(K)+4` still has no full text here."*
+
+**The bound is now here.** The owner's second drop (2026-09-13 14:42, 7 PDFs)
+includes `arxiv-math-9301212v1` =
+
+> **Bryson, Freedman, He & Wang, "Möbius Invariance of Knot Energy",
+> Bull. Amer. Math. Soc. 28(1), January 1993, 99–103.**
+
+Its **Theorem D** is verbatim the bound this bean wants, quoted from the ingested
+section text:
+
+```
+Theorem D. If γ is topologically tame, let c([γ]) denote the (topological) crossing
+          2πc([γ]) + 4 ≤ E(γ).
+Since an essential knot must have three or more crossings, we obtain the following…
+          c([γ]) ≤ c(γ) ≤ E(γ)/2π
+```
+
+The abstract also delivers this bean's **target 3** (minimiser-existence
+statements): *"round circles are precisely the absolute minima for energy; there
+is a minimum energy threshold below which knotting cannot occur; minimizers
+within prime knot types exist and are regular"*, plus the estimate on the number
+of knot types below energy `M`.
+
+### 🛑 Scope it honestly — this is the ANNOUNCEMENT, not the Annals paper
+
+`math/9301212v1` is **5 pages** and announces results; Freedman–He–Wang, *Möbius
+energy of knots and unknots*, Ann. of Math. **139** (1994) 1–50 is **50 pages**
+and carries the proofs. So:
+
+* **Reading and citing the bound: unblocked.** Theorem D is stated, with its
+  corollaries, in greppable text.
+* **The proof of the bound: still not held.** If this arc ever needs to follow
+  the argument rather than invoke the statement, the Annals paper is still
+  wanted (`https://www.jstor.org/stable/2946626`).
+
+**Left open deliberately**, for two reasons: the distinction above is real, and
+this is your bean — the stated blocker ("blocked on owner upload") is discharged
+but the Annals text is not here, so the close is yours to call, not mine.
+
+### Also in the second drop, same arc
+
+| doc-id | work |
+|---|---|
+| `52036` | Kim & Kusner, *Torus Knots Extremizing the Möbius Energy* |
+| `1-s20-s0166864101002632-main` | Rawdon & Simon, *Möbius energy of thick knots* |
+| `arxiv-math-0108215v1` | Rawdon, *Möbius Energy of Thick Knots* |
+| `s00526-018-1443-6` | Blatt & Vorderobermeier, *Analyticity of critical points of the Möbius energy*, Calc. Var. **58**:16 (2019) |
+| `arxiv-1011.4891v1` | Sossinsky, *Mechanical Normal Forms of Knots and Flat Knots* |
+| `funaba-2014-j-phys-conf-ser-544-012019` | J. Phys. Conf. Ser. 544 012019 |
+
+`s00526-018-1443-6` is **not** a duplicate of `arxiv-1904.13129v1` — checked
+rather than assumed: different title and a different author set (Blatt &
+Vorderobermeier vs Vorderobermeier solo).
+
+### Credit and a correction to my own framing
+
+I ingested the first 13 in parallel with you, not knowing this bean existed
+(it arrived in my merge). **Your pass did more than mine** — the `ohara1991` DOI
+settled against full text, clearing a HUMAN-REVIEW flag open since June, and the
+egress route table. My marginal contribution is the `doc_brief` propagation (the
+merge showed your section files lacked it — 97 add/add hunks, every one
+ours-adds-`doc_brief` / theirs-empty), the `INDEX.md` regeneration, and the
+Chen–Chen–Zhong duplicate adjudication.
+
+**And your correction applies to me.** I wrote that the `qou-pc85` arc was
+"reasoning about O'Hara energies with the literature invisible to it". Your bean
+already records the sharper truth: `references.ts` carries `ohara1991` and
+`freedman1994`, and `MobiusEnergy.lean` already cites them — so **citation was
+never blocked**; only greppable full text was missing. My PR body is corrected.
+
+### State after the second drop
+
+```
+library dirs 705, INDEX rows 683, gap 22 = duplicates 21 + containers 1   (exact)
+migrate --verify: 0 dirs without structure.json, 0 PDFs flat in uploads/
+```

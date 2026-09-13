@@ -1,0 +1,75 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "funaba-2014-j-phys-conf-ser-544-012019",
+ "source_sha256": "c95b283a122d67e4",
+ "brief": "Conference Series — 11 sections: Front matter; Introduction and main result; Computation of the energy of a tor",
+ "extended": "**Conference Series**\n\n*OPEN ACCESS*\n\n13 pp, 11 sections.\n\n**Outline.** Front matter; 1 Introduction and main result; 2 Computation of the energy of a torus; 1 Using symmetry, we have only to compute inte; 16 I11− π cosα; 8 I12− π sinα; 8 I13 + π(R + cosα); 16 I14− π cosα; 8 I15− π sinα; 3 Application as another motivation; References",
+ "tokens": {
+  "brief": 27,
+  "extended": 84
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction-and-main-result",
+   "title": "Introduction and main result",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-computation-of-the-energy-of-a-torus",
+   "title": "Computation of the energy of a torus",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-1-using-symmetry-we-have-only-to-compute-integra",
+   "title": "Using symmetry, we have only to compute integrals over the following four regions",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-003-16-i11-π-cosα",
+   "title": "I11− π cosα",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-004-8-i12-π-sinα",
+   "title": "I12− π sinα",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-005-8-i13-πr-cosα",
+   "title": "I13 + π(R + cosα)",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-006-16-i14-π-cosα",
+   "title": "I14− π cosα",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-007-8-i15-π-sinα",
+   "title": "I15− π sinα",
+   "pages": "8-12"
+  },
+  {
+   "id": "sec-008-3-application-as-another-motivation",
+   "title": "Application as another motivation",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "13-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
