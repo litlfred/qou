@@ -42,13 +42,23 @@ WHAT IS PROVED, AND WHAT IS ASSUMED
    measurability.
 4. `innerPairEnergy` and `innerPairEnergy_le` — an actual `intervalIntegral`,
    with the bound carried through it.
+5. §9 `four_pi_abs_lk_le_energy` — the **link** analogue of BFHW's Theorem D,
+   `4π|lk| ≤ E_mutual`, from the determinant bound `|det(a,b,c)| ≤ ‖a‖‖b‖‖c‖`
+   (proved in §9a–§9b) and Gauss's integral formula (assumed, see below). It is
+   **empty on a pairwise-unlinked pair**, which is the case this framework
+   faces, and §9d proves no positive constant bounds the channel below at all.
 
-ASSUMED, and deliberately visible: `HasUniformSeparation` (a uniform gap) and
-measurability of `sep` in the integration variable. For a genuine link — finitely
-many disjoint compact components — the uniform gap is the distance between
-disjoint compacts and is automatic; it does **not** follow from the pointwise
-positivity `LinkEmbedding.disjoint` supplies, which is exactly what theorem 2
-proves. Neither hypothesis is the conclusion in disguise.
+ASSUMED, and deliberately visible: `HasUniformSeparation` (a uniform gap),
+measurability of `sep` in the integration variable, and — §9 only — **Gauss's
+integral formula for the linking number**, carried as the explicit hypothesis
+`hgauss` of `four_pi_abs_lk_le_energy` rather than as a class field.
+
+For a genuine link — finitely many disjoint compact components — the uniform
+gap is the distance between disjoint compacts and is automatic; it does **not**
+follow from the pointwise positivity `LinkEmbedding.disjoint` supplies, which is
+exactly what theorem 2 proves. None of the three is the conclusion in disguise,
+and the one that most looks like it — the pointwise domination the link bound
+runs on — is **proved** in §9b rather than assumed.
 
 NOT DONE HERE, and not claimed: the **self/diagonal** channel. That still needs
 O'Hara's theorem, it is `qou-bn8e`'s object rather than this bean's, and nothing
@@ -785,6 +795,292 @@ theorem flat_measure_not_mobiusInvariant :
   intro h
   have := h 1 2 1 one_pos (by norm_num) one_pos
   norm_num at this
+
+/-! ## 9. The LINK version of Theorem D — it EXISTS, it is ELEMENTARY,
+       and it is VACUOUS exactly where this framework needs it
+
+`qou-dux3` records the gap this section closes and re-opens one level down:
+BFHW's Theorem D, `2π c([γ]) + 4 ≤ E(γ)`, bounds the **self** energy of a knot
+by its crossing number, and §7's triage recorded that it is not statable here
+because `LinkEmbedding` carries no crossing data. The mutual channel needs a
+**link** analogue, and the bean's verdict was that none was found.
+
+**There is one, and it is elementary.** Write the Gauss linking integral
+
+  lk(γ₁,γ₂) = (1/4π) ∬ det(γ̇₁(s), γ̇₂(t), γ₁(s) − γ₂(t)) / |γ₁(s) − γ₂(t)|³ ds dt
+
+and bound the integrand by `|det(a,b,c)| ≤ ‖a‖‖b‖‖c‖`. The `‖c‖` cancels one
+power of the denominator and what is left is **exactly** the Möbius mutual
+integrand `‖γ̇₁‖‖γ̇₂‖ / |γ₁ − γ₂|²`. Hence
+
+  4π |lk(γ₁,γ₂)| ≤ E_mutual(γ₁,γ₂).
+
+No O'Hara theorem, no minimiser, no compactness — the mutual channel has no
+diagonal (the whole point of this file), so the integral exists by §3 and the
+bound is monotonicity applied to a pointwise inequality proved by `ring`.
+
+Note what supplies the inverse square: the Gauss integrand carries `|c|³` in
+the denominator and one power is spent on `|c|` from the determinant bound.
+So the kernel §7/§8 force by Möbius invariance is **the same** kernel for which
+this topological lower bound exists. That is a consistency check on §7, not a
+new assumption.
+
+### THE RESULT IS A NEGATIVE, AND THAT IS THE POINT
+
+`qou-o6ml`'s gate for route (2) is that the mutual channel be **nonzero on a
+pairwise-unlinked pair** — every pairwise `lk_ij` of the Borromean link is `0`
+(`mirror_split_s3_em_functional_probe.py` A3). Against that gate this bound is
+**empty**: `lk = 0` makes it read `0 ≤ E_mutual`, which §3's
+`innerPairEnergy_nonneg` already gives unconditionally and with no hypotheses
+at all. `lk_bound_iff_nonneg_of_lk_zero` states that degeneration as an `iff`
+so the claim "it adds nothing" is itself proved rather than asserted.
+
+And the failure is not an artefact of this particular bound. §9d shows that
+**no positive constant lower-bounds the mutual pair energy at all**: the
+`separatedLink` family realises every sufficiently small positive value, via
+§3's own `innerPairEnergy_le`. So the mutual Möbius channel is a *geometric*
+quantity, and any magnitude route (2) supplies must come from a **derived
+configuration**, never from the pair's topology.
+
+### WHAT IS ASSUMED, AND IT IS ONE THING
+
+Gauss's integral formula for the linking number — classical, and carried as an
+explicit hypothesis `hgauss` of `four_pi_abs_lk_le_energy` rather than as a
+class field, so that a reader can see it is an input. Monotonicity and oddness
+of the integral are the other two hypotheses; both are standard properties of
+the Lebesgue integral and neither is the conclusion in disguise. The pointwise
+domination is **not** assumed: §9b proves it.
+
+### WHAT IS NOT CLAIMED
+
+That `inf E_mutual = 0` over an **isotopy class**. `LinkEmbedding` carries no
+isotopy data, so the statement below quantifies over the `separatedLink`
+family, not over the configurations reachable from a fixed link. Upgrading it
+would need the classical fact that a pairwise-unlinked pair is isotopic to a
+split link; that is true and is *not* formalised here. The weaker statement is
+already enough to kill a universal positive constant, which is what a
+topological bound would have to be.
+-/
+
+variable {M : Type*}
+
+/-! ### §9a  The determinant bound in ℝ³ — pure algebra -/
+
+/-- The scalar triple product `(a × b) · c`, in coordinates. -/
+def det3 (a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃ : ℝ) : ℝ :=
+  (a₂ * b₃ - a₃ * b₂) * c₁ + (a₃ * b₁ - a₁ * b₃) * c₂ + (a₁ * b₂ - a₂ * b₁) * c₃
+
+/-- The Euclidean norm on ℝ³, in coordinates. -/
+noncomputable def nrm3 (x₁ x₂ x₃ : ℝ) : ℝ := Real.sqrt (x₁ ^ 2 + x₂ ^ 2 + x₃ ^ 2)
+
+theorem nrm3_nonneg (x₁ x₂ x₃ : ℝ) : 0 ≤ nrm3 x₁ x₂ x₃ := Real.sqrt_nonneg _
+
+theorem nrm3_sq (x₁ x₂ x₃ : ℝ) :
+    nrm3 x₁ x₂ x₃ ^ 2 = x₁ ^ 2 + x₂ ^ 2 + x₃ ^ 2 :=
+  Real.sq_sqrt (by positivity)
+
+/-- **Lagrange's identity in ℝ³** — `‖a × b‖² = ‖a‖²‖b‖² − ⟪a,b⟫²`. A `ring`
+    identity; it is what makes the cross-product bound free. -/
+theorem lagrange3 (a₁ a₂ a₃ b₁ b₂ b₃ : ℝ) :
+    (a₂ * b₃ - a₃ * b₂) ^ 2 + (a₃ * b₁ - a₁ * b₃) ^ 2 + (a₁ * b₂ - a₂ * b₁) ^ 2
+      = (a₁ ^ 2 + a₂ ^ 2 + a₃ ^ 2) * (b₁ ^ 2 + b₂ ^ 2 + b₃ ^ 2)
+        - (a₁ * b₁ + a₂ * b₂ + a₃ * b₃) ^ 2 := by
+  ring
+
+/-- **Cauchy–Schwarz in ℝ³**, in coordinates. -/
+theorem cauchySchwarz3 (x₁ x₂ x₃ c₁ c₂ c₃ : ℝ) :
+    (x₁ * c₁ + x₂ * c₂ + x₃ * c₃) ^ 2
+      ≤ (x₁ ^ 2 + x₂ ^ 2 + x₃ ^ 2) * (c₁ ^ 2 + c₂ ^ 2 + c₃ ^ 2) := by
+  nlinarith [sq_nonneg (x₁ * c₂ - x₂ * c₁), sq_nonneg (x₁ * c₃ - x₃ * c₁),
+    sq_nonneg (x₂ * c₃ - x₃ * c₂)]
+
+/-- **`det3² ≤ ‖a‖²‖b‖²‖c‖²`** — Cauchy–Schwarz against `a × b`, then Lagrange
+    to drop the `⟪a,b⟫²` that only helps. -/
+theorem det3_sq_le (a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃ : ℝ) :
+    det3 a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃ ^ 2
+      ≤ (a₁ ^ 2 + a₂ ^ 2 + a₃ ^ 2) * (b₁ ^ 2 + b₂ ^ 2 + b₃ ^ 2)
+        * (c₁ ^ 2 + c₂ ^ 2 + c₃ ^ 2) := by
+  have hcs := cauchySchwarz3 (a₂ * b₃ - a₃ * b₂) (a₃ * b₁ - a₁ * b₃)
+    (a₁ * b₂ - a₂ * b₁) c₁ c₂ c₃
+  have hlag : (a₂ * b₃ - a₃ * b₂) ^ 2 + (a₃ * b₁ - a₁ * b₃) ^ 2
+      + (a₁ * b₂ - a₂ * b₁) ^ 2
+      ≤ (a₁ ^ 2 + a₂ ^ 2 + a₃ ^ 2) * (b₁ ^ 2 + b₂ ^ 2 + b₃ ^ 2) := by
+    nlinarith [lagrange3 a₁ a₂ a₃ b₁ b₂ b₃, sq_nonneg (a₁ * b₁ + a₂ * b₂ + a₃ * b₃)]
+  have hc : (0 : ℝ) ≤ c₁ ^ 2 + c₂ ^ 2 + c₃ ^ 2 := by positivity
+  have hstep := mul_le_mul_of_nonneg_right hlag hc
+  have hdet : det3 a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃ ^ 2
+      = ((a₂ * b₃ - a₃ * b₂) * c₁ + (a₃ * b₁ - a₁ * b₃) * c₂
+          + (a₁ * b₂ - a₂ * b₁) * c₃) ^ 2 := by
+    unfold det3; ring
+  rw [hdet]
+  linarith
+
+/-- **`|det3| ≤ ‖a‖ ‖b‖ ‖c‖`.** -/
+theorem abs_det3_le (a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃ : ℝ) :
+    |det3 a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃|
+      ≤ nrm3 a₁ a₂ a₃ * nrm3 b₁ b₂ b₃ * nrm3 c₁ c₂ c₃ := by
+  have hprod : nrm3 a₁ a₂ a₃ * nrm3 b₁ b₂ b₃ * nrm3 c₁ c₂ c₃
+      = Real.sqrt ((a₁ ^ 2 + a₂ ^ 2 + a₃ ^ 2) * (b₁ ^ 2 + b₂ ^ 2 + b₃ ^ 2)
+          * (c₁ ^ 2 + c₂ ^ 2 + c₃ ^ 2)) := by
+    unfold nrm3
+    rw [← Real.sqrt_mul (by positivity), ← Real.sqrt_mul (by positivity)]
+  rw [hprod, ← Real.sqrt_sq_eq_abs]
+  exact Real.sqrt_le_sqrt (det3_sq_le a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃)
+
+/-! ### §9b  The Gauss integrand is dominated by the Möbius mutual integrand -/
+
+/-- **The pointwise domination.**
+
+    `|det(a,b,c)| / ‖c‖³ ≤ ‖a‖‖b‖ / ‖c‖²`. This is the whole geometric content
+    of the link bound: one power of `‖c‖` from the determinant estimate cancels
+    against the cube in the Gauss kernel, leaving precisely the inverse-square
+    Möbius kernel that §7 and §8 force by symmetry.
+
+    It is **proved**, not assumed — `four_pi_abs_lk_le_energy` below takes the
+    domination as a hypothesis because it is stated over an abstract parameter
+    domain, and this is what discharges it in the concrete ℝ³ case. -/
+theorem gaussIntegrand_le_mutualIntegrand
+    (a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃ : ℝ) (hc : 0 < nrm3 c₁ c₂ c₃) :
+    |det3 a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃| / nrm3 c₁ c₂ c₃ ^ 3
+      ≤ nrm3 a₁ a₂ a₃ * nrm3 b₁ b₂ b₃ / nrm3 c₁ c₂ c₃ ^ 2 := by
+  have hle := abs_det3_le a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃
+  calc |det3 a₁ a₂ a₃ b₁ b₂ b₃ c₁ c₂ c₃| / nrm3 c₁ c₂ c₃ ^ 3
+      ≤ (nrm3 a₁ a₂ a₃ * nrm3 b₁ b₂ b₃ * nrm3 c₁ c₂ c₃) / nrm3 c₁ c₂ c₃ ^ 3 := by
+        gcongr
+    _ = nrm3 a₁ a₂ a₃ * nrm3 b₁ b₂ b₃ / nrm3 c₁ c₂ c₃ ^ 2 := by
+        field_simp
+
+/-! ### §9c  The link version of Theorem D -/
+
+/-- **`4π |lk| ≤ E_mutual`** — the link analogue of BFHW's Theorem D.
+
+    Hypotheses, all visible and none of them the conclusion:
+
+    * `hmono` / `hneg` — the integral is monotone and odd. Standard properties
+      of the Lebesgue integral; abstracted so this statement does not depend on
+      which integral is used.
+    * `hgauss` — **Gauss's integral formula** `∫ gauss = 4π·lk`. Classical, and
+      the one genuinely assumed input.
+    * `hdom` — the pointwise domination, **proved** in §9b for the ℝ³
+      integrands.
+
+    The derivation is `|∫ g| ≤ ∫ |g| ≤ ∫ e`; the content is that `hdom` is
+    available at all, and that is §9b's determinant estimate. -/
+theorem four_pi_abs_lk_le_energy {Ω : Type*}
+    (I : (Ω → ℝ) → ℝ) (gauss energy : Ω → ℝ) (lk : ℝ)
+    (hmono : ∀ f g : Ω → ℝ, (∀ x, f x ≤ g x) → I f ≤ I g)
+    (hneg : ∀ f : Ω → ℝ, I (fun x => -f x) = - I f)
+    (hgauss : I gauss = 4 * Real.pi * lk)
+    (hdom : ∀ x, |gauss x| ≤ energy x) :
+    4 * Real.pi * |lk| ≤ I energy := by
+  have hup : I gauss ≤ I energy :=
+    hmono _ _ fun x => le_trans (le_abs_self _) (hdom x)
+  have hdown : - I gauss ≤ I energy := by
+    rw [← hneg]
+    exact hmono _ _ fun x => le_trans (neg_le_abs _) (hdom x)
+  have hpi : (0 : ℝ) < 4 * Real.pi := by positivity
+  calc 4 * Real.pi * |lk| = |4 * Real.pi * lk| := by
+        rw [abs_mul, abs_of_pos hpi]
+    _ = |I gauss| := by rw [hgauss]
+    _ ≤ I energy := abs_le.mpr ⟨by linarith, hup⟩
+
+/-! ### §9d  The bound is empty on a pairwise-unlinked pair -/
+
+/-- **At `lk = 0` the link bound IS non-negativity.**
+
+    Stated as an `iff` so that "the bound adds nothing" is proved rather than
+    asserted: its conclusion is *equivalent* to `0 ≤ E_mutual`, which §3's
+    `LinkEmbedding.innerPairEnergy_nonneg` already supplies with no hypotheses.
+
+    Every pairwise linking number of the Borromean link vanishes, so this is the
+    case `qou-o6ml` route (2) actually faces. -/
+theorem lk_bound_iff_nonneg_of_lk_zero {Ω : Type*}
+    (I : (Ω → ℝ) → ℝ) (energy : Ω → ℝ) {lk : ℝ} (hlk : lk = 0) :
+    (4 * Real.pi * |lk| ≤ I energy) ↔ 0 ≤ I energy := by
+  subst hlk
+  simp
+
+/-- A two-component link whose components sit at **constant** separation
+    `1 + |R|`. The `1 +` keeps it positive for every real `R`, so the family is
+    indexed by all of `ℝ` with no side condition to carry. -/
+noncomputable def separatedLink (m : M) (R : ℝ) : LinkEmbedding M 2 where
+  component := fun _ => pointKnot m
+  sep := fun i _ j _ => if i = j then 0 else 1 + |R|
+  sep_symm := by
+    intro i s j t
+    by_cases h : i = j
+    · subst h; simp
+    · rw [if_neg h, if_neg (Ne.symm h)]
+  sep_nonneg := by
+    intro i s j t
+    by_cases h : i = j
+    · simp [h]
+    · rw [if_neg h]; positivity
+  disjoint := by
+    intro i j hij s t
+    rw [if_neg hij]; positivity
+  sep_self := by intro i s t; simp [pointKnot]
+
+theorem separatedLink_hasUniformSeparation (m : M) (R : ℝ) :
+    LinkEmbedding.HasUniformSeparation (separatedLink m R) (1 + |R|) := by
+  refine ⟨by positivity, ?_⟩
+  intro i j hij s t
+  show (1 + |R|) ≤ (if i = j then 0 else 1 + |R|)
+  rw [if_neg hij]
+
+/-- The pair energy of `separatedLink` is at most `1 / (1 + |R|)²` — §3's own
+    `innerPairEnergy_le`, with the constant integrand discharging its
+    measurability hypothesis. -/
+theorem innerPairEnergy_separatedLink_le (m : M) (R s : ℝ) :
+    (separatedLink m R).innerPairEnergy 0 1 s ≤ 1 / (1 + |R|) ^ 2 := by
+  have hconst : (fun t => (separatedLink m R).mutualIntegrand 0 1 s t)
+      = fun _ : ℝ => 1 / (1 + |R|) ^ 2 := by
+    funext t
+    show 1 / ((separatedLink m R).sep 0 s 1 t) ^ 2 = 1 / (1 + |R|) ^ 2
+    rw [show (separatedLink m R).sep 0 s 1 t
+        = (if (0 : Fin 2) = 1 then 0 else 1 + |R|) from rfl,
+      if_neg (by decide : ¬ (0 : Fin 2) = 1)]
+  exact LinkEmbedding.innerPairEnergy_le _ (separatedLink_hasUniformSeparation m R)
+    (by decide) s (by rw [hconst]; exact measurable_const)
+
+/-- **Every sufficiently small positive value is realised.** -/
+theorem innerPairEnergy_separatedLink_small (m : M) {ε : ℝ} (hε : 0 < ε) (s : ℝ) :
+    ∃ R : ℝ, (separatedLink m R).innerPairEnergy 0 1 s ≤ ε := by
+  refine ⟨1 / ε, le_trans (innerPairEnergy_separatedLink_le m (1 / ε) s) ?_⟩
+  rw [abs_of_pos (by positivity : (0:ℝ) < 1 / ε)]
+  rw [div_le_iff₀ (by positivity)]
+  have hexp : ε * (1 + 1 / ε) ^ 2 = ε + 2 + 1 / ε := by
+    field_simp; ring
+  rw [hexp]
+  have : (0:ℝ) < 1 / ε := by positivity
+  linarith
+
+/-- **No positive constant lower-bounds a quantity that gets arbitrarily
+    small.** The abstract step; `no_positive_uniform_mutual_lower_bound`
+    instantiates it. -/
+theorem uniformLowerBound_nonpos {ι : Type*} {F : ℝ} {E : ι → ℝ}
+    (hlb : ∀ c, F ≤ E c) (hsmall : ∀ ε : ℝ, 0 < ε → ∃ c, E c ≤ ε) : F ≤ 0 := by
+  by_contra hpos
+  push_neg at hpos
+  obtain ⟨c, hc⟩ := hsmall (F / 2) (by linarith)
+  have := hlb c
+  linarith
+
+/-- **No positive constant lower-bounds the mutual pair energy.**
+
+    So the Möbius mutual channel carries no universal positive floor, and in
+    particular no topological invariant can bound it below by a positive
+    amount on a pairwise-unlinked pair. Route (2)'s magnitude has to come from
+    a *derived configuration* — a geometry — and not from the pair's link type.
+
+    This is a scope-(b) structural exclusion in the sense of AGENTS.md: the
+    invariant cited is `LinkEmbedding.innerPairEnergy_le`, the separation bound
+    §1 proves, and the exclusion is of *topological* lower bounds only. It says
+    nothing against a geometric magnitude, which is what the framework would
+    have to derive. -/
+theorem no_positive_uniform_mutual_lower_bound (m : M) (s : ℝ) {F : ℝ}
+    (hlb : ∀ R : ℝ, F ≤ (separatedLink m R).innerPairEnergy 0 1 s) : F ≤ 0 :=
+  uniformLowerBound_nonpos hlb fun _ hε => innerPairEnergy_separatedLink_small m hε s
 
 end MobiusMutualChannel
 
