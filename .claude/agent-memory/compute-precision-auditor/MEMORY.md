@@ -158,6 +158,44 @@ CWD-relative write that strays the witness to the repo root, and one genuinely
 stale consumer. **Zero were environment drift.** Full worked cases:
 `measurement-hygiene-traps.md`.
 
+## TRAP — an `mpf` can be mpf-TYPED and float64-VALUED; check the SOURCE, not the type
+
+`pyhecke.wedderburn.q_hook_product` / `q_factorial` / `wedderburn_weight` accumulate
+`mp.mpf(1) * q_int(k)` over **`q_parameter.q_int`, which is float64** (`Q` is a
+Python float). They return `mpf`, print 40 digits, and carry ~16. So `isinstance(x,
+mpf)` is **not** evidence of precision and neither is the digit count of its repr —
+resolve the value to its arithmetic source. The exact route already exists:
+`qou_substrate.constants.q_int_at`, or `(Q_MP**n - Q_INV_MP**n)/HA_MP`.
+
+Measured 2026-09-12 on `C_λ = m_e·H_q·y_λ·ρ_λ`: excising the float64 from `μ_λ`/`s_*`
+removes **2.4946976e-16** and the `q_int` route still **leaves 1.0212424e-15** —
+4× more than was removed. Root fix is 124 py files / 243 witnesses (`qou-oiz3`), so it
+is an owner call, not a sweep. **`_Q_FRAC` from `pyhecke.gram` is NOT the exact q**:
+it is the engine's rational `1.11`, 1.93e-5 from the anchor. `_Q_MP` carries 50
+digits (9.91e-52 from `q_at(90)`) — **below `OUTPUT_DPS = 60`**.
+
+## TRAP — a CACHED mpf inherits the ambient dps of whoever touched it FIRST
+
+`hecke_core_legacy._partition_table` is built once and reused for the process.
+mpmath rounds to the **ambient** `mp.dps`, which is **15** in a bare import. So every
+mpf in it was 70 digits when `unified_iterative_correction` (which carries its own
+`workdps`) got there first and **15** when any of the eight probes / two audits that
+touch `_PARTITION_TABLE` directly did — with **no signal either way**. Measured:
+`q_factorial(4)` parts company with itself at the 17th digit across the two contexts.
+Generalise it: **a memo/`lru_cache`/module-level cache over mpf is a precision bug
+unless the builder sets its own `workdps`.** Fixed by wrapping the body; a probe that
+re-measures must call the *function*, not read the cache twice.
+
+## TRAP — a per-block float64 bound does NOT transfer to a cancelled total
+
+PR #7237 reported the `μ_λ` gap as "2.54432e-16, the floor of float64, so it bounds
+the damage". True **per block** and false for the accumulated per-atom total: at
+`k_exact = 4` the ⁸Be gated total moved **8.44e-16** (3.8× eps) and its ungated total
+**6.66e-15** (30×), because that total is 1.3e-3 MeV assembled from O(1)
+contributions. **Absolute** shifts were ~1e-17 MeV everywhere, including there — so
+report both, and say which one the "floor" claim is about. Neither direction rescues
+the old value: agreement at the floor never was evidence of correct rounding.
+
 ## TRAP — `chi_all_lambda_any` carries its OWN `dps=50`, not the ambient `mp.dps`
 
 `chi_general_word.chi_all_lambda_any(word, n, *, dps=50, …)` computes at its
@@ -249,6 +287,7 @@ Everything here is a *method*, not an answer.
 | producers that genuinely fail | the seven-requirement runner above | 2 (`su4_1111_markov_trace_probe`, `qbeta_habiro_element_probe`) | 2026-08-24 |
 | missing-dual LP/SDP witnesses | `python3 computations/lp_dual_witness_validator.py` | run it — do not cite a dated baseline | — |
 | `path_bridge` bootstrap defects | `python3 computations/audits/path_bridge_bootstrap_audit.py` | 6 | 2026-08-29 |
+| `binding_energy(1,1)` wall cost | `hecke_core_legacy.binding_energy(1, 1)`, kernel live | **1233.9 s** (1278.5 s on `origin/main`) for the SMALLEST bound atom; A ≥ 3 strictly worse — `uic_binding_a_series_kernel_live_probe` exits 124 at 2400 s with no rows | 2026-09-12 |
 
 **Read the over-flag row's history before quoting anything near it.** Two
 earlier figures were wrong in opposite directions and both were an agent's
@@ -400,3 +439,21 @@ TRAPs.
   reads *"Measured after the fix, with the binary built"*. Plus the BASELINE for the
   +48.1039 % `tr_M` move (a y_λ weight-table regeneration) and the p–n colour-weight
   localisation. **Read that file before auditing any witness-to-witness dependency.**
+- 2026-09-12 (`qou-oiz3`, PR #7245): owner directive **"excise float64"**, acting on
+  the finding PR #7237 / `qou-t6be` left. Three TRAPs above are new and all three cost
+  me a wrong sentence first: mpf-typed-but-float64-valued, the cached-table dps, and
+  the per-block bound not transferring to a cancelled total. Four more, worth carrying:
+  * **The cited lines are where the previous report LOOKED, not the surface.** Two
+    became **nine** sites + the cache. Two of the nine (`atom_markov_trace`,
+    `atom_frobenius_norm_sq`) are on a *different leg* of `binding_energy`
+    (`binding_from_frobenius_pairing`) that the original framing never reached.
+  * **Run BOTH arms before attributing a stale witness.** `uic-binding-a-series` is
+    3.9e-15 off; the obvious read is "my change moved it". The baseline arm gives the
+    **same value as post-fix**, so it is upstream drift. Cost: a second 21-min run.
+    And the arms agreeing is **not** evidence the numbers agree — `binding_energy`
+    returns `float(B)`, so the comparison happened after a cast to 53 bits.
+  * **A timing in PROSE defeats every field-name mask** (already in
+    `measurement-hygiene-traps.md`; hit again). `binding-word-3A-reembedding` "moved"
+    in 4 fields, all four wall-clock, two inside an assertion's sentence.
+  * **`git checkout -- computations/` is what the gate PRINTS and it eats source
+    edits.** Revert the 11 contended audit witnesses BY NAME.

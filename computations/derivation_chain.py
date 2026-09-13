@@ -108,6 +108,67 @@ from q_parameter import Q as Q_0  # noqa: E402
 # additional ~2e-4 discrepancy of unestablished origin on top of the convention.
 # Replacing it with the D value fixes the convention and removes that anomaly
 # in the same stroke — but the anomaly is NOT explained, only superseded.
+# ══════════════════════════════════════════════════════════════════════════
+# ⚠ GROUPED-ERA. THIS REGISTRY IS ONE ORDERING RULING BEHIND CANON.
+#
+# MEASURED 2026-09-13 (bean `qou-4383`), not inferred. Every entry below, and
+# every entry of TR_M_AT_Q0_50DPS, reproduces to 50 significant digits when
+# `atom_braid_word_3A` is forced to `intra_order="grouped"`. Under the
+# canonical `borromean` word — the 2026-09-05 owner ruling, bean `qou-hu1f` —
+# the same computation gives
+#
+#     p  0.62932840220292191816534574677848592760021940063436
+#     n  0.47513351715568221250609023267500579955840763470875
+#     D  0.15196833920423160759266569775106614127124096465527
+#
+# i.e. the proton entry is 82 % high and the neutron 108 % high.
+#
+# DELIBERATELY NOT CHANGED HERE. `trm_proton_five_values_census.py` (bean
+# `qou-soj6`) settled the policy for this exact constant: "TR_M_AT_Q0 feeds
+# live producers, so correcting it moves published numbers and is its own
+# tranche." Twelve live modules import it (outside `_deprecated`):
+# applied_uniqueness_mass_table, audits/canonical_a_k_magnitude_audit,
+# audits/derivation_convention_frame_audit, the deuteron and neutron
+# build_markov_trace_assembly chains, build_proton_mass_50dps_chain,
+# build_six_term_substrate_model_b, canonical_derivation_pipeline_compliance,
+# markov/assembly_chain_11_letter_recompute_probe,
+# phase5/phase2_proton_m_e_hecke_diagnostic, probes/graded_hecke_energy_probe
+# and the census itself. Flipping three numbers here moves all of them at once,
+# which is a tranche with an owner call in it, not a sweep.
+#
+# HISTORY WORTH KNOWING BEFORE YOU DO FLIP IT. This registry has already been
+# corrected once and went stale again five days later: `qou-soj6` found it
+# holding 1.6331535640480814 (the convention-C / muon-pin value, 13.33 % off),
+# and the fix landed the then-canonical grouped value — which the 2026-09-05
+# ruling superseded. So the failure mode here is not "nobody looked"; it is
+# that a hardcoded constant does not track a ruling. Prefer
+# `canonical_trm_reference.tr_m_nucleon()` — but read the correction below
+# before trusting that advice, because as first written here it was wrong.
+#
+# ⚠ CORRECTION, same day. This said `canonical_trm_reference` "selects by
+# recorded q0 and cannot silently serve the wrong frame". The first half is
+# true; the second was FALSE AS DEPLOYED, and measurably so — the module was
+# itself returning the GROUPED values for all five atoms. It selects by PIN and
+# has no notion of the intra-nucleon ordering at all, so it guards a cross-pin
+# read while being blind to exactly the frame at issue here.
+#
+# The cause was its input, not its logic: it reads
+# `atomic-tr-m-mpfr-50dps-proton.witness.json`, dated 2026-08-19 and therefore
+# pre-ruling. Note why this went unseen — the CANONICAL-pin witness was the
+# stale one (proton, 2026-08-19) while the RETIRED-pin witness was fresh (muon,
+# 2026-09-07). Regenerated 2026-09-13 with
+#
+#     QOU_Q0_ANCHOR=proton python3 computations/atomic_tr_m_mpfr_50dps.py \
+#         --anchor proton
+#
+# after which the module serves the canonical values listed above; the
+# producer's own bridge-vs-peel cross-check agrees to 4.3e-51.
+#
+# So the advice holds NOW and did not before. One gap remains, unfixed:
+# `canonical_trm_reference` validates the pin and not the ordering, so a future
+# ruling can stale it again just as silently. An ordering assertion there is
+# the durable version of this recommendation.
+# ══════════════════════════════════════════════════════════════════════════
 TR_M_AT_Q0: dict[str, float] = {
     "p": 1.1457596924573009,
     "n": 0.9877436881158096,
@@ -126,7 +187,9 @@ TR_M_AT_Q0: dict[str, float] = {
 # Convention D, at the PROTON pin, read from
 # `atomic-tr-m-mpfr-50dps-proton.witness.json`. Prefer
 # `canonical_trm_reference.tr_m_nucleon()` in new code — it selects the witness
-# by its own recorded q0 and so cannot silently serve the other layer.
+# by its own recorded q0 and so cannot silently serve the other LAYER. It can
+# still serve the wrong ORDERING, which it did until 2026-09-13; see the
+# correction above the float registry.
 TR_M_AT_Q0_50DPS: dict[str, str] = {
     "p":  "1.14575969245730086968908159577411930594372806194352738498820",
     "n":  "0.987743688115809571634020165501294982055048759062827475627723",

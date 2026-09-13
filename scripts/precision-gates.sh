@@ -452,6 +452,28 @@ GATES=(
   # and its own docstring records a pass that reported 24 bogus SyntaxErrors.
   # Bean qou-sidu.
   "python compile gate|computations/audits/python_compile_gate.py|--strict|yes|yes"
+
+  # NOT a precision gate — a SEMANTICS one, in the same idiom as "hardcoded
+  # braid word" and "witness shape guard" above. AGENTS.md forbids conflating
+  # the three partition-weight families y_λ / w_λ / w̃_λ, which are distinct at
+  # q ≠ 1, and until 2026-09-13 that rule lived only in prose. It was broken in
+  # four probes at once: the Magnus Ω₂ sign probes aggregated with the quantum
+  # Plancherel measure d_q(λ)²/[n]_q! while calling it y_λ in every docstring,
+  # every witness `pairing` field, and every `per_partition[].y_lambda` column.
+  #
+  # NOT COSMETIC, which is why it blocks. Re-weighting those probes' own
+  # committed traces with the real Wenzl bridge FLIPS the sign of P_total at
+  # A=3 and A=4 (Plancherel −,+,+ over A=2,3,4; Wenzl −,−,−), so the
+  # programme's target A-dependent sign change is present under one name and
+  # absent under the other. A mislabelled weight was a mislabelled result.
+  #
+  # Checks A/B/C block and stand at ZERO after the qou-za3q / qou-q2q7 fixes,
+  # so they can only fire on a regression. Check D (a witness y_lambda column
+  # with no `weight_family` beside it) is a RATCHET against
+  # computations/audits/y-lambda-undeclared-column-baseline.json, because 55
+  # such columns already exist and this file's own header says a gate that is
+  # red on arrival gets skipped. THE BASELINE DRAINS, NEVER GROWS.
+  "y_lambda conflation|computations/audits/y_lambda_conflation_audit.py||yes|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then

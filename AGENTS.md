@@ -2400,9 +2400,36 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
 - **L2 is variable per observable.** Q_β target is 7.8 ppb; currently
-  measured at **4.316e+8 ppb (5.535e+7× miss)** per the dashboard
-  (`per-observable-100x-status.witness.json`, 2026-09-12) — the RULED base,
-  `ε` = the Markov trace at `z_D = q³/(q²+1)`, with **zero `c_k` rungs**. This
+  measured at **1.668e+8 ppb (2.139e+7× miss)** per the dashboard
+  (`per-observable-100x-status.witness.json`, current with its producer at
+  `scriptHash 98317bdcfb5c`) — the RULED base, `ε` = the Markov trace at
+  `z_D = q³/(q²+1)`, on the **γγ-selected element `nuc11_interleaved`** and the
+  canonical tower-summed `E₀`, with **zero `c_k` rungs**.
+
+  > 🛑 **This read `4.316e+8 ppb (5.535e+7× miss)` until 2026-09-13, and that
+  > figure was stale by TWO commits — the same prose-lag the element migration
+  > left in the producer itself (PR #7283).** `4.316e+8` is `delta_S` at
+  > **order-zero `E₀`** (−43.157 %), i.e. the cell the 2026-09-08 ruling entry
+  > recorded and `22ff8a86d2` re-scored onto. Since then `173da443b6` made the
+  > **tower-summed `E₀`** canonical (`delta_S` then reads 4.2594e+8 ppb,
+  > −42.594 %) and `573b2ece24` migrated the scored **element** to
+  > `nuc11_interleaved` (1.668e+8 ppb, −16.678 %). Net **2.588×**, and this
+  > paragraph's own instruction — *"Quote the witness, not this paragraph"* —
+  > is what catches it: the witness has carried 1.668e+8 since 2026-09-12.
+  >
+  > The three `delta_S` / `nuc11` cells differ only by which `E₀` and which
+  > element, so **say both when you quote one**. The corresponding rows are
+  > `m_n` **1.389e+5 ppb (2.718e+7×)** and `Δ_pn` **1.009e+8 ppb (2.327e+7×)**;
+  > `m_μ` (970.2×) and `m_K/m_π` (0.195× ✓) are untouched by all of this.
+  >
+  > **The element is ruled in 6 of its 11 letters, not in all of them.** γγ
+  > words have even length (`gammaGamma_length_even`, sorry-free) and
+  > `nuc11_interleaved` is eleven letters, so the ruling reaches the 6-letter
+  > core and provably not the 3-letter quark block (odd) or the 2-letter gluon
+  > pair (both letters positive). Five letters remain census-derived against a
+  > ruling that says not to use census (`qou-99qc`, still `todo`).
+
+  This
   read "1279 ppb (164.0× miss) per the dashboard (fresh run 2026-05-31)" until
   2026-09-12, when item (iii) of the 2026-09-08 ruling was re-scored on owner
   authorisation (`qou-99qc`); that figure was convention-C on the retired
@@ -4649,7 +4676,7 @@ rules of thumb:
 - `$\gamma$` = photon (never vortex; vortex is `$\varrho$`)
 - `$H_q$` alone = **forbidden** (collision); use `$\mathcal{H}_q$` (shuffle) / `$\hat{H}_q$` (Hamiltonian) / `$H_n(q)$` (Hecke) / `$H_q(\lambda)$` (hook-length)
 - `$E$` alone = **not used**; use `$\mathcal{S}_p$` (fibre), `$\mathfrak{E}$` (energy), `$\mathcal{E}_q$` (elliptic curve), or `$E_{\mathfrak{H}}$` (crossing energy with hadron subscript)
-- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md)
+- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md) **Mechanical check (2026-09-13):** [`computations/audits/y_lambda_conflation_audit.py`](computations/audits/y_lambda_conflation_audit.py), wired blocking into `scripts/precision-gates.sh`. It flags the name `y_lambda` attached to the quantum Plancherel measure `$d_q(\lambda)^2/[n]_q!$` — in prose, in an AST assignment, in a producer's own name, and (as a draining ratchet) in a witness column that declares no `weight_family`. It exists because this rule lived only in prose and was broken in four probes at once, and there it was **not cosmetic**: re-weighting the Magnus $\Omega_2$ probes' own committed traces with the real Wenzl bridge FLIPS the sign of $P_\text{total}$ at $A=3$ and $A=4$ (Plancherel $-,+,+$ over $A=2,3,4$; Wenzl $-,-,-$), so the programme's target $A$-dependent sign change is present under one name and absent under the other — bean `qou-za3q`, decision 1 still OPEN.
 - `$q = 1.1097$` (or any specific numerical value) **must not appear** outside the introduction and Chapter 7
 
 ### 7ab. Observed / derived values — approximation convention (STRICT)

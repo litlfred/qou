@@ -306,3 +306,43 @@ bar-partner is $z - h$, not $z$, because M3 contains $\sigma_n$. (The $z$
 is canonical and C is excised; see
 [`def:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md).)
 When the object being graded lies in the algebra, use both halves.
+
+## QCD vocabulary: five words that mean something else here
+
+Every collision above is **internal** — two objects inside this framework
+wearing one glyph. This section records a different hazard: five terms that
+carry a standard meaning in QCD and a *different*, unrelated meaning in this
+corpus. The risk is not that an author confuses two of our own objects, but
+that a reader — or an agent asked whether the framework speaks to some
+measurement — greps for the QCD term, finds hundreds of files, and concludes
+the topic is covered.
+
+| Term | Standard QCD meaning | What it means in this corpus |
+|------|----------------------|------------------------------|
+| **saturation** | small-$x$ gluon recombination; the saturation scale $Q_s(x)$ | three unrelated things: the *genus* saturation of $T_{2,9}$; **nuclear saturation**, meaning the $B/A$ plateau ([`QOU.Mass.CoordinationSaturation`](../lean/QOU/Mass/CoordinationSaturation.lean)); and "scales saturate" in the cosmological limits |
+| **shadowing** | nuclear shadowing; Gribov inelastic screening | **LP-dual shadow prices** $y_0^{\star}, y^{\star}$ — the binding-energy duals of [`prop:operator-selection-lp`](../mass-theory/operator-selection-lp.md). Also "archimedean shadow" and the $a_1$ "parity shadow" |
+| **diffraction** | Pomeron exchange; diffractive dissociation | **optical** diffraction — Fraunhofer, Airy, the double-slit chapter |
+| **S-matrix** | the scattering matrix | the **modular** $S$-matrix of a modular tensor category — the Reshetikhin–Turaev / Chern–Simons vacuum row and total quantum dimension $D = \sum_i d_i^2$ |
+| **Fourier transform** | conjugate to momentum or impact parameter | the discrete transform on $C_n$ (Lagrange resolvent), the **categorical** Fourier transform, and the adelic one. None is a transform over a transverse plane |
+
+**What this framework does not have, measured rather than inferred.** The
+following carry **zero** occurrences across `content/`, `docs/` and
+`computations/`: *parton*, *Bjorken*, *DGLAP*, *deep inelastic*,
+*photoproduction*, *nuclear shadowing*, *Mandelstam*, *impact parameter*,
+*transverse plane*, *momentum space*. The framework evaluates its observables
+at a single substrate modulus and produces knot invariants, not amplitudes
+differential in momentum transfer.
+
+**Why the list is stated as a rule and not as a search result.** Two of the
+five — $S$-matrix and Fourier transform — were about to be reported *absent*
+from this corpus on the strength of a topic grep that returned nothing for the
+QCD sense. They are present in over a hundred files each, meaning something
+else entirely. A topic grep answers "does this word occur", never "does this
+concept occur", and the gap between those two questions is exactly where a
+false negative and a false positive can be produced from the same evidence.
+
+Related: the bare-$\sigma$ hazard above, and the three distinct partition-weight
+families in
+[`notation-register.md`](notation-register.md), are the internal instances of
+the same discipline — resolve a name to its definition before reasoning about
+what it denotes.

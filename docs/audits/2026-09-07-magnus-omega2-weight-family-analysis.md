@@ -74,7 +74,7 @@ Note the largest Wenzl weight, $(6,)$ at 0.45, contributes **nothing**: on a
 Wenzl the entire H₆ signal is carried by three 2-row shapes — (5,1), (4,2),
 (3,3).
 
-### 2.3 The sign is robust at A=2 and **not** at A=3
+### 2.3 The sign is robust at A=2 and **not** at A=3 or A=4
 
 > **🛑 SETTLED 2026-09-12 (PR #7197) — ⁴He is no longer "undetermined", and the
 > answer completes the pattern rather than breaking it.** This section's table

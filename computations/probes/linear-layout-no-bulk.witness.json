@@ -1,0 +1,85 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-08T03:51:15.307975+00:00",
+  "commitSha": "f157216a9fcf982e5106dc2b23f6e2ae9d915669",
+  "assertions": [
+    {
+      "name": "position_graphs_are_paths",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "strand_tracked_graphs_linear",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "edge_bound_excludes_bulk_sets",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "surface_constant_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 39,
+  "computation": "linear-layout-no-bulk",
+  "scriptFile": "linear_layout_no_bulk_probe.py",
+  "scriptHash": "64174c682f72",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/linear_layout_no_bulk_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/linear_layout_no_bulk_probe.py"
+  },
+  "description": "Linear-layout invariant on every coordination graph atom_braid_word_3A can express (A=2..8, all orderings): all are the path; |E|=A-1; surface=2; no bulk. Edge sets with |E|>A (max-contact 3A-6, complete graph, true packing) are inexpressible. Integer combinatorics only; anchor-independent (letter values never read). Lean: QOU.Mass.LinearLayoutNoBulk (sorry-free).",
+  "data": {
+    "words": {
+      "n_words": 508,
+      "n_default_words": 42,
+      "A_range": [
+        2,
+        8
+      ]
+    },
+    "position_graph_all_paths": true,
+    "strand_tracked_all_paths": true,
+    "strand_tracked_all_linear": true,
+    "surface_values": [
+      2
+    ],
+    "inexpressible_by_edge_bound": {
+      "max_contact_3A_minus_6": "A >= 4",
+      "complete_graph": "A >= 4",
+      "true_packing_6n_minus_0.926n^(2/3)": "n >= 1"
+    }
+  },
+  "caveats": [
+    "Scope-(b) over the ENCODING atom_braid_word_3A only: a different strand layout (one block touching three or more others) is not excluded by this invariant, merely not derived anywhere in the corpus."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorNote": "letter values never read; graph depends on generator indices only"
+}

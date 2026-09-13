@@ -94,7 +94,18 @@ def q_int(k, q):
 
 
 def wedderburn_weight(shape, q):
-    """y_λ = d_q(λ)² / [n]_q!  (symmetric q-integers)."""
+    """**quantum Plancherel** measure `w_planch(λ) = d_q(λ)² / [n]_q!`
+    (symmetric q-integers).
+
+    NOT the Wenzl y_λ, which is the production Markov weight. This docstring
+    read `y_λ = d_q(λ)²/[n]_q!` until 2026-09-13 — the conflation AGENTS.md
+    forbids, since the three families y_λ / w_λ / w̃_λ are distinct at q ≠ 1.
+    The sibling Magnus Ω₂ probes carried the same line, and there it was not
+    cosmetic: re-weighting their committed traces with the real Wenzl bridge
+    flips the sign of P_total at A=3 and A=4 (bean `qou-za3q`). Found by
+    `computations/audits/y_lambda_conflation_audit.py`, which exists because
+    the name was the only thing telling the two families apart.
+    """
     from math import prod
     n = sum(shape)
     # hook lengths

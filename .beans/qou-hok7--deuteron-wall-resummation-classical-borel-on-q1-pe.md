@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-11T15:31:24Z
+updated_at: 2026-09-13T10:42:37Z
 ---
 
 
@@ -598,3 +598,266 @@ substrate-side reading of REV's Θ(√n) coefficient — the bound's `(C + L/2)�
 upper constant, the true `M_n/√n` is 3.19 at n = 44 and still rising toward its limit, which
 is not identified; and the q-Borel resummation negative (2026-08-21) stands. **Do not close
 this bean.**
+
+
+## 2026-09-13 — #7081 repaired at the source; TWO defects, not one; and an independent check of #7185
+
+The 2026-09-11 append correctly identified #7081's rise as an instrument artefact. The probe
+itself still asserted the false conclusion in its docstring, R3, R4 and R6 — a producer that
+gets re-run and quoted — so it is repaired here rather than only annotated. 6/6.
+
+**Defect 1 (as #7185 reported), reproduced independently.** `Hhat/H_min(n)` at this probe's own
+argmax: 1.7051 (n=40) -> 0.7005 (250) -> 0.5658 (1600) -> **0.48947** (4000, argmax (151,357)),
+matching the reported 48.9 %. The missing energy at n=4000 is 12,705.8 against the 13,337 the
+probe reported — i.e. essentially the entire figure. Every partition has `H >= H_min(n)`, so a
+lower bound falling below it feeds the maximiser energy no shape can have.
+
+**Defect 2, NEW and independent — the search under-explores every row.** The heuristic
+`if v < best - 50: break` is keyed on the GLOBAL best, but the value is UNIMODAL in `W`. At
+n = 4000, l = 88 it runs 57 -> 126 -> 260 -> 326 -> 362 -> 438 -> 507 before collapsing, so the
+break fires at W = 87 and abandons the row. `(88,174)` alone gives **326.4**, above the staircase
+floor `A*sqrt(2n) = 322.3`, and the search never saw it. Caught by asserting the staircase floor
+as a validity check — a first repair pass reported 169.4 at n = 4000, *below* that floor, hence
+not a bound at all.
+
+The two defects push in OPPOSITE directions, which is why neither surfaced as an absurdity: the
+reported figure was neither an upper nor a lower bound on anything.
+
+**The methodological error is the reusable part.** R6 calibrated `Hhat` against the true minimum
+`H` at that exact `(l,W)` and got 99.3-100 % — at n <= 40, where brute force reaches and `l - k`
+is small — then read the RATE at n = 4000. The calibration was sound; extrapolating it was not.
+Same shape as #7093's even-gap conjecture, whose two hand-checks both had all-equal gaps.
+Sharper still: R6 was written to test *"the weak link is Hhat"*, which was RIGHT, and inverted it
+on that measurement.
+
+### Independent confirmation of #7185, and a refinement of its constant
+
+Swapping the row-tangent floor `2(H - H^+) >= (l-k)^2 - r` into this probe's own maximiser, with
+no other change (same eps table, same entropy term, same search):
+
+    n            40      250     1600     4000    10000    40000
+    max         225.9    306.9    522.1    723.8   1047.1   1921.7
+    / sqrt(n)   35.72    19.41    13.05    11.44    10.47     9.609   <- falls
+    / n^{3/4}   14.20     4.882    2.064    1.439    1.047    0.679   <- falls
+    argmax l-k     59       59       59       59       59       59
+
+Richardson on the last two (the correction is `O(1/sqrt n)`) gives **8.7462**. The argmax sits
+`l - k = 59` at every n against the predicted `C/L = 59.147`.
+
+**Refinement: the coefficient is a BAND, not 8.80.** Maximising `(l-1)C - ((l-k)^2 - r)L/2`
+exactly gives `(k-1)C + C^2/(2L) + rL/2`, so the ratio oscillates with `r` in
+`[C*sqrt2, (C+L/2)*sqrt2] = [8.7277, 8.8015]`. The 8.80 on this bean is the `r = k` upper
+envelope, attained only when `n` sits just below a triangular number; Richardson's 8.7462 is
+inside the band. This bears on the open coefficient question below — it is an upper band for the
+BOUND, still well above the true `M_n/sqrt n` (3.19 at n=44).
+
+Also checked, since #7185 names it as its one honest Lean gap: `H^+ = P_k + r(k+1)` equals
+`H_min_closed(n)` at all eight test n. Numerically confirmed, not proved.
+
+**Withdrawn from this bean's 2026-09-07 sections:** "the (l,W) relaxation is faithful", "the loss
+is the Jensen step", the "anti-caveat" defending the rise, and the impact arithmetic computed
+against the inflated ~3x. **Surviving:** R1/R2 of #7081; #7093's three refutations about `P_min`
+(brute-forced, independent of `Hhat`); and the coupling factor shrinking with `l`.
+
+Status unchanged: **do not close.** The Theta(sqrt n) coefficient and the q-Borel negative stay open.
+
+
+## 2026-09-13 — the Θ(√n) coefficient is near the STAIRCASE end; the bracket's width is bound slack
+
+The item this bean lists as still open — "the substrate-side reading of REV's Θ(√n) coefficient …
+which is not identified" — is narrowed, not closed. Bracket before:
+
+    5.09595 = A*sqrt2         staircase limit, proved (#7010)          LOWER
+      ?                       lim M_n/sqrt(n)                          OPEN
+    8.72769 = C*sqrt2         row-tangent band, lower edge (#7185)     UPPER
+    8.80147 = (C+L/2)*sqrt2   its r = k envelope
+
+**Method: local search over beta-sets at fixed n, not enumeration.** `M_n` is a max over shapes, so
+ANY shape's exact `R − E` is a lower bound on it; the staircase is just one shape. Moves shift one
+`beta_i` by ±1 with a compensating ∓1, keeping `n` and `l` fixed. One-sided by construction: a find
+RAISES the lower end and a miss proves nothing about the upper.
+
+    n       k    stair R    best found   l   l-k   /sqrt(n)   excess
+    36      8    17.63209   17.773921    9    1     2.96232   1.00804
+    78     12    31.91046   32.601639   14    2     3.69141   1.02166
+    136    16    46.29905   47.515487   18    2     4.07442   1.02627
+    300    24    75.12050   77.075526   27    3     4.44996   1.02603
+    630    35   114.75740  117.133810   38    3     4.66672   1.02071
+
+**Two findings.**
+
+1. **The maximiser is NOT the staircase.** It is beaten at every triangular `n` tested, by a shape
+   sitting `l − k` = 1, 2, 2, 3, 3 rows above it. So the coefficient is strictly above `A*sqrt2`
+   in the limit unless that excess vanishes.
+2. **But the excess is only ~2.4 % and FLAT in n** (0.80 %, 2.17 %, 2.63 %, 2.60 %, 2.07 %), which
+   projects a coefficient near **5.22**. Against the bound's 8.728, **the ~1.7× width of the
+   bracket is mostly SLACK IN THE ROW-TANGENT BOUND, not headroom in `M_n`.** The next gain is in
+   tightening the bound, not in searching harder for shapes.
+
+**Why the excess is readable at n where the ratios are not.** The `/sqrt(n)` column is still
+climbing (2.96 → 4.67) exactly as #7065 measured for the staircase alone (4.466 at n = 435 against
+its proved 5.0959), so a finite-n ratio below 5.096 is expected and is NOT evidence against the
+limit. The excess is a RATIO of two such sequences, in which that common slow convergence largely
+cancels — which is the whole reason this measurement works at n ≤ 630.
+
+**Limits, stated.** A projection from five points, not a limit. n = 1275 was attempted and cut: the
+search recomputes the value in full (`O(l^2)`) per move rather than incrementally, so it did not
+finish in ~9 min; making it incremental is the cheap way to extend the table.
+
+**Discipline check (owner request, same day).** Verified across the whole `qou-hok7` cone —
+`rev_beta_bound_polynomial_max`, `rev_pair_term_even_gap`, `rev_coupling_factor_growth`,
+`rev_sharpness_discriminator_control`, `rev_max_large_n_scan`, `hmin_closed_form_…`,
+`zn_hook_length_closed_form`, and the sibling's `rev_sqrt_n_upper_bound`:
+
+- **Proton pin, by VALUE not by table**: `Q_50_DIGIT_STR = 1.1099785827513808…`; none of the eight
+  stems appears in `q0_anchor_manifest.json`'s `ideal_muon` (19 entries), so all default to proton.
+- **Convention C/D does not arise**: no Markov parameter `z` appears anywhere in this cone.
+  `R_λ = Σ_c ε_{h(c)}` is over HOOK LENGTHS; the C/D question is about the Markov trace parameter
+  and is simply not a degree of freedom here.
+- **No float64**: no `float(`, `statistics.`, `math.sqrt` or numpy in any of the eight.
+  `zn_hook_length_closed_form` is exact-integer polynomial arithmetic and is anchor-free by design.
+
+Status unchanged: **do not close.** The coefficient is narrowed, not identified; the q-Borel
+negative (2026-08-21) is untouched.
+
+
+### 2026-09-13 — the arc's assertions are now Lean, and (I') was already in the corpus (PR #7282)
+
+**Claim.** The three identities this arc runs on are proved sorry-free, and the
+central one cost four lines because the corpus already had it in a different
+register.
+
+`content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean`,
+11 declarations, 0 `sorry`, axioms `[propext, Classical.choice, Quot.sound]` on all 11.
+
+| | |
+|---|---|
+| **(I')** `sum_hookF_add_pairF` | `Σ_c g(h(c)) + Σ_{i<j<L} g(β_i − β_j) = Σ_{i<L} Σ_{m≤β_i} g(m)`, any `g` into an `AddCommMonoid` |
+| **(III)** `two_mul_sum_betaR` | `2 Σ_{i<L} β_i = 2n + L(L−1)` |
+| **(II)** `two_mul_sum_hookZ_betaForm` | `2 Σ_c h(c) = Σ_i β_i(β_i+1) − 2 Σ_{i<j}(β_i − β_j)` |
+| **(II) again** `sum_hookZ_betaForm_of_hookMultiset` | same statement, **independent proof** |
+
+all for **every** padding `L ≥ ℓ(μ)`, not only `L = ℓ(μ)`.
+
+**The finding worth carrying forward.** `QOU.SchurWeyl.hookSide_betaR` already
+states, for an arbitrary `CommMonoid`,
+`∏_c f(h(c)) · ∏_{i<j<L} f(β_i − β_j) = ∏_{i<L} descFactF f β_i` — the
+divisor-free hook-length formula with its Vandermonde denominator. Instantiating
+`M = Multiplicative N` turns every product into a sum and **is** (I'). So the
+one-body/two-body split this arc has treated as its own structural input is the
+hook-length formula, and the corpus proved it months ago on the product side.
+`SchurWeyl.betaR L μ i = μ.rowLen i + (L−1−i)` is likewise *already* this arc's
+`β_i`; the Lean reuses it rather than redefining it.
+
+**What the corpus did NOT have**: any identity about β-number **sums**. A grep
+for a sum over `betaNum`/`betaR` returns nothing. That gap is what this file closes.
+
+**(II) now has two proofs sharing no step** — one through `HookSumClosedForm`'s
+`2Σ_h = p₂(λ) + p₂(λ')` (a reflection argument over the cells) plus a termwise
+polynomial identity and the vanishing `−3Σm² + (2L−1)Σm = 0` that *is* the
+padding-independence; the other through the hook multiset, needing no column
+bound `M`. Agreement checks both, and checks the numerical probe (#7070, all
+partitions of `n ≤ 16`) that motivated them.
+
+**Implications for this bean.** This formalizes the **foundation**, not the open
+question. The Θ(√n) coefficient is still open: #7270 brackets it from the bound
+side at `[8.7277, 8.8015]` and #7279 puts the achievable side near ≈5.22, so most
+of that 1.7× width is slack in the *bound*. Tightening it is an argument about
+`Σ_i F(β_i) − Σ_{i<j} ε(β_i − β_j)` — and that expression is now a Lean theorem
+rather than a numerical observation, so a Lean-side bound on it is a route that
+did not exist yesterday.
+
+### 2026-09-13 — the 1.71× bracket is ONE term, and it has a name (PR #7286)
+
+**Claim.** The `[A√2, C√2] = [5.0959, 8.7277]` bracket on the Θ(√n) coefficient has
+ratio **exactly `C/A = 1.71267243954`** — no `√2`, no `n` — because
+
+    C = A + E_2,      E_2 := Σ_{d≥1} ε(2d)
+
+(the odds and evens partition the positive integers; `A` is the odd half). And `E_2`
+is **the staircase's pair term**: `δ_k` has β = (2k−1, 2k−3, …, 1), all gaps even, so
+`P_stair(k) = Σ_{d<k}(k−d)ε(2d)`.
+
+**Evidence** (`rev_coefficient_slack_is_the_pair_term_probe.py`, 8/8, mp.dps 80,
+Richardson k=800→1600):
+
+| | limit | target | rel |
+|---|---|---|---|
+| one-body / k | 6.1714057200791 | `C` | 7.9e-80 |
+| **pair / k** | 2.5680279943593 | **`E_2`** | 5.9e-80 |
+| R / k | 3.6033777257199 | `A` | 9.5e-80 |
+
+**Implication — the open problem moves.** The row-tangent bound reaches `C√2` through
+`R ≤ (ℓ−1)C`, which **discards the pair term outright**; the maximising shapes do not.
+So this is not diffuse slack to be chipped at from the shape side. The task is:
+**prove a pair-term LOWER bound that survives the energy trade-off.** That trade-off
+is the real content — `P` is small exactly when the β's are widely separated, which is
+exactly when `H` (hence `E`) is large. Any nontrivial pair floor lands the bound near
+`A√2` rather than 71% above it.
+
+**New exact fact (R4).** `H(δ_k) = H_min(T_k) = P_k` (square-pyramidal) at all 9
+triangular `n` tested, exact integers. **The staircase pays zero energy**, so its value
+IS its `R` — which is why `A√2` is a floor on `M_n` and not merely one shape's `R`.
+
+**Correction to my own #7279 reading.** That PR's "achievable ≈ 5.22" invites reading
+the excess over the staircase as converging to ~1.02. R5 declines it: `excess/√n` runs
+0.0236, 0.0783, 0.1043, 0.1129, **0.0947** — it **peaks at n=300 and FALLS at n=630**.
+#7279's own header says a failure to find a better shape does not lower the upper
+bound, so a turnover at the *largest* n is more likely the heuristic search weakening
+than a fact. Five points, all triangular, cannot separate a multiplicative excess from
+an additive one. **Do not quote ≈5.22 as the coefficient.**
+
+**NOT established:** that the true coefficient is `A√2`. Only that the bracket's width
+is one identified term and that the bound is where it lives.
+
+**Method note worth keeping.** R1 first FAILED at mp.dps 40 with residual 1.06e-39 —
+one ulp. The identity was testing my threshold, not itself. Fixed at the *precision*
+(dps 40 → 80, residual exactly 0) against a **derived** `3·N·ulp` bound, not by
+widening the tolerance.
+
+**Do not close this bean.**
+
+
+### 2026-09-13 — the energy trade-off priced; a model refuted, a claim corrected (PR #7286, 2nd commit)
+
+**Claim (the reusable one).** Mean-gap **rigidity**. With `φ(g) = g/√(g−1)`,
+
+    H − H_min ≈ (2n)^{3/2}·[φ(ḡ) − 2]/6 ,   E = (H − H_min)·ln q₀
+    φ(2) = 2, φ'(2) = 0, φ''(2) = 1/2   ⟹   E ≈ ln q₀·(2n)^{3/2}·(ḡ − 2)²/24
+
+A **quadratic** penalty of order `n^{3/2}` against a prize of order `√n`. **The mean
+β-gap of any maximiser is pinned to `2 + O(1/√n)`.** There is no room for a shape that
+spreads its βs to kill the pair term — which is exactly the obstruction a pair-term
+lower bound has to clear, and the corpus did not have it.
+
+**Evidence.** `rev_energy_gap_rigidity_probe.py`, 7/7. Checked against **exact integer
+H**: ratio to the formula 0.9988 → 0.99999 as ℓ 40→160 at g = 3,4,5; and `H − H_min = 0`
+**exactly** at g = 2 for every ℓ (the staircase pays nothing — that is `φ'(2) = 0`).
+
+**Three of mine that did not survive.**
+
+1. **Model refuted.** Rigidity predicts the excess should *shrink* like `1/k`. Measured:
+   `excess·k` spreads **73×**, and the model over-predicts by 10–160×. Cause — the extra
+   rows sit at small β where `F(β) ≪ C`, so they do not each contribute `A`. R1 untouched.
+2. **My #7286-R5 explanation WITHDRAWN.** I blamed the `excess/√n` turnover at n=630 on
+   "the search weakening". This is an **independent** search (different move set:
+   `β_i+=1 / β_j−=1` at fixed n AND ℓ; different seeds) and it reproduces **all five** of
+   #7279's values to the 1e-5 their printed 6-dp figures resolve. Two independent searches
+   agreeing is evidence the values are RIGHT. Recomputed at full precision the turnover is
+   still there. **R5's numbers stand; my explanation was wrong.**
+3. **Assumption falsified.** I wrote "the ℓ=k search reproduces the staircase" as a
+   *calibration*. It fails at 4 of 5 k: the staircase is **beaten at its own row count** by
+   +0.245/+0.492/+0.815/+0.893 at k = 12/16/24/35. So **`A√2` is the staircase's rate, not
+   the optimum's**, and the coefficient is strictly above it.
+
+**R4.** `P/(ℓ·E₂)` at the per-ℓ optimum stays in **[0.90, 1.09]** across all five n — the
+maximiser keeps a pair term within ~10 % of the staircase's. Necessary for a pair floor to
+be non-vacuous; not a proof that any shape must.
+
+**Still open, and better constrained:** the pair-term lower bound. Rigidity supplies the
+half that was missing (βs cannot spread); what is not proved is that a mean-gap-2
+configuration must carry `P ≳ ℓ·E₂`. Note #7093 already refuted the obvious route — the
+uniform/even gap multiset is NOT the pair-term minimiser at fixed (ℓ,W) — so this needs a
+different argument, not a Jensen step.
+
+**Do not close this bean.**

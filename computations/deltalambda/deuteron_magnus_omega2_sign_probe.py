@@ -29,11 +29,23 @@ THE OBJECT (0-fit, canonical, derived).
   density         ρ  = ρ(β_D) = ∏ σ_{g_i}      — the literal deuteron holonomy
                                                  (bare word; the d·I dressing is
                                                  CENTRAL ⇒ drops from every [·,·])
-  pairing         P  = Σ_λ y_λ · tr( ρ_λ · Ω₂_λ ),  y_λ = d_q(λ)²/[n]_q!
+  pairing         P  = Σ_λ w(λ) · tr( ρ_λ · Ω₂_λ ),  computed on BOTH weight
+                       families because they are not interchangeable (qou-za3q):
+                         Plancherel  w = d_q(λ)²/[n]_q!  → `P_total`       (legacy)
+                         Wenzl       w = y_λ  (bridge)   → `P_total_wenzl` ← HEADLINE
+                       `y_λ` names the WENZL weight only. The two are not a
+                       rescaling of one another: Wenzl carries the level r=2 row
+                       cap (every λ with ≥3 rows is exactly 0, bean qou-fq0f) and
+                       is a normalised Markov trace, tr(1)=1 at every n, whereas
+                       Plancherel's tr(1) drifts 11.1 → 6751.5 over n = 6 → 12.
+                       At A=2 the two arms agree in sign; at A=3 and A=4 they do
+                       not — see the note on `weight_family` in the witness.
 
 WHY THE SIGN IS THE WHOLE ANSWER.
-  • CONTROL ρ=I: tr_M(Ω₂) = Σ_λ y_λ tr(Ω₂_λ) = 0 EXACTLY (Markov trace of a
-    commutator vanishes by cyclicity). So any nonzero sign REQUIRES the density —
+  • CONTROL ρ=I: tr_M(Ω₂) = Σ_λ w(λ) tr(Ω₂_λ) = 0 EXACTLY for ANY weight family
+    (each tr(Ω₂_λ) is a sum of traces of commutators and vanishes blockwise by
+    cyclicity, so the control is weight-independent). Any nonzero sign REQUIRES
+    the density —
     this is the linear analogue of the quadrature, and unlike ‖F_q‖² it is not a
     square, so it is free to be negative.
   • P < 0 at A=2  ⇒  LIVE: the Magnus term carries the target (binding-reducing)
@@ -68,6 +80,7 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 # alongside the Plancherel measure this probe aggregates with. See
 # docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
+from magnus_weight_family_note import weight_family_note  # noqa: E402
 
 # NO-FLOAT64 (owner directive 2026-08-18: probes are not exempt). The germ is a
 # finite-difference q-derivative, so precision is load-bearing: raise dps at
@@ -122,9 +135,22 @@ def wedderburn_weight(shape, q):
 
     The name is fixed here; whether the Plancherel measure is the RIGHT pairing
     for a Magnus Ω₂ sign question is a separate matter and is not settled by
-    this rename. What IS settled (see `sign_robust_to_weight_family` in the
-    witness) is that the probe's headline conclusion — the sign of P_total —
-    does not depend on the choice.
+    this rename — it is bean qou-za3q decision 1, still OPEN.
+
+    This paragraph used to end "what IS settled is that the probe's headline
+    conclusion — the sign of P_total — does not depend on the choice." That
+    is FALSE and is now measured to be false. It came from the first run of
+    `magnus_omega2_weight_family_robustness_probe.py`, whose triton source
+    predated the 2026-09-05 ordering ruling (bean qou-hu1f); regenerating on
+    the canonical borromean word flipped triton's Plancherel P_total from
+    -108.147 to +2.470. The two families now run
+
+        Plancherel  -, +, +   over A = 2, 3, 4   (sign change at A: 2 -> 3)
+        Wenzl       -, -, -                      (no sign change anywhere)
+
+    so the choice decides whether the programme's target A-dependent sign
+    change is exhibited at all. That is a reason to settle decision 1, NOT a
+    reason to prefer whichever family yields the wanted sign.
     """
     n = sum(shape)
     rows = list(shape)
@@ -277,6 +303,7 @@ def main() -> None:
     _EXACT = mp.mpf(10) ** -30
     ctrl_ok = abs(P_ctrl) < _EXACT
     P_sign = 0 if abs(P_total) < _EXACT else (1 if P_total > 0 else -1)
+    P_wenzl_sign = 0 if abs(P_wenzl) < _EXACT else (1 if P_wenzl > 0 else -1)
     P_intf_sign = 0 if abs(P_intf) < _EXACT else (1 if P_intf > 0 else -1)
 
     # sign-indefiniteness at the partition level is the decisive structural fact:
@@ -291,6 +318,16 @@ def main() -> None:
     # OBJECT, independent of the (open) binding-sign convention.
     live = bool(ctrl_ok and sign_indefinite and P_sign != 0)
     net = "NEGATIVE" if P_sign < 0 else ("POSITIVE" if P_sign > 0 else "≈0")
+    # Whether the verdict survives the open pairing-measure question (qou-za3q
+    # decision 1) is not a fact to assert — it is whether THIS run's two arms
+    # landed on the same sign. Computed, so it cannot go stale the way the
+    # "sign does not depend on the choice" literal did.
+    _agree = (P_sign == P_wenzl_sign)
+    _arms = "agrees with" if _agree else "CONTRADICTS"
+    _rests = ("does not rest on the open choice of pairing measure"
+              if _agree else
+              "HOLDS ONLY ON THE PLANCHEREL ARM and is reversed by the "
+              "production Wenzl weight — do not read it as measure-independent")
     if not ctrl_ok:
         verdict = ("INVALID — control tr_M(Ω₂) did not vanish; the finite-difference "
                    "germ or the trace is broken. Do not read the sign.")
@@ -307,15 +344,23 @@ def main() -> None:
             f"quadrature's non-negativity argument provably does NOT transfer to this "
             f"linear object; (ii) the per-partition pairing is SIGN-INDEFINITE "
             f"({npos} positive, {nneg} negative — e.g. (2,2,2) is positive while (5,1) "
-            f"is negative), which a square structurally cannot be; (iii) the y_λ-weighted "
-            f"total is definite and nonzero, net {net}. This makes the 2nd-order Magnus "
+            f"is negative), which a square structurally cannot be; (iii) the weighted "
+            f"total is definite and nonzero, net {net} — on the Plancherel arm P_total, "
+            f"and the headline Wenzl arm P_total_wenzl {_arms} it, so this verdict "
+            f"{_rests}. This makes the 2nd-order Magnus "
             f"term a VIABLE carrier for the sign-changing missing binding term, the role "
             f"the traceless-⇒-quadrature F_q could not fill. HONEST LIMITS: this is a "
             f"fact about the object's sign structure, NOT a derivation of the 0.608 MeV "
             f"(needs the open Δ_λ MeV normalization) and NOT yet a sign-MATCH to the "
             f"deuteron — mapping 'net-{net.lower()}' to 'reduces/adds binding' needs the "
-            f"binding-sign convention of the mass functional, and the 'flips positive at "
-            f"A≥3' half needs H₉. Both are flagged open, neither claimed.")
+            f"binding-sign convention of the mass functional. The 'flips positive at "
+            f"A≥3' half is no longer open at A=2 — it has since been measured on H₉ "
+            f"(triton) and H₁₂ (⁴He), and the answer depends on the weight family: the "
+            f"Plancherel arm runs -,+,+ over A=2,3,4 while the production Wenzl arm runs "
+            f"-,-,-. So the flip is exhibited only under the measure this probe's "
+            f"P_total uses, not under the Markov weight. Neither is claimed here; see "
+            f"magnus_omega2_weight_family_robustness_probe.py and bean qou-za3q "
+            f"decision 1, still open.")
 
     witness = {
         "computation": "deuteron-magnus-omega2-sign",
@@ -332,7 +377,10 @@ def main() -> None:
             "germ": "A_g = q·(∂_q σ_g)·σ_g⁻¹ (central finite diff; validated vs differentiated Hecke {σ,σ'}=h'σ+hσ')",
             "Omega2": "½ Σ_{i<j} [A_{g_i},A_{g_j}] over the ordered crossings",
             "density": "ρ(β_D) = ∏ σ_{g_i} (bare word; d·I dressing central ⇒ drops from Ω₂)",
-            "pairing": "P = Σ_λ y_λ tr(ρ_λ Ω₂_λ), y_λ = d_q(λ)²/[n]_q!",
+            "pairing": ("P = Σ_λ w(λ) tr(ρ_λ Ω₂_λ) on both weight families: "
+                        "w = d_q(λ)²/[n]_q! (quantum Plancherel) → P_total; "
+                        "w = y_λ (Wenzl bridge, production Markov weight) → "
+                        "P_total_wenzl, the headline arm"),
         },
         "results": {
             "per_partition": rows,
@@ -342,14 +390,7 @@ def main() -> None:
             # from this witness, so renaming the field would break them; an
             # explicit declaration removes the ambiguity without that.
             "weight_family": "quantum_plancherel_dq2_over_n_factorial",
-            "weight_family_note": (
-                "NOT the Wenzl y_lambda used by the production Markov trace. "
-                "AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, "
-                "which are distinct at q != 1. Re-weighting this witness's own "
-                "per-partition tr(rho.Omega2) with the Wenzl bridge weight "
-                "leaves the sign of P_total unchanged — measured in "
-                "magnus_omega2_weight_family_robustness_probe.py."
-            ),
+            "weight_family_note": weight_family_note(P_sign, P_wenzl_sign),
             # HEADLINE (Option A, bean qou-q2q7): the production Wenzl/Markov
             # weight. `P_total` above keeps its existing name and Plancherel
             # meaning deliberately — `he4_magnus_mpfr_probe.py` and the sparse
@@ -385,8 +426,10 @@ def main() -> None:
         "scope": (
             "scope-(a): decides the SIGN of the 2nd-order Magnus pairing tr_M(ρ·Ω₂) at "
             "A=2. Does NOT reproduce the 0.608 MeV (needs the open Δ_λ MeV normalization "
-            "— claiming it would be a fit). Does NOT test the 'positive at A≥3' half "
-            "(needs H₉). No fit; μ₃/c₃/B(D) never inverted; nothing wired."
+            "— claiming it would be a fit). Does NOT test the 'positive at A≥3' half; "
+            "that is measured elsewhere, on H₉ (triton) and H₁₂ (⁴He), and its answer "
+            "is weight-family dependent — see `weight_family_note`. No fit; "
+            "μ₃/c₃/B(D) never inverted; nothing wired."
         ),
         "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
         "wired": False,

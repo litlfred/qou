@@ -1,7 +1,9 @@
 {
   "computation": "path-b-defect-binding-probe",
   "description": "Refined Path B: defect binding model. B(K) = alpha * (|tr_M_free(K)| - |tr_M_atomic(K)|), where tr_M_free factorises as |tr_M(p)|^Z * |tr_M(n)|^N for disconnected constituents.  Single fit parameter alpha, calibrated from D's binding.  T, 3He, 4He are pure predictions.",
-  "computedAt": "2026-09-07T10:38:29.268783+00:00",
+  "computedAt": "2026-09-13T10:57:18.769470+00:00",
+  "intra_ordering_frame": "grouped",
+  "intra_ordering_frame_note": "SUPERSEDED. The TR_M table this probe computes from is grouped-era: every entry reproduces to 50 significant digits under atom_braid_word_3A(..., intra_order='grouped'), measured 2026-09-13. The canonical word has been borromean since the 2026-09-05 owner ruling (bean qou-hu1f). So alpha and every prediction in `rows` are computed in a retired frame. Not silently re-framed here: alpha is a calibrated fit parameter (from B(D)), so recomputing in the canonical frame changes what the MODEL says, which is an owner call rather than a mechanical constant fix. Canonical values are recorded above the TR_M table in this file.",
   "alpha_MeV_per_unit_defect": "3.997128135365468503782847496887079496827677660011712935693271492101243",
   "calibrated_from": "deuteron",
   "rows": [
@@ -97,9 +99,9 @@
     }
   ],
   "scriptFile": "path_b_defect_binding_probe.py",
-  "scriptHash": "3f4ae9b06d99",
+  "scriptHash": "dc86a09791eb",
   "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
-  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
+  "commitSha": "5f1579419206eb9f88434d5d434f049ca7933639",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
