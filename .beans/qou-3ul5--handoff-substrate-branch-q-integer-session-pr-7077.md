@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T18:29:42Z
-updated_at: 2026-09-07T18:30:35Z
+updated_at: 2026-09-13T05:55:51Z
 ---
 
 WRITTEN 2026-09-07 ~18:40Z at the end of the session that merged PR #7077 (rebase-merge, main 8360a30ff). Written for an agent who was NOT in that session. Every identifier is expanded on first use.
@@ -87,3 +87,5 @@ is not changing:
 === SESSION LINK ===
 https://claude.ai/code/session_01QdzbDVufzGssqqYjkw7Ykm
 PR #7077: https://github.com/litlfred/qou/pull/7077 (merged 8360a30ff)
+
+CORRECTION 2026-09-13 (qou-9nn0 resolved): this handoff says 'FOUR forms: 126 symmetric, 30 classical, 1 sqrt-normalised, 1 symmetric-in-q^2' and lists qou-9nn0 as 'the two outlier brackets'. Both halves are wrong. There are TWO conventions -- 128 symmetric / 30 classical / ZERO outliers. The two 'outliers' were the symmetric bracket written in a square-root variable, verified symbolically at n=2,3,5,7. One of them (keystone_qhankel_eq2_vacuum_row) was nonetheless a real defect for a different reason -- wrong ARGUMENT, not wrong convention -- and is fixed. Full account in qou-9nn0.
