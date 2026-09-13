@@ -504,6 +504,33 @@ Which of the two orientations is GGM/GZ's pretzel is **not settled here** (open;
 `2 × 2` block structure in `q^{1/2}`. Then the `σ₁σ₁` block against the derived rotated index of §3f. Both
 orientations must be carried until one is matched.
 
+## 3j. The meridian deformation, and one dictionary for all three knots (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_u_deformed_reduction_probe.py`](../../computations/probes/aomega_m3_pretzel_u_deformed_reduction_probe.py)
+(3/3; bean `qou-x3iv`, Part 12a). DG (C.21)/(C.23) add one term to the exponent at meridian parameter `u`
+(`u_vec = (0,…,0,u)`, `m = e^u` the meridian eigenvalue): `−(2/ℏ) Z·B⁻¹u_vec`. Through §3i's reduction it
+shifts tetrahedron `i` by `−2β_i ū`, `β = B⁻¹e_N`, `ū = u/2πb`, and the cross terms add a `u`-linear term in
+`x`. The `u`-only constants of (C.23) (which need the completion `(C, D)`) are overall factors and are not
+derived here.
+
+| knot | `β = B⁻¹e_N` | `u`-deformed reduced integral (SnapPy orientation), `u_G := −2ū` |
+|---|---|---|
+| 4₁ | (2, 1) | `∫ Φ_b(x + u_G) Φ_b(x) e^{−πix² − 4πi u_G x}` |
+| 5₂ | (1, 0, −1) | `∫ Φ_b(x + u_G) Φ_b(x) Φ_b(x − u_G) e^{−πix²}` |
+| (−2,3,7) | (½, −½, 0) | `∫ Φ_b(x + u_G/2) Φ_b(x − u_G/2) Φ_b(2x − c_b) e^{−2πix²}` |
+
+**One dictionary serves both gates.** With `u_G = −2ū`, i.e. `x_G = e^{2πb u_G} = m^{−2}`, the 4₁ row is
+GGM (125)/(322) *including its `u`-dependence* — shifts `(u, 0)` and the linear term `w = −2u` — and the 5₂
+row is (240)/(323): shifts `(0, u, −u)`, no linear term. So GGM's block variable is the inverse square of DG's
+meridian eigenvalue (the square is the SL₂ vs PSL₂ holonomy; the inverse is the orientation of §3i).
+
+**The pretzel's deformation sits on the two unit factors at half the meridian variable**, `±u_G/2`
+(`x_G^{1/2} = m^{−1}`), and the doubled factor is undeformed. That is a second level-2 signature, now in `x`
+rather than `q`: the unit factors' pole families are `c_b ∓ u_G/2 + ibm + ib⁻¹n`, the doubled factor's is
+`c_b + (ibm + ib⁻¹n)/2`, and the residue sum will carry `x_G^{1/2}` and `q^{1/2}` together. Whether the
+`σ₁σ₁` bilinear closes to integer powers of `ζ = x_G` (as the derived index of §3f has) is exactly what Part
+12b must decide.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who

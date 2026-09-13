@@ -1,0 +1,131 @@
+{
+  "name": "aomega-m3-pretzel-u-deformed-reduction",
+  "description": "u-deformed (meridian holonomy) one-dimensional reduction of the DG state integral for 4_1, 5_2 and the (-2,3,7) pretzel; gates against GGM (125) and (240); the pretzel's deformation is at half the meridian variable.",
+  "computation": "aomega-m3-pretzel-u-deformed-reduction",
+  "engine": "python+sympy+snappy",
+  "scriptFile": "aomega_m3_pretzel_u_deformed_reduction_probe.py",
+  "computedAt": "2026-09-13T07:23:31.369359+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "snappy_version": "3.3.2",
+    "u_term": "DG (C.21)/(C.23): -(2/hbar) Z.B^-1 u_vec, u_vec = u e_N",
+    "dropped": "u-only constants 2u.DB^-1u + (2 pi i + hbar) f.B^-1 u (overall factors; need the completion (C,D))",
+    "orientation": "SnapPy's (Part 11)"
+  },
+  "data": {
+    "m004": {
+      "label": "4_1",
+      "c": "1",
+      "v": [
+        1,
+        1
+      ],
+      "beta": [
+        "2",
+        "1"
+      ],
+      "A": "1",
+      "linear_coeff_before_centring_in_u_G": "-3*u_G",
+      "shifts_before_centring_in_u_G": [
+        "2*u_G",
+        "u_G"
+      ],
+      "shifts_centred_in_u_G": [
+        "-u_G",
+        "-2*u_G"
+      ],
+      "dictionary": "u_G = -2 ubar, ubar = u_DG/(2 pi b); x_G = e^{2 pi b u_G} = m^{-2}, m = e^{u_DG} the DG meridian eigenvalue"
+    },
+    "m015": {
+      "label": "5_2",
+      "c": "1/2",
+      "v": [
+        1,
+        1,
+        1
+      ],
+      "beta": [
+        "1",
+        "0",
+        "-1"
+      ],
+      "A": "1",
+      "linear_coeff_before_centring_in_u_G": "0",
+      "shifts_before_centring_in_u_G": [
+        "u_G",
+        "0",
+        "-u_G"
+      ],
+      "shifts_centred_in_u_G": [
+        "u_G",
+        "0",
+        "-u_G"
+      ],
+      "dictionary": "u_G = -2 ubar, ubar = u_DG/(2 pi b); x_G = e^{2 pi b u_G} = m^{-2}, m = e^{u_DG} the DG meridian eigenvalue"
+    },
+    "m016": {
+      "label": "(-2,3,7) = K12n242",
+      "c": "1/4",
+      "v": [
+        1,
+        1,
+        2
+      ],
+      "beta": [
+        "1/2",
+        "-1/2",
+        "0"
+      ],
+      "A": "2",
+      "linear_coeff_before_centring_in_u_G": "-c_b",
+      "shifts_before_centring_in_u_G": [
+        "c_b/2 + u_G/2",
+        "c_b/2 - u_G/2",
+        "0"
+      ],
+      "shifts_centred_in_u_G": [
+        "u_G/2",
+        "-u_G/2",
+        "-c_b"
+      ],
+      "dictionary": "u_G = -2 ubar, ubar = u_DG/(2 pi b); x_G = e^{2 pi b u_G} = m^{-2}, m = e^{u_DG} the DG meridian eigenvalue"
+    }
+  },
+  "verdict": "DERIVED: the u-deformed one-dimensional integrals. One dictionary u_G = -2 ubar (x_G = m^{-2}) makes the 4_1 reduction reproduce GGM (125) exactly INCLUDING its u-dependence (shifts (u_G,0), linear -2u_G) and the 5_2 reduction reproduce (240) (shifts (u_G,0,-u_G), no linear term). The pretzel (SnapPy orientation) is int Phi_b(x + u_G/2) Phi_b(x - u_G/2) Phi_b(2x - c_b) e^{-2 pi i x^2} dx: the deformation sits on the two unit factors at HALF the meridian variable (x_G^{1/2} = m^{-1}) and the doubled factor is undeformed — a second level-2 signature, this time in x. Next (Part 12b): residues at the union of the three pole families (unit factors: c_b -/+ u_G/2 + ibm + ib^-1 n; doubled: c_b + (ibm + ib^-1 n)/2), blocks, sigma1-sigma1.",
+  "assertions": [
+    {
+      "name": "G1-4_1 u-deformation == GGM (125)/(322): shifts (u_G, 0) and linear term -2 u_G, with u_G = -2 ubar",
+      "passed": true,
+      "shifts": [
+        "u_G",
+        "0"
+      ],
+      "linear": "-2*u_G"
+    },
+    {
+      "name": "G2-5_2 u-deformation == GGM (240)/(323): shifts {u_G, 0, -u_G} and no linear term, SAME dictionary",
+      "passed": true,
+      "shifts": [
+        "u_G",
+        "0",
+        "-u_G"
+      ]
+    },
+    {
+      "name": "T1-m016: A = 2, centred shifts (u_G/2, -u_G/2, 0) up to order — deformation on the UNIT factors at HALF the meridian variable, doubled factor undeformed; no linear term",
+      "passed": true,
+      "shifts": [
+        "u_G/2",
+        "-u_G/2",
+        "-c_b"
+      ]
+    }
+  ],
+  "scriptHash": "c809c59d7574",
+  "scriptCommitSha": "unknown",
+  "commitSha": "18a47fdbc14bdddf418880a8f503aae279aa191a",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
