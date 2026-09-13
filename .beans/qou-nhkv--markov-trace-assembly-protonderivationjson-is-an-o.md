@@ -1,10 +1,11 @@
 ---
 # qou-nhkv
 title: markov-trace-assembly-proton.derivation.json is an orphan with no live builder
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-13T12:45:55Z
-updated_at: 2026-09-13T12:45:55Z
+updated_at: 2026-09-13T17:22:02Z
 ---
 
 
@@ -66,3 +67,52 @@ fine. It goes green when this bean lands.
 
 Found under `qou-4383`. Related: `qou-soj6` (the five proton values),
 `qou-y4gi` (the ordering guard on the reference).
+
+---
+
+## DONE 2026-09-13 — `851751ee7fe`
+
+`computations/build_markov_trace_assembly_proton_chain.py`, written against the
+canonical 11-letter element as this bean specified.
+
+**It does not carry the siblings' premise across**, which this bean asked for
+explicitly. The neutron and deuteron chains evaluate χ^λ from n₊/n₋ of a legacy
+5-letter word and call their symbolic intermediate "illustrative-only"; this
+chain runs its character steps on the canonical element via
+`markov_weights_symbolic.tr_M_canonical`. `structural_check` OK, trust profile
+{axiom 1, derived 4, script-cited **0**, computational 1} — the same
+fully-trusted, zero-frontier profile the siblings claim, but earned rather than
+asserted. The leaf is read from `canonical_trm_reference`, so it cannot inherit
+a superseded frame the way theirs did.
+
+### Three routes, one word
+
+    atomic-braid-recipe-p-canonical.derivation.json   {σ: 6, σ⁻¹: 3, averaged: 2}
+    trm_proton_five_values_census (canonical_word_for) {σ: 6, σ⁻¹: 3, averaged: 2}
+    this builder, computed live                        {σ: 6, σ⁻¹: 3, averaged: 2}
+
+### Downstream
+
+    applied_uniqueness_mass_table        3/3, FRAME GATE CLEARED
+    assembly_chain_11_letter_recompute   4/7 → 5/7
+    grouped-era witness files            38 → 37
+    downstream reflections               16 → 15
+
+The recompute probe's two remaining failures are the muon-pin entries, for which
+no muon-pinned assembly witness exists — a real gap, named in its source, and
+not this bean's.
+
+### A bug worth recording, because of how it was caught
+
+The first run emitted `{σ: 4, σ⁻¹: 0, averaged: 7}`. I had read element `[0]` of
+`atom_braid_word_3A_to_crossings` as a sign; it is the **generator index**, and
+the type is element `[1]`. **Three tuple shapes exist for this one object within
+one neighbourhood** — `(index, type)` there, `(c, d, g)` from
+`atom_braid_word_3A` itself, `[sign, generator]` in the census — and I picked
+the wrong reading of the wrong one.
+
+What caught it was the docstring's own claim. The code contradicted a number I
+had verified minutes before, so the disagreement was *visible* rather than
+merely plausible. Stating the expected value next to the computation is what
+turned a silent wrong count into an obvious one — worth doing deliberately, not
+just when it happens to help.
