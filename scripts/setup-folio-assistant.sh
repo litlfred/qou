@@ -256,19 +256,65 @@ if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
     || info "could not bridge schemas/references.ts — export-bibtex will fail"
 fi
 
-# --- best-effort: install the platform's own deps ------------------------
+# --- install the platform's own deps, and VERIFY it ----------------------
+#
+# Still best-effort (a failure here does not abort setup), but no longer SILENT.
+#
+# Measured 2026-09-13 (bean qou-wdh9): this block ran, `bun` was on PATH,
+# FOLIO_SKIP_INSTALL was unset, and the clone still had no node_modules three
+# hours later. Why was unrecoverable -- the `|| info` swallowed the reason and
+# nothing was logged. What the agent saw instead, from `run-validate`, was
+#
+#     error: Cannot find module 'unist-util-visit-parents/do-not-use-color'
+#       from '/root/.bun/install/cache/unist-util-visit-parents@6.0.2@@@1/lib/index.js'
+#
+# which names bun's GLOBAL CACHE and neither this script nor the clone. The
+# remark/unified family lives in the PLATFORM's package.json and nowhere in qou,
+# so with no node_modules bun resolves out of that cache, where it does not
+# honour the `./do-not-use-color` conditional subpath export. The agent
+# reasonably read it as a broken gate and ran `bun install` in qou/ -- which
+# cannot work, and measured no change.
+#
+# So two things are added: the install output is KEPT, and the outcome is
+# CHECKED against the artifact that actually matters (node_modules), not against
+# bun's exit code. Checking the exit code alone would not have caught this if
+# the clone was materialised by some path that never reached this block.
 if [ "${FOLIO_SKIP_INSTALL:-0}" != "1" ] && [ -f "$CLONE_ABS/package.json" ]; then
   if command -v bun >/dev/null 2>&1; then
-    info "installing platform deps (bun install in $CLONE_ABS)"
-    (cd "$CLONE_ABS" && bun install) || info "bun install failed — run it manually in $CLONE_ABS"
+    _install_log="${TMPDIR:-/tmp}/folio-assistant-bun-install.log"
+    info "installing platform deps (bun install in $CLONE_ABS; log: $_install_log)"
+    (cd "$CLONE_ABS" && bun install) >"$_install_log" 2>&1 \
+      || warn "bun install exited non-zero — see $_install_log"
   else
-    info "bun not found — skip platform deps (install bun, then 'cd $CLONE_ABS && bun install')"
+    warn "bun not found — platform deps NOT installed. Install bun, then run:"
+    warn "    cd $CLONE_ABS && bun install"
   fi
+fi
+
+# Verify the artifact, not the exit code. This runs even when the install was
+# skipped, so a clone materialised by any other route is still checked.
+if [ -f "$CLONE_ABS/package.json" ] && [ ! -d "$CLONE_ABS/node_modules" ]; then
+  warn "=============================================================="
+  warn "PLATFORM DEPS ARE MISSING: $CLONE_ABS/node_modules does not exist."
+  warn ""
+  warn "Every checker runs from the platform clone, so the content gate"
+  warn "will fail before validating anything, with an error naming bun's"
+  warn "global cache rather than this clone. It looks like a broken gate."
+  warn "It is not. Running 'bun install' in the qou repo will NOT fix it —"
+  warn "the missing packages are declared in the PLATFORM's package.json."
+  warn ""
+  warn "Fix:  cd $CLONE_ABS && bun install"
+  warn "=============================================================="
 fi
 
 cat >&2 <<EOF
 setup-folio-assistant: done.
   platform clone : $CLONE_ABS
   in-repo link   : $LINK -> $TARGET
-Next: cd content && bun install && bun run validate
+
+Next, from the REPO ROOT:
+  bun run scripts/run-validate.ts content/quantum-observable-universe
+
+(\`bun run validate\` no longer exists — the package.json alias was dropped in
+the folio-assistant migration; run-validate.ts is its standalone replacement.)
 EOF

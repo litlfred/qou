@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T09:57:19Z
-updated_at: 2026-09-07T09:58:20Z
+updated_at: 2026-09-13T10:39:44Z
 ---
 
 ## The fix (PR #7039)
@@ -60,3 +60,32 @@ distinguish the job from the command that asks about it is not a process check.
 
 Relaunching under `setsid ... < /dev/null` (detached from the session's process group)
 is what made it survive; the plain `nohup ... &` form did not.
+
+
+## 🛑 STALE 2026-09-13 — the diagnosis in the title and body is contradicted on `main`
+
+This bean's body reads *"the root **still** fails: `exit 139`, **SIGSEGV**,
+loading the 896-module closure. A container resource limit, reproducible,
+unrelated to any source."*
+
+**AGENTS.md contradicts that by name** (§Manual fallback, the `lake-cache` block):
+
+> *"That was attributed to a container resource limit (bean `qou-ed8a`, repeated
+> in a sibling's merged audit); **it is not one** — it is 79 missing oleans,
+> 188 s to build, 22 MB to fetch."*
+
+The carrier exists: [`scripts/lean-restore-gap-oleans.sh`](scripts/lean-restore-gap-oleans.sh)
+against the addon orphan branch `lake-cache/qou-v4-24-0-mathlib-gap-modules`,
+which went **7 → 86 oleans** in `d7e3ae8c662`. The 79 added are the transitive
+cone of `Mathlib.RepresentationTheory.Homological.GroupCohomology.LowDegree`,
+which `QOU.Eightfold.ObstructionH2Mathlib` needs and behind which the library
+root `QOU` is SKIPPED.
+
+To measure after restoring:
+`python3 scripts/lean-library-sweep.py --all --only-exact QOU`
+(NOT bare `lean`-direct — that pins the wrong olean tree and reports a missing
+*QOU* module, which is a sibling the sweep builds into its shadow.)
+
+**The title itself carries the wrong diagnosis**, so a title-scan propagates it.
+Reported, not fixed — this is someone else's bean. Found by triage, not re-measured
+here: I did not re-run the sweep.

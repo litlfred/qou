@@ -1,11 +1,11 @@
 ---
 # qou-r44k
 title: 'Five QOU-vs-QCD name collisions: saturation, shadowing, diffraction, S-matrix, Fourier transform'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-13T05:11:10Z
-updated_at: 2026-09-13T05:12:50Z
+updated_at: 2026-09-13T10:33:35Z
 ---
 
 ## Measured 2026-09-13 (grep over content/ docs/ computations/ *.lean)
@@ -41,3 +41,27 @@ this from scratch, or worse, finds "saturation" in 124 files and answers yes.
 Add the five to `content/quantum-observable-universe/notation/notation-collisions.md`,
 which already carries exactly this kind of rule ("`$c$` = color, never charm").
 NOT done here - that is a content edit and this is a math repo.
+
+
+## LANDED 2026-09-13 on `main` (merge `3cb26d4b9f8`)
+
+`content/quantum-observable-universe/notation/notation-collisions.md` gains
+§"QCD vocabulary: six words that mean something else here" — **saturation**
+(knot genus / the `B/A` plateau, never the gluon `Q_s`), **shadowing** (the
+100 % LP-dual *shadow prices*, never nuclear shadowing), **diffraction**
+(optical), **S-matrix** (modular, of an MTC), **Fourier transform**
+(cyclic / categorical / adelic), **alternating sign** (alternating sign
+*matrices*, and the Ursell alternation — not a QCD term but the same trap).
+Plus the measured-zero list: `parton`, `Bjorken`, `DGLAP`, `impact parameter`,
+`transverse plane`, `momentum space`.
+
+**Written as a rule because two of them were about to be reported ABSENT** off a
+topic grep, while present in 100+ files meaning something else entirely. That is
+the corpus-grep checklist's blind spot from the opposite side: the standard
+failure is a grep that misses prior work written in different words; this is a
+grep that *hits* on a word the corpus uses for something unrelated and reads as
+coverage.
+
+Render-QA by hand (the pipeline render is unavailable in this container, so
+**this file was not machine-validated** and the commit says so): `$` count even,
+no `$$`, braces balanced, no align-family env, unicode limited to U+2013/U+2014.

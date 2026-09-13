@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-03T12:36:02Z
+updated_at: 2026-09-13T10:35:02Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1434,3 +1434,59 @@ is the ingredient the arc does not have un-fitted. Read this as *relocated to a
 known blocker*, not as *refuted*. Eq. (43) is untouched throughout.
 
 No probe — this is pure structure, and a probe would be padding.
+
+## ROUTE (2) CORRECTION 2026-09-13 — steps (i) and (ii) were ALREADY DONE
+
+This bean's "Next for route (2), in order: (i) give KnotEmbedding an ambient
+metric; (ii) write the O'Hara integrand with its intrinsic subtraction; (iii)
+only then ask whether it reproduces kappa(A)" describes the PRE-FIX state and is
+stale. Measured against the file on main:
+
+  (i) DONE -- KnotEmbedding carries ambientDist, ambient_symm, ambient_nonneg and
+      chord_le_arc, added 2026-08-30 by this bean's own ROAST commit. LinkEmbedding
+      adds cross-component sep with disjoint and sep_self.
+  (ii) DONE -- oharaIntegrand = 1/ambientDist^2 - 1/arcLengthDist^2 exists, and
+      oharaIntegrand_nonneg is DERIVED from chord_le_arc, not assumed.
+  (iii) The kappa(A) gate is RETIRED by PR #7080: the series constrains only the
+      product s*p, so it cannot adjudicate between candidate invariants.
+
+What was actually missing was the INTEGRAL, which the file's own docstrings name
+three times. That is now supplied for the mutual channel in PR #7284 (bean
+qou-pc85) -- and it needed no O'Hara theorem, because the mutual channel has no
+diagonal singularity. Route (2) is no longer blocked on infrastructure.
+
+I reported the blocker from this bean's prose without opening the file. Recording
+the correction here so the next reader does not re-pay it.
+
+## CORRECTION 2026-09-13 — the ROAST's O2 argument does not apply to the channel this bean needs
+
+The ROAST above says the literature Mobius/O'Hara energy is "subtracted by
+construction", and concludes "a functional whose regularising subtraction is
+intrinsic is not vulnerable to that argument. So O2 is a reason to PREFER route
+(2) over route (1)'s kernel". I repeated that on PR #7284 before checking it.
+
+IT IS WRONG FOR THE MUTUAL CHANNEL. The intrinsic subtraction is in the SELF
+term 1/ambient^2 - 1/arc^2, and by THIS BEAN's own split the self term belongs
+to qou-bn8e ("this bean owns only the pairwise/linking channel"). The mutual
+term carries no subtraction, and QOU.MobiusEnergy states it in its own theorem:
+
+    mutualIntegrand_eq_ohara_without_subtraction
+      -- the O'Hara integrand with the subtraction DROPPED (1/D^2 = 0)
+
+and PR #7284's own section 1 proves mutualIntegrand_pos_of_ne: STRICTLY
+POSITIVE, unconditionally, no hypothesis at all. That is exactly the property
+that excluded coth under O2 (qou-17mq, PRs #7020/#7080).
+
+So route (2)'s mutual channel is in coth's position, not immune to it. O2 is
+NOT a reason to prefer route (2) over route (1) on this ground — that comparison
+should be withdrawn.
+
+WHAT SURVIVES, and it is the useful half: the fix is #7080's closure, unchanged
+in shape. Zero mean forces the subtraction constant to be the kernel's own mean
+— there c0 = <coth>_M, here the mean of 1/sep^2 — so it is determined by the
+geometry rather than chosen. Proved sorry-free on #7284
+(zeroMeanMutualKernel_integral_zero, zeroMeanMutualKernel_not_pos): the
+subtracted kernel satisfies O2 and genuinely changes sign.
+
+The gate is therefore CLEARED, but earned rather than free. Anyone citing
+"O'Hara's subtraction protects route (2)" must say which channel they mean.

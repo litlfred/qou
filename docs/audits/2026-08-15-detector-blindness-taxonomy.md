@@ -57,6 +57,7 @@ question.
 | 37 | the **numerator is an applied argument** — `RE_C_SQRTVAR = (\w+)\s*/\s*\(\s*\1\s*\^\s*2\s*\+\s*1\s*\)` in `scripts/lean-markov-convention-audit.py` binds `(\w+)` to whatever identifier sits before the `/`, and never looks past the closing paren | `coneCoordRow5 q := coneRow5Numerator q / (q ^ 2 + 1) ^ 2` (`toffoli-lp-stability.lean:590`): the `q` the regex took as the numerator is the ARGUMENT of `coneRow5Numerator q`, and the denominator carries a `^ 2` the pattern ignores. A rational function of `q` over `(q²+1)²` — convention-D by its own docstring — was reported `C-sqrtvar/actionable`, i.e. the sqrt-variable disguise of C. This is the mirror of rows 1-16: a **false positive** from the same shape-matching, which is the direction that costs an agent a "fix" of something that was right | measured 2026-09-06 (qou-htsi): the audit reported 24 C defs / 3 actionable on a tree where one of the three was this site. Guarded in `_sqrtvar_hit` (numerator identifier not preceded by an identifier char or closing bracket; denominator carries no exponent); 24 → 23 C defs, selftest still detects all 18 recorded C sites. Recorded because the next `q`-argument application over `(q²+1)^k` will match again if the guard is "simplified" away |
 | 38 | the **value audit's variable resolution** — two spellings of a Markov parameter it cannot evaluate at all, in opposite directions | (a) `z_old = 1.0 / (q0**0.5 + qi0**0.5)` (`probes/nucleon-lp-convention-probe.py:87`) is `1/(√q + 1/√q) = z_C` exactly, but `qi0` is an IMPORTED inverse (`Q_INV`) the evaluator cannot bind and `**0.5` is not the `sqrt` call the sqrt-binding resolver keys on — so the value audit lists it **nowhere**, not C, not D, not unresolved. The shape audit sees it and files it under "probes / exploratory" (actionable) because it is named `z_old` rather than `z_C`, although the file is a labelled three-convention comparison (`OLD / HALF / D`). Neither detector describes the site correctly. (b) `inv = mp.mpf(1)/(Q0 + 1/Q0)` (`qbeta/qbeta_loop_value_pinned_probe.py:176`) with `Q0 = mp.mpf(Q0_STR)` is `1/[2]_q` on a **q**-variable — NOT C — and sat in UNRESOLVED because the fallback name list `_Q_VARS` had `q0` and `Q` but not `Q0`; UNRESOLVED is the bucket qou-t9r1 already recorded as invisible in both directions | (a) found 2026-09-06 by diffing the shape audit's `--list` against the value audit's `--all` on the same tree; the site appears in exactly one of them. Not adjudicable in the value ledger (the matcher only reaches rows the audit resolves), so it is recorded here and in the audit doc rather than "fixed". (b) `Q0` added to `_Q_VARS`; UNRESOLVED 1 → 0, NOT-C 5 → 6. Both are the same root the source already names — a name list inside an audit whose whole point is evaluating values — and the principled fix (resolve every variable at its binding, including `X = mpf(<q-string>)` and `X = 1/Y`) is not done |
 | 39 | the **freshness is on the wrong object** — a staleness check asks whether the PRODUCER re-ran, or re-runs it and compares, and calls the witness fresh when it reproduces | a producer that ran AFTER a ruling and consumed inputs computed BEFORE it. `delta-lambda-empirical-tabulation.witness.json` stamps `computedAt 2026-09-06T06:47Z`, a day after the intra-ordering ruling (`7db032fb48`, 2026-09-05 07:53:55), and reads `chi-lithium-{5,6}-h{15,18}-…-matrix-m.witness.json`, last touched **2026-08-15**. A re-run reproduces its numbers exactly, because the stale input is stale in both runs — so the compare-against-a-fresh-run test, which is the strongest staleness test the corpus has, returns CLEAN. `computedAt` records when the producer ran, never when its inputs were computed; `witness_import_cone_staleness_audit.py` keys on **module** drift, not witness-**input** drift, so neither covers it | measured 2026-09-07 (qou-k54t). **The insulated case is the dangerous one and is invisible from outside**: a consumer that READS an intermediate witness is shielded from upstream change, while one that RECOMPUTES is not, and the two are indistinguishable — same script, same invocation, same output shape. Worked pair, same producer, same run: `binding-reeb-phase-decomposition.witness.json` sat at `computedAt 2026-07-06` on `main` **and through a 2026-09-07 commit that re-ran the consumer**, two months frozen. The light atoms (A≤4) read their per-partition data from it and did not move; the Li legs (A≥5) go through `rederive_large_a`, which recomputes from source every run, and moved ~30% immediately. The stability of the A≤4 half read as *agreement* and was in fact *not having looked* — it was recorded as "unmeasured" in `b47a1b949d` on exactly that reading. Discriminator: a witness is only as fresh as the OLDEST cache in its read cone, and no field in the schema records that |
+| 40 | the **term as a substring** — a corpus-grep alternation carrying a bare unanchored alphabetic token, e.g. `grep -rliE "o'hara|ohara|..."` over `library/` | nothing. **This row runs the OTHER WAY, and is the first that does**: rows 1-39 are detectors that MISS, failing to a false ALL-CLEAR, which leaves the agent still looking. This one OVER-matches and fails to a false **COVERED** — the agent concludes corpus-grep path 5 is satisfied and STOPS. `ohara` is a substring of at least five surnames in this library: Shin**ohara**, Man**ohara**n, N**ohara**, H**ohara**, I**ohara** | measured 2026-09-13 (qou-zou6) on this repo's own subject. The unanchored grep reported **8 documents covering knot energy**; the true count is **0**. Decomposition, machine-measured: **7** documents are substring hits on those five surnames (14 hits, 0 whole-word), and the 8th is a SEMANTIC false positive — *Knots in the Skyrme-Faddeev model* really does contain the phrase "knot energy", meaning SOLITON energy. Whole-word `O'Hara` across BOTH the `sections/` and `ocr/` tiers: **0 documents**. Guard: `scripts/corpus-grep-overmatch-audit.py`, whose `--selftest` fails unless `ohara` is flagged AND the surnames are named AND `knot energy` is reported *clean* — pinning the limit as well as the catch, since no string test decides the semantic case. Two traps found by using it: my hand account said four surnames and the machine found five, and the missing one (`Hohara`) is in the document a hand re-check had reported as matching NOTHING; and the audit's own first output listed enclosing words **globally**, which let that word be attributed to the wrong document until `--show-words` was made per-document |
 
 ### 33 — offered by a sibling, taken here to avoid a conflict on the count line (2026-09-04)
 
@@ -919,3 +920,68 @@ declaration looks exactly like a `0` from a scan that cleared it.
 reports `0 candidate(s) over 18 file(s)` from both statement-strength detectors, and that number
 is true and means nothing. Neither script reports how many *declarations* it reached, only how
 many files it opened — so there is no signal in the output distinguishing the two cases.
+
+### 40 — the first row whose failure is a false COVERED (added 2026-09-13)
+
+Every row above is a detector that **misses** something. The shape is always the
+same: the scan returns a number that looks like a clean bill, and the agent
+keeps working on the assumption that the surface is clear. Row 34 states the
+generalisation — *"zero hits is not the same as verified sound"*.
+
+Row 40 is the mirror, and it is the more expensive direction.
+
+A corpus-grep term that matches as a **substring** of longer words reports
+documents that carry none of the topic. The agent reads a document count,
+concludes corpus-grep path 5 is satisfied, and **stops looking**. A miss leaves
+you still searching; this ends the search with the wrong answer.
+
+**The worked case is this repository's own subject.** Running path 5 for
+knot-energy literature with a bare unanchored `ohara` in the alternation:
+
+| | documents |
+|---|---|
+| reported by the unanchored grep | **8** |
+| substring hits on surnames (`Shinohara`, `Manoharan`, `Nohara`, `Hohara`, `Iohara`) | 7 |
+| semantic false positive (`knot energy` = Skyrme-Faddeev **soliton** energy) | 1 |
+| **actually carrying the topic** | **0** |
+
+Whole-word `O'Hara` across both the `sections/` and `ocr/` tiers returns **zero
+documents**: the library holds no knot-energy source at all. That absence is
+the finding the over-match was concealing, and it matters — bean `qou-bn8e`
+needs O'Hara's theorem and the corpus cannot cite it.
+
+**Why a guard is possible here when most rows only get a caveat.** The
+substring case is decidable: compare the unanchored match count against the
+whole-word match count, and report the *enclosing words*. That turns "8
+documents cover knot energy" into "0 documents; 5 surnames", which is
+immediately actionable.
+[`scripts/corpus-grep-overmatch-audit.py`](../../scripts/corpus-grep-overmatch-audit.py)
+does exactly that, in ~4 s over both tiers.
+
+**The limit is pinned, not merely stated.** The semantic case — a term matching
+as a genuine word in a document about a different subject — is *not*
+mechanisable, so the script's `--selftest` asserts that `knot energy` is
+reported **clean**. If someone later widens the check until it flags that too,
+the selftest fails, because the script would then be claiming a judgement it
+cannot make. A detector that pins its own limit is the part worth copying.
+
+**Two traps, both found by running it rather than by writing it.**
+
+1. **The hand account was short by one surname, and the missing one was in the
+   document a hand re-check had cleared.** I reported four surnames; the
+   machine found five. The fifth is `Hohara` — "S. Hohara" in a reference list
+   of `arxiv-2007.15570v1`, which an earlier by-hand extraction had reported as
+   matching *nothing*. So the document that looked like the one benign case was
+   the one carrying the unrecorded spelling.
+2. **The audit's own first output was not attributable.** Enclosing words were
+   counted into a single global `Counter`, so the report named `Hohara` without
+   saying which document held it — and it was promptly attributed to the wrong
+   one. Fixed by making `--show-words` report per document; the global list is
+   now labelled a summary in the output itself. This is row 27-32's family
+   (*the shape of the data around the field*) reappearing inside a brand-new
+   detector, one hour old, written by someone who had just read those rows.
+
+**Note on the count line in AGENTS.md.** That document said "**thirty-five**
+rows" when this row was added and the true count was 39. It has now been stale
+six times (13 → 16 → 18 → 22 → 35 → 39). Re-count the table; do not quote the
+sentence.

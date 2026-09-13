@@ -38,11 +38,10 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 from derivation_chain import (  # noqa: E402
     M_HECKE_PIPELINE_AT_Q0,
     Q_0,
-    TR_M_AT_Q0,
-    TR_M_AT_Q0_50DPS,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -216,7 +215,18 @@ def build() -> DerivationChain:
         output_name="tr_M_p_q0",
         # Per Copilot review on PR #640: source from the 50-dps companion
         # to avoid float64 truncation in a "50dps derivation chain".
-        output_value=TR_M_AT_Q0_50DPS["p"],
+        # MIGRATED 2026-09-13 (bean qou-4383). Was TR_M_AT_Q0_50DPS["p"], a
+        # hardcoded 50-dps string in the GROUPED intra-nucleon frame — correct
+        # when written, superseded by the 2026-09-05 ordering ruling
+        # (qou-hu1f). Now read through `canonical_trm_reference`, which
+        # validates pin AND ordering (qou-y4gi).
+        #
+        # This step is DOCUMENTARY and the headline mass does not move: the
+        # step that consumes it records "see mass-formula-6term-mpfr-50dps
+        # .witness.json", and M_P_PRED_MEV comes from the canonical_mass
+        # identity, not from here. Checked before changing it — 938.27209 MeV
+        # at 0.00285 ppb against a 1 ppb target, before and after.
+        output_value=str(tr_m_nucleon("proton")),
         trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§Atomic-Markov-trace",
         jet_order=0,

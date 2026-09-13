@@ -405,3 +405,259 @@ the check is cheap and the note asks for it.
    pass classified the 48 candidates as 25 computing / 17 reflecting / 4
    neither / 2 no-producer, but that discriminator is not yet validated well
    enough to bake into the count.
+
+## 2026-09-13 (later) — verdicts on all six hardcoded sites
+
+`cc56f213c87`. Read rather than re-run: each is a live re-emitter, so a re-run
+tells you nothing a read does not.
+
+| site | verdict |
+|---|---|
+| `derivation_chain.py` | **tranche** — 12 live consumers, flagged, not flipped |
+| `markov/assembly_chain_11_letter_recompute_probe.py` | **failing correctly**, reporting it wrongly — fixed the report; blocked on the tranche |
+| `probes/path_b_defect_binding_probe.py` | **grouped in all six atoms**; frame now declared in the witness; not flipped (calibrated model) |
+| `qbeta/qbeta_chain_closed_form_probe.py` | **constants stale, result survives** — measured |
+| `qbeta/qbeta_bond_factors_derived_probe.py` | already flagged by this bean's earlier pass |
+| `qbeta/qbeta_mixed_chain_closed_form_probe.py` | already flagged by this bean's earlier pass |
+
+### The one that was lying about itself
+
+`assembly_chain_11_letter_recompute_probe` printed
+
+> "The recompute on the canonical 11-letter element reproduces the live
+> producer witnesses at both pins, to every digit they carry."
+
+**unconditionally** — while four of its own seven assertions were failing. It
+recomputes on the canonical element, so it returns borromean
+(n: `0.47513351715568221251`); its `LIVE` table holds faithful copies of
+committed witnesses that are still grouped (n: `0.98774368811580957163`). The
+failure is a *true report that the producers are stale*, which is the job the
+old agreement was evidence for. Summary now gated on the result; docstring says
+which side is right and that `LIVE` must **not** be "repaired" — editing it
+would hide the staleness rather than fix it.
+
+**It is blocked, not fixable in place.** The neutron chain's leaf is hardcoded
+against `derivation_chain.TR_M_AT_Q0`, which is behind the tranche. This probe
+goes green when that lands and not before — so the tranche has a dependent, and
+that is one more argument for scoping it.
+
+### A structural result worth more than the site it came from
+
+`qbeta_chain_closed_form_probe`'s headline is that `tr_M(β_free)` factorises as
+`t_p^Z · t_n^N`. I tested whether that survives the ordering ruling, using the
+canonical pair against the canonical free traces computed *independently* by
+`h3_transition_cache_q_key_audit`:
+
+    atom   t_p^Z · t_n^N (canonical)          rel. to measured free
+    2H     0.299015017184640076702160426771   5.4e-32
+    3H     0.142072056797304797470498604255   3.9e-31
+    3He    0.188178642999488779263479037146   7.1e-31
+    4He    0.0894099805019306003820475658199  1.6e-31
+
+Residuals are the precision floor of the 30-digit reference, not drift. **The
+factorisation is ordering-independent** — as it must be, since multiplicativity
+of the Ocneanu trace is over *disjoint strand ranges* and the nucleon blocks
+stay disjoint whichever word sits inside them. Consequence for whoever refreshes
+that probe: it is a **small** job — swap two constants and re-measure
+`MEAS_ATOM` / `MEAS_FREE_HOMOG`; sections 1–3 need no re-derivation. Left
+undone only because the A=4 re-measure is the 33-minute matrix route the file
+documents.
+
+### The pattern across all six, stated once
+
+Every one of these was correct when written and went stale on a ruling. `path_b`
+records its own history plainly: defect (i) was "convention-C values … while
+convention D has been canonical since the owner rulings", fixed 2026-08-31,
+grouped-era by 2026-09-05. `derivation_chain` was corrected from 1.63315 and
+went stale within five days. **A hardcoded trace does not track a ruling** —
+which makes the durable fix a migration to
+`canonical_trm_reference.tr_m_nucleon()` (selects by recorded q0, cannot serve
+the wrong frame silently), not a better set of typed digits.
+
+That reframes the `derivation_chain` tranche. Scope it as *"migrate 12 consumers
+to `canonical_trm_reference`"*, not *"edit 3 constants"* — otherwise the next
+ruling re-opens this bean.
+
+### Where the bean stands
+
+- **Source arm: complete.** 8 hardcoded found, 2 fixed outright (the standing-red
+  audits), 1 report-defect fixed, 1 frame-declared, 2 already flagged, 1 pinned
+  behind its tranche. No unread sites remain.
+- **Witness arm: 48 candidates, unchanged this pass** — deliberately, since the
+  work was source-side and a producer sweep carries the 0-byte truncation risk
+  the coordination note documents.
+- **Next**, in my order: (1) scope the `derivation_chain` tranche as a consumer
+  migration and put it to the owner; (2) the witness candidates in dependency
+  order, which needs the downstream-reflection taxonomy this bean asked for and
+  which is still unbuilt — a first pass split the 48 as 25 computing / 17
+  reflecting / 4 neither / 2 no-producer, but that discriminator is not
+  validated well enough to bake into the count.
+
+## 2026-09-13 (later still) — scoping the tranche found the migration target was itself grouped
+
+`52b154af6e1`, `2ffefa65ef9`.
+
+### I was wrong about the fix, in three commits, and here is the correction
+
+I recommended `canonical_trm_reference.tr_m_nucleon()` as the durable
+alternative to a hardcoded trace — in this bean, in `derivation_chain.py`'s flag,
+and in two commit messages — on the stated grounds that it *"selects by recorded
+q0 and cannot silently serve the wrong frame"*.
+
+The first half is true. **The second was false as deployed.** Measured: the
+module was returning the GROUPED values for all five atoms. It selects by
+**pin** and has no notion of the intra-nucleon ordering at all, so it guards a
+cross-pin read while being blind to precisely the frame this bean is about.
+
+**Why nobody saw it, which is the durable lesson.** The CANONICAL-pin witness
+was the stale one (`atomic-tr-m-mpfr-50dps-proton.witness.json`, proton pin,
+**2026-08-19**) and the RETIRED-pin witness was the fresh one (muon,
+2026-09-07). Any check of the form *"is the recent artifact canonical?"* passes.
+The file that matters is the other one.
+
+### One producer re-run unblocked the target
+
+    QOU_Q0_ANCHOR=proton python3 computations/atomic_tr_m_mpfr_50dps.py \
+        --anchor proton
+
+(A bare `--anchor proton` is refused with exactly that line — the producer binds
+its pin at import, before argparse, and says so. Good guard; it wrote nothing on
+the refusal.) Checked for the truncating open-with-import template first per the
+coordination note — absent from this producer. Diff 61+/49-, a normal
+regeneration.
+
+The module now serves canonical on all five atoms, and the producer's own
+**independent** bridge-vs-peel cross-check agrees to **4.3e-51**. The witness has
+moved from the audit's grouped list to its borromean one.
+
+### Mirror synced, on this bean's own evidence
+
+`qou-mass/src/qou_mass/` held the same file at 2026-08-19 and three live package
+modules read it. This bean already answered the packaging question by
+measurement — mirror, `computations/` authoritative, 42 of 43 non-identical
+modules differing only by the `_path_bridge` shim — and a sibling has synced two
+such pairs. Verified before copying that the mirror was **structurally identical**
+to the pre-regeneration `computations/` copy (all keys equal, `results`
+identical), so this is a mirror restore rather than a judgement about values.
+
+### Two new beans, both found on the way
+
+- **`qou-72f8`** — the `qou_mass` copy of `canonical_trm_reference` resolves its
+  data against `_internal/`, which holds **0** witness files against **25** one
+  level up. So `tr_m_nucleon` **always raises** in the shipped package, and
+  `_internal/markov_weights_symbolic.py` imports it. The error prints
+  `inspected []`; that empty list is the tell — a path bug wearing a provenance
+  error's clothing, which is likely why it survived.
+- **`qou-y4gi`** — the `computations/` copy validates the pin and **not** the
+  ordering. Regenerating its input fixed today's values; it did not fix the gap,
+  and the corpus already shows this recurring (`TR_M_AT_Q0` corrected then stale
+  in five days; `path_b` the same two-step). Proposed fix: stamp
+  `intra_ordering_frame` at the producer and require it on load, with
+  absent-or-wrong raising — an undeclared frame must not default to canonical,
+  since every pre-ruling witness is undeclared.
+
+### Where the tranche now stands
+
+`derivation_chain.TR_M_AT_Q0` is **unchanged** and still grouped; the twelve
+consumers still hardcode it. What changed is that **the migration target is now
+correct**, which it was not when the tranche was first scoped. Order of work:
+
+1. `qou-y4gi` — the ordering assertion, so the target cannot stale again
+   silently. Do this BEFORE migrating; migrating twelve consumers onto a loader
+   that can serve the wrong frame just relocates the problem.
+2. Migrate the twelve, diffing what moves at each.
+3. `qou-72f8` in parallel if the package matters.
+
+And a dependent worth remembering: `assembly_chain_11_letter_recompute_probe`
+is red until step 2 reaches the neutron chain's leaf.
+
+## 2026-09-13 — the TR_M_AT_Q0 tranche: migration half COMPLETE
+
+`eecf2369cca`, `ff7b290798d`, `3d7d7a89f6e`, `7d0bc81993b`.
+
+### The inventory was smaller than "twelve consumers"
+
+Of the twelve modules that *mention* the registry: **six** genuinely import it,
+**one keeps its own separate copy**, **one AUDITS it by AST**
+(`derivation_convention_frame_audit` — migrating that would break what it
+measures), and the rest name it only in prose.
+
+| module | outcome |
+|---|---|
+| `audits/canonical_a_k_magnitude_audit` | own copy, **two** rulings behind, migrated; also fixed a crashing data path |
+| `build_markov_trace_assembly_neutron_chain` | migrated, target → 0.4751335171556822 |
+| `build_markov_trace_assembly_deuteron_chain` | migrated, target → 0.1519683392042316 |
+| `applied_uniqueness_mass_table` | migrated; was MIXING frames; frame check added, now gated red |
+| `build_proton_mass_50dps_chain` | migrated; documentary step, mass unmoved (verified) |
+| `phase5/phase2_proton_m_e_hecke_diagnostic` | migrated; **ratios move 45–74 %** |
+| `build_six_term_substrate_model_b` | **not migrated — already dead** (`qou-imkb`) |
+| `audits/derivation_convention_frame_audit` | **must not migrate** — it audits the registry |
+
+### What actually moved
+
+Only `phase2_proton_m_e_hecke_diagnostic` moved numbers:
+
+    atom      categorical_ratio_to_m_e_Hecke
+    proton    1.870053963830540526  ->  1.027159604966268874   (-45 %)
+    neutron   1.612147827654885259  ->  0.775490116256505033   (-52 %)
+    deuteron  0.938768523368891780  ->  0.248035427477920604   (-74 %)
+
+and they gained precision, 16 digits → 60, because the values now come from the
+50-dps witness rather than float literals. The proton mass chain is
+**byte-identical** — verified by baselining before the edit, not assumed.
+
+### Three findings the migration produced that the migration was not looking for
+
+1. **Δ_I(deuteron) = b_pn, exactly.** In the canonical frame,
+   tr_M(atom)/tr_M(free) = `0.508229789376738962577995797656`, which is
+   `qbeta_bond_factors_derived_probe.MEASURED["b_pn"]` to all 20 digits it
+   carries. Invisible in the old frame (Δ_I was 0.19047 there). Second link to
+   `qou-qqm4` today, after b_pp = markov_z. **The migration made an independent
+   identity appear** — the best evidence available that it is right.
+2. **`applied_uniqueness_mass_table` was mixing frames**, and migrating it
+   changed no number, because the authority there is the assembly CHAIN file
+   and not the registry. What the migration bought was a frame-consistency
+   check that makes the disagreement visible. It fires on exactly one atom.
+3. **The orphan** — `markov-trace-assembly-proton.derivation.json` has no live
+   builder while both siblings do, so the cluster is now mixed-frame at 82 %.
+   Un-deprecating the old builder does **not** fix it: that builder assumes a
+   6-crossing all-positive-σ word and yields ~2.12258, the fifth claimant in
+   `trm_proton_five_values_census`. Beaned as `qou-nhkv` with the real work
+   (write a live builder against the canonical 11-letter element — the
+   recompute probe already has the value and the method).
+
+### Two deliberate reds, and why they are opposite calls
+
+- `applied_uniqueness_mass_table.all_chains_in_the_canonical_intra_ordering_frame`
+  — **expected 0, measured 1, RED.** An artifact is genuinely in the wrong
+  frame. Locking the measurement would teach the next reader that a
+  mixed-frame mass table is acceptable.
+- Earlier today, `magnus_omega2_weight_family_robustness_probe` had its
+  assertion **re-framed to lock the measurement**. Opposite call, and rightly:
+  there the assertion encoded a hypothesis that reality had disproved, so a
+  permanent red carried no signal. The test is whether the red names something
+  someone can fix.
+
+I also left `canonical_a_k_magnitude_audit`'s
+`deuteron_true_delta_I_differs_from_fallback_and_a_k` red rather than touch it:
+it misses its band by 0.0082 and the miss is a tolerance artifact, but widening
+a tolerance in the same commit that moves the values it tests is how a real
+signal gets lost.
+
+### A method note worth keeping
+
+I checked one migration by diffing **stdout** and read "no output" as "nothing
+moved". Wrong instrument — those values are only ever written to the witness.
+That is the same shape as the defect this bean chases: checking the artifact
+you can see rather than the one that carries the claim.
+
+### Remaining in this bean
+
+- `derivation_chain.TR_M_AT_Q0` itself is **still grouped and unchanged.** With
+  every live importer now reading the reference, the registry's remaining role
+  is as a fallback and a historical record — so the question has changed from
+  "what should its numbers be?" to "should it exist?". That is now a small
+  owner call rather than a twelve-consumer tranche.
+- `qou-nhkv` (the orphan) gates the mass table red until it lands.
+- The witness arm is still at 48 candidates; the downstream-reflection taxonomy
+  remains unbuilt.

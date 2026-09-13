@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-09-13T07:16:40Z
+updated_at: 2026-09-13T12:25:14Z
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.
@@ -290,3 +290,147 @@ REMAINING 45: 7 no top-level assignment, 6 genuinely q-independent, 2
 Q_INV_MP, 2 not-evaluable TypeError, 2 q0, and a tail of data-file loads that
 are correctly opaque. Heterogeneous -- better left measured and characterised
 than chased with a sixth heuristic.
+
+
+---
+
+## 2026-09-13 (pass 6) — 133/175, and the "heterogeneous" judgement was wrong
+
+I stopped this bean at 128/173 saying the rest were *"heterogeneous and better
+left measured than chased with a sixth heuristic."* **That judgement was the
+thing to distrust**, and my own closing line said so: *"LIST THE MEMBERS, do
+not reason about the bucket."* I listed them, and 5 of the 47 were a sixth
+detector gap.
+
+**POPULATION MOVED: 175, not 173** — main landed two new producers. Re-measure;
+do not quote 173.
+
+| | pass 5 | pass 6 |
+|---|---|---|
+| symmetric | 112 | **117** |
+| classical | 10 | 10 |
+| `symmetric[n=2]` | 3 | 3 |
+| `symmetric_in_sqrt_q` | 1 | 1 |
+| OTHER (not q-integers) | 2 | 2 |
+| **UNRESOLVED** | 47 | **42** |
+| **RESOLVED** | 128/173 | **133/175 (76.0 %)** |
+
+**STILL ZERO NEW CONVENTIONS** — six passes, population 0 → 133. All five
+newly-measured are symmetric.
+
+### The sixth gap: a module's own import ALIAS
+
+`q_parameter` writes `import mpmath as _mp`. The evaluator bound only `mp` and
+`mpmath`, so every constant in that module needing evaluation died on the name
+`_mp`:
+
+    Q_INV_MP     = _mp.mpf(1) / Q_MP        -> 1/q
+    HA_MP        = Q_MP - Q_INV_MP          -> q - 1/q
+
+That is 3 + 2 = 5 definitions, reported as `depends on unresolvable
+Q_INV_MP` / `HA_MP` and reading exactly like corpus opacity.
+
+**Why it hid so well, and this is the reusable part.** `Q_MP` itself resolves
+FINE — it short-circuits on `_ANCHOR_KEYS` at the top of `resolve()`, *before*
+any evaluation happens. So the one name a reader would test to check whether
+the anchor module is reachable is **the one name that does not need the
+alias**. A spot-check on `Q_MP` returns a confident green while every sibling
+constant in the same block is dark.
+
+The fix reads the module's OWN `import` statement (plain `import X as Y` is
+now recorded as `Y -> X::*`) and binds that alias. It is corpus-derived, not
+spelling inference: the module says what `_mp` means.
+
+Note `HA_MP = q - 1/q` is the **symmetric-bracket denominator**, so these
+definitions were always likely symmetric — which is exactly why measuring
+rather than assuming was the point.
+
+### What actually remains (42), listed not characterised
+
+    8  no top-level assignment
+    6  q-independent (a constant, not the modulus)   <- ANSWERED, not dark
+    4  not evaluable (TypeError)                     <- was 2; +2 new producers
+    2  depends on `q0`
+    2  depends on `_TBL`      <- a json.loads of a data file; correctly opaque
+    2  depends on `HERE`      <- a path constant; q-independent by construction
+    2  depends on `Q`
+    2  call failed (SympifyError)
+    …tail
+
+So the honest split is **133 classified / 6 genuinely q-independent / 36
+dark** — and `_TBL` and `HERE` are two more that are *correctly* unresolvable
+rather than gaps, which would make it 32.
+
+**I am not claiming the remaining 36 are all real opacity.** That is the claim
+that was wrong last time. They are unmeasured, and on this session's record
+the prior should be that some fraction are still my tooling.
+
+
+---
+
+## 2026-09-13 (pass 7) — 134/175, and the audit was dark on the CANONICAL q-integer
+
+**133 -> 134 (76.6 %)**, UNRESOLVED 42 -> 41. Small numerically; the identity
+of the recovered definition is the finding.
+
+### It was `qou_substrate.constants.q_int`
+
+The corpus's **canonical q-integer entry point** — the one AGENTS.md's package
+layer publishes, and the one I excised a float64 fallback from earlier in this
+same session. The audit could not measure the definition the whole bean is
+about. It now classifies **symmetric**.
+
+### Two gaps, and I got the first one wrong
+
+**My first hypothesis was the anchor SOLVER**, and it was not sufficient.
+`constants.py` binds `Q = _solve_q_proton_f64(MASS_RATIO_P_E, VOL_FIGURE_EIGHT)`
+— a numerical root-find no symbolic evaluator can execute. Adding
+`ANCHOR_SOLVERS` was **correct and necessary** (AGENTS.md names that function
+verbatim as what makes `constants.py` proton-pinned, so recognising it cites
+the corpus rather than inferring from a spelling) — but the run came back
+**unchanged at 133**, which is how I learned it was not the whole story.
+
+**The real blocker was scope.** `in_anchor_module` was set ONLY when
+`resolve()` **hopped into** a module via an import, and defaulted `False` at
+the top-level call site. So for a definition that already **lives in**
+`constants.py` or `q_parameter.py`, none of the anchor-module special cases
+could ever fire. *"The module I'm in"* and *"the module I hopped to"* were
+being treated as different questions when they are the same one. One argument
+at one call site.
+
+Both fixes are in; the solver recognition is load-bearing once the scope fix
+lets it run.
+
+### `q_int_err` correctly stays unresolved
+
+Its body is `|d[n]_q/dq| * Q_ERR` — an **uncertainty propagation**, not a
+bracket. It depends on `Q_ERR`, and it should not classify as a q-integer.
+Recording this so a later pass does not chase it as a gap.
+
+### Tally
+
+| | pass 6 | pass 7 |
+|---|---|---|
+| symmetric | 117 | **118** |
+| UNRESOLVED | 42 | **41** |
+| **RESOLVED** | 133/175 | **134/175 (76.6 %)** |
+
+**Still zero new conventions** — seven passes, population 0 -> 134.
+
+### The audit now LISTS its unresolved members
+
+Added, because this bean's own closing line is *"LIST THE MEMBERS, do not
+reason about the bucket"* and the script printed only counts — so using it
+correctly required leaving it. Grouped by reason. That listing is how pass 7's
+gap was found at all.
+
+### What the listing shows about the remaining 41
+
+Several of the `[8] no top-level assignment` group are **not q-integer
+definitions**: `verify_bracket_cancellation`, `check_bracketing` (test
+helpers), `load_qbeta_precision_ladder` (a loader). So the name-pattern
+candidate selection has false positives here, and 41 overstates the genuinely
+dark set. Not chased further this pass — recorded rather than estimated.
+
+Correctly opaque and not gaps: `_TBL` (2, a `json.loads` of a data file),
+`HERE` (2, a path constant), and the 6 already answered as q-independent.
