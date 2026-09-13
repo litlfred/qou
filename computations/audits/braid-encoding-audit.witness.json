@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T14:13:02.224051+00:00",
-  "commitSha": "1660c49f2ffe48802c11fb6d79993b6b460c27ab",
+  "computedAt": "2026-09-13T21:05:31.179893+00:00",
+  "commitSha": "f9d8c68d4848e94d0807fa356ee34905b983df15",
   "assertions": [
     {
       "name": "axiomatic content block tracks the phase-1.6 closed form",
@@ -14,11 +14,11 @@
     },
     {
       "name": "the two independent tr_M(p,q0) derivations agree",
-      "computed": "0.391950403120118374031270257948565341308020587204415601736087",
+      "computed": "0.666018202783994810326317478701694337339751429915928801076809",
       "expected": "0.0",
       "passed": false,
       "tolerance": "1e-3",
-      "source": "markov_trace_assembly_chain=1.14575969245730086968908159577411930594372806194352738498820 (Wenzl-bridge, its own target_tolerance=1e-9) vs phase_1_6_closed_form=1.88431946725497502509029472310815626347249744177191389544517 (option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6"
+      "source": "markov_trace_assembly_chain=0.629328402202922 (Wenzl-bridge, its own target_tolerance=1e-9) vs phase_1_6_closed_form=1.88431946725497502509029472310815626347249744177191389544517 (option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6"
     },
     {
       "name": "the retired Strategy-3 mass table has not returned",
@@ -33,7 +33,7 @@
   "durationMs": 7,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
-  "scriptHash": "2ce6b1d07dce",
+  "scriptHash": "965fa2534e52",
   "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -1204,7 +1204,7 @@
         "strategy_3_tr_M": null,
         "strategy_3_tr_M_missing": true,
         "phase_1_6_closed_form": "1.88431946725497502509029472310815626347249744177191389544517",
-        "markov_trace_assembly_chain": "1.14575969245730086968908159577411930594372806194352738498820",
+        "markov_trace_assembly_chain": 0.629328402202922,
         "axiomatic_content_block": "1.88432"
       },
       "neutron": {
