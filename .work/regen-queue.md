@@ -104,3 +104,13 @@ the only record that the producer's prose and its pinned constants had parted.
 Cheap: reads one upstream cache and sums 77 partitions of 12. Queued rather
 than run only because the `qou-uiut` table holds the checkout and two producers
 must never run concurrently here.
+
+## 7. `h2o_bond_angle_magnitude_vsepr.py` — RE-RUN ONLY, prose fixed 2026-09-13
+
+Producer said `θ ≈ 107.2°` / `narrows ≈ 2.3°` in both its docstring and its
+`set_description`, while computing `theta_pred_coulomb_n1_deg = 106.70642` and
+`narrowing_pred_n1_deg = 2.764776`. The witness's **own `finding` field** already
+carried the right numbers (`≈106.71°`, `≈2.8°`), so the document contradicted
+itself in two prose fields at once — the exact shape `qou-n62l` was opened on.
+No computed value touched. Fast probe; queued only because the table holds the
+checkout.

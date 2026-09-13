@@ -33,11 +33,11 @@ arccos(−1/3) = 109.47° — the model has no built-in bias.
 RESULT (Tier 2 — magnitude, honest residual)
 ---------------------------------------------
 With the trace weights (w_lone/w_bond ≈ 1.104, a 10 % lone-pair excess)
-the Coulomb minimiser gives θ ≈ 107.2°: the angle NARROWS by ≈ 2.3° below
-tetrahedral — the correct SIGN and the correct ORDER OF MAGNITUDE
+the Coulomb minimiser gives θ ≈ 106.71°: the angle NARROWS by ≈ 2.76°
+below tetrahedral — the correct SIGN and the correct ORDER OF MAGNITUDE
 (observed narrowing 4.97°, i.e. 104.5°). The trace fix propagates
 correctly through the magnitude model — contrast the prior |Φ₁| weighting,
-which OPENED the angle to ≈ 140° (+35 %). The residual (model 107.2° vs
+which OPENED the angle to ≈ 140° (+35 %). The residual (model 106.71° vs
 observed 104.5°) is reported, NOT fitted away: closing it would require
 either a larger effective domain asymmetry or a non-Coulomb kernel, and
 tuning the kernel to hit 104.5° is exactly the magnitude-fit the
@@ -123,8 +123,8 @@ def main() -> None:
         "H₂O H–O–H angle magnitude via trace-weighted VSEPR (points-on-a-"
         "sphere, Coulomb kernel, NO fit parameter). Domain weights are "
         "q-exact Markov traces (w_lone/w_bond = h z + 1). Self-validates at "
-        "equal weights (θ=109.47°). Trace weights give θ≈107.2° (narrows "
-        "≈2.3°): correct sign and order of magnitude vs observed 104.5° "
+        "equal weights (θ=109.47°). Trace weights give θ≈106.71° (narrows "
+        "≈2.76°): correct sign and order of magnitude vs observed 104.5° "
         "(narrows 4.97°); residual reported, not fitted. Supplies the "
         "geometric stiffness a for prop:h2o-bond-angle-shift's b/(2a)."
     )
