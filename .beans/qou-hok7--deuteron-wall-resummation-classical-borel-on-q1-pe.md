@@ -1251,14 +1251,23 @@ would understate the limit.
     e_∞ = max over (s_t, s_b)  [ Xblock(s_t) + Xrun(s_t + s_b) + Xbot(s_b) ]
 
 **`e_∞ = 2.43929645512078402706542884314`**, and it collapses further, because the two block
-energies are **equal as exact integers** (E7) — the transpose fact from the entry above, now at
-the level of the k-free blocks:
+energies are **equal as exact integers** (E7):
 
     e_∞  =  2 · E_edge  +  Xrun(2s)
          =  2 × 1.965444371077749996131  +  (−1.491592287034715965196)
 
 with `E_edge` on `[3,2,1,1,1]` (top) and `[1,1,1,1,2,1,1]` (bottom), `s = 8`, run length 16,
 extension `P = 2`. **One edge energy, one run.**
+
+**🛑 Correction to the entry above, and to #7331's witness.** That entry says the two shapes
+"are that [conjugate] pair" and #7331's `S5` detail says the same. **They are not conjugate
+partitions.** Measured: `(3,2,1,1,1)ᵀ = (5,2,1)`, which is not `(1,1,1,1,2,1,1)`; `(3,2,1,1)ᵀ =
+(4,2,1)`, which is not `(1,1,1,2,1,1)`. The **equality of the energies is measured** and holds
+to the last of 40 digits, twice, by evaluators sharing no code path. The transpose invariance of
+the hook multiset remains the likely *mechanism* — but the correspondence between these
+particular tuples is **not identified**, and I repeated #7331's claim before checking it.
+Contaminated: #7331's witness `edge_energy` detail, the bean entry above, and the first draft of
+this one.
 
 **Where the sequence stops moving is measured, not guessed.** The finite-`k` shortfall is nonzero
 exactly where a pair still crosses between groups, and both switch off at the same rung — `k = 520`
@@ -1283,6 +1292,15 @@ archimedean specialisation that sends it to zero geometrically.
 class, so every value is a rigorous **lower** bound; the class is the shape #7305's full
 enumeration independently found at every `k ≤ 12` (E1) and reaches #7331's own `k = 40` maximum
 (E2), but an upper bound on `M_n` is still the arc's open item and nothing here supplies one.
+
+**A defect this session introduced three times, now fixed.** The raw-float64 ratchet reported
+three NEW dirty witnesses, all from this session's own merged PRs — `rev-excess-scaling-exponent`
+(#7294 re-run), `rev-edge-relaxation-window` (#7323), `rev-exact-maximiser-small-n` (#7305). Every
+one of the 30 raw floats is a wall-clock `"seconds"` field. `witness_raw_float64_audit.py` carves
+out runtime durations **by field name**, and its own self-test at line 699 asserts that
+`"seconds"` is *counted* — the carve-out covers only names containing `dur` or `elapsed`. So the
+fix is a rename to `elapsed_sec` at the producer plus a re-run, not a baseline entry. The new
+probe here emits no timing field at all and carries **zero** float64 values.
 
 **Next:** `E_edge` and `Xrun(ℓ)` are now single k-free numbers over a semi-infinite AP with a
 `ε`-kernel. Whether either has a closed form is the remaining question, and it is a much smaller
