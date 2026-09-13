@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.GroupWithZero.Units.Basic
+import Mathlib.Algebra.Order.Field.Defs
 
 /-!
 # QOU.Shared.ZPowFinsetProd — a fixed base with varying **integer** exponents
@@ -57,7 +58,7 @@ element: the side condition `q ≠ 0` replaces totality of `zpow`.
 
 Generalises `QOU.BraidKnot.Keystone.prod_zpow_eq_zpow_sum`, which states this for a
 `Field`. -/
-theorem prod_zpow_eq_zpow_sum₀ {R : Type*} [GroupWithZero R] (s : Finset ι) (q : R)
+theorem prod_zpow_eq_zpow_sum₀ {R : Type*} [CommGroupWithZero R] (s : Finset ι) (q : R)
     (hq : q ≠ 0) (f : ι → ℤ) : ∏ i ∈ s, q ^ f i = q ^ ∑ i ∈ s, f i :=
   Finset.cons_induction (by simp)
     (fun _ _ _ ih => by
