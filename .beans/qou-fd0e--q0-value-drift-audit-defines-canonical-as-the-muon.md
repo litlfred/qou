@@ -3,8 +3,9 @@
 title: q0_value_drift_audit defines CANONICAL as the muon pin — a BLOCKING CI gate that cannot see 211 stale witnesses, plus a 13-file inverted ANCHOR NOTE
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-23T07:56:50Z
-updated_at: 2026-08-24T09:40:00Z
+updated_at: 2026-09-13T13:47:58Z
 ---
 
 
@@ -1214,3 +1215,69 @@ BOUND ON THIS RESULT: it covers only the 44 witnesses these sweeps logged with
 `q0_refresh` deltas. Most of the 189-producer A-literal population's witnesses
 do not appear in these logs, so this bounds the SWEEP-INDUCED variant, not the
 campaign.
+
+
+---
+
+## 2026-09-13 post-merge: the gate is RED on 4 NEW, and all four look like FALSE POSITIVES
+
+Measured on the merged tree (218 commits from main). `stale total: 206,
+baseline: 329, NEW: 4` — so the backlog is draining well, but four new entries
+block. Read individually, none is a stale copy of q₀.
+
+### Three of the four are fields DELIBERATELY at a retired pin
+
+```
+probes/the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.witness.json
+    data.D_spectrum_at_retired.q0          (-0.0798 ppb)
+probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.witness.json
+    data.figures_at_retired.q0             (-0.0798 ppb)
+    data.figures_at_frozen_A.q0            (-0.0769 ppb)
+```
+
+The field names say it: `..._at_retired`, `..._at_frozen_A`. The second probe's
+own description says what it is for:
+
+> That block publishes the right side at the PROTON pin and says so; this block
+> publishes the left side at a MUON pin, so the two sides of a proved identity
+> are published as numbers differing by 7.94e-8 relative.
+
+**The probe exists to document that these pins differ.** Flagging its
+comparison figures as drift is a false positive by construction, and "fix by
+RE-RUNNING THE PRODUCER" — which is what the gate prints — would destroy the
+measurement.
+
+**This audit has no exemption mechanism at all.** `q0_anchor_consistency_audit`
+has one (`AUDIT_SUFFIXES` → `Q0_AUDIT_EXEMPT`, 92 witnesses); this one has
+nothing. Deciding what marks a field as deliberately-off-pin is a convention
+call, so it is recorded here rather than invented. A field-name convention is
+already latent in the corpus (`_at_retired`, `_at_frozen_*`) if that is the
+route wanted.
+
+### The fourth is under `_deprecated/`, which every other audit skips
+
+```
+computations/_deprecated/alpha-high-precision.witness.json  q_0  (-0.0769 ppb)
+```
+
+`scan()` is a bare `HERE.rglob("*.witness.json")` with **no directory
+filtering**. Every other audit in this repo carries
+`SKIP_DIRS = ("_deprecated", "__pycache__", "node_modules", ".git")`.
+Measured: **190 of the 2909 scanned rows (6.5 %) are under `_deprecated/`**.
+You cannot re-run a deprecated producer, so those findings have no fix.
+
+**Not changed here, deliberately.** Adding the skip would drop 190 rows from
+scan, and they are currently *in the baseline* — so they would drain **by
+exclusion rather than by fix**, silently, in a ratchet whose whole value is
+that its count only falls when something is repaired. That is the same trap the
+y_lambda check-D ratchet fell into today (7 "drained" entries, all of them
+files main had deleted). If the skip is adopted, the baseline should be
+regenerated in the same change with the reason stated, so the drop is not read
+as progress.
+
+### Net
+
+The gate blocks on four findings, none of which is a defect in the sense the
+gate exists to catch. Worth fixing before the noise trains readers to skip it —
+`scripts/precision-gates.sh`'s own header says a gate red on arrival gets
+skipped.
