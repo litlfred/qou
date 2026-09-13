@@ -243,7 +243,7 @@ for k in KS:
         "e_k_narrow": mp.nstr(mp.mpf(vn) / SCALE, 22), "e_k_narrow_scaled": str(vn),
         "e_k_wide": mp.nstr(mp.mpf(vw) / SCALE, 22), "e_k_wide_scaled": str(vw),
         "u_wide": uw, "support_wide": [i for i, x in enumerate(uw) if x != 0],
-        "leaves_wide": lw, "seconds": round(dt, 2),
+        "leaves_wide": lw, "elapsed_sec": round(dt, 2),
     })
     print(f"  {k:4d} {k + 1 + WIDE[2]:4d} {mp.nstr(mp.mpf(vn) / SCALE, 18):>22} "
           f"{mp.nstr(mp.mpf(vw) / SCALE, 18):>22} {lw:9d} {dt:6.1f}")
