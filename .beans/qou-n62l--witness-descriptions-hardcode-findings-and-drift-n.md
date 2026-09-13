@@ -358,3 +358,60 @@ opposite ends and are both cheap once a candidate is read:
 * stale prose → make the description INTERPOLATE the value (`cumulant_hierarchy`)
 * correct prose the data cannot back → make the producer EMIT the field
   (`binding_hbarq`)
+
+---
+
+## 2026-09-13 — two more exclusions measured and rejected; and a structural problem with the gate
+
+After main's 702-commit merge the ratchet is RED: **7 NEW + 1 GREW**. Two of
+the NEW are this branch's own pending regenerations (`binding-hbarq-rung-
+forward-test`, and `cumulant_hierarchy` is the GREW) — both producers are
+fixed and awaiting an idle window. The other six arrived with main.
+
+Spot-checking two of the six showed both are false positives, of two kinds
+that suggested narrow exclusions. Both were measured over all 222 candidates
+and **both are rejected**:
+
+| exclusion | drains | verdict |
+|---|---|---|
+| number followed by a TIME unit (`5.6 s/λ`, `s`, `ms`, `min`, …) | **1 / 222** | one instance; not a class |
+| number within 90 chars of a `#NNNN` PR reference | 11 / 222 (5 %) | real signal, but the examples include hits whose `#` is unrelated to the number |
+
+The timing case is `chi-via-rust-lossless-general`: "`--backend gp` … 5.6 s/λ
+at n=12". A wall-clock figure, which a witness's data has no reason to carry.
+Genuinely a false positive, and genuinely the only one of its kind.
+
+The PR case is `mirror-nuclei-coulomb-systematics`: "the #2089 kernel's
+**2.27 MeV** A=3 strong split (#3564)". That is the *quoted history* class this
+bean already names at ~1 in 5, and 5 % is the same order — so the proximity
+heuristic is finding it, just not cleanly enough to act on.
+
+### The standing conclusion, now measured FOUR ways
+
+| attempt | result |
+|---|---|
+| quoted-precision recalibration | 3 / 218 |
+| derived-combination search | +5pp over control (~90 % false positives) |
+| time-unit suffix | 1 / 222 |
+| PR-reference proximity | 11 / 222, not clean |
+
+**The backlog is irreducibly per-item.** That is no longer a suspicion; it is
+the fourth independent measurement saying so. Stop looking for a bulk drain.
+
+### The gate's contract does not fit this detector
+
+Worth separating from the triage, because it will recur every merge. The
+ratchet is **drain-only and blocking**: `--rebaseline` refuses if any count
+went up. But this detector's population grows with the CORPUS — every new
+witness carrying prose is a new opportunity for a candidate — so it goes red
+whenever main lands witnesses, regardless of whether anything regressed. Six
+of the seven NEW here are main's, and the two that were spot-checked are
+false positives by the audit's own stated standard ("DRIFT is a CANDIDATE,
+not a verdict — prose may cite an external constant that is legitimately
+absent from the data").
+
+A drain-only ratchet suits a defect class with a fixed population being worked
+down. It does not suit a candidate-generator over a growing corpus. Not
+changed here — the contract is the gate array's to set, and loosening a
+blocking gate is exactly the move that file warns against — but recorded,
+because the alternative is that the next agent silently rebaselines it.
