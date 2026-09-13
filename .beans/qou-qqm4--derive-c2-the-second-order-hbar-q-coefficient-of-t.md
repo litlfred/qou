@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T09:10:14Z
+updated_at: 2026-09-13T09:50:31Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -799,6 +799,58 @@ quotient. Instantiating it at the production Ocneanu trace at `z_D = q^3/(q^2+1)
 needs the colimit bridge `qou-0fmb` (#7274, in flight) — posted there as a
 downstream consumer.
 
+
+## 2026-09-13 (later) — two of the three letters derived (#7285), and my pn claim RETRACTED
+
+Following #7281, which proved the bond product's *form* and left the letters measured.
+
+**Derived, sorry-free** (`QOU/Hecke/BondLetterIdentification.lean`), in the
+**interior** position a bond actually occupies, over `MarkovTrace` + `[BraidedTower]`
+so `InteriorMarkov` is discharged rather than assumed:
+
+- `sigma` carries `d = 0`, factor `z`  (`tr_bond_gen`)
+- `sigma^-1` carries `d = -h`, factor `z - h`  (`tr_bond_ginv`)
+
+The corpus had the second only in **right-multiplication** form
+(`tr_mul_ginv_of_quadratic`, `tr_mul_gen_comb_of_quadratic`, both `b = 1`), because
+`MarkovTower` has no `ginv` field. A bond has material on both sides, so the bond
+product needs `b ∈ upper g`. ~3 lines once composed.
+
+## 🛑 RETRACTED, same PR: the pn letter is NOT the symmetric one
+
+I claimed `d_pn = -h/2`. **Wrong.** The production letter is `averaged_weighted`,
+`d_pn = -h(1/2 - delta/4)` with `delta = (q-1)^2 (1-q^-4)/3` — carried by
+`ClosedFormInterfaceFactors.bondD`, `MarkovBondRule.dIface`,
+`canonical_braid_crossings.py` and `markov_peel.py`. `-h/2` is the corpus's
+**`averaged`** letter, a different ctype.
+
+**This was already settled here on 2026-09-07** —
+`bond_pn_kind_order_four_discriminator_probe.py`, lines 609-641 of this bean, on two
+objects plus a held-out 3He word. Re-verified independently in exact rationals:
+
+    z - h/2     1/2, 0, 3/4, -3/4,  5/8
+    z + d_pn    1/2, 0, 3/4, -3/4, 31/24   <- matches the measured pn bond
+
+**How the error got made, which is the part worth keeping.** I verified to `eps^2`.
+The two candidates are **identical through `eps^3`** and separate only at `eps^4`, so
+my check passed *both* and I read it as confirming one. Agreeing to the order you
+happened to expand to is not evidence of identity — and the corpus-grep that caught
+it also found bean `7uhw` (*completed*, 2026-06-23, title = the claim, **body empty**)
+and the published block `mass-theory/interface-knot-markov-z-proof.md` §39-43, which
+states the three-factor result outright. A title-only completed bean is exactly the
+carrier the six-path checklist exists to reach, and I reached it only on the second
+pass.
+
+## What is still open, sharpened
+
+**Derive the `delta/4`.** The pn interface's colour-tube weighting is the one letter
+the skein does not give, and it is now isolated: `pp` and `nn` are theorems, the
+product form is a theorem (#7281), so the whole measured residue of the bond model is
+that single factor. `mass-theory/pn-averaging-uniqueness.md` frames the two candidates
+and records that only the **uniform** form is bar-invariant (`delta-bar = -q^2 delta`),
+so the uniqueness theorem's hypotheses **exclude** the production letter — that
+tension is where a derivation would have to start, or a convention change would have
+to be argued to the owner.
 ---
 
 COORDINATION NOTE (2026-09-13, session gracious-dijkstra, from bean `qou-gba1`).
