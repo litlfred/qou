@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T12:40:00Z
+updated_at: 2026-09-13T13:20:00Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -996,4 +996,77 @@ with `N` the scalars, a character twist is invisible projectively).
 
 The bean's title asks for the identification in general.  For the L6a4 class-1
 representation it is now a theorem; in general it is open.
+
+
+---
+
+## UPDATE 2026-09-13g — the lambda class question: the twist is ABSENT, not invisible
+
+Pass 13f closed (C) for class 1 and left one question: is `lambda`'s class canonical, or an
+artifact of the decoration?  **Measured answer: `lambda == 1` on every generator, hence on
+every word.  There is no twist to have a class** — and that is a stronger result, not a
+null one.
+
+### The stronger theorem
+
+With `lambda == 1` the intertwining is
+
+    A sigma_b(rho(w)) A^{-1} = rho(w)^{-T}        exactly, no scalar
+
+an equality of **GL(3,K)** representations, not merely the PGL(3,K) statement of 13f.
+Re-solved with `lambda` pinned to 1 (nullspace dim 4, invertible `A` found), 9/9 words
+including inverse letters.  As characters: `sigma_b(chi(w)) = chi(w^{-1})` **untwisted**,
+1554 words of length <= 4, **zero** skipped.
+
+### The triviality is FORCED — this is the actual content
+
+`lambda = 1` could have been luck of the decoration.  It is not.
+
+- The lift is **SL(3)**: `det rho(g) = 1` on all three generators, measured.
+- So det of both sides **forces** `lambda(g)^3 = 1`.  mu_3-valued is a consequence of the
+  normalisation, never a discovery.
+- The only freedom is the lift, `rho -> mu.rho`, under which
+  `lambda' = lambda . mu . sigma_b(mu)`.  The law is **measured**, by re-solving the
+  intertwiner for rescaled `rho'` against the predicted `lambda'`, with a deliberately
+  wrong `lambda'.u` as control — nullspace dim 0 every time, correctly rejected.  Three
+  `mu` tested: mu_3, rational, generic.
+- An SL(3)-preserving redecoration has `mu` in mu_3, and since `sigma_b(zeta_3) =
+  zeta_3^2` the coboundary is `N_b(mu) = mu.sigma_b(mu) = mu.mu^2 = mu^3 = 1`
+  **identically**.
+
+So `lambda' = lambda` for **every** admissible `mu`: no decoration could have made the
+twist nontrivial.  Untwistedness is a property of the representation.
+
+### Supporting measurements, none assumed
+
+- `Gal(K/Q)` is **Klein four** — full multiplication table; every element an involution, so
+  `sigma_b^2 = id`, which is what puts `N_b`'s image in the fixed field `K^sigma_b`.
+- `sigma_b(zeta_3) = zeta_3^2` (and `sigma_a` too; `id` and `tau` fix it).  `sigma_b`
+  **negating the obstruction class** is why it is the automorphism that works at all, and
+  the same fact is what kills the coboundaries.
+- `lambda` is trivial on **both relators**, so it descends to `pi_1` and "class in
+  `Hom(pi_1, mu_3)`" type-checks — it is the trivial class.
+
+### Correction to my own prior claim
+
+Pass 13f wrote *"lambda is mu_3-valued and mu_3 scalars are TRIVIAL in PGL(3), so the twist
+is invisible there"*.  True as stated and **misleading**: it implies a twist exists that
+PGL(3) does not see.  Corrected in `ptolemy_duality_sigma_intertwiner.py` (docstring, the
+mu_3 check — now reporting `lambda == 1` separately from `lambda^3 == 1` — and the verdict)
+and in its report; it also stands in commit `e7211e61b7` (immutable) and in the PR #7290
+comment, which a follow-up comment corrects.
+
+**The sharper point: both earlier passes already held the refutation and neither read it.**
+13f reported only `lambda(g)^3 == 1`; stage 2's witness records
+`stage2_intertwiner_scalar.distinct_values: 1` across 936 words, which with its own
+multiplicativity check forces `lambda == 1`.  The data was there; the summary word
+"mu_3-valued" was chosen instead.
+
+### Scope, and one thing that must be quoted with it
+
+One manifold, one obstruction class, one representation up to its Galois orbit.  The
+rational and generic `mu` rows **do** move `lambda`, correctly — those lifts leave SL(3),
+where `lambda` need not be a cube root at all.  **The rigidity claim is scoped to SL(3)
+and must be quoted that way.**  Bean stays open under rule 13a: the general identification
+in the title is untouched.
 
