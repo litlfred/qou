@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-13T05:11:10Z
-updated_at: 2026-09-13T10:39:45Z
+updated_at: 2026-09-13T11:26:51Z
 ---
 
 ## The gap (corpus-grepped 2026-09-13, six paths; no general version found)
@@ -95,3 +95,32 @@ gap this bean named is genuinely closed — but wiring GMO and equal-spacing as
 instances would convert an asserted subsumption into a demonstrated one, and is
 the honest finish. Cheap: two `Ansatz R 6 3` definitions and two surjectivity /
 forcing proofs in the shape of the nonet pair already there.
+
+
+## RESIDUAL CLOSED 2026-09-13 — and wiring it corrected the header
+
+The residual noted above (GMO and equal-spacing asserted in the docstring, wired
+only for the nonet) is closed: `gmoAnsatz` / `decupletAnsatz` are now instances
+in `AnsatzContentDichotomy.lean`, 11 new declarations, `lean`-direct exit 0,
+`#print axioms` clean on all of them.
+
+**And doing it corrected the header's implicit reading**, which is why it was
+worth more than the mechanical tick. "Discriminate" is used in two senses that
+point opposite ways:
+
+* the source files' *"cannot discriminate"* = the relation is the same for every
+  parameter `(a,b,c)` — that is `Forces`, and it is about separating
+  **mechanisms** inside the first-order octet class;
+* `Discriminating` here = `Forces ∧ ¬Vacuous` — the relation can refute the
+  **class**.
+
+Both hold, and it is the second the general theorem detects: **neither GMO nor
+equal spacing is unconstraining.** They have content. Only the *nonet* is the
+"empty" case. So the eightfold chapter carries ansätze on **both** sides of the
+dichotomy — `decuplet_has_content_nonet_does_not` states that in one line.
+
+Consistent with both source files' own prose, each of which locates the testable
+content in the *deviation* (~6 % GMO, ~9.2 % decuplet), which presupposes
+falsifiability. The other sense is separated in code too:
+`gmoAnsatz_not_injective` shows the breaking strength `b` is invisible to all
+three GMO observables.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T07:58:29Z
-updated_at: 2026-09-13T10:33:35Z
+updated_at: 2026-09-13T11:26:52Z
 ---
 
 ## Result (2026-09-13) — the convexity route analysed; convexity is the WRONG invariant
@@ -319,3 +319,40 @@ an open conjecture, and recording that it is open is not closing it.
 Also §7c: `check-sidecars.sh` flagged this file "MIXED generic + archimedean"
 before commit; the `hump` witness did not need `ℝ` and was made generic over an
 ordered field. The preflight caught it, not review.
+
+
+## 2026-09-13 — the non-monotone door, and what actually blocks the affine one
+
+Chased the one escape `InterfaceMonotoneBlocksSignMixed` leaves open. Seven new
+sorry-free declarations in that file (`lean`-direct exit 0, **zero warnings**,
+`#print axioms` clean).
+
+**A gap in my own earlier work.** `pn_not_strict_max_of_monotone` and
+`signMixed_impossible_of_monotone` assume `Monotone`, so a **decreasing**
+interface law was never covered — although `not_strict_max_of_antitone` was
+sitting in `OrderCore` unused. Both antitone halves added.
+
+**The structural reason `μ = z + d` is blocked.** The interface factor is a
+Markov trace ratio `μ(x) = tr_M(W·x)/tr_M(W)` at fixed `W`, and the numerator is
+**linear in `x`**. So along any *affine* path in the algebra `x(t) = x₀ + t·x₁`
+the law is affine in `t`; an affine law is monotone or antitone by the sign of
+its slope, hence blocked **either way**. `μ = z + d` *is* that affine path.
+
+So the escape must **leave the affine family, not merely the affine formula** —
+which is a sharper statement than "be non-monotone", and it is checkable without
+computing a bond value.
+
+**The framework does admit such a family, and the corpus already measured it.**
+The file header said *"whether the framework admits such a thing is open and is
+not addressed here"*. `m ↦ σ^m` is not an affine path (a product, not a sum), and
+its interface factor is measured non-monotone in `m`: `μ > 1` at
+`m = 2, 4, 5, 6, 7, 8` and **not** at `m = 3`
+(`stacked_interface_writhe_normalised_probe.py`, via
+[`2026-09-12-b3-sign-one-root-and-the-insufficient-escape.md`](docs/audits/2026-09-12-b3-sign-one-root-and-the-insufficient-escape.md)
+§6(b)). Over a threshold at 2 and 4 but not 3 is not monotone.
+
+**This selects nothing.** Naming the family occupying the door is structural;
+picking an `m` because it yields `b₃ > 0` is selection against the target
+(§NO FITTING), and `qou-kj4v` records that running backwards for `σ²`. Under
+`qou-ales` the braid word is selected by γγ + the confinement SDP, and **that
+derivation is what stays open.** Scope (a); no family derived through the door.
