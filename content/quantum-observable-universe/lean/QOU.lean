@@ -18,6 +18,7 @@ import QOU.Eightfold.ObstructionH2
 import QOU.Eightfold.ObstructionH2Mathlib
 import QOU.Eightfold.GaloisOrbitTransport
 import QOU.Eightfold.IntertwinerFromGenerators
+import QOU.Eightfold.PointwiseAgreementOnReduced
 import QOU.Eightfold.GaugeAnsatzNesting
 import QOU.Eightfold.PtolemyTwist
 import QOU.Eightfold.SubgroupExtensionObstruction
