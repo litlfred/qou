@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T03:14:24Z
-updated_at: 2026-09-13T10:32:45Z
+updated_at: 2026-09-13T10:51:05Z
 ---
 
 
@@ -196,3 +196,30 @@ figure in this bean can distinguish the two causes.
 
 Full measurement, including the two hypotheses it killed (one of them mine):
 bean `qou-5c64`.
+
+
+## 🛑 RETRACTION of the append above — this wave's LABEL IS RIGHT
+
+I wrote here that the C→D component of `binding-single-pipeline-comparison` is
+"measurably zero". **That is false and is retracted.** Measured one step further
+(bean `qou-5c64`): isolating the bond types from the ordering-invariant ratio
+`tr_atom/tr_free`, the **p-p bond IS the Markov parameter `z`** —
+`0.61268805054558909984` today, matching `z_D = q³/(q²+1)` to **3.2e-51**, and
+`0.49932034618370936279` in June, matching `z_C` to 2.4e-8 (the residue being
+the q₀ anchor). Its residual is `z_D/z_C = 1.227044`.
+
+My error: I tested **one carrier** of the convention — the C-vs-D swap inside
+`y_lambda_at`, which is genuinely a no-op — and reported the convention inert.
+The convention also lives in `z` itself, which never goes through that function.
+
+**So this wave's "post-C-to-D" label fits this member.** What survives, and is
+still worth acting on before acceptance: the same witness moved from **three**
+changes, only one of them C→D. The other two — `qou-hu1f`'s intra-nucleon
+ordering (owner ruling, **2026-09-05**) and the colour-weighting δ de-wire
+(`9928f3f4a79`, **2026-06-29**, whose own commit message says *"WIP: witness
+cascade pending"*) — sit after and before this wave's measurement date of
+2026-08-09 respectively. So the wave's recorded numbers are **incomplete** for
+this member rather than wrongly attributed, and a reviewer accepting on the
+C→D rationale alone would still be accepting two further undiagnosed changes.
+
+Not claimed, same as before: how many of the 162 this applies to. One measured.

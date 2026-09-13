@@ -502,15 +502,40 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
 
     The ordering factor reproduces the `3.785 (2H)` recorded three lines up to
     ten digits, which is what makes the residual trustworthy rather than a
-    measurement artefact. And the residual is **not uniform** — free and atom
-    move by different amounts — so whatever it is touches the INTERFACE letter
-    (the atom word's one extra factor at `A = 2`) and not only the nucleon
-    cores: `1.481039152 / 1.15067303 = 1.28711` on the interface, and
-    `sqrt(1.15067303) = 1.07270` per nucleon core. Ruled out as its cause, each
-    by direct substitution at fixed q: the q₀ anchor (3.9e-8), `pn_convention`
-    (a no-op on the free trace by construction, 2e-4 on the atom trace), the
-    `m_pp/m_pn/m_nn` multiplicities (unchanged), and the convention C→D
-    `y_lambda_at` swap (a no-op — both implementations agree at `n = 6`).
+    measurement artefact.
+
+    **The residual decomposes exactly, and the pieces are worth having here.**
+    Over D / T / ³He / ⁴He, the free residual factorises per nucleon and the
+    bond residual per bond type — both to well below the data's own floor
+    (1e-50 and 5.6e-12 respectively, the latter being June's ordering-invariance
+    floor, not a model failure):
+
+        per nucleon   proton 1.075521518      neutron 1.069874485
+        per bond      p-p 1.227044031   p-n 1.287106862   n-n 1.390572916
+
+    **The p-p bond IS the Markov parameter `z`.** Isolated as
+    `r(³He)/r(D)` with `r = tr_M(W_atom)/tr_M(W_free)`, it is
+    `0.61268805054558909984` today — `z_D = q³/(q²+1)` to **3.2e-51** — and
+    `0.49932034618370936279` in June — `z_C = 1/(√q + 1/√q)` to 2.4e-8, the
+    residue being the q₀ anchor. So its residual is `z_D/z_C`, i.e. the
+    **convention C→D excision, carried by `z` itself.**
+
+    🛑 **Do not read "the C→D `y_lambda_at` swap is a no-op" as "C→D does not
+    affect this."** Both are true and they are different statements: the two
+    `y_lambda_at` implementations do agree at `n = 6`, and the convention still
+    arrives through `z`, which never goes through that function. An earlier
+    version of this note listed C→D among the causes *ruled out* on the strength
+    of the `y_lambda_at` test alone; that was an absence-of-evidence error and
+    is retracted (bean `qou-5c64`).
+
+    The p-n bond's non-`z` part is the δ de-wire, pinned exactly: `d` backed out
+    of the bond ratio matches `-h(1/2 - δ/4)` to 2.9e-16 with
+    `δ = flavor_split_leading(q)`, and the same inversion gives `δ = -2.16772`
+    as of 2026-06-15 against `+0.00137571` today. Genuinely ruled out, each by
+    direct substitution at fixed q: the q₀ anchor (3.9e-8), the `pn_convention`
+    *flag* (a no-op on the free trace by construction, 2e-4 on the atom trace),
+    and the `m_pp/m_pn/m_nn` multiplicities (unchanged). Still open: the two
+    per-nucleon factors and the n-n bond's non-`z` part.
 
     ⚠ NAME IS A MISNOMER — this does NOT return a braid word (2026-08-25, PR #5765).
     A rename was considered and rejected: 685 call sites across 382 files. So the
