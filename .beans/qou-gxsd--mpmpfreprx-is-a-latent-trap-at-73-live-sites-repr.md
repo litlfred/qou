@@ -1,11 +1,11 @@
 ---
 # qou-gxsd
 title: 'mp.mpf(repr(x)) is a latent trap at 73 live sites: repr is wrong for str, Decimal and numpy scalars, and str is identical for float'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-07T10:44:14Z
-updated_at: 2026-09-07T11:18:13Z
+updated_at: 2026-09-13T07:58:05Z
 ---
 
 Found while regenerating witnesses after the 435-commit main merge (bean qou-uiut's branch).
@@ -111,3 +111,48 @@ Compile gate 0 findings over 4616 files. `tests/` 64 and `tools/qou-substrate`
 145 green. `tools/pyhecke` shows 15 `test_native.py` failures and a
 `jsonschema` import error — **confirmed identical at HEAD** by stashing the
 sweep and re-running, rather than assumed pre-existing.
+
+---
+
+## 2026-09-13 — closed. Zero live instances, and main converged on the same fix
+
+Re-measured on the merged tree after main's 702 commits. `mp.mpf(repr(` now
+matches **5 places, none of which is the defect**:
+
+| site | what it is |
+|---|---|
+| `computations/substrate/codata_constants.py:281` | the documented exclusion — `repr` on a parsed **float**, where `str` is byte-identical |
+| `qou-mass/.../codata_constants.py:280` | its vendored copy, generated from the above |
+| `computations/_h4_substrate.py:32` | a COMMENT main wrote about the trap |
+| `computations/probes/tau_amphichiral_sdp_probe.py:91` | likewise a comment |
+| `tools/pyhecke/python/pyhecke/atom.py:452` | **correct use** — see below |
+
+That last one is worth naming, because a sweep would have "fixed" it and broken
+a guard. It reads
+
+    if isinstance(q, _mp.mpf) and _mp.mpf(repr(float(q))) == q:
+        raise TypeError(... "q is an mpf holding only float64 information" ...)
+
+which is a **representability test**: it round-trips through `float` ON PURPOSE
+to detect an mpf carrying no more than 53 bits, and rejects it. Same idiom as
+`qou_substrate.precision.str_at_true_precision`. Replacing `repr` with `str`
+there leaves it working by accident rather than by construction.
+
+### The 73-site sweep held, and main reached the same conclusion independently
+
+The two sites that were open when this bean was last touched are both resolved
+by main, and **better than the sweep did it**. `_h4_substrate` and
+`tau_amphichiral_sdp_probe` both read a constant that is *already* an mpf
+pinned at `_CONST_DPS`, so main deleted the conversion entirely —
+`ALPHA_EM = mp.mpf(1) / _ec.ALPHA_EM_INV`, `cal_tau_e = TAU_OVER_E` — rather
+than swapping `repr` for `str`. A string round-trip that was never needed is
+better removed than corrected, and main's comments record the same failure this
+bean opened on: "`mp.mpf(repr(...))` was the float64 -> mpf idiom and raises
+ValueError on an mpf's repr."
+
+`tools/pyhecke/python/pyhecke/atom.py` was the one site this bean deferred, on
+the grounds that it is a CHECKPOINT-KEY file and editing it would discard the
+running table's atoms. That deferral turns out to have been the right call for
+the wrong reason: the site needed no edit at all.
+
+**Closed.** Nothing outstanding.
