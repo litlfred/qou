@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T16:19:00.581444+00:00",
-  "commitSha": "5c10431300d1e6d6c3ae90f957a5725c09eb8894",
+  "computedAt": "2026-09-13T16:45:07.178230+00:00",
+  "commitSha": "255f847724c762e8f185762ce679f71a8d5012a0",
   "assertions": [
     {
       "name": "the_scored_value_is_a_DIFFERENCE_of_two_word_traces",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 98,
+  "durationMs": 100,
   "computation": "qbeta-qbeta-scores-a-difference",
   "scriptFile": "qbeta_qbeta_scores_a_difference_probe.py",
-  "scriptHash": "c74f175e3ed5",
-  "scriptCommitSha": "49e015595d40ab26c29c99478925be259069a7e2",
+  "scriptHash": "a91f1cc6e259",
+  "scriptCommitSha": "e31763fd8dd850d3b1adbb728a979accbf87ded7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -248,6 +248,8 @@
     "scope": {
       "class": "(a) scope-limited for the retraction; (b) STRUCTURAL for the exclusion -- the invariant is Matrix.PosSemidef on every Wedderburn projection, which the selected scope (B) makes the ruling's own admissibility test",
       "what_is_now_OPEN": "whether any PAIR of PSD-feasible gamma-gamma words reproduces Q_beta. Nothing here excludes it, and picking the closest pair out of 15 would be selection against the target"
-    }
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
   }
 }

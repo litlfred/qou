@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T15:15:48.702003+00:00",
-  "commitSha": "ab9be56d8ebb4e7b92cd4144e50ea3fe0f051201",
+  "computedAt": "2026-09-13T16:45:06.404993+00:00",
+  "commitSha": "255f847724c762e8f185762ce679f71a8d5012a0",
   "assertions": [
     {
       "name": "det_of_a_generator_is_constant_across_generators_in_each_block",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2337,
+  "durationMs": 2232,
   "computation": "qbeta-gamma-gamma-trace-ge-one",
   "scriptFile": "qbeta_gamma_gamma_trace_ge_one_probe.py",
-  "scriptHash": "3e3665a05877",
-  "scriptCommitSha": "034a309bf04797f578ca034148bd13d26900798f",
+  "scriptHash": "b9671a56349d",
+  "scriptCommitSha": "a64570260fc188bfb72d5ae70dee2d09bfe6b8dc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -275,6 +275,8 @@
       "class": "(b) structural exclusion, ALL n",
       "invariant": "det-1 + PSD => trace >= dim, with non-negative convention-D weights and the Markov normalisation",
       "what_is_NOT_claimed": "nothing about reaching Q_beta by another route, a different E_0, or a tower correction -- E_0 is canonical by ruling with an OPEN series (bean qou-y3bm)"
-    }
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
   }
 }
