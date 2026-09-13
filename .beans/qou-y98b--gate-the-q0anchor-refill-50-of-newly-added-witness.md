@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-28T15:24:07Z
-updated_at: 2026-09-13T13:07:29Z
+updated_at: 2026-09-13T14:04:33Z
 ---
 
 Claimed by branch `claude/q0-anchor-refill-gate-2026-08-28`, PR #5891.
@@ -489,3 +489,67 @@ Regeneration queued.
 It will go from 2 to 14 findings. Worth knowing before it lands: the gate is
 **already red**, so this reveals rather than breaks, but there is no path to
 green until the cluster is drained.
+
+
+---
+
+## Second note from `claude/anchor-followups-2026-08-08` (2026-09-13): the ratchet's "144 NEW" is ~80 % STALE BASELINE, not refill
+
+Measured on the merged tree, after taking main's 218 commits.
+`computations/audits/q0_anchor_ratchet.py --strict`:
+
+```
+baseline                  : 1677  (q0-anchor-missing-baseline.json)
+drained since baseline    :  245
+NEW (not in baseline)     :  144   <- blocks the gate
+```
+
+**The backlog is net 101 better** (245 drained against 144 arrived) and the gate
+still fails, which is the ratchet working as designed. But "NEW" is doing two
+jobs at once, and the split matters for this bean's headline number.
+
+Attributed each of the 144 by `git log` against the merge-base, with main
+pinned to a real ref (`origin/main` is **not** a valid ref name in these
+containers — the first attempt silently scored every file as "not from main",
+which is why this is measured twice):
+
+| origin | count |
+|---|---|
+| **predates the merge-base entirely** | **115 (80 %)** |
+| this branch's own history | 28 |
+| main, since I merged | 1 |
+
+**115 of the 144 were already unstamped and simply are not in the baseline.**
+They are not refill at all — nothing added them recently. The baseline was
+generated at some earlier point and has not been regenerated since, so
+long-standing unstamped witnesses read as arrivals.
+
+### Why this matters for the headline
+
+This bean's measurement is *"~50 % of newly-added witnesses land unstamped"*,
+and it says explicitly that it was measured on **arrivals** rather than standing
+counts, *"which is why two endpoint readings mislead"* — reading blobs out of
+git between two revs. That method is sound and this does not contradict it.
+
+What it does say is that **the ratchet's own `NEW` column is not an arrivals
+measurement**, so it cannot be used as a proxy for the refill rate. Anyone
+sizing the refill from the gate output will overstate it by roughly 5×. If the
+gate is meant to report refill, it needs the same blob-diff method this bean
+already uses; if it is meant to report "unstamped and unbaselined", the name
+`NEW` is the thing to change.
+
+### Housekeeping the drain deserves
+
+245 entries drained. The gate says *"regenerate the baseline to bank these"* —
+worth doing, and worth doing in a change that states whether each drained entry
+was **fixed** or merely **deleted**. Two ratchets have already misreported that
+distinction today: the `y_lambda` check-D drain was 7 files main had deleted,
+not 7 fixes, and the `q0_value_drift` audit scans `_deprecated/` where every
+other audit skips it. Not regenerated here — it is your baseline.
+
+### The 28 from this branch
+
+Mostly `qbeta/*` and `probes/*`, none created in this session; they arrived with
+the branch's earlier history. Left for the drain rather than stamped piecemeal:
+each needs a producer edit plus a re-run, and re-runs are blocked behind the
+`qou-uiut` table holding this checkout.
