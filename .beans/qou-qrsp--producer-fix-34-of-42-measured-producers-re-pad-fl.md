@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-09-13T17:19:52Z
+updated_at: 2026-09-13T19:43:39Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -852,3 +852,45 @@ tr_M_atom = mp.mpf(str(sp.re(_a))) if abs(sp.im(_a)) < 1e-9 else complex(_a)
 
 Numbers will move — this is a precision correction, not a re-render — so it is
 a regeneration, not a value-preserving serialisation fix like §15/§16.
+
+
+## The mp.dps no-op gate already existed — I wrote a second one (2026-09-13)
+
+This bean said "WORTH A GATE — the detector is static and cheap (see the audit
+doc for the regex)", and the sweep doc's orthogonality table said the class was
+caught by "nothing, today". **Both were stale.**
+`computations/mpf_context_dps_audit.py` was built, is AST-based (not the regex
+the doc sketches), handles `prec` as well as `dps`, reports unparseable files
+rather than passing them clean, and is wired into `scripts/precision-gates.sh`
+as `mp.dps no-op`.
+
+I read this bean and the audit doc and wrote
+`computations/audits/mp_dps_noop_audit.py` from scratch before checking the
+GATES array. Deleted unmerged. The stale line is the same failure this bean
+catalogues in others — su4's "10 padded fields" outliving the run behind it —
+and the array is the one place that answers "does a gate for this exist", which
+gives `a gate outside this array is a gate nobody runs` a converse worth
+stating: **a gate inside it is one nobody looks for.**
+
+### What survived, and it is the only part that was not already there
+
+The existing detector collects bindings with one flat `ast.walk` and abstains
+when a name is bound both ways. Right for a same-scope tie; wrong across
+depths. Three files here bind both at different depths:
+
+    computations/categorical_q_decay_ba_low_isotopes.py
+       line  56  from mpmath import mp        <- module scope, the CONTEXT
+       line 259      import mpmath as mp      <- inside a function, the PACKAGE
+
+so an `mp.dps = 50` on line 260 is a live no-op the flat reading passes clean.
+Now scope-resolved innermost-first, descending through `if`/`try`/`with`/`for`
+but not `def`/`class`. Same-scope ties still resolve to the context, so the
+documented conservatism is unchanged.
+
+MEASURED: across 3223 mpmath-naming files the two readings disagree on ZERO —
+the blind spot is latent, not live. Both catch all 7 pre-fix files pulled from
+history, at the line numbers the audit doc records. `--strict` exits 0 before
+and after. Self-test 13 -> 16.
+
+Sweep doc's stale table row corrected in place. Commit `941ca2a841b`
+(pushed as `e6c84697e4b`).
