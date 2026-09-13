@@ -8,7 +8,7 @@ tags:
     - g3-aomega
     - route-c
 created_at: 2026-09-07T19:24:33Z
-updated_at: 2026-09-13T08:09:23Z
+updated_at: 2026-09-13T08:26:23Z
 ---
 
 Owner 'Merge and go' 2026-09-07. Sibling of qou-m3ad / qou-rtec (both are tasks; a task cannot parent a task). Goal: the pretzel's holomorphic blocks B^alpha(x;q) (7 of them, level 2) from the m016 state integral, evaluated as q-series by the Garoufalidis-Kashaev residue method (held: arxiv-1304.2705v1 — 1-dim I_{A,B} family proved, multi-dim stated as 'well known to experts' without a general theorem; arxiv-1411.6062v2), CERTIFIED against the derived rotated-index family (aomega_m3_rotated_index_three_knots_probe) via GGM eq 19. Then S^+(x;0) in GGM's normalisation and item 1 runs. Inputs on hand: SnapPy m016 NZ data (3 tets, 2 obstruction classes, Ptolemy fields c^3-c-1 and c^3+4c^2+3c-1). Honest boundary: the 4_1 corpus instance is 1-dim; the pretzel is 2-dim and level 2 — GZ §4.2 declined it. Do not transcribe; derive and certify.
@@ -44,3 +44,7 @@ PART 12b (2026-09-13, derived + validated, probe aomega_m3_pretzel_residue_block
 
 
 CORPUS-GREP HIT (2026-09-13, after Part 12b): GK 'Evaluation of state integrals at rational points' arxiv-1411.6062v2 §2.3 eq (56) prints I_{(-2,3,7)}(b) = int Phi_b(x)^2 Phi_b(2x - c_b) e^{-2 pi i x^2} dx — identical to the Part 11 derived form — attributed to Kashaev's unpublished 'long computation'. So Part 11 reproduces it from the NZ datum in four lines, AND the orientation of my pretzel integral agrees with GK's (no mirror); their §2.2 assigns (1,3) to 5_2 (= my I_{1,3}) while GK 2013 assigns (2,3): the two GK conventions are the two orientations, as measured. (57b)-(57c): rational-point blocks g_k = q^{k(k+1)}x^{2k}/((qx)_k^2 (qx^2)_{2k}), g(x) = x^2/((1-x)^2(1-x^2)^2); g=1 has SIX solutions (cubic fields disc -23, 49) = six parabolic reps = the six terms of the Part 12b residue sum. Audit §3i (precedent paragraph). Still open: the level-2 pairing (BDP14 not held; [GZa] q-series matrix for the three simplest knots — check holdings).
+
+
+
+PART 13 (2026-09-13, held text implemented + gated, probe aomega_m3_pretzel_gz_blocks_index_probe.py): the level-2 pairing is in GZ 'Knots and their related q-series' (library/arxiv-2111.06645/ = arXiv 2304.09377v2) §3.5/Prop 3.8/Obs 3.9/App A.6. Twelve q^{1/2}-series H_j^± (weights dims 1,4,1) built exactly from A.6; G1: every printed (3.17) coefficient reproduced; G2: quadratic relation holds; G3: Obs 3.9 H1+H1- = 1-8q+3q^2+50q^3+58q^4+13q^5-196q^6-456q^7 == our derived sigma1-sigma1 index at zeta=1 (to q^3) and GZ's printed total index (to q^7); G4: Prop 3.8 numerically to 1e-12 with h_j(1/tau)=H_j^-(q~) and NO (-1)^{delta_j} (measured convention; printed sign fails); G5: GZ (3.16) form is the mirror of GK (56)/Part 11 form (ratio modulus 0.63), index blind. RESOLVES Part 12b's negative: at u=0 the even-even poles are triple, the residue carries eps-derivatives, the index is the weight-1 component alone, other pairings cancel via the quadratic relation. CERTIFIED: pretzel total index from held blocks vs our derivation. NOT YET: the zeta-graded sigma1-sigma1 entry (GGM 21) — needs the u-deformation of GZ's construction; the six validated families of Part 12b are its natural carriers (Part 14). Audit §3l.
