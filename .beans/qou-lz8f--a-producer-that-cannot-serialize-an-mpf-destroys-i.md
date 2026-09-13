@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-13T17:29:26Z
-updated_at: 2026-09-13T17:30:03Z
+updated_at: 2026-09-13T18:23:59Z
 ---
 
 ## The defect, measured
@@ -108,3 +108,65 @@ Consider also whether the real fix is upstream of all 38: a shared
 `json.dump(..., default=fmt)` helper, so an mpf lift can never again reach a
 producer that cannot write it. That is a design change and an owner call, not
 an idle-pass action.
+
+
+## VERIFIED 2026-09-13 — all 37 run; 4 more are broken, 29 are clean
+
+Ran every candidate with a 75 s timeout and `git checkout -- computations/`
+after **each** run. The harness refuses to start on a dirty tree, and its
+guard fired for real once (a leftover from a run whose restore could not
+complete). Final tree: CLEAN.
+
+    29  clean
+     4  CONFIRMED-BROKEN      <- destroying their own witness on every run
+     3  TIMEOUT (undecided)
+     1  exit 77 (by design)
+
+**The 4 confirmed:**
+
+    computations/binding_bring_enhancement_compare.py
+    computations/deltalambda/deltalambda_extensivity_gap_synthesis_probe.py
+    computations/probes/he3_brane_tower_structural_gap.py
+    computations/sweeps/low_isotope_binding_sweep.py     <- FIXED, 029254b6492
+
+Plus `binding_ladder_catalog` already fixed, so **5 broken out of 38
+candidates — a 13 % hit rate** for the static filter. Stated as the filter's
+precision, not as a success rate.
+
+**Two entries I first recorded as `other-crash` were MY CONTAINER, not their
+code.** `option_e_canonical_reeb_v5` and `option_e_deuteron_delta_lambda_probe_v2`
+died on `OSError: [Errno 28] No space left on device`; the session was at
+**1.2 MB free**. Both re-run **clean** after cleanup. Recorded because
+"crashed under measurement" and "is broken" are different claims and only one
+of them was true.
+
+*(The disk itself: 5.52 GiB of git `tmp_pack_*` garbage from a single
+interrupted fetch on Sep 5, which `git count-objects` labels garbage outright.
+Removing it took 1.2 MB -> 5.7 GB. Unrelated to this bean but it is what the
+two false crashes were.)*
+
+**3 undecided, and a timeout is not a verdict:** `canonical_tower`,
+`mass_at_3A_proper`, `q_beta_complex_q_test1_phaseA` all exceeded 75 s. Re-run
+with a real budget before calling them either way.
+
+**`hyperbolic_volume_literal_audit` exits 77 by design** — an audit reporting
+findings through its exit code. Not a defect; AGENTS.md's "a non-zero exit is
+not a defect" case.
+
+## What the low_isotope_binding_sweep fix showed, which generalises
+
+Its `M_E_MEV = float(_M_E_MEV_MP)` carried the comment *"coerced to float for
+json-serialisable arithmetic in this script"*. **The workaround for
+mpf-unserialisability was to put the COMPUTE on float64** — and it is what
+left the producer defenceless when a second mpf arrived without the same
+coercion.
+
+So this bean's class has a companion: not only "producers that crash on mpf",
+but **"producers that were downcast to avoid crashing on mpf"**. The second
+group does not crash, is invisible to this audit, and is quietly computing at
+f64. Measured on the one case: the coercion moved `M_E_MEV` by **exactly 0.0**,
+so it was buying nothing even on its own terms.
+
+That is an argument for the shared-serializer fix at the top of this bean —
+a `json.dump(..., default=fmt)` helper would remove the incentive for both
+groups. Still an owner call.
