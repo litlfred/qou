@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T19:14:01Z
-updated_at: 2026-09-13T19:14:44Z
+updated_at: 2026-09-13T19:38:38Z
 ---
 
 Extracted from `qou-o6ml` §"CONSTRAINT 3b" (2026-09-13, MobiusMutualChannel.lean
@@ -24,9 +24,14 @@ Contrapositive of `mobius_b3_eq_zero_of_sep_eq`, which routes through
 `b3_eq_zero_of_pairLocal`: if the assemblies do not move the pair's
 separations, `b_3` vanishes identically.
 
-AME2020 gives `b_3 = +1.4262225` MeV (`AmeBindingNotPairwise.ame_b3_eq`); the
-model gives exactly **0**. So the hypothesis is not idle — something must move,
-or route (2) contributes nothing to the extensive term.
+AME2020 gives `b_3 = +1.4262225` MeV (`AmeBindingNotPairwise.ame_b3_eq`) — the
+**isospin average** of the A = 3 doublet, and specifically the *strong* channel's
+half of the charge split; see the CORRECTION section below, which also retracts
+this paragraph's original second sentence. Since that figure is **nonzero**, the
+`sep_eq` hypothesis is refuted for the physical system: something must move, or
+route (2) contributes nothing to the extensive term. The channel itself supplies
+**no number** — `mobius_b3_eq_zero_of_sep_eq` is conditional and its antecedent
+is exactly what is open.
 
 **THE OPEN QUESTION, verbatim from section 9g:** *"NOT CLAIMED: that the
 assemblies DO move the separations in this framework, nor by how much. That is
@@ -99,3 +104,115 @@ the "why" above is the point).
   qou-mbbf   the A+1 component law + the non-geometricity measurement
   qou-ales   gamma-gamma + confinement SDP; owns the derived-object question
   qou-brng / qou-rwhv / qou-eptr   the b_3 extensive-term front (all in-progress)
+
+
+---
+
+## CORRECTION 2026-09-13 — "the model gives exactly 0" was WRONG, and it is the conditional-proved defect
+
+**What I asserted**, above and in issue #7338 and PR #7339: *"AME2020 gives
+`b_3 = +1.4262225` MeV; the model gives exactly **0**."*
+
+**What is actually true.** The Mobius mutual channel produces **no number at
+all**. `mobius_b3_eq_zero_of_sep_eq` is a **conditional** vanishing — its
+hypotheses are `h3` and `h4`, that the triple and quad assemblies agree with the
+isolated pair on the separations, pointwise. Nothing in the corpus establishes
+those hypotheses; section 9g says so in the sentence this bean already quotes
+verbatim: *"NOT CLAIMED: that the assemblies DO move the separations."*
+
+So I restated a conditional lemma's antecedent as an established model fact.
+That is exactly the **"Conditional-proved != premise-established"** defect
+AGENTS.md carries a STRICT section for, committed in the bean that exists to
+record a conditional result.
+
+**Consequences that also have to go.**
+
+* There is **no 1.43 MeV discrepancy** in this channel. 1.4262225 is the AME
+  side; the model side of *this* channel is **undetermined**, not zero. A
+  discrepancy needs two numbers.
+* The framing "converts a 1.43 MeV discrepancy into a well-posed question" is
+  wrong in the same way. What section 9g actually converts is the **nonzero-ness**
+  of the measured `b_3` into a **refutation of the `sep_eq` hypothesis for the
+  physical system** — the measurement tells you the separations *must* move; it
+  does not tell you the model says they do not.
+
+**A DIFFERENT model channel does give a number, and I should not have implied
+it was this one.** The multiplicative assembly (Mayer/Ursell, `qou-rwhv` /
+`qou-rraz`) gives, at the live chain bonds, `b_3 = -1.2277` MeV (3H) and
+`-0.7973` MeV (3He) — isospin average **`-1.0125`** MeV. Nonzero, and with the
+**wrong sign** against AME's `+1.4262225`. Two channels, two different `b_3`
+behaviours; conflating them under "the model" is the overloaded-symbol trap.
+
+## PROVENANCE OF 1.4262225 — say it when you quote it
+
+It is **not** a single nucleus. It is the **isospin average / charge-symmetric
+part** of the A = 3 doublet:
+
+    b_3(3H)  = 8.481798 - 3*e_2 = 1.808100
+    b_3(3He) = 7.718058 - 3*e_2 = 1.044360   (e_2 = B(2H) = 2.224566)
+    mean                        = 1.426230
+
+matching the quoted `1.4262225` to 8e-6 MeV (the residual is AME input
+precision — it implies `B(2H) = 2.2245687` vs `2.2245660`, 2.7 eV). Verified by
+recomputation this session. Each single-nucleus alternative is 26.8% away, so
+the identification is not a coincidence. Recorded independently in
+`PairwiseCumulantVanishing.lean:68-104`.
+
+**Do not compare it to a triton-pinned `e_3`**: the body-order tower pins
+`e_3 = 1.808100` on 3H alone. The two differ by 27% by convention, not by error.
+
+## AND THE SPLIT MATTERS TO THIS ARC SPECIFICALLY
+
+`qou-9v7t` (2026-08-29, PR #5990,
+`computations/b3-charge-decomposition-a3.witness.json`) had already split the
+A = 3 doublet and named the halves:
+
+| part | value (MeV) | named |
+|---|---|---|
+| `b3_sym`  | 1.4262225 | *"the strong channel's obligation"* |
+| `b3_asym` | 0.3818775 | *"the EM channel's"* |
+
+`qou-o6ml` is the **EM-linking** arc. So the figure this arc owes is plausibly
+`b3_asym = 0.3818775`, **not** the 1.4262225 quoted above — which belongs to the
+strong channel. Flagged, not concluded: whether route (2)'s `b_3` is the sym
+part, the asym part, or neither is a further read of `mobiusCrossingModel`, and
+I have not made it. Followed up on `qou-o6ml`.
+
+## ONE SHARPENING THAT SURVIVES, and it is stronger than what I wrote
+
+I wrote that all three concrete `LinkEmbedding`s are synthetic. True, and the
+arity is the sharper fact: section 9g needs `LinkEmbedding M 4` — **six** of
+them (`Lpair`, `Ltriple k` for `k : Fin 4`, `Lquad`) — and both named concrete
+families are `LinkEmbedding M 2`:
+
+* `MobiusMutualChannel.lean:165` `shrinkingLink (m : M) : LinkEmbedding M 2`
+* `MobiusMutualChannel.lean:1025` `separatedLink (m : M) (R : Real) : LinkEmbedding M 2`
+
+The only n-generic concrete one is the `Nonempty (LinkEmbedding M n)` instance
+at `MobiusEnergy.lean:323`, whose `sep` is (line 335) `if i = j then ambientDist
+else 1` — **constant off-diagonal**. That instance therefore satisfies `h3` and
+`h4` trivially, so its `b_3` is 0 by the lemma. **The only 4-component
+`LinkEmbedding` the corpus can produce is the degenerate one in the b_3 = 0
+case** — which is a stronger statement of "not workable today" than "the
+families are synthetic", and it is measured rather than asserted.
+
+**Contamination check — run, with its result, because the bare grep MISLEADS.**
+The wrong claim reached three artifacts and all three are corrected in the same
+push: this bean, issue #7338's body, and PR #7339's body. It reached nothing
+else — not `qou-o6ml`, no `.lean`, no witness, no content block.
+
+`git grep -e "gives exactly 0" -e "1.43 MeV"` over tracked
+`*.md *.lean *.py *.json *.ts` returns **12 hits and zero of them are this
+claim**: `1.43 MeV` has **no hits at all**, and all 12 `gives exactly 0` are
+unrelated subjects — the 4_1 order-2 Habiro tail (`qou-9ghx`,
+`qbeta_5two_order3_barodd_tail_probe.py:207`), `y_lambda_at` on the ht6 stratum
+(`qou-ftuv:2302`), adjacent-pair F (`qou-prjo:407`), the M = 3 Borromean
+(`brunnian_triple_exhaustion_probe.py:107`), the Bernoulli tower
+(`eunit_g2_derivation_probe.py:232`), Z = 0 or N = 0
+(`nfold_ip_coupling_duality_gap_probe.py:386`), and n(3) = 3
+(`ursell_chain_mismatch_probe.py:201`).
+
+Recorded this way because the first run of this very check emitted the label
+*"no lines above = no hits outside the bean"* over twelve printed lines — the
+label was written into the command before the result was known. A grep whose
+verdict is baked into its own invocation is not a check.
