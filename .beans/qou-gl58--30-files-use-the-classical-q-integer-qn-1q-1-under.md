@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:18Z
-updated_at: 2026-09-13T09:03:10Z
+updated_at: 2026-09-13T14:05:42Z
 ---
 
 WORKED 2026-09-07 (audit sec 22). 0 of 363 files carry BOTH conventions — no internal inconsistency anywhere. My 'the word hecke appears' classifier is NOISE: tw_gram_determinant_probe.py is CORRECT (its q_int is the Gaussian bracket and its docstring says the conventions match QOU/Hecke/TwMul.lean, whose rule sigma_i T_v = (q-1)T_v + q T_{v s_i} is the T_w basis, where classical IS right); deltalambda_jet_filtration_magnitude_probe.py DECLARES the convention in its docstring ('Coxeter-length / coinvariant Poincare convention, NOT the balanced'). THE REAL DISCRIMINATOR IS THE BASIS: T_w / Iwahori unnormalised -> classical; normalised / quantum-dimension -> symmetric. Defensible figures: at most 28 unclassified, 1 confirmed ambiguous (helium_four_body_cluster_probe.py, sum(q**k), undeclared, Borromean cluster context), 2 confirmed fine. term7_chi5_basis.py stays OPEN: it feeds a q-hook-length dim_q, and my attempt to settle it against y_lambda_at was the WRONG TEST — y_lambda_at is the SU(2)-restricted Markov weight (zero on height>2 partitions), term7 computes Plancherel dim_q^2/[n]_q! over all partitions.
@@ -165,3 +165,75 @@ whether anything nearby settles it.
 
 Running total across both appends: **0 defects in 39 classical definitions**
 (10 from `qou-b8vx` + these 29).
+
+
+2026-09-13 (later) — THE AUTHORING-HYGIENE HALF IS CLOSED: 29/29 STRONG,
+0 FAMILY, 0 READ. Seven files that used no convention-declaring words at all
+now carry a one-line docstring each. Branch
+claude/gl58-declare-bracket-convention-2026-09-13.
+
+WHAT "FAMILY" WAS, because the verdict name understates it. The triage
+assigns FAMILY when a file's `qint` body is byte-identical to a sibling's
+whose docstring DOES declare the bracket. That is a statement about the
+neighbourhood, not about the file: a reader opening
+ksel2id_u1_promotion_probe.py sees `def qint(qv, k)` with a bare loop and
+has nothing in front of them that says which bracket it is. The two
+brackets differ by q^{(n-1)/2}, silently, on every value returned. FAMILY is
+the audit reporting that it could not answer the question from the file and
+went looking elsewhere.
+
+THE SEVEN, with the wording taken from each one's own declaring sibling so
+the file now says what the family already said:
+
+  deltalambda/a4_h12_brunnian_deficit_measure_probe.py::qint
+  deltalambda/helium_four_body_cluster_probe.py::qint
+      "[n]_q = 1 + q + ... + q^{n-1} = (q^n - 1)/(q - 1)"
+
+  probes/ksel2id_friedrichs_selection_probe.py::qint
+  probes/ksel2id_u1_promotion_probe.py::qint
+      "[k]_q = 1 + q + ... + q^{k-1}, field-agnostic.  NOTE the argument
+       order: the MODULUS comes first, the index second."
+      -- this pair takes (q, k), the OPPOSITE order to every other qint in
+      the corpus. That is a second, independent foot-gun that the triage
+      does not measure and that nothing else in the tree stated; it is
+      stated now.
+
+  probes/qlift_doorIV_matrix_crossterm_probe.py::q_int
+  probes/qlift_doorV_stokes_automorphism_probe.py::q_int
+      "[n]_q = (q^n - 1)/(q - 1), n at q = 1"
+
+  probes/qlift_routeC_homogenized_factor_probe.py::qint
+      "[k]_q = (1 - q^k)/(1 - q) -- the unbalanced bracket, sign-flipped
+       spelling"
+
+RUNTIME-INERT, and verified rather than asserted. The diff is 9 insertions,
+0 non-docstring added lines, 0 removed lines. qlift_routeC re-runs with its
+VERDICT line unchanged ("NEITHER EMBEDS ... Scope-(a)") and a witness diff
+that is provenance-only (generated / scriptHash / scriptCommitSha /
+commitSha / computedAt / durationMs / q0Anchor); no numeric field moved.
+raw-float64 ratchet NEW 0, REGRESSED 0. Triage re-run after merging
+origin/main (17 commits): still 29/29.
+
+SECOND COMMIT, and it is the more interesting defect. The triage's own
+closing warning hardcoded the number it was warning about:
+
+    Do NOT quote a single combined figure.  'STRONG + WEAK' would read as
+    29/29 resolved, and 7 of those are files that say nothing at all.
+
+The 7 was a literal. With FAMILY drained it printed that line directly
+beneath its own computed "WEAK (FAMILY) : 0" -- a footer contradicting its
+own measurement, in the one script whose entire subject is files asserting
+something a neighbour measured. Now derived (n_fam + n_read), and when both
+are zero the warning is replaced rather than printed falsely.
+
+WHAT THIS DOES NOT CLAIM. A DECLARED verdict says a file is HONEST about
+which bracket it uses. It says nothing about whether that bracket is the
+mathematically right one for the file's subject. Those are different claims
+and the triage only makes the first. The bean's ORIGINAL 30 -- the
+q-PARAMETRIC (2-arg) definitions from the duplication audit -- are a
+different population from the q0-PINNED (1-arg) set this triage measures,
+and are untouched by this append, as by the previous one.
+
+STILL OPEN in this bean: term7_chi5_basis.py (feeds a q-hook-length dim_q;
+the y_lambda_at test was the wrong test and it has not been re-settled), and
+the original 30's per-consumer correctness question.
