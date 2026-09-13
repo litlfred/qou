@@ -1,22 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T05:51:15.215152+00:00",
-  "commitSha": "2611208d61cc22e0c5c0073903813c936d38e569",
+  "computedAt": "2026-09-13T10:41:05.197754+00:00",
+  "commitSha": "3220f1b5e47b89bc77b60d29aec8e2bc74f7f52c",
   "assertions": [
     {
-      "name": "asymptotic_shape_matches_cited_expansion",
+      "name": "asymptotic_shape_matches_derived_expansion",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "detail": "log<4_1>_N - N*V/(2pi) tracks (3/2)logN - (1/4)log3 with an O(1/N) residual: the residual ratio on each doubling is ['0.492795', '0.496559', '0.498316', '0.499167', '0.499586'], against 1/2 for a clean 1/N tail. The N^{3/2}/3^{1/4} prefactor of the cited expansion is therefore reproduced by this corpus's own sum."
+      "detail": "log<4_1>_N - N*V/(2pi) tracks (3/2)logN - (1/4)log3 with an O(1/N) residual: the residual ratio on each doubling is ['0.492795', '0.496559', '0.498316', '0.499167', '0.499586'], against 1/2 for a clean 1/N tail. The N^{3/2}/3^{1/4} prefactor of the expansion derived in prop:one-loop-prefactor-provenance is therefore reproduced by this corpus's own sum."
     },
     {
       "name": "N_delta_over_logN_matches_derived_3pi_with_offset",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "detail": "the DERIVED two-term prediction 3pi - (pi log3)/(2 logN) tracks the measured N*delta/logN to within 0.0183105 across N = 50..1600; at N=1600 the gap is 0.000295239. The offset was derived from the cited expansion before being measured, so this is a test of the derivation, not a fit to the data."
+      "detail": "the DERIVED two-term prediction 3pi - (pi log3)/(2 logN) tracks the measured N*delta/logN to within 0.0183105 across N = 50..1600; at N=1600 the gap is 0.000295239. The offset was derived from the derived expansion before being measured, so this is a test of the derivation, not a fit to the data."
     },
     {
       "name": "remainder_is_NOT_a_pure_grade_minus_one_monomial",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 148,
+  "durationMs": 106,
   "computation": "kashaev-remainder-omega-grade",
   "scriptFile": "kashaev_remainder_omega_grade_probe.py",
-  "scriptHash": "f6d37f4cf242",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "179e00673197",
+  "scriptCommitSha": "f6f17fa092e7dd00d24d940cb414bc2cbd919abf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/kashaev_remainder_omega_grade_probe.py"
   },
-  "description": "The omega-grade of the Kashaev remainder for 4_1. kashaev-surreal.md recasts the volume conjecture as a standard-part identity and never says what st() discards. Derived from the cited Ohtsuki/Andersen-Hansen expansion: delta_N = 3pi logN/N - (pi log3)/(2N) + O(1/N^2), so ord_omega(delta) = -1 in the coarse grading but delta is NOT a grade-(-1) monomial -- omega*delta is infinite and the convergence is logarithmically slow. Derive-then-check; every constant is read off the citation before measurement. Exact mpmath at 50 dps; no float64.",
+  "description": "The omega-grade of the Kashaev remainder for 4_1. kashaev-surreal.md recasts the volume conjecture as a standard-part identity and never says what st() discards. Derived from the leading asymptotic that prop:one-loop-prefactor-provenance DERIVES from the saddle at theta*=5pi/6 (Lean c_pow_four_eq_third) -- NOT cited to Ohtsuki/Andersen-Hansen, which is what this description said before the 2026-09-13 correction: expansion: delta_N = 3pi logN/N - (pi log3)/(2N) + O(1/N^2), so ord_omega(delta) = -1 in the coarse grading but delta is NOT a grade-(-1) monomial -- omega*delta is infinite and the convergence is logarithmically slow. Derive-then-check; every constant is read off the citation before measurement. Exact mpmath at 50 dps; no float64.",
   "bean": "qou-cds1",
   "fills_gap_in": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
   "derived_remainder": "delta_N = 3*pi*log(N)/N - (pi*log 3)/(2N) + O(1/N^2)",
@@ -171,7 +171,7 @@
     ]
   },
   "scope": {
-    "kind": "(a) asymptotic statement about 4_1, resting on a cited expansion not re-derived here",
+    "kind": "(a) asymptotic statement about 4_1; its leading-asymptotic input is DERIVED in-corpus (prop:one-loop-prefactor-provenance), while the O(1/N^2) tail is MEASURED (check 1), not derived",
     "not_claimed": "nothing about the volume conjecture, about st(), or about any knot but 4_1"
   },
   "q0Anchor": "independent",
