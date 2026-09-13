@@ -5,6 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
+updated_at: 2026-09-13T14:22:41Z
 updated_at: 2026-09-13T13:50:50Z
 updated_at: 2026-09-13T13:07:38Z
 updated_at: 2026-09-13T12:47:52Z
@@ -1337,6 +1338,79 @@ convention, and the real question is *which mass normalises `δ`*, which
 colour weighting — not as two constants.** Verification: `lean`-direct exit 0,
 axioms `[propext, Classical.choice, Quot.sound]` on all four; `CharZero` is
 required rather than convenient, since every statement divides by 2 and 4.
+
+---
+
+CROSS-MASS-WEIGHTING + I WITHDRAW ITEM 2 ABOVE (2026-09-13, session sleepy-morse,
+PR #7300).
+
+**Item 2 of the "does NOT close" list immediately above is WRONG and I am
+withdrawing it.**  It read: *"Mass-fraction is not the mechanism for all three
+letters.  `massFraction_like_pair` (`m/(m+m) = 1/2`) contradicts `t_pp = 0` and
+`t_nn = 1`, so the reading holds at `pn` and fails at the like pairs."*  That
+reads the weight in the wrong frame.  The mass fraction is **not** a rule
+producing `t` *from* the flavours; it is the weight in a convex combination *of
+the two like-pair letters*, and a like pair averages a letter with **itself**, so
+every convex weight returns it unchanged.
+
+The corpus had already answered this, in a probe my grep did not reach:
+`computations/probes/pn_interface_bar_structure_probe.py` fact 3 records
+`f_pn = w_p·f_pp + w_n·f_nn`, `w_p + w_n = 1`, and says so in as many words —
+*"a like-flavour bond has no mean to tilt — averaging `f_pp` with itself returns
+`f_pp` for any weights summing to one, so 'colour-averaging the p-p bond' is a
+no-op by construction."*  **This is the same error class as the `1/4` itself**:
+an open item invented by reading a quantity in the wrong frame, two entries
+running.  Now theorems: `crossInterp_like_pair`, `directInterp_like_pair`.
+
+**WHAT THE TWO WEIGHTS ARE.**  That probe's fact 3 leaves `w_p = 1/2 + δ/4` as a
+numeral.  Combined with `tPN_mean_normalised` (`w_n = 1/2 − δ/4 = m_p/(m_p+m_n)`)
+they are the **crossed** mass fractions, exactly:
+
+    w_p  =  m_n/(m_p + m_n)     the NEUTRON's fraction, carried by the pp letter
+    w_n  =  m_p/(m_p + m_n)     the PROTON's  fraction, carried by the nn letter
+
+so the production p-n letter is, with no `δ`, no `1/4` and no normalisation
+convention in it at all,
+
+    σ_pn  =  ( m_n·σ  +  m_p·σ⁻¹ ) / (m_p + m_n) .
+
+I found no statement of this anywhere in `content/`, `computations/`, `docs/` or
+`.beans/`; a fixed-string search for `m_n/(m_p+m_n)` returns nothing, and
+`d_for_ctype` carries the numeral with no rationale in its source.
+
+**WHY IT IS WORTH SAYING — the sign becomes a CHOICE, not a numeral.**  The like
+pairs fix the per-nucleon endpoints `t_p = 0` (pp is `σ`) and `t_n = 1` (nn is
+`σ⁻¹`).  Interpolating those admits exactly two natural weightings:
+
+    direct   t = (m_p·t_p + m_n·t_n)/(m_p+m_n) = m_n/(m_p+m_n) = 1/2 + δ/4
+    cross    t = (m_n·t_p + m_p·t_n)/(m_p+m_n) = m_p/(m_p+m_n) = 1/2 − δ/4
+
+They differ by exactly `δ/2`, agree on both like pairs, and production takes
+**cross**.  Nothing derives that: `direct` is the `δ ↦ −δ` reflection and
+satisfies the same bar-invariance and normalisation hypotheses
+`prop:pn-averaging-uniqueness` conditions on.  So this does not close anything —
+it converts an unexplained numeral into an unexplained **choice between two
+named weightings**, which is a smaller open item and a falsifiable one.
+
+**WHERE THEY SEPARATE, and where they do not.**  NOT at `A = 3`: the mirror ratio
+`tr(³H)/tr(³He) = (b_pn·b_nn)/(b_pp·b_pn)` is `q⁻⁴` under **both**, since the p-n
+factor cancels — the cancellation `InterfaceScalar.mirror_split_eq_L_diff`
+already records, here making the mirror splitting blind to this sign.  The whole
+discriminator is the **deuteron**, whose single bond is p-n: `b_pn` moves by
+`h·δ/2`, measured **2.83e-4 relative** at the proton-pinned `q₀`
+(0.508229789377 → 0.508085986121).
+
+Probe `computations/qbeta/pn_letter_is_cross_mass_weighted_probe.py` (5/5,
+sympy + mpmath at dps 60; numerical leg reproduces
+`qbeta_bond_factors_derived_probe`'s own MEASURED `b_pn` to rel < 1e-18).  Lean:
+seven new theorems in `QOU/Mass/FlavourSplitNormalisation.lean`, `lean`-direct
+exit 0 / 0 warnings, axioms `[propext, Classical.choice, Quot.sound]` on all
+eleven.
+
+**Remaining open on this bean, unchanged in substance:** the `(q−1)²/3` in `δ`
+(item 1 above — leading-order only, subleading `(1+ℏ_q³)` **posited**, 76 % of the
+CODATA gap) and the colour weighting itself (item 3), now sharpened to *which of
+the two weightings, and why*.
 COORDINATION NOTE (2026-09-13, session from bean `qou-5c64`). Not a claim on
 this bean and nothing here is edited — this answers the one item the previous
 coordination note left explicitly untested.
