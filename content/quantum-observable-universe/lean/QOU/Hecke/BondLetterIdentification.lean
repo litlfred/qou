@@ -314,6 +314,52 @@ theorem flavorSplit_eq_bondGap (q : ℝ) (hq : 0 < q) :
   field_simp
   ring
 
+/-- **The like-pair bond product collapses to a power of `z` alone.**
+
+With `a` proton-proton bonds and `b` neutron-neutron bonds, `z^a·(z−h)^b·q^(4b)
+= z^(a+b)`: every `nn` bond contributes the same `z` as a `pp` bond, up to one
+factor `q⁻⁴`. Division-free, so it needs no nonvanishing side conditions beyond
+`0 < q`.
+
+**The mirror-pair law is the immediate corollary.** A mirror pair `(Z,N)` and
+`(N,Z)` in canonical `pppnnn` ordering has `(a,b) = (Z−1, N−1)` and
+`(N−1, Z−1)`, and one `pn` bond each — common, hence cancelling. So
+
+    tr(Z,N) / tr(N,Z)  =  q^(−4(N−Z))
+
+exactly, **independent of the `pn` convention**: `δ` does not appear. Verified
+symbolically at `(Z,N) = (1,2), (2,3), (1,3), (2,4), (3,5), (4,6)` and at the
+self-mirror `(1,1), (2,2)`, where it gives `1`.
+
+This is the sharp form of the claim that the `pp → σ` / `nn → σ⁻¹` assignment
+**is** the mirror asymmetry: swapping the two letters swaps `a` and `b`, which
+inverts the ratio. Nothing else in the bond model distinguishes a proton from a
+neutron. Why the assignment has that orientation rather than the reverse is
+`qou-qqm4`'s upstream open item. -/
+theorem likePairBondProduct_eq_z_pow {R : Type*} [CommRing R]
+    (zpp znn c : R) (hrel : znn * c = zpp) (a b : ℕ) :
+    zpp ^ a * znn ^ b * c ^ b = zpp ^ (a + b) := by
+  rw [pow_add, ← hrel, mul_pow]
+  ring
+
+/-- The multiplicative form of `nnFactor_eq_ppFactor_div_q_pow_four`, which is
+what feeds `likePairBondProduct_eq_z_pow`: `(z_D − h)·q⁴ = z_D`. -/
+theorem nnFactor_mul_q_pow_four (q : ℝ) (hq : 0 < q) :
+    (q ^ 3 / (q ^ 2 + 1) - (q - q⁻¹)) * q ^ 4 = q ^ 3 / (q ^ 2 + 1) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hq2 : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **The mirror-pair law, at the canonical `z_D`.** With `a` proton-proton and
+`b` neutron-neutron bonds, the like-pair product is `z_D^(a+b)` once the `b`
+factors of `q⁴` are restored — so a mirror pair, which swaps `a` and `b`,
+differs by exactly `q^(4(a−b))`. -/
+theorem likePairBondProduct_zD (q : ℝ) (hq : 0 < q) (a b : ℕ) :
+    (q ^ 3 / (q ^ 2 + 1)) ^ a * (q ^ 3 / (q ^ 2 + 1) - (q - q⁻¹)) ^ b * (q ^ 4) ^ b
+      = (q ^ 3 / (q ^ 2 + 1)) ^ (a + b) :=
+  likePairBondProduct_eq_z_pow _ _ _ (nnFactor_mul_q_pow_four q hq) a b
+
 end ProductionWeight
 
 end QOU.Hecke.BondLetterIdentification
