@@ -62,6 +62,7 @@
     "failures": []
    },
    "lambda_in_mu3": true,
+   "lambda_identically_one": true,
    "schur_dim_matches_degree": true,
    "relator_check_failures": []
   }
@@ -70,5 +71,5 @@
   "sigma_b"
  ],
  "controls_passed": true,
- "verdict": "PROVED for L6a4 class 1: an invertible A over K conjugates sigma_b(rho) to lambda (x) rho^{-T} on the generators, hence on EVERY word by multiplicativity; lambda is mu_3-valued and mu_3 is trivial in PGL(3), so sigma_b(rho) and rho^{-T} are conjugate in PGL(3,K)."
+ "verdict": "PROVED for L6a4 class 1: an invertible A over K conjugates sigma_b(rho) to lambda (x) rho^{-T} on the generators, hence on EVERY word by multiplicativity. lambda == 1 identically, so the conjugacy holds in GL(3,K) on the nose -- the mu_3 twist is ABSENT, not merely invisible in PGL(3). (See ptolemy_duality_lambda_class_rigidity.py: the triviality is FORCED, since every SL(3)-preserving redecoration has N_b(mu) = mu.mu^2 = 1.)"
 }
