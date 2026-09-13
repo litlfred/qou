@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-13T05:31:43.944Z",
+  "generated": "2026-09-13T06:02:43.317Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3804,
-  "files_flagged": 99,
-  "total_defects": 64,
+  "scanned_files": 3807,
+  "files_flagged": 94,
+  "total_defects": 55,
   "total_exempt": 59,
   "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 20,
+    "proof-claims-unencoded": 11,
     "proof-no-self-assuming-projection": 41,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1,
@@ -545,7 +545,7 @@
       {
         "name": "HasFiniteLPDuality",
         "file": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean",
-        "line": 106
+        "line": 131
       },
       {
         "name": "HasThurstonTriangulation",
@@ -1659,16 +1659,7 @@
     ],
     "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean": [
       {
-        "line": 31,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class VorticityLowerBoundContext where",
-        "decl": "VorticityLowerBoundContext",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (bkmIntegralDiverges + bkm_diverges) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [VorticityLowerBoundContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 75,
+        "line": 85,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "def vorticity_lower_bound_conditional",
@@ -1824,17 +1815,6 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BringWPlaneMonodromy.lean": [
-      {
-        "line": 65,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class BringWPlaneMonodromy where",
-        "decl": "BringWPlaneMonodromy",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (is_seifert_gauss_manin + seifert_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [BringWPlaneMonodromy]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean": [
       {
         "line": 95,
@@ -1958,19 +1938,10 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean": [
       {
-        "line": 27,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class EInfinityIdentificationsContext where",
-        "decl": "EInfinityIdentificationsContext",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_wenzl_bridge_correction + claim_wenzl_bridge_correction_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [EInfinityIdentificationsContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 94,
+        "line": 97,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
-        "snippet": "def e_infinity_identifications [ctx : EInfinityIdentificationsContext] :",
+        "snippet": "def e_infinity_identifications {wenzlBridgeCorrection : Prop}",
         "decl": "e_infinity_identifications",
         "severity": "critical"
       }
@@ -2102,17 +2073,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Information/ChiMinusSix.lean": [
-      {
-        "line": 48,
-        "category": "proof-claims-unencoded",
-        "pattern": "docstring-claims-gap",
-        "snippet": "class QOUCohomology where",
-        "decl": "QOUCohomology",
-        "severity": "major",
-        "detail": "doc enumerates 2 properties (observability, Frobenius–Hopf self-duality); only 0 encoded as Prop field(s)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Information/GeometryOfIncompleteness.lean": [
@@ -2546,27 +2506,7 @@
         "detail": "opaque-marker field(s) `: True` (is_cyclotomic_reconstruction) — honestly framed; tracked not counted"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/QBeta/FaddeevPhiFullUniqueness.lean": [
-      {
-        "line": 66,
-        "category": "proof-claims-unencoded",
-        "pattern": "docstring-claims-gap",
-        "snippet": "class FaddeevPhiPhysical (t : ℝ) (Φ : ℂ → ℂ)",
-        "decl": "FaddeevPhiPhysical",
-        "severity": "major",
-        "detail": "doc enumerates 2 properties (strip-growth comparability, meromorphic normal form); only 0 encoded as Prop field(s)"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean": [
-      {
-        "line": 146,
-        "category": "proof-claims-unencoded",
-        "pattern": "docstring-claims-gap",
-        "snippet": "class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]",
-        "decl": "HasCategoricalIrreducibility",
-        "severity": "major",
-        "detail": "doc enumerates 2 properties (trace-freeness, non-degeneracy); only 1 encoded as Prop field(s)"
-      },
       {
         "line": 355,
         "category": "proof-no-self-assuming-projection",
@@ -2713,19 +2653,10 @@
     ],
     "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean": [
       {
-        "line": 41,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "structure OperatorSelectionLP where",
-        "decl": "OperatorSelectionLP",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (bounded + bounded_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [OperatorSelectionLP]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 119,
+        "line": 144,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
-        "snippet": "def strong_duality (lp : OperatorSelectionLP)",
+        "snippet": "def strong_duality (lp : OperatorSelectionLP bounded feasible)",
         "decl": "strong_duality",
         "severity": "critical"
       }
@@ -2961,17 +2892,6 @@
         "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (is_knot) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [KnotOperator]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
       }
     ],
-    "content/quantum-observable-universe/observations/borromean-quark.lean": [
-      {
-        "line": 87,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class BorromeanQuark where",
-        "decl": "BorromeanQuark",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (is_baryon_realisation + is_baryon_realisation_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [BorromeanQuark]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/observations/magic-numbers-bring.lean": [
       {
         "line": 34,
@@ -3003,17 +2923,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean": [
-      {
-        "line": 63,
-        "category": "proof-claims-unencoded",
-        "pattern": "docstring-claims-gap",
-        "snippet": "structure CategoricalReebDerivation (C : Type u) [Category.{v} C]",
-        "decl": "CategoricalReebDerivation",
-        "severity": "major",
-        "detail": "doc enumerates 2 properties (Normalization, Periodicity); only 0 encoded as Prop field(s)"
       }
     ],
     "content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean": [

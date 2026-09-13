@@ -28,7 +28,7 @@ namespace QOU.FluidDynamics
     time-integral divergence, and `tStar` the collision time.  The
     inequalities are the bar-odd collapse signature of the
     anti-parallel filament collision. -/
-class VorticityLowerBoundContext where
+class VorticityLowerBoundContext (bkmIntegralDiverges : Prop) where
   /-- Collision (blow-up) time `T*`. -/
   tStar : ℝ
   /-- Universal lower constant `c₁ > 0` (independent of `q`). -/
@@ -51,11 +51,21 @@ class VorticityLowerBoundContext where
       the stretching-driven concentration. -/
   vorticity_lower :
     ∀ t : ℝ, t < tStar → c₁ / (tStar - t) ≤ vortNorm t
-  /-- **(c) BKM divergence.**  The time-integral of the vorticity
-      sup-norm up to `T*` diverges, recorded as the abstract
-      proposition `bkmIntegralDiverges`. -/
-  bkmIntegralDiverges : Prop
-  /-- The BKM integral genuinely diverges (the conjectural input). -/
+  /-- **(c) BKM divergence.**  The time-integral of the vorticity sup-norm
+      up to `T*` diverges — the conjectural input, witnessed here.
+
+      **Parameterised 2026-09-13.**  `bkmIntegralDiverges` was a *field*
+      typed with the universe `Prop` alongside this witness, so the instance
+      chose the proposition and `⟨True, trivial⟩` discharged sub-claim (c);
+      `vorticity_lower_bound_conditional`'s third conjunct was therefore
+      unconditional.  Fields (a) and (b) above were always genuinely
+      encoded — only (c) was not, so this is the minimal fix.
+
+      It is a parameter rather than an encoding because stating the BKM
+      divergence needs an integral this class does not carry (`vortNorm` is
+      a bare `ℝ → ℝ` with no integrability hypothesis), and guessing at its
+      content would be the author's call to make.  The conjectural input is
+      untouched and still open. -/
   bkm_diverges : bkmIntegralDiverges
 
 /-- **Vorticity lower bound (conditional).**
@@ -73,12 +83,13 @@ class VorticityLowerBoundContext where
     Ref: [manuscript] §Fluid dynamics / Vorticity lower bound,
          prop:vorticity-lower-bound -/
 def vorticity_lower_bound_conditional
-    [ctx : VorticityLowerBoundContext] :
+    {bkmIntegralDiverges : Prop}
+    [ctx : VorticityLowerBoundContext bkmIntegralDiverges] :
     (∀ t : ℝ, t < ctx.tStar →
         ctx.c₁ * Real.sqrt (ctx.tStar - t) ≤ ctx.dist t ∧
           ctx.dist t ≤ ctx.c₂ * Real.sqrt (ctx.tStar - t)) ∧
     (∀ t : ℝ, t < ctx.tStar → ctx.c₁ / (ctx.tStar - t) ≤ ctx.vortNorm t) ∧
-    ctx.bkmIntegralDiverges :=
+    bkmIntegralDiverges :=
   ⟨ctx.separation_decay, ctx.vorticity_lower, ctx.bkm_diverges⟩
 
 end QOU.FluidDynamics
