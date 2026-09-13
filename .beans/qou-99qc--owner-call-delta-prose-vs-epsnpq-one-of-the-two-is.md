@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T16:05:35Z
+updated_at: 2026-09-13T16:19:51Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2362,3 +2362,72 @@ result is a MEASUREMENT under (B), not a rejection by the ruling — and under
 2. **Whether the bar-odd hypothesis survives the move to `z_D`.** It is
    attached to the retired `z = 1` closed form. Imposing it costs -54.825 %;
    that is reported, not avoided.
+
+
+## 🟧 OWNER RULING 2026-09-13 — SDP scope is **(B) whole element**
+
+The fork this bean carried as *"(A) core only, SELECTED-with-ambiguity"* was put
+to the owner with both options framed. **The owner answered "B".**
+
+**What (B) means.** The confinement SDP of `qou-ales` constrains **every
+Wedderburn projection of the full 11-letter word**, not only the 6 gamma-gamma
+core letters. Reading (A) — the core-only reading, under which reading 3 prunes
+nothing among the 5 letters the parity bound leaves free and "the census element
+stands" — is NOT the ruling.
+
+### Consequence 1 — the one-letter quark family is rejected outright
+
+All **6** (slot, kind) configurations fail `Matrix.PosSemidef` on at least one
+Wedderburn block. Under (B) that is a rejection by the ruling, not a
+measurement. It takes out BOTH arms at once:
+
+* the **8 bar-odd survivors** and their forced `Q_beta = 0.353415698 MeV`
+  (-54.825 %), and
+* the **census assignment**.
+
+So the bar-parity derivation forces an element the SDP half then excludes. Both
+halves stand — the parity narrowing is real and forced, and the element it
+forces is inadmissible. That is a stronger negative than "does not close".
+
+### Consequence 2 — the DASHBOARD'S SCORED ELEMENT is excluded
+
+`nuc11_interleaved` — the element `per-observable-100x-status.witness.json`
+currently scores for the **Q_beta, m_n and Delta_pn** rows — fails
+`Matrix.PosSemidef` on `(2,1)` and `(1,1,1)` for **both** nucleons. Block
+determinants, proton: `(3,) 1.38249446339`, `(2,1) -1.02197249381`,
+`(1,1,1) -0.739223570776`; neutron: `1.1221068216`, `-1.02197249381`,
+`-0.910762214553`. The `(1,1,1)` entries are the alternating character and are
+the already-recorded sign exclusion; the `(2,1)` failure is additional.
+
+So under the ruled scope the L2 dashboard scores an element the selection rule
+that is supposed to produce it rejects.
+
+### What was NOT done, deliberately
+
+**The dashboard is not re-scored.** Choosing what replaces the element is a
+separate decision with its own blast radius (three L2 rows and every figure
+quoted from them), and it is not an agent's to take. See "still open" below.
+
+### Recorded in
+
+`qbeta_bar_parity_forces_a_unique_quark_letter_probe.py` and
+`qbeta_qbeta_scores_a_difference_probe.py` — docstrings, witness descriptions,
+`scope` blocks and the two assertion names inverted; both re-run 6/6, both
+witnesses verified to carry the ruling and to no longer carry the superseded
+"(A) core only / NOT a rejection" text.
+
+The scoping of these two probes has now moved **twice**, and both moves were
+mine: asserted unscoped, demoted to "measurement under unselected (B)", and now
+reinstated by ruling. The verdict matches the first draft; it is reinstated by
+the owner's answer, not by the argument that first produced it.
+
+## STILL OPEN after this ruling — the bean stays `todo`
+
+1. **What replaces `nuc11_interleaved`** on the three L2 dashboard rows. The
+   ruled scope excludes it and nothing derived replaces it yet. Re-scoring is
+   an owner decision (cf. `qou-iagg`, which records the authorisation pattern).
+2. **A principle for the 5 un-ruled letters that is BOTH bar-consistent AND
+   whole-element PSD-admissible.** The one-letter family supplies neither
+   jointly — that is now the sharp form of the open problem.
+3. **Whether the bar-odd hypothesis survives the move to `z_D`** at all. It is
+   attached to the retired `z = 1` closed form; imposing it costs -54.825 %.
