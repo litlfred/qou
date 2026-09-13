@@ -47,6 +47,8 @@ WHAT IS PROVED, AND WHAT IS ASSUMED
    (proved in §9a–§9b) and Gauss's integral formula (assumed, see below). It is
    **empty on a pairwise-unlinked pair**, which is the case this framework
    faces, and §9d proves no positive constant bounds the channel below at all.
+   §9e guards it against vacuity: the hypotheses are jointly satisfiable with
+   `lk ≠ 0`, and `4π` is the largest constant the bound admits.
 
 ASSUMED, and deliberately visible: `HasUniformSeparation` (a uniform gap),
 measurability of `sep` in the integration variable, and — §9 only — **Gauss's
@@ -842,6 +844,16 @@ And the failure is not an artefact of this particular bound. §9d shows that
 quantity, and any magnitude route (2) supplies must come from a **derived
 configuration**, never from the pair's topology.
 
+### AND IT IS NOT A TAUTOLOGY — §9e
+
+§9e exhibits data satisfying all four hypotheses of
+`four_pi_abs_lk_le_energy` with `lk ≠ 0`, so the theorem is true of something;
+and `four_pi_is_the_largest_constant` shows `4π` is the largest constant that
+can stand in front of `|lk|`, so the bound is sharp rather than merely valid.
+Without the first of those, nothing here rules out the four hypotheses being
+jointly contradictory — the dressed-up-tautology shape the 2026-08-30 roast
+found four of in `QOU.MobiusEnergy`.
+
 ### WHAT IS ASSUMED, AND IT IS ONE THING
 
 Gauss's integral formula for the linking number — classical, and carried as an
@@ -1081,6 +1093,74 @@ theorem uniformLowerBound_nonpos {ι : Type*} {F : ℝ} {E : ι → ℝ}
 theorem no_positive_uniform_mutual_lower_bound (m : M) (s : ℝ) {F : ℝ}
     (hlb : ∀ R : ℝ, F ≤ (separatedLink m R).innerPairEnergy 0 1 s) : F ≤ 0 :=
   uniformLowerBound_nonpos hlb fun _ hε => innerPairEnergy_separatedLink_small m hε s
+
+/-! ### §9e  Non-vacuity — the four hypotheses are jointly satisfiable, with `lk ≠ 0`
+
+`four_pi_abs_lk_le_energy` carries four hypotheses. Nothing above rules out
+their being jointly contradictory, in which case the theorem would be true of
+nothing and the whole section would be the dressed-up tautology that
+`QOU.MobiusEnergy` produced four of before the 2026-08-30 roast. §7 guards
+itself this way (`inverse_square_mobiusInvariant`); §9 did not, and this closes
+that gap.
+
+The witness is deliberately the sharp case: it satisfies all four with
+`lk = 1 ≠ 0` AND attains equality, so the bound is not merely non-vacuous but
+cannot be improved by any constant. -/
+
+/-- **The hypotheses are satisfiable with a nonzero linking number.**
+
+    A one-point parameter domain with `I = evaluation` is monotone and odd, and
+    the constant integrands `gauss = energy = 4π` satisfy the domination. The
+    resulting `lk` is `1`. -/
+theorem four_pi_bound_hypotheses_satisfiable :
+    ∃ (I : (Unit → ℝ) → ℝ) (gauss energy : Unit → ℝ) (lk : ℝ),
+      lk ≠ 0 ∧
+      (∀ f g : Unit → ℝ, (∀ x, f x ≤ g x) → I f ≤ I g) ∧
+      (∀ f : Unit → ℝ, I (fun x => -f x) = - I f) ∧
+      I gauss = 4 * Real.pi * lk ∧
+      (∀ x, |gauss x| ≤ energy x) := by
+  refine ⟨fun f => f (), fun _ => 4 * Real.pi, fun _ => 4 * Real.pi, 1,
+    one_ne_zero, fun f g h => h (), fun _ => rfl, by ring, fun _ => ?_⟩
+  rw [abs_of_pos (by positivity : (0:ℝ) < 4 * Real.pi)]
+
+/-- **`4π` is the LARGEST constant that works** — the bound is sharp.
+
+    The first draft of this stated equality on the witness above and left the
+    sharpness claim to the docstring. That is the defect this whole subsection
+    exists to catch, one level up: a narrated inference is not a proved one. So
+    the claim is stated instead — any `c` for which `c·|lk| ≤ I energy` holds
+    across all satisfying data satisfies `c ≤ 4π`, because the witness has
+    `lk = 1` and `I energy = 4π`.
+
+    Together with `four_pi_abs_lk_le_energy` this pins the constant exactly:
+    `4π` works and nothing larger does. -/
+theorem four_pi_is_the_largest_constant {c : ℝ}
+    (h : ∀ (I : (Unit → ℝ) → ℝ) (gauss energy : Unit → ℝ) (lk : ℝ),
+      (∀ f g : Unit → ℝ, (∀ x, f x ≤ g x) → I f ≤ I g) →
+      (∀ f : Unit → ℝ, I (fun x => -f x) = - I f) →
+      I gauss = 4 * Real.pi * lk →
+      (∀ x, |gauss x| ≤ energy x) →
+      c * |lk| ≤ I energy) :
+    c ≤ 4 * Real.pi := by
+  have hw := h (fun f => f ()) (fun _ => 4 * Real.pi) (fun _ => 4 * Real.pi) 1
+    (fun _ _ hfg => hfg ()) (fun _ => rfl) (by ring)
+    (fun _ => by rw [abs_of_pos (by positivity : (0:ℝ) < 4 * Real.pi)])
+  simpa using hw
+
+/-- **The `pointKnot` components of `separatedLink` do not weaken §9d** — a
+    note a reader is entitled to demand, proved rather than asserted.
+
+    `separatedLink` populates both components with `pointKnot`, a degenerate
+    embedding. That is irrelevant to the conclusion because `mutualIntegrand`,
+    and hence `innerPairEnergy`, reads **only** the `sep` field — this states
+    exactly that, so the component data provably cannot enter. It is the same
+    division of labour §2's `shrinkingLink` uses, where the content is in `sep`
+    and the components merely populate the structure. -/
+theorem mutualIntegrand_depends_only_on_sep {n : ℕ}
+    (L L' : LinkEmbedding M n) (hsep : L.sep = L'.sep) (i j : Fin n) (s t : ℝ) :
+    L.mutualIntegrand i j s t = L'.mutualIntegrand i j s t := by
+  unfold LinkEmbedding.mutualIntegrand
+  rw [hsep]
 
 end MobiusMutualChannel
 
