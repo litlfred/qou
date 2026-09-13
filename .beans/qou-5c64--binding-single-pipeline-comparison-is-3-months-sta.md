@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T09:24:53Z
+updated_at: 2026-09-13T09:31:09Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -171,3 +171,31 @@ my judgement, not a finding.
 
 **If nothing is decided, nothing changes** — the witness stays green, the
 producer stays red when run, and its 299 float64 fields stay in the backlog.
+
+
+---
+
+## `qou-gjkv` ALREADY CLASSIFIED this witness as a C→D mover — on 2026-08-09
+
+Read after writing the above, and it corroborates the cause independently and
+with a date. That bean's own report names
+`binding-single-pipeline-comparison (763)` in its results, and states its
+posture explicitly:
+
+> ACCEPTANCE IS NOT DONE AND IS NOT MINE TO DO. The driver's
+> KEEP = {DECLARED, ANCHOR_MIGRATION, SUBFLOAT_MOVE} deliberately excludes
+> VALUES, so this wave CLASSIFIES; it does not accept.
+
+So the regeneration was **deliberately deferred pending a review pass**, not
+forgotten. That settles the ownership question in the section above: this is not
+an abandoned claim to take over, it is a completed classification waiting on an
+acceptance decision that the wave's author declined to make on their own
+authority — the same call the ASK-THE-OWNER directive would require today.
+
+**One characterisation to reconcile.** `qou-gjkv` lists this witness under
+*"largest non-numeric movers … assertion/string churn at scale"*. Measured here
+a month later, **262 NUMERIC fields moved and two assertions flip to FAIL** —
+materially more than "string churn". Two readings, and I have not separated
+them: either the wave's field counter classified differently, or more moved in
+the intervening month. Either way, do not read that line as "cosmetic" when
+deciding acceptance.
