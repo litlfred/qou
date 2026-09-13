@@ -1,11 +1,11 @@
 ---
 # qou-dux3
 title: 'FHW route: the Mobius-invariant exponent is the unique endpoint of the BFHW admissible window'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-13T15:19:31Z
-updated_at: 2026-09-13T16:31:46Z
+updated_at: 2026-09-13T17:19:32Z
 ---
 
 ## RESULT: two independent criteria pin the exponent, and mine is the stronger
@@ -197,3 +197,30 @@ Both halves of the FHW route are now answered. The exponent question: settled,
 question: settled with a NEGATIVE, section 9. The positive target -- a derived
 geometry for the mutual channel -- is qou-o6ml's, not this bean's. Staying
 in-progress only until the PR lands.
+
+
+
+## LANDED 2026-09-13 — PR #7317 merged as ea1220654e
+
+Merge-commit route (four merge commits on the branch; qou-md01 measures that
+rebase-merge 500s deterministically on such a branch).
+
+Both halves of the FHW route are answered and this bean's own question is
+closed:
+
+  the exponent question   settled, -2 uniquely, sections 7-8 of
+                          MobiusMutualChannel.lean + FHWExponentWindow.lean.
+  the crossing bound      settled with a NEGATIVE, section 9: the link version
+                          of Theorem D is derivable, and is EMPTY on a
+                          Brunnian pair.
+
+Final verification at the merged head: MobiusMutualChannel.lean 52/52 and
+FHWExponentWindow.lean 7/7, all [propext, Classical.choice, Quot.sound], 0
+sorryAx, lean -DautoImplicit=false -s 65536 exit 0, zero warnings, against a
+shadow with all 41 cone modules rebuilt from source.
+
+WHAT IS NOT CLOSED BY THIS, and it is not this bean's: the POSITIVE target --
+a derived geometry for the mutual channel. That is qou-o6ml (constraints 3 and
+3b) and, for the configuration itself, qou-ales. Completing this bean records
+that the FHW ROUTE is worked out; it does not record that route 2 has a
+magnitude.
