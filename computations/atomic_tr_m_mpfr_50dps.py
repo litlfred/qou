@@ -51,6 +51,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 import atom_nf_symbolic_D as M
+import inspect as _inspect  # noqa: E402 -- ordering-frame stamp, bean qou-y4gi
 from mass_at_3A_proper import atom_braid_word_3A
 from markov_trace_canonical import tr_M_element, Z_SYMB, H_SYMB
 from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr
@@ -557,6 +558,22 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
         # about by three weeks, in a field a reader would use to discount these
         # numbers. (It was doubly inert: y_λ was never read from that file.)
         "precision_caveat_superseded": "2026-08-14 regeneration; see qou-fq0f",
+        # WHICH INTRA-NUCLEON ORDERING THESE VALUES ARE IN (bean qou-y4gi).
+        #
+        # DERIVED FROM THE CALL, not asserted: this producer calls
+        # `atom_braid_word_3A(Z, N)` with no override, so the frame is that
+        # function's own default and the stamp moves with it. Hardcoding
+        # "borromean" here would reintroduce exactly the failure this field
+        # exists to close — a constant that does not track a ruling.
+        #
+        # WHY IT EXISTS. `canonical_trm_reference` selects this witness by
+        # recorded q0 and refuses a cross-PIN read, but had no notion of the
+        # ordering, so it served this file's grouped 2026-08-19 contents for
+        # five weeks after the 2026-09-05 ruling (qou-hu1f) without complaint.
+        # The pin guard and this one are the same idea applied to the two axes
+        # that can silently differ.
+        "intra_ordering_frame": _inspect.signature(
+            atom_braid_word_3A).parameters["intra_order"].default,
         "results": results,
     }
     sys.path.insert(0, str(HERE))

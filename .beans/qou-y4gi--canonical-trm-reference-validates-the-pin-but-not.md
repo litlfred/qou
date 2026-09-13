@@ -1,10 +1,11 @@
 ---
 # qou-y4gi
 title: canonical_trm_reference validates the pin but not the intra-nucleon ordering
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-13T11:12:50Z
-updated_at: 2026-09-13T11:12:50Z
+updated_at: 2026-09-13T11:54:47Z
 ---
 
 
@@ -67,3 +68,66 @@ stack trace, which is the trade the pin guard already made and justified.
 
 `qou-4383` (where it surfaced), `qou-72f8` (the `qou_mass` copy of this module
 cannot find its witness at all), `qou-hu1f` (the ruling).
+
+
+## DONE 2026-09-13 — `0db2f5c731b`
+
+Implemented as scoped, with one addition the scope did not name: a self-test.
+
+### What landed
+
+1. **The producer stamps, derived not asserted.** `atomic_tr_m_mpfr_50dps.py`
+   records `intra_ordering_frame` read from `atom_braid_word_3A`'s own default
+   via `inspect.signature` — it calls that function with no override, so the
+   default *is* the frame it used. A literal `"borromean"` here would have been
+   the same defect one level up: a constant that does not track a ruling. The
+   loader derives its notion of canonical the same way.
+2. **The loader refuses.** `_require_canonical_ordering` raises on a wrong
+   frame and, critically, on an **absent** one.
+3. **Both `_WITNESSES` regenerated** so they carry the stamp — including the
+   muon-pin file, whose frame I verified rather than assumed. It was already
+   canonical. `qou-mass` mirror re-synced, both files byte-identical.
+
+### The self-test, which was not in the plan and should have been
+
+A guard nobody has watched reject is indistinguishable from a no-op — and *this
+module shipped for five weeks with a docstring promising a protection it did
+not provide*. So `--self-test` now proves all three branches: canonical passes,
+a wrong frame raises, an absent frame raises, and the committed witnesses still
+load under it (1 must-pass, 2 must-raise, 1 live load; PASS).
+
+### Two standing reds went green, downstream of the same stale witness
+
+    graded-hecke-energy-probe   expected 1.14575969245730087 -> 0.62932840220292192
+                                passed  false -> TRUE
+    skein-proton-canonical      residual 0.4507326393606963 -> 1.6266846192e-50
+                                passed  false -> TRUE
+
+**Checked that neither hardcodes its target** before claiming this — a moving
+`expected` is exactly what should make a reader suspicious. Both call
+`canonical_trm_reference.tr_m_nucleon()`, so the target moved because the
+*reference* moved. The skein one is the stronger evidence: an independent
+atlas-vs-Layer-1 cross-check whose residual collapsed to numerical zero, i.e.
+two routes that disagreed by 0.45 now agree to 50 digits. That is corroboration
+of the regeneration from a direction that had nothing to do with it.
+
+### The design decision worth keeping
+
+**Absent must raise, and must not default to canonical.** Every pre-ruling
+witness is undeclared, so a permissive default waves through exactly the
+population the guard exists to catch — including the file that motivated it.
+The cost is real: a stale witness now stops a caller instead of quietly
+misinforming it. That is the same trade the pin guard makes and justifies two
+functions down in this file, so the module is at least self-consistent about
+what it is willing to break.
+
+### Left open
+
+- The `qou-mass` copy of this module has neither the guard nor a working data
+  path — bean `qou-72f8`.
+- Corpus-wide backfill of `intra_ordering_frame` is NOT done and was
+  deliberately out of scope: only the two files in `_WITNESSES` are stamped.
+  `qou-4383` counts 48 candidate witnesses undeclared on this axis.
+- The `derivation_chain.TR_M_AT_Q0` migration is now **safe to start**, which
+  was the point of doing this first: migrating twelve consumers onto a loader
+  that could still serve the wrong frame would only have relocated the problem.
