@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T15:23:58Z
+updated_at: 2026-09-13T16:40:16Z
 ---
 
 
@@ -1144,3 +1144,47 @@ changed is that the question is now a **lattice ground-state problem with an exa
 cost**, not a β-space pair-term estimate.
 
 **Do not close this bean.**
+
+
+## 2026-09-13 (later) — the window class is REFUTED; the compensating −1 run is why (PR #7323)
+
+**The claim.** `e_k` is not searchable by confining the displacement to two end windows. The
+class reproduces the exhaustive maximum **exactly** for `k = 7..12` and is **3.16 % short** at
+`k = 16` with a window already covering 18 of 23 rows; the deficit grows. So the failure is
+structural.
+
+**Why — and this is the usable part.** I reconstructed the published heuristic's own maximisers
+from their committed gap profiles (`rev-optimal-gap-profile.witness.json`). They reproduce the
+published excess exactly, so the reconstruction is verified rather than assumed, and they give
+the arc displacement fields it did not previously have, up to `k = 35`:
+
+```
+k=16  u = [2,1,0,0,0, −1×6, 0,0,0,0, 1,1,1]
+k=24  u = [3,2,1,0,0,0, −1×12, 0,0,0,0, 1,1,2,1,1]
+k=35  u = [3,2,1,1,0×7, −1×14, 0×7, 1,1,1,2,1,1]
+```
+
+Between the two edges sits a **contiguous run of `−1`**, of length 2, 6, 6, 12, 14 at
+`k = 8, 12, 16, 24, 35`. Two facts about it:
+
+- **It gains only at its two interfaces.** A contiguous `−1` run shifts a block down together,
+  so every distance *inside* it is unchanged — while it costs `ln q₀ · length / 2`.
+- **Its length is forced**, not chosen: `Σu = 0` makes it equal the total positive displacement
+  the two edges chose.
+
+**So the two-edge reading survives and the WINDOW is what fails** — the run's *position* is
+free and a window pinning the middle has nowhere to put it.
+
+**A correction of mine, and it vindicated the previous PR's scoping decision.** The first
+version framed at `L = k+1`, where the staircase β-set is an arithmetic progression and the cost
+is a bare `½Σu²`. The exhaustive maximiser at `k = 12` has **fourteen** rows against the
+staircase's twelve, so that frame cannot express it and the probe reported `0.5995` against the
+true `0.6912`. Using the general-frame Lean identity (`staircase_two_mul_hookSum_sub`, #7305) —
+`ΔH = Σ_{i>k}(i−k)uᵢ + ½Σuᵢ²` — fixes it to 1e-40. The generalisation I made in #7305 on the
+strength of that same `k = 12` observation was load-bearing within a day.
+
+**Next, and it is concrete:** search `(top edge) × (bottom edge) × (position of the −1 run)`
+with the run length forced by `Σu = 0`. Small, exact, and it reaches any `k`. Recorded in the
+probe docstring so the next attempt does not simply re-widen the window.
+
+`e_∞ ≈ 2.4393` remains open. **Do not close this bean.**
