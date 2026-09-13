@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T12:01:51Z
+updated_at: 2026-09-13T12:37:03Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1805,3 +1805,36 @@ So the live question is sharper: **either `k` is derived from something other
 than the residual, or the gamma-gamma carrier for Q_beta is not a single
 three-strand word.** Both open. Scope-(a) — no invariant here forbids the
 gamma-gamma route; what is excluded is the METHOD.
+
+
+
+### Part 3, same day — the H_3 collapse is an ACCIDENT OF THREE STRANDS (PR #7295)
+
+The three-strand collapse was never about the Hecke algebra. Lean, sorry-free:
+`gammaGamma_iff_vertexWord` — the gamma-gamma words are EXACTLY the free monoid
+on the vertices; `gammaGamma_index_lt` — on n strands only n-2 vertex indices
+exist. ONE at n=3 (hence the cyclic monoid), TWO at n=4.
+
+Measured (general-n T-basis reducer, validated against the corpus's hand-coded
+H_3 tables, and independently recovering growth k+1 at n=3):
+
+                      n = 3                 n = 4
+  vertices            1                     2
+  growth (k <= 8)     k+1 = 1..9            2^(k+1)-1 = 1,3,7,...,511
+  span rank           3 of 6                21 of 24
+
+At n=4 EVERY one of the 2^k words of length 2k is a distinct element of H_4 —
+the Hecke relations impose no collapse at all — and the span goes from half the
+algebra to seven eighths.
+
+**So the +439.592 % H_3 miss must NOT be quoted for H_4.** It is a fact about a
+one-integer family. At four strands the family is free and nearly fills the
+algebra.
+
+Caveat stated: growth and rank are measured at a generic rational h, so both
+are LOWER bounds on the symbolic answer — the safe direction, since reaching
+the maximum establishes it exactly. Two generic values agree.
+
+NOT claimed: no four-strand Markov trace is computed, so nothing is said about
+whether an H_4 gamma-gamma element reproduces an observable. And which 3 of the
+24 dimensions are missing from the span is not measured.
