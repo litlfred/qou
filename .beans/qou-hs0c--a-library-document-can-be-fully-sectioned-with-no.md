@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T16:51:33Z
-updated_at: 2026-09-13T16:52:42Z
+updated_at: 2026-09-13T17:02:13Z
 ---
 
 Found by doing exactly what `qou-o6ml` instructs — *"re-run path 5 before the
@@ -111,3 +111,53 @@ degraded (none triaged); that the recall statistic survives a larger sample.
 Cross-links: `qou-o6ml` (the arc whose path-5 instruction found this),
 `qou-pc85` / `qou-zfs6` (route 2, for which O'Hara 1991 is the primary), #7315
 (the merged PR carrying the corrected claim), #7322.
+
+## 🛑 TRIAGED THE SAME DAY — the mid band is NOISE, and the obvious fix BREAKS the detector
+
+The entry above shipped this with an explicit caveat (*"88 is a triage queue, not
+88 broken documents ... a flag means open it and look"*). That caveat is now
+**measured**, and it deflates the detector more than I expected.
+
+**Six of the 77 no-`ocr/` flags opened and read**, sampled across the range
+(30.0 %, 41.2 %, 44.4 %, 46.2 %, 73.3 %, 73.3 %). **All six benign.** Every body
+reads cleanly; the "missing" terms are front-matter contamination `doc_brief`
+picks up alongside the abstract — authors (`geordie`, `williamson`,
+`katselis`, `ruiz-altaba`), affiliations (`csic-universitat`, `freiburg`,
+`mathematisches`, `grenoble`, `illinois`), Centre Mersenne boilerplate
+(`ouverte`, `membres`, `scientifique`, `pour`, `sont`), and heading words
+(`introduction`, `sections`). None of those recurs in a body, legitimately.
+
+So the honest reading:
+
+    0.0 %      real every time -- all eight are the documented ocr/ class
+    ~60 %      ONE true positive (O'Hara), which is why this exists
+    66-75 %    NOISE: 6 of 6 inspected are benign
+
+**AND THE OBVIOUS DE-CONFOUND IS REFUTED — tested, not assumed.** Dropping brief
+words that are always capitalised takes **three of four known-bad documents
+below `MIN_TERMS`, i.e. unscoreable** — including **O'Hara itself** and
+**`procrsoclondona92`**, the case AGENTS.md names by hand:
+
+    1-s20-0040938391900102-main   60.0%  ->  unscoreable
+    procrsoclondona92              0.0%  ->  unscoreable
+    bm-markov-j                    0.0%  ->  unscoreable
+    1992evansberger                0.0%  ->   0.0% (survives)
+
+and the benign six do not reliably clear either (two improve, two worsen, one
+becomes unscoreable). Corpus-wide the scoreable population shrinks 704 -> 624.
+
+**The reason is worth keeping, because it inverts the intuition:** *in a
+destroyed document the proper nouns ARE what survives.* A title block OCRs far
+better than mathematics, so a garbled brief is mostly names — strip them and
+nothing is left to score. Do not re-attempt this.
+
+**The threshold is deliberately NOT re-cut.** Fifteen inspected documents is not
+a calibration, and moving the floor to fit them is the selection-against-the-
+target this bean already warns about. The floor stays; the **claim** is narrowed
+instead — a mid-band flag reads as uninformative, not as a lead.
+
+**What survives unchanged, and it is the point of the bean:** O'Hara 1991, the
+primary for the whole route-2 arc, is genuinely OCR-destroyed (established by
+direct inspection of its garbled mathematics, not by this statistic); the
+documented tier-4 discriminator cannot see it; and PR #7315's
+`greppable: yes` was wrong.
