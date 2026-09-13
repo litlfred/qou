@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T08:04:50Z
-updated_at: 2026-08-28T20:47:12Z
+updated_at: 2026-09-13T11:11:36Z
 ---
 
 ## The defect, with evidence
@@ -324,3 +324,64 @@ witnesses those sites wrote are stale-at-lower-precision until regenerated, and
 they will keep reading as reproducible failures to anyone who re-runs them. I
 did **not** regenerate them here — that is a value change on 4+ committed
 witnesses and belongs to this bean, with whatever batch discipline it chooses.
+
+
+---
+
+## DETECTOR FINDING 2026-09-13 (measured) — the audit's "dps=15" message is stale by construction
+
+`never_raises_dps_audit`'s message **"NEW producers computing at dps=15"** and
+its warning **"Expect published values to MOVE"** are stale for any producer
+that imports `q_parameter`. Do not treat such a hit as a live precision defect
+without measuring the ambient first.
+
+The audit matches on the **absence of an explicit `set_compute_dps()` call**.
+It does not model the dps floor, which since `qou-zbws` landed sits
+**unconditionally** at
+`tools/qou-substrate/python/qou_substrate/constants.py:352`:
+
+```python
+_mp.mp.dps = max(_mp.mp.dps, _DPS_DEFAULT)
+```
+
+Measured with `QOU_Q0_ANCHOR` **unset** — the live container default, and the
+exact case zbws's bean body reports as broken:
+
+```
+dps before import q_parameter : 15
+dps after  import q_parameter : 50
+1/q : 0.90091828395574149216082288248109393601474162661054
+```
+
+Compare zbws's pre-fix measurement of the same expression,
+`0.900918283955741472368572431151`. The tails diverge at digit 17
+(`...955741492160...` vs `...955741472368...`): the float64 tail zbws
+identified is gone on the **default** anchor, not only on muon.
+
+`qou-zbws`'s body still locates the floor inside
+`if _anchor in ("ideal", "muon", "canonical"):` at
+`computations/substrate/q_parameter.py:205`. That is the **pre-fix** location.
+The fix moved it into the `qou_substrate` cone, whose own comment states why:
+*"the `q_parameter` cone is a strict SUBSET of this one"*.
+
+### Worked case — the one NEW hit this session
+
+`computations/interface_composition.py`. `q_parameter` is imported two lines
+above the arithmetic, so the ambient was already 50. Measured `delta` at
+ambient 15 and at 70: **bit-identical** (`0.001375710807027096`, difference
+`0.000e+00`). Nothing the function returns could move.
+
+Cleared at `3217118a2e6` by adding the `set_compute_dps()` call the audit looks
+for, with a comment saying plainly that it is a no-op and why — so the next
+reader is not misled into thinking it fixed something.
+
+### Consequence for this bean's remaining 10 runnable producers
+
+Each still needs draining: an explicit call is the right pattern and the audit
+is the right gate. But the **framing** is wrong. A producer that touches
+`q_parameter` is not "computing at 15", so it is not evidence that any
+published value is wrong — and it owes no regeneration on that ground.
+
+**Check the import cone before writing a regeneration into scope.** A producer
+outside the `q_parameter` cone entirely is the only kind that can actually be
+at 15.
