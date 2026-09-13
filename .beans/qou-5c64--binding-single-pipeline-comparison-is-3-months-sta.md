@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T10:56:33Z
+updated_at: 2026-09-13T11:22:05Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -596,3 +596,87 @@ Both errors have the same shape. The first tested **one carrier** of a
 convention (`y_lambda_at`) and reported on the convention. The second checked
 **one side** of a two-sided comparison and reported on the comparison. In both
 cases the check that was run was sound and the scope of the conclusion was not.
+
+
+## The three interface shifts are DERIVED — and a sibling had them already
+
+Corroboration arriving from two sides at once, 2026-09-13. Both change the
+status of this bean's bond row from "measured" to "derived", and one of them
+nearly had me re-derive something the corpus already holds.
+
+**The three `d` I isolated by differencing June against a live run are exactly
+the shift values `qbeta_bond_factors_derived_probe.py` derives by exact Laurent
+expansion.** That probe's docstring enumerates four shifts — `0` (pure sigma),
+`-h` (sigma inverse), `-h/2` (colour-BLIND crossing) and `-h(1/2 - delta/4)`
+(colour-WEIGHTED p-n crossing, `delta = (q-1)^2(1 - q^-4)/3`) — and my three are
+three of those four. Verified symbolically, not by eye:
+
+    b_pn - z - [-h(1/2 - delta/4)]  ->  0      (sympy.simplify, exact)
+    b_nn - z - [-h]                 ->  0
+
+and numerically at the muon pin, against my isolated values, **2.73e-11** on
+both `d_pn` and `d_nn` — my isolation's own floor, since it came out of a
+3-month-old witness's digits. So the bond row of the decomposition table above
+is not three empirical constants: it is `z` plus two derived interface letters.
+
+**Two routes now reach `d_pp = 0` (i.e. `b_pp = z`) independently of each
+other and of me.** Sibling session, commit `5f157941920`, bean `qou-gba1`:
+`z` falls out of the Jones-Ocneanu stabilisation axiom
+`tr_{n+1}(x.sigma_{n-1}) = z.tr_n(x)` applied to the Magnus Omega-2 pairing,
+confirmed to a relative **4.4e-141** and *falsified* at `z = q` (49 %/69 % off)
+and `z = 1` (38 %/54 %). Their `b_pp = 0.6126880371464652516` is at the proton
+pin; my `r(3He)/r(D) = 0.61268805054558909984` is at the muon pin. Different
+anchors, same constant.
+
+## But `b_nn` is not a fourth constant either — it is `z` conjugated
+
+The sibling probe's identity 2 reads `b_pp/b_nn - q^4 = 0` and calls `b_nn`
+"the simplest of the five". Correct, and it understates what it found: that
+`q^4` is **the bar involution**. New probe
+[`qbeta_bond_bar_parity_probe.py`](../computations/qbeta/qbeta_bond_bar_parity_probe.py),
+five identities each `sympy.simplify`ing to **exactly zero**:
+
+| identity | reading |
+|---|---|
+| `b_nn - z\|_{q->1/q} = 0` | the n-n bond IS the bar conjugate of the p-p bond |
+| `z - zbar - (q - q^-1) = 0` | their separation is exactly the Hecke parameter `h` |
+| `b_pn - (z+zbar)/2 - h.delta/4 = 0` | the p-n bond is their MIDPOINT, colour-displaced |
+| `z.zbar - 1/(q+q^-1)^2 = 0` | `sqrt(b_pp b_nn) = 1/(q+q^-1)`, bar-fixed |
+| bar-odd part of `b_pn` = `-(q-1)^5(q+1)^3(q^2+1)/(24 q^5)` | fifth-order zero at `q = 1` |
+
+So the bond side is **one** parameter, not three:
+
+    b_pp = z                          b_nn = zbar              b_pn = (z+zbar)/2 + (delta/4) h
+
+The two like-pair bonds are the bar-conjugate endpoints; the unlike-pair bond is
+the bar-EVEN part of `z`, and it is the *only* one that breaks the bar symmetry
+— by `h.delta/4 = 7.190e-05` absolute, **1.6415e-05** relative, at the proton
+pin. Set the colour weighting to zero and the p-n bond is the exact midpoint.
+Witness `computations/qbeta/qbeta-bond-bar-parity.witness.json`; the bar form
+reproduces all three of the sibling's MEASURED literals to **1.24e-20**, i.e.
+to every digit they carry.
+
+**Scope, twice, because this bean is two retractions deep.** (i) These are
+identities between *closed forms*, and the involution is `q -> q^-1` applied to
+a rational function. Whether it is the Hecke bar involution acting on the
+*Markov trace* — which would make the first row a statement about the braid
+words rather than about their traces — is **not** established and needs the
+trace's own bar-equivariance. (ii) They inherit the sibling probe's own frame
+caveat (`qou-4383`): its `t_p`/`t_n` are GROUPED-era against canonical atom
+witnesses. The bonds are *inter*-nucleon and `qou-hu1f` changed the *intra*-
+nucleon word, so frame-independence is plausible — plausible, not measured, and
+not measured here.
+
+**Still exactly one thing open**, unchanged: the two per-nucleon free factors,
+proton `1.075521518` and neutron `1.069874485`. Note these are June-vs-now
+*ratios*, not traces — they are not `t_p`/`t_n` (grouped `1.14576`/`0.98774`)
+and not the canonical borromean `0.62933`/`0.47513`. Both candidate causes
+remain untested.
+
+## Lesson, and it is the corpus-grep one
+
+I had `d_pn = -h(1/2 - delta/4)` and `d_nn = -h` from witness differencing and
+was about to call them unidentified constants. They are written out, in words,
+in the docstring of a probe in `computations/qbeta/` — path 3 of the six-path
+checklist, which I ran for `binding-single-pipeline-comparison` and not for the
+shifts I had extracted from it.
