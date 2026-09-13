@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T11:59:48Z
+updated_at: 2026-09-13T15:23:58Z
 ---
 
 
@@ -1088,5 +1088,59 @@ $$\sum_j (j+1)\,\delta_j \;=\; \tfrac{k(k+1)}{2} - \tfrac{\ell(\ell-1)}{2}, \qqu
 
 with the objective also position-dependent. Structured and far smaller than "all partitions",
 but not two-parameter. Recorded so the next attempt does not re-make the guess.
+
+**Do not close this bean.**
+
+
+## 2026-09-13 — M_n is EXACT at small k, and the cost term is a quadratic form (PR #7305)
+
+**The claim.** Two results, one measured and one proved.
+
+1. **`M_n` is no longer a heuristic lower bound for `k ≤ 12`.** Every `M_n` this arc has
+   published came from `rev_max_large_n_scan.py` searching a neighbourhood of the staircase.
+   `rev_exact_maximiser_small_n_probe.py` enumerates **every** partition of `n = T_k` up to
+   `T_12 = 78` (12.1M partitions at k=12, 64 s). At both published points it reaches —
+   `n = 36` and `n = 78` — **the heuristic had in fact found the true maximum** (agreement
+   4.9e-21, the published column's own printed precision). That is evidence for the rows at
+   `k = 16..88`, not proof of them; those stay lower bounds.
+
+2. **`H − H_min = ½ Σ u_i²` exactly**, where `u_i = β_i(ν) − β_i(δ_k)`. Proved, sorry-free,
+   `QOU/BraidKnot/HookSumElasticity.lean` (8 declarations, axioms `[propext,
+   Classical.choice, Quot.sound]`). No new combinatorial input: `two_mul_sum_hookZ_betaForm`
+   and `sum_pair_betaR_sub` have both been in the corpus since #7282, and composing them
+   leaves `2H = Σ_i [β_i(β_i+1) − 2(L−1−2i)β_i]` — separable, quadratic, **no pair term**.
+
+**Why it matters for `e_∞`.** The objective is `Σ_c ε(h(c)) − ln q₀·H(μ)`. Everything but `H`
+is built from `ε(m) ~ q₀^(−2m)` and is exponentially screened (range `1/(2 ln q₀) ≈ 4.8`
+sites). So the problem is now stated in its physical form: **a short-range gain against a
+local harmonic cost**, with no long-range term anywhere, and the cost **quantised** —
+`Σ u_i²` is an even integer when `Σ u_i = 0`, so `H − H_min ∈ ℤ` and the cost moves only in
+whole steps of `ln q₀`. Measured: `H − H_min` = 2, 2, 2, 5, 5, 8 at `k = 7..12`.
+
+**Structure of the exact maximiser**, now established without a search: every gap in
+`{1,2,3}`, every 3 strictly above every 1, at all `k = 4..12` (13/13). The heuristic reported
+this at `k = 8..35` (`rev-optimal-gap-profile`, R1). Also `e_k = 0` for `k ≤ 6` — the
+staircase IS the maximiser and the perturbation switches on at `k = 7`.
+
+**Corollary not previously in the corpus:** the staircase is the **unique** minimiser of the
+hook sum at triangular `n` (`staircase_hookSum_eq_iff`). `hmin_closed_form_and_rev_sublinearity_probe`
+had the closed form `k(k+1)(2k+1)/6`, not the uniqueness.
+
+**Two corrections to my own checks, fixed at the derivation rather than the tolerance.** X1
+compared the enumerated staircase against `A·k − B`, which is the closed form for the *ε*-sum
+while the enumeration accumulates the *φ*-sum; the residual was exactly `−ln q₀·H_min`. X8
+read the excess back from a 24-digit rendering of itself and reported 2.7e-25 as arithmetic
+noise; against the scaled integers it is 1e-40.
+
+**And one anticipated-structure claim of mine that the data refuted.** I expected the
+arithmetic-progression frame (`L = k+1`) always to be available via a transpose. At `k = 12`
+**neither the maximiser nor its transpose fits `k+1` rows**. This is why the Lean is stated in
+a general frame — a theorem hypothesising `ν.colLen 0 ≤ k+1` would not apply to the shapes the
+arc cares about.
+
+**What is still open — unchanged.** Nothing here bounds `e_k`. The gain side is untouched, and
+`e_∞ ≈ 2.4393` remains the whole gap between this arc and a closed asymptotic. What has
+changed is that the question is now a **lattice ground-state problem with an exactly known
+cost**, not a β-space pair-term estimate.
 
 **Do not close this bean.**
