@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T20:37:29Z
+updated_at: 2026-09-13T20:46:44Z
 
 ---
 
@@ -2291,3 +2291,68 @@ corrected: the probe docstring, its witness, this bean, and the PR #7340 body.
 **Unaffected:** the route-5 retired-base finding in the entry above is NOT in
 this bean or anywhere else (checked: `retired`/`z = 1`/`Form A`/`arccosh` all
 return only my own entry). That one stands.
+
+---
+
+## 2026-09-13 — blast radius of the retired `z = 1` base: 42 single-base `.py` files, and one of them is the canonical ladder producer
+
+Audit: [`qbeta_retired_z1_base_consumer_audit.py`](computations/qbeta/qbeta_retired_z1_base_consumer_audit.py)
+— 3/3. **Measurement only.** It changes nothing and proposes nothing; the
+2026-09-07 ask-first directive permits measuring and forbids the sweep, and this
+is the blast radius that directive asks to be put in front of the owner.
+
+**Why count.** Three consumers of the retired cell were found *by accident* in
+one day, across two arcs: the 2026-08-08 `Δtr_M` vs Form-A negative (#7326),
+route 5's ellipticity target `θ` (#7340), and `qbeta_alpha_required_c_vs_d_probe`.
+Three by accident is a reason to count rather than keep stumbling.
+
+| bucket (`.py`, AST on assignment RHS) | count |
+|---|---|
+| **SINGLE-BASE** — binds the retired cell, no `z_D` in the file | **42** |
+| **COMPARISON** — binds both; deliberate, not a defect | 39 |
+| **MENTION-ONLY** — signature in no assignment RHS | 46 |
+| `.lean` / `.md` / `.json` — counted, **not** classified | 12 / 49 / 38 |
+| `.beans` — excluded as records | 11 |
+
+**The consequential hit: `computations/qbeta/qbeta_ck_cache.py` is SINGLE-BASE.**
+That is the canonical `c_k` extraction producer — not a dated record, not a
+comparison, but the producer the ladder is read from. Consistent with AGENTS.md's
+own note that it **refuses to run under convention D**.
+
+### The first number was wrong, and the calibration check is what caught it
+
+The first run reported **29** SINGLE-BASE. Its calibration check then resolved
+two of the three hand-found consumers into **MENTION-ONLY** — impossible for a
+real consumer, so the classifier was wrong, not the corpus. Two missing
+spellings, both algebraically identical to `q²−2q−1`:
+
+- **absolute value pre-resolved** — `(2*q + 1 - q**2)`, legitimate because
+  `q₀²−2q₀−1 = −1.988 < 0`, so the corpus drops the `abs()`
+  (`qbeta_alpha_required_c_vs_d_probe.py:85`);
+- **Horner form** — `q*(q - 2) - 1`
+  (`qbeta_delta_tr_vs_ruled_base_probe.py:149`).
+
+Widened (five spellings, `(q-1)**2 - 2` added pre-emptively), all three
+calibrate into real buckets and the count goes **29 → 42**, a **45 %**
+undercount by the naive regex. This is row-44 material for the
+detector-blindness taxonomy and it was hit on first contact.
+
+**Two process notes, both self-corrections.** Three of the audit's original
+checks were `check(..., True, ...)` — self-certifying assertions of exactly the
+kind this corpus bans. The calibration one now resolves buckets and **fails** if
+a known consumer is missing; the two that were scope statements rather than
+measurements moved into witness fields, where nothing pretends they were tested.
+Had the calibration stayed hardcoded, 29 would have shipped.
+
+### What this is NOT
+
+**SINGLE-BASE is a candidate set, not a defect list.** A dated audit doc, a
+historical record, or a probe whose subject *is* the retired form is legitimately
+single-base. Separating those from genuine stale consumers is a reading task, not
+a regex task, and is left to the owner. **Declared blind spots:** a cell reached
+through a function call is invisible (the return-form blindness that made the
+convention-C producer audit read 0 for months); a two-step build is bucketed by
+its assignment only; `.lean`/`.md`/`.ts` are counted, never classified.
+
+The witness measures the **tree**, so it goes stale on any commit touching these
+files. Re-run it; do not quote it.
