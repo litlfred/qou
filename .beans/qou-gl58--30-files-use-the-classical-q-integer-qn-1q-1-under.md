@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:18Z
-updated_at: 2026-09-13T07:21:36Z
+updated_at: 2026-09-13T09:03:10Z
 ---
 
 WORKED 2026-09-07 (audit sec 22). 0 of 363 files carry BOTH conventions — no internal inconsistency anywhere. My 'the word hecke appears' classifier is NOISE: tw_gram_determinant_probe.py is CORRECT (its q_int is the Gaussian bracket and its docstring says the conventions match QOU/Hecke/TwMul.lean, whose rule sigma_i T_v = (q-1)T_v + q T_{v s_i} is the T_w basis, where classical IS right); deltalambda_jet_filtration_magnitude_probe.py DECLARES the convention in its docstring ('Coxeter-length / coinvariant Poincare convention, NOT the balanced'). THE REAL DISCRIMINATOR IS THE BASIS: T_w / Iwahori unnormalised -> classical; normalised / quantum-dimension -> symmetric. Defensible figures: at most 28 unclassified, 1 confirmed ambiguous (helium_four_body_cluster_probe.py, sum(q**k), undeclared, Borromean cluster context), 2 confirmed fine. term7_chi5_basis.py stays OPEN: it feeds a q-hook-length dim_q, and my attempt to settle it against y_lambda_at was the WRONG TEST — y_lambda_at is the SU(2)-restricted Markov weight (zero on height>2 partitions), term7 computes Plancherel dim_q^2/[n]_q! over all partitions.
@@ -74,3 +74,94 @@ part -- the discriminator that worked was never the NAME, it was:
 Only when none of (a)-(d) applies is a per-file basis determination actually
 needed. On this sample that was ZERO of 10, which suggests the 30 may be far
 cheaper than "a per-file determination, not a sweep" implies.
+
+
+---
+
+## 2026-09-13 — this bean's OWN 29 (not the 10 above): all classified, 0 defects
+
+The count is **29, not 30** — re-measured from `q_integer_duplication_audit`
+rather than quoted. New artifact:
+`computations/audits/classical_q_integer_basis_triage.py`, which recomputes the
+list rather than hardcoding it.
+
+**RESULT, and quote it as two numbers, never one:**
+
+| | |
+|---|---|
+| STRONG (DECLARED 18 + BASIS 4) | **22 / 29** |
+| WEAK (FAMILY) | **7** |
+| needs human reading | **0** |
+| **defects** | **0** |
+
+**Do NOT quote 29/29.** The 7 FAMILY files declare nothing at all; they are
+merely near a file with an identical definition. The script refuses to print a
+combined figure for this reason.
+
+### The finding is about THE DETECTOR, not the corpus
+
+The residue needing a human went **20 -> 15 -> 10 -> 7 -> 0 without a single
+file being read**, purely by fixing four blind spots in my own script. Four
+spellings of one function, each defeating an ASCII-shaped regex:
+
+1. `(1 - q^n)/(1 - q)` — the same function with both signs flipped. Hid 7 of
+   the 9 `qlift_*` probes, 5 of which declare in their own function docstring.
+2. `1 + q + ... + q^(n-1)` — the geometric-sum spelling.
+3. **U+2212 MINUS SIGN** in `q^{k-1}`. This hid the three files whose
+   docstrings cite **a Lean declaration** (`QOU.Mass.QDifferenceConfluent
+   Obstruction.qint`) as the corpus convention — the strongest evidence in the
+   whole set, invisible on one non-ASCII character.
+4. **The USE SITE.** `q_int(hook_length(...), q)` in a running product IS the
+   q-hook-length formula — a principal specialisation, classical by
+   construction — whether or not any docstring says so. Found because three
+   `chirality_avg_content*` files compute the identical thing and only the one
+   that MENTIONED hook lengths was being classified.
+
+**The ordering lesson for the next auditor: exhaust the detector before reading
+files.** I was one step from hand-reading 20 files, 19 of which the corpus
+already answers in writing.
+
+### FAMILY is weak and the script says so in its own output
+
+Both halves of its evidence are near-vacuous here, measured rather than felt:
+body-identity restates how a file got into the CLASSICAL bucket (symbolic
+signature) in the first place, and `computations/probes/` holds **~1200
+files**, so two probes sharing that directory are not siblings in any
+meaningful sense.
+
+What FAMILY genuinely is: **an authoring-hygiene queue** — 7 files that do not
+say which bracket they use, each paired with the nearby file to copy one
+docstring line from. A statement about documentation, not about mathematics.
+
+The 7: `a4_h12_brunnian_deficit_measure_probe`,
+`helium_four_body_cluster_probe` (both -> `deltalambda_additive_signchanging
+_term_probe`); `ksel2id_friedrichs_selection_probe`,
+`ksel2id_u1_promotion_probe` (-> `fvk_selection_probe`);
+`qlift_doorIV_matrix_crossterm_probe`, `qlift_doorV_stokes_automorphism_probe`
+(-> `qlift_doorIII_followup_twist_crossterm_probe`);
+`qlift_routeC_homogenized_factor_probe` (-> `qlift_ggm_diagonal_gauge_prune
+_probe`).
+
+`helium_four_body_cluster_probe` was this bean's **"1 confirmed ambiguous"**.
+It is no longer unmeasured — but it is FAMILY, i.e. still undeclared in its own
+file, so the earlier note was right about the file and only wrong about
+whether anything nearby settles it.
+
+### What is NOT established
+
+* **That the classical bracket is mathematically RIGHT for each subject.** A
+  DECLARED verdict says the file is HONEST about which bracket it uses. Those
+  are different claims and the script makes only the first. It says so in its
+  own output rather than only here.
+* **`term7_chi5_basis.py` is untouched** and stays open. It is not in this 29
+  (`term7_height6_partition_enum.py` is, and resolves BASIS on `T_w`). Note
+  for whoever takes it: AGENTS.md's notation-register section now records that
+  `sum_lambda w_lambda(q) != 1` (measured 0.987 / 0.982 / 0.982 / 0.991 /
+  1.111 / 1.517 at n = 3/4/5/6/9/12), and that whether `dim_q^2` is even the
+  right numerator — against the Molien `f^lambda dim_q(lambda)`, which sums to
+  `[n]_q!` exactly — is **open as bean qou-oots**. term7 computes exactly that
+  `dim_q^2/[n]_q!`, so its convention question is entangled with `qou-oots`
+  and should not be settled independently of it.
+
+Running total across both appends: **0 defects in 39 classical definitions**
+(10 from `qou-b8vx` + these 29).
