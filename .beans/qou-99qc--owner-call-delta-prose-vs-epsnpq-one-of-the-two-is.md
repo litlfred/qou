@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T15:07:51Z
+updated_at: 2026-09-13T15:13:29Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2216,3 +2216,44 @@ prediction probe (it scores single words, also not the scoring path); and a
 docstring note on `GammaGammaTraceFloor.lean`.
 
 **Now OPEN:** whether any **pair** of PSD-feasible γγ words reproduces Q_β.
+
+
+## Part 12 (PR #7304) — under the ruling the p/n asymmetry has ONE home, and the corpus keeps it where the ruling forbids
+
+`computations/qbeta/qbeta_pn_asymmetry_has_one_home_under_the_ruling_probe.py` (6/6).
+
+Part 11 established Q_β is scored on `Δ = n-word − p-word`, so the ruling must
+select **two** words and something must separate them. This asks *what*.
+
+**The corpus's answer today.** `nuc11_interleaved` = `core(6 γγ letters) ·
+quark(3) · gluon(2)`, and **the core and gluon pair are IDENTICAL between
+proton and neutron**. Three letters of eleven carry the whole asymmetry:
+`(σ₀)(σ₀−h/2)(σ₁−h/2)` vs `(σ₀−h/2)(σ₀−h/2)(σ₁−h)`.
+
+**Why that is exactly what the ruling fixes.** altChar is multiplicative and
+pinned at **1** on every γγ word (`altChar_eq_one`, sorry-free). Measured: core
+= **1.0 exactly**; quark blocks = **−0.9108** (p) and **−1.1221** (n), both
+negative ⟹ neither is γγ-expressible — and they are precisely where the
+nucleons diverge, by **23.2 %** in that invariant. Under the ruling both words
+would be 1 and the invariant could not separate them at all.
+
+Not a defect in corpus or ruling — it is **the tension between them, localised
+to three letters**.
+
+**What is left.** A γγ word's only freedom is which vertices and how many, and
+the trace is blind to their **order**. So under the ruling the p/n asymmetry
+has exactly one home: **the vertex multiset**. (Argument, not measurement;
+asserted so it is machine-recorded; holds at every n.)
+
+**Upgrades part 11:** at n = 4 the PSD-feasible set is 6 words, so exactly
+**15** unordered (n, p) assignments — the 15-pair table is **EXHAUSTIVE** at
+that strand count, not a sample. Its −100 %..+79.4 % span is therefore a
+statement about the ruling, not about a selection.
+
+**Cross-checked by two routes** — per-letter altChar product vs the `(1,1,1)`
+Hoefsmit block trace, agreeing to **4.6e-39**. This is the check whose absence
+caused part 11's retraction: without it the letter encoding is an unchecked
+convention, which is what it was when I read `tr_conv_D` as one word's trace.
+
+Scope-(a) + one structural observation. No pair is selected; doing so by
+residual would be selection against the target.
