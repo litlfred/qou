@@ -4,6 +4,27 @@ One line-block per session: what was verified, by what method, and any
 `MEMORY.md` entry confirmed or corrected. Moved out of `MEMORY.md` 2026-09-03 so
 the injected file stays under 200 lines. Newest first.
 
+- 2026-09-12 (verify ONE new file, branch `claude/hecke-tower-witness-2026-09-12`,
+  `QOU/MathlibExt/HeckeTowerWitness.lean` — the presented infinite Hecke tower as a
+  `MarkovTrace`): **before 1 error + 1 warning (exit 1) → after 0/0 (exit 0)**; 29
+  `#print axioms`, all std-3, **no `sorryAx`**; source has 0 `sorry` and 0 `axiom`
+  *declarations* (the 2 raw `axiom` hits are prose, "Markov axioms" — and the brief's
+  claim that "sorry" appears in the docstring was wrong, it appears **nowhere**).
+  Restore was ALREADY present (root 3758 = the seed exactly) so no fetch; built the §17
+  union mirror instead. **`OcneanuTrace.olean` was 2026-09-03 against a 2026-09-11
+  source** — the §1/§11 false-green setup — so both QOU deps were rebuilt from current
+  source into the mirror first; green reproduced against the real trees too. Cone was
+  only 3 modules, no UGB, no non-Mathlib imports. Two mutation tests rejected (exit 1):
+  `h -> h+1` in the quadratic, and zeroing the `linear_combination` coefficient that
+  consumes the Markov-root hypothesis. Non-vacuity checked rather than assumed:
+  `MarkovTrace ℚ (HeckeTower ℚ (3/2))` is inhabited with `h ≠ 0`, `z ≠ zinv` and
+  `twH 0 < twH 1`, so the module's "missing quadrant" claim has an instance.
+  **Both fixes were proof-only; no statement touched** — the error was a missing binary-
+  `sub` simp projection on `Hecke2` (fix: `sub_eq_add_neg`), the warning was
+  `Set.image_subset` → `Set.image_mono` with `f` now implicit. Both recorded in
+  `authoring-traps`. The concurrent SessionStart `lake build` independently reached the
+  same single error (`✖ [6641/6642]`, same line:col) — new `MEMORY.md` entry.
+
 - 2026-09-04 (post-merge re-verification, branch `claude/standard-model-terms-status-ftoejr`
   at HEAD `219672e496`; 8 files, all blobs == HEAD): **8/8 lean-direct EXIT 0, zero
   diagnostics**; 94 `#print axioms` lines, all std-3 or "no axioms", **no `sorryAx`**.
@@ -302,3 +323,28 @@ rule, and it ran ~1760 Mathlib modules for 40 minutes before I stopped it. It
 did **not** evict the restore — it was building a *second* mathlib tree local to
 that directory — which is the detail now in `MEMORY.md`. The 5-second
 alternative was one `source scripts/lean-direct-env.sh` away the whole time.
+
+## 2026-09-12 (2nd pass) — `MathlibExt/HeckeTowerWitness.lean`, branch `claude/hecke-tower-followup-2026-09-12`
+
+Second verification of the same file the same day (first pass: 618 lines, blob
+`5ca5adbda`, merged to main as `21c5179f0`). Three additions verified: two new
+refutation theorems (`braid_scalar_forces_scalar`, `scalar_tail_forces_central`)
+and the `exists_tower_with_nonzero_h` → `tower_nondegenerate` restatement.
+
+- **before** exit 1 / 1 error / 0 warnings; **after** exit 0 / 0 / 0, 2.9 s.
+- One real defect, one line: `abel` left `algebraMap (h*c)*x = algebraMap (c*h)*x`.
+  `mul_comm h c` added to the `rw` chain. Commit `739ba86fb`.
+- **Both** QOU deps were stale on disk (`OcneanuTrace` olean 8 days older than its
+  source; `HeckeRankTwoMarkov` 3 h older) — rebuilt from source into the union
+  mirror before gating. The first-pass note that OcneanuTrace goes stale held.
+- `#print axioms` × 31 public decls: no `sorryAx`.
+- 5/5 mutants RED; both hypotheses shown **semantically** necessary over `ℚ`;
+  premises satisfiable; conclusion non-tautological; check (c) discharged
+  generically (at `h=0,c=1` the hypotheses force `x=1`).
+- Found: `u : Rˣ` is **free**, not restrictive — the tail generator's own
+  quadratic forces `c*(c-h)=1` under injective `algebraMap`. Widens the refutation.
+- Found: docstring cites `braid_forces_eq_of_commuting_involutions`, which does
+  **not exist** (real: `QOU.Eightfold.braid_forces_eq`, and about a commutative
+  image, not involutions). Reported, not rewritten — the gloss is authorial.
+- The SessionStart `lake build` log was **17 min stale** and its `✖` on this exact
+  module described a two-revisions-dead file. See the dated caveat in MEMORY.md.

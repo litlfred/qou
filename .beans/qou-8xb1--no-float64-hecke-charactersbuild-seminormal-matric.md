@@ -1,11 +1,11 @@
 ---
 # qou-8xb1
 title: 'NO-FLOAT64: hecke_characters.build_seminormal_matrices still f64-bound (qou-d8gq fixed only the pyhecke twin)'
-status: completed
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-25T16:38:19Z
-updated_at: 2026-08-25T19:24:33Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 ## Found 2026-08-25 while draining the 5 NEW raw-float64 witnesses on main
@@ -226,3 +226,18 @@ Construction cost measured here: dim 9 6.0x, dim 16 7.1x, dim 162 33.0x
 Also corrected the `_mp` docstring, which still claimed the float64 builder
 "cannot be made otherwise without moving numbers for its 64 live callers".
 It has been, and without moving them.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

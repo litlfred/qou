@@ -1,11 +1,11 @@
 ---
 # rtqd
 title: 'GAP: qDimObj(Xᘁ)=qDimObj X general-object conjugation symmetry needs a pivotal structure Mathlib lacks'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-26T17:17:36Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 Residual gap from bean `rtrb` (RT-1 ribbon extension), branch
@@ -233,3 +233,18 @@ result is not invalidated by an unconditional proof of its conclusion.
 
 Refusing to sorry it, and refusing to axiomatise it as a class field. Both correct. The
 error was the impossibility claim, not the discipline around it.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

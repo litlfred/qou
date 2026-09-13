@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T15:43:09Z
-updated_at: 2026-09-04T02:24:50Z
+updated_at: 2026-09-11T14:54:24Z
 ---
 
 ## Measured 2026-09-03 on main `26bd234527` — and mostly already owned
@@ -261,3 +261,73 @@ Nine, against the ten of 2026-09-03 on `26bd234527`. **I cannot name which one l
 Branch `claude/phi-k-is-not-a-trace-retraction-2026-09-05` at `9f0f7709b3` (`--changed`, 12 relevant files) gives exit 1 with **exactly this nine-name list** — byte-identical to pristine main. So the branch contributes nothing to it, and a gates run on a feature branch here **cannot** be reported as a pass/fail signal about that branch. The usable per-branch evidence is the narrower one: the raw-float64 ratchet witnesses regenerate with the new file absent from all of them.
 
 **Do not let this be read as licence to skip the gates.** It says the *summary line* is uninformative on a branch while main is red; the per-gate diff against a main baseline still is informative, and is the check to run.
+
+## BASELINE re-measured 2026-09-07 on pre-merge main `1ec22a904` — **ten**, was nine
+
+The 2026-09-05 entry above wrote out its nine names precisely so the next
+re-measure could compute its own delta instead of inheriting a number. Doing
+that, and the delta is **+2 blocking, −1 blocking→advisory**:
+
+```
+RED: q0-anchor flip  q0-anchor refill ratchet  import-time dps ratchet
+     never-raises-dps ratchet  float64-padding ratchet
+     reference-literal ratchet          <- NEW since 7904384c45
+     witness-value copy ratchet         <- NEW since 7904384c45
+     q0-value drift ratchet  CODATA stale-edition
+     mixed mpf/f64 -> serializer
+
+ADVISORY: witness failed-assertion ratchet   hardcoded braid word   <- was RED
+          f64-into-mpmath   no-free-parameter cert
+          witness provenance completeness
+```
+
+Run in a pristine `git worktree` at `1ec22a904` with `PYTHONPATH` set — the same
+method as the 2026-09-05 baseline, so the comparison is like-for-like. **Exit 1.**
+
+`hardcoded braid word` moved RED → ADVISORY; two ratchets appeared. Net 9 → 10.
+Neither new name is attributable here — main moved **683 commits** between the
+two baselines — but they are now on the record by name, so the next re-measure
+has a two-point series rather than a pair of counts.
+
+### The reason this was run: it cleared four of my own merges
+
+PRs #6817 / #6821 / #6826 / #6948 all reported `exit 1` with a ten-name list,
+which on the 2026-09-05 nine-name baseline looked like **+2 introduced by me**.
+It is not: pre-merge main alone produces the identical ten names and the
+identical advisory set. The four merges contribute **nothing** to the blocking
+gates.
+
+That is exactly the check the 2026-09-05 entry prescribes — *"the summary line
+is uninformative on a feature branch while main is red; the per-gate diff
+against a main baseline still is, and is the check to run"* — and it is the
+first time the prescription has been followed and has actually changed a
+conclusion. Without it I would have reported an inherited red as my own
+regression, or (worse) waved the exit code away as "known debt" and been right
+by luck rather than by measurement.
+
+### One environment note
+
+This container needed `mpmath`, `numpy`, `scipy`, `sympy` and `pip install -e
+tools/qou-substrate` before the gate would run at all — without them the
+preflight **refuses** rather than reporting green, which is the guard behaving
+correctly and is worth not "fixing".
+
+
+## RE-MEASURED 2026-09-11: pristine main is ELEVEN blocking gates, was ten
+
+Full `scripts/precision-gates.sh` (no --changed) in a throwaway worktree at
+origin/main 492a90a42, unpiped exit = 1:
+
+  RED: q0-anchor flip | q0-anchor refill ratchet | import-time dps ratchet |
+       never-raises-dps ratchet | float64-padding ratchet | raw-float64 ratchet |
+       reference-literal ratchet | witness-value copy ratchet |
+       q0-value drift ratchet | CODATA stale-edition | mixed mpf/f64 -> serializer
+
+Eleven. The bean's own lesson applies to its own figure: quote the LIST, not the
+count, so the next re-measure computes a delta against named gates instead of
+inheriting a number. Ten -> eleven cannot be attributed here because the earlier
+entry recorded nine/ten names only partially.
+
+TRAP measured the same day: `precision-gates.sh | tail -N` returns TAIL's exit
+code. A run piped that way reports `exit 0` while the script itself exits 1.
+Read the `^RED:` line; never the exit status of a pipeline.

@@ -1,11 +1,11 @@
 ---
 # qou-3wqg
 title: 'canonical-mass-table-extended: raw-float64 red (26 vs baseline 24) AND the committed witness is truncated to 5 of 7 rows'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-15T23:00:29Z
-updated_at: 2026-08-15T23:42:57Z
+updated_at: 2026-09-08T04:48:11Z
 ---
 
 
@@ -265,3 +265,53 @@ different branches of the same `args.precision` — `precision` is forced to
 "mpfr" for the `branching` method, while `dps` still reports the f64 value 0.
 Each is defensible under its own definition ("effective precision" vs "the dps
 handed to the Rust binary"); the PAIRING is what reads as a contradiction.
+
+
+---
+
+## CLOSED 2026-09-08 — all four items are resolved on `main`, including the one this bean recorded as still open
+
+Verified on `main` `a61496dbc82`, item by item.
+
+| item this bean raised | state |
+|---|---|
+| raw-float64 red (26 vs baseline 24) | **0** — the witness appears nowhere in `witness-raw-float64-audit`'s dirty list |
+| committed witness truncated to 5 rows | **9 rows** (p, n, D, T, ³He, ⁴He, ⁵Li, ⁶Li, ⁷Li) — better than the 7 the bean's own update recorded |
+| `"precision": "mpfr"` beside `"dps": 0` | **`mpfr` / `50`** — the pairing contradiction is gone |
+| ordering invariant vs emitted layout | **they agree** |
+
+### The fourth item is the one worth spelling out, because this bean called it "Still open"
+
+The bean recorded: *"The producer's ORDERING INVARIANT comment names index 5 as
+4He and index 6 as 5Li … The regenerated witness puts 4He at index 3 and 5Li at
+index 4, because the default `--atoms` set has no nucleon rows."*
+
+Measured today, `data.rows` is
+`[(1,0), (0,1), (1,1), (1,2), (2,1), (2,2), (3,2), (3,3), (3,4)]` — so **⁴He is
+at index 5 and ⁵Li at index 6**, exactly what
+`canonical_mass_table_extended.py:118-126` documents. The default set *does* now
+begin with p and n. Resolved by the same full-coverage fix that closed the
+truncation half (`low_isotope_mass_table.py` no longer passes `--atoms`, bean
+`qou-xwet`).
+
+### The registry pin was fixed STRUCTURALLY, which is better than the layouts agreeing
+
+The bean flagged that `content/values/registry.ts` pins `data.rows.2.B_AME_MeV`
+against a positional layout. That pin is gone; the file now reads *"Addressed by
+NUCLIDE, not by position (bean `qou-xwet`)"* and uses `rows_by_nuclide`, keyed by
+the `--atoms` label, so a missing row is a missing key and fails loudly.
+
+Its comment also records what the positional pin actually cost, which is the
+reusable part: *"from 2026-06-22 to 2026-08-15 `rows.2` was ³He — so this entry
+returned 7.71804132 MeV, 3.47× the deuteron's, under the description below.
+Nothing caught it; it was restored by a second clobber rather than by a fix."*
+Note the mechanism was **not** reordering, which is what the invariant comment
+guards against — it was the fixed output filename being overwritten by a
+restricted-`--atoms` run, so every index shifted with nothing reordered. A
+positional pin cannot see that; a nuclide key can.
+
+### Its own recommendation stands and was not overturned
+
+*"Do not add a fifth gate. … A gate with 578 baseline entries would be a gate
+nobody reads."* Nothing here adds one; all four items closed at the producer or
+at the consumer.

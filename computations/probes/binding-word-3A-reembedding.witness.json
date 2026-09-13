@@ -1,0 +1,582 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T07:45:12.450948+00:00",
+  "commitSha": "45257b8d50584ec5188aca7b00f11cc5287f93a4",
+  "assertions": [
+    {
+      "name": "binding word couples EVERY nucleon pair: inter letters = C(A,2), all pairs distinct (A = 2..6, measured from _step_chain_generic)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "mass word atom_braid_word_3A couples only CONSECUTIVE nucleons: inter letters = A-1 (A = 2..6)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "mass word is level-local: 2A-1 segments, largest generator set 2 (the dimension-free structure #7160 exploits)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "fixed-H_k binding word is a SINGLE segment (re-confirms #7173 against this branch's code)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "every CONTIGUOUS 3A layout gives the path P_A and nothing more (A-1 couplings, exhaustive over all A! block orderings, A = 2..7)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "a contiguous layout realises the complete coupling K_A iff A <= 2 -- so the binding word's all-pairs coupling is UNREACHABLE for A >= 3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "dropping contiguity, some layout realises K_A iff A <= 6 (exhaustive DFS; A = 7 impossible)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "the counting bound C(A,2) <= 3A-1 is never violated -- a linear arrangement of 3A strands has only 3A-1 adjacent pairs, so K_A is impossible for every A >= 7, not merely the A = 7 checked",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "no layout realising K_A keeps ALL A nucleon triples contiguous (A = 3..5, exhaustive) -- the all-pairs coupling and the single-generator intra-nucleon crossings cannot both be had",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "and from A >= 4 the cost is TOTAL: not one nucleon of a K_A-realising layout keeps its three strands together, so every intra-nucleon crossing needs conjugating too (A = 3 is the lone partial case, 2 of 3)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "A = 2 re-embeds exactly and is level-local: the deuteron's single pair IS the one adjacency, so no conjugation is needed and every segment holds ONE generator -- finer than the mass word's, because the binding producer's intra chain is GROUPED (seven letters on 3k, then four on 3k+1) where atom_braid_word_3A's is ALTERNATING",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "A >= 3 collapses: only nucleon 0's two generators survive as their own segments and everything else merges -- 3 segments with the largest holding 3A-3 of 3A-1 generators, i.e. all but two, growing linearly in A against the mass word's constant 2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "and 3A-5 of that is ORDER-FREE: the conjugating walk for the extreme pair brackets its crossing, so generators [2, 3A-4] share a segment wherever the rest of the letters are placed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "the two A = 2 words are the SAME 23 letters in the SAME H_6 -- identical multiset of (c, d) offsets, identical length, differing ONLY in the generator each letter is assigned to",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "path sum and the independent dense Young-seminormal product agree on both words, every λ ⊢ 6, at < 1e-45 relative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "the Markov trace is NOT invariant under the re-embedding: the character moves on 9 of 11 partitions of 6, max relative 1.43226 -- so option 2 is a RE-DERIVATION, and _step_chain_22's 'any embedding of crossings into sigma_1, sigma_2, ... yields the same trace' is false for a word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "the two 1-dimensional irreps are BLIND to the embedding: χ^(6) = Π(q + d) and χ^(1^6) = Π(-1/q + d) exactly, identical under both indexings -- the whole move lives in dim >= 2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    },
+    {
+      "name": "the collapse has a measured price at A = 3: the level-local mass word costs 0.335 s over all 30 partitions of 9 while the conjugated binding word, in the SAME algebra over the SAME partitions, costs 41.685 s (124x) -- the path sum has degenerated to the dense seminormal trace the route was meant to avoid",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "binding_word_3A_reembedding_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "binding-word-3A-reembedding",
+  "scriptFile": "binding_word_3A_reembedding_probe.py",
+  "scriptHash": "fa6b5a33b43f",
+  "scriptCommitSha": "7160dfb856103d6156939aad6e6e1216a8d05da8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_word_3A_reembedding_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_word_3A_reembedding_probe.py"
+  },
+  "description": "qou-w6x3 (option 2 of qou-hxz4): re-embedding the binding producer's word on 3A strands does NOT restore level-locality for A >= 3, and the reason is the COUPLING GRAPH, not the generator cycling that #7173 diagnosed. The binding word couples every nucleon pair (C(A,2) inter letters, the complete graph K_A) while a contiguous 3A layout supplies only the path P_A (A-1 adjacencies) -- measured, and exhaustive over all contiguous layouts for A <= 7. Dropping contiguity, K_A is layout-realisable iff A <= 6 (counting bound C(A,2) <= 3A-1, proved for all A; A = 7 exhaustively impossible), but no such layout leaves a single nucleon triple contiguous, so the single-generator intra-nucleon crossings are lost in exchange. Coupling a non-adjacent pair by conjugation instead gives a bond whose generator support is the interval [2, 3A-4]: the segmentation collapses from the mass word's 2A-1 segments of largest size 2 to 3 segments whose largest holds 3A-5 of 3A-1 generators, so the dimension-free property is gone at the first non-adjacent pair. A = 2 is the sole exception -- the deuteron's single pair IS the one adjacency -- and there the character MOVES: same H_6, same 23 letters, only the indexing differs, and chi^lambda differs on the 9 partitions of dimension >= 2 while the two 1-dimensional irreps are blind to the embedding. Option 2 is therefore a re-derivation whose one live case is the deuteron.",
+  "auditOnly": "docs/audits/2026-09-12-binding-word-3A-reembedding.md",
+  "parameters": {
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "compute_dps": 70,
+    "a_max": 6,
+    "a_all_solutions": 5
+  },
+  "data": {
+    "coupling_structure": [
+      {
+        "A": 2,
+        "ordering": "pn",
+        "binding_inter_letters": 1,
+        "binding_distinct_pairs": 1,
+        "C_A_2": 1,
+        "mass_inter_letters": 1,
+        "A_minus_1": 1,
+        "mass_segments": 3,
+        "mass_max_segment_gens": 2,
+        "fixed_Hk_segments": 1,
+        "fixed_Hk_max_segment_gens": 5
+      },
+      {
+        "A": 3,
+        "ordering": "ppn",
+        "binding_inter_letters": 3,
+        "binding_distinct_pairs": 3,
+        "C_A_2": 3,
+        "mass_inter_letters": 2,
+        "A_minus_1": 2,
+        "mass_segments": 5,
+        "mass_max_segment_gens": 2,
+        "fixed_Hk_segments": 1,
+        "fixed_Hk_max_segment_gens": 5
+      },
+      {
+        "A": 4,
+        "ordering": "ppnn",
+        "binding_inter_letters": 6,
+        "binding_distinct_pairs": 6,
+        "C_A_2": 6,
+        "mass_inter_letters": 3,
+        "A_minus_1": 3,
+        "mass_segments": 7,
+        "mass_max_segment_gens": 2,
+        "fixed_Hk_segments": 1,
+        "fixed_Hk_max_segment_gens": 5
+      },
+      {
+        "A": 5,
+        "ordering": "pppnn",
+        "binding_inter_letters": 10,
+        "binding_distinct_pairs": 10,
+        "C_A_2": 10,
+        "mass_inter_letters": 4,
+        "A_minus_1": 4,
+        "mass_segments": 9,
+        "mass_max_segment_gens": 2,
+        "fixed_Hk_segments": 1,
+        "fixed_Hk_max_segment_gens": 5
+      },
+      {
+        "A": 6,
+        "ordering": "pppnnn",
+        "binding_inter_letters": 15,
+        "binding_distinct_pairs": 15,
+        "C_A_2": 15,
+        "mass_inter_letters": 5,
+        "A_minus_1": 5,
+        "mass_segments": 11,
+        "mass_max_segment_gens": 2,
+        "fixed_Hk_segments": 1,
+        "fixed_Hk_max_segment_gens": 5
+      }
+    ],
+    "layout_reachability": [
+      {
+        "A": 2,
+        "n_strands": 6,
+        "C_A_2": 1,
+        "adjacencies_n_minus_1": 5,
+        "contiguous_graph_is_always_path_P_A": true,
+        "contiguous_layout_realises_K_A": true,
+        "some_layout_realises_K_A": true,
+        "counting_bound_C_A_2_le_3A_minus_1": true
+      },
+      {
+        "A": 3,
+        "n_strands": 9,
+        "C_A_2": 3,
+        "adjacencies_n_minus_1": 8,
+        "contiguous_graph_is_always_path_P_A": true,
+        "contiguous_layout_realises_K_A": false,
+        "some_layout_realises_K_A": true,
+        "counting_bound_C_A_2_le_3A_minus_1": true
+      },
+      {
+        "A": 4,
+        "n_strands": 12,
+        "C_A_2": 6,
+        "adjacencies_n_minus_1": 11,
+        "contiguous_graph_is_always_path_P_A": true,
+        "contiguous_layout_realises_K_A": false,
+        "some_layout_realises_K_A": true,
+        "counting_bound_C_A_2_le_3A_minus_1": true
+      },
+      {
+        "A": 5,
+        "n_strands": 15,
+        "C_A_2": 10,
+        "adjacencies_n_minus_1": 14,
+        "contiguous_graph_is_always_path_P_A": true,
+        "contiguous_layout_realises_K_A": false,
+        "some_layout_realises_K_A": true,
+        "counting_bound_C_A_2_le_3A_minus_1": true
+      },
+      {
+        "A": 6,
+        "n_strands": 18,
+        "C_A_2": 15,
+        "adjacencies_n_minus_1": 17,
+        "contiguous_graph_is_always_path_P_A": true,
+        "contiguous_layout_realises_K_A": false,
+        "some_layout_realises_K_A": true,
+        "counting_bound_C_A_2_le_3A_minus_1": true
+      },
+      {
+        "A": 7,
+        "n_strands": 21,
+        "C_A_2": 21,
+        "adjacencies_n_minus_1": 20,
+        "contiguous_graph_is_always_path_P_A": true,
+        "contiguous_layout_realises_K_A": false,
+        "some_layout_realises_K_A": false,
+        "counting_bound_C_A_2_le_3A_minus_1": false
+      }
+    ],
+    "complete_coupling_destroys_contiguity": [
+      {
+        "A": 3,
+        "complete_coupling_layouts": 234,
+        "exhaustive": true,
+        "max_contiguous_nucleon_triples": 2,
+        "nucleons": 3
+      },
+      {
+        "A": 4,
+        "complete_coupling_layouts": 5736,
+        "exhaustive": true,
+        "max_contiguous_nucleon_triples": 0,
+        "nucleons": 4
+      },
+      {
+        "A": 5,
+        "complete_coupling_layouts": 64986,
+        "exhaustive": true,
+        "max_contiguous_nucleon_triples": 0,
+        "nucleons": 5
+      }
+    ],
+    "reembedded_segmentation": [
+      {
+        "A": 2,
+        "n_strands": 6,
+        "L": 23,
+        "segments": 5,
+        "segment_gen_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_segment_gens": 1,
+        "order_free_floor_on_max_segment": null,
+        "total_gens": 5,
+        "mass_word_segments": 3,
+        "mass_word_max_segment_gens": 2
+      },
+      {
+        "A": 3,
+        "n_strands": 9,
+        "L": 42,
+        "segments": 3,
+        "segment_gen_sizes": [
+          1,
+          1,
+          6
+        ],
+        "max_segment_gens": 6,
+        "order_free_floor_on_max_segment": 4,
+        "total_gens": 8,
+        "mass_word_segments": 5,
+        "mass_word_max_segment_gens": 2
+      },
+      {
+        "A": 4,
+        "n_strands": 12,
+        "L": 74,
+        "segments": 3,
+        "segment_gen_sizes": [
+          1,
+          1,
+          9
+        ],
+        "max_segment_gens": 9,
+        "order_free_floor_on_max_segment": 7,
+        "total_gens": 11,
+        "mass_word_segments": 7,
+        "mass_word_max_segment_gens": 2
+      },
+      {
+        "A": 5,
+        "n_strands": 15,
+        "L": 125,
+        "segments": 3,
+        "segment_gen_sizes": [
+          1,
+          1,
+          12
+        ],
+        "max_segment_gens": 12,
+        "order_free_floor_on_max_segment": 10,
+        "total_gens": 14,
+        "mass_word_segments": 9,
+        "mass_word_max_segment_gens": 2
+      },
+      {
+        "A": 6,
+        "n_strands": 18,
+        "L": 201,
+        "segments": 3,
+        "segment_gen_sizes": [
+          1,
+          1,
+          15
+        ],
+        "max_segment_gens": 15,
+        "order_free_floor_on_max_segment": 13,
+        "total_gens": 17,
+        "mass_word_segments": 11,
+        "mass_word_max_segment_gens": 2
+      }
+    ],
+    "A2_character_comparison": [
+      {
+        "lambda": [
+          6
+        ],
+        "dim": 1,
+        "chi_fixed_Hk": "1.55987019956415159270616662243717165995249182001739528836609",
+        "chi_3A": "1.55987019956415159270616662243717165995249182001739528836609",
+        "rel_diff": "3.48324331653633326172570149288572532147821863667051061031778e-71",
+        "xcheck_fixed_pathsum_vs_dense": "5.06605610965061109451508843544135513139151907574111285865042e-49",
+        "xcheck_3A_pathsum_vs_dense": "5.06605610965061109451543675977300876471769164589040143118257e-49"
+      },
+      {
+        "lambda": [
+          5,
+          1
+        ],
+        "dim": 5,
+        "chi_fixed_Hk": "-0.827205187582396675185920943302498903423685408145885203010997",
+        "chi_3A": "3.21631734223588117593389554252467310489470023646964356288549",
+        "rel_diff": "1.25719016488819166919551491202859722371912041299697360183246",
+        "xcheck_fixed_pathsum_vs_dense": "2.80172801236640931369330869422656837443758823787270788722827e-49",
+        "xcheck_3A_pathsum_vs_dense": "4.60579574922906643012482292194293590385654904188469951829457e-49"
+      },
+      {
+        "lambda": [
+          4,
+          2
+        ],
+        "dim": 9,
+        "chi_fixed_Hk": "-0.723775461914249772286848836477505632625104736250285387606233",
+        "chi_3A": "1.67439526203425534316948357735572383761819542334714525785297",
+        "rel_diff": "1.43226081578546806094784369034135959832296909088796697090852",
+        "xcheck_fixed_pathsum_vs_dense": "1.20400739292772770493090391613335662273403604496497311579145e-49",
+        "xcheck_3A_pathsum_vs_dense": "5.76313143505083882079369693352137189886132378164956515404364e-49"
+      },
+      {
+        "lambda": [
+          4,
+          1,
+          1
+        ],
+        "dim": 10,
+        "chi_fixed_Hk": "1.12315502702191593703310285845000735296440707250714565370887",
+        "chi_3A": "-0.469805886377694738373088528564156662901499196516131599348293",
+        "rel_diff": "1.41829121988920902041824440113552135522765232793727293954451",
+        "xcheck_fixed_pathsum_vs_dense": "7.81720666695668242734344230892186124228090276986409834037710e-50",
+        "xcheck_3A_pathsum_vs_dense": "3.92216269681163315590300156635297317994037345183920270264915e-49"
+      },
+      {
+        "lambda": [
+          3,
+          3
+        ],
+        "dim": 5,
+        "chi_fixed_Hk": "0.607391469465498249473339245057703727731372058359886122438977",
+        "chi_3A": "4.24940202291765676672599113116341288270661335425532918226555",
+        "rel_diff": "0.857064248995565548220784795676928102958810628002496698320407",
+        "xcheck_fixed_pathsum_vs_dense": "9.98643385700630852054490924547271232986457595388797368806607e-50",
+        "xcheck_3A_pathsum_vs_dense": "1.73684890457694567275004642703744998948994581237723396080701e-49"
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          1
+        ],
+        "dim": 16,
+        "chi_fixed_Hk": "-0.0198841499896986676595980147100559761740201451362512553002862",
+        "chi_3A": "-1.97227244615154968904823487800489650545495448631736102677932",
+        "rel_diff": "0.989918152520713780326736635100077909087138342673864924466395",
+        "xcheck_fixed_pathsum_vs_dense": "2.39457829001711650708603068292485027185190667558687727268053e-48",
+        "xcheck_3A_pathsum_vs_dense": "1.54968894221542372618259675033878359926232574898754880332506e-49"
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "dim": 10,
+        "chi_fixed_Hk": "-0.701358255758008427547052699238368363902398175748078212927334",
+        "chi_3A": "-0.490125652323030736668322351285703942453755826857394437086749",
+        "rel_diff": "0.301176469658410720066003657491390784409217606003709060163778",
+        "xcheck_fixed_pathsum_vs_dense": "1.56276103471586534866192598593741986540207355488245770431134e-49",
+        "xcheck_3A_pathsum_vs_dense": "1.09836379260992817246324063620614621346278294491525796764972e-48"
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2
+        ],
+        "dim": 5,
+        "chi_fixed_Hk": "0.721835313965485787238100558431830947295995838260854130102990",
+        "chi_3A": "-3.49729440651295305217505302036934348550475474946482068795068",
+        "rel_diff": "1.20639821246424776804766650075295156184746698877624251421854",
+        "xcheck_fixed_pathsum_vs_dense": "3.77345031375868494602291315522430941373215146039083965811263e-50",
+        "xcheck_3A_pathsum_vs_dense": "1.91541461659083255827647377727868501883926678701258606569273e-49"
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "dim": 9,
+        "chi_fixed_Hk": "-0.616562022822629276809690863970445756489932553055430356241239",
+        "chi_3A": "-0.819654948504483761860233020127346377409857410720267214888137",
+        "rel_diff": "0.247778563470410750503594625467993560188324660172363546184982",
+        "xcheck_fixed_pathsum_vs_dense": "1.61539264616078396405013864197541161695028469019649499198692e-49",
+        "xcheck_3A_pathsum_vs_dense": "4.86361894120273321237923121479175271880633304210600036606234e-49"
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim": 5,
+        "chi_fixed_Hk": "0.963194639862907026108171676398143839663087887966838792301790",
+        "chi_3A": "2.15525533744872064149258960596958308116871167077541513578121",
+        "rel_diff": "0.553094882482422325123622659834966739456250404836113817296102",
+        "xcheck_fixed_pathsum_vs_dense": "2.84095258417587645466172501376278890440371893431837785437559e-49",
+        "xcheck_3A_pathsum_vs_dense": "3.69599760260808445442966288857664474182153789115582884290687e-50"
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim": 1,
+        "chi_fixed_Hk": "-0.676876683432937978862501683751289860087214720521294026850108",
+        "chi_3A": "-0.676876683432937978862501683751289860087214720521294026850108",
+        "rel_diff": "1.33786246453323280654341697235424411270007579977641584656623e-71",
+        "xcheck_fixed_pathsum_vs_dense": "4.14780645000363705330930052236372018210777384951863530495459e-49",
+        "xcheck_3A_pathsum_vs_dense": "4.14780645000363705330943430861017350538842819121587072936586e-49"
+      }
+    ],
+    "A2_path_sum_cost_s": {
+      "fixed_Hk": "0.124648386999979265965521335601806640625000000000000000000000",
+      "three_A": "0.0148198269998829346150159835815429687500000000000000000000000"
+    }
+  },
+  "caveats": [
+    "scope-(b) for the contiguous-layout coupling graph (P_A and nothing more; QOU/Hecke/ContiguousCouplingGraph.lean, sorry-free, general A) and for the counting bound C(A,2) <= 3A-1 that excludes K_A at every A >= 7. scope-(a) for the conjugated-bond collapse: ONE explicit conjugation is built and segmented, and while its generator support is forced by the cut lemma (an unused sigma_g prevents any crossing across position g), no claim is made that EVERY realisation of a non-adjacent coupling segments the same way. The A = 2 character comparison is REPORTED, not acted on: choosing an embedding by the number it produces would be selection against the target. Timings are wall-clock strings, provenance only."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -76,6 +76,58 @@ Wenzl the entire H₆ signal is carried by three 2-row shapes — (5,1), (4,2),
 
 ### 2.3 The sign is robust at A=2 and **not** at A=3
 
+> **🛑 SETTLED 2026-09-12 (PR #7197) — ⁴He is no longer "undetermined", and the
+> answer completes the pattern rather than breaking it.** This section's table
+> and the two open-items that depend on it ("⁴He cannot be judged until its
+> witness is regenerated", §4's "⁴He … is needed before even that is settled")
+> were written while the ⁴He source was 2026-09-04, i.e. pre-ruling. It was
+> regenerated on the canonical word on **2026-09-11** — 77/77 partitions, 8.0 h
+> — and the robustness probe re-run with all three sources post-ruling, so
+> nothing is excluded from the gate for the first time. The corrected row:
+>
+> | atom | source | partitions | Wenzl-nonzero | $P$ Plancherel | $P$ Wenzl | agree? |
+> |---|---|---:|---:|---:|---:|:---:|
+> | ⁴He | **canonical** | 77 | 7 | **+34.126** | **−20.466** | **no** |
+>
+> Full precision: Plancherel `+34.126027285357652927`, Wenzl
+> `−20.466481428076021593`; trace split +33/−42/0×2.
+>
+> **So read the sign columns of the table below, not its rows:**
+>
+> ```
+> Plancherel   −, +, +    one sign change, between deuteron and triton
+> Wenzl        −, −, −    no sign change anywhere in A = 2, 3, 4
+> ```
+>
+> Two consequences, and the second is the one that matters most for this doc.
+>
+> **(1) §4's honest reading gets stronger, not weaker.** It said the sign change
+> is "not *yet* exhibited" at A=3 pending ⁴He. ⁴He has landed and does not
+> rescue it: Wenzl is negative there too. The statement is now **not exhibited
+> at any of A=2,3,4** — and the "yet" should be dropped.
+>
+> **(2) The claim that the choice is NOT URGENT is now FALSE.** §4 and the bean
+> both recorded *"Safe either way: no published conclusion moves, because the
+> sign is robust."* That was load-bearing for deferring the decision, and the
+> measurement has removed it. At A=3 **and** A=4 the weight family determines
+> whether the programme's target phenomenon is present at all. The option
+> ranking (A recommended, C as guard) is unchanged in substance; its urgency is
+> not.
+>
+> **What has NOT changed: Plancherel is not thereby preferred.** It gives the
+> wanted sign at A=3 and again at A=4. Under AGENTS.md §"NO FITTING" that is
+> *selection against the target* — no continuous parameter is tuned and it is
+> still a fit — so being the convenient answer twice is grounds for more
+> suspicion, not less. Decision 1 (which measure is the right pairing for a
+> Magnus Ω₂ question, which is **not** a Markov trace) remains open; bean
+> `qou-za3q`.
+>
+> The −57.803 / −100.827 figures in the table below are the **pre-ruling**
+> values and are kept as the record of what this analysis had available. Do not
+> quote them as current, and note §3's "⁴He magnitude nearly doubles" is
+> computed from them.
+
+
 > **Corrected 2026-09-07, later the same day.** The first version of this
 > section claimed the sign was robust on all three atoms. It was not: two of the
 > three source witnesses predated the 2026-09-05 ordering ruling, so the

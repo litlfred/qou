@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-07T12:45:17Z
+updated_at: 2026-09-11T15:31:24Z
 ---
 
 
@@ -477,3 +477,124 @@ question this bean previously got backwards.
 **This bean is NOT closed** — but its open item is no longer "run the resummation." It is
 run and negative. What remains genuinely open is `REV`'s asymptotics, which is a
 statement about the *object*, not about a route to `B_D`.
+
+Taken over 2026-09-07 by claude/stalled-agents-em-linking-jilmbv; the #7093 session ended awaiting merge permission (last c0704640e2e). Child task qou-0ie7 attacks the Σβ constraint on the same branch; nothing force-pushed.
+
+## 2026-09-07 (later still) — the Jensen step attacked; three refutations and a price (PR #7093)
+
+The section above says: "Replace the Jensen step, not the H bound." Done. It is **not replaced**,
+and the reason is now specific enough to be worth more than the attempt.
+
+**The reformulation, which is right and is kept.** Write the beta's by their partial gap sums,
+0 = S_0 < S_1 < ... < S_{l-1} = W. Then the pair term is
+
+    P = sum_{0 <= a < b <= l-1} eps(S_b - S_a),
+
+the energy of l points in an interval of length W under the potential eps. So P_min(l, W) is the
+**ground state of a one-dimensional repulsive gas with hard walls**. That is the object to bound.
+
+### Three conjectures of mine, all refuted
+
+1. **"The minimiser is the most even spacing."** Misses on 44 of 105 brute-forced (l, W) pairs.
+   At (4, 4) the even multiset {2,1,1} gives 6.8236 as (2,1,1) and 6.5135 as (1,2,1) — the energy
+   depends on the ARRANGEMENT, not the multiset. Both hand-checks I ran before writing the probe
+   had all-equal gaps, i.e. were drawn from exactly the cases where the distinction cannot appear.
+   That is the methodological error, not the mathematical one.
+
+2. **"...arranged unimodally, large gaps in the middle."** Better — 44 violations down to 12 — and
+   still false. At (5, 11) the true minimiser has gaps (2,3,4,2), which is not the even multiset
+   {3,3,3,2} in any order. The minimiser is not a rearrangement of the even gaps at all.
+
+3. **"Jensen can be beaten one distance class at a time."** False and backwards. For a single class
+   the differences satisfy x_i >= d and sum x_i <= d*W, and eps is CONVEX — so sum eps(x_i) is
+   convex and minimised at the centroid, which IS Jensen. I reached for the opposite extreme point
+   expecting an improvement (at (l,W,d) = (22,37,1) it gives 33.4 against Jensen's 24.8); for a
+   convex summand that is the MAXIMUM. Verified against 280 random feasible configurations across
+   7 triples drawn from the maximizer's own argmaxes: 0 beat Jensen.
+
+### What survives, and why it probably is not enough
+
+Jensen is optimal per class, so the whole loss is the **coupling between classes** — the same gaps
+appear in every class and the per-class relaxation forgets it. Brute force prices it, in the regime
+the maximizer selects (W/l ~ 1.7):
+
+    l         4        5        6        7        8
+    Jensen    3.4004   5.6678   7.5417   9.5157  11.5682
+    P_min     4.0481   6.8906   9.2128  11.5733  13.9448
+    ratio     1.1905   1.2157   1.2216   1.2162   1.2054
+
+**But priced against the BOUND rather than the pair term, ~1.21x buys little.** The pair term is
+one part of B = l*C - P - F(n). At #7081's own n=40 argmax (l, W) = (22, 37):
+
+    l*C - F(n) = 129.60054      J = 50.81003
+    B with Jensen               78.790513
+    B with the full 1.21x       68.125789      (13.54% smaller)
+
+Against the ~3x over-statement #7081 measured, closing the pair term COMPLETELY at this strength
+moves the bound by about a tenth. So solving the 1-D gas exactly would likely still not settle
+sharpness, and **the (l, W) route is close to exhausted rather than merely unfinished.**
+
+**Caveat, and it is the thing to check first.** That projection applies a factor measured at
+l = 4..8 to l = 22. The factor may grow with l, and brute force cannot say — it is C(W-1, l-2), and
+the maximizer's argmax at n = 4000 is (151, 357). If the coupling factor does grow substantially
+with l, this route revives; if it is flat, it is dead. That single measurement is the cheapest
+decisive next step, and it needs a way to compute or bound P_min at moderate l without enumeration.
+
+### What is left after this
+
+- **If the coupling factor is flat in l:** abandon (l, W). The missing information is not in those
+  two integers, and the remaining relaxation of any size is the dropped constraint
+  sum(beta) = n + l(l-1)/2, which couples the beta's to n beyond (l, W).
+- **A lower bound on the 1-D gas ground state that keeps the gaps coupled** — transfer-matrix or
+  convex-duality — is the only way to improve the pair term further. No further per-class
+  inequality can help; that is what refutation 3 establishes.
+
+Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+## 2026-09-11 — SHARPNESS SETTLED: REV_n = Θ(√n); the 3/4 exponent is NOT sharp (PR #7185)
+
+The one open piece of this bean since 2026-09-07 — "is the 3/4 sharp?" — is closed on the
+side the (ℓ,W)-route sections above refused to read off their flat columns. Not by a sharper
+bound on `R_λ` (which "What would decide it" asked for) but by a sharper bound on the ENERGY
+as a function of the number of rows, which every prior route threw away when it passed to
+`r ≤ √H`.
+
+**The mechanism.** `R_λ = Σ_c ε_{h(c)} − F(n) ≤ (ℓ−1)C` (hooks strictly decrease along a row,
+#7018). And with the row form `2H = Σ_{i<ℓ} λ_i(λ_i + 2i + 1)`, tangent lines on the convex row
+terms give, for `n = T_k + r`, the polynomial identity
+
+    2(H(λ) − H⁺) ≥ (ℓ − k)² − r,      H⁺ = P_k + r(k+1) = H(λ⁺),   for EVERY λ ⊢ n, every ℓ.
+
+Entropy linear in ℓ, energy quadratic in `ℓ − √(2n)`:
+
+    M_n ≤ (C + L/2)√(2n) + C²/(2L) − C = 8.80√n + 176.3,
+    REV_n ≤ M_n + log p(n) ≤ 11.37√n + 176.3.
+
+With #7014's Ω(√n): **Θ(√n).** Lean: `QOU/BraidKnot/HookSumRowTangentBound.lean`,
+`two_mul_sum_hookZ_sub_hminClosed_ge`, sorry-free, axioms `propext, Classical.choice,
+Quot.sound`. Probe `rev_sqrt_n_upper_bound_probe.py` 7/7: every step exact on all partitions
+n ≤ 30; every link of the chain at n = 2..44 (60 dps). Details and the flaw hunt on `qou-0ie7`.
+
+**What this corrects in the sections above.**
+
+- 2026-09-07 "the data cannot yet distinguish": correct at the time; the discriminator was
+  never going to be data — the route is a two-line convexity argument the enumerations could
+  not see because they never grouped by ℓ.
+- #7070 / #7081 "the lossy step is Jensen on the pair term" and #7093 "the (ℓ,W) route is close
+  to exhausted": both right about the β-bound and both beside the point. The pair term was
+  never needed; `(ℓ−1)C` with the row-indexed energy suffices.
+- **#7081's relaxation RISING above `n^{3/4}` to n = 4000 is an instrument artefact**, not a
+  fact about REV. Its Cauchy–Schwarz `Ĥ` is **48.9 % of `H_min(4000)`** at its own argmax
+  `(ℓ,W) = (151, 357)`: the column half spreads `n − ℓ` cells evenly over `λ₁ − 1` columns,
+  impossible with 151 rows, so the maximiser fed on a negative energy no partition has. Its
+  99–100 % calibration was at n ≤ 40 where `ℓ − k` is small. The "anti-caveat" in that section
+  ("a clear RISE ... not a flat column being over-read") is therefore withdrawn: it was a rise
+  in a quantity that is not an upper bound on anything at that n. Reproduced at n = 44 (R5b).
+- #7081's argmax drift `ℓ = 151` vs `√(2n) = 89` is explained: the bound's maximiser sits
+  `x = C/L = 59` rows above the staircase at every n.
+
+**Still open on this bean** (unchanged, and none of it is the sharpness question): the
+substrate-side reading of REV's Θ(√n) coefficient — the bound's `(C + L/2)√2 = 8.80` is an
+upper constant, the true `M_n/√n` is 3.19 at n = 44 and still rising toward its limit, which
+is not identified; and the q-Borel resummation negative (2026-08-21) stands. **Do not close
+this bean.**

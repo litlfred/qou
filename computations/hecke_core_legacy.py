@@ -63,7 +63,7 @@ from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 # call sites that are display or float-domain; the seminormal builder
 # uses ONLY these (AGENTS.md: never compute in float).
 from q_parameter import Q_MP as _Q_MP, Q_INV_MP as _QI_MP, HA_MP as _H_MP
-from mpmath import mp as _mp, mpf as _mp_mpf_type
+from mpmath import mp as _mp
 
 
 # pyhecke bootstrap (mirrors hecke_core.py) — note `_os` and `_sys`
@@ -1038,8 +1038,33 @@ def _step_chain_22(nucleon_type, prev_types):
 #
 # All matrix entries are q-rational, evaluated numerically here using
 # the substrate q₀.  The character χ_λ(σ_k) is independent of k
-# (class function), so any embedding of crossings into σ_1, σ_2, …
-# yields the same trace.
+# (class function).
+#
+# 🛑 THAT DOES NOT EXTEND TO A WORD, and this comment said it did until
+# 2026-09-12 (bean `qou-w6x3`).  It read: "…so any embedding of crossings into
+# σ_1, σ_2, … yields the same trace."  The premise is true — all σ_k are
+# conjugate — and the conclusion is false, because χ is a class function on the
+# GROUP, not a function of the multiset of letters: χ_λ(σ_1 σ_2) ≠ χ_λ(σ_1 σ_3)
+# in general, since σ_1 σ_2 and σ_1 σ_3 are not conjugate.
+#
+# Measured, at the one place both embeddings of the binding word exist.  The
+# deuteron word under the fixed-H_k embedding and under the 3A embedding are
+# the SAME 23 letters in the SAME H_6, with the same (c, d) offsets, differing
+# only in which generator each letter is assigned to.  χ^λ then differs on 9 of
+# the 11 partitions of 6 — max relative 1.43, and λ = [5,1] goes −0.827 →
+# +3.216, a sign change.  Only the two 1-dimensional irreps are blind to the
+# embedding (ρ(σ_i) = q resp. −q⁻¹ independent of i, so χ = Π(q + d)).
+# `computations/probes/binding_word_3A_reembedding_probe.py`, 18/18.
+#
+# Why this mattered: the sentence, read at face value, says a re-embedding is
+# free.  It is not — it is a re-derivation, and every recorded binding number
+# would move.  `docs/audits/2026-09-12-binding-word-3A-reembedding.md`.
+#
+# `_step_chain_22`'s docstring above makes the NARROW version of this claim,
+# for λ = (2,2) only, and that one is TRUE — but for a stronger reason than it
+# gives.  In λ = (2,2) the matrices ρ(σ_1) and ρ(σ_3) are EQUAL (both
+# diag(q, −q⁻¹)), so σ_1 ↔ σ_3 may be substituted inside any word.  Equal
+# characters of single generators would not have sufficed.
 
 def _standard_tableaux(partition):
     """Enumerate standard Young tableaux of the given shape."""
@@ -1123,26 +1148,32 @@ class _ExactCOO:
 
 
 def _is_sparse_sigma(x):
-    """True for either sparse carrier — scipy float64, or `_ExactCOO`."""
-    if isinstance(x, _ExactCOO):
-        return True
-    try:
-        from scipy.sparse import issparse
-    except ImportError:
-        return False
-    return issparse(x)
+    """True for the sparse sigma carrier, which is `_ExactCOO` alone.
 
+    This tested `scipy.sparse.issparse(x)` as well until 2026-09-11.  That
+    arm was unreachable, and it is removed rather than kept as a defensive
+    check: a guard against a state the code cannot enter reads to the next
+    author as evidence that it can.
 
-def _sigma_is_exact(x):
-    """True when sigma carries mpf, so the caller must NOT use float64 BLAS.
+    Three facts close it, and all three are needed:
 
-    The dispatch in the accumulators keys on the RUNNING matrix's dtype, which
-    starts as `np.eye` (float64); on an exact sigma that sends the very first
-    crossing into a scipy call that raises.  Key on sigma instead.
+    1. `_build_ysn_matrices_exact` emits `_ExactCOO` or a dense tuple of
+       `mpf`, and nothing else — #6794 changed the sparse emit precisely
+       because `csr_matrix` is float64 and cannot hold an `mpf`.
+    2. `csr_matrix(` is CALLED nowhere in this file.
+    3. `entry['ysn']` is assigned in exactly one place
+       (`_ensure_ysn_attached`), from `_build_ysn_matrices`; all three
+       dispatch sites read `entry['ysn']` and none takes a sigma family as
+       a parameter, so no caller can inject one.
+
+    MEASURED over the whole `_PARTITION_TABLE`, every sigma rather than
+    `[0]` of each family: **1528 matrices — 408 dense tuples, 1120
+    `_ExactCOO`, 0 scipy, 0 carrying `.toarray`.**
+
+    The 25 other `csr_matrix` sites under `computations/` build their own
+    matrices in their own modules and never reach this dispatch.
     """
-    if isinstance(x, _ExactCOO):
-        return True
-    return isinstance(x, tuple) and bool(x) and isinstance(x[0][0], _mp_mpf_type)
+    return isinstance(x, _ExactCOO)
 
 
 def _build_ysn_matrices(partition, sparse_threshold=32):
@@ -1163,10 +1194,17 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
 def _build_ysn_matrices_exact(partition, sparse_threshold=32):
     """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
 
-    For dim ≥ sparse_threshold, returns scipy.sparse.csr_matrix objects
-    (each σ_j has at most 2·dim nonzeros: a diagonal entry plus
-    2×2 mixing blocks, so sparsity ≈ 2/dim).
-    For smaller dim, returns dense tuples (faster for small cases).
+    For dim ≥ sparse_threshold, returns `_ExactCOO` objects (each σ_j has
+    at most 2·dim nonzeros: a diagonal entry plus 2×2 mixing blocks, so
+    sparsity ≈ 2/dim). For smaller dim, returns dense tuples of `mpf`
+    (faster for small cases).
+
+    This said "returns scipy.sparse.csr_matrix objects" until 2026-09-05.
+    PR #6794 changed the emit to `_ExactCOO` — csr_matrix is float64 and
+    cannot hold these values — and left the docstring describing the
+    behaviour it had replaced. It is corrected rather than deleted because
+    the same slip is what the whole `_ExactCOO` change exists to prevent:
+    a label that agrees with its own history instead of with its body.
 
     All entries numerical (evaluated at q₀).
     """
@@ -1180,8 +1218,6 @@ def _build_ysn_matrices_exact(partition, sparse_threshold=32):
     tab_index = {tuple(tuple(r) for r in T): i for i, T in enumerate(tabs)}
 
     use_sparse = dim >= sparse_threshold
-    if use_sparse:
-        from scipy.sparse import csr_matrix
 
     matrices = []
     for k in range(1, n):
@@ -1306,19 +1342,49 @@ def _warn_if_kernel_absent():
     """Say, once per process, that this run is on braid-violating matrices.
 
     When `_HAS_LP_KERNEL` is False the accumulator falls back to matrices from
-    `_build_ysn_matrices`, and `computations/audits/ysn_braid_relation_audit.py`
-    proves that family VIOLATES the braid relation: it is not a representation
-    of H_n(q), its products are not Markov traces of braids, and everything
-    computed from them inherits that. The fallback exists so this module still
-    imports in a bare container and must stay — but it produced a DIFFERENT
-    NUMBER, silently, and that is what this warning is for.
+    `_build_ysn_matrices`. The fallback exists so this module still imports in a
+    bare container and must stay; this warning makes the silent case audible.
 
-    Measured (bean `qou-i7ju`), deuterium, same call, same commit, same q0:
+    🛑 THE BRAID-VIOLATION CLAIM THIS DOCSTRING CARRIED IS FALSE AS OF PR #6708
+    (corrected 2026-09-05). It read "`ysn_braid_relation_audit.py` proves that
+    family VIOLATES the braid relation: it is not a representation of H_n(q)".
+    #6708 fixed the builder (`a_rho = h/(1 - q^(-2 rho))`, braid defect
+    0.7315 -> 7.5e-17) and that audit now EXITS 0, with the Python family in the
+    same precision class as the Rust one. Anyone re-deriving the claim from this
+    text would be re-deriving a retired defect.
+
+    THE 17.3 % IS NOT DELETED -- IT IS RE-SCOPED. As recorded (bean `qou-i7ju`),
+    deuterium, same call, same commit, same q0:
 
         kernel live      binding_energy(1,1) = -7.271102125     942 s
         fallback         binding_energy(1,1) = -8.52811254141  22607 s
 
-    17.3 % apart and 24x slower, with no error and no warning. The trap is that
+    That was measured against the PRE-#6708 fallback, i.e. against the
+    braid-violating family, which is the mechanism it was attributed to and
+    which no longer exists. Whether any gap remains AT `binding_energy` is
+    UNMEASURED -- its fallback arm is 6.3 h, so it was not re-run here.
+
+    What WAS re-measured 2026-09-05, on the accumulator inside it
+    (`unified_iterative_correction(1, 1)`, both arms live, k_exact = k_max):
+
+        k=4..7   kernel and fallback agree to 0.000e+00
+        k=8      1.348e-16                 (fallback  14.54 s vs kernel 0.26 s)
+        k=9      0.000e+00                 (fallback 106.35 s vs kernel 2.20 s)
+
+    So at the accumulator the two arms now agree to the arithmetic floor, and
+    the speed gap is the surviving reason to prefer the kernel -- 56x at k=8
+    and 48x at k=9 on this quantity, against the docstring's 24x on
+    `binding_energy`. Those are different quantities; do not quote one as the
+    other. Production is k_max = 11, which neither arm was run to here.
+
+    Do not read the agreement above as proof the families are interchangeable.
+    `ysn_trace_blindness_probe.py` shows the TRACE cannot see a braid defect at
+    all -- Tr(ABA) - Tr(BAB) = Tr(B) - Tr(A) = 0 from the quadratic relation
+    alone -- so trace agreement is weak evidence about matrices. It is the
+    braid audit, not this table, that establishes the fallback is a
+    representation.
+
+    The remaining trap is that
     the module IMPORTS fine — `pyhecke_native` 0.9.0 is installed and exports 58
     names, and the one the guard needs is not among them. So checking
     `import pyhecke_native` tells you nothing; the guard tests the FUNCTION.
@@ -1338,15 +1404,17 @@ def _warn_if_kernel_absent():
     print(
         "\n*** WARNING: pyhecke_native.lp_accumulator_step_traces_mpfr is "
         "UNAVAILABLE.\n"
-        "*** Falling back to _build_ysn_matrices, which VIOLATES the braid "
-        "relation\n"
-        "*** (audits/ysn_braid_relation_audit.py): not a representation of "
-        "H_n(q), so\n"
-        "*** products are not Markov traces of braids. Any binding number from "
-        "this run\n"
-        "*** is NOT the framework's value -- measured 17.3 % off at deuterium, "
-        "and 24x\n"
-        "*** slower. Do not commit a witness from it.\n"
+        "*** Falling back to _build_ysn_matrices. Since PR #6708 that family "
+        "DOES satisfy\n"
+        "*** the braid relation (audits/ysn_braid_relation_audit.py exits 0), "
+        "and at the\n"
+        "*** accumulator the two arms agree to <=1.3e-16 for k<=9 -- but it is "
+        "~50x slower,\n"
+        "*** and the recorded 17.3 % gap at binding_energy(1,1) has NOT been "
+        "re-measured\n"
+        "*** since #6708 (its fallback arm is 6.3 h). Prefer the kernel; treat "
+        "a witness\n"
+        "*** from this run as unverified rather than as wrong.\n"
         "*** Fix: cd tools/pyhecke-native && maturin build --release && pip "
         "install --force-reinstall --no-deps target/wheels/*.whl\n"
         "*** (pyhecke-native is not on PyPI, so a default container has a stale "
@@ -1465,8 +1533,17 @@ def _matmul_dim(A, B, dim):
 
 
 def _trace_dim(M, dim):
+    """Trace, at whatever precision the matrix carries.
+
+    The `float()` that used to wrap `np.trace` truncated an exact (mpf)
+    trace to 53 bits -- measured 2026-09-05: every trace on the A=2 path
+    is `mpf`, and since #6794 the matrices carry 167 significand bits.
+    Each of the three other call sites casts at its own public boundary
+    (`float(chi)`), so widening the return here loses nothing and stops
+    the accumulator's log from being fed a float64 value.
+    """
     if isinstance(M, np.ndarray):
-        return float(np.trace(M))
+        return np.trace(M)
     return sum(M[i][i] for i in range(dim))
 
 
@@ -1480,16 +1557,9 @@ def _identity(dim):
 def _crossing_in_partition(c, d, gen_index, sigmas, dim):
     """Matrix of c·σ_{gen} + d·I  in YSN representation of a partition."""
     sig = sigmas[gen_index]
-    # Densify a scipy sparse sigma FIRST.  `np.asarray(csr_matrix)` does NOT
-    # densify -- it returns a 0-d object array wrapping the matrix -- so the
-    # old `np.asarray(sig)` produced an object scalar, `c * sig_np` stayed
-    # object, and `+ d * np.eye(dim)` dispatched back into scipy and raised
-    # "no supported conversion for types: (dtype('float64'), dtype('O'))".
-    # The `dim < 8` branch below is worse: `sig[i][j]` is not valid indexing
-    # on a csr_matrix at all.  Latent until an exact (mpf) chain routed a
-    # sparse-sigma state down this path.
-    if hasattr(sig, "toarray"):
-        sig = sig.toarray()
+    # A `.toarray()` densify stood here for a scipy sparse sigma.  No carrier
+    # in this module has that method (measured: 0 of 1528), and all three
+    # callers are in the DENSE arm of their dispatch, so `sig` is a tuple.
     if dim >= 8:
         # Work in numpy for large dims
         sig_np = sig if isinstance(sig, np.ndarray) else np.asarray(sig)
@@ -1623,10 +1693,36 @@ def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
 def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
                                  k_exact=K_PARTITION_MAX):
+    """Run the accumulator at the canonical working precision.
+
+    MEASURED 2026-09-05 (qou-sv7h): PR #6794 made `_build_ysn_matrices`
+    exact -- a sigma entry carries **167 significand bits** where float64
+    has 53 -- and this function then threw that away on the first
+    multiply, because mpmath rounds every operation to the AMBIENT
+    `mp.dps`, which is **15** in a bare import of this module.  Measured
+    on one entry: `v*v` keeps 53 bits at ambient dps and 234 bits inside
+    `workdps(COMPUTE_DPS)`, a relative difference of 2.57e-17 per
+    operation; compounded over the accumulation the RESULT moved
+    8.3e-15 / 4.1e-15 / 2.9e-15 at k_exact = 5 / 6 / 7.
+
+    Same defect as the one #6794 fixed, one level up: an exact input
+    multiplied at float64 precision is a float64 computation.  This is
+    the builder's wrapper applied to its consumer.
+    """
+    from _precision import COMPUTE_DPS as _CDPS
+    with _mp.workdps(_CDPS):
+        return _unified_iterative_correction_exact(
+            Z, N, return_per_step=return_per_step,
+            k_max=k_max, k_exact=k_exact)
+
+
+def _unified_iterative_correction_exact(Z, N, return_per_step=False,
+                                        k_max=K_PARTITION_MAX,
+                                        k_exact=K_PARTITION_MAX):
     """Unified iterative correction over per-partition weights.
 
     NAMING CORRECTED 2026-09-05 (owner ruling; PR #6752).  This read
-    "via LP-dual shadow prices".  The weights y_λ are not LP duals —
+    "via LP-dual shadow prices".  The weights y_λ are not LP duals --
     see `lp_shadow_price` above for the two independent reasons.
 
     A SINGLE consistent algorithm — no special cases for any A.
@@ -1796,12 +1892,6 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     # Kerov-damped scale (same as before):
     #   C_λ^kerov = w_λ · y_λ · H_q(λ) · m_e
 
-    # Detect sparse YSN matrices and import scipy lazily.
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:  # pragma: no cover
-        _issparse = lambda x: False  # noqa: E731
-
     state = []
     for e in active:
         first = e['ysn'][0]
@@ -1824,13 +1914,13 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         # categorically-derived damping from the q-heat spectrum.
         scale = e['C_lambda_resolvent_MeV']
         state.append({
-            'entry': e, 'dim': dim, 'M': M, 'log_norm': 0.0,
-            'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
+            'entry': e, 'dim': dim, 'M': M, 'log_norm': _mp.mpf(0),
+            'log_prev': L0, 'scale': scale, 'cumul_partition': _mp.mpf(0),
             'sparse': sparse_sigmas,
         })
 
     per_step = []
-    cumul_total = 0.0
+    cumul_total = _mp.mpf(0)
 
     # Precompute every partition's per-step (trace, log_norm) in Rust, once.
     # This replaces ONLY the matrix maintenance; every line of the accumulation
@@ -1852,7 +1942,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         nuc = ordering[kk]
         prev_types = ordering[:kk]
 
-        step_delta_total = 0.0
+        step_delta_total = _mp.mpf(0)
         partitions_step = {}
 
         for s in state:
@@ -1924,29 +2014,30 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     # Dispatch on SIGMA, not on M_run: M_run starts as
                     # np.eye (float64), so keying on it would send the FIRST
                     # crossing of an exact sigma into a scipy float64 call.
-                    if (_sigma_is_exact(sig_sparse)
-                            or (isinstance(M_run, np.ndarray)
-                                and M_run.dtype == object)):
-                        # Keep the SPARSITY, lose only the BLAS. Densifying σ
-                        # and doing `M_run @ sig_d` is O(dim³) in object
-                        # arithmetic and does not finish — measured, >10 min on
-                        # the A=2 atom alone. Accumulating over σ's nonzeros is
-                        # O(dim·nnz), the same complexity the float64 branch
-                        # gets from sparse BLAS.
-                        coo = _sig_coo.get(gen)
-                        if coo is None:
-                            m = sig_sparse.tocoo()
-                            coo = (m.row, m.col, m.data)
-                            _sig_coo[gen] = coo
-                        rows_i, cols_j, vals = coo
-                        # object dtype: a float64 Msig would truncate mpf.
-                        Msig = np.zeros(M_run.shape, dtype=object)
-                        for i, j, v in zip(rows_i, cols_j, vals):
-                            Msig[:, j] += M_run[:, i] * v
-                    else:
-                        # scipy sparse: dense @ sparse returns dense ndarray,
-                        # computed as a sparse BLAS operation in O(dim·nnz).
-                        Msig = sig_sparse.T.dot(M_run.T).T  # = M_run @ sig_sparse
+                    # Keep the SPARSITY, lose only the BLAS. Densifying σ
+                    # and doing `M_run @ sig_d` is O(dim³) in object
+                    # arithmetic and does not finish — measured, >10 min on
+                    # the A=2 atom alone. Accumulating over σ's nonzeros is
+                    # O(dim·nnz), the same complexity the float64 branch
+                    # used to get from sparse BLAS.
+                    #
+                    # Unconditional since 2026-09-11.  The `else` here was the
+                    # scipy sparse-BLAS arm, guarded by a predicate that asked
+                    # whether sigma carries `mpf` (`_sigma_is_exact`, itself
+                    # removed with this change — the guards were its only
+                    # callers).  Every sparse carrier IS exact, 1120 of 1120,
+                    # so the guard was always true and the arm never ran —
+                    # instrumented, 184 hits on this branch and 0 on the other.
+                    coo = _sig_coo.get(gen)
+                    if coo is None:
+                        m = sig_sparse.tocoo()
+                        coo = (m.row, m.col, m.data)
+                        _sig_coo[gen] = coo
+                    rows_i, cols_j, vals = coo
+                    # object dtype: a float64 Msig would truncate mpf.
+                    Msig = np.zeros(M_run.shape, dtype=object)
+                    for i, j, v in zip(rows_i, cols_j, vals):
+                        Msig[:, j] += M_run[:, i] * v
                     M_run = c * Msig + d * M_run
                 s['M'] = M_run
             else:
@@ -1957,11 +2048,14 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     M_step = _matmul_dim(M_step, M_cross, dim)
                 s['M'] = _matmul_dim(s['M'], M_step, dim)
             if _kernel_hit:
-                m_max = 0.0          # the rescale already happened in Rust
+                m_max = _mp.mpf(0)   # the rescale already happened in Rust
             elif isinstance(s['M'], np.ndarray):
-                m_max = float(np.max(np.abs(s['M'])))
+                # `float(np.max(...))` truncated an exact max to 53 bits and
+                # then divided the whole matrix by it -- a float64 rescale of
+                # exact entries.  Take the max in the matrix's own arithmetic.
+                m_max = max(abs(x) for x in s['M'].flat) if s['M'].size else _mp.mpf(0)
             else:
-                m_max = 0.0
+                m_max = _mp.mpf(0)
                 for i in range(dim):
                     for j in range(dim):
                         if abs(s['M'][i][j]) > m_max:
@@ -2020,7 +2114,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         # generate non-zero corrections — it correctly predicts
         # that typical high-k partitions are SLACK and contribute
         # nothing in the LP-dual framework.
-        gaussian_delta_total = 0.0
+        gaussian_delta_total = _mp.mpf(0)
         for eg in active_gaussian:
             eg_info = eg
             log_trace_approx = _q_gaussian_character_approx(eg_info, None, kk)
@@ -2086,7 +2180,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     # atom's FINAL state, i.e. tr(M_λ(W_atom)) ≤ 0.  Partitions with
     # positive final trace are SLACK → y_λ* = 0 → zero contribution.
     # Replace cumul_total with the gated sum over tight partitions.
-    gated_total = 0.0
+    gated_total = _mp.mpf(0)
     n_tight = 0
     for s in state:
         if s.get('final_tr_sign', 1) <= 0:
@@ -2103,10 +2197,13 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
         return float(gated_total), per_step
-    # float, as this function has always returned. See the note on
-    # binding_energy's return: the cast is at the public boundary rather than at
-    # the kernel, so the accumulation keeps its precision, and it costs nothing
-    # because math.log already narrows inside the loop.
+    # float, as this function has always returned -- the cast is at the public
+    # boundary, and NOW that is true.  The note that stood here said the
+    # accumulation "keeps its precision ... because math.log already narrows
+    # inside the loop", which states the defect and then draws the opposite
+    # conclusion from it: a log that narrows inside the loop is exactly what
+    # stops the accumulation keeping anything.  Every log on this path goes
+    # through `_exact_log` as of 2026-09-07.
     return float(gated_total)
 
 
@@ -2117,6 +2214,23 @@ def _jet_witness_path(Z, N, jet, witness_dir):
 
 
 def atom_character_raw(Z, N, entry, include_inter=True):
+    """Raw characters of the atom braid word in partition λ, at the
+    canonical working precision.
+
+    Same reason as `unified_iterative_correction`'s wrapper: mpmath
+    rounds to the AMBIENT `mp.dps`, which is 15 on a bare import, so
+    without this the exact seminormal matrices are multiplied at
+    float64 precision.  Measured: switching this function's `math.log`
+    to `mp.log` alone moved nothing (0.00e+00 on four partitions),
+    because at dps 15 the two agree -- the precision context is what
+    the type change needs to be worth anything.
+    """
+    from _precision import COMPUTE_DPS as _CDPS
+    with _mp.workdps(_CDPS):
+        return _atom_character_raw_exact(Z, N, entry, include_inter=include_inter)
+
+
+def _atom_character_raw_exact(Z, N, entry, include_inter=True):
     """Return the raw characters of the atom braid word in partition λ.
 
     Returns (chi_q_atom, log_norm, dim) where chi_q_atom × exp(log_norm)
@@ -2130,10 +2244,6 @@ def atom_character_raw(Z, N, entry, include_inter=True):
         The resulting braid is the disconnected product of
         intra-nucleon blocks, corresponding to H_3(q)^⊗A ↪ H_{3A}(q).
     """
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:
-        _issparse = lambda x: False
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
         return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))
@@ -2151,7 +2261,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     sparse_sigmas = _is_sparse_sigma(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
     M = np.eye(dim) if sparse_sigmas else _identity(dim)
-    log_norm = 0.0
+    log_norm = _mp.mpf(0)
     # Rust LP-accumulator kernel (qou-sv7h). Same recurrence, same rescale, at
     # MPFR precision over the braid-satisfying seminormal family. Only the FINAL
     # step's trace and log-norm are returned by this function, so take the last.
@@ -2187,22 +2297,20 @@ def atom_character_raw(Z, N, entry, include_inter=True):
             _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                # Dispatch on SIGMA, not on M_run -- see note above.
-                if (_sigma_is_exact(sig_sparse)
-                        or (isinstance(M_run, np.ndarray)
-                            and M_run.dtype == object)):
-                    coo = _sig_coo.get(gen)
-                    if coo is None:
-                        _m = sig_sparse.tocoo()
-                        coo = (_m.row, _m.col, _m.data)
-                        _sig_coo[gen] = coo
-                    rows_i, cols_j, vals = coo
-                    # object dtype: a float64 Msig would truncate mpf.
-                    Msig = np.zeros(M_run.shape, dtype=object)
-                    for i, j, v in zip(rows_i, cols_j, vals):
-                        Msig[:, j] += M_run[:, i] * v
-                else:
-                    Msig = sig_sparse.T.dot(M_run.T).T
+                # Unconditional since 2026-09-11 -- see the note in
+                # `unified_iterative_correction`.  The scipy sparse-BLAS
+                # `else` that stood here was unreachable: every sparse
+                # carrier is `_ExactCOO`, so the guard never failed.
+                coo = _sig_coo.get(gen)
+                if coo is None:
+                    _m = sig_sparse.tocoo()
+                    coo = (_m.row, _m.col, _m.data)
+                    _sig_coo[gen] = coo
+                rows_i, cols_j, vals = coo
+                # object dtype: a float64 Msig would truncate mpf.
+                Msig = np.zeros(M_run.shape, dtype=object)
+                for i, j, v in zip(rows_i, cols_j, vals):
+                    Msig[:, j] += M_run[:, i] * v
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
@@ -2212,7 +2320,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
                 M_step = _matmul_dim(M_step, M_cross, dim)
             M = _matmul_dim(M, M_step, dim)
         if isinstance(M, np.ndarray):
-            m_max = float(np.max(np.abs(M)))
+            m_max = max(abs(x) for x in M.flat)
         else:
             m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
         if m_max > 1e80:
@@ -2221,21 +2329,26 @@ def atom_character_raw(Z, N, entry, include_inter=True):
             else:
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
-            log_norm += math.log(m_max)
+            log_norm += _exact_log(m_max)
     chi = _trace_dim(M, dim)
     return (float(chi), float(log_norm), int(dim))
 
 
 def _contrib_single_partition(Z, N, entry):
+    """One partition's LP-dual contribution, at the canonical working
+    precision (see `atom_character_raw` for why the context, not just
+    the log type, is what matters)."""
+    from _precision import COMPUTE_DPS as _CDPS
+    with _mp.workdps(_CDPS):
+        return _contrib_single_partition_exact(Z, N, entry)
+
+
+def _contrib_single_partition_exact(Z, N, entry):
     """Compute one partition's final LP-dual contribution for atom (Z,N).
     Returns (final_trace_sign, cumul_delta_MeV).
     Separate from the multi-partition accumulator so we can process
     partitions one at a time (needed for the jet-incremental loop).
     """
-    try:
-        from scipy.sparse import issparse as _issparse
-    except ImportError:
-        _issparse = lambda x: False
 
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
@@ -2260,11 +2373,38 @@ def _contrib_single_partition(Z, N, entry):
     else:
         M = _identity(dim)
 
-    log_norm = 0.0
-    log_prev = math.log(dim)
+    log_norm = _mp.mpf(0)
+    log_prev = _exact_log(dim)
     scale = entry['C_lambda_resolvent_MeV']
-    cumul = 0.0
+    cumul = _mp.mpf(0)
     tr_run = dim  # initial trace of identity
+
+    # Rust LP-accumulator kernel (qou-sv7h).  This is the SAME wiring
+    # `unified_iterative_correction` (line ~1913) and `atom_character_raw`
+    # (line ~2243) already carry; this was the one consumer of the three that
+    # never got it, which is why #6807 measured it making 25 `_matmul_dim`
+    # calls per partition against 0 for the other two.  Exactly the shape of
+    # the note two blocks down: "this loop was left behind".
+    #
+    # `_lp_kernel_steps` returns the trace and the CUMULATIVE log-norm for
+    # every step, with the same `max|M| > 1e80` rescale the Python loop below
+    # applies, so `M` is never materialised here at all.
+    #
+    # As in `unified_iterative_correction`, the kernel replaces ONLY the matrix
+    # maintenance.  Every line of the accumulation -- `log_cur`, the
+    # `scale * (log_cur - log_prev)` delta, `final_tr_sign` -- is the Python
+    # below, unchanged and shared.
+    _ks = _lp_kernel_steps(entry['partition'], [
+        _step_chain_generic(ordering[_k], ordering[:_k], n_gens)
+        for _k in range(A)])
+    if _ks:
+        for _tr, _ln in _ks:
+            tr_run = _tr
+            log_cur = (_ln + _exact_log(abs(_tr)) if abs(_tr) > 1e-300
+                       else log_prev)
+            cumul += scale * (log_cur - log_prev)
+            log_prev = log_cur
+        return (+1 if tr_run > 0 else -1, cumul)
 
     for kkk in range(A):
         nuc = ordering[kkk]
@@ -2291,22 +2431,20 @@ def _contrib_single_partition(Z, N, entry):
             _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                # Dispatch on SIGMA, not on M_run -- see note above.
-                if (_sigma_is_exact(sig_sparse)
-                        or (isinstance(M_run, np.ndarray)
-                            and M_run.dtype == object)):
-                    coo = _sig_coo.get(gen)
-                    if coo is None:
-                        _m = sig_sparse.tocoo()
-                        coo = (_m.row, _m.col, _m.data)
-                        _sig_coo[gen] = coo
-                    rows_i, cols_j, vals = coo
-                    # object dtype: a float64 Msig would truncate mpf.
-                    Msig = np.zeros(M_run.shape, dtype=object)
-                    for i, j, v in zip(rows_i, cols_j, vals):
-                        Msig[:, j] += M_run[:, i] * v
-                else:
-                    Msig = sig_sparse.T.dot(M_run.T).T
+                # Unconditional since 2026-09-11 -- see the note in
+                # `unified_iterative_correction`.  The scipy sparse-BLAS
+                # `else` that stood here was unreachable: every sparse
+                # carrier is `_ExactCOO`, so the guard never failed.
+                coo = _sig_coo.get(gen)
+                if coo is None:
+                    _m = sig_sparse.tocoo()
+                    coo = (_m.row, _m.col, _m.data)
+                    _sig_coo[gen] = coo
+                rows_i, cols_j, vals = coo
+                # object dtype: a float64 Msig would truncate mpf.
+                Msig = np.zeros(M_run.shape, dtype=object)
+                for i, j, v in zip(rows_i, cols_j, vals):
+                    Msig[:, j] += M_run[:, i] * v
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
@@ -2317,7 +2455,7 @@ def _contrib_single_partition(Z, N, entry):
             M = _matmul_dim(M, M_step, dim)
 
         if isinstance(M, np.ndarray):
-            m_max = float(np.max(np.abs(M)))
+            m_max = max(abs(x) for x in M.flat)
         else:
             m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
         if m_max > 1e80:
@@ -2326,11 +2464,11 @@ def _contrib_single_partition(Z, N, entry):
             else:
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
-            log_norm += math.log(m_max)
+            log_norm += _exact_log(m_max)
 
         tr_run = _trace_dim(M, dim)
         if abs(tr_run) > 1e-300:
-            log_cur = log_norm + math.log(abs(tr_run))
+            log_cur = log_norm + _exact_log(abs(tr_run))
         else:
             log_cur = log_prev
         cumul += scale * (log_cur - log_prev)
@@ -2909,12 +3047,16 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     # through the whole accumulation. Casting at the public return keeps the
     # precision everywhere it can still be used.
     #
-    # It costs nothing measurable either way: `log_cur = s['log_norm'] +
-    # math.log(abs(tr_run))` already narrows to float64 INSIDE the accumulator
-    # (math.log returns a Python float whatever it is handed), so this path is
-    # float64-limited well upstream of here. That narrowing is a real,
-    # PRE-EXISTING precision defect and is tracked separately — it is not
-    # introduced, or fixed, by this cast.
+    # The note that stood here said the cast "costs nothing measurable either
+    # way" because `log_cur = s['log_norm'] + math.log(abs(tr_run))` already
+    # narrowed to float64 inside the accumulator, so this path was
+    # "float64-limited well upstream of here".  That was true when written and
+    # is FALSE now: the narrowing it describes is fixed — `_exact_log` at the
+    # three accumulator sites, plus the `workdps(COMPUTE_DPS)` wrapper that
+    # stops the ambient dps 15 undoing it.  So this cast is now the ONLY
+    # narrowing on the path, and it costs whatever the accumulation carried,
+    # which is measured in the hundreds of significand bits rather than 53.
+    # It stays because the public contract is a float (bean `qou-sv7h`).
     return float(B)
 
 

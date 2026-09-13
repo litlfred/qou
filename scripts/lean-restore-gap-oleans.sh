@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
-# Restore the seven Mathlib oleans that lake-cache/qou-<slug> is missing.
+# Restore the 86 Mathlib oleans that lake-cache/qou-<slug> is missing.
+#
+# 7 -> 86 on 2026-09-11 (branch commit d7e3ae8c662).  The original seven unblocked
+# seven content blocks.  The 79 added are the transitive cone of
+# Mathlib.RepresentationTheory.Homological.GroupCohomology.LowDegree, which is what
+# QOU.Eightfold.ObstructionH2Mathlib needs -- and the LIBRARY ROOT `QOU` is SKIPPED
+# behind that module, so without them the single module `lake build QOU` gates on
+# cannot be checked in a stock container at all.  Building the cone from source is
+# 188 s; fetching it is ~22 MB.  Superset: all 7 originals are byte-identical and
+# the previous tarball is still at the parent commit.
 #
 # WHY THIS EXISTS.  The restored olean cache is short seven Mathlib modules, and
 # seven content-block `.lean` files import them transitively.  In a stock

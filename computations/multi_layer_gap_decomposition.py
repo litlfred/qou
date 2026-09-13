@@ -227,6 +227,72 @@ def project_l1_improvement(decomp: dict) -> dict:
     }
 
 
+def _interpretation(total_l1, total_l2_l3, total_l3, decompositions) -> str:
+    """Build the witness `interpretation` FROM the computed layer totals.
+
+    This string used to be a hardcoded paragraph, and it went stale exactly the
+    way AGENTS.md warns a hand-kept number does: after bean `qou-7loj` moved the
+    free-nucleon rows onto the `canonical_mass` facade, the module docstring
+    above was updated to say L1 measures +0.0000 MeV and the Markov × 5/2
+    projection is inapplicable — while this string, which is what lands in the
+    witness, went on asserting "L1 dominates free-nucleon errors (+27 MeV per
+    nucleon)" and "Markov × 5/2 closes ~14.5 MeV of L1".
+
+    The witness is the artifact a downstream reader consumes, so the wrong copy
+    was the durable one, and it contradicted `summary.total_L1_MeV` sitting two
+    keys away from it. Deriving the sentence makes that divergence impossible.
+
+    The L1-closed test is deliberately the SAME comparison
+    `project_l1_improvement` uses (observed gap vs `L1_STRUCTURAL_MARKOV_5_2_PCT`)
+    rather than a second threshold of its own, so the prose and the per-row
+    `applies` flag cannot disagree.
+    """
+    free = [d for d in decompositions if d["is_free_nucleon"]]
+    bound = [d for d in decompositions if not d["is_free_nucleon"]]
+    max_free_pct = max((abs(mpf(str(d["err_pct"]))) for d in free), default=mpf(0))
+    l1_closed = max_free_pct < L1_STRUCTURAL_MARKOV_5_2_PCT
+
+    if l1_closed:
+        l1 = (
+            f"L1 is CLOSED: the free-nucleon rows come from the canonical_mass "
+            f"facade (bean qou-7loj), so the worst free-nucleon error is "
+            f"{mp.nstr(max_free_pct, 4)} % and the layer totals "
+            f"{mp.nstr(total_l1, 4)} MeV across {len(free)} free nucleon(s). "
+            f"The structural Markov × 5/2 projection (PR #1081 Probe 2) is "
+            f"correspondingly INAPPLICABLE — it projects an improvement onto a "
+            f"layer with no gap — and is retained guarded, re-arming only if an "
+            f"L1 gap above {mp.nstr(L1_STRUCTURAL_MARKOV_5_2_PCT, 4)} % reappears."
+        )
+    else:
+        l1 = (
+            f"L1 carries {mp.nstr(total_l1, 6)} MeV across {len(free)} free "
+            f"nucleon(s), worst {mp.nstr(max_free_pct, 4)} % — above the "
+            f"{mp.nstr(L1_STRUCTURAL_MARKOV_5_2_PCT, 4)} % structural Markov × 5/2 "
+            f"projection, which is therefore live. An L1 gap this size means the "
+            f"free-nucleon source is NOT the canonical_mass facade; check the "
+            f"qou-7loj wiring before reading anything below."
+        )
+
+    if bound:
+        worst = max(bound, key=lambda d: abs(mpf(str(d["L2_plus_L3_MeV"]))))
+        signs = {("+" if mpf(str(d["L2_plus_L3_MeV"])) >= 0 else "−") for d in bound}
+        l23 = (
+            f"L2+L3 carries {mp.nstr(total_l2_l3, 6)} MeV across {len(bound)} "
+            f"bound isotope(s), {'sign-varying' if len(signs) > 1 else 'single-signed'}, "
+            f"worst {mp.nstr(mpf(str(worst['L2_plus_L3_MeV'])), 4)} MeV on "
+            f"{worst['label']}. L3 (α-shell-specific) is "
+            f"{mp.nstr(total_l3, 4)} MeV of that."
+        )
+    else:
+        l23 = "No bound isotopes in scope, so L2+L3 is not measured here."
+
+    return (
+        f"{l1} {l23} The L2 and L3 closures remain open structural questions "
+        f"(channel-weight derivation and per-shell volume-density evaluation "
+        f"respectively); nothing here derives either."
+    )
+
+
 def main() -> None:
     print("Per-isotope L1 + L2 + L3 mass-gap decomposition")
     print(f"50-dps mpmath; data from low-isotope-mass-table.witness.json + ⁴He from PR #1089")
@@ -315,12 +381,17 @@ def main() -> None:
     witness = {
         "compute": "multi_layer_gap_decomposition",
         "description": (
-            "Per-isotope L1 + L2 + L3 decomposition of the +2.89-3.86 % "
-            "multi-isotope mass gap. Implements the three-layer framing "
-            "from docs/audits/2026-05-24-single-knot-vs-multi-nucleon-"
+            "Per-isotope L1 + L2 + L3 decomposition of the multi-isotope "
+            "mass gap. Implements the three-layer framing from "
+            "docs/audits/2026-05-24-single-knot-vs-multi-nucleon-"
             "reconciliation.md. Quantifies which layer dominates each "
-            "isotope's error and projects the structural Markov × 5/2 "
-            "improvement (PR #1081) on L1 free-nucleon predictions."
+            "isotope's error, and carries the structural Markov × 5/2 "
+            "projection (PR #1081) as a GUARDED L1 improvement that "
+            "re-arms only if an L1 gap reappears. Since bean qou-7loj the "
+            "free-nucleon rows come from the canonical_mass facade rather "
+            "than the deprecated Vol·ρ witness, so L1 is closed and the "
+            "residual is binding-side alone; the pre-fix framing of this "
+            "gap as '+2.89-3.86 %' (≈ 27 MeV per nucleon) is historical."
         ),
         "parameters": {
             "precision": "mpfr",
@@ -335,17 +406,17 @@ def main() -> None:
             "total_L2_plus_L3_MeV": float(total_l2_l3),
             "total_L3_alpha_shell_MeV": float(total_l3),
             "n_isotopes": len(decompositions),
-            "interpretation": (
-                "L1 dominates free-nucleon errors (+27 MeV per nucleon on "
-                "p, n via Family A linking weight). L2+L3 dominates "
-                "multi-nucleon binding-energy errors (sign-varying, max "
-                "+1.66 MeV on ⁴He). The α-particle shell (⁴He) carries "
-                "the entire L3-specific contribution at this scope. "
-                "Structural Markov × 5/2 (PR #1081 Probe 2) closes "
-                "~14.5 MeV of L1 per free nucleon — a 1.5× gap closure "
-                "at L1 scope. L2 + L3 closures remain open structural "
-                "questions (channel-weight derivation + per-shell Geom "
-                "evaluation respectively)."
+            # DERIVED from the numbers computed above, never asserted
+            # alongside them. This string previously hardcoded the pre-qou-7loj
+            # framing ("L1 dominates free-nucleon errors (+27 MeV per
+            # nucleon)", "Markov × 5/2 closes ~14.5 MeV of L1") while the
+            # module docstring above already said L1 measures +0.0000 MeV and
+            # the projection is inapplicable — so the WITNESS, which is what a
+            # downstream reader consumes, disagreed with both the file's own
+            # docstring and its own total_L1_MeV. Deriving it makes that
+            # divergence impossible rather than merely fixed once.
+            "interpretation": _interpretation(
+                total_l1, total_l2_l3, total_l3, decompositions
             ),
         },
         "cross_references": [

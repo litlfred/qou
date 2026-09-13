@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T08:13:00.874108+00:00",
-  "commitSha": "f3eda23e16d2264f63219d93215252b42ae4a460",
+  "computedAt": "2026-09-12T20:35:34.420277+00:00",
+  "commitSha": "3d227b00d959478ae3bbf3a7a4a38ad13c4718c1",
   "assertions": [
     {
       "name": "chi3_is_multiplicative_on_the_generators_CONTROL",
@@ -139,11 +139,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1899,
+  "durationMs": 1404,
   "computation": "qbeta-admissible-functionals-bracket",
   "scriptFile": "qbeta_admissible_functionals_bracket_probe.py",
   "scriptHash": "5e69e30ffd3a",
-  "scriptCommitSha": "b2ebf398a643ce224692e96f96b7c4f848d858f1",
+  "scriptCommitSha": "3eacaf77362826fe3ed182747358bb28bacb07b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -153,10 +153,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [

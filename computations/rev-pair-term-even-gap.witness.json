@@ -1,0 +1,110 @@
+{
+  "bean": "qou-hok7",
+  "checks": [
+    {
+      "check": "R1_the_even_multiset_conjecture_is_REFUTED_at_BOTH_levels",
+      "detail": "brute-forced every gap composition for l = 2..7, W = l-1..20 (105 (l, W) pairs). I conjectured P_min(l, W) had a closed form and it does not. Two refutations, both recorded because the second is the interesting one:\n\n        (a) 'most even gaps' laid out largest-first misses the minimum on 44 of 105 pairs, by up to 7.364%. At (l, W) = (4, 4) the multiset is {2,1,1}: (2,1,1) gives 6.8236, (1,2,1) gives 6.5135. So the energy depends on the ARRANGEMENT, not just the multiset. My two hand-checks before writing this both had all-equal gaps \u2014 drawn from exactly the cases where the distinction cannot appear.\n\n        (b) Centering the even multiset (small gaps at the ends, large in the middle) fixes most of it \u2014 44 violations down to 12 \u2014 and is still WRONG. At (l, W) = (5, 11) the minimiser has gaps (2,3,4,2), which is not the even multiset {3,3,3,2} in any order. So the minimiser is not a rearrangement of the even gaps either; it is a genuine coupled optimisation, and no closed form of this shape exists.\n\n        This check PASSES on the refutation: it asserts both conjectures fail and that centering strictly improves on flat, which is the structural content that survives.",
+      "pass": true
+    },
+    {
+      "check": "R2_Jensen_is_ALREADY_OPTIMAL_for_the_per_class_relaxation",
+      "detail": "for a single distance class the differences x_i >= d satisfy sum x_i <= d*W, and eps is CONVEX, so sum eps(x_i) is convex and minimised at the centroid \u2014 all x_i equal \u2014 which is exactly Jensen. Checked against the opposite extreme point (one variable takes all the slack) and 280 random feasible configurations across 7 (l, W, d) triples drawn from the maximizer's own argmaxes: 0 beat Jensen.\n\n        **This is the load-bearing negative.** I had reached for the extreme point expecting it to beat Jensen \u2014 at (l,W,d) = (22,37,1) it gives 33.4 against Jensen's 24.8 \u2014 and that is backwards: for a CONVEX summand the extreme point is the MAXIMUM. So Jensen cannot be improved by tightening any one distance class; the entire loss identified in #7081 lives in the COUPLING between classes, since the same gaps appear in all of them and the per-class relaxation forgets that.",
+      "pass": true
+    },
+    {
+      "check": "R3_the_coupling_is_worth_a_measured_factor_not_a_rounding_error",
+      "detail": "in the regime the maximizer actually selects (W/l ~ 1.7, its argmax at every n from #7081), the TRUE P_min exceeds Jensen by a factor of 1.1905-1.2216 over l = 4..8. So the inter-class coupling is worth roughly a factor of 1.21 on the pair term \u2014 not a rounding error, and the right size to matter given #7081 measured the maximized bound over-stating M_n by ~3x. Whether it is ENOUGH cannot be read from l <= 8; brute force is C(W-1, l-2) and the maximizer's argmax at n = 4000 is (151, 357), where that is astronomically large.",
+      "pass": true
+    },
+    {
+      "check": "R4_verdict_no_closed_form_but_the_target_is_now_priced",
+      "detail": "**No closed form for P_min(l, W), and the naive routes to one are closed.** The even multiset is not the minimiser in any arrangement (R1), and Jensen cannot be beaten one distance class at a time because eps is convex and Jensen already sits at that minimum (R2). What is left is the inter-class coupling, and R3 prices it: a factor of ~1.21 on the pair term in the regime the maximizer selects.\n\n        **And priced against the bound, that is probably not enough \u2014 this is the number the next attempt needs.** The pair term is only one part of B = l*C - P - F(n). At #7081's own n=40 argmax (l, W) = (22, 37), l*C - F(n) = 129.60054 and J = 50.81003, so B = 78.790513; applying the full 1.21x coupling factor gives 68.125789, only 13.54% smaller. Against the ~3x over-statement #7081 measured, closing the pair term COMPLETELY at this strength moves the bound by around a tenth. So the honest expectation is that solving the 1-D gas exactly would still not settle sharpness, and the (l, W) route is close to exhausted rather than merely unfinished.\n\n        Caveat on that estimate: it uses the small-l coupling factor (measured at l = 4..8) at l = 22, and the factor may well grow with l \u2014 brute force cannot say, since it is C(W-1, l-2) and the argmax at n = 4000 is (151, 357). It is a projection, not a measurement, and it is the projection that should be checked first.\n\n        This settles nothing about sharpness and makes no claim; REV_n stays in [Omega(sqrt n), O(n^(3/4))].\n\n        Concretely for the next attempt: the object to bound is the minimum energy of l points in [0, W] under eps, and the useful direction is a lower bound that keeps the gaps coupled \u2014 a transfer-matrix or convex-duality treatment of the 1-D gas \u2014 rather than any further per-class inequality. The dropped constraint sum(beta) = n + l(l-1)/2 remains available too, and is the only relaxation of any size left besides this one.\n\n        Recorded as three failed conjectures of mine rather than one result, because each narrowed the space: arrangement matters; the even multiset is not it; and the per-class relaxation is already tight.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 4,
+  "checks_total": 4,
+  "claim": "P_min(l, W) has NO closed form of the conjectured shapes: the even multiset is not the minimiser in any arrangement, and Jensen is already optimal per distance class. The loss is inter-class coupling, priced at ~1.21x, which projects to only ~10% off the bound against a ~3x gap.",
+  "computedAt": "2026-09-07T16:35:28.109568+00:00",
+  "coupling_factor_measured": "1.2098941",
+  "dps": 40,
+  "pair_min_vs_jensen": [
+    {
+      "W": 7,
+      "argmin_points": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "ell": 4,
+      "jensen": "3.400408229",
+      "ratio": "1.19047",
+      "true_P_min": "4.048094017"
+    },
+    {
+      "W": 8,
+      "argmin_points": [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      "ell": 5,
+      "jensen": "5.667839447",
+      "ratio": "1.21573",
+      "true_P_min": "6.890552427"
+    },
+    {
+      "W": 10,
+      "argmin_points": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "ell": 6,
+      "jensen": "7.541691915",
+      "ratio": "1.22159",
+      "true_P_min": "9.212846418"
+    },
+    {
+      "W": 12,
+      "argmin_points": [
+        0,
+        1,
+        3,
+        6,
+        8,
+        10,
+        12
+      ],
+      "ell": 7,
+      "jensen": "9.5157343",
+      "ratio": "1.21623",
+      "true_P_min": "11.57334921"
+    },
+    {
+      "W": 14,
+      "argmin_points": [
+        0,
+        1,
+        3,
+        6,
+        8,
+        11,
+        13,
+        14
+      ],
+      "ell": 8,
+      "jensen": "11.56815552",
+      "ratio": "1.20545",
+      "true_P_min": "13.94480364"
+    }
+  ],
+  "probe": "rev_pair_term_even_gap_probe",
+  "q0_anchor": "physical_proton"
+}

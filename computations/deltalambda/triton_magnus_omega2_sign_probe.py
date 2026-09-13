@@ -211,6 +211,16 @@ def main() -> None:
             _a, _b = gens[_i], gens[_j]
             if _a == _b:
                 continue
+            # FAR-COMMUTATIVITY (ported from he4_magnus_omega2_sign_sparse_probe.py).
+            # [A_a, A_b] = 0 whenever |a-b| >= 2: sigma_a and sigma_b commute, so
+            # their germs A_g = q(d_q sigma_g)sigma_g^-1 do.  The pair table kept
+            # these terms and the code below built each one as a dense matrix
+            # commutator that is identically zero.  MEASURED before skipping, not
+            # assumed.  Verified end-to-end by witness equality against the
+            # committed run (see the commit for the H9 figures).  Drops every
+            # non-adjacent pair build.
+            if abs(_a - _b) >= 2:
+                continue
             _key = (_a, _b) if _a < _b else (_b, _a)
             _net[_key] = _net.get(_key, 0) + (1 if _a < _b else -1)
     _net = {k: v for k, v in _net.items() if v}
@@ -231,7 +241,21 @@ def main() -> None:
     # stale block. That is the qou-5ovu lesson: a gate that answers "is this
     # entry PRESENT?" when the question is "is this entry CURRENT?" is how two
     # witnesses sat at a superseded convention for three weeks.
-    _stamp = hashlib.sha256(f"{Q0}|9".encode()).hexdigest()[:12]
+    # ...AND ON THE PRODUCER SOURCE (qou-z3q9, 2026-09-08). The stamp above
+    # keyed on q and the strand count ONLY, so a cache entry stayed "current"
+    # across a CODE change -- exactly the PRESENT-vs-CURRENT failure the
+    # paragraph above names, one axis over. Measured: while verifying the
+    # far-commutativity port, a PATCHED run over an existing cache printed
+    # `resumed 14/30 partitions` and served rows computed by the UNPATCHED
+    # code, which would have made the "is the output identical?" check
+    # circular -- 14 of 30 rows were literally the old code's output.
+    #
+    # Hashing the whole file means a comment-only edit also busts the cache.
+    # That is deliberate: the alternative (hash just the Omega2/germ block) is
+    # narrower but silently wrong the moment a helper outside the block moves,
+    # and this producer's cache is worth ~30 min, not ~30 h.
+    _src_sha = hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest()
+    _stamp = hashlib.sha256(f"{Q0}|9|{_src_sha}".encode()).hexdigest()[:12]
     _prog = pathlib.Path(os.path.dirname(__file__)) / ".triton_magnus_omega2_progress.jsonl"
     _done: dict[tuple, dict] = {}
     _dropped = 0
@@ -249,7 +273,8 @@ def main() -> None:
             _done[tuple(_r["row"]["lambda"])] = _r["row"]
         if _dropped:
             print(f"  dropped {_dropped} cached partitions computed at a "
-                  f"different q", flush=True)
+                  f"different q OR by a different version of this producer",
+                  flush=True)
         if _done:
             print(f"  resumed {len(_done)}/{len(PARTITIONS_9)} partitions from "
                   f"{_prog.name}", flush=True)

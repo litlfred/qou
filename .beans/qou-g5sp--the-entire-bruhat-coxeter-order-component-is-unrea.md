@@ -1,11 +1,11 @@
 ---
 # qou-g5sp
 title: The entire Bruhat / Coxeter-order component is unreachable from QOU.lean (9 modules, includes merged main work)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-07T17:08:22Z
+updated_at: 2026-09-08T03:16:01Z
 ---
 
 ## The finding
@@ -261,3 +261,96 @@ Extending that to all 1853 means a full from-source build in topological order. 
 container cannot do it: large closures SIGSEGV, and disk is ~860 MB.  **So the sizing
 question stands unanswered, and it is now unanswered for a measured reason rather than
 an assumed one.**  That is the third estimate of its cost and the first with evidence.
+
+## 2026-09-07 — CLAIMED; the measurement this bean asks for is running (PR #7124)
+
+Taking up this bean's own recommendation ("measure first — run the sweep across
+all 2773, get the actual RED count"), which it could not act on because the sweep
+only knew how to build the dirty closure.
+
+Re-measured on `main` `1ec22a9040c`: **2773 on disk / 910 in root / 1863 outside
+(67%)** — the ratio holds, the counts drift, as this bean already says.
+
+**Two flags added** (`scripts/lean-library-sweep.py`):
+`--all` (compile every module, 4.0 s/module measured) and `--only PREFIX`
+(chunk it, because the full run writes ~610 MB against 619 MB free).
+
+**Three measurements worth keeping regardless of how the sweep ends:**
+
+1. **60 modules on today's main have NO olean at all**, against the 3 this bean's
+   unsound proxy reported. That figure IS sound — olean presence is measured, not
+   inferred from an mtime.
+2. **The hardlinked shadow costs 0.22 MB/module, not 2.4 GB.** `du` says 2.4 GB,
+   `df` moved 9 MB over the same 40-module run. First direct confirmation that
+   #6827's hardlink change does what it claimed.
+3. **The chunked result will be WEAKER than a single-run one** and must be
+   reported as such: a later chunk resolves an earlier-chunk import against the
+   snapshot olean, not one this run rebuilt. Same snapshot-conditionality the
+   sweep already carries (`qou-56qy`), not a new hole.
+
+**I have NOT added the 1863 imports and will not propose it here.** This bean is
+right that scope is the owner's call and should follow the RED count.
+
+
+## 2026-09-08 — MEASURED. All 2774 modules, 0 REDs, and this bean's headline figure was WRONG
+
+The sizing question is answered. PR #7124.
+
+### The headline figure is corrected: 1324 outside, not 1863
+
+`scripts/lean-root-coverage-audit.py` measured the root's **direct import lines**
+(910) and called everything else "NOT in the root". `lake build QOU` builds the
+**transitive closure** — **1450** modules — so the blind spot is **1324 (47.7 %)**,
+not 1863 (67 %). The script's own docstring said "import closure" while its code
+summed one line each. Fixed in #7124; **quote the transitive number.** The
+overstated figure had reached this bean's headline, the script's docstring, an audit
+doc and a PR body.
+
+### The measurement
+
+All **163 chunks**, all **2774 modules** covered — distinct counts, unioned by
+name (summing per-chunk totals double-counts pulled-in deps and gave an impossible
+2200/2193/2774):
+
+| | count |
+|---|---|
+| `ok` | **2754** |
+| **RED — corpus defects** | **0** |
+| UNVERIFIED — cannot judge here | 1 |
+| TIMEOUT — not judged | 4 |
+| SKIPPED — behind one of those | 16 |
+
+**Outside the root closure: 1324 modules, 1323 verified ok.** The one exception is
+`Machinery.HeckeH4RepDecomp`, a timeout cascade.
+
+### One real defect, and it was genuinely in the blind spot
+
+`QOU/Machinery/BruhatRankCriterion.lean:607` did not typecheck: `9151ad46ee5`
+(`qou-1u90`) made `bruhatLe_mul_simple_of_isRightDescent` unconditional, ported
+its callers across ten files, and missed this one. Fixed (`ab2189d6eb4`);
+BraidKnot re-run 454 ok/1 RED → **456 ok/0 RED**. Verified it is **not** in the
+transitive closure, so `lake build QOU` would not have compiled it — had it been
+inside, this instance would not have supported the thesis.
+
+### The residue is four clusters, no defects
+
+Mathlib cache gap (`…GroupCohomology.LowDegree`) taking the **library root** with
+it — so **the root is not broken, it is unverifiable here**; `Machinery.HeckeH4*`
+(10, the same H4 family a sibling measured as SIGSEGV); `MathlibExt.Octonion*`
+(6); `Archimedean.PauliWitness*` (2).
+
+### Six gate defects against one real corpus defect
+
+Never-built deps unpulled; the root getting no chunk; **stale** deps unpulled
+(a snapshot olean presenting as `unknown identifier` for a lemma that is in
+source); `--only QOU` prefix-matching all 2774; an unlink/write **race**
+(demonstrated fixed — SkewSYTBranchingBijection UNVERIFIED → ok, two dependents
+un-skipped); and a driver bug that silently no-op'd 65 chunks and **overwrote a
+456-module result**. A gate this young reporting on 2774 modules is mostly
+reporting on itself.
+
+### Still open — NOT closing this bean
+
+The scoping decision (whether to add the missing imports to `QOU.lean`) is the
+owner's and is untouched. It now has its measurement: **the blind spot held exactly
+one real defect across 1324 modules.**

@@ -1,5 +1,54 @@
 # The cross-atom binding-overshoot trend is REAL (and the "≤2.5% value-band" framing was wrong)
 
+> **🛑 SUPERSEDED 2026-09-12 — THE CONCLUSION IN THIS TITLE DOES NOT HOLD UNDER
+> THE CANONICAL CONVENTION. The analysis stands as a CONVENTION-C, MUON-ANCHORED
+> record; read it as that, not as a live result.**
+>
+> Both producers behind this audit carried a convention-C `tr_M` literal and the
+> muon anchor. Migrated to convention D at the proton pin (bean `qou-46ys`,
+> commits `65401dce5bd` and `bacb7dd1e7c`), reading both constants from
+> `canonical-mass-table-extended.witness.json` so the matched pair stays matched:
+>
+> | | C (muon) — this audit | **D (proton) — canonical** |
+> |---|---|---|
+> | O(D) | 2.050 | **0.8021** |
+> | O(³He) | 2.861 | **0.8116** |
+> | O(⁴He) | 3.364 | **0.6829** ← *below* ³He |
+> | bands disjoint D<³He / ³He<⁴He | True / True | **False / False** |
+> | flatten needs | −28 % / −39 % | **−1.17 % / +17.5 %** |
+> | required `P_λ` | **SUPPRESS** to 48.79 % | **ENHANCE** to 124.7 % |
+>
+> So under D: there is **no overshoot** (every `O < 1` — an undershoot), the
+> **A-trend inverts** at ⁴He, flattening needs `Vol_hyp` shifts *inside* the
+> ±20 % knot-ID ambiguity this audit's own script cites, and **the sign of the
+> required `P_λ` correction is opposite**. A `P_λ` search inheriting the
+> "suppression" framing from here is aimed the wrong way.
+>
+> The rederivation was verified before it was trusted: `tr_M = Σ_λ y_λ χ_λ` with
+> `χ_λ` convention-free, recomputed from the committed 50-digit `χ_λ` against
+> `y_λ^D`, reproducing the canonical table exactly for all three atoms.
+>
+> **🛑 Scoped (a), not (b)** (AGENTS.md §"Before declaring refuted"): one pin,
+> one convention, one knot/Vol assignment, one error model. This refutes the
+> trend **as computed**; it does **not** prove no atom-dependence exists —
+> **`Vol_hyp` remains a C-era assignment** and a D-consistent knot assignment is
+> not derived (`qou-e5jf`). What *is* established is that the robustness argument
+> fails on its own stated criterion.
+>
+> **🛑 Correction to this banner as first written (2026-09-12, same day):** it
+> said *"`Vol_hyp` and `B/m_e` remain C-era assignments"*. **`B/m_e` is not an
+> assignment at all** — it is `|−B/m_e|` from the AME **experimental** binding
+> energies (`2.224566` / `7.718058` / `28.295673` MeV over `m_e`, reproduced to
+> <0.2 %), i.e. the *comparison target*. It carries no convention and never did.
+> Only the knot/volume assignment is a modelling choice, so the remaining
+> straddle is **narrower** than this banner first claimed.
+>
+> **Do not calibrate against the 2026-08-15 `rho-k` audit's D deuteron
+> `0.5751`** — correct then, stale now; the live value is `0.15197`.
+>
+> Full analysis: [`2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md`](2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md).
+
+
 **Date:** 2026-06-23
 **Branch:** `claude/binding-overshoot-robustness-2026-06-23`
 **Status:** Positive/self-correcting robustness check on the #2635 overshoot trend. No fit; no P_λ.

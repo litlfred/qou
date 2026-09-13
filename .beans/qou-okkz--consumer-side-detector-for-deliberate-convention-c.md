@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T14:10:58Z
-updated_at: 2026-08-24T15:06:42Z
+updated_at: 2026-09-08T07:45:35Z
 ---
 
 ## MEASURED on main, 2026-08-24 (PR #5669, branch claude/consumer-control-arm-detector-2026-08-24)
@@ -120,3 +120,5 @@ at 2 over repeated runs; output idempotent.
 The fourth passes because with the self-witness counted the census is exactly 3
 and `3 <= 3` still reads specific. The poisoning is LATENT: the tree is one such
 artifact away from it firing. Recorded rather than tuned away.
+
+## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.

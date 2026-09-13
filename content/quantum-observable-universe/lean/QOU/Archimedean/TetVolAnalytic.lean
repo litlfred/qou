@@ -33,11 +33,14 @@
     *integrand*, so "differentiate under the integral sign" does not apply to it
     as it stands, and there is as yet no real-valued carrier to state LHS
     analyticity about.
-  * Even a complete LHS-analyticity result would not finish the obtuse case: the
-    identification of the region with the chimney over the inscribed triangle
-    (`IdealTetEqChimney.idealTet_eq_chimney`) carries `α, β, γ < π/2` as
-    hypotheses, and that is a **set equality**, which analytic continuation
-    cannot supply.
+  * The obtuse case was closed WITHOUT this file, by direct geometry
+    (`ObtuseTiling.idealTetVolume_of_vertices_obtuse`).  This bullet used to say
+    that even a complete LHS-analyticity result would not finish it, because
+    `IdealTetEqChimney.idealTet_eq_chimney` carries `α, β, γ < π/2` and is a set
+    equality.  Those hypotheses turned out to be unused and were dropped, so the
+    claim is retracted — but the conclusion for THIS file is unchanged and if
+    anything sharper: the continuation route did not close the obtuse case, and
+    the results here address the identity's RHS only.
 
   Both points are recorded in bean `qou-w3eg`.
 

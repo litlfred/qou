@@ -81,6 +81,7 @@ export default chapter({
         "frakD-energy-decomposition",
         "wedderburn-mass-formula",
         "wedderburn-mass-formula-proof",
+        "level-zero-discards-braid-noncommutativity",
         "frobenius-s-classification",
         "frobenius-s-classification-proof",
         "frobenius-s-classification-table3-data",

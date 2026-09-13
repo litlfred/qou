@@ -1,0 +1,178 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T20:18:32.871749+00:00",
+  "commitSha": "4fe7d8c497e40cf329b4ab87192cb8b14791ee4d",
+  "assertions": [
+    {
+      "name": "exact_response_equals_lean_closed_form",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean respPP vs exact H_6 convention-D Markov trace over Q(q)"
+    },
+    {
+      "name": "response_factorises_as_h_sq_times_coeff",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean respPP_eq_hSq_mul_coeff -- the Theta(h^4) correction"
+    },
+    {
+      "name": "free_trace_is_square_of_nucleon_trace",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "disjoint-union multiplicativity of tr_M; Lean ResponseClosedForm.free_eq"
+    },
+    {
+      "name": "nucleon_trace_matches_H3_closed_form",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean nucleonTrace vs tr_M_canonical(11-letter element, 3)"
+    },
+    {
+      "name": "derived_ratio_reproduces_step3_witness",
+      "computed": "4.20053531255627065232224323630158386239842021388678781484325e-60",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "step-3 witness pp_binding[G^3].ratio_atom_over_free (mpmath path)"
+    },
+    {
+      "name": "log_law_reproduces_step3_B",
+      "computed": "2.67030557919158756456943529807713534308140312786726644363733e-60",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "step-3 witness pp_binding[G^3].B_pp_MeV vs -alpha log(1 + h^4 c)"
+    },
+    {
+      "name": "coeff_in_zero_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean responseCoeff_pos + responseCoeff_le_one (all q >= 1)"
+    },
+    {
+      "name": "proved_bracket_contains_B",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean binding_magnitude_fourth_order"
+    },
+    {
+      "name": "derived_ceiling_bounds_B",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean binding_ceiling_on_interval: |B| <= alpha/100"
+    },
+    {
+      "name": "coeff_transcription_agrees_across_paths",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "sympy exact rational substitution vs direct mpmath transcription"
+    },
+    {
+      "name": "weighted_response_gains_one_order_over_blocks",
+      "computed": "2",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "0",
+      "source": "per-block responses vanish to order 1 in (q^2-1); the sum to order 2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 92032,
+  "computation": "diproton-response-closed-form-probe",
+  "scriptFile": "diproton_response_closed_form_probe.py",
+  "scriptHash": "8a0a795230e1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/diproton_response_closed_form_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/diproton_response_closed_form_probe.py"
+  },
+  "description": "qou-ales step 10: DERIVES the trace-weighted response r that step 9 carried as a measured hypothesis, by exact convention-D Markov-trace evaluation on H_6 over Q(q) with the two canonical 11-letter nucleon words and the gamma-gamma bond G^3. Result: r = (q^2-1)^2 (q^4+q^2+1) R / ((q^2+1) P) = h^2 c with c(q_0) = 0.5537297 order one, so mu - 1 = h^4 c and the binding magnitude is Theta(h^4) -- CORRECTING step 9's Theta(h^2) headline by two powers. Verifies the Lean closed forms respPP, responseCoeff and nucleonTrace as symbolic identities, the disjoint-union multiplicativity of the free trace, the reproduction of the step-3 witness ratio, and the derived ceiling alpha/100 which needs no measured input at all. Also records the three distinct orders (per-block mixed response, y-weighted response, ratio) that make a character-level order check misleading. No AME/CODATA binding value or census read.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "convention": "D (z = q^3/(q^2+1); two-row weight support at H_6)",
+    "dps": 60,
+    "step3_witness": "computations/probes/gamma-gamma-h3-psd-selector-probe.witness.json",
+    "bond": "G^3",
+    "free_word_letters": 22,
+    "alpha_register_name": "E_0^full (tower-summed hadronic scale); NOT the Q_beta base E_0^(N=0)"
+  },
+  "data": {
+    "weight_support": [
+      [
+        6
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "tr_M_free_symbolic": "(q**4 + 1)**2*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)**2/(16*q**18*(q**2 + 1)**4)",
+    "tr_M_atom_symbolic": "(q**4 + 1)**2*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)*(2*q**22 - 6*q**20 + 14*q**18 - 22*q**16 + 33*q**14 - 32*q**12 + 34*q**10 - 28*q**8 + 21*q**6 - 11*q**4 + 4*q**2 - 1)/(16*q**20*(q**2 + 1)**5)",
+    "response_r_symbolic": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - q**8 + 4*q**6 - 4*q**4 + 2*q**2 - 1)/((q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+    "response_coeff_symbolic": "q**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - q**8 + 4*q**6 - 4*q**4 + 2*q**2 - 1)/((q**2 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1))",
+    "nucleon_trace_symbolic": "(q**4 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)/(4*q**9*(q**2 + 1)**2)",
+    "h_sq": "0.0437062085325219894020193356773883097682139607135222162428474",
+    "h_fourth": "0.00191023266428829795033657460695990239137849865562153658336483",
+    "response_coeff_at_q0": "0.553729692164977291529198347133250089217644868616966303160461",
+    "response_r_at_q0": "0.0242014253964117050815132474470324887810525785552221662413724",
+    "ratio_atom_over_free": "1.00105775254515984363438899056087562030410819249458685927826",
+    "alpha_E0_full_MeV": "4.22748335562903055026805602658721115361518419806473100034162",
+    "abs_B_MeV": "0.00446926800571304380374820701180731622704735458006504849953226",
+    "proved_lower_MeV": "0.00446690639742661465465675882946261485054220519556734559532782",
+    "proved_upper_MeV": "0.00447163127903748344431149641497556201906824056048040481011663",
+    "derived_ceiling_alpha_over_100_MeV": "0.0422748335562903055026805602658721115361518419806473100034162",
+    "per_block_response_order_in_q_sq_minus_one": {
+      "(6,)": null,
+      "(5, 1)": 1,
+      "(4, 2)": 1,
+      "(3, 3)": 1
+    },
+    "weighted_response_order_in_q_sq_minus_one": 2,
+    "coeff_two_path_dev": "0.0"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

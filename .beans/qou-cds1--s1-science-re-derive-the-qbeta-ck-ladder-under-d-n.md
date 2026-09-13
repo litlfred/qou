@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T17:44:11Z
+updated_at: 2026-09-12T19:08:13Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8061,3 +8061,43 @@ proved through `descRun_le` + `elems_sorted` (#7103) + `threshold_to_pointwise`
 (2378 products, no candidate); the tower map itself; `card = catalan` at general
 m (route: bicoloured Motzkin, absent from Mathlib); and therefore
 `dim TL_n = catalan n` and the semisimplicity it feeds. NOT closed.
+
+## 2026-09-08 — BASE SETTLED by owner ruling (qou-99qc): ε := tr_M at z_D. The D-frame ladder is to be re-derived on the z_D base (0.4447004 MeV, −43.157 %). Structural c₂ = −1 remains the self-consistency check; the blocker is still the N=1 phase (qou-pdix). No z-swap of the C ladder (decayLadder_zC_threeRow_ne_zero).
+
+
+
+## 🛑 CORRECTION 2026-09-12 (from PR #7212) — the three net figures quoted here are at q = 111/100
+
+This bean quotes, in its "no single 11-crossing element" item:
+
+  build_nucleon_nf     ( 9 crossings)      net = -0.1883216147
+  build_atom_nf_exact  (11, interleaved)   net = -0.2272041420
+  nucleon_gen_chains   (11, gen-grouped)   net = -0.2332458961
+
+All three match **q = 111/100** to every digit quoted; none matches the
+substrate proton pin:
+
+  model                                q=111/100        substrate proton
+  build_nucleon_nf     ( 9 crossings)  -0.18832161472   -0.18829060147
+  build_atom_nf_exact  (11, interl.)   -0.22720414203   -0.22715971177
+  nucleon_gen_chains   (11, gen-grp)   -0.23324589607   -0.23319771132
+
+q = 111/100 is `pyhecke.gram._H_FRAC`'s exactness device, **185 ppm** off the
+substrate -- ~16000x the 11.54 ppb mu-p tension. Diagnosed 2026-09-04 in
+`docs/audits/2026-09-04-delta-net-canon-and-crossing-count-analysis.md` §(ii)
+and asserted in `qbeta_delta_candidate_census_probe`; the correction had not
+reached this bean.
+
+The item's CLAIM is unaffected -- there really are three mutually inconsistent
+nucleon constructions, and the two 11-crossing ones really do differ only in
+ORDER. Only the decimals were at the wrong q.
+
+Cross-check that fixes them: the gen-grouped substrate value is the calibration
+constant `qbeta_option_e_order_dof_range_probe` (merged) asserts at 1e-30,
+-0.23319771131565870204...
+
+Same correction appended to `qou-bg3w` and `qou-1qsw`, and applied to
+`qbeta_d1_eleven_crossing_exclusion_probe`'s docstring (commit 4694165f19).
+
+NOT closing or re-statusing this bean -- it is in-progress and belongs to
+another agent's arc.

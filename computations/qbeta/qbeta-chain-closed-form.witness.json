@@ -1,0 +1,176 @@
+{
+  "computation": "qbeta-chain-closed-form",
+  "assertions": [
+    {
+      "name": "free_trace_factorises_over_nucleons",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Ocneanu multiplicativity over disjoint strand ranges"
+    },
+    {
+      "name": "denominator_is_4_q6_times_q2plus1_cubed",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "symbolic_r_matches_the_measured_ratio",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "derived by exact Laurent arithmetic, not matched to a candidate"
+    },
+    {
+      "name": "closed_form_predicts_out_of_sample_A_3_and_4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "derived from A = 1, 2; predicts A = 3, 4 to ~1e-15 (float64 weight routine limits the numeric side)"
+    },
+    {
+      "name": "delta_per_A_is_NOT_flat_over_the_full_range",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "0.254 at A=2 to 5.777 at A=40 — a shallow region, then t_p^A"
+    },
+    {
+      "name": "the_A_2_to_4_window_alone_looks_flat",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "which is how four data points suggested a law that is false"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 40,
+    "t_p": "1.1457596924573008697",
+    "t_n": "0.98774368811580957163",
+    "r_numerator": "q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1",
+    "r_denominator": "4*q**6*(q**6 + 3*q**4 + 3*q**2 + 1)",
+    "r_at_q0": "0.7019932570132013577923154",
+    "trace_convention": "D (SU(2)/Temperley-Lieb)"
+  },
+  "data": {
+    "free_factorisation": [
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "predicted": "1.13171690432221008",
+        "measured": "1.13171690432221",
+        "rel_err": "7.31079e-17"
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "predicted": "1.11784622897822658",
+        "measured": "1.117846228978227",
+        "rel_err": "3.78111e-16"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "predicted": "1.29667561224494402",
+        "measured": "1.296675612244944",
+        "rel_err": "1.36945e-17"
+      }
+    ],
+    "r_numerator_factored": "(q**8 + q**4 + q**2 + 1)*(q**14 + q**12 + q**10 - 1)",
+    "r_denominator_factored": "4*q**6*(q**2 + 1)**3",
+    "growth": [
+      {
+        "A": 2,
+        "tr_free": "1.31276527286",
+        "tr_atom": "0.804315578263",
+        "delta_tr": "0.508449694597",
+        "delta_per_A": "0.25422485"
+      },
+      {
+        "A": 3,
+        "tr_free": "1.5041135353",
+        "tr_atom": "0.564624112451",
+        "delta_tr": "0.93948942285",
+        "delta_per_A": "0.31316314"
+      },
+      {
+        "A": 4,
+        "tr_free": "1.72335266163",
+        "tr_atom": "0.396362319688",
+        "delta_tr": "1.32699034194",
+        "delta_per_A": "0.33174759"
+      },
+      {
+        "A": 6,
+        "tr_free": "2.26235752707",
+        "tr_atom": "0.195325184186",
+        "delta_tr": "2.06703234289",
+        "delta_per_A": "0.34450539"
+      },
+      {
+        "A": 10,
+        "tr_free": "3.89883986583",
+        "tr_atom": "0.0474340278972",
+        "delta_tr": "3.85140583794",
+        "delta_per_A": "0.38514058"
+      },
+      {
+        "A": 20,
+        "tr_free": "15.2009522994",
+        "tr_atom": "0.0013785401202",
+        "delta_tr": "15.1995737593",
+        "delta_per_A": "0.75997869"
+      },
+      {
+        "A": 40,
+        "tr_free": "231.068950809",
+        "tr_atom": "1.16433571928e-6",
+        "delta_tr": "231.068949645",
+        "delta_per_A": "5.7767237"
+      }
+    ],
+    "out_of_sample": [
+      {
+        "A": 3,
+        "atom_predicted": "0.564624112450980111",
+        "atom_measured": "0.56462411245097933",
+        "atom_rel": "1.383e-15",
+        "free_predicted": "1.50411353530052487",
+        "free_measured": "1.50411353530052405",
+        "free_rel": "5.478e-16"
+      },
+      {
+        "A": 4,
+        "atom_predicted": "0.396362319687651586",
+        "atom_measured": "0.396362319687651834",
+        "atom_rel": "6.265e-16",
+        "free_predicted": "1.72335266162679293",
+        "free_measured": "1.72335266162679656",
+        "free_rel": "2.104e-15"
+      }
+    ],
+    "matrix_route_seconds_at_A4": "1958.9"
+  },
+  "context": {
+    "axis": "can the extensivity question be settled symbolically, bypassing the n >= 15 dimension wall?",
+    "answer": "Yes. tr_M(free) = t_p^Z t_n^N exactly (Ocneanu multiplicativity over disjoint strand ranges), and on a homogeneous chain tr_M(atom) = t_p . r^(A-1) with r derived in closed form by exact Laurent arithmetic. No matrices at any A.",
+    "consequence": "The closed form REFUTES qou-n9qf's headline. Delta_tr(A) = t_p(t_p^(A-1) - r^(A-1)) is asymptotically exponential, not linear: Delta_tr/A runs 0.254 at A=2 to 5.777 at A=40. The four calibration atoms sat in a shallow region, and t_p > 1 > t_n keeps near-symmetric light nuclei there. The measurement stands; the word 'extensive' is withdrawn.",
+    "scope": "Sections 2-4 are for a HOMOGENEOUS pure-proton chain. Real atoms mix p and n, so their p-p, p-n and n-n interfaces need a multi-state transfer matrix, which is not derived here. Section 1 does hold for real atoms."
+  },
+  "gitCommit": "970c276e0140b43e59be58de450e4dffa62c6cb6",
+  "durationMs": 0,
+  "scriptFile": "qbeta_chain_closed_form_probe.py",
+  "scriptHash": "315f3d898c18",
+  "scriptCommitSha": "2e4f094078ec7c958a3653abbb74eb38659d09d5",
+  "commitSha": "970c276e0140b43e59be58de450e4dffa62c6cb6",
+  "engine": "mpmath+sympy",
+  "computedAt": "2026-09-08T04:22:59.518387+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
+}

@@ -1,5 +1,19 @@
 # The 3-body sign obstruction is a missing $(-1)^{n-1}$
 
+> **🛑 §3–§4 WITHDRAWN 2026-09-12 — the sign is not missing, it is Mayer's.**
+> The partition function this document's §6 asked for exists (the hard-core
+> lattice gas on the nucleon sites with the interface-letter traces as pair
+> weights), and its Mayer expansion of `−ln(Ξ/Ξ_free)` carries `−φᵀ_n` at
+> **every** order — so the corpus's uniform minus *is* the classical sign, and
+> "restoring the alternation" is the same expansion at **negative activity**.
+> `b₃ < 0` holds for every bond triple in `(0,1)`, with no `2/3` threshold. §1
+> (the identity), §2 (the alternation) and §5a (`μ = e^{−B/α}`) stand. The
+> `2.2511` / `2.7439` MeV of §4 are negative-activity coefficients, not
+> postdictions. See
+> [`2026-09-12-ursell-partition-function-for-b3.md`](2026-09-12-ursell-partition-function-for-b3.md)
+> and `QOU.MassTheory.UrsellPartitionFunctionB3` (sorry-free). Left as a dated
+> record.
+
 **Date.** 2026-08-30
 **Scope.** **(a)** — an identification, not a derivation. It does not refute
 `MayerThreeBodySign` and does not close the magnitude.

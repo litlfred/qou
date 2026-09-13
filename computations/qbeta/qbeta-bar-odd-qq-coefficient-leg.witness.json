@@ -1,0 +1,301 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-08T04:17:16.258972+00:00",
+  "commitSha": "29126ed0ed6265720b337780d89b8c16185c25b7",
+  "assertions": [
+    {
+      "name": "Delta_S: parity decomposition A = A_e + h A_o, B = B_e + h B_o, all parts in F",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "A_e = 0,  B_e = 0"
+    },
+    {
+      "name": "Delta_S: bar-odd condition on Q(q)-coefficients is ONE F-linear equation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "even(aA+bB) = a0·A_e + h²a1·A_o + b0·B_e + h²b1·B_o  (a,b split over F)"
+    },
+    {
+      "name": "Delta_S: dim_F S(Delta) = 3 (codimension one, never {0})",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "coefficient row nonzero ⇒ rank 1 ⇒ dim_F = 3"
+    },
+    {
+      "name": "Delta_S: over Q(q) the criterion is VACUOUS — (h/A, 0) is a solution",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "bar(h) = -h, so rescaling any nonzero trace by h/A manufactures bar-oddness"
+    },
+    {
+      "name": "Delta_S: bar-even coefficients — every (a,b) ∈ F² works (A, B already odd)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "A_e = B_e = 0 ⇒ the F-equation is 0 = 0 on (a0, b0)"
+    },
+    {
+      "name": "Delta_S: rational coefficients — all of Q² (reproduces #7118)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the F-equation restricted to Q² is 0 = 0"
+    },
+    {
+      "name": "Delta_L: parity decomposition A = A_e + h A_o, B = B_e + h B_o, all parts in F",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "A_e = (-q**10 - q**8 + 2*q**6 + 2*q**4 - q**2 - 1)/(8*q**5),  B_e = (-q**10 + q**8 + q**2 - 1)/(8*q**5)"
+    },
+    {
+      "name": "Delta_L: bar-odd condition on Q(q)-coefficients is ONE F-linear equation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "even(aA+bB) = a0·A_e + h²a1·A_o + b0·B_e + h²b1·B_o  (a,b split over F)"
+    },
+    {
+      "name": "Delta_L: dim_F S(Delta) = 3 (codimension one, never {0})",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "coefficient row nonzero ⇒ rank 1 ⇒ dim_F = 3"
+    },
+    {
+      "name": "Delta_L: over Q(q) the criterion is VACUOUS — (h/A, 0) is a solution",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "bar(h) = -h, so rescaling any nonzero trace by h/A manufactures bar-oddness"
+    },
+    {
+      "name": "Delta_L: bar-even coefficients — exactly ONE F-line, (a:b) = (B_e : -A_e)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "a0·A_e + b0·B_e = 0 with A_e/B_e = (q**4 + 2*q**2 + 1)/(q**4 + 1)"
+    },
+    {
+      "name": "Delta_L: that line is q-DEPENDENT (A_e/B_e ∉ Q), so it is not f(q)·(rational pair)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "d/dq (A_e/B_e) = -4*q*(q - 1)*(q + 1)*(q**2 + 1)/(q**4 + 1)**2"
+    },
+    {
+      "name": "Delta_L: rational coefficients — only (0,0) (reproduces #7118)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "a0·A_e + b0·B_e = 0 with a0, b0 ∈ Q forces a0 = b0 = 0 since A_e/B_e ∉ Q"
+    },
+    {
+      "name": "Markov property at two levels forces ab·(q - z_D)² = 0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "(aq + b z_D)² − (a+b)(aq² + b z_D²) = −ab(q − z_D)²; q ≠ z_D ⇒ ab = 0"
+    },
+    {
+      "name": "normalisation a + b = B_e − A_e is nonzero on the line",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "a + b = (q - 1)**2*(q + 1)**2*(q**2 + 1)/(4*q**3)"
+    },
+    {
+      "name": "eps_odd(Delta_L) is bar-odd, eps_odd(1) = 1, and both a, b ∈ F with ab ≠ 0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "a = -(q**4 + 1)/(2*q**2),  b = (q**2 + 1)**2/(2*q**2)"
+    },
+    {
+      "name": "so the unique bar-odd functional on Delta_L over F is NOT a Markov trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "ab ≠ 0 and the obstruction above"
+    },
+    {
+      "name": "readout is a NUMBER, reported not proposed (anti-fit: value is a diagnostic)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Q = 0.223561664529956 MeV, -71.4237 % vs AME"
+    },
+    {
+      "name": "Delta_L endpoints reproduce the fork-pricing grid (z=q: +39.32 %, z_D: −15.45 %)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "39.323951 % / -15.451387 %"
+    },
+    {
+      "name": "the 8.8e-10 of #7118 §5 is the ROUNDING of the derived m_n literal, not a truncated Q_beta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "dropped/Q = 8.82e-10 = witness-vs-AME rel 8.821e-10"
+    },
+    {
+      "name": "Q_BETA_MEV is σ-limited (quoted to σ/6), not truncated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "0.78233341(61): last quoted digit 1e-8 = σ/61 — a truncated value would carry digits below σ"
+    },
+    {
+      "name": "the witness's own reference is a float64 path (NO-FLOAT64 defect lives THERE)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "qou_substrate.constants.Q_NEUTRON_MEV = M_N_MEV - M_P_MEV - M_E_MEV in float"
+    },
+    {
+      "name": "CODATA-2022 registry Q_beta = (m_n - m_p) - m_e = codata_2022_source.M_N_MINUS_P_MEV - M_E_MEV, +191 ppb from AME, 0.2σ combined",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "190.852 ppb, 0.208 σ — consistent, DIFFERENT dataset"
+    },
+    {
+      "name": "adopting the registry Q_beta moves c_3 by ≈ +0.31 (≈ 15 %) — a blast radius, put to the owner",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Δc_3 = 0.30888811 to leading order in u"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 32,
+  "computation": "qbeta-bar-odd-qq-coefficient-leg",
+  "scriptFile": "qbeta_bar_odd_qq_coefficient_leg_probe.py",
+  "scriptHash": "d7d774712294",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_bar_odd_qq_coefficient_leg_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_bar_odd_qq_coefficient_leg_probe.py"
+  },
+  "description": "Q(q)-coefficient leg of the bar-odd element discriminator (#7118 §4a (i)). With F = Q(q+1/q) the bar-fixed field, the solution set of bar(aA+bB) = -(aA+bB) is an F-space of dimension 3 for BOTH Delta_S and Delta_L — over Q(q) the criterion is VACUOUS ((h/A, 0) always works). Restricting to bar-EVEN coefficients (a, b in F, the p<->n-neutral ones): Delta_S admits all of F^2, Delta_L exactly ONE q-dependent F-line (a:b) = (B_e:-A_e). Restricting to Q reproduces #7118 (F^2 vs {0}). The unique normalised bar-odd functional on Delta_L over F is a mixture a tr_q + b tr_{z_D} with ab != 0, and the Markov property at two levels forces ab (q - z_D)^2 = 0, so it is NOT a Markov trace for any z' — Option-G territory; its readout at the proton pin is recorded as a diagnostic, not proposed. Also corrects #7118 §5: Q_BETA_MEV = 0.78233341(61) is sigma-limited, not truncated; the 8.8e-10 is the rounding of the derived m_n literal inside the witness's own float64 reference Q_NEUTRON_MEV. The CODATA-2022 registry gives Q_beta = 0.78233355931(38), +191 ppb (0.3 sigma), which would move c_3 by ~+0.31 through 1/u^3 — a dataset choice put to the owner, not made.",
+  "parameters": {
+    "q0_pin": "proton (q_parameter.Q_50_DIGIT_STR), exact Rational at readout",
+    "convention": "D: z_D = q^3/(q^2+1); augmentation z = q",
+    "tower_status": "ORDER-ZERO-ONLY at n=3 (H_3), the algebra D7 names for the decay channel"
+  },
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "Delta_S": {
+      "A": "(1 - q**4)/(2*q**2)",
+      "B": "(-q**6 + q**4 - q**2 + 1)/(2*q**2*(q**2 + 1))",
+      "A_e": "0",
+      "A_o": "(-q**2 - 1)/(2*q)",
+      "B_e": "0",
+      "B_o": "(-q**4 - 1)/(2*q*(q**2 + 1))",
+      "dim_F_over_Qq": 3,
+      "dim_F_over_F": 2,
+      "dim_Q_over_Q": 2,
+      "F_line": null
+    },
+    "Delta_L": {
+      "A": "(-q**6 - q**4 + q**2 + 1)/(4*q)",
+      "B": "(-q**10 - q**8 - q**6 + q**4 + 2)/(4*q*(q**4 + 2*q**2 + 1))",
+      "A_e": "(-q**10 - q**8 + 2*q**6 + 2*q**4 - q**2 - 1)/(8*q**5)",
+      "A_o": "(-q**8 - 2*q**6 - 2*q**4 - 2*q**2 - 1)/(8*q**4)",
+      "B_e": "(-q**10 + q**8 + q**2 - 1)/(8*q**5)",
+      "B_o": "(-q**12 - 2*q**10 - 5*q**8 - 4*q**6 - 5*q**4 - 2*q**2 - 1)/(8*q**4*(q**4 + 2*q**2 + 1))",
+      "dim_F_over_Qq": 3,
+      "dim_F_over_F": 1,
+      "dim_Q_over_Q": 0,
+      "F_line": {
+        "a": "(-q**10 + q**8 + q**2 - 1)/(8*q**5)",
+        "b": "-(-q**10 - q**8 + 2*q**6 + 2*q**4 - q**2 - 1)/(8*q**5)"
+      }
+    },
+    "markov_obstruction": "(aq + b z_D)^2 - (a+b)(a q^2 + b z_D^2) = -ab (q - z_D)^2",
+    "delta_L_unique_bar_odd_functional_over_F": {
+      "a": "-(q**4 + 1)/(2*q**2)",
+      "b": "(q**2 + 1)**2/(2*q**2)",
+      "eps_odd_Delta_L": "-(q - 1)*(q + 1)*(q**4 + 1)/(8*q**3)",
+      "a_at_q0": "-1.021853104266260994701010",
+      "b_at_q0": "2.021853104266260994701010",
+      "Q_beta_MeV": "0.223561664529956373244029209070",
+      "err_vs_AME": "-0.71423735497892596298",
+      "is_markov_trace": false,
+      "status": "diagnostic readout; not proposed, not wired (NO FITTING)"
+    },
+    "q_beta_references": {
+      "codata_constants_Q_BETA_MEV": "0.7823334099999999999999999999999999999999999999999994098296040398407753",
+      "err": "0.0000006100000000000000000000000000000000000000000000000004695054444291958375",
+      "precision_status": "sigma-limited (quoted to sigma/6), NOT truncated — #7118 §5 corrected",
+      "witness_reference_Q_NEUTRON_MEV": "0.7823334093099085",
+      "witness_reference_type": "float",
+      "m_n_literal_rounding_dropped_MeV": "6.90000e-10",
+      "rel_7118": "8.82094e-10",
+      "registry_Q_beta_MeV": "0.78233355931000000000",
+      "registry_err_MeV": "3.80000e-7",
+      "registry_source": "qou_substrate.codata: 'neutron-proton mass difference energy equivalent in MeV' = 1.29333251(0.00000038) minus 'electron mass energy equivalent in MeV'",
+      "shift_vs_AME_ppb": "190.8521330",
+      "shift_sigma_combined": "0.207756",
+      "u_proton": "0.0085172345501561421893",
+      "delta_c3_if_adopted": "0.308888113721",
+      "decision": "owner — dataset choice (AME-2020 direct vs CODATA-2022 m_n-m_p), 116 consumer files"
+    },
+    "scope": {
+      "tier": "exclusion within the admissible span over Q (#7118) EXTENDED: over F the exclusion on Delta_L is 'no bar-odd MARKOV trace'; over Q(q) the criterion has no content",
+      "established": "the three-row table above, each row a sympy identity",
+      "NOT_established": "that bar-even coefficients are THE right restriction — that is an interpretive choice (p<->n-neutral normalisation), stated, not derived",
+      "premise": "bar is p<->n conjugation (qou-e58e), as in #7118"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

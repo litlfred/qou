@@ -93,6 +93,14 @@ acts on the coefficients too and the condition becomes a functional equation in 
 generically solvable. Scaling a trace by `f(q)` rescales `Q_β` itself, so it is a *different
 physical claim* rather than merely a wider search — but it is untested either way.
 
+> **Closed 2026-09-08 (bean `qou-0e2p`,
+> [`2026-09-08-qbeta-bar-odd-qq-coefficient-leg.md`](2026-09-08-qbeta-bar-odd-qq-coefficient-leg.md)).**
+> Over ℚ(q) the criterion is **vacuous** — the solution set has `F`-codimension one for every nonzero
+> element (`(h/A, 0)` always works). Restricted to bar-even coefficients `F = ℚ(q+1/q)`, `Δ_S` keeps
+> the whole span and `Δ_L` admits exactly one line, `(a:b) = (B_e : −A_e)`, which is a q-dependent
+> mixture of the two admissible traces and **not a Markov trace for any `z'`** (`ab(q − z_D)² = 0` is
+> forced). Restricted to ℚ it reproduces this document.
+
 **Non-admissible `z`.** `Δ_L`'s second branch is **involution-consistent** (`B̄(B(z)) − z = 0`
 identically), so some `z` outside the admissible set may make it bar-odd. Irrelevant to the physics
 — an inadmissible functional is excluded on other grounds — but it means *"`Δ_L` can never be
@@ -121,6 +129,17 @@ relative difference                  :  8.8e-10
 rounding fixed in the α_EM producer earlier today (`0.15` was a 2 % truncation of `0.15325`). My
 tolerance was simply tighter than the reference's own precision. **Recorded, not fixed here** — it
 is a `codata_constants` question, not this probe's.
+
+> **🛑 Diagnosis inverted — corrected 2026-09-08 (`qou-0e2p`, same audit as §4a).** `Q_BETA_MEV =
+> 0.78233341(61)` is **σ-limited, not truncated**: AME-2020 quotes it to σ/6, and
+> `codata_2022_source.py` says so at the literal. The `8.8e-10` is the witness's *own* reference —
+> `qou_substrate.constants.Q_NEUTRON_MEV`, a **float64** subtraction whose `M_N_MEV` is the
+> AME-derived literal `939.56542179`, i.e. `M_P + M_E + Q_β = 939.56542179069` **rounded to 8
+> decimals** (drops `0.69e-9 MeV`; `0.69e-9/0.78233341 = 8.82e-10`). The degraded number is the
+> witness's, and the precision defect is in that module's float path, not in `codata_constants`.
+> The registry *does* hold a more precise `Q_β = 0.78233355931(38)` from CODATA-2022 `m_n − m_p`,
+> but that is a **different dataset** (+191 ppb, 0.2σ) and a 116-file, `Δc₃ ≈ +0.31` decision put
+> to the owner in the 2026-09-08 audit §5, not a truncation to fix.
 
 ## 6. What was NOT done
 

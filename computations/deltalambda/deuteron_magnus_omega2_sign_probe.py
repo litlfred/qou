@@ -194,6 +194,22 @@ def main() -> None:
             _a, _b = gens[_i], gens[_j]
             if _a == _b:
                 continue
+            # FAR-COMMUTATIVITY (ported from he4_magnus_omega2_sign_sparse_probe.py).
+            # [A_a, A_b] = 0 whenever |a-b| >= 2: sigma_a and sigma_b commute, so
+            # their germs A_g = q(d_q sigma_g)sigma_g^-1 do.  The pair table kept
+            # these terms and the code below built each one as a dense matrix
+            # commutator that is identically zero.  MEASURED before skipping, not
+            # assumed: over every non-singlet H6 shape, max |entry| of the 54
+            # omitted commutators is exactly 0.0, and the regenerated witness is
+            # identical to the committed one in every numeric field (only
+            # scriptHash moves).  Drops 6 of 10 pair builds on the deuteron word.
+            # It is NOT a measurable speedup here -- H6 dims are <= 16, so six
+            # skipped 16x16 commutators vanish into interpreter overhead:
+            # 3 reps each gave BEFORE 1367/1264/1291 ms vs AFTER 1212/1339/1166 ms,
+            # overlapping ranges under load 5.3.  The saving is structural and is
+            # expected to matter as dim grows, not at A=2.
+            if abs(_a - _b) >= 2:
+                continue
             _key = (_a, _b) if _a < _b else (_b, _a)
             _d = 1 if _a < _b else -1
             _net[_key] = _net.get(_key, 0) + _d

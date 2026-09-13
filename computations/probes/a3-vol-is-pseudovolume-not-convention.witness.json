@@ -1,0 +1,117 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T20:12:02.360726+00:00",
+  "commitSha": "aff750371d46faf0e986b843169c1e7d98d2b83f",
+  "assertions": [
+    {
+      "name": "all three B_OVER_ME literals reproduce AME B/m_e -- worst rel 0.000256 -- so B_OVER_ME carries NO convention; calling it a C-era assignment was wrong and overstated the remaining straddle",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "VOL(D) is neither the retired 4.40 nor the ruled 0 -- VOL(D)/Vol(6_2) = 2.9030871 -- not 1 and not an integer multiple, so the 2026-08-29 ruling does NOT retire this input",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "and it is not an integer multiple either -- nearest integer 3, distance 0.09691",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "VOL depends only on Z, not on A -- Vol(3He) == Vol(4He) exactly, and Vol(D) differs -- Z-clustering. The 2026-06-05 retrospective calls this 'suggesting they are not the genuine Path B Vol(K)'",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "the 2026-05-19 audit calls 12.776/12.554 a pseudo-volume, not hyperbolic -- verbatim: 'Not legitimate hyperbolic volumes (degenerate tetrahedra)' and 'SnapPy pseudo-volume sum across the degenerate triangulation ... NOT a Mostow-rigidity-protected hyperbolic invariant'",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "the mislabelling is live in the producers -- same defect class as the Lambda-vs-Cl_2 trap AGENTS.md records: right number, wrong name, and the wrong name invites the wrong inference",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "VOL's derivation contains no Markov parameter -- VOL is a SnapPy triangulation output on a braid closure; nothing in it touches z. tr_M and Q0 were the only convention-bearing inputs and both are migrated (#7235, #7236). There is no 'D in the trace, C in the geometry' straddle -- the geometry was never C",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "a3-vol-is-pseudovolume-not-convention",
+  "scriptFile": "a3_vol_is_pseudovolume_not_convention_probe.py",
+  "scriptHash": "6301be468593",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/a3_vol_is_pseudovolume_not_convention_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/a3_vol_is_pseudovolume_not_convention_probe.py"
+  },
+  "description": "Corrects my own 'remaining straddle' framing after the binding-channel convention migration. B_OVER_ME is the AME EXPERIMENTAL comparison target, not a C-era assignment. VOL carries no Markov parameter, so the convention migration is COMPLETE -- there is no 'D in the trace, C in the geometry'. But VOL is MISLABELLED Vol_hyp: the corpus's own 2026-05-19 audit calls 12.776/12.554 a SnapPy pseudo-volume of a degenerate triangulation, not a hyperbolic volume. And it is a DIFFERENT object from the Vol(6_2)=4.40 the owner retired on 2026-08-29, so that ruling does not reach it. Measures only.",
+  "data": {
+    "B_over_me_is_experimental": {
+      "D": {
+        "B_exp_MeV": "2.224566",
+        "B_over_me_computed": "4.353367061",
+        "literal_in_producer": "4.353"
+      },
+      "3He": {
+        "B_exp_MeV": "7.718058",
+        "B_over_me_computed": "15.10386272",
+        "literal_in_producer": "15.1"
+      },
+      "4He": {
+        "B_exp_MeV": "28.295673",
+        "B_over_me_computed": "55.37325069",
+        "literal_in_producer": "55.37"
+      }
+    },
+    "vol_objects_are_distinct": {
+      "A3_producers_VOL": {
+        "D": "12.776",
+        "3He": "12.554",
+        "4He": "12.554"
+      },
+      "retired_bloch_Vol_6_2": "4.40083251612",
+      "ruled_canonical_closure_Vol": "0.0",
+      "ratio_VOL_D_over_Vol_6_2": "2.903087076"
+    },
+    "vol_is_pseudovolume_per_corpus": true,
+    "producers_still_naming_it_Vol_hyp": [
+      "gap_a3_overshoot_robustness_check.py",
+      "gap_a3_deuteron_A_D_overshoot.py",
+      "probes/gap_a3_plambda_bar_even_admissibility_probe.py",
+      "probes/gap_a4_cross_isotope_residual_probe.py"
+    ],
+    "convention_migration_complete": true,
+    "still_open_and_NOT_a_convention_question": "whether a Z-clustered pseudo-volume of a degenerate triangulation is the right geometric input at all (flagged 2026-06-05, unresolved)"
+  }
+}
