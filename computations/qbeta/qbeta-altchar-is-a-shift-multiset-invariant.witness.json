@@ -1,0 +1,378 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T11:24:34.855779+00:00",
+  "commitSha": "d37d786f0b0babbae73464bb9fbd152af6f21ae3",
+  "assertions": [
+    {
+      "name": "alt_char_is_a_one_dim_hecke_rep",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "S^2 - h S - 1 = 0 with S = -1/q, h = q - 1/q"
+    },
+    {
+      "name": "nf_contraction_agrees_with_word_product",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "5 words, max |residual| = 0"
+    },
+    {
+      "name": "closed_form_matches_direct_product",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "63 multisets with a,b,c <= 3; mismatches: []"
+    },
+    {
+      "name": "character_is_blind_to_order_and_generator",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "3840 (permutation, generator-assignment) pairs -> 1 distinct character(s)"
+    },
+    {
+      "name": "char_one_forces_no_mixed_and_balanced_pure",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "6 of 342 multisets with a,b,c <= 6 have char == 1; every one has c == 0 and a == b (counterexamples: c!=0 [], a!=b [])"
+    },
+    {
+      "name": "core_is_gamma_gamma_by_character",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the three-vertex core has altChar == 1 -- the positive control; a probe that could not see a gamma-gamma word would be vacuous"
+    },
+    {
+      "name": "no_census_nucleon_is_a_gamma_gamma_word",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "6 named words (3 families x p,n) + 32 constructed words (16 readings x p,n) = 38 words, i.e. 19 Delta readings; gamma-gamma by character: none"
+    },
+    {
+      "name": "every_counted_nucleon_carries_exactly_two_mixed_letters",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "nuc9 and nuc11_interleaved, proton and neutron: c_ud == 2 in all four -- the obstruction is the same two letters every time"
+    },
+    {
+      "name": "delta_character_vanishes_only_at_q_eq_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "altChar(Delta) = -(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q**5); real roots [1]; at q_0 = -0.17153864377659950567 != 0"
+    },
+    {
+      "name": "the_bar_fixed_shift_is_the_blocking_shift",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "unique bar-fixed shift c = [-1/2] (i.e. d = -h/2); the shifts whose character pairs with NO alphabet letter to give 1: ['ud'] -- the same letter"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 147916,
+  "computation": "qbeta-altchar-is-a-shift-multiset-invariant",
+  "scriptFile": "qbeta_altchar_is_a_shift_multiset_invariant_probe.py",
+  "scriptHash": "4d2585b4ad00",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_altchar_is_a_shift_multiset_invariant_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_altchar_is_a_shift_multiset_invariant_probe.py"
+  },
+  "description": "The alternating character of a corpus nucleon word depends only on the multiset of its letter shifts -- not on generator assignment and not on ordering. It equals 1 iff the mixed (ud) count is zero and the two pure counts agree. Every one of the 19 census readings carries exactly two mixed letters, so none is a gamma-gamma word at any q != 1, and the ordering the gamma-gamma ruling picked cannot change that. Scope-(b); the invariant is the alternating character, fixed at +1 on gamma-gamma words by GammaGammaWordSelection.altChar_eq_one (sorry-free).",
+  "data": {
+    "alphabet": [
+      {
+        "label": "uu",
+        "shift_in_h": "0",
+        "char_in_q": "-1/q",
+        "char_at_q0": "-0.90091828395574149216"
+      },
+      {
+        "label": "ud",
+        "shift_in_h": "-h/2",
+        "char_in_q": "-(q**2 + 1)/(2*q)",
+        "char_at_q0": "-1.0054484333535611499"
+      },
+      {
+        "label": "dd",
+        "shift_in_h": "-h",
+        "char_in_q": "-q",
+        "char_at_q0": "-1.1099785827513808076"
+      }
+    ],
+    "closed_form": "altChar(w) = (-1)^(a+b+c) * q^(b-a-c) * ((q^2+1)/2)^c, with a = #{d=0}, b = #{d=-h}, c = #{d=-h/2}",
+    "census_rows": [
+      {
+        "candidate": "gamma_gamma_core (calibration)",
+        "a_uu": 3,
+        "b_dd": 3,
+        "c_ud": 0,
+        "altChar": "Integer(1)",
+        "altChar_pretty": "1",
+        "altChar_at_q0": "1.0",
+        "is_gamma_gamma_char": true
+      },
+      {
+        "candidate": "nuc9_p",
+        "a_uu": 4,
+        "b_dd": 3,
+        "c_ud": 2,
+        "altChar": "Mul(Rational(1, 4), Pow(Symbol('q', positive=True), Integer(-3)), Add(Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(4))), Mul(Integer(-1), Integer(2), Pow(Symbol('q', positive=True), Integer(2))), Integer(-1)))",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "altChar_at_q0": "-0.91076221455307436649",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "candidate": "nuc11_interleaved_p",
+        "a_uu": 6,
+        "b_dd": 3,
+        "c_ud": 2,
+        "altChar": "Mul(Rational(1, 4), Pow(Symbol('q', positive=True), Integer(-5)), Add(Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(4))), Mul(Integer(-1), Integer(2), Pow(Symbol('q', positive=True), Integer(2))), Integer(-1)))",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "altChar_at_q0": "-0.73922357077647486082",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "candidate": "nuc9_n",
+        "a_uu": 3,
+        "b_dd": 4,
+        "c_ud": 2,
+        "altChar": "Mul(Rational(1, 4), Pow(Symbol('q', positive=True), Integer(-1)), Add(Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(4))), Mul(Integer(-1), Integer(2), Pow(Symbol('q', positive=True), Integer(2))), Integer(-1)))",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q)",
+        "altChar_at_q0": "-1.1221068216024720738",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "candidate": "nuc11_interleaved_n",
+        "a_uu": 5,
+        "b_dd": 4,
+        "c_ud": 2,
+        "altChar": "Mul(Rational(1, 4), Pow(Symbol('q', positive=True), Integer(-3)), Add(Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(4))), Mul(Integer(-1), Integer(2), Pow(Symbol('q', positive=True), Integer(2))), Integer(-1)))",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "altChar_at_q0": "-0.91076221455307436649",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "candidate": "nuc11_gen_grouped_p",
+        "a_uu": null,
+        "b_dd": null,
+        "c_ud": null,
+        "altChar": "Mul(Rational(1, 4), Pow(Symbol('q', positive=True), Integer(-5)), Add(Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(4))), Mul(Integer(-1), Integer(2), Pow(Symbol('q', positive=True), Integer(2))), Integer(-1)))",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "altChar_at_q0": "-0.73922357077647486082",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "candidate": "nuc11_gen_grouped_n",
+        "a_uu": null,
+        "b_dd": null,
+        "c_ud": null,
+        "altChar": "Mul(Rational(1, 4), Pow(Symbol('q', positive=True), Integer(-3)), Add(Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(4))), Mul(Integer(-1), Integer(2), Pow(Symbol('q', positive=True), Integer(2))), Integer(-1)))",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "altChar_at_q0": "-0.91076221455307436649",
+        "is_gamma_gamma_char": false
+      }
+    ],
+    "constructed_readings": [
+      {
+        "reading": "gens=(0, 0, 0),hopf=L-,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 0, 0),hopf=L-,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 0, 0),hopf=L+,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 0, 0),hopf=L+,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 0, 1),hopf=L-,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 0, 1),hopf=L-,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 0, 1),hopf=L+,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 0, 1),hopf=L+,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 1, 0),hopf=L-,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 1, 0),hopf=L-,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 1, 0),hopf=L+,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 1, 0),hopf=L+,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 1, 1),hopf=L-,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 1, 1),hopf=L-,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 1, 1),hopf=L+,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(0, 1, 1),hopf=L+,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 0, 0),hopf=L-,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 0, 0),hopf=L-,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 0, 0),hopf=L+,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 0, 0),hopf=L+,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 0, 1),hopf=L-,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 0, 1),hopf=L-,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 0, 1),hopf=L+,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 0, 1),hopf=L+,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 1, 0),hopf=L-,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 1, 0),hopf=L-,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 1, 0),hopf=L+,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 1, 0),hopf=L+,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 1, 1),hopf=L-,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 1, 1),hopf=L-,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 1, 1),hopf=L+,p",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**5)",
+        "is_gamma_gamma_char": false
+      },
+      {
+        "reading": "gens=(1, 1, 1),hopf=L+,n",
+        "altChar_pretty": "-(q**2 + 1)**2/(4*q**3)",
+        "is_gamma_gamma_char": false
+      }
+    ],
+    "delta_character": {
+      "factored": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q**5)",
+      "at_q0": "-0.17153864377659950567",
+      "zero_iff": "q = 1 (and q = -1, q = +/- i, outside the substrate range)"
+    },
+    "scope": "b",
+    "invariant": "the alternating character sigma_i |-> -1/q, a 1-dimensional representation of H_3(q); fixed at +1 on gamma-gamma words by QOU.Mass.GammaGammaWordSelection.altChar_eq_one (sorry-free)",
+    "what_this_does_not_exclude": [
+      "a word built from gamma-gamma vertices PLUS other letters -- the exclusion is of PURE gamma-gamma words (products of vertices)",
+      "altChar == 1 is NECESSARY, not sufficient: c == 0 and a == b is a statement about the multiset, being a product of vertices is a statement about the order",
+      "the general 'char == 1 => c == 0' step is enumerated over a,b,c <= 6 here; the general proof is the irreducibility of q^2+1 over Q and is the Lean follow-up"
+    ],
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  }
+}
