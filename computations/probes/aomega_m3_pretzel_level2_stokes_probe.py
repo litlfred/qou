@@ -279,7 +279,7 @@ def pointwise_identity(name, dps=30):
             worst = max(worst, rel)
             samples.append(mp.nstr(rel, 4))
     return {"knot": name, "worst_rel_err": mp.nstr(worst, 6), "samples": samples,
-            "worst_float": float(worst)}
+            "below_1e-25": bool(worst < mp.mpf("1e-25"))}
 
 
 def integral_recurrence(name, dps=30):
@@ -306,22 +306,21 @@ def integral_recurrence(name, dps=30):
     _, Psym = descendant_operator(spec["offsets_sym"], A, spec["doubled"])
     cs = coeffs(Psym)
     rows = []
-    for bmod, bang, eps_frac in (("0.55", sp.Rational(1, 6), "0.90"),
-                                 ("0.60", sp.Rational(1, 5), "0.88")):
-        b = mp.mpf(bmod) * mp.exp(1j * mp.pi * float(bang))
+    for bmod, bang_den, eps_frac in (("0.55", 6, "0.90"), ("0.60", 5, "0.88")):
+        b = mp.mpf(bmod) * mp.exp(1j * mp.pi / mp.mpf(bang_den))
         Phi, qq, qt, cb = make(b)
         eps = mp.mpf(eps_frac) * mp.im(cb)
         bR = mp.re(b)
         ks = [j - A for j in range(len(cs))]
         # centre t_I in the intersection of the per-k windows
-        lo = max(float(-(r_eff - A) * eps + k * bR) for k in ks)
-        hi = min(float(A * eps + k * bR) for k in ks)
+        lo = max((-(r_eff - A) * eps + k * bR for k in ks), key=lambda z: z)
+        hi = min((A * eps + k * bR for k in ks), key=lambda z: z)
         if not lo < hi:
             rows.append({"knot": name, "b": mp.nstr(b, 8), "eps": mp.nstr(eps, 6),
                          "status": "no common convergence window",
-                         "window": [lo, hi]})
+                         "window": [mp.nstr(lo, 8), mp.nstr(hi, 8)]})
             continue
-        tI = mp.mpf((lo + hi) / 2)
+        tI = (lo + hi) / 2
         t = mp.mpf("0.07") + 1j * tI
         u = mp.mpf("0.13")
         xv = mp.exp(2 * mp.pi * b * u)
@@ -350,8 +349,8 @@ def integral_recurrence(name, dps=30):
                      "abs_residual": mp.nstr(abs(tot), 6),
                      "abs_largest_term": mp.nstr(mag, 6),
                      "rel_residual": mp.nstr(abs(tot) / mag, 6),
-                     "rel_float": float(abs(tot) / mag),
-                     "convergence_window_tI": [lo, hi]})
+                     "below_1e-13": bool(abs(tot) / mag < mp.mpf("1e-13")),
+                     "convergence_window_tI": [mp.nstr(lo, 8), mp.nstr(hi, 8)]})
     return rows
 
 
@@ -551,7 +550,7 @@ def main():
     check("G3-the (FE)-rearranged integrand identity  integrand(v - i b)/integrand(v) = "
           "q^{A/2} w X^{-A} N(X)  holds pointwise for ALL THREE knots (mpmath, dps 30; two values of b, "
           "three of v each).  This validates the operator algebra of (OP) independently of any contour.",
-          all(pw[nm]["worst_float"] < 1e-25 for nm in pw),
+          all(pw[nm]["below_1e-25"] for nm in pw),
           worst_rel_err={nm: pw[nm]["worst_rel_err"] for nm in pw})
 
     rec = {}
@@ -563,7 +562,10 @@ def main():
 
     for nm, note in (("4_1", "degree 2"), ("5_2", "degree 3, coefficients (1, s, s, 1)"),
                      ("pretzel", "DEGREE 6 -- the decisive gate")):
-        vals = [r["rel_float"] for r in rec[nm] if "rel_float" in r]
+        oks = [r["below_1e-13"] for r in rec[nm] if "below_1e-13" in r]
+        import mpmath as _mp
+        worst_str = max((r["rel_residual"] for r in rec[nm] if "rel_residual" in r),
+                        default=None, key=_mp.mpf)
         check(f"G4-{nm}: the derived recurrence sum_j c_j Z(t - i (j - A) b) = 0 holds on the ACTUAL "
               f"state integral (mpmath, dps 30, two (b, eps) choices, t_I centred in the common "
               f"convergence window).  {note}.  This tests the contour shift as well as the algebra.  "
@@ -571,9 +573,8 @@ def main():
               f"Gaussian chirp whose oscillation frequency grows linearly in |v|, so mp.quad's node "
               f"density -- not dps -- sets the floor.  G3 is the exact algebraic gate (~1e-29); this "
               f"one corroborates the CONTOUR SHIFT, which G3 cannot see.",
-              bool(vals) and max(vals) < 1e-13,
-              worst_rel_residual=max(vals) if vals else None,
-              rows=[{k: v for k, v in r.items() if k != "rel_float"} for r in rec[nm]])
+              bool(oks) and all(oks),
+              worst_rel_residual=worst_str, rows=rec[nm])
 
     print("\n=== Verdict ===\n")
     verdict = (

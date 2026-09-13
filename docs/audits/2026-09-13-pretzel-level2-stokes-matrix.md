@@ -281,9 +281,16 @@ Two notes on the numerics, both worth carrying forward:
   `r_eff·ε > d·\mathrm{Re}\,b`. At `|b| = 1` that is **exactly marginal**
   (`Im c_b = Re b` when `|b| = 1`), and the quadrature floors at `~10⁻⁶` however high
   `dps` is set. Taking `|b| < 1` makes `Im(c_b)/Re(b) = (1+|b|^{−2})/2 > 1` and buys
-  a real margin; `|b| ≈ 0.55` is what makes the gate meaningful. Note also
-  `r_eff = Σ αⱼ²`, so the pretzel's doubled factor contributes **4, not 1** — its
-  integrand decays *faster* than 4₁'s or 5₂'s, not slower.
+  a real margin; `|b| ≈ 0.55` is what makes the gate meaningful.
+
+  Two details worth stating precisely, because the obvious guesses are wrong:
+  `r_eff = Σ αⱼ²`, so the pretzel's **doubled** factor contributes **4, not 1** —
+  at `+∞` its integrand therefore decays *four times faster* than 4₁'s or 5₂'s
+  (`r_eff−A = 4` against `1`), and at `−∞` it decays at the same rate as 5₂'s
+  (`A = 2`). What actually makes the pretzel the expensive case is not decay but
+  **ladder length**: degree 6 means `k = j − A` runs over `−2 … 4`, so the window
+  must accommodate a span of `6·Re b` rather than `2·Re b` (4₁) or `3·Re b` (5₂),
+  and it needs 7 quadratures per configuration rather than 3 or 4.
 
 ## 7. Scope, and what is NOT established
 
