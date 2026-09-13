@@ -207,9 +207,19 @@ So `s(x)` is not an ansatz and not a coincidence: it is the first (and second)
 elementary symmetric function of the pole offsets `x_k = e^{2πbu_k}` at
 `u = (0, u, −u)`. That is why it, and only it, appears in GGM (188)/(307).
 
-For 4₁ the offsets are `{1, x}` with `e₁ = 1+x`, `e₂ = x`; the `s(x)` that appears in
-(188) is `(1+x+x²)/x = (e₁²−e₂)/e₂`, the extra `x^{−1}` supplied by the `θ`-
-renormalisation of GGM (327) (`w = x^{−2}` for 4₁, per their (322)).
+**4₁ is the weaker of the two gates, and worth stating as such.** Its offsets are
+`{1, x}`, so `e₁ = 1+x` and `e₂ = x`, and the `s(x)` of (188) is `(1+x+x²)/x` — an
+overall monomial away from `e₁²−e₂`. Where that `x^{−1}` comes from is **not pinned
+here**: monomial normalisations of exactly this kind are what GGM's `θ`-
+renormalisation (327) and the `w = x^{−2}` of their (322) produce, but this arc does
+not verify that it is *that* monomial rather than another. Treat 4₁ as confirming
+the **operator** (gate G2, exact) and not as confirming the route from offsets to
+the printed matrix.
+
+**5₂ is the gate that carries the argument**, because there the offset set is
+inversion-closed, `e₁ = e₂ = s(x)` needs no monomial at all, and the printed (307)
+is `ℤ[s]`-valued on the nose. The pretzel is the inversion-closed case too (§5b), so
+5₂ is the right precedent for it and 4₁ is not.
 
 ## 5. The pretzel: the verdict
 
