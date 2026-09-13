@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-09-07T18:13:25Z
+updated_at: 2026-09-13T08:18:29Z
 parent: qou-2akx
 ---
 
@@ -40,3 +40,7 @@ parent: qou-2akx
 
 
 2026-09-07 CORRECTION (qou-99qc review on #7088): q² = e^{iπħ} is conditional on Skein normalisation (H) — under (J) the ratio is −q and ħ halves; and the level mapping is k+2 = 15.05 i / 30.1 i / 60.2 i for ħ = 1/(k+2), 2/(k+2), 4/(k+2) (the earlier '60.2 i ↔ 2/(k+2), 30.1 i ↔ 1/(k+2)' was off by two; the probe's numbers were right). Fixed in KZLevelFromHeckeNormalisation.lean, the kz_pullback probe and audit §B′.
+
+
+
+2026-09-13 claimed (branch claude/d0qq-twisted-period-eigenvalue-2026-09-13): §C step 4 of docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md — Lean QOU/Mass/TwistedPeriodEigenvalueRatio.lean: for μ : ℂ, exp(2πiμ) = −q² with real q > 1 forces Im μ = −ln q/π ≠ 0 (the twist exponent is never real: no real-exponent twisted period gives the Hecke ratio), and the pseudo-reflection pair {1, e^{2πiμ}} rescales to {q, −q⁻¹}. Then §C step 5 (prose rewrite of hecke-monodromy-step-two §What remains conjectural) if time allows. Kohno/Drinfeld ingestion (§B step 6) stays on qou-denm.
