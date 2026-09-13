@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 8-11
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 minology.
 9 A Funk perspective on billiards, projective geometry and Mahler volume

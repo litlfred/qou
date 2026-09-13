@@ -7,6 +7,7 @@ section_number: null
 pages: 13-13
 source_pdf: Funaba_2014_J._Phys.__Conf._Ser._544_012019.pdf
 source_sha256: c95b283a122d67e4
+doc_brief: "Conference Series — 11 sections: Front matter; Introduction and main result; Computation of the energy of a tor"
 ---
 [1] Auckly, D. & Sadun, L. 1997 A family of M¨ obius invariant 2-knot energies, Geometric
 Topology (Proceedings of the 1993 Georgia International Topology Conference). AMS/IP

@@ -7,6 +7,7 @@ section_number: null
 pages: 37-38
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
+doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
 ---
 This section is devoted to the proof of Theorem 1.8, which states that critical points of linear
 combinations

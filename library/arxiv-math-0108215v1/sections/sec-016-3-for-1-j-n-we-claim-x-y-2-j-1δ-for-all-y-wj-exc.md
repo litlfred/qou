@@ -7,6 +7,7 @@ section_number: 3
 pages: 12-14
 source_pdf: 0108215v1.pdf
 source_sha256: 191784d2ccb3415a
+doc_brief: "Möbius Energy of Thick Knots Eric J. Rawdon 2 — The M¨ obius energy of a knot is an energy functional for smoot h curves based on an idea of self-repelling."
 ---
 perhaps a set of measure 0. Suppose M is a non-zero measure subset of W1
 such that for all y ∈ M, we have |x − y| ≤ 2. Then W0 ∪ M ⊆ Y [2] and

@@ -7,6 +7,7 @@ section_number: 4
 pages: 13-18
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 Let K⊂ int(L) in Pn be a pair of convex bodies. Using the L-Funk metric on
 K, we can consider the corresponding billiard dynamics inside K following [14],

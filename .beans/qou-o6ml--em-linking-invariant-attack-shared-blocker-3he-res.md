@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T10:35:02Z
+updated_at: 2026-09-13T14:25:46Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1490,3 +1490,65 @@ subtracted kernel satisfies O2 and genuinely changes sign.
 
 The gate is therefore CLEARED, but earned rather than free. Anyone citing
 "O'Hara's subtraction protects route (2)" must say which channel they mean.
+
+
+## 🟩 The library NOW HOLDS the knot-energy literature — 11 sources, incl. O'Hara's original
+
+This bean's own path-5 finding — *"the library holds NO knot-energy source, and my
+first grep said the opposite"* — was **true as measured, and the sources were on
+disk the whole time**, one directory away from where path 5 looks.
+
+They were in **`uploads/`**, the incoming queue. AGENTS.md: *"corpus-grep path 5
+searches `library/` only, so anything still in `uploads/` is invisible to it — an
+un-ingested paper will not be found by any 'has the corpus got this?' check,
+which is exactly how a held source gets re-derived."* That is this bean, exactly.
+
+Ingested 2026-09-13 (`pdf-structure.py` → `migrate-uploads-to-library.py --apply`
+→ `summarize-library.py --apply`), 14 ok / 0 failed:
+
+| doc-id | work |
+|---|---|
+| `1-s20-0040938391900102-main` | **O'Hara, _Energy of a Knot_, Topology 1991** — the primary |
+| `arxiv-1111.6782v2` | Blatt & Reiter, *Stationary Points of O'Hara's Knot Energies* |
+| `arxiv-1202.5426v2` | *Hard analysis meets critical knots* — stationary points of the Möbius energy |
+| `arxiv-1308.2499v1` | Blatt & Reiter, *Towards a regularity theory for integral Menger curvature* |
+| `arxiv-1904.13129v1` | Vorderobermeier, *regularity of critical points for O'Hara's knot energies* |
+| `arxiv-1905.06064v1` | Blatt, Reiter & Schikorra, *On O'Hara knot energies I: regularity for critical knots* |
+| `arxiv-1908.11677v1` | Kawakami, *Variational formulae and estimates of O'Hara's knot energies* |
+| `arxiv-2103.07383v1` | Steenebrügge, *Analyticity of critical points of the generalized integral Menger curvature* |
+| `arxiv-2208.12678v4` | Lipton & Nair, *Stationary curves under the Möbius–Plateau energy* |
+| `arxiv-2505.02719v2` | Freches, Schumacher, Steenebrügge et al., *Palais–Smale condition in geometric knot theory* |
+| `arxiv-2512.02998v1` | Blatt, Gilsbach, Reiter et al., *Stability of knot equivalence at low regularity, symmetric critical knots* |
+
+Measured on the same greps, before → after:
+
+```
+tier 1 (INDEX.md) knot-energy rows        0  ->  4
+documents mentioning O'Hara (tier 3)           14
+O'Hara's own paper greppable                   yes
+```
+
+## What this changes for this arc, and what it does NOT
+
+**Does not** retract or confirm anything here. The O2 gate, the mutual-channel
+retraction (`b6f0259fe`), the arbitrary-density proof (`bbacee7d9`) and the
+orientation-blindness result (`a5694110b`) all stand on their own Lean and are
+untouched by what the library holds.
+
+**Does** mean the next pass on this arc can run path 5 for real. In particular
+`1905.06064v1` (regularity for critical knots) and `2505.02719v2` (Palais–Smale)
+are on exactly the variational question the O2 gate sits in, and **none of them
+had been read** when the gate was argued — they could not be.
+
+So: **re-run path 5 before the next "this is open" or "no theorem exists"
+declaration on this arc.** The three tiers are cheap now
+(`grep -i <topic> library/INDEX.md`, then `summary.json`, then
+`grep -rln <topic> library/<doc-id>/sections/`).
+
+## Caution, so the next agent does not over-read this
+
+These are **ingested, not read**. `structure.json` + `sections/` make them
+greppable; nobody has adjudicated whether any of them supplies the O'Hara
+theorem the mutual channel was said not to need. Holding a source and having
+checked it are different claims — that distinction is what `qou-pc85` was
+originally about.

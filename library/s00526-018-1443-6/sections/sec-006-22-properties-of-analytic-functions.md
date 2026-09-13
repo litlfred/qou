@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 5-8
 source_pdf: s00526-018-1443-6.pdf
 source_sha256: 34f3cd94e3b2d9d7
+doc_brief: "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt 1 · Nicole Vorderobermeier 1 © The Author(s) 2018 — We prove that smooth critical"
 ---
 Let us recall some elementary facts about analytic functions. More on the topic can be found
 for example in [ 9, Chapter 6.4] and [ 11, Chapter 1, D]. Let n, m ∈ N and /Omega1⊆ Rm be an

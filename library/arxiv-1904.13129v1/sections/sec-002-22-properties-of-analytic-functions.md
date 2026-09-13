@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 4-14
 source_pdf: 1904.13129v1.pdf
 source_sha256: dfa7fd0ebf1ab8c4
+doc_brief: "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — W e prove the analyticity of smooth critical points for O’Har a’s knot energies E α,p , with p = 1"
 ---
 istics of analytic functions. More information on analytic functions can be found
 for instance in [ Eva10, Chap. 6.4] and [ Fol95, Chap. 1, D].

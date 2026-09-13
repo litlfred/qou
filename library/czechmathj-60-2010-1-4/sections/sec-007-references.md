@@ -7,6 +7,7 @@ section_number: null
 pages: 18-19
 source_pdf: CzechMathJ_60-2010-1_4.pdf
 source_sha256: 7595f81d1398d0bf
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
 ---
 [1] L. A. Bokut: Unsolvability of the word problem, and subalgebras of ﬁnite ly presented
 Lie algebras. Izv. Akad. Nauk. SSSR Ser. Mat. 36 (1972), 1173–1219.

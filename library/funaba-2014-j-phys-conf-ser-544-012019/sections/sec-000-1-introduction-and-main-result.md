@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-4
 source_pdf: Funaba_2014_J._Phys.__Conf._Ser._544_012019.pdf
 source_sha256: c95b283a122d67e4
+doc_brief: "Conference Series — 11 sections: Front matter; Introduction and main result; Computation of the energy of a tor"
 ---
 Recently Fernando C. Marques and Andr´ e Neves (Marques & Neves) proved the Willmore
 conjecture, namely, they showed the following. Let Σ be an immersed torus in R3. Let κ1

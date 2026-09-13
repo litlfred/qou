@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 5-6
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
+doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
 ---
 condition on local distortion on general closed, path-connected subsetsM⊂R n. For eachx
 near (but not in)Mwe find a direction that “points away fromM”. These directions are glued

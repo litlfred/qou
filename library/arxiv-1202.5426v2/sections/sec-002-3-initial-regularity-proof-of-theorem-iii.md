@@ -7,6 +7,7 @@ section_number: 3
 pages: 16-32
 source_pdf: 1202.5426v2.pdf
 source_sha256: 6c7668ad72e33b4b
+doc_brief: "Hard analysis meets critical knots Stationary points of the M öbius energy are smooth S. Blatt∗ Φ. Reiter∗∗ A. Schikorra∗∗∗ — 5 sections: Front matter; Introduction; Euler-Lagrange equation: Proof of"
 ---
 Note that if we consider the constant factors to be irrelevant with respect to the mathematical
 argument, for the sake of simplicity we will omit them in the c alculations, writing ≲, /greaterorsimilar,≈

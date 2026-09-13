@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: CzechMathJ_60-2010-1_4.pdf
 source_sha256: 7595f81d1398d0bf
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
 ---
 Czechoslovak Mathematical Journal
 Yuqun Chen; Yongshan Chen; Chanyan Zhong

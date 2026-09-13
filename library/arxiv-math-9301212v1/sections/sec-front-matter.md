@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: 9301212v1.pdf
 source_sha256: 029787800ddf73e5
+doc_brief: "APPEARED IN BULLETIN OF THE — A physically natural potential energy for simple closed cur ves in R3 is shown to be invariant under M¨ obius transformations."
 ---
 arXiv:math/9301212v1  [math.GT]  1 Jan 1993
 APPEARED IN BULLETIN OF THE

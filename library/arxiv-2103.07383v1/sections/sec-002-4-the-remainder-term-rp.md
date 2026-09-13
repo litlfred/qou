@@ -7,6 +7,7 @@ section_number: 4
 pages: 9-9
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
+doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
 ---
 Now we aim to estimate the remainder termR(p), which appears in the ﬁrst variation of the
 generalized integral Menger curvature forq = 2 and p∈( 7

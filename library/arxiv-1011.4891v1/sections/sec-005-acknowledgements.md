@@ -7,6 +7,7 @@ section_number: null
 pages: 17-17
 source_pdf: 1011.4891.pdf
 source_sha256: c3529df5dd909b5e
+doc_brief: "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold — A new type of knot"
 ---
 I am is grateful to Elena Eﬁmova, for providing me with the device used
 in the experiments (and for many other things) and to Mikhail Panov and

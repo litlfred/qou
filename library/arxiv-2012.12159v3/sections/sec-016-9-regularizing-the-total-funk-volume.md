@@ -7,6 +7,7 @@ section_number: 9
 pages: 34-41
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 We use the notation of subsection 3.2. Recall that we use the standard Euclidean
 structure on V = Rn+1, and identify the double cover of P and P∨ with the unit

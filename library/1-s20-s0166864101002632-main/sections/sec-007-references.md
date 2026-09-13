@@ -7,6 +7,7 @@ section_number: null
 pages: 11-13
 source_pdf: 1-s2.0-S0166864101002632-main.pdf
 source_sha256: bc5aa8a7663b2a9f
+doc_brief: "Möbius energy of thick knots — The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling."
 ---
 [1] G. Buck, Four-thirds power law for knots and links, Nature 392 (1998) 238–239.
 [2] G. Buck, Most smooth closed space curves contain approximate solutions of the n-body

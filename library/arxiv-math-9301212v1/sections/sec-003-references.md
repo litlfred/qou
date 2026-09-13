@@ -7,6 +7,7 @@ section_number: null
 pages: 5-5
 source_pdf: 9301212v1.pdf
 source_sha256: 029787800ddf73e5
+doc_brief: "APPEARED IN BULLETIN OF THE — A physically natural potential energy for simple closed cur ves in R3 is shown to be invariant under M¨ obius transformations."
 ---
 [A] K. Ahara, Energy of a knot, screened at Topology Conf., Univ. of Hawaii, August 1990 ,
 K. H. Dovermann, organizer.

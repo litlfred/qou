@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1904.13129v1.pdf
 source_sha256: dfa7fd0ebf1ab8c4
+doc_brief: "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — W e prove the analyticity of smooth critical points for O’Har a’s knot energies E α,p , with p = 1"
 ---
 Knots have always played an important role in arts and crafts , commerce and
 trade, as well as in our everyday life. Therefore they natura lly became a topic of

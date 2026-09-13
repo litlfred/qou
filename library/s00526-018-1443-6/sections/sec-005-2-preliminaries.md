@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-5
 source_pdf: s00526-018-1443-6.pdf
 source_sha256: 34f3cd94e3b2d9d7
+doc_brief: "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt 1 · Nicole Vorderobermeier 1 © The Author(s) 2018 — We prove that smooth critical"
 ---
 mula. In Sect. 3 we decompose the ﬁrst variation of the Möbius energy into the orthogonal
 projection of a main part Q and two remaining parts R1 and R2 of lower order. The main part

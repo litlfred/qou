@@ -7,6 +7,7 @@ section_number: null
 pages: 14-16
 source_pdf: 0108215v1.pdf
 source_sha256: 191784d2ccb3415a
+doc_brief: "Möbius Energy of Thick Knots Eric J. Rawdon 2 — The M¨ obius energy of a knot is an energy functional for smoot h curves based on an idea of self-repelling."
 ---
 [1] J. O’Hara, Energy of a knot, Topology 30 (2) (1991) 241–24 7.
 [2] M. H. Freedman, Z.-X. He, Z. Wang, M¨ obius energy of knots and unknots, Ann.

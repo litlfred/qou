@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 1908.11677v1.pdf
 source_sha256: c53663eeb457daf9
+doc_brief: "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e"
 ---
 arXiv:1908.11677v1  [math.AP]  30 Aug 2019
 Variational formulae and estimates of O’Hara’s

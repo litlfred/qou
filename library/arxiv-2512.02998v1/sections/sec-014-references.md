@@ -7,6 +7,7 @@ section_number: null
 pages: 31-32
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
+doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
 ---
 [1] S. Blatt. Note on continuously differentiable isotopies. Report 34, RWTH Aachen University, 2009.
 [2] S. Blatt. Boundedness and regularizing effects of O’Hara’s knot energies.J. Knot Theory Ramifications,

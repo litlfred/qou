@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T11:56:16Z
-updated_at: 2026-09-13T13:59:16Z
+updated_at: 2026-09-13T15:00:59Z
 ---
 
 ## THE PREMISE WAS WRONG, AND IT WAS MY CLAIM (2026-09-13)
@@ -142,3 +142,173 @@ Unicode, BIDIRECTIONALLY. `O'Hara` ASCII 0 vs Unicode 48; but `Poincare`
 ASCII 190 vs Unicode 145, where ASCII wins. Search both forms; do not
 normalise one way. My first reading (`use Unicode`) was wrong and the row
 records it.
+
+
+## 🟩 THE FHW CROSSING BOUND IS NOW IN THE LIBRARY — via the BAMS announcement
+
+This bean stays open on one item: *"FREEDMAN-HE-WANG 1994 WAS NOT UPLOADED … the
+crossing bound `E(K) ≥ 2πc(K)+4` still has no full text here."*
+
+**The bound is now here.** The owner's second drop (2026-09-13 14:42, 7 PDFs)
+includes `arxiv-math-9301212v1` =
+
+> **Bryson, Freedman, He & Wang, "Möbius Invariance of Knot Energy",
+> Bull. Amer. Math. Soc. 28(1), January 1993, 99–103.**
+
+Its **Theorem D** is verbatim the bound this bean wants, quoted from the ingested
+section text:
+
+```
+Theorem D. If γ is topologically tame, let c([γ]) denote the (topological) crossing
+          2πc([γ]) + 4 ≤ E(γ).
+Since an essential knot must have three or more crossings, we obtain the following…
+          c([γ]) ≤ c(γ) ≤ E(γ)/2π
+```
+
+The abstract also delivers this bean's **target 3** (minimiser-existence
+statements): *"round circles are precisely the absolute minima for energy; there
+is a minimum energy threshold below which knotting cannot occur; minimizers
+within prime knot types exist and are regular"*, plus the estimate on the number
+of knot types below energy `M`.
+
+### 🛑 Scope it honestly — this is the ANNOUNCEMENT, not the Annals paper
+
+`math/9301212v1` is **5 pages** and announces results; Freedman–He–Wang, *Möbius
+energy of knots and unknots*, Ann. of Math. **139** (1994) 1–50 is **50 pages**
+and carries the proofs. So:
+
+* **Reading and citing the bound: unblocked.** Theorem D is stated, with its
+  corollaries, in greppable text.
+* **The proof of the bound: still not held.** If this arc ever needs to follow
+  the argument rather than invoke the statement, the Annals paper is still
+  wanted (`https://www.jstor.org/stable/2946626`).
+
+**Left open deliberately**, for two reasons: the distinction above is real, and
+this is your bean — the stated blocker ("blocked on owner upload") is discharged
+but the Annals text is not here, so the close is yours to call, not mine.
+
+### Also in the second drop, same arc
+
+| doc-id | work |
+|---|---|
+| `52036` | Kim & Kusner, *Torus Knots Extremizing the Möbius Energy* |
+| `1-s20-s0166864101002632-main` | Rawdon & Simon, *Möbius energy of thick knots* |
+| `arxiv-math-0108215v1` | Rawdon, *Möbius Energy of Thick Knots* |
+| `s00526-018-1443-6` | Blatt & Vorderobermeier, *Analyticity of critical points of the Möbius energy*, Calc. Var. **58**:16 (2019) |
+| `arxiv-1011.4891v1` | Sossinsky, *Mechanical Normal Forms of Knots and Flat Knots* |
+| `funaba-2014-j-phys-conf-ser-544-012019` | J. Phys. Conf. Ser. 544 012019 |
+
+`s00526-018-1443-6` is **not** a duplicate of `arxiv-1904.13129v1` — checked
+rather than assumed: different title and a different author set (Blatt &
+Vorderobermeier vs Vorderobermeier solo).
+
+### Credit and a correction to my own framing
+
+I ingested the first 13 in parallel with you, not knowing this bean existed
+(it arrived in my merge). **Your pass did more than mine** — the `ohara1991` DOI
+settled against full text, clearing a HUMAN-REVIEW flag open since June, and the
+egress route table. My marginal contribution is the `doc_brief` propagation (the
+merge showed your section files lacked it — 97 add/add hunks, every one
+ours-adds-`doc_brief` / theirs-empty), the `INDEX.md` regeneration, and the
+Chen–Chen–Zhong duplicate adjudication.
+
+**And your correction applies to me.** I wrote that the `qou-pc85` arc was
+"reasoning about O'Hara energies with the literature invisible to it". Your bean
+already records the sharper truth: `references.ts` carries `ohara1991` and
+`freedman1994`, and `MobiusEnergy.lean` already cites them — so **citation was
+never blocked**; only greppable full text was missing. My PR body is corrected.
+
+### State after the second drop
+
+```
+library dirs 705, INDEX rows 683, gap 22 = duplicates 21 + containers 1   (exact)
+migrate --verify: 0 dirs without structure.json, 0 PDFs flat in uploads/
+```
+
+
+## 🛑 I OVER-CLAIMED "the FHW bound is now held" — the STATEMENT is, half the PROOF is, and its other half cites a work whose identity is UNRESOLVED
+
+Earlier today I recorded that `arxiv-math-9301212v1` (Bryson–Freedman–He–Wang,
+Bull. AMS 28(1) 1993) puts the crossing bound `2πc([γ]) + 4 ≤ E(γ)` in the
+library as its **Theorem D**. That is true and stands. Reading the *proof*
+rather than the statement sharpens it three ways.
+
+### 1. Theorem D's proof is two halves, and only one is in this document
+
+Verbatim from the ingested text:
+
+```
+Proof of Theorem D. Theorem 2.5 of [FH] gives the inequality
+                    c([γ]) ≤ c(γ) ≤ E(γ)/2π
+for proper rectifiable lines. According to the Möbius Invariance Property, the
+energy will increase by exactly 4 if a Möbius transformation is used to move the
+line off infinity and into closed position. □
+```
+
+So the bound decomposes as **`c ≤ E/2π` (imported from [FH] Thm 2.5, NOT proved
+here) + exactly 4 (from the Möbius Invariance Property, which IS proved here in
+full)**. My earlier phrasing — "citing the bound is unblocked; the proof is still
+not held" — was too coarse in the safe direction but still wrong: *half* the
+proof is held, and it is the half that this corpus's own Lean work is about.
+
+### 2. 🛑 [FH] IS NOT DEMONSTRABLY `freedman1994`
+
+The announcement's reference list reads:
+
+```
+[FH] M. H. Freedman and Z.-X. He, On the 'energy' of knots and unknots (to appear).
+[O1] Jun O'Hara, Energy of a knot, Topology 30 (1991), 241–247.
+```
+
+`[O1]` matches `ohara1991` exactly. **`[FH]` does not match `freedman1994`**, on
+two independent fields:
+
+| | `[FH]`, as cited 1993 | `freedman1994` in references.ts |
+|---|---|---|
+| authors | Freedman, He — **two** | Freedman, He, **Wang** — three |
+| title | *On the 'energy' of knots and unknots* | *Möbius energy of knots and unknots* |
+
+Subject and timing match, so the natural reading is that [FH] is the preprint
+that became the Annals paper with Wang added and the title changed. **That is a
+guess and is recorded as one.** Resolving it needs the Annals text or a
+bibliographic lookup, and both are egress-blocked here (see `qou-6xt9`'s route
+table). The alternative — that [FH] is a distinct Freedman–He paper — is not
+excluded by anything held.
+
+**Why it matters rather than being pedantry:** if they are different works, then
+a citation of `[freedman1994]` for "Theorem 2.5" points at a source that does
+not contain it. Nothing in the corpus cites a numbered theorem of
+`freedman1994` today, so nothing is currently wrong — this is a trap to avoid,
+not a defect to fix.
+
+### 3. What IS now verifiable against held text: `qou-zfs6`'s assumed inversion laws
+
+`qou-zfs6` records, honestly, *"ASSUMED, cited, not derived: the two classical
+inversion laws … ([ohara1991], [freedman1994])"*. The announcement's Möbius
+Invariance proof is present in full and uses exactly that structure — its
+equation (2) carries the Jacobian factors
+
+```
+Eε(I ∘ γ) = ∫∫ ( 1/|I∘γ(u) − I∘γ(v)|²  −  1/D(I∘γ(u), I∘γ(v))² )
+              × ‖I′(γ(u))‖ · ‖I′(γ(v))‖  du dv
+```
+
+which is the second assumed law (`|I(γ(s))′| = 1/|γ(s)−a|²`) appearing as the
+arclength density, and it is the same cancellation `qou-zfs6` §7 formalises —
+*"the arclength Jacobians 1/|γ−a|² are exactly what cancel the chord factors"*.
+The first law is then applied in the step the text calls *"a short calculation
+(using the law of cosines)"*.
+
+So those two laws move from **cited-but-unreadable-here** to **cited and
+checkable against held text** — though note the document attributes the
+*calculation* to itself, not to [O1]/[FH], so the `([ohara1991],
+[freedman1994])` attribution in the bean is still not verified by this find; what
+is verified is that the laws are standard and used exactly as assumed.
+
+### Nothing here changes any Lean
+
+`mobiusInvariant_forces_inverse_square` and its siblings are untouched — they are
+proved from the invariance hypothesis, not from these citations. The
+realisable-triples question `qou-zfs6` stays open on is also untouched: this
+document quantifies over actual space curves, so it says nothing about whether
+the characterisation survives on realisable distance triples only.

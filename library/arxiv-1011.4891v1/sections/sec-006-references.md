@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: 1011.4891.pdf
 source_sha256: c3529df5dd909b5e
+doc_brief: "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold — A new type of knot"
 ---
 [1] Jun O’Hara, Energy of Knots and Conformal Geometry , World Scien-
 tiﬁc, Singapore, 2003

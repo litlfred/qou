@@ -7,6 +7,7 @@ section_number: null
 pages: 26-27
 source_pdf: 1308.2499v1.pdf
 source_sha256: 3b20abdc0e1b0ba9
+doc_brief: "Towards a regularity theory for integral Menger curvature — We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand."
 ---
 As in [8], we make use of the following results which we brieﬂy state for the readers’
 convenience.
