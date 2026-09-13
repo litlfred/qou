@@ -1,0 +1,203 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T15:15:45.666321+00:00",
+  "commitSha": "ab9be56d8ebb4e7b92cd4144e50ea3fe0f051201",
+  "assertions": [
+    {
+      "name": "convention_D_weights_are_zero_on_three_rows_and_positive_on_two",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "over n = 3..8: 42 partitions with >= 3 rows all carry y = 0 exactly (convention D IS the two-row truncation), and all 21 one- and two-row partitions carry y > 0. Violations: none. This is what makes every term of the Frobenius pairing non-negative once the characters are"
+    },
+    {
+      "name": "the_frobenius_pairing_IS_the_ocneanu_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "over 28 words at n = 3, 4, 5, |Sum_lambda y_lambda chi_lambda - tr_recursion| <= 5.021e-36. The decomposition this argument runs on is the same number the sibling probes measure, checked rather than assumed"
+    },
+    {
+      "name": "the_trivial_block_is_pinned_at_exactly_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "chi_(n)(w) = 1 to within 2.181e-40 on 80 gamma-gamma words at n = 3..6. The trivial rep sends sigma_i -> q, so sigma_i^{-1} = sigma_i - h -> q - h = 1/q and a vertex -> 1. Counit twin of GammaGammaWordSelection.altChar_eq_one (sorry-free)"
+    },
+    {
+      "name": "the_floor_holds_on_every_measured_feasible_word_at_n_4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "floor y_(4) = [5]_q/[2]_q^4 = 0.31926258454594; the empty word and all 5 PSD-feasible words of #7295 sit at or above it (1.0, 1.0328978, 1.1374052, 1.0732388, 1.0732388, 1.3319925), and no positively-weighted block carries a negative character on any of them. The floor is LOOSE here -- the measured minimum is 3.2x it -- which is what makes the exclusion below conservative"
+    },
+    {
+      "name": "the_floor_lies_above_the_target_for_every_strand_count_up_to_five",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the floor exceeds the target 0.1850588977 at n = [2, 3, 4, 5] and drops below it first at n = 6 (0.1153242249). So no SINGLE gamma-gamma word on five strands or fewer has that trace -- scope-(b), no enumeration needed. 🛑 This assertion was named ..._excludes_Q_beta... and it is NOT an exclusion of Q_beta: the observable is scored on Delta = neutron word MINUS proton word, and nothing here bounds a difference (retracted 2026-09-13)"
+    },
+    {
+      "name": "the_floor_decays_monotonically_so_the_crossing_is_one_sided",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "floor(n+1)/floor(n) runs 0.56123666..0.67145318, all below 1 -- the floor behaves like (q/[2]_q)^n ~ 0.551982^n against a fixed target, so once it crosses at n = 6 it never rises back. The exclusion is a prefix of the strand counts, not a scattered set"
+    },
+    {
+      "name": "nothing_is_claimed_at_six_strands_or_more",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "at n = 6 the floor is 0.1153242249, BELOW the target 0.1850588977. That means the argument stops, NOT that a feasible word reaches the target -- stating it as an assertion so the limit of the exclusion is machine-recorded rather than left to prose. Whether any n >= 6 gamma-gamma word is both PSD-feasible and near the target is OPEN and needs the enumeration"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1029,
+  "computation": "qbeta-gamma-gamma-psd-trace-floor",
+  "scriptFile": "qbeta_gamma_gamma_psd_trace_floor_probe.py",
+  "scriptHash": "91f52ce9b63f",
+  "scriptCommitSha": "034a309bf04797f578ca034148bd13d26900798f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_gamma_gamma_psd_trace_floor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_psd_trace_floor_probe.py"
+  },
+  "description": "Derives a FLOOR on the convention-D Markov trace of any PSD-feasible gamma-gamma word: tr_M >= y_(n) = [n+1]_q/[2]_q^n, from three facts -- convention D's weights are strictly positive on the two-row partitions and zero elsewhere, PSD feasibility makes every character non-negative, and the trivial block is pinned at exactly 1 on every gamma-gamma word (the counit twin of altChar_eq_one). The floor is 0.7527/0.5054/0.3193/0.1943 at n=2/3/4/5, all ABOVE the Q_beta target 0.185059, and 0.1153 at n=6, below it. So no gamma-gamma + SDP word on five strands or fewer can reproduce Q_beta -- a scope-(b) exclusion that needs NO enumeration, replacing the n=5 brute-force scan #7304 left as next. Nothing is claimed for n >= 6: the floor falling below the target means the argument stops, not that a word reaches it.",
+  "data": {
+    "invariant": {
+      "statement": "tr_M(w) >= y_(n) = [n+1]_q/[2]_q^n for every PSD-feasible gamma-gamma word on n strands",
+      "ingredient_1": "convention D: y_lambda = [n-2k+1]_q/[2]_q^n on two-row partitions, 0 on three or more -- strictly positive for q > 1",
+      "ingredient_2": "PSD feasibility => chi_lambda(w) = Tr(rho_lambda(w)) >= 0 for every block",
+      "ingredient_3": "the trivial rep sends every gamma-gamma vertex to q*(1/q) = 1, so chi_(n)(w) = 1 exactly -- the counit twin of GammaGammaWordSelection.altChar_eq_one",
+      "lean_status": "NOT formalised here; altChar_eq_one is the sorry-free alternating-character twin of ingredient 3, and WedderburnBlocks.PSDFeasible already carries ingredient 2's hypothesis shape"
+    },
+    "target": {
+      "Q_beta_CODATA_MeV": "0.78233341",
+      "E0_MeV": "4.22748335562903055026805602659",
+      "E0_form": "tower_summed (canonical, qbeta_e0.canonical)",
+      "target_abs_tr_zD": "0.1850588977383666835806229"
+    },
+    "floor_by_strand_count": [
+      {
+        "n": 2,
+        "floor": "0.7527021132519654015937794",
+        "excludes_target": true
+      },
+      {
+        "n": 3,
+        "floor": "0.5054042265039308031875587",
+        "excludes_target": true
+      },
+      {
+        "n": 4,
+        "floor": "0.3192625845459399510223285",
+        "excludes_target": true
+      },
+      {
+        "n": 5,
+        "floor": "0.1942771873779928450980887",
+        "excludes_target": true
+      },
+      {
+        "n": 6,
+        "floor": "0.1153242249020661661103691",
+        "excludes_target": false
+      },
+      {
+        "n": 7,
+        "floor": "0.06727988702013659475469931",
+        "excludes_target": false
+      },
+      {
+        "n": 8,
+        "floor": "0.03876044991100056458235447",
+        "excludes_target": false
+      },
+      {
+        "n": 9,
+        "floor": "0.02212227603027426200035486",
+        "excludes_target": false
+      },
+      {
+        "n": 10,
+        "floor": "0.01253689867788077665111239",
+        "excludes_target": false
+      },
+      {
+        "n": 11,
+        "floor": "0.007066106565537251792076734",
+        "excludes_target": false
+      },
+      {
+        "n": 12,
+        "floor": "0.003965758016123106798450455",
+        "excludes_target": false
+      }
+    ],
+    "verified_against_measured_feasible_set_n4": [
+      {
+        "word": "empty word",
+        "tr_zD": "1.0",
+        "at_or_above_floor": true
+      },
+      {
+        "word": "(v0 v1)^2",
+        "tr_zD": "1.032897755524660383026902",
+        "at_or_above_floor": true
+      },
+      {
+        "word": "(v0 v1)^4",
+        "tr_zD": "1.137405209118677445379408",
+        "at_or_above_floor": true
+      },
+      {
+        "word": "sporadic A",
+        "tr_zD": "1.07323880793572920852933",
+        "at_or_above_floor": true
+      },
+      {
+        "word": "sporadic B",
+        "tr_zD": "1.07323880793572920852933",
+        "at_or_above_floor": true
+      },
+      {
+        "word": "(v0 v1)^6",
+        "tr_zD": "1.331992492573499969441476",
+        "at_or_above_floor": true
+      }
+    ],
+    "scope": {
+      "class": "(b) structural, n <= 5, about a SINGLE word's trace",
+      "invariant": "convention-D weight positivity + PSD => non-negative character + exact counit value 1 on gamma-gamma words",
+      "excluded": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "first_strand_count_not_excluded": 6,
+      "what_is_NOT_claimed": "that an n >= 6 gamma-gamma word reaches the target; only that this argument stops there",
+      "what_it_replaces": "the n = 5 brute-force feasibility scan left as the next step by #7304"
+    }
+  }
+}
