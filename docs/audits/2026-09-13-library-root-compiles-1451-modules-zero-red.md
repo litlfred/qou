@@ -136,3 +136,32 @@ The `source-changed 2699` line is a fresh-checkout artifact (every source file
 carries the clone's mtime), not real staleness; the sweep's own
 `snapshot-current` split is what keeps that from inflating the closure to
 everything.
+
+## Two of the commit shas cited here are UNRESOLVABLE in an agent clone
+
+Checked, because a citation a reader cannot follow is worth flagging rather than
+leaving them to discover:
+
+| sha | cited as | resolves here |
+|---|---|---|
+| `c9fd78b0a` | the `main` this was measured on | **yes** |
+| `d7e3ae8c662` | the gap-olean branch head | **yes** |
+| `333e491eaa4` | where my five `exit 139` results were measured | **no** |
+| `9151ad46ee5` | where the lifting lemma became unconditional | **no** |
+
+Agent clones here are **shallow** — this one holds 291 commits — so a sha outside
+the fetched window fails `git cat-file` even though the object exists upstream.
+That is the mechanism bean `qou-kfeg` establishes for `git log -S`, hitting a
+different surface: not archaeology over a file, but plain verification of a
+citation.
+
+**Neither unresolvable sha is load-bearing for the result.** `333e491eaa4` dates
+an observation I am *retracting the attribution of* rather than relying on, and
+`9151ad46ee5` is quoted from a sibling's in-file comment, not used as evidence
+here. But a reader who tries to check either will get a bare failure with no
+indication it is the clone rather than the claim — so: it is the clone.
+
+The general form, worth more than this instance: **in this repo a commit sha is
+not a self-verifying citation.** Prefer naming the artifact and the observable
+consequence (here, "the restore reports 86 oleans", "the lemma's signature takes
+no `DihedralExact`") — those are checkable from any checkout at any depth.
