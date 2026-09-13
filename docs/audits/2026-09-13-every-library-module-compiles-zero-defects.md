@@ -67,19 +67,51 @@ were none. The residual conditionality is against **Mathlib**, whose oleans are
 restored rather than rebuilt — a Mathlib-side mismatch remains possible; a QOU-side
 one does not.
 
-## The reframing this forces on `qou-g5sp`
+## 🛑 The reframing — and the premise `qou-g5sp` was built on is FALSE
 
-The two-thirds-outside-the-root finding is a **build-coverage** fact, not a
-**correctness** fact. Those modules are not rotting — every one of them compiles.
-What is true is that **nothing routinely checks them**: `lake build QOU` does not
-reach them, so a breaking change to one lands silently, which is exactly how
-`BruhatRankCriterion` went red on `main` (bean `qou-1u90`, fixed in #7185 with
-that diagnosis in the file's own comment).
+I first wrote this section as *"`lake build QOU` does not reach them"*. **It does.**
+The paper lakefile declares the library with an explicit glob:
 
-That is a materially different problem from the one the bean has been carrying,
-and it has a different fix: not repair, but **coverage** — either reaching them
-from the root, or running this sweep as the gate. Both are owner calls and neither
-is started here.
+    [[lean_lib]]
+    name = "QOU"
+    srcDir = "."
+    # WIDEN THE BUILD TO THE WHOLE TREE (bean qou-rc7b).
+    globs = ["QOU", "QOU.+"]
+
+A Lake library with no `globs` defaults to `roots.map Glob.one` — root plus its
+transitive imports, the state `qou-g5sp` describes. **That ended 2026-08-08**, a
+month before the bean was opened, when `qou-rc7b` (`done`) added the glob. It is on
+`origin/main`. So `lake build QOU` compiles **all 2836**. Corroborated by the
+background build's own log: `[6459/6460] QOU.Eightfold.ObstructionClassForcesComplexType`,
+a job count only a whole-tree build reaches.
+
+**Import closure ≠ build coverage**, and the bean treated the first as implying the
+second. Measured today by walking `import` lines transitively from `QOU.lean`:
+
+    library modules                 2836
+    reachable from QOU.lean         1451   (51.2%)
+    OUTSIDE the import closure      1385   (48.8%)
+
+The **67 %** figure `qou-g5sp` asserts twice is **not reproducible** and is
+withdrawn; `qou-rc7b` independently measured 47 % in August on a smaller tree,
+consistent with today's 48.8 % and not with 67 %.
+
+### So what IS the gap?
+
+Not build coverage — **nothing runs that build automatically.** CI auto-triggers
+are off repo-wide (`build.yml` is `workflow_dispatch`-only, owner directive
+2026-06-30). A breaking change lands and nothing notices until an agent builds or
+sweeps by hand. That is how `BruhatRankCriterion` went red (`qou-1u90`, #7185) —
+**not** because the module was unreachable.
+
+**This removes the owner decision I was about to raise.** I had named "reach them
+from the root, or make the sweep the gate" as an owner call, three times. The first
+half has been done for a month; the second is a CI-trigger question the owner has
+ruled on twice, most recently 2026-08-09 *with this failure cost on the table*, and
+AGENTS.md says not to re-propose it without a new reason. I have none. Withdrawn.
+
+**None of this weakens the result above** — 2821 ok / 0 RED stands, and is *more*
+interesting for it: these modules were being built all along.
 
 ## The 15 unjudged, and the honest remainder
 
