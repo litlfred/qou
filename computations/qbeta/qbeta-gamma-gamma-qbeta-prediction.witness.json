@@ -1,0 +1,163 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T15:17:07.390865+00:00",
+  "commitSha": "ab9be56d8ebb4e7b92cd4144e50ea3fe0f051201",
+  "assertions": [
+    {
+      "name": "calibrates_against_the_dashboards_own_scored_cell",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "scoring the census element nuc11_interleaved through this probe's path gives 0.65185631006 MeV, -16.67794 %, against the -16.678 % AGENTS.md records for the dashboard row. The path is therefore the dashboard's, not a re-invention"
+    },
+    {
+      "name": "every_admissible_word_overshoots_and_none_is_close",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all 5 PSD-feasible gamma-gamma words at n = 4 overshoot Q_beta, from 458.1454 % to 619.7668 %. This is what the ruling's two halves give when both are applied; it is reported because a documented honest miss is a result"
+    },
+    {
+      "name": "the_miss_belongs_to_the_family_not_to_the_choice",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the admissible words agree with each other to a factor 1.28957, while missing the measurement by 5.58145x to 7.19767x. The internal spread is smaller than the smallest miss, so no re-selection INSIDE the admissible set can reach Q_beta -- the choice of word is not the free parameter"
+    },
+    {
+      "name": "the_target_lies_BELOW_every_PSD_feasible_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "target |tr^z_D| = 0.185058897738 is below 1 = tr(empty word) and below the smallest feasible trace 1.03289775552. PSD feasibility pushes the trace UP, and the target sits under the whole feasible set -- so the SDP half is what excludes the measured value, not the gamma-gamma half"
+    },
+    {
+      "name": "the_unconstrained_family_straddles_the_target",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "over 8190 gamma-gamma words at n = 4, |tr^z_D| spans [0.0034350124, 1.3319925] and the target 0.1850588977 is strictly inside. So the gamma-gamma construction ALONE can produce the measured value -- which is the setup for the control below, not a result"
+    },
+    {
+      "name": "the_best_gamma_gamma_match_is_WORSE_than_chance",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the family has 529 distinct trace values over 8190 words, 50 of them within +-10 % of the target; their median spacing 0.000346646 gives an expected best-of-family miss of 0.04683 % by chance alone. The observed best is 0.110577 % -- WORSE than chance. A 0.11 % landing in a grid this dense is not evidence of anything, and quoting it would be exactly the selection-against-the-target AGENTS.md bans"
+    },
+    {
+      "name": "the_near_hit_is_an_order_blind_orbit_and_none_of_it_is_feasible",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "12 words tie at the best value, all with the same multiset of vertex indices -- the trace is order-blind, so they are one orbit, not 12 independent near-hits. None of them is PSD-feasible, so the SDP half of the ruling excludes the whole orbit anyway. Representative: k = 12, (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 78081,
+  "computation": "qbeta-gamma-gamma-qbeta-prediction",
+  "scriptFile": "qbeta_gamma_gamma_qbeta_prediction_probe.py",
+  "scriptHash": "160a477e17a4",
+  "scriptCommitSha": "034a309bf04797f578ca034148bd13d26900798f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_gamma_gamma_qbeta_prediction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_qbeta_prediction_probe.py"
+  },
+  "description": "Scores the gamma-gamma + confinement-SDP admissible set at n = 4 against Q_beta through the dashboard's own path, eps = tr^{z_D} times the canonical tower-summed E_0. All five admissible words overshoot, +458.1 % to +619.8 %, and they agree with EACH OTHER 1.29x while missing the measurement 5.6-7.2x -- so the miss belongs to the family, not to the choice inside it. The probe then disarms the trap: drop the SDP half and the unconstrained family contains a word at 0.11 %, which is WORSE THAN CHANCE for a family whose 529 distinct trace values put 50 within +-10 % of the target (expected best 0.047 %). Scope-(a): one functional, one family, n = 4.",
+  "data": {
+    "target": {
+      "E0_MeV": "4.22748335562903055026805602659",
+      "E0_form": "tower_summed (canonical, qbeta_e0.canonical)",
+      "Q_beta_CODATA_MeV": "0.78233341",
+      "target_abs_tr_zD": "0.1850588977383666835806229",
+      "markov_parameter": "z_D = q^3/(q^2+1)"
+    },
+    "calibration": {
+      "scored_element": "nuc11_interleaved",
+      "tr_conv_D": "-0.1541948850472397056592555",
+      "Q_beta_MeV": "0.651856310060338",
+      "err_pct": "-16.67794",
+      "agents_md_records": "-16.678"
+    },
+    "admissible_set_scored": [
+      {
+        "label": "(v0 v1)^2",
+        "vertices": 4,
+        "abs_tr_zD": "1.032897755524660383026902",
+        "Q_beta_MeV": "4.36655806954709",
+        "err_pct": "458.14542"
+      },
+      {
+        "label": "(v0 v1)^4",
+        "vertices": 8,
+        "abs_tr_zD": "1.137405209118677445379408",
+        "Q_beta_MeV": "4.80836159015497",
+        "err_pct": "514.61795"
+      },
+      {
+        "label": "sporadic A",
+        "vertices": 10,
+        "abs_tr_zD": "1.07323880793572920852933",
+        "Q_beta_MeV": "4.53709919716344",
+        "err_pct": "479.94445"
+      },
+      {
+        "label": "sporadic B",
+        "vertices": 10,
+        "abs_tr_zD": "1.07323880793572920852933",
+        "Q_beta_MeV": "4.53709919716344",
+        "err_pct": "479.94445"
+      },
+      {
+        "label": "(v0 v1)^6",
+        "vertices": 12,
+        "abs_tr_zD": "1.331992492573499969441476",
+        "Q_beta_MeV": "5.6309760921773",
+        "err_pct": "619.76679"
+      }
+    ],
+    "family_spread_vs_miss": {
+      "internal_spread_factor": "1.289568581",
+      "miss_factor_min": "5.581454165",
+      "miss_factor_max": "7.197667925",
+      "reading": "the admissible words agree with each other far more closely than any agrees with the measurement, so the choice of word is not the free parameter"
+    },
+    "chance_control": {
+      "words": 8190,
+      "distinct_values": 529,
+      "distinct_within_10pct": 50,
+      "median_spacing": "0.00034664579291811494",
+      "expected_best_pct_by_chance": "0.046829117",
+      "observed_best_pct": "0.11057672",
+      "tied_words": 12,
+      "verdict": "observed is WORSE than expected-by-chance; the near-hit carries no information"
+    },
+    "scope": {
+      "class": "(a) scope-limited",
+      "what_it_does_not_show": "nothing about n > 4, about a different E_0, or about a tower correction; it measures one functional on one family at one strand count",
+      "what_it_does_show": "inside n = 4 the choice of admissible word cannot reach Q_beta, and the unconstrained family's best match is worse than chance"
+    },
+    "not_implemented": {
+      "demand_constraint": "knot-operator-selection-proof's <Phi, dem(K)>_F >= ||dem(K)||_F is NOT imposed here; building dem(K) requires choosing which K the nucleon is, which is the open question"
+    }
+  }
+}

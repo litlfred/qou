@@ -113,4 +113,56 @@ one and trace at most `2`, so this is the exclusion. -/
 theorem not_posSemidef_of_trace_lt_two (hdet : M.det = 1) (htr : M.trace < 2) :
     ¬ M.PosSemidef := fun h => absurd (trace_ge_two h hdet) (not_le.mpr htr)
 
+/-! ## The general case
+
+`trace_ge_two` is the `d = 2` instance of a bound that holds in every
+dimension, and the general form is what the γγ exclusion actually needs: the
+Wedderburn blocks of `Hₙ(q)` run to dimension `16` at `n = 6`, so a `2×2`
+lemma reaches only the smallest of them.
+
+Bean `qou-99qc`; companion
+`computations/qbeta/qbeta_gamma_gamma_trace_ge_one_probe.py` (8/8), which
+measures that every γγ vertex has determinant `1` in every block — the braid
+generators `σᵢ` and `σᵢ₊₁` are conjugate, so their block images share a
+determinant and `det(σᵢσᵢ₊₁⁻¹) = 1` — hence so does every γγ word.
+-/
+
+/-- **The bound in every dimension.** A real PSD matrix of determinant `1` has
+trace at least its dimension.
+
+The eigenvalues are non-negative with product `1`, so none is zero, and
+`log x ≤ x − 1` summed over them gives `0 = Σ log λᵢ ≤ Σ λᵢ − d`. That is
+AM-GM, taken in the form whose Mathlib lemma is `Real.log_le_sub_one_of_pos`.
+
+Equality holds exactly at the identity (each `λᵢ = 1`); the `d = 2` case of
+that is `eq_one_of_trace_eq_two` above. -/
+theorem card_le_trace_of_det_one {d : ℕ} {A : Matrix (Fin d) (Fin d) ℝ}
+    (h : A.PosSemidef) (hdet : A.det = 1) : (d : ℝ) ≤ A.trace := by
+  have h1 := h.1
+  have hnn : ∀ i, 0 ≤ h1.eigenvalues i := h.eigenvalues_nonneg
+  have hprod : ∏ i, h1.eigenvalues i = 1 := by
+    have hd := h1.det_eq_prod_eigenvalues
+    rw [hdet] at hd
+    exact_mod_cast hd.symm
+  have hpos : ∀ i, 0 < h1.eigenvalues i := by
+    intro i
+    rcases (hnn i).lt_or_eq with h' | h'
+    · exact h'
+    · exact absurd hprod (by
+        rw [Finset.prod_eq_zero (Finset.mem_univ i) h'.symm]; norm_num)
+  have hsum : A.trace = ∑ i, h1.eigenvalues i := by
+    have ht := h1.trace_eq_sum_eigenvalues
+    exact_mod_cast ht
+  have hlog : ∑ i, Real.log (h1.eigenvalues i) = 0 := by
+    rw [← Real.log_prod _ _ (fun i _ => (hpos i).ne'), hprod, Real.log_one]
+  have hstep : ∀ i ∈ Finset.univ,
+      Real.log (h1.eigenvalues i) ≤ h1.eigenvalues i - 1 :=
+    fun i _ => Real.log_le_sub_one_of_pos (hpos i)
+  have hle := Finset.sum_le_sum hstep
+  rw [hlog, Finset.sum_sub_distrib] at hle
+  simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul,
+    mul_one] at hle
+  rw [hsum]
+  linarith
+
 end QOU.Mass.PsdDetOneTrace
