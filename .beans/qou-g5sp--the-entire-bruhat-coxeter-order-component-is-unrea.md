@@ -495,11 +495,20 @@ Measured today by walking `import` lines from `QOU.lean` transitively:
     OUTSIDE the import closure      1385   (48.8%)
     direct imports listed in QOU.lean  911
 
-**The `67% (1845/2735, 1853/2752)` figure asserted twice above is not
-reproducible** and is withdrawn. Today's measure is 48.8%, and `qou-rc7b`
-independently measured 47% in August on a smaller tree -- consistent with each
-other and not with 67%. I do not know how the 67% was produced; what is certain is
-that it is not the import-closure ratio it is labelled as.
+**The `67%` figure asserted twice above was ALREADY CORRECTED on 2026-09-08** --
+by `scripts/lean-root-coverage-audit.py`'s own `CORRECTED` block, which states the
+cause (it counted the root's DIRECT import lines, not the transitive closure,
+understating coverage by 540 modules) and names the four places the overstatement
+reached, this bean's headline among them. Today's independent measure, 48.8%,
+agrees with that script's 47.7% and with `qou-rc7b`'s 47% in August.
+
+**So my withdrawal of the 67% is a RE-DISCOVERY, not a finding**, and I reached it
+by measuring rather than by grepping my own tool -- the corpus-grep failure this
+bean has now committed twice in one session.
+
+What IS new is the **premise**, which that correction did not touch: it fixed the
+count while leaving "a module outside the closure is built by nothing" standing.
+The glob falsifies that, and the two errors needed separate fixing.
 
 ### The distinction the whole bean was missing
 
@@ -538,3 +547,23 @@ rather than edited: it is a sibling's file and the correction is theirs to make.
 
 **None of this touches the sizing result.** 2821 ok / 0 RED stands, and it is now
 *more* interesting rather than less: those modules were being built all along.
+
+
+### The premise's remaining carriers (measured 2026-09-13)
+
+Corrected here:
+
+  scripts/lean-root-coverage-audit.py  -- docstring; my own script
+
+Flagged, NOT edited -- a sibling's file and a dated audit doc:
+
+  scripts/lean-library-sweep.py:299    -- `--all` help text, "1863 of 2773 are
+                                          outside the root build"; both the count
+                                          and the premise are stale
+  QOU/Machinery/BruhatRankCriterion.lean:610 -- "`lake build QOU` never compiles
+                                          it", inside the qou-1u90 fix (#7185)
+  docs/audits/2026-09-08-full-library-sweep-and-five-false-reds.md:143
+
+The sweep help text is the one that matters most: it is read by every agent who
+runs `--all --help`, and it carries BOTH the superseded 67% count AND the false
+premise, in a script that is otherwise the corpus's best verification tool.
