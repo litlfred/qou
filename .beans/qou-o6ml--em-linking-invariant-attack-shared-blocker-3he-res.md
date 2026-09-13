@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T19:15:46Z
+updated_at: 2026-09-13T19:45:34Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1891,3 +1891,104 @@ configuration: separations, not volume. Two consequences worth keeping:
 And section 9g's own conclusion matches `qou-mbbf`'s, reached the same day from
 the carrier side without contact: **the route's deliverable is the object
 `qou-ales` is deriving, not a separate one.** Two independent arrivals.
+
+
+---
+
+## 2026-09-13 — `qou-9v7t` PINS THIS ARC'S TARGET NUMBER, and neither bean cites the other
+
+Found while correcting `qou-a2w5`'s `b_3` claim (PR #7339). This is a
+corpus-grep find, not a derivation: **two beans on the same question, mutually
+invisible.**
+
+### The number this arc owes
+
+`qou-9v7t` (2026-08-29, PR #5990,
+`computations/b3-charge-decomposition-a3.witness.json`) splits the A = 3
+three-body cumulant by isospin and **names the halves**:
+
+| part | value (MeV) | `qou-9v7t`'s own label |
+|---|---|---|
+| `b3_sym`  | 1.4262225 | *"the strong channel's obligation"* |
+| `b3_asym` | 0.3818775 | ***"the EM channel's"*** |
+
+This arc is the **EM-linking** invariant. So the A = 3 figure it owes is
+plausibly `b3_asym`, and the widely-quoted `1.4262225` — which `qou-a2w5` and
+four `.lean` docstrings cite — belongs to the **strong** channel and is **not**
+this arc's target.
+
+**Flagged, NOT concluded.** That route (2)'s `mobiusCrossingModel.b3` is the
+asym part rather than the sym part (or neither) is a further read of
+`mobiusCrossingModel`, and I have not made it. What is established is only that
+the corpus already carries a charge-split with an EM half, and that this arc
+does not cite it.
+
+### QUOTE IT TO 5 FIGURES, NOT 7 — measured
+
+The decomposition does **not** close exactly against the A = 3 values
+`PairwiseCumulantVanishing.lean:75-76` quotes:
+
+    b3_sym + b3_asym = 1.8081000  vs  b3(3H)  = 1.808100   EXACT
+    b3_sym - b3_asym = 1.0443450  vs  b3(3He) = 1.044360   off by 1.5e-5
+
+i.e. `qou-9v7t` computed from a `B(3He)` about **15 eV** below the one that file
+quotes. Same class as the 8e-6 MeV residual that file already records on
+`b3_sym` ("AME input precision"), and the two are the same defect seen from
+opposite ends: sym is low by 7.5e-6 and asym high by 7.5e-6, which is why the
+3H sum closes and the 3He difference does not.
+
+**Consequence for this arc:** the EM obligation is `0.38187` MeV good to ~5
+significant figures. A route reproducing `0.3818775` to 7 figures would be
+matching AME input noise, not physics. Worth knowing *before* a route is graded.
+
+### `qou-9v7t` ALSO STATES THIS ARC'S PREMISE INDEPENDENTLY
+
+Verbatim from that bean:
+
+> the A=3 mirror pair is where the EM channel shows up in binding, and **the
+> framework has no EM term in any per-bond factor** (`f_pp = z`, `f_nn = z - h`,
+> `f_pn = z - h(1/2 - delta/4)`)
+
+That is this arc's premise — a two-like-charge term `w_ij` absent from the
+per-bond factors — reached from the binding side by an agent that was not
+working this arc. **Independent corroboration of the premise, from a different
+direction.** Note the three factors are charge-*labelled* but carry no charge
+*coupling*: `f_pp` and `f_nn` differ by `h`, not by anything electromagnetic.
+
+### THREE CONSTRAINTS ON THIS ARC'S ROUTES, from `qou-9v7t`'s four results
+
+1. **The mirror splitting is the Coulomb displacement energy**, essentially
+   exactly: `b3(3H) - b3(3He) = B(3H) - B(3He) = 0.76374` MeV, because the
+   pair-additive `3*B(2H)` cancels in a mirror pair. So this arc's A = 3 target
+   is not a fitted residual — it is a difference of two measured bindings, which
+   is the cleanest kind of target available.
+2. **9 of 10 existing candidates get the sign BACKWARDS.** Only the product
+   3-bond term is right-signed, and at **21.8%** of the displacement. The
+   wrong-signed ones reach 65% magnitude — *worse*, not better. Any new route
+   must clear the sign before magnitude is worth measuring.
+3. **The current sign is an accident, not a prediction** — two competing non-EM
+   sources, `tau_p/tau_n = 1.1600` favouring 3He against a bond-product ratio
+   `0.6494` favouring 3H, with different terms dominated by different ones. So
+   the framework's present agreement in sign, where it has it, carries no
+   evidential weight for this arc.
+
+### THE ABSENCE CLAIM THAT SENT THIS ARC LOOKING, AND IT WAS FALSE
+
+`qou-9v7t` closes: *"what supplies the **EM channel** at A=3 is a second
+[question], and nothing in the corpus currently addresses it."*
+
+**The corpus did address it.** This bean was created **2026-08-01**, four weeks
+earlier, `in-progress`, with "the two-like-charge EM-linking invariant that owns
+the 3He mirror residual" in its own title. So that sentence is an
+absence-of-evidence claim that was false when written.
+
+Worth recording for the reason rather than the fault: **corpus-grep path 6
+(`.beans/`) was added to AGENTS.md on 2026-08-26 — three days before.** The
+first five paths cannot reach a bean, and this arc's statement of the problem
+existed **only** as a bean at that date. It is the exact failure mode the path-6
+note was written for, landing three days after the fix, and it cost four weeks
+of mutual invisibility between two beans on one question.
+
+**Both directions are now recorded**: this entry, and `qou-9v7t` is `completed`
+so it takes no update — its "live successor" line stands as a dated record of
+what was known then.
