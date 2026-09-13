@@ -351,7 +351,7 @@ Everything above is gated on 4₁ and 5₂, where GGM print the answer.
 | G1 | 5₂: `N(X) = (1, s, s, 1)` — GGM (276)/(332), offsets `{1,x,1/x}` | exact sympy |
 | G2 | 4₁: `N(X) = (1, 1+x, x)` — GGM (332) at `(A,r) = (1,2)` | exact sympy |
 | G3 | the (FE)-rearranged integrand identity, **pointwise**, all three knots | `≲ 2.3·10⁻²⁹` |
-| G4 | the derived recurrence on the **actual state integrals** (degree 6 for the pretzel) | quadrature-limited; see below |
+| G4 | the derived recurrence on the **actual state integrals** (degree 6 for the pretzel) | 4₁ `4.2·10⁻²²`, 5₂ `2.6·10⁻²²`, **pretzel `4.1·10⁻²¹`** (best config each; quadrature-limited, see below) |
 | G5 | degree 6 = the pretzel's rank 6 | exact |
 | G6 | GGM (188)/(307) multiplied out lie in `ℤ[s(x)]` | exact |
 | G7a/b | the Newton polygons and their leading polynomials | exact |
@@ -394,6 +394,24 @@ $$
   mis-centred by `2 Im c_b ≈ 2.05`, the `k = 3` and `k = 4` rungs diverged and the
   gate returned `rel_residual = 1.0` with `|Z| ~ 10^{115}` — not a small error, and
   not one that degrades gracefully.
+
+  **With `Im lin` restored, the gate passes.** The probe now measures `Im lin`
+  directly and records it per row; it comes out `−2.31421` and `−2.02254` at the two
+  configurations, against `−2 Im c_b = −2(1.15710)` and `−2(1.01127)` — the
+  diagnosis confirmed to every printed digit. The residuals go
+
+$$
+1.0 \;\longrightarrow\; 4.098\cdot 10^{-21}
+\quad\text{and}\quad
+1.0 \;\longrightarrow\; 6.483\cdot 10^{-19},
+$$
+
+  with `|Z|` back to `7.07` and `11.40` from `9.85·10^{115}` and `6.37·10^{141}`.
+  So the **derived degree-6 recurrence does hold on the pretzel's actual state
+  integral**, and the contour shift `v → v − ib` is validated along with the algebra.
+  Verified separately that the shift crosses **no poles** at either configuration:
+  the swept strip is `Im v ∈ [0.721, 1.111]` and `[0.566, 0.971]`, against a lowest
+  pole at `Im = Im c_b = 1.157` and `1.011`.
 
   **Two things this buys, beyond the fix.** At `k = 0`, `t_I = 0` the `+∞`
   condition reduces to `ε > Im(c_b)/2` — which is *exactly* the constraint §3k of
