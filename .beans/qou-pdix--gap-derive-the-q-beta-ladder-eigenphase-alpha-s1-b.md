@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T00:46:23Z
+updated_at: 2026-09-13T00:48:55Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2160,3 +2160,65 @@ deformation as an INPUT), so any agreement found on the KZ side would be
 **conditional on the `KZPullbackGenerators` interface**, not derived. Worth saying
 before someone computes an associator coefficient, matches 3.794, and reports a
 closure.
+
+
+### 2026-09-12 (6) — my "well-posed single number" is NOT well-posed: the open-path holonomy has two free choices and a factor-2
+
+Entry (5) closed by calling the next step "a well-posed single number": compute the
+open-path holonomy's leading `hbar`-coefficient and compare it to 3.794. **Checked
+against what `qou-d0qq` actually pins, that is wrong, and running it as stated
+would be a fit.**
+
+WHAT IS PINNED. The LEVEL is genuinely pinned convention-free —
+`KZLevelFromHeckeNormalisation` (sorry-free) fixes it from the half-twist
+eigenvalue RATIO (split Casimir 1/4 on Sym^2, -3/4 on Lambda^2 => ratio
+`-e^{i pi hbar}`; matching Hecke's `-q^2` gives `q^2 = e^{i pi hbar}`). That is a
+ratio, so it is independent of overall normalisation. Good.
+
+WHAT IS NOT PINNED, and each one is a dial that could be turned to hit 3.794:
+
+1. **The open PATH is unspecified.** Everything `qou-d0qq` measures is a CLOSED
+   loop — the six lassos (all positive half-twists) and their product `Delta^2`.
+   An open-path holonomy needs endpoints, and none are named. Different paths give
+   different leading coefficients.
+2. **The FUNCTIONAL is unspecified.** For the closed loops the bean uses the
+   pivotal trace (giving `z_D`), but an open-path holonomy is **not
+   conjugation-invariant**, so "its trace" is not canonical — it depends on the
+   endpoints and the framing. Which matrix element or invariant plays the role of
+   `P` is a choice, not a consequence.
+3. **And the level carries a factor-2 ambiguity the bean itself records.** Its
+   2026-09-07 correction: *"q^2 = e^{i pi hbar} is conditional on Skein
+   normalisation (H) — under (J) the ratio is -q and hbar halves"*, with the level
+   mapping `k+2 = 15.05i / 30.11i / 60.22i` across the three `hbar` conventions.
+   A factor 2 in `hbar` moves the required `a1` by a factor 2 — from 3.794 to
+   1.897 or 7.588 — which is larger than the gap between the target and the best
+   declared form (1.25x).
+
+So the comparison has at least two unfixed choices plus a factor-2, against a
+single target number. **Landing on 3.794 under those conditions is selection
+against the target, which §NO FITTING forbids outright.** I am not running it.
+
+WHAT WOULD MAKE IT WELL-POSED, in order:
+
+  (a) resolve the Skein normalisation (H) vs (J) so `hbar` is fixed, not fixed
+      up to 2 — this is already a known open item on `qou-d0qq`;
+  (b) derive the open path from the construction (the framework-side connection
+      is what would supply endpoints; C1/C2/C3 are scope-(b) dead and survivor C3'
+      needs the deformation as an INPUT, so this is the same blocker as before);
+  (c) derive the functional from the pivotal structure rather than choosing a
+      matrix element.
+
+Only (a) is plausibly separable from the framework-side connection. (b) is that
+connection. So **5b's real blocker is unchanged from entry (4)** — it is
+`qou-d0qq`'s framework-side connection — and entry (5)'s O(1) statement stands only
+as a SHAPE constraint, not as a runnable comparison.
+
+META, because this is the third time this session and it has cost turns. I named a
+"next step" three times at a level of abstraction where it read as actionable, and
+each time the detail showed it was not: (i) "compute the step-2 holonomy" — no
+connection exists; (ii) "blocked on qou-6ers" — wrong bean; (iii) "a well-posed
+single number" — two free choices and a factor-2. The common failure is naming the
+step from the SHAPE of the object rather than from what is pinned about it. The fix
+is the one this entry applied: before calling a computation well-posed, enumerate
+what the source artifact actually fixes and what it leaves free, and count the
+dials against the number of targets.
