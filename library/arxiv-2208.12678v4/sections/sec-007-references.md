@@ -7,6 +7,7 @@ section_number: null
 pages: 14-14
 source_pdf: 2208.12678v4.pdf
 source_sha256: 406d36ff4968091d
+doc_brief: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 [BV18] Simon Blatt and Nicole Vorderobermeier, On the analyticity of critical points of the M¨ obius energy , Calculus of
 Variations and Partial Differential Equations 58 (2018), no. 1, 16.

@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 4-5
 source_pdf: 2208.12678v4.pdf
 source_sha256: 406d36ff4968091d
+doc_brief: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 Lemma 8. Suppose
 

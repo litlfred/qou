@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-4
 source_pdf: CzechMathJ_60-2010-1_4.pdf
 source_sha256: 7595f81d1398d0bf
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
 ---
 In literature, the Composition-Diamond lemma for modules w as ﬁrst proved by
 S.-J. Kang and K.-H. Lee in [16], [17]. According to their app roach, a Gröbner-

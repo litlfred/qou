@@ -7,6 +7,7 @@ section_number: null
 pages: 23-24
 source_pdf: 1904.13129v1.pdf
 source_sha256: dfa7fd0ebf1ab8c4
+doc_brief: "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — W e prove the analyticity of smooth critical points for O’Har a’s knot energies E α,p , with p = 1"
 ---
 [ACF+03] A. Abrams, J. Cantarella, J. H. G. Fu, M. Ghomi, and R . Howard, Circles minimize
 most knot energies , Topology 42 (2003), no. 2, 381–394.

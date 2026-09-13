@@ -7,6 +7,7 @@ section_number: null
 pages: 20-23
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
+doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
 ---
 Fix a pointz∈R 𝑛 and𝑠∈ (0,1]. The Hilbert spaceH=𝐻 1+𝑠(R/Z,R𝑛) with its inner
 product8

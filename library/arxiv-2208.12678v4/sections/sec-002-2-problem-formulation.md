@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-4
 source_pdf: 2208.12678v4.pdf
 source_sha256: 406d36ff4968091d
+doc_brief: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 Denote the closed unit disk by D⊂ R2 and let γ : ∂D→ R3 be a rectifiable simple closed curve. We
 define the M¨ obius energy[O’H03, FHW94] as

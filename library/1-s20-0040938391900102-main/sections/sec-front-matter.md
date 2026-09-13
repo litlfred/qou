@@ -7,6 +7,7 @@ section_number: null
 pages: 1-4
 source_pdf: 1-s2.0-0040938391900102-main.pdf
 source_sha256: 8b4169e83aeeff39
+doc_brief: "ENERGY OF A KNOT — 2 sections: Front matter; II"
 ---
 ENERGY OF A KNOT 
 JCN O’HARA 

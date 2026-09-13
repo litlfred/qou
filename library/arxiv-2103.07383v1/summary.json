@@ -1,0 +1,81 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2103.07383v1",
+ "source_sha256": "9dca35ea16490ad8",
+ "brief": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature",
+ "extended": "**On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case**\n\n*Daniel Steenebrügge*\n\n31 pp, 12 sections.\n\n**Abstract.** We prove the analyticity of smooth critical points for generalized integral Menger cur- vature energies intM(p,2), withp ∈ ( 7 3, 8 3 ), subject to a ﬁxed length constraint. This implies, together with already well-known regularity results, that ﬁnite-energy, criticalC 1-curves γ: R/Z → Rn of generalized integral Menger curvature intM(p,2) subject to a ﬁxed length constraint are not onlyC ∞ but also analytic. Our approach is inspired by analyticity results on critical points for O’Hara’s knot energies based on Cauchy’s method of majorants and a decomposition of the ﬁrst variation. The main new idea is an additional iteration in the recursive estimate of the derivatives to obtain a suﬃcient diﬀerence in the order of regularity.\n\n**Outline.** Front matter; 1 Introduction; 3 Estimate of the main term Q(p); 4 The remainder term R(p); 4.1 Representation of the remainder term R(p); 4.2 A fractional Leibniz rule; 5 Proof of the main statement; 5.1 Recursive estimate and iteration; 5.2 Proof of Theorem 1.2; 6 A few simple consequences concerning critica; A Properties of analytic functions; C An inequality for Sobolev Norms",
+ "tokens": {
+  "brief": 49,
+  "extended": 324
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-3-estimate-of-the-main-term-qp",
+   "title": "Estimate of the main term Q(p)",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-002-4-the-remainder-term-rp",
+   "title": "The remainder term R(p)",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-003-41-representation-of-the-remainder-term-rp",
+   "title": "Representation of the remainder term R(p)",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-42-a-fractional-leibniz-rule",
+   "title": "A fractional Leibniz rule",
+   "pages": "10-18"
+  },
+  {
+   "id": "sec-005-5-proof-of-the-main-statement",
+   "title": "Proof of the main statement",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-006-51-recursive-estimate-and-iteration",
+   "title": "Recursive estimate and iteration",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-007-52-proof-of-theorem-12",
+   "title": "Proof of Theorem 1.2",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-008-6-a-few-simple-consequences-concerning-critical",
+   "title": "A few simple consequences concerning critical knots",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-009-a-properties-of-analytic-functions",
+   "title": "A Properties of analytic functions",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-010-c-an-inequality-for-sobolev-norms",
+   "title": "C An inequality for Sobolev Norms",
+   "pages": "27-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

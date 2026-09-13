@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-7
 source_pdf: 1-s2.0-0040938391900102-main.pdf
 source_sha256: 8b4169e83aeeff39
+doc_brief: "ENERGY OF A KNOT — 2 sections: Front matter; II"
 ---
 0 5 I 2 (8 - rr);‘?, WC have 
 I;,,$_~), ~;,(,)~(~l~“‘~+~~~~‘~z+‘+~~~“‘i~+~:’lli”)r-’di, 

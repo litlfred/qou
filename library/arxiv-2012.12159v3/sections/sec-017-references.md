@@ -7,6 +7,7 @@ section_number: null
 pages: 41-42
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 [1] J. C. ´Alvarez Paiva. Dual spheres have the same girth.Amer. J. Math., 128(2):361–371, 2006.
 [2] J. C. ´Alvarez Paiva and G. Berck. What is wrong with the Hausdorﬀ measure in Finsler

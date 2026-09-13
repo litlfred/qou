@@ -7,6 +7,7 @@ section_number: null
 pages: 48-52
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
+doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
 ---
 [1] R. Abraham, J. E. Marsden, and T. Ratiu.Manifolds, tensor analysis, and applications. Second. Vol. 75.
 Applied Mathematical Sciences. Springer-Verlag, New York, 1988, pp. x+654.doi:10.1007/978-1-

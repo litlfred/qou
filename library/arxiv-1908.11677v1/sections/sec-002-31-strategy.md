@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 11-12
 source_pdf: 1908.11677v1.pdf
 source_sha256: c53663eeb457daf9
+doc_brief: "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e"
 ---
 Let f , φ , ψ ∈ W 1+σ, 2p(R/ LZ, Rn) ∩ W 1, ∞(R/ LZ, Rn), and assume that f is
 bi-Lipschitz. By [3], we already know the estimate

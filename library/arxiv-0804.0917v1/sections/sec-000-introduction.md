@@ -7,7 +7,8 @@ section_number: null
 pages: 1-2
 source_pdf: 0804.0917v1.pdf
 source_sha256: 887fbd8be47a2781
-doc_brief: "Composition-Diamond Lemma for Modules ∗ — In this paper we give some relationships among the Gr¨ obner-Shirsh ov bases in free associative algebras, free left modules and “double-free” le ft modules"
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
+duplicate_of: "czechmathj-60-2010-1-4"
 ---
 Composition-Diamond lemma for modules was ﬁrst formulated and pro ved by S.-J. Kang
 and K.-H. Lee in [15] and [19]. According to their approach, a Gr¨ obne r-Shirshov basis
