@@ -211,6 +211,31 @@ def main() -> int:
         print(f"    {bname:>12}: spread = {mp.nstr(spread[bname], 12)}"
               f"   ({'PAIR-DEPENDENT' if spread[bname] > TOL else 'pair-INDEPENDENT'})")
 
+    # WHERE does the order-dependence live?  A sibling arc (qou-99qc, #7295) proves
+    # the ALTERNATING character is order-blind: a 1-dim rep sends a word to a
+    # PRODUCT of scalars, so it sees only the multiset of letter shifts, never the
+    # order or which generator each letter sits on.  That looks like it collides
+    # with the mu_pn != mu_np measured above.  It does not, and this localises why:
+    # tr_M is a y-weighted sum over ALL blocks, and only the >=2-dimensional ones
+    # can resolve order.  Measured per block rather than argued.
+    print(f"\n  per-block source of the pn/np gap (1-dim blocks are order-BLIND):")
+    print(f"  {'block':>10}{'dim':>5}{'y_lambda':>16}{'chi(pn) - chi(np)':>24}")
+    onedim_gap = mp.mpf(0)
+    multidim_gap = mp.mpf(0)
+    w_pn = nucleon_block("p", h, 0) + nucleon_block("n", h, 3) + bonds["G3"]
+    w_np = nucleon_block("n", h, 0) + nucleon_block("p", h, 3) + bonds["G3"]
+    for lam in parts6:
+        sig, dim, _ = reps6[lam]
+        g = trace(word_image(sig, dim, w_pn), dim) - trace(word_image(sig, dim, w_np), dim)
+        if dim == 1:
+            onedim_gap += abs(y6[lam] * g)
+        else:
+            multidim_gap += abs(y6[lam] * g)
+        if abs(g) > TOL or dim == 1:
+            print(f"  {str(lam):>10}{dim:>5}{mp.nstr(y6[lam], 8):>16}{mp.nstr(g, 12):>24}")
+    print(f"    1-dim blocks total |y.dchi| = {mp.nstr(onedim_gap, 8)}   "
+          f">=2-dim total = {mp.nstr(multidim_gap, 8)}")
+
     # control: the template bond must reproduce z_D (connected-sum multiplicativity)
     dev_template = max(abs(mu[(p, "template_s2")] - z_d) for p in pairs)
     # one-sidedness: is mu a function of the pair, or of the second nucleon alone?
@@ -275,6 +300,12 @@ def main() -> int:
     a.append(("EVERY pair type exceeds 1 under G^3, so no chain gets exactly one "
               "bond above 1 and b3 < 0 on both atoms",
               all(mu[(p, "G3")] > 1 for p in pairs)))
+    a.append(("CROSS-ARC CONSISTENCY (qou-99qc / #7295): the 1-dimensional blocks "
+              "contribute NOTHING to the pn/np gap -- a 1-dim rep is a product of "
+              "scalars and is order-blind, so their order-blindness and this "
+              "probe's order-DEPENDENCE are not in conflict", onedim_gap < TOL))
+    a.append(("the whole pn/np gap is carried by the >=2-dimensional blocks",
+              multidim_gap > TOL))
     a.append(("the two chains AGREE in sign under G^3 (a single bond family "
               "cannot give one atom a positive b3 and the other a negative one "
               "without that being a finding in itself)", he_pos == h3_pos))
@@ -308,6 +339,13 @@ def main() -> int:
         "tr_free_by_pair": {p: mp.nstr(v, 30) for p, v in tr_free_by_pair.items()},
         "pair_spread": {b: mp.nstr(spread[b], 30) for b in bonds},
         "gamma_gamma_pair_dependent": bool(gg_dep),
+        "order_dependence_by_block_dim": {
+            "one_dim_total_abs_y_dchi": mp.nstr(onedim_gap, 30),
+            "multi_dim_total_abs_y_dchi": mp.nstr(multidim_gap, 30),
+            "reading": ("the pn/np gap is carried ENTIRELY by the >=2-dim blocks; "
+                        "the 1-dim blocks are order-blind, which reconciles this "
+                        "probe with qou-99qc/#7295's altChar order-blindness result"),
+        },
         "one_sidedness": {
             "pair_symmetry_gap_mu_pn_minus_mu_np": mp.nstr(sym_gap, 30),
             "second_nucleon_rule_worst_gap": mp.nstr(second_gap, 30),
