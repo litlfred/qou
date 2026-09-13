@@ -1,13 +1,25 @@
-"""Closed-form search for the implied h² coefficient -0.91628 at q_0.
+"""Closed-form search for the implied h² coefficient -0.91629 at q_0.
 
 Per author 2026-05-25 — searches a curated catalog of mathematical
 constants and their combinations against the actual implied h²
-coefficient `c_implied = -0.91628187612727488...` (computed from
+coefficient `c_implied = -0.9162938090685661243645362` (computed from
 target_lw at q_0 at 50 dps).
 
+STALE FIGURE CORRECTED 2026-09-13 (bean qou-n62l). Every -0.91628 below
+read -0.91628187612727488..., which diverges from the live value at the
+FIFTH decimal -- a shift of 1.2e-5, twenty-four times the 1 ppm (5e-7)
+match criterion this search applies. So the documented target had moved
+by far more than the tolerance used to decide a match against it. The
+CODE was never affected: `compute_implied_c2(dps=50)` is called live and
+the comparison always ran against that. Only the prose was stale.
+
+The two known near-candidates survive the correction: -G = -0.9159656
+is +3.3e-4 away (documented +3.2e-4) and -11/12 = -0.9166667 is -3.7e-4
+(documented -3.8e-4).
+
 The closest candidates from prior probes:
-  -G ≈ -0.91596 (Δ +3.2e-4)
-  -11/12 ≈ -0.91667 (Δ -3.8e-4)
+  -G ≈ -0.91597 (Δ +3.3e-4)
+  -11/12 ≈ -0.91667 (Δ -3.7e-4)
 
 This probe systematically tests ~70 candidate closed forms drawn from:
   - Dirichlet L-values: L(2, χ_d) for d = 3, 4, 7, 8, 11
@@ -17,9 +29,9 @@ This probe systematically tests ~70 candidate closed forms drawn from:
   - π, e, G, ζ(n) combinations: products / ratios / sums
   - Modular L-function values (limited subset)
 
-If ANY candidate matches -0.91628 within 1 ppm (5e-7), that's a
+If ANY candidate matches -0.91629 within 1 ppm (5e-7), that's a
 suspect structural identity; report and flag. If NONE matches, then
--0.91628 is either:
+-0.91629 is either:
   (a) A new constant we haven't catalogued, or
   (b) NOT a single closed-form (composite of multiple contributions)
 
@@ -27,7 +39,7 @@ suspect structural identity; report and flag. If NONE matches, then
 
 For each candidate constant `c`, compute `|c - c_implied|`. Report
 the K closest candidates, sorted by absolute deviation. The candidate
-`-G` should appear with deviation 3.2e-4 (already known).
+`-G` should appear with deviation 3.3e-4 (already known).
 
 ## Cross-references
 
@@ -249,7 +261,7 @@ def main() -> int:
     w.set_description(
         "Searches a curated catalogue of ~70 closed-form mathematical "
         "constants against the actual implied h² coefficient c_implied "
-        "≈ -0.91628 at q_0 (50 dps). Reports top-10 closest matches "
+        "≈ -0.91629 at q_0 (50 dps). Reports top-10 closest matches "
         "to identify any structural identity within 1 ppm precision."
     )
 
@@ -396,10 +408,18 @@ def main() -> int:
     w.add_data("n_candidates_within_1ppm", len(matches_1ppm))
     w.add_data("has_match_1ppm", bool(matches_1ppm))
     w.add_caveat(
-        "The module docstring states c_implied = -0.91628187612727488…; the "
-        "computed value is -0.91629380906856612…, differing by 1.19e-5 — far "
-        "outside the 1 ppm gate the search uses. The docstring literal is "
-        "stale. Reported, not silently corrected."
+        "The module docstring USED to state c_implied = "
+        "-0.91628187612727488…, against a computed -0.91629380906856612… — "
+        "differing by 1.19e-5, twenty-four times the 1 ppm gate this search "
+        "applies. That was found and recorded here rather than fixed "
+        "('reported, not silently corrected'); it was corrected 2026-09-13 "
+        "under bean qou-n62l, which is also not silent — the docstring now "
+        "carries the live value, the measurement and the history. The CODE "
+        "was never affected: compute_implied_c2(dps=50) is called live and "
+        "every comparison ran against that, so no result here was ever "
+        "computed against the stale figure. The two documented near-"
+        "candidates moved with it: -G from +3.2e-4 to +3.3e-4, -11/12 from "
+        "-3.8e-4 to -3.7e-4."
     )
     w.add_caveat(
         "The docstring anticipates that NO candidate matches to 1 ppm; one "

@@ -131,3 +131,40 @@ prose number only against the field its own sentence names.
   serialise, so it cannot drift again. Eight of its ten hardcoded figures were
   still correct roundings — which is the trap: a description that is mostly
   right reads as maintained.
+
+## 9. The three `--pairs` items left open on 2026-09-13 — RESOLVED, RE-RUN ONLY
+
+* **`sdp_gamma_gamma_to_qqbar.py`** — prose `tr_M ≈ 0.73` against data `0.8485`.
+  A **q₀-migration casualty**: `tr_M_at_q_0` read `0.7302040595096824` until
+  `3563e08910a` ("migrate(q0) batch 4") moved it to `0.8485266504695027`, while
+  `alt_eigenvalue_at_q_0` changed only in its 9th decimal and `c_1`, `c_sigma`
+  and `sym_eigenvalue` did not move at all. The description is now
+  **interpolated** from `bw['tr_M_at_q_0']`.
+  **A previous correction in this same file got it backwards** and is also
+  fixed: a `print` at line ~235 asserted "tr_M ≈ 0.73 … was never the trace —
+  0.7312 is the magnitude of the alt eigenvalue". The git record refutes that.
+  The two quantities sit 0.1 % apart by coincidence, and that coincidence turned
+  a drift into a misdiagnosed conflation — while the `set_description` the note
+  was correcting was left asserting 0.73 anyway.
+
+* **`implied_c2_closed_form_search_50dps.py`** — docstring stated
+  `c_implied = -0.91628187612727488…` against a live
+  `-0.9162938090685661243645362`. They diverge at the **5th** decimal, 1.2e-5,
+  which is **24× the 1 ppm (5e-7) criterion this search applies**. A prior
+  author found this and recorded it in a caveat rather than fixing it
+  ("reported, not silently corrected"); corrected now, and the caveat rewritten
+  to carry the history rather than a present-tense falsehood. The two near-
+  candidates moved with it (-G +3.2e-4 → +3.3e-4, -11/12 -3.8e-4 → -3.7e-4).
+  **The code was never affected** — `compute_implied_c2(dps=50)` is called live.
+  FOLLOW-UP: `set_description` runs *before* `c_implied` is computed, so it
+  could not be interpolated without reordering builder calls. Do that when the
+  checkout is free and the producer can actually be run.
+
+* **`alpha_em_period_qdeformation_probe.py`** — NOT a prose defect, no fix owed.
+  Prose `q15 = 0.62556` against data `q15 = 3.73205080756887729` (2 + √3). The
+  witness's own failing assertion is named `dictionary_endpoint_q15_computed`
+  and its verdict already reads "INCONCLUSIVE — an assertion failed; re-derive
+  before citing". `--pairs` found the same failure from the other side.
+  Separately worth fixing whenever that probe is revisited: all four of its
+  assertions carry `computed=None, expected=None, tolerance=None, source=None`,
+  so the FAIL records nothing about *what* failed.

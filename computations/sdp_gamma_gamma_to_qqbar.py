@@ -232,8 +232,15 @@ def main():
     print("  argument is WITHDRAWN (owner ruling 2026-08-30, bean qou-1qsw):")
     print("  tr_M = 1 admits only the identity, so it would also reject the")
     print("  σ_0² gluon vertex this file ships.  It is a normalisation, not")
-    print("  a selector.  It also quoted tr_M ≈ 0.73, which was never the")
-    print("  trace — 0.7312 is the magnitude of the alt eigenvalue.")
+    print("  a selector.  It also quoted tr_M ≈ 0.73; that figure WAS the")
+    print("  trace, and went stale — this note used to say it 'was never")
+    print("  the trace, 0.7312 is the alt eigenvalue magnitude', which the")
+    print("  git record refutes.  tr_M_at_q_0 read 0.7302040595096824 until")
+    print("  the q_0 migration (3563e08910a) moved it to 0.8485266504695027,")
+    print("  while alt_eigenvalue_at_q_0 changed only in its 9th decimal and")
+    print("  c_1, c_sigma and sym_eigenvalue did not move either.  The two")
+    print("  quantities sit 0.1 % apart by coincidence, and that coincidence")
+    print("  is what turned a drift into a misdiagnosed conflation.")
     print("  σ_0³ remains a SPECIFIC braid whose closure is the trefoil 3_1;")
     print("  what is now excluded is reading it as an admissible H_2 vertex.")
     print()
@@ -285,8 +292,13 @@ def main():
     w = (
         WitnessBuilder("sdp-gamma-gamma-to-qqbar", engine="python+mpmath")
         .set_description(
+            # INTERPOLATED (bean qou-n62l): this figure read 0.73 against
+            # data of 0.8485 -- the pre-q_0-migration trace, left behind by
+            # 3563e08910a.  Formatted from the same value add_data emits so
+            # it cannot drift again.
             "Scaffold for γγ → qq̄ SDP categorical crossing-budget "
-            "derivation. H_2 demo confirms σ_0³ has tr_M ≈ 0.73 at "
+            f"derivation. H_2 demo confirms σ_0³ has tr_M ≈ "
+            f"{bw['tr_M_at_q_0']:.4f} at "
             "q_0 (not 1). H_3 skeleton outlines the 6-dim NF basis "
             "+ 3 Wedderburn blocks (dims 1, 2, 1). Full SDP solve "
             "deferred to follow-up — uses joint_tower_sdp_solver_v2.py "
