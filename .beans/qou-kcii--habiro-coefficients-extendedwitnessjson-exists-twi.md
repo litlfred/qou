@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-09-13T12:33:55Z
+updated_at: 2026-09-13T12:35:29Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -516,3 +516,29 @@ at all**, yet the ratchet reports `NEW dirty witnesses: 0`. Either the audit doe
 not walk those paths or they are excluded some other way. Not established, and it
 is the kind of gap that hides real dirt — worth one measurement by whoever picks
 this up.
+
+
+**RETRACTED, same session, one measurement later: the "18 unbaselined dirty
+twins" flag was a FALSE ALARM, and the figure was wrong too.**
+
+The paragraph above closed by flagging *"18 dirty twins are NOT in the baseline at
+all, yet the ratchet reports NEW dirty witnesses: 0 … the kind of gap that hides
+real dirt"*. Measured: there are **21** such twins, **17** of them non-integral
+dirty, and **all 17 are under `computations/_deprecated/`** — which the audit
+excludes by design, as does every grep in AGENTS.md (`grep -v _deprecated`). The
+remaining 4 are the zero-float twins of `qou-baye`'s orphans.
+
+    395  computations/_deprecated/he4-canonical-tr-m-block-fingerprint.witness.json
+    242  computations/_deprecated/canonical-with-proper-tower.witness.json
+    234  computations/_deprecated/path-b-habiro-mass-probe.witness.json
+    ... 14 more, every one under _deprecated/
+
+**So the ratchet is behaving correctly and there is nothing hidden.** The 1205
+double-counted figure and the 19 pairs above are unaffected — those are all live
+paths.
+
+Recorded rather than quietly deleted because the failure is instructive: I raised
+a possible detector blind spot **from the same uncalibrated count** that had
+already produced the 168-vs-93 artefact two paragraphs up, and did not re-run it
+on the corrected measure before writing it down. A flagged non-gap costs the next
+agent a session, so the correction belongs where the flag was.
