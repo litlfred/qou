@@ -40,6 +40,22 @@ cd "$REPO_ROOT"
 # session that opens this repo is a side effect nobody asked for, and a
 # sibling agent doing unrelated work would pay for it. The restart is one
 # command and it is printed here.
+#
+# 🛑 THIS ONLY FIRES FOR A qou-ROOTED SESSION. Corrected 2026-09-13, the same
+# day it was written, after watching it not fire. The hook command is
+# `bash "$CLAUDE_PROJECT_DIR/scripts/session-start-coord-sweep.sh"`, and
+# CLAUDE_PROJECT_DIR is whichever repo the session is rooted in. A session
+# rooted in folio-assistant runs THAT repo's script -- which exists, has the
+# same filename, and emits its own "## Coord sweep" -- so this file is never
+# executed and this block never prints. Identified by the branch name in the
+# output: it reported `claude/agent-4677-padding-1idnru`, a folio-assistant
+# branch, not the qou one.
+#
+# Do NOT "fix" that by adding a qou table check to folio-assistant's sweep.
+# folio-assistant is the PLATFORM and this table is FOLIO content; that edit
+# is the exact boundary violation its AGENTS.md opens by warning about. An
+# agent working qou from a folio-assistant-rooted session has to check by
+# hand, and knowing that is the point of this note.
 _hkt_ckpt="$REPO_ROOT/.work/hkt-uiut-ckpt.json"
 if [ -f "$_hkt_ckpt" ]; then
   _hkt_n="$(python3 -c 'import json,sys; print(len(json.load(open(sys.argv[1]))["atoms"]))'             "$_hkt_ckpt" 2>/dev/null || echo '?')"
