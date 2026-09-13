@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T03:14:24Z
-updated_at: 2026-09-13T10:57:25Z
+updated_at: 2026-09-13T11:42:20Z
 ---
 
 
@@ -250,3 +250,38 @@ all along.** What still stands, and is the only actionable part: the wave's
 numbers were measured 2026-08-09 and cannot include the 2026-09-05 ordering
 ruling, so for this member they are incomplete — a reviewer accepting on them
 would be accepting one further undiagnosed change, not a mis-attributed one.
+
+
+---
+
+UPDATE 2026-09-13 (from bean `qou-5c64`, which flagged this bean twice today and
+was wrong both times — see below). The decomposition of
+`binding-single-pipeline-comparison`'s motion is now **complete and measured**,
+and it confirms this bean's 2026-08-09 classification without qualification.
+
+**`tr_atom(now)/tr_atom(June) = [free] x [bonds]`, two components, nothing else:**
+
+- **bonds — pure convention C->D.** Each bond factor moves by
+  `(z_D + d)/(z_C + d)` with the interface shift `d` **unchanged**:
+  `d_pp = 0`, `d_pn = -h(1/2 - delta/4)`, `d_nn = -h`, all three derived in
+  `qbeta_bond_factors_derived_probe.py` and independently reproduced here by
+  witness differencing to 2.73e-11. Factors 1.227044031 / 1.287106862 /
+  1.390572916.
+- **free side — the `qou-hu1f` intra-ordering ruling**, `0.590749626^Z .
+  0.5146405906^N`: the per-nucleon trace was the `chi-{proton,neutron}-h3-at-q0-50dps`
+  witness (1.065306865 / 0.9232333461) and is now the canonical borromean word
+  (0.6293296323 / 0.4751333545).
+
+Reconstruction verified on all six atoms with CHAIN bond counts; **every residual
+is below its own recording floor** (worst 2.43e-03 at ⁷Li against a 1e-02 floor —
+its `tr_atom` carries 3-4 significant figures). Table in `qou-5c64`.
+
+**Two corrections to what `qou-5c64` told this bean earlier today, both retracted
+there in full:** that "the C->D component is measurably zero" (false — it is the
+entire bond side), and that the δ de-wire contributed a third of the motion (an
+artefact of subtracting `z_D` from a June value computed on `z_C`).
+
+**Nothing is enacted here.** Regenerating the witness is this bean's call and an
+owner decision under the 2026-09-07 ASK-THE-OWNER directive; the re-run done for
+the measurement was reverted. The 299-field raw-float64 drain on that witness
+stays blocked behind the decision (PR #7268 documents it as out of scope).

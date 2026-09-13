@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T11:22:05Z
+updated_at: 2026-09-13T11:41:46Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -680,3 +680,106 @@ was about to call them unidentified constants. They are written out, in words,
 in the docstring of a probe in `computations/qbeta/` — path 3 of the six-path
 checklist, which I ran for `binding-single-pipeline-comparison` and not for the
 shifts I had extracted from it.
+
+
+---
+
+# RETRACTION 3 — the two "unidentified" per-nucleon free factors do not exist. And with that, this bean CLOSES.
+
+`1.075521518` (proton) and `1.069874485` (neutron), carried in the table above as
+the last open item and named as such in the previous section's closing line, are
+**an artefact of my own frame mismatch.** Measured directly — June witness on
+disk against a live re-run of `binding_single_pipeline_comparison.py`, reading
+the `tr_free` column rather than inferring it — the per-nucleon free ratio is
+
+    proton   0.590749626        neutron   0.5146405906
+
+and it is `qou-hu1f`, the same intra-ordering ruling as everything else. There is
+no third component.
+
+## What the two numbers actually were
+
+Solving `tr_free = t_p^Z t_n^N` on each side (the column factorises exactly; D,
+T and ³He determine it and ⁴He/⁶Li/⁷Li confirm):
+
+| | proton | neutron | what it is |
+|---|---|---|---|
+| **June** | `1.065306865` | `0.9232333461` | the `chi-{proton,neutron}-h3-at-q0-50dps` witnesses, to every digit June records |
+| **today** | `0.6293296323` | `0.4751333545` | the canonical **borromean** per-nucleon trace (`qou-hu1f`) |
+| ratio | **0.590749626** | **0.5146405906** | |
+
+My `1.0755` / `1.0699` are `t_p^grouped / chi_p` and `t_n^grouped / chi_n` — the
+ratio you get if you take `qbeta_bond_factors_derived_probe`'s **GROUPED-era**
+`t_p = 1.1457596924573008697` / `t_n = 0.98774368811580957163` as "today's"
+value. They are `1.075521528` and `1.069874498` exactly; my isolated figures
+agree to 9.6e-9 and 1.2e-8, which is the 6-significant-figure floor of the June
+`tr_free` column they came out of. So they are a real ratio between two real
+objects — just not the one I labelled them.
+
+**That probe's own header names this trap**, `qou-4383`: *"The two nucleon traces
+below are GROUPED-era ... the canonical intra-nucleon word has been `(σ₀σ₁⁻¹)³`
+since the 2026-09-05 ruling"*, with the borromean values written out beside them.
+I read that note this session, quoted it in the scope section of my own
+`qbeta_bond_bar_parity_probe.py` docstring, and then used the grouped numbers
+anyway.
+
+## The closure, measured
+
+`tr_atom(now)/tr_atom(June) = [free] x [bonds]` with two components and nothing
+else, where free is `0.590749626^Z . 0.5146405906^N` (qou-hu1f) and the bonds are
+`(z_D + d)/(z_C + d)` with `d` unchanged (pure convention C->D):
+
+| atom | chain pp/pn/nn | predicted | measured | rel | record floor |
+|---|---|---|---|---|---|
+| D | 0/1/0 | 0.391311037 | 0.391310057 | 2.50e-06 | 1e-05 |
+| T | 0/1/1 | 0.280039892 | 0.280039588 | 1.08e-06 | 1e-04 |
+| ³He | 1/1/0 | 0.283651902 | 0.283649354 | 8.98e-06 | 1e-04 |
+| ⁴He | 1/1/1 | 0.202994141 | 0.202987825 | 3.11e-05 | 1e-04 |
+| ⁶Li | 2/1/2 | 0.105304010 | 0.105309847 | 5.54e-05 | 1e-02 |
+| ⁷Li | 2/1/3 | 0.075360316 | 0.075177305 | 2.43e-03 | 1e-02 |
+
+**Every residual is below its own recording floor**, so the reconstruction is
+exact to the limit of what these witnesses hold. ⁷Li's 2.43e-03 is 44x the next
+worst and is not a signal: its `tr_atom` is `0.002115` June / `0.000159` now —
+four and three significant figures, floor 1e-02.
+
+**Use CHAIN bond counts, not the witness's own `n_pp`/`n_pn`/`n_nn` columns.**
+Those are the ALL-PAIRS counts, and with them the reconstruction fails by up to
+**52x** at ⁷Li while still matching at D — the one atom where chain and all-pairs
+coincide. The production word is a chain (`atom_braid_word_3A` lays `A-1`
+interfaces in a line), ordered protons-then-neutrons: `Z-1` p-p, one p-n,
+`N-1` n-n. A check that only looked at the deuteron would have passed.
+
+## Candidate elimination, for the record
+
+Four commits were listed as candidate causes of the "unidentified" factors. Two
+were eliminated by reading their own diffs before this measurement made the
+question moot, and both eliminations are reusable:
+
+- **`1b4fd94da1d`** (2026-08-23, *"jones_wenzl_weight was not the Ocneanu
+  weight"*) — its own commit message says *"Wrong formula on an unselected path,
+  not wrong numbers in live output"*; every caller passes `normalized_plancherel`
+  or `plancherel` explicitly. It moves nothing.
+- **`efcaf79ed29`** (2026-08-08, *"the braid word was f64 at source"*) — it DID
+  edit `chi-{proton,neutron}-h3-at-q0-50dps.witness.json`, which is exactly the
+  June carrier, so it looked like the answer. Its effect on `tr_M_at_q0` is
+  `1.06530614425444993892 -> 1.06530614425444997567`: **relative 3.4e-17**, seven
+  orders too small.
+
+## The shape, for the third time in one day
+
+Retraction 1 tested one *carrier* of a convention and reported on the convention.
+Retraction 2 checked one *side* of a two-sided comparison and reported on the
+comparison. Retraction 3 took a value from one *frame* and used it as the other
+frame's. All three: a sound measurement, a conclusion scoped wider than what was
+measured. The common defence is cheap and I did not apply it — **name the object
+each number belongs to before dividing two of them.**
+
+## Status
+
+`qou-5c64`'s decomposition is complete: **`qou-hu1f` on the free side, convention
+C->D on the bonds, nothing else.** What remains is not analysis but a decision —
+regenerating this witness, which is `qou-gjkv`'s arc and an owner call under the
+2026-09-07 ASK-THE-OWNER directive. The 299-field float64 drain stays blocked
+behind it. The re-run performed for this measurement was reverted
+(`git checkout --`); nothing is committed against that witness.
