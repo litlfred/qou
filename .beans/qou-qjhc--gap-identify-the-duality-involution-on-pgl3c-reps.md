@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T05:44:51Z
+updated_at: 2026-09-13T08:46:56Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -609,3 +609,65 @@ can ever be cross-checked. Prefer a route whose own equations are the check.
    actual subject and the gap the sibling explicitly left.
 2. Re-run the coboundary verdict against the FULL point, as an independent
    confirmation of the sibling's result through different data.
+
+**Bean stays open** — the sixth pass's own scope line is the reason: a point-level fact, not
+an identity of maps on the variety.
+
+
+---
+
+## UPDATE 2026-09-13b — the SL(3)-lift obstruction is a CLASS, and it is NOT the mu_3 twist
+
+Branch `claude/8-fold-way-qou-derivation-qj9uzv`, PR #7273. Attacks the map-level gap
+through the SL(3)-lift obstruction the sixth pass recorded.
+
+**Step 1 — it is a well-defined class, not a value at one lattice vector.** The sixth
+pass rules out the lift because `w := r(3 e_0)` is not a cube in K. A different `e_0`
+gives a different `w`, so as stated that is not a statement about maps. Proved sorry-free
+(`QOU/Eightfold/SubgroupExtensionObstruction.lean`): replacing `e_0` by `e_0 * l`
+(`l in L`) multiplies the obstruction by `r(l)^n`, so its class in `A/A^n` is independent
+of the witness; and an extension forces the obstruction to be an n-th power, so a
+non-trivial class forbids EVERY extension — with no hypothesis on `[M : L]`. `#print
+axioms` gives `propext` alone on all three declarations.
+
+**Step 2 — what that class IS, measured exactly.** K contains `zeta_3`, so by Kummer
+`K^x/(K^x)^3 = H^1(K, mu_3)`: the obstruction is mu_3-cohomological, exactly like the
+representation-level class in `H^2(M, dM; Z/3)`. The tempting reading is therefore that
+the non-liftability is simply the obstruction twist showing up, hence structurally
+expected and no evidence about the map identity. **That reading is EXCLUDED:**
+
+    [u]      non-trivial in K^x/(K^x)^3   -- refuted at p = 31
+    [w]      NOT a cube                   -- refuted at p = 31
+    [w*u]    NOT a cube                   -- refuted at p = 61
+    [w*u^2]  NOT a cube                   -- refuted at p = 31
+
+so `[w]` is **not** in `<[u]>`. The obstruction carries a class in `H^1(K, mu_3)` that is
+neither the twist nor trivial — an independent datum any proof of "rho -> rho^{-T}
+induces sigma_b" must account for.
+
+Method: reduction mod primes (if `v = y^3` in K then `vbar = ybar^3` in every residue
+field, so one prime refutes exactly). The prime choice is the content — `p = 1 mod 3` for
+cubes to have index 3, `f` with a root mod p, and **`p != 1 mod 9`**, because an element
+of order 3 is a cube in `F_p^x` exactly when `9 | p-1`, so at such a prime `[u]` is
+trivial and the three candidates become indistinguishable. Controlled both ways:
+`(2+T)^3` must be RECOGNISED (survives all 40 primes) and `(2+T)^3 * u` must be REFUTED
+(it is) — a test that can only answer "not a cube" is indistinguishable from a broken
+one, and all four verdicts are of that form.
+
+Probe `computations/ptolemy/ptolemy_sl3_lift_obstruction_class.py`.
+
+**A wrong turn of mine, recorded.** The first version gated a Groebner decision behind a
+norm test. `N(u) = 1` is a rational cube, so the norm test is inconclusive for `u` by
+construction, and the Groebner over Q on a quartic with coefficients up to 2.5e13 did not
+finish. Reduction mod primes is the right algorithm and is instantaneous.
+
+**SCOPE — this does NOT refute the map identity, and must not be read as doing so.** The
+ratio does lie in the PGL(3) decoration torus, the group that actually acts on Ptolemy
+coordinates, so on this point `sigma_b(x)` and `D(x)` are the same point of the variety
+modulo decoration. What is measured is a finer SL(3)-level datum, at one point in one
+class. **Bean stays open** (rule 13a).
+
+**Next, agent judgement:** identify the class. The honest question is whether `[w]` is the
+image of something canonical — a Ptolemy coordinate, the discriminant, a unit of `O_K` —
+and that must be *derived*, not searched: picking a generator because it matches `[w]` is
+selection against the target and is barred by the NO-FITTING directive.
