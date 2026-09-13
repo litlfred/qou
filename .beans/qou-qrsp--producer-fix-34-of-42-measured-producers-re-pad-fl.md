@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-09-13T14:38:10Z
+updated_at: 2026-09-13T17:19:52Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -782,3 +782,73 @@ dps), and it is queued behind the `qou-uiut` table right now.
 **Recommendation: fix serialisation in the producers this bean has already
 triaged BEFORE zbws's regeneration batch runs**, or the batch will land another
 few hundred raw-float64 fields and the ratchet will need another baseline.
+
+
+---
+
+## `canonical_plus_multibrane.py` — the `complex()` defect again, 54 raw floats (2026-09-13)
+
+`canonical-plus-multibrane.witness.json` is one of the two NEW entries on the
+raw-float64 ratchet (49 fields at the ratchet's count; 54 by a direct walk).
+**Not triaged into a fix — recorded, because the change is not verifiable while
+the `qou-uiut` table holds the checkout.** Everything below is measured.
+
+### Where the floats are
+
+| field | count | what it is |
+|---|---|---|
+| `tr_M_atom` | 14 | computed Markov trace |
+| `tr_M_free` | 14 | computed Markov trace |
+| `B_AME_MeV` | 14 | reference constant |
+| `scale` | 12 | derived |
+| `q0` | 1 | the anchor, at 17 digits |
+
+### The cause, and it is a known class
+
+`computations/canonical_plus_multibrane.py:433`
+
+```python
+tr_M_atom = complex(sp.N(tr_a_sym.subs(q_sym, Q0)))
+tr_M_free = complex(sp.N(tr_f_sym.subs(q_sym, Q0)))
+```
+
+`sp.N(expr)` with **no precision argument** evaluates to sympy's default 15
+digits, and `complex()` then narrows to two binary64s. `Q0` itself is fine —
+line 70 is `from q_parameter import Q as Q0`, so the anchor is right and only
+the evaluation precision is wrong.
+
+This is the same defect **already repaired** in
+`binding_factor_f_sequence.py`, whose repair comment states it exactly:
+*"Builtin `complex()` reads them as binary64, which is wrong in both regimes it
+meets"* — a 16-digit string becomes a double, and a 30-digit one is silently
+truncated past the 17th. That file now uses `mp.mpmathify` and its witness has
+**0 padded fields**. So the repair pattern exists in-tree.
+
+### Why it is not fixed here
+
+1. **The change is structural, not a substitution.** The real/complex branch at
+   :435-438 reads `.imag` off a Python complex, so keeping mpf means restructuring
+   the conditional, not swapping a call. `mp` is not imported in this file.
+2. **The committed witness and the current source disagree, and I cannot tell
+   which is live.** Line 481 serialises
+   `"tr_M_atom": (complex(tr_M_atom) if tr_M_atom is not None else None)` — an
+   explicit cast to complex — and `json.dumps(..., default=str)` renders a
+   complex as a **string** like `"(0.575+0j)"`. The committed witness holds a
+   bare float `0.5751722439177721`. So the witness was produced by code that
+   did not take that path. Resolving that needs a run.
+3. **`json.dumps(witness, indent=2, default=str)` at :779 is hand-rolled** — no
+   `fmt`/`_serialise` boundary — so the fix has to happen at each value rather
+   than in one serialiser.
+
+### What to do when the checkout frees up
+
+Evaluate at 50 digits and keep mpf on the real branch, then re-run and diff the
+witness:
+
+```python
+_a = sp.N(tr_a_sym.subs(q_sym, Q0), 50)
+tr_M_atom = mp.mpf(str(sp.re(_a))) if abs(sp.im(_a)) < 1e-9 else complex(_a)
+```
+
+Numbers will move — this is a precision correction, not a re-render — so it is
+a regeneration, not a value-preserving serialisation fix like §15/§16.
