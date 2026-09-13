@@ -82,7 +82,7 @@ def sing(script, timeout=900):
         return r.stdout
 
 
-def extract(name, cls, verbose=True, elim_timeout=240):
+def extract(name, cls, verbose=True, elim_timeout=240, nf_timeout=900):
     M = snappy.Manifold(name)
     V = M.ptolemy_variety(3, obstruction_class=cls, eliminate_fixed_ptolemys=True)
     eqs = [str(e) for e in V.equations]
@@ -135,7 +135,7 @@ def extract(name, cls, verbose=True, elim_timeout=240):
     if verbose:
         print(f"   eliminant degree {elim.degree()} (the SCHEME degree, not [K:Q])")
 
-    comps = []
+    comps, walled = [], []
     for h, _mult in sp.factor_list(elim.as_expr())[1]:
         hp = sp.Poly(h, T)
         if hp.degree() < 1:
@@ -150,7 +150,19 @@ def extract(name, cls, verbose=True, elim_timeout=240):
                    f'ideal I={",".join(eqs)},T-({lin}),{hs};\n'
                    f'ideal G;\n'
                    f'if (dim(std(I))==0) {{ G=stdfglm(I); }} else {{ G=std(I); }}\n'
-                   f'{body}\nquit;\n')
+                   f'{body}\nquit;\n', timeout=nf_timeout)
+        # sing() returns None on timeout.  The stage-1 loop guards that and moves to the
+        # next primitive element; THIS call had no guard, so a stage-2 wall surfaced as
+        # `AttributeError: 'NoneType' object has no attribute 'splitlines'` -- an opaque
+        # crash in place of the one fact worth reporting, which is that the normal-form
+        # step exceeded its budget on a named component.  Report the wall instead.
+        if out is None:
+            walled.append({'min_poly_T': str(sp.expand(h)), 'degree': hp.degree(),
+                           'budget_s': nf_timeout})
+            if verbose:
+                print(f"   component: min poly {sp.expand(h)}  deg {hp.degree()}  "
+                      f"-> NORMAL-FORM WALL at {nf_timeout}s", flush=True)
+            continue
         L = [l.strip() for l in out.splitlines() if l.strip()]
         co = {}
         for i, l in enumerate(L):
@@ -178,7 +190,8 @@ def extract(name, cls, verbose=True, elim_timeout=240):
                   f"disc {rec['discriminant']}  -> {tag}")
     return {'manifold': name, 'obstruction_class': cls,
             'variables': vrs, 'n_equations': len(eqs),
-            'eliminant_degree': elim.degree(), 'components': comps}
+            'eliminant_degree': elim.degree(), 'components': comps,
+            'normal_form_walled': walled, 'nf_timeout_s': nf_timeout}
 
 
 def to_point_json(name, cls, rec):
@@ -203,13 +216,20 @@ if __name__ == '__main__':
     ap.add_argument('--write', action='store_true', help='write the point JSON')
     ap.add_argument('--elim-timeout', type=int, default=240,
                     help='per-primitive-element budget for the elimination step')
+    ap.add_argument('--nf-timeout', type=int, default=900,
+                    help='per-component budget for the lex-GB / normal-form step')
     a = ap.parse_args()
 
-    res = extract(a.manifold, a.obstruction_class, elim_timeout=a.elim_timeout)
+    res = extract(a.manifold, a.obstruction_class, elim_timeout=a.elim_timeout,
+                  nf_timeout=a.nf_timeout)
     genuine = [c for c in res['components'] if not c['degenerate']]
     degen = [c for c in res['components'] if c['degenerate']]
     print(f"\n   components: {len(res['components'])}  "
           f"genuine {len(genuine)}  degenerate (discarded) {len(degen)}")
+    if res['normal_form_walled']:
+        print(f"   normal-form WALLED on {len(res['normal_form_walled'])} component(s) "
+              f"at {res['nf_timeout_s']}s -- raise --nf-timeout; NOT a property of the "
+              f"manifold until re-run on a quiet box (see the stage-1 comment)")
     if not genuine:
         print("   NO GENUINE COMPONENT -- every component has a zero coordinate")
         raise SystemExit(1)
