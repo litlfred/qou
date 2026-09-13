@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T13:15:01Z
+updated_at: 2026-09-13T13:22:15Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1910,3 +1910,50 @@ NOT claimed: the feasible set is not characterised (only enumerated to 12
 vertices; the two sporadic words are unexplained); no cost/minimality is
 computed, so this NARROWS the candidate set without selecting a word; no
 observable is computed.
+
+
+
+### Part 6, same day — SDPSelected has a UNIQUE solution (PR #7295)
+
+Part 5 did the feasibility half and said it did not compute minimality. This is
+minimality, and it closes the selection.
+
+The cost is the corpus's: `mba-step10-confinement-sdp.md` states
+`minimize Sum_i t_i x_i` with `t_i = tr_M(b_i)`, so the objective on a word is
+its Markov trace. Evaluated with the general-n Ocneanu recursion from Part 4
+(re-verified against pyhecke.gram's H_3 vector so this cannot inherit a silent
+breakage).
+
+Costs at z_D, proton pin, over the five PSD-feasible words:
+
+    (v0 v1)^2    (0,1,0,1)                   1.032897755524660383   <- MIN
+    sporadic A   (0,0,1,1,0,1,1,0,0,1)       1.073238807935729209
+    sporadic B   (0,1,1,0,0,1,0,0,1,1)       1.073238807935729209
+    (v0 v1)^4    (0,1,0,1,0,1,0,1)           1.137405209118677445
+    (v0 v1)^6    (0,1,0,1,0,1,0,1,0,1,0,1)   1.331992492573499969
+
+The minimum is STRICT and ATTAINED, not merely least-in-a-truncation: cost on
+the even alternating family is strictly increasing in m (1.0329 -> 4.0944 for
+m = 2..14), so extending the enumeration cannot beat m = 2.
+
+**SDPSelected -> `(v0 v1)^2`: four vertices, eight letters, four strands.**
+DERIVED — no continuous parameter tuned, no discrete choice made against a
+measured value, no observable entering at any point. This is the arc's first
+complete derived selection.
+
+Observation flagged as such: the two sporadic words have EXACTLY equal cost
+(< 1e-30) while their `net` differs (1.1426 vs 0.9495), so whatever relates
+them does not preserve net. Unexplained; two data points are not a pattern.
+
+TWO GAPS, and the result may not be quoted without them:
+1. the LP's `net(x) = n_target` constraint is NOT imposed (it belongs to the
+   mixture formulation; net is reported per word so it can be applied later);
+2. "unique" means among gamma-gamma words of at most 12 vertices on four
+   strands — a cheaper feasible word at 13+ vertices is not excluded, though a
+   cheaper ALTERNATING one is, by monotonicity.
+
+NOT DONE, deliberately: no Q_beta comparison. E_0 and the
+element-to-observable map are H_3 constructions with no corpus-defined n = 4
+analogue, and reporting a residual would re-introduce the
+selection-against-the-target the earlier parts measured and rejected. The word
+is derived; what it predicts is a separate question.
