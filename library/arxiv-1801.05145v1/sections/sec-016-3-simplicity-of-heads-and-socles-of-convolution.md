@@ -1,0 +1,85 @@
+---
+doc_id: arxiv-1801.05145v1
+doc_title: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS"
+section_id: sec-016-3-simplicity-of-heads-and-socles-of-convolution
+section_title: "Simplicity of heads and socles of convolution products"
+section_number: 3
+pages: 20-22
+source_pdf: 1801.05145v1.pdf
+source_sha256: 808da260edd433f7
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipote nt quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
+---
+In this section, we assume that R(β) is symmetric for any β ∈ Q+, i.e., Qij(u,v ) is
+a function in u −v for any i,j ∈I.
+We also work always in the category of graded modules. For the sake of simplicity,
+we simply say that M is an R-module instead of saying that M is a graded R(β)-
+module for β ∈ Q+. We also sometimes ignore grading shifts if there is no danger of
+confusion. Hence, for R-modules M and N, we sometimes say that f : M → N is a
+homomorphism if f : qaM →N is a morphism in R-gmod for some a ∈ Z. If we want
+to emphasize that f : qaM →N is a morphism in R-gmod, we say so.
+3.1. Homogeneous degrees of R-matrices.
+Deﬁnition 3.1.1. For non-zero M,N ∈R-gmod, we denote by Λ(M,N ) the homoge-
+neous degree of the R-matrix rM,N .
+Hence
+Rren
+Mz,N :Mz ◦N →q−Λ(M,N )N ◦Mz and
+rM,N :M ◦N →q−Λ(M,N )N ◦M
+are morphisms in R-gMod and in R-gmod, respectively.
+Lemma 3.1.2. For non-zero R-modulesM and N, we have
+Λ(M,N ) ≡
+(
+wt(M), wt(N)
+)
+mod 2.
+MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS 21
+Proof. Set β := − wt(M) and γ := − wt(N). By [ 14, (1.3.3)], the homogeneous degree
+ofRMz,N is −(β,γ ) + 2(β,γ )n, where ( •, • )n is the symmetric bilinear form on Q given
+by (αi,αj)n =δij. Hence Rren
+Mz,N =z−sRMz,N has degree −(β,γ ) + 2(β,γ )n − 2s. □
+Deﬁnition 3.1.3. For non-zero R-modulesM and N, we set
+~Λ(M,N ) := 1
+2
+(
+Λ(M,N ) + (wt(M), wt(N))
+)
+∈ Z.
+Lemma 3.1.4. LetM and N be self-dual simple modules. If one of them is real, then
+q
+~Λ(M,N )M ∇N
+is a self-dual simple module.
+Proof. Set β = wt(M) and γ = wt(N). Set M ∇N = qcL for some self-dual simple
+module L and some c ∈ Z. Then we have
+M ◦N ։qcL ֌q−Λ(M,N )N ◦M,
+since M ∇N = Im rM,N . Taking dual, we obtain
+qΛ(M,N )+(β,γ )M ◦N ։q−cL ֌q(β,γ )N ◦M.
+In particular, q−c−Λ(M,N )−(β,γ )L is a simple quotient of M ◦N. Hence we have c =
+−c − Λ(M,N ) − (β,γ ), which implies c = −~Λ(M,N ). □
+Lemma 3.1.5. (i) Let Mk be non-zero modules (k = 1 , 2, 3), and let ϕ1 : L →
+M1 ◦M2 and ϕ2 : M2 ◦M3 → L′ be non-zero homomorphisms. Assume further
+that M2 is a simple module. Then the composition
+L ◦M3
+ϕ1◦M3
+− − − − →M1 ◦M2 ◦M3
+M1◦ϕ2
+− − − − →M1 ◦L′
+does not vanish.
+(ii) LetM be a simple module and let N1,N 2 be non-zero modules. Then the compo-
+sition
+M ◦N1 ◦N2
+rM,N1
+◦N2
+− − − − − − →N1 ◦M ◦N2
+N1◦ rM,N2
+− − − − − − − →N1 ◦N2 ◦M
+coincides with rM,N1◦N2
+, and the composition
+N1 ◦N2 ◦M
+N1◦ rN2,M
+− − − − − − − →N1 ◦M ◦N2
+rN1,M ◦N2
+− − − − − − →M ◦N1 ◦N2
+coincides with rN1◦N2,M .
+In particular, we have
+Λ(M,N 1 ◦N2) = Λ( M,N 1) + Λ(M,N 2)
+and
+Λ(N1 ◦N2,M ) = Λ( N1,M ) + Λ(N2,M ).

@@ -1,0 +1,52 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0804.0917v1",
+ "source_sha256": "887fbd8be47a2781",
+ "brief": "Composition-Diamond Lemma for Modules ∗ — In this paper we give some relationships among the Gr¨ obner-Shirsh ov bases in free associative algebras, free left modules and “double-free” le ft modules",
+ "extended": "**Composition-Diamond Lemma for Modules ∗**\n\n*Yuqun Chen, Yongshan Chen and Chanyan Zhong*\n\n16 pp, 6 sections.\n\n**Abstract.** In this paper we give some relationships among the Gr¨ obner-Shirsh ov bases in free associative algebras, free left modules and “double-free” le ft modules (free modules over a free algebra). We give the Chibrikov’s Composition-Diamond lem ma for modules and show that Kang-Lee’s Composition-Diamond lemma follows from th is lemma. As applications, we also deal with highest weight module over the Lie algeb ra sl2, Verma module over a Kac-Moody algebra, Verma module over Lie algebra of c oeﬃcients of a free conformal algebra and the universal enveloping module for a Sabinin algebra.\n\n**Outline.** Front matter; Introduction; Composition-Diamond lemma for left ideals of a; Highest weight modules over sl2; Verma module over Kac-Moody algebras; Universal enveloping module for a Sabinin alge\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: Let (S, T ) be a pair of subsets of monic elements in k⟨X⟩, let\n- Theorem 3.4: Let X, Y be well ordered sets, < a monomial order on X ∗, ≺ the order\n- Theorem 6.4: Let the notions be as above. Then a k-basis of V consists of elements\n- Theorem 7.3: Let I be as above. Then I is the Gr¨ obner-Shirshov basis in mod⟨X⟩k⟨X⟩.\n- Theorem 7.4: Let {ai|i ∈ Λ } be a totally ordered basis of\n- Corollary 5.2: R = {T X∗(v), N+(v), h (v) − Λ( h)v} is a Gr¨ obner-Shirshov basis for the",
+ "tokens": {
+  "brief": 49,
+  "extended": 365
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-composition-diamond-lemma-for-left-ideals-of-a-f",
+   "title": "Composition-Diamond lemma for left ideals of a free algebra",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-002-highest-weight-modules-over-sl2",
+   "title": "Highest weight modules over sl2",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-verma-module-over-kac-moody-algebras",
+   "title": "Verma module over Kac-Moody algebras",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-004-universal-enveloping-module-for-a-sabinin-algebr",
+   "title": "Universal enveloping module for a Sabinin algebra",
+   "pages": "11-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,454 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2407.04744v2",
+ "source": {
+  "file": "2407.04744v2.pdf",
+  "sha256": "fc6fda3138296fb1f0c693652d26ced7fd279b09f4742b9b1a8ef6459b5c63a2",
+  "bytes": 2297272,
+  "pages": 29,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2407.04744",
+   "version": "2",
+   "primary_class": "nucl-th",
+   "stamp_date": "4 Dec 2024"
+  },
+  "doi": null,
+  "title": "Magnetic structure of A\u2264 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods G. Chambers-Wall 1,\u2217 A. Gnech 2,3,\u2020 G. B. King 1,\u2021 S",
+  "authors_raw": "Pastore1,4,\u00a7 M. Piarulli 1,4,\u00b6 R. Schiavilla 2,3,\u2217\u2217 and R. B. Wiringa 5\u2020\u2020",
+  "title_lines": [
+   "Magnetic structure of A\u2264 10 nuclei using the Norfolk nuclear models with quantum",
+   "Monte Carlo methods",
+   "G. Chambers-Wall 1,\u2217 A. Gnech 2,3,\u2020 G. B. King 1,\u2021 S"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241206010931Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Magnetic structure of A 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Theory",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quantum Monte Carlo methods",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The Norfolk interaction model",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The electromagnetic current operator",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnetic form factors and moments",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Results and Discussion",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnetic moments",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "VMC magnetic moments of A=3-7 nuclei",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "VMC magnetic moments of A=8-10 nuclei",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "GFMC magnetic moments of A=3-9 nuclei",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Scaled two-body magnetic densities",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Model dependencies in two-body magnetic densities",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Magnetic form factors and high-momentum structure",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Tritium and Helium-3",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Lithium-6",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Lithium-7 and Beryllium-7",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Lithium-8 and Boron-8",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "A=9 nuclei",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Boron-10",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Conclusions",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Electromagnetic currents in configuration space",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Evaluation of the magnetic multipoles",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Note on the magnetic form factors data",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 384,
+   "n_words": 61
+  },
+  {
+   "id": "sec-000-theory",
+   "number": null,
+   "title": "Theory",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 877,
+   "n_words": 134
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 6111,
+   "n_words": 908
+  },
+  {
+   "id": "sec-002-quantum-monte-carlo-methods",
+   "number": null,
+   "title": "Quantum Monte Carlo methods",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3552,
+   "n_words": 607
+  },
+  {
+   "id": "sec-003-the-norfolk-interaction-model",
+   "number": null,
+   "title": "The Norfolk interaction model",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3554,
+   "n_words": 574
+  },
+  {
+   "id": "sec-004-the-electromagnetic-current-operator",
+   "number": null,
+   "title": "The electromagnetic current operator",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 5068,
+   "n_words": 832
+  },
+  {
+   "id": "sec-005-magnetic-form-factors-and-moments",
+   "number": null,
+   "title": "Magnetic form factors and moments",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3496,
+   "n_words": 619
+  },
+  {
+   "id": "sec-006-results-and-discussion",
+   "number": null,
+   "title": "Results and Discussion",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 55,
+   "n_words": 8
+  },
+  {
+   "id": "sec-007-magnetic-moments",
+   "number": null,
+   "title": "Magnetic moments",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 11,
+   "n_chars": 26553,
+   "n_words": 4746
+  },
+  {
+   "id": "sec-008-scaled-two-body-magnetic-densities",
+   "number": null,
+   "title": "Scaled two-body magnetic densities",
+   "level": 4,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2939,
+   "n_words": 523
+  },
+  {
+   "id": "sec-009-model-dependencies-in-two-body-magnetic-densitie",
+   "number": null,
+   "title": "Model dependencies in two-body magnetic densities",
+   "level": 4,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 8479,
+   "n_words": 1536
+  },
+  {
+   "id": "sec-010-tritium-and-helium-3",
+   "number": null,
+   "title": "Tritium and Helium-3",
+   "level": 4,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 674,
+   "n_words": 116
+  },
+  {
+   "id": "sec-011-lithium-6",
+   "number": null,
+   "title": "Lithium-6",
+   "level": 4,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1010,
+   "n_words": 178
+  },
+  {
+   "id": "sec-012-lithium-7-and-beryllium-7",
+   "number": null,
+   "title": "Lithium-7 and Beryllium-7",
+   "level": 4,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2140,
+   "n_words": 371
+  },
+  {
+   "id": "sec-013-lithium-8-and-boron-8",
+   "number": null,
+   "title": "Lithium-8 and Boron-8",
+   "level": 4,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 4056,
+   "n_words": 693
+  },
+  {
+   "id": "sec-014-boron-10",
+   "number": null,
+   "title": "Boron-10",
+   "level": 4,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 2538,
+   "n_words": 507
+  },
+  {
+   "id": "sec-015-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 4682,
+   "n_words": 738
+  },
+  {
+   "id": "sec-016-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 24,
+   "n_chars": 11758,
+   "n_words": 2389
+  },
+  {
+   "id": "sec-017-evaluation-of-the-magnetic-multipoles",
+   "number": null,
+   "title": "Evaluation of the magnetic multipoles",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2594,
+   "n_words": 548
+  },
+  {
+   "id": "sec-018-note-on-the-magnetic-form-factors-data",
+   "number": null,
+   "title": "Note on the magnetic form factors data",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 107,
+   "n_words": 18
+  },
+  {
+   "id": "sec-019-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 23402,
+   "n_words": 3702
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 28,
+  "sections": 21,
+  "chars_total": 114029
+ }
+}
