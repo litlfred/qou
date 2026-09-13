@@ -365,22 +365,57 @@ Two notes on the numerics, both worth carrying forward:
   its residual is **quadrature-limited**: the integrand is a Gaussian chirp whose
   oscillation frequency grows linearly in `|v|`, so `mp.quad`'s node density — not
   `dps` — sets the floor.
-- **The convergence window is the whole difficulty in G4.** `Z(t')` converges on
-  `ℝ+iε` only for `−(r_eff−A)ε < Im\,t' < Aε`, and the ladder moves `Im t'` by
-  `−k\,\mathrm{Re}\,b`, so the whole degree-`d` ladder fits only if
-  `r_eff·ε > d·\mathrm{Re}\,b`. At `|b| = 1` that is **exactly marginal**
-  (`Im c_b = Re b` when `|b| = 1`), and the quadrature floors at `~10⁻⁶` however high
-  `dps` is set. Taking `|b| < 1` makes `Im(c_b)/Re(b) = (1+|b|^{−2})/2 > 1` and buys
-  a real margin; `|b| ≈ 0.55` is what makes the gate meaningful.
+- **The convergence window is the whole difficulty in G4, and I got it wrong the
+  first time. Recording the error, because it is the instructive part.**
 
-  Two details worth stating precisely, because the obvious guesses are wrong:
-  `r_eff = Σ αⱼ²`, so the pretzel's **doubled** factor contributes **4, not 1** —
-  at `+∞` its integrand therefore decays *four times faster* than 4₁'s or 5₂'s
-  (`r_eff−A = 4` against `1`), and at `−∞` it decays at the same rate as 5₂'s
-  (`A = 2`). What actually makes the pretzel the expensive case is not decay but
-  **ladder length**: degree 6 means `k = j − A` runs over `−2 … 4`, so the window
-  must accommodate a span of `6·Re b` rather than `2·Re b` (4₁) or `3·Re b` (5₂),
-  and it needs 7 quadratures per configuration rather than 3 or 4.
+  At `Re v → +∞` each `Φ_b(αⱼv + βⱼ)` behaves as `exp(πi(αⱼv+βⱼ)²)`, so the
+  integrand's exponent has **quadratic** coefficient `πi(r_eff − A)` with
+  `r_eff := Σ αⱼ²`, and **linear** coefficient `2πi(lin + t')` with
+  `lin := Σ αⱼβⱼ`. The two decay conditions on `ℝ+iε` are
+
+$$
++\infty:\;\; (r_{\rm eff}-A)\,\varepsilon + \operatorname{Im} t' + \operatorname{Im} \mathrm{lin} \;>\; 0,
+\qquad
+-\infty:\;\; A\,\varepsilon - \operatorname{Im} t' \;>\; 0 .
+$$
+
+  **My first version omitted `Im lin`.** For 4₁ (`β = (u,0)`) and 5₂
+  (`β = (0,u,−u)`) that term is real, so `Im lin = 0` and a quadratic-only analysis
+  is *accidentally* right — which is exactly why both of those gates passed and
+  hid the bug. For the pretzel, `β = (u/2, −u/2, −c_b)` with `α = (1,1,2)`, so
+
+$$
+\mathrm{lin} \;=\; \tfrac{u}{2} - \tfrac{u}{2} + 2(-c_b) \;=\; -2c_b,
+\qquad \operatorname{Im}\mathrm{lin} = -2\operatorname{Im} c_b ,
+$$
+
+  i.e. the **doubled** factor's `−c_b` shift contributes a linear-in-`v` growth
+  `e^{−4πi c_b v}` that no amount of quadratic bookkeeping sees. With the window
+  mis-centred by `2 Im c_b ≈ 2.05`, the `k = 3` and `k = 4` rungs diverged and the
+  gate returned `rel_residual = 1.0` with `|Z| ~ 10^{115}` — not a small error, and
+  not one that degrades gracefully.
+
+  **Two things this buys, beyond the fix.** At `k = 0`, `t_I = 0` the `+∞`
+  condition reduces to `ε > Im(c_b)/2` — which is *exactly* the constraint §3k of
+  the sibling audit states for this integral, recovered here independently and from
+  the opposite direction. And it is a reminder that a gate passing on the two
+  knots where the answer is known is **not** evidence the gate is correct for the
+  third: the very feature that makes the pretzel interesting (a complex shift
+  inside a dilogarithm) is the feature 4₁ and 5₂ cannot test.
+
+- **Choosing `b`.** The ladder moves `Im t'` by `−k·Re b`, `k = j − A`, so a
+  degree-`d` ladder fits only if the window is wider than `d·Re b`. For `|b| = ρ`,
+  `Im(c_b)/Re(b) = (1+ρ^{−2})/2` — exactly `1` at `ρ = 1` (marginal; there the
+  quadrature floors at `~10⁻⁶` however high `dps` is set) and growing as `ρ` falls.
+  `ρ ≈ 0.45` with `ε = 0.96\,Im(c_b)` leaves a half-width `≈ 1.0`, a decay of
+  `e^{−379}` over the integration range. `ε < Im(c_b)` always, to stay below the
+  first pole of the unit dilogarithms.
+
+- **What makes the pretzel expensive is ladder length, not decay.** Its
+  `r_eff − A = 4` means it decays *four times faster* than 4₁ or 5₂ at `+∞`. But
+  degree 6 puts `k` over `−2 … 4`, so the window must hold a span of `6·Re b`
+  against `2·Re b` (4₁) or `3·Re b` (5₂), and it needs 7 quadratures per
+  configuration rather than 3 or 4.
 
 ## 7. Scope, and what is NOT established
 
