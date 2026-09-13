@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T10:42:37Z
+updated_at: 2026-09-13T11:59:48Z
 ---
 
 
@@ -859,5 +859,60 @@ half that was missing (βs cannot spread); what is not proved is that a mean-gap
 configuration must carry `P ≳ ℓ·E₂`. Note #7093 already refuted the obvious route — the
 uniform/even gap multiset is NOT the pair-term minimiser at fixed (ℓ,W) — so this needs a
 different argument, not a Jensen step.
+
+**Do not close this bean.**
+
+
+### 2026-09-13 — the Θ(√n) COEFFICIENT IS IDENTIFIED: `A√2`. I withdraw my own #7286 verdict (PR #7294)
+
+**Claim.** `lim M_n/√n = A√2 = 5.09594565`, and the bracket `[A√2, C√2]` — whose whole
+1.71× width #7286 showed to be the single discarded term `E₂` — **collapses to its
+lower end**.
+
+**Evidence.** Three results, two Lean and one measured:
+
+1. **Rigidity, exact** (`HookSumCompletedSquare.lean`, #7294, 3 decls, 0 sorry).
+   Completing the square in the β-coordinates:
+   `8H = Σᵢ(2βᵢ − aᵢ)² − Σᵢaᵢ²`, `aᵢ = 2L−3−4i`. The hook sum is a **positive-definite
+   quadratic**. `hookDev_sub_succ`: `dᵢ − dᵢ₊₁ = 2(βᵢ − βᵢ₊₁) − 4`, so the deviations
+   are constant **exactly** on the staircase. Cauchy–Schwarz then gives a parameter-free
+   floor `(Σdᵢ)² − L·Σaᵢ² ≤ 8L·Σ_c h(c)`, tight (zero gap vs `H_min` at `L=k`).
+   ⟹ `ℓ = √(2n)(1 + o(1))`.
+2. **The excess is BOUNDED** (`rev_excess_scaling_exponent_probe.py`, 11 points to
+   n = 3916, 2284 s, 6/6). Excess 2.3764 → 2.4393 over n = 630 → 3916; the last step is
+   **+7e-5** across 1.58× in n. Slopes collapse 0.198 → 0.045 → 0.012 → 0.0014 →
+   **6.2e-5**; tail α = 0.0043, span-fit α = 0.0499, against the **0.5** a coefficient
+   change requires. Converging to ≈ 2.43930.
+3. ⟹ `M_n = A√(2n) + O(1)`.
+
+**WITHDRAWN — my own verdict in #7286.** That PR said *"A√2 is the staircase's rate,
+not the optimum's, and the coefficient is strictly above it"*. The staircase IS beaten
+at its own row count (reconfirmed 11/11 here) — but that inference needs the excess to
+be `Θ(√n)`, and **#7286 never checked it**. A bounded difference of two `Θ(√n)`
+quantities is subleading and changes no coefficient.
+
+**The maximiser's SHAPE** (`rev_optimal_gap_profile_probe.py`, 5/5): the staircase with
+a **top block of 3-gaps**, a bulk of 2s, a **matching bottom block of 1-gaps**, and
+**no gap above 3**. 3-count = 1-count at every n. Deviating fraction falls 0.500 →
+0.216; deviation count grows with exponent **0.2422 ≈ n^{1/4}**.
+
+**A closed-form model of mine, refuted before it reached a PR body.** Widen one gap to
+`G` at fixed `(n,ℓ)`: cost `ln q₀(G−2)²/2`, saving `Σ_{j≥1}[ε(2j) − ε(2j+G−2)]`, peaking
+at **G = 5, net +0.9297**. No measured optimum uses a gap above 3. It holds `ℓ` fixed,
+forcing the compensating shift uniformly across rows; the real optimum moves `ℓ` and pays
+with explicit 1-gaps.
+
+**Two caveats, neither moving the conclusion.** (a) The ℓ-cap `[k, k+5]` binds at
+n = 78/136/210 — those three are censored downward; every point from n = 300 up is
+interior, and the exponent is set by the tail. (b) One-sidedness: a heuristic search that
+under-performs at large n depresses the excess and biases α **downward, toward this very
+conclusion**. `R1` guards the evaluator (5/5 vs #7286's independent search), not search
+quality at n the earlier probes never reached.
+
+**STILL OPEN — and it is now the only thing between this and a theorem:** the
+**pair-term lower bound**, that a mean-gap-2 configuration must carry `P ≳ ℓ·E₂`. The
+target is far smaller than it was: gaps within 1 of 2, bounded deviation per position,
+sparse. #7093 refuted the Jensen route (the uniform/even multiset is not the pair
+minimiser at fixed (ℓ,W)), so it needs a different argument.
 
 **Do not close this bean.**
