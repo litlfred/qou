@@ -492,3 +492,81 @@ ruling re-opens this bean.
   which is still unbuilt — a first pass split the 48 as 25 computing / 17
   reflecting / 4 neither / 2 no-producer, but that discriminator is not
   validated well enough to bake into the count.
+
+## 2026-09-13 (later still) — scoping the tranche found the migration target was itself grouped
+
+`52b154af6e1`, `2ffefa65ef9`.
+
+### I was wrong about the fix, in three commits, and here is the correction
+
+I recommended `canonical_trm_reference.tr_m_nucleon()` as the durable
+alternative to a hardcoded trace — in this bean, in `derivation_chain.py`'s flag,
+and in two commit messages — on the stated grounds that it *"selects by recorded
+q0 and cannot silently serve the wrong frame"*.
+
+The first half is true. **The second was false as deployed.** Measured: the
+module was returning the GROUPED values for all five atoms. It selects by
+**pin** and has no notion of the intra-nucleon ordering at all, so it guards a
+cross-pin read while being blind to precisely the frame this bean is about.
+
+**Why nobody saw it, which is the durable lesson.** The CANONICAL-pin witness
+was the stale one (`atomic-tr-m-mpfr-50dps-proton.witness.json`, proton pin,
+**2026-08-19**) and the RETIRED-pin witness was the fresh one (muon,
+2026-09-07). Any check of the form *"is the recent artifact canonical?"* passes.
+The file that matters is the other one.
+
+### One producer re-run unblocked the target
+
+    QOU_Q0_ANCHOR=proton python3 computations/atomic_tr_m_mpfr_50dps.py \
+        --anchor proton
+
+(A bare `--anchor proton` is refused with exactly that line — the producer binds
+its pin at import, before argparse, and says so. Good guard; it wrote nothing on
+the refusal.) Checked for the truncating open-with-import template first per the
+coordination note — absent from this producer. Diff 61+/49-, a normal
+regeneration.
+
+The module now serves canonical on all five atoms, and the producer's own
+**independent** bridge-vs-peel cross-check agrees to **4.3e-51**. The witness has
+moved from the audit's grouped list to its borromean one.
+
+### Mirror synced, on this bean's own evidence
+
+`qou-mass/src/qou_mass/` held the same file at 2026-08-19 and three live package
+modules read it. This bean already answered the packaging question by
+measurement — mirror, `computations/` authoritative, 42 of 43 non-identical
+modules differing only by the `_path_bridge` shim — and a sibling has synced two
+such pairs. Verified before copying that the mirror was **structurally identical**
+to the pre-regeneration `computations/` copy (all keys equal, `results`
+identical), so this is a mirror restore rather than a judgement about values.
+
+### Two new beans, both found on the way
+
+- **`qou-72f8`** — the `qou_mass` copy of `canonical_trm_reference` resolves its
+  data against `_internal/`, which holds **0** witness files against **25** one
+  level up. So `tr_m_nucleon` **always raises** in the shipped package, and
+  `_internal/markov_weights_symbolic.py` imports it. The error prints
+  `inspected []`; that empty list is the tell — a path bug wearing a provenance
+  error's clothing, which is likely why it survived.
+- **`qou-y4gi`** — the `computations/` copy validates the pin and **not** the
+  ordering. Regenerating its input fixed today's values; it did not fix the gap,
+  and the corpus already shows this recurring (`TR_M_AT_Q0` corrected then stale
+  in five days; `path_b` the same two-step). Proposed fix: stamp
+  `intra_ordering_frame` at the producer and require it on load, with
+  absent-or-wrong raising — an undeclared frame must not default to canonical,
+  since every pre-ruling witness is undeclared.
+
+### Where the tranche now stands
+
+`derivation_chain.TR_M_AT_Q0` is **unchanged** and still grouped; the twelve
+consumers still hardcode it. What changed is that **the migration target is now
+correct**, which it was not when the tranche was first scoped. Order of work:
+
+1. `qou-y4gi` — the ordering assertion, so the target cannot stale again
+   silently. Do this BEFORE migrating; migrating twelve consumers onto a loader
+   that can serve the wrong frame just relocates the problem.
+2. Migrate the twelve, diffing what moves at each.
+3. `qou-72f8` in parallel if the package matters.
+
+And a dependent worth remembering: `assembly_chain_11_letter_recompute_probe`
+is red until step 2 reaches the neutron chain's leaf.
