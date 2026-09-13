@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T20:20:00Z
+updated_at: 2026-09-13T11:46:52Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1729,3 +1729,48 @@ were computed at order-zero and mixing bases is the silent-revert trap that
 commit's own audit records at §6. **The ranking is invariant** — residual is
 strictly increasing in `E₀`, and `E₀ > 0` is common to every candidate — so no
 conclusion on this bean depends on the base.
+
+
+
+## 2026-09-13 — the element question: ordering is provably not the lever (PR #7295)
+
+The alternating character `sigma_i |-> -1/q` is a 1-dim rep of `H_3(q)`, so a
+word's character is a product of SCALARS and depends only on the MULTISET of
+its letter shifts. Measured on 3840 (permutation, generator-assignment) pairs:
+exactly ONE distinct value. Lean `wordChar_of_perm` (sorry-free).
+
+Consequence for this bean's element half. R2 of the gamma-gamma ruling
+(`qou-ales`, #7212) picked the nucleon ORDERING. **An ordering choice cannot
+make a word gamma-gamma-produced** — the invariant that `altChar_eq_one` pins
+at +1 cannot see one. So the 5 census-derived letters of `nuc11_interleaved`
+are not repairable by re-ordering or by re-assigning generators; a
+gamma-gamma-derived replacement has to change WHICH letters are present.
+
+Closed form over the three-shift alphabet the census uses, with a/b/c counting
+the shifts 0 / -h / -h/2:
+
+    altChar(w) = (-1)^(a+b+c) q^(b-a-c) ((q^2+1)/2)^c  = 1  <=>  c = 0 and a = b
+
+Every corpus nucleon carries c = 2, and `-h/2` — the mixed ud crossing — is
+BOTH the unique bar-fixed shift (#7283) and the unique shift whose character
+pairs with nothing to give 1. One letter, two independent obstructions;
+`qou-e58e` measured that bar IS p<->n conjugation, so that is not a notational
+coincidence.
+
+Coverage, stated honestly: FIVE of the census's six Delta families —
+four at word level (`nuc9`, `nuc11_interleaved`, `nuc11_gen_grouped`, the 16
+`blocks CONSTRUCTED` readings = 19 readings = 38 words), one (`delta_S`, the
+short model) only at the Delta level because it is given as an NF vector and has
+no shift multiset. `blocks AS STATED` is NOT covered — nothing constructs it.
+
+NOT NEW: `qou-avt6` (2026-08-26) already has the monomial shape
+`q^m ([2]_q/2)^c`, for the COUNIT rep `sigma |-> q`. This is the ALTERNATING
+rep, which is the one the gamma-gamma lemma pins — a different functional, same
+shape.
+
+OPEN, spun out as `qou-efqx`: the fourth (`averaged_weighted`, colour-weighted)
+template, which R3 makes canonical. Its character carries an irreducible sextic,
+so the argument does not extend; only the pin-level pairing fact is measured.
+
+Bean stays `todo` (AGENTS.md §13a — the element is an open conjecture; this
+narrows it, it does not close it).

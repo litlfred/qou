@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T11:24:34.855779+00:00",
-  "commitSha": "d37d786f0b0babbae73464bb9fbd152af6f21ae3",
+  "computedAt": "2026-09-13T11:47:06.733015+00:00",
+  "commitSha": "ecd5ac30f82cf204bf78a429c5aa03fd11aa6469",
   "assertions": [
     {
       "name": "alt_char_is_a_one_dim_hecke_rep",
@@ -73,14 +73,35 @@
       "expected": true,
       "passed": true,
       "source": "unique bar-fixed shift c = [-1/2] (i.e. d = -h/2); the shifts whose character pairs with NO alphabet letter to give 1: ['ud'] -- the same letter"
+    },
+    {
+      "name": "no_colour_weighted_pairing_equals_one_at_the_substrate_pin",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "7 colour-weighted pairings of the 16 over the 4-letter alphabet; they reach 1 at q in ['0.398656', '0.462828', '0.503932', '0.564995', '2.668466', '3.235960', '3.458099', '4.139416'] (plus the trivial q = 1), nearest 0.564995 against q_0 = 1.1099785828; at the pin: none"
+    },
+    {
+      "name": "colour_weighted_character_is_outside_the_monomial_family",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "numerator factors beyond q and (q^2+1): [q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1] -- an irreducible sextic, so the unique-factorisation argument that closes the three-letter case has no analogue. The 4-letter word-level exclusion is OPEN; only the pin-level pairing fact above is measured"
+    },
+    {
+      "name": "short_model_delta_S_character_is_nonzero_away_from_q_eq_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "delta_S = [h^2/2, -h/2, -h/2, 0, 0, 0] (NF coordinates, not a word); altChar = (q - 1)*(q + 1)*(q**2 + 1)/(2*q**2), roots [1]; at q_0 = 0.21019934990050293657 != 0 -- so it too fails the both-legs-gamma-gamma condition"
     }
   ],
   "allPassed": true,
-  "durationMs": 147916,
+  "durationMs": 163817,
   "computation": "qbeta-altchar-is-a-shift-multiset-invariant",
   "scriptFile": "qbeta_altchar_is_a_shift_multiset_invariant_probe.py",
-  "scriptHash": "4d2585b4ad00",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f92fb325e8a8",
+  "scriptCommitSha": "3a54ae68f3b2ccf01a6f6ab258f6e7424e54fdca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -103,8 +124,103 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_altchar_is_a_shift_multiset_invariant_probe.py"
   },
-  "description": "The alternating character of a corpus nucleon word depends only on the multiset of its letter shifts -- not on generator assignment and not on ordering. It equals 1 iff the mixed (ud) count is zero and the two pure counts agree. Every one of the 19 census readings carries exactly two mixed letters, so none is a gamma-gamma word at any q != 1, and the ordering the gamma-gamma ruling picked cannot change that. Scope-(b); the invariant is the alternating character, fixed at +1 on gamma-gamma words by GammaGammaWordSelection.altChar_eq_one (sorry-free).",
+  "description": "The alternating character of a corpus nucleon word depends only on the multiset of its letter shifts -- not on generator assignment and not on ordering. It equals 1 iff the mixed (ud) count is zero and the two pure counts agree. Every one of the 19 word-built readings carries exactly two mixed letters, so none is a gamma-gamma word at any q != 1, and the ordering the gamma-gamma ruling picked cannot change that. Scope-(b); the invariant is the alternating character, fixed at +1 on gamma-gamma words by GammaGammaWordSelection.altChar_eq_one (sorry-free).",
   "data": {
+    "census_coverage": {
+      "distinct_delta_values_in_the_census": 6,
+      "covered_at_word_level": [
+        "build_nucleon_nf (nuc9)",
+        "build_atom_nf_exact (nuc11_interleaved)",
+        "nucleon_gen_chains (nuc11_gen_grouped)",
+        "blocks CONSTRUCTED (nuc11_constructed, 16 readings)"
+      ],
+      "covered_at_delta_level_only": [
+        "short model (delta_S) -- given as an NF vector, so it has no shift multiset (CHECK 11)"
+      ],
+      "NOT_COVERED": [
+        "blocks AS STATED -- the census probe deliberately does not construct it (the blocks give typed shifts but never say which generator each quark crossing sits on, which is why the 16 readings are enumerated instead), so there is no word or vector here to test"
+      ],
+      "honest_count": "5 of the census's 6 distinct Delta families"
+    },
+    "fourth_template": {
+      "label": "averaged_weighted (colour-weighted)",
+      "shift_in_h": "(q - 1)*(q + 1)*(q**6 - 2*q**5 - 5*q**4 - q**2 + 2*q - 1)/(12*q**5)",
+      "char_in_q": "(q**2 + 1)*(q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1)/(12*q**5)",
+      "char_at_q0": "-1.0053765317254677812",
+      "used_by_any_census_reading": false,
+      "why_it_matters": "the 2026-08-15 owner ruling R3 makes bring_color_weighted canonical as the p/n convention, so a word built next may carry it",
+      "pairings": [
+        {
+          "pair": "uu*cw",
+          "product": "-(q**2 + 1)*(q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1)/(12*q**6)",
+          "positive_real_roots": [
+            "0.462827519811",
+            "1.000000000000"
+          ],
+          "equals_one_at_q0": false
+        },
+        {
+          "pair": "ud*cw",
+          "product": "-(q**2 + 1)**2*(q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1)/(24*q**6)",
+          "positive_real_roots": [
+            "0.503932468203",
+            "1.000000000000",
+            "3.235960324610"
+          ],
+          "equals_one_at_q0": false
+        },
+        {
+          "pair": "dd*cw",
+          "product": "-(q**2 + 1)*(q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1)/(12*q**4)",
+          "positive_real_roots": [
+            "1.000000000000",
+            "3.458099300033"
+          ],
+          "equals_one_at_q0": false
+        },
+        {
+          "pair": "cw*uu",
+          "product": "-(q**2 + 1)*(q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1)/(12*q**6)",
+          "positive_real_roots": [
+            "0.462827519811",
+            "1.000000000000"
+          ],
+          "equals_one_at_q0": false
+        },
+        {
+          "pair": "cw*ud",
+          "product": "-(q**2 + 1)**2*(q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1)/(24*q**6)",
+          "positive_real_roots": [
+            "0.503932468203",
+            "1.000000000000",
+            "3.235960324610"
+          ],
+          "equals_one_at_q0": false
+        },
+        {
+          "pair": "cw*dd",
+          "product": "-(q**2 + 1)*(q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1)/(12*q**4)",
+          "positive_real_roots": [
+            "1.000000000000",
+            "3.458099300033"
+          ],
+          "equals_one_at_q0": false
+        },
+        {
+          "pair": "cw*cw",
+          "product": "(q**2 + 1)**2*(q**6 - 2*q**5 - 7*q**4 + 4*q**3 - q**2 - 2*q + 1)**2/(144*q**10)",
+          "positive_real_roots": [
+            "0.398656488216",
+            "0.564995422457",
+            "1.000000000000",
+            "2.668466465310",
+            "4.139416449691"
+          ],
+          "equals_one_at_q0": false
+        }
+      ],
+      "status": "pin-level fact measured; general word-level exclusion OPEN"
+    },
     "alphabet": [
       {
         "label": "uu",

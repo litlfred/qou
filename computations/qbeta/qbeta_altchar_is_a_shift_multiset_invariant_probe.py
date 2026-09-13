@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """The alternating character cannot see ORDERING -- so the gamma-gamma ruling,
 which picked an ordering, cannot make any census nucleon gamma-gamma-produced.
-All 19 readings are excluded at once, by one invariant, at every q != 1.
+Five of the census's six Delta families are excluded at once, by one
+invariant, at every q != 1.
 
 ## Why this probe exists
 
@@ -19,18 +20,69 @@ together:
     of every gamma-gamma word at `+1`. Scope-(b), one element.
 
 That probe answered the question for ONE element and left the obvious next one
-open: is some OTHER reading of the nucleon gamma-gamma-reachable? The corpus
-carries **19** readings -- `qbeta_delta_candidate_census_probe` establishes six
-distinct Delta values, and the "constructed" family alone is 8 quark-generator
-assignments x 2 Hopf orientations = 16 readings of the same recipe. Checking
-them one at a time is the wrong shape of answer.
+open: is some OTHER reading of the nucleon gamma-gamma-reachable?
+`qbeta_delta_candidate_census_probe` establishes **six distinct Delta values**,
+and the "constructed" family alone is 8 quark-generator assignments x 2 Hopf
+orientations = **16 readings of one recipe**. Checking them one at a time is
+the wrong shape of answer.
+
+## 🛑 Coverage, stated before the result, because "the whole census" would be
+## an over-claim
+
+**FIVE of the six families are covered here, not six.**
+
+  * FOUR at the WORD level -- `nuc9` (`build_nucleon_nf`),
+    `nuc11_interleaved` (`build_atom_nf_exact`), `nuc11_gen_grouped`
+    (`nucleon_gen_chains`), and the 16 `blocks CONSTRUCTED` readings. That is
+    19 readings = 38 words (each family has a proton and a neutron leg).
+  * ONE at the DELTA level only -- the short model `delta_S`, which is given as
+    an NF coordinate VECTOR rather than as a product of typed crossings. It has
+    no shift multiset, so the word-level argument does not reach it; CHECK 11
+    applies the weaker Delta-level condition instead.
+  * **`blocks AS STATED` is NOT covered.** The census probe deliberately does
+    not construct it: the properties blocks give the typed shifts but never say
+    which generator each quark crossing sits on, which is precisely why the 16
+    readings are enumerated in its place. There is no word and no vector there
+    to test, so nothing here says anything about it.
+
+## 🛑 What is NOT new here — corpus-grep, run before the claim was written
+
+`qou-avt6` (completed 2026-08-26) already derives the SHAPE. Its step 1 reads
+`eps(sigma_g + d) = q + d in {q, 1/q, [2]_q/2}`, hence
+`eps(any typed word) = q^m ([2]_q/2)^c`, and its step 2 closes an exclusion with
+unique factorisation in `Z[sqrt2]` at the silver ratio. So a
+"generator-and-order-independent monomial in `q` and `[2]_q/2`" is **not this
+probe's discovery**, and the two forms are the same up to a fold:
+`(q^2+1)/(2q) = [2]_q/2`, so `q^(b-a-c) ((q^2+1)/2)^c = q^(b-a) ([2]_q/2)^c`.
+
+Three things ARE new, and the first is the one that matters:
+
+1. **A different character.** `qou-avt6`'s `eps` is the COUNIT / trivial
+   representation `sigma |-> q`. This probe uses the ALTERNATING one,
+   `sigma |-> -1/q`. Both are 1-dimensional reps and both give a monomial
+   shape, but they are different functionals -- and it is the alternating one
+   that `GammaGammaWordSelection.altChar_eq_one` pins at `+1`, so it is the
+   only one of the two that answers a gamma-gamma question.
+2. **The blindness is STATED and used.** `qou-avt6`'s derivation implies
+   order- and generator-independence and never says so, so the consequence for
+   R2 of the gamma-gamma ruling -- which chose an ORDERING -- was not drawn.
+3. **The Lean** (`QOU.Mass.AltCharShiftMultiset`, sorry-free).
+
+🛑 And the ALPHABET IS THREE ONLY FOR THE CENSUS. `word_to_mpfr` recognises
+**four** crossing templates; the fourth, `averaged_weighted`, carries the
+substrate flavour split and the shift `d = -h(1/2 - delta/4)`. No census
+reading uses it (`shift_counts` raises on an unknown shift and does not fire),
+but the 2026-08-15 owner ruling R3 makes `bring_color_weighted` canonical as
+the p/n convention, so a word the corpus builds NEXT may carry it. CHECK 9
+measures its 16 pairings and CHECK 10 records why the structural argument does
+not extend to it -- see Scope.
 
 ## What is measured
 
 The alternating character `sigma_i |-> -1/q` is a 1-dimensional representation
 of `H_3(q)` (CHECK 1 verifies `S^2 = h S + 1`), hence an algebra hom, hence
-multiplicative on words. The corpus builds every nucleon from letters
-`sigma_i + d` with the shift `d` drawn from a three-element alphabet:
+multiplicative on words. Every one of the 19 word-built readings is built from
+letters `sigma_i + d` with the shift `d` drawn from a three-element alphabet:
 
     d = 0      (uu, a positive crossing)     char  -1/q
     d = -h/2   (ud, the mixed quark pair)    char  -(q^2+1)/(2q)
@@ -51,7 +103,8 @@ exactly the two things this invariant is blind to (CHECK 4).
 mixed letter contributes a factor `(q^2+1)/2`, and `q^2+1` is irreducible over
 Q and coprime to `q`, so no power of `q` can cancel it. Every corpus nucleon
 carries `c = 2` (CHECK 6) -- both the proton and the neutron word have exactly
-two `-h/2` letters -- so none of the 19 is gamma-gamma-produced, and no
+two `-h/2` letters -- so none of the 19 word-built readings is
+gamma-gamma-produced, and no
 re-ordering or re-assignment can change that.
 
 ## The tie to the bar involution, measured here rather than cited
@@ -73,6 +126,19 @@ It says nothing about a word built from gamma-gamma vertices PLUS other
 letters, and `altChar = 1` is **necessary, not sufficient** -- `c = 0, a = b`
 is a statement about the multiset, and being an actual product of vertices is a
 statement about the order. This probe selects nothing and wires nothing.
+
+**The one genuinely open edge, stated rather than papered over.** The exclusion
+is complete for the three-letter alphabet, because every letter character there
+is `+/- q^k` or `+/- (q^2+1)/(2q)` and unique factorisation finishes it. The
+colour-weighted letter's character carries an **irreducible sextic** (CHECK 10),
+so no such argument is available for it. What IS measured is the pin-level
+fact: no colour-weighted pairing equals 1 at `q_0` -- they reach 1 only at
+`q ~ 0.399, 0.463, 0.504, 0.565, 2.668, 3.236, 3.458, 4.139` (and the trivial
+`q = 1`), the nearest being `0.565` against `q_0 ~ 1.110` (CHECK 9). **The
+general word-level exclusion over the four-letter alphabet is OPEN.** That does
+not weaken the census result -- no census reading uses that letter -- but it is
+exactly the gap a future colour-weighted word would sit in, and R3 makes that
+convention canonical.
 """
 
 from __future__ import annotations
@@ -135,12 +201,26 @@ BASIS = _census.BASIS
 #: the two length-2 links = S^2, e^- = S^3.
 BASIS_CHAR = [ONE, S, S, S**2, S**2, S**3]
 
-#: the corpus shift alphabet, as (label, shift-in-h, character-in-q)
+#: the three shifts every census reading uses, as (label, shift-in-h,
+#: character-in-q). `shift_counts` RAISES on anything outside this set, so a
+#: reading that used a fourth template could not be silently mis-counted.
 ALPHABET = [
     ("uu", ZERO, S),
     ("ud", -h / 2, sp.simplify(sp.together(S - H_OF_Q / 2))),
     ("dd", -h, sp.simplify(sp.together(S - H_OF_Q))),
 ]
+
+#: 🛑 THE FOURTH TEMPLATE. `word_to_mpfr` recognises FOUR crossing templates,
+#: not three: `averaged_weighted` carries the substrate flavour split
+#: `delta(q) = (q-1)^2 (1 - q^-4)/3` (`flavor_split_leading`, exact) and the
+#: shift `d = -h(1/2 - delta/4)`. It is NOT used by any of the 19 word-built
+#: readings -- `shift_counts` would raise -- but the 2026-08-15 owner ruling R3
+#: makes `bring_color_weighted` canonical as the p/n convention, so a word the
+#: corpus builds NEXT may well carry it. CHECK 9 and CHECK 10 measure it, and
+#: CHECK 10 records honestly that the structural argument does NOT extend to it.
+DELTA_CW = (q - 1) ** 2 * (1 - q ** -4) / 3
+D_CW = -H_OF_Q * (sp.Rational(1, 2) - DELTA_CW / 4)
+CHAR_CW = sp.cancel(sp.together(S + D_CW))
 
 FAILED: list[str] = []
 
@@ -239,7 +319,7 @@ def main() -> int:
         "The alternating character of a corpus nucleon word depends only on "
         "the multiset of its letter shifts -- not on generator assignment and "
         "not on ordering. It equals 1 iff the mixed (ud) count is zero and the "
-        "two pure counts agree. Every one of the 19 census readings carries "
+        "two pure counts agree. Every one of the 19 word-built readings carries "
         "exactly two mixed letters, so none is a gamma-gamma word at any "
         "q != 1, and the ordering the gamma-gamma ruling picked cannot change "
         "that. Scope-(b); the invariant is the alternating character, fixed at "
@@ -415,7 +495,110 @@ def main() -> int:
           f"whose character pairs with NO alphabet letter to give 1: "
           f"{blocking} -- the same letter", w)
 
+    # ---------------------------------------------------------------- CHECK 9
+    # The fourth template, which no census reading uses but R3 makes canonical.
+    # Its character is NOT of the monomial form, so the argument above does not
+    # cover it -- measure instead of assuming. The falsifiable assertion is the
+    # unchosen one: does any pairing hit 1 AT the substrate pin?
+    four = ALPHABET + [("cw", D_CW, CHAR_CW)]
+    pair_rows, at_pin = [], []
+    for la, _da, ca in four:
+        for lb, _db, cb in four:
+            prod = sp.cancel(sp.together(ca * cb))
+            sols = sp.solve(sp.Eq(prod, 1), q)
+            pos = sorted(float(sp.re(sp.N(s, 30))) for s in sols
+                         if sp.im(sp.N(s, 30)) == 0 and sp.re(sp.N(s, 30)) > 0)
+            hit = sp.simplify(prod.subs(q, Q0) - 1) == 0
+            # 🛑 Only the COLOUR-WEIGHTED pairings are the subject. `uu*dd` is
+            # identically 1 -- it IS the gamma-gamma vertex -- so a check over
+            # all sixteen asserts the negation of the positive control. The
+            # first version of this check did exactly that and failed while its
+            # own note read "none at the pin": the note was right and the
+            # predicate was wrong, which is the only reason it was caught.
+            if "cw" in (la, lb):
+                at_pin.append((f"{la}*{lb}", bool(hit)))
+            pair_rows.append({"pair": f"{la}*{lb}",
+                              "product": str(sp.factor(prod)),
+                              "positive_real_roots": [f"{r:.12f}" for r in pos],
+                              "equals_one_at_q0": bool(hit)})
+    cw_rows = [r for r in pair_rows if "cw" in r["pair"]]
+    cw_roots = sorted({float(x) for r in cw_rows
+                       for x in r["positive_real_roots"]
+                       if abs(float(x) - 1.0) > 1e-12})
+    q0f = float(Q0)
+    nearest = min(cw_roots, key=lambda r: abs(r - q0f)) if cw_roots else None
+    hits = [p for p, hv in at_pin if hv]
+    check("no_colour_weighted_pairing_equals_one_at_the_substrate_pin",
+          not hits,
+          f"{len(at_pin)} colour-weighted pairings of the 16 over the 4-letter "
+          f"alphabet; they reach 1 at q in {[f'{r:.6f}' for r in cw_roots]} "
+          f"(plus the trivial q = 1), nearest {nearest:.6f} against "
+          f"q_0 = {q0f:.10f}; at the pin: {hits or 'none'}", w)
+
+    # --------------------------------------------------------------- CHECK 10
+    # The honest negative: WHY the structural argument stops at three letters.
+    # The three-letter characters are +/- q^k or +/- (q^2+1)/(2q), so every
+    # word character is a monomial times a power of (q^2+1)/2 and unique
+    # factorisation finishes it. The colour-weighted character carries an
+    # irreducible sextic that is neither, so no such argument is available and
+    # the general 4-letter word-level statement is NOT established here.
+    num_cw = sp.factor(sp.numer(sp.together(CHAR_CW)))
+    extra = [f for f, _e in sp.factor_list(num_cw)[1]
+             if sp.simplify(f - q) != 0 and sp.simplify(f - (q**2 + 1)) != 0]
+    check("colour_weighted_character_is_outside_the_monomial_family",
+          len(extra) == 1 and sp.degree(extra[0], q) == 6,
+          f"numerator factors beyond q and (q^2+1): {extra} -- an irreducible "
+          f"sextic, so the unique-factorisation argument that closes the "
+          f"three-letter case has no analogue. The 4-letter word-level "
+          f"exclusion is OPEN; only the pin-level pairing fact above is "
+          f"measured", w)
+
+    # --------------------------------------------------------------- CHECK 11
+    # The census's sixth family, `delta_S` (the "short model"), is given as an
+    # NF COORDINATE VECTOR, not as a product of typed crossings -- so it has no
+    # shift multiset and the word-level argument does not reach it. The
+    # character is linear, though, so the Delta-level condition still applies:
+    # if both legs were gamma-gamma words their characters would both be 1 and
+    # the difference exactly 0.
+    DELTA_S = [h ** 2 / 2, -h / 2, -h / 2, ZERO, ZERO, ZERO]
+    ch_S = char_of_nf(DELTA_S)
+    roots_S = sp.solve(sp.numer(sp.together(ch_S)), q)
+    check("short_model_delta_S_character_is_nonzero_away_from_q_eq_one",
+          sp.simplify(ch_S) != 0 and sp.simplify(ch_S.subs(q, Q0)) != 0,
+          f"delta_S = [h^2/2, -h/2, -h/2, 0, 0, 0] (NF coordinates, not a "
+          f"word); altChar = {sp.factor(ch_S)}, roots {roots_S}; at q_0 = "
+          f"{mp.nstr(at_q0(ch_S), 20)} != 0 -- so it too fails the "
+          f"both-legs-gamma-gamma condition", w)
+
     # ------------------------------------------------------------------ data
+    w.add_data("census_coverage", {
+        "distinct_delta_values_in_the_census": 6,
+        "covered_at_word_level": [
+            "build_nucleon_nf (nuc9)", "build_atom_nf_exact "
+            "(nuc11_interleaved)", "nucleon_gen_chains (nuc11_gen_grouped)",
+            "blocks CONSTRUCTED (nuc11_constructed, 16 readings)"],
+        "covered_at_delta_level_only": ["short model (delta_S) -- given as an "
+                                        "NF vector, so it has no shift "
+                                        "multiset (CHECK 11)"],
+        "NOT_COVERED": ["blocks AS STATED -- the census probe deliberately "
+                        "does not construct it (the blocks give typed shifts "
+                        "but never say which generator each quark crossing "
+                        "sits on, which is why the 16 readings are enumerated "
+                        "instead), so there is no word or vector here to test"],
+        "honest_count": "5 of the census's 6 distinct Delta families",
+    })
+    w.add_data("fourth_template", {
+        "label": "averaged_weighted (colour-weighted)",
+        "shift_in_h": str(sp.factor(sp.cancel(D_CW))),
+        "char_in_q": str(sp.factor(CHAR_CW)),
+        "char_at_q0": mp.nstr(at_q0(CHAR_CW), 20),
+        "used_by_any_census_reading": False,
+        "why_it_matters": "the 2026-08-15 owner ruling R3 makes "
+                          "bring_color_weighted canonical as the p/n "
+                          "convention, so a word built next may carry it",
+        "pairings": cw_rows,
+        "status": "pin-level fact measured; general word-level exclusion OPEN",
+    })
     w.add_data("alphabet", [
         {"label": lbl, "shift_in_h": str(d), "char_in_q": str(sp.factor(ch)),
          "char_at_q0": mp.nstr(at_q0(ch), 20)}
