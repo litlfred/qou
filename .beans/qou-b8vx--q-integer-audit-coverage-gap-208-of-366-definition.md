@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-09-13T06:38:25Z
+updated_at: 2026-09-13T06:49:01Z
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.
@@ -133,3 +133,55 @@ WHAT THE REMAINING 92 ARE, and the first bucket is an ANSWER not a gap:
 
 So the honest split of 173 is: 81 classified, 29 established as genuinely
 q0-pinned, 63 still dark. Bean stays IN-PROGRESS.
+
+CORRECTION + THIRD PASS 2026-09-13: 81 -> 102 of 173 (46.8% -> 59.0%).
+
+*** I MUST RETRACT THE "29 GENUINELY q0-PINNED" FIGURE FROM THE APPEND ABOVE. ***
+I reported 29 definitions as "q-independent -- the global resolves to a
+CONSTANT, so the definition is genuinely q0-pinned... That is the answer for
+those 29, not a failure to measure them." It was a failure to measure them.
+23 of the 29 were MY OWN BUG manufacturing a reassuring answer. The real
+figure is 6.
+
+THE BUG. The corpus writes, idiomatically:
+      from q_parameter import Q_MP as Q0
+      q = mp.mpf(str(Q0))
+My shim's mpf did sympify(str(x)). A str() round-trip through sympify rebuilds
+Symbol('q') WITHOUT the positive=True assumption -- a DIFFERENT symbol object
+from the canonical Q this audit tests against. So `free_symbols & {Q}` came
+back empty and the resolver concluded "q-independent (a constant, not the
+modulus)" about a value that IS the modulus, reached by the corpus's own
+canonical accessor.
+
+Comparing symbols by IDENTITY when the corpus round-trips them through STRINGS
+is the same wrong-object comparison that has now bitten this work four times
+(audit sec 21.3 item 2; the sqrt-variable misclassification in qou-9nn0; the
+index-vs-modulus argument bug earlier today). What makes this instance the
+worst is its DIRECTION: the other three produced visible nonsense -- 4**q/2**q,
+2+1/2 -- that invited inspection. This one produced a calm, plausible,
+WRONG negative and I wrote it up as a finding.
+
+Fixed by _canonical_q(), which collapses every symbol named q onto the
+canonical Q before the dependence test.
+
+TALLY NOW:
+    91  symmetric
+     5  classical
+     3  symmetric[n=2]
+     1  symmetric_in_sqrt_q       (correct and deliberate -- see above)
+     2  OTHER                     (not q-integers at all)
+    71  UNRESOLVED
+
+HONEST SPLIT OF 173:  102 classified by convention
+                        6 genuinely q-independent (was claimed 29)
+                       65 still dark
+
+Still zero new conventions across all 102. The remaining 71:
+    26  no top-level assignment
+    14  Q_MP chain -- DIAGNOSED but NOT fixed. The blocker is ALIASED imports:
+        `from q_parameter import Q_MP as Q0` keys my import map under Q0, so a
+        module that also mentions Q_MP by its original name does not resolve
+        it. Tractable; not attempted here.
+     6  q-independent (genuine)
+     3  import cycle or depth limit
+     2  _TBL   2  HERE   2  Q   1  json   (data-file loads, correctly opaque)
