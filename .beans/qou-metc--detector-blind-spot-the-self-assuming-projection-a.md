@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-13T17:33:19Z
-updated_at: 2026-09-13T18:26:53Z
+updated_at: 2026-09-13T19:51:43Z
 ---
 
 ## MEASURED 2026-09-13 on the QOU Lean tree (2870 .lean files)
@@ -154,3 +154,47 @@ foreign-category and 45 unscanned-file entries.
 3. Seeding the ledger for the 16. Needs a CORPUS-WIDE scan across all 22 roots,
    not the subtree scan that caused row 43. Deliberately not run here.
 4. qou-z9ws's 112-entry sizing is a FLOOR. Not re-sized.
+
+
+## Item 1 DONE — PR #7341 (2026-09-13)
+
+**The population was 21, not 16** (the 16 counted only `lean/QOU/`; five more
+are content-block siblings under `mass-theory/`), and **none of the 21 were
+reaching the ledger at all** — #7332 exempted them with the reason
+`"tracked; derivation pending"` while `--review-ledger` seeds only on the
+literal `triage pending`. Measured corpus-wide: 0 of 21 seeded. Taxonomy row 44.
+
+**Verdicts: 15 genuine / 5 advisory / 1 legit.** Discriminator applied was
+`qou-z9ws`'s — a projection is the accessor idiom only when something builds
+the bundle — and **13 of the 14 carriers have zero builders**; the 14th's only
+builder is a documented content-free zero skeleton. The `legit` is
+`dH_verticalReflection`, where `dH_eq` is a *theorem* on a bundle constructed
+in the same file.
+
+Whole corpus: **56 → 71** defect candidates, 80 → 65 exempt, 26 → 41 promoted.
+`--check-ledger` exit 0, zero `needs-agent`.
+
+## Item 2 DISSOLVES
+
+It was framed as a blanket "promote the pattern EXEMPT → COUNTED". The audit
+has no such switch: promotion is per-candidate via `adjudicatedGenuine`, which
+already accounts for 26 of the pre-existing defects. The only decision was the
+adjudication, and it is in #7341 with per-candidate evidence.
+
+## Item 3 is BIGGER than it looked
+
+A full-corpus `--review-ledger` run would delete **33** entries whose candidates
+no longer fire (spot-checked three — all genuinely repaired by `qou-9yt9` /
+`qou-ghy5`, so the deletions are correct) and reset **~20** more on file-sha
+drift, each needing re-adjudication. `--check-ledger` reads green on `main` only
+because nobody has re-run `--review-ledger` whole-corpus. Budget for ~20
+re-adjudications, not for a mechanical sweep.
+
+## Item 4 unchanged
+
+`qou-z9ws`'s 112-entry sizing is still a floor.
+
+## New, filed separately
+
+- `qou-vh1o` — the 13 candidates on the two OTHER exemption arms, still
+  invisible, with file:line list and the four steps to close.
