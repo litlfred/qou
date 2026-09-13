@@ -1,11 +1,11 @@
 ---
 # qou-mwmn
 title: 'main is currently INVALID: 4 eightfold-way unresolved-uses errors — PR #4640 owns the fix'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-07T10:41:28Z
-updated_at: 2026-09-13T12:15:37Z
+updated_at: 2026-09-13T12:30:26Z
 parent: qou-kemt
 ---
 
@@ -78,3 +78,12 @@ earlier agents, and overriding another agent's stated deferral is not mine to do
 The **stated blocking condition is now satisfied**: `qou-mln9` said it would stay
 open "until it lands, [because] main stays validate-RED for every branch" — main
 is green. Nothing remains to do on either symptom.
+
+
+
+## CLOSED 2026-09-13 on author authorisation
+
+The author authorised closing both gate beans in session, against the
+measurement above: `main @ 9510d3d04` / platform `df28d02` →
+**`✓ Valid — 2 issue(s)`, 0 errors, exit 0**, with `uses-resolve` selftested
+against a known positive first. Nothing remains on either symptom.
