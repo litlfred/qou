@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T07:58:29Z
-updated_at: 2026-09-13T08:04:25Z
+updated_at: 2026-09-13T08:34:10Z
 ---
 
 ## Result (2026-09-13) — the convexity route analysed; convexity is the WRONG invariant
@@ -69,3 +69,47 @@ a third bond family breaking pn-averaging or interface affineness — is untouch
 
 No `q`, no Markov parameter, no anchor, no CODATA value, no numeral outside the
 witness polynomial. Nothing here can go stale under the convention-D migration.
+
+
+## 🛑 CORRECTION 2026-09-13 — I asked the owner for a paper the corpus already HOLDS and already CITES
+
+I told the owner, twice, that Groeneveld (1962) — the alternating-sign theorem
+the whole `b₃ < 0` negative rests on — is "**NOT** in `library/`", and asked for
+a PDF. **Both halves were wrong**, and the second is worse than the first.
+
+**Held.** Measured on `library/*/sections/`: `Groeneveld` **2 documents**,
+`Ursell` **6**, `Mayer` **39**, `Ruelle` **12**, `Penrose` **19**, `lattice gas`
+**4**, `fugacity` **10**. `library/s10955-022-02992-6/` is **Jansen & Kolesnikov
+(2022), *Cluster Expansions: Necessary and Sufficient Convergence Conditions*,
+J. Stat. Phys.**, whose §3.1 states the *"well-known alternating sign property of
+the Ursell function"* with the explicit sign
+`(−1)^(r + Σ(|Vᵢ|−1)) = (−1)^k` and proves it as Corollary 3.3.
+
+**And cited.** `QOU/MassTheory/UrsellPartitionFunctionB3.lean` line 21 names
+`(Jansen–Kolesnikov, library/s10955-022-02992-6/, p. 5)` and line 73 carries
+`-- Ref: [jansen2022cluster] https://doi.org/10.1007/s10955-022-02992-6`. The key
+is in `content/schema/references.ts`; `BondArcTheorems.lean` cites it too. **The
+b₃ Lean is properly sourced and always was.**
+
+### How I got it wrong — it is the documented trap, verbatim
+
+I ran **tier 1 only**. `INDEX.md` returns **0** for `Groeneveld`, `Ursell`,
+`Ruelle`, `lattice gas` and `fugacity` while `sections/` returns 2, 6, 12, 4 and
+10. AGENTS.md §corpus-grep path 5 says exactly this: *"a clean tier-1 scan is
+evidence about the index, not about the library"*, and records that the index
+silently went **33 real documents** stale once before. I quoted that rule to the
+owner earlier in the same session and then did not apply it.
+
+**Cheapest fix for the next agent: never conclude "not held" from `INDEX.md`.**
+Run `grep -rli <topic> library/*/sections/` before saying it. It costs one
+command.
+
+## SIXTH name-collision, for `qou-r44k`
+
+`alternating sign` → **alternating sign MATRICES**. Of the four documents
+matching it, `1-s20-s009731651830061x-main` (Fischer, *Constant term formulas
+for refined enumerations of Gog and Magog trapezoids*) supplies **21** of the
+section hits and has nothing to do with Ursell functions; `arxiv-math-9909027v1`
+is Jones, *Planar Algebras I*. So a grep for the phrase that names this bean's
+own load-bearing theorem lands mostly on combinatorics of ASMs. Same class as
+the five already recorded, found inside my own search path.
