@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T08:04:50Z
-updated_at: 2026-09-13T11:11:36Z
+updated_at: 2026-09-13T14:31:55Z
 ---
 
 ## The defect, with evidence
@@ -385,3 +385,58 @@ published value is wrong — and it owes no regeneration on that ground.
 **Check the import cone before writing a regeneration into scope.** A producer
 outside the `q_parameter` cone entirely is the only kind that can actually be
 at 15.
+
+
+---
+
+## The same blind spot is in a SECOND gate — confirmed 2026-09-13
+
+The note above records that `never_raises_dps_audit` cannot see the
+`qou_substrate/constants.py` dps floor, so its "computing at dps=15" message is
+stale for anything in the `q_parameter` cone. **`mpf_import_time_dps_audit` has
+the identical defect**, and it is currently blocking on it.
+
+`computations/mpf_import_time_dps_audit.py:189` is the whole model of what
+raises precision:
+
+```python
+if name in {"set_compute_dps", "workdps"}:
+```
+
+`import q_parameter` is not in that set, and it raises dps 15 → 50 — measured
+again today: `from q_parameter import q_at` takes the ambient from 15 to 50.
+
+**Measured effect on the live gate.** 6 NEW files blocked; after fixing the two
+real ones, 4 remain and **three are this blind spot**:
+
+| file | import | flagged literal |
+|---|---|---|
+| `qbeta_ck_c5_slot_and_size_mismatch_probe.py` | `q_parameter` at :91 | :94 |
+| `qbeta_fibre_unit_circle_opens_route5_probe.py` | `q_parameter` at :99 | :102 |
+| `qbeta_required_phase_target_provenance_probe.py` | `q_parameter` at :76 | :79 |
+
+In each the import is *one to three lines above* the literal, so the ambient is
+already 50 when the `mpf` is built. They are not defects and cannot be drained
+by editing the producer — the only honest drains are to teach the audit about
+the floor, or to add `set_compute_dps()` purely to satisfy a gate that is
+looking for the wrong thing.
+
+### Why it matters more here than in the first gate
+
+`never_raises_dps_audit`'s version is a **wrong message** on findings that are
+mostly real. This one is a **wrong verdict**: the gate blocks, and three of its
+four remaining findings are files where nothing is wrong. Someone draining it
+will either add no-op calls or baseline clean files, and both make the corpus
+worse.
+
+### The fix, for whoever owns the audit
+
+Teach both audits that entering the `q_parameter` cone raises precision. The
+floor is unconditional at `tools/qou-substrate/python/qou_substrate/constants.py`
+(`_mp.mp.dps = max(_mp.mp.dps, _DPS_DEFAULT)`), so the test is import-graph
+reachability, not a name in a set. Until then, **check the import cone before
+treating any finding from either gate as a defect.**
+
+Two real ones were found and fixed this session by exactly that check, so the
+gates are worth keeping — one of them, `Q_NEAR_ONE`, was **exactly 1** at dps 15
+when its entire purpose was to be near one and not one.
