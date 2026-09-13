@@ -3001,16 +3001,16 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-three** rows (re-counted 2026-09-13), and the groups
+>   catalogues **forty-four** rows (re-counted 2026-09-13), and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
->   about conventions at all. **Rows 35-43 are NOT in this list**: 35 (the
+>   about conventions at all. **Rows 35-44 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
 >   39 (the freshness is on the wrong object), 40, which is the first row
 >   in the table whose failure runs the OTHER way — an over-matching grep that
 >   fails to a false **COVERED** rather than a false all-clear, so it ends the
 >   search instead of prolonging it — 41 (the query's character encoding), and
->   **42-43, which are one arc and the sharpest pair in the table**: 42 is the
+>   **42-44, which are one arc and the sharpest group in the table**: 42 is the
 >   body SHAPE of a self-assuming projection (an applied SINGLE field was
 >   unseen, so the case where the conclusion is universally quantified — the
 >   NORMAL case — was invisible by construction, 26 → 42 hits), and 43 is scan
@@ -3019,7 +3019,16 @@ Do not regress either.
 >   repeats of a repair the corpus had already made once: 42's fix exists one
 >   arity over as `APPLIED_TUPLE_PROJECTION`, and 43 is row 33 a second time on
 >   the same API, where the `--json` path refuses a partial scan and the ledger
->   path never got the rule:
+>   path never got the rule. **44 is the third**, and it is the one to
+>   internalise: the ledger seeds only candidates whose exemption text matches
+>   the literal `triage pending`, and a sibling emit site spells its reason
+>   `derivation pending` — so 34 candidates were exempted into silence rather
+>   than queued, while a code comment eight lines above the bug asserted they
+>   "still enter the review ledger". Rows 33, 43 and 44 are one lesson said
+>   three times: **a queue is only a queue on the paths that actually write to
+>   it, and an exemption is only a deferral if the thing it defers to can see
+>   it.** Do not read an empty ledger, or a clean `--check-ledger`, as evidence
+>   about the corpus:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard
