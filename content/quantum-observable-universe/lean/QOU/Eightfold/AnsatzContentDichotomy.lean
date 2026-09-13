@@ -120,7 +120,7 @@ theorem nonetAnsatz_unconstraining (d₁ : R) : Unconstraining (nonetAnsatz d₁
   intro obs
   refine ⟨![obs 0 - d₁, d₁ * (obs 0 - d₁) - obs 1], ?_⟩
   funext i
-  fin_cases i <;> simp [nonetAnsatz] <;> ring
+  fin_cases i <;> simp [nonetAnsatz]
 
 /-- Consequently no relation among the nonet's two coefficients discriminates. -/
 theorem nonet_no_discriminating (d₁ : R) (rel : Rel R 2) :
@@ -151,7 +151,6 @@ theorem equalPairAnsatz_discriminating [Nontrivial R] :
   intro hv
   have := hv ![0, 1]
   simp [diffRel] at this
-  exact absurd this.symm (by simpa using (zero_ne_one (α := R)))
 
 /-- And therefore it is **not** unconstraining: some observation refutes it.
 This is the case the eightfold-way ansätze are *not* in. -/
