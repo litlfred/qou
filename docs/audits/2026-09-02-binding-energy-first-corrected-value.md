@@ -8,32 +8,71 @@
 > complementary-slackness justification refuted sorry-free in PR #7251), and the
 > accumulator now returns the ungated sum.
 >
-> **Derived, NOT measured** — `binding_energy` is additive in its three terms and
-> the gate touches only term 1, so:
+> **MEASURED 2026-09-13 — this cell was derived arithmetic until then, and the
+> re-run confirms it.** Producer
+> [`computations/binding_energy_ungated_deuteron_measurement.py`](../../computations/binding_energy_ungated_deuteron_measurement.py),
+> 2361.9 s total, kernel live (`_HAS_LP_KERNEL = True`, `pyhecke_native 0.9.0`),
+> `COMPUTE_DPS = 70`.
+>
+> **TIER — every figure below is at the production default
+> `k_exact = k_max = K_PARTITION_MAX = 11`.** The UIC total spans 43× across the
+> tiers, so a bare UIC figure is meaningless; the widely-quoted "4.6×" gate
+> factor is the `k_exact = 4` tier and is 2.4× too large for this one, where it
+> is **1.934×**.
 >
 > | | gated (this doc) | ungated (post-drop) |
 > |---|---|---|
-> | term 1 `unified_iterative_correction` | `−9.1477362310` | **`−17.6908290020795`** (measured) |
-> | term 2 `sdp_cross_channel_contribution` | `0.0` | `0.0` (unchanged) |
-> | term 3 `binding_from_frobenius_pairing` | `+1.876634106` | `+1.876634106` (unchanged) |
-> | **`binding_energy(1, 1)`** | **`−7.271102125`** | **`≈ −15.814194896`** |
+> | term 1 `unified_iterative_correction` | `−9.14773623102088124311` | **`−17.6908290020795447079`** (measured, 413.6 s) |
+> | term 2 `sdp_cross_channel_contribution` | `0.0` | `0.0` (measured, 0.0 s — unchanged) |
+> | term 3 `binding_from_frobenius_pairing` | `+1.87663410614413633433` | `+1.87663410614413633433` (measured, 768.3 s — unchanged) |
+> | **`binding_energy(1, 1)`** | **`−7.271102125`** | **`−15.81419489593541`** (measured, 1180.0 s) |
 >
-> The last cell is **arithmetic on this document's own decomposition, not a
-> re-run.** `binding_energy(1,1)` took **942 s** here and that has not been
-> repeated; the term-1 figure above is a fresh 425.5 s measurement at the same
-> `k_exact = k_max = 11` production default. Treat `−15.814` as derived and
-> re-measure before publishing it.
+> **The last cell is now the public function's own return, not arithmetic on
+> this table.** It is a `float` by public contract (bean `qou-sv7h`), so it is a
+> 53-bit number; the accumulation behind it, summed as `mpf`, is
+> `−15.8141948959354083735877911366312919667669572902108415800038`, and the
+> public return sits `−1.57e-15` from it — relative `9.94e-17`, i.e. below
+> `2⁻⁵³ = 1.11e-16`. That gap is the cast at the return and nothing else.
+>
+> **What the re-run tested, and what it found.** That terms 2 and 3 are
+> gate-independent had been established by *reading* `binding_energy`, never by
+> running it. Both are now measured directly, and both are unchanged — so the
+> additive decomposition this document asserts is confirmed, and the gate does
+> touch term 1 alone.
+>
+> **The derived cell said `≈ −15.814194896`; the measured one is
+> `−15.81419489593541`, an offset of `+1.44091626e-10 MeV` (relative
+> `9.11e-12`). That offset is entirely this banner's own quoting precision, not
+> a discrepancy:**
+>
+> | source | amount |
+> |---|---|
+> | term 3 quoted at 10 s.f. (`1.876634106` vs `1.8766341061441363343`) | `+1.44136334e-10` |
+> | term 1 quoted at 15 s.f. (`−17.6908290020795` vs `−17.690829002079544708`) | `−4.47079e-14` |
+> | **sum of the two** | **`+1.44091626e-10`** |
+> | unexplained remainder | `−9.3e-61` (the 60-dps arithmetic floor) |
+>
+> Term 3's `+1.876634106` was never a direct measurement: this document obtained
+> it by subtracting term 1 from the 942 s gated total. The re-run is the first
+> direct evaluation of `binding_from_frobenius_pairing(1, 1)`, and it reproduces
+> that subtraction to all ten of its printed digits — which also reproduces the
+> original gated total, `−9.14773623102088124311 + 1.87663410614413633433 =
+> −7.27110212487674490878`, against the `−7.271102125` printed below.
 >
 > **Everything this document concludes is unchanged and, if anything,
 > reinforced.** The sign was wrong at `−7.271` and is still wrong at `−15.814`;
-> it is still carried by term 1; the `|ratio|` against AME `+2.224566` goes from
-> 3.27× to **7.11×**, i.e. *worse*. Dropping the gate buys honesty, not accuracy
-> — see
+> it is still carried by term 1. Against AME2020 `+2.22456607 MeV` the `|ratio|`
+> goes from **3.26855×** to **7.10889×** and the residual from **9.4956682** to
+> **18.038761 MeV** — i.e. *worse*. (Do not conflate those with bean
+> `qou-21oc`'s `11.37 → 19.92 MeV`, which is the residual of **term 1 alone**
+> against AME, a different quantity.) Dropping the gate buys honesty, not
+> accuracy — see
 > [`2026-09-12-uic-pass2-gate-dropped.md`](2026-09-12-uic-pass2-gate-dropped.md).
 >
 > The ⁴He figures in §"the A-series" move the same way: term 1 goes
 > `−8.201558468 → −15.9926510049258` (measured, 1165.1 s), a shift of
-> `−7.791092536563411`.
+> `−7.791092536563411`. **⁴He `binding_energy(2, 2)` has NOT been re-run** — it
+> is a ~2× longer compute than the deuteron and stays derived.
 
 **Measured 2026-09-02.** Completes the `qou-sv7h` arc: the Rust LP-accumulator
 kernel is wired into both loops, and `binding_energy` runs end to end for the
@@ -105,8 +144,19 @@ in Rust before Pass 1, and the step loop reads `(trace, log_norm)` from it.
 **Every line of the accumulation — `raw_delta`, `cumul_partition`,
 `final_tr_sign` — and the whole of Pass 2's complementary-slackness gate are
 untouched.** That distinction is the point: a reimplementation that drops Pass 2
-is wrong by ~4.6× (measured), which is why the kernel is wired *in* rather than
+moves the total by ~4.6×, which is why the kernel is wired *in* rather than
 *around*.
+
+> **🛑 Both halves of that last sentence need scoping now (2026-09-13).** The
+> **tier is missing**: `4.6×` is `k_exact = 4`. At the production default
+> `k_exact = k_max = 11` the same ratio is **1.934×** — the gate's grip
+> *loosens* as the partition set grows, so `4.6×` is 2.4× too large for any
+> default run. And the word **"wrong"** is superseded: Pass 2's gate was
+> **removed** on 2026-09-12 (bean `qou-21oc`, PR #7253) because its
+> complementary-slackness justification is refuted sorry-free, so dropping it is
+> now the *correct* behaviour and the `1.934×` is the size of a selection step
+> that should never have been there. What remains true, and is why this sentence
+> is kept: a reimplementation must not change the accumulation silently.
 
 `atom_character_raw`: same kernel, taking the final step's trace and log-norm,
 which is all that function returns.
