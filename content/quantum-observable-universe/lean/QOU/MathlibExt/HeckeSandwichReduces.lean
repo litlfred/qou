@@ -49,8 +49,9 @@ generators satisfy the braid relations — `towerSpan_of_braided`. Composing wit
 `disjointBlock_of_braided`: the disjoint-block trace law holds for every
 `MarkovTrace` on a braided tower.
 
-**🛑 NOT settled — and this is the load-bearing caveat.** `BraidedTower` is a
-hypothesis on a `MarkovTrace`, and **this file constructs no instance of it**.
+**🛑 NOT settled here — but see `MathlibExt.BraidedTowerInstances`, which
+supplies the instances this file does not.** `BraidedTower` is a hypothesis on a
+`MarkovTrace`, and **this file constructs no instance of it**.
 The existing witnesses do not qualify, which is a fact about them worth stating
 rather than leaving implicit:
 `InvolutionTowerWitness` has commuting involutions, and
@@ -73,9 +74,28 @@ witness combines:
   support arguments in the permutation model rather than by rewriting with the
   relations, so it does not reach `q ≠ 1`.
 
-A witness with **both** a growing filtration and `h ≠ 0` is an Iwahori-Hecke
-tower, which Mathlib does not supply. That, and only that, is what stands between
-this theorem and an unconditional disjoint-block law for the production trace.
+**UPDATED 2026-09-13 — the corpus now supplies a carrier, and this paragraph's
+earlier form was wrong twice.** It read: *"A witness with both a growing
+filtration and `h ≠ 0` is an Iwahori-Hecke tower, which Mathlib does not supply.
+That, and only that, is what stands between this theorem and an unconditional
+disjoint-block law for the production trace."*
+
+* **"Mathlib does not supply"** was true and beside the point — the corpus
+  supplies one. `MathlibExt.HeckeTowerWitness` (bean `qou-cins`) presents `H_∞`
+  as `FreeAlgebra R ℕ` quotiented by exactly these three relations, with `h` a
+  free parameter, and `BraidedTowerInstances.braidedTower_heckeTower`
+  instantiates this class on it. Even against Mathlib the line overstated:
+  `SchurWeyl.finrank_le_factorial` (bean `qou-uoal`) is the upper half of the
+  coset-basis theorem the strict-growth question needs.
+* **"That, and only that"** was wrong about what remains. Two things do, and the
+  instance repairs neither: `HeckeTowerWitness`'s trace is **not faithful** (it
+  factors through a rank-2 quotient, so Jones' existence theorem for the Ocneanu
+  trace of `H_∞(q)` is still open — bean `qou-g8i1`), and its filtration is
+  proved to grow only at the bottom (`twH_zero_lt_one`: `H 0 < H 1`).
+
+So `BraidedTower` is inhabited in the quadrant that matters, and the distance to
+"an unconditional disjoint-block law for the production trace" is a faithful
+trace, not a carrier.
 
 **Nothing here derives the bond product.** That reading of the atom word remains
 measured, per `DisjointBlockTraceLaw`'s own statement of scope.
