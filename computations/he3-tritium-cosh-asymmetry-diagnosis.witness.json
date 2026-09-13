@@ -1,13 +1,13 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T03:25:41.741672+00:00",
-  "commitSha": "75fd0b4c3264868c68924658f00c3e433e01bbcb",
+  "computedAt": "2026-09-13T05:27:24.164520+00:00",
+  "commitSha": "e49a3cbd4e6a3bad14704de3335114d7772e15a6",
   "assertions": [
     {
       "name": "intra_pn_difference_is_bar_odd_exact_h",
-      "computed": "1.0",
-      "expected": "1",
+      "computed": "4.591774807899560578e-41",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-35",
       "source": "(Σd(proton uud) − Σd(neutron udd)) / h from atom_braid_word_3A(1,0) and (0,1), h = q−q⁻¹ at the same 50-digit q the word is built from; a single linear-in-h term ⇒ bar-odd (sinh)"
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 27,
   "computation": "he3-tritium-cosh-asymmetry-diagnosis",
   "scriptFile": "he3_tritium_cosh_asymmetry_diagnosis.py",
-  "scriptHash": "b404a8337fcd",
-  "scriptCommitSha": "e846a227ef38f9ff7cdeee98f876b498ee6c3b24",
+  "scriptHash": "a50588bf3ef0",
+  "scriptCommitSha": "e49a3cbd4e6a3bad14704de3335114d7772e15a6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,9 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -53,11 +55,11 @@
     "per_mode_mirror_mismatch": {
       "full": {
         "max_abs_diff": 1.3718006697664185,
-        "sum_abs_diff": 7.278066779212117
+        "sum_abs_diff": 7.278066779212109
       },
       "inter0": {
         "max_abs_diff": 0.6446716123869114,
-        "sum_abs_diff": 2.8282786119211627
+        "sum_abs_diff": 2.828278611921157
       },
       "alld0": {
         "max_abs_diff": 0.0,
