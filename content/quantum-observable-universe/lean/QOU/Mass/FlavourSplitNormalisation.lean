@@ -42,18 +42,59 @@ is the real question, and the corpus answers it.
   subleading correction is explicitly **posited, not derived** —
   `flavor_split_subleading`'s `(1+ℏ_q³)` supplies 76 % of the gap CODATA
   demands and is labelled `posited` in its own docstring.  That remains open.
-* **The mass-fraction reading does NOT extend to the like pairs.**
-  `BondLetterIdentification.massFraction_like_pair` proves `m/(m+m) = 1/2`,
-  which contradicts the production `t_pp = 0` and `t_nn = 1`.  So "the interface
-  is weighted by mass fraction" is *not* the mechanism for all three letters —
-  it holds at the `pn` interface and fails at the like ones.
 * **Why the `pn` interface carries a colour weighting at all** is the
   `bring_color_weighted` convention (canonical by owner ruling R3, 2026-08-15),
-  and this file derives none of it.
+  and this file derives none of it.  What the section below *does* narrow is the
+  **sign** of that weighting, from a numeral to a choice between two named
+  weightings.
+
+## 🛑 Correction to an earlier version of this file — the like-pair "defect" is void
+
+An earlier version of this docstring recorded, as an open defect:
+
+> *"The mass-fraction reading does NOT extend to the like pairs.
+> `BondLetterIdentification.massFraction_like_pair` proves `m/(m+m) = 1/2`,
+> which contradicts the production `t_pp = 0` and `t_nn = 1`."*
+
+**That objection reads the weight in the wrong frame and is withdrawn.**  The
+mass fraction is not a rule producing `t` *from* the flavours; it is the weight
+in a convex combination *of the two like-pair letters*.  The corpus already said
+so — `computations/probes/pn_interface_bar_structure_probe.py` fact 3 records
+`f_pn = w_p·f_pp + w_n·f_nn` with `w_p + w_n = 1`, and answers the like-pair
+question directly: *"a like-flavour bond has no mean to tilt — averaging `f_pp`
+with itself returns `f_pp` for any weights summing to one."*
+`crossInterp_like_pair` below is that sentence as a theorem, and it makes the
+three letters one rule rather than two.  My grep for the `1/4` had not reached
+that probe.
+
+## What the two weights ARE — and the sign is a choice, not a numeral
+
+The same identity that fixes the `4` identifies both weights as **crossed** mass
+fractions: the weight on the `pp` letter is the **neutron's** fraction and the
+weight on the `nn` letter is the **proton's** (`wPP_mean_normalised`,
+`tPN_mean_normalised`).  So the production letter is, with no `δ`, no `1/4` and
+no normalisation convention in it,
+
+    σ_pn  =  ( m_n·σ  +  m_p·σ⁻¹ ) / (m_p + m_n) .
+
+The like pairs fix the per-nucleon endpoints `t_p = 0`, `t_n = 1`, and those
+admit two interpolations — `direct` (each endpoint by its own mass) and `cross`
+(each by the other's).  They differ by exactly `δ/2`
+(`direct_sub_cross_eq_deltaMean_half`), agree on the like pairs, and production
+selects `cross`.  Nothing in `d_for_ctype` or `prop:pn-averaging-uniqueness`
+derives that choice — `direct` is the `δ ↦ −δ` reflection and satisfies the same
+bar-invariance and normalisation hypotheses — so this converts an unexplained
+numeral into an unexplained **choice between two named weightings**, which is a
+smaller open item, not a closed one.  Probe:
+`computations/qbeta/pn_letter_is_cross_mass_weighted_probe.py` (5/5), which also
+measures where the two are separable: the `A = 3` mirror ratio is `q⁻⁴` under
+**both** (the `pn` factor cancels), so the whole discriminator is the deuteron,
+where `b_pn` moves by `h·δ/2` — `2.83e-4` relative at the proton-pinned `q₀`.
 
 §7c: pure field identities — no ordering, no `Real.sqrt`, no archimedean
-construct.  `CharZero` is **required, not tactic convenience**: every statement
-divides by `2` and `4`, so all three are false in characteristic 2.  Sorry-free.
+construct.  `CharZero` is **required, not tactic convenience**: the
+normalisation statements divide by `2` and `4`, so they are false in
+characteristic 2.  Sorry-free.
 
 -- Ref: [manuscript] docs/audits/2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md
 -/
@@ -108,6 +149,83 @@ theorem quarter_is_wrong_under_sum_normalisation (mp mn : R) (h : mp + mn ≠ 0)
     1 / 2 - deltaSum mp mn / 4 - mp / (mp + mn) = (mn - mp) / (4 * (mp + mn)) := by
   unfold deltaSum
   field_simp
+  ring
+
+/-- **And the weight on the `pp` letter is the NEUTRON's mass fraction.**
+
+`pn_interface_bar_structure_probe` fact 3 writes the canonical interface as
+`f_pn = w_p·f_pp + w_n·f_nn` with `w_p = 1/2 + δ/4`.  Together with
+`tPN_mean_normalised` (`w_n = 1/2 − δ/4 = m_p/(m_p+m_n)`) this says each
+like-pair letter is carried by the mass fraction of **the other** nucleon:
+
+    σ_pn = (m_n·σ + m_p·σ⁻¹)/(m_p + m_n) .
+
+An identity, not a derivation — see the docstring. -/
+theorem wPP_mean_normalised (mp mn : R) (h : mp + mn ≠ 0) :
+    1 / 2 + deltaMean mp mn / 4 = mn / (mp + mn) := by
+  unfold deltaMean
+  field_simp
+  ring
+
+omit [CharZero R] in
+/-- The two weights are convex: they sum to `1` for any nonzero total mass. -/
+theorem crossWeights_sum_one (mp mn : R) (h : mp + mn ≠ 0) :
+    mn / (mp + mn) + mp / (mp + mn) = 1 := by
+  field_simp
+  ring
+
+/-- The two interpolations of the like-pair endpoint values `t_p`, `t_n` between
+a nucleon of mass `ma` carrying `ta` and one of mass `mb` carrying `tb`:
+`directInterp` weights each endpoint by **its own** mass, `crossInterp` by **the
+other's**.  Production's `pn` letter is `crossInterp`. -/
+noncomputable def directInterp (ma mb ta tb : R) : R := (ma * ta + mb * tb) / (ma + mb)
+
+/-- See `directInterp`. -/
+noncomputable def crossInterp (ma mb ta tb : R) : R := (mb * ta + ma * tb) / (ma + mb)
+
+/-- **The production `pn` weight is the CROSS interpolation**, exactly: with
+`t_p = 0` (the `pp` letter is `σ`) and `t_n = 1` (the `nn` letter is `σ⁻¹`),
+`crossInterp m_p m_n 0 1 = m_p/(m_p+m_n) = 1/2 − δ/4`. -/
+theorem crossInterp_eq_tPN (mp mn : R) (h : mp + mn ≠ 0) :
+    crossInterp mp mn 0 1 = 1 / 2 - deltaMean mp mn / 4 := by
+  rw [tPN_mean_normalised mp mn h]
+  unfold crossInterp
+  ring_nf
+
+/-- **The direct interpolation is the `δ ↦ −δ` reflection** — it gives
+`1/2 + δ/4`, the neutron's fraction, and is the alternative production does not
+take. -/
+theorem directInterp_eq_reflected (mp mn : R) (h : mp + mn ≠ 0) :
+    directInterp mp mn 0 1 = 1 / 2 + deltaMean mp mn / 4 := by
+  rw [wPP_mean_normalised mp mn h]
+  unfold directInterp
+  ring_nf
+
+/-- **The two differ by exactly `δ/2`.**  So the choice between them is the sign
+of the colour tilt and nothing else. -/
+theorem direct_sub_cross_eq_deltaMean_half (mp mn : R) (h : mp + mn ≠ 0) :
+    directInterp mp mn 0 1 - crossInterp mp mn 0 1 = deltaMean mp mn / 2 := by
+  rw [directInterp_eq_reflected mp mn h, crossInterp_eq_tPN mp mn h]
+  ring
+
+/-- **Both interpolations fix a like pair**, for any masses and any endpoint
+value — because a like pair averages a letter with itself.  This is the theorem
+form of `pn_interface_bar_structure_probe`'s *"a like-flavour bond has no mean to
+tilt"*, and it is what retires the "mass fraction fails at the like pairs"
+objection recorded in an earlier version of this file's docstring: the three
+letters are one rule, not two. -/
+theorem crossInterp_like_pair (m t : R) (hm : m ≠ 0) : crossInterp m m t t = t := by
+  have h2 : m + m ≠ 0 := by rw [← two_mul]; exact mul_ne_zero (by norm_num) hm
+  unfold crossInterp
+  rw [div_eq_iff h2]
+  ring
+
+/-- The same for `directInterp` — the two agree on like pairs and differ only at
+the unlike one. -/
+theorem directInterp_like_pair (m t : R) (hm : m ≠ 0) : directInterp m m t t = t := by
+  have h2 : m + m ≠ 0 := by rw [← two_mul]; exact mul_ne_zero (by norm_num) hm
+  unfold directInterp
+  rw [div_eq_iff h2]
   ring
 
 /-- The residual above is nonzero exactly when the nucleons are not degenerate —
