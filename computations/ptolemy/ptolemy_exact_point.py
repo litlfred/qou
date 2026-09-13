@@ -91,9 +91,15 @@ def extract(name, cls, verbose=True):
             continue
         hs = str(sp.expand(h)).replace('**', '^')
         body = "\n".join(f'"{v}:"; reduce({v},G);' for v in vrs)
+        # stdfglm, NOT std: the ideal is ZERO-DIMENSIONAL, so FGLM converts a cheap
+        # degrevlex basis into the lex one we need.  A direct lex std on 11 variables
+        # (5_2 class 1) did not finish in 10 minutes, while the SAME system solves in
+        # 0.4 s under degrevlex -- the cost was the ORDERING, not the system.
         out = sing(f'ring r=0,({",".join(vrs)},T),lp;\n'
                    f'ideal I={",".join(eqs)},T-({lin}),{hs};\n'
-                   f'ideal G=std(I);\n{body}\nquit;\n')
+                   f'ideal G;\n'
+                   f'if (dim(std(I))==0) {{ G=stdfglm(I); }} else {{ G=std(I); }}\n'
+                   f'{body}\nquit;\n')
         L = [l.strip() for l in out.splitlines() if l.strip()]
         co = {}
         for i, l in enumerate(L):
