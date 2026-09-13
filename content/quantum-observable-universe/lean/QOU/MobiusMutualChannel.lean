@@ -531,4 +531,134 @@ theorem weightedPairMean_one (L : LinkEmbedding M n) (i j : Fin n) (s : ℝ) :
 
 end LinkEmbedding
 
+/-! ## 7. The discriminator: Möbius invariance FORCES the inverse square
+
+§§1-6 are **admissibility**: the mutual channel is integrable, blind to
+orientation, bounded away from zero, and (after subtracting its own mean)
+satisfies O2 against any density. Every one of those is a test that many
+candidate kernels pass, so clearing them is not evidence for this channel over
+another orientation-blind functional of separation. Bean `qou-o6ml` records the
+resulting blocker: route (2) needs a *discriminating* observable, and `κ(A)`
+cannot be it (#7020/#7080 proved that series constrains only the product
+`s·p`).
+
+This section supplies one, and it is the property that singles out the
+Möbius/O'Hara energy among knot energies in the first place: **invariance under
+Möbius transformations of the ambient space**.
+
+**What makes it statable here.** A Möbius transformation is a map of `ℝ³ ∪ {∞}`,
+and `LinkEmbedding` carries no ambient geometry — only `sep`, a real-valued
+separation. But the classical transformation law under an inversion centred at
+a point `a` is itself a statement about *distances*:
+
+    |I(x) − I(y)| = |x − y| / (|x − a| · |y − a|)          (chord)
+    |I(γ(s))′|    = 1 / |γ(s) − a|²                        (arclength element)
+
+so the invariance condition can be written entirely in the language `sep`
+already speaks. Those two laws are classical and are **assumed** here with a
+citation, not derived; what is proved is what they force.
+
+**What they force, and it is the whole point.** Not merely that `1/d²` happens
+to be invariant — that the exponent is the ONLY one that can be. A functional
+`f` of separation, carried against the arclength density, is Möbius invariant
+**iff** `f(d) = f(1)/d²`. So the inverse square is not an ansatz and not a
+choice: it is the unique orientation-blind kernel compatible with the symmetry.
+
+**And it pins the density §6 deliberately left free.** §6 proved O2 against an
+arbitrary `w`, with the honest note that `LinkEmbedding` supplies nothing that
+would select one. Möbius invariance selects it: the Jacobian factors
+`1/|γ − a|²` are exactly what cancel the chord factors, and §7c below shows the
+flat parameter measure `ds dt` fails. So the two sections compose — §6 removed
+an unnamed assumption, §7 derives the thing it left open, and neither
+introduces a free parameter.
+
+-- Ref: [ohara1991] https://doi.org/10.1016/0040-9383(91)90010-2
+-- Ref: [freedman1994] https://doi.org/10.2307/2946626
+-/
+
+namespace MobiusMutualChannel
+
+/-- **Möbius invariance of a separation kernel, carried against arclength.**
+
+    `f` is the kernel as a function of separation; `d` is the chord between the
+    two points; `da`, `db` are their distances to the inversion centre. The
+    left-hand side is the transformed integrand: the kernel evaluated at the
+    transformed chord, times the two arclength Jacobians. -/
+def MobiusInvariantKernel (f : ℝ → ℝ) : Prop :=
+  ∀ d da db : ℝ, 0 < d → 0 < da → 0 < db →
+    f (d / (da * db)) * (1 / da ^ 2) * (1 / db ^ 2) = f d
+
+/-- **THE DISCRIMINATOR.** Möbius invariance forces the inverse square.
+
+    No ansatz, no fitted exponent, no appeal to the measured numbers: the
+    hypothesis is the symmetry alone, and the conclusion is the kernel. Any
+    orientation-blind functional of separation that is Möbius invariant against
+    the arclength density *is* `f(1)/d²` — so the mutual channel's `1 / sep ^ 2`
+    is the unique such kernel up to the overall constant.
+
+    This is what §§1-6 could not supply. Those sections admit a whole class of
+    candidates; this one cuts the class to a single ray.
+
+    **🛑 SCOPE — the hypothesis is stronger than the geometry supplies, and the
+    gap is at small chord.** `MobiusInvariantKernel` quantifies over
+    *unconstrained* positive triples `(d, da, db)`. A geometrically realisable
+    triple is three distances among three points of `ℝ³`, so it must satisfy the
+    triangle inequalities; the witness this proof uses, `(1, 1/d, 1)`, needs
+    `1/d ≤ 2`, i.e. **`d ≥ 1/2`**. For `d < 1/2` that triple is not realisable by
+    any configuration, so the conclusion at small `d` rests on invariance over
+    triples the geometry never presents.
+
+    Taking `da = db = 1/√d` instead is realisable for `d ≤ 4` and fails past it,
+    so neither single witness family covers `(0, ∞)`. Whether the
+    characterisation survives when the hypothesis is restricted to realisable
+    triples is **open** and is the one loose end of this section — it is not
+    closed by rephrasing, since the restricted hypothesis is genuinely weaker.
+    Do not cite this theorem as "the exponent is forced by geometry"; it is
+    forced by invariance over all positive triples, which is a stronger
+    assumption. Bean `qou-zfs6`. -/
+theorem mobiusInvariant_forces_inverse_square
+    {f : ℝ → ℝ} (hf : MobiusInvariantKernel f) {d : ℝ} (hd : 0 < d) :
+    f d = f 1 / d ^ 2 := by
+  have hd' : d ≠ 0 := ne_of_gt hd
+  -- Evaluate the invariance law at chord `1`, with the inversion centre placed
+  -- so that `da * db = 1 / d`; the transformed chord is then exactly `d`.
+  have h := hf 1 (1 / d) 1 one_pos (by positivity) one_pos
+  have hrw : (1 : ℝ) / (1 / d * 1) = d := by field_simp
+  rw [hrw] at h
+  -- `h : f d * (1 / (1 / d) ^ 2) * (1 / 1 ^ 2) = f 1`, i.e. `f d * d ^ 2 = f 1`.
+  field_simp at h
+  field_simp
+  linarith [h]
+
+/-- The converse: the inverse-square kernel really is Möbius invariant, so the
+    characterisation above is not vacuous. Together with it, `1/d²` is the
+    unique Möbius-invariant separation kernel up to scale. -/
+theorem inverse_square_mobiusInvariant :
+    MobiusInvariantKernel (fun d => 1 / d ^ 2) := by
+  intro d da db hd hda hdb
+  have hd' : d ≠ 0 := ne_of_gt hd
+  have hda' : da ≠ 0 := ne_of_gt hda
+  have hdb' : db ≠ 0 := ne_of_gt hdb
+  field_simp
+
+/-- **§7c — the FLAT parameter measure is not Möbius invariant.**
+
+    Dropping the arclength Jacobians leaves the bare kernel, and it does *not*
+    survive an inversion. Witness: chord `1`, centre distances `2` and `1`, so
+    the transformed chord is `1/2` and the kernel reads `4` against the original
+    `1`.
+
+    This is the exact assumption §6 removed rather than documented, now shown to
+    be not merely unsupported but **false**: `ds dt` cannot be the measure the
+    Möbius channel is carried against. -/
+theorem flat_measure_not_mobiusInvariant :
+    ¬ (∀ d da db : ℝ, 0 < d → 0 < da → 0 < db →
+        (fun x : ℝ => 1 / x ^ 2) (d / (da * db))
+          = (fun x : ℝ => 1 / x ^ 2) d) := by
+  intro h
+  have := h 1 2 1 one_pos (by norm_num) one_pos
+  norm_num at this
+
+end MobiusMutualChannel
+
 end QOU

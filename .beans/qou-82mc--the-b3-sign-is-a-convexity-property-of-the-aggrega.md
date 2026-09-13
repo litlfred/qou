@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T09:29:08Z
-updated_at: 2026-08-30T09:29:58Z
+updated_at: 2026-09-13T10:39:44Z
 ---
 
 ## What it is
@@ -136,3 +136,34 @@ not bite on this grid. It would beyond `A = 4`. Do not extend the grid naively.
   than `C(A,2)`, which is the only way to see where the convex→concave turn is.
 * Related open beans: `qou-brng` (linking-vs-self-energy amplitude assignment),
   `qou-e5jf`, `qou-9yqb`, `qou-edt7`.
+
+
+## 🛑 TITLE IS NOW MISLEADING 2026-09-13 — convexity is SUFFICIENT but STRICTLY UNNECESSARY
+
+This bean is `completed` and titled *"The b3 sign is a convexity property of the
+aggregator"*. A reader landing on that title takes convexity for the invariant.
+It is not.
+
+`QOU/MassTheory/B3AggSecantCharacterisation.lean` (on `main`, merge
+`3cb26d4b9f8`) proves the **iff** that convexity was approximating: with
+`s x = Φ x / x` the origin-secant slope,
+
+    b3Agg Φ g = 3g·(s(3g) − s(g))      exactly
+    0 ≤ b3Agg Φ g  ↔  s(g) ≤ s(3g)     an IFF, not an implication
+
+and `convexOn_sufficient_not_necessary` exhibits `Φ = x³ − x²` — **not**
+`ConvexOn ℝ (Ici 0)` (concave near the origin, `Φ'' = 6x − 2 < 0` for `x < 1/3`)
+— with `b3Agg Φ 1 = 18 > 0`.
+
+**A search for `b₃ > 0` restricted to convex aggregators searches a strict
+subset.** Global convexity is a condition at every pair of points; `b₃ > 0`
+requires only that ONE secant slope not drop across ONE fixed scale ratio.
+
+And because it is an **iff**, choosing `Φ` to make `b₃ > 0` is the assumption
+rewritten, not evidence for it — selection against the target under §NO FITTING.
+The non-circular reformulation is the scaling route: `Φ(3g) = c·Φ(g) ⟹
+b₃ = (c−3)Φ(g)`, so for a p-homogeneous law `b₃ > 0 ↔ p > 1`, i.e. **"is the
+assembly superlinear in the bond count?"** rather than "why should the aggregator
+curve upward?"
+
+Live carrier: `qou-2ss0`. Left `completed` — only the title misleads.
