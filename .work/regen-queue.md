@@ -7,33 +7,70 @@ and the log layer was float64 on top — so **everything downstream of
 not merely stale. That is a much wider statement than the old queue's, and it
 replaces it.
 
-## 1. The nuclide table — RUNNING
+## 1. The nuclide table — RESTARTED FROM ZERO, 2026-09-13 (second supersession)
 
-`hadron-knot-table.witness.json` completed 19/19 on 2026-09-07 and is committed
-(`ee2c9c278f2`), but under the PRE-sv7h kernel. Re-running now from zero; the
-old checkpoint was deleted rather than re-stamped.
+**Superseded twice now, by the same mechanism.** `qou-sv7h` made the kernel
+exact and invalidated the 2026-09-07 19/19 run; the 218-commit merge of
+2026-09-13 brought `qou-oiz3` ("carry mpf through mu_lambda, s_* and the whole
+UIC resolvent cone", owner directive "excise float64") and invalidated the run
+that replaced it, at 6/19.
 
-**That is the opposite call from 2026-09-07, and deliberately so.** That merge
-changed a key file by a pure RENAME, so the cached atoms were provably still
-valid and re-stamping was right. This one changes the arithmetic, so the cache
-is wrong and discarding is right. The key did its job both times; what differs
-is what the diff said.
+`oiz3` rewrites, among eight float64 sites its own message says "reach a binding
+number", exactly the three that matter here:
 
-Early signal: proton / neutron / protium reproduce byte-identically
-(0.629328 / 0.475134 / 1.146338), as expected — sv7h bites on the
-accumulation, so divergence should appear at compounds, not at A=1.
+| function | what it feeds |
+|---|---|
+| `atom_markov_trace` | the table's `tr_M` column |
+| `atom_frobenius_norm_sq` | the Frobenius verdicts — all of §2 |
+| `unified_iterative_correction_jet` | `binding_energy`'s first term, so `B_MeV` |
 
-Cheaper than the 7 h it took last time: main replaced the factorial SYT
-enumeration with an exact closed form (`qou-r4w5`), and the witness now
-checkpoints per atom, so a killed container publishes the rows it reached.
+**Stopped and merged at 6/19 rather than finishing first.** Finishing would have
+spent ~8 hours producing 19 atoms under a kernel main had already replaced;
+stopping cost 40 minutes. Same judgement as §1's previous text records for
+2026-09-07 and the opposite outcome, for the reason stated there: that merge
+changed a key file by a pure **rename**, so the cache was provably valid and
+re-stamping was right; this one changes the **arithmetic**, so the cache is
+wrong and discarding is right. The key did its job both times; what differs is
+what the diff said.
 
-## 2. `qou-3uvs` — re-confirm, but the conclusion should hold
+**Checkpoint and memo both discarded.** The checkpoint is preserved in history
+at `3f2e6574102` and was deleted, not re-stamped. The 7.5 MB / 1656-file kernel
+memo was deleted too — though it did not strictly need to be: `_memo_build_id()`
+hashes `hecke_core_legacy.py` alongside the compiled kernel, precisely so a
+Python-side change like this one misses rather than serves, which is the defect
+that cost the *previous* memo its 38 MB (§3). Every entry was already
+unreachable; deleting only reclaimed the disk.
 
-The si28 / ca40 / fe56 Frobenius verdicts (all FAIL) came from the old kernel.
-They need re-confirming from this run. The conclusion is expected to survive:
-the violations are **10 %–84 % of the scale** and ~1e9 x the tolerance, and
-sv7h moves values at ~1e-15. Nothing at that size flips a verdict at that
-margin — but it should be read off the new witness, not assumed.
+**Early signal, measured on the restart:** proton / neutron / protium reproduce
+byte-identically (`0.6293284243136999689635…`, `0.4751335192365202839866…`,
+`1.1463377114864981773456…`). `oiz3`, like `sv7h`, bites on the accumulation
+rather than at A=1, so divergence should appear from deuterium onward. If an
+A=1 value had moved, something other than the intended change would have.
+
+**Walls under the pre-merge kernel, for comparison when these land:**
+deuterium 278.8 s, tritium 928.4 s, he3 926.9 s.
+
+## 2. `qou-3uvs` — re-confirm, and the SIZE ARGUMENT NOW NEEDS RE-DERIVING
+
+The si28 / ca40 / fe56 Frobenius verdicts (all FAIL) came from the old kernel
+and must be read off the new witness, not assumed.
+
+The margin argument still stands on its own terms — the violations are
+**10 %–84 % of the scale** and ~1e9 × the tolerance, so nothing that moves
+values at ~1e-15 can flip them. **What no longer stands is the premise**, and
+the correction matters more than the conclusion:
+
+That "~1e-15" was measured for `qou-sv7h`. The 2026-09-13 merge brought
+`qou-oiz3`, which rewrites **`atom_frobenius_norm_sq` itself** — this section's
+own subject — replacing a float64 accumulation with mpf. A float64
+accumulation's error is not bounded at 1e-15: it grows with the number of terms
+summed, and these are the atoms with the most terms. So the shift on
+si28 / ca40 / fe56 is exactly the case where the old bound is least likely to
+transfer.
+
+The verdicts will very probably survive a 10 %–84 % margin regardless. But
+**quote the new witness's own numbers**, and do not carry the 1e-15 figure
+across — it was measured against a different change, on a different function.
 
 ## 3. The kernel memo — DELETED, re-port only with a wider key
 
