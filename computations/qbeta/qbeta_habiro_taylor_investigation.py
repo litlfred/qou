@@ -164,8 +164,24 @@ def main() -> int:
     q0_num = mpf(q0_str)
     Q_codata = mpf("0.78233341")
 
-    tr_p_num = float(sp.N(tr_p_sym.subs(q, sp.Float(str(q0_num), 50)), 30))
-    tr_n_num = float(sp.N(tr_n_sym.subs(q, sp.Float(str(q0_num), 50)), 30))
+    # `sp.N(..., 30)` evaluates to THIRTY significant digits and the old
+    # `float(...)` threw fourteen of them away, after which
+    # `mp.nstr(tr_p_num, 18)` serialised eighteen -- two more than a double
+    # carries. Keep the sympy value as an mpf instead; `str` (never `repr`)
+    # is the right bridge, since sympy's Float prints its full precision.
+    #
+    # `delta_tr_num` is why this matters rather than being tidy. It is a
+    # DIFFERENCE OF TWO NEARLY-EQUAL VALUES, and it is the quantity this probe
+    # is about -- it is printed as Δtr_M(q₀), serialised, and compared against
+    # the series at :285. Under float64 the cancellation eats most of the
+    # significance; measured on the same shape, a genuine 1e-20 gap between two
+    # values near 1.41 comes out as EXACTLY 0.0 in float64 and survives in mpf.
+    # Caught by mpf_mixed_arithmetic_audit as three findings with one cause.
+    #
+    # The `{:.15f}` f-strings below are unaffected: mpmath's mpf implements
+    # __format__, verified, and still prints 15 places.
+    tr_p_num = mpf(str(sp.N(tr_p_sym.subs(q, sp.Float(str(q0_num), 50)), 30)))
+    tr_n_num = mpf(str(sp.N(tr_n_sym.subs(q, sp.Float(str(q0_num), 50)), 30)))
     delta_tr_num = tr_n_num - tr_p_num
     print(f"  Numerical sanity at q₀:")
     print(f"     tr_M(β_p, q₀) = {tr_p_num:.15f}")
@@ -280,8 +296,17 @@ def main() -> int:
     # function. Independent arithmetic, and the check that the "records the
     # Taylor expansion for a future session" purpose actually depends on.
     _eps0 = sp.Float(str(q0_num), 50) - 1
-    _series_at_q0 = float(sum(delta_tr_coeffs[n] * _eps0 ** n
-                              for n in range(10)))
+    # Exact on BOTH sides. The coefficients are sympy Rationals -- the
+    # assertion just above checks exactly that -- and eps0 is a 50-digit
+    # Float, so this sum is exact until something narrows it. It used to be
+    # `float(...)`, which was harmless while the other side was float too;
+    # once `delta_tr_num` became an mpf, leaving this narrowed would have made
+    # `_series_gap` measure the float64 truncation of the series rather than a
+    # disagreement between the two routes. The 1e-9 gate is the O(eps0^10)
+    # series truncation (~2.6e-10), so the assertion passed either way -- but a
+    # comparison of two routes has to be symmetric to mean what it says.
+    _series_at_q0 = mpf(str(sp.N(sum(delta_tr_coeffs[n] * _eps0 ** n
+                                     for n in range(10)), 30)))
     _series_gap = abs(_series_at_q0 - delta_tr_num)
     builder.add_assertion(
         "taylor_series_reproduces_delta_tr_at_q0",

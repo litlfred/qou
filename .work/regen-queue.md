@@ -281,3 +281,34 @@ edition was on a reader's screen.
 
 **This took the `CODATA stale-edition` gate from RED to GREEN** — it was its
 single finding corpus-wide, and it flags executable sites only.
+
+## 12. `qbeta_habiro_taylor_investigation.py` — RE-RUN ONLY, float64 carried through 2026-09-13
+
+Four `float()` narrowings on the numeric path, three of them flagged by
+`mpf_mixed_arithmetic_audit` as one cause:
+
+```
+tr_p_num     = float(sp.N(..., 30))     30 digits computed, 16 kept, 18 printed
+tr_n_num     = float(sp.N(..., 30))     same
+delta_tr_num = tr_n_num - tr_p_num      a DIFFERENCE of two narrowed neighbours
+_series_at_q0 = float(sum(<Rationals> * eps0**n))   exact sum, narrowed
+```
+
+`delta_tr_num` is the one that matters: it is the quantity the probe is *about*
+(printed as Δtr_M(q₀), serialised, and compared against the ε-series), and a
+difference of two nearly-equal values is where float64 cancellation is worst.
+Measured on the same shape: a genuine 1e-20 gap between two values near 1.41
+comes out **exactly 0.0** in float64 and survives in mpf.
+
+`_series_at_q0` was fixed in the same pass **because fixing only the other side
+would have been worse than fixing neither**: `_series_gap` compares the two
+routes, so once `delta_tr_num` became exact, a narrowed series would have made
+the gap measure float64 truncation rather than a disagreement. The 1e-9 gate is
+the O(ε₀¹⁰) truncation (~2.6e-10), so the assertion passed either way — but a
+two-route comparison has to be symmetric to mean what it says.
+
+Verified before changing the types: mpmath's `mpf` implements `__format__`, so
+the `{:.15f}` f-strings still print 15 places; `mpf(str(sp.N(x, 30)))` keeps all
+30 digits where `float()` keeps 16.
+
+Gate effect: `mpf_mixed_arithmetic_audit` 10 → 7 candidates, over-baseline 7 → 4.
