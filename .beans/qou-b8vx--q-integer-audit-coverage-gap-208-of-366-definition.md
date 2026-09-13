@@ -47,8 +47,8 @@ WHY 110 REMAIN, measured not guessed:
        in a function)
    19  q-independent (the global resolves to a constant, so the definition is
        genuinely q0-pinned in the strong sense)
-   13  depends on unresolvable 
-    5     4     2     2     2  
+   13  depends on unresolvable Q_MP
+    5  Q0   4  q0   2  _Q0_RESOLVED   2  _TBL   2  HERE  
 The Q_MP cluster (13) is the largest single lever and is the obvious next step.
 
 SCOPE, stated so the number is not misread: this audit counts TOP-LEVEL
@@ -58,3 +58,23 @@ population the duplication audit actually skips.
 
 An UNRESOLVED definition is UNMEASURED, not agreeing -- the conflation this
 bean exists to prevent. Bean stays IN-PROGRESS: 110 of 173 are still dark.
+
+SHELL-MANGLING NOTE 2026-09-13: the append above, and the commit message of
+the same change, were written with backtick-quoted identifiers inside a
+double-quoted shell string, so the shell ran them as command substitution and
+ATE them. Lost from the commit message: h, qint_geo, q_int, q_int2, Q_MP, Q0,
+q0, _Q0_RESOLVED, _TBL, HERE, and the example 'def q_int2(q): return q + 1/q'.
+The measurements are unaffected -- only the prose lost identifiers. Repaired
+here via a quoted heredoc, which cannot substitute. The commit message itself
+is left as it landed rather than force-pushing over a branch that already has
+an open PR; this bean is the durable record.
+
+FULL TEXT OF WHAT WAS EATEN:
+  - the unresolvable-global histogram: 13 Q_MP, 5 Q0, 4 q0, 2 _Q0_RESOLVED,
+    2 _TBL, 2 HERE
+  - the argument-order example: a one-arg definition whose argument is the
+    MODULUS, e.g. one returning q + 1/q, is [2]_q -- complete and comparable,
+    no module global involved. Calling it as f(2),f(3),f(5) computes 2+1/2,
+    3+1/3 and classifies noise.
+  - the four self-declaring classical definitions are named qint_geo; the
+    fifth, needing a basis determination, is named q_int.
