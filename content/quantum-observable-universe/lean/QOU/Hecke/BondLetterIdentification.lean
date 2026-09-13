@@ -285,7 +285,24 @@ costs no new dependency; they are `MassTheory.DeuteronKernel.zD`, `.hq` and
 /-- **The `nn` bond factor is `q⁻⁴` times the `pp` one.**
 
 `z_D − h = 1/(q(q²+1))` against `z_D = q³/(q²+1)`, so their ratio is exactly
-`q⁻⁴`. Each `pp → nn` substitution multiplies a bond product by `q⁻⁴`. -/
+`q⁻⁴`. Each `pp → nn` substitution multiplies a bond product by `q⁻⁴`.
+
+🛑 **This is a FORMALISATION of an identity the corpus already had, not a new
+one — credit upstream.** `computations/qbeta/qbeta_bond_factors_derived_probe.py`
+records `b_pp/b_nn − q⁴ = 0` as its identity 2, established symbolically, and
+`b_pp − z = 0` as its identity 1 under an assertion named
+`b_pp_IS_the_markov_parameter`. Both predate this file. What is added here is
+that the two are the **same law** at `t = 0` and `t = 1` of `tr_bond_interp`
+— identity 2 is `tr_bond_ginv` divided by `tr_bond_gen` — and that it holds for
+a bond carrying material on *both* sides, which that probe does not address.
+
+All **three** of that file's bond constants are `b(t) = z − h·t`, exactly, as
+rational functions of `q`: `b_pp = q³/(q²+1)` at `t = 0`, its degree-10
+`b_pn` at `t = 1/2 − δ/4`, and `b_nn = 1/(q³+q)` at `t = 1`. Checked in
+`computations/qbeta/qbeta_bond_factors_are_one_interpolation_probe.py` (4/4).
+That also separates the production `pn` ctype from `averaged` **symbolically**
+(`b(1/2) − b_pn ≠ 0`), which is a stronger form of this file's correction 1 than
+the `ε⁴` discriminator it was resting on. -/
 theorem nnFactor_eq_ppFactor_div_q_pow_four (q : ℝ) (hq : 0 < q) :
     q ^ 3 / (q ^ 2 + 1) - (q - q⁻¹) = (q ^ 3 / (q ^ 2 + 1)) / q ^ 4 := by
   have hq0 : q ≠ 0 := ne_of_gt hq
