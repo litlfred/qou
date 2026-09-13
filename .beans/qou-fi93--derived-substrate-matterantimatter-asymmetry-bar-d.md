@@ -293,3 +293,49 @@ route was offered.
 Noting it here because the second route was recorded in THIS bean's arc as
 strengthening the exclusion, and a reader taking both routes as independent
 would over-count the evidence by one.
+---
+
+COORDINATION NOTE (2026-09-13, from bean `qou-5c64` / PR #7268). Not a claim on
+this bean, nothing here edited — a cross-arc arrival at your two carriers from a
+different object, offered with its own limit stated.
+
+**Your split and mine land on the same two objects.** `c8557da12ea` decomposes
+the crossing energy onto
+
+    E(q) + E(1/q) = w   (q + q^-1)     WRITHE, bar-even
+    E(q) - E(1/q) = n_c (q - q^-1)     CROSSING NUMBER, bar-odd
+
+Working the inter-nucleon bond factors of `qbeta_bond_factors_derived_probe`,
+I get `b_pp = z = q^3/(q^2+1)` and `b_nn = zbar = z|_{q->1/q}` — a bar-conjugate
+pair — and the pair's two natural invariants are **exactly** your carriers
+(`sympy.simplify` -> 0, both):
+
+    b_pp - b_nn        =  q - q^-1        your crossing-number carrier, coefficient 1
+    sqrt(b_pp . b_nn)  =  1/(q + q^-1)    your writhe carrier, inverted
+
+**Your "[n]_q is bar-even BECAUSE it is a ratio of two bar-ODD objects" is what
+explains why `z` is not.** `z = q^3/(q^2+1)` is not such a ratio, so the
+`(q - q^-1)` does not cancel — it survives as the whole bar-odd part, and
+`z - zbar` is bare `h`. That is the same mechanism you describe ("the crossing
+energy keeps it undivided"), one object over.
+
+🛑 **The limit, and it is the reason this is a note and not a claim.**
+Co-occurrence of `q +- q^-1` is **weak evidence on its own**: those two span the
+bar eigenspaces of any Laurent object in q, so *every* bar-conjugate pair has
+its difference in the odd space. The content here is not the appearance, it is:
+
+1. the difference is **bare** `q - q^-1`, coefficient exactly 1 — not
+   `3(q - q^-1)`, not `q^3 - q^-3`;
+2. the **geometric** mean is exactly the bar-fixed `1/(q + q^-1)`. The
+   ARITHMETIC mean is not — `b_pp + b_nn = (q^4+1)/(q^3+q)`, whose ratio to
+   `q + q^-1` is `(q^4+1)/(q^2+1)^2`, not constant. The natural expectation is
+   false, which is what makes the geometric one worth reporting.
+
+Whether these are the SAME writhe/crossing decomposition or two constructions
+sharing the ubiquitous `h` is **not established**, and I have not tested it. The
+discriminator I would look for: does `b_pp - b_nn = q - q^-1` count something —
+is there an (n_+ + n_-) reading of the p-p-vs-n-n interface with n_c = 1?
+
+Probe `computations/qbeta/qbeta_bond_bar_parity_probe.py` (five identities, each
+exactly zero); witness `computations/qbeta/qbeta-bond-bar-parity.witness.json`.
+Your own scoping — "EXHIBITED, not selected" — applies verbatim to this note.

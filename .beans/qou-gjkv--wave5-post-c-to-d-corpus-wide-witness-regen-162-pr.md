@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T03:14:24Z
-updated_at: 2026-08-09T03:15:12Z
+updated_at: 2026-09-13T11:42:20Z
 ---
 
 
@@ -161,3 +161,127 @@ RAISE during the C excision. Fixed across two commits:
 1. VALUES review pass, bucket C and the 3 sign flips first.
 2. The 8-producer Habiro `check_q` coercion bug (pre-existing, own bean).
 3. The 3 stale doc citations of atomic-braid-mass-table (doc-only, from qou-c6xo).
+
+
+---
+
+## 🛑 At least one member of the 162 did NOT move for C→D — measured 2026-09-13 (bean `qou-5c64`)
+
+`binding-single-pipeline-comparison`, which this bean lists by name among its
+results, moves by **3.29×** on the traces it reads. Four hypotheses were tested
+against the June witness recovered at full 50-dps precision:
+
+| candidate | contribution |
+|---|---|
+| q₀ anchor, muon → proton | **3.9e-8** — negligible |
+| `y_lambda_at` convention **C → D** | **NO-OP.** All 11 partitions at `n = 6` agree to displayed precision; substituting `_y_lambda_at_convention_C_HISTORICAL` inside `tr_m_atom_zn` returns the same trace to 30 digits. |
+| `atom_braid_word_3A` intra-nucleon ordering, **grouped → borromean** (owner ruling `qou-hu1f`, 2026-09-05, `7db032fb48` / `deb9ff5728`) | **dominant** — forcing `grouped` moves `tr_free` 0.29901503 → 1.13171707 against June's 0.98352620 |
+| residual | 15 % (free) / 48 % (atom), unidentified |
+
+So this member's motion is driven by an **owner ruling four weeks LATER than
+this wave**, not by the C→D excision this wave is named for. The C→D component
+is measurably zero for it.
+
+**Consequence for acceptance, which is this bean's open item.** The wave's label
+is load-bearing: a reviewer accepting 162 witnesses "because C→D landed" would,
+for at least this one, be accepting a change from a different ruling that had
+not happened when the wave was measured. Before acceptance the 162 want
+re-triage against `qou-hu1f` as well — cheaply, since any producer whose cone
+reaches `atom_braid_word_3A` is a candidate and the parameter is directly
+forceable (`intra_order="grouped"`).
+
+Not claimed: how many of the 162 this applies to. One was measured. The wave's
+own numbers were taken 2026-08-09, before the ordering ruling existed, so no
+figure in this bean can distinguish the two causes.
+
+Full measurement, including the two hypotheses it killed (one of them mine):
+bean `qou-5c64`.
+
+
+## 🛑 RETRACTION of the append above — this wave's LABEL IS RIGHT
+
+I wrote here that the C→D component of `binding-single-pipeline-comparison` is
+"measurably zero". **That is false and is retracted.** Measured one step further
+(bean `qou-5c64`): isolating the bond types from the ordering-invariant ratio
+`tr_atom/tr_free`, the **p-p bond IS the Markov parameter `z`** —
+`0.61268805054558909984` today, matching `z_D = q³/(q²+1)` to **3.2e-51**, and
+`0.49932034618370936279` in June, matching `z_C` to 2.4e-8 (the residue being
+the q₀ anchor). Its residual is `z_D/z_C = 1.227044`.
+
+My error: I tested **one carrier** of the convention — the C-vs-D swap inside
+`y_lambda_at`, which is genuinely a no-op — and reported the convention inert.
+The convention also lives in `z` itself, which never goes through that function.
+
+**So this wave's "post-C-to-D" label fits this member.** What survives, and is
+still worth acting on before acceptance: the same witness moved from **three**
+changes, only one of them C→D. The other two — `qou-hu1f`'s intra-nucleon
+ordering (owner ruling, **2026-09-05**) and the colour-weighting δ de-wire
+(`9928f3f4a79`, **2026-06-29**, whose own commit message says *"WIP: witness
+cascade pending"*) — sit after and before this wave's measurement date of
+2026-08-09 respectively. So the wave's recorded numbers are **incomplete** for
+this member rather than wrongly attributed, and a reviewer accepting on the
+C→D rationale alone would still be accepting two further undiagnosed changes.
+
+Not claimed, same as before: how many of the 162 this applies to. One measured.
+
+
+## Follow-up: C→D is the WHOLE bond side, not one factor of three
+
+Correcting my own correction above (bean `qou-5c64`, second retraction). I had
+credited the p-n colour-weighting δ de-wire (`9928f3f4a79`) with part of this
+member's motion. It has none: I had backed `d` out of the June bond by
+subtracting `z_D` when June was on `z_C`.
+
+Against each side's own `z`, all three bond `d` are unchanged —
+p-p `0`, p-n `-0.1044582` / `-0.1044582`, n-n `-h` / `-h` — and
+`(z_D + d)/(z_C + d)` with `d` fixed predicts every measured bond residual to
+**2e-7**.
+
+So for `binding-single-pipeline-comparison` the split is:
+
+- **bond side: 100 % convention C→D** — this wave's stated cause, and it is the
+  whole of it;
+- **ordering: `qou-hu1f`** (owner ruling, 2026-09-05) — postdates this wave;
+- **per-nucleon free factors** (proton 1.0755215, neutron 1.0698745) —
+  unidentified, and the only thing left open.
+
+**Net effect on this bean: my flag was over-stated twice and the label was right
+all along.** What still stands, and is the only actionable part: the wave's
+numbers were measured 2026-08-09 and cannot include the 2026-09-05 ordering
+ruling, so for this member they are incomplete — a reviewer accepting on them
+would be accepting one further undiagnosed change, not a mis-attributed one.
+
+
+---
+
+UPDATE 2026-09-13 (from bean `qou-5c64`, which flagged this bean twice today and
+was wrong both times — see below). The decomposition of
+`binding-single-pipeline-comparison`'s motion is now **complete and measured**,
+and it confirms this bean's 2026-08-09 classification without qualification.
+
+**`tr_atom(now)/tr_atom(June) = [free] x [bonds]`, two components, nothing else:**
+
+- **bonds — pure convention C->D.** Each bond factor moves by
+  `(z_D + d)/(z_C + d)` with the interface shift `d` **unchanged**:
+  `d_pp = 0`, `d_pn = -h(1/2 - delta/4)`, `d_nn = -h`, all three derived in
+  `qbeta_bond_factors_derived_probe.py` and independently reproduced here by
+  witness differencing to 2.73e-11. Factors 1.227044031 / 1.287106862 /
+  1.390572916.
+- **free side — the `qou-hu1f` intra-ordering ruling**, `0.590749626^Z .
+  0.5146405906^N`: the per-nucleon trace was the `chi-{proton,neutron}-h3-at-q0-50dps`
+  witness (1.065306865 / 0.9232333461) and is now the canonical borromean word
+  (0.6293296323 / 0.4751333545).
+
+Reconstruction verified on all six atoms with CHAIN bond counts; **every residual
+is below its own recording floor** (worst 2.43e-03 at ⁷Li against a 1e-02 floor —
+its `tr_atom` carries 3-4 significant figures). Table in `qou-5c64`.
+
+**Two corrections to what `qou-5c64` told this bean earlier today, both retracted
+there in full:** that "the C->D component is measurably zero" (false — it is the
+entire bond side), and that the δ de-wire contributed a third of the motion (an
+artefact of subtracting `z_D` from a June value computed on `z_C`).
+
+**Nothing is enacted here.** Regenerating the witness is this bean's call and an
+owner decision under the 2026-09-07 ASK-THE-OWNER directive; the re-run done for
+the measurement was reverted. The 299-field raw-float64 drain on that witness
+stays blocked behind the decision (PR #7268 documents it as out of scope).
