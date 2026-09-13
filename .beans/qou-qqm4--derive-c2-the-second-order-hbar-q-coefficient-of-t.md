@@ -798,3 +798,39 @@ in the tree is `heckeTowerMarkovTrace`, whose trace factors through a rank-2
 quotient. Instantiating it at the production Ocneanu trace at `z_D = q^3/(q^2+1)`
 needs the colimit bridge `qou-0fmb` (#7274, in flight) — posted there as a
 downstream consumer.
+
+---
+
+COORDINATION NOTE (2026-09-13, session gracious-dijkstra, from bean `qou-gba1`).
+Not a claim on this bean, and nothing here is edited — a cross-citation only,
+per AGENTS.md's "a result landing on one should be cited in the others".
+
+**Your `b_pp` is the Markov stabilisation parameter, exactly.**
+`qbeta_bond_factors_derived_probe.MEASURED["b_pp"] = 0.6126880371464652516`
+is `z(q₀) = q₀³/(q₀²+1)` — the convention-D Markov parameter
+(`closed_form_tau_M.markov_z`) — agreeing to **all 19 digits `b_pp` carries**
+(z = 0.6126880371464652515958299…). Verified numerically today, not eyeballed.
+So this bean's working title, "the bond factors ARE the two Markov parameters",
+is right at least for the pp factor, and it is right *identically* rather than
+to some tolerance.
+
+**Why that may be worth more than a coincidence check.** `qou-gba1` (option E
+of `qou-za3q`) independently derived the same constant from the other end. The
+Jones–Ocneanu axiom `tr_{n+1}(x·σ_{n-1}) = z·tr_n(x)` forces an exact
+stabilisation law on the Magnus Ω₂ pairing,
+
+    P_y(βσ_{n-1}) = z·P_y(β) + (m/2)·Σ_λ y_λ tr(ρ'_λ [A_{n-2},A_{n-1}]_λ)
+
+confirmed to a relative **4.4e-141** on the deuteron word and two successive
+stabilisations, and *falsified* at the two wrong values a reader might
+substitute (z = q, the degenerate competing root: 49 % / 69 % off; z = 1:
+38 % / 54 %). Witness
+`computations/deltalambda/magnus-omega2-markov-stabilisation.witness.json`.
+
+So `z` is not a fitted or chosen number in either place: it is what
+stabilisation costs. If a bond factor *is* `z`, the natural reading is that
+adding a nucleon to the chain is a stabilisation — which would make the
+near-additivity this bean is chasing a statement about Markov moves rather than
+about the expansion. Offered as a lead, not a result; I have not tested it, and
+`b_pn` / `b_nn` are not `z` (ratios 0.8295 and 0.7942 to their predecessors),
+so whatever the structure is, it is not simply one parameter.

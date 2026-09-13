@@ -47,11 +47,35 @@ import reduced_block_kernel as RBK  # noqa: E402
 from reduced_block_kernel import get_h3_transitions  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 
+#: Regression baseline for check (3), "production unmoved". CANONICAL
+#: (borromean) as of 2026-09-13.
+#:
+#: ⚠ THESE MOVED, AND THE MOVE WAS CORRECT. Until 2026-09-13 this table held
+#: the GROUPED-era values
+#:
+#:     D 0.575172243917771870826535343986   T 0.229310102104556507332090810269
+#:   3He 0.403767036851428170368670253333  4He 0.160974145442407381825873440981
+#:
+#: so check (3) had been failing on all four atoms since the 2026-09-05
+#: intra-nucleon ordering ruling (bean `qou-hu1f`) made the borromean word
+#: canonical. Nothing this audit actually audits was broken: checks (1) and
+#: (2), the cache-key and dps-key tests that are its subject, passed
+#: throughout. It was a stale reference guarding against a change that had
+#: already been ruled correct — a standing red, which is a gate someone
+#: eventually silences.
+#:
+#: NOT ASSUMED — MEASURED. Found by the source-literal arm of
+#: `intra_ordering_value_fingerprint_audit.py`, which matched the 3He entry to
+#: the grouped helium-3 fingerprint at 15 significant digits. Then confirmed
+#: by recomputing `tr_m_atom_zn` with `atom_braid_word_3A` forced to each
+#: ordering: **all four old values reproduce exactly under `grouped`, and all
+#: four new ones under `borromean`.** So the baseline was the old frame and the
+#: code is in the new one, rather than the reverse.
 _PRODUCTION = {
-    "D":   ("0.575172243917771870826535343986", "1.13171690432221008273130756812"),
-    "T":   ("0.229310102104556507332090810269", "1.11784622897822657732834138483"),
-    "3He": ("0.403767036851428170368670253333", "1.29667561224494401773789929523"),
-    "4He": ("0.160974145442407381825873440981", "1.28078315152864641063633786713"),
+    "D":   ("0.151968339204231607592665697751", "0.299015017184640076702160426771"),
+    "T":   ("0.0291440423609720653572542187919", "0.142072056797304797470498604255"),
+    "3He": ("0.0585962536544363802189567154521", "0.188178642999488779263479037146"),
+    "4He": ("0.0112374176597674215641995493744", "0.0894099805019306003820475658199"),
 }
 _ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 

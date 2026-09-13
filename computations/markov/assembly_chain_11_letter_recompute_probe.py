@@ -20,13 +20,32 @@ as the trace of the seminormal representation matrix product, each letter
 (c, d, g) acting as c*rho(sigma_g) + d*1, assembled as tr_M = sum_lambda
 y_lambda * chi^lambda. Exact over Q(q) throughout; no float64 anywhere.
 
-RESULT: it reproduces the live production values to every digit they carry.
+RESULT (as written, 2026-08): it reproduces the live production values to every
+digit they carry.
 
     atom     recomputed (proton pin)          live producer witness
     p        1.1457596924573008697            1.14575969245730086968...
     n        0.98774368811580957163           0.98774368811580957163...
 
-and at the muon-2022 pin it likewise matches the muon witnesses. So the correct
+and at the muon-2022 pin it likewise matches the muon witnesses.
+
+⚠ THAT AGREEMENT ENDED ON 2026-09-05 AND ITS ENDING IS THE POINT. The owner
+ruling `qou-hu1f` made the borromean intra-nucleon word canonical, so the
+recompute — which reads the canonical element — now returns
+
+    p  0.62932840220292191817        n  0.47513351715568221251
+
+while `LIVE` below still holds faithful copies of committed witnesses in the
+grouped frame. Four of the seven assertions fail, and **the recompute is the
+side that is right**: this probe is now a true report that the assembly chains
+are stale, which is exactly the job the agreement was evidence for.
+
+Do NOT repair it by updating `LIVE`. Those entries are copies of committed
+producer output, so editing them would hide the staleness rather than fix it.
+The producers are the thing to regenerate — and the neutron chain's leaf is
+hardcoded against `derivation_chain.TR_M_AT_Q0`, which is itself grouped-era
+and held behind its own tranche (12 live consumers). This probe therefore goes
+green when that tranche lands, and not before. Bean `qou-4383`. So the correct
 recomputation of these chains is not a new number -- it is the number the rest
 of the stack already carries, which is the strongest available check that the
 linear-functional route is what the producers actually run.
@@ -123,8 +142,26 @@ def main() -> int:
     n_pass = sum(1 for _, ok, _ in _results if ok)
     print("\n" + "=" * 72)
     print(f"  {n_pass}/{len(_results)} assertions passed")
-    print("  The recompute on the canonical 11-letter element reproduces the live")
-    print("  producer witnesses at both pins, to every digit they carry.")
+    # The agreement line below used to print UNCONDITIONALLY, so this summary
+    # asserted "reproduces … to every digit they carry" while four of its own
+    # seven assertions were failing. Gated on the result (bean qou-4383,
+    # 2026-09-13).
+    if n_pass == len(_results):
+        print("  The recompute on the canonical 11-letter element reproduces the live")
+        print("  producer witnesses at both pins, to every digit they carry.")
+    else:
+        print("  IT NO LONGER REPRODUCES THEM, AND THE RECOMPUTE IS THE SIDE THAT IS")
+        print("  RIGHT. The 2026-09-05 intra-nucleon ordering ruling (qou-hu1f) made")
+        print("  the borromean word canonical, so the recompute now returns the")
+        print("  canonical values (n: 0.47513351715568221251) while `LIVE` above")
+        print("  holds faithful copies of committed witnesses that are still")
+        print("  grouped-era (n: 0.98774368811580957163). The failure is a true")
+        print("  report of a stale PRODUCER, not a defect in this probe.")
+        print("  BLOCKED, not fixable here: the neutron chain's leaf is hardcoded")
+        print("  against derivation_chain.TR_M_AT_Q0, which is itself grouped-era")
+        print("  and pinned behind its own tranche (12 live consumers) — see the")
+        print("  flag above TR_M_AT_Q0 and bean qou-4383. Regenerate that first;")
+        print("  this probe goes green when its inputs do.")
     print("  CORRECTED 2026-08-31: an earlier draft said BOTH chains' reported")
     print("  values 'come from legacy words'. That holds for the PROTON chain,")
     print("  whose steps assert an all-positive-sigma word. The NEUTRON chain's")
