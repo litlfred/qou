@@ -51,6 +51,7 @@ falls below it at `n = 6`) is archimedean arithmetic at the substrate pin and
 lives in the probe, not here.
 -/
 import QOU.Mass.GammaGammaWordSelection
+import QOU.Mass.PsdDetOneTrace
 import QOU.Archimedean.OcneanuTwoThreeSubstrate
 
 namespace QOU.Archimedean.GammaGammaTraceFloor
@@ -85,7 +86,42 @@ theorem pairing_ge_weight_of_psdFeasible
   rw [hz]
   exact Finset.single_le_sum hterm hl₀
 
-/-! ## The floor and its decay -/
+/-- **The bound that supersedes the floor below: the pairing is at least `1`.**
+
+`pairing_ge_weight_of_psdFeasible` keeps one term of the pairing and discards
+the rest as merely non-negative. They are not merely non-negative: on a
+determinant-one block a PSD matrix has trace at least its dimension
+(`PsdDetOneTrace.card_le_trace_of_det_one`), so each term is at least
+`y l * d l` — and those sum to `1`, because that sum IS the Markov
+normalisation `tr_M(1) = 1`.
+
+The determinant hypothesis is not an assumption about the candidate but a
+property of the γγ construction: `σᵢ` and `σᵢ₊₁` are conjugate in the braid
+group, so their block images share a determinant and every vertex — hence
+every word — has determinant `1` in every block. Measured to `1e-39` in the
+companion probe; it enters here as a hypothesis per §3b.
+
+The bound is **tight**: the empty word is the identity in every block, so
+every trace equals its dimension and the sum is exactly `1`. -/
+theorem pairing_ge_one_of_psdFeasible
+    {W ι : Type*} {d : ι → ℕ} (B : WedderburnBlocks ℝ W ι d)
+    (y : ι → ℝ) (s : Finset ι) (hy : ∀ l ∈ s, 0 ≤ y l)
+    (hnorm : ∑ l ∈ s, y l * (d l : ℝ) = 1)
+    {w : W} (hw : B.PSDFeasible w)
+    (hdet : ∀ l, (B.proj w l).det = 1) :
+    1 ≤ ∑ l ∈ s, y l * (B.proj w l).trace := by
+  rw [← hnorm]
+  refine Finset.sum_le_sum fun l hl => ?_
+  exact mul_le_mul_of_nonneg_left
+    (QOU.Mass.PsdDetOneTrace.card_le_trace_of_det_one (hw l) (hdet l)) (hy l hl)
+
+/-! ## The floor and its decay
+
+🛑 Everything below is **superseded in strength** by `pairing_ge_one_of_psdFeasible`
+above — the floor `[n+1]_q/[2]_q^n` is below `1` at every `n ≥ 2`. It is kept
+because it is what the argument gives if you stop at the trivial block, which is
+an easy place to stop, and because its decay lemma is the reason the *weaker*
+bound's exclusion is one-sided rather than scattered. -/
 
 /-- The floor `[n+1]_q / [2]_q^n` — the convention-D weight of the trivial
 block at `n` strands. -/
