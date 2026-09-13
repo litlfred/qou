@@ -115,9 +115,48 @@ SKIP_DIRS = ("_deprecated", "__pycache__", "node_modules", ".git")
 # the 10 were false positives and these were half. A detector that reports a
 # section number as a drifted measurement trains its reader to skim.
 NUM = re.compile(r"-?\d+\.\d+(?:[eE][-+]?\d+)?")
+# The leading boundary group is load-bearing, not tidiness: without it the
+# alternation matches a label word GLUED INSIDE a longer one, and `table`
+# lives inside `stable`. Measured on the corpus, the guard changes two prose
+# numbers. One is a real loss it recovers -- `...holds a stable -0.00225962
+# there`, a measured value silently dropped because "stable" ends in "table".
+# The other, `AGMV 4.18`, was being dropped by accident (the `v` of AGMV) and
+# is a citation, so it comes back as a candidate; that is the honest trade,
+# and the arXiv shape filter does not cover an author-initials + equation-
+# number citation of this form.
+#
+# Written as a CONSUMING group, not a lookbehind. `re` requires a fixed-width
+# lookbehind and this alternation is not one -- the same constraint that put
+# the label filter outside the number regex in the first place. The 16-char
+# window is sized so the longest label ("section") plus its separators still
+# leaves the boundary character inside it; a shorter window would let `^`
+# match at the cut and re-admit the glued case it exists to stop.
 _LABEL_BEFORE = re.compile(
+    r"(?:^|[^0-9A-Za-z])"
     r"(?:phase|step|section|item|rule|figure|fig|table|tier|round|part|pr|v)"
-    r"[\s.#-]*$", re.IGNORECASE)
+    r"[\s.#:-]*$", re.IGNORECASE)
+# A SECTION SYMBOL is a label the word list cannot see. `_LABEL_BEFORE` matches
+# the word "section"; the prose writes `md § 3.1`, and `§` is neither
+# alphanumeric nor a dot, so `3.1` arrived as a measurement. Two witnesses.
+_SECTION_SYMBOL = re.compile(r"[\u00a7\u00b6]\s*$")
+
+# An arXiv identifier is shaped exactly like a measurement: `2410.20973`.
+# MEASURED over the whole corpus: 32 prose numbers match `YYMM.NNNNN` with a
+# plausible year and month, and all 32 are citations -- zero false drops. The
+# shape test is what catches them, not a marker: the corpus cites in at least
+# four styles (`arXiv:2410.20973`, bare `2509.02354 §5.2`, author-initials
+# `GK 1411.6062`, `GGM 2007.10190 eq 20`), and a prefix-based filter sees
+# barely half. A real measurement of this exact shape WOULD be dropped; that
+# is the accepted cost, and it is the same trade the `Phase 1.3` filter makes.
+_ARXIV_SHAPE = re.compile(r"^(\d{2})(\d{2})\.\d{4,5}$")
+
+
+def _is_arxiv_id(raw: str) -> bool:
+    g = _ARXIV_SHAPE.match(raw)
+    if not g:
+        return False
+    yy, mm = int(g.group(1)), int(g.group(2))
+    return 7 <= yy <= 26 and 1 <= mm <= 12     # arXiv's YYMM since 2007-04
 
 
 def prose_numbers(text: str) -> list[str]:
@@ -143,8 +182,12 @@ def prose_numbers(text: str) -> list[str]:
         before = text[:m.start()]
         if before and (before[-1].isalnum() or before[-1] == "."):
             continue                       # A5.4, v1.2, 3.14.15
-        if _LABEL_BEFORE.search(before[-12:]):
+        if _LABEL_BEFORE.search(before[-16:]):
             continue                       # Phase 1.3, Step 23.5
+        if _SECTION_SYMBOL.search(before[-6:]):
+            continue                       # md § 3.1
+        if _is_arxiv_id(m.group(0)):
+            continue                       # arXiv:2410.20973, GK 1411.6062
         out.append(m.group(0))
     return out
 
@@ -191,14 +234,29 @@ UNRELATED_REL = 0.6
 # findings" is not a well-defined partition. These 13 keys are named by the
 # witness schema and emitted by the writer, never by the author.
 #
-# Nothing borderline is here. `q0Value`, `q0Anchor`, `dps`, `precisionMetadata`
-# and `parameters` are all quotable by prose and all stay.
+# Nothing borderline is here. `q0Value`, `q0Anchor`, `dps` and `parameters`
+# are all quotable by prose and all stay.
 PROVENANCE_KEYS = frozenset({
     "engine", "engineVersion", "environment",          # toolchain versions
     "commitSha", "scriptCommitSha", "scriptHash", "scriptFile",
     "computedAt", "timestamp",                         # clock
     "durationMs", "durationMsBaseline",                # wall time
     "invocation", "schema",
+    # precisionMetadata joined the list on the SECOND pass, measured the same
+    # day. It holds compute_dps/output_dps/guard_digits/truncation_bound --
+    # configuration, the same nature as `environment`, and `guard_digits: 10`
+    # turns out to be the widest sponge in the file once the PERCENT branch is
+    # taken into account: `classify` tries `prose_num / 100`, so EVERY prose
+    # number in roughly [1000, 2500] divides into [10, 25] and lands within
+    # 0.6 of 10. That is how an arXiv id (2410.20973 -> 24.10) and the neutron
+    # mass quoted from CODATA (939.6 MeV -> 9.396, rel 0.064) were both
+    # reported as drifted copies of a guard-digit count.
+    #
+    # Nothing is lost by dropping it: prose quotes precision as "70 dps" or
+    # "120 dps", which carry no decimal point and were never candidates. The
+    # audited effect is 9 spurious findings drained and 4 real ones unmasked
+    # (they had been reading as NEAR against `guard_digits`).
+    "precisionMetadata",
 })
 
 
@@ -383,6 +441,10 @@ def _selftest() -> int:
          "LABEL: 'Phase 1.3' is a label, not a measurement"),
         ({"description": "Step 23.5 said otherwise", "x": "1.0"}, [],
          "LABEL: same for Step/Rule/Figure/Table/Item/Section"),
+        ({"description": "p -> n holds a stable -0.00225962 there",
+          "x": "-0.0021"}, ["-0.00225962"],
+         "BOUNDARY: 'table' lives inside 'stable', and without the leading "
+         "boundary group this measured value was dropped as a table label"),
         ({"description": "the ratio is 5.73", "r": "3.8677"}, ["5.73"],
          "...and a bare number after ordinary words is still reported"),
         # -------- provenance is not data (both directions, measured) --------
@@ -404,6 +466,19 @@ def _selftest() -> int:
         ({"description": "the value 2.5 holds",
           "environment": {"numpy": "2.4.6"}, "r": "2.5"}, [],
          "stripping provenance does not break an honest EXACT match in data"),
+        ({"description": "CODATA m_n is ~939.6 MeV",
+          "precisionMetadata": {"guard_digits": 10}, "r": "0.5"}, [],
+         "PERCENT SPONGE: 939.6/100 = 9.396 sits 6 % from guard_digits 10, so "
+         "every prose number in ~[1000,2500] used to match a guard count"),
+        ({"description": "see the Fantini-Wheeler (arXiv:2410.20973) result",
+          "r": "0.5"}, [],
+         "arXiv id by shape -- 32 of 32 in the corpus, zero false drops"),
+        ({"description": "the GK 1411.6062 eq 2 closed form", "r": "0.5"}, [],
+         "...and by shape ALONE, so author-initial citations go too"),
+        ({"description": "as md § 3.1 sets out", "r": "0.5"}, [],
+         "SECTION SYMBOL: the word list matches 'section', not the glyph"),
+        ({"description": "the residual is 3.1", "r": "3.5"}, ["3.1"],
+         "...and the same digits after ordinary words are still a finding"),
     ]
     bad = 0
     for doc, want, why in cases:
