@@ -179,8 +179,40 @@ def main() -> int:
     print(f"   D_3 vs q^3 - q^-3: rel {mp.nstr(rel, 3)}   {'OK' if good else 'MISMATCH'}")
 
     print()
-    print("VERDICT:", "PASS — the reversal is central only at odd k, and delta's "
-          "numerator sits at k = 2" if ok else "FAIL")
+    print("7. THE CONJECTURE'S OWN CHANNEL GIVES THE WRONG SIGN")
+    print("   conj:flavor-split-habiro-derivation selects the ALTERNATING channel:")
+    print("   'the weak interaction is strictly left-handed, so it projects onto the")
+    print("    fully alternating channel of H_4 ... the generator acts by its sign")
+    print("    eigenvalue -q^-1.'  Evaluate the k = 2 reversal there:")
+    hbar2 = (1 - 1 / _q) ** 2
+    sym_split = sp.simplify(hbar2 * sym / 3)
+    alt_split = sp.simplify(hbar2 * anti / 3)
+    e_sym = sp.simplify(sym_split - delta)
+    e_alt = sp.simplify(alt_split + delta)
+    ok &= (e_sym == 0) and (e_alt == 0)
+    print(f"   hbar_q^2 * (symmetric)   / 3 - delta = {e_sym}"
+          f"   {'OK' if e_sym == 0 else 'MISMATCH'}")
+    print(f"   hbar_q^2 * (alternating) / 3 + delta = {e_alt}"
+          f"   {'OK' if e_alt == 0 else 'MISMATCH'}")
+    v_alt = mpf(str(sp.N(alt_split.subs(sub), 45)))
+    v_sym = mpf(str(sp.N(sym_split.subs(sub), 45)))
+    neg = v_alt < 0
+    ok &= neg and (v_sym > 0)
+    print(f"   at the proton q0:  symmetric = {mp.nstr(v_sym, 14)}   "
+          f"alternating = {mp.nstr(v_alt, 14)}")
+    print(f"   -> the stated channel gives delta < 0, i.e. m_n < m_p: "
+          f"{'CONFIRMED' if neg else 'NOT CONFIRMED'}")
+    print("   CONDITIONAL on the identification 'delta's numerator IS the k = 2")
+    print("   reversal', which is THIS PROBE's reading and not the block's -- the")
+    print("   block calls (q-1)^2(1-q^-4)/3 'a structured near-match, not a derived")
+    print("   closed form'.  Read the pair: if the reading is right the stated")
+    print("   channel points the wrong way; if it is wrong the block owes an account")
+    print("   of where h*[2]_q comes from, since it is then not the reversal.")
+
+    print()
+    print("VERDICT:", "PASS — the reversal is central only at odd k, delta's "
+          "numerator sits at k = 2, and the stated channel gives the wrong sign"
+          if ok else "FAIL")
     return 0 if ok else 1
 
 

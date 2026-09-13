@@ -84,18 +84,45 @@ the claim here is only that **this corpus does not carry it** — grepped over
 result is the `k = 3` one cited above.  The `library/` tier was not searched, so
 this is not a claim about the literature.
 
-§7c: generic `Ring R` with `h` central — no ordering, no `Real.sqrt`, no
-archimedean construct, and **no commutativity of the ambient ring**, matching the
-2026-09-03 strengthening of `topological_flavor_split_of_central`
-(`H_n(q)` is not commutative for `n ≥ 3`; `h = q − q⁻¹` is a scalar and so is
-central there).  Only a **left** inverse is assumed; the quadratic upgrades it.
-Sorry-free.
+## And the conjecture's own channel gives the WRONG SIGN
+
+`conj:flavor-split-habiro-derivation` states its channel choice, and it is the
+*alternating* one: *"The weak interaction is strictly left-handed, so it projects
+onto the fully alternating channel of `H₄`, the sign-block partition `(1⁴)`. … In
+the alternating channel the generator acts by its sign eigenvalue `−q⁻¹`."*
+Evaluate `reversal_two` there and the sign comes out backwards —
+`alternatingSplit q < 0` for every `1 < q`, i.e. **a neutron lighter than the
+proton**.  The *symmetric* channel `σ ↦ q` reproduces `δ` exactly
+(`flavourSplit_eq_hbarSq_symmetric_div_three`, `symmetricSplit_pos`), and the two
+are exact negatives (`splits_sum_zero`), so the channel choice is the entire
+content: the magnitude is settled and only the sign is at stake.
+
+**Conditional on an identification the block does not make.**  That `δ`'s
+numerator *is* the `k = 2` crossing reversal is a reading — the natural one given
+the block derives its one exact result that way, but it is mine, not the block's,
+which calls `(q−1)²(1−q⁻⁴)/3` "a structured near-match, not a derived closed
+form".  Read the pair of outcomes rather than one: if the reading is right, the
+stated channel points the wrong way; if it is wrong, the block owes an account of
+where `h·[2]_q` comes from, since it is then not the reversal.
+
+§7c: the main body is generic `Ring R` with `h` central — no ordering, no
+`Real.sqrt`, no archimedean construct, and **no commutativity of the ambient
+ring**, matching the 2026-09-03 strengthening of
+`topological_flavor_split_of_central` (`H_n(q)` is not commutative for `n ≥ 3`;
+`h = q − q⁻¹` is a scalar and so is central there).  Only a **left** inverse is
+assumed; the quadratic upgrades it.  The closing `Archimedean` section — and only
+that section — is over `ℝ`, because the sign statements use the ordering `1 < q`;
+that is the archimedean side of the wall and is where it belongs.  Sorry-free
+throughout.
 
 -- Ref: [manuscript] conj:flavor-split-habiro-derivation
 -/
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.NoncommRing
 import Mathlib.Tactic.Abel
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.Hecke.CrossingReversalParity
 
@@ -290,5 +317,97 @@ theorem reversal_rec (hcen : ∀ x : R, h * x = x * h)
             rw [a, b]
   rw [expand, e1, e2]
   noncomm_ring
+
+/-! ## The archimedean specialisation: the two channel values, and their signs
+
+§7c: this section — and only this section — is over `ℝ`, because it uses the
+ordering (`1 < q`).  Everything above is generic.
+
+**The point.**  `conj:flavor-split-habiro-derivation` states its own channel
+choice, and it is the *alternating* one: *"The weak interaction is strictly
+left-handed, so it projects onto the fully alternating channel of `H₄`, the
+sign-block partition `(1⁴)`. … In the alternating channel the generator acts by
+its sign eigenvalue `−q⁻¹`."*  Evaluate `reversal_two` there and the sign comes
+out **backwards**: `alternatingSplit q < 0`, i.e. `m_n < m_p`.  The **symmetric**
+channel `σ ↦ q` is the one that reproduces `δ` exactly.
+
+**This is conditional on an identification the block does not make.**  That
+`δ`'s numerator *is* the `k = 2` crossing reversal is a reading — the natural one
+given the block derives its one exact result that way, but it is mine, not the
+block's, which calls `(q−1)²(1−q⁻⁴)/3` "a structured near-match, not a derived
+closed form".  So read the pair of outcomes, not one of them: if the reading is
+right, the stated channel points the wrong way; if it is wrong, the block owes an
+account of where `h·[2]_q` comes from, since it is then not the reversal.
+-/
+
+section Archimedean
+
+/-- The `k = 2` reversal evaluated on the **symmetric** eigenvalue `σ ↦ q`. -/
+noncomputable def symmetricValue (q : ℝ) : ℝ := q ^ 2 - (q ^ 2)⁻¹
+
+/-- The `k = 2` reversal evaluated on the **alternating** (sign) eigenvalue
+`σ ↦ −q⁻¹` — the channel `conj:flavor-split-habiro-derivation` selects. -/
+noncomputable def alternatingValue (q : ℝ) : ℝ := (q ^ 2)⁻¹ - q ^ 2
+
+/-- The two channels differ by a sign and nothing else: same magnitude. -/
+theorem alternating_eq_neg_symmetric (q : ℝ) :
+    alternatingValue q = -symmetricValue q := by
+  unfold alternatingValue symmetricValue; ring
+
+/-- On the substrate branch `1 < q` the symmetric value is positive. -/
+theorem symmetricValue_pos {q : ℝ} (hq : 1 < q) : 0 < symmetricValue q := by
+  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
+  have h2 : (1:ℝ) < q ^ 2 := by nlinarith
+  have hpos : (0:ℝ) < q ^ 2 := by positivity
+  have : (q ^ 2)⁻¹ < 1 := by
+    rw [inv_lt_one_iff₀]; right; exact h2
+  unfold symmetricValue; linarith
+
+/-- **The flavour split is the symmetric-channel value**, exactly:
+`δ = ℏ_q²·(q² − q⁻²)/3` with `ℏ_q = 1 − q⁻¹`.  Same identity the probe checks
+symbolically; here so the sign statement below has something to be about. -/
+theorem flavourSplit_eq_hbarSq_symmetric_div_three {q : ℝ} (hq : q ≠ 0) :
+    (q - 1) ^ 2 * (1 - (q ^ 4)⁻¹) / 3 = (1 - q⁻¹) ^ 2 * symmetricValue q / 3 := by
+  unfold symmetricValue
+  field_simp
+
+/-- The split built from the symmetric channel. -/
+noncomputable def symmetricSplit (q : ℝ) : ℝ := (1 - q⁻¹) ^ 2 * symmetricValue q / 3
+
+/-- The split built from the alternating channel — the one the conjecture's own
+left-handedness argument selects. -/
+noncomputable def alternatingSplit (q : ℝ) : ℝ :=
+  (1 - q⁻¹) ^ 2 * alternatingValue q / 3
+
+/-- **The conjecture's own channel gives the split with the wrong sign.**
+`δ = (m_n − m_p)/M_N` is positive; `alternatingSplit q < 0` for every `1 < q`,
+i.e. a neutron *lighter* than the proton.  Conditional on the identification
+described in the section header, which is not the block's. -/
+theorem alternatingSplit_neg {q : ℝ} (hq : 1 < q) : alternatingSplit q < 0 := by
+  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
+  have hs : 0 < symmetricValue q := symmetricValue_pos hq
+  have hne : q ≠ 0 := ne_of_gt hq0
+  have hlt : q⁻¹ < 1 := by rw [inv_lt_one_iff₀]; right; exact hq
+  have hhb : 0 < (1 - q⁻¹) ^ 2 := pow_pos (by linarith) 2
+  unfold alternatingSplit
+  rw [alternating_eq_neg_symmetric]
+  nlinarith [mul_pos hhb hs]
+
+/-- And the symmetric channel gives it with the right sign. -/
+theorem symmetricSplit_pos {q : ℝ} (hq : 1 < q) : 0 < symmetricSplit q := by
+  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
+  have hs : 0 < symmetricValue q := symmetricValue_pos hq
+  have hlt : q⁻¹ < 1 := by rw [inv_lt_one_iff₀]; right; exact hq
+  have hhb : 0 < (1 - q⁻¹) ^ 2 := pow_pos (by linarith) 2
+  unfold symmetricSplit
+  exact div_pos (mul_pos hhb hs) (by norm_num)
+
+/-- The two are exact negatives, so the channel choice is the whole content: the
+magnitude is settled and only the sign is at stake. -/
+theorem splits_sum_zero (q : ℝ) : symmetricSplit q + alternatingSplit q = 0 := by
+  unfold symmetricSplit alternatingSplit
+  rw [alternating_eq_neg_symmetric]; ring
+
+end Archimedean
 
 end QOU.Hecke.CrossingReversalParity
