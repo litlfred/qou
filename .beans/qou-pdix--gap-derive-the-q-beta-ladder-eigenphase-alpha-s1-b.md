@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-12T20:43:29Z
+updated_at: 2026-09-13T05:41:02Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1740,3 +1740,89 @@ A is the better structural fit but risks circularity.
 `qou-cds1`, which waits on this. The dashboard's `Q_β`/`m_n`/`Δ_pn` rows are
 base-only at ~1.7e+8 ppb precisely because no ladder exists on an admissible base;
 on the retired `z = 1` base the ladder was worth 1312×.
+
+
+## 2026-09-13 — the braid-image exclusion left the CONSTANT case open; closed by QUANTIZATION
+
+**Part 1 is a result (scope-(b), proved invariant). Part 2 is a fit and is labelled
+one.** Probe: `computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py`
+(14/14), witness `qbeta-eigenphase-rationality-quantization.witness.json`.
+
+### The hole in the sibling exclusion, and it is the case a derivation would want
+
+`qbeta_braid_image_eigenphase_exclusion_probe.py` closes branch (1) like this:
+`tr ρ(w)` is a Laurent polynomial, `|2cos α| ≤ 2`, bounded on `(0,∞)` ⟹ constant,
+and `α_C`/`α_D` are both non-constant ⟹ contradiction. **A CONSTANT `α` walks
+straight through that**, and nothing in the ladder requires the phase to vary —
+`Q_N1 = Q_A·cos(α − u/2)` is already `q`-dependent through `u`. Anyone proposing
+`α = α_req`, a pure number, was excluded by nothing in the corpus.
+
+### The closure — the same argument, carried through INTEGRALITY
+
+  1. `det ρ(σ_i) = −1` identically ⟹ `det ρ(w) = (−1)^{e(w)}`. So **`det = 1` is
+     not an assumption on `M` — it is a parity condition on the WORD.**
+  2. `σ^{-1} = σ − (q − q^{-1})I` (Hecke relation) ⟹ every word matrix is over
+     `ℤ[q,q^{-1}]`, so `tr ρ(w) ∈ ℤ[q,q^{-1}]`.
+  3. bounded ⟹ constant ⟹ **an integer**. On the 2-dim `V_(2,1)`, `|tr| ≤ 2` then
+     forces `tr ∈ {−2,−1,0,1,2}` and
+
+         α ∈ {0, π/3, π/2, 2π/3, π}
+
+`|α_req| = 0.05235868` is **4795 windows** from the nearest member. So branch (1)
+is closed on `V_(2,1)` for **every** `α`, not only the `(z−1)h/2` family, and
+**without the transcendence assertion** the corpus carries in a docstring.
+
+General `d`: every `tr ρ(w^k)` is a constant integer ⟹ integral char poly ⟹
+eigenvalues are algebraic integers with all conjugates on the unit circle ⟹
+**Kronecker: roots of unity**, so `α ∈ 2πℚ` in any irrep. The five-element set is
+its `d = 2` case. **The Lean twin of the Kronecker step is NOT written.**
+
+Verified exhaustively over all **5460 words `|w| ≤ 6`** in exact `ℤ[q,q^{-1}]`
+integer Laurent arithmetic (no sympy simplify, no floats); anchors at 60 dps.
+
+### Corollary for `qou-cds1`, and it is convention-free
+
+If `α` is a braid-image eigenphase at all, it is a **pure number with no `z` in
+it**. So the C-vs-D question for the **phase** dissolves — the phase does not need
+re-deriving per convention. It survives only for the **base**.
+
+### Part 2 — 2π/120 is the unique rational in the window. THIS IS A FIT.
+
+Given `α ∈ 2πℚ` the search space is discrete, so one can just ask which members
+fit. Never run before. Answer: `2π/120 = π/60` is the **unique** primitive
+rational phase with `N ≤ 1000` inside the `|c₃| ≤ 1` window — **0.109 windows**
+from `α_req`, where convention C is **2.066** (i.e. C is *outside*). It implies
+`|c₃| ≈ 0.1095` against C's `−2.0693`.
+
+**🛑 Under §NO FITTING this is SELECTION AGAINST THE TARGET** — `N = 120` was
+picked because it reproduces `α_req`. Not adopted, not wired, not proposed as a
+value for anything. Three honesty checks, all in the probe:
+
+  * **the cross-anchor swing discriminates nothing** — 0.049 in `c₃` for the
+    candidate and 0.049 for C, because it is `α_req`'s own anchor dependence, not
+    a property of either phase;
+  * **a unique hit at `N ≤ 1000` is GENERIC** (E = 1.06). Only *which* denominator
+    won carries information: `P(N = 120 | one hit) = 1.05e-4`. At `N ≤ 120`,
+    E = 0.0152;
+  * **🛑 the mechanism a reader reaches for first is REFUTED, in the same probe.**
+    `|2I| = |S_5| = |Aut(Bring)| = 120` — but a *primitive* 120th root of unity
+    needs an **element** of order divisible by 120, and **`S_5`'s maximal element
+    order is 6** while **`2I = SL(2,5)`'s is 10** (exponent 60, not 120). A group
+    of order 120 does not supply a 120th root of unity. **The candidate has no
+    identified mechanism at all**, which makes it weaker than the uniqueness
+    measurement alone suggests.
+
+### Scope limit, load-bearing
+
+The ladder inverted here sits on `Q_A = m_e|q²−2q−1|(q+1)/(2q³)` — the **`z = 1`
+cell, RETIRED as the base by the 2026-09-08 ruling** (`qou-99qc`). Nothing here
+moves the dashboard, whose `Q_β` row is base-only at ~4.3e+8 ppb on the ruled
+`z_D` base. **A ~0.1 % phase cannot address a 43 % base gap: the D-base miss is
+not a phase problem**, and this entry must not be cited as if it were.
+
+### What would close it
+
+Derive the **120** — exhibit a braid word and a partition whose `q`-uniform
+eigenphase is `2π/120` — rather than read it off `α_req`. Given the refutation
+above, that requires an element of order divisible by 120 from somewhere the
+framework actually supplies, and no such source is identified here.
