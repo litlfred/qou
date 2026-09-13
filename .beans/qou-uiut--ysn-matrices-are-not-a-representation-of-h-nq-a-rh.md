@@ -1368,3 +1368,42 @@ emits **zero** fallback warnings before trusting it.
 19 atoms again, with an empty memo. The three that matter — si28, ca40, fe56 —
 are the ones `qou-3uvs` cannot settle without mpf, so the run still has to
 happen; ne20's verdict from yesterday is already committed and stands.
+
+---
+
+## 2026-09-13 — TRAP: the table's CPU drop from ~380 % to 100 % is NOT a regression
+
+Recording a wrong inference of mine, because the evidence for it is the first
+thing anyone will notice when they watch this producer.
+
+**What it looks like.** Before the 702-commit merge the table ran at 377–386 %
+CPU; after it, 100 %. At the same time it stopped being able to finish
+deuterium inside a container lifetime. The obvious reading is that main's
+`qou-sv7h` restructure — from `chi_q_atomic_prefix_traces_mpfr` onto
+`lp_accumulator_step_traces_mpfr` — serialised the kernel, and the evidence
+lines up: `_lp_kernel_steps` is called from a plain `for s in state:` loop in
+`unified_iterative_correction`, one PyO3 crossing per partition, and the Rust
+docstring for the OLD entry point says "rayon-parallel on the Rust side".
+
+**It is wrong, and `qou-sv7h` already measured it.** From that bean:
+
+> Batching over partitions was measured and REJECTED:
+> `chi_q_atomic_all_partitions_mpfr` gave 0.9x–1.2x on 4 cores at k=8,9,10 —
+> one large-dim partition dominates, so the outer axis has nothing to give.
+> (The Rust docstring already says this and chooses a serial outer loop
+> deliberately; the measurement agrees with it.)
+
+So the old path was **rayon burning four cores for ~1.0x throughput**. High
+utilisation, no gain. The serial loop is a deliberate choice backed by a
+measurement, and 100 % CPU is what correct looks like here. `top` cannot tell
+those two apart, which is exactly why the number is a trap.
+
+**The real reason deuterium was not finishing** is unrelated to threads:
+cold it costs ~20 min (main's own figure, and `atom_markov_trace(1,1)` alone
+measures 393.7 s), the container window was twice shorter than that, and the
+memo that made partial work survive had been deleted at the merge. That is
+fixed — the memo is re-ported with a key that covers the Python numeric path.
+
+**Rule of thumb this leaves:** on this producer, judge throughput by
+wall-clock per atom, never by CPU %. The two have moved in opposite
+directions here for a legitimate reason.
