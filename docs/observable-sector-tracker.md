@@ -181,7 +181,7 @@ states (next section).
 
 | observable | canonical formula | Lean proof | production | residual | status |
 |---|---|---|---|---|---|
-| **Q_β (free neutron)** | Form A `m_e · |q²−2q−1| · (q+1) / (2q³)` × c_k ladder; **only c_2 = −1 Taylor-exact** | `prop:q-beta-categorical-precision-ladder` (c_2 via Kashiwara N2_factor, PROVED); c_3 §3b-cond conditional `QbetaC3StructuralFormClass` | `per_observable_100x_status.py` scores the **RULED `z_D` base** (`_qbeta_ruled_base`, 2026-09-12); the `Q_N2` rung is recorded on the row as the retired `z = 1` cell | **4.316e+8 ppb (`z_D` base, 0 rungs)** — ✗ 100×, ✗ 1× | **DERIVED, no rungs.** Was `1279 ppb (Q_N2)` — convention-C on the inadmissible `z = 1` cell — until item (iii) of the 2026-09-08 ruling was re-scored on the 2026-09-12 owner authorisation (`qou-99qc`). Not D's accuracy: no ladder on an admissible base (`qou-cds1`, blocked on `qou-pdix`; second re-score `qou-iagg`) |
+| **Q_β (free neutron)** | Form A `m_e · |q²−2q−1| · (q+1) / (2q³)` × c_k ladder; **only c_2 = −1 Taylor-exact** | `prop:q-beta-categorical-precision-ladder` (c_2 via Kashiwara N2_factor, PROVED); c_3 §3b-cond conditional `QbetaC3StructuralFormClass` | `per_observable_100x_status.py` scores the **RULED `z_D` base** (`_qbeta_ruled_base`, 2026-09-12); the `Q_N2` rung is recorded on the row as the retired `z = 1` cell | **1.668e+8 ppb (`z_D` base, 0 rungs)** — ✗ 100×, ✗ 1× | **DERIVED, no rungs.** Was `1279 ppb (Q_N2)` — convention-C on the inadmissible `z = 1` cell — until item (iii) of the 2026-09-08 ruling was re-scored on the 2026-09-12 owner authorisation (`qou-99qc`). Not D's accuracy: no ladder on an admissible base (`qou-cds1`, blocked on `qou-pdix`; second re-score `qou-iagg`) |
 | Q_β c_k (k≥3) | structural forms (J_Hopf, J−ℏ², c_3·b⁴) — **stale-q₀ near-matches, NOT Taylor-exact** | §3b-cond `QbetaC3StructuralFormClass`, `QbetaHabiroTaylorBridgeClass` (conditional, no instance) | NOT wired | item-1: 3.35% off at canonical q₀, q₀-drifting | **NOT derivations** — `qbeta-delta-tr-vs-formA.witness.json` |
 | **bridge `f`: Q_β = m_e·f(Δtr_M, q)** | — | — | — | item-1 bounds what it is NOT (not the Form-A slot) | **OPEN** — the genuine derivation target (multi-block Habiro q-difference) |
 | **τ_n (neutron lifetime)** | depends on `(ft)`, `g_A`, Q_β | — | — | — | OPEN — only the Q_β leg is wired |
@@ -197,9 +197,19 @@ states (next section).
   multi-Wedderburn-block Habiro q-difference solution is the research
   target (`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`).
 - **Superseded 2026-09-12:** Q_β is no longer at the μ-p substrate tension
-  floor — it is on the RULED `z_D` base at 4.316e+8 ppb with zero `c_k` rungs
+  floor — it is on the RULED `z_D` base at 1.668e+8 ppb with zero `c_k` rungs
   (`qou-99qc` item (iii), owner-authorised). The floor statement below described
   the laddered `z = 1` figure and is kept as the record of that state.
+  - 🛑 **Both figures here read `4.316e+8` ppb until 2026-09-13 (PR #7283).**
+    That is the **`delta_S`** element at order-zero `E₀`; the scored element has
+    been the γγ-selected `nuc11_interleaved` since `573b2ece24`, which landed
+    **31 minutes after** the re-score that wrote this line and updated the
+    producer and witness but no prose. Stale by 2.588×, the same factor that
+    hit `docs/precision-goals.md` (25 sites) and `AGENTS.md`. Take
+    `miss_factor` live from `per-observable-100x-status.witness.json`, and
+    note the element is ruled in only **6 of its 11 letters** — γγ words have
+    even length and this one is eleven, so the quark block (3, odd) and the
+    gluon pair (2, both positive) stay census-derived.
 - Q_β at the μ-p substrate tension floor (1279 ppb); this is the honest
   production state, not a wiring gap.
 

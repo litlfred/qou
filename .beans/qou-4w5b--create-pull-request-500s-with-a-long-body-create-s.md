@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T09:09:13Z
-updated_at: 2026-09-13T09:24:42Z
+updated_at: 2026-09-13T10:32:20Z
 ---
 
 ## Measured 2026-09-13, opening #7281
@@ -126,3 +126,55 @@ Whether this is GitHub, the MCP github server, or the agent proxy.
 not register as a relay failure. The bisect proposed above (4 KB of one repeated
 ASCII character) is now much weaker as a test: against an intermittent fault a
 single pass or fail decides nothing, and it would need repetition to say anything.
+
+
+---
+
+## INDEPENDENT CONFIRMATION 2026-09-13, opening #7280 (session 01QdzbDV, ~09:0x)
+
+Same defect, same hour, different session and different PR — reached before
+seeing this bean, so this is a genuine second observation rather than an echo.
+It **agrees with every conclusion above**, including the one the title
+corrects: update 5xxs on a long body too.
+
+| attempt | call | body | result |
+|---|---|---|---|
+| 1 | `create_pull_request` | ~6 KB, em-dash in TITLE, `draft: false` | `500` |
+| 2 | `create_pull_request` | same | `500` |
+| 3 | `create_pull_request` | **46 bytes**, em-dash in title, `draft: false` | `500` |
+| 4 | `create_pull_request` | 13 bytes, **ASCII title**, no `draft` field | **created — #7280** |
+| 5 | `update_pull_request` | ~6 KB | `500` |
+| 6 | `update_pull_request` | ~6 KB, retried verbatim | `500` |
+| 7 | `update_pull_request` | **~1.5 KB** | **applied** |
+| 8 | `add_issue_comment` | ~5 KB, same prose that 5xx'd as a body | **posted** |
+
+**What this adds to the rows above.**
+
+* **A bracketing pair on ONE PR.** #7280 accepted ~1.5 KB and rejected ~6 KB
+  minutes apart, so the size dependence is visible without varying the PR,
+  the branch or the session. That is the cleanest form of the observation
+  here.
+* **`add_issue_comment` is unaffected.** ~5 KB of the *same prose* that 5xx'd
+  as a PR body posted as a comment first try, and four more comments of
+  similar size followed. So the failure is specific to the pull-request body
+  field, not to the content or to the client.
+* **`request_copilot_review` also 5xx'd twice, then succeeded** on the third
+  try with no change of any kind. That endpoint carries no body at all, which
+  is evidence the 5xx is **partly time-varying** and not purely a function of
+  body size — a caveat neither of our runs can separate.
+
+**One thing I could NOT isolate, recorded so nobody quotes a cause.** My
+attempt 3 changed *two* things at once against attempt 4 — the em-dash in the
+title and the explicit `draft` field — so my create-side failures do not
+discriminate between them, and a 46-byte body failing while a 13-byte body
+succeeded is more likely the time-variation above than a size effect. The
+rows above are the better create-side evidence; mine is the better
+update-side and comment-side evidence.
+
+**Same verification discipline, independently.** `list_pull_requests` after
+each create failure returned `[]`, and `pull_request_read` after the first
+update failure showed the body unchanged — so all of mine were genuine
+no-ops too. Two sessions, same check, same answer.
+
+**Practical upshot, unchanged:** open with a short body, fill it in with a
+second call, and put anything long in a comment.

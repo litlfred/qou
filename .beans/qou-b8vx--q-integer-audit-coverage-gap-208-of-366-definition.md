@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-09-13T07:16:40Z
+updated_at: 2026-09-13T10:53:07Z
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.
@@ -290,3 +290,77 @@ REMAINING 45: 7 no top-level assignment, 6 genuinely q-independent, 2
 Q_INV_MP, 2 not-evaluable TypeError, 2 q0, and a tail of data-file loads that
 are correctly opaque. Heterogeneous -- better left measured and characterised
 than chased with a sixth heuristic.
+
+
+---
+
+## 2026-09-13 (pass 6) — 133/175, and the "heterogeneous" judgement was wrong
+
+I stopped this bean at 128/173 saying the rest were *"heterogeneous and better
+left measured than chased with a sixth heuristic."* **That judgement was the
+thing to distrust**, and my own closing line said so: *"LIST THE MEMBERS, do
+not reason about the bucket."* I listed them, and 5 of the 47 were a sixth
+detector gap.
+
+**POPULATION MOVED: 175, not 173** — main landed two new producers. Re-measure;
+do not quote 173.
+
+| | pass 5 | pass 6 |
+|---|---|---|
+| symmetric | 112 | **117** |
+| classical | 10 | 10 |
+| `symmetric[n=2]` | 3 | 3 |
+| `symmetric_in_sqrt_q` | 1 | 1 |
+| OTHER (not q-integers) | 2 | 2 |
+| **UNRESOLVED** | 47 | **42** |
+| **RESOLVED** | 128/173 | **133/175 (76.0 %)** |
+
+**STILL ZERO NEW CONVENTIONS** — six passes, population 0 → 133. All five
+newly-measured are symmetric.
+
+### The sixth gap: a module's own import ALIAS
+
+`q_parameter` writes `import mpmath as _mp`. The evaluator bound only `mp` and
+`mpmath`, so every constant in that module needing evaluation died on the name
+`_mp`:
+
+    Q_INV_MP     = _mp.mpf(1) / Q_MP        -> 1/q
+    HA_MP        = Q_MP - Q_INV_MP          -> q - 1/q
+
+That is 3 + 2 = 5 definitions, reported as `depends on unresolvable
+Q_INV_MP` / `HA_MP` and reading exactly like corpus opacity.
+
+**Why it hid so well, and this is the reusable part.** `Q_MP` itself resolves
+FINE — it short-circuits on `_ANCHOR_KEYS` at the top of `resolve()`, *before*
+any evaluation happens. So the one name a reader would test to check whether
+the anchor module is reachable is **the one name that does not need the
+alias**. A spot-check on `Q_MP` returns a confident green while every sibling
+constant in the same block is dark.
+
+The fix reads the module's OWN `import` statement (plain `import X as Y` is
+now recorded as `Y -> X::*`) and binds that alias. It is corpus-derived, not
+spelling inference: the module says what `_mp` means.
+
+Note `HA_MP = q - 1/q` is the **symmetric-bracket denominator**, so these
+definitions were always likely symmetric — which is exactly why measuring
+rather than assuming was the point.
+
+### What actually remains (42), listed not characterised
+
+    8  no top-level assignment
+    6  q-independent (a constant, not the modulus)   <- ANSWERED, not dark
+    4  not evaluable (TypeError)                     <- was 2; +2 new producers
+    2  depends on `q0`
+    2  depends on `_TBL`      <- a json.loads of a data file; correctly opaque
+    2  depends on `HERE`      <- a path constant; q-independent by construction
+    2  depends on `Q`
+    2  call failed (SympifyError)
+    …tail
+
+So the honest split is **133 classified / 6 genuinely q-independent / 36
+dark** — and `_TBL` and `HERE` are two more that are *correctly* unresolvable
+rather than gaps, which would make it 32.
+
+**I am not claiming the remaining 36 are all real opacity.** That is the claim
+that was wrong last time. They are unmeasured, and on this session's record
+the prior should be that some fraction are still my tooling.
