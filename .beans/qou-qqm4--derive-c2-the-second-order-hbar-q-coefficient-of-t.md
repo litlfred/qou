@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T14:47:00Z
+updated_at: 2026-09-13T16:37:08Z
 updated_at: 2026-09-13T14:22:41Z
 updated_at: 2026-09-13T13:50:50Z
 updated_at: 2026-09-13T13:07:38Z
@@ -1574,3 +1574,118 @@ breaking, and its smallness is why the p-n letter is nearly self-conjugate.
 Whether `t`'s endpoints being bar-conjugate is a *mechanism* or a restatement is
 **not** established here, and #7285's own "still open" applies unchanged: nothing
 above derives the `1/4` or the `(q-1)^2/3`.
+
+---
+
+THE `(q−1)²/3` TARGET IS NOW **LOCATED**, NOT CLOSED — a parity obstruction
+(2026-09-13, session sleepy-morse, PR #7320).
+
+With the `1/4` retracted and the genericity measured (two entries up), the
+`(q−1)²/3` is this bean's one live target.  Before attacking it I ran the
+formalize-first prune the discipline asks for — *"find the invariant the whole
+class must satisfy"* — on the single exact ingredient
+`conj:flavor-split-habiro-derivation` rests on.  It is blocked at exactly the
+exponent `δ` needs.
+
+**THE PARITY.**  `QOU.FlavorSplit.topological_flavor_split_of_central` proves
+`σ³ − σ⁻³ = h(h²+3) = q³ − q⁻³` is a **central scalar** and reads that as a fact
+about the proton/neutron pair.  It is a fact about **parity**:
+
+    σ^k − σ^{−k}  is central  ⟺  k is ODD,  and then  = q^k − q^{−k} = h·[k]_q
+
+At even `k` it is `A_k·(σ + σ⁻¹)` — a central multiple of the resolvent
+`u := σ + σ⁻¹ = 2σ − h`, which is not central unless `σ` is.  The invariant
+underneath is
+
+    u²  =  h² + 4      (central)
+
+so even powers of `u` are central and odd ones are not; equivalently the odd
+subsequence closes with a central coefficient, `D_{k+4} = (h²+2)D_{k+2} − D_k`.
+
+**THE PRUNE.**  Exactly, as rational functions, `δ = ℏ_q²·h·[2]_q/3` with
+`h·[2]_q = q² − q⁻²`.  So `δ`'s numerator is the **k = 2** member of the family
+`q^k − q^{−k}` that the **odd** reversals realise as scalars — and `k = 2` is
+precisely where the parity fails:
+
+    σ² − σ⁻²  =  h·(σ + σ⁻¹)      — NOT a scalar
+
+Its two values on the Hecke spectrum `{q, −q⁻¹}` are `+(q²−q⁻²)` and
+`−(q²−q⁻²)`: **the right magnitude with the sign unfixed.**  So reaching `δ`'s
+numerator through a crossing reversal requires **choosing the symmetric
+channel**, and the algebra does not supply that choice
+(`reversal_two_forces_resolvent_central`: a central value at `k = 2` forces the
+resolvent, hence `σ`, to be central — false in `H_n(q)` for `n ≥ 3`).
+
+**Scope (b), invariant named** (the parity), and **narrow**: within the
+single-generator family `σ^k − σ^{−k}` only.  Nothing here excludes `h·[2]_q`
+arising from some other Hecke element.  It says the one exact result the
+conjecture rests on does not reach it, and names what a repair must supply.
+
+**What is proved vs measured.**  New library file
+`QOU/Hecke/CrossingReversalParity.lean` — generic `Ring R`, `h` central, **left**
+inverse only (matching the 2026-09-03 strengthening of the `k = 3` theorem;
+`H_n(q)` is not commutative for `n ≥ 3`) — carries nine sorry-free theorems:
+`inv_eq`, `sub_eq`, `inv_quad`, `resolvent_sq`, `reversal_two`,
+`reversal_two_forces_resolvent_central`, `reversal_four`, `reversal_five`,
+`reversal_rec`.  `lean`-direct exit 0 / 0 warnings; `#print axioms` clean, eight
+of nine needing `[propext]` alone.  **The general-`k` statement is NOT
+formalised** — it is measured to `k = 11` in
+`computations/qbeta/crossing_reversal_parity_probe.py` (6/6, sympy + mpmath
+dps 60, no float64), which also measures the two channel values and the odd
+recursion.  Do not cite the general form as proved.
+
+**Provenance.**  `u² = h² + 4` is elementary and standard in the Chebyshev /
+Jones–Wenzl literature; the claim is only that **this corpus does not carry it**
+— grepped over `content/`, `computations/`, `docs/` and `.beans/`, where the sole
+crossing-reversal result is the `k = 3` one.  `library/` was **not** searched, so
+this is not a claim about the literature.
+
+**This closes nothing.**  It converts "derive the `(q−1)²/3`" from an open target
+into a *located* one: the `H₄` route's exact ingredient produces `h·[k]_q` at odd
+`k` only, `δ` needs `k = 2`, and the gap is a **channel selection**.  That is the
+next honest question on this bean — and it is a question about the framework
+(which channel the weak vertex projects onto, and why), not one more identity.
+
+---
+
+AND THE CONJECTURE'S **OWN** CHANNEL GIVES THE SIGN BACKWARDS (same session,
+PR #7320, second commit).
+
+The entry above says the `k = 2` reversal leaves `δ`'s numerator with an
+undetermined sign and that the algebra does not supply the choice.  **It does not
+merely fail to supply it — the choice `conj:flavor-split-habiro-derivation`
+itself states points the wrong way.**  The block's words:
+
+> *"The weak interaction is strictly left-handed, so it projects onto the fully
+> alternating channel of `H₄`, the sign-block partition `(1⁴)` … In the
+> alternating channel the generator acts by its sign eigenvalue `−q⁻¹`."*
+
+Evaluate `σ² − σ⁻² = h·(σ + σ⁻¹)` there and, exactly:
+
+    ℏ_q² · (alternating value) / 3  =  −δ
+    ℏ_q² · (symmetric   value) / 3  =  +δ
+
+So the stated channel yields `δ < 0`, i.e. **m_n < m_p** — the neutron lighter
+than the proton.  The two channels are exact negatives (`splits_sum_zero`), so
+the channel choice is the entire content: the magnitude is settled and only the
+sign is at stake.
+
+**The condition is MINE, not the block's, and it must be carried with the
+claim.**  That `δ`'s numerator *is* the `k = 2` crossing reversal is a reading —
+the natural one, given the block derives its one exact result that way, but the
+block makes no such identification and calls `(q−1)²(1−q⁻⁴)/3` *"a structured
+near-match, not a derived closed form"*.  So read the **pair**: if the reading is
+right the stated channel is backwards; if it is wrong the block owes an account of
+where `h·[2]_q` comes from, since it is then not the reversal.  Either way the
+route is not closeable as stated.
+
+Six further sorry-free theorems in a closing `Archimedean` section of
+`QOU/Hecke/CrossingReversalParity.lean` (over `ℝ`, because the sign statements use
+`1 < q` — the main body stays generic `Ring R`, and the file header was corrected
+to say so rather than claiming the whole file is ordering-free).  `lean`-direct
+exit 0 / 0 warnings; `#print axioms` clean on all 15 declarations.  Probe 7/7.
+
+**Next on this bean, and it is a framework question rather than another
+identity:** which channel the weak vertex projects onto, and why.  The corpus
+asserts left-handed ⇒ alternating; the flavour split needs symmetric.  One of the
+two has to give, and neither is derived here.

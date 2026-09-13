@@ -1553,6 +1553,208 @@ theorem the mutual channel was said not to need. Holding a source and having
 checked it are different claims — that distinction is what `qou-pc85` was
 originally about.
 
+## 2026-09-13 — this bean is BLIND to its own successor, and its closing measurement SURVIVES a re-check
+
+Two things, and they point opposite ways. Recording both because the second is a
+correction to the line I was building from the first.
+
+### 1. The carrier blocker got an OWNER RULING, and this bean does not know
+
+This bean's terminal state is: every route ends at *"which link is the nucleus?"*,
+and `qou-5vhf` establishes the A <= 4 assignments are an admitted AME-driven census
+search — so route (2) reaches one kappa point on a fitted carrier and fails this
+bean's own no-tuned-constant (CAL-4) gate.
+
+**On 2026-09-08 the owner ruled census OUT and named the replacement**, verbatim:
+*"All selection of great words should be done through gamma gamma production and
+the semi-definite product solutions at q_0. Shouldn't use census."* That is bean
+`qou-ales`, and it has run to **step 10** (PRs #7184, #7207, #7222, #7233), all
+sorry-free: the Frobenius-positivity reading selects `beta_Bor` on the whole
+interval `1 < q <= 23/20`; the H_6 pp bond `G^3` is selected through branching; the
+reading-3 survivors are exactly `3 | k`; and step 10 derives the last measured
+quantity of the pp channel in closed form, giving `diproton_unbound_of_response_closed_form`
+for every `q > 1` with no measurement.
+
+**Measured: `grep -in "gamma.gamma\|qou-ales\|7184\|7207\|7222\|7233"` on this bean
+returns ONE hit, and it is a coincidental digit match inside a number (line 871).**
+So the bean whose single terminal blocker is carrier selection carries no record
+that carrier selection was ruled on five days ago and has an active arc. Fixed by
+this entry.
+
+### 2. But the closing measurement is NOT stale — and I checked because it looked like it was
+
+The natural next move is to ask whether this bean's route-(2) closure is still
+valid, because its refutation sits in `he4-link-volume-braid-closure.witness.json`
+**computed 2026-07-04**, and the producer's import cone changed after it:
+`he4_link_volume_braid_closure` -> `canonical_braid_crossings.atom_canonical_crossings`
+-> `mass_at_3A_proper.atom_braid_word_3A`, whose default `intra_order` became
+`"borromean"` in `7db032fb48` (2026-09-05). That same commit moved `tr_M(p)` by
+45 % and left >= 8 witnesses carrying retired values (`qou-sikd`). Textbook
+import-cone drift.
+
+**Re-measured, and the refutation holds** —
+`computations/probes/atom_closure_component_count_probe.py`, 5/5, bean `qou-mbbf`:
+
+| isotope | A | comps (borromean) | comps (grouped) | census carrier |
+|---|---|---|---|---|
+| 2H | 2 | 3 | 3 | Hopf (2) |
+| 3H | 3 | **4** | **4** | `8_11` (1) |
+| 3He | 3 | **4** | **4** | `L6a4` (3) |
+| 4He | 4 | 5 | 5 | none identified |
+| 6Li | 6 | 7 | 7 | — |
+
+The two words genuinely differ (asserted, so the invariance is not vacuous) and the
+count is identical under both. **Structural reason, not coincidence:** the count is
+the orbit count of the induced permutation, and crossing SIGN does not enter it —
+the two orderings differ in sign pattern and letter order, not in which
+transpositions occur.
+
+**And it is stronger than this bean states.** Not "refuted at the two isotopes where
+the answer is checkable" — the closure has exactly `A + 1` components on `3A`
+strands at **every** A tested, so the two families agree at no A at all.
+
+### What that leaves
+
+The blocker is real, structural, and not a re-run away. **But it is now a
+disagreement between two objects of which only one was ever derived:** the census
+carrier (an admitted AME fit, ruled out 2026-09-08) and the `A + 1`-component
+closure of the canonical word. This bean has always read the disagreement as
+refuting the closure. That reading was reasonable while the carrier was the fixed
+point; after the ruling it is the carrier that has no standing.
+
+**Not claimed, and this is the owner's call rather than an agent's:** that `A + 1`
+is right. Nothing here derives a binding link, and nothing here reopens route (2) —
+its `kappa(A)` gate is still retired (#7080) and its energy machinery still has
+nothing un-fitted to consume. What changes is only which of the two disagreeing
+objects should be treated as the target.
+
+Volume and geometricity are **NOT** re-measured (`snappy`/`spherogram` absent in
+this container); the component count alone decides the identification question.
+
+## 2026-09-13 (later) — the carrier alternative is CLOSED BY MEASUREMENT: the closure is not hyperbolic
+
+The entry above left one question for the owner: since the census carrier is an
+admitted AME fit that the 2026-09-08 ruling excludes as a selection mechanism,
+should the `A + 1`-component closure of the canonical word become the target
+instead? It named the missing input: **is that closure hyperbolic?**
+
+Measured (`computations/probes/atom_closure_geometry_probe.py`, 5/5, SnapPy
+calibrated against `Vol(4_1) = 2.0298832128`): **no, and not marginally.** 3H,
+3He and 4He are non-geometric with volume exactly 0 in all SIX settings — both
+intra-orderings crossed with all three averaging modes — returning `contains
+degenerate tetrahedra` on 12/12 randomised attempts each. The 2026-07-04 rows
+reproduce exactly under the live word.
+
+**So there is no second candidate.** The closure has no hyperbolic volume to
+feed the volume-based binding route; promoting it would delete the route's input
+rather than re-base it. This bean's long-standing reading — that the component
+mismatch refutes the closure — is correct, and now for a second, independent
+reason.
+
+**The blocker restated, sharper than before.** It is not *"which of two objects
+is the carrier"*. It is: **the only available carrier is the fitted one**, the
+selection mechanism that produced it has been ruled out, and the framework's own
+canonical word cannot supply a replacement — refuted from two directions now
+(component count, `qou-mbbf`; non-geometricity, here). Route (2)'s machinery
+still has nothing un-fitted to consume, and that is now established rather than
+inferred from the A<=4 assignment's provenance alone.
+
+**What is still genuinely open**, unchanged: `qou-ales`'s gamma-gamma route
+selects WORDS (beta_Bor, the H_6 bond `G^3`) and has not been asked to produce a
+binding LINK; the flux leg (eq. 43's topological factor is A-independent, so it
+relocates kappa(A) into the per-component flux — a fall of 1.449 across
+A = 3...41, derivable from corpus braid geometry, not derived); and `qou-bn8e`'s
+self-energy channel via its route (ii).
+
+By-product, filed separately as `qou-v5sr`: the producer's baked `CLOSURE` table
+is stale for the two NUCLEON rows (hyperbolic under the live word, recorded
+non-geometric), and its own "every mode agrees" comment is false for them. The
+volumes are mode-dependent by 2x and are NOT derived quantities — see that bean
+before quoting any of them.
+
+## 2026-09-13 (later still) — this bean's OWN TRIP-WIRE IS TRIPPED, by this session's ingest, and the bound it named now exists
+
+The 2026-09-03 upper-bound entry closes with an assertion deliberately left as a
+wire: *"the library holds nothing anyway ... **zero** files matching
+`ropelength|ideal knot` ... **Asserted so that a future acquisition flips the**
+[result]"*. **That acquisition happened today, in this arc's own ingest, and
+nobody noticed — including me: I named the flux leg as "next" without reading
+the entry that set the wire.**
+
+### Live re-scan, and one self-reference trap avoided
+
+    library/*/sections   7 documents   (was 0)
+    library/*/ocr        0
+    docs/                0
+    computations/        4  <- SELF-REFERENCE, not new hits
+    content/             2  <- SELF-REFERENCE, not new hits
+
+The `computations/` and `content/` hits are **this bean's own artifacts**
+(`em_linking_upper_bound_precision_budget.py` + its witness,
+`MirrorSplitIsASmallFractionOfTheEnergy.lean`) plus two unrelated Frenet/torsion
+files. A probe that scans for a term *contains* that term, so a naive re-grep
+finds the assertion itself. **The original "zero" was correct.**
+
+All **7** library documents were added **today**, by this session's ingest
+commits `d9be1158a9` and `3938aa5ffc`.
+
+### 🟩 And the bound the entry named as missing now EXISTS in the corpus
+
+`library/1-s20-s0166864101002632-main` = **Rawdon & Simon, _Möbius energy of
+thick knots_, Topology Appl. 125 (2002) 97-109.**
+
+> **Theorem 8.** If K is a smooth knot in R³ then **E_O4(K) < 4.57 · E_L(K)^{4/3}**
+
+That is an **upper** bound on a Möbius-type energy in terms of a geometric
+quantity (ropelength) — precisely what the 2026-09-03 entry named: *"What would
+restore a constraint is an UPPER bound, which eq. (43) does not supply."* And
+the paper states its own paradigm in terms that cover this arc's kernel:
+
+> *"our goal is partly the theorem itself and partly the paradigm: **any 'energy'
+> defined in terms of inverse-square distances should have an analogous bound**,
+> with the proof following this model."*
+
+The mutual channel's kernel is `1/sep²`. So the paradigm applies by the source's
+own statement, not by analogy I am drawing.
+
+### 🛑 BUT THE ROUTE DOES NOT REVIVE, and the reason is the one the entry gave
+
+That entry is explicit that availability is *"the weaker half of the finding,
+not the point"* — the route dies on **precision**. The requirement is unchanged:
+the combined slack `(U₁−B₁)+(U₂−B₂)` must beat `ΔE/E ≤ (r−1)/A`, which at
+`A = 63` with a generous factor-2 flux ratio is **1.5873016 %**, and the budget
+*sharpens 21-fold across the ladder*.
+
+**I have the bound's SHAPE, not its SLACK.** `E < 4.57·L^{4/3}` is an explicit
+constant, which is better than the order-of-magnitude estimates the entry
+assumed — so the entry's *reason* ("nothing in that literature is tight to a
+percent") is now a claim about a bound the corpus can actually inspect, rather
+than a general one about the literature. But determining whether it beats
+1.587 % needs both sides evaluated on an **actual carrier**.
+
+### So this is the FIFTH independent path to the same terminus
+
+Route (1) pruned (even in `μ̄₁₂₃`). Route (2) → carrier. Route (4) `qou-0hdx`
+scrapped → carrier. Flux leg → saturation is prior → the two escapes are one →
+carrier. **And now the upper-bound leg, newly supplied, → carrier.**
+
+Combined with today's two measurements — the closure has `A+1` components
+(`qou-mbbf`) and is **non-geometric with volume 0 in all six settings** — the
+arc's position is: *every path terminates at carrier identification, the only
+candidate is the admitted AME fit whose selection mechanism the owner ruled out
+on 2026-09-08, and the framework's own canonical word cannot supply a
+replacement.*
+
+### What is now genuinely actionable, and it is NOT this bean's
+
+Nothing here moves without a **derived binding link**. `qou-ales` selects
+*words* (`β_Bor`, the H₆ bond `G³`) and has never been asked to produce a
+*link*. That is the one live question, and it belongs to that bean.
+
+**NOT claimed:** that Theorem 8 is or is not tight enough (unmeasured — it needs
+a carrier); that the arc revives; that Rawdon & Simon's paradigm has been
+checked against the mutual kernel beyond quoting the authors' own statement.
+Beans `qou-mbbf`, `qou-hs0c`; PR #7322.
 
 ## CONSTRAINT 3 — ROUTE (2) CANNOT GET ITS MAGNITUDE FROM TOPOLOGY (2026-09-13, qou-dux3)
 
