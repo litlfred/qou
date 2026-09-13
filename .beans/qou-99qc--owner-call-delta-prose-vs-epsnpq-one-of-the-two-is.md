@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T13:22:15Z
+updated_at: 2026-09-13T13:30:05Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1957,3 +1957,38 @@ element-to-observable map are H_3 constructions with no corpus-defined n = 4
 analogue, and reporting a residual would re-introduce the
 selection-against-the-target the earlier parts measured and rejected. The word
 is derived; what it predicts is a separate question.
+
+
+
+### 🛑 Part 6 RETRACTED, same day (PR #7295)
+
+Part 6 above claimed SDPSelected has a unique solution, `(v0 v1)^2`. **It does
+not, and I withdraw that.**
+
+The EMPTY gamma-gamma word — zero vertices, `GammaGammaWord.nil`, the identity
+of `H_n` — is PSD-feasible in every block (the identity matrix is PSD) and its
+Markov trace is exactly **1.0**, against 1.032897755524660383 for `(v0 v1)^2`.
+So over the candidate set as the Lean states it, **SDPSelected selects the empty
+word**, vacuously. Part 6 silently restricted to words with >= 1 vertex.
+
+**The corpus already proved this one level up, and I cited the block without
+reading it.** `prop:operator-selection-lp` §"Degeneracy of this program":
+`b_1 = 1` so `G_1j = t_j`, hence the first Frobenius positivity constraint IS
+the objective bounded below by zero — optimal value identically 0 for every n,
+q and trace convention; and the minimiser set is a positive-dimensional
+mirror-closed face, so which vertex a solver returns is its pivoting rule. That
+block states outright that *"downstream blocks have read the program as a
+selection principle, which it is not"*. I became one of those readers before
+becoming an independent confirmation of it in the discrete setting.
+
+**WHAT SURVIVES, quote these separately:**
+1. **Feasibility does the real work and is untouched** — Part 5's 5-of-8190 at
+   n=4, none at n=3. A genuine structural zero-parameter filter.
+2. Among **NON-EMPTY** gamma-gamma words of <= 12 vertices on four strands,
+   `(v0 v1)^2` is the strict minimiser with the minimum ATTAINED. True about a
+   RESTRICTED set; **not** SDPSelected.
+
+So the arc does NOT have a complete derived selection. It has a derived
+*filter* (feasibility) and no derived *selector*. The open problem is what
+breaks the tie among the 5 — and the corpus's own degeneracy result says the LP
+objective cannot be it.
