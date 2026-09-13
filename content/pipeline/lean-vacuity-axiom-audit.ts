@@ -3664,7 +3664,34 @@ function main() {
       // added to this audit is covered automatically and one belonging to
       // another tool is left alone by default — the safe direction.
       const OWNED = new Set(Object.keys(SEVERITY));
+
+      // SECOND AXIS of the same defect, measured 2026-09-13 (bean `qou-metc`).
+      //
+      // The `foreign` guard below distinguishes "fixed" from "not produced by
+      // this scanner". It does NOT distinguish "fixed" from "NOT SCANNED", and
+      // this loop cannot tell those apart either: an entry whose file the run
+      // never visited looks exactly like one whose candidate stopped flagging.
+      //
+      // Measured cost, on this ledger: a `--review-ledger` run scoped to
+      // `content/quantum-observable-universe/lean` rewrote the file −863/+67,
+      // destroying **106 of 329 entries** — every one of them in a category
+      // this audit DOES produce, so `foreign` preserved none of them. The
+      // ledger spans 22 roots across two papers and only 223 entries live under
+      // that subtree.
+      //
+      // The `--json` path three hundred lines up already states this principle
+      // for itself — *"a partial scan would overwrite it with a smaller count
+      // that reads as a clean corpus"* — and refuses. The ledger path is the
+      // other write path of the same API and never got the rule; that is
+      // taxonomy row 33 (`qou-3ral`), a guard installed on one of several write
+      // paths.
+      //
+      // Scoping the deletion is better than refusing: a partial scan stays
+      // useful (it still resolves stale entries INSIDE what it looked at) and
+      // can no longer touch what it did not look at.
+      const scannedRel = new Set(files.map((f) => relative(REPO_ROOT, f)));
       let foreign = 0;
+      let unscanned = 0;
       for (const k of Object.keys(led.entries)) {
         if (seen.has(k)) continue;
         const cat = k.slice(k.lastIndexOf("::") + 2);
@@ -3672,11 +3699,19 @@ function main() {
           foreign++;
           continue; // another tool's entry — not ours to resolve or delete
         }
+        if (!scannedRel.has(k.slice(0, k.indexOf("::")))) {
+          unscanned++;
+          continue; // this run never opened that file — absence is not evidence
+        }
         delete led.entries[k];
       }
       if (foreign && !quiet)
         console.log(
           `  (preserved ${foreign} entr(ies) in categories this audit does not produce)`,
+        );
+      if (unscanned && !quiet)
+        console.log(
+          `  (preserved ${unscanned} entr(ies) in files this run did not scan)`,
         );
       led.updated_at = nowIso;
       writeFileSync(p, JSON.stringify(led, null, 2) + "\n");
