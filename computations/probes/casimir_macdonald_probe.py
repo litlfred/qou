@@ -67,7 +67,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 from _precision import json_safe_float, NONFINITE_MARKERS  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
@@ -206,7 +206,13 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    # `q_parameter.Q` is a Python FLOAT -- the anchor at 53 bits -- so
+    # `mpf(Q)` promoted 53 bits to 70 dps and every Macdonald norm below was
+    # computed from it. Measured: `fmt(mpf(Q))` reproduces this witness's
+    # committed `parameters.substrate_q` byte for byte, and `is_f64_padded`
+    # says True. `Q_MP` is the same anchor as an mpf, 2.725e-17 away, and the
+    # padding was the symptom rather than the defect.
+    q = Q_MP
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
     geom_mult = pi_sq / 6   # standard Casimir geometric factor

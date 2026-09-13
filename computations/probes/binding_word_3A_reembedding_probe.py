@@ -749,8 +749,13 @@ def main() -> int:
     w.add_data("complete_coupling_destroys_contiguity", dilemma_rows)
     w.add_data("reembedded_segmentation", seg_rows)
     w.add_data("A2_character_comparison", chi_rows)
-    w.add_data("A2_path_sum_cost_s", {"fixed_Hk": fmt(mp.mpf(t_fixed)),
-                                      "three_A": fmt(mp.mpf(t_re))})
+    # `time.monotonic()` returns a float64 and nothing more, so promoting it
+    # to mpf and serializing at OUTPUT_DPS wrote 50 digits of dyadic tail --
+    # `0.12464838699997926596552133560180664062500000000000` for a value that
+    # is 0.12464838699997927. `fmt` sends a float to its natural repr, which
+    # is the whole of what a timer measured. Value-preserving.
+    w.add_data("A2_path_sum_cost_s", {"fixed_Hk": fmt(float(t_fixed)),
+                                      "three_A": fmt(float(t_re))})
     w.add_caveat(
         "scope-(b) for the contiguous-layout coupling graph (P_A and nothing "
         "more; QOU/Hecke/ContiguousCouplingGraph.lean, sorry-free, general A) "

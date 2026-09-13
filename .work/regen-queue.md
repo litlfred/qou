@@ -460,3 +460,85 @@ the exact failure it would be guarding against.
 
 Blocks at ZERO with no baseline — after §17 there is no backlog to tolerate.
 `--self-test` 8/8, including both directions of the tolerance band.
+
+## 19. `casimir_macdonald_probe.py` — the substrate anchor was the FLOAT64 `Q`
+
+**Not a serialization fix.** Every Macdonald norm in this probe was computed
+from the anchor truncated to 53 bits.
+
+`computations/substrate/q_parameter.py` exports both `Q` (a Python **float**)
+and `Q_MP` (the same anchor as an `mpf`, 50 digits). Line 209 read
+
+    q = mpf(Q)
+
+which promotes 53 bits to the ambient 70 dps, and `q` then feeds all seven
+`t`-specializations and every norm in the table. Now `q = Q_MP`.
+
+REPRODUCED WITHOUT RUNNING THE PRODUCER, which is why this could be settled
+while the table holds the checkout: under the producer's own import prologue,
+`fmt(mpf(Q))` returns
+
+    1.10997858275138083783417641825508326292037963867187500000000
+
+and the committed witness's `parameters.substrate_q` is that string truncated
+at OUTPUT_DPS. `is_f64_padded` says True on it and False on `fmt(Q_MP)`.
+Relative gap `Q` vs `Q_MP`: **2.725e-17**.
+
+Accounts for both padded fields the ratchet counts here — `parameters.substrate_q`
+and `data.macdonald_norms_per_t_specialization.t=q⁻¹.(1,)`, which is `1/q` and
+inherits the downcast rather than adding one.
+
+**NUMBERS MOVE at the 17th digit.** This is a precision recovery, not a
+re-render, so the regeneration is its own commit. Same shape as §17.
+
+## 20. `binding_word_3A_reembedding_probe.py` — a wall-clock timing is exactly a float64
+
+`t_fixed = time.monotonic() - t0` is a duration in seconds and carries 53 bits
+and nothing more. Line 752 wrote `fmt(mp.mpf(t_fixed))`, which serializes at
+OUTPUT_DPS and so emitted
+
+    0.12464838699997926596552133560180664062500000000000
+
+for a value that is `0.12464838699997927`. `fmt` routes a `float` to its
+natural repr, so `fmt(float(t_fixed))` writes exactly what the timer measured.
+
+**VALUE-PRESERVING** — `mpf(x) == mpf(float(mpf(x)))` holds for every value
+that reached mpf from a float, so no digit that was ever there is lost. Both
+of this witness's padded fields (`A2_path_sum_cost_s.fixed_Hk` and
+`.three_A`) are this one call.
+
+Worth noting separately and NOT fixed here: a wall-clock duration in
+`data.*` is ephemeral content in a substantive field, so this witness moves
+on every run for no informational reason, and the gate harness's DRIFT-ONLY
+revert (which knows about `durationMs`) cannot recognise it. That is a
+question about the field, not about its serialization.
+
+## 21. `binding_production_route_C_vs_D_probe.py` — RE-RUN ONLY, and a provenance question I could not settle
+
+No source fix owed on this tree, measured two independent ways:
+
+1. `data.{tritium,helium-3}.E_0_MeV` is written by `str(E_0)` where
+   `E_0 = experimental_constants.Q_NEUTRON_MEV`. Reproduced under the
+   producer's own import prologue and **under both import orders** (constants
+   before and after `set_compute_dps()`): the live source yields
+   `0.782333409310000…0012`, which `is_f64_padded` rejects. The committed
+   witness carries `0.78233340930999994977668166029616259038448333740234375`,
+   the exact binary64 expansion — a string this source does not produce.
+2. `B_AME2020_MeV` is `8.481821`, the hand-typed value that
+   `be50b759681` replaced with the registry lookup `_B(1, 3)` → `8.4817962`.
+   The current source cannot emit `8.481821` at all.
+
+**The contradiction, recorded rather than guessed at.** The witness's
+`computedAt` is 2026-09-13T16:22 and its commit (`4c6c247ea76`, a sibling's)
+says it was deliberately re-run with `--atoms tritium,helium-3`. Yet
+`experimental_constants.py` is byte-identical between that commit and HEAD,
+so the import order cannot explain it. The AME evidence says the run happened
+on a tree without `be50b759681` — plausibly the sweep's detached worktree at
+some other base — but I did not confirm which, and a re-run settles it either
+way. If a re-run still writes the padded string, this section is wrong and
+the defect is live.
+
+Earlier state for reference: at `4c6c247ea76^` the field was
+`0.7823334093100222` — a bare 17-digit float, below the padding audit's
+`MIN_SIG_FRAC` and so invisible to it. The 09-07 flip of the experimental
+constants to `mpf` is what made the same downcast visible.
