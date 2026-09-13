@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T09:22:10Z
-updated_at: 2026-09-13T11:12:39Z
+updated_at: 2026-09-13T11:23:32Z
 ---
 
 ## LANDED (PR #7284) — the prune, and it is sorry-free
@@ -141,3 +141,59 @@ BEAN STAYS OPEN. The three gates (even in mubar_123, nonzero at lk = 0, O2)
 are ADMISSIBILITY tests -- many candidate kernels pass all three. Route 2
 still needs a DISCRIMINATING observable. That is the author's call and is
 deliberately not chosen here.
+
+
+## THE LIBRARY HOLDS NO KNOT-ENERGY SOURCE (corpus-grep path 5, both tiers)
+
+Ran path 5 on this arc's own subject matter while merging main up. Result is
+a clean negative, and the first pass reported the OPPOSITE.
+
+SCOPE OF THE CLAIM (per the negatives rule): measured the LIBRARY SURFACE --
+library/*/sections/, library/*/ocr/, and INDEX.md -- not the literature.
+O'Hara 1991, Freedman-He-Wang 1994 and Doyle-Schramm exist; this corpus does
+not hold them. "We have not ingested it" and "it does not exist" are
+different claims and only the first was measured.
+
+STRICT GREP (word-boundary O'Hara, Mobius energy, energy of knots, knot
+energies, ropelength, self-repulsive energ) across BOTH tiers: ZERO
+documents. INDEX.md: zero rows. uploads/ queue: 1 PDF, the astro-ph
+r-process one, nothing pending on this subject.
+
+THE FIRST PASS SAID EIGHT, AND ALL EIGHT WERE FALSE. The alternation had a
+bare unanchored `ohara`, which matched four separate SURNAMES:
+  Manoharan   arxiv-hep-th-9811173v1
+  Shinohara   arxiv-2501.00914v2, m4-24, arxiv-2602.15276v1
+  Nohara      arxiv-1006.1099v3
+  Iohara      arxiv-2404.03933v2
+The seventh (arxiv-0705.1468v1) matched a real string "knot energy" in
+"Knots in the Skyrme-Faddeev model" -- SOLITON energy, a different object,
+so a true string match and a subject false positive. The eighth matched
+nothing on re-check.
+
+NEW BLIND-SPOT CLASS, OPPOSITE DIRECTION TO ALL 35 CATALOGUED ROWS. Every
+row in docs/audits/2026-08-15-detector-blindness-taxonomy.md is a detector
+MISSING something, and the failure mode is a false all-clear. This is a
+detector OVER-matching, and its failure mode is a false COVERED: an agent
+running my first grep concludes "eight documents cover knot energy, path 5
+is satisfied" and stops. That is worse than a miss, because a miss leaves
+you looking and this does not. Substring surnames are the mechanism and
+they are not rare -- four distinct ones in eight hits.
+
+WHY IT MATTERS TO THE ARC, three ways:
+
+1. qou-bn8e (the self/diagonal channel) GENUINELY NEEDS O'Hara's theorem,
+   and the corpus does not hold the paper proving it. That is a gap in the
+   arc, not in this bean.
+2. It raises the value of this PR's section 1 prune. The mutual channel
+   needing no O'Hara result is not merely an economy -- it is the only part
+   of route 2 that can proceed at all without an unheld source.
+3. It is a candidate ANSWER to the discriminating-observable blocker rather
+   than more of the blocker. The knot-energy literature carries exactly the
+   discriminating properties route 2 lacks: Mobius invariance, the
+   Freedman-He-Wang crossing bound E(K) >= 2*pi*c(K) + 4, minimiser
+   existence. Nothing in the corpus separates candidate kernels partly
+   because the corpus holds nothing that would.
+
+NOT ACTED ON. Ingest is owner-gated (main's own log: "ingest the 7 remaining
+uploads (owner-approved)") and is neither a precision fix nor corpus-derived,
+so it falls under the 2026-09-07 ask-first rule. Reported, not done.
