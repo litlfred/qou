@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T08:52:29Z
+updated_at: 2026-09-13T09:10:14Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -756,3 +756,45 @@ title"* — is the control for both, and a `completed` bean is the one that bite
 
 No number in this bean moves. The measurement stands; only the "what is left" claim
 was wrong.
+
+
+## 2026-09-13 — the bond product for the production LAYOUT is now a theorem (#7281)
+
+§"What is NOT established" recorded the identity
+
+    tr_M(W_atom) / tr_M(W_free) = prod over bonds of (z + d_b)
+
+as **measured, not proved** — orders <= 5, A <= 5. The *structural* half of that is
+now proved, sorry-free, in `QOU/Mass/ProductionChainBondProduct.lean`
+(`tr_productionChain_braided`): on any `BraidedTower`, with no `InteriorMarkov`
+hypothesis, the trace factorises as the product of `z + d` over the bonds.
+
+**What made it available was a connection, not new machinery.** Two results landed
+the same day and nobody joined them: `tr_bondWord_of_braided` (#7265) proves the
+bond product on every braided tower *given* `ChainOK`, and `StrandLayoutForcesChain`
+(#7153 arc) proves the inter-nucleon bridges are exactly `sigma_{3k+2}`. The second
+is the index set the first quantifies over, and `ChainOK` then falls to arithmetic
+on `3k+2` — bonds increase (`3k+2 < 3(k+1)+2`), block `k+1` is above bond `k` (its
+generators `3k+3, 3k+4` exceed `3k+2`) and below bond `k+1` (they are under `3k+5`).
+
+## 🛑 This does NOT close the bean, and the half it leaves is the interesting half
+
+**The letters stay measured.** The chain carries an arbitrary scalar `d k` per bond.
+That the production letters are `pp -> 0`, `nn -> -h`, `pn -> d_averaged_weighted`
+is this bean's `letter_d_series` measurement and nothing in #7281 derives it. What
+is derived is that *whatever* those scalars are, the product form holds. So the
+bean moves from "the form is measured and the letters are measured" to "the form is
+a theorem and the letters are measured" — one of two items, and the remaining one
+is where the physics is.
+
+**The blocks are hypotheses too.** `hlow`/`hup` say each nucleon word sits in its own
+strand window, which is what `StrandLayoutForcesChain` establishes about
+`atom_braid_word_3A` — but there is **no Lean model of `atom_braid_word_3A`**, so
+the bridge from the Python producer to a Lean term is not made.
+
+**And it is about a class, not yet about the production trace.** The theorem is
+stated over `OcneanuTrace.MarkovTrace` + `BraidedTower`, and the only such instance
+in the tree is `heckeTowerMarkovTrace`, whose trace factors through a rank-2
+quotient. Instantiating it at the production Ocneanu trace at `z_D = q^3/(q^2+1)`
+needs the colimit bridge `qou-0fmb` (#7274, in flight) — posted there as a
+downstream consumer.
