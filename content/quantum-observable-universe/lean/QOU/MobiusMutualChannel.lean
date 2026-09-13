@@ -261,4 +261,129 @@ theorem innerPairEnergy_le (L : LinkEmbedding M n)
 
 end LinkEmbedding
 
+/-! ## §4  The structural gate: the mutual channel is ORIENTATION-BLIND
+
+`qou-o6ml`'s constraint 2 prunes route (1)'s first ansatz. Two proved facts
+compose: for the Borromean link every pairwise `lk_ij = 0`, so a nonzero `wᵢⱼ`
+must be mediated by the triple invariant `μ̄₁₂₃`; and
+`QOU.BraidsAndKnots.MilnorTripleLinkingMagnus.odd_symmetric_functional_vanishes`
+(sorry-free) shows an exchange-symmetric functional that is ODD in `μ̄₁₂₃`
+vanishes identically, because `μ̄₁₂₃` flips sign under that exchange
+(`mubar_borromean_eq_one` / `mubar_swapped_eq_neg_one`). So an admissible `wᵢⱼ`
+must be EVEN in `μ̄₁₂₃`, and the linear ansatz is dead
+(`linear_coefficient_must_vanish`).
+
+**The Möbius mutual channel clears that gate, and not narrowly.** Its integrand
+is a function of the separation alone — no orientation, no sign, no ordering of
+the strands enters it. So the exchange that flips `μ̄₁₂₃` leaves the energy
+pointwise unchanged: the channel is not merely even in `μ̄₁₂₃`, it is *blind* to
+it, which is strictly stronger than the constraint demands.
+
+This section proves that blindness as an honest invariance theorem rather than
+asserting it. `reverse` reparametrises every component backwards — the
+operation under which an oriented invariant changes sign — and the energy comes
+through unchanged. The proof is a genuine change of variables, not an unfolding.
+
+WHAT IS AND IS NOT ESTABLISHED. This shows the functional *survives* the
+constraint that killed the linear-in-`μ̄` ansatz. It does NOT show the
+functional is correct, and it is not evidence for route (2) over any other
+orientation-blind candidate. `κ(A)` cannot adjudicate that (PR #7080). -/
+
+namespace KnotEmbedding
+
+variable {M : Type*}
+
+/-- Reverse a component's parametrisation, `s ↦ 1 - s`. Every distance field is
+    precomposed; every law carries over because the substitution is an
+    involution of the parameter interval. -/
+def reverse (k : KnotEmbedding M) : KnotEmbedding M where
+  curve := fun s => k.curve (1 - s)
+  arcLengthDist := fun s t => k.arcLengthDist (1 - s) (1 - t)
+  arcLength_symm := fun s t => k.arcLength_symm (1 - s) (1 - t)
+  arcLength_nonneg := fun s t => k.arcLength_nonneg (1 - s) (1 - t)
+  ambientDist := fun s t => k.ambientDist (1 - s) (1 - t)
+  ambient_symm := fun s t => k.ambient_symm (1 - s) (1 - t)
+  ambient_nonneg := fun s t => k.ambient_nonneg (1 - s) (1 - t)
+  chord_le_arc := fun s t => k.chord_le_arc (1 - s) (1 - t)
+
+end KnotEmbedding
+
+namespace LinkEmbedding
+
+variable {M : Type*} {n : ℕ}
+
+/-- Reverse every component of a link simultaneously — the operation under
+    which an oriented invariant such as `μ̄₁₂₃` changes sign. -/
+def reverse (L : LinkEmbedding M n) : LinkEmbedding M n where
+  component := fun i => (L.component i).reverse
+  sep := fun i s j t => L.sep i (1 - s) j (1 - t)
+  sep_symm := fun i s j t => L.sep_symm i (1 - s) j (1 - t)
+  sep_nonneg := fun i s j t => L.sep_nonneg i (1 - s) j (1 - t)
+  disjoint := fun i j hij s t => L.disjoint i j hij (1 - s) (1 - t)
+  sep_self := fun i s t => L.sep_self i (1 - s) (1 - t)
+
+@[simp] theorem reverse_sep (L : LinkEmbedding M n) (i j : Fin n) (s t : ℝ) :
+    (L.reverse).sep i s j t = L.sep i (1 - s) j (1 - t) := rfl
+
+@[simp] theorem mutualIntegrand_reverse (L : LinkEmbedding M n) (i j : Fin n)
+    (s t : ℝ) :
+    (L.reverse).mutualIntegrand i j s t = L.mutualIntegrand i j (1 - s) (1 - t) :=
+  rfl
+
+/-- **The pair energy is blind to orientation reversal.**
+
+    A genuine change of variables `u = 1 - t` across the unit parameter
+    interval, which the substitution preserves. This is the gate: the exchange
+    that sends `μ̄₁₂₃ ↦ −μ̄₁₂₃` leaves this functional's value untouched, so it
+    is even in `μ̄₁₂₃` — indeed independent of it — and is not the odd
+    functional `odd_symmetric_functional_vanishes` annihilates. -/
+theorem innerPairEnergy_reverse (L : LinkEmbedding M n) (i j : Fin n) (s : ℝ) :
+    (L.reverse).innerPairEnergy i j s = L.innerPairEnergy i j (1 - s) := by
+  unfold innerPairEnergy
+  simp only [mutualIntegrand_reverse]
+  rw [intervalIntegral.integral_comp_sub_left
+    (fun u => L.mutualIntegrand i j (1 - s) u) 1]
+  norm_num
+
+/-! ### The lower bound — no cancellation is available
+
+Constraint 2 kills a functional that can *vanish*. The bound below is the
+positive half: with the components confined to a bounded region the pair energy
+is bounded strictly AWAY from zero, so there is no configuration in which it
+cancels. Both bounds are distances, so no signed quantity enters either. -/
+
+/-- A link is **confined to diameter `D`** when no two points on distinct
+    components are more than `D` apart — automatic for a link in a bounded
+    region, and carried explicitly for the same reason the lower gap is. -/
+def HasBoundedSeparation (L : LinkEmbedding M n) (D : ℝ) : Prop :=
+  0 < D ∧ ∀ i j, i ≠ j → ∀ s t, L.sep i s j t ≤ D
+
+/-- **The pair energy is bounded away from zero.**
+
+    With `innerPairEnergy_le` this brackets the per-pair contribution into
+    `[1/D², 1/δ²]`, both endpoints positive and both built from distances
+    alone. A functional pinned inside a strictly positive interval cannot
+    cancel, whatever the link's orientation data does. -/
+theorem innerPairEnergy_ge (L : LinkEmbedding M n)
+    {D : ℝ} (hD : HasBoundedSeparation L D) {i j : Fin n} (hij : i ≠ j)
+    (s : ℝ) (hmeas : Measurable fun t => L.mutualIntegrand i j s t)
+    {δ : ℝ} (hδ : HasUniformSeparation L δ) :
+    1 / D ^ 2 ≤ L.innerPairEnergy i j s := by
+  obtain ⟨hDpos, hub⟩ := hD
+  unfold innerPairEnergy
+  have hint := L.mutualIntegrand_intervalIntegrable hδ hij s 0 1 hmeas
+  have hmono : (∫ _t in (0:ℝ)..1, 1 / D ^ 2)
+      ≤ ∫ t in (0:ℝ)..1, L.mutualIntegrand i j s t := by
+    apply intervalIntegral.integral_mono_on (by norm_num) intervalIntegrable_const
+      hint
+    intro t _
+    have hpos : 0 < L.sep i s j t := L.disjoint i j hij s t
+    have hsq : L.sep i s j t ^ 2 ≤ D ^ 2 := by
+      have := hub i j hij s t; nlinarith
+    unfold mutualIntegrand
+    exact one_div_le_one_div_of_le (by positivity) hsq
+  simpa using hmono
+
+end LinkEmbedding
+
 end QOU
