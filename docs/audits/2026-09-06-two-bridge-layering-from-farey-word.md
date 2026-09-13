@@ -531,6 +531,71 @@ rather than `q`: the unit factors' pole families are `c_b ∓ u_G/2 + ibm + ib�
 `σ₁σ₁` bilinear closes to integer powers of `ζ = x_G` (as the derived index of §3f has) is exactly what Part
 12b must decide.
 
+## 3k. Residues: the 5₂ index certified from the state integral alone; the pretzel's level-2 pairing is the open item (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_residue_blocks_probe.py`](../../computations/probes/aomega_m3_pretzel_residue_blocks_probe.py)
+(bean `qou-x3iv`, Part 12b). Three failing tests are kept deliberately; they record a scope-(a) negative.
+
+**The residue calculus, derived and validated.** GK `arxiv-1304.2705v1` Lemma 2.1 gives `Φ_b` near a pole
+`x_{m,n} = c_b + ibm + ib⁻¹n` as `K_{m,n}·φ_m·φ̃_n/(1 − e^{2πb⁻¹x})`. Applied to the reduced integrals of §3i–§3j,
+every pole family contributes
+
+$$
+{-}\frac{b}{2\pi}\,\frac{(q;q)_\infty}{(\tilde q;\tilde q)_\infty}\;e^{-A\pi i(u_F-c_b)^2}\;w_F\;
+\Bigl(\sum_m S_F(m;q,x)\Bigr)\Bigl(\sum_n S_F(n;\tilde q^{-1},\tilde x)\Bigr),
+$$
+
+with **one** summand function `S_F` per family (the `q̃`-side is the same summand at `(q̃⁻¹, x̃)`, made
+convergent by GGM (106)), and the *same* constant for every family — the powers of `(q)_∞/(q̃)_∞` from `K`
+cancel against the `φ`'s however many dilogarithms there are. `w_F = 1` for a unit factor's poles. For the
+pretzel's doubled factor `Φ_b(2x − c_b)` the residue is halved (`w = ½`), its lattice `c_b + (ibm + ib⁻¹n)/2`
+splits by the parities `(ε, δ)` of `(m, n)`, the Gaussian cross term is `e^{πimn} = (−1)^{εδ}`, the `q`-side
+carries `q^{3ε/4}` with products shifted by `q^{ε/2}` and evaluated at `ξ = (−1)^δ x^{1/2}`, and the `q̃`-side
+mirrors this at `(−1)^ε x̃^{1/2}`:
+
+| knot | family | `S_F(m)` |
+|---|---|---|
+| 5₂ (`I_{1,3}(u)`) | pole of `Φ_b(x + u_k)`, `u_k ∈ (u,0,−u)` | `(−1)^m q^{m(m+1)/2} x_k^{−m} Π_{j≠k}(q^{m+1}x_j/x_k;q)_∞/(q;q)_m` |
+| pretzel | `Φ_b(x ± u/2)` | `q^{m(m+1)} x^{∓m} (q^{m+1}x^{∓1};q)_∞ (q^{2m+1}x^{∓1};q)_∞/(q;q)_m` |
+| pretzel | `Φ_b(2x − c_b)`, parity `ε` | `(−1)^ε q^{m'(m'+1)+εm'+3ε/4} (q^{m'+1+ε/2}ξ;q)_∞ (q^{m'+1+ε/2}ξ⁻¹;q)_∞/(q;q)_{2m'+ε}` |
+
+Validated numerically against the integrals themselves (mpmath, GK's contour, fractional nome powers taken from
+the *defining* logarithm — at `b = e^{iπ/6}` the nome is a negative real and a principal `q^{3/4}` picks the wrong
+root): relative error `5.6·10⁻²⁰` for 5₂ and `7.8·10⁻¹⁹` for the pretzel, and every individual pole of every
+family checked by a small contour integral. Dropping the `(−1)^{εδ}` coupling moves the pretzel sum by `2·10⁻⁴`;
+it is load-bearing. (The pretzel integral converges on `ℝ + iε` only for `ε > Im c_b/2`, because the doubled
+factor's `−c_b` shift makes it grow like `e^{2π(b+b⁻¹)x}`.)
+
+**5₂: the index, certified from DG (5.2) alone.** The bare-block fusion `Σ_k S_k(x;q)·S_k(x⁻¹;q⁻¹)` (no θ's, no
+Gaussians; the `q⁻¹` evaluation by (106) and `(q;q⁻¹)_n = (−1)^n q^{−n(n+1)/2}(q;q)_n`) equals the derived
+`σ₁σ₁` rotated index of §3f **exactly to `q³`** at `ζ = x`:
+`1 − (ζ² + 3ζ + 4 + 3/ζ + 1/ζ²) q + (ζ³ + ζ² − 1 + ζ⁻² + ζ⁻³) q² + (ζ⁴ + 4ζ³ + 10ζ² + 14ζ + 16 + …) q³`. This is
+GGM (21) for 5₂ reproduced from the Neumann–Zagier datum and residues, not transcribed from their (316) — and it
+holds on the *mirror* integral `I_{1,3}`, confirming that the index does not see orientation. That the θ-factors
+of the Gaussians cancel in the fusion is derived, not assumed: by GGM (111a)/(112) the family Gaussians are
+`θ(X;q)^{−2}θ(X̃;q̃⁻¹)^{−2}·X^{∓1}X̃^{∓1}` relative to family 3, and `θ(X;q)^{−2}θ(X⁻¹;q⁻¹)^{−2} = 1` by (109).
+
+**The pretzel: a scope-(a) negative, with the obstruction exhibited.** The same bare-block fusion, with the
+θ-consistent family weights `1, 1, ½(−1)^{εδ}`, does **not** give the derived pretzel index — for any of the
+eight level-2 branches of the fusion (`q̃^{1/4} ↦ ω q^{−1/4}`, `ω⁴ = 1`; `x̃^{1/2} ↦ σ x^{−1/2}`), at `ζ ∈ {x, x^{1/2}}`
+or their mirrors. Fractional `q`-powers survive (`q^{3/4}, q^{5/4}, …`), and the obstruction is already at order
+`q⁰`: the three families contribute
+
+$$
+\frac{1}{(1-X^2)^2},\qquad \frac{X^4}{(1-X^2)^2},\qquad -\frac{X}{2(1-X)^2},\qquad X = x^{1/2},
+$$
+
+which sum to `(2X² + 3X + 2)/(2(1+X)²)`, and **no constant reweighting** `α, β, γ` of these three pieces equals `1`
+(the `X` and `X³` terms of `(1 − X²)²` cannot be produced; checked as a linear system). So the level-2 pairing of
+the parity-split blocks is not a reweighting of the naive families: the true holomorphic blocks of a level-2 knot
+must pair the `(ε, δ)` pieces differently (plausibly through the two branches `±X` of `x^{1/2}`), and the held
+sources do not print that rule — BDP14, which GGM cite for (19), is not in the library.
+
+**What this fixes and what it leaves.** Fixed: the pretzel state integral as an explicit sum of six
+`(q^{1/4}, x^{1/2})`-series bilinears, exact and validated. Open: the fusion rule at level 2, hence the
+`σ₁σ₁` certification and, downstream, `qou-m3ad` item 1 for the pretzel. The 5₂ certification is the
+positive result of this part and is independent of GGM's printed blocks.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
