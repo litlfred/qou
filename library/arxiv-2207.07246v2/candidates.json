@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2207.07246v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "91e70e5fe39e07a55eb3fbf1eebcbbc4e2e354224ed9eb6adf9272de24c970ec",
+  "file": "2207.07246v2.pdf"
+ },
+ "provenance": {
+  "title": "Path Integral Quantum Monte Carlo Method for Light Nuclei",
+  "authors": "Rong Chen",
+  "arxiv": {
+   "id": "2207.07246",
+   "version": "2",
+   "primary_class": "nucl-th",
+   "stamp_date": "18 Jul 2022"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

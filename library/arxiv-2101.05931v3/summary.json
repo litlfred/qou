@@ -3,10 +3,10 @@
  "doc_id": "arxiv-2101.05931v3",
  "source_sha256": "41eaa81b97ede8e9",
  "brief": "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type.",
- "extended": "**CATEGORICAL BRAID GROUP ACTIONS**\n\n*AND CACTUS GROUPS*\n\n26 pp, 20 sections.\n\n**Abstract.** Let g be a semisimple simply-laced Lie algebra of ﬁnite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence Θ w0 : Db(Cµ) → Db(Cw0(µ)) where µ is a weight of V , and Θ w0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that Θ w0 is a perverse equivalence with respect to a Jordan-H¨ older ﬁltr ation of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V .\n\n**Outline.** Front matter; 1 Introduction; 2.1 The quantum group; Acknowledgement; 2 Background on quantum groups; 2.2 Braid group actions on integrable represen; 3.1 Notation; 3.3 Crystals; 3.5 The categorical braid group action; 4 Perverse equivalences; 4.2 Derived categories of graded abelian categ; 5 Some commutation relations; 5.2 Marked words; 7.1 Cactus groups; 7 Crystalising the braid group action; 7.2 The cactus group action arising from Ricka; 7.3 Reconciling the two cactus group actions; 8 Examples and Applications",
+ "extended": "**CATEGORICAL BRAID GROUP ACTIONS**\n\n*AND CACTUS GROUPS*\n\n26 pp, 20 sections.\n\n**Abstract.** Let g be a semisimple simply-laced Lie algebra of ﬁnite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence Θ w0 : Db(Cµ) → Db(Cw0(µ)) where µ is a weight of V , and Θ w0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that Θ w0 is a perverse equivalence with respect to a Jordan-H¨ older ﬁltr ation of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V .\n\n**Outline.** Front matter; 1 Introduction; 2.1 The quantum group; Acknowledgement; 2 Background on quantum groups; 2.2 Braid group actions on integrable represen; 3.1 Notation; 3.3 Crystals; 3.5 The categorical braid group action; 4 Perverse equivalences; 4.2 Derived categories of graded abelian categ; 5 Some commutation relations; 5.2 Marked words; 7.1 Cactus groups; 7 Crystalising the braid group action; 7.2 The cactus group action arising from Ricka; 7.3 Reconciling the two cactus group actions; 8 Examples and Applications\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A. [Theorem 6.4 & Corollary 6.7] Let C be a categorical representation of Uq(g) cate-\n- Theorem: B. [Theorem 6.8] Let C be a categorical representation of Uq(g), and let µ be any weight.\n- Theorem: C. [Theorem 7.7 & Theorem 7.12] Let C be a categorical representation of Uq(g), cat-\n- Theorem 3.6: Let C be a categorical representation of Uq(g). Then there exists a ﬁltration by\n- Theorem 3.11: [16, Theorem 6.4] For any µ,i , Θ i\n- Theorem 3.12: [11, Theorem 6.3] The Rickard complexes satisfy the braid relations:",
  "tokens": {
   "brief": 23,
-  "extended": 353
+  "extended": 497
  },
  "sections": [
   {
@@ -114,7 +114,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

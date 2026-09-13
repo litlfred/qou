@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-nucl-th-0103005v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c2aaa21b51d7bc107ff141a37385ce66140f1069f1df3e8c6bbf9441affe3ba2",
+  "file": "0103005v2.pdf"
+ },
+ "provenance": {
+  "title": "Quantum Monte Carlo Calculations of Light Nuclei",
+  "authors": "Steven C. Pieper and R. B. Wiringa",
+  "arxiv": {
+   "id": "nucl-th/0103005",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "6 Mar 2001"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

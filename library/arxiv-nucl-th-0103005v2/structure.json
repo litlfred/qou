@@ -1,0 +1,549 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-nucl-th-0103005v2",
+ "source": {
+  "file": "0103005v2.pdf",
+  "sha256": "c2aaa21b51d7bc107ff141a37385ce66140f1069f1df3e8c6bbf9441affe3ba2",
+  "bytes": 547063,
+  "pages": 43,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "nucl-th/0103005",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "6 Mar 2001"
+  },
+  "doi": null,
+  "title": "Quantum Monte Carlo Calculations of Light Nuclei",
+  "authors_raw": "Steven C. Pieper and R. B. Wiringa",
+  "title_lines": [
+   "Quantum Monte Carlo Calculations of Light",
+   "Nuclei"
+  ],
+  "abstract": "Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear Hamiltonians that \ufb01t nucleon-nucleon scattering data. At present, results for more than 30 di\ufb00erent ( J \u03c0 ; T ) states, plus isobaric analogs, in A \u2264 8 nuclei have been obtained with an excellent reproduction of the exp erimental energy spectrum. These microscopic calculations show that nuclear structure, including both single-particle and clustering aspects, can be explained starting from elementary two- and three-nucleon interactions. Various density and momentum distributions, electromagnetic formfactors, and spectroscopic factors have also been computed, as well as electroweak capture reaction s of astrophysical interest. With permission from the Annual Review of Nuclear and Partic le Science. Final version of this material is scheduled to appear in the Annual Review of Nucle ar and Particle Science Vol. 51, to be published in December 2001 by Annual Reviews, http://Ann ualReviews.org.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181025093741-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:nucl-th/0103005v2  6 Mar 2001"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "HAMILTONIAN AND CURRENTS",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "( 1",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(\u03c4 i \u00b7 \u03c4 j + \u03c4 j \u00b7 \u03c4 k + \u03c4 k \u00b7 \u03c4 i) = 4PT =3/2 . (17)",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "V ARIATIONAL MONTE CARLO",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "GREEN\u2019S FUNCTION MONTE CARLO",
+   "page": 15,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 2,
+   "title": "MeV below these. The GFMC very rapidly makes a large impro vement on",
+   "page": 19,
+   "source": "inferred",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "MeV. This rapid improvement corresponds to the removal of s mall admixtures of",
+   "page": 19,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "ENERGY RESULTS",
+   "page": 20,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+   "page": 27,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
+   "page": 35,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
+   "page": 36,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "NEUTRON DROPS",
+   "page": 39,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "CONCLUSIONS AND OUTLOOK",
+   "page": 39,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 40,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Nollett KM. nucl-th/0102022, submitted to Phys. Rev. C",
+   "page": 41,
+   "source": "inferred",
+   "number": "16"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1364,
+   "n_words": 195
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6972,
+   "n_words": 1296
+  },
+  {
+   "id": "sec-001-4-steven-c-pieper-and-r-b-wiringa",
+   "number": "4",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2849,
+   "n_words": 472
+  },
+  {
+   "id": "sec-002-2-hamiltonian-and-currents",
+   "number": "2",
+   "title": "HAMILTONIAN AND CURRENTS",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 477,
+   "n_words": 91
+  },
+  {
+   "id": "sec-003-4-1",
+   "number": "4",
+   "title": "( 1",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1338,
+   "n_words": 289
+  },
+  {
+   "id": "sec-004-6-steven-c-pieper-and-r-b-wiringa",
+   "number": "6",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4434,
+   "n_words": 878
+  },
+  {
+   "id": "sec-005-3-\u03c4-i-\u03c4-j-\u03c4-j-\u03c4-k-\u03c4-k-\u03c4-i-4pt-32-17",
+   "number": "3",
+   "title": "(\u03c4 i \u00b7 \u03c4 j + \u03c4 j \u00b7 \u03c4 k + \u03c4 k \u00b7 \u03c4 i) = 4PT =3/2 . (17)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 166,
+   "n_words": 31
+  },
+  {
+   "id": "sec-006-8-steven-c-pieper-and-r-b-wiringa",
+   "number": "8",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2322,
+   "n_words": 446
+  },
+  {
+   "id": "sec-007-3-v-ariational-monte-carlo",
+   "number": "3",
+   "title": "V ARIATIONAL MONTE CARLO",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2218,
+   "n_words": 449
+  },
+  {
+   "id": "sec-008-10-steven-c-pieper-and-r-b-wiringa",
+   "number": "10",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 8944,
+   "n_words": 1715
+  },
+  {
+   "id": "sec-009-14-steven-c-pieper-and-r-b-wiringa",
+   "number": "14",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 4233,
+   "n_words": 784
+  },
+  {
+   "id": "sec-010-4-greens-function-monte-carlo",
+   "number": "4",
+   "title": "GREEN\u2019S FUNCTION MONTE CARLO",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1053,
+   "n_words": 224
+  },
+  {
+   "id": "sec-011-16-steven-c-pieper-and-r-b-wiringa",
+   "number": "16",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4472,
+   "n_words": 851
+  },
+  {
+   "id": "sec-012-18-steven-c-pieper-and-r-b-wiringa",
+   "number": "18",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3750,
+   "n_words": 677
+  },
+  {
+   "id": "sec-013-15-mev-below-these-the-gfmc-very-rapidly-makes-a",
+   "number": "1.5",
+   "title": "MeV below these. The GFMC very rapidly makes a large impro vement on",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 80,
+   "n_words": 18
+  },
+  {
+   "id": "sec-014-8-mev-this-rapid-improvement-corresponds-to-the",
+   "number": "8",
+   "title": "MeV. This rapid improvement corresponds to the removal of s mall admixtures of",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 991,
+   "n_words": 183
+  },
+  {
+   "id": "sec-015-20-steven-c-pieper-and-r-b-wiringa",
+   "number": "20",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1617,
+   "n_words": 288
+  },
+  {
+   "id": "sec-016-5-energy-results",
+   "number": "5",
+   "title": "ENERGY RESULTS",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 4626,
+   "n_words": 790
+  },
+  {
+   "id": "sec-017-22-steven-c-pieper-and-r-b-wiringa",
+   "number": "22",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2760,
+   "n_words": 496
+  },
+  {
+   "id": "sec-018-24-steven-c-pieper-and-r-b-wiringa",
+   "number": "24",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 4835,
+   "n_words": 888
+  },
+  {
+   "id": "sec-019-26-steven-c-pieper-and-r-b-wiringa",
+   "number": "26",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2924,
+   "n_words": 508
+  },
+  {
+   "id": "sec-020-6-density-and-momentum-distributions",
+   "number": "6",
+   "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1790,
+   "n_words": 298
+  },
+  {
+   "id": "sec-021-28-steven-c-pieper-and-r-b-wiringa",
+   "number": "28",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 4344,
+   "n_words": 757
+  },
+  {
+   "id": "sec-022-30-steven-c-pieper-and-r-b-wiringa",
+   "number": "30",
+   "title": "Steven C. Pieper and R. B. Wiringa",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 35,
+   "n_chars": 9680,
+   "n_words": 1825
+  },
+  {
+   "id": "sec-023-7-low-energy-nucleon-nucleus-scattering",
+   "number": "7",
+   "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2828,
+   "n_words": 482
+  },
+  {
+   "id": "sec-024-8-astrophysical-electroweak-reactions",
+   "number": "8",
+   "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 39,
+   "n_chars": 5712,
+   "n_words": 986
+  },
+  {
+   "id": "sec-025-9-neutron-drops",
+   "number": "9",
+   "title": "NEUTRON DROPS",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 1962,
+   "n_words": 329
+  },
+  {
+   "id": "sec-026-10-conclusions-and-outlook",
+   "number": "10",
+   "title": "CONCLUSIONS AND OUTLOOK",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 3757,
+   "n_words": 611
+  },
+  {
+   "id": "sec-027-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 1270,
+   "n_words": 214
+  },
+  {
+   "id": "sec-028-16-nollett-km-nucl-th0102022-submitted-to-phys-r",
+   "number": "16",
+   "title": "Nollett KM. nucl-th/0102022, submitted to Phys. Rev. C",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 5458,
+   "n_words": 943
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 30,
+  "chars_total": 99226
+ }
+}

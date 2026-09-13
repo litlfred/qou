@@ -22,8 +22,15 @@ binding (that needs the open Δ_λ normalization — see the audit) and asserts 
 3. `magnus_pairing_sign_indefinite` — a single commutator `⁅A,B⁆`, paired against two
    different densities, realizes BOTH a strictly positive and a strictly negative trace. So
    the linear pairing genuinely ESCAPES the non-negativity of (2): unlike `tr(F·Fᵀ)`, it is
-   not sign-fixed. This is the exact structural content the probe observed (2 partitions
-   positive, 7 negative). Concrete `Fin 2` integer witnesses.
+   not sign-fixed. This is the exact structural content the probe observed (4 partitions
+   positive, 5 negative, 2 exactly zero at A=2). Concrete `Fin 2` integer witnesses.
+
+   That split read "2 positive, 7 negative" until 2026-09-13 — the pre-ruling figure. The
+   2026-09-05 intra-nucleon ordering ruling (bean `qou-hu1f`) made the borromean word
+   `(σ₀σ₁⁻¹)³` canonical in place of the grouped one, which changes the per-partition
+   traces. Only the count moved: sign-indefiniteness, the property this file formalizes,
+   holds under both words AND under either partition-weight family (bean `qou-za3q`),
+   because it is a statement about a commutator's trace pairing, not about the weight.
 
 Together: (2) traps the quadrature at `≥ 0`; (1)+(3) show the linear Magnus pairing is free of
 that trap. That is the whole reason `qou-dp32` is LIVE where the quadrature route `qou-jqof`

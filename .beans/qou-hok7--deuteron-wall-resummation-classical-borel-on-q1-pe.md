@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T06:28:19Z
+updated_at: 2026-09-13T09:24:16Z
 ---
 
 
@@ -660,3 +660,111 @@ against the inflated ~3x. **Surviving:** R1/R2 of #7081; #7093's three refutatio
 (brute-forced, independent of `Hhat`); and the coupling factor shrinking with `l`.
 
 Status unchanged: **do not close.** The Theta(sqrt n) coefficient and the q-Borel negative stay open.
+
+
+## 2026-09-13 — the Θ(√n) coefficient is near the STAIRCASE end; the bracket's width is bound slack
+
+The item this bean lists as still open — "the substrate-side reading of REV's Θ(√n) coefficient …
+which is not identified" — is narrowed, not closed. Bracket before:
+
+    5.09595 = A*sqrt2         staircase limit, proved (#7010)          LOWER
+      ?                       lim M_n/sqrt(n)                          OPEN
+    8.72769 = C*sqrt2         row-tangent band, lower edge (#7185)     UPPER
+    8.80147 = (C+L/2)*sqrt2   its r = k envelope
+
+**Method: local search over beta-sets at fixed n, not enumeration.** `M_n` is a max over shapes, so
+ANY shape's exact `R − E` is a lower bound on it; the staircase is just one shape. Moves shift one
+`beta_i` by ±1 with a compensating ∓1, keeping `n` and `l` fixed. One-sided by construction: a find
+RAISES the lower end and a miss proves nothing about the upper.
+
+    n       k    stair R    best found   l   l-k   /sqrt(n)   excess
+    36      8    17.63209   17.773921    9    1     2.96232   1.00804
+    78     12    31.91046   32.601639   14    2     3.69141   1.02166
+    136    16    46.29905   47.515487   18    2     4.07442   1.02627
+    300    24    75.12050   77.075526   27    3     4.44996   1.02603
+    630    35   114.75740  117.133810   38    3     4.66672   1.02071
+
+**Two findings.**
+
+1. **The maximiser is NOT the staircase.** It is beaten at every triangular `n` tested, by a shape
+   sitting `l − k` = 1, 2, 2, 3, 3 rows above it. So the coefficient is strictly above `A*sqrt2`
+   in the limit unless that excess vanishes.
+2. **But the excess is only ~2.4 % and FLAT in n** (0.80 %, 2.17 %, 2.63 %, 2.60 %, 2.07 %), which
+   projects a coefficient near **5.22**. Against the bound's 8.728, **the ~1.7× width of the
+   bracket is mostly SLACK IN THE ROW-TANGENT BOUND, not headroom in `M_n`.** The next gain is in
+   tightening the bound, not in searching harder for shapes.
+
+**Why the excess is readable at n where the ratios are not.** The `/sqrt(n)` column is still
+climbing (2.96 → 4.67) exactly as #7065 measured for the staircase alone (4.466 at n = 435 against
+its proved 5.0959), so a finite-n ratio below 5.096 is expected and is NOT evidence against the
+limit. The excess is a RATIO of two such sequences, in which that common slow convergence largely
+cancels — which is the whole reason this measurement works at n ≤ 630.
+
+**Limits, stated.** A projection from five points, not a limit. n = 1275 was attempted and cut: the
+search recomputes the value in full (`O(l^2)`) per move rather than incrementally, so it did not
+finish in ~9 min; making it incremental is the cheap way to extend the table.
+
+**Discipline check (owner request, same day).** Verified across the whole `qou-hok7` cone —
+`rev_beta_bound_polynomial_max`, `rev_pair_term_even_gap`, `rev_coupling_factor_growth`,
+`rev_sharpness_discriminator_control`, `rev_max_large_n_scan`, `hmin_closed_form_…`,
+`zn_hook_length_closed_form`, and the sibling's `rev_sqrt_n_upper_bound`:
+
+- **Proton pin, by VALUE not by table**: `Q_50_DIGIT_STR = 1.1099785827513808…`; none of the eight
+  stems appears in `q0_anchor_manifest.json`'s `ideal_muon` (19 entries), so all default to proton.
+- **Convention C/D does not arise**: no Markov parameter `z` appears anywhere in this cone.
+  `R_λ = Σ_c ε_{h(c)}` is over HOOK LENGTHS; the C/D question is about the Markov trace parameter
+  and is simply not a degree of freedom here.
+- **No float64**: no `float(`, `statistics.`, `math.sqrt` or numpy in any of the eight.
+  `zn_hook_length_closed_form` is exact-integer polynomial arithmetic and is anchor-free by design.
+
+Status unchanged: **do not close.** The coefficient is narrowed, not identified; the q-Borel
+negative (2026-08-21) is untouched.
+
+
+### 2026-09-13 — the arc's assertions are now Lean, and (I') was already in the corpus (PR #7282)
+
+**Claim.** The three identities this arc runs on are proved sorry-free, and the
+central one cost four lines because the corpus already had it in a different
+register.
+
+`content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean`,
+11 declarations, 0 `sorry`, axioms `[propext, Classical.choice, Quot.sound]` on all 11.
+
+| | |
+|---|---|
+| **(I')** `sum_hookF_add_pairF` | `Σ_c g(h(c)) + Σ_{i<j<L} g(β_i − β_j) = Σ_{i<L} Σ_{m≤β_i} g(m)`, any `g` into an `AddCommMonoid` |
+| **(III)** `two_mul_sum_betaR` | `2 Σ_{i<L} β_i = 2n + L(L−1)` |
+| **(II)** `two_mul_sum_hookZ_betaForm` | `2 Σ_c h(c) = Σ_i β_i(β_i+1) − 2 Σ_{i<j}(β_i − β_j)` |
+| **(II) again** `sum_hookZ_betaForm_of_hookMultiset` | same statement, **independent proof** |
+
+all for **every** padding `L ≥ ℓ(μ)`, not only `L = ℓ(μ)`.
+
+**The finding worth carrying forward.** `QOU.SchurWeyl.hookSide_betaR` already
+states, for an arbitrary `CommMonoid`,
+`∏_c f(h(c)) · ∏_{i<j<L} f(β_i − β_j) = ∏_{i<L} descFactF f β_i` — the
+divisor-free hook-length formula with its Vandermonde denominator. Instantiating
+`M = Multiplicative N` turns every product into a sum and **is** (I'). So the
+one-body/two-body split this arc has treated as its own structural input is the
+hook-length formula, and the corpus proved it months ago on the product side.
+`SchurWeyl.betaR L μ i = μ.rowLen i + (L−1−i)` is likewise *already* this arc's
+`β_i`; the Lean reuses it rather than redefining it.
+
+**What the corpus did NOT have**: any identity about β-number **sums**. A grep
+for a sum over `betaNum`/`betaR` returns nothing. That gap is what this file closes.
+
+**(II) now has two proofs sharing no step** — one through `HookSumClosedForm`'s
+`2Σ_h = p₂(λ) + p₂(λ')` (a reflection argument over the cells) plus a termwise
+polynomial identity and the vanishing `−3Σm² + (2L−1)Σm = 0` that *is* the
+padding-independence; the other through the hook multiset, needing no column
+bound `M`. Agreement checks both, and checks the numerical probe (#7070, all
+partitions of `n ≤ 16`) that motivated them.
+
+**Implications for this bean.** This formalizes the **foundation**, not the open
+question. The Θ(√n) coefficient is still open: #7270 brackets it from the bound
+side at `[8.7277, 8.8015]` and #7279 puts the achievable side near ≈5.22, so most
+of that 1.7× width is slack in the *bound*. Tightening it is an argument about
+`Σ_i F(β_i) − Σ_{i<j} ε(β_i − β_j)` — and that expression is now a Lean theorem
+rather than a numerical observation, so a Lean-side bound on it is a route that
+did not exist yesterday.
+
+**Do not close this bean.**

@@ -1,0 +1,30 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2007.15570v1",
+ "source_sha256": "6e46f4346a29fd83",
+ "brief": "A quantum Monte Carlo based approach to intranuclear cascades — 2 sections: Front matter; A quantum Monte Carlo based approa",
+ "extended": "**A quantum Monte Carlo based approach to intranuclear cascades**\n\n*Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b*\n\n14 pp, 2 sections.\n\n**Outline.** Front matter; A quantum Monte Carlo based approach to intran",
+ "tokens": {
+  "brief": 31,
+  "extended": 65
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-a-quantum-monte-carlo-based-approach-to-intranuc",
+   "title": "A quantum Monte Carlo based approach to intranuclear cascades",
+   "pages": "1-14"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

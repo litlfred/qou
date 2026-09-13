@@ -3,10 +3,10 @@
  "doc_id": "arxiv-1304.0323v3",
  "source_sha256": "92e2b9dc876e1a52",
  "brief": "SYMMETRIC QUIVER HECKE ALGEBRAS — Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q).",
- "extended": "**SYMMETRIC QUIVER HECKE ALGEBRAS**\n\n*R-MATRICES OF QUANTUM AFFINE ALGEBRAS*\n\n83 pp, 33 sections.\n\n**Abstract.** Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q). The distribution of poles of normalized R-matrices yields Khovanov-Lauda-Rouquier algebras RJ (β) for each β∈ Q+. We deﬁne a func- torFβ from the category of graded RJ (β)-modules to the category of U ′ q(g)-modules. The functorF = ⨁ β ∈Q+Fβ sends convolution products of ﬁnite-dimensional graded RJ (β)-modules to tensor products of ﬁnite-dimensional U ′ q(g)-modules. It is exact if RJ is of ﬁnite type A, D, E. If V (̟1) is the fundamental representation of U ′ q(ˆslN ) of weight ̟1 and J = {( V (̟1), q2i) | i∈ Z } , then RJ is the Khovanov-Lauda-Rouquier algebra of type A∞.\n\n**Outline.** Front matter; Introduction; 1 Quantum groups and Khovanov-Lauda-Rouquier a; Convention; 1.1 Cartan datum; 1.2 Khovanov-Lauda-Rouquier algebras; 1.3 R-matrices for Khovanov-Lauda-Rouquier alg; 1.4 R-matrices with spectral parameters; 1.5 R-matrices for one-dimensional modules; 1.6 Uniqueness of R-matrices; 2 Quantum affine algebras and their representa; 2.2 R-matrices; 3 Affine Schur-Weyl duality via Khovanov-Lauda; 3.1 Action of Khovanov-Lauda-Rouquier algebras; 3.2 The Functor F; 3.3 Exactness of the functor F; 4.2 KLR-modules in A case; 4.3 Properties of the functor F",
+ "extended": "**SYMMETRIC QUIVER HECKE ALGEBRAS**\n\n*R-MATRICES OF QUANTUM AFFINE ALGEBRAS*\n\n83 pp, 33 sections.\n\n**Abstract.** Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q). The distribution of poles of normalized R-matrices yields Khovanov-Lauda-Rouquier algebras RJ (β) for each β∈ Q+. We deﬁne a func- torFβ from the category of graded RJ (β)-modules to the category of U ′ q(g)-modules. The functorF = ⨁ β ∈Q+Fβ sends convolution products of ﬁnite-dimensional graded RJ (β)-modules to tensor products of ﬁnite-dimensional U ′ q(g)-modules. It is exact if RJ is of ﬁnite type A, D, E. If V (̟1) is the fundamental representation of U ′ q(ˆslN ) of weight ̟1 and J = {( V (̟1), q2i) | i∈ Z } , then RJ is the Khovanov-Lauda-Rouquier algebra of type A∞.\n\n**Outline.** Front matter; Introduction; 1 Quantum groups and Khovanov-Lauda-Rouquier a; Convention; 1.1 Cartan datum; 1.2 Khovanov-Lauda-Rouquier algebras; 1.3 R-matrices for Khovanov-Lauda-Rouquier alg; 1.4 R-matrices with spectral parameters; 1.5 R-matrices for one-dimensional modules; 1.6 Uniqueness of R-matrices; 2 Quantum affine algebras and their representa; 2.2 R-matrices; 3 Affine Schur-Weyl duality via Khovanov-Lauda; 3.1 Action of Khovanov-Lauda-Rouquier algebras; 3.2 The Functor F; 3.3 Exactness of the functor F; 4.2 KLR-modules in A case; 4.3 Properties of the functor F\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2.2: For a given Cartan datum (A,P, Π,P∨, Π∨), we take a\n- Theorem 1.2.3: Assume that A is symmetric and that Qi,j(u,v ) is a poly-\n- Theorem 2.2.1: (i) For good modules M1,M 2, the zeroes of dM1,M2(z) belong to C[[q1/m]] q1/m for\n- Theorem 2.2.1: implies that X(j)/X(i)∈ C[[q1/m]]q1/m for some m > 0 if dij > 0.\n- Theorem 3.1.3: The subspace ˆV⊗β of ˆV⊗β\n- Theorem 2.2.1: Since ( VS(νa))x⊗ (VS(νa))x is irreducible for any x∈ k×, we obtain",
  "tokens": {
   "brief": 35,
-  "extended": 347
+  "extended": 473
  },
  "sections": [
   {
@@ -179,7 +179,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }
