@@ -158,6 +158,49 @@ NEAR_REL = 5e-2
 # real finding. The interesting band is bounded on BOTH sides.
 UNRELATED_REL = 0.6
 
+# Schema-level PROVENANCE. Stripped from the document before any number is
+# read out of it, because a `description` never quotes the toolchain it ran
+# on -- and leaving these in breaks the audit in BOTH directions at once.
+#
+# MASKING (the worse half). `classify` opens with `if raw in body` -> EXACT,
+# a raw SUBSTRING test against the serialised document. `environment` is a
+# substring sponge: measured on this corpus,
+#
+#     python=3.11.15   swallows  3.1
+#     numpy=2.4.6      swallows  2.4  AND  4.6
+#     clarabel=0.11.1  swallows  0.1
+#     pyhecke_native=0.9.0  swallows  0.9
+#     sympy=1.14.0     swallows  1.1
+#
+# so a prose number that happens to be a PREFIX of a dependency version reads
+# as "present verbatim in the data" and is suppressed. Five for five on the
+# cases checked by hand; 31 findings across the corpus were hidden this way.
+#
+# MANUFACTURING. The same numbers also enter `data_vals`, a dense grid of
+# small decimals sitting exactly where physics values live. 34 prose numbers
+# were reported as DRIFT solely because their nearest "data" value was a
+# version string -- `binding-hbarq-rung-forward-test`'s 2.961 % scored 0.0503
+# against engineVersion `python 3.11.15`, three thousandths inside the DRIFT
+# edge, while the prose was CORRECT to 4 significant figures.
+#
+# Measured 2026-09-13 over 3041 witnesses carrying a description: 34
+# manufactured findings drop, 31 masked ones surface. Bean `qou-n62l`.
+#
+# The list is a BLOCKLIST, not an allowlist, and deliberately so: 819 of those
+# witnesses carry a description with no `data` key at all, so "keep only the
+# findings" is not a well-defined partition. These 13 keys are named by the
+# witness schema and emitted by the writer, never by the author.
+#
+# Nothing borderline is here. `q0Value`, `q0Anchor`, `dps`, `precisionMetadata`
+# and `parameters` are all quotable by prose and all stay.
+PROVENANCE_KEYS = frozenset({
+    "engine", "engineVersion", "environment",          # toolchain versions
+    "commitSha", "scriptCommitSha", "scriptHash", "scriptFile",
+    "computedAt", "timestamp",                         # clock
+    "durationMs", "durationMsBaseline",                # wall time
+    "invocation", "schema",
+})
+
 
 def _numbers_in(obj, out=None):
     """Every number anywhere in a JSON document, including numeric strings."""
@@ -241,7 +284,8 @@ def scan_witness(doc: dict):
     desc = doc.get("description") or doc.get("data", {}).get("description")
     if not isinstance(desc, str) or not desc.strip():
         return [], "no-description"
-    rest = {k: v for k, v in doc.items() if k != "description"}
+    rest = {k: v for k, v in doc.items()
+            if k != "description" and k not in PROVENANCE_KEYS}
     body = json.dumps(rest)
     vals = _numbers_in(rest)
     out = []
@@ -341,6 +385,25 @@ def _selftest() -> int:
          "LABEL: same for Step/Rule/Figure/Table/Item/Section"),
         ({"description": "the ratio is 5.73", "r": "3.8677"}, ["5.73"],
          "...and a bare number after ordinary words is still reported"),
+        # -------- provenance is not data (both directions, measured) --------
+        ({"description": "the coupling is 3.1",
+          "environment": {"python": "3.11.15"}, "r": "4.0"}, ["3.1"],
+         "UNMASKED: 3.1 is a substring of python 3.11.15, so the EXACT test "
+         "used to suppress it; environment is not data"),
+        ({"description": "the ratio is 0.9",
+          "environment": {"pyhecke_native": "0.9.0"}, "r": "1.4"}, ["0.9"],
+         "UNMASKED: same sponge via a dependency version"),
+        ({"description": "they differ by 2.961 %",
+          "engineVersion": "python 3.11.15", "r": "9.9"}, [],
+         "NOT MANUFACTURED: 2.961 vs engineVersion 3.11 scored 0.0503, just "
+         "inside the DRIFT edge, while the prose was right to 4 sig figs"),
+        ({"description": "duration was 1.5 s",
+          "durationMs": 1502.0, "r": "9.9"}, [],
+         "wall time is provenance: it moves every run and prose never "
+         "quotes it as a finding"),
+        ({"description": "the value 2.5 holds",
+          "environment": {"numpy": "2.4.6"}, "r": "2.5"}, [],
+         "stripping provenance does not break an honest EXACT match in data"),
     ]
     bad = 0
     for doc, want, why in cases:
