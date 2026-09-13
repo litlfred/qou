@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T11:56:16Z
-updated_at: 2026-09-13T12:41:41Z
+updated_at: 2026-09-13T13:59:16Z
 ---
 
 ## THE PREMISE WAS WRONG, AND IT WAS MY CLAIM (2026-09-13)
@@ -95,3 +95,50 @@ Targets, in the order they pay off for this arc:
 BEAN STAYS OPEN -- blocked on owner upload, not on anything derivable here.
 
 PR #7299 merged WITHOUT this item. Still blocked on owner upload into uploads/ + scripts/migrate-uploads-to-library.py. Issue #7298 reopened to carry it.
+
+
+## LARGELY RESOLVED 2026-09-13 — owner uploaded, ingest run, DOI settled
+
+Owner dropped 13 PDFs in uploads/ (commit 29880e8900). Both pipeline steps
+run clean: pdf-structure.py 13 ok / 0 failed; migrate-uploads-to-library.py
+--selftest PASS, --apply moved 13, --verify reports 0 library dirs without
+structure.json and 0 PDFs left flat.
+
+DELIVERED, both halves this bean existed for:
+
+1. GREPPABLE FULL TEXT. Path 5 previously returned ZERO on this arc's own
+   subject. It now returns 13 files for "energy of a knot", 9 for
+   "Möbius energy", 2 for "Palais-Smale", 9 for "self-repulsive".
+   O'Hara 1991 plus ten modern regularity/existence papers, including
+   "On the Palais-Smale condition in geometric knot theory" — which is the
+   minimiser-existence gate option C could not stateimi.
+
+2. THE ohara1991 DOI IS SETTLED, against the full text rather than a
+   registry. The PDF is the Elsevier export for PII 0040938391900102 =
+   10.1016/0040-9383(91)90010-2; page 1 reads ENERGY OF A KNOT / JUN
+   O'HARA, 7 pages, matching Topology 30(2) 241-247. The recorded DOI is
+   RIGHT; the alternate candidate ...(91)90030-7 is WRONG and is dropped
+   with a do-not-reinstate note. HUMAN-REVIEW flag cleared after 3 months.
+
+## 🛑 WHY THIS STAYS OPEN: FREEDMAN-HE-WANG 1994 WAS NOT UPLOADED
+
+No Annals of Mathematics PDF is among the 13. So the crossing bound
+E(K) >= 2*pi*c(K)+4 still has no full text here. Its CITATION works and is
+unaffected (freedman1994, DOI 10.2307/2946626, not flagged) — only the
+text is missing.
+
+Scope that honestly: the bound is NOT statable against LinkEmbedding today
+regardless, because that structure carries no crossing number, so a Lean
+statement of it would be true by vacuity. FHW's text is therefore wanted
+for READING, not for an immediate formalisation. Low urgency; the bean
+stays open so it is not forgotten.
+
+Candidate source if wanted: https://www.jstor.org/stable/2946626
+
+## FINDING THAT CAME OUT OF THE ACCEPTANCE TEST
+
+Taxonomy row 41: corpus-grep path 5 typed in ASCII misses typographic
+Unicode, BIDIRECTIONALLY. `O'Hara` ASCII 0 vs Unicode 48; but `Poincare`
+ASCII 190 vs Unicode 145, where ASCII wins. Search both forms; do not
+normalise one way. My first reading (`use Unicode`) was wrong and the row
+records it.
