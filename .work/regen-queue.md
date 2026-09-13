@@ -440,3 +440,23 @@ verified without re-running, which the `qou-uiut` table blocks. **This change
 fixes the wrong-VALUE defect only.** Carrying mpf through `HeckeDivision` is a
 separate, larger piece of work and the witness's 30 raw float64 fields stay
 until it happens.
+
+## 18. NEW GATE `q0_stamp_vs_parameter_audit.py` — wire it in AFTER §17 regenerates
+
+Built 2026-09-13 for the class §17 uncovered: a witness that **stamps** the
+anchor and **computes** at something else. Every existing q0 gate reads the
+stamp — `q0_anchor_consistency_audit` (label maps to a pin, `q0Value` correct),
+`q0_anchor_ratchet` (stamp present), `q0_value_drift_audit` (stamp not stale) —
+and none reads what the producer used.
+
+Current run: 1699 stamped witnesses, **648 comparable**, **1 disagreement** —
+`hecke-division.witness.json` at 1.93e-5, which is the witness §17's producer
+fix already addresses. So it will report **zero** once that regenerates.
+
+**Do not add it to `scripts/precision-gates.sh` until then.** That file's own
+header says a gate red on arrival gets skipped, and this one is red *only*
+because its single finding is queued behind the table. Wiring it while red is
+the exact failure it would be guarding against.
+
+Blocks at ZERO with no baseline — after §17 there is no backlog to tolerate.
+`--self-test` 8/8, including both directions of the tolerance band.
