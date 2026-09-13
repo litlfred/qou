@@ -61,6 +61,14 @@ checkpoint (`3f2e6574102`):
 | deuterium | **identical** | −7.27110259868 | **−15.81419578544** | 2.1749 |
 | tritium | **identical** | −7.74212739951 | **−16.11146582226** | 2.0810 |
 | he3 | **identical** | −7.45619979733 | **−16.03835259525** | 2.1510 |
+| he4 | **identical** | −6.82859416455 | **−14.61968714601** | 2.1410 |
+
+Extended to ⁴He 2026-09-13 against the pre-merge 7/19 checkpoint
+(`8e73c88095f`, the merge's own first parent). ⁴He's `tr_M` agrees to all 48
+published digits: `1.585008128481302646181274372854265156921902187277`. Its
+`frobenius_stable` is still `True` with 0 violations, so the gate drop has not
+disturbed the Frobenius column at A=4 — the first real datum for §2, though
+si28/ca40/fe56 are where the FAILs live and they are still to come.
 
 **`tr_M` is bit-identical at every atom**, so this is not `oiz3` moving the
 trace. It is `156f03f53b0`, "drop the UIC Pass-2 sign gate — honesty, NOT
