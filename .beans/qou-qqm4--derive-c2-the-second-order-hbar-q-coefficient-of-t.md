@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T16:19:28Z
+updated_at: 2026-09-13T16:37:08Z
 updated_at: 2026-09-13T14:22:41Z
 updated_at: 2026-09-13T13:50:50Z
 updated_at: 2026-09-13T13:07:38Z
@@ -1645,3 +1645,47 @@ into a *located* one: the `H₄` route's exact ingredient produces `h·[k]_q` at
 `k` only, `δ` needs `k = 2`, and the gap is a **channel selection**.  That is the
 next honest question on this bean — and it is a question about the framework
 (which channel the weak vertex projects onto, and why), not one more identity.
+
+---
+
+AND THE CONJECTURE'S **OWN** CHANNEL GIVES THE SIGN BACKWARDS (same session,
+PR #7320, second commit).
+
+The entry above says the `k = 2` reversal leaves `δ`'s numerator with an
+undetermined sign and that the algebra does not supply the choice.  **It does not
+merely fail to supply it — the choice `conj:flavor-split-habiro-derivation`
+itself states points the wrong way.**  The block's words:
+
+> *"The weak interaction is strictly left-handed, so it projects onto the fully
+> alternating channel of `H₄`, the sign-block partition `(1⁴)` … In the
+> alternating channel the generator acts by its sign eigenvalue `−q⁻¹`."*
+
+Evaluate `σ² − σ⁻² = h·(σ + σ⁻¹)` there and, exactly:
+
+    ℏ_q² · (alternating value) / 3  =  −δ
+    ℏ_q² · (symmetric   value) / 3  =  +δ
+
+So the stated channel yields `δ < 0`, i.e. **m_n < m_p** — the neutron lighter
+than the proton.  The two channels are exact negatives (`splits_sum_zero`), so
+the channel choice is the entire content: the magnitude is settled and only the
+sign is at stake.
+
+**The condition is MINE, not the block's, and it must be carried with the
+claim.**  That `δ`'s numerator *is* the `k = 2` crossing reversal is a reading —
+the natural one, given the block derives its one exact result that way, but the
+block makes no such identification and calls `(q−1)²(1−q⁻⁴)/3` *"a structured
+near-match, not a derived closed form"*.  So read the **pair**: if the reading is
+right the stated channel is backwards; if it is wrong the block owes an account of
+where `h·[2]_q` comes from, since it is then not the reversal.  Either way the
+route is not closeable as stated.
+
+Six further sorry-free theorems in a closing `Archimedean` section of
+`QOU/Hecke/CrossingReversalParity.lean` (over `ℝ`, because the sign statements use
+`1 < q` — the main body stays generic `Ring R`, and the file header was corrected
+to say so rather than claiming the whole file is ordering-free).  `lean`-direct
+exit 0 / 0 warnings; `#print axioms` clean on all 15 declarations.  Probe 7/7.
+
+**Next on this bean, and it is a framework question rather than another
+identity:** which channel the weak vertex projects onto, and why.  The corpus
+asserts left-handed ⇒ alternating; the flavour split needs symmetric.  One of the
+two has to give, and neither is derived here.
