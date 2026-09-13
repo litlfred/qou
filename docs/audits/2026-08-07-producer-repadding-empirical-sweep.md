@@ -789,7 +789,7 @@ So the two defects are near-orthogonal:
 | | claim | detectable by |
 |---|---|---|
 | float64 padding | value claims **more** precision than it has | `witness_float64_padding_audit` |
-| `mp.dps` no-op | value silently carries **less** than asked for | nothing, today |
+| `mp.dps` no-op | value silently carries **less** than asked for | `mpf_context_dps_audit` |
 
 The corpus has been swept exhaustively for the first and never for the second.
 The detector is static and cheap — for every alias binding the mpmath
@@ -804,6 +804,25 @@ aliases = re.findall(r"^\s*import\s+mpmath(?:\s+as\s+(\w+))?\s*$", src, re.M)
 Two cautions from running it: match indented imports (two of the seven are
 inside `try:`), and skip docstrings — `qbeta_5two_phi_series_engine_probe.py`
 mentions "at mp.dps = 60" in prose and is a false positive.
+
+**Both cautions are moot, and the sketch above is superseded.** The gate was
+built as `computations/mpf_context_dps_audit.py` and wired into
+`scripts/precision-gates.sh` as `mp.dps no-op`, and it parses rather than
+matches: indentation is not something the grammar cares about, and a
+docstring is a `Constant`, never an assignment. The table above said this
+class was caught by "nothing, today" and is corrected in place — **it was
+accurate when written and had not been for weeks**, which is the same way a
+stale count outlives the run behind it everywhere else in this document.
+
+Scope-resolved since 2026-09-13. A name bound both ways *in one scope* is
+still read as the context, deliberately; bindings at different depths are no
+longer treated as that tie. Three files here have the shape —
+`categorical_q_decay_ba_low_isotopes.py` takes the context at module level
+and the package inside a function — so a flat reading abstains on the whole
+file, and a no-op inside that function would read clean. None assigns `.dps`
+today. Verified both ways: across all 3223 mpmath-naming files the two
+readings agree everywhere on the current corpus, and both still catch all
+seven of the pre-fix files pulled from history.
 
 ## Regenerating a witness silently drops its q₀ provenance
 

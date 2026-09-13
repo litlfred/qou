@@ -102,9 +102,11 @@ def find_noop_dps(source: str, filename: str = "<src>") -> list[dict]:
     """Return every `<mpmath-module-alias>.dps|prec = ...` in `source`.
 
     Names bound to the *context* (`from mpmath import mp`) are never flagged —
-    there `mp.dps` is the correct form. A name bound both ways is treated as a
-    context name, which is the conservative direction: this gate would rather
-    miss one than cry wolf on a correct file.
+    there `mp.dps` is the correct form. A name bound both ways IN ONE SCOPE is
+    treated as a context name, which is the conservative direction: this gate
+    would rather miss one than cry wolf on a correct file. Bindings at
+    DIFFERENT depths are not a tie and are not treated as one — the innermost
+    enclosing scope wins, as it does at runtime. See `_Bindings`.
     """
     # NEVER return [] on a file that does not parse: "no findings" and "no
     # information" are different answers, and reporting the first for the
@@ -119,41 +121,96 @@ def find_noop_dps(source: str, filename: str = "<src>") -> list[dict]:
         return [{"file": filename, "line": 0, "kind": "unparseable",
                  "name": None, "source": f"{type(e).__name__}: {e}"}]
 
-    module_aliases: set[str] = set()
-    context_names: set[str] = set()
-
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            for a in node.names:
-                if a.name == "mpmath" or a.name.startswith("mpmath."):
-                    # `import mpmath` binds "mpmath"; `as X` binds X.
-                    module_aliases.add(a.asname or a.name.split(".")[0])
-        elif isinstance(node, ast.ImportFrom):
-            if node.module == "mpmath":
-                for a in node.names:
-                    # `from mpmath import mp [as M]` binds the CONTEXT.
-                    if a.name == "mp":
-                        context_names.add(a.asname or a.name)
-
-    flagged = module_aliases - context_names
-    if not flagged:
-        return []
-
     out: list[dict] = []
     lines = source.splitlines()
-    for node in ast.walk(tree):
+    _walk_scope(tree, _Bindings(), filename, lines, out)
+    return sorted(out, key=lambda d: d["line"])
+
+
+# A def/class opens a scope; an if/try/with/for does not. Resolving the
+# innermost one first is not pedantry — this corpus has three files that bind
+# the same name BOTH ways at DIFFERENT depths, and a flat `ast.walk` cannot
+# tell them apart from a file that binds both in one scope:
+#
+#   computations/categorical_q_decay_ba_low_isotopes.py
+#       line  56  from mpmath import mp          <- module scope, the CONTEXT
+#       line 259      import mpmath as mp        <- inside a function, the MODULE
+#
+# Under a flat reading `mp` is "bound both ways", so the whole file abstains
+# and a `mp.dps = 50` on line 260 — a live no-op — reads clean. None of the
+# three assigns `.dps` today, so nothing is missed right now; the difference
+# is entirely about the next one, and abstaining is the wrong default when
+# the source says exactly which binding is in view.
+_SCOPE_NODES = (ast.Module, ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)
+
+
+class _Bindings:
+    """One scope's mpmath names, chained to the scope that encloses it."""
+
+    __slots__ = ("parent", "module", "context")
+
+    def __init__(self, parent: "_Bindings | None" = None):
+        self.parent = parent
+        self.module: set[str] = set()     # bound to the mpmath PACKAGE
+        self.context: set[str] = set()    # bound to mpmath's CONTEXT
+
+    def is_module_alias(self, name: str) -> bool:
+        scope: _Bindings | None = self
+        while scope is not None:
+            # Context first, so a name bound BOTH ways in ONE scope still
+            # reads as the context — the conservative direction this gate
+            # documents, preserved exactly. Only the cross-scope case moves.
+            if name in scope.context:
+                return False
+            if name in scope.module:
+                return True
+            scope = scope.parent
+        return False
+
+
+def _stmts_in_scope(node) -> list:
+    """Statements belonging to this scope, through `if`/`try`/`with`/`for`.
+
+    Descending through those is what catches the two instances indented
+    inside a `try:` that the original regex sweep missed.
+    """
+    out = []
+    for child in ast.iter_child_nodes(node):
+        if isinstance(child, _SCOPE_NODES):
+            continue
+        out.append(child)
+        out.extend(_stmts_in_scope(child))
+    return out
+
+
+def _walk_scope(node, scope: _Bindings, filename: str, lines: list,
+                out: list) -> None:
+    stmts = _stmts_in_scope(node)
+    for stmt in stmts:
+        if isinstance(stmt, ast.Import):
+            for a in stmt.names:
+                if a.name == "mpmath" or a.name.startswith("mpmath."):
+                    # `import mpmath` binds "mpmath"; `as X` binds X.
+                    scope.module.add(a.asname or a.name.split(".")[0])
+        elif isinstance(stmt, ast.ImportFrom):
+            if stmt.module == "mpmath":
+                for a in stmt.names:
+                    # `from mpmath import mp [as M]` binds the CONTEXT.
+                    if a.name == "mp":
+                        scope.context.add(a.asname or a.name)
+    for stmt in stmts:
         targets = []
-        if isinstance(node, ast.Assign):
-            targets = node.targets
-        elif isinstance(node, ast.AugAssign):
-            targets = [node.target]
-        elif isinstance(node, ast.AnnAssign):
-            targets = [node.target]
+        if isinstance(stmt, ast.Assign):
+            targets = stmt.targets
+        elif isinstance(stmt, ast.AugAssign):
+            targets = [stmt.target]
+        elif isinstance(stmt, ast.AnnAssign):
+            targets = [stmt.target]
         for t in targets:
             if (isinstance(t, ast.Attribute)
                     and t.attr in PRECISION_ATTRS
                     and isinstance(t.value, ast.Name)
-                    and t.value.id in flagged):
+                    and scope.is_module_alias(t.value.id)):
                 ln = getattr(t, "lineno", 0)
                 out.append({
                     "file": filename,
@@ -163,7 +220,9 @@ def find_noop_dps(source: str, filename: str = "<src>") -> list[dict]:
                     "source": (lines[ln - 1].strip() if 0 < ln <= len(lines) else ""),
                     "fix": f"{t.value.id}.mp.{t.attr} = …",
                 })
-    return sorted(out, key=lambda d: d["line"])
+    for child in ast.iter_child_nodes(node):
+        if isinstance(child, _SCOPE_NODES):
+            _walk_scope(child, _Bindings(scope), filename, lines, out)
 
 
 # Directories reported but not gated. `scratch/` is exploratory work that no
@@ -212,7 +271,17 @@ CASES = [
     ("context via from-import", "from mpmath import mp\nmp.dps = 50\n", 0),
     ("context, aliased", "from mpmath import mp as M\nM.dps = 50\n", 0),
     ("correct module form", "import mpmath as mp\nmp.mp.dps = 50\n", 0),
-    ("both bindings present", "import mpmath as mp\nfrom mpmath import mp\nmp.dps = 50\n", 0),
+    ("both bindings, ONE scope", "import mpmath as mp\nfrom mpmath import mp\nmp.dps = 50\n", 0),
+    # Same two bindings, different depths. Not a tie: at runtime the
+    # function-local `import mpmath as mp` shadows the module-level context
+    # for the whole body, so this IS a no-op. A flat walk calls it a tie and
+    # abstains; three files in this corpus have the shape.
+    ("both bindings, function shadows module",
+     "from mpmath import mp\ndef f():\n    import mpmath as mp\n    mp.dps = 50\n", 1),
+    ("...and the same pair the other way round is correct",
+     "from mpmath import mp\nmp.dps = 50\ndef f():\n    import mpmath as mp\n    return mp.mpf(1)\n", 0),
+    ("a nested scope does not leak its import outward",
+     "def f():\n    import mpmath as mp\n    return mp\nmp.dps = 50\n", 0),
     ("reading, not assigning", "import mpmath as mp\nx = mp.dps\n", 0),
     # The regex false positive this tool exists to avoid.
     ("docstring mentioning mp.dps = 60",
