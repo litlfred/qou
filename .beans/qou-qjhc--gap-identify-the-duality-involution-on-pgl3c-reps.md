@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T11:10:00Z
+updated_at: 2026-09-13T11:55:00Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -840,4 +840,89 @@ definition.
 (B) and (C) above.  The next honest step is (C): establish, or refute, that the Ptolemy
 point-to-representation correspondence is injective modulo gauge on this class, which is
 what would carry the variety-level identity across to representations.
+
+
+---
+
+## UPDATE 2026-09-13e — (C) attacked DIRECTLY, on characters: only `sigma_b` survives
+
+Pass 13d left three things open, of which (C) -- whether `rho -> rho^{-T}` INDUCES
+`sigma_b` on REPRESENTATIONS -- is this bean's actual subject.  It is now attacked
+directly, and the route goes AROUND the Ptolemy-to-representation gap rather than through
+it: `computations/ptolemy/ptolemy_duality_is_sigma_on_characters.py` never mentions gauge,
+duality formulas or coboundaries.  It compares CHARACTERS.
+
+### The identity
+
+If `rho^{-T} ~ sigma(rho)` as PGL(3) reps then `A sigma(rho(w)) A^-1 = lambda(w) rho(w)^-T`.
+Traces give `sigma(chi(w)) = lambda(w) chi(w^-1)`; determinants give
+`sigma(det w) = lambda(w)^3 / det(w)`.  Cube the first, substitute the second, `lambda`
+cancels:
+
+    sigma( chi(w)^3 / det(w) )  ==  chi(w^-1)^3 / det(w^-1)      for every w.
+
+`I(w) = chi(w)^3/det(w)` is the PGL-invariant: a non-trivial obstruction class says the
+rep does NOT lift to SL(3), so each matrix is defined only up to a scalar and `chi` alone
+is not an invariant.  Same invariant, same reason, as `exact_character_selfduality.py`.
+
+### Result -- 4686 reduced words, length <= 5, exact in K
+
+    id       REFUTED   3504 witnesses   shortest  ac
+    tau      REFUTED   3952 witnesses   shortest  ab
+    sigma_a  REFUTED   4068 witnesses   shortest  ab
+    sigma_b  HOLDS on every word tested
+
+Only `sigma_b` survives.  `tau` and `id` fix `zeta_3`, so they sit at the wrong obstruction
+class; `sigma_a` is refuted here exactly as it is on the Ptolemy side -- **the two levels
+agree, which they were not obliged to.**
+
+### Two EXACT calibration matches
+
+The `id` row IS the self-duality test, and it reproduces the corpus to the digit: **94**
+witnesses with shortest `ac` at length <= 3 against `L6a4-c1-character-selfduality.json`
+(`pgl_witnesses` 94, `shortest_witness.word` `ac`), and **3504** at length <= 5 against
+`exact_character_selfduality.py`'s own recorded figure.  It is also the REFUTATION
+CONTROL: it proves the test can fail, so `sigma_b` passing is not vacuous.
+
+### Stage 2 -- closing what the cube hides
+
+`I(w)` is a cube, losing one cube root of unity per word.  Computing the intertwiner
+scalar directly, `lambda(w) = sigma_b(chi(w))/chi(w^-1)`:
+
+    defined on                        936 of 936 words (no chi(w^-1) vanishes)
+    lambda(w)^3 == 1                  936 of 936
+    lambda(vw) = lambda(v)lambda(w)  2580 of 2580 concatenations
+
+So `lambda` is a **mu_3-valued HOMOMORPHISM** on everything tested.  This is the step worth
+having, because **a mu_3 scalar is TRIVIAL IN PGL(3)** -- twisting `rho^{-T}` by `lambda`
+changes nothing there.  With the rep recorded ABSOLUTELY IRREDUCIBLE (Burnside;
+`L6a4-c1-irreducibility.json`, `span_rank 9 = full_rank 9`) the argument closes to:
+
+> **IF** the character identity holds for ALL `w`, **THEN** `sigma_b(rho) ~ lambda (x)
+> rho^{-T} = rho^{-T}` as PGL(3) representations.
+
+### STILL NOT PROVED, and rule 13a keeps this bean OPEN
+
+**"All w" versus "the 4686 tested."**  A finite sweep cannot give the full character, and
+stage 2's multiplicativity is likewise measured on a finite set.  The visible route to
+closing it: the image SPANS `M_3(K)` (`matrices_spanned 31`, `span_rank 9`), so a
+character is determined by finitely many words -- turning that into a bound on word length
+is the remaining work and is NOT done.  Also still one manifold, one obstruction class;
+roast point (B) (two distinct rational self-maps can agree on an orbit) is untouched.
+
+### (B) is BLOCKED, not untried
+
+Obstruction class 2 was investigated.  **No exact class-2 point exists in the repo**, and
+three recorded solve routes each hit a measured wall -- msolve RUR > 3000 s; GB-only mod p
+> 2700 s producing 0 bytes; Singular full system > 5400 s (`qou-0y6l`) -- while the
+upstream `ptolemy.unhyperbolic.org` object returns **403** from this container (re-tested).
+So class-specificity is untouched.  Useful structural note: the whole blocker is ONE input
+file -- `ptolemy_duality_sigma_coboundary_test.py` is already class-parameterised, and the
+orbit producer hardcodes class 1 in three places, so adapting is a small edit if
+`L6a4-c2-ptolemy-in-K.json` ever lands.
+
+### Next honest step
+
+Bound the word length at which the character is determined, using the spanning fact -- that
+is what would turn the corroboration into a proof for class 1.
 
