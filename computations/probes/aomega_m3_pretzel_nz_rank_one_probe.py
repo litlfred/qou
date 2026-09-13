@@ -34,9 +34,13 @@ What is computed (exact integers / rationals, no floats):
 Gates (derived structure must match the two knots whose one-dimensional state
 integrals are printed in held text):
   G1  4_1: some quad gives rank one with v = (1,1), c = 1     — GK I_{1,2}: two Phi_b's
-      of one variable, A = 1 = 1/c.
+      of one variable.
   G2  5_2: some quad gives rank one with v = (1,1,1), c = 1/2 — GK I_{2,3} / GGM
-      (240): three Phi_b's of one variable, A = 2 = 1/c.
+      (240): three Phi_b's of one variable.
+  CORRECTED 2026-09-13 (Part 11): this docstring and the gate labels below said "A = 1/c".
+  The exact reduction (aomega_m3_pretzel_one_dim_reduction_probe.py) gives A = sum v_i^2 - 1/c
+  (4_1: 1, 5_2: 1, m016: 2); 1/c is the Gaussian coefficient of the ORIENTATION-REVERSED
+  integral. The gates test v and c only and are unaffected.
 Test:
   T1  m016: some quad gives rank one (=> the pretzel's state integral IS
       one-dimensional); report v and c.  The RESULT is v = (1,1,2), c = 1/4: three
@@ -155,7 +159,7 @@ def main():
         check(f"{name}-(2.9)-symplectic-identity-holds-for-all-{3**n}-quad-choices", all_symplectic)
         if v_expect is not None:
             hit = [r1 for r1 in rank_one if tuple(r1["v"]) == v_expect and sp.nsimplify(r1["c"]) == c_expect]
-            check(f"{name}-rank-one-quad-exists-with-v={v_expect}-c={c_expect} (GK/GGM one-dimensional form, A = 1/c)",
+            check(f"{name}-rank-one-quad-exists-with-v={v_expect}-c={c_expect} (GK/GGM one-dimensional form; A_mirror = 1/c, A = sum v^2 - 1/c per Part 11)",
                   bool(hit), found=[[r["quad"], r["v"], r["c"]] for r in rank_one])
         else:
             check(f"{name}-rank-one-quad-EXISTS (the pretzel state integral is one-dimensional)", bool(rank_one),
@@ -169,7 +173,7 @@ def main():
 
     verdict = ("DERIVED (DG 2.7 + SnapPy): the pretzel's NZ Gaussian B^-1 A is rank one for exactly one quad "
                "choice, with factor vector v = (1,1,2) and c = 1/4, against v = (1,1,1), c = 1/2 for 5_2 and "
-               "v = (1,1), c = 1 for 4_1 (both gates reproduce the printed one-dimensional forms, A = 1/c). So the "
+               "v = (1,1), c = 1 for 4_1 (both gates reproduce the printed one-dimensional forms; corrected 2026-09-13: A = sum v^2 - 1/c, and 1/c is the mirror's coefficient). So the "
                "pretzel's state integral IS one-dimensional — three quantum dilogarithms of one variable, one at "
                "doubled argument — which is outside the unit-coefficient GK I_{A,B} / GGM Z_{A,r} families. That "
                "is why the (1,3) sister candidate failed (Part 9) and matches GGM's 'level 2'. Next: the exact "

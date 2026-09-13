@@ -391,10 +391,17 @@ through the Fourier transform of its dilogarithm at `v_i` times the auxiliary va
 again a quantum dilogarithm times a Gaussian). So rank one with `v = (1,…,1)` is the unit-coefficient
 family `∫ Π_j Φ_b(t + u_j) e^{−Aπit²…}` of GK / GGM Theorem 28, and `A = 1/c`.
 
+> **Corrected 2026-09-13 (§3i).** `A = 1/c` is wrong as the Gaussian coefficient of the reduced integral: the
+> exact reduction gives `A = Σ v_i² − 1/c` (4₁: 1, 5₂: **1**, pretzel: 2), and `1/c` is the coefficient of the
+> *orientation-reversed* integral (`A_mirror = Σ v_i² − A = 1/c`). The two agree for 4₁ only because it is
+> amphichiral; the 5₂ row's "A = 2 ✓" was read off the printed form, not derived. The gates of the Part 10
+> probe test only `v` and `c`, so its 8/8 stands; its docstring and gate labels carried the same wrong clause and
+> are corrected in the same commit, as is bean `qou-x3iv` Part 10 and the PR #7152 table.
+
 | knot | rank-one quads | `v` | `c` | printed form |
 |---|---|---|---|---|
 | 4₁ | 3 of 9 | (1,1) | 1 | GK `I_{1,2}`, A = 1 ✓ |
-| 5₂ | 1 of 27 | (1,1,1) | 1/2 | GK `I_{2,3}` / GGM (240), A = 2 ✓ |
+| 5₂ | 1 of 27 | (1,1,1) | 1/2 | GK `I_{2,3}` / GGM (240), A = 2 ✓ — **corrected in §3i: the reduction gives A = 1 (`I_{1,3}`, the mirror); A = 2 is `A_mirror = 1/c`** |
 | (−2,3,7) | 1 of 27 | **(1,1,2)** | 1/4 | — |
 
 The two gates reproduce the printed one-dimensional forms exactly. **The pretzel's state integral is
@@ -410,6 +417,92 @@ flattening `f`, and the Fourier-transform constants; DG (C.20)–(C.23), (C.25) 
 residue evaluation to `q^{1/2}`-series blocks, then the certificate: GGM (19) against the derived
 index of §3f. The `qou-x3iv` plan is re-scoped to this route; the three-dimensional DG (5.2)
 integral is no longer needed.
+
+## 3i. The exact one-dimensional reduction, and what it says about 5₂'s orientation (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_one_dim_reduction_probe.py`](../../computations/probes/aomega_m3_pretzel_one_dim_reduction_probe.py)
+(bean `qou-x3iv`, Part 11). Every step is a held equation except one, which is checked numerically.
+
+**Inputs, all held.** DG `arxiv-1202.6268v2` (5.2) at `u = 0`; its (5.5)–(5.6) definition of `ψ_ℏ`; the
+Fourier transform (C.18); the single-tetrahedron transform identity (C.25); the normalisation ambiguity
+(5.4). GK `arxiv-1304.2705v1` (1) for `Φ_b`, its functional equation and `I_{A,B}`; GGM `arxiv-2012.00062v3`
+(125), (240) at `u = m = μ = 0`.
+
+**D1 — dictionary.** Matching the two product formulas term by term (numerator `(q e^{−Z};q)_∞` against
+`(−q^{1/2}e^{2πbx};q)_∞`, denominator `(e^{−LZ};q̃)_∞` against `(−q̃^{1/2}e^{2πb⁻¹x};q̃)_∞`, using
+`e^{2πb c_b} = −q^{1/2}` and `Lq⁻¹ = q̃`) gives
+
+$$
+\psi_\hbar(Z) = \Phi_b\!\Bigl(c_b - \frac{Z}{2\pi b}\Bigr),\qquad \hbar = 2\pi i b^2,\qquad i\pi + \tfrac{\hbar}{2} = 2\pi b\,c_b .
+$$
+
+The recurrent DG shift `iπ + ℏ/2` is `2πb c_b`; that is why every shift below is a multiple of `c_b`.
+
+**D2 — the Fourier transform of one dilogarithm.** (C.25) says the (C.18) transform of
+`e^{(Z² − (2πi+ℏ)Z)/2ℏ} ψ_ℏ(Z)` is `C·ψ_ℏ(Z')`. The (C.18) transform applied twice is reflection
+(`ℏ` pure imaginary), so inverting,
+
+$$
+\widehat{\psi_\hbar}(P) = C^{-1}\, e^{(P^2 + (2\pi i+\hbar)P)/2\hbar}\;\psi_\hbar(-P)
+$$
+
+up to a (5.4)-class constant. This is the one step not printed in held text; the probe checks it
+numerically (the ratio of the two sides is independent of `P` to `7·10⁻⁹` across three frequencies, and equals the (5.4)-class unit `e^{5πi/6}` at the test point; the residual is tanh-sinh quadrature error at 22 digits).
+
+**D3 — the reduction.** With `B⁻¹A = c·vvᵀ` (§3h) and `w := B⁻¹ν`, the exponent of (5.2) is
+`(1/ℏ)[½c(v·Z)² − (iπ+ℏ/2) w·Z] + const`. A Hubbard–Stratonovich transform on `s = v·Z` makes every `Z_i`
+appear linearly, `e^{P_i Z_i/ℏ}` with `P_i = c v_i W − (iπ+ℏ/2) w_i`, and (C.18) turns each `Z_i` integral
+into `√(2πiℏ)·ψ̂(P_i)`. Substituting D2 and `t = −cW`, then `t = −2πb x`, and completing the square:
+
+$$
+Z_{\mathcal T} \;\propto\; \int e^{-\pi i A x^2}\;\prod_{i=1}^{N}\Phi_b\bigl(v_i x + \sigma_i c_b\bigr)\,dx,
+\qquad A = \sum_i v_i^2 - \frac1c,\qquad
+\sigma_i = 1 - w_i - v_i\,\frac{\Lambda}{A},\quad \Lambda = \sum_i v_i(1-w_i).
+$$
+
+The probe verifies `A` and `Λ` by expanding the exponent symbolically (`sympy.Poly`), and records the
+constant prefactor (all of it (5.4)-class apart from the `ℏ`-power). Two measured facts make the shifts
+this clean for the three knots: `w ∥ v` (`κ = 1, 1, ½`), and `c Σv_i² + κ = 1 + c Σ v_i`, which is exactly
+the statement that every unit-coefficient factor is unshifted. **Neither is general**: in the one-cusped
+census with 2–4 tetrahedra there are 17 rank-one quads, 10 collinear, and the identity holds for 9 of those
+(it fails at m019, `c = −1`). Rank one alone gives one dimension; collinearity is what puts all the shift on
+the doubled factor.
+
+| knot | `c` | `v` | `w = B⁻¹ν` | `A` | reduced integral (SnapPy orientation) | `A_mirror = 1/c` |
+|---|---|---|---|---|---|---|
+| 4₁ | 1 | (1,1) | (1,1) | 1 | `∫ Φ_b(x)² e^{−πix²}` = GK `I_{1,2}` = GGM (125) ✓ | 1 |
+| 5₂ | ½ | (1,1,1) | (1,1,1) | **1** | `∫ Φ_b(x)³ e^{−πix²}` = GK `I_{1,3}` | 2 |
+| (−2,3,7) | ¼ | (1,1,2) | (½,½,1) | 2 | `∫ Φ_b(x)² Φ_b(2x − c_b) e^{−2πix²}` | 4 |
+
+**The 5₂ gate lands on `I_{1,3}`, not the printed `I_{2,3}` — and that is orientation, measured.**
+Numerically (mpmath, GK's contour `ℝ + iε`), `I_{1,3}(b)` and `I_{2,3}(b)` are *different* functions: their
+ratio is not a (5.4)-class constant and its modulus varies with `b` (`1.000` at `|b| = 1`, `0.787` at
+`|b| = 0.8`). But at `|b| = 1` they satisfy `I_{1,3} = u · conj(Φ_b(0)⁶ I_{2,3})` with `u` a (5.4)-class unit
+(`(q̃/q)^{n/24} e^{iπm/4}`, found at both unit-modulus `b` tested). Complex conjugation of a state integral is
+the state integral of the orientation-reversed manifold; so DG (5.2) on SnapPy's m015 datum is the 5₂ state
+integral with the *opposite* orientation to KLV/AK's, and the printed `A = 2` is recovered as
+`A_mirror = Σv² − A = 1/c` (the `x → −x` + functional-equation image, then conjugation). The reduction is
+exact; the gate passes as "mirror". The interpretive step (conjugation = orientation reversal) is standard
+but the held sources do not print it — GK cite [AK] for `I_{2,3} = I_{5₂}` and that paper is not held.
+
+**This closes §3g's loose end.** The `(1,3)` and `(2,3)` block bilinears coincided because they are the two
+orientations of the same knot, and the `σ₁σ₁` index does not see orientation. H-I13 was not a distinct
+hypothesis; it was 5₂ again.
+
+**The pretzel, explicit.** In SnapPy's orientation
+$$
+Z_{m016} \;\propto\; \int \Phi_b(x)^2\,\Phi_b(2x - c_b)\,e^{-2\pi i x^2}\,dx,
+$$
+and its mirror carries the same three dilogarithms with `e^{−4πix² + 4πic_b x}`. The doubled factor is the
+only one shifted, by `−c_b`; its poles sit at `c_b + (ibm + ib⁻¹n)/2`, halving the lattice spacing, and the
+Gaussian cross term at those points is `e^{πimn}` instead of `1` — the `q`- and `q̃`-halves of the residue
+sum are coupled by the parity of `(m,n)`. That is GGM's "level 2" as a mechanism rather than an observation.
+Which of the two orientations is GGM/GZ's pretzel is **not settled here** (open; recorded in the bean).
+
+**Part 12, as now scoped.** Residues at the half-lattice: triple poles where `m, n` are both even (from
+`Φ_b(x)²` and the doubled factor together), simple otherwise; the parity coupling should split the sum into a
+`2 × 2` block structure in `q^{1/2}`. Then the `σ₁σ₁` block against the derived rotated index of §3f. Both
+orientations must be carried until one is matched.
 
 ## 4. What it does not do
 
