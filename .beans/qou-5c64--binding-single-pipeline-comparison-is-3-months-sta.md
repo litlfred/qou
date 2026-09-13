@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T10:35:46Z
+updated_at: 2026-09-13T10:40:06Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -347,3 +347,44 @@ One weak discriminator already in hand: the residual is **15.1 % on free** and
 amount, since both traces are `Σ_λ y_λ χ^λ` over the same weights; a 3× split
 between them points at the words rather than the weights. Weak, not decisive —
 the two words have different partition support.
+
+
+## The decomposition, and a corpus cross-check that validates the method
+
+The corpus already records the intra-ordering's own effect, three lines above
+the docstring claim in `mass_at_3A_proper.py`: absolute traces moved by
+**`3.785×` (2H)**, 7.868× (3H), 6.891× (3He), 14.325× (4He). Measuring the same
+thing here, all at June's own q:
+
+|  | free | atom |
+|---|---:|---:|
+| **intra-ordering** grouped / borromean | **3.784816689** | **3.784816689** |
+| **residual** grouped / 2026-06-15 | **1.15067303** | **1.481039152** |
+| composite 2026-06-15 / now | 3.289219952 | 2.555514271 |
+
+**The ordering factor reproduces the corpus's `3.785` to ten digits, and is
+identical on free and atom.** That is the cross-check that makes the residual
+worth trusting: the method recovers a number the corpus measured independently,
+by a different route, a week earlier.
+
+**The residual is NOT uniform**, and that is the most informative thing in the
+table. Free and atom move by different amounts, so the second change touches the
+**interface letter** — the atom word's one extra factor at `A = 2` (22 factors
+free, 23 atom, measured) — and not only the nucleon cores:
+
+    interface factor changed by   1.481039152 / 1.15067303 = 1.28711
+    per nucleon core              sqrt(1.15067303)         = 1.07270
+
+Neither constant is identified. Both sit between **2026-06-15** and
+**2026-09-05**, and finding them means diffing `nucleon_word_letters` and the
+interface construction across that window.
+
+## Falsified in passing: the docstring's own claim
+
+`mass_at_3A_proper.py:488` read *"Pass `intra_order="grouped"` to reproduce any
+pre-2026-09-05 absolute number."* Measured false: grouped reproduces the state
+**immediately** before the ruling, and misses 2026-06-15 by 1.151× (free) /
+1.481× (atom). Corrected in place with the table above and the ruled-out list,
+since a claim that broad is exactly what would send the next agent looking for a
+bug in their own harness. Narrow correction only — I have shown grouped ≠ June,
+**not** when the other change landed.
