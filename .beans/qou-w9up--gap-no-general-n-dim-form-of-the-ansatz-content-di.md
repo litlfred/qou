@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-13T05:11:10Z
-updated_at: 2026-09-13T10:33:35Z
+updated_at: 2026-09-13T10:39:45Z
 ---
 
 ## The gap (corpus-grepped 2026-09-13, six paths; no general version found)
@@ -79,3 +79,19 @@ imports), so it is import-cone-disjoint from the rest of the corpus.
 One commit shipped RED and said so (`UNVERIFIED` in its own message, a dead
 tactic line after `simp` had already closed the goal); fixed in `79ad19219`
 before merge. Recorded because a bare `lean` run would not have caught it.
+
+
+## Residual noted 2026-09-13 (mechanical, found by triage)
+
+The bean names **three** fixed-size theorems. `AnsatzContentDichotomy.lean` wires
+only the **nonet** as an instance (`nonetAnsatz_unconstraining`,
+`nonet_no_discriminating`). `gmo_cannot_discriminate` and
+`equal_spacing_cannot_discriminate` appear only in the file's **docstring
+header** — `grep -niE 'gmo|equal_spacing'` over the file returns no code.
+
+So the general theorem **asserts** it subsumes all three and **demonstrates** it
+for one. That is not a defect in the theorem — it is correct as stated and the
+gap this bean named is genuinely closed — but wiring GMO and equal-spacing as
+instances would convert an asserted subsumption into a demonstrated one, and is
+the honest finish. Cheap: two `Ansatz R 6 3` definitions and two surjectivity /
+forcing proofs in the shape of the nonet pair already there.

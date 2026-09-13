@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T19:39:51Z
-updated_at: 2026-08-24T19:39:51Z
+updated_at: 2026-09-13T10:39:45Z
 ---
 
 `QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean`. Follow-up to the repair
@@ -169,3 +169,28 @@ five.
       `KLBasis` specifies what a KL basis *satisfies* rather than pinning it, so
       downstream may use it to constrain but never to conclude uniqueness. The
       module docstring says so.
+
+
+## UNBLOCKED 2026-09-13 by the `library/` ingestion (merge `3cb26d4b9f8`)
+
+This bean's blocker is *"the KLR canonical basis flattens to the
+Kazhdan-Lusztig basis … **The KL basis is not there.** `KLBasisElt` is an opaque
+type."* The primary literature is now held and greppable via corpus-grep path 5:
+
+- **`library/arxiv-1304.0323v3/`** — *Symmetric Quiver Hecke Algebras*, **154**
+  on-topic hits.
+- **`library/arxiv-1108.1048v3/`** — *Irreducible representations over KLR
+  algebras*, **45** hits.
+
+This is **not** an enrichment of what was already held: the eight pre-existing
+holdings are passing mentions, 1–5 hits each (`arxiv-1409.2799v2` 5,
+`arxiv-2607.03827v1` 3, `arxiv-2210.09583v1` 1).
+
+The same two documents are also the missing primary literature for **AGENTS.md
+§7b** (Type B folding / symmetric crystals / decategorifying to KL bases), which
+cites no source at all. Also newly held: `arxiv-1801.05145v1`,
+`arxiv-2004.04939v1`, `arxiv-2101.05931v3`, and `arxiv-0804.0917v1`
+(*Composition–Diamond Lemma for Modules* → GS / the `ugb` package).
+
+Holding a source is a **citation**, not a derivation — this unblocks the read,
+not the proof. §13a: stays open.
