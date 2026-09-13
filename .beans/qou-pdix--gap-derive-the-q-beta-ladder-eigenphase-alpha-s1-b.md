@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-12T20:43:29Z
+updated_at: 2026-09-13T17:20:00Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1740,3 +1740,119 @@ A is the better structural fit but risks circularity.
 `qou-cds1`, which waits on this. The dashboard's `Q_β`/`m_n`/`Δ_pn` rows are
 base-only at ~1.7e+8 ppb precisely because no ladder exists on an admissible base;
 on the retired `z = 1` base the ladder was worth 1312×.
+
+---
+
+## 2026-09-13 — attack B measured: INERT at the substrate, inside a derivable z-window
+
+The route triage above recommends **attack B (Faddeev `Φ_b` / modular double)**
+as *"the textbook bridge for this exact modulus gap"*, on the judgement that the
+Lean assets make formalize-first cheap. Measured at the real substrate, the
+bridge does not bridge, and the corpus already half-held the reason **five days
+before the triage was written**.
+
+Probe: [`computations/qbeta/qbeta_phib_dual_validity_window_probe.py`](../computations/qbeta/qbeta_phib_dual_validity_window_probe.py),
+5/5, witness `qbeta-phib-dual-validity-window.witness.json`, proton pin, scope (a).
+
+### 1. The premise was already excluded on `main`, on 2026-09-07
+
+`qbeta_modular_double_reciprocity.py` (scope-**(b)**, landed **2026-09-07**)
+proves `log q · log q̃ = 4π²` identically in `y`. At the proton pin
+`t = ln q₀ = 0.10434072`, that *forces*
+
+    |log q̃| = 4π²/t = 378.3606        ⇒    q̃ = 4.787e-165
+
+Reproduced here independently from the b-map alone (rel `0.0`), so it is not a
+re-read of that producer's own output. The modular dual is not a bridge at a
+real substrate — it is 165 decades away. **The triage did not cite this**, and
+it predates the triage by five days.
+
+### 2. But "q̃ ≈ 1e-165, therefore drop the dual half" is FALSE as a global claim
+
+This is the part the corpus does **not** hold. `qbeta_fmap_modular_dual_missing_probe.py`
+states the conclusion — *"|q̃| ≈ 0 at the substrate ⇒ dual NEGLIGIBLE ⇒ Φ_b ≈ phi_q
+here"* — inferring it from the **size of `q̃` alone**. That probe evaluates no
+product, writes **no witness**, and contains **no occurrence of an argument
+variable at all** (`grep -c z` = 0 over its 115 lines).
+
+The inference is not valid as stated. The k-th dual factor is
+
+    1 + q̃^{k+1/2} · e^{2πz/b}
+
+and the **second factor grows in `z`**, at `2π Re(1/b) = 34.4769` per unit,
+because `|1/b| = 7.7600` at this substrate. Measured: at `z = 10.9743` the dual
+half departs from 1 by **1.4453e+82** — the 378-nat suppression is overcome.
+
+### 3. The window, in closed form, derived before measuring
+
+    z*(d) = [ (4π²/ln q₀)/2 − d·ln 10 ] / ( 2π Re(1/b) )
+
+giving `z* = 4.4186` at double precision and `2.1478` at 50 digits. It
+reproduces the measured departure at `d = 16, 30, 50` to `3.1e-13` decades —
+which **confirms the algebra rather than testing it**: successive `k` differ by
+`exp(−4π²/t) = 10^−164.32`, so the tail was known irrelevant in advance and the
+ratios are 1.0 for that reason. The check is named
+`k0_inversion_reproduces_the_full_product_as_derived` so it cannot be quoted as
+evidence *for* the window; the window's content is checks 4 and 5.
+
+### 4. The pdix consequence
+
+Inside the window, `Φ_b` and the corpus's compact half-product are the **same
+function** (departure `5.19e-67` at `z = 1.0739`). So any α-derivation that
+evaluates `Φ_b` at the real substrate with an O(1) argument **is using the
+compact object**, and the modular double is invisible to it. **Attack B buys
+nothing it did not already have there** — unless an α-route drives `|z|` past
+~2–4, and no route yet does, because no route yet exists.
+
+### What this does NOT show — read before quoting it
+
+- **It does not weaken attack B on the root-of-unity face, where B is correctly
+  aimed.** That same existing probe measures `|q̃| = 1` at `q = e^{4πi/5}`; the
+  dual is genuinely order-one there, the compact form genuinely fails, and that
+  is where the Q_β decay saddle sits. Nothing here touches it. Quote the finding
+  narrowly: **the modular double is inert AT THE REAL SUBSTRATE for O(1)
+  arguments.**
+- It is a **refinement** of the existing probe, not a refutation. That probe's
+  conclusion is correct in a window; it simply states no window.
+- Scope (a), `b₊` branch, corpus b-map and product convention. Asserts nothing
+  about α.
+
+### Correcting my own earlier claim in this session
+
+I said the triage *"names 3 Faddeev Lean files where there are 18"*. **Both
+numbers were wrong**, and my 18 was an undercount of exactly the kind I was
+flagging. Measured on this tree, `.lake` artifacts excluded — say which you
+mean, they are four different populations:
+
+| measure | count |
+|---|---|
+| files whose **name** carries `Faddeev`/`PhiB` | **38** |
+| files that **mention** `Faddeev`/`Phi_b`/`PhiB` | **110** |
+| files that **declare** such an identifier (`def`/`theorem`/`class`/…) | **37** |
+| **sorry-free** among the 110 | **73** |
+
+The triage names 3. Among the ones it omits is
+`QOU/QBeta/FaddeevModularDouble.lean` — sorry-free, and *itself attack B's
+structural core*.
+
+### Recommendation — judgement, not a finding
+
+**Re-rank A above B for the substrate face.** Attack A (Habiro / roots of unity)
+is now the only one of the four whose premise survives measurement where the
+anchors sit, and the triage already calls it *"the better structural fit"*,
+declining it only for circularity risk. Attack B should be **re-scoped**, not
+dropped: from *"the textbook bridge for this exact modulus gap"* to *"the right
+tool on the root-of-unity face, where the dual is order-one"* — which is where
+the decay saddle is anyway. The cost of the re-scope is a paragraph; the cost of
+not making it is a formalize-first tranche against a bridge that is 165 decades
+inert at the point it would be evaluated.
+
+**Default if nothing is done:** the triage stands as written, and the next agent
+reads "cheapest formalize-first step of the four" and spends a tranche on it.
+
+### Follow-on noticed, not actioned
+
+`qbeta_fmap_modular_dual_missing_probe.py` **writes no witness** — it is in the
+`qou-4383` "producer that exits 0 and writes nothing" class (that sweep is the
+current `main` HEAD). Not fixed here: it is someone else's arc, and changing it
+is outside the two AGENTS.md exemptions.
