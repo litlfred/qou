@@ -1953,9 +1953,32 @@ function isConjectureCarrier(doc: string): boolean {
  * `≠` non-triviality counts as the weakest possible Prop content and is
  * tracked separately by the caller. */
 function isPropBearingType(type: string): boolean {
-  return /[∀∃]|↔|(?<![-=])→|≤|≥|(?<![:<>=!])<|(?<![-:<>=!])>|≠|\b=\b|\bTrue\b|\bFalse\b/.test(
-    type,
-  );
+  // 🛑 The equality alternative was `\b=\b`, which CANNOT MATCH A LEAN
+  // EQUATION.  `=` is not a word character, so `\b` on either side of it
+  // requires an adjacent word character — i.e. it matches `a=b` and nothing
+  // else.  Every equation written the way Lean is actually written,
+  // `hh0 = 0`, read as NOT Prop-bearing.
+  //
+  // Measured 2026-09-13: all four live `docstring-claims-gap` hits were
+  // FALSE POSITIVES caused by this.  `QOUCohomology` was reported "only 0
+  // encoded" against `observability : hh0 = 0` and `frobeniusHopf_duality :
+  // hh2 = 1` — both of its enumerated properties, both properly encoded.
+  // `CategoricalReebDerivation` likewise, against `reeb_normalizes : reeb ≫
+  // contact = contact` and `reeb_periodic : reeb ^ period = 1`, which its
+  // docstring explicitly says are "encoded as fields below".
+  //
+  // An equation is the commonest way to encode a property in this corpus, so
+  // the criterion was blind to the majority of the evidence it exists to
+  // weigh — and it told agents to "encode" carriers that already had.
+  //
+  // The replacement matches `=` as a RELATION: not `:=` (a default value),
+  // not `==`, not `=>`, and not the tail of `≠` (which the caller filters
+  // separately).  Verified against the alternatives it does not touch: of a
+  // 23-case corpus sample only 7 verdicts change, all of them equations, and
+  // no non-proposition flips.  `ℕ → ℝ` and `Prop := True` match here for
+  // unrelated reasons (`→`, `True`) and did so before this change too.
+  return /[∀∃]|↔|(?<![-=])→|≤|≥|(?<![:<>=!])<|(?<![-:<>=!])>|≠|(?<![:!<>=≠])=(?![=>])|\bTrue\b|\bFalse\b/
+    .test(type);
 }
 
 const MARKER_OPT_OUT = /@marker\b|opaque\s+(tag|marker|predicate)/i;
@@ -2001,8 +2024,45 @@ function detectClaimsUnencoded(d: Decl, doc: string): Hit | undefined {
   const claimed = bullets.length;
   if (claimed < 2) return undefined;
   // Prop-bearing fields whose content is more than a bare `≠` non-triviality.
+  //
+  // A `class`/`structure` ascribed `: Prop` can only have Prop fields — Lean's
+  // elaborator enforces it — so on such a carrier EVERY field is a
+  // proposition and the syntactic sniff below is both unnecessary and wrong.
+  //
+  // 🛑 Measured 2026-09-13, this was the second of two blind spots that made
+  // every live `docstring-claims-gap` hit a false positive.  A field whose
+  // type is a NAMED PREDICATE applied to arguments carries no relational
+  // operator, so `isPropBearingType` cannot see it:
+  //
+  //   FaddeevPhiPhysical    instStripGrowth : FaddeevPhiStripGrowth (substrateB t) Φ
+  //                         hNF             : MeromorphicNFOn Φ Set.univ
+  //   HasCategoricalIrreducibility
+  //                         form_mono       : CategoryTheory.Mono (ι ≫ ∫_A)
+  //
+  // All three are genuine propositions, properly encoding exactly the
+  // properties their docstrings enumerate; the first carrier was reported
+  // "only 0 encoded" against two such fields.  Nothing distinguishes
+  // `Mono f` from `Option R` by shape alone without elaborating it, so the
+  // sort of the carrier is the sound discriminator rather than a heuristic.
+  //
+  // The count comparison still bites on a `: Prop` carrier: a docstring
+  // naming two properties over a one-field class still fires.  What no
+  // longer happens is a correctly-encoded carrier being told to encode.
+  //
+  // LIMITATION, stated rather than papered over: on a carrier that is NOT
+  // `: Prop` — a `Type`-valued class — a named-predicate field remains
+  // invisible to `isPropBearingType`, so this criterion can still
+  // under-count there.  Fixing that needs elaboration, not regex.
+  // `declSort` returns everything after the head's top-level `:`, which for a
+  // `… : Prop where` carrier is `"Prop where\n"` followed by the entire field
+  // block — so a bare `=== "Prop"` never matches one.  Cut at `where` (or the
+  // end of the line) to get the sort itself.
+  const allFieldsAreProps =
+    declSort(d).split(/\bwhere\b|\n/)[0].trim() === "Prop";
   const encoded = fields.filter(
-    (f) => isPropBearingType(f.type) && !/^[^=<>≤≥∀∃↔]*≠/.test(f.type),
+    (f) =>
+      (allFieldsAreProps || isPropBearingType(f.type)) &&
+      !/^[^=<>≤≥∀∃↔]*≠/.test(f.type),
   ).length;
   if (encoded >= claimed) return undefined;
   const h = mk(d, "proof-claims-unencoded", "docstring-claims-gap", false);
