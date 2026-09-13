@@ -1,10 +1,11 @@
 ---
 # qou-q2q7
 title: 'Magnus Omega2 option A: adopt the Wenzl y_lambda as the pairing'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-07T11:44:22Z
-updated_at: 2026-09-07T11:44:22Z
+updated_at: 2026-09-13T09:04:00Z
 ---
 
 # RECOMMENDED (as headline, with option C kept as a guard)
