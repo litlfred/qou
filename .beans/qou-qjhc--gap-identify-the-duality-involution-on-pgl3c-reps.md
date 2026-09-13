@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T08:46:56Z
+updated_at: 2026-09-13T09:13:48Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -671,3 +671,58 @@ class. **Bean stays open** (rule 13a).
 image of something canonical — a Ptolemy coordinate, the discriminant, a unit of `O_K` —
 and that must be *derived*, not searched: picking a generator because it matches `[w]` is
 selection against the target and is barred by the NO-FITTING directive.
+
+
+---
+
+## UPDATE 2026-09-13c — the obstruction class lives in Q(sqrt(-15)), a PROPER subfield of the trace field
+
+Branch `claude/8-fold-way-qou-derivation-qj9uzv`, PR #7273. Locates the class from
+update 2026-09-13b. Derived from the Galois data the witness already records — no
+candidate matching, per NO-FITTING.
+
+**The three quadratic subfields**, from `s = T + sigma(T)` and its quadratic minimal
+polynomial:
+
+    Fix(sigma_a) = Q(sqrt(-15))      Fix(sigma_b) = Q(sqrt(5))
+    Fix(tau)     = Q(sqrt(-3)) = Q(zeta_3)        (tau = sigma_a sigma_b)
+    => K = Q(sqrt(-3), sqrt(5)), biquadratic
+
+`Fix(tau) = Q(zeta_3)` independently reproduces the witness's own `galois_group`
+annotation — a cross-check on both, not a restatement of one.
+
+**sigma_a FIXES w**, so
+
+    w = 4/3 - (4/1875) s   in Q(sqrt(-15)),   8 s^2 - 11875 s + 5000000 = 0
+
+and the degree argument applies there: `[K:F] = 2`, and `y^3 = w` in F makes `[F(y):F]`
+divide both 3 and 2, so `y` is in F. Hence **w is a cube in K iff it is a cube in
+Q(sqrt(-15))**.
+
+**A negative worth recording.** The recorded trace field of this point is ALL of K
+(`span_dimension 4`, `equals_ptolemy_field true`, `L6a4-c1-trace-field.json`). So
+`Q(sqrt(-15))` is a **proper** subfield of the trace field — the obstruction does not
+live in the trace field, it lives in one quadratic piece of it.
+
+**Class vs element, kept apart** (the arity rule). `sigma(w)/w` being a cube is what
+fixes the CLASS, and an element can move by a cube. `sigma_b` and `tau` move the element
+and leave the class **unrefuted** over 40 primes — recorded as unrefuted, never proved,
+since reduction cannot prove a cube. The `sigma_a` row is flagged **VACUOUS**: it fixes
+`w` outright, so its ratio is 1 and "1 is a cube" is an identity, not evidence.
+
+**A premature negative of mine, corrected one commit later.** The first version of this
+probe tested membership in `Q(zeta_3)` alone, found it fails, and concluded *"the descent
+does not apply"* — scoped to one subfield, stated as though general. The guard stopped the
+run correctly; the sentence around it over-generalised. Three subfields exist and w is in
+one of them.
+
+Probe `computations/ptolemy/ptolemy_obstruction_class_subfield.py` (renamed from
+`..._eisenstein.py`, whose name asserted the wrong subfield).
+
+**Bean stays open.** Nothing here bears on whether `rho -> rho^{-T}` induces `sigma_b` as
+a map on the variety.
+
+**Next, agent judgement:** `h(Q(sqrt(-15))) = 2` — counted from the reduced forms
+`[(1,1,4), (2,1,2)]`, not quoted — so unique factorisation fails and `[w]` cannot be read
+off by factoring; the ideal class group enters. Identifying `[w]` in the cube-class group
+of `Q(sqrt(-15))` is the next step, and it must stay derived.
