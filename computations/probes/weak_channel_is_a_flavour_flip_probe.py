@@ -129,6 +129,7 @@ import _path_bridge  # noqa: F401,E402
 
 import mpmath as mp  # noqa: E402
 
+from codata_table import codata  # noqa: E402
 from pyhecke.atom import nucleon_gen_chains  # noqa: E402
 from pyhecke.gram import _hm_mp  # noqa: E402
 from q_parameter import q_at  # noqa: E402
@@ -141,8 +142,20 @@ except Exception:  # pragma: no cover
 
 NF = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NAMES = ["gamma", "sigma_0", "sigma_1", "L+", "L-", "e-"]
-# standard values, ordering comparison only
-M_N_OVER_M_P = 1.00137841917
+# Ordering comparison only -- both uses below are inside f-strings, and the
+# assertion's own predicate is `mn > mp_ and m3h > m3he`, which never reads
+# this. It is a REPORTED reference value.
+#
+# Read from the registry rather than written down. The literal here was
+# 1.00137841917, which is CODATA **2010**; the table carries 1.00137841946
+# (2022), and 2018's 1.00137841931 sits between them. Nothing this probe
+# concludes could move -- the difference is 3e-10 and the comparison is an
+# ordering -- but a stale edition quoted as "experiment" in printed output is
+# a wrong number on a reader's screen, and the fix that does not go stale
+# again is the one that stops transcribing. Caught by
+# codata_corpus_literal_scan, which flags EXECUTABLE sites only and had this
+# as its single finding corpus-wide.
+M_N_OVER_M_P = codata("neutron-proton mass ratio").value
 Q_TRITIUM_KEV = 18.592
 
 

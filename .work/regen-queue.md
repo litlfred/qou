@@ -266,3 +266,18 @@ sibling's claimed bean, and a cluster rather than a defect):
 source already says `q0_anchor="proton"` with the prose split into
 `q0_anchor_reason`; only its committed witness is stale at
 `'proton (experimental pin)'`. Re-run clears it.
+
+## 11. `weak_channel_is_a_flavour_flip_probe.py` — RE-RUN ONLY, CODATA literal de-hardcoded 2026-09-13
+
+`M_N_OVER_M_P` was the literal `1.00137841917` — **CODATA 2010**. The registry
+carries `1.00137841946` (2022); 2018's `1.00137841931` sits between them. Now
+`codata("neutron-proton mass ratio").value`, verified to resolve under the
+probe's own `sys.path` setup and to return an `mpf`.
+
+Nothing the probe concludes can move: both uses are inside f-strings and the
+assertion's predicate is `mn > mp_ and m3h > m3he`, which never reads the
+constant. But it was printed as "experiment" in the probe's output, so a stale
+edition was on a reader's screen.
+
+**This took the `CODATA stale-edition` gate from RED to GREEN** — it was its
+single finding corpus-wide, and it flags executable sites only.
