@@ -542,3 +542,83 @@ Earlier state for reference: at `4c6c247ea76^` the field was
 `0.7823334093100222` — a bare 17-digit float, below the padding audit's
 `MIN_SIG_FRAC` and so invisible to it. The 09-07 flip of the experimental
 constants to `mpf` is what made the same downcast visible.
+
+## 22. `b_over_a_evaluator.py` — three hand-typed AME literals, all wrong, and the padding was their shadow
+
+Two defects, one cause. `AME_BA` held per-nucleon AME2020 binding energies as
+**typed float literals**, and all three disagree with the registry
+(`codata_constants.ame_binding_mev(Z, A) / A`), measured 2026-09-13:
+
+| | typed | registry | relative |
+|---|---|---|---|
+| ⁴He  | 7.07391420 | 7.0739156 | **1.98e-7** |
+| ¹²C  | 7.68014481 | 7.6801446 | 2.73e-8 |
+| ⁴⁰Ca | 8.55130323 | 8.5513046 | **1.60e-7** |
+
+**Why two sweeps missed them, and it is the same reason twice.**
+`be50b759681` routed "the last 23 AME typo sites; 0 literals left tree-wide"
+— it looked for TOTAL binding energies, and these are per-nucleon, a factor
+of A away. `codata_truncation_audit`'s CANON carries `B_2H` … `B_7Li` as
+totals for the same reason, so a B/A literal cannot be matched against any
+canonical value and cannot be called a truncation of one. This file has
+**zero entries in that gate's baseline** — invisible by construction rather
+than tolerated. Not extended here: how many B/A literals exist tree-wide is
+its own measurement, and widening a red ratchet's vocabulary on a hunch is
+the move this campaign keeps paying for.
+
+**The padding was downstream of the typo.** `fit_c_s_to_4he` solves `c_S` so
+that ⁴He's predicted B/A hits the target exactly, so a binary64 target made
+the fitted `c_S` and every predicted B/A a dyadic rational — hence the
+committed `B_over_A_predicted_MeV`
+`7.0739141999999999299575392797123640775680541992188`, the double's expansion
+of the typed literal, which is the ratchet's single finding here. An exact
+decimal target leaves nothing to pad.
+
+VERIFIED IN-PROCESS without running the producer (called the two pure
+functions, wrote no witness):
+
+    c_S                    -509.00258077810748  ->  -509.00267848523
+    B_over_A_predicted_MeV  ...1999999999299575392797  ->  7.0739155999…97895
+    is_f64_padded                          True  ->  False
+
+The new value is still a long run of 9s and that is correct, not padding: it
+is the fit reaching its target to ~2e-51, and `is_double_expansion` keeps it
+because those digits are not the nearest double's. The same shape the
+detector's own docstring names for `tr_M(1)`.
+
+**NUMBERS MOVE — every row.** `c_S` is fitted, so all three nuclei shift at
+the 7th digit. Regeneration is its own commit.
+
+Divided by a plain `int`: mpmath is not imported in this module and an int
+divisor is exact, so adding the import would buy nothing.
+
+Not touched, and worth a separate look: this module also takes
+`from q_parameter import Q as Q0` — the float64 anchor, the same downcast
+§19 fixes in the Casimir probe. Its header marks the module
+`archimedean_by_design` for a 6×6 float64 eigensolve and says "substrate
+precision is the q-arithmetic input", which argues the anchor should be
+`Q_MP`; but the eigen path genuinely is float64, so which values that
+rationale covers needs deciding rather than assuming.
+
+## 23. `qbeta_markov_trace_norm_probe.py` — 50 digits asked of a 53-bit input
+
+All 6 padded fields are one call. `x_L2_at_q0 = [sp.Float(coords_witness[k], 50)
+…]` takes coefficients out of `qbeta-decay-sdp-knot-operator.witness.json` and
+asks sympy for 50 digits of a value that has 53 bits, and the witness then
+wrote `str(v)` of that:
+
+    0.074450296843839289251398838587192585691809654235840
+    for a value that is 0.07445029684383929
+
+**The upstream witness is innocent**, which is why this is NOT one of the two
+upstream-fix cases this bean lists. It stores those coefficients as bare JSON
+floats at their shortest round-tripping repr — honest for an SDP solution.
+The padding is added on this side.
+
+Promoting to 50 dps for the ARITHMETIC stays: `x_M` is genuinely computed at
+that precision and the comparison needs a common one. Only the serialization
+of the INPUT changes, to `repr(coords_witness[k])`.
+
+Verified against the real upstream values: all 6 go `is_f64_padded` True ->
+False, and each new string equals the audit's own `real_digits` of the
+committed one. **Value-preserving** — no digit that was ever there is lost.

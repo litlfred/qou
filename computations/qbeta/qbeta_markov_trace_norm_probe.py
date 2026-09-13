@@ -343,7 +343,18 @@ def main() -> None:
         "x_L2_vs_x_M_at_q0",
         {
             "names": nf_names,
-            "x_L2": [str(v) for v in x_L2_at_q0],
+            # `x_L2_at_q0` is `sp.Float(<json float>, 50)` -- 53 bits asked
+            # to carry 50 digits -- so `str()` wrote the binary64 expansion:
+            # 0.074450296843839289251398838587192585691809654235840 for a
+            # value that is 0.07445029684383929. Promoting it to 50 dps for
+            # the ARITHMETIC below is right (x_M is genuinely computed there);
+            # writing the INPUT back out at 50 digits is not.
+            #
+            # The upstream witness is innocent here. qbeta-decay-sdp-knot-
+            # operator.witness.json stores these coefficients as bare JSON
+            # floats at their shortest round-tripping repr, which is honest
+            # for an SDP solution -- the padding is added on this side.
+            "x_L2": [repr(coords_witness[k]) for k in keys_unicode],
             "x_M": [str(v) for v in x_M_at_q0],
             "max_abs_diff": str(max_diff),
         },

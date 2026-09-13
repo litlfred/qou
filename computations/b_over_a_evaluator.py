@@ -129,6 +129,7 @@ from q_parameter import Q as Q0  # noqa: E402
 
 # --- Physical constants --------------------------------------------
 from codata_constants import M_E_MEV  # CODATA-2022 full precision
+from codata_constants import ame_binding_mev as _ame_b  # AME2020 registry
 # alpha_EM is NOT CODATA-2022: 137.035999084 is the CODATA-2018 Cs-recoil
 # determination, and this line claimed 2022 while carrying it. The value
 # is a deliberate determination choice (see experimental_constants), so
@@ -190,12 +191,38 @@ def crossing_counts_free(Z: int, N: int) -> tuple[int, int, int]:
 
 
 # --- AME 2020 binding energies per nucleon (MeV) -------------------
-# Source: AME2020 atomic mass evaluation (Wang et al. 2021).
-# Total binding / mass number A.
+# Source: AME2020 atomic mass evaluation (Wang et al. 2021), read from the
+# registry at run time rather than typed. B/A is the total binding energy
+# over the mass number.
+#
+# THESE WERE HAND-TYPED FLOATS AND ALL THREE WERE WRONG, measured against
+# `ame_binding_mev(Z, A) / A` on 2026-09-13:
+#
+#     4He    7.07391420   registry 7.0739156    1.98e-7 relative
+#     12C    7.68014481   registry 7.6801446    2.73e-8
+#     40Ca   8.55130323   registry 8.5513046    1.60e-7
+#
+# `be50b759681` swept "the last 23 AME typo sites; 0 literals left tree-wide"
+# and did not reach these, because it looked for TOTAL binding energies and
+# these are per-nucleon. The reference-literal gate misses them for the same
+# reason: `codata_truncation_audit`'s CANON carries `B_2H` … `B_7Li` as totals,
+# so a B/A literal is a factor of A away from every canonical value it could
+# be matched against and cannot be recognised as a truncation of one. This
+# file has zero entries in that gate's baseline — invisible by construction,
+# not tolerated.
+#
+# `float` -> `mpf` matters twice over. The fit solves c_S so that 4He's
+# predicted B/A hits this target exactly, so a binary64 target made the fitted
+# c_S and every predicted B/A a dyadic rational: the committed witness carries
+# `B_over_A_predicted_MeV = 7.0739141999999999299575392797123640775680541992188`,
+# which is the double's expansion of the typed literal and is what the
+# float64-padding gate flags. An exact decimal target leaves nothing to pad.
+# Divided by a plain `int`, not an mpf: mpmath is not imported in this module
+# and an int divisor is exact, so adding the import would buy nothing.
 AME_BA = {
-    "4He": 7.07391420,
-    "12C": 7.68014481,
-    "40Ca": 8.55130323,
+    "4He":  _ame_b(2, 4) / 4,
+    "12C":  _ame_b(6, 12) / 12,
+    "40Ca": _ame_b(20, 40) / 40,
 }
 
 
