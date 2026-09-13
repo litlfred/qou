@@ -348,13 +348,22 @@ def main(argv: list[str] | None = None) -> int:
     argv = [a for a in argv if a != "--rebaseline"]
 
     findings: list[dict] = []
-    if argv and argv[0] == "--files":
+    # The check-D ratchet compares against a whole-tree baseline, so it is only
+    # meaningful on a whole-tree scan. In --files mode the unscanned files look
+    # drained: the first run of this audit against a single file reported
+    # "drained: 55" and invited a --rebaseline that would have erased a real
+    # backlog. Partial scans therefore report A/B/C only.
+    partial = bool(argv and argv[0] == "--files")
+    if partial:
         for a in argv[1:]:
             if os.path.exists(a):
                 findings += scan_file(os.path.abspath(a))
     else:
         for p in _iter_files(ROOT):
             findings += scan_file(p)
+    if partial and rebaseline:
+        print("  REFUSED: --rebaseline needs a whole-tree scan; drop --files.")
+        return 2
     findings.sort(key=lambda r: (r["check"], r["path"], r["line"]))
 
     abc = [f for f in findings if f["check"] in "ABC"]
@@ -376,7 +385,7 @@ def main(argv: list[str] | None = None) -> int:
 
     base = _load_baseline()
     d_new = [k for k in d_keys if k not in base]
-    d_fixed = sorted(base - set(d_keys))
+    d_fixed = [] if partial else sorted(base - set(d_keys))
 
     print("=" * 78)
     print(" y_lambda NAMING A WEIGHT THAT IS NOT THE WENZL y_λ")
@@ -387,7 +396,11 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  C  Plancherel producer named y_lambda          : {by['C']}   (blocking)")
     print(f"  D  witness y_lambda column, no weight_family   : {len(d_keys)}"
           f"  (ratchet, baseline {len(base)})")
-    print(f"     new since baseline : {len(d_new)}      drained : {len(d_fixed)}")
+    if partial:
+        print("     partial scan (--files): D reports new entries only; the "
+              "drain count needs a whole-tree run")
+    print(f"     new since baseline : {len(d_new)}"
+          f"{'' if partial else f'      drained : {len(d_fixed)}'}")
     print("  selftest : PASS (3 must-fire, 3 must-stay-quiet)")
 
     if abc:
