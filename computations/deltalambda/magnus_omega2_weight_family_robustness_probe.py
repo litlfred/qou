@@ -64,6 +64,13 @@ exact (the traces are shared, not recomputed) and cheap.
 NOT CLAIMED: that either measure is the right pairing for a Magnus Ω₂ sign
 question. Only which atoms the published sign distinguishes them on.
 
+WHAT IT ASSERTS. Not the hypothesis — the preconditions and the measured
+outcome: every source post-ruling, all three atoms actually read, and the
+number of atoms on which the weight family flips the sign locked at its
+measured 2. Asserting the hypothesis (`sign_robust == 1`) is what the first
+version did, and once the answer came back "not robust" that left a witness
+that could never pass. See the comment above the assertions.
+
 A NOTE ON THE FIRST VERSION OF THIS FILE. It reported robustness on all three
 atoms, because it re-weighted each probe's committed traces without checking
 they were canonical — two of three predated the 2026-09-05 ordering ruling. The
@@ -215,14 +222,51 @@ def main() -> int:
         "exhibited in A=2,3,4. Magnitudes remain weight-family dependent and "
         "non-monotone."
     )
+    # WHAT THIS PROBE ASSERTS, AND WHY IT CHANGED.
+    #
+    # It used to assert `sign_robust_to_weight_family == 1` — the HYPOTHESIS it
+    # exists to test. Once the measurement came back "not robust at A=3 or A=4"
+    # that assertion could never pass on correct inputs, so the witness carried
+    # `allPassed: false` permanently while the file's own docstring recorded
+    # non-robustness as the finding. A gate that fails identically whether the
+    # science is fine or the inputs are stale carries no signal, and a standing
+    # red is a gate someone eventually silences.
+    #
+    # It now asserts the two things that must actually hold:
+    #   1. every source witness is post-ruling — a real precondition, and the
+    #      exact failure that produced the wrong answer the first time round;
+    #   2. the MEASURED outcome, locked at its measured value, so that a change
+    #      in it goes red and gets read rather than passing quietly.
+    #
+    # This is not a weakened gate: (2) is strictly more sensitive than the old
+    # assertion, which could not distinguish 2 disagreeing atoms from 3.
+    n_stale = sum(1 for r in rows if r["source_pre_ruling"])
+    n_disagree = sum(1 for r in rows
+                     if not r["source_pre_ruling"] and not r["sign_robust"])
     wb.add_assertion(
-        name="sign_robust_to_weight_family",
-        computed=str(int(all_robust)),
-        expected="1",
+        name="all_sources_post_ruling",
+        computed=str(n_stale),
+        expected="0",
     )
-    print(f"\n  sign robust on all atoms: {all_robust}")
+    # A missing source witness `continue`s above and contributes no row, so
+    # without this a run that lost an atom could still show 2 disagreements and
+    # look clean. Count what was actually read.
+    wb.add_assertion(
+        name="atoms_measured",
+        computed=str(len(rows)),
+        expected=str(len(WITNESSES)),
+    )
+    wb.add_assertion(
+        name="atoms_where_weight_family_flips_the_sign",
+        computed=str(n_disagree),
+        expected="2",  # measured: triton (A=3) and helium-4 (A=4); not deuteron
+    )
+    print(f"\n  sign robust on all atoms: {all_robust}"
+          f"   (atoms where the weight family flips the sign: {n_disagree}; "
+          f"stale sources: {n_stale})")
     print(f"  Witness: {wb.save()}")
-    return 0 if all_robust else 1
+    return 0 if (n_stale == 0 and n_disagree == 2
+                 and len(rows) == len(WITNESSES)) else 1
 
 
 if __name__ == "__main__":
