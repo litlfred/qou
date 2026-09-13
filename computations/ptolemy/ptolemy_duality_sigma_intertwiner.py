@@ -35,9 +35,16 @@ det(A) != 0 IS the isomorphism.
 
 WHAT THIS PROVES, AND WHAT IT DOES NOT.
   PROVES, for L6a4 obstruction class 1, over K:  sigma_b(rho) and rho^{-T} are conjugate
-  in PGL(3,K).  lambda is mu_3-valued and mu_3 scalars are TRIVIAL in PGL(3), so the
-  twist is invisible there and the statement is exactly "duality induces the sigma_b
-  transport on this representation".
+  in PGL(3,K).
+
+  CORRECTED 2026-09-13, and the correction STRENGTHENS the theorem.  This block first read
+  "lambda is mu_3-valued and mu_3 scalars are TRIVIAL in PGL(3), so the twist is invisible
+  there", which implies a twist exists that PGL(3) happens not to see.  It does not exist:
+  ptolemy_duality_lambda_class_rigidity.py measures lambda == 1 on every generator (hence on
+  every word), so the intertwining is  A sigma_b(rho(w)) A^-1 = rho(w)^-T  EXACTLY, an
+  equality of GL(3,K) representations.  This probe already held the evidence and reported
+  only the weaker "lambda(g)^3 == 1"; so did stage 2, whose witness records
+  distinct_values: 1 across 936 words.  The check below now separates the two.
   DOES NOT prove anything about other obstruction classes, other manifolds, or duality as
   a map on a moduli space.  One representation (up to the Galois orbit), one manifold.
 
@@ -255,8 +262,16 @@ for nm in ORDER:
               f"{8 - len(bad)}/8 hold" + (f"  FAILURES {bad}" if bad else ""))
         report['rows'][nm]['longer_word_check'] = {'tested': 8, 'failures': bad}
         mu3 = all((lam[g] * lam[g] * lam[g]) == one for g in gens)
-        print(f"      lambda(g)^3 == 1 on every generator (so the twist is trivial in PGL(3)): {mu3}")
+        # DISTINGUISH the two: "lambda lands in mu_3" is far weaker than "lambda IS 1", and
+        # reporting only the former is what made this probe's first verdict imply a twist
+        # that does not exist.  mu_3-valued is FORCED by det (the lift is SL(3)); which
+        # element of mu_3 is the actual content.
+        trivial = all(lam[g] == one for g in gens)
+        print(f"      lambda(g)^3 == 1 on every generator (FORCED by det, lift is SL(3)): {mu3}")
+        print(f"      lambda(g) == 1 identically -- the twist is ABSENT, not merely invisible"
+              f" in PGL(3): {trivial}")
         report['rows'][nm]['lambda_in_mu3'] = mu3
+        report['rows'][nm]['lambda_identically_one'] = trivial
         # SCHUR CONSISTENCY.  The solve is over Q, so a K-line of intertwiners shows up
         # with Q-dimension [K:Q].  For an ABSOLUTELY IRREDUCIBLE rho, Schur forces the
         # intertwiner to be unique up to a K-scalar, i.e. dim_K = 1, i.e. dim_Q = DEG.
@@ -292,11 +307,16 @@ ctrl = [nm for nm in ('id', 'tau', 'sigma_a') if nm in found]
 report['controls_passed'] = not ctrl
 print(f"\nCONTROLS -- id / tau / sigma_a must all FAIL: "
       f"{'PASS' if not ctrl else 'BROKEN, these succeeded: ' + str(ctrl)}")
+_triv = report['rows'].get('sigma_b', {}).get('lambda_identically_one')
 report['verdict'] = (
     "PROVED for L6a4 class 1: an invertible A over K conjugates sigma_b(rho) to "
-    "lambda (x) rho^{-T} on the generators, hence on EVERY word by multiplicativity; "
-    "lambda is mu_3-valued and mu_3 is trivial in PGL(3), so sigma_b(rho) and rho^{-T} "
-    "are conjugate in PGL(3,K)."
+    "lambda (x) rho^{-T} on the generators, hence on EVERY word by multiplicativity. "
+    + ("lambda == 1 identically, so the conjugacy holds in GL(3,K) on the nose -- the mu_3 "
+       "twist is ABSENT, not merely invisible in PGL(3). (See "
+       "ptolemy_duality_lambda_class_rigidity.py: the triviality is FORCED, since every "
+       "SL(3)-preserving redecoration has N_b(mu) = mu.mu^2 = 1.)"
+       if _triv else
+       "lambda is mu_3-valued, which is trivial in PGL(3,K).")
     if found == ['sigma_b'] else
     f"UNEXPECTED -- intertwiners found for {found}; see the table")
 print("\nVERDICT: " + report['verdict'])
