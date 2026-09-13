@@ -91,12 +91,31 @@ class BorromeanQuark where
       at every q > 1. -/
   volume_calibrates_mass :
     ∀ q : ℝ, q > 1 → bare_mass q = borromean_volume / (1 - 1/q)^2
-  /-- Every observed baryon (proton, neutron) is realised as some
-      Borromean partition (the predicate is conjectural; the witness
-      is the explicit `proton_partition` / `neutron_partition`
-      structures defined above). -/
-  is_baryon_realisation : Prop
-  is_baryon_realisation_holds : is_baryon_realisation
+  /-- Every observed baryon is realised as a Borromean partition: the
+      proton and the neutron both inhabit `BorromeanBaryon`, with the
+      colour triple `(0,1,2)` and their respective orientations.
+
+      **Encoded 2026-09-13.**  This was two fields —
+      `is_baryon_realisation : Prop` plus a witness of it — the first
+      typed with the *universe* `Prop`, so the instance chose the
+      proposition and `⟨True, trivial⟩` would have discharged the pair.
+      `baryon_mass_from_volume` and the `[BorromeanQuark]`-conditional
+      results downstream were therefore conditional on nothing from this
+      field.
+
+      **The proposition below is the author's, not mine.**  It is exactly
+      what `instance canonical` already supplied for the old `Prop` field,
+      moved from the instance into the class where it constrains every
+      instance rather than one.  Nothing is weakened and nothing is
+      decided: the canonical instance still discharges it, with the same
+      term (`⟨proton_partition, neutron_partition, rfl, rfl, rfl, rfl⟩`),
+      so the carrier remains inhabited by real mathematics — which is what
+      makes the projection above a legitimate accessor rather than a
+      self-assuming one. -/
+  is_baryon_realisation :
+    ∃ p n : BorromeanBaryon,
+      p.color = ![0, 1, 2] ∧ p.orientation = ![1, 1, -1] ∧
+      n.color = ![0, 1, 2] ∧ n.orientation = ![1, -1, -1]
 
 /-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[BorromeanQuark]`, baryon mass at every q > 1
@@ -121,10 +140,6 @@ instance canonical : BorromeanQuark where
   bare_mass := fun q => borromean_volume / (1 - 1/q)^2
   volume_calibrates_mass := fun _ _ => rfl
   is_baryon_realisation :=
-    ∃ p n : BorromeanBaryon,
-      p.color = ![0, 1, 2] ∧ p.orientation = ![1, 1, -1] ∧
-      n.color = ![0, 1, 2] ∧ n.orientation = ![1, -1, -1]
-  is_baryon_realisation_holds :=
     ⟨proton_partition, neutron_partition, rfl, rfl, rfl, rfl⟩
 
 end QOU.Archimedean
