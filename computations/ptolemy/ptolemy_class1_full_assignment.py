@@ -156,8 +156,35 @@ def main():
         print(f"\nfixed point stalled with {len(left)} unpinned: {left}")
         print("Report rather than guess -- the triangular structure does not close.")
         return 1
-    print(f"\nall {len(unknown)} pinned; cross-checks per coordinate: "
-          f"{ {k: pinned_by[k] for k in sorted(pinned_by)} }", flush=True)
+    # --- a REAL cross-check pass.  The loop above exits the moment the last
+    # unknown is pinned, so on its own it compares nothing: every count is 1 and
+    # that number says only "derived once".  Re-walk every single-unknown equation
+    # now that all six are known, and require each to agree exactly in K.
+    for p in live:
+        for name in unknown:
+            others = {X[v]: sol[v] for v in unknown if v != name}
+            q = red(p.subs(others))
+            if X[name] not in q.free_symbols or sp.Poly(q, X[name]).degree() != 1:
+                continue
+            a = red(q.coeff(X[name], 1))
+            if a == 0:
+                continue
+            val = red(-red(q.subs(X[name], 0)) * inv(a))
+            if red(sol[name] - val) != 0:
+                print(f"\nCONTRADICTION: {name} pinned to two different values in K.")
+                return 1
+            pinned_by[name] = pinned_by.get(name, 0) + 1
+    print(f"\nall {len(unknown)} pinned; INDEPENDENT equations agreeing per "
+          f"coordinate: { {k: pinned_by[k] for k in sorted(pinned_by)} }", flush=True)
+
+    # --- what the recovered values ARE ------------------------------------------
+    print("\nrecovered values, as roots of unity:", flush=True)
+    for v in unknown:
+        tag = '1' if sol[v] == 1 else ('u' if red(sol[v] - u) == 0 else
+              ('u^2' if red(sol[v] - red(u * u)) == 0 else
+               ('root of unity of order 3' if red(sol[v] ** 3 - 1) == 0
+                else 'NOT a cube root of unity')))
+        print(f"   {v} = {tag}", flush=True)
 
     # --- accept only on ALL 39 ---------------------------------------------------
     sub = {X[v]: sol[v] for v in unknown}
