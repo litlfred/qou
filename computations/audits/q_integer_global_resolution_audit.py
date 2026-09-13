@@ -109,6 +109,18 @@ def top_level_assignments(tree: ast.Module) -> dict[str, ast.expr]:
                 for t in node.targets:
                     if isinstance(t, ast.Name):
                         out.setdefault(t.id, node.value)
+                    elif isinstance(t, (ast.Tuple, ast.List)):
+                        # `q, h = sp.symbols('q h')` and
+                        # `Q, H, TOL, WALL = (Q_MP, HA_MP, ...)` are both
+                        # module bindings of q.  Record each element as a
+                        # SUBSCRIPT of the right-hand side, so resolve() just
+                        # evaluates RHS[i] with its existing machinery.
+                        for i, el in enumerate(t.elts):
+                            if isinstance(el, ast.Name):
+                                out.setdefault(el.id, ast.Subscript(
+                                    value=node.value,
+                                    slice=ast.Constant(value=i),
+                                    ctx=ast.Load()))
             elif isinstance(node, (ast.Try, ast.If, ast.With)):
                 for attr in ('body', 'orelse', 'finalbody'):
                     walk_block(getattr(node, attr, []) or [])
@@ -295,10 +307,34 @@ def main() -> int:
                 arg = node.args.args[0].arg if node.args.args else None
                 local = {arg} if arg else set()
                 for sub in ast.walk(node):
+                    # Every binding form, not just plain assignment.  Collecting
+                    # only ast.Assign targets reports `i`, `k`, `j` -- ordinary
+                    # comprehension and loop variables -- as unresolved module
+                    # globals, which inflated this audit's "blocked" count with
+                    # its own noise.
+                    tgts = []
                     if isinstance(sub, ast.Assign):
-                        for t in ast.walk(sub.targets[0]):
-                            if isinstance(t, ast.Name):
-                                local.add(t.id)
+                        tgts = list(sub.targets)
+                    elif isinstance(sub, (ast.AugAssign, ast.AnnAssign)):
+                        tgts = [sub.target]
+                    elif isinstance(sub, (ast.For, ast.AsyncFor)):
+                        tgts = [sub.target]
+                    elif isinstance(sub, (ast.comprehension,)):
+                        tgts = [sub.target]
+                    elif isinstance(sub, ast.NamedExpr):
+                        tgts = [sub.target]
+                    elif isinstance(sub, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                        local.add(sub.name)
+                        local.update(a.arg for a in sub.args.args)
+                        local.update(a.arg for a in getattr(sub.args, 'kwonlyargs', []))
+                    elif isinstance(sub, ast.Lambda):
+                        local.update(a.arg for a in sub.args.args)
+                    elif isinstance(sub, ast.ExceptHandler) and sub.name:
+                        local.add(sub.name)
+                    for t in tgts:
+                        for nm in ast.walk(t):
+                            if isinstance(nm, ast.Name):
+                                local.add(nm.id)
                 free = {s.id for s in ast.walk(node)
                         if isinstance(s, ast.Name) and isinstance(s.ctx, ast.Load)
                         and s.id not in local and s.id not in BUILTIN}
