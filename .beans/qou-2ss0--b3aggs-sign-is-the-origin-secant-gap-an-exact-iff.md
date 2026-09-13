@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T07:58:29Z
-updated_at: 2026-09-13T08:34:10Z
+updated_at: 2026-09-13T08:39:58Z
 ---
 
 ## Result (2026-09-13) — the convexity route analysed; convexity is the WRONG invariant
@@ -113,3 +113,54 @@ section hits and has nothing to do with Ursell functions; `arxiv-math-9909027v1`
 is Jones, *Planar Algebras I*. So a grep for the phrase that names this bean's
 own load-bearing theorem lands mostly on combinatorics of ASMs. Same class as
 the five already recorded, found inside my own search path.
+
+
+## 2026-09-13 — the SCALING route, from the owner's upload, and it is the shape a derivation would have
+
+The owner uploaded `arXiv:2311.05446v3` (Aishwarya–Rotem, *New Brunn–Minkowski
+and functional inequalities via convexity of entropy*). Its Brunn–Minkowski
+results hold for log-concave measures with a **p-homogeneous potential** — and
+that hypothesis SHAPE is what matters here, not the inequalities.
+
+`sign_carries_no_information_beyond_the_secant` says the convexity route is a
+derivation only if the secant condition comes from something that does not
+already know `b₃`. **Scaling is such a something.** A homogeneity degree is
+fixed by how the assembly law behaves under rescaling the bond weight; it is not
+a curvature picked to fix a sign.
+
+Four new theorems (lean-direct exit 0, all four `#print axioms` clean):
+
+    b3Agg_of_scales                    Φ(3g) = c·Φ(g)  ⇒  b₃ = (c − 3)·Φ(g)
+    b3Agg_pos_iff_scale_gt_three       with Φ(g) > 0:   b₃ > 0  ↔  c > 3
+    b3Agg_eq_zero_iff_scale_eq_three                     b₃ = 0  ↔  c = 3
+    b3Agg_pos_iff_exponent_gt_one      Φ(3g) = 3^p·Φ(g): b₃ > 0  ↔  p > 1
+
+The first three need **no convexity, no differentiability and no hypothesis on
+`Φ` anywhere else** — strictly more general than the power law, since `c` is any
+scaling factor. Verified in exact `Decimal` at `p = 0.5, 1, 1.5, 2, 3` against
+the direct cumulant before the Lean was written; all five agree exactly, signs
+`−, 0, +, +, +`.
+
+### Why this is the useful reformulation
+
+**`p = 1` is additive superposition and gives exactly zero** — the affine
+boundary `b3Agg_linear_eq_zero` is the linear instance of. **`p < 1`, where a
+concave law such as a logarithm sits, gives a negative cumulant.** So the open
+question moves from
+
+  *"why should the aggregator curve upward?"*   (a curvature — the fit trap)
+
+to
+
+  *"is the assembly law SUPERLINEAR in the bond count, and why?"*   (a scaling)
+
+That second question is about how the law responds to rescaling, which the
+framework can in principle settle **without reference to the measured sign**.
+It is the first formulation of this open item that is not circular by
+construction.
+
+**NOT claimed:** that the framework's assembly IS superlinear, that `p > 1`, or
+any value of `p`. Scope (a). No aggregator is proposed and the magnitude is
+untouched. Asserting `p > 1` because it yields `b₃ > 0` would be the same
+selection-against-target this file exists to name — the requirement is a derived
+scaling degree, not a chosen one.

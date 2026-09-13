@@ -153,6 +153,79 @@ theorem convexOn_sufficient_not_necessary :
 
 end Witness
 
+
+section Homogeneity
+
+/-!
+### The scaling route — where a *derived* curvature could come from
+
+`sign_carries_no_information_beyond_the_secant` says the convexity route is a
+derivation only if the secant condition comes from something that does not
+already know `b₃`. **Scaling is such a something.** A homogeneity degree is a
+structural property of an assembly law, fixed by how the law behaves under
+rescaling the bond weight — not a curvature chosen to fix a sign.
+
+Suggested by Aishwarya–Rotem, *New Brunn–Minkowski and functional inequalities
+via convexity of entropy* (`arXiv:2311.05446v3`), whose Brunn–Minkowski results
+hold for log-concave measures with a **p-homogeneous potential**. The relevance
+here is the shape of the hypothesis, not the inequalities: it is a *scaling*
+assumption doing the work that a convexity assumption would otherwise do.
+-/
+
+/-- **The scaling identity.** If the aggregator scales by a factor `c` across the
+ratio `3`, the cumulant is `(c − 3) Φ g` — no convexity, no differentiability,
+no hypothesis on `Φ` anywhere else. -/
+theorem b3Agg_of_scales (Φ : ℝ → ℝ) (g c : ℝ) (hc : Φ (3 * g) = c * Φ g) :
+    b3Agg Φ g = (c - 3) * Φ g := by
+  unfold b3Agg; rw [hc]; ring
+
+/-- **The sign is then the scaling factor against 3, and nothing else.** For a
+positive aggregator value, `b₃ > 0` exactly when the law scales by more than the
+bond count it is scaling across. -/
+theorem b3Agg_pos_iff_scale_gt_three (Φ : ℝ → ℝ) {g c : ℝ}
+    (hc : Φ (3 * g) = c * Φ g) (hpos : 0 < Φ g) :
+    0 < b3Agg Φ g ↔ 3 < c := by
+  rw [b3Agg_of_scales Φ g c hc]
+  constructor
+  · intro h; nlinarith [h, hpos]
+  · intro h; nlinarith [h, hpos]
+
+/-- **`b₃` vanishes exactly at `c = 3`** — superposition, the affine boundary
+that `b3Agg_linear_eq_zero` is the linear instance of. -/
+theorem b3Agg_eq_zero_iff_scale_eq_three (Φ : ℝ → ℝ) {g c : ℝ}
+    (hc : Φ (3 * g) = c * Φ g) (hpos : 0 < Φ g) :
+    b3Agg Φ g = 0 ↔ c = 3 := by
+  rw [b3Agg_of_scales Φ g c hc, mul_eq_zero]
+  constructor
+  · rintro (h | h)
+    · linarith [sub_eq_zero.mp h]
+    · exact absurd h hpos.ne'
+  · intro h; left; rw [h]; ring
+
+/-- **The power-law reading.** A `p`-homogeneous aggregator scales by `3 ^ p`, so
+`b₃ > 0` iff `p > 1`: the assembly must be *superlinear* in the bond count.
+`p = 1` is additive superposition and gives exactly zero; `p < 1` — which is
+where a concave law such as a logarithm sits — gives a negative cumulant.
+
+So the open question "why should the aggregator curve upward?" becomes the
+sharper and more answerable "**is the assembly law superlinear in the bond
+count, and why?**" That is a question about scaling, which the framework can in
+principle settle without reference to the measured sign. -/
+theorem b3Agg_pos_iff_exponent_gt_one (Φ : ℝ → ℝ) {g p : ℝ}
+    (hhom : Φ (3 * g) = (3:ℝ) ^ p * Φ g) (hpos : 0 < Φ g) :
+    0 < b3Agg Φ g ↔ 1 < p := by
+  rw [b3Agg_pos_iff_scale_gt_three Φ hhom hpos]
+  constructor
+  · intro h
+    have : (3:ℝ) ^ (1:ℝ) < (3:ℝ) ^ p := by rwa [Real.rpow_one]
+    exact (Real.rpow_lt_rpow_left_iff (by norm_num : (1:ℝ) < 3)).mp this
+  · intro h
+    have : (3:ℝ) ^ (1:ℝ) < (3:ℝ) ^ p :=
+      (Real.rpow_lt_rpow_left_iff (by norm_num : (1:ℝ) < 3)).mpr h
+    rwa [Real.rpow_one] at this
+
+end Homogeneity
+
 /-- **The fit statement, as a theorem rather than a caution.** For `g > 0` the
 predicate "`Φ` has a non-negative 3-body cumulant at `g`" is *logically
 equivalent* to a property of `Φ` alone — its origin-secant slope not falling
