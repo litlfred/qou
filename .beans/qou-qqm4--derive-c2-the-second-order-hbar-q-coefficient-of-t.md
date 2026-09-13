@@ -5,6 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
+updated_at: 2026-09-13T14:47:00Z
 updated_at: 2026-09-13T14:22:41Z
 updated_at: 2026-09-13T13:50:50Z
 updated_at: 2026-09-13T13:07:38Z
@@ -1411,6 +1412,70 @@ eleven.
 (item 1 above — leading-order only, subleading `(1+ℏ_q³)` **posited**, 76 % of the
 CODATA gap) and the colour weighting itself (item 3), now sharpened to *which of
 the two weightings, and why*.
+
+---
+
+GENERICITY OF THE `(q−1)²/3` BASELINE — MEASURED, and it cuts both ways
+(2026-09-13, session sleepy-morse, PR #7300).
+
+With the `1/4` retracted (two entries up) and item 2 withdrawn (one entry up),
+**the `(q−1)²/3` is the only live derivation target this bean has left.**  Before
+attacking it I ran the instrument AGENTS.md §*"Defined residual ≠ derived
+decomposition"* item 2 prescribes — *"is the offset FORCED, or merely IN
+RANGE?"*, the `sleak_offset_genericity_check` pattern — because
+`conj:flavor-split-habiro-derivation` states the form's status as *"a structured
+near-match, not a derived closed form … ~0.128 % relative"*, and the question is
+whether that 0.128 % is **evidence for this expression** or for nothing.
+
+**The family.**  `(p/k)·Π sᵢ^{eᵢ}` over the six substrate scalars the corpus
+itself names — `ℏ_q`, `h`, `[2]_q`, `q−1`, `z_D`, `[3]_q` — at total degree ≤ 4,
+which is the corpus form's own degree (AGENTS.md records the identity
+`δ = ℏ_q²·h·[2]_q/3`).  209 monomials × 91 distinct prefactors = **19 019
+members**.  Target from the CODATA-2022 **neutron–proton mass ratio**,
+`δ = 2(r−1)/(r+1) = 0.00137747009421 ± 4.0e-10`, so no MeV conversion enters;
+`q₀` proton-pinned.
+
+**IT IS NOT GENERIC.**  4 of 19 019 members land inside the corpus form's own
+miss (**0.021 %**); 4 of 209 monomials admit *any* prefactor that does
+(**1.91 %**).  This is emphatically not the `S_leak` case, where every constant
+in a window of width 0.049 reproduced the feature.  So the near-match survives
+the test the corpus applies to this class of claim.
+
+**BUT UNDER FREE `p/k` THE CORPUS FORM IS RANK 4, NOT RANK 1.**  Three
+competitors of the **same degree** beat it, the best by **5.2×**:
+
+    (8/9)·h·(q−1)²·z_D          rel 2.475e-4
+    (4/7)·ℏ_q·[2]_q·(q−1)²      rel 2.778e-4
+    (11/2)·ℏ_q·h·(q−1)²         rel 3.727e-4
+    (1/3)·ℏ_q²·h·[2]_q          rel 1.277e-3   ← the corpus form
+
+**Under UNIT-NUMERATOR prefactors it is rank 1 of 209**, and the only monomial
+whose `1/k` form lands inside its own miss; second place (`(1/7)·h²·[2]_q·(q−1)`)
+is 1.9× worse.  That restriction is the fair one — a two-integer prefactor is a
+second tuned choice, and the corpus form's prefactor is `1/3`.
+
+**So the 0.128 % is weak but non-vacuous evidence, and its whole weight is the
+`1/k` restriction.**  I flag in the probe, and here, that the restriction is
+itself chosen from a property of the form under test: that is a selection effect,
+not a neutral prior.  Someone who fixed the prefactor grid before seeing the
+answer would report rank 4.
+
+**What this does NOT do.**  It derives nothing and refutes nothing.  A structural
+derivation — the `H₄` alternating-channel route
+`conj:flavor-split-habiro-derivation` proposes, Wenzl weight `1/[4]_q!` — is
+unaffected by how much numerical company the form has; that is the point of
+insisting on one.  **Scope (a)**: this basis, this degree cap, this prefactor
+grid; a different basis gives a different count, and no invariant is proved.
+
+**And the three competitors must NOT be adopted.**  Switching to `(8/9)·h·(q−1)²·z_D`
+because it fits 5.2× better is exactly the selection-against-the-target that
+AGENTS.md §*"NO FITTING"* forbids, and the ranking rule there is explicit that a
+more accurate fitted route is worth **less** than a less accurate derived one.
+They are recorded as a measurement of how much the agreement is worth, not as
+candidates.
+
+Probe: `computations/qbeta/flavour_split_baseline_genericity_probe.py`
+(mpmath dps 60, no sympy, no float64; gates name it nowhere).
 COORDINATION NOTE (2026-09-13, session from bean `qou-5c64`). Not a claim on
 this bean and nothing here is edited — this answers the one item the previous
 coordination note left explicitly untested.
