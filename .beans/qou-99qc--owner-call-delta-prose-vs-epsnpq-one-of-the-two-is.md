@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T14:53:20Z
+updated_at: 2026-09-13T15:07:51Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2170,3 +2170,49 @@ mistake, and its decay lemma is why the weaker exclusion was one-sided.
 `E₀` only. Says nothing about another route, a different `E₀`, or a **tower
 correction** — and the tower correction is LIVE, since `E₀` is canonical by
 ruling with an OPEN series (`qou-y3bm`).
+
+
+## 🛑 Part 11 (PR #7304) — RETRACTION of parts 9 and 10's Q_β reading
+
+`computations/qbeta/qbeta_qbeta_scores_a_difference_probe.py` (6/6).
+
+**Both over-claims were mine, and the calibration step caught them.**
+
+**What I asserted** (parts 9 and 10): the floor `[n+1]_q/[2]_q^n` and then
+`tr_M ≥ 1` mean "no γγ + confinement-SDP word can reproduce Q_β" — for n ≤ 5,
+then at every n, with minimum prediction `E₀` = +440.369 %.
+
+**What is true.** `Q_β = |ε(Δ)|·E₀` where **Δ = NEUTRON element − PROTON
+element**. Source says so verbatim: `delta_of` — *"Delta = neutron - proton,
+coordinatewise in the NF basis"*. The Markov trace is **linear**, so
+`tr(Δ) = tr(n-word) − tr(p-word)`, and two quantities each ≥ 1 have a difference
+bounded by **nothing**. Neither exclusion follows. Both withdrawn.
+
+**How caught.** Reconstructing `nuc11_interleaved` letter by letter gave
+tr(p) = 0.6293284022029219, tr(n) = 0.4751335171556822 — **neither** matching
+the recorded `tr_conv_D = -0.1541948850472397056592555`. Their **difference**
+matches to 1.4e-26, every recorded digit.
+
+**What the difference functional gives**, all 15 pairs reported (picking the
+closest would be selection against the target): **−100 % to +79.4 %**. They
+**STRADDLE** the target rather than sitting above it — the opposite of the
+retracted claim. Best +5.15 % against expected-by-chance **7.73 %** on an
+11-value grid: same order, not evidence.
+
+**Survives untouched** (measured, not inferred): `tr_M ≥ 1` per **individual**
+PSD-feasible γγ word, tight; the det-1 fact; AM-GM; weight non-negativity; the
+Markov normalisation; the floor and its decay; **every Lean theorem** (they are
+about pairings and PSD matrices, none mentions Q_β); the crossing-energy results.
+
+**One NEW finding survives:** the scored element's proton and neutron words are
+**both PSD-infeasible** — `(2,1)` and `(1,1,1)` fail for each — with `det ≠ 1`
+in every block. So the **SDP half** of the ruling excludes the scored element
+directly at the element level, independently of the altChar exclusion.
+
+**Fixed in the same commit**, so nothing false is left standing: both probes'
+title lines, descriptions, scope paragraphs and assertion names (one was
+*named* `Q_beta_is_excluded_at_every_strand_count`); a scoping note on the
+prediction probe (it scores single words, also not the scoring path); and a
+docstring note on `GammaGammaTraceFloor.lean`.
+
+**Now OPEN:** whether any **pair** of PSD-feasible γγ words reproduces Q_β.
