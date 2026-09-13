@@ -297,3 +297,59 @@ definition.
 engine before completing (`invalid generator index 0 for n = 3`, bean
 `qou-2t9y`), verified against pristine `origin/main`, so no MPFR route can be
 verified there end-to-end today.
+
+### 🛑 The "single clean propagator" is a FALSE POSITIVE — and the proxy's blind spot is new
+
+I named `all_nuclides_wedderburn_spectral_v2.py` above as the one clean
+propagator and the right first drain target. **Hand-checked, it should not be
+drained at all.** Three for three now on this bean's own rule that a hand-check
+of a flagged site finds it legitimate.
+
+`all_nuclides_wedderburn_spectral_v2.py:370-392`, under a comment reading
+`# 3. chi_std vs native Hoefsmit (f64)`:
+
+```python
+mine = float(m_tr(m))                                  # the module's OWN mpmath result, cast DOWN
+ref  = float(nat.chi_lambda_braid([2, 1], word, qf))   # the native f64 entry
+devs.append(abs(mine - ref))
+native_dev = max(devs)
+w.add_assertion(name="chi_std_vs_native_hoefsmit",
+                computed=native_dev, expected=0.0, tolerance=1e-9, ...)
+```
+
+**It exists to test the f64 kernel.** Both arms are cast to `float` on purpose
+so the comparison is like-for-like, and the tolerance is `1e-9` — about seven
+orders above the f64 floor for an O(1) quantity, so the check is insensitive to
+the f64 path by construction. Routing it to MPFR would not improve it; it would
+**destroy** it, leaving MPFR compared against MPFR and nothing validating the
+native kernel.
+
+**And the `PROPAGATES` flag does not attach to this value.** The witness is read
+by `delta_lambda_feed_analysis.py`, which is what earns the flag — but that
+consumer **never reads `chi_std_vs_native_hoefsmit`**. It reads `data.rows`
+(`A`, `T_crossings`, `B_AME_MeV`) and `markov_weights_y_lambda`. Its `_cell`
+docstring settles the rest on its own:
+
+> Kept as `float` deliberately, NOT promoted to mpf: everything downstream here
+> is numpy (`np.polyfit`, `np.log10`) and is float64 by construction. …
+> converting at the read would dress a float64 analysis in digits it does not
+> have.
+
+So the propagation target is deliberately float64 too.
+
+**Why `native_entry_disposition` misses it — this is the reusable part.** The
+`deliberate` bucket is defined as *"also calls an `_mpfr` entry"*. This site
+cannot: its reference arm is **the module's own mpmath result cast down**, not a
+second engine call. A deliberate f64 cross-check whose other arm is INTERNAL is
+structurally invisible to that test, and lands in `actionable`.
+
+Narrowing the proxy is a detector change, not a precision fix, so it is reported
+rather than done. The shape to key on, if someone does: a site whose flagged
+value is subtracted from a `float(...)` of a locally-computed quantity and
+asserted against a tolerance orders above the f64 floor.
+
+**Consequence for the drain: there is no clean propagator.** Both flagged
+propagators are now accounted for — this one is deliberate, and
+`fr_pullback_cosh_h_test` is in the HALF-FIX family (`dim_q`/`qfac` return
+floats). The next agent should start from the **terminal** list, or narrow the
+proxy first.
