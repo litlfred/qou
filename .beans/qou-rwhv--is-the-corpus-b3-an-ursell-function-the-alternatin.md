@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T09:39:42Z
-updated_at: 2026-09-12T05:36:15Z
+updated_at: 2026-09-13T10:42:54Z
 ---
 
 ## Where this came from
@@ -165,3 +165,43 @@ Audit rewritten: `docs/audits/2026-08-30-ursell-alternating-sign-and-the-b3-obst
 Lean `QOU/MassTheory/UrsellPartitionFunctionB3.lean` — lean-direct exit 0, 13 decls, no sorryAx. Probe `computations/probes/ursell_partition_function_for_b3_probe.py` 11/11. Audit `docs/audits/2026-09-12-ursell-partition-function-for-b3.md`. `MayerThreeBodySign.lean` docstring re-scoped on the same branch; AGENTS.md bullet 4 wording proposed in the PR body.
 
 **Still open:** the extensive term itself (`qou-brng`) — this closes the vocabulary question, not the magnitude.
+
+
+## 2026-09-13 — cluster-expansion primary literature is now HELD; state what it is precisely
+
+This bean's scope-(b) exclusion rests on *"invariant = Ursell alternation on
+(0,1)"*, sourced to a 2022 survey. The `library/` ingestion of merge
+`3cb26d4b9f8` adds primary sources in that lineage, now reachable by
+corpus-grep path 5. **Measured per document (files containing the name, not hit
+counts):**
+
+| doc | sections | Groeneveld | Ursell | Penrose |
+|---|---|---|---|---|
+| `library/arxiv-1303.6444v3/` (*Virial Expansion Bounds*) | 14 | 2 | **0** | 14 |
+| `library/arxiv-math-ph-0605041v2/` (Fernández–Procacci) | 3 | 2 | 1 | 2 |
+
+**Do NOT read this as "the alternation theorem is now held."** What is held is
+the **Groeneveld / Penrose** cluster-expansion *bounds* lineage — the ancestry of
+the alternation and the right place to look for it — and the word *Ursell*
+appears in exactly **one** file across both. The alternation itself was not
+located here and this note does not claim it was. A triage pass characterised
+these as carrying "Groeneveld and Ursell"; on measurement that is true of one
+document, not both.
+
+Separately, `library/arxiv-nucl-th-0507033v2/` (*Cluster Formation and the
+Virial EOS of Low-Density Nuclear Matter*, 19 sections) was flagged as on-point
+for the canonical-ensemble setting. It is topically adjacent and carries
+**none** of Groeneveld / Ursell / Penrose — useful for the nuclear-matter
+framing, not for the invariant.
+
+**Also correcting a claim of mine from earlier in this session**, which the
+scheduled check-in for #7255 still carried in its standing prompt: I said
+Groeneveld *"is not in `library/`"* and made that the precondition for attacking
+`qou-q8vl`'s remaining item. It was wrong then (I had run only the `INDEX.md`
+tier, which is one line per **document** — a body-text term can never appear
+there, so that tier structurally cannot answer the question), and there are now
+two more holdings besides. `UrsellPartitionFunctionB3.lean:73` already cited
+Jansen–Kolesnikov by DOI the whole time.
+
+Holding a source is a **citation, not a derivation.** §13a: stays open; the
+residual this bean names is still `qou-brng`, the extensive term.

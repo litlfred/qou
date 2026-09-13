@@ -1,11 +1,11 @@
 ---
 # qou-w9up
 title: 'GAP: no general (n-dim) form of the ansatz-content dichotomy — only 2x2/3-mass cases exist'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-13T05:11:10Z
-updated_at: 2026-09-13T05:12:50Z
+updated_at: 2026-09-13T11:26:51Z
 ---
 
 ## The gap (corpus-grepped 2026-09-13, six paths; no general version found)
@@ -48,3 +48,79 @@ The same check should be run on the other two before leaning on them.
 ## Default if nothing is done
 The dichotomy stays a docstring remark on one 2x2 file, and each future multiplet
 re-derives (or fails to notice) whether its ansatz has content.
+
+
+## CLOSED 2026-09-13 — the general form is on `main` (merge `3cb26d4b9f8`)
+
+`content/quantum-observable-universe/lean/QOU/Eightfold/AnsatzContentDichotomy.lean`,
+sorry-free, generic `{R : Type*} [CommRing R]`, no numerals, no `q`, no Markov
+parameter and no anchor — so nothing in it can be convention-C contaminated.
+
+The gap this bean names was *"the corpus states the dichotomy in prose but never
+as a theorem"*. It is now a theorem, and the statement is the one the bean asked
+for: predictive content lives in the annihilator of `im(A)` minus the relations
+that hold identically.
+
+- `vacuous_of_forces_of_unconstraining` — **the two failure modes are one.** An
+  ansatz nothing can refute (`Function.Surjective`) forces only relations that
+  were true of every conceivable observable tuple.
+- `not_unconstraining_of_discriminating` — the usable contrapositive: a genuine
+  prediction **certifies that the model is restrictive**.
+- `exists_unreachable_of_discriminating` — makes it operational by naming the
+  falsifying observation.
+- `nonetAnsatz_unconstraining` re-derives `mixing_unconstrained` as an instance;
+  `equalPairAnsatz_discriminating` exhibits the non-degenerate case, so the
+  dichotomy's hypothesis is not vacuously satisfiable.
+
+Verification: `lean -DautoImplicit=false -s 65536` exit 0; `#print axioms` on all
+8 theorems shows no `sorryAx`. The file imports **only Mathlib** (zero `QOU`
+imports), so it is import-cone-disjoint from the rest of the corpus.
+
+One commit shipped RED and said so (`UNVERIFIED` in its own message, a dead
+tactic line after `simp` had already closed the goal); fixed in `79ad19219`
+before merge. Recorded because a bare `lean` run would not have caught it.
+
+
+## Residual noted 2026-09-13 (mechanical, found by triage)
+
+The bean names **three** fixed-size theorems. `AnsatzContentDichotomy.lean` wires
+only the **nonet** as an instance (`nonetAnsatz_unconstraining`,
+`nonet_no_discriminating`). `gmo_cannot_discriminate` and
+`equal_spacing_cannot_discriminate` appear only in the file's **docstring
+header** — `grep -niE 'gmo|equal_spacing'` over the file returns no code.
+
+So the general theorem **asserts** it subsumes all three and **demonstrates** it
+for one. That is not a defect in the theorem — it is correct as stated and the
+gap this bean named is genuinely closed — but wiring GMO and equal-spacing as
+instances would convert an asserted subsumption into a demonstrated one, and is
+the honest finish. Cheap: two `Ansatz R 6 3` definitions and two surjectivity /
+forcing proofs in the shape of the nonet pair already there.
+
+
+## RESIDUAL CLOSED 2026-09-13 — and wiring it corrected the header
+
+The residual noted above (GMO and equal-spacing asserted in the docstring, wired
+only for the nonet) is closed: `gmoAnsatz` / `decupletAnsatz` are now instances
+in `AnsatzContentDichotomy.lean`, 11 new declarations, `lean`-direct exit 0,
+`#print axioms` clean on all of them.
+
+**And doing it corrected the header's implicit reading**, which is why it was
+worth more than the mechanical tick. "Discriminate" is used in two senses that
+point opposite ways:
+
+* the source files' *"cannot discriminate"* = the relation is the same for every
+  parameter `(a,b,c)` — that is `Forces`, and it is about separating
+  **mechanisms** inside the first-order octet class;
+* `Discriminating` here = `Forces ∧ ¬Vacuous` — the relation can refute the
+  **class**.
+
+Both hold, and it is the second the general theorem detects: **neither GMO nor
+equal spacing is unconstraining.** They have content. Only the *nonet* is the
+"empty" case. So the eightfold chapter carries ansätze on **both** sides of the
+dichotomy — `decuplet_has_content_nonet_does_not` states that in one line.
+
+Consistent with both source files' own prose, each of which locates the testable
+content in the *deviation* (~6 % GMO, ~9.2 % decuplet), which presupposes
+falsifiability. The other sense is separated in code too:
+`gmoAnsatz_not_injective` shows the breaking strength `b` is invisible to all
+three GMO observables.
