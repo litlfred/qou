@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-13T06:10:14Z
+updated_at: 2026-09-13T06:27:13Z
 ---
 
 ## Context
@@ -451,3 +451,28 @@ an existing rank-6 separator, rather than Jones' theorem and an open `n!` bound.
 Corrected in place in `BraidedTowerInstances.lean` and `HeckeSandwichReduces.lean`
 rather than quietly dropped, per AGENTS.md §Terse ≠ compressed trigger 1.
 lean-direct exit 0 on both after the edit.
+
+### Same day, independently — the same two-citation error, plus one point the entry above does not carry
+
+I hit the `qou-g8i1` error from the other direction (PR #7267) and reached the same
+verdict: the bean is `completed` and about the (z+d) bond rule; Jones' existence
+theorem is proved on `main` with uniqueness; the real gap is the bridge between
+`HeckeCoset.MarkovTraceFamily` and `OcneanuTrace.MarkovTrace`, live at
+`qou-ejde` / PR #7274. **Two independent readings, same conclusion** — recorded
+because the convergence is evidence, not because the correction needed repeating.
+
+**The additive point: "faithful on `H_∞(q)`" is not merely open, it is REFUTED at
+convention D.** The Wenzl weight vanishes for `ℓ(λ) ≥ 3`
+(`QOU/QBeta/WenzlWeightVanishing.conventionD_weight_eq_zero_iff_rowLens`,
+sorry-free), so the radical is nonzero and no trace on `H_∞(q)` can be faithful at
+the canonical convention. The attainable target is faithfulness on `H_∞(q)/rad`.
+This is already adjudicated as bean `qou-phlk` (`completed`) — *"DEFECT:
+prop:algebraic-gns-embedding claims faithfulness on H_inf(q); its proof gives
+H_inf/rad"*. Anyone writing the bridge's target statement should write the quotient,
+or they re-introduce an over-claim the corpus removed once.
+
+**Contamination count from my side:** the stale pointer reached three sites in
+`BraidedTowerInstances.lean` — the header, the "not faithful" bullet, and the
+`-- Ref:` line — and **two of the three were not mine**, i.e. the same text the
+entry above corrects. My PR #7267's measured finding is unaffected by any of it:
+`ocneanuTrace_mul_of_markov` is about `Hecke2` and never mentions Jones' theorem.
