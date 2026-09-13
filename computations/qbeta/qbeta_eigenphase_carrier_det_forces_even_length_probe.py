@@ -1,83 +1,76 @@
 #!/usr/bin/env python3
-"""qbeta_eigenphase_carrier_det_forces_even_length_probe.py — the carrier's
-SECOND field is a length-parity prune, and it is not the one the corpus proved.
+"""qbeta_eigenphase_carrier_det_forces_even_length_probe.py -- the carrier's
+SECOND field is a length-parity condition.
 
 Bean `qou-pdix` (the S1 blocker: derive the Q_beta ladder eigenphase alpha),
 parent `qou-cds1`. Scope (a) for the arithmetic; the algebra is exact.
 
-## Why this exists — formalize-first, before any alpha search
+## CORRECTED 2026-09-13, SAME DAY -- this probe is largely a RE-DERIVATION
 
-`qou-pdix`'s four route candidates are now all measured against (A and B in
-PR #7326, C in PR #7340). What survives is the bean's own uninstantiated
-replacement carrier:
+The first version of this docstring presented the parity law as a new
+formalize-first prune. **It is not.** Bean `qou-pdix` -- the bean this probe is
+filed under -- already carries it, twice, and states it more sharply:
 
-    QOU.QBeta.EigenphaseCarrier.TransferMatrixSpectrum (q) (M) : Prop
-      trace_eq : M.trace = 2 * Real.cos (eigenphase q)
-      det_eq   : M.det = 1
+  * line ~81: "det rho(sigma_i^{+-1}) = -1, so det rho(w) = (-1)^L; det M = 1
+    forces L even and lambda = +-1, leaving the trace in +-Z[q,q^-1]."
+  * line ~1409: "det rho(sigma) = -1 for all four generators, so an even-length
+    word has det = +1 exactly. **The carrier's M.det = 1 field is automatic and
+    free on the braid image -- it was never the obstruction.** Odd-length words
+    have det = -1 and cannot meet it at all, so the image splits cleanly by
+    parity."
 
-Discharging it means producing `M` from the Hecke seminormal representation on
-`V_(2,1)` of `H_3(q)`. Before searching for such an `M`, the formalize-first
-discipline asks what structurally constrains the search. **The second field
-does, and it prunes by parity.**
+And `qbeta_mbeta_v21_spectrum_under_d.py` independently records
+`det T_pp = det T_nn = -1` ("Hecke unimodularity") and labels its
+`sigma_1 sigma_2^-1` det = 1 assertion "even word length".
 
-## The argument
+**The bean's framing is STRONGER than the one this probe opened with.** It calls
+`det_eq` *free*, never an obstruction; calling it "a prune that bites"
+overstates what a necessary-but-automatic condition buys. That correction stands
+whatever the arithmetic below says.
 
-Every Hecke generator satisfies the corpus's own relation (AGENTS.md §7a)
+**How the duplication happened:** AGENTS.md's corpus-grep path 6 is "grep the
+beans", and it was not run before this probe was written -- on the very bean the
+probe is filed under. Path 6's own rationale names this exact failure: a prior
+agent's conclusion sits in the bean before it reaches any other artifact.
 
-    (sigma_i - q)(sigma_i + 1/q) = 0
+## What survives as this probe's own contribution
 
+Two things, and they are small:
+
+1. **The application to `nuc11_interleaved`.** The bean never names it (grep:
+   zero hits). The corpus's currently-scored element is ELEVEN letters, which is
+   odd, so it cannot satisfy `det_eq`. Force limited: branch 1 (M in the braid
+   image) is independently excluded by
+   `BraidImageEigenphaseAlgebraic.coeffs_zero_of_surjective_nonpos`, so the
+   parity bites on a branch already closed.
+2. **The Hecke-relation gate on the matrices.** An earlier attempt here used a
+   hand-written `sigma_2` reconstructed from memory; it FAILED the gate and gave
+   a nonsense determinant (`-q^2 + q - 3 + 1/q - 1/q^2`). The matrices below come
+   from the corpus's own `he4_magnus_omega2_sign_sparse_probe.block_structure` /
+   `sigma_csr`, and the gate is kept because it is what caught that.
+
+## The argument, for completeness (not novel)
+
+Every Hecke generator satisfies (AGENTS.md 7a) `(sigma_i - q)(sigma_i + 1/q) = 0`,
 so its eigenvalues are `q` and `-1/q`. On the TWO-dimensional irreducible
-`V_(2,1)` both occur (that is what makes the block two-dimensional and not a
-sum of characters), hence
-
-    det rho(sigma_i) = q * (-1/q) = -1                            (per letter)
-    det rho(sigma_i^{-1}) = 1 / (-1) = -1                         (per letter)
-    => det rho(w) = (-1)^len(w)                                   (multiplicative)
-
-and therefore
+`V_(2,1)` both occur, hence per letter `det rho(sigma_i^{+-1}) = -1`, and det is
+multiplicative, so `det rho(w) = (-1)^len(w)` and
 
     TransferMatrixSpectrum.det_eq  <=>  len(w) is EVEN.
 
-No trace is computed, no alpha is derived, and no word is searched: this is a
-necessary condition on which words can carry alpha through this carrier at all.
+## Relation to the corpus's OTHER length-parity result
 
-## What this probe does, and what it refuses to do
-
-It takes the seminormal matrices from the CORPUS's own machinery
-(`he4_magnus_omega2_sign_sparse_probe.block_structure` / `sigma_csr`), not from
-hand-written ones. That is deliberate and it is not a style preference: an
-earlier attempt at this used a hand-written `sigma_2` reconstructed from memory
-and it FAILED its own Hecke check, producing a nonsense determinant
-(`-q^2 + q - 3 + 1/q - 1/q^2`). The Hecke-relation check below is kept as a
-gate for exactly that reason -- a matrix that fails it is not a seminormal
-generator and nothing may be read off it.
-
-## Relation to the corpus's length-parity result — DIFFERENT block, DIFFERENT quantity
-
-`QOU.Mass.AltCharShiftMultiset.wordChar_sign` (sorry-free, proved before its
-probe) already gives `sign(wordChar w) = (-1)^len(w)`. That is the
-ONE-dimensional ALTERNATING block `(1,1,1)`, where PSD reduces to
-`0 <= character`, and it powers `qou-99qc`'s whole-element SDP exclusion.
-
-This is the TWO-dimensional `(2,1)` block and the quantity is the
-DETERMINANT, not a character. The two agree on the parity and arrive at it
-from different places -- the Hecke quadratic's eigenvalues here, the letters'
-negative alternating characters there. So this **corroborates** that result and
-does not duplicate it, and it bites on a different thing: not SDP-admissibility
-but the carrier's `det_eq` field.
-
-## The consequence that is not free
-
-The corpus's currently-scored element `nuc11_interleaved` is **eleven** letters.
-Eleven is odd. So it cannot satisfy `det_eq`, and cannot carry `alpha` through
-this carrier -- independently of `qou-99qc`'s SDP route reaching the same
-element by the alternating character.
+`QOU.Mass.AltCharShiftMultiset.wordChar_sign` (sorry-free) gives
+`sign(wordChar w) = (-1)^len(w)` for the ONE-dimensional ALTERNATING block
+`(1,1,1)`. That is a different block and a different quantity (a character, not
+a determinant); it corroborates rather than duplicates. The duplication flagged
+above is with the BEAN and with `qbeta_mbeta_v21_spectrum_under_d.py`, not with
+that Lean result.
 
 ## Precision
 
-sympy exact symbolic throughout for the algebra; mpmath at the proton pin where
-a numeric check is wanted. No float64: `float(` appears nowhere, no
-`statistics`, no `math.`.
+sympy exact symbolic for the algebra; mpmath at the proton pin for the numeric
+cross-check. No float64: no `float(`, no `statistics`, no `math.`.
 """
 from __future__ import annotations
 
@@ -205,7 +198,19 @@ def main() -> int:
                          expected="PASS", tolerance="exact", source=r["detail"])
     wb.save({
         "description": (
-            "A formalize-first prune for qou-pdix. The eigenphase carrier "
+            "CORRECTED SAME DAY -- largely a RE-DERIVATION. Bean qou-pdix "
+            "already carries the parity law twice (lines ~81 and ~1409) and "
+            "states it MORE STRONGLY: 'the carrier's M.det = 1 field is "
+            "automatic and free on the braid image -- it was never the "
+            "obstruction'. qbeta_mbeta_v21_spectrum_under_d.py independently "
+            "records det T_pp = det T_nn = -1 and labels its det=1 assertion "
+            "'even word length'. Corpus-grep path 6 (grep the beans) was not run "
+            "before writing this, on the probe's own bean. What survives as this "
+            "probe's own: the application to nuc11_interleaved (11 letters, odd "
+            "-- the bean never names it), whose force is limited because branch 1 "
+            "is independently excluded; and the Hecke-relation gate, which caught "
+            "a hand-written sigma_2 that produced a nonsense determinant. "
+            "Original description follows. The eigenphase carrier "
             "QOU.QBeta.EigenphaseCarrier.TransferMatrixSpectrum has two fields; "
             "its SECOND (det_eq : M.det = 1) is a parity constraint. Every Hecke "
             "generator has spectrum {q, -1/q} by the Hecke relation, so on the "
@@ -219,6 +224,14 @@ def main() -> int:
             "det_eq. No alpha is derived and no word is searched."
         ),
         "bean": "qou-pdix",
+        "duplicates": [
+            ".beans/qou-pdix lines ~81 and ~1409 -- same parity law, stated more strongly",
+            "computations/qbeta/qbeta_mbeta_v21_spectrum_under_d.py -- det T_pp = det T_nn = -1; 'even word length'",
+        ],
+        "own_contribution": [
+            "application to nuc11_interleaved (11 letters, odd); the bean never names it",
+            "Hecke-relation gate on the seminormal matrices",
+        ],
         "q0Anchor": "proton",
         "q0Value": fmt(q0n),
         "carrier": "QOU.QBeta.EigenphaseCarrier.TransferMatrixSpectrum",
@@ -226,7 +239,8 @@ def main() -> int:
         "parity_law": "det rho(w) = (-1)^len(w)",
         "corroborates": "QOU.Mass.AltCharShiftMultiset.wordChar_sign (different block, different quantity)",
         "scope": (
-            "(a) scope-limited: a NECESSARY condition on the carrying word, not "
+            "(a) scope-limited, and mostly NOT NEW (see duplicates). A NECESSARY "
+            "but AUTOMATIC condition on the carrying word, not "
             "a derivation of alpha and not a sufficient condition for anything. "
             "It does not exclude alpha, does not select a word, and says nothing "
             "about trace_eq -- the field that actually carries alpha. An "

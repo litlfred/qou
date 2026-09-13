@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T20:05:00Z
+updated_at: 2026-09-13T20:37:29Z
 
 ---
 
@@ -2237,3 +2237,57 @@ Stokes-constant extraction as open research, so it is in scope.
 
 **Default if nothing is done:** the triage still reads "attack B, cheapest
 formalize-first step of the four", which two measurements now contradict.
+
+---
+
+## 2026-09-13 (correction) — my `det_eq` "prune" is a RE-DERIVATION of THIS BEAN
+
+Earlier today I committed
+[`qbeta_eigenphase_carrier_det_forces_even_length_probe.py`](computations/qbeta/qbeta_eigenphase_carrier_det_forces_even_length_probe.py)
+and framed it as a formalize-first prune on the carrier's second field:
+`det ρ(w) = (−1)^len(w)`, so `det_eq` ⟺ even length.
+
+**That is already in this bean, twice, and stated more strongly.**
+
+- **line ~81** — *"det rho(sigma_i^{±1}) = -1, so det rho(w) = (-1)^L; det M = 1
+  forces L even and lambda = ±1, leaving the trace in ±Z[q,q^-1]."*
+- **line ~1409** — *"`det ρ(σ) = −1` for all four generators, so an even-length
+  word has `det = +1` exactly. **The carrier's `M.det = 1` field is automatic and
+  free on the braid image — it was never the obstruction.** Odd-length words have
+  `det = −1` and cannot meet it at all, so the image splits cleanly by parity."*
+
+And `qbeta_mbeta_v21_spectrum_under_d.py` independently records
+`det T_pp = det T_nn = −1` ("Hecke unimodularity") and labels its
+`σ₁σ₂⁻¹` det = 1 assertion **"even word length"**.
+
+**The bean's framing is stronger than mine, in the direction that matters.** It
+calls `det_eq` **free** — never the obstruction. I called it "a prune that
+bites". A necessary-but-automatic condition does not bite, and describing it that
+way overstates what it buys. The correction stands independently of the
+arithmetic, which is fine.
+
+**What actually survives as mine**, and it is small:
+
+1. **`nuc11_interleaved`** — eleven letters, odd, so it cannot satisfy `det_eq`.
+   The bean never names it (grep: zero hits). Force limited: branch 1 (M in the
+   braid image) is independently excluded by
+   `BraidImageEigenphaseAlgebraic.coeffs_zero_of_surjective_nonpos`, so the
+   parity bites on a branch already closed.
+2. **The Hecke-relation gate** on the seminormal matrices, which caught a
+   hand-written `σ₂` that produced the nonsense determinant
+   `−q²+q−3+1/q−1/q²`.
+
+**How it happened:** corpus-grep **path 6 — "grep the beans" — was not run**
+before writing that probe, on the very bean the probe is filed under. Path 6's
+own rationale in AGENTS.md names this exact failure: a prior agent's conclusion
+sits in the bean before it reaches any other artifact. That is now seven
+corpus-grep interventions in this session, and this is the one that got through.
+
+**Not retracted, scoped.** The probe stays — its two small contributions are
+real and its docstring, witness `description`, `duplicates` and `own_contribution`
+fields now say plainly what is re-derived and what is not. Contaminated sites
+corrected: the probe docstring, its witness, this bean, and the PR #7340 body.
+
+**Unaffected:** the route-5 retired-base finding in the entry above is NOT in
+this bean or anywhere else (checked: `retired`/`z = 1`/`Form A`/`arccosh` all
+return only my own entry). That one stands.

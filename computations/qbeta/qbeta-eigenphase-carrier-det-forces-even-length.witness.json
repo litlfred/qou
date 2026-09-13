@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T19:55:25.490448+00:00",
-  "commitSha": "cf7d54c6f5d2860096a7a7403dcdad75bfdccc9e",
+  "computedAt": "2026-09-13T20:36:54.267417+00:00",
+  "commitSha": "42dc92a21e9753593f9fbec1346592f32ffcd7d7",
   "assertions": [
     {
       "name": "hecke_eigenvalues_give_det_minus_one_on_a_two_dim_block",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 353,
+  "durationMs": 2705,
   "computation": "qbeta-eigenphase-carrier-det-forces-even-length",
   "scriptFile": "qbeta_eigenphase_carrier_det_forces_even_length_probe.py",
-  "scriptHash": "624023852473",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fb3125667dd5",
+  "scriptCommitSha": "de4adbfbff7961c9d2fa664b12d209d89e1ef87e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,13 +63,21 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_eigenphase_carrier_det_forces_even_length_probe.py"
   },
-  "description": "A formalize-first prune for qou-pdix. The eigenphase carrier QOU.QBeta.EigenphaseCarrier.TransferMatrixSpectrum has two fields; its SECOND (det_eq : M.det = 1) is a parity constraint. Every Hecke generator has spectrum {q, -1/q} by the Hecke relation, so on the 2-dim irreducible V_(2,1) det rho(sigma) = -1 per letter and det rho(w) = (-1)^len(w). Hence only EVEN-length words can carry alpha through this carrier. Corroborates, and does not duplicate, QOU.Mass.AltCharShiftMultiset.wordChar_sign -- that is the 1-dim ALTERNATING block's CHARACTER, this is the 2-dim block's DETERMINANT, and they reach the same parity from different places. Consequence: nuc11_interleaved (11 letters, odd) cannot satisfy det_eq. No alpha is derived and no word is searched.",
+  "description": "CORRECTED SAME DAY -- largely a RE-DERIVATION. Bean qou-pdix already carries the parity law twice (lines ~81 and ~1409) and states it MORE STRONGLY: 'the carrier's M.det = 1 field is automatic and free on the braid image -- it was never the obstruction'. qbeta_mbeta_v21_spectrum_under_d.py independently records det T_pp = det T_nn = -1 and labels its det=1 assertion 'even word length'. Corpus-grep path 6 (grep the beans) was not run before writing this, on the probe's own bean. What survives as this probe's own: the application to nuc11_interleaved (11 letters, odd -- the bean never names it), whose force is limited because branch 1 is independently excluded; and the Hecke-relation gate, which caught a hand-written sigma_2 that produced a nonsense determinant. Original description follows. The eigenphase carrier QOU.QBeta.EigenphaseCarrier.TransferMatrixSpectrum has two fields; its SECOND (det_eq : M.det = 1) is a parity constraint. Every Hecke generator has spectrum {q, -1/q} by the Hecke relation, so on the 2-dim irreducible V_(2,1) det rho(sigma) = -1 per letter and det rho(w) = (-1)^len(w). Hence only EVEN-length words can carry alpha through this carrier. Corroborates, and does not duplicate, QOU.Mass.AltCharShiftMultiset.wordChar_sign -- that is the 1-dim ALTERNATING block's CHARACTER, this is the 2-dim block's DETERMINANT, and they reach the same parity from different places. Consequence: nuc11_interleaved (11 letters, odd) cannot satisfy det_eq. No alpha is derived and no word is searched.",
   "bean": "qou-pdix",
+  "duplicates": [
+    ".beans/qou-pdix lines ~81 and ~1409 -- same parity law, stated more strongly",
+    "computations/qbeta/qbeta_mbeta_v21_spectrum_under_d.py -- det T_pp = det T_nn = -1; 'even word length'"
+  ],
+  "own_contribution": [
+    "application to nuc11_interleaved (11 letters, odd); the bean never names it",
+    "Hecke-relation gate on the seminormal matrices"
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561076887987449912187360000000000",
   "carrier": "QOU.QBeta.EigenphaseCarrier.TransferMatrixSpectrum",
   "block": "V_(2,1) of H_3(q), dim 2",
   "parity_law": "det rho(w) = (-1)^len(w)",
   "corroborates": "QOU.Mass.AltCharShiftMultiset.wordChar_sign (different block, different quantity)",
-  "scope": "(a) scope-limited: a NECESSARY condition on the carrying word, not a derivation of alpha and not a sufficient condition for anything. It does not exclude alpha, does not select a word, and says nothing about trace_eq -- the field that actually carries alpha. An even-length word satisfying det_eq may still fail trace_eq."
+  "scope": "(a) scope-limited, and mostly NOT NEW (see duplicates). A NECESSARY but AUTOMATIC condition on the carrying word, not a derivation of alpha and not a sufficient condition for anything. It does not exclude alpha, does not select a word, and says nothing about trace_eq -- the field that actually carries alpha. An even-length word satisfying det_eq may still fail trace_eq."
 }
