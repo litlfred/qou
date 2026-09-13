@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T14:27:47.191301+00:00",
-  "commitSha": "c4ecde80a42d40392ecbae0cede33822233a5a0c",
+  "computedAt": "2026-09-13T15:04:56.624890+00:00",
+  "commitSha": "b0f9c25bc2b545a141d7c66f6f4eb9f4a420fe44",
   "assertions": [
     {
       "name": "convention_D_weights_are_zero_on_three_rows_and_positive_on_two",
@@ -33,11 +33,11 @@
       "source": "floor y_(4) = [5]_q/[2]_q^4 = 0.31926258454594; the empty word and all 5 PSD-feasible words of #7295 sit at or above it (1.0, 1.0328978, 1.1374052, 1.0732388, 1.0732388, 1.3319925), and no positively-weighted block carries a negative character on any of them. The floor is LOOSE here -- the measured minimum is 3.2x it -- which is what makes the exclusion below conservative"
     },
     {
-      "name": "the_floor_excludes_Q_beta_for_every_strand_count_up_to_five",
+      "name": "the_floor_lies_above_the_target_for_every_strand_count_up_to_five",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "the floor exceeds the target 0.1850588977 at n = [2, 3, 4, 5] and drops below it first at n = 6 (0.1153242249). So NO gamma-gamma + confinement-SDP word on five strands or fewer can reproduce Q_beta -- scope-(b), no enumeration needed. This is what makes the n = 5 scan #7304 left as next unnecessary"
+      "source": "the floor exceeds the target 0.1850588977 at n = [2, 3, 4, 5] and drops below it first at n = 6 (0.1153242249). So no SINGLE gamma-gamma word on five strands or fewer has that trace -- scope-(b), no enumeration needed. 🛑 This assertion was named ..._excludes_Q_beta... and it is NOT an exclusion of Q_beta: the observable is scored on Delta = neutron word MINUS proton word, and nothing here bounds a difference (retracted 2026-09-13)"
     },
     {
       "name": "the_floor_decays_monotonically_so_the_crossing_is_one_sided",
@@ -55,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1038,
+  "durationMs": 1086,
   "computation": "qbeta-gamma-gamma-psd-trace-floor",
   "scriptFile": "qbeta_gamma_gamma_psd_trace_floor_probe.py",
-  "scriptHash": "775adcdddd30",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d01299f96f4a",
+  "scriptCommitSha": "8877226f86db531fc80a38cf43dc9f6e3d62e62e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -187,7 +187,7 @@
       }
     ],
     "scope": {
-      "class": "(b) structural exclusion, n <= 5",
+      "class": "(b) structural, n <= 5, about a SINGLE word's trace",
       "invariant": "convention-D weight positivity + PSD => non-negative character + exact counit value 1 on gamma-gamma words",
       "excluded": [
         2,

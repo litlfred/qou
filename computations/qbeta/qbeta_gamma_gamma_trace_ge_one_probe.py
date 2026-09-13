@@ -1,6 +1,13 @@
 """Every PSD-feasible gamma-gamma word has Markov trace >= 1, at EVERY strand
-count -- so the gamma-gamma + confinement-SDP construction cannot reproduce
-Q_beta at all, and the bound is TIGHT.
+count, and the bound is TIGHT.
+
+🛑 READ THE RETRACTION BELOW BEFORE USING THIS FOR Q_beta.  This line used to
+continue "-- so the gamma-gamma + confinement-SDP construction cannot reproduce
+Q_beta at all", which is FALSE and was mine: the scored functional eats a
+DIFFERENCE of two words and a per-word lower bound does not bound a difference.
+The bound is about individual words and nothing else.  Putting the correction
+only further down would leave the first line a reader meets asserting the thing
+the body withdraws.
 
 # Ref: AGENTS.md §"Before declaring refuted" -- scope-(b), invariant named
 # Ref: AGENTS.md §"Formalize-first probe discipline"
@@ -19,11 +26,13 @@ block dimension -- and keeping them gives a bound that is both stronger and
 
     tr_M(w)  >=  1     for every PSD-feasible gamma-gamma word, every n.
 
-So the floor probe's conclusion ("excluded for n <= 5, open at n >= 6") is
-correct but weak: there is no n at which the construction reaches the target.
-The floor's own numbers stand; only its scope was short.  Recorded rather than
-deleted, because the floor is the thing you get if you stop at the first block,
-and that is an easy place to stop.
+The floor's own numbers stand and its bound is simply weaker.  Recorded rather
+than deleted, because the floor is the thing you get if you stop at the first
+block, and that is an easy place to stop.
+
+(This paragraph used to add "so there is no n at which the construction reaches
+the target".  Withdrawn with the rest of the Q_beta reading -- see below.  Both
+probes drew the same wrong inference from two correct bounds.)
 
 THE INVARIANT, four ingredients:
 
@@ -50,19 +59,33 @@ Together: `tr_M(w) = Sum y_lambda chi_lambda(w) >= Sum y_lambda dim_lambda = 1`.
 TIGHT, and the witness is the empty word: it is the identity in every block,
 so every character equals its dimension and the bound is achieved exactly.
 
-WHAT IT MEANS FOR Q_beta.  The target is `|tr_M| = Q_beta/E_0 = 0.185059`, so
-the construction misses it by a factor of at least 5.40.  Equivalently the
-SMALLEST Q_beta this family can predict is exactly `E_0 = 4.2274834 MeV`, which
-is **+440.369 %** -- and every one of the five PSD-feasible words measured at
-n = 4 lands between +458 % and +620 %, above that minimum as it must.
+🛑 WHAT THIS DOES **NOT** MEAN FOR Q_beta -- RETRACTED 2026-09-13, and the
+retraction is mine.  This docstring asserted that because the target is
+`|tr_M| = Q_beta/E_0 = 0.185059 < 1`, "the gamma-gamma + confinement-SDP route
+cannot reproduce Q_beta at ANY strand count", with a minimum prediction of
+`E_0 = +440.369 %`.
 
-SCOPE.  **(b) structural exclusion at every n**, invariant as named.  It says
-the gamma-gamma + confinement-SDP ROUTE cannot reach Q_beta under the ruled
-functional (`eps` = the Markov trace at `z_D`) and the canonical `E_0`.  It says
-nothing about the framework's ability to reach Q_beta by another route, nor
-about a different `E_0`, nor about a tower correction -- and a tower correction
-is the live question, since `E_0` is canonical by ruling with an OPEN series
-(bean `qou-y3bm`).
+**That inference does not follow.**  `Q_beta = |eps(Delta)| * E_0` where
+`Delta` is the **NEUTRON element MINUS the PROTON element** -- see
+`qbeta_option_e_required_level_probe.py::delta_of`, whose docstring says
+"Delta = neutron - proton, coordinatewise in the NF basis".  The Markov trace
+is **linear**, so `tr(Delta) = tr(neutron word) - tr(proton word)`, and two
+quantities each bounded below by 1 have a difference bounded by nothing.
+
+Measured in `qbeta_qbeta_scores_a_difference_probe.py` (6/6): all 15 pairs of
+this feasible set give predictions from -100 % to +79.4 % -- they STRADDLE the
+target rather than sitting above it.  Whether any pair reproduces Q_beta is
+OPEN.
+
+WHAT THE BOUND BELOW STILL IS, unaffected: a statement about an INDIVIDUAL
+PSD-feasible gamma-gamma word, tight at the empty word, resting on four
+measured ingredients.  All eight assertions here are sound; only the Q_beta
+reading of them was wrong.
+
+SCOPE.  **(b) structural, at every n, for individual words.**  It bounds
+`tr_M(w)` and nothing else.  It makes no claim about differences of words,
+about Q_beta, about another route, about a different `E_0`, or about a tower
+correction (`E_0` is canonical by ruling with an OPEN series, bean `qou-y3bm`).
 """
 from __future__ import annotations
 
@@ -178,10 +201,13 @@ def main() -> int:
         ">= dim by AM-GM; the convention-D weights are non-negative; and "
         "Sum_lambda y_lambda dim_lambda = 1 is the Markov normalisation. The "
         "bound is TIGHT, achieved by the empty word. Consequence: the target "
-        "|tr_M| = 0.185059 is missed by a factor >= 5.40, so the gamma-gamma + "
-        "confinement-SDP route cannot reproduce Q_beta at ANY n -- the smallest "
-        "Q_beta it can predict is exactly E_0 = 4.2274834 MeV, +440.369 %. "
-        "Scope-(b) at every n, for this functional and this E_0 only."
+        "|tr_M| = 0.185059 lies BELOW that bound, so no single word has it. "
+        "🛑 That is NOT an exclusion of Q_beta and this probe claimed it was "
+        "until 2026-09-13: the scored functional eats Delta = neutron word "
+        "MINUS proton word, tr is linear, and a lower bound on each word bounds "
+        "no difference -- all 15 pairs run -100 % to +79.4 %, straddling the "
+        "target (qbeta_qbeta_scores_a_difference_probe.py). Scope-(b) at every "
+        "n for INDIVIDUAL words; it bounds tr_M(w) and nothing else."
     )
 
     E0 = qbeta_e0.canonical()
@@ -279,14 +305,18 @@ def main() -> int:
     miss = 1 / target
     min_pred = E0
     min_pct = (min_pred - qb) / qb * 100
-    check("Q_beta_is_excluded_at_every_strand_count",
+    check("the_target_lies_below_the_per_word_bound_which_does_NOT_exclude_it",
           target < 1,
           f"the target |tr^z_D| = {mp.nstr(target, 12)} is below 1, by a factor "
-          f"{mp.nstr(miss, 8)}. So no PSD-feasible gamma-gamma word reaches it "
-          f"at ANY n: the smallest Q_beta this family can predict is exactly "
-          f"E_0 = {mp.nstr(min_pred, 12)} MeV = {mp.nstr(min_pct, 8)} %, and "
-          f"the five measured words at n = 4 land between +458 % and +620 %, "
-          f"above that minimum as they must", w)
+          f"{mp.nstr(miss, 8)}. So no single PSD-feasible gamma-gamma word has "
+          f"that trace, and a single word would predict at least E_0 = "
+          f"{mp.nstr(min_pred, 12)} MeV = {mp.nstr(min_pct, 8)} %. 🛑 THAT IS "
+          f"NOT AN EXCLUSION OF Q_beta, and this probe asserted it was until "
+          f"2026-09-13: the scored functional eats Delta = NEUTRON word MINUS "
+          f"PROTON word (delta_of), tr is linear, and a lower bound on each "
+          f"word bounds no difference. All 15 pairs of this set run -100 % to "
+          f"+79.4 %, straddling the target -- see "
+          f"qbeta_qbeta_scores_a_difference_probe.py", w)
 
     # ---- 8. what the superseded floor said ----------------------------------
     floors = {n_: qint(n_ + 1) / qint(2) ** n_ for n_ in range(2, 9)}
