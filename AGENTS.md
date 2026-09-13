@@ -2974,8 +2974,15 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirty-five** rows, and they split SEVEN ways — only the first
->   group is about conventions at all:
+>   catalogues **forty** rows (re-counted 2026-09-13), and the groups below
+>   split the FIRST THIRTY-FOUR seven ways — only the first group is about
+>   conventions at all. **Rows 35-40 are NOT in this list**: 35 (the
+>   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
+>   is an applied argument), 38 (the value audit's variable resolution),
+>   39 (the freshness is on the wrong object), and 40, which is the first row
+>   in the table whose failure runs the OTHER way — an over-matching grep that
+>   fails to a false **COVERED** rather than a false all-clear, so it ends the
+>   search instead of prolonging it:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard
@@ -3038,12 +3045,17 @@ Do not regress either.
 >   row 26 in the output of the audit that introduced it. Quote the split, not
 >   the total, because folding the last ten into the C figure inflates exactly
 >   the number this note exists to keep honest.
->   (This line has been stale FIVE times — *thirteen* at 15 rows, *sixteen*
->   at 17, *eighteen* at 21, *twenty-two* at 26 — and on the fourth fix I first
+>   (This line has been stale SIX times — *thirteen* at 15 rows, *sixteen*
+>   at 17, *eighteen* at 21, *twenty-two* at 26, *thirty-five* at 39 — and on
+>   the fourth fix I first
 >   wrote "twenty are spellings", miscounting the very split I was adding. On
 >   the fifth, the agent adding rows 25-26 called them "the 17th and 18th"
->   in a commit, a bean and a PR comment before re-counting. **Re-count the
->   table; do not trust this sentence, including this parenthesis.**) So: **treat
+>   in a commit, a bean and a PR comment before re-counting. On the sixth the
+>   agent adding row 40 wrote "they split EIGHT ways" in the same edit that
+>   fixed the row count — inventing a group count while correcting a row count,
+>   when the group list had in fact stopped covering the table at row 34.
+>   **Re-count the table; do not trust this sentence, including this
+>   parenthesis.**) So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
 >   is canonical; it does not tell you how much code still disagrees.
