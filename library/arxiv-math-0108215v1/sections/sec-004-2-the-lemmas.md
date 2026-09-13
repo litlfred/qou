@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-7
 source_pdf: 0108215v1.pdf
 source_sha256: 191784d2ccb3415a
+doc_brief: "Möbius Energy of Thick Knots Eric J. Rawdon 2 — The M¨ obius energy of a knot is an energy functional for smoot h curves based on an idea of self-repelling."
 ---
 The ﬁrst lemma is a version of a theorem of Schur. This is taken from [3 1],
 with the slight adjustment that we do not need to consider general planar

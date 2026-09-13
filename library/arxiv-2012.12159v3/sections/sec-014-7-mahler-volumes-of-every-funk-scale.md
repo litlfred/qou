@@ -7,6 +7,7 @@ section_number: 7
 pages: 22-26
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 Deﬁne the Funk-Mahler volume of radius 0<r< ∞ (aroundq∈ int(K)) by
 Mr(K,q ) =ωnr−n volF

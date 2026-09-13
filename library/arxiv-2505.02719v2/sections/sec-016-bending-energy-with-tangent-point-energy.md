@@ -7,6 +7,7 @@ section_number: null
 pages: 39-41
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
+doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
 ---
 Theorem 5.3Let𝜃 >0,𝑝∈(4,5),z∈R 𝑛, and letUbe an open subset ofA2 orA 2
 z. Then

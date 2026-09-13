@@ -1,10 +1,11 @@
 ---
 # qou-nk5h
 title: 'DEFECT: HeckeCompletion.lean''s header says the completed-system GS basis is NOT established, 18,663 lines above the theorem that proves it'
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-09-13T14:03:26Z
-updated_at: 2026-09-13T14:03:26Z
+updated_at: 2026-09-13T14:40:35Z
 ---
 
 ## The defect
@@ -75,3 +76,51 @@ read first and taken at face value — the block was about to say the `H_n(q)`
 completion theorem is not established in this folio, which would have been a
 false "open" declaration in a content block. The corpus-grep checklist caught it:
 bean `qou-auq3` is `completed` and its body names the theorem.
+
+
+## FIXED 2026-09-13
+
+`HeckeCompletion.lean`'s header section is rewritten. `## What is **not**
+established here` → `## What is established here`, both items marked as the
+proved results they are, plus a new `## What is still assumed` carrying the one
+thing that genuinely remains.
+
+### What the header now says, per tier
+
+| item | status | where |
+|---|---|---|
+| general leading monomial `bokutShiaoRelation_lm` | proved | §4h |
+| **completed system IS a GS basis** | **proved, unconditional**, every `n`, every `HeckeParams` | §4bw, `heckeCompleted_isGrobnerShirshovBasis` |
+| `hdeep` obligation of the `_of_deep` form (§4bn) | discharged | §4bw, `deep_selfOverlap_resolves` |
+| unique normal forms | **assumed** — rides on the Diamond-Lemma axioms `reduction_well_founded` (`Basic.lean`) + `local_confluence` (`CompositionLemma.lean`, Bergman 1978 §3 Thm 1.2) | §4bx |
+
+The last row is the point of splitting the section rather than simply flipping
+the heading: the GS-basis criterion does **not** depend on those two axioms and
+the uniqueness corollary does. Collapsing both into "established" would have
+traded one wrong header for another. The wording is lifted from `qou-auq3`'s own
+closing note, which already states it correctly.
+
+The malformed `* *` bullet is gone, and the new text says in one line why the
+section is worth re-reading rather than remembering — the failure mode here was a
+reader stopping at a header that had been *partially* maintained.
+
+### Verification
+
+```
+lean -DautoImplicit=false -s 65536 HeckeCompletion.lean   →  LEAN_EXIT=0
+                                                             3m25s, zero output
+```
+
+Run twice: the first pass confirmed no diagnostics (45-byte log, `time` only),
+the second captured the exit code explicitly rather than inferring success from
+silence. `LEAN_PATH` via `scripts/lean-direct-env.sh`, which covers both the root
+packages and `content/*/lean/.lake/build/lib/lean`, so UGB resolves.
+
+A structural pre-check ran first — the module docstring's `/-!` … `-/` are
+balanced 1:1 across the header, so the edit could not have swallowed the file.
+
+### Scope note
+
+Docstring-only. No declaration, statement or proof term is touched, so nothing
+downstream can move; the verification above is about the file still parsing and
+elaborating, not about any mathematical claim changing.

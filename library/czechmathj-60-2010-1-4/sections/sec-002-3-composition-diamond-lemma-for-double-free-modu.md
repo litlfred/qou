@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-9
 source_pdf: CzechMathJ_60-2010-1_4.pdf
 source_sha256: 7595f81d1398d0bf
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
 ---
 Let X, Y be sets and modk⟨X⟩⟨Y ⟩ a free left k⟨X⟩-module with the basis Y .
 Then modk⟨X⟩⟨Y ⟩ = ⨁

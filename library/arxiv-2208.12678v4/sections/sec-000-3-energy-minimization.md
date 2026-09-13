@@ -7,6 +7,7 @@ section_number: 3
 pages: 1-1
 source_pdf: 2208.12678v4.pdf
 source_sha256: 406d36ff4968091d
+doc_brief: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose
 the M¨ obius Energy introduced by O’Hara due to its myriad regularity properties shown by Freedman et al.

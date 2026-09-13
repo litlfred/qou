@@ -7,6 +7,7 @@ section_number: null
 pages: 4-7
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
+doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
 ---
 We start with the Palais–Smale condition for linear combinations of the bending energy (1.1)
 with any energy contained in one of the three families (1.2), (1.3), or (1.4). But we have to

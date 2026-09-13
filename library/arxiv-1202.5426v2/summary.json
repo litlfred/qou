@@ -1,0 +1,45 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1202.5426v2",
+ "source_sha256": "6c7668ad72e33b4b",
+ "brief": "Hard analysis meets critical knots Stationary points of the M öbius energy are smooth S. Blatt∗ Φ. Reiter∗∗ A. Schikorra∗∗∗ — 5 sections: Front matter; Introduction; Euler-Lagrange equation: Proof of",
+ "extended": "**Hard analysis meets critical knots Stationary points of the M öbius energy are smooth S. Blatt∗ Φ. Reiter∗∗ A. Schikorra∗∗∗**\n\n*June 30, 2018*\n\n49 pp, 5 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Euler-Lagrange equation: Proof of Theorem I; 3 Initial regularity: Proof of Theorem III; 4 Bootstrapping: Proof of Theorem IV",
+ "tokens": {
+  "brief": 49,
+  "extended": 84
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-2-euler-lagrange-equation-proof-of-theorem-i",
+   "title": "Euler-Lagrange equation: Proof of Theorem I",
+   "pages": "5-16"
+  },
+  {
+   "id": "sec-002-3-initial-regularity-proof-of-theorem-iii",
+   "title": "Initial regularity: Proof of Theorem III",
+   "pages": "16-32"
+  },
+  {
+   "id": "sec-003-4-bootstrapping-proof-of-theorem-iv",
+   "title": "Bootstrapping: Proof of Theorem IV",
+   "pages": "32-49"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

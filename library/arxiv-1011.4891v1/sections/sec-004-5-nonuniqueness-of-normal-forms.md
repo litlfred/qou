@@ -7,6 +7,7 @@ section_number: 5
 pages: 12-17
 source_pdf: 1011.4891.pdf
 source_sha256: c3529df5dd909b5e
+doc_brief: "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold — A new type of knot"
 ---
 Experimenting with our mechanical device (of diameter to length ratio
 s =d/L = 0.004), we were unable to ﬁnd any knots that have more than one

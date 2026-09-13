@@ -7,6 +7,7 @@ section_number: 0
 pages: 4-5
 source_pdf: 9301212v1.pdf
 source_sha256: 029787800ddf73e5
+doc_brief: "APPEARED IN BULLETIN OF THE — A physically natural potential energy for simple closed cur ves in R3 is shown to be invariant under M¨ obius transformations."
 ---
 and
 ε− = ε−(u) = D((I ◦ γ)(u − ε), (I ◦ γ)(u)) = f (u)ε − ε2

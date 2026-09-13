@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-7
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
+doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
 ---
 An easy way to produce a knot is to tie a piece of string and glue the ends together. This
 motivates the mathematical deﬁnition of a knot as a continuous embedding of a circle into three-

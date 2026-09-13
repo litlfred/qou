@@ -7,6 +7,7 @@ section_number: 7
 pages: 14-18
 source_pdf: CzechMathJ_60-2010-1_4.pdf
 source_sha256: 7595f81d1398d0bf
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
 ---
 In this section we give a Gröbner-Shirshov basis for a univer sal enveloping module
 for a Sabinin algebra. By using this result and Lemma 3.2, we ﬁ nd a linear basis for

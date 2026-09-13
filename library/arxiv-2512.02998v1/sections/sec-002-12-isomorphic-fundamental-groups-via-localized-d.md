@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 1-3
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
+doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
 ---
 1.3. Stability of knot equivalence 3
 1.4. Symmetric critical points for scale-invariant knot energies 4

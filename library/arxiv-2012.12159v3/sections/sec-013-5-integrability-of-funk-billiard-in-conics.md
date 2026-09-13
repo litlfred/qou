@@ -7,6 +7,7 @@ section_number: 5
 pages: 18-22
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 Recall that by Example 4.2, the reﬂection laws of the Bn-Funk and Beltrami-
 Klein hyperbolic metrics coincide. Similarly, the Funk geodesics on a manifold

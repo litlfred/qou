@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 18-20
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
+doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
 ---
 In order to show analyticity of a curve, we need to bound its higher derivatives. One possible
 approach is to bound derivatives by the lower order ones and iterate this procedure inductively.

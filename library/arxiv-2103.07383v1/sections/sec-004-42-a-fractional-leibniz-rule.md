@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 10-18
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
+doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
 ---
 The remainder termR(p) contains amongst others the factorΓ, which is basically given as a
 product of two functions multiplied with a singular weight. By applying a Bessel potential space

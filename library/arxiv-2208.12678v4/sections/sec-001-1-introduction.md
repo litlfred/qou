@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 2208.12678v4.pdf
 source_sha256: 406d36ff4968091d
+doc_brief: "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 The problem of finding a surface of minimal area bounded by a fixed closed curve, also known as Plateau’s
 problem, has captivated mathematicians for over two centuries. A relevant extension to this problem is when

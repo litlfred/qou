@@ -7,6 +7,7 @@ section_number: 4
 pages: 32-49
 source_pdf: 1202.5426v2.pdf
 source_sha256: 6c7668ad72e33b4b
+doc_brief: "Hard analysis meets critical knots Stationary points of the M öbius energy are smooth S. Blatt∗ Φ. Reiter∗∗ A. Schikorra∗∗∗ — 5 sections: Front matter; Introduction; Euler-Lagrange equation: Proof of"
 ---
 In Theorem III we have shown, that|D|
 1

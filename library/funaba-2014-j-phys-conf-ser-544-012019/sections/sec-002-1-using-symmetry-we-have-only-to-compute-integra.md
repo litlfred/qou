@@ -7,6 +7,7 @@ section_number: 1
 pages: 5-8
 source_pdf: Funaba_2014_J._Phys.__Conf._Ser._544_012019.pdf
 source_sha256: c95b283a122d67e4
+doc_brief: "Conference Series — 11 sections: Front matter; Introduction and main result; Computation of the energy of a tor"
 ---
 {
 p(u,v )| 2 sin−1(ε/2)≤u−α≤π, 0≤v≤π

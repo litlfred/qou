@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-5
 source_pdf: Funaba_2014_J._Phys.__Conf._Ser._544_012019.pdf
 source_sha256: c95b283a122d67e4
+doc_brief: "Conference Series — 11 sections: Front matter; Introduction and main result; Computation of the energy of a tor"
 ---
 Proof of Theorem: Let T be a torus of revolution parametrized by
 p(u,v ) = ((R + cosu) cosv, (R + cosu) sinv, sinu).

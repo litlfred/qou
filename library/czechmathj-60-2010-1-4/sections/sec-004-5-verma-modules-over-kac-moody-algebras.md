@@ -7,6 +7,7 @@ section_number: 5
 pages: 11-12
 source_pdf: CzechMathJ_60-2010-1_4.pdf
 source_sha256: 7595f81d1398d0bf
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
 ---
 Gröbner-Shirshov bases for Kac-Moody algebras of types A(1)
 n , C(1)

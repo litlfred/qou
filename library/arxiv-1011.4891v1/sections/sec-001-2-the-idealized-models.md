@@ -7,6 +7,7 @@ section_number: 2
 pages: 6-6
 source_pdf: 1011.4891.pdf
 source_sha256: c3529df5dd909b5e
+doc_brief: "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold — A new type of knot"
 ---
 We mentioned ideal versions of our mechanical model above in connection
 with the question of uniqueness. Here we note that in ideal versions of the

@@ -7,6 +7,7 @@ section_number: null
 pages: 7-8
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
+doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
 ---
 In Section 2 we develop sufficient criteria for the validity of the (PS)-condition in the abstract
 settingofgeneralsubmanifoldsofHilbertspaces,notonlyforasingleenergyasinTheorem2.1

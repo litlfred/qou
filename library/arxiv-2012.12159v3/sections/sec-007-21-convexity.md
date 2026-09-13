@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 7-8
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 will henceforth assume to have non-empty interior. We write|K| for the Euclidean
 volume of K, andHn−1 for the Hausdorﬀ measure on ∂K.

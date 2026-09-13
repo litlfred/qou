@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 12-19
 source_pdf: 1908.11677v1.pdf
 source_sha256: c53663eeb457daf9
+doc_brief: "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e"
 ---
 As we can see from Lemma 2.4, δN (τ )[φ ] and δN (τ )[φ , ψ ] may be expressed
 in terms of N (u, v) and K (u, v). First, we discuss N (u, v).

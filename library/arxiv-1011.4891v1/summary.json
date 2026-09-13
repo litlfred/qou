@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1011.4891v1",
+ "source_sha256": "c3529df5dd909b5e",
+ "brief": "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold — A new type of knot",
+ "extended": "**Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold**\n\n18 pp, 8 sections.\n\n**Abstract.** A new type of knot energy is presented via real life experiments involving a thin resilient metallic tube. Knotted in diﬀerent ways, the device me- chanically acquires a uniquely determined (up to isometry) normal form at least when the original knot diagram has a small number of crossings, thus outper- forming the famous M¨ obius energy due to Jun O’Hara and studied by Michael Freedman et al. Various properties of the device are described (under certain conditions it does the Reidemeister and Markov moves, it beautifully performs the Whitney trick by uniformizing its own local curvature). If the device is constrained between two parallel planes (e.g.\n\n**Outline.** Front matter; 1 The mechanical model; 2 The idealized models; 3 The Whitney index and jumps; 4 Local moves of mechanical knots; 5 Nonuniqueness of normal forms; Acknowledgements; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 268
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-the-mechanical-model",
+   "title": "The mechanical model",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-001-2-the-idealized-models",
+   "title": "The idealized models",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-002-3-the-whitney-index-and-jumps",
+   "title": "The Whitney index and jumps",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-4-local-moves-of-mechanical-knots",
+   "title": "Local moves of mechanical knots",
+   "pages": "7-12"
+  },
+  {
+   "id": "sec-004-5-nonuniqueness-of-normal-forms",
+   "title": "Nonuniqueness of normal forms",
+   "pages": "12-17"
+  },
+  {
+   "id": "sec-005-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "17-18"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

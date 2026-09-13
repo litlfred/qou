@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-6
 source_pdf: 1011.4891.pdf
 source_sha256: c3529df5dd909b5e
+doc_brief: "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold — A new type of knot"
 ---
 Our mechanical model of fat knots is constructed from a ﬂexible but re-
 silient hollow rectilinear metallic cylinder of length 50 cm and diameter 2mm.

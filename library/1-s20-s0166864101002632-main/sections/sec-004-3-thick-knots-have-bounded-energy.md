@@ -7,6 +7,7 @@ section_number: 3
 pages: 7-8
 source_pdf: 1-s2.0-S0166864101002632-main.pdf
 source_sha256: bc5aa8a7663b2a9f
+doc_brief: "Möbius energy of thick knots — The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling."
 ---
 In this section, we prove that the Möbius energy of a knot is bounded by the ropelength.
 Our goal is partly the theorem itself and partly the paradigm: any “energy” deﬁned in terms

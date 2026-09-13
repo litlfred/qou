@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-9
 source_pdf: 0108215v1.pdf
 source_sha256: 191784d2ccb3415a
+doc_brief: "Möbius Energy of Thick Knots Eric J. Rawdon 2 — The M¨ obius energy of a knot is an energy functional for smoot h curves based on an idea of self-repelling."
 ---
 In this section, we prove that the M¨ obius energy of a knot is bound ed by the
 ropelength. Our goal is partly the theorem itself and partly the par adigm: any

@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-4
 source_pdf: 9301212v1.pdf
 source_sha256: 029787800ddf73e5
+doc_brief: "APPEARED IN BULLETIN OF THE — A physically natural potential energy for simple closed cur ves in R3 is shown to be invariant under M¨ obius transformations."
 ---
 Theorem B. If K is a smooth prime (not a connected sum ) knot, then there exists
 a simple closed rectiﬁable γK of knot type K with E(γK) ≤ E(γ) for all rectiﬁable

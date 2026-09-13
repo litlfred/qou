@@ -7,6 +7,7 @@ section_number: null
 pages: 17-19
 source_pdf: 1111.6782v2.pdf
 source_sha256: 5acfde49432e59e3
+doc_brief: "Stationary Points of O’Hara’s Knot Energies — In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [ 14, 15, 16] in the range α∈ (2, 3)."
 ---
 Let us gather two results we used in the article: The product a nd chain rule which go
 back to Coifman and Meyer [9] and Christ and Weinstein [8].

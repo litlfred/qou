@@ -7,6 +7,7 @@ section_number: null
 pages: 1-1
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
+doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
 ---
 Nicolas Freches, Henrik Schumacher, Daniel Steenebrügge, and Heiko von der Mosel
 Institute for Mathematics, RWTH Aachen University

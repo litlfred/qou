@@ -7,6 +7,7 @@ section_number: null
 pages: 1-9
 source_pdf: 52036.pdf
 source_sha256: ab02866e1f7191b7
+doc_brief: "Torus Knots Extremizing the M öbius Energy — 9 sections: Front matter; Introduction; M ¨obius Invariance"
 ---
 Software Availability
 This w ork w as accomplished while the authors w ere at the

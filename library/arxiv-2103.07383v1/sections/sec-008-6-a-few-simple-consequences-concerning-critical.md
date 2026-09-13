@@ -7,6 +7,7 @@ section_number: 6
 pages: 23-25
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
+doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
 ---
 The main result of the paper states that critical points of the generalized integral Menger cur-
 vature intM(p,2) are not only smooth, which was known before, cf. [BR15, Theorem4], but also

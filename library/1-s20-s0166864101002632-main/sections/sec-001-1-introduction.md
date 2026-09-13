@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1-s2.0-S0166864101002632-main.pdf
 source_sha256: bc5aa8a7663b2a9f
+doc_brief: "Möbius energy of thick knots — The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling."
 ---
 In this paper, we exhibit a bound for the Möbius energy of a knot, in terms of the amount
 of “rope” needed to make the knot. This is the energy introduced in [25] and studied

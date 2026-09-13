@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 8-8
 source_pdf: 2012.12159v3.pdf
 source_sha256: 473ec6959e82cd98
+doc_brief: "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards"
 ---
 manifold equipped with a function φ :TM\ 0→ [0,∞), which restricts to a non-
 symmetric norm on each tangent space. The assumed smoothness of φ depends on
