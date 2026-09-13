@@ -9,6 +9,8 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+# q0, not a round number. See Q_DEFAULT below.
+from q_parameter import Q_MP as _Q_MP  # noqa: E402
 del _sys, _Path, _bridge
 
 # DEPRECATION-CANDIDATE: witness was moved to computations/_deprecated/ in PR #554 (dead-exploratory).
@@ -30,7 +32,7 @@ paper (def:division-algorithm) specialized to the admissible system
 
 Usage:
     from hecke_division import HeckeDivision, HeckeElement
-    div = HeckeDivision(q_val=1.110)
+    div = HeckeDivision()          # q defaults to the substrate q0
     elem = div.crossing_positive(0) * div.crossing_negative(1)
     reduced, log = div.reduce(elem)
 
@@ -41,6 +43,23 @@ Each log entry is a dict:
 """
 
 import sympy as sp
+
+# THE SUBSTRATE ANCHOR, NOT 1.110. Every `q_val=1.110` default in this file --
+# there were five -- ran the whole Grobner-Shirshov division at a q that is
+# 19.3 ppm away from q0, while the witness stamped `q0Anchor: proton` and the
+# full 50-digit `q0Value`. The stamp was right and the computation was not, and
+# no anchor audit catches that shape: they check the LABEL maps to a pin and
+# that q0Value is correct, never that the producer USED it. Corpus scan
+# 2026-09-13 over 1560 q0Value-stamped witnesses found this the only instance
+# above 1e-12.
+#
+# float(), deliberately and narrowly: this module's arithmetic is float64
+# throughout (`1.0 / q_val`, `q_val ** 0.5`, `self.hecke_a = q_val - q_inv`).
+# Handing it an mpf would silently change every operation's type and cannot be
+# verified without re-running, which the qou-uiut table currently blocks. This
+# change fixes the WRONG-VALUE defect only; carrying mpf through the class is
+# a separate, larger piece of work and is recorded as such.
+Q_DEFAULT = float(_Q_MP)
 
 # P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
 import sys as _p25_sys
@@ -159,7 +178,7 @@ class HeckeDivision:
     the number of reduction steps for larger atoms.
 
     Usage:
-        div = HeckeDivision(q_val=1.110)
+        div = HeckeDivision(q_val=Q_DEFAULT)
 
         # After computing protium NF, register its terms:
         div.register_pattern('h1', (1, 2), -0.010161)
@@ -168,7 +187,7 @@ class HeckeDivision:
         # Future reductions will match these patterns first.
     """
 
-    def __init__(self, q_val=1.110):
+    def __init__(self, q_val=Q_DEFAULT):
         self.q = q_val
         self.q_inv = 1.0 / q_val
         self.q_half = q_val**0.5
@@ -813,7 +832,7 @@ class HeckeDivision:
 
 # ── Convenience: full computation for a nucleus ─────────────────
 
-def compute_nucleus(p, n, q_val=1.110, verbose=True):
+def compute_nucleus(p, n, q_val=Q_DEFAULT, verbose=True):
     """Full instrumented computation for N(p,n).
 
     Returns dict with:
@@ -928,7 +947,7 @@ if __name__ == '__main__':
         ('6Li', 3, 3),
     ]
 
-    q_val = 1.110
+    q_val = Q_DEFAULT
     all_results = []
 
     for name, p, n in nuclei:

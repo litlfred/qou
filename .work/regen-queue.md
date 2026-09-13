@@ -405,3 +405,38 @@ Verified the consumer two lines below still works: it reads the value back with
 `mpf(he4_err)`, and `mpf` parses a decimal string faithfully
 (`mp.nstr(e,20)` → `15.701291645735583333`, round-trips; `float(e)` gave
 `15.701291645735584`).
+
+## 17. `hecke/hecke_division.py` — RE-RUN ONLY, was computing at q = 1.110 while stamping q₀
+
+**The witness's stamp was right and its computation was not.**
+`hecke-division.witness.json` declares `q0Anchor: proton` and the full 50-digit
+`q0Value = 1.1099785827513808075916690956107688798744991218736`, while
+`parameters.q = 1.11` — the producer ran the whole Gröbner–Shirshov division at
+a `q_val = 1.110` float literal, **19.3 ppm** away from the anchor it claimed.
+
+No anchor audit catches this shape. `q0_anchor_consistency_audit` checks that
+the LABEL maps to a pin and that `q0Value` is correct; both were. Nothing checks
+that the producer *used* it.
+
+**Corpus scan, 2026-09-13** — 3427 witnesses, 1560 carrying a `q0Value` stamp,
+compared against `parameters.{q,q0,q_0,q_val,…}`:
+
+| finding | count |
+|---|---|
+| disagreement > 1e-12 | **4** |
+| …of which serious | **1** (this file, 1.93e-5) |
+| …display truncation to 11 digits (`1.10997858275`) | 3, all at 1.24e-12 |
+
+So the class is real and **narrow**. The other three are
+`low-isotope-binding-model-comparison`, `binding-sym-vs-lin-two-models` and
+`binding-recurrence-spectral-bridge`, all the same 11-digit rounding.
+
+Five `q_val=1.110` sites now read `Q_DEFAULT = float(_Q_MP)`.
+
+**`float()` is deliberate and narrow here.** This module's arithmetic is float64
+throughout — `1.0 / q_val`, `q_val ** 0.5`, `self.hecke_a = q_val - q_inv` — so
+handing it an mpf would change every operation's type, and that cannot be
+verified without re-running, which the `qou-uiut` table blocks. **This change
+fixes the wrong-VALUE defect only.** Carrying mpf through `HeckeDivision` is a
+separate, larger piece of work and the witness's 30 raw float64 fields stay
+until it happens.
