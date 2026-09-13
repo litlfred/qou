@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T11:31:55Z
-updated_at: 2026-09-13T11:34:54Z
+updated_at: 2026-09-13T11:43:00Z
 ---
 
 ## The gap
@@ -557,3 +557,67 @@ The baseline has deliberately **not** been regenerated. It was computed under a
 defective measurement so it no longer describes the detector, but rewriting it
 now would absorb the 8 genuine pre-existing regressions along with the 26
 newly-surfaced ones — the laundering the ratchet's own comment warns against.
+
+
+---
+
+## 7. `--pairs` landed — the precision fix §3 proposed, built and measured
+
+`9e3be63026b`. Advisory: prints and exits 0, and the ratchet is byte-identical
+across the change (157 witnesses / 205 candidates / 26 NEW / 5 GREW before and
+after). `--self-test` 25/25 → **33/33**.
+
+**Tolerance is half a unit in the last place the PROSE wrote**, which is the
+principled form of the ROUNDING bucket and the part a relative band cannot
+express. `0.59` asserts two decimals, so data of 0.5661 is consistent with it;
+`L_nn = 0.907262271178` asserts twelve, so data of `0.907262265533` **is** a
+disagreement at 6e-9 relative.
+
+**Result: 6 disagreements across 6 witnesses, all hand-read** — 3 genuine, 2
+candidates needing a domain read, 1 marginal truncation, none clearly wrong.
+Against the band detector's ~9 %, on a list short enough to read in full.
+
+Three guards, each from a measured false positive. Without them the same scan
+reports **16**, and 10 of the 16 are one mistake — the prose number is the value
+of an *expression* containing the token, not of the token: `1/q_0 = 0.9009182840`
+(correct!), `b3/b2 = 0.64`, `max(t)*n_target = 0.146058`, `m_eta/m_K = 1.109758`
+(m_K is 493.677 MeV), `S_free is 5.5× SMALLER`. The third guard is
+concise-uncertainty notation `0.78233341(61)` — a cited constant with its
+standard error; corpus-wide exactly three prose numbers carry it and all three
+are citations.
+
+### This also closes §2 without landing §2
+
+The prose-vouching hole stays open in the band detector, and that is now fine:
+**`--pairs` never uses the substring test at all.** It caught
+he4's `0.160974145442` — the very number §2 showed reading EXACT off a stale
+`source` string — by naming `tr_M` and comparing it to `tr_M_at_q0` directly.
+The 187 suppressed findings remain suppressed in the band detector, but the
+route to the ones that matter no longer goes through it.
+
+### Fixed from the first run (`9e91fdec9d3`)
+
+- `binding_via_interface_knot` — `q_0 ≈ 1.1097` ×3 against 1.1099785827513808.
+  Wrong in its own 4th decimal, and only the ULP tolerance could catch it:
+  2.5e-4 relative is deep inside NEAR.
+- `binding_lp_with_inter_nucleon_bonds_probe` — `L_nn = 0.907262271178` against
+  `0.907262265533`. The gap is 5.6e-9, **exactly the y-table precision this
+  probe's own docstring names**, so the constant moved one precision step and
+  the transcribed copy did not follow. Its mirror ratio had drifted too
+  (1.17022 vs 1.170237). That description is **now interpolated** from the same
+  variables the `add_data` calls serialise, so it cannot drift again — AST-
+  verified that all 17 names are assigned before the call and every one is
+  already used by an `add_data` in the same block.
+
+  Eight of its ten hardcoded figures were still correct roundings. **That is the
+  trap:** a description which is mostly right reads as maintained.
+
+### Still open from that run
+
+- `alpha-em-period-qdeformation` — prose `q15 = 0.62556`, data `q15 = 3.7320508`
+  (= 2 + √3). Needs a domain read.
+- `sdp-gamma-gamma-to-qqbar` — prose `tr_M ≈ 0.73`, data
+  `h2_breit_wheeler_demo/tr_M_at_q_0 = 0.84853`. May be a different element.
+- `implied-c2-closed-form-search-50dps` — prose `-0.91628`, data `-0.9162938`.
+  Truncation rather than rounding; marginal, and a judgement about house style
+  rather than a defect.
