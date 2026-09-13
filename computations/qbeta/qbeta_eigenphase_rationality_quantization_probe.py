@@ -118,6 +118,36 @@ pure number with **no `z` in it**, so the phase does not need re-deriving
 per-convention.  The C-vs-D question for the *phase* dissolves; it survives only
 for the base.
 
+## PART 3 — deriving `α` CANNOT unblock `qou-cds1`.  The gap is in the base.
+
+This is the sharper result for the arc, and it was found by asking the question
+Part 2 invites: *is the compute wrong?*  It is not — but it is computing a
+**retired** object, and on the live one the whole rung is structurally excluded.
+
+`qou-iagg` (the dashboard re-score) waits on `qou-cds1` (the `c_k` ladder on the
+ruled `z_D` base), which waits on this bean (derive `α`).  **The second link does
+not hold.**  On the ruled base the ladder must supply a factor
+
+    Q_codata / Q_D  =  0.78233341 / 0.4447004  =  1.7592370…   > 1
+
+while its `N = 1` rung is `cos(α − u/2) ≤ 1` for **every** `α`, and its `N = 2`
+rung is `(1 + c₂u²) = 0.99992745… < 1` at the committed `c₂ = −1`.  The two
+together are bounded by `0.99992745 < 1 < 1.7592`.               (assertions 15–16)
+
+So no phase whatsoever repairs a base that is 43 % low, because a cosine cannot
+exceed one.  The `c₃` that would be required instead is `1.23e6`, not `O(1)`.
+**The `Q_β` L2 residual is a BASE problem, not a phase problem, and not a ladder
+problem at all.**  Scope-(b), citing `Real.cos_le_one`.
+
+This is the mirror of this bean's own 2026-08-22 entry, which excluded a `cosh`
+re-reading because `cosh ≥ 1` sat on the wrong side of a required value *below* 1.
+Here the required value is *above* 1 and `cos ≤ 1` is on the wrong side of it.
+
+Lean twin (sorry-free, `lean`-direct exit 0, axioms `[propext, Classical.choice,
+Quot.sound]`): `QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short` and
+its ladder-shaped corollary, alongside `two_cos_eq_int_cases` and
+`not_braid_eigenphase_of_two_cos_mem_Ioo` for Part 1.
+
 ## Method
 
 Exact `ℤ[q,q^{-1}]` Laurent arithmetic over Python `int` (no sympy simplify, no
@@ -421,6 +451,15 @@ CONSEQUENCE
   Assertion 14 kills the mechanism a reader reaches for first: |2I| = |S_5| =
   120, but neither has an ELEMENT of order 120 (max 10 and 6), so neither
   supplies the root of unity. The candidate has no mechanism at all.
+
+  PART 3 (scope-(b), proved invariant) -- THE ONE THAT RE-SCOPES THE ARC.
+  Deriving alpha CANNOT unblock qou-cds1. The ruled z_D base needs a ladder
+  factor of 1.7592 > 1; the N=1 rung is a COSINE, bounded by 1 for every alpha,
+  and the N=2 rung is 0.99992745 < 1. The required c3 would be 1.23e6, not
+  O(1). So the dependency chain qou-iagg <- qou-cds1 <- qou-pdix is WRONG at
+  the second link: the Q_beta L2 residual is a BASE problem, not a phase
+  problem and not a ladder problem at all. Lean twin sorry-free:
+  QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short.
 """)
 
     # 13. the cross-anchor swing does NOT discriminate -- record it so the
@@ -479,11 +518,41 @@ CONSEQUENCE
           f"does not give a 120th root of unity - only an ELEMENT of order 120 "
           f"does. So the candidate has NO identified mechanism.")
 
+    # ---- PART 3: the ruled z_D base cannot be reached by ANY phase ----------
+    print("\nPART 3 - deriving alpha cannot unblock qou-cds1\n")
+    q_p = q_at()
+    s_p = substrate_ladder_quantities(q_p, convention="C")
+    u_p = s_p["u"]
+    Q_D = mp.mpf("0.4447004")          # RULED z_D base (AGENTS.md; qou-99qc)
+    need = QCOD / Q_D
+    rung2 = 1 + C2 * u_p ** 2          # the N=2 factor at the committed c2 = -1
+    print(f"  Q_codata / Q_D          = {mp.nstr(need, 12)}   (> 1)")
+    print(f"  max over ALL alpha of cos(alpha - u/2) = 1")
+    print(f"  N=2 rung (1 + c2 u^2)   = {mp.nstr(rung2, 12)}   (< 1)")
+    print(f"  => first two rungs <=     {mp.nstr(rung2, 12)}   < 1 < "
+          f"{mp.nstr(need, 8)}")
+    c3_needed = (need / rung2 - 1) / u_p ** 3
+    print(f"  c3 that would be needed instead = {mp.nstr(c3_needed, 10)}  "
+          f"(vs O(1))")
+
+    check("15. the RULED z_D base needs a ladder factor strictly ABOVE 1, "
+          "which a cosine rung can never supply",
+          need > 1 and rung2 < 1,
+          f"need = {mp.nstr(need, 12)}, and the N=1 rung is bounded by 1 while "
+          f"the N=2 rung is {mp.nstr(rung2, 12)} < 1 -- so NO alpha closes it")
+
+    check("16. the required c3 on the ruled base is ~1e6, not O(1): the gap is "
+          "in the BASE, not in any rung",
+          abs(c3_needed) > mp.mpf("1e5"),
+          f"c3_needed = {mp.nstr(c3_needed, 10)}; deriving alpha therefore "
+          f"cannot unblock qou-cds1, and qou-iagg's dependency chain is wrong "
+          f"at that link")
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/14: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/16: {', '.join(failures)}")
     else:
-        print("14/14 assertions hold.")
+        print("16/16 assertions hold.")
 
     print("""
 CONSEQUENCE
@@ -542,6 +611,21 @@ CONSEQUENCE
         "quantized_eigenphase_set_V21": ["0", "pi/3", "pi/2", "2pi/3", "pi"],
         "alpha_req_in_that_set": False,
     })
+    wb.add_data("part3_base_not_phase", {
+        "ruled_zD_base_MeV": fmt(Q_D),
+        "Q_codata_MeV": fmt(QCOD),
+        "required_ladder_factor": fmt(need),
+        "N1_cos_rung_upper_bound": "1",
+        "N2_rung_at_c2_minus_1": fmt(rung2),
+        "c3_required_on_ruled_base": fmt(c3_needed),
+        "conclusion": "Deriving alpha CANNOT unblock qou-cds1. The N=1 rung is "
+                      "a cosine, bounded by 1, and the ruled base needs a "
+                      "factor 1.759 > 1. The Q_beta L2 residual is a BASE "
+                      "problem, not a phase problem. Scope-(b), citing "
+                      "Real.cos_le_one; Lean twin "
+                      "QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short "
+                      "(sorry-free).",
+    })
     wb.add_data("part2_measurement_is_a_fit", {
         "fit_status": "SELECTION AGAINST TARGET - not a derivation, not adopted",
         "base_status": "RETIRED z=1 cell; moves no dashboard row",
@@ -573,6 +657,8 @@ CONSEQUENCE
         "coincidence priced: which denominator won is the informative fact",
         "cross-anchor swing identical for candidate and C - no discrimination",
         "no element of order 120 in S_5 or 2I - the obvious mechanism is dead",
+        "ruled z_D base needs a factor > 1; no cosine rung can supply it",
+        "required c3 on the ruled base is ~1e6 - the gap is in the BASE",
     ], 1):
         wb.add_assertion(f"{i}. {nm}",
                          "FAIL" if nm in failures else "PASS", "PASS")

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T05:37:53.053818+00:00",
-  "commitSha": "c9fd78b0ad2be478a84c7bc6ccdc18c7cf82b2c5",
+  "computedAt": "2026-09-13T08:23:40.952342+00:00",
+  "commitSha": "1de376d7627fbe0be3575ec9f2766599894046d5",
   "assertions": [
     {
       "name": "1. det rho(sigma_i) = -1 identically",
@@ -87,14 +87,26 @@
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
+    },
+    {
+      "name": "15. ruled z_D base needs a factor > 1; no cosine rung can supply it",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "16. required c3 on the ruled base is ~1e6 - the gap is in the BASE",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "qbeta-eigenphase-rationality-quantization",
   "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
-  "scriptHash": "e835072181fa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "df325c7a0e0d",
+  "scriptCommitSha": "2a3644b8bd300fc2c1924eb6eeff2691a9702e4f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -136,6 +148,15 @@
         "pi"
       ],
       "alpha_req_in_that_set": false
+    },
+    "part3_base_not_phase": {
+      "ruled_zD_base_MeV": "0.444700400000000000000000000000000000000000000000000000000000",
+      "Q_codata_MeV": "0.782333409999999999999999999999999999999999999999999409829604",
+      "required_ladder_factor": "1.75923702789563490385886767810417980285153779938133496131239",
+      "N1_cos_rung_upper_bound": "1",
+      "N2_rung_at_c2_minus_1": "0.999927456715617626498201895199068388200910824829000565864302",
+      "c3_required_on_ruled_base": "1229007.57339994317617035396539857565718095693005754791421595",
+      "conclusion": "Deriving alpha CANNOT unblock qou-cds1. The N=1 rung is a cosine, bounded by 1, and the ruled base needs a factor 1.759 > 1. The Q_beta L2 residual is a BASE problem, not a phase problem. Scope-(b), citing Real.cos_le_one; Lean twin QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short (sorry-free)."
     },
     "part2_measurement_is_a_fit": {
       "fit_status": "SELECTION AGAINST TARGET - not a derivation, not adopted",
