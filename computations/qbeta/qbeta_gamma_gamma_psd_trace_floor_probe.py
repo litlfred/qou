@@ -1,10 +1,19 @@
-"""A PSD-feasible gamma-gamma word's Markov trace has a FLOOR, and the floor
-excludes Q_beta outright for every strand count up to n = 5.
+"""A PSD-feasible gamma-gamma word's Markov trace has a FLOOR.
+
+🛑 THIS TITLE USED TO CONTINUE "and the floor excludes Q_beta outright for
+every strand count up to n = 5".  That is FALSE and it was mine -- the scored
+functional eats a DIFFERENCE of two words (`delta_of`: "Delta = neutron -
+proton"), the Markov trace is linear, and a lower bound on each word bounds no
+difference.  Retracted 2026-09-13 in
+`qbeta_qbeta_scores_a_difference_probe.py`; the floor itself and all seven
+assertions below are sound.
 
 # Ref: AGENTS.md §"Formalize-first probe discipline" -- find the invariant that
 #      prunes the class BEFORE running the wide search
 # Ref: AGENTS.md §"Before declaring refuted" -- this is a scope-(b) structural
-#      exclusion for n <= 5, and the invariant is named below
+#      statement about a SINGLE word's trace for n <= 5, invariant named below
+# Ref: computations/qbeta/qbeta_qbeta_scores_a_difference_probe.py -- the
+#      retraction of this file's original Q_beta reading
 # Ref: computations/regenerate_y_lambda_sdp_conventionD.py -- the convention-D
 #      weight formula this rests on
 # Ref: computations/qbeta/qbeta_gamma_gamma_sdp_feasibility_probe.py (#7295)
@@ -39,21 +48,25 @@ non-negative and the trivial term is exactly `y_(n)`, so
 for EVERY PSD-feasible gamma-gamma word on `n` strands -- no enumeration, no
 dependence on which word.
 
-WHAT IT EXCLUDES.  Q_beta needs `|tr_M| = Q_beta / E_0 = 0.185059`.  The floor
-is `0.7527 / 0.5054 / 0.3193 / 0.1943` at `n = 2/3/4/5`, all above it, and
-`0.1153` at `n = 6`, below it.  So **no gamma-gamma + SDP word on five strands
-or fewer can reproduce Q_beta**, and the first strand count at which the
-argument stops working is `n = 6`.
+WHAT IT SAYS ABOUT THE TARGET, correctly scoped.  Q_beta needs
+`|tr_M| = Q_beta / E_0 = 0.185059`.  The floor is `0.7527 / 0.5054 / 0.3193 /
+0.1943` at `n = 2/3/4/5`, all above it, and `0.1153` at `n = 6`, below it.  So
+**no SINGLE gamma-gamma word on five strands or fewer has that trace**, and the
+first strand count at which the argument stops working is `n = 6`.
+
+🛑 That is NOT "cannot reproduce Q_beta", which is what this paragraph asserted
+until 2026-09-13.  The observable is `|eps(Delta)|*E_0` with `Delta` a
+DIFFERENCE of two words, and nothing here bounds a difference.
 
 The floor decays like `(q/[2]_q)^n ~ 0.552^n` while the target is fixed, so the
 crossing is sharp and one-sided: it never re-excludes at larger `n`.
 
-SCOPE.  **(b) structural exclusion for n <= 5**, invariant as named above --
-convention-D weight positivity, PSD ⟹ non-negative character, and the exact
-counit value on gamma-gamma words.  **Nothing is claimed for n >= 6**: the floor
-falling below the target says the argument stops, NOT that a feasible word
-reaches it.  Whether any does is open and needs the enumeration this probe
-makes unnecessary only below six strands.
+SCOPE.  **(b) structural, for n <= 5, about the trace of a SINGLE word** --
+invariant as named above: convention-D weight positivity, PSD ⟹ non-negative
+character, and the exact counit value on gamma-gamma words.  **Nothing is
+claimed for n >= 6**: the floor falling below the target says the argument
+stops, NOT that a feasible word reaches it.  And nothing at all is claimed
+about Q_beta, which is scored on a difference of two words.
 
 VERIFIED, NOT ASSUMED.  The Frobenius pairing `Sum_lambda y_lambda chi_lambda`
 is checked against the independent Ocneanu recursion on every word tested
@@ -282,14 +295,16 @@ def main() -> int:
     print()
     excl = [n for n, _, e in table if e]
     first_open = min(n for n, _, e in table if not e)
-    check("the_floor_excludes_Q_beta_for_every_strand_count_up_to_five",
+    check("the_floor_lies_above_the_target_for_every_strand_count_up_to_five",
           excl == [2, 3, 4, 5] and first_open == 6,
           f"the floor exceeds the target {mp.nstr(target, 10)} at n = "
           f"{excl} and drops below it first at n = {first_open} "
-          f"({mp.nstr(floor_at(6), 10)}). So NO gamma-gamma + confinement-SDP "
-          f"word on five strands or fewer can reproduce Q_beta -- scope-(b), no "
-          f"enumeration needed. This is what makes the n = 5 scan #7304 left as "
-          f"next unnecessary", w)
+          f"({mp.nstr(floor_at(6), 10)}). So no SINGLE gamma-gamma word on five "
+          f"strands or fewer has that trace -- scope-(b), no enumeration "
+          f"needed. 🛑 This assertion was named ..._excludes_Q_beta... and it "
+          f"is NOT an exclusion of Q_beta: the observable is scored on Delta = "
+          f"neutron word MINUS proton word, and nothing here bounds a "
+          f"difference (retracted 2026-09-13)", w)
 
     # ---- 6. the decay is one-sided, so it never re-excludes ------------------
     ratios = [floor_at(n + 1) / floor_at(n) for n in range(2, 12)]
@@ -342,7 +357,7 @@ def main() -> int:
         for lab, t, ok, _ in rows
     ])
     w.add_data("scope", {
-        "class": "(b) structural exclusion, n <= 5",
+        "class": "(b) structural, n <= 5, about a SINGLE word's trace",
         "invariant": "convention-D weight positivity + PSD => non-negative "
                      "character + exact counit value 1 on gamma-gamma words",
         "excluded": [2, 3, 4, 5],

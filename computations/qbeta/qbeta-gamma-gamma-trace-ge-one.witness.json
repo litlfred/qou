@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T14:46:06.167431+00:00",
-  "commitSha": "9a45906cf28eb61552c636d81502422618a9612c",
+  "computedAt": "2026-09-13T15:02:34.659737+00:00",
+  "commitSha": "b0f9c25bc2b545a141d7c66f6f4eb9f4a420fe44",
   "assertions": [
     {
       "name": "det_of_a_generator_is_constant_across_generators_in_each_block",
@@ -47,11 +47,11 @@
       "source": "tr_M >= 1 on every measured feasible word (1.0, 1.032897756, 1.137405209, 1.073238808, 1.073238808, 1.331992493), and the empty word sits at exactly 1.0 -- it is the identity in every block, so every character equals its dimension and AM-GM is an equality. The bound is TIGHT, not merely valid"
     },
     {
-      "name": "Q_beta_is_excluded_at_every_strand_count",
+      "name": "the_target_lies_below_the_per_word_bound_which_does_NOT_exclude_it",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "the target |tr^z_D| = 0.185058897738 is below 1, by a factor 5.4036851. So no PSD-feasible gamma-gamma word reaches it at ANY n: the smallest Q_beta this family can predict is exactly E_0 = 4.22748335563 MeV = 440.36851 %, and the five measured words at n = 4 land between +458 % and +620 %, above that minimum as they must"
+      "source": "the target |tr^z_D| = 0.185058897738 is below 1, by a factor 5.4036851. So no single PSD-feasible gamma-gamma word has that trace, and a single word would predict at least E_0 = 4.22748335563 MeV = 440.36851 %. 🛑 THAT IS NOT AN EXCLUSION OF Q_beta, and this probe asserted it was until 2026-09-13: the scored functional eats Delta = NEUTRON word MINUS PROTON word (delta_of), tr is linear, and a lower bound on each word bounds no difference. All 15 pairs of this set run -100 % to +79.4 %, straddling the target -- see qbeta_qbeta_scores_a_difference_probe.py"
     },
     {
       "name": "this_strictly_supersedes_the_earlier_floor_at_every_n",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2457,
+  "durationMs": 2292,
   "computation": "qbeta-gamma-gamma-trace-ge-one",
   "scriptFile": "qbeta_gamma_gamma_trace_ge_one_probe.py",
-  "scriptHash": "da03c1dcb67a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2c19e4f90dfc",
+  "scriptCommitSha": "0918596323b9617a5aee29cf9fa189cd3806927a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +89,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_trace_ge_one_probe.py"
   },
-  "description": "SUPERSEDES the [n+1]_q/[2]_q^n trace floor with a stronger, n-INDEPENDENT bound: every PSD-feasible gamma-gamma word has Markov trace >= 1, at every strand count. Four ingredients, all measured -- every gamma-gamma vertex has determinant 1 in every Wedderburn block (sigma_i and sigma_{i+1} are conjugate); PSD with det 1 forces trace >= dim by AM-GM; the convention-D weights are non-negative; and Sum_lambda y_lambda dim_lambda = 1 is the Markov normalisation. The bound is TIGHT, achieved by the empty word. Consequence: the target |tr_M| = 0.185059 is missed by a factor >= 5.40, so the gamma-gamma + confinement-SDP route cannot reproduce Q_beta at ANY n -- the smallest Q_beta it can predict is exactly E_0 = 4.2274834 MeV, +440.369 %. Scope-(b) at every n, for this functional and this E_0 only.",
+  "description": "SUPERSEDES the [n+1]_q/[2]_q^n trace floor with a stronger, n-INDEPENDENT bound: every PSD-feasible gamma-gamma word has Markov trace >= 1, at every strand count. Four ingredients, all measured -- every gamma-gamma vertex has determinant 1 in every Wedderburn block (sigma_i and sigma_{i+1} are conjugate); PSD with det 1 forces trace >= dim by AM-GM; the convention-D weights are non-negative; and Sum_lambda y_lambda dim_lambda = 1 is the Markov normalisation. The bound is TIGHT, achieved by the empty word. Consequence: the target |tr_M| = 0.185059 lies BELOW that bound, so no single word has it. 🛑 That is NOT an exclusion of Q_beta and this probe claimed it was until 2026-09-13: the scored functional eats Delta = neutron word MINUS proton word, tr is linear, and a lower bound on each word bounds no difference -- all 15 pairs run -100 % to +79.4 %, straddling the target (qbeta_qbeta_scores_a_difference_probe.py). Scope-(b) at every n for INDIVIDUAL words; it bounds tr_M(w) and nothing else.",
   "data": {
     "invariant": {
       "statement": "tr_M(w) >= 1 for every PSD-feasible gamma-gamma word, at every strand count",

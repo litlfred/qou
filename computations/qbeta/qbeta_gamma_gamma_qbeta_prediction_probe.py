@@ -17,6 +17,15 @@ that is worse.  A documented honest miss is a result."*  The 2026-09-08 ruling
 specifies both halves -- gamma-gamma selection AND the confinement SDP -- and
 nobody had scored the resulting admissible set against Q_beta.  This does.
 
+🛑 SCOPING CORRECTION, 2026-09-13.  This probe scores each feasible word
+**alone** as a Q_beta prediction.  That is NOT the scoring path: the observable
+is `|eps(Delta)| * E_0` with `Delta` the **neutron element MINUS the proton
+element** (`qbeta_option_e_required_level_probe.py::delta_of`).  The numbers
+below are what you get if a single word is the functional's argument, and they
+are correct as such -- they are not what the admissible set predicts for Q_beta.
+For that, all 15 PAIRS run -100 % to +79.4 %:
+`qbeta_qbeta_scores_a_difference_probe.py` (6/6).
+
 THE ANSWER IS THAT IT MISSES BY 5.6x TO 7.2x, and the interesting part is that
 the five admissible words agree with each other far more closely than any of
 them agrees with the measurement: the prediction spread across the whole

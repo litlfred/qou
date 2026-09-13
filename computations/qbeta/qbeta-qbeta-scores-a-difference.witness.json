@@ -1,0 +1,251 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T15:01:11.421545+00:00",
+  "commitSha": "b0f9c25bc2b545a141d7c66f6f4eb9f4a420fe44",
+  "assertions": [
+    {
+      "name": "the_scored_value_is_a_DIFFERENCE_of_two_word_traces",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "reconstructing nuc11_interleaved letter by letter gives tr(p) = 0.629328402202921918 and tr(n) = 0.475133517155682213; NEITHER matches the census witness's tr_conv_D = -0.1541948850472397056592555, and their DIFFERENCE matches it to 1.41e-26. delta_of's docstring says so independently: 'Delta = neutron - proton, coordinatewise in the NF basis'"
+    },
+    {
+      "name": "a_lower_bound_on_each_word_does_NOT_bound_their_difference",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr is linear, so tr(Delta) = tr(n) - tr(p). Two quantities each >= 1 have a difference bounded by nothing. The inference drawn on this branch -- that tr_M >= 1 per PSD-feasible gamma-gamma word excludes Q_beta at every strand count -- does not follow and is WITHDRAWN. Asserted as a check so the retraction is machine-recorded rather than living only in prose"
+    },
+    {
+      "name": "the_difference_predictions_STRADDLE_the_target",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all 15 pairs of the six-element feasible set run from -100.0 % to 79.39829 % -- they straddle the measurement rather than sitting above it, which is the opposite of what the retracted claim said. Reported in full; reporting only the closest would be selection against the target"
+    },
+    {
+      "name": "the_best_difference_is_the_same_ORDER_as_chance",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "11 distinct |differences| over the 15 pairs, 4 within +-50 % of the target, median spacing 0.0571821 -> expected best-by-chance 7.725 %. Observed best 5.14884 %. Better than chance but the same order, on a grid of 11 values -- not evidence for any pair, and the assertion deliberately tests ORDER rather than 'beats chance', because beating a coarse grid is what a coarse grid does"
+    },
+    {
+      "name": "the_per_word_bound_itself_is_untouched",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr_M >= 1 still holds on every PSD-feasible gamma-gamma word (1.0, 1.032897756, 1.137405209, 1.073238808, 1.073238808, 1.331992493), tight at the empty word. The det-1 fact, AM-GM, weight non-negativity and the Markov normalisation are all measured and all stand; so do the floor and every Lean theorem on this branch, which are about pairings and PSD matrices and mention no observable. What is withdrawn is one inference, not the mathematics"
+    },
+    {
+      "name": "the_scored_elements_words_are_BOTH_psd_infeasible",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "nuc11_interleaved fails Matrix.PosSemidef on ['(2, 1)', '(1, 1, 1)'] for the proton and ['(2, 1)', '(1, 1, 1)'] for the neutron -- 2 of 3 H_3 blocks each -- and carries det != 1 in every block (proton: {'(3,)': '1.38249446339', '(2, 1)': '-1.02197249381', '(1, 1, 1)': '-0.739223570776'}). So the SDP half of the 2026-09-08 ruling excludes the scored element DIRECTLY at the element level, independently of the alternating-character exclusion already recorded. This is measured, and it is the one new thing that survives the retraction"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 97,
+  "computation": "qbeta-qbeta-scores-a-difference",
+  "scriptFile": "qbeta_qbeta_scores_a_difference_probe.py",
+  "scriptHash": "d11a0a9aa079",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_qbeta_scores_a_difference_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_qbeta_scores_a_difference_probe.py"
+  },
+  "description": "RETRACTION. Q_beta = |eps(Delta)|*E_0 with Delta = NEUTRON word MINUS PROTON word (delta_of's own docstring, confirmed to 25 digits here), and the Markov trace is linear -- so the tr_M >= 1 bound on individual PSD-feasible gamma-gamma words does NOT bound the scored quantity, and the 'cannot reproduce Q_beta at any strand count' inference drawn from it on this branch is withdrawn. The bound itself, the floor, and every Lean theorem stand: they are about pairings and PSD matrices and none mentions Q_beta. Caught by the calibration step. What the difference functional actually gives, all 15 pairs reported: -100 % to +79.4 %, STRADDLING the target rather than sitting above it, best +5.15 % against 7.73 % expected by chance. Surviving new finding: the scored element's proton and neutron words are both PSD-INFEASIBLE (2 of 3 blocks) with det != 1 everywhere, so the SDP half excludes it directly.",
+  "data": {
+    "retraction": {
+      "what_I_asserted": "tr_M >= 1 per PSD-feasible gamma-gamma word means the route cannot reproduce Q_beta at any strand count, with a minimum prediction of E_0 = +440.369 %",
+      "what_is_true": "Q_beta = |eps(Delta)|*E_0 with Delta = neutron word MINUS proton word; tr is linear, so a lower bound on each word does not bound their difference",
+      "how_caught": "the calibration step -- tr(p) and tr(n) each failed to match the recorded tr_conv_D, and their difference matched it to 25 digits",
+      "source_confirms": "delta_of docstring: 'Delta = neutron - proton, coordinatewise in the NF basis'",
+      "contaminated": [
+        "qbeta_gamma_gamma_trace_ge_one_probe.py (description + the Q_beta_is_excluded_at_every_strand_count assertion)",
+        "qbeta_gamma_gamma_psd_trace_floor_probe.py (same inference)",
+        "qbeta_gamma_gamma_qbeta_prediction_probe.py (scored single words, which is not the scoring path either)",
+        "QOU/Archimedean/GammaGammaTraceFloor.lean (docstring framing only)",
+        "beans qou-99qc parts 9 and 10, and the PR body"
+      ],
+      "survives": [
+        "tr_M >= 1 per PSD-feasible gamma-gamma word, tight",
+        "the [n+1]_q/[2]_q^n floor and its strict decay",
+        "every Lean theorem on this branch",
+        "the crossing-energy results"
+      ]
+    },
+    "calibration": {
+      "tr_proton_word": "0.6293284022029219181653457",
+      "tr_neutron_word": "0.4751335171556822125060902",
+      "difference": "-0.1541948850472397056592555",
+      "recorded_tr_conv_D": "-0.1541948850472397056592555",
+      "abs_gap": "1.41035e-26"
+    },
+    "difference_predictions": [
+      {
+        "a": "empty",
+        "b": "(v0 v1)^2",
+        "abs_diff": "0.03289775552466038302690193",
+        "Q_beta_MeV": "0.139074713918055",
+        "err_pct": "-82.223089"
+      },
+      {
+        "a": "empty",
+        "b": "(v0 v1)^4",
+        "abs_diff": "0.1374052091186774453794083",
+        "Q_beta_MeV": "0.580878234525935",
+        "err_pct": "-25.750553"
+      },
+      {
+        "a": "empty",
+        "b": "sporadic A",
+        "abs_diff": "0.07323880793572920852933038",
+        "Q_beta_MeV": "0.309615841534407",
+        "err_pct": "-60.424055"
+      },
+      {
+        "a": "empty",
+        "b": "sporadic B",
+        "abs_diff": "0.07323880793572920852933038",
+        "Q_beta_MeV": "0.309615841534407",
+        "err_pct": "-60.424055"
+      },
+      {
+        "a": "empty",
+        "b": "(v0 v1)^6",
+        "abs_diff": "0.3319924925734999694414756",
+        "Q_beta_MeV": "1.40349273654827",
+        "err_pct": "79.398287"
+      },
+      {
+        "a": "(v0 v1)^2",
+        "b": "(v0 v1)^4",
+        "abs_diff": "0.1045074535940170623525064",
+        "Q_beta_MeV": "0.44180352060788",
+        "err_pct": "-43.527463"
+      },
+      {
+        "a": "(v0 v1)^2",
+        "b": "sporadic A",
+        "abs_diff": "0.04034105241106882550242846",
+        "Q_beta_MeV": "0.170541127616352",
+        "err_pct": "-78.200966"
+      },
+      {
+        "a": "(v0 v1)^2",
+        "b": "sporadic B",
+        "abs_diff": "0.04034105241106882550242846",
+        "Q_beta_MeV": "0.170541127616352",
+        "err_pct": "-78.200966"
+      },
+      {
+        "a": "(v0 v1)^2",
+        "b": "(v0 v1)^6",
+        "abs_diff": "0.2990947370488395864145736",
+        "Q_beta_MeV": "1.26441802263021",
+        "err_pct": "61.621376"
+      },
+      {
+        "a": "(v0 v1)^4",
+        "b": "sporadic A",
+        "abs_diff": "0.06416640118294823685007796",
+        "Q_beta_MeV": "0.271262392991529",
+        "err_pct": "-65.326498"
+      },
+      {
+        "a": "(v0 v1)^4",
+        "b": "sporadic B",
+        "abs_diff": "0.06416640118294823685007796",
+        "Q_beta_MeV": "0.271262392991529",
+        "err_pct": "-65.326498"
+      },
+      {
+        "a": "(v0 v1)^4",
+        "b": "(v0 v1)^6",
+        "abs_diff": "0.1945872834548225240620672",
+        "Q_beta_MeV": "0.82261450202233",
+        "err_pct": "5.1488395"
+      },
+      {
+        "a": "sporadic A",
+        "b": "sporadic B",
+        "abs_diff": "0.0",
+        "Q_beta_MeV": "0.0",
+        "err_pct": "-100.0"
+      },
+      {
+        "a": "sporadic A",
+        "b": "(v0 v1)^6",
+        "abs_diff": "0.2587536846377707609121452",
+        "Q_beta_MeV": "1.09387689501386",
+        "err_pct": "39.822342"
+      },
+      {
+        "a": "sporadic B",
+        "b": "(v0 v1)^6",
+        "abs_diff": "0.2587536846377707609121452",
+        "Q_beta_MeV": "1.09387689501386",
+        "err_pct": "39.822342"
+      }
+    ],
+    "chance_control": {
+      "distinct_differences": 11,
+      "within_50pct_of_target": 4,
+      "median_spacing": "0.057182074336145079",
+      "expected_best_pct": "7.724848",
+      "observed_best_pct": "5.1488395",
+      "verdict": "same order as chance on an 11-value grid; not evidence"
+    },
+    "scored_element_sdp_status": {
+      "psd_infeasible_blocks": {
+        "p": [
+          "(2, 1)",
+          "(1, 1, 1)"
+        ],
+        "n": [
+          "(2, 1)",
+          "(1, 1, 1)"
+        ]
+      },
+      "block_determinants": {
+        "p": {
+          "(3,)": "1.38249446339",
+          "(2, 1)": "-1.02197249381",
+          "(1, 1, 1)": "-0.739223570776"
+        },
+        "n": {
+          "(3,)": "1.1221068216",
+          "(2, 1)": "-1.02197249381",
+          "(1, 1, 1)": "-0.910762214553"
+        }
+      },
+      "reading": "the SDP half of the ruling excludes the scored element at the element level, independently of the alternating-character exclusion"
+    },
+    "scope": {
+      "class": "(a) scope-limited -- a retraction plus a measurement",
+      "what_is_now_OPEN": "whether any PAIR of PSD-feasible gamma-gamma words reproduces Q_beta. Nothing here excludes it, and picking the closest pair out of 15 would be selection against the target"
+    }
+  }
+}

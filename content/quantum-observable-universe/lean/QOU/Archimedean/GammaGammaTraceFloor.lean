@@ -49,6 +49,15 @@ the premise.
 The numerical crossing (the floor exceeds `Q_β/E₀ = 0.185059` at `n ≤ 5` and
 falls below it at `n = 6`) is archimedean arithmetic at the substrate pin and
 lives in the probe, not here.
+
+🛑 **And that crossing is NOT an exclusion of `Q_β`** — the companion probes
+said it was, and that reading was retracted on 2026-09-13. `Q_β = |ε(Δ)|·E₀`
+with `Δ` the **neutron element minus the proton element**, the Markov trace is
+linear, and a lower bound on each word bounds no difference. Nothing in this
+file mentions `Q_β`; every theorem below is a statement about a Frobenius
+pairing and a PSD matrix, and all of them stand. The note is here so a reader
+arriving from the retracted prose does not re-derive the same inference from
+these lemmas.
 -/
 import QOU.Mass.GammaGammaWordSelection
 import QOU.Mass.PsdDetOneTrace
