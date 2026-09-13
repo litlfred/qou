@@ -916,3 +916,70 @@ sparse. #7093 refuted the Jensen route (the uniform/even multiset is not the pai
 minimiser at fixed (ℓ,W)), so it needs a different argument.
 
 **Do not close this bean.**
+
+---
+
+## 2026-09-13 — caveat (a) above is WITHDRAWN: ℓ is padding, not a search dimension
+
+**The claim.** Caveat (a) three paragraphs up — *"the ℓ-cap `[k, k+5]` binds at
+n = 78/136/210 — those three are censored downward"* — is **wrong, and it was mine.**
+It treats ℓ as a search dimension. Above the maximiser's own row count it is not one:
+ℓ is the **padding** of the β-frame, and the objective is provably blind to it.
+
+**The theorem, which came first.**
+[`QOU.BraidKnot.HookSum.betaSide_eq_hookSum`](content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean)
+— sorry-free, `lean`-direct exit 0 with `-DautoImplicit=false -s 65536`, shadow-verified
+against current library source, axioms `[propext, Classical.choice, Quot.sound]`. For any
+`g` into an additive commutative group and any padding `L ≥ ℓ(μ)`,
+
+$$\sum_{i<L}\ \sum_{m\le\beta_i} g(m)\ -\ \sum_{i<j<L} g(\beta_i-\beta_j)\ =\ \sum_{c\in\mu} g(h(c)).$$
+
+The right-hand side is indexed by **cells** and carries no `L` at all. At `g = ε` the
+left-hand side *is* this arc's β-side; `H = Σ_c h(c)` is likewise cell-indexed; so `V` is
+padding-invariant. Two lines (`rw`, `abel`) from **(I')**, which has been in that file
+since #7282 — I read past it four times. Companion `betaSide_padding_invariant` states the
+same over a mere monoid, subtraction-free.
+
+**Measured, and the decisive test is the precision one** — a residual that is arithmetic
+shrinks with `dps`, a real dependence sits still
+([`rev_l_cap_is_padding_invariance_probe.py`](computations/deltalambda/rev_l_cap_is_padding_invariance_probe.py), 13/13):
+
+| dps | worst residual over 14 paddings | ratio |
+|---|---|---|
+| 30 | 8.20e-29 | — |
+| 50 | 1.15e-48 | 7.1e19 |
+| 70 | 8.98e-69 | 1.3e20 |
+| 90 | 2.71e-88 | 3.3e19 |
+
+Each 20-dps step divides it by ~1e20. The exact value is **0**. `H` is invariant as an
+*integer*. Tolerances elsewhere are **derived** from the summation's operation count
+`(L + L(L−1)/2)·|value|·10^{−dps}`, never fitted to the observed residual.
+
+**Consequences**, under an ℓ-scan 4× wider than #7294's window:
+
+- the three "censored" excesses **do not move** (agree to 1e-12) — they were never
+  censored, and the caveat predicted a rise the theorem forbids;
+- the real threshold is **ℓ\* = k+2** at all three; `V(ℓ)` drops only at `ℓ = k, k+1`;
+- **`best_l` in `rev-excess-scaling-exponent.witness.json` is NOISE** and must not be
+  quoted as a row count. On a plateau the strict `v > best` comparison is decided by the
+  last digit of a different climb path; it reports `k+5` where ℓ\* = `k+2`.
+
+**A finding I was not looking for, and it is the one with teeth.** At **n = 210 the
+maximiser is not a unique partition**: a 23-row shape and a 22-row shape tie, and they tie
+**exactly**, because they share a **hook multiset** — which `betaSide_eq_hookSum` makes a
+*structural* degeneracy, not a numerical near-tie (the objective is a function of the hook
+multiset alone). So *"the maximiser's gap profile is a top block of 3s, a bulk of 2s, a
+matching bottom block of 1s"* — the 2026-09-13 gap-profile result recorded above — is a
+statement about a **hook-equivalence class**, and a search that reports one representative
+is not evidence the others were rejected. That result is not refuted; its **scope** was
+over-stated, and re-reading it as a class statement is the honest form.
+
+**Untouched:** the `A√2 = 5.09594565` identification. No excess in #7294's table changes,
+so neither the exponent slopes nor the excess/√n turnover move at all. Caveat (b) —
+one-sidedness — stands exactly as written: every value in this arc remains a **lower
+bound** on `M_n`. Padding invariance removes one spurious source of doubt about those
+values; it says nothing about whether the climb found the optimum.
+
+**Still open, unchanged:** the **pair-term lower bound**.
+
+**Do not close this bean.**
