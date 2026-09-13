@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T22:56:10Z
-updated_at: 2026-09-13T01:01:45Z
+updated_at: 2026-09-13T01:09:04Z
 ---
 
 
@@ -193,3 +193,10 @@ Fixed AT THE PRODUCER: the script now calls `ame_binding_mev(1, 2)` instead of
 carrying a literal. Caught by checking my own published figure against its
 source rather than by any gate — the literal was new in this commit, so it would
 have become baseline backlog on the next ratchet run.
+
+
+
+*(Count correction, same day: the red-gate figure in the section above reads
+"12 blocking reds"; counted off `precision-gates.sh`'s own RED line it is
+**11**. The substantive claim — all pre-existing, none naming a file touched
+here — is unaffected and was re-verified on a second full run.)*
