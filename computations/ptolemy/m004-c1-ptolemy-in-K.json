@@ -1,0 +1,26 @@
+{
+ "manifold": "m004",
+ "obstruction_class": 1,
+ "field": {
+  "generator": "t",
+  "min_poly": "t**2 + 11*t + 31",
+  "degree": 2,
+  "irreducible_over_Q": true,
+  "discriminant": "-3"
+ },
+ "provenance": {
+  "producer": "ptolemy_exact_point.py",
+  "method": "primitive element + lex GB, coordinates as normal forms",
+  "degenerate_components_discarded": 1,
+  "genuine_components": 1
+ },
+ "ptolemy": {
+  "c_0012_1": "-t - 6",
+  "c_0102_1": "-t - 6",
+  "c_0201_1": "1",
+  "c_1011_0": "-1",
+  "c_1011_1": "t + 5",
+  "c_1110_0": "t + 6",
+  "u": "-t - 6"
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "probe": "ptolemy_duality_variety_level_orbit",
+ "manifold": "L6a4",
+ "obstruction_class": 1,
+ "guards": {
+  "G1_orbit_size_4_equals_degree": true,
+  "G2_variety_point": {
+   "id": {
+    "cube_root": "u2",
+    "ggz_failures": 0,
+    "identification_failures": 0
+   },
+   "sigma_a": {
+    "cube_root": "u1",
+    "ggz_failures": 0,
+    "identification_failures": 0
+   },
+   "sigma_b": {
+    "cube_root": "u1",
+    "ggz_failures": 0,
+    "identification_failures": 0
+   },
+   "tau": {
+    "cube_root": "u2",
+    "ggz_failures": 0,
+    "identification_failures": 0
+   }
+  },
+  "G3_D_equivariance_disagreeing_coordinates": {
+   "id": 0,
+   "sigma_a": 0,
+   "sigma_b": 0,
+   "tau": 0
+  },
+  "G4_identity_row_reproduces_7092": true,
+  "G5_sigma_a_column_all_no": true
+ },
+ "table": {
+  "id": {
+   "sigma_a": {
+    "verdict": "NOT a coboundary",
+    "is_coboundary": false,
+    "sl3_lift_exists": null,
+    "w_eq_r_of_3e0": null,
+    "kernel_relations_failing": 91,
+    "kernel_rank": 122,
+    "producer_verdict": "NOT a coboundary"
+   },
+   "sigma_b": {
+    "verdict": "coboundary (PGL3 only)",
+    "is_coboundary": true,
+    "sl3_lift_exists": false,
+    "w_eq_r_of_3e0": "256*T**3/189404296875 + 308/3879",
+    "kernel_relations_failing": 0,
+    "kernel_rank": 122,
+    "producer_verdict": "coboundary of the PGL(3) decoration torus over K (r in Hom(L,K^x), all 128 equations verified); the SL(3) lift needs the cube root of r(3 e_0), which is not in K"
+   }
+  },
+  "sigma_a": {
+   "sigma_a": {
+    "verdict": "NOT a coboundary",
+    "is_coboundary": false,
+    "sl3_lift_exists": null,
+    "w_eq_r_of_3e0": null,
+    "kernel_relations_failing": 91,
+    "kernel_rank": 122,
+    "producer_verdict": "NOT a coboundary"
+   },
+   "sigma_b": {
+    "verdict": "coboundary (PGL3 only)",
+    "is_coboundary": true,
+    "sl3_lift_exists": false,
+    "w_eq_r_of_3e0": "256*T**3/189404296875 + 308/3879",
+    "kernel_relations_failing": 0,
+    "kernel_rank": 122,
+    "producer_verdict": "coboundary of the PGL(3) decoration torus over K (r in Hom(L,K^x), all 128 equations verified); the SL(3) lift needs the cube root of r(3 e_0), which is not in K"
+   }
+  },
+  "sigma_b": {
+   "sigma_a": {
+    "verdict": "NOT a coboundary",
+    "is_coboundary": false,
+    "sl3_lift_exists": null,
+    "w_eq_r_of_3e0": null,
+    "kernel_relations_failing": 91,
+    "kernel_rank": 122,
+    "producer_verdict": "NOT a coboundary"
+   },
+   "sigma_b": {
+    "verdict": "coboundary (PGL3 only)",
+    "is_coboundary": true,
+    "sl3_lift_exists": false,
+    "w_eq_r_of_3e0": "-256*T**3/189404296875 - 4495/7758",
+    "kernel_relations_failing": 0,
+    "kernel_rank": 122,
+    "producer_verdict": "coboundary of the PGL(3) decoration torus over K (r in Hom(L,K^x), all 128 equations verified); the SL(3) lift needs the cube root of r(3 e_0), which is not in K"
+   }
+  },
+  "tau": {
+   "sigma_a": {
+    "verdict": "NOT a coboundary",
+    "is_coboundary": false,
+    "sl3_lift_exists": null,
+    "w_eq_r_of_3e0": null,
+    "kernel_relations_failing": 91,
+    "kernel_rank": 122,
+    "producer_verdict": "NOT a coboundary"
+   },
+   "sigma_b": {
+    "verdict": "coboundary (PGL3 only)",
+    "is_coboundary": true,
+    "sl3_lift_exists": false,
+    "w_eq_r_of_3e0": "-256*T**3/189404296875 - 4495/7758",
+    "kernel_relations_failing": 0,
+    "kernel_rank": 122,
+    "producer_verdict": "coboundary of the PGL(3) decoration torus over K (r in Hom(L,K^x), all 128 equations verified); the SL(3) lift needs the cube root of r(3 e_0), which is not in K"
+   }
+  }
+ },
+ "w_transport": {
+  "transports_by_galois": true,
+  "distinct_values": 2,
+  "constant_on_cosets_of_stab_sigma_a": true,
+  "values": {
+   "id": "256*T**3/189404296875 + 308/3879",
+   "sigma_a": "256*T**3/189404296875 + 308/3879",
+   "sigma_b": "-256*T**3/189404296875 - 4495/7758",
+   "tau": "-256*T**3/189404296875 - 4495/7758"
+  },
+  "cross_check_of": "PR #7273 section 4 (w in Fix(sigma_a) = Q(sqrt(-15)))"
+ },
+ "prediction_held": true,
+ "verdict": "D = sigma_b modulo the PGL(3) decoration gauge at EVERY point of the L6a4 class-1 variety (4 of 4), and D != sigma_a modulo any gauge at every point"
+}

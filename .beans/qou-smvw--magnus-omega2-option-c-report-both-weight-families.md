@@ -1,10 +1,11 @@
 ---
 # qou-smvw
 title: 'Magnus Omega2 option C: report both weight families permanently'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-07T11:44:23Z
-updated_at: 2026-09-07T11:44:23Z
+updated_at: 2026-09-13T16:17:11Z
 ---
 
 # RECOMMENDED as a permanent guard alongside option A
@@ -106,3 +107,16 @@ their next run — no arithmetic changed, only what is additionally recorded.
 
 Remaining on this bean: re-run triton and he4 so their witnesses carry the
 headline fields, and confirm the cross-atom sign gate still passes end to end.
+
+---
+
+# SUBSUMED — OWNER RULING 2026-09-13: Wenzl adopted
+
+Reporting both families is already what the probes do — each emits P_total (Plancherel) and P_total_wenzl, with headline_pairing naming the adopted arm and weight_family declared beside every y_lambda column. This option asked for a practice that landed under option A; the ruling settles which arm is authoritative, which is what C deliberately left open.
+
+Full ruling, its basis and its consequence: parent bean `qou-za3q`.
+
+**The consequence travels with the ruling.** Under the adopted Wenzl weight the
+programme's target A-dependent sign change is **not** exhibited in A = 2, 3, 4
+(−, −, −); it appeared only under the rejected measure (−, +, +). Anyone citing
+the Magnus sign result must state that.
