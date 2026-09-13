@@ -489,6 +489,19 @@ but the held sources do not print it — GK cite [AK] for `I_{2,3} = I_{5₂}` a
 orientations of the same knot, and the `σ₁σ₁` index does not see orientation. H-I13 was not a distinct
 hypothesis; it was 5₂ again.
 
+**Held precedent, found after the derivation (2026-09-13, corpus-grep for the doubled argument).** Garoufalidis–Kashaev,
+*Evaluation of state integrals at rational points*, `arxiv-1411.6062v2` §2.3 eq. (56), prints
+`I_{(−2,3,7)}(b) = ∫ Φ_b(x)² Φ_b(2x − c_b) e^{−2πix²} dx` — character for character the form derived here — and attributes
+it to *"the second author computed the state-integral invariant … the result of the long computation"*, taken there as
+input. So the four-line reduction from the Neumann–Zagier datum (rank one, `w ∥ v`, one Fourier transform per
+tetrahedron) reproduces Kashaev's unpublished computation, and fixes the orientation question of the previous paragraph
+in GK's favour: my pretzel integral **is** GK's, with no mirror. The same paper (§2.2) assigns `(A,B) = (1,3)` to 5₂ —
+the `I_{1,3}` this reduction lands on — while their 2013 paper assigns `I_{2,3}`; the two GK conventions are the two
+orientations, exactly as measured above. Their (57b)–(57c) also give the rational-point building blocks
+`g_k(x,q) = q^{k(k+1)}x^{2k}/((qx;q)_k²(qx²;q)_{2k})`, `g(x) = x²/((1−x)²(1−x²)²)`, whose equation `g(x) = 1` has **six**
+solutions in two cubic fields (discriminants −23 and 49) matching the six nonabelian parabolic representations — so the
+pretzel has six blocks, which is what §3k's residue sum has (two unit families plus four parity classes).
+
 **The pretzel, explicit.** In SnapPy's orientation
 $$
 Z_{m016} \;\propto\; \int \Phi_b(x)^2\,\Phi_b(2x - c_b)\,e^{-2\pi i x^2}\,dx,
