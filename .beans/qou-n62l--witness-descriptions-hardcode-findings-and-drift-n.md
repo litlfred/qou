@@ -1,10 +1,11 @@
 ---
 # qou-n62l
 title: Witness descriptions hardcode findings and drift; no gate reads a description
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-06T11:31:55Z
-updated_at: 2026-09-06T11:31:55Z
+updated_at: 2026-09-13T11:34:54Z
 ---
 
 ## The gap
@@ -415,3 +416,144 @@ down. It does not suit a candidate-generator over a growing corpus. Not
 changed here — the contract is the gate array's to set, and loosening a
 blocking gate is exactly the move that file warns against — but recorded,
 because the alternative is that the next agent silently rebaselines it.
+
+
+---
+
+# Session 2026-09-13 — five sponges fixed, two real drifts found, and the detector's precision measured
+
+## 1. What the detector was counting as "data"
+
+Five separate things that are not measurements were being read as measurements.
+Each was measured before and after; each is locked by a self-test
+(`--self-test` 14/14 → **25/25**).
+
+| # | sponge | mechanism | effect |
+|---|---|---|---|
+| 1 | `environment`, `engineVersion`, `commitSha`, `durationMs`, … (13 keys) | `classify` opens `if raw in body` — a raw **substring** test. `numpy=2.4.6` contains `2.4` *and* `4.6`; `clarabel=0.11.1` contains `0.1` | 34 manufactured, **31 masked** |
+| 2 | `precisionMetadata` | `guard_digits: 10` × the **percent branch**: every prose number in ~[1000, 2500] divides into [10, 25] and lands within 0.6 of 10 | 9 manufactured, 4 masked |
+| 3 | arXiv identifiers | `2410.20973` is shaped exactly like a measurement | 32 candidates, **32 of 32 citations, zero false drops** |
+| 4 | `§ 3.1` | the label filter matches the *word* "section", not the glyph | 2 |
+| 5 | `_LABEL_BEFORE` had no leading boundary | **`table` lives inside `stable`** — `…holds a stable -0.00225962 there` was dropped as a table label | 2 |
+
+Net on the corpus: **175 → 157** witnesses with candidates, **223 → 205**
+candidate numbers, 41 baseline files drained. Commits `afadf37569d`,
+`b3c0fcc45c9`.
+
+> An earlier draft of #3–#5 also added `eq|thm|prop|rmk|ex` to the label word
+> list. Reverted before commit: unmeasured, and `ex` would have eaten
+> `complex 3.14` — the very bug #5 fixes, reintroduced by hand while fixing it.
+
+## 2. The sixth sponge: **prose vouches for prose** — MEASURED, deliberately NOT landed
+
+`description` is excluded from the data pool. **No other prose field is.**
+`source`, `finding`, `verdict`, `caveats`, `note` are all free text, and they
+all feed both the EXACT substring test and `data_vals`.
+
+So **a stale number duplicated into a second prose field validates itself.**
+
+Worked case — `he4-canonical-tr-m-block-fingerprint`, measured:
+
+```
+prose  0.160974145442 -> EXACT   (nearest rel 0.0000)
+prose            5.96 -> NEAR    (rel 0.0067)
+prose            91.1 -> NEAR    (rel 0.0262)
+prose            29.0 -> DRIFT   (rel 0.0784)   <- only these two reported
+prose            23.6 -> DRIFT   (rel 0.0632)
+```
+
+The data carries `tr_M_at_q0 = 0.0112374176598`. The prose figure is **14.3×**
+that — the single largest drift in the document — and it read EXACT because the
+assertion's own `source` string still said *"cites tr_M(β_⁴He)(q_0) =
+0.160974145442"*. The worst error in the file was the one thing the detector
+could not see. Meanwhile `91.1` reads NEAR because the superseded 91.130 happens
+to sit 2.6 % from the current signed cumulative 88.715.
+
+**Measured effect of excluding prose-shaped strings** (contains whitespace and
+≥3 letters) from the data pool: **187 findings surface across 140 witnesses**;
+7 drain.
+
+**Not landed, and this is a judgement, not an oversight.** See §3: the detector's
+measured precision is ~9 %. Tripling a 90 %-false-positive list from 31 items to
+200+ does not make anyone more able to act; it makes the gate unreadable. The
+fix is correct and should land **together with** a precision fix, not before one.
+
+## 3. Precision, measured — ~9 %, and nearest-neighbour is the wrong statistic
+
+Of **34** NEW/GREW findings triaged by hand this session, **3** were genuine
+drift. Two are fixed (§4); one is escalated (§5). The other 31 fall into classes
+the detector cannot currently distinguish:
+
+- **a unit the witness does not store** — `~1.7 ppb`, `11.5 ppb`, `1.23 ppm`,
+  `22.7×`, `2.15x`, `5.6 s/λ`, `~4.5 orders`, `2.27 MeV (#3564)`. The largest
+  class by far.
+- **prose quoting a superseded value while saying so** —
+  `delta-lambda-cancellation-ascaling`: *"It said heavy isotopes OVERSHOOT +1
+  (³He 1.27, ⁴He 1.31) … under the interleaved atom word none of the four
+  overshoots"*. Honest historical prose, flagged as drift.
+- **an external constant or another PR's figure**, which the audit's own header
+  already admits: *"DRIFT is a CANDIDATE, not a verdict"*.
+
+This is consistent with the independent control run earlier in this campaign: a
+precision-matched random control matched at 53 % against the real candidates'
+58 %, a lift of **+5 pp**.
+
+**The root cause is structural.** A witness holds hundreds of numbers spanning
+orders of magnitude; for any prose number, the chance that *some* value lands in
+a [0.05, 0.6] relative window is high. Nearest-neighbour distance has no null
+model, and no reweighting of the bands fixes that — being "close-ish but not
+exact" is the *common* case under the null, not the surprising one.
+
+**Proposed remedy — semantic pairing, not numeric proximity.** Pair a prose
+number to a data field by **name**: `"Reproduces tr_M = 0.160974145442"` names
+`tr_M`, the witness has `tr_M_at_q0`, so compare *those two* and report any
+disagreement — no band, no upper cap, no coincidence. This both raises precision
+and removes the need for the 0.6 cap, which is what makes §2 landable. Sizing:
+~60 lines, and it should be **advisory** on arrival rather than folded into the
+blocking ratchet.
+
+## 4. Two genuine drifts, found and fixed
+
+- **`he4-canonical-tr-m-block-fingerprint`** (`0ae8c12c1c6`). Four prose sites
+  inside the producer still quoted the pre-2026-09-06 chi cache — module
+  docstring, its "86.6 %" note, `set_description`, and two assertion `source`
+  strings. Its docstring and its own `set_description` had also drifted apart
+  **from each other** (13.5/10.3/10.2 % vs 15.4/14.2/9.4 %), neither matching
+  the data. The assertions were never wrong; `CITED_*` were re-pinned by
+  `qou-85wn` and all 14 pass. Noted on `qou-85wn` (a sibling's bean — not
+  resolved by me).
+- **`h2o-bond-angle-magnitude-vsepr`** (`3f97ff9223f`). Docstring and
+  `set_description` both said `θ ≈ 107.2°` / `narrows ≈ 2.3°` against computed
+  `106.70642` / `2.764776` — while the witness's **own `finding` field** already
+  said `≈106.71°` / `≈2.8°`. The document contradicted itself across two prose
+  fields and stayed green.
+
+Both are prose-only; no computed value, assertion or tolerance touched. Both
+witnesses regenerate from their producers — queued in `.work/regen-queue.md`
+§6–§7, not run, because the `qou-uiut` table holds the checkout.
+
+## 5. One escalated — `defect-info-a-trend-probe`, an author question
+
+Prose: *"the twice-measured 4He near-match (**0.904**)"*. This witness's own
+⁴He `ratio` is **0.60174**. No other witness description in the corpus carries
+0.904 ("near-match" turns out to be a *tier name* here, not a result), so the
+two cited prior measurements cannot be located from the corpus. Either the
+cited prior moved or it is a different quantity — **not something to guess at**,
+and left for whoever owns the claim.
+
+Incidentally that witness carries `allPassed: true` with `assertions: []` and
+no `allPassedBasis` — the vacuous-true class of `qou-qe81`.
+
+## 6. Open for the owner — should this gate be blocking?
+
+`precision-gates.sh:433` runs this **blocking**. At ~9 % precision that means
+the build is gated on a list that is ~10 parts noise to 1 part signal, and the
+audit's own header already tells the reader the findings are candidates rather
+than verdicts. Either the gate should be advisory until §3 lands, or §3 should
+land first. Not changed unilaterally — a gate's blocking status is an
+owner-facing call.
+
+The baseline has deliberately **not** been regenerated. It was computed under a
+defective measurement so it no longer describes the detector, but rewriting it
+now would absorb the 8 genuine pre-existing regressions along with the 26
+newly-surfaced ones — the laundering the ratchet's own comment warns against.

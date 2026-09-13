@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T12:44:43Z
-updated_at: 2026-09-07T10:30:11Z
+updated_at: 2026-09-13T11:30:34Z
 ---
 
 
@@ -311,3 +311,47 @@ fail**.
 `dominant_partition` is unchanged, so every existing downstream theorem —
 `dominant_in_two_row_stratum`, `dominant_eq_nine_three_in_stratum` — is
 untouched.
+
+
+---
+
+## FOLLOW-ON 2026-09-13 — four more sites, inside the producer (not resolving this bean; it is not mine)
+
+Surfaced by the `qou-n62l` prose-drift ratchet once the provenance and
+`precisionMetadata` sponges were removed and it could see this witness at all.
+
+The `.md`, the `.ts` and `CITED_*` were fixed here. **Four prose sites inside
+`computations/probe_he4_canonical_tr_m_fingerprint.py` were not:**
+
+- the module docstring's "Cited values" block
+- its `NOTE on "86.6%"`
+- `w.set_description(...)` — which is what lands in the witness
+- the `source=` strings on the `tr_M_at_q0` and `trivial_rep_pct` assertions
+
+So the committed witness asserted `tr_M = 0.160974145442` in its description
+while carrying `0.0112374176598` in its data — the factor
+`R_quark = 14.3248` this bean itself identified — and `trivial_rep_pct` passed
+at **85.398** under a source string reading *"trivial rep (12) ~ 2.9%"*.
+
+Worse, the producer's docstring and its own `set_description` had drifted apart
+**from each other**: `(10,2) 13.5%, (7,5) 10.3%, (11,1) 10.2%` in one,
+`(10,2) 15.4%, (11,1) 14.2%, (7,5) 9.4%` in the other, neither matching the
+data. Two hand-maintained copies of the same table in one file, already
+disagreeing.
+
+**The assertions were never wrong.** `CITED_*` were re-pinned here and all 14
+pass. Only the prose describing them was stale. Nothing computed was touched.
+
+Fixed at `0ae8c12c1c6`. Superseded figures kept and dated per this bean's own
+convention — two contributions have flipped sign and the trivial rep went from
+5.962 % to **leading** at 85.398 %, and that gap is the evidence the prose and
+the pinned constants had parted. Overwriting it silently would have destroyed
+the only surviving record.
+
+Also recorded in the producer, because it is how the old five-block list
+misreads: `IsTwoRow` is `length ≤ 2`, so the **one-row** (12) is in Λ²(12).
+"All top-5 are two-row" is true *with (12) leading*; it is not a claim that the
+trivial rep was excluded.
+
+Witness regeneration queued (`.work/regen-queue.md` §6), not run — the
+`qou-uiut` table holds the checkout.
