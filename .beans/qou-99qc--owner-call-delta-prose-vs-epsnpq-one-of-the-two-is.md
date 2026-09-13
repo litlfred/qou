@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T14:30:06Z
+updated_at: 2026-09-13T14:53:20Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2125,3 +2125,48 @@ recursion to 5.0e-36 over 28 words at n = 3, 4, 5.
 **Lean status: NOT formalised.** Ingredient 3 has a sorry-free alternating
 twin; `WedderburnBlocks.PSDFeasible` already carries ingredient 2's hypothesis
 shape. The composite bound is the open formalisation.
+
+
+## Part 10 (PR #7304) — 🛑 tr_M ≥ 1 at EVERY n, which SUPERSEDES part 9's floor
+
+`computations/qbeta/qbeta_gamma_gamma_trace_ge_one_probe.py` (8/8) + Lean
+`PsdDetOneTrace.card_le_trace_of_det_one`, `GammaGammaTraceFloor.pairing_ge_one_of_psdFeasible`
+(both sorry-free).
+
+**Part 9's floor was mine and it was weak.** It kept the trivial block's term of
+the Frobenius pairing and discarded the rest as *merely* non-negative. They are
+not merely non-negative — each is bounded below by its own block dimension —
+and keeping them gives a bound that is stronger AND n-independent.
+
+**Four ingredients, all measured:**
+
+1. **Every γγ vertex has determinant 1 in every block.** `σᵢ` and `σᵢ₊₁` are
+   conjugate in the braid group ⟹ same block determinant ⟹
+   `det(σᵢσᵢ₊₁⁻¹) = 1`. Measured 7.2e-40 over 78 (block, vertex) cases at
+   n = 3..6; the conjugacy fact itself to 4.9e-40. Multiplicative, so every
+   WORD inherits it — 2.1e-39 over 590 (word, block) pairs.
+2. **PSD + det 1 ⟹ trace ≥ dim** (AM-GM). Now **general-dimension Lean**
+   (`card_le_trace_of_det_one`); #7295 had only the 2×2 case, and blocks reach
+   dim 16 at n = 6.
+3. **Convention-D weights are non-negative.**
+4. **`Σ y_λ dim_λ = 1`** — the Markov normalisation, 4.6e-41 at n = 3..8. This
+   is what makes the bound the value **1**.
+
+⟹ **`tr_M(w) ≥ 1` for every PSD-feasible γγ word, at every n.** **TIGHT** —
+the empty word is the identity in every block, measured exactly 1.0.
+
+**Consequence.** Target `|tr_M| = 0.185059` is below 1 by a factor **5.4037**,
+so the γγ + confinement-SDP route **cannot reach Q_β at ANY strand count**. The
+smallest Q_β the family can predict is exactly `E₀ = 4.2274834 MeV` =
+**+440.369 %**; the five measured n=4 words land +458 %..+620 %, above that
+minimum as they must.
+
+**Part 9 is superseded in strength, not retracted** — its numbers stand, its
+scope ("excluded n ≤ 5, open n ≥ 6") was short. Its floor is below 1 at every
+n ≥ 2. Kept in the corpus because stopping at the first block is an easy
+mistake, and its decay lemma is why the weaker exclusion was one-sided.
+
+**Scope (b), ALL n**, for this functional (`ε` = Markov trace at `z_D`) and this
+`E₀` only. Says nothing about another route, a different `E₀`, or a **tower
+correction** — and the tower correction is LIVE, since `E₀` is canonical by
+ruling with an OPEN series (`qou-y3bm`).
