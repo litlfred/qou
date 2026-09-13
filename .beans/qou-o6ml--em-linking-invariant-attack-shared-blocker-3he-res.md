@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T16:34:15Z
+updated_at: 2026-09-13T16:58:02Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1671,3 +1671,87 @@ is stale for the two NUCLEON rows (hyperbolic under the live word, recorded
 non-geometric), and its own "every mode agrees" comment is false for them. The
 volumes are mode-dependent by 2x and are NOT derived quantities — see that bean
 before quoting any of them.
+
+## 2026-09-13 (later still) — this bean's OWN TRIP-WIRE IS TRIPPED, by this session's ingest, and the bound it named now exists
+
+The 2026-09-03 upper-bound entry closes with an assertion deliberately left as a
+wire: *"the library holds nothing anyway ... **zero** files matching
+`ropelength|ideal knot` ... **Asserted so that a future acquisition flips the**
+[result]"*. **That acquisition happened today, in this arc's own ingest, and
+nobody noticed — including me: I named the flux leg as "next" without reading
+the entry that set the wire.**
+
+### Live re-scan, and one self-reference trap avoided
+
+    library/*/sections   7 documents   (was 0)
+    library/*/ocr        0
+    docs/                0
+    computations/        4  <- SELF-REFERENCE, not new hits
+    content/             2  <- SELF-REFERENCE, not new hits
+
+The `computations/` and `content/` hits are **this bean's own artifacts**
+(`em_linking_upper_bound_precision_budget.py` + its witness,
+`MirrorSplitIsASmallFractionOfTheEnergy.lean`) plus two unrelated Frenet/torsion
+files. A probe that scans for a term *contains* that term, so a naive re-grep
+finds the assertion itself. **The original "zero" was correct.**
+
+All **7** library documents were added **today**, by this session's ingest
+commits `d9be1158a9` and `3938aa5ffc`.
+
+### 🟩 And the bound the entry named as missing now EXISTS in the corpus
+
+`library/1-s20-s0166864101002632-main` = **Rawdon & Simon, _Möbius energy of
+thick knots_, Topology Appl. 125 (2002) 97-109.**
+
+> **Theorem 8.** If K is a smooth knot in R³ then **E_O4(K) < 4.57 · E_L(K)^{4/3}**
+
+That is an **upper** bound on a Möbius-type energy in terms of a geometric
+quantity (ropelength) — precisely what the 2026-09-03 entry named: *"What would
+restore a constraint is an UPPER bound, which eq. (43) does not supply."* And
+the paper states its own paradigm in terms that cover this arc's kernel:
+
+> *"our goal is partly the theorem itself and partly the paradigm: **any 'energy'
+> defined in terms of inverse-square distances should have an analogous bound**,
+> with the proof following this model."*
+
+The mutual channel's kernel is `1/sep²`. So the paradigm applies by the source's
+own statement, not by analogy I am drawing.
+
+### 🛑 BUT THE ROUTE DOES NOT REVIVE, and the reason is the one the entry gave
+
+That entry is explicit that availability is *"the weaker half of the finding,
+not the point"* — the route dies on **precision**. The requirement is unchanged:
+the combined slack `(U₁−B₁)+(U₂−B₂)` must beat `ΔE/E ≤ (r−1)/A`, which at
+`A = 63` with a generous factor-2 flux ratio is **1.5873016 %**, and the budget
+*sharpens 21-fold across the ladder*.
+
+**I have the bound's SHAPE, not its SLACK.** `E < 4.57·L^{4/3}` is an explicit
+constant, which is better than the order-of-magnitude estimates the entry
+assumed — so the entry's *reason* ("nothing in that literature is tight to a
+percent") is now a claim about a bound the corpus can actually inspect, rather
+than a general one about the literature. But determining whether it beats
+1.587 % needs both sides evaluated on an **actual carrier**.
+
+### So this is the FIFTH independent path to the same terminus
+
+Route (1) pruned (even in `μ̄₁₂₃`). Route (2) → carrier. Route (4) `qou-0hdx`
+scrapped → carrier. Flux leg → saturation is prior → the two escapes are one →
+carrier. **And now the upper-bound leg, newly supplied, → carrier.**
+
+Combined with today's two measurements — the closure has `A+1` components
+(`qou-mbbf`) and is **non-geometric with volume 0 in all six settings** — the
+arc's position is: *every path terminates at carrier identification, the only
+candidate is the admitted AME fit whose selection mechanism the owner ruled out
+on 2026-09-08, and the framework's own canonical word cannot supply a
+replacement.*
+
+### What is now genuinely actionable, and it is NOT this bean's
+
+Nothing here moves without a **derived binding link**. `qou-ales` selects
+*words* (`β_Bor`, the H₆ bond `G³`) and has never been asked to produce a
+*link*. That is the one live question, and it belongs to that bean.
+
+**NOT claimed:** that Theorem 8 is or is not tight enough (unmeasured — it needs
+a carrier); that the arc revives; that Rawdon & Simon's paradigm has been
+checked against the mutual kernel beyond quoting the authors' own statement.
+Beans `qou-mbbf`, `qou-hs0c`; PR #7322.
