@@ -1488,6 +1488,106 @@ def _warn_if_kernel_absent():
     )
 
 
+# ── Disk-backed LP-kernel memo (bean `qou-uiut`) ──────────────────────────
+#
+# MEASURED 2026-09-13 on the merged (post-`qou-sv7h`) kernel, deuterium:
+#
+#     atom_markov_trace(1, 1)        393.7 s
+#     of which _lp_kernel_steps      364.4 s   = 93 %
+#     calls 180, distinct 180, repeats 0
+#
+# Zero repeats, so this saves NOTHING inside one run — its entire value is
+# resuming a killed one. That is the failure it exists for: the per-atom
+# checkpoint only saves after an atom COMPLETES, and the table has now failed
+# to finish deuterium twice inside a container lifetime, making no progress at
+# all on two consecutive restarts. This makes the unit of lost work one KERNEL
+# CALL instead of one atom.
+#
+# OPT-IN via `QOU_KERNEL_MEMO=<dir>`, matching `QOU_HKT_CHECKPOINT`. Absent,
+# nothing here runs and the function behaves exactly as before.
+#
+# THE KEY, and why the previous version of this memo had to be deleted rather
+# than carried across the 702-commit merge. It hashed only the COMPILED native
+# module, on the theory that the kernel is what computes the answer. `qou-sv7h`
+# then changed the numeric path in PYTHON — the accumulator was multiplying
+# 167-bit inputs at ambient dps 15, and the log layer was float64 — and a cache
+# keyed on the wheel alone would have been served unchanged against arithmetic
+# that had moved. A stale-value cache is worse than no cache, so the 38 MB was
+# discarded. The key now covers THIS FILE's bytes as well, which is the same
+# widening `_ckpt_key` needed and the same idiom main uses in
+# `he4_magnus_omega2_sign_sparse_probe` (`_ck_src = sha256(open(__file__))`).
+_MEMO_DIR = _os.environ.get("QOU_KERNEL_MEMO", "").strip()
+_MEMO_BUILD = None
+
+
+def _memo_build_id():
+    """Content hash of everything that determines a kernel answer."""
+    global _MEMO_BUILD
+    if _MEMO_BUILD is None:
+        _MEMO_BUILD = ""
+        try:
+            import hashlib as _hl
+            import importlib.util as _iu
+            h = _hl.sha256()
+            # the compiled kernel ...
+            spec = _iu.find_spec("pyhecke_native")
+            origin = getattr(spec, "origin", None) if spec else None
+            if origin and _os.path.exists(origin):
+                with open(origin, "rb") as fh:
+                    h.update(fh.read())
+            # ... AND the Python numeric path around it. Without this second
+            # half the cache survives a change like qou-sv7h, which is the
+            # defect that cost the previous memo its 38 MB.
+            with open(__file__, "rb") as fh:
+                h.update(fh.read())
+            _MEMO_BUILD = h.hexdigest()[:16]
+        except Exception:                                    # noqa: BLE001
+            _MEMO_BUILD = ""
+    return _MEMO_BUILD
+
+
+def _memo_key(partition, chains):
+    import hashlib as _hl
+    h = _hl.sha256()
+    h.update(_memo_build_id().encode())
+    h.update(repr(list(partition)).encode())
+    h.update(repr(chains).encode())
+    return h.hexdigest()
+
+
+def _memo_get(key):
+    if not _MEMO_DIR:
+        return None
+    path = _os.path.join(_MEMO_DIR, key[:2], key + ".json")
+    try:
+        with open(path) as fh:
+            raw = _json.load(fh)
+        # exact `_mpf_` limbs, never a decimal round-trip: these are
+        # INTERMEDIATE values and a decimal hop would silently shorten them.
+        return [(_mp.mpf(tuple(t)), _mp.mpf(tuple(l))) for t, l in raw]
+    except (OSError, ValueError, TypeError):
+        return None
+
+
+def _memo_put(key, pairs):
+    if not _MEMO_DIR:
+        return
+    d = _os.path.join(_MEMO_DIR, key[:2])
+    try:
+        _os.makedirs(d, exist_ok=True)
+        path = _os.path.join(d, key + ".json")
+        tmp = path + ".tmp"
+        # Atomic, for the reason every witness write is (bean `qou-sidu`): a
+        # reclaim mid-write would otherwise leave a truncated entry that reads
+        # back as a valid-looking wrong answer.
+        with open(tmp, "w") as fh:
+            _json.dump([[[int(x) for x in t._mpf_], [int(x) for x in l._mpf_]]
+                        for t, l in pairs], fh)
+        _os.replace(tmp, path)
+    except (OSError, ValueError, AttributeError):
+        pass          # a cache that cannot write must never break the compute
+
+
 def _lp_kernel_steps(partition, chains):
     """Per-step (trace, log_norm) for one partition, computed in Rust.
 
@@ -1536,11 +1636,19 @@ def _lp_kernel_steps(partition, chains):
         return None
     from mpmath import mp as _mp
     from q_parameter import Q_50_DIGIT_STR as _Q50
+    _k = _memo_key(partition, chains) if _MEMO_DIR else None
+    if _k is not None:
+        _hit = _memo_get(_k)
+        if _hit is not None:
+            return _hit
     with _mp.workdps(_EXACT_COEFF_DPS):
         payload = [[(str(c), str(d), g) for c, d, g in ch] for ch in chains]
     out = _PHN.lp_accumulator_step_traces_mpfr(
         list(partition), payload, _Q50, 50)
-    return [(_mp.mpf(t), _mp.mpf(l)) for (t, l) in out]
+    res = [(_mp.mpf(t), _mp.mpf(l)) for (t, l) in out]
+    if _k is not None:
+        _memo_put(_k, res)
+    return res
 
 
 def _exact_log(x):
