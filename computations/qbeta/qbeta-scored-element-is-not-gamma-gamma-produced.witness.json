@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T10:41:36.508800+00:00",
-  "commitSha": "1f0579aec5e22a7f642586144d7d0fdd89e16c14",
+  "computedAt": "2026-09-13T11:04:37.695281+00:00",
+  "commitSha": "f18e3e01a4597ef5e41cdb6866e348fdcee46bc1",
   "assertions": [
     {
       "name": "alt_char_satisfies_hecke_relation",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1291,
+  "durationMs": 1225,
   "computation": "qbeta-scored-element-is-not-gamma-gamma-produced",
   "scriptFile": "qbeta_scored_element_is_not_gamma_gamma_produced_probe.py",
   "scriptHash": "3317202be593",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "8e4498bc48c40986edecbcfce0930b9e463d9038",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
