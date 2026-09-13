@@ -6,6 +6,7 @@ type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
 updated_at: 2026-09-13T20:05:00Z
+
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1929,3 +1930,87 @@ not the comparison.
 
 **Net: attack C remains closed, and my own framing of why was one tier too
 strong.** Fourth correction of my own work on this bean today.
+
+---
+
+## 2026-09-13 — route 5's ellipticity requirement is on the RETIRED base, and on the ruled base it INVERTS
+
+Probe: [`qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py`](computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py)
+— 6/6, proton pin, 50 dps, scope (b) for the two class statements / (a) for the
+numbers.
+
+**Steps 18→19→20 are one chain hanging on one number.** Step 18
+(`HolonomySpectrumSignObstruction`) excludes real-spectrum holonomies because
+their character is `cosh a ≥ 1` while the required correction is `0.998399 < 1`
+⇒ **needs elliptic**. Step 19 (`ImQCannotSupplyEllipticGenerator`) refutes `Im q`
+as the source at the archimedean level. Step 20
+(`qbeta_fibre_unit_circle_opens_route5_probe`) puts the locus on the fibre at
+`|q| = 1`, reducing it to "is `θ/2π` rational", with `N = 111` the only
+low-denominator candidate.
+
+**That number is computed on the `z = 1` cell.** Measured, not asserted: route 5
+uses `θ = acos(Q_β^exp/(Q_A(1−u²)))` with `Q_A = m_e|q²−2q−1|(q+1)/(2q³)`, and
+this probe reproduces its printed `0.05661730079406103` **to 1e-14** from that
+formula. The owner **retired `z = 1` as the base on 2026-09-08**. All three
+step-18/19/20 files are `87bf883793`, dated **2026-09-07** — **correct when
+written**, stale by a ruling one day later. Same class as the attack-A finding in
+#7326, second arc.
+
+**On the ruled base the requirement inverts.** `R(base) = Q_β^exp/(base·(1−u²))`:
+
+| base | Q_base (MeV) | R | consequence |
+|---|---|---|---|
+| `z = 1` (Form A) — **RETIRED** | 0.783645827375 | **0.998397668719** | needs elliptic |
+| `z_D = q³/(q²+1)` — **RULED** | 0.444700408522 | **1.75936462427** | elliptic **excluded** |
+| `z = q` (augmentation) | 0.87989056126 | **0.889190317068** | needs elliptic |
+| dashboard scored cell — **RULED** | 0.65185631006 | **1.20024943393** | elliptic **excluded** |
+
+An elliptic generator has character `cos θ ≤ 1` (`Real.cos_le_one`, the invariant
+the carrier file's own `replacement_excludes_some_matrix` already uses), so on
+both ruled bases `acos(R)` is **not real** — the exact mirror of step 18. What
+the ruled base asks for instead is the class step 18 excluded, at
+`a = arccosh(R)` = **1.16530530037** (`z_D`) / **0.622738411685** (dashboard).
+So steps 19 and 20 — `Im q`, `|q| = 1`, `θ/2π` rational, `N = 111` — are
+downstream of the **opposite** requirement and do not arise on the ruled base.
+
+**The direction is base-dependent, not uniform.** The augmentation keeps
+`R < 1`. So "route 5 needs an elliptic generator" is a fact about *which
+admissible functional is the base*, not about the framework — invisible while
+only the `z = 1` cell was in view. **This is not a reason to prefer a base**:
+per §NO FITTING a base is never chosen by which obstruction it removes, and the
+ruled base is ruled whatever it does to this chain.
+
+**It does NOT resurrect Kohno–Drinfeld.** KD's own `cosh(ln q₀) = (q₀+1/q₀)/2 =
+1.00544843335` misses R by **−42.85 %** (`z_D`) and **−16.23 %** (dashboard).
+The failure moves from a **class** exclusion (wrong side of 1) to a **magnitude**
+gap (right side, wrong size) — weaker, and a different problem.
+
+**Not retracted:** steps 18–20's algebra is exact and correct for the target they
+were given. What changed is the target.
+
+### Secondary: `θ = 0.0565947` in prose is the convention-C FORM value
+
+Live at three sites, **all in `87bf883793` — the same commit whose probe corrects
+the target to the experimental `0.05661730079`**:
+`EigenphaseCarrierVacuity.lean:221`, `BringEllipticCurveJInvariant.lean:39`,
+`nuclear-interactions/q-beta-cos-resummation.lean:191` (plus this bean and
+`qou-cds1`). The gap is **3.99e-4**, which is precisely route 5's own documented
+"moved it by 4.0e-4" form-vs-experiment correction; this bean records 0.0565947
+as `|α_N1|` in convention **C** to 7 digits.
+
+**NOT swept.** On the ruled base `θ` does not exist at all, so these need
+*re-deriving*, not re-numbering — and the 2026-09-07 ask-first directive governs.
+Recorded for the owner.
+
+**How it was found, and it is my own error:** this probe's first draft took
+`0.0565947` from that Lean prose as its reproduction target and **failed its own
+check 1**. A rounded figure in prose is not an input — the third time this
+session I have had to relearn that, and the second time it produced a phantom
+discrepancy before the producer was run.
+
+### What is next
+
+`trace_eq` is still the open field. What the ruled base now asks for is a
+real-spectrum generator at `a ≈ 1.165`, against KD's `ln q₀ = 0.104` — a factor
+**11.2**. That is the concrete, falsifiable target replacing the elliptic ask,
+and nothing in the corpus supplies it yet.
