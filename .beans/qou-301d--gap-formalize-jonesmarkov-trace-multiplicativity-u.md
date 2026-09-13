@@ -333,3 +333,65 @@ exit 0, no errors, no warnings. `InvolutionTowerWitness` re-checked against the
 refactored `TowerSpanReduction`: exit 0. `#print axioms` on all ten new
 declarations plus both refactored ones: `[propext, Classical.choice, Quot.sound]`
 (`unit_quad_scalar_ne_zero`: `[propext]` alone). Zero `sorryAx`.
+
+--------
+
+**2026-09-13 (PR #7153, second tranche): `BraidedTower` is INHABITED. The caveat #7153 shipped with is closed on a Hecke tower; what remains is a FAITHFUL TRACE, not a carrier.**
+
+New module `QOU/MathlibExt/BraidedTowerInstances.lean` (175 lines, 7 decls, 0 sorry).
+
+Two carriers landed on `main` while #7153 sat, and the sibling on #7228 explicitly
+left the instantiation to whoever landed second — *"BraidedTower would be a
+three-line instantiation once #7153 lands"*:
+
+* `braidedTower_heckeTower` — `HeckeTowerWitness.heckeTowerMarkovTrace h z hz`
+  (bean `qou-cins`, #7228). `HeckeTower R h` presents `H_∞` as `FreeAlgebra R ℕ`
+  quotiented by exactly `quad` / `far` / `braid` via `RingQuot`, so
+  `twGen_quad` / `twGen_far` / `twGen_braid` ARE the class fields, and `h` is a
+  **free parameter** — the Hecke case `h = q − q⁻¹ ≠ 0` is available.
+  `towerSpan_heckeTower` and `disjointBlock_heckeTower` follow: **the
+  disjoint-block trace law on a Hecke tower at `h ≠ 0`**, the configuration every
+  prior witness missed.
+* `braidedTower_sym` — `SymmetricGroupTowerWitness.symTrace R` (bean `qou-fq1i`,
+  #7131), `h = 0`. This gives `sandwichReduces_sym` a **second, independent
+  derivation**: that file proves it in the permutation model by support and
+  point-pushing through the double coset `S_{k+1} = S_k ∪ S_k s_k S_k`, while
+  `sandwichReduces_all` reproves it by rewriting with the relations, never
+  mentioning a permutation. The two group-level inputs are proved here from
+  `Equiv.swap_apply_apply` alone — `s_far` (distant swaps commute) and `s_braid`
+  (both sides are `swap m (m+2)`).
+
+**CORRECTION to #7153's own docstring, which was wrong twice.** It read *"a
+witness with both a growing filtration and `h ≠ 0` is an Iwahori-Hecke tower,
+which Mathlib does not supply. That, and only that, is what stands between this
+theorem and an unconditional disjoint-block law for the production trace."*
+"Mathlib does not supply" was true and beside the point — the CORPUS supplies
+one; and even against Mathlib it overstated, since
+`SchurWeyl.finrank_le_factorial` (bean `qou-uoal`) is the upper half of the
+coset-basis theorem strict growth needs. "That, and only that" was wrong about
+what remains.
+
+**🛑 WHAT REMAINS, and the instances repair neither. The bean stays open.**
+
+1. **The Hecke trace is NOT FAITHFUL.** `HeckeTowerWitness`'s trace collapses
+   every generator onto the rank-2 generator of `Hecke2` and composes with its
+   Ocneanu trace, so `disjointBlock_heckeTower` is a statement about a coarse
+   functional, **not** about the Ocneanu trace of `H_∞(q)`. Jones' existence
+   theorem is open (bean `qou-g8i1`). This does NOT weaken `sandwichReduces_all`,
+   which uses no trace field — it bounds what the COMPOSITION delivers.
+2. **Strict growth is proved only at the bottom** (`twH_zero_lt_one`:
+   `H 0 < H 1`). The symmetric-group carrier grows at every level
+   (`t_not_mem_shiftedUpTo`) but has `h = 0`. **No single carrier yet has both
+   `h ≠ 0` and growth at every level** — that needs the Iwahori-Hecke coset
+   basis, whose `n!` lower bound is the open half of `qou-uoal`.
+
+So the distance from here to an unconditional disjoint-block law for the
+production trace is a **faithful trace**, not a carrier. The bond-product reading
+of the atom word remains MEASURED, NOT DERIVED.
+
+Verification: `lean -DautoImplicit=false -s 65536` against restored
+`lake-cache/qou-v4-24-0`, with `DisjointBlockTraceLaw`, `TowerSpanReduction`,
+`HeckeRankTwoMarkov`, `HeckeTowerWitness` and `SymmetricGroupTowerWitness`
+rebuilt from `main` source into a hardlinked shadow (all exit 0).
+`BraidedTowerInstances` exit 0, no warnings. `#print axioms` on all seven new
+declarations: `[propext, Classical.choice, Quot.sound]`. Zero `sorryAx`.
