@@ -1,0 +1,135 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1905.06064v1",
+ "source": {
+  "file": "1905.06064v1.pdf",
+  "sha256": "3ffe25c8ee62779d40203906e4599ed5a0bb40406a17c34d128774a90aee37d6",
+  "bytes": 330885,
+  "pages": 28,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1905.06064",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "15 May 2019"
+  },
+  "doi": null,
+  "title": "ON O\u2019HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS",
+  "authors_raw": "SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA",
+  "title_lines": [
+   "ON O\u2019HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS"
+  ],
+  "abstract": "We develop a regularity theory for extremal knots of scale invariant knot ener- gies de\ufb01ned by J. O\u2019hara in 1991. This class contains as a special case the M\u00a8obius energy. For the M \u00a8obius energy, due to the celebrated work of Freedman, He, and Wang, we have a relatively good understanding. Their approch is crucially based on the invariance of the M\u00a8obius energy under M\u00a8obius transforms, which fails for all the other O\u2019hara energies. We overcome this di\ufb03culty by re-interpreting the scale invariant O\u2019hara knot energies as a nonlinear, nonlocal Lp-energy acting on the unit tangent of the knot parametriza- tion. This allows us to draw a connection to the theory of (fractional) harmonic maps into spheres. Using this connection we are able to adapt the regularity theory for degenerate fractional harmonic maps in the critical dimension to prove regularity for minimizers and critical knots of the scale-invariant O\u2019hara knot energies.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20190516003128Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A new energy E",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Regularity theory for E-critical maps: Proof of Theorem I",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Extremal cases p=1 and p=infty, and no M\u00f6bius invariance for p=2",
+   "page": 17,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. A new norm for W(s,p)",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Computations",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1065,
+   "n_words": 169
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 10666,
+   "n_words": 1848
+  },
+  {
+   "id": "sec-001-2-a-new-energy-e",
+   "number": "2",
+   "title": "A new energy E",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 26,
+   "n_chars": 38234,
+   "n_words": 7490
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 6572,
+   "n_words": 983
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 4,
+  "chars_total": 56537
+ }
+}
