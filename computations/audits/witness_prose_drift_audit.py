@@ -159,6 +159,54 @@ def _is_arxiv_id(raw: str) -> bool:
     return 7 <= yy <= 26 and 1 <= mm <= 12     # arXiv's YYMM since 2007-04
 
 
+# ─── what FOLLOWS a number can say it is not a value at all ───────────────
+#
+# Three shapes, applied by BOTH detectors below. A number carrying one of
+# them is a factor, a comparison or a citation's stated uncertainty -- never
+# this witness's own quantity -- so asking how far it sits from the data is
+# asking about the wrong thing, and any answer it gives is noise.
+#
+#   `changes tr_M by 1.5–3.4×`           a factor, not a value
+#   `spreading 1.87x / 22.9x / 1831x`    a factor
+#   `0.78233341(61)`                     a literature constant + its s.e.
+#
+# THE MARKER IS REQUIRED, and that is the whole design. An earlier draft took
+# a comparative WORD as sufficient -- `smaller|larger|short|above|below|...`,
+# with the `x` optional, which is what the pairs scan had used. Listing every
+# shape it dropped across the corpus showed three that are genuine quoted
+# values, not factors:
+#
+#   `the muon anchor sits 2.5e-9 above q*`        an offset, and a result
+#   `the proton 1.0e-8 below`                     the same sentence's other
+#   `(0.8955 short / 1.0065 stated / ...)`        one of three corpus values
+#
+# Requiring `x`/`×` loses none of the real drops -- every one of the 15 the
+# band sheds carries the marker -- and it gains three more that the word list
+# had missed, because `×` is not a word character so `\b` never held after
+# it: `by 1.5–3.4×`, `differs by factor ... ≈ 0.65×`, `(~3.4× miss)`.
+# `times` and `fold` stand alone because they ARE the marker.
+#
+# The uncertainty case earns its place despite draining nothing from the band
+# today: corpus-wide only three prose numbers carry the notation -- PDG
+# `2.16(7)` and the two CODATA Q_beta figures -- and all three are citations,
+# so the guard is correct and merely unexercised, not speculative.
+#
+# There is NO band analogue of the pairs scan's `_PAIR_OPERATOR_LEAD`. That
+# one drops a number whose NAME is part of a compound expression (`1/q_0 =
+# 0.90` names q_0, and 0.90 is its reciprocal) -- a mis-attribution the band
+# detector cannot make, because it attributes nothing. Applying it here would
+# drop genuine values instead: the same qbeta witness writes
+# `4.075=1.0e-8/2.5e-9`, where the operand is a quantity it just quoted.
+_AFTER_FACTOR = re.compile(r"^\s*(?:[x×]|-?fold\b|times\b)", re.IGNORECASE)
+_AFTER_UNCERTAINTY = re.compile(r"\(\d{1,3}\)")
+
+
+def _after_says_not_a_value(text: str, end: int) -> bool:
+    """True when the text after `end` marks the number as a factor/citation."""
+    after = text[end:end + 20]
+    return bool(_AFTER_UNCERTAINTY.match(after) or _AFTER_FACTOR.match(after))
+
+
 def prose_numbers(text: str) -> list[str]:
     """Decimal numbers in prose, minus the ones that are labels.
 
@@ -176,6 +224,14 @@ def prose_numbers(text: str) -> list[str]:
     digits after a label word (`Phase 1.3`, `Step 23.5`, `Rule 14.2`). Both
     classes came from reading a 10-witness sample of the findings, in which 4
     of 10 were false positives and these were half of them.
+
+    Also dropped: numbers the FOLLOWING text marks as a factor or a citation's
+    uncertainty (`_after_says_not_a_value`). Measured over the tracked corpus
+    on 2026-09-13, that removes 15 of 209 band findings; all 15 were read by
+    hand and every one is a factor (`2.15x short at 7Li/7Be`, `~0.5×S_mu`,
+    `spreading 1.87x / 22.9x / 1831x`). This is false-positive REMOVAL, not
+    repair -- the ratchet drops without a single line of prose being fixed,
+    which is why the baseline is NOT regenerated alongside it.
     """
     out = []
     for m in NUM.finditer(text):
@@ -188,6 +244,8 @@ def prose_numbers(text: str) -> list[str]:
             continue                       # md § 3.1
         if _is_arxiv_id(m.group(0)):
             continue                       # arXiv:2410.20973, GK 1411.6062
+        if _after_says_not_a_value(text, m.end()):
+            continue                       # 1.87x, ~3.4× miss, 2.16(7)
         out.append(m.group(0))
     return out
 
@@ -393,26 +451,23 @@ def scan_witness(doc: dict):
 _PAIR_CONNECTOR = r"(?:\s*(?:=|==|≈|~|:|\bis\b|\bof\b|\bat\b|\bwas\b)\s*)"
 _PAIR_TOKEN = re.compile(r"([A-Za-z][A-Za-z0-9_]{1,39})" + _PAIR_CONNECTOR + r"$")
 
-# Three guards, each from a measured false positive. Without them the same
-# scan reports 16 rather than 6, and 10 of the 16 are this one mistake:
+# Guards, each from a measured false positive. Without them this scan reports
+# 16 rather than 6, and 10 of the 16 are the one mistake below: the prose
+# names a token that is only PART of the expression the number answers to.
 #
 #   `1/q_0 = 0.9009182840`         -> 0.90 is 1/q_0, and CORRECT
 #   `b3/b2 = 0.64`                 -> 0.64 is the ratio, not b2
 #   `max(t)*n_target = 0.146058`   -> a product
 #   `m_eta/m_K = 1.109758`         -> a ratio; m_K itself is 493.677 MeV
-#   `S_free is 5.5x SMALLER than`  -> a multiplier, not a value
 #
+# This one is pairs-ONLY. It guards the TOKEN's position, so it presupposes
+# an attribution the band detector never makes; the note on `_AFTER_FACTOR`
+# says what applying it to the band would cost.
 _PAIR_OPERATOR_LEAD = "/*+-^("
-_PAIR_COMPARATIVE = re.compile(
-    r"^\s*[x×]?\s*(?:smaller|larger|bigger|times|fold|short|above|below|"
-    r"higher|lower|more|less)\b", re.IGNORECASE)
-_PAIR_MULTIPLIER = re.compile(r"\s*(?:[x×]|-?fold)\b", re.IGNORECASE)
-# `0.78233341(61)` is concise-uncertainty notation: a MEASURED literature
-# constant with its standard error, so a citation rather than this witness's
-# own value, however its name collides. Corpus-wide only three prose numbers
-# carry it -- PDG `2.16(7)` and the two CODATA Q_beta figures -- and all
-# three are citations.
-_PAIR_UNCERTAINTY = re.compile(r"\(\d{1,3}\)")
+# The rest of the guarding is `_after_says_not_a_value`, above
+# `prose_numbers`, because BOTH detectors apply it. It subsumes the fifth
+# case this list used to carry (`S_free is 5.5x SMALLER than` -- a multiplier,
+# not a value) and the concise-uncertainty case beside it.
 
 # Suffixes a data key adds that the prose leaves off: tr_M vs tr_M_at_q0.
 _PAIR_SUFFIXES = ("atq0", "q0", "deg", "mev", "gev", "kev", "pct", "percent",
@@ -507,9 +562,7 @@ def scan_witness_pairs(doc: dict):
             continue
         if tok.start() > 0 and window[tok.start() - 1] in _PAIR_OPERATOR_LEAD:
             continue
-        after = desc[match.end():match.end() + 20]
-        if (_PAIR_UNCERTAINTY.match(after) or _PAIR_COMPARATIVE.match(after)
-                or _PAIR_MULTIPLIER.match(after)):
+        if _after_says_not_a_value(desc, match.end()):
             continue
         cands = index.get(_pair_norm(tok.group(1)))
         if not cands or len(cands) != 1:
@@ -676,6 +729,34 @@ def _selftest() -> int:
          "SECTION SYMBOL: the word list matches 'section', not the glyph"),
         ({"description": "the residual is 3.1", "r": "3.5"}, ["3.1"],
          "...and the same digits after ordinary words are still a finding"),
+        # ------- a FACTOR is not a value (both directions, measured) -------
+        #
+        # Every datum below sits INSIDE the DRIFT band relative to the prose
+        # number, so each must-stay-quiet case is silenced by the guard and
+        # by nothing else. Put 9.9 there instead and all four pass without
+        # the guard existing -- a detector that cannot be shown to fire.
+        ({"description": "it is 2.15x short at 7Li/7Be", "r": "2.8"}, [],
+         "FACTOR: 2.15x is a multiplier; comparing it against the data asks "
+         "how far a ratio sits from a quantity, which has no answer"),
+        ({"description": "changes tr_M by 3.4\u00d7, BUT B is correct",
+          "r": "4.4"}, [],
+         "FACTOR via \u00d7: not a word character, so a `\\b` after it never held "
+         "-- this shape was missed until the marker itself became the test"),
+        ({"description": "the bridge carries ~3.5 times more variation",
+          "r": "4.5"}, [],
+         "FACTOR: `times` and `fold` stand alone -- they ARE the marker"),
+        ({"description": "Q_beta = 0.78233341(61) is sigma-limited",
+          "r": "1.0"}, [],
+         "CITATION: concise-uncertainty notation is a literature constant "
+         "with its standard error, not this witness's own value"),
+        ({"description": "the muon anchor sits 2.5e-9 above q*", "r": "3.5e-9"},
+         ["2.5e-9"],
+         "OFFSET IS A VALUE: an earlier draft took the comparative WORD as "
+         "sufficient and dropped this, plus `1.0e-8 below` and `0.8955 "
+         "short`. Requiring the x/\u00d7 marker keeps all three"),
+        ({"description": "the ratio is 2.15 across the lattice", "r": "2.8"},
+         ["2.15"],
+         "...and the same digits with no marker after them still report"),
     ]
     pair_cases = [
         ({"description": "Reproduces tr_M = 0.160974145442 over the stratum",
