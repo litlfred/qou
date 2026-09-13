@@ -53,6 +53,28 @@ ANCHOR_MODULES = ('q_parameter', 'constants')
 _ANCHOR_KEYS = ('"q"', "'q'")
 
 
+def _canonical_q(e):
+    """Collapse every symbol NAMED q onto the one canonical Q.
+
+    The corpus writes `q = mp.mpf(str(Q0))`, and a str() round-trip through
+    sympify rebuilds Symbol('q') WITHOUT the positive=True assumption -- a
+    DIFFERENT symbol object.  Testing `free_symbols & {Q}` on that returns
+    empty and the modulus is reported "q-independent (a constant)", which is
+    the exact opposite of the truth.  Measured on
+    binding_fewbody_bondcount.py, whose q IS the anchor by way of
+    `from q_parameter import Q_MP as Q0`.
+
+    Comparing symbols by identity when the corpus round-trips them through
+    strings is the same wrong-object comparison this audit's siblings keep
+    making; here it silently manufactured the reassuring answer.
+    """
+    try:
+        subs = {s: Q for s in e.free_symbols if s.name == 'q' and s is not Q}
+        return e.subs(subs) if subs else e
+    except Exception:
+        return e
+
+
 class _Shim:
     """mpmath/numpy stand-in that keeps everything exact and symbolic."""
     def __getattr__(self, name):
@@ -189,7 +211,7 @@ def resolve(name: str, assigns: dict[str, ast.expr], seen: frozenset[str],
             ns[sub.id] = v
     try:
         val = eval(compile(ast.Expression(expr), '<g>', 'eval'), ns)  # noqa: S307
-        val = sp.sympify(val)
+        val = _canonical_q(sp.sympify(val))
     except Exception as exc:
         return None, f'not evaluable ({type(exc).__name__})'
     if not val.free_symbols & {Q}:
