@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T10:31:50Z
+updated_at: 2026-09-13T10:35:46Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -304,3 +304,46 @@ member moved for an entirely different reason, by a factor of 3.29, from a
 that wave on the strength of its label would be accepting changes they have not
 diagnosed. The 162 need re-triage against `qou-hu1f` before acceptance, not just
 against C→D.
+
+
+## Residual bisection — two more excluded, and a limit on what test 2 proved
+
+Same method, same June anchor, cross product of the two word knobs:
+
+| `intra_order` | `pn_convention` | tr_free | rel to June (free) | rel (atom) |
+|---|---|---|---:|---:|
+| borromean | bring_color_weighted | 0.29901502891857733313 | 0.696 | 0.6087 |
+| borromean | strict_averaged | 0.29901502891857733313 | 0.696 | 0.6087 |
+| **grouped** | bring_color_weighted | **1.1317170715774177518** | **0.1507** | 0.4810 |
+| **grouped** | strict_averaged | **1.1317170715774177518** | **0.1507** | 0.4808 |
+
+**`pn_convention` is excluded.** It is a no-op on the free trace — as it must be,
+since free words carry no interface — and moves the atom trace by 2e-4. So R3 of
+the 2026-08-15 ruling is not in this residual either, which is the second half of
+the withdrawal above.
+
+**The multiplicities are excluded by reading, not by testing:** June's
+`binding_canonical` calls `tr_m_atom_zn(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+dps=50)` with the same `1, 1, 1` defaults the live one uses.
+
+### 🛑 A limit on test 2 that I should state before someone over-reads it
+
+Test 2 shows the **two current implementations** of `y_lambda_at` — live D and
+the dead `_y_lambda_at_convention_C_HISTORICAL` — agree with each other today.
+It does **not** show that either agrees with what June computed. `y_lambda_at`'s
+values may have moved since June for reasons unrelated to the C/D split, and
+nothing measured here excludes that.
+
+So the honest remaining candidate set is:
+
+1. `nucleon_word_letters` — the per-nucleon word CONTENT, as distinct from the
+   ordering of it that `qou-hu1f` changed;
+2. `chi_all_lambda_reduced_block` — the χ side;
+3. `y_lambda_at`'s **values** since June, which is a different question from
+   C-vs-D and is untested.
+
+One weak discriminator already in hand: the residual is **15.1 % on free** and
+**48.1 % on atom**. A pure `y_λ` move would shift both by a similar weighted
+amount, since both traces are `Σ_λ y_λ χ^λ` over the same weights; a 3× split
+between them points at the words rather than the weights. Weak, not decisive —
+the two words have different partition support.
