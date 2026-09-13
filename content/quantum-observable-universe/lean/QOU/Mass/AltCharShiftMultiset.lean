@@ -100,6 +100,67 @@ theorem altChar_regen {R : Type*} [Field R] (q : R) (f : ℕ → ℕ) (w : Word)
     altChar q (w.map fun c => ⟨f c.gen, c.pos⟩) = altChar q w := by
   simp [altChar, List.map_map, Function.comp_def]
 
+/-! ## What the γγ ruling leaves free on three strands
+
+The exclusion below says no census reading is γγ-produced. The natural next
+question is what a γγ-*derived* word could be instead — and on three strands
+the answer is that there is almost nothing to choose. `H₃(q)` has two Artin
+generators, so a vertex `σᵢσᵢ₊₁⁻¹` needs `i + 1 < 2`, i.e. `i = 0`: the only
+pair-production vertex available is `σ₀σ₁⁻¹`, and every γγ word is one of its
+powers. The γγ-admissible subset of `H₃` is a **cyclic monoid on one
+generator**, with a single integer of freedom. -/
+
+/-- `(σ₀σ₁⁻¹)^k`, the only shape a γγ word can take on three strands. `k = 3`
+is `borromean`. -/
+def coreWord : ℕ → Word
+  | 0 => []
+  | k + 1 => vertex 0 ++ coreWord k
+
+theorem coreWord_gammaGamma : ∀ k, GammaGammaWord (coreWord k)
+  | 0 => .nil
+  | k + 1 => .cons 0 (coreWord_gammaGamma k)
+
+theorem coreWord_length : ∀ k, (coreWord k).length = 2 * k
+  | 0 => rfl
+  | k + 1 => by
+    simp only [coreWord, length_vertex_append, coreWord_length k]
+    ring
+
+/-- Every crossing of `coreWord k` lives on generator `0` or `1`. -/
+theorem coreWord_gen_lt_two : ∀ k, ∀ c ∈ coreWord k, c.gen < 2
+  | 0 => by simp [coreWord]
+  | k + 1 => by
+    intro c hc
+    simp only [coreWord, vertex, List.cons_append, List.nil_append,
+      List.mem_cons] at hc
+    rcases hc with rfl | rfl | hc
+    · norm_num
+    · norm_num
+    · exact coreWord_gen_lt_two k c hc
+
+/-- **On three strands there is only one γγ word per length.** A γγ-produced
+word all of whose crossings lie on the two Artin generators of `H₃` is exactly
+`(σ₀σ₁⁻¹)^k`. So the γγ ruling, applied inside `H₃`, leaves a single natural
+number of freedom — not a space of orderings, and not a choice of letters. -/
+theorem gammaGamma_threeStrand {w : Word} (h : GammaGammaWord w)
+    (hw : ∀ c ∈ w, c.gen < 2) : ∃ k, w = coreWord k := by
+  induction h with
+  | nil => exact ⟨0, rfl⟩
+  | @cons i w' _ ih =>
+    have hi : i + 1 < 2 := hw ⟨i + 1, false⟩ (by simp [vertex])
+    have hi0 : i = 0 := by omega
+    subst hi0
+    obtain ⟨k, hk⟩ := ih fun c hc => hw c (by simp [vertex, hc])
+    exact ⟨k + 1, by simp [coreWord, hk]⟩
+
+/-- Corollary: a γγ word on three strands has even length `2k`, so the corpus's
+eleven-letter nucleon cannot be one — and neither can any word of odd length,
+whatever its letters. -/
+theorem gammaGamma_threeStrand_length_eq {w : Word} (h : GammaGammaWord w)
+    (hw : ∀ c ∈ w, c.gen < 2) : ∃ k, w.length = 2 * k := by
+  obtain ⟨k, rfl⟩ := gammaGamma_threeStrand h hw
+  exact ⟨k, coreWord_length k⟩
+
 /-! ## Shifted letters -/
 
 /-- The corpus nucleon alphabet: a letter is `σᵢ + d` with the shift `d` drawn
