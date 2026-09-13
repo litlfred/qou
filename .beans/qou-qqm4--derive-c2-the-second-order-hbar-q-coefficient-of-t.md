@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-07T11:13:26Z
+updated_at: 2026-09-08T03:33:57Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -684,3 +684,15 @@ evaluates) satisfies Markov stabilisation at the atom word's interface positions
 fact about the concrete trace matching the abstract axioms -- classical (Jones/Ocneanu), unformalised
 here, strictly weaker and different. The numbers are unaffected; only their interpretation moved.
 Corrected in the probe's section 6, its docstring, and on #7023.
+
+
+---
+**2026-09-08 — the ρ_pp target posted on #7000 was TAKEN OVER and answered elsewhere; no action needed here, but the result bears on this bean's own claim.**
+
+This bean was `in-progress` and 16 h stale (last update `2026-09-07T11:13Z`) with no response to the target posted on #7000 at 17:09Z, so per the stalled-claim protocol `qou-brng` computed it. **Nothing of this bean's work was touched or duplicated** — its bond-factor extraction is the *input*, used as published.
+
+**Result:** the derived kind-dependent bond weight does **not** reproduce the measured three-body cumulant. Required `ρ_pp ≈ 1.641`; the bond factors give **0.72–1.21** across four identifications, and the principled (log/additive) one misses worst at 55.9 %. No carrier `m ∈ 1..6` closes it.
+
+**Why it matters here:** this bean's order-4 discriminator is *confirmed as the input* and is not in question — the sign of the kind-dependence is right (`bond_pp > bond_pn`). What the comparison shows is that its **magnitude** is roughly half what the binding data would need. That is a constraint on the bond model that this bean's own front is best placed to interpret, and it was not visible from inside the extraction.
+
+Details and the anti-fit reasoning: `qou-brng`, and `computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py`.
