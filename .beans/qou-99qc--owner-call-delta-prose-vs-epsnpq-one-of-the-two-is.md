@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T11:46:52Z
+updated_at: 2026-09-13T12:01:51Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1774,3 +1774,34 @@ so the argument does not extend; only the pin-level pairing fact is measured.
 
 Bean stays `todo` (AGENTS.md §13a — the element is an open conjecture; this
 narrows it, it does not close it).
+
+
+
+### Same day, the positive half (PR #7295 part 2)
+
+On three strands the gamma-gamma ruling leaves **one integer**. `H_3(q)` has two
+Artin generators, so a vertex `sigma_i sigma_{i+1}^-1` needs `i+1 < 2`, i.e.
+`i = 0`: every gamma-gamma word is `(sigma_0 sigma_1^-1)^k`. Lean
+`gammaGamma_threeStrand`, sorry-free. `k = 3` is `borromean`.
+
+Two structural findings. Every member has a **vanishing `e^-` coordinate**
+(symbolic, k = 0..24) — so `qbeta-counit-closed-form.md`'s "which both nucleon
+models happen to satisfy" is FORCED under gamma-gamma, not accidental; and
+`tr_M|_{z=1} - net = h*nf[e^-]` identically, so net and the retired z=1 cell
+COINCIDE on every gamma-gamma word.
+
+**The derived member misses by 440 %.** `|tr_M^{z_D}(core^3)|*E_0 = 4.22140`
+MeV against `Q_beta = 0.78233`: **+439.592 %**. That is the honest number for
+the route as a single-word Q_beta carrier on three strands.
+
+**And the matching members are selected, measurably.** The k=1 (mod 3) band
+descends monotonically THROUGH the target (k=7 gives +0.610 %); the difference
+grid over k,l <= 24 is 300 pairs straddling it, local spacing 1.29 %, best
+(8,23) at +0.455 % — against **0.322 % expected by chance** from that spacing.
+The best match is not even better than chance. Choosing k or (k,l) by residual
+is selection against the target and is forbidden.
+
+So the live question is sharper: **either `k` is derived from something other
+than the residual, or the gamma-gamma carrier for Q_beta is not a single
+three-strand word.** Both open. Scope-(a) — no invariant here forbids the
+gamma-gamma route; what is excluded is the METHOD.
