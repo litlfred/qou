@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-09-13T12:07:39Z
+updated_at: 2026-09-13T14:38:10Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -724,3 +724,61 @@ hit 527310x by su4)" among the Class A idioms to fix. Two things:
 So it is Class A "genuinely float64", where this bean's own prescription is
 "stop promoting it to mpf" — i.e. the fix is at the *serialisation* boundary in
 each consumer, not in the library.
+
+
+---
+
+## DATED CONFIRMATION of this bean's thesis, with named files (2026-09-13)
+
+This bean says the 2026-08 strip "drains the ratchet BASELINE while leaving the
+defect intact … the next routine re-run silently re-pads with no signal." That
+re-run happened, it is identifiable, and the ratchet **did** fire.
+
+`witness_raw_float64_audit --strict` on the merged tree:
+
+```
+witnesses carrying raw float64 : 979      total fields : 26,491
+baseline                       : 1003 files / 30,985 fields
+drained since baseline         : 49 file(s), +4,494 field(s)
+NEW dirty witnesses            : 2
+REGRESSED (gained raw float64) : 8
+```
+
+**Every NEW and every REGRESSED file I checked was last written by the
+`qou-zbws` dps-floor regeneration sweep of 2026-09-04.** Measured across those
+commits:
+
+| witness | before | after | commit |
+|---|---|---|---|
+| `binding-single-pipeline-comparison` | **310** | **426** | `07b03deb106` "batch 1 of the dps-floor sweep (29 files, 27 producers)" |
+| `canonical-plus-multibrane` | *did not exist* | **55** | `72b53adb994` "batch 2 (17 files, producers 28-46)" |
+| `hecke-division` | *did not exist* | **31** | `9f778bb3a1c` "sweep at 97/219 (22 files)" |
+
+### Two modes, and the second is not in this bean yet
+
+1. **Re-padding**, which this bean predicts: a regenerated witness *gains* raw
+   float64 (310 → 426, +116).
+2. **Birth-padded**, which it does not: the sweep **created** witnesses that
+   carry raw float64 from their first commit. There was nothing to "re-pad" —
+   these never had a clean state, so no strip and no baseline entry could have
+   covered them, and they arrive as `NEW` by construction.
+
+Mode 2 matters for how the drain is scoped: draining the 1003 baselined files
+does not stop a producer that has simply never emitted `fmt`, and a sweep that
+adds producers adds surface faster than a strip removes it.
+
+### The uncomfortable shape of it
+
+`qou-zbws` was a **precision improvement** — raising the dps floor so producers
+stop computing at 15. Its regeneration pass is what enlarged the raw-float64
+surface. The fix is not wrong and should not be reverted: the producers emitted
+raw floats all along, and regenerating is simply what made that visible. But it
+does mean **any future dps-floor or anchor sweep will re-inflate this ratchet
+unless the serialisation fix lands first**, which is an ordering constraint
+worth stating before the next sweep is scheduled — `qou-zbws`'s own remaining
+work is exactly such a sweep (regenerating witnesses for producers now at 50
+dps), and it is queued behind the `qou-uiut` table right now.
+
+**Recommendation: fix serialisation in the producers this bean has already
+triaged BEFORE zbws's regeneration batch runs**, or the batch will land another
+few hundred raw-float64 fields and the ratchet will need another baseline.
