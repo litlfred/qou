@@ -213,4 +213,123 @@ theorem between_iff_combo {a b c : R} (hab : a < b) :
 
 end AveragingIsTight
 
+section AffinePathsAreBlocked
+
+/-! ### Affine is blocked BOTH ways — and what the escape must therefore do
+
+Two gaps in the sections above, closed here.
+
+**First, a real gap in the corpus application.** `pn_not_strict_max_of_monotone`
+and `signMixed_impossible_of_monotone` assume `Monotone`.  A *decreasing*
+interface law was therefore never covered, even though `not_strict_max_of_antitone`
+sits in `OrderCore` ready for it.  Closed below.
+
+**Second, the structural reason the corpus's own law is blocked.**  The interface
+factor is a Markov trace ratio, `μ(x) = tr_M(W·x) / tr_M(W)` at fixed `W`.  The
+numerator is **linear in `x`**, so along any *affine* path in the algebra,
+`x(t) = x₀ + t·x₁`, the law is affine in `t` — and an affine law is monotone or
+antitone according to the sign of its slope, hence blocked **either way**.
+
+That is why `μ = z + d` cannot escape: it is the affine path.  And it says
+exactly what an escape must do — **leave the affine family**, not merely leave
+the affine *formula*.
+
+**The framework does admit such a family, and the corpus has already measured
+it.**  The file header above says *"whether the framework admits such a thing is
+open and is not addressed here"*; it is addressed now.  The stacked family
+`m ↦ σ^m` is not an affine path (it is a product, not a sum), and its interface
+factor is measured non-monotone in `m`: `μ > 1` at `m = 2, 4, 5, 6, 7, 8` and
+**not** at `m = 3`
+(`stacked_interface_writhe_normalised_probe.py`, reported in
+`docs/audits/2026-09-12-b3-sign-one-root-and-the-insufficient-escape.md` §6(b)).
+A function exceeding a threshold at `2` and `4` but not at `3` is not monotone.
+
+**This selects nothing.**  Naming the family that occupies the door is a
+structural observation; choosing a particular `m` because it yields `b₃ > 0`
+would be selection against the target, which AGENTS.md §"NO FITTING" forbids and
+which bean `qou-kj4v` already records going backwards for `σ²`.  Under the owner
+ruling of 2026-09-08 (`qou-ales`) the braid word is selected by γγ
+pair-production plus the confinement SDP, and **that derivation is what remains
+open** — not the question of whether a non-monotone law exists.
+
+Nothing here is numerical: no `q`, no Markov parameter, no anchor.  The `σ^m`
+measurement is cited, not recomputed, and no value from it enters any statement.
+-/
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- The antitone half of the pn exclusion, which `pn_not_strict_max_of_monotone`
+does not cover: a *decreasing* interface law blocks the pattern just as a
+increasing one does. -/
+theorem pn_not_strict_max_of_antitone {f : R → R} (hf : Antitone f)
+    {w dpp dnn : R} (hw0 : 0 < w) (hw1 : w < 1) (hle : dpp ≤ dnn) :
+    ¬ (f dpp < f (combo w dpp dnn) ∧ f dnn < f (combo w dpp dnn)) := by
+  obtain ⟨h1, h2⟩ := combo_mem hw0 hw1 hle
+  exact not_strict_max_of_antitone hf h1 h2
+
+/-- And the corresponding sign-mixed corollary. -/
+theorem signMixed_impossible_of_antitone {f : R → R} (hf : Antitone f)
+    {w dpp dnn : R} (hw0 : 0 < w) (hw1 : w < 1) (hle : dpp ≤ dnn) :
+    ¬ signMixedPattern (f dpp) (f (combo w dpp dnn)) (f dnn) := by
+  rintro ⟨h1, hpp, hnn⟩
+  exact pn_not_strict_max_of_antitone hf hw0 hw1 hle ⟨by linarith, by linarith⟩
+
+/-- **An affine law is monotone or antitone**, according to the sign of its
+slope.  So both blocking theorems are available and neither sign escapes. -/
+theorem affine_monotone_or_antitone (a b : R) :
+    Monotone (fun t : R => a + t * b) ∨ Antitone (fun t : R => a + t * b) := by
+  rcases le_or_gt 0 b with hb | hb
+  · left
+    intro x y hxy
+    simp only
+    nlinarith
+  · right
+    intro x y hxy
+    simp only
+    nlinarith
+
+/-- **No affine interface law reaches the sign-mixed pattern, whatever the sign
+of its slope.**  This subsumes `PnBetweennessBlocksSignMixed`'s `μ = z + d` as
+the case `a = z`, `b = 1`. -/
+theorem affine_blocks_sign_mixed (a b : R)
+    {w dpp dnn : R} (hw0 : 0 < w) (hw1 : w < 1) (hle : dpp ≤ dnn) :
+    ¬ (a + dpp * b < a + combo w dpp dnn * b
+       ∧ a + dnn * b < a + combo w dpp dnn * b) := by
+  rcases affine_monotone_or_antitone a b with h | h
+  · exact pn_not_strict_max_of_monotone h hw0 hw1 hle
+  · exact pn_not_strict_max_of_antitone h hw0 hw1 hle
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **A linear functional evaluated along an affine path is affine in the path
+parameter.**  `φ` here stands for `x ↦ tr_M(W·x)` at fixed `W`, which is linear
+because the Markov trace is.  Pure ring algebra — the order instances are
+`omit`ted because the statement genuinely does not use them. -/
+theorem linear_along_affine_path {φ : R → R}
+    (hadd : ∀ x y, φ (x + y) = φ x + φ y) (hsmul : ∀ c x, φ (c * x) = c * φ x)
+    (x₀ x₁ t : R) : φ (x₀ + t * x₁) = φ x₀ + t * φ x₁ := by
+  rw [hadd, hsmul]
+
+/-- **The structural statement.**  A linear interface functional, evaluated along
+*any* affine path in the algebra, cannot reach the sign-mixed pattern — for
+either sign of the slope, and without computing a single bond value.
+
+This is why the corpus's `μ = z + d` is blocked, and it locates the escape
+precisely: it must leave the **affine path**, not merely the affine formula. -/
+theorem linear_functional_on_affine_path_blocks_sign_mixed {φ : R → R}
+    (hadd : ∀ x y, φ (x + y) = φ x + φ y) (hsmul : ∀ c x, φ (c * x) = c * φ x)
+    (x₀ x₁ : R) {w dpp dnn : R} (hw0 : 0 < w) (hw1 : w < 1) (hle : dpp ≤ dnn) :
+    ¬ (φ (x₀ + dpp * x₁) < φ (x₀ + combo w dpp dnn * x₁)
+       ∧ φ (x₀ + dnn * x₁) < φ (x₀ + combo w dpp dnn * x₁)) := by
+  simp only [linear_along_affine_path hadd hsmul]
+  exact affine_blocks_sign_mixed (φ x₀) (φ x₁) hw0 hw1 hle
+
+/-- Negative control: the blocking above is a statement about *affine* paths
+only, and is not vacuous — `hump` from `Sharpness` is a law the affine theorems
+genuinely do not cover, since it is neither monotone nor antitone. -/
+theorem hump_is_neither :
+    ¬ Monotone (hump (R := R)) ∧ ¬ Antitone (hump (R := R)) :=
+  ⟨hump_not_monotone, hump_not_antitone⟩
+
+end AffinePathsAreBlocked
+
 end QOU.MassTheory.InterfaceMonotone
