@@ -5,75 +5,97 @@ Released under Apache 2.0 license.
 import QOU.Hecke.InteriorMarkovOfBraidedTower
 
 /-!
-# The production bond letters are DERIVED, not three measured numbers
+# Interior bond factors for the `σ`, `σ⁻¹` and symmetric letters
 
-Bean `qou-qqm4`. `computations/probes/bond_factors_are_z_plus_d_probe.py` records
-the three production interface letters and their bond factors as **measured**, by
-turning one interface on at `A = 3`:
-
-| interface | letter | measured bond factor, `ε`-series at `q = 1+ε` |
-|---|---|---|
-| `pp` | `σ` | `1/2, 1, 1/4` |
-| `pn` | `averaged_weighted` | `1/2, 0, 3/4` |
-| `nn` | `σ⁻¹` | `1/2, −1, 5/4` |
-
-Those three series are, respectively, `z_D`, `z_D − h/2` and `z_D − h` at
-`z_D = q³/(q²+1)`, `h = q − q⁻¹` — coefficient for coefficient. This file proves
-the underlying algebra, so the three numbers stop being three independent
-measurements and become **one scalar `h` and a choice of letter**.
+Bean `qou-qqm4`. The bond product (`tr_bondWord_of_braided`, and
+`Mass.ProductionChainBondProduct` for the production layout) carries an
+**arbitrary** scalar `d` per bond. This file pins `d` for three specific
+letters, in the **interior** position a bond actually occupies.
 
 ## What is proved
 
-`tr_bond_gen` — the `σ` letter carries `d = 0`: the factor is `z`. This is
-`InteriorMarkov` restated at the bond, and is included only so the three sit
-together.
+`tr_bond_gen` — the `σ` letter carries `d = 0`: factor `z`. `InteriorMarkov`
+restated at the bond; here so the three sit together.
 
-`tr_bond_ginv` — **the `σ⁻¹` letter carries `d = −h`**: the factor is `z − h`.
-The whole content is the skein relation `σ⁻¹ = σ − h` (`gen_inv_eq_of_quadratic`)
-fed through `tr_bond_of_interiorMarkov` at `d = −h`.
+`tr_bond_ginv` — **the content.** The `σ⁻¹` letter carries `d = −h`: factor
+`z − h`. The skein relation `σ⁻¹ = σ − h` (`gen_inv_eq_of_quadratic`) fed
+through `tr_bond_of_interiorMarkov` at `d = −h`.
 
-`tr_bond_gen_add_ginv` — the unnormalised symmetric letter `σ + σ⁻¹` carries the
-factor `2z − h`, so the *average* letter carries `z − h/2` wherever `2` is
-invertible. Stated unnormalised to avoid needing `2⁻¹` in `R`.
+`tr_bond_gen_add_ginv` — the unnormalised symmetric letter `σ + σ⁻¹` carries
+`2z − h`, i.e. `z − h/2` per letter wherever `2` is invertible. Stated
+unnormalised so it needs no `2⁻¹` in `R`.
 
-`bond_letters_determined` — the three collected: the `d` of the production
-letters are `0`, `−h`, `−h/2`, all fixed by the single scalar `h` of the
-quadratic relation.
+`bond_factors_of_skein_letters` — the three collected.
 
-Everything is stated over a `MarkovTrace` carrying `[BraidedTower]`, so
-`InteriorMarkov` is discharged by `interiorMarkov_of_braided` rather than
-assumed: the only hypotheses are the tower's own defining relations, the Markov
-axioms, and the quadratic scalar `h`.
+All are stated over a `MarkovTrace` carrying `[BraidedTower]`, so
+`InteriorMarkov` is **discharged** by `interiorMarkov_of_braided` rather than
+assumed: the hypotheses are the tower's defining relations, the Markov axioms,
+and the quadratic scalar `h`.
 
-## Why this is not already in the corpus
+## Why these are not already in the corpus
 
-`MathlibExt.OcneanuTrace.tr_mul_ginv_of_quadratic` proves the **stabilisation**
-form `tr (a * ginv n) = (z − h) * tr a` — the case `b = 1`, nothing above the
-generator. A *bond* has material on both sides, so the bond product needs the
-**interior** form with `b ∈ upper g`, which is what `tr_bond_ginv` supplies. The
-two proofs share the `ginv = g − h•1` rewrite and differ in what they push it
-through: `markov` there, `InteriorMarkov` here.
+The corpus has both halves of the `σ⁻¹` fact but never composes them, and it
+has the composition only in **right-multiplication** form:
+
+* `MathlibExt.OcneanuTrace.tr_mul_ginv_of_quadratic` — `tr (a * ginv n) =
+  (z − h) * tr a`. The `b = 1` case.
+* `MathlibExt.DisjointBlockTraceLaw.tr_mul_gen_comb_of_quadratic` — the general
+  combination `tr (a * (c • g n + c' • ginv n)) = tr a * ((c+c')·z − c'·h)`.
+  Also `b = 1`.
+* `mass-theory/interface-knot-markov-z.lean` — over a different structure
+  (`MarkovHeckeSkeinAlgebra`), and takes trace-linearity as a *hypothesis*.
+
+A bond carries material on **both** sides, so the bond product needs the
+interior form with `b ∈ upper g`. The structural reason it is missing is that
+`MarkovInteriorBond` works in `MarkovTower`, which has no `ginv` field at all.
+
+## 🛑 THE `pn` LETTER IS NOT THE SYMMETRIC ONE — corrected before merge
+
+An earlier version of this file, and the first body of its PR, identified the
+production `pn` interface with the symmetric letter, i.e. `d_pn = −h/2`. **That
+is wrong, and the corpus had already ruled it out on 2026-09-07.** The
+production letter is `averaged_weighted`:
+
+    d_pn = −h · (1/2 − δ/4),   δ = (q−1)²(1 − q⁻⁴)/3
+
+carried by `Hecke.ClosedFormInterfaceFactors.bondD`, `MathlibExt.MarkovBondRule.dIface`,
+`computations/canonical_braid_crossings.py` and `computations/markov_peel.py`.
+`−h/2` is the corpus's **`averaged`** letter — a different `ctype`, and not the
+production one.
+
+The two agree through order `ε³` and separate at `ε⁴`:
+
+| | `ε⁰` | `ε¹` | `ε²` | `ε³` | `ε⁴` |
+|---|---|---|---|---|---|
+| `z − h/2` (symmetric) | `1/2` | `0` | `3/4` | `−3/4` | **`5/8`** |
+| `z + d_pn` (production) | `1/2` | `0` | `3/4` | `−3/4` | **`31/24`** |
+| measured `pn` bond | `1/2` | `0` | `3/4` | `−3/4` | **`31/24`** |
+
+`computations/probes/bond_pn_kind_order_four_discriminator_probe.py` is the
+discriminator, on two objects plus a held-out ³He word. The error is instructive
+and is why this block exists: an `ε²` check **passes both**, so agreeing to the
+order you happened to expand to is not evidence of identity.
+
+`tr_bond_gen_add_ginv` is therefore a theorem about the `averaged` letter, and
+is **not** a statement about the production `pn` interface.
 
 ## 🛑 What is NOT proved
 
-1. **The `pn` letter is still a modelling choice.** `tr_bond_gen_add_ginv` says
-   what the symmetric letter's factor *is*; it does not say the `pn` interface
-   *should* be the symmetric letter. That the unlike-pair interface is the
-   average of the like-pair ones is the producer's `averaged_weighted`
-   convention, and this file does not derive it — it only shows that **granting
-   it, the value follows**. So the letter set reduces from three free numbers to
-   **one convention**, not to zero.
-2. **`h` is a hypothesis, not a value.** Every statement takes the quadratic
-   relation's scalar as an explicit argument. That `h = q − q⁻¹` for `H_n(q)`,
-   and that the substrate's `z` is `z_D = q³/(q²+1)`, are elsewhere.
+1. **The production `pn` letter is not derived here.** Deriving the `δ/4` from
+   the colour-tube geometry is `qou-qqm4`'s live open item. Two of the three
+   letters are the skein's; the third is not, and nothing here changes that.
+2. **`h` is a hypothesis, not a value.** That `h = q − q⁻¹` for `H_n(q)`, and
+   that the substrate's `z` is `z_D = q³/(q²+1)`, are elsewhere.
+   `BraidedTower.quad` is existential (`∀ m, ∃ h, …`) and cannot supply a
+   uniform `h`, which is why it is an explicit argument.
 3. **No `c_k`, no binding coefficient, no absolute trace.** The bond model is
-   about the *ratio* `tr(atom)/tr(free)`; the free half is a separate object.
-4. **`BraidedTower.quad` is existential** (`∀ m, ∃ h, …`), so it cannot supply a
-   uniform `h`. Taking `h` explicitly is what keeps these statements honest
-   about that, and matches `gen_inv_eq_of_quadratic`'s own signature.
+   about the *ratio* `tr(atom)/tr(free)`.
+4. **Nothing here reaches the production Ocneanu trace.** The only
+   `MarkovTrace` on the presented tower factors through a rank-2 quotient;
+   `qou-0fmb` is the bridge.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] beans qou-qqm4; computations/probes/bond_factors_are_z_plus_d_probe.py
+-- Ref: [manuscript] beans qou-qqm4, qou-0fmb; prop:interface-knot-markov-z.
 -/
 
 namespace QOU.Hecke.BondLetterIdentification
@@ -84,21 +106,22 @@ open QOU.Hecke.MarkovInteriorBond QOU.Hecke.InteriorMarkovOfBraidedTower
 variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
 variable (S : MarkovTrace R A) [BraidedTower S]
 
-/-- **The `σ` letter carries `d = 0`.** The `pp` interface's bond factor is `z`
-itself. Immediate from `InteriorMarkov`; stated so the three letters sit
-together. -/
+/-- **The `σ` letter carries `d = 0`**, so a positive-crossing interface's bond
+factor is `z` itself. Immediate from `InteriorMarkov`; stated so the three
+letters sit together. -/
 theorem tr_bond_gen {g : ℕ} {a b : A}
     (ha : a ∈ S.H g) (hb : b ∈ upper (toTowerB S) g) :
     S.tr (a * S.g g * b) = S.z * S.tr (a * b) :=
   interiorMarkov_of_braided S g a ha b hb
 
-/-- **The `σ⁻¹` letter carries `d = −h`**, so the `nn` interface's bond factor is
-`z − h`.
+/-- **The `σ⁻¹` letter carries `d = −h`**, so a negative-crossing interface's
+bond factor is `z − h`.
 
-This is the interior counterpart of
+This is the **interior** counterpart of
 `MathlibExt.OcneanuTrace.tr_mul_ginv_of_quadratic`, which is the `b = 1` case.
 A bond has material above it as well as below, and the bond product needs that
-form. -/
+form; `MarkovTower` has no `ginv` field, which is why the composition lives
+here in the `MarkovTrace` vocabulary. -/
 theorem tr_bond_ginv {g : ℕ} (h : R)
     (hq : S.g g * S.g g = h • S.g g + 1) {a b : A}
     (ha : a ∈ S.H g) (hb : b ∈ upper (toTowerB S) g) :
@@ -110,11 +133,14 @@ theorem tr_bond_ginv {g : ℕ} (h : R)
     (g := g) (a := a) (b := b) ha hb (-h)
   simpa [sub_eq_add_neg] using this
 
-/-- **The unnormalised symmetric letter `σ + σ⁻¹` carries the factor `2z − h`.**
+/-- **The unnormalised symmetric letter `σ + σ⁻¹` carries the factor `2z − h`**,
+i.e. `z − h/2` per letter wherever `2` is invertible. Stated unnormalised so the
+statement needs no `2⁻¹` in `R`.
 
-Dividing by `2` — legitimate wherever `2` is invertible in `R` — gives the
-average letter's factor `z − h/2`, which is the measured `pn` bond factor.
-Stated unnormalised so the statement needs no `2⁻¹`. -/
+🛑 This is the corpus's **`averaged`** letter, **not** the production `pn`
+interface, which is `averaged_weighted` with `d = −h(1/2 − δ/4)`. The two agree
+through `ε³` and separate at `ε⁴` (`5/8` against the measured `31/24`). See the
+module docstring. -/
 theorem tr_bond_gen_add_ginv {g : ℕ} (h : R)
     (hq : S.g g * S.g g = h • S.g g + 1) {a b : A}
     (ha : a ∈ S.H g) (hb : b ∈ upper (toTowerB S) g) :
@@ -124,17 +150,14 @@ theorem tr_bond_gen_add_ginv {g : ℕ} (h : R)
   rw [hsplit, map_add, tr_bond_gen S ha hb, tr_bond_ginv S h hq ha hb]
   ring
 
-/-- **The three production bond letters are fixed by the single scalar `h`.**
+/-- **The three skein letters' interior bond factors, collected.** Given the
+quadratic relation's scalar `h`, the `σ`, `σ⁻¹` and symmetric letters carry
+`d = 0`, `d = −h` and (after halving) `d = −h/2`. None is measured.
 
-Collecting the above: the `d` of `σ` is `0`, the `d` of `σ⁻¹` is `−h`, and the
-unnormalised symmetric letter contributes `2z − h`, i.e. `d = −h/2` per letter
-after halving. Nothing here is measured — given the quadratic relation's `h`,
-all three follow.
-
-🛑 This does **not** derive that the `pn` interface *is* the symmetric letter;
-that remains the producer's `averaged_weighted` convention. See the module
-docstring. -/
-theorem bond_letters_determined {g : ℕ} (h : R)
+🛑 The *production* `pn` interface is **not** among these — it is
+`averaged_weighted`, `d = −h(1/2 − δ/4)`, and deriving that remains open. The
+name says `skein_letters` for exactly this reason. -/
+theorem bond_factors_of_skein_letters {g : ℕ} (h : R)
     (hq : S.g g * S.g g = h • S.g g + 1) {a b : A}
     (ha : a ∈ S.H g) (hb : b ∈ upper (toTowerB S) g) :
     S.tr (a * S.g g * b) = (S.z + 0) * S.tr (a * b)
