@@ -1,0 +1,409 @@
+{
+  "name": "aomega-m3-pretzel-nz-rank-one",
+  "description": "Rank of the Neumann-Zagier Gaussian B^-1 A (DG 1202.6268 eq 2.7) over all quad choices for 4_1, 5_2 and (-2,3,7) from SnapPy; the pretzel is rank one with factor vector (1,1,2).",
+  "computation": "aomega-m3-pretzel-nz-rank-one",
+  "engine": "python+snappy",
+  "scriptFile": "aomega_m3_pretzel_nz_rank_one_probe.py",
+  "computedAt": "2026-09-13T05:25:15.203610+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "snappy_version": "3.3.2",
+    "row_choice": "first N-1 edges + meridian (DG 2.7)",
+    "column_convention": "SnapPy interleaved (z, z', z'') per tetrahedron (docstring)",
+    "quad_change": "cyclic relabelling per tetrahedron, all 3^N enumerated"
+  },
+  "data": {
+    "m004": {
+      "label": "4_1",
+      "N": 2,
+      "quad_table": {
+        "rank1": 3,
+        "singular": 3,
+        "rank2": 3
+      },
+      "symplectic_all_quads": true,
+      "rank_one": [
+        {
+          "quad": [
+            0,
+            0
+          ],
+          "A": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "B": [
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "nu": [
+            1,
+            1
+          ],
+          "detB": -1,
+          "c": "1",
+          "v": [
+            1,
+            1
+          ],
+          "Binv_nu": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "quad": [
+            1,
+            2
+          ],
+          "A": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "B": [
+            [
+              2,
+              -1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "nu": [
+            1,
+            0
+          ],
+          "detB": -1,
+          "c": "1",
+          "v": [
+            1,
+            1
+          ],
+          "Binv_nu": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "quad": [
+            2,
+            1
+          ],
+          "A": [
+            [
+              -2,
+              -2
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "B": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              0
+            ]
+          ],
+          "nu": [
+            -2,
+            -1
+          ],
+          "detB": -1,
+          "c": "1",
+          "v": [
+            1,
+            1
+          ],
+          "Binv_nu": [
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    "m015": {
+      "label": "5_2",
+      "N": 3,
+      "quad_table": {
+        "rank3": 10,
+        "singular": 10,
+        "rank2": 6,
+        "rank1": 1
+      },
+      "symplectic_all_quads": true,
+      "rank_one": [
+        {
+          "quad": [
+            2,
+            2,
+            2
+          ],
+          "A": [
+            [
+              -1,
+              -1,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "B": [
+            [
+              0,
+              -2,
+              0
+            ],
+            [
+              -1,
+              2,
+              -1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          "nu": [
+            -2,
+            0,
+            0
+          ],
+          "detB": 2,
+          "c": "1/2",
+          "v": [
+            1,
+            1,
+            1
+          ],
+          "Binv_nu": [
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    "m016": {
+      "label": "(-2,3,7) = K12n242",
+      "N": 3,
+      "quad_table": {
+        "rank3": 12,
+        "rank2": 6,
+        "singular": 8,
+        "rank1": 1
+      },
+      "symplectic_all_quads": true,
+      "rank_one": [
+        {
+          "quad": [
+            0,
+            2,
+            1
+          ],
+          "A": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "B": [
+            [
+              -1,
+              -1,
+              1
+            ],
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              2,
+              0,
+              -1
+            ]
+          ],
+          "nu": [
+            0,
+            2,
+            0
+          ],
+          "detB": -4,
+          "c": "1/4",
+          "v": [
+            1,
+            1,
+            2
+          ],
+          "Binv_nu": [
+            "1/2",
+            "1/2",
+            "1"
+          ]
+        }
+      ]
+    }
+  },
+  "verdict": "DERIVED (DG 2.7 + SnapPy): the pretzel's NZ Gaussian B^-1 A is rank one for exactly one quad choice, with factor vector v = (1,1,2) and c = 1/4, against v = (1,1,1), c = 1/2 for 5_2 and v = (1,1), c = 1 for 4_1 (both gates reproduce the printed one-dimensional forms, A = 1/c). So the pretzel's state integral IS one-dimensional — three quantum dilogarithms of one variable, one at doubled argument — which is outside the unit-coefficient GK I_{A,B} / GGM Z_{A,r} families. That is why the (1,3) sister candidate failed (Part 9) and matches GGM's 'level 2'. Next: the exact shifts and prefactor (nu, flattening, Fourier constants), then residues -> q-series blocks -> certification against the derived index via GGM eq 19.",
+  "assertions": [
+    {
+      "name": "m004-(2.9)-symplectic-identity-holds-for-all-9-quad-choices",
+      "passed": true
+    },
+    {
+      "name": "m004-rank-one-quad-exists-with-v=(1, 1)-c=1 (GK/GGM one-dimensional form, A = 1/c)",
+      "passed": true,
+      "found": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          "1"
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          "1"
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          "1"
+        ]
+      ]
+    },
+    {
+      "name": "m015-(2.9)-symplectic-identity-holds-for-all-27-quad-choices",
+      "passed": true
+    },
+    {
+      "name": "m015-rank-one-quad-exists-with-v=(1, 1, 1)-c=1/2 (GK/GGM one-dimensional form, A = 1/c)",
+      "passed": true,
+      "found": [
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          "1/2"
+        ]
+      ]
+    },
+    {
+      "name": "m016-(2.9)-symplectic-identity-holds-for-all-27-quad-choices",
+      "passed": true
+    },
+    {
+      "name": "m016-rank-one-quad-EXISTS (the pretzel state integral is one-dimensional)",
+      "passed": true,
+      "found": [
+        [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            2
+          ],
+          "1/4"
+        ]
+      ]
+    },
+    {
+      "name": "m016-rank-one-factor-vector-is-(1,1,2) — one quantum dilogarithm at DOUBLED argument (level 2), outside the unit-coefficient GK/GGM families",
+      "passed": true,
+      "vectors": [
+        [
+          1,
+          1,
+          2
+        ]
+      ],
+      "c": [
+        "1/4"
+      ]
+    },
+    {
+      "name": "m016-exactly-one-quad-choice-is-rank-one (as for 5_2)",
+      "passed": true,
+      "count": 1
+    }
+  ],
+  "scriptHash": "61f5ce2c1ab8",
+  "scriptCommitSha": "unknown",
+  "commitSha": "1a84d3f8cf8739831638f7ff3dba85f995b8bc2b",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
