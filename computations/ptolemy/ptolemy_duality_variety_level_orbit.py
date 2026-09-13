@@ -69,11 +69,45 @@ scalar-coboundary => torus-coboundary, so a torus NO forces a scalar NO.  Where 
 says YES the scalar question is strictly stronger and is already answered NO at x by
 #7092.
 
-SCOPE.  A "yes" across the table is an identity of maps ON THE CLASS-1 VARIETY of this
-one manifold: D and sigma_b agree modulo gauge at every point of it.  It is NOT a
-statement about other obstruction classes, other manifolds, or the Ptolemy-to-
-representation direction; whether rho -> rho^{-T} INDUCES sigma_b on representations
-remains the open content of bean qou-qjhc, and rule 13a keeps that bean open.
+SCOPE, against the objection the corpus already records.
+docs/audits/2026-09-07-takeover-fronts-roast.md:102-116 anticipates exactly this move and
+must be answered rather than routed around.  It says three things; this probe touches one.
+
+  (A) "agreement of two maps at a point is pointwise; 'the same map' is the universal
+      closure."  ANSWERED HERE, for the quantifier over the variety.  The class-1 variety
+      IS these four points (G1 + the degree-4 char-zero count), so `for all x in V,
+      D(x) ~ sigma_b(x)` is the universal closure over V, measured, not inferred.
+      The sharper half is WHERE THE QUANTIFIER SITS.  A priori each point could be
+      self-dual up to a DIFFERENT Galois element -- `for all x, exists sigma` -- which
+      would be much weaker and is what a per-point test can deliver.  The measurement
+      gives `exists sigma, for all x`, with sigma_b exhibited and sigma_a excluded at
+      every point.  That is the arity upgrade, and it is the whole content.
+
+  (B) "Two distinct rational self-maps of a variety can agree on a Galois orbit."
+      NOT ANSWERED, and nothing here bears on it.  Four points impose four conditions;
+      two different rational self-maps of the ambient Ptolemy space can meet them all.
+      So this is an identity of maps ON V, never an identity of rational maps, and it
+      carries NO implication for any other obstruction class or manifold.  Anyone
+      extending this must re-measure there.
+
+  (C) "not that rho -> rho^{-T} INDUCES sigma."  NOT ANSWERED.  What sits between is the
+      Ptolemy-to-representation direction: V modulo gauge corresponds to the class-1
+      boundary-unipotent PGL(3,C) representations (GGZ), and IF that correspondence is a
+      bijection here then agreement on all of V modulo gauge is agreement of the induced
+      maps on representations -- but this probe does NOT establish that bijection, and
+      does not assume it.  That step is the remaining content of bean qou-qjhc, which
+      stays OPEN under rule 13a.
+
+So the honest one-line statement is: every point of the L6a4 class-1 variety is self-dual
+up to Gal(K/Q), by ONE AND THE SAME element sigma_b -- strictly stronger than #7092's
+single point, strictly weaker than "D = sigma_b as maps", and silent on representations.
+
+THE ABSTRACT ARGUMENT IS FORMALISED, separately and with no numbers in it:
+QOU.Eightfold.GaloisOrbitTransport (sorry-free; three of its four results depend on NO
+axioms).  `rel_of_transitive_orbit` is an Iff, so it propagates the sigma_a NO exactly as
+it propagates the sigma_b YES, and `exists_not_forall_eq_of_not_central` shows the
+commutativity hypothesis is not removable.  The Lean is general group actions; the
+measurement here is what instantiates it on this data.
 
 EXACTNESS.  All arithmetic in K: polynomials over Q reduced mod f, inverses by sympy's
 exact `invert`.  No floats, no tolerances anywhere.  An element is 1 or it is not.
