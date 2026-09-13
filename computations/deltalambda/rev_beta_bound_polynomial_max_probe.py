@@ -1,81 +1,56 @@
 #!/usr/bin/env python3
 r"""
-rev_beta_bound_polynomial_max_probe.py — maximizing the beta-bound in POLYNOMIAL time, past the
-p(n) wall, and the rate it gives (qou-hok7)
+rev_beta_bound_polynomial_max_probe.py — RETRACTED AND REPAIRED: the rise this probe reported was
+an artefact of its own H bound, and my first diagnosis was the right one (qou-hok7)
 
-`qou-hok7`: `Omega(sqrt n) <= REV_n <= O(n^{3/4})` both proved (#7014, #7018); sharpness open.
-#7065 closed the enumeration route (the discriminating statistic does not work below n ~ 150, and
-`p(150)` is ~3 orders out of reach). #7070 supplied beta-coordinates, in which
+## What this probe originally claimed, and why it was wrong
 
-    R_lambda = sum_i F(beta_i) - sum_{i<j} eps_(beta_i - beta_j) - F(n)
+It maximised the beta-bound over the two integers `(l, W)` and reported that the result RISES
+above `n^{3/4}` out to `n = 4000`, concluding that the `(l, W)` relaxation is faithful and the
+beta-bound of #7070 is itself too weak. **The rise is not a fact about `REV_n`. It is an artefact
+of `Hhat`**, this probe's own Cauchy-Schwarz lower bound on the hook sum.
 
-with `beta_i = lambda_i + l - i`, and derived the bound
+Every partition of `n` satisfies `H >= H_min(n)`. At the maximiser's own argmax
+`(l, W) = (151, 357)` for `n = 4000`, this probe's `Hhat` is **116,748 against
+`H_min(4000) = 238,520` — 48.95 %**. The column half spreads `n - l` cells evenly over
+`lambda_1 - 1` columns, which is impossible with 151 rows, so the maximiser was fed roughly
+`(238520 - 116748) * ln q_0 = 12,700` of energy credit that no partition can have — essentially
+the whole `13,337` it reported. Caught on `qou-hok7` by the #7185 session; re-derived here (R3).
 
-    R_lambda <= B(l, W) := l*C - J(l, W) - F(n),
-    J(l, W)  := sum_{d=1}^{l-1} (l-d) * eps( d*W / (l-d) ),     W := beta_1 - beta_l
+## The methodological error, stated plainly because it is the reusable part
 
-whose only dependence on `lambda` is through the two integers `(l, W)`. This probe uses that to
-maximize it **without enumerating partitions**.
+R6 measured `Hhat` against the true minimum hook sum **over partitions with that exact `(l, W)`**
+and got 99.3-100 %, at `n = 24, 32, 40` — the range where brute force reaches. It then read the
+RATE at `n = 4000`. The calibration was sound and the inference was not: `Hhat` degrades as
+`l - k` grows, and at `n <= 40` that gap is small. **I verified only where verification was cheap
+and extrapolated the conclusion.** Identical in shape to the even-gap conjecture of #7093, whose
+two hand-checks both had all-equal gaps.
 
-## Why this could settle sharpness outright
+Worse, R6 was written to test the hypothesis *"the weak link is `Hhat`"* — which was correct —
+and inverted it on that measurement. The original instinct was right; the refutation of it was
+the error.
 
-`M_n := max_lambda (R_lambda - E_lambda)` with `E = (H - H_min) ln q_0`, and
+## What the repair measures
 
-    REV_n = log sum_lambda exp(R_lambda - E_lambda)  <=  M_n + log p(n).
+  R1  (unchanged, still valid) the Cauchy-Schwarz bound and the `lambda_1 >= W - l + 2` constraint
+  R2  (unchanged, still valid) the relaxation dominates the enumerated max(B - E) at n <= 40
+  R3  the artefact reproduced: `Hhat / H_min(n)` at the argmax, falling to ~49 % by n = 4000
+  R4  the free repair — clamp `Hhat >= H_min(n)`, valid for every partition — and what it gives
+  R5  the ROW-TANGENT energy floor of #7185 in this instrument, as an INDEPENDENT check of a
+      result this probe's own broken version appeared to contradict
+  R6  corrected verdict
 
-Hardy-Ramanujan gives `log p(n) ~ pi*sqrt(2n/3) = 2.5651*sqrt(n)`, which is itself `Theta(sqrt n)`.
-**So if `M_n = O(sqrt n)` then `REV_n = O(sqrt n)`, the `3/4` is not sharp, and the tightness
-question closes** — the entropy cannot spoil it, because the entropy is already `Theta(sqrt n)`.
+## Status
 
-## The relaxation
+Sharpness is **settled** and not by this probe: `REV_n = Theta(sqrt n)`, the `3/4` is NOT sharp
+(#7185, `QOU/BraidKnot/HookSumRowTangentBound.lean`, sorry-free). The mechanism is a bound on the
+ENERGY as a function of the row count — `2(H - H^+) >= (l - k)^2 - r` for `n = T_k + r` — against
+which the entropy `R_lambda <= (l-1)C` is only linear in `l`. The pair term this arc spent three
+PRs on was never needed.
 
-`-E` decreases in `H`, so replacing `H` by any valid LOWER bound keeps the result an upper bound.
-Using the corpus's own `2H = sum_i lambda_i^2 + sum_j lambda'_j^2` (the identity behind
-`sq_min_le_sum_hookZ`, #7018), Cauchy-Schwarz on the rows after the first and on the columns gives
-
-    (LB)  2H  >=  lambda_1^2 + (n - lambda_1)^2/(l-1) + n^2/lambda_1
-
-and distinctness of the beta's forces `lambda_1 >= W - l + 2` (since `W = lambda_1 - lambda_l + l - 1`
-and `lambda_l >= 1`). Hence
-
-    M_n  <=  max over admissible (l, W)  [ B(l, W) - ( Hhat(n,l,W) - H_min(n) ) * ln q_0 ]
-
-with `Hhat` the minimum of (LB) over `lambda_1 >= max(ceil(n/l), W-l+2)`. That maximum is an
-`O(n^2)` scan over two small integers, computable at `n = 10^4` where `p(n)` has 10^106 terms.
-
-## Result: the transfer does NOT fire, and the reduction is sound anyway
-
-Measured to `n = 4000` (where `p(n) ~ 1.0e64`), the relaxed maximum divided by `sqrt(n)` runs
-`9.67 -> 210.88` and divided by `n^{3/4}` it **rises** `3.84 -> 26.52`. Its growth exceeds
-`n^{3/4}`, so nothing transfers and **sharpness stays open** — `REV_n` remains in
-`[Omega(sqrt n), O(n^{3/4})]`, unchanged.
-
-**That is a fact about the bound, not about `REV_n`.** R6 was written expecting the Cauchy-Schwarz
-`Hhat` to be the weak link, and refutes that: at the maximizer's own `(l, W)`, `Hhat` reaches
-**99.3-100%** of the true minimum hook sum, and the whole relaxation overshoots the enumerated
-`max(B - E)` by at most 0.15. Passing from a partition to two integers costs essentially nothing.
-So the relaxation is a faithful instrument, and what it faithfully reports is that **the beta-bound
-of #7070 is itself too weak** — the loss is the Jensen step on the pair term, which under-counts
-badly for gap sequences of mostly 1s with a few large jumps, exactly what the maximizer selects
-(`W/l ~ 1.7` at every `n`).
-
-Two things survive as usable: maximizing any `B(l, W)` now costs `O(n^2)` rather than `p(n)`, so a
-replacement for the Jensen step is testable at `n = 4000` against an instrument calibrated to the
-truth at `n <= 40`; and the target is now specific ("a pair-term bound that survives gap sequences
-of mostly 1s") rather than "a sharper bound on `R_lambda`".
-
-## Checks
-
-  R1  (LB) holds on every partition of n <= 16, and lambda_1 >= W - l + 2 with it
-  R2  the relaxed maximum DOMINATES the true enumerated max(B - E) at n = 16..40 (it must, or the
-      relaxation is invalid) and also dominates the true M_n
-  R3  the relaxed maximum's rate, read to n = 4000
-  R4  the verdict — the transfer does not fire; what that is and is not evidence about
-  R5  neither the l cap nor the eps truncation is doing the work
-  R6  WHERE the loss is — refutes this probe's own author on the point
-
-Exact integers for (LB) and the partition checks; mpmath at 40 dps for the eps sums. No float64.
+Exact integers and Fractions for the H bounds; mpmath at 40 dps for the eps sums. No float64.
 """
+
 
 from __future__ import annotations
 
@@ -198,6 +173,7 @@ def relaxed_max(n, ell_hi=None, verbose=False):
         one = ell * C_CONST - F(n)
         # W ranges over l-1 .. lambda_1 + l - 2 <= n + l - 2; B decreases in W only through -J,
         # and J decreases in W, so B INCREASES with W — but so does the forced lambda_1, hence H.
+        best_l = None
         for W in range(ell - 1, n + ell - 1):
             lo = max(-(-n // ell), W - ell + 2, 1)
             if lo > n - ell + 1:
@@ -218,7 +194,14 @@ def relaxed_max(n, ell_hi=None, verbose=False):
             v = one - J(ell, W) - (mp.mpf(Hhat.numerator) / Hhat.denominator - hmin) * LNQ
             if best is None or v > best:
                 best, arg = v, (ell, W)
-            if v < best - 50:          # B-E falls off fast in W; stop scanning this l
+            # The value is UNIMODAL in W: it rises, peaks, then collapses. A break keyed on the
+            # GLOBAL best abandons a row before it reaches its own peak — at n = 4000, l = 88 it
+            # fired at W = 87 (value 57) and never saw W = 174 (value 326), which is ABOVE the
+            # staircase floor. Key it on this row's own best. A SECOND defect in the original
+            # probe, independent of the Hhat artefact.
+            if best_l is None or v > best_l:
+                best_l = v
+            elif v < best_l - 50:
                 break
     return best, arg
 
@@ -294,128 +277,189 @@ def main() -> int:
         f"replaces, on the range where both can be computed.",
     )
 
-    # ---- R3: the rate, read where p(n) is unreachable ---------------------------------------
+    # ---- R3: reproduce the ARTEFACT -----------------------------------------------------
+    def hhat_at(n, ell, W):
+        lo = max(-(-n // ell), W - ell + 2, 1)
+        hi = n - ell + 1
+        if lo > hi:
+            return None
+        a, b = lo, hi                      # (LB) is convex in lambda_1 — ternary search it.
+        while b - a > 2:                   # a fixed 400-wide window here returned a TOO-HIGH
+            m1 = a + (b - a) // 3          # Hhat, over-charging energy and driving the
+            m2 = b - (b - a) // 3          # "upper bound" BELOW the staircase's own value.
+            if two_H_lower(n, ell, m1) <= two_H_lower(n, ell, m2):
+                b = m2
+            else:
+                a = m1
+        twoH = min(two_H_lower(n, ell, x) for x in range(a, b + 1))
+        return mp.mpf(twoH.numerator) / twoH.denominator / 2
+
     print()
-    print(f"  {'n':>7} {'relaxed max':>13} {'/sqrt(n)':>10} {'/n^0.75':>10} {'argmax (l,W)':>16} "
-          f"{'l cap':>6}")
-    rows3, cap_ok = [], True
-    for n in [40, 100, 250, 625, 1600, 4000]:
+    print(f"  {'n':>6} {'argmax (l,W)':>14} {'Hhat':>12} {'H_min(n)':>10} {'Hhat/H_min':>11}")
+    rows3, ratios3 = [], []
+    for n in [40, 250, 1600, 4000]:
         cap = max(8, int(8 * mp.sqrt(n)) + 8)
-        rx, arg = relaxed_max(n, ell_hi=cap, verbose=(n >= 1600))
-        cap_ok = cap_ok and arg[0] < cap - 2
-        rs = rx / mp.sqrt(n)
-        r34 = rx / (mp.mpf(n) ** mp.mpf("0.75"))
-        rows3.append({"n": n, "relaxed_max": mp.nstr(rx, 12),
-                      "over_sqrt_n": mp.nstr(rs, 10), "over_n34": mp.nstr(r34, 10),
-                      "argmax_l_W": list(arg), "ell_cap": cap})
-        print(f"  {n:>7} {mp.nstr(rx, 9):>13} {mp.nstr(rs, 7):>10} {mp.nstr(r34, 7):>10} "
-              f"{str(tuple(arg)):>16} {cap:>6}", flush=True)
-    s = [mp.mpf(x["over_sqrt_n"]) for x in rows3]
-    u = [mp.mpf(x["over_n34"]) for x in rows3]
-    sqrt_flat = (max(s) - min(s)) / max(s)
-    n34_falling = u[-1] < u[0]
+        _v, (el, Wl) = relaxed_max(n, ell_hi=cap)
+        hh = hhat_at(n, el, Wl)
+        hm = H_min_closed(n)
+        rat = hh / hm
+        ratios3.append(rat)
+        rows3.append({"n": n, "argmax_l_W": [el, Wl], "Hhat": mp.nstr(hh, 10),
+                      "H_min": hm, "Hhat_over_Hmin": mp.nstr(rat, 6)})
+        print(f"  {n:>6} {str((el, Wl)):>14} {mp.nstr(hh, 9):>12} {hm:>10} "
+              f"{mp.nstr(rat, 6):>11}")
     check(
-        "R3_the_relaxed_maximum_rate_measured_where_enumeration_cannot_reach",
-        True,
-        f"over n = 40..4,000 — a range on which p(n) runs from 37,338 to about 1.0e64, so no "
-        f"enumeration reaches any of the last five points — the relaxed maximum divided by sqrt(n) "
-        f"varies by {mp.nstr(100 * sqrt_flat, 4)}% ({mp.nstr(s[0], 6)} -> {mp.nstr(s[-1], 6)}) "
-        f"while divided by n^(3/4) it {'FALLS' if n34_falling else 'rises'} "
-        f"({mp.nstr(u[0], 6)} -> {mp.nstr(u[-1], 6)}). Reported as measured; R4 states what it "
-        f"does and does not settle.",
+        "R3_the_rise_was_an_artefact_of_this_probes_own_H_bound",
+        min(ratios3) < mp.mpf("0.60") and ratios3[-1] < ratios3[0],
+        f"every partition of n satisfies H >= H_min(n), so a lower bound on H that falls BELOW "
+        f"H_min(n) is not merely loose, it is feeding the maximiser energy no shape can have. "
+        f"Measured at this probe's own argmax: Hhat/H_min(n) falls "
+        f"{mp.nstr(ratios3[0], 5)} -> {mp.nstr(ratios3[-1], 5)} over n = 40..4000. At n = 4000 "
+        f"that is {mp.nstr(hhat_at(4000, 151, 357), 8)} against H_min = {H_min_closed(4000)}, and "
+        f"the missing energy {mp.nstr((H_min_closed(4000) - hhat_at(4000, 151, 357)) * LNQ, 6)} "
+        f"is essentially the whole 13337 the original R3 reported. The column half spreads n - l "
+        f"cells over lambda_1 - 1 columns, impossible with 151 rows. **The original R3's rise is "
+        f"withdrawn**, and with it the R4 'anti-caveat' that called it a clear signal rather than "
+        f"a misread column.",
     )
 
-    # ---- R5: the two caps must not be doing the work ---------------------------------------
-    def J_full(ell, W):
-        return (sum((ell - d) * eps(mp.mpf(d * W) / (ell - d)) for d in range(1, ell))
-                if ell >= 2 else mp.mpf(0))
+    # ---- R4: the free repair — clamp Hhat >= H_min(n) ---------------------------------------
+    def relaxed_max_clamped(n, ell_hi=None):
+        hmin = H_min_closed(n)
+        best, arg = None, None
+        ell_hi = min(ell_hi or n, n)
+        for ell in range(1, ell_hi + 1):
+            one = ell * C_CONST - F(n)
+            best_l = None
+            for W in range(ell - 1, n + ell - 1):
+                hh = hhat_at(n, ell, W)
+                if hh is None:
+                    break
+                v = one - J(ell, W) - max(hh - hmin, mp.mpf(0)) * LNQ
+                if best is None or v > best:
+                    best, arg = v, (ell, W)
+                if best_l is None or v > best_l:
+                    best_l = v
+                elif v < best_l - 50:
+                    break
+        return best, arg
 
-    worst_trunc = mp.mpf(0)
-    for ell, W in [(10, 9), (40, 60), (120, 200), (300, 700), (57, 57), (200, 199)]:
-        worst_trunc = max(worst_trunc, abs(J_full(ell, W) - J(ell, W)))
-    check(
-        "R5_neither_the_l_cap_nor_the_eps_truncation_is_doing_the_work",
-        cap_ok and worst_trunc < mp.mpf("1e-20"),
-        f"the row scan is capped at l <= 8*sqrt(n)+8 and the argmax l lands strictly inside it at "
-        f"every n ({', '.join(str(x['argmax_l_W'][0]) + '/' + str(x['ell_cap']) for x in rows3)}), "
-        f"so the cap is not binding — a binding cap would under-estimate the max and is reported "
-        f"as a FAILURE here rather than passing quietly. The eps truncation (drop terms with "
-        f"argument > {_EPS_NEGLIGIBLE}) differs from the untruncated sum by at most "
-        f"{mp.nstr(worst_trunc, 3)} on six spot shapes spanning the scanned (l, W) range.",
-    )
-
-    # ---- R6: WHERE the loss is — Hhat, not the beta-bound ----------------------------------
     print()
-    print(f"  {'n':>4} {'argmax (l,W)':>14} {'Hhat':>10} {'true min H':>11} {'Hhat/true':>10} "
-          f"{'H_min(n)':>9}")
-    rows6, ok6 = [], True
-    for n in [24, 32, 40]:
-        _rx, (el, Wl) = relaxed_max(n)
-        trueH = None
-        for lam in partitions_desc(n):
-            if len(lam) == el and lam[0] - lam[-1] + len(lam) - 1 == Wl:
-                h = hook_sum(lam)
-                trueH = h if trueH is None or h < trueH else trueH
-        lo = max(-(-n // el), Wl - el + 2, 1)
-        hh = min(two_H_lower(n, el, x) for x in range(lo, n - el + 2)) / 2
-        hhf = mp.mpf(hh.numerator) / hh.denominator
-        ratio = hhf / trueH if trueH else mp.mpf(0)
-        ok6 = ok6 and trueH is not None
-        rows6.append({"n": n, "argmax_l_W": [el, Wl], "Hhat": mp.nstr(hhf, 8),
-                      "true_min_H_at_that_l_W": trueH, "Hhat_over_true": mp.nstr(ratio, 6),
-                      "H_min_n": H_min_closed(n)})
-        print(f"  {n:>4} {str((el, Wl)):>14} {mp.nstr(hhf, 6):>10} {str(trueH):>11} "
-              f"{mp.nstr(ratio, 5):>10} {H_min_closed(n):>9}")
-    rr = [mp.mpf(x["Hhat_over_true"]) for x in rows6]
-    gap = [mp.mpf(x["relaxed_max"]) - mp.mpf(x["enum_max_B_minus_E"]) for x in rows2]
+    print(f"  {'n':>6} {'clamped max':>13} {'/sqrt(n)':>10} {'/n^0.75':>10} {'argmax':>13}")
+    rows4 = []
+    for n in [40, 250, 1600, 4000]:
+        cap = max(8, int(8 * mp.sqrt(n)) + 8)
+        v, arg = relaxed_max_clamped(n, cap)
+        rows4.append({"n": n, "clamped_max": mp.nstr(v, 10),
+                      "over_sqrt_n": mp.nstr(v / mp.sqrt(n), 8),
+                      "over_n34": mp.nstr(v / (mp.mpf(n) ** mp.mpf("0.75")), 8),
+                      "argmax_l_W": list(arg)})
+        print(f"  {n:>6} {mp.nstr(v, 9):>13} {mp.nstr(v/mp.sqrt(n), 6):>10} "
+              f"{mp.nstr(v/(mp.mpf(n)**mp.mpf('0.75')), 6):>10} {str(tuple(arg)):>13}", flush=True)
+    s4 = [mp.mpf(x["over_sqrt_n"]) for x in rows4]
+    A_CONST = sum(EPS[2 * j - 1] for j in range(1, _NEPS // 2))
+    stair = [A_CONST * mp.sqrt(2 * mp.mpf(x["n"])) for x in rows4]
+    valid4 = all(mp.mpf(x["clamped_max"]) >= st for x, st in zip(rows4, stair))
     check(
-        "R6_the_relaxation_is_TIGHT_so_the_loss_is_the_beta_bound_itself",
-        ok6 and max(rr) <= 1 and min(rr) > mp.mpf("0.98"),
-        f"I wrote this check expecting Hhat to be the weak link and it is NOT. At the relaxation's "
-        f"own argmax (l, W), Hhat reaches {mp.nstr(100 * min(rr), 5)}-{mp.nstr(100 * max(rr), 5)}% "
-        f"of the TRUE minimum hook sum over partitions with exactly that (l, W) — exact at two of "
-        f"three. And the relaxation as a whole overshoots the enumerated max(B - E) by at most "
-        f"{mp.nstr(max(gap), 4)} (n=16..40). So passing from a partition to the two integers "
-        f"(l, W) costs essentially nothing.\n\n"
-        f"        That inverts the finding, and makes it more useful. The relaxation is a FAITHFUL "
-        f"instrument, and what it faithfully reports is that the beta-bound of #7070 is itself too "
-        f"weak: its own maximum grows faster than n^(3/4) (R3), while the truth is somewhere in "
-        f"[sqrt n, n^(3/4)]. The lossy step is the Jensen inequality on the pair term — applied at "
-        f"the MEAN of each distance class, it under-counts badly for a shape whose beta-gaps are "
-        f"mostly 1 with a few large ones, which is exactly what the maximizer then selects "
-        f"(argmax W/l ~ 1.7 at every n).\n\n"
-        f"        The consequence for the next attempt is concrete: a better bound on the pair "
-        f"term can now be TESTED in polynomial time at n = 4000 without enumerating anything, on "
-        f"an instrument calibrated against the truth at n <= 40. Sharpening H further is not worth "
-        f"doing — there is under 1% left in it.",
+        "R4_the_clamp_is_free_and_valid_and_the_staircase_is_the_validity_check",
+        valid4,
+        f"clamping Hhat to H_min(n) is valid for every partition and costs nothing, and it is "
+        f"what the original probe should have had. It is NOT sufficient: divided by sqrt(n) the "
+        f"clamped maximum runs {mp.nstr(s4[0], 6)} -> {mp.nstr(s4[-1], 6)} over n = 40..4000.\n\n"
+        f"        **The check here is VALIDITY, not the rate**, and it is what found a SECOND "
+        f"defect in the original instrument. The staircase attains R = A*sqrt(2n) at zero energy, "
+        f"so any valid upper bound on M_n must sit above it: "
+        f"{', '.join(mp.nstr(st, 6) for st in stair)} at n = 40, 250, 1600, 4000. The first run "
+        f"of this repair reported 169.4 at n = 4000, BELOW the staircase floor "
+        f"{mp.nstr(stair[-1], 6)} — not a bound at all.\n\n"
+        f"        The cause is the early-break heuristic `if v < best - 50: break`, inherited "
+        f"from the original probe. The value is UNIMODAL in W — at n = 4000, l = 88 it runs "
+        f"57 -> 126 -> 260 -> 326 -> 362 -> 438 -> 507 before collapsing — so a break keyed on "
+        f"the GLOBAL best fires at W = 87 and abandons the row before its peak. (88, 174) alone "
+        f"gives 326.4, above the staircase floor, and the search never saw it. Keyed on each "
+        f"row's own best instead.\n\n"
+        f"        So the original #7081 numbers were unsound in TWO independent ways: Hhat fed "
+        f"the maximiser impossible energy (R3), and the search under-explored every row (here). "
+        f"They push in opposite directions, which is why neither showed up as an obvious "
+        f"absurdity — the reported figure was neither an upper nor a lower bound on anything.",
     )
 
-    # ---- R4: the verdict --------------------------------------------------------------------
-    settled = sqrt_flat < mp.mpf("0.15") and n34_falling
+    # ---- R5: INDEPENDENT check of #7185's row-tangent energy floor -------------------------
+    def kr_of(n):
+        k = 0
+        while (k + 1) * (k + 2) // 2 <= n:
+            k += 1
+        return k, n - k * (k + 1) // 2
+
+    # cross-check the identity the #7185 Lean leaves as its one honest gap
+    hplus_ok = all(H_min_closed(n) == (lambda kr: kr[0] * (kr[0] + 1) * (2 * kr[0] + 1) // 6
+                                       + kr[1] * (kr[0] + 1))(kr_of(n))
+                   for n in [10, 40, 100, 250, 625, 1600, 4000, 10000])
+
+    print()
+    print(f"  {'n':>6} {'row-tangent max':>16} {'/sqrt(n)':>10} {'/n^0.75':>10} {'argmax l':>9} "
+          f"{'k':>5}")
+    rows5 = []
+    for n in [40, 250, 1600, 4000, 10000, 40000]:
+        k, r = kr_of(n)
+        best, bl = None, None
+        for ell in range(1, k + 400):
+            gap = (ell - k) ** 2 - r                      # 2*(H - H^+) >= (l-k)^2 - r
+            e = max(mp.mpf(gap) / 2, mp.mpf(0)) * LNQ
+            v = (ell - 1) * C_CONST - e                   # R_lambda <= (l-1)*C
+            if best is None or v > best:
+                best, bl = v, ell
+        rows5.append({"n": n, "row_tangent_max": mp.nstr(best, 10), "argmax_ell": bl, "k": k,
+                      "over_sqrt_n": mp.nstr(best / mp.sqrt(n), 8),
+                      "over_n34": mp.nstr(best / (mp.mpf(n) ** mp.mpf("0.75")), 8)})
+        print(f"  {n:>6} {mp.nstr(best, 10):>16} {mp.nstr(best/mp.sqrt(n), 6):>10} "
+              f"{mp.nstr(best/(mp.mpf(n)**mp.mpf('0.75')), 6):>10} {bl:>9} {k:>5}", flush=True)
+    s5 = [mp.mpf(x["over_sqrt_n"]) for x in rows5]
+    u5 = [mp.mpf(x["over_n34"]) for x in rows5]
+    drift = [x["argmax_ell"] - x["k"] for x in rows5]
+    lo_band = C_CONST * mp.sqrt(2)                       # r = 0
+    coeff = (C_CONST + LNQ / 2) * mp.sqrt(2)             # r = k  — an ENVELOPE, not a limit
+    rich = 2 * s5[-1] - s5[-2]                           # s(n) = c + a/sqrt(n), n doubling twice
+    in_band = lo_band * mp.mpf("0.99") < rich < coeff * mp.mpf("1.01")
     check(
-        "R4_verdict_the_route_is_sound_and_the_current_bound_is_not_strong_enough",
-        not settled,
-        f"**The transfer this probe was built to attempt does not fire, and the reason is clean.** "
-        f"The plan was: the relaxed maximum is an upper bound on M_n (R1, R2), and "
-        f"REV_n <= M_n + log p(n) with log p(n) ~ 2.5651*sqrt(n), so a sqrt(n) rate for the "
-        f"relaxation would give REV_n = O(sqrt n) and settle that the 3/4 is NOT sharp. Measured, "
-        f"the sqrt(n) column is not flat ({mp.nstr(100 * sqrt_flat, 4)}% spread) and the n^(3/4) "
-        f"column RISES, so the relaxation's own growth exceeds n^(3/4) and nothing transfers.\n\n"
-        f"        What that is evidence ABOUT is the bound, not the truth. R6 shows the (l, W) "
-        f"relaxation is tight to under 1%, so this is the beta-bound of #7070 failing on its own, "
-        f"at the Jensen step — NOT a fact about REV_n, which stays in [Omega(sqrt n), "
-        f"O(n^(3/4))] exactly as before. Sharpness remains OPEN, and no claim is made in either "
-        f"direction.\n\n"
-        f"        Two things survive as usable. The reduction itself: maximizing any bound of the "
-        f"form B(l, W) now costs O(n^2) instead of p(n), so a replacement for the Jensen step is "
-        f"testable at n = 4000 against a calibrated instrument. And the negative is sharp — "
-        f"'the pair term needs a bound that survives gap sequences of mostly 1s with a few large "
-        f"jumps' is a far more specific target than 'a sharper bound on R_lambda'.\n\n"
-        f"        Anti-caveat, since the mirror-image mistake is on the record: this is NOT the "
-        f"#7065 situation. There the statistic could not discriminate because the range was below "
-        f"its resolving point. Here the reading is a clear RISE across two orders of magnitude in "
-        f"n, not a flat column being over-read, so the negative does not depend on where the "
-        f"control's peak sits.",
+        "R5_independent_check_the_row_tangent_floor_DOES_give_sqrt_n",
+        in_band and u5[-1] < u5[0] and max(drift) - min(drift) <= 1,
+        f"substituting #7185's row-indexed floor 2(H - H^+) >= (l-k)^2 - r for the Cauchy-Schwarz "
+        f"Hhat, in THIS probe's own maximiser and with no other change, the maximum divided by "
+        f"sqrt(n) falls {mp.nstr(s5[0], 6)} -> {mp.nstr(s5[-1], 6)} and Richardson on the last "
+        f"two (the correction is O(1/sqrt n)) gives {mp.nstr(rich, 7)}, while divided by "
+        f"n^(3/4) it falls {mp.nstr(u5[0], 6)} -> {mp.nstr(u5[-1], 6)}.\n\n"
+        f"        **The target is a BAND, not the single constant 8.80.** Maximising "
+        f"(l-1)C - ((l-k)^2 - r)L/2 exactly gives (k-1)C + C^2/(2L) + rL/2, so the ratio "
+        f"oscillates with r in [C*sqrt2, (C+L/2)*sqrt2] = "
+        f"[{mp.nstr(lo_band, 7)}, {mp.nstr(coeff, 7)}] — the 8.80 quoted on qou-hok7 is the "
+        f"r = k upper envelope, attained only when n sits just below a triangular number. "
+        f"Richardson lands inside that band. The argmax sits "
+        f"l - k = {drift[-1]} rows above the staircase at EVERY n, against the predicted "
+        f"C/L = {mp.nstr(C_CONST / LNQ, 7)}.\n\n"
+        f"        This is an INDEPENDENT confirmation of #7185 from the instrument whose broken "
+        f"version appeared to contradict it: same maximiser, same eps table, same entropy term, "
+        f"only the energy floor swapped. Also checked here, since #7185 names it as its one "
+        f"honest Lean gap: H^+ = P_k + r(k+1) equals H_min_closed(n) at all eight test n "
+        f"({'CONFIRMED' if hplus_ok else 'FAILED'}) — numerically, not proved.",
+    )
+
+    # ---- R6: corrected verdict ---------------------------------------------------------------
+    check(
+        "R6_corrected_verdict_the_loss_WAS_Hhat_and_my_refutation_of_that_was_the_error",
+        True,
+        f"The original R6 asserted 'the relaxation is tight, so the beta-bound itself is the weak "
+        f"step'. That is **withdrawn**. The loss was Hhat, which was this probe's FIRST "
+        f"hypothesis; the 99.3-100 % calibration that overturned it was measured at n <= 40, "
+        f"where l - k is small, and then applied at n = 4000, where Hhat is under half of "
+        f"H_min. The calibration was sound; extrapolating it was not.\n\n"
+        f"        What survives from the arc: R1 and R2 here; #7093's three refutations about "
+        f"P_min (brute-forced, independent of Hhat); and the measurement that the coupling factor "
+        f"shrinks with l. What is withdrawn: 'the (l, W) relaxation is faithful', 'the loss is "
+        f"the Jensen step', and the impact arithmetic in #7093/#7185's predecessor that was "
+        f"computed against this probe's inflated ~3x.\n\n"
+        f"        Sharpness is settled and this probe did not settle it: REV_n = Theta(sqrt n) "
+        f"(#7185). R5 reproduces that conclusion here from the corrected floor.",
     )
 
     n_ok = sum(1 for r in results if r["pass"])
