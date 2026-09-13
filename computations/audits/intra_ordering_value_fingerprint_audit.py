@@ -205,6 +205,90 @@ def scan_source(fps):
     return out
 
 
+#: Calls that COMPUTE a Markov trace from a braid word. A producer that makes
+#: one of these owns its numbers; a producer that makes none of them can only
+#: be carrying numbers it read.
+_COMPUTE_CALLS = {
+    "atom_braid_word_3A", "canonical_word_for",
+    "tr_M_via_wenzl_bridge_mpfr", "tr_M_via_wenzl_bridge", "tr_m_atom_zn",
+    "build_seminormal_matrices", "build_seminormal_matrices_mp",
+    "markov_trace_numerical", "markov_trace", "tr_M_canonical",
+    "chi_all_lambda_any", "chi_free_lr", "hecke_character_symbolic",
+}
+
+#: Calls that READ a committed artifact.
+_READ_CALLS = {"load", "loads", "read_text", "open", "glob", "iglob",
+               "load_witness", "tr_m_nucleon", "tr_m_proton", "tr_m_neutron"}
+
+
+def _called_names(tree) -> set[str]:
+    """Every name this module actually CALLS or imports.
+
+    AST, not substring — and the difference is load-bearing here exactly as it
+    was for the source scan. Eight of the candidate producers MENTION
+    `atom_braid_word_3A` in a docstring or comment while never calling it; a
+    grep would file them as computing their own traces, which is the opposite
+    of true.
+    """
+    import ast as _ast
+    out = set()
+    for n in _ast.walk(tree):
+        if isinstance(n, _ast.Call):
+            f = n.func
+            if isinstance(f, _ast.Name):
+                out.add(f.id)
+            elif isinstance(f, _ast.Attribute):
+                out.add(f.attr)
+        elif isinstance(n, (_ast.Import, _ast.ImportFrom)):
+            for a in n.names:
+                out.add(a.name.split(".")[-1])
+                if a.asname:
+                    out.add(a.asname)
+    return out
+
+
+def classify_producer(script_name: str):
+    """('computes'|'reflects'|'neither'|'unresolved', detail) for a witness's producer.
+
+    WHY THIS EXISTS (bean `qou-4383`, "the taxonomy needs a third category").
+    The bean's own analysis: many surviving candidates are neither stale
+    artifacts nor live source defects. `witness_value_copy_audit` scrapes
+    witnesses for copied values; `derivation_chain_validator` classifies every
+    witness it can find; several more are explicit C-vs-D comparisons holding
+    both frames on purpose. They carry grouped values BECAUSE THEIR INPUTS DO,
+    they resolve when the inputs resolve, and repairing them at the reflection
+    would be wrong. Counting them keeps the total from ever converging —
+    "an audit that reports the corpus will always mirror it".
+
+    The discriminator is what the producer can possibly know: a module that
+    never calls the trace machinery cannot have computed a |tr_M|, so any it
+    emits came from something it read. That is a fact about the code, not a
+    judgement about intent, which is why it can be mechanical.
+    """
+    import ast as _ast
+    hits = list(_COMPUTATIONS.rglob(script_name)) if script_name else []
+    if not hits:
+        return "unresolved", "no producer file found"
+    try:
+        tree = _ast.parse(hits[0].read_text(encoding="utf-8", errors="replace"))
+    except (OSError, SyntaxError):
+        return "unresolved", "producer unparseable"
+    called = _called_names(tree)
+    comp = sorted(called & _COMPUTE_CALLS)
+    if comp:
+        return "computes", "calls " + ", ".join(comp[:3])
+    if called & _READ_CALLS:
+        return "reflects", "reads artifacts; calls no trace machinery"
+    # MIXED BUCKET, and honest about it. Measured on the 10 that land here:
+    # some hardcode a grouped literal (path_b_defect_binding_probe,
+    # qbeta_chain_closed_form_probe — both independently flagged by this
+    # audit's SOURCE arm) and some compute inline without calling anything
+    # named above (vhat_per_crossing_chain builds Hoefsmit matrices and takes
+    # the trace by hand). Both own their value, so both are actionable; the
+    # bucket is not called "computes" because for the hardcoders that is false.
+    return "neither", "no trace call and no artifact read — hardcodes, or computes inline"
+
+
 def walk(o, path=""):
     if isinstance(o, dict):
         for k, v in o.items():
@@ -223,8 +307,16 @@ def main() -> int:
     print(f"Intra-ordering value fingerprint audit — {SIG_DIGITS} significant digits")
     print(f"  {len(fps)} fingerprints: {len(ATOMS)} atoms x {len(PINS)} pins x 2 orderings\n")
 
+    # This audit's OWN witness records its findings, and its findings contain
+    # the grouped values it found — so scanning it reports the report. Excluded
+    # for the same reason the source scan excludes this file: a detector that
+    # fires on its own output is noise, and it is exactly the "an audit that
+    # reports the corpus will always mirror it" trap this bean names. It
+    # appeared the moment the source arm started recording literals.
+    _self_witness = _HERE / (Path(__file__).stem + ".witness.json")
     files = sorted(p for p in _ROOT.rglob("*.witness.json")
-                   if "_deprecated" not in str(p) and ".git" not in str(p))
+                   if "_deprecated" not in str(p) and ".git" not in str(p)
+                   and p != _self_witness)
     grouped_hits: dict[str, list] = {}
     borro_hits: dict[str, list] = {}
 
@@ -247,14 +339,66 @@ def main() -> int:
         stem = Path(rel).name.replace(".witness.json", "")
         (deliberate if stem in DELIBERATE else candidates)[rel] = hits
 
+    # THIRD CATEGORY (bean qou-4383). Split the candidates by what their
+    # producer can possibly know. A reflection's grouped value came from its
+    # inputs and resolves when they do; counting it keeps the total from
+    # converging, because an audit that reports the corpus will always mirror
+    # it. Reported, never hidden — just not counted as actionable.
+    actionable, reflections, unresolved = {}, {}, {}
+    kinds = {}
+    for rel, hits in candidates.items():
+        try:
+            _d = json.loads((_ROOT / rel).read_text(encoding="utf-8", errors="replace"))
+            _sf = _d.get("scriptFile") or (_d.get("data") or {}).get("scriptFile")
+        except Exception:
+            _sf = None
+        kind, why = classify_producer(_sf) if _sf else ("unresolved", "witness names no scriptFile")
+        kinds[rel] = (kind, why, _sf)
+        if kind == "reflects":
+            reflections[rel] = hits
+        elif kind == "unresolved":
+            unresolved[rel] = hits
+        else:
+            actionable[rel] = hits
+
     print(f"=== GROUPED-era hits: {len(grouped_hits)} witness file(s) ===")
-    print(f"    {len(candidates)} candidate(s), {len(deliberate)} known-deliberate\n")
-    for rel, hits in sorted(candidates.items()):
-        print(f"  CANDIDATE {rel}")
+    print(f"    {len(candidates)} candidate(s), {len(deliberate)} known-deliberate")
+    # "ACTIONABLE" means the SITE OWNS ITS VALUE — it either computes the trace
+    # or hardcodes one — so the fix belongs there. It deliberately does NOT
+    # claim the producer computes: `neither` (calls no trace machinery and
+    # reads no artifact) is a mixed bucket, and both of its populations are
+    # actionable at the site.
+    #
+    #   * HARDCODERS. `path_b_defect_binding_probe` and
+    #     `qbeta_chain_closed_form_probe` land here, and the SOURCE arm of this
+    #     same audit independently flags both for carrying grouped literals —
+    #     two detectors agreeing from opposite directions.
+    #   * COMPUTERS BY AN UNLISTED IDIOM. `vhat_per_crossing_chain` builds
+    #     Hoefsmit matrices and takes the trace inline, so it computes without
+    #     calling anything in `_COMPUTE_CALLS`.
+    #
+    # Left merged rather than split further: the distinction changes WHY the
+    # site owns its value, not WHETHER it does, and a bucket named for a
+    # property it does not have is worse than a coarse one.
+    print(f"    of the candidates: {len(actionable)} ACTIONABLE (the site owns "
+          f"its value — computes or hardcodes it), {len(reflections)} downstream "
+          f"reflections, {len(unresolved)} unresolved\n")
+    for rel, hits in sorted(actionable.items()):
+        print(f"  CANDIDATE {rel}   [{kinds[rel][0]}: {kinds[rel][1]}]")
         for path, atom, pin in hits[:4]:
             print(f"      {atom} @ {pin}   {path}")
         if len(hits) > 4:
             print(f"      … and {len(hits) - 4} more field(s)")
+    if reflections:
+        print(f"\n  downstream reflections ({len(reflections)}) — carry grouped "
+              f"values because their INPUTS do; fix the inputs, not these:")
+        for rel in sorted(reflections):
+            print(f"      {rel}   ({kinds[rel][2]})")
+    if unresolved:
+        print(f"\n  unresolved ({len(unresolved)}) — no producer to classify; "
+              f"these need a scriptFile before they can be triaged:")
+        for rel in sorted(unresolved):
+            print(f"      {rel}   ({kinds[rel][1]})")
     if deliberate:
         print("\n  known-deliberate (grouped on purpose, not findings):")
         for rel in sorted(deliberate):
@@ -300,6 +444,12 @@ def main() -> int:
     wb.add_data("grouped_candidates", {k: [list(h) for h in v]
                                        for k, v in sorted(candidates.items())})
     wb.add_data("grouped_deliberate", sorted(deliberate))
+    wb.add_data("grouped_actionable", sorted(actionable))
+    wb.add_data("grouped_downstream_reflections", sorted(reflections))
+    wb.add_data("grouped_unresolved_producer", sorted(unresolved))
+    wb.add_data("producer_classification",
+                {k: {"kind": v[0], "why": v[1], "scriptFile": v[2]}
+                 for k, v in sorted(kinds.items())})
     wb.add_data("borromean_hits", sorted(borro_hits))
     wb.add_data("source_hardcoded_grouped",
                 {k: [list(h) for h in sorted(set(v))]

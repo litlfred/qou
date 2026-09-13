@@ -1,0 +1,106 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T12:45:36.298745+00:00",
+  "commitSha": "204f641df9c8a9c528657935ec972968d40015e3",
+  "assertions": [
+    {
+      "name": "reproduces_the_corpus_h3_trace_vector",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all six slots of pyhecke.gram's TR_M, symbolic in (h, z): ['1', 'z', 'z', 'z**2', 'z**2', 'h*z**2 + z']; mismatches: none"
+    },
+    {
+      "name": "trace_property_holds_on_h4_pairs",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr(xy) = tr(yx) on 6 pairs of H_4 basis elements, symbolic in (h, z). This is not an input to the recursion -- a coset-bookkeeping error would surface here. Failures: none"
+    },
+    {
+      "name": "markov_property_n4_against_n3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr_4(x * T_2) = z * tr_3(x) on all 6 H_3 basis elements, symbolic in (h, z). Failures: none"
+    },
+    {
+      "name": "four_strand_trace_set_is_larger_and_wider",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "n = 3: 9 traces in [0.18618696, 1.0]; n = 4: 511 traces in [0.11139758, 1.1374052] (k <= 8 vertices, z_D at the proton pin)"
+    },
+    {
+      "name": "four_strand_set_is_denser_so_a_residual_match_means_less",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "median gap between consecutive distinct traces: n = 3 0.032897756, n = 4 0.0025322918 -- a factor 12.9913 denser. Selection by residual was already forbidden at n = 3 (the difference grid straddled Q_beta with a 1.29 % spacing); at n = 4 it is not even tempting"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2576,
+  "computation": "qbeta-ocneanu-trace-general-n",
+  "scriptFile": "qbeta_ocneanu_trace_general_n_probe.py",
+  "scriptHash": "6371ab4612ad",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ocneanu_trace_general_n_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ocneanu_trace_general_n_probe.py"
+  },
+  "description": "A general-n Ocneanu/Markov trace built from tr(1)=1, tr(xy)=tr(yx) and the Markov property, via the S_{n-1}-coset decomposition. Validated three ways: it reproduces pyhecke.gram's hand-coded H_3 vector [1,z,z,z^2,z^2,z(hz+1)] symbolically, it satisfies the trace property on H_4 pairs, and it satisfies the Markov property at n=4 against n=3. Then measures the four-strand gamma-gamma trace set at z_D, proton pin, with n=3 as control. Scope-(a): NO four-strand Q_beta prediction is made -- E_0 and the element-to-observable map are H_3 constructions and the corpus does not define their n=4 analogue.",
+  "data": {
+    "h3_trace_vector_symbolic": [
+      "1",
+      "z",
+      "z",
+      "z**2",
+      "z**2",
+      "h*z**2 + z"
+    ],
+    "recursion": "w in S_{n-1} -> tr_{n-1}(T_w); else w = u*c_j with c_j = s_{n-2}...s_j, and tr_n(T_w) = z * tr_{n-1}(T_b * T_u) with b = s_{n-3}...s_j, by cyclicity + the Markov property",
+    "gamma_gamma_traces_n_3": {
+      "count": 9,
+      "min": "0.18618695976743407594",
+      "max": "1.0",
+      "median_gap": "0.032897755524660383027",
+      "k_max_vertices": 8
+    },
+    "gamma_gamma_traces_n_4": {
+      "count": 511,
+      "min": "0.11139757896922077993",
+      "max": "1.1374052091186774454",
+      "median_gap": "0.0025322918030141703764",
+      "k_max_vertices": 8
+    },
+    "scope": "a",
+    "what_this_does_not_do": [
+      "no four-strand Q_beta prediction -- E_0 and the element-to-observable map are H_3 constructions and the corpus does not define their n = 4 analogue",
+      "the n = 4 trace set is compared to ITSELF at n = 3, structurally, never against a measured value",
+      "growth beyond k = 8 vertices"
+    ],
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "z_convention": "D, z_D = q^3/(q^2+1)"
+  }
+}
