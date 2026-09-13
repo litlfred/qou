@@ -179,7 +179,19 @@ def main() -> int:
     w = {
         "schema": "witness/v1",
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "q0Anchor": "physical_proton",
+        # "proton", not "physical_proton". Those are two vocabularies for one
+        # concept and only one of them belongs in a witness FIELD.
+        # `physical_proton` is a MANIFEST CATEGORY -- q0_anchor_manifest.json
+        # has exactly three, `ideal_muon` / `physical_proton` / `ambiguous`,
+        # 914 stems under this one -- and WitnessBuilder.build() TRANSLATES it
+        # on the way out (qou_substrate/witness.py:459: "ideal_muon => muon,
+        # physical_proton => proton, ambiguous => ..."). This producer
+        # hand-rolls its witness dict and never enters build(), so it wrote the
+        # internal name straight into the field and skipped the translation.
+        # q0_anchor_consistency_audit then reads a label that maps to no pin
+        # and can make NO comparison -- it is not a flip, it is an unchecked
+        # witness, which is worse.
+        "q0Anchor": "proton",
         "q0AnchorReason": "seeded from Q_50_DIGIT_STR; the bond series are in eps = q - 1",
         "description": (
             "Takes over qou-qqm4's unanswered target from #7097 and computes rho_pp "

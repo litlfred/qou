@@ -205,3 +205,20 @@ prose number only against the field its own sentence names.
   Separately worth fixing whenever that probe is revisited: all four of its
   assertions carry `computed=None, expected=None, tolerance=None, source=None`,
   so the FAIL records nothing about *what* failed.
+
+## 10. `rho_pp_kind_weight_does_not_close_b3_probe.py` — RE-RUN ONLY, anchor label fixed 2026-09-13
+
+`q0Anchor` read `physical_proton`, which is a **manifest category**, not a
+witness-field token. `q0_anchor_manifest.json` has exactly three
+(`ideal_muon` / `physical_proton` / `ambiguous`) and `WitnessBuilder.build()`
+translates them out (`qou_substrate/witness.py:459`). This producer hand-rolls
+its witness dict, never enters `build()`, and so skipped the translation. Now
+`proton`. `q0_anchor_consistency_audit` was reporting it as a label that maps to
+no pin — which is not a flip but an **unchecked** witness, and worse.
+
+Also queued from the same reading, but **not fixed** (it is `qou-y98b`'s, a
+sibling's claimed bean, and a cluster rather than a defect):
+`qbeta_derived_w_overdetermined_test_probe.py` needs **no** source change — its
+source already says `q0_anchor="proton"` with the prose split into
+`q0_anchor_reason`; only its committed witness is stale at
+`'proton (experimental pin)'`. Re-run clears it.

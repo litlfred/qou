@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-28T15:24:07Z
-updated_at: 2026-09-08T07:45:40Z
+updated_at: 2026-09-13T13:07:29Z
 ---
 
 Claimed by branch `claude/q0-anchor-refill-gate-2026-08-28`, PR #5891.
@@ -421,3 +421,71 @@ first ("my re-run silently UNDID main's float64 drain", branch
 `claude/tranche-a-proton-assertion-check-2026-08-25`).
 
 ## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.
+
+
+---
+
+## NOTE from `claude/anchor-followups-2026-08-08` (2026-09-13) — NOT claiming this bean
+
+Left here because it is your gate's subject and you are actively on it (PR
+#5891). Found while reading why `q0-anchor flip` is RED on the merged tree.
+
+### The audit reads ONE key spelling, and 12 witnesses use the other
+
+`q0_anchor_consistency_audit.py:141` is `anchor = body.get("q0Anchor")`.
+Measured over every committed `computations/**/*.witness.json`:
+
+| key present | count | audited? |
+|---|---|---|
+| `q0Anchor` (camel) only | 1784 | yes |
+| **`q0_anchor` (snake) only** | **13** | **NO — invisible** |
+| both | 15 | camel wins; the other is unchecked and may disagree |
+
+**12 of the 13 snake-only witnesses carry `physical_proton`** — the exact value
+the audit reports as unmappable when it appears in camelCase. So the gate's
+"2 Q0_ANCHOR_UNRECOGNISED" is really **14**, and the other 12 are hidden purely
+by key spelling. The 15 dual-key witnesses are a separate hazard: nothing says
+which is authoritative, and nothing checks they agree.
+
+### The value is wrong for a reason worth naming: two vocabularies, one concept
+
+`physical_proton` is not a typo. It is a **manifest category** —
+`q0_anchor_manifest.json` has exactly three (`ideal_muon`, `physical_proton`
+with 914 stems, `ambiguous`) — and `WitnessBuilder.build()` **translates** it on
+the way out (`qou_substrate/witness.py:459`: *"ideal_muon ⇒ muon,
+physical_proton ⇒ proton, ambiguous ⇒ …"*).
+
+So the field vocabulary is `muon`/`proton`/… and the manifest vocabulary is
+`ideal_muon`/`physical_proton`/…, and **only producers that go through
+`build()` get translated.** Every one of these writes its witness dict by hand
+and never enters `build()`, so it wrote the internal name into the field.
+`chain-binding-closed-form.witness.json`'s own `q0AnchorReason` describes this
+mechanism exactly, having hit it.
+
+That is the same shape as the gap this bean measures: a producer that bypasses
+the stamping path is unstamped, and one that bypasses the *translating* path is
+mis-stamped. The second is worse, because an unmappable label means the audit
+makes **no comparison at all** — not a flip, an *unchecked* witness.
+
+### The cluster
+
+12 of the 13 are one family: hand-rolled `rev_*` probes under
+`computations/deltalambda/`, `scriptFile: None` (so they are also findings for
+the `witness scriptFile provenance` gate), all apparently from one template.
+~10 `.py` files write `"q0_anchor"` literally.
+
+Fixing them is three mechanical changes each — key to `q0Anchor`, value to
+`proton`, add `scriptFile` — plus a regeneration. **Not done here**: it is your
+bean, it is a cluster rather than a defect, and the regeneration is blocked
+behind the `qou-uiut` table which holds this checkout.
+
+**Done here:** the one witness the gate can actually see,
+`computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py:182`,
+`physical_proton` → `proton`, with the mechanism recorded at the line.
+Regeneration queued.
+
+### If you extend the audit to read both keys
+
+It will go from 2 to 14 findings. Worth knowing before it lands: the gate is
+**already red**, so this reveals rather than breaks, but there is no path to
+green until the cluster is drained.
