@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-09-13T06:58:51Z
+updated_at: 2026-09-13T07:16:40Z
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.
@@ -230,3 +230,63 @@ REMAINING 56:
         now the dominant blocker and the obvious next lever
      6  q-independent (genuine)
      2  Q_INV_MP   2  _TBL   2  HERE   2  Q   1  json
+
+FIFTH PASS 2026-09-13: 117 -> 128 of 173 (67.6% -> 74.0%). Bean's question is now
+substantially answered.
+
+*** A THIRD FIGURE OF MINE RETRACTED: the "27 blocked on function-scope
+binding" in the append above was mostly MY OWN DETECTOR NOISE. *** Measured by
+listing what those 27 actually block on, the free names were i, k, j, r, eta,
+f, hv, fmt, at_q0, _sub, trace_poly_closed, c3_target_at -- ordinary loop and
+comprehension variables, and the names of helper FUNCTIONS. My free-name
+detector collected only ast.Assign targets as local, so every comprehension
+target, for-target, walrus, nested def name, lambda arg and except-alias in the
+function read as an unresolved module global. "no top-level assignment" is now
+27 -> 7.
+
+That is the THIRD time in this bean that a number I published described my
+tooling rather than the corpus (the others: 29 "genuinely q0-pinned" -> 6; the
+Q_MP cluster "diagnosed as aliased imports" -> a self-tripping cycle guard).
+Every one was found the same way: LIST THE MEMBERS, do not reason about the
+bucket. I have now relearned this five times in one session.
+
+THE ONE REAL GAP among those 27, and it was worth the pass: TUPLE UNPACKING.
+      q, h = sp.symbols('q h', positive=True)
+      Q, H, TOL, WALL = (Q_MP, HA_MP, mp.mpf('1e-9'), 3)
+Both bind q at module scope; top_level_assignments took only ast.Name targets
+and skipped both. Now records each element as a SUBSCRIPT of the right-hand
+side, so resolve() evaluates RHS[i] with machinery it already had.
+
+TALLY NOW:
+   112  symmetric
+    10  classical
+     3  symmetric[n=2]
+     1  symmetric_in_sqrt_q   (correct + deliberate)
+     2  OTHER                 (not q-integers at all)
+    45  UNRESOLVED
+
+HONEST SPLIT OF 173:  128 classified / 6 genuinely q-independent / 39 dark
+STILL ZERO NEW CONVENTIONS across all 128 -- survived five passes while the
+measured population went 0 -> 128.
+
+THE 10 CLASSICAL, which is the actionable output for qou-gl58:
+   binding_weight_markov_pinning_probe.py::qint
+   gs_tower_jet_degree_body_order_probe.py::q_int
+   hecke/tw_gram_square_class_crosscheck.py::q_int
+   lever1_kernel_maj_involution_identification.py::qint_u
+   probes/c1_kernel_door_v_residual_probe.py::qint_geo        ) self-declaring:
+   probes/c1_kernel_level_reading_probe.py::qint_geo          ) "geo" IS the
+   probes/derivative_only_dq_vs_c1_kernel_probe.py::qint_geo  ) geometric sum
+   probes/ramified_shift_calculus_prune_probe.py::qint_geo    )
+   qbeta/qbessel_mu_lambda_vs_qlommel_zeros.py::q_int
+   substrate/lever1_qinvolution_kernel_test.py::qint_asym     <- "asym" declares it too
+So 5 of 10 SELF-DECLARE their convention in the function name (4x _geo, 1x
+_asym). The remaining 5 sit under the ambiguous names q_int / qint and need a
+per-file basis determination -- handed to qou-gl58, not guessed at here. Note
+tw_gram_square_class_crosscheck is a T_w/Iwahori-basis file, where audit sec 22
+established the classical bracket is CORRECT; that one is very likely fine.
+
+REMAINING 45: 7 no top-level assignment, 6 genuinely q-independent, 2
+Q_INV_MP, 2 not-evaluable TypeError, 2 q0, and a tail of data-file loads that
+are correctly opaque. Heterogeneous -- better left measured and characterised
+than chased with a sixth heuristic.
