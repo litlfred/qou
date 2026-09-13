@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-09-08T05:01:14Z
+updated_at: 2026-09-12T11:41:04Z
 ---
 
 
@@ -250,3 +250,100 @@ before hand-rolling an operator -- is unchanged and is now better founded: four
 tranches have each closed a way of hand-rolling one.
 
 Audit: `docs/audits/2026-09-08-w1-palindromic-involution-lifts-and-is-elliptic.md`.
+
+
+## Route 3's spectral-curve reading is closed (2026-09-12, `qou-ar4v`, PR #7208)
+
+The "honest next step" of this bean was: *import the q-difference D-module framework
+from the literature before attempting routes 1–2.* Done, from the sources this corpus
+holds (RSZ Astérisque 355 §2.1.1; DVRSZ §2.4–2.5).
+
+**The framework's input is a difference field `(K, σ)`, and a system is read modulo a
+TWISTED gauge** — DVRSZ eq. (2.4.1), `B = (σ_q F)⁻¹ A F`, **not** conjugation. That
+single fact decides the obvious instantiation:
+
+- `F = z^k·1` gives `A ↦ q^{-k}A`, and a scalar multiple **moves** the characteristic
+  cubic (`X^{3−k}` coefficient picks up `t^k`).
+- Stability of ANY monic cubic under `X ↦ tX` forces
+  `a₀(1−t³) = a₁t(1−t²) = a₂t²(1−t) = 0`; at any non-root-of-unity `t` — every real
+  `t > 1`, so every `q₀^{-k}` — all three non-leading coefficients **vanish**.
+- So **the only gauge-stable monic cubic is `X³ = 0`**, and Σ is not it: its `z = 0`
+  fibre is `X³+X²+X+1`.
+
+**Consequence for obstruction (ii) of this bean.** The bean states the geometric heart
+as *"a single-valued `D_q` on the jet bundle requires CHOOSING A BRANCH of the `z↦qz`
+correspondence on Σ."* Taken with #6769 and #7185 (no base automorphism preserving the
+branch locus has infinite order) and with this tranche (no fibre motion preserves the
+cubic), the honest restatement is stronger: **there is no branch to choose.** The
+difficulty is not selection, it is non-existence — for the reading in which Σ carries
+the structure.
+
+**What is still open, and it is now a sharper question than before.** Route 3 is NOT
+dead. A q-difference module over `(ℂ(z), σ_q)` is a perfectly good object, and this
+corpus already uses RSZ that way for scalar kernels
+(`docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md`). What has been removed is
+the reading everything upstream was pointing at. So the question this bean now carries
+is:
+
+> **If Σ is not the spectral curve of the q-difference module, what is it?**
+
+Candidates the framework itself offers, none tested: Newton polygon / slope data, the
+Birkhoff connection matrix, the bundle on the Tate curve `E_q = ℂ*/q^ℤ` (RSZ §6.3) —
+noting that Σ is itself genus 1 (#7114) with its elliptic involution identified
+(#7185), so a comparison of the two elliptic structures is available and has not been
+made. Treat any numerical coincidence between them as suspect until derived.
+
+**The bridge remains an assumption.** *"The sought `D_q` would have Σ as its spectral
+curve"* is what `λ_SW = X dz` sets up, but it is a hypothesis, carried as one in the
+Lean and the probe. A tranche that gives Σ a different role in the module is not
+obstructed by any of this. `D_q` is still NOT constructed.
+
+
+## The prose chain is now ONE link long (2026-09-12, `qou-6pib`, PR #7208)
+
+Every W1 tranche to date ended by naming a step it did not formalise. Three such steps
+are now proved; **one** remains, and it is the only genuinely geometric one.
+
+| step | was | now |
+|---|---|---|
+| a scaling preserving a finite nonzero set has finite order | prose (#6769, #7185) | `BranchLocusFiniteOrder.exists_pow_eq_one_of_stabilizes` — pigeonhole |
+| a Möbius map is determined by three points (`Stab(B) ↪ S₆`) | prose; #7185 said it "would need Möbius machinery Mathlib does not carry" | `MoebiusThreePointRigidity` — it needed none; cleared, it is a quadratic |
+| the gauge / spectral-curve dictionary (DVRSZ 2.4.1) | cited, not proved (#7208) | `QDifferenceGaugeMatrix` — `scalar_gauge_eq`, `det_charMatrix_smul`, `det_charMatrix_conj` |
+| **an automorphism of `Σ` permutes the branch locus** | **prose** | **still prose — the one remaining link** |
+
+Two of the three were blocked by their **formulation**, not their content. Clearing
+denominators turned the Möbius fixed-point condition into a quadratic (no chart at `∞`);
+clearing the inverse turned DVRSZ (2.4.1) into a hypothesis with no invertibility
+side-condition. Worth remembering the next time a Lean gap here is blamed on missing
+Mathlib machinery.
+
+## And the two existing W1 bricks have been joined (same PR)
+
+`QDiffProlongationBaseOperator` proves `D_q(zⁿ) = [n]_q·z^{n−1}`.
+`ColorCurveQIntegerForm` proves the colour cubic **is** a q-integer curve,
+`C_z(X) = [1]_z X³ + [2]_z X² + [3]_z X + [4]_z`, and asserts *in prose* that the q-shift
+"acts on each coefficient through the q-integer functional equations". Neither computed
+the composite. `QOU/Mass/QShiftColorCoefficientLadder.lean` does:
+
+  `[n+1]_{q·z} − [n+1]_z = (q−1)·z·∑_{k<n} [k+1]_q·z^k`
+
+so `D_q [n+1]_z = gradedZInt q z n`, against the classical `d/dz [n+1]_z = ∑ (k+1)z^k`:
+**the Jackson operator puts `[k+1]_q` exactly where the classical derivative puts `k+1`**,
+and they agree at `q = 1`. This is the mechanism by which `q` enters data that is itself
+q-free — the gap the 2026-06-25 z2bn audit named when it excluded the classical
+prolongation for precisely that reason.
+
+Consequence for the curve: `D_q C = g₁X² + g₂X + g₃` with `gᵢ = gradedZInt q z i` —
+the same shape as `C_z`, ladder index dropped by one, `[k]_z ↦ gradedZInt q z (k−1)`.
+**The operator preserves the q-integer-curve class.** A computation, not an assertion.
+
+**Branch-free by construction, which is the point.** Obstruction (ii) of this bean —
+*"requires choosing a branch of the `z↦qz` correspondence on Σ"* — does not arise,
+because the coefficients are symmetric functions of the sheets and hence single-valued in
+`z`. The prolongation is taken where the obstruction does not live.
+
+**Still not done, and not fudged:** this is not the jet-tower lift `Jⁿ E → Jⁿ⁺¹ E`,
+`λ_SW^{(n)}` is not constructed, no period `∮` is computed, and there is deliberately
+**no** comparison with the anchors `a_D^{(n)}` — those are functions of `q` alone while
+`D_q [n]_z` is a function of `z` and `q`, so matching them would be numerology, not a
+result. `D_q` is not constructed.

@@ -2772,6 +2772,81 @@ What row D still has, and it is the only live thread this leaves: `unified-itera
 Also, for `qou-eqwg`'s open item: there is no non-commutativity inside a generator (transfer matrices commute exactly); the within-generator non-multiplicativity is the two-branch state sum, exercised only when two interface letters share a generator, which the chain never does. Audit: `docs/audits/2026-09-12-graded-binding-sign-convention.md`.
 
 
+## 2026-09-12 (session stalled-agent-takeover) — class B's open "third bond family" is narrowed: the pn letter is an AVERAGE
+
+This bean excludes the two derived families at the VALUE level (production letters
+by `d <= 0`; isospin projectors by `mu_+ + mu_- = 1`) and records as open: *"a THIRD
+bond family that supplies the sign-mixed pattern by derivation"*.
+
+**The pn letter is not an independent third value — it is an AVERAGE, and an average
+is never an extremum.** The required pattern `mu_pn > 1 > mu_pp, mu_nn` makes `mu_pn`
+the strict MAXIMUM of the three. But `d_pn = (1/2 + delta/4) d_pp + (1/2 - delta/4) d_nn`
+with both weights strictly positive for `delta in (-2,2)`, and the interface law
+`mu = z + d` is affine, so `mu_pn` is a strict convex combination of `mu_pp` and
+`mu_nn` — strictly between them, for EVERY `q`, EVERY admissible `delta`, and every
+pair of like-pair offsets, whatever their values.
+
+**Consequence for the open item:** a third bond family cannot rescue the pattern by
+moving letters above 1. It must break the AVERAGING of the pn letter, or break
+AFFINENESS of the interface law. Those are the only two hypotheses used, and neither
+mentions a numerical value.
+
+Lean `QOU/MassTheory/PnBetweennessBlocksSignMixed.lean` (6 decls, sorry-free,
+lean-direct `-DautoImplicit=false -s 65536` exit 0, zero warnings, axioms
+propext/Classical.choice/Quot.sound only). Probe
+`computations/probes/pn_betweenness_blocks_sign_mixed_probe.py` 8/8, 70 dps, proton
+pin, convention D, no float64 — including a CONTROL row showing the pattern becomes
+satisfiable the moment `mu_pn` is unpinned from the average, which is what
+establishes that the hypothesis and not the values carries the exclusion. Audit
+`docs/audits/2026-09-12-pn-betweenness-blocks-sign-mixed.md`.
+
+Scope (b); invariant = strict convexity + affineness. NOT claimed: that no third
+family exists. Magnitude untouched. Composes with the existing
+`the_pn_bond_is_an_average_and_cannot_be_extremal_probe`, which established the
+ordering `L_pp < L_pn < L_nn`; this adds what it means for the `b_3 > 0` requirement
+specifically, which that probe predates.
+
+## 2026-09-12 — class D order-zero leg: the UIC per-block log measured (`qou-zlra`, PR #7230)
+
+Row D of the escape enumeration asked whether any corpus functional outside the
+product-additive class can carry the two-bond correlation a valley needs. #7223
+closed the additive class by theorem; the ONE functional outside it was
+`prop:unified-iterative-correction`'s per-block log, unmeasured because the
+production call exceeded 300 s per atom.
+
+Measured now, A = 3..8, every Z, k_exact = 4..9 (36 cells), proton pin,
+convention D, mpmath end to end.
+
+**It IS outside the additive class.** Third difference in Z nonzero in every
+cell, GATED AND UNGATED alike — so the non-additivity is the per-block log
+itself, not the Pass-2 selector. Mechanism proved sorry-free
+(`QOU/Mass/UICPerBlockLogPairTerm.lean`): a two-branch block trace has
+non-multiplicativity defect `wP*wM*(x-y)^2`, which under convention D is exactly
+`wP(q)` and is INDEPENDENT OF BOTH BOND OFFSETS.
+
+**Nothing comes through it.** No valley: argmax_Z does not track N=Z (it
+coincides in only 3 of 36 cells, never at more than one tier per A -- it is not
+true that it never lands there), sits at an endpoint in 15 of 36, and is not
+converged in k_exact. The functional also has the wrong SIGN and the wrong
+A-scaling before the Z-shape is reached. And the one FORCED fact points the wrong way — the
+all-pairs symmetry curvature `L_pp + L_nn - 2 L_pn = +0.0435` is positive
+(`symmetryCurvature_pos`, sorry-free, holds for every q > 1 given
+`deltaPN_nonneg`), so the additive part makes the symmetric nucleus the LEAST
+bound.
+
+`qou-brng` STAYS OPEN (rule 13a): the extensive-term coefficient/mechanism is
+untouched by this. What is closed is the order-zero leg of row D, and it closes
+for a DIFFERENT reason than the additive class — the additive class cannot carry
+a pair term at all, whereas this one can and does, but carries the wrong shape
+and the wrong sign.
+
+Note for whoever picks row D up: the UIC layout is the COMPLETE GRAPH
+(`_step_chain_generic` crosses each nucleon with every previous one), which
+`QOU.Mass.CoordinationSaturation.complete_graph_no_saturation` already refutes
+on saturation grounds. So even a valley found here would have sat on an excluded
+layout.
+
+
 ## 2026-09-12 — note from the UIC functional resolution (PR #7237, bean `qou-t6be`)
 
 Not a step on this bean's open problem; recorded because it changes what a reader

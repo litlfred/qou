@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-30T13:01:34Z
+updated_at: 2026-09-12T18:49:40Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -975,3 +975,41 @@ an atom-level builder for a per-nucleon one; and an assignment target for a
 use. The corrective in each case was to resolve to the actual object —
 re-measure, parse, read the signature, follow the import. Worth keeping as the
 method rather than as four separate embarrassments.
+
+
+
+## 🛑 CORRECTION 2026-09-12 (from PR #7212) — the net figures in this bean's tables are at q = 111/100
+
+Both tables in this bean quote the three nucleon-model nets as
+
+  build_nucleon_nf     ( 9 crossings)  -0.1883216147
+  build_atom_nf_exact  (11, interl.)   -0.2272041420
+  nucleon_gen_chains   (11, gen-grp)   -0.2332458961
+
+Every one of those matches **q = 111/100** to every digit quoted, and none
+matches the substrate proton pin:
+
+  model                                q=111/100        substrate proton
+  build_nucleon_nf     ( 9 crossings)  -0.18832161472   -0.18829060147
+  build_atom_nf_exact  (11, interl.)   -0.22720414203   -0.22715971177
+  nucleon_gen_chains   (11, gen-grp)   -0.23324589607   -0.23319771132
+
+q = 111/100 is `pyhecke.gram._H_FRAC`'s exactness device, **185 ppm** off the
+substrate — roughly 16000x the 11.54 ppb mu-p tension. Diagnosed 2026-09-04 in
+`docs/audits/2026-09-04-delta-net-canon-and-crossing-count-analysis.md` §(ii)
+and asserted in `qbeta_delta_candidate_census_probe`; the correction had not
+reached this bean.
+
+WHY IT MATTERS HERE SPECIFICALLY. This bean's second table gives CONSUMER
+COUNTS against these figures — 53 files for the gen-grouped model, "and they
+include canonical" ones. Those counts are about the MODEL, not about the
+figure, so they are unaffected; but any consumer that took the decimal from
+this bean rather than recomputing has a 185 ppm error. I have NOT measured how
+many did, and that is a distinct question from the 53.
+
+Cross-check that fixes the figures: the gen-grouped substrate value is the
+calibration constant `qbeta_option_e_order_dof_range_probe` (merged) asserts at
+1e-30, -0.23319771131565870204...
+
+NOT closing this bean; only recording the correction. Status left as the owning
+agent set it.

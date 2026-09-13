@@ -94,9 +94,25 @@ The three documented `z` are far worse still, and fail in two independent ways:
 
 - **Sign.** Φ₁ > 0 at convention C, convention D and `z = q` on every row from
   B upward; every recorded value is negative (He −5.559 … Ca −55.937).
-- **Growth.** Φ₁ is Θ(n²) — its per-pair density `Φ₁/C(n,2)` varies only 6.1×
-  across `n = 6..60`. The recorded column's density varies 12.4× and *falls*
-  monotonically (−0.371 at He → −0.032 at Ca), i.e. Θ(n).
+- **Growth.** Measured by log-log least squares over the table's own range
+  `n = 6..60`, the **effective exponents** are **0.911** for the recorded column
+  (essentially linear) and **2.704** for Φ₁ at `z_D` (faster than quadratic).
+  `z` cannot move an exponent: it enters each of the `n−1` terms as a bounded
+  factor, contributing `O(n)` in total.
+
+  > **🛑 Corrected 2026-09-12, same day.** This bullet first read *"Φ₁ is Θ(n²)
+  > — its per-pair density `Φ₁/C(n,2)` varies only 6.1× across `n = 6..60`. The
+  > recorded column's density varies 12.4× and falls monotonically (−0.371 at
+  > He → −0.032 at Ca), i.e. Θ(n)."* The `Θ(n²)` label is right **asymptotically**
+  > (`ln|P_i| ~ (n−i)·⟨ln|λ|⟩` summed over `i` is `~n²/2`), but the density
+  > figures offered as *evidence* for it show the opposite: a density that
+  > **rises** 6.1× is growing faster than `n²`, which the 2.704 confirms. The
+  > conclusion — incompatible growth — is unaffected and is if anything
+  > stronger; only the supporting argument was wrong. Over a finite range quote
+  > the effective exponent; reserve `Θ()` for the asymptotic argument. Measured
+  > in
+  > [`phi1_recorded_column_matches_no_reading_probe.py`](../../computations/probes/phi1_recorded_column_matches_no_reading_probe.py)
+  > (15/15), which also excludes every other reading of Φ₁.
 
 ## 4. What this relocates
 
