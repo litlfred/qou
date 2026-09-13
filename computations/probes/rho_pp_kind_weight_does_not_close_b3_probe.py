@@ -81,6 +81,7 @@ from __future__ import annotations
 
 import datetime
 import json
+import subprocess
 import sys
 from fractions import Fraction as F
 from pathlib import Path
@@ -110,6 +111,21 @@ def _f(x: F):
 
 def ev(coeffs: list[F], eps, K: int):
     return sum(_f(c) * eps ** i for i, c in enumerate(coeffs[: K + 1]))
+
+
+def _head_sha() -> str:
+    """Repo HEAD at emission time, as the provenance audit expects (40-char sha).
+
+    Returns the empty string when git is unavailable or this is not a checkout;
+    the audit reads a missing/blank value as missing, which is the honest state.
+    """
+    try:
+        return subprocess.run(
+            ["git", "-C", str(Path(__file__).resolve().parent), "rev-parse", "HEAD"],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return ""
 
 
 def main() -> int:
@@ -179,6 +195,12 @@ def main() -> int:
     w = {
         "schema": "witness/v1",
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        # Provenance triple required by computations/audits/witness_provenance_audit.py
+        # (REQUIRED_FIELDS = engine, scriptFile, commitSha). This probe hand-builds its
+        # witness rather than going through WitnessBuilder, so the triple is emitted here.
+        "engine": "mpmath",
+        "scriptFile": Path(__file__).name,
+        "commitSha": _head_sha(),
         "q0Anchor": "physical_proton",
         "q0AnchorReason": "seeded from Q_50_DIGIT_STR; the bond series are in eps = q - 1",
         "description": (
