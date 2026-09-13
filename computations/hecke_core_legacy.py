@@ -3203,7 +3203,10 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     _warn_if_kernel_absent()
     A = Z + N
     if A <= 1:
-        return 0.0
+        # mpf, not 0.0 (bean `qou-uiut`): the main return below is an mpf,
+        # and a function whose zero case is a different type than its normal
+        # case makes every caller's serialisation conditional on the value.
+        return _mp.mpf(0)
     B = unified_iterative_correction(Z, N)
     if sdp:
         sdp_contrib, _ = sdp_cross_channel_contribution(Z, N)
@@ -3229,8 +3232,27 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     # stops the ambient dps 15 undoing it.  So this cast is now the ONLY
     # narrowing on the path, and it costs whatever the accumulation carried,
     # which is measured in the hundreds of significand bits rather than 53.
-    # It stays because the public contract is a float (bean `qou-sv7h`).
-    return float(B)
+    # KEPT AS mpf SINCE THE 702-COMMIT MERGE OF 2026-09-13 (bean `qou-uiut`).
+    #
+    # The reasoning above is right, and its PREMISE stopped being true at that
+    # merge. It rests on "an mpf reaching a witness raises TypeError ... at
+    # `hadron_knot_table.py`'s `round(B, 4)`" — but the merged
+    # `hadron_knot_table.py` is this branch's, and it serialises
+    # `"B_MeV": fmt(B)`, which takes an mpf. So the cast no longer protects
+    # anything; by this comment's own measurement it only discards "hundreds
+    # of significand bits rather than 53", and it is the ONLY narrowing left
+    # on the path now that `_exact_log` and the `workdps` wrapper have fixed
+    # the others.
+    #
+    # MEASURED, which is how it was found: comparing the pre-merge 19/19 run
+    # against the re-run, every field of every atom is identical EXCEPT
+    # deuterium's `B_MeV` — old `-7.27110259868218217191550...`, new
+    # `-7.27110259868218`. The re-run was losing 35 digits that the old one
+    # carried, by way of a cast the merge reinstated.
+    #
+    # The other live consumer, `probes/uic_binding_a_series_kernel_live_probe`,
+    # does `fmt(mp.mpf(str(B)))` and is correct for either type.
+    return B
 
 
 def q_value_beta(Z_parent, N_parent):
