@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T12:24:17Z
-updated_at: 2026-09-13T11:26:42Z
+updated_at: 2026-09-13T14:36:53Z
 ---
 
 ALGEBRA SETTLED (2026-09-07, PR #7077, issue #7076). s^2+s-1 has root set {1/phi, -phi}; q=s^2 gives {(3-sqrt5)/2, (3+sqrt5)/2} = {phi^-2, phi^2}, exactly reciprocal. Quartic 4s^4-s^3-4s^2+s+4 has NO real roots (all four complex), so that is the whole real locus. s -> -1/s is the UNIQUE lift of q -> 1/q preserving it (s -> 1/s maps the quadratic to s^2-s-1, a different polynomial). Source formula in descartes-elliptic-curve.md carries q^(3/2) and sqrt(q), so r depends on s not q; its 'expressible directly in q' claim is false. NOT closing this bean: whether s = -sqrt(q) is PHYSICALLY admissible is an open question about the framework, not settled by the algebra (AGENTS.md 13a).
@@ -92,3 +92,95 @@ Artifacts: `computations/barparity/colour_curve_bar_vs_branch_probe.py`
 Note `zOf_barLift` needs NO `s != 0` hypothesis — in a field `0^-1 = 0`, so
 the bar-invariance of z is unconditional, and carrying a hypothesis the proof
 does not use would have suggested otherwise.
+
+
+--------
+
+## 2026-09-13 (later) — CORRECTION to the append above: the BAR HAS TWO LIFTS to sqrt(q), and the append picked one without saying so
+
+PR #7313 (commit aa6e877569), Lean QOU/BringsSurface/BarLiftAmbiguity.lean
+(11 decls, sorry-free), probe
+computations/barparity/bar_lift_ambiguity_probe.py (rc 0).
+
+THE APPEND ABOVE IS MINE, FROM EARLIER TODAY, AND IT OVERSTATED TWO THINGS.
+Both are conditional on a convention the corpus has never ruled on.
+
+### The collision, read off two existing definitions
+
+    QOU/Braiding/SkeinNormalisation.lean:74           sJ  (u) := u - u^-1
+    QOU/BringsSurface/ColourCurveBarVsBranch.lean:45  zOf (s) := s - s^-1
+
+BYTE-IDENTICAL. One is the half-power skein normalisation's bar-ODD
+generator; the other is this bean's spacetime modulus z. Neither arc cites
+the other.
+
+The two arcs then lift the bar q -> q^-1 to the square root DIFFERENTLY, and
+BOTH lifts are legitimate -- each squares to q^-1:
+
+    SkeinNormalisation (sJ_bar_antiinvariant)    u ->  u^-1
+    ColourCurveBarVsBranch (barLift)             u -> -u^-1
+
+and they differ by EXACTLY the branch swap u -> -u. So "WHICH LIFT" and this
+bean's "IS THE NEGATIVE BRANCH OBSERVABLE" are ONE question, not two.
+
+### The same object, opposite parity
+
+    under u ->  u^-1 :  z -> -z    bar-ODD
+    under u -> -u^-1 :  z ->  z    bar-EVEN
+
+THE BAR PARITY OF z IS NOT DETERMINED BY THE BAR ON q (Lean:
+z_parity_not_determined). Fixing it requires choosing a lift.
+
+### What that corrects
+
+  1. "The name bar_defect is a MISNOMER; it is a BRANCH defect."
+     CONDITIONAL. True under barLift. Under the skein lift the bar ITSELF
+     negates z, the defect is a bar defect, and the original name was right.
+  2. Consequence 3, offered as "a second, INDEPENDENT route to qou-fi93's
+     exclusion" -- "the colour curve has no bar-odd part to couple TO."
+     ALSO CONDITIONAL. Under the skein lift it HAS one.
+
+  qou-fi93's PRIMARY route is UNAFFECTED: its survey showing every counting
+  measure is bar-even never passes through the square root. What is weakened
+  is the second route only, and the second route was mine.
+
+### Measured
+
+The colour curve's defect is EXACTLY 0 under barLift and 10 z (4z^2+3) under
+the skein lift -- the same formula both beans call the bar defect. At the
+proton pin, 60 dps: 7.87846669404 % in qou-fi93's (sum) normalisation,
+15.7569333881 % in the mean normalisation, ratio asserted exactly 2 so the
+two cannot be read as disagreeing.
+
+### Why barLift was chosen, and what that choice actually buys
+
+This bean selects s -> -s^-1 as "the UNIQUE lift of q -> 1/q preserving the
+degeneration locus s^2 + s - 1". THAT UNIQUENESS IS CORRECT -- and it is
+uniqueness SUBJECT TO PRESERVING THAT POLYNOMIAL, not uniqueness among lifts
+of the bar. The skein lift is an equally valid lift preserving something else
+(its own parity grading). Two defensible conventions and no ruling between
+them.
+
+### THE DECISION THIS PUTS IN FRONT OF THE OWNER, and it is this bean's own
+
+The standing ruling is "not sure. don't exclude but maybe not observable."
+What is new is that the choice is NOT FREE. Naming the lift decides whether
+the colour curve has bar-odd content at all, and therefore whether the second
+route to qou-fi93's exclusion exists:
+
+  * choose u -> -u^-1 (barLift, the current ColourCurveBarVsBranch
+    convention): z is bar-EVEN, r is exactly bar-invariant, the 7.878 % is a
+    BRANCH defect, and qou-fi93's exclusion gains a second independent route.
+    The negative branch is then the thing that carries the asymmetry, so
+    "maybe not observable" would make the 7.878 % unobservable too.
+  * choose u -> u^-1 (the skein convention): z is bar-ODD, it IS the
+    half-power ring's bar-odd generator, the 7.878 % is a BAR defect after
+    all, and the colour curve has bar-odd content that a matter/antimatter
+    asymmetry could in principle couple to. The second route to qou-fi93's
+    exclusion then does not exist (the primary one still does).
+
+NEITHER ARTIFACT CHOOSES, and neither should. Recorded so that whoever rules
+knows the price.
+
+This bean stays OPEN (sec 13a) -- the observability question is untouched and
+now has a measured consequence attached to it.

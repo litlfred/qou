@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T12:53:38Z
-updated_at: 2026-09-13T14:28:23Z
+updated_at: 2026-09-13T14:36:54Z
 ---
 
 ANSWERED 2026-09-07 (audit sec 17), bean kept OPEN per 13a. The 7.878% colour-curve asymmetry CANNOT reach a number density by any route the framework currently defines. Every counting object is bar-even, exactly: [n]_q = (q^n-q^-n)/(q-q^-1) negates numerator and denominator under q->1/q, so it is exactly bar-even; d_q(lambda) is a ratio of products of [n]_q via the q-hook-length formula, hence bar-even (measured worst 1.378e-40 at dps 40 over n=3,4); the Plancherel measure d_q^2/D^2 inherits it (3.444e-41, sum mu = 1.0); and sum_lambda y_lambda is bar-even to 40 digits (sec 14.1). The asymmetry lives in the colour GEOMETRY; the counting lives in bar-even measures; they do not couple. Scope (b), invariant = bar-evenness of the q-integers. CONSTRUCTIVE consequence: baryogenesis in QOU needs a counting measure NOT built from q-integers — a new structural object, not a tuning — which rules out re-weighting y_lambda, re-normalising mu, or picking a different partition measure. Also corrects sec 10.1's caveat: the 7.878% is not eight orders FROM eta, it is DISCONNECTED from eta; a magnitude gap invites a search for a suppression factor and there is no channel to suppress. RESIDUAL (why this stays open): no OTHER route is excluded — a constructed coupling between the colour geometry and a density is not ruled out.
@@ -264,3 +264,32 @@ typical), and bar parity CANNOT DETECT the difference -- the cofactor
 between the two normalisations is bar-EVEN, which is exactly why the split
 survived undetected (that audit's own sec "Why the split survived
 undetected").
+
+
+### 2026-09-13 (later still) — the SECOND ROUTE to this bean's exclusion is CONDITIONAL; the PRIMARY route is not
+
+See qou-ndt5's correction of the same date (PR #7313, commit aa6e877569).
+
+The append above cites qou-ndt5's consequence 3 as "a second, independent
+route to qou-fi93's exclusion" -- the colour curve being exactly
+bar-invariant, hence having no bar-odd part for a matter/antimatter asymmetry
+to couple to. That holds only under ONE of the two lifts of the bar to
+sqrt(q) that the corpus uses, and the corpus has never ruled between them:
+
+    SkeinNormalisation.lean:74 / sJ_bar_antiinvariant    u ->  u^-1   z bar-ODD
+    ColourCurveBarVsBranch.lean:49 / barLift             u -> -u^-1   z bar-EVEN
+
+Same object (sJ and zOf are byte-identical definitions), opposite parity,
+both lifts squaring to q^-1 and differing by exactly the branch swap. Under
+the skein lift the colour curve DOES have bar-odd content and the second
+route does not exist.
+
+THIS BEAN'S PRIMARY ROUTE IS UNAFFECTED. The survey establishing that every
+counting measure the framework defines is exactly bar-even -- [n]_q,
+d_q(lambda), d_q^2/D^2, sum y_lambda -- never passes through the square root,
+so the scope-(b) exclusion stands on it alone, as it did before the second
+route was offered.
+
+Noting it here because the second route was recorded in THIS bean's arc as
+strengthening the exclusion, and a reader taking both routes as independent
+would over-count the evidence by one.
