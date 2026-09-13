@@ -50,6 +50,42 @@ A=1 value had moved, something other than the intended change would have.
 **Walls under the pre-merge kernel, for comparison when these land:**
 deuterium 278.8 s, tritium 928.4 s, he3 926.9 s.
 
+### ⚠ `B_MeV` ROUGHLY DOUBLES IN THE NEW TABLE. That is CORRECT and OWNER-RULED.
+
+Measured on the first six atoms of the restart, against the pre-merge
+checkpoint (`3f2e6574102`):
+
+| atom | `tr_M` | `B_MeV` pre | `B_MeV` post | ratio |
+|---|---|---|---|---|
+| proton / neutron / protium | **identical** | 0.0 | 0.0 | — |
+| deuterium | **identical** | −7.27110259868 | **−15.81419578544** | 2.1749 |
+| tritium | **identical** | −7.74212739951 | **−16.11146582226** | 2.0810 |
+| he3 | **identical** | −7.45619979733 | **−16.03835259525** | 2.1510 |
+
+**`tr_M` is bit-identical at every atom**, so this is not `oiz3` moving the
+trace. It is `156f03f53b0`, "drop the UIC Pass-2 sign gate — honesty, NOT
+accuracy". `unified_iterative_correction` used to admit a Wedderburn block only
+when `final_tr_sign <= 0`; the owner ruled on 2026-09-12 to drop that, after
+the justification was refuted **sorry-free** in
+`QOU.MassTheory.UICGateNotFromComplementarySlackness` on four independent
+mismatches. It now returns the ungated sum, so more blocks are admitted and the
+magnitude grows. The ratio is **not constant** (2.0810 / 2.1510 / 2.1749),
+which is the signature of more blocks rather than a rescale.
+
+**Do not read this as a regression, and do not try to recover the old numbers.**
+The landing commit is explicit: *"THE NUMBERS GET WORSE, AND THE DROP IS STILL
+RIGHT"* — both old and new have the wrong sign against AME2020's +2.2246 MeV for
+²H, and the new one is further away. What it buys is that the producer reports
+what its functional actually gives instead of a subset chosen by a rule nobody
+can derive. Its closing instruction: *"Do not reinstate the gate and do not hunt
+a replacement selection that restores the old numbers; that is selection against
+the target."*
+
+The old gated value is still emitted, renamed
+`gated_total_MeV` → `gated_total_DISPROVED_SELECTION_MeV`, because a neutral
+name on a disproved selection is what let it be read as the answer.
+
+
 ## 2. `qou-3uvs` — re-confirm, and the SIZE ARGUMENT NOW NEEDS RE-DERIVING
 
 The si28 / ca40 / fe56 Frobenius verdicts (all FAIL) came from the old kernel
