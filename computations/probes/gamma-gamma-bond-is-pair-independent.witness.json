@@ -1,9 +1,9 @@
 {
  "schema": "witness/v1",
- "computedAt": "2026-09-13T12:03:05.694323+00:00",
+ "computedAt": "2026-09-13T14:13:19.224683+00:00",
  "engine": "mpmath",
  "scriptFile": "gamma_gamma_bond_is_pair_independent_probe.py",
- "commitSha": "48738c5bffd9a5bc2f5321835984bf4cae9808a6",
+ "commitSha": "a100f6722bf6e03bee9de5da7c2d67968f9c8f04",
  "q0Anchor": "physical_proton",
  "q0AnchorReason": "seeded from Q_50_DIGIT_STR; convention D (z = q^3/(q^2+1))",
  "description": "Measures whether the gamma-gamma-selected bond G^3 = (sigma_2 sigma_3^-1)^3 gives a PAIR-DEPENDENT bond factor, and evaluates the Lean-proved chain sign condition b3 = -((f01-1)(f12-1)) on both A=3 chains. Decides Option 1 of qou-brng at the qou-ales / qou-q8vl junction: a pair-INDEPENDENT bond word gives three equal bond factors and can never be sign-mixed. Nothing is tuned; the bond word is fixed by the owner's 2026-09-08 ruling.",
@@ -31,6 +31,11 @@
   "G3": "0.000446561138279064020870551523395"
  },
  "gamma_gamma_pair_dependent": true,
+ "order_dependence_by_block_dim": {
+  "one_dim_total_abs_y_dchi": "8.97080516841315100596097039356e-62",
+  "multi_dim_total_abs_y_dchi": "0.00172902373584473397730994076018",
+  "reading": "the pn/np gap is carried ENTIRELY by the >=2-dim blocks; the 1-dim blocks are order-blind, which reconciles this probe with qou-99qc/#7295's altChar order-blindness result"
+ },
  "one_sidedness": {
   "pair_symmetry_gap_mu_pn_minus_mu_np": "0.000446561138279064020870551523395",
   "second_nucleon_rule_worst_gap": "1.55575381946528542678601601345e-61",
@@ -105,6 +110,14 @@
   },
   {
    "name": "EVERY pair type exceeds 1 under G^3, so no chain gets exactly one bond above 1 and b3 < 0 on both atoms",
+   "passed": true
+  },
+  {
+   "name": "CROSS-ARC CONSISTENCY (qou-99qc / #7295): the 1-dimensional blocks contribute NOTHING to the pn/np gap -- a 1-dim rep is a product of scalars and is order-blind, so their order-blindness and this probe's order-DEPENDENCE are not in conflict",
+   "passed": true
+  },
+  {
+   "name": "the whole pn/np gap is carried by the >=2-dimensional blocks",
    "passed": true
   },
   {
