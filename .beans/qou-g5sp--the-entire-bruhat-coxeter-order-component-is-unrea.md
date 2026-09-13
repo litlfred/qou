@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-13T10:05:00Z
+updated_at: 2026-09-13T11:40:00Z
 ---
 
 ## The finding
@@ -459,3 +459,82 @@ six are **unverified, not passing**.
 
 Full write-up:
 `docs/audits/2026-09-13-every-library-module-compiles-zero-defects.md`.
+
+
+## 🛑 THE CENTRAL PREMISE OF THIS BEAN IS FALSE. `lake build QOU` DOES build these modules
+
+Every "NOT in the root" claim above -- lines 35, 98-114, 140, 202-208, 272 -- says
+or implies that **`lake build QOU` does not compile the modules outside
+`QOU.lean`'s import closure**. It does. The paper lakefile declares the library
+with an explicit glob:
+
+    [[lean_lib]]
+    name = "QOU"
+    srcDir = "."
+    # WIDEN THE BUILD TO THE WHOLE TREE (bean qou-rc7b).
+    globs = ["QOU", "QOU.+"]
+
+A Lake library with no explicit `globs` defaults to `roots.map Glob.one` and
+builds only its root plus that root's transitive imports -- which is the state
+this bean describes. **That state ended on 2026-08-08**, a month before this bean
+was opened, when `qou-rc7b` (status `done`, *"BUILD COVERAGE: `lake build` reaches
+only 853 of 1618 QOU Lean modules -- 47% never compiled"*) added the glob. It is on
+`origin/main` today.
+
+So `lake build QOU` compiles **all 2836**, not a third of them. Corroborated
+independently by the background build's own log, which reports
+`[6459/6460] QOU.Eightfold.ObstructionClassForcesComplexType` -- a job count only
+a whole-tree build reaches.
+
+### What the numbers actually are
+
+Measured today by walking `import` lines from `QOU.lean` transitively:
+
+    library modules                 2836
+    reachable from QOU.lean         1451   (51.2%)
+    OUTSIDE the import closure      1385   (48.8%)
+    direct imports listed in QOU.lean  911
+
+**The `67% (1845/2735, 1853/2752)` figure asserted twice above is not
+reproducible** and is withdrawn. Today's measure is 48.8%, and `qou-rc7b`
+independently measured 47% in August on a smaller tree -- consistent with each
+other and not with 67%. I do not know how the 67% was produced; what is certain is
+that it is not the import-closure ratio it is labelled as.
+
+### The distinction the whole bean was missing
+
+**Import closure ≠ build coverage.** Those 1385 modules are outside `QOU.lean`'s
+import graph and *inside* `lake build QOU`. Both facts are true and this bean
+treated the first as implying the second.
+
+### So what IS the real gap?
+
+Not build coverage -- **nothing runs that build automatically.** CI auto-triggers
+are disabled repo-wide (`build.yml` is `workflow_dispatch`-only, owner directive
+2026-06-30, Actions billing). A breaking change therefore lands and nothing
+notices until an agent runs the build or a sweep by hand. That is how
+`BruhatRankCriterion` went red on `main` (`qou-1u90`, #7185) -- **not** because
+the module was unreachable.
+
+That reframes the fix and **removes the decision I was about to put to the
+owner**. I had named "reach them from the root, or make the sweep the gate" as an
+owner call, three times, in this bean, in #7272 and in chat. The first half is
+already done and has been for a month. The second half is a CI-trigger question
+the owner has already ruled on twice, most recently 2026-08-09 *with this exact
+failure cost on the table*, and AGENTS.md says not to re-propose it without a new
+reason. I do not have one. **Withdrawn -- there is nothing here for the owner to
+decide.**
+
+### One thing a sibling should know
+
+`BruhatRankCriterion.lean:606-610` on `main` carries, in the fix for `qou-1u90`:
+
+    -- That commit ported its callers across ten files and missed this
+    -- one, because this module is not in `QOU.lean`'s import closure, so
+    -- `lake build QOU` never compiles it.
+
+The first clause is right and the second is wrong, for the reason above. Flagged
+rather than edited: it is a sibling's file and the correction is theirs to make.
+
+**None of this touches the sizing result.** 2821 ok / 0 RED stands, and it is now
+*more* interesting rather than less: those modules were being built all along.
