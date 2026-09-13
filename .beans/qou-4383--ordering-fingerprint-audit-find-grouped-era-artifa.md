@@ -729,3 +729,67 @@ bean), so re-running each producer stamps it and moves it into a real bucket.
 Do **not** re-run producers in bulk without the 0-byte diff the 2026-09-08
 coordination note asks for — 252 producers still carry the truncating
 open-with-import template.
+
+## 2026-09-13 — the re-run pass, done safely. 27 actionable → 21.
+
+`9238d6e25aa`. First sweep run against the new taxonomy, so "actionable" was a
+real target list rather than the whole corpus.
+
+### Truncation handled by PRE-classification, not damage control
+
+This bean's 2026-09-08 coordination note says 252 producers carry an import
+inside a truncating `with open(…, "w")`, and advises diffing for 0-byte outputs
+*before committing*. That finds the damage. **AST-classifying the producers
+first finds the risk:**
+
+    24 distinct producers behind the 27 actionable witnesses
+      23 SAFE
+       1 UNSAFE — computations/cross_check_trM_cw_seminormal_leg.py L220
+
+Only the safe set was run. The unsafe one is left for `qou-oyde`, which
+repaired the identical template in `qbeta_chain_closed_form_probe`. Recommend
+this pre-check become the standard opening move for any future sweep here — it
+is one AST walk and it turns "hope nothing breaks" into a list.
+
+### Result
+
+    19 clean exits · 2 skipped as known-slow · 1 timeout at 600 s
+
+    grouped-era witness files   46 → 40
+    ACTIONABLE                  27 → 21
+    downstream reflections      16 → 16
+
+The reflections holding steady is the taxonomy working, not a failure: they
+resolve when their **inputs** do, and 21 of those inputs are still open. Two
+already demonstrated it earlier today — `graded-hecke-energy-probe` and
+`skein-proton-canonical` went green the moment `canonical_trm_reference` served
+canonical values, neither being touched.
+
+### Every substantive move was grouped → canonical, checked
+
+Five witnesses moved beyond provenance fields. The largest is
+`sweeps/paper-six-term-isotope-sweep.witness.json`, whose `term1_canonical_tr_M`
+rows go
+
+    proton    1.14575969245730086968…  →  0.62932840220292191816…
+    neutron   0.98774368811580957163…  →  0.47513351715568221250…
+    deuteron  0.57517224391777187082…  →  0.15196833920423160759…
+
+That is a **paper-facing** table, so this moves published numbers — in the
+direction the ruling requires, from an artifact that was stale against it.
+
+### A third slow producer
+
+`markov/markov_peel_atomic_witness.py` times out at 600 s. That makes three
+with `atomic_tr_m_helium4` and `binding_combiner_markov_peel_fallback`. Worth
+connecting to `qou-bimg`: the sparse route is ~87× faster than the dense one on
+the identical H₉ sweep, so this cluster has a candidate remedy rather than
+merely a budget problem.
+
+### Where the 21 stand
+
+Of the 21, four are the documented hardcoded sites (`path_b`, three qbeta),
+which are owner calls rather than re-runs; two are the known-slow skips; one is
+the unsafe-template producer. So roughly **14 are ordinary re-run or read
+work**, and the next pass should expect the reflections to start falling as
+those land.
