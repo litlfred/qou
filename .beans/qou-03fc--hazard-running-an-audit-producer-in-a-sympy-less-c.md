@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-16T12:39:42Z
-updated_at: 2026-08-16T13:58:07Z
+updated_at: 2026-09-05T09:48:00Z
 ---
 
 Found while running `scripts/precision-gates.sh --changed` as the pre-commit
@@ -123,3 +123,75 @@ short-circuit it is anchoring the witness half — `^computations/.*\.witness\.j
 — so that audit-probe outputs under `docs/` stop triggering a corpus-wide gate
 run. That is a papercut, not the bug I described, and it is arguably correct as
 written if the intent is to catch witnesses wherever they live.
+
+
+---
+
+## 2026-09-05 — recommendation 1 CONFIRMED on a live instance, and it is one of the two witnesses this bean already names. STILL OPEN.
+
+Not a closure: the fix is not made. This is the evidence that says it should be.
+
+### The hazard is realised on `main`, not hypothetical
+
+Measured over the 40 witnesses with ≥2 commits inside the last 400 commits
+touching `computations/`:
+
+    regenerations that DROPPED an environment key : 1
+    regenerations that GAINED one                 : 2
+
+The one drop is **`computations/q0-anchor-consistency-audit.witness.json` at
+`c415d81fe7a`, which lost `clarabel`** — a q0 audit witness, i.e. the same
+family this bean was opened on, losing a different key by the same mechanism.
+So the class is not sympy-specific and not a one-off.
+
+### The corpus-wide shape
+
+Over the 3573 tracked witnesses on `origin/main`, **2254 carry an
+`environment` dict** and their key sets are strikingly heterogeneous:
+
+    1313  clarabel, mpmath, numpy, pyhecke_native, pyhecke_native_build, scipy, sympy
+     198  mpmath, numpy, pyhecke_native, scipy, sympy
+     148  mpmath, numpy, scipy, sympy
+     114  mpmath, numpy, sympy
+      96  clarabel, mpmath, numpy, pyhecke_native, scipy, sympy
+      92  mpmath, sympy
+      ...
+
+Under the current contract (`capture_environment`: *"missing packages are
+simply omitted"*, `witness.py:643-655`) **a short key set is unreadable**: it
+could mean the package was absent, or that the producer predates the key. The
+absence carries no information, which is the defect.
+
+**🛑 I cannot separate those two causes from the record, and my first attempt
+to was wrong.** `git log -S` on each package name returns `b831ff34c3d` for all
+six, which reads as "the list was unified in one commit" — but that is a
+**merge** commit and `git show b831ff34c3d^:…` finds no `for pkg in` line at
+all, so the `-S` result is not evidence about when the list grew. Do not repeat
+the "list-growth confound is ruled out" claim; it is not.
+
+What *is* measurable and does not depend on that: **7 witnesses written on or
+after 2026-08-29 carry `sympy` but not `numpy`**, three of them dated
+2026-09-04 — `mu-p-cyclotomic-ladder-magnitude`, `mu-p-habiro-basis-order`,
+`mu-p-sigma235-ohtsuki-resolution`, all carrying `pyhecke_native` and
+`pyhecke_native_build` (so a well-provisioned container in that respect) with
+no numpy and no scipy. Those ran somewhere numpy was not installed, and nothing
+in the record says so.
+
+### What this does NOT settle — the decision is the owner's
+
+Recommendation 1 is *"make the producer refuse, or write `"sympy":
+"unavailable"` rather than drop the key"*. The second half is a **one-function
+change at `capture_environment`** — the single point every witness's
+`environment` block passes through — but its blast radius is **2254 witnesses**:
+each gains up to 6 `"unavailable"` keys on its next regeneration, and a witness
+regenerated in a lean container would then differ from a full-container one in a
+newly-recorded way. That is the intended behaviour, and it is also a contract
+change on every witness in the corpus.
+
+The **refuse** half should not be taken: a bare container is the default here
+(`mpmath`/`numpy`/`scipy` are routinely absent on a fresh clone), so a producer
+that refuses on a missing package would brick compute in exactly the
+environments the owner declined to block on 2026-08-25.
+
+Recommendation 2 (refresh the two genuinely-stale q0 witnesses from a
+sympy-having container) is unchanged and independent of the above.

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-07T13:41:17Z
-updated_at: 2026-09-13T05:55:52Z
+updated_at: 2026-09-13T06:01:26Z
 ---
 
 RESOLVED AS A DIFFERENT PROBLEM 2026-09-07 (audit sec 21). It is NOT gratuitous duplication — it is a CONVENTION SPLIT. Symbolic AST audit (computations/audits/q_integer_duplication_audit.py, compares in a sympy symbol q, never at q0): 366 definitions in 363 files; 179 q0-pinned (1 arg), 187 q-parametric; 158 symbolically comparable, 208 not. FOUR distinct forms: 126 SYMMETRIC (q^n-q^-n)/(q-q^-1); 30 CLASSICAL/Gaussian (q^n-1)/(q-1); 1 sqrt-normalised; 1 symmetric-in-q^2. Bridge identity, verified n=2,3,5,7 and Lean-proved at n=2,3: [n]_symm(q) = q^(1-n) [n]_clas(q^2). ROOT CAUSE: the canonical q_int(n) in qou_substrate/constants.py takes n ONLY, with Q/Q_INV/HA as module globals, so it is q0-pinned and cannot serve any q-parametric caller — which is why 366 local copies exist. Lean: QOU/Substrate/QIntegerConventions.lean, 8 theorems, lean-direct exit 0, 0 sorry, axioms {propext, Classical.choice, Quot.sound}.
@@ -24,4 +24,4 @@ The RESIDUAL is deliberately not held here — it is three separate questions, e
 
 No open conjecture in this bean's own scope — it is a measurement question and it has been measured — so AGENTS.md 13a does not gate closing it. One confirmed defect was found and fixed on the way out (qou-263a, term7_chi5_basis).
 
-CORRECTION 2026-09-13 (qou-9nn0): the 'FOUR distinct forms' recorded above is wrong -- there are TWO conventions, 128 symmetric / 30 classical / ZERO outliers. The '1 sqrt-normalised' and '1 symmetric-in-q^2' entries were the symmetric bracket spelled in a square-root variable; verified symbolically at n=2,3,5,7. The CONVENTION SPLIT finding this bean records is unaffected -- symmetric vs classical is real and is the point. Only the outlier count was wrong, and it was wrong because the audit compared representations without substituting each variable's definition (detector-blindness row 17-21). Full account in qou-9nn0.
+CORRECTION 2026-09-13 (qou-9nn0): the 'FOUR distinct forms' recorded above is wrong -- there are TWO conventions, 128 symmetric / 30 classical / ZERO outliers. The '1 sqrt-normalised' and '1 symmetric-in-q^2' entries were the symmetric bracket spelled in a square-root variable; verified symbolically at n=2,3,5,7. The CONVENTION SPLIT this bean records is unaffected -- symmetric vs classical is real and is the point. Only the outlier count was wrong, because the audit compared representations without substituting each variable's definition (detector-blindness rows 17-21). Full account in qou-9nn0 and audit sec 25.
