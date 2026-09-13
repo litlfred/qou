@@ -178,6 +178,119 @@ muon anchor is $\mathfrak{m}_\mu = \mathfrak{m}_e \cdot
 backed, at $4_1$, by a proved equality rather than a conjectural
 limit.
 
+## What $\mathrm{st}$ discards: the $\omega$-grade of the remainder
+
+The sections above are thorough about what $\mathrm{st}$ *is* and say
+nothing about what it *throws away*. For $4_1$ the discarded quantity can
+be named exactly, and it is not a benign tail.
+
+Following the surreal-equality bookkeeping of the
+[blow-up calculus](#def:surreal-blowup-calculus), write the pre-standard-part
+argument as $\mathrm{Vol}(4_1) + \delta$, i.e.
+
+$$
+  \delta_N \;:=\;
+   \frac{2\pi}{N}\,\log \langle 4_1 \rangle_N \;-\; \mathrm{Vol}(4_1),
+$$
+
+with $\langle 4_1 \rangle_N$ the Kashaev invariant, so that the discharge
+of the previous section is the statement $\mathrm{st}(\delta) = 0$ at
+$N = \omega$. Here $\delta$ is the blow-up calculus's remainder symbol; it
+is unrelated to the alien derivative $\Delta_\omega$ of
+[Écalle--Borel resummation](#def:ecalle-borel-resummation) and to the
+per-partition binding weight $\Delta_\lambda$, both of which carry the
+capital.
+
+### The grade, derived
+
+The corpus derives the sub-leading shape of the Kashaev invariant at $4_1$
+from the saddle point, rather than importing it: at the one-variable saddle
+$\theta^\ast = 5\pi/6$ the Stirling factor is $2\sin\theta^\ast = 1$ and
+the Hessian is $|\cot\theta^\ast| = \sqrt{3}$, giving
+
+$$
+  \langle 4_1 \rangle_N \;\sim\; 3^{-1/4}\,N^{3/2}\,
+   e^{\,N\,\mathrm{Vol}(4_1)/2\pi}
+$$
+
+with both $3^{-1/4}$ and the power $3/2$ derived
+([1-loop prefactor provenance](#prop:one-loop-prefactor-provenance),
+Lean `c_pow_four_eq_third`). Taking logarithms term by term gives the two
+leading terms of the remainder:
+
+$$
+  \delta_N \;=\; \frac{3\pi \log N}{N}
+   \;-\; \frac{\pi \log 3}{2N} \;+\; r_N ,
+$$
+
+since $(2\pi/N)\cdot\tfrac{3}{2}\log N = 3\pi \log N / N$ and
+$(2\pi/N)\cdot(-\tfrac{1}{4}\log 3) = -\pi \log 3 / (2N)$. **The two
+named terms are derived; the order of $r_N$ is not.** A relative
+correction $1 + O(1/N)$ in the asymptotic above would give
+$r_N = O(1/N^2)$, and check 1 of the probe below measures exactly
+that — the residual after subtracting the two terms falls by a factor
+$0.4928, 0.4966, 0.4983, 0.4992, 0.4996$ on successive doublings, against
+$1/2$ for a clean $1/N$ relative tail. That rate is measured here, not
+derived; the proposition cited above states the leading asymptotic and
+records the step from its two machine-checked analytic inputs to the saddle
+hypotheses as still assumed.
+
+At $N = \omega$ the leading monomial of $\delta$ is therefore
+$(\log \omega)/\omega$, which in the Berarducci--Mantova hierarchy
+\cite{berarducci-mantova2018} sits **strictly between grade $-1$ and
+grade $0$**: it exceeds $c/\omega$ for every real $c$, and is exceeded by
+$\omega^{-1+\varepsilon}$ for every real $\varepsilon > 0$. Two statements
+follow, and both are load-bearing:
+
+1. $\mathrm{ord}_\omega(\delta) = -1$ in the **coarse** grading. The
+   remainder is a first-order infinitesimal, so $\mathrm{st}(\delta) = 0$
+   and the figure-eight discharge above is correct as stated.
+2. $\delta$ is **not** a grade-$(-1)$ monomial: $\omega \cdot \delta$ is
+   **infinite**. A grade-$(-1)$ monomial $c/\omega$ would give the finite
+   $\omega \cdot (c/\omega) = c$.
+
+Quoting only the first — "the remainder is a first-order
+infinitesimal" — is true and misleading. It is the second that records that the
+underlying convergence is logarithmically slow.
+
+### Three consequences, derived before measurement
+
+Each consequence below was written down from the expansion above, and only
+then compared against this corpus's own Kashaev sum at
+$N = 50, 100, 200, 400, 800, 1600$ (exact `mpmath` at 50 dps, with
+$\mathrm{Vol}(4_1)$ computed as $2\,\mathrm{Cl}_2(\pi/3)$ rather than read
+from a float literal).
+
+| | derived | measured |
+|---|---|---|
+| **C1.** $N\delta_N/\log N \to 3\pi$ from below, with offset $-(\pi \log 3)/(2 \log N)$ | $9.1908728$ at $N = 1600$ | $9.1911680$; the gap falls $0.0183 \to 0.000295$ across the ladder, halving on each doubling |
+| **C2.** $N \delta_N \to \infty$ | diverges | $35.22 \to 67.81$, monotone, with no sign of settling |
+| **C3.** a $1/N$ Richardson step on the Kashaev limit leaves $N(R_N - \mathrm{Vol}(4_1)) \to 3\pi \log 2$ | $6.53275827$ | $6.53058$ at $N = 800$ |
+
+C2 is the measured form of statement 2 above. C3 is its operational
+consequence: anyone extrapolating the Kashaev limit on a $1/N$ grid is
+fitting a mis-specified ansatz, and the residual they will see is
+$3\pi \log(2)/N$.
+
+### What this prices
+
+The algebra-versus-analysis table above assigns
+the whole analytic burden of the surreal form to a single application of
+$\mathrm{st}$, on the ground that the pre-$\mathrm{st}$ side is exact
+rational arithmetic in $\mathbf{No}$. That accounting is unchanged, but
+the second row is not free: the object $\mathrm{st}$ is applied to differs
+from $\mathrm{Vol}(4_1)$ by a quantity whose $\omega$-multiple *diverges*,
+so the reduction is not the truncation of a convergent tail. The surreal
+form relocates the analysis into $\mathrm{st}$ faithfully; it does not
+make it small.
+
+**Scope.** This is an asymptotic statement about $4_1$ alone, resting on a
+cited expansion that is not re-derived here. What is established is that
+this corpus's own computed Kashaev sum reproduces that expansion, and that
+the three consequences hold. It does not bear on the volume conjecture for
+any other knot, does not alter $\mathrm{st}$, and does not weaken the
+figure-eight discharge.
+
 ## Connection to QOU
 
 This paper uses the Kashaev volume conjecture as a *cross-
