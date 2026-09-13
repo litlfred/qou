@@ -1,11 +1,11 @@
 ---
 # qou-zfs6
 title: 'Discriminating observable for route 2: Mobius invariance / FHW bound / minimiser as Lean gates'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-13T11:56:17Z
-updated_at: 2026-09-13T15:00:58Z
+updated_at: 2026-09-13T15:54:25Z
 ---
 
 ## LANDED: Mobius invariance IS the discriminator, and it FORCES the kernel
@@ -168,3 +168,54 @@ proved from the invariance hypothesis, not from these citations. The
 realisable-triples question `qou-zfs6` stays open on is also untouched: this
 document quantifies over actual space curves, so it says nothing about whether
 the characterisation survives on realisable distance triples only.
+
+
+## 🟩 THE OPEN SUB-ITEM IS CLOSED (2026-09-13, same day it was raised)
+
+Section 8 of QOU/MobiusMutualChannel.lean. File now 34 declarations, ALL
+[propext, Classical.choice, Quot.sound], 0 sorryAx, exit 0 zero warnings.
+
+  realisable_forces_inverse_square : MobiusInvariantOnRealisable f -> 0 < x ->
+                                     f x = f 1 / x ^ 2
+
+So the restricted hypothesis -- invariance quantified ONLY over triples
+satisfying the triangle inequalities, i.e. those three points of R^3 can
+actually realise -- gives the SAME conclusion on all of (0, inf). Nothing in
+section 7 depended on triples the geometry cannot present.
+
+## WHAT I GOT WRONG THIS MORNING, and it was a search failure not a math one
+
+I looked for a single WITNESS FAMILY and found that (1, 1/d, 1) needs d >= 1/2
+while da = db = 1/sqrt(d) covers only d <= 4, concluded neither covers (0, inf),
+and recorded the question as open. The realisable hypothesis is a TWO-PARAMETER
+family and that is enough room to bootstrap:
+
+  isosceles configuration da = db = t, chord c. Of the three triangle
+  inequalities only c <= 2t binds (t <= c + t is free), and invariance reads
+
+      f (c / t^2) = t^4 * f c        whenever 0 < c, 0 < t, c <= 2t.
+
+  x <= 4 : c = 1, t = 1/sqrt(x). Realisable exactly when sqrt(x) <= 2.
+  x > 4  : c = t = 1/x. Realisable since 1/x <= 2/x, and c/t^2 = x. Now
+           c = 1/x < 1/4, so the first case applies to f(c) and substituting
+           closes it.
+
+Checked numerically at x = 0.01, 0.5, 1, 3.9, 4, 4.1, 10, 1000 before
+formalising -- every one realisable with the argument landing exactly on x.
+
+## SECTION 7's CAVEAT IS UPDATED, NOT LEFT TO ROT
+
+That docstring said the question was "open ... the one loose end of this
+section". Left alone it would have contradicted section 8 three sections below
+-- the stale-heading defect AGENTS.md documents. It now records the gap as
+RESOLVED and points at realisable_forces_inverse_square, and the instruction
+"do not cite this as forced by geometry" is replaced with the accurate one.
+
+## BEAN COMPLETED — and what that does NOT mean
+
+This bean asked for a DISCRIMINATING OBSERVABLE for route 2. Section 7 delivered
+it and section 8 removed its only caveat, so the bean's own subject is done.
+
+It does NOT mean route 2 is validated. That is qou-o6ml and stays open. Nor does
+it touch qou-bn8e (the Hadamard residue / contact_is_markov) or qou-dux3 (no
+link version of the FHW crossing bound).

@@ -193,6 +193,127 @@ theorem disjoint_not_imp_uniformSeparation (m : M) :
   rw [hexp] at hbound
   linarith
 
+
+/-! ## 8. The realisable-triples restriction — §7's open sub-item, CLOSED
+
+§7 proved that Möbius invariance forces `f d = f 1 / d ^ 2`, and its docstring
+flags one honest gap: `MobiusInvariantKernel` quantifies over **unconstrained**
+positive triples `(d, da, db)`, while a geometrically realisable triple is three
+distances among three points of `ℝ³` and must satisfy the triangle
+inequalities. The witness §7 uses, `(1, 1/d, 1)`, needs `d ≥ 1/2`; the natural
+alternative `da = db = 1/√d` covers only `d ≤ 4`. Neither family reaches all of
+`(0, ∞)`, so §7 left open whether the characterisation survives the restriction.
+
+**It does.** The mistake in §7's framing was looking for a *single* witness
+family. The realisable hypothesis is a **two-parameter** family, and that is
+enough room to bootstrap.
+
+Take the isosceles configuration `da = db = t` with chord `c`. Of the three
+triangle inequalities only `c ≤ 2t` binds — `t ≤ c + t` holds for free — and
+invariance reads
+
+    f (c / t²) = t⁴ · f c        whenever  0 < c,  0 < t,  c ≤ 2t.
+
+That is `isoscelesStep`, and the rest is two applications of it:
+
+* **`x ≤ 4`:** take `c = 1`, `t = 1/√x`. Realisable exactly when `√x ≤ 2`, i.e.
+  `x ≤ 4`, which is the hypothesis; the argument lands on `c/t² = x`.
+* **`x > 4`:** take `c = 1/x`, `t = 1/x`. Realisable because `1/x ≤ 2/x`, and
+  again `c/t² = x`. Now `c = 1/x < 1/4`, so the first case applies to `f c`, and
+  substituting gives the result.
+
+So the restricted hypothesis is **not** weaker in its consequence, and §7's
+result may now be cited without the caveat. Bean `qou-zfs6`.
+
+**What this does not do.** It does not make the triples *geometric*: `Realisable`
+is the triangle-inequality predicate on three reals, which is exactly the
+condition for three points of `ℝ³` to realise them, but no points are
+constructed here. And it says nothing about the FHW crossing bound or the mutual
+channel's magnitude — it is purely about the kernel's functional form.
+-/
+
+/-- **Geometric realisability of a distance triple.** `(d, da, db)` are the
+    pairwise distances of three points of `ℝ³` — the chord `d` between the two
+    curve points, and their distances `da`, `db` to the inversion centre — iff
+    they are positive and satisfy the three triangle inequalities. -/
+def Realisable (d da db : ℝ) : Prop :=
+  0 < d ∧ 0 < da ∧ 0 < db ∧ d ≤ da + db ∧ da ≤ d + db ∧ db ≤ d + da
+
+/-- **Möbius invariance restricted to realisable triples** — the honest
+    hypothesis §7 wished it had. Strictly weaker than `MobiusInvariantKernel`,
+    which quantifies over all positive triples. -/
+def MobiusInvariantOnRealisable (f : ℝ → ℝ) : Prop :=
+  ∀ d da db : ℝ, Realisable d da db →
+    f (d / (da * db)) * (1 / da ^ 2) * (1 / db ^ 2) = f d
+
+/-- **The isosceles step.** With the inversion centre equidistant from both
+    curve points (`da = db = t`), only `c ≤ 2t` binds, and invariance becomes a
+    clean scaling law. This is the two-parameter freedom §7's single-witness
+    search missed. -/
+theorem isoscelesStep {f : ℝ → ℝ} (h : MobiusInvariantOnRealisable f)
+    {c t : ℝ} (hc : 0 < c) (ht : 0 < t) (hle : c ≤ 2 * t) :
+    f (c / t ^ 2) = t ^ 4 * f c := by
+  have hr : Realisable c t t :=
+    ⟨hc, ht, ht, by linarith, by linarith, by linarith⟩
+  have key := h c t t hr
+  rw [show t * t = t ^ 2 by ring] at key
+  have ht2 : (t : ℝ) ^ 2 ≠ 0 := by positivity
+  field_simp at key
+  linarith [key]
+
+/-- Step one: the characterisation on `(0, 4]`, from `c = 1` and `t = 1/√x`. -/
+theorem realisable_inverse_square_of_le_four
+    {f : ℝ → ℝ} (h : MobiusInvariantOnRealisable f)
+    {x : ℝ} (hx : 0 < x) (hx4 : x ≤ 4) :
+    f x = f 1 / x ^ 2 := by
+  set s := Real.sqrt x with hs
+  have hs0 : 0 < s := Real.sqrt_pos.mpr hx
+  have hsx : s ^ 2 = x := Real.sq_sqrt hx.le
+  have hs2 : s ≤ 2 := by
+    have : Real.sqrt x ≤ Real.sqrt 4 := Real.sqrt_le_sqrt hx4
+    rwa [show Real.sqrt 4 = 2 by
+      rw [show (4:ℝ) = 2 ^ 2 by norm_num, Real.sqrt_sq (by norm_num : (0:ℝ) ≤ 2)]] at this
+  have ht : (0:ℝ) < 1 / s := by positivity
+  have hle : (1:ℝ) ≤ 2 * (1 / s) := by
+    have hinv : s * (1 / s) = 1 := by field_simp
+    nlinarith [hinv, hs2, ht, hs0]
+  have hstep := isoscelesStep h (by norm_num : (0:ℝ) < 1) ht hle
+  have harg : (1:ℝ) / (1 / s) ^ 2 = x := by
+    field_simp; linarith [hsx]
+  rw [harg] at hstep
+  rw [hstep]
+  have : (1 / s) ^ 4 = 1 / x ^ 2 := by
+    have : s ^ 4 = x ^ 2 := by nlinarith [hsx]
+    field_simp; linarith [this]
+  rw [this]; ring
+
+/-- **§7's open sub-item, closed: the restricted hypothesis still forces the
+    inverse square, on all of `(0, ∞)`.**
+
+    So `mobiusInvariant_forces_inverse_square` may be cited without its
+    realisability caveat: no conclusion of §7 depended on triples the geometry
+    cannot present. -/
+theorem realisable_forces_inverse_square
+    {f : ℝ → ℝ} (h : MobiusInvariantOnRealisable f)
+    {x : ℝ} (hx : 0 < x) :
+    f x = f 1 / x ^ 2 := by
+  rcases le_or_gt x 4 with hx4 | hx4
+  · exact realisable_inverse_square_of_le_four h hx hx4
+  · -- `c = t = 1/x`: realisable since `1/x ≤ 2/x`, and `c / t ^ 2 = x`.
+    have hxpos : (0:ℝ) < 1 / x := by positivity
+    have hle : (1:ℝ) / x ≤ 2 * (1 / x) := by linarith [hxpos]
+    have hstep := isoscelesStep h hxpos hxpos hle
+    have harg : (1:ℝ) / x / (1 / x) ^ 2 = x := by field_simp
+    rw [harg] at hstep
+    -- `1/x < 1/4 ≤ 4`, so step one applies to `f (1/x)`
+    have hsmall : (1:ℝ) / x ≤ 4 := by
+      have hx0 : (0:ℝ) < x := by linarith
+      have : (1:ℝ) / x ≤ 1 := by rw [div_le_one hx0]; linarith
+      linarith
+    have hinner := realisable_inverse_square_of_le_four h hxpos hsmall
+    rw [hstep, hinner]
+    field_simp
+
 end MobiusMutualChannel
 
 /-! ## §3  The integral — the Mathlib payoff
@@ -609,13 +730,19 @@ def MobiusInvariantKernel (f : ℝ → ℝ) : Prop :=
     triples the geometry never presents.
 
     Taking `da = db = 1/√d` instead is realisable for `d ≤ 4` and fails past it,
-    so neither single witness family covers `(0, ∞)`. Whether the
-    characterisation survives when the hypothesis is restricted to realisable
-    triples is **open** and is the one loose end of this section — it is not
-    closed by rephrasing, since the restricted hypothesis is genuinely weaker.
-    Do not cite this theorem as "the exponent is forced by geometry"; it is
-    forced by invariance over all positive triples, which is a stronger
-    assumption. Bean `qou-zfs6`. -/
+    so neither single *witness family* covers `(0, ∞)`.
+
+    **🟩 RESOLVED in §8 below — this caveat is retained as the record of the gap,
+    not as a live one.** The restricted hypothesis gives the same conclusion:
+    `realisable_forces_inverse_square` proves `f x = f 1 / x ^ 2` on all of
+    `(0, ∞)` from `MobiusInvariantOnRealisable` alone. The gap was in the search,
+    not in the mathematics — looking for ONE witness family missed that the
+    realisable hypothesis is a two-parameter family, and the isosceles
+    configuration `da = db = t` bootstraps from `(0, 4]` to everything.
+
+    So this theorem MAY now be cited as forced by invariance over geometrically
+    realisable triples; cite `realisable_forces_inverse_square` when that is the
+    hypothesis you have. Bean `qou-zfs6`. -/
 theorem mobiusInvariant_forces_inverse_square
     {f : ℝ → ℝ} (hf : MobiusInvariantKernel f) {d : ℝ} (hd : 0 < d) :
     f d = f 1 / d ^ 2 := by
