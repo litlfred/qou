@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T11:55:00Z
+updated_at: 2026-09-13T12:40:00Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -925,4 +925,75 @@ orbit producer hardcodes class 1 in three places, so adapting is a small edit if
 
 Bound the word length at which the character is determined, using the spanning fact -- that
 is what would turn the corroboration into a proof for class 1.
+
+
+---
+
+## UPDATE 2026-09-13f — (C) is PROVED for class 1.  The word-length bound is ONE.
+
+Pass 13e ended with the honest gap *"all `w` versus the 4686 tested"* and named the route
+to closing it as a word-length bound from the invariant theory of 3x3 matrices
+(Procesi/Razmyslov degree `n^2`, Teranishi's sharper 6 for two generic matrices).  **That
+route was not taken, because the bound is 1** and a sweep was never the right instrument.
+
+### Why the bound is 1
+
+Set `rho_1(w) = sigma_b(rho(w))` and `rho_2(w) = lambda(w) rho(w)^{-T}`.  **Both are
+HOMOMORPHISMS**: transpose-inverse is an anti-anti-automorphism, so
+`(rho(v)rho(w))^{-T} = rho(v)^{-T} rho(w)^{-T}`, and `lambda` is multiplicative (measured
+in 13e).  So a single `A` with `A rho_1(g) A^{-1} = rho_2(g)` on the three GENERATORS makes
+`w -> A rho_1(w) A^{-1}` and `w -> rho_2(w)` two homomorphisms agreeing on a generating
+set -- hence **equal on every word**.  Not corroborated: equal.  No characters, no absolute
+irreducibility, no trace algebra, no word length.
+
+### The solve, and the result
+
+`A rho_1(g) = lambda(g) rho(g)^{-T} A` is LINEAR in the nine entries of `A`; each
+`K`-element is four rationals, so 36 unknowns and 108 rational equations over three
+generators, nullspace exact over `Q`
+(`computations/ptolemy/ptolemy_duality_sigma_intertwiner.py`).
+
+    id       nullspace dim 0    no intertwiner
+    tau      nullspace dim 0    no intertwiner
+    sigma_a  nullspace dim 0    no intertwiner
+    sigma_b  nullspace dim 4    INVERTIBLE INTERTWINER FOUND
+
+**PROVED, for L6a4 obstruction class 1 over `K`: `sigma_b(rho)` and `rho^{-T}` are
+conjugate in `PGL(3,K)`.**  `lambda` is `mu_3`-valued on every generator, and `mu_3`
+scalars are TRIVIAL in `PGL(3)`, so the twist is invisible there -- the statement is
+exactly *"duality induces the `sigma_b` transport on this representation"*.
+
+### Four checks the solve had to pass
+
+- **Controls at dim 0.**  `id`, `tau`, `sigma_a` admit **no nonzero solution at all** --
+  stronger than "no invertible one".  `id` failing is independently required: a solution
+  there would mean `rho` is SELF-DUAL, contradicting the recorded COMPLEX TYPE verdict.
+- **Schur.**  `dim_Q = 4 = [K:Q]`, i.e. `dim_K = 1`: the intertwiner is unique up to a
+  `K`-scalar, exactly as Schur forces for an absolutely irreducible `rho`.  A LARGER
+  dimension would have meant the system was under-constrained -- a tripwire, not a remark.
+- **Relators 2/2.**  The intertwining holds on both relators, so it descends to `pi_1`
+  rather than living only on the free group.
+- **Longer words 8/8**, including words with inverse letters.  These MUST hold
+  automatically if multiplicativity is applied correctly.
+
+### Lean
+
+`QOU/Eightfold/IntertwinerFromGenerators.lean`, sorry-free, arbitrary groups, no matrices
+or fields in it: `eqOn_of_eqOn_generators` (two homomorphisms agreeing on a generating set
+are equal), `conjHom`, `conj_eq_of_eqOn_generators` (**the bound is one**), and
+`twist_trivial_of_mem` (a twist by a homomorphism into a normal `N` vanishes in `H/N` --
+with `N` the scalars, a character twist is invisible projectively).
+
+### What is STILL open -- rule 13a keeps this bean open
+
+- **Other obstruction classes.**  Class 2 is BLOCKED, not untried: no exact point exists in
+  the repo and three solve routes have measured walls (`qou-0y6l`), with the upstream
+  object 403 from this container.
+- **Other manifolds.**  Nothing here generalises; L6a4 only.
+- **Duality as a map on a moduli space.**  Roast point (B) -- two distinct rational
+  self-maps can agree on a finite set -- is untouched, and the proof above is about ONE
+  representation (up to its Galois orbit), not about a map of varieties.
+
+The bean's title asks for the identification in general.  For the L6a4 class-1
+representation it is now a theorem; in general it is open.
 
