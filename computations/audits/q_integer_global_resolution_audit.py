@@ -187,7 +187,16 @@ def resolve(name: str, assigns: dict[str, ast.expr], seen: frozenset[str],
             if tables is None:
                 return None, f'source module `{mod}` not found'
             a2, i2 = tables
-            return resolve(orig, a2, seen | {name}, i2, depth + 1,
+            # Key the cycle guard by MODULE::NAME across a module hop.  Keyed
+            # by the bare name, the guard trips on itself: `Q = Q_MP` with
+            # `from q_parameter import Q_MP` resolves Q_MP with seen={Q,Q_MP},
+            # hops to q_parameter, and the first line of this function sees
+            # Q_MP already in seen and reports a cycle -- against a chain that
+            # is two steps long and perfectly acyclic.  That is what blocked
+            # the 14-strong Q_MP cluster, NOT aliased imports as I first
+            # claimed: the imports were captured correctly all along.
+            return resolve(orig, a2, (seen - {name}) | {f'{mod}::{orig}'},
+                           i2, depth + 1,
                            any(m in mod for m in ANCHOR_MODULES))
         return None, 'no top-level assignment'
     expr = assigns[name]
