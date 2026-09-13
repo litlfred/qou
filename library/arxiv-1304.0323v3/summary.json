@@ -1,0 +1,186 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1304.0323v3",
+ "source_sha256": "92e2b9dc876e1a52",
+ "brief": "SYMMETRIC QUIVER HECKE ALGEBRAS — Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q).",
+ "extended": "**SYMMETRIC QUIVER HECKE ALGEBRAS**\n\n*R-MATRICES OF QUANTUM AFFINE ALGEBRAS*\n\n83 pp, 33 sections.\n\n**Abstract.** Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q). The distribution of poles of normalized R-matrices yields Khovanov-Lauda-Rouquier algebras RJ (β) for each β∈ Q+. We deﬁne a func- torFβ from the category of graded RJ (β)-modules to the category of U ′ q(g)-modules. The functorF = ⨁ β ∈Q+Fβ sends convolution products of ﬁnite-dimensional graded RJ (β)-modules to tensor products of ﬁnite-dimensional U ′ q(g)-modules. It is exact if RJ is of ﬁnite type A, D, E. If V (̟1) is the fundamental representation of U ′ q(ˆslN ) of weight ̟1 and J = {( V (̟1), q2i) | i∈ Z } , then RJ is the Khovanov-Lauda-Rouquier algebra of type A∞.\n\n**Outline.** Front matter; Introduction; 1 Quantum groups and Khovanov-Lauda-Rouquier a; Convention; 1.1 Cartan datum; 1.2 Khovanov-Lauda-Rouquier algebras; 1.3 R-matrices for Khovanov-Lauda-Rouquier alg; 1.4 R-matrices with spectral parameters; 1.5 R-matrices for one-dimensional modules; 1.6 Uniqueness of R-matrices; 2 Quantum affine algebras and their representa; 2.2 R-matrices; 3 Affine Schur-Weyl duality via Khovanov-Lauda; 3.1 Action of Khovanov-Lauda-Rouquier algebras; 3.2 The Functor F; 3.3 Exactness of the functor F; 4.2 KLR-modules in A case; 4.3 Properties of the functor F",
+ "tokens": {
+  "brief": 35,
+  "extended": 347
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-001-1-quantum-groups-and-khovanov-lauda-rouquier-alg",
+   "title": "Quantum groups and Khovanov-Lauda-Rouquier algebras",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-002-convention",
+   "title": "Convention",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-003-11-cartan-datum",
+   "title": "Cartan datum",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-12-khovanov-lauda-rouquier-algebras",
+   "title": "Khovanov-Lauda-Rouquier algebras",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-005-13-r-matrices-for-khovanov-lauda-rouquier-algebr",
+   "title": "R-matrices for Khovanov-Lauda-Rouquier algebras",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-006-14-r-matrices-with-spectral-parameters",
+   "title": "R-matrices with spectral parameters",
+   "pages": "14-19"
+  },
+  {
+   "id": "sec-007-15-r-matrices-for-one-dimensional-modules",
+   "title": "R-matrices for one-dimensional modules",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-008-16-uniqueness-of-r-matrices",
+   "title": "Uniqueness of R-matrices",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-009-2-quantum-affine-algebras-and-their-representati",
+   "title": "Quantum affine algebras and their representations",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-010-22-r-matrices",
+   "title": "R-matrices",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-011-3-affine-schur-weyl-duality-via-khovanov-lauda-r",
+   "title": "Affine Schur-Weyl duality via Khovanov-Lauda-Rouquier algebras",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-012-31-action-of-khovanov-lauda-rouquier-algebras-on",
+   "title": "Action of Khovanov-Lauda-Rouquier algebras on V\"0362V",
+   "pages": "27-31"
+  },
+  {
+   "id": "sec-013-32-the-functor-f",
+   "title": "The Functor F",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-014-33-exactness-of-the-functor-f",
+   "title": "Exactness of the functor F",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-015-42-klr-modules-in-a-case",
+   "title": "KLR-modules in A case",
+   "pages": "36-43"
+  },
+  {
+   "id": "sec-016-43-properties-of-the-functor-f",
+   "title": "Properties of the functor F",
+   "pages": "43-46"
+  },
+  {
+   "id": "sec-017-44-quotient-of-the-category-r-gmod",
+   "title": "Quotient of the category R-gmod",
+   "pages": "46-61"
+  },
+  {
+   "id": "sec-018-47-the-category-cj",
+   "title": "The Category CJ",
+   "pages": "61-65"
+  },
+  {
+   "id": "sec-019-appendix-a-localization",
+   "title": "Appendix A. Localization",
+   "pages": "65-66"
+  },
+  {
+   "id": "sec-020-a1-tensor-category",
+   "title": "A.1. Tensor category",
+   "pages": "66-67"
+  },
+  {
+   "id": "sec-021-a2-adjunction-and-quasi-adjunction",
+   "title": "A.2. Adjunction and Quasi-adjunction",
+   "pages": "67-69"
+  },
+  {
+   "id": "sec-022-a3-central-objects",
+   "title": "A.3. Central objects",
+   "pages": "69-70"
+  },
+  {
+   "id": "sec-023-a4-commuting-family-of-objects",
+   "title": "A.4. Commuting family of objects",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-024-a5-localization",
+   "title": "A.5. Localization",
+   "pages": "71-72"
+  },
+  {
+   "id": "sec-025-a6-localization-of-tensor-categories",
+   "title": "A.6. Localization of tensor categories",
+   "pages": "72-75"
+  },
+  {
+   "id": "sec-026-a7-graded-case",
+   "title": "A.7. Graded case",
+   "pages": "75-78"
+  },
+  {
+   "id": "sec-027-a8-variant",
+   "title": "A.8. Variant",
+   "pages": "78-79"
+  },
+  {
+   "id": "sec-028-a9-twisting-of-tensor-structure",
+   "title": "A.9. Twisting of tensor structure",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-029-appendix-b-quotient-categories",
+   "title": "Appendix B. Quotient categories",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-030-b1-serre-category",
+   "title": "B.1. Serre category",
+   "pages": "79-81"
+  },
+  {
+   "id": "sec-031-references",
+   "title": "References",
+   "pages": "81-83"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
