@@ -101,13 +101,31 @@ import sys
 
 from mpmath import mp, mpf, nstr
 
+# Path bridge, matching the idiom the rest of this cluster uses (see
+# a3_units_consistency_probe.py): puts the parent `computations/` directory on
+# sys.path so flat-namespace imports resolve from this subdirectory.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_E_MEV as _CODATA_M_E_MEV  # noqa: E402
+from q_parameter import Q_MP as _Q_MP  # noqa: E402
+
 mp.dps = 50
 
-# Substrate q0, proton pin (AGENTS.md owner directive 2026-08-07: proton is the default).
-Q0 = mpf("1.1099785827513808")
+# Substrate q0, proton pin (AGENTS.md owner directive 2026-08-07: proton is the
+# default). Read from q_parameter, not transcribed: the literal here kept 17
+# digits of a 50-digit anchor, discarding 33. The relative gap is 6.84e-18 --
+# invisible at float64, which is exactly why it survived, and NOT invisible at
+# the `mp.dps = 50` this file's own docstring declares ("NO FLOAT64: mpmath at
+# 50 dps throughout"). Caught by codata_truncation_audit.
+Q0 = _Q_MP
 
-# CAL-1 electron scale, CODATA, MeV.
-M_E_MEV = mpf("0.51099895000")
+# CAL-1 electron scale, CODATA, MeV. Read from the registry, not written
+# down: the literal here was 0.51099895000, which is CODATA **2018**; the
+# registry carries 0.51099895069 (2022). Caught by codata_truncation_audit as
+# [DIVERGENT] -- a wrong value, not merely a hardcoded one.
+M_E_MEV = mpf(str(_CODATA_M_E_MEV))
 
 # Both cumulants, MeV, from computations/probes/pair-locality-shortfall.witness.json.
 # b_2 is the one that refutes T4; b_3 is the A=3 shortfall.

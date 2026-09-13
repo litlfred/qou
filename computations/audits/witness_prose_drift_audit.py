@@ -690,7 +690,16 @@ def _selftest() -> int:
           "data": {"L_nn": 0.907262265533}}, ["0.907262271178"],
          "...and a 12-decimal quote is held to 12, so a 9th-decimal "
          "disagreement IS reported though it is 6e-9 relative"),
+        # reference-literal-intentional: a self-test FIXTURE, not a compute
+        # path. The case asserts that `1/q_0 = 0.90...` is read as the value
+        # of an expression rather than of q_0, so the document under test has
+        # to CONTAIN a q0-shaped number. Binding it to q_parameter.Q_MP would
+        # make the assertion depend on the live anchor and stop testing the
+        # operator guard. Flagged by codata_truncation_audit when the --pairs
+        # cases landed 2026-09-13; this is the narrow marker that audit
+        # documents for exactly this shape.
         ({"description": "the chirality flip is 1/q_0 = 0.9009182840",
+          # reference-literal-intentional: fixture, see the block above
           "data": {"q_0": 1.1099785827513808}}, [],
          "OPERATOR: 0.90 is the value of 1/q_0, and it is correct"),
         ({"description": "Large b3/b2=0.64 so binding is cooperative",

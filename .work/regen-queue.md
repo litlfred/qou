@@ -312,3 +312,26 @@ the `{:.15f}` f-strings still print 15 places; `mpf(str(sp.N(x, 30)))` keeps all
 30 digits where `float()` keeps 16.
 
 Gate effect: `mpf_mixed_arithmetic_audit` 10 → 7 candidates, over-baseline 7 → 4.
+
+## 13. `b3_brunnian_count_channel_probe.py` — RE-RUN ONLY, two reference literals de-hardcoded 2026-09-13
+
+Both flagged by `codata_truncation_audit` (the `reference-literal ratchet`):
+
+* `M_E_MEV = mpf("0.51099895000")` — **[DIVERGENT]**, i.e. a *wrong* value
+  rather than merely a hardcoded one. That is CODATA **2018**; the registry
+  carries `0.51099895069` (2022). Now `mpf(str(codata_constants.M_E_MEV))`.
+* `Q0 = mpf("1.1099785827513808")` — **[TRUNCATED]**, 17 digits of a 50-digit
+  anchor, discarding 33. The relative gap is **6.84e-18** — invisible at
+  float64, which is exactly why it survived, and *not* invisible at the
+  `mp.dps = 50` this file's own docstring declares ("NO FLOAT64: mpmath at 50
+  dps throughout"). Now `q_parameter.Q_MP`.
+
+Required adding the cluster's path-bridge idiom, which this file lacked —
+`_sys.path.insert(parent.parent)` then `import _path_bridge`, matching
+`a3_units_consistency_probe.py`. `codata_constants` lives in
+`computations/substrate/`, so the bridge is what makes the bare-name import
+resolve; without it the import fails at *runtime* while `compile()` still
+passes.
+
+**Numbers will move**, at ~1e-18 from `Q0` and ~1.4e-9 relative from `M_E_MEV`.
+Both are corrections, not drift.
