@@ -3095,6 +3095,35 @@ export const references: Reference[] = [
     DOI: "10.1016/0550-3213(94)90124-4",
   }),
 
+  // ── Bryson, Freedman, He, Wang 1993 (BAMS announcement) ───────
+  ref({
+    id: "bryson-freedman-he-wang1993",
+    type: "article-journal",
+    title: "M\u00f6bius invariance of knot energy",
+    author: [
+      { family: "Bryson", given: "Steve" },
+      { family: "Freedman", given: "Michael H." },
+      { family: "He", given: "Zheng-Xu" },
+      { family: "Wang", given: "Zhenghan" },
+    ],
+    "container-title": "Bulletin of the American Mathematical Society",
+    issued: { "date-parts": [[1993]] },
+    volume: "28",
+    issue: "1",
+    page: "99-103",
+    URL: "https://arxiv.org/abs/math/9301212",
+    note:
+      "The research announcement PRECEDING [freedman1994], with Bryson as a " +
+      "fourth author \u2014 a DISTINCT reference, not an alternate printing. It is the " +
+      "source of the CROSSING BOUND: its Theorem D states 2\u03c0c([\u03b3]) + 4 \u2264 E(\u03b3), and a " +
+      "sharper form c([\u03b3]) \u2264 c(\u03b3) \u2264 E(\u03b3)/2\u03c0. Cite THIS for Theorem D, not " +
+      "[freedman1994], which is the 1994 Annals paper. Full text held at " +
+      "library/arxiv-math-9301212v1/ (uploaded 2026-09-13); bibliographic data " +
+      "above is read off its page 1. NO DOI RECORDED: the BAMS DOI was not " +
+      "verifiable from the PDF and is deliberately left absent rather than " +
+      "guessed \u2014 add it only from a resolved lookup.",
+  }),
+
   // ── Freedman, He, Wang 1994 ───────────────────────────────────
   ref({
     id: "freedman1994",
