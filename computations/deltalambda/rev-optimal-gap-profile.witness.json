@@ -1,0 +1,280 @@
+{
+  "schema": "qou-witness/v1",
+  "computedAt": "2026-09-13T11:54:07.075524+00:00",
+  "computation": "rev_optimal_gap_profile_probe.py",
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "The gap profile of the best shape found at each n: a top block of 3-gaps, a bulk of 2s, a bottom block of 1s, no gap above 3. Also refutes a single-widened-gap model (mine) that predicted an optimal gap of 5.",
+  "source_witness": "rev-energy-gap-rigidity.witness.json",
+  "profiles": [
+    {
+      "n": 36,
+      "k": 8,
+      "l": 9,
+      "gap_histogram": {
+        "1": 2,
+        "2": 4,
+        "3": 2
+      },
+      "n_three": 2,
+      "n_one": 2,
+      "n_deviations": 4,
+      "n_gaps": 8,
+      "threes_before_ones": true,
+      "gaps": [
+        3,
+        2,
+        3,
+        2,
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "n": 78,
+      "k": 12,
+      "l": 14,
+      "gap_histogram": {
+        "1": 3,
+        "2": 7,
+        "3": 3
+      },
+      "n_three": 3,
+      "n_one": 3,
+      "n_deviations": 6,
+      "n_gaps": 13,
+      "threes_before_ones": true,
+      "gaps": [
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "n": 136,
+      "k": 16,
+      "l": 18,
+      "gap_histogram": {
+        "1": 3,
+        "2": 11,
+        "3": 3
+      },
+      "n_three": 3,
+      "n_one": 3,
+      "n_deviations": 6,
+      "n_gaps": 17,
+      "threes_before_ones": true,
+      "gaps": [
+        3,
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "n": 300,
+      "k": 24,
+      "l": 27,
+      "gap_histogram": {
+        "1": 4,
+        "2": 18,
+        "3": 4
+      },
+      "n_three": 4,
+      "n_one": 4,
+      "n_deviations": 8,
+      "n_gaps": 26,
+      "threes_before_ones": true,
+      "gaps": [
+        3,
+        3,
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "n": 630,
+      "k": 35,
+      "l": 38,
+      "gap_histogram": {
+        "1": 4,
+        "2": 29,
+        "3": 4
+      },
+      "n_three": 4,
+      "n_one": 4,
+      "n_deviations": 8,
+      "n_gaps": 37,
+      "threes_before_ones": true,
+      "gaps": [
+        3,
+        3,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1
+      ]
+    }
+  ],
+  "deviation_count_exponent": "0.242172792685",
+  "single_gap_model_refuted": {
+    "model_optimal_G": 5,
+    "measured_max_gap": 3,
+    "table": [
+      {
+        "G": 3,
+        "energy_cost": "0.0521703601598",
+        "pair_saving": "0.634123546604",
+        "net": "0.581953186444"
+      },
+      {
+        "G": 4,
+        "energy_cost": "0.208681440639",
+        "pair_saving": "1.07523317339",
+        "net": "0.866551732751"
+      },
+      {
+        "G": 5,
+        "energy_cost": "0.469533241438",
+        "pair_saving": "1.3992023448",
+        "net": "0.929669103364"
+      },
+      {
+        "G": 6,
+        "energy_cost": "0.834725762556",
+        "pair_saving": "1.644382859",
+        "net": "0.809657096446"
+      },
+      {
+        "G": 7,
+        "energy_cost": "1.30425900399",
+        "pair_saving": "1.83345657022",
+        "net": "0.529197566226"
+      },
+      {
+        "G": 8,
+        "energy_cost": "1.87813296575",
+        "pair_saving": "1.98112495286",
+        "net": "0.102991987108"
+      },
+      {
+        "G": 9,
+        "energy_cost": "2.55634764783",
+        "pair_saving": "2.09749699128",
+        "net": "-0.458850656544"
+      }
+    ]
+  },
+  "constants": {
+    "A": "3.60337772571985726431330301574",
+    "E_2": "2.56802799435927785590988196099",
+    "ln_q0": "0.104340720319519512315906279973"
+  },
+  "checks": [
+    {
+      "name": "R1 every gap lies in {1, 2, 3} \u2014 none exceeds 3",
+      "ok": true,
+      "detail": "min gap 1, max gap 3 across 5 shapes. The maximiser is a UNIT perturbation of the staircase, not a shape with a few wide gaps"
+    },
+    {
+      "name": "R2 the 3-gaps all precede the 1-gaps (3s at large beta, 1s at small beta)",
+      "ok": true,
+      "detail": "5/5 \u2014 the structure is a top block of 3s, a bulk of 2s, and a bottom block of 1s, at every n"
+    },
+    {
+      "name": "R2 the 3-count and the 1-count are equal or near-equal",
+      "ok": true,
+      "detail": "n3 vs n1: 2/2, 3/3, 3/3, 4/4, 4/4 \u2014 the 1s are what PAY for the 3s, so they come in matched blocks"
+    },
+    {
+      "name": "R3 the deviation count grows SUB-linearly in l \u2014 the perturbation stays sparse",
+      "ok": true,
+      "detail": "deviating fraction falls 0.5 -> 0.2162; count exponent 0.2422. Only 5 points \u2014 an exponent, not a proof"
+    },
+    {
+      "name": "R4 the single-widened-gap model is REFUTED by the measured profiles",
+      "ok": true,
+      "detail": "the model prefers G = 5 (net +0.9297); no measured optimum uses a gap above 3. It holds l FIXED, which forces the compensating shift uniformly across rows; the real optimum moves l instead and pays with explicit 1-gaps. Recorded as refuted rather than published as a story"
+    }
+  ],
+  "verdict": "The maximiser is a unit perturbation of the staircase: 3s at the top, 1s at the bottom, no gap above 3, deviating fraction falling with n. A single-widened-gap model predicting G=5 is refuted. No pair-term lower bound is claimed, and the {1,2,3} structure is measured, not proved forced."
+}
