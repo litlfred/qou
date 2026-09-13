@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T09:31:09Z
+updated_at: 2026-09-13T10:31:50Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -199,3 +199,108 @@ materially more than "string churn". Two readings, and I have not separated
 them: either the wave's field counter classified differently, or more moved in
 the intervening month. Either way, do not read that line as "cosmetic" when
 deciding acceptance.
+
+
+---
+
+# CAUSE MEASURED 2026-09-13 — and it is NOT convention C→D. I was wrong, and so is `qou-gjkv`'s label.
+
+I got the June witness at full 50-dps precision (the GitHub API at its own
+recorded `commitSha 0fa83306db2a`), which turns every hypothesis above into a
+runnable test instead of an inference. Four ran. Three of them killed a
+hypothesis, including both of mine.
+
+`binding_canonical.py`'s call into `tr_m_atom_zn` is **byte-identical** between
+June and now (I have both files), so the change is entirely inside that cone.
+
+## Test 1 — the q₀ anchor: ruled out, 3.9e-8
+
+June's witness records `q0: 1.1099785955573347` — the retired frozen **muon**
+pin, stored as a float. Today's records `q0Anchor: proton`,
+`1.1099785827513808…` at 50 dps. So the anchor DID migrate. Running the **live**
+code at **June's own muon q₀**:
+
+    live @ muon q0   tr_free = 0.2990150289185773331303254
+    live @ proton q0 tr_free = 0.29901501718464007670216042677
+    JUNE             tr_free = 0.98352619917553294948492109080
+
+**The anchor accounts for 3.9e-8 of the change.** The remaining 2.289 relative
+(3.29×) is code. Ruled out.
+
+## Test 2 — `y_lambda_at` convention C vs D: NO-OP. This is the correction.
+
+`wedderburn_jones_markov` still carries the dead
+`_y_lambda_at_convention_C_HISTORICAL`, so the swap is directly testable. Both
+functions were called at `n = 6`, same q, and compared entry by entry: **all 11
+partitions agree to displayed precision**. Substituting C for D inside
+`tr_m_atom_zn` returns the same trace to 30 digits.
+
+**So the convention-D `y_λ` migration does not move this witness at all**, and
+two claims must be withdrawn:
+
+- **Mine, in the section above:** *"a per-nucleon change that also touches the
+  p/n weighting, which is the shape of the 2026-08-15 ruling's R3 as much as of
+  R1's C → D `z` swap."* Withdrawn — measured false for the `y_λ` half.
+- **`qou-gjkv`'s**, which lists this witness in a wave titled *"post-C-to-D
+  corpus-wide witness regen"*. The label does not fit this member.
+
+## Test 3 — the braid word's INTRA-NUCLEON ORDERING: the dominant term
+
+Found by corpus-grep, not by guessing: bean **`qou-92u9`** records that
+`atom_braid_word_3A`'s intra-nucleon ordering changed on **2026-09-05** —
+bean **`qou-hu1f`**, an **owner ruling**, commits `7db032fb48` / `deb9ff5728`.
+Each nucleon's confinement core is now **ALTERNATING**
+(`intra_order="borromean"`, the default) where it was **GROUPED**.
+`tr_m_atom_zn` does not expose the parameter, so it always takes the new
+default.
+
+Forcing the old ordering (same q, `intra_order="grouped"`):
+
+| | tr_free | tr_atom |
+|---|---|---|
+| live default (`borromean`) | 0.29901503 | 0.15196835 |
+| **forced `grouped`** | **1.13171707** | **0.57517233** |
+| JUNE | 0.98352620 | 0.38835728 |
+
+It moves in the right direction and **overshoots**: 15.1 % past June on the free
+trace, 48.1 % on the atom trace. So the intra-ordering ruling is **the dominant
+term and not the whole of it**.
+
+That also explains every structural feature measured earlier: it is a
+**per-nucleon** reordering (hence a per-nucleon factor), identical for identical
+composition (hence the three N = Z nuclei agreeing to six significant figures),
+and different for different p/n mixes (hence the n-rich / p-rich split). And the
+free and atom words are reordered independently, which is why their ratios
+differ (3.2892 vs 2.5555) — a scalar `z` re-parameterisation could not do that,
+which was the first hint that C→D was the wrong story.
+
+## What is still open
+
+A residual of **15 % (free) / 48 % (atom)** after restoring the June ordering at
+the June anchor. At least one further change sits between June and now, in
+`atom_braid_word_3A`'s other knobs (`pn_convention`, the `m_*` multiplicities,
+`ordering`) or in `chi_all_lambda_reduced_block`. Next step: bisect those the
+same way — force each to its June value and re-measure. The June
+`mass_at_3A_proper.py` is reachable at the same commit through the GitHub API.
+
+## What this changes for the DECISION above
+
+Option 4 ("finish the diagnosis first") is now most of the way done, and the
+answer changes who should decide. The dominant cause is an **owner ruling**
+(`qou-hu1f`, 2026-09-05) that deliberately changed the physics of the word. So
+regenerating this witness is not accepting an unexplained red — it is
+propagating a ruling that has already been made, and the honest red is what that
+ruling implies for this probe's assertions.
+
+**Revised recommendation (my judgement):** finish the residual bisection, then
+regenerate, with the commit message naming `qou-hu1f` as the cause. I would no
+longer describe this as a C→D acceptance question at all.
+
+## 🛑 And the wider point, which is bigger than this witness
+
+`qou-gjkv` swept **162 producers** under one label — "post-C-to-D". At least one
+member moved for an entirely different reason, by a factor of 3.29, from a
+**later** owner ruling that postdates that wave by four weeks. Anyone accepting
+that wave on the strength of its label would be accepting changes they have not
+diagnosed. The 162 need re-triage against `qou-hu1f` before acceptance, not just
+against C→D.
