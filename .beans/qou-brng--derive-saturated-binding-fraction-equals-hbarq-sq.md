@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-13T05:22:13Z
+updated_at: 2026-09-13T05:42:41Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2891,3 +2891,7 @@ Probe: `computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py`, 7/7,
 **What landed on main and how it bears here.** (i) The escape enumeration (PR #7181, classes A–D) and its decisions — class C multiplicity sub-extensive (b), class B escapes invariant (2) not (1) (#7204), pn-averaging narrows class B (#7234), class D order-zero leg measured (#7230), dominant-summand channel none/anti-binding at A ≤ 7 (#7200, #7211), Ursell b₃ < 0 for every bond triple (#7198). None is an edge-set question inside the encoding; none contradicts or supersedes Avenue 2. The live remainder (classes B and D) lies outside what a coordination-graph invariant can decide. (ii) **Owner ruling qou-ales (2026-09-08): braid words are to be SELECTED by γγ production + confinement SDP at q₀, no census** (steps 1–10 landed). This is the one landing that touches Avenue 2's SCOPE: the invariant was measured on the template encoding `atom_braid_word_3A`. Structural note, not yet proved: a γγ vertex `σᵢσᵢ₊₁⁻¹` acts on strand positions i, i+1, i+2, which on the 3A-strand block line lie in at most two CONSECUTIVE blocks, so the position-based linear-layout invariant holds for every γγ-produced word on that line as well — `card_edgeFinset_le` and `linearLayout_family_not_hasBulk` apply unchanged. What does NOT transfer automatically is the strand-tracked graph: the template's vertices never migrate a strand across two interfaces (measured, 42/42 words); a γγ-selected word with vertices straddling interfaces could. **New workplan item:** once qou-ales produces selected atom words (step 2 admissibility per nucleus), measure the strand-tracked coordination graph on them and, if linear, state the γγ extension in Lean (a vertex touches ≤ 2 consecutive blocks). Until then Avenue 2 is closed over the template encoding only, as stated.
 
 **Untouched fronts still mine:** qou-gr3t (InteriorMarkov from the Hecke tower; #7153 reports TowerSpan proved from the braid relations — the missing piece), qou-d0qq steps 3–5, qou-8uxw, qou-denm (Kohno 1987 ingestion). No sibling appended to any of them since 2026-09-07.
+
+
+
+2026-09-13: PR #7155 (Avenue 2 — every expressible edge set is a linear layout; a linear layout has no bulk) MERGED to main by rebase (owner: "go"), merge sha 47cbb3153750d1b40d7571a13dad93622a2f66a5. The three main citations of #7155 now resolve. Bean stays OPEN (classes B and D; the γγ-selected-word strand-tracked follow-up).
