@@ -52,9 +52,12 @@ every `k <= 12`, and E5 widens every one of its bounds to check none is binding.
       independent evaluators reproduce its excess to the rounding budget
   E2  the class reproduces PR #7331's independently-searched joint maximum at k = 40
   E3  the three-piece split is an exact identity, and the crossing terms are zero at large k
-  E4  the finite-k deficit IS the crossing term — both reach exactly zero, at the same rung
+  E3b the block and the run REPEL — the assumption the whole decomposition rests on
+  E4  the finite-k shortfall vanishes exactly when the crossing term does, and never from above
+      (they are not the same NUMBER — the shortfall also carries each piece's own truncation)
   E5  widening every bound of the class moves neither e_inf nor its argmax
   E6  e_inf sits above the single-n reading #7294 used, as e_k increasing requires
+  E7  the two block energies are equal as exact integers — one edge energy, seen twice
 
 Proton-pinned; exact integer arithmetic at scale 1e-40; mpmath dps 60 for the tables.  No
 float64.
@@ -817,6 +820,8 @@ print("E7  the two block energies")
 print(f"    top    {list(_top)} (s_t = {_st}): {mp.nstr(sc(_vt), 24)}")
 print(f"    bottom {list(_bot)} (s_b = {_sb}): {mp.nstr(sc(_vb), 24)}")
 print(f"    difference: {_vt - _vb}   (scaled integer)")
+_conj_top = [sum(1 for x in _top if x > j) for j in range(max(_top))] if _top else []
+print(f"    transpose of the top block: {_conj_top}   (NOT the bottom block — see E7)")
 print(f"    e_inf = 2 * E_edge + Xrun(2 * {_st}) = 2 * {mp.nstr(sc(_vt), 20)} + "
       f"({mp.nstr(sc(_vr), 20)})")
 # and the same question one level up: are the two tables the same FUNCTION of the block sum, or
@@ -835,22 +840,27 @@ check(
     f"the top block {list(_top)} and the bottom block {list(_bot)} are different shapes found by "
     f"two searches that share no code path — one closed-form in the AP, one `delta_excess` in a "
     f"real frame — and their energies agree to every one of {SCALE_DIGITS} decimal places "
-    f"(difference exactly {_vt - _vb}), with equal sums s_t = s_b = {_st}.  The staircase is "
-    f"self-conjugate and the hook multiset is a transpose invariant, so a top-edge deformation "
-    f"and its conjugate bottom-edge deformation must carry the same excess; #7331 saw this for "
-    f"its block-plus-run edges and it survives to the k-free blocks.  So e_inf collapses to ONE "
+    f"(difference exactly {_vt - _vb}), with equal sums s_t = s_b = {_st}.  #7331 saw the same "
+    f"equality for its block-plus-run edges and it survives here to the k-free blocks.  The "
+    f"likely mechanism is that the staircase is self-conjugate and the hook multiset is a "
+    f"transpose invariant — but these two tuples are NOT literally conjugate partitions: "
+    f"{list(_top)} transposes to {_conj_top}, which is not {list(_bot)}.  #7331's witness calls "
+    f"its own pair \'that conjugate pair\' and this probe repeated the claim before checking "
+    f"it; the EQUALITY is measured to the last digit, the transpose correspondence between "
+    f"these particular tuples is NOT, and identifying it is open.  So e_inf collapses to ONE "
     f"edge energy and one run: e_inf = 2 * E_edge + Xrun(2 * s), with E_edge = "
     f"{mp.nstr(sc(_vt), 24)}, s = {_st}, and Xrun({_ell}) = {mp.nstr(sc(_vr), 24)}.  The "
     f"equality is also a check on the two evaluators, not only an observation about the shapes.  "
     f"One level up, the two TABLES agree as functions of the block sum for s <= {_agree_upto}"
-    + (f" and first part at s = {_first_split} — where they part the bottom table is the one "
-       f"still limited by its own row cap, so the agreement is a statement about the shapes "
-       f"available to each search rather than about the transpose symmetry failing"
+    + (f" and first part at s = {_first_split}, where the top table is higher by "
+       f"{mp.nstr(sc(dict(_table_diff)[_first_split]), 4)}.  WHY they part is not measured "
+       f"here — a row cap on one side is the obvious candidate and has not been checked — and "
+       f"it does not reach e_inf, whose argmax is at s = {_st}"
        if _first_split is not None else ", i.e. everywhere they are both defined")
     if (_vt == _vb and _st == _sb) else
     f"the two block energies DIFFER by {mp.nstr(sc(_vt - _vb), 8)} (s_t = {_st}, s_b = {_sb}) — "
-    f"transpose symmetry of the hook multiset says they should not, so one of the two evaluators "
-    f"is wrong",
+    f"the transpose invariance of the hook multiset makes that unexpected, so either one of the "
+    f"two evaluators is wrong or the correspondence is not what it looks like",
 )
 print(flush=True)
 
@@ -910,6 +920,8 @@ _wit = {
     "one_edge_energy_E7": {
         "top_block": list(_top), "bottom_block": list(_bot), "s_t": _st, "s_b": _sb,
         "difference_scaled": _vt - _vb, "E_edge": mp.nstr(sc(_vt), 30),
+        "top_block_transpose": _conj_top,
+        "transpose_correspondence_identified": False,
         "run": mp.nstr(sc(_vr), 30), "identity": "e_inf = 2 * E_edge + Xrun(2 * s)",
         "tables_agree_up_to_block_sum": _agree_upto, "tables_first_differ_at": _first_split,
         "table_difference_by_block_sum": {str(s): d for s, d in _table_diff},
