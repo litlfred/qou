@@ -386,4 +386,83 @@ theorem innerPairEnergy_ge (L : LinkEmbedding M n)
 
 end LinkEmbedding
 
+/-! ## §5  The O2 gate is NOT cleared by construction — a correction
+
+I recorded on PR #7284 that this third gate "is the one the O'Hara subtraction
+satisfies by construction". **That is wrong for this channel, and the `qou-o6ml`
+ROAST it came from is wrong the same way.** Both reason from the *literature*
+O'Hara integrand `1/|γ(s)−γ(t)|² − 1/D(s,t)²`, which is subtracted by
+construction — but that subtraction lives in the **self** term, which by
+`qou-o6ml`'s own split is `qou-bn8e`'s object, not this bean's.
+
+The channel this bean needs is the **mutual** one, and `QOU.MobiusEnergy`'s own
+`mutualIntegrand_eq_ohara_without_subtraction` states plainly that it is the
+O'Hara integrand with the subtraction DROPPED (`1/D² = 0`). Worse for the
+claim, §1 above proves `mutualIntegrand_pos_of_ne` — strictly positive,
+unconditionally, no hypothesis at all.
+
+**Strict positivity is exactly what made `coth` inadmissible under O2** (bean
+`qou-17mq`, PR #7020/#7080): `∫_M Δu = 0` forces an admissible pair kernel to be
+zero-mean, hence sign-changing, and a strictly positive kernel cannot be. So the
+mutual channel stands in precisely `coth`'s position and inherits precisely
+`coth`'s obligation.
+
+THE FIX IS THE ONE #7080 ALREADY DERIVED, and that is the point worth keeping.
+There the subtraction constant was not free: zero mean forced `c₀ = ⟨coth⟩_M`.
+Here it forces the same shape — subtract the mean — and `innerPairEnergy` IS
+that mean over the unit parameter interval. So the subtraction is determined by
+the geometry rather than chosen, and §3's bracket already shows it is strictly
+positive: the subtraction is not optional, and not zero.
+
+What is proved below is the gate itself: the subtracted kernel satisfies O2, and
+it is genuinely sign-changing rather than trivially so. -/
+
+namespace LinkEmbedding
+
+variable {M : Type*} {n : ℕ}
+
+/-- The **zero-mean mutual kernel**: the mutual integrand with its own mean
+    subtracted. The subtraction constant is `innerPairEnergy`, i.e. the mean
+    itself — determined by the link, never chosen. -/
+noncomputable def zeroMeanMutualKernel (L : LinkEmbedding M n) (i j : Fin n)
+    (s t : ℝ) : ℝ :=
+  L.mutualIntegrand i j s t - L.innerPairEnergy i j s
+
+/-- **The subtracted kernel satisfies O2.** Its mean over the parameter
+    interval is exactly zero — which is the condition `∫_M Δu = 0` imposes and
+    the unsubtracted kernel provably cannot meet. -/
+theorem zeroMeanMutualKernel_integral_zero (L : LinkEmbedding M n)
+    {δ : ℝ} (hδ : HasUniformSeparation L δ) {i j : Fin n} (hij : i ≠ j)
+    (s : ℝ) (hmeas : Measurable fun t => L.mutualIntegrand i j s t) :
+    ∫ t in (0:ℝ)..1, L.zeroMeanMutualKernel i j s t = 0 := by
+  have hint := L.mutualIntegrand_intervalIntegrable hδ hij s 0 1 hmeas
+  unfold zeroMeanMutualKernel
+  rw [intervalIntegral.integral_sub hint intervalIntegrable_const]
+  unfold innerPairEnergy
+  simp
+
+/-- **And it genuinely changes sign** — it is not everywhere positive.
+
+    This is what makes the O2 clearance real rather than formal: a kernel whose
+    mean is zero cannot be strictly positive throughout, so the subtraction has
+    actually moved the channel out of the class `coth` was excluded from. The
+    contrast with `mutualIntegrand_pos_of_ne`, which holds with no hypothesis
+    whatsoever, is the whole content. -/
+theorem zeroMeanMutualKernel_not_pos (L : LinkEmbedding M n)
+    {δ : ℝ} (hδ : HasUniformSeparation L δ) {i j : Fin n} (hij : i ≠ j)
+    (s : ℝ) (hmeas : Measurable fun t => L.mutualIntegrand i j s t) :
+    ¬ (∀ t ∈ Set.Ioo (0:ℝ) 1, 0 < L.zeroMeanMutualKernel i j s t) := by
+  intro hpos
+  have hint := L.mutualIntegrand_intervalIntegrable hδ hij s 0 1 hmeas
+  have hintk : IntervalIntegrable
+      (fun t => L.zeroMeanMutualKernel i j s t) volume 0 1 := by
+    unfold zeroMeanMutualKernel
+    exact hint.sub intervalIntegrable_const
+  have hgt : 0 < ∫ t in (0:ℝ)..1, L.zeroMeanMutualKernel i j s t :=
+    intervalIntegral.intervalIntegral_pos_of_pos_on hintk hpos (by norm_num)
+  rw [L.zeroMeanMutualKernel_integral_zero hδ hij s hmeas] at hgt
+  exact lt_irrefl 0 hgt
+
+end LinkEmbedding
+
 end QOU
