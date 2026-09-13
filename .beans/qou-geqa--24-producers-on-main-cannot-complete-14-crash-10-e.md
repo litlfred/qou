@@ -3,8 +3,9 @@
 title: '24 producers on main cannot complete: 14 crash, 10 exceed 240s'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-23T20:16:11Z
-updated_at: 2026-08-23T20:16:11Z
+updated_at: 2026-09-13T17:30:36Z
 ---
 
 
@@ -395,3 +396,37 @@ returns to **0 outstanding** — reached, this time, by reading the code.
     14 -> 12 -> 8 -> 4 -> 2 -> 0 -> 1 -> 0
 
 Seven corrections. Six mine.
+
+
+## 2026-09-13 — the count closed at 0, and the class has since REFILLED
+
+Not a correction to anything measured here: this bean's runner was right, and
+"0 outstanding" was true on 2026-08-24.
+
+**`binding_ladder_catalog.py` broke on 2026-09-05, eleven days after that
+line was written**, and is a genuine crash of exactly the kind this bean
+counted — `TypeError: Object of type mpf is not JSON serializable`, exit 1.
+It is absent from every list above because it was healthy when they were made.
+
+**It is also worse than the crashes counted here, and the difference is
+general.** The corpus witness idiom truncates before it can fail:
+
+    with open(out_path, "w") as fp:
+        json.dump(out, fp, indent=2)
+
+so the run does not merely fail to update the witness — it **destroys** it,
+7352 bytes to 491 measured. A crash census that only records exit codes does
+not distinguish "did not write" from "deleted what was there".
+
+**The reusable point for whoever re-runs this census: a closed count here
+means *drained on that date*, never *fixed*.** Every pass that lifts a
+constant to `mpf` without re-running its consumers mints new members —
+`70ae502091a` (qou-psjm, 372 literals across 178 files) did exactly that.
+Same shape as `qou-ldwx`'s finding about the ratchet's inherited red being a
+recurring source rather than one file.
+
+Fixed and tracked as `qou-lz8f`, with a **static** detector
+(`computations/audits/mpf_json_encoder_audit.py`) — static because you cannot
+screen for this one by running the candidates, since running them is what does
+the damage. 38 candidates from the regression vector; 1 confirmed, 37
+unverified.
