@@ -375,6 +375,42 @@ three-dimensional state integral of `m016` (DG `arxiv-1202.6268v2` eq (5.2)) eva
 residues, or a one-dimensional reduction derived (not guessed) from its NZ datum. Both are
 research computations with the same certificate: the derived index family of §3f.
 
+## 3h. The pretzel's state integral IS one-dimensional — with one dilogarithm at doubled argument (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_nz_rank_one_probe.py`](../../computations/probes/aomega_m3_pretzel_nz_rank_one_probe.py)
+(8/8; bean `qou-x3iv`, Part 10). Derived, not guessed: DG `arxiv-1202.6268v2` (2.7)–(2.8) give the
+Neumann–Zagier matrices `A = G − G'`, `B = G'' − G'` (first `N−1` edges plus the meridian, `Z'`
+eliminated), and (5.2) gives the state integral's inter-tetrahedron Gaussian as the symmetric
+`B⁻¹A`; SnapPy's `gluing_equations()` docstring fixes the column convention (interleaved `z, z', z''`
+per tetrahedron); a quad-type change is a cyclic relabelling per tetrahedron, all `3^N` enumerated.
+
+**The criterion.** If `B⁻¹A = c·v vᵀ` has rank one, a Hubbard–Stratonovich transform on the single
+direction `v` reduces the `N`-dimensional integral to one dimension, in which tetrahedron `i` enters
+through the Fourier transform of its dilogarithm at `v_i` times the auxiliary variable (DG (C.18),
+(C.25): the S-type generator acts by Fourier transform and the transform of the quantum dilogarithm is
+again a quantum dilogarithm times a Gaussian). So rank one with `v = (1,…,1)` is the unit-coefficient
+family `∫ Π_j Φ_b(t + u_j) e^{−Aπit²…}` of GK / GGM Theorem 28, and `A = 1/c`.
+
+| knot | rank-one quads | `v` | `c` | printed form |
+|---|---|---|---|---|
+| 4₁ | 3 of 9 | (1,1) | 1 | GK `I_{1,2}`, A = 1 ✓ |
+| 5₂ | 1 of 27 | (1,1,1) | 1/2 | GK `I_{2,3}` / GGM (240), A = 2 ✓ |
+| (−2,3,7) | 1 of 27 | **(1,1,2)** | 1/4 | — |
+
+The two gates reproduce the printed one-dimensional forms exactly. **The pretzel's state integral is
+one-dimensional, but one of its three quantum dilogarithms enters at *doubled* argument**, which is
+outside both unit-coefficient families. That is why the `(1,3)` sister candidate of §3g failed (every
+unit-coefficient member with the 5₂ configuration gives 5₂'s index), and it is the mechanism behind
+GGM's "level 2": the doubled argument halves that factor's pole spacing, so the residue sum runs in
+`q^{1/2}`. The (2.9) symplectic identity `ABᵀ = BAᵀ` holds for every quad choice of all three knots
+(a check that the convention was read correctly).
+
+**Not yet done.** The exact linear shifts and prefactor of the reduced integral (from `ν`, the
+flattening `f`, and the Fourier-transform constants; DG (C.20)–(C.23), (C.25) are held), then the
+residue evaluation to `q^{1/2}`-series blocks, then the certificate: GGM (19) against the derived
+index of §3f. The `qou-x3iv` plan is re-scoped to this route; the three-dimensional DG (5.2)
+integral is no longer needed.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
