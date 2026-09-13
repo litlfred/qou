@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T10:27:24Z
+updated_at: 2026-09-13T10:35:21Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -903,6 +903,74 @@ mass-fraction / barycentric / lever-arm reading, or the `m_p/(m_p+m_n)` shape.
 `mass-theory/canonical-braid-interface-composition` states the weighted form and
 records that the two conventions differ by `h*delta/4` -- **with no rationale for
 the 1/4**, which is consistent with it being open rather than merely unwritten.
+
+
+## 2026-09-13 — the open question RELOCATES: the p/n asymmetry is injected at the like-pair letters
+
+Chasing `delta/4` led upstream. Four exact results, all verified symbolically.
+
+### 1. The `pp -> sigma` / `nn -> sigma^-1` assignment is a BARE choice
+
+`computations/mass_at_3A_proper.py` lines 622-623:
+
+    _X_PP = (mpf(1), mpf(0))      # sigma
+    _X_NN = (mpf(1), -h_loc)      # sigma^-1
+
+No rationale anywhere. The module docstring says the inter-pass letters come
+"from Hecke relation" (line 32) — but the Hecke relation only relates `sigma`
+to `sigma^-1`; it does **not** say which flavour pair gets which. The
+assignment is stated, never derived.
+
+### 2. That choice ALONE produces the mirror-pair asymmetry
+
+Canonical `pppnnn` ordering at `A = 3`:
+
+    3H  (Z=1,N=2):  bonds (p,n),(n,n)   ->  (z + d_pn)(z - h)
+    3He (Z=2,N=1):  bonds (p,p),(p,n)   ->  z (z + d_pn)
+
+Swapping the `pp` and `nn` letters **exactly exchanges the two bond products**
+(verified symbolically, not numerically). So the `3H`/`3He` asymmetry the
+framework is trying to explain is, at the bond-model level, *entirely* the
+content of an unexplained letter assignment — and `delta` contributes nothing
+to it, since the `pn` factor is common to both and cancels.
+
+### 3. The mirror ratio is exactly `q^-4`, independent of the pn convention
+
+    tr(3H)/tr(3He)  =  (z - h)/z  =  q^-4
+
+exactly. This is a **falsifiable, delta-free structural prediction** of the
+bond model, and it does not depend on any of the open pn-convention questions.
+Testing it against AME is the obvious next step and is NOT done here.
+
+### 4. `1 - q^-4` in `delta` IS the like-pair bond gap
+
+`z_D - h = 1/(q(q^2+1))` against `z_D = q^3/(q^2+1)`, so `(z_D - h)/z_D = q^-4`
+and therefore `1 - q^-4 = h/z_D` exactly. Hence
+
+    delta = (q-1)^2 * (h/z_D) / 3
+
+So one of `delta`'s three factors is not an independent substrate expression at
+all — it is the relative gap between the two like-pair bond factors.
+Sorry-free: `nnFactor_eq_ppFactor_div_q_pow_four`, `flavorSplit_eq_bondGap`.
+
+## 🛑 What this does and does not settle
+
+**Does not close the bean.** Results 3 and 4 are algebraic identities in the
+same class as `tPN_eq_proton_mass_fraction`: they re-express corpus quantities
+in terms of each other and supply no mechanism. The `(q-1)^2/3` is unexplained,
+and the `1/4` — the whole of what is open — is untouched by all four.
+
+**Does relocate the question, which is the point.** `delta/4` is a
+*second-order* refinement sitting on top of a *first-order* p/n asymmetry that
+is injected by hand at `_X_PP` / `_X_NN`. Asking "why `delta/4`" before "why
+`pp -> sigma`" is asking the second question first.
+
+**A route I considered and did NOT take.** Result 3 gives a clean closed form,
+and it is tempting to look for a numerical match to a measured `3H`/`3He`
+quantity. Matching a ratio to data without a derivation of the coefficient is
+selection against the target under the NO-FITTING directive, so it is left
+alone; the honest next step is to derive the letter assignment, not to score
+the ratio.
 ---
 
 COORDINATION NOTE (2026-09-13, session gracious-dijkstra, from bean `qou-gba1`).
