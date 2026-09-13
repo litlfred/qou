@@ -653,6 +653,51 @@ is not yet: it requires the `u`-deformation of GZ's construction, in which the t
 simple families of §3k and the weight-1 derivative becomes a finite difference at `±u/2`. The six validated
 families of §3k are the natural carriers of that deformation, and pinning the pairing to them is the next step.
 
+## 3m. What the Gaussians contribute to the fusion — a monomial, and it does not close the gap (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_gaussian_theta_fusion_probe.py`](../../computations/probes/aomega_m3_pretzel_gaussian_theta_fusion_probe.py)
+(bean `qou-x3iv`, Part 14; 2/4, the two failures deliberate). This closes an *assumption* §3k made, with a
+derivation rather than a second guess.
+
+**The assumption.** §3k carried each family's Gaussian prefactor `e^{−Aπi(u_F−c_b)²}` in the numerical validation,
+where it is required, and dropped it in the `q`-series fusion, on the 5₂ precedent that its theta factorisation
+cancels between the `q`- and `q̃`-sides. The obvious suspicion about §3k's negative is that this drop was wrong.
+
+**What it actually contributes, derived.** By GGM (111a) with `r = −1`, the Gaussian factorises as
+`[θ(−q^{−1/2}x_k;q)·θ(−q̃^{1/2}x̃_k;q̃^{−1})]^{−A}` times a `k`-independent constant. Under the fusion the second
+factor becomes `θ(−q^{−1/2}x_k^{−1};q)^{−1}` by (109), so the pair contributes `[θ(y;q)/θ(q^{−1}y^{−1};q)]^{−A}`
+with `y = −q^{−1/2}x_k`. Since `θ` is inversion-symmetric (from (108)) and `θ(q^{−1}w;q) = q^{−1/2}wθ(w;q)`
+by (109), that ratio is the **monomial** `q^{1/2}y = −x_k`, so each family enters the fusion weighted by
+
+$$
+x_k^{-A} ,\qquad x_k = e^{2\pi b\,u_k}\ \text{the family's pole offset.}
+$$
+
+Not `1`. Verified numerically to `4·10⁻²⁶` at three `(b, u)`.
+
+**For 5₂ the monomial is absorbed, and that is checkable.** Its offsets are `x, 1, x⁻¹`, and applying a nontrivial
+`x_k^{∓A}` weighting **breaks** the §3k match against the derived index at every exponent tried. So the bare fusion
+was the right one there: the blocks' own `x`-powers already carry it, exactly as GGM's printed (241b)/(241c)
+theta-renormalisations do.
+
+**For the pretzel it is not absorbed — and it still does not close the gap.** The offsets are `X = x^{1/2}`,
+`X^{−1}`, `1`, so the weights are `x^{−1}, x, 1`. Applied across all eight level-2 branches and both sign
+conventions, the `q⁰` row moves from §3k's `(2X²+3X+2)/(2(1+X)²)` to
+
+| weighting | `q⁰` row |
+|---|---|
+| `x_k^{−A}` | `(2X⁶+4X⁵+6X⁴+7X³+6X²+4X+2)/(2X²(X+1)²)` |
+| `x_k^{+A}` | `−X/(2(X+1)²)` |
+
+and neither reaches `1`; fractional `q`-powers survive in every branch, and no branch reproduces the derived index.
+**Scope (a)** for the monomial-reweighting family: the omitted Gaussians are a real omission, now derived and
+quantified, and they are *not* what §3k was missing.
+
+**So §3l's reading stands.** The level-2 pairing is the derivative structure at the collided triple poles that
+Garoufalidis–Zagier print — the index is the weight-1 component of an `ε`-expansion — and no reweighting of the
+six bare families, monomial or otherwise, can produce it. The remaining route is the `u`-deformation of GZ's
+construction itself, in which their `ε`-derivative becomes a finite difference between the `±u/2` families.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
