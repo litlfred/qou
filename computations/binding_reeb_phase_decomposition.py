@@ -116,7 +116,12 @@ def main():
                 "dim": int(d),
                 "chi_free": mp.nstr(chi_free[lam], 12),
                 "chi_atom": mp.nstr(chi_atom[lam], 12),
-                "r_free": float(rf), "r_atom": float(ra),
+                # NOT float(): the upstream chi_lambda strings carry 50
+                # significant digits, so r = chi/dim is determined to 50 and
+                # a float64 cast at the write discards ~33 of them
+                # (AGENTS.md NO-FLOAT64; drained 2026-09-13). Rendered at the
+                # INPUT precision, not at mp.dps, so no digit is manufactured.
+                "r_free": mp.nstr(rf, 50), "r_atom": mp.nstr(ra, 50),
                 "channel_free": "rotation" if is_rot_f else "growth",
                 "channel_atom": "rotation" if is_rot_a else "growth",
                 "theta_free_rad": mp.nstr(th_f, 12),

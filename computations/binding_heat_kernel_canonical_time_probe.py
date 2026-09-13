@@ -106,6 +106,8 @@ def main() -> int:
 
     isos = [k for k in CHI if k in S["kernel_s_star"]]
     results = {}
+    raw_mpf = {}  # mpf twins of the serialized fields, for ordering/comparison
+                  # (NOT `raw` — the K4 block below binds that to a json load)
     print(f"\n {'variant':<20}{'worst|err|':>12}{'S(⁴He)/S(D)':>14}{'fit':>8}")
     for w in variants:
         if len(isos) < 2:
@@ -117,14 +119,25 @@ def main() -> int:
         for k in isos:
             Bp = scale * S[w][k]
             err = (Bp - AME_B[k]) / AME_B[k]
-            per[k] = {"B_pred": float(Bp), "err": float(err)}
+            # NOT float(): Bp and err are mpf built from 50-digit chi
+            # strings and exact CODATA/AME decimals, so a float64 cast at the
+            # write discards ~33 determined digits (AGENTS.md NO-FLOAT64;
+            # drained 2026-09-13). Rendered at the 50-digit INPUT precision,
+            # not at mp.dps, so no digit is manufactured.
+            per[k] = {"B_pred": mp.nstr(Bp, 50), "err": mp.nstr(err, 50)}
             worst = max(worst, fabs(err))
-        growth = float(S[w]["4He"] / S[w]["D"]) if S[w].get("D") else float("nan")
+        # `growth` is kept as an mpf for the ORDERING below and serialized
+        # only at the write: once S_4He_over_S_D is a string, `min(...,
+        # key=...)` and `<=` against it compare text, not magnitude.
+        growth = (S[w]["4He"] / S[w]["D"]) if S[w].get("D") else mp.nan
         tier = "0-fit" if w in ("kernel_s_star", "kernel_mu_s_star",
                                 "heat_mu_lambda", "y_lambda") else "1-param"
-        results[w] = {"global_scale": float(scale), "worst_err": float(worst),
-                      "S_4He_over_S_D": growth, "tier": tier, "per_isotope": per}
-        print(f" {w:<20}{float(worst):>11.4f}{growth:>14.3f}{tier:>8}")
+        results[w] = {"global_scale": mp.nstr(scale, 50),
+                      "worst_err": mp.nstr(worst, 50),
+                      "S_4He_over_S_D": mp.nstr(growth, 50),
+                      "tier": tier, "per_isotope": per}
+        raw_mpf[w] = {"worst_err": worst, "S_4He_over_S_D": growth}
+        print(f" {w:<20}{float(worst):>11.4f}{float(growth):>14.3f}{tier:>8}")
 
     # ---- [K4] the τ-family is BOUNDED, hence excluded for every τ ≥ 0 -------
     # Damping can only shrink the A-growth: sup over τ is attained at τ → 0
@@ -154,32 +167,35 @@ def main() -> int:
         Sx = {k: sum(MP_E ** (-C * tau) * a for C, a in rr) for k, rr in rows.items()}
         return Sx["4He"] / Sx["D"]
 
-    sup_spread = float(spread_at(mpf(0)))          # τ → 0, the undamped supremum
-    tau_sweep = {f"tau={float(t):.4g}": float(spread_at(mpf(t)))
+    sup_spread = spread_at(mpf(0))                 # τ → 0, the undamped supremum
+    tau_sweep = {f"tau={float(t):.4g}": mp.nstr(spread_at(mpf(t)), 50)
                  for t in ("0", "0.01", "0.0991", "0.2091", "1")}
     family_excluded = sup_spread < A_GROWTH_TARGET
-    print(f"\n [K4] τ-family bound: sup over τ ≥ 0 is at τ→0 = {sup_spread:.4f} "
+    print(f"\n [K4] τ-family bound: sup over τ ≥ 0 is at τ→0 = {float(sup_spread):.4f} "
           f"vs target {A_GROWTH_TARGET:.4f}")
     for k, v in tau_sweep.items():
-        print(f"      {k:<14} spread {v:>12.6g}")
+        print(f"      {k:<14} spread {float(v):>12.6g}")
     print(f"      ⇒ damping only SHRINKS A-growth, and even the undamped limit falls")
     print(f"        short ⇒ NO τ (canonical or fitted) reproduces the growth: "
           f"{bool(family_excluded)}")
     print("      This excludes the whole exponential-kernel family, not merely the")
     print("      canonical point — and forecloses tuning τ as a fit escape.")
 
-    k1 = results.get("kernel_s_star", {})
-    k2 = results.get("kernel_mu_s_star", {})
-    closes = bool(k1 and k1["worst_err"] <= 0.05) or bool(k2 and k2["worst_err"] <= 0.05)
+    k1 = raw_mpf.get("kernel_s_star", {})
+    k2 = raw_mpf.get("kernel_mu_s_star", {})
+    closes = (bool(k1 and k1["worst_err"] <= 0.05)
+              or bool(k2 and k2["worst_err"] <= 0.05))
     # spread diagnostic: does any canonical variant land near the 12.72 target?
-    spreads = {w: results[w]["S_4He_over_S_D"] for w in results}
+    # Read the mpf twins, NOT results[...]: those are serialized strings now
+    # and `min(key=...)`/`>` on them would order lexicographically.
+    spreads = {w: raw_mpf[w]["S_4He_over_S_D"] for w in results}
     best_spread = min(spreads, key=lambda w: abs(spreads[w] - A_GROWTH_TARGET))
     print(f"\n canonical-τ kernel closes to ≤5%: {closes}")
     print(f" closest A-growth to target {A_GROWTH_TARGET:.3f}: {best_spread} "
-          f"({spreads[best_spread]:.3f})")
+          f"({float(spreads[best_spread]):.3f})")
     print(" ⇒ the isotope-SPREAD diagnostic is the discriminator, not worst-error:")
     for w in results:
-        print(f"     {w:<20} spread {spreads[w]:>9.3f}  "
+        print(f"     {w:<20} spread {float(spreads[w]):>9.3f}  "
               f"({'OVER' if spreads[w] > A_GROWTH_TARGET else 'UNDER'}-grows)")
 
     wb = WitnessBuilder("binding-heat-kernel-canonical-time", engine="mpmath")
@@ -202,10 +218,14 @@ def main() -> int:
         "hbar_q_s_star": mp.nstr(S_STAR, 12),
         "parent_probe_h": mp.nstr(H_OLD, 12),
         "why_untested": "parent τ ∈ {1, h², 1/h²} with h = q−1/q ≠ ℏ_q = (q−1)/q",
-        "A_growth_target": A_GROWTH_TARGET,
+        # NOT the imported A_GROWTH_TARGET: the parent probe binds it as
+        # float(AME_B["4He"]/AME_B["D"]) and three OTHER producers import that
+        # name, so it is re-derived locally here as the exact mpf ratio of the
+        # same two AME decimals rather than changing a shared constant.
+        "A_growth_target": mp.nstr(AME_B["4He"] / AME_B["D"], 50),
         "results": results,
-        "closest_spread_variant": f"{best_spread} ({spreads[best_spread]:.4f})",
-        "tau_family_sup_at_tau0": sup_spread,
+        "closest_spread_variant": f"{best_spread} ({float(spreads[best_spread]):.4f})",
+        "tau_family_sup_at_tau0": mp.nstr(sup_spread, 50),
         "tau_sweep": tau_sweep,
         "tau_family_excluded_for_all_tau": str(bool(family_excluded)),
         "verdict": ("canonical-τ kernel tested zero-fit; see worst_err and the spread "
