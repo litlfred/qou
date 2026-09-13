@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T15:17:07.390865+00:00",
-  "commitSha": "ab9be56d8ebb4e7b92cd4144e50ea3fe0f051201",
+  "computedAt": "2026-09-13T16:45:01.743044+00:00",
+  "commitSha": "255f847724c762e8f185762ce679f71a8d5012a0",
   "assertions": [
     {
       "name": "calibrates_against_the_dashboards_own_scored_cell",
@@ -55,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 78081,
+  "durationMs": 76189,
   "computation": "qbeta-gamma-gamma-qbeta-prediction",
   "scriptFile": "qbeta_gamma_gamma_qbeta_prediction_probe.py",
-  "scriptHash": "160a477e17a4",
-  "scriptCommitSha": "034a309bf04797f578ca034148bd13d26900798f",
+  "scriptHash": "e2149043c69c",
+  "scriptCommitSha": "a64570260fc188bfb72d5ae70dee2d09bfe6b8dc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -158,6 +158,8 @@
     },
     "not_implemented": {
       "demand_constraint": "knot-operator-selection-proof's <Phi, dem(K)>_F >= ||dem(K)||_F is NOT imposed here; building dem(K) requires choosing which K the nucleon is, which is the open question"
-    }
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
   }
 }

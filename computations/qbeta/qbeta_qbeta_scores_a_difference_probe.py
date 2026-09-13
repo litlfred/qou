@@ -115,6 +115,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 import qbeta_e0  # noqa: E402
 from codata_constants import Q_BETA_MEV  # noqa: E402
 
@@ -417,6 +418,11 @@ def main() -> int:
     })
 
     ok = not FAILED
+    # AGENTS.md q0-anchor rule: "Say which pin you used. Any new witness
+    # must record its q0 so a later reader can tell which layer it belongs
+    # to without inferring it from a call site."
+    w.add_data("q0_pin", "proton")
+    w.add_data("q0_value", Q_50_DIGIT_STR)
     w.save()
     print(f"{'OK' if ok else 'FAILED'}: {len(FAILED)} failed assertion(s)")
     return 0 if ok else 1

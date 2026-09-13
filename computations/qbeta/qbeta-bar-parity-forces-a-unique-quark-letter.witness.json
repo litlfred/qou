@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T16:18:59.550432+00:00",
-  "commitSha": "5c10431300d1e6d6c3ae90f957a5725c09eb8894",
+  "computedAt": "2026-09-13T16:45:25.922348+00:00",
+  "commitSha": "255f847724c762e8f185762ce679f71a8d5012a0",
   "assertions": [
     {
       "name": "the_parametrisation_reproduces_the_census_cell",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17890,
+  "durationMs": 17327,
   "computation": "qbeta-bar-parity-forces-a-unique-quark-letter",
   "scriptFile": "qbeta_bar_parity_forces_a_unique_quark_letter_probe.py",
-  "scriptHash": "d7cdff3c5530",
-  "scriptCommitSha": "49e015595d40ab26c29c99478925be259069a7e2",
+  "scriptHash": "c194269f376d",
+  "scriptCommitSha": "e31763fd8dd850d3b1adbb728a979accbf87ded7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -231,6 +231,8 @@
       ],
       "conditional_on": "the bar-odd property transferring from the retired z = 1 cell to the ruled z_D base",
       "no_selection_was_made": "the constraint is a parity in q, never proximity to the measured value, and the survivors collapse to a single number"
-    }
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
   }
 }

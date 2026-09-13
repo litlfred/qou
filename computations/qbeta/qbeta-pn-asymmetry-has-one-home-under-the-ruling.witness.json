@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T15:12:05.019984+00:00",
-  "commitSha": "cf0288281c999bf258d7faabfa304f96c4fd62f7",
+  "computedAt": "2026-09-13T16:45:07.897554+00:00",
+  "commitSha": "255f847724c762e8f185762ce679f71a8d5012a0",
   "assertions": [
     {
       "name": "the_whole_pn_distinction_is_the_three_letter_quark_block",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 28,
   "computation": "qbeta-pn-asymmetry-has-one-home-under-the-ruling",
   "scriptFile": "qbeta_pn_asymmetry_has_one_home_under_the_ruling_probe.py",
-  "scriptHash": "150cbee259f0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0435b4c2a8bc",
+  "scriptCommitSha": "9fff8ee25881c89fc48d632d2c92745840259f69",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -114,6 +114,8 @@
       "class": "(a) scope-limited, plus one structural observation",
       "structural_half_holds_at": "every n",
       "what_is_NOT_claimed": "which multiset a nucleon should be; no pair is selected here, and selecting one by residual would be selection against the target"
-    }
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
   }
 }
