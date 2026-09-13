@@ -486,6 +486,27 @@ theorem gluon_dressing_must_be_odd (hq : 0 < q) (core quark gluon : List Letter)
   rw [Nat.even_iff, Nat.odd_iff]
   omega
 
+/-- **An even-length dressing can never repair an inadmissible word.**
+
+This closes the obvious repair route. Given the result above, the natural move
+is to add structure until the parity comes right — and the structure the ruling
+supplies is γγ pair-production, whose words are **even** by
+`GammaGammaWordSelection.length_even`. Appending an even-length dressing
+preserves the parity, so it preserves inadmissibility.
+
+So a nucleon that fails here cannot be fixed by adding γγ vertices, however
+many. Whatever supplies the missing odd letter is by that very fact **not**
+γγ-produced — which is the same boundary the parity bound already draws around
+the quark block, arrived at from the other side. -/
+theorem even_dressing_cannot_repair (hq : 0 < q) (base dressing : List Letter)
+    (hd : Even dressing.length) (hbase : ¬ (0 < wordChar q base)) :
+    ¬ (0 < wordChar q (base ++ dressing)) := by
+  rw [alt_psd_iff_even hq] at hbase ⊢
+  simp only [List.length_append]
+  rw [Nat.even_iff] at hd
+  rw [Nat.even_iff] at hbase ⊢
+  omega
+
 /-- **Neither of the corpus's two crossing budgets is admissible**, and they
 fail for the same reason: `6 + 3 + 2 = 11` and `6 + 3 = 9` are both odd.
 
