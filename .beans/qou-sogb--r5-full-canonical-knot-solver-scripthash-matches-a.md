@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T12:41:19Z
-updated_at: 2026-09-13T12:42:15Z
+updated_at: 2026-09-13T16:28:29Z
 ---
 
 Found 2026-09-13 while screening `r5-full-canonical-knot-solver.witness.json`
@@ -106,3 +106,37 @@ Aside, unresolved and small: my non-integral float count for this witness is
 **677** against a baseline entry of **637**. The same count matched the baseline
 exactly on three other files (93/93, 117/117, 216/216), so the method is right in
 general and something about this file differs. Not chased.
+
+
+---
+
+## One sub-candidate EXCLUDED, 2026-09-13 (bean `qou-ke35`)
+
+`r5` never calls `set_compute_dps()`, and several constants in its cone have
+migrated `float -> mpf`, so its arithmetic could have moved to mpmath's
+**default 15 dps**. That would be a type-and-precision change at every use and
+is a specific instance of this bean's import-cone candidate.
+
+**Tested and negative.** Injected `set_compute_dps()`, re-ran (11 s), diffed
+against the unmodified run: **156 diffs, all ~1e-20 LP-solver noise plus one
+rendering change, and `winner L: 6 -> 6` — the selection does not move.**
+
+So the working precision is not what changed the answer. Reproduced this bean's
+finding on the way: **707** substantive diffs committed-vs-unmodified (this bean
+records 733; I did not chase the 26).
+
+**The visible mechanism is a changed SEARCH RESULT**, which this bean's field
+list already implies but does not state as such:
+
+```
+winner/L           4 -> 6
+winner/braid_word  LEN 4 -> 6
+winner/markov_trace  0.9156174644181682 -> 1.160986499639014   (+27 %)
+```
+
+A different braid word wins. Whatever moved, it moved the *ranking*, not the
+digits — which is why `rank_in_full_search` 990 -> 1013 is the right field to
+have flagged.
+
+Both original candidates stand. Producer restored byte-identical; all witnesses
+the run touched reverted.
