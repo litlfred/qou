@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T14:19:39Z
+updated_at: 2026-09-13T14:30:06Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2075,3 +2075,53 @@ order-blind orbit, none PSD-feasible.
 
 Scope-(a): one functional, one family, n = 4. Says nothing about n > 4, a
 different E_0, or a tower correction. The demand constraint is still NOT imposed.
+
+
+## Part 9 (PR #7304) — the PSD trace FLOOR: scope-(b) exclusion for n ≤ 5, no enumeration
+
+`computations/qbeta/qbeta_gamma_gamma_psd_trace_floor_probe.py` (7/7).
+
+Part 8 left "enumerate the feasible set at n = 5, then n = 6" as next. **That
+search is unnecessary at n = 5.** Formalize-first: the invariant prunes the
+class before the scan runs.
+
+**Three ingredients, each machine-verified:**
+
+1. **Convention D IS the two-row truncation with strictly positive weights.**
+   `y_(n−k,k) = [n−2k+1]_q/[2]_q^n`, and `y = 0` on three rows or more. Checked
+   n = 3..8: all 42 partitions with ≥3 rows carry exactly 0; all 21 one- and
+   two-row partitions carry `y > 0`.
+2. **PSD feasibility ⟹ every character is non-negative.** A PosSemidef matrix
+   has non-negative trace, so `χ_λ(w) = Tr(ρ_λ(w)) ≥ 0`.
+3. **The trivial block is pinned at exactly 1.** Trivial rep: `σ ↦ q`, so
+   `σ⁻¹ = σ − h ↦ q − h = 1/q`, and a γγ vertex ↦ `q·(1/q) = 1`. Measured to
+   2.2e-40 on 80 words at n = 3..6. **Counit twin of
+   `GammaGammaWordSelection.altChar_eq_one`** (sorry-free, alternating char).
+
+**Hence** in `tr_M = Σ_λ y_λ χ_λ` every term is ≥ 0 and the trivial term is
+exactly `y_(n)`:
+
+    tr_M(w)  ≥  y_(n)  =  [n+1]_q / [2]_q^n
+
+for EVERY PSD-feasible γγ word on n strands — no enumeration, word-independent.
+
+**What it excludes.** Target `|tr_M| = 0.185059`. Floor: **0.7527 / 0.5054 /
+0.3193 / 0.1943** at n = 2/3/4/5 (all exclude), **0.1153** at n = 6 (does not).
+So **no γγ + confinement-SDP word on five strands or fewer can reproduce
+Q_β** — scope-(b), invariant named above.
+
+The floor decays like `(q/[2]_q)^n ≈ 0.552^n` against a fixed target, so the
+crossing is **one-sided**: the exclusion is a prefix of the strand counts,
+never scattered. And it is **loose** where checkable (measured min at n = 4 is
+1.0329, 3.2× the floor), which makes the exclusion conservative.
+
+**NOTHING claimed at n ≥ 6**, recorded as a machine assertion rather than a
+prose caveat: the floor dropping below the target means the ARGUMENT stops, not
+that a feasible word reaches it.
+
+Cross-checked: the Frobenius pairing agrees with the independent Ocneanu
+recursion to 5.0e-36 over 28 words at n = 3, 4, 5.
+
+**Lean status: NOT formalised.** Ingredient 3 has a sorry-free alternating
+twin; `WedderburnBlocks.PSDFeasible` already carries ingredient 2's hypothesis
+shape. The composite bound is the open formalisation.
