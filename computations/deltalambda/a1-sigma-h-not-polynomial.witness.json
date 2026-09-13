@@ -105,7 +105,7 @@
       "expected": 138,
       "passed": true,
       "source": "A1_sigmah_not_polynomial",
-      "note": "the Lean r4Value normalisation; the naive R_4 = omega_3 - n is wrong"
+      "note": "the Lean r4Value normalisation. Biane/Kerov Sigma_3 = R_4 + R_2 is TRUE; Sigma_3 = 3*omega_3 (class-size convention), so substituting omega_3 for Sigma_3 is what gives the false R_4 = omega_3 - n"
     },
     {
       "name": "sigma_c_equals_R3_over_2",
@@ -141,10 +141,10 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "cd8cfe1a489b",
-  "scriptCommitSha": "0a160c984190eb850fc515536a8d83f63a41c808",
-  "commitSha": "c76d2cb7dec2228a92e9bc79c0d62685b414673f",
-  "computedAt": "2026-08-30T06:43:16.128803+00:00",
-  "durationMs": 6917,
+  "scriptHash": "859c91848ff2",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "commitSha": "1defca3796f316b5d3b07e71b2b0dcc173d39137",
+  "computedAt": "2026-09-08T03:29:03.466570+00:00",
+  "durationMs": 15590,
   "engineVersion": "3.11.15"
 }

@@ -568,6 +568,22 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     See docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md and
     content/.../braids-and-knots/markov-disambiguation.md.
 
+    ⚠ THE PARAGRAPH ABOVE DESCRIBES THE GROUPED WORD AND IS STALE FOR THE LIVE
+    ONE (measured 2026-09-07, bean `qou-m6gp`). The 2026-09-05 alternating core
+    `(σ₀σ₁⁻¹)³` is NOT monotone, so the monotone ⇒ #T(2,k) ⇒ Vol = 0 argument no
+    longer applies. Re-measured with SnapPy 3.3.2 on the live word: every
+    per-nucleon 3-strand branch closure is a HYPERBOLIC 2-component link —
+    proton branches L9n10 (9.9665), L11a252 (16.1911), L7a6 (4.7495), L9a21
+    (11.9429); neutron branches L11a252, L9a21 ×2, L11n202 (8.1957); all
+    geometric solutions, census-identified. What survives unchanged is the
+    connected-sum structure: each interface is a single letter, so every atom
+    branch closure is the connected sum of its A nucleon pieces (800/800
+    branches over ²H/³H/³He/⁴He decompose into exactly A summands), hence
+    Vol(atom) − Vol(free) ≡ 0 by additivity of simplicial volume while the
+    absolute branch volumes are 12.9–64.8 rather than 0. The "no single link
+    behind the object" conclusion above is untouched. Producer:
+    computations/probes/binding_volume_difference_probe.py.
+
     Matches the chain-walk convention of
     hecke_core.atom_per_generator_volumes (lines 3029–3079):
     for each nucleon k, apply intra g₀, intra g₁, then (if

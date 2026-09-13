@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T10:24:25Z
+updated_at: 2026-09-12T19:08:13Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7969,3 +7969,135 @@ Dyck-path or binary-tree bijection); `elt` spans at general m (the real content
 of dim TL_n = catalan n — needs the closure lemma on (I,J)); `elt` injective at
 general m. The two `span_range_elt_*` are proved by CITING the m = 1, 2 results
 — consistency checks, not progress on the general case. NOT closed.
+
+
+## 🟧 OWNER RULING 2026-09-07 — D7 = option 1, CHANNEL-SCOPED
+
+Convention **D governs the decay / `Q_β` channel**; the **full tower governs
+mass and binding**. Both prior rulings stand, each in its own domain
+(2026-08-15 "D canonical" → decay; 2026-09-03 "full tower", settled as all `n`
+AND all orders in `q` → mass/binding). "Canonical convention" is
+**channel-local, not corpus-global**.
+
+**What this does and does not change for this bean.** The `c_k` ladder is a
+decay-channel object, so it **stays in D** — and its C-frame results still need
+the re-derivation this bean tracks. The ruling does **not** license a `z_C →
+z_D` substitution: `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the
+C-frame ladder and the mass channel's three-row forcing mutually exclusive, so
+that move is invalid regardless of which convention is canonical.
+
+**D2 is unblocked** — it could not be posed until D7 was settled.
+
+**Implementation trap, and it is this bean's own finding:** label by the
+PREDICATE (`colLen 0 ≤ 2` vs `rowLen 0 ≤ 2`), never by counting survivors. The
+row and column families are equinumerous with **equal dimension sums** (at
+`n = 3` both give 5 = catalan 3), so a count-based labelling is
+transposition-blind and mislabels *without ever producing a wrong number*. Use
+`transposeEquiv` in `QOU/MassTheory/TwoRowTwoColumnCollision.lean`.
+
+Full ruling: `docs/coordination/2026-09-05-owner-gated-bean-triage.md` §D7.
+
+
+## Merged: the δ half of the closure rule (PR #7096, main b7f0ba7902)
+
+`computations/tl_closure_rule_probe.py` + `QOU/MathlibExt/TemperleyLiebClosure.lean`.
+
+**Measured on 3456 products (n = 2..7), then PROVED.** The probe computes
+`e_k · elt(I,J)` by planar diagrams, indexes BOTH sides by their (I,J) data, and
+tests candidates — it does not guess.
+
+```
+loops = 1  ⟺  (I',J') = (I,J)        the δ is exactly at the fixed points
+loops = 1  ⟺  k ∈ I  ∧  k-1 ∉ I      and that is the test — J never enters
+```
+
+Sharp: `k ∈ I` alone fails 650, `k ∈ I ∧ k+1 ∉ I` fails 882, `k ∈ I ∧ k ∉ J`
+fails 846.
+
+**Not a fit — the mechanism is Lean.** `e_comm_prod` (e_k commutes past a word
+all far from k) and `e_mul_prod_eq_smul` (on `pre ++ k :: post` with pre far
+from k, left mult returns the SAME word scaled by δ). `k ∈ I` puts k at a block
+top; `k-1 ∉ I` forces every earlier block ≤ k-2 — exactly the hypothesis. The
+`post` being untouched is why the form comes back UNCHANGED, matching the first
+rule: the two halves cross-check each other.
+
+**🛑 STILL OPEN, nothing substitutes.**
+- **The instantiation** — deriving 'pre far from k' from `k ∈ I ∧ k-1 ∉ I` needs
+  `NormalIdx.word`'s block decomposition. Next concrete step.
+- **The loops=0 branch** — 2378 products, no candidate fits (`I' = I ∪ {k}`
+  fails 1821, `I' ⊆ I ∪ {k}` 348, `J' ⊆ J ∪ {k}` 129). `|I'|-|I|` moves BOTH
+  ways (302 / 1519 / 557) and **that decrease IS the word-length
+  non-monotonicity** — so the rule cannot be insertion-shaped. The two negatives
+  explain each other.
+- Two invariants hold on all 3456 but are recorded, not proved: `k ∈ I'`,
+  `|I'| = |J'|`.
+
+Arc state: TL₂/TL₃ Wedderburn done (#7001); general index type done (#7049);
+δ half of closure done (#7096). `dim TL_n = catalan n` NOT closed — it needs the
+loops=0 rule and the general count (bicoloured-Motzkin bijection, which Mathlib
+has nothing for).
+
+
+## Closure-rule measurement arc (2026-09-07, PRs #7096–#7111, all merged)
+
+**PROVED.** The δ half, end to end: `e_mul_elt_eq_smul` — `k ∈ I → (∀ j ∈ I,
+j+1 ≠ k) → e_k · elt(I,J) = δ • elt(I,J)`. Measured on 3456 products, then
+proved through `descRun_le` + `elems_sorted` (#7103) + `threshold_to_pointwise`
+(#7105) + `word_split`/`e_mul_prod_eq_smul` (#7096, #7107).
+
+**🛑 THREE NEGATIVES that close routes**, all measured on the same 3456:
+
+1. **No natural measure is monotone** — 12 candidates, every one increases
+   somewhere. The word-length negative was one row of a general pattern, not
+   special. A rewriting induction of that shape **does not exist**.
+2. **The image of e_k has exactly catalan(n−1) elements, for every k** — the
+   tower relation dim(e_k·TL_n) = dim TL_{n−1}, in the combinatorics. This is
+   the one POSITIVE lead.
+3. **The tower map is not the naive index surgery** — dropping k and closing the
+   gap is a bijection onto NF(n−1) **for k = 1 only**; it fails for every k ≥ 2.
+   Caught after I printed one row and read it as general.
+
+**STILL OPEN, nothing substitutes:** the (I',J') formula for the loops=0 branch
+(2378 products, no candidate); the tower map itself; `card = catalan` at general
+m (route: bicoloured Motzkin, absent from Mathlib); and therefore
+`dim TL_n = catalan n` and the semisimplicity it feeds. NOT closed.
+
+## 2026-09-08 — BASE SETTLED by owner ruling (qou-99qc): ε := tr_M at z_D. The D-frame ladder is to be re-derived on the z_D base (0.4447004 MeV, −43.157 %). Structural c₂ = −1 remains the self-consistency check; the blocker is still the N=1 phase (qou-pdix). No z-swap of the C ladder (decayLadder_zC_threeRow_ne_zero).
+
+
+
+## 🛑 CORRECTION 2026-09-12 (from PR #7212) — the three net figures quoted here are at q = 111/100
+
+This bean quotes, in its "no single 11-crossing element" item:
+
+  build_nucleon_nf     ( 9 crossings)      net = -0.1883216147
+  build_atom_nf_exact  (11, interleaved)   net = -0.2272041420
+  nucleon_gen_chains   (11, gen-grouped)   net = -0.2332458961
+
+All three match **q = 111/100** to every digit quoted; none matches the
+substrate proton pin:
+
+  model                                q=111/100        substrate proton
+  build_nucleon_nf     ( 9 crossings)  -0.18832161472   -0.18829060147
+  build_atom_nf_exact  (11, interl.)   -0.22720414203   -0.22715971177
+  nucleon_gen_chains   (11, gen-grp)   -0.23324589607   -0.23319771132
+
+q = 111/100 is `pyhecke.gram._H_FRAC`'s exactness device, **185 ppm** off the
+substrate -- ~16000x the 11.54 ppb mu-p tension. Diagnosed 2026-09-04 in
+`docs/audits/2026-09-04-delta-net-canon-and-crossing-count-analysis.md` §(ii)
+and asserted in `qbeta_delta_candidate_census_probe`; the correction had not
+reached this bean.
+
+The item's CLAIM is unaffected -- there really are three mutually inconsistent
+nucleon constructions, and the two 11-crossing ones really do differ only in
+ORDER. Only the decimals were at the wrong q.
+
+Cross-check that fixes them: the gen-grouped substrate value is the calibration
+constant `qbeta_option_e_order_dof_range_probe` (merged) asserts at 1e-30,
+-0.23319771131565870204...
+
+Same correction appended to `qou-bg3w` and `qou-1qsw`, and applied to
+`qbeta_d1_eleven_crossing_exclusion_probe`'s docstring (commit 4694165f19).
+
+NOT closing or re-statusing this bean -- it is in-progress and belongs to
+another agent's arc.

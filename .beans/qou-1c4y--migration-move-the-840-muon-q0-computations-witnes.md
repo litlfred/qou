@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-29T05:10:54Z
+updated_at: 2026-09-08T07:45:42Z
 ---
 
 
@@ -1571,3 +1571,28 @@ re-derivation surfacing through a witness that predates its own producer.
 
 Remaining 5 flips, all with stated reasons, in
 docs/audits/2026-08-29-q0-muon-anchor-repin-drain.md.
+
+## 2026-09-08: this bean is the canonical ledger for the q₀-gate family (audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3)
+
+Chosen because AGENTS.md names it as the migration tracker. Family members and statuses as of 2026-09-08 (each now carries a one-line pointer back here; no status changed). Note `qou-3f7a`'s own finding: the two red q₀ gates are one unfinished migration — this one.
+
+| bean | status | subject |
+|---|---|---|
+| qou-1c4y | in-progress | MIGRATION: move the ~840 muon-q₀ computations/ witnesses to the proton anchor (this ledger) |
+| qou-3f7a | in-progress | fix the two RED q₀ gates: anchor flip + value-drift ratchet |
+| qou-324i | in-progress | the `independent` q₀ disposition tests override-sensitivity — 7 false positives |
+| qou-po7i | in-progress | q₀ anchor selected by sys.argv[0]; 2384/2785 producers undeclared, 1887 witnesses no anchor |
+| qou-kx04 | in-progress (parent qou-pq8k) | 4 more witnesses landed with no q0Anchor (1885 → 1889) |
+| qou-aj91 | in-progress | ARCHITECTURE: 85 producers read the anchor-defining witness directly, bypassing q_parameter |
+| qou-zk51 | in-progress | q₀ gates are blind to witnesses that consume the anchor but record only derived numbers |
+| qou-q0rf | in-progress | q₀-anchor refill ratchet RED on main (NEW 147) — fix the arrival rate |
+| qou-eggf | in-progress | 17 witnesses put free text in q0Anchor instead of the token |
+| qou-y98b | in-progress | gate the q0Anchor refill: ~50 % of new witnesses land unstamped |
+| qou-i229 | todo | AUDIT: 35 published figures have no computational provenance |
+| qou-9ugp | todo | retired muon pin literal 1.10997859555733471 hardcoded in ~180 producers, invisible to the 3f7a drain |
+| qou-a1lw | in-progress (empty body) | Session: drain the OLD-MUON (CODATA 2018) B-population witnesses |
+| qou-silm | completed | AGENTS.md's frozen muon pin is stale — anchor moved to CODATA 2022 on 2026-08-28 |
+| qou-m4au | completed | drain the qou-silm stale-figure sites |
+| qou-tekx | todo | muon pin migration to CODATA 2022 — staging, not a sweep |
+
+Previously measured cross-citation (16 beans, 17 directed links, ~10 %): 3f7a→{q0rf,y98b}, 324i→{zk51,1c4y}, aj91→{3f7a,1c4y}, zk51→3f7a, q0rf→{3f7a,1c4y}, eggf→{q0rf,tekx}, y98b→kx04, 1c4y→{324i,aj91}, i229→po7i, 9ugp→{3f7a,y98b,1c4y}, silm→3f7a, m4au→silm.

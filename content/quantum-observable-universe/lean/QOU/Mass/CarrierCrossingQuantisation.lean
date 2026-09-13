@@ -96,8 +96,14 @@ carrier. That is false, and the temptation is worth recording.** Read
 
 The principle is **Frobenius-residual minimisation**, which depends on `tr_M` at
 `H_{3A}(q₀)` and is therefore `A`-dependent. Length enters only to break ties. The Lean
-instances carry `bindingKMinimalLength := length ≤ 4`, a decidable *proxy* field, and
-reading that as the criterion is what makes minimality look load-bearing.
+instances carry `bindingKLengthBounded : bindingKWord.length ≤ 4`, a decidable *proxy*
+field, and reading that as the criterion is what makes minimality look load-bearing.
+
+(Named `bindingKMinimalLength` here until 2026-09-07, which was itself the confusion
+this paragraph is about: there were TWO fields, a `Prop`-universe `bindingKMinimalLength`
+the instance chose and a decidable `bindingKLengthBounded` the class required, and every
+instance set the first to the second. The chosen copy is deleted; only the required one
+remains, and it is the one this paragraph means.)
 
 So the reason all three nuclei returned `σ_g²` is **truncation, not principle**: the
 enumeration ran at `L_K_max = 4` (deuteron) and `3` (³H, ³He), and at that length

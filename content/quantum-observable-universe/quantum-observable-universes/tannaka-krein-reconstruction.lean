@@ -4,6 +4,8 @@ import Mathlib.CategoryTheory.Monoidal.Functor
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.RingTheory.HopfAlgebra.Basic
+import Mathlib.Algebra.Category.ModuleCat.Monoidal.Basic
+import Mathlib.CategoryTheory.Limits.Preserves.Finite
 
 
 /-!
@@ -47,7 +49,7 @@ LaTeX label: `prop:tannaka-krein-reconstruction`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
-open CategoryTheory MonoidalCategory
+open CategoryTheory MonoidalCategory Limits
 
 namespace QOU
 
@@ -86,13 +88,38 @@ structure TannakaKreinReconstruction
   [instBialgebra : Bialgebra k carrier]
   /-- Hopf algebra structure (adds antipode S). -/
   [instHopfAlgebra : HopfAlgebra k carrier]
-  /-- Monoidal equivalence C ≃ Rep(carrier).
-      Stated as Prop: requires Rep for Hopf algebras (not in Mathlib).
-      Wall: Mathlib has `Rep k G` for groups but not `Rep k H`
-      for Hopf algebras. -/
-  monoidal_equiv : Prop
-  /-- Universal property: carrier is terminal among factorisations
-      of τ through Hopf algebra representations. -/
+  /-- The representation category `Rep(carrier)`.
+
+      A field, not a reference: Mathlib has `Rep k G` for a group `G` and
+      **not** `Rep k H` for a Hopf algebra `H`, so there is nothing to point
+      at.  Carrying it is what lets the equivalence below be stated. -/
+  RepCat : Type u
+  /-- Category structure on `Rep(carrier)`. -/
+  [instRepCat : Category.{v} RepCat]
+  /-- **The equivalence `C ≃ Rep(carrier)`.**
+
+      Was `monoidal_equiv : Prop`, a field typed with the *universe* `Prop`,
+      so the instance chose the proposition and `True` discharged it.  An
+      equivalence is DATA; it is now `CategoryTheory.Equivalence`.
+
+      **Scope, and it is a real weakening of the name**: this is an
+      equivalence of CATEGORIES, not of *monoidal* categories.  Stating the
+      monoidal upgrade needs a monoidal structure on `RepCat`, which is
+      downstream of the `Rep`-for-Hopf-algebras gap above.  The field is
+      named `equiv` rather than `monoidal_equiv` so the type and the name
+      agree; the monoidal half is what remains open. -/
+  equiv : C ≌ RepCat
+  /-- Universal property: `carrier` is terminal among factorisations of `τ`
+      through Hopf-algebra representations.
+
+      **Still a `Prop`-universe field, and knowingly so.**  Terminality
+      quantifies over all such factorisations, and a factorisation is a
+      functor into `Rep` of another Hopf algebra — the same missing
+      infrastructure, one level up.  Every other field in this structure was
+      encodable once the vocabulary was carried; this one is not, because
+      what would have to be carried is the whole 2-category of
+      Hopf-algebra representation categories.  Left as the honest gap
+      rather than dressed up. -/
   universal_property : Prop
 
 /-! ## The reconstruction axiom
@@ -106,7 +133,39 @@ The hypotheses use Mathlib typeclasses wherever possible:
 
 The wall is the **conclusion**: constructing the `HopfAlgebra` instance
 on the coend End⊗(τ).  Everything before the colon is Mathlib; everything
-after requires the deep result. -/
+after requires the deep result.
+
+## 🛑 The axiom was UNCONDITIONAL until 2026-09-07
+
+It read
+
+    axiom tannaka_krein_reconstruction … (τ_monoidal : Prop)
+        (τ_faithful : Prop) (τ_exact : Prop) : ∃ R, …
+
+Those three are **arguments of type `Prop`, not proofs**, and nothing in the
+statement mentions them again.  So the axiom asserted a Tannaka–Krein
+reconstruction for *every* rigid braided monoidal `C` and *every* `k`,
+while reading as though it required a well-behaved fibre functor.  A caller
+supplied any three propositions — `True` three times — and got the
+conclusion.  That is the shape `AGENTS.md` §"Axiomatization is NOT a Proof"
+forbids: an assumption dressed as a hypothesis.
+
+They are now the actual fibre functor `τ : C ⥤ ModuleCat k` with
+`[τ.Faithful]`, `[τ.Monoidal]`, `[PreservesFiniteLimits τ]` and
+`[PreservesFiniteColimits τ]` — all four resolved against the pinned
+Mathlib.
+
+**The comment they replaced said this could not be done**: *"stating this
+precisely requires MonoidalFunctor C (ModuleCat k), which compiles but the
+monoidal instance on ModuleCat is nontrivial.  We use Prop placeholders …
+until the enriched functor infrastructure matures."*  Measured: the
+instance is `Mathlib.Algebra.Category.ModuleCat.Monoidal.Basic`, one import
+away, and `τ.Monoidal` elaborates once it is present.  The infrastructure
+had matured; the file had not been re-checked.
+
+**The axiom is still an axiom** and the conclusion is still assumed.  What
+changed is that it is now assumed *under the hypotheses the literature
+states*, so an instance cannot be obtained for free. -/
 
 -- Ref: [woronowicz1988] https://doi.org/10.1007/BF01219077  Theorem 1.1
 -- Ref: [deligne1990] https://doi.org/10.1007/978-0-8176-4575-5_3  Théorème 7.1
@@ -116,16 +175,12 @@ axiom tannaka_krein_reconstruction
     [RigidCategory C]
     [BraidedCategory C]
     (k : Type w) [CommRing k]
-    -- The fibre functor: a strong monoidal functor C → k-Mod.
-    -- Wall: ModuleCat k is the target, but stating this precisely
-    -- requires MonoidalFunctor C (ModuleCat k), which compiles but
-    -- the monoidal instance on ModuleCat is nontrivial.  We use
-    -- Prop placeholders for the functor properties until the
-    -- enriched functor infrastructure matures.
-    (τ_monoidal : Prop)  -- τ is a strong monoidal functor
-    (τ_faithful : Prop)  -- τ is faithful
-    (τ_exact : Prop)     -- τ is exact
-    : ∃ (R : TannakaKreinReconstruction C k),
-        R.monoidal_equiv ∧ R.universal_property
+    -- The fibre functor: a strong monoidal functor C → k-Mod, with its
+    -- three properties as real Mathlib typeclasses.
+    (τ : C ⥤ ModuleCat.{w} k)
+    [τ.Faithful] [τ.Monoidal]
+    [PreservesFiniteLimits τ] [PreservesFiniteColimits τ]
+    : ∃ R : TannakaKreinReconstruction.{u, v, w} C k,
+        R.universal_property
 
 end QOU

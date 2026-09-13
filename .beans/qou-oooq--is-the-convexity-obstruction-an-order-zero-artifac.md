@@ -4,7 +4,7 @@ title: Is the convexity obstruction an order-zero artifact? Test the bond orderi
 status: todo
 type: task
 created_at: 2026-09-04T06:48:02Z
-updated_at: 2026-09-04T06:48:02Z
+updated_at: 2026-09-12T12:33:09Z
 ---
 
 
@@ -188,8 +188,11 @@ falsifiable claim than we had.
       the trace), but the all-pairs number here uses the NAIVE factor product,
       and the true all-pairs trace is not well defined until a bond ordering is
       fixed. So the all-pairs half of this finding is provisional.
-- [ ] Decide the sign convention: does the framework read binding as `-c_2` or
+- [x] Decide the sign convention: does the framework read binding as `-c_2` or
       `+c_2`? Everything above hangs on it and nothing in the corpus settles it.
+      **ANSWERED in `qou-zlra` (2026-09-12, PR #7223): the framework reads binding as a
+      LOG of the trace, and for any log-type functional the question is empty — the
+      pair term is absent for both signs (Lean `QOU.Mass.GradedBindingFunctionalPairTerm`).**
 - [x] **The `1/A` is not the obstacle; the SCALE COUNT is.** Split to
       `qou-eqwg`. One overall `alpha` cannot fit both terms: scaling by the
       `30.2x` that fixes the volume overshoots the asymmetry by 22x at `A = 8`,
@@ -225,3 +228,18 @@ sign and form" is close to vacuous.
 saturation, the tower, and now type two. Each was announced with some enthusiasm
 and each has been walked back or heavily caveated. Consistently finding "the
 right shape" and never a number is itself a finding about the method.
+
+
+## Update 2026-09-12 (PR #7223, bean `qou-zlra`) — the sign-dependent half is retracted as a statement about the framework
+
+The corpus reads binding as a logarithm (live law `E_0 log(tr_free/tr_atom)`,
+owner-ruled 2026-09-04/05; UIC's `ln|tr M_lambda|`), never as a bare Vassiliev
+coefficient. `QOU.Mass.GradedBindingFunctionalPairTerm` (sorry-free): the
+type-two pair convolution is in the bare product for EITHER sign and in NO
+product-additive functional (log, -log, any scale). Measured on the chain
+letters: second differences in Z of `[h^2] prod` = 4, of `[h^2] (+/-log)` = 0,
+A = 3..12. So "read as `-alpha c_2/c_0`" describes the product, not the
+framework's binding, and the valley it gives (interior max at N = Z, A = 4..12)
+inverts to a hill under `+` and vanishes under the log. The closed form
+`c_2/c_0 = (N-Z)^2/2 + (5-A)/8` stands exactly (reproduced A = 3..12).
+Audit: `docs/audits/2026-09-12-graded-binding-sign-convention.md`.

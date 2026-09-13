@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-09-06T07:02:26Z
+updated_at: 2026-09-08T07:45:37Z
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
@@ -289,3 +289,43 @@ residual is identically zero regardless of `peel`'s normalisation.
 recorded numbers does not land undiagnosed. Whoever picks this up needs to
 identify which upstream changed — note the run costs ~9 min (the deuteron
 bridge alone is 520 s).
+
+## a3-magnitude drained (2026-09-05, session fervent-noether) — a PROTON-pinned false-`independent` this bean's muon-digit scan could not see
+
+While fixing qou-v6wz (the qbeta-ck-basis-constrained-pslq false-`independent`), I re-scanned for the same audit-escape class. Found `a3_magnitude_berezinian_crossterm_probe` stamped `q0Anchor: independent` (boilerplate reason 'no q0-dependent field') with the exact fvk-selection/qou-zk51 comment '# no q0 in this producer's cone; stamp provenance only.' + `q0_anchor=False`.
+
+CONFIRMED genuine by the anchor-diff (QOU_Q0_ANCHOR=muon vs =proton): 24 substantive fields move — inputs.q0/h/hbar_q and every results.natural_readings_scatter[*].correction/rho/abs_err_vs_rstar — at the ~1e-8 mu-p-tension level. It reads the anchor via Q_50_DIGIT_STR (env-sensitive through q_parameter), so the flip-test IS valid here (defeaters #1/#2 don't apply) and the movement proves override-sensitivity + q0-dependence.
+
+WHY THIS BEAN'S SCAN MISSED IT: its still-carrying-muon-digits filter keyed on MUON literals. a3-magnitude is PROTON-pinned (stem not in ideal_muon => Q_50_DIGIT_STR resolves to proton), so it carries PROTON digits and escaped the muon-digit sweep — a genuine sub-case of the false-`independent` class this bean owns: proton-pinned false-independents, not just muon ones.
+
+FIX (rides on PR #6824 with qou-v6wz): q0_anchor=False -> q0_anchor=None (resolve). It reads ONE pin (proton default), so `proton` is correct (NOT `comparison` — unlike fvk-selection which reads both). Now stamps q0Anchor:proton + q0Value; q0_anchor_consistency_audit does NOT flag it as a flip; witness numbers byte-identical (default was already proton). Stale comment corrected.
+
+SEPARATE, NOT FIXED: a3-magnitude computes in float64 (Q0 = float(Q_50_DIGIT_STR), all scatter values ~16-digit) — a NO-FLOAT64 concern needing an mpmath refactor, out of scope for a stamp fix. Its q0-dependence at ~1e-8 is above the float64 floor so the anchor-diff is real, not noise. Worth its own bean.
+
+STILL SUSPECT, unmeasurable here: `toffoli-lp-stability` — same boilerplate-independent + carries q0 in a scan[9].q + constants.q0_physical, but its producer exits non-zero (both pins) in this container, so I could not anchor-diff it. Needs a run in a working env before verdict.
+
+## toffoli-lp-stability drained (2026-09-07, session fervent-noether) — the suspect from the a3-magnitude pass, CONFIRMED
+
+The 'STILL SUSPECT, unmeasurable here' item from the a3-magnitude section is resolved. toffoli-lp-stability's producer needs numpy (via pyhecke.gram), absent in the prior container; installed it and ran the anchor-diff.
+
+CONFIRMED genuine (QOU_Q0_ANCHOR=muon vs =proton): 49 substantive fields move — constants.q0_physical and the entire gram_matrix_at_q0 — at the ~1e-8 mu-p level. Stamped q0Anchor:independent (boilerplate reason) with the same copy-paste '# no q0 in this producer's cone' comment + q0_anchor=False. Third instance of the false-`independent` class (after qbeta-ck-basis-constrained-pslq / qou-v6wz and a3-magnitude).
+
+DISTINCT AXIS from qou-3j5m. Commit 9ea4f724d4 (qou-3j5m, 2026-08-30) migrated toffoli's convention C->D straddle (gram/toffoli_diagonal/q_and_amplitude) and found 'the stability claim does not survive'. It did NOT touch the q0-anchor stamp — orthogonal. My fix is the stamp only; the C->D migration is theirs and untouched.
+
+FIX: q0_anchor=False -> q0_anchor=None (resolve). Reads ONE pin (Q_50_DIGIT_STR -> proton default), so `proton` is correct (not `comparison`). Now stamps q0Anchor:proton + q0Value; q0_anchor_consistency_audit does NOT flag it; gram numbers byte-identical (default was already proton, only the producer's own timestamp/git_sha bumped). Stale comment corrected.
+
+RUNNING TALLY of the false-`independent` drain from this session: qbeta-ck-basis-constrained-pslq (ambiguous, reads both), a3-magnitude (proton), toffoli-lp-stability (proton). All three were the identical copy-paste stamp block.
+
+## Tractable 'visible-q0-value' set exhausted; the rest is this bean's detector territory (2026-09-07, session fervent-noether)
+
+After draining qbeta-ck-basis-constrained-pslq / a3-magnitude / toffoli-lp-stability, the set of witnesses stamped q0Anchor:independent AND carrying a visible q0 fingerprint is down to 10, and 9 are known-FP-or-tracked:
+  - 5 AUDITS whose subject IS q0 literals (fitted-labelled-canonical, hardcoded-q0-literal-families, undeclared-muon-pin-flip-risk, q0-value-drift-audit, witness-float64-padding-audit) — legitimately independent.
+  - 2 qbeta (habiro-f-from-shape-collapse, rung1-div25) — qou-o922 PROVED-independent.
+  - markov-identity-symbolic — resolved by the 2026-09-06 sibling pass above (symbolic residual at 5 sample points; independent is correct; only the retired-pin LABEL was fixed).
+  - substrate/knot-volumes — hyperbolic volumes, q0-independent geometry; carries q0 for context.
+
+The 10th, deltalambda/s5so3-geometric-wlambda-a4-helium (NEW, landed in the interim 1289 commits), is INDETERMINATE by anchor-diff and is THIS BEAN'S detector territory, not a bounded fix: boilerplate reason + parameters.q0 = the PROTON value, but the anchor-diff shows 0 substantive fields move — AND even parameters.q0 does not change muon vs proton, so the QOU_Q0_ANCHOR override does NOT reach its q0 (a hardcoded literal or an import path). That is exactly defeater #1/#2: a byte-identical flip does NOT prove independence when the override is not in the path. Needs q0_independence_checker --flip-validity (which names the defeater), not an anchor-diff. Handed here.
+
+CHEAP PRE-FILTER for the systematic sweep: all 3 genuine drains carried the identical copy-paste stamp block — the comment '# no q0 in this producer's cone; stamp provenance only.' + q0_anchor=False. That signature spans 372 producers (grep), MOST legitimately independent (the q0_anchor=False branch exists for the ~196/287 that never reach q0, qou-iph3). It is not a defect list — but it is a cheap first sieve: intersect it with 'producer actually reads q0 / witness carries a load-bearing q0 field' before spending an anchor-diff. The mechanical 372-producer sweep is this bean's single-owner drain; not overlapping it.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

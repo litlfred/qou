@@ -7,6 +7,7 @@ section_number: null
 pages: 1-14
 source_pdf: 1304.4737v1.pdf
 source_sha256: 7dcfb1a25bfc0cda
+doc_brief: "Toroidal domain walls as Hopfions — We construct stable domain walls in a shape of a torus in the Faddeev-Skyrme model with a quadratic potential term admitting two discrete vacua."
 ---
 Toroidal domain walls as Hopﬁons
 Michikazu Kobayashi1, 2 and Muneto Nitta 3

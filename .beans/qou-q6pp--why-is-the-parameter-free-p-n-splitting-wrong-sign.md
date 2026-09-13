@@ -1,11 +1,11 @@
 ---
 # qou-q6pp
 title: Why is the parameter-free p-n splitting wrong-signed? (and was my own test even valid)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T06:06:25Z
-updated_at: 2026-08-25T06:10:19Z
+updated_at: 2026-09-06T07:17:14Z
 ---
 
 ## RETRACTION — my own committed claim was invalid, in two independent ways
@@ -282,3 +282,252 @@ is a falsifiable check on the implementation, not a path to the binding.
 
 AND DO NOT propose a seventh Delta_lambda ansatz. AGENTS.md names that
 explicitly, and arriving here by a fresh route is not a licence to retry it.
+
+
+### 2026-09-06 — CROSS-REFERENCE from `qou-jgg0`. Not a claim on this bean; status left `todo`.
+
+Flagging one input dependency, because it is invisible from inside this bean and
+it changes which explanation survives. **I am not taking this bean and have not
+touched the p-n sign question.**
+
+`qou-jgg0` measured that **three** strand counts are live for the atomic braid
+with no block saying which is canonical: `A+Z` (7 content blocks, incl.
+`def:atomic-braid`), `3A` (26 blocks, incl. the notation register), `3A+Z`
+(1 block, `mass-endomorphism/atomic-mass-gb-nf.md:3`, which asserts
+`𝓑_K ∈ B_{3A+Z}` while citing the `A+Z` definition). `H_A` is a fourth cell but
+appears only as an explicit "Default-coarse" approximation.
+
+This bean computes `n = A+Z` throughout — correctly, since
+`thm:wedderburn-mass-formula` says `H_{A+Z}(q)`. But the entry above rests on a
+coincidence that is **reading-dependent**. `p(3) = 3` is the only partition count
+equal to the extremal count, so "which atom has `n = 3`" decides it:
+
+| reading | atom at `n = 3` | its verdict in this bean | coincidence |
+|---|---|---|---|
+| `A+Z` | **D** | RIGHT sign (1.448) | **holds** |
+| `3A` | **H-1** | over-specified, 5e5 off | **inverts** |
+| `3A+Z` | *(none)* | — | **evaporates** |
+
+Under `3A` the uniquely-exact `n` lands on this bean's *worst* data point rather
+than its best; under `3A+Z` no neutral atom reaches `n = 3` at all (`3A+Z = 3`
+needs `Z = 0`). The three readings also differ at **every** atom in the sample.
+
+**Your argument is not refuted** — under the reading you use, which your source
+theorem states, it stands. What is added is that its force is contingent on a
+corpus question that is currently open, so the "SUGGESTIVE, not established"
+caveat already recorded above has a second, independent reason to hold.
+
+Measured: `computations/probes/q6pp_unique_n_is_reading_dependent_probe.py`,
+10/10, exit 0, exact integers, no witness. Check 2 reproduces this bean's own
+`n` column at 5 of 5 atoms before departing from it. Naming decision framed for
+the author on PR #6821.
+
+## 2026-09-08 — THE SANCTIONED TEST IS RUN. D is not exact: right sign, 2.79× too large
+
+This bean's terminus asks for exactly one thing and forbids the rest:
+
+> *"DO NOT build the M_i constructor as a research project. … If it is built at
+> all, build it as a TEST: D (n = 3) should come out exact, not 45 % high."*
+
+**It is run. D is not exact.** Under the corrected reading it is *worse* than
+the 45 % this bean recorded, and in the same direction.
+
+| | value |
+|---|---|
+| `α(Φ₁ − 2[3]_q Φ₂ + h²Φ₃)` at D | **−6.213929627 MeV** |
+| `−B_AME(D)` | −2.224566 MeV |
+| residual | **−179.33 %** — right sign, magnitude 2.79× too large |
+
+Anchor-robust: the producer's recorded `q = 1.10998` gives −6.213945612 MeV,
+−179.333 %. Probe
+`computations/probes/deuterium_is_the_untested_exact_point_probe.py`, **7/7**,
+convention D, all-pairs, mpmath 50 dps, no witness, no fitted parameter.
+
+### First: three things in this bean are SUPERSEDED, and the next agent should not redo them
+
+This bean says *"A verified constructor for the formula's M_i … I did not find
+one and did not write one."* **One exists**, and the arc went two rounds
+further:
+
+1. **`computations/wedderburn_Mi_constructor_test.py`** was built and merged —
+   under an **adjacent-suffix** reading of *"chaining the crossing matrices of
+   all strands j > i"*.
+2. That reading is **RETRACTED** (`b2701f33c`, 2026-08-29). The prose is
+   ALL-PAIRS: for strand `i`, cross with every `j > i`. Four variants of the
+   misreading were tested and the plain reading never was. Its residuals
+   (54 %–2653 %) are the record of a refuted reading and are not evidence about
+   the formula.
+3. Under the correct reading (`computations/phi_allpairs_reconstruction.py`),
+   **Φ₂ and Φ₃ are re-derived exactly**: `Φ₃ = w ln q` with
+   `w = −2Z − N(N−1)` on **19/19** non-hydrogen rows including Ar (the row that
+   refuted the previous candidate), and `Φ₂ = Z·N·ln(1+h²/4)` on 19/19 to
+   5.0e-6, entirely publication precision.
+4. **Φ₁ is a convention-C artifact** (`phi1_convention_d_probe.py`): 0 of 5
+   carried values are reachable under convention D, each lying 27–42 % **below**
+   D's minimum. So the published mass table is C-derived and must be recomputed
+   under D — an owner decision, not taken.
+
+Point 4 **converges with this bean's own retracted finding from the opposite
+direction.** This bean concluded *"PHI_1 IS THE WHOLE PROBLEM"* and then
+withdrew it as input-dependent. The sibling arc reaches the same object by
+measurement: Φ₁ is the only one of the three that uses the Markov parameter `z`,
+hence the only convention-dependent one, and its carried values are unreachable
+under the canonical convention. Two independent routes, same term.
+
+### The gap that was actually left, and why it is D
+
+Every one of those results runs over **elemental rows Z = 1…20** — and their
+"H" row is `(Z=1, N=0)`, i.e. protium. `phi1_convention_d_probe` covers He, Li,
+Be, B, C. **Deuterium `(Z=1, N=1)` appears in none of them.** So the one atom at
+which the formula claims exactness had never been evaluated under the correct
+reading. That is what this probe fills, and it is a TEST, not a research route:
+it proposes no closure, fits nothing, and adds no ansatz.
+
+`n = 3` is confirmed structurally: both ground-state orderings (`epn`, `nep`)
+have exactly 3 strands `= A+Z`, and `p(3) = 3` is the unique partition count
+equal to the extremal count.
+
+### A caveat this probe RETIRES rather than inherits
+
+`phi_allpairs_reconstruction` documents the H row as an **exception** to the Φ₃
+closed form (recorded `w = 10` against the all-pairs `−2`), attributed to the
+`pe` crossing. D is also `Z = 1`, so the exception plausibly extends to it.
+**Measured: it does not.** At D both closed forms reproduce the direct
+all-pairs computation to **4e-50 / 2e-51** — i.e. exactly, at the full working
+precision. The Z=1 exception is specific to `N = 0`.
+
+### Two defects in my own probe, caught before the numbers were reported
+
+1. **A float64-seeded anchor.** The first run used
+   `qou_substrate.constants.Q`, which is solved by `_solve_q_proton_f64`, and
+   every comparison capped at **3.44e-15** — float64 resolution presented by a
+   50-dps script. Re-seeded from `Q_50_DIGIT_STR`, the same comparisons return
+   **4e-50**. AGENTS.md forbids reporting a float64 agreement as exact; this is
+   what that looks like when it nearly happens.
+2. **Φ₃'s sign convention, and it inverted a conclusion.** `Σ log|alt/sym|`
+   gives the opposite sign to the closed form's `w < 0` (He: `w = −6`). With the
+   wrong convention, check 3 read *"the closed forms do NOT extend to D"* — the
+   caveat above, asserted backwards. The correct convention is `Σ log|sym/alt|`.
+   Φ₃ enters the formula **signed**, so this also moved the headline
+   (−176.26 % → −179.33 %).
+
+### Scope — (a), not (b)
+
+**This does not refute `thm:wedderburn-mass-formula`.** It measures one
+construction, at one atom, under one convention, against one experimental
+number. It constrains magnitude, not ingredients. What it does establish is the
+falsifiable check this bean asked for and answers it in the negative: at the
+single point where the formula's own stated domain says it is exact, and where
+the strand count and both auxiliary invariants are independently confirmed
+correct, the correction overshoots the deuteron binding by **2.79×**.
+
+**Do NOT read this as licence for a seventh Δ_λ ansatz.** AGENTS.md names that
+explicitly and arriving here by a fresh route is not a licence to retry it.
+
+**Status stays open.** The subject — why the parameter-free construction misses
+— is unresolved mathematics, and §13a forbids closing on a recorded measurement.
+
+## 2026-09-08 — CORRECTION to my own merged PR #7162: no exactness claim exists
+
+**#7162's title and body are wrong on the framing, and the number in them is
+right.** That PR is titled *"the one point the mass formula claims exactness
+at"*. **The corpus makes no such claim, at n = 3 or at any n.** I took it from
+this bean's own terminus — *"D (n = 3) should come out exact, not 45 % high"* —
+and carried it into a title and a body without resolving it against the blocks.
+That is the AGENTS.md §"Grep the claim SHAPE, not only the topic" failure: I
+grepped the topic and never checked what proposition was actually asserted.
+
+**What the blocks say, with line numbers** (`content/quantum-observable-universe/mass-theory/`):
+
+| file:line | text |
+|---|---|
+| `wedderburn-mass-formula.md:55` | "the three extremal invariants as the **leading-order** formula" |
+| `wedderburn-mass-formula.md:56` | "the **full partition sum** gives the exact Markov trace" |
+| `wedderburn-mass-formula-proof.md:66` | "Chaining within a single crossing algebra is the defining **Level-0** transfer-matrix reduction" |
+| `wedderburn-mass-formula-proof.md:105` | "This is the claimed completeness **at the 2×2 transfer level**" |
+
+So "exact" attaches to the **partition sum**, a different object from the three
+`Φ`; and the completeness claim is scoped to invariants **of the `M_i`**.
+Neither block carries an `n ≤ 3` clause of any kind — the only order clause in
+either is `n ≥ 4` (checked mechanically, check 6).
+
+**Why n = 3 does not rescue the construction, and this is the substantive
+half.** `p(3) = 3`, so the three extremal blocks *do* exhaust the partitions of
+3 — that part of #7162 stands. It does not follow that the `M_i` carry the
+`H_3` data, **because the `M_i` do not live in `H_3`.** Step 2 of the proof
+builds them as the regular representation of the **commutative** two-dimensional
+crossing algebra `R[σ] = R[x]/((x−q)(x+q⁻¹))`, and chains the crossings of
+*different strand pairs* inside that one algebra. In `H_3(q)`, `σ₁` and `σ₂` do
+not commute. **The Level-0 reduction discards that at every `n ≥ 3`, deuterium
+included.**
+
+The trap is a dimension coincidence: `dim(standard block of H_3) = n−1 = 2 =
+dim R[σ]`, which makes the correspondence table's row *"Φ₁ | standard (dim
+n−1)"* read as if `M_i` were the standard-block image. Step 2 shows its two
+eigenvalues are the **sym and alt characters** — verified here to `2.7e-51` on
+all four D chains — so the standard block never enters as a 2-dimensional
+representation at all.
+
+**What the −179.33 % therefore is.** The first measurement of the **Level-0
+commutative-reduction error at the smallest atom carrying two distinct braid
+generators**. That is a *stronger* result than the one merged, because it is
+attributable to a named approximation rather than being an unexplained failure
+of a promise nobody made. The number is unchanged (re-derived here from the
+merged probe's own functions: `−179.332222 %` against the recorded `−179.332 %`).
+
+**Scope (a), not (b).** It constrains the size of one named approximation at one
+atom under one convention. It excludes no ingredient, and it does not refute
+`thm:wedderburn-mass-formula` — which claims leading-order, and is measured
+here doing exactly that.
+
+**Verification:** `computations/probes/level0_reduction_is_not_an_exactness_claim_probe.py`,
+**12/12**, exit 0.
+Checks 1–2 verify Step 2's homomorphism and the commutativity being discarded;
+check 3 builds the `H_3` regular representation on the `T_w` basis and
+self-verifies it (Hecke relation on both generators, braid relation) before
+reporting `max |[σ₁,σ₂]| = 1.0`; checks 4–5 verify Step 2's eigenvalues and
+readouts at D; check 6 asserts the four quoted sentences are present; check 7
+reproduces the merged residual. mpmath 50 dps throughout, anchored on
+`Q_50_DIGIT_STR`.
+
+**Still open, and this bean stays open (§13a).** The mathematics is untouched:
+nothing here derives the missing non-commutative contribution, and the
+`Φ₁`-is-a-convention-C-artifact finding from the sibling arc is unaffected. What
+changed is that the D residual now has a mechanism attached to it.
+
+## 2026-09-11 — my merged remark is (a)-CONDITIONAL on qou-jgg0 and does not say so
+
+`rem:level-zero-discards-braid-noncommutativity` (PR #7171, merged `20671dcc1`)
+states *"Deuterium is the unique atom with `n = A + Z = 3`."* That is true under
+`def:atomic-braid`'s strand count and **false under the production one**.
+
+Bean `qou-jgg0` established (2026-09-05) that the corpus carries **two different
+objects sharing the name "atomic braid" and the symbol `𝒜`** — `H_{A+Z}(q)` in
+`def:atomic-braid`, `H_{3A}(q)` in production — and reserves the choice between
+them to the author. Measured now:
+
+| reading | D's strand count | unique atom with `p(n) = 3` |
+|---|---|---|
+| `A + Z` | 3 | **deuterium** |
+| `3A` | 6 (`p(6) = 11`) | **hydrogen-1** |
+
+So the two readings name **different atoms** as the unique point where the three
+extremal blocks exhaust the partitions. Exact: `p` is strictly increasing, so
+`p(n)=3` iff `n=3`; then `2Z+N=3` with `Z≥1` gives `(1,1)` and `3(Z+N)=3` gives
+`(1,0)`.
+
+**This does not invalidate the Level-0 finding.** The mechanism — Step 2 chains
+crossings of different strand pairs inside the commutative `R[σ]`, while
+`σ₁σ₂ ≠ σ₂σ₁` — holds at every `n ≥ 3` under either reading, and the `−179.33 %`
+was computed from the mass formula's own construction. What is (a)-conditional is
+the *uniqueness* claim and the identification of D as the separating point.
+
+**Not fixed here, deliberately.** Adding a scope sentence to the remark is close
+to picking (a), which is `qou-jgg0`'s author decision. Raised to the owner rather
+than edited.
+
+**Verification:** `computations/probes/strand_count_reading_is_load_bearing_probe.py`,
+15/15, exit 0. Check 6 asserts mechanically that the merged remark makes the claim
+and mentions neither `3A` nor `qou-jgg0`.
+
+**Bean stays open** (rule 13a).

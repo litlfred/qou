@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:17:38.090874+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-12T07:37:53.818691+00:00",
+  "commitSha": "f0fcd1630a4bb894b46311c5ce836880cb4c58ec",
   "assertions": [
     {
       "name": "no_proved_sign_magnitude_hits_the3_differential",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "DIAGNOSTIC: PROVED Δ_λ=sgn·dim linear diff = 0.30856719 MeV vs target 0.763796 (sign correct: True); no enumerated magnitude variant lands on target — consistent with the closed 18-saturation chain."
+      "source": "DIAGNOSTIC: PROVED Δ_λ=sgn·dim linear diff = 0.081334558 MeV vs target 0.763796 (sign correct: True); no enumerated magnitude variant lands on target — consistent with the closed 18-saturation chain."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "probe-chirality-delta-lambda-the3-diagnostic",
   "scriptFile": "probe_chirality_delta_lambda_the3_diagnostic.py",
-  "scriptHash": "08d0f0ed64b5",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "325b9bf2b3f0",
+  "scriptCommitSha": "3b95e967cd8269dd2067a7db7a6961228a698f98",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -50,27 +50,27 @@
     "target_diff_me": "1.494711875569703",
     "by_variant": {
       "1(raw)": {
-        "diff_lin_mev": "-0.089147311",
-        "diff_abs_mev": "-0.089147311",
-        "lin_over_target": "-0.116716",
+        "diff_lin_mev": "-0.015050049",
+        "diff_abs_mev": "-0.015050049",
+        "lin_over_target": "-0.0197043",
         "lin_sign_correct": false
       },
       "sgn": {
-        "diff_lin_mev": "0.0050108488",
-        "diff_abs_mev": "-0.0050108488",
-        "lin_over_target": "0.00656045",
-        "lin_sign_correct": true
+        "diff_lin_mev": "-0.0073956325",
+        "diff_abs_mev": "-0.0073956325",
+        "lin_over_target": "-0.00968273",
+        "lin_sign_correct": false
       },
       "sgn·dim": {
-        "diff_lin_mev": "0.30856719",
-        "diff_abs_mev": "-0.30856719",
-        "lin_over_target": "0.403992",
+        "diff_lin_mev": "0.081334558",
+        "diff_abs_mev": "-0.081334558",
+        "lin_over_target": "0.106487",
         "lin_sign_correct": true
       },
       "sgn·dimq": {
-        "diff_lin_mev": "0.41139167",
-        "diff_abs_mev": "-0.41139167",
-        "lin_over_target": "0.538614",
+        "diff_lin_mev": "0.11267465",
+        "diff_abs_mev": "-0.11267465",
+        "lin_over_target": "0.147519",
         "lin_sign_correct": true
       }
     },

@@ -11,9 +11,11 @@
   Acuteness is used there ONLY to make the three circumcentre wedges pairwise
   disjoint (`disjoint_wedgeAt_adjacent`/`_wrap`, each wedge fits in a half-plane
   iff its half-angle `< π/2`).  When one angle is obtuse the circumcentre leaves
-  the triangle and Milnor's subdivision has one piece enter with a MINUS sign;
-  that signed geometry is `qou-w3eg` H4-5's remaining open step — it is NOT
-  closed here, and nothing below claims a volume.
+  the triangle and Milnor's subdivision has one piece enter with a MINUS sign.
+  That signed geometry is now CLOSED, in `ObtuseTiling.lean` — see the ROUTE
+  STATUS note below, which this header used to call `qou-w3eg` H4-5's remaining
+  open step.  Nothing below claims a volume: this file is still the analytic
+  bookkeeping only.
 
   What IS settled here is the analytic bookkeeping that step will consume, so the
   geometry has a clean target.  Three facts, all from `α + β + γ = π`,
@@ -58,10 +60,23 @@
     domain of integration, which is not the shape Mathlib's parametric-integral
     lemmas consume, and it has no real-valued carrier yet.
 
-  Neither route closes the case on its own, because a **fourth** acuteness gate
-  sits outside both: `IdealTetEqChimney.idealTet_eq_chimney` carries
-  `α, β, γ < π/2`, and that is a set equality rather than an analytic
-  statement.  Measurements and per-route costing: bean `qou-w3eg`.
+  **RESOLVED 2026-09-08 — by the FIRST route, and the "fourth gate" did not
+  exist.**  This paragraph read: *"Neither route closes the case on its own,
+  because a fourth acuteness gate sits outside both:
+  `IdealTetEqChimney.idealTet_eq_chimney` carries `α, β, γ < π/2`, and that is a
+  set equality rather than an analytic statement."*  The hypotheses were there;
+  they were **unused** — each is spent only on an `X < π` side goal that
+  `α + β + γ = π` already gives.  Dropping them carries the whole
+  vertex-incidence → face → region chain to obtuse triangles.
+
+  Signed subdivision is what closed it, in `ObtuseTiling.lean`:
+  `obtuseWedges_ae_eq_inscribedTriangle` (the a.e. set identity this note
+  anticipated), then `hypVolume_chimney_inscribedTriangle_obtuse`, then
+  `idealTetVolume_of_vertices_obtuse` on the vertex-defined region.
+
+  **The analytic-continuation route did NOT close it and should not be credited
+  with it.**  Its right-hand half stands as described; its left half is still
+  open for the reason given, and is now moot for this case.  Bean `qou-w3eg`.
 
   Archimedean (ℝ): ordering and `Real.pi` — §7c.
 
@@ -99,8 +114,22 @@ theorem third_angle_acute_of_obtuse {α β γ : ℝ} (hγ : π / 2 ≤ γ)
 No acuteness needed for the identity; combined with `third_angle_acute_of_obtuse`
 the right-hand side has all three arguments (`α`, `β`, `α+β`) acute exactly when
 `γ` is the obtuse one.  This is Milnor's "one piece enters with a minus sign" at
-the analytic level — the geometric subdivision that realises it is `qou-w3eg`
-H4-5 and stays open. -/
+the analytic level.
+
+**The geometric subdivision that realises it is no longer open** (this docstring
+said it was, until `qou-w3eg` H4-5 landed).  It is
+`ObtuseTiling.obtuseWedges_ae_eq_inscribedTriangle` — the triangle is a.e. the
+two surviving wedges minus the reflected one — and this lemma is what that
+file's `hypVolume_chimney_inscribedTriangle_obtuse` spends to turn the resulting
+sum of volumes into the Λ-sum.
+
+**Nothing in `qou-w3eg`'s H4-5 arc remains open.**  This paragraph previously
+named `IdealTetEqChimney.idealTet_eq_chimney` as a residual gate, on the grounds
+that it carries `α, β, γ < π/2` and is a set equality no continuation argument
+could supply.  It carried them; it did not use them.  With the three unused
+hypotheses dropped, that theorem holds for every positive triple summing to `π`,
+and `ObtuseTiling.idealTetVolume_of_vertices_obtuse` states the identity on the
+vertex-defined region for `π/2 < γ`. -/
 theorem lob_sum_eq_reflected {α β γ : ℝ} (hsum : α + β + γ = π) :
     Lob α + Lob β + Lob γ = Lob α + Lob β - Lob (α + β) := by
   have hγ : γ = π - (α + β) := by linarith

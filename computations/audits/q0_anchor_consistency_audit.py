@@ -317,6 +317,17 @@ def main(argv: list[str] | None = None) -> int:
     n = {k: len(by_verdict.get(k, [])) for k in order}
     n_flip = n["Q0_FLIP"]
     n_unrec = n["Q0_ANCHOR_UNRECOGNISED"]
+    # Q0_PARSE_ERROR was tallied into the counter table and NOTHING else: no
+    # print block naming the file, and absent from the --strict gate below. So
+    # an unparseable witness surfaced as a bare integer on a console with no
+    # filename, and the gate stayed green. Measured cost: a 0-byte
+    # `qbeta-chain-closed-form.witness.json` reached `main` in `36501d7b01`
+    # (2026-09-07) and propagated into 24 branches unnoticed -- the only
+    # unparseable file of 3702. It belongs in the gate for the reason this
+    # audit's own description already gives for Q0_ANCHOR_UNRECOGNISED:
+    # "'could not check' is not green". A file that will not parse is the
+    # strongest form of could-not-check.
+    n_parse = n["Q0_PARSE_ERROR"]
 
     print("=" * 70)
     print("q₀-anchor consistency audit — muon/proton flip detector")
@@ -339,6 +350,13 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  - {r['witness']}: {r['detail']}")
         if n_unrec > 25:
             print(f"  ... (+ {n_unrec - 25} more)")
+    if n_parse:
+        print("\n🛑 Q0_PARSE_ERROR (the file does not parse — NOTHING about it "
+              "was checked):")
+        for r in by_verdict["Q0_PARSE_ERROR"][:25]:
+            print(f"  - {r['witness']}: {r['detail']}")
+        if n_parse > 25:
+            print(f"  ... (+ {n_parse - 25} more)")
 
     builder = (
         WitnessBuilder("q0-anchor-consistency-audit", engine="python")
@@ -367,14 +385,22 @@ def main(argv: list[str] | None = None) -> int:
         source="every q0Anchor must be a token this audit can map to a pin, "
                "so that the value CAN be checked against it",
     )
+    builder.add_assertion(
+        "no_parse_error", computed=n_parse, expected=0, tolerance=0,
+        source="every witness must parse, so that it CAN be checked at all; a "
+               "0-byte or malformed witness reached main undetected because "
+               "this count had no assertion and no gate",
+    )
     builder.save()
 
-    if args.strict and (n_flip or n_unrec):
+    if args.strict and (n_flip or n_unrec or n_parse):
         parts = []
         if n_flip:
             parts.append(f"{n_flip} Q0_FLIP")
         if n_unrec:
             parts.append(f"{n_unrec} Q0_ANCHOR_UNRECOGNISED")
+        if n_parse:
+            parts.append(f"{n_parse} Q0_PARSE_ERROR")
         print(f"\nFAIL (--strict): {' + '.join(parts)} witness(es).")
         return 1
     return 0

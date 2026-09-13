@@ -1,7 +1,7 @@
 {
   "computation": "brunnian-triple-exhaustion",
   "scriptFile": "probes/brunnian_triple_exhaustion_probe.py",
-  "computedAt": "2026-09-03T03:58:34.374307+00:00",
+  "computedAt": "2026-09-07T10:11:39.452175+00:00",
   "contentBlock": "qou-brng",
   "description": "The A=3 count-channel carrier space collapses to a single integer M = m1+m2+m3, and is exhausted: b3/b2 = M - 3 is a non-negative integer while the measured ratio is 950815/1483044, strictly between 0 and 1. Every carrier misses by at least 532229/1483044 (55.98%), attained at M=4, and the gap grows monotonically beyond -- so the exclusion is complete over every crossing number. This closes the 'search the 20 triples' step by proving there is nothing to search.",
   "measured_b3_over_b2": "950815/1483044",
@@ -103,7 +103,7 @@
   "allPassed": true,
   "scope": "(b) on the conjunction {b3 carried by the count channel, mu \u221d c, Hopf pair carrier c2 = 2, Brunnian A=3 carrier}, invariant named: M is an integer >= 3, so b3/b2 is a non-negative integer while the measured ratio is not one. (a) on each ingredient separately -- it does NOT say the count channel is wrong nor that the carrier is not Brunnian; brunnian_binding_survives is untouched.",
   "caveats": [
-    "The live ingredient is the FIRST one -- that b3 is carried by the count channel at all. Owner ruling A fixes the pair carrier; dropping Brunnian-ness hits brunnian_not_pairLocal (a pair-local carrier forces b3 = 0, refuted by AME); and bRatio_scale_invariant shows mu \u221d c is not a convention one can relax. So the exclusion points back to qou-brng's original framing: the extensive term is somewhere the crossing count does not reach.",
+    "The live ingredient is the FIRST one -- that b3 is carried by the count channel at all. Owner ruling A fixes the pair carrier; dropping Brunnian-ness hits not_pairLocal_of_noIsolatedPairEnergy (renamed 2026-09-07 from brunnian_not_pairLocal; a pair-local carrier forces b3 = 0, refuted by AME); and bRatio_scale_invariant shows mu \u221d c is not a convention one can relax. So the exclusion points back to qou-brng's original framing: the extensive term is somewhere the crossing count does not reach.",
     "This is A=3 only. b4 and the A=4 carrier (6 pairs, not 3) are not touched, and nothing here follows for them.",
     "b3 uses the isospin-averaged Bbar(3). A carrier assigning DIFFERENT triples to 3H and 3He would put b3/b2 on the half-integer grid rather than the integers -- that case is the one already covered by CarrierCrossingQuantisation.even_lattice_gap (22.01%), not by this file, and it is still excluded.",
     "The Lean imports rMeasured from CarrierCrossingQuantisation rather than restating it, so the two cannot drift apart."
@@ -114,9 +114,9 @@
     "probes/enumerator-selection-criterion-audit.witness.json"
   ],
   "source": "AME2020 total nuclear binding energies; integer crossing counts",
-  "scriptHash": "dd7d0d96eba8",
-  "scriptCommitSha": "53c8624347ce711498d3341d1407eee584f472f7",
-  "commitSha": "5df9d69ed4c4d487a98b03603350403a839f7335",
+  "scriptHash": "ffdfce1c88ef",
+  "scriptCommitSha": "39253e6c27dec14718e31369140caf5cabc993d0",
+  "commitSha": "7de9832e84479c812c246253d7eb05c164b0a0a1",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "independent",

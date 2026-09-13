@@ -1,11 +1,11 @@
 ---
 # qou-j6gb
 title: mpf_import_time_dps_audit is NOT wired into precision-gates.sh — 288 findings, 185 proven lossy, gate silent
-status: completed
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-10T02:36:03Z
-updated_at: 2026-09-05T20:14:33Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 
@@ -1076,3 +1076,18 @@ Found by `scripts/bean-staleness-triage.py`, which ranked this bean **first of
 263** — 85 commits touching its 22 named paths since its own `updated_at`. It is
 the first already-answered bean this session located by ranking rather than by
 the owner-gate criterion, which is the validation that ranking needed.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

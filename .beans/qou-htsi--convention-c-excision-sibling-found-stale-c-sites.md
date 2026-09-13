@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T09:38:55Z
-updated_at: 2026-09-07T05:21:40Z
+updated_at: 2026-09-08T07:45:34Z
 parent: qou-2akx
 ---
 
@@ -33,3 +33,5 @@ precision-gates.sh --changed: RED on the tree-wide ratchets (q0-anchor flip=1 ha
 ## 2026-09-07 — merged as #6969 (main 1216e1150d); one follow-up left open
 
 Sibling comment on #6969 (from #6968 / qou-p6m1): the comparison ledger EXEMPTS a `deliberate-c-frame` site from `convention-c-value-audit.py`'s blocking count, while `trace-convention-registry.json`'s `blocked_on_rederivation` keeps the same class COUNTED ("a declaration accounts for a site without excusing it"). The two registries have zero overlap (26 vs 13 rows) and opposite accounting rules, so the headline C figure depends on which file a site was written into. Options: (1) keep ledger for provenance but have the value audit still count `deliberate-c-frame` rows (matches the registry rule; headline goes 0 -> 14 blocking, all c_k ladder); (2) move the registry to the ledger rule. Not resolved in #6969.
+
+## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.

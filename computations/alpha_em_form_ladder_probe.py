@@ -30,8 +30,11 @@ THREE HONEST CAVEATS (this probe quantifies each):
       0.0015 ppb. NOTE the two are different multiples and have been conflated
       before (qou-ydmy): "N sigma" is not "N x the 100x target".
       This probe is also SUPERSEDED on the best number: adding the derived
-      Schwinger factor (1 - h^2 alpha) gives 0.313 ppb = ~2.1 sigma_a (~209x the
-      100x criterion). See alpha_em_schwinger_ladder_probe.py.
+      Schwinger factor (1 - h^2 alpha) gives -0.365 ppb = 2.38 sigma_a (238x the
+      100x criterion). See alpha_em_schwinger_ladder_probe.py. (Those read
+      "0.313 ppb / ~2.1 sigma / ~209x" while both files scored against CODATA
+      2018; the reference is now read from the registry and the residual's SIGN
+      changed with the edition -- see #7069.)
 
 Net: α_EM stays the highest-VALUE 1-ppq target (a fundamental constant, structural
 integers, a derivation gap not a calibration wall). No c_k / no coefficient fitted
@@ -39,7 +42,7 @@ here; scope-(a).
 
 CORRECTION (2026-07-12, #3625): this probe uses the QUADRATIC fixed-point form and
 so reports proton +1.7 ppb / muon +80 ppb. Adding the RT-phase-3-DERIVED Schwinger
-(1-h^2 alpha) cubic term brings the PROTON residual to +0.313 ppb = ~2x sigma_a (the
+(1-h^2 alpha) cubic term brings the PROTON residual to -0.365 ppb = 2.38x sigma_a (the
 closest not-yet-met observable to 1 ppq). See alpha_em_schwinger_ladder_probe.py +
 alpha_em_anchor_preference_probe.py (#3625) for the corrected best number.
 
@@ -57,10 +60,27 @@ import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate import codata as _codata  # noqa: E402
 
 set_compute_dps()
-CODATA_ALPHA_INV = mp.mpf("137.035999084")
-SIGMA_PPB = mp.mpf("0.15")
+# CODATA reference: READ FROM THE REGISTRY, never hand-typed.
+#
+# This file used to carry `CODATA_ALPHA_INV = mp.mpf("137.035999084")` (CODATA
+# 2018) and `SIGMA_PPB = mp.mpf("0.15")`, with a witness note calling the 2018
+# pin deliberate because "bumping it alone would desynchronise the recorded
+# residuals". That is an argument for re-running, not for freezing, and the
+# edition shift (0.6787 ppb) is 2.2x the SCHWINGER form's residual — large
+# enough to flip that residual's sign. Reading the registry removes the choice:
+# there is no edition to pick and the value tracks the table.
+#
+# `qou-rbdi` records that codata.py has "NO fine-structure entry". That is
+# FALSE (corrected on the bean, PR #7069): it greps the module SOURCE, which
+# cannot see entries parsed at runtime out of `data/allascii.txt`.
+_ALPHA_INV = _codata.codata("inverse fine-structure constant")
+CODATA_ALPHA_INV = mp.mpf(_ALPHA_INV.value_str)
+# sigma derived from the table's own uncertainty; the old 0.15 was a 2%
+# truncation of 0.15325.
+SIGMA_PPB = mp.mpf(_ALPHA_INV.uncertainty_str) / CODATA_ALPHA_INV * mp.mpf(10) ** 9
 # Both anchors are read BY NAME from the substrate (owner authorisation 2026-09-03,
 # bean qou-4bef). Until then this file hardcoded the RETIRED muon pin A
 # (1.10997859555733471, the self-certified value retired 2026-08-22/28) and a
@@ -115,7 +135,7 @@ def main() -> int:
         "(A) conjectural (3 unproved classes), (B) anchor-dependent (~1.7 ppb proton "
         "vs ~80 ppb muon; scored at the proton default), (C) proton quadratic ~1.7 ppb "
         "= ~11x sigma_a = ~1115x the L2 100x criterion (sigma_a/100 = 0.0015 ppb); "
-        "SUPERSEDED on the best number by the +Schwinger cubic at 0.313 ppb. Highest-value "
+        "SUPERSEDED on the best number by the +Schwinger cubic at -0.365 ppb. Highest-value "
         "but long-horizon conjectural close, not near-term. No coefficient fitted; scope-(a)."
     )
     wb.set_content_block("prop:em-coupling-bring-zero-mode")
@@ -151,8 +171,8 @@ def main() -> int:
           f"{mp.nstr(abs(fp_proton) / (SIGMA_PPB / 100), 4)}× the L2 100× criterion "
           f"(σ_α/100 = {mp.nstr(SIGMA_PPB / 100, 3)} ppb).")
     print("      Those are DIFFERENT multiples — 'N σ' is not 'N × the 100× target' (qou-ydmy).")
-    print("      SUPERSEDED on the best number: the +Schwinger cubic reaches 0.313 ppb")
-    print("      (~2.1 σ_α, ~209× the criterion) — see alpha_em_schwinger_ladder_probe.py.")
+    print("      SUPERSEDED on the best number: the +Schwinger cubic reaches -0.365 ppb")
+    print("      (2.38 σ_α, 238× the criterion) — see alpha_em_schwinger_ladder_probe.py.")
     print("  => highest-VALUE 1-ppq target, but LONG-HORIZON conjectural, not near-term.")
 
     wb.add_data("ladder", data)
@@ -163,12 +183,14 @@ def main() -> int:
     # consumer's docstring meanwhile claimed to "track the witness" for a value
     # the witness never held. Recording it here is what makes that claim true.
     wb.add_data("codata_reference", {
-        "alpha_inv": fmt(CODATA_ALPHA_INV),
+        "alpha_inv": _ALPHA_INV.value_str,
+        "uncertainty": _ALPHA_INV.uncertainty_str,
         "sigma_ppb": fmt(SIGMA_PPB),
-        "vintage": "CODATA-2018 (Cs recoil)",
-        "note": "the live table carries 137.035999177; this producer scores "
-                "against the 2018 value on purpose, and bumping it alone would "
-                "desynchronise the recorded residuals",
+        "vintage": "CODATA-2022",
+        "source": "qou_substrate.codata registry (data/allascii.txt) — derived, not chosen",
+        "superseded": "137.035999084 (CODATA-2018 Cs recoil), sigma_ppb 0.15 "
+                      "(a 2% rounding of 0.15325); the 0.6787 ppb edition shift "
+                      "flips the Schwinger form's residual sign, see #7069",
     })
     wb.add_data("integers_provenance", {
         "g": "4 = genus of Bring's surface (structural)",
@@ -181,7 +203,7 @@ def main() -> int:
                           f"~{mp.nstr(abs(fp_proton) / SIGMA_PPB, 3)}x sigma_a = "
                           f"~{mp.nstr(abs(fp_proton) / (SIGMA_PPB / 100), 4)}x the L2 100x criterion; "
                           f"muon (ideal CAL-2, live CODATA-2022 derivation) {mp.nstr(abs(fp_muon), 4)} ppb. "
-                          f"Superseded on the best number by the +Schwinger cubic (0.313 ppb, proton)."),
+                          f"Superseded on the best number by the +Schwinger cubic (-0.365 ppb, proton)."),
         "verdict": "highest-value but long-horizon conjectural close, not near-term"})
     # Scored at the PROTON pin: the 2026-08-07 owner directive makes the
     # experimental anchor the default for all compute.  The L2 100x criterion is
@@ -193,7 +215,7 @@ def main() -> int:
                      source=(f"proton-anchored quadratic residual {mp.nstr(abs(fp_proton), 4)} ppb "
                              f"exceeds the L2 100x target sigma_a/100 = {mp.nstr(target_100x, 3)} ppb "
                              f"by ~{mp.nstr(abs(fp_proton) / target_100x, 4)}x. The cubic (+Schwinger) form "
-                             f"reaches 0.313 ppb, still ~209x short -- see "
+                             f"reaches -0.365 ppb, still 238x short -- see "
                              f"alpha_em_schwinger_ladder_probe.py, which supersedes this probe's "
                              f"best number."))
     wb.add_assertion("alpha_em_anchor_dependent",

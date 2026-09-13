@@ -1,11 +1,11 @@
 ---
 # qou-7vm4
 title: 'alpha_k_per_force_assembly bypasses q_parameter: manifest says ideal_muon, code imports q_at directly (proton), and the except-fallback silently picks muon if the import fails'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-11T10:31:47Z
-updated_at: 2026-08-28T00:00:00Z
+updated_at: 2026-09-08T04:00:00Z
 ---
 
 
@@ -169,3 +169,18 @@ compute the same six δ_q carriers at anchors that now happen to agree. That is
 no longer a 114–148 ppb discrepancy, but it is still undocumented coincidence
 rather than stated intent; if someone re-tags either producer it silently
 becomes a discrepancy again.
+
+## 2026-09-08 — reopened: `status` disagreed with this bean's OWN body (§13a sweep, `qou-7sin`)
+
+This bean was `completed` while the text above says, in its author's own words,
+that the bean itself is still open. Nothing about its mathematics was judged
+here and no finding was revisited — only the `status` field was made to agree
+with the body.
+
+Found by the `qou-7sin` sweep of the tracker against AGENTS.md **§13a** (owner,
+2026-09-06: *"Don't close beans with open conjectures!!!"*), which landed after
+most of these were closed. 18 of 2627 completed beans carry this
+self-contradiction. It is decidable without judgement — the discriminator is
+the bean asserting *its own* openness, not merely mentioning something open.
+
+Re-close it when the work its body names is actually done.

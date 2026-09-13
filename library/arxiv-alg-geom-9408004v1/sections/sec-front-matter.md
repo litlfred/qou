@@ -7,6 +7,7 @@ section_number: null
 pages: 1-20
 source_pdf: 9408004v1.pdf
 source_sha256: d3bc00265294aa02
+doc_brief: "CUBICS, INTEGRABLE SYSTEMS, AND — 3 sections: Front matter; This number is conjectured, but no; References"
 ---
 arXiv:alg-geom/9408004v1  9 Aug 1994
 CUBICS, INTEGRABLE SYSTEMS, AND

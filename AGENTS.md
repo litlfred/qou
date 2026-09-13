@@ -318,6 +318,70 @@ first what each route derives and what it selects.
   that is the moment to stop and say so in the report.
 
 
+## 🟥 ASK THE OWNER BEFORE CHANGING THINGS (owner directive, 2026-09-07) — STRICT
+
+**This OVERRIDES the standing excise / sweep / drain / migrate authorisations
+throughout this document.** Verbatim: *"OVERRIDE / excise guidance.... new
+guidance = ask owner for changes (if changes are not increasing precision /
+derived from corpus)"*.
+
+**Default: ask first.** An agent may no longer start a corpus-wide excision,
+sweep, drain, migration, rename tranche or refactor on the strength of a
+directive written here. Those passages record what the owner *wanted at the
+time*; they are not standing permission to begin one now. Put the change to the
+owner with its measured blast radius and wait.
+
+### The two exemptions, and they are narrow
+
+A change proceeds without asking only if it is one of:
+
+1. **It increases precision.** Removing a float64 path, carrying `mpf` further
+   up the call chain, replacing a hardcoded literal with a derived value,
+   raising `mp.dps` where it was silently truncating. The test is that the
+   change makes a number *more* correct or makes a wrong number *impossible* —
+   not that it tidies something near a number.
+2. **It is derived from the corpus.** The corpus already fixes the answer and
+   you are making the code agree with it: the file's own docstring names the
+   quantity, a notation-register table publishes the value, a sorry-free Lean
+   theorem states the identity, or a producer's own convention is declared and
+   violated one line down. The test is that you can point at the corpus
+   artifact that decides it, and that a reviewer could check your work against
+   that artifact rather than against your reasoning.
+
+Everything else asks. Notably **not** exempt: consolidating onto a "better"
+route, tidying an inconsistency, mass-refreshing witnesses or sidecars,
+regenerating a derived artifact that belongs to someone else's arc, or applying
+a rule from this document across files you were not sent to.
+
+### Why the exemptions are shaped this way
+
+Both are things a reviewer can verify **without reconstructing the agent's
+session**. A precision fix is checkable by running the gate; a corpus-derived
+fix is checkable by opening the artifact it cites. Everything outside them
+requires trusting the agent's judgement about what *should* change, and that is
+the owner's call in a mathematics repository.
+
+### Worked example, the same day
+
+`q_int_at` / `q_int_classical_at` were added to
+`qou_substrate/constants.py` with **float64 fallbacks** in the no-mpmath branch.
+Excising them is exemption 1 (it removes a float64 path) *and* exemption 2 (the
+file's other four fallbacks all `raise`, so the corpus already fixed the
+convention) — so it proceeded without asking. Rewriting the *other* 29
+classical-convention files found by the same audit does **not** qualify: it needs
+a per-file basis determination, and it waits.
+
+### Interaction with the rest of this document
+
+- The **ALWAYS-PR** authorisation (branch, commit, push, open the PR) is
+  unaffected — that is about visibility, not about changing content.
+- **Run commands proactively** is unaffected. Measuring is not changing.
+- The **anti-fit**, **anti-laundering** and **NO-FLOAT64** disciplines are
+  unaffected and still bind; this rule adds a gate, it removes none.
+- When in doubt, **measure it, report the blast radius, and ask.** A measurement
+  the owner did not want costs a few minutes; a sweep they did not want costs a
+  review cycle and can bury a real finding under a thousand mechanical diffs.
+
 ## Critical-distance license (standing red-team permission, 2026-06-10)
 
 Agents have standing permission — and, when asked for assessment, an
@@ -1665,9 +1729,31 @@ corpus — run the **corpus-grep checklist**:
    Plancherel growth (`arxiv-2105.09342v1`) — this corpus's own subject
    matter, including the LP-Plancherel `Δ_λ` ansatz's literature.
 
-   **So check the arithmetic before trusting tier 1**: `directories −
-   index rows` should equal the duplicate count, and when it does not the
-   index is behind. The producer fixes it deterministically and offline —
+   **So check the arithmetic before trusting tier 1** — but use the CORRECT
+   invariant. This read *"`directories − index rows` should equal the duplicate
+   count"* until 2026-09-07, and that is **short by the containers**: a journal
+   issue carries `container: true` in its `structure.json`, gets no index line
+   of its own by design, and has its constituent papers indexed separately
+   (`ant-v14-n7-s` is *Algebra & Number Theory* Vol 14 No. 7 — 170 sections, no
+   row, and all **ten** of its `-p01`…`-p10` children DO have rows). An agent
+   applying the old form finds a gap it cannot explain and concludes the index
+   is broken; I did exactly that, and wrote "`ant-v14-n7-s` carries 170 sections
+   and is invisible to the tier every agent is told to read first" into a bean
+   before checking the design. The invariant is
+
+       directories − index rows  ==  duplicates + containers
+
+   and when *that* fails the index is behind. Measured 2026-09-07 after a
+   regeneration: **661 − 640 = 21 = 20 + 1**, exact.
+
+   Both exclusions are silent, and one is silent in a worse way: `build()`
+   returns `None` for a container or a duplicate with no diagnostic, so a
+   directory that is neither — a genuinely un-indexed document — is
+   indistinguishable from a designed exclusion without opening its
+   `structure.json`. To separate them, classify the missing set by that file
+   rather than by eye. The fix for a real gap is
+   `python3 scripts/summarize-library.py --apply` (extractive, offline, no
+   model; agent-written summaries preserved). The producer fixes it deterministically and offline —
    `python3 scripts/summarize-library.py --apply` (extractive, no model, no
    network; agent-written summaries are preserved). A clean tier-1 scan is
    evidence about the index, not about the library.
@@ -2095,6 +2181,59 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   Most survivors compute the RIGHT value under the WRONG name — e.g. `VOL41 = 2*mp.clsin(2, mp.pi/3)` is `2·Cl₂(π/3) = 2.0299` ✓ annotated `# Vol(4₁) = 2Λ(π/3)` ✗. So a grep for the bad *name* does not imply a bad *number*; check the arithmetic beside it before "fixing" a value.)
 - **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π. 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
 
+  > **🛑 SCOPING NOTE (2026-09-05) — the route that produces this number is
+  > under review; the number is unchanged and nothing here is enacted.**
+  > Solving the published closed form against the ansatz shape
+  > `|tr_M^z(Δ_S)|·E₀` gives **`z = 1`**, which is **not** an admissible Markov
+  > parameter under convention D — the admissible roots are `z = q` and
+  > `z_D = q³/(q²+1)`, and `z = 1` leaves the `χ_(1³)` coefficient
+  > `c(1) = q²(q−1)(q³−q²−1)/… ≠ 0`, so it does not annihilate the block the
+  > GNS/TL quotient kills (`ConventionDAdmissibleRoots.lean`, sorry-free; PRs
+  > #6722 / #6763, both routes independent).
+  >
+  > **§NO FITTING, EXCEPT CAL-1/2/3 above counts this as selection against the
+  > target** — it names *a branch* chosen because it reproduces the measured
+  > value, and states that accuracy is not evidence of correctness. So the
+  > 0.17 % is not a point in this route's favour under the directive.
+  >
+  > **The two derived alternatives, neither adopted:** `z = q` (the
+  > augmentation) gives `0.8798906` MeV, **+12.470 %**; `z_D` gives
+  > `0.4447004` MeV, **−43.157 %**, against CODATA `0.7823334` MeV. Choosing
+  > between *them* by residual is the same defect one level down and is equally
+  > forbidden — the choice turns on what `ε` **means** in `Q_β = |ε(Δ)|·E₀`,
+  > which is bean `qou-99qc` and is an owner call.
+  >
+  > **🟧 OWNER RULING 2026-09-08 (final, same day) — ε is the MARKOV TRACE AT
+  > `z_D = q³/(q²+1)`, i.e. option C; convention D governs the decay channel
+  > (D7).** Sequence, for the record: the owner first selected the augmentation
+  > on an option that carried the agent's recommendation; the same hour
+  > `13bb8243d8` (`qbeta_augmentation_is_a_markov_trace_probe.py`, on `main`)
+  > showed the augmentation IS the Markov trace at `z = q`, so the choice is
+  > *which Markov parameter*, and under D7 (convention D = the two-row
+  > truncation, scoped to the decay channel) the consistent point is `z_D` —
+  > the augmentation is the strictly finer one-row truncation (`y_(2,1) = 0`)
+  > and is **not** convention D. Put back to the owner with both options
+  > framed; **the owner chose `z_D`.** Base value `0.4447004` MeV,
+  > **−43.157 %** against CODATA. The published 0.17 % form is retired as the
+  > base (it is the `z = 1` cell) and stays citable only as the historical
+  > C-frame cross-check; the augmentation cell (+12.470 %) is the other
+  > admissible point and is proportional to `z_D`'s
+  > (`α = (q⁴+1)/(q²+1)²`). The c_k ladder is to be re-derived on the `z_D`
+  > base (`qou-cds1`, blocked on the phase `qou-pdix`); the dashboard rows
+  > Q_β / m_n / Δ_pn are NOT yet re-scored on it. Same day, the owner also
+  > ruled that every canonical **braid word** is to be selected via γγ
+  > (pair-production) construction + the confinement SDP at q₀, never by
+  > census (bean `qou-ales`). Record:
+  > [`docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md`](docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md) §8.
+  >
+  > **Until it is made, cite this number with its scope**: it is a recorded
+  > cross-check whose functional is inadmissible under the canonical
+  > convention, not a derived prediction. Do **not** quote the 0.17 % as
+  > evidence for the framework, and do **not** replace it on your own
+  > initiative — that picks the option. Full enumeration:
+  > [`docs/audits/2026-09-05-qbeta-functional-decision-options.md`](docs/audits/2026-09-05-qbeta-functional-decision-options.md)
+  > §6.
+
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
 > **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
@@ -2254,15 +2393,23 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is **70 dps compute / 60 dps serialization** (10⁻⁶⁰ absolute truncation, guard 10). **Do not quote 65/50/10⁻⁵⁰** — that was this row until 2026-09-06 and had been stale since at least 2026-08-30 (bean `qou-0z4i`). Measure, do not quote: `python3 -c "import qou_substrate.precision as P; print(P.COMPUTE_DPS, P.OUTPUT_DPS, P.PRECISION_GUARD)"`. The change was a strict tightening — recomputed values agree with committed ones over their whole shared prefix, so no recorded result was invalidated; only this figure was wrong. It reached durable artifacts twice, most recently PR #6937, whose body names "65 dps" and "the 50-dps floor" and thereby **understates** the remaining optimisation headroom (70 → 60 is more than 65 → 50). |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 970.2× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/6 scoreable met (`m_K/m_π` alone; `scoreable_total = 6` (α_em⁻¹ row added 2026-09-07, `d626761a34`; 238.3×)) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/6 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 970.2× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
 - **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
   can still miss its 100× experimental target by 10⁴ (L2 missed).
 - **L2 is variable per observable.** Q_β target is 7.8 ppb; currently
-  measured at 1279 ppb (164.0× miss) per the dashboard (fresh run
-  2026-05-31) — the Habiro-exact 5.7 ppb result was against the
+  measured at **4.316e+8 ppb (5.535e+7× miss)** per the dashboard
+  (`per-observable-100x-status.witness.json`, 2026-09-12) — the RULED base,
+  `ε` = the Markov trace at `z_D = q³/(q²+1)`, with **zero `c_k` rungs**. This
+  read "1279 ppb (164.0× miss) per the dashboard (fresh run 2026-05-31)" until
+  2026-09-12, when item (iii) of the 2026-09-08 ruling was re-scored on owner
+  authorisation (`qou-99qc`); that figure was convention-C on the retired
+  `z = 1` cell. **Do not quote the new figure as convention D's accuracy** —
+  no ladder exists on an admissible base (`qou-cds1`, blocked on the phase
+  `qou-pdix`), and a second re-score is authorised for when one does
+  (`qou-iagg`). Quote the witness, not this paragraph — the Habiro-exact 5.7 ppb result was against the
   pre-re-pin (muon-anchored) q₀ and has not been refreshed since the
   2026-05-28 proton-anchor re-pin
   (see [`docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`](docs/audits/2026-05-30-q0-repin-stale-witness-audit.md)).
@@ -2295,20 +2442,20 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   +242 ppb regression) and was **dropped**; the honest documented-pin
   round-trip is +1.35 ppb, a ~437× miss. Full analysis:
   [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
-- **🛑 The authoritative count is 1/5 SCOREABLE, not 2/7 (corrected
-  2026-08-18).** `beats_100x_count = 2` counts **calibration inputs**
+- **🛑 The authoritative count is 1/6 SCOREABLE, not 2/7 (corrected
+  2026-08-18; 1/5 → 1/6 with `scoreable_total = 6` (α_em⁻¹ row added 2026-09-07, `d626761a34`; 238.3×)).** `beats_100x_count = 2` counts **calibration inputs**
   alongside predictions. The dashboard already excludes `m_p` from scoring
   as an anchor round-trip ("the framework content cancels"), but **scores
   `m_e`**, whose `err_ppb` is not measured but *defined* zero — `m_e` is the
   CAL-1 input that fixes the MeV unit, so its ratio to itself is 1 by
   construction. That is the same argument `m_p` is excluded for, only
-  stronger. Separating inputs from predictions, **1 of 5 scoreable
+  stronger. Separating inputs from predictions, **1 of 6 scoreable
   predictions meets L2, and it is `m_K/m_π`** — the only *ratio* among the
-  five. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
+  six. Quote `beats_100x_scoreable` / `scoreable_total` from the witness,
   **never** bare `beats_100x_count`. Full analysis:
   [`docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md`](docs/audits/2026-08-18-mass-binding-accuracy-what-is-closeable.md).
-- **🛑 Even the 1/5 is inflated — the UNCONDITIONAL parameter-free count is
-  0/5 (red-team 2026-08-22).** The single "scoreable win" `m_K/m_π` is itself
+- **🛑 Even the 1/6 is inflated — the UNCONDITIONAL parameter-free count is
+  0/6 (red-team 2026-08-22; denominators 5 → 6 on 2026-09-07).** The single "scoreable win" `m_K/m_π` is itself
   **not** a parameter-free prediction. Its derived core `√([3]_q·[4]_q)` (a
   legitimate ~0.1 % categorical postdiction of the strong ratio) misses this
   observable's own — unusually loose, 264 ppb — 100× target by **385×** on its
@@ -2318,8 +2465,8 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   caught) and whose `α_em` input is **conditional on an open Lean `sorry`**
   (Witten-κ Gram determinant). So `beats_100x_scoreable = 1` is the dashboard's
   arithmetic metric; the count of **unconditional, parameter-free** sub-100×
-  predictions is **0**. State it as "1/5 scoreable — and that 1 is
-  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/5 unconditional**". Full
+  predictions is **0**. State it as "1/6 scoreable — and that 1 is
+  truncation-fitted + α_em-`sorry`-conditional ⇒ **0/6 unconditional**". Full
   analysis:
   [`docs/audits/2026-08-22-mK-mpi-l2-red-team.md`](docs/audits/2026-08-22-mK-mpi-l2-red-team.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
@@ -2419,9 +2566,65 @@ discipline review will catch it. Full framing:
 >   is exactly that order-independent (physical) regime.
 > - **Body-order recurrence depth ≥ 3 is forced**, and 3 terms cannot test it
 >   (`QOU.MassTheory.BodyOrderRecurrenceDepth`).
-> - **The connected 3-body Mayer/Ursell cumulant sign is threshold-forced and
->   wrong against AME**, independent of the bond set
->   (`QOU.MassTheory.MayerThreeBodySign`, bean `qou-rraz`).
+> - **The connected 3-body cumulant of the multiplicative assembly is the third
+>   Mayer coefficient of a lattice gas, and it is negative for every bond
+>   triple — no threshold** (owner-adopted wording, 2026-09-12, PR #7198).
+>   `b₃ = −φᵀ₃` exactly, where `φᵀ₃` is the third Ursell function of the
+>   hard-core lattice gas on the nucleon sites with the interface-letter traces
+>   `μ_e ∈ (0,1)` as pair weights (`QOU.MassTheory.UrsellPartitionFunctionB3`,
+>   sorry-free); by the Ursell alternation `φᵀ₃ > 0`, so `b₃ < 0` for every
+>   `f ∈ (0,1)³` — the `fpn > 2/3` escape of `MayerThreeBodySign.lt_of_b3_pos`
+>   came from leaving `P₃` free and is never met. Scope (b), invariant = the
+>   alternation. The 2026-08-30 "missing `(−1)^{n−1}`" reading is withdrawn:
+>   restoring it is the same expansion at negative activity. Within Mayer a
+>   positive term needs a bond factor above 1 (attractive channel; none in the
+>   production word — measured in #7198 and independently in #7204, whose one
+>   mechanism reaching `b > 1` is 4.0× short **against the SEMF asymmetry
+>   coefficient `a_A` (23.7 / 5.963), NOT against `b₃`** — that arc is the
+>   `δ ≤ 2 ln q` cap of #7165, a different quantity; scope a); the log assembly
+>   is exactly pairwise (`b₃ = 0`). Zero-parameter magnitudes at the live chain
+>   bonds: `−1.2277` MeV (³H) vs AME `+1.8081`, `−0.7973` MeV (³He) vs
+>   `+1.0443`. Audit: `docs/audits/2026-09-12-ursell-partition-function-for-b3.md`,
+>   beans `qou-rwhv` / `qou-rraz`.
+>
+>   🛑 **"A bond factor above 1" is NECESSARY, NOT SUFFICIENT — do not read the
+>   sentence above as "find an attractive letter and the sign follows"** (owner
+>   ruling 2026-09-12, PR #7226, bean `qou-q8vl`). The production `A = 3` word is
+>   a **chain** (`atom_braid_word_3A` lays `A−1` interfaces in a line), so `φᵀ₃`
+>   collapses to a **product**, `φᵀ₃ = g₀₁·g₁₂` — and a product does not change
+>   sign when **both** factors flip. Measured: reflecting every live bond to
+>   attractive leaves `b₃` **byte-identical** (`−0.293278112721` ³H,
+>   `−0.190468485549` ³He). A two-bond chain needs **exactly one** bond above 1,
+>   i.e. a **sign-mixed** pair (`b3corpus_chain_pos_iff`).
+>
+>   Two further traps on this bullet. **The chain is covered by NEITHER standing
+>   theorem**: `b3corpus_neg` needs all three bonds strictly inside `(0,1)` and a
+>   chain's absent bond sits at exactly `f = 1`; `wMult_b3_nonpos` is the
+>   **equal-bond** case and the chain bonds differ by ~0.105 — use
+>   `QOU.MassTheory.B3SignOneRoot.b3corpus_chain_neg`. And **a bond above 1 is not
+>   the only escape**: `AggregatorConvexity.b3Agg_nonneg_of_convexOn` gives
+>   `b₃ ≥ 0` from an aggregator convex through the origin with every bond still
+>   inside `(0,1)` (bean `qou-82mc`).
+>
+>   **The required sign-mixed pattern is the two-nucleon spectrum.** Both `A = 3`
+>   chains impose the same one — `g_pn` opposite to both like-pair bonds — which,
+>   since `B = −α·log μ > 0` iff `μ < 1`, reads *the unlike pair binds and the
+>   like pairs do not*: deuteron bound, diproton and dineutron unbound. The live
+>   model binds all three (dineutron **most** bound), so `b₃ > 0` and the correct
+>   two-body isospin structure are **one condition, not two**. Both derived bond
+>   families are excluded from supplying it — production letters by `d ≤ 0`
+>   (`SingleCrossingAlwaysBinds.interface_mem_Ioo`), isospin projectors by an
+>   **identity**, `μ₊ + μ₋ = 1` (`InterfaceScalar.mu_sum_eq_one`), so an
+>   attractive channel forces its partner to `μ < 0` where the log is not real.
+>
+>   **Do NOT "fix" this by adopting `σ²`.** It does reach `μ = (q⁴+1)/(q²+1) > 1`
+>   for every `q > 1`, but the topological argument that selects it assigns it to
+>   the *distinguishable* pair, which bean `qou-kj4v` records as running backwards
+>   (it **binds the diproton and unbinds the deuteron**); choosing it because it
+>   yields `b₃ > 0` is selection against the target. And **`μ(σ^m)` does not
+>   alternate by parity** — measured `m = −2…+8`, `μ > 1` at `m = 2, 4, 5, 6, 7, 8`,
+>   so `+5` and `+7` are odd. Audit:
+>   `docs/audits/2026-09-12-b3-sign-one-root-and-the-insufficient-escape.md`.
 >
 > **Deuteron leg — 🟧 OWNER RULING A (2026-08-29):** the deuteron knot is the
 > canonical braid closure (trefoil / Hopf, `Vol = 0`); **the deuteron binding is
@@ -2993,7 +3196,7 @@ above already carries the tighter σ).
    the CAL-1 input that fixes the MeV unit; its `err_ppb` is *defined*
    zero, not measured. Scoring it as a "beat" is the identical tautology
    this rule forbids one line above. The canonical L2 count is therefore
-   **1/5 scoreable** — `m_K/m_π` alone — **not** 2/7, and not 3/7 or 4/7.
+   **1/6 scoreable** — `m_K/m_π` alone; `scoreable_total = 6` (α_em⁻¹ row added 2026-09-07, `d626761a34`; 238.3×) — **not** 1/5, 2/7, 3/7 or 4/7.
    Quote `beats_100x_scoreable` / `scoreable_total`; `beats_100x_count = 2`
    is retained in the witness for consumer compatibility and **must not be
    quoted as an accuracy result** (corrected 2026-08-18).
@@ -5104,17 +5307,63 @@ re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 >
 > **🛑 And "0 red" is not the current result — at full scope it is 8 RED, of which
 > ZERO are corpus defects.** All 8 are one class: a **missing Mathlib olean**,
-> named at the block's own `import` line. Exactly **4** of the **252** distinct
-> Mathlib modules the content corpus imports are absent from the restored
-> `lake-cache/qou-v4-24-0` — `Topology.FiberBundle.Basic`,
-> `RingTheory.HopfAlgebra.Basic`, `Analysis.Complex.UpperHalfPlane.Basic`,
-> `Analysis.Real.Pi.Bounds` — and those four account for all 8. Absent from the
+> named at the block's own `import` line. Absent from the
 > **paper and root trees alike**, and reproducible with **no shadow and no sweep**
 > on a plain restored cache, so it is the cache branch, not the gate and not the
 > source. So read the corpus result as **930 of 938 verifiable and green, 8
 > unverifiable here**, and do NOT "fix" those blocks: their imports are fine, the
-> cache is short. Fix at the cache branch (reseed those four cones) or give the
-> gate an expected-RED list, so it distinguishes *cannot verify* from *fails*.
+> cache is short.
+>
+> **🟩 THE GAP IS CLOSED, and it was 3 targets / 7 modules, not 4 (2026-09-07).**
+> This paragraph named four absent modules. Measured: **`Analysis.Real.Pi.Bounds`
+> is PRESENT.** The real gap is three targets whose transitive cones are seven
+> modules — `HopfAlgebra.Basic` (+ `Bialgebra.Basic`, `Coalgebra.Basic`,
+> `TensorProduct.Finiteness`), `FiberBundle.Basic` (+ `FiberBundle.Trivialization`)
+> and `UpperHalfPlane.Basic`. All seven build from source with `lean`-direct in a
+> few minutes and package to **2.3 MB**.
+>
+> Seeded to the addon orphan branch **`lake-cache/qou-v4-24-0-mathlib-gap-modules`**;
+> restore with [`scripts/lean-restore-gap-oleans.sh`](scripts/lean-restore-gap-oleans.sh).
+> With them restored, the seven blocks that import them compile **plain
+> `lean`-direct, no shadow, exit 0** — confirming the diagnosis above exactly.
+>
+> **🟩 THAT BRANCH IS NOW 7 → 86 OLEANS (2026-09-11, commit `d7e3ae8c662`), and the
+> 79 added are what make the LIBRARY ROOT verifiable.** The seven above unblock
+> seven content blocks. They do **not** cover
+> `Mathlib.RepresentationTheory.Homological.GroupCohomology.LowDegree`, which
+> `QOU.Eightfold.ObstructionH2Mathlib` needs — and the library root `QOU` is
+> **SKIPPED behind that module**, so the single module `lake build QOU` gates on
+> could not be checked in a stock container at all. That was attributed to a
+> container resource limit (bean `qou-ed8a`, repeated in a sibling's merged audit);
+> **it is not one** — it is 79 missing oleans, 188 s to build, 22 MB to fetch.
+>
+> **How the set was identified, and it is NOT by mtime** (an `mtime` discriminator
+> fails here: `shutil.copy2` and a restore both preserve it). An olean in the paper
+> mathlib tree with **no paired `.trace`** is exactly one the main cache did not
+> provide, because `lake-cache/qou-v4-24-0` is 100 % trace-paired while both this
+> branch's restore and a `lean`-direct build write plain oleans. That found **87**;
+> one — `Mathlib/Data/Multiset/ZeroCons.olean`, mtime 2026-08-28, eleven days before
+> the cone was built — is an untraced leftover from an earlier session and is
+> **deliberately excluded**, so the 86 are exactly the 7 + the 79-module cone.
+>
+> **Verify with the SWEEP, not bare `lean`-direct, and the reason is instructive.**
+> Two attempts to verify `ObstructionH2Mathlib` by hand both failed for reasons
+> that were about the command rather than the cache: `lean-direct-env.sh` pins the
+> **ROOT** tree (1298 oleans here against the paper tree's 3563), so it reported a
+> missing *Mathlib* olean; re-pinned to the **paper** tree it reported a missing
+> **QOU** olean (`QOU.Eightfold.ObstructionH2`), which is a sibling library module
+> the sweep builds into its shadow and a bare `lean` never does. Neither was
+> evidence about the gap. `scripts/lean-library-sweep.py --all --only-exact QOU`
+> is the gate.
+>
+> **Seven, not eight, and the difference is NOT settled.** The 8 above came from a
+> full content sweep; the 7 from grepping `import` lines, so a block blocked
+> *transitively* through a `QOU` module would not appear in it. One block remains
+> unaccounted for. Do not read 7 as a correction of 8.
+>
+> Restoring is **not** a Lake restore: these are plain oleans with no `.trace`, so
+> `lake build` would evict them with the rest of the cache. Write-up:
+> [`docs/audits/2026-09-07-mathlib-cache-gap-closed.md`](docs/audits/2026-09-07-mathlib-cache-gap-closed.md).
 >
 > **🛑 QUIESCE THE SESSIONSTART BUILD BEFORE TRUSTING THE SAFETY INVARIANT.** Both
 > sweeps assert that the hardlinked shadow never writes through into the real

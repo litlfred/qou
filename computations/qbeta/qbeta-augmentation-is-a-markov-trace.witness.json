@@ -1,0 +1,88 @@
+{
+  "description": "qou-99qc: the augmentation IS the Markov trace at z = q (unique), so the two admissible Q_beta functionals differ only in the Markov parameter. By block support the augmentation is a ONE-row truncation and z_D the TWO-row one; D7 (2026-09-07) scopes convention D -- the two-row TL truncation -- to the decay/Q_beta channel, which selects z_D. Scope-(a); wires nothing.",
+  "checks": [
+    {
+      "name": "augmentation_IS_the_markov_trace_at_z_equals_q",
+      "passed": true,
+      "detail": "all 6 basis elements of H_3(q) agree: the Markov trace built from tr(1)=1, tr(x s_n)=z tr(x), cyclicity and s^2 = h s + 1, evaluated at z = q, equals the algebra map s_i -> q. The 'multiplicative functional vs Markov trace' dichotomy the corpus has been carrying is FALSE"
+    },
+    {
+      "name": "and_z_equals_q_is_the_UNIQUE_such_parameter",
+      "passed": true,
+      "detail": "solving for basis-wide agreement over an unrestricted z gives exactly [q] -- so the augmentation is ONE POINT of the Markov family, not a functional of a different kind that happens to collide somewhere"
+    },
+    {
+      "name": "CALIBRATION_y_1cubed_vanishes_at_EXACTLY_the_known_two_roots",
+      "passed": true,
+      "detail": "solving y_(1,1,1)(z) = 0 gives [q, q**3/(q**2 + 1)] = {q, q^3/(q^2+1)}, the two admissible parameters the corpus already establishes by an independent route. A wrong character table or normalisation would not reproduce that pair, so the table below is checked against the corpus, not asserted"
+    },
+    {
+      "name": "conventionD_is_the_TWO_ROW_family_lambda_eq_n_minus_k_k",
+      "passed": true,
+      "detail": "z_D is supported on [(2, 1), (3,)] = {(3-0,0), (3-1,1)} with y_(1,1,1) = 0 -- exactly D7's stated characterisation of convention D as the two-row TL truncation (TemperleyLiebTower's concrete lambda = (n-k,k))"
+    },
+    {
+      "name": "augmentation_is_STRICTLY_FINER_a_ONE_ROW_truncation",
+      "passed": true,
+      "detail": "the augmentation is supported on [(3,)] alone -- it kills (2,1) as well as (1,1,1), so it is a ONE-row truncation, a proper refinement of D rather than D itself. Therefore it is NOT the convention-D functional"
+    },
+    {
+      "name": "D7_count_trap_is_REAL_here_and_this_probe_avoids_it",
+      "passed": true,
+      "detail": "rows<=2 and cols<=2 both give dimension sum 5 = catalan(3), so a count-based labelling cannot tell the row reading from the column one (D7's transposition-blindness trap). Nothing above counts: every claim is about WHICH partitions carry nonzero weight"
+    },
+    {
+      "name": "CALIBRATION_reproduces_the_merged_two_cells",
+      "passed": true,
+      "detail": "12.47002366 % and -43.15717469 % reproduce the +12.470 % / -43.157 % of #6722/#6763/#6832, so the machinery here is anchored to the merged numbers rather than free-standing"
+    },
+    {
+      "name": "the_RULING_selects_the_WORSE_residual_and_that_is_correct",
+      "passed": true,
+      "detail": "|-43.157175| > |12.470024| -- the functional D7 selects is the one that fits WORSE. Recorded explicitly because it is the anti-fitting directive working as intended: had the ruling landed on the better residual, that would be the coincidence worth suspecting"
+    }
+  ],
+  "all_passed": true,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "qbeta_augmentation_is_a_markov_trace_probe.py",
+  "block_weights_generic_z": {
+    "(3,)": "Mul(Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-1)), Add(Mul(Symbol('q', positive=True), Symbol('z', positive=True)), Integer(1)), Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Mul(Integer(-1), Symbol('q', positive=True)), Integer(1)), Integer(-1)), Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Symbol('q', positive=True), Integer(1)), Integer(-1)), Add(Mul(Pow(Symbol('q', positive=True), Integer(3)), Symbol('z', positive=True)), Mul(Symbol('q', positive=True), Symbol('z', positive=True)), Integer(1)))",
+    "(2, 1)": "Mul(Integer(-1), Symbol('q', positive=True), Add(Mul(Integer(-1), Symbol('q', positive=True)), Symbol('z', positive=True)), Add(Mul(Symbol('q', positive=True), Symbol('z', positive=True)), Integer(1)), Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Mul(Integer(-1), Symbol('q', positive=True)), Integer(1)), Integer(-1)), Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Symbol('q', positive=True), Integer(1)), Integer(-1)))",
+    "(1, 1, 1)": "Mul(Pow(Symbol('q', positive=True), Integer(2)), Add(Mul(Integer(-1), Symbol('q', positive=True)), Symbol('z', positive=True)), Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-1)), Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Mul(Integer(-1), Symbol('q', positive=True)), Integer(1)), Integer(-1)), Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Symbol('q', positive=True), Integer(1)), Integer(-1)), Add(Mul(Integer(-1), Pow(Symbol('q', positive=True), Integer(3))), Mul(Pow(Symbol('q', positive=True), Integer(2)), Symbol('z', positive=True)), Symbol('z', positive=True)))"
+  },
+  "block_support": {
+    "augmentation": [
+      "(3,)"
+    ],
+    "conventionD": [
+      "(2, 1)",
+      "(3,)"
+    ]
+  },
+  "y_1cubed_roots": [
+    "Symbol('q', positive=True)",
+    "Mul(Pow(Symbol('q', positive=True), Integer(3)), Pow(Add(Pow(Symbol('q', positive=True), Integer(2)), Integer(1)), Integer(-1)))"
+  ],
+  "q_beta_cells_MeV": {
+    "augmentation_z_eq_q": "0.87989056007200685658",
+    "convention_D_z_D": "0.44470040792130308627",
+    "codata": "0.7823334"
+  },
+  "q_beta_miss_pct": {
+    "augmentation_z_eq_q": "12.470023659",
+    "convention_D_z_D": "-43.1571746878"
+  },
+  "caveats": [
+    "Scope-(a). Establishes an identification and a block-support fact; it does not derive Q_beta and proposes no value for anything.",
+    "The selected functional gives the WORSE residual (-43.157 % vs +12.470 %). That is the anti-fitting directive working, not a defect.",
+    "Option E -- derive a different element Delta -- is untouched and remains the only route to a parameter-free admissible sub-1 % result (qou-37j2). Commit 5f5cdebef5b showed that search is real: eps(Delta_S) and chi_(3)(Delta_L) are genuinely different elements, not an arithmetic discrepancy.",
+    "The n = 3 computation is the Q_beta ladder's H_3, which is the algebra D7 names for this channel. Nothing here is claimed for general n."
+  ],
+  "scriptHash": "08769c21eb8d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "8dad7bd12792296976ff35a6c3e3b11c22d840ea",
+  "engine": "python+sympy",
+  "computedAt": "2026-09-07T17:51:28.361022+00:00",
+  "durationMs": 0
+}

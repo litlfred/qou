@@ -1,0 +1,446 @@
+{
+  "computation": "brng-multiplicity-channel-bound",
+  "description": "The multiplicity channel of a trace-sum binding law is sub-extensive. A signed sum over the partitions of 3A is bounded by p(3A) times its largest summand, so multiplicity contributes at most log p(3A) to the log-amplitude. Exact partition counts and AME2020 binding energies; the headline (R5) is scale-free and does not use E_0. Scope-(b) structural exclusion of the multiplicity channel ALONE -- the dominant summand's own log-weight is untouched and is the live remainder. Nothing wired, nothing fitted.",
+  "assertions": [
+    {
+      "name": "hardy_ramanujan_bound_holds_A_2_to_400",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "log p(3A) <= pi sqrt(2) sqrt(A) verified with exact p(n) for every A in 2..400; this is the hypothesis carried by hardyRamanujan_gives_sqrt_law"
+    },
+    {
+      "name": "exact_counts_below_asymptotic_bound_everywhere",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "using exact p(n) rather than the asymptotic form makes the exclusion stronger, not weaker"
+    },
+    {
+      "name": "cap_below_binding_for_every_nuclide_A_at_least_12",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the multiplicity channel cannot supply the measured binding at any A >= 12 even if it were the ONLY contribution"
+    },
+    {
+      "name": "cap_share_decreasing_from_12C_to_238U",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "share falls with A -- the signature of a sub-extensive channel"
+    },
+    {
+      "name": "deuteron_is_a_genuine_exception_cap_exceeds_its_binding",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "At A=2 the cap EXCEEDS the measured binding, so the multiplicity channel is NOT excluded there. This is not a defect in the argument: sub-extensive and extensive are indistinguishable at the smallest A, which is exactly what the Lean's explicit threshold A > (c/a)^2 says. With exact counts the crossing happens between A=2 and A=4, so the exclusion bites from 4He upward and strengthens monotonically."
+    },
+    {
+      "name": "required_summand_count_exceeds_p_3A_for_every_nuclide_A_at_least_12",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "card_ge_exp_of_linear_le_log_card, evaluated"
+    },
+    {
+      "name": "shape_mismatch_above_one_for_every_heavier_nuclide",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "E_0 cancels from both ratios; the multiplicity channel grows strictly slower than the measured binding, so no choice of scale can make it the extensive term"
+    },
+    {
+      "name": "mismatch_grows_with_mass",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a constant mismatch would be a scale error; a growing one is a shape error, and a shape error is not repairable by E_0"
+    },
+    {
+      "name": "sqrt_law_shortfall_identity_holds_to_working_precision",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "QOU.Mass.MultiplicityNotExtensive.sqrt_law_shortfall"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "q0_pin": "proton",
+    "dps": 70,
+    "m_e_MeV": "0.51099895069",
+    "E0_MeV": "4.227483355629030624",
+    "E0_role": "carried from the sibling #7165 probe's closed form; R5 and R6 do not use it, R3 and R4 are labelled E_0-dependent (see #7174 / qou-v8ct: a uniform factor is undecidable against a uniform bond rescaling)",
+    "strands_per_nucleon": 3,
+    "hardy_ramanujan_c": "4.442882938158366247",
+    "ame_source": "AME2020 vendored table, binding_energy_per_A_keV x A",
+    "lean": [
+      "QOU/Mass/MultiplicityNotExtensive.lean"
+    ]
+  },
+  "data": {
+    "hardy_ramanujan_tightest_A": 2,
+    "hardy_ramanujan_tightest_slack": "3.88529003438122",
+    "exact_vs_asymptotic": [
+      {
+        "nuclide": "2H",
+        "A": 2,
+        "n": 6,
+        "log_p_exact": "2.39789527279837",
+        "hardy_ramanujan": "6.28318530717959",
+        "ratio_exact_over_bound": "0.381636885683"
+      },
+      {
+        "nuclide": "4He",
+        "A": 4,
+        "n": 12,
+        "log_p_exact": "4.34380542185368",
+        "hardy_ramanujan": "8.88576587631673",
+        "ratio_exact_over_bound": "0.488849861938"
+      },
+      {
+        "nuclide": "7Li",
+        "A": 7,
+        "n": 21,
+        "log_p_exact": "6.67456139181443",
+        "hardy_ramanujan": "11.754763358539",
+        "ratio_exact_over_bound": "0.567817589196"
+      },
+      {
+        "nuclide": "12C",
+        "A": 12,
+        "n": 36,
+        "log_p_exact": "9.79684844204642",
+        "hardy_ramanujan": "15.3905979619424",
+        "ratio_exact_over_bound": "0.636547616036"
+      },
+      {
+        "nuclide": "16O",
+        "A": 16,
+        "n": 48,
+        "log_p_exact": "11.9000432862603",
+        "hardy_ramanujan": "17.7715317526335",
+        "ratio_exact_over_bound": "0.66961269585"
+      },
+      {
+        "nuclide": "40Ca",
+        "A": 40,
+        "n": 120,
+        "log_p_exact": "21.3353925102759",
+        "hardy_ramanujan": "28.0992589241629",
+        "ratio_exact_over_bound": "0.759286661896"
+      },
+      {
+        "nuclide": "56Fe",
+        "A": 56,
+        "n": 168,
+        "log_p_exact": "26.1535090136466",
+        "hardy_ramanujan": "33.2474915282643",
+        "ratio_exact_over_bound": "0.786631045275"
+      },
+      {
+        "nuclide": "62Ni",
+        "A": 62,
+        "n": 186,
+        "log_p_exact": "27.7892486390166",
+        "hardy_ramanujan": "34.9832952383717",
+        "ratio_exact_over_bound": "0.794357662698"
+      },
+      {
+        "nuclide": "120Sn",
+        "A": 120,
+        "n": 360,
+        "log_p_exact": "40.8241766763342",
+        "hardy_ramanujan": "48.6693441116833",
+        "ratio_exact_over_bound": "0.838806797615"
+      },
+      {
+        "nuclide": "208Pb",
+        "A": 208,
+        "n": 624,
+        "log_p_exact": "55.6866155308598",
+        "hardy_ramanujan": "64.0761689776564",
+        "ratio_exact_over_bound": "0.869069053586"
+      },
+      {
+        "nuclide": "238U",
+        "A": 238,
+        "n": 714,
+        "log_p_exact": "60.01833699626",
+        "hardy_ramanujan": "68.5414596789311",
+        "ratio_exact_over_bound": "0.875650114214"
+      }
+    ],
+    "cap_against_ame": [
+      {
+        "nuclide": "2H",
+        "Z": 1,
+        "A": 2,
+        "B_AME_MeV": "2.2245662",
+        "mu_log_p_3A": "2.39789527279837",
+        "cap_MeV": "10.1370623543",
+        "cap_over_B": "4.55687151693"
+      },
+      {
+        "nuclide": "4He",
+        "Z": 2,
+        "A": 4,
+        "B_AME_MeV": "28.2956624",
+        "mu_log_p_3A": "4.34380542185368",
+        "cap_MeV": "18.363365121",
+        "cap_over_B": "0.648981630519"
+      },
+      {
+        "nuclide": "7Li",
+        "Z": 3,
+        "A": 7,
+        "B_AME_MeV": "39.2450807",
+        "mu_log_p_3A": "6.67456139181443",
+        "cap_MeV": "28.21659719",
+        "cap_over_B": "0.718984308013"
+      },
+      {
+        "nuclide": "12C",
+        "Z": 6,
+        "A": 12,
+        "B_AME_MeV": "92.1617352",
+        "mu_log_p_3A": "9.79684844204642",
+        "cap_MeV": "41.4160137264",
+        "cap_over_B": "0.449384048993"
+      },
+      {
+        "nuclide": "16O",
+        "Z": 8,
+        "A": 16,
+        "B_AME_MeV": "127.6193152",
+        "mu_log_p_3A": "11.9000432862603",
+        "cap_MeV": "50.3072349239",
+        "cap_over_B": "0.394197656092"
+      },
+      {
+        "nuclide": "40Ca",
+        "Z": 20,
+        "A": 40,
+        "B_AME_MeV": "342.052184",
+        "mu_log_p_3A": "21.3353925102759",
+        "cap_MeV": "90.195016723",
+        "cap_over_B": "0.263687884311"
+      },
+      {
+        "nuclide": "56Fe",
+        "Z": 26,
+        "A": 56,
+        "B_AME_MeV": "492.2599528",
+        "mu_log_p_3A": "26.1535090136466",
+        "cap_MeV": "110.563524046",
+        "cap_over_B": "0.22460393826"
+      },
+      {
+        "nuclide": "62Ni",
+        "Z": 28,
+        "A": 62,
+        "B_AME_MeV": "545.262441",
+        "mu_log_p_3A": "27.7892486390166",
+        "cap_MeV": "117.478586087",
+        "cap_over_B": "0.215453288643"
+      },
+      {
+        "nuclide": "120Sn",
+        "Z": 50,
+        "A": 120,
+        "B_AME_MeV": "1020.53856",
+        "mu_log_p_3A": "40.8241766763342",
+        "cap_MeV": "172.583527406",
+        "cap_over_B": "0.169110246463"
+      },
+      {
+        "nuclide": "208Pb",
+        "Z": 82,
+        "A": 208,
+        "B_AME_MeV": "1636.430224",
+        "mu_log_p_3A": "55.6866155308598",
+        "cap_MeV": "235.414240288",
+        "cap_over_B": "0.143858404004"
+      },
+      {
+        "nuclide": "238U",
+        "Z": 92,
+        "A": 238,
+        "B_AME_MeV": "1801.6900356",
+        "mu_log_p_3A": "60.01833699626",
+        "cap_MeV": "253.726520684",
+        "cap_over_B": "0.14082695451"
+      }
+    ],
+    "exponential_requirement": [
+      {
+        "nuclide": "2H",
+        "A": 2,
+        "log10_summands_required": "0.228532378253",
+        "log10_p_3A_available": "1.04139268516",
+        "shortfall_orders_of_magnitude": "-0.812860306905"
+      },
+      {
+        "nuclide": "4He",
+        "A": 4,
+        "log10_summands_required": "2.90684764631",
+        "log10_p_3A_available": "1.88649072517",
+        "shortfall_orders_of_magnitude": "1.02035692114"
+      },
+      {
+        "nuclide": "7Li",
+        "A": 7,
+        "log10_summands_required": "4.03169464101",
+        "log10_p_3A_available": "2.89872518159",
+        "shortfall_orders_of_magnitude": "1.13296945942"
+      },
+      {
+        "nuclide": "12C",
+        "A": 12,
+        "log10_summands_required": "9.46788660603",
+        "log10_p_3A_available": "4.25471721842",
+        "shortfall_orders_of_magnitude": "5.21316938761"
+      },
+      {
+        "nuclide": "16O",
+        "A": 16,
+        "log10_summands_required": "13.1104867159",
+        "log10_p_3A_available": "5.16812313363",
+        "shortfall_orders_of_magnitude": "7.94236358226"
+      },
+      {
+        "nuclide": "40Ca",
+        "A": 40,
+        "log10_summands_required": "35.1394348688",
+        "log10_p_3A_available": "9.26584323645",
+        "shortfall_orders_of_magnitude": "25.8735916324"
+      },
+      {
+        "nuclide": "56Fe",
+        "A": 56,
+        "log10_summands_required": "50.5704607632",
+        "log10_p_3A_available": "11.358324647",
+        "shortfall_orders_of_magnitude": "39.2121361162"
+      },
+      {
+        "nuclide": "62Ni",
+        "A": 62,
+        "log10_summands_required": "56.0154705281",
+        "log10_p_3A_available": "12.0687173402",
+        "shortfall_orders_of_magnitude": "43.946753188"
+      },
+      {
+        "nuclide": "120Sn",
+        "A": 120,
+        "log10_summands_required": "104.841161489",
+        "log10_p_3A_available": "17.7297146588",
+        "shortfall_orders_of_magnitude": "87.1114468297"
+      },
+      {
+        "nuclide": "208Pb",
+        "A": 208,
+        "log10_summands_required": "168.112457582",
+        "log10_p_3A_available": "24.1843898409",
+        "shortfall_orders_of_magnitude": "143.928067741"
+      },
+      {
+        "nuclide": "238U",
+        "A": 238,
+        "log10_summands_required": "185.089798052",
+        "log10_p_3A_available": "26.0656325705",
+        "shortfall_orders_of_magnitude": "159.024165481"
+      }
+    ],
+    "scale_free_shape_mismatch": [
+      {
+        "nuclide": "16O",
+        "A": 16,
+        "base": "12C",
+        "base_A": 12,
+        "B_ratio": "1.38473212253",
+        "mu_ratio": "1.21468075746",
+        "shape_mismatch": "1.13999675556",
+        "asymptotic_sqrt_A_ratio": "1.15470053838"
+      },
+      {
+        "nuclide": "40Ca",
+        "A": 40,
+        "base": "12C",
+        "base_A": 12,
+        "B_ratio": "3.7114338533",
+        "mu_ratio": "2.17778121571",
+        "shape_mismatch": "1.70422714023",
+        "asymptotic_sqrt_A_ratio": "1.82574185835"
+      },
+      {
+        "nuclide": "56Fe",
+        "A": 56,
+        "base": "12C",
+        "base_A": 12,
+        "B_ratio": "5.34126176913",
+        "mu_ratio": "2.6695839145",
+        "shape_mismatch": "2.00078436947",
+        "asymptotic_sqrt_A_ratio": "2.16024689947"
+      },
+      {
+        "nuclide": "62Ni",
+        "A": 62,
+        "base": "12C",
+        "base_A": 12,
+        "B_ratio": "5.91636474527",
+        "mu_ratio": "2.83654981532",
+        "shape_mismatch": "2.08576091748",
+        "asymptotic_sqrt_A_ratio": "2.27303028283"
+      },
+      {
+        "nuclide": "120Sn",
+        "A": 120,
+        "base": "12C",
+        "base_A": 12,
+        "B_ratio": "11.073343593",
+        "mu_ratio": "4.1670723925",
+        "shape_mismatch": "2.65734370561",
+        "asymptotic_sqrt_A_ratio": "3.16227766017"
+      },
+      {
+        "nuclide": "208Pb",
+        "A": 208,
+        "base": "12C",
+        "base_A": 12,
+        "B_ratio": "17.7560700268",
+        "mu_ratio": "5.68413565447",
+        "shape_mismatch": "3.12379420657",
+        "asymptotic_sqrt_A_ratio": "4.16333199893"
+      },
+      {
+        "nuclide": "238U",
+        "A": 238,
+        "base": "12C",
+        "base_A": 12,
+        "B_ratio": "19.5492199847",
+        "mu_ratio": "6.12629024031",
+        "shape_mismatch": "3.19103718856",
+        "asymptotic_sqrt_A_ratio": "4.45346307196"
+      }
+    ]
+  },
+  "provenance": {
+    "headSha": "fe9fc6e52edf601209995e8fe76ba648d44ba122",
+    "producer": "computations/brng_multiplicity_channel_bound_probe.py",
+    "bean": "qou-brng",
+    "elapsed_s": 0.222
+  },
+  "scriptFile": "brng_multiplicity_channel_bound_probe.py",
+  "scriptHash": "7a38f0f3e172",
+  "scriptCommitSha": "unknown",
+  "commitSha": "fe9fc6e52edf601209995e8fe76ba648d44ba122",
+  "engine": "python",
+  "computedAt": "2026-09-11T15:04:51.588297+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: experimental pin is the default for all new compute. Only the E_0-dependent results (R3, R4) use it; R5 and R6 are scale-free."
+}

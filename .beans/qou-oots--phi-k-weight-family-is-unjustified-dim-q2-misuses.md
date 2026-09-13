@@ -1,11 +1,11 @@
 ---
 # qou-oots
 title: 'Phi_k weight family is unjustified: dim_q^2 misuses a quantum dimension where f^lambda*dim_q (Molien, Lean-proved exactly normalized) or y_lambda (Markov, canonical Frobenius pairing) may belong'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-05T09:27:34Z
+updated_at: 2026-09-08T07:40:03Z
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -550,3 +550,124 @@ class as everything else in this thread.
 
 NOT FIXED, separate defect: additive_wedderburn_volumes is float64 throughout
 (a, b = 0.0, 1.0) on a path ending at a CODATA comparison.
+
+## 2026-09-05 (later still) — 🛑 RETRACTION: my "TL constraint" was a scope error the audit already names
+
+**Probe:** `computations/probes/phi_k_is_not_a_trace_probe.py`, 4/4, exit 0, zero builtin-float coercions, no witness.
+
+### What I claimed, merged in #6806
+
+> *"Any weight family consistent with the corpus's canonical trace must vanish on `ker(H_n ↠ TL_n)` … no candidate currently on the table satisfies the corpus's own consistency requirement."*
+
+### Why it is wrong — three ways, any one sufficient
+
+1. **The Φ_k audit names this as the error it exists to block.** Its **R3** row reads: *"no Markov property is required — **Φ is not a trace** … it removes the reason to want `y_λ` and **blocks a scope error**."* My constraint is exactly that scope error.
+2. **Φ_k is not linear on the algebra.** `Φ_k(β) = Σ_{λ: depth k} w_λ·log(|χ^λ(β)|·d_q(λ))` — a log-weighted sum over one stratum. `tr_M = Σ_λ y_λ χ^λ` is a linear functional on `H_n(q)`. A kernel argument about which *algebra elements* act as zero says nothing about which *partitions* a separate functional may weight.
+3. **It annihilates its own subject.** Imposed, it forces `w_λ = 0` on every λ with ≥3 rows — every stratum of depth ≥ 2 — so `Φ_k ≡ 0` for **all** `k ≥ 2` by the audit's own R1. A requirement that forbids the object being constructed is a reductio.
+
+### And the "fifth measure" I endorsed FAILS R1
+
+§4 named the TL share `(f^λ)²/C_n` over `ℓ(λ) ≤ 2` as *"the one candidate that clears the constraint"*. It clears it by being zero off the two-row cap — precisely what R1 retires `y_λ` for. Measured per stratum:
+
+| n | d0 | d1 | d2 | d3 | … |
+|---|---|---|---|---|---|
+| 4 | 0.07143 | 0.9286 | **0.0** | **0.0** | |
+| 9 | 0.0002057 | **0.9998** | **0.0** | **0.0** | all 0.0 |
+
+**My proposed solution was the degenerate case.**
+
+### Molien — the ruling's answer — satisfies R1 and R2 on exactly those strata
+
+| n | d0 | d1 | d2 | d3 | d4 |
+|---|---|---|---|---|---|
+| 6 | 0.0002492 | 0.09749 | 0.4683 | **0.3487** | 0.07958 |
+| 9 | 3.941e-8 | 0.002391 | 0.1115 | **0.3916** | 0.3446 |
+
+Nonzero on every depth ≥ 2 stratum — peaking on **depth 3, the chirality channel** — and total mass exactly 1 at n = 3…9 (R2). The owner ruling *"molien. do the two arm reporting"* is unopposed by anything I measured.
+
+### What survives from #6806
+
+§1 (`N = 2`, four corpus witnesses — the question that audit was written to settle), §2 (the TL/Catalan arithmetic and the six kernel dimensions), §3 (the depth off-by-one and the `N = 3`-is-also-null measurement), and the follow-on §4c/§4d defects. **Only §4's constraint and its endorsed measure are withdrawn.**
+
+### Contamination
+
+The same claim was sent to sibling PR #6771 (comment 5550892514) as *"three of your four rows violate it"*. Corrected there. It reached no content block, no Lean file, no witness — the sibling's `qou-oots` closure was reached independently and does not rest on it.
+
+**This is the third error of mine in this arc** — after the depth off-by-one and the wrong-algebra F4 — and it is the same shape as both: a correct local measurement carried into a frame it does not license.
+
+### Route 1 is closed, and the answer is a negative (2026-09-05, same branch)
+
+The retraction above left route 1 of the Φ_k audit §7 standing. It is now closed — measured, not argued — and it closes the *opposite* way to how §7 anticipates.
+
+§7 poses route 1 as a fork: name the object the nucleus is a state in, and the measure follows (`V^{⊗n}` ⇒ Molien-shaped; `End(V^{⊗n})` ⇒ `d_q²/D²`-shaped). At the settled `N = 2` **both horns are supported on `ℓ(λ) ≤ 2` and are exactly zero on every stratum of depth ≥ 2**:
+
+| n | A | Σ h1 | h1 d≥2 | Σ h2 | h2 d≥2 | Σ Molien | Molien d≥2 |
+|---|---|---|---|---|---|---|---|
+| 3 | 1 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.223435 |
+| 6 | 2 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.902265 |
+| 9 | 3 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.997609 |
+| 12 | 4 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.999985 |
+
+h1 = `f^λ d_q^{SU(2)}(λ)/[2]_q^n` (dies at `[2+(−2)]_q = [0]_q = 0`); h2 = `(f^λ)²/Catalan(n)` over `ℓ(λ) ≤ 2` (TL_n *has* no wider blocks). By R1 each gives `Φ_k ≡ 0` for k ≥ 2. **Scope-(b)**, row cap cited.
+
+**The fork was real** — max per-λ gap 0.305/0.205/0.206/0.217 at n = 3/6/9/12 — so §7 was sound at general `N`; it is the `N = 2` ruling, which post-dates it, that collapses it.
+
+**Not a derivation of Molien.** Molien passes R1 where both horns fail it, and the owner ruled it canonical. That is *why the ruling was needed* — the route the audit ranked most decisive cannot answer — not a substitute for one. Routes 2 and 3 stay live.
+
+Probe `computations/probes/route_1_is_degenerate_at_n_two_probe.py` (5/5); audit §4e.
+
+### The "then pick a larger N" rescue is not available (2026-09-05)
+
+§4e said the route-1 fork *would* decide at general `N`, which invites re-choosing `N ≥ 4` to revive both horns on depth ≥ 2. It is not a change of reading: the Ocneanu/Markov weights depend on `N` through a nontrivial rational function of `q`, so moving `N` re-weights every surviving channel.
+
+Reproduced independently at the proton q₀, 50 dps, balanced, against `y_{(2,1)}/y_{(3)} = [2]_q[N−1]_q/[N+2]_q` — the three values #6829 supplied on #6826:
+
+| N | ratio | shift |
+|---|---|---|
+| 2 | 0.48930712047797097007 | — |
+| 3 | 0.77459088135788091778 | **+58.30 %** |
+| 4 | 0.95812403128848485757 | +23.69 % |
+
+So a route-1 rescue by re-choosing `N` is a change of **trace**, and the trace is fixed by the convention-D ruling.
+
+**Verified vs cited, kept apart.** The three ratios are verified here. The stronger identification — `N` *is* the Ocneanu parameter `a = q^{N−1}`, so "choose N" and "choose the trace" are one act — is #6829's and is cited, not asserted.
+
+Convention trap, confirmed: `ocneanu_N_lockin_probe`'s docstring writes the form **asymmetrically** (leading `q`) while `y_lambda_su_n` computes **balanced**; the arms differ by exactly that `q` (0.5431 / 0.8598 / 1.0635), so cross-reading them looks like a discrepancy and is not.
+
+Probe `computations/probes/ocneanu_n_lockin_crosscheck_probe.py` (3/3).
+
+
+### 2026-09-06 — REOPENED. `completed` violated owner rule 13a, which landed today.
+
+**Status changed `completed` → `in-progress`.** Not a new finding; a status this
+bean's own body already contradicted.
+
+**The rule.** `c1b63ac76d` (2026-09-06) added AGENTS.md §13a, owner directive,
+verbatim *"Don't close beans with open conjectures!!!"*: a bean tracking a
+conjecture or an unsupported identification **stays `todo` / `in-progress` until
+the mathematics closes — not until the *recording* of its openness is done.**
+
+**Why this bean qualifies, from three independent sources:**
+
+1. **Its own first heading** — *"requirement derivation + prune + discriminator
+   (in-progress; **the CHOICE is open**, the PRUNE is not)"*.
+2. **AGENTS.md:4426**, the notation-collision register: *"Whether `$\dim_q^2$` is
+   even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$` …
+   — is **open**, bean `qou-oots`."* The repo's own instructions name this bean
+   as the live carrier of an open question while the bean says it is done.
+3. **This branch's audit §5**, under NOT established: *"**Which family Φ_k should
+   use.** §4e removes route 1 as a way to answer it; it does not answer it."*
+
+**What WAS closed, and it is real:** the prune (four families down to two), the
+requirement derivation (R1/R2/R3), the discriminator, the α_EM triage, the
+26 name-gate-missed triage, and — this branch — route 1, which closes
+**negatively**: both horns vanish on depth ≥ 2 at `N = 2`, so the route the audit
+ranked most decisive cannot answer. That is why the owner's Molien ruling was
+needed, and it is precisely *not* a derivation of the answer.
+
+**So the completion recorded the closing of every sub-task while the subject
+stayed open** — the exact shape §13a names. Routes 2 and 3 of the Φ_k audit §7
+are still live; §7 route 2 (a same-`n`, within-stratum observable) is the
+nearest actionable one.
+
+## 2026-09-08 — re-affirmed by the owner (chat): Molien. The 2026-09-05 ruling stands; the agent's audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §7.1 D2 wrongly listed the choice as open and is corrected on the same branch. Remaining in-progress scope is the α_EM-axis triage (PR #6840), not the choice.

@@ -3,8 +3,9 @@
 title: 266 witness assertions compare an expression to itself and pass by construction
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-24T23:58:15Z
-updated_at: 2026-08-30T16:00:00Z
+updated_at: 2026-09-07T12:59:16Z
 ---
 
 
@@ -495,3 +496,39 @@ necessary and not sufficient.
 Better still: don't share a checkout. This arc also lost an edit and stranded
 agent work when another session switched branches under `/workspace/qou`; the
 isolated worktree `/workspace/qou-mt7r` fixed that and should be the default.
+
+## The unconditional description has now caused a downstream error (2026-09-07, qou-17mq)
+
+Recording a realised cost, because it raises this bean's priority above
+"cosmetic wording".
+
+binding_volume_difference_probe.py fires exactly the failure this bean names:
+its add_caveat correctly says observable C (SnapPy on the derived braid
+closures) was NEVER EVALUATED -- _snappy_braid_vols returns (None, None, False)
+on ImportError, indistinguishable at the call site from a genuine
+non-hyperbolic result, and vol_free is null in the committed witness -- but the
+module DESCRIPTION still asserts a "triple refutation" with C as one leg,
+unconditionally.
+
+A corpus-grep run today on bean qou-17mq read the description, not the caveat,
+and reported the triple refutation to me as an established structural fact:
+"SnapPy on the derived braid closures returns ~0 at every A -- closures are
+non-hyperbolic". Acting on that, I would have written into a bean and a PR
+that the inter-cusp-separation route is structurally dead. It is not. It is
+unmeasured, and the one thing that would settle it is installing SnapPy --
+which a reader who believes the description will never bother to do.
+
+So the caveat is doing its job for a reader who reaches it, and the
+description is defeating it for everyone who does not. The asymmetry matters
+because the description is what a grep, a summary, and a witness consumer all
+surface first.
+
+The narrow fix is to make the description conditional in the same way the
+caveat already is -- state a DOUBLE refutation (observables A and B, which did
+run and do stand) and name C as not evaluated. Not done here: it would
+regenerate that probe's witness on a PR about something else. Flagging rather
+than widening.
+
+Cross-ref: qou-17mq carries the full correction and the verification, including
+that observables A (log-volume, kappa spans 313%) and B (cosh-inversion
+degenerate, all |tr_M| < 2, elliptic) are unaffected and stand.

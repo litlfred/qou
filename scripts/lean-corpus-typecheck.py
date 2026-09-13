@@ -9,11 +9,33 @@ seeded the cache (2722 of 2735 oleans share one mtime), and olean-vs-source mtim
 compares two checkout timestamps in a fresh clone.  Only compiling answers it.
 
 WHAT IT MEASURES, precisely.  Each module's OWN source against the dependency
-oleans currently on LEAN_PATH.  It does NOT rebuild dependencies, so a module can
-pass here and still be stale against a dependency whose source moved after the
-cache was built -- the same snapshot-conditionality as `qou-56qy`.  Read a PASS
-as "this module's source is not itself broken", not as "this module is current".
-A FAIL is unconditional: the file does not typecheck as it stands.
+oleans currently on LEAN_PATH.  It does NOT rebuild dependencies.
+
+🛑 SO A RED FROM THIS SCRIPT IS NOT A DEFECT REPORT.  An earlier version of this
+docstring said "a FAIL is unconditional: the file does not typecheck as it
+stands."  **That was wrong, and it is the whole reason this warning exists.**
+Measured 2026-09-07 on a 1131-module run: 10 REDs, and ZERO were corpus defects.
+
+  * 5 (the Bruhat/Coxeter chain) were STALE DEPENDENCY OLEANS.  The chain root,
+    `CoxeterDihedralOrder`, had an olean built before main added
+    `bond_ne_zero_of_pow_eq_one`, so the consumer reported
+    `unknown identifier` and everything downstream of it reported
+    `Application type mismatch` against the old signature.  Rebuilding the six
+    modules root-first made all six exit 0 with no source change whatsoever.
+  * 5 (the `QOU.Hecke.*` H3A/H4A family) were SIGSEGV -- `exit 139`, ZERO bytes
+    of output, the same container resource limit that makes the library root
+    unverifiable here (bean `qou-ed8a`).
+  * 1 was a timeout, which is not a verdict either.
+
+A RED therefore means "this module did not typecheck against WHATEVER OLEANS
+HAPPENED TO BE ON DISK", which in a container whose olean tree is a patchwork of
+a restored cache plus hand rebuilds plus partial `lake build`s is a statement
+about the disk, not the corpus.  **To decide whether a RED is real you must
+rebuild its dependency chain from source first** -- which is what
+`scripts/lean-library-sweep.py` does, and why that is the gate and this is not.
+
+Read a PASS as "this module's source is not itself broken", never as "this module
+is current".  Read a RED as "unverified here", never as "broken".
 
 WHY NO `-o`.  Without an output path `lean` typechecks and writes nothing, so a
 full pass costs ZERO disk.  That matters: this container has ~950 MB free and a
@@ -29,6 +51,7 @@ Container restarts are expected here -- just re-run the same command.
                                                            # from the root closure
 """
 import argparse, json, os, re, subprocess, sys, time
+from concurrent.futures import ThreadPoolExecutor
 
 LEAN_DIR = "content/quantum-observable-universe/lean"
 CKPT = "/tmp/lean-corpus-typecheck.jsonl"
@@ -73,7 +96,10 @@ def report(done, targets):
     print(f"  done {len(done and [m for m in targets if m in done])}/{len(targets)}"
           f"   ok {len(ok)}   RED {len(red)}   timeout {len(to)}   remaining {len(todo)}")
     if red:
-        print("\n  RED:")
+        print("\n  RED -- NOT defect reports; see the module docstring.  A red here"
+              "\n  can be a stale dependency olean or a SIGSEGV, and measured on this"
+              "\n  corpus 10 of 10 were exactly that.  Rebuild the dependency chain"
+              "\n  from source (lean-library-sweep.py) before believing any of them:")
         for m in red:
             first = (done[m].get("errors") or [""])[0][:110]
             print(f"    {m}\n        {first}")
@@ -90,6 +116,8 @@ def main():
     ap.add_argument("--only-missing", action="store_true",
                     help="only modules NOT in the library root's import list")
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--jobs", type=int, default=1,
+                    help="parallel lean processes; oleans are mmap'd so they share")
     ap.add_argument("--limit", type=int)
     a = ap.parse_args()
 
@@ -109,27 +137,34 @@ def main():
     env = dict(os.environ, LEAN_PATH=lean_path(root))
     todo = [m for m in mods if m not in done]
     print(f"corpus typecheck: {len(mods)} target(s), {len(done)} already in "
-          f"checkpoint, {len(todo)} to run", flush=True)
+          f"checkpoint, {len(todo)} to run, jobs={a.jobs}", flush=True)
     t0 = time.time()
-    for i, m in enumerate(todo, 1):
+
+    def one(m):
         src = os.path.join(lean_dir, m.replace(".", "/") + ".lean")
         st = time.time()
         try:
             p = subprocess.run(["lean", *LEAN_ARGS, src], cwd=lean_dir, env=env,
                                capture_output=True, text=True, timeout=a.timeout)
             errs = [l for l in (p.stdout + p.stderr).splitlines() if "error" in l]
-            rec = {"module": m, "status": "ok" if p.returncode == 0 else "red",
-                   "rc": p.returncode, "secs": round(time.time()-st, 1),
-                   "errors": errs[:5]}
+            return {"module": m, "status": "ok" if p.returncode == 0 else "red",
+                    "rc": p.returncode, "secs": round(time.time()-st, 1),
+                    "errors": errs[:5]}
         except subprocess.TimeoutExpired:
-            rec = {"module": m, "status": "timeout", "rc": None,
-                   "secs": a.timeout, "errors": []}
-        with open(CKPT, "a") as fh:
+            return {"module": m, "status": "timeout", "rc": None,
+                    "secs": a.timeout, "errors": []}
+
+    # One writer: the checkpoint is append-only and fsynced per record, so a kill
+    # at any instant loses at most the record in flight.
+    done_n = 0
+    with ThreadPoolExecutor(max_workers=a.jobs) as ex, open(CKPT, "a") as fh:
+        for rec in ex.map(one, todo):
+            done_n += 1
             fh.write(json.dumps(rec) + "\n"); fh.flush(); os.fsync(fh.fileno())
-        el = time.time() - t0
-        eta = el / i * (len(todo) - i)
-        print(f"  [{i}/{len(todo)}] {rec['status']:7s} {m}  "
-              f"({rec['secs']}s, elapsed {el/60:.0f}m, ETA {eta/60:.0f}m)", flush=True)
+            el = time.time() - t0
+            eta = el / done_n * (len(todo) - done_n)
+            print(f"  [{done_n}/{len(todo)}] {rec['status']:7s} {rec['module']}  "
+                  f"({rec['secs']}s, elapsed {el/60:.0f}m, ETA {eta/60:.0f}m)", flush=True)
     print("\n=== final ===")
     return 1 if report(load_ckpt(), mods) else 0
 

@@ -646,3 +646,140 @@ window-wide bounds are `c₃ ≤ 313205/1259712 = 0.2486322` (stated: `1/4`) and
 the `norm_num` margin step; pristine control passes. That converts "the constant
 is the content" from an assertion into a measurement, and simultaneously reports
 how much slack the stated constant leaves.
+
+## 17a. TRAP — the incomplete tree may be one a `lake build` is WRITING RIGHT NOW (2026-09-08)
+
+§17 has the symptom and the better fix. What it does not have is **why** the two
+trees are partial, and the answer changes what you can trust.
+
+§17 reads them as "two *different partial builds*" — static, so a measurement of
+either is stable and a union mirror settles it. Measured 2026-09-08: one of them
+was **being filled while I watched**. `scripts/lean-build-bg.sh`, started by a
+**SessionStart hook**, runs `lake build` with cwd = `content/quantum-observable-
+universe/lean`, so the per-paper tree is under construction from the first minute
+of a fresh session. Confirmed by `ls -l /proc/<pid>/cwd`, not inferred.
+
+Over roughly forty minutes, one session, no action of mine:
+
+| tree | QOU oleans | mathlib oleans |
+|---|---|---|
+| per-paper | **2 → 17** | **2352 → 3007** |
+| root | 2442 (unchanged) | 3469 (unchanged) |
+
+Three consequences:
+
+- **A count is a snapshot of a moving target.** Two measurements minutes apart
+  legitimately disagree, and neither is wrong. If you record one, record the time.
+- **The root tree is NOT at risk from this build** — its cwd is the paper package,
+  so the restored root cache is untouched. That is worth knowing before panicking
+  about §11-style eviction: this particular build does not evict the root restore.
+- **`Mathlib/Tactic.olean` "missing" can be a TIMING fact.** It was genuinely
+  absent from the per-paper tree, and present there half an hour later. So an
+  error naming it is not evidence about the restore at all — do not "route around
+  a missing olean" (§17's cautionary tale) on the strength of it.
+
+**It reached the GATE, not just hand-run `lean`.** `scripts/lean-shadow-verify.sh`
+chose its olean tree as "the first candidate holding a `QOU/` dir", which during
+that window was the tree with **two** oleans in it, over the restored 2442. It
+computed its rebuild set against the 2-module tree and died on the first
+Mathlib-importing module — a failure entirely its own. Fixed on
+`claude/w1-route2-fibre-monodromy-order-2026-09-07`: it now picks by non-empty
+olean **count**, ranks package locations by their mathlib count instead of pinning
+paper-first, and **warns when a `lake build` is running**.
+
+**But prefer §17's union mirror for hand verification.** Ranking picks the best
+single location; the union has *every* module from both. Ranking is what a script
+that must also rebuild into a shadow can do cheaply; it is not the stronger tool.
+
+**The cheapest first move in a fresh session is therefore:** `pgrep -f 'lake
+build'`. If one is running, either wait, or pass `OLEANS=<dir>` explicitly, or
+build the union — but do not read a count, or an absent olean, as a fact about the
+restore.
+
+---
+
+## 19. Auditing a theorem that IS a refutation (measured 2026-09-12, `HeckeTowerWitness.lean`)
+
+When the theorem's *purpose* is to kill a route, the usual gate is not enough: a
+false theorem here does not merely fail to prove something, it **"proves" a
+refutation that is not real**, and the route stays closed on nothing. `exit 0`
+plus a clean `#print axioms` does not detect that — a theorem whose hypotheses
+are never used, or are unsatisfiable, passes both.
+
+Four checks, ~10 min total, in increasing strength. Run at least 1-3.
+
+**1. Mutation test — but know what it proves.** Copy the file, change ONE
+hypothesis (or the conclusion), keep the proof, recompile; every mutant must go
+RED. Five mutants here (each hypothesis and the conclusion of both theorems) all
+went red. **Guard the harness**: if `sed` matches nothing the mutant is identical
+to the original and the "test" is a green run reported as a pass — diff the mutant
+against the source and abort if unchanged. And mutate by LINE NUMBER: `h • x + 1`
+occurred in three declarations here, so a global substitution tests the wrong one.
+
+**What a red mutant actually establishes is SYNTACTIC dependence.** Every failure
+here was `Tactic 'rewrite' failed: Did not find an occurrence of the pattern` or an
+`Application type mismatch` — i.e. the proof *script* mentions the hypothesis. That
+is real evidence and it is not the interesting claim.
+
+**2. Semantic necessity — the check that is actually worth the time.** For each
+hypothesis, find a concrete instance where **that hypothesis fails and the
+conclusion fails with it**. That is what rules out "the hypothesis is decorative".
+Cheapest carrier: `A = R = ℚ`, where `algebraMap ℚ ℚ = id` and every step is
+`norm_num`. Worked here in three lines per hypothesis:
+
+    hbraid necessary:  h=0, x=1, c=2  -> hquad HOLDS, hbraid FAILS, conclusion FAILS
+    hquad  necessary:  h=5, x=1, c=1  -> hbraid HOLDS, hquad FAILS, conclusion FAILS
+
+**3. Premises satisfiable, conclusion not a tautology.** Two opposite failure
+modes, both invisible to the gate. Vacuously-true premises: exhibit ONE instance
+satisfying all hypotheses and let the real theorem fire on it (`h=0, u=-1, x=-1`
+over `ℚ`). Tautological conclusion: exhibit one instance where the conclusion is
+**false** (`c=1, h=5, x=1` gives `-4 = 1`).
+
+**4. The named counterexample the author fears.** If the author says "this should
+NOT apply to X", prove the *generic* exclusion rather than testing X: here, at
+`h=0, c=1` the hypotheses force `x = 1`, so no non-central involution can satisfy
+them — stronger than any single instance. Then show X exists at all (the swap
+matrix over `ℚ`: involution, non-central, `≠ 1`), or the exclusion is vacuous.
+
+**Also check whether a hypothesis is FREE rather than merely necessary.** A
+restrictive-looking binder can be implied by the setting, which *widens* the
+refutation. Here `u : Rˣ` looked like it left non-invertible tail scalars
+uncovered; in fact the tail generator satisfies the same Hecke quadratic, so
+`c*(c-h) = 1` whenever `algebraMap R A` is injective — `c` is automatically a
+unit and the refutation covers every tail-to-scalar assignment. Worth reporting:
+it is good news the author did not know they had.
+
+### Docstring citations: resolve them, and a `section` is not a namespace
+
+Cheap, and it found a dangling one in a refutation's own justification.
+`grep -rn '<name>' .` for every backticked declaration the docstring cites.
+Three failure shapes, all seen in one file:
+
+- **Dangling.** `braid_forces_eq_of_commuting_involutions` exists nowhere; the
+  real lemma is `QOU.Eightfold.braid_forces_eq`, and its subject is a
+  *commutative image*, not *commuting involutions* — so the gloss was wrong too.
+- **A `section` is NOT part of the full name.** `sixBasis` sits in
+  `namespace QOU.SchurWeyl` + `section Dim`, so it is `QOU.SchurWeyl.sixBasis`;
+  a citation reading `SchurWeyl.HeckeDim3Dim.sixBasis` has taken the FILE name
+  for a namespace. Check with `grep -n 'section\|namespace'`, not by eye.
+- **A file cited as a declaration** (`SchurWeyl.HeckeDim3Indep`).
+
+**Do not silently rewrite these.** The name is fixable from the corpus; the
+*gloss* around it is an authorial claim, and repairing one without the other
+leaves a citation that resolves and still misdescribes. Report both.
+
+### Two v4.24.0 tactic/module notes from the same session
+
+- **`Mathlib.Data.Matrix.Notation` does not exist → `Mathlib.LinearAlgebra.Matrix.Notation`**
+  (carries `!![a,b;c,d]`, `Matrix.mul_fin_two`, `Matrix.one_fin_two`).
+- **`rw [a, b, b]` fails where `simp only [a, b]` succeeds.** `rw` is sequential
+  and errors when a pattern is already gone: `rw [map_one, one_mul, mul_one, mul_one]`
+  died with `Did not find an occurrence of ?a * 1` because the third rewrite had
+  already consumed it. Use `simp only` for normalisation chains, `rw` for steps
+  you can count.
+- **`abel` cannot supply `mul_comm` in the base ring, and `ring` is unavailable
+  over `[Ring A]`.** The one real defect in this file was a residual
+  `algebraMap (h*c) * x = algebraMap (c*h) * x`; the fix is an explicit
+  `mul_comm h c` in the `rw` chain. Cousin of the `noncomm_ring` trap already in
+  `authoring-traps-v4-24-0.md`.

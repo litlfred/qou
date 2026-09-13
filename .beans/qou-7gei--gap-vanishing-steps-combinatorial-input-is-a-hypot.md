@@ -3,8 +3,9 @@
 title: 'GAP: vanishing_step''s combinatorial input is a HYPOTHESIS, not a proved Young-diagram fact -- discharge it with the repo''s own eraseCorner'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T16:48:48Z
-updated_at: 2026-08-09T16:48:48Z
+updated_at: 2026-09-08T04:37:28Z
 ---
 
 
@@ -354,3 +355,33 @@ nobody tries it later thinking it closes the gap.
 Exposition wording, unchanged and still required: "Wenzl is a corollary, not a
 citation" is true of the ARGUMENT and of every individual step, and is NOT yet
 true of a single Lean term about the framework's weights.
+
+
+---
+
+## 2026-09-08 — NOT closeable: item 6 of this bean's own checklist is open. Read for the completion-candidate queue.
+
+`scripts/bean-completion-candidates.py` flags this bean on `4c62d30af32`,
+*"lean: close qou-7gei **item 2** — all four propagation hypotheses discharged"*.
+That is cause 1 in the tool's own taxonomy (partial completion), and the bean's
+own STATUS block confirms it:
+
+    [x] 1 exists_threeRow_corner
+    [x] 2 hpred instantiated on Young diagrams (youngPred)
+    [x] 3 hbranch — mathematical half
+    [x] 4 hnn (yw_nonneg)
+    [x] 5 base collapsed to one scalar (threeRow_vanishing_of_pinning)
+    [ ] 6 BLOCKED ON THE HECKE LAYER
+
+Item 6 — identifying `y` with the Wedderburn weights so the chain becomes one
+theorem about the framework's own `y_λ` rather than about an arbitrary `y` —
+requires representation theory this module deliberately does not carry, and is
+being built in the Hecke-instance layer (PR #4857). The seam is recorded in
+`docs/coordination/hecke-tower-and-trace-parameter.md`.
+
+**Do not close and do not re-attack item 6 here.** The bean's own instruction is
+*"Coordinate with PR #4857; do not build a second Wedderburn apparatus here."*
+It also records a rejected shortcut worth keeping visible: defining `y` as *"yw
+on two-row shapes, 0 on ≥3-row shapes"* would make the base case hold **by
+definition** rather than by the pinning — vacuous, and exactly what the
+vacuity-audit skill exists to catch.

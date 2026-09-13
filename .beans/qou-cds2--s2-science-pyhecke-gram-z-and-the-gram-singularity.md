@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-03T11:08:27Z
+updated_at: 2026-09-08T07:45:36Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -864,3 +864,58 @@ was deliberately not touched. TRAP found on the way: the shared QOU olean tree
 (Jul 2 olean, zero gramRadicalD) — presence of an olean is not currency;
 grep -c -a <declName> <olean> is the 1-second test. Independent skeptic pass
 pending at the time of this note.
+
+
+## 🛑 CURRENCY CORRECTION 2026-09-07 — the OPENING blocker is resolved, and this bean never recorded it
+
+This bean's §"The state the ruling inherits" is what a reader meets first, and
+it is stale on both of its load-bearing claims. Measured on `main`
+`906f1f59bc`:
+
+**1. `gram.py::z` does NOT stay C. The migration COMPLETED 2026-08-15.**
+`tools/pyhecke/python/pyhecke/gram.py:68` now opens:
+
+    │ TRACE CONVENTION D. The C → D migration COMPLETED here 2026-08-15. │
+
+and its banner records that *"the two facts the exception rested on were
+measured under `qou-w8zz` (PR #5025) and NEITHER SURVIVED."* There is no live
+`G_INV = np.linalg.inv(G)` at import; line 75 speaks of it in the past tense.
+
+**2. The registry no longer carries that entry, or any owner decision.**
+`docs/coordination/trace-convention-registry.json`: `blocked_migrations` has
+**one** entry and it is `computations/probes/markov_reduction_h3_to_h4_verify.py`,
+not `gram.py::z`; **no** entry has `owner_decision_required: true`.
+
+**And the resolution is a better result than the blocker.** The singularity is
+not a precision artefact to be worked around — it is **exact**. `z_D` and `h`
+are rational in `q`, so at rational `q` the whole Gram is rational and sympy
+settles it: at `q = 11/10, 7/5, 13/7` → `det(G) = 0` EXACTLY, rank 5 of 6,
+nullspace dimension exactly 1; convention C at the same `q` → rank 6, `det ≠ 0`.
+The old banner's `det 3.998e-17` / `cond 4.9e16` was measuring this module's
+float64 NF path, not the mathematics.
+
+**Why this bean did not notice:** the work landed under a **sibling** bean
+(`qou-w8zz`, PR #5025) and was recorded in `gram.py`'s banner. Grepping this
+bean for `COMPLETED`, `NEITHER SURVIVED`, `qou-w8zz` or `5025` returns nothing
+across all 866 lines and twelve update sections — including four written
+*after* 2026-08-15.
+
+**Bean stays OPEN, and is NOT wholly resolved.** Only the opening framing is.
+Its live work continues — the Lean for the positive half landed 2026-09-03
+(PR #6476, `338d40f57c`), and the detector-class follow-on §2026-08-30 records
+that the class RECURS. What is retired is *"the ruling removes the convention
+question, it does not remove the singularity — that is the whole content of this
+bean"*, and with it the `priority: high` / *"highest-risk item in the plan"*
+framing.
+
+**An inference, marked as such rather than measured:** this bean records the
+null direction as **the row-cap one**, and the D7 ruling of 2026-09-07 confines
+convention D — hence the row cap — to the **decay/`Q_β` channel**, with
+mass/binding on the full tower. If that identification holds, a mass/binding
+consumer should not meet this singularity at all, because it should not be in D.
+I have not verified the null direction against `transposeEquiv`, and the
+row/column collision (`qou-cds1`) is exactly the trap that makes such an
+identification easy to get backwards. Recorded as a question for whoever owns
+the next tranche, not as a finding.
+
+## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.

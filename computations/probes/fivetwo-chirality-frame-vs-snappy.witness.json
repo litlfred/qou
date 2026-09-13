@@ -1,0 +1,124 @@
+{
+  "name": "fivetwo-chirality-frame-vs-snappy",
+  "description": "Which chirality the Rolfsen-table 5_2 (SnapPy 3.3.2, Culler census) is in the derived (mu, lambda, Im tau > 0) frame of #6985: the mirror.",
+  "computation": "fivetwo-chirality-frame-vs-snappy",
+  "engine": "python+snappy",
+  "scriptFile": "fivetwo_chirality_frame_vs_snappy_probe.py",
+  "computedAt": "2026-09-07T11:08:12.666623+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "derived_witness": "two-bridge-cusp-rows-apoly.witness.json",
+    "derived_scriptHash": "5a2ef6020ced",
+    "census_tarball": "library/A_census.tgz",
+    "snappy_version": "3.3.2"
+  },
+  "data": {
+    "culler_K3_2": "L**3*M**14 - L**2*M**14 + 2*L**2*M**12 + 2*L**2*M**10 - L**2*M**6 + L**2*M**4 + L*M**10 - L*M**8 + 2*L*M**4 + 2*L*M**2 - L + 1",
+    "culler_K2_1": "L**2*M**4 - L*M**8 + L*M**6 + 2*L*M**4 + L*M**2 - L + M**4",
+    "derived_A52": "L**3 + L**2*M**10 - L**2*M**8 + 2*L**2*M**4 + 2*L**2*M**2 - L**2 - L*M**14 + 2*L*M**12 + 2*L*M**10 - L*M**6 + L*M**4 + M**14",
+    "derived_A41": "L**2*M**4 - L*M**8 + L*M**6 + 2*L*M**4 + L*M**2 - L + M**4",
+    "snappy_5_2_cusp_shape": "(-2.49024466750661447990098220728294261621078676 + 2.97944706647897694637268171441756946896065234j)",
+    "derived_5_2_cusp_shape": "(2.490244667506614479900982207282942616211 + 2.979447066478976946372681714417569468961j)",
+    "snappy_5_2_slopes": [
+      0,
+      4,
+      10
+    ],
+    "derived_5_2_slopes": [
+      -10,
+      -4,
+      0
+    ],
+    "snappy_5_2_identify": [
+      "m015(0,0)",
+      "5_2(0,0)",
+      "K3_2(0,0)",
+      "K5a1(0,0)"
+    ],
+    "dunfield_5_2_slopes": [
+      0,
+      4,
+      10
+    ],
+    "relation": "mirror"
+  },
+  "verdict": "In the derived (mu by the filling test, lambda homological, Im tau > 0) frame the Farey-word triangulation RL of K(7,3) is the MIRROR of SnapPy 3.3.2's Rolfsen-table 5_2 (= census m015 = Culler's K3_2): SnapPy's cusp shape is -conj(tau_derived) to 38 digits, its slopes are {0,4,10} against the derived {0,-4,-10}, and Culler's A_{K3_2} is the derived polynomial under L -> 1/L exactly; reversing SnapPy's orientation reproduces the derived frame exactly. The 4_1 control agrees identically (amphichiral). So 'Rolfsen's 5_2, as SnapPy digitises it' is settled: the derived triangulation carries the OTHER chirality. Still open: which of GGM's S+/S- attaches to which chirality, since GGM state no table-relative orientation.",
+  "assertions": [
+    {
+      "name": "fourone-derived-equals-culler-K2_1-exactly",
+      "passed": true
+    },
+    {
+      "name": "fivetwo-culler-K3_2-is-the-derived-polynomial-under-L->1/L (mirror), not equal",
+      "passed": true,
+      "same": false,
+      "mirror": true
+    },
+    {
+      "name": "snappy-5_2-identifies-as-m015-and-K3_2",
+      "passed": true,
+      "identify": [
+        "m015(0,0)",
+        "5_2(0,0)",
+        "K3_2(0,0)",
+        "K5a1(0,0)"
+      ]
+    },
+    {
+      "name": "snappy-5_2-cusp-shape-is-MINUS-CONJUGATE-of-derived (mirror), to 38 digits",
+      "passed": true,
+      "snappy": "(-2.49024466750661447990098220728294261621078676 + 2.97944706647897694637268171441756946896065234j)",
+      "derived": "(2.490244667506614479900982207282942616211 + 2.979447066478976946372681714417569468961j)",
+      "diff_mirror": "4.0784e-40"
+    },
+    {
+      "name": "snappy-5_2-slopes-are-negatives-of-derived",
+      "passed": true,
+      "snappy": [
+        0,
+        4,
+        10
+      ],
+      "derived": [
+        -10,
+        -4,
+        0
+      ]
+    },
+    {
+      "name": "mirror-of-snappy-5_2-matches-derived-frame-exactly (shape to 38 digits, slopes)",
+      "passed": true
+    },
+    {
+      "name": "snappy-5_2-volume-matches-corpus",
+      "passed": true,
+      "snappy": "2.828122088330783162763899"
+    },
+    {
+      "name": "fourone-snappy-shape-2sqrt3i-matches-derived",
+      "passed": true,
+      "snappy": "(3.65728297727833858282096779222e-64 + 3.46410161513775458705489268301j)"
+    },
+    {
+      "name": "dunfield-rolfsen-convention-5_2-slopes-{0,4,10}-are-negatives-of-derived",
+      "passed": true,
+      "dunfield": [
+        0,
+        4,
+        10
+      ],
+      "derived": [
+        -10,
+        -4,
+        0
+      ]
+    }
+  ],
+  "scriptHash": "f5ffdd4b71db",
+  "scriptCommitSha": "6f2730e3a851c1b59acc3b4f254e602eb8eece0b",
+  "commitSha": "78885540e574d870a10b588ebe0915393407faee",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

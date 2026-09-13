@@ -23,8 +23,16 @@ ran at H_3 and found `L_H = σ_1²` in Hoefsmit standard-(2,1) at `q_0`:
 Both eigenvalues strictly positive ⇒ `L_H` is PSD-feasible in the
 standard block at q_0.  Together with the trivial and sign blocks
 (also positive), this discharges the single-term SDP-feasibility
-leg of `CanonicalKnotIdSDP .deuterium.bindingKPSDFeasible_holds`
-in [`conj-canonical-knot-id-sdp.lean`](../../../mass-theory/conj-canonical-knot-id-sdp.lean).
+leg of PSD-feasibility for `CanonicalKnotIdSDP .deuterium` in
+[`conj-canonical-knot-id-sdp.lean`](../../../mass-theory/conj-canonical-knot-id-sdp.lean).
+
+**It does not discharge a field, and no longer names one.** This used to cite
+`bindingKPSDFeasible_holds`, a `Prop`-universe field deleted on 2026-09-07:
+being a proposition held as data, it was whatever the instance chose, and every
+instance chose the decidable proxy `evenPower`. So the citation pointed at a
+field that carried none of the eigenvalue content proved here. What the class
+requires is `bindingKEvenPower`, a necessary condition; the positivity below is
+the stronger, semantic fact, and it remains outside the class.
 
 ## What this file adds (sorry-free)
 

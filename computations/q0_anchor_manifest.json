@@ -730,6 +730,9 @@
     "qbeta_fig8_cyclotomic_bar_invariance",
     "qbeta_frobenius_gram_h3_probe",
     "qbeta_g3_5two_wall_crossing_barpair",
+    "qbeta_gamma_gamma_selected_delta_probe",
+    "qbeta_gamma_gamma_ruling_selects_ordering_probe",
+    "qbeta_reading3_scope_fork_probe",
     "qbeta_gram_determinant_root_multiplicity_law_probe",
     "qbeta_h1_significance_against_cal3_band",
     "qbeta_h4_stagec_markov_infra",
@@ -765,6 +768,10 @@
     "qbeta_nf_counit_gap_order_probe",
     "qbeta_nucleon_crossing_count_contradiction_probe",
     "qbeta_nucleon_selection_rule_probe",
+    "qbeta_nucleon_flip_skein_expansion_probe",
+    "qbeta_option_e_construction_freedom_probe",
+    "qbeta_option_e_order_dof_range_probe",
+    "qbeta_option_e_required_level_probe",
     "qbeta_phase_block_resolution_probe",
     "qbeta_phase_fails_log_functional_equation_probe",
     "qbeta_precision_ladder_n5",
@@ -947,5 +954,5 @@
     "tau_dictionary_fricke_spin_probe"
   ],
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }

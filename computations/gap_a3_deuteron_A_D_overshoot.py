@@ -49,9 +49,65 @@ set_compute_dps()
 #
 # Re-deriving this probe under convention D is bean `qou-cds1` work, not a
 # constant swap.
-Q0 = mp.mpf("1.1099785955541805")   # muon anchor — see the label above
+# ── MIGRATED TO CONVENTION D AT THE PROTON PIN, 2026-09-12 (bean qou-46ys) ──
+# The header above forbids refreshing TRM_BETA_D **alone**, and it is right: Q0
+# and TRM are a MATCHED PAIR. This moves BOTH from one source --
+# `canonical-mass-table-extended.witness.json` (q0Anchor: proton, 2026-09-07) --
+# so the pair stays matched, and its sibling
+# `gap_a3_overshoot_robustness_check.py` was migrated the same way, so the two
+# files stay consistent with each other. That is what the header asks for.
+#
+# 🛑 THE HEADER'S "48%" IS COMPUTED ON A STALE FIGURE, and its direction is
+# INVERTED. It warns that substituting the live value "would inflate ... the
+# overshoot by 48%". That 48% is the ratio to 0.5751, the D deuteron |tr_M| as
+# recorded in the 2026-08-15 rho-k audit -- correct then, stale now. The live
+# convention-D value at the proton pin is 0.15197, so migrating DEFLATES by
+# ~2.56x. Same trap as its sibling; recorded in both.
+#
+# WHAT THIS REPLACED:
+#   Q0         = mp.mpf("1.1099785955541805")   # MUON anchor
+#   TRM_BETA_D = mp.mpf("0.38835725751524")     # CONVENTION C
+import json as _json
+from pathlib import Path as _Path
+
+_TBL = _json.loads(
+    (_Path(__file__).resolve().parent / "canonical-mass-table-extended.witness.json"
+     ).read_text())
+Q0 = mp.mpf(str(_TBL["q0Value"]))        # PROTON pin (owner ruling R2, 2026-08-15)
+# 🛑 THE NAME `Vol_hyp` IS WRONG, AND THE CORPUS SAID SO ON 2026-05-19.
+# 12.776 / 12.554 are NOT hyperbolic volumes. Per
+# `docs/audits/2026-05-19-delta-lambda-thread-closure.md`, verbatim: "Not
+# legitimate hyperbolic volumes (degenerate tetrahedra)", they are "SnapPy's
+# pseudo-volume sum across the degenerate triangulation", encoding "a
+# combinatorial-braid invariant of the simplification path, NOT a
+# Mostow-rigidity-protected hyperbolic invariant". They cluster by Z, not by knot
+# (Vol(3He) == Vol(4He) exactly), which `2026-06-05-gap-a4-L1-retrospective.md`
+# flags as "suggesting they are not the genuine Path B Vol(K)".
+#
+# WHY THE LABEL MATTERS, not just the number. The owner ruled on 2026-08-29 that
+# "the deuteron binding is NOT a hyperbolic-volume term", retiring
+# Vol(6_2) = 4.40083251612 and ruling the canonical closure flat (Vol = 0). An
+# agent reading that ruling beside a variable named `Vol_hyp` concludes the input
+# below is retired. IT IS NOT: 12.776 is neither 4.40083 nor 0, and
+# 12.776/4.40083 = 2.9031 is not an integer multiple, so the ruling does not reach
+# it. Same defect class as the Lambda-vs-Cl_2 trap AGENTS.md records -- right
+# number, wrong name, wrong inference invited.
+#
+# NOT RENAMED HERE. The identifier appears across 4+ producers and renaming is a
+# sweep, which needs asking (AGENTS.md 2026-09-07). The label is corrected in
+# place; the open question -- whether a Z-clustered pseudo-volume is the right
+# geometric input at all -- is a modelling call for the owner, NOT a convention
+# migration. Measured in
+# `computations/probes/a3_vol_is_pseudovolume_not_convention_probe.py` (7/7).
 VOL_D = mp.mpf("12.776")            # Vol_hyp(D), PR #787 Phase-3 (Z=1 cluster)
-TRM_BETA_D = mp.mpf("0.38835725751524")  # CONVENTION C, GAP-A-3 §4 probe (#2626)
+# 🛑 VOL_D IS STILL A C-ERA ASSIGNMENT. The convention migration covers tr_M and
+# the anchor; a convention-D-consistent knot/volume assignment has NOT been
+# derived (bean qou-e5jf's arc). So the overshoot below is D in its trace and C
+# in its geometry -- a genuine remaining straddle, stated rather than hidden.
+# CONVENTION D deuteron |tr_M| (Z=1, N=1), read from the committed table.
+TRM_BETA_D = mp.mpf(next(r["tr_M_q0_canonical_50dps"]
+                         for r in _TBL["data"]["rows"]
+                         if (r["Z"], r["N"]) == (1, 1)))
 TARGET = mp.mpf("4.353")            # |−B(D)/m_e|
 A_REL_UNC = mp.mpf("0.025")         # A(K) is ≤2.5% zero-parameter (gap-a3 scope)
 
@@ -76,18 +132,42 @@ def main():
     print("Flat baseline (P_λ≡1) vs target:")
     print(f"  A(D)·tr_M(β_D)    = {mp.nstr(flat,10)}   (tr_M = {mp.nstr(TRM_BETA_D,8)})")
     print(f"  target |−B(D)/m_e|= {mp.nstr(TARGET,6)}")
-    print(f"  OVERSHOOT factor  = {mp.nstr(overshoot,8)}")
+    # COMPUTED DIRECTION, 2026-09-12. This said "OVERSHOOT factor" and the three
+    # lines below asserted SUPPRESS / OVERSHOOTS / "Reporting ~2.05"
+    # unconditionally. All were the convention-C answer. Under D the flat
+    # baseline UNDERSHOOTS (0.8021 < 1), so the required P_lam flips sign: it
+    # must ENHANCE, not suppress. An unconditional "SUPPRESS" next to a computed
+    # 124.7% is prose contradicting its own number.
+    _over = overshoot > 1
+    print(f"  {'OVER' if _over else 'UNDER'}SHOOT factor  = {mp.nstr(overshoot,8)}"
+          f"   ({'>' if _over else '<'} 1)")
     # propagate A(D)'s ≤2.5% uncertainty
     lo, hi = overshoot * (1 - A_REL_UNC), overshoot * (1 + A_REL_UNC)
     print(f"    (A(D) ±2.5% ⇒ overshoot ∈ [{mp.nstr(lo,5)}, {mp.nstr(hi,5)}])\n")
     print("What the redistribution must do:")
     print(f"  required [Σ y_λ χ^λ P_λ]/tr_M = target/(A(D)·tr_M) = {mp.nstr(r,8)}")
-    print(f"  ⇒ the bar-even P_λ must SUPPRESS the effective trace to ~{mp.nstr(r*100,4)}% of flat")
-    print(f"    (i.e. the flat baseline OVERSHOOTS the deuteron binding by ~{mp.nstr(overshoot,4)}×).")
+    print(f"  ⇒ the bar-even P_λ must {'SUPPRESS' if r < 1 else 'ENHANCE'} the "
+          f"effective trace to ~{mp.nstr(r*100,4)}% of flat")
+    print(f"    (i.e. the flat baseline {'OVERSHOOTS' if _over else 'UNDERSHOOTS'} "
+          f"the deuteron binding by ~{mp.nstr(overshoot,4)}×).")
+    if r > 1:
+        print( "    🛑 THE SIGN OF THE REQUIRED CORRECTION IS OPPOSITE to the")
+        print( "       convention-C conclusion this probe was written for. Under C")
+        print( "       the flat baseline overshot by ~2.05x and P_lam had to SUPPRESS")
+        print( "       to ~48.79%; under canonical D it undershoots and P_lam must")
+        print( "       ENHANCE. Any P_lam search inheriting the 'suppression' framing")
+        print( "       is aimed the wrong way.")
     print()
     print("Critical-distance note:")
-    print(f"  overshoot ≈ {mp.nstr(overshoot,4)} is consistent with EXACTLY 2 within A(D)'s ≤2.5%")
-    print( "  band, but is NOT pinned to 2. Reporting ≈2.05; claiming exactly 2 (or that")
+    # The "consistent with EXACTLY 2 ... Reporting ~2.05" text was hardcoded and
+    # is now false; test the integer-proximity claim instead of asserting it.
+    _lo, _hi = overshoot * (1 - A_REL_UNC), overshoot * (1 + A_REL_UNC)
+    _near2 = _lo <= 2 <= _hi
+    print(f"  {'over' if _over else 'under'}shoot ≈ {mp.nstr(overshoot,4)}; is 2 inside "
+          f"A(D)'s ±{mp.nstr(A_REL_UNC*100,3)}% band [{mp.nstr(_lo,5)}, "
+          f"{mp.nstr(_hi,5)}]? {_near2}")
+    print( "  Under convention C this read 'consistent with EXACTLY 2 ... Reporting")
+    print( "  ≈2.05'; that was the C-frame value. Claiming a clean integer (or that")
     print( "  P_λ is a clean factor-½ suppression) would be a fit — NOT asserted.")
     print("\nA(D) FOLLOW-UP COMPLETE (overshoot quantified; no P_λ proposed; no fit)")
     return 0

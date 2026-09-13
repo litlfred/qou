@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T03:24:58.454720+00:00",
-  "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
+  "computedAt": "2026-09-07T11:50:32.267631+00:00",
+  "commitSha": "c38f05ddbe215871619300f6e9025ec1d83e3d7c",
   "assertions": [
     {
       "name": "rotation_phase_lead_evaluated",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 954,
+  "durationMs": 2849,
   "computation": "binding-rotation-phase-lead",
   "scriptFile": "binding_rotation_phase_lead.py",
   "scriptHash": "82c61f1535bc",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "8cdcf3865a88511af6f8dc3d4831e956cb60df1f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -46,67 +46,67 @@
     "aggregations": {
       "S1_unweighted": {
         "rho_needed": {
-          "D": "0.387495",
-          "T": "1.03143",
-          "3He": "0.908679",
+          "D": "0.672186",
+          "T": "4.22429",
+          "3He": "3.95708",
           "4He": "1.64191"
         },
-        "spread_pct": 323.72468459858857,
-        "A3_pair_spread_pct": 13.508792420307469
+        "spread_pct": 528.4406910371381,
+        "A3_pair_spread_pct": 6.752693669546184
       },
       "S2_dim": {
         "rho_needed": {
-          "D": "0.0651846",
-          "T": "0.0104921",
-          "3He": "0.00866485",
+          "D": "0.160953",
+          "T": "0.0919858",
+          "3He": "0.0878758",
           "4He": "0.000927468"
         },
-        "spread_pct": 6928.227854111383,
-        "A3_pair_spread_pct": 21.088626501540265
+        "spread_pct": 17254.056635865716,
+        "A3_pair_spread_pct": 4.677054048283691
       },
       "S3_markov": {
         "rho_needed": {
-          "D": "177.422",
-          "T": "46.8987",
-          "3He": null,
+          "D": "14.9402",
+          "T": "77.244",
+          "3He": "56.6306",
           "4He": null
         },
-        "spread_pct": 278.30968553270725,
-        "A3_pair_spread_pct": null
+        "spread_pct": 417.0215319526597,
+        "A3_pair_spread_pct": 36.399859065606435
       },
       "S4_markov_signed": {
         "rho_needed": {
-          "D": "177.422",
-          "T": "46.8987",
-          "3He": null,
+          "D": "14.9402",
+          "T": "77.244",
+          "3He": "56.6306",
           "4He": null
         },
-        "spread_pct": 278.30968553270725,
-        "A3_pair_spread_pct": null
+        "spread_pct": 417.0215319526597,
+        "A3_pair_spread_pct": 36.399859065606435
       }
     },
     "tightest": {
       "aggregation": "S3_markov",
-      "spread_pct": 278.30968553270725,
-      "A3_pair_spread_pct": null
+      "spread_pct": 417.0215319526597,
+      "A3_pair_spread_pct": 36.399859065606435
     },
     "d0_strong_channel": {
       "per_atom": {
         "D": {
-          "rho_full": "177.422",
-          "rho_d0_strong": "484.458"
+          "rho_full": "14.9402",
+          "rho_d0_strong": "16.3255"
         },
         "T": {
-          "rho_full": "46.8987",
-          "rho_d0_strong": "52.9645"
+          "rho_full": "77.244",
+          "rho_d0_strong": "86.416"
         },
         "3He": {
-          "rho_full": null,
-          "rho_d0_strong": null
+          "rho_full": "56.6306",
+          "rho_d0_strong": "59.4939"
         }
       },
-      "DTHe3_spread_full_pct": null,
-      "DTHe3_spread_d0_pct": null,
+      "DTHe3_spread_full_pct": 417.02119114871283,
+      "DTHe3_spread_d0_pct": 429.33141404551156,
       "note": "Removing the antisymmetric −h (sinh) inter-nucleon term (d=0, symmetric cosh/strong channel) tightens the D/T/³He spread and pulls D up toward the A=3 scale — the sinh term carries the deuteron's anomaly. D/T/³He only (H₁₂ too slow)."
     }
   }

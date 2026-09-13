@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-07T04:52:53Z
+updated_at: 2026-09-07T20:30:00Z
 ---
 
 ## Context
@@ -150,3 +150,118 @@ restored. So the artefact is a defect of the UNNORMALISED convention, not an obs
 explains why a Jones-style normalisation carries a level factor at all: it is the closure
 bookkeeping, not decoration. Does NOT assert that any particular corpus computation makes that
 choice — a binding read off closureNorm without δ^level still carries the artefact.
+
+
+2026-09-07 (PR #7067): the gap is RE-LOCATED, and one of its two stated halves was never a gap.
+
+1. TwoSidedMarkov is a THEOREM of MarkovTrace, not an axiom beyond it. Four lines: cyclicity moves
+   y to the front, it merges with x inside H n (a Subalgebra, hence closed under multiplication),
+   and T3 applies to y*x. Global instance registered, so every [TwoSidedMarkov T] theorem in
+   DisjointBlockTraceLaw is UNCONDITIONAL (verified by elaborating three of them with no binder).
+   The file's claim to have "isolated the gap to one axiom" was wrong -- that axiom was free.
+
+2. THE REAL OBSTRUCTION IS REPETITION, NOT DESCENT. For a word w in generators at levels >= n with
+   maximal level M: if g M occurs AT MOST ONCE, cyclicity rotates it to the right end, every other
+   letter then has level < M so lies in H M, and T3 peels it; induction finishes. The blocker is a
+   word of shape g M * x * g M with x below M -- no rotation puts one g M at the end while leaving
+   the other in H M.
+
+   Proved instances: tr_mul_gen_gen_lt / tr_mul_gen_gen_gt (two distinct levels, BOTH orderings --
+   so descent alone is fine), and tr_mul_adjoin_gen (the whole subalgebra adjoin{g n}, not just
+   powers; it escapes only because that subalgebra is 2-dimensional under the quadratic relation,
+   so the induction terminates before repetition bites).
+
+3. WHAT THE GAP ACTUALLY NEEDS, corrected. Not another trace axiom and not E_n alone: a STRUCTURE
+   THEOREM FOR THE TOWER, H(m+1) = H m + H m . g m . H m, which is what rewrites g m x g m back
+   down. That is a statement about the ALGEBRA, not the trace, and nothing in MarkovTrace implies
+   it. (E_n is still the classical packaging, but its content is the independence fact
+   E_n b = tr b . 1 on shifted n, not the stabilisation.)
+
+4. THE PRODUCTION WORD IS ON THE WRONG SIDE OF THE LINE. Measured: one nucleon's generator sequence
+   under qou-hu1f is [0,1,0,1,0,1,0,0,1,0,0] -- maximal level 1 occurs FOUR times, level 0 seven
+   times. So the rotation argument does not cover the atom word at all. The same interleaving that
+   killed the monotone theorem also puts the word past this route's reach. Bond product stays
+   MEASURED, not derived.
+
+NOT ACHIEVED: no counterexample. I tried to build a MarkovTrace violating the law and every small
+model I tried had the axioms force the law to hold -- constant towers make it hold identically
+(if r is in the trace-radical of H then a*r is too, so tr(a r^j) = 0 for all j >= 1), and M_2 is
+excluded outright because Cayley-Hamilton gives every element a quadratic relation, which is exactly
+tr_mul_adjoin_gen's hypothesis. Inconclusive: this is NOT evidence the law is true, only that these
+models cannot separate it. Scope (a).
+
+
+2026-09-07 (PR follow-on): TowerSpan reduced to ONE LOCAL REWRITING RULE. New module
+QOU/MathlibExt/TowerSpanReduction.lean.
+
+TowerSpan is a claim about every element of every filtration step. `SandwichReduces B m` is a claim
+about one element SHAPE:
+
+    for all c in B,   g m * c * g m   in   B + span(sandwich B m)
+
+`towerSpan_of_sandwichReduces` proves the local rule implies the global decomposition, and
+`disjointBlock_of_sandwichReduces` composes it end to end with disjointBlock_of_towerSpan.
+
+WHY THIS IS THE RIGHT REDUCTION. DisjointBlockTraceLaw identified the obstruction as a REPEATED
+maximal-level generator, a word g M * x * g M that no rotation can peel. SandwichReduces is exactly
+the statement that such a word rewrites, and nothing more. Smaller (one shape, not a submodule
+containment), local (one level m, not the tower), and it is where the braid relation lives -- in the
+Hecke case the reduction is the content of g_i g_{i+-1} g_i = g_{i+-1} g_i g_{i+-1} plus the
+quadratic relation.
+
+THE PROOF is multiplication-closure of P = B + span(sandwich), which has exactly one non-trivial
+case:
+    (v g w)(v' g w') = v * (g * (w v') * g) * w'
+whose middle factor is SandwichReduces applied to w v' in B. The rest is mul_base_left /
+mul_base_right. With closure, P becomes a subalgebra via Submodule.toSubalgebra and Algebra.adjoin_le
+finishes.
+
+STILL NOT ESTABLISHED. SandwichReduces is NOT proved for any tower with a growing filtration. This
+moves the hypothesis; it does not discharge it. A reduction between two unproved statements is
+progress in SHAPE only. The disjoint-block law -- and hence the bond-product reading of the atom word
+-- remains MEASURED, NOT DERIVED. The towerSpan_unit inhabitation caveat carries over unchanged: the
+only witness has a constant filtration, and towerSpan_of_constant shows such a witness satisfies
+TowerSpan for reasons unrelated to any of this.
+
+Verification: lean-direct exit 0, no sorry; #print axioms clean on all declarations; import cone
+rebuilt from current main source.
+
+
+2026-09-07 (witness): the constant-filtration objection to towerSpan_unit is CLOSED. New module
+QOU/MathlibExt/InvolutionTowerWitness.lean.
+
+A = MonoidAlgebra R (Multiplicative (N ->_0 ZMod 2)) -- countably many COMMUTING INVOLUTIONS t m.
+Tower H n = adjoin{t m : m < n}, g m = ginv m = t m, trace = augmentation, z = zinv = 1. All
+MarkovTrace axioms hold.
+
+  t_mul_t                    t m * t m = 1, so hquad holds with h = 0
+  sandwichReduces_involution SandwichReduces holds NON-TRIVIALLY: t*c*t = c*(t*t) = c uses
+                             commutativity AND the involution relation -- the local rewriting rule
+                             of TowerSpanReduction doing real work
+  towerSpan_involution       hence TowerSpan, via towerSpan_of_sandwichReduces
+  t_not_mem_shiftedUpTo      THE FILTRATION GROWS: t N is not in shiftedUpTo n M for M < N.
+                             Proved by an algebra endomorphism killN (induced by the coordinate
+                             projection killing index N) that fixes every generator of the stage but
+                             sends t N to 1; if t N were in the stage it would be fixed, forcing
+                             t N = 1, which t_ne_one refutes.
+
+WHAT IT STILL DOES NOT EXERCISE. The trace is an ALGEBRA HOMOMORPHISM, so DisjointBlockMultiplicative
+holds there for EVERY pair a,b -- disjointness plays no part. The witness therefore tests the
+FILTRATION content of TowerSpan and says nothing about its TRACE content. This removes the
+constant-filtration objection and ONLY that one. A witness with a growing filtration AND a
+non-multiplicative trace would essentially be a Hecke or symmetric-group tower, which Mathlib does
+not supply.
+
+SandwichReduces for a Hecke tower remains unproved; the disjoint-block law, and hence the
+bond-product reading of the atom word, remains MEASURED, NOT DERIVED.
+
+Verification: lean-direct exit 0, no sorry; #print axioms clean on involutionTrace,
+sandwichReduces_involution, towerSpan_involution, t_not_mem_shiftedUpTo.
+
+Taken over 2026-09-07 by claude/stalled-agents-em-linking-jilmbv after the #7079 session ended (f8e6fdaefff on main). Child task qou-fq1i builds the symmetric-group tower witness.
+
+--------
+
+**2026-09-07 (witness 2, bean qou-fq1i, PR #7131): the "trace is a homomorphism" objection to InvolutionTowerWitness is CLOSED.** `QOU/MathlibExt/SymmetricGroupTowerWitness.lean`: symmetric-group algebra tower `MonoidAlgebra R (Equiv.Perm ℕ)`, `g = ginv = t m = of (swap m (m+1))`, trace = coefficient of the identity, z = zinv = 0, all MarkovTrace axioms hold. The trace is NOT a hom (`tr(t t) = 1 ≠ 0`), the filtration grows (`t_not_mem_shiftedUpTo`), and `SandwichReduces` is PROVED at every level (`sandwichReduces_sym`) via the double-coset decomposition `S_{k+1} = S_k ∪ S_k s_k S_k`, itself from "adjacent transpositions generate interval-supported permutations" (double induction). Hence `TowerSpan` and `DisjointBlockMultiplicative` through the #7079 chain, cross-checked by a direct proof from `W_{<n} ∩ W_{≥n} = {1}`. Non-trivial pair: `a = 1 + t n`, `b = 1 + t(n+1)`: tr(ab) = 1 = tr a·tr b, while tr(a·a) = 2 ≠ 1 — the law is about disjointness, not multiplicativity. 0 sorry; lean-direct exit 0; #print axioms clean on 18 decls.
+
+What remains: q = 1 / z = 0 / h = 0 only. The double coset is proved in the permutation model, never by rewriting with the braid + quadratic relations, so SandwichReduces for a Hecke tower at q ≠ 1 is still unproved and the bond-product reading of the atom word remains MEASURED, NOT DERIVED. Bean stays open.

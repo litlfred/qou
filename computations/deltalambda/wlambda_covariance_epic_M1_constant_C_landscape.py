@@ -5,7 +5,7 @@ rigorous C <= m_inf*sqrt(79) ~ 2.651 (=> N0 <= 79, closed by the exact M_1>0 tab
 reachable.
 
 Gap qou-k5r5, epic qou-x631. The rigorous finite-n bound (PR #5929) gives
-|m(n) - m_inf| <= C n^{-1/2} with m_inf = 0.300186614 (merged #5901 IO value). To CLOSE M_1>0
+|m(n) - m_inf| <= C n^{-1/2} with m_inf = 0.300186316 (RHO_INF now DERIVED as 2*sqrt(6)/5; see _m1_io_constants). To CLOSE M_1>0
 for all n one needs an EXPLICIT C with N0 = (C/m_inf)^2 <= 79. This probe does NOT pin the
 rigorous C (that is Bessel/Airy constant-tracking); it measures the exact margin
 m(n) = rho_P(n) - sigma_D(n)/sigma_A(n) and reports:

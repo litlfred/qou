@@ -42,6 +42,7 @@ scaling of U/V. NO float64 (mpmath.mpf). Nothing wired; no c_k; L2 unchanged. Ga
 """
 from __future__ import annotations
 import mpmath as mp
+from _m1_io_constants import M_INF  # single source; do NOT re-copy the literal
 
 mp.mp.dps = 30
 
@@ -103,7 +104,10 @@ def main():
     print("#")
     # The decisive quantitative statement, AT the n that matters (the exact table covers n<=78).
     if UV78 is not None:
-        m_inf = mp.mpf('0.300186614')
+        # was a COPY of the literal 0.300186614.  It is now imported: M_INF tracks
+        # RHO_INF, which is derived (2*sqrt(6)/5) rather than extrapolated, so a copy
+        # here would silently pin the superseded value.
+        m_inf = M_INF
         eps_factor = UV78 / mp.sqrt(mp.mpf(78))     # relative error = K * (U/V)/sqrt(theta)
         Kbudget = m_inf / eps_factor
         print(f"# AT theta = 78 (the n the exact Fraction table reaches):")

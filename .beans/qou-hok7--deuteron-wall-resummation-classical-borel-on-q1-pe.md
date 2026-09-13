@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-07T06:43:27Z
+updated_at: 2026-09-11T15:31:24Z
 ---
 
 
@@ -195,3 +195,406 @@ counterexample (statExponents_three, max exponent 4).
 
 Probes: zn_hook_length_closed_form_probe.py (6/6), rev_free_energy_over_shapes_probe.py (3/3),
 hmin_closed_form_and_rev_sublinearity_probe.py (5/5). Exact integer / 60-dps mpmath, no float64.
+
+## 2026-09-07 — tightness attacked; the r-route MEASURED, and the data cannot yet decide
+
+Attacked the one open piece (is the 3/4 exponent sharp?). No closure. Recording what was measured
+so the next agent does not re-walk it.
+
+### The gap has a specific cause
+
+The upper bound composes two facts: R_lambda <= C*r (from L1) and r <= sqrt(H) (from L2, proved in
+Lean as H >= r^2, PR #7018). The second is TIGHT for hook shapes — the hook (m,1^{m-1}) has
+H = m^2+m-1 against r = m — but very LOOSE where it is actually used, at H = H_min, because
+minimal-H shapes are staircase-like with r ~ sqrt(2n) while sqrt(H_min) ~ 0.97 n^{3/4}.
+
+### Measured: max r as a function of the energy budget D = H - H_min
+
+    n     sqrt(2n)   D<=0   D<=5   D<=20   D<=50   D<=inf   sqrt(H_min)
+    12      4.90       5      6       6       6        6        6.32
+    24      6.93       7      8      10      12       12       10.58
+    36      8.49       8      9      11      14       18       14.28
+    44      9.38       9     10      12      15       22       16.61
+
+At D = 0 the maximum r tracks sqrt(2n) closely (9 vs 9.38 at n=44) — so minimal-energy shapes ARE
+confined to r = O(sqrt n), as expected. r then grows with the budget, locally about sqrt(2n) + D/8
+over the measured range, reaching n/2 at D = infinity (the hook shape).
+
+**A tempting inference I checked and did NOT make.** With alpha = 1/8, C*alpha = 0.771 far exceeds
+ln q0 = 0.1043, which suggests the energy can never pay for the r-growth and the route is dead. That
+argument is WRONG: the linear model is a local fit at small D and does not extend. Globally r <=
+sqrt(H), and at large H the energy does dominate — which is exactly why the O(n^{3/4}) bound closes
+at all. Do not quote the alpha = 1/8 slope outside the measured range.
+
+### How loose the composition is
+
+    n     TRUE max(R-E)   max(C*r - E)   ratio
+    16       8.0802          48.0148     5.94
+    24      12.4052          69.2572     5.58
+    32      16.2765          88.0997     5.41
+    40      19.7497         104.4381     5.29
+    44      21.1462         111.5639     5.28
+
+The bound over-states by ~5.3x and the ratio decreases only slowly. So the exponent is not going to
+be fixed by a constant; a sharper bound on R_lambda ITSELF is needed, not a sharper r-vs-H relation.
+
+### 🛑 The data cannot yet distinguish sqrt(n) from n^{3/4}
+
+    TRUE max(R-E) / sqrt(n) :  2.02  2.53  2.88  3.12  3.19   (n = 16,24,32,40,44) — still RISING
+    TRUE max(R-E) / n^{3/4} :  1.01  1.15  1.21  1.24  1.24   — flattening, but not flat
+
+Neither has converged. A rising sqrt(n) ratio is consistent BOTH with Theta(n^{3/4}) and with
+Theta(sqrt n) approaching a constant slowly — and slow convergence is established for this object:
+the staircase ratio is still only 4.466 at n=435 against its own limit A*sqrt2 = 5.0959. So n <= 44
+is simply too small to separate the two, and no conclusion about sharpness is drawn here.
+
+### What would decide it
+
+Larger n on the max alone: M_n needs a full scan over p(n) partitions (p(60) = 966,467,
+p(80) = 15.8M), which is feasible to n ~ 60 in this container and would extend the trend by half a
+decade — probably still not enough. The structural route is a bound on R_lambda = sum_m eps_m
+N_m(lambda) that uses more than N_m <= r; the two moment constraints (sum N_m = n, sum m N_m = H)
+are NOT enough on their own, since the LP relaxation over those alone has supremum n*eps_1, which is
+linear and useless.
+
+Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved (#7014, #7018); tightness open.
+
+
+## 2026-09-07 — the structural handle this bean asked for: beta-coordinates (PR #7070)
+
+The "What would decide it" section above has now been answered on both halves.
+
+**The enumeration half is CLOSED, not merely hard** (#7065). It guessed "feasible to n ~ 60,
+probably still not enough". Measured: n = 76 was reached (p = 9,289,091, 17 min) and the answer is
+that the statistic itself does not discriminate there. A provably Theta(sqrt n) control — the
+staircase — has an n^{3/4} ratio that RISES to a peak at n = 55 and only then falls, so over
+n = 36..78 it is flat at 1.20-1.23, the same range and the same value the M_n scan shows. The
+control only leaves its peak past n ~ 150, and p(150)/p(84) = 1,539, roughly 52 days of scanning
+here. Do not spend more compute on this route.
+
+**The structural half now has coordinates.** This bean asked for "a bound on R_lambda that uses
+more than N_m <= r", having ruled out the two-moment LP. The answer is to change variables to the
+first-column hook lengths (beta-numbers) beta_i = lambda_i + l - i:
+
+    (I')  R_lambda = sum_i F(beta_i) - sum_{i<j} eps_(beta_i - beta_j) - F(n)
+    (II)  H        = sum_i beta_i(beta_i+1)/2 - sum_{i<j}(beta_i - beta_j)
+    (III) n        = sum_i beta_i - l(l-1)/2
+
+with F(k) = sum_{m<=k} eps_m. Both R and the energy are one-body plus a PAIR interaction in the
+same coordinates — a log-gas shape. Exact: verified on every partition of n <= 13 (eps-weighted,
+worst residual 3.3e-49) and n <= 16 (integer arithmetic, exact).
+
+**The pair term is not a correction — it is 41.6% of the constant.** The one-body term alone gives
+R <~ l*C, i.e. L1 recovered with nothing gained. On the staircase every gap is even, so the pair
+term is sum_d (k-d) eps_{2d} -> k * sum_d eps_{2d}, and
+
+    R_{delta_k} / k  ->  C - sum_d eps_{2d}  =  sum_{m odd} eps_m  =  A = 3.6034
+
+which is EXACTLY the constant proved in #7010. Richardson on k = 64,128 agrees with A to 1.4e-13.
+So the interaction is precisely what makes the staircase A and not C. At the other extreme (single
+column, all gaps 1) it takes R to exactly 0. The identity is tight at both ends.
+
+### Two things I predicted and got wrong
+
+Recorded because the corrections are the informative part, not as self-flagellation.
+
+- I expected the derived bound to LOSE to C*r, since it is applied with the rows while C*r takes
+  r = min(l, lambda_1) and so silently picks the better conjugate reading. It WINS at all six
+  empirical argmax shapes, cutting the over-statement of R from 2.46-2.89x to 1.61-1.86x. Those
+  shapes have l = r in five of six, so the prefactors tie and the pair term is pure gain.
+- I expected its ratio to the truth to GROW with n once maximized with the energy (an upper bound
+  with too high an exponent must eventually outrun its target). It FALLS: 4.34x at n=16 to 3.09x
+  at n=40, against 5.94x -> 5.29x for C*r.
+
+### 🛑 The inference NOT drawn
+
+Maximized, the bound over sqrt(n) is flat to 9.8% (8.77, 9.45, 9.72, 9.64 at n=16,24,32,40) while
+over n^{3/4} it falls monotonically (4.38, 4.27, 4.08, 3.83). That reads as "the bound itself is
+O(sqrt n)", which would settle sharpness the OTHER way — the 3/4 not sharp, REV = Theta(sqrt n).
+**Refused.** By the control above, n <= 40 sits below the peak of the very statistic being read, on
+a range shorter than the one already shown not to discriminate. Recorded as an observation with its
+refutation attached.
+
+### What is next, and why it is not another scan
+
+The bound depends on lambda only through (l, W, n), with W = beta_1 - beta_l — three small integers
+instead of a partition. So maximizing it does NOT require enumerating p(n) shapes, which is exactly
+the wall the enumeration route hit. The remaining work is the admissibility relation linking
+(l, W) to H: large W spreads the beta's, which costs H through (II), and that trade-off is now
+writable in one variable set. If that optimisation can be done in closed form the exponent follows
+at every n, with no scan.
+
+One lossy step stands in the way and should be attacked first: the bound currently applies Jensen
+at the mean of each distance class, which is what leaves it ~1.8x above the truth at the argmax.
+
+Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+
+## 2026-09-07 (later) — the (l,W) reduction is TIGHT, so the beta-bound is the weak step (PR #7081)
+
+The section above proposed the (l, W) reduction as "the route". It was tried. **The transfer does
+not fire, and sharpness stays open** — but the negative locates the loss precisely, which the
+previous section could not.
+
+**The plan.** REV_n <= M_n + log p(n), and log p(n) ~ pi*sqrt(2n/3) = 2.5651*sqrt(n) is itself
+Theta(sqrt n). So an O(sqrt n) rate for max_(l,W) B(l,W) - E would give REV = O(sqrt n) and settle
+that the 3/4 is not sharp. The entropy cannot spoil it; the entropy IS Theta(sqrt n).
+
+**Measured to n = 4000** (p(n) ~ 1e64, so five of six points are unreachable by enumeration):
+
+    n            40      100      250      625     1600     4000
+    relaxed max  61.1   106.9    231.7    742.9   3070.9  13337.1
+    / sqrt(n)    9.67   10.69    14.66    29.72    76.77   210.88
+    / n^{3/4}    3.84    3.38     3.69     5.94    12.14    26.52   <- RISES
+    argmax (l,W) (22,37) (26,47) (27,62) (43,105) (78,192) (151,357)
+
+The n^{3/4} column rises, so the relaxation's own growth exceeds n^{3/4} and nothing transfers.
+REV_n stays in [Omega(sqrt n), O(n^{3/4})], unchanged. No claim either way.
+
+### 🛑 I diagnosed this backwards; the correction is the finding
+
+I asserted the Cauchy-Schwarz Hhat was the weak link — the maximizer runs to l = 151 at n = 4000
+against sqrt(2n) = 89, which looked like an energy credit handed out by a slack H bound. The
+measurement refutes it. At the maximizer's OWN (l, W), Hhat reaches the true minimum hook sum over
+partitions with exactly that (l, W) to 99.3-100% — exact at n = 24 and 32 — and the whole
+relaxation overshoots the ENUMERATED max(B - E) by at most 0.15 over n = 16..40.
+
+So passing from a partition to two integers costs essentially nothing. The relaxation is a
+**faithful instrument**, and what it faithfully reports is that the beta-bound of #7070 is itself
+too weak. The lossy step is **Jensen on the pair term**: at the mean of each distance class it
+under-counts badly for gap sequences of mostly 1s with a few large jumps — exactly what the
+maximizer selects (W/l ~ 1.7 at every n).
+
+### One sharpening kept
+
+The H lower bound now peels the known extreme part on BOTH halves of 2H = sum lambda_i^2 +
+sum lambda'_j^2:  2H >= [lambda_1^2 + (n-lambda_1)^2/(l-1)] + [l^2 + (n-l)^2/(lambda_1-1)]. The
+first attempt used the crude n^2/lambda_1 on the columns, which assumes equal column lengths and is
+catastrophic for one long row plus many short ones. Fixing it moved n=4000 from 17,309 to 13,337
+and the argmax l from 333 to 151. There is now under 1% left in H — **do not spend more on it**.
+
+### Anti-caveat
+
+This is NOT the #7065 situation. There a statistic could not discriminate because the range sat
+below its resolving point. Here the reading is a clear RISE across two orders of magnitude in n,
+not a flat column being over-read, so the negative does not depend on where that control's peak
+sits.
+
+### What the next attempt should do
+
+Replace the Jensen step, not the H bound. Target: a lower bound on sum_{i<j} eps_(beta_i - beta_j)
+that survives gap sequences of mostly 1s with a few large jumps. Any candidate is now testable at
+n = 4000 in polynomial time against an instrument calibrated to the truth at n <= 40
+(rev_beta_bound_polynomial_max_probe.py, R2 dominance + R6 tightness).
+
+Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+---
+---
+# qou-hok7
+title: 'Deuteron-wall resummation: classical Borel on q=1 period is the WRONG transform (substrate object is q-Gevrey) -> reopen; needs q-Borel of Z_n(q0)'
+status: todo
+type: task
+priority: high
+created_at: 2026-08-21T15:02:55Z
+updated_at: 2026-09-07T06:14:21Z
+
+---
+# 🛑 MAJOR CORRECTION 2026-09-07 — THE RESUMMATION WAS ALREADY RUN, AND IT IS A NEGATIVE
+
+Everything this bean said today about "what is now open" is **wrong**, and my
+"correction by a square root" restates a divisor the corpus had already measured and
+used a month ago.
+
+## The run exists, on `main`, since 2026-08-21
+
+- audit `docs/audits/2026-08-21-deuteron-wall-qborel-resummation.md`
+- probe `computations/deltalambda/deuteron_wall_qborel_resummation_probe.py`
+- commit `d19014bb4f`, verified an ancestor of `origin/main`
+
+It resummed the **right object** (`Z_n(q₀)`) with a **q-Gevrey-matched divisor**, and got:
+
+> **best substrate value = 2.745 % of `B_D` — undershoots by ~36×**
+
+and, decisively for the anti-fit discipline, it reaches `B_D` only at `x ≈ 1.12`, *through*
+the Borel singularity — which the audit itself labels: *"Adopting that coupling would be
+tuning to the singularity — a fit, forbidden."*
+
+**So the deuteron q-Borel–Laplace resummation is a scope-(a) NEGATIVE, correctly
+labelled, and has been for a month.**
+
+## How this bean missed it — and it is the same defect twice in one day
+
+`grep` on this bean: it cites `2026-08-21-deuteron-wall-resummation-**wrong-transform**.md`
+(the **diagnostic**) **once**, and `2026-08-21-deuteron-wall-**qborel-resummation**.md`
+(the **run**) **zero** times. Two audits, same day, adjacent names; I read the one that
+says "this had never been run" and never checked whether it had been run *since*.
+
+That is the second prior-art miss today, after `qou-qbg2` recorded the growth-budget
+table a month before I re-derived it — **and I made this one after being burned by that
+one.**
+
+## What my #6968 R1 actually was
+
+R1 said the divisor is `q₀^{n²}`, not the `q₀^{n²/2}` this bean specified. **True, and
+already known**: the 08-21 run had measured and used it. R1 corrected *this bean's stale
+text*, not the corpus's understanding. That is a much smaller claim than the PR made.
+
+## My "use `deg_n`, not the asymptotic form" advice was WORSE, not wrong — measured
+
+I advised using the exact `q^{deg_n}` rather than `q^{n²}`. A sibling report predicted it
+would **diverge**. I checked rather than accepting; **the prediction is not confirmed**:
+
+| divisor | `|Z_n/div|^{1/n}` at n = 10, 14, 18, 22, 25 | radius |
+|---|---|---|
+| `q₀^{n²}` (08-21's choice) | 1.467, 1.426, 1.364, 1.298, **1.249** ↓ toward ~1.05 | ≈ **0.95** |
+| `q₀^{deg_n}` (my advice) | 2.006, 2.070, 2.083, 2.066, **2.052** — flat ≈ 2.06 | ≈ **0.49** |
+
+Both converge. But mine gives **half the radius**, pushing the sum further from the
+`x ≈ 1.12` where the run reaches `B_D`. **So: not divergent, but materially worse, and
+the advice is withdrawn.** Recording the direction because the sibling's prediction and
+mine were both wrong in different ways, and only the measurement settles it.
+
+## What genuinely survives from #6968
+
+The derivations, which are new and are untouched by any of this:
+
+- `d²(deg Z_n) = 2 − 𝟙[n triangular]`, exceptions exactly 3,6,10,15,21,28,36, zero
+  exceptions to n=41;
+- `deg_n = n² − (2√2/3)n^{3/2} + O(n)`, coefficient derived from triangular density;
+- `⟨w⟩ = C(n,2)` **exactly**, reducing to `⟨content⟩ = 0` and `P(descent) = ½` per step;
+- the five closed `REV` routes.
+
+**And one distinction the corpus did not have**, which the correction sharpens rather
+than removes: `deg_n` is the polynomial **degree** (max weight), while the resummation
+divisor must track the **value** growth `log_{q₀} Z_n(q₀) ~ n²` (mean-dominated). They
+differ by `Θ(n^{3/2})`, and the root test above is exactly the measurement of that gap.
+That is why `q₀^{n²}` is the right resummation divisor and `q^{deg_n}` is not — a
+question this bean previously got backwards.
+
+## Status
+
+**This bean is NOT closed** — but its open item is no longer "run the resummation." It is
+run and negative. What remains genuinely open is `REV`'s asymptotics, which is a
+statement about the *object*, not about a route to `B_D`.
+
+Taken over 2026-09-07 by claude/stalled-agents-em-linking-jilmbv; the #7093 session ended awaiting merge permission (last c0704640e2e). Child task qou-0ie7 attacks the Σβ constraint on the same branch; nothing force-pushed.
+
+## 2026-09-07 (later still) — the Jensen step attacked; three refutations and a price (PR #7093)
+
+The section above says: "Replace the Jensen step, not the H bound." Done. It is **not replaced**,
+and the reason is now specific enough to be worth more than the attempt.
+
+**The reformulation, which is right and is kept.** Write the beta's by their partial gap sums,
+0 = S_0 < S_1 < ... < S_{l-1} = W. Then the pair term is
+
+    P = sum_{0 <= a < b <= l-1} eps(S_b - S_a),
+
+the energy of l points in an interval of length W under the potential eps. So P_min(l, W) is the
+**ground state of a one-dimensional repulsive gas with hard walls**. That is the object to bound.
+
+### Three conjectures of mine, all refuted
+
+1. **"The minimiser is the most even spacing."** Misses on 44 of 105 brute-forced (l, W) pairs.
+   At (4, 4) the even multiset {2,1,1} gives 6.8236 as (2,1,1) and 6.5135 as (1,2,1) — the energy
+   depends on the ARRANGEMENT, not the multiset. Both hand-checks I ran before writing the probe
+   had all-equal gaps, i.e. were drawn from exactly the cases where the distinction cannot appear.
+   That is the methodological error, not the mathematical one.
+
+2. **"...arranged unimodally, large gaps in the middle."** Better — 44 violations down to 12 — and
+   still false. At (5, 11) the true minimiser has gaps (2,3,4,2), which is not the even multiset
+   {3,3,3,2} in any order. The minimiser is not a rearrangement of the even gaps at all.
+
+3. **"Jensen can be beaten one distance class at a time."** False and backwards. For a single class
+   the differences satisfy x_i >= d and sum x_i <= d*W, and eps is CONVEX — so sum eps(x_i) is
+   convex and minimised at the centroid, which IS Jensen. I reached for the opposite extreme point
+   expecting an improvement (at (l,W,d) = (22,37,1) it gives 33.4 against Jensen's 24.8); for a
+   convex summand that is the MAXIMUM. Verified against 280 random feasible configurations across
+   7 triples drawn from the maximizer's own argmaxes: 0 beat Jensen.
+
+### What survives, and why it probably is not enough
+
+Jensen is optimal per class, so the whole loss is the **coupling between classes** — the same gaps
+appear in every class and the per-class relaxation forgets it. Brute force prices it, in the regime
+the maximizer selects (W/l ~ 1.7):
+
+    l         4        5        6        7        8
+    Jensen    3.4004   5.6678   7.5417   9.5157  11.5682
+    P_min     4.0481   6.8906   9.2128  11.5733  13.9448
+    ratio     1.1905   1.2157   1.2216   1.2162   1.2054
+
+**But priced against the BOUND rather than the pair term, ~1.21x buys little.** The pair term is
+one part of B = l*C - P - F(n). At #7081's own n=40 argmax (l, W) = (22, 37):
+
+    l*C - F(n) = 129.60054      J = 50.81003
+    B with Jensen               78.790513
+    B with the full 1.21x       68.125789      (13.54% smaller)
+
+Against the ~3x over-statement #7081 measured, closing the pair term COMPLETELY at this strength
+moves the bound by about a tenth. So solving the 1-D gas exactly would likely still not settle
+sharpness, and **the (l, W) route is close to exhausted rather than merely unfinished.**
+
+**Caveat, and it is the thing to check first.** That projection applies a factor measured at
+l = 4..8 to l = 22. The factor may grow with l, and brute force cannot say — it is C(W-1, l-2), and
+the maximizer's argmax at n = 4000 is (151, 357). If the coupling factor does grow substantially
+with l, this route revives; if it is flat, it is dead. That single measurement is the cheapest
+decisive next step, and it needs a way to compute or bound P_min at moderate l without enumeration.
+
+### What is left after this
+
+- **If the coupling factor is flat in l:** abandon (l, W). The missing information is not in those
+  two integers, and the remaining relaxation of any size is the dropped constraint
+  sum(beta) = n + l(l-1)/2, which couples the beta's to n beyond (l, W).
+- **A lower bound on the 1-D gas ground state that keeps the gaps coupled** — transfer-matrix or
+  convex-duality — is the only way to improve the pair term further. No further per-class
+  inequality can help; that is what refutation 3 establishes.
+
+Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OPEN**.
+
+## 2026-09-11 — SHARPNESS SETTLED: REV_n = Θ(√n); the 3/4 exponent is NOT sharp (PR #7185)
+
+The one open piece of this bean since 2026-09-07 — "is the 3/4 sharp?" — is closed on the
+side the (ℓ,W)-route sections above refused to read off their flat columns. Not by a sharper
+bound on `R_λ` (which "What would decide it" asked for) but by a sharper bound on the ENERGY
+as a function of the number of rows, which every prior route threw away when it passed to
+`r ≤ √H`.
+
+**The mechanism.** `R_λ = Σ_c ε_{h(c)} − F(n) ≤ (ℓ−1)C` (hooks strictly decrease along a row,
+#7018). And with the row form `2H = Σ_{i<ℓ} λ_i(λ_i + 2i + 1)`, tangent lines on the convex row
+terms give, for `n = T_k + r`, the polynomial identity
+
+    2(H(λ) − H⁺) ≥ (ℓ − k)² − r,      H⁺ = P_k + r(k+1) = H(λ⁺),   for EVERY λ ⊢ n, every ℓ.
+
+Entropy linear in ℓ, energy quadratic in `ℓ − √(2n)`:
+
+    M_n ≤ (C + L/2)√(2n) + C²/(2L) − C = 8.80√n + 176.3,
+    REV_n ≤ M_n + log p(n) ≤ 11.37√n + 176.3.
+
+With #7014's Ω(√n): **Θ(√n).** Lean: `QOU/BraidKnot/HookSumRowTangentBound.lean`,
+`two_mul_sum_hookZ_sub_hminClosed_ge`, sorry-free, axioms `propext, Classical.choice,
+Quot.sound`. Probe `rev_sqrt_n_upper_bound_probe.py` 7/7: every step exact on all partitions
+n ≤ 30; every link of the chain at n = 2..44 (60 dps). Details and the flaw hunt on `qou-0ie7`.
+
+**What this corrects in the sections above.**
+
+- 2026-09-07 "the data cannot yet distinguish": correct at the time; the discriminator was
+  never going to be data — the route is a two-line convexity argument the enumerations could
+  not see because they never grouped by ℓ.
+- #7070 / #7081 "the lossy step is Jensen on the pair term" and #7093 "the (ℓ,W) route is close
+  to exhausted": both right about the β-bound and both beside the point. The pair term was
+  never needed; `(ℓ−1)C` with the row-indexed energy suffices.
+- **#7081's relaxation RISING above `n^{3/4}` to n = 4000 is an instrument artefact**, not a
+  fact about REV. Its Cauchy–Schwarz `Ĥ` is **48.9 % of `H_min(4000)`** at its own argmax
+  `(ℓ,W) = (151, 357)`: the column half spreads `n − ℓ` cells evenly over `λ₁ − 1` columns,
+  impossible with 151 rows, so the maximiser fed on a negative energy no partition has. Its
+  99–100 % calibration was at n ≤ 40 where `ℓ − k` is small. The "anti-caveat" in that section
+  ("a clear RISE ... not a flat column being over-read") is therefore withdrawn: it was a rise
+  in a quantity that is not an upper bound on anything at that n. Reproduced at n = 44 (R5b).
+- #7081's argmax drift `ℓ = 151` vs `√(2n) = 89` is explained: the bound's maximiser sits
+  `x = C/L = 59` rows above the staircase at every n.
+
+**Still open on this bean** (unchanged, and none of it is the sharpness question): the
+substrate-side reading of REV's Θ(√n) coefficient — the bound's `(C + L/2)√2 = 8.80` is an
+upper constant, the true `M_n/√n` is 3.19 at n = 44 and still rising toward its limit, which
+is not identified; and the q-Borel resummation negative (2026-08-21) stands. **Do not close
+this bean.**

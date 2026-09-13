@@ -17,7 +17,28 @@ Vershik–Kerov–Logan–Shepp (VKLS) limit shape, evaluated in closed form and
 quadrature to 1e-42. The prior status was "κ ≈ 0.059, non-monotone, √2/24 not confirmed"
 ([exact-anchor audit](2026-08-21-covariance-kernel-M1-kappa-exact-leading-exponent.md)); the derived
 value `0.05764` is **below** √2/24 = 0.058926 — consistent with the exact `κ_n` descending past its
-n≈32 peak toward it (the finite-n data never reaches it because the corrections are large; see §5).
+n≈32 peak toward it (~~the finite-n data never reaches it because the corrections are large~~; see §5).
+
+> **Correction, 2026-09-08 — the parenthetical is false, and the data that falsifies it is in
+> this repo.** "The finite-n data never reaches it" was written against exact `κ_n` to **n = 50**,
+> which is as far as the exact table went that day. The **n = 68…78** window landed later, in
+> [`b1-kappa-window-extension.json`](../../computations/deltalambda/b1-kappa-window-extension.json),
+> and `κ_n` **crosses √2/24 between n = 68 and n = 69** — `κ₆₈ = 0.0589313` (+0.0098 %),
+> `κ₆₉ = 0.0589230` (−0.0044 %) — then keeps falling to `κ₇₈ = 0.0588572` (−0.116 %).
+>
+> **This does not touch the derivation.** `κ = 128/(225π²)` is unaffected; the sequence descending
+> *past* √2/24 rather than stalling above it is what the derivation predicts, so the correction
+> makes §5 agree with §1 instead of hedging against it.
+>
+> **Two things it does NOT establish.** `1/17 = 0.0588235`, the other neighbour the
+> [exact-anchor audit](2026-08-21-covariance-kernel-M1-kappa-exact-leading-exponent.md) named, is
+> **not** crossed by n = 78 — `κ₇₈` is still 0.057 % above it. Report per constant, not per class.
+> And a crossing is not a bound: nothing here constrains `κ_n` for `n > 78`, which is what gap
+> `qou-k5r5` actually needs.
+>
+> Re-checkable, and gated on recomputing each stored decimal `κ_n` from the stored exact rational
+> `M₁ = num/den` (worst disagreement 8.05e-26, so the crossing is not an artifact of a serialiser):
+> [`wlambda_covariance_epic_M1_kappa_sqrt2_24_crossing.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_kappa_sqrt2_24_crossing.py), 6/6 PASS.
 
 ## Derivation
 

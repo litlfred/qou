@@ -1,0 +1,157 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T12:28:47.412417+00:00",
+  "commitSha": "f7148e14ec6f9d60e2718c0658343aee829e22e3",
+  "assertions": [
+    {
+      "name": "closed_forms_match_direct_powers_k_le_10",
+      "computed": "9.33452291679171256071609608067018636088537825308175069965167e-61",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "Lean trace_vtx_pow_six..ten via pow_eq_lin"
+    },
+    {
+      "name": "h3_feasible_set_is_multiples_of_three",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean vertexPow_frobeniusFeasible_iff_three_dvd"
+    },
+    {
+      "name": "h6_feasible_set_is_multiples_of_three",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean interface_frobeniusFeasible_iff_three_dvd"
+    },
+    {
+      "name": "pin_inside_wide_interval",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean h_sq_le_of_q_le"
+    },
+    {
+      "name": "pin_inside_narrow_interval",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean h_sq_le_eighteenth_of_q_le"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "gamma-gamma-selection-ten-probe",
+  "scriptFile": "gamma_gamma_selection_ten_probe.py",
+  "scriptHash": "7c0dffd2e9c4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gamma_gamma_selection_ten_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gamma_gamma_selection_ten_probe.py"
+  },
+  "description": "qou-ales step 7: candidates up to ten vertices. Cross-checks QOU/Mass/GammaGammaSelectionTen.lean at the proton pin: the Chebyshev closed forms chi_6..chi_10 equal the direct tr(V^k) of the Hoefsmit (2,1) vertex image; the reading-3 feasible sets with k, m <= 10 are {3, 6, 9} on H_3 and on the H_6 interface (3,3) condition; the pin lies in both Lean intervals. Informational: the roots of 1 + 2 chi_5 and 1 + 2 chi_8. No AME/CODATA binding value or census is read.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "convention": "D (Hoefsmit (2,1) block; two-row weight support at n = 6)",
+    "dps": 60,
+    "tolerance": "1.00000000000000000000000000000000000000000000000000000000000e-40"
+  },
+  "data": {
+    "h_sq": "0.0437062085325219894020193356773883097682139607135222162428474",
+    "chebyshev_table_0_to_10": [
+      {
+        "k": 0,
+        "chi": "2.00000000000000000000000000000000000000000000000000000000000",
+        "one_plus_2chi": "5.00000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "k": 1,
+        "chi": "-1.04370620853252198940201933567738830976821396071352221624285",
+        "one_plus_2chi": "-1.08741241706504397880403867135477661953642792142704443248569"
+      },
+      {
+        "k": 2,
+        "chi": "-0.910677350270667723245624754038263478072193579917334030930940",
+        "one_plus_2chi": "-0.821354700541335446491249508076526956144387159834668061861881"
+      },
+      {
+        "k": 3,
+        "chi": "1.99418581297996408672819936801871670008913958251181051846763",
+        "one_plus_2chi": "4.98837162595992817345639873603743340017827916502362103693526"
+      },
+      {
+        "k": 4,
+        "chi": "-1.17066676370399557005502108338909471953858810314365848873230",
+        "one_plus_2chi": "-1.34133352740799114011004216677818943907717620628731697746460"
+      },
+      {
+        "k": 5,
+        "chi": "-0.772353643579429041922799558857865778759660526428891116556487",
+        "one_plus_2chi": "-0.544707287158858083845599117715731557519321052857782233112974"
+      },
+      {
+        "k": 6,
+        "chi": "1.97677705669056030100615497129761664027319558483974969807850",
+        "one_plus_2chi": "4.95355411338112060201230994259523328054639116967949939615701"
+      },
+      {
+        "k": 7,
+        "chi": "-1.29082084337315393006879855902479689306331900890130235808845",
+        "one_plus_2chi": "-1.58164168674630786013759711804959378612663801780260471617689"
+      },
+      {
+        "k": 8,
+        "chi": "-0.629539328358813400179087710167176732426662566056579733832308",
+        "one_plus_2chi": "-0.259078656717626800358175420334353464853325132113159467664616"
+      },
+      {
+        "k": 9,
+        "chi": "1.94787494889664146289374711401560409625254108728752014163023",
+        "one_plus_2chi": "4.89574989779328292578749422803120819250508217457504028326046"
+      },
+      {
+        "k": 10,
+        "chi": "-1.40346984924958028788611405729109548443985686912356810706461",
+        "one_plus_2chi": "-1.80693969849916057577222811458219096887971373824713621412922"
+      }
+    ],
+    "h3_feasible_k_le_10": [
+      3,
+      6,
+      9
+    ],
+    "h6_feasible_m_le_10": [
+      3,
+      6,
+      9
+    ],
+    "root_1_plus_2chi5": "0.0923354359440870157576434481337066671480929972674885590357510",
+    "root_1_plus_2chi8": "0.0580710115716064746671529344352213808910778871994507776696949"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

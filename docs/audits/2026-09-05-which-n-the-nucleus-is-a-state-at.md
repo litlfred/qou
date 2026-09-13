@@ -115,7 +115,57 @@ did not carry the sentence itself.
 
 ---
 
-## 4. What route 1 *does* establish — a constraint, not a selection
+## 4. ~~What route 1 *does* establish — a constraint, not a selection~~ 🛑 RETRACTED
+
+> **🛑 THIS WHOLE SECTION IS WITHDRAWN (2026-09-05, same day). It was mine, and
+> it is a scope error the Φ_k audit already names.** Probe:
+> [`phi_k_is_not_a_trace_probe.py`](../../computations/probes/phi_k_is_not_a_trace_probe.py) — 4/4, exit 0.
+>
+> **The error.** The section imposes: *"any weight family consistent with the
+> corpus's canonical trace must vanish on `ker(H_n ↠ TL_n)`"*, and concludes
+> *"no candidate currently on the table satisfies the corpus's own consistency
+> requirement."* **Φ_k is not a trace, so no such requirement exists.** Three
+> independent reasons, any one sufficient:
+>
+> 1. **The Φ_k audit names this exact error as the one it exists to block.** Its
+>    requirement **R3** reads, in the verdict table:
+>    *"no Markov property is required — **Φ is not a trace** … it removes the
+>    reason to want `y_λ` and **blocks a scope error**."*
+> 2. **Φ_k is not linear on the algebra.** It is
+>    `Φ_k(β) = Σ_{λ: depth k} w_λ · log(|χ^λ(β)|·d_q(λ))` — a log-weighted sum
+>    over one depth stratum. `tr_M = Σ_λ y_λ χ^λ` is a linear functional on
+>    `H_n(q)`. A kernel argument about which *algebra elements* act as zero on
+>    `V^{⊗n}` says nothing about which *partitions* a separate functional may
+>    weight.
+> 3. **The constraint annihilates its own subject.** Imposed, it forces
+>    `w_λ = 0` on every λ with ≥ 3 rows — every stratum of depth ≥ 2 — so
+>    `Φ_k ≡ 0` for **all** `k ≥ 2` by the audit's own R1. A requirement that
+>    forbids the object being constructed is a reductio, not a finding.
+>
+> **And the "fifth measure" this section endorsed fails R1.** It named the TL
+> share `(f^λ)²/C_n` over `ℓ(λ) ≤ 2` as *"the one candidate that clears the
+> constraint"*. It clears it by being zero off the two-row cap — which is
+> precisely what R1 retires `y_λ` for. Measured (check B): it puts **0.9998 of
+> its mass on depth 1 and exactly 0.0 on every stratum of depth ≥ 2** at n = 9.
+> My proposed solution was the degenerate case.
+>
+> **What the ruling says.** After this audit merged, the owner ruled
+> *"molien. do the two arm reporting"* — **Molien canonical** for Φ_k, with
+> `d_q²/D²` retained as a labelled comparison arm (bean `qou-oots`, closed).
+> Check C confirms Molien is **nonzero on every depth ≥ 2 stratum** (0.3916 on
+> depth 3 at n = 9, the chirality channel) and check D that its total mass is
+> exactly 1 at n = 3…9 — so it satisfies R1 and R2 on exactly the strata this
+> withdrawn section excluded it for. **This retraction does not re-open the
+> family question; it removes a wrong argument against the ruling's answer.**
+>
+> **What survives in this note, untouched:** §1 (`N = 2` and its four corpus
+> witnesses — the question this audit was written to settle), §2 (the
+> TL/Catalan arithmetic), §3 (the depth off-by-one and the `N = 3`-is-also-null
+> measurement). Only §4's constraint and its endorsed measure are withdrawn.
+
+**Superseded text follows, kept as the record of the error.**
+
+### ~~What route 1 does establish~~
 
 Any weight family consistent with the corpus's canonical trace must **vanish on
 `ker(H_n ↠ TL_n)`**, i.e. on every λ with ≥ 3 rows. That is not a preference; it
@@ -246,27 +296,143 @@ That is this framework's situation exactly, at `d = 3A ≫ 2`. Nothing outside
   It is not a statement about the row cap at all, and it describes an
   approximation no live producer runs.
 
+## 4e. What route 1 *does* establish, measured: **both horns vanish**
+
+§4 above claimed route 1 hands down a *constraint* on the weight family. That
+was withdrawn. This section replaces it with what route 1 actually yields once
+`N = 2` is in hand, and the answer is a **negative**: route 1 cannot supply a
+Φ_k weight family for `k ≥ 2` at all, by either horn.
+
+Recall how §7 of
+[`2026-09-05-phi-k-weight-family.md`](2026-09-05-phi-k-weight-family.md) poses
+it — as a fork whose resolution is the naming:
+
+> If that object is `V^{⊗n}` … the share is `f^λ d_q(λ)/[n]_q!`-shaped
+> (Molien) and the question is closed. If it is the endomorphism algebra
+> `End(V^{⊗n})`, the share is `d_q²/D²`-shaped and the question is closed the
+> other way. **Naming which object the nucleus is a state in is the whole
+> content.**
+
+At `N = 2` **both horns are supported on partitions of at most two rows**, i.e.
+on depth 0 and depth 1 only, and are **exactly zero** on every stratum of depth
+`≥ 2`:
+
+| horn | share | index set | why it dies on depth ≥ 2 |
+|---|---|---|---|
+| 1 — module `V^{⊗n}` | `f^λ · d_q^{SU(2)}(λ) / [2]_q^n` | `ℓ(λ) ≤ 2` | the cell `(3,1)` has content `−2`, so `[2 + (−2)]_q = [0]_q = 0` kills the product — `RowCapObstruction.lean` arriving as arithmetic |
+| 2 — operators `End(V^{⊗n})` | `(f^λ)² / Catalan(n)` | `ℓ(λ) ≤ 2` | `End_{U_q𝔰𝔩₂}(V^{⊗n}) = TL_n(q)`, which *has no blocks* with more than two rows |
+
+Measured at the nuclear `n = 3A`, proton pin, `mp.dps = 50`
+([`route_1_is_degenerate_at_n_two_probe.py`](../../computations/probes/route_1_is_degenerate_at_n_two_probe.py),
+5/5):
+
+| `n` | `A` | Σ horn 1 | horn 1 on depth ≥ 2 | Σ horn 2 | horn 2 on depth ≥ 2 | Σ Molien | Molien on depth ≥ 2 |
+|---|---|---|---|---|---|---|---|
+| 3 | 1 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.223435 |
+| 6 | 2 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.902265 |
+| 9 | 3 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.997609 |
+| 12 | 4 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.999985 |
+
+By the audit's own **R1** (`phi_eq_zero_of_weights_vanish`: weights vanishing
+throughout a stratum make `Φ_k = 0` for *every* braid), each horn therefore
+gives `Φ_k ≡ 0` for `k ≥ 2`. So naming the object does not select between two
+weight families — it returns the zero functional either way.
+
+**This is a scope-(b) exclusion**, and the invariant is cited: the row cap, in
+horn 1 as `[0]_q = 0` and in horn 2 as the absence of the blocks themselves. It
+is not "the share scores badly on the ranking"; it is "the share makes the
+object identically zero".
+
+**The fork was real — that is what makes the collapse informative.** The two
+horns are genuinely different measures, max per-λ gap 0.305 / 0.205 / 0.206 /
+0.217 at `n = 3/6/9/12`, so §7 was not offering one option written twice, and
+at general `N ≥ 4` naming the object *would* decide. What collapses route 1 is
+specifically the `N = 2` ruling, which post-dates the audit. **§7 was a sound
+question that the settlement of `N` turned into a dead one.**
+
+**Two things this does not license.**
+
+1. **It is not an argument that Molien is correct.** Molien passes R1 here —
+   strictly positive mass on depth `≥ 2` at every nuclear `n`, and it is the
+   only one of the three that does — and the owner ruled it canonical. Surviving
+   the requirement that kills the alternatives is not a derivation, and this
+   measurement supplies none. What it does supply is the reason the ruling was
+   *needed*: route 1, the route the audit ranked most decisive, cannot answer.
+2. **It says nothing about `k = 0` or `k = 1`.** Both horns are perfectly good
+   measures on depth `≤ 1`; the exclusion is only for `k ≥ 2`. Routes 2 (a
+   same-`n` within-stratum observable) and 3 (a cross-nucleus metric with more
+   than four points) are untouched and remain the live ways to settle the
+   family by measurement rather than by ruling.
+
+**"Then pick a larger `N`" is not available, and this is the sharpest thing a
+sibling added.** The paragraph above says the fork *would* decide at general
+`N`, which invites the rescue: re-choose `N ≥ 4` and both horns come alive on
+depth ≥ 2 again. But `N` is not a free label attached to a fixed trace — the
+Ocneanu/Markov weights depend on it through a nontrivial rational function of
+`q`, so moving `N` **re-weights every surviving channel**. Verified here
+independently at the proton `q₀`, `mp.dps = 50`, balanced convention, against
+the closed form `y_{(2,1)}/y_{(3)} = [2]_q[N-1]_q/[N+2]_q`:
+
+| `N` | `y_{(2,1)}/y_{(3)}` |
+|---|---|
+| 2 | 0.48930712047797097007 |
+| 3 | 0.77459088135788091778 |
+| 4 | 0.95812403128848485757 |
+
+`N = 2 → 3` alone moves that ratio by **58.30 %** (`N = 3 → 4` by 23.69 %) —
+[`ocneanu_n_lockin_crosscheck_probe.py`](../../computations/probes/ocneanu_n_lockin_crosscheck_probe.py), 3/3. So a route-1 rescue by re-choosing
+`N` is not a change of reading; it is a change of trace, and the trace is fixed
+by the convention-D ruling. The stronger form — that **`N` *is* the Ocneanu
+trace parameter**, `a = q^{N-1}`, making "choose `N`" and "choose the trace"
+literally one act, so the row cap is arithmetic rather than an imposed rule —
+is [#6829](https://github.com/litlfred/qou/pull/6829)'s
+(`ocneanu_N_lockin_probe`), not mine: **the three ratios above are what I
+verified; the identification I am citing, not asserting.**
+
+One convention trap they flag and I confirm: that probe's docstring writes the
+closed form as `q·[2][N-1]/[N+2]` in the **asymmetric** convention while
+`y_lambda_su_n` computes **balanced**. The two differ by exactly the leading
+`q` — the asymmetric values are 0.5431 / 0.8598 / 1.0635 — so a reader
+comparing across the two reads a discrepancy where there is none. The table
+above is balanced throughout.
+
+One arithmetic caution for anyone extending the table: the depth-3 column
+(exactly 4 rows) is `0.0` at `n = 3` for **all three** measures, including
+Molien — there is no partition of 3 with four rows. That zero is arithmetic,
+not a vanishing weight, and reading it as one would repeat §3's error in a new
+place. Molien's depth-3 mass is 0.348728 / 0.391640 / 0.136680 at
+`n = 6/9/12`.
+
+---
+
 ## 5. Scope
 
 **Established.** `N = 2`, by owner ruling, recorded four ways. The ≥3-row blocks
 are `ker(H_n ↠ TL_n)`, verified arithmetically. Depth 3 is vacuous at `N = 2`
 and `N = 3` alike, and empty at `n = 3`. Both surviving Φ_k candidates put mass
-on the kernel.
+on the kernel. And (§4e) **both horns of route 1 are exactly zero on depth
+`≥ 2`** at every nuclear `n = 3A`, so route 1 cannot supply a Φ_k weight family
+for `k ≥ 2` — a scope-(b) exclusion of the *route*, with the row cap cited.
 
-**Scope-(b) structural exclusion of Φ₃ as an observable** — not "Φ₃ performs
-badly" but "the stratum it integrates over lies in the kernel of the map to the
-state space" — resting on sorry-free
-`QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff`, not on these numbers.
+~~**Scope-(b) structural exclusion of Φ₃ as an observable**~~ — **WITHDRAWN with
+§4.** The Lean theorem cited is real and says what it says about `y_λ`; what was
+wrong was inferring from it a constraint on Φ_k's *own* weight family. Φ₃ is
+vacuous **under `y_λ`** (which is R1's finding, not mine) and is **not** vacuous
+under Molien, the canonical family.
 
 **NOT established.**
 
 - **That Φ₁ or Φ₂ are vacuous.** Depth 0 and 1 are 1- and 2-row, inside the cap;
   check D shows they carry **all** the `N = 2` mass (1.0 at n = 3, 6, 9). The
   exclusion is specific to `k ≥ 2`.
-- **Which family Φ_k should use.** Narrowed by a constraint that eliminates every
-  current candidate; not selected.
-- **That the TL share is right.** It clears the constraint and is q-independent;
-  both facts are stated, neither is a recommendation.
+- **Which family Φ_k should use.** §4e removes route 1 as a way to answer it; it
+  does not answer it. Molien is canonical **by owner ruling** (2026-08-05,
+  bean `qou-oots`), and passing R1 where both horns fail it is a reason the
+  ruling was needed, not a derivation of it.
+- **That the TL share is right.** §4c corrects it to `(f^λ)²/Catalan(n)` and
+  §4e measures it as identically zero on depth `≥ 2`. Recording what it is is
+  not recommending it — under R1 it is excluded for `k ≥ 2` exactly as the
+  module share is.
 - **Anything about a future `N = 3` construction.** It stays the eightfold
   chapter's principal open problem (live carrier `qou-y7vg`, ledger
   `docs/coordination/eightfold-n3-surface.md`). What §4b establishes is only
@@ -274,10 +440,30 @@ state space" — resting on sorry-free
 - **That `N = 2` is RIGHT.** The corpus says it, derives it from its own axiom
   under the strong reading of condition (v), and locks it in — and the deriving
   file itself flags that reading as editorially unresolved.
-- **The strand count.** `H_{A+Z}` (`atomic-braid.md:2`, `wedderburn-mass-formula.md:2`)
-  against `H_{3A}` (`schur-weyl-mass-decomposition.md:1`, `hecke_3a_weights.py:5`)
-  is still unreconciled by any block. It does not affect this answer: `N = dim V`
-  is a property of the fibre, independent of `n`.
+- **The strand count.** Unreconciled, and **worse than this bullet said until
+  2026-09-06** — it read *"`H_{A+Z}` … against `H_{3A}` … still unreconciled by
+  any block"*, which undercounts and mis-cites. Two of its four pointers were
+  **dead**: `atomic-braid.md` is under `knots-particles-confinement/`, not
+  `mass-theory/`, and the producer is `computations/hecke/hecke_3a_weights.py`.
+  Both *claims* were true; both *paths* resolved to nothing — a dead pointer in
+  a list this note offers as authoritative.
+
+  There are **three** live counts, not two, and they factor as a 2×2 of two
+  independent choices (nucleon vs quark strand; electrons in vs out):
+  `A+Z` (**7** blocks, incl. `def:atomic-braid` itself), `3A` (**26** blocks,
+  incl. the notation register), `3A+Z` (**1** block,
+  `mass-endomorphism/atomic-mass-gb-nf.md:3`, which asserts
+  `𝓑_K ∈ B_{3A+Z}` **while citing the `A+Z` definition**). `H_A` is a fourth
+  cell but appears only as `level-sufficiency-interprets.md:41`'s explicit
+  "Default-coarse" approximation. The collision is on the symbol `𝓑_K` and
+  `notation-collisions.md` has no entry for it. Measured in
+  [`strand_count_is_a_two_by_two_probe.py`](../../computations/probes/strand_count_is_a_two_by_two_probe.py)
+  (12/12) on branch `claude/two-atomic-braids-one-name-2026-09-05`, which
+  retracts its own narrower reading there.
+
+  **It still does not affect this answer**: `N = dim V` is a property of the
+  fibre, independent of `n` — which is exactly the `n`-vs-`N` conflation §4b
+  names, and the reason a three-way `n` dispute leaves `N = 2` untouched.
 
 ---
 

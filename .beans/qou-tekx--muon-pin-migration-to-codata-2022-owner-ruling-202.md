@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T10:45:49Z
-updated_at: 2026-08-30T19:49:32Z
+updated_at: 2026-09-08T07:45:41Z
 ---
 
 ## The ruling
@@ -639,3 +639,5 @@ measured and still go stale between measuring it and merging it. Re-measure
 against the tree you are actually merging onto, not the one you branched from —
 and when a figure moves, say which tree each reading came from rather than
 picking the newer one and quietly overwriting the older.
+
+## 2026-09-08: canonical ledger for the q₀-gate family is qou-1c4y (the AGENTS.md-named migration tracker); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 3 / §7.3 C3. Sixteen q₀-gate beans, ~10 % cross-reference density, now all point there.

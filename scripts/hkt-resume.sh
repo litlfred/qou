@@ -85,6 +85,13 @@ echo "[hkt] memo entries: $(find "$MEMO" -type f 2>/dev/null | wc -l)"
 
 mkdir -p "$ROOT/.work"
 cd "$ROOT" || exit 1
+# QOU_KERNEL_MEMO is INERT since the 702-commit merge of 2026-09-13: the
+# disk memo lived in `hecke_core_legacy`, and that file was taken wholesale
+# from main, which had rewritten the numeric path (bean `qou-sv7h`) and
+# never carried the memo. Left set so re-porting it needs no change here.
+# DO NOT re-port it with the old key: `_memo_build_id()` hashed ONLY the
+# compiled kernel, and sv7h is a PYTHON change -- so the old cache would
+# have been served unchanged against a numeric path that had moved.
 nohup env QOU_HKT_CHECKPOINT="$CKPT" QOU_KERNEL_MEMO="$MEMO" \
       python3 computations/hadron_knot_table.py > "$LOG" 2>&1 < /dev/null &
 disown

@@ -3,7 +3,7 @@
 DAMPED OSCILLATION with an envelope that decays ~n^-1, completing the descent-DPP picture.
 
 Gap qou-k5r5, epic qou-x631. PR #5924 showed the content statistics are LINEAR statistics of
-the descent DPP and measured the POISSONIZED (Poisson-smoothed over n) rho_P -> 0.979796 at a
+the descent DPP and measured the POISSONIZED (Poisson-smoothed over n) rho_P -> 2*sqrt(6)/5 = 0.9797958971 at a
 clean rate a~1. The remaining leg of the (CS) margin
       m(n) = rho_P(n) - sigma(SumD2)/sigma(Sum|c|)
 is sigma_D = sigma(SumD2), where SumD2 = Sum_u D(u)^2 is a QUADRATIC statistic of the descent

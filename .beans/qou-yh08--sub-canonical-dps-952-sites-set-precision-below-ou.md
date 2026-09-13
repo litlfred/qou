@@ -3,8 +3,9 @@
 title: 'Sub-canonical dps: 952 sites set precision below OUTPUT_DPS=60 after the 2026-05-31 bump'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-23T07:58:25Z
-updated_at: 2026-08-23T07:58:25Z
+updated_at: 2026-09-08T07:45:42Z
 ---
 
 `qou_substrate.precision` was bumped on 2026-05-31 (PR #1595) from 50->60 output
@@ -48,3 +49,5 @@ regress while the decision is pending.
 Found while fixing a hardcoded `60` in `tower_term_li2q` (bean qou-2tuv), which
 was itself the wrong constant: 60 is the *serialization* precision; compute
 wants `COMPUTE_DPS` = 70.
+
+## 2026-09-08: duplicate qou-zo4i scrapped 2026-09-08 (byte-identical body, created 5 s after this one; audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 6 / §7.3 C7).

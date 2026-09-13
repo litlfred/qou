@@ -50,6 +50,17 @@ class does not yet carry — same gap documented at
 `markov_trace_unique`; the pair case below is the `A = 3` (two-bond)
 instance and the compute witness covers the general case numerically.
 
+**Status of the general case (2026-09-07, bean `qou-gr3t`).** The gap named above is now a
+*named hypothesis with a counter-model*: `QOU.Hecke.MarkovInteriorBond.InteriorMarkov` states the
+interior-generator Markov property (`tr(a·σ_g·b) = z·tr(a·b)` for `a` below and `b` above the
+bond), `tr_bondWord_of_interiorMarkov` proves the general-`A` bond product from it for arbitrary
+(non-monotone) block words, `interiorMarkov_ascending` proves it unconditionally in the monotone
+case, and `not_interiorMarkov_cmTower` exhibits a `MarkovTower` satisfying every field and
+violating it — so the property is independent of the abstract tower axioms and is a theorem of the
+*Hecke* tower (quadratic + braid + word-spanning), still to be proved there. The `n = 9` exact
+identity (`route_c_step3_bond_factorisation_exact_probe.py`, 76/76) is scope-(b) evidence at
+fixed `A`.
+
 ## References
 
 - [jones1987] https://doi.org/10.2307/1971403

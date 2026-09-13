@@ -277,31 +277,34 @@ def main() -> int:
         "durationMs": int((time.monotonic() - t0) * 1000),
     }
     out_p = HERE / "qbeta-chain-closed-form.witness.json"
-    # Imported BEFORE `open(..., "w")`, and it must stay there (bean `qou-sidu`):
-    # opening for write TRUNCATES immediately, so an import that raises inside the
-    # `with` block closes the file EMPTY and destroys the witness. `qou_substrate`
-    # is not importable from a bare producer context, which is how 22 witnesses were
-    # emptied by a single `producer_importability_audit` run.
+    # BUILD THE PAYLOAD BEFORE TOUCHING THE FILE (bean qou-m549 -> this fix).
+    #
+    # `open(path, "w")` TRUNCATES AT OPEN. This block used to do the import and
+    # the provenance stamp *inside* a `with open(out_p, "w")`, so anything that
+    # raised between the truncation and `json.dump` destroyed the committed
+    # witness and wrote nothing back. That is not hypothetical: this file was
+    # committed to `main` AT 0 BYTES by `36501d7b01` (2026-09-07), the only
+    # unparseable witness of 3702, after `from qou_substrate...` raised
+    # ModuleNotFoundError under a sweep's PYTHONPATH. `qou-m549` recorded the
+    # mechanism on 2026-09-04 and told agents to restore from git before
+    # re-running -- an instruction to the caller instead of a fix to the
+    # producer, and three days later a sweep hit it for real.
+    #
+    # Serialising first removes the window entirely: every call that can raise
+    # (the import, the stamp, json.dumps) runs while the old file is still
+    # intact, and the file is opened only once a complete payload exists. This
+    # is what `WitnessBuilder.save` already does -- its checks run before the
+    # open, and only `json.dump` is inside it.
     from qou_substrate.witness import WitnessBuilder as _WB
-    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
-    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
-    # dump runs, so any exception in between leaves the committed witness
-    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
-    # in one `producer_importability_audit` run. `os.replace` is atomic on
-    # POSIX within a filesystem, hence a SIBLING temp file.
-    _wpath_sidu = out_p
-    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
-    with open(_wtmp_sidu, "w") as f:
-        witness.setdefault("scriptFile", os.path.basename(__file__))
-        _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, engine="mpmath+sympy",
-            q0_anchor="proton",
-            q0_anchor_reason="experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin", q0_value=Q0S)
-        # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and
-        # `witness_shape_guard` flags a witness that gains \uXXXX escapes.
-        json.dump(witness, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
+    witness.setdefault("scriptFile", os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="mpmath+sympy",
+        q0_anchor="proton",
+        q0_anchor_reason="experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin", q0_value=Q0S)
+    # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and
+    # `witness_shape_guard` flags a witness that gains \uXXXX escapes.
+    _payload = json.dumps(witness, indent=2, ensure_ascii=False) + "\n"
+    out_p.write_text(_payload, encoding="utf-8")
     print(f"\n  witness -> {out_p.relative_to(ROOT)}")
     return 0 if ok else 1
 

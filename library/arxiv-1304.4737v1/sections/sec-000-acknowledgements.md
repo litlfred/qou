@@ -7,6 +7,7 @@ section_number: null
 pages: 14-18
 source_pdf: 1304.4737v1.pdf
 source_sha256: 7dcfb1a25bfc0cda
+doc_brief: "Toroidal domain walls as Hopfions — We construct stable domain walls in a shape of a torus in the Faddeev-Skyrme model with a quadratic potential term admitting two discrete vacua."
 ---
 We thank the organizers of the conference “Quantized Flux in Tightly Knotted and
 Linked Systems,” held in 3 - 7 December 2012 at Isaac Newton Institute for Mathematical

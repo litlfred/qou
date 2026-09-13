@@ -5,7 +5,8 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-05T08:54:35Z
+updated_at: 2026-09-12T11:29:30Z
+parent: qou-x631
 ---
 
 
@@ -1147,3 +1148,616 @@ sqrt(PQ)` at every n; the reversal identities at every edge.
 target is a finite-n proof of `Q < P` -- both sides are explicit edge sums in `(g, delta)` over
 the Plancherel-weighted up-down chain, so this is where the Kerov-CLT-adjacent analysis should
 now be aimed.
+
+
+### 2026-09-05 — the CS relaxation is CLEANER but not EASIER (PR #6825)
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_pq_pointwise_census.py`.
+
+**Question settled BEFORE building on #6651's recommendation:** is `Q < P` pointwise nearly-true
+(per-edge argument + thin exceptional set) or aggregate-only (needs the joint law of `(g, delta)`
+under Plancherel)? Those need different proofs.
+
+**Integrand factors, no case split.** With `Delta(A) = g`, `Delta(D) = 2 delta - 2`:
+
+    g^2 - (2 - 2 delta)^2 = k (2g - k),   k := g + 2 delta - 2 = Delta(Sum h)
+
+So a `P-Q` edge is negative iff `k(2g-k) < 0` -- the SAME `k` as the `M_1` census (`g*k < 0`),
+tested differently. The two negative sets are NOT nested in either direction.
+
+**MEASURED: AGGREGATE.** Over `n >= 12`, negative-edge fraction 10.3-11.2 %, pos/neg MASS ratio
+**[20.33, 26.74]**. Not thin -- no per-edge argument closes it.
+
+**And WORSE than what it was meant to simplify.** `M_1`'s own census, computed on the SAME edge set
+over the SAME window (not cited from a differently-windowed figure), is **[41.51, 56.32]** -- about
+2x more favourable. So the relaxation bought a cleaner STATEMENT
+(`Q < P` is `E_nu[Delta(D)^2] < E_nu[Delta(A)^2]`, two second moments of one measure, no `V_A`) and
+NOT an easier problem. **My #6651 recommendation is weakened by its own follow-up**: `Q < P` stays
+the better-SHAPED target, not a locally-closeable one.
+
+Cross-check: the `M_1` figure here (41.5-56.3 over `n >= 12`) reproduces #6651's 44.1-56.3 over
+`n >= 16` on a wider window.
+
+**STRUCTURAL, and it is the one locally-priceable piece.** At `g = 0` the `P-Q` integrand is
+`-(2-2delta)^2 <= 0` for EVERY such edge, while `M_1`'s `g*k` vanishes identically there. The
+`|u| = |v|` edges contribute nothing to `M_1` and carry **11.55 %** of `P-Q`'s negative mass at
+`n = 20`. Cut out by `g = 0, delta != 1` -- no inequality to solve.
+
+Negative mass sits toward the **bulk**: mean `|u|+|v|` = 6.656 negative vs 9.025 positive at n=20.
+
+**Controls, all PASS, no verdict without them:** `P` == `Cov(A,W)` from the Plancherel measure with
+no edges (independent yardstick; `Q` has NO such yardstick and the module says so rather than
+faking one); per-edge terms sum to `P-Q` exactly; criterion matches sign at every edge; term
+reversal-invariant (so reverse-pairing cannot cancel this set either).
+
+**Still OPEN.** Sufficient never necessary. Window `n <= 20` vs requirement `n >= 79`. Both routes
+(`M_1 > 0` directly, and `Q < P`) now need the same thing: control of the joint distribution of
+`(g, delta)` under Plancherel. That is the Kerov-CLT-adjacent analysis, and it is where the next
+attempt should aim -- with the `g = 0` family priced separately as the one closed-form piece.
+
+--------
+
+## 2026-09-07 — a normalisation hazard for anyone deriving kappa, and the third basis in which Sum_c^2 is ONE mode
+
+Recorded from PR #7061 (the rho_inf derivation). Not a claim about kappa's value;
+a claim about a definition kappa depends on.
+
+### The hazard: kappa is defined through R_4, and the corpus carries two R_4 formulas
+
+This bean's kappa is `Cov(Sum_h, R_4)/(3 n^{5/2})`
+(`wlambda_covariance_epic_M1_IO_mode_decomposition.py`), so it inherits whatever
+normalisation `R_4` carries. Two are live in the corpus and they differ by a
+factor of 3 on `omega3`:
+
+| reading | formula | verdict |
+|---|---|---|
+| Lean `r4Value` | `R_4 = 3*omega3 - n` | **TRUE** |
+| "naive `Sigma_3 = R_4 + R_2`" | `R_4 = omega3 - n` | **FALSE** |
+
+**Already settled in the corpus, by exact rational arithmetic, not by me.**
+`wlambda_covariance_epic_M1_A1_sigmah_in_free_cumulants.py` builds the transition
+measure exactly (Fraction end to end, no float) and reports over all `lam` with
+`n <= 8`:
+
+    R_2 == n for all lam (n<=8):                True
+    R_4 == omega3 - n   (naive Sigma_3=R4+R2):  False
+    R_4 == 3*omega3 - n (Lean r4Value):         True
+
+**The textbook identity is NOT wrong — the trap is which symbol you put in it.**
+Biane/Kerov's `Sigma_3 = R_4 + R_2` is correct as stated. With the corpus's
+`omega3 = Sum_c^2 - C(n,2)` (the class-normalised central character) it gives
+`Sigma_3 = 3*omega3`, which reconciles exactly with the Lean form and with
+`wlambda_covariance_epic_M1_free_cumulant_reframing.py:10` (`omega3 =
+(R_4 + R_2)/3`). The factor 3 is the class-size convention: `Sigma_3` is
+normalised by `(k)_3` while `|C_{(3,1^{k-3})}| = (k)_3/3`.
+
+So "naive" labels the substitution of `omega3` for `Sigma_3`, not the identity.
+This is the normalisation-mistaken-for-a-discrepancy class AGENTS.md names, and
+it is worth flagging here because a factor of 3 in `R_4` puts a factor of 3 in
+kappa — and kappa's open question is a **0.3 %** one (`~0.0591` vs
+`sqrt(2)/24 = 0.058926`). A convention slip therefore does NOT explain that gap;
+it would produce a 3x miss, not a 0.3 % one. Anyone attacking kappa should state
+which `R_4` they used, and should not "explain" the 0.3 % by finding this factor.
+
+### The structural fact, now seen in three independent bases
+
+`Sum_c^2` couples to exactly ONE mode. Three bases, three derivations, no shared
+machinery:
+
+| basis | statement | source |
+|---|---|---|
+| sine / Chebyshev on [-2,2] | `G_k = pi * delta_{k,3}` | `wlambda_covariance_epic_M1_rho_inf_kerov_derivation.py` (PR #7061) |
+| free cumulants | `Sum_c^2 = R_4/3 + const` | `wlambda_covariance_epic_M1_IO_mode_decomposition.py` |
+| class / shifted-symmetric | `Sigma_3` is ONE orthonormal basis vector, so `Cov_P(ln f, Sigma_3)` is a single Fourier coefficient and every `d>=2` mode is orthogonal to it | `cb24799114` on main (bean `qou-vilx`) |
+
+The third arrived on main today from a **different arc** answering a different
+conjecture, which is what makes it worth recording: it is not a re-derivation.
+All three land on the degree-3 / 3-cycle object, and all three say the same
+thing — the higher modes contribute nothing to this covariance.
+
+That is the step the rho_inf closed form turns on (it is why the ratio is a
+finite closed form rather than a ratio of two sums), so it now has independent
+support in two bases the derivation does not use.
+
+### What this does NOT do
+
+It does not pin kappa. `Sum_h`, unlike `Sum_c^2`, is outside Lambda* and its
+fluctuation spreads over the whole even tower `R_4, R_6, R_8, ...` — that
+asymmetry is the actual difficulty and none of the three readings above touches
+it. Gap stays OPEN.
+
+
+--------
+
+## 2026-09-08 — the R_4 / omega3 question is RESOLVED (the two readings are one identity plus one convention)
+
+Owner instruction: "resolve R_4 issues". Done. Nothing about kappa is settled by
+this; a definition is.
+
+### What was wrong, and it was the WORDING, not the arithmetic
+
+My own note above (2026-09-07) and two probes recorded the two readings as rival
+formulas, one "naive" and wrong:
+
+    Lean r4Value                     R_4 = 3*omega3 - n     TRUE
+    "naive Sigma_3 = R_4 + R_2"      R_4 =   omega3 - n     FALSE
+
+That labelling reads as though **Biane/Kerov's identity were false in this
+corpus**, which is the more damaging of the two errors available here: an agent
+who believes it will avoid the entire Kerov-polynomial apparatus — the one tool
+both live routes to `M_1 > 0` now point at.
+
+### MEASURED, from characters, independent of both recorded formulas
+
+New producer, **6/6 PASS**, `Fraction` end to end, no float:
+`computations/deltalambda/wlambda_covariance_epic_M1_r4_sigma3_normalisation_reconciliation.py`
+
+It computes `chi^lam(3-cyc, 1^{n-3})` by Murnaghan-Nakayama (beta-number form)
+and `f^lam` by hook lengths, so `Sigma_3 := (n)_3 * chi / f` comes from the
+symmetric group, not from either formula under test. `R_2`, `R_4` are taken from
+the corpus's OWN transition-measure code (imported from the A1 probe) rather
+than reimplemented — a second implementation could agree with me and disagree
+with the corpus, which would prove nothing about the corpus. 63 partitions,
+n = 3..8:
+
+| check | result |
+|---|---|
+| **A** `Sigma_3 == 3 * omega3` | PASS — the class-size convention |
+| **B** `Sigma_3 == R_4 + R_2` | PASS — **Biane/Kerov is TRUE** |
+| **C** `R_4 == 3*omega3 - n` | PASS — the Lean form |
+| `R_2 == n` | PASS |
+| **D** `R_4 == omega3 - n` | FALSE on **57 of 63** partitions |
+| **E** (A and B and R_2=n) => C | PASS on every partition |
+
+### The resolution
+
+`Sigma_3` is normalised by the falling factorial `(n)_3`; the 3-cycle class has
+size `|C_{(3,1^{n-3})}| = (n)_3/3`. Hence `Sigma_3 = 3*omega3`, and
+
+    Sigma_3 = R_4 + R_2   ==>   3*omega3 = R_4 + n   ==>   R_4 = 3*omega3 - n
+
+i.e. **the Lean r4Value form IS Biane/Kerov's identity written in this corpus's
+normalisation.** They were never rival conventions. The defect is substituting
+`omega3` where `Sigma_3` belongs, which divides the omega3-coefficient by 3 and
+produces the false `R_4 = omega3 - n`. E verifies that as an implication on the
+data, so C is derived here rather than re-asserted.
+
+Note D fails on 57 of 63, not 63 of 63: the substitution is accidentally right
+on 6 small partitions. Smallest genuine failure `lam = [3]` (`R_4 = 3`,
+`omega3 - n = -1`, `3*omega3 - n = 3`). So a spot-check on one small diagram can
+"confirm" the wrong formula — which is plausibly how it entered.
+
+### Wording fixed at all four sites
+
+- `wlambda_covariance_epic_A1_sigmah_not_polynomial.py` — docstring and the
+  `R4_equals_3omega3_minus_n` assertion note (the latter is emitted INTO
+  `a1-sigma-h-not-polynomial.witness.json`, so the wrong claim was in a witness).
+- `wlambda_covariance_epic_M1_A1_sigmah_in_free_cumulants.py` — docstring, and
+  `rel_naive` renamed `rel_omega_substituted` with its printed label.
+
+Both re-run exit 0. The regenerated witness diff is the note text plus
+provenance stamps only — **no numeric value moved**, which is the expected
+signature of a wording-only change.
+
+### What this does NOT settle
+
+kappa. It inherits this normalisation (`kappa = Cov(Sum_h, R_4)/(3 n^{5/2})`), so
+anyone deriving it should state which `R_4` they used — but a slip here is a
+factor of **3**, and kappa's gap is **0.3 %** (`~0.0591` vs
+`sqrt(2)/24 = 0.058926`). It therefore cannot explain that gap, and finding it
+must not be reported as explaining it. Gap stays OPEN.
+
+### 2026-09-07 — CONVERGENCE with the epic's A2 leg, and TWO of my results were re-derivations
+
+Prompted by reviewing 1298 commits that landed on `main` while this arc ran. This entry is a
+correction to my own arc's standing, not a new result.
+
+**`M_1` is already IN the epic, as a sub-item of `qou-ogrk` (A2 leg 1, in-progress, priority
+high, parent `qou-v8t7`) -- and the epic bean `qou-x631` does not mention `k5r5` at all.** The
+carrier is `qou-ogrk`'s "M_1 REFORMULATION (2026-08-21)": `M_1 = Cov_Planch(Sum(i+j), Sum c^2) =
+Cov(Sum h, Sum h^2)`, "Route = Kerov CLT integral (open)". That was written **two weeks before**
+#6825 concluded the same thing. I corpus-grepped `k5r5`, `M_1` and `covariance-kernel`; I did not
+grep `qou-ogrk`, which is where the reformulation lives. The k5r5 bean already records a prior
+agent making this exact mistake on this exact epic.
+
+**Two of my results are re-derivations, and mine are the weaker derivations.**
+
+1. `V_W = Var(omega_3) = n(n-1)(n-2)/3`. I found it in #6627 by exact Lagrange interpolation
+   (degree 3, held-out points). `qou-ogrk` had it on **2026-07-25** from the classical identity
+   `Sum h^2 = Sum c^2 + n^2`; and `f02c2dcba45` (2026-09-06) re-derives it from **character column
+   orthogonality**: `Var_P(Sigma_p) = (k)_p^2/|C_p|`, so `Var(Sigma_3) = 3k(k-1)(k-2)` and
+   `omega_3 = Sigma_3/3` gives `k(k-1)(k-2)/3`. VERIFIED here: all three agree exactly. An
+   interpolant that fits is not a derivation; two of the three are.
+2. "The route is the Kerov-CLT integral." `qou-ogrk` line 32, 2026-08-21.
+
+**What my arc DID add, and the epic does not hold**: the Fulman edge decomposition `M_1 = P - N`
+with both signs measured per edge; the eigenfunction-reach negative (`A`, `D` are not
+eigenfunctions at any non-degenerate n, so the identity reaches `P`/`N` but not `V_A`/`V_D`); the
+falsification of the 2026-08-21 audit's Fact B; the exact negative-edge criterion
+`g(g + 2(d_u-d_v) - 2) < 0`; the reversal-closure proof; and the `Q < P` census. The epic's A2 leg
+works in HOOK-VALUE coordinates (`nu_v`, `H_s`, the polynomial `R`); mine works in EDGE
+coordinates. Those are genuinely different and the edge results are not duplicated anywhere.
+
+**MY RECOMMENDED NEXT STEP WAS AIMED AT A ROUTE THE EPIC HAD ALREADY ELIMINATED -- partly.**
+#6825 closed with "control of the joint distribution of (g, delta) under Plancherel ... the
+Kerov-CLT-adjacent analysis, and it is where the next attempt should aim". `qou-ujil` (route 7,
+2026-09-06) eliminates **concentration / limit-shape** arguments for the epic's object, because
+`E_P[Sigma_3] = 0` exactly, so replacing lambda by the limit shape "discards exactly the term
+being computed and proves 0 <= 0". **That objection transfers to `M_1` verbatim**: `E_P[omega_3] = 0`
+is what makes `M_1 = E_P[Sum h * omega_3]` in the first place. So my recommendation was ambiguous
+between an eliminated reading (limit-shape/concentration) and the one the epic endorses (a
+CLT-SCALE CORRELATION computation, `qou-t5m1`'s Sniady genus expansion). Read it as the second only.
+
+**THE UNEXPLORED ROUTE WITH THE BEST WARRANT, and I have not touched it.** `qou-ogrk` PROVED the
+EVEN members of the moment tower `M_k = Cov(Sum h^k, omega_3)` positive for all n >= 3 (2026-07-25)
+with manifest certificates -- `M_2 = n(n-1)(n-2)/3`, `M_4 = M_2 * 5(n - 8/3)`,
+`M_6 = M_2 * 7(3n-8)^2` -- by: even hook-power moments are SHIFTED-SYMMETRIC, hence exact
+polynomials in n by Ivanov-Olshanski Prop 5.1, hence provable by a finite positivity check.
+`M_1` is the first ODD member; odd-k is empirical only, because `Sum h` is not shifted-symmetric.
+
+**That is the SAME boundary my own arc kept hitting from two other directions**, which is why it
+is worth stating as one fact rather than three: `V_W` has a closed form and `V_A` does not (#6627);
+`W` is an eigenfunction of the up-down chain and `A`, `D` are not (#6651); and even-k moments are
+shifted-symmetric while odd-k are not (`qou-ogrk`). Shifted-symmetric <=> closed form <=> reachable,
+three times over. Cheap unasked question: is either piece of the split `Sum h = D + A` shifted-
+symmetric on its own, or any combination that is not `Sum h` itself?
+
+**Standing:** `qou-k5r5` stays OPEN and is NOT on `qou-x631`'s stated critical path -- the epic's
+live phase-3 routes are `qou-t5m1` (Sniady genus expansion, todo) and `qou-0ml9` (RSK, todo, Lean
+dependency landed in `qou-t181`). `M_1` sits under `qou-ogrk`. Before any further edge-coordinate
+work here, grep `qou-ogrk` and `qou-v8t7`, not just `k5r5`.
+
+
+---
+
+## 2026-09-08 — the R_4 landing does NOT fall to my shifted-symmetry negative; and √2/24 came back
+
+Two separate things, both about claims that landed on `main` while this branch was open.
+
+**1. The cheap unasked question at the end of the previous entry is ANSWERED: no.** Neither
+`Sum h`, nor `A = Sum|c|`, nor `D = Sum_u d_u^2` is shifted-symmetric — tested by exact Gaussian
+elimination over Q against the span of monomials in the Kerov–Olshanski shifted power sums
+`p_k^*`, pooled over every partition of every `n` in [1,12] (271 partitions), at degree bounds
+6, 8 and 10 (30 / 67 / 139 monomials). Every verdict UNCHANGED as the bound rises, so the
+negative is not a bound artifact. Controls `n`, `Sum c`, `Sum c^2`, `Sum h^2` all come back IN,
+so a negative is a fact about the statistic, not about my elimination. PR #7126,
+`wlambda_covariance_epic_M1_shifted_symmetry_membership.py`.
+
+**What that forecloses, precisely.** `qou-ogrk`'s ONE proved positivity technique — shifted-
+symmetric ⟹ exact polynomial in n (Ivanov–Olshanski Prop 5.1) ⟹ finite positivity check — applies
+to *no part* of the split `Sum h = D + A`. Not to the sum, and not to either summand separately,
+which was the remaining hope. Fourth sighting of the same wall.
+
+**What it does NOT foreclose, and I nearly recorded it as if it did.** `106a6784c5f`
+(2026-09-08, `resolve(qou-k5r5)`) establishes from characters, 6/6 PASS, that Biane/Kerov holds
+here: `Sigma_3 = R_4 + R_2`, `R_2 = n`, and hence `R_4 = 3*omega_3 - n` — the Lean `r4Value`
+form. The corpus's "naive `Sigma_3 = R_4 + R_2` ⟹ `R_4 = omega_3 - n`" wording was a
+normalisation slip (`Sigma_3 = 3*omega_3`), not a failure of the identity. So the
+**Kerov-polynomial / free-cumulant apparatus is live for `omega_3`**, and my negative says
+nothing against it: `omega_3` IS shifted-symmetric (my own control confirms `Sum c^2` is IN).
+The wall is on the `Sum h` side of the covariance only. An agent reading my negative as "the
+Kerov machinery is out" would be reading it one factor too broadly.
+
+**2. √2/24 is back on `main`, and it was retired on 2026-08-21.** The same commit closes with
+*"kappa's gap is 0.3 % (~0.0591 vs sqrt(2)/24 = 0.058926)"*. Both halves are stale:
+
+- `~0.0591` is `kappa_n` in its **peak region** (peak `kappa_32 = 0.0591961`, then descending),
+  not `kappa`. The limit is DERIVED: `kappa = 128/(225 pi^2) = 0.0576404956` (PR #5428, VKLS
+  Chebyshev-mode integral, quadrature-verified to 1e-42).
+- `sqrt(2)/24` was **refuted on 2026-08-21** as a fit to n = 400..800 float64 data —
+  `wlambda_covariance_epic_M1_kappa_structure.py:63` says "BOTH ARE WRONG" in as many words, and
+  `..._kerov_clt_leading_kappa.py:212` prints "sqrt(2)/24 NOT confirmed".
+
+It lives only in that commit *message*, not in any file, so this is a note for the next reader
+rather than a sweep. But the two 2026-08-21 audits left one thing genuinely open and a committed
+window now closes it, which is the only new content here:
+
+**`kappa_n` CROSSES `sqrt(2)/24` between n = 68 and n = 69.** `kappa_68 = 0.0589313` (+0.0098 %),
+`kappa_69 = 0.0589230` (−0.0044 %), falling monotonically to `kappa_78 = 0.0588572` (−0.116 %).
+No new compute — the exact rationals are already in `b1-kappa-window-extension.json`; what is new
+is the comparison. The exact-anchor audit had exact data only to n = 50 and correctly said
+"sqrt(2)/24, 1/17 and neighbours are all within the still-moving window"; the window has since
+moved past this one. And the IO-derivation audit's parenthetical *"the finite-n data never
+reaches it because the corrections are large"* is **false** and is corrected in place.
+
+**Two things the crossing does not establish**, stated because the class verdict differs by
+constant: `1/17 = 0.0588235` is **NOT** crossed by n = 78 (`kappa_78` is still 0.057 % above it);
+and a crossing is not a bound — nothing here constrains `kappa_n` for `n > 78`, which is exactly
+what this gap needs. Probe (6/6 PASS, gated on recomputing every stored decimal from the stored
+exact rational, worst disagreement 8.05e-26):
+`computations/deltalambda/wlambda_covariance_epic_M1_kappa_sqrt2_24_crossing.py`.
+
+**Standing unchanged.** `qou-k5r5` OPEN. The live reduction is the ONE-SIDED effective claim
+`kappa_n >= kappa` for all `n >= 13` (verified exactly to n = 78, crossing at exactly n = 13,
+non-monotone with a peak at n = 32 — so monotonicity is not available and an effective bound is
+required). My edge-measure route (`Q < P ⟹ M_1 > 0`, PRs #6651/#6825) attacks the SIGN directly
+and would bypass the effective bound entirely; it is not competing with it.
+
+### 2026-09-07 — the even-moment route is SHUT: neither piece of `Sum h = D + A` is shifted-symmetric (PR #7126)
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_shifted_symmetry_membership.py`.
+Executes the cheap question #7120 identified. The answer is negative and closes a route.
+
+**Why it mattered.** `qou-ogrk` PROVED the EVEN moments `M_k = Cov(Sum h^k, omega_3) > 0` by
+shifted-symmetric => exact polynomial in n (Ivanov-Olshanski Prop 5.1) => finite positivity check --
+the epic's ONLY proved positivity technique. `M_1` is the first ODD member. If either summand of
+`Sum h = D + A` were in `Lambda*`, that machinery would apply to it and reduce `M_1` to the other.
+
+**The test.** `Lambda* = Q[p_1^*, p_2^*, ...]` with Kerov-Olshanski shifted power sums
+`p_k^*(lam) = sum_i [(lam_i - i + 1/2)^k - (-i + 1/2)^k]` -- elementary, NO characters. So
+membership is exact linear algebra over Q on monomials `prod p_{mu_j}^*`, `|mu| <= D`, with
+n-INDEPENDENT coefficients, pooled over every partition of every n in [1,12] (271 partitions).
+
+**MEASURED: `Sum h`, `A = Sum|c|`, `D = Sum d_u^2` are ALL OUT.** A rational linear functional
+separates each from the whole subalgebra, so OUT is conclusive at the bound, not a failed search.
+**Not a bound artifact:** the probe re-runs itself at `|mu| <= 8` and `<= 10` (30 -> 67 -> 139
+monomials) and every verdict is UNCHANGED.
+
+**Controls, all PASS, no verdict without them:** `n`, `Sum c`, `Sum c^2`, `Sum h^2` -- four
+functions of KNOWN shifted-symmetric status -- must all land IN, and do. Plus `p_2^* == 2 Sum c`
+and the split identity `Sum h == D + A`, both at every pooled partition.
+
+**CONSEQUENCE.** The even-moment route to `M_1` is shut: ogrk's proved technique applies to no part
+of the split.
+
+**And it is the FOURTH independent sighting of ONE wall** -- worth carrying as one fact:
+  1. `V_W` has a closed form, `V_A` does not (#6627)
+  2. `W` is an eigenfunction of the up-down chain, `A` and `D` are not (#6651)
+  3. even hook-power moments are shifted-symmetric, odd are not (`qou-ogrk`)
+  4. neither summand of the odd one is either (this probe)
+Shifted-symmetric <=> closed form <=> reachable, four times over. A fifth attempt that routes
+around this wall rather than through it should expect the same answer.
+
+**Scope.** OUT is exact at these bounds; it does NOT exclude higher-degree membership, and says
+NOTHING about whether `M_1 > 0` -- only that this technique cannot reach it. scope-(a).
+
+**What is left, after this.** Of the routes the epic names, `M_1` is reachable by none that are
+proved. The live epic routes remain `qou-t5m1` (Sniady genus expansion on the `(f^lam)^3`-biased
+measure, todo) and `qou-0ml9` (RSK, todo, Lean dependency landed in `qou-t181`), and `qou-ujil`
+says a proof must operate at the CLT scale and produce a correlation coefficient. `M_1`'s own next
+move, if any, is the integrated-covariance form `f668c434a97` introduced for the epic
+(`E_Q[X] = integral_0^1 Cov_{Q_t}(log f^lam, X) dt`), which restores first order where the direct
+tilt expansion is ~1/3 nonlinear. That is untested for `M_1` and is the one un-eliminated lead.
+
+
+---
+
+## 2026-09-11 — the tilt derivative is now PROVED in Lean, sorry-free (PR #7178)
+
+Owner asked, of PRs #7120/#7126: *"all assertions proved in lean?"* **The answer was
+NO** — both were Python probes whose controls are arithmetic self-checks, not theorems.
+This entry records the promotion of the one assertion that warranted it.
+
+**`content/quantum-observable-universe/lean/QOU/MassTheory/TiltDerivativeCovariance.lean`**,
+for an ARBITRARY finite family over an ARBITRARY field (not for `n <= 22`):
+
+| declaration | statement | base ring |
+|---|---|---|
+| `tiltNum_derivative_eval_one` | `N'(1) = sum_i w_i f_i h_i` | `[CommRing R]` |
+| `tiltNum_eval_one_eq_zero_iff` | `N(1) = 0 <-> wMean w f = 0` | `[Field R]` |
+| `tilt_deriv_eq_wCov` | `N'(1)/D(1) = wCov w h f` | `[Field R]` |
+
+So the probe's `n <= 22` check is now a fact about the CONSTRUCTION rather than about
+the range sampled.
+
+**The content is not the quotient rule.** It is that the derivative of the tilted mean
+at `x = 1` is a COVARIANCE rather than a weighted moment, and that it is so PRECISELY
+BECAUSE the tilted statistic has vanishing weighted mean. With `f = omega_3` that
+hypothesis is exactly `E_Planch[omega_3] = 0` — the same fact `qou-ujil` uses to
+ELIMINATE limit-shape arguments. The obstruction is re-used as the asset.
+
+**Anti-vacuity.** `tilt_deriv_ne_wCov_of_mean_ne_zero` gives a concrete two-point family
+with nonzero total weight and nonzero `wMean` where the conclusion is FALSE — so the
+hypothesis is demonstrably load-bearing rather than inert.
+
+**A hypothesis I wrote and then removed.** The first version carried
+`(hw : sum_i w_i /= 0)`. The linter flagged it unused; checking rather than silencing,
+the statement is TRUE without it (Lean's `x/0 = 0` makes both sides 0 in the degenerate
+case), so dropping it STRENGTHENS the theorem. An unused hypothesis inside a theorem
+about when a hypothesis is load-bearing would have been the wrong thing to ship.
+
+**Verification as run:** `lean -DautoImplicit=false -s 65536` exit 0, ZERO warnings
+(a bare `lean` is a weaker check — autoImplicit defaults true off-lakefile);
+`#print axioms` on all four declarations gives `[propext, Classical.choice, Quot.sound]`,
+no `sorryAx`; `grep -c sorry` = 0. Library file, no sidecar, so nothing but this covers it.
+
+**Import note for the next agent:** `Mathlib.Algebra.BigOperators.Ring` is ABSENT from
+the restored lake-cache olean set — a fresh instance of the documented cache-gap class.
+Imports routed through `Algebra.Polynomial.Derivative` + `Order.Field.Basic` + `Tactic`.
+
+**Scope, unchanged.** This proves the REFORMULATION, not the gap. Nothing bounds `R'(1)`
+below; no claim is made about its sign. **`qou-k5r5` stays OPEN.**
+
+## 2026-09-08 coordination: same kernel as qou-x631, qou-o6ov, qou-za3q, qou-omr7
+
+Audit docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 1 / §7.3 C2: `k5r5` (99 commits, 08-21 → 09-08) and `o6ov` (99 commits, 08-30 → 09-05) both work the odd-moment / Magnus `tr(ρ_λ Ω₂)` kernel, and before this note there were **zero** cross-citations among k5r5 / o6ov / x631 / za3q / omr7 (measured 2026-09-08 by grepping each body for the other four ids). Shared ledger: epic `qou-x631`, now parent of the other four. Roles — x631: epic, Cov_Planch(f^λ, Σc²) ≤ 0 / T₃(k) kernel; k5r5: M₁ > 0 (first odd moment), all-n proof OPEN, identity Lean-proved; o6ov: does |tr(ρ_λ Ω₂)|/dim decay in b across the ≤2-row column (open mathematics, rescoped 2026-09-05, PR #6822); za3q: Magnus-Ω₂ probes use the Plancherel weight y_λ, 91 % of their work on shapes tr_M annihilates; omr7: Magnus probes' d_q was the hook product, weight inverted (4 files, PR #6442). Statuses are unchanged by this note; a result landing on any of the five should be cited in the other four.
+
+---
+
+## 2026-09-11 (cont.) — the tilt identity is now proved AT THE REAL OBJECTS (PR #7189)
+
+PR #7178 proved the tilt identity for an arbitrary finite family over an arbitrary field.
+That is a lemma about polynomials: on its own it says nothing about Plancherel measure,
+`omega_3`, or `M_1`. #7189 discharges its hypothesis at the corpus's own Plancherel datum.
+
+**The hypothesis is DERIVED, not assumed.** `tilt_deriv_eq_wCov` needs `wMean w f = 0` with
+`w = dim^2`, `f = omega_3 = Sum_c c^2 - binom(n,2)`. From the two `PlancherelSnData` fields
+already in the corpus — `sum_dim_sq : Sum dim^2 = n!` and `two_sum_dim_sq_content :
+2 Sum dim^2 Sum c^2 = n(n-1) n!` — we get `Sum dim^2 omega_3 = 0` EXACTLY.
+
+Four theorems in `QOU/MassTheory/PlancherelTiltDerivative.lean`, all with axioms
+`[propext, Classical.choice, Quot.sound]`, no `sorryAx`:
+
+| declaration | statement |
+|---|---|
+| `plancherel_weighted_omega3_sum_eq_zero` | `Sum dim^2 omega_3 = 0` |
+| `plancherel_wMean_omega3_eq_zero` | `wMean = 0` |
+| `plancherel_tilt_deriv_eq_wCov` | `R'(1) = Cov_Planch(hgt, omega_3)` |
+| `plancherel_tiltNum_eval_one_eq_zero` | `R(1) = 0` |
+
+**The fourth is the one worth citing.** It says the quantity a limit-shape evaluation
+computes is IDENTICALLY ZERO at the point where such an evaluation happens — `qou-ujil`'s
+objection as a theorem rather than a remark, and the reason the derivative is the
+informative object.
+
+**EPISTEMIC STATUS — do not over-read.** `[PlancherelSnData n]` is a CLASS HYPOTHESIS
+(§3b-cond), so all four are CONDITIONAL. The class is not a hole (the corpus inhabits it at
+every `n` from RSK + Okounkov-Vershik, and its unlabelled Wedderburn form is unconditional
+and sorry-free), but **conditional-proved is not premise-established** — cite as "modulo
+`PlancherelSnData`", never flatly.
+
+`hgt` is left ARBITRARY deliberately: the identity does not need `hgt = Sum_h`, and pinning
+it there would claim less while looking like more.
+
+**What is still NOT Lean.** `M_1 > 0` (the gap). The `kappa_n` crossing of `sqrt(2)/24`
+(a numerical comparison over a committed window). The shifted-symmetry negative (exact
+Gaussian elimination in Python at degree bounds 6/8/10). `R(x) > 0` for `x > 1` and the
+nonlinearity tail (measured to `n <= 22`). **The reformulation is formalised; the
+measurements are not.**
+
+**Build note for the next agent:** compile against a HARDLINKED MIRROR of the QOU olean
+tree. A separate shadow root shadows `QOU` and does NOT fall through to the real tree —
+that cost one failed attempt. Shadow removed afterwards; real olean tree untouched.
+
+**`qou-k5r5` stays OPEN.**
+## Cross-citation from qou-za3q (2026-09-11): the A=4 Magnus sign is measured
+
+Per the 2026-09-08 coordination note on qou-za3q ("a result landing on any of the
+five should be cited in the other four"), this is such a result.
+
+`he4_magnus_omega2_sign_sparse_probe.py`, 77/77 partitions of H_12, max dim 7700,
+28661s:
+
+    P_total(A=4) = 34.1260272853576529271380692762741452981457684651471317452205
+    sign = +1    control (rho = I) = 0.0 vanishes    33+/42-    sign_flip_vs_A3 = False
+
+Sign map across the light nuclei: A2 = -1, A3 = +1, A4 = +1. There is exactly ONE
+sign change in A = 2,3,4 and it sits between the deuteron and the triton, NOT at
+the alpha particle.
+
+Load-bearing for anyone reading the older framing: the he4 probe's docstring
+asserted "A=3: P<0, NO flip vs A=2" and that premise had propagated into its
+GENERATED VERDICT string. It is false — A=3 is +2.4701927, confirmed by the
+committed witness and a fresh 30/30 re-run. Fixed under qou-rfhj. If any of the
+five beans reasons from "negative through the deuteron and triton", that premise
+is stale.
+
+scope-(a): a dimensionless SIGN datum. NOT a MeV (the Delta_lambda magnitude gate
+is open and untouched), NOT a physical binding-sign assertion (qou-v7ro / #6077,
+cited not re-derived). The total is a weighted sum of mixed-sign terms (33+/42-).
+
+
+## 2026-09-12 — the CS step is taken on the WRONG EDGE SET (free, but small); an exact identity; and a prediction of mine refuted
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_support_restricted_cs.py`, **7/7 PASS, exit 0**, exact `Fraction` throughout, mpmath only for √ and display. Reuses #6651/#6825's edge enumeration; no new chain code. Corpus-greped first (six paths): **all three items below are absent from the committed corpus** — the algebra is one line from `qou-k5r5:1165` and nobody had taken it.
+
+### FINDING 1 — restrict Cauchy-Schwarz to `supp(g)`. It is free, and it is small.
+
+At a `g = 0` edge (`|u| = |v|`, i.e. `v = −u`) **both** `M₁`'s integrand `g·k` and `P`'s integrand `g²` vanish identically, while `Q`'s `(2−2δ)²` does not. Those edges load `Q` and nothing else. CS only ever needed the support of `g`:
+
+    M₁ = Σ_{g≠0} dμ g k = P + Σ_{g≠0} dμ g(2−2δ) ≥ P − √(P·Q'),   Q' := Σ_{g≠0} dμ (2−2δ)²
+
+so the live sufficient condition is **`Q' < P`**, strictly weaker than `Q < P`, and `supp(g)` is the **optimal** restriction in this family (CS is insensitive to any `g = 0` edge; no other edge can be dropped without changing `M₁`).
+
+**MEASURED at `n = 20`: `Q'/Q = 0.9943`**, raising `P/Q` `2.2615 → 2.2743` (**+0.57 %**) and the CS-certified share of the true margin `0.8615 → 0.8663` (+0.0048).
+
+**Do NOT read #6825's 11.55 % as this number.** That entry says the `g = 0` edges *"carry 11.55 % of `P−Q`'s negative mass at `n = 20`"* — a different denominator. Both are right: 11.55 % of `P−Q`'s **negative** mass, 0.57 % of **`Q`**. So adopting `Q' < P` costs nothing and should be done, but it improves headroom by half a percent, **not by an order**, and does not change the difficulty. The open problem is still the joint law of `(g, δ)` under Plancherel.
+
+### FINDING 2 — an exact identity, new to the corpus, and circular as a route
+
+From #6825's recorded `g² − (2−2δ)² = k(2g−k)` together with `M₁ = Σ dμ g k`:
+
+> **`2 M₁ = E_k + (P − Q)`,  `E_k := Σ dμ k² = Σ dμ (Δ Σh)²`**
+
+Verified as CONTROL 1: exact `Fraction` equality at every `n` in 4..20, no tolerance. Two readings: `E_k ≥ 0` trivially gives **`M₁ ≥ (P−Q)/2` with no Cauchy-Schwarz at all** (weaker than CS's `P − √(PQ)` at the measured `P/Q ≈ 2.24` — `0.277P` against `0.332P`, reported so the weaker bound is not mistaken for a gain); and `E_k` is the exact slack, the Dirichlet energy of `Σh` under `dμ`.
+
+**It yields no new sufficient condition by itself** — substituting `E_k = P + 2Σdμ(ΔA)(ΔD) + Q` turns `E_k > Q − P` back into `M₁ > 0`. Circular, and recorded as an identity rather than a route.
+
+### FINDING 3 — 🛑 my own stated prediction was WRONG
+
+`k = g + 2(d_u − d_v) − 2` is an **integer**, so `k² ≥ 1` off `{k = 0}` and `E_k ≥ μ({k ≠ 0})`. I wrote the prediction into the docstring *before* measuring, expecting the bound to be **cosmetic**: contents run to `O(√n)`, so `|k|` should too, and `E_k/μ` should grow like `n`.
+
+**It does not.** `E_k/μ({k≠0})` runs `1.80` (n=5) → `4.10` (n=20), global log-log slope **0.594**. The dμ-weighted mean of `k²` stays near 4, i.e. `|k| ~ 2`: **`Δ(Σh)` does not inherit the `O(√n)` scale of the contents, because `ΔA` and `ΔD` largely cancel in `k = ΔA + ΔD`.** That is a structural fact about this edge set worth keeping independently of the bound.
+
+**The exponent is NOT pinned** — the last six local slopes span `[0.315, 0.788]`, a factor 2.5, on a window ending at `n = 20`. Do not quote `√n`. And it still yields no route: the condition it buys (`Q − P < μ({k≠0})`) only helps where `Q > P`, which is not the measured regime.
+
+### What the corpus-grep found that matters MORE than any of the above
+
+**Nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap, a Poincaré inequality, or `Var_Planch(f)`** — measured zero across `docs/`, `computations/`, `.beans/`, `content/` (Lean included) for *Poincaré*, *log-Sobolev*, *conductance*. What exists is a Dirichlet-**form** identity for the **`qou-x631` kernel** (`f = dim`), **bilinear not energy**, on the **plain conductance without the `(|u|+|v|)` factor** (`..._phase5b_dirichlet_peredge.py`), plus exact chain eigenvalues `τ₁ = 2/n` (`Σc`) and `τ₃ = 3/n` (`ω₃`). Both routes now want the same missing thing, and the machinery for it is **held and uncited**: `library/arxiv-1804.03926v3` (*Weighted Poincaré inequalities … Stein kernels in dimension one*) and `library/arxiv-1704.00850v3` (*Estimating the spectral gap of a trace-class Markov operator*) — **0 citations each** across `docs/` + `.beans/` + `computations/`. Fulman's own held paper has zero hits for spectral gap / Poincaré / Dirichlet.
+
+### 🛑 CORRECTION to a figure I was carrying, caught by the same grep
+
+**`Var(Σh)/n² = 0.0099743` is the ANALYTIC ASYMPTOTIC LIMIT, not a measurement.** I had it as measured. The exact finite-`n` data is **`0.0191` (n=4) → `0.0140` (n=22)** — about **1.4× the limit** at the top of the window, still descending. Anyone using `0.00997` as a finite-`n` input is off by ~40 % at every `n` the exact table reaches. Source: `2026-08-21-covariance-kernel-M1-kappa-analytic-IO-derivation.md:92` for the limit, `..._kappa_analytic_IO.py:110` for the data.
+
+### Scope
+
+Sufficient is never necessary. Window `n ≤ 20` against a requirement of `n ≥ 79`; **nothing here is a bound over all `n`** and none of the three findings closes the gap. Finding 1 improves the live route's headroom by 0.57 %; Findings 2 and 3 are recorded results that buy no route. Path 0 (`corpus_search`) was **down** (`paper-assistant` `ENOENT`), so `emptyRoots` is unchecked and a vocabulary blind spot is not ruled out. **`qou-k5r5` stays OPEN.**
+
+### 2026-09-12 (cont.) — the DEPTH reading: the whole difficulty is depth-changing edges, and the free family is SHRINKING
+
+Same probe, now **9/9 PASS**. In cell coordinates with `b = i+j` (anti-diagonal) and `c = j−i` (content), `Σh = Σ_cells b + n`, so **`k = Δb` exactly**, and
+
+> **`b = |c| + 2m`, `m := min(i,j) ≥ 0`** — the cell's **depth** along its diagonal.
+
+Hence `k = g + 2Δm` and **`M₁ = P + 2Σ dμ·g·Δm`**. Both halves of the decomposition are already in the corpus (`d = m+1` in `..._edge_ratio_monotonicity.py:158` and `..._kappa_large_n_sampler.py:100`; *"a cell on diagonal c at depth k is (k, k+c), so i+j+1 = 2k+c+1"* in `..._kappa_derivation.py:26`) — what is new is reading `k` through it.
+
+**Two consequences.** If every cell sat at depth 0 (a hook), `k = g` and `M₁ = P > 0` **termwise** — so the entire obstruction *is* the depth. And on any edge with `Δm = 0` the integrand is `g·k = g² ≥ 0` with no inequality to solve:
+
+    M₁ = [Σ_{Δm=0} dμ g²]  +  [Σ_{Δm≠0} dμ g k]
+
+first bracket unconditionally non-negative, all negative edges confined to the second. `Δm = 0` is `δ = 1`, the value #6825 already singles out, and its recorded integer criterion independently implies no `δ = 1` edge is negative — so this derives a known fact **and prices it**.
+
+**🛑 And the price kills it as a route.** The unconditional part is **12.33 % of `M₁` at n=20, with a DECLINING share**: `0.356` (n=8), `0.271` (n=10), `0.225` (n=12), `0.173` (n=15), `0.123` (n=20). The free family **shrinks as `n` grows** and cannot carry a large-`n` proof; `87.67 %` of `M₁` sits on depth-changing edges and is uncontrolled here. Quoting the 12.33 % without the trend would suggest a foothold that is not there.
+
+**What the depth reading does buy** is a sharper statement of the open problem than `(g, δ)`: `m ≥ 0` is a *hard pointwise constraint* (`b ≥ |c|` for every cell), `m = 0` picks out the first row and column exactly, and the gap is now *"the `g`–`Δm` anti-correlation stays above `−1` uniformly"* — which is the bean's own opening `ratio → −0.62; need ratio > −1` in geometric rather than algebraic terms. CONTROL 6 checks the split is exact **and** that every `Δm = 0` edge is non-negative per edge, not in aggregate.
+
+### 2026-09-12 (cont.) — 🛑 I RETRACT my own "held and uncited machinery" recommendation: both papers are the WRONG machinery
+
+Two entries up I wrote that nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap or Poincaré inequality, and that *"the machinery for it is **held and uncited**"* — naming `library/arxiv-1804.03926v3` and `library/arxiv-1704.00850v3`. **I named them from their titles without opening them. Opened now, neither applies.**
+
+| paper | what it actually does | verdict |
+|---|---|---|
+| `arxiv-1704.00850v3` *Estimating the spectral gap of a trace-class Markov operator* | a **Monte-Carlo estimator** for MCMC diagnostics — §5 "Classical Monte Carlo", examples are a Gaussian chain, Bayesian probit and linear regression; term counts: Monte Carlo 37, estimat* 110+ | **inapplicable** — estimates a gap statistically from simulation; supplies **no analytic lower bound** on a Dirichlet form |
+| `arxiv-1804.03926v3` *Weighted Poincaré inequalities … Stein kernels in dimension one* | one-dimensional, **absolutely continuous** setting; the Stein kernel `τ` comes from a covariance identity for a real random variable **with a density**. Term counts: density 51, "dimension one" 28, absolutely continuous 9, **discrete 0, lattice 0, Markov chain 0** | **inapplicable** — the object here is a Dirichlet form on a **discrete** lattice, not a 1-d density |
+
+The second was the more plausible (Fulman's method *is* a Stein exchangeable-pair method), and it is still the wrong setting: a weighted Poincaré inequality for a 1-d density says nothing about the joint law of `(g, Δm)` on the up-down chain, which is the whole difficulty. I am not proposing a projection-to-1-d rescue; that would need the Stein kernel of the relevant marginal, which is the same unknown.
+
+**What survives and what does not.** The *measurement* stands: nothing in the corpus relates `Σ dμ (Δf)²` to a spectral gap, Poincaré inequality, or `Var_Planch(f)` — zero hits across `docs/`, `computations/`, `.beans/`, `content/`; and these two papers genuinely have **0 citations** each. What falls is my **inference** that an uncited on-topic *title* meant the missing tool was already in the building. **Title match is not applicability**, and I recommended a route on a title.
+
+So the honest status is stronger than before, not weaker: the Poincaré/Dirichlet gap for this weighted form is real **and the corpus does not hold a source that fills it** — so it is an analytic build, not a citation, which is exactly the conclusion the 2026-09-03 entry reached for the Olver/Bessel route by a different road.
+
+**Method disclosure, so this is re-checkable and not over-read:** I read section titles and term frequencies across each paper's `sections/`, not full proofs. That is enough to establish setting (1-d absolutely continuous / Monte-Carlo estimation) and therefore inapplicability to a discrete Dirichlet form; it is **not** a claim that the papers contain nothing else of use.
+
+
+## 2026-09-12 — Poincare degeneracy worry REMOVED; gap still OPEN
+
+`content/quantum-observable-universe/lean/QOU/MassTheory/WeightedDirichletPoincare.lean`
+(8 declarations, sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, zero
+warnings, `#print axioms` sorryAx 0).
+
+**The claim.** `1 <= |u| + |v|` on every up-down edge of the Young lattice, so
+the Fulman edge measure `dmu = pi(lam) J(lam,lam*) (|u|+|v|)` gives a weighted
+Dirichlet form that **dominates** the unweighted one, and any unweighted
+Poincare inequality transfers **at the same constant**.
+
+**The evidence.** `|u| + |v| = 0` forces `u = v = 0`, i.e. one diagonal carrying
+both a removable and an addable corner. `no_removable_addable_same_diagonal`
+proves no partition does — three cases on the row indices, using only that row
+lengths are antitone. Contents are carried in `Z`, so no `Nat` subtraction and
+no Durfee square is needed.
+
+**What it does NOT do, and this is the half that matters.** Poincare
+lower-bounds a **quadratic** form. `M1 = E(A, Sum h)` is **bilinear**, and the
+live sufficient condition `Q < P` needs an **UPPER** bound on `Q = E(D)`.
+Poincare bounds `P` and `Q` both from **below**, so it cannot deliver `Q < P`.
+The measured `P/Q ~ 2.24` is a structural fact about the joint law of
+`(g, Delta m)`; a one-sided bound does not reach it.
+
+It also does not supply the unweighted gap — `poincare_transfer` takes it as a
+hypothesis, because the corpus does not have one (the recorded `tau_1 = 2/n`,
+`tau_3 = 3/n` are eigenvalues of named eigenfunctions, not a spectral gap over
+all of `L^2`).
+
+**Status: OPEN.** This closes a *worry*, not the gap. The remaining routes are
+unchanged: an upper bound on `Q = Sum dmu (2 - 2 delta)^2`, or a direct
+termwise/support argument on `M1 = Sum dmu g k`.

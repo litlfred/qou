@@ -65,9 +65,23 @@ PARTITIONS = [(2, 1), (3, 1), (2, 2), (2, 1, 1), (3, 2), (3, 1, 1),
 
 
 def _dense(M, dim):
-    """Materialise either code path's output as a list-of-lists."""
-    if L._is_coo_mpf(M):
-        M = M.toarray()
+    """Materialise either code path's output as a list-of-lists.
+
+    The sparse carrier is `_ExactCOO` (`row`/`col`/`data`), detected with the
+    module's own `_is_sparse_sigma`. It was `_CooMPF` with a `.toarray()`
+    until main's 2026-09-11 pass removed the scipy arms as unreachable —
+    scipy's containers are float64 by construction and reject `dtype=object`,
+    so they could never have held an exact seminormal family. This helper
+    still called `L._is_coo_mpf`, which went with them, so every test in this
+    file raised AttributeError in `_build` and none of the three relations
+    was ever reached. Densify from the COO triple directly; there is no
+    `.toarray()` on the new carrier and it does not need one.
+    """
+    if L._is_sparse_sigma(M):
+        out = [[mp.mpf(0)] * dim for _ in range(dim)]
+        for i, j, v in zip(M.row, M.col, M.data):
+            out[i][j] = v
+        return out
     return [[M[i][j] for j in range(dim)] for i in range(dim)]
 
 
@@ -121,10 +135,10 @@ def test_ysn_satisfies_all_three_hecke_relations(partition):
 
 @pytest.mark.parametrize("partition", [(3, 2, 1), (4, 3), (3, 3, 1)])
 def test_sparse_path_agrees_with_dense_entry_for_entry(partition):
-    """The `_CooMPF` path must produce the same matrices, not merely valid ones."""
+    """The sparse path must produce the same matrices, not merely valid ones."""
     dense, dim = _build(partition, sparse_threshold=1 << 30)
     sparse_mats = L._build_ysn_matrices(partition, sparse_threshold=1)
-    assert L._is_coo_mpf(sparse_mats[0]), "expected the sparse path to be taken"
+    assert L._is_sparse_sigma(sparse_mats[0]), "expected the sparse path to be taken"
     sparse = [_dense(M, dim) for M in sparse_mats]
     for k, (A, B) in enumerate(zip(dense, sparse)):
         assert _maxdiff(A, B, dim) == 0, f"sigma_{k + 1} differs dense vs sparse"
@@ -141,15 +155,35 @@ def test_M22_constants_track_the_builder_at_the_callers_precision():
     """
     ref, dim = _build((2, 2))
     assert dim == 2
-    got = [L._crossing_M22(1, 0, j) for j in (1, 2, 3)]
+    # Compare the DERIVATION, not the accessor. `_crossing_M22` evaluates
+    # `c*M + d` at the CALLER's ambient precision, outside the builder's
+    # `workdps(COMPUTE_DPS)`, so even `c=1, d=0` rounds a 70-dps entry to the
+    # ambient — 3.04e-52 here, which is ambient rounding and not a frozen
+    # constant. Asserting equality through the accessor tests mpmath's
+    # rounding, not this module's.
+    got = list(L._m22_generators())
     for k in range(3):
         # Exact: same builder, same working precision, same call.
         assert _maxdiff(ref[k], got[k], 2) == 0, f"sigma_{k + 1} != builder"
     quad, braid, comm = _relations([[list(r) for r in M] for M in got],
                                    2, H_MP, mp.mpf(0), mp.mpf(1))
     assert max(quad, braid, comm) < MPF_TOL
-    # Precision must follow the caller, not the import. At 50 dps a 15-dps
-    # constant shows up as ~1e-17 disagreement with the freshly built value.
+    # Two different precisions are in play, and the distinction is the point.
+    #
+    # The BUILDER is pinned: `_build_ysn_matrices` wraps itself in
+    # `workdps(COMPUTE_DPS)` (main, 2026-09-11), so its entries do not follow
+    # the caller — which is right, because the ambient is **15** in a bare
+    # import, exactly float64's significand. That pin is what the
+    # `_maxdiff(...) == 0` check above verifies, against `_m22_generators`.
+    #
+    # The ACCESSOR is not pinned: `_crossing_M22` evaluates `c*M + d` at the
+    # caller's ambient precision. So raising `mp.dps` DOES move its output,
+    # and a frozen 15-dps constant would not move at all. That is what is
+    # asserted here, and it is the original contract — an earlier edit of mine
+    # replaced it with `low == high` on the theory that the pin covered the
+    # accessor too. It does not: measured, `low` comes back
+    # -0.9009182839557414723685724311508238315582275390625, a float64 value,
+    # against a 50-digit `high`.
     with mp.workdps(15):
         low = L._crossing_M22(1, 0, 1)
     with mp.workdps(50):

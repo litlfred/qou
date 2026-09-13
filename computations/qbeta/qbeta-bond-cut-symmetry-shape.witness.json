@@ -1,0 +1,245 @@
+{
+  "computation": "qbeta-bond-cut-symmetry-shape",
+  "assertions": [
+    {
+      "name": "cut_identity_exact_on_four_count_triples",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "B = (e_pp d_P + e_nn d_N)/2 + delta.n_pn, exact rationals"
+    },
+    {
+      "name": "constant_cut_law_is_affine_in_Z_N_no_symmetry_term",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "corpus_delta_is_negative_wrong_semf_sign",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "corpus_w_is_convex",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "delta_at_w0_equals_two_log_q",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "delta_le_two_log_q_for_every_convex_w",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "delta_at_w1_is_minus_two_log_q",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "corpus_symmetry_coefficient_negative_at_every_k",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "convex_family_max_below_one_tenth_of_semf_a_A_at_k12",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "2.65 MeV against 23.7 MeV: 0.112 of the target at k = 12"
+    },
+    {
+      "name": "all_three_bond_energies_positive",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "semf_neutron_matter_unbound_for_a_A_gt_a_V",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a_A/a_V = 1.50476 > 1"
+    },
+    {
+      "name": "bond_sum_nonneg_at_pure_neutron_matter",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "deformation_miss_ge_half_hbar",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "difference is (q-1)^2/(2q(q^2+1)) >= 0"
+    },
+    {
+      "name": "flavour_tilt_positive_pushes_away_from_crossing",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "second_order_flip_needs_coefficient_above_four",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "q0_pin": "proton",
+    "dps": 40,
+    "m_e_MeV": "0.51099895069",
+    "E0_MeV": "4.227483355629030624",
+    "b_pp": "0.6126880371464652516",
+    "b_pn": "0.50822978937673896258",
+    "b_nn": "0.40362773835082593616",
+    "semf_targets_MeV": {
+      "a_V": "15.75",
+      "a_A": "23.7",
+      "role": "targets only, never searched"
+    },
+    "lean": [
+      "QOU/Hecke/BondCutSymmetry.lean",
+      "QOU/Hecke/BondCutSymmetryLogBound.lean"
+    ]
+  },
+  "data": {
+    "delta_corpus": "-0.021759232507830486375",
+    "w_corpus": "0.500343927701756774",
+    "two_log_q": "0.20868144063903902463",
+    "delta_sweep_in_w": [
+      {
+        "w": "0.0",
+        "delta": "0.208681440639"
+      },
+      {
+        "w": "0.05",
+        "delta": "0.183113443026"
+      },
+      {
+        "w": "0.1",
+        "delta": "0.158182903254"
+      },
+      {
+        "w": "0.15",
+        "delta": "0.133858806978"
+      },
+      {
+        "w": "0.2",
+        "delta": "0.110112349619"
+      },
+      {
+        "w": "0.25",
+        "delta": "0.0869167313058"
+      },
+      {
+        "w": "0.3",
+        "delta": "0.0642469750481"
+      },
+      {
+        "w": "0.35",
+        "delta": "0.042079765082"
+      },
+      {
+        "w": "0.4",
+        "delta": "0.0203933027387"
+      },
+      {
+        "w": "0.45",
+        "delta": "-0.000832822383356"
+      },
+      {
+        "w": "0.5",
+        "delta": "-0.0216177478562"
+      },
+      {
+        "w": "0.55",
+        "delta": "-0.0419794421053"
+      },
+      {
+        "w": "0.6",
+        "delta": "-0.0619347977458"
+      },
+      {
+        "w": "0.65",
+        "delta": "-0.0814997157859"
+      },
+      {
+        "w": "0.7",
+        "delta": "-0.100689181751"
+      },
+      {
+        "w": "0.75",
+        "delta": "-0.119517334638"
+      },
+      {
+        "w": "0.8",
+        "delta": "-0.137997529502"
+      },
+      {
+        "w": "0.85",
+        "delta": "-0.156142394358"
+      },
+      {
+        "w": "0.9",
+        "delta": "-0.173963882014"
+      },
+      {
+        "w": "0.95",
+        "delta": "-0.19147331737"
+      },
+      {
+        "w": "1.0",
+        "delta": "-0.208681440639"
+      }
+    ],
+    "symmetry_coefficient_by_degree": [
+      {
+        "k": 2,
+        "a_A_eff_corpus_MeV": "-0.04599339663",
+        "a_A_eff_max_convex_MeV": "0.4410986585",
+        "max_over_target": "0.018611758"
+      },
+      {
+        "k": 4,
+        "a_A_eff_corpus_MeV": "-0.09198679326",
+        "a_A_eff_max_convex_MeV": "0.8821973169",
+        "max_over_target": "0.037223515"
+      },
+      {
+        "k": 6,
+        "a_A_eff_corpus_MeV": "-0.1379801899",
+        "a_A_eff_max_convex_MeV": "1.323295975",
+        "max_over_target": "0.055835273"
+      },
+      {
+        "k": 12,
+        "a_A_eff_corpus_MeV": "-0.2759603798",
+        "a_A_eff_max_convex_MeV": "2.646591951",
+        "max_over_target": "0.11167055"
+      }
+    ],
+    "crossing": "0.44801814497379492716",
+    "deformation_miss": "0.051981855026205072838",
+    "half_hbar": "0.04954085802212925392",
+    "flavour_tilt": "0.00034392770175677400214"
+  },
+  "provenance": {
+    "headSha": "a61496dbc82ea710c35ac1ad7b09b913e1e12d7d",
+    "producer": "computations/qbeta/qbeta_bond_cut_symmetry_shape_probe.py",
+    "elapsed_s": 0.006
+  }
+}

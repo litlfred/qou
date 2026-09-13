@@ -1,0 +1,412 @@
+{
+  "computation": "qbeta-e0-scale-candidates",
+  "assertions": [
+    {
+      "name": "E0_equals_me_cq2_hbar",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Lean E0_eq_planck"
+    },
+    {
+      "name": "E0full_closed_form",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Lean E0full_closed"
+    },
+    {
+      "name": "E0full_over_E0_is_q2_over_2qm1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "= 1.00991451913725; m_e-free (Lean E0full_div_E0)"
+    },
+    {
+      "name": "bpp_bnn_equals_inv_two_q_sq",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Lean fPP_mul_fNN"
+    },
+    {
+      "name": "bond_level_factor_is_inside_S",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "L_pp + L_nn = 2 ln[2]_q: [2]_q is bond content, not a scale (Lean neg_log_fPP_add_neg_log_fNN)"
+    },
+    {
+      "name": "bnn_equals_zD_minus_h",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Lean fNN_eq_markovZ_sub_heckeH"
+    },
+    {
+      "name": "exactly_two_candidates_carry_a_binding_derivation",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "note": "E0 (rem:energy-scale-planck) and E0_full (ruling 2026-09-05); all others are bond content, ladder rungs or recorded negatives"
+    },
+    {
+      "name": "no_carrier_candidate_lands_on_the_fitted_scale",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "both derived scales are > 2x from 11.119: the 2.656 is not a truncation-order (1 %) question"
+    },
+    {
+      "name": "best_scale_reproduces_recorded_11_119",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "11.1190759445 MeV at 70 dps vs 11.119 recorded at 30 dps"
+    },
+    {
+      "name": "best_scale_is_E0_times_geomean_of_residuals",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the identity Lean bestLogScale_eq_mean states; the fitted target IS a sample statistic of the residual"
+    },
+    {
+      "name": "residual_is_not_constant_full_range_exceeds_2x",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a pure scale defect would make r constant; it spans > 2x"
+    },
+    {
+      "name": "fitted_target_is_sample_dependent_band_drift_exceeds_5pct",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "band best-scales differ by 1.2098 x: the 11.119 depends on which nuclides are averaged, so it is a shape statistic"
+    },
+    {
+      "name": "chain_variation_at_fixed_Z_exceeds_the_derived_scale_freedom_on_every_chain",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "at fixed Z only the n-n bond count changes; r moves 4-108 % along the chains against a derived scale freedom of 1.00991 x -- bond-factor content, unreachable by a scale (Lean §4). The threshold is a DERIVED quantity (E0_full/E0), not a tolerance sized to the miss"
+    },
+    {
+      "name": "ruled_scale_times_three_bounds_all_but_one",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "note": "reproduces qou-qkbp (4He alone); the 3 is the strand count, not derived"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187360000000000",
+    "q0_anchor": "proton (Q_50_DIGIT_STR)",
+    "compute_dps": 70,
+    "output_dps": 60,
+    "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
+    "m_mu_over_m_e_diagnostic_only": "206.768282700000000000000000000000000000000000000000000000000",
+    "Vol_4_1": "2.02988321281930725004240510854904057188337861506059958403498",
+    "recorded_best_single_scale_MeV_DIAGNOSTIC": "11.119",
+    "ame_source": "qou-mass/src/qou_mass/data/ame2020.json (measured only)"
+  },
+  "data": {
+    "E_0_N0_MeV": "4.18598136329447589694506215875900841014348689087871544862230",
+    "E_0_full_MeV": "4.22748335562903055026805602658721115361518419806473100034162",
+    "E_0_full_over_E_0": "1.00991451913724993486247234623073204483017462217173963518973",
+    "bond_energies": {
+      "L_pp": "0.489899384255134851406550167494621948230433967860580744798756",
+      "L_pn": "0.676821592386343389663118784043651784349612198568970899240445",
+      "L_nn": "0.907262265533212900670175287386911536445411091176594586045366"
+    },
+    "candidates": [
+      {
+        "key": "E0_N0",
+        "formula": "m_e/(q(q-1)) = m_e c_q^2 hbar_q",
+        "value": "4.18598136329447589694506215875900841014348689087871544862230",
+        "cls": "scale",
+        "carrier": true,
+        "where": "rem:energy-scale-planck (nuclear-interactions/energy-scale-planck.md); Lean BindingScaleCandidates.E0_eq_planck; binding_log_free_energy.py",
+        "ratio_to_E0": "1.00000000000000000000000000000000000000000000000000000000000",
+        "ratio_to_11_119_DIAGNOSTIC": "0.376471028266433662824450234621729329089260445262947697510775"
+      },
+      {
+        "key": "E0_full",
+        "formula": "E0/(1-hbar_q^2) = m_e q/((q-1)(2q-1))",
+        "value": "4.22748335562903055026805602658721115361518419806473100034162",
+        "cls": "scale",
+        "carrier": true,
+        "where": "owner ruling 2026-09-05 (qou-qkbp); Lean E0full_closed, E0full_eq_E0_mul_tsum",
+        "ratio_to_E0": "1.00991451913724993486247234623073204483017462217173963518973",
+        "ratio_to_11_119_DIAGNOSTIC": "0.380203557480801380543938845812322255024299325304859339899417"
+      },
+      {
+        "key": "E0_abs_ln_zD",
+        "formula": "E0 |ln z_D|  (per p-p bond, Markov weight)",
+        "value": "2.05070969238143368563095783488465331689032300627252183881746",
+        "cls": "bond-content",
+        "carrier": false,
+        "where": "decision frame §7.1; b_pp = z_D is a derived identity, so this is E0 . L_pp -- the p-p term of S, not a scale",
+        "ratio_to_E0": "0.489899384255134851406550167494621948230433967860580744798756",
+        "ratio_to_11_119_DIAGNOSTIC": "0.184432924937623319150189570544532180671852055605047381852456"
+      },
+      {
+        "key": "E0_ln_two_q",
+        "formula": "E0 ln[2]_q  (per strand, pinned loop value)",
+        "value": "2.92424631376189350737739190986922487056858242256849118018140",
+        "cls": "bond-content",
+        "carrier": false,
+        "where": "qou-xf14; Lean neg_log_fPP_add_neg_log_fNN: (L_pp+L_nn)/2 = ln[2]_q",
+        "ratio_to_E0": "0.698580824894173876038362727440766742337922529518587665422061",
+        "ratio_to_11_119_DIAGNOSTIC": "0.262995441475123078278387616680387163465112188377416240685439"
+      },
+      {
+        "key": "three_E0_ln_two_q",
+        "formula": "3 E0 ln[2]_q  (per nucleon, 3 strands)",
+        "value": "8.77273894128568052213217572960767461170574726770547354054420",
+        "cls": "bond-content",
+        "carrier": false,
+        "where": "qou-qkbp; the 3 is put in by hand and its colour-tube mechanism is unrealisable (qou-0c19, QOU/Hecke/LayoutConflict.lean)",
+        "ratio_to_E0": "2.09574247468252162811508818232230022701376758855576299626618",
+        "ratio_to_11_119_DIAGNOSTIC": "0.788986324425369234835162850041161490395336565132248722056318"
+      },
+      {
+        "key": "three_E0full_ln_two_q",
+        "formula": "3 E0_full ln[2]_q",
+        "value": "8.85971642940515513435371937075830455316836552214511091736624",
+        "cls": "bond-content",
+        "carrier": false,
+        "where": "qou-qkbp (same caveat)",
+        "ratio_to_E0": "2.11652075355450902590363885193981351458322391948232908881001",
+        "ratio_to_11_119_DIAGNOSTIC": "0.796808744437913043830714935763855072683547578212529086911254"
+      },
+      {
+        "key": "E0_over_q2p1",
+        "formula": "E0/(q^2+1)  (crossing weight)",
+        "value": "1.87539560527806823357152920792132730645705057788076798998961",
+        "cls": "bond-content",
+        "carrier": false,
+        "where": "1/(q^2+1) is the denominator of z_D and of b_pp -- inside S",
+        "ratio_to_E0": "0.448018144973794927161673570731804932216900697919095007075156",
+        "ratio_to_11_119_DIAGNOSTIC": "0.168665851720304724666924112592978442886685005655253888837990"
+      },
+      {
+        "key": "E0_two_q",
+        "formula": "E0 [2]_q",
+        "value": "8.41757680754326978461322587579269669108238082477825744858981",
+        "cls": "bond-content",
+        "carrier": false,
+        "where": "[2]_q is the loop value inside b_pp, b_nn (Lean fPP_eq_sq_div_quantumTwo)",
+        "ratio_to_E0": "2.01089686670712229975249197809186281588924074848413692174479",
+        "ratio_to_11_119_DIAGNOSTIC": "0.757044411146979924868533669915702553384511271227471665490584"
+      },
+      {
+        "key": "E0_FBor_dressing",
+        "formula": "E0 [3]_q!/q^3  (F_Bor dressing)",
+        "value": "18.7346688422675115194305035683868627398460652065414666225797",
+        "cls": "ladder-rung",
+        "carrier": false,
+        "where": "[3]_q!/q^3 dresses the MUON anchor in the proton-mass chain (constants.py::q_at); no block assigns it to binding",
+        "ratio_to_E0": "4.47557387774006744602869060636443113442439949181840913754276",
+        "ratio_to_11_119_DIAGNOSTIC": "1.68492389983519304968347005741405366848152398655827562034173"
+      },
+      {
+        "key": "m_e",
+        "formula": "m_e  (bare CAL-1)",
+        "value": "0.510998950690000000000000000000000000000000000000000000000000",
+        "cls": "ladder-rung",
+        "carrier": false,
+        "where": "used by three qou-59j5 probes; NOT in E_0_CONVENTIONS (derivation_chain.py) -- no operator class",
+        "ratio_to_E0": "0.122073871415383123678135417924867304975182301043447006490810",
+        "ratio_to_11_119_DIAGNOSTIC": "0.0459572758962136882813202626135443834877237161615253170249123"
+      },
+      {
+        "key": "m_e_over_hbar",
+        "formula": "m_e/hbar_q = m_e q/(q-1)",
+        "value": "5.15734861174329526184013751243378859521034186244816359693139",
+        "cls": "ladder-rung",
+        "carrier": false,
+        "where": "hbar_q^-1 rung; no carrier",
+        "ratio_to_E0": "1.23205245416676393126980451353563618484968142291704700649081",
+        "ratio_to_11_119_DIAGNOSTIC": "0.463832054298344748793968658371597139599814899042014893149689"
+      },
+      {
+        "key": "m_e_over_hbar_sq",
+        "formula": "m_e/hbar_q^2 = m_e c_q^2 (q/(q-1))^2 -- mass prefactor",
+        "value": "52.0514663819465442941469865856111201847797947623104585279225",
+        "cls": "ladder-rung",
+        "carrier": false,
+        "where": "prefactor of m = m_e Vol rho/hbar_q^2; DEPRECATED for absolute mass (AGENTS.md 2026-06-24), valid for ratios where it CANCELS",
+        "ratio_to_E0": "12.4347104930683901299654439648037876284393269134567912374168",
+        "ratio_to_11_119_DIAGNOSTIC": "4.68130824552086916936298107614094074869860551868967160067655"
+      },
+      {
+        "key": "E0_over_hbar",
+        "formula": "E0/hbar_q = m_e c_q^2",
+        "value": "42.2477681091499537704667115607435429943591110374141313340598",
+        "cls": "ladder-rung",
+        "carrier": false,
+        "where": "hbar_q^0 rung of the E0 ladder; registry convention B is hbar_q^0 but is Q_beta, not this",
+        "ratio_to_E0": "10.0926794561502453911039703556573825637151463686661442309260",
+        "ratio_to_11_119_DIAGNOSTIC": "3.79960141282039336005636402201129085298669943676716713140208"
+      },
+      {
+        "key": "m_mu",
+        "formula": "m_e Vol(4_1)/hbar_q^2  (muon anchor)",
+        "value": "105.658397811341813926170678865225151629575253541960896384211",
+        "cls": "ladder-rung",
+        "carrier": false,
+        "where": "CAL-2 proxy in the MASS chain (constants.py::q_muon_at); not binding",
+        "ratio_to_E0": "25.2410100861476159518326548718255167659806079742950683801977",
+        "ratio_to_11_119_DIAGNOSTIC": "9.50250902161541630777683954179558877862894626692696253118188"
+      },
+      {
+        "key": "m_mu_hbar",
+        "formula": "m_mu hbar_q = m_e Vol(4_1)/hbar_q",
+        "value": "10.4688153696346742141658542388832798709562116163458967118325",
+        "cls": "ladder-rung",
+        "carrier": false,
+        "where": "dimensional combination only -- NO block, Lean or witness assigns it to anything. Listed so its diagnostic ratio is on record as numerology, not as a lead",
+        "ratio_to_E0": "2.50092259402594306058306574053272065793060774976306304338290",
+        "ratio_to_11_119_DIAGNOSTIC": "0.941524900587703409853930590780041359021154026112590764622043"
+      },
+      {
+        "key": "Q_beta_closed",
+        "formula": "m_e |q^2-2q-1|(q+1)/(2q^3)  (registry B, hbar_q^0)",
+        "value": "0.783645827374621213074939751341396890525736441030255026758350",
+        "cls": "registry",
+        "carrier": false,
+        "where": "derivation_chain.py E_0_CONVENTIONS['B']: scale of B = E0.|Delta tr| -- the REFUTED multiplicative law; functional also scoped inadmissible under convention D (AGENTS.md scoping note 2026-09-05)",
+        "ratio_to_E0": "0.187207194529378320729836545290980788975650514906301970133791",
+        "ratio_to_11_119_DIAGNOSTIC": "0.0704780850233493311516269225057466400328929257154649722779342"
+      },
+      {
+        "key": "LP_dual_y0_me",
+        "formula": "y_0^* . m_e  (registry D, operator-selection LP dual)",
+        "value": "0.191822174473743930615307264490071171020031445099068346321454",
+        "cls": "negative",
+        "carrier": false,
+        "where": "computations/e-0-lp-dual-h3.witness.json: y_0^* dimensionless; recorded NEGATIVE ('does NOT derive E_0 in MeV')",
+        "ratio_to_E0": "0.0458248993069512627664022483357296021210587866552634057700252",
+        "ratio_to_11_119_DIAGNOSTIC": "0.0172517469622937252104782142719733043457173707257009035274264"
+      }
+    ],
+    "separation": {
+      "n_measured": 2548,
+      "best_single_scale_MeV": "11.1190759444817608926199903884018549422580249191469689248035",
+      "best_over_E0": "2.65626503786695307918653766846592107342520737168049516976990",
+      "ln_r_mean": "0.976921014989182356458007477811688903610338803863249462480741",
+      "ss_const_n_mu_sq": "2431.74665795605537035788117419392899144777380246542587920614",
+      "ss_shape": "34.4370256823000975672692027706783658241545912131766807042712",
+      "shape_share_of_ss": "0.0139636905031725892666018770488192822702493933868386537859157",
+      "r_min": "0.320114446642990127348544490363343228334458752129493753879938",
+      "r_min_nuclide": "H-6",
+      "r_max": "3.25924743032150733901495119465382008649141645495797294239386",
+      "r_max_nuclide": "He-4",
+      "spread_full": "10.1815068470071449223436464220289477830456911818299982889677",
+      "spread_p5_p95": "1.22497273261456338561361500922711759384998464838050323108823",
+      "band_best_over_E0": {
+        "A<40": {
+          "n": 247,
+          "value": "2.36635056278935994803296713818425548376636455272905291882536"
+        },
+        "40<=A<100": {
+          "n": 593,
+          "value": "2.86285213807613435790544853840464028578875286290566262137143"
+        },
+        "100<=A<240": {
+          "n": 1603,
+          "value": "2.64694053382019979935579397157442115252798591889679198081183"
+        },
+        "A>=240": {
+          "n": 105,
+          "value": "2.40965826356146066639532378863713862225100057185459381786436"
+        },
+        "N=Z": {
+          "n": 42,
+          "value": "2.81254786332309898498349407705247187042888415100422372618567"
+        }
+      },
+      "band_drift": "1.20981742227640104844616439676875086559467113393239983057700",
+      "isotope_chains": {
+        "8": {
+          "n": 16,
+          "N_range": [
+            3,
+            18
+          ],
+          "r_at_Nmin": "1.40361666776464485431610815338536736090265446765482079441720",
+          "r_at_Nmax": "2.06646537127875427913215787361749767447559219768924275579692",
+          "r_max_over_min": "2.07713842957645651673625709002335274906321492529853666143892"
+        },
+        "20": {
+          "n": 21,
+          "N_range": [
+            16,
+            36
+          ],
+          "r_at_Nmin": "2.84894710733188843523800905148109672844177501012530721965717",
+          "r_at_Nmax": "2.57474650759310176771172034870499108989190823289751573860253",
+          "r_max_over_min": "1.16580610257371588919527885717541736047720307065913188924665"
+        },
+        "28": {
+          "n": 22,
+          "N_range": [
+            24,
+            45
+          ],
+          "r_at_Nmin": "2.88807168766436809227793041282793118315841805084950011096062",
+          "r_at_Nmax": "2.74032659117005161173305534499822689489995211766059811075724",
+          "r_max_over_min": "1.09877455997979218978767461745702664284341285689841883196965"
+        },
+        "50": {
+          "n": 35,
+          "N_range": [
+            50,
+            85
+          ],
+          "r_at_Nmin": "2.85119585388068359308011192021792209968166267769154728639479",
+          "r_at_Nmax": "2.63097188499666796880258617036790280931484066000579542365452",
+          "r_max_over_min": "1.08816535751434989128621315758750585623946087002764534164633"
+        },
+        "82": {
+          "n": 38,
+          "N_range": [
+            96,
+            133
+          ],
+          "r_at_Nmin": "2.58427637047867747507925885573576104815777892652631905361871",
+          "r_at_Nmax": "2.48689843714787878324140802663646874634853370080255874041161",
+          "r_max_over_min": "1.04224958213674658288007106440031651523813490296249491213777"
+        }
+      },
+      "over_bound_at_3_E0_full": [
+        [
+          "He",
+          4,
+          "1.07575026353247473156375536179443562887960977430686114830001"
+        ]
+      ]
+    }
+  },
+  "verdict": "scope (a): the residual's varying part is bond-factor content by the Lean scale-invariance; its constant part is a sample mean of the shape defect and is not a derivation target at fixed law. No candidate selected.",
+  "provenance": {
+    "headSha": "9df38bc4548fb05ed626e51e2605446a04caf161",
+    "producer": "computations/qbeta/qbeta_e0_scale_candidates_probe.py",
+    "lean": "content/quantum-observable-universe/lean/QOU/Hecke/BindingScaleCandidates.lean",
+    "elapsed_s": 0.285
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "qbeta_e0_scale_candidates_probe.py",
+  "scriptHash": "27d44fc32457",
+  "scriptCommitSha": "unknown",
+  "commitSha": "9df38bc4548fb05ed626e51e2605446a04caf161",
+  "engine": "mpmath",
+  "computedAt": "2026-09-08T08:17:35.951881+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.4.1",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

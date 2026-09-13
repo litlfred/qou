@@ -1,0 +1,182 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T18:27:43.361189+00:00",
+  "commitSha": "a7e682eea723b97869cf9aedad026f22fa86ea8d",
+  "assertions": [
+    {
+      "name": "z_resolved_b3_has_six_digits",
+      "computed": "6.08113061066629446607360015529",
+      "expected": "6.081",
+      "passed": true,
+      "tolerance": "0.005",
+      "unit": "significant digits (3H)",
+      "source": "#7005 inferred ~6.1 from float hypot; measured here exactly"
+    },
+    {
+      "name": "framework_z_resolved_b3_negative_on_every_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "chain, exact trace and B_can0 all give b_3 < 0 at 3H and 3He; AME gives +1.808 and +1.044 MeV. The pairwise wall in Z-resolved form."
+    },
+    {
+      "name": "chain_split_matches_AME_to_0_2_percent",
+      "computed": "0.00204949711784424671814082616927",
+      "expected": "0.00205",
+      "passed": true,
+      "tolerance": "0.0001",
+      "unit": "relative",
+      "source": "b_nn - b_pp = 0.7653202 vs AME 0.7637549 MeV; +1.565 keV; the writhe factor supplies -0.982 MeV of it, without which it is 2.29x"
+    },
+    {
+      "name": "chain_split_is_z_independent_and_short_at_A7_A13",
+      "computed": "0.254867215428280842110913580619",
+      "expected": "0.2549",
+      "passed": true,
+      "tolerance": "0.001",
+      "unit": "framework/AME at 13C/13N",
+      "source": "b_nn - b_pp for every (Z,Z+1)/(Z+1,Z) pair; AME 0.764 / 1.644 / 3.003 MeV"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 48961,
+  "computation": "z-resolved-b3-mirror-split-probe",
+  "scriptFile": "z_resolved_b3_mirror_split_probe.py",
+  "scriptHash": "d69c193d479b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/z_resolved_b3_mirror_split_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/z_resolved_b3_mirror_split_probe.py"
+  },
+  "description": "The Z-resolved b_3 = B(Z,N) - 3 B(1,1), built from the per-(Z,N) canonical word at the proton q_0 under convention D. Resolution measured exactly: 6.08 digits (3H), 5.91 (3He), 5.88 on the split. The framework's Z-resolved b_3 is NEGATIVE on every form (chain, exact trace, B_can0) against a positive AME target -- the pairwise wall in Z-resolved form. The A=3 mirror split alone is reproduced from q_0: b_nn - b_pp = alpha*ln(q_0^3(1+q_0-q_0^2)) = 0.76532 MeV vs AME 0.76375 (+0.205 %), but that constant is Z-independent while the Coulomb displacement energy grows with Z, so it is 2.15x short at 7Li/7Be and 3.93x at 13C/13N: a coincidence, not a mechanism. Scope (a); no ingredient excluded; no fit; no per-case constant.",
+  "data": {
+    "resolution_exact": {
+      "b3_3H_keV": "1130061/625",
+      "sigma_3H_keV": "0.0015",
+      "digits_3H": "6.08113061066629446607360015529",
+      "b3_3He_keV": "3263571/3125",
+      "sigma_3He_keV": "0.00128160056179762967518074724894",
+      "digits_3He": "5.91109035455001132206298851323",
+      "split_keV": "2386734/3125",
+      "sigma_split_keV": "0.00100623058987490536338412815093",
+      "digits_split": "5.88025648223400175452229013048",
+      "method": "b3 = B(Z,N) - 3 B(1,1) as exact Fraction; var = u3^2 + 9 u2^2 as Fraction; sqrt and log10 in mpmath at 60 dps"
+    },
+    "traces_proton_q0_convention_D": {
+      "2H": {
+        "tr_atom": "0.15196833920423160759266569775106614127124096465526",
+        "tr_free": "0.29901501718464007670216042677098383227494947439702"
+      },
+      "3H": {
+        "tr_atom": "0.029144042360972065357254218791869844065838803564738",
+        "tr_free": "0.14207205679730479747049860425505585620688877446833"
+      },
+      "3He": {
+        "tr_atom": "0.058596253654436380218956715452130256830877107284183",
+        "tr_free": "0.18817864299948877926347903714586689992069257358944"
+      },
+      "4He": {
+        "tr_atom": "0.011237417659767421564199549374410607269662696081261",
+        "tr_free": "0.089409980501930600382047565819885657048241375217176"
+      }
+    },
+    "bindings_MeV": {
+      "chain": {
+        "2H": "2.83282491993457306573280762985",
+        "3H": "6.13973133040911631236565155998",
+        "3He": "5.37441113698381683385474751947",
+        "4He": "8.68131754745836008048759144959"
+      },
+      "exact": {
+        "2H": "2.83316257200452377033781580149",
+        "3H": "6.63094550714687709946164178635",
+        "3He": "4.88387226438595745596877363638",
+        "4He": "8.68165519952831078509259962123"
+      },
+      "can0": {
+        "2H": "0.615534653560354033210778647342",
+        "3H": "0.472714563824338345034276612364",
+        "3He": "0.542429466809558008989478016835",
+        "4He": "0.327228891178261312695788408263"
+      }
+    },
+    "z_resolved_b3_MeV": {
+      "chain": {
+        "3H": "-2.35874342939460288483277132958",
+        "3He": "-3.12406362281990236334367537009",
+        "split": "0.765320193425299478510904040514",
+        "residual_3H_MeV": "-4.16684102939460288483277132958",
+        "residual_3He_MeV": "-4.16840634281990236334367537009"
+      },
+      "exact": {
+        "3H": "-1.86854220886669421155180561813",
+        "3He": "-3.6156154516276138550446737681",
+        "split": "1.74707324276091964349286814997",
+        "residual_3H_MeV": "-3.67663980886669421155180561813",
+        "residual_3He_MeV": "-4.6599581716276138550446737681"
+      },
+      "can0": {
+        "3H": "-1.37388939685672375459805932966",
+        "3He": "-1.30417449387150409064285792519",
+        "split": "-0.0697149029852196639552014044706",
+        "residual_3H_MeV": "-3.18198699685672375459805932966",
+        "residual_3He_MeV": "-2.34851721387150409064285792519"
+      }
+    },
+    "mirror_split_A3": {
+      "chain_MeV": "0.765320193425299478510904040514",
+      "closed_form_MeV": "0.765320193425299478510904040514",
+      "closed_form": "alpha * ln(q0^3 * (1 + q0 - q0^2)), alpha = m_e/(q0(q0-1))",
+      "AME_MeV": "0.76375488",
+      "AME_sigma_MeV": "0.00000100623058987490536338412815093",
+      "residual_MeV": "0.00156531342529947851090404051401",
+      "residual_rel": "0.00204949711784424671814082616927",
+      "residual_sigma_exp": "1555.62098891674357984346685518",
+      "exact_trace_unnormalised_MeV": "1.74707324276091964349286814997",
+      "writhe_factor_MeV": "-0.981753049335620164981964109455",
+      "B_can0_MeV": "-0.0697149029852196639552014044706"
+    },
+    "mirror_split_by_pair_MeV": {
+      "3H/3He": {
+        "chain": "0.765320193425299478510904040514",
+        "AME": "0.76375488",
+        "ratio": "1.00204949711784424671814082617"
+      },
+      "7Li/7Be": {
+        "chain": "0.765320193425299478510904040514",
+        "AME": "1.6442398",
+        "ratio": "0.465455338950741539349007389624",
+        "exact_trace_unnormalised": "1.74707324276091964349286814997"
+      },
+      "13C/13N": {
+        "chain": "0.765320193425299478510904040514",
+        "AME": "3.0028193",
+        "ratio": "0.254867215428280842110913580619"
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "every trace and bond constant is evaluated at q_parameter.Q_50_DIGIT_STR (proton pin, owner directive 2026-08-07); no muon value is read"
+}

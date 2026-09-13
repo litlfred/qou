@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T09:08:15Z
-updated_at: 2026-09-06T10:03:19Z
+updated_at: 2026-09-07T11:19:19Z
 ---
 
 Found by continuing the class-D read (`qou-psjm`) into the 7 deprecated-source
@@ -163,3 +163,9 @@ rounding of CODATA-2018 — lengthening it needs the author's determination.
 σ = 2.1e-8 = **4.43σ**, so an edition bump can flip that verdict — and that
 4.43σ IS the Cs-vs-Rb tension appearing in a probe's conclusion. `qou-aemx`
 (in-progress, high) owns the α_EM front.
+
+🛑 CORRECTED 2026-09-07 (PR #7069) — the premise of this bean is FALSE. codata.py DOES carry the fine-structure constant. Measured by CALLING it, not grepping it: C.table() contains 'fine-structure constant' (value_str='7.2973525643e-3', uncertainty_str='0.0000000011e-3') and 'inverse fine-structure constant' (value_str='137.035999177', uncertainty_str='0.000000021') — both CODATA 2022, both with uncertainties. This bean greps codata.py's SOURCE, which cannot see entries the module parses at RUNTIME out of data/allascii.txt (line 169). Same detector-blindness class the taxonomy catalogues: the interesting content was assumed to be in the file you searched.
+
+What SURVIVES, and is a different defect: CANON in codata_truncation_audit.py is a HAND-WRITTEN list that omits alpha, so the GATE is blind even though the REGISTRY is not. Fixing that is one entry in CANON, not an addition to the registry — much cheaper than this bean says. The 62-file / three-value census below stands and is useful.
+
+Consequence for anyone acting on this bean: do NOT add a fine-structure entry to codata.py (it is already there, and a second one would be the duplicate class). Fix CANON instead, and route producers through codata.codata('inverse fine-structure constant') — done for alpha_em_schwinger_ladder_probe.py in #7069.

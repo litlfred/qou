@@ -37,6 +37,10 @@ import QOU.MathlibExt.TraceRadicalNondegenerate
 import QOU.MathlibExt.TemperleyLiebSpanning
 import QOU.MathlibExt.TemperleyLiebWedderburn
 import QOU.MathlibExt.TemperleyLiebNormalForm
+import QOU.MathlibExt.TemperleyLiebClosure
+import QOU.MathlibExt.TemperleyLiebWordBlocks
+import QOU.MathlibExt.TemperleyLiebThresholdBridge
+import QOU.MathlibExt.TemperleyLiebDeltaRule
 import QOU.MathlibExt.MacdonaldTelescope
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite
@@ -1468,6 +1472,15 @@ import QOU.Hecke.RowCap
 import QOU.Hecke.CrossingConvexity
 import QOU.Hecke.BindingExtensivity
 import QOU.Hecke.LayoutConflict
+-- `ContiguousCouplingGraph` asks `LayoutConflict`'s neighbouring question — not
+-- how many couplings ONE interface admits, but which nucleon PAIRS a contiguous
+-- `3A` layout can couple at all.  The answer is the path `P_A`: a generator
+-- crosses two adjacent strands and blocks are three wide, so only consecutive
+-- nucleons are reachable.  The binding producer needs the complete graph `K_A`
+-- (one inter-nucleon letter per pair), so its word re-embeds on `3A` strands
+-- only at `A <= 2`.  Bean `qou-w6x3`; measurement in
+-- `computations/probes/binding_word_3A_reembedding_probe.py`.
+import QOU.Hecke.ContiguousCouplingGraph
 -- `GeometricTailBound` answers "why only the leading order?" for the flavour
 -- split: `(1 + h_q^3)` is the first two terms of `1/(1 - h_q^3)`, and summing
 -- the whole tail moves the value by `x^2/(1-x)` -- 323x smaller than the gap it
@@ -1576,3 +1589,5 @@ import QOU.Mass.FigureEightGluingFromMonodromy
 import QOU.Mass.FiveTwoGluingFromFareyWord
 import QOU.Mass.AffineCumulantSecondDifference
 import QOU.Mass.FiveTwoAPolynomialFromFareyWord
+import QOU.QBeta.FloorRemainderFromDerivedShapeFields
+import QOU.QBeta.PretzelRemainderFromPtolemy
