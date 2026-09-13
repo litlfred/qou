@@ -7,7 +7,8 @@ section_number: null
 pages: 11-16
 source_pdf: 0804.0917v1.pdf
 source_sha256: 887fbd8be47a2781
-doc_brief: "Composition-Diamond Lemma for Modules ∗ — In this paper we give some relationships among the Gr¨ obner-Shirsh ov bases in free associative algebras, free left modules and “double-free” le ft modules"
+doc_brief: "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left"
+duplicate_of: "czechmathj-60-2010-1-4"
 ---
 In this section, we deal with the universal enveloping module for a Sa binin algebra.
 Deﬁnition 7.1 ([21]) A vector space V is called a Sabinin algebra if it is endowed with

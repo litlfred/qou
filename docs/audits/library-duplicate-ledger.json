@@ -28,5 +28,12 @@
     "note": "Dousse & Feray, 'Weighted dependency graphs and the Ising model', ingested TWICE in the 2026-08-30 cluster-expansion drop: 1610.05082v3.pdf carries the arXiv v3 stamp on page 1, ising.pdf carries none. Same title, same authors, both 24 pp, separate library directories. Two grep hits here are ONE source. scripts/library-find-duplicates.py did NOT propose them and neither section set carries duplicate_of -- the same detector gap the arxiv-math-0203060 entry above records, where two revisions of one paper differ enough in text to fall below the same-work threshold. Recorded by hand. WHICH TEXT IS FULLER: ising is the LATER revision -- it cites four 2017 items against v3's two, has no arXiv stamp, and sections to 21 sections / 66 kc against v3's 15 / 64 kc. So read ising for the text and cite arxiv-1610.05082v3 for the stable stem, per the s0894-0347-00-00337-4 precedent above.",
     "recorded": "2026-08-30",
     "adjudicated_by": "agent"
+  },
+  {
+    "doc_id": "arxiv-0804.0917v1",
+    "prefer": "czechmathj-60-2010-1-4",
+    "note": "Chen, Chen & Zhong, 'Composition-Diamond Lemma for Modules'. The arXiv preprint (arxiv-0804.0917v1, 6 sections) and the published version (Czechoslovak Math. J. 60 (2010), czechmathj-60-2010-1-4, 9 sections) are ONE WORK: identical three-author list (Yuqun Chen, Yongshan Chen, Chanyan Zhong) and identical title, verifiable by opening the two structure.json files. IDENTIFICATION is mechanical; the CHOICE of which to prefer is a judgement, recorded here rather than left implicit: the published version is preferred because it is the citable venue AND is measurably more complete -- it carries a section the preprint's sectioning lacks, 'Composition-Diamond lemma for double-free modules', plus 'Verma modules over the coefficient algebra'. So the extra sections are NOT a re-sectioning artifact. library-find-duplicates.py scores the pair 0.474, which on its own is not a verdict (AGENTS.md: its same-work and different-work ranges overlap); the author+title match is what decides it. Blast radius measured before enacting: ONE reference outside library/ (.beans/qou-gmfz, a path not an index lookup), and no references.ts entry. The preprint's text stays on disk and greppable; it loses only its INDEX.md row.",
+    "recorded": "2026-09-13",
+    "adjudicated_by": "agent"
   }
 ]
