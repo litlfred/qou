@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T12:37:03Z
+updated_at: 2026-09-13T12:47:38Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1838,3 +1838,34 @@ the maximum establishes it exactly. Two generic values agree.
 NOT claimed: no four-strand Markov trace is computed, so nothing is said about
 whether an H_4 gamma-gamma element reproduces an observable. And which 3 of the
 24 dimensions are missing from the span is not measured.
+
+
+
+### Part 4, same day — the general-n Ocneanu trace, and the H_4 trace set (PR #7295)
+
+The corpus had NO general-n Markov trace: `pyhecke.gram` carries the H_3 vector
+`[1, z, z, z^2, z^2, z(hz+1)]` as a hand-coded literal and nothing generalises
+it. Built one from the three defining properties via the S_{n-1}-coset
+decomposition, validated three ways — it reproduces the H_3 literal exactly
+(symbolic in h AND z), satisfies tr(xy)=tr(yx) on H_4 pairs, and satisfies the
+Markov property at n=4 against n=3. The latter two are NOT inputs to the
+recursion, so they are real tests; the first `coset_factor` failed them.
+
+Measured, gamma-gamma trace sets at z_D, proton pin, k <= 8 vertices:
+
+                  count    range                    median gap
+    n = 3            9     [0.18618696, 1.0]        0.032897756
+    n = 4          511     [0.11139758, 1.1374052]  0.0025322918
+
+**13.0x denser**, so the anti-fit conclusion sharpens — selection by residual
+was already forbidden at n=3 and at n=4 is not even tempting.
+
+**And barely wider.** 511 distinct elements spanning 21 of 24 dimensions have
+traces confined to a band only ~1.3x the n=3 one. The trace is a very LOSSY
+functional on the gamma-gamma set: free growth in the algebra does not buy a
+wide trace image. That is a constraint in its own right and was invisible
+before this.
+
+Scope-(a). NO four-strand Q_beta prediction — E_0 and the
+element-to-observable map are H_3 constructions and the corpus does not define
+their n=4 analogue. The n=4 set is compared to ITSELF at n=3, structurally.
