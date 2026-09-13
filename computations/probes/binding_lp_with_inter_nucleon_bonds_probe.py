@@ -81,7 +81,7 @@ stand; the additive law does not extend to all pairs.
 
 so the whole thing is carried by two per-bond-type constants:
 
-    L_pn = 0.676821592386        L_nn = 0.907262271178
+    L_pn = 0.676821592386        L_nn = 0.907262265533
 
 with `L_pn` agreeing between `2H` and `3He` to `5.6e-9` — again the `y`-table's
 precision, not a modelling error. Nothing here was fitted: the constants are
@@ -450,6 +450,15 @@ def main() -> int:
         return 0 if all_ok else 1
     try:
         wb = WitnessBuilder(Path(__file__).stem, engine="scipy")
+        # INTERPOLATED, not transcribed (bean qou-n62l). Every figure below
+        # is formatted from the same variable the matching add_data call
+        # serialises, so the description cannot drift away from the data
+        # underneath it. It had: L_nn read 0.907262271178 against data of
+        # 0.907262265533 -- 5.6e-9, exactly the y-table precision this
+        # probe's own docstring names -- and the mirror ratio read 1.17022
+        # against 1.170237. Eight of the ten hardcoded figures were still
+        # correct roundings, which is the trap: a description that is mostly
+        # right reads as maintained.
         wb.set_description(
             "Rebuilds the binding LP with the inter-nucleon bonds included, "
             "which the previous probes omitted. Corrects the prior turn: "
@@ -457,20 +466,22 @@ def main() -> int:
             "places only A-1 (adjacent chain, generator 3k+2), and the chain "
             "reading is the one the arity law c_atom = A+1 and Lean "
             "ClassicalTraceFloor rest on; the two builders disagree for every "
-            "A >= 3. With the bond in, the deuteron's Markov trace drops from "
-            "0.299015019 to 0.151968341, a -49.18% defect with the correct "
-            "sign, and the free value reproduces tr_3(p) tr_3(n) to 6.1e-9. "
-            "Rebuilding the positive-sector LP on a 72-word spanning set (36 "
-            "product words plus their bond-translates, Gram rank 50) gives "
-            "phi(free) = 0.429886497 and phi(atom) = 0.248443512, a gap of "
-            "+0.181442985, and the two states no longer share a dual vertex "
-            "(supports 2 and 3) where the bond-free LP had identical rank-one "
-            "duals — which is exactly why every earlier gap was an algebraic "
-            "zero. L = log(tr_free/tr_atom) is EXACTLY additive over bonds "
-            "(residual 4.4e-16) with two per-type constants L_pn = "
-            "0.676821592386 and L_nn = 0.907262271178. The law gets the mirror "
-            "ordering right (3H > 3He, ratio 1.17022 against 1.09896, +6.5%) "
-            "and the A-scaling badly wrong (2H/3He 0.500 against 0.288, +73%).")
+            f"A >= 3. With the bond in, the deuteron's Markov trace drops from "
+            f"{tf:.9f} to {ta:.9f}, a {100 * (ta - tf) / tf:+.2f}% defect with "
+            "the correct sign, and the free value reproduces tr_3(p) tr_3(n) "
+            "to 6.1e-9. Rebuilding the positive-sector LP on a "
+            f"{nb}-word spanning set (36 product words plus their "
+            f"bond-translates, Gram rank {rank}) gives "
+            f"phi(free) = {pf:.9f} and phi(atom) = {pa:.9f}, a gap of "
+            f"{pf - pa:+.9f}, and the two states no longer share a dual vertex "
+            f"(supports {sf} and {sa}) where the bond-free LP had identical "
+            "rank-one duals — which is exactly why every earlier gap was an "
+            "algebraic zero. L = log(tr_free/tr_atom) is EXACTLY additive over "
+            f"bonds (residual {worst:.1e}) with two per-type constants "
+            f"L_pn = {L_pn:.12f} and L_nn = {L_nn:.12f}. The law gets the "
+            f"mirror ordering right (3H > 3He, ratio {r_mod_mirror:.6f} "
+            f"against {r_exp_mirror:.6f}, {e1:+.2f}%) and the A-scaling badly "
+            f"wrong (2H/3He {r_mod_a:.3f} against {r_exp_a:.3f}, {e2:+.0f}%).")
         wb.add_data("bond_topology",
                     {"atom_gen_chains": "C(A,2)",
                      "atom_braid_word_3A": "A-1 (chain, gen 3k+2)",

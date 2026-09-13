@@ -114,3 +114,20 @@ carried the right numbers (`≈106.71°`, `≈2.8°`), so the document contradic
 itself in two prose fields at once — the exact shape `qou-n62l` was opened on.
 No computed value touched. Fast probe; queued only because the table holds the
 checkout.
+
+## 8. Two `--pairs` drifts — RE-RUN ONLY, prose fixed 2026-09-13
+
+Both found by the new advisory `--pairs` detector (`qou-n62l`), which compares a
+prose number only against the field its own sentence names.
+
+* `computations/binding_via_interface_knot.py` — `q_0 ≈ 1.1097` in three places
+  (docstring ×2, `set_description`) against q₀ = 1.1099785827513808. Wrong in
+  its own 4th decimal: 1.10998 rounds to 1.1100, never 1.1097. Now 1.10998.
+* `computations/probes/binding_lp_with_inter_nucleon_bonds_probe.py` —
+  `L_nn = 0.907262271178` against data of `0.907262265533`, a 5.6e-9 gap which
+  is exactly the y-table precision this probe's own docstring names; and the
+  mirror ratio read `1.17022` against `1.170237`. **The description is now
+  INTERPOLATED** from the same variables the matching `add_data` calls
+  serialise, so it cannot drift again. Eight of its ten hardcoded figures were
+  still correct roundings — which is the trap: a description that is mostly
+  right reads as maintained.

@@ -33,7 +33,7 @@ CONVERGENCE FINDING — pair Li_2^q diverges at H_{3A>3}.
 For atoms beyond the proton/neutron (H_3 case), some per-generator
 V̂_i exceed 1 (V̂ ≈ 1.05–1.09 — within the H_{3A} Wedderburn-character
 spectrum), and pair products |V̂_i V̂_j| ≈ 1.15 exceed the Li_2^q
-convergence radius |z| < q_0 ≈ 1.1097.  The first-order tower
+convergence radius |z| < q_0 ≈ 1.10998.  The first-order tower
 T1 + T2 (descended + single-generator) is FINITE; T3 (pair) requires
 regularization.  This script:
 
@@ -107,7 +107,7 @@ def mass_tower_first_order(
     T2 = − Σ_i Li_2^q(−|V̂_i|)
     T3 = − z² · Σ_{i<j} Li_2^q(−|V̂_i V̂_j|)
 
-    Each Li_2^q(−|V̂_i|) in T2 is finite at q_0 ≈ 1.1097 since
+    Each Li_2^q(−|V̂_i|) in T2 is finite at q_0 ≈ 1.10998 since
     |V̂_i| < q_0. For T3 the pair products |V̂_i V̂_j| can exceed q_0;
     the algebraic pentagon identity reorganises these into convergent
     sub-arguments (see `pentagon_reduction_li2q.li_2_q_pentagon` +
@@ -176,7 +176,7 @@ def main() -> int:
         "product constituent vacuum (both in same H_{3A}(q)). "
         "First-order (T1+T2) computation with Li_2^q tower; T3 "
         "convergence diagnosed but deferred (pair products exceed "
-        "q_0 ≈ 1.1097 for some H_{3A>3} pairs)."
+        "q_0 ≈ 1.10998 for some H_{3A>3} pairs)."
     )
     builder.add_parameter("Q_beta_CAL3_MeV", str(E_0_CALIBRATION_MEV))
     builder.add_parameter("m_e_CAL1_MeV", str(M_E_MEV))
