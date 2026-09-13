@@ -348,3 +348,39 @@ and the `exists_tower_with_nonzero_h` → `tower_nondegenerate` restatement.
   image, not involutions). Reported, not rewritten — the gloss is authorial.
 - The SessionStart `lake build` log was **17 min stale** and its `✖` on this exact
   module described a two-revisions-dead file. See the dated caveat in MEMORY.md.
+
+## 2026-09-13 — cold-container restore from zero, then the caller's own file was red
+
+Task: make the container able to `lean`-direct a NEW `QOU/Eightfold/*.lean`.
+Start state: **10 oleans total** (cache genuinely unrestored), and a SessionStart
+`lean-build-bg.sh` mid-`lake update` with a `cache get` child 403-ing every shard
+(1655 failed / 0 downloaded of 7335 — the documented Azure-blob firewall).
+
+- **Killed the chain by PID** (589 script, 677 `lake update`, 8184 `cache get`);
+  never `pkill -f`. Manifests unharmed, all three still pin mathlib `f897ebcf72cd`,
+  and the per-paper source clone is at the same rev.
+- **Restored by streaming** (MEMORY §STABLE) — no 1.7 GiB tarball ever on disk;
+  throwaway repo in the scratchpad under a `trap … EXIT INT TERM`. Head
+  `a792c46d01b`, `PIPESTATUS=0 0`, 32461 entries, 6492 oleans / 6493 traces.
+  Trace-check: **3758/3758 = 100.0 %**, marker correctly cleared.
+- **My guard was vacuous and I nearly shipped on it** — 4-component listing,
+  5-component regex. Replaced with `tar --exclude='content/*/lean/.lake/packages/*'`,
+  a property true by construction. New TRAP in MEMORY.md.
+- `scripts/lean-direct-env.sh` yields the right 11-entry `LEAN_PATH` unchanged;
+  **only one `Mathlib/` olean root on this container**, so no union mirror needed.
+  It does NOT set `-DautoImplicit=false` — pass it yourself (two-sided control
+  run: bare exit 0 vs flagged exit 1; now a STABLE entry).
+- **The caller's own committed file was RED.**
+  `QOU/Eightfold/AnsatzContentDichotomy.lean` (`d8053c0a1`, message already said
+  "UNVERIFIED, olean restore in flight"): 1 error, `154:2 No goals to be solved` —
+  line 153's `simp` closes the goal, so the `exact absurd …` after it is dead.
+  Verified the disposition **without touching the repo file**: copied to the
+  scratchpad, `sed '154d'`, diff-guarded that the sed bit (a sed matching nothing
+  is a false green), → exit 0, warnings only. `#print axioms` on all 7 theorems:
+  no `sorryAx`, only `propext`/`Classical.choice`/`Quot.sound`.
+- Slip worth keeping: I guessed the namespace `QOU.Eightfold` for `#print axioms`
+  when the file declares `QOU.Eightfold.AnsatzContent` — and the `grep` output
+  naming it was already on my screen. Sections (`Nonet`, `NonVacuity`) contribute
+  nothing to the FQN. Read the namespace, never infer it from the path.
+- Residual hazard reported, not fixed: the bg-build guard cannot fire on this
+  trace-paired restore, so a compaction re-fires `lake build`.
