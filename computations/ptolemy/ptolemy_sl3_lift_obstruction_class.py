@@ -41,17 +41,34 @@ Note the test is only meaningful if [u] is itself non-trivial, i.e. u is not a c
 Expected, since a cube root of zeta_3 is zeta_9 and [Q(zeta_9):Q] = 6 does not divide
 [K:Q] = 4 -- but that is an argument, so this file MEASURES it rather than assuming it.
 
-METHOD, exact in K, no floats and no tolerances.  For v in K, "v is a cube" is decided in
-two stages:
+METHOD, exact in K, no floats and no tolerances -- REDUCTION MOD PRIMES.
+If v = y^3 with y in K, then reducing modulo any prime of K above a rational prime p
+gives vbar = ybar^3 in the residue field.  So a single prime where vbar is NOT a cube
+REFUTES outright, exactly, with no tolerance and no Groebner basis.
 
-  1. NORM (necessary, cheap).  N(y^3) = N(y)^3, so N(v) must be a cube in Q^x.
-     N(g) = Res_T(f, g) / lc(f)^deg(g).  A non-cube norm settles it outright.
-  2. GROEBNER (decisive) when the norm test passes.  Write y = a + bT + cT^2 + dT^3,
-     reduce y^3 modulo f, equate all four coefficients to v's, and compute a Groebner
-     basis over Q.  The basis is {1} exactly when no y exists.
+Choosing the primes is the whole content, and one condition is easy to miss:
 
-Stage 1 alone can only refute; stage 2 decides.  Both are exact -- an element is a cube
-or it is not.
+  * p = 1 mod 3, so that cubes are an index-3 subgroup of F_p^x and the test
+    vbar^((p-1)/3) = 1 has content.  (For p = 2 mod 3 every element is a cube and the
+    prime says nothing.)
+  * f has a root mod p, so the residue field is F_p and reduction is evaluation.
+  * p != 1 mod 9.  An element of order 3 is a cube in the cyclic group F_p^x exactly
+    when 9 | p-1, so at a prime with 9 | p-1 the class of u is TRIVIAL mod p and the
+    three candidates w, w*u, w*u^2 become indistinguishable.  Such a prime cannot
+    separate them and is skipped -- this is the condition that makes the test sharp
+    rather than merely valid.
+
+WHAT THIS CAN AND CANNOT DO.  Reduction can only REFUTE: surviving every prime tried is
+evidence, never proof, because a non-cube in K can be a cube modulo each prime of a
+finite set.  A survivor is therefore reported as "survives N primes, NOT proved", never
+as "is a cube" -- and the Groebner decision is run on the survivor alone, where it is one
+call rather than four.
+
+A previous version of this file ran the Groebner stage first, gated on a norm test.  That
+was the wrong algorithm: N(u) = 1 is a rational cube, so the norm test is inconclusive
+for u by construction, and the Groebner over Q on a quartic with coefficients up to
+2.5e13 did not finish.  The norm test is kept below as a cheap extra refuter, not as the
+gate.
 """
 import json
 import sys
@@ -61,6 +78,7 @@ warnings.filterwarnings('ignore')
 import sympy as sp
 
 T = sp.Symbol('T')
+NPRIMES = 40
 WIT = 'computations/ptolemy/ptolemy-duality-sigma-coboundary-test.witness.json'
 PT = 'computations/ptolemy/L6a4-c1-ptolemy-in-K.json'
 
@@ -92,32 +110,79 @@ def main():
         x = sp.nsimplify(x)
         if x == 0:
             return True
-        n, d = sp.fraction(sp.Rational(x))
-        cr = lambda m: sp.integer_nthroot(abs(m), 3)
-        rn, ok1 = cr(n)
-        rd, ok2 = cr(d)
-        return bool(ok1 and ok2)   # sign: (-1) is a cube, so magnitude decides
+        n_, d_ = sp.fraction(sp.Rational(x))
+        rn, ok1 = sp.integer_nthroot(abs(n_), 3)
+        rd, ok2 = sp.integer_nthroot(abs(d_), 3)
+        return bool(ok1 and ok2)
+
+    # ---- the separating primes -------------------------------------------------
+    fp = sp.Poly(f, T)
+    fden = sp.lcm([sp.denom(sp.nsimplify(c)) for c in fp.all_coeffs()])
+    primes, pr = [], 5
+    while len(primes) < NPRIMES and pr < 200000:
+        pr = sp.nextprime(pr)
+        if pr % 3 != 1 or pr % 9 == 1:      # need order-3 subgroup, and u NOT a cube
+            continue
+        if int(fden) % pr == 0 or int(lc) % pr == 0:
+            continue
+        roots = [x for x in range(pr)
+                 if sum(int(c) * pow(x, len(fp.all_coeffs()) - 1 - i, pr)
+                        for i, c in enumerate(
+                            [sp.Integer(sp.nsimplify(cc)) for cc in fp.all_coeffs()])) % pr == 0]
+        if roots:
+            primes.append((pr, roots[0]))
+    print(f"separating primes (p=1 mod 3, p!=1 mod 9, f has a root mod p): "
+          f"{len(primes)} found, first {[p for p, _ in primes[:6]]}", flush=True)
+    assert primes, "no separating prime found; the test cannot run"
+
+    def reduce_at(v, pr, th):
+        v = red(v)
+        co = sp.Poly(v, T).all_coeffs()[::-1] if v.free_symbols else [v]
+        acc = 0
+        for i, c in enumerate(co):
+            c = sp.nsimplify(c)
+            n_, d_ = sp.fraction(c)
+            if int(d_) % pr == 0:
+                return None
+            acc += int(n_) * pow(int(d_), -1, pr) % pr * pow(th, i, pr)
+        return acc % pr
+
+    def refuted_mod_p(v):
+        """Return (p, th) of a prime where v is NOT a cube, or None if none refutes."""
+        for pr, th in primes:
+            vb = reduce_at(v, pr, th)
+            if vb is None or vb == 0:
+                continue
+            if pow(vb, (pr - 1) // 3, pr) != 1:
+                return (pr, th)
+        return None
+
+    def groebner_decides(v):
+        a0, a1, a2, a3 = sp.symbols('a0 a1 a2 a3')
+        y = a0 + a1 * T + a2 * T ** 2 + a3 * T ** 3
+        pc = sp.Poly(sp.expand(sp.rem(sp.expand(y ** 3), f, T) - red(v)), T)
+        G = sp.groebner([sp.expand(c) for c in pc.all_coeffs()],
+                        a0, a1, a2, a3, order='grevlex')
+        return list(G.exprs) != [sp.Integer(1)]
 
     def is_cube_in_K(v, label):
         v = red(v)
-        nv = norm(v)
-        if not is_rational_cube(nv):
-            print(f"   {label:14s} N = {nv}  -> NOT a rational cube, so NOT a cube in K",
+        r_ = refuted_mod_p(v)
+        if r_:
+            print(f"   {label:14s} NOT a cube in K -- refuted exactly at p = {r_[0]}",
                   flush=True)
             return False
-        print(f"   {label:14s} N = {nv}  -> a rational cube; norm test inconclusive, "
-              f"running Groebner", flush=True)
-        a0, a1, a2, a3 = sp.symbols('a0 a1 a2 a3')
-        y = a0 + a1 * T + a2 * T ** 2 + a3 * T ** 3
-        cub = sp.rem(sp.expand(y ** 3), f, T)
-        pc = sp.Poly(sp.expand(cub - v), T)
-        eqs = [sp.expand(c) for c in pc.all_coeffs()]
-        G = sp.groebner(eqs, a0, a1, a2, a3, order='lex')
-        no_sol = list(G.exprs) == [sp.Integer(1)]
-        print(f"   {label:14s} Groebner basis is "
-              f"{'{1} -> NO solution' if no_sol else 'non-trivial -> a cube EXISTS'}",
+        nv = norm(v)
+        if not is_rational_cube(nv):
+            print(f"   {label:14s} NOT a cube in K -- norm {nv} is not a rational cube",
+                  flush=True)
+            return False
+        print(f"   {label:14s} survives all {len(primes)} primes and the norm test "
+              f"-- NOT proved a cube; deciding by Groebner", flush=True)
+        ok = groebner_decides(v)
+        print(f"   {label:14s} Groebner: {'a cube EXISTS' if ok else 'NO solution'}",
               flush=True)
-        return not no_sol
+        return ok
 
     print("\nIs u itself a cube in K?  (the test below is vacuous if it is)", flush=True)
     u_cube = is_cube_in_K(u, 'u')
