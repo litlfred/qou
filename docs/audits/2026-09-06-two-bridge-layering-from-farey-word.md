@@ -609,6 +609,50 @@ sources do not print that rule — BDP14, which GGM cite for (19), is not in the
 `σ₁σ₁` certification and, downstream, `qou-m3ad` item 1 for the pretzel. The 5₂ certification is the
 positive result of this part and is independent of GGM's printed blocks.
 
+## 3l. The level-2 pairing, from held text: the pretzel's index certified (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_gz_blocks_index_probe.py`](../../computations/probes/aomega_m3_pretzel_gz_blocks_index_probe.py)
+(bean `qou-x3iv`, Part 13). Source: Garoufalidis–Zagier, *Knots and their related q-series*, held at
+`library/arxiv-2111.06645/` (a mis-keyed directory — the PDF is arXiv 2304.09377v2), §3.5, Prop. 3.8, Obs. 3.9,
+App. A.6.
+
+**What GZ print, and what §3k could not guess.** The pretzel has *level 2*: its factorisation involves twelve
+`q^{1/2}`-series `H_j^±`, `j = 0,…,5`, spanning weight spaces of dimensions 1, 4, 1 (the "ε-deformation degree"
+`δ = (0,1,2,0,0,0)`). Their integrand is the same one as §3i's up to orientation, with poles "of third order when
+`m, n` are even and of first order otherwise" — exactly the pole structure of §3k. At `u = 0` the even–even poles
+are triple, their residues carry `ε`-derivatives, and
+
+$$
+\mathrm{Ind}_{(-2,3,7)}(q) = H_1^+(q)\,H_1^-(q),
+\qquad
+\tfrac12 H_0^+H_2^- - H_1^+H_1^- + \tfrac12 H_2^+H_0^- - H_3^+H_3^- + H_4^+H_4^- - H_5^+H_5^- = 0 .
+$$
+
+The index is the **weight-1 component alone**; every other pairing cancels through the quadratic relation. That is
+why no reweighting of §3k's bare families could reach `1` at `q⁰`: the pairing is not a sum over pole families, it
+is a derivative structure at the collided poles.
+
+**Implemented verbatim and gated.** The twelve series were built exactly (bivariate truncated series in `(ε, q^{1/2})`
+over `ℚ`, from the three generating functions and the six direct `q`-hypergeometric definitions of A.6, with
+`E₂ = 1 − 24Σσ₁(N)qⁿ`):
+
+- **G1** every printed coefficient of GZ (3.17) — 63 of them across the twelve series — is reproduced.
+- **G2** the quadratic relation holds to `q⁶`.
+- **G3** `H_1^+H_1^- = 1 − 8q + 3q² + 50q³ + 58q⁴ + 13q⁵ − 196q⁶ − 456q⁷`, equal to **our derived `σ₁σ₁` index at `ζ = 1`**
+  (§3f, SnapPy triangulation + the DGG engine, to `q³`) and to GZ's printed total index to `q⁷`. Integer powers only.
+- **G4** Prop. 3.8 holds numerically to `10⁻¹²` against the integral (3.16) itself — but with `h_j(1/τ) = H_j^-(q̃)`
+  and **no** `(−1)^{δ_j}`; with the printed `(±1)^{δ_j}` read as a sign on the lower half-plane the identity fails.
+  Recorded as the measured convention.
+- **G5** GZ's integrand `e^{−πi(2x−c_b)²}` and the GK (56) / §3i form `e^{−2πix²}` are different functions of `b`
+  (ratio modulus 0.63 at the test point): the `A = 4` form is the mirror of §3i's `A = 2` form, as computed there.
+  Same knot, opposite orientation; the index does not see it.
+
+**What is now certified and what is not.** The pretzel's *total* index (`ζ = 1`) is certified from held blocks
+against our independent derivation. The `ζ`-graded `σ₁σ₁` entry — GGM's (21), the object Route C actually needs —
+is not yet: it requires the `u`-deformation of GZ's construction, in which the triple poles split into the three
+simple families of §3k and the weight-1 derivative becomes a finite difference at `±u/2`. The six validated
+families of §3k are the natural carriers of that deformation, and pinning the pairing to them is the next step.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
