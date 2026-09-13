@@ -1,10 +1,11 @@
 ---
 # qou-4w5b
-title: GitHub PR create AND update both 5xx intermittently on long bodies — retry; the create-vs-update split was wrong
+title: GitHub PR create, update AND merge all 5xx intermittently — and a 5xx does NOT mean the write failed; re-read before retrying
 status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T09:09:13Z
+updated_at: 2026-09-13T09:34:50Z
 updated_at: 2026-09-13T10:32:20Z
 ---
 
@@ -128,6 +129,58 @@ ASCII character) is now much weaker as a test: against an intermittent fault a
 single pass or fail decides nothing, and it would need repetition to say anything.
 
 
+## 🛑 SECOND correction, ~20 min later — a 5xx CAN accompany a mutation that SUCCEEDED
+
+The correction above says *"every failure here was a true no-op, verified by
+`list_pull_requests` / `pull_request_read`"*, and treats the AGENTS.md rule-8a
+partial-success warning as a hazard this bean had not itself observed. **It has
+now observed it.**
+
+    merge_pull_request(7281, merge_method="rebase")
+      -> PUT /repos/litlfred/qou/pulls/7281/merge : 502 Server Error
+
+    pull_request_read(7281)  ->  "merged": true,
+                                 "merged_at": "2026-09-13T09:33:21Z",
+                                 "merged_by": "litlfred"
+
+`origin/main` confirms it independently: `79b86e3747`, `0f91a772bb`, `f8ea82f3ac`
+landed as a clean 3-commit rebase, and
+`QOU/Mass/ProductionChainBondProduct.lean` is present at `origin/main`.
+
+### What this changes
+
+**The no-op property is NOT a property of this fault.** Rows 1-3 and 6 were
+genuine no-ops; this one was a full success reported as a server error. So the
+fault surface is now: *create*, *update* and *merge*, intermittently, with the
+error carrying **no information about whether the write happened**.
+
+**Retry-without-checking is therefore unsafe, not merely untidy.** On a merge a
+blind retry is harmless (the second call 405s on an already-merged PR). On
+`add_issue_comment` it would double-post. On `update_pull_request` it would
+re-apply a body — usually harmless, but "usually" is doing work there.
+
+### The rule, in its final form
+
+**Never infer from a 5xx that nothing happened. Re-read the resource, then decide.**
+That is one REST call, it was already the bean's advice for a different reason,
+and it is the only step here that is correct under both outcomes. It is what
+prevented a blind merge-retry on this very call.
+
+Running tally, one session, ~30 minutes, three endpoints:
+
+| # | call | body | HTTP | actually happened? |
+|---|---|---|---|---|
+| 1 | create | ~4.4 KB | 500 | no |
+| 2 | create | ~4.2 KB | 502 | no |
+| 3 | create | ~3.9 KB | 500 | no |
+| 4 | create | 95 B | 201 | yes |
+| 5 | update | ~4.2 KB | 200 | yes |
+| 6 | update | ~5.5 KB | 502 | **no** |
+| 7 | update | ~5.4 KB | 200 | yes |
+| 8 | **merge** | n/a | **502** | **YES** |
+
+Row 8 also kills the size story outright for anyone still entertaining it: a
+merge request carries no body at all.
 ---
 
 ## INDEPENDENT CONFIRMATION 2026-09-13, opening #7280 (session 01QdzbDV, ~09:0x)
