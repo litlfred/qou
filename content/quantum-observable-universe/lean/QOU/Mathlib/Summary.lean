@@ -96,21 +96,38 @@ theorem master_upstream_complete (R : Type u) [CommRing R]
     R 2 q)` is honestly available only *given* the class. `WedderburnIsomorphism
     R 2 q` carries a real instance (`wedderburn_n2`) and stays unconditional.
 
-    **`GBFiltrationCollapsesAtE2 R` does not, and this line used to say it
-    did.** Its `canonical` is `ss := trivial R` with
+    **`GBFiltrationCollapsesAtE2 R` does not carry a real instance either.**
+    Its only model is `canonicalTrivial R`, which is `ss := trivial R` with
     `collapses := trivial_collapses_at_E2 R` — the TRIVIAL spectral sequence,
-    as its own docstring at `QOU/Mathlib/SpectralSequence.lean` states:
-    *"the trivial spectral sequence vacuously discharges the §3b-cond
-    hypothesis"*. It is an unconditional `instance`, so
-    `[GBFiltrationCollapsesAtE2 R]` is free for every `R` and every downstream
-    result taking it as a hypothesis is unconditional on a collapse nobody
-    proved.
+    whose `differential _ _ := default` makes collapse hold by `rfl` at every
+    page, i.e. built into the model rather than proved of anything.
 
-    That is the same shape as the `IwahoriHeckeAlgebra` instance removed above
-    on 2026-08-23 for exactly this reason, and it is what
-    `lean-no-vacuous-instance-data` exists to catch. Recorded rather than fixed
-    here: demoting it changes every consumer, so it is a scoped change and not
-    a merge-time edit. -/
+    🛑 CORRECTION 2026-09-13 (bean `qou-g5sp`). This paragraph went on to say
+    *"It is an unconditional `instance`, so `[GBFiltrationCollapsesAtE2 R]` is
+    free for every `R` and every downstream result taking it as a hypothesis is
+    unconditional on a collapse nobody proved"*, and closed with *"Recorded
+    rather than fixed here: demoting it changes every consumer, so it is a
+    scoped change and not a merge-time edit."*
+
+    **It was demoted on 2026-08-24 (bean `qou-fngs`), and the fix landed.** The
+    declaration at `QOU/Mathlib/SpectralSequence.lean` is a `def`, not an
+    `instance`, and its docstring says so in terms — *"that is exactly why this
+    is a `def` and not an `instance` … it must now be supplied by hand, so a
+    reader of a downstream theorem can see whether the hypothesis was discharged
+    by a real filtration or by `PUnit`."* The proof term below is the
+    demonstration: the `GBFiltrationCollapsesAtE2` conjunct is discharged by
+    `⟨canonicalTrivial R⟩`, applied explicitly, while the
+    `WedderburnIsomorphism` conjunct beside it still uses `inferInstance`
+    because that one has a genuine instance.
+
+    So `[GBFiltrationCollapsesAtE2 R]` is **not** free, and a downstream theorem
+    taking it is a real §3b-cond conditional. The stale reading is worse than
+    merely out of date: it tells a reader that live conditional results are
+    unconditional-and-vacuous, which invites deleting or weakening them.
+
+    The comparison to the `IwahoriHeckeAlgebra` instance removed on 2026-08-23
+    stands and is now the whole story — both were self-assuming instances, both
+    were demoted, and this file records both. -/
 theorem inventory_check (R : Type u) [CommRing R] (q : R)
     [IwahoriHeckeAlgebra R 2 q] :
     -- Spectral sequence
