@@ -430,3 +430,21 @@ Two by-products worth keeping:
 **Second:** `weighted_diff_supported_on_multidim` formalises the cross-arc reconciliation with `qou-99qc`/#7295 — if every 1-dim block agrees on two words, the whole weighted-character difference sits on dimension `≠ 1`. The reconciliation no longer depends on `q₀`.
 
 **NOT claimed:** that the γγ bond is wrong, that the one-sidedness mechanism is understood (still measured, not proved), or anything about γγ word selection.
+
+
+---
+**2026-09-13 (later still) — MY FRAMING WAS WRONG AND A SIBLING CAUGHT IT. The measurements stand; what they MEAN is better than I said.**
+
+Five coordination comments landed on #7287 while I was working. One (from `qou-2ss0` / PR #7255, merged) corrects this bean's own framing, and I verified it against `origin/main` rather than taking the comment as primary.
+
+**What I said:** *"`PnBetweennessBlocksSignMixed` left two escapes — break averaging, or break affineness. The γγ family breaks BOTH and still fails."*
+
+**Both halves are wrong.** `InterfaceMonotone.between_iff_combo`: betweenness and convex-combination are the **same condition**, so averaging is not separately breakable. And `signMixed_impossible_of_monotone` holds for **any monotone law, affine or not** — its docstring: *"abandoning affineness, on its own, buys nothing: the construction is dead before any bond value is computed."* **The invariant is MONOTONICITY, not affineness.**
+
+**The correction makes my negative STRONGER, not weaker.** `μ(x) = tr_M(W·x)/tr_M(W)` is linear in `x`, so any *affine path* is monotone-or-antitone and blocked either way. `G³` is a **power, not a sum** — not an affine path — and the power family is independently measured non-monotone. So the γγ route occupies the one structurally-permitted door, and §1's result is a measurement of a **live candidate**, not a foregone conclusion.
+
+**And my own Lean supplies the cleaner reason.** Both hypotheses are about a *pair function* `f(d_pair)`. `secondOnly_eq_bondOf_iff` shows the γγ bond is **not a pair function at all**. It is outside the framework's domain — which is why "it breaks affineness" was the wrong thing to say.
+
+**A conflation to avoid**, flagged before anyone makes it: the sibling's measured non-monotone family is `μ(σ^m)` — powers of ONE generator, `μ > 1` at `m = 2,4,5,6,7,8` and NOT at `m = 3`. Mine is `μ((σ₂σ₃⁻¹)^m)` at `m = 3`, where I measure `μ > 1`. **Different objects**; there is no conflict, and the coincidence of the index `3` is exactly the kind of collision AGENTS.md's notation rules exist for.
+
+**Scope question answered** (from #7304/#7319, owner ruled SDP scope **(B) whole element**, not (A)): my Options 1/2 closure does **not** lean on PSD scope at all. `G³` is taken as GIVEN from `qou-ales` steps 6–7; I re-derive no selection. So the (A)→(B) ruling does not move anything here.
