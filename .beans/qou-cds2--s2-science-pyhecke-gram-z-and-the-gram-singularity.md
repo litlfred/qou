@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-08T07:45:36Z
+updated_at: 2026-09-13T16:48:58Z
 ---
 
 Parent: `qou-cdx1`. Predecessor: `qou-wgta` item 11. **Highest-risk item in the
@@ -919,3 +919,62 @@ identification easy to get backwards. Recorded as a question for whoever owns
 the next tranche, not as a finding.
 
 ## 2026-09-08: canonical ledger for the convention-C excision family is qou-wgta (the P0 excision tracker; owner-ruling milestone qou-cdx1, S2 science blocker qou-cds2); see docs/audits/2026-09-08-l2-1ppq-research-program-gaps.md §6.3 item 2 / §7.3 C3. Nine trackers, previously linked only cds2↔8iru and htsi→t9r1, now all point there.
+
+
+## 2026-09-13 — MEASURED: confinement-operator-selection's witness is still C/muon, and its own downgrade guard is why
+
+Found while screening the raw-float64 drain queue (194 dirty fields, rank 15).
+**Not drained — this bean and `qou-8iru` both name this producer, so it is out
+of scope for an idle pass.** Recording the measurement so the next pass does not
+re-derive it.
+
+**The producer is already correct on both counts; only the witness is behind.**
+Live: `q_parameter.Q = 1.1099785827513808` (proton), `pyhecke.gram.z =
+0.6126880371464652` (convention D). The producer runs clean in **0.28 s** and
+its own self-check passes (max |diff| 4.6e-5 against its hardcoded reference).
+
+Committed witness vs a live in-memory run of the unmodified producer:
+
+| field | committed | live | rel |
+|---|---|---|---|
+| `q0` | 1.1099785955541805 (**CODATA-2018 muon**) | 1.1099785827513808 (**proton**) | 1.15e-8 |
+| `z` | 0.4993203340335982 (**convention C**) | 0.6126880371464652 (**D**) | **22.70 %** |
+| `HA` | 0.20906032198987945 | 0.20906029879563937 | 1.11e-7 |
+| `E_cross` | 0.10453016099493972 | 0.10453014939781968 | 1.11e-7 |
+| `gram_det` | **-0.1892052530713217** | **3.998399968397726e-17** | — |
+
+That `gram_det` is this bean's own `det 3.998e-17`, reproduced independently —
+the committed witness is carrying the pre-singularity C value. `max|G_live -
+G_comm| = 0.1722` (this bean's 0.172) and `max|Ginv_live - Ginv_comm| = 2.0965`.
+The witness also predates the `gram_inverse_kind: "moore-penrose-pseudoinverse"`
+field the producer now emits, so its `gram_inverse` (36 fields) is a true inverse
+of a matrix that is exactly singular — the `qou-cnbm` failure mode, one producer
+over and still live.
+
+## The unblocker is `qou-lpio`, and neither bean says so
+
+**The producer refuses to write, by design.** Re-running prints:
+
+    Witness NOT written -- refusing a downgrade.
+      the committed witness holds 12 key(s) this producer cannot emit:
+        active_set, commitSha, dual_obj, dual_obj_status, duality_gap,
+        duality_gap_status, engine, primal_obj, scriptFile, y0_star,
+        y0_star_status, y_star
+      (9 of those are None/STUB placeholders, 3 are real provenance.)
+
+Those 9 STUB placeholders are exactly why `confinement-operator-selection` sits
+on `qou-lpio`'s **five all-empty** null-dual list. So the two beans are coupled:
+**`qou-lpio`'s "drop the names" option — which that bean already measured SAFE
+(its drop-safety scan found nothing reading a dual field from this witness; the
+three apparent hits read their duals from `lp-confinement-nf-forcing`) — is the
+thing that would let this witness be refreshed to D at all.** Until then the
+guard is correct to fire and the witness cannot self-heal.
+
+`QOU_ALLOW_WITNESS_DOWNGRADE=1` overrides the guard, but that would silently
+drop the 3 real provenance keys as well as the 9 stubs. Not done.
+
+**Consumer count for whoever scopes the refresh: ~20 content blocks**, including
+`appendix-mass-binding-algorithms/mba-step10-confinement-sdp`,
+`nuclear-interactions/confinement-lp`, `confinement-operator-selection-proof`,
+`predicted-spectra/meson-to-proton-via-borromean`, and the definition index.
+Every one of them reads C/muon numbers today.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:49:12Z
-updated_at: 2026-08-24T14:50:11Z
+updated_at: 2026-09-13T16:49:23Z
 ---
 
 
@@ -75,3 +75,42 @@ is unwanted.
 - The H1 `hollow-verification` offence in the same audit (~484) — witnesses
   claiming success over an empty `assertions` array. Much larger, separately
   owned.
+
+
+## 2026-09-13 — this list is BLOCKING a convention-D refresh, which the "drains on its own" framing does not anticipate
+
+Found while screening the raw-float64 queue. **Count re-check requested by this
+bean's own "record the count and the date each time" instruction is NOT done
+here** — I measured one member, not the population.
+
+`confinement-operator-selection` (an all-empty member) does not merely *carry*
+nine hollow names: those names are what **stops its producer from ever
+regenerating it.** The producer emits a downgrade guard —
+
+    Witness NOT written -- refusing a downgrade.
+      the committed witness holds 12 key(s) this producer cannot emit ...
+      (9 of those are None/STUB placeholders, 3 are real provenance.)
+
+— and it fires on exactly the nine. The witness is consequently frozen at
+**convention C, CODATA-2018 muon** values (`z = 0.4993203340335982`,
+`q0 = 1.1099785955541805`, `gram_det = -0.1892`) while the producer's live
+imports are **convention D at the proton pin** (`z = 0.6126880371464652`,
+`q0 = 1.1099785827513808`, `gram_det = 3.998e-17`, i.e. singular). `z` is
+**22.70 %** off; `max|ΔG| = 0.1722`; `max|ΔG⁻¹| = 2.0965`. ~20 content blocks
+read those C/muon numbers, including `mba-step10-confinement-sdp`.
+
+**Consequence for this bean's decision.** The "population drains on its own"
+hypothesis assumes ordinary churn regenerates these witnesses. For this member
+the causation runs the other way: the hollow names are why churn *cannot* reach
+it. It will not drain on its own, however long it is left.
+
+**And that makes the already-measured-safe option load-bearing.** This bean
+records that dropping the names is safe here (the drop-safety scan finds nothing
+reading a dual field from this witness; the three apparent hits read
+`lp-confinement-nf-forcing` instead). Dropping them is therefore not just tidying
+— it is the unblocker for the convention-D refresh tracked under `qou-cds2` /
+`qou-8iru`. Cross-referenced there.
+
+**Not acted on.** The refresh itself moves ~20 content blocks from C to D and
+zeroes a published Gram determinant; that is `qou-cds2` scope and an owner call,
+not an idle drain.
