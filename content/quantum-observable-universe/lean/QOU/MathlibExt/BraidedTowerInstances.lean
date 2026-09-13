@@ -55,20 +55,44 @@ Two limits, both inherited from the carriers and neither repaired here.
 * **The Hecke trace is not faithful.** `HeckeTowerWitness`'s trace collapses
   every generator onto the single generator of the rank-2 algebra and composes
   with its Ocneanu trace, so `disjointBlock_heckeTower` is a statement about a
-  coarse functional, **not** about the Ocneanu trace of `H_∞(q)`. Constructing
-  that trace is Jones' existence theorem and remains open (bean `qou-g8i1`).
-  This does not weaken `sandwichReduces_all` itself, which uses no trace field —
-  it bounds what the *composition* delivers.
+  coarse functional, **not** about the Ocneanu trace of `H_∞(q)`. This does not
+  weaken `sandwichReduces_all` itself, which uses no trace field — it bounds
+  what the *composition* delivers.
+
+  🛑 **The gap is a BRIDGE, not Jones' theorem — corrected 2026-09-13.** The
+  first version of this paragraph said *"constructing that trace is Jones'
+  existence theorem and remains open (bean `qou-g8i1`)"*. **Both halves are
+  wrong.** Jones' theorem is *proved in this corpus, with uniqueness*, both
+  sorry-free on `main`: `SchurWeyl.MarkovTraceInstance` builds `wtrace` with the
+  trace property, normalisation, Markov stabilisation **and** tower
+  compatibility (`wtrace_incl`) at `z = q³/(q²+1)`, plus `eq_wtrace_of_markov`;
+  `SchurWeyl.MarkovTraceUnique.markovTrace_unique` gives uniqueness. What is
+  missing is that all of it lives in `HeckeCoset.MarkovTraceFamily`, a
+  **different** Markov-trace abstraction, and nothing bridges it to
+  `OcneanuTrace.MarkovTrace` — which is the structure this file's theorems
+  consume. And `qou-g8i1` is not that item at all: it is the `(z+d)` bond rule,
+  and it is `completed`. The live carrier is `qou-0fmb`'s re-scope of
+  2026-09-12, which names `qou-ejde` (`heckeIncl` injective) as the keystone
+  that discharges it.
 * **Strict growth is proved only at the bottom.** `twH_zero_lt_one` gives
   `H 0 < H 1`; `H n < H (n+1)` for `n ≥ 1` does not follow from the collapse
   map, which sends every generator to the same element. The symmetric-group
   instance does grow at every level (`t_not_mem_shiftedUpTo`) but has `h = 0`.
   **No single carrier yet has both `h ≠ 0` and growth at every level.**
 
+  The bean is **`qou-p8yg`**, not `qou-uoal` (corrected 2026-09-13: `qou-uoal`
+  is `completed`, and it is the `≤ n!` *upper* half). `qou-p8yg` records that
+  `H 1 < H 2` is a **wiring job rather than a build** — the rank-6 separator
+  already exists sorry-free (`SchurWeyl.HeckeDim3Dim.finrank_hecke3`,
+  `sixBasis`, `HeckeDim3.braid3`) — while general `n` needs the `(n+1)!`
+  lower bound. It also records the *negative* that closes the cheap route:
+  `scalar_tail_forces_central` excludes the whole tail-to-scalars family.
+
 **Nothing here derives the bond product.** That reading of the atom word
 remains measured, per `DisjointBlockTraceLaw`'s own statement of scope.
 
--- Ref: [manuscript] beans qou-301d / qou-cins / qou-fq1i / qou-g8i1;
+-- Ref: [manuscript] beans qou-301d / qou-cins / qou-fq1i / qou-0fmb /
+--      qou-p8yg / qou-ejde;
 --      Jones, *Hecke algebra representations of braid groups and link
 --      polynomials*, Ann. of Math. 126 (1987).
 -/
