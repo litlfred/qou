@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-26T23:21:11Z
-updated_at: 2026-08-30T04:50:37Z
+updated_at: 2026-09-13T14:15:00Z
 ---
 
 ## What was measured
@@ -483,3 +483,81 @@ would mean re-litigating the c_5 question the task ruled settled.
   * The headline's original magnitude — unrecoverable, now superseded.
 
 Everything here is C-frame.
+
+## 2026-09-13 — THE OWNER-FLAG ABOVE IS STALE, and it points the wrong way
+
+Re-ran `computations/qbeta/qbeta_ck_c5_slot_and_size_mismatch_probe.py` on
+`main` `1660c49f2f`: **4/4, exit 0, and it reproduces its committed witness
+BYTE-IDENTICALLY** (clean tree after the run), so this is a current reading,
+not a stale one.
+
+### What the flag says, and what is true
+
+The 2026-08-31 entry's **"FLAGGED FOR THE OWNER, not changed: the
+non-monotonicity claim"** reports that with the live `c_5 = -(b^2+1/2)` the
+column is **strictly decreasing at both pins**, and concludes that the
+N=4 -> N=5 non-monotonicity — which AGENTS.md's `c_k` banner cites as *the
+experimental signature that `c_k>=3` are q0-dependent near-matches* — "does
+not survive that supersession".
+
+**The probe names that conclusion and contradicts it, in its own assertion
+text:** *"the OPPOSITE of what my PR #6424 concluded, which read the SIGNED
+column"*. Measured:
+
+    N      |resid| live        |resid| superseded
+    3       2.6662082e-6       2.6662082e-6
+    4          6.1698258          6.1698258
+    5          6.2259747           5.555129
+
+So by **magnitude** the live family INCREASES across N=4 -> N=5 (signature
+HOLDS) and the superseded one decreases (does not). #6424 read the signed
+column, where `-6.1698 -> -6.2260` is *decreasing*, and that is the whole
+disagreement.
+
+### AGENTS.md has already been corrected, in that direction
+
+The banner now carries two retractions — the original "a convergent series
+with exact `c_k` would be monotone" argument (unsound as a general
+statement) and its own replacement size-mismatch argument (computed on the
+superseded `c_5`; `|c_5 u^5| = 0.577` ppb tracks `+13.71`, not `-1.2527`).
+It now rests on the **magnitude** crossing. So the flag asks the owner to
+consider removing a claim that has since been re-established on a different
+and better argument.
+
+**The flag should not be actioned as written.** Leaving it is what risks the
+damage: an owner reading this bean cold is told the signature is gone.
+
+### NOT explained, and I am not asserting it is
+
+Signed-vs-magnitude accounts for the **direction** flip. It does **not**
+account for the **magnitudes**: this bean's table gives proton live/live
+N=4 `37.763639` / N=5 `37.70749` ppb, while the probe gives `6.1698` /
+`6.2260`, with an N=3 of `2.67e-6` against this bean's `43.72672`. Those are
+different quantities, not the same column re-signed. Which base each uses is
+**undetermined here**; do not read the two tables as comparable rows.
+
+### The caveat that survives either way
+
+The live crossing is **0.9101 %**, computed with `c_3` hardcoded at the
+recorded proton extraction and at the proton pin only. The probe says so
+itself. A full settlement re-extracts `c_3` at both pins. So "the signature
+holds" is a thin result, not a robust one.
+
+### Unchanged from the previous entry
+
+  * `qbeta-ladder-convention-fee.witness.json` still holds `7.336484` against
+    a live `7.133937`. Not refreshed; the movement is main's.
+  * The 7.133 ppb epoch offset's cause.
+  * The headline's original magnitude — unrecoverable, superseded.
+
+Everything here is C-frame.
+
+### Note on why this was worth a pass
+
+I recommended this bean to the owner twice as *"the ladder block claiming
+-6.6 ppb where the implementation gives +7.34 ppb, opposite sign"* — which is
+the TITLE. The body records that settled on 2026-08-31 (sign POSITIVE,
+headline corrected to `+0.0071` ppm). **I recommended it on its title without
+reading its body**, which is the same defect as quoting a stale figure: the
+title has not been updated in three revisions of the finding underneath it.
+
