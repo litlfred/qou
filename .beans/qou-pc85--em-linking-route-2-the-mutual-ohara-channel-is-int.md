@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T09:22:10Z
-updated_at: 2026-09-13T10:35:03Z
+updated_at: 2026-09-13T11:12:39Z
 ---
 
 ## LANDED (PR #7284) — the prune, and it is sorry-free
@@ -97,3 +97,47 @@ lacks is a DISCRIMINATING OBSERVABLE: #7080 retired kappa(A), and the three
 gates are pass/fail admissibility tests that many candidates would also pass —
 clearing them is not evidence for route (2) over any other orientation-blind
 candidate. Naming an observable that separates candidates is the open item.
+
+
+## MEASURE GAP FOUND AND CLOSED (push c73206b124, PR #7284)
+
+Found while answering the author's question about route 2's SHAPE, not by a
+detector. The gap was in work already pushed on this bean.
+
+THE GAP. Sections 1-5 stated O2 (zero-mean clearance) against the FLAT
+parameter measure ds dt. The O'Hara integrand the mutual term is taken from
+carries ARCLENGTH weights |gamma'(s)||gamma'(t)|. Those agree only under
+constant-speed parametrisation, and LinkEmbedding carries no derivative data
+-- nothing in the structure supplies it. "Zero mean" is a statement ABOUT A
+MEASURE, so section 5's clearance was silently assuming a parametrisation the
+carrier does not have. Not cosmetic.
+
+THE REPAIR, and the first instinct was WRONG. I proposed writing the
+constant-speed condition into a docstring and scoping section 5 to it. That
+makes the assumption visible without making it go away -- and a visible
+assumption gets quoted as if established. Removed it instead.
+
+Section 6 restates O2 against an ARBITRARY density w:
+  weightedPairMean  = (int f*w) / (int w)
+  zeroMeanMutualKernelW_integral_zero : int (f - mean)*w = 0
+    hyps: IntervalIntegrable w, IntervalIntegrable (f*w), (int w) != 0
+  weightedPairMean_one : w = 1 recovers section 5 exactly
+
+w is a bare function, so integrability AND non-degeneracy are explicit
+hypotheses -- they cannot be derived from anything LinkEmbedding holds, and
+assuming otherwise is what produced the gap. Arclength is now one instance of
+w, not a special case that had to hold.
+
+NOT A NEW PARAMETER. The subtraction constant is still FORCED -- it is the
+kernel's own w-mean, same shape as c_0 = <coth>_M in #7080. The measure the
+mean is taken against changed; nothing became free. Anti-fit position of the
+arc untouched.
+
+VERIFIED: lean -DautoImplicit=false -s 65536 exit 0 against the real import
+cone (restored cache + hardlinked shadow, no lake build). #print axioms on ALL
+NINE decls in the file: [propext, Classical.choice, Quot.sound]. No sorryAx.
+
+BEAN STAYS OPEN. The three gates (even in mubar_123, nonzero at lk = 0, O2)
+are ADMISSIBILITY tests -- many candidate kernels pass all three. Route 2
+still needs a DISCRIMINATING observable. That is the author's call and is
+deliberately not chosen here.
