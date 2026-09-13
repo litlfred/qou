@@ -12,7 +12,8 @@
     "papers/quantum-observable-universe/blocks/rem-kashaev-volume-density",
     "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture",
     "papers/quantum-observable-universe/blocks/def-surreal-blowup-calculus",
-    "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation"
+    "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation",
+    "papers/quantum-observable-universe/blocks/prop-one-loop-prefactor-provenance"
   ],
   "cites": [
     "references/kashaev1997",
@@ -31,7 +32,9 @@
     "hyperbolic-volume",
     "standard-part",
     "open-problem",
-    "reformulation"
+    "reformulation",
+    "omega-grade",
+    "asymptotics"
   ],
   "leanRef": "qou:QOU.AppendixSurreals.KashaevSurreal",
   "text": "kashaev-surreal.md",
