@@ -36,15 +36,35 @@ class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
   claim_i_direct_verification_wenzl : 10000 ≤ wenzl_speedup
   /-- Manuscript sub-claim (ii) — q-MN speedup `≥ 10²×`. -/
   claim_ii_mass_formula_compute : 100 ≤ qmn_speedup
-  /-- Manuscript sub-claim (iii) — Atom-knot identification path for
-      ⁶Li, ⁷Li via enumerating hyperbolic knots and comparing
-      `tr_M(β_K)` against the AME binding × hyperbolic-volume ratio.
-      Stays abstract — requires the AME binding table and knot-volume
-      database. -/
-  claim_iii_atom_knot_identification : Prop
-  /-- Witness that the atom-knot-identification sub-claim holds (§3b-cond;
-      the predicate is conjectural, an instance supplies the proof). -/
-  claim_iii_atom_knot_identification_holds : claim_iii_atom_knot_identification
+  -- 🛑 SUB-CLAIM (iii) REMOVED 2026-09-07, not encoded: it is a
+  -- knot-selection route, and those are ruled out.
+  --
+  -- It read: "Atom-knot identification path for ⁶Li, ⁷Li via enumerating
+  -- hyperbolic knots and comparing `tr_M(β_K)` against the AME binding ×
+  -- hyperbolic-volume ratio", carried as
+  --
+  --     claim_iii_atom_knot_identification : Prop
+  --     claim_iii_atom_knot_identification_holds : claim_iii_atom_knot_identification
+  --
+  -- a field typed with the *universe* `Prop` plus its own witness, so the
+  -- instance chose the proposition and `⟨True, trivial⟩` discharged it.
+  --
+  -- The obvious repair — carry the census and the AME ratio as fields and
+  -- state the match — is the wrong one here.  Owner ruling 2026-09-05, "NO
+  -- knot-selection routes allowed"
+  -- (docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md):
+  -- choosing a knot from a census so that its volume reproduces a measured
+  -- binding is fitting by selection.  No continuous parameter is tuned and
+  -- it is still a fit.  ⁶Li and ⁷Li are named in the sub-claim and are two
+  -- of the three atoms the census route left as GAP rows precisely because
+  -- "no census knot/link with Vol ≈ B_AME/m_e yet found" — the gap is the
+  -- proof that the selection was made against the data.
+  --
+  -- Encoding it would formalise a retired route as a live class field, so
+  -- it is dropped from the class and from the conclusion of
+  -- `wenzl_qmn_synergy` below.  The five surviving sub-claims are the
+  -- speedup bounds and the two trace identities, none of which selects
+  -- anything.  Nothing else in this file changes and no number moves.
   /-- Manuscript boxed identity — Combined speedup is the product of
       orthogonal speedups, bounded below by `10⁶×`. -/
   claim_combined_speedup_bound :
@@ -105,13 +125,12 @@ this drops the per-isotope compute time from
 def wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
     10000 ≤ ctx.wenzl_speedup ∧
     100 ≤ ctx.qmn_speedup ∧
-    ctx.claim_iii_atom_knot_identification ∧
     (ctx.combined_speedup = ctx.wenzl_speedup * ctx.qmn_speedup ∧
      1000000 ≤ ctx.combined_speedup) ∧
     (haveI := ctx.ringR; ctx.trM_Tw = ctx.z ^ ctx.lengthW) ∧
     (haveI := ctx.ringR; ctx.wenzlSum = ctx.z ^ ctx.lengthW) :=
   ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
-   ctx.claim_iii_atom_knot_identification_holds, ctx.claim_combined_speedup_bound,
+   ctx.claim_combined_speedup_bound,
    ctx.claim_iv_canonical_trace_power, ctx.claim_v_wenzl_qmn_cross_check⟩
 
 end QOU.BraidsAndKnots

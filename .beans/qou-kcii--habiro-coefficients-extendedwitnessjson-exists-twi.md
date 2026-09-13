@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-09-07T11:47:16Z
+updated_at: 2026-09-07T17:39:31Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -447,3 +447,20 @@ question and, per the note above, the owning arc's call rather than a
 bystander's. Recording only that the duplication has a measurable cost in a
 second place, and that any backlog figure quoted from the baseline is inflated
 by the duplicated stems.
+
+
+---
+
+## A SECOND, larger double-count in the same baseline — and it is not the one recorded above (2026-09-07)
+
+This bean records that duplicated witness stems are **double-counted** in `raw-float64-baseline.json` because the baseline keys by path and both copies are listed. Measured today, that is **18 stems / 2,374 fields** — correct as stated.
+
+There is a second effect it does not cover, and it is worse in kind. For **21 dirty entries / 1,550 fields**, the baseline lists **only one** path, and that path is the one **no producer writes to** — a pre-refactor copy left at the `computations/` root when the producer moved into `probes/` (or `substrate/`, or `alpha/`). Those entries are not merely counted twice; they are **undrainable**, because re-running the producer regenerates the sibling and never touches them.
+
+**633 of the 1,550 are already fixed at the live path.** So the backlog charges the corpus for work that is finished.
+
+Two of the orphans are **cited by path from the paper** while their live sibling is at 0 dirty — the mass-binding-algorithms appendix (`mba-step02-gs-reduction.ts:13`) points at the 31-dirty `hecke-core-symbolic-migration.witness.json` orphan, and two Lean files point at the 216-dirty `pentagon-to-borromean-h4-probe.witness.json` orphan.
+
+Full table, method, and the disposition options: bean `qou-baye`.
+
+**Consequence for anyone quoting a remaining-backlog figure off this baseline:** it is inflated by both effects, not one.
