@@ -1,11 +1,11 @@
 ---
 # qou-ix0x
 title: The binding's divergent series is G, its Borel-Stokes plane is EMPTY, and the untried summation is the Habiro/cyclotomic one
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:46:20Z
-updated_at: 2026-09-07T08:48:33Z
+updated_at: 2026-09-13T08:26:53Z
 ---
 
 Owner pointer, 2026-09-07: *"On A_infty there was a divergent series..."*, against the standing target *"ultimate target is to close gap in binding"*.
@@ -345,3 +345,29 @@ Three strands per nucleon is exactly where a three-body channel lives. So the ro
 **Scope discipline for whoever writes this up:** the grep found **no named proved invariant** forbidding a spin-dependent weight in a triple channel. The four existing spin refutations are a 2-body magnitude degeneracy (`InterfaceScalar.separable_interface_degenerate` — different arity, and it constrains magnitude degeneracy, **not** a sign under component swap), a `Δ_λ` magnitude failure (Pauli/Wigner-SU(4) plethysm, zero free parameters, deuteron −92.69 %), an SU(4) row bound (correctly scope-(b), and **vacuous for `n ≤ 4`**), and a dimension-count coincidence. **Any refutation written here is scope-(a).** Do not write (b).
 
 **One library note.** `arxiv-1906.12122v2` (Hammer–König–van Kolck) is held, registered and already cited by `T3WritheVsDeltaLambdaSign.lean` as the `τ₁·τ₂` exchange-symmetry template — so the literature side of this is not a gap. And Moffatt–Ricca is already used, in `fluid-dynamics/helicity-conservation.lean`, as **hypotheses** (`hCWF`, `hSelf`, cited not proved) and in the **fluid** chapter rather than the nuclear one.
+
+
+---
+**2026-09-13 — OPTION 1 RE-AIMED. The bean's "form of `w3`" question has been answered on `main` while this bean sat at `todo`, and the live frontier is now ONE hypothesis, not the Habiro route.**
+
+Owner instruction this session: *"work qou-ix0x — push option 1 as far as possible. then option 2"*, against the `qou-brng` framing of 2026-09-13 (Option 1 = a further derived source of per-pair variation inside the bond/count channel; Option 2 = the channel is not where `b₃` lives).
+
+**What landed on `main` since this bean's last entry (2026-09-11), none of it recorded here.** The 2026-09-12 Ursell arc turns the `b₃` sign into an exact algebraic condition:
+
+- `QOU.MassTheory.B3SignOneRoot.b3corpus_chain` — `b3corpus f01 1 f12 = −((f01−1)(f12−1))` exactly. So **`b₃ > 0` iff EXACTLY ONE of the two chain bonds exceeds 1.** Not "a bond above 1" — the AGENTS.md bullet and the Ursell audit §4 both said that and it is necessary-not-sufficient; flipping *both* bonds leaves `b₃` byte-identical.
+- `PnBetweennessBlocksSignMixed` (`qou-q8vl`) reduces the escape to **two hypotheses**: the pn letter's AVERAGING, and AFFINENESS of the interface law `μ = z + d`.
+- The required pattern is the two-nucleon spectrum: unlike pair binds, like pairs do not.
+
+**Option 1's live route is the γγ ruling, and it is DERIVED, not chosen.** The owner ruled 2026-09-08 (`qou-ales`) that every canonical braid word is selected by γγ pair-production + the confinement SDP. `QOU/Mass/GammaGammaEscapesSingleCrossing.lean` (sorry-free, on `main`) then establishes: no non-empty γγ word is a single crossing (`length_even`), the writhe/`T₃` grading is identically trivial on one (`writhe_eq_zero`), and step 3 MEASURED the γγ-selected bond `G³ = (σ₂σ₃⁻¹)³` **unbinding the diproton** — `tr_atom/tr_free = 1.001058 > 1`, `B_pp = −4.47` keV.
+
+That is `μ_pp > 1` by derivation, which is the like-pair half of the required pattern, and it breaks AFFINENESS (a length-6 word is not `σ + d·1`). `qou-q8vl`'s open item is literally *"a THIRD bond family that supplies the sign-mixed pattern by derivation"*; `qou-ales` step 8's own not-claimed list names *"the dineutron side"*. **Neither arc has connected to the other.** That junction is this bean's Option-1 push.
+
+**THE DECISIVE MEASUREMENT, and I state the failure mode BEFORE running it so the result cannot be read as a fit.** Under γγ the bond WORD is the same `G³` for every pair; only the nucleon blocks `W_free(Z,N)` differ. Step 3 records that the template ratio equals `z_D` *"by connected-sum multiplicativity"*, which suggests `μ = tr(W_free·bond)/tr(W_free)` is **independent of `W_free`**. If it is:
+
+> a pair-type-INDEPENDENT bond word gives `μ_pp = μ_pn = μ_nn`, so the two chain bonds are equal, so they are never on opposite sides of 1, so `b₃ < 0` — and **Option 1 closes structurally**, not numerically.
+
+The γγ route then survives only if the SELECTED WORD is itself pair-dependent (the deuteron SDP choosing some `G^m`, m ≠ 3). Step 3 solved the diproton only.
+
+So the measurement is: compute `μ = tr_M(W_free·bond)/tr_M(W_free)` at `(Z,N) ∈ {(2,0),(1,1),(0,2)}` for the template `σ₂` bond and for `G³`, and read off whether it depends on `(Z,N)`. Nothing is tuned: the word is fixed by a ruling dated three days before this session and made for reasons unrelated to `b₃`; the sign condition is Lean-proved. **A negative here is the expected outcome and is the result** — it would convert `qou-q8vl`'s two-hypothesis disjunction into a one-line structural statement about what a bond family must do.
+
+Branch `claude/b3-affineness-is-the-last-hypothesis-2026-09-13`.
