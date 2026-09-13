@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T10:32:50.886375+00:00",
-  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
+  "computedAt": "2026-09-13T12:47:23.570899+00:00",
+  "commitSha": "3d7d7a89f6e0e727629379b1e98548dc5175e795",
   "assertions": [
     {
       "name": "approach_A_proton_sum_is_negative",
@@ -30,10 +30,10 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 8,
   "computation": "phase2-m-e-hecke-diagnostic",
   "scriptFile": "phase2_proton_m_e_hecke_diagnostic.py",
-  "scriptHash": "9ca3cd1fa542",
+  "scriptHash": "1c1640597dc6",
   "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -129,16 +129,16 @@
     },
     "approach_B_categorical_ratio": {
       "proton": {
-        "tr_M_q0": "1.1457596924573008",
-        "categorical_ratio_to_m_e_Hecke": "1.870053963830540526270763405673350838881574881052381464088991575050446"
+        "tr_M_q0": "0.629328402202921918165345746778485927600219400634359762811677",
+        "categorical_ratio_to_m_e_Hecke": "1.027159604966268874929718860824830248772989077495410954128589174756874"
       },
       "neutron": {
-        "tr_M_q0": "0.9877436881158096",
-        "categorical_ratio_to_m_e_Hecke": "1.612147827654885259025967677492410898086496450030210110647572743532676"
+        "tr_M_q0": "0.475133517155682212506090232675005799558407634708751231268857",
+        "categorical_ratio_to_m_e_Hecke": "0.7754901162565050336024463165504194114725410122321197992808001567315377"
       },
       "deuteron": {
-        "tr_M_q0": "0.5751722439177719",
-        "categorical_ratio_to_m_e_Hecke": "0.9387685233688917807848916400173231069709468744323689459412275316607346"
+        "tr_M_q0": "0.151968339204231607592665697751066141271240964655261151310301",
+        "categorical_ratio_to_m_e_Hecke": "0.2480354274779206049724663456710672089434064647093733268777893823704278"
       }
     },
     "approach_C_placeholder_anomaly": {

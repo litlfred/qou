@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T10:42:37Z
+updated_at: 2026-09-13T11:59:48Z
 ---
 
 
@@ -859,5 +859,182 @@ half that was missing (βs cannot spread); what is not proved is that a mean-gap
 configuration must carry `P ≳ ℓ·E₂`. Note #7093 already refuted the obvious route — the
 uniform/even gap multiset is NOT the pair-term minimiser at fixed (ℓ,W) — so this needs a
 different argument, not a Jensen step.
+
+**Do not close this bean.**
+
+
+### 2026-09-13 — the Θ(√n) COEFFICIENT IS IDENTIFIED: `A√2`. I withdraw my own #7286 verdict (PR #7294)
+
+**Claim.** `lim M_n/√n = A√2 = 5.09594565`, and the bracket `[A√2, C√2]` — whose whole
+1.71× width #7286 showed to be the single discarded term `E₂` — **collapses to its
+lower end**.
+
+**Evidence.** Three results, two Lean and one measured:
+
+1. **Rigidity, exact** (`HookSumCompletedSquare.lean`, #7294, 3 decls, 0 sorry).
+   Completing the square in the β-coordinates:
+   `8H = Σᵢ(2βᵢ − aᵢ)² − Σᵢaᵢ²`, `aᵢ = 2L−3−4i`. The hook sum is a **positive-definite
+   quadratic**. `hookDev_sub_succ`: `dᵢ − dᵢ₊₁ = 2(βᵢ − βᵢ₊₁) − 4`, so the deviations
+   are constant **exactly** on the staircase. Cauchy–Schwarz then gives a parameter-free
+   floor `(Σdᵢ)² − L·Σaᵢ² ≤ 8L·Σ_c h(c)`, tight (zero gap vs `H_min` at `L=k`).
+   ⟹ `ℓ = √(2n)(1 + o(1))`.
+2. **The excess is BOUNDED** (`rev_excess_scaling_exponent_probe.py`, 11 points to
+   n = 3916, 2284 s, 6/6). Excess 2.3764 → 2.4393 over n = 630 → 3916; the last step is
+   **+7e-5** across 1.58× in n. Slopes collapse 0.198 → 0.045 → 0.012 → 0.0014 →
+   **6.2e-5**; tail α = 0.0043, span-fit α = 0.0499, against the **0.5** a coefficient
+   change requires. Converging to ≈ 2.43930.
+3. ⟹ `M_n = A√(2n) + O(1)`.
+
+**WITHDRAWN — my own verdict in #7286.** That PR said *"A√2 is the staircase's rate,
+not the optimum's, and the coefficient is strictly above it"*. The staircase IS beaten
+at its own row count (reconfirmed 11/11 here) — but that inference needs the excess to
+be `Θ(√n)`, and **#7286 never checked it**. A bounded difference of two `Θ(√n)`
+quantities is subleading and changes no coefficient.
+
+**The maximiser's SHAPE** (`rev_optimal_gap_profile_probe.py`, 5/5): the staircase with
+a **top block of 3-gaps**, a bulk of 2s, a **matching bottom block of 1-gaps**, and
+**no gap above 3**. 3-count = 1-count at every n. Deviating fraction falls 0.500 →
+0.216; deviation count grows with exponent **0.2422 ≈ n^{1/4}**.
+
+**A closed-form model of mine, refuted before it reached a PR body.** Widen one gap to
+`G` at fixed `(n,ℓ)`: cost `ln q₀(G−2)²/2`, saving `Σ_{j≥1}[ε(2j) − ε(2j+G−2)]`, peaking
+at **G = 5, net +0.9297**. No measured optimum uses a gap above 3. It holds `ℓ` fixed,
+forcing the compensating shift uniformly across rows; the real optimum moves `ℓ` and pays
+with explicit 1-gaps.
+
+**Two caveats, neither moving the conclusion.** (a) The ℓ-cap `[k, k+5]` binds at
+n = 78/136/210 — those three are censored downward; every point from n = 300 up is
+interior, and the exponent is set by the tail. (b) One-sidedness: a heuristic search that
+under-performs at large n depresses the excess and biases α **downward, toward this very
+conclusion**. `R1` guards the evaluator (5/5 vs #7286's independent search), not search
+quality at n the earlier probes never reached.
+
+**STILL OPEN — and it is now the only thing between this and a theorem:** the
+**pair-term lower bound**, that a mean-gap-2 configuration must carry `P ≳ ℓ·E₂`. The
+target is far smaller than it was: gaps within 1 of 2, bounded deviation per position,
+sparse. #7093 refuted the Jensen route (the uniform/even multiset is not the pair
+minimiser at fixed (ℓ,W)), so it needs a different argument.
+
+**Do not close this bean.**
+
+---
+
+## 2026-09-13 — caveat (a) above is WITHDRAWN: ℓ is padding, not a search dimension
+
+**The claim.** Caveat (a) three paragraphs up — *"the ℓ-cap `[k, k+5]` binds at
+n = 78/136/210 — those three are censored downward"* — is **wrong, and it was mine.**
+It treats ℓ as a search dimension. Above the maximiser's own row count it is not one:
+ℓ is the **padding** of the β-frame, and the objective is provably blind to it.
+
+**The theorem, which came first.**
+[`QOU.BraidKnot.HookSum.betaSide_eq_hookSum`](content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean)
+— sorry-free, `lean`-direct exit 0 with `-DautoImplicit=false -s 65536`, shadow-verified
+against current library source, axioms `[propext, Classical.choice, Quot.sound]`. For any
+`g` into an additive commutative group and any padding `L ≥ ℓ(μ)`,
+
+$$\sum_{i<L}\ \sum_{m\le\beta_i} g(m)\ -\ \sum_{i<j<L} g(\beta_i-\beta_j)\ =\ \sum_{c\in\mu} g(h(c)).$$
+
+The right-hand side is indexed by **cells** and carries no `L` at all. At `g = ε` the
+left-hand side *is* this arc's β-side; `H = Σ_c h(c)` is likewise cell-indexed; so `V` is
+padding-invariant. Two lines (`rw`, `abel`) from **(I')**, which has been in that file
+since #7282 — I read past it four times. Companion `betaSide_padding_invariant` states the
+same over a mere monoid, subtraction-free.
+
+**Measured, and the decisive test is the precision one** — a residual that is arithmetic
+shrinks with `dps`, a real dependence sits still
+([`rev_l_cap_is_padding_invariance_probe.py`](computations/deltalambda/rev_l_cap_is_padding_invariance_probe.py), 13/13):
+
+| dps | worst residual over 14 paddings | ratio |
+|---|---|---|
+| 30 | 8.20e-29 | — |
+| 50 | 1.15e-48 | 7.1e19 |
+| 70 | 8.98e-69 | 1.3e20 |
+| 90 | 2.71e-88 | 3.3e19 |
+
+Each 20-dps step divides it by ~1e20. The exact value is **0**. `H` is invariant as an
+*integer*. Tolerances elsewhere are **derived** from the summation's operation count
+`(L + L(L−1)/2)·|value|·10^{−dps}`, never fitted to the observed residual.
+
+**Consequences**, under an ℓ-scan 4× wider than #7294's window:
+
+- the three "censored" excesses **do not move** (agree to 1e-12) — they were never
+  censored, and the caveat predicted a rise the theorem forbids;
+- the real threshold is **ℓ\* = k+2** at all three; `V(ℓ)` drops only at `ℓ = k, k+1`;
+- **`best_l` in `rev-excess-scaling-exponent.witness.json` is NOISE** and must not be
+  quoted as a row count. On a plateau the strict `v > best` comparison is decided by the
+  last digit of a different climb path; it reports `k+5` where ℓ\* = `k+2`.
+
+**A finding I was not looking for, and it is the one with teeth.** At **n = 210 the
+maximiser is not a unique partition**: a 23-row shape and a 22-row shape tie, and they tie
+**exactly**, because they share a **hook multiset** — which `betaSide_eq_hookSum` makes a
+*structural* degeneracy, not a numerical near-tie (the objective is a function of the hook
+multiset alone). So *"the maximiser's gap profile is a top block of 3s, a bulk of 2s, a
+matching bottom block of 1s"* — the 2026-09-13 gap-profile result recorded above — is a
+statement about a **hook-equivalence class**, and a search that reports one representative
+is not evidence the others were rejected. That result is not refuted; its **scope** was
+over-stated, and re-reading it as a class statement is the honest form.
+
+**Untouched:** the `A√2 = 5.09594565` identification. No excess in #7294's table changes,
+so neither the exponent slopes nor the excess/√n turnover move at all. Caveat (b) —
+one-sidedness — stands exactly as written: every value in this arc remains a **lower
+bound** on `M_n`. Padding invariance removes one spurious source of doubt about those
+values; it says nothing about whether the climb found the optimum.
+
+**Still open, unchanged:** the **pair-term lower bound**.
+
+**Do not close this bean.**
+
+---
+
+## 2026-09-13 — the staircase leg is CLOSED FORM, and the asymptotic is an IDENTITY
+
+**This needed no new mathematics** — only reading the padding-invariance theorem above in the
+direction it already points. `betaSide_eq_hookSum` makes the objective **cell-local**:
+
+$$V(\mu) \;=\; \sum_{c\in\mu}\varphi(h(c)) \;+\; \mathrm{const}(n),\qquad
+\varphi(h) := \varepsilon(h) - h\ln q_0 .$$
+
+On the staircase `H = H_min` kills the second term outright, leaving `Σ_c ε(h(c)) − F(n)`. The
+staircase's hook multiset is elementary — **`2j−1` with multiplicity `k+1−j`, and no even hook
+length at all** — so the sum telescopes:
+
+$$V(\delta_k) \;=\; \sum_{j=1}^{k}(k+1-j)\,\varepsilon(2j-1) \;-\; F(n)
+\;=\; A\,k \;-\; B \;-\; F(n) \;+\; \mathrm{rem}_k$$
+
+with `A = Σ_j ε(2j−1) = 3.6033777` (the arc's constant) and **`B = Σ_j (j−1)ε(2j−1) =
+5.1893691`**, new. The series form reproduces #7294's committed `V_staircase` column at **all 11
+points to 1e-19** — computed from hooks, with no β anywhere, so it checks `betaSide_eq_hookSum`
+as much as it checks the multiset.
+
+**And it is an IDENTITY, not an asymptotic.** At triangular `n`, `k + 1/2 = √(2n + 1/4)` exactly:
+
+$$M_n \;=\; A\sqrt{2n + \tfrac14} \;-\; \tfrac{A}{2} \;-\; B \;-\; C \;+\; e_n \;+\; \text{(i)} + \text{(ii)}$$
+
+with `C = Σ_m ε(m)`, `e_n` the excess over the staircase, and two exponentially small remainders
+— (i) the series tail `Σ_{j>k}(j−1−k)ε(2j−1)`, (ii) `C − F(n)` — **together 5.1e-16 at
+n = 3916**. From `n = 990` up the residual *is* the excess gap to six figures.
+
+$$\kappa \;=\; -A/2 - B - C + e_\infty \;=\; -10.7231689187$$
+
+**Write the √ exactly.** Plain `A√(2n)` carries an extra `A/(8√(2n)) = 0.0051` at n = 3916 —
+about **1e13×** the residual it would be explaining. The constant term is only well-defined in
+the `√(2n+1/4)` form, and my first pass used the loose one.
+
+**What this does to the open problem.** The entire gap between this and a closed asymptotic is
+the single sequence `e_n`. Not the coefficient (settled, #7294). Not the staircase baseline
+(exact as of here). **One number** — and it is the same number the pair-term lower bound is
+about. That bound's target is now stated in its sharpest form: `e_∞ ≈ 2.43929`.
+
+Two corroborations that do not reuse each other: the predicted multiset's total is
+`Σ_j (k+1−j)(2j−1) = k(k+1)(2k+1)/6 = H_min` exactly (integers, k = 1..40), against the
+independently-established square-pyramidal closed form; and the remainder is tested against its
+**derived** decay rate `q₀⁴` per unit `k` rather than an absolute threshold — converging to
+`1.517759` against a predicted `1.517763`.
+
+**Does not make `M_n` a theorem**: the maximiser is still heuristic, so `M_n` is a lower bound,
+and `e_∞` is measured at a single `n` rather than proved to be a limit. What is exact is the
+**baseline**.
+
+Probe: [`rev_staircase_closed_form_and_constant_term_probe.py`](computations/deltalambda/rev_staircase_closed_form_and_constant_term_probe.py), 7/7.
 
 **Do not close this bean.**
