@@ -1,0 +1,151 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T11:18:51.874644+00:00",
+  "commitSha": "2ecc439e7acb1a3c882ef0e5bbacd0f0c9217857",
+  "assertions": [
+    {
+      "name": "five_bar_parity_identities_exactly_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "exact",
+      "unit": "sympy.simplify of each of the five residuals",
+      "source": "Closed forms as written in computations/qbeta/qbeta_bond_factors_derived_probe.py; bar involution q -> q^-1."
+    },
+    {
+      "name": "bar_form_reproduces_sibling_measured_bonds",
+      "computed": "1.24281576986554273283119126844291248069842090909801129390886e-20",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-18",
+      "unit": "max over {b_pp, b_pn, b_nn} of |bar-form value - MEASURED| / |MEASURED|, both at the proton pin",
+      "source": "qbeta_bond_factors_derived_probe.MEASURED, which carries 19-20 significant digits."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 872,
+  "computation": "qbeta-bond-bar-parity",
+  "scriptFile": "qbeta_bond_bar_parity_probe.py",
+  "scriptHash": "5c266ffad0f7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_bond_bar_parity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_bond_bar_parity_probe.py"
+  },
+  "description": "The three inter-nucleon bond factors of qbeta_bond_factors_derived_probe are a BAR-CONJUGATE PAIR and their colour-displaced midpoint: b_pp = z, b_nn = z|_{q->1/q}, b_pn = (z + zbar)/2 + (delta/4)h.  Five symbolic identities, each simplifying to exactly zero.  This RESTATES that probe's identity 2 (b_pp/b_nn = q^4) in the vocabulary of the bar involution rather than of a scale factor, and adds that the separation z - zbar is exactly the Hecke parameter h = q - q^-1, that the geometric mean sqrt(b_pp b_nn) = 1/(q + q^-1) is bar-fixed, and that b_pn's bar-odd part carries a FIFTH-order zero at q = 1 (1.6415e-05 relative at the proton pin), so the unlike-pair bond is the only one that breaks the symmetry and breaks it only through the colour weighting.  Identities between closed forms; NOT a claim that q -> q^-1 here is the Hecke-algebra bar involution acting on the Markov trace, and NOT independent of that probe's own GROUPED-frame caveat (bean qou-4383).",
+  "contentBlock": "rem:jones-markov-trace-stabilisation",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "experimental (proton) — qou_substrate.constants.Q_50_DIGIT_STR",
+    "markov_convention": "D (z = q^3/(q^2+1))",
+    "bar_involution": "q -> q^-1"
+  },
+  "data": {
+    "symbolic_identities": [
+      {
+        "name": "bnn_is_zbar",
+        "expression": "b_nn - z|_{q->1/q}",
+        "simplifies_to": "0",
+        "exactly_zero": true
+      },
+      {
+        "name": "z_minus_zbar_is_h",
+        "expression": "z - z|_{q->1/q} - (q - q^-1)",
+        "simplifies_to": "0",
+        "exactly_zero": true
+      },
+      {
+        "name": "bpn_is_bar_even_plus_colour",
+        "expression": "b_pn - (z + zbar)/2 - h*delta/4",
+        "simplifies_to": "0",
+        "exactly_zero": true
+      },
+      {
+        "name": "geometric_mean_is_bar_fixed",
+        "expression": "z*zbar - 1/(q + q^-1)^2",
+        "simplifies_to": "0",
+        "exactly_zero": true
+      },
+      {
+        "name": "bpn_bar_odd_factorisation",
+        "expression": "[b_pn - bar(b_pn)]/2 + (q-1)^5 (q+1)^3 (q^2+1)/(24 q^5)",
+        "simplifies_to": "0",
+        "exactly_zero": true
+      }
+    ],
+    "at_proton_pin": {
+      "z_eq_b_pp": "0.612688037146465251595829863945899248026308391545087014074774",
+      "zbar_eq_b_nn": "0.403627738350825936164983650816224304166550896282023935819559",
+      "b_pn": "0.508229789376738962577995797655893603898308390916567021541465",
+      "h_eq_z_minus_zbar": "0.209060298795639315430846213129674943859757495263063078255215",
+      "delta_colour_weighting": "0.00137571080702709600855110927410655062222547601193777493132134",
+      "geometric_mean_sqrt_z_zbar": "0.497290545604915555995839231664869631848190730328512985925226",
+      "one_over_q_plus_qinv": "0.497290545604915555995839231664869631848190730328512985925226",
+      "bar_even_midpoint": "0.508157887748645593880406757381061776096429643913555474947166",
+      "b_pn_minus_midpoint": "0.0000719016280933686975890402748318278018787470030115465942982909",
+      "h_delta_over_4": "0.0000719016280933686975890402748318278018787470030115465942982909",
+      "b_pn_bar_odd_over_b_pn": "0.0000164147690733688766761303931951037283770592716631272828991633"
+    },
+    "against_sibling_measured": [
+      {
+        "name": "b_pp",
+        "measured": "0.6126880371464652516",
+        "from_bar_form": "0.612688037146465251595829863945899248026308391545087014074774",
+        "rel_err": "6.80629586554807522262764507924463012745115076939454036164914e-21"
+      },
+      {
+        "name": "b_pn",
+        "measured": "0.50822978937673896258",
+        "from_bar_form": "0.508229789376738962577995797655893603898308390916567021541465",
+        "rel_err": "3.94349639867474859785701819582640759427701556245714676146707e-21"
+      },
+      {
+        "name": "b_nn",
+        "measured": "0.40362773835082593617",
+        "from_bar_form": "0.403627738350825936164983650816224304166550896282023935819559",
+        "rel_err": "1.24281576986554273283119126844291248069842090909801129390886e-20"
+      }
+    ],
+    "qou_5c64_independent_isolation_muon_pin": [
+      {
+        "name": "d_pp",
+        "isolated_at_muon_pin": "0",
+        "same_anchor_prediction": "0.0",
+        "rel_err": "0.0"
+      },
+      {
+        "name": "d_pn",
+        "isolated_at_muon_pin": "-0.10445825933572413",
+        "same_anchor_prediction": "-0.104458259338573571697275886370811938907095591178906290588180",
+        "rel_err": "0.0000000000272782804863511020860087117164103918819248658036911016867093"
+      },
+      {
+        "name": "d_nn",
+        "isolated_at_muon_pin": "-0.20906032198987946",
+        "same_anchor_prediction": "-0.209060321995593678981862636465967350261623301647479826789744",
+        "rel_err": "0.0000000000273328718117025567790551784169164378444579563768517849719584"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
