@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-08-25T17:05:16Z
+updated_at: 2026-09-13T12:15:37Z
 ---
 
 ## Symptom
@@ -134,3 +134,71 @@ Closing is the author's call.
 schema-invalid block has taken the whole corpus validate red by label cascade. The
 generalisable guard is a schema check on `lean.validation` at authoring time; the
 enum is closed and the failure mode is silent at the point of the edit.
+
+
+## Re-measured 2026-09-13 on MAIN's exact content tree — 0 errors, gate GREEN
+
+```
+corpus   : origin/main @ 9510d3d04   (content/ checked out verbatim into the tree)
+platform : df28d02  (= .folio-assistant-pin, byte-for-byte)
+
+bun run scripts/run-validate.ts content/quantum-observable-universe
+  ℹ [(bibliography)]: no reference registry configured — cites-resolve did not run
+  ⚠ [piece-a-corner-removal-obligation]: no Lean declaration yet
+✓ Valid — 2 issue(s)                                exit 0, 3m33s wall
+```
+
+**Zero errors. Neither issue is one this bean names**, and neither is an error:
+one info line about `cites-resolve` (off by design outside `--strict`, documented
+at length in `scripts/run-validate.ts`) and one advisory about a lemma with no
+Lean declaration yet.
+
+### Why this is a measurement of main and not of a branch
+
+Measured from `claude/clever-goodall-iwc6b9`, so the identity was established
+rather than assumed before the number was taken:
+
+- `git diff --name-only` between branch and main over `content/**/*.ts` and
+  `content/**/*.md`: **0 files, both directions.** The entire content difference
+  is 5 `.lean` files.
+- `schemas/`, `scripts/run-validate.ts`, `content/values/`, `content/schema/` —
+  validate's own inputs — **identical**.
+- `.folio-assistant-pin` identical on both, and the clone is at exactly that SHA.
+
+Then, rather than rest on that, `git checkout origin/main -- content/` was run and
+the gate re-executed against main's literal tree; the tree was restored afterwards
+(`git status --porcelain` empty, HEAD unmoved at `5d40d4480`).
+
+### The gate was SELFTESTED before the green was believed
+
+2 issues is a large drop from the 27 (2026-08-16) and 36 (2026-08-25) recorded in
+`qou-mln9`, and in this repo a collapsing count is more often a detector that
+stopped looking than a corpus that got fixed. So `uses-resolve` — the exact rule
+both beans turn on — was fired against a known positive first:
+
+```
+inject  uses: ["def:selftest-label-that-does-not-exist", ...]  into schur-weyl-eightfold.ts
+  ✗ [schur-weyl-eightfold]: Unresolved uses: "def:selftest-label-that-does-not-exist"
+✗ Invalid — 3 issue(s)                              exit 1
+```
+
+The rule fires, the count moves 2 → 3, and the exit code flips. Reverted from a
+backup; tree clean. So the green is a real clean bill, not silence.
+
+### What accounts for the drop 36 → 2
+
+Not mysterious, and mostly already on the record. `.folio-assistant-pin` documents
+the 2026-09-07 bump `428ca5c → df28d02` as taking the same corpus from "9 issue(s)"
+to "3 issue(s)" by fixing four block schemas that restated `BlockBaseSchema` instead
+of extending it (upstream `a117daa`), which retired the "Unknown field" warnings.
+The remaining `no Lean declaration yet` advisories drained as Lean landed over the
+month. The nine-error `lean_direct_exit_0` enum cascade that `qou-mln9` recorded on
+2026-08-25 is gone — PR #5761's fix, or an equivalent, has landed.
+
+### Status left at `todo` deliberately — this is the author's call
+
+Both beans carry an explicit prior deferral ("closing is an owner action") from
+earlier agents, and overriding another agent's stated deferral is not mine to do.
+The **stated blocking condition is now satisfied**: `qou-mln9` said it would stay
+open "until it lands, [because] main stays validate-RED for every branch" — main
+is green. Nothing remains to do on either symptom.
