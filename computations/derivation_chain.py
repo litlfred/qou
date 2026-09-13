@@ -169,11 +169,11 @@ from q_parameter import Q as Q_0  # noqa: E402
 # ruling can stale it again just as silently. An ordering assertion there is
 # the durable version of this recommendation.
 # ══════════════════════════════════════════════════════════════════════════
-TR_M_AT_Q0: dict[str, float] = {
-    "p": 1.1457596924573009,
-    "n": 0.9877436881158096,
-    "D": 0.5751722439177719,
-}
+# NOW A LIVE VIEW, NOT A FROZEN COPY (bean qou-4383, 2026-09-13).
+# Both registries are served lazily by the module `__getattr__` at the bottom
+# of this file, reading `canonical_trm_reference`. The literals that stood here
+# are recorded in that function; do not restore them.
+_TR_M_KEYS = ("p", "n", "D")
 
 # ── 50-dps decimal-string companion to TR_M_AT_Q0 ──────────────────
 # The float-typed registry above is preserved bit-for-bit (per the
@@ -190,11 +190,9 @@ TR_M_AT_Q0: dict[str, float] = {
 # by its own recorded q0 and so cannot silently serve the other LAYER. It can
 # still serve the wrong ORDERING, which it did until 2026-09-13; see the
 # correction above the float registry.
-TR_M_AT_Q0_50DPS: dict[str, str] = {
-    "p":  "1.14575969245730086968908159577411930594372806194352738498820",
-    "n":  "0.987743688115809571634020165501294982055048759062827475627723",
-    "D":  "0.575172243917771870826535343986180889152494352892855072730158",
-}
+# TR_M_AT_Q0_50DPS is served by the same lazy accessor. See the bottom of this
+# file. Callers wanting full precision still do `mp.mpf(TR_M_AT_Q0_50DPS["p"])`;
+# the strings now come from the witness rather than from a literal.
 
 # Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────
 # Per owner directive 2026-05-11 ("migrate all compute to default B").
@@ -224,7 +222,7 @@ TR_M_AT_Q0_50DPS: dict[str, str] = {
 #
 # n_canon (strand count of the canonical braid):
 #   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
-TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
+_TR_M_CANONICAL_B_KNOT_ROWS: dict[str, float] = {
     # CONVENTION FIX (2026-08-30, bean qou-46ab). `p` and `n` were the
     # convention-C values, and this dict's OWN comment above is why they had to
     # move with the Model A ones: it states that at A = 1 the two models
@@ -236,8 +234,19 @@ TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
     # (6_2, 8_11, L6a4) — different quantities, not this trace under another
     # convention — and they already carry their own "#1422-recompute pending"
     # marker. Changing them would need those recomputes, not a substitution.
-    "p":   1.1457596924573009,  # 11-crossing typed B_3 (uud)
-    "n":   0.9877436881158096,  # 11-crossing typed B_3 (udd)
+    # SECOND ORDERING FIX (2026-09-13, bean qou-4383). `p` and `n` were still
+    # the GROUPED values, for the same reason and by the same argument the
+    # convention-C note above gives: this dict's own comment says that at A = 1
+    # the two models converge and the source is "the same as TR_M_AT_Q0 above",
+    # so the two must move together or a documented identity splits. They are
+    # now served by the same lazy accessor at the bottom of this file, reading
+    # `canonical_trm_reference`.
+    #
+    # D / T / 3He STAY LITERAL, and that is not an oversight — the note above
+    # is explicit that they are SDP-canonical low-strand knots (6_2, 8_11,
+    # L6a4), a DIFFERENT QUANTITY from this trace under another convention.
+    # Substituting a nucleon |tr_M| for a knot invariant would be a category
+    # error dressed as a frame fix.
     "D":   0.288326,            # knot 6_2, SDP-canonical  (#1422-recompute pending)
     "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)  (#1422-recompute pending)
     "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)  (#1422-recompute pending)
@@ -852,3 +861,59 @@ if __name__ == "__main__":
     for i in issues:
         print(f"  - {i}")
     print(f"trust_summary: {chain.trust_summary()}")
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# LAZY REGISTRY ACCESS (PEP 562). Bean qou-4383, 2026-09-13.
+#
+# `TR_M_AT_Q0` and `TR_M_AT_Q0_50DPS` used to be literal dicts holding
+#
+#     p 1.1457596924573009   n 0.9877436881158096   D 0.5751722439177719
+#
+# in the GROUPED intra-nucleon frame — correct when written, superseded by the
+# 2026-09-05 ordering ruling (`qou-hu1f`). Every live consumer was migrated to
+# `canonical_trm_reference` earlier today, leaving exactly one importer:
+# `build_six_term_substrate_model_b`, which raises FileNotFoundError before the
+# line that reads this (bean `qou-imkb`). So the registry had ZERO reachable
+# consumers while holding values 82% and 108% off canon — dead weight that a
+# future reader would have found and used.
+#
+# WHY LAZY, and not simply better literals. Typing canonical numbers here would
+# reproduce the exact defect this bean exists to close: a hardcoded constant
+# cannot track a ruling, and this registry has already gone stale twice (the
+# convention-C 1.63315 corrected by `qou-soj6`, then the grouped value the
+# ruling superseded five days later). Reading makes it a view.
+#
+# WHY `__getattr__` AND NOT A MODULE-LEVEL READ. 17 modules import
+# `derivation_chain`. A read at import time would make all 17 do file I/O and,
+# because `canonical_trm_reference` REFUSES an unstamped or wrong-ordering
+# witness (bean `qou-y4gi`), would let a stale witness break every one of them
+# at import. PEP 562 defers the cost to actual access, so the 17 importers pay
+# nothing and only a module that genuinely asks can be affected.
+#
+# THE EXISTENCE QUESTION IS STILL OPEN and is deliberately not answered here.
+# With no reachable consumers, this may simply want deleting; that is an owner
+# call. What this change does is make it harmless either way.
+def __getattr__(name: str):
+    if name == "TR_M_CANONICAL_B_AT_Q0":
+        # Model B at A = 1 is the same quantity as Model A — this dict's own
+        # comment says so — so p/n come from the reference while the
+        # knot-invariant rows stay as authored. Zero consumers either way
+        # (measured 2026-09-13); this exists so the file holds no stale trace.
+        base = dict(_TR_M_CANONICAL_B_KNOT_ROWS)
+        live = __getattr__("TR_M_AT_Q0")
+        base.update({"p": live["p"], "n": live["n"]})
+        return base
+    if name in ("TR_M_AT_Q0", "TR_M_AT_Q0_50DPS"):
+        import sys as _sys
+        from pathlib import Path as _Path
+        _c = str(_Path(__file__).resolve().parent)
+        if _c not in _sys.path:
+            _sys.path.insert(0, _c)
+        from canonical_trm_reference import tr_m_nucleon   # noqa: PLC0415
+        _atom = {"p": "proton", "n": "neutron", "D": "deuteron"}
+        vals = {k: tr_m_nucleon(a) for k, a in _atom.items()}
+        if name == "TR_M_AT_Q0":
+            return {k: float(v) for k, v in vals.items()}
+        return {k: str(v) for k, v in vals.items()}
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

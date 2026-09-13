@@ -1,17 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-05T06:09:32.588464+00:00",
-  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
+  "computedAt": "2026-09-13T08:53:24.345046+00:00",
+  "commitSha": "9a695684b931d35c2e4396bc7798646a90557bb7",
   "assertions": [],
   "allPassed": true,
-  "allPassedBasis": "vacuous",
-  "durationMs": 5,
-  "durationMsBaseline": "builder-construction",
+  "durationMs": 7,
   "computation": "delta-coupling-closed-form-probe",
   "scriptFile": "delta_coupling_closed_form_probe.py",
-  "scriptHash": "5381171077e1",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "01aa14d9cc25",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -147,7 +145,7 @@
         "candidate_human": "log Φ_q^{(∞)}(t)",
         "t_name": "q_0",
         "t_value": "1.10997858275138080759166909561076887987449912187357763605672",
-        "undefined_at_t": "log Phi_q^(inf)(t) is undefined at t=1.10997858275: the series sums to -3.34936e-69, which is zero to the working precision (the residue tracks dps and its sign is round-off). Phi_q^(inf)(q) = 1/(q;q)_inf = 0 for q > 1, so the log is -inf."
+        "error": "ValueError: non-finite"
       },
       {
         "anchor": "(2,2)_doubly_magic",
@@ -300,7 +298,7 @@
         "candidate_human": "log Φ_q^{(∞)}(t)",
         "t_name": "q_0",
         "t_value": "1.10997858275138080759166909561076887987449912187357763605672",
-        "undefined_at_t": "log Phi_q^(inf)(t) is undefined at t=1.10997858275: the series sums to -3.34936e-69, which is zero to the working precision (the residue tracks dps and its sign is round-off). Phi_q^(inf)(q) = 1/(q;q)_inf = 0 for q > 1, so the log is -inf."
+        "error": "ValueError: non-finite"
       },
       {
         "anchor": "(2,1)_3He_eq_D_plus_p",
@@ -453,7 +451,7 @@
         "candidate_human": "log Φ_q^{(∞)}(t)",
         "t_name": "q_0",
         "t_value": "1.10997858275138080759166909561076887987449912187357763605672",
-        "undefined_at_t": "log Phi_q^(inf)(t) is undefined at t=1.10997858275: the series sums to -3.34936e-69, which is zero to the working precision (the residue tracks dps and its sign is round-off). Phi_q^(inf)(q) = 1/(q;q)_inf = 0 for q > 1, so the log is -inf."
+        "error": "ValueError: non-finite"
       },
       {
         "anchor": "(1,2)_T_eq_D_plus_n",
@@ -537,7 +535,7 @@
           "factor_no_E0_prefactor": "8.43179304084466935568686217799500259401441840337942432844419"
         },
         "near_value": "2.00000000000000000000000000000000000000000000000000000000000",
-        "fractional_gap": "0.00274070881461922561403074782723132327776825240774693585122500"
+        "fractional_gap": "0.00274070881461922561403074782723132327776825240774693585122439"
       },
       {
         "row": {
@@ -554,7 +552,7 @@
           "factor_no_E0_prefactor": "4.35814598873759291586917700317916002486237226661443447312309"
         },
         "near_value": "1.00000000000000000000000000000000000000000000000000000000000",
-        "fractional_gap": "0.0309080307254491539472036627678538050318974498404250953729500"
+        "fractional_gap": "0.0309080307254491539472036627678538050318974498404250953729480"
       }
     ],
     "cross_anchor_consistent_leads": [
@@ -570,8 +568,8 @@
           "1.00000000000000000000000000000000000000000000000000000000000"
         ],
         "fractional_gaps": [
-          "0.00274070881461922561403074782723132327776825240774693585122500",
-          "0.0309080307254491539472036627678538050318974498404250953729500"
+          "0.00274070881461922561403074782723132327776825240774693585122439",
+          "0.0309080307254491539472036627678538050318974498404250953729480"
         ]
       }
     ],

@@ -70,6 +70,29 @@ definite nonzero number.
 - **A=2 only.** The "flips positive at A≥3" half needs H₉ (triton) and is
   untested.
 
+  > **ANSWERED 2026-09-13, and the answer is no.** H₉ and H₁₂ were both
+  > measured, and the owner ruling of 2026-09-13 adopted the **Wenzl** weight
+  > as the pairing (bean `qou-za3q` decision 1, derived in `qou-gba1` from the
+  > Markov stabilisation axiom). Under it,
+  >
+  > ```
+  > deuteron −6.921    triton −13.931    ⁴He −20.466      -, -, -
+  > ```
+  >
+  > **there is NO sign change in A = 2, 3, 4** — the "flips positive at A≥3"
+  > signature this document names is not exhibited. It appeared only under the
+  > rejected quantum Plancherel measure (−, +, +), and the ruling did not turn
+  > on the sign, so the phenomenon simply did not survive a measure chosen on
+  > principle.
+  >
+  > **THIS DOCUMENT'S OWN RESULT IS UNAFFECTED.** Its finding is that the
+  > linear Magnus pairing is *sign-indefinite* at A=2 and so clears the
+  > non-negativity wall that excluded the quadrature ‖F_q‖². That holds under
+  > **both** weight families and **both** intra-nucleon words, because it is a
+  > statement about a commutator's trace pairing rather than about the weight.
+  > `qou-dp32` stands. What is retired is the A-dependence, which this document
+  > correctly flagged as untested rather than claimed.
+
 ## Consequence for the work plan — two bounded follow-ons
 
 The quadrature route (`qou-jqof`) is closed as a *carrier* (excluded by

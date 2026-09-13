@@ -80,7 +80,7 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -97,21 +97,18 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
 
 # AME2020 totals (MeV) — comparison target only (same list as
 # borromean_binding_recompute.py).
-# The ISO table below is built at MODULE level, while the codata import
-# lives inside main() and does not run until main() is called -- so
-# routing the literals here (bean qou-zv46) needed the names bound at
-# module scope as well. Caught by running the producer, not by AST.
-from codata_constants import (  # noqa: E402
-    AME_B_DEUTERON_MEV_VALIDATION,
-    AME_B_HE3_MEV_VALIDATION,
-    AME_B_TRITIUM_MEV_VALIDATION,
-)
-
-ISO = [("2H", 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)), ("3H", 1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
-       ("3He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)), ("4He", 2, 2, 28.295673),
-       ("6Li", 3, 3, 31.994564), ("7Li", 3, 4, 39.244533),
-       ("12C", 6, 6, 92.161728), ("16O", 8, 8, 127.619),
-       ("56Fe", 26, 30, 492.254)]
+# AME binding energies as DECIMAL STRINGS, lifted to `mpf` at use below.
+# They were float literals until 2026-09-13, which put an f64 rounding on the
+# measured side of every `B_AME / B_tower` ratio this probe reports — the
+# ratio is the comparison the probe exists to make, so the experimental input
+# has no business arriving pre-rounded.  Strings also make the ordering
+# against `set_compute_dps()` (line below) irrelevant for them rather than
+# merely harmless.
+ISO = [("2H", 1, 1, "2.224573"), ("3H", 1, 2, "8.481821"),
+       ("3He", 2, 1, "7.718058"), ("4He", 2, 2, "28.295673"),
+       ("6Li", 3, 3, "31.994564"), ("7Li", 3, 4, "39.244533"),
+       ("12C", 6, 6, "92.161728"), ("16O", 8, 8, "127.619"),
+       ("56Fe", 26, 30, "492.254")]
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -121,6 +118,18 @@ set_compute_dps()
 
 TOL_EXACT = mp.mpf("1e-40")
 TOL_CROSS = mp.mpf("1e-25")
+
+
+def _serialise(obj):
+    """Render mpf leaves with `_precision.fmt`; leave everything else alone."""
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()
+                if not k.startswith("_")}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -250,12 +259,14 @@ _ME_STR = None  # set in main() from codata_constants (no inline literal)
 def main() -> int:
     global _ME_STR
     set_compute_dps()
-    from codata_constants import (
-        AME_B_DEUTERON_MEV_VALIDATION,
-        AME_B_HE3_MEV_VALIDATION,
-        AME_B_TRITIUM_MEV_VALIDATION,
-        M_E_MEV,
-    )
+    # The three AME_B_* names were dropped here in the 2026-09-13 merge: main's
+    # ISO table carries all nine binding energies as decimal strings instead of
+    # routing three of them through the registry, and its rationale is recorded
+    # in borromean_per_lambda_fr_probe.py -- the literals disagree with the
+    # canonical constants by ~3 ppm, consistently, so they are a different
+    # edition or convention rather than typos, and main reports that rather
+    # than silently switching. M_E_MEV is still used below.
+    from codata_constants import M_E_MEV
     _ME_STR = str(M_E_MEV)
 
     q, qi, z_loaded = load_q_50dps()
@@ -376,13 +387,17 @@ def main() -> int:
     rows = {}
     print(f"\n{'iso':5s}{'B_AME':>9s} | " + " | ".join(
         f"{v:>13s} err" for v in variants))
-    for nm, Z, N, B_AME in ISO:
-        rows[nm] = {"Z": Z, "N": N, "B_AME": B_AME}
-        line = f"{nm:5s}{B_AME:9.3f} | "
+    for nm, Z, N, B_AME_str in ISO:
+        B_AME = mp.mpf(B_AME_str)
+        rows[nm] = {"Z": Z, "N": N, "B_AME": B_AME_str}
+        line = f"{nm:5s}{float(B_AME):9.3f} | "
         for vn, (tau_s, pt) in variants.items():
             B0, Bt = binding(Z, N, tau_s, pt)
-            rows[nm][vn] = {"B_can0": float(B0), "B_tower": float(Bt),
-                            "errT_AME_over_B": float(B_AME / Bt)}
+            # Kept as `mpf`: `B_tower` is read back for arithmetic below
+            # (the committed-witness cross-check and the three tower-shift
+            # maxima), so it is serialised once at `add_data` instead.
+            rows[nm][vn] = {"B_can0": B0, "B_tower": Bt,
+                            "errT_AME_over_B": B_AME / Bt}
             line += f"{float(Bt):13.3f} {float(B_AME / Bt):4.2f} | "
         print(line)
 
@@ -466,33 +481,33 @@ def main() -> int:
                            for nu in parts6},
         "converges": bool(conv_6),
     })
-    wb.add_data("per_isotope", rows)
+    wb.add_data("per_isotope", _serialise(rows))
     wb.add_data("max_tower_shift_vs_scalar", {
-        "perl_jones": float(max_shift),
-        "perl_wenzl": float(max_shift_w),
-        "ambient_h6": float(max_shift_6),
+        "perl_jones": fmt(max_shift),
+        "perl_wenzl": fmt(max_shift_w),
+        "ambient_h6": fmt(max_shift_6),
     })
 
     wb.add_assertion(
         "pipeline_tau_is_jones_tl_decomposition",
-        computed=dev_jones, expected=0.0, tolerance=1e-40,
+        computed=fmt(dev_jones), expected="0", tolerance="1e-40",
         source="τ closed form = [4]/[2]³·1 + 1/[2]²·(2−3h⁴−h⁶) exactly "
                "(SU(2)/TL weights, (1³) killed)",
     )
     wb.add_assertion(
         "chi21_closed_form_vs_seminormal",
-        computed=dev_chi21, expected=0.0, tolerance=1e-40,
+        computed=fmt(dev_chi21), expected="0", tolerance="1e-40",
         source="χ^{(2,1)}((σ1σ2⁻¹)³) = 2−3h⁴−h⁶ vs direct Hoefsmit "
                "seminormal matrix product at 50 dps",
     )
     wb.add_assertion(
         "markov_m3_both_conventions",
-        computed=dev_m3_J + dev_m3_W, expected=0.0, tolerance=1e-40,
+        computed=fmt(dev_m3_J + dev_m3_W), expected="0", tolerance="1e-40",
         source="Σ y_λ d_λ = 1 under both Jones/TL and Wenzl weights",
     )
     wb.add_assertion(
         "trace_convention_gap_recorded",
-        computed=convention_gap, expected=1.9554e-4, tolerance=1e-6,
+        computed=fmt(convention_gap), expected="1.9554e-4", tolerance="1e-6",
         source="|τ_pipeline − τ_Wenzl| ≈ 1.96e-4: the pipeline is the "
                "Jones/TL trace, NOT the corpus-canonical Wenzl z-trace",
     )
@@ -518,15 +533,15 @@ def main() -> int:
     )
     wb.add_assertion(
         "scalar_baseline_matches_committed_witness",
-        computed=max_base_dev, expected=0.0, tolerance=1e-6,
+        computed=fmt(max_base_dev), expected="0", tolerance="1e-6",
         source="scalar Jones tower vs borromean-binding-recompute."
                "witness.json per-isotope B_tower (q-string precision "
                "difference only)",
     )
     wb.add_assertion(
         "perlambda_does_not_close_16O",
-        computed=max(max_shift, max_shift_w, max_shift_6),
-        expected=0.0, tolerance=0.01,
+        computed=fmt(max(max_shift, max_shift_w, max_shift_6)),
+        expected="0", tolerance="0.01",
         source="max per-λ tower shift vs scalar < 1% across all isotopes "
                "and all three collapse-last variants — the ¹⁶O 2.3× "
                "normalization is untouched (REFUTED-scope-(a) for this "

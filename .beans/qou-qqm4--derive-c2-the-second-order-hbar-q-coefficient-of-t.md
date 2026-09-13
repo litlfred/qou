@@ -5,7 +5,11 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T11:21:32Z
+updated_at: 2026-09-13T16:37:08Z
+updated_at: 2026-09-13T14:22:41Z
+updated_at: 2026-09-13T13:50:50Z
+updated_at: 2026-09-13T13:07:38Z
+updated_at: 2026-09-13T12:47:52Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1142,6 +1146,7 @@ about the expansion. Offered as a lead, not a result; I have not tested it, and
 `b_pn` / `b_nn` are not `z` (ratios 0.8295 and 0.7942 to their predecessors),
 so whatever the structure is, it is not simply one parameter.
 
+
 ---
 
 RESULT + TWO CORRECTIONS (2026-09-13, session sleepy-morse, PR #7285).
@@ -1218,3 +1223,469 @@ property plus the Hecke quadratic relation, both statements about the INTERFACE
 crossing — so the exact agreement of all three `b_*` with it is evidence the
 flagged mismatch is confined to `t_p` / `t_n`.  I have not checked `r_previous`,
 and this does not tell anyone which way to flip the two nucleon traces.
+
+---
+
+RESULT (2026-09-13, session sleepy-morse, PR #7300) — the target
+`KindDependentBondBreaksIntegrality` stated is now ANSWERED, and the answer is a
+NEGATIVE that is sharper than a plain miss.
+
+**The connection that file says nobody made.** `QOU.Mass.KindDependentBondBreaksIntegrality`
+(merged) observes that the `b₃` count-channel exhaustion rests on a UNIFORM bond
+weight, that this bean has since derived a weight that is NOT uniform, and — its
+words — that "the corpus has since taken that escape, on a different front, and
+nobody connected the two." It then states a number and a direction of use:
+
+> `ρ_pp = 1 + rMeasured = 2433859/1483044 ≈ 1.64112`. "Read RIGHT-TO-LEFT only:
+> this is the number `qou-qqm4`'s derived `z + d_kind` at the `pp` interface must
+> independently produce. ... Agreement would be a parameter-free prediction;
+> disagreement is a real negative about the bond model."
+
+`BondLetterIdentification` (merged today) supplies that input: `b(t) = z − h·t`
+for every `t`, `t = 0` at `pp`, `1` at `nn`, `1/2 − δ/4` at the production `pn`.
+
+**Computed, exactly.** With `P q = q¹⁰−2q⁹+7q⁸−2q⁶+4q⁵+4q⁴+q²−2q+1`:
+
+    b_pn   = P q / (12 q⁵ (q²+1))     <- IS the probe's extracted degree-10 form
+    ρ_pp   = 12 q⁸ / P q              ρ_nn = 12 q⁴ / P q      ρ_pp/ρ_nn = q⁴
+
+All three are rational-function identities over the symbol `q`, now in Lean:
+`QOU.Mass.KindRatioFromBondLetters`, five theorems, sorry-free, lean-direct
+exit 0, axioms `[propext, Classical.choice, Quot.sound]`.
+
+**Scored at the minimal ³He carrier (`ppn`: one `pp` pair, two `pn`).**
+
+| carrier | ρ_pp | b₃/b₂ | miss |
+|---|---|---|---|
+| uniform ρ = 1 (the exhaustion's premise) | 1 | 0 | −100 % |
+| best INTEGER carrier ρ = 2 | 2 | 1 | +55.976 % |
+| **DERIVED** | 1.2055335007 | 0.2055335007 | **−67.942 %** |
+| target | 1.6411239316 | 0.6411239316 | 0 |
+
+**The finding, and it is the part worth carrying forward.** The derived
+kind-dependence moves `b₃/b₂` off zero and *toward* the measurement — roughly a
+third of the way — and still lands **further from it than the integer carrier the
+exhaustion had already excluded**. So breaking integrality, which is precisely
+the escape `KindDependentBondBreaksIntegrality` identifies, does not buy the
+escape. That is a stronger statement than "the derived number misses": it says
+the named escape route is not where the missing `b₃` lives.
+
+**Scope (a)**, explicitly: this carrier, these weights, at the minimal Brunnian
+counts. No invariant is proved here, so kind-dependent weights are **NOT**
+excluded in general and this must not be written up as scope (b).
+
+**Which ratio, and the reason for the choice.** `ρ_pp` admits two readings — the
+ratio of bond FACTORS `b_pp/b_pn`, or the ratio of their LOGS (the binding is
+`B = −α log μ`, so log-space is defensible). I take the factor ratio **on the
+target file's own wording** ("`z + d_kind`", which is the factor) and NOT because
+it scores better — which it does: the log reading gives ρ_pp = 0.7238235153 and
+a −143.077 % miss. Recording this because choosing the better-scoring reading
+would be selection against the target, which is exactly what the anti-fit rule
+forbids, and the two readings are close enough in plausibility that the
+temptation is real.
+
+**Still open, untouched by this.** Why `t_pn = 1/2 − δ/4` specifically — the
+`1/4` and the `(q−1)²/3` remain underived. This result constrains what the bond
+model BUYS downstream; it does not derive the weight.
+
+Probe: `computations/qbeta/kind_dependent_rho_pp_derived_check.py` (5/5).
+
+---
+
+CORRECTION OF THIS BEAN'S OWN OPEN ITEM (2026-09-13, session sleepy-morse, PR #7300).
+
+**I have been listing "derive the `1/4`" as an open target. It is malformed, and
+the framing is mine** — it appears in this bean and in PR #7285's "What is NOT
+proved", and a grep of `content/`, `computations/`, `docs/` and `.beans/` turns
+up no corpus artifact that treats the `1/4` as a separately-derivable constant.
+
+**The `1/4` is a normalisation Jacobian.** The corpus normalises the flavour
+split by the MEAN nucleon mass — `δ = Δm/M_N`, `M_N = (m_p+m_n)/2`
+(`prop:flavor-split-substrate`, `_li_2_q_util.flavor_split_leading`). Under that
+convention `1/2 − δ/4` is *identically* the proton's mass fraction of the pair,
+and the `4` is `2 × 2`: one factor because `M_N` is a mean not a sum, one because
+`Δm` is a full difference not a half-split.
+
+**Falsifiable, not a re-labelling.** Four sorry-free theorems in
+`QOU.Mass.FlavourSplitNormalisation`:
+
+| | |
+|---|---|
+| `tPN_mean_normalised` | `1/2 − δ_mean/4 = m_p/(m_p+m_n)` |
+| `tPN_sum_normalised` | `1/2 − δ_sum/2 = m_p/(m_p+m_n)` |
+| `quarter_is_wrong_under_sum_normalisation` | `1/2 − δ_sum/4 − m_p/(m_p+m_n) = Δm/(4(m_p+m_n))` |
+| `normalisations_distinguishable` | that residual `≠ 0` whenever `m_n ≠ m_p` |
+
+Had `δ` been normalised by the SUM — the other natural reading of "the pair's
+mass" — the coefficient would be `1/2`, and `1/4` would be positively **wrong**
+by a residual that vanishes only at degeneracy. So the numeral is carried by the
+convention, and the real question is *which mass normalises `δ`*, which
+`flavor_split_leading`'s own docstring answers.
+
+**What this does NOT close, and it is the larger half.**
+
+1. **The `(q−1)²/3` is untouched.** It is the substrate content, derived only at
+   leading order, and its subleading correction is explicitly **posited**:
+   `flavor_split_subleading`'s `(1+ℏ_q³)` supplies 76 % of the gap CODATA demands
+   and its own docstring says so. That is the live target.
+2. **Mass-fraction is not the mechanism for all three letters.**
+   `massFraction_like_pair` (`m/(m+m) = 1/2`) contradicts `t_pp = 0` and
+   `t_nn = 1`, so the reading holds at `pn` and fails at the like pairs.
+3. **Why the `pn` interface is colour-weighted at all** is
+   `bring_color_weighted` (canonical, owner ruling R3, 2026-08-15). Nothing here
+   derives it.
+
+**So this bean's remaining open item should be read as `(q−1)²/3` and the
+colour weighting — not as two constants.** Verification: `lean`-direct exit 0,
+axioms `[propext, Classical.choice, Quot.sound]` on all four; `CharZero` is
+required rather than convenient, since every statement divides by 2 and 4.
+
+---
+
+CROSS-MASS-WEIGHTING + I WITHDRAW ITEM 2 ABOVE (2026-09-13, session sleepy-morse,
+PR #7300).
+
+**Item 2 of the "does NOT close" list immediately above is WRONG and I am
+withdrawing it.**  It read: *"Mass-fraction is not the mechanism for all three
+letters.  `massFraction_like_pair` (`m/(m+m) = 1/2`) contradicts `t_pp = 0` and
+`t_nn = 1`, so the reading holds at `pn` and fails at the like pairs."*  That
+reads the weight in the wrong frame.  The mass fraction is **not** a rule
+producing `t` *from* the flavours; it is the weight in a convex combination *of
+the two like-pair letters*, and a like pair averages a letter with **itself**, so
+every convex weight returns it unchanged.
+
+The corpus had already answered this, in a probe my grep did not reach:
+`computations/probes/pn_interface_bar_structure_probe.py` fact 3 records
+`f_pn = w_p·f_pp + w_n·f_nn`, `w_p + w_n = 1`, and says so in as many words —
+*"a like-flavour bond has no mean to tilt — averaging `f_pp` with itself returns
+`f_pp` for any weights summing to one, so 'colour-averaging the p-p bond' is a
+no-op by construction."*  **This is the same error class as the `1/4` itself**:
+an open item invented by reading a quantity in the wrong frame, two entries
+running.  Now theorems: `crossInterp_like_pair`, `directInterp_like_pair`.
+
+**WHAT THE TWO WEIGHTS ARE.**  That probe's fact 3 leaves `w_p = 1/2 + δ/4` as a
+numeral.  Combined with `tPN_mean_normalised` (`w_n = 1/2 − δ/4 = m_p/(m_p+m_n)`)
+they are the **crossed** mass fractions, exactly:
+
+    w_p  =  m_n/(m_p + m_n)     the NEUTRON's fraction, carried by the pp letter
+    w_n  =  m_p/(m_p + m_n)     the PROTON's  fraction, carried by the nn letter
+
+so the production p-n letter is, with no `δ`, no `1/4` and no normalisation
+convention in it at all,
+
+    σ_pn  =  ( m_n·σ  +  m_p·σ⁻¹ ) / (m_p + m_n) .
+
+I found no statement of this anywhere in `content/`, `computations/`, `docs/` or
+`.beans/`; a fixed-string search for `m_n/(m_p+m_n)` returns nothing, and
+`d_for_ctype` carries the numeral with no rationale in its source.
+
+**WHY IT IS WORTH SAYING — the sign becomes a CHOICE, not a numeral.**  The like
+pairs fix the per-nucleon endpoints `t_p = 0` (pp is `σ`) and `t_n = 1` (nn is
+`σ⁻¹`).  Interpolating those admits exactly two natural weightings:
+
+    direct   t = (m_p·t_p + m_n·t_n)/(m_p+m_n) = m_n/(m_p+m_n) = 1/2 + δ/4
+    cross    t = (m_n·t_p + m_p·t_n)/(m_p+m_n) = m_p/(m_p+m_n) = 1/2 − δ/4
+
+They differ by exactly `δ/2`, agree on both like pairs, and production takes
+**cross**.  Nothing derives that: `direct` is the `δ ↦ −δ` reflection and
+satisfies the same bar-invariance and normalisation hypotheses
+`prop:pn-averaging-uniqueness` conditions on.  So this does not close anything —
+it converts an unexplained numeral into an unexplained **choice between two
+named weightings**, which is a smaller open item and a falsifiable one.
+
+**WHERE THEY SEPARATE, and where they do not.**  NOT at `A = 3`: the mirror ratio
+`tr(³H)/tr(³He) = (b_pn·b_nn)/(b_pp·b_pn)` is `q⁻⁴` under **both**, since the p-n
+factor cancels — the cancellation `InterfaceScalar.mirror_split_eq_L_diff`
+already records, here making the mirror splitting blind to this sign.  The whole
+discriminator is the **deuteron**, whose single bond is p-n: `b_pn` moves by
+`h·δ/2`, measured **2.83e-4 relative** at the proton-pinned `q₀`
+(0.508229789377 → 0.508085986121).
+
+Probe `computations/qbeta/pn_letter_is_cross_mass_weighted_probe.py` (5/5,
+sympy + mpmath at dps 60; numerical leg reproduces
+`qbeta_bond_factors_derived_probe`'s own MEASURED `b_pn` to rel < 1e-18).  Lean:
+seven new theorems in `QOU/Mass/FlavourSplitNormalisation.lean`, `lean`-direct
+exit 0 / 0 warnings, axioms `[propext, Classical.choice, Quot.sound]` on all
+eleven.
+
+**Remaining open on this bean, unchanged in substance:** the `(q−1)²/3` in `δ`
+(item 1 above — leading-order only, subleading `(1+ℏ_q³)` **posited**, 76 % of the
+CODATA gap) and the colour weighting itself (item 3), now sharpened to *which of
+the two weightings, and why*.
+
+---
+
+GENERICITY OF THE `(q−1)²/3` BASELINE — MEASURED, and it cuts both ways
+(2026-09-13, session sleepy-morse, PR #7300).
+
+With the `1/4` retracted (two entries up) and item 2 withdrawn (one entry up),
+**the `(q−1)²/3` is the only live derivation target this bean has left.**  Before
+attacking it I ran the instrument AGENTS.md §*"Defined residual ≠ derived
+decomposition"* item 2 prescribes — *"is the offset FORCED, or merely IN
+RANGE?"*, the `sleak_offset_genericity_check` pattern — because
+`conj:flavor-split-habiro-derivation` states the form's status as *"a structured
+near-match, not a derived closed form … ~0.128 % relative"*, and the question is
+whether that 0.128 % is **evidence for this expression** or for nothing.
+
+**The family.**  `(p/k)·Π sᵢ^{eᵢ}` over the six substrate scalars the corpus
+itself names — `ℏ_q`, `h`, `[2]_q`, `q−1`, `z_D`, `[3]_q` — at total degree ≤ 4,
+which is the corpus form's own degree (AGENTS.md records the identity
+`δ = ℏ_q²·h·[2]_q/3`).  209 monomials × 91 distinct prefactors = **19 019
+members**.  Target from the CODATA-2022 **neutron–proton mass ratio**,
+`δ = 2(r−1)/(r+1) = 0.00137747009421 ± 4.0e-10`, so no MeV conversion enters;
+`q₀` proton-pinned.
+
+**IT IS NOT GENERIC.**  4 of 19 019 members land inside the corpus form's own
+miss (**0.021 %**); 4 of 209 monomials admit *any* prefactor that does
+(**1.91 %**).  This is emphatically not the `S_leak` case, where every constant
+in a window of width 0.049 reproduced the feature.  So the near-match survives
+the test the corpus applies to this class of claim.
+
+**BUT UNDER FREE `p/k` THE CORPUS FORM IS RANK 4, NOT RANK 1.**  Three
+competitors of the **same degree** beat it, the best by **5.2×**:
+
+    (8/9)·h·(q−1)²·z_D          rel 2.475e-4
+    (4/7)·ℏ_q·[2]_q·(q−1)²      rel 2.778e-4
+    (11/2)·ℏ_q·h·(q−1)²         rel 3.727e-4
+    (1/3)·ℏ_q²·h·[2]_q          rel 1.277e-3   ← the corpus form
+
+**Under UNIT-NUMERATOR prefactors it is rank 1 of 209**, and the only monomial
+whose `1/k` form lands inside its own miss; second place (`(1/7)·h²·[2]_q·(q−1)`)
+is 1.9× worse.  That restriction is the fair one — a two-integer prefactor is a
+second tuned choice, and the corpus form's prefactor is `1/3`.
+
+**So the 0.128 % is weak but non-vacuous evidence, and its whole weight is the
+`1/k` restriction.**  I flag in the probe, and here, that the restriction is
+itself chosen from a property of the form under test: that is a selection effect,
+not a neutral prior.  Someone who fixed the prefactor grid before seeing the
+answer would report rank 4.
+
+**What this does NOT do.**  It derives nothing and refutes nothing.  A structural
+derivation — the `H₄` alternating-channel route
+`conj:flavor-split-habiro-derivation` proposes, Wenzl weight `1/[4]_q!` — is
+unaffected by how much numerical company the form has; that is the point of
+insisting on one.  **Scope (a)**: this basis, this degree cap, this prefactor
+grid; a different basis gives a different count, and no invariant is proved.
+
+**And the three competitors must NOT be adopted.**  Switching to `(8/9)·h·(q−1)²·z_D`
+because it fits 5.2× better is exactly the selection-against-the-target that
+AGENTS.md §*"NO FITTING"* forbids, and the ranking rule there is explicit that a
+more accurate fitted route is worth **less** than a less accurate derived one.
+They are recorded as a measurement of how much the agreement is worth, not as
+candidates.
+
+Probe: `computations/qbeta/flavour_split_baseline_genericity_probe.py`
+(mpmath dps 60, no sympy, no float64; gates name it nowhere).
+COORDINATION NOTE (2026-09-13, session from bean `qou-5c64`). Not a claim on
+this bean and nothing here is edited — this answers the one item the previous
+coordination note left explicitly untested.
+
+**Your working title is right, and it needs only ONE Markov parameter, not
+two.** That note closed with *"`b_pn` / `b_nn` are not `z` (ratios 0.8295 and
+0.7942 to their predecessors), so whatever the structure is, it is not simply
+one parameter."* Measured: it is one parameter. `b_nn` **is** `z`, bar-conjugated.
+
+The probe's own identity 2 already contains this — `b_pp/b_nn - q^4 = 0` — and
+the `q^4` is not a scale factor that happens to be a fourth power. It is the bar
+involution `q -> q^-1`, and `b_nn = 1/(q(q^2+1))`, which the docstring calls
+"the simplest of the five", is `z|_{q -> 1/q}`. Five identities, each
+`sympy.simplify`ing to **exactly zero**
+([`qbeta_bond_bar_parity_probe.py`](../computations/qbeta/qbeta_bond_bar_parity_probe.py),
+witness `computations/qbeta/qbeta-bond-bar-parity.witness.json`):
+
+    b_nn - z|_{q->1/q}                      = 0     n-n bond = bar conjugate of p-p
+    z - zbar - (q - q^-1)                   = 0     separation is exactly h
+    b_pn - (z + zbar)/2 - h.delta/4         = 0     p-n bond = their MIDPOINT, colour-displaced
+    z.zbar - 1/(q + q^-1)^2                 = 0     sqrt(b_pp b_nn) = 1/(q+q^-1), bar-fixed
+    bar-odd(b_pn) + (q-1)^5(q+1)^3(q^2+1)/(24 q^5) = 0   fifth-order zero at q = 1
+
+so
+
+    b_pp = z          b_nn = zbar          b_pn = (z + zbar)/2 + (delta/4) h
+
+The two like-pair bonds are the bar-conjugate endpoints of a single object; the
+unlike-pair bond is its bar-EVEN part, and it is the **only** one that breaks the
+bar symmetry — by `h.delta/4 = 7.1902e-05` absolute, `1.6415e-05` relative, at
+the proton pin. Set `delta = 0` (the colour-BLIND crossing your docstring
+already separates at 1e-25) and `b_pn` is the exact midpoint. The bar form
+reproduces all three of your `MEASURED` literals to **1.24e-20** — every digit
+they carry. Your 0.8295 and 0.7942 are then `b_pn/z` and `b_nn/b_pn`, with
+`b_nn/z = 1/q^4 = 0.65879` closing the chain.
+
+**Two scope limits, stated because they bear on how you'd use it.** (i) These
+are identities between *closed forms*; the involution is `q -> q^-1` on a
+rational function. Whether it is the Hecke bar involution acting on the Markov
+*trace* — which would promote row 1 from a fact about the traces to a fact about
+the words, and would be the interesting version — is **not** established here
+and needs the trace's own bar-equivariance. (ii) They inherit your file's own
+GROUPED-frame caveat (`qou-4383`) verbatim; I did not resolve it.
+
+**Separately: three of your four shift values are independently confirmed by a
+route that never touches the Laurent expansion.** Bean `qou-5c64` isolated the
+interface shifts by differencing the June-era `binding-single-pipeline-comparison`
+witness against a live run and solving four atoms' bond residuals for three
+unknowns. It returned `d_pp = 0`, `d_pn = -0.10445825933572413`,
+`d_nn = -0.20906032198987946` at the MUON pin — against your `0`,
+`-h(1/2 - delta/4)` and `-h`, agreeing to **2.73e-11** on both non-zero ones at
+the same anchor (that is the isolation's floor, not a disagreement). So the
+colour-WEIGHTED-vs-BLIND separation your probe asserts at 1e-25 is visible from
+outside the expansion too: witness differencing lands on the weighted value.
+
+
+**SELF-CORRECTION to the note above (same author, after reading #7285).** Two
+things, and the ordering of this file was one of them.
+
+**1. My block was inserted between the `qou-gba1` note and #7285's, breaking a
+reference.** #7285 opens *"prompted by the coordination note immediately
+above"* and quotes *"agreeing to all 19 digits `b_pp` carries"* and *"ratios
+0.8295 and 0.7942 … not one parameter doing all the work"* — both are the
+`qou-gba1` note's wording, not mine. A rebase union put mine in the middle and
+silently re-pointed "immediately above" at a note containing neither phrase.
+Re-ordered to gba1 → #7285 → this. **An append-only ledger is not order-free
+once an entry says "above".**
+
+**2. #7285 SUPERSEDES my framing, and it is the better one.** I gave three
+points; it gives the law they are points on, in Lean:
+
+    b(t) = z - h*t      QOU.Hecke.BondLetterIdentification.tr_bond_interp
+    pp  t = 0            pn  t = 1/2 - delta/4            nn  t = 1
+
+My identities 1 and 3 (`b_nn = zbar`, `b_pn = (z+zbar)/2 + h.delta/4`) are the
+`t = 1` and `t = 1/2 - delta/4` rows restated. **"It is one parameter" is
+#7285's result to claim, not mine** — and its version is stronger, because it
+holds for a bond with material on both sides, which none of the closed-form
+identities address.
+
+**What survives as this note's, narrowly:** the reading of `t` as the **bar
+involution** rather than as a mixing weight — `b_nn = z - h` and `b_nn = zbar`
+are the same number and different statements, since `z - zbar = h` exactly — plus
+two identities #7285 does not carry:
+
+    sqrt(b_pp . b_nn) = 1/(q + q^-1)                          bar-FIXED
+    bar-odd(b_pn)     = -(q-1)^5(q+1)^3(q^2+1)/(24 q^5)       fifth-order zero at q=1
+
+The second is the one with content beyond restatement: it says the p-n letter is
+the **only** one that breaks the bar symmetry, that it breaks it solely through
+`delta`, and that it does so at fifth order — 1.6415e-05 relative at the proton
+pin. In `b(t)` language: `t = 0` and `t = 1` are bar-conjugate endpoints and
+`t = 1/2` would be the bar-EVEN midpoint; `delta/4` is exactly the bar-symmetry
+breaking, and its smallness is why the p-n letter is nearly self-conjugate.
+
+Whether `t`'s endpoints being bar-conjugate is a *mechanism* or a restatement is
+**not** established here, and #7285's own "still open" applies unchanged: nothing
+above derives the `1/4` or the `(q-1)^2/3`.
+
+---
+
+THE `(q−1)²/3` TARGET IS NOW **LOCATED**, NOT CLOSED — a parity obstruction
+(2026-09-13, session sleepy-morse, PR #7320).
+
+With the `1/4` retracted and the genericity measured (two entries up), the
+`(q−1)²/3` is this bean's one live target.  Before attacking it I ran the
+formalize-first prune the discipline asks for — *"find the invariant the whole
+class must satisfy"* — on the single exact ingredient
+`conj:flavor-split-habiro-derivation` rests on.  It is blocked at exactly the
+exponent `δ` needs.
+
+**THE PARITY.**  `QOU.FlavorSplit.topological_flavor_split_of_central` proves
+`σ³ − σ⁻³ = h(h²+3) = q³ − q⁻³` is a **central scalar** and reads that as a fact
+about the proton/neutron pair.  It is a fact about **parity**:
+
+    σ^k − σ^{−k}  is central  ⟺  k is ODD,  and then  = q^k − q^{−k} = h·[k]_q
+
+At even `k` it is `A_k·(σ + σ⁻¹)` — a central multiple of the resolvent
+`u := σ + σ⁻¹ = 2σ − h`, which is not central unless `σ` is.  The invariant
+underneath is
+
+    u²  =  h² + 4      (central)
+
+so even powers of `u` are central and odd ones are not; equivalently the odd
+subsequence closes with a central coefficient, `D_{k+4} = (h²+2)D_{k+2} − D_k`.
+
+**THE PRUNE.**  Exactly, as rational functions, `δ = ℏ_q²·h·[2]_q/3` with
+`h·[2]_q = q² − q⁻²`.  So `δ`'s numerator is the **k = 2** member of the family
+`q^k − q^{−k}` that the **odd** reversals realise as scalars — and `k = 2` is
+precisely where the parity fails:
+
+    σ² − σ⁻²  =  h·(σ + σ⁻¹)      — NOT a scalar
+
+Its two values on the Hecke spectrum `{q, −q⁻¹}` are `+(q²−q⁻²)` and
+`−(q²−q⁻²)`: **the right magnitude with the sign unfixed.**  So reaching `δ`'s
+numerator through a crossing reversal requires **choosing the symmetric
+channel**, and the algebra does not supply that choice
+(`reversal_two_forces_resolvent_central`: a central value at `k = 2` forces the
+resolvent, hence `σ`, to be central — false in `H_n(q)` for `n ≥ 3`).
+
+**Scope (b), invariant named** (the parity), and **narrow**: within the
+single-generator family `σ^k − σ^{−k}` only.  Nothing here excludes `h·[2]_q`
+arising from some other Hecke element.  It says the one exact result the
+conjecture rests on does not reach it, and names what a repair must supply.
+
+**What is proved vs measured.**  New library file
+`QOU/Hecke/CrossingReversalParity.lean` — generic `Ring R`, `h` central, **left**
+inverse only (matching the 2026-09-03 strengthening of the `k = 3` theorem;
+`H_n(q)` is not commutative for `n ≥ 3`) — carries nine sorry-free theorems:
+`inv_eq`, `sub_eq`, `inv_quad`, `resolvent_sq`, `reversal_two`,
+`reversal_two_forces_resolvent_central`, `reversal_four`, `reversal_five`,
+`reversal_rec`.  `lean`-direct exit 0 / 0 warnings; `#print axioms` clean, eight
+of nine needing `[propext]` alone.  **The general-`k` statement is NOT
+formalised** — it is measured to `k = 11` in
+`computations/qbeta/crossing_reversal_parity_probe.py` (6/6, sympy + mpmath
+dps 60, no float64), which also measures the two channel values and the odd
+recursion.  Do not cite the general form as proved.
+
+**Provenance.**  `u² = h² + 4` is elementary and standard in the Chebyshev /
+Jones–Wenzl literature; the claim is only that **this corpus does not carry it**
+— grepped over `content/`, `computations/`, `docs/` and `.beans/`, where the sole
+crossing-reversal result is the `k = 3` one.  `library/` was **not** searched, so
+this is not a claim about the literature.
+
+**This closes nothing.**  It converts "derive the `(q−1)²/3`" from an open target
+into a *located* one: the `H₄` route's exact ingredient produces `h·[k]_q` at odd
+`k` only, `δ` needs `k = 2`, and the gap is a **channel selection**.  That is the
+next honest question on this bean — and it is a question about the framework
+(which channel the weak vertex projects onto, and why), not one more identity.
+
+---
+
+AND THE CONJECTURE'S **OWN** CHANNEL GIVES THE SIGN BACKWARDS (same session,
+PR #7320, second commit).
+
+The entry above says the `k = 2` reversal leaves `δ`'s numerator with an
+undetermined sign and that the algebra does not supply the choice.  **It does not
+merely fail to supply it — the choice `conj:flavor-split-habiro-derivation`
+itself states points the wrong way.**  The block's words:
+
+> *"The weak interaction is strictly left-handed, so it projects onto the fully
+> alternating channel of `H₄`, the sign-block partition `(1⁴)` … In the
+> alternating channel the generator acts by its sign eigenvalue `−q⁻¹`."*
+
+Evaluate `σ² − σ⁻² = h·(σ + σ⁻¹)` there and, exactly:
+
+    ℏ_q² · (alternating value) / 3  =  −δ
+    ℏ_q² · (symmetric   value) / 3  =  +δ
+
+So the stated channel yields `δ < 0`, i.e. **m_n < m_p** — the neutron lighter
+than the proton.  The two channels are exact negatives (`splits_sum_zero`), so
+the channel choice is the entire content: the magnitude is settled and only the
+sign is at stake.
+
+**The condition is MINE, not the block's, and it must be carried with the
+claim.**  That `δ`'s numerator *is* the `k = 2` crossing reversal is a reading —
+the natural one, given the block derives its one exact result that way, but the
+block makes no such identification and calls `(q−1)²(1−q⁻⁴)/3` *"a structured
+near-match, not a derived closed form"*.  So read the **pair**: if the reading is
+right the stated channel is backwards; if it is wrong the block owes an account of
+where `h·[2]_q` comes from, since it is then not the reversal.  Either way the
+route is not closeable as stated.
+
+Six further sorry-free theorems in a closing `Archimedean` section of
+`QOU/Hecke/CrossingReversalParity.lean` (over `ℝ`, because the sign statements use
+`1 < q` — the main body stays generic `Ring R`, and the file header was corrected
+to say so rather than claiming the whole file is ordering-free).  `lean`-direct
+exit 0 / 0 warnings; `#print axioms` clean on all 15 declarations.  Probe 7/7.
+
+**Next on this bean, and it is a framework question rather than another
+identity:** which channel the weak vertex projects onto, and why.  The corpus
+asserts left-handed ⇒ alternating; the flavour split needs symmetric.  One of the
+two has to give, and neither is derived here.

@@ -1,0 +1,185 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "czechmathj-60-2010-1-4",
+ "source": {
+  "file": "CzechMathJ_60-2010-1_4.pdf",
+  "sha256": "7595f81d1398d0bfdb2bc0fd44c5a0653dbcdeecec6804bdec90e7e3bfee5092",
+  "bytes": 312747,
+  "pages": 19,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Czechoslovak Mathematical Journal",
+  "authors_raw": "Yuqun Chen; Yongshan Chen; Chanyan Zhong",
+  "title_lines": [
+   "Czechoslovak Mathematical Journal"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Creator": "pdftk 1.44 - www.pdftk.com",
+   "Producer": "itext-paulo-155 (itextpdf.sf.net-lowagie.com); modified using iText\u00ae 5.1.0 \u00a92000-2011 1T3XT BVBA",
+   "CreationDate": "D:20200703182809+02'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Composition-Diamond lemma for left ideals of a free algebra",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Composition-Diamond lemma for \u201cdouble-free\u201d modules",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Highest weight modules over sl2",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Verma modules over Kac-Moody algebras",
+   "page": 11,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Verma modules over the coefficient algebra of a",
+   "page": 12,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Universal enveloping module for a Sabinin algebra",
+   "page": 14,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 18,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1693,
+   "n_words": 252
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3490,
+   "n_words": 658
+  },
+  {
+   "id": "sec-001-2-composition-diamond-lemma-for-left-ideals-of-a",
+   "number": "2",
+   "title": "Composition-Diamond lemma for left ideals of a free algebra",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5049,
+   "n_words": 1145
+  },
+  {
+   "id": "sec-002-3-composition-diamond-lemma-for-double-free-modu",
+   "number": "3",
+   "title": "Composition-Diamond lemma for \u201cdouble-free\u201d modules",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6863,
+   "n_words": 1620
+  },
+  {
+   "id": "sec-003-4-highest-weight-modules-over-sl2",
+   "number": "4",
+   "title": "Highest weight modules over sl2",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2481,
+   "n_words": 598
+  },
+  {
+   "id": "sec-004-5-verma-modules-over-kac-moody-algebras",
+   "number": "5",
+   "title": "Verma modules over Kac-Moody algebras",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2984,
+   "n_words": 707
+  },
+  {
+   "id": "sec-005-6-verma-modules-over-the-coefficient-algebra-of",
+   "number": "6",
+   "title": "Verma modules over the coefficient algebra of a",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3633,
+   "n_words": 794
+  },
+  {
+   "id": "sec-006-7-universal-enveloping-module-for-a-sabinin-alge",
+   "number": "7",
+   "title": "Universal enveloping module for a Sabinin algebra",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 5230,
+   "n_words": 1279
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3945,
+   "n_words": 637
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 9,
+  "chars_total": 35368
+ }
+}

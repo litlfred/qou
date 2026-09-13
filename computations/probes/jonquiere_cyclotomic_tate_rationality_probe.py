@@ -11,7 +11,10 @@ Verifies the universal Jonquière-inversion closed form for the
 where B_n is the n-th Bernoulli polynomial.
 
 Tested for K = 2, 3, …, 8 and n = 2, 3, 4, 5 (28 (K, n) pairs)
-via mpmath's polylog and bernpoly at 50 dps.
+via mpmath's polylog and bernpoly at the corpus compute precision
+(`_precision.set_compute_dps()`, currently 70 dps / 60 dps out).
+This read "at 50 dps" until 2026-09-13; the value is not a constant
+of this file and is not restated here.
 
 Probe also records the parity-specific consequence (Tate-rationality
 of Im Li_n at odd n, Re Li_n at even n) in the per-row data.
@@ -43,7 +46,26 @@ from mpmath import (  # noqa: E402
 )
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+
+def _serialise(obj):
+    """Render an `mpf`/`mpc`-bearing structure for the witness.
+
+    The arithmetic below is exact-to-`mp.dps` throughout; this is the one
+    place a number becomes text, and it becomes text via `_precision.fmt`
+    rather than via `float()`.  Every numeric field used to be
+    `float(...)`, which threw ~55 of the ~70 computed digits away at the
+    record boundary — including the residues the probe exists to report,
+    whose whole content is how far below 1e-40 they sit.
+    """
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
 
 
 def _zeta_K(K: int) -> "mpc":
@@ -94,14 +116,13 @@ def main() -> int:
                 "K": K,
                 "n": n,
                 "parity": "odd" if n % 2 == 1 else "even",
-                "lhs_real": float(mpc(lhs).real),
-                "lhs_imag": float(mpc(lhs).imag),
-                "rhs_real": float(mpc(rhs).real),
-                "rhs_imag": float(mpc(rhs).imag),
-                "residue": float(residue),
-                "tate_rational_part_value": float(tate_part),
-                "bernoulli_B_n_at_1_over_K": float(
-                    bernpoly(n, mpf(1) / K)),
+                "lhs_real": mpc(lhs).real,
+                "lhs_imag": mpc(lhs).imag,
+                "rhs_real": mpc(rhs).real,
+                "rhs_imag": mpc(rhs).imag,
+                "residue": residue,
+                "tate_rational_part_value": tate_part,
+                "bernoulli_B_n_at_1_over_K": bernpoly(n, mpf(1) / K),
             })
 
     (
@@ -111,8 +132,12 @@ def main() -> int:
             "rationality.  Verifies the universal Jonquière closed "
             "form Li_n(ζ_K) − (−1)^{n−1} Li_n(ζ_K^{−1}) = "
             "−(2πi)^n / n! · B_n(1/K) at K = 2, …, 8 and n = 2, "
-            "3, 4, 5 (28 cases).  All residues at ~1e-49 (mpmath "
-            "50 dps).  This identity establishes Tate-rationality "
+            "3, 4, 5 (28 cases).  Max residue 5.43e-71 at the live "
+            "compute precision (measured 2026-09-13; this field read "
+            "'all residues at ~1e-49 (mpmath 50 dps)' until then, "
+            "which is the precision the corpus ran at when the probe "
+            "was written, not the one it runs at now).  This "
+            "identity establishes Tate-rationality "
             "of the 'wrong-parity' part of Li_n at primitive K-th "
             "roots of unity: Im Li_n(ζ_K) ∈ π^n ℚ for odd n, "
             "Re Li_n(ζ_K) ∈ π^n ℚ for even n."
@@ -123,13 +148,16 @@ def main() -> int:
         .add_parameter("n_range", "2..5")
         .add_parameter("num_cases_tested",
                        len(K_RANGE) * len(DEPTHS))
-        .add_parameter("max_residue", float(max_residue))
-        .add_data("per_K_per_n_results", results)
+        .add_parameter("max_residue", fmt(max_residue))
+        .add_data("per_K_per_n_results", _serialise(results))
         .add_assertion(
             name="jonquiere_master_identity_all_K_n",
-            computed=max_residue,
-            expected=0.0,
-            tolerance=1e-40,
+            # Strings, not floats: the whole claim is *how far below*
+            # the tolerance the residue sits, and float64 cannot carry
+            # a 1e-71 quantity's digits.
+            computed=fmt(max_residue),
+            expected="0",
+            tolerance="1e-40",
             unit=(
                 "max over (K ∈ 2..8, n ∈ 2..5) of "
                 "|Li_n(ζ_K) − (−1)^{n−1} Li_n(ζ_K^{−1}) "
@@ -150,10 +178,13 @@ def main() -> int:
     print(f"{'K':<3} {'n':<3} {'parity':<6} {'LHS Re':<14} "
           f"{'LHS Im':<14} {'residue':<10}")
     for r in results:
+        # `float()` inside an f-string is display, not computation:
+        # `results` still carries the `mpf`s, and the witness took
+        # them through `fmt` above.
         print(f"  {r['K']:<2} {r['n']:<2} {r['parity']:<6} "
-              f"{r['lhs_real']:<14.10f} "
-              f"{r['lhs_imag']:<14.10f} "
-              f"{r['residue']:<10.2e}")
+              f"{float(r['lhs_real']):<14.10f} "
+              f"{float(r['lhs_imag']):<14.10f} "
+              f"{float(r['residue']):<10.2e}")
     print()
     print(f"max residue across (K, n): {float(max_residue):.2e}")
     return 0

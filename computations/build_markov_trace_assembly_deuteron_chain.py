@@ -45,7 +45,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import (  # noqa: E402
-    TR_M_AT_Q0,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -56,7 +55,16 @@ from derivation_chain import (  # noqa: E402
 HERE = Path(__file__).parent
 OUTPUT = _pb.witness_path("markov-trace-assembly-deuteron.derivation.json", HERE)
 
-DEUTERON_TR_M_Q0 = TR_M_AT_Q0["D"]
+# MIGRATED 2026-09-13 (bean qou-4383). This read `derivation_chain.TR_M_AT_Q0['D']`,
+# a hardcoded float that was grouped-era: correct when written, stale from the
+# 2026-09-05 ordering ruling (qou-hu1f) onward. It now reads the witness through
+# `canonical_trm_reference`, which selects by recorded q0 AND rejects a witness
+# in the wrong (or an undeclared) intra-nucleon ordering — bean qou-y4gi. The
+# point of the migration is not three better digits; it is that a hardcoded
+# constant cannot track a ruling and a read value can.
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
+DEUTERON_TR_M_Q0 = float(tr_m_nucleon("deuteron"))
+
 
 # 11 partitions of 6 with Wedderburn block dimensions f_λ.
 # Source: hook-length formula on Young diagram of shape λ.

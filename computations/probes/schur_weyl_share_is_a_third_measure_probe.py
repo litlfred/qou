@@ -118,6 +118,7 @@ from __future__ import annotations
 
 import math
 import sys
+from fractions import Fraction
 
 import mpmath as mp
 
@@ -250,10 +251,19 @@ def main() -> int:
     okD = True
     for n in (3, 6, 9):
         L = list(partitions(n))
-        tot = mp.fsum(mp.mpf(f_lambda(l)) ** 2 for l in L) / mp.mpf(math.factorial(n))
-        ok = abs(tot - 1) < EXACT
+        # Burnside is an identity in Z: sum_lambda (f^lambda)^2 == n! exactly.
+        # `f_lambda` is annotated `-> int` and `math.factorial` returns an int,
+        # so BOTH sides are exact integers and the equality can be decided
+        # exactly. The previous form pushed them through `mp.fsum`/`mp.mpf` and
+        # then compared to 1 within a 1e-40 tolerance -- weaker than the
+        # arithmetic allows, and it made an exact statement look approximate.
+        num = sum(f_lambda(l) ** 2 for l in L)
+        den = math.factorial(n)
+        ok = (num == den)
         okD &= ok
-        print(f"    n={n}  sum = {mp.nstr(tot, 22)}  (Burnside; q-INDEPENDENT)")
+        print(f"    n={n}  sum = {num}/{den} = "
+              f"{'1 (exact)' if ok else Fraction(num, den)}"
+              f"  (Burnside; q-INDEPENDENT)")
     checks.append(("classical Plancherel is normalised, and q-free", okD,
                    "sum == 1 by Burnside"))
 

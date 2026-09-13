@@ -524,9 +524,75 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     three bond constants are untouched. **Absolute** traces moved, by `3.785×`
     (`2H`), `7.868×` (`3H`), `6.891×` (`3He`), `14.325×` (`4He`), and
     `binding_canonical`'s difference route moved with them by the same factor.
-    Pass `intra_order="grouped"` to reproduce any pre-2026-09-05 absolute
-    number. Probe:
+    Pass `intra_order="grouped"` to reproduce the absolute numbers as they
+    stood IMMEDIATELY BEFORE 2026-09-05. Probe:
     `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`.
+
+    🛑 **NOT "any pre-2026-09-05 absolute number" — that is what this line said
+    until 2026-09-13, and it is measurably too strong** (bean `qou-5c64`).
+    Grouped reproduces the state just before the ruling; it does NOT reproduce
+    arbitrary earlier states, because at least one further change sits further
+    back. Measured on the deuteron at a fixed q, against
+    `binding-canonical.witness.json` as committed on **2026-06-15** (recovered
+    at full 50 dps from its own `commitSha 0fa83306db2a`):
+
+        intra-ordering, grouped/borromean   free 3.784816689   atom 3.784816689
+        residual,       grouped/2026-06-15  free 1.15067303    atom 1.481039152
+
+    The ordering factor reproduces the `3.785 (2H)` recorded three lines up to
+    ten digits, which is what makes the residual trustworthy rather than a
+    measurement artefact.
+
+    **The residual decomposes exactly, and the pieces are worth having here.**
+    Over D / T / ³He / ⁴He, the free residual factorises per nucleon and the
+    bond residual per bond type — both to well below the data's own floor
+    (1e-50 and 5.6e-12 respectively, the latter being June's ordering-invariance
+    floor, not a model failure):
+
+        per nucleon   proton 1.075521518      neutron 1.069874485
+        per bond      p-p 1.227044031   p-n 1.287106862   n-n 1.390572916
+
+    **The p-p bond IS the Markov parameter `z`.** Isolated as
+    `r(³He)/r(D)` with `r = tr_M(W_atom)/tr_M(W_free)`, it is
+    `0.61268805054558909984` today — `z_D = q³/(q²+1)` to **3.2e-51** — and
+    `0.49932034618370936279` in June — `z_C = 1/(√q + 1/√q)` to 2.4e-8, the
+    residue being the q₀ anchor. So its residual is `z_D/z_C`, i.e. the
+    **convention C→D excision, carried by `z` itself.**
+
+    🛑 **Do not read "the C→D `y_lambda_at` swap is a no-op" as "C→D does not
+    affect this."** Both are true and they are different statements: the two
+    `y_lambda_at` implementations do agree at `n = 6`, and the convention still
+    arrives through `z`, which never goes through that function. An earlier
+    version of this note listed C→D among the causes *ruled out* on the strength
+    of the `y_lambda_at` test alone; that was an absence-of-evidence error and
+    is retracted (bean `qou-5c64`).
+
+    **And the OTHER TWO bonds' `d` are unchanged too, so the whole bond side is
+    pure C→D.** Backing `d = bond - z` out against each side's OWN `z`:
+
+        p-p   d_now  0                      d_June  1.2e-8      (i.e. 0)
+        p-n   d_now -0.10445825933572413    d_June -0.10445817736543710
+        n-n   d_now -0.20906032198987946    d_June -0.20906030963839083   (= -h)
+
+    all three agree to the ~1e-7 anchor floor, and `(z_D + d)/(z_C + d)` with `d`
+    held fixed predicts every measured bond residual to 2e-7. The p-n `d` is
+    `-h(1/2 - δ/4)` with `δ = flavor_split_leading(q) = 0.0013757112` today and
+    `0.0013772796` implied by the June witness — a 0.11 % gap, which is the
+    anchor, not a change.
+
+    🛑 **So the δ de-wire of 2026-06-29 (`9928f3f4a79`) does NOT move this
+    witness**, and an earlier version of this note claimed it did, with
+    "δ = -2.16772 as of 2026-06-15". That number came from subtracting `z_D`
+    from June's bond when June was on `z_C`; it is an artefact of mixing the two
+    conventions and is retracted (bean `qou-5c64`). The `2.9e-16` confirmation
+    quoted alongside it was real but was of the *today* side only — a check on
+    one side of a comparison, reported as confirming the comparison.
+
+    Genuinely ruled out, each by direct substitution at fixed q: the q₀ anchor
+    (3.9e-8), the `pn_convention` *flag* (a no-op on the free trace by
+    construction, 2e-4 on the atom trace), the `m_pp/m_pn/m_nn` multiplicities
+    (unchanged), and the δ de-wire (above). **Still open: only the two
+    per-nucleon free factors**, proton `1.075521518` and neutron `1.069874485`.
 
     ⚠ NAME IS A MISNOMER — this does NOT return a braid word (2026-08-25, PR #5765).
     A rename was considered and rejected: 685 call sites across 382 files. So the

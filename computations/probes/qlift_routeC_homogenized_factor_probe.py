@@ -379,6 +379,7 @@ def jones_frac(nmax, q):
 
 
 def qint(k, q):
+    """[k]_q = (1 - q^k)/(1 - q)  -- the unbalanced bracket, sign-flipped spelling."""
     return (1 - q ** k) / (1 - q)
 
 

@@ -327,18 +327,28 @@ def main() -> int:
     print("-" * 78)
     strong = len(classical) - n_read - n_fam
     print(f"STRONG (DECLARED+BASIS) : {strong} / {len(classical)}")
-    print(f"WEAK   (FAMILY)         : {n_fam}   <- an authoring-hygiene queue,")
-    print("                             NOT a determination.  The file itself")
-    print("                             still does not say which bracket it uses;")
-    print("                             a nearby file with the same body does.")
+    print(f"WEAK   (FAMILY)         : {n_fam}", end="")
+    if n_fam:
+        print("   <- an authoring-hygiene queue,")
+        print("                             NOT a determination.  The file itself")
+        print("                             still does not say which bracket it uses;")
+        print("                             a nearby file with the same body does.")
+    else:
+        print("   <- every file now declares its own bracket.")
     print(f"needs reading (a)/(b)   : {n_read}")
     print()
     print("A DECLARED verdict says the file is HONEST about its bracket, not")
     print("that the bracket is mathematically right for its subject.  Those are")
     print("different claims and this script only makes the first.")
     print()
-    print("Do NOT quote a single combined figure.  'STRONG + WEAK' would read as")
-    print(f"{len(classical)}/{len(classical)} resolved, and 7 of those are files that say nothing at all.")
+    if n_fam or n_read:
+        print("Do NOT quote a single combined figure.  'STRONG + WEAK' would read as")
+        print(f"{len(classical)}/{len(classical)} resolved, and {n_fam + n_read} of those "
+              f"are files that say nothing at all.")
+    else:
+        print(f"STRONG is the whole population: {strong}/{len(classical)}.  No file is")
+        print("resting on a sibling's declaration, so the combined-figure hazard")
+        print("this footer used to warn about does not currently apply.")
     return 0
 
 

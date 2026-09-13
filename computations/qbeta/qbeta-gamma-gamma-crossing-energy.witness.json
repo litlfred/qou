@@ -1,0 +1,187 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T13:50:05.727001+00:00",
+  "commitSha": "97a42fec6d48343cbed8eff0f42d42ffe15effd9",
+  "assertions": [
+    {
+      "name": "calibrates_against_the_corpus_electron_and_positron_values",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "electron = left trefoil T_(2,3), three POSITIVE crossings: E_cross = 3*q = 3.329935748 (pair-creation-energy.md says ~3.330); positron = mirror, three NEGATIVE: E_cross = -3/q = -2.702754852 (says ~-2.703). A reversed sign convention would swap these"
+    },
+    {
+      "name": "gamma_gamma_crossing_energy_is_exactly_k_times_h",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E_cross of a k-vertex gamma-gamma word = k*h exactly, k = 0..14 (each vertex is one positive and one negative crossing, q + (-1/q) = h). Mismatches: none"
+    },
+    {
+      "name": "crossing_energy_is_blind_to_index_and_order",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "3840 (permutation, index-assignment) pairs of a 5-vertex word -> 1 distinct value(s). E_cross is a sum over letters, so like the alternating character of #7295 it cannot see which vertex sits where"
+    },
+    {
+      "name": "every_non_empty_gamma_gamma_word_is_repulsion_dominated",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E_cross = k*h > 0 for every k >= 1 and every q > 1, since h = 0 only at q = [1]. def:crossing-energy reads a positive value as 'repulsion dominates' and a negative one as 'binding dominates', so NO gamma-gamma word is binding-dominated -- on any number of strands, at any q > 1. At q_0, h = 0.20906029879563931543"
+    },
+    {
+      "name": "unconstrained_minimisation_is_degenerate_the_empty_word_wins",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E_cross(empty word) = 0, against [('(v0 v1)^2', '0.836241195183'), ('(v0 v1)^4', '1.67248239037'), ('sporadic A', '2.09060298796'), ('sporadic B', '2.09060298796'), ('(v0 v1)^6', '2.50872358555')] for the five PSD-feasible words. So the UNCONSTRAINED minimum is the empty word -- the THIRD functional with that property, after the Markov trace and the LP objective (the latter proved degenerate by prop:operator-selection-lp). The demand constraint of knot-operator-selection-proof is the stated reason this may not be the last word, and it is NOT implemented here"
+    },
+    {
+      "name": "ordering_among_non_empty_words_is_by_vertex_count_alone",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sorted by E_cross: [('(v0 v1)^2', 4), ('(v0 v1)^4', 8), ('sporadic A', 10), ('sporadic B', 10), ('(v0 v1)^6', 12)] -- monotone in the vertex count, which is the whole content of E_cross = k*h. The two sporadic 10-vertex words TIE exactly, so even restricted to non-empty words this functional does not separate them"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25513,
+  "computation": "qbeta-gamma-gamma-crossing-energy",
+  "scriptFile": "qbeta_gamma_gamma_crossing_energy_probe.py",
+  "scriptHash": "9a065192749e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_gamma_gamma_crossing_energy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_crossing_energy_probe.py"
+  },
+  "description": "Crossing energy on gamma-gamma words. E_cross(k vertices) = k*h exactly -- a function of the vertex COUNT alone, blind to indices and order. Hence strictly POSITIVE for every non-empty word at every q > 1, and def:crossing-energy reads a positive value as repulsion-dominated: no gamma-gamma word is binding-dominated, on any number of strands. And minimising it is degenerate -- the empty word has E_cross = 0 -- making crossing energy the THIRD functional whose unconstrained optimum is the trivial answer. Does NOT implement knot-operator-selection-proof's demand constraint, which is the stated reason the unconstrained minimum may not be the last word. Calibrated against the corpus's own electron/positron values. Scope-(a).",
+  "data": {
+    "definition": "def:crossing-energy: E_cross(beta) = sum over crossings, +q for L_+, -1/q for L_-",
+    "calibration": {
+      "electron_T23_three_positive": {
+        "symbolic": "3*q",
+        "at_q0": "3.3299357482541424228",
+        "corpus_says": "~3.330"
+      },
+      "positron_mirror_three_negative": {
+        "symbolic": "-3/q",
+        "at_q0": "-2.7027548518672244765",
+        "corpus_says": "~-2.703"
+      }
+    },
+    "closed_form": "E_cross(gamma-gamma word, k vertices) = k*h",
+    "feasible_words": [
+      {
+        "word": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "label": "(v0 v1)^2",
+        "vertices": 4,
+        "E_cross_at_q0": "0.8362411951825572617233849"
+      },
+      {
+        "word": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "label": "(v0 v1)^4",
+        "vertices": 8,
+        "E_cross_at_q0": "1.67248239036511452344677"
+      },
+      {
+        "word": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "label": "sporadic A",
+        "vertices": 10,
+        "E_cross_at_q0": "2.090602987956393154308462"
+      },
+      {
+        "word": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "label": "sporadic B",
+        "vertices": 10,
+        "E_cross_at_q0": "2.090602987956393154308462"
+      },
+      {
+        "word": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "label": "(v0 v1)^6",
+        "vertices": 12,
+        "E_cross_at_q0": "2.508723585547671785170155"
+      }
+    ],
+    "empty_word_E_cross": "0",
+    "findings": [
+      "E_cross is a function of the vertex COUNT alone -- blind to index and order, like the alternating character and for the same reason",
+      "every non-empty gamma-gamma word is strictly POSITIVE hence repulsion-dominated, at every q > 1 and on any number of strands",
+      "unconstrained minimisation is degenerate: the empty word has E_cross = 0. Third functional with that property",
+      "even among non-empty words it does not separate the two sporadic 10-vertex candidates, which tie exactly"
+    ],
+    "not_implemented": "knot-operator-selection-proof's demand constraint <Phi, dem(K)>_F >= ||dem(K)||_F. Building dem(K) needs a state K, the Frobenius dual via G^-1, and a choice of which K the nucleon is -- the last being the question the arc is trying to settle, so wiring it here would be circular",
+    "scope": "a",
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  }
+}

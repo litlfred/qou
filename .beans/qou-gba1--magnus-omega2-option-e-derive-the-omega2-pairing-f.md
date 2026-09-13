@@ -1,10 +1,11 @@
 ---
 # qou-gba1
 title: 'Magnus Omega2 option E: derive the Omega2 pairing from what Omega2 is'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-07T11:44:24Z
-updated_at: 2026-09-13T11:21:58Z
+updated_at: 2026-09-13T15:22:31Z
 ---
 
 # The only option that ANSWERS the question rather than choosing

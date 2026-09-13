@@ -570,3 +570,284 @@ correct**, which it was not when the tranche was first scoped. Order of work:
 
 And a dependent worth remembering: `assembly_chain_11_letter_recompute_probe`
 is red until step 2 reaches the neutron chain's leaf.
+
+## 2026-09-13 — the TR_M_AT_Q0 tranche: migration half COMPLETE
+
+`eecf2369cca`, `ff7b290798d`, `3d7d7a89f6e`, `7d0bc81993b`.
+
+### The inventory was smaller than "twelve consumers"
+
+Of the twelve modules that *mention* the registry: **six** genuinely import it,
+**one keeps its own separate copy**, **one AUDITS it by AST**
+(`derivation_convention_frame_audit` — migrating that would break what it
+measures), and the rest name it only in prose.
+
+| module | outcome |
+|---|---|
+| `audits/canonical_a_k_magnitude_audit` | own copy, **two** rulings behind, migrated; also fixed a crashing data path |
+| `build_markov_trace_assembly_neutron_chain` | migrated, target → 0.4751335171556822 |
+| `build_markov_trace_assembly_deuteron_chain` | migrated, target → 0.1519683392042316 |
+| `applied_uniqueness_mass_table` | migrated; was MIXING frames; frame check added, now gated red |
+| `build_proton_mass_50dps_chain` | migrated; documentary step, mass unmoved (verified) |
+| `phase5/phase2_proton_m_e_hecke_diagnostic` | migrated; **ratios move 45–74 %** |
+| `build_six_term_substrate_model_b` | **not migrated — already dead** (`qou-imkb`) |
+| `audits/derivation_convention_frame_audit` | **must not migrate** — it audits the registry |
+
+### What actually moved
+
+Only `phase2_proton_m_e_hecke_diagnostic` moved numbers:
+
+    atom      categorical_ratio_to_m_e_Hecke
+    proton    1.870053963830540526  ->  1.027159604966268874   (-45 %)
+    neutron   1.612147827654885259  ->  0.775490116256505033   (-52 %)
+    deuteron  0.938768523368891780  ->  0.248035427477920604   (-74 %)
+
+and they gained precision, 16 digits → 60, because the values now come from the
+50-dps witness rather than float literals. The proton mass chain is
+**byte-identical** — verified by baselining before the edit, not assumed.
+
+### Three findings the migration produced that the migration was not looking for
+
+1. **Δ_I(deuteron) = b_pn, exactly.** In the canonical frame,
+   tr_M(atom)/tr_M(free) = `0.508229789376738962577995797656`, which is
+   `qbeta_bond_factors_derived_probe.MEASURED["b_pn"]` to all 20 digits it
+   carries. Invisible in the old frame (Δ_I was 0.19047 there). Second link to
+   `qou-qqm4` today, after b_pp = markov_z. **The migration made an independent
+   identity appear** — the best evidence available that it is right.
+2. **`applied_uniqueness_mass_table` was mixing frames**, and migrating it
+   changed no number, because the authority there is the assembly CHAIN file
+   and not the registry. What the migration bought was a frame-consistency
+   check that makes the disagreement visible. It fires on exactly one atom.
+3. **The orphan** — `markov-trace-assembly-proton.derivation.json` has no live
+   builder while both siblings do, so the cluster is now mixed-frame at 82 %.
+   Un-deprecating the old builder does **not** fix it: that builder assumes a
+   6-crossing all-positive-σ word and yields ~2.12258, the fifth claimant in
+   `trm_proton_five_values_census`. Beaned as `qou-nhkv` with the real work
+   (write a live builder against the canonical 11-letter element — the
+   recompute probe already has the value and the method).
+
+### Two deliberate reds, and why they are opposite calls
+
+- `applied_uniqueness_mass_table.all_chains_in_the_canonical_intra_ordering_frame`
+  — **expected 0, measured 1, RED.** An artifact is genuinely in the wrong
+  frame. Locking the measurement would teach the next reader that a
+  mixed-frame mass table is acceptable.
+- Earlier today, `magnus_omega2_weight_family_robustness_probe` had its
+  assertion **re-framed to lock the measurement**. Opposite call, and rightly:
+  there the assertion encoded a hypothesis that reality had disproved, so a
+  permanent red carried no signal. The test is whether the red names something
+  someone can fix.
+
+I also left `canonical_a_k_magnitude_audit`'s
+`deuteron_true_delta_I_differs_from_fallback_and_a_k` red rather than touch it:
+it misses its band by 0.0082 and the miss is a tolerance artifact, but widening
+a tolerance in the same commit that moves the values it tests is how a real
+signal gets lost.
+
+### A method note worth keeping
+
+I checked one migration by diffing **stdout** and read "no output" as "nothing
+moved". Wrong instrument — those values are only ever written to the witness.
+That is the same shape as the defect this bean chases: checking the artifact
+you can see rather than the one that carries the claim.
+
+### Remaining in this bean
+
+- `derivation_chain.TR_M_AT_Q0` itself is **still grouped and unchanged.** With
+  every live importer now reading the reference, the registry's remaining role
+  is as a fallback and a historical record — so the question has changed from
+  "what should its numbers be?" to "should it exist?". That is now a small
+  owner call rather than a twelve-consumer tranche.
+- `qou-nhkv` (the orphan) gates the mass table red until it lands.
+- The witness arm is still at 48 candidates; the downstream-reflection taxonomy
+  remains unbuilt.
+
+## 2026-09-13 — the third category is BUILT, and the count converges
+
+`10118c90b7f`. This closes the bean's own open ask: *"The taxonomy needs a third
+category … otherwise the number never converges, because an audit that reports
+the corpus will always mirror it."*
+
+    46 candidates  ->  28 ACTIONABLE  +  16 downstream reflections  +  2 unresolved
+
+(48 → 46 came from this session's earlier regenerations, not from the taxonomy.)
+
+### The discriminator, and why it can be mechanical
+
+**What can the producer possibly know?** A module that never calls the trace
+machinery cannot have computed a |tr_M|, so any it emits came from something it
+read. That is a fact about the code, not a judgement about intent — which is
+exactly what a curated list can never be, and why this one will not rot the way
+`SOURCE_DELIBERATE` nearly did.
+
+**Validated against the bean's own examples**, which was the check available for
+free: all three sites this bean named as reflections —
+`witness_value_copy_audit`, `derivation_chain_validator`, `atomic_mass_via_rho_k`
+— classify as `reflects`. **3/3.**
+
+**AST, not substring**, same lesson as the source arm: eight candidate producers
+*mention* `atom_braid_word_3A` in a docstring while never calling it. A grep
+files them as computing their own traces, which is the opposite of true.
+
+### "Actionable" is deliberately not called "computes"
+
+Ten producers land in `neither` — no trace call, no artifact read. I checked
+what that bucket actually holds rather than assuming it was one thing:
+
+- **Hardcoders** — `path_b_defect_binding_probe`, `qbeta_chain_closed_form_probe`.
+  Both are *independently* flagged by this same audit's SOURCE arm for carrying
+  grouped literals. **Two detectors agreeing from opposite directions**, which
+  is the strongest evidence either of them is right.
+- **Computers by an unlisted idiom** — `vhat_per_crossing_chain` builds Hoefsmit
+  matrices and takes the trace inline, calling nothing in `_COMPUTE_CALLS`.
+
+Both own their value, so both are actionable. But a bucket labelled "computes"
+would be false for the hardcoders, so it is named for the property they share
+and the mixture is documented at the classifier. A bucket named for a property
+it does not have is worse than a coarse one.
+
+### What the number now means
+
+**28** is the first figure this bean has produced that is a count of *work*
+rather than a count of the corpus. The 16 reflections resolve when their inputs
+do — and today already demonstrated that, twice: `graded-hecke-energy-probe` and
+`skein-proton-canonical` went green the moment `canonical_trm_reference` served
+canonical values, without either being touched.
+
+The **2 unresolved** name no `scriptFile`. That is now a fixable class rather
+than a mystery: `stamp_staleness_metadata` sets the field (fixed earlier in this
+bean), so re-running each producer stamps it and moves it into a real bucket.
+
+### Suggested order for the 28
+
+1. The ones whose producers are already known here: the six hardcoded sites,
+   most of which are recorded above with verdicts.
+2. Then re-run and re-scan, because reflections resolve for free and the number
+   should drop again without further work.
+3. Only then read the residue per-site.
+
+Do **not** re-run producers in bulk without the 0-byte diff the 2026-09-08
+coordination note asks for — 252 producers still carry the truncating
+open-with-import template.
+
+## 2026-09-13 — the re-run pass, done safely. 27 actionable → 21.
+
+`9238d6e25aa`. First sweep run against the new taxonomy, so "actionable" was a
+real target list rather than the whole corpus.
+
+### Truncation handled by PRE-classification, not damage control
+
+This bean's 2026-09-08 coordination note says 252 producers carry an import
+inside a truncating `with open(…, "w")`, and advises diffing for 0-byte outputs
+*before committing*. That finds the damage. **AST-classifying the producers
+first finds the risk:**
+
+    24 distinct producers behind the 27 actionable witnesses
+      23 SAFE
+       1 UNSAFE — computations/cross_check_trM_cw_seminormal_leg.py L220
+
+Only the safe set was run. The unsafe one is left for `qou-oyde`, which
+repaired the identical template in `qbeta_chain_closed_form_probe`. Recommend
+this pre-check become the standard opening move for any future sweep here — it
+is one AST walk and it turns "hope nothing breaks" into a list.
+
+### Result
+
+    19 clean exits · 2 skipped as known-slow · 1 timeout at 600 s
+
+    grouped-era witness files   46 → 40
+    ACTIONABLE                  27 → 21
+    downstream reflections      16 → 16
+
+The reflections holding steady is the taxonomy working, not a failure: they
+resolve when their **inputs** do, and 21 of those inputs are still open. Two
+already demonstrated it earlier today — `graded-hecke-energy-probe` and
+`skein-proton-canonical` went green the moment `canonical_trm_reference` served
+canonical values, neither being touched.
+
+### Every substantive move was grouped → canonical, checked
+
+Five witnesses moved beyond provenance fields. The largest is
+`sweeps/paper-six-term-isotope-sweep.witness.json`, whose `term1_canonical_tr_M`
+rows go
+
+    proton    1.14575969245730086968…  →  0.62932840220292191816…
+    neutron   0.98774368811580957163…  →  0.47513351715568221250…
+    deuteron  0.57517224391777187082…  →  0.15196833920423160759…
+
+That is a **paper-facing** table, so this moves published numbers — in the
+direction the ruling requires, from an artifact that was stale against it.
+
+### A third slow producer
+
+`markov/markov_peel_atomic_witness.py` times out at 600 s. That makes three
+with `atomic_tr_m_helium4` and `binding_combiner_markov_peel_fallback`. Worth
+connecting to `qou-bimg`: the sparse route is ~87× faster than the dense one on
+the identical H₉ sweep, so this cluster has a candidate remedy rather than
+merely a budget problem.
+
+### Where the 21 stand
+
+Of the 21, four are the documented hardcoded sites (`path_b`, three qbeta),
+which are owner calls rather than re-runs; two are the known-slow skips; one is
+the unsafe-template producer. So roughly **14 are ordinary re-run or read
+work**, and the next pass should expect the reflections to start falling as
+those land.
+
+## 2026-09-13 — clusters, not sites: reading the flagged FIELD is the cheap move
+
+After `qou-nhkv` closed, 19 actionable remained. Rather than open 19 files, I
+dumped the flagged JSON path for each. That is nearly free and it groups them:
+
+    /data/tr_M_cross_check/proton/markov_trace_assembly_chain   braid_encoding_audit
+    /data/sources/proton/target_value                           applied_uniqueness_mass_table
+        └── both were the ORPHAN proton assembly chain → closed by qou-nhkv
+
+    /results[*]/peel_reference            cross_check_trM_cw_seminormal_leg
+    /tr_M_proton_markov_peel_reference    markov_weights_symbolic
+    /data/results[*]/bridge_witness_value markov_peel_atomic_witness  (×3 witnesses)
+        └── the PEEL cluster, upstream = markov/markov_peel_atomic_witness.py
+
+    /data/std_channel/proton_terms/T1_descended   vhat_std_vs_full_tower_compare
+    /complex_tower_plus_i0/proton/T1/abs          vhat_tower_im_cancellation
+    /trM_composition/proton_product_genuine       vhat_per_crossing_chain
+        └── the VHAT cluster, T1 term
+
+**The field name is a dependency edge.** `braid_encoding_audit`'s flagged field
+is literally `markov_trace_assembly_chain` — it names its own upstream. Reading
+19 fields found two clusters and confirmed a third had already been fixed;
+reading 19 files would have cost far more and found the same thing.
+
+### Peel cluster — in flight
+
+`markov/markov_peel_atomic_witness.py` is the upstream and is one of the three
+known slow producers (it timed out at 600 s in the safe sweep). Re-launched with
+a 3000 s budget; it is emitting canonical values as it goes (deuteron bridge
+`0.151968339204231607592665697751…`) and had reached ⁴He when this was written.
+It is on the SAFE list — no truncating open-with-import template.
+
+### VHAT cluster — upstream identified, and it is NOT what it first appears
+
+`vhat_std_vs_full_tower_compare` reads `PER_GEN_WITNESS` =
+`terms-2-3-atom-per-gen-mpfr-50dps.witness.json`. Two copies exist, one in
+`_deprecated/` (2026-04-27) and a live one (2026-08-29, pre-ruling) — which
+looks like the answer, and is not:
+
+- **neither copy contains `T1_descended_50dps`**, the key the consumer reads;
+- re-running the live producer `terms_2_3_atom_per_gen_mpfr_50dps.py` reports
+  **unchanged**, i.e. it recomputes identical values, so nothing there depends
+  on the intra-nucleon ordering. Terms 2 and 3 are not term 1.
+
+So the grouped T1 enters via `derive_full_tower`, not via the per-gen witness.
+**Not chased further** — that is the next thread rather than this one's tail,
+and stopping at a mapped edge is better than a half-traced one.
+
+### Method note for whoever continues
+
+Two cheap checks have each caught something today that a re-run would not:
+
+1. **Dump the flagged field before opening the file.** It names the upstream
+   often enough to be worth doing first, every time.
+2. **Compare the artifact's `computedAt` against your run.** A producer's exit
+   code answers "did it run?", not "did THIS artifact get rebuilt?" — that is
+   how the `--atoms` default hid two witnesses earlier today.

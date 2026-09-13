@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-09-13T10:53:07Z
+updated_at: 2026-09-13T13:07:55Z
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.
@@ -364,3 +364,153 @@ rather than gaps, which would make it 32.
 **I am not claiming the remaining 36 are all real opacity.** That is the claim
 that was wrong last time. They are unmeasured, and on this session's record
 the prior should be that some fraction are still my tooling.
+
+
+---
+
+## 2026-09-13 (pass 7) — 134/175, and the audit was dark on the CANONICAL q-integer
+
+**133 -> 134 (76.6 %)**, UNRESOLVED 42 -> 41. Small numerically; the identity
+of the recovered definition is the finding.
+
+### It was `qou_substrate.constants.q_int`
+
+The corpus's **canonical q-integer entry point** — the one AGENTS.md's package
+layer publishes, and the one I excised a float64 fallback from earlier in this
+same session. The audit could not measure the definition the whole bean is
+about. It now classifies **symmetric**.
+
+### Two gaps, and I got the first one wrong
+
+**My first hypothesis was the anchor SOLVER**, and it was not sufficient.
+`constants.py` binds `Q = _solve_q_proton_f64(MASS_RATIO_P_E, VOL_FIGURE_EIGHT)`
+— a numerical root-find no symbolic evaluator can execute. Adding
+`ANCHOR_SOLVERS` was **correct and necessary** (AGENTS.md names that function
+verbatim as what makes `constants.py` proton-pinned, so recognising it cites
+the corpus rather than inferring from a spelling) — but the run came back
+**unchanged at 133**, which is how I learned it was not the whole story.
+
+**The real blocker was scope.** `in_anchor_module` was set ONLY when
+`resolve()` **hopped into** a module via an import, and defaulted `False` at
+the top-level call site. So for a definition that already **lives in**
+`constants.py` or `q_parameter.py`, none of the anchor-module special cases
+could ever fire. *"The module I'm in"* and *"the module I hopped to"* were
+being treated as different questions when they are the same one. One argument
+at one call site.
+
+Both fixes are in; the solver recognition is load-bearing once the scope fix
+lets it run.
+
+### `q_int_err` correctly stays unresolved
+
+Its body is `|d[n]_q/dq| * Q_ERR` — an **uncertainty propagation**, not a
+bracket. It depends on `Q_ERR`, and it should not classify as a q-integer.
+Recording this so a later pass does not chase it as a gap.
+
+### Tally
+
+| | pass 6 | pass 7 |
+|---|---|---|
+| symmetric | 117 | **118** |
+| UNRESOLVED | 42 | **41** |
+| **RESOLVED** | 133/175 | **134/175 (76.6 %)** |
+
+**Still zero new conventions** — seven passes, population 0 -> 134.
+
+### The audit now LISTS its unresolved members
+
+Added, because this bean's own closing line is *"LIST THE MEMBERS, do not
+reason about the bucket"* and the script printed only counts — so using it
+correctly required leaving it. Grouped by reason. That listing is how pass 7's
+gap was found at all.
+
+### What the listing shows about the remaining 41
+
+Several of the `[8] no top-level assignment` group are **not q-integer
+definitions**: `verify_bracket_cancellation`, `check_bracketing` (test
+helpers), `load_qbeta_precision_ladder` (a loader). So the name-pattern
+candidate selection has false positives here, and 41 overstates the genuinely
+dark set. Not chased further this pass — recorded rather than estimated.
+
+Correctly opaque and not gaps: `_TBL` (2, a `json.loads` of a data file),
+`HERE` (2, a path constant), and the 6 already answered as q-independent.
+
+
+---
+
+## 2026-09-13 (pass 8) — the DENOMINATOR was wrong: 175 -> 164, coverage 76.6 % -> 81.1 %
+
+Pass 7 recorded, without measuring, that *"several of the `[8] no top-level
+assignment` group are not q-integer definitions ... 41 overstates the
+genuinely dark set."* This measures it.
+
+### The selector is a SUBSTRING match
+
+`NAMEPAT = ('q_int', 'qint', 'qb', 'q_bracket', 'qbracket', 'q_num',
+'bracket')` tested with `any(k in node.name.lower() ...)`. Two
+false-positive families, both measured on the full tree:
+
+* **`qb` inside `qbeta` (8).** In this corpus `qbeta` is the **beta-decay
+  Q-value** — a different quantity from `[n]_q` entirely (AGENTS.md's CAL-2
+  row). `_sigma_qbeta`, `dc3_dQbeta`, `_qbeta_dln_dlnq`,
+  `load_qbeta_precision_ladder` have no bracket in them at all.
+* **A verb-named helper (4).** `verify_bracket_cancellation` returns `bool`;
+  `check_bracketing` returns a dict report — test helpers, not definitions.
+  `L2_bracket` is a dilogarithm bracket `ln z/(1-z)^2 - ln(1-z)/z^2`;
+  `mirror_bracket` is `5*2^(-A-1) - 13*4^(-A)`.
+
+**The thirteenth is GENUINE and was NOT excluded**: `_bracket` in
+`em_linking_invariant_probe.py`, whose docstring and body are exactly
+`(q^n - q^-n)/(q - q^-1)`. So the inner-substring match is narrowed by the
+two measured families, not thrown away — a blanket "no inner matches" rule
+would have lost a real definition.
+
+### THE CHECK THAT MATTERS: the tally was never contaminated
+
+Every one of the 12 false positives landed in **OTHER (2)** or
+**UNRESOLVED (10)**. **Not one was counted as a convention.** Confirmed
+from the other side by the re-run: `symmetric` stayed **118** and `classical`
+stayed **10** across the narrowing. So the "zero new conventions" result —
+which is what this bean actually exists to establish — was never at risk.
+They only inflated the denominator and the dark set.
+
+### Corrected figures
+
+| | pass 7 | pass 8 |
+|---|---|---|
+| denominator | 175 | **164** |
+| UNRESOLVED | 41 | **31** |
+| **RESOLVED** | 134/175 (76.6 %) | **133/164 (81.1 %)** |
+| symmetric | 118 | 118 |
+| classical | 10 | 10 |
+
+Resolved moves 134 -> 133 because one of the two removed OTHERs was counted
+as resolved. The percentage rises because the denominator falls further.
+
+### Secondary defect: the two audits disagreed about test files
+
+Reconciling an off-by-one (my check said 10 dropped, the audit's denominator
+moved 11) found it: **this audit skipped only `_deprecated`, while the
+sibling `q_integer_duplication_audit` skips `_deprecated`, `/tests/`,
+`.lake`, `node_modules`.** So it was walking test files and counting
+`test_smoke.py::test_q_int_quantum_integers` as a definition. A test
+ASSERTS a bracket; it does not DEFINE one, and two sibling audits
+disagreeing about that is a difference with no reason behind it. Skip lists
+now aligned.
+
+That alignment changes **no number today** — the `test_` prefix rule already
+caught that one function — but it removes a divergence that would bite the
+next time either audit is extended.
+
+### Still zero new conventions
+
+Eight passes, measured population 0 -> 133. That invariant has now survived
+a change of denominator as well as a sevenfold expansion.
+
+### What remains: 31
+
+Not re-characterised here. Pass 7's listing stands, minus the 10 removed.
+Two known false positives deliberately survive the narrowing (`L2_bracket`,
+`mirror_bracket`) because excluding them would need a rule I have not
+measured, and an unmeasured rule is how the denominator got wrong in the
+first place.

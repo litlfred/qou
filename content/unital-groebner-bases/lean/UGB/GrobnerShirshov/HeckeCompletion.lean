@@ -42,12 +42,15 @@ rather than by `Fin` arithmetic. That keeps every word here free of subtraction
 and every membership proof in the same `flatMap`/`filterMap` shape the existing
 system uses.
 
-## What is **not** established here
+## What is established here
 
-The completed system is defined and the §4e obstruction is checked to be
-resolved by it. Neither of the two harder statements is proved:
+Both of the harder statements this section once listed as open are now proved.
+**Read this list, not a memory of it** — the heading said "what is *not*
+established" long after the second item had landed 18,663 lines below, with the
+first already marked DONE, and a reader who stopped here concluded the opposite
+of what the file proves (bean `qou-nk5h`).
 
-* **DONE (§4h).** The general leading monomial
+* **The general leading monomial (§4h).**
   `bokutShiaoRelation_lm : lm (bokutShiaoRelation i' i j) = bsWord₁ i j`, via
   `descWord_cons : descWord i j = ⟨i⟩ :: descWord i' j`. As predicted, no length
   computation was needed: the cons lemma gives both words a visible common tail
@@ -57,13 +60,27 @@ resolved by it. Neither of the two harder statements is proved:
   `Pairwise (· < ·)`: once the head is `i` every later index exceeds it and both
   filters annihilate the tail, and before the head is reached the two predicates
   agree because `a < i = i' + 1` forces `a ≤ i'`.
-* * that the completed system **is** a Gröbner–Shirshov basis. That is the whole
-  of Bokut & Shiao's theorem, and it needs the overlap analysis re-run against
-  the completed rule set — a strictly larger set of compositions, since the new
-  family overlaps itself. Resolving the one overlap that refutes the
-  uncompleted system is necessary, not sufficient.
+* **The completed system IS a Gröbner–Shirshov basis (§4bw).**
+  `heckeCompleted_isGrobnerShirshovBasis`, **unconditional**, for every `n` and
+  every `HeckeParams`. This was the harder half — it needed the overlap analysis
+  re-run against the completed rule set, a strictly larger set of compositions
+  since the new family overlaps itself, and resolving the §4e overlap alone was
+  necessary but not sufficient. The remaining `hdeep` obligation of
+  `heckeCompleted_isGrobnerShirshovBasis_of_deep` (§4bn) is discharged by
+  `deep_selfOverlap_resolves` (§4bw).
 
-Bean qou-auq3.
+## What is still assumed
+
+One thing, and it is **not** the criterion above:
+
+* **The Diamond Lemma.** `heckeCompleted_normalForm_unique` and
+  `heckeCompleted_threading_cost_unique` (§4bx) route through
+  `normal_form_unique`, which rides on the axioms `reduction_well_founded`
+  (`Basic.lean`) and `local_confluence` (`CompositionLemma.lean`, Bergman 1978
+  §3 Thm 1.2). So *unique normal forms at every `n`* holds **given the Diamond
+  Lemma**; the GS-basis criterion itself does not depend on either axiom.
+
+Beans qou-auq3, qou-nk5h.
 -/
 
 namespace UGB.GrobnerShirshov.Hecke

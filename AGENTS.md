@@ -2428,6 +2428,33 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   > core and provably not the 3-letter quark block (odd) or the 2-letter gluon
   > pair (both letters positive). Five letters remain census-derived against a
   > ruling that says not to use census (`qou-99qc`, still `todo`).
+  >
+  > **🟧 OWNER RULING 2026-09-13 — that is true of the γγ half ONLY, and the
+  > SDP half reaches all eleven. The scored element FAILS it.** `qou-ales` has
+  > two halves, and the paragraph above is about the *construction* half. The
+  > scope of the *confinement SDP* half was put to the owner as a fork — does
+  > it constrain only the 6 γγ core letters, or the whole word? — and the
+  > answer is **(B) whole element**: every Wedderburn projection of the full
+  > 11-letter word must be `Matrix.PosSemidef`.
+  >
+  > Measured, `nuc11_interleaved` fails on `(2,1)` and `(1,1,1)` for **both**
+  > nucleons (proton block dets `1.38249446339` / `-1.02197249381` /
+  > `-0.739223570776`; neutron `1.1221068216` / `-1.02197249381` /
+  > `-0.910762214553`). `(1,1,1)` is the alternating character and was already
+  > on record as a sign exclusion; the `(2,1)` failure is additional. **So the
+  > three L2 rows above are scored on an element the selection rule that is
+  > supposed to produce it rejects** — do not quote them as though the element
+  > were ruled-in, and do not read the 6-of-11 paragraph as an all-clear for
+  > the other five.
+  >
+  > The same ruling rejects every alternative in the one-letter quark family,
+  > including the bar-odd survivors that a parity constraint forces
+  > (`Q_β = 0.353415698` MeV, −54.825 %). **What replaces the element is an
+  > owner decision and has not been taken**; the dashboard is deliberately
+  > un-re-scored. Probes
+  > `qbeta_qbeta_scores_a_difference_probe.py` and
+  > `qbeta_bar_parity_forces_a_unique_quark_letter_probe.py`; bean `qou-99qc`,
+  > which stays `todo` with the replacement as its first open item.
 
   This
   read "1279 ppb (164.0× miss) per the dashboard (fresh run 2026-05-31)" until
@@ -2974,8 +3001,25 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirty-five** rows, and they split SEVEN ways — only the first
->   group is about conventions at all:
+>   catalogues **forty-three** rows (re-counted 2026-09-13), and the groups
+>   below split the FIRST THIRTY-FOUR seven ways — only the first group is
+>   about conventions at all. **Rows 35-43 are NOT in this list**: 35 (the
+>   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
+>   is an applied argument), 38 (the value audit's variable resolution),
+>   39 (the freshness is on the wrong object), 40, which is the first row
+>   in the table whose failure runs the OTHER way — an over-matching grep that
+>   fails to a false **COVERED** rather than a false all-clear, so it ends the
+>   search instead of prolonging it — 41 (the query's character encoding), and
+>   **42-43, which are one arc and the sharpest pair in the table**: 42 is the
+>   body SHAPE of a self-assuming projection (an applied SINGLE field was
+>   unseen, so the case where the conclusion is universally quantified — the
+>   NORMAL case — was invisible by construction, 26 → 42 hits), and 43 is scan
+>   SCOPE on the `--review-ledger` write path, found while fixing 42 and
+>   **destroying 106 of 329 committed adjudications in the process**. Both are
+>   repeats of a repair the corpus had already made once: 42's fix exists one
+>   arity over as `APPLIED_TUPLE_PROJECTION`, and 43 is row 33 a second time on
+>   the same API, where the `--json` path refuses a partial scan and the ledger
+>   path never got the rule:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard
@@ -3038,12 +3082,17 @@ Do not regress either.
 >   row 26 in the output of the audit that introduced it. Quote the split, not
 >   the total, because folding the last ten into the C figure inflates exactly
 >   the number this note exists to keep honest.
->   (This line has been stale FIVE times — *thirteen* at 15 rows, *sixteen*
->   at 17, *eighteen* at 21, *twenty-two* at 26 — and on the fourth fix I first
+>   (This line has been stale SIX times — *thirteen* at 15 rows, *sixteen*
+>   at 17, *eighteen* at 21, *twenty-two* at 26, *thirty-five* at 39 — and on
+>   the fourth fix I first
 >   wrote "twenty are spellings", miscounting the very split I was adding. On
 >   the fifth, the agent adding rows 25-26 called them "the 17th and 18th"
->   in a commit, a bean and a PR comment before re-counting. **Re-count the
->   table; do not trust this sentence, including this parenthesis.**) So: **treat
+>   in a commit, a bean and a PR comment before re-counting. On the sixth the
+>   agent adding row 40 wrote "they split EIGHT ways" in the same edit that
+>   fixed the row count — inventing a group count while correcting a row count,
+>   when the group list had in fact stopped covering the table at row 34.
+>   **Re-count the table; do not trust this sentence, including this
+>   parenthesis.**) So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
 >   is canonical; it does not tell you how much code still disagrees.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T07:58:29Z
-updated_at: 2026-09-13T09:00:40Z
+updated_at: 2026-09-13T11:26:52Z
 ---
 
 ## Result (2026-09-13) — the convexity route analysed; convexity is the WRONG invariant
@@ -267,3 +267,92 @@ condition where a weaker one is the real invariant" held twice and then failed.
 Two instances is not a rule. The check that caught it cost one `Fraction`
 computation against a would-be counterexample; the claim would have cost a
 retraction.
+
+
+## LANDED 2026-09-13 on `main` (merge `3cb26d4b9f8`) — and the arc grew a second file
+
+This bean's Result section above covers the **convexity/secant** half. The same
+arc also produced `QOU/MassTheory/InterfaceMonotoneBlocksSignMixed.lean`, which
+answers the OTHER half of `qou-q8vl`'s escape question.
+
+### `qou-q8vl` asked for two doors; both are now measured
+
+That bean records the escape for a third bond family as *"break the AVERAGING of
+the pn letter, or break AFFINENESS of the interface law."*
+
+**Affineness is not the invariant — MONOTONICITY is.** A monotone interface law
+in EITHER direction keeps the middle value in the middle
+(`not_strict_max_of_monotone`; the proof is one `lt_of_lt_of_le` against
+`lt_irrefl`, and the three order-core theorems depend on **no axioms at all**).
+Checked in exact `Fraction` before formalising:
+
+| law | middle is strict max? |
+|---|---|
+| affine, increasing or decreasing | no |
+| **monotone non-affine (`x³`)** | **no** |
+| **non-monotone (`1 − (x−1)²`)** | **yes** — the only escape |
+
+So a family that merely abandons affineness gains **nothing**.
+`nonmonotone_escape_exists` shows the narrowing is **sharp**, not a disguised
+impossibility.
+
+**Averaging, by contrast, is already tight — and I expected otherwise.** I
+pattern-matched the first two weakenings (convexity → secant monotonicity,
+affineness → order-monotonicity) and predicted a third, averaging → mere
+betweenness. **Exact `Fraction` arithmetic refused it.** Over an ordered field
+the two are the SAME condition: `between_iff_combo`, with the weight read off
+explicitly as `w = (b−c)/(b−a)`. My probe looked like it showed a gap only
+because `d_pn = 7` against `(0, 10)` *is* a combination, at `w = 3/10`.
+
+### Net, and what stays OPEN
+
+> A third bond family must put **`d_pn` outside the interval spanned by `d_pp`
+> and `d_nn`**, or use a **non-monotone interface law**. Nothing weaker will do;
+> those are the only two doors.
+
+This closes `qou-q8vl`'s escape question **as a question**. It derives no family
+through either door and shows neither reachable in the framework — so the open
+mathematics (does `b₃ > 0` happen; the extensive term of `qou-brng`) is
+untouched. **Left in-progress deliberately** per AGENTS.md §13a: the subject is
+an open conjecture, and recording that it is open is not closing it.
+
+Also §7c: `check-sidecars.sh` flagged this file "MIXED generic + archimedean"
+before commit; the `hump` witness did not need `ℝ` and was made generic over an
+ordered field. The preflight caught it, not review.
+
+
+## 2026-09-13 — the non-monotone door, and what actually blocks the affine one
+
+Chased the one escape `InterfaceMonotoneBlocksSignMixed` leaves open. Seven new
+sorry-free declarations in that file (`lean`-direct exit 0, **zero warnings**,
+`#print axioms` clean).
+
+**A gap in my own earlier work.** `pn_not_strict_max_of_monotone` and
+`signMixed_impossible_of_monotone` assume `Monotone`, so a **decreasing**
+interface law was never covered — although `not_strict_max_of_antitone` was
+sitting in `OrderCore` unused. Both antitone halves added.
+
+**The structural reason `μ = z + d` is blocked.** The interface factor is a
+Markov trace ratio `μ(x) = tr_M(W·x)/tr_M(W)` at fixed `W`, and the numerator is
+**linear in `x`**. So along any *affine* path in the algebra `x(t) = x₀ + t·x₁`
+the law is affine in `t`; an affine law is monotone or antitone by the sign of
+its slope, hence blocked **either way**. `μ = z + d` *is* that affine path.
+
+So the escape must **leave the affine family, not merely the affine formula** —
+which is a sharper statement than "be non-monotone", and it is checkable without
+computing a bond value.
+
+**The framework does admit such a family, and the corpus already measured it.**
+The file header said *"whether the framework admits such a thing is open and is
+not addressed here"*. `m ↦ σ^m` is not an affine path (a product, not a sum), and
+its interface factor is measured non-monotone in `m`: `μ > 1` at
+`m = 2, 4, 5, 6, 7, 8` and **not** at `m = 3`
+(`stacked_interface_writhe_normalised_probe.py`, via
+[`2026-09-12-b3-sign-one-root-and-the-insufficient-escape.md`](docs/audits/2026-09-12-b3-sign-one-root-and-the-insufficient-escape.md)
+§6(b)). Over a threshold at 2 and 4 but not 3 is not monotone.
+
+**This selects nothing.** Naming the family occupying the door is structural;
+picking an `m` because it yields `b₃ > 0` is selection against the target
+(§NO FITTING), and `qou-kj4v` records that running backwards for `σ²`. Under
+`qou-ales` the braid word is selected by γγ + the confinement SDP, and **that
+derivation is what stays open.** Scope (a); no family derived through the door.

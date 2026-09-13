@@ -95,6 +95,7 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))     # SAME E₀ ρ_F / #4364 use
 #     Byte-identical to deltalambda_kappa_interface_residual_simplex_probe.
 # =========================================================================
 def qint(n, q):
+    """Unbalanced q-integer [n]_q = 1 + q + ... + q^{n-1} = (q^n - 1)/(q - 1)."""
     return sum(q ** k for k in range(n))
 
 

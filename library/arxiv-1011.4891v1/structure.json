@@ -1,0 +1,179 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1011.4891v1",
+ "source": {
+  "file": "1011.4891.pdf",
+  "sha256": "c3529df5dd909b5efe96805705472d703aefd7589d597c8edc9c1e4c359f47fc",
+  "bytes": 1041611,
+  "pages": 18,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1011.4891",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "22 Nov 2010"
+  },
+  "doi": null,
+  "title": "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold",
+  "authors_raw": null,
+  "title_lines": [
+   "Mechanical Normal Forms of Knots and Flat Knots",
+   "A.B.Sossinsky",
+   "Independent University of Moscow",
+   "Institute for Problems in Mechanics RAS",
+   "Dedicated to the memory of V.I.Arnold"
+  ],
+  "abstract": "A new type of knot energy is presented via real life experiments involving a thin resilient metallic tube. Knotted in di\ufb00erent ways, the device me- chanically acquires a uniquely determined (up to isometry) normal form at least when the original knot diagram has a small number of crossings, thus outper- forming the famous M\u00a8 obius energy due to Jun O\u2019Hara and studied by Michael Freedman et al. Various properties of the device are described (under certain conditions it does the Reidemeister and Markov moves, it beautifully performs the Whitney trick by uniformizing its own local curvature). If the device is constrained between two parallel planes (e.g. glass panes), it yields a real life model of a \ufb02at knot (class of knot diagrams equivalent under Reidemeister \u21262 and \u21263 moves) also leading to uniquely determined \u201d\ufb02at normal forms\u201d (for a small number of crossing points of the given \ufb02at knot diagram). The paper concludes with two mathematical theorems, one reducing the knot recognition problem to the \ufb02at knot recognition problem, the other (due to S.V.Matveev) giving an easily computable complete system of invariants for the \ufb02at unknot knot equivalence problem. In one of his lectures, Vladimir Arnold declared that \u201cmathematics is that part of physics where experiments are cheap\u201d. The present paper is an illustration of this thesis. Accordingly, the paper begins (Sec.1) with a description of our \u201ccheap experiments\u201d, which are performed with a thin \ufb02exible but resilient wire. This wire can be knotted and placed on a horizontal table, and in all the experiments it moves in a very speci\ufb01c way, sometimes sliding along the table top, sometimes jumping up in the air, and reaches an equilibrium position, which we call the mechanical normal form of the knot. Surprisingly, the experiments show that, for a small number of crossings of the initial knot diagram, the normal form is always unique up to isometry. In this situation, it turns out that our simple device performs much be",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20101123011909Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "The mechanical model",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The idealized models",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Whitney index and jumps",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Local moves of mechanical knots",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Nonuniqueness of normal forms",
+   "page": 12,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 17,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 17,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4254,
+   "n_words": 695
+  },
+  {
+   "id": "sec-000-1-the-mechanical-model",
+   "number": "1",
+   "title": "The mechanical model",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 4518,
+   "n_words": 796
+  },
+  {
+   "id": "sec-001-2-the-idealized-models",
+   "number": "2",
+   "title": "The idealized models",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2141,
+   "n_words": 372
+  },
+  {
+   "id": "sec-002-3-the-whitney-index-and-jumps",
+   "number": "3",
+   "title": "The Whitney index and jumps",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1386,
+   "n_words": 238
+  },
+  {
+   "id": "sec-003-4-local-moves-of-mechanical-knots",
+   "number": "4",
+   "title": "Local moves of mechanical knots",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 12,
+   "n_chars": 5887,
+   "n_words": 1027
+  },
+  {
+   "id": "sec-004-5-nonuniqueness-of-normal-forms",
+   "number": "5",
+   "title": "Nonuniqueness of normal forms",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 9727,
+   "n_words": 1699
+  },
+  {
+   "id": "sec-005-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 264,
+   "n_words": 44
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1378,
+   "n_words": 205
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 8,
+  "chars_total": 29555
+ }
+}

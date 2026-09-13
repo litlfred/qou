@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:16:43.105664+00:00",
-  "commitSha": "fe677b04f4de6070aa0d109ccae1bc4d5d9bdc8d",
+  "computedAt": "2026-09-13T14:13:02.224051+00:00",
+  "commitSha": "1660c49f2ffe48802c11fb6d79993b6b460c27ab",
   "assertions": [
     {
       "name": "axiomatic content block tracks the phase-1.6 closed form",
@@ -30,7 +30,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 7,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
   "scriptHash": "2ce6b1d07dce",

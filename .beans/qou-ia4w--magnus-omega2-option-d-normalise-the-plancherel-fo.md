@@ -1,10 +1,11 @@
 ---
 # qou-ia4w
 title: 'Magnus Omega2 option D: normalise the Plancherel form to tr(1)=1'
-status: todo
+status: scrapped
 type: task
+priority: normal
 created_at: 2026-09-07T11:44:23Z
-updated_at: 2026-09-07T11:44:23Z
+updated_at: 2026-09-13T16:17:01Z
 ---
 
 # NOT RECOMMENDED
@@ -76,3 +77,16 @@ sign statement DOES depend on it. Choosing the family because it yields the
 wanted sign would be selection against the target (AGENTS.md), which is why the
 honest reading is that under the production Markov weight the sign change is
 **not** exhibited in A = 2, 3, 4.
+
+---
+
+# REFUSED — OWNER RULING 2026-09-13: Wenzl adopted
+
+Normalising the Plancherel measure is refused. Normalisation would fix tr(1)=1 but not the stabilisation axiom, which is the one that matters here because stabilisation is the move that changes n, and n = 3A: a cross-A statement IS a statement across stabilisations. A normalised Plancherel still has no z.
+
+Full ruling, its basis and its consequence: parent bean `qou-za3q`.
+
+**The consequence travels with the ruling.** Under the adopted Wenzl weight the
+programme's target A-dependent sign change is **not** exhibited in A = 2, 3, 4
+(−, −, −); it appeared only under the rejected measure (−, +, +). Anyone citing
+the Magnus sign result must state that.

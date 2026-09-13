@@ -67,7 +67,15 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from codata_constants import M_E_MEV, M_P_MEV_VALIDATION as M_P_MEV  # validation-only
-from derivation_chain import M_HECKE_PIPELINE_AT_Q0, TR_M_AT_Q0
+# MIGRATED 2026-09-13 (bean qou-4383). `TR_M_AT_Q0` held hardcoded floats in
+# the GROUPED intra-nucleon frame; this now reads them through
+# `canonical_trm_reference`, which validates pin AND ordering (bean qou-y4gi).
+# The registry import is kept only for M_HECKE_PIPELINE_AT_Q0.
+from canonical_trm_reference import tr_m_nucleon
+from derivation_chain import M_HECKE_PIPELINE_AT_Q0
+TR_M_AT_Q0 = {"p": tr_m_nucleon("proton"),
+              "n": tr_m_nucleon("neutron"),
+              "D": tr_m_nucleon("deuteron")}
 from witness_base import WitnessBuilder
 
 ASSEMBLY_DIR = Path(__file__).parent
