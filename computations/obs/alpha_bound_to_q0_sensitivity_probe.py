@@ -143,6 +143,52 @@ else:
     print("  The bound is TIGHTER than the framework's own pin -- it would be")
     print("  a genuine test.  Check this carefully; it is the surprising branch.")
 
+hdr("[6] The primary source, uploaded by the owner 2026-09-13 (7ac8aacd5f)")
+
+print("""  library/arxiv-astro-ph-0203462v1/0203462v1.pdf = arXiv:astro-ph/0203462v1, Hill et al. 2002,
+  "The extreme r-element rich, iron-poor halo giant CS 31082-001:
+   Implications for the r-process site(s) and radioactive cosmochronology",
+  A&A -- the primary observational source for this star.
+
+  IT CONTAINS NO ALPHA-VARIATION CONTENT.  Searched its full extracted text
+  (20 pages, 82,418 chars) for "fine structure", "fine-structure", "varying
+  alpha", "variation of alpha", "delta alpha": ZERO hits.  So it supplies the
+  OBSERVATIONAL INPUT for qou-ultb and NOT the 2.08e-3 bound, which must come
+  from a downstream paper applying a Gamow-factor argument to these
+  abundances.  The corpus now holds the former and still not the latter.
+
+  WHAT IT DOES ESTABLISH (quotable, primary):
+    U II 3859.57 A line, log eps(U) = -1.92 ;  log eps(Th) = -0.98
+    half-lives: 238U = 4.47 Gyr, 232Th = 14.05 Gyr
+    the cosmochronometer, its eq (3):
+        delta_t = 21.76 * [ log(U/Th)_0 - log(U/Th)_now ]
+    best age estimate: 14.0 +- 2.4 Gyr
+    and its own words on the precision floor: finding a determination
+    "with a combined overall error of 0.1 dex is a significant, unsolved
+     problem'""")
+
+# What the claimed bound REQUIRES of the production-ratio sensitivity.
+AGE_SIGMA_GYR = mp.mpf("2.4")
+EQ3_COEFF = mp.mpf("21.76")
+sigma_logUTh = AGE_SIGMA_GYR / EQ3_COEFF
+required_sens = sigma_logUTh / B_ULTB_UNVERIFIED
+
+print()
+print(f"  sigma(age) / 21.76  = {mp.nstr(sigma_logUTh, 6)} dex on log(U/Th)")
+print("   -- and the paper independently calls ~0.1 dex the precision floor,")
+print("      so this is its own number, not one imposed from outside.")
+print()
+print("  THE FALSIFIABLE CONSEQUENCE.  For a 0.11-dex measurement to yield a")
+print(f"  bound of {mp.nstr(B_ULTB_UNVERIFIED, 4)} on |dalpha/alpha|, the PRODUCTION ratio must satisfy")
+print()
+print(f"      |d log(U/Th)_0 / d ln(alpha)|  >~  {mp.nstr(required_sens, 6)}  dex per e-fold")
+print()
+print("  That is the 'Gamow amplification' the bean's title asserts, stated as")
+print("  a NUMBER someone can check against the Gamow factor rather than as an")
+print("  adjective.  This probe does NOT verify it -- doing so needs the")
+print("  r-process network, which the corpus does not hold.  It converts an")
+print("  unverifiable claim into a checkable one, which is the useful step.")
+
 hdr("[5] VERDICT -- scope (a), and it re-frames the bean rather than answering it")
 
 print(f"""
