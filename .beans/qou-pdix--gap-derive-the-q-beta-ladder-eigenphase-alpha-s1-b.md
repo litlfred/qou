@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T19:55:00Z
+updated_at: 2026-09-13T20:05:00Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1842,3 +1842,90 @@ formalize-first step of the four", and now all four have been measured against.
 
 **Bean stays `in-progress`.** `α` is underived and this entry derives nothing —
 per rule 13a it is not closeable while the conjecture is open.
+
+---
+
+## 2026-09-13 (same hour) — CORRECTION to the entry above, and a real finding underneath it
+
+The entry above flagged a "loose end": that C4's plateau `117.41` and
+`1/u_ladder = 117.370892` agree only to **0.033 %**, so the ladder's pole might
+sit just *inside* its evaluation point. **That gap does not exist. I
+manufactured it.**
+
+### What I did wrong
+
+I took `u_ladder ≈ 0.00852` from AGENTS.md's **rounded prose** and inverted it to
+get `b = 0.8678657617`. That is circular — a constant back-derived from a
+rounded figure. The exact Hoefsmit coupling is in the corpus:
+
+    b = sqrt(q^4 + q^2 + 1)/(q^2 + 1)     [qbeta_d_n2_factor_bar_invariance_probe.py:50]
+      = 0.86758406696525115565            (proton pin, mp.dps = 50)
+
+giving `u_ladder = b·ℏ_q² = 0.0085172345501561421893` and
+**`1/u_ladder = 117.409001`**. The recorded `117.41` is right to every figure it
+quotes. My `117.370892` was the inverse of the rounded prose, not of `u`.
+
+**The rule this cost me: a rounded figure in prose is not an input.** AGENTS.md
+quotes `u ≈ 0.00852` as an orientation number; using it to solve for another
+constant reintroduces the rounding as a fake signal. That is the second time
+today a phantom discrepancy came from taking a documented figure as data — and
+this document warns about exactly that, repeatedly.
+
+### What survives, and it is KC8's own claim rather than my inference
+
+The gate block hardcodes
+
+    noncomputable def u_substrate : ℝ := 0.008517234550156142
+      [q-beta-radius-of-convergence-gate.lean:75]
+
+which agrees with the live `u_ladder` to **2.2e-17** — the same number. So there
+is no discrepancy anywhere, and the gate is self-consistent.
+
+But that is precisely what makes the structural point sharp. KC8's registered
+statement is
+
+> *"`g(u) = sum c_k u^k` has its nearest singularity (simple pole) at
+> `u_substrate`; ratio test `c_{k+1}/c_k -> 1/u_substrate`"*
+> — `kernel-constraints-registry.json`
+
+and `u_substrate` **is** the point at which the ladder is evaluated. So the
+ladder is evaluated **exactly at its own radius of convergence** — not just
+inside it, not just outside it, but on the boundary, by KC8's own construction.
+Which side is therefore not a numerical question at all; it is definitional.
+
+### The finding that actually matters — KC8 is NOT a proved invariant
+
+| where | tier |
+|---|---|
+| `ck-dk-canonical-registry.md` row 348 | `gate §4(a), **empirical basis**` |
+| `kernel-constraints-registry.json` | `"tier": "gate"` |
+| `q-beta-radius-of-convergence-gate.lean` | **0 sorries**, and **two `axiom` declarations**: `qBetaLadderCoefficients : ℕ → ℝ`, `qBetaCandidatePoleLocation : ℝ` |
+
+That is the *"sorry-free ≠ derived"* / §"Axiomatization is NOT a Proof" shape:
+the file compiles clean because the content is axiomatised, not derived.
+
+**Consequence for the entry above.** The growth-obstruction audit labels its
+channel dichotomy **"scope-(b) with cited invariant"**. AGENTS.md's rule for
+scope-(b) is explicit — a structural exclusion is *"only permitted when a
+**proved invariant** forbids it … Cite the invariant. Without one, you may not
+write (b)."* On the odd side the cited invariant is KC8, which the registry
+tiers **empirical/gate** and whose Lean is **axiom-backed**. So the scope label
+is stronger than its own tier on that side.
+
+**This does NOT overturn the audit's arithmetic.** Given both growth classes as
+measured, a factorially-divergent series and a positive-radius one cannot be
+equated term-by-term; that contrast holds. What is over-labelled is the tier,
+not the comparison.
+
+### So attack C stays closed — on C-negative-2, not C-negative-1
+
+- **C-negative-2 is unaffected and is the load-bearing one**:
+  `qbeta_c3_uq0_radius_branchpoint_probe` is exact algebra from the
+  A-polynomial's longitude discriminant, validated against the corpus's
+  sorry-free `(√3/4)u²`. `R = 2 log φ = 0.9624`, anchor at `0.108·R`. *"The
+  on-anchor-singularity / resurgence-at-anchor reading is REFUTED."*
+- **C-negative-1 should be cited as empirical, not as a proved invariant.** It
+  still says what it says; it is simply not a scope-(b) foundation on its own.
+
+**Net: attack C remains closed, and my own framing of why was one tier too
+strong.** Fourth correction of my own work on this bean today.
