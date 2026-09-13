@@ -499,3 +499,69 @@ argument above is independent of it"*). Narrowing the regex is a judgement about
 what counts as an acquisition, which is neither a precision increase nor
 corpus-derived, so under the 2026-09-07 ASK-THE-OWNER directive it is reported
 rather than done.
+
+
+---
+
+## Class 2 re-measured 2026-09-13 — the class DRAINED, and two of this bean's own claims were stale
+
+Re-ran `computations/audits/witness_producer_resolution_audit.py` before starting
+Class 2 work, because the committed figure was two weeks and ~900 commits old.
+It had moved, and in the direction this bean did not predict.
+
+| | 2026-08-30 (committed) | 2026-09-13 |
+|---|---|---|
+| live witnesses | 2949 | **3409** (+460) |
+| `RESOLVED` | 2714 | **3080** |
+| `FOUND_BY_CONVENTION` | 190 | 264 |
+| `FOUND_BY_PRODUCER_CALL` | 25 | 49 |
+| `NAMED_BUT_MISSING` | — | **0** |
+| **`ORPHAN`** | **19** | **15** |
+
+**The class drained while the corpus grew by 460 witnesses.** Same shape as the
+Class 1 refill finding immediately above: the accretion reading was wrong in both
+cases, and in both cases only a re-measurement showed it. Selftest 7/7, `exit=0`.
+
+### 🛑 Two claims in this bean's own text do not survive the check
+
+**1. The `per_irrep_pole_*` producers are NOT gone.** This bean's closing section
+sends the next agent at that pair as "where the value is", on the reading that
+its producing code was lost. Measured: `computations/per_irrep_pole_proton_h3.py`
+and `computations/per_irrep_pole_deuteron_h6.py` are **both in the tree**, both
+witnesses **resolve**, and neither appears in the `ORPHAN` list.
+
+What the sidecar actually recorded is narrower and is still true: the **script
+names** were lost from the *block prose* by token substitution — `grep -c "the
+canonical formalism"` on
+`mass-theory/per-nucleon-shift-additive-linearity-proof.md` returns **4**, the
+"four sites in one block" the sidecar named. A lost *name in prose* is not a lost
+*file*, and this bean's text runs the two together.
+
+**2. The deuteron figure is stale.** This bean records the deuteron witness as
+`computed: 38, expected: 40`. The committed witness reads **`computed: 46,
+expected: 40`** (`deuteron_full_tr_M_u_pole_eq_shift_NF`, computedAt
+2026-08-19 — *before* this bean's 2026-08-30 entry). Do not quote 38.
+
+**The substantive half of the finding stands, re-verified.** Both witnesses are
+committed **failing** — proton `full_tr_M_u_pole_eq_shift_NF_proton` **18 vs 19**,
+deuteron **46 vs 40** — while the reader-facing block at
+`per-nucleon-shift-additive-linearity-proof.md:42` links the proton witness
+directly and reports its numbers as confirmations.
+
+### What is left here, and why it is not done in this tranche
+
+Two separable pieces, neither in the tolerance-floor scope of PR #7257:
+
+- **Restore the four substituted script names in the block prose.** Corpus-derived
+  — the witnesses name their own producers and the sidecar names the sites — but
+  it is a math-bearing `.md` edit needing the render-QA gate and a sidecar
+  refresh, and each of the four sites needs a per-site determination of which of
+  the two names belongs there.
+- **The block reports failing numbers as confirmations.** Restating that is a
+  content-correctness judgement about what the block should now claim, which is
+  the author's call under the 2026-09-07 ASK-THE-OWNER directive, not a
+  mechanical repair.
+
+The remaining 13 `ORPHAN` witnesses are unchanged in character: each is still a
+choice between regenerating (which deletes recorded analysis) and restoring
+producing code from history.
