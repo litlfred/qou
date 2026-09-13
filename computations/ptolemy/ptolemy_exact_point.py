@@ -55,17 +55,34 @@ T = sp.Symbol('T')
 t = sp.Symbol('t')
 
 
+def _primitive_forms(vrs):
+    """Candidate primitive elements, cheapest-looking first.  Elimination cost varies by
+    orders of magnitude across these, and the first that returns wins."""
+    n = len(vrs)
+    yield "+".join(f"{i + 1}*{v}" for i, v in enumerate(vrs))
+    for m in (7, 5, 11, 3):
+        yield "+".join(f"{(m ** i) % m + 1}*{v}" for i, v in enumerate(vrs))
+    for m in (7, 5):
+        yield "+".join(f"{(i * i) % m + 1}*{v}" for i, v in enumerate(vrs))
+    yield "+".join(f"{v}" for v in vrs)
+    for k in range(min(n, 4)):
+        yield vrs[k]
+
+
 def sing(script, timeout=900):
     """Run Singular; the scratch file goes to a temp dir, never into the repo."""
     with tempfile.TemporaryDirectory() as td:
         p = pathlib.Path(td) / 's.sing'
         p.write_text(script)
-        r = subprocess.run(['Singular', '-q', '--no-warn', str(p)],
-                           capture_output=True, text=True, timeout=timeout)
+        try:
+            r = subprocess.run(['Singular', '-q', '--no-warn', str(p)],
+                               capture_output=True, text=True, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            return None          # the caller decides: try another form, or report the wall
         return r.stdout
 
 
-def extract(name, cls, verbose=True):
+def extract(name, cls, verbose=True, elim_timeout=240):
     M = snappy.Manifold(name)
     V = M.ptolemy_variety(3, obstruction_class=cls, eliminate_fixed_ptolemys=True)
     eqs = [str(e) for e in V.equations]
@@ -73,14 +90,38 @@ def extract(name, cls, verbose=True):
     if verbose:
         print(f"{name} class {cls}: {len(vrs)} variables, {len(eqs)} equations")
 
-    lin = "+".join(f"{i + 1}*{v}" for i, v in enumerate(vrs))
-    out = sing(f'ring r=0,({",".join(vrs)},T),dp;\n'
-               f'ideal I={",".join(eqs)},T-({lin});\n'
-               f'ideal E=eliminate(I,{"*".join(vrs)});\n"E:";E[1];\nquit;\n')
-    lines = [l.strip() for l in out.splitlines() if l.strip()]
-    if not lines or lines[-1] == 'E:':
-        raise RuntimeError("elimination produced no eliminant")
-    elim = sp.Poly(sp.sympify(lines[-1].replace('^', '**')), T)
+    # TRY SEVERAL PRIMITIVE ELEMENTS, each on its own budget.  The choice of linear form
+    # dominates elimination cost, and a single fixed choice is how this producer walled:
+    # with coefficients 1..11, `5_2` class 1 did not finish in 900 s and never printed an
+    # eliminant, while a different form on the SAME system returned degree 8 in seconds.
+    # One bad primitive element must not look like an intractable manifold.
+    elim, lin, tried = None, None, 0
+    for lin_try in _primitive_forms(vrs):
+        tried += 1
+        if verbose:
+            print(f"   [stage 1/2] eliminating, primitive element #{tried} "
+                  f"(budget {elim_timeout}s) ...", flush=True)
+        out = sing(f'ring r=0,({",".join(vrs)},T),dp;\n'
+                   f'ideal I={",".join(eqs)},T-({lin_try});\n'
+                   f'ideal E=eliminate(I,{"*".join(vrs)});\n"E:";E[1];\nquit;\n',
+                   timeout=elim_timeout)
+        if out is None:
+            continue                                  # this form timed out; try the next
+        lines = [l.strip() for l in out.splitlines() if l.strip()]
+        if not lines or lines[-1] == 'E:':
+            continue
+        try:
+            cand = sp.Poly(sp.sympify(lines[-1].replace('^', '**')), T)
+        except Exception:
+            continue
+        if cand.degree() >= 1:
+            elim, lin = cand, lin_try
+            break
+    if elim is None:
+        raise RuntimeError(f"no primitive element produced an eliminant in {tried} attempts "
+                           f"at {elim_timeout}s each -- raise --elim-timeout or add forms")
+    if verbose:
+        print(f"   primitive element #{tried} worked", flush=True)
     if verbose:
         print(f"   eliminant degree {elim.degree()} (the SCHEME degree, not [K:Q])")
 
@@ -150,9 +191,11 @@ if __name__ == '__main__':
     ap.add_argument('manifold')
     ap.add_argument('obstruction_class', type=int)
     ap.add_argument('--write', action='store_true', help='write the point JSON')
+    ap.add_argument('--elim-timeout', type=int, default=240,
+                    help='per-primitive-element budget for the elimination step')
     a = ap.parse_args()
 
-    res = extract(a.manifold, a.obstruction_class)
+    res = extract(a.manifold, a.obstruction_class, elim_timeout=a.elim_timeout)
     genuine = [c for c in res['components'] if not c['degenerate']]
     degen = [c for c in res['components'] if c['degenerate']]
     print(f"\n   components: {len(res['components'])}  "
