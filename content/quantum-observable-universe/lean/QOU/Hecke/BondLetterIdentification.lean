@@ -271,6 +271,49 @@ theorem massFraction_like_pair (m : ℝ) (hm : m ≠ 0) : m / (m + m) = 1 / 2 :=
   field_simp
   ring
 
+/-! ### The like-pair bond factors, and where `1 − q⁻⁴` in `δ` comes from
+
+At the canonical `z_D = q³/(q²+1)` and `h = q − q⁻¹` the two like-pair factors
+are not independent numbers: the `nn` one is `q⁻⁴` times the `pp` one. That
+single identity accounts for the `(1 − q⁻⁴)` factor of the substrate flavour
+split, which is otherwise an unexplained substrate expression.
+
+The definitions are inlined as hypotheses rather than imported so this section
+costs no new dependency; they are `MassTheory.DeuteronKernel.zD`, `.hq` and
+`.flavorDelta` verbatim. -/
+
+/-- **The `nn` bond factor is `q⁻⁴` times the `pp` one.**
+
+`z_D − h = 1/(q(q²+1))` against `z_D = q³/(q²+1)`, so their ratio is exactly
+`q⁻⁴`. Each `pp → nn` substitution multiplies a bond product by `q⁻⁴`. -/
+theorem nnFactor_eq_ppFactor_div_q_pow_four (q : ℝ) (hq : 0 < q) :
+    q ^ 3 / (q ^ 2 + 1) - (q - q⁻¹) = (q ^ 3 / (q ^ 2 + 1)) / q ^ 4 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hq2 : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **`1 − q⁻⁴` is the relative gap between the like-pair bond factors**, i.e.
+`h / z_D` exactly.
+
+So the substrate flavour split factorises through the bond model's own
+quantities:
+
+    δ = (q−1)² · (h / z_D) / 3
+
+🛑 An identity, not a derivation — the same class as
+`tPN_eq_proton_mass_fraction`. It says the `(1 − q⁻⁴)` in `δ` is not an
+independent substrate expression but the like-pair bond gap; it does not
+explain the remaining `(q−1)²/3`, and it says nothing at all about the `1/4`
+in `t = 1/2 − δ/4`, which is what `qou-qqm4` leaves open. -/
+theorem flavorSplit_eq_bondGap (q : ℝ) (hq : 0 < q) :
+    (q - 1) ^ 2 * (1 - (q ^ 4)⁻¹) / 3
+      = (q - 1) ^ 2 * ((q - q⁻¹) / (q ^ 3 / (q ^ 2 + 1))) / 3 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hq2 : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
 end ProductionWeight
 
 end QOU.Hecke.BondLetterIdentification
