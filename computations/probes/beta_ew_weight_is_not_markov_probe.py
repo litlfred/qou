@@ -233,11 +233,19 @@ def main() -> int:
     # each weighting at the identity braid. A Markov trace is NORMALISED --
     # tr_M(1) = 1 by definition -- so this is not a comparison of two
     # conventions, it is a test of whether the object is a Markov trace at all.
+    # RESIDUAL against 0, not value against target: the verdict path
+    # (qou_substrate/witness.py) compares float(computed) to
+    # float(expected), so a value-vs-value form here could not resolve
+    # anything below the float64 floor and the tolerance below it was
+    # unreachable by ~10^24. A residual near zero IS representable as a
+    # float64 all the way down, so the same tolerance is a real bound.
+    # Gate: computations/audits/tolerance_below_arithmetic_floor_audit.py.
     b.add_assertion(
         "markov_trace_of_identity_is_one",
-        computed=fmt(tr_y), expected="1", tolerance="1e-40",
-        source="SUM_lam y_lam chi^lam(1) = 1 exactly -- y_lam IS a normalised "
-               "Markov trace, confirming the weights were read correctly",
+        computed=fmt(abs(tr_y - 1)), expected="0", tolerance="1e-40",
+        source="|SUM_lam y_lam chi^lam(1) - 1| = 0 exactly -- y_lam IS a "
+               "normalised Markov trace, confirming the weights were read "
+               "correctly",
     )
     b.add_assertion(
         "consumer_weighting_of_identity_is_NOT_one",

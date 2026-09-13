@@ -373,10 +373,20 @@ def main():
     w.add_data("classical_hook_length_dims", {
         str(p): d for p, d in d_lambda.items()
     })
+    # RESIDUAL against 0, not value against target: the verdict path
+    # (qou_substrate/witness.py) compares float(computed) to float(expected),
+    # so a value-vs-value form here could not resolve anything below the
+    # float64 floor and the tolerance below it was unreachable by ~10^24.
+    # A residual near zero IS representable as a float64 all the way down, so
+    # the same tolerance is a real bound on it.
+    # NOT reported by that audit: it parses `expected` as a literal, and this
+    # one is an expression. Same defect, one assertion up — fixed together so
+    # the file does not carry a detector-shaped half-fix.
+    # Gate: computations/audits/tolerance_below_arithmetic_floor_audit.py.
     w.add_assertion(
         name="family_a_h0_matches_classical_dimension_mean",
-        computed=mp.nstr(fA_coefs[0], 30),
-        expected=mp.nstr(mp.mpf(sum_d_lambda) / 4, 30),
+        computed=mp.nstr(abs(fA_coefs[0] - mp.mpf(sum_d_lambda) / 4), 20),
+        expected="0",
         tolerance="1e-40",
         source=(
             "Route A: h⁰ coefficient of the 3-point Vandermonde fit of "
@@ -385,10 +395,17 @@ def main():
             "hook-length formula d_λ = 4!/Π hooks."
         ),
     )
+    # RESIDUAL against 0, not value against target: the verdict path
+    # (qou_substrate/witness.py) compares float(computed) to float(expected),
+    # so a value-vs-value form here could not resolve anything below the
+    # float64 floor and the tolerance below it was unreachable by ~10^24.
+    # A residual near zero IS representable as a float64 all the way down, so
+    # the same tolerance is a real bound on it.
+    # Gate: computations/audits/tolerance_below_arithmetic_floor_audit.py.
     w.add_assertion(
         name="family_a_h2_matches_declared_three_quarters",
-        computed=mp.nstr(fA_coefs[2], 30),
-        expected="0.75",
+        computed=mp.nstr(abs(fA_coefs[2] - mp.mpf("0.75")), 20),
+        expected="0",
         tolerance="1e-40",
         source=(
             "Route A: h² coefficient of the same Vandermonde fit. "
