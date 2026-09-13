@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T16:19:51Z
+updated_at: 2026-09-13T17:13:35Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2431,3 +2431,67 @@ the owner's answer, not by the argument that first produced it.
    jointly — that is now the sharp form of the open problem.
 3. **Whether the bar-odd hypothesis survives the move to `z_D`** at all. It is
    attached to the retired `z = 1` closed form; imposing it costs -54.825 %.
+
+
+## 2026-09-13 — item 2 is REFRAMED, not answered: the obstruction is the LENGTH
+
+Working item 2 ("a principle for the 5 un-ruled letters that is both
+bar-consistent and whole-element PSD-admissible"), formalize-first found an
+invariant that prunes the search instead of narrowing it.
+
+**The theorem** (`QOU.Mass.AltCharShiftMultiset`, sorry-free, lean-direct exit 0,
+`#print axioms` clean on all six new declarations):
+
+* `letterChar_neg` — EVERY letter of the corpus alphabet has strictly negative
+  alternating character: `sigma -> -1/q = -0.9009`, bar-fixed
+  `-> -(q^2+1)/(2q) = -1.0054`, `sigma^-1 -> -q = -1.1100`.
+* `wordChar_sign` — therefore `sign(wordChar w) = (-1)^len(w)` for ANY letters,
+  ANY order, ANY generator labelling.
+* `no_eleven_letter_word_is_alt_psd` — the alternating block is
+  ONE-DIMENSIONAL, so under scope (B) PSD there is exactly `0 <= character`.
+  Eleven is odd. So **every** 11-letter word over this alphabet is excluded.
+
+**Why this reframes item 2.** The obstruction does not depend on which letters
+carry the p/n asymmetry, so no choice among the 5 un-ruled letters can repair
+it. Item 2 as posed has no answer AT LENGTH 11. The question to ask instead is
+about the crossing budget.
+
+**What the corpus already had, and why this is not a re-derivation.**
+`protonWord_char_neg` / `neutronWord_char_neg` were already proved — each for
+ONE word, by computing that word's closed form. The mechanism (per-letter
+negativity, hence parity) was not, and it is the part that generalises. Found
+by corpus-grep before writing; without it I would have re-derived the two-word
+case and called it new.
+
+**Two independent parity obstructions, same direction.** Gamma-gamma words have
+even length (`gammaGamma_length_even`), which is why the CONSTRUCTION half of
+the ruling reaches only 6 of the 11 letters. The SDP half under (B) ALSO
+demands even length, by a completely different argument. Neither uses the other.
+
+**Confirmation** (`qbeta_altchar_sign_is_length_parity_probe.py`, 6/6):
+exhaustive over all **1092** words at lengths 1..6 with ZERO exceptions, and the
+INDEPENDENT engine route (Hoefsmit `(1,1,1)` matrices, never the scalar model)
+agrees to **2.28e-39**. Per-letter products also reproduce every block value
+recorded in #7304 to 15 digits.
+
+**Honest limit, from the Lean docstring rather than discovered later:**
+per-letter negativity fails for a letter with shift `d >= 1/(q^2-1) ~ 4.3094`.
+Every corpus letter has `d` in {0, -1/2, -1}; the closest is `d = 0`, short by
+4.3094. So this excludes words over the CORPUS ALPHABET, not over every
+conceivable alphabet. A letter with a large positive shift is the only escape
+this argument leaves open, and nothing in the corpus supplies one.
+
+**What is NOT claimed:** that no nucleon word exists. Only that no ODD-length
+word over this alphabet is admissible in the alternating block under scope (B).
+
+### The open items, restated after this
+
+1. **What replaces `nuc11_interleaved`** on the three L2 rows. Owner decision,
+   unchanged, and now sharper: the replacement cannot be another 11-letter word
+   over this alphabet.
+2. ~~A principle for the 5 un-ruled letters~~ **superseded** — no such principle
+   exists at length 11. The live question is whether the **11-crossing budget**
+   is correct, given that scope (B) and the gamma-gamma construction BOTH
+   require even length. That is a question about the corpus's crossing
+   accounting, not about letter selection.
+3. **Whether the bar-odd hypothesis survives the move to `z_D`** — unchanged.
