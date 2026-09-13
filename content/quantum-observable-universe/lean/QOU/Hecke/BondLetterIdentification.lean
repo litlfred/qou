@@ -220,4 +220,57 @@ theorem bond_factors_of_skein_letters {g : ℕ} (h : R)
   · simpa using tr_bond_gen S ha hb
   · simpa [sub_eq_add_neg] using tr_bond_ginv S h hq ha hb
 
+/-! ## What the production weight `t = 1/2 − δ/4` equals, and why that is not
+yet a derivation
+
+`observations/flavor-split-substrate` defines the substrate flavour split as
+
+    δ = (m_n − m_p) / M_N,      M_N = (m_p + m_n)/2
+
+— the **mean** nucleon mass in the denominator. Under that normalisation the
+production weight is not an opaque offset: it is exactly the proton's share of
+the pair's mass. The two theorems below record the identity and the reason it
+does **not** promote to a rule. -/
+
+section ProductionWeight
+
+/-- **The production p-n weight is the proton's mass fraction.**
+
+With `δ = (m_n − m_p)/M_N` at `M_N = (m_p + m_n)/2` — the corpus's own
+normalisation — the canonical colour weight satisfies
+
+    t = 1/2 − δ/4 = m_p / (m_p + m_n)
+
+identically. Dually `1 − t = m_n/(m_p + m_n)`, so the `σ` branch carries the
+neutron's fraction and the `σ⁻¹` branch the proton's: the split is
+**cross-weighted**, the shape a barycentric lever arm takes.
+
+🛑 This is an **algebraic identity**, not a derivation. It re-expresses `δ/4`
+in the corpus's own quantities and supplies no mechanism; what it buys is that
+the open coefficient now has a name and a candidate reading that can be tested.
+The test is `massFraction_like_pair`, immediately below, and it fails. -/
+theorem tPN_eq_proton_mass_fraction (mp mn : ℝ) (hpos : mp + mn ≠ 0) :
+    1 / 2 - ((mn - mp) / ((mp + mn) / 2)) / 4 = mp / (mp + mn) := by
+  field_simp
+  ring
+
+/-- **…and the mass-fraction reading does not extend to the like pairs**, which
+is what stops the identity above from being a derivation.
+
+A mass-fraction rule assigns any *like* pair the weight `m/(m+m) = 1/2`. The
+corpus assigns `t = 0` to `pp` (the letter is `σ`) and `t = 1` to `nn`
+(`σ⁻¹`) — see `tr_bond_gen` and `tr_bond_ginv`. So the rule contradicts both
+like-pair letters, and cannot be the mechanism fixing `t` in general.
+
+A consistent reading survives and is **not** proved here: the like pairs are
+fixed by exchange symmetry (identical particles admit no interpolation), and
+only the *unlike* pair has a free weight, displaced from the symmetric `1/2`
+by the flavour asymmetry. That is a story about why `δ` appears, not a
+derivation of the factor `1/4`. Bean `qou-qqm4`. -/
+theorem massFraction_like_pair (m : ℝ) (hm : m ≠ 0) : m / (m + m) = 1 / 2 := by
+  field_simp
+  ring
+
+end ProductionWeight
+
 end QOU.Hecke.BondLetterIdentification
