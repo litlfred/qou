@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T06:21:19Z
-updated_at: 2026-09-13T06:21:19Z
+updated_at: 2026-09-13T09:14:16Z
 ---
 
 ## The measurement
@@ -44,3 +44,59 @@ Also worth noting for whoever takes it: the docstring's finding #1 states the 1.
 ## Not in scope
 
 Whether `τ_W ≈ 0.998367` is still the right Wenzl value, and whether the collapse to zero is correct rather than a symptom of both paths now calling the same function. Both need someone who knows what the two traces are supposed to be.
+
+
+---
+
+## The SAME stale premise sits in a SECOND probe — green, and vacuously so (2026-09-13)
+
+Found while draining `probes/borromean_per_lambda_fr_probe.py` of raw float64.
+It carries the identical 1.96e-4 claim, in two places:
+
+- `add_data("wedderburn_lift_note", …)` — *"y-lambda-at-q0 × proved chi closed
+  forms reproduce the Lean closed-form tau to 1.96e-4 relative only —
+  **convention gap flagged**"*;
+- the assertion name itself, `wedderburn_lift_consistent_to_2em4`.
+
+**Measured: the mismatch is `9.983134063775882e-51`** — zero at the working
+precision. And it is not circular: `tau` is the algebraic Lean closed form
+`(4 + h² − 3h⁴ − h⁶)/(h² + 4)` from `params()`, while the lift is
+`Σ_λ y_λ · χ^λ` read off `y-lambda-at-q0.witness.json` against the proved χ
+forms. Two independent routes agreeing exactly.
+
+**The committed witness has carried that value all along** — the prose
+contradicted the number in the field beside it, so this is not something the
+drain caused or revealed by re-running.
+
+### Why this one is the sharper case
+
+`probe_9b` is **RED** on this premise: its tolerance is sized around 1.96e-4,
+so a value of zero fails it. This probe is **GREEN** — for the same reason,
+inverted. Its tolerance is `5e-4`, which is **47 orders of magnitude** looser
+than the 1e-51 it guards, so the assertion cannot fail for any regression short
+of total breakage. Same stale premise; one probe reports it loudly and the
+other passes silently and says nothing.
+
+That makes the tolerance an instance of AGENTS.md's *"a bound sized to its own
+miss is a fit"* pattern, surviving after the miss it was sized to went away.
+
+### What was and was NOT changed here
+
+- **Changed** (exemption 2, the corpus fixes the answer): the
+  `wedderburn_lift_note` text, which stated a false number and flagged an open
+  convention gap that convention D closed. It now states the measured 9.98e-51,
+  says the two routes are independent, and records what it used to say.
+- **NOT changed**: the assertion name `wedderburn_lift_consistent_to_2em4` and
+  its `5e-4` tolerance. Renaming and tightening is the same decision this bean
+  already puts to the owner for probe_9b, and settling it unilaterally on the
+  second instance would pre-empt that. A comment at the site now says so.
+
+**So the option set in this bean covers TWO probes, not one.** Whichever way it
+is decided — rename to what is now true, keep the historical name with a note,
+or revert to the C-frame — it should be applied to both, and the second one
+needs its tolerance re-sized as well as its name, or it goes on passing
+regardless of what it measures.
+
+Blast radius checked: `wedderburn_lift_consistent_to_2em4` has **no consumer
+outside its own producer** (grep over `.py`/`.md`/`.ts`/`.json`, excluding the
+witness itself).
