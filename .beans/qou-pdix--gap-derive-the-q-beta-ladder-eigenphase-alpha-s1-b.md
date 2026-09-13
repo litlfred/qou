@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T05:41:02Z
+updated_at: 2026-09-13T16:38:14Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1826,3 +1826,68 @@ Derive the **120** — exhibit a braid word and a partition whose `q`-uniform
 eigenphase is `2π/120` — rather than read it off `α_req`. Given the refutation
 above, that requires an element of order divisible by 120 from somewhere the
 framework actually supplies, and no such source is identified here.
+
+
+## 2026-09-13 (2) — 🛑 DERIVING α CANNOT UNBLOCK `qou-cds1`. The gap is in the BASE.
+
+**This supersedes the dependency chain the whole S1 tranche is organised around.**
+Lean twin sorry-free (`lean`-direct exit 0, axioms `[propext, Classical.choice,
+Quot.sound]`): `QOU/QBeta/EigenphaseQuantization.lean`. Probe now 16/16.
+
+The author asked whether the `2π/120` candidate was a compute problem. **It is
+not — and the question was the right one.** The compute is correct; it is
+computing a **retired** object. On the **live** object the entire rung is
+structurally excluded, which nobody had checked.
+
+### The exclusion, one line
+
+`qou-iagg` ← `qou-cds1` ← `qou-pdix`. **The second link does not hold.** On the
+ruled `z_D` base the ladder must supply
+
+    Q_codata / Q_D = 0.78233341 / 0.4447004 = 1.7592370…  > 1
+
+while its `N = 1` rung is `cos(α − u/2) ≤ 1` for **every** `α`, and its `N = 2`
+rung is `(1 + c₂u²) = 0.99992745… < 1` at the committed `c₂ = −1`. The two
+together are bounded by `0.99992745 < 1 < 1.7592`.
+
+**No phase whatsoever repairs a base that is 43 % low, because a cosine cannot
+exceed one.** The `c₃` that would be required instead is **1.23e6**, not `O(1)`
+— which is the same fact the corpus already reports as "c₃ ≈ −974 under D",
+seen from the side that shows it is not a coefficient problem.
+
+Scope-(b), citing `Real.cos_le_one`. **This is the mirror of this bean's own
+2026-08-22 (8) entry**, which excluded a `cosh` re-reading because `cosh ≥ 1`
+sat on the wrong side of a required value *below* 1. Here the required value is
+*above* 1 and `cos ≤ 1` is on the wrong side of it.
+
+### What this means for the arc
+
+  * **The `Q_β` L2 residual is a BASE problem** — not a phase problem, and not a
+    ladder problem at all. Work on `α` is not on the L2 critical path.
+  * `qou-cds1`'s blocker is **not** this bean. Re-deriving the `c_k` ladder on
+    the `z_D` base cannot succeed in the committed multiplicative-cos form
+    whatever `α` is; the form itself, or the base, has to change.
+  * `qou-iagg` (the second re-score) is therefore **not** waiting on `α` either.
+  * This does **not** say the ladder is wrong, or that no `Q_β` closure exists.
+    It says where the gap is not.
+
+### Lean, formalize-first (all sorry-free)
+
+  * `cos_rung_lt_of_base_short` — the exclusion, general form
+  * `cos_rung_lt_of_base_short_ladder` — the `(1 − u²)` shape the ladder uses
+  * `two_cos_eq_int_cases` — Part 1: `2cos α ∈ ℤ ∩ [−2,2]` ⟹ five cosines
+  * `not_isInt_of_mem_Ioo_one_two` — the exclusion mechanism
+  * `not_braid_eigenphase_of_two_cos_mem_Ioo` — `2cos(α_req) = 1.99725…` is
+    strictly inside `(1,2)`, hence not an integer. **This covers a CONSTANT `α`**,
+    the case the boundedness-only argument leaves open.
+
+**NOT formalised, named so it is not mistaken for done:** "a Laurent polynomial
+bounded on `(0,∞)` is constant", and the general-`d` Kronecker step. Both proved
+on paper and verified numerically over all 5460 words `|w| ≤ 6`; neither has a
+Lean twin. **Options stay open until those land** — per the author's standing
+instruction, nothing is closed on the strength of the paper argument alone.
+
+### Status of the `2π/120` candidate after this
+
+Weaker still, and its scope is now doubly moot: its base is retired, **and** on
+the live base no `α` at all can matter. Kept recorded, not adopted, not wired.
