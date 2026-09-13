@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T09:22:10Z
-updated_at: 2026-09-13T09:41:59Z
+updated_at: 2026-09-13T10:35:03Z
 ---
 
 ## LANDED (PR #7284) — the prune, and it is sorry-free
@@ -66,3 +66,34 @@ admissibility, not confirmation.
 Working recipe: cp -al root QOU tree to shadow; rm the stale module; rebuild it
 with LEAN_PATH=shadow:rootpackages:rootbuild (ABSOLUTE paths); then compile.
 MobiusEnergy rebuilds from source in 5.2 s.
+
+## ALL THREE STRUCTURAL GATES NOW HAVE LEAN (2026-09-13, PR #7284)
+
+  even in mu-bar_123      PROVED, and overshot — the channel is BLIND to it.
+                          innerPairEnergy_reverse is a real change of variables:
+                          the exchange that sends mu-bar -> -mu-bar leaves the
+                          energy unchanged. So it is not the odd functional
+                          odd_symmetric_functional_vanishes annihilates.
+  nonzero at lk = 0       PROVED as the two-sided bracket [1/D^2, 1/delta^2],
+                          both endpoints positive, both from distances alone.
+                          I deliberately did NOT state "positive even when
+                          lk = 0" — in this encoding LinkEmbedding carries no
+                          linking data, so that reads as content while being
+                          true by vacuity: the exact dressed-up tautology the
+                          MobiusEnergy roast found four of.
+  O2 / zero-mean          PROVED — but EARNED, not the freebie I claimed. See
+                          the correction on qou-o6ml: the mutual channel is
+                          UNSUBTRACTED and strictly positive, i.e. in coth's
+                          excluded position. Cleared by #7080's closure: zero
+                          mean forces the subtraction to be the kernel's own
+                          mean, so it is determined not chosen.
+
+12 declarations total, every one [propext, Classical.choice, Quot.sound], no
+sorryAx. lean-direct exit 0, zero warnings.
+
+WHAT ROUTE (2) IS NOW BLOCKED ON, and it is not infrastructure. The functional
+exists, is finite, and clears every structural gate the corpus has. What it
+lacks is a DISCRIMINATING OBSERVABLE: #7080 retired kappa(A), and the three
+gates are pass/fail admissibility tests that many candidates would also pass —
+clearing them is not evidence for route (2) over any other orientation-blind
+candidate. Naming an observable that separates candidates is the open item.

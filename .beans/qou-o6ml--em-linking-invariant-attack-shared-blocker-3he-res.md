@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T09:41:59Z
+updated_at: 2026-09-13T10:35:02Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1457,3 +1457,36 @@ diagonal singularity. Route (2) is no longer blocked on infrastructure.
 
 I reported the blocker from this bean's prose without opening the file. Recording
 the correction here so the next reader does not re-pay it.
+
+## CORRECTION 2026-09-13 — the ROAST's O2 argument does not apply to the channel this bean needs
+
+The ROAST above says the literature Mobius/O'Hara energy is "subtracted by
+construction", and concludes "a functional whose regularising subtraction is
+intrinsic is not vulnerable to that argument. So O2 is a reason to PREFER route
+(2) over route (1)'s kernel". I repeated that on PR #7284 before checking it.
+
+IT IS WRONG FOR THE MUTUAL CHANNEL. The intrinsic subtraction is in the SELF
+term 1/ambient^2 - 1/arc^2, and by THIS BEAN's own split the self term belongs
+to qou-bn8e ("this bean owns only the pairwise/linking channel"). The mutual
+term carries no subtraction, and QOU.MobiusEnergy states it in its own theorem:
+
+    mutualIntegrand_eq_ohara_without_subtraction
+      -- the O'Hara integrand with the subtraction DROPPED (1/D^2 = 0)
+
+and PR #7284's own section 1 proves mutualIntegrand_pos_of_ne: STRICTLY
+POSITIVE, unconditionally, no hypothesis at all. That is exactly the property
+that excluded coth under O2 (qou-17mq, PRs #7020/#7080).
+
+So route (2)'s mutual channel is in coth's position, not immune to it. O2 is
+NOT a reason to prefer route (2) over route (1) on this ground — that comparison
+should be withdrawn.
+
+WHAT SURVIVES, and it is the useful half: the fix is #7080's closure, unchanged
+in shape. Zero mean forces the subtraction constant to be the kernel's own mean
+— there c0 = <coth>_M, here the mean of 1/sep^2 — so it is determined by the
+geometry rather than chosen. Proved sorry-free on #7284
+(zeroMeanMutualKernel_integral_zero, zeroMeanMutualKernel_not_pos): the
+subtracted kernel satisfies O2 and genuinely changes sign.
+
+The gate is therefore CLEARED, but earned rather than free. Anyone citing
+"O'Hara's subtraction protects route (2)" must say which channel they mean.
