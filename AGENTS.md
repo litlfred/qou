@@ -2428,6 +2428,33 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   > core and provably not the 3-letter quark block (odd) or the 2-letter gluon
   > pair (both letters positive). Five letters remain census-derived against a
   > ruling that says not to use census (`qou-99qc`, still `todo`).
+  >
+  > **🟧 OWNER RULING 2026-09-13 — that is true of the γγ half ONLY, and the
+  > SDP half reaches all eleven. The scored element FAILS it.** `qou-ales` has
+  > two halves, and the paragraph above is about the *construction* half. The
+  > scope of the *confinement SDP* half was put to the owner as a fork — does
+  > it constrain only the 6 γγ core letters, or the whole word? — and the
+  > answer is **(B) whole element**: every Wedderburn projection of the full
+  > 11-letter word must be `Matrix.PosSemidef`.
+  >
+  > Measured, `nuc11_interleaved` fails on `(2,1)` and `(1,1,1)` for **both**
+  > nucleons (proton block dets `1.38249446339` / `-1.02197249381` /
+  > `-0.739223570776`; neutron `1.1221068216` / `-1.02197249381` /
+  > `-0.910762214553`). `(1,1,1)` is the alternating character and was already
+  > on record as a sign exclusion; the `(2,1)` failure is additional. **So the
+  > three L2 rows above are scored on an element the selection rule that is
+  > supposed to produce it rejects** — do not quote them as though the element
+  > were ruled-in, and do not read the 6-of-11 paragraph as an all-clear for
+  > the other five.
+  >
+  > The same ruling rejects every alternative in the one-letter quark family,
+  > including the bar-odd survivors that a parity constraint forces
+  > (`Q_β = 0.353415698` MeV, −54.825 %). **What replaces the element is an
+  > owner decision and has not been taken**; the dashboard is deliberately
+  > un-re-scored. Probes
+  > `qbeta_qbeta_scores_a_difference_probe.py` and
+  > `qbeta_bar_parity_forces_a_unique_quark_letter_probe.py`; bean `qou-99qc`,
+  > which stays `todo` with the replacement as its first open item.
 
   This
   read "1279 ppb (164.0× miss) per the dashboard (fresh run 2026-05-31)" until
