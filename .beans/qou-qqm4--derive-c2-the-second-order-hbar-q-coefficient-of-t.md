@@ -5,6 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
+updated_at: 2026-09-13T13:07:38Z
 updated_at: 2026-09-13T12:47:52Z
 ---
 
@@ -1222,6 +1223,69 @@ and this does not tell anyone which way to flip the two nucleon traces.
 
 ---
 
+RESULT (2026-09-13, session sleepy-morse, PR #7300) — the target
+`KindDependentBondBreaksIntegrality` stated is now ANSWERED, and the answer is a
+NEGATIVE that is sharper than a plain miss.
+
+**The connection that file says nobody made.** `QOU.Mass.KindDependentBondBreaksIntegrality`
+(merged) observes that the `b₃` count-channel exhaustion rests on a UNIFORM bond
+weight, that this bean has since derived a weight that is NOT uniform, and — its
+words — that "the corpus has since taken that escape, on a different front, and
+nobody connected the two." It then states a number and a direction of use:
+
+> `ρ_pp = 1 + rMeasured = 2433859/1483044 ≈ 1.64112`. "Read RIGHT-TO-LEFT only:
+> this is the number `qou-qqm4`'s derived `z + d_kind` at the `pp` interface must
+> independently produce. ... Agreement would be a parameter-free prediction;
+> disagreement is a real negative about the bond model."
+
+`BondLetterIdentification` (merged today) supplies that input: `b(t) = z − h·t`
+for every `t`, `t = 0` at `pp`, `1` at `nn`, `1/2 − δ/4` at the production `pn`.
+
+**Computed, exactly.** With `P q = q¹⁰−2q⁹+7q⁸−2q⁶+4q⁵+4q⁴+q²−2q+1`:
+
+    b_pn   = P q / (12 q⁵ (q²+1))     <- IS the probe's extracted degree-10 form
+    ρ_pp   = 12 q⁸ / P q              ρ_nn = 12 q⁴ / P q      ρ_pp/ρ_nn = q⁴
+
+All three are rational-function identities over the symbol `q`, now in Lean:
+`QOU.Mass.KindRatioFromBondLetters`, five theorems, sorry-free, lean-direct
+exit 0, axioms `[propext, Classical.choice, Quot.sound]`.
+
+**Scored at the minimal ³He carrier (`ppn`: one `pp` pair, two `pn`).**
+
+| carrier | ρ_pp | b₃/b₂ | miss |
+|---|---|---|---|
+| uniform ρ = 1 (the exhaustion's premise) | 1 | 0 | −100 % |
+| best INTEGER carrier ρ = 2 | 2 | 1 | +55.976 % |
+| **DERIVED** | 1.2055335007 | 0.2055335007 | **−67.942 %** |
+| target | 1.6411239316 | 0.6411239316 | 0 |
+
+**The finding, and it is the part worth carrying forward.** The derived
+kind-dependence moves `b₃/b₂` off zero and *toward* the measurement — roughly a
+third of the way — and still lands **further from it than the integer carrier the
+exhaustion had already excluded**. So breaking integrality, which is precisely
+the escape `KindDependentBondBreaksIntegrality` identifies, does not buy the
+escape. That is a stronger statement than "the derived number misses": it says
+the named escape route is not where the missing `b₃` lives.
+
+**Scope (a)**, explicitly: this carrier, these weights, at the minimal Brunnian
+counts. No invariant is proved here, so kind-dependent weights are **NOT**
+excluded in general and this must not be written up as scope (b).
+
+**Which ratio, and the reason for the choice.** `ρ_pp` admits two readings — the
+ratio of bond FACTORS `b_pp/b_pn`, or the ratio of their LOGS (the binding is
+`B = −α log μ`, so log-space is defensible). I take the factor ratio **on the
+target file's own wording** ("`z + d_kind`", which is the factor) and NOT because
+it scores better — which it does: the log reading gives ρ_pp = 0.7238235153 and
+a −143.077 % miss. Recording this because choosing the better-scoring reading
+would be selection against the target, which is exactly what the anti-fit rule
+forbids, and the two readings are close enough in plausibility that the
+temptation is real.
+
+**Still open, untouched by this.** Why `t_pn = 1/2 − δ/4` specifically — the
+`1/4` and the `(q−1)²/3` remain underived. This result constrains what the bond
+model BUYS downstream; it does not derive the weight.
+
+Probe: `computations/qbeta/kind_dependent_rho_pp_derived_check.py` (5/5).
 COORDINATION NOTE (2026-09-13, session from bean `qou-5c64`). Not a claim on
 this bean and nothing here is edited — this answers the one item the previous
 coordination note left explicitly untested.
