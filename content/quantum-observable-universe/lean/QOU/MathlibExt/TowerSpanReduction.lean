@@ -157,21 +157,21 @@ theorem P_mul_mem (B : Subalgebra R A) (m : ℕ) (hred : SandwichReduces T B m)
   exact Submodule.add_mem _ (mul_base_right T B m u' hu2' (Submodule.mem_sup_right hs))
     (span_mul_span T B m hred hs hs')
 
-/-- **`TowerSpan` follows from the single local rewriting rule.**
+/-- **One filtration step decomposes, from the single local rewriting rule.**
 
-The global decomposition of every filtration step is implied by the local fact
-that `g m * c * g m` reduces, for `c` in the previous stage. -/
-theorem towerSpan_of_sandwichReduces
+The global decomposition at level `M` is implied by the local fact that
+`g (M+1) * c * g (M+1)` reduces, for `c` in the previous stage. -/
+theorem step_of_sandwichReduces (n M : ℕ)
     (hquad : ∀ m : ℕ, ∃ h : R, T.g m * T.g m = h • T.g m + 1)
-    (hred : ∀ n M : ℕ, SandwichReduces T (shiftedUpTo T n M) (M + 1)) :
-    TowerSpan T where
-  step := by
-    intro n M
+    (hred : SandwichReduces T (shiftedUpTo T n M) (M + 1)) :
+    Subalgebra.toSubmodule (shiftedUpTo T n (M + 1)) ≤
+      Subalgebra.toSubmodule (shiftedUpTo T n M) ⊔
+        Submodule.span R (sandwich T (shiftedUpTo T n M) (M + 1)) := by
     set B := shiftedUpTo T n M with hB
     have hone : (1 : A) ∈ P T B (M + 1) := base_le_P T B (M + 1) B.one_mem
     let S : Subalgebra R A :=
       Submodule.toSubalgebra (P T B (M + 1)) hone
-        (fun _ _ hx hy => P_mul_mem T B (M + 1) (hred n M) hx hy)
+        (fun _ _ hx hy => P_mul_mem T B (M + 1) hred hx hy)
     have hsub : shiftedUpTo T n (M + 1) ≤ S := by
       refine Algebra.adjoin_le ?_
       rintro x ⟨m, hnm, hmM, rfl | rfl⟩
@@ -190,6 +190,14 @@ theorem towerSpan_of_sandwichReduces
             (Submodule.smul_mem _ _ hone)
     intro x hx
     exact hsub (by simpa using hx)
+
+/-- **`TowerSpan` follows from the single local rewriting rule**, at every level
+at once. Pure repackaging of `step_of_sandwichReduces`. -/
+theorem towerSpan_of_sandwichReduces
+    (hquad : ∀ m : ℕ, ∃ h : R, T.g m * T.g m = h • T.g m + 1)
+    (hred : ∀ n M : ℕ, SandwichReduces T (shiftedUpTo T n M) (M + 1)) :
+    TowerSpan T where
+  step := fun n M => step_of_sandwichReduces T n M hquad (hred n M)
 
 /-- **The end-to-end statement.** The disjoint-block law follows from the local
 rewriting rule alone (plus the quadratic relation), by composing this file's
