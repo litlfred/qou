@@ -405,3 +405,90 @@ the check is cheap and the note asks for it.
    pass classified the 48 candidates as 25 computing / 17 reflecting / 4
    neither / 2 no-producer, but that discriminator is not yet validated well
    enough to bake into the count.
+
+## 2026-09-13 (later) — verdicts on all six hardcoded sites
+
+`cc56f213c87`. Read rather than re-run: each is a live re-emitter, so a re-run
+tells you nothing a read does not.
+
+| site | verdict |
+|---|---|
+| `derivation_chain.py` | **tranche** — 12 live consumers, flagged, not flipped |
+| `markov/assembly_chain_11_letter_recompute_probe.py` | **failing correctly**, reporting it wrongly — fixed the report; blocked on the tranche |
+| `probes/path_b_defect_binding_probe.py` | **grouped in all six atoms**; frame now declared in the witness; not flipped (calibrated model) |
+| `qbeta/qbeta_chain_closed_form_probe.py` | **constants stale, result survives** — measured |
+| `qbeta/qbeta_bond_factors_derived_probe.py` | already flagged by this bean's earlier pass |
+| `qbeta/qbeta_mixed_chain_closed_form_probe.py` | already flagged by this bean's earlier pass |
+
+### The one that was lying about itself
+
+`assembly_chain_11_letter_recompute_probe` printed
+
+> "The recompute on the canonical 11-letter element reproduces the live
+> producer witnesses at both pins, to every digit they carry."
+
+**unconditionally** — while four of its own seven assertions were failing. It
+recomputes on the canonical element, so it returns borromean
+(n: `0.47513351715568221251`); its `LIVE` table holds faithful copies of
+committed witnesses that are still grouped (n: `0.98774368811580957163`). The
+failure is a *true report that the producers are stale*, which is the job the
+old agreement was evidence for. Summary now gated on the result; docstring says
+which side is right and that `LIVE` must **not** be "repaired" — editing it
+would hide the staleness rather than fix it.
+
+**It is blocked, not fixable in place.** The neutron chain's leaf is hardcoded
+against `derivation_chain.TR_M_AT_Q0`, which is behind the tranche. This probe
+goes green when that lands and not before — so the tranche has a dependent, and
+that is one more argument for scoping it.
+
+### A structural result worth more than the site it came from
+
+`qbeta_chain_closed_form_probe`'s headline is that `tr_M(β_free)` factorises as
+`t_p^Z · t_n^N`. I tested whether that survives the ordering ruling, using the
+canonical pair against the canonical free traces computed *independently* by
+`h3_transition_cache_q_key_audit`:
+
+    atom   t_p^Z · t_n^N (canonical)          rel. to measured free
+    2H     0.299015017184640076702160426771   5.4e-32
+    3H     0.142072056797304797470498604255   3.9e-31
+    3He    0.188178642999488779263479037146   7.1e-31
+    4He    0.0894099805019306003820475658199  1.6e-31
+
+Residuals are the precision floor of the 30-digit reference, not drift. **The
+factorisation is ordering-independent** — as it must be, since multiplicativity
+of the Ocneanu trace is over *disjoint strand ranges* and the nucleon blocks
+stay disjoint whichever word sits inside them. Consequence for whoever refreshes
+that probe: it is a **small** job — swap two constants and re-measure
+`MEAS_ATOM` / `MEAS_FREE_HOMOG`; sections 1–3 need no re-derivation. Left
+undone only because the A=4 re-measure is the 33-minute matrix route the file
+documents.
+
+### The pattern across all six, stated once
+
+Every one of these was correct when written and went stale on a ruling. `path_b`
+records its own history plainly: defect (i) was "convention-C values … while
+convention D has been canonical since the owner rulings", fixed 2026-08-31,
+grouped-era by 2026-09-05. `derivation_chain` was corrected from 1.63315 and
+went stale within five days. **A hardcoded trace does not track a ruling** —
+which makes the durable fix a migration to
+`canonical_trm_reference.tr_m_nucleon()` (selects by recorded q0, cannot serve
+the wrong frame silently), not a better set of typed digits.
+
+That reframes the `derivation_chain` tranche. Scope it as *"migrate 12 consumers
+to `canonical_trm_reference`"*, not *"edit 3 constants"* — otherwise the next
+ruling re-opens this bean.
+
+### Where the bean stands
+
+- **Source arm: complete.** 8 hardcoded found, 2 fixed outright (the standing-red
+  audits), 1 report-defect fixed, 1 frame-declared, 2 already flagged, 1 pinned
+  behind its tranche. No unread sites remain.
+- **Witness arm: 48 candidates, unchanged this pass** — deliberately, since the
+  work was source-side and a producer sweep carries the 0-byte truncation risk
+  the coordination note documents.
+- **Next**, in my order: (1) scope the `derivation_chain` tranche as a consumer
+  migration and put it to the owner; (2) the witness candidates in dependency
+  order, which needs the downstream-reflection taxonomy this bean asked for and
+  which is still unbuilt — a first pass split the 48 as 25 computing / 17
+  reflecting / 4 neither / 2 no-producer, but that discriminator is not
+  validated well enough to bake into the count.
