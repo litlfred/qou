@@ -200,7 +200,24 @@ polynomial in `s(x)`**.
 > `σ² = s(x)+1`. Equivalently: it *is* `s`-built, but on the **double cover**
 > `x = (x^{1/2})²` — which is what "level 2" means.
 
-### 5a. The grading, and the refinement that follows
+### 5a. A consistency check against GGM's reflection symmetry
+
+GGM (306) (and (218)/(224) for 4₁) require `S^±(x;q)` to be invariant under
+`π : x ↦ x⁻¹`, because the Borel sums are. The exponent multiset must therefore be
+closed under `Y ↦ 1/Y`, and both derived polynomials are — verified symbolically:
+
+- **5₂**: `(Y+1)(Y+x)(Y+1/x)` is **palindromic**: `Y³L(1/Y) = L(Y)` exactly. Root set
+  `{−1, −x, −1/x}` maps to itself.
+- **pretzel**: `(Y²−1)(Y²+σY+1) = Y⁴+σY³−σY−1` is **anti**-palindromic:
+  `Y⁴L(1/Y) = −L(Y)`. The root set `{+1, −1, −x^{1/2}, −x^{−1/2}}` still maps to
+  itself, with `−x^{1/2} ↔ −x^{−1/2}` — which is also exactly the action of
+  `x ↦ x⁻¹`. So the pretzel's exponents are `π`-stable in the same way 5₂'s are,
+  and `σ` is a `π`-invariant, as any Stokes-matrix ingredient must be.
+
+This is a check on the derivation, not an additional result: a `σ` that were not
+`π`-invariant could not appear in `S^±` at all.
+
+### 5b. The grading, and the refinement that follows
 
 Gate G8b: the pretzel's operator is **invariant under the simultaneous flip**
 
