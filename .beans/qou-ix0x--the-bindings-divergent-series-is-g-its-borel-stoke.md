@@ -412,3 +412,21 @@ Two by-products worth keeping:
 **NOT claimed:** that no bond family exists; that no convex `Φ` exists; any magnitude; that the one-sidedness mechanism is understood.
 
 **This bean's own Habiro/cyclotomic route is untouched and still unexcluded** — it was not worked here, and nothing above bears on it.
+
+
+---
+**2026-09-13 (later) — LEAN. Owner asked "Lean.prove assertions?". Two of the thirteen had provable content, and the first CORRECTS my own framing above.**
+
+`QOU/MassTheory/SecondArgBondNotPairFunction.lean`, 7 decls, `lean`-direct **exit 0, ZERO errors and ZERO warnings** (`-DautoImplicit=false -s 65536`, restored cache 3480 mathlib + 2713 QOU oleans, traces present). `#print axioms`: six on `[propext]` alone, one on `[propext, Classical.choice, Quot.sound]` from `classical`. **No `sorryAx`.**
+
+**Most assertions are NOT theorems** — they are numeric measurements at `q₀`. The structural ones were already proved on `main` (`b3corpus_chain_neg_of_same_sign`, `b3_eq_zero_ofBondFunctional`) and are cited, not re-proved. Saying so rather than manufacturing Lean around measurements.
+
+**The correction.** The entry above says the one-sidedness makes the bond *"order-dependent, and `ChainBondOrderDependence.orderIndependent_iff` records that a nucleus has no arrangement"*. That is weaker than the truth. `bondOf` is **symmetric in its two nucleon arguments by construction** (`bondOf_comm`), so
+
+    secondOnly_eq_bondOf_iff : (∃ Lpp Lpn Lnn, secondOnly f = bondOf …) ↔ f true = f false
+
+— a second-argument-only bond is **not of the `bondOf` form at all** unless constant. The corpus's chain calculus is stated over `bondOf`, so the γγ bond falls **outside its domain** rather than violating its conclusion. Measured `f true = 1.00105775 ≠ 1.00061119 = f false`, so it is not any `bondOf`. Two anti-vacuity guards included (`secondOnly_const_is_bondOf`, `bondOf_ne_secondOnly_witness`).
+
+**Second:** `weighted_diff_supported_on_multidim` formalises the cross-arc reconciliation with `qou-99qc`/#7295 — if every 1-dim block agrees on two words, the whole weighted-character difference sits on dimension `≠ 1`. The reconciliation no longer depends on `q₀`.
+
+**NOT claimed:** that the γγ bond is wrong, that the one-sidedness mechanism is understood (still measured, not proved), or anything about γγ word selection.

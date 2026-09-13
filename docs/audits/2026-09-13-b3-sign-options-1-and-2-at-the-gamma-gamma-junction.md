@@ -152,6 +152,45 @@ required.
 
 ---
 
+## 3a. Lean — what of this is provable, and one correction to my own framing
+
+Most of the 13 probe assertions are **numeric measurements at `q₀`** and are not theorems. Of the ones with
+structural content, the corpus already proves them (`b3corpus_chain_neg_of_same_sign`,
+`b3_eq_zero_ofBondFunctional`) — cited, not re-proved. **Two were genuinely new**, and the first corrects §1c
+above.
+
+[`QOU/MassTheory/SecondArgBondNotPairFunction.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/SecondArgBondNotPairFunction.lean)
+— 7 declarations, `lean`-direct **exit 0, zero errors, zero warnings**
+(`-DautoImplicit=false -s 65536`), `#print axioms` clean.
+
+**§1c understated the finding.** I wrote that the bond is *"order-dependent, and
+`ChainBondOrderDependence.orderIndependent_iff` records that a nucleus has no arrangement"*. But `bondOf` is
+
+    bondOf Lpp Lpn Lnn a b = if a = b then (if a then Lpp else Lnn) else Lpn
+
+which is **symmetric in `a` and `b` by construction** (`bondOf_comm`). So a second-argument-only bond does not
+merely *violate* arrangement-invariance:
+
+    secondOnly_eq_bondOf_iff : (∃ Lpp Lpn Lnn, secondOnly f = bondOf …) ↔ f true = f false
+
+it is **not of the `bondOf` form at all** unless constant. The corpus's whole chain calculus (`bondSum`,
+`orderIndependent_iff`, `not_orderIndependent_of_ne`) is stated over `bondOf`, so a non-constant one falls
+**outside its domain** rather than contradicting its conclusion. Measured `f true = 1.00105775`,
+`f false = 1.00061119`, so the γγ bond factor is not any `bondOf`.
+
+Two anti-vacuity guards, since an iff is cheap to satisfy vacuously: `secondOnly_const_is_bondOf` puts the
+constant case inside the family; `bondOf_ne_secondOnly_witness` gives an explicit non-constant `Bool` witness
+outside it.
+
+**`weighted_diff_supported_on_multidim`** formalises §2's cross-arc reconciliation: if every 1-dimensional
+block agrees on two words, the whole difference of a `y`-weighted character sum is carried by the blocks of
+dimension `≠ 1`. That makes the reconciliation with `qou-99qc`/#7295 independent of `q₀`, where before it
+rested on the numeric companion (1-dim `9.0e-62` vs ≥2-dim `1.729e-3`).
+
+Axioms: six declarations on `[propext]` alone; `weighted_diff_supported_on_multidim` on
+`[propext, Classical.choice, Quot.sound]` from `classical`. **No `sorryAx`.** Generic per §7c — `bondOf`
+carries no typeclass and the decomposition asks only for `CommRing`.
+
 ## 4. Reproduce
 
 ```sh
