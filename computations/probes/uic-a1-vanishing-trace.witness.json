@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:03:27.663104+00:00",
-  "commitSha": "2cb02fb644d59231b524e32556b57a53adf91a16",
+  "computedAt": "2026-09-12T22:59:48.536016+00:00",
+  "commitSha": "07bd748fdc6e54b80f8c0bd75126f8197101847a",
   "assertions": [
     {
       "name": "q_hook is positive on every partition",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "uic-a1-vanishing-trace",
   "scriptFile": "uic_a1_vanishing_trace_probe.py",
-  "scriptHash": "d429a5914657",
-  "scriptCommitSha": "2cb02fb644d59231b524e32556b57a53adf91a16",
+  "scriptHash": "c0f5dc7b76c3",
+  "scriptCommitSha": "bad597ca516561fd759f6bec5f6a5725fba37428",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

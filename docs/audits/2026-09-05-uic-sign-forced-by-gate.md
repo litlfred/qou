@@ -2,6 +2,56 @@
 
 **Date:** 2026-09-05 · **Bean:** `qou-sv7h` · **Scope:** (a)
 
+> ## 🛑 RETRACTED IN PART, 2026-09-12 — the title claim is refuted
+>
+> **Bean `qou-21oc`; PR #7253.** The gate this document says forces the sign has
+> been **removed** from `unified_iterative_correction` (owner ruling, after its
+> complementary-slackness justification was refuted sorry-free in
+> `QOU.MassTheory.UICGateNotFromComplementarySlackness`, PR #7251). If the sign
+> were *forced by* the gate, removing the gate would have to be able to change
+> it. **It does not.** Re-measured over the same terms with no sign filter
+> (`uic_sign_forced_by_gate_probe`, 7/7):
+>
+> | atom | gated sum | **ungated sum** | ratio |
+> |---|---|---|---|
+> | ²H | −1.3656848 | **−2.251132** | 0.607 |
+> | ³H | −0.97040895 | **−1.8036172** | 0.538 |
+> | ³He | −0.80794043 | **−1.7465929** | 0.463 |
+> | ⁴He | −0.80209171 | **−1.3701187** | 0.585 |
+> | ⁶Li | −1.0769706 | **−1.9696784** | 0.547 |
+>
+> **Those five are this probe's own reconstruction** — partitions with `k ≤ 6`
+> only, read from the partition table with one kernel call each and no per-step
+> accumulation, and ordered `["p"]*Z + ["n"]*N` rather than the producer's
+> alternating ground state. At ²H (where the orderings coincide) `−2.251132`
+> matches the producer's `k_exact = 6` return `−2.251131977321312` to 8 s.f.; at
+> ⁴He they differ by 5.39 %. Do not quote them as producer returns.
+>
+> Through the **producer** itself, tier-labelled because it is not a small knob
+> (²H ungated spans 43× across the tiers):
+>
+> | `k_exact` | ²H gated → ungated | ⁴He gated → ungated |
+> |---|---|---|
+> | 4 | `−0.0896 → −0.4122` | `−0.0806 → −0.2742` |
+> | 6 | `−1.3657 → −2.2511` | `−0.8387 → −1.4482` |
+> | **11 = production default** | `−9.1477 → −17.6908` | `−8.2016 → −15.9927` |
+>
+> Every ungated total is negative and **larger in magnitude**, so dropping the
+> gate moves *away* from AME (²H: `+2.2246 MeV`) at every tier.
+>
+> **What survives:** steps **1** and **3** — `C_λ ≥ 0` on all 682 partitions,
+> and `|Tr| ≥ d` in 3.4 % of `Tr ≤ 0` against 34.1 % of `Tr > 0`. Together they
+> establish a **bias**: the gated subset is more negative than the slack one.
+> **Step 2's inference from that bias to "B < 0 is FORCED" does not follow** and
+> is withdrawn. Read "forces" as "biases" throughout below.
+>
+> **The A-independence section is downgraded from explanation to correlation.**
+> The gated-set size is near-constant across A — but `where_the_a_dependence_is_lost_probe`
+> Layer 3 finds the **raw, pre-gate** ratio already flat (1.25 / 1.16 / 1.09 at
+> k = 5 / 7 / 9), so the gate is not the cause there either.
+>
+> Nothing measured here is wrong; one inference drawn from it was.
+
 `815b2a46a0` measured four wrong-signed atoms and stated the gap: *"nothing here
 says WHY the sign is wrong — that is the physics question this measurement opens
 and does not answer."* The answer is in the LP gate rather than in the physics.

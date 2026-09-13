@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-13T05:22:13Z
+updated_at: 2026-09-13T05:42:41Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2891,3 +2891,54 @@ Probe: `computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py`, 7/7,
 **What landed on main and how it bears here.** (i) The escape enumeration (PR #7181, classes A–D) and its decisions — class C multiplicity sub-extensive (b), class B escapes invariant (2) not (1) (#7204), pn-averaging narrows class B (#7234), class D order-zero leg measured (#7230), dominant-summand channel none/anti-binding at A ≤ 7 (#7200, #7211), Ursell b₃ < 0 for every bond triple (#7198). None is an edge-set question inside the encoding; none contradicts or supersedes Avenue 2. The live remainder (classes B and D) lies outside what a coordination-graph invariant can decide. (ii) **Owner ruling qou-ales (2026-09-08): braid words are to be SELECTED by γγ production + confinement SDP at q₀, no census** (steps 1–10 landed). This is the one landing that touches Avenue 2's SCOPE: the invariant was measured on the template encoding `atom_braid_word_3A`. Structural note, not yet proved: a γγ vertex `σᵢσᵢ₊₁⁻¹` acts on strand positions i, i+1, i+2, which on the 3A-strand block line lie in at most two CONSECUTIVE blocks, so the position-based linear-layout invariant holds for every γγ-produced word on that line as well — `card_edgeFinset_le` and `linearLayout_family_not_hasBulk` apply unchanged. What does NOT transfer automatically is the strand-tracked graph: the template's vertices never migrate a strand across two interfaces (measured, 42/42 words); a γγ-selected word with vertices straddling interfaces could. **New workplan item:** once qou-ales produces selected atom words (step 2 admissibility per nucleus), measure the strand-tracked coordination graph on them and, if linear, state the γγ extension in Lean (a vertex touches ≤ 2 consecutive blocks). Until then Avenue 2 is closed over the template encoding only, as stated.
 
 **Untouched fronts still mine:** qou-gr3t (InteriorMarkov from the Hecke tower; #7153 reports TowerSpan proved from the braid relations — the missing piece), qou-d0qq steps 3–5, qou-8uxw, qou-denm (Kohno 1987 ingestion). No sibling appended to any of them since 2026-09-07.
+
+
+
+2026-09-13: PR #7155 (Avenue 2 — every expressible edge set is a linear layout; a linear layout has no bulk) MERGED to main by rebase (owner: "go"), merge sha 47cbb3153750d1b40d7571a13dad93622a2f66a5. The three main citations of #7155 now resolve. Bean stays OPEN (classes B and D; the γγ-selected-word strand-tracked follow-up).
+
+
+## 2026-09-12 — one more selection principle excluded, structurally (qou-8urh, PR #7251)
+
+This bean's open target is the linking-vs-self-energy amplitude assignment — why
+the binding multiplier is the mutual (coordination) linking count. A candidate
+that keeps getting reached for is the operator-selection LP's dual: its active
+set `{lambda : y_lambda* > 0}` looks like exactly the "which blocks does the
+bound state saturate" object this bean wants. **It cannot be, and the reason is
+structural rather than numerical.**
+
+Wedderburn block projectors are orthogonal idempotents, so the Frobenius Gram on
+the block basis is diagonal by construction,
+`G_{lm} = tr_M(P_l P_m) = delta_{lm} tr_M(P_l)`. Complementary slackness then
+decouples to `s_l * G_ll * x_l = 0`
+(`QOU.MassTheory.UICGateLP.complementarySlackness_diagonal_iff`, sorry-free) —
+a condition on the multipliers, the block norms and the SELECTED operator's
+coefficients, in which the atom's own traces never appear. The LP's
+discriminating power lives entirely in the OFF-diagonal Gram (operator overlap),
+and an orthogonal basis has none.
+
+Measured confirmation, two independent routes:
+
+* `computations/probes/h6_block_selection_lp_probe.py` (pre-existing, H_6): the
+  active set is never fewer than 10 of 11 at any reachable target; a controlled
+  diagnostic changing only `G` gives 5-of-6 active for `G = diag(t)` against
+  3-of-6 for a dense PSD `G`.
+* `computations/probes/uic_gate_vs_lp_complementary_slackness_probe.py` (new,
+  the k <= 4 blocks at 2H and 4He, mp.dps = 70, proton pin, convention D):
+  active 9 of 10 at every target for both atoms.
+
+**Scope (b) structural exclusion**; invariant = orthogonality of the Wedderburn
+projectors. Holds for every n, q and trace convention.
+
+**What it does NOT exclude**, and this is the live direction: a **non-orthogonal**
+operator basis. Actual braid sub-words overlap, so their Gram is dense and the LP
+recovers discriminating power. That is the natural next thing to try for this
+bean, and nothing here touches it.
+
+**One measured contrast worth having.** The NF-basis degeneracy (optimal value
+identically 0, `y_0* = 0`, `y_0_eq_zero_of_radical`) does **NOT** transfer to the
+block instance — it needs the cost vector to be a row of the Gram, which holds
+for the identity-containing NF basis and fails for a diagonal one. Measured
+`y_0* = 0.0347` (2H) and `0.0130` (4He). Do not quote "the LP's y_0* is zero"
+without naming the basis.
+
+Audit: `docs/audits/2026-09-12-uic-gate-primal-lp-hunt.md`. Stays OPEN.
