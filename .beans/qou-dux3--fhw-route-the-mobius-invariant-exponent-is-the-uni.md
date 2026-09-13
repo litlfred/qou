@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T15:19:31Z
-updated_at: 2026-09-13T15:40:10Z
+updated_at: 2026-09-13T16:31:46Z
 ---
 
 ## RESULT: two independent criteria pin the exponent, and mine is the stronger
@@ -114,3 +114,86 @@ A sibling agent landed 8f6f0a8af8 ("I over-claimed 'the FHW bound is now held'
 the same paper. Their point 3 confirms my Lean is untouched. Re-reading the
 document on the strength of that is what surfaced my own over-claim, which they
 could not have caught -- #7317 did not exist when they wrote.
+
+
+## THE LINK VERSION EXISTS. I DERIVED IT, AND IT IS EMPTY ON A BRUNNIAN PAIR
+
+The paragraph above says "BEAN STAYS OPEN: the crossing bound's own route to a
+mutual-channel discriminator needs a link version, which the corpus does not
+hold." The premise is right and the conclusion drawn from it was too weak: a
+link version does not have to be HELD, it can be DERIVED, and this one costs a
+determinant estimate.
+
+MobiusMutualChannel.lean section 9, 17 declarations, all [propext,
+Classical.choice, Quot.sound], 0 sorryAx; whole file 43/43,
+lean -DautoImplicit=false -s 65536 exit 0, zero warnings.
+
+THE DERIVATION, in one line. Gauss's linking integral has |gamma_1 - gamma_2|^3
+in the denominator; |det(a,b,c)| <= |a||b||c| spends one power of that on the
+numerator's |c|; what is left is EXACTLY the Mobius mutual integrand. Hence
+
+    4*pi*|lk(gamma_1, gamma_2)|  <=  E_mutual(gamma_1, gamma_2).
+
+  det3_sq_le / abs_det3_le           Cauchy-Schwarz against a x b, then
+                                     Lagrange's identity to drop the <a,b>^2.
+                                     Both `ring` facts; nothing imported.
+  gaussIntegrand_le_mutualIntegrand  the pointwise domination, PROVED.
+  four_pi_abs_lk_le_energy           the bound, by monotonicity of the integral.
+
+A CONSISTENCY CHECK ON SECTION 7, not a new assumption: the inverse square is
+not put in, it FALLS OUT of that cancellation. So the kernel sections 7-8 force
+by Mobius invariance is the same kernel for which a topological lower bound
+exists.
+
+## AND IT DOES NOT REACH THE CHANNEL THE FRAMEWORK NEEDS
+
+qou-o6ml's gate for route 2 is a mutual channel NONZERO on a pairwise-unlinked
+pair. Every pairwise lk of the Borromean link is 0
+(mirror_split_s3_em_functional_probe.py A3). Against that gate the bound is
+empty, and lk_bound_iff_nonneg_of_lk_zero proves the emptiness rather than
+asserting it: at lk = 0 its conclusion is EQUIVALENT to 0 <= E_mutual, which
+section 3's innerPairEnergy_nonneg already gives with no hypotheses at all.
+
+The failure is not specific to this bound. no_positive_uniform_mutual_lower_bound:
+NO positive constant lower-bounds the mutual pair energy, because the
+separatedLink family realises every small positive value via section 3's own
+innerPairEnergy_le. Scope (b) in the AGENTS.md sense, invariant cited; it
+excludes TOPOLOGICAL lower bounds only.
+
+CONSEQUENCE FOR ROUTE 2, and this is the reusable part: the Mobius mutual
+channel is a GEOMETRIC quantity. Any magnitude it supplies must come from a
+DERIVED CONFIGURATION, never from the pair's link type. An agent hoping the
+knot-energy literature would hand route 2 a parameter-free number off the
+topology should stop -- the first-order bound is the one that exists, and it
+vanishes exactly where the Borromean configuration sits.
+
+## WHAT IS ASSUMED, AND THE NEGATIVE I AM CAREFUL ABOUT
+
+ASSUMED: Gauss's integral formula for the linking number, carried as the
+explicit hypothesis hgauss rather than as a class field. Monotonicity and
+oddness of the integral are the other two. The pointwise domination is NOT
+assumed -- section 9b proves it.
+
+NOT CLAIMED: that this is new. I DID NOT FIND the bound in the held literature
+-- searched content/, computations/, docs/, .beans/ and library/*/sections/ +
+library/*/ocr/ for "gauss linking", "cross energy", "4 pi lk", and a linking-
+number-versus-energy comparison; zero hits. That is a statement about THE
+SURFACE I SEARCHED, not about the mathematics: the argument is two classical
+inequalities and the result is very likely standard in the Mobius-energy
+literature (the sharp non-split bound of Agol-Marques-Neves would be the place
+to look, and the corpus does not hold it). Cite this file for the DERIVATION,
+never for priority.
+
+NOT CLAIMED: that inf E_mutual = 0 over an ISOTOPY CLASS. LinkEmbedding carries
+no isotopy data, so section 9d quantifies over the separatedLink family, not
+over configurations reachable from a fixed link. The classical fact that a
+pairwise-unlinked pair is isotopic to a split link would upgrade it; it is not
+formalised here.
+
+## STATUS OF THIS BEAN
+
+Both halves of the FHW route are now answered. The exponent question: settled,
+-2 uniquely, sections 7-8 + FHWExponentWindow.lean. The crossing-bound
+question: settled with a NEGATIVE, section 9. The positive target -- a derived
+geometry for the mutual channel -- is qou-o6ml's, not this bean's. Staying
+in-progress only until the PR lands.

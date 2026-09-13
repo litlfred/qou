@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T14:25:46Z
+updated_at: 2026-09-13T16:34:06Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1552,3 +1552,52 @@ greppable; nobody has adjudicated whether any of them supplies the O'Hara
 theorem the mutual channel was said not to need. Holding a source and having
 checked it are different claims — that distinction is what `qou-pc85` was
 originally about.
+
+
+## CONSTRAINT 3 — ROUTE (2) CANNOT GET ITS MAGNITUDE FROM TOPOLOGY (2026-09-13, qou-dux3)
+
+Route (2) is "Mobius/knot-energy class (nonzero for unlinked pairs; corpus
+MobiusEnergy.lean exists)". The hope in that parenthesis is that a knot-energy
+bound hands the pairwise channel a parameter-free positive number off the
+Borromean topology. It does not, and the reason is now proved rather than
+suspected.
+
+MobiusMutualChannel.lean section 9 (17 declarations, sorry-free, all
+[propext, Classical.choice, Quot.sound]) derives the LINK analogue of
+Bryson-Freedman-He-Wang's Theorem D -- which qou-dux3 had recorded as missing
+from the held literature:
+
+    4*pi*|lk(gamma_1, gamma_2)|  <=  E_mutual(gamma_1, gamma_2)
+
+from Gauss's linking integral plus |det(a,b,c)| <= |a||b||c|. Elementary: one
+power of |gamma_1 - gamma_2| from the determinant bound cancels the cube in the
+Gauss kernel, leaving exactly the Mobius mutual integrand.
+
+WHY IT DOES NOT HELP HERE. Every pairwise lk_ij of the Borromean link is 0
+(this bean's own constraint 2, from mirror_split_s3_em_functional_probe.py A3).
+So the bound reads 0 <= E_mutual -- and lk_bound_iff_nonneg_of_lk_zero proves
+that its conclusion at lk = 0 is EQUIVALENT to section 3's
+innerPairEnergy_nonneg, which holds with no hypotheses at all. It adds nothing.
+
+AND NO OTHER TOPOLOGICAL BOUND WILL EITHER. no_positive_uniform_mutual_lower_bound:
+no positive constant lower-bounds the mutual pair energy, because the
+separatedLink family realises every small positive value via section 3's own
+innerPairEnergy_le. Scope (b), invariant cited (the separation bound of
+section 1). It excludes TOPOLOGICAL lower bounds only.
+
+WHAT THIS LEAVES ROUTE (2). A geometric magnitude, from a DERIVED
+configuration. That is not excluded by anything here and it is now the only
+shape route (2) can take. Note the interaction with this bean's gate: a derived
+configuration has to reproduce the kappa(A) profile 3.2 -> 2.1-2.3 with no
+tuned constant, so "derive the geometry" is the whole of the remaining work,
+not a step in it.
+
+RELATION TO CONSTRAINT 2. Consistent, and from the other side. Constraint 2
+says an admissible w_ij must be EVEN in mubar_123, killing the linear ansatz.
+The Gauss bound is linear in lk, and lk vanishes. Both say the same thing: the
+first-order linking channel is blind to the Borromean configuration.
+
+Section 7-8 of the same file separately prove that Mobius invariance FORCES the
+inverse-square kernel (uniquely, and on geometrically realisable distance
+triples), so route (2)'s kernel is not a modelling choice. The kernel is
+settled; the magnitude is the open thing.
