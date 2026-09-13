@@ -155,6 +155,8 @@ def prog(tag: str, msg: str) -> None:
 # (same algorithms as the parent probe ksel2id_friedrichs_selection_probe)
 
 def qint(qv, k: int):
+    """[k]_q = 1 + q + ... + q^{k-1}, field-agnostic.  NOTE the argument order:
+    the MODULUS comes first, the index second."""
     s = qv * 0
     x = qv ** 0
     for _ in range(k):

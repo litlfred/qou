@@ -95,6 +95,7 @@ DEG_GRID = [0, 1, 2, 3, 4]            # polynomial degree of a(x),b(x),c(x)
 
 
 def q_int(n, q):
+    """Unbalanced q-integer [n]_q = (q^n - 1)/(q - 1), n at q = 1."""
     if q == 1:
         return mpf(n)
     return (q ** n - 1) / (q - 1)

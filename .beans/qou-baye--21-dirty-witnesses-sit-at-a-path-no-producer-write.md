@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T17:37:47Z
-updated_at: 2026-09-13T05:42:00Z
+updated_at: 2026-09-13T12:33:07Z
 ---
 
 ## What was measured
@@ -81,3 +81,140 @@ But **1,550 of that 33,702 is attached to files no producer writes**, so it is n
 Note also where these land in the bucket map: an orphan's *producer* is a real producer that imports mpmath, so these fields are counted in bucket B — the bucket the bean calls "the more tractable half … routing it through `fmt` is mechanical". For these, routing the producer through `fmt` is not merely mechanical, it is **inert**: it regenerates the sibling and never touches the counted file. That is a concrete instance of the bean's own caveat that B is "a CANDIDATE class, not a guaranteed-cheap one", reached from a different direction.
 
 Disposition is still the owner's call; the three options and their costs are unchanged above. Nothing has been deleted.
+
+
+---
+
+**Drain 7 — `q_pochhammer_seed` (239 -> 0), and it is the one that changed an
+answer rather than digits.** 2026-09-13, PR #7268.
+
+Not a record-boundary cast: float64 all the way down through numpy and Python
+`complex`, with the verdict read back off it. The defect that mattered was not
+the casting at all — **`discriminant_derivative` was a central finite
+difference with `h = 1e-7`**, so Newton divided by a derivative good to ~8
+digits and every iterate inherited it:
+
+    residual_trace[1]   73.80983470605896       ->  73.8098363816047...   2.27e-08
+    residual_trace[8]    1.5295667703648856e-06 ->   1.5295935116521e-06  1.75e-05
+    final_residual       2.997783086261874e-13  ->   2.1204641552487e-13  29.3 %
+
+119 fields moved. Delta is an explicit polynomial whose coefficients are EXACT
+INTEGERS (`[-16,-24,-35,-50,-35,-24,-16]`), so the derivative is analytic and
+the polynomial carries no error at all.
+
+**It overturned the k=3 reading.** Recorded `converged_at: null` is a
+`max_iter = 16` artefact: under exact arithmetic k=3 reaches 1e-40 at iteration
+**23** (`|Delta_*| = 4.84e-42`) against 11/13/12 for its siblings. A float64 run
+could not have decided that at ANY step count — at ~1e-8 iterate error the
+iteration stalls near 1e-13 and never reaches 1e-40. **This is the sharpest
+instance yet of the AGENTS.md rule that a float64 input does not merely blur a
+result, it makes a question unanswerable.**
+
+**New TRAP for this bean: a finite difference is a float64 defect that no cast
+audit can see.** There is no `float(...)` at the derivative, no `mpf(<float>)`,
+nothing for the raw-float64 ratchet or the mixed-arithmetic gate to key on — the
+producer looks clean at exactly the sites those detectors inspect, and is wrong
+by 1e-8 where it counts. **Grep `computations/` for finite-difference
+derivatives** (`(f(x+h) - f(x-h))`, `h = 1e-`, `/(2*h)`) as a class, separately
+from the cast audits. Not yet done.
+
+Second trap, mine: I added a `converged_at_tight` field inside a loop that
+`break`s at the loose tolerance, so it could never fire. A
+structurally-always-null field is the conjecture-carrier vacuity defect one
+layer down. Moved to a separate pass.
+
+
+### The finite-difference class: MEASURED, and it is a ONE-MEMBER class
+
+Written an hour after the paragraph above told a future agent to grep for this
+'as a class, not yet done'. It is now done, and the honest result is a negative —
+recorded so nobody spends a pass on it.
+
+**Surface searched:** `grep -rn --include=*.py` over `computations/` and
+`tools/` (excluding `_deprecated`) for `(f(x+h) - f(x-h))`, `/(2*h)`,
+`h = 1e-`. **~25 hits. On inspection, ZERO are the `q_pochhammer_seed`
+defect**, and they fail to be it in four distinct ways:
+
+1. **`h` is the HECKE PARAMETER, not a step.** `(4 - h*h)/(2*h)` in
+   `qbeta_kc19_kappatilde_barodd_source_test` and
+   `qbeta_bar_odd_qq_coefficient_leg_probe`'s `(X - bar(X))/(2*h)` are algebra.
+   ~8 hits. The grep pattern cannot distinguish a difference quotient from a
+   formula containing `2h`, and in THIS corpus `h = q - 1/q` is everywhere.
+2. **mpmath at 50-70 dps with h <= 1e-12** — legitimate: at 70 dps, `h = 1e-20`
+   leaves ~30 correct digits. Most of the remainder.
+3. **The site documents its own ceiling.**
+   `qbeta_5two_route8_envelope_deformation_cyclotomic_probe`: *"central
+   differences at h=1e-12, so ~1e-20 agreement is the ceiling"*.
+   `qbeta_c3_phib_mq_logderivative_constraint`: *"step h = 1e-20 at 70 dps"*.
+   `hyperbolic_surface_law_probe` records that its FIRST version divided 50-dps
+   rounding by 2h and was fixed. `alpha_em_4pi_q0_sensitivity` sweeps h and
+   picks the most stable.
+4. **The derivative feeds an ERROR BAR or a printed order of magnitude**, where
+   8 digits is ample. `mass-from-q-symbolic` sets `_h = Q_ERR * 100` and uses
+   `|dP/dq| * Q_ERR` as a propagated uncertainty — the textbook-correct use.
+   `he4_gate_vs_magic_a_identity_probe` (h = 1e-5) prints the slope to two
+   decimals to argue a crossing is vacuous; its conclusion is qualitative.
+
+**What made `q_pochhammer_seed` different was not the finite difference.** It
+was the finite difference **in float64** feeding a **Newton denominator** whose
+**iteration trace is the recorded result**. Three conditions, and the class is
+defined by their conjunction, not by any one of them. A detector keyed on the
+difference quotient alone would have reported 25 and been wrong 25 times.
+
+**So the trap in the paragraph above is over-scoped and this is its correction.**
+The reusable part survives: *a finite difference is invisible to every cast
+audit* — no `float(...)`, no `mpf(<float>)`, nothing at the sites those
+detectors inspect. That remains true. What is not true is that the corpus is
+full of them.
+
+**Not claimed:** that no such site exists outside the grepped pattern. A
+difference quotient written with two named variables (`(fp - fm) / dd`), or via
+`mp.diff` with a bad step, or over a step held in a config dict, would not
+match. `mp.diff` in particular chooses its own step and was not audited here —
+`hyperbolic_surface_law_probe` uses it deliberately and says so. The claim is:
+**the pattern a reader would grep for returns one real defect, already fixed.**
+
+
+### RE-DERIVED INDEPENDENTLY, and this bean's 615 is confirmed (2026-09-13)
+
+Walked into this from the other direction — `pentagon-to-borromean-h4-probe` came
+up as drain target 8 off the baseline's size ranking, and turned out to be **this
+bean's subject, not a drain**. Measured, with the method calibrated against the
+audit's own definition first:
+
+    computations/pentagon-to-borromean-h4-probe.witness.json         216 floats, 2026-07-18
+    computations/probes/pentagon-to-borromean-h4-probe.witness.json    0 floats, 2026-09-06
+
+The producer lives at `computations/probes/`, so **it writes the clean one**. Its
+14 `float(` sites are display-only — the live witness has zero raw floats. So the
+producer needs no drain at all; the 216 are July debris at a path nothing writes,
+and **no amount of re-running can drain them.**
+
+**Full orphan set, 4 entries / 615 fields — exactly this bean's figure, reached
+by a different route:**
+
+| baseline fields | stale path | clean twin the producer writes |
+|---:|---|---|
+| 346 | `computations/pentagon-rt-torus-knot-higgs-probe` | `computations/probes/...` (2026-09-07) |
+| 216 | `computations/pentagon-to-borromean-h4-probe` | `computations/probes/...` (2026-09-06) |
+| 31 | `computations/hecke-core-symbolic-migration` | `computations/substrate/...` (2026-08-30) |
+| 22 | `computations/per-knot-density-borromean-q-locality-probe` | `computations/probes/...` |
+
+**CALIBRATE THE COUNT OR YOU WILL REPORT THE WRONG NUMBER — I nearly did.** A
+naive `isinstance(o, float)` walk gives 168 for
+`pentagon-multipair-borromean-h4-probe` against a baseline entry of 93, which
+reads as a stale baseline. It is not: the audit **excludes integral-valued
+floats** (its own output says so — *"NOT a precision finding — exact in
+binary64"*). Excluding them, my count matches the baseline **exactly** on every
+still-dirty entry checked: 93/93, 117/117, 216/216. And `q-pochhammer-seed`
+reads baseline 239, on-disk **0** — confirming today's drain from a second
+direction.
+
+So: the baseline is **not** stale relative to disk. The discrepancy was my
+measure, and the calibration is the reusable part.
+
+**What this means for the drain queue.** 615 of the 30,985 baseline fields cannot
+be drained by any producer run. They can only be drained by deleting the orphan —
+which is exactly the owner decision this bean is waiting on, and is why a drain
+session keeps rediscovering them by size ranking. Until it is made, **skip these
+four when picking a target**; the size ranking will keep offering them.
