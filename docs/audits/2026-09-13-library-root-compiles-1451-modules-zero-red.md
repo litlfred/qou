@@ -32,11 +32,15 @@ I wrote, in bean `qou-ed8a` and again in `qou-g5sp`, that the library root is
 *"unverifiable in this container, not broken: SIGSEGV on its 896-module closure
 **even with all imports present**."*
 
-The imports were **not** all present. 79 Mathlib oleans were missing; the cone
-builds from source in 188 s and packages to 22 MB. The gap is closed on
-`lake-cache/qou-v4-24-0-mathlib-gap-modules` (7 → 86 oleans, `d7e3ae8c662`,
-2026-09-11) and `scripts/lean-restore-gap-oleans.sh` restores it. With them on
-disk the root compiles, as measured above.
+The imports were **not** all present. The gap is closed on
+`lake-cache/qou-v4-24-0-mathlib-gap-modules`, and `scripts/lean-restore-gap-oleans.sh`
+restores it — measured here, it reported **86 oleans** into each of the two mathlib
+trees from `d7e3ae8c662`. With them on disk the root compiles, as measured above.
+
+*Carried, not measured here:* the characterisation of that gap as **79 missing
+oleans, 188 s to build, 22 MB to fetch** is AGENTS.md's, from whoever built the
+cone on 2026-09-11. This run confirms the *consequence* (the root compiles once
+they are restored) and does not independently re-derive those three figures.
 
 The clause that made this an *inference* rather than a measurement is "even with
 all imports present" — I never checked that, and it was false. AGENTS.md already
@@ -106,11 +110,27 @@ scripts/lean-library-sweep.py --package QOU --only-exact QOU --jobs 2
 ## Scope
 
 This is a statement about `main` at `c9fd78b0a` and about the **root's dirty
-closure**, not about the whole library: 1382 of the 2833 modules were
-snapshot-current and not rebuilt, and 1382 more sit outside this closure
-entirely. It does not measure the `~1863 outside the root` population — it
-establishes that measuring it here is possible, which is a different claim and
-the one being made.
+closure**, not about the whole library. The sweep's own split accounts for every
+module exactly once:
+
+    library modules   2833  =  DIRTY CLOSURE 1451  +  snapshot-current 1382
+
+So **1451 were rebuilt from source and 1382 were trusted as already current** —
+the second group was not verified by this run, it was *believed* on the strength
+of its olean predating no source change. That inherits the snapshot-conditionality
+of bean `qou-56qy` exactly: a trusted olean is a claim about the snapshot, not
+about today's source.
+
+It does not measure the `~1863 outside the root` population — it establishes that
+measuring it here is possible, which is a different and weaker claim, and the one
+being made.
+
+> **🛑 Corrected within the day, and the error was mine.** This paragraph first
+> read *"1382 of the 2833 modules were snapshot-current and not rebuilt, and 1382
+> more sit outside this closure entirely"* — the same number used twice, for two
+> different populations, summing to 4215 against a library of 2833. There is no
+> second 1382: `1451 + 1382 = 2833` exactly, and the snapshot-current group **is**
+> the remainder. Caught by re-reading my own arithmetic, not by a reviewer.
 
 The `source-changed 2699` line is a fresh-checkout artifact (every source file
 carries the clone's mtime), not real staleness; the sweep's own
