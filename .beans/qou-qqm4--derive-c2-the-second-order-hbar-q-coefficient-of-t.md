@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T18:31:42Z
+updated_at: 2026-09-13T19:26:47Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1778,3 +1778,56 @@ where the owner ruled for z_D against the augmentation.
    two independent picks.
 3. The block's 1.5136 gap between its own two halves is unaddressed by this work;
    it is *located*, not closed.
+
+
+## 2026-09-13 (cont.) — the prefactor carries ONE unit of framing; a 94 % prune, not a derivation
+
+Attacking the item I named as next: where `hbar_q^2/3` comes from. Result is a
+**necessary condition**, not a closure — stated that way in the Lean header, the
+probe docstring, the commit and here.
+
+### Exact, and in Lean (`QOU/Hecke/FlavourSplitBarParity.lean`, 9 decls, sorry-free)
+
+Under the bar involution `q -> 1/q`:
+
+    X_baseline(1/q) = -q^2 * X_baseline(q)    neither bar-even nor bar-odd
+    q * X_baseline  is bar-ODD                 exactly one unit of framing
+    w = 1 is the ONLY integer weight
+
+Since `q^2 - q^-2` is itself bar-odd, the constraint on any prefactor `C` is
+`C(1/q) = q^2 C(q)`. The sharpest positive statement, exact:
+
+    q * hbar_q^2 = (q-1)^2/q = -hbar_q * hbar_(1/q)
+
+— **the prefactor is `1/q` times the bar-norm of `hbar_q`.**
+
+### 🛑 What this does NOT do
+
+Scanned 2044 monomials in `hbar_q, h, [2]_q, [3]_q, z_D, (q-1), q` (exponents in
+[-2,2], degree <= 4): **121 satisfy the parity condition, 94.1 % pruned** — and
+`hbar_q^2` is one survivor among many. **`q^-1` alone passes at degree 1 and is
+simpler.** So parity narrows the search and does not close it.
+
+**The `/3` is untouched.** 3 is bar-invariant, so this argument says literally
+nothing about it. Where the 3 comes from is exactly as open as before I started.
+
+### Honest negative, scope (a) — the cheat sheet's sinh half
+
+AGENTS.md calls `Q_beta` "the bar-odd sinh partner of the bar-even cosh meson
+scale m_pi". The **cosh half checks out** (`[2]_q` is bar-even). The **sinh half
+does not hold of the published closed form**: its bar ratio is
+`-q^3(q^2+2q-1)/(q^2-2q-1)`, not a monomial in q, so NO integer framing weight
+makes it bar-odd or bar-even.
+
+Three readings are consistent and **I separated none of them**: (i) the
+description names a structural sector, not that expression; (ii) the expression
+is the `z = 1` cell the 2026-09-05 scoping note already retires as inadmissible
+under convention D; (iii) the description is wrong. (ii) is what the corpus's own
+scoping note supports, which is why this is an observation and not a filed defect.
+
+### Where that leaves the open list
+
+1. **The `/3`** — completely untouched by parity. Still the sharpest gap.
+2. **Why `hbar_q^2` rather than `q^-1`** — parity cannot say; something else must.
+3. Which Markov parameter (owner, coupled to `qou-99qc`) — unchanged.
+4. The block's own k=3/k=2 1.5136 gap — unchanged.
