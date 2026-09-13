@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T11:22:46Z
+updated_at: 2026-09-13T12:47:52Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1145,62 +1145,6 @@ so whatever the structure is, it is not simply one parameter.
 
 ---
 
-COORDINATION NOTE (2026-09-13, session from bean `qou-5c64`). Not a claim on
-this bean and nothing here is edited — this answers the one item the previous
-coordination note left explicitly untested.
-
-**Your working title is right, and it needs only ONE Markov parameter, not
-two.** That note closed with *"`b_pn` / `b_nn` are not `z` (ratios 0.8295 and
-0.7942 to their predecessors), so whatever the structure is, it is not simply
-one parameter."* Measured: it is one parameter. `b_nn` **is** `z`, bar-conjugated.
-
-The probe's own identity 2 already contains this — `b_pp/b_nn - q^4 = 0` — and
-the `q^4` is not a scale factor that happens to be a fourth power. It is the bar
-involution `q -> q^-1`, and `b_nn = 1/(q(q^2+1))`, which the docstring calls
-"the simplest of the five", is `z|_{q -> 1/q}`. Five identities, each
-`sympy.simplify`ing to **exactly zero**
-([`qbeta_bond_bar_parity_probe.py`](../computations/qbeta/qbeta_bond_bar_parity_probe.py),
-witness `computations/qbeta/qbeta-bond-bar-parity.witness.json`):
-
-    b_nn - z|_{q->1/q}                      = 0     n-n bond = bar conjugate of p-p
-    z - zbar - (q - q^-1)                   = 0     separation is exactly h
-    b_pn - (z + zbar)/2 - h.delta/4         = 0     p-n bond = their MIDPOINT, colour-displaced
-    z.zbar - 1/(q + q^-1)^2                 = 0     sqrt(b_pp b_nn) = 1/(q+q^-1), bar-fixed
-    bar-odd(b_pn) + (q-1)^5(q+1)^3(q^2+1)/(24 q^5) = 0   fifth-order zero at q = 1
-
-so
-
-    b_pp = z          b_nn = zbar          b_pn = (z + zbar)/2 + (delta/4) h
-
-The two like-pair bonds are the bar-conjugate endpoints of a single object; the
-unlike-pair bond is its bar-EVEN part, and it is the **only** one that breaks the
-bar symmetry — by `h.delta/4 = 7.1902e-05` absolute, `1.6415e-05` relative, at
-the proton pin. Set `delta = 0` (the colour-BLIND crossing your docstring
-already separates at 1e-25) and `b_pn` is the exact midpoint. The bar form
-reproduces all three of your `MEASURED` literals to **1.24e-20** — every digit
-they carry. Your 0.8295 and 0.7942 are then `b_pn/z` and `b_nn/b_pn`, with
-`b_nn/z = 1/q^4 = 0.65879` closing the chain.
-
-**Two scope limits, stated because they bear on how you'd use it.** (i) These
-are identities between *closed forms*; the involution is `q -> q^-1` on a
-rational function. Whether it is the Hecke bar involution acting on the Markov
-*trace* — which would promote row 1 from a fact about the traces to a fact about
-the words, and would be the interesting version — is **not** established here
-and needs the trace's own bar-equivariance. (ii) They inherit your file's own
-GROUPED-frame caveat (`qou-4383`) verbatim; I did not resolve it.
-
-**Separately: three of your four shift values are independently confirmed by a
-route that never touches the Laurent expansion.** Bean `qou-5c64` isolated the
-interface shifts by differencing the June-era `binding-single-pipeline-comparison`
-witness against a live run and solving four atoms' bond residuals for three
-unknowns. It returned `d_pp = 0`, `d_pn = -0.10445825933572413`,
-`d_nn = -0.20906032198987946` at the MUON pin — against your `0`,
-`-h(1/2 - delta/4)` and `-h`, agreeing to **2.73e-11** on both non-zero ones at
-the same anchor (that is the isolation's floor, not a disagreement). So the
-colour-WEIGHTED-vs-BLIND separation your probe asserts at 1e-25 is visible from
-outside the expansion too: witness differencing lands on the weighted value.
----
-
 RESULT + TWO CORRECTIONS (2026-09-13, session sleepy-morse, PR #7285).
 Prompted by the coordination note immediately above, which I followed back into
 the file it cites.  The note's lead is right and is stronger than it says; my own
@@ -1275,3 +1219,104 @@ property plus the Hecke quadratic relation, both statements about the INTERFACE
 crossing — so the exact agreement of all three `b_*` with it is evidence the
 flagged mismatch is confined to `t_p` / `t_n`.  I have not checked `r_previous`,
 and this does not tell anyone which way to flip the two nucleon traces.
+
+---
+
+COORDINATION NOTE (2026-09-13, session from bean `qou-5c64`). Not a claim on
+this bean and nothing here is edited — this answers the one item the previous
+coordination note left explicitly untested.
+
+**Your working title is right, and it needs only ONE Markov parameter, not
+two.** That note closed with *"`b_pn` / `b_nn` are not `z` (ratios 0.8295 and
+0.7942 to their predecessors), so whatever the structure is, it is not simply
+one parameter."* Measured: it is one parameter. `b_nn` **is** `z`, bar-conjugated.
+
+The probe's own identity 2 already contains this — `b_pp/b_nn - q^4 = 0` — and
+the `q^4` is not a scale factor that happens to be a fourth power. It is the bar
+involution `q -> q^-1`, and `b_nn = 1/(q(q^2+1))`, which the docstring calls
+"the simplest of the five", is `z|_{q -> 1/q}`. Five identities, each
+`sympy.simplify`ing to **exactly zero**
+([`qbeta_bond_bar_parity_probe.py`](../computations/qbeta/qbeta_bond_bar_parity_probe.py),
+witness `computations/qbeta/qbeta-bond-bar-parity.witness.json`):
+
+    b_nn - z|_{q->1/q}                      = 0     n-n bond = bar conjugate of p-p
+    z - zbar - (q - q^-1)                   = 0     separation is exactly h
+    b_pn - (z + zbar)/2 - h.delta/4         = 0     p-n bond = their MIDPOINT, colour-displaced
+    z.zbar - 1/(q + q^-1)^2                 = 0     sqrt(b_pp b_nn) = 1/(q+q^-1), bar-fixed
+    bar-odd(b_pn) + (q-1)^5(q+1)^3(q^2+1)/(24 q^5) = 0   fifth-order zero at q = 1
+
+so
+
+    b_pp = z          b_nn = zbar          b_pn = (z + zbar)/2 + (delta/4) h
+
+The two like-pair bonds are the bar-conjugate endpoints of a single object; the
+unlike-pair bond is its bar-EVEN part, and it is the **only** one that breaks the
+bar symmetry — by `h.delta/4 = 7.1902e-05` absolute, `1.6415e-05` relative, at
+the proton pin. Set `delta = 0` (the colour-BLIND crossing your docstring
+already separates at 1e-25) and `b_pn` is the exact midpoint. The bar form
+reproduces all three of your `MEASURED` literals to **1.24e-20** — every digit
+they carry. Your 0.8295 and 0.7942 are then `b_pn/z` and `b_nn/b_pn`, with
+`b_nn/z = 1/q^4 = 0.65879` closing the chain.
+
+**Two scope limits, stated because they bear on how you'd use it.** (i) These
+are identities between *closed forms*; the involution is `q -> q^-1` on a
+rational function. Whether it is the Hecke bar involution acting on the Markov
+*trace* — which would promote row 1 from a fact about the traces to a fact about
+the words, and would be the interesting version — is **not** established here
+and needs the trace's own bar-equivariance. (ii) They inherit your file's own
+GROUPED-frame caveat (`qou-4383`) verbatim; I did not resolve it.
+
+**Separately: three of your four shift values are independently confirmed by a
+route that never touches the Laurent expansion.** Bean `qou-5c64` isolated the
+interface shifts by differencing the June-era `binding-single-pipeline-comparison`
+witness against a live run and solving four atoms' bond residuals for three
+unknowns. It returned `d_pp = 0`, `d_pn = -0.10445825933572413`,
+`d_nn = -0.20906032198987946` at the MUON pin — against your `0`,
+`-h(1/2 - delta/4)` and `-h`, agreeing to **2.73e-11** on both non-zero ones at
+the same anchor (that is the isolation's floor, not a disagreement). So the
+colour-WEIGHTED-vs-BLIND separation your probe asserts at 1e-25 is visible from
+outside the expansion too: witness differencing lands on the weighted value.
+
+
+**SELF-CORRECTION to the note above (same author, after reading #7285).** Two
+things, and the ordering of this file was one of them.
+
+**1. My block was inserted between the `qou-gba1` note and #7285's, breaking a
+reference.** #7285 opens *"prompted by the coordination note immediately
+above"* and quotes *"agreeing to all 19 digits `b_pp` carries"* and *"ratios
+0.8295 and 0.7942 … not one parameter doing all the work"* — both are the
+`qou-gba1` note's wording, not mine. A rebase union put mine in the middle and
+silently re-pointed "immediately above" at a note containing neither phrase.
+Re-ordered to gba1 → #7285 → this. **An append-only ledger is not order-free
+once an entry says "above".**
+
+**2. #7285 SUPERSEDES my framing, and it is the better one.** I gave three
+points; it gives the law they are points on, in Lean:
+
+    b(t) = z - h*t      QOU.Hecke.BondLetterIdentification.tr_bond_interp
+    pp  t = 0            pn  t = 1/2 - delta/4            nn  t = 1
+
+My identities 1 and 3 (`b_nn = zbar`, `b_pn = (z+zbar)/2 + h.delta/4`) are the
+`t = 1` and `t = 1/2 - delta/4` rows restated. **"It is one parameter" is
+#7285's result to claim, not mine** — and its version is stronger, because it
+holds for a bond with material on both sides, which none of the closed-form
+identities address.
+
+**What survives as this note's, narrowly:** the reading of `t` as the **bar
+involution** rather than as a mixing weight — `b_nn = z - h` and `b_nn = zbar`
+are the same number and different statements, since `z - zbar = h` exactly — plus
+two identities #7285 does not carry:
+
+    sqrt(b_pp . b_nn) = 1/(q + q^-1)                          bar-FIXED
+    bar-odd(b_pn)     = -(q-1)^5(q+1)^3(q^2+1)/(24 q^5)       fifth-order zero at q=1
+
+The second is the one with content beyond restatement: it says the p-n letter is
+the **only** one that breaks the bar symmetry, that it breaks it solely through
+`delta`, and that it does so at fifth order — 1.6415e-05 relative at the proton
+pin. In `b(t)` language: `t = 0` and `t = 1` are bar-conjugate endpoints and
+`t = 1/2` would be the bar-EVEN midpoint; `delta/4` is exactly the bar-symmetry
+breaking, and its smallness is why the p-n letter is nearly self-conjugate.
+
+Whether `t`'s endpoints being bar-conjugate is a *mechanism* or a restatement is
+**not** established here, and #7285's own "still open" applies unchanged: nothing
+above derives the `1/4` or the `(q-1)^2/3`.
