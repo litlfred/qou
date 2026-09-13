@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T13:20:20.054266+00:00",
-  "commitSha": "0eaf1a8d3081f1cf18daab66512fbb615073c807",
+  "computedAt": "2026-09-13T13:28:13.147941+00:00",
+  "commitSha": "8687a99a3e74d7796af14b5816ab23402e616e81",
   "assertions": [
     {
       "name": "trace_still_reproduces_the_corpus_h3_vector",
@@ -12,11 +12,18 @@
       "source": "all six slots of pyhecke.gram's TR_M, symbolic in (h, z); mismatches: none -- re-verified here so this file cannot inherit a silent breakage of the imported recursion"
     },
     {
-      "name": "the_unique_minimiser_is_the_two_fold_alternating_word",
+      "name": "empty_word_is_feasible_and_strictly_cheapest_so_minimality_is_degenerate",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "costs over the 5 PSD-feasible words: [('(v0 v1)^2', '1.03289775552466'), ('sporadic A (10 vertices)', '1.073238807935729'), ('sporadic B (10 vertices)', '1.073238807935729'), ('(v0 v1)^4', '1.137405209118677'), ('(v0 v1)^6', '1.3319924925735')] -- the minimum is (v0 v1)^2 at 1.032897755524660383, and it is STRICT (every other feasible word costs more)"
+      "source": "tr_M(empty word) = 1.0 exactly (the trace normalisation), against 1.032897755524660383 for the cheapest non-empty feasible word. The empty word is a gamma-gamma word (GammaGammaWord.nil) and is PSD-feasible in every block, so SDPSelected over the candidate set AS STATED selects it -- vacuously. Minimality does not select"
+    },
+    {
+      "name": "among_non_empty_words_the_minimiser_is_the_two_fold_alternating_word",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "costs over the 5 PSD-feasible NON-EMPTY words: [('(v0 v1)^2', '1.03289775552466'), ('sporadic A (10 vertices)', '1.073238807935729'), ('sporadic B (10 vertices)', '1.073238807935729'), ('(v0 v1)^4', '1.137405209118677'), ('(v0 v1)^6', '1.3319924925735')] -- strict minimum (v0 v1)^2 at 1.032897755524660383. A true statement about a RESTRICTED candidate set; it is not SDPSelected, and calling it that needs an exclusion of the identity that nothing in the corpus licenses"
     },
     {
       "name": "cost_is_strictly_increasing_on_the_even_alternating_family",
@@ -41,10 +48,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 311,
-  "computation": "qbeta-sdp-selects-a-unique-word",
-  "scriptFile": "qbeta_sdp_selects_a_unique_word_probe.py",
-  "scriptHash": "eb77212f912c",
+  "durationMs": 266,
+  "computation": "qbeta-sdp-minimality-is-degenerate",
+  "scriptFile": "qbeta_sdp_minimality_is_degenerate_probe.py",
+  "scriptHash": "afb228edb3e9",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -64,11 +71,11 @@
   },
   "invocation": {
     "argv": [
-      "computations/qbeta/qbeta_sdp_selects_a_unique_word_probe.py"
+      "computations/qbeta/qbeta_sdp_minimality_is_degenerate_probe.py"
     ],
-    "reproduce": "python3 -u computations/qbeta/qbeta_sdp_selects_a_unique_word_probe.py"
+    "reproduce": "python3 -u computations/qbeta/qbeta_sdp_minimality_is_degenerate_probe.py"
   },
-  "description": "The minimality half of GammaGammaWordSelection.SDPSelected, with the cost the corpus states (t_i = tr_M(b_i), mba-step10-confinement-sdp). Over the five PSD-feasible gamma-gamma words on four strands the unique minimiser is (v0 v1)^2 -- four vertices, eight letters -- and the minimum is ATTAINED, since the cost on the even alternating family is strictly increasing in m. Derived: nothing is tuned and no observable enters. Two gaps stated: the LP's net(x) = n_target constraint is not imposed (net is reported so it can be), and 'unique' means among words of at most 12 vertices. NO Q_beta comparison is made -- E_0 is an H_3 construction. Scope-(a).",
+  "description": "RETRACTION: the SDP's minimality half does NOT select a word. The EMPTY gamma-gamma word is PSD-feasible with Markov trace exactly 1.0, strictly below every non-empty candidate, so SDPSelected over the candidate set as stated selects it -- vacuously. This is the discrete form of the degeneracy prop:operator-selection-lp already proves for the continuous LP (b_1 = 1 makes the first Frobenius positivity constraint coincide with the objective), and that block warns downstream readers against reading the program as a selection principle. What survives: FEASIBILITY does the work (5 of 8190 at n=4, none at n=3, sibling probe, untouched); and among NON-EMPTY words of <= 12 vertices (v0 v1)^2 is the strict minimiser with the minimum attained. Scope-(a).",
   "data": {
     "cost_definition": "t_i = tr_M(b_i), the Markov-trace vector of mba-step10-confinement-sdp's LP `minimize Sum_i t_i x_i`; evaluated at z_D = q^3/(q^2+1), proton pin",
     "feasible_words_by_cost": [
@@ -152,7 +159,14 @@
         "net": "1.092209718125357928117681"
       }
     ],
-    "selected": {
+    "degeneracy": {
+      "empty_word_cost": "1.0",
+      "empty_word_is_psd_feasible": true,
+      "verdict": "SDPSelected over the gamma-gamma candidate set as stated selects the EMPTY word; minimality does not select",
+      "corpus_already_proves_this_for_the_LP": "prop:operator-selection-lp §'Degeneracy of this program': b_1 = 1 makes G_1j = t_j, so the first Frobenius positivity constraint IS the objective bounded below by zero; optimal value identically 0 for every n, q and trace convention, and the minimiser set is a positive-dimensional mirror-closed face. That block states downstream readers have wrongly taken the program as a selection principle",
+      "what_survives": "FEASIBILITY (5 of 8190 at n=4, none at n=3) is untouched and does the real work"
+    },
+    "restricted_minimiser": {
       "word": [
         0,
         1,
