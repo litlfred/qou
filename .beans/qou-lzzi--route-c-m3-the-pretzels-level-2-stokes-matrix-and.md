@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T17:46:35Z
-updated_at: 2026-09-13T19:00:48Z
+updated_at: 2026-09-13T19:12:54Z
 ---
 
 ## Claimed 2026-09-13 — the OPERATOR route (branch `claude/pretzel-level2-stokes-2026-09-13`, PR #7333)
@@ -92,3 +92,35 @@ Route 2 is the one PR #7152 is already on, so this arc and that one converge the
 Do NOT expect the sigma_1 sigma_1 entry to settle it: by the Z/2 grading, that entry
 lives entirely in the integer-q sector, which is exactly the part that is in Z[s(x)]
 anyway.
+
+## Gate correction (2026-09-13) — recorded because the mechanism generalises
+
+The degree-6 integral gate FAILED first time: rel_residual = 1.0, |Z| ~ 1e+115.
+The bug was in the GATE's convergence window, not the operator.
+
+I wrote the condition from the QUADRATIC coefficient only:
+  -(r_eff - A) eps < Im t' < A eps,  r_eff = sum alpha_j^2.
+Each Phi_b(alpha_j v + beta_j) ~ exp(pi i (alpha_j v + beta_j)^2) also has a LINEAR
+coefficient 2 pi i (lin + t') with lin = sum_j alpha_j beta_j, so +inf needs
+
+    (r_eff - A) eps + Im t' + Im lin > 0 .
+
+For 4_1 (beta = (u,0)) and 5_2 (beta = (0,u,-u)) lin is REAL, so both gates that
+passed were accidentally right and hid it.  For the pretzel beta = (u/2,-u/2,-c_b),
+alpha = (1,1,2), so lin = -2 c_b: the DOUBLED factor's -c_b shift grows like
+exp(-4 pi i c_b v).
+
+Fixed and re-run: rel_residual 1.0 -> 4.098e-21 and 1.0 -> 6.483e-19, with measured
+Im lin = -2.31421 / -2.02254 against -2 Im c_b = -2(1.15710) / -2(1.01127) --
+confirmed to every printed digit.  |Z| back to 7.07 / 11.40.
+
+TWO THINGS WORTH CARRYING:
+ - At k = 0, t_I = 0 the corrected condition reduces to eps > Im(c_b)/2, which is
+   EXACTLY the constraint SS3k of PR #7152 states for this integral.  Independent
+   recovery, opposite direction.
+ - A gate passing on the two knots where the answer is known is NOT evidence the
+   gate is right for the third.  The feature that makes the pretzel interesting --
+   a complex shift inside a dilogarithm -- is the one 4_1 and 5_2 cannot test.
+
+Nothing in the s(x) verdict moved; the operator and every symbolic gate were
+untouched (G3 validates the operator pointwise at 2.2e-29 regardless).
