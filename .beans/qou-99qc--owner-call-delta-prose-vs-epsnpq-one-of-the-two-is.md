@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T13:30:05Z
+updated_at: 2026-09-13T13:58:03Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1992,3 +1992,46 @@ So the arc does NOT have a complete derived selection. It has a derived
 *filter* (feasibility) and no derived *selector*. The open problem is what
 breaks the tie among the 5 — and the corpus's own degeneracy result says the LP
 objective cannot be it.
+
+
+## Part 7 (PR #7304) — crossing energy is the THIRD degenerate functional, and no γγ word binds
+
+`computations/qbeta/qbeta_gamma_gamma_crossing_energy_probe.py` (6/6).
+
+**Calibrated first, by data, not by reading.** `def:crossing-energy` gives the
+electron (left trefoil `T_(2,3)`, three POSITIVE crossings) `E_cross = 3q =
+3.329935748` against the `~3.330` in `pair-creation-energy.md`, and the positron
+(mirror) `-3/q = -2.702754852` against `~-2.703`. A reversed sign convention
+would have swapped these, so the orientation is pinned.
+
+**Closed form.** `E_cross(k-vertex γγ word) = k*h` EXACTLY (k = 0..14). A vertex
+`σ_i σ_{i+1}^{-1}` is one positive crossing and one negative: `q + (-1/q) = h`.
+
+**Order-blind, again.** 3840 (permutation, index-assignment) pairs of a 5-vertex
+word → 1 distinct value. Same blindness as #7295's alternating character, for
+the same structural reason (a sum over letters). Second order-blind functional
+on this family.
+
+**The substantive finding.** `h > 0` for every `q > 1`, so `E_cross > 0` for
+every non-empty γγ word, and `def:crossing-energy` reads positive as *repulsion
+dominates*. **NO γγ word is binding-dominated — any number of strands, any
+q > 1.** At q_0, `h = 0.20906029879563932`.
+
+**Degenerate again.** `E_cross(empty) = 0`, below all five PSD-feasible words
+(0.8362 / 1.6725 / 2.0906 / 2.0906 / 2.5087). So this is the THIRD functional
+here whose unconstrained optimum is the trivial answer, after the Markov trace
+and the LP objective — the latter proved degenerate by
+`prop:operator-selection-lp`'s own "Degeneracy of this program" section.
+
+**It does not separate.** Ordering among non-empty words is by vertex count
+alone; the two sporadic 10-vertex words TIE exactly.
+
+**NOT implemented, deliberately:** `knot-operator-selection-proof.md`'s demand
+constraint `⟨Φ, dem(K)⟩_F ≥ ‖dem(K)‖_F`, which is the stated reason an
+unconstrained minimum need not be the last word. Building `dem(K)` requires
+choosing which K the nucleon is, which is the question — implementing it here
+would be circular.
+
+Scope-(a): one functional, one family. It does not exclude a binding-dominated
+canonical word; it says the γγ construction alone cannot supply one under this
+energy.
