@@ -184,6 +184,25 @@ def main():
               flush=True)
         return ok
 
+    # ---- POSITIVE CONTROL, before any verdict is believed ----------------------
+    # A test that can only ever answer "not a cube" is indistinguishable from a broken
+    # one.  Feed it a KNOWN cube -- y^3 for an explicit y in K -- and require it to say
+    # so.  If this fails, every verdict below is uninterpretable and the run aborts.
+    print("positive control: an explicit cube must be RECOGNISED", flush=True)
+    y_ctrl = 2 + T
+    v_ctrl = red(y_ctrl ** 3)
+    if refuted_mod_p(v_ctrl) is not None:
+        print("   CONTROL FAILED: (2+T)^3 was 'refuted' as a non-cube.")
+        print("   The reduction is wrong; no verdict below can be trusted.  Aborting.")
+        return 1
+    print(f"   (2+T)^3 survives all {len(primes)} primes, as it must", flush=True)
+    # and a NEGATIVE control: the test must not pass everything
+    if refuted_mod_p(red(y_ctrl ** 3 * u)) is None:
+        print("   CONTROL FAILED: (2+T)^3 * u was not refuted at any prime, yet u is")
+        print("   not a cube, so the test is not separating.  Aborting.")
+        return 1
+    print("   (2+T)^3 * u IS refuted, so the test separates cube classes", flush=True)
+
     print("\nIs u itself a cube in K?  (the test below is vacuous if it is)", flush=True)
     u_cube = is_cube_in_K(u, 'u')
     if u_cube:
