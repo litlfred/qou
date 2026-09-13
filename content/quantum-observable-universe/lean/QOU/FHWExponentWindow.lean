@@ -16,8 +16,8 @@ A fair objection to that result is that it merely *re-derives a convention*:
 the inverse square was the modelling choice all along, so a criterion selecting
 it could be a criterion reverse-engineered to select it.
 
-The objection is answerable from the literature, and the answer is now in the
-corpus. Bryson–Freedman–He–Wang (Bull. AMS **28** (1993) 99–103,
+The literature answers half of that, and the honest half is smaller than it
+first looks — see the two 🛑 sections below before citing this file. Bryson–Freedman–He–Wang (Bull. AMS **28** (1993) 99–103,
 `library/arxiv-math-9301212v1/`) treat `−2` explicitly as **a choice among
 candidates**, and pin it only to an interval. In their words:
 
@@ -52,11 +52,44 @@ solved for the exponent.
 **PROVED:** `neg_two_mem_bfhwWindow`, so the intersection statement is not
 vacuous, and `bfhw_window_mobius_unique`, the intersection itself.
 
-**CITED, NOT PROVED:** the two BFHW facts. `BFHWWindow` is a *predicate encoding
-their claims*, not a derivation of them — this file does not prove that
-`e > −3` gives finiteness or that `e ≤ −2` gives the barrier. Those are
-analytic results of [bryson-freedman-he-wang1993] and the corpus holds the
-paper, not a proof. Do not cite this file as establishing them.
+## 🛑 What BFHW actually supply, corrected after reading the surrounding page
+
+An earlier draft of this file said the two window facts "are analytic results of
+[bryson-freedman-he-wang1993]". **That is wrong on both halves and is corrected
+here rather than shipped.**
+
+*It is not a theorem of theirs.* The passage is an **unnumbered remark**, sitting
+between the statement of Theorem E and the proof of Theorem A — it carries no
+proof in that document.
+
+*It is not theirs to prove.* The remark **defers**, verbatim: *"We refer to
+[O1–O3] for detailed discussions."* Those are O'Hara — `[O1]` *Energy of a knot*
+(Topology 30, 1991, held at `library/1-s20-0040938391900102-main/`), `[O2]`
+*Family of energy functionals of knots* (Topology Appl.), `[O3]` *Energy
+functionals of knots* (World Scientific). **`[O2]` and `[O3]` are where the
+exponent range lives, and the corpus holds NEITHER** — checked by title across
+every `library/*/structure.json`. So `BFHWWindow` records a claim whose proof is
+in neither this file nor any held document.
+
+## 🛑 And the result here is not news to BFHW — they assert it
+
+The same remark closes: *"Similarity and Möbius invariance are, **of course**,
+special to the exponent −2."*
+
+So the *statement* `mobiusInvariant_rpow_exponent_eq_neg_two` establishes was
+regarded as evident in 1993. This file does not discover it. What it does is
+narrower and still worth having:
+
+* it **proves** what they assert without proof, sorry-free, from the invariance
+  hypothesis alone;
+* it proves **uniqueness** — BFHW say invariance is "special to" `−2`, which is
+  a statement that `−2` has the property; the theorem here is that `−2` is the
+  **only** exponent that does.
+
+Do not describe this file as showing that the exponent was open, or as settling
+a question BFHW left open. They left the *modelling* choice open among candidate
+knot energies while treating the Möbius characterisation as obvious. Those are
+different things and the distinction is the honest one.
 
 **NOT CLAIMED:** that any of this applies to the *mutual* channel's magnitude.
 BFHW's Theorem D (`2πc([γ]) + 4 ≤ E(γ)`) is about the **self** energy of a
