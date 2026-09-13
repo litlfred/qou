@@ -698,6 +698,49 @@ Garoufalidis–Zagier print — the index is the weight-1 component of an `ε`-e
 six bare families, monomial or otherwise, can produce it. The remaining route is the `u`-deformation of GZ's
 construction itself, in which their `ε`-derivative becomes a finite difference between the `±u/2` families.
 
+## 3n. Why no pairing could have worked: the residue families are not a block basis (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_block_basis_rank_probe.py`](../../computations/probes/aomega_m3_pretzel_block_basis_rank_probe.py)
+(bean `qou-x3iv`, Part 15; 5/5). §§3k and 3m each tried a pairing and failed. This one asks whether any pairing
+could have worked, and the answer is no, with the obstruction exhibited as an invariant.
+
+**The measurement.** Switch the meridian deformation off — `u → 0`, i.e. `X = x^{1/2} → 1`, the limit in which
+Garoufalidis–Zagier's poles collide — and evaluate each of the six families' `q`-side series term by term:
+
+| family | `u → 0` limit |
+|---|---|
+| `F1` (pole of `Φ_b(x + u_G/2)`) | `1 − 2q + 3q³ + q⁴ − 5q⁶ + …` |
+| `F2` (pole of `Φ_b(x − u_G/2)`) | **identical to `F1`** |
+| `F3(0,0)` (even–even half-lattice) | **identical to `F1`** |
+| `F3(0,1)` | `1 + 2q + 4q² + 7q³ + 13q⁴ + 20q⁵ + 35q⁶ + …` |
+| `F3(1,0)` | `−q^{3/4} − q^{7/4} + 2q^{9/4} − q^{11/4} + …` |
+| `F3(1,1)` | `−q^{3/4} − q^{7/4} − 2q^{9/4} − q^{11/4} + …` |
+
+**Three of the six share one limit — and they are exactly the three whose poles collide into GZ's triple pole.**
+So the family has rank **4**, not 6. GZ's own six blocks, by contrast, are independent (rank 6, verified once
+enough orders are carried; at `q³` there are too few columns to decide, which is why the truncation here was
+raised deliberately and the degeneracy checked across five coefficients rather than two).
+
+**That is the obstruction, as an invariant.** A set of six functions that degenerates to four cannot be a basis
+of the six-dimensional block space GZ's weight decomposition `1 + 4 + 1` requires, so **no** pairing of them —
+diagonal, off-diagonal, reweighted, or branch-twisted — can be the `σ₁σ₁` index. §3k's eight-branch scan and
+§3m's monomial reweighting were searching inside a space that does not contain the answer.
+
+**A second, independent confirmation.** §3k's `q⁰` row is `(2X²+3X+2)/(2(X+1)²)`, which tends to `7/8` as `u → 0`,
+against the derived index's `1` at `ζ = 1`. The failure therefore survives the limit, so it is not an artefact of
+how `ζ` was identified with `x` or `x^{1/2}`.
+
+**What this says about the meridian deformation.** The natural hope after §3l was that `u` regularises GZ's
+`ε`-expansion — that separating the poles would separate the three blocks. It does not: `u` separates the *poles*
+without separating the *limits*. The index needs the value, first and second derivatives of the colliding triple
+(GZ's `H_0, H_1, H_2`), and those are not recovered by any evaluation of the separated families.
+
+**Scope and what is untouched.** Scope (a) for "the residue families as a block basis", with the invariant named.
+Parts 12b and 14 stand exactly as recorded: they factorise the **integral**, validated to `10⁻¹⁹`, and that is a
+different object from the index — the two are related only through GGM (19), which pairs blocks. The remaining
+route to the `ζ`-graded entry is therefore to build the `ε`-expansion at the collision in the `u`-deformed
+setting, or to reach the Stokes data by an operator route that does not need blocks at all (sibling #7333).
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
