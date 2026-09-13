@@ -128,4 +128,39 @@ theorem staircaseYD_antidiag_card (k s : ℕ) (hs : s < k) :
   rw [staircaseYD_filter_antidiag k s hs, card_image_of_injective _ (fun a b hab => by
     simpa using congrArg Prod.fst hab), card_range]
 
+/-- **The telescoped hook sum of the staircase.**  For any `g` into an additive commutative
+monoid,
+
+    Σ_{c ∈ δ_k} g(h(c))  =  Σ_{s<k} (s+1) • g(2(k−s) − 1) .
+
+This is the identity the `REV_n` arc consumes.  Reindexing `s = k − j` turns the right-hand
+side into `Σ_{j=1}^{k} (k+1−j) g(2j−1)`, which at `g = ε` is the staircase's β-side — and with
+`betaSide_eq_hookSum` that is the whole of `V(δ_k)` bar the `L`-free constant.
+
+The proof is the antidiagonal fibration: the hook is constant on each antidiagonal
+(`staircase_hook`) and antidiagonal `s` has `s+1` cells (`staircaseYD_antidiag_card`). -/
+theorem staircase_hookSum {N : Type*} [AddCommMonoid N] (g : ℕ → N) (k : ℕ) :
+    ∑ c ∈ (staircaseYD k).cells, g (QOU.QBeta.WenzlWeight.hook (staircaseYD k) c)
+      = ∑ s ∈ range k, (s + 1) • g (2 * (k - s) - 1) := by
+  have hmaps : ∀ c ∈ (staircaseYD k).cells, c.1 + c.2 ∈ range k := by
+    intro c hc
+    rw [YoungDiagram.mem_cells] at hc
+    rw [mem_range]
+    exact (mem_staircaseYD k c.1 c.2).mp (by simpa using hc)
+  rw [← Finset.sum_fiberwise_of_maps_to hmaps]
+  refine Finset.sum_congr rfl fun s hs => ?_
+  rw [mem_range] at hs
+  have hconst : ∀ c ∈ (staircaseYD k).cells.filter (fun c => c.1 + c.2 = s),
+      g (QOU.QBeta.WenzlWeight.hook (staircaseYD k) c) = g (2 * (k - s) - 1) := by
+    intro c hc
+    rw [mem_filter, YoungDiagram.mem_cells] at hc
+    obtain ⟨hcell, hsum⟩ := hc
+    have hlt : c.1 + c.2 < k := (mem_staircaseYD k c.1 c.2).mp (by simpa using hcell)
+    have hh := staircase_hook k c.1 c.2 hlt
+    rw [Prod.mk.eta] at hh
+    rw [hh]
+    congr 1
+    omega
+  rw [Finset.sum_congr rfl hconst, Finset.sum_const, staircaseYD_antidiag_card k s hs]
+
 end QOU.BraidKnot.HookSum
