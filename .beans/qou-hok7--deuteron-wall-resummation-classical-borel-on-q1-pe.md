@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T09:53:56Z
+updated_at: 2026-09-13T10:42:37Z
 ---
 
 
@@ -814,5 +814,50 @@ is one identified term and that the bound is where it lives.
 one ulp. The identity was testing my threshold, not itself. Fixed at the *precision*
 (dps 40 → 80, residual exactly 0) against a **derived** `3·N·ulp` bound, not by
 widening the tolerance.
+
+**Do not close this bean.**
+
+
+### 2026-09-13 — the energy trade-off priced; a model refuted, a claim corrected (PR #7286, 2nd commit)
+
+**Claim (the reusable one).** Mean-gap **rigidity**. With `φ(g) = g/√(g−1)`,
+
+    H − H_min ≈ (2n)^{3/2}·[φ(ḡ) − 2]/6 ,   E = (H − H_min)·ln q₀
+    φ(2) = 2, φ'(2) = 0, φ''(2) = 1/2   ⟹   E ≈ ln q₀·(2n)^{3/2}·(ḡ − 2)²/24
+
+A **quadratic** penalty of order `n^{3/2}` against a prize of order `√n`. **The mean
+β-gap of any maximiser is pinned to `2 + O(1/√n)`.** There is no room for a shape that
+spreads its βs to kill the pair term — which is exactly the obstruction a pair-term
+lower bound has to clear, and the corpus did not have it.
+
+**Evidence.** `rev_energy_gap_rigidity_probe.py`, 7/7. Checked against **exact integer
+H**: ratio to the formula 0.9988 → 0.99999 as ℓ 40→160 at g = 3,4,5; and `H − H_min = 0`
+**exactly** at g = 2 for every ℓ (the staircase pays nothing — that is `φ'(2) = 0`).
+
+**Three of mine that did not survive.**
+
+1. **Model refuted.** Rigidity predicts the excess should *shrink* like `1/k`. Measured:
+   `excess·k` spreads **73×**, and the model over-predicts by 10–160×. Cause — the extra
+   rows sit at small β where `F(β) ≪ C`, so they do not each contribute `A`. R1 untouched.
+2. **My #7286-R5 explanation WITHDRAWN.** I blamed the `excess/√n` turnover at n=630 on
+   "the search weakening". This is an **independent** search (different move set:
+   `β_i+=1 / β_j−=1` at fixed n AND ℓ; different seeds) and it reproduces **all five** of
+   #7279's values to the 1e-5 their printed 6-dp figures resolve. Two independent searches
+   agreeing is evidence the values are RIGHT. Recomputed at full precision the turnover is
+   still there. **R5's numbers stand; my explanation was wrong.**
+3. **Assumption falsified.** I wrote "the ℓ=k search reproduces the staircase" as a
+   *calibration*. It fails at 4 of 5 k: the staircase is **beaten at its own row count** by
+   +0.245/+0.492/+0.815/+0.893 at k = 12/16/24/35. So **`A√2` is the staircase's rate, not
+   the optimum's**, and the coefficient is strictly above it.
+
+**R4.** `P/(ℓ·E₂)` at the per-ℓ optimum stays in **[0.90, 1.09]** across all five n — the
+maximiser keeps a pair term within ~10 % of the staircase's. Necessary for a pair floor to
+be non-vacuous; not a proof that any shape must.
+
+**Still open, and better constrained:** the pair-term lower bound. Rigidity supplies the
+half that was missing (βs cannot spread); what is not proved is that a mean-gap-2
+configuration must carry `P ≳ ℓ·E₂`. Note #7093 already refuted the obvious route — the
+uniform/even gap multiset is NOT the pair-term minimiser at fixed (ℓ,W) — so this needs a
+different argument, not a Jensen step.
 
 **Do not close this bean.**
