@@ -178,16 +178,19 @@ theorem disjoint_not_imp_uniformSeparation (m : M) :
   -- Evaluate the separation far out along the first parameter.
   have h01 : (0 : Fin 2) ≠ 1 := by decide
   have hbound := hsep 0 1 h01 (1 / δ) 0
-  rw [show (shrinkingLink m).sep 0 (1 / δ) 1 0 = decayingSep (1 / δ) 0 from
-    if_neg h01] at hbound
-  unfold decayingSep at hbound
-  -- `|1/δ| = 1/δ` since `δ > 0`, so the separation there is `1 / (1 + 1/δ)`.
-  rw [abs_of_pos (by positivity), abs_zero] at hbound
-  have hden : 0 < 1 + 1 / δ + 0 := by positivity
+  -- At `s = 1/δ`, `t = 0` the separation is `1 / (1 + 1/δ)`.
+  have hval : (shrinkingLink m).sep 0 (1 / δ) 1 0 = 1 / (1 + 1 / δ) := by
+    have hred : (shrinkingLink m).sep 0 (1 / δ) 1 0
+        = (if (0 : Fin 2) = 1 then 0 else decayingSep (1 / δ) 0) := rfl
+    rw [hred, if_neg h01]
+    unfold decayingSep
+    rw [abs_of_pos (by positivity : (0:ℝ) < 1 / δ), abs_zero, add_zero]
+  rw [hval] at hbound
+  have hden : (0:ℝ) < 1 + 1 / δ := by positivity
   rw [le_div_iff₀ hden] at hbound
   -- `δ * (1 + 1/δ) = δ + 1`, so the hypothesis forces `δ + 1 ≤ 1`, i.e. `δ ≤ 0`.
-  have hδne : δ ≠ 0 := ne_of_gt hδpos
-  field_simp at hbound
+  have hexp : δ * (1 + 1 / δ) = δ + 1 := by field_simp
+  rw [hexp] at hbound
   linarith
 
 end MobiusMutualChannel
@@ -217,8 +220,8 @@ theorem mutualIntegrand_intervalIntegrable (L : LinkEmbedding M n)
   apply IntervalIntegrable.mono_fun (intervalIntegrable_const (c := 1 / δ ^ 2))
     hmeas.aestronglyMeasurable
   refine Filter.Eventually.of_forall fun t => ?_
-  rw [Real.norm_eq_abs, Real.norm_eq_abs,
-    abs_of_nonneg (L.mutualIntegrand_nonneg_of_ne hij s t),
+  have hnn := L.mutualIntegrand_nonneg_of_ne hij s t
+  simp only [Real.norm_eq_abs, abs_of_nonneg hnn,
     abs_of_nonneg (by positivity : (0:ℝ) ≤ 1 / δ ^ 2)]
   exact L.mutualIntegrand_le_of_uniformSeparation hδ hij s t
 
