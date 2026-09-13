@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T14:25:46Z
+updated_at: 2026-09-13T17:02:26Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1552,3 +1552,103 @@ greppable; nobody has adjudicated whether any of them supplies the O'Hara
 theorem the mutual channel was said not to need. Holding a source and having
 checked it are different claims — that distinction is what `qou-pc85` was
 originally about.
+
+
+## CONSTRAINT 3 — ROUTE (2) CANNOT GET ITS MAGNITUDE FROM TOPOLOGY (2026-09-13, qou-dux3)
+
+Route (2) is "Mobius/knot-energy class (nonzero for unlinked pairs; corpus
+MobiusEnergy.lean exists)". The hope in that parenthesis is that a knot-energy
+bound hands the pairwise channel a parameter-free positive number off the
+Borromean topology. It does not, and the reason is now proved rather than
+suspected.
+
+MobiusMutualChannel.lean section 9 (17 declarations, sorry-free, all
+[propext, Classical.choice, Quot.sound]) derives the LINK analogue of
+Bryson-Freedman-He-Wang's Theorem D -- which qou-dux3 had recorded as missing
+from the held literature:
+
+    4*pi*|lk(gamma_1, gamma_2)|  <=  E_mutual(gamma_1, gamma_2)
+
+from Gauss's linking integral plus |det(a,b,c)| <= |a||b||c|. Elementary: one
+power of |gamma_1 - gamma_2| from the determinant bound cancels the cube in the
+Gauss kernel, leaving exactly the Mobius mutual integrand.
+
+WHY IT DOES NOT HELP HERE. Every pairwise lk_ij of the Borromean link is 0
+(this bean's own constraint 2, from mirror_split_s3_em_functional_probe.py A3).
+So the bound reads 0 <= E_mutual -- and lk_bound_iff_nonneg_of_lk_zero proves
+that its conclusion at lk = 0 is EQUIVALENT to section 3's
+innerPairEnergy_nonneg, which holds with no hypotheses at all. It adds nothing.
+
+AND NO OTHER TOPOLOGICAL BOUND WILL EITHER. no_positive_uniform_mutual_lower_bound:
+no positive constant lower-bounds the mutual pair energy, because the
+separatedLink family realises every small positive value via section 3's own
+innerPairEnergy_le. Scope (b), invariant cited (the separation bound of
+section 1). It excludes TOPOLOGICAL lower bounds only.
+
+WHAT THIS LEAVES ROUTE (2). A geometric magnitude, from a DERIVED
+configuration. That is not excluded by anything here and it is now the only
+shape route (2) can take. Note the interaction with this bean's gate: a derived
+configuration has to reproduce the kappa(A) profile 3.2 -> 2.1-2.3 with no
+tuned constant, so "derive the geometry" is the whole of the remaining work,
+not a step in it.
+
+RELATION TO CONSTRAINT 2. Consistent, and from the other side. Constraint 2
+says an admissible w_ij must be EVEN in mubar_123, killing the linear ansatz.
+The Gauss bound is linear in lk, and lk vanishes. Both say the same thing: the
+first-order linking channel is blind to the Borromean configuration.
+
+Section 7-8 of the same file separately prove that Mobius invariance FORCES the
+inverse-square kernel (uniquely, and on geometrically realisable distance
+triples), so route (2)'s kernel is not a modelling choice. The kernel is
+settled; the magnitude is the open thing.
+
+
+## CONSTRAINT 3b — WHERE route (2)'s many-body content must live (2026-09-13, section 9g)
+
+Constraint 3 above is a negative: no topological lower bound reaches the
+pairwise channel. Section 9g of MobiusMutualChannel.lean turns it into a
+LOCALISATION by composing with this corpus's own pair-locality theorem.
+
+THE INSTINCT THAT IS WRONG, and worth recording because it is the obvious one.
+"The Mobius mutual energy is a two-body functional, therefore the channel is
+PairLocal, therefore b_3 = 0 by b3_eq_zero_of_pairLocal, therefore route (2) is
+dead." The first clause is right; the second DOES NOT FOLLOW. PairLocal
+(QOU.Mass.CrossingModelPairLocality) compares a pair's energy ACROSS ASSEMBLIES
+-- w3 i j k = w2 i j and w4 i j = w2 i j -- and a two-body functional still
+moves when the assembly moves the pair. Being two-body is a statement about the
+integrand; pair-locality is a statement about the configurations.
+
+WHAT IS TRUE, 5 declarations, all [propext, Classical.choice, Quot.sound], no
+sorryAx; whole file 52/52, lean -DautoImplicit=false -s 65536 exit 0.
+
+  mobiusCrossingModel                     the CrossingModel this channel induces,
+                                          one LinkEmbedding per assembly.
+  mobiusCrossingModel_pairLocal_of_sep_eq if the assemblies do not move the
+                                          pair's separations, it is PairLocal.
+  mobius_b3_eq_zero_of_sep_eq             hence b_3 vanishes IDENTICALLY, via
+                                          b3_eq_zero_of_pairLocal.
+  mobius_b3_ne_zero_forces_moved_sep      contrapositive: any nonzero b_3 from
+                                          this channel is ENTIRELY the
+                                          assembly's effect on the separations.
+
+AME2020 measures b_3 = +1.4262225 MeV (AmeBindingNotPairwise.ame_b3_eq), so the
+hypothesis is not idle.
+
+CONSEQUENCE. Route (2)'s entire many-body content is the configuration change
+and nothing else. Read with constraint 3 -- no topological floor -- the two say
+the same thing from opposite ends: EVERY NUMBER ROUTE (2) CAN SUPPLY IS A
+DERIVED GEOMETRY. That is not a refutation of the route; it is a specification
+of what it owes, and it says the route's deliverable is the same object
+qou-ales is deriving (gamma-gamma + the confinement SDP at q_0), not a separate
+one.
+
+RELEVANCE TO THE b_3 ARC. qou-brng / qou-rwhv / qou-rraz own the extensive term
+(measured b_3 = +1.4262 MeV, model exactly 0) and qou-eptr proposes EP/Pachner
+as a non-pair-local extensive carrier. Section 9g does not supply that carrier.
+What it supplies is the statement that the MOBIUS channel is not disqualified
+from contributing -- its b_3 is zero only under a hypothesis (separations
+unchanged across assemblies) that a bound configuration does not satisfy.
+
+NOT CLAIMED: that the assemblies DO move the separations in this framework, nor
+by how much. That is a geometric measurement section 9g does not make, and it is
+the open thing.
