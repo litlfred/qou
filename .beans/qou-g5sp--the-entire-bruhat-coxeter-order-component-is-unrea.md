@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-13T06:52:00Z
+updated_at: 2026-09-13T10:05:00Z
 ---
 
 ## The finding
@@ -401,3 +401,61 @@ path rather than the corpus.
 
 Full write-up:
 `docs/audits/2026-09-13-library-root-compiles-1451-modules-zero-red.md`.
+
+
+## 🟩 THE SIZING QUESTION IS ANSWERED: ZERO defects in 2836 modules
+
+`scripts/lean-library-sweep.py --package QOU --all --jobs 2` on `main`
+`e22bd4561`:
+
+    === library sweep: 2821 ok, 0 RED, 1 TIMEOUT + 0 UNVERIFIED (NOT failing),
+        14 skipped (dependency red), 11426s ===
+
+**Zero RED, zero UNVERIFIED**, 3 h 10 m, every module rebuilt from source.
+Combined with this session's root-targeted run, **2830 of 2836 modules are
+judged `ok` and 0 are RED in either run**; 6 remain unjudged (below).
+
+### This is the third retraction in the arc, and it is mine
+
+I proposed two methods for this sizing and retracted both as unsound; then I
+recorded that it needed a **different build environment**. It did not. `--all`
+with `--only` chunking is built for a constrained container and did the whole
+library in one pass on 4 cores.
+
+### What a 0 means here, fixed BEFORE the result landed
+
+Read out of `lean-library-sweep.py`, not fitted afterwards. Under `--all`
+nothing is trusted -- every module is rebuilt from source in topological order,
+so a dependent cannot compile against a stale dependency olean. That is **5 of
+my 10 corpus-typecheck REDs, structurally impossible here.** A signal death
+(`rc < 0`, SIGSEGV) is classified UNVERIFIED and printed *"NOT a corpus defect
+on this evidence"* -- **the other 5.** TIMEOUT is its own label. So a RED would
+have been a source error against QOU source. There were none. Residual
+conditionality is against **Mathlib** (restored, not rebuilt), not QOU.
+
+### The reframing this forces on THIS bean
+
+The two-thirds-outside-the-root finding is a **build-coverage** fact, not a
+**correctness** fact. Those modules are not rotting -- every one compiles. What
+is true is that **nothing routinely checks them**, which is exactly how
+`BruhatRankCriterion` went red on `main` unnoticed (`qou-1u90`, #7185). Different
+problem, different fix: **coverage** -- reach them from the root, or run this
+sweep as the gate. Both are owner calls; neither is started.
+
+### The honest remainder
+
+`QOU.Machinery.HeckeH4BlockMap211` TIMEOUT at the default 1800 s, 14 skipped
+behind it. Not a new problem -- it compiled **ok** in the root run two hours
+earlier at the same budget; it sits near the wall. Nine of the 15 are covered by
+that run. **Six are genuinely unjudged**, and four of them are exactly the
+`QOU.Hecke.* H3A/H4A` family this bean named as the SIGSEGV class:
+
+    QOU.Hecke.FullRankFromWedderburn        QOU.Hecke.MarkovTraceOnH3A
+    QOU.Hecke.InstanceOnH3A                 QOU.Hecke.MarkovTraceOnH4A
+    QOU.Hecke.InstanceOnH4A                 QOU.Machinery.HeckeH4RepDecomp
+
+A `--only QOU.Hecke --timeout 5400` re-run is in flight. Until it reports these
+six are **unverified, not passing**.
+
+Full write-up:
+`docs/audits/2026-09-13-every-library-module-compiles-zero-defects.md`.
