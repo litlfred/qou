@@ -528,14 +528,32 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     of the `y_lambda_at` test alone; that was an absence-of-evidence error and
     is retracted (bean `qou-5c64`).
 
-    The p-n bond's non-`z` part is the δ de-wire, pinned exactly: `d` backed out
-    of the bond ratio matches `-h(1/2 - δ/4)` to 2.9e-16 with
-    `δ = flavor_split_leading(q)`, and the same inversion gives `δ = -2.16772`
-    as of 2026-06-15 against `+0.00137571` today. Genuinely ruled out, each by
-    direct substitution at fixed q: the q₀ anchor (3.9e-8), the `pn_convention`
-    *flag* (a no-op on the free trace by construction, 2e-4 on the atom trace),
-    and the `m_pp/m_pn/m_nn` multiplicities (unchanged). Still open: the two
-    per-nucleon factors and the n-n bond's non-`z` part.
+    **And the OTHER TWO bonds' `d` are unchanged too, so the whole bond side is
+    pure C→D.** Backing `d = bond - z` out against each side's OWN `z`:
+
+        p-p   d_now  0                      d_June  1.2e-8      (i.e. 0)
+        p-n   d_now -0.10445825933572413    d_June -0.10445817736543710
+        n-n   d_now -0.20906032198987946    d_June -0.20906030963839083   (= -h)
+
+    all three agree to the ~1e-7 anchor floor, and `(z_D + d)/(z_C + d)` with `d`
+    held fixed predicts every measured bond residual to 2e-7. The p-n `d` is
+    `-h(1/2 - δ/4)` with `δ = flavor_split_leading(q) = 0.0013757112` today and
+    `0.0013772796` implied by the June witness — a 0.11 % gap, which is the
+    anchor, not a change.
+
+    🛑 **So the δ de-wire of 2026-06-29 (`9928f3f4a79`) does NOT move this
+    witness**, and an earlier version of this note claimed it did, with
+    "δ = -2.16772 as of 2026-06-15". That number came from subtracting `z_D`
+    from June's bond when June was on `z_C`; it is an artefact of mixing the two
+    conventions and is retracted (bean `qou-5c64`). The `2.9e-16` confirmation
+    quoted alongside it was real but was of the *today* side only — a check on
+    one side of a comparison, reported as confirming the comparison.
+
+    Genuinely ruled out, each by direct substitution at fixed q: the q₀ anchor
+    (3.9e-8), the `pn_convention` *flag* (a no-op on the free trace by
+    construction, 2e-4 on the atom trace), the `m_pp/m_pn/m_nn` multiplicities
+    (unchanged), and the δ de-wire (above). **Still open: only the two
+    per-nucleon free factors**, proton `1.075521518` and neutron `1.069874485`.
 
     ⚠ NAME IS A MISNOMER — this does NOT return a braid word (2026-08-25, PR #5765).
     A rename was considered and rejected: 685 call sites across 382 files. So the

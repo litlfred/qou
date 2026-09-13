@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T03:14:24Z
-updated_at: 2026-09-13T10:51:05Z
+updated_at: 2026-09-13T10:57:25Z
 ---
 
 
@@ -223,3 +223,30 @@ this member rather than wrongly attributed, and a reviewer accepting on the
 C→D rationale alone would still be accepting two further undiagnosed changes.
 
 Not claimed, same as before: how many of the 162 this applies to. One measured.
+
+
+## Follow-up: C→D is the WHOLE bond side, not one factor of three
+
+Correcting my own correction above (bean `qou-5c64`, second retraction). I had
+credited the p-n colour-weighting δ de-wire (`9928f3f4a79`) with part of this
+member's motion. It has none: I had backed `d` out of the June bond by
+subtracting `z_D` when June was on `z_C`.
+
+Against each side's own `z`, all three bond `d` are unchanged —
+p-p `0`, p-n `-0.1044582` / `-0.1044582`, n-n `-h` / `-h` — and
+`(z_D + d)/(z_C + d)` with `d` fixed predicts every measured bond residual to
+**2e-7**.
+
+So for `binding-single-pipeline-comparison` the split is:
+
+- **bond side: 100 % convention C→D** — this wave's stated cause, and it is the
+  whole of it;
+- **ordering: `qou-hu1f`** (owner ruling, 2026-09-05) — postdates this wave;
+- **per-nucleon free factors** (proton 1.0755215, neutron 1.0698745) —
+  unidentified, and the only thing left open.
+
+**Net effect on this bean: my flag was over-stated twice and the label was right
+all along.** What still stands, and is the only actionable part: the wave's
+numbers were measured 2026-08-09 and cannot include the 2026-09-05 ordering
+ruling, so for this member they are incomplete — a reviewer accepting on them
+would be accepting one further undiagnosed change, not a mis-attributed one.
