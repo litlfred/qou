@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T09:13:48Z
+updated_at: 2026-09-13T11:10:00Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -737,3 +737,107 @@ a map on the variety.
 `[(1,1,4), (2,1,2)]`, not quoted — so unique factorisation fails and `[w]` cannot be read
 off by factoring; the ideal class group enters. Identifying `[w]` in the cube-class group
 of `Q(sqrt(-15))` is the next step, and it must stay derived.
+
+
+---
+
+## UPDATE 2026-09-13d — the point-level fact is now a VARIETY-level one, and the roast's objection is split
+
+The priority-1 next step of this bean ("test whether `sigma_b` is the duality map ON THE
+VARIETY, not at a point") has RUN.  `computations/ptolemy/ptolemy_duality_variety_level_orbit.py`,
+report `L6a4-c1-duality-variety-level.json`, exact in K throughout.
+
+### The lever: the orbit IS the variety, and that was not recorded before
+
+Three facts already on main line up, and nobody had joined them:
+
+- the class-1 saturated ideal is zero-dimensional of **degree 4** over Q with `u` carried
+  as a VARIABLE, mod p and in characteristic zero, `degrees_agree: true`
+  (`L6a4-c1-sweep.json`);
+- `f` is **irreducible** of degree 4 and the Ptolemy field equals the trace field with
+  `span_dimension 4`, so `x` generates `K` (`L6a4-c1-irreducibility.json`,
+  `L6a4-c1-trace-field.json`);
+- `Gal(K/Q) = Z/2 x Z/2` is **abelian** (#7092).
+
+MEASURED here (G1/G2): the four conjugates are pairwise DISTINCT and each is a genuine
+variety point -- 0/32 GGZ (5.2) failures and 0/128 identification failures, each at its
+own cube root (`id`, `tau` at `u2`; `sigma_a`, `sigma_b` at `u1`).  Four distinct points
+inside a degree-4 zero-dimensional scheme leaves no room: **the orbit is the whole
+variety, and the scheme is reduced.**  This also closes `qou-47nf`'s caveat *"degree 4 is
+the mod-p count; over C it may differ"* -- the char-zero run answers it and the two are
+now joined.
+
+### The result
+
+    point      sigma_a                sigma_b
+    id         NOT (91/122 fail)      coboundary, PGL3 only (0/122 fail)
+    sigma_a    NOT (91/122 fail)      coboundary, PGL3 only (0/122 fail)
+    sigma_b    NOT (91/122 fail)      coboundary, PGL3 only (0/122 fail)
+    tau        NOT (91/122 fail)      coboundary, PGL3 only (0/122 fail)
+
+Both columns constant down the orbit.  Guards: G3 measures that **D IS Galois-equivariant**
+-- `D(sigma x) = sigma(D x)` on 128/128 coordinates at all four points, which is the
+load-bearing leg and is checked rather than argued; G4 calibrates the identity row against
+#7092; G5 is the refutation control (the `sigma_a` column is NO everywhere, so the test
+CAN fail).
+
+### The roast's objection, split three ways -- only one is answered
+
+`docs/audits/2026-09-07-takeover-fronts-roast.md:102-116` anticipated this move.  It makes
+three points and this result touches ONE:
+
+- **(A) pointwise vs universal closure — ANSWERED.**  The sharp half is where the
+  quantifier sits.  A per-point test can only give `for all x, exists sigma`; each point
+  could a priori be self-dual up to a DIFFERENT Galois element.  The measurement gives
+  `exists sigma, for all x`, with `sigma_b` exhibited and `sigma_a` excluded at every
+  point.  That arity upgrade is the whole content.
+- **(B) "two distinct rational self-maps can agree on a Galois orbit" — NOT ANSWERED.**
+  Four points impose four conditions.  This is an identity of maps ON V, never of rational
+  maps, and it carries NO implication for another obstruction class or manifold.
+- **(C) whether `rho -> rho^{-T}` INDUCES `sigma_b` — NOT ANSWERED**, and it is still this
+  bean's subject.  What sits between is the Ptolemy-to-representation direction: `V`
+  modulo gauge corresponds to the class-1 boundary-unipotent PGL(3,C) representations
+  (GGZ), and IF that correspondence is a bijection here, agreement on all of `V` modulo
+  gauge is agreement of the induced maps on representations.  **The probe does not
+  establish that bijection and does not assume it.**
+
+Honest one-line form: **every point of the L6a4 class-1 variety is self-dual up to
+Gal(K/Q), by one and the same element `sigma_b`.**  Strictly stronger than #7092's single
+point; strictly weaker than "D = sigma_b as maps"; silent on representations.
+
+### A cross-check that cost nothing
+
+`w = r(3 e_0)`, whose cube-root-ness decides the SL(3) lift, transports by Galois
+(`w(sigma x) = sigma(w x)`, verified) and takes exactly TWO values across the four points,
+constant on the cosets of `{1, sigma_a}`.  That reproduces PR #7273 section 4 -- `sigma_a`
+fixes `w`, `w` lies in `Q(sqrt(-15))` -- from the orbit side, which shares no machinery
+with the subfield-descent route that found it.
+
+### Lean
+
+`QOU/Eightfold/GaloisOrbitTransport.lean`, sorry-free; three of its four results depend on
+**no axioms at all**, the fourth on `propext`.  `eq_smul_of_transitive_orbit` is the
+upgrade; `rel_of_transitive_orbit` is its version modulo an action-stable relation, stated
+as an **Iff** so it propagates the `sigma_a` NO exactly as it propagates the `sigma_b`
+YES; `exists_not_forall_eq_of_not_central` shows **commutativity cannot be dropped** (for
+any non-central `b` in any group, right multiplication by `b` is a counterexample).  No
+numbers in the Lean.
+
+### A bug the calibration guard caught, worth keeping
+
+The first run read the verdict off `gauge is not None` from `coboundary_test`'s second
+return value.  That is a PROXY for a different fact: in the index-3 case the function
+returns `None` when `w` has no cube root in `K`, meaning *"the PGL(3) gauge element does
+not LIFT to SL(3)"*, NOT *"there is no gauge element"* -- the very distinction PR #7273
+exists to draw.  The table printed `NOT a coboundary (0 of 122 kernel relations fail)`,
+self-contradictory on its face, and it was the G4 CALIBRATION row that failed, not the
+mathematics.  Same class as blindness-taxonomy rows 27-32: a structural proxy substituted
+for the structural fact.  The verdict is now read from the integer kernel, which is the
+definition.
+
+### Still OPEN (rule 13a)
+
+(B) and (C) above.  The next honest step is (C): establish, or refute, that the Ptolemy
+point-to-representation correspondence is injective modulo gauge on this class, which is
+what would carry the variety-level identity across to representations.
+
