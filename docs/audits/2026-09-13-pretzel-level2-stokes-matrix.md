@@ -109,6 +109,15 @@ datum at its rank-one quad (not guessed):
 | 5₂ | `∫ Φ_b(v) Φ_b(v+u) Φ_b(v−u) e^{−2πiv²+2πivt} dv` | 2 | 3 |
 | (−2,3,7) | `∫ Φ_b(v+u/2) Φ_b(v−u/2) Φ_b(2v−c_b) e^{−2πiv²+2πivt} dv` | 2 | **6** |
 
+**The `u`-deformation is inherited, not chosen here.** At `u = 0` the pretzel row is
+§3h/§3i's derived integral `∫ Φ_b(v)² Φ_b(2v−c_b) e^{−2πiv²} dv` exactly. The
+placement of the meridian deformation — `±u/2` on the two *unit* factors, none on
+the doubled one — is §3k's, where the three pole families are listed as
+`Φ_b(x ± u/2)` and `Φ_b(2x − c_b)` and validated against the integral to
+`7.8·10⁻¹⁹`. Nothing below re-derives that placement; it is taken from there, and
+the G3 gate would fail loudly if it were wrong, since the (FE) rearrangement is an
+identity of the *specific* integrand.
+
 The pretzel's third factor is at **doubled argument**, so it shifts by `−2ib` and
 contributes **two** (FE) factors. With `e^{2πb(2v−c_b)} = −q^{−1/2}X²`, those are
 
