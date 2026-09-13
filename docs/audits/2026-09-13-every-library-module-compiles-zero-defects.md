@@ -124,9 +124,27 @@ interesting for it: these modules were being built all along.
 
 One module timed out — `QOU.Machinery.HeckeH4BlockMap211`, at the default 1800 s —
 and 14 were skipped behind it. It is **not a new problem**: the same module
-compiled **ok** in the root run two hours earlier, at the same budget, while
-sharing the machine with `HeckeH4BlockMap31`. It sits near the wall and lands on
-either side of it depending on what else is running.
+compiled **ok** in the root run two hours earlier at the same budget.
+
+🛑 **And the explanation I first gave was incomplete, in a way that flattered the
+measurement.** I wrote that it "sits near the wall and lands on either side
+depending on what else is running", meaning the sibling module it shared the
+machine with. Found afterwards by `ps`: **a `lake build` had been running since
+08:51:48**, started by the SessionStart hook when this session resumed, and was
+still running at 11:36 with four `lean` workers at 55–82 % CPU. So this `--all`
+run (08:11 → 11:21) spent most of its length in **three-way** contention on 4
+cores, not two-way.
+
+That is my process failure, not the tool's: AGENTS.md says in terms to **quiesce
+the SessionStart build before trusting a sweep**, I did kill it at session start,
+and I did not re-check after the *resume* hook re-fired it.
+
+**What it does and does not affect.** Verdicts are unaffected — contention costs
+time, not correctness, and a green is a green. The **wall-clock figure of 11426 s
+is inflated** and should not be quoted as this sweep's cost on a quiet machine.
+The TIMEOUT is now better explained as contention than as a module near its
+budget, which also makes it *less* interesting: it is the same diagnosis a sibling
+reached for the `--jobs 3` timeouts, arrived at a third time.
 
 Nine of the 15 are covered by that root run (`QOU` itself, `HeckeH4BlockMap211`,
 `HeckeH4Semisimple`, `HeckeH4Wedderburn`, `…WedderburnCoord`, `…WedderburnInv`,
@@ -157,3 +175,29 @@ document does not claim otherwise.
 - "Compiles" is not "is correct": this measures elaboration, not whether any
   declaration says something true or non-vacuous. The vacuity, axiom and
   `#print axioms` gates are separate and are not run here.
+
+
+## A side result: a `lake build` against a TRACED restore did NOT evict the cache
+
+AGENTS.md records the eviction hazard as measured — `lake build` against an
+**untraced** restore took root mathlib oleans from 6990 to 334 — and then says
+explicitly that whether it still evicts against the **traced** restore (the
+2026-09-06 reseed, 100 % trace-paired) is **UNTESTED**, because testing it costs a
+real build and risks the cache.
+
+It got tested here by accident. A `lake build` ran for **2 h 45 m** against the
+traced restore, concurrently with two sweeps. Measured after killing it:
+
+    .lake/packages/mathlib                      3564   (unchanged)
+    content/.../lean/.lake/packages/mathlib     3565   (unchanged)
+    content/.../lean/.lake/build                2786   (grew from 2703)
+
+**No eviction.** Lake accepted the restored, trace-paired oleans and spent its time
+*adding* QOU oleans rather than rebuilding Mathlib. That is one observation, not a
+guarantee — a different toolchain or a changed input hash could still trigger a
+rebuild — but it is a data point where AGENTS.md had none, and it points the
+opposite way from the untraced case.
+
+**Keep preferring `lean`-direct and the sweeps anyway.** Nothing here argues for
+running `lake build`; the point is only that the reseed appears to have closed the
+hazard it was meant to close.
