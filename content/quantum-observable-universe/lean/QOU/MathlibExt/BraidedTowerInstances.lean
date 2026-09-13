@@ -55,8 +55,31 @@ the law under test. Only the second answers whether the witness exercises
 **Consequence: no witness has all three properties** — growing filtration,
 `h ≠ 0`, and a non-multiplicative trace. `SymmetricGroupTowerWitness` has the
 first and third at `h = 0`; this one has the first and second. The *trace*
-content at `q ≠ 1` remains unexercised by any inhabited witness, which is
-Jones' theorem on `H_∞(q)` and stays open (bean `qou-g8i1`).
+content at `q ≠ 1` remains unexercised by any inhabited witness.
+
+🛑 **What that gap IS, corrected 2026-09-13 — it is NOT "Jones' theorem is
+open".** This read *"which is Jones' theorem on `H_∞(q)` and stays open (bean
+`qou-g8i1`)"*, and both halves are wrong. `qou-g8i1` is `completed` and is
+titled *"Prove the (z+d) bond rule"* — a different result; the pointer comes
+from a scoping in `qou-0fmb` that `qou-0fmb` itself retracted on 2026-09-12.
+And the Ocneanu trace's **existence and uniqueness are PROVED on `main`**,
+sorry-free: `SchurWeyl/MarkovTraceInstance.ocneanuMarkovTrace :
+MarkovTraceFamily ℝ q q⁻¹ (q³/(q²+1))` and
+`SchurWeyl/MarkovTraceUnique.markovTrace_unique`.
+
+The real gap is that those live in a **different abstraction**:
+`HeckeCoset.MarkovTraceFamily` is level-indexed with one trace per level, one
+Markov parameter and no `ginv`, while `OcneanuTrace.MarkovTrace` is a single
+algebra with a filtration, one trace, `ginv`, and both `z` and `zinv`. Nothing
+bridges them. The live carrier is bean **`qou-ejde`** (the colimit route), whose
+step 1 `SchurWeyl/HeckeProductInjective.heckeProduct_injective` landed on
+2026-09-13.
+
+Note also that **"faithful on `H_∞(q)`" is the wrong target at convention D** —
+the weight vanishes for `ℓ(λ) ≥ 3` (`QBeta/WenzlWeightVanishing.
+conventionD_weight_eq_zero_iff_rowLens`), so the radical is nonzero and the
+attainable statement is faithfulness on `H_∞(q)/rad`. That over-claim is bean
+`qou-phlk`, already adjudicated.
 
 The corpus already held `HeckeRankTwoMarkov.ocneanuTrace_mul_defect`, whose
 defect is literally `h * z + 1 - z * z`. What it had not recorded is that the
