@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-13T11:40:00Z
+updated_at: 2026-09-13T13:10:00Z
 ---
 
 ## The finding
@@ -567,3 +567,43 @@ Flagged, NOT edited -- a sibling's file and a dated audit doc:
 The sweep help text is the one that matters most: it is read by every agent who
 runs `--all --help`, and it carries BOTH the superseded 67% count AND the false
 premise, in a script that is otherwise the corpus's best verification tool.
+
+
+## 🟩 COMPLETE: 2836 of 2836 judged, 0 RED
+
+Four runs, all on `main` `e22bd4561`:
+
+| run | selector | result |
+|---|---|---|
+| 1 | `--only-exact QOU` (root + dirty closure) | 1451 ok, 0 RED — incl. `[1451/1451] ok QOU` |
+| 2 | `--all` (every module) | 2821 ok, 0 RED, 1 TIMEOUT, 14 skipped behind it |
+| 3 | `--all --only QOU.Hecke --timeout 5400` | 269 ok, 0 RED |
+| 4 | `--all --only-exact QOU.Machinery.HeckeH4RepDecomp --timeout 5400` | 17 ok, 0 RED |
+
+**Union: every one of the 2836 library modules has been compiled from source and
+none is RED.** The TIMEOUT that blocked run 2, `HeckeH4BlockMap211`, passed in
+run 3 at the larger budget on an uncontended machine — confirming it as a budget
+artifact, not a property of the module.
+
+### Run 4 exists because I was wrong about run 3's scope
+
+I said the `--only QOU.Hecke` re-run would settle all six unjudged modules. It
+settled five. `QOU.Machinery.HeckeH4RepDecomp` is **not under the `QOU.Hecke`
+prefix** and nothing under that prefix imports it — it is a leaf — so the
+selector never reached it. A namespace prefix is not a dependency closure, and I
+treated it as one.
+
+### What this closes on the SIGSEGV retraction
+
+The four modules my bean named as the SIGSEGV class are measured and green:
+
+    QOU.Hecke.InstanceOnH3A       ok
+    QOU.Hecke.InstanceOnH4A       ok
+    QOU.Hecke.MarkovTraceOnH3A    ok
+    QOU.Hecke.MarkovTraceOnH4A    ok
+
+So whatever produced those five `exit 139` results, it was **not** a property of
+these modules and **not** a container limit. The observations stand; the
+attribution is dead. The sweep's `UNVERIFIED` class — whose source comment cites
+that very measurement as its motivating case — is the correct home for evidence
+of that shape, and it is where such a result would land today.
