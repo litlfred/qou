@@ -1,11 +1,11 @@
 ---
 # qou-xdwp
 title: 'GAP: vertex-operator + categorical-transfer-matrix — architectural blockers behind the parse errors'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T23:11:58Z
-updated_at: 2026-09-03T23:12:45Z
+updated_at: 2026-09-13T18:05:00Z
 ---
 
 Two of the four parse-failures from the sibling sweep (`qou-e7xv`). Both are

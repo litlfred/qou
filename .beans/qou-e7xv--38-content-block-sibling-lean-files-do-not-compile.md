@@ -1,11 +1,11 @@
 ---
 # qou-e7xv
 title: 38 content-block sibling .lean files do not compile — nothing in the corpus checks them
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T14:54:32Z
+updated_at: 2026-09-13T18:05:00Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -314,3 +314,70 @@ Sweep stands at **38 → 1**; the remaining one is `qou-0xrn`.
 
 ## 2026-09-04 14:5xZ — independent confirmation from qou-n9j7, and four files outside this list
 A second, independent pass (all 907 content-block siblings against a rebuilt library, PR #6649) confirms this sweep: every file in the 38 is green on main ceb526bc31 except qou-0xrn. FOUR reds are NOT in the 38 and remain red on main: knots-particles-confinement/confinement-level-exists (Unknown constant QOU.BraidKnot.ConfinementLevel.exists), lifting-and-descent/euler-char-stability (Failed to infer type of binder n), lifting-and-descent/localized-knot (no BraidWord.writhe in the environment), mass-theory/qz-bicompletion (Unknown identifier zPochhammer). Tracked on qou-isps; not touched by me. Note: my first sibling-fix commits collided with yours on rebase and were dropped for main's versions — same repairs, yours went further.
+
+
+## 🟩 38 → 0 — the whole population is green (measured 2026-09-13, bean qou-g5sp)
+
+This bean's last entry reads *"38 → 1. Only `spin-involution-lp-dual-invariance`
+(22, `qou-0xrn`) left; that is the author's judgement call and stays untouched."*
+
+**That one is green too.** `scripts/lean-content-sweep.sh` on `main`
+`16ccc3f7e2`:
+
+```
+=== swept 938, RED 0 ===
+```
+
+`spin-involution-lp-dual-invariance.lean`: `exit 0`, 0 errors. So are all four
+of the reds this bean's own 2026-09-04 addendum flagged as **outside** its list
+and tracked on `qou-isps` — `confinement-level-exists`,
+`euler-char-stability`, `localized-knot`, `qz-bicompletion` — and both files of
+`qou-29pv` (whose prescribed one-line `import Mathlib.Data.Real.Basic` is in
+place at line 1 of `knot-factor-borromean-composite.lean`; that bean said
+*"verify, don't assume"*, so: verified).
+
+**I cannot say WHEN or BY WHOM the survivor was fixed.** Agent clones here are
+shallow, and `git log` on that file reaches exactly one commit in the fetched
+window. The measurement is the evidence; the history is not available to me, and
+guessing at it would be the error this bean's own corrections are about.
+
+**Wider than this bean's population.** It counts 908 QOU siblings; the sweep
+covers **938 across all three papers plus the visualizer** (QOU 902, UGB 22,
+fred2005 12, visualizer 2). The UGB and fred2005 siblings are reachable by
+neither this bean's method nor `lean-library-sweep.py`.
+
+Per-file data:
+[`docs/audits/2026-09-13-content-sibling-compile-sweep.tsv`](../docs/audits/2026-09-13-content-sibling-compile-sweep.tsv);
+write-up + method + positive control:
+[`2026-09-13-every-content-sibling-compiles-zero-red.md`](../docs/audits/2026-09-13-every-content-sibling-compiles-zero-red.md).
+
+## The two durable findings in this bean outlive the count
+
+**1. "Migrations stop at the sibling boundary."** The 2026-09-04 update's
+diagnosis — a library object changes shape, every consumer inside the Lake globs
+is updated because `lake build` forces it, and the siblings are left behind
+because nothing builds them — is the reusable content here, and the count going
+to zero does not retire it. It is a *recurring* condition, not a one-off
+backlog: nothing forces a sibling to be rebuilt when a library signature moves,
+so the population can go red again the next time one does, silently.
+
+**What has changed is that the check now exists and is wired in.**
+`scripts/lean-content-sweep.sh` is exactly this bean's own "Next" item from
+`qou-29pv` — *"Consider a gate: compile every file named by a `lean.ref`"* — and
+it runs in `/prepare-merge` §4 and `prepare-merge-auto` Phases 1 and 4. So the
+consequence line *"anyone changing a library signature must grep
+`content/<paper>/**/*.lean` outside `lean/` as a separate step"* is now served by
+a script rather than by discipline.
+
+**2. The cost note stands and is not closed by this.** *"`lean.ref` resolves
+sibling-first BY FILE, so making a sibling compile turns a visibly-broken shadow
+into a silently-divergent one."* Four of the divergences this bean measured
+verify as real (`QOU.planck_classical_limit`, `QOU.qExtDeriv_classical`,
+`QOU.qLieBracket_classical`, `QOU.FlavorDressing.flavor_mass_splitting_bound`),
+and deciding which declaration is canonical is a per-block judgement about what
+the `.md` means — **not** a compile question, and **not** settled by 938/0.
+`scripts/lean-sibling-library-divergence-audit.py` is the detector; that work is
+open and belongs elsewhere.
+
+Status → completed **on the compile question only**. The divergence item above
+is a different subject and should carry its own bean if it does not already.
