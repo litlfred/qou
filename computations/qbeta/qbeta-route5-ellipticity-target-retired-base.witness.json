@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-13T20:20:32.558091+00:00",
-  "commitSha": "b301c657a78cb8ee5b982fc736682e2f8558ba3b",
+  "computedAt": "2026-09-13T20:50:55.977000+00:00",
+  "commitSha": "ccd14ff592e0b6b1c4e3c932b1a9f48e430c6bb6",
   "assertions": [
     {
       "name": "route5_theta_reproduces_from_the_retired_z_eq_1_cell",
@@ -51,14 +51,30 @@
       "passed": true,
       "tolerance": "exact",
       "source": "KD fixes hbar = 2 ln q by matching the Hecke pair, giving character cosh(ln q_0) = (q_0 + 1/q_0)/2 = 1.00544843335. Against R that is 0.706208 % on z=1, -42.8516 % on z_D and -16.23 % on the dashboard cell. So the ruled base does NOT resurrect Kohno-Drinfeld: it moves the failure from a CLASS exclusion (wrong side of 1) to a MAGNITUDE gap (right side, wrong size), which is a weaker obstruction and a different problem."
+    },
+    {
+      "name": "qou_99qc_z_space_figures_and_this_arcs_q_space_figures_agree",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "bean qou-99qc reports z = q at +11.17 % and z_D at -38.64 % from its inverted z* = 0.99850; reproduced here as distances IN z: 11.1646 % and -38.6392 %. Pushed through the exact functional h^2/2 - z*h those become residuals in Q_beta of 12.47006 % and -43.15716 %, reproducing this arc's +12.470 % and -43.157 %. NOT a discrepancy -- two coordinates for one shortfall. Recorded because a reader meeting both pairs will otherwise conclude one is stale."
+    },
+    {
+      "name": "stating_the_gap_in_a_understates_it_by_an_order_of_magnitude",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "CORRECTION to this session's own framing. The route-5 gap on the ruled base was reported as 'a factor 11.2', i.e. a_needed/a_KD = 11.1683. But `a` enters only through cosh, and near a = 0, cosh a - 1 ~ a^2/2, so a ratio in `a` is about the SQUARE ROOT of the ratio in the deviation the correction must actually supply. That deviation ratio is (R - 1)/(cosh(ln q_0) - 1) = 139.373x -- Kohno-Drinfeld supplies 0.5448 % where 75.936 % is needed. Quote the deviation ratio; 'factor 11.2' understates the gap by roughly an order of magnitude and flatters the route."
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "qbeta-route5-ellipticity-target-retired-base",
   "scriptFile": "qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py",
-  "scriptHash": "b4690b5b630d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "836b6590d6b5",
+  "scriptCommitSha": "800ad92e48e026808671e2c3c143de80b148554f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -125,5 +141,7 @@
     "Real.cos_le_one (elliptic character <= 1) -- Mathlib, and already used by QOU.QBeta.EigenphaseCarrier.replacement_excludes_some_matrix",
     "1 <= cosh (real-spectrum character >= 1) -- QOU.QBeta.HolonomySpectrumSignObstruction, sorry-free"
   ],
+  "gap_magnitude_correction": "The route-5 gap on the ruled base must be quoted as the DEVIATION ratio (R-1)/(cosh(ln q0)-1), not as a_needed/a_KD. `a` enters only through cosh and cosh a - 1 ~ a^2/2 near 0, so the ratio in `a` is about the square root of the ratio that matters and understates the gap by roughly an order of magnitude.",
+  "cross_validation": "bean qou-99qc's z-space figures (z* = 0.99850; z = q at +11.17 %, z_D at -38.64 %) and this arc's Q_beta residuals (+12.470 %, -43.157 %) are the SAME statement in two coordinates, related by the exact functional h^2/2 - z*h. Not a discrepancy.",
   "scope": "(b) for the two class statements, each citing a proved invariant; (a) for every number. Derives no alpha, selects no base, proposes no wiring, and does not show that no connection exists."
 }

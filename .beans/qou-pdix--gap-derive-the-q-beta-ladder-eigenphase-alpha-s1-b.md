@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T20:46:44Z
+updated_at: 2026-09-13T20:51:46Z
 
 ---
 
@@ -2356,3 +2356,53 @@ its assignment only; `.lean`/`.md`/`.ts` are counted, never classified.
 
 The witness measures the **tree**, so it goes stale on any commit touching these
 files. Re-run it; do not quote it.
+
+---
+
+## 2026-09-13 (correction) — the route-5 gap is **139×**, not the "factor 11.2" I reported an hour ago
+
+Two additions to
+[`qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py`](computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py)
+(now 8/8).
+
+### 1. Cross-validated against `qou-99qc` — the two figure-pairs are NOT in conflict
+
+`qou-99qc` inverts the functional for CODATA, gets `z* = 0.99850`, and reports
+`z = q` at **+11.17 %** and `z_D` at **−38.64 %**. This arc records **+12.470 %**
+and **−43.157 %**. A reader meeting both pairs will conclude one is stale. They
+are the same shortfall in two coordinates:
+
+| | in `z` (qou-99qc) | in `Q_β` (this arc) |
+|---|---|---|
+| `z = q` (augmentation) | +11.1646 % | **+12.47006 %** |
+| `z_D` (ruled) | −38.6392 % | **−43.15716 %** |
+
+Reproduced by pushing the z-distances through the exact functional
+`h²/2 − z·h`; both land on this arc's figures. The non-proportionality is the
+`h²/2` term. **Not a discrepancy** — recorded so neither pair gets "corrected"
+into the other.
+
+### 2. My own "factor 11.2" understated the gap by an order of magnitude
+
+I reported the ruled base's target as *"a real-spectrum generator at `a ≈ 1.165`
+against KD's `ln q₀ = 0.104` — a factor 11.2"*. The arithmetic is right
+(`a_needed/a_KD = 11.1683`) and **the framing is wrong**, in the direction that
+flatters the route.
+
+`a` enters only through `cosh`, and near `a = 0`, `cosh a − 1 ≈ a²/2`. So a ratio
+in `a` is roughly the **square root** of the ratio in the quantity the correction
+must actually supply. Measured:
+
+```
+deviation needed   R − 1                = 75.936 %
+KD supplies        cosh(ln q₀) − 1      =  0.5448 %
+ratio                                    = 139.373×
+```
+
+**Quote 139×, not 11.2×.** Stating a `cosh`-mediated gap in its pre-`cosh`
+coordinate is a systematic understatement, not a rounding difference — and I
+made it in the same turn that corrected two other framing errors.
+
+Contaminated sites: this bean's preceding entry, the PR #7340 body's
+recommendation, and two chat reports. The probe and witness now carry the
+correction in a `gap_magnitude_correction` field.

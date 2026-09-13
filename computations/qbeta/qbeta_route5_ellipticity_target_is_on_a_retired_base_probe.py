@@ -262,6 +262,58 @@ def main() -> int:
         f"wrong size), which is a weaker obstruction and a different problem.",
     )
 
+    # ---- 6. cross-validate against qou-99qc's z-space figures -------------
+    # That bean inverts the functional for CODATA and gets z* = 0.99850, then
+    # reports z = q at "+11.17 %" and z_D at "-38.64 %". Those are distances in
+    # z, NOT residuals in Q_beta, so they are not the +12.470 % / -43.157 %
+    # this arc records -- a reader meeting both will think one is stale.
+    # They are the same statement: Q is proportional to (h^2/2 - z*h).
+    Z_STAR = mp.mpf("0.99850")
+    def qfun(z):
+        return h ** 2 / 2 - z * h
+    ratio_zD = qfun(z_D) / qfun(Z_STAR)
+    ratio_aug = qfun(q) / qfun(Z_STAR)
+    pct_zD = (ratio_zD - 1) * 100
+    pct_aug = (ratio_aug - 1) * 100
+    zdist_zD = (z_D - Z_STAR) / Z_STAR * 100
+    zdist_aug = (q - Z_STAR) / Z_STAR * 100
+    check(
+        "qou_99qc_z_space_figures_and_this_arcs_q_space_figures_agree",
+        abs(pct_zD - mp.mpf("-43.157")) < mp.mpf("0.05")
+        and abs(pct_aug - mp.mpf("12.470")) < mp.mpf("0.05"),
+        f"bean qou-99qc reports z = q at +11.17 % and z_D at -38.64 % from its "
+        f"inverted z* = 0.99850; reproduced here as distances IN z: "
+        f"{mp.nstr(zdist_aug, 6)} % and {mp.nstr(zdist_zD, 6)} %. Pushed "
+        f"through the exact functional h^2/2 - z*h those become residuals in "
+        f"Q_beta of {mp.nstr(pct_aug, 7)} % and {mp.nstr(pct_zD, 7)} %, "
+        f"reproducing this arc's +12.470 % and -43.157 %. NOT a discrepancy -- "
+        f"two coordinates for one shortfall. Recorded because a reader meeting "
+        f"both pairs will otherwise conclude one is stale.",
+    )
+
+    # ---- 7. my own 'factor 11.2' understated the gap by ~12x ---------------
+    # The gap was stated as a ratio of the generator eigenvalue a. But a enters
+    # only through cosh, and near a = 0, cosh a - 1 ~ a^2/2 -- so a ratio in a
+    # is roughly the SQUARE ROOT of the ratio in the quantity that matters.
+    a_needed = mp.acosh(R_zD)
+    a_kd = mp.log(q)
+    ratio_in_a = a_needed / a_kd
+    ratio_in_deviation = (R_zD - 1) / (kd_char - 1)
+    check(
+        "stating_the_gap_in_a_understates_it_by_an_order_of_magnitude",
+        ratio_in_deviation > 100 > ratio_in_a,
+        f"CORRECTION to this session's own framing. The route-5 gap on the "
+        f"ruled base was reported as 'a factor 11.2', i.e. a_needed/a_KD = "
+        f"{mp.nstr(ratio_in_a, 6)}. But `a` enters only through cosh, and near "
+        f"a = 0, cosh a - 1 ~ a^2/2, so a ratio in `a` is about the SQUARE ROOT "
+        f"of the ratio in the deviation the correction must actually supply. "
+        f"That deviation ratio is (R - 1)/(cosh(ln q_0) - 1) = "
+        f"{mp.nstr(ratio_in_deviation, 6)}x -- Kohno-Drinfeld supplies "
+        f"{mp.nstr((kd_char - 1) * 100, 4)} % where {mp.nstr((R_zD - 1) * 100, 5)} "
+        f"% is needed. Quote the deviation ratio; 'factor 11.2' understates the "
+        f"gap by roughly an order of magnitude and flatters the route.",
+    )
+
     allp = all(r["passed"] for r in RESULTS)
     print(f"  {sum(r['passed'] for r in RESULTS)}/{len(RESULTS)} checks passed")
 
@@ -311,6 +363,19 @@ def main() -> int:
             "1 <= cosh (real-spectrum character >= 1) -- QOU.QBeta."
             "HolonomySpectrumSignObstruction, sorry-free",
         ],
+        "gap_magnitude_correction": (
+            "The route-5 gap on the ruled base must be quoted as the DEVIATION "
+            "ratio (R-1)/(cosh(ln q0)-1), not as a_needed/a_KD. `a` enters only "
+            "through cosh and cosh a - 1 ~ a^2/2 near 0, so the ratio in `a` is "
+            "about the square root of the ratio that matters and understates the "
+            "gap by roughly an order of magnitude."
+        ),
+        "cross_validation": (
+            "bean qou-99qc's z-space figures (z* = 0.99850; z = q at +11.17 %, "
+            "z_D at -38.64 %) and this arc's Q_beta residuals (+12.470 %, "
+            "-43.157 %) are the SAME statement in two coordinates, related by "
+            "the exact functional h^2/2 - z*h. Not a discrepancy."
+        ),
         "scope": (
             "(b) for the two class statements, each citing a proved invariant; "
             "(a) for every number. Derives no alpha, selects no base, proposes "
