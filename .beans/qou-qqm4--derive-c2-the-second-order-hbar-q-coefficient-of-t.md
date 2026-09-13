@@ -5,11 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T16:37:08Z
-updated_at: 2026-09-13T14:22:41Z
-updated_at: 2026-09-13T13:50:50Z
-updated_at: 2026-09-13T13:07:38Z
-updated_at: 2026-09-13T12:47:52Z
+updated_at: 2026-09-13T18:31:42Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1689,3 +1685,96 @@ exit 0 / 0 warnings; `#print axioms` clean on all 15 declarations.  Probe 7/7.
 identity:** which channel the weak vertex projects onto, and why.  The corpus
 asserts left-handed ⇒ alternating; the flavour split needs symmetric.  One of the
 two has to give, and neither is derived here.
+
+
+## 2026-09-13 — the baseline IS the Markov trace of the k=2 reversal, at the AUGMENTATION
+
+### First: I RETRACT part of #7320
+
+#7320 said the conjecture's OWN stated channel gives the split the wrong sign,
+reading its "the weak interaction is strictly left-handed, so it projects onto
+the fully alternating channel of H_4" as a claim about the split. **That
+conflated the block's two levels.** The alternating channel is claimed there for
+the RESIDUAL — the ~1.76e-6, 0.128 % Schwinger-analogue refinement on top of the
+baseline — not for the baseline, which the block carries channel-free. There was
+no wrong-sign claim to make against the block.
+
+Found by reading the block's .md in full rather than only its .lean. Both of this
+session's retractions came from skipping that read. Corrected at all three sites
+(CrossingReversalParity.lean header + Archimedean section + two docstrings;
+crossing_reversal_parity_probe.py docstring + section 7 + VERDICT). Every theorem
+of #7320 survives untouched and is now USED — see the channel-average result
+below.
+
+### What replaces it, and it is sharper: the block's two halves do not connect
+
+* NARRATIVE half derives the reversal at **k = 3**: `sigma^3 - sigma^-3 = q^3 - q^-3`,
+  central — correct, the odd case of `reversal_rec`.
+* FORMULA half displays `X_baseline = (q-1)^2(1-q^-4)/3`, which is the reversal
+  at **k = 2**.
+
+Measured: `hbar_q^2(q^3-q^-3)/3 = 0.00208228` is **+51.17 %** against the measured
+split, where the displayed baseline is **-0.128 %**. They differ by
+`(q^2-q+1)(q^2+q+1)/(q(q^2+1)) = 1.5136`, a factor the block neither states nor
+derives. So the quantity actually used sits at k = 2, where by `reversal_two` the
+reversal is NOT central — and needs a trace, not a channel.
+
+### The trace, and it pins the Markov parameter
+
+`tr(1) = 1` and `tr(sigma) = z` fix it on `2h*sigma - h^2`:
+
+    tr_z(sigma^2 - sigma^-2) = 2hz - h^2 = h*(b_pp + b_nn)
+
+— h times the sum of the corpus's own two like-pair bond letters (`tr_bond_interp`
+at t = 0, 1). At the two admissible parameters of `qou-99qc`:
+
+| parameter | `tr_z` | `hbar_q^2 tr_z/3` | vs measured |
+|---|---|---|---|
+| augmentation `z = q` | `q^2 - q^-2` EXACTLY | **= X_baseline exactly** | -0.128 % |
+| convention D `z_D` | `alpha*(q^2-q^-2)` | `alpha*X_baseline` | **-49.5 %** |
+
+`alpha = (q^4+1)/(q^2+1)^2`, with `1/2 < alpha < 1` strictly for every q > 1
+(both bounds factored, not asserted); `alpha(q0) = 0.505404`.
+
+**alpha is NOT a new constant** — it is literally the same rational function as
+the 2026-09-08 Q_beta ruling's augmentation-to-z_D factor. Same two Markov
+parameters, same ratio, second observable.
+
+### Also: the equal-weight channel average VANISHES
+
+`docs/audits/2026-06-17-hecke-channel-chirality-binding.md` carries
+`w_sym = w_alt = q^2/(q^4+4q^2+1)` (verified: equal, both bar-invariant, three
+sum to 1). With #7320's `alternating_eq_neg_symmetric` the weighted sum is
+identically zero. Scope (b) for the averaged reading only — invariant = weight
+equality + exact negation; says nothing about the standard channel or unequal
+weights.
+
+### WHAT IS NOT DERIVED — do not read this bean as closing anything
+
+That the split IS `hbar_q^2 tr_z(...)/3` for any z. The `hbar_q^2/3` prefactor is
+the block's, unexplained there and unexplained here. GIVEN that shape the
+parameter is pinned; the shape itself is not derived.
+
+**The exactness at z = q is NOT offered as evidence for the augmentation.**
+NO-FITTING: selecting a branch because it reproduces the measured value is
+fitting even with no continuous parameter, and accuracy is never a tie-breaker.
+This is the FORK and its exact size, reported as a consequence: under the ruled
+z_D the construction predicts a model flavour split 49.5 % low. That is
+falsifiable, and it is the owner's call, not mine — the Q_beta half is `qou-99qc`,
+where the owner ruled for z_D against the augmentation.
+
+### Artifacts
+
+* `QOU/Hecke/MarkovCrossingReversal.lean` — 12 decls, lean-direct exit 0 / 0
+  errors / 0 warnings, `#print axioms` propext+choice+Quot.sound only on all 12
+* `computations/qbeta/flavour_split_baseline_is_augmentation_trace_probe.py` — 7/7
+* corrections to `CrossingReversalParity.lean` and `crossing_reversal_parity_probe.py`
+
+### STILL OPEN (bean stays open — open conjecture)
+
+1. Where `hbar_q^2/3` comes from. Unexplained by everyone.
+2. Which Markov parameter the flavour split takes — owner decision, coupled to
+   `qou-99qc`. A consistency answer across Q_beta and the split is wanted, not
+   two independent picks.
+3. The block's 1.5136 gap between its own two halves is unaddressed by this work;
+   it is *located*, not closed.
