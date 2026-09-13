@@ -1,21 +1,21 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T13:55:52.785103+00:00",
-  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
+  "computedAt": "2026-09-13T05:27:19.075729+00:00",
+  "commitSha": "e49a3cbd4e6a3bad14704de3335114d7772e15a6",
   "assertions": [
     {
       "name": "family_a_h0_matches_classical_dimension_mean",
-      "computed": "2.5",
-      "expected": "2.5",
+      "computed": "1.4037234971558425962e-50",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
       "source": "Route A: h⁰ coefficient of the 3-point Vandermonde fit of (1/4)Σ dim_q V_λ at q ∈ {1.05, 1.08, 1.11}. Route B: the q→1 limit (Σ d_λ)/4 = 10/4 from the integer hook-length formula d_λ = 4!/Π hooks."
     },
     {
       "name": "family_a_h2_matches_declared_three_quarters",
-      "computed": "0.75",
-      "expected": "0.75",
+      "computed": "1.2617211263841523051e-48",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
       "source": "Route A: h² coefficient of the same Vandermonde fit. Route B: the 3/4 the repo's Reading B is written in terms of — '5/2 + (3/4 − G)·h²' (module docstring; audit 2026-05-23). Reading B's reported a_2 is only meaningful if Family A really carries that 3/4."
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 292,
+  "durationMs": 282,
   "computation": "dirac-yekutieli-combinations-50dps",
   "scriptFile": "dirac_yekutieli_combinations_50dps.py",
-  "scriptHash": "ddf1788afe90",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "fbb614a7e3f5",
+  "scriptCommitSha": "e49a3cbd4e6a3bad14704de3335114d7772e15a6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +57,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "9916510690677ea8"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

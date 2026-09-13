@@ -425,3 +425,77 @@ Each of the 11 is a choice between regenerating a witness — which deletes
 recorded analysis, including a retraction — and restoring producing code from
 history. The `per_irrep_pole_*` pair is the one with a reader-facing consumer
 and an existing MAJOR sidecar finding, so it is where the value is.
+
+
+---
+
+## Class 1 DRAINED again 2026-09-13 — and the refill hypothesis I was about to publish is REFUTED
+
+### The eight sites, and what they now record
+
+`computations/audits/tolerance_below_arithmetic_floor_audit.py` was `exit=1`,
+**7 flagged assertions across 7 files**. All seven are fixed by the remedy the
+audit prints in its own output — *"Fix by asserting the RESIDUAL against 0, not
+the value against a target"* — plus **one eighth site the audit cannot see**
+(`dirac_yekutieli_combinations_50dps.py`'s `family_a_h0_...`, whose `expected`
+is an expression rather than a literal). Detector now `exit=0`, 0 flagged,
+selftest PASS.
+
+**Four of the eight now carry a MEASURED residual where they previously
+recorded a rounded value indistinguishable from its target:**
+
+| site | was | now |
+|---|---|---|
+| `mu_substrate_tension_audit_100dps` `vol_4_1_matches_known_value` | `2.02988…862` vs `…861506` | **5.996e-49** vs 0 |
+| `dirac_yekutieli` `family_a_h0_matches_classical_dimension_mean` | `2.5` vs `2.5` | **1.404e-50** vs 0 |
+| `dirac_yekutieli` `family_a_h2_matches_declared_three_quarters` | `0.75` vs `0.75` | **1.262e-48** vs 0 |
+| `he3_tritium_cosh_asymmetry` `intra_pn_difference_is_bar_odd_exact_h` | `1.0` vs `1` | **4.592e-41** vs 0 |
+
+The other four are exactly `0.0`. Note the `he3` one: `4.592e-41` against a
+`1e-35` tolerance clears by only ~6 orders, where the old form claimed 1e-35
+resolution on a quantity float64 could not resolve past ~2.2e-16. That is the
+point of the class — the bound is now real, and it is *nearly* tight.
+
+All seven producers re-run, all `exit=0`. No result moved. Three witnesses were
+byte-identical and `WitnessBuilder` correctly kept their on-disk provenance
+(`[unchanged — kept on-disk commitSha for staleness]`).
+
+### 🛑 The refill rate I was about to report was a burst, not a rate
+
+I had a framing ready to publish: *"the hook IS wired as a `PreToolUse` hook —
+so it fires, and the class still refilled 0 → 7 in eight days from ordinary
+probe authoring. That's the same shape AGENTS.md records for raw-float64:
+warn-only drains get refilled."* — and a proposal to put promoting the detector
+into `scripts/precision-gates.sh` to the owner.
+
+**Measured on pristine `origin/main` at `c9fd78b0ad`: still exactly 7 flagged,
+the same 7 files. Zero new sites.** That is **441 commits** and **8 days**
+past the burst, including **54 changed files under `computations/probes/`** —
+precisely the authoring activity the "~1 site/day" reading predicted would
+refill it.
+
+So the 2026-08-30 → 09-05 accretion was a **burst**, and a six-day window is
+not a rate. `scripts/precommit-tolerance-floor-warn.sh` is still wired at
+`.claude/settings.json:64`; the detector is still absent from
+`scripts/precision-gates.sh` (`grep -c` → 0). **On this evidence the warn-only
+hook is holding, and promoting it to a blocking gate is not worth the owner's
+attention.** Recommendation withdrawn.
+
+### Free finding, NOT fixed here — a live scan gone red on a word, not a thing
+
+`em_linking_upper_bound_precision_budget.py`'s
+`no_ropelength_or_ideal_knot_source_in_the_repo` is **red on re-run** (`computed
+3`, `expected 0`) and **green in the witness committed on `main`**. Its three
+hits are all the same passing phrase — *"a Möbius-energy or ropelength
+minimiser"* — in `probes/the_torsion_half_is_not_an_invariant_probe.py` (+ its
+witness) and `mass-theory/frenet-framing-is-not-an-invariant.md`, each saying
+what the framing is *not* an invariant of. **No ropelength material has been
+acquired**; `ACQUISITION_TERMS` matches the word.
+
+The producer's author anticipated the flip — *"Recorded as a LIVE scan so a
+future acquisition flips this assertion instead of this going stale"* — and also
+recorded that the probe's conclusion does not depend on it (*"the precision
+argument above is independent of it"*). Narrowing the regex is a judgement about
+what counts as an acquisition, which is neither a precision increase nor
+corpus-derived, so under the 2026-09-07 ASK-THE-OWNER directive it is reported
+rather than done.
