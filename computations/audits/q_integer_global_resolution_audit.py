@@ -36,6 +36,48 @@ BUILTIN = set(dir(builtins))
 Q = sp.Symbol('q', positive=True)
 NAMEPAT = ('q_int', 'qint', 'qb', 'q_bracket', 'qbracket', 'q_num', 'bracket')
 
+# NAMEPAT is a SUBSTRING match, which admits two false-positive families.
+# Measured on the full tree: 13 of 174 one-argument candidates matched on a
+# substring alone, and 12 of those are not q-integer definitions.
+#
+#   'qb' inside 'qbeta' (8).  In this corpus `qbeta` is the BETA-DECAY
+#   Q-VALUE -- a different quantity from [n]_q, per the CAL-2 row of
+#   AGENTS.md's derivation cheat-sheet.  `_sigma_qbeta`, `dc3_dQbeta`,
+#   `_qbeta_dln_dlnq`, `load_qbeta_precision_ladder` are about Q_beta and
+#   have no bracket in them.
+#
+#   a VERB-named helper (4).  `verify_bracket_cancellation` returns bool,
+#   `check_bracketing` returns a dict report; both are test helpers, not
+#   definitions.  `L2_bracket` is a dilogarithm bracket
+#   (ln z/(1-z)^2 - ln(1-z)/z^2) and `mirror_bracket` is 5*2^(-A-1) -
+#   13*4^(-A); neither is a q-integer.
+#
+# The thirteenth, `_bracket`, IS genuine -- its docstring and body are
+# exactly (q^n - q^-n)/(q - q^-1) -- so the inner-substring match is not
+# excluded wholesale, only these two families.
+#
+# WHAT THIS DOES NOT CHANGE, and it is the reassuring part: every one of the
+# 12 landed in OTHER (2) or UNRESOLVED (10).  NOT ONE was counted as a
+# convention, so the "zero new conventions" result was never contaminated by
+# them -- they only inflated the denominator and the dark set.
+_QBETA_IS_THE_DECAY_Q_VALUE = 'qbeta'
+_HELPER_PREFIXES = ('verify_', 'check_', 'load_', 'test_', 'assert_')
+
+
+def _is_candidate_name(name: str) -> bool:
+    """A NAMEPAT hit that is not one of the two measured false-positive families."""
+    n = name.lower()
+    if not any(k in n for k in NAMEPAT):
+        return False
+    if n.lstrip('_').startswith(_HELPER_PREFIXES):
+        return False
+    # Drop a match that survives ONLY because 'qb' sits inside 'qbeta'.
+    if _QBETA_IS_THE_DECAY_Q_VALUE in n:
+        without_qbeta = n.replace(_QBETA_IS_THE_DECAY_Q_VALUE, '')
+        if not any(k in without_qbeta for k in NAMEPAT):
+            return False
+    return True
+
 # Names that are LIBRARIES, not quantities -- bound to shims, never to q.
 LIBS = {'mp', 'mpmath', 'sp', 'sympy', 'np', 'numpy', 'math'}
 # Sources that MEAN "the substrate modulus".  A root assignment, not a guess:
@@ -332,7 +374,15 @@ def main() -> int:
     blocked, results = 0, []
     for r in roots:
         for p in sorted(r.rglob('*.py')):
-            if '_deprecated' in str(p):
+            # Align the skip list with the sibling q_integer_duplication_audit,
+            # which already excludes these.  This audit skipped only
+            # `_deprecated`, so it was walking TEST files and counting their
+            # functions as q-integer definitions -- `test_smoke.py::
+            # test_q_int_quantum_integers` was in the denominator.  A test
+            # ASSERTS a bracket; it does not DEFINE one, and the two audits
+            # disagreeing about that is a difference with no reason behind it.
+            if any(k in str(p) for k in ('_deprecated', '/tests/', '.lake',
+                                         'node_modules')):
                 continue
             try:
                 tree = ast.parse(p.read_text())
@@ -342,7 +392,7 @@ def main() -> int:
             imports = top_level_imports(tree)
             for node in tree.body:
                 if not (isinstance(node, ast.FunctionDef)
-                        and any(k in node.name.lower() for k in NAMEPAT)):
+                        and _is_candidate_name(node.name)):
                     continue
                 if len(node.args.args) >= 2:
                     continue                      # the duplication audit reaches these
