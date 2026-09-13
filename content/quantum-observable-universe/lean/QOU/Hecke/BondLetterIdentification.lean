@@ -335,6 +335,31 @@ Swapping the two like-pair letters swaps `a` and `b`, which inverts the ratio.
 Nothing else **in the bond model** distinguishes a proton from a neutron — that
 scope is exact and load-bearing; see the correction below.
 
+🛑 **The δ-cancellation here is a RE-DERIVATION — the corpus got there first.**
+`QOU.QBeta.InterfaceScalar.mirror_split_eq_L_diff` (sorry-free) already proves
+it, and its docstring states the reason in the same words: *"³H = `pnn` carries
+bonds `{pn, nn}` and ³He = `ppn` carries `{pp, pn}`, so the predicted splitting
+is `α(L_nn − L_pp)` regardless of what the p–n bond is."* What is new here is
+only the **closed form** `q^(4(Z−N))` for the bare bond-product ratio, and its
+generalisation off `A = 3`; the cancellation itself is not.
+
+🛑 **Reconciling that closed form with the corpus's measured split is NOT
+done.** `InterfaceScalar` reports `α(L_nn − L_pp) = 2.27077 MeV` under
+convention C and `0.76532 MeV` under D with the writhe term wired. The ratio
+here is the **bare** bond product, before `α` and before the writhe
+normalisation `(1−h)^(Δe/2)`, so the two are not directly comparable and no
+arithmetic bridging them is attempted. Anyone quoting both must do that step.
+
+🛑 **The assignment this file's `t = 0` / `t = 1` endpoints encode is reported
+FALSIFIED.** Bean `qou-0pzi` (live) concludes from the two-nucleon signs that
+*"`pp = sigma`, `nn = sigma^-1` cannot be the right assignment"*: the model
+makes the diproton and dineutron **bound** (`+2.5416`, `+3.3069` MeV) where
+nature has both unbound. That is a **scope-(a)** negative — this assignment,
+alone, gets the two-nucleon signs wrong — with no proved invariant excluding
+the ingredient, so do not upgrade it to scope (b). The theorems in this file
+are unaffected: they say what a given letter contributes, not that the
+production letters are right.
+
 🛑 **The bond letters are NOT the only p/n injection in the framework.**
 `appendix-mass-binding-algorithms/mba-sidecar-mirror-cancellation` records a
 second one, upstream of this file: the **intra**-nucleon writhe asymmetry,

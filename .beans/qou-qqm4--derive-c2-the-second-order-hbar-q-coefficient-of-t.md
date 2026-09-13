@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T10:44:32Z
+updated_at: 2026-09-13T10:47:10Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1035,6 +1035,77 @@ contract requiring same-PR updates for mass/binding changes. This PR adds Lean
 theorems and changes no algorithm, compute or witness, so nothing there is
 stale on its account — flagging rather than editing another arc's contract,
 per ASK-BEFORE-CHANGING.
+
+
+## 🛑 THIRD correction, and this one retracts a novelty claim
+
+A six-path corpus-grep (run late, after I had already written the claims into
+this bean and PR #7285) found three things that change the entries above.
+
+### A. The delta-cancellation is a RE-DERIVATION
+
+`QOU.QBeta.InterfaceScalar.mirror_split_eq_L_diff` is **sorry-free on main**,
+and its docstring states my reasoning in almost my words:
+
+> On the chain topology `3H = pnn` carries bonds `{pn, nn}` and `3He = ppn`
+> carries `{pp, pn}`, so the predicted splitting is `alpha (L_nn - L_pp)`
+> **regardless of what the p-n bond is**.
+
+That IS "delta cancels from the mirror ratio". It was in the corpus before I
+derived it. **What is actually new is narrower than I claimed**: the *closed
+form* `q^(4(Z-N))` for the bare bond-product ratio, and its generalisation off
+`A = 3`. The cancellation is not mine.
+
+### B. The orientation is not merely underived — it is reported FALSIFIED
+
+Bean `qou-0pzi` (`status: todo`, live):
+
+> So `pp = sigma`, `nn = sigma^-1` **cannot be the right assignment**
+
+because the model makes the diproton `+2.5416` and the dineutron `+3.3069`
+**bound**, where nature has both unbound (the pn/deuteron case is bound and
++27.3 % over). This is a **scope-(a)** negative — this assignment, alone, gets
+the two-nucleon signs wrong — and names no proved invariant excluding the
+ingredient, so it must NOT be upgraded to scope (b).
+
+That is much more consequential than "underived", and I did not have it.
+
+### C. "Nothing derives it" was falsifiable by one grep
+
+There IS a stated rationale — `computations/inter_nucleon_linked_channel.py:16`
+and `docs/audits/2026-06-01-inter-nucleon-linked-channel.md:68`, *"Chirality
+(matter/matter vs matter/antimatter) gives the sign"*. It does not hold (the
+`epsilon` rule it cites keys on whether the two flavours MATCH, giving `+1` for
+pp and nn alike, and that block lists the epsilon sign rule as its own open
+question), and a second "DERIVED via integer-LP / SDP" claim in
+`computations/_deprecated/` misattributes scripts that hold the quark crossings
+fixed and optimise only the gluon tail. But "nothing in the corpus derives or
+justifies it" is the sentence a reviewer falsifies in one grep.
+
+**The accurate form, which is a stronger claim and checkable:** the orientation
+is **asserted, not derived, and not declared as a convention either**. Two
+ledgers already log it — *"asserted ... without a `prop:` block"*
+(`docs/coordination/2026-05-24-low-isotope-mass-anatomy-ledger.md:31`) and
+*"the framework's own crossing **convention**"* (`docs/coordination/option-e.md:340`).
+No Lean forces it: `MarkovBondRule.bond_pp_nn` takes `d = 0` / `d = -h` as
+INPUTS and carries the flavour attribution only in its docstring.
+
+### D. The intra-nucleon letters are not an upstream rescue
+
+`tools/pyhecke/python/pyhecke/atom.py:524-531` applies the identical map one
+scale down — `uu -> sigma`, `dd -> sigma^-1`, `ud -> avg` — and `atom.py:69-70`
+says of it, verbatim, *"nothing here establishes what convention a u-d crossing
+should carry."* So the upstream carries the same undecided choice, not a
+derivation of it.
+
+### Still not done, and it is a concrete next step
+
+My closed form is for the **bare** bond-product ratio, before `alpha` and before
+the writhe normalisation `(1-h)^(Delta_e/2)`. `InterfaceScalar` reports the
+measured split as `alpha(L_nn - L_pp) = 2.27077 MeV` under convention C and
+`0.76532 MeV` under D with writhe wired. **No arithmetic bridging the two has
+been written down**, by me or by the corpus, and anyone quoting both owes that
+step.
 ---
 
 COORDINATION NOTE (2026-09-13, session gracious-dijkstra, from bean `qou-gba1`).
