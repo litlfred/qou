@@ -229,3 +229,25 @@ while the LP's active set is 9 of 10 at every reachable target for both atoms.
 
 Audit: `docs/audits/2026-09-12-uic-gate-primal-lp-hunt.md`. Stays OPEN — the
 sign convention is untouched by this.
+
+## Cross-reference: the UIC resolvent cone is now mpf (2026-09-12, bean `qou-oiz3`, PR #7245)
+
+Owner directive "excise float64" of the same day. Every quantity this bean's
+sign question runs through — `C_lambda_resolvent_MeV`, `mu_lambda`, `s_*`,
+`rho_lambda`, and the per-atom gated/ungated totals — has moved, at the
+~1e-16 relative level. If this bean quotes a `C_lambda` or a gated total to
+more than ~15 significant digits, re-read it from the refreshed witness rather
+than from the recorded figure.
+
+**What did NOT change:** no sign flips. The gated/ungated totals keep their
+signs and their tight-partition counts at every atom measured
+(k_exact = 4 and 6, A = 1..8), so nothing in this bean's argument is affected
+in direction — only in the last digits.
+
+**What is worth carrying over:** the residual. `C_lambda = m_e * H_q * y_lambda
+* rho_lambda` is still float64-limited through THREE of its four factors,
+because `q_hook_product` / `q_factorial` / `wedderburn_weight` accumulate
+`mp.mpf(1) * q_int(k)` over the float64 `q_int` — mpf-typed, float64-valued.
+Measured: 1.0212424e-15 at lambda = (2,2), against the 2.4946976e-16 that PR
+removed. So a sign-convention argument that turns on a difference smaller than
+~1e-15 in `C_lambda` is not yet decidable by this code.

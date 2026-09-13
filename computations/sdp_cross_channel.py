@@ -57,6 +57,19 @@ except ImportError:
     _HAVE_CVXPY = False
 
 
+# ── float64 SOLVER BOUNDARY (2026-09-12, "excise float64"; bean `qou-oiz3`) ──
+# `q_laplacian_eigenvalue` now returns an `mpf` (it accumulated over the
+# float64 `q_int` before).  cvxpy/SCS is a float64 numerical solver and cannot
+# take an mpf coefficient, so every mu that reaches a cvxpy expression is cast
+# HERE, at the boundary, and nowhere else.  That is the one place AGENTS.md
+# permits a `float()` outside a display: a solver whose own arithmetic is
+# float64 cannot be handed more precision than it has.  The scalar-LP fallback
+# below does NOT cast -- it is pure Python arithmetic and keeps the mpf.
+def _f64_for_solver(x):
+    """Narrow an exact/mpf coefficient to float64 for the cvxpy solver."""
+    return float(x)
+
+
 def sdp_bulk_shadow_price(partition_entries, n_target):
     """Solve the SDP dual over a set of partition entries, return y₀*.
 
@@ -107,7 +120,7 @@ def sdp_bulk_shadow_price(partition_entries, n_target):
     # For REAL SDP cross-coupling, we'd add coupling variables c_{λμ}.
     constraints = []
     for i, entry in enumerate(partition_entries):
-        mu = entry['q_laplacian_eigenvalue']
+        mu = _f64_for_solver(entry['q_laplacian_eigenvalue'])
         # Scalar form first (baseline LP):
         constraints.append(y0 + y_lambda[i] <= mu)
 
@@ -232,7 +245,7 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
     constraints = []
     # Base (scalar) LP constraints: y0 + y_λ ≤ μ_λ
     for i, entry in enumerate(partition_entries):
-        mu = entry['q_laplacian_eigenvalue']
+        mu = _f64_for_solver(entry['q_laplacian_eigenvalue'])
         constraints.append(y0 + y_lambda[i] <= mu)
 
     # SDP 2×2 PSD constraint per pair:
@@ -241,8 +254,8 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
     pair_list_keys = list(c_pair.keys())
     for key in pair_list_keys:
         i, j = key
-        mu_i = partition_entries[i]['q_laplacian_eigenvalue']
-        mu_j = partition_entries[j]['q_laplacian_eigenvalue']
+        mu_i = _f64_for_solver(partition_entries[i]['q_laplacian_eigenvalue'])
+        mu_j = _f64_for_solver(partition_entries[j]['q_laplacian_eigenvalue'])
         M = cp.bmat([
             [mu_i - y0 - y_lambda[i], c_pair[key]],
             [c_pair[key], mu_j - y0 - y_lambda[j]],
@@ -259,8 +272,8 @@ def sdp_with_atom_observables(Z, N, partition_entries, pair_couplings):
         # for maximum coherence.  Add as soft equality (EQUALITY constraint
         # drives non-zero solution).
         target_c = _math.sqrt(phi_diag[i] * phi_diag[j]) * (
-            (partition_entries[i]['q_laplacian_eigenvalue']
-             + partition_entries[j]['q_laplacian_eigenvalue']) / 2
+            (_f64_for_solver(partition_entries[i]['q_laplacian_eigenvalue'])
+             + _f64_for_solver(partition_entries[j]['q_laplacian_eigenvalue'])) / 2
         )
         # Scale by observed chi_i · chi_j sign
         sign_ij = 1 if chi_rescaled[i] * chi_rescaled[j] >= 0 else -1
@@ -337,7 +350,7 @@ def sdp_with_pair_coupling(partition_entries, pair_couplings, n_target):
     # (cross couplings add off-diagonal LMI terms for paired blocks).
     constraints = []
     for i, entry in enumerate(partition_entries):
-        mu = entry['q_laplacian_eigenvalue']
+        mu = _f64_for_solver(entry['q_laplacian_eigenvalue'])
         constraints.append(y0 + y_lambda[i] <= mu)
 
     # Pair-block 2×2 PSD constraints: for each (i,j) pair,
@@ -346,8 +359,8 @@ def sdp_with_pair_coupling(partition_entries, pair_couplings, n_target):
     # ⟹ (μ_i − y₀ − y_i)(μ_j − y₀ − y_j) ≥ c_{ij}²  AND diag ≥ 0.
     for (i, j, h_coup) in pair_couplings:
         key = (min(i, j), max(i, j))
-        mu_i = partition_entries[i]['q_laplacian_eigenvalue']
-        mu_j = partition_entries[j]['q_laplacian_eigenvalue']
+        mu_i = _f64_for_solver(partition_entries[i]['q_laplacian_eigenvalue'])
+        mu_j = _f64_for_solver(partition_entries[j]['q_laplacian_eigenvalue'])
         M = cp.bmat([
             [mu_i - y0 - y_lambda[i], c_pair[key]],
             [c_pair[key], mu_j - y0 - y_lambda[j]],
@@ -585,8 +598,8 @@ def q_sweep_sdp_atom(Z, N, q_values, k_cap=5):
             # c_ij target (from SDP equality constraint)
             sign_ij = 1 if chi_by_idx[i] * chi_by_idx[j] >= 0 else -1
             target_c = sign_ij * _math.sqrt(phi[i] * phi[j]) * (
-                (entries[i]['q_laplacian_eigenvalue']
-                 + entries[j]['q_laplacian_eigenvalue']) / 2
+                (_f64_for_solver(entries[i]['q_laplacian_eigenvalue'])
+                 + _f64_for_solver(entries[j]['q_laplacian_eigenvalue'])) / 2
             )
             key_name = (lam, conj) if lam < conj else (conj, lam)
             pair_results.append({

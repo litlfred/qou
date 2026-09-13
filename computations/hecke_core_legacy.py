@@ -66,6 +66,44 @@ from q_parameter import Q_MP as _Q_MP, Q_INV_MP as _QI_MP, HA_MP as _H_MP
 from mpmath import mp as _mp
 
 
+# ── Exact q-integer (owner directive 2026-09-12, "excise float64") ────
+# `q_int` imported above is FLOAT64: `q_parameter.Q` is a Python float and
+# `q_int(n) = (Q**n - Q_INV**n) / HA` is float arithmetic end to end.  Every
+# quantity built out of it is float64-valued no matter what type it carries --
+# `q_hook_product` and `q_factorial` return `mpf` and accumulate
+# `mp.mpf(1) * q_int(k)`, which is a float64 number in mpf clothing.
+#
+# `_q_int_mp` is the same symmetric bracket over `_Q_MP`, the module's single
+# mpf q -- the SAME constant the seminormal builder uses.  Deliberately the
+# same one rather than a fresh `q_at(dps)` solve: a character and the YSN
+# matrices it is the character OF must be evaluated at one q, and two mpf q's
+# in one table is a straddle even at 1e-52.
+#
+# `_Q_MP` carries the 50 digits of `Q_50_DIGIT_STR`, so it is a ~1e-52 ceiling
+# on a COMPUTE_DPS = 70 compute -- BELOW `OUTPUT_DPS = 60`, i.e. a value
+# serialized at 60 digits from it has ~8 padded digits.  That is a real
+# residual and it is recorded, not fixed here (bean `qou-oiz3`); it is 36
+# orders of magnitude tighter than the float64 path it replaces.
+#
+# NOT `_Q_FRAC` from `pyhecke.gram`: that is the engine's rational `1.11`
+# (3 significant figures, measured 1.93e-5 from the anchor) and exists for
+# exact-rational Hecke reduction, not for numerics.
+def _q_int_mp(n: int):
+    """Symmetric quantum integer [n]_q = (q^n − q^−n)/(q − q^−1) in mpmath
+    arithmetic at the ambient working precision.
+
+    The mpf twin of the float64 `q_int`.  Defined for every integer n
+    including 0 and negatives ([0]_q = 0, [−n]_q = −[n]_q), which the
+    q-Laplacian needs: the content c(□) = col − row runs negative.
+
+    Carries no memo: mpmath rounds to the AMBIENT `mp.dps`, so a cached
+    value computed under one working precision would be silently reused
+    under another -- the defect `unified_iterative_correction`'s own
+    `workdps` wrapper exists to stop.
+    """
+    return (_Q_MP ** n - _QI_MP ** n) / _H_MP
+
+
 # pyhecke bootstrap (mirrors hecke_core.py) — note `_os` and `_sys`
 # are already imported above unconditionally; this block only fixes
 # sys.path if pyhecke isn't installed.
@@ -278,10 +316,20 @@ def q_laplacian_eigenvalue(partition):
 
     Base-ring independent: formula is polynomial in q, q⁻¹ with
     integer coefficients, valid over any ring where q − 1 invertible.
+
+    PRECISION (2026-09-12, owner directive "excise float64"; bean
+    `qou-oiz3`).  This accumulated `casimir_sum = 0.0` over the FLOAT64
+    `q_int`, so μ_λ carried 53 bits.  It is now `_q_int_mp` end to end and
+    returns an `mpf`.  The measured move on the resolvent scale
+    C_λ = m_e·H_q(λ)·y_λ·ρ_λ(s_*) is at most 3.55646e-16 relative over the
+    31 contributing blocks at k ≤ 7 -- the floor of the arithmetic it
+    replaces, which is a bound on the damage and NOT evidence the old path
+    was correctly rounded.  See PR #7237 / bean `qou-t6be`, which found this
+    and deliberately left it.
     """
     lam = list(partition)
     if not lam:
-        return 0.0
+        return _mp.mpf(0)
     # Jucys-Murphy Casimir: Σ [c]_q[c+1]_q (bare, no ℏ_q² prefactor).
     # The ℏ_q² = ((q−1)/q)² is the conversion factor to the SPIN piece
     # of the q-Laplacian (Δ_ξ eigenvalue = ℏ_q² × JM Casimir).  For
@@ -289,11 +337,11 @@ def q_laplacian_eigenvalue(partition):
     # correct spectral operator — it measures the TOTAL partition
     # content including both spatial and spin pieces via the Jucys-Murphy
     # representation of the centre of H_n(q).
-    casimir_sum = 0.0
+    casimir_sum = _mp.mpf(0)
     for i, li in enumerate(lam):
         for j in range(li):
             c = j - i
-            casimir_sum += q_int(c) * q_int(c + 1)
+            casimir_sum += _q_int_mp(c) * _q_int_mp(c + 1)
     return casimir_sum
 
 
@@ -317,12 +365,20 @@ def q_resolvent_weight(partition, s=None):
     This resolvent damping replaces the ad-hoc Kerov Plancherel
     multiplier: it is DERIVED from the q-heat spectrum rather than
     assumed from the q-hook walk's stationary measure.
+
+    PRECISION (2026-09-12, "excise float64"): `s` defaulted to the float64
+    `(q0 - 1.0)/q0` and the quotient was a float64 `1.0 / (mu + s)`.  Both
+    are now mpf; a caller-supplied `s` is promoted with `mpf(str(s))` so a
+    float64 argument is carried at the value it states rather than at its
+    binary tail.
     """
     if s is None:
         # Default: Planck-step Reeb time scale s_* = (q − 1) / q
-        s = (q0 - 1.0) / q0
+        s = S_REEB_PLANCK
+    elif not isinstance(s, _mp.mpf):
+        s = _mp.mpf(str(s))
     mu = q_laplacian_eigenvalue(partition)
-    return 1.0 / (mu + s)
+    return 1 / (mu + s)
 
 
 def lp_shadow_price(partition):
@@ -518,9 +574,14 @@ def partition_character_sigma1(partition):
     Derived from YSN eigenvalue structure:
         χ_λ(σ_1) = q · n_row + (-q⁻¹) · n_col + h · n_mix_pairs
     where n_row / n_col / n_mix_pairs are SYT counts by (1,2)-relation.
+
+    PRECISION (2026-09-12, "excise float64"): the SYT counts are exact
+    integers (`_count_syts_by_12_relation` guards them with `Fraction`), and
+    this then multiplied them by the float64 `q0` / `qi` / `h`, throwing the
+    exactness away in the last line.  Now over `_Q_MP` / `_QI_MP` / `_H_MP`.
     """
     nr, nc, nm = _count_syts_by_12_relation(partition)
-    return q0 * nr + (-qi) * nc + h * nm
+    return _Q_MP * nr + (-_QI_MP) * nc + _H_MP * nm
 
 
 def partition_spectral_log_rate(partition):
@@ -531,13 +592,19 @@ def partition_spectral_log_rate(partition):
     (For partitions where ρ_λ < 1, the character ratio is less than
     unity and the trace shrinks exponentially — consistent with the
     partition being "far from the mean" in the Plancherel sense.)
+
+    PRECISION (2026-09-12, "excise float64"): `math.log` returns a Python
+    float WHATEVER it is handed, so this narrowed an mpf ratio to 53 bits in
+    its last line.  `_exact_log` instead, which carries its own `workdps` --
+    the ambient `mp.dps` is 15 in a bare import of this module, so a bare
+    `mp.log` would trade a float64 narrowing for a 15-digit one.
     """
     d = partition_dimension(partition)
     if d == 0:
-        return 0.0
+        return _mp.mpf(0)
     chi = partition_character_sigma1(partition)
     ratio = abs(chi) / d
-    return math.log(ratio) if ratio > 0 else 0.0
+    return _exact_log(ratio) if ratio > 0 else _mp.mpf(0)
 
 
 # Canonical Reeb-time spectral parameter s_*.
@@ -549,14 +616,45 @@ def partition_spectral_log_rate(partition):
 # the natural scale at which the JM Casimir (μ_λ ∈ [2, 190] for
 # k ≤ 9) provides O(1)–O(0.005) differentiation across the
 # partition spectrum via ρ_λ = 1/(μ_λ + s_*).
-S_REEB_PLANCK = (q0 - 1.0) / q0
+#
+# PRECISION (2026-09-12, owner directive "excise float64"; bean `qou-oiz3`).
+# This read `(q0 - 1.0) / q0` over the FLOAT64 `q0`, so the spectral
+# parameter of every resolvent weight carried 53 bits.  Over `_Q_MP` the
+# value moves 1.99757e-16 relative -- the float64 floor, so it BOUNDS the
+# damage and is not evidence the old constant was correctly rounded.
+#
+# The explicit `workdps` is load-bearing and not decoration: this line runs at
+# MODULE IMPORT, where the ambient `mp.dps` is mpmath's default 15, so a bare
+# mpf quotient here would trade a float64 constant for a 15-digit one and buy
+# nothing.  Same reason `_exact_log` carries one.
+with _mp.workdps(_EXACT_COEFF_DPS):
+    S_REEB_PLANCK = +((_Q_MP - 1) / _Q_MP)
 
 
 def _partition_table() -> list[dict]:
-    """Materialise _PARTITION_TABLE_CACHE on first access. ~30 s cold."""
+    """Materialise _PARTITION_TABLE_CACHE on first access. ~30 s cold.
+
+    PRECISION (2026-09-12, "excise float64"; bean `qou-oiz3`).  The body is
+    wrapped in `workdps(COMPUTE_DPS)` for a reason that is specific to a
+    CACHE: mpmath rounds every operation to the AMBIENT `mp.dps`, which is 15
+    in a bare import of this module, and this table is built ONCE and reused
+    for the life of the process.  So the precision of every mpf in it was a
+    function of WHO TOUCHED IT FIRST -- 70 digits when
+    `unified_iterative_correction` got there first (it has its own `workdps`),
+    15 when any other consumer did, and no signal either way.  That is not a
+    hypothetical: `_ensure_ysn_attached` and eight probes reach
+    `_PARTITION_TABLE` outside any precision context.
+    """
     global _PARTITION_TABLE_CACHE
     if _PARTITION_TABLE_CACHE is not None:
         return _PARTITION_TABLE_CACHE
+    from _precision import COMPUTE_DPS as _CDPS
+    with _mp.workdps(_CDPS):
+        return _partition_table_exact()
+
+
+def _partition_table_exact() -> list[dict]:
+    global _PARTITION_TABLE_CACHE
     table: list[dict] = []
     for _k in range(2, K_GAUSSIAN_MAX + 1):
         for _lam in partitions_of(_k):
@@ -567,13 +665,19 @@ def _partition_table() -> list[dict]:
             _kerov_scale = _w * _y * _Hq * M_E_MEV
             # Per-partition average log spectral rate (Perron-Frobenius proxy)
             _chi = partition_character_sigma1(_lam)
-            _rho = abs(_chi) / _d if _d > 0 else 0.0
-            _log_rho = math.log(_rho) if _rho > 1e-300 else -30.0
+            _rho = abs(_chi) / _d if _d > 0 else _mp.mpf(0)
+            # `_exact_log`, not `math.log`: `math.log` returns a Python float
+            # WHATEVER it is handed, so on an mpf it discards every digit past
+            # the 16th (see `_exact_log`'s docstring).  The -30 floor is the
+            # table's own sentinel for an unrepresentably small rate and is
+            # deliberately NOT a computed log.
+            _log_rho = _exact_log(_rho) if _rho > 1e-300 else _mp.mpf(-30)
             # q-Laplacian eigenvalue and resolvent weight (def:q-heat-equation,
             # def:categorical-laplace-transform): categorical damping derived
             # from the q-heat spectrum rather than the Kerov Plancherel measure.
             _mu = q_laplacian_eigenvalue(_lam)
-            _resolvent = 1.0 / (_mu + S_REEB_PLANCK) if (_mu + S_REEB_PLANCK) > 0 else 0.0
+            _resolvent = (1 / (_mu + S_REEB_PLANCK)
+                          if (_mu + S_REEB_PLANCK) > 0 else _mp.mpf(0))
             # Resolvent-damped scale: m_e · H_q(λ) · y_λ · ρ_λ(s_*).
             # Replaces the ad-hoc Kerov multiplier w_λ with the categorically
             # derived resolvent of the q-Laplacian at Planck-step Reeb time.
@@ -2688,17 +2792,23 @@ def conjugate_pair_cross_term(Z, N, entry_lambda, entry_conj):
                  where ρ uses the AVERAGE μ.
       - Final contribution: cross_scale · (log|Tr_λ| + log|Tr_{λ'}| - ln d_λ - ln d_{λ'})
     """
-    hbar_like = float(h)  # h = q − q⁻¹
+    # PRECISION (2026-09-12, "excise float64"): this read `float(h)` --
+    # AGENTS.md's banned pattern verbatim (`hf = float(G.h)` followed by
+    # arithmetic against it is a computation, not a display).  `h` is already
+    # the float64 `q0 - qi`, so the cast was a no-op and the arithmetic was
+    # the defect.  `_H_MP` is the mpf twin the module already imports.
+    hbar_like = _H_MP  # h = q − q⁻¹
     tr_sign_l, cumul_l = _contrib_single_partition(Z, N, entry_lambda)
     tr_sign_c, cumul_c = _contrib_single_partition(Z, N, entry_conj)
     # Cross-scale: h × geometric mean of individual scales
-    import math as _math
     scale_l = entry_lambda['C_lambda_resolvent_MeV']
     scale_c = entry_conj['C_lambda_resolvent_MeV']
     # Effective scale uses h × geometric mean; retains sign via log
     sign_l = 1 if scale_l >= 0 else -1
     sign_c = 1 if scale_c >= 0 else -1
-    geom_mean = _math.sqrt(abs(scale_l * scale_c))
+    # `mp.sqrt`, not `math.sqrt`: the latter returns a Python float WHATEVER
+    # it is handed, so it narrowed an mpf MeV scale to 53 bits here.
+    geom_mean = _mp.sqrt(abs(scale_l * scale_c))
     cross_scale_mev = hbar_like * geom_mean * sign_l * sign_c
     # Cross contribution: h × (cumul_l + cumul_c) / 2 weighted by mean scale.
     # Equivalent expression: h × average of per-partition corrections.
@@ -2706,7 +2816,7 @@ def conjugate_pair_cross_term(Z, N, entry_lambda, entry_conj):
     # for the cross term to contribute (conservative gate).
     tight_either = (tr_sign_l <= 0) or (tr_sign_c <= 0)
     if not tight_either:
-        cross = 0.0
+        cross = _mp.mpf(0)
     else:
         # Average the two partition contributions, scaled by h relative to base
         # scale_l · cumul_l is already in MeV; convert to per-partition
@@ -2825,9 +2935,11 @@ def unified_iterative_correction_jet(Z, N, jet_max,
         # iff jet(λ) = jet(λ') = j, which holds because jet is conjugation-
         # symmetric).  Self-conjugate λ = λ' gets Wigner-2 h/2 coupling.
         pair_records = []
-        total_at_j_cross = 0.0
+        total_at_j_cross = _mp.mpf(0)
         seen_pairs = set()
-        hbar_like = float(h)
+        # PRECISION (2026-09-12, "excise float64"): `float(h)` followed by
+        # arithmetic is AGENTS.md's banned pattern; `_H_MP` is the mpf twin.
+        hbar_like = _H_MP
         for entry in active_at_j:
             lam = tuple(entry['partition'])
             conj = partition_conjugate(lam)
@@ -2837,10 +2949,10 @@ def unified_iterative_correction_jet(Z, N, jet_max,
                 tr_sign, cumul = cumul_by_partition[lam]
                 tight = (tr_sign <= 0)
                 if tight:
-                    cross = (hbar_like / 2.0) * cumul
+                    cross = (hbar_like / 2) * cumul
                     total_at_j_cross += cross
                 else:
-                    cross = 0.0
+                    cross = _mp.mpf(0)
                 pair_records.append({
                     'lambda': list(lam),
                     'lambda_conj': list(conj),
@@ -2864,10 +2976,10 @@ def unified_iterative_correction_jet(Z, N, jet_max,
                 #   tr_σ_λ + tr_σ_λ' = h · (d_λ + d_λ')
                 # Average contribution scaled by h:
                 if tight_either:
-                    cross = hbar_like * (cumul_l + cumul_c) / 2.0
+                    cross = hbar_like * (cumul_l + cumul_c) / 2
                     total_at_j_cross += cross
                 else:
-                    cross = 0.0
+                    cross = _mp.mpf(0)
                 pair_records.append({
                     'lambda': list(lam),
                     'lambda_conj': list(conj),
@@ -2942,7 +3054,6 @@ def atom_markov_trace(Z, N, k_cap=None, include_inter=True):
     include_inter : bool (default True)
         If False, returns the FREE-NUCLEON Markov trace (intra only).
     """
-    import math as _math
     if k_cap is None:
         k_cap = K_PARTITION_MAX
     active = [e for e in _PARTITION_TABLE
@@ -2965,9 +3076,15 @@ def atom_markov_trace(Z, N, k_cap=None, include_inter=True):
     if not log_norms:
         return 0.0
     max_ln = max(log_norms.values())
-    trace = 0.0
+    trace = _mp.mpf(0)
     for lam, (chi_q, ln, entry) in chi_data.items():
-        chi_eff = chi_q * _math.exp(ln - max_ln)
+        # `mp.exp`, not `math.exp`: `ln` is an mpf log-norm carried out of
+        # `atom_character_raw`'s `workdps(COMPUTE_DPS)` block, and `math.exp`
+        # returns a Python float WHATEVER it is handed -- so this rescale
+        # narrowed every partition's character to 53 bits, on the
+        # `binding_from_frobenius_pairing` leg of `binding_energy`.
+        # (2026-09-12, "excise float64"; bean `qou-oiz3`.)
+        chi_eff = chi_q * _mp.exp(ln - max_ln)
         d_l = entry['dim']
         w_l = entry['wedderburn_weight']
         # Linear Markov trace — NOT squared
@@ -2990,7 +3107,6 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
 
     Returns (norm_sq, per_partition_dict, log_norm_total).
     """
-    import math as _math
     if k_cap is None:
         k_cap = K_PARTITION_MAX
 
@@ -3013,10 +3129,16 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
         return (0.0, {}, 0.0)
 
     max_ln = max(log_norms.values())
-    norm_sq = 0.0
+    norm_sq = _mp.mpf(0)
     for lam, (chi_q, ln, entry) in chi_data.items():
         # Rescaled χ to the common exponent max_ln
-        chi_eff = chi_q * _math.exp(ln - max_ln)
+        # `mp.exp`, not `math.exp`: `ln` is an mpf log-norm carried out of
+        # `atom_character_raw`'s `workdps(COMPUTE_DPS)` block, and `math.exp`
+        # returns a Python float WHATEVER it is handed -- so this rescale
+        # narrowed every partition's character to 53 bits, on the
+        # `binding_from_frobenius_pairing` leg of `binding_energy`.
+        # (2026-09-12, "excise float64"; bean `qou-oiz3`.)
+        chi_eff = chi_q * _mp.exp(ln - max_ln)
         d_l = entry['dim']
         w_l = entry['wedderburn_weight']
         contrib = w_l * (chi_eff / d_l) ** 2

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T23:24:53.236488+00:00",
-  "commitSha": "8d7ee2a2ec75d7597084c2b21be0a0c7ceb06b88",
+  "computedAt": "2026-09-13T08:19:24.583582+00:00",
+  "commitSha": "5812e613183d7e5da1bd304aad531359f867affe",
   "assertions": [
     {
       "name": "C_lambda >= 0 on every partition",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "uic-sign-forced-by-gate",
   "scriptFile": "uic_sign_forced_by_gate_probe.py",
   "scriptHash": "508870deae9b",
-  "scriptCommitSha": "312262d53dd298c0123d3d94bf6ca59ac5b8ca24",
+  "scriptCommitSha": "216616ce876e1e61f62ac5452c998ea54776f040",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -100,8 +100,8 @@
         "gated_negative": 15,
         "n_slack": 13,
         "slack_negative": 8,
-        "gated_sum": "-1.36568481708788021200650022892830359469995524004174239924599",
-        "ungated_sum": "-2.25113197732131169684362862866243893536667456049368889124793"
+        "gated_sum": "-1.36568481708787983488824552517391627048808482049417832304465",
+        "ungated_sum": "-2.25113197732131113650186438771942010476118720999213004061417"
       },
       {
         "atom": "3H",
@@ -110,8 +110,8 @@
         "gated_negative": 9,
         "n_slack": 19,
         "slack_negative": 13,
-        "gated_sum": "-0.970408945618667278697412143906903834629511776821859568358792",
-        "ungated_sum": "-1.80361722573592883046287269790685013760048106220096993688577"
+        "gated_sum": "-0.970408945618667063118543921161231375965812032343274721543680",
+        "ungated_sum": "-1.80361722573592841252242611145289128560621863697964710552266"
       },
       {
         "atom": "3He",
@@ -120,8 +120,8 @@
         "gated_negative": 9,
         "n_slack": 19,
         "slack_negative": 13,
-        "gated_sum": "-0.807940426483001118745194722699219325314600417207052313305278",
-        "ungated_sum": "-1.74659293477633910004302124067348143740995326745300561596848"
+        "gated_sum": "-0.807940426483000953381708240147814964099658291249277836017115",
+        "ungated_sum": "-1.74659293477633870216797287095096229833854607544902699852316"
       },
       {
         "atom": "4He",
@@ -130,8 +130,8 @@
         "gated_negative": 9,
         "n_slack": 18,
         "slack_negative": 12,
-        "gated_sum": "-0.802091711635766084257665157065045850559212042387005557782649",
-        "ungated_sum": "-1.37011872340989927661795459815216491529495693849451044511265"
+        "gated_sum": "-0.802091711635765904934343561405220905152528533696837174543659",
+        "ungated_sum": "-1.37011872340989898202054828203877465445462124255346094307766"
       },
       {
         "atom": "6Li",
@@ -140,8 +140,8 @@
         "gated_negative": 14,
         "n_slack": 13,
         "slack_negative": 8,
-        "gated_sum": "-1.07697056503999919131359008919607332016335977580501480941861",
-        "ungated_sum": "-1.96967839280866103092423321255782127070482288902725871395914"
+        "gated_sum": "-1.07697056503999892320670440926302376759543981853903302840460",
+        "ungated_sum": "-1.96967839280866058979833659900274408686531494317733516847376"
       }
     ],
     "retraction_2026_09_12": "The Pass-2 gate was DROPPED from the producer on 2026-09-12 (owner ruling, bean qou-21oc) after its complementary-slackness justification was refuted sorry-free (PR #7251). This probe's title claim -- that the wrong sign is FORCED BY the gate -- is thereby refuted: every atom's UNGATED sum is negative too, and larger in magnitude. What survives is steps 1 and 3 (C_lambda >= 0 everywhere; |Tr| >= d is ~10x rarer when Tr <= 0), i.e. the gate BIASED the sign, it did not create it.",
