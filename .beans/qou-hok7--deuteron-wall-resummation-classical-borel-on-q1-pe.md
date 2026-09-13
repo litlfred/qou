@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T16:40:16Z
+updated_at: 2026-09-13T17:50:19Z
 ---
 
 
@@ -1188,3 +1188,42 @@ with the run length forced by `Σu = 0`. Small, exact, and it reaches any `k`. R
 probe docstring so the next attempt does not simply re-widen the window.
 
 `e_∞ ≈ 2.4393` remains open. **Do not close this bean.**
+
+
+## 2026-09-13 (later still) — additivity over the two edges is REFUTED (PR #7331)
+
+**The conjecture.** #7323's shape (top block + bottom block + a `−1` run of forced length
+`ℓ = S_top + S_bot`) makes the **cost exactly separable**: substituting `ℓ`,
+`Σuᵢ² = (Σ_top u² + S_top) + (Σ_bot u² + S_bot)` — no cross term at any `k`. If the gain
+separated too, `e_∞ = max E_top + max E_bot` would be a **closed number**.
+
+**Measured, and false.** At `k = 40`, `E_both − E_top − E_bot ≈ 0.6` against `ε(4k) = 3.2e-15`
+— fourteen orders apart. Since the cost separates exactly, the residual is wholly gain-side,
+and its size names the mechanism: the joint shape has **one** run with **two** interfaces where
+two single-edge shapes have **two** runs with **four**. Combining saves an interface pair — an
+O(1) gain. Not constant either (0.516–0.617), because a run's own interfaces still interact at
+`ε(2·length)`.
+
+**What survives:** the joint argmax **is** the pair each edge picks alone. The edges choose
+independently; only the value fails to add.
+
+**Two corrections of mine.**
+
+- **The extension-row count is a search dimension, not a frame choice.** Fixing it at 3 gave
+  `2.3684` at `k = 40` — *below* `e_35 = 2.3764`, which monotonicity forbids. That
+  impossibility is what exposed the under-search; searching it gives `2.4141`, correctly
+  between `e_35` and `e_88 = 2.4393`. Padding is free only when the frame is what is being
+  varied; here it bounds which partitions the class can express.
+- **A tolerance tighter than the recording it compared against** — #7323's values are 22-digit
+  renderings, so ~1e-22 is the floor. Derived now, not picked.
+
+**One structural fact handed over by the search:** `max E_top = max E_bot` **exactly**, equal as
+scaled integers (`0.89852649642062312021`, from two independent maximisations). The staircase is
+self-conjugate and the hook multiset is a transpose invariant, so `(3,2,1,1)` at the top and
+`(1,1,1,2,1,1)` at the bottom are a conjugate pair. **There is one edge energy, seen twice.**
+
+**Where this leaves `e_∞`.** Not closed. The interface term couples the edges, so the two-search
+shortcut fails; what is now known exactly is the cost side, the argmax structure, and that the
+two edges are one object. Best in class at `k = 40` is `2.41409064417390445671`.
+
+**Do not close this bean.**
