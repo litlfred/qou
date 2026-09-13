@@ -21,6 +21,7 @@
 > | Reframed | §1 and §2 — true observations, wrong frame | §9.4, §9.5 |
 > | **Retracted** | "Nothing to emit at `q = 1`" — false for baryons | §9.2 |
 > | **Retracted** | "Five reasons antimatter can't be dark matter" — 2 of 5 | §9.1 |
+> | **Corrected 2026-09-13** | §21's **four** q-integer forms are **two** — 128 symmetric / 30 classical / **0** outliers. Read §25 before quoting any figure in §21.1. | §25 |
 >
 > **Nothing under `content/` is modified by this document.** The four content changes it
 > implies are §7 proposals, awaiting the author.
@@ -1482,3 +1483,65 @@ identifiable as wrong only because its own docstring names the quantity ("Wedder
 weights"), and because the register publishes a figure to test against. **Neither handle
 exists for most of the rest**, which is why `qou-gl58` is a per-file basis determination
 and not a sweep.
+
+---
+
+# 25. CORRECTION to §21 — there are TWO conventions, not four (2026-09-13, bean `qou-9nn0`)
+
+§21.1 reports **four distinct symbolic forms** among the 366 q-integer
+definitions: 126 symmetric, 30 classical, 1 $\sqrt q$-normalised, 1
+symmetric-in-$q^2$. **The last two do not exist.** Both are the symmetric
+bracket written in a square-root variable, verified symbolically (sympy,
+exact) at $n = 2, 3, 5, 7$.
+
+| | §21 said | measured |
+|---|---|---|
+| conventions | **4** | **2** |
+| symmetric | 126 | **128** |
+| classical | 30 | 30 |
+| outliers | 2 | **0** |
+
+## 25.1 The two, individually
+
+**`qbeta_5two_colored_tower_barodd_qstar_probe.py:93-95`** computes
+$(a^{2m}-a^{-2m})/(a^2-a^{-2})$. That is *exactly* the symmetric bracket in
+$a^2$ (difference $0$), and with $a=\sqrt q$ *exactly* the canonical $[m]_q$
+(difference $0$). It is the standard coloured-Jones spelling. **No defect, no
+change.**
+
+**`keystone_qhankel_eq2_vacuum_row.py:66-69`** was reported here as
+$(q^n-1)/(\sqrt q - 1/\sqrt q)$. **That reading is wrong** — the difference
+from it is nonzero and grows with $n$. The body is
+$(s^n-s^{-n})/(s-s^{-1})$ with $s=\sqrt q$: the symmetric bracket in
+$\sqrt q$. Same *convention*, different *argument*.
+
+## 25.2 It was still a defect, decided by the file against itself
+
+Different argument is not harmless here. The module docstring publishes the
+vector the probe exists to reproduce,
+$d_q=([1]_q,[4]_q,[5]_q,[4]_q[3]_q/[2]_q)\approx(1,4.10968,5.22044,6.22044)$,
+citing PR #3292 FACT 1. Canonical $[n]_q$ reproduces it to $2.4\times10^{-6}$
+— that vector's own six-digit rounding — while the old body gave
+$(1,4.0273,5.0546,6.0546)$, off by $0.166$.
+
+**The probe's gate is 1 %, and the old target's error was 2.0 % on $[4]$ and
+3.2 % on $[5]$ — larger than the gate.** So the committed witness recorded
+`REFUTED-as-is (scope a)` against a target the file's own docstring does not
+name, and any candidate matching the true vector within 1 % would have been
+rejected. Fixed; the producer was re-run and **the verdict is unchanged**
+(`coherent_4vector_match: False`). Right answer, wrong reason — now right
+reason.
+
+## 25.3 Why the audit missed it, and it is §21.3's own class
+
+§21.3 item 2 records *"I clustered on representation, not value."* This is that
+defect one level up: the audit compared representations **without substituting
+each variable's definition**, so a bracket in $s$ and the same bracket in $q$
+read as different conventions rather than as one convention at two arguments.
+That is detector-blindness rows 17–21 (the `qou-t9r1` family, *"the
+sqrt-variable spelling … with the variable equal to `√q`"*) landing on the
+audit that was written to measure conventions.
+
+**Unaffected:** the convention *split* — symmetric vs classical — is real and
+is §21's actual finding. `QOU/Substrate/QIntegerConventions.lean` states only
+two forms and never asserted four.
