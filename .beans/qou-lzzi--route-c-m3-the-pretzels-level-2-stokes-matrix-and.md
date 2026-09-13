@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T17:46:35Z
-updated_at: 2026-09-13T18:46:02Z
+updated_at: 2026-09-13T19:00:48Z
 ---
 
 ## Claimed 2026-09-13 — the OPERATOR route (branch `claude/pretzel-level2-stokes-2026-09-13`, PR #7333)
@@ -67,3 +67,28 @@ source prints the analogue for a rank-6 level-2 knot. That is the precise missin
 input, and it is a normalisation, not new q-series data.
 
 Audit: `docs/audits/2026-09-13-pretzel-level2-stokes-matrix.md`. PR #7333.
+
+## Next step for whoever picks this up
+
+The RING is fixed; the MATRIX is not. The single missing input, named precisely so
+it is not re-derived as something else:
+
+  the four region matrices M_R(x;q), R in {I,II,III,IV}, for the pretzel --
+  equivalently the constant A, B in GL(6, Z[x^{+-1/2}]) of the analogue of
+  GGM (305a).
+
+That is a NORMALISATION, not new q-series data: the blocks are already derived
+(PR #7152 SS3k, six families validated to 7.8e-19) and the operator is derived here
+(PR #7333). Two routes to it:
+
+  1. Borel-resum the six asymptotic series in each of the level-2 sectors and read
+     M_R off the linear combinations, as GGM do in their SS5.5 / SS6.5 numerics.
+  2. Close the level-2 FUSION rule (the open item of SS3l) -- the u-deformation of
+     GZ's epsilon-derivative at the collided triple poles -- which gives the blocks
+     in GGM's normalisation directly.
+
+Route 2 is the one PR #7152 is already on, so this arc and that one converge there.
+
+Do NOT expect the sigma_1 sigma_1 entry to settle it: by the Z/2 grading, that entry
+lives entirely in the integer-q sector, which is exactly the part that is in Z[s(x)]
+anyway.
