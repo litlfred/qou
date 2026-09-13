@@ -61,10 +61,15 @@ what AGENTS.md asks for: implement the specification and report what it gives
 even when that is worse, and rank by derivational cleanliness rather than by
 residual.
 
-🛑 AND IT DOES NOT CLOSE Q_beta.  All four distinct elements FAIL PSD
-feasibility, so the SDP half of the ruling rejects the entire one-letter
-family — the census assignment and every bar-odd alternative alike.  This
-narrows the open problem; it does not solve it.
+🛑 AND IT DOES NOT CLOSE Q_beta — though NOT for the reason a first draft of
+this file gave.  All four distinct elements do fail whole-element PSD
+feasibility, but that is a MEASUREMENT rather than a rejection by the ruling:
+the SDP scope question was answered **"(A) core only"** (bean `qou-99qc`,
+2026-09-12), under which reading 3 constrains 6 of the 11 letters and prunes
+NOTHING among the 5 the parity bound leaves free.  Whole-element PSD is reading
+(B), which was not selected.  Either way the SDP half does no work here, which
+is what leaves the bar-odd constraint above as the only derived handle on these
+letters — and one constraint that narrows to a single value is not a closure.
 
 SCOPE.  **(a) scope-limited.**  One hypothesis, one family, `n = 3`.  Its force
 is conditional on the bar-odd property transferring from the retired `z = 1`
@@ -308,14 +313,18 @@ def main() -> int:
 
     # ---- 6. it narrows; it does not close ----------------------------------
     feas = {(sl, k): psd_feasible(sl, k) for sl in SLOTS for k in KINDS}
-    check("no_configuration_is_PSD_feasible_so_the_SDP_half_rejects_them_all",
+    check("no_configuration_is_whole_element_PSD_feasible_reading_B_only",
           not any(feas.values()),
           f"all {len(feas)} (slot, kind) configurations FAIL Matrix.PosSemidef "
           f"on at least one Wedderburn block -- the census assignment and every "
-          f"bar-odd alternative alike. So the SDP half of the 2026-09-08 ruling "
-          f"rejects this entire one-letter family, and the bar-odd result above "
-          f"NARROWS the open problem without solving it. Recorded as an "
-          f"assertion so the limit travels with the result", w)
+          f"bar-odd alternative alike. 🛑 THAT IS A MEASUREMENT, NOT A "
+          f"REJECTION BY THE RULING: the SDP scope question was answered "
+          f"'(A) core only' (bean qou-99qc, 2026-09-12), under which reading 3 "
+          f"constrains 6 of the 11 letters and prunes NOTHING among the 5 the "
+          f"parity bound leaves free. Applying PSD to the WHOLE element is "
+          f"reading (B), which was not selected. So the SDP half does no work "
+          f"on these letters either way, and the bar-odd constraint above is "
+          f"the ONLY derived handle on them", w)
 
     w.add_data("the_open_problem", {
         "parity_bound": "no 11-crossing word is gamma-gamma-produced, so 5 of "
@@ -365,15 +374,20 @@ def main() -> int:
     w.add_data("does_not_close", {
         "psd_feasible": {f"slot{sl}_{k}": bool(feas[(sl, k)])
                          for sl in SLOTS for k in KINDS},
-        "reading": "the SDP half of the ruling rejects every member of this "
-                   "family, census and bar-odd alike; this narrows the open "
-                   "problem, it does not solve it",
+        "reading": "a MEASUREMENT under reading (B), not a rejection by the "
+                   "ruling: the scope answer was '(A) core only', under which "
+                   "the SDP half prunes nothing among these 5 letters. So the "
+                   "bar-odd constraint is the only derived handle on them",
+        "scope_answer": "(A) core only -- bean qou-99qc 2026-09-12, itself "
+                        "recorded as SELECTED-with-ambiguity, not as a clean "
+                        "ruling",
     })
     w.add_data("scope", {
         "class": "(a) scope-limited",
         "unconditional": ["the census assignment is not bar-odd",
                           "the bar-odd family collapses to one magnitude",
-                          "no member of the family is PSD-feasible"],
+                          "no member is whole-element PSD-feasible (reading B, "
+                          "a measurement; the selected scope is (A) core only)"],
         "conditional_on": "the bar-odd property transferring from the retired "
                           "z = 1 cell to the ruled z_D base",
         "no_selection_was_made": "the constraint is a parity in q, never "

@@ -67,12 +67,18 @@ which is the opposite of what the retracted claim said.  The best is +5.15 %,
 against an expected-best-by-chance of **7.73 %** for a grid this coarse — the
 same order, so it is not evidence either.
 
-AND ONE FINDING SURVIVES AND IS NEW: the scored element's proton and neutron
-words are **both PSD-INFEASIBLE**, two of three blocks each, and carry
-`det != 1` in every block.  So the SDP half of the 2026-09-08 ruling excludes
-the scored element directly, at the element level — independently of the
-alternating-character exclusion already recorded.  That is measured here, not
-inferred.
+AND ONE MEASUREMENT SURVIVES AND IS NEW: the scored element's proton and
+neutron words are **both PSD-INFEASIBLE**, two of three blocks each, and carry
+`det != 1` in every block.
+
+🛑 SCOPED 2026-09-13, after the first draft of this file called that "the SDP
+half of the ruling excludes the scored element".  It does not.  The SDP scope
+question was answered **"(A) core only"** (bean `qou-99qc`, 2026-09-12), under
+which reading 3 constrains the 6 gamma-gamma letters and prunes nothing among
+the other 5 — and under (A), in that entry's own words, "the census element
+stands".  Whole-element PSD is reading (B), which was NOT selected.  So this is
+a measurement about the element, not a rejection of it by the ruling.  The
+alternating-character exclusion already on record is separate and unaffected.
 """
 from __future__ import annotations
 
@@ -200,9 +206,10 @@ def main() -> int:
         "mentions Q_beta. Caught by the calibration step. What the difference "
         "functional actually gives, all 15 pairs reported: -100 % to +79.4 %, "
         "STRADDLING the target rather than sitting above it, best +5.15 % "
-        "against 7.73 % expected by chance. Surviving new finding: the scored "
-        "element's proton and neutron words are both PSD-INFEASIBLE (2 of 3 "
-        "blocks) with det != 1 everywhere, so the SDP half excludes it directly."
+        "against 7.73 % expected by chance. Surviving new MEASUREMENT: the "
+        "scored element's proton and neutron words are both PSD-INFEASIBLE (2 "
+        "of 3 blocks) with det != 1 everywhere -- which is reading (B), NOT a "
+        "rejection by the ruling, whose scope answer was '(A) core only'."
     )
 
     E0 = qbeta_e0.canonical()
@@ -305,11 +312,14 @@ def main() -> int:
           all(infeas[k] for k in ("p", "n")),
           f"nuc11_interleaved fails Matrix.PosSemidef on {infeas['p']} for the "
           f"proton and {infeas['n']} for the neutron -- 2 of 3 H_3 blocks each "
-          f"-- and carries det != 1 in every block (proton: {dets['p']}). So "
-          f"the SDP half of the 2026-09-08 ruling excludes the scored element "
-          f"DIRECTLY at the element level, independently of the alternating-"
-          f"character exclusion already recorded. This is measured, and it is "
-          f"the one new thing that survives the retraction", w)
+          f"-- and carries det != 1 in every block (proton: {dets['p']}). "
+          f"🛑 That is a MEASUREMENT under reading (B), NOT a rejection by the "
+          f"ruling: the SDP scope question was answered '(A) core only' (bean "
+          f"qou-99qc, 2026-09-12), under which reading 3 prunes nothing outside "
+          f"the gamma-gamma core and 'the census element stands'. The first "
+          f"draft of this assertion said the ruling excluded it; that was an "
+          f"over-application of the SDP half. The alternating-character "
+          f"exclusion already recorded is separate and unaffected", w)
 
     w.add_data("retraction", {
         "what_I_asserted": "tr_M >= 1 per PSD-feasible gamma-gamma word means "
@@ -362,9 +372,13 @@ def main() -> int:
     w.add_data("scored_element_sdp_status", {
         "psd_infeasible_blocks": infeas,
         "block_determinants": dets,
-        "reading": "the SDP half of the ruling excludes the scored element at "
-                   "the element level, independently of the alternating-"
-                   "character exclusion",
+        "reading": "a MEASUREMENT under reading (B). NOT a rejection by the "
+                   "ruling: the scope answer was '(A) core only' (bean "
+                   "qou-99qc, 2026-09-12), under which the census element "
+                   "stands and reading 3 prunes nothing outside the core. The "
+                   "alternating-character exclusion is separate and unaffected",
+        "scope_answer": "(A) core only -- itself recorded as SELECTED-with-"
+                        "ambiguity in that bean entry, not as a clean ruling",
     })
     w.add_data("scope", {
         "class": "(a) scope-limited -- a retraction plus a measurement",

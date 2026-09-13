@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T15:31:00.399620+00:00",
-  "commitSha": "2f9642363f222aba74af59f78f409b199e813d9d",
+  "computedAt": "2026-09-13T15:48:17.833073+00:00",
+  "commitSha": "e88696c22f3ef0ccbc7f6ea9d0a4583cf780ffba",
   "assertions": [
     {
       "name": "the_parametrisation_reproduces_the_census_cell",
@@ -40,19 +40,19 @@
       "source": "the bar-odd constraint forces Q_beta = 0.353415697967 MeV, -54.825437 %, against the census assignment's -16.67794 %. The derived answer is the less accurate one. AGENTS.md: implement the specification and report what it gives even when that is worse; rank by derivational cleanliness, never by residual. No configuration was chosen for its value -- the constraint is a parity in q and the survivors collapse"
     },
     {
-      "name": "no_configuration_is_PSD_feasible_so_the_SDP_half_rejects_them_all",
+      "name": "no_configuration_is_whole_element_PSD_feasible_reading_B_only",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "all 6 (slot, kind) configurations FAIL Matrix.PosSemidef on at least one Wedderburn block -- the census assignment and every bar-odd alternative alike. So the SDP half of the 2026-09-08 ruling rejects this entire one-letter family, and the bar-odd result above NARROWS the open problem without solving it. Recorded as an assertion so the limit travels with the result"
+      "source": "all 6 (slot, kind) configurations FAIL Matrix.PosSemidef on at least one Wedderburn block -- the census assignment and every bar-odd alternative alike. 🛑 THAT IS A MEASUREMENT, NOT A REJECTION BY THE RULING: the SDP scope question was answered '(A) core only' (bean qou-99qc, 2026-09-12), under which reading 3 constrains 6 of the 11 letters and prunes NOTHING among the 5 the parity bound leaves free. Applying PSD to the WHOLE element is reading (B), which was not selected. So the SDP half does no work on these letters either way, and the bar-odd constraint above is the ONLY derived handle on them"
     }
   ],
   "allPassed": true,
-  "durationMs": 17355,
+  "durationMs": 17886,
   "computation": "qbeta-bar-parity-forces-a-unique-quark-letter",
   "scriptFile": "qbeta_bar_parity_forces_a_unique_quark_letter_probe.py",
-  "scriptHash": "629cc72895b5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e968c1de8c3f",
+  "scriptCommitSha": "641a245affd6022a62a625c0927bcb908368b139",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -218,14 +218,15 @@
         "slot2_sigma": false,
         "slot2_inv": false
       },
-      "reading": "the SDP half of the ruling rejects every member of this family, census and bar-odd alike; this narrows the open problem, it does not solve it"
+      "reading": "a MEASUREMENT under reading (B), not a rejection by the ruling: the scope answer was '(A) core only', under which the SDP half prunes nothing among these 5 letters. So the bar-odd constraint is the only derived handle on them",
+      "scope_answer": "(A) core only -- bean qou-99qc 2026-09-12, itself recorded as SELECTED-with-ambiguity, not as a clean ruling"
     },
     "scope": {
       "class": "(a) scope-limited",
       "unconditional": [
         "the census assignment is not bar-odd",
         "the bar-odd family collapses to one magnitude",
-        "no member of the family is PSD-feasible"
+        "no member is whole-element PSD-feasible (reading B, a measurement; the selected scope is (A) core only)"
       ],
       "conditional_on": "the bar-odd property transferring from the retired z = 1 cell to the ruled z_D base",
       "no_selection_was_made": "the constraint is a parity in q, never proximity to the measured value, and the survivors collapse to a single number"
