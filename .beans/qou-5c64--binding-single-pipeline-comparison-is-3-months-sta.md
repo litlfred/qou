@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T10:51:05Z
+updated_at: 2026-09-13T10:56:33Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -542,3 +542,57 @@ Still unidentified: `a`, `b`, and the non-`z` parts of the p-n and n-n bonds.
 The p-n one is already pinned to the δ de-wire by the exact
 `d = -h(1/2 - δ/4)` check above; the n-n `d` and the per-nucleon `a`, `b` are
 open.
+
+
+# 🛑 SECOND RETRACTION, same session: the δ de-wire does NOT move this witness either
+
+The section above titled *"2. The p-n interface δ de-wire — 1.287106862×, atom
+only. CONFIRMED EXACTLY."* is **wrong**, and so is the headline figure
+`δ: -2.168 → +0.001376` in commit `36962ad1d7c`.
+
+**The error.** I backed `d` out of the June bond ratio by subtracting **`z_D`**.
+June was on **`z_C`**. Subtracting the wrong `z` produced `d_June = -0.2178`,
+hence a spurious `δ_June = -2.168`.
+
+Against each side's own `z`:
+
+| bond | `d` now | `d` June | agree to |
+|---|---|---|---:|
+| p-p | 0 | 1.2e-8 (i.e. 0) | anchor floor |
+| p-n | -0.10445825933572413 | -0.10445817736543710 | 7.9e-7 |
+| n-n | -0.20906032198987946 | -0.20906030963839083 (= `-h`) | 5.9e-8 |
+
+**All three `d` are unchanged.** And `(z_D + d)/(z_C + d)` with `d` held fixed
+predicts every measured bond residual to **2e-7**. The δ implied by each side is
+`0.0013757112` (today, `= flavor_split_leading(q)`) against `0.0013772796`
+(June) — a 0.11 % gap, which is the q₀ anchor difference amplified through
+`flavor_split_leading`, not a change in δ.
+
+**Why the "2.9e-16" did not catch it.** That check was real and is still valid:
+`d_now` matches `-h(1/2 - δ/4)` to 2.9e-16. But it is a check on **one side of a
+comparison**, and I reported it as confirming the comparison. I never ran the
+same check on the June side; I *inverted* it, with the wrong `z`.
+
+## The corrected decomposition — and C→D is the WHOLE bond side
+
+| component | factor | cause |
+|---|---|---|
+| intra-ordering | D 3.7848169, T 7.8681653, ³He 6.8906640, ⁴He 14.3248374 | owner ruling `qou-hu1f`, 2026-09-05 |
+| **all three bonds** | `(z_D + d)/(z_C + d)`, `d` unchanged | **pure convention C→D** |
+| per-nucleon free | proton 1.075521518, neutron 1.069874485 | **unidentified** |
+
+So `qou-gjkv`'s "post-C-to-D" label is not merely right for this member —
+**C→D accounts for the entire bond side of its motion.** My original flag on
+that bean was wrong twice over: first in saying C→D was zero, then, after
+correcting that, in still crediting the δ de-wire with a third of the story.
+
+Two things now removed from the open list: the δ de-wire, and "the n-n bond's
+non-`z` part" (there is none — `d_nn = -h`, unchanged). **What remains open is
+exactly one thing: the two per-nucleon free factors.**
+
+## The reusable lesson, since this is the second retraction in an hour
+
+Both errors have the same shape. The first tested **one carrier** of a
+convention (`y_lambda_at`) and reported on the convention. The second checked
+**one side** of a two-sided comparison and reported on the comparison. In both
+cases the check that was run was sound and the scope of the conclusion was not.
