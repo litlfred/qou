@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T13:19:30Z
-updated_at: 2026-09-13T13:20:26Z
+updated_at: 2026-09-13T13:46:29Z
 ---
 
 Measured 2026-09-13 after three consecutive drain targets (`r5-full-canonical-knot-solver`,
@@ -79,3 +79,73 @@ Bucket by ON-DISK counts, never by the baseline number. Doing it the other way
 put 9,955 fields in `scalar` because 15 already-drained entries still carry
 their baseline figure (`k-star-search-phase5d-5` records 1647 and has 1 float on
 disk). The first version of this table said exactly that and was wrong.
+
+
+---
+
+## CORRECTION 2026-09-13 — I reported 29,023 dirty; it is 25,725, and I cannot reproduce 29,023
+
+The figure in this bean's first pass was **wrong and I cannot reconstruct how I
+got it.** Measured three ways today against the same tree:
+
+| measure | fields |
+|---|---:|
+| baseline total | 30,985 |
+| sum of BASELINE figures over entries still dirty | 25,891 |
+| **sum of ON-DISK counts over entries still dirty** | **25,725** |
+| what I reported | 29,023 |
+
+29,023 matches neither, so it is not the "ranked by baseline vs ranked by disk"
+slip I first assumed — that slip is worth only 166 fields. I am recording it as
+unreproducible rather than explaining it, because a plausible-sounding
+reconstruction I cannot check is worse than an admitted gap.
+
+**24 baseline entries (5,094 baseline fields) are already 0 on disk.** Four of
+them sit in the mid-size band I was screening, so I had been screening
+already-clean targets: `binding-reeb-phase-decomposition` (296),
+`channel-product-mass` (270), `delta-lambda-fr-identity-phase5c` (246),
+`term7-alpha5-crystal-derivation` (210) — 1,022 fields of stale baseline.
+
+**Rank off disk, not off the baseline.** The baseline figure is the value when
+the entry was added; it does not move when the producer is drained.
+
+## The queue, structurally
+
+    LIVE dirty                      979 entries / 25,725 fields
+      minus qou-baye orphans        -21 entries / -1,550
+      = drainable                   958 entries / 24,175 fields
+
+## A false alarm I caught before publishing it
+
+A raw traversal with `count_raw_floats` over every `computations/**/*.witness.json`
+reports **302 dirty witnesses / 116,432 fields outside the baseline** — 4.5× the
+whole baselined backlog. That is **not a gap**: `count_raw_floats` is not what the
+audit uses. `scan()` applies the LP-dual, ephemeral-duration, integrator and
+deprecated-f64 carve-outs and skips `_deprecated/`. Run `scan()` and the answer is
+**0 unbaselined dirty entries**.
+
+Second time this session a bypassed exclusion produced a large fake number. The
+rule: **measure with `scan()`, never with `count_raw_floats` over a glob.**
+
+## And my own orphan detector was blind to 17 of 21
+
+I wrote a clean-twin test — a baselined dirty entry whose same-stem twin is 0 —
+and it found **4 orphans / 615 fields**. `qou-baye` had already measured **21 /
+1,550** by the right instrument: a **source scan** for the stem in a write
+context. My test only fires when the twin happens to be clean; for the other 17
+the twin is dirty too, so it classified them as ordinary double-counting.
+
+Worth naming because the failure is the one the detector-blindness taxonomy
+keeps recording: **a detector that answers a proxy question and reports the
+answer as if it were the real one.** "Twin is clean" is evidence about the twin;
+"no producer writes this path" is the claim. Reading `qou-baye` is what caught
+it, not the code.
+
+`qou-kcii`'s 19 groups / 1,205 redundant fields reproduce exactly.
+
+## Queue after exclusions — the top is nearly all accounted for
+
+Ranks 1-6, 9, 10 and 14 of the on-disk top-14 are excluded (regeneration-blocked,
+contended, orphan, owner-call, or mine-in-progress). The first genuinely
+screenable entries are **#7 `all-nuclides-sdp-admissibility` (336)** and **#8
+`deltalambda/he4-binding-k-stage2` (316)**.
