@@ -285,19 +285,38 @@ def pointwise_identity(name, dps=30):
 def integral_recurrence(name, dps=30):
     """G4: sum_j c_j Z(t - i (j - A) b) = 0 on the actual state integrals.
 
-    Convergence of Z(t') on R + i eps needs  -(r_eff - A) eps < Im(t') < A eps,
-    with r_eff = sum alpha_j^2 (the pretzel's doubled factor contributes 4, not 1,
-    because Phi_b(2v - c_b) ~ exp(pi i (2v)^2) at +infinity).  The shifts move
-    Im(t') by -k Re(b) for k = j - A, so the whole ladder fits only if
-    r_eff * eps exceeds (deg) * Re(b).
+    CONVERGENCE.  At Re v -> +infinity each Phi_b(alpha_j v + beta_j) behaves as
+    exp(pi i (alpha_j v + beta_j)^2), so the integrand's exponent has
 
-    b is chosen with |b| < 1: for |b| = rho, Im(c_b)/Re(b) = (1 + rho^-2)/2, which
-    is exactly 1 at rho = 1 (marginal) and grows as rho falls.  rho ~ 0.55 leaves a
-    real margin, which is what makes mp.quad converge -- at rho = 1 the decay rate
-    at one end of the ladder is ~0.7 and the quadrature floors at ~1e-6 no matter
-    what dps is set to.  eps must also satisfy eps < Im(c_b) (stay below the first
-    pole of the unit dilogarithms) and, for the pretzel, eps > Im(c_b)/2 (the
-    doubled factor's -c_b shift makes the integrand grow otherwise).
+        quadratic coefficient   pi i (r_eff - A),   r_eff := sum_j alpha_j^2
+        linear coefficient      2 pi i (lin + t'),  lin  := sum_j alpha_j beta_j
+
+    and on R + i eps the two decay conditions are
+
+        +inf :  (r_eff - A) eps + Im(t') + Im(lin) > 0
+        -inf :  A eps - Im(t')                     > 0 .
+
+    THE `lin` TERM IS NOT OPTIONAL, and omitting it is what made the first version
+    of this gate report rel_residual = 1.0 on the pretzel with |Z| ~ 1e+115.  For
+    4_1 (beta = (u, 0)) and 5_2 (beta = (0, u, -u)) it is real, so Im(lin) = 0 and
+    a quadratic-only analysis is accidentally right.  For the pretzel
+    beta = (u/2, -u/2, -c_b) with alpha = (1, 1, 2), so
+
+        lin = u/2 - u/2 + 2(-c_b) = -2 c_b,      Im(lin) = -2 Im(c_b),
+
+    i.e. the DOUBLED factor's -c_b shift contributes a linear-in-v growth
+    exp(-4 pi i c_b v) that no amount of quadratic bookkeeping sees.  At k = 0 and
+    t_I = 0 the +inf condition reduces to eps > Im(c_b)/2 -- which is exactly the
+    constraint SS3k of the sibling audit states for this integral, recovered here
+    independently and from the other side.
+
+    CHOOSING b.  The shifts move Im(t') by -k Re(b), k = j - A, so the ladder fits
+    only if the window is wider than (deg) Re(b).  For |b| = rho,
+    Im(c_b)/Re(b) = (1 + rho^-2)/2: exactly 1 at rho = 1 (marginal -- there the
+    quadrature floors at ~1e-6 however high dps is set) and growing as rho falls.
+    rho ~ 0.45 with eps = 0.96 Im(c_b) leaves a half-width ~1.0, i.e. a decay of
+    e^-379 over the integration range.  eps < Im(c_b) always, to stay below the
+    first pole of the unit dilogarithms.
     """
     mp, make = _mp_setup(dps)
     spec = KNOTS[name]
@@ -306,14 +325,19 @@ def integral_recurrence(name, dps=30):
     _, Psym = descendant_operator(spec["offsets_sym"], A, spec["doubled"])
     cs = coeffs(Psym)
     rows = []
-    for bmod, bang_den, eps_frac in (("0.55", 6, "0.90"), ("0.60", 5, "0.88")):
+    for bmod, bang_den, eps_frac in (("0.45", 6, "0.96"), ("0.50", 5, "0.96")):
         b = mp.mpf(bmod) * mp.exp(1j * mp.pi / mp.mpf(bang_den))
         Phi, qq, qt, cb = make(b)
         eps = mp.mpf(eps_frac) * mp.im(cb)
         bR = mp.re(b)
         ks = [j - A for j in range(len(cs))]
+        u = mp.mpf("0.13")
+        # lin = sum_j alpha_j beta_j -- the LINEAR-in-v coefficient.  Im(lin) != 0
+        # exactly when a dilogarithm carries a complex shift, i.e. the pretzel's
+        # Phi_b(2v - c_b); see the docstring.
+        lin = sum((mp.mpf(al) * be(u, cb) for (al, be) in spec["dilogs"]), mp.mpc(0))
         # centre t_I in the intersection of the per-k windows
-        lo = max((-(r_eff - A) * eps + k * bR for k in ks), key=lambda z: z)
+        lo = max((-(r_eff - A) * eps - mp.im(lin) + k * bR for k in ks), key=lambda z: z)
         hi = min((A * eps + k * bR for k in ks), key=lambda z: z)
         if not lo < hi:
             rows.append({"knot": name, "b": mp.nstr(b, 8), "eps": mp.nstr(eps, 6),
@@ -322,7 +346,6 @@ def integral_recurrence(name, dps=30):
             continue
         tI = (lo + hi) / 2
         t = mp.mpf("0.07") + 1j * tI
-        u = mp.mpf("0.13")
         xv = mp.exp(2 * mp.pi * b * u)
         wv = mp.exp(2 * mp.pi * b * t)
 
@@ -346,6 +369,7 @@ def integral_recurrence(name, dps=30):
             mag = max(mag, abs(cv * zj))
         rows.append({"knot": name, "b": mp.nstr(b, 8), "eps": mp.nstr(eps, 6),
                      "t": mp.nstr(t, 8), "u": "0.13", "degree": len(cs) - 1,
+                     "Im_lin": mp.nstr(mp.im(lin), 6),
                      "abs_residual": mp.nstr(abs(tot), 6),
                      "abs_largest_term": mp.nstr(mag, 6),
                      "rel_residual": mp.nstr(abs(tot) / mag, 6),
