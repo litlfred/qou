@@ -14,6 +14,21 @@ letters, in the **interior** position a bond actually occupies.
 
 ## What is proved
 
+`tr_bond_interp` — **the headline.** For the colour superposition
+`σ_t := (1−t)·σ + t·σ⁻¹`, the interior bond factor is `z − h·t`, for **every**
+`t : R`. Every letter in the corpus is an instance: `t = 0` is `σ` (p-p),
+`t = 1` is `σ⁻¹` (n-n), `t = 1/2` is `averaged`, and `t = 1/2 − δ/4` is
+`averaged_weighted`, the production p-n letter.
+
+This is the trace-level counterpart of
+`MassTheory.DeuteronKernel.interfaceFactor`, which defines `f(q,t) = z_D − h·t`
+as a **scalar**. Here it is a theorem about the Markov trace on the tower, with
+material on both sides of the bond.
+
+**So the factor law is settled for the production letter as well**, and what
+`qou-qqm4` leaves measured about the bond model reduces to the single *value*
+`t = 1/2 − δ/4`.
+
 `tr_bond_gen` — the `σ` letter carries `d = 0`: factor `z`. `InteriorMarkov`
 restated at the bond; here so the three sit together.
 
@@ -81,9 +96,13 @@ is **not** a statement about the production `pn` interface.
 
 ## 🛑 What is NOT proved
 
-1. **The production `pn` letter is not derived here.** Deriving the `δ/4` from
-   the colour-tube geometry is `qou-qqm4`'s live open item. Two of the three
-   letters are the skein's; the third is not, and nothing here changes that.
+1. **The value `t = 1/2 − δ/4` is not derived here.** `tr_bond_interp` settles
+   the factor *law* for every letter including the production one, so what
+   remains is precisely the colour weight's value — not the form of its
+   contribution. `δ = (q−1)²(1−q⁻⁴)/3 = ℏ_q²·h_q·[2]_q/3` is the substrate
+   flavour split (`prop:flavor-split-substrate`, i.e. `Δm/M_N`), so it is
+   assembled from corpus quantities rather than fitted; why the weight is
+   `1/2 − δ/4` specifically is `qou-qqm4`'s live open item.
 2. **`h` is a hypothesis, not a value.** That `h = q − q⁻¹` for `H_n(q)`, and
    that the substrate's `z` is `z_D = q³/(q²+1)`, are elsewhere.
    `BraidedTower.quad` is existential (`∀ m, ∃ h, …`) and cannot supply a
@@ -105,6 +124,40 @@ open QOU.Hecke.MarkovInteriorBond QOU.Hecke.InteriorMarkovOfBraidedTower
 
 variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
 variable (S : MarkovTrace R A) [BraidedTower S]
+
+/-- **The whole interpolation family at once.** For the colour superposition
+`σ_t := (1−t)·σ + t·σ⁻¹`, the interior bond factor is `z − h·t`, for **every**
+`t : R`.
+
+This is the trace-level counterpart of
+`MassTheory.DeuteronKernel.interfaceFactor`, which defines `f(q,t) = z_D − h·t`
+as a scalar; here it is a theorem about the Markov trace on the tower, with
+material on both sides of the bond.
+
+Every letter in the corpus is an instance:
+
+| `t` | letter | factor |
+|---|---|---|
+| `0` | `σ` (p-p) | `z` |
+| `1` | `σ⁻¹` (n-n) | `z − h` |
+| `1/2` | `averaged` | `z − h/2` |
+| `1/2 − δ/4` | `averaged_weighted` (the production p-n) | `z − h(1/2 − δ/4)` |
+
+So the **factor law** is settled for the production letter too. What is not
+settled is the *value* of `t` — and that is now the whole of what `qou-qqm4`
+leaves measured about the bond model. -/
+theorem tr_bond_interp {g : ℕ} (t h : R)
+    (hq : S.g g * S.g g = h • S.g g + 1) {a b : A}
+    (ha : a ∈ S.H g) (hb : b ∈ upper (toTowerB S) g) :
+    S.tr (a * ((1 - t) • S.g g + t • S.ginv g) * b)
+      = (S.z - h * t) * S.tr (a * b) := by
+  have hcomb : (1 - t) • S.g g + t • S.ginv g = S.g g + (-(h * t)) • (1 : A) := by
+    rw [S.gen_inv_eq_of_quadratic g h hq, smul_sub, sub_smul, one_smul, smul_smul]
+    module
+  rw [hcomb]
+  have := tr_bond_of_interiorMarkov (toTowerB S) (interiorMarkov_of_braided S)
+    (g := g) (a := a) (b := b) ha hb (-(h * t))
+  simpa [sub_eq_add_neg] using this
 
 /-- **The `σ` letter carries `d = 0`**, so a positive-crossing interface's bond
 factor is `z` itself. Immediate from `InteriorMarkov`; stated so the three
