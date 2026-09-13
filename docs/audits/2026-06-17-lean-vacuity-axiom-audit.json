@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-13T05:21:21.854Z",
+  "generated": "2026-09-13T05:31:43.944Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3804,
   "files_flagged": 99,
-  "total_defects": 65,
+  "total_defects": 64,
   "total_exempt": 59,
   "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 21,
+    "proof-claims-unencoded": 20,
     "proof-no-self-assuming-projection": 41,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1,
@@ -1977,19 +1977,10 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean": [
       {
-        "line": 19,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class SpectralSequenceH3ExplicitContext where",
-        "decl": "SpectralSequenceH3ExplicitContext",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_i_d1_differential + claim_i_d1_differential_holds, claim_ii_d2_differential + claim_ii_d2_differential_holds, claim_iii_page_identifications_concretised + claim_iii_page_identifications_concretised_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [SpectralSequenceH3ExplicitContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 58,
+        "line": 81,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
-        "snippet": "def spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :",
+        "snippet": "def spectral_sequence_h3_explicit",
         "decl": "spectral_sequence_h3_explicit",
         "severity": "critical"
       }
