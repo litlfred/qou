@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-12T23:47:08Z
+updated_at: 2026-09-13T00:46:23Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2107,3 +2107,56 @@ So the honest next step is **not** a new route: it is the open-path holonomy of
 
 I did NOT create a bean for this: `qou-d0qq` is the carrier and is in-progress. A
 cross-link note has been appended there, status untouched.
+
+
+### 2026-09-12 (5) — the target restated in the KZ level variable: `|d ln F/dhbar| = 3.794`, an O(1) number
+
+Small, and deliberately scoped. Probe 4/4:
+`computations/qbeta/qbeta_pdix_target_in_kz_level_probe.py`
+
+Entry (4) put the surviving route at the OPEN-PATH holonomy of `qou-d0qq`'s KZ
+connection. A holonomy of that connection is naturally a function of the LEVEL,
+not of `q`, so the target has to be converted before anything is computed with it.
+`qou-d0qq` fixes `hbar = (2/(i*pi)) ln q`, purely imaginary at the real pin.
+
+    |hbar|             = 0.066425365618482     (matches the bean's -0.0664i)
+    |dhbar/dq| at q0   = 0.5735423928537
+    => |d ln F/dhbar|  = 3.793965411
+
+The bracket in the same units: Laurent `lw 2` 0.0819, `lw 3` 0.3911, best declared
+basket 3.0273, **TARGET 3.7940**, modular dual 1424.0.
+
+**WHAT IT DOES NOT ADD, stated first because this is the part that would get
+mis-quoted.** The conversion is multiplication by a CONSTANT at fixed `q0`, so
+**no ratio moves** — verified in the probe: the worst flat factor is 46.338654x in
+`q` and 46.338654x in `hbar`, identical. The `hbar` column is the same measurement
+in different units, **not** a second confirmation. A units change that leaves every
+ratio fixed is exactly the kind of thing that gets re-quoted as independent
+evidence, so the probe asserts the equality rather than leaving it implicit.
+
+**WHAT IT DOES ADD: a shape constraint on the carrier.** In the connection's own
+variable the required log-derivative is **O(1)** — not O(0.1) like a low-degree
+Laurent polynomial at `q0 ~ 1.11`, not O(10^3) like a non-perturbative
+`exp(-1/t)`. For a perturbative series `F = F0 (1 + a1*hbar + ...)` that reads
+`a1 ~ 3.794`, which is the size of a **Drinfeld-associator coefficient** (the
+associator's entries are multiple zeta values — O(1) rationals in `zeta(n)`). So
+the bracket's qualitative verdict, "intermediate transcendental", becomes a
+**checkable target on the leading coefficient of the open-path holonomy's
+hbar-expansion**. That is a sharper handoff than "compute the holonomy".
+
+**🛑 AND A NON-FINDING, recorded so it is not rediscovered as structure.**
+`a1*|hbar| = 0.2520155395`, which is **0.806 % from 1/4**. This carries **no
+information**: `a1` is *defined* by dividing the target by `|dhbar/dq|`, so the
+product is the target rearranged, and any target value would yield some such
+product. It fails the `S_leak` offset-genericity test trivially, because the
+quantity is not independent of the thing it is being compared to. Noted only
+because a suggestive simple fraction at sub-1 % is precisely what gets written up
+as a result.
+
+**STILL OPEN — this is a restatement of the target, not a holonomy computation.**
+And what can be computed today is the KZ side alone: `qou-d0qq`'s open remainder is
+the FRAMEWORK-side connection (C1/C2/C3 scope-(b) dead, survivor C3' needing the
+deformation as an INPUT), so any agreement found on the KZ side would be
+**conditional on the `KZPullbackGenerators` interface**, not derived. Worth saying
+before someone computes an associator coefficient, matches 3.794, and reports a
+closure.
