@@ -335,3 +335,28 @@ passes.
 
 **Numbers will move**, at ~1e-18 from `Q0` and ~1.4e-9 relative from `M_E_MEV`.
 Both are corrections, not drift.
+
+## 14. Two import-time dps defects — RE-RUN ONLY, fixed 2026-09-13
+
+`mpf_import_time_dps_audit` had 6 NEW files; two were genuine and are fixed by
+moving the idempotent `set_compute_dps()` to module scope **above** the
+constant, which is the pattern the audit documents.
+
+* **`molien_blast_radius_remainder_triage_probe.py`** — the severe one.
+  `Q_NEAR_ONE = mp.mpf("1") + mp.mpf("1e-25")` was built at mpmath's import-time
+  default of dps 15, where that expression is **exactly 1** (measured). The
+  constant's whole purpose is to be near one and *not* one: it is fed to
+  `y_lambda_su_n(n, Q_NEAR_ONE, 2)`, a q-deformed weight, so the probe was
+  silently evaluating the **classical q = 1 limit** rather than the approach
+  from just above. Now `1.0000000000000000000000001`, with `== 1` → `False`.
+* **`beta_ew_n3_second_trace_probe.py`** — `COT_THETA_W_CODATA =
+  mp.mpf("1.82306787")` built at dps 15 is the float64 expansion
+  (`1.82306787000000003473587639746256172657012939453125`), not the decimal.
+
+Both verified by **importing** the module, not compiling it: dps reaches 70 at
+module scope and `Q_NEAR_ONE != 1`.
+
+Gate: 6 NEW files → 4, total findings 30 → 28. **The remaining 4 are not
+defects** — see the `qou-fl9i` note: three import `q_parameter` before the
+flagged literal, which already raises dps 15 → 50 through the
+`qou_substrate/constants.py` floor, and this audit does not model that.

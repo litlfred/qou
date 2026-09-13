@@ -75,6 +75,19 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent))
 import molien_feray_meliot_bridge_probe as MB  # noqa: E402
 import plancherel_deformation_uniqueness_probe as PU  # noqa: E402
 
+# Precision MUST be raised before the module-scope constant below, and this one
+# is not a rounding nicety. At import time mp.dps is mpmath's default 15, and
+#
+#     mp.mpf("1") + mp.mpf("1e-25")   at dps 15   ==   1   EXACTLY
+#
+# (measured). Q_NEAR_ONE's entire purpose is to be near one and NOT one -- it is
+# fed to `y_lambda_su_n(n, Q_NEAR_ONE, 2)` at :182, a q-deformed weight -- so at
+# dps 15 the probe silently evaluates the CLASSICAL q = 1 limit instead of the
+# approach from just above. Raising dps afterwards cannot recover it: the
+# information is gone at construction. Idempotent; main() still calls it too.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 N_RANGE = tuple(range(2, 10))          # the probe's own check-1 range
 Q_NEAR_ONE = mp.mpf("1") + mp.mpf("1e-25")
 

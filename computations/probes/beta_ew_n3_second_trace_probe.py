@@ -68,6 +68,14 @@ from hecke_character_symbolic import _hoefsmit_build  # noqa: E402
 
 # CODATA: sin^2(theta_W) = 0.23129 -> cot(theta_W). Carried as the target the
 # two consumer files compare against, not as an input to anything computed here.
+# Precision raised before the module-scope constant: at import time mp.dps is
+# mpmath's default 15, and mp.mpf("1.82306787") built there is the FLOAT64
+# expansion (1.82306787000000003473587639746256172657012939453125), not the
+# decimal -- measured, dps15 != dps70. Raising dps afterwards cannot recover a
+# literal already rounded. Idempotent; main() still calls it too.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 COT_THETA_W_CODATA = mp.mpf("1.82306787")
 
 
