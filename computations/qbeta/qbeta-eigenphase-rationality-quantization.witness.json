@@ -1,0 +1,201 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T05:37:53.053818+00:00",
+  "commitSha": "c9fd78b0ad2be478a84c7bc6ccdc18c7cf82b2c5",
+  "assertions": [
+    {
+      "name": "1. det rho(sigma_i) = -1 identically",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "2. Hecke inverse is Laurent: sigma.sigma^-1 = I",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "3. det rho(w) = (-1)^(exponent sum)",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "4. tr rho(w) has integer coefficients",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "5. no word is bounded-but-not-constant",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "6. constant characters lie in [-2,2]",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "7. q-uniform eigenphase set on V_(2,1) is finite",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "8. Kronecker: alpha in 2*pi*Q (general d)",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "9. 2*pi/120 is the unique rational phase in the window, N <= 1000",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "10. candidate inside window, convention C outside",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "11. candidate |c3| < 1 < |c3| of convention C",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "12. coincidence priced: which denominator won is the informative fact",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "13. cross-anchor swing identical for candidate and C - no discrimination",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "14. no element of order 120 in S_5 or 2I - the obvious mechanism is dead",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "qbeta-eigenphase-rationality-quantization",
+  "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
+  "scriptHash": "e835072181fa",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py"
+  },
+  "description": "Two results of different status. PART 1 (scope-(b), proved): the sibling braid-image exclusion closes only a q-VARYING ansatz; carrying its boundedness argument through integrality shows a q-uniform braid-image eigenphase on V_(2,1) lies in the five-element set {0, pi/3, pi/2, 2pi/3, pi} (general d: Kronecker gives alpha in 2*pi*Q), so the CONSTANT case is closed too and alpha is convention-free. PART 2 (A FIT, labelled): given that quantization, 2*pi/120 is the unique primitive rational phase with N <= 1000 inside the ladder window, 19x closer than convention C, implying |c3| ~ 0.11 vs -2.069. It is SELECTION AGAINST THE TARGET and is not adopted, not wired; the cross-anchor swing is identical for both and discriminates nothing. It also bears on the RETIRED z=1 base and moves no dashboard row -- the ruled z_D base misses by 43%, which is not a phase problem.",
+  "data": {
+    "part1_structural": {
+      "words_swept": 5460,
+      "max_word_length": 6,
+      "det_rho_equals_sign_of_exponent_sum": true,
+      "characters_integral": true,
+      "bounded_but_not_constant_count": 0,
+      "constant_characters_observed": [
+        -1,
+        0,
+        2
+      ],
+      "quantized_eigenphase_set_V21": [
+        "0",
+        "pi/3",
+        "pi/2",
+        "2pi/3",
+        "pi"
+      ],
+      "alpha_req_in_that_set": false
+    },
+    "part2_measurement_is_a_fit": {
+      "fit_status": "SELECTION AGAINST TARGET - not a derivation, not adopted",
+      "base_status": "RETIRED z=1 cell; moves no dashboard row",
+      "unique_hit_N_le_1000": [
+        [
+          120,
+          1
+        ]
+      ],
+      "expected_hits_N_le_120": "0.0152439481648103707627924884962707021400067553887228606589574",
+      "expected_hits_N_le_1000": "1.05724739629502879687081000014992645357340057802243147049010",
+      "p_denominator_is_120_given_one_hit": "0.000105196717862402693035977277508941721018304228908058068588260",
+      "cross_anchor_c3_swing_candidate": "0.0489434322891020386500206519264356544672544000942030217093290",
+      "cross_anchor_c3_swing_convention_C": "0.0494822652411623743864995613731682915482550767508353761256800",
+      "mechanism_for_120": "NONE IDENTIFIED; the icosahedral reading is refuted - S_5 max element order 6, 2I max 10, so no primitive 120th root of unity arises",
+      "S5_element_orders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "twoI_order_and_element_orders": [
+        120,
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          10
+        ]
+      ],
+      "anchors": {
+        "proton": {
+          "q": "1.10997858275138080759166909561076887987449912187357873607281",
+          "alpha_required": "-0.0523586835189829612683390201367188553105075795678015941701873",
+          "window": "0.0000109188954779461631285168868228782960365456228657642407878528",
+          "alpha_C": "-0.0523361202682288387988645268899341706130483170063913394628427",
+          "C_windows_from_required": "2.06644076772191995705195608594805334338836037573049797736072",
+          "cand_2pi_over_120": "-0.0523598775598298873077107230546583814032861566562517636829157",
+          "cand_windows_from_required": "0.109355460846543211831127110029338485451730122577357536496695",
+          "c3_implied_by_C": "-2.06934257711516783787971951724962858902203099810343886691284",
+          "c3_implied_by_cand": "0.109532126904094660554820912457911047101396095855972842887357"
+        },
+        "muon": {
+          "q": "1.10997859564273904668179512938000175270006556102901155697405",
+          "alpha_required": "-0.0523581499635160434626895776333973382680583331992507089800460",
+          "window": "0.0000109190050253229102323936350853989865658702781152094102327814",
+          "alpha_C": "-0.0523361261306329914387156968056517003995486652718903362771579",
+          "C_windows_from_required": "2.01701829351440454419791588205723025157869351759630925463346",
+          "cand_2pi_over_120": "-0.0523598775598298873077107230546583814032861566562517636829157",
+          "cand_windows_from_required": "0.158219206771795987914897403077208555810648152641608687200771",
+          "c3_implied_by_C": "-2.01986031187400546349321995587646029747377592135260349078716",
+          "c3_implied_by_cand": "0.158475559193196699204841564384346701568650495950175864596686"
+        }
+      }
+    }
+  }
+}
