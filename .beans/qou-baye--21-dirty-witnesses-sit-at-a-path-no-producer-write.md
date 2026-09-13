@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T17:37:47Z
-updated_at: 2026-09-13T11:58:10Z
+updated_at: 2026-09-13T12:33:07Z
 ---
 
 ## What was measured
@@ -173,3 +173,48 @@ difference quotient written with two named variables (`(fp - fm) / dd`), or via
 match. `mp.diff` in particular chooses its own step and was not audited here —
 `hyperbolic_surface_law_probe` uses it deliberately and says so. The claim is:
 **the pattern a reader would grep for returns one real defect, already fixed.**
+
+
+### RE-DERIVED INDEPENDENTLY, and this bean's 615 is confirmed (2026-09-13)
+
+Walked into this from the other direction — `pentagon-to-borromean-h4-probe` came
+up as drain target 8 off the baseline's size ranking, and turned out to be **this
+bean's subject, not a drain**. Measured, with the method calibrated against the
+audit's own definition first:
+
+    computations/pentagon-to-borromean-h4-probe.witness.json         216 floats, 2026-07-18
+    computations/probes/pentagon-to-borromean-h4-probe.witness.json    0 floats, 2026-09-06
+
+The producer lives at `computations/probes/`, so **it writes the clean one**. Its
+14 `float(` sites are display-only — the live witness has zero raw floats. So the
+producer needs no drain at all; the 216 are July debris at a path nothing writes,
+and **no amount of re-running can drain them.**
+
+**Full orphan set, 4 entries / 615 fields — exactly this bean's figure, reached
+by a different route:**
+
+| baseline fields | stale path | clean twin the producer writes |
+|---:|---|---|
+| 346 | `computations/pentagon-rt-torus-knot-higgs-probe` | `computations/probes/...` (2026-09-07) |
+| 216 | `computations/pentagon-to-borromean-h4-probe` | `computations/probes/...` (2026-09-06) |
+| 31 | `computations/hecke-core-symbolic-migration` | `computations/substrate/...` (2026-08-30) |
+| 22 | `computations/per-knot-density-borromean-q-locality-probe` | `computations/probes/...` |
+
+**CALIBRATE THE COUNT OR YOU WILL REPORT THE WRONG NUMBER — I nearly did.** A
+naive `isinstance(o, float)` walk gives 168 for
+`pentagon-multipair-borromean-h4-probe` against a baseline entry of 93, which
+reads as a stale baseline. It is not: the audit **excludes integral-valued
+floats** (its own output says so — *"NOT a precision finding — exact in
+binary64"*). Excluding them, my count matches the baseline **exactly** on every
+still-dirty entry checked: 93/93, 117/117, 216/216. And `q-pochhammer-seed`
+reads baseline 239, on-disk **0** — confirming today's drain from a second
+direction.
+
+So: the baseline is **not** stale relative to disk. The discrepancy was my
+measure, and the calibration is the reusable part.
+
+**What this means for the drain queue.** 615 of the 30,985 baseline fields cannot
+be drained by any producer run. They can only be drained by deleting the orphan —
+which is exactly the owner decision this bean is waiting on, and is why a drain
+session keeps rediscovering them by size ranking. Until it is made, **skip these
+four when picking a target**; the size ranking will keep offering them.
