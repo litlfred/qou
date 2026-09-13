@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Fintype.Prod
+import QOU.Shared.ZPowFinsetProd
 import Mathlib.Algebra.Group.Defs
 import Mathlib.Algebra.Order.Group.Defs
 
@@ -64,14 +65,6 @@ namespace QOU.Eightfold
 
 variable {ι J L G : Type*} [Fintype J] [Fintype L] [DecidableEq L] [CommGroup G]
 
-omit [Fintype J] in
-/-- `a ^ (∑ f) = ∏ a ^ f`, the `zpow` analogue of Mathlib's `Finset.prod_pow_eq_pow_sum`
-(which exists only for `ℕ` exponents). -/
-theorem prod_zpow_eq_zpow_sum (s : Finset J) (f : J → ℤ) (a : G) :
-    ∏ i ∈ s, a ^ f i = a ^ ∑ i ∈ s, f i :=
-  Finset.cons_induction (by simp)
-    (fun _ _ _ ih => by simp [Finset.prod_cons, Finset.sum_cons, zpow_add, ih]) s
-
 /-- The gauge value of one exponent row `A` under an assignment `z` of scalars to columns:
 `∏_c z c ^ A c`. Integer exponents, so this is a `zpow` product in a `CommGroup`. -/
 def gaugeVal (z : J → G) (A : J → ℤ) : G := ∏ c : J, z c ^ A c
@@ -93,7 +86,7 @@ theorem gaugeVal_comp_of_fiberSum (φ : J → L) (A : J → ℤ) (B : L → ℤ)
     _ = ∏ l : L, lam l ^ B l := by
         refine Finset.prod_congr rfl ?_
         intro l _
-        rw [hB l, ← prod_zpow_eq_zpow_sum]
+        rw [hB l, ← QOU.Shared.prod_zpow_eq_zpow_sum]
         refine Finset.prod_congr rfl ?_
         intro c hc
         rw [(Finset.mem_filter.mp hc).2]
