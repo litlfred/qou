@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T10:45:30Z
+updated_at: 2026-09-13T10:51:05Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -469,3 +469,76 @@ regenerate, with the commit naming `qou-hu1f` and `9928f3f4a79`. The remaining
 1.15067 is worth one more bisection first, but it is no longer load-bearing for
 the decision — it is a third deliberate change of the same kind, not an
 unexplained number.
+
+
+# 🛑 RETRACTION — "the C→D component is measurably zero" is FALSE. It is the p-p bond, exactly.
+
+I wrote that above, on `qou-gjkv`, and in commit `b44ca9cc30c`. It is wrong, and
+the measurement that refutes it is the same method one step further on.
+
+Isolating each bond type from the ordering-invariant ratio `r = tr_atom/tr_free`
+— `r(³He)/r(D)` is the p-p bond, `r(T)/r(D)` the n-n, `r(D)` the p-n:
+
+| bond | now | 2026-06-15 | residual |
+|---|---|---|---:|
+| **p-p** | **0.61268805054558909984** | **0.49932034618370936279** | **1.227044031** |
+| p-n | 0.50822979120986496969 | 0.39486215666816114720 | 1.287106862 |
+| n-n | 0.40362772855570963873 | 0.29026002439520742122 | 1.390572916 |
+
+and against the two Markov parameters at that q:
+
+    z_D = q^3/(q^2+1)      = 0.61268805054558909984
+    z_C = 1/(sqrt q + 1/sqrt q) = 0.49932033403359825002
+    z_D / z_C                   = 1.227044061
+
+**The p-p bond IS `z`** — it matches `z_D` today to **3.2e-51** and `z_C` in June
+to **2.4e-8**, and its residual is `z_D/z_C`. (The 2.4e-8 is the q₀ anchor: June
+ran at the frozen muon pin `1.1099785955573347` and I evaluate `z_C` at the
+CODATA-2018 muon derivation, which differ at ~1.4e-9 and are amplified by `z`.
+Same scale as the 3.9e-8 anchor effect measured at the top of this bean.)
+
+So convention C→D is not merely present in this witness — **it is one of the
+three bond constants outright**, and it multiplies through every nucleus with a
+p-p bond.
+
+## What I actually measured, stated correctly this time
+
+- **The C→D swap inside `y_lambda_at` is a no-op** — both implementations agree
+  at `n = 6`. That test was sound and its result stands.
+- **The C→D change in the Markov parameter `z` itself is fully present**, and it
+  never went through `y_lambda_at`. I tested one carrier of the convention,
+  found it inert, and reported the convention inert. That is the
+  absence-of-evidence error, made against a claim I had the means to check.
+
+## Consequence: `qou-gjkv`'s label was RIGHT, and my flag on it overstated
+
+That bean lists this witness in a wave titled *"post-C-to-D corpus-wide witness
+regen"*. **The label fits.** My append there — *"the C→D component is measurably
+zero for it"* — is retracted; corrected on that bean.
+
+What survives of that flag, and it is still worth acting on: this witness moved
+from **three** distinct changes, only one of which is C→D, and two of which
+(`qou-hu1f`'s intra-ordering, 2026-09-05; the δ de-wire `9928f3f4a79`,
+2026-06-29) postdate or predate the wave's own measurement date of 2026-08-09.
+So the wave's numbers still cannot be the whole story for this member — but the
+reason is *incompleteness*, not a wrong cause.
+
+## The decomposition, corrected and complete
+
+    tr_M(free) June -> now  =  [ordering] / (a^Z * b^N)
+    tr_M(atom) June -> now  =  [ordering] / (a^Z * b^N * PROD over chain bonds)
+
+    ordering (qou-hu1f)  D 3.784816689  T 7.868165269  3He 6.890664045  4He 14.32483737
+                         (reproduces the corpus's own 3.785 / 7.868 / 6.891 / 14.325)
+    per nucleon          proton a = 1.075521518    neutron b = 1.069874485
+    per bond             p-p 1.227044031 = z_D/z_C   p-n 1.287106862   n-n 1.390572916
+
+Both fits are identities rather than fits: `a^Z b^N` reproduces all four free
+residuals to **1e-50**, and the three bond factors reproduce all four bond
+residuals to **5.6e-12** (three unknowns, four equations, uniform residual — the
+5.6e-12 is June's own ordering-invariance floor, not a model failure).
+
+Still unidentified: `a`, `b`, and the non-`z` parts of the p-n and n-n bonds.
+The p-n one is already pinned to the δ de-wire by the exact
+`d = -h(1/2 - δ/4)` check above; the n-n `d` and the per-nucleon `a`, `b` are
+open.
