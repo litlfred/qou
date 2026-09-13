@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-09-13T08:18:29Z
+updated_at: 2026-09-13T08:22:08Z
 parent: qou-2akx
 ---
 
@@ -44,3 +44,9 @@ parent: qou-2akx
 
 
 2026-09-13 claimed (branch claude/d0qq-twisted-period-eigenvalue-2026-09-13): §C step 4 of docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md — Lean QOU/Mass/TwistedPeriodEigenvalueRatio.lean: for μ : ℂ, exp(2πiμ) = −q² with real q > 1 forces Im μ = −ln q/π ≠ 0 (the twist exponent is never real: no real-exponent twisted period gives the Hecke ratio), and the pseudo-reflection pair {1, e^{2πiμ}} rescales to {q, −q⁻¹}. Then §C step 5 (prose rewrite of hecke-monodromy-step-two §What remains conjectural) if time allows. Kohno/Drinfeld ingestion (§B step 6) stays on qou-denm.
+
+
+
+### 2026-09-13 RESULT — §C step 4 landed: the twist exponent is never real (Lean, sorry-free)
+
+QOU/Mass/TwistedPeriodEigenvalueRatio.lean, lean-direct exit 0, axioms propext/Classical.choice/Quot.sound. norm_exp_two_pi_I_mul: ‖e^{2πiμ}‖ = e^{−2π Im μ}. im_eq_of_exp_eq_neg_sq: e^{2πiμ} = −q², real q > 0 ⇒ Im μ = −ln q/π — the exponent's imaginary part IS the level (same ln q as ħ = (2/iπ) ln q). im_ne_zero_of_exp_eq_neg_sq / not_exp_eq_neg_sq_of_im_eq_zero: for q > 1, Im μ ≠ 0 — no twisted period with a REAL exponent (unitary, rational, root-of-unity twist) gives the Hecke ratio; scope-(b), invariant = modulus of the monodromy eigenvalue. rescaled_pair: {1, e^{2πiμ}} rescaled to product −1 is {±q, ∓q⁻¹} via KZLevelFromHeckeNormalisation.eigen_sq_of_product_ratio. NOT established: that the substrate connection is a twisted period, or any derivation of μ (q₀ is an input under the forever-gate; §C step 2 measured zero twist from the framework's own connection). Next: §C step 5 (prose rewrite of hecke-monodromy-step-two §What remains conjectural, render-QA) — separate PR.
