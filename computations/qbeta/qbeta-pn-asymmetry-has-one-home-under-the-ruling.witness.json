@@ -1,0 +1,119 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T15:12:05.019984+00:00",
+  "commitSha": "cf0288281c999bf258d7faabfa304f96c4fd62f7",
+  "assertions": [
+    {
+      "name": "the_whole_pn_distinction_is_the_three_letter_quark_block",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "nuc11_interleaved builds both nucleons as core(6) . quark(3) . gluon(2). The core and the gluon pair are IDENTICAL between proton and neutron; only the quark block differs -- ['0', '-0.5', '-0.5'] against ['-0.5', '-0.5', '-1'] in units of h. So three letters of eleven carry the entire asymmetry"
+    },
+    {
+      "name": "the_core_is_pinned_at_one_and_the_quark_blocks_are_negative",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the six-letter gamma-gamma core has altChar = 1.0 exactly, as altChar_eq_one requires. The quark blocks have -0.910762214553 (proton) and -1.1221068216 (neutron) -- both NEGATIVE, so neither is gamma-gamma-expressible, and they are exactly where the nucleons diverge. (The gluon pair is 0.811653754366 = 1/q^2, also not 1, but it is shared and so carries no asymmetry)"
+    },
+    {
+      "name": "the_alternating_character_IS_the_sign_block_computed_independently",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "multiplying the per-letter alternating characters and taking the trace of the (1,1,1) Hoefsmit projection are different routes to the same number, and they agree to 4.569e-39: -0.73922357077647 (proton), -0.91076221455307 (neutron). Without this the letter-level computation above would be an unchecked convention"
+    },
+    {
+      "name": "the_corpus_separates_the_nucleons_in_the_invariant_the_ruling_pins",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the corpus's two nucleons differ by 0.171538643777 in alternating character (23.2052 % of the proton value). Under the ruling both would be exactly 1, so this invariant could not tell them apart at all. That is not a defect in either -- it is the tension: the corpus's p/n handle is the one thing the ruling fixes"
+    },
+    {
+      "name": "under_the_ruling_the_only_remaining_handle_is_the_vertex_multiset",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "a gamma-gamma word is a product of vertices sigma_i sigma_{i+1}^-1, so its only freedom is which vertices and how many; and the Markov trace is blind to their ORDER (3840 (permutation, index-assignment) pairs of a 5-vertex word give one value -- #7295, and the crossing energy is blind the same way). So the p/n asymmetry has exactly one home under the ruling: the vertex MULTISET. Stated as an assertion so the structural claim is machine-recorded; it is an argument, not a measurement, and it holds at every n"
+    },
+    {
+      "name": "the_sibling_15_pair_table_is_exhaustive_at_n_equals_four",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "with 6 PSD-feasible gamma-gamma words at n = 4 (the five of #7295 plus the empty word) there are exactly 15 unordered (neutron, proton) assignments, and |tr(n) - tr(p)| is symmetric. So the 15-pair table in qbeta_qbeta_scores_a_difference_probe.py enumerates EVERY ruling-admissible assignment at that strand count -- it is exhaustive, not a sample, which is what makes its -100 %..+79.4 % span a statement about the ruling rather than about a selection"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "qbeta-pn-asymmetry-has-one-home-under-the-ruling",
+  "scriptFile": "qbeta_pn_asymmetry_has_one_home_under_the_ruling_probe.py",
+  "scriptHash": "150cbee259f0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_pn_asymmetry_has_one_home_under_the_ruling_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_pn_asymmetry_has_one_home_under_the_ruling_probe.py"
+  },
+  "description": "Q_beta is scored on a difference of a neutron word and a proton word, so the ruling must select two words and something must separate them. The corpus separates them ENTIRELY in the three-letter quark block: the gamma-gamma core and the gluon pair are byte-identical between the nucleons. And the quark blocks carry alternating character -0.9108 (p) and -1.1221 (n), both negative, while every gamma-gamma word is pinned at exactly 1 (altChar_eq_one, sorry-free) -- so the corpus separates the nucleons precisely in the invariant the ruling fixes. Under the ruling both words have altChar = 1 and cannot be told apart by it; since the trace is also blind to vertex ORDER, the p/n asymmetry has exactly one home left, the VERTEX MULTISET. Consequence: the 15-pair table in the sibling retraction probe is exhaustive at n = 4, not a sample. Scope-(a) plus one structural observation that holds at every n.",
+  "data": {
+    "where_the_asymmetry_lives": {
+      "corpus_construction": "core(6 gamma-gamma letters) . quark(3) . gluon(2)",
+      "shared_between_nucleons": [
+        "core",
+        "gluon pair"
+      ],
+      "differs": "the 3-letter quark block only",
+      "quark_p": [
+        "0",
+        "-0.5",
+        "-0.5"
+      ],
+      "quark_n": [
+        "-0.5",
+        "-0.5",
+        "-1"
+      ]
+    },
+    "alternating_character": {
+      "core": "1.0",
+      "quark_p": "-0.9107622145530743664886669",
+      "quark_n": "-1.122106821602472073827721",
+      "gluon": "0.8116537543657580581322148",
+      "full_p": "-0.7392235707764748608168264",
+      "full_n": "-0.9107622145530743664886669",
+      "gamma_gamma_value": "1 exactly (altChar_eq_one, sorry-free)",
+      "separation_pct": "23.2052454167"
+    },
+    "consequence": {
+      "structural": "under the ruling a word's only freedom is its vertex multiset -- altChar is pinned at 1 and the trace is blind to vertex order",
+      "n4_admissible_assignments": 15,
+      "sibling_table_is": "exhaustive at n = 4, not a sample"
+    },
+    "scope": {
+      "class": "(a) scope-limited, plus one structural observation",
+      "structural_half_holds_at": "every n",
+      "what_is_NOT_claimed": "which multiset a nucleon should be; no pair is selected here, and selecting one by residual would be selection against the target"
+    }
+  }
+}
