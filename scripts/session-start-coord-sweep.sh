@@ -22,6 +22,45 @@ flock 200
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
+# ── 0. Long-running producer: is it still alive? ────────────────────────────
+#
+# FIRST in this file, deliberately. The reader truncates this output at about
+# 2 KB, so anything below the beans priming is not seen; and this is the only
+# time-critical line here.
+#
+# WHY A HOOK AND NOT A SUPERVISOR. The qou-uiut table takes hours and the
+# container is recycled every ~25-45 minutes, which kills the run. On
+# 2026-09-13 I wrote .work/hkt-supervise.sh to poll-restart it, and that was
+# the wrong shape: a recycle kills the SUPERVISOR TOO, so it cannot protect
+# against the one failure it was built for. It still earns its place for a
+# process that dies inside a living container. But this hook is the only thing
+# that runs AFTER a recycle, so this is where a restart has to be prompted.
+#
+# REPORTS, DOES NOT START. Launching a multi-hour 100%-CPU producer in every
+# session that opens this repo is a side effect nobody asked for, and a
+# sibling agent doing unrelated work would pay for it. The restart is one
+# command and it is printed here.
+_hkt_ckpt="$REPO_ROOT/.work/hkt-uiut-ckpt.json"
+if [ -f "$_hkt_ckpt" ]; then
+  _hkt_n="$(python3 -c 'import json,sys; print(len(json.load(open(sys.argv[1]))["atoms"]))'             "$_hkt_ckpt" 2>/dev/null || echo '?')"
+  if [ "$_hkt_n" != "19" ]; then
+    if ps -eo cmd --no-headers 2>/dev/null          | grep -q '^python3 computations/hadron_knot_table.py'; then
+      echo "## qou-uiut table — RUNNING, ${_hkt_n}/19 atoms"
+    else
+      echo "## 🛑 qou-uiut table — STOPPED at ${_hkt_n}/19. Restart it:"
+      echo
+      echo '    scripts/hkt-resume.sh --commit'
+      echo
+      echo "Idempotent (refuses a second producer in one checkout) and gated on"
+      echo "the mpfr LP kernel, whose absence makes the run silently wrong."
+      echo "Completed atoms are committed; work inside the atom in flight is"
+      echo "carried by \`.work/kernel-memo/\`, which survives a recycle -- so a"
+      echo "restart resumes partway rather than from the atom's start."
+    fi
+    echo
+  fi
+fi
+
 # 1. Fetch origin/main quietly
 git fetch origin main >/dev/null 2>&1 || {
   echo "## Coord sweep — origin/main fetch failed (network?)"

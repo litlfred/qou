@@ -8,10 +8,18 @@
 # box suspended and the run sat dead until somebody looked" into "the run
 # restarts within one poll".
 #
-# 2026-09-13: the run died at 11:38:02 on a session resume and was noticed 20
-# minutes later, by hand. That is the failure this closes. Per-atom
-# checkpointing means a reset costs only the atom in flight -- but only if
-# something restarts it.
+# WHAT THIS DOES *NOT* COVER, corrected the same day it was written.
+#
+# It was written for "the run died at 11:38:02 on a session resume and was
+# noticed 20 minutes later", and it does NOT close that. A container recycle
+# kills this supervisor too -- measured: at 12:25 both the table and this
+# script were gone. A supervisor inside the thing being supervised cannot
+# outlive it.
+#
+# The mechanism that actually survives a recycle is the SessionStart hook,
+# scripts/session-start-coord-sweep.sh, which now reports the table's state as
+# its first line. This still earns its place for the other failure: a run that
+# dies while the container lives.
 set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 while true; do
