@@ -5,6 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
+updated_at: 2026-09-13T13:50:50Z
 updated_at: 2026-09-13T13:07:38Z
 updated_at: 2026-09-13T12:47:52Z
 ---
@@ -1286,6 +1287,56 @@ temptation is real.
 model BUYS downstream; it does not derive the weight.
 
 Probe: `computations/qbeta/kind_dependent_rho_pp_derived_check.py` (5/5).
+
+---
+
+CORRECTION OF THIS BEAN'S OWN OPEN ITEM (2026-09-13, session sleepy-morse, PR #7300).
+
+**I have been listing "derive the `1/4`" as an open target. It is malformed, and
+the framing is mine** — it appears in this bean and in PR #7285's "What is NOT
+proved", and a grep of `content/`, `computations/`, `docs/` and `.beans/` turns
+up no corpus artifact that treats the `1/4` as a separately-derivable constant.
+
+**The `1/4` is a normalisation Jacobian.** The corpus normalises the flavour
+split by the MEAN nucleon mass — `δ = Δm/M_N`, `M_N = (m_p+m_n)/2`
+(`prop:flavor-split-substrate`, `_li_2_q_util.flavor_split_leading`). Under that
+convention `1/2 − δ/4` is *identically* the proton's mass fraction of the pair,
+and the `4` is `2 × 2`: one factor because `M_N` is a mean not a sum, one because
+`Δm` is a full difference not a half-split.
+
+**Falsifiable, not a re-labelling.** Four sorry-free theorems in
+`QOU.Mass.FlavourSplitNormalisation`:
+
+| | |
+|---|---|
+| `tPN_mean_normalised` | `1/2 − δ_mean/4 = m_p/(m_p+m_n)` |
+| `tPN_sum_normalised` | `1/2 − δ_sum/2 = m_p/(m_p+m_n)` |
+| `quarter_is_wrong_under_sum_normalisation` | `1/2 − δ_sum/4 − m_p/(m_p+m_n) = Δm/(4(m_p+m_n))` |
+| `normalisations_distinguishable` | that residual `≠ 0` whenever `m_n ≠ m_p` |
+
+Had `δ` been normalised by the SUM — the other natural reading of "the pair's
+mass" — the coefficient would be `1/2`, and `1/4` would be positively **wrong**
+by a residual that vanishes only at degeneracy. So the numeral is carried by the
+convention, and the real question is *which mass normalises `δ`*, which
+`flavor_split_leading`'s own docstring answers.
+
+**What this does NOT close, and it is the larger half.**
+
+1. **The `(q−1)²/3` is untouched.** It is the substrate content, derived only at
+   leading order, and its subleading correction is explicitly **posited**:
+   `flavor_split_subleading`'s `(1+ℏ_q³)` supplies 76 % of the gap CODATA demands
+   and its own docstring says so. That is the live target.
+2. **Mass-fraction is not the mechanism for all three letters.**
+   `massFraction_like_pair` (`m/(m+m) = 1/2`) contradicts `t_pp = 0` and
+   `t_nn = 1`, so the reading holds at `pn` and fails at the like pairs.
+3. **Why the `pn` interface is colour-weighted at all** is
+   `bring_color_weighted` (canonical, owner ruling R3, 2026-08-15). Nothing here
+   derives it.
+
+**So this bean's remaining open item should be read as `(q−1)²/3` and the
+colour weighting — not as two constants.** Verification: `lean`-direct exit 0,
+axioms `[propext, Classical.choice, Quot.sound]` on all four; `CharZero` is
+required rather than convenient, since every statement divides by 2 and 4.
 COORDINATION NOTE (2026-09-13, session from bean `qou-5c64`). Not a claim on
 this bean and nothing here is edited — this answers the one item the previous
 coordination note left explicitly untested.
