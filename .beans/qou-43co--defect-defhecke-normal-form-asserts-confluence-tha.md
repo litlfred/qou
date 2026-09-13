@@ -1,11 +1,11 @@
 ---
 # qou-43co
 title: 'DEFECT: def:hecke-normal-form asserts confluence that QOU''s own Lean refutes at n=4'
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-09T18:27:58Z
-updated_at: 2026-09-13T12:38:53Z
+updated_at: 2026-09-13T14:02:29Z
 ---
 
 `content/quantum-observable-universe/braids-and-knots/hecke-normal-form.md` says of
@@ -127,3 +127,96 @@ say the normal form is fixed by rule order, remain the decision. Defect 4 is the
 one piece that is arguably mechanical (the block contradicts itself), but it sits
 in the same three lines, so it is being put to the author together rather than
 patched underneath a live question.
+
+
+## FIXED 2026-09-13 — and the corpus already had MORE than this bean knew
+
+Author authorised all three options (drop the confluence claim, fix the arrow,
+restate over the completed system). Options 1 and 3 turned out to combine rather
+than conflict: the block now carries a **true** confluence claim instead of
+losing one.
+
+### 🛑 The bean's option (a) would have been wrong as written — and the corpus said so
+
+This bean proposed *"restate the block over the COMPLETED rewriting system and
+cite the completion [bokut2001]"*. Doing exactly that would have reintroduced the
+error `qou-qspu` exists to prevent: `[bokut2001]` is a theorem about Coxeter
+**groups** at `q = 1`, and `qou-qspu` records that *"whether the group-level GS
+basis lifts to the q-deformation is exactly the load-bearing question, and it is
+currently assumed rather than checked."*
+
+What rescues option (a) is not the citation but the **folio's own Lean**, which
+had already done the work — and which this bean, written 2026-08-09, predates:
+
+| claim | status | carrier |
+|---|---|---|
+| three-rule system is a GS basis | **FALSE**, machine-checked at `n = 4` | `hecke_is_gs_basis_false`, `HeckeGS.lean:671` |
+| **completed** system is a GS basis | **PROVED, unconditional**, every `n ≥ 1`, every `HeckeParams` | `heckeCompleted_isGrobnerShirshovBasis`, `HeckeCompletion.lean:18723` |
+| completed system has unique normal forms | proved **modulo two Diamond-Lemma axioms** | `heckeCompleted_normalForm_unique:18766` → `normal_form_unique`, which uses `reduction_well_founded` (`Basic.lean:800`) and `local_confluence` (`CompositionLemma.lean:77`) |
+
+`grep` for a real `sorry` across the whole `UGB/GrobnerShirshov/` tree returns
+**zero** (the three textual matches in `HeckeCompletion.lean` are all prose about
+sorry-freeness). Bean `qou-auq3` records the verification: `[propext,
+Classical.choice, Quot.sound]`, 2026-08-24.
+
+So the attribution is now **split deliberately**: `[bokut2001]` is cited for the
+completion **family** only — which is what `HeckeCompletion.lean` itself
+attributes to Bokut & Shiao — and the `H_n(q)` GS-basis statement is carried by
+the folio's Lean, not by the citation. `[kimlee2018]` is the held secondary for
+the same completion phenomenon on the Temperley–Lieb quotient.
+
+Also relevant and now recorded in the block: **the family carries no `q`.** It is
+a braid-group identity (commute `σᵢ` past `σᵢ₋₂ ⋯ σⱼ`, then braid), with the
+quadratic relation never used. That is why the group-level shape transfers at
+all.
+
+### 🛑 NEW — `HeckeCompletion.lean`'s own header is STALE
+
+Its §"What is **not** established here" still lists, at **line 60**,
+
+> `* *` that the completed system **is** a Gröbner–Shirshov basis. That is the
+> whole of Bokut & Shiao's theorem …
+
+— **18,663 lines above the theorem that proves it** (line 18723). Note the
+malformed `* *` bullet: the sibling item above it was updated to `**DONE (§4h).**`
+and this one was not. A reader who stops at the header concludes the opposite of
+what the file proves. NOT fixed here (different paper, `unital-groebner-bases`,
+and not this bean's scope). Worth its own bean.
+
+### The three defects, as fixed
+
+1. **False confluence claim** → replaced with the refutation (`n = 4` overlap,
+   the `S`-polynomial `σ₂σ₃σ₂σ₁ − σ₃σ₂σ₁σ₃` with both words irreducible), then
+   the completed system's proved confluence.
+2. **Yang–Baxter arrow backwards** → now `σᵢ₊₁σᵢσᵢ₊₁ → σᵢσᵢ₊₁σᵢ`, matching
+   `yb_lm`'s `lm = σ₃σ₂σ₃`. As written it increased the word and could not
+   terminate.
+3. **Far commutativity unoriented** → now `i > j + 1`, matching
+   `farCommRelation`. Unoriented it is symmetric and likewise non-terminating.
+4. **No `cites`** → `["bokut2001", "kimlee2018"]`, both verified to resolve
+   against `references.ts` by import (not grep).
+
+An `authorNotes` entry records the per-claim epistemic tiers and the attribution
+split, so a later reader does not have to re-derive any of it.
+
+### Verification
+
+```
+render-QA grep battery   8/8 PASS  (the one 'ö' flag was my checker's incomplete
+                                    allowlist — it is in 234 existing content .md
+                                    files, inside the \unitextsafe range, and
+                                    appears 0 times in math here)
+qa-sweep                 0 critical, 0 major, 0 minor  (118 criteria)
+run-validate             ✓ Valid — 2 issue(s), 0 errors, platform df28d02
+```
+
+One minor was caught and fixed rather than shipped: `voice-editorializing` on
+"rather than merely displaced" (`merely` is in the checker's pattern list). The
+replacement is also the more precise statement — it names what
+`spoly_not_isNormalForm_completed` actually says.
+
+### Still open, deliberately
+
+`qou-qspu` — obtain Kang–Lee–Lee–Oh 2002, the primary for the deformed type-A
+case. The block no longer *needs* it (the Lean carries the claim), but the folio
+still cannot cite a published source for the `H_n(q)` statement.
