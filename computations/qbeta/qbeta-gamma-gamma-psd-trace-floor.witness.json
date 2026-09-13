@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T15:04:56.624890+00:00",
-  "commitSha": "b0f9c25bc2b545a141d7c66f6f4eb9f4a420fe44",
+  "computedAt": "2026-09-13T15:15:45.666321+00:00",
+  "commitSha": "ab9be56d8ebb4e7b92cd4144e50ea3fe0f051201",
   "assertions": [
     {
       "name": "convention_D_weights_are_zero_on_three_rows_and_positive_on_two",
@@ -55,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1086,
+  "durationMs": 1029,
   "computation": "qbeta-gamma-gamma-psd-trace-floor",
   "scriptFile": "qbeta_gamma_gamma_psd_trace_floor_probe.py",
-  "scriptHash": "d01299f96f4a",
-  "scriptCommitSha": "8877226f86db531fc80a38cf43dc9f6e3d62e62e",
+  "scriptHash": "91f52ce9b63f",
+  "scriptCommitSha": "034a309bf04797f578ca034148bd13d26900798f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

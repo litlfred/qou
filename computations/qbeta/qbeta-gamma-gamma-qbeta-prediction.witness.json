@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T14:15:20.405676+00:00",
-  "commitSha": "921014850dd47db3abf03995b0340b82265b968c",
+  "computedAt": "2026-09-13T15:17:07.390865+00:00",
+  "commitSha": "ab9be56d8ebb4e7b92cd4144e50ea3fe0f051201",
   "assertions": [
     {
       "name": "calibrates_against_the_dashboards_own_scored_cell",
@@ -55,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 77512,
+  "durationMs": 78081,
   "computation": "qbeta-gamma-gamma-qbeta-prediction",
   "scriptFile": "qbeta_gamma_gamma_qbeta_prediction_probe.py",
-  "scriptHash": "e84a44d0159b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "160a477e17a4",
+  "scriptCommitSha": "034a309bf04797f578ca034148bd13d26900798f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
