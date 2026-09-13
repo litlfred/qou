@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T16:24:19.896633+00:00",
-  "commitSha": "008a66176c469b5a6d54177586c463edbd817a16",
+  "computedAt": "2026-09-13T17:21:15.331288+00:00",
+  "commitSha": "052b4177db43d8670f134b985c815d77f3e2e27c",
   "assertions": [
     {
       "name": "scan_completed",
@@ -18,7 +18,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
   "scriptHash": "6e54d4ce93c4",
@@ -50,23 +50,6 @@
     "significant_digits_required": 15,
     "witness_files_scanned": 3666,
     "grouped_candidates": {
-      "computations/applied-uniqueness-mass-table.witness.json": [
-        [
-          "/data/canonical_tr_M_q0_values/proton",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/sources/proton/target_value",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows[0]/tr_M_q0",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/atomic-mass-via-rho-k.witness.json": [
         [
           "/data/rows[0]/tr_M_at_q0",
@@ -595,7 +578,6 @@
       "qou-mass/src/qou_mass/markov_weights_symbolic.witness.json"
     ],
     "grouped_downstream_reflections": [
-      "computations/applied-uniqueness-mass-table.witness.json",
       "computations/atomic-mass-via-rho-k.witness.json",
       "computations/audits/fitted-labelled-canonical-audit.witness.json",
       "computations/binding-K-direct.witness.json",
@@ -617,11 +599,6 @@
       "computations/logratio-exactly-extensive.witness.json"
     ],
     "producer_classification": {
-      "computations/applied-uniqueness-mass-table.witness.json": {
-        "kind": "reflects",
-        "why": "reads artifacts; calls no trace machinery",
-        "scriptFile": "applied_uniqueness_mass_table.py"
-      },
       "computations/atomic-mass-via-rho-k.witness.json": {
         "kind": "reflects",
         "why": "reads artifacts; calls no trace machinery",
