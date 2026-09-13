@@ -92,9 +92,16 @@ second. Measured today by walking `import` lines transitively from `QOU.lean`:
     reachable from QOU.lean         1451   (51.2%)
     OUTSIDE the import closure      1385   (48.8%)
 
-The **67 %** figure `qou-g5sp` asserts twice is **not reproducible** and is
-withdrawn; `qou-rc7b` independently measured 47 % in August on a smaller tree,
-consistent with today's 48.8 % and not with 67 %.
+The **67 %** figure `qou-g5sp` asserts twice was **already corrected on
+2026-09-08**, in `lean-root-coverage-audit.py`'s own `CORRECTED` block — it counted
+the root's *direct* import lines rather than the transitive closure, understating
+coverage by 540 modules. Today's 48.8 % agrees with that script's 47.7 % and with
+`qou-rc7b`'s 47 %. **My withdrawal of it is a re-discovery, not a finding** — I got
+there by measuring instead of grepping my own tool.
+
+What is new is the **premise**: that correction fixed the *count* and left *"a
+module outside the closure is built by nothing"* standing. The glob falsifies it,
+and the two errors needed separate fixing.
 
 ### So what IS the gap?
 
