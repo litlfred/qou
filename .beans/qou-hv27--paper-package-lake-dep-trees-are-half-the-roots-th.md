@@ -1,11 +1,11 @@
 ---
 # qou-hv27
 title: Paper-package Lake dep trees are HALF the root's — the sweep gate reads it as 855 corpus REDs
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-07T18:28:49Z
-updated_at: 2026-09-07T18:35:43Z
+updated_at: 2026-09-13T05:36:59Z
 ---
 
 MEASURED 2026-09-07 while running the /prepare-merge Phase-4 gate on PR #7077 (merged as 8360a30ff).
@@ -78,3 +78,22 @@ THREE CANDIDATE FIXES, for the owner to pick -- NOT implemented, per the 2026-09
 MY JUDGEMENT (not a finding): A, because it makes the gate correct regardless of which trees a container happens to have, and because the union is free on one filesystem. B is the better long-term fix but is a bigger change to a load-bearing cache with a live size budget.
 
 COORDINATION: qou-tpdg is IN-PROGRESS and owned by another arc. Do NOT push a change to lean-library-sweep.py against it without checking in -- this bean is the finding, not a claim on their file. Their PR is #6827.
+
+SUPERSEDED AND RESOLVED 2026-09-13 by qou-4h26 (182c591910, scripts/lean-sync-olean-trees.sh). Closing: the durable fix is THEIRS, not mine, and the bean should not stay open claiming otherwise.
+
+WHAT I CONTRIBUTED: the measurement (855 RED, all MISSING-OLEAN, zero source errors; paper mathlib 1802 vs root 3480), the diagnosis that a PARTIAL tree SHADOWS a COMPLETE one, and the observation that qou-tpdg's paper-first ordering is the mirror of the root-first failure it was written to fix — so no ordering can be right and the fix must be a UNION. Option A in this bean.
+
+WHAT THEY CONTRIBUTED, and it is the part that lasts: the script. Their commit message names exactly why — 'the durable form of the cp -rln that session ran by hand, WHICH DIED WITH ITS CONTAINER.' A hand-run repair is not a fix; it is a fix that has to be rediscovered by whoever hits it next. Verified here: this container came up with the trees UNEQUAL AGAIN and in the OPPOSITE direction (paper 3565, root 3480), and the script linked 168 files to level them, rc=0.
+
+THEY ALSO CORRECTED MY MECHANISM STATEMENT, and the correction matters:
+  mine (and qou-tpdg's):  Lean commits to the first LEAN_PATH root holding the
+                          module's TOP-LEVEL NAMESPACE directory
+  theirs:                 Lean resolves a PACKAGE from the first root holding
+                          that PACKAGE directory, not the first holding the MODULE
+Same failure, but the precise unit is the package, not the namespace or the module. Use their wording; mine over-generalised from one observation.
+
+ONE THING I GOT RIGHT THAT IS WORTH KEEPING: their commit confirms both orderings have now been measured to fail in opposite directions, which is what makes the union the only sound fix rather than merely the convenient one — and it means the ordering in lean-shadow-verify.sh is deliberately LEFT ALONE rather than reversed.
+
+NOT MINE TO CLAIM: the selftest that caught their own three-vs-four-dirname bug (cross-linking batteries into mathlib, exiting 0 with a plausible summary) is a better guard than anything this bean proposed.
+
+Nothing left open here. The seed/restore question this bean raised — WHY the trees come up unequal — is qou-tpdg's and is in flight there.
