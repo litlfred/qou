@@ -1,0 +1,265 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2103.07383v1",
+ "source": {
+  "file": "2103.07383v1.pdf",
+  "sha256": "9dca35ea16490ad864811e4b8eb0aacc6b34421bc333fb948f1d89b7258d1294",
+  "bytes": 788524,
+  "pages": 31,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2103.07383",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "12 Mar 2021"
+  },
+  "doi": null,
+  "title": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case",
+  "authors_raw": "Daniel Steenebr\u00fcgge",
+  "title_lines": [
+   "On the Analyticity of Critical Points of the Generalized",
+   "Integral Menger Curvature in the Hilbert Case"
+  ],
+  "abstract": "We prove the analyticity of smooth critical points for generalized integral Menger cur- vature energies intM(p,2), withp \u2208 ( 7 3, 8 3 ), subject to a \ufb01xed length constraint. This implies, together with already well-known regularity results, that \ufb01nite-energy, criticalC 1-curves \u03b3: R/Z \u2192 Rn of generalized integral Menger curvature intM(p,2) subject to a \ufb01xed length constraint are not onlyC \u221e but also analytic. Our approach is inspired by analyticity results on critical points for O\u2019Hara\u2019s knot energies based on Cauchy\u2019s method of majorants and a decomposition of the \ufb01rst variation. The main new idea is an additional iteration in the recursive estimate of the derivatives to obtain a su\ufb03cient di\ufb00erence in the order of regularity.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20211123060941Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Decomposition of the first variation",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Estimate of the main term Q(p)",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The remainder term R(p)",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Representation of the remainder term R(p)",
+   "page": 9,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "A fractional Leibniz rule",
+   "page": 10,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Estimate of the remainder term R(p)",
+   "page": 15,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the main statement",
+   "page": 18,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Recursive estimate and iteration",
+   "page": 18,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.2",
+   "page": 20,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "A few simple consequences concerning critical knots",
+   "page": 23,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "A Properties of analytic functions",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Fa\u00e0 di Bruno's formula",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "C An inequality for Sobolev Norms",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1246,
+   "n_words": 166
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 15742,
+   "n_words": 2465
+  },
+  {
+   "id": "sec-001-3-estimate-of-the-main-term-qp",
+   "number": "3",
+   "title": "Estimate of the main term Q(p)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3092,
+   "n_words": 501
+  },
+  {
+   "id": "sec-002-4-the-remainder-term-rp",
+   "number": "4",
+   "title": "The remainder term R(p)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 304,
+   "n_words": 55
+  },
+  {
+   "id": "sec-003-41-representation-of-the-remainder-term-rp",
+   "number": "4.1",
+   "title": "Representation of the remainder term R(p)",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3278,
+   "n_words": 523
+  },
+  {
+   "id": "sec-004-42-a-fractional-leibniz-rule",
+   "number": "4.2",
+   "title": "A fractional Leibniz rule",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 18,
+   "n_chars": 11727,
+   "n_words": 2084
+  },
+  {
+   "id": "sec-005-5-proof-of-the-main-statement",
+   "number": "5",
+   "title": "Proof of the main statement",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 251,
+   "n_words": 40
+  },
+  {
+   "id": "sec-006-51-recursive-estimate-and-iteration",
+   "number": "5.1",
+   "title": "Recursive estimate and iteration",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3411,
+   "n_words": 594
+  },
+  {
+   "id": "sec-007-52-proof-of-theorem-12",
+   "number": "5.2",
+   "title": "Proof of Theorem 1.2",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 4604,
+   "n_words": 823
+  },
+  {
+   "id": "sec-008-6-a-few-simple-consequences-concerning-critical",
+   "number": "6",
+   "title": "A few simple consequences concerning critical knots",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 7525,
+   "n_words": 1223
+  },
+  {
+   "id": "sec-009-a-properties-of-analytic-functions",
+   "number": null,
+   "title": "A Properties of analytic functions",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 4603,
+   "n_words": 769
+  },
+  {
+   "id": "sec-010-c-an-inequality-for-sobolev-norms",
+   "number": null,
+   "title": "C An inequality for Sobolev Norms",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 7802,
+   "n_words": 1098
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 12,
+  "chars_total": 63585
+ }
+}

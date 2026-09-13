@@ -1,0 +1,114 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1111.6782v2",
+ "source": {
+  "file": "1111.6782v2.pdf",
+  "sha256": "5acfde49432e59e3329c6e402a39496934d5df3682eed4b337f9c32c1eca81a1",
+  "bytes": 176220,
+  "pages": 19,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1111.6782",
+   "version": "2",
+   "primary_class": "math.AP",
+   "stamp_date": "18 Jan 2012"
+  },
+  "doi": null,
+  "title": "Stationary Points of O\u2019Hara\u2019s Knot Energies",
+  "authors_raw": "Simon Blatt\u2217 Philipp Reiter\u2217\u2217",
+  "title_lines": [
+   "Stationary Points of O\u2019Hara\u2019s Knot Energies"
+  ],
+  "abstract": "In this article we study the regularity of stationary points of the knot ener- gies E(\u03b1) introduced by O\u2019Hara in [ 14, 15, 16] in the range \u03b1\u2208 (2, 3). In a \ufb01rst step we prove that E(\u03b1) is C1 on the set of all regular embedded curves belonging to H(\u03b1+1)/2,2(R/Z, Rn) and calculate its derivative. After that we use the structure of the Euler-Lagrange equation to study the regularity of stationary points of E(\u03b1) plus a positive multiple of the length. We show that stationary po ints of \ufb01nite energy are of class C\u221e \u2014 so especially all local minimizers of E(\u03b1) among curves with \ufb01xed length are smooth.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181030142622-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Continuous differentiability",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Regularity of stationary points",
+   "page": 13,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A Results on fractional Sobolev spaces",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 754,
+   "n_words": 130
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 13,
+   "n_chars": 23406,
+   "n_words": 4078
+  },
+  {
+   "id": "sec-001-3-regularity-of-stationary-points",
+   "number": "3",
+   "title": "Regularity of stationary points",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 17,
+   "n_chars": 7321,
+   "n_words": 1368
+  },
+  {
+   "id": "sec-002-a-results-on-fractional-sobolev-spaces",
+   "number": null,
+   "title": "A Results on fractional Sobolev spaces",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 4214,
+   "n_words": 709
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 4,
+  "chars_total": 35695
+ }
+}
