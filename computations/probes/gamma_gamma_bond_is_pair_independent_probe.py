@@ -42,6 +42,12 @@ the nucleon blocks -- so a pair-INDEPENDENT bond word would give three EQUAL
 bond factors, which can never be sign-mixed.  `G^3` is outside its hypotheses,
 so the ratio MAY depend on the blocks.  Whether it does is the measurement.
 
+RESULT, recorded here so the file does not read as though the expectation held:
+it DOES depend on them (spread 4.47e-4 vs the template's 1.6e-61), so the
+pair-independence this probe was written to expect is REFUTED.  Option 1 closes
+for a different reason -- all four ordered pairs exceed 1, so no chain gets
+exactly one bond above 1.
+
 ## Anti-fit
 
 Nothing here is tuned.  The bond word is fixed by an owner ruling dated three
@@ -49,8 +55,11 @@ days before this probe, made for reasons unrelated to `b_3`; the sign condition
 is Lean-proved; the nucleon blocks are `build_atom_nf`'s, unmodified.  The
 expected outcome (pair-INDEPENDENCE, hence Option 1 closing structurally) is
 written into bean qou-ix0x BEFORE this ran, so a negative cannot be re-read as
-selection against the target.  All three pair types are reported whatever they
-say, and no bond word is searched over for a closer number.
+selection against the target.  All FOUR ordered pair types -- pp, pn, np, nn --
+are reported whatever they say, and no bond word is searched over for a closer
+number.  `np` is not a fourth datum but the ORDER-REVERSAL control on `pn`; it
+was added after the first run showed mu_pn = mu_nn, to test whether that was a
+pair rule or a second-nucleon rule.  It is the latter.
 
 PRECISION: mpmath end to end at 60 dps, seeded from `Q_50_DIGIT_STR` (never the
 float64 `q_parameter.Q`).  Proton pin, convention D.  Machinery reused verbatim
