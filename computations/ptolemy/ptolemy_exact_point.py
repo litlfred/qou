@@ -90,11 +90,21 @@ def extract(name, cls, verbose=True, elim_timeout=240):
     if verbose:
         print(f"{name} class {cls}: {len(vrs)} variables, {len(eqs)} equations")
 
-    # TRY SEVERAL PRIMITIVE ELEMENTS, each on its own budget.  The choice of linear form
-    # dominates elimination cost, and a single fixed choice is how this producer walled:
-    # with coefficients 1..11, `5_2` class 1 did not finish in 900 s and never printed an
-    # eliminant, while a different form on the SAME system returned degree 8 in seconds.
-    # One bad primitive element must not look like an intractable manifold.
+    # TRY SEVERAL PRIMITIVE ELEMENTS, each on its own budget.  A bad linear form can cost
+    # orders of magnitude more than a good one, so advancing on timeout is worth having.
+    #
+    # DO NOT re-tell the story this guard was first committed with.  That commit said `5_2`
+    # class 1 walled at 900 s on the coefficients 1..11 and that a DIFFERENT form fixed it.
+    # Re-measured on a quiet container: form #1 -- the one that "walled" -- completes that
+    # elimination in 45.3 s, and the command is byte-identical to the one that ran for 900 s.
+    # The container had been running TWO concurrent `lake build` invocations of the same two
+    # heavy Lean modules (~4 GB RSS each) beside Singular, with 161 MB of 16 GB free.  The
+    # wall was memory contention, and it was attributed to the mathematics.  No measurement
+    # here shows any form beating #1 on `5_2`; the ad-hoc run that "returned in seconds" was
+    # confounded the same way, in the other direction.
+    #
+    # So: never quote a Singular timing from this container without saying what else was
+    # running.  This guard is cheap insurance, not a fix for a diagnosed problem.
     elim, lin, tried = None, None, 0
     for lin_try in _primitive_forms(vrs):
         tried += 1
