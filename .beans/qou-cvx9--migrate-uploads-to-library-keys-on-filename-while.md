@@ -314,7 +314,7 @@ must return non-zero; remove it -> must be clean), not by observing a pass.
 
 ## 2026-09-13 — three fresh instances of the known blanket-rewrite cost, one of which FALSIFIES a record
 
-Hit while ingesting `uploads/0203462v1.pdf` (owner upload `7ac8aacd5f`, Hill
+Hit while ingesting `library/arxiv-astro-ph-0203462v1/0203462v1.pdf` (owner upload `7ac8aacd5f`, Hill
 et al. 2002 on CS 31082-001). **Not a new defect class** — this script's own
 header already documents it at lines 28-39 and 271-272: the rewrite is total
 *by design*, including beans, to avoid ~485 dangling references, and

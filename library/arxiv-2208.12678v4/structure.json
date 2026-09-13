@@ -1,0 +1,206 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2208.12678v4",
+ "source": {
+  "file": "2208.12678v4.pdf",
+  "sha256": "406d36ff4968091de99ee1cef3a6caeac57654099ecc6515a86c80bf9e97b7fa",
+  "bytes": 792522,
+  "pages": 14,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2208.12678",
+   "version": "4",
+   "primary_class": "math.DG",
+   "stamp_date": "9 Mar 2025"
+  },
+  "doi": null,
+  "title": "STATIONARY CURVES UNDER THEM \u00d6BIUS-PLATEAU ENERGY",
+  "authors_raw": "MAX LIPTON AND GOKUL G. NAIR",
+  "title_lines": [
+   "STATIONARY CURVES UNDER THEM \u00d6BIUS-PLATEAU ENERGY"
+  ],
+  "abstract": "Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose the M\u00a8 obius Energy introduced by O\u2019Hara due to its myriad regularity properties shown by Freedman et al. We first prove an existence theorem for this M\u00a8 obius-Plateauproblem in the class of closed Lipschitz curves of a given irreducible knot-type spanned by immersed discs. We then turn our attention to M\u00a8 obius-Plateau variations of helicoidal strips, which are classified as \u201cscrew-like\u201d or \u201cribbon-like\u201d based on the signs of the radii of the boundary helices. By analyzing the Euler-Lagrange equations, we show that screw-like solutions are plentiful, whilst ribbon-like solutions impose strong constraints on their parameters: they must have high frequency (equivalently, low pitch), thin width in comparison to the frequency, and remain close to the axis.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20250311012043Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Problem Formulation",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Energy Minimization",
+   "page": 2,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Lower Semicontinuity of Plateau Energy",
+   "page": 4,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Equicontinuity at the Boundary",
+   "page": 4,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Convergence in the Interior",
+   "page": 5,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Necessary Conditions of M\u00f6bius-Plateau Critical Helix Pairs",
+   "page": 6,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 11,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Estimating the negative contribution",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 286,
+   "n_words": 42
+  },
+  {
+   "id": "sec-000-3-energy-minimization",
+   "number": "3",
+   "title": "Energy Minimization",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 873,
+   "n_words": 130
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4206,
+   "n_words": 642
+  },
+  {
+   "id": "sec-002-2-problem-formulation",
+   "number": "2",
+   "title": "Problem Formulation",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 7797,
+   "n_words": 1403
+  },
+  {
+   "id": "sec-003-32-equicontinuity-at-the-boundary",
+   "number": "3.2",
+   "title": "Equicontinuity at the Boundary",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3215,
+   "n_words": 588
+  },
+  {
+   "id": "sec-004-33-convergence-in-the-interior",
+   "number": "3.3",
+   "title": "Convergence in the Interior",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 11,
+   "n_chars": 17240,
+   "n_words": 3149
+  },
+  {
+   "id": "sec-005-5-acknowledgements",
+   "number": "5",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 523,
+   "n_words": 83
+  },
+  {
+   "id": "sec-006-appendix-a-estimating-the-negative-contribution",
+   "number": null,
+   "title": "Appendix A. Estimating the negative contribution",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4848,
+   "n_words": 1032
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2603,
+   "n_words": 395
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 9,
+  "chars_total": 41591
+ }
+}

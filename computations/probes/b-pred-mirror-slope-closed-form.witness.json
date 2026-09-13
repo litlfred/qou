@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:34:53.296164+00:00",
-  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
+  "computedAt": "2026-09-13T14:12:59.626852+00:00",
+  "commitSha": "1660c49f2ffe48802c11fb6d79993b6b460c27ab",
   "assertions": [
     {
       "name": "closed_form_matches_measured_slopes",
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 5,
   "computation": "b-pred-mirror-slope-closed-form",
   "scriptFile": "b_pred_mirror_slope_closed_form.py",
   "scriptHash": "2c09be73c835",

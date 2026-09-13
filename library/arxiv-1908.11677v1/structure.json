@@ -1,0 +1,139 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1908.11677v1",
+ "source": {
+  "file": "1908.11677v1.pdf",
+  "sha256": "c53663eeb457daf97d31447655b450d448abc48ffba9bf432bee5e8cabc4f0f7",
+  "bytes": 209234,
+  "pages": 19,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1908.11677",
+   "version": "1",
+   "primary_class": "math.AP",
+   "stamp_date": "30 Aug 2019"
+  },
+  "doi": null,
+  "title": "Variational formulae and estimates of O\u2019Hara\u2019s knot energies",
+  "authors_raw": "Shoya Kawakami",
+  "title_lines": [
+   "Variational formulae and estimates of O\u2019Hara\u2019s",
+   "knot energies"
+  ],
+  "abstract": "O\u2019Hara\u2019s energies, introduced by Jun O\u2019Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e, and were con\ufb01gured so that the less the energy value of a knot is, the \u201cb etter\u201d its shape is. The existence and regularity of minimizers has bee n well studied. In this article, we calculate the \ufb01rst and second variationa l formulae of the (\u03b1, p )-O\u2019Hara energies and show absolute integrability, unifor m bounded- ness, and continuity properties. Although several authors have already considered the variational formulae of the ( \u03b1, 1)-O\u2019Hara energies, their techniques do not seem to be applicable to the case p > 1. We obtain the variational formulae in a novel manner by extracting a certa in function from the energy density. All of the ( \u03b1, p )-energies are made from this function, and by analyzing it, we obtain not only the variati onal formulae but also estimates in several function spaces.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20190901204029-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Variational formulae",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Estimates of the first and second variational formulae",
+   "page": 11,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Strategy",
+   "page": 11,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Estimates and continuity of the quantities in (??)",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??",
+   "page": 15,
+   "source": "outline",
+   "number": "3.3"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1101,
+   "n_words": 183
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 8867,
+   "n_words": 1957
+  },
+  {
+   "id": "sec-001-2-variational-formulae",
+   "number": "2",
+   "title": "Variational formulae",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 11,
+   "n_chars": 7937,
+   "n_words": 2251
+  },
+  {
+   "id": "sec-002-31-strategy",
+   "number": "3.1",
+   "title": "Strategy",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1714,
+   "n_words": 420
+  },
+  {
+   "id": "sec-003-32-estimates-and-continuity-of-the-quantities-in",
+   "number": "3.2",
+   "title": "Estimates and continuity of the quantities in (??)",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 19,
+   "n_chars": 11669,
+   "n_words": 2822
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 5,
+  "chars_total": 31288
+ }
+}

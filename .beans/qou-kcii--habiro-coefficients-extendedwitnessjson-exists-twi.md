@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-09-07T17:39:31Z
+updated_at: 2026-09-13T12:35:29Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -464,3 +464,81 @@ Two of the orphans are **cited by path from the paper** while their live sibling
 Full table, method, and the disposition options: bean `qou-baye`.
 
 **Consequence for anyone quoting a remaining-backlog figure off this baseline:** it is inflated by both effects, not one.
+
+
+---
+
+### MEASURED CORPUS-WIDE, 2026-09-13: 19 pairs / 1205 fields double-counted in the raw-float64 baseline
+
+This bean records the double-counted-stem trap on one witness. Measured across
+the whole `raw-float64-baseline.json` (1003 entries, 30,985 fields), from a drain
+session that hit it while size-ranking targets:
+
+**19 stems appear at TWO paths and BOTH paths are in the baseline**, so their
+fields are counted twice. Largest:
+
+| entry A | entry B | stem |
+|---:|---:|---|
+| 276 | 276 | `adjacent-vs-full-probe` |
+| 178 | 176 | `ew-couplings-substrate-derivation-probe` |
+| 117 | 117 | `rt-route-w-specific-correction-probe` |
+| 115 | 115 | `geom-leading-alt-q-locality-probe` |
+| 105 | 105 | `rt-w-sqrt-quantum-two-probe` |
+| 93 | 93 | `pentagon-multipair-borromean-h4-probe` |
+
+Taking the lower of each pair: **1205 fields counted twice.** In every case one
+path is `computations/<stem>` and the other `computations/probes/<stem>` (or
+`alpha/`, `substrate/`) — the same subdirectory refactor that produced this
+bean's case and `qou-baye`'s orphans.
+
+**Combined with `qou-baye`'s 4 orphans / 615 fields, 1820 of 30,985 baseline
+fields — 5.9 % — are not real work.** Worth stating the reassuring half too:
+**~94 % of the remaining backlog IS genuine**, so the queue is not mostly
+bookkeeping.
+
+**These 19 are a different disposition from `qou-baye`'s 4.** An orphan's twin is
+CLEAN, so the fix is deletion (owner call). Here **both copies are dirty**, so a
+producer re-run drains whichever path the producer writes and leaves the other —
+i.e. draining one halves the pair rather than closing it, and the leftover then
+looks like an orphan. Anyone draining a stem on this list should check which path
+their producer writes and say so, or the next session will read the survivor as a
+regression.
+
+**Method note, because it decides the number.** Count only NON-INTEGRAL floats:
+the audit excludes integral-valued ones by design (*"NOT a precision finding —
+exact in binary64"*). A naive `isinstance(o, float)` walk gives 168 against a
+baseline entry of 93 for `pentagon-multipair-borromean-h4-probe` and reads as a
+stale baseline; on the audit's definition it is 93/93 exactly. Calibrate against
+a known entry before quoting any figure here.
+
+Also worth a caution I did NOT resolve: **18 dirty twins are NOT in the baseline
+at all**, yet the ratchet reports `NEW dirty witnesses: 0`. Either the audit does
+not walk those paths or they are excluded some other way. Not established, and it
+is the kind of gap that hides real dirt — worth one measurement by whoever picks
+this up.
+
+
+**RETRACTED, same session, one measurement later: the "18 unbaselined dirty
+twins" flag was a FALSE ALARM, and the figure was wrong too.**
+
+The paragraph above closed by flagging *"18 dirty twins are NOT in the baseline at
+all, yet the ratchet reports NEW dirty witnesses: 0 … the kind of gap that hides
+real dirt"*. Measured: there are **21** such twins, **17** of them non-integral
+dirty, and **all 17 are under `computations/_deprecated/`** — which the audit
+excludes by design, as does every grep in AGENTS.md (`grep -v _deprecated`). The
+remaining 4 are the zero-float twins of `qou-baye`'s orphans.
+
+    395  computations/_deprecated/he4-canonical-tr-m-block-fingerprint.witness.json
+    242  computations/_deprecated/canonical-with-proper-tower.witness.json
+    234  computations/_deprecated/path-b-habiro-mass-probe.witness.json
+    ... 14 more, every one under _deprecated/
+
+**So the ratchet is behaving correctly and there is nothing hidden.** The 1205
+double-counted figure and the 19 pairs above are unaffected — those are all live
+paths.
+
+Recorded rather than quietly deleted because the failure is instructive: I raised
+a possible detector blind spot **from the same uncalibrated count** that had
+already produced the 168-vs-93 artefact two paragraphs up, and did not re-run it
+on the corrected measure before writing it down. A flagged non-gap costs the next
+agent a session, so the correction belongs where the flag was.
