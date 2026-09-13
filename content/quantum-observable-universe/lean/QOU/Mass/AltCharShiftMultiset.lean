@@ -110,11 +110,58 @@ pair-production vertex available is `σ₀σ₁⁻¹`, and every γγ word is on
 powers. The γγ-admissible subset of `H₃` is a **cyclic monoid on one
 generator**, with a single integer of freedom. -/
 
+/-- The word built from a list of vertex indices: `vertexWord [i, j, k]` is
+`vertex i ++ vertex j ++ vertex k`. -/
+def vertexWord : List ℕ → Word
+  | [] => []
+  | i :: is => vertex i ++ vertexWord is
+
+/-- **γγ words are exactly the free monoid on the vertices.** The content of
+`GammaGammaWord` is that a word carries an index list and nothing else; the
+strand count then bounds which indices are available, and every collapse below
+is a corollary of that bound rather than of anything about `H_n`. -/
+theorem gammaGamma_iff_vertexWord {w : Word} :
+    GammaGammaWord w ↔ ∃ is : List ℕ, w = vertexWord is := by
+  constructor
+  · intro h
+    induction h with
+    | nil => exact ⟨[], rfl⟩
+    | @cons i w' _ ih =>
+      obtain ⟨is, his⟩ := ih
+      exact ⟨i :: is, by simp [vertexWord, his]⟩
+  · rintro ⟨is, rfl⟩
+    induction is with
+    | nil => exact .nil
+    | cons i _ ih => exact .cons i ih
+
+/-- **On `n` strands there are `n − 2` vertices available**, because `vertex i`
+occupies generators `i` and `i + 1` and the Artin generators are `σ₀ … σ_{n−2}`.
+Stated as the bound that is actually used: if every crossing of a γγ word lies
+below generator `m`, every vertex index lies below `m − 1`. -/
+theorem gammaGamma_index_lt {w : Word} {m : ℕ} (h : GammaGammaWord w)
+    (hw : ∀ c ∈ w, c.gen < m) :
+    ∃ is : List ℕ, w = vertexWord is ∧ ∀ i ∈ is, i + 1 < m := by
+  induction h with
+  | nil => exact ⟨[], rfl, by simp⟩
+  | @cons i w' _ ih =>
+    have hi : i + 1 < m := hw ⟨i + 1, false⟩ (by simp [vertex])
+    obtain ⟨is, his, hb⟩ := ih fun c hc => hw c (by simp [vertex, hc])
+    refine ⟨i :: is, by simp [vertexWord, his], ?_⟩
+    intro j hj
+    rcases List.mem_cons.mp hj with rfl | hj
+    · exact hi
+    · exact hb j hj
+
 /-- `(σ₀σ₁⁻¹)^k`, the only shape a γγ word can take on three strands. `k = 3`
 is `borromean`. -/
 def coreWord : ℕ → Word
   | 0 => []
   | k + 1 => vertex 0 ++ coreWord k
+
+theorem coreWord_eq_vertexWord : ∀ k, coreWord k = vertexWord (List.replicate k 0)
+  | 0 => rfl
+  | k + 1 => by
+    simp [coreWord, List.replicate_succ, vertexWord, coreWord_eq_vertexWord k]
 
 theorem coreWord_gammaGamma : ∀ k, GammaGammaWord (coreWord k)
   | 0 => .nil
@@ -160,6 +207,22 @@ theorem gammaGamma_threeStrand_length_eq {w : Word} (h : GammaGammaWord w)
     (hw : ∀ c ∈ w, c.gen < 2) : ∃ k, w.length = 2 * k := by
   obtain ⟨k, rfl⟩ := gammaGamma_threeStrand h hw
   exact ⟨k, coreWord_length k⟩
+
+/-- **Four strands: two vertices, and the collapse stops.** On `H₄` the indices
+available are `0` and `1`, so a γγ word carries an arbitrary binary list and the
+one-integer argument of `gammaGamma_threeStrand` does not apply. This is stated
+rather than proved-nontrivial on purpose: it is the *negation* of a collapse,
+and what it buys is that the `H₃` result must not be quoted for `H₄`. -/
+theorem gammaGamma_fourStrand_indices {w : Word} (h : GammaGammaWord w)
+    (hw : ∀ c ∈ w, c.gen < 3) :
+    ∃ is : List ℕ, w = vertexWord is ∧ ∀ i ∈ is, i = 0 ∨ i = 1 := by
+  obtain ⟨is, hw', hb⟩ := gammaGamma_index_lt h hw
+  exact ⟨is, hw', fun i hi => by have := hb i hi; omega⟩
+
+/-- Both four-strand vertices really are γγ words, so the index set above is
+inhabited at both values and `gammaGamma_fourStrand_indices` is not vacuous. -/
+theorem vertex_one_gammaGamma : GammaGammaWord (vertex 1) :=
+  gammaGamma_iff_vertexWord.mpr ⟨[1], by simp [vertexWord]⟩
 
 /-! ## Shifted letters -/
 
