@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-03T12:36:02Z
+updated_at: 2026-09-13T09:41:59Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1434,3 +1434,26 @@ is the ingredient the arc does not have un-fitted. Read this as *relocated to a
 known blocker*, not as *refuted*. Eq. (43) is untouched throughout.
 
 No probe — this is pure structure, and a probe would be padding.
+
+## ROUTE (2) CORRECTION 2026-09-13 — steps (i) and (ii) were ALREADY DONE
+
+This bean's "Next for route (2), in order: (i) give KnotEmbedding an ambient
+metric; (ii) write the O'Hara integrand with its intrinsic subtraction; (iii)
+only then ask whether it reproduces kappa(A)" describes the PRE-FIX state and is
+stale. Measured against the file on main:
+
+  (i) DONE -- KnotEmbedding carries ambientDist, ambient_symm, ambient_nonneg and
+      chord_le_arc, added 2026-08-30 by this bean's own ROAST commit. LinkEmbedding
+      adds cross-component sep with disjoint and sep_self.
+  (ii) DONE -- oharaIntegrand = 1/ambientDist^2 - 1/arcLengthDist^2 exists, and
+      oharaIntegrand_nonneg is DERIVED from chord_le_arc, not assumed.
+  (iii) The kappa(A) gate is RETIRED by PR #7080: the series constrains only the
+      product s*p, so it cannot adjudicate between candidate invariants.
+
+What was actually missing was the INTEGRAL, which the file's own docstrings name
+three times. That is now supplied for the mutual channel in PR #7284 (bean
+qou-pc85) -- and it needed no O'Hara theorem, because the mutual channel has no
+diagonal singularity. Route (2) is no longer blocked on infrastructure.
+
+I reported the blocker from this bean's prose without opening the file. Recording
+the correction here so the next reader does not re-pay it.
