@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-08T03:16:01Z
+updated_at: 2026-09-13T06:52:00Z
 ---
 
 ## The finding
@@ -354,3 +354,50 @@ reporting on itself.
 The scoping decision (whether to add the missing imports to `QOU.lean`) is the
 owner's and is untouched. It now has its measurement: **the blind spot held exactly
 one real defect across 1324 modules.**
+
+
+## 🟩 RETRACTED 2026-09-13 — the root COMPILES here, and my "container resource limit" does not exist
+
+Measured on `main` `c9fd78b0a`:
+
+    scripts/lean-library-sweep.py --package QOU --only-exact QOU --jobs 2
+    === library sweep: 1451 ok, 0 RED, 0 TIMEOUT + 0 UNVERIFIED, 0 skipped, 8542s ===
+    [1451/1451] ok   QOU
+
+**What I retract.** I wrote that the SIGSEGV five "are the same container
+resource limit that makes the library root unverifiable (`qou-ed8a`)". There is
+no such limit. The root was short **79 Mathlib oleans**; they build from source
+in 188 s, were seeded to `lake-cache/qou-v4-24-0-mathlib-gap-modules`
+(`d7e3ae8c662`, 2026-09-11), and with them restored the root and its entire
+1451-module dirty closure compile with nothing red, nothing timed out and
+nothing unverified.
+
+Every module flagged SIGSEGV-family or TIMEOUT passes: `HeckeH4BlockMap211`,
+`HeckeH4BlockMap31` (these two *concurrently*, 137 % and 98 % CPU),
+`OctonionDerivationsUpperBound`, `Witness12B`. The TIMEOUTs were CPU contention
+from the old `--jobs 3` default — `nproc//jobs` gave 1 thread each — which a
+sibling diagnosed in `2026-09-08-sweep-timeouts-were-contention.md` and this run
+confirms from the other side.
+
+**What survives.** The five `exit 139` observations themselves: something
+segfaulted, zero bytes of diagnostic. What is withdrawn is the attribution. And
+a defect in my own record — **I never named which five modules segfaulted**, so
+the claim could not be checked against the thing it was about, only against a
+family resemblance. Name the modules.
+
+**Consequence for this bean's open question.** "Sizing the ~1863 root-missing
+modules needs a different build environment" is also withdrawn. `--all` with
+`--only` chunking is built for a constrained container and this run demonstrates
+the capacity (1451 modules, 8542 s, disk comfortably inside). The sizing question
+is unblocked and needs no owner decision.
+
+**Trap found on the way, live in a fresh container (`qou-4h26`).** The first
+attempt reported `556 UNVERIFIED, 880 skipped` with zero source errors — pure
+path artifact. `lean-cache-restore.sh` fills the **root** mathlib tree (3559)
+while the sweep reads the **paper** tree (92), and Lean resolves a package from
+the first `LEAN_PATH` root holding that package's *directory*. Run
+`scripts/lean-sync-olean-trees.sh` after restoring, or the sweep measures the
+path rather than the corpus.
+
+Full write-up:
+`docs/audits/2026-09-13-library-root-compiles-1451-modules-zero-red.md`.
