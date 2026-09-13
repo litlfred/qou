@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T17:37:47Z
-updated_at: 2026-09-07T17:38:30Z
+updated_at: 2026-09-13T05:42:00Z
 ---
 
 ## What was measured
@@ -62,3 +62,22 @@ Both cited orphans are the **dirty** copy while the live sibling is at **0**. A 
 I would take 2 — the orphans are superseded copies of a file that exists, and the citation half is a real defect regardless of what is decided about the count. But deleting committed witnesses that the paper cites is the owner's call, not mine, so nothing has been deleted.
 
 Found while screening drain targets: `pentagon-rt-torus-knot-higgs-probe` (346) looked like the largest solver-free target left and is in fact undrainable.
+
+
+---
+
+## Re-measured 2026-09-13 against `main` (456 commits later): UNCHANGED, and it corrects `qou-r47m`'s total
+
+Same method, same script, `main` advanced by 456 commits: **21 witnesses, 1,550 fields**, identical. Nothing in the interval touched them, which is what you would expect of files no producer writes.
+
+**One figure of mine to correct.** The body above says *"633 of those 1,550 fields are ALREADY FIXED at the live path"*. That counted rows whose live sibling was at **0 or 1**. Counting strictly `live == 0` — which is what "already fixed" should mean — it is **615 fields in 4 witnesses**: `pentagon-rt-torus-knot-higgs-probe` 346, `pentagon-to-borromean-h4-probe` 216, `hecke-core-symbolic-migration` 31, `per-knot-density-borromean-q-locality-probe` 22. The fifth row, `qbeta-phib-2loop-bdictionary` (orphan 18, live 1), is nearly-but-not-fully drained upstream. Quote **615**; the difference is one row, not a change in the finding.
+
+## Bearing on `qou-r47m` (completed 2026-09-06)
+
+That bean measures the backlog at **33,702 fields** and buckets it by producer shape — B "imports mpmath, does not bind `fmt`" 14,867 / 44.1 %, A "no mpmath at all" 8,600 / 25.5 %, unresolved-producer 8,181 / 24.3 %, C 2,054 / 6.1 %. Its conclusion — no central fix exists — is unaffected by anything here.
+
+But **1,550 of that 33,702 is attached to files no producer writes**, so it is not drainable by any per-producer work the bucket map describes, and **615 of it is already done** at a sibling path the baseline does not track. That is **4.6 % of the backlog that cannot go down**, and it will sit in the denominator of every future "N fields remaining" figure until the orphans are resolved one way or the other.
+
+Note also where these land in the bucket map: an orphan's *producer* is a real producer that imports mpmath, so these fields are counted in bucket B — the bucket the bean calls "the more tractable half … routing it through `fmt` is mechanical". For these, routing the producer through `fmt` is not merely mechanical, it is **inert**: it regenerates the sibling and never touches the counted file. That is a concrete instance of the bean's own caveat that B is "a CANDIDATE class, not a guaranteed-cheap one", reached from a different direction.
+
+Disposition is still the owner's call; the three options and their costs are unchanged above. Nothing has been deleted.
