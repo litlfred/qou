@@ -371,3 +371,44 @@ The γγ route then survives only if the SELECTED WORD is itself pair-dependent 
 So the measurement is: compute `μ = tr_M(W_free·bond)/tr_M(W_free)` at `(Z,N) ∈ {(2,0),(1,1),(0,2)}` for the template `σ₂` bond and for `G³`, and read off whether it depends on `(Z,N)`. Nothing is tuned: the word is fixed by a ruling dated three days before this session and made for reasons unrelated to `b₃`; the sign condition is Lean-proved. **A negative here is the expected outcome and is the result** — it would convert `qou-q8vl`'s two-hypothesis disjunction into a one-line structural statement about what a bond family must do.
 
 Branch `claude/b3-affineness-is-the-last-hypothesis-2026-09-13`.
+
+
+---
+**2026-09-13 — BOTH OPTIONS PUSHED TO A STRUCTURAL STOP. Neither closes the gap, and TWO of my own stated predictions were refuted along the way.**
+
+Audit: [`2026-09-13-b3-sign-options-1-and-2-at-the-gamma-gamma-junction.md`](../docs/audits/2026-09-13-b3-sign-options-1-and-2-at-the-gamma-gamma-junction.md). PR #7287.
+
+### Option 1 — the γγ bond IS pair-dependent, and still cannot sign-mix
+
+Probe `gamma_gamma_bond_is_pair_independent_probe.py`, 11/11, 60 dps, proton pin.
+
+| ordered pair | μ(template σ₂) | μ(G³) |
+|---|---|---|
+| pp | 0.612688037146465252 | **1.00105775254515984** |
+| pn | 0.612688037146465252 | **1.00061119140688078** |
+| np | 0.612688037146465252 | **1.00105775254515984** |
+| nn | 0.612688037146465252 | **1.00061119140688078** |
+
+**My stated expectation was REFUTED.** The entry above recorded, before the run, that the likely outcome was pair-INDEPENDENCE. `G³` is pair-DEPENDENT — spread `4.47e-4` against the template's `1.6e-61`.
+
+**Option 1 closes anyway, for a sharper reason: ALL FOUR exceed 1.** So every `A=3` chain gets TWO bonds above 1, never exactly one, and `b3corpus_chain` gives `b₃ < 0` on both atoms (³He `−6.46e-7`, ³H `−3.74e-7`).
+
+**And the dependence is ONE-SIDED.** The `np` order-reversal control gives `μ_np = μ_pp` and `μ_pn = μ_nn` to `1.6e-61`, while `μ_pn ≠ μ_np` by `4.47e-4`. So μ is not a function of the PAIR — it is a function of the SECOND nucleon, i.e. **order-dependent**, and `ChainBondOrderDependence.orderIndependent_iff` records that a nucleus has no arrangement. **Mechanism MEASURED, NOT PROVED**: `G³`'s `σ₃` is inside block 1, but `G³` also carries `σ₂`, adjacent to block 0's `σ₁`, so far-commutation does not explain it.
+
+### Option 2 — the γγ assembly is EXACTLY AFFINE, which is the wrong side
+
+Probe `gamma_gamma_aggregator_convexity_probe.py`, 6/6, `A=3` in `H₉`, restricted to the `y_λ>0` blocks (the 25 dropped carry `y=0` exactly — verified, a restriction not an approximation).
+
+`δ := μ_both − μ₀·μ₁` is `0` to the 60-dps floor on all four contents — **the same floor as the template control**. So the bond product HOLDS for `G³`, the log-assembly is additive in bond count, and `qou-82mc`'s `b₃` is **0, not positive**. **My second prediction (non-affineness) was REFUTED too.**
+
+Two by-products worth keeping:
+- **`ProductionChainBondProduct`'s strand-window hypotheses are SUFFICIENT but NOT NECESSARY** — `G³` violates them and the product holds anyway. A note for `qou-qqm4`, not a defect.
+- The per-content `δ` signs (`−,+,0,0`) are **round-off at the arithmetic floor, not structure**; asserted in the probe so "MIXED" is never quoted as a finding.
+
+### What this changes for the front
+
+`PnBetweennessBlocksSignMixed` left two escapes — break averaging, or break affineness. **The γγ family breaks BOTH and still fails.** So that disjunction is not the binding constraint; **every bond factor landing on the SAME SIDE of 1 is**, which is sharper than the two hypotheses it replaces.
+
+**NOT claimed:** that no bond family exists; that no convex `Φ` exists; any magnitude; that the one-sidedness mechanism is understood.
+
+**This bean's own Habiro/cyclotomic route is untouched and still unexcluded** — it was not worked here, and nothing above bears on it.
