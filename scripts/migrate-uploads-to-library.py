@@ -258,15 +258,64 @@ def move_files(mapping: dict[str, str], apply: bool
     return moved, missing, refused
 
 
-def rewrite_refs(mapping: dict[str, str], apply: bool) -> tuple[int, int]:
+def _rewrite_patterns(mapping: dict[str, str], live: set[str]):
+    """The (regex, replacement) list, restricted to names that RESOLVED.
+
+    Split out of `rewrite_refs` so the resolve-required guard can be tested
+    without a git worktree — `rewrite_refs` itself walks `tracked_text_files()`
+    and cannot run in the selftest's bare temp dir.
+    """
+    return [(re.compile(r"uploads/" + re.escape(n)), f"{LIBNAME}/{d}/{n}")
+            for n, d in sorted(mapping.items(), key=lambda kv: -len(kv[0]))
+            if n in live]
+
+
+def rewrite_refs(mapping: dict[str, str], apply: bool,
+                 live: set[str] | None = None) -> tuple[int, int]:
     """uploads/<name> -> library/<doc-id>/<name> across tracked text files.
 
     Ordered longest-basename-first so `0401068v1 (1).pdf` is rewritten
-    before the `0401068v1.pdf` prefix could claim part of it. The residual
-    pass maps any surviving bare `uploads/` mention to `library/`.
+    before the `0401068v1.pdf` prefix could claim part of it.
+
+    REQUIRES THE PATH TO RESOLVE (owner ruling 2026-09-13).  `live` is the
+    set of basenames that ACTUALLY EXISTED in uploads/ when this run started
+    -- i.e. the ones genuinely being migrated now.  Only those are rewritten.
+
+    Why: `build_mapping()` reads every `structure.json` under uploads/ AND
+    library/, so the mapping also carries documents migrated in PAST runs,
+    whose PDFs are long gone from uploads/ ("3 mapped but absent" in the
+    2026-09-13 run).  A `uploads/<that name>` string in the tree is then not
+    a live reference at all -- it is PROSE describing the earlier migration,
+    and rewriting it corrupts the record.  Measured that day, three files:
+
+      .beans/qou-4lbh          "uploads/roth_lemma.pdf ->
+                                library/roth-lemma/roth_lemma.pdf"
+                                became "library/... -> library/...",
+                                an arrow from a thing to itself;
+      .beans/qou-cvx9          "the first draft wrote `uploads/1808.02836v2.pdf`
+                                as a literal" became a claim about a path the
+                                draft never wrote -- a FALSIFIED record, which
+                                is worse than a dangling link because it is
+                                confidently wrong rather than visibly broken;
+      scripts/library-orphan-audit.py
+                                a docstring quoting git's own output,
+                                "R100 uploads/X -> library/Y", became
+                                "R100 library/Y -> library/Y", which is not a
+                                rename.
+
+    All three are files DESCRIBING THIS MIGRATION -- which is exactly the
+    population that legitimately contains `uploads/` paths as history.  So
+    the rewriter's blast radius was biased toward its own documentation.
+
+    This is the same lesson as the removed residual pass below, one level in:
+    that pass could not tell a citation from a sentence; this one could not
+    tell a live reference from a historical one.  `live` is the discriminator
+    the file system already knows.
     """
-    pats = [(re.compile(r"uploads/" + re.escape(n)), f"{LIBNAME}/{d}/{n}")
-            for n, d in sorted(mapping.items(), key=lambda kv: -len(kv[0]))]
+    if live is None:                      # standalone call: rewrite nothing
+        live = {n for n in mapping        # we cannot know what was live, so
+                if os.path.exists(os.path.join(SRC, n))}   # ask the disk now
+    pats = _rewrite_patterns(mapping, live)
     # NO residual `uploads/` -> `library/` pass. It was blanket, and a
     # blanket rewrite cannot tell a citation from a sentence: it turned the
     # AGENTS.md row defining the two stages into "`library/` and `library/`
@@ -445,6 +494,9 @@ def _selftest() -> int:
     * `arxiv-2209.06973v1/` — an ordinary fresh ingest; must still move.
     * `pending-ocr/` — in the queue with OCR text but no `structure.json`.
       Moving it plants an unreadable directory; it belongs in the queue.
+    * the resolve-required rewrite — a mapping entry whose PDF is no longer
+      in uploads/ must contribute NO rewrite pattern, and the both-live case
+      must still produce two, so a guard that refuses everything fails.
     """
     global REPO, SRC, LIB
     keep = (REPO, SRC, LIB)
@@ -528,6 +580,27 @@ def _selftest() -> int:
         if moved != 3:
             print(f"  FAIL  moved {moved} PDFs, want 3")
             ok = False
+
+        # CASE 7 -- the resolve-required rewrite (owner ruling 2026-09-13).
+        # A mapping entry whose PDF is NOT in uploads/ was migrated in an
+        # earlier run, so a `uploads/<it>` string in the tree is PROSE about
+        # that migration, not a live reference. Rewriting it corrupted three
+        # files on 2026-09-13, one of which it made confidently FALSE rather
+        # than visibly broken. Guard: such a name contributes no pattern.
+        fake = {"live-now.pdf": "arxiv-live-now", "migrated-earlier.pdf": "arxiv-earlier"}
+        pats = _rewrite_patterns(fake, {"live-now.pdf"})
+        repls = [r for _, r in pats]
+        if len(pats) != 1 or repls != [f"{LIBNAME}/arxiv-live-now/live-now.pdf"]:
+            print(f"  FAIL  resolve-required rewrite: want only the live name, got {repls}")
+            ok = False
+        if _rewrite_patterns(fake, set()):
+            print("  FAIL  empty live set still produced rewrite patterns")
+            ok = False
+        # and it must still rewrite BOTH when both are genuinely live --
+        # a guard that refuses everything would also pass the two checks above.
+        if len(_rewrite_patterns(fake, set(fake))) != 2:
+            print("  FAIL  both-live case did not produce two patterns")
+            ok = False
     finally:
         REPO, SRC, LIB = keep
         shutil.rmtree(tmp, ignore_errors=True)
@@ -564,8 +637,18 @@ def main() -> int:
     if args.verify:
         return verify(mapping)
 
+    # Capture what is genuinely being migrated BEFORE move_files empties
+    # uploads/. After the move every source path is gone, so this cannot be
+    # recomputed downstream -- see rewrite_refs' docstring.
+    live = {n for n in mapping if os.path.exists(os.path.join(SRC, n))}
+    historical = len(mapping) - len(live)
+    if historical:
+        print(f"  {historical} mapping entr(ies) already migrated in an earlier "
+              f"run — their `uploads/` mentions are history, not references, "
+              f"and are left alone")
+
     moved, missing, refused = move_files(mapping, args.apply)
-    files, subs = rewrite_refs(mapping, args.apply)
+    files, subs = rewrite_refs(mapping, args.apply, live)
     verb = "moved" if args.apply else "would move"
     verb2 = "rewrote" if args.apply else "would rewrite"
     print(f"\n{verb} {moved} PDFs ({missing} mapped but absent)")
