@@ -44,17 +44,37 @@ subalgebra via `Submodule.toSubalgebra` and `Algebra.adjoin_le` finishes.
 
 ## 🛑 What is NOT established
 
-**`SandwichReduces` is not proved for any tower with a growing filtration.** This
-file moves the hypothesis; it does not discharge it. Per AGENTS.md
-§"Axiomatization is NOT a Proof", a reduction between two unproved statements is
-progress in *shape* only, and the honest summary of `qou-301d` remains: the
-disjoint-block law, and hence the bond-product reading of the atom word, is
-**measured, not derived**.
+🛑 **SUPERSEDED 2026-09-13 — and note what it does and does not supersede.**
 
-The inhabitation caveat from `DisjointBlockTraceLaw.towerSpan_unit` carries over
-unchanged — the only witness has a constant filtration, and
-`towerSpan_of_constant` shows such a witness satisfies `TowerSpan` for reasons
-that have nothing to do with any of this.
+This section read: *"`SandwichReduces` is not proved for any tower with a growing
+filtration. This file moves the hypothesis; it does not discharge it. … a
+reduction between two unproved statements is progress in shape only, and the
+honest summary of `qou-301d` remains: the disjoint-block law, and hence the
+bond-product reading of the atom word, is measured, not derived."*
+
+Three separate claims there, and they have not aged the same way.
+
+1. **`SandwichReduces` is now PROVED** —
+   `QOU.MathlibExt.SandwichReducesFromBraid.sandwichReduces_shiftedUpTo`, for
+   every `MarkovTrace` satisfying the three Iwahori-Hecke relations. The
+   induction runs over the *tower* rather than over words, which is why it needs
+   no `T_w` basis theorem: `TowerSpan` is a spanning statement, and the step one
+   level down already puts every element in one-sandwich form.
+2. **"This file does not discharge it" is still true**, and this file is
+   unchanged. The discharge is downstream.
+3. **"the bond-product reading of the atom word is measured, not derived" is
+   still true.** The disjoint-block *law* is now derived; the bond-product
+   reading that consumes it is a separate claim (`qou-qqm4`) and nothing in this
+   arc has derived it. Do not read item 1 as having closed it.
+
+The inhabitation caveat has also moved. `DisjointBlockTraceLaw.towerSpan_unit` is
+still degenerate (constant filtration, covered by `towerSpan_of_constant`), but
+it is no longer the only witness: `SymmetricGroupTowerWitness` has a growing
+filtration and a provably non-multiplicative trace at `h = 0`, and
+`SandwichReducesHeckeInstance.towerSpan_heckeTower` has a growing filtration at
+`h ≠ 0`. **Neither has all three properties** — the `h ≠ 0` one has a
+multiplicative trace, proved there — so the *trace* content at `q ≠ 1` is still
+unexercised by any inhabited witness.
 
 -- Ref: [manuscript] bean qou-301d; Kassel–Turaev, *Braid Groups*, ch. 4.
 -/
@@ -203,8 +223,9 @@ theorem towerSpan_of_sandwichReduces
 rewriting rule alone (plus the quadratic relation), by composing this file's
 reduction with `DisjointBlockTraceLaw.disjointBlock_of_towerSpan`.
 
-🛑 Still conditional: `SandwichReduces` is not proved for any tower with a
-growing filtration. -/
+🛑 Conditional **here**; the condition is discharged in
+`QOU.MathlibExt.SandwichReducesFromBraid.sandwichReduces_shiftedUpTo`
+(2026-09-13), so `disjointBlock_of_braidRelations` there is unconditional. -/
 theorem disjointBlock_of_sandwichReduces
     (hquad : ∀ m : ℕ, ∃ h : R, T.g m * T.g m = h • T.g m + 1)
     (hred : ∀ n M : ℕ, SandwichReduces T (shiftedUpTo T n M) (M + 1)) :

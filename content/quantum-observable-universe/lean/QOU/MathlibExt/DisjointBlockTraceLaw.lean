@@ -101,8 +101,14 @@ plus the quadratic relation. The argument is a filtration by level:
 `tr_mul_step` (the content) shows one step preserves the law, the base is
 `tr_mul_adjoin_gen`, and `shifted n` is the directed union of the stages.
 
-🛑 **NOT proved: `TowerSpan` itself, and it is now the only gap.** It has no
-Hecke instance here. It is the classical structure theorem
+🛑 **SUPERSEDED 2026-09-13 — `TowerSpan` IS now proved, downstream.**
+`QOU.MathlibExt.SandwichReducesFromBraid.towerSpan_of_braidRelations` derives it
+unconditionally from the three Iwahori-Hecke relations, and
+`SandwichReducesHeckeInstance.towerSpan_heckeTower` instantiates it at the
+presented tower with `h ≠ 0` and a provably growing filtration. Superseded text,
+kept because the shape of the gap it describes is what the proof had to get past:
+*"NOT proved: `TowerSpan` itself, and it is now the only gap. It has no
+Hecke instance here."* It is the classical structure theorem
 `H (m+1) = H m + H m · g m · H m` in the form the induction needs, and it is
 exactly what rewrites a repeated top-level generator `g M * x * g M` back down.
 Per AGENTS.md §"Axiomatization is NOT a Proof", stating it is not proving it.
@@ -530,7 +536,10 @@ filtration is spanned by the previous one together with single sandwiches
 Induction over `M`, base case `tr_mul_adjoin_gen`, then `shifted n` is the
 directed union.
 
-🛑 **`TowerSpan` is NOT proved here and has no Hecke instance.** It is the
+🛑 **Still not proved HERE — but proved DOWNSTREAM as of 2026-09-13**, in
+`QOU.MathlibExt.SandwichReducesFromBraid`, with a Hecke instance in
+`SandwichReducesHeckeInstance`. Read this section as the statement of the
+hypothesis, not as a live claim that it is open. It is the
 algebraic structure theorem `H (m+1) = H m + H m · g m · H m` in the form this
 argument needs, and it is what rewrites a repeated top-level generator
 `g M * x * g M` back down — the exact obstruction identified above. Per
@@ -601,7 +610,9 @@ theorem shiftedUpTo_mono (n : ℕ) : Monotone (shiftedUpTo T n) := by
 
 Each filtration step is spanned by the previous stage together with single
 sandwiches. For the Iwahori-Hecke tower this is `H (m+1) = H m + H m · g m · H m`;
-it is classical and it is **not proved here**. -/
+it is classical, it is **not proved here**, and it **is** proved in
+`QOU.MathlibExt.SandwichReducesFromBraid.towerSpan_of_braidRelations` (from the
+braid relations, 2026-09-13). -/
 class TowerSpan : Prop where
   /-- One filtration step is spanned by the previous stage plus single sandwiches. -/
   step : ∀ n M : ℕ, Subalgebra.toSubmodule (shiftedUpTo T n (M + 1)) ≤
@@ -659,7 +670,11 @@ hypothesis and the quadratic relation, the disjoint-block law holds — for ever
 `b ∈ shifted n`, repeated top-level generators included, so this DOES reach the
 atom word.
 
-🛑 It reaches it *conditionally*. `TowerSpan` has no Hecke instance here. -/
+🛑 It reaches it *conditionally* here. The condition is discharged in
+`QOU.MathlibExt.SandwichReducesFromBraid` (2026-09-13), so the law is
+unconditional for any tower satisfying the braid relations — but note that the
+one inhabited `h ≠ 0` witness has a multiplicative trace, so the trace content
+is still not exercised at `q ≠ 1`; see `SandwichReducesHeckeInstance`. -/
 theorem disjointBlock_of_towerSpan [TowerSpan T]
     (hquad : ∀ m : ℕ, ∃ h : R, T.g m * T.g m = h • T.g m + 1) :
     DisjointBlockMultiplicative T := by
