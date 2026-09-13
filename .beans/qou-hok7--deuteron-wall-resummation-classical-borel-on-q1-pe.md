@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-11T15:31:24Z
+updated_at: 2026-09-13T06:28:19Z
 ---
 
 
@@ -598,3 +598,65 @@ substrate-side reading of REV's Θ(√n) coefficient — the bound's `(C + L/2)�
 upper constant, the true `M_n/√n` is 3.19 at n = 44 and still rising toward its limit, which
 is not identified; and the q-Borel resummation negative (2026-08-21) stands. **Do not close
 this bean.**
+
+
+## 2026-09-13 — #7081 repaired at the source; TWO defects, not one; and an independent check of #7185
+
+The 2026-09-11 append correctly identified #7081's rise as an instrument artefact. The probe
+itself still asserted the false conclusion in its docstring, R3, R4 and R6 — a producer that
+gets re-run and quoted — so it is repaired here rather than only annotated. 6/6.
+
+**Defect 1 (as #7185 reported), reproduced independently.** `Hhat/H_min(n)` at this probe's own
+argmax: 1.7051 (n=40) -> 0.7005 (250) -> 0.5658 (1600) -> **0.48947** (4000, argmax (151,357)),
+matching the reported 48.9 %. The missing energy at n=4000 is 12,705.8 against the 13,337 the
+probe reported — i.e. essentially the entire figure. Every partition has `H >= H_min(n)`, so a
+lower bound falling below it feeds the maximiser energy no shape can have.
+
+**Defect 2, NEW and independent — the search under-explores every row.** The heuristic
+`if v < best - 50: break` is keyed on the GLOBAL best, but the value is UNIMODAL in `W`. At
+n = 4000, l = 88 it runs 57 -> 126 -> 260 -> 326 -> 362 -> 438 -> 507 before collapsing, so the
+break fires at W = 87 and abandons the row. `(88,174)` alone gives **326.4**, above the staircase
+floor `A*sqrt(2n) = 322.3`, and the search never saw it. Caught by asserting the staircase floor
+as a validity check — a first repair pass reported 169.4 at n = 4000, *below* that floor, hence
+not a bound at all.
+
+The two defects push in OPPOSITE directions, which is why neither surfaced as an absurdity: the
+reported figure was neither an upper nor a lower bound on anything.
+
+**The methodological error is the reusable part.** R6 calibrated `Hhat` against the true minimum
+`H` at that exact `(l,W)` and got 99.3-100 % — at n <= 40, where brute force reaches and `l - k`
+is small — then read the RATE at n = 4000. The calibration was sound; extrapolating it was not.
+Same shape as #7093's even-gap conjecture, whose two hand-checks both had all-equal gaps.
+Sharper still: R6 was written to test *"the weak link is Hhat"*, which was RIGHT, and inverted it
+on that measurement.
+
+### Independent confirmation of #7185, and a refinement of its constant
+
+Swapping the row-tangent floor `2(H - H^+) >= (l-k)^2 - r` into this probe's own maximiser, with
+no other change (same eps table, same entropy term, same search):
+
+    n            40      250     1600     4000    10000    40000
+    max         225.9    306.9    522.1    723.8   1047.1   1921.7
+    / sqrt(n)   35.72    19.41    13.05    11.44    10.47     9.609   <- falls
+    / n^{3/4}   14.20     4.882    2.064    1.439    1.047    0.679   <- falls
+    argmax l-k     59       59       59       59       59       59
+
+Richardson on the last two (the correction is `O(1/sqrt n)`) gives **8.7462**. The argmax sits
+`l - k = 59` at every n against the predicted `C/L = 59.147`.
+
+**Refinement: the coefficient is a BAND, not 8.80.** Maximising `(l-1)C - ((l-k)^2 - r)L/2`
+exactly gives `(k-1)C + C^2/(2L) + rL/2`, so the ratio oscillates with `r` in
+`[C*sqrt2, (C+L/2)*sqrt2] = [8.7277, 8.8015]`. The 8.80 on this bean is the `r = k` upper
+envelope, attained only when `n` sits just below a triangular number; Richardson's 8.7462 is
+inside the band. This bears on the open coefficient question below — it is an upper band for the
+BOUND, still well above the true `M_n/sqrt n` (3.19 at n=44).
+
+Also checked, since #7185 names it as its one honest Lean gap: `H^+ = P_k + r(k+1)` equals
+`H_min_closed(n)` at all eight test n. Numerically confirmed, not proved.
+
+**Withdrawn from this bean's 2026-09-07 sections:** "the (l,W) relaxation is faithful", "the loss
+is the Jensen step", the "anti-caveat" defending the rise, and the impact arithmetic computed
+against the inflated ~3x. **Surviving:** R1/R2 of #7081; #7093's three refutations about `P_min`
+(brute-forced, independent of `Hhat`); and the coupling factor shrinking with `l`.
+
+Status unchanged: **do not close.** The Theta(sqrt n) coefficient and the q-Borel negative stay open.
