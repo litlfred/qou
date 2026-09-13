@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T17:20:00Z
+updated_at: 2026-09-13T18:45:00Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1856,3 +1856,113 @@ reads "cheapest formalize-first step of the four" and spends a tranche on it.
 `qou-4383` "producer that exits 0 and writes nothing" class (that sweep is the
 current `main` HEAD). Not fixed here: it is someone else's arc, and changing it
 is outside the two AGENTS.md exemptions.
+
+---
+
+## 2026-09-13 (later) — attack A measured; MY OWN RECOMMENDATION ABOVE IS WITHDRAWN
+
+Earlier today, in the entry above, I recommended **re-ranking attack A above
+attack B for the substrate face**, on the grounds that B's premise had been
+measured false and A's had not. **That recommendation was wrong.** A's premise
+had been measured too — by a prior agent, against a target that has since been
+retired — and once re-aimed the negative holds. Both routes now carry measured
+negatives on their principal route.
+
+Probe: [`computations/qbeta/qbeta_delta_tr_vs_ruled_base_probe.py`](../computations/qbeta/qbeta_delta_tr_vs_ruled_base_probe.py),
+4/4, witness `qbeta-delta-tr-vs-ruled-base.witness.json`, proton pin, convention D, scope (a).
+
+### 1. The triage's stated reason for declining A is not what the corpus shows
+
+The triage declines A for *"circularity — the Habiro-element construction is
+part of what `qou-cds1` waits on"*. Measured:
+`prop:habiro-precision-ladder-equivalence` — the block that would carry A's
+bridge — has a **one-element `uses[]` cone**, `thm:jones-markov-trace`. It is
+**not** downstream of `qou-cds1`. Attack A does not loop.
+
+### 2. What actually blocks it, established by a prior agent, not by me
+
+`QOU.BraidKnot.QbetaHabiroTaylorBridgeClass` equates `precisionLadderCoeff` and
+`habiroTaylorCoeff`, and **both are `opaque ... := fun _ => 0`** with no
+defining properties (lines 214 / 221; `habiroTaylorCoeff` has 3 occurrences,
+all in that one file — no consumers). So it is a **named hole**, not a
+hypothesis-carrying conditional, and its companion theorem is the §3b-cond
+item-5 self-assuming projection (`:= h.ck_eq_taylor k`; the file's own
+docstring says so and is scrupulous about it).
+
+All of that was already established in
+`qbeta_habiro_bridge_class_is_not_a_lean_target_probe.py`, which went further
+than I did — it verified the seal does **not** leak under six tactics
+(`rfl`, `unfold`, `simp`, `decide`, `norm_num`, `aesop`, all `lean`-direct) and
+drew the right conclusion: *"Progress on the bridge is COMPUTATIONAL — give the
+two sequences definitions — not deductive."* **I re-derived its structural half
+before finding it.** Credit where due; this entry does not re-do it.
+
+### 3. The corpus ran that computation, and it is aimed at a RETIRED cell
+
+`qbeta-delta-tr-vs-formA.witness.json` (`computedAt` 2026-08-08, last touched
+`87bf883793` on 2026-09-07) finds Habiro `Δtr_M` and Form A's net-winding slot
+structurally distinct: `−5/4 ε` against `−2 ε`. The sibling probe verified that
+inference is not a mere normalisation.
+
+**But its comparison target is `Abs((q²−1)(q(q−2)−1))/(2q³(q−1))`, which is
+algebraically identical to the published `|q²−2q−1|(q+1)/(2q³)` — the `z = 1`
+cell.** The owner **retired that cell as the base on 2026-09-08**, one day
+after that witness was last touched, ruling `ε` = the Markov trace at
+`z_D = q³/(q²+1)`. So the one computational test of A's bridge was aimed at a
+functional that is no longer canonical, and nothing had re-aimed it.
+
+### 4. Re-aimed at the ruled base, the negative HOLDS — at both admissible points
+
+| leading Taylor, `ε = q − 1` | `Δtr_M` | slot object |
+|---|---|---|
+| vs `tr_M` at `z_D` (**RULED**) | `−5/4 ε` | `−1 ε` |
+| vs `tr_M` at `z = q` (augmentation) | `−5/4 ε` | `−2 ε` |
+
+and the `z_D` mismatch is **structural, not a normalisation** — the
+term-by-term ratio runs `5/4, −11/4, −1/16, −20/11, −589/52`: five distinct
+values over five orders, **sign change at k = 2**. Same discipline the sibling
+probe applied to the Form A negative, applied here for the same reason.
+
+**Calibrated before anything new was read off the harness.** It reproduces the
+recorded `−2 ε` / `−5/4 ε` exactly, and independently reproduces **all three**
+recorded cells: `z = 1` at **+0.1677568 %** (recorded 0.17 %), `z = q` at
+**+12.470022 %** (recorded +12.470 %), `z_D` at **−43.15717 % / 0.4447004085
+MeV** (recorded −43.157 % / 0.4447004).
+
+### 5. A trap, flagged rather than taken
+
+`Δtr_M` **itself** lands at **−17.49592 %** — better than *both* admissible
+functionals. Under §NO FITTING that is **not** a point in its favour and must
+not become one: it is a third object with a better residual that is **not
+admissible**, which is precisely the selection-against-the-target shape the
+directive names. Recorded so the next agent meets it as a trap rather than as
+a lead.
+
+### Scope — read before quoting
+
+Scope **(a)**, proton pin, convention D. It does **not** derive `α`; does
+**not** retract the 2026-08-08 Form A negative (that inequality is exact
+algebra and stands on its own terms); and does **not** exclude the Habiro ring
+from an `α` closure by another route. What is closed is **this specific
+identification** — `Δtr_M` as the slot object — now at both admissible
+functionals rather than only at the retired one.
+
+### Where that leaves the four routes
+
+| route | status after today |
+|---|---|
+| **A** Habiro | bridge closed at both admissible functionals (this entry). Not circular; the triage's reason was wrong. Broader Habiro routes untouched. |
+| **B** Faddeev / modular double | inert at the real substrate inside the derivable `z`-window (entry above). Untouched on the root-of-unity face, where it is correctly aimed. |
+| **C** Stokes / resurgence | unmeasured |
+| **D** two evaluation points | the trap — a fourth calibration |
+
+**Recommendation — judgement, not a finding, and it replaces mine from this
+morning.** Neither A nor B is now the obvious next spend. **C (Stokes /
+resurgence) is the only one of the four with no measured negative against it**,
+and it is the one whose framing dissolves rather than fights the
+elliptic-at-real-`q` obstruction — `α` as a Stokes constant is complex *by
+nature* and defined by continuation across the gap. AGENTS.md already lists
+Stokes-constant extraction as open research, so it is in scope.
+
+**Default if nothing is done:** the triage still reads "attack B, cheapest
+formalize-first step of the four", which two measurements now contradict.
