@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T14:00:00Z
+updated_at: 2026-09-13T14:55:00Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1133,4 +1133,66 @@ this pair. So the status is:
 
 Attacking the objection surfaced an extra hypothesis instead of removing one. Recorded that
 way deliberately; the bean stays open under rule 13a.
+
+
+---
+
+## UPDATE 2026-09-13i — costing the second manifold, and my "same wall" claim RETRACTED
+
+### What I claimed, and why it was wrong
+
+I told the author a second manifold *"needs the exact Ptolemy point that blocked class 2"* —
+i.e. that it inherits class 2's walls (msolve RUR >3000 s, GB-only mod p >2700 s, Singular
+>5400 s) and the upstream 403. **Wrong.** The class-2 wall is a **variable-count** wall, not
+a wall about obstruction classes or exactness. L6a4: 8 tetrahedra, **27** variables after
+elimination. `m004`: 2 tetrahedra, **7**. Gröbner cost is super-exponential in that count.
+
+    m004 class 1    7 vars    dim 0, degree  4     0.9 s
+    m003 class 1    7 vars    dim 0, degree 18     0.0 s
+    5_2  class 1   11 vars    dim 0, degree 10     0.4 s
+    L6a4 class 2   27 vars    ---                  >5400 s (known wall)
+
+Nontrivial N=3 classes are **ubiquitous, not scarce** — 19 of 19 small manifolds enumerated
+carry one. And `m004` class 1 is **degree 4, the same as L6a4 class 1**, so directly
+comparable.
+
+### The real cost: two of three structural conditions are NOT generic
+
+|  | L6a4 c1 | `m004` c1 | `5_2` c1 |
+|---|---|---|---|
+| ζ₃ ∈ K | yes | yes | yes — generic so far |
+| **Gal abelian** | yes (Klein 4) | yes (C₂) | **NO (order 12)** |
+| **orbit = variety** | yes (1 orbit of 4) | **NO (2 comps of deg 2)** | — |
+
+`5_2` c1 breaking abelian-ness is `exists_not_forall_eq_of_not_central` biting on a **real
+example** rather than in principle; `m004` c1 breaking single-orbit means the "for all x"
+upgrade must be redone per component. Both are findings rather than obstacles — a
+non-abelian manifold where the per-point intertwiner still exists would show the transport
+argument is *sufficient but not necessary*.
+
+### An honest unknown
+
+A naive `std()` over ℚ on **L6a4 class 1 itself** times out, yet the corpus holds its exact
+point — so that point did not come from this pipeline's cheapest route and I do not know
+what route produced it. Small manifolds are unaffected (elimination demonstrably works:
+`m004`'s primitive-element eliminant is `x²+2x+4`, so **K = ℚ(ζ₃)**), but I cannot claim the
+L6a4-scale route is reproducible here.
+
+### A misread caught before it reached the report
+
+sympy's `galois_group(f)` returns `(G, alt)` where the second value is *"lies in Aₙ"*, **not
+"abelian"**. Reading it as abelian reported `m004`'s C₂ — an abelian group — as non-abelian.
+Abelian-ness is `G.is_abelian`.
+
+### Estimate and recommendation
+
+Compute is free; the cost is **porting the probes**, which hardcode L6a4's field and its two
+automorphism polynomials, to compute `Gal(K/ℚ)` as explicit substitutions. Roughly a
+session, dominated by point-extraction plumbing.
+
+Recommendation (agent judgement): **both, `m004` first** — `m004` gives the reproduction
+check cheaply though its C₂ is a weak test of the transport; `5_2` is the sharper test and
+is the same ported code with a different input.
+
+Probe: `computations/ptolemy/ptolemy_second_manifold_cost.py`. Bean stays open under rule 13a.
 
