@@ -332,12 +332,21 @@ def main() -> int:
                "volume; guards the 2·Λ(π/3) confusion (that form is "
                "Vol(4_1)/3 = 0.6766…)",
     )
+    # RESIDUAL against 0, not value against target: the verdict path
+    # (qou_substrate/witness.py) compares float(computed) to
+    # float(expected), so a value-vs-value form here could not resolve
+    # anything below the float64 floor and the tolerance below it was
+    # unreachable by ~10^24. A residual near zero IS representable as a
+    # float64 all the way down, so the same tolerance is a real bound.
+    # Gate: computations/audits/tolerance_below_arithmetic_floor_audit.py.
+    _vol_known = mp.mpf("2.02988321281930725004240510854904057188337861506")
     w.add_assertion(
         name="vol_4_1_matches_known_value",
-        computed=mp.nstr(vol, 45),
-        expected="2.02988321281930725004240510854904057188337861506",
+        computed=mp.nstr(abs(vol - _vol_known), 12),
+        expected="0",
         tolerance="1e-40",
-        source="the figure-eight knot's hyperbolic volume to 45 places, a "
+        source="|2·Cl₂(π/3) − 2.02988321281930725004240510854904057188337861506|; "
+               "the figure-eight knot's hyperbolic volume to 45 places, a "
                "known constant independent of this substrate",
     )
 
