@@ -465,4 +465,70 @@ theorem zeroMeanMutualKernel_not_pos (L : LinkEmbedding M n)
 
 end LinkEmbedding
 
+/-! ## §6  The measure was an unstated assumption — removed, not documented
+
+§5's O2 theorem integrates against the **flat parameter measure** `ds`. The
+literature O'Hara energy does not: its integrand carries the arclength weights
+`|γ'(s)||γ'(t)|`, which is exactly what makes it reparametrisation-invariant.
+The two coincide only for unit-speed parametrisation, and `LinkEmbedding` carries
+no derivative data with which to say so — so §5 silently assumed constant speed.
+
+"Zero mean" is a statement ABOUT A MEASURE, so that assumption is not cosmetic
+here: the physically intended one is the charge/arclength density, not `ds`.
+
+The fix is to state O2 against an ARBITRARY density `w` rather than to write the
+constant-speed caveat into a docstring. Arclength is then one instance, `w = 1`
+recovers §5 exactly, and nothing is assumed that is not named in the hypotheses.
+`w` is a bare function, so its integrability and non-degeneracy are carried
+explicitly — they cannot be derived from anything `LinkEmbedding` holds. -/
+
+namespace LinkEmbedding
+
+variable {M : Type*} {n : ℕ}
+
+/-- The **`w`-weighted mean** of the mutual integrand over the second
+    component's parameter. With `w = |γ'|` this is the arclength mean the
+    O'Hara energy actually uses. -/
+noncomputable def weightedPairMean (L : LinkEmbedding M n) (i j : Fin n)
+    (s : ℝ) (w : ℝ → ℝ) : ℝ :=
+  (∫ t in (0:ℝ)..1, L.mutualIntegrand i j s t * w t) / (∫ t in (0:ℝ)..1, w t)
+
+/-- The mutual kernel with its own `w`-weighted mean subtracted. -/
+noncomputable def zeroMeanMutualKernelW (L : LinkEmbedding M n) (i j : Fin n)
+    (s : ℝ) (w : ℝ → ℝ) (t : ℝ) : ℝ :=
+  L.mutualIntegrand i j s t - L.weightedPairMean i j s w
+
+/-- **O2 against an arbitrary density.** The subtracted kernel has zero mean
+    with respect to `w`, whatever `w` is — so the clearance no longer depends on
+    which measure the fibre supplies, and in particular holds for arclength.
+
+    The subtraction constant is still forced rather than chosen: it is the
+    kernel's own `w`-mean, exactly as `c₀ = ⟨coth⟩_M` was forced in #7080. -/
+theorem zeroMeanMutualKernelW_integral_zero (L : LinkEmbedding M n)
+    (i j : Fin n) (s : ℝ) (w : ℝ → ℝ)
+    (hw : IntervalIntegrable w volume 0 1)
+    (hfw : IntervalIntegrable
+      (fun t => L.mutualIntegrand i j s t * w t) volume 0 1)
+    (hwne : (∫ t in (0:ℝ)..1, w t) ≠ 0) :
+    ∫ t in (0:ℝ)..1, L.zeroMeanMutualKernelW i j s w t * w t = 0 := by
+  have hsplit : ∀ t, L.zeroMeanMutualKernelW i j s w t * w t
+      = L.mutualIntegrand i j s t * w t
+        - L.weightedPairMean i j s w * w t := by
+    intro t; unfold zeroMeanMutualKernelW; ring
+  simp only [hsplit]
+  rw [intervalIntegral.integral_sub hfw (hw.const_mul _),
+    intervalIntegral.integral_const_mul]
+  unfold weightedPairMean
+  field_simp
+  ring
+
+/-- **`w = 1` recovers §5 exactly**, so the flat-measure statement is the
+    constant-density instance of the general one rather than a separate claim. -/
+theorem weightedPairMean_one (L : LinkEmbedding M n) (i j : Fin n) (s : ℝ) :
+    L.weightedPairMean i j s (fun _ => 1) = L.innerPairEnergy i j s := by
+  unfold weightedPairMean innerPairEnergy
+  simp
+
+end LinkEmbedding
+
 end QOU
