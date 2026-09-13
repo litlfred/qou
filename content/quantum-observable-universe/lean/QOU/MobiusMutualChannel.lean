@@ -51,6 +51,10 @@ WHAT IS PROVED, AND WHAT IS ASSUMED
    `lk ≠ 0`, and `4π` is the largest constant the bound admits. §9f settles
    that §9d's family performs a *separation at fixed length*, not a similarity,
    so the result is not an artefact of the model's pinned parameter interval.
+   §9g turns the negative into a **localisation**: composing with the corpus's
+   `b3_eq_zero_of_pairLocal`, any nonzero 3-body cumulant from this channel is
+   entirely the assembly's effect on the pair's separations — so every number
+   route (2) can supply is a derived geometry.
 
 ASSUMED, and deliberately visible: `HasUniformSeparation` (a uniform gap),
 measurability of `sep` in the integration variable, and — §9 only — **Gauss's
@@ -69,6 +73,7 @@ O'Hara's theorem, it is `qou-bn8e`'s object rather than this bean's, and nothing
 below weakens or sidesteps it.
 -/
 import QOU.MobiusEnergy
+import QOU.Mass.CrossingModelPairLocality
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
 namespace QOU
@@ -1234,5 +1239,109 @@ theorem innerPairEnergy_smul (L L' : LinkEmbedding M n) {c : ℝ} (hc : 0 < c)
   exact mutualIntegrand_smul L L' c hc i j s t (hscale t)
 
 end LinkEmbedding
+
+/-! ## §9g  WHERE route (2)'s many-body content must live — and it is not topology
+
+§9d says the Möbius mutual channel has no positive topological floor. That is a
+negative. This subsection turns it into a *localisation*, by composing with the
+corpus's own pair-locality theorem.
+
+`QOU.Mass.CrossingModelPairLocality.PairLocal` is the hypothesis that a pair's
+mutual energy is the same measured in isolation, inside a triple, and inside the
+full assembly; `b3_eq_zero_of_pairLocal` shows it forces the connected 3-body
+cumulant to vanish identically, and AME2020 measures `b₃ = +1.4262225` MeV
+(`QOU.MassTheory.AmeBindingNotPairwise.ame_b3_eq`), so the physical binding is
+**not** pair-local.
+
+**The instinct to check first, because it is wrong.** "The Möbius mutual energy
+is a two-body functional, therefore the channel is pair-local, therefore its
+`b₃` is zero, therefore route (2) is dead." The first clause is right and the
+second does **not** follow. `PairLocal` compares the pair's energy *across
+assemblies*, and a two-body functional still moves when the assembly moves the
+pair. Being two-body is a statement about the integrand; pair-locality is a
+statement about the configurations.
+
+**What is true instead.** `mobius_b3_eq_zero_of_sep_eq`: if the assemblies do
+not move the pair — the separations agree pointwise — then the channel's `b₃`
+vanishes identically. Contrapositive (`mobius_b3_ne_zero_forces_moved_sep`): any
+nonzero `b₃` from this channel is **entirely** the assembly's effect on the
+pair's separations.
+
+So route (2)'s many-body content is exactly the configuration change, and
+nothing else. Read with §9d — no topological floor — the two say the same thing
+from opposite ends: **every number route (2) can supply is a derived geometry.**
+That is not a refutation of the route; it is a specification of what it owes.
+
+**Not claimed:** that the assemblies *do* move the separations in this
+framework, nor by how much. That is a geometric measurement this file does not
+make, and it is the open thing. Nor is this a claim about the true arclength-
+weighted energy — see §9f on what `innerPairEnergy` does and does not model. -/
+
+namespace MobiusMutualChannel
+
+open QOU.Mass.CrossingModelPairLocality
+
+variable {M : Type*}
+
+/-- **The pair energy depends on the pair's separations and nothing else.**
+
+    The per-`(i, j, s)` form of `mutualIntegrand_depends_only_on_sep`, which is
+    what the pair-locality comparison actually needs: two *different* links
+    agreeing on one pair's separations agree on that pair's energy. -/
+theorem innerPairEnergy_congr_of_sep_eq {n : ℕ} (L L' : LinkEmbedding M n)
+    (i j : Fin n) (s : ℝ) (h : ∀ t, L'.sep i s j t = L.sep i s j t) :
+    L'.innerPairEnergy i j s = L.innerPairEnergy i j s := by
+  unfold LinkEmbedding.innerPairEnergy
+  refine intervalIntegral.integral_congr fun t _ => ?_
+  unfold LinkEmbedding.mutualIntegrand
+  rw [h t]
+
+/-- The crossing model the Möbius mutual channel induces, given one link
+    embedding per assembly: the isolated pair, the triple containing `k`, and
+    the full four-component assembly. -/
+noncomputable def mobiusCrossingModel (Lpair : LinkEmbedding M 4)
+    (Ltriple : Fin 4 → LinkEmbedding M 4) (Lquad : LinkEmbedding M 4) (s : ℝ) :
+    CrossingModel ℝ where
+  w2 := fun i j => Lpair.innerPairEnergy i j s
+  w3 := fun i j k => (Ltriple k).innerPairEnergy i j s
+  w4 := fun i j => Lquad.innerPairEnergy i j s
+
+/-- **If the assemblies do not move the pair, the channel is pair-local.** -/
+theorem mobiusCrossingModel_pairLocal_of_sep_eq (Lpair : LinkEmbedding M 4)
+    (Ltriple : Fin 4 → LinkEmbedding M 4) (Lquad : LinkEmbedding M 4) (s : ℝ)
+    (h3 : ∀ k i j t, (Ltriple k).sep i s j t = Lpair.sep i s j t)
+    (h4 : ∀ i j t, Lquad.sep i s j t = Lpair.sep i s j t) :
+    (mobiusCrossingModel Lpair Ltriple Lquad s).PairLocal :=
+  ⟨fun i j k => innerPairEnergy_congr_of_sep_eq Lpair (Ltriple k) i j s (h3 k i j),
+   fun i j => innerPairEnergy_congr_of_sep_eq Lpair Lquad i j s (h4 i j)⟩
+
+/-- **Hence the channel's 3-body cumulant vanishes identically** when the
+    assemblies leave the separations alone. Composing the above with the
+    corpus's `b3_eq_zero_of_pairLocal`. -/
+theorem mobius_b3_eq_zero_of_sep_eq (Lpair : LinkEmbedding M 4)
+    (Ltriple : Fin 4 → LinkEmbedding M 4) (Lquad : LinkEmbedding M 4) (s : ℝ)
+    (h3 : ∀ k i j t, (Ltriple k).sep i s j t = Lpair.sep i s j t)
+    (h4 : ∀ i j t, Lquad.sep i s j t = Lpair.sep i s j t) (i j k : Fin 4) :
+    (mobiusCrossingModel Lpair Ltriple Lquad s).toBindingMap.b3 i j k = 0 :=
+  b3_eq_zero_of_pairLocal
+    (mobiusCrossingModel_pairLocal_of_sep_eq Lpair Ltriple Lquad s h3 h4) i j k
+
+/-- **THE LOCALISATION.** A nonzero 3-body cumulant from this channel forces the
+    assemblies to have moved the pair's separations.
+
+    So route (2)'s entire many-body content is the configuration change — read
+    with §9d, which rules out a topological floor, every number the channel can
+    supply is a derived geometry. AME2020's `b₃ = +1.4262225` MeV is nonzero, so
+    the hypothesis is not idle. -/
+theorem mobius_b3_ne_zero_forces_moved_sep (Lpair : LinkEmbedding M 4)
+    (Ltriple : Fin 4 → LinkEmbedding M 4) (Lquad : LinkEmbedding M 4) (s : ℝ)
+    {i j k : Fin 4}
+    (hb3 : (mobiusCrossingModel Lpair Ltriple Lquad s).toBindingMap.b3 i j k ≠ 0) :
+    ¬ ((∀ k' i' j' t, (Ltriple k').sep i' s j' t = Lpair.sep i' s j' t) ∧
+       (∀ i' j' t, Lquad.sep i' s j' t = Lpair.sep i' s j' t)) := by
+  rintro ⟨h3, h4⟩
+  exact hb3 (mobius_b3_eq_zero_of_sep_eq Lpair Ltriple Lquad s h3 h4 i j k)
+
+end MobiusMutualChannel
 
 end QOU

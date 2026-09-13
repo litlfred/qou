@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T16:34:06Z
+updated_at: 2026-09-13T17:02:26Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1601,3 +1601,54 @@ Section 7-8 of the same file separately prove that Mobius invariance FORCES the
 inverse-square kernel (uniquely, and on geometrically realisable distance
 triples), so route (2)'s kernel is not a modelling choice. The kernel is
 settled; the magnitude is the open thing.
+
+
+## CONSTRAINT 3b — WHERE route (2)'s many-body content must live (2026-09-13, section 9g)
+
+Constraint 3 above is a negative: no topological lower bound reaches the
+pairwise channel. Section 9g of MobiusMutualChannel.lean turns it into a
+LOCALISATION by composing with this corpus's own pair-locality theorem.
+
+THE INSTINCT THAT IS WRONG, and worth recording because it is the obvious one.
+"The Mobius mutual energy is a two-body functional, therefore the channel is
+PairLocal, therefore b_3 = 0 by b3_eq_zero_of_pairLocal, therefore route (2) is
+dead." The first clause is right; the second DOES NOT FOLLOW. PairLocal
+(QOU.Mass.CrossingModelPairLocality) compares a pair's energy ACROSS ASSEMBLIES
+-- w3 i j k = w2 i j and w4 i j = w2 i j -- and a two-body functional still
+moves when the assembly moves the pair. Being two-body is a statement about the
+integrand; pair-locality is a statement about the configurations.
+
+WHAT IS TRUE, 5 declarations, all [propext, Classical.choice, Quot.sound], no
+sorryAx; whole file 52/52, lean -DautoImplicit=false -s 65536 exit 0.
+
+  mobiusCrossingModel                     the CrossingModel this channel induces,
+                                          one LinkEmbedding per assembly.
+  mobiusCrossingModel_pairLocal_of_sep_eq if the assemblies do not move the
+                                          pair's separations, it is PairLocal.
+  mobius_b3_eq_zero_of_sep_eq             hence b_3 vanishes IDENTICALLY, via
+                                          b3_eq_zero_of_pairLocal.
+  mobius_b3_ne_zero_forces_moved_sep      contrapositive: any nonzero b_3 from
+                                          this channel is ENTIRELY the
+                                          assembly's effect on the separations.
+
+AME2020 measures b_3 = +1.4262225 MeV (AmeBindingNotPairwise.ame_b3_eq), so the
+hypothesis is not idle.
+
+CONSEQUENCE. Route (2)'s entire many-body content is the configuration change
+and nothing else. Read with constraint 3 -- no topological floor -- the two say
+the same thing from opposite ends: EVERY NUMBER ROUTE (2) CAN SUPPLY IS A
+DERIVED GEOMETRY. That is not a refutation of the route; it is a specification
+of what it owes, and it says the route's deliverable is the same object
+qou-ales is deriving (gamma-gamma + the confinement SDP at q_0), not a separate
+one.
+
+RELEVANCE TO THE b_3 ARC. qou-brng / qou-rwhv / qou-rraz own the extensive term
+(measured b_3 = +1.4262 MeV, model exactly 0) and qou-eptr proposes EP/Pachner
+as a non-pair-local extensive carrier. Section 9g does not supply that carrier.
+What it supplies is the statement that the MOBIUS channel is not disqualified
+from contributing -- its b_3 is zero only under a hypothesis (separations
+unchanged across assemblies) that a bound configuration does not satisfy.
+
+NOT CLAIMED: that the assemblies DO move the separations in this framework, nor
+by how much. That is a geometric measurement section 9g does not make, and it is
+the open thing.
