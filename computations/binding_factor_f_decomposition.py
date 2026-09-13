@@ -107,7 +107,17 @@ def main() -> int:
         bond_rows.append({"atom": name, "A": A, "pairs": pairs,
                           "f_pred_bondcount": mp.nstr(f_pred, 20),
                           "f_extracted": mp.nstr(f_ext, 20),
-                          "err_pct": float(err)})
+                          # mp.nstr, not float(). `err` is mpf all the way --
+                          # f_ext and f_pred both are -- and every sibling in
+                          # this same dict is serialised with mp.nstr(..., 20).
+                          # float() here narrowed an exact value to 53 bits at
+                          # the witness boundary and was the ONLY field in the
+                          # dict doing so; it is 4 of the 5 raw float64 the
+                          # raw-float64 ratchet counts in this witness. The
+                          # consumer two lines below reads it back with
+                          # mpf(he4_err), which parses a decimal string
+                          # faithfully.
+                          "err_pct": mp.nstr(err, 20)})
     he4_err = bond_rows[-1]["err_pct"]
     print()
     print(f"  D fits a single bond (−0.19%); ⁴He misses by {mp.nstr(mpf(he4_err), 4)}% "

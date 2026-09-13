@@ -389,3 +389,19 @@ to fake precision it never had. The neighbouring terms stay on `fmt`: they are
 mpf all the way down, which is what the long comment above that dict is about.
 
 Clears 16 of the gate's 54 NEW once this witness is regenerated.
+
+## 16. `binding_factor_f_decomposition.py` — RE-RUN ONLY, err_pct serialised in mpf 2026-09-13
+
+`err = (f_ext / f_pred - 1) * 100` is mpf all the way — both operands are — and
+`"err_pct": float(err)` narrowed it to 53 bits **at the witness boundary**. It
+was the only field in its own dict doing so: `f_pred_bondcount` and
+`f_extracted` beside it both use `mp.nstr(..., 20)`. Now matches them.
+
+Accounts for **4 of the 5** raw float64 the ratchet counts in
+`binding-factor-f-decomposition.witness.json`. The fifth is
+`assertions[0].expected = 1.0`, an exact flag rather than a measurement.
+
+Verified the consumer two lines below still works: it reads the value back with
+`mpf(he4_err)`, and `mpf` parses a decimal string faithfully
+(`mp.nstr(e,20)` → `15.701291645735583333`, round-trips; `float(e)` gave
+`15.701291645735584`).
