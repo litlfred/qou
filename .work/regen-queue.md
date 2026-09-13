@@ -1,110 +1,65 @@
-# Regeneration queue — producers edited while the nuclide table held the checkout
+# Regeneration queue — rewritten 2026-09-13 after the 702-commit merge
 
-Two producers must never run at once in this checkout (bean `qou-uiut`); the
-hadron table saturates four cores and shares `.work/kernel-memo`. So a source
-fix made while it runs leaves its witness stale by construction. This file is
-that debt, written down rather than remembered.
+The previous contents are obsolete. Main's `qou-sv7h` arc made the kernel
+EXACT — the accumulator had been multiplying 167-bit inputs at ambient dps 15
+and the log layer was float64 on top — so **everything downstream of
+`hecke_core_legacy` computed before this merge is superseded by construction**,
+not merely stale. That is a much wider statement than the old queue's, and it
+replaces it.
 
-Drain it at the next idle window — the container suspends the table roughly
-every 25-45 minutes, and the checkpoint survives, so idle windows are frequent.
-Run each ONE AT A TIME, then `scripts/hkt-resume.sh --commit` to put the table
-back.
+## 1. The nuclide table — RUNNING
 
-## Owed
+`hadron-knot-table.witness.json` completed 19/19 on 2026-09-07 and is committed
+(`ee2c9c278f2`), but under the PRE-sv7h kernel. Re-running now from zero; the
+old checkpoint was deleted rather than re-stamped.
 
-| producer | why | bean |
-|---|---|---|
-| `computations/probes/cumulant_hierarchy_does_not_converge_probe.py` | description now DERIVES every measured number; it had drifted (`2.7e-15` prose vs `1.78e-15` data) | `qou-n62l` |
-| `computations/binding_hbarq_rung_forward_test.py` | emits `mass_mult_vs_lambda_A_gap_pct` + `mass_mult_times_hbar_q_sq`, the derived quantities its prose already quoted | `qou-n62l` |
-| `computations/phase3_triton_binding_convention_b.py` | NO-FLOAT64 fixed in code 2026-09-03; witness still carries the 25 raw-float64 fields | `qou-qe81` |
-| `computations/sweeps/paper_six_term_isotope_sweep.py` | returns EMPTY instead of raising; committed witness still has 12 `FileNotFoundError` rows | `qou-qe81` |
-| `computations/probes/symbolic_nf_q_degree_magic_probe.py` | revived by the qou-sidu fix, exceeded 900 s — needs a dedicated long run | `qou-sidu` |
-| `tools/pyhecke/python/pyhecke/atom.py` | last `mp.mpf(repr(` site; it is a CHECKPOINT-KEY file, so editing it discards the table's completed atoms | `qou-gxsd` |
+**That is the opposite call from 2026-09-07, and deliberately so.** That merge
+changed a key file by a pure RENAME, so the cached atoms were provably still
+valid and re-stamping was right. This one changes the arithmetic, so the cache
+is wrong and discarding is right. The key did its job both times; what differs
+is what the diff said.
 
-## Confirm-only — SETTLED 2026-09-07, no run owed
+Early signal: proton / neutron / protium reproduce byte-identically
+(0.629328 / 0.475134 / 1.146338), as expected — sv7h bites on the
+accumulation, so divergence should appear at compounds, not at A=1.
 
-`a-K-via-lp-dual-hecke-basis`, `he-nu-sdp-saturation-obstruction`,
-`markov_weights_symbolic`, `binding-closed-form-c-vs-d`,
-`binding-production-route-c-vs-d-deut`, `binding-sum-c-vs-d-deut`.
+Cheaper than the 7 h it took last time: main replaced the factorial SYT
+enumeration with an exact closed form (`qou-r4w5`), and the witness now
+checkpoints per atom, so a killed container publishes the rows it reached.
 
-These were taken as OURS in the 59-commit merge and listed here to confirm by
-re-running. **Answered statically instead, so no producer time is spent.**
+## 2. `qou-3uvs` — re-confirm, but the conclusion should hold
 
-Main changed 17 `.py` files in those 59 commits. Transitive first-party import
-cones (built with `witness_import_cone_staleness_audit.import_cone`, 20-57
-modules each) intersect that set in **exactly one file for all six**:
-`tools/qou-substrate/python/qou_substrate/witness.py`.
+The si28 / ca40 / fe56 Frobenius verdicts (all FAIL) came from the old kernel.
+They need re-confirming from this run. The conclusion is expected to survive:
+the violations are **10 %–84 % of the scale** and ~1e9 x the tolerance, and
+sv7h moves values at ~1e-15. Nothing at that size flips a verdict at that
+margin — but it should be read off the new witness, not assumed.
 
-And main's change to it is
-[`stamp_staleness_metadata`](../tools/qou-substrate/python/qou_substrate/witness.py)
-gaining `payload.setdefault("scriptFile", os.path.basename(spath))` — bean
-`qou-4383`. Metadata, no numeric path, and a **`setdefault`**, so a caller
-that already named its producer keeps its own value. All six witnesses
-already carry `scriptFile`:
+## 3. The kernel memo — DELETED, re-port only with a wider key
 
-    aK_via_lp_dual_hecke_basis.py          he_nu_sdp_saturation_obstruction.py
-    markov_weights_symbolic.py             binding_closed_form_C_vs_D_probe.py
-    binding_production_route_C_vs_D_probe.py
-    binding_sum_C_vs_D_per_isotope_probe.py
+38 MB discarded, not ported. `_memo_build_id()` hashed ONLY the compiled
+native module, and sv7h is a **Python** change, so the old cache would have
+been served unchanged against a numeric path that had moved — a stale-value
+failure, which is worse than no cache.
 
-so the change is a no-op for every one of them. **Nothing moves; taking OURS
-was correct and needs no confirmation run.**
+Re-port it against a key that hashes the Python numeric path too. Main already
+uses that idiom: `he4_magnus_omega2_sign_sparse_probe.py` stamps
+`_ck_src = sha256(open(__file__,'rb').read())` into every cached row and drops
+rows that do not match. Same fix as the `_ckpt_key` widening.
 
-Method note for the next merge: this is cheaper and stronger than re-running.
-Cheaper because it costs a cone walk instead of six producer runs; stronger
-because a re-run that reproduces the numbers only shows the numbers did not
-move *this time*, whereas the cone intersection shows *why* they cannot have.
+`scripts/hkt-resume.sh` still sets `QOU_KERNEL_MEMO`; it is inert and says so.
 
-## Blocked, not owed
+## 4. Everything else — RE-CHECK against the merged tree first
 
-`qbeta_computable_observables_vs_row_cap_probe` and
-`qbeta_derived_w_overdetermined_test_probe` cannot run at all —
-`RuntimeError: tr_m_word_lq: Case C (multiple top-1 in segment) not
-implemented`. Pre-existing kernel gap, documented in the second probe's own
-docstring. Not a regeneration problem.
+The old queue's entries were measured before 702 commits landed. Do not act on
+them as written. In particular main independently fixed several things this
+branch was carrying:
 
----
+* the `mp.mpf(repr(<mpf>))` trap (`qou-gxsd`) in at least three more places,
+  and better — dividing directly rather than round-tripping through a string;
+* the witness truncation window, by building the payload BEFORE `open(...,"w")`
+  rather than by writing to a sibling temp (`qou-m549`; this file had been
+  committed to main at **0 bytes**);
+* `scriptFile` in `stamp_staleness_metadata` (`qou-4383`).
 
-## 2026-09-07 — checkpoint re-stamp after the 78-commit merge (recorded as precedent)
-
-The merge changed `compound_shift_nf.py`, which `_ckpt_key()` hashes, so the
-14-atom checkpoint would have been discarded on the next resume. It was
-**re-stamped, not discarded**, and this is the procedure — the second time it
-has been used (the first is recorded in `_ckpt_key`'s own docstring).
-
-**The table must be STOPPED before merging a key file.** `_ckpt_save` calls
-`_ckpt_key()` on *every* save and the key reads the module files from disk, so
-merging under a live run writes a NEW-key checkpoint containing atoms computed
-by the OLD in-memory code — silent mixing, which is the exact thing the key
-exists to prevent. Harmless here (the change was a pure rename) but only
-because I had already read the diff; the guard would have been defeated either
-way.
-
-**Two-part justification, both required:**
-
-1. *Proof.* `hadron_knot_table` imports exactly one symbol from that module,
-   `build_atom_nf_mp`, and comparing the function's source across `HEAD^1` ->
-   `HEAD` shows it byte-identical. `compound_shift` differs only by
-   `categorical_mass` -> `nf_trace_pairing` (field + local variable), same
-   arithmetic.
-2. *Measurement.* 7 cached atoms x 6 NF components recomputed under the merged
-   code, all reproducing **exactly**.
-
-**Getting the measurement right took three attempts, and the two failures are
-the reusable part:**
-
-* First run used `QOU_Q0_ANCHOR=proton` (what a bare `python3 -c` defaults to).
-  `hadron_knot_table` is in the manifest's **`ideal_muon`** list. Values agreed
-  to 9 significant figures then diverged — which is the signature of a
-  different q₀, not of a precision difference, and is what stopped me
-  discarding 14 atoms on my own mistake.
-* Second run used `dps=mp.mp.dps` (70). The table computes at `_MP_DPS = 50`.
-  Values then agreed to ~50 digits and diverged after. **A boolean "identical"
-  check hides both of these; printing the values shows them immediately.**
-
-**Re-stamping the key safely.** `_ckpt_key()` cannot easily be called — importing
-`hadron_knot_table` does heavy work at module scope — so it was replicated, and
-the replication was **validated against the stored key**: computed with the
-PRE-merge `compound_shift_nf.py` it reproduces `2e178522a850…` exactly, which
-proves the replication before it is trusted to produce the new value
-`e52e75db8d50…`. Restarted, the table replays all 14 atoms at 0.00 s.
+Re-measure before re-doing.
