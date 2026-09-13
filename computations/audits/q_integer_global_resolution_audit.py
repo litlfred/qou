@@ -143,6 +143,18 @@ def top_level_imports(tree: ast.Module) -> dict[str, str]:
         if isinstance(node, ast.ImportFrom) and node.module:
             for a in node.names:
                 out[a.asname or a.name] = f'{node.module}::{a.name}'
+        # Plain `import mpmath as _mp` -- recorded with a '*' member so the
+        # evaluator can bind the ALIAS the module actually uses.  Without
+        # this, `q_parameter`'s `Q_INV_MP = _mp.mpf(1) / Q_MP` is
+        # unresolvable on the name `_mp`, and so are HA_MP, HBAR_Q_MP and
+        # everything downstream of them -- while `Q_MP` itself resolves
+        # fine, because it short-circuits on _ANCHOR_KEYS BEFORE any
+        # evaluation happens.  That asymmetry is why the cluster looked
+        # like corpus opacity rather than a missing alias: the one name a
+        # reader would test is the one name that does not need the alias.
+        elif isinstance(node, ast.Import):
+            for a in node.names:
+                out[a.asname or a.name.split('.')[0]] = f'{a.name}::*'
     return out
 
 
@@ -220,6 +232,19 @@ def resolve(name: str, assigns: dict[str, ast.expr], seen: frozenset[str],
     ns: dict[str, object] = {'sp': sp, 'sympy': sp}
     shim = _Shim()
     ns['mp'] = ns['mpmath'] = shim
+    # Bind whatever ALIAS this module imported mpmath / sympy under, read from
+    # its own `import` statement rather than guessed from the spelling. The
+    # corpus writes `import mpmath as _mp` in q_parameter and `as mp`
+    # elsewhere; hardcoding the latter made the former's derived constants
+    # unresolvable.
+    for _alias, _target in imports.items():
+        _mod, _member = _target.split('::', 1)
+        if _member != '*':
+            continue
+        if _mod in ('mpmath',):
+            ns[_alias] = shim
+        elif _mod in ('sympy',):
+            ns[_alias] = sp
     ns['mpf'] = lambda x, *a, **k: sp.nsimplify(sp.sympify(x), rational=True)
     for sub in ast.walk(expr):
         if isinstance(sub, ast.Name) and isinstance(sub.ctx, ast.Load):
