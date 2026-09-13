@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T13:20:00Z
+updated_at: 2026-09-13T14:00:00Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1069,4 +1069,68 @@ rational and generic `mu` rows **do** move `lambda`, correctly — those lifts l
 where `lambda` need not be a cube root at all.  **The rigidity claim is scoped to SL(3)
 and must be quoted that way.**  Bean stays open under rule 13a: the general identification
 in the title is untouched.
+
+
+---
+
+## UPDATE 2026-09-13h — the orbit survives it; and roast point (B) is NARROWED, not closed
+
+Two fronts, taken together.
+
+### 1. The untwisted GL(3,K) duality is a fact about the CLASS, not the point
+
+The prediction was written into the probe **before** the run, as an argument rather than a
+guess: at `x_g = g(x)` the representation is `rho_g = g(rho)`, so `sigma(rho_g) =
+(sigma.g)(rho)`; applying `g` to the base intertwining gives
+`g(A).(g.sigma_b)(rho).g(A)^{-1} = rho_g^{-T}`. Matching needs `sigma = g sigma_b g^{-1}`,
+which is `sigma_b` itself because **`Gal(K/Q)` is Klein four** — measured, not assumed.
+
+Measured, 16 solves with `lambda` **pinned to 1** (so a success is untwisted GL(3,K), not
+projective):
+
+    point          id       tau   sigma_a   sigma_b
+    x_id      none(0)   none(0)   none(0)  FOUND(4)
+    x_tau     none(0)   none(0)   none(0)  FOUND(4)
+    x_sigma_a none(0)   none(0)   none(0)  FOUND(4)
+    x_sigma_b none(0)   none(0)   none(0)  FOUND(4)
+
+Every control at **dim 0** — no nonzero solution at all. Every `sigma_b` cell at
+**dim 4 = [K:Q]**, Schur at each point. And `A_g == g(A)` up to a K-scalar at all four: the
+intertwiner is the Galois **transport** of the base one, not merely some matrix per point.
+
+Since the orbit **is** the whole variety, this is the representation-level twin of §1's
+variety-level *"exists sigma, for all x"*. It is also a real test of
+`GaloisOrbitTransport.lean`, whose sharpness theorem says commutativity cannot be dropped —
+had `sigma_b` not been uniform, either that hypothesis fails here or the Klein-four
+measurement is wrong. Guards first: relator gate at all four points, and `det rho_g(g) = 1`
+at all four, so the SL(3) normalisation is not an artifact of the base point.
+
+### 2. Roast point (B): NARROWED to two hypotheses, one of them newly found
+
+*"Two distinct rational self-maps of a variety can agree on a Galois orbit."* Splitting it:
+
+- **(B1), as functions on the points — closed and TRIVIAL.** The orbit is all of `V(Kbar)`,
+  so two functions on a four-element set agreeing at all four are equal. No algebra needed
+  and none should be claimed; this reading carries no content.
+- **(B2), as scheme / rational maps — the substantive one.** Pointwise agreement upgrades to
+  equality exactly when (i) the points **exhaust** the space and (ii) the coordinate ring is
+  **reduced**. Both are measured true for this variety in §1.
+
+`QOU/Eightfold/PointwiseAgreementOnReduced.lean` (sorry-free, arbitrary commutative rings)
+isolates (ii): `eq_of_sub_mem_all_primes`, `eq_of_apply_sub_mem_all_primes`, and the
+sharpness `exists_ne_of_not_isReduced` with the concrete witness `(2 : ZMod 4)` — a nonzero
+nilpotent lies in every prime, so without reducedness two genuinely different maps agree at
+every point.
+
+**The second gap, which the roast does not name and which I had not either.** Applying that
+to `D` versus `sigma_b` needs them to be morphisms **in the same category**, and they are
+not obviously so: `sigma_b` is a field automorphism of `K` (semilinear over `K`), while `D`
+is a `K`- or `Q`-rational map. *"Equal as rational self-maps"* does not yet type-check for
+this pair. So the status is:
+
+> **(B) is NARROWED to two named hypotheses — reducedness + exhaustion, MEASURED TRUE, and
+> a common category for the two maps, NOT ESTABLISHED — rather than closed.**
+
+Attacking the objection surfaced an extra hypothesis instead of removing one. Recorded that
+way deliberately; the bean stays open under rule 13a.
 
