@@ -454,6 +454,48 @@ theorem alt_psd_iff_even (hq : 0 < q) (w : List Letter) :
   rw [Nat.not_even_iff_odd] at hodd
   exact absurd hpos (not_lt.mpr (wordChar_neg_of_odd hq hodd).le)
 
+/-! ### Where the obstruction LIVES: the crossing budget, block by block
+
+The corpus builds a nucleon as `B₃ core · quark block · gluon dressing`, with
+the core `(σ₀σ₁⁻¹)³` at **6** letters and the quark block at **3**. Six is
+even and three is odd, so by the parity above the admissibility of the whole
+word is decided by **one** thing: whether the gluon dressing has odd length.
+
+That localises a question the corpus has argued over repeatedly. The live
+`pyhecke.atom.nucleon_word_letters` emits **11** (6 + 3 + 2);
+`build_nucleon_nf` emits **9** (6 + 3, its docstring saying "B₃ IS the gluon
+structure"). Those two differ by **2**, so they have the *same* parity and the
+9-vs-11 question cannot bear on this at all. -/
+
+/-- **The gluon dressing must have ODD length.**
+
+Given an even-length core and an odd-length quark block — which is what the
+corpus construction supplies — the assembled word is admissible in the
+alternating block exactly when the gluon dressing is odd.
+
+This is the crossing-budget statement: it does not name a number, it fixes a
+parity, and every gluon count the corpus has proposed (2, and the retracted 4)
+is even and therefore fails it. -/
+theorem gluon_dressing_must_be_odd (hq : 0 < q) (core quark gluon : List Letter)
+    (hc : Even core.length) (hk : Odd quark.length) :
+    0 < wordChar q (core ++ quark ++ gluon) ↔ Odd gluon.length := by
+  rw [alt_psd_iff_even hq]
+  simp only [List.append_assoc, List.length_append]
+  rw [Nat.even_iff] at hc
+  rw [Nat.odd_iff] at hk
+  rw [Nat.even_iff, Nat.odd_iff]
+  omega
+
+/-- **Neither of the corpus's two crossing budgets is admissible**, and they
+fail for the same reason: `6 + 3 + 2 = 11` and `6 + 3 = 9` are both odd.
+
+Stated on the lengths alone, so it is checkable without reference to any
+particular letters. The point is the one the 9-vs-11 argument keeps missing:
+those two budgets differ by 2, so no choice between them changes the parity. -/
+theorem both_corpus_budgets_are_odd :
+    ¬ Even (6 + 3 + 2) ∧ ¬ Even (6 + 3) := by
+  constructor <;> decide
+
 theorem protonWord_char_neg (hq : 0 < q) : wordChar q protonWord < 0 := by
   rw [protonWord_char hq.ne']
   apply div_neg_of_neg_of_pos
