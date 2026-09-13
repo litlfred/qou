@@ -565,3 +565,48 @@ Two separable pieces, neither in the tolerance-floor scope of PR #7257:
 The remaining 13 `ORPHAN` witnesses are unchanged in character: each is still a
 choice between regenerating (which deletes recorded analysis) and restoring
 producing code from history.
+
+### 🛑 Correction, same day — `ORPHAN 15` is name-resolution scope, and I quoted it without that
+
+The table above reports `ORPHAN 19 → 15` as "the class drained". That is correct
+**for what `witness_producer_resolution_audit.py` measures** and wrong as a
+statement about this bean's Class 2, which is broader. The audit's own docstring
+says so in a section headed *"What it does NOT do"*:
+
+> It does not check that the named script actually WRITES the witness … A
+> `RESOLVED` verdict here means *the name resolves to a file*, which is strictly
+> weaker.
+
+So `ORPHAN` means **"no script of that name exists anywhere"**, not **"no script
+writes to this path"** — and Class 2 is about the second.
+
+**The second class is measured, by a sibling, at 21.** Bean `qou-baye`
+(`b0472bbafd`, on `main`) reports **21 dirty witnesses at a path no producer
+writes** — pre-refactor copies left at the `computations/` root when the producer
+moved into `probes/`, `substrate/` or `alpha/` in the 2026-06-02 subdirectory
+refactor. Each carries a `scriptFile` naming a script that **does** exist, one
+directory over, so my audit correctly returns `RESOLVED` and they never reach its
+`ORPHAN` bucket.
+
+Verified on the live root copy: `pentagon-to-borromean-h4-probe.witness.json`
+carries `scriptFile: pentagon_to_borromean_h4_probe.py`, which exists at
+`computations/probes/` and writes there, never to the root path the witness sits
+at.
+
+**Measured disjointness — the two counts do not compete and no work was
+duplicated:**
+
+| | population | overlap |
+|---|---:|---|
+| `witness_producer_resolution_audit` `ORPHAN` (name) | 15 | — |
+| `qou-baye` (write path) | 21 | **NONE** |
+
+All 21 root copies are still present on this branch. So the honest figure for
+"a witness whose producing code does not write it" is **at least 36**, and the
+`19 → 15` drain describes one of its two halves.
+
+**This is the same error the section above it documents**, one turn later: a
+number quoted without the method that produced it. The tool prints its own scope
+and I did not carry it. `qou-baye` is the live carrier for the write-path half
+and owns its three options (its author recommends repointing the two
+paper-visible citations, then deleting the orphans) — **not duplicated here.**
