@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T14:02:19Z
-updated_at: 2026-09-13T06:49:01Z
+updated_at: 2026-09-13T06:58:51Z
 ---
 
 MEASURED 2026-09-13. New audit: computations/audits/q_integer_global_resolution_audit.py. It resolves module globals instead of giving up on them -- walks each module's own top-level assignments, evaluates them symbolically against one root symbol, binds the result, and only then applies the function.
@@ -185,3 +185,48 @@ Still zero new conventions across all 102. The remaining 71:
      6  q-independent (genuine)
      3  import cycle or depth limit
      2  _TBL   2  HERE   2  Q   1  json   (data-file loads, correctly opaque)
+
+FOURTH PASS 2026-09-13: 102 -> 117 of 173 (59.0% -> 67.6%). Q_MP cluster gone.
+
+*** MY "DIAGNOSED: ALIASED IMPORTS" CLAIM IN THE APPEND ABOVE WAS WRONG. ***
+I wrote that the 14-strong Q_MP cluster was blocked because "from q_parameter
+import Q_MP as Q0 keys my import map under Q0". Measured: the imports were
+captured CORRECTLY the whole time -- instrumenting the failing path shows
+'Q_MP' in module imports? True -> q_parameter::Q_MP on every one of them.
+
+THE ACTUAL CAUSE: my cycle guard tripped on itself across a module hop. The
+corpus writes
+      from q_parameter import Q_MP
+      Q = Q_MP
+Resolving Q walks to Q_MP with seen = {Q, Q_MP}, hops into q_parameter, and
+the FIRST line of resolve() sees Q_MP already in seen and reports a cycle --
+against a chain two steps long and perfectly acyclic. The guard was keyed by
+BARE NAME, so a name that legitimately appears in two modules looked like a
+loop.
+
+Fixed by keying the guard MODULE::NAME across a hop.
+
+That is TWO wrong diagnoses I asserted in this area today (the other: reporting
+23 of my own str()-roundtrip failures as "genuinely q0-pinned"). Both were
+stated confidently in a commit message before being instrumented. The cheap
+guard that caught both, and that I should have reached for first BOTH times:
+run the resolver on the actual failing path and print what it returns, instead
+of reasoning about why it ought to work.
+
+TALLY NOW:
+   105  symmetric
+     6  classical
+     3  symmetric[n=2]
+     1  symmetric_in_sqrt_q     (correct + deliberate; see above)
+     2  OTHER                   (not q-integers at all)
+    56  UNRESOLVED
+
+HONEST SPLIT OF 173:  117 classified / 6 genuinely q-independent / 50 dark
+Still ZERO new conventions across all 117 -- that result has now survived four
+passes and a tripling of the measured population.
+
+REMAINING 56:
+    27  no top-level assignment (bound inside a function, or a parameter) --
+        now the dominant blocker and the obvious next lever
+     6  q-independent (genuine)
+     2  Q_INV_MP   2  _TBL   2  HERE   2  Q   1  json
