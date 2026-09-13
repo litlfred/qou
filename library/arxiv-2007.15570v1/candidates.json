@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2007.15570v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "6e46f4346a29fd83bf48e3ce2e5f10c6a3af97a0d3638c95a5f1acb58cb4fce5",
+  "file": "2007.15570v1.pdf"
+ },
+ "provenance": {
+  "title": "A quantum Monte Carlo based approach to intranuclear cascades",
+  "authors": "Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b",
+  "arxiv": {
+   "id": "2007.15570",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "30 Jul 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

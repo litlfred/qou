@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2308.16266v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "59f0cbfb48d717bb4ef70dc7ceaa287a724d0a0ed30bbe659747b3b6bad14d09",
+  "file": "2308.16266v1.pdf"
+ },
+ "provenance": {
+  "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+  "authors": "Alex Gnech, 1, 2 Bryce Fore, 3 and Alessandro Lovato 2, 3, 4",
+  "arxiv": {
+   "id": "2308.16266",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "30 Aug 2023"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -1,0 +1,1059 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1801.05145v1",
+ "source": {
+  "file": "1801.05145v1.pdf",
+  "sha256": "808da260edd433f7b07d0e19b94ad82f7e5d607678f5bb0522159faccd5b2408",
+  "bytes": 835453,
+  "pages": 91,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1801.05145",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "16 Jan 2018"
+  },
+  "doi": null,
+  "title": "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS",
+  "authors_raw": "SEOK-JIN KANG, MASAKI KASHIW ARA 1, MYUNGHO KIM 2 AND SE-JIN OH 3",
+  "title_lines": [
+   "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS"
+  ],
+  "abstract": "We prove that the quantum cluster algebra structure of a unipote nt quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and its Weyl group element w, admits a monoidal categori\ufb01cation via the representa- tions of symmetric Khovanov-Lauda- Rouquier algebras. In order to achieve this goal, we give a formulation of monoidal categori\ufb01cations of quantum clust er algebras and provide a criterion for a monoidal category of \ufb01nite-dimensional gr aded R-modules to become a monoidal categori\ufb01cation, where R is a symmetric Khovanov-Lauda- Rouquier algebra. Roughly speaking, this criterion asserts that a q uantum monoidal seed can be mutated successively in all the directions, once the \ufb01rs t-step mutations are possible. Then, we show the existence of a quantum monoidal se ed of Aq(n(w)) which admits the \ufb01rst-step mutations in all the directions. As a cons equence, we prove the conjecture that any cluster monomial is a member of the upper global basis up to a power of q1/2. In the course of our investigation, we also give a proof of a conjecture of Leclerc on the product of upper global basis elemen ts.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180116202236-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Quantum groups and global bases",
+   "page": 9,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Quantum groups. Let I be an index set. A Cartan datum is a quintuple",
+   "page": 9,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Integrable representations. A Uq(g)-module M is called integrable if M =\u2a01",
+   "page": 11,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "Crystal bases and global bases. For a subring A of Q(q), we say that L",
+   "page": 12,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "KLR algebras and R-matrices",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "KLR algebras. We recall the de\ufb01nition of Khovanov-Lauda-Rouquier algebra or",
+   "page": 15,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "Simplicity of heads and socles of convolution products",
+   "page": 20,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "(\u039b(M,N )+\u039b(N,M )) for some c \u2208 k\u00d7. \u25a1",
+   "page": 22,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "Leclerc\u2019s conjecture",
+   "page": 31,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Leclerc\u2019s conjecture. The following theorem is a part of Leclerc\u2019s conjecture",
+   "page": 32,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Geometric results. The result of this subsection (Theorem 4.2.1) was explained",
+   "page": 35,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 3,
+   "title": "In this subsection, we assume further that the base \ufb01eld k is of characteristic",
+   "page": 35,
+   "source": "inferred",
+   "number": "10.3.1"
+  },
+  {
+   "level": 1,
+   "title": "Assume that M \u2208 R-gmod has a head qcH with a self-dual simple module H and",
+   "page": 35,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 4.2.1. Recall that the graded algebra R(\u03b2) (\u03b2 \u2208 Q+) is",
+   "page": 36,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Quantum cluster algebras",
+   "page": 37,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Quantum seeds. Fix a \ufb01nite index set J =Jex \u2294Jfr with the decomposition into",
+   "page": 38,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Mutation. Fork \u2208Jex, we de\ufb01ne a J \u00d7J-matrix E = (eij)i,j\u2208J and a Jex \u00d7Jex-",
+   "page": 39,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Monoidal categorification of cluster algebras",
+   "page": 40,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Graded cases. Let Q be a free abelian group equipped with a symmetric bilinear",
+   "page": 41,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "(dk,\u03b6 ) + 1",
+   "page": 44,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "((dk,dk) + (\u03b6,\u03b6 )) \u2212 1",
+   "page": 44,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(\u03b6 +dk,\u03b6 +dk)",
+   "page": 44,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Monoidal categorification via modules over KLR algebras",
+   "page": 45,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Admissible pair. In this section, we assume that R is a symmetric KLR algebra",
+   "page": 45,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 1,
+   "title": "(wt(Mi),wt(Mi))[Mi]}i\u2208J, \u2212\u039b, ~B,D ). We",
+   "page": 48,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Quantum coordinate rings and modified quantized envelopin g",
+   "page": 54,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Quantum coordinate ring. Let Uq(g)\u2217 be Hom Q(q)(Uq(g), Q(q)). Then the co-",
+   "page": 54,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Unipotent quantum coordinate ring. Let us endow U +",
+   "page": 58,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 1,
+   "title": "(\u03b2,\u03b2 )x for x \u2208Aq(n)\u03b2.(8.3)",
+   "page": 60,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Modi\ufb01ed quantum enveloping algebra. For the materials in this subsec-",
+   "page": 60,
+   "source": "inferred",
+   "number": "8.3"
+  },
+  {
+   "level": 2,
+   "title": "Relationship of Aq(g) and ~Uq(g). There exists a canonical pairing Aq(g) \u00d7",
+   "page": 63,
+   "source": "inferred",
+   "number": "8.4"
+  },
+  {
+   "level": 2,
+   "title": "Global basis of ~Uq(g) and tensor products of Uq(g)-modules in Oint(g). Let",
+   "page": 65,
+   "source": "inferred",
+   "number": "8.6"
+  },
+  {
+   "level": 1,
+   "title": "Quantum minors and T-systems",
+   "page": 66,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Quantum minors. Using the isomorphism \u03a6 in ( 8.1), for each \u03bb \u2208 P+ and",
+   "page": 66,
+   "source": "inferred",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "T-system. In this subsection, we recall the T -system among the (unipotent)",
+   "page": 70,
+   "source": "inferred",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "Revisit of crystal bases and global bases. In order to prove Theorem 9.3.3",
+   "page": 70,
+   "source": "inferred",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "Generalized T-system. TheT -system in \u00a79.2 can be interpreted as a system of",
+   "page": 74,
+   "source": "inferred",
+   "number": "9.4"
+  },
+  {
+   "level": 1,
+   "title": "KLR algebras and their modules",
+   "page": 75,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Chevalley and Kashiwara operators. Let us recall the de\ufb01nition of several",
+   "page": 75,
+   "source": "inferred",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Determinantial modules and T-system. We will use the materials in \u00a7 9 to",
+   "page": 80,
+   "source": "inferred",
+   "number": "10.2"
+  },
+  {
+   "level": 1,
+   "title": "Monoidal categorification of Aq(n(w))",
+   "page": 84,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 2,
+   "title": "Quantum cluster algebra structure on Aq(n(w)). In this subsection, we",
+   "page": 84,
+   "source": "inferred",
+   "number": "11.1"
+  },
+  {
+   "level": 2,
+   "title": "Admissible seeds in the monoidal category Cw. For 0 \u2264t \u2264s \u2264r, we set",
+   "page": 85,
+   "source": "inferred",
+   "number": "11.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 89,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3609,
+   "n_words": 566
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3210,
+   "n_words": 533
+  },
+  {
+   "id": "sec-001-4-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "4",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5723,
+   "n_words": 1003
+  },
+  {
+   "id": "sec-002-6-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "6",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5133,
+   "n_words": 955
+  },
+  {
+   "id": "sec-003-8-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "8",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3942,
+   "n_words": 673
+  },
+  {
+   "id": "sec-004-1-quantum-groups-and-global-bases",
+   "number": "1",
+   "title": "Quantum groups and global bases",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 164,
+   "n_words": 31
+  },
+  {
+   "id": "sec-005-11-quantum-groups-let-i-be-an-index-set-a-cartan",
+   "number": "1.1",
+   "title": "Quantum groups. Let I be an index set. A Cartan datum is a quintuple",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 933,
+   "n_words": 198
+  },
+  {
+   "id": "sec-006-10-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "10",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2086,
+   "n_words": 473
+  },
+  {
+   "id": "sec-007-12-integrable-representations-a-uqg-module-m-is",
+   "number": "1.2",
+   "title": "Integrable representations. A Uq(g)-module M is called integrable if M =\u2a01",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1455,
+   "n_words": 304
+  },
+  {
+   "id": "sec-008-12-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "12",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 864,
+   "n_words": 188
+  },
+  {
+   "id": "sec-009-13-crystal-bases-and-global-bases-for-a-subring",
+   "number": "1.3",
+   "title": "Crystal bases and global bases. For a subring A of Q(q), we say that L",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2967,
+   "n_words": 649
+  },
+  {
+   "id": "sec-010-14-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "14",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2698,
+   "n_words": 589
+  },
+  {
+   "id": "sec-011-2-klr-algebras-and-r-matrices",
+   "number": "2",
+   "title": "KLR algebras and R-matrices",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-21-klr-algebras-we-recall-the-de\ufb01nition-of-khova",
+   "number": "2.1",
+   "title": "KLR algebras. We recall the de\ufb01nition of Khovanov-Lauda-Rouquier algebra or",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 729,
+   "n_words": 163
+  },
+  {
+   "id": "sec-013-16-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "16",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3306,
+   "n_words": 618
+  },
+  {
+   "id": "sec-014-18-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "18",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3232,
+   "n_words": 642
+  },
+  {
+   "id": "sec-015-20-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "20",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 846,
+   "n_words": 182
+  },
+  {
+   "id": "sec-016-3-simplicity-of-heads-and-socles-of-convolution",
+   "number": "3",
+   "title": "Simplicity of heads and socles of convolution products",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 2529,
+   "n_words": 555
+  },
+  {
+   "id": "sec-017-22-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "22",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 993,
+   "n_words": 211
+  },
+  {
+   "id": "sec-018-2-\u03bbmn-\u03bbnm-for-some-c-k",
+   "number": "2",
+   "title": "(\u039b(M,N )+\u039b(N,M )) for some c \u2208 k\u00d7. \u25a1",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2488,
+   "n_words": 521
+  },
+  {
+   "id": "sec-019-24-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "24",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 3281,
+   "n_words": 718
+  },
+  {
+   "id": "sec-020-26-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "26",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 2936,
+   "n_words": 589
+  },
+  {
+   "id": "sec-021-28-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "28",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 2972,
+   "n_words": 661
+  },
+  {
+   "id": "sec-022-30-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+   "number": "30",
+   "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 3211,
+   "n_words": 708
+  },
+  {
+   "id": "sec-023-4-leclercs-conjecture",
+   "number": "4",
+   "title": "Leclerc\u2019s conjecture",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 126,
+   "n_words": 27
+  },
+  {
+   "id": "sec-024-41-leclercs-conjecture-the-following-theorem-is",
+   "number": "4.1",
+   "title": "Leclerc\u2019s conjecture. The following theorem is a part of Leclerc\u2019s conjecture",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 4492,
+   "n_words": 943
+  },
+  {
+   "id": "sec-025-42-geometric-results-the-result-of-this-subsecti",
+   "number": "4.2",
+   "title": "Geometric results. The result of this subsection (Theorem 4.2.1) was explained",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 84,
+   "n_words": 18
+  },
+  {
+   "id": "sec-026-1031-in-this-subsection-we-assume-further-that-t",
+   "number": "10.3.1",
+   "title": "In this subsection, we assume further that the base \ufb01eld k is of characteristic",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 85,
+   "n_words": 16
+  },
+  {
+   "id": "sec-027-0-assume-that-m-r-gmod-has-a-head-qch-with-a-sel",
+   "number": "0",
+   "title": "Assume that M \u2208 R-gmod has a head qcH with a self-dual simple module H and",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2233,
+   "n_words": 449
+  },
+  {
+   "id": "sec-028-43-proof-of-theorem-421-recall-that-the-graded-a",
+   "number": "4.3",
+   "title": "Proof of Theorem 4.2.1. Recall that the graded algebra R(\u03b2) (\u03b2 \u2208 Q+) is",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 2020,
+   "n_words": 376
+  },
+  {
+   "id": "sec-029-5-quantum-cluster-algebras",
+   "number": "5",
+   "title": "Quantum cluster algebras",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 157,
+   "n_words": 29
+  },
+  {
+   "id": "sec-030-51-quantum-seeds-fix-a-\ufb01nite-index-set-j-jex-jfr",
+   "number": "5.1",
+   "title": "Quantum seeds. Fix a \ufb01nite index set J =Jex \u2294Jfr with the decomposition into",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1811,
+   "n_words": 363
+  },
+  {
+   "id": "sec-031-6-monoidal-categorification-of-cluster-algebras",
+   "number": "6",
+   "title": "Monoidal categorification of cluster algebras",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 546,
+   "n_words": 104
+  },
+  {
+   "id": "sec-032-52-mutation-fork-jex-we-de\ufb01ne-a-j-j-matrix-e-eij",
+   "number": "5.2",
+   "title": "Mutation. Fork \u2208Jex, we de\ufb01ne a J \u00d7J-matrix E = (eij)i,j\u2208J and a Jex \u00d7Jex-",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 4130,
+   "n_words": 846
+  },
+  {
+   "id": "sec-033-62-graded-cases-let-q-be-a-free-abelian-group-eq",
+   "number": "6.2",
+   "title": "Graded cases. Let Q be a free abelian group equipped with a symmetric bilinear",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 44,
+   "n_chars": 3739,
+   "n_words": 817
+  },
+  {
+   "id": "sec-034-2-dk\u03b6-1",
+   "number": "2",
+   "title": "(dk,\u03b6 ) + 1",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 441,
+   "n_words": 116
+  },
+  {
+   "id": "sec-035-4-dkdk-\u03b6\u03b6-1",
+   "number": "4",
+   "title": "((dk,dk) + (\u03b6,\u03b6 )) \u2212 1",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 20,
+   "n_words": 7
+  },
+  {
+   "id": "sec-036-4-\u03b6-dk\u03b6-dk",
+   "number": "4",
+   "title": "(\u03b6 +dk,\u03b6 +dk)",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1694,
+   "n_words": 332
+  },
+  {
+   "id": "sec-037-7-monoidal-categorification-via-modules-over-klr",
+   "number": "7",
+   "title": "Monoidal categorification via modules over KLR algebras",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-038-71-admissible-pair-in-this-section-we-assume-tha",
+   "number": "7.1",
+   "title": "Admissible pair. In this section, we assume that R is a symmetric KLR algebra",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 4605,
+   "n_words": 935
+  },
+  {
+   "id": "sec-039-4-wtmiwtmimiij-\u03bb-bd-we",
+   "number": "4",
+   "title": "(wt(Mi),wt(Mi))[Mi]}i\u2208J, \u2212\u039b, ~B,D ). We",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 54,
+   "n_chars": 9033,
+   "n_words": 2000
+  },
+  {
+   "id": "sec-040-8-quantum-coordinate-rings-and-modified-quantize",
+   "number": "8",
+   "title": "Quantum coordinate rings and modified quantized envelopin g",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 8,
+   "n_words": 1
+  },
+  {
+   "id": "sec-041-81-quantum-coordinate-ring-let-uqg-be-hom-qquqg",
+   "number": "8.1",
+   "title": "Quantum coordinate ring. Let Uq(g)\u2217 be Hom Q(q)(Uq(g), Q(q)). Then the co-",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 58,
+   "n_chars": 5123,
+   "n_words": 983
+  },
+  {
+   "id": "sec-042-82-unipotent-quantum-coordinate-ring-let-us-endo",
+   "number": "8.2",
+   "title": "Unipotent quantum coordinate ring. Let us endow U +",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 3127,
+   "n_words": 621
+  },
+  {
+   "id": "sec-043-2-\u03b2\u03b2-x-for-x-aqn\u03b283",
+   "number": "2",
+   "title": "(\u03b2,\u03b2 )x for x \u2208Aq(n)\u03b2.(8.3)",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 92,
+   "n_words": 15
+  },
+  {
+   "id": "sec-044-83-modi\ufb01ed-quantum-enveloping-algebra-for-the-ma",
+   "number": "8.3",
+   "title": "Modi\ufb01ed quantum enveloping algebra. For the materials in this subsec-",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 63,
+   "n_chars": 5146,
+   "n_words": 1038
+  },
+  {
+   "id": "sec-045-84-relationship-of-aqg-and-uqg-there-exists-a-ca",
+   "number": "8.4",
+   "title": "Relationship of Aq(g) and ~Uq(g). There exists a canonical pairing Aq(g) \u00d7",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 65,
+   "n_chars": 2300,
+   "n_words": 416
+  },
+  {
+   "id": "sec-046-86-global-basis-of-uqg-and-tensor-products-of-uq",
+   "number": "8.6",
+   "title": "Global basis of ~Uq(g) and tensor products of Uq(g)-modules in Oint(g). Let",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 1959,
+   "n_words": 427
+  },
+  {
+   "id": "sec-047-9-quantum-minors-and-t-systems",
+   "number": "9",
+   "title": "Quantum minors and T-systems",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-048-91-quantum-minors-using-the-isomorphism-\u03c6-in-81",
+   "number": "9.1",
+   "title": "Quantum minors. Using the isomorphism \u03a6 in ( 8.1), for each \u03bb \u2208 P+ and",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 70,
+   "n_chars": 6205,
+   "n_words": 1287
+  },
+  {
+   "id": "sec-049-92-t-system-in-this-subsection-we-recall-the-t",
+   "number": "9.2",
+   "title": "T-system. In this subsection, we recall the T -system among the (unipotent)",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 859,
+   "n_words": 110
+  },
+  {
+   "id": "sec-050-93-revisit-of-crystal-bases-and-global-bases-in",
+   "number": "9.3",
+   "title": "Revisit of crystal bases and global bases. In order to prove Theorem 9.3.3",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 74,
+   "n_chars": 5073,
+   "n_words": 1035
+  },
+  {
+   "id": "sec-051-94-generalized-t-system-thet--system-in-92-can-b",
+   "number": "9.4",
+   "title": "Generalized T-system. TheT -system in \u00a79.2 can be interpreted as a system of",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 75,
+   "n_chars": 2138,
+   "n_words": 429
+  },
+  {
+   "id": "sec-052-10-klr-algebras-and-their-modules",
+   "number": "10",
+   "title": "KLR algebras and their modules",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 75,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-053-101-chevalley-and-kashiwara-operators-let-us-rec",
+   "number": "10.1",
+   "title": "Chevalley and Kashiwara operators. Let us recall the de\ufb01nition of several",
+   "level": 2,
+   "page_start": 75,
+   "page_end": 80,
+   "n_chars": 7285,
+   "n_words": 1508
+  },
+  {
+   "id": "sec-054-102-determinantial-modules-and-t-system-we-will",
+   "number": "10.2",
+   "title": "Determinantial modules and T-system. We will use the materials in \u00a7 9 to",
+   "level": 2,
+   "page_start": 80,
+   "page_end": 84,
+   "n_chars": 6616,
+   "n_words": 1266
+  },
+  {
+   "id": "sec-055-11-monoidal-categorification-of-aqnw",
+   "number": "11",
+   "title": "Monoidal categorification of Aq(n(w))",
+   "level": 1,
+   "page_start": 84,
+   "page_end": 84,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-056-111-quantum-cluster-algebra-structure-on-aqnw-in",
+   "number": "11.1",
+   "title": "Quantum cluster algebra structure on Aq(n(w)). In this subsection, we",
+   "level": 2,
+   "page_start": 84,
+   "page_end": 85,
+   "n_chars": 2792,
+   "n_words": 567
+  },
+  {
+   "id": "sec-057-112-admissible-seeds-in-the-monoidal-category-cw",
+   "number": "11.2",
+   "title": "Admissible seeds in the monoidal category Cw. For 0 \u2264t \u2264s \u2264r, we set",
+   "level": 2,
+   "page_start": 85,
+   "page_end": 89,
+   "n_chars": 6384,
+   "n_words": 1231
+  },
+  {
+   "id": "sec-058-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 89,
+   "page_end": 91,
+   "n_chars": 5390,
+   "n_words": 849
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 59,
+  "sections": 60,
+  "chars_total": 155020
+ }
+}

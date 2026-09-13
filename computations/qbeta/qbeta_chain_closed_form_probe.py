@@ -20,6 +20,34 @@ So it should factor over nucleons — and it does, to working precision:
 Verified at 2H, 3H, 3He to every digit. Two H_3 numbers give the free trace for
 EVERY atom — no n = 18 matrices, no convention problem, no wall.
 
+*** THE TWO NUMBERS ARE GROUPED-ERA. THE FACTORISATION IS NOT. ***
+
+Flagged 2026-09-13 under bean `qou-4383`. `T_P` and `T_N` below are the
+pre-ruling values: both reproduce to 50 significant digits under
+`atom_braid_word_3A(..., intra_order="grouped")`, and the 2026-09-05 owner
+ruling (`qou-hu1f`) made the borromean word canonical. The canonical pair is
+
+    t_p = 0.62932840220292191816534574677848592760021940063436
+    t_n = 0.47513351715568221250609023267500579955840763470875
+
+**The structural result above survives the change untouched, and that was
+measured rather than assumed.** Against the canonical free traces computed
+independently by `audits/h3_transition_cache_q_key_audit.py`:
+
+    atom   t_p^Z · t_n^N (canonical)          measured free (canonical)      rel
+    2H     0.299015017184640076702160426771   same                        5.4e-32
+    3H     0.142072056797304797470498604255   same                        3.9e-31
+    3He    0.188178642999488779263479037146   same                        7.1e-31
+    4He    0.0894099805019306003820475658199  same                        1.6e-31
+
+(the residuals are the precision floor of the 30-digit reference, not drift.)
+So multiplicativity of the Ocneanu trace over disjoint strand ranges does not
+care which word sits inside each nucleon block — as it should not, since the
+blocks stay disjoint. Whoever refreshes this probe therefore has a SMALL job:
+swap two constants and re-measure `MEAS_ATOM` / `MEAS_FREE_HOMOG`; nothing in
+sections 1–3 needs re-deriving. Not done here because the A = 4 re-measure is
+the 33-minute matrix route this file already documents.
+
 *** 2. tr_M(beta_atom) IS GEOMETRIC ON A HOMOGENEOUS CHAIN ***
 
 Measured on pure-proton chains at A = 1, 2, 3 (n = 3, 6, 9):

@@ -189,3 +189,29 @@ numeric` sets global mpmath dps and never restores it, so a literal `dps=50` at
 140 dps destroyed the 1e-50 finite difference. No live victim in the corpus
 (measured: 1 of 15 literal-50 callers works above 50, and it already guards with
 `workdps`). Warned at the source; fix is bean `qou-p4fr`.
+
+### 2026-09-13 (later) — independent corroboration of `z` from `qou-qqm4`
+
+Found while sweeping `qou-4383`, not while looking for it.
+`qbeta_bond_factors_derived_probe.MEASURED["b_pp"] = 0.6126880371464652516`
+is `z(q₀) = q₀³/(q₀²+1)` to **all 19 digits it carries**
+(z = 0.6126880371464652515958299…). That bean's working title is "the bond
+factors ARE the two Markov parameters", and it reached the number from the
+qbeta chain expansion — a completely different route from the stabilisation
+axiom used above.
+
+Two things follow, one solid and one speculative:
+
+- **Solid.** `z` is not a convention this arc adopted. It shows up
+  identically in a derivation that has nothing to do with Ω₂, which is
+  additional reason to trust the stabilisation law as structure rather than
+  bookkeeping.
+- **Speculative, offered to `qou-qqm4` as a lead and not tested here.** If a
+  bond factor *is* the stabilisation parameter, adding a nucleon to the chain
+  may literally be a Markov stabilisation, which would recast that bean's
+  near-additivity question as one about Markov moves. Against it: `b_pn` and
+  `b_nn` are **not** `z` (ratios 0.8295 and 0.7942 to their predecessors), so
+  it is not one parameter doing all the work.
+
+Cross-cited into `qou-qqm4` as a coordination note. That bean is under active
+edit by a sibling today; nothing of theirs was changed.
