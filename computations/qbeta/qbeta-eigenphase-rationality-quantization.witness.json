@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T08:23:40.952342+00:00",
-  "commitSha": "1de376d7627fbe0be3575ec9f2766599894046d5",
+  "computedAt": "2026-09-13T16:42:06.731741+00:00",
+  "commitSha": "e80c794e191fc0bffc86b5c381eccbb9a9609e0a",
   "assertions": [
     {
       "name": "1. det rho(sigma_i) = -1 identically",
@@ -99,14 +99,32 @@
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
+    },
+    {
+      "name": "17. the 2026-08-22 cosh exclusion is base-dependent and is VOID under D",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "18. no clean cosh closed form on offer - re-opening only, no candidate",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "19. only the augmentation cell admits a bounded rung (recorded only)",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "qbeta-eigenphase-rationality-quantization",
   "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
-  "scriptHash": "df325c7a0e0d",
-  "scriptCommitSha": "2a3644b8bd300fc2c1924eb6eeff2691a9702e4f",
+  "scriptHash": "0aca5ddf34f5",
+  "scriptCommitSha": "7a348653aa25aaab5b4177289cd88a2fd5b4bd6e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -156,6 +174,8 @@
       "N1_cos_rung_upper_bound": "1",
       "N2_rung_at_c2_minus_1": "0.999927456715617626498201895199068388200910824829000565864302",
       "c3_required_on_ruled_base": "1229007.57339994317617035396539857565718095693005754791421595",
+      "cosh_exclusion_status": "The 2026-08-22 cosh exclusion was computed on the now-RETIRED z=1 base (required factor 0.9983 < 1, cosh >= 1 wrong side). On the ruled z_D base the required factor is 1.7592 > 1, so that argument is VOID and the route is RE-OPENED. No candidate is offered: arccosh(1.7592)/{ln q, h, hbar_q} = 11.1674, 5.5736, 11.7602, none near an integer or half-integer.",
+      "augmentation_cell_note": "CODATA/Q(z=q) = 0.8891 < 1, so only the augmentation cell admits a bounded multiplicative rung. RECORDED ONLY - z_D is owner-ruled and nothing here proposes changing it.",
       "conclusion": "Deriving alpha CANNOT unblock qou-cds1. The N=1 rung is a cosine, bounded by 1, and the ruled base needs a factor 1.759 > 1. The Q_beta L2 residual is a BASE problem, not a phase problem. Scope-(b), citing Real.cos_le_one; Lean twin QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short (sorry-free)."
     },
     "part2_measurement_is_a_fit": {

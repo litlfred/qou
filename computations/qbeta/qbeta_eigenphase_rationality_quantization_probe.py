@@ -523,6 +523,7 @@ CONSEQUENCE
     q_p = q_at()
     s_p = substrate_ladder_quantities(q_p, convention="C")
     u_p = s_p["u"]
+    Q_A_p = ME * mp.fabs(q_p ** 2 - 2 * q_p - 1) * (q_p + 1) / (2 * q_p ** 3)
     Q_D = mp.mpf("0.4447004")          # RULED z_D base (AGENTS.md; qou-99qc)
     need = QCOD / Q_D
     rung2 = 1 + C2 * u_p ** 2          # the N=2 factor at the committed c2 = -1
@@ -548,11 +549,57 @@ CONSEQUENCE
           f"cannot unblock qou-cds1, and qou-iagg's dependency chain is wrong "
           f"at that link")
 
+    # ---- PART 4: what Part 3 does to a route this bean already CLOSED ------
+    print("\nPART 4 - the 2026-08-22 cosh exclusion is BASE-DEPENDENT\n")
+    need_A = QCOD / Q_A_p     # retired z = 1 cell
+    need_D = need              # ruled z_D cell
+    print(f"  retired z=1 base : required N=1 factor = {mp.nstr(need_A, 12)}  "
+          f"< 1  -> cosh >= 1 is on the WRONG side  (correctly excluded)")
+    print(f"  ruled  z_D base  : required N=1 factor = {mp.nstr(need_D, 12)}  "
+          f"> 1  -> cosh >= 1 is on the RIGHT side  (exclusion VOID)")
+    check("17. the 2026-08-22 cosh exclusion was computed on the now-RETIRED "
+          "base and does not transfer to the ruled one",
+          need_A < 1 < need_D,
+          "it excluded cosh because the required factor was BELOW 1 and "
+          "cosh >= 1; on the ruled base the required factor is ABOVE 1, so "
+          "that argument is void. The route is re-opened, NOT re-closed.")
+
+    # ...and the honest negative that goes with it: nothing clean is on offer.
+    ac = mp.acosh(need_D)
+    lnq, hh, hbar = mp.log(q_p), q_p - 1 / q_p, 1 - 1 / q_p
+    ratios = {"arccosh/ln q": ac / lnq, "arccosh/h": ac / hh,
+              "arccosh/hbar_q": ac / hbar}
+    print(f"  arccosh({mp.nstr(need_D, 8)}) = {mp.nstr(ac, 12)}")
+    for k, v in ratios.items():
+        print(f"    {k:16s} = {mp.nstr(v, 10)}")
+    near_int = any(abs(v - mp.floor(v + mp.mpf('0.5'))) < mp.mpf('0.001')
+                   for v in ratios.values())
+    near_half = any(abs(2 * v - mp.floor(2 * v + mp.mpf('0.5'))) < mp.mpf('0.001')
+                    for v in ratios.values())
+    check("18. NO clean cosh closed form is on offer - the re-opening is a "
+          "re-opening only, not a candidate",
+          not near_int and not near_half,
+          "arccosh(required) over ln q / h / hbar_q gives 11.1674, 5.5736, "
+          "11.7602 - none within 1e-3 of an integer or half-integer. Nothing "
+          "here is proposed; chasing a c that fits would be selection against "
+          "the target.")
+
+    # The other admissible cell, for the record.
+    Q_aug = mp.mpf("0.8798906")   # z = q augmentation cell (AGENTS.md)
+    need_aug = QCOD / Q_aug
+    check("19. of the two admissible cells only the AUGMENTATION one admits a "
+          "bounded multiplicative rung at all",
+          need_aug < 1 < need_D,
+          f"CODATA/Q(z=q) = {mp.nstr(need_aug, 10)} < 1 (a cos rung can reach "
+          f"it), CODATA/Q(z_D) = {mp.nstr(need_D, 10)} > 1 (none can). "
+          f"RECORDED ONLY - z_D is the owner-ruled cell and nothing here "
+          f"proposes changing it.")
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/16: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/19: {', '.join(failures)}")
     else:
-        print("16/16 assertions hold.")
+        print("19/19 assertions hold.")
 
     print("""
 CONSEQUENCE
@@ -618,6 +665,20 @@ CONSEQUENCE
         "N1_cos_rung_upper_bound": "1",
         "N2_rung_at_c2_minus_1": fmt(rung2),
         "c3_required_on_ruled_base": fmt(c3_needed),
+        "cosh_exclusion_status": "The 2026-08-22 cosh exclusion was computed "
+                                 "on the now-RETIRED z=1 base (required factor "
+                                 "0.9983 < 1, cosh >= 1 wrong side). On the "
+                                 "ruled z_D base the required factor is 1.7592 "
+                                 "> 1, so that argument is VOID and the route "
+                                 "is RE-OPENED. No candidate is offered: "
+                                 "arccosh(1.7592)/{ln q, h, hbar_q} = 11.1674, "
+                                 "5.5736, 11.7602, none near an integer or "
+                                 "half-integer.",
+        "augmentation_cell_note": "CODATA/Q(z=q) = 0.8891 < 1, so only the "
+                                  "augmentation cell admits a bounded "
+                                  "multiplicative rung. RECORDED ONLY - z_D is "
+                                  "owner-ruled and nothing here proposes "
+                                  "changing it.",
         "conclusion": "Deriving alpha CANNOT unblock qou-cds1. The N=1 rung is "
                       "a cosine, bounded by 1, and the ruled base needs a "
                       "factor 1.759 > 1. The Q_beta L2 residual is a BASE "
@@ -659,6 +720,9 @@ CONSEQUENCE
         "no element of order 120 in S_5 or 2I - the obvious mechanism is dead",
         "ruled z_D base needs a factor > 1; no cosine rung can supply it",
         "required c3 on the ruled base is ~1e6 - the gap is in the BASE",
+        "the 2026-08-22 cosh exclusion is base-dependent and is VOID under D",
+        "no clean cosh closed form on offer - re-opening only, no candidate",
+        "only the augmentation cell admits a bounded rung (recorded only)",
     ], 1):
         wb.add_assertion(f"{i}. {nm}",
                          "FAIL" if nm in failures else "PASS", "PASS")

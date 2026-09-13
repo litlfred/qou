@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T16:38:14Z
+updated_at: 2026-09-13T16:42:51Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1891,3 +1891,63 @@ instruction, nothing is closed on the strength of the paper argument alone.
 
 Weaker still, and its scope is now doubly moot: its base is retired, **and** on
 the live base no `α` at all can matter. Kept recorded, not adopted, not wired.
+
+
+## 2026-09-13 (3) — Part 3 RE-OPENS the cosh route: that exclusion was computed on the retired base
+
+**A re-opening, not a candidate.** Nothing is proposed, nothing is wired.
+
+Entry **2026-08-22 (8)** closed the modular/cosh horn like this: *"required N1 =
+0.99839767 < 1; cosh(x) ≥ 1 for every real x; wrong side of 1 — EXCLUDED."*
+That arithmetic is correct **and its `required N1` came from `Q_A`, the `z = 1`
+cell retired as the base on 2026-09-08.**
+
+Recomputed per base (assertion 17):
+
+| base | required `N=1` factor | `cosh ≥ 1` |
+|---|---|---|
+| retired `z = 1` | **0.998325241673** (< 1) | wrong side — correctly excluded |
+| **ruled `z_D`** | **1.7592370279** (> 1) | **right side — the exclusion is VOID** |
+
+So the 2026-08-22 horn was closed against a base that no longer holds, and no
+one re-checked it when the base was ruled. Under the ruling, the requirement
+inverts: the `N = 1` factor must be **above** 1, which is exactly where `cos`
+cannot go (Part 3) and where `cosh` lives.
+
+### 🛑 And nothing clean is on offer — this is the half that must not be dropped
+
+`arccosh(1.7592370279) = 1.16521714843`. Against the natural substrate
+quantities (assertion 18):
+
+    arccosh / ln q     = 11.16742481
+    arccosh / h        =  5.573593624       (h = q - 1/q)
+    arccosh / hbar_q   = 11.76016318
+
+**None is within 1e-3 of an integer or a half-integer.** `5.5736` is 1.3 % from
+`11/2`, which is not a match at this precision. So there is **no cosh closed
+form here**, and hunting for a `c` that fits would be selection against the
+target under §NO FITTING. The finding is that the *exclusion* fails, not that
+the route succeeds.
+
+### The other admissible cell, recorded only (assertion 19)
+
+Of the two admissible Markov points, only the **augmentation** cell admits a
+bounded multiplicative rung at all:
+
+    CODATA / Q(z = q)  = 0.889125773136   < 1   -> a cos rung CAN reach it
+    CODATA / Q(z_D)    = 1.7592370279     > 1   -> none can
+
+(The two cells sit at the exact ratio `1/α = (q²+1)²/(q⁴+1) = 1.97861424`,
+measured `1.97861437`, confirming AGENTS.md's proportionality.) **`z_D` is the
+owner-ruled cell and nothing here proposes changing it** — this is recorded so
+the asymmetry is visible, not as an argument.
+
+### Consequence for `qou-cds1`
+
+The tranche's job was "re-derive the `c_k` ladder under D". Part 3 says the
+committed **form** cannot be carried over whatever `α` is; this entry says the
+one alternative form the bean already considered was dismissed on the old base.
+So `qou-cds1` needs a **form** decision before any coefficient work, and that
+decision is the author's — it is not something to settle by which shape fits.
+
+Probe now 19/19.
