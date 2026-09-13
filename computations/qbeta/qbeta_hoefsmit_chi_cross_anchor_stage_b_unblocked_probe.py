@@ -75,10 +75,31 @@ from hecke_characters import (  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 
+# The canonical anchor carriers. Both are STRINGS/derivations, not float
+# literals -- that is the point of importing them rather than typing them.
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+
 
 def main() -> int:
-    Q_PROTON = 1.1099785827513808075916690956107688798744991218736
-    Q_MUON = 1.10997859555
+    # Both anchors come from the canonical carriers, as mpf.
+    #
+    # They were BARE PYTHON FLOATS until 2026-09-13 (bean `qou-gqt5`), and the
+    # muon one was hand-truncated to TWELVE significant digits:
+    #
+    #     Q_PROTON = 1.1099785827513808075916690956107688798744991218736  # 17 kept
+    #     Q_MUON   = 1.10997859555                                        # 12 kept
+    #
+    # A float literal is binary64, so the proton one kept 17 of the 50 digits it
+    # spelled. The muon one is the sharper defect: it is not a truncation of the
+    # live anchor at all, which is 1.109978595642739046681795…, so it is wrong
+    # from digit 12 — and Δq/q, the quantity this probe exists to measure, is
+    # only ~1.16e-8. Measured: this file reported the μ–p separation as
+    # 11.5305 ppb against the canonical 11.61406 ppb, a 0.719 % error on its
+    # own subject. AGENTS.md records that separation as 11.6141 ppb.
+    #
+    # Gate: computations/audits/overlong_float_literal_audit.py.
+    Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+    Q_MUON = mp.mpf(str(q_muon_at()))
 
     # Reference values from PR #1851 (must reproduce exactly)
     PR1851_VALUES = {
@@ -111,10 +132,14 @@ def main() -> int:
     parts = list(partitions_of(3))
     electron_word = [(1, 0), (1, 1), (1, 0)]
 
+    # In mpmath: this is a difference of two nearly-equal anchors, so in
+    # float64 it would lose most of its significant digits to cancellation
+    # even with both anchors spelled correctly.
     delta_q_over_q = (Q_MUON - Q_PROTON) / Q_PROTON
-    print(f"  q_p = {Q_PROTON:.16f}")
-    print(f"  q_μ = {Q_MUON:.16f}")
-    print(f"  Δq/q = {delta_q_over_q:+.3e}  ← expected swing scale")
+    print(f"  q_p  = {mp.nstr(Q_PROTON, 25)}")
+    print(f"  q_μ  = {mp.nstr(Q_MUON, 25)}")
+    print(f"  Δq/q = {mp.nstr(delta_q_over_q, 12)}"
+          f"  = {mp.nstr(delta_q_over_q * 10**9, 8)} ppb  ← expected swing scale")
     print()
 
     # --- Regression at q_p ---
@@ -123,7 +148,7 @@ def main() -> int:
     print(f"  {'-'*10} {'-'*14} {'-'*16} {'-'*10}")
     regressions_ok = True
     for p in parts:
-        v_now = float(chi_lambda_braid(p, electron_word, q_value=Q_PROTON))
+        v_now = float(chi_lambda_braid(p, electron_word, q_value=float(Q_PROTON)))
         v_pub = PR1851_VALUES[p]
         ok = abs(v_now - v_pub) < 1e-7
         regressions_ok = regressions_ok and ok
@@ -139,8 +164,8 @@ def main() -> int:
     per_block = []
     all_stable = True
     for p in parts:
-        chi_p = mp.mpf(str(chi_lambda_braid(p, electron_word, q_value=Q_PROTON)))
-        chi_m = mp.mpf(str(chi_lambda_braid(p, electron_word, q_value=Q_MUON)))
+        chi_p = mp.mpf(str(chi_lambda_braid(p, electron_word, q_value=float(Q_PROTON))))
+        chi_m = mp.mpf(str(chi_lambda_braid(p, electron_word, q_value=float(Q_MUON))))
         swing = float(mp.fabs(chi_m - chi_p) / mp.fabs(chi_p)) \
                 if chi_p != 0 else float("inf")
         stable = swing < SWING_MAX
@@ -184,14 +209,21 @@ def main() -> int:
     print()
 
     builder.add_data("anchors", {
-        "q_proton": Q_PROTON,
-        "q_muon": Q_MUON,
-        "delta_q_over_q": delta_q_over_q,
+        "q_proton": mp.nstr(Q_PROTON, 50),
+        "q_muon": mp.nstr(Q_MUON, 50),
+        "delta_q_over_q": mp.nstr(delta_q_over_q, 25),
+        "delta_q_over_q_ppb": mp.nstr(delta_q_over_q * 10**9, 12),
+        "chi_is_float64_by_engine_contract": (
+            "chi_lambda_braid takes a float q_value, so every chi below is "
+            "float64 and the cast is written out at each call site. The "
+            "anchors and Delta-q/q are exact; the chi comparison is not, and "
+            "agrees only to the limit of that arithmetic."
+        ),
     })
     builder.add_data("regression_at_q_proton", {
         "pr_1851_published": {str(p): v for p, v in PR1851_VALUES.items()},
         "now": {
-            str(p): float(chi_lambda_braid(p, electron_word, q_value=Q_PROTON))
+            str(p): float(chi_lambda_braid(p, electron_word, q_value=float(Q_PROTON)))
             for p in parts
         },
         "ok": regressions_ok,
