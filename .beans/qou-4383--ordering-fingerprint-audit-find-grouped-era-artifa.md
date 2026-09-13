@@ -271,3 +271,137 @@ FIXED in PR #7166 (bean qou-oyde): the payload is now built before the file is t
 WHAT THIS BEAN SHOULD KNOW GOING FORWARD: **252 other producers in computations/ still carry the identical template** (measured by AST: an import inside a truncating with-open(w)). Any of them can be zeroed the same way by a sweep that re-runs producers in an environment where an import fails. If this bean runs another producer sweep, diff for 0-byte outputs before committing — 'git diff --numstat | awk $1==0' catches it, and the sweep's own message will not.
 
 Also fixed in #7166: q0_anchor_consistency_audit tallied Q0_PARSE_ERROR but never named the file and could not fail --strict on it, which is why this reached main unseen.
+
+---
+
+## 2026-09-13 — the scan was only ever pointed at witnesses. Pointing it at SOURCE.
+
+`b394e3a3232`. Witness state on entry: **49 grouped files / 48 candidates**
+(the bean last recorded 48/46; the drift is sibling landings, not a regression).
+
+### Why source is the sharper surface
+
+This bean's whole argument is *key on the answer, not on the symptom*. That
+argument was only ever applied to committed witnesses — and a witness hit is
+weak evidence, as this bean already found: 36 of 81 were purely stale and
+cleared on a re-run. **A hardcoded constant is the opposite.** It does not
+clear on a re-run; it re-emits the grouped value every time. Same method, much
+stronger hit.
+
+The bean found two by hand (`T_P` / `MEASURED["t_p"]`). The scan finds **eight**.
+
+### The AST filter is load-bearing, and it retired a list I had just written
+
+A raw substring scan hits 14 files, and the first is `mass_at_3A_proper.py` —
+whose docstring quotes *both* values because it EXPLAINS the ruling. Flagging
+that flags the documentation of the fix. So the scan reads literals reachable
+as **code** and excludes docstrings; comments never enter an AST, so they are
+excluded for free. Strings are *not* skipped wholesale — `mp.mpf("1.1457…")`
+is how this corpus writes a high-precision constant, and skipping strings would
+miss the exact shape.
+
+14 → 9 files. I had drafted a seven-entry `SOURCE_DELIBERATE` list; **six of the
+seven turned out prose-only and dropped out on their own.** Pruned to the one
+that is real. Six dead entries in a curated set is the rot that teaches the next
+reader to trust the list instead of the mechanism.
+
+### Two standing-red audits, one cause, both cleared
+
+    computations/audits/h3_transition_cache_q_key_audit.py
+    computations/audits/word_to_mpfr_template_scale_audit.py
+
+carried a **byte-identical** `_PRODUCTION` table of grouped-era (atom, free)
+traces as their "production unmoved" gate. Both had failed on all four atoms
+since 2026-09-05. Neither audit's actual subject was broken — the cache-key and
+dps-key checks, and the template-scale checks, passed throughout. Stale
+references guarding against a change already ruled correct: a standing red,
+which is a gate someone eventually silences.
+
+Measured, not assumed. Recomputing `tr_m_atom_zn` with `atom_braid_word_3A`
+forced to each ordering:
+
+    ordering    D            T             3He          4He
+    grouped     0.575172…    0.229310…     0.403767…    0.160974…   <- the baselines
+    borromean   0.151968…    0.0291440…    0.0585962…   0.0112374…  <- the code
+
+So the baselines were the old frame and the code is in the new one, not the
+reverse. Both audits now exit 0.
+
+> A methodological note for whoever measures this next. My first attempt
+> patched `mass_at_3A_proper.atom_braid_word_3A` and got **identical output for
+> both orderings** — the consumer does `from mass_at_3A_proper import
+> atom_braid_word_3A`, so the patch never took. Identical-under-both is the
+> signature of a failed patch, not of an ordering-independent quantity. Patch
+> the binding inside the consumer module.
+
+### The sharpest finding, and it is a TRANCHE, not a sweep
+
+`computations/derivation_chain.py` exports `TR_M_AT_Q0` / `TR_M_AT_Q0_50DPS` —
+p, n, D — described in its own comment as "the production canonical Markov
+trace". **Every entry reproduces to 50 significant digits under `grouped`.**
+
+    key   registry (grouped)                canonical (borromean)          off by
+    p     1.14575969245730086968908159577   0.62932840220292191816534575    82 %
+    n     0.98774368811580957163402016550   0.47513351715568221250609023   108 %
+    D     0.57517224391777187082653534399   0.15196833920423160759266570
+
+**Left unchanged deliberately.** `trm_proton_five_values_census.py` (bean
+`qou-soj6`) already settled the policy for this exact constant: *"TR_M_AT_Q0
+feeds live producers, so correcting it moves published numbers and is its own
+tranche."* Twelve live modules import it (now listed in the flag above the
+table): `applied_uniqueness_mass_table`, `audits/canonical_a_k_magnitude_audit`,
+`audits/derivation_convention_frame_audit`, the deuteron and neutron
+`build_markov_trace_assembly` chains, `build_proton_mass_50dps_chain`,
+`build_six_term_substrate_model_b`,
+`canonical_derivation_pipeline_compliance`,
+`markov/assembly_chain_11_letter_recompute_probe`,
+`phase5/phase2_proton_m_e_hecke_diagnostic`, `probes/graded_hecke_energy_probe`,
+and the census. Flipping three numbers moves all twelve at once. Overwriting
+live inputs on a judgement call is the move this arc declined for the
+`qou-mass` fork, and it is the same call here.
+
+**The history is the argument for doing it properly.** This registry has been
+corrected once already and went stale again in five days: `qou-soj6` found it
+at the convention-C value 1.63315, and the fix landed the *then*-canonical
+GROUPED value, which the 2026-09-05 ruling superseded. The failure mode is not
+"nobody looked" — it is that **a hardcoded constant does not track a ruling.**
+The durable fix is `canonical_trm_reference.tr_m_nucleon()`, which selects by
+recorded q0; the tranche should migrate consumers to it rather than re-typing
+three better numbers that the next ruling will stale again.
+
+The census's own docstring asserted the grouped pair as canonical — in the
+document a reader consults for *"which value is right"*. Corrected in place.
+Its finding about the five claimants is untouched; only the label moves.
+
+### Remaining hardcoded: 6
+
+    derivation_chain.py                        pending its tranche (above)
+    markov/assembly_chain_11_letter_recompute_probe.py    unread
+    probes/path_b_defect_binding_probe.py                 unread
+    qbeta/qbeta_bond_factors_derived_probe.py             known to this bean
+    qbeta/qbeta_chain_closed_form_probe.py                unread
+    qbeta/qbeta_mixed_chain_closed_form_probe.py          known to this bean
+
+Note `qbeta_chain_closed_form_probe.py` is the producer whose witness the
+2026-09-08 coordination note records as having been truncated to 0 bytes and
+restored in PR #7166 — so read it with that history in hand.
+
+### Truncation guard applied
+
+Per the coordination note (252 producers carry an import inside a truncating
+`with open(…, "w")`): checked `git diff --numstat` for 0-added deletions and
+scanned the whole tree for 0-byte witnesses. **Both clean.** No producer sweep
+was run in this pass — the work was source-side — so the exposure was low, but
+the check is cheap and the note asks for it.
+
+### Next in this bean, in my order
+
+1. Read the 4 unread hardcoded sites. Small, bounded, and each is a live
+   re-emitter rather than a stale artifact.
+2. The `derivation_chain` tranche — owner call, and worth scoping as "migrate
+   12 consumers to `canonical_trm_reference`" rather than "edit 3 constants".
+3. Only then the remaining witness candidates, in dependency order. The
+   downstream-reflection taxonomy the bean asks for is still unbuilt; a first
+   pass classified the 48 candidates as 25 computing / 17 reflecting / 4
+   neither / 2 no-producer, but that discriminator is not yet validated well
+   enough to bake into the count.
