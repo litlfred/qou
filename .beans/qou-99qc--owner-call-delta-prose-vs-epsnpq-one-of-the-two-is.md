@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T13:58:03Z
+updated_at: 2026-09-13T14:19:39Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2035,3 +2035,43 @@ would be circular.
 Scope-(a): one functional, one family. It does not exclude a binding-dominated
 canonical word; it says the γγ construction alone cannot supply one under this
 energy.
+
+
+## Part 8 (PR #7304) — what the ruling PREDICTS for Q_β: +458 % to +620 %, and the 0.11 % near-hit is worse than chance
+
+`computations/qbeta/qbeta_gamma_gamma_qbeta_prediction_probe.py` (7/7).
+
+Nobody had scored the γγ + confinement-SDP admissible set against Q_β. This
+does, through the dashboard's own path (`|tr^{z_D}| · E_0`, canonical
+tower-summed `E_0`), calibrated first: the census element `nuc11_interleaved`
+scores -16.67794 % against the -16.678 % AGENTS.md records.
+
+**All five PSD-feasible words of #7295**, ordered by vertex count, NOT residual:
+
+    (v0 v1)^2     4 vertices   4.36655806955 MeV   +458.1454 %
+    (v0 v1)^4     8            4.80836159015       +514.618  %
+    sporadic A   10            4.53709919716       +479.9445 %
+    sporadic B   10            4.53709919716       +479.9445 %
+    (v0 v1)^6    12            5.63097609218       +619.7668 %
+
+**The structural point.** The five agree with EACH OTHER to a factor 1.28957
+while missing the measurement by 5.58x to 7.20x. Internal spread < smallest
+miss, so **no re-selection inside the admissible set can reach Q_β** — the
+choice of word is not the free parameter.
+
+**It is the SDP half that excludes the measured value, not γγ.** Target
+`|tr^{z_D}| = 0.185059` sits BELOW 1 = tr(empty word) and below the smallest
+feasible trace 1.032898. PSD feasibility pushes the trace up; the target is
+under the whole feasible set.
+
+**THE TRAP, disarmed.** Drop the SDP half and the unconstrained family straddles
+the target (8190 words, |tr| in [0.003435, 1.331992]) with a best match at
+**0.110577 %** — eleven `v_0` and one `v_1`. Worth nothing, and MEASURED to be:
+529 distinct trace values, 50 within ±10 % of the target, median spacing
+0.000346646 → expected best-by-chance **0.04683 %**, observed **0.110577 %** —
+**worse than chance**. Same control and verdict as the H_3 difference-grid check
+(0.455 % observed vs 0.322 % expected). The twelve tying words are one
+order-blind orbit, none PSD-feasible.
+
+Scope-(a): one functional, one family, n = 4. Says nothing about n > 4, a
+different E_0, or a tower correction. The demand constraint is still NOT imposed.
