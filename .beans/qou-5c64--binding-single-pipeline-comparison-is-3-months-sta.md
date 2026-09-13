@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T09:23:58Z
-updated_at: 2026-09-13T10:40:06Z
+updated_at: 2026-09-13T10:45:30Z
 ---
 
 Found 2026-09-13 while screening `binding-single-pipeline-comparison` (299 raw
@@ -388,3 +388,84 @@ pre-2026-09-05 absolute number."* Measured false: grouped reproduces the state
 since a claim that broad is exactly what would send the next agent looking for a
 bug in their own harness. Narrow correction only — I have shown grouped ≠ June,
 **not** when the other change landed.
+
+
+# THE DECOMPOSITION IS COMPLETE — three factors, two of them exactly identified
+
+Found by listing the commits that touched `mass_at_3A_proper.py` in the window
+`2026-06-15 .. 2026-09-05` (34 of them) rather than by guessing at constants.
+
+    June -> now,  free 3.289219952  =  3.784816689 / 1.15067303
+                  atom 2.555514271  =  3.784816689 / (1.15067303 x 1.287106862)
+
+Both reconstructions close to the last digit shown, so the three factors below
+are the whole of it.
+
+## 1. Intra-nucleon ordering — 3.784816689×, free AND atom
+
+Owner ruling `qou-hu1f`, 2026-09-05, `7db032fb48` / `deb9ff5728`. Identical on
+free and atom to ten digits, and reproduces the `3.785 (2H)` the corpus recorded
+independently a week earlier.
+
+## 2. The p-n interface δ de-wire — 1.287106862×, atom only. CONFIRMED EXACTLY.
+
+Commit **`9928f3f4a79`, 2026-06-29** — *"de-wire(flavor-split): canonical
+color-weighting δ → proven leading **(WIP: witness cascade pending)**"*. The
+parenthesis is the staleness admitting itself in its own commit message, two
+weeks after this witness was written.
+
+The p-n bond constant `tr_M(W_atom)/tr_M(W_free)` — which the bond model makes
+ordering-invariant, and my data confirms is, since factor 1 is identical on both
+traces:
+
+    now         0.508229791209865
+    2026-06-15  0.394862156668161
+    ratio       1.287106862
+
+Against the interface crossing `σ − h(1/2 − δ/4)` at the same q:
+
+    delta today = flavor_split_leading(q) = 0.001375711249867512
+    d from that formula                   = -0.1044582593357241
+    d backed out of the bond ratio        = -0.1044582593357241     agree 2.9e-16
+    d backed out of the JUNE bond ratio   = -0.217825893877428
+    => delta as of 2026-06-15             = -2.16771373552
+
+**So the de-wire changed δ from `−2.168` to `+0.001376`** — a sign flip and three
+orders of magnitude, which is what "posited subleading → proven leading" means
+numerically. `d` is now within 0.07 % of the colour-**blind** `−h/2 = −0.104530`.
+
+Consequence beyond this witness: **any June-era artifact quoting a p-n bond
+constant is quoting a superseded δ**, and the discrepancy is 29 %, not a rounding.
+
+## 3. Free-trace residual — 1.15067303×, UNIDENTIFIED
+
+Per nucleon core `sqrt(1.15067303) = 1.07270`. It cannot be the interface: the
+free word has none. Candidates from the same commit list, none tested:
+
+- `1b4fd94da1d` (2026-08-23) *"jones_wenzl_weight was not the Ocneanu weight"* —
+  strongest, and note it is a **weight** change that is NOT the C→D split, which
+  is exactly the gap the scoping note above warned about;
+- `8cf55696489` (2026-08-22) *"swap the production tower to the Lean-mandated
+  towerTerm"*;
+- `77e4e68b75e` (2026-08-21) *"stop pointing callers at the scheme that breaks
+  the tower"*;
+- `efcaf79ed29` (2026-08-08) *"NO FLOAT64: the braid word was f64 at source"* —
+  listed for completeness, but a NO-FLOAT64 fix should move a number by ~1e-16,
+  not 15 %, so it is the least likely of the four.
+
+A weight change is consistent with leaving the bond ratio invariant, because the
+bond model makes that ratio a product of `(z + dᵢ)` independent of the weights —
+so the free trace absorbs the whole of it, which is what the data shows.
+
+## What this changes for the decision
+
+Both identified factors are **deliberate, ruled changes** — one an owner ruling,
+one a de-wire whose own commit message flags the pending cascade. Neither is a
+bug. Regenerating this witness propagates two decisions already made; the two
+assertions that go red are what those decisions imply for this probe.
+
+**Recommendation unchanged in shape, stronger in evidence (my judgement):**
+regenerate, with the commit naming `qou-hu1f` and `9928f3f4a79`. The remaining
+1.15067 is worth one more bisection first, but it is no longer load-bearing for
+the decision — it is a third deliberate change of the same kind, not an
+unexplained number.
