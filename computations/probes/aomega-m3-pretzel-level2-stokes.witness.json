@@ -4,7 +4,7 @@
   "computation": "aomega-m3-pretzel-level2-stokes",
   "engine": "python+sympy+mpmath",
   "scriptFile": "aomega_m3_pretzel_level2_stokes_probe.py",
-  "computedAt": "2026-09-13T19:02:17.818550+00:00",
+  "computedAt": "2026-09-13T19:23:35.941441+00:00",
   "durationMs": 0,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-09-13-pretzel-level2-stokes-matrix.md",
@@ -277,102 +277,108 @@
       "4_1": [
         {
           "knot": "4_1",
-          "b": "(0.47631397 + 0.275j)",
-          "eps": "0.922908",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
           "t": "(0.07 + 0.0j)",
           "u": "0.13",
           "degree": 2,
-          "abs_residual": "3.73063e-22",
-          "abs_largest_term": "0.897318",
-          "rel_residual": "4.15753e-22",
+          "Im_lin": "0.0",
+          "abs_residual": "1.71012e-21",
+          "abs_largest_term": "0.857428",
+          "rel_residual": "1.99448e-21",
           "below_1e-13": true,
           "convergence_window_tI": [
-            "-0.44659355",
-            "0.44659355"
+            "-0.72111049",
+            "0.72111049"
           ]
         },
         {
           "knot": "4_1",
-          "b": "(0.4854102 + 0.35267115j)",
-          "eps": "0.80686",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
           "t": "(0.07 + 0.0j)",
           "u": "0.13",
           "degree": 2,
-          "abs_residual": "2.61149e-16",
-          "abs_largest_term": "1.18958",
-          "rel_residual": "2.19529e-16",
+          "Im_lin": "0.0",
+          "abs_residual": "6.8843e-19",
+          "abs_largest_term": "1.24533",
+          "rel_residual": "5.5281e-19",
           "below_1e-13": true,
           "convergence_window_tI": [
-            "-0.32144942",
-            "0.32144942"
+            "-0.5663119",
+            "0.5663119"
           ]
         }
       ],
       "5_2": [
         {
           "knot": "5_2",
-          "b": "(0.47631397 + 0.275j)",
-          "eps": "0.922908",
-          "t": "(0.07 + 0.22329678j)",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.36055524j)",
           "u": "0.13",
           "degree": 3,
-          "abs_residual": "2.98633e-22",
-          "abs_largest_term": "1.15246",
-          "rel_residual": "2.59127e-22",
+          "Im_lin": "0.0",
+          "abs_residual": "1.27819e-20",
+          "abs_largest_term": "1.10934",
+          "rel_residual": "1.15221e-20",
           "below_1e-13": true,
           "convergence_window_tI": [
-            "-0.44659355",
-            "0.89318711"
+            "-0.72111049",
+            "1.442221"
           ]
         },
         {
           "knot": "5_2",
-          "b": "(0.4854102 + 0.35267115j)",
-          "eps": "0.80686",
-          "t": "(0.07 + 0.16072471j)",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.28315595j)",
           "u": "0.13",
           "degree": 3,
-          "abs_residual": "1.97408e-16",
-          "abs_largest_term": "1.60489",
-          "rel_residual": "1.23004e-16",
+          "Im_lin": "0.0",
+          "abs_residual": "4.91454e-18",
+          "abs_largest_term": "1.63967",
+          "rel_residual": "2.99727e-18",
           "below_1e-13": true,
           "convergence_window_tI": [
-            "-0.32144942",
-            "0.64289884"
+            "-0.5663119",
+            "1.1326238"
           ]
         }
       ],
       "pretzel": [
         {
           "knot": "pretzel",
-          "b": "(0.47631397 + 0.275j)",
-          "eps": "0.922908",
-          "t": "(0.07 - 0.44659355j)",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.43599568j)",
           "u": "0.13",
           "degree": 6,
-          "abs_residual": "9.84966e+115",
-          "abs_largest_term": "9.84966e+115",
-          "rel_residual": "1.0",
-          "below_1e-13": false,
+          "Im_lin": "-2.31421",
+          "abs_residual": "2.89732e-20",
+          "abs_largest_term": "7.06988",
+          "rel_residual": "4.09812e-21",
+          "below_1e-13": true,
           "convergence_window_tI": [
-            "-1.7863742",
-            "0.89318711"
+            "-0.57022962",
+            "1.442221"
           ]
         },
         {
           "knot": "pretzel",
-          "b": "(0.4854102 + 0.35267115j)",
-          "eps": "0.80686",
-          "t": "(0.07 - 0.32144942j)",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.44495935j)",
           "u": "0.13",
           "degree": 6,
-          "abs_residual": "6.37322e+141",
-          "abs_largest_term": "6.37322e+141",
-          "rel_residual": "1.0",
-          "below_1e-13": false,
+          "Im_lin": "-2.02254",
+          "abs_residual": "7.39034e-18",
+          "abs_largest_term": "11.3993",
+          "rel_residual": "6.48316e-19",
+          "below_1e-13": true,
           "convergence_window_tI": [
-            "-1.2857977",
-            "0.64289884"
+            "-0.2427051",
+            "1.1326238"
           ]
         }
       ]
@@ -480,38 +486,40 @@
     {
       "label": "G4-4_1: the derived recurrence sum_j c_j Z(t - i (j - A) b) = 0 holds on the ACTUAL state integral (mpmath, dps 30, two (b, eps) choices, t_I centred in the common convergence window).  degree 2.  This tests the contour shift as well as the algebra.  The residual here is QUADRATURE-limited, not arithmetic-limited: the integrand is a Gaussian chirp whose oscillation frequency grows linearly in |v|, so mp.quad's node density -- not dps -- sets the floor.  G3 is the exact algebraic gate (~1e-29); this one corroborates the CONTOUR SHIFT, which G3 cannot see.",
       "passed": true,
-      "worst_rel_residual": "2.19529e-16",
+      "worst_rel_residual": "5.5281e-19",
       "rows": [
         {
           "knot": "4_1",
-          "b": "(0.47631397 + 0.275j)",
-          "eps": "0.922908",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
           "t": "(0.07 + 0.0j)",
           "u": "0.13",
           "degree": 2,
-          "abs_residual": "3.73063e-22",
-          "abs_largest_term": "0.897318",
-          "rel_residual": "4.15753e-22",
+          "Im_lin": "0.0",
+          "abs_residual": "1.71012e-21",
+          "abs_largest_term": "0.857428",
+          "rel_residual": "1.99448e-21",
           "below_1e-13": true,
           "convergence_window_tI": [
-            "-0.44659355",
-            "0.44659355"
+            "-0.72111049",
+            "0.72111049"
           ]
         },
         {
           "knot": "4_1",
-          "b": "(0.4854102 + 0.35267115j)",
-          "eps": "0.80686",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
           "t": "(0.07 + 0.0j)",
           "u": "0.13",
           "degree": 2,
-          "abs_residual": "2.61149e-16",
-          "abs_largest_term": "1.18958",
-          "rel_residual": "2.19529e-16",
+          "Im_lin": "0.0",
+          "abs_residual": "6.8843e-19",
+          "abs_largest_term": "1.24533",
+          "rel_residual": "5.5281e-19",
           "below_1e-13": true,
           "convergence_window_tI": [
-            "-0.32144942",
-            "0.32144942"
+            "-0.5663119",
+            "0.5663119"
           ]
         }
       ]
@@ -519,85 +527,89 @@
     {
       "label": "G4-5_2: the derived recurrence sum_j c_j Z(t - i (j - A) b) = 0 holds on the ACTUAL state integral (mpmath, dps 30, two (b, eps) choices, t_I centred in the common convergence window).  degree 3, coefficients (1, s, s, 1).  This tests the contour shift as well as the algebra.  The residual here is QUADRATURE-limited, not arithmetic-limited: the integrand is a Gaussian chirp whose oscillation frequency grows linearly in |v|, so mp.quad's node density -- not dps -- sets the floor.  G3 is the exact algebraic gate (~1e-29); this one corroborates the CONTOUR SHIFT, which G3 cannot see.",
       "passed": true,
-      "worst_rel_residual": "1.23004e-16",
+      "worst_rel_residual": "2.99727e-18",
       "rows": [
         {
           "knot": "5_2",
-          "b": "(0.47631397 + 0.275j)",
-          "eps": "0.922908",
-          "t": "(0.07 + 0.22329678j)",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.36055524j)",
           "u": "0.13",
           "degree": 3,
-          "abs_residual": "2.98633e-22",
-          "abs_largest_term": "1.15246",
-          "rel_residual": "2.59127e-22",
+          "Im_lin": "0.0",
+          "abs_residual": "1.27819e-20",
+          "abs_largest_term": "1.10934",
+          "rel_residual": "1.15221e-20",
           "below_1e-13": true,
           "convergence_window_tI": [
-            "-0.44659355",
-            "0.89318711"
+            "-0.72111049",
+            "1.442221"
           ]
         },
         {
           "knot": "5_2",
-          "b": "(0.4854102 + 0.35267115j)",
-          "eps": "0.80686",
-          "t": "(0.07 + 0.16072471j)",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.28315595j)",
           "u": "0.13",
           "degree": 3,
-          "abs_residual": "1.97408e-16",
-          "abs_largest_term": "1.60489",
-          "rel_residual": "1.23004e-16",
+          "Im_lin": "0.0",
+          "abs_residual": "4.91454e-18",
+          "abs_largest_term": "1.63967",
+          "rel_residual": "2.99727e-18",
           "below_1e-13": true,
           "convergence_window_tI": [
-            "-0.32144942",
-            "0.64289884"
+            "-0.5663119",
+            "1.1326238"
           ]
         }
       ]
     },
     {
       "label": "G4-pretzel: the derived recurrence sum_j c_j Z(t - i (j - A) b) = 0 holds on the ACTUAL state integral (mpmath, dps 30, two (b, eps) choices, t_I centred in the common convergence window).  DEGREE 6 -- the decisive gate.  This tests the contour shift as well as the algebra.  The residual here is QUADRATURE-limited, not arithmetic-limited: the integrand is a Gaussian chirp whose oscillation frequency grows linearly in |v|, so mp.quad's node density -- not dps -- sets the floor.  G3 is the exact algebraic gate (~1e-29); this one corroborates the CONTOUR SHIFT, which G3 cannot see.",
-      "passed": false,
-      "worst_rel_residual": "1.0",
+      "passed": true,
+      "worst_rel_residual": "6.48316e-19",
       "rows": [
         {
           "knot": "pretzel",
-          "b": "(0.47631397 + 0.275j)",
-          "eps": "0.922908",
-          "t": "(0.07 - 0.44659355j)",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.43599568j)",
           "u": "0.13",
           "degree": 6,
-          "abs_residual": "9.84966e+115",
-          "abs_largest_term": "9.84966e+115",
-          "rel_residual": "1.0",
-          "below_1e-13": false,
+          "Im_lin": "-2.31421",
+          "abs_residual": "2.89732e-20",
+          "abs_largest_term": "7.06988",
+          "rel_residual": "4.09812e-21",
+          "below_1e-13": true,
           "convergence_window_tI": [
-            "-1.7863742",
-            "0.89318711"
+            "-0.57022962",
+            "1.442221"
           ]
         },
         {
           "knot": "pretzel",
-          "b": "(0.4854102 + 0.35267115j)",
-          "eps": "0.80686",
-          "t": "(0.07 - 0.32144942j)",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.44495935j)",
           "u": "0.13",
           "degree": 6,
-          "abs_residual": "6.37322e+141",
-          "abs_largest_term": "6.37322e+141",
-          "rel_residual": "1.0",
-          "below_1e-13": false,
+          "Im_lin": "-2.02254",
+          "abs_residual": "7.39034e-18",
+          "abs_largest_term": "11.3993",
+          "rel_residual": "6.48316e-19",
+          "below_1e-13": true,
           "convergence_window_tI": [
-            "-1.2857977",
-            "0.64289884"
+            "-0.2427051",
+            "1.1326238"
           ]
         }
       ]
     }
   ],
-  "scriptHash": "dd9a57eaef2e",
+  "scriptHash": "cfc12144af05",
   "scriptCommitSha": "unknown",
-  "commitSha": "caecee0a2f4260840ab8828d746766d4b5b059d3",
+  "commitSha": "6d4a3e03fa3523df66926c1251d4ad9223d1dbde",
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

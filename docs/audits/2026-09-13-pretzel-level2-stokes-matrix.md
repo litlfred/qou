@@ -344,14 +344,14 @@ sector, where `σ` actually shows, is precisely the part the index route cannot 
 
 ## 6. Gates
 
-Everything above is gated on 4₁ and 5₂, where GGM print the answer.
+Everything above is gated on 4₁ and 5₂, where GGM print the answer. **13/13 assertions pass** (729 s).
 
 | gate | what it checks | result |
 |---|---|---|
 | G1 | 5₂: `N(X) = (1, s, s, 1)` — GGM (276)/(332), offsets `{1,x,1/x}` | exact sympy |
 | G2 | 4₁: `N(X) = (1, 1+x, x)` — GGM (332) at `(A,r) = (1,2)` | exact sympy |
 | G3 | the (FE)-rearranged integrand identity, **pointwise**, all three knots | `≲ 2.3·10⁻²⁹` |
-| G4 | the derived recurrence on the **actual state integrals** (degree 6 for the pretzel) | 4₁ `4.2·10⁻²²`, 5₂ `2.6·10⁻²²`, **pretzel `4.1·10⁻²¹`** (best config each; quadrature-limited, see below) |
+| G4 | the derived recurrence on the **actual state integrals** (degree 6 for the pretzel) | 4₁ `2.0·10⁻²¹`, 5₂ `1.2·10⁻²⁰`, **pretzel `4.1·10⁻²¹`** (best config each; quadrature-limited, see below) |
 | G5 | degree 6 = the pretzel's rank 6 | exact |
 | G6 | GGM (188)/(307) multiplied out lie in `ℤ[s(x)]` | exact |
 | G7a/b | the Newton polygons and their leading polynomials | exact |
