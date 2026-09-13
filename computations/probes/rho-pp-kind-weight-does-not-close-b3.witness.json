@@ -1,6 +1,9 @@
 {
  "schema": "witness/v1",
- "computedAt": "2026-09-08T03:32:18.105290+00:00",
+ "computedAt": "2026-09-13T05:32:04.418657+00:00",
+ "engine": "mpmath",
+ "scriptFile": "rho_pp_kind_weight_does_not_close_b3_probe.py",
+ "commitSha": "0d99cc3efab9ac637dff7c0123615cec8611d528",
  "q0Anchor": "physical_proton",
  "q0AnchorReason": "seeded from Q_50_DIGIT_STR; the bond series are in eps = q - 1",
  "description": "Takes over qou-qqm4's unanswered target from #7097 and computes rho_pp INDEPENDENTLY from the corpus's derived kind-dependent bond factors, then compares. The answer is NO under all four identifications tried, and the PRINCIPLED one (log/additive, which the binding law B = E0*log(tr ratio) implies) misses worst at 55.9%. No carrier m in 1..6 closes it. The escape from BrunnianTripleExhaustion is real structurally and far too weak quantitatively. Nothing is fitted; the closest identification is reported as such and NOT adopted as the answer.",
