@@ -3,8 +3,9 @@
 title: 'Drop the UIC Pass-2 sign gate: enacted; the ungated total is ALSO wrong-signed'
 status: todo
 type: task
+priority: normal
 created_at: 2026-09-12T22:56:10Z
-updated_at: 2026-09-12T22:56:10Z
+updated_at: 2026-09-13T00:45:15Z
 ---
 
 
@@ -117,3 +118,61 @@ step 2's inference from bias to forcing is withdrawn. scope-(a).
   the selection rule" section. After the drop that text is wrong. **`main`'s
   current text is already correct post-drop** ("sums these strictly over all λ"),
   so nothing was edited here; whichever PR lands second must reconcile.
+
+
+---
+
+## `binding_energy(1, 1)` RE-RUN — the derived cell is now MEASURED (2026-09-13)
+
+**TIER: `k_exact = k_max = K_PARTITION_MAX = 11`, the production default**, for
+every figure in this section. Kernel live (`_HAS_LP_KERNEL = True`,
+`pyhecke_native 0.9.0`), `COMPUTE_DPS = 70`. Producer
+`computations/binding_energy_ungated_deuteron_measurement.py`, 2361.9 s total;
+log `/tmp/binding_energy_ungated_deuteron_measurement.log`.
+
+The post-drop deuteron value in `docs/audits/2026-09-02-binding-energy-first-corrected-value.md`
+was written **by arithmetic** on that document's own three-term decomposition
+and marked "derived, NOT measured". That terms 2 and 3 are gate-independent had
+been established by **reading** `binding_energy`, never by running it. This is
+the first run of the public function since the drop.
+
+| | measured | wall |
+|---|---|---|
+| term 1 `unified_iterative_correction` (mpf) | `-17.6908290020795447079223359605544029429608374879103157233577` | 413.6 s |
+| term 2 `sdp_cross_channel_contribution` | `0.0` (float) | 0.0 s |
+| term 3 `binding_from_frobenius_pairing` (mpf) | `+1.876634106144136334334544823923110976193880197699474143353897399142905884` | 768.3 s |
+| sum of terms (mpf) | `-15.8141948959354083735877911366312919667669572902108415800038` | — |
+| **`binding_energy(1, 1)`** (public float, 53-bit) | **`-15.81419489593541`** | 1180.0 s |
+
+**VERDICT: the reading was right. Terms 2 and 3 are gate-independent — now
+measured, not inferred.** Term 1 reproduces this bean's own
+`-17.6908290020795` exactly (reldiff 2.53e-15). Term 2 is a genuine `0.0`.
+Term 3 is unchanged and is measured **directly for the first time** — the
+audit's `+1.876634106` had been obtained by *subtracting* term 1 from the 942 s
+gated total, never evaluated on its own.
+
+**The measured cell differs from the derived one by `+1.44091626e-10 MeV`
+(relative `9.11e-12`), and that offset is entirely the banner's own quoting
+precision, not a discrepancy:**
+
+- term 3 quoted at 10 s.f. (`1.876634106` vs `1.8766341061441363343`): `+1.44136334e-10`
+- term 1 quoted at 15 s.f. (`-17.6908290020795` vs `-17.690829002079544708`): `-4.47079e-14`
+- sum of the two: `+1.44091626e-10` — unexplained remainder `-9.3e-61`, the
+  60-dps arithmetic floor.
+
+Two consistency checks that fall out of the same run: the public float sits
+`-1.57e-15` from the mpf sum (relative `9.94e-17` < `2^-53 = 1.11e-16`), i.e.
+exactly the cast at the public return and nothing more; and the measured terms
+reproduce the ORIGINAL gated total,
+`-9.14773623102088124311 + 1.87663410614413633433 = -7.27110212487674490878`,
+against the `-7.271102125` the 2026-09-02 audit printed.
+
+**Accuracy, and it is worse — which is the honest outcome.** Against AME2020
+`+2.22456607 MeV`, `binding_energy(1,1)` goes `|ratio|` **3.26855x -> 7.10889x**
+and residual **9.4956682 -> 18.038761 MeV**. Do NOT conflate those with the
+`11.37 -> 19.92 MeV` in the table above, which is the residual of **term 1
+alone** against AME — a different quantity.
+
+**Not re-run, and left derived:** ⁴He `binding_energy(2, 2)`. Its term 1 is
+measured (`-15.9926510049258`, 1165.1 s) but the full function is a ~2x longer
+compute than the deuteron's 1180 s and was not attempted.
