@@ -48,7 +48,9 @@ WHAT IS PROVED, AND WHAT IS ASSUMED
    **empty on a pairwise-unlinked pair**, which is the case this framework
    faces, and §9d proves no positive constant bounds the channel below at all.
    §9e guards it against vacuity: the hypotheses are jointly satisfiable with
-   `lk ≠ 0`, and `4π` is the largest constant the bound admits.
+   `lk ≠ 0`, and `4π` is the largest constant the bound admits. §9f settles
+   that §9d's family performs a *separation at fixed length*, not a similarity,
+   so the result is not an artefact of the model's pinned parameter interval.
 
 ASSUMED, and deliberately visible: `HasUniformSeparation` (a uniform gap),
 measurability of `sep` in the integration variable, and — §9 only — **Gauss's
@@ -1163,5 +1165,74 @@ theorem mutualIntegrand_depends_only_on_sep {n : ℕ}
   rw [hsep]
 
 end MobiusMutualChannel
+
+/-! ## §9f  Is §9d a RESCALING ARTEFACT?  No — and here is the proof
+
+A reviewer's first objection to §9d should be this. The true mutual energy
+`∬ ‖γ̇₁‖‖γ̇₂‖ / |γ₁ − γ₂|² ds dt` is **scale-invariant**: a similarity of ratio
+`λ` multiplies the numerator's arclengths by `λ²` and the denominator by `λ²`.
+So if §9d's `separatedLink` family were a family of *similarities*, driving the
+energy to zero along it would be impossible in the true energy and the whole
+subsection would be measuring the model rather than the mathematics.
+
+`QOU.MobiusEnergy.mutualIntegrand_smul` names exactly this and stops there —
+*"this is not scale-invariance of the energy; that also needs the `ds dt`
+measure to scale by `c²`, which requires the integral this file does not
+build."* §3 builds that integral, so the question is now answerable here.
+
+**The answer: `innerPairEnergy` scales by `c⁻²`, and that is CORRECT rather
+than a defect.** In the true energy the measures are *arclength*, so a
+similarity rescales the parameter domain too — `[0, L]` becomes `[0, λL]` — and
+the two effects cancel. `innerPairEnergy` integrates over `(0:ℝ)..1`,
+**pinned**. So scaling `sep` while holding that interval fixed is not a
+similarity at all: it is *"move the components apart and keep their arclength
+budget"*, which is precisely the geometric move §9d needs and precisely the move
+that makes a 2-component unlink's energy small.
+
+Put the other way: the fixed unit interval **is** the fixed length. A genuine
+similarity in this model would have to scale the domain as well, and nothing in
+§9d does that.
+
+**The similarity bookkeeping, NOT formalised, and stated so rather than
+proved-by-docstring.** A genuine similarity rescales the parameter domain as
+well, and at the level of the *full* energy the factors read
+`c⁻² · c · c = c⁰` — one `c` from each of the two parameter integrations.
+`innerPairEnergy` performs only the inner one, so under a domain-scaled
+similarity it would carry `c⁻² · c = c⁻¹`, with the outer `s`-integration
+supplying the missing `c`. That is arithmetic, not a theorem here: stating it
+needs a reparametrisation `L.sep i s j (t/c)` which `LinkEmbedding` does not
+supply from `hscale`, and the outer integration, which §3 does not build.
+
+A first draft of this subsection carried a second theorem claiming to prove it.
+Its statement was `c² · (c⁻² · E) = E` — a `field_simp` restatement of the
+scaling law, with the domain-scaling claim living only in its docstring. That
+is the narrated-inference defect §9e exists to catch, committed inside the
+commit that added §9e. Deleted rather than reworded.
+
+**Not claimed:** that `innerPairEnergy` is the true energy. It carries unit
+weight rather than `‖γ̇‖`, which §6 showed is an unstated assumption and §7
+showed must be the arclength Jacobian. This subsection settles which *move*
+§9d's family performs; it does not settle the weight. -/
+
+namespace LinkEmbedding
+
+variable {M : Type*} {n : ℕ}
+
+/-- **Scaling the separation by `c` scales the pair energy by `c⁻²`.**
+
+    The half `QOU.MobiusEnergy.mutualIntegrand_smul` says it cannot supply,
+    now that §3 has built the integral. Read it with the docstring above: the
+    integration interval does **not** scale, so this is the law for
+    separation-at-fixed-length, not for a similarity. -/
+theorem innerPairEnergy_smul (L L' : LinkEmbedding M n) {c : ℝ} (hc : 0 < c)
+    (i j : Fin n) (s : ℝ)
+    (hscale : ∀ t, L'.sep i s j t = c * L.sep i s j t) :
+    L'.innerPairEnergy i j s = c⁻¹ ^ 2 * L.innerPairEnergy i j s := by
+  unfold innerPairEnergy
+  rw [← intervalIntegral.integral_const_mul]
+  refine intervalIntegral.integral_congr fun t _ => ?_
+  exact mutualIntegrand_smul L L' c hc i j s t (hscale t)
+
+end LinkEmbedding
 
 end QOU
