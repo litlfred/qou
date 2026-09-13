@@ -225,7 +225,31 @@ polynomial in `s(x)`**.
 > `σ² = s(x)+1`. Equivalently: it *is* `s`-built, but on the **double cover**
 > `x = (x^{1/2})²` — which is what "level 2" means.
 
-### 5a. A consistency check against GGM's reflection symmetry
+### 5a. The obvious escape, and why it is closed
+
+The sharpest objection to §5 is: *"you have shown `σ` appears in the **operator**;
+could it cancel in the **pairing**, leaving only `s(x)`?"* It cannot, and the reason
+is short enough to state.
+
+Write the four long-segment roots as `x_k = q^{1/2}Y_k` with
+`Y_k ∈ {+1, −1, −x^{1/2}, −x^{−1/2}}`. By §1's formula the `(i,j)` entry is
+`Σ_k d_k x_k^{\,i-j}`, so the coefficient of `q^{1/2}` at `|i−j| = 1` is
+
+$$
+d_1 - d_2 - d_3\,x^{1/2} - d_4\,x^{-1/2}.
+$$
+
+That lies in `ℤ[s(x)]` **only if `d₃ = d₄ = 0`** — i.e. only if the two
+`x`-dependent columns drop out of the pairing altogether. They cannot: `W` is a
+*fundamental* solution matrix, so all six columns are present and independent, and
+`D` in `W D W^T` is invertible. So `σ` survives, and it survives specifically in the
+half-integer-`q` sector.
+
+Note what this does **not** say. It does not say some particular entry is nonzero —
+individual `d_k` combinations can vanish. It says the *ring* cannot collapse to
+`ℤ[s(x)]`, which is the claim being made.
+
+### 5b. A consistency check against GGM's reflection symmetry
 
 GGM (306) (and (218)/(224) for 4₁) require `S^±(x;q)` to be invariant under
 `π : x ↦ x⁻¹`, because the Borel sums are. The exponent multiset must therefore be
@@ -242,7 +266,7 @@ closed under `Y ↦ 1/Y`, and both derived polynomials are — verified symbolic
 This is a check on the derivation, not an additional result: a `σ` that were not
 `π`-invariant could not appear in `S^±` at all.
 
-### 5b. The grading, and the refinement that follows
+### 5c. The grading, and the refinement that follows
 
 Gate G8b: the pretzel's operator is **invariant under the simultaneous flip**
 
