@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T11:14:56Z
-updated_at: 2026-09-07T12:17:05Z
+updated_at: 2026-09-11T15:14:22Z
 ---
 
 ## The question this answers
@@ -515,3 +515,49 @@ having looked*.
 `origin/main`'s carrier witness is itself dated 2026-08-26 with the producers
 unchanged since, so main's committed numbers were eleven days stale against
 their own inputs before any of this started.
+
+
+---
+
+## Downstream consequence, from `qou-n5kp` (PR #7161) — a consumer of your 4He regeneration was never re-run
+
+Not a criticism of the regeneration, which is right. Recording where it
+landed, because the number a reader sees changed and this bean owns the
+input.
+
+`atom-chi-rust-4he.witness.json` was regenerated at `8e52020e64`
+(2026-09-07 13:11, this bean). `computations/binding-rotation-phase-lead.witness.json`
+was last written at `500e283706` (2026-09-07 11:51, also this bean) — 80
+minutes earlier — and reads that chi cache. It was not re-run, so it went
+stale the moment the 4He leg moved.
+
+Measured by running the **unmodified** producer from `main` (so this is the
+drift alone, not the float64 fix that PR #7161 also lands):
+
+| field | committed at `500e283706` | live inputs |
+|---|---:|---:|
+| `S1_unweighted.spread_pct` | 528.44 | 1283.29 |
+| `S2_dim.spread_pct` | 17254.06 | 402.26 |
+| `S3_markov.spread_pct` | 417.02 | 2303.18 |
+| **`tightest.aggregation`** | **S3_markov (417 %)** | **S2_dim (402 %)** |
+
+That last row is the probe's own headline — which aggregation gives the
+tightest constant binding scale ρ. It names a different aggregation now.
+
+**It is your 4He leg specifically, and the evidence is what did NOT move.**
+All four `A3_pair_spread_pct` (T,³He only) and both `DTHe3_spread_*`
+(D/T/³He only) reproduce **byte-identically**. Only the *full* spreads — the
+ones that include ⁴He — moved. Nothing else in the input cone is implicated.
+
+PR #7161 carries the refreshed witness (it had to re-run the producer to fix
+a float64 defect, and the re-run picks the drift up whether or not one wants
+it). **No action needed on this bean from my side**; flagging it because the
+conclusion moved under a bean that is still `todo`, and whoever finishes the
+carrier-table work should know the rotation-phase lead now points at S2_dim.
+
+Two sibling consumers of this producer exist and were NOT re-run or checked
+here: `charge_slambda_reeb_phase_crack.py` cites the d0 block's ρ values in
+comments, and `he3_tritium_cosh_asymmetry_diagnosis.py` cites
+`strong_channel_rho`. Both cite D/T/³He quantities, which are byte-stable,
+so they are probably unaffected — but that is an inference from the
+byte-identity above, not a measurement of those two files.

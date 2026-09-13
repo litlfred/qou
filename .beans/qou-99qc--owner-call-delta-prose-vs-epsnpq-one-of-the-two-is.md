@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T19:07:09Z
+updated_at: 2026-09-12T20:20:00Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1339,3 +1339,393 @@ agent will reach for; do not spend a session on it.
 Probe: `qbeta_zd_gap_anatomy_probe.py` (9/9). Audit:
 `docs/audits/2026-09-12-zd-gap-anatomy-and-three-undone-migrations.md`.
 **Status stays `todo`** (§13a).
+## 2026-09-12 — BOTH routes to Delta are now priced, and both are negative
+
+PR #7212. The owner's word-selection ruling (2026-09-08, qou-ales) applied to
+the DECAY channel for the first time — #7192 applied it to mass/binding.
+
+PROVED (sorry-free, QOU/QBeta/GammaGammaSelectedDeltaVanishes.lean, lean-direct
+exit 0 first attempt): a functional multiplicative over concatenation and equal
+to 1 on a pair-production vertex is 1 on EVERY γγ-word, hence annihilates every
+γγ DIFFERENCE. Both one-dimensional blocks of H_3 are of that shape. Therefore:
+
+  * LEVEL 1 gives EXACTLY ZERO — the augmentation's support is the (3) block
+    alone, so a γγ-selected Delta predicts Q_beta = 0 identically, for every
+    pair of words, with no computation to do.
+  * LEVEL 2, the ruled functional, is carried ENTIRELY by the (2,1) block, which
+    is what makes the scan one-dimensional and finite.
+
+MEASURED (5/5), V^k with k <= 5 from the 11-crossing budget, 36 pairs:
+
+  level 1, max over all 36 pairs   1.34e-51        (the proof, confirmed)
+  reachable below target           7 values, all <= 0.0985019929
+  reachable above target           8 values, all >= 0.6841593612
+  the GAP                          0.5856573683 = 3.13364x the target
+  Q_beta target                    0.1868936677    -- INSIDE the gap
+  nearest reachable                47.295168 % away
+
+The γγ sector does not merely miss; it CANNOT COME CLOSE. Structural.
+
+THE TWO ROUTES, SIDE BY SIDE:
+
+  re-read the existing recipe (#7188)   0 of 37,459,422,000 configurations
+  the ruled γγ selection (#7212)        target in a 3.13x gap, nearest 47.3 %
+
+Neither reaches Q_beta. The live conclusion is that Delta needs the FLAVOUR
+LETTERS: γγ-words carry no flavour index at all (the corpus's Crossing is
+(gen, pos) and nothing else), so a flavour-blind principle cannot distinguish a
+proton word from a neutron word. That is the open point GammaGammaSelectorH3
+names for itself.
+
+SCOPE-(a) on both: #7188 prices the freedom the SOURCE BLOCKS declare; #7212
+prices the ruled principle APPLIED ALONE. Neither refutes the ruling, and an
+element combining γγ selection WITH flavour letters is outside both.
+
+Bean stays todo. The element question is SHARPER, not closed — two routes
+priced, both negative, and what is missing is now named.
+
+
+
+## 2026-09-12 CORRECTION — 'Delta differs in one letter' was WRONG; it retypes TWO
+
+PR #7212, commit c2b8c7e8c0. This retracts a claim I made the same day, which
+reached that PR's TITLE, its BODY, a Lean docstring and a comment on the PR.
+
+THE CLAIM: the nucleon words 'differ in exactly one letter: a single sigma
+becomes a single sigma^-1'. Wrong at the LETTER level. The corpus's own data,
+_GEN_CHAINS in qbeta_delta_candidate_census_probe.py:
+
+  p : gen0 [0,0,0,   0,-1/2,0,0]   gen1 [-1,-1,-1,-1/2]
+  n : gen0 [0,0,0,-1/2,-1/2,0,0]   gen1 [-1,-1,-1,  -1]
+
+TWO slots differ, gen0[3] and gen1[3], each by exactly -1/2.
+
+WHAT WAS AND WAS NOT WRONG. The COUNTS are correct and unchanged: proton
+(1,2,0), neutron (0,2,1), and the Lean theorem about them stands. The READING
+was wrong. Beta-decay flips ONE quark, and each quark sits in TWO of a
+nucleon's three pair-crossings, so one uu becomes ud and one ud becomes dd:
+
+  (u1,u2)  uu -> ud     retyped
+  (u2,d3)  ud -> dd     retyped
+  (u1,d3)  ud -> ud     untouched
+
+The preserved ud count is a CANCELLATION -- one gained against one lost -- not
+evidence the mixed crossings are untouched. (1,2,0) -> (0,2,1) is consistent
+with a single uu |-> dd substitution AND with the flip that actually happens,
+and only the second is a possible decay. I read the weaker hypothesis off the
+counts without checking it against the chains. The misleading theorem name
+nucleon_difference_is_one_letter is renamed
+nucleon_pairCounts_differ_by_one_uu_and_one_dd; the statement is unchanged.
+
+WHAT THE CORRECTION BOUGHT, which is worth more than the retraction cost. Both
+retyped letters pick up the SAME central scalar s = -h/2, so Delta expands
+EXACTLY:
+
+  Delta = s*(S_A + S_B) + s^2*S_AB
+
+with S_A, S_B the proton word with ONE flavour crossing SMOOTHED (10 crossings)
+and S_AB with BOTH (9). Measured, 60 dps, proton pin, convention D:
+
+  direct tr(Delta) vs expansion     agree to 7.8e-62
+  s = -h/2                          -0.1045301493978196577
+  tr(S_A) / tr(S_B) / tr(S_AB)      1.271097000 / 0.272140496 / 0.301910575
+  s^2 term / s term                 2.045 %
+  crossings                         11 -> 10 -> 9
+  residual                          -15.451387 %  -- UNCHANGED
+
+THE OLD READING IS REFUTED NUMERICALLY, not merely withdrawn: under it Delta
+would be -h times ONE smoothed word, and both candidates sit 68.2 % and 64.0 %
+from Delta. CHECK 4 of the probe.
+
+ALSO: the typing table is ONE scalar, not three conventions. sigma - h =
+sigma^-1 follows straight from the Hecke relation (skein_letter_inv), so the dd
+letter IS the inverse crossing and the ud letter is exactly (sigma+sigma^-1)/2
+(ud_letter_is_average). Both sorry-free.
+
+LEAN, all sorry-free, lean-direct -DautoImplicit=false -s 65536 exit 0:
+  flip_retypes_pairs                general form, any (m+1 ups, n downs)
+  nucleon_flip_retypes_two_of_three the proton case: 2 of 3
+  two_shift_expansion               the element identity, over a NONCOMMUTATIVE
+                                    ring with centrality of s explicit -- a
+                                    CommRing proof would be unsound for the
+                                    braid algebra
+  skein_letter_inv                  needs only the Hecke relation
+  ud_letter_is_average              needs (2:R) != 0, stated explicitly
+  succChooseTwo                     C(m+1,2) = C(m,2) + m
+#print axioms: no sorryAx anywhere; two_shift_expansion needs only [propext].
+
+WHAT DOES NOT MOVE. No number: this is an exact rewriting of the same element,
+so the residual and everything downstream are identical. The 3.13x gap result
+of #7212 Part 1 is untouched -- it prices the whole reachable set and never
+used the letter count.
+
+WHAT IT CHANGES FOR THIS BEAN. Delta's FORM inside this construction is now
+known exactly: a fixed rational combination of 10- and 9-crossing traces rather
+than an opaque 11-crossing difference, and |s| ~ 0.1045 is the quantitative
+reason the two nucleon traces sit so close together. Whether those lower-
+crossing words are more tractable, or coincide with words the mass channel
+already computes, is NOT claimed and is the live question.
+
+BEAN STAYS todo. The epsilon/Delta fork is an open conjecture; per AGENTS.md
+13a a bean whose subject is an open conjecture is not closed because the
+recording of its openness is done.
+
+SCOPE-(a): two_shift_expansion holds for ANY two slots carrying a common
+central shift; that the nucleon words are in that shape is read off _GEN_CHAINS
+and re-verified numerically, not proved.
+
+
+
+## 2026-09-12 DERIVATION — the gg ruling DECIDES the braid ordering, and picks the WORSE one
+
+PR #7212, commit 3a76d49fc9. This CLOSES the ordering question #7188 raised.
+
+WHAT #7188 LEFT OPEN, in its own words: "the corpus now owes a DERIVATION of
+the braid ordering of the nucleon word. Until it has one, tr_{z_D}(Delta) is
+not predicted by the framework -- it is selected by an unstated modelling
+choice." The owner's gamma-gamma ruling (2026-09-08, qou-ales) supplies it.
+
+THE ARGUMENT, STRUCTURAL NOT NUMERICAL. The census carries two orderings of the
+SAME eleven-letter multiset (verified: identical Counter for both nucleons).
+Their confinement cores are:
+
+  interleaved  nuc9:        for _ in range(3): sigma_0 ; (sigma_1 - h)
+  gen-grouped  _GEN_CHAINS: all sigma_0 letters first, then all sigma_1
+
+sigma_1 - h = sigma_1^-1 by the Hecke relation (skein_letter_inv, proved on
+this branch), so the interleaved core is (sigma_0 sigma_1^-1)^3 = `vertex 0`
+three times -- a GAMMA-GAMMA WORD. The gen-grouped core has a POSITIVE crossing
+in SECOND position, and a gg-word's second letter is always negative. So of the
+two models exactly one is gg-produced and the ruling selects it. Scope-(b): it
+cites a proved invariant, not a bad number.
+
+LEAN, all five depend on NO AXIOMS AT ALL (lean-direct exit 0):
+  gammaGamma_snd_neg             a gg-word's second letter is negative
+  not_gammaGamma_of_snd_pos      hence a positive 2nd letter excludes it
+  interleavedCore_isGammaGamma   three applications of the constructor
+  not_gammaGamma_genGroupedCore  the exclusion
+  cores_ne                       the two cores are different words
+
+The linter earned its keep: the exclusion lemma was first stated with BOTH of
+the first two letters positive as hypotheses and the first is never used, so it
+was restated STRONGER (the first letter's sign is irrelevant) and renamed.
+
+🛑 THE RULED ORDER IS THE LESS ACCURATE ONE, and that is the correct outcome.
+Proton pin, convention D, 60 dps:
+
+  interleaved (RULED)   -17.495929 %      <- reproduces #7188's documented -17.496
+  gen-grouped (unruled) -15.451387 %      <- the merged Option-E witness
+  cost of the ruling      2.04454 points
+
+Under AGENTS.md NO FITTING, "rank by derivational cleanliness first, treat
+accuracy as a diagnostic, never as a tie-breaker that promotes a fitted route."
+Preferring -15.45 % BECAUSE it is closer is selection against the target. Do
+not revert this.
+
+CONSEQUENCE FOR THIS BEAN. The -15.4514 % that #7188 and #7212 calibrate
+against is the GEN-GROUPED, i.e. UNRULED, order. Nothing there is retracted --
+both state their ordering -- but the CANONICAL residual under the ruling is
+-17.4959 %, and the witness qbeta-gamma-gamma-ruling-selects-ordering is the
+record of which figure is which.
+
+WHAT SURVIVES THE ORDER CHANGE, checked rather than assumed:
+  * the two-letter flip is ORDER-INDEPENDENT: two slots, each -h/2, in both
+    orderings (expected for a flavour statement, but measured);
+  * the three-term skein expansion is EXACT on the ruled order too, 3.9e-62 at
+    60 dps -- only the term sizes move, s^2/s going 2.045 % -> 4.874 %;
+  * the 3.13x gap of #7212 Part 1 is UNTOUCHED: it prices V^k differences, a
+    gg-only construction carrying no nucleon ordering at all.
+
+CROSS-CHECK WORTH NOTING, two independent routes to the same k. The sibling's
+Frobenius-positivity selection (owner ruling 2026-09-12, reading 3) picks
+k = 3 = beta_Bor on #7207. The census's confinement core is independently V^3.
+Same k, from two different principles -- recorded as a coincidence of two
+derivations, NOT offered as evidence for either.
+
+🛑 TRAP, recorded in the probe. "Interleaved" reconstructed by ZIPPING the two
+_GEN_CHAINS lists alternately gives -13.5712 %, which is NEITHER census model
+-- a third ordering, invented, and plausible-looking. I produced it before
+reading nuc9. The census's interleaved model emits the core as three
+(sigma_0, sigma_1^-1) PAIRS, then an ORDERED quark block, then two gluon
+letters. Reproducing the documented -17.496 % is the calibration that catches a
+lookalike reconstruction; CHECK 3 asserts it.
+
+BEAN STAYS todo. The epsilon/Delta fork is an open conjecture (§13a). What is
+closed is the ORDERING sub-question, which is a genuine narrowing: the order is
+no longer a free modelling choice. The residual did not improve and was not
+expected to.
+
+STILL OPEN: the ruling constrains the CORE. The flavour letters are determined
+(this branch) but their PLACEMENT, and the two gluon letters, are not gg-words
+and are not settled by the ruling. That is the remaining freedom.
+
+
+
+## 2026-09-12 PARITY BOUND — the ruling reaches 6 of 11 letters, provably
+
+PR #7212, commit 49bae3625e. Companion to the ordering derivation above: that
+one settles the CORE, this settles how much the gg principle can settle AT ALL.
+
+Every pair-production vertex contributes exactly TWO letters, so a gg-word has
+EVEN length. The nucleon crossing budget is 11 (qou-1qsw), which is ODD.
+Therefore NO 11-crossing word is gg-produced -- not this one, not any
+reordering of it, not any other candidate at that budget. At least one letter
+necessarily lies outside the principle's reach, and that is a fact about the
+budget, not a shortfall in the construction.
+
+Block decomposition of the census word:
+
+  core (sigma_0 sigma_1^-1)^3    6 letters   gg-produced (constructor x3)
+  quark                          3 letters   NOT -- odd length
+  gluon sigma_0 sigma_0          2 letters   NOT -- 2nd letter positive
+                                ----
+                                11 = the budget
+
+So the ruling reaches 6 of 11; the other 5 are the freedom that survives it.
+The gluon pair is excluded twice over -- directly by the vertex sign pattern,
+and by following an odd-length block.
+
+LEAN (lean-direct exit 0, no sorryAx):
+  gammaGamma_length_even        2 | w.length for any gg-word
+  not_gammaGamma_of_odd_length  the contrapositive
+  eleven_not_gammaGamma         no 11-crossing word is gg-produced
+  gluonPair_not_gammaGamma      NO AXIOMS AT ALL
+  three_not_gammaGamma          the quark block's length is odd
+
+Scope-(b) throughout: every exclusion cites a proved invariant (vertex length,
+or the vertex sign pattern), never a measured miss.
+
+🛑 THIS IS A LIMIT ON THE RULING, NOT A DEFECT IN IT, and not the construction
+failing to apply it. The principle does what it can; what it cannot do is fix
+an odd number of letters out of even-length building blocks.
+
+WHY IT MATTERS FOR THIS BEAN. It converts "the flavour placement and gluon
+letters are still open" from an observation into a THEOREM about where the
+remaining freedom lives: exactly 5 letters, and no amount of gg reasoning will
+reduce that number. Any closing Delta has to come from those 5 or from a
+different principle. That is a much sharper statement of the open problem than
+the bean carried before.
+
+Probe 12/12 (CHECK 6 added to qbeta_gamma_gamma_ruling_selects_ordering_probe).
+
+BEAN STAYS todo (§13a).
+
+
+
+## 2026-09-12 — the SDP half applied, and the scope question ANSWERED (A, core only)
+
+PR #7212, commit 426af792b8 + follow-up. The gamma-gamma half was applied above
+(ordering 3a76d49fc9, parity bound 49bae3625e). This is the SDP half.
+
+METHOD, needing no new machinery. chi_(3) is the 1-dim character sigma -> q, so
+a letter (sigma_g + dc*h) has value q + dc*h and chi_(3)(w) = prod(q + dc_i*h)
+-- multiplicative and GENERATOR-INDEPENDENT. From
+tr_{z_D} = y_(3) chi_(3) + y_(2,1) chi_(2,1) at level 2 (y_(1^3) = 0),
+chi_(2,1) = (tr - y_(3) chi_(3)) / y_(2,1). Calibrated three ways before use:
+chi_(2,1)(1) = 2 exactly (block dimension), chi_(3)(V^k) = 1 exactly for all k
+(reproducing the sorry-free unit_on_vertices_eq_one from the OPPOSITE
+direction), y_(3) + 2 y_(2,1) = 1.
+
+RESULT 1 -- the (3) block is STRUCTURALLY SILENT. chi_(3) depends only on the
+shift multiset, and flavour determines the shifts (pairCounts_determined), so
+it is one positive number per nucleon (1.3825 p / 1.1221 n) across all 32
+generator assignments, spread exactly 0. The whole content of reading 3 here is
+chi_(2,1) >= 0.
+
+RESULT 2 -- it NARROWS AND DOES NOT CLOSE. 20/32 proton and 16/32 neutron
+assignments survive: 320 admissible Delta pairs of 1024, a 3.2x narrowing. The
+target (0 %) is INSIDE the admissible range [-98.57 %, +35.17 %], and the
+nearest admissible pair misses the ~780 ppb window by 122573x. Falsifiable and
+currently failing -- the same shape as #7188's ordering result, NOT a rescue.
+
+RESULT 3 -- THE SCOPE FORK, now answered. Reading 3 applied to the gg-selected
+CORE admits V^3 (chi_(2,1) = +1.9942) and selects k = 3 = beta_Bor. Applied to
+the WHOLE 11-crossing word it EXCLUDES the census assignment (chi_(2,1) =
+-0.2806 proton, -0.3720 neutron) -- which would make every residual on this
+bean inadmissible. Both fit the ruling as relayed.
+
+ANSWER, recorded verbatim: **"test,A — core only (Recommended)"** -- option (A)
+plus a free-text token `test`. Recorded as SELECTED, not as a clean ruling: that
+token reads as much like exercising the question UI as like a directive, and an
+ambiguous answer should not be laundered into an owner ruling in a bean that
+later agents read as authority.
+
+Acting on it is safe either way because (A) IS THE STATUS QUO -- the sibling
+applied it on #7207 (frobeniusSelected_borromean), and adopting it moves no
+number and re-runs no producer. If the intent was otherwise, nothing has to be
+undone; only this paragraph is wrong.
+
+CONSEQUENCE UNDER (A). The census element stands, and so does every residual on
+this bean. Reading 3 constrains 6 of the word's 11 letters and prunes NOTHING
+among the 5 the parity bound leaves free -- so the SDP half does no work on the
+open part of the problem, and the 5 letters still have no derived constraint.
+That is the live gap.
+
+BEAN STAYS todo (§13a).
+
+## 2026-09-12 — the element migration LANDED on main, and `element_is_ruled: true` over-reaches by 5 letters
+
+**Not a numerical dispute. The migration is right, the number is right, and my own
+work is what supports it.** What is wrong is one provenance field, and it is the
+field an owner reads.
+
+**What landed.** `573b2ece24` moved the scored `Q_β` element from `delta_S` (short
+normal form) to `nuc11_interleaved`, and `b021216ab6` closed `qou-wfvl` as
+`completed`. The row improved 2.55× (4.259e+8 → 1.668e+8 ppb). The producer writes
+
+    "element_is_ruled": true,
+    "element_authority": "owner gamma-gamma ruling qou-ales 2026-09-08 +
+       GammaGammaWordSelection.vertex on main (a gamma-gamma word's 2nd letter is
+       negative, which excludes the gen-grouped core)"
+
+and it calibrates at `err_pct_at_order_zero_E0 = -17.4959286063` against my
+`-17.495929`. Their `delta_S` `tr_conv_D = -0.106235639848` reproduces mine to ten
+digits. The exclusion argument they cite **is** my Lean lemma
+`not_gammaGamma_of_snd_pos`. None of that is in question.
+
+**The over-claim, measured.** `nuc11_interleaved` is **11 letters** — read off
+`_GEN_CHAINS`, `gen0 = 7`, `gen1 = 4`, for both `p` and `n`. Every γγ word has
+**even** length: a γγ word is a concatenation of 2-letter vertices
+(`gammaGamma_length_even`, sorry-free). 11 is odd. **Therefore
+`nuc11_interleaved` is not a γγ word** — `eleven_not_gammaGamma`, sorry-free, on
+this branch.
+
+So the ruling does not select the element. It selects the **6-letter core**
+`(σ₀σ₁⁻¹)³` = three γγ vertices, and provably cannot reach the other five:
+
+| block | letters | γγ-reachable? |
+|---|---|---|
+| core | 6 | **yes** — three vertices |
+| quark | 3 | no — odd (`three_not_gammaGamma`) |
+| gluon | 2 | no — even, but both positive (`gluonPair_not_gammaGamma`) |
+
+The gluon pair is excluded **twice over**: its second letter is positive, and it
+follows an odd-length block so no vertex boundary can align with it.
+
+**Why this matters rather than being pedantry.** `qou-ales` says *"Shouldn't use
+census."* The element now scored is **6/11 γγ-derived and 5/11 census-derived**.
+`qou-wfvl` — whose title is *"the Q_β element is census-derived"* — is therefore
+closed on an element that is still census-derived in 5 of its 11 letters. The
+migration is 6/11 done, not done.
+
+**What the correct label would say.** The binary field cannot express this. Either
+`element_is_ruled` becomes scoped (`"core"`), or it keeps `true` alongside
+`element_ruled_letters: 6` / `element_census_letters: 5`. **My judgement, marked as
+judgement:** the second — keep the boolean for consumers, add the two counts, and
+open a successor bean for the 5 free letters, because that is where a closing `Δ`
+would have to come from and it is now the only place left.
+
+**I have not changed it.** It is a sibling's producer and an owner-facing
+provenance label; §"ASK THE OWNER BEFORE CHANGING THINGS" covers it and it is
+neither a precision increase nor corpus-derived (the corpus currently *asserts*
+`true`). Recorded here; surfaced to the owner.
+
+**Second item, smaller.** `173da443b6` made the tower-summed `E₀` canonical. This
+probe and `qbeta_option_e_order_dof_range_probe` still inherit the **order-zero**
+form, so every percentage on this bean is on the retired base, low by 0.9915 %. On
+the canonical base: interleaved `-16.677940 %`, gen-grouped `-14.613128 %`. CHECK 7
+reports both and does not switch, because the cells these are calibrated against
+were computed at order-zero and mixing bases is the silent-revert trap that
+commit's own audit records at §6. **The ranking is invariant** — residual is
+strictly increasing in `E₀`, and `E₀ > 0` is common to every candidate — so no
+conclusion on this bean depends on the base.

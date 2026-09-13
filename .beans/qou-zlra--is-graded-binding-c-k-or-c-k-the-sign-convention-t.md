@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:02:10Z
-updated_at: 2026-09-12T21:52:23Z
+updated_at: 2026-09-12T21:54:12Z
 ---
 
 
@@ -189,6 +189,46 @@ read (it is a log, per-block, gated, with a resolvent); the sign question is
 empty for the additive class (#7223) and, for this non-additive one, is not a
 convention at all but a computed quantity whose forced component has the
 anti-valley sign. Nothing is wired; nothing is fitted; AME enters nowhere.
+
+
+## 2026-09-12 — the Pass-2 sign gate's LP justification has no referent (qou-8urh, PR #7251)
+
+Relevant to this bean because the sign convention it tracks sits downstream of a
+gate whose *stated* derivation turns out not to hold.
+
+The owner ruled 2026-09-12 to drop the Pass-2 gate in
+`hecke_core_legacy.unified_iterative_correction` AND to hunt the primal LP its
+comment invokes. The hunt closed as **case (b)**: the LP exists
+(`prop:operator-selection-lp`, Lean `QOU.ParticleInteractions.operator_selection_lp`,
+sorry-free) and complementary slackness on it does **not** give the sign gate.
+
+Four independent mismatches, all in
+`QOU.MassTheory.UICGateNotFromComplementarySlackness` (8 decls, lean-direct
+exit 0, sorry-free):
+
+1. the LP's constraints are indexed by NF basis elements (`d = n!`), the gate by
+   partitions (`p(n)`); no partition-indexed LP exists in the corpus;
+2. CS constrains `(Gx*)_i`, a function of the operator being SELECTED, while the
+   gate reads `t_lambda = tr(M_lambda(W_atom))`, an input;
+3. `IsFeasible` demands `0 <= (Gx)_i`, so a "<= 0" gate on a constraint value IS
+   the tightness gate `= 0` (`frobeniusValue_nonpos_iff_eq_zero`);
+4. the optimum is a positive-dimensional face, so "the OPTIMAL primal-dual pair"
+   is not a well-defined object.
+
+**Sign-relevant detail for this bean.** The gate is a predicate on the SIGN of
+the per-block final trace, and that sign is exactly what CS cannot speak to:
+under a diagonal Wedderburn Gram (orthogonal projectors) CS decouples to
+`s_l * G_ll * x_l = 0`, in which the atom's traces do not appear at all
+(`complementarySlackness_diagonal_iff`). So whatever fixes the +c_k / -c_k
+convention, it is not LP duality on this program.
+
+Measured (`computations/probes/uic_gate_vs_lp_complementary_slackness_probe.py`,
+mp.dps = 70, proton pin, convention D): the gate keeps 4 of 10 blocks at 2H
+(the only non-zero one is `(2,1,1)`) and 2 of 10 at 4He (`(2,2)`, `(3,1)`),
+while the LP's active set is 9 of 10 at every reachable target for both atoms.
+
+Audit: `docs/audits/2026-09-12-uic-gate-primal-lp-hunt.md`. Stays OPEN — the
+sign convention is untouched by this.
 
 ## Cross-reference: the UIC resolvent cone is now mpf (2026-09-12, bean `qou-oiz3`, PR #7245)
 

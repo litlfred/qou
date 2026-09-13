@@ -1,0 +1,100 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-12T19:03:03.895527+00:00",
+  "commitSha": "5cda0e0678e2f3e952010d7961ffadd60db30cd3",
+  "assertions": [
+    {
+      "name": "log_law_reproduces_step3_B",
+      "computed": "2.04083299864387559384093710013714972897951023759759994788869e-59",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "step-3 witness pp_binding[G^3].B_pp_MeV vs -alpha log(1 + h^2 r)"
+    },
+    {
+      "name": "proved_bracket_contains_measured_B",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean binding_magnitude_second_order"
+    },
+    {
+      "name": "bracket_is_tight_below_one_percent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "width/|B| recorded in data as bracket_rel_width"
+    },
+    {
+      "name": "pin_inside_h_sq_interval",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean bound_on_q_interval via h_sq_le_of_q_le"
+    },
+    {
+      "name": "ceiling_bounds_measured_B",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean bound_at_small_h_sq: |B| <= alpha r / 10"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "diproton-second-order-probe",
+  "scriptFile": "diproton_second_order_probe.py",
+  "scriptHash": "dacdff9217a8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/diproton_second_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/diproton_second_order_probe.py"
+  },
+  "description": "qou-ales step 9: checks QOU/Mass/DiprotonSecondOrder.lean at the proton pin. The Lean proves |B| = Theta(h^2) for B = -alpha log(1 + h^2 r), bracketed by alpha h^2 r/(1+h^2 r) and alpha h^2 r, with the h^2 forced by step 4's cube identity rather than assumed. This probe reads the interface ratio from the step-3 witness (G^3 row), derives the relative response r, and verifies the bracket contains the measured |B| and how tight it is; it also evaluates the alpha r/10 ceiling that h^2 <= 1/10 gives. No new physical value is asserted; r remains the measurement. No AME/CODATA binding value or census is read.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "convention": "D (two-row truncation; ratio read from the step-3 H_6 witness)",
+    "dps": 60,
+    "step3_witness": "computations/probes/gamma-gamma-h3-psd-selector-probe.witness.json",
+    "bond": "G^3",
+    "alpha_register_name": "E_0^full (tower-summed hadronic scale); NOT the Q_beta base E_0^(N=0)"
+  },
+  "data": {
+    "h_sq": "0.0437062085325219894020193356773883097682139607135222162428474",
+    "alpha_E0_full_MeV": "4.22748335562903055026805602658721115361518419806473100034162",
+    "ratio_atom_over_free": "1.00105775254515984363438899056087562030410819249458685927826",
+    "relative_response_r": "0.0242014253964117050815132474470324887810525785552221662412757",
+    "abs_B_MeV": "0.00446926800571304380374820701180731622704735458006504849951452",
+    "proved_lower_MeV": "0.00446690639742661465465675882946261485054220519556734559530998",
+    "proved_upper_MeV": "0.00447163127903748344431149641497556201906824056048040481009875",
+    "bracket_width_MeV": "0.00000472488161086878965473758551294716852603536491305921478876544",
+    "bracket_rel_width": "0.00105719361757428648460836462311091494408077181611926434652706",
+    "ceiling_alpha_r_over_10_MeV": "0.0102311123045828195893642332597697106590210138562978465977216",
+    "first_order_contrast_MeV": "0.0213891939540782621914710616721323623671154542694518035245966"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

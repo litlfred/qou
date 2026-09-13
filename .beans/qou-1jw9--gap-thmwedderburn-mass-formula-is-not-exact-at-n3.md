@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-30T08:26:01Z
+updated_at: 2026-09-12T21:13:56Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -1160,3 +1160,105 @@ replacement `z` or coefficient is proposed.
 **Still open, so this bean stays open (rule 13a):** what the recorded Φ₁ column
 actually *is*, if not the theorem's Φ₁; the β₃ vs `h_A²` authoring question
 (owner's call); whether a quark-level crossing table would change the `z` scan.
+
+## 2026-09-12 (later) — the recorded Φ₁ column matches NO reading of the theorem's Φ₁
+
+Probe [`phi1_recorded_column_matches_no_reading_probe.py`](../computations/probes/phi1_recorded_column_matches_no_reading_probe.py), 15/15; PR #7232.
+
+The entry above showed no real `z` reproduces the recorded column under the
+**all-pairs** reading. This asks whether it is some *other* reading — the four
+`wedderburn_Mi_constructor_test.py` swept and then retracted were tested against
+the **deuteron**, never against the **Φ₁ column** — and the answer is no.
+
+**The growth exponents settle it with no fit.** Log-log least squares over the
+table's own range `n = 6..60`: recorded column **0.911** (essentially linear),
+theorem's Φ₁ at `z_D` **2.704** (faster than quadratic). `z` cannot move an
+exponent — it enters each of the `n−1` terms as a bounded factor, `O(n)` total.
+
+**And no reading fits**, each at its own best `z` over a 401-point scan on
+`[−20,20]`: chain length `L=1` 33.8 %, `L=2` 95.2 %, `L=3` 33.0 %, `L=5` 64.8 %,
+`L=all` 604 %; any linear-in-`(Z,N)` form 146 % (at He); the all-pairs counts
+with three free coefficients 59.9 % (at C). The linear family needs only **one**
+least-squares: the adjacent-pair counts for `p^Z n^N e^Z` span the same affine
+space as `(Z, N, 1)`, and the two give byte-identical residuals (check 4 asserts
+this rather than assuming it).
+
+**🛑 Corrects the entry above, and its audit doc and PR body.** Both said *"Φ₁ is
+Θ(n²) — its per-pair density varies only 6.1× across n = 6..60"*. The label is
+right asymptotically; the parenthetical offered as **evidence** shows the
+opposite, since a density that *rises* 6.1× is growing faster than `n²`. The
+conclusion (incompatible growth) is unaffected and is stronger. Fixed in the
+audit doc, the probe docstring and the PR body — not in one place only.
+
+**What it means.** With the recorded **Φ₃** column being the theorem's Φ₃ at the
+documented anchor, the recovered producer shares **two of three** invariants with
+the published formula and its Φ₁ is a different object. Identifying that object
+now needs the **recovered witness itself**: every reading the definition admits
+is excluded.
+
+**Scope.** Scope-(a) on a named class — readings expressible as a product of
+Table 1 crossings along `p^Z n^N e^Z`, via the theorem's bilinear form, real `z`
+in `[−20,20]`. **Not excluded:** a different crossing table; a **complex** `z`; a
+reading that is **not a product of crossings at all** — the theorem's own table
+calls Φ₁ *"trace of Markov-weighted product"*, and a **single trace** rather than
+a sum over generators is **untested**; or a transcription error in the column. No
+candidate generator is proposed or adopted.
+
+**Bean stays open** (rule 13a): the single-trace reading is untested, and what
+the column actually is remains unknown.
+
+
+## 2026-09-12 — the single-trace reading is EXCLUDED too; growth class localises it
+
+The line immediately above says the single-trace reading is untested. **It is now
+tested, and it fails.** `computations/probes/phi1_single_trace_reading_is_excluded_too_probe.py`
+(25/25, exit 0, PR #7250), on the 13 rows whose per-atom `ordering` survives in
+the recovered witness.
+
+**Excluded.** Best member of the whole z family: **71.2 %** of the recorded
+column's own RMS — **20.90 absolute** against a column RMS of **29.34** — and the
+minimiser sits **on the scan boundary** at z = 20. Widening the scan does not
+rescue it: the z → ∞ limit with a free additive constant is **94.2 %** (adjacent)
+/ 104.4 % (all-pairs), *worse* than the boundary. The `+ln` sign convention is
+118.7 % / 295.2 %. On 12 of 13 rows the sign is simply opposite — the recorded
+column is negative and falling, the single trace positive and rising.
+
+**The informative half — the growth class matches.** Effective exponents over the
+same 13 rows: recorded **1.078**, adjacent single trace **1.001**, all-pairs
+single trace 2.067, the theorem's displayed sum **2.704**. Neither z nor an
+additive constant can move an exponent. So the producer's Φ₁ is a **linear-in-n
+object on the adjacent chain**, and the theorem's sum-over-chains is the **wrong
+growth class outright** — a stronger objection than any residual. First candidate
+to get the growth right and the values wrong.
+
+**Quote the exponent with its population.** 0.911 (n = 6..60, all 20 published
+rows, sibling probe) and 1.078 (n = 6..40, the 13 rows with surviving orderings)
+are different row sets. Both measured; **neither corrects the other**; the
+exponent drifts down as heavier atoms enter. Both far below 2.704.
+
+**A structural argument I expected to make and could not.** The crossings commute
+(all are `c·σ + d` in one σ), so the adjacent product has eigenvalues
+`P = Π(cq + d)`, `Q = Π(d − c/q)` and `ln|tr M| = ln|P + Q|`. I expected one to
+dominate — which would collapse it to a sum of per-pair constants and make this
+test a redundant special case of the already-excluded adjacent-additive class.
+**Measured: no dominance.** `|Q/P|` runs **0.812 … 2.839**, no decay with n. The
+interference term survives; the test was independent.
+
+**Two corrections, both mine, made before the probe landed.** An earlier draft
+called the z → ∞ limit "strictly more generous than any finite z" — the families
+are **not nested** and the numbers contradict it. And it carried **78.7 %** for
+that tail from a throwaway scratch script; two independent standalone
+recomputations give **94.2 %**. Do not quote 78.7 %.
+
+**Where this leaves the bean.** With the single-trace reading gone, **no reading
+of the theorem's Φ₁ built from Table 1's crossings matches the recorded column** —
+not the all-pairs chain, not any truncated chain, not any linear-in-(Z,N) form,
+not the whole adjacent-additive class with six free constants, and not the single
+trace. What the producer computed is **unknown**, and the only positive constraint
+in hand is the growth class: linear in n, on the adjacent chain.
+
+No replacement functional, coefficient or generator is proposed — fitting one to
+the column is the selection-against-the-target the 2026-09-05 anti-fit directive
+forbids.
+
+**Bean stays open** (rule 13a).

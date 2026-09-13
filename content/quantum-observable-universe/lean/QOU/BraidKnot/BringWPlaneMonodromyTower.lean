@@ -69,7 +69,8 @@ theorem powTrace_seeds (M : Matrix (Fin 2) (Fin 2) ℝ) :
 
 /-- **The carried monodromy's trace tower (from the class).** Any `BringWPlaneMonodromy` instance's
 operator generates the depth-2 SL₂ trace tower `t_{n+2} = (tr M)·t_{n+1} − t_n`. -/
-theorem monodromy_powTrace_recurrence [self : BringWPlaneMonodromy] (n : ℕ) :
+theorem monodromy_powTrace_recurrence {is_seifert_gauss_manin : Prop}
+    [self : BringWPlaneMonodromy is_seifert_gauss_manin] (n : ℕ) :
     (self.M ^ (n + 2)).trace = self.M.trace * (self.M ^ (n + 1)).trace - (self.M ^ n).trace :=
   powTrace_recurrence self.M self.unimodular n
 
