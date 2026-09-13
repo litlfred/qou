@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T10:35:21Z
+updated_at: 2026-09-13T10:44:32Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -971,6 +971,70 @@ quantity. Matching a ratio to data without a derivation of the coefficient is
 selection against the target under the NO-FITTING directive, so it is left
 alone; the honest next step is to derive the letter assignment, not to score
 the ratio.
+
+
+## 🛑 SAME SESSION — correcting the "relocation" entry above, twice over
+
+The entry above says *"the open question RELOCATES: the p/n asymmetry is
+injected at the like-pair letters"*. A corpus-grep I should have run before
+writing it turns up
+`content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-mirror-cancellation`,
+which corrects it in three ways.
+
+### 1. The bond letters are NOT the only p/n injection
+
+That block records a second one, upstream of the bond model — the **intra**-
+nucleon writhe asymmetry, verbatim:
+
+> The sign of `ζ` is fixed by the per-nucleon intra-`B₃` writhe asymmetry
+> (proton `+3` > neutron `+1`); its magnitude is open and unfitted.
+
+So the correct statement is that the asymmetry is injected **at the bond
+letters AND in the per-nucleon blocks**. My entry's unqualified form is wrong.
+The scoped form — *"nothing else **in the bond model** distinguishes a proton
+from a neutron"* — is right and is what the Lean docstring says; the bean and
+the PR body had dropped the scope.
+
+### 2. The `4(Z−N)` was already in the corpus, as the writhe difference
+
+The same block gives the total writhe `w = σ − σ⁻¹ = 4Z`, hence
+
+    w(Z,N) − w(N,Z) = 4(Z − N)
+
+which is **numerically the same exponent** as my
+`tr(Z,N)/tr(N,Z) = q^(4(Z−N))`. So the mirror ratio is `q` raised to the
+writhe difference.
+
+🛑 **Whether that is structural or a coincidence of two different counts is NOT
+established.** The block's writhe is over the **whole word**, intra letters
+included; my `a` and `b` count only the `A−1` **inter**-nucleon bonds. Two
+different populations producing the same `4(Z−N)` is suggestive and is not a
+derivation. Do not cite the agreement as one. Checking it is a real next step:
+if the intra letters contribute `2(Z−N)` to the writhe difference (proton `+3`,
+neutron `+1`, so `3Z+N` against `3N+Z`), then the totals cannot both be
+`4(Z−N)` unless the inter contribution is `2(Z−N)` rather than the `4(Z−N)` I
+computed — so **at least one of the two readings is wrong**, and that is worth
+resolving before either is quoted.
+
+### 3. The magnitude was ALREADY declared open
+
+*"its magnitude is open and unfitted"* — so the open item I described myself as
+"relocating to" is in part one the corpus had already named and recorded. The
+new content is the **bond-product** statement and its `q^(4(Z−N))` closed form,
+not the observation that a mirror asymmetry needs explaining.
+
+**What survives unchanged.** The four exact results are all still exact: the
+bare `_X_PP`/`_X_NN` assignment, the swap-exchanges-mirror-products fact, the
+`q^(−4(N−Z))` law, and `1 − q^-4 = h/z_D`. What was wrong was the framing
+around them, in the direction of claiming more novelty and more exclusivity
+than the corpus supports.
+
+Also noted, not acted on: `mba-sidecar-mirror-cancellation` lives under
+`appendix-mass-binding-algorithms`, which AGENTS.md makes a maintenance
+contract requiring same-PR updates for mass/binding changes. This PR adds Lean
+theorems and changes no algorithm, compute or witness, so nothing there is
+stale on its account — flagging rather than editing another arc's contract,
+per ASK-BEFORE-CHANGING.
 ---
 
 COORDINATION NOTE (2026-09-13, session gracious-dijkstra, from bean `qou-gba1`).
