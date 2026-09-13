@@ -1,11 +1,11 @@
 ---
 # qou-za3q
 title: magnus-Omega2 probes call the Plancherel weight y_lambda; 91% of their work is on shapes tr_M annihilates
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
-updated_at: 2026-09-12T03:55:51Z
+updated_at: 2026-09-13T16:19:37Z
 parent: qou-x631
 ---
 
