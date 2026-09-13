@@ -57,6 +57,7 @@ HERE = Path(__file__).parent
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import q_int_at as _q_int_at  # noqa: E402
 
 # Substrate: categorical q0>1; the |q|<1 image used by E_q(2) harmonic analysis.
 Q0 = mpf(Q_50_DIGIT_STR)
@@ -64,9 +65,32 @@ Q = 1 / Q0                      # ≈ 0.90092
 
 
 def qint(n, q=Q):
-    """Balanced q-integer [n]_q = (q^{n/2}-q^{-n/2})/(q^{1/2}-q^{-1/2})."""
-    s = mp.sqrt(q)
-    return (s**n - s**(-n)) / (s - 1 / s)
+    """Symmetric (balanced) q-integer [n]_q = (q^n - q^-n)/(q - q^-1).
+
+    CORRECTED 2026-09-13 (bean qou-9nn0).  This computed the symmetric
+    bracket in the variable sqrt(q) -- i.e. [n]_{sqrt q}, which as a
+    function of q is a DIFFERENT function, not a different convention.
+    The file contradicted itself: the docstring's formula said
+    (q^{n/2}-q^{-n/2})/(q^{1/2}-q^{-1/2}) while the module docstring
+    publishes the target this probe must reproduce,
+
+        d_q = ([1]_q, [4]_q, [5]_q, [4]_q[3]_q/[2]_q)
+            ~ (1, 4.10968, 5.22044, 6.22044)   at q = q0^-1 ~ 0.90092
+
+    citing PR #3292 FACT 1 (the compact SU_q(2) quantum-dimension vector
+    = Verlinde S_0l/S_00).  The target vector is the corpus-backed half;
+    the old body missed it by 0.166 on [4], building (1, 4.0273, 5.0546,
+    6.0546) instead.  Canonical [n]_q reproduces the published vector to
+    2.4e-6, which is that vector's own 6-digit rounding.  The gate here
+    is 1%, and the old target's error was 2.0% on [4] / 3.2% on [5] --
+    larger than the gate, so the recorded refutation was being computed
+    against a target the probe's own docstring does not name.
+
+    Delegates to qou_substrate.constants.q_int_at rather than carrying a
+    local copy -- that signature exists precisely so q-parametric callers
+    have something to import (bean qou-4u10).
+    """
+    return _q_int_at(n, q, mp.mp.dps)
 
 
 def qpoch_inf(a, q=Q, terms=400):

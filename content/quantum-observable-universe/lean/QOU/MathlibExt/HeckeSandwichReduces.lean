@@ -85,13 +85,22 @@ disjoint-block law for the production trace."*
   as `FreeAlgebra R ℕ` quotiented by exactly these three relations, with `h` a
   free parameter, and `BraidedTowerInstances.braidedTower_heckeTower`
   instantiates this class on it. Even against Mathlib the line overstated:
-  `SchurWeyl.finrank_le_factorial` (bean `qou-uoal`) is the upper half of the
-  coset-basis theorem the strict-growth question needs.
+  `SchurWeyl.finrank_le_factorial` (bean `qou-uoal`, `completed`) is the `≤ n!`
+  upper half of the coset-basis theorem the strict-growth question needs.
 * **"That, and only that"** was wrong about what remains. Two things do, and the
   instance repairs neither: `HeckeTowerWitness`'s trace is **not faithful** (it
-  factors through a rank-2 quotient, so Jones' existence theorem for the Ocneanu
-  trace of `H_∞(q)` is still open — bean `qou-g8i1`), and its filtration is
-  proved to grow only at the bottom (`twH_zero_lt_one`: `H 0 < H 1`).
+  factors through a rank-2 quotient), and its filtration is proved to grow only
+  at the bottom (`twH_zero_lt_one`: `H 0 < H 1`).
+
+  🛑 **Corrected 2026-09-13**, because the first version of this line said
+  *"Jones' existence theorem for the Ocneanu trace of `H_∞(q)` is still open —
+  bean `qou-g8i1`"*, and that is wrong twice. Jones' theorem is **proved in this
+  corpus with uniqueness**, sorry-free on `main`
+  (`SchurWeyl.MarkovTraceInstance`, `SchurWeyl.MarkovTraceUnique`); the gap is
+  that it is stated in `HeckeCoset.MarkovTraceFamily` and **nothing bridges it
+  to `OcneanuTrace.MarkovTrace`**. And `qou-g8i1` is the `(z+d)` bond rule, and
+  is `completed`. See `BraidedTowerInstances` for the full correction and the
+  live beans (`qou-0fmb`, `qou-p8yg`, `qou-ejde`).
 
 So `BraidedTower` is inhabited in the quadrant that matters, and the distance to
 "an unconditional disjoint-block law for the production trace" is a faithful

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-13T05:45:00Z
+updated_at: 2026-09-13T08:21:42Z
 ---
 
 ## Context
@@ -395,3 +395,84 @@ Verification: `lean -DautoImplicit=false -s 65536` against restored
 rebuilt from `main` source into a hardlinked shadow (all exit 0).
 `BraidedTowerInstances` exit 0, no warnings. `#print axioms` on all seven new
 declarations: `[propext, Classical.choice, Quot.sound]`. Zero `sorryAx`.
+
+--------
+
+**2026-09-13 (correction, one hour after the merge of #7153): TWO citations I landed on `main` are wrong, and one of them is a false claim rather than a bad ID.**
+
+The entry above says the remaining distance is *"a faithful trace, not a carrier"*,
+and cites two beans for it. Both citations are wrong; the shape of the conclusion
+survives, its content does not.
+
+1. **"Jones' existence theorem is open (bean `qou-g8i1`)" — FALSE, both halves.**
+   Jones' theorem is **proved in this corpus, with uniqueness**, sorry-free on
+   `main` and predating my text:
+   * `QOU/SchurWeyl/MarkovTraceInstance.lean` — `wtrace` with `wtrace_cyclic`
+     (T1), `wtrace_one` (T2), `wtrace_markov` (T3) **and** `wtrace_incl` (tower
+     compatibility), bundled as
+     `ocneanuMarkovTrace : HeckeCoset.MarkovTraceFamily R q q⁻¹ (q³/(q²+1))`,
+     plus `eq_wtrace_of_markov` (every such trace IS this one).
+   * `QOU/SchurWeyl/MarkovTraceUnique.lean` — `markovTrace_unique`.
+
+   **The real gap is a BRIDGE, and it is a much smaller and more tractable
+   statement than the one I wrote:** all of that lives in
+   `HeckeCoset.MarkovTraceFamily`, a *different* Markov-trace abstraction, and
+   **nothing bridges it to `OcneanuTrace.MarkovTrace`** — the structure
+   `DisjointBlockTraceLaw` / `TowerSpanReduction` / `HeckeSandwichReduces`
+   actually consume. `qou-g8i1` is not that item at all: it is the `(z+d)` bond
+   rule, and its status is `completed`.
+
+   **I propagated this from `HeckeTowerWitness.lean` lines 59-60, which still
+   carries it on `main`** — and that file's own plan bean `qou-0fmb` re-scoped
+   it on **2026-09-12**, the day before I quoted it: *"MAJOR RE-SCOPE: S2 is NOT
+   open. Jones' existence theorem is PROVED in the corpus, with uniqueness — in
+   a DIFFERENT Markov-trace abstraction that nothing bridges."* A sibling's
+   merged docstring is not a primary source; the bean was, and one grep would
+   have caught it. Flagged to that arc rather than edited, since `qou-cins` /
+   `qou-p8yg` are live (commits 9 h old).
+
+2. **"the `n!` lower bound is the open half of `qou-uoal`" — wrong bean.**
+   `qou-uoal` is `completed` and is the `≤ n!` **upper** half. The live bean is
+   **`qou-p8yg`** (`todo`), and it says something better than "open":
+   **`H 1 < H 2` is a WIRING job, not a build** — the rank-6 separator already
+   exists sorry-free (`SchurWeyl.HeckeDim3Dim.finrank_hecke3`, `sixBasis`,
+   `HeckeDim3.braid3`), with the relation check worked out in the bean. General
+   `n` needs the `(n+1)!` lower bound. `qou-p8yg` also carries the negative that
+   closes the cheap route — `scalar_tail_forces_central` excludes the whole
+   tail-to-scalars family.
+
+**What survives unchanged.** Every Lean statement merged in #7153 — the two
+instances, `disjointBlock_heckeTower`, `sandwichReduces_all` and the rest — is
+untouched by this: the error is in prose citing other work, not in any proof.
+What changes is the *map of what remains*, and it changes in the direction of
+tractability: a bridge between two Markov-trace abstractions and a wiring job on
+an existing rank-6 separator, rather than Jones' theorem and an open `n!` bound.
+
+Corrected in place in `BraidedTowerInstances.lean` and `HeckeSandwichReduces.lean`
+rather than quietly dropped, per AGENTS.md §Terse ≠ compressed trigger 1.
+lean-direct exit 0 on both after the edit.
+
+### Same day, independently — the same two-citation error, plus one point the entry above does not carry
+
+I hit the `qou-g8i1` error from the other direction (PR #7267) and reached the same
+verdict: the bean is `completed` and about the (z+d) bond rule; Jones' existence
+theorem is proved on `main` with uniqueness; the real gap is the bridge between
+`HeckeCoset.MarkovTraceFamily` and `OcneanuTrace.MarkovTrace`, live at
+`qou-ejde` / PR #7274. **Two independent readings, same conclusion** — recorded
+because the convergence is evidence, not because the correction needed repeating.
+
+**The additive point: "faithful on `H_∞(q)`" is not merely open, it is REFUTED at
+convention D.** The Wenzl weight vanishes for `ℓ(λ) ≥ 3`
+(`QOU/QBeta/WenzlWeightVanishing.conventionD_weight_eq_zero_iff_rowLens`,
+sorry-free), so the radical is nonzero and no trace on `H_∞(q)` can be faithful at
+the canonical convention. The attainable target is faithfulness on `H_∞(q)/rad`.
+This is already adjudicated as bean `qou-phlk` (`completed`) — *"DEFECT:
+prop:algebraic-gns-embedding claims faithfulness on H_inf(q); its proof gives
+H_inf/rad"*. Anyone writing the bridge's target statement should write the quotient,
+or they re-introduce an over-claim the corpus removed once.
+
+**Contamination count from my side:** the stale pointer reached three sites in
+`BraidedTowerInstances.lean` — the header, the "not faithful" bullet, and the
+`-- Ref:` line — and **two of the three were not mine**, i.e. the same text the
+entry above corrects. My PR #7267's measured finding is unaffected by any of it:
+`ocneanuTrace_mul_of_markov` is about `Hecke2` and never mentions Jones' theorem.

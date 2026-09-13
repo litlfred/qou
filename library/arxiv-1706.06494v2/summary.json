@@ -1,0 +1,30 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1706.06494v2",
+ "source_sha256": "3745319210df19bd",
+ "brief": "Sampling General N-Body Interactions with Auxiliary Fields — 2 sections: Front matter; Acknowledgements",
+ "extended": "**Sampling General N-Body Interactions with Auxiliary Fields**\n\n*Christopher Körber,1,∗ Evan Berkowitz,1,† and Thomas Luu1,‡*\n\n5 pp, 2 sections.\n\n**Outline.** Front matter; Acknowledgements",
+ "tokens": {
+  "brief": 25,
+  "extended": 47
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-000-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "5-5"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

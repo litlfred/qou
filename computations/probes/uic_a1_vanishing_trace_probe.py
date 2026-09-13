@@ -25,11 +25,23 @@ WHAT IS TRUE, AND MEASURED HERE
    RETURNED value, bit-identical at three precisions:
 
        kernel dps    uic(1,1), k_max=5
-           50        -0.7335499391634722
-          100        -0.7335499391634722
-          150        -0.7335499391634722
+           50        -1.2268740026260945
+          100        -1.2268740026260945
+          150        -1.2268740026260945
 
    *** unified_iterative_correction is NOT divergent. ***
+
+   [VALUE UPDATED 2026-09-12, bean `qou-21oc`.  These read
+    -0.7335499391634722 until the Pass-2 sign gate was DROPPED from the
+    producer (owner ruling; its complementary-slackness justification refuted
+    sorry-free in PR #7251), after which the function returns the UNGATED sum.
+    The gated value at this tier is -0.7335499391634978 -- note the LAST THREE
+    DIGITS never matched the number printed here, which is pre-existing drift
+    of the docstring against the audit doc, not an effect of the gate drop.
+    THIS PROBE'S CONCLUSION IS UNAFFECTED: the gate has nothing to do with
+    precision, the value is still bit-identical across 50/100/150 dps, and all
+    9 assertions still pass with the witness byte-identical -- it records
+    assertions, not totals.]
 
 RETRACTION. An earlier version of this probe (and PR #6746, docs/audits/
 2026-09-05-uic-a1-vanishing-trace.md, commit 2cb02fb644) concluded that term 1

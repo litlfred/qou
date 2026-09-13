@@ -1,0 +1,55 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2510.21576v1",
+ "source_sha256": "17a79b59d590c8da",
+ "brief": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 7 sections: Relativistic corrections for lepto; Introduction; Short-time approximation",
+ "extended": "**Relativistic corrections for lepton-nucleus scattering in the short-time approximation**\n\n*L. Andreoli1,2,∗ R. Weiss3,† G. Chambers-Wall 3,‡ A. Gnech 1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗ and S. Gandolfi 5*\n\n17 pp, 7 sections.\n\n**Outline.** Relativistic corrections for lepton-nucleus sc; Introduction; Short-time approximation; Results; Cross Sections; Conclusions; Acknowledgments",
+ "tokens": {
+  "brief": 43,
+  "extended": 96
+ },
+ "sections": [
+  {
+   "id": "sec-000-relativistic-corrections-for-lepton-nucleus-scat",
+   "title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-002-short-time-approximation",
+   "title": "Short-time approximation",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-003-results",
+   "title": "Results",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-004-cross-sections",
+   "title": "Cross Sections",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-005-conclusions",
+   "title": "Conclusions",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-006-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "12-17"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -35,12 +35,12 @@ import json
 import math
 from pathlib import Path
 
-from mpmath import mp, mpf, fabs, acos, acosh, catalan
+from mpmath import mpf, fabs, acos, acosh
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -58,9 +58,19 @@ def dim_sn(lam):
 
 
 def load_chi(fname, cfg):
+    """(partition, χ_λ as mpf, χ_λ as the source string).
+
+    The source string is carried through to the witness verbatim rather
+    than re-rendered: χ_λ here is a pass-through of the upstream
+    `atom-chi-rust-*` record, so re-serialising it at this producer's
+    output precision would print more digits than the input carries.
+    Everything *derived* from it (r_λ, θ_λ, the sums) is serialised with
+    `_precision.fmt` in the normal way.
+    """
     d = json.loads((HERE / fname).read_text())
     blk = d["data"][cfg]
-    return [(tuple(e["partition"]), mpf(str(e["chi_lambda"])))
+    return [(tuple(e["partition"]), mpf(str(e["chi_lambda"])),
+             str(e["chi_lambda"]))
             for e in blk["by_partition"]]
 
 
@@ -79,8 +89,12 @@ def main():
 
     results = {}
     for name, fname in atoms:
-        chi_free = dict(load_chi(fname, "free"))
-        chi_atom = dict(load_chi(fname, "atom"))
+        raw_free = load_chi(fname, "free")
+        raw_atom = load_chi(fname, "atom")
+        chi_free = {lam: v for lam, v, _ in raw_free}
+        chi_atom = {lam: v for lam, v, _ in raw_atom}
+        src_free = {lam: s for lam, _, s in raw_free}
+        src_atom = {lam: s for lam, _, s in raw_atom}
         rot_free = rot_atom = grow_free = grow_atom = 0
         sum_phase_shift = mpf(0)
         growth_mass_free = mpf(0)
@@ -114,19 +128,14 @@ def main():
             per_lambda.append({
                 "partition": list(lam),
                 "dim": int(d),
-                "chi_free": mp.nstr(chi_free[lam], 12),
-                "chi_atom": mp.nstr(chi_atom[lam], 12),
-                # NOT float(): the upstream chi_lambda strings carry 50
-                # significant digits, so r = chi/dim is determined to 50 and
-                # a float64 cast at the write discards ~33 of them
-                # (AGENTS.md NO-FLOAT64; drained 2026-09-13). Rendered at the
-                # INPUT precision, not at mp.dps, so no digit is manufactured.
-                "r_free": mp.nstr(rf, 50), "r_atom": mp.nstr(ra, 50),
+                "chi_free": src_free[lam],
+                "chi_atom": src_atom[lam],
+                "r_free": fmt(rf), "r_atom": fmt(ra),
                 "channel_free": "rotation" if is_rot_f else "growth",
                 "channel_atom": "rotation" if is_rot_a else "growth",
-                "theta_free_rad": mp.nstr(th_f, 12),
-                "theta_atom_rad": mp.nstr(th_a, 12),
-                "delta_theta_rad": (mp.nstr(th_a - th_f, 12)
+                "theta_free_rad": fmt(th_f),
+                "theta_atom_rad": fmt(th_a),
+                "delta_theta_rad": (fmt(th_a - th_f)
                                     if same_channel else None),
                 "channel_flip": not same_channel,
             })
@@ -136,11 +145,11 @@ def main():
             "rotation_free": rot_free, "rotation_atom": rot_atom,
             "growth_free": grow_free, "growth_atom": grow_atom,
             "rotation_to_growth_flips": flipped,
-            "sum_abs_phase_shift_rad": mp.nstr(sum_phase_shift, 8),
-            "growth_mass_free": mp.nstr(growth_mass_free, 8),
-            "growth_mass_atom": mp.nstr(growth_mass_atom, 8),
+            "sum_abs_phase_shift_rad": fmt(sum_phase_shift),
+            "growth_mass_free": fmt(growth_mass_free),
+            "growth_mass_atom": fmt(growth_mass_atom),
             "growth_mass_ratio_atom_over_free":
-                mp.nstr(growth_mass_atom / growth_mass_free, 6)
+                fmt(growth_mass_atom / growth_mass_free)
                 if growth_mass_free != 0 else "inf",
             # FULL per-λ θ_λ vector (rotation arccos + growth arccosh),
             # free & atom, per Wedderburn block — the un-collapsed phase

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-11T15:25:52Z
+updated_at: 2026-09-13T09:13:48Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -404,6 +404,65 @@ above, which is a bounded piece of work: pull the vertex incidences from snappy,
 the multiplicative linear system, solve.
 
 Claimed 2026-09-07 by claude/stalled-agents-em-linking-jilmbv (takeover of the #7094 session, which ended after opening #7092). Child task qou-zmat runs the coboundary test.
+## UPDATE 2026-09-07 (sixth pass) — RETRACTED: the coboundary test was NOT blocked at the data
+
+> **RETRACTED 2026-09-13.**  The headline below is false twice over.  The test never
+> needed the full assignment — a sibling ran it on the eliminated coordinates by the
+> Z-kernel route this very section names (see the 2026-09-11 pass immediately after) —
+> and the recorded artifact *can* supply the missing six coordinates anyway.  The error
+> was generalising "my route cannot be verified" into "the test cannot be run".  Kept
+> because the negative under it is reusable: **0 of the 112 identifications relate two
+> coordinates the recorded file already knows**, so nothing propagated along them can be
+> cross-checked.
+
+Issue #7092 asks the falsifiable question: is the duality/sigma ratio a COBOUNDARY?
+snappy supplies exactly the right object -- `_ptolemy_equations_action_by_decoration_change(3)`
+is a **128 x 6** exponent matrix (3 cusps x 2 diagonal entries), so the gauge is
+`c_p -> prod_k z_k^{M[p][k]} c_p`, and the test needs **no unknowns at all**: any integer
+vector in the LEFT KERNEL of `M` forces `prod_t r_t^{n_t} = 1` whatever the gauge is.
+
+**It cannot be run on the recorded point.**  `L6a4-c1-ptolemy-in-K.json` holds 26
+coordinates from `eliminate_fixed_ptolemys=True`.  The {1,1,1,0} duality formula needs 8
+coordinates per tetrahedron; measured, **at most 2 of the 8 are present on any
+tetrahedron**.
+
+### The reconstruction attempt, and why it is unverifiable
+
+Propagating along snappy's 112 identifications takes 26 known coordinates to 98, leaving
+6 unknown, constrained by 27 equations -- apparently determined.  It is not usable:
+
+    identifications relating TWO coordinates I already know:  0
+
+The recorded 26 are exactly **one representative per identification class** -- that is what
+the elimination does.  So no propagated value can be cross-checked against the file, and
+when the 6-unknown solve returns 0 solutions there is no way to attribute it: untwisted
+identifications (snappy returns only `+-1`, while a nontrivial generalized obstruction
+class twists by cube roots of unity), a sign-orientation convention, or something else.
+An unverifiable reconstruction feeding an inconsistent solve is not evidence.
+
+### Two bugs of my own, both surfaced by the solve returning 0
+
+1. The first propagation **ignored the sign field** -- 8 of the 112 relations carry `-1`.
+   With signs honoured all 12 fully-determined equations pass (0 non-zero); the earlier
+   "10 non-zero" was contamination from setting the unknowns to 1.
+2. **`u` was left in the unknowns list** -- the cube root of unity, which is KNOWN -- so it
+   was solved for and substituted at the same time.  6 unknowns, not 7.
+
+Fixing both still leaves the reconstruction unverifiable, so neither bug is the blocker.
+
+### The fix is at the producer
+
+Re-run the exact-point producer with `eliminate_fixed_ptolemys=False` (or record BOTH
+forms) so the full assignment is on disk rather than inferred.  Then the coboundary test
+is short: ratio vector, integer left-kernel of the 128 x 6 matrix, check
+`prod r_t^{n_t} = 1`.  Recorded in
+`computations/ptolemy/ptolemy_full_assignment_reconstruction_blocked.py`.
+
+Bean stays OPEN.  Nothing here bears on whether duality equals the sigma-transport; it is
+a statement about the recorded artifact.
+
+---
+
 
 ---
 
@@ -479,3 +538,202 @@ gauge.  This is a point-level fact about the class-1 point, not an identity of m
 variety; it says nothing yet about whether `rho -> rho^{-T}` on REPRESENTATIONS induces
 `sigma_b` (the remaining content of this bean), and it selects which sigma that
 identification would have to name.  Rule 13a: not closed.
+
+---
+
+
+---
+
+## UPDATE 2026-09-13 — the falsifiable form is ANSWERED; the bean stays open
+
+**A sibling answered issue #7092** (main \`f7fee734c3\`, session
+\`01CwN2Uy1xo99iLdJgrcKYbY\`), on the exact L6a4 class-1 point over
+K = Q[T]/(f), by the Z-kernel of the gauge exponent lattice — exactly in K, no
+floats, no tolerances, no fitting:
+
+* **sigma_b: IS a PGL(3)-gauge coboundary.** All 122 torus kernel relations have
+  product exactly 1, so the ratio is a homomorphism on the row lattice
+  L = {sum e = 0 mod 3}, i.e. an element of T_PGL(3)(K) — the group that actually
+  acts on Ptolemy coordinates. It does NOT lift to a diagonal SL(3) matrix over K
+  (r(3e_0) is not a cube in K, exact).
+* **sigma_a: is NOT.** 91 of 122 integer relations have product != 1.
+* **The scalar ansatz lambda_v^{t_i} (the issue as written): NOT a coboundary for
+  either sigma.**
+
+Gal(K/Q) = Z/2 x Z/2, both sigma involutions — which is what makes the two verdicts
+consistent with D being an involution.
+
+**The bean stays open, and the sibling says why in its own scope line:** this is a
+*point-level* fact about *this point*, **not an identity of maps on the variety**.
+It does not establish that rho -> rho^{-T} on representations induces sigma_b. That
+identification — the thing this bean is about — is untouched. Per repo rule 13a this
+bean is not closeable while that conjecture is open.
+
+## What this session added (branch \`claude/8-fold-way-qou-derivation-qj9uzv\`)
+
+**The FULL un-eliminated class-1 assignment, recovered exactly in K.** The six
+coordinates \`eliminate_fixed_ptolemys\` drops are all **cube roots of unity**:
+
+    c_0012_0 = c_0102_1 = c_0111_0 = c_1002_0 = c_2001_0 = 1
+    c_0012_1 = u^2                    (verified exactly: x == u^2, x^3 = 1 in K)
+
+That is **GGZ Remark 5.3 — vertex points take the value 1 — twisted by the
+obstruction cocycle.** In the trivial class every fixed coordinate is 1; here the
+class is non-trivial and exactly one of the six carries the mu_3 twist. It is the
+same mu_3 that \`PtolemyTwist.lean\` formalises as \`zpow3\`, arriving in the one
+place the recorded artifact had discarded it.
+
+Verification: 12 equations contain no unknown and vanish *before* anything is solved
+(an independent check of the recorded 26); each of the six is pinned by **6 to 10
+independent single-unknown equations**, all agreeing exactly in K; all **39/39**
+un-eliminated equations vanish; no recovered coordinate is zero.
+Producer \`computations/ptolemy/ptolemy_class1_full_assignment.py\`, output
+\`computations/ptolemy/L6a4-c1-ptolemy-FULL.json\`.
+
+## THREE ERRORS OF MINE RETRACTED HERE, all with the same symptom
+
+Every one presented as "0 solutions" and each had a different cause:
+
+1. **"the coboundary test is BLOCKED at the DATA"** (my commit \`6c2f3700c8\`) —
+   **false twice.** The test never needed the full assignment (the sibling ran it on
+   the eliminated coordinates via the kernel route, which my own docstring had
+   named), and the artifact *can* supply the full assignment. The error was
+   generalising *"my route cannot be verified"* into *"the test cannot be run"*.
+   File renamed \`..._superseded.py\` so the filename stops asserting it.
+2. **"NO candidate satisfies all equations"** — a solver artifact. sympy's general
+   nonlinear \`solve\` on all 39 returned nothing; that is not evidence of no solution.
+3. **"the system is LINEAR"** — wrong, and caught by my own assertion before any
+   number was produced. Degree 1 in *each* variable is not linear:
+   \`c_0012_0 = c_0111_0 * c_1002_0\` is bilinear. The system is **triangular**, which
+   is what makes it solvable.
+
+One honest sub-finding survives from (1) and is reusable: **0 of the 112
+identifications relate two coordinates the recorded file already knows**, because the
+26 are one representative per identification class — so nothing propagated along them
+can ever be cross-checked. Prefer a route whose own equations are the check.
+
+## Next, in priority order (agent judgement, not a finding)
+
+1. **Test whether sigma_b is the duality map ON THE VARIETY, not at a point.** The
+   full assignment now makes the {1,1,1,0} duality formula evaluable directly (it
+   needed 8 coordinates per tetrahedron and had at most 2). This is the bean's
+   actual subject and the gap the sibling explicitly left.
+2. Re-run the coboundary verdict against the FULL point, as an independent
+   confirmation of the sibling's result through different data.
+
+**Bean stays open** — the sixth pass's own scope line is the reason: a point-level fact, not
+an identity of maps on the variety.
+
+
+---
+
+## UPDATE 2026-09-13b — the SL(3)-lift obstruction is a CLASS, and it is NOT the mu_3 twist
+
+Branch `claude/8-fold-way-qou-derivation-qj9uzv`, PR #7273. Attacks the map-level gap
+through the SL(3)-lift obstruction the sixth pass recorded.
+
+**Step 1 — it is a well-defined class, not a value at one lattice vector.** The sixth
+pass rules out the lift because `w := r(3 e_0)` is not a cube in K. A different `e_0`
+gives a different `w`, so as stated that is not a statement about maps. Proved sorry-free
+(`QOU/Eightfold/SubgroupExtensionObstruction.lean`): replacing `e_0` by `e_0 * l`
+(`l in L`) multiplies the obstruction by `r(l)^n`, so its class in `A/A^n` is independent
+of the witness; and an extension forces the obstruction to be an n-th power, so a
+non-trivial class forbids EVERY extension — with no hypothesis on `[M : L]`. `#print
+axioms` gives `propext` alone on all three declarations.
+
+**Step 2 — what that class IS, measured exactly.** K contains `zeta_3`, so by Kummer
+`K^x/(K^x)^3 = H^1(K, mu_3)`: the obstruction is mu_3-cohomological, exactly like the
+representation-level class in `H^2(M, dM; Z/3)`. The tempting reading is therefore that
+the non-liftability is simply the obstruction twist showing up, hence structurally
+expected and no evidence about the map identity. **That reading is EXCLUDED:**
+
+    [u]      non-trivial in K^x/(K^x)^3   -- refuted at p = 31
+    [w]      NOT a cube                   -- refuted at p = 31
+    [w*u]    NOT a cube                   -- refuted at p = 61
+    [w*u^2]  NOT a cube                   -- refuted at p = 31
+
+so `[w]` is **not** in `<[u]>`. The obstruction carries a class in `H^1(K, mu_3)` that is
+neither the twist nor trivial — an independent datum any proof of "rho -> rho^{-T}
+induces sigma_b" must account for.
+
+Method: reduction mod primes (if `v = y^3` in K then `vbar = ybar^3` in every residue
+field, so one prime refutes exactly). The prime choice is the content — `p = 1 mod 3` for
+cubes to have index 3, `f` with a root mod p, and **`p != 1 mod 9`**, because an element
+of order 3 is a cube in `F_p^x` exactly when `9 | p-1`, so at such a prime `[u]` is
+trivial and the three candidates become indistinguishable. Controlled both ways:
+`(2+T)^3` must be RECOGNISED (survives all 40 primes) and `(2+T)^3 * u` must be REFUTED
+(it is) — a test that can only answer "not a cube" is indistinguishable from a broken
+one, and all four verdicts are of that form.
+
+Probe `computations/ptolemy/ptolemy_sl3_lift_obstruction_class.py`.
+
+**A wrong turn of mine, recorded.** The first version gated a Groebner decision behind a
+norm test. `N(u) = 1` is a rational cube, so the norm test is inconclusive for `u` by
+construction, and the Groebner over Q on a quartic with coefficients up to 2.5e13 did not
+finish. Reduction mod primes is the right algorithm and is instantaneous.
+
+**SCOPE — this does NOT refute the map identity, and must not be read as doing so.** The
+ratio does lie in the PGL(3) decoration torus, the group that actually acts on Ptolemy
+coordinates, so on this point `sigma_b(x)` and `D(x)` are the same point of the variety
+modulo decoration. What is measured is a finer SL(3)-level datum, at one point in one
+class. **Bean stays open** (rule 13a).
+
+**Next, agent judgement:** identify the class. The honest question is whether `[w]` is the
+image of something canonical — a Ptolemy coordinate, the discriminant, a unit of `O_K` —
+and that must be *derived*, not searched: picking a generator because it matches `[w]` is
+selection against the target and is barred by the NO-FITTING directive.
+
+
+---
+
+## UPDATE 2026-09-13c — the obstruction class lives in Q(sqrt(-15)), a PROPER subfield of the trace field
+
+Branch `claude/8-fold-way-qou-derivation-qj9uzv`, PR #7273. Locates the class from
+update 2026-09-13b. Derived from the Galois data the witness already records — no
+candidate matching, per NO-FITTING.
+
+**The three quadratic subfields**, from `s = T + sigma(T)` and its quadratic minimal
+polynomial:
+
+    Fix(sigma_a) = Q(sqrt(-15))      Fix(sigma_b) = Q(sqrt(5))
+    Fix(tau)     = Q(sqrt(-3)) = Q(zeta_3)        (tau = sigma_a sigma_b)
+    => K = Q(sqrt(-3), sqrt(5)), biquadratic
+
+`Fix(tau) = Q(zeta_3)` independently reproduces the witness's own `galois_group`
+annotation — a cross-check on both, not a restatement of one.
+
+**sigma_a FIXES w**, so
+
+    w = 4/3 - (4/1875) s   in Q(sqrt(-15)),   8 s^2 - 11875 s + 5000000 = 0
+
+and the degree argument applies there: `[K:F] = 2`, and `y^3 = w` in F makes `[F(y):F]`
+divide both 3 and 2, so `y` is in F. Hence **w is a cube in K iff it is a cube in
+Q(sqrt(-15))**.
+
+**A negative worth recording.** The recorded trace field of this point is ALL of K
+(`span_dimension 4`, `equals_ptolemy_field true`, `L6a4-c1-trace-field.json`). So
+`Q(sqrt(-15))` is a **proper** subfield of the trace field — the obstruction does not
+live in the trace field, it lives in one quadratic piece of it.
+
+**Class vs element, kept apart** (the arity rule). `sigma(w)/w` being a cube is what
+fixes the CLASS, and an element can move by a cube. `sigma_b` and `tau` move the element
+and leave the class **unrefuted** over 40 primes — recorded as unrefuted, never proved,
+since reduction cannot prove a cube. The `sigma_a` row is flagged **VACUOUS**: it fixes
+`w` outright, so its ratio is 1 and "1 is a cube" is an identity, not evidence.
+
+**A premature negative of mine, corrected one commit later.** The first version of this
+probe tested membership in `Q(zeta_3)` alone, found it fails, and concluded *"the descent
+does not apply"* — scoped to one subfield, stated as though general. The guard stopped the
+run correctly; the sentence around it over-generalised. Three subfields exist and w is in
+one of them.
+
+Probe `computations/ptolemy/ptolemy_obstruction_class_subfield.py` (renamed from
+`..._eisenstein.py`, whose name asserted the wrong subfield).
+
+**Bean stays open.** Nothing here bears on whether `rho -> rho^{-T}` induces `sigma_b` as
+a map on the variety.
+
+**Next, agent judgement:** `h(Q(sqrt(-15))) = 2` — counted from the reduced forms
+`[(1,1,4), (2,1,2)]`, not quoted — so unique factorisation fails and `[w]` cannot be read
+off by factoring; the ideal class group enters. Identifying `[w]` in the cube-class group
+of `Q(sqrt(-15))` is the next step, and it must stay derived.

@@ -124,6 +124,24 @@ def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50):
     n at a fixed q_val (e.g. `markov_trace_numerical`) avoid the
     O(p(n)²) recomputation; this drops `markov_trace_numerical(D, q_0)`
     from O(11²)=121 schur_principal calls to O(11)=11 calls.
+
+    ⚠ SIDE EFFECT — THIS SETS GLOBAL mpmath PRECISION AND DOES NOT RESTORE IT.
+    The implementation assigns `mp.mp.dps = dps`, so calling this with a
+    literal `dps=50` from a context working at higher precision silently
+    lowers the working precision for everything that follows. **Pass
+    `dps=mp.mp.dps` unless you specifically want the change**, or wrap the
+    call in `with mp.workdps(...)`.
+
+    Not hypothetical: `magnus_omega2_markov_stabilisation_probe.py` was first
+    written with `dps=50` while working at 140, which destroyed its
+    EPS = 1e-50 finite-difference germ. It failed loudly only because that
+    probe validates the differentiated-Hecke identity per generator — a caller
+    without such a check would have got quietly wrong digits. Of the 15
+    call sites passing a literal 50, exactly one works above 50
+    (`y_lambda_at_q0_cache.py`) and it already guards with `mp.workdps(60)`,
+    so there is no live victim; making the function restore precision is bean
+    `qou-p4fr`. Removed here would be a behaviour change for 200+ callers,
+    which is why this is a warning and not a fix.
     """
     return _y_lambda_wenzl_bridge_numeric_impl(
         tuple(partition), str(q_val), int(dps)

@@ -1,0 +1,200 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1108.1048v3",
+ "source": {
+  "file": "1108.1048v3.pdf",
+  "sha256": "6f2b83450ba923d0130f9827d9668585e65c2f140ff41e1977aaa49f7be8e91d",
+  "bytes": 432304,
+  "pages": 45,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1108.1048",
+   "version": "3",
+   "primary_class": "math.RT",
+   "stamp_date": "9 Oct 2012"
+  },
+  "doi": null,
+  "title": "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS",
+  "authors_raw": "OF FINITE CLASSICAL TYPE",
+  "title_lines": [
+   "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS",
+   "OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS"
+  ],
+  "abstract": "We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their cyclotomic quotients R\u03bb for \ufb01nite classical types using a crystal basis theoretic approach. More precisely, for each element v of the crystal B(\u221e ) (resp. B(\u03bb )), we \ufb01rst construct certain modules \u2206( a; k) labeled by the adapted string a of v. We then prove that the head of the induced module Ind ( \u2206( a; 1)\u22a0\u00b7 \u00b7 \u00b7\u22a0\u2206( a; n) ) is irreducible and that every irreducible R-module (resp. R\u03bb-module) can be realized as the irreducible head of one of the induced modules Ind(\u2206( a; 1) \u22a0 \u00b7 \u00b7 \u00b7\u22a0 \u2206( a; n)). Moreover, we show that our construction is compatible with the crystal structure o n B(\u221e ) (resp. B(\u03bb )).",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181031082803-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Crystals and Khovanov-Lauda-Rouquier Algebras",
+   "page": 4,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Crystals",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Khovanov-Lauda-Rouquier algebras",
+   "page": 7,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Construction of irreducible R-modules",
+   "page": 10,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Description of Nk(v) for Finite Type Via Adapted Strings",
+   "page": 14,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Explicit Construction of Irreducible Modules for Finite Classical Type",
+   "page": 17,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??",
+   "page": 28,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 978,
+   "n_words": 168
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7864,
+   "n_words": 1461
+  },
+  {
+   "id": "sec-001-11-crystals",
+   "number": "1.1",
+   "title": "Crystals",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1451,
+   "n_words": 291
+  },
+  {
+   "id": "sec-002-1-crystals-and-khovanov-lauda-rouquier-algebras",
+   "number": "1",
+   "title": "Crystals and Khovanov-Lauda-Rouquier Algebras",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 4420,
+   "n_words": 1082
+  },
+  {
+   "id": "sec-003-12-khovanov-lauda-rouquier-algebras",
+   "number": "1.2",
+   "title": "Khovanov-Lauda-Rouquier algebras",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 6448,
+   "n_words": 1377
+  },
+  {
+   "id": "sec-004-13-construction-of-irreducible-r-modules",
+   "number": "1.3",
+   "title": "Construction of irreducible R-modules",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 7124,
+   "n_words": 1717
+  },
+  {
+   "id": "sec-005-2-description-of-nkv-for-finite-type-via-adapted",
+   "number": "2",
+   "title": "Description of Nk(v) for Finite Type Via Adapted Strings",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 6714,
+   "n_words": 1727
+  },
+  {
+   "id": "sec-006-3-explicit-construction-of-irreducible-modules-f",
+   "number": "3",
+   "title": "Explicit Construction of Irreducible Modules for Finite Classical Type",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 44,
+   "n_chars": 49091,
+   "n_words": 12444
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 4381,
+   "n_words": 679
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 88471
+ }
+}

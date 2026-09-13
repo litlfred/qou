@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-09-03T04:45:00Z
+updated_at: 2026-09-13T06:49:45Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -968,3 +968,44 @@ diff, reviewed "Lite". It says nothing about whether a large Lean or witness
 diff gets reviewed, which is the case that would actually matter at a merge
 gate. Do not read "Copilot reviewed my beans PR in two minutes" as "Copilot
 reviews."
+
+
+## 2026-09-13 — one more zero-review observation, and it SHARPENS rather than settles
+
+**PR #7255** (litlfred/qou, new Lean file + a notation-register section).
+
+- `request_copilot_review` called **once**, ~05:41Z. No error returned.
+- Re-checked **06:40Z, 59 minutes later**:
+  - `get_reviews` -> `[]`
+  - `get_review_comments` -> `{"review_threads": [], "totalCount": 0}`
+  - `get_check_runs` -> `{"total_count": 0, "check_runs": []}`
+
+**Do NOT read this as support for the original "never arrives" claim.** That
+claim is falsified and stays falsified — `qou-80ul` (#6112, 5 comments) and
+`qou-g7t2` (#6121) are counterexamples, and AGENTS.md's 2026-08-30 correction
+records first-hand arrivals at ~3 min and ~4 min.
+
+**What it does sharpen is the QUOTA hypothesis.** AGENTS.md attributes the zeros
+to rationing, on evidence of *five requests across two repos in ~30 minutes*
+returning "reached their quota limit". This observation is a different shape:
+**one** request, no error, and an hour of silence. So either
+
+  (a) the quota is shared or persistent well beyond a 30-minute window, so a
+      single request can land in an already-exhausted bucket with no error and
+      no review, or
+  (b) something other than quota produces the zeros.
+
+The single-request case does not distinguish them, and that is the point: the
+quota story was built on a burst, and a burst cannot tell you what a lone
+request does. The discriminator would be a *first* request in a repo that has
+been quiet for a day.
+
+**Two honest limits on this datum.** 59 minutes is not forever — the review may
+yet land, and if it does this entry should be amended rather than left standing.
+And `get_check_runs` returning 0 is uninformative here by AGENTS.md's own note
+(a 0 does not mean no review is coming), so it is recorded for completeness, not
+as evidence.
+
+**Practical consequence, unchanged:** do not block a merge on a Copilot review,
+and do not re-request on every wake. One request per PR, then proceed on the
+agent-owned verification gate.

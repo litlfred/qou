@@ -1,0 +1,80 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1706.06494v2",
+ "source": {
+  "file": "1706.06494v2.pdf",
+  "sha256": "3745319210df19bd640f2b2b31ba7fb48375a6d92f3af876bd2b62d40bdd4517",
+  "bytes": 517228,
+  "pages": 5,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1706.06494",
+   "version": "2",
+   "primary_class": "nucl-th",
+   "stamp_date": "29 Jun 2017"
+  },
+  "doi": null,
+  "title": "Sampling General N-Body Interactions with Auxiliary Fields",
+  "authors_raw": "Christopher K\u00f6rber,1,\u2217 Evan Berkowitz,1,\u2020 and Thomas Luu1,\u2021",
+  "title_lines": [
+   "Sampling General N-Body Interactions with Auxiliary Fields"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181014013019Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 15874,
+   "n_words": 2680
+  },
+  {
+   "id": "sec-000-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1975,
+   "n_words": 296
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 2,
+  "sections": 2,
+  "chars_total": 17849
+ }
+}
