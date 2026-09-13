@@ -485,9 +485,32 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     three bond constants are untouched. **Absolute** traces moved, by `3.785×`
     (`2H`), `7.868×` (`3H`), `6.891×` (`3He`), `14.325×` (`4He`), and
     `binding_canonical`'s difference route moved with them by the same factor.
-    Pass `intra_order="grouped"` to reproduce any pre-2026-09-05 absolute
-    number. Probe:
+    Pass `intra_order="grouped"` to reproduce the absolute numbers as they
+    stood IMMEDIATELY BEFORE 2026-09-05. Probe:
     `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`.
+
+    🛑 **NOT "any pre-2026-09-05 absolute number" — that is what this line said
+    until 2026-09-13, and it is measurably too strong** (bean `qou-5c64`).
+    Grouped reproduces the state just before the ruling; it does NOT reproduce
+    arbitrary earlier states, because at least one further change sits further
+    back. Measured on the deuteron at a fixed q, against
+    `binding-canonical.witness.json` as committed on **2026-06-15** (recovered
+    at full 50 dps from its own `commitSha 0fa83306db2a`):
+
+        intra-ordering, grouped/borromean   free 3.784816689   atom 3.784816689
+        residual,       grouped/2026-06-15  free 1.15067303    atom 1.481039152
+
+    The ordering factor reproduces the `3.785 (2H)` recorded three lines up to
+    ten digits, which is what makes the residual trustworthy rather than a
+    measurement artefact. And the residual is **not uniform** — free and atom
+    move by different amounts — so whatever it is touches the INTERFACE letter
+    (the atom word's one extra factor at `A = 2`) and not only the nucleon
+    cores: `1.481039152 / 1.15067303 = 1.28711` on the interface, and
+    `sqrt(1.15067303) = 1.07270` per nucleon core. Ruled out as its cause, each
+    by direct substitution at fixed q: the q₀ anchor (3.9e-8), `pn_convention`
+    (a no-op on the free trace by construction, 2e-4 on the atom trace), the
+    `m_pp/m_pn/m_nn` multiplicities (unchanged), and the convention C→D
+    `y_lambda_at` swap (a no-op — both implementations agree at `n = 6`).
 
     ⚠ NAME IS A MISNOMER — this does NOT return a braid word (2026-08-25, PR #5765).
     A rename was considered and rejected: 685 call sites across 382 files. So the
