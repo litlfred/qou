@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T04:51:58Z
-updated_at: 2026-08-30T14:29:53Z
+updated_at: 2026-09-13T13:08:26Z
 ---
 
 ## The instruction
@@ -136,3 +136,40 @@ branch `claude/precision-gates-stale-witness-guard-2026-08-30` flagged four
 moved witnesses and printed the branch-mode text at `0 behind origin/main` —
 the exact configuration mode 1 cannot catch. Both arms of the conditional were
 also exercised in isolation with the branch name stubbed.
+
+
+---
+
+## SAFETY: the remedy this message prints can destroy a running producer's output (2026-09-13)
+
+`scripts/precision-gates.sh` ends its "TREE-MEASURING AUDIT WITNESSES MOVED"
+block by telling the reader:
+
+>   DO NOT COMMIT THESE. Revert them:  `git checkout -- computations/`
+
+**That is a glob over the whole directory, and it reverts files the gate run
+never touched.** Hit today with the `qou-uiut` table mid-run: the gates dirtied
+12 audit witnesses, but `git status -- computations/` showed **13** — the
+thirteenth being `computations/hadron-knot-table.witness.json`, the live
+per-atom output of the producer that was running at the time. The printed
+command would have reverted it underneath the process.
+
+This is not hypothetical in this repo: the same glob has already destroyed a
+verified 40-minute run once, which is why the standing rule is to restore
+witnesses **by explicit single path only**.
+
+The message already knows which files moved — it lists them by name two lines
+above. The remedy should list those same paths:
+
+```sh
+git checkout -- computations/audits/q0-anchor-consistency-audit.witness.json \
+                computations/audits/witness-provenance-audit.witness.json \
+                ...
+```
+
+or, better, the runner should emit the exact command from the list it just
+built, so the reader never types a glob at all.
+
+Note the failure is **silent and worst when things are going well**: a
+long-running producer is exactly the state in which someone runs the gates to
+check on the branch, and exactly the state in which the glob costs the most.
