@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T09:50:31Z
+updated_at: 2026-09-13T10:27:24Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -851,6 +851,58 @@ and records that only the **uniform** form is bar-invariant (`delta-bar = -q^2 d
 so the uniqueness theorem's hypotheses **exclude** the production letter — that
 tension is where a derivation would have to start, or a convention change would have
 to be argued to the owner.
+
+
+## 2026-09-13 (later still) — what `delta/4` EQUALS, and why that is still not a derivation
+
+The open item after #7285's `tr_bond_interp` is the single VALUE
+`t = 1/2 - delta/4`. Measured, not argued:
+
+**The identity.** `observations/flavor-split-substrate` defines
+`delta = (m_n - m_p)/M_N` with `M_N = (m_p + m_n)/2` -- the **mean** nucleon
+mass. Under that normalisation, identically:
+
+    t = 1/2 - delta/4 = m_p / (m_p + m_n)
+
+and dually `1 - t = m_n/(m_p + m_n)`. So the `sigma` branch carries the
+NEUTRON's mass fraction and the `sigma^-1` branch the PROTON's -- **cross-
+weighted**, which is the shape a barycentric lever arm takes (the distance from
+a body to the centre of mass is proportional to the OTHER body's mass).
+
+Also verified exactly, since it is the producer's own docstring claim and had
+not been checked here: `delta = (q-1)^2 (1 - q^-4)/3 = hbar_q^2 * h_q * [2]_q / 3`.
+
+Both are `QOU.Hecke.BondLetterIdentification.tPN_eq_proton_mass_fraction`,
+sorry-free.
+
+## 🛑 It is an IDENTITY, not a derivation — and the test it fails is recorded
+
+Re-expressing `delta/4` in the corpus's own quantities supplies no mechanism.
+What it buys is that the open coefficient now has a name and a candidate reading
+**that can be tested**. The test:
+
+    massFraction_like_pair :  m/(m+m) = 1/2
+
+A mass-fraction rule assigns any **like** pair the weight `1/2`. The corpus
+assigns `t = 0` to `pp` (`sigma`) and `t = 1` to `nn` (`sigma^-1`). So the rule
+contradicts BOTH like-pair letters and cannot be the general mechanism. Stated
+as a theorem rather than a remark so the refutation is machine-checked
+alongside the identity.
+
+**What survives, and it is a story rather than a result:** the like pairs may be
+fixed by exchange symmetry -- identical particles admit no interpolation, so the
+letter is forced to an endpoint -- leaving only the UNLIKE pair with a free
+weight, displaced from the symmetric `1/2` by the flavour asymmetry. That would
+explain why `delta` appears at all. It does not derive the factor `1/4`, and the
+`1/4` is the whole of what is open.
+
+## Corpus-grep, so the next agent does not redo it
+
+Nothing in `content/`, `docs/`, `computations/` or `.beans/` carries the
+mass-fraction / barycentric / lever-arm reading, or the `m_p/(m_p+m_n)` shape.
+`mass-theory/canonical-braid-interface-composition` states the weighted form and
+records that the two conventions differ by `h*delta/4` -- **with no rationale for
+the 1/4**, which is consistent with it being open rather than merely unwritten.
 ---
 
 COORDINATION NOTE (2026-09-13, session gracious-dijkstra, from bean `qou-gba1`).
