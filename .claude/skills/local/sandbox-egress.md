@@ -99,6 +99,32 @@ either as the fix.
 | Mathlib olean cache server (`lake exe cache get` 403) | prebuilt oleans | `lake-cache/*` orphan branches in THIS repo, or local mathlib clone |
 | `ptolemy.unhyperbolic.org` | SnapPy `retrieve_solutions()` (403 on CONNECT) | **the snappy wheel itself ships certified magma fixtures** — see below |
 | Arbitrary hosts via WebFetch (MCP) | `EGRESS_BLOCKED` | WebFetch rides the same proxy — do not assume it is out-of-band for data hosts |
+| `arxiv.org` / `export.arxiv.org` | any paper fetch | **no route — escalate.** Measured 2026-09-13: `403 Host not in allowlist: arxiv.org.` |
+| `www.numdam.org` (and `aif.centre-mersenne.org`) | open-access journal PDFs | **no route — escalate.** Measured 2026-09-13: `403 Host not in allowlist: www.numdam.org.` |
+
+### 🛑 Document intake is NOT possible in this environment — and that is a statement about EVERY paper, not about one host
+
+The two rows above were measured together on 2026-09-13, and the pair is what
+matters: **`arxiv.org` is blocked as well**, so there is no such thing here as
+"this particular paper's host happens to be shut." The `document-intake` /
+`paper-importer` skills assume a fetch that cannot happen, and the route table
+above has **no route for a journal PDF** — it is not on a git repo (route 1),
+not bundled in a wheel (route 2), and the fetch has no data-URL override
+(route 3). Do not spend a pass re-probing mirrors; go straight to route 5 and
+escalate with the host named.
+
+Controls measured in the same session, so this is an allowlist and not a dead
+network: `github.com` git `/info/refs?service=git-upload-pack` **200**,
+`pypi.org/simple/` **200**. Note the proxy reports `selective: false` while the
+gateway answers with an allowlist denial naming the host — so **do not read
+`selective: false` as "the allowlist is not the lever"** (the escalation
+checklist above says exactly that, and on this evidence it is wrong); read the
+403 body, which names the host to add.
+
+Worked case: bean `qou-denm` (ingest Kohno 1987, Ann. Inst. Fourier 37 —
+open access on NUMDAM, DOI 10.5802/aif.1075). Unobtainable here for egress
+reasons, not licensing ones. The bean carries the measurement and what a
+network-open environment should run.
 
 ## The route table (try in order)
 
