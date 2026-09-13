@@ -40,3 +40,58 @@ ODD n RESOLVED same day (checks 24–26, 26/26): take the framework's q itself a
 
 
 2026-09-07 A1 EXECUTED (agent routec-a1, parent re-run 76/76): bond factorisation holds EXACTLY at n = 9 on the canonical non-monotone word for ppn/pnn/ppp/nnn — C(β123)C(free) = C(β12)C(β23) identically in q; each bond contributes q·(z_D + d_bond) exactly. So b3 ≡ 0 on the production chain word at every q-adic order at A = 3 (scope (b), invariant = the identity; general A: MarkovBondFactor general case, qou-g8i1). A route-C b3 needs a non-chain word class or something outside the trace. S1 Lean landed (WeightedCountConvolution). Audit §0b. PR #7035.
+
+
+## 2026-09-13 — STEP 4 of the plan is DONE, and it was not 4–8 h of new mathematics: it was already proved under another bean's name
+
+`docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md` §A step 4 reads
+*"formalise gap-multiplicativity for disjoint blocks with interior bond crossings
+(the `MarkovBondFactor` general-`A` gap, `qou-g8i1`) — this is what turns (i)
+into scope-(b) for all `A`"*, costed **4–8 h, high risk ("needs the cross-level
+Markov axiom the class lacks")**.
+
+**That axiom is the `qou-gr3t` hypothesis, and `qou-gr3t` discharged it this
+morning.** `QOU.Hecke.InteriorMarkovOfBraidedTower.interiorMarkov_of_braided`
+(#7265, merged `386cc36a05`) proves `InteriorMarkov` on **every** `BraidedTower`
+— the three Iwahori–Hecke relations, nothing about the trace beyond the Markov
+axioms — via `HeckeSandwichReduces.disjointBlock_of_braided` (`qou-301d`).
+Composed with `tr_bondWord_of_interiorMarkov`, the general-`A` bond product for
+arbitrary **non-monotone** block words follows unconditionally there.
+
+What was still missing between the two was a **shape**, not a theorem: the
+bond-word result carries blocks between the bonds, while `MarkovBondFactor`'s
+gap is quoted for the bare product of bond letters. `QOU/Hecke/PureBondChainProduct.lean`
+(new, PR #7337, sorry-free, `lean`-direct exit 0, axioms
+`propext, Classical.choice, Quot.sound`) closes it:
+`tr ((σ_{g₀}+d₀)·(σ_{g₁}+d₁)·⋯) = ∏_k (z + d_k)` for strictly increasing bonds,
+conditionally on `InteriorMarkov` and then on every braided tower.
+
+**Consequence for route C, stated with its limits.** A1's `b₃ ≡ 0` on the
+canonical non-monotone word was scope-(b) *at `A = 3`*, with the `n = 9`
+polynomial identity as invariant. On any braided tower it now holds for a chain
+of **arbitrarily many** bonds with arbitrary blocks between them — which is
+exactly what step 4 existed to buy. The route-C conclusion therefore strengthens
+in the direction it already pointed: **a route-C `b₃` needs a non-chain word
+class or something outside the trace.** No production number moves.
+
+**Three limits, or this gets over-quoted** (all three are in the file's own
+docstring):
+
+1. The coefficient is `1`, not a general `c_k` — `c • σ + d` factors only over a
+   field, and the ring is a bare `CommRing`. Not a restriction on the corpus:
+   all three production bond types carry `c = 1` (`f_pp`, `f_nn`, `f_pn`), as
+   `MarkovBondFactor`'s own docstring lists them.
+2. It is proved in the **tower** class, not in `MarkovBondFactor`'s
+   `QOU.Hecke.MarkovTrace n q A`, which is fixed-level and single-algebra with
+   **no filtration** and therefore cannot even *state* "`a` below the bond, `b`
+   above it". That is precisely what "the class does not yet carry" recorded,
+   and it stays true of that class; transporting the result there is a separate
+   bridge, not done.
+3. A braided tower is **not yet the production trace** — the Ocneanu trace of
+   `H_n(q)` at `z = q³/(q²+1)` is proved unique as a
+   `HeckeCoset.MarkovTraceFamily` and is not packaged as an
+   `OcneanuTrace.MarkovTrace` (`qou-gr3t` remaining item, `qou-0fmb`).
+
+Step 1 (S2 Lean) was correctly declined on 2026-09-07 as definitional; step 3
+(S1) landed as `WeightedCountConvolution`. So the plan's queue is now clear
+except for the packaging in limit 3.
