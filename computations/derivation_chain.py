@@ -222,7 +222,7 @@ _TR_M_KEYS = ("p", "n", "D")
 #
 # n_canon (strand count of the canonical braid):
 #   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
-TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
+_TR_M_CANONICAL_B_KNOT_ROWS: dict[str, float] = {
     # CONVENTION FIX (2026-08-30, bean qou-46ab). `p` and `n` were the
     # convention-C values, and this dict's OWN comment above is why they had to
     # move with the Model A ones: it states that at A = 1 the two models
@@ -234,8 +234,19 @@ TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
     # (6_2, 8_11, L6a4) — different quantities, not this trace under another
     # convention — and they already carry their own "#1422-recompute pending"
     # marker. Changing them would need those recomputes, not a substitution.
-    "p":   1.1457596924573009,  # 11-crossing typed B_3 (uud)
-    "n":   0.9877436881158096,  # 11-crossing typed B_3 (udd)
+    # SECOND ORDERING FIX (2026-09-13, bean qou-4383). `p` and `n` were still
+    # the GROUPED values, for the same reason and by the same argument the
+    # convention-C note above gives: this dict's own comment says that at A = 1
+    # the two models converge and the source is "the same as TR_M_AT_Q0 above",
+    # so the two must move together or a documented identity splits. They are
+    # now served by the same lazy accessor at the bottom of this file, reading
+    # `canonical_trm_reference`.
+    #
+    # D / T / 3He STAY LITERAL, and that is not an oversight — the note above
+    # is explicit that they are SDP-canonical low-strand knots (6_2, 8_11,
+    # L6a4), a DIFFERENT QUANTITY from this trace under another convention.
+    # Substituting a nucleon |tr_M| for a knot invariant would be a category
+    # error dressed as a frame fix.
     "D":   0.288326,            # knot 6_2, SDP-canonical  (#1422-recompute pending)
     "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)  (#1422-recompute pending)
     "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)  (#1422-recompute pending)
@@ -884,6 +895,15 @@ if __name__ == "__main__":
 # With no reachable consumers, this may simply want deleting; that is an owner
 # call. What this change does is make it harmless either way.
 def __getattr__(name: str):
+    if name == "TR_M_CANONICAL_B_AT_Q0":
+        # Model B at A = 1 is the same quantity as Model A — this dict's own
+        # comment says so — so p/n come from the reference while the
+        # knot-invariant rows stay as authored. Zero consumers either way
+        # (measured 2026-09-13); this exists so the file holds no stale trace.
+        base = dict(_TR_M_CANONICAL_B_KNOT_ROWS)
+        live = __getattr__("TR_M_AT_Q0")
+        base.update({"p": live["p"], "n": live["n"]})
+        return base
     if name in ("TR_M_AT_Q0", "TR_M_AT_Q0_50DPS"):
         import sys as _sys
         from pathlib import Path as _Path

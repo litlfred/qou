@@ -307,8 +307,16 @@ def main() -> int:
     print(f"Intra-ordering value fingerprint audit — {SIG_DIGITS} significant digits")
     print(f"  {len(fps)} fingerprints: {len(ATOMS)} atoms x {len(PINS)} pins x 2 orderings\n")
 
+    # This audit's OWN witness records its findings, and its findings contain
+    # the grouped values it found — so scanning it reports the report. Excluded
+    # for the same reason the source scan excludes this file: a detector that
+    # fires on its own output is noise, and it is exactly the "an audit that
+    # reports the corpus will always mirror it" trap this bean names. It
+    # appeared the moment the source arm started recording literals.
+    _self_witness = _HERE / (Path(__file__).stem + ".witness.json")
     files = sorted(p for p in _ROOT.rglob("*.witness.json")
-                   if "_deprecated" not in str(p) and ".git" not in str(p))
+                   if "_deprecated" not in str(p) and ".git" not in str(p)
+                   and p != _self_witness)
     grouped_hits: dict[str, list] = {}
     borro_hits: dict[str, list] = {}
 

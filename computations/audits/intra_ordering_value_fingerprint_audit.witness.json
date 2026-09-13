@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T13:47:30.581514+00:00",
-  "commitSha": "a3c4a86e0a221dbfabc4c8a345b4ef8aaa352ab3",
+  "computedAt": "2026-09-13T13:56:13.688239+00:00",
+  "commitSha": "2cd1f689ab0abc04dd205dbc05400633fbff2727",
   "assertions": [
     {
       "name": "scan_completed",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
-  "scriptHash": "4a80d53ea2ad",
-  "scriptCommitSha": "dbd92de872409da1b706aaf6fa4109c74b85c66b",
+  "scriptHash": "6e54d4ce93c4",
+  "scriptCommitSha": "aa4325a5cc87c328409bfacc7609022e64defe82",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,7 +48,7 @@
   "description": "Scans every committed witness for grouped-era |tr_M| values, matched to 15 significant digits against fingerprints computed live from atom_braid_word_3A under both orderings at both documented pins. Keys on the VALUE rather than on a symptom, because the ordering ruling has escaped three symptom-keyed sweeps.",
   "data": {
     "significant_digits_required": 15,
-    "witness_files_scanned": 3647,
+    "witness_files_scanned": 3652,
     "grouped_candidates": {
       "computations/applied-uniqueness-mass-table.witness.json": [
         [
@@ -101,58 +101,6 @@
         ],
         [
           "/data/rows[9]/issues[0]/literal",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/audits/intra_ordering_value_fingerprint_audit.witness.json": [
-        [
-          "/data/source_hardcoded_grouped/computations/derivation_chain.py[0][1]",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/derivation_chain.py[1][1]",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/derivation_chain.py[2][1]",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/probes/path_b_defect_binding_probe.py[0][1]",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/probes/path_b_defect_binding_probe.py[1][1]",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_bond_factors_derived_probe.py[0][1]",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_chain_closed_form_probe.py[0][1]",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_chain_closed_form_probe.py[1][1]",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_chain_closed_form_probe.py[2][1]",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/qbeta/qbeta_mixed_chain_closed_form_probe.py[0][1]",
           "proton",
           "proton"
         ]
@@ -769,7 +717,6 @@
     "grouped_actionable": [
       "computations/atomic-tr-m-helium4.witness.json",
       "computations/audits/braid-encoding-audit.witness.json",
-      "computations/audits/intra_ordering_value_fingerprint_audit.witness.json",
       "computations/binding-combiner-markov-peel-fallback.witness.json",
       "computations/brane-tower-full-channel-trace-audit.witness.json",
       "computations/convergence-safe-vhat-tower.witness.json",
@@ -843,11 +790,6 @@
         "kind": "reflects",
         "why": "reads artifacts; calls no trace machinery",
         "scriptFile": "fitted_labelled_canonical_audit.py"
-      },
-      "computations/audits/intra_ordering_value_fingerprint_audit.witness.json": {
-        "kind": "computes",
-        "why": "calls atom_braid_word_3A, tr_M_via_wenzl_bridge_mpfr",
-        "scriptFile": "intra_ordering_value_fingerprint_audit.py"
       },
       "computations/binding-K-direct.witness.json": {
         "kind": "reflects",
@@ -1108,26 +1050,6 @@
       "qou-mass/src/qou_mass/habiro-coefficients-atomic.witness.json"
     ],
     "source_hardcoded_grouped": {
-      "computations/derivation_chain.py": [
-        [
-          173,
-          "1.1457596924573008",
-          "proton",
-          "proton"
-        ],
-        [
-          194,
-          "1.145759692457300869689081",
-          "proton",
-          "proton"
-        ],
-        [
-          239,
-          "1.1457596924573008",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/probes/path_b_defect_binding_probe.py": [
         [
           154,
