@@ -225,6 +225,17 @@ polynomial in `s(x)`**.
 > `σ² = s(x)+1`. Equivalently: it *is* `s`-built, but on the **double cover**
 > `x = (x^{1/2})²` — which is what "level 2" means.
 
+**The same verdict in GGM's own vocabulary.** Their (27)/(29) index the Stokes
+constants by a *pair*: `s_{θ+}(Φ_σ) = s_{θ−}(Φ_σ) + S^{(ℓ,k)}_{σ,σ'}\,x̃^{ℓ}\,q̃^{k}\,s_{θ−}(Φ_{σ'})`,
+so an entry of `S_θ(x̃;q̃)` is `Σ_{ℓ,k} S^{(ℓ,k)} x̃^{ℓ} q̃^{k}` and the `q → 0` entry
+is the `k = 0` slice, `Σ_ℓ S^{(ℓ,0)} x^{ℓ}`. For 4₁ and 5₂ the exponent `ℓ` runs over
+**integers**, which is what makes those slices `ℤ[s(x)]`-valued. The content of §5 is
+therefore:
+
+> **The pretzel's Stokes constants are indexed by HALF-INTEGER `ℓ`.**
+
+That is the whole difference, stated without leaving GGM's notation.
+
 ### 5a. The obvious escape, and why it is closed
 
 The sharpest objection to §5 is: *"you have shown `σ` appears in the **operator**;
