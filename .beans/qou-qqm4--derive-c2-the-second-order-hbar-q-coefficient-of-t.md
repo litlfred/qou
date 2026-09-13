@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-08T03:33:57Z
+updated_at: 2026-09-13T08:11:09Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -696,3 +696,63 @@ This bean was `in-progress` and 16 h stale (last update `2026-09-07T11:13Z`) wit
 **Why it matters here:** this bean's order-4 discriminator is *confirmed as the input* and is not in question — the sign of the kind-dependence is right (`bond_pp > bond_pn`). What the comparison shows is that its **magnitude** is roughly half what the binding data would need. That is a constraint on the bond model that this bean's own front is best placed to interpret, and it was not visible from inside the extraction.
 
 Details and the anti-fit reasoning: `qou-brng`, and `computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py`.
+
+
+---
+
+## 2026-09-13 — §"What is NOT established" item 3 is STALE: BOTH halves already have Lean statements
+
+Item 3 of the "GOAL (2) IS ANSWERED" section (written 2026-09-06, PR #6920) reads:
+
+> **NOT PROVED.** … Neither the bond product nor the free-word factorisation has a
+> Lean statement — that is the formalize-first follow-on and is **the highest-value
+> next item on this arc**.
+
+**Both halves had Lean statements before that sentence was written.** Measured on
+`main` 2026-09-13; neither file is referenced anywhere in this bean.
+
+**Free-word factorisation — `QOU/MathlibExt/MonotoneWordTraceFactorizes.lean`**
+(landed 2026-09-04, i.e. *two days before* item 3; sorry-free, axiom-clean on 8
+decls per bean `qou-kru4`):
+
+- `tr_stabWord_eq_prod_tr` — a **monotone** word (ascending, letters `s m ∈ H (m+1)`
+  stabilising `H m`) has `tr = ∏ tr(letter)`. This is the free-word factorisation.
+- `tr_affineWord` / `affine_mul_affine` / `runCoeff` / `tr_runWord` — the production
+  superposition letters `a•1 + b•g` and their runs.
+- `tr_sequential_via_factorization` — the production word specifically.
+- `content_reorder_defect` — the same letters in non-ascending order pick up
+  `z(z² − hz − 1)`.
+
+And it carries the *reason*, which this bean never states: **bond-additivity is a
+theorem about ORDERING, not a Markov-trace property.** The production per-bond
+product is exact because `atom_braid_word_3A` is monotone.
+
+**Bond product — `QOU/Hecke/MarkovInteriorBond.lean`**:
+
+- `tr_bondWord_of_interiorMarkov` : `tr (bondWord) = (∏_k (z + d_k)) * tr (freeWord)`
+  — the bond product itself, with `bondWord` / `freeWord` / `ChainOK` defined.
+- `interiorMarkov_ascending` — discharges the hypothesis unconditionally for
+  ascending `b`, from the Markov axioms alone.
+- `exists_not_interiorMarkov` — an explicit counter-model (`R[X₀,X₁,X₂]`) proving the
+  hypothesis is **independent of the tower axioms**, so it is not free.
+
+**So what actually remains is narrower than item 3 says, and it is named in a
+different bean.** The bond product is proved *conditional on* `InteriorMarkov`
+(`∀ g, ∀ a ∈ H g, ∀ b ∈ upper g, tr(a σ_g b) = z tr(a b)`), discharged only for
+ascending `b`. Bean **`qou-gr3t`** carries that gap and names the route: prove it
+from quadratic + braid + **word-spanning** `H_{n+1} = H_n + H_n σ_n H_n`.
+
+**That third ingredient landed 2026-09-08** as `TowerSpanReduction.step_of_sandwichReduces`
+/ `HeckeSandwichReduces.sandwichReduces_all` — one day after `qou-gr3t` was last
+updated, and the two were never connected. `qou-gr3t` calls the remaining work "a
+multi-session build"; with word-spanning in hand it is a short induction.
+
+**Process note, and it is the same failure twice in one session.** This bean's item 3
+was written without checking `qou-kru4` (`completed`, 2026-09-04), whose closure entry
+names `MonotoneWordTraceFactorizes.lean` explicitly. Earlier today I re-derived a
+`qou-301d` result a sibling had landed on 2026-09-08 because I read 30 lines of that
+bean and stopped. Corpus-grep path 6 — *"Read `status` and the whole body, not the
+title"* — is the control for both, and a `completed` bean is the one that bites.
+
+No number in this bean moves. The measurement stands; only the "what is left" claim
+was wrong.
