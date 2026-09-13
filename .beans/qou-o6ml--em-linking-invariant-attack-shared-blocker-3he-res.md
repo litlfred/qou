@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T17:02:26Z
+updated_at: 2026-09-13T19:15:46Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1854,3 +1854,40 @@ unchanged across assemblies) that a bound configuration does not satisfy.
 NOT CLAIMED: that the assemblies DO move the separations in this framework, nor
 by how much. That is a geometric measurement section 9g does not make, and it is
 the open thing.
+
+## 2026-09-13 — CONSTRAINT 3b's open item is now TRACKED: `qou-a2w5`
+
+Section 9g ends by naming the arc's one precisely-stated open problem — *"that
+the assemblies DO move the separations in this framework, nor by how much …
+it is the open thing"* — and gives it no tracker. Measured: that phrase occurred
+in **exactly one file corpus-wide** (this one), so it was one bean-read away from
+being lost inside 1,856 lines.
+
+Extracted to **`qou-a2w5`** with the measurement that decides whether it is
+workable today. It is not, and the reason is checked rather than assumed:
+`sep` is a **bare field** of `LinkEmbedding` (`MobiusEnergy.lean:228`) carrying
+only `sep_symm` / `sep_nonneg` / `disjoint` / `sep_self` — no derivation — and
+every concrete `LinkEmbedding` in the tree is a synthetic test family
+(`shrinkingLink`, a counterexample; `separatedLink m R`, the family used to
+prove no uniform lower bound exists; a bare `Nonempty` witness). **None is a
+nucleus.**
+
+**So this is the SIXTH relocation to the carrier blocker** — after routes (1),
+(2), (4), the flux leg and the upper-bound leg. Recorded plainly so the new bean
+is not read as an independent front.
+
+**What changed is the SHAPE of the requirement, and that is the useful half.**
+The carrier blocker was *which census link is the nucleus* — a topological type,
+for a hyperbolic-volume lookup. Section 9g needs a canonical **metric**
+configuration: separations, not volume. Two consequences worth keeping:
+
+1. `qou-mbbf`'s non-geometricity result does **not** close this. A
+   non-hyperbolic link still embeds in `R^3` with perfectly good separations;
+   it simply carries no canonical hyperbolic metric. The measurement that
+   killed the volume route leaves this one open.
+2. The requirement is therefore **strictly weaker** than the volume route's —
+   the one direction this arc has not been pushed.
+
+And section 9g's own conclusion matches `qou-mbbf`'s, reached the same day from
+the carrier side without contact: **the route's deliverable is the object
+`qou-ales` is deriving, not a separate one.** Two independent arrivals.
