@@ -130,6 +130,16 @@ def _pn_color_weighted(h_val: float) -> float:
         import mpmath as mp
         from _li_2_q_util import flavor_split_leading
         from q_parameter import Q_50_DIGIT_STR
+        from _precision import set_compute_dps
+        # EXPLICIT, and a no-op in practice — stated so the next reader is not
+        # misled into thinking it fixed something. `never_raises_dps_audit`
+        # flags this file as "computing at dps=15"; measured, it never was.
+        # Importing `q_parameter` already raises the ambient 15 -> 50 through
+        # `qou_substrate.constants:352`'s `max(mp.dps, _DPS_DEFAULT)` floor
+        # (bean `qou-zbws`), and that import is two lines above this one.
+        # Measured both ways, `delta` is BIT-IDENTICAL at dps 15 and 70
+        # (0.001375710807027096), so nothing this function returns can move.
+        set_compute_dps()
         # This classifier is float BY SIGNATURE (`h_val: float`) and tags
         # letters with `abs(d - x) < 1e-9`. delta ~ 1.4e-3 shifts the pn value
         # by 7e-5, eight orders above that window, so double is ample. No
