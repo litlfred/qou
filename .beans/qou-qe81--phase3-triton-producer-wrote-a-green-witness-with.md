@@ -3,8 +3,9 @@
 title: phase3_triton producer wrote a GREEN witness with AssertionError strings for every row — broken since the E_0->Q_beta_n_mev rename missed a caller
 status: in-progress
 type: bug
+priority: normal
 created_at: 2026-09-02T22:01:09Z
-updated_at: 2026-09-03T00:00:00Z
+updated_at: 2026-09-13T12:42:39Z
 ---
 
 Found while enumerating the witness blast radius of `qou-uiut`.
@@ -391,3 +392,76 @@ Worth noting for the gate's sake: both stale witnesses still serialise
 `allPassed: true` over rows that are exception text, which is exactly what the
 error-row gate demotes — they predate it. Re-running them is what makes the
 gate's verdict visible on them.
+
+
+---
+
+## The 7 `qou-mass` failures are THREE defects, not one — measured 2026-09-13 post-merge
+
+Re-run on the merged tree (`PYTHONPATH=qou-mass/src python3 -m pytest qou-mass/`):
+**7 failed, 13 passed**, same seven. They do not share a cause, and the owner
+decision is different for each group. Sorting by **relative** shift — which the
+tests do not, because every tolerance is absolute — separates them cleanly:
+
+| test | \|Δ\| | **relative** | tol (abs) | tol as relative | Δ/tol |
+|---|---|---|---|---|---|
+| `deuteron_binding` | 3.04e-09 | **1.35e-09** | 1e-12 | 4.4e-13 | 3.0e3 |
+| `muon_mass` | 2.22e-05 | **2.10e-07** | 1e-6 | 9.5e-09 | 22 |
+| `neutron_mass` | 7.08e-04 | **7.54e-07** | 1e-6 | 1.1e-09 | 708 |
+| `proton_mass` | 5.11e-01 | **5.45e-04** | 1e-6 | 1.1e-09 | 5.1e5 |
+| `tr_M_4he` | 1.50e-01 | **9.30e-01** | 1e-13 | 6.2e-13 | 1.5e12 |
+| `tr_M_proton` | 5.16e-01 | **4.51e-01** | 1e-13 | 8.7e-14 | 5.2e12 |
+| `4he_binding` | — | — | — | — | string compare |
+
+### Class 1 — the TOLERANCE is the defect (3 tests)
+
+`deuteron_binding` 1.35e-9, `muon_mass` 2.10e-7, `neutron_mass` 7.54e-7. These
+are precision-level shifts — the size a float64 → mpf excision produces, and
+this campaign has produced several. Each test pins an **absolute** tolerance
+around a value computed at a precision that has since moved: as a relative
+bound those tolerances are 4.4e-13 to 9.5e-9, i.e. tighter than the change they
+are being asked to tolerate.
+
+**These tests fail on any precision improvement, by construction.** They are not
+evidence that a value is wrong. The fix is to state the tolerance relative to
+the quantity and at the precision actually claimed, not to re-pin the expected
+value — re-pinning would make them tautologies that pass whatever the code does.
+
+### Class 2 — genuine supersession (3 tests), and one is PROVEN
+
+- **`tr_M_4he` is conclusively stale.** Expected `0.16097419322911996`, computed
+  `0.01123741765976742`. The ratio is **14.32483850**, and `qou-85wn` documents
+  that exact factor — `R_quark = 14.3248` — as the shift from the 2026-09-06 chi
+  cache regeneration (`qou-92u9`, owner ruling "regen"). Its own documented pair
+  gives 14.32483425. This test asserts the pre-regeneration convention. **No
+  owner decision is needed here; the decision was already taken on 2026-09-06.**
+- **`tr_M_proton`** — ratio 1.8206, which is *not* R_quark, so a different cause.
+  Expected `1.1457597822878355` is within 0.05 % of the corpus's **protium**
+  `tr_M` (1.1463377114864982), not its **proton** (0.6293284243136999). So this
+  looks like a quantity mismatch — the test's "proton" being the corpus's
+  protium — compounded by staleness. Worth noting separately: `qou_mass`'s own
+  proton value (`0.629328402202921918…`) differs from the table's
+  (`0.629328424313699969…`) at the **8th** decimal, so the two trees disagree
+  even on the quantity they do share.
+- **`proton_mass`** — rel 5.45e-4, three orders above the Class 1 shifts. Too
+  large to be precision; a real change.
+
+### Class 3 — a routing change, not a number (1 test)
+
+`4he_binding` asserts `"L1" in r.method` and gets
+`L3-α-cluster:n_α=1,pairs=0(magic-A-derived)`. Someone deliberately re-routed
+⁴He through the α-cluster path. That is a behaviour change to adjudicate, and it
+is not a numerical question at all.
+
+### What this changes about the ask
+
+"7 tests fail, owner please decide" is the wrong shape. Three need a tolerance
+convention (an engineering call, not an owner one); one is already decided and
+just needs the expected value updated to the post-`qou-92u9` cache; one is a
+possible proton/protium naming mix-up that should be read before anything is
+re-pinned; one is a genuine value change; one is a routing decision.
+
+**Not acted on**, because re-pinning an expected value is exactly how a test
+stops testing anything — and `probe_he4_canonical_tr_m_fingerprint` in this same
+repo shows where that ends up: `CITED_TR_M` quoted to 51 digits, which no
+proposition ever stated.
