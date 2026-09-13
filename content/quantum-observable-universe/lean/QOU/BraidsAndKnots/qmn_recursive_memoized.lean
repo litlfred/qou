@@ -29,13 +29,32 @@ class QmnRecursiveMemoizedContext extends QOU.Shared.MarkovTraceContext where
       agrees with the recursive computation (the recursion is the
       authoritative answer). -/
   claim_i_looks_up_cache : ∀ lam ρ : ℕ, chi lam ρ = chi_recursion lam ρ
-  /-- Manuscript sub-claim (ii) — Recursion structure: the border-strip
-      recursion stays abstract because it requires enumeration of
-      border strips of size `ρ_1`. -/
-  claim_ii_miss_computes_via : Prop
-  /-- Witness that the recursion-structure sub-claim holds (§3b-cond;
-      the predicate is conjectural, an instance supplies the proof). -/
-  claim_ii_miss_computes_via_holds : claim_ii_miss_computes_via
+  /-- Border strips of size `ρ_1` in `λ`, as the list the recursion sums
+      over.  Carrying the enumeration as a field is what lets sub-claim
+      (ii) below be *stated*: the recursion's content is the sum, and a sum
+      needs an index set. -/
+  borderStrips : ℕ → ℕ → List ℕ
+  /-- Height `ht(ξ)` of a border strip, supplying the sign `(-1)^{ht(ξ)}`. -/
+  stripHeight : ℕ → ℕ
+  /-- Character of the reduced pair `χ^{λ ∖ ξ}_{ρ ∖ ρ_1}` — the recursive
+      call's value. -/
+  chiReduced : ℕ → ℕ → ℕ → R
+  /-- Manuscript sub-claim (ii) — the border-strip recursion: the recursive
+      value is the signed sum over border strips of size `ρ_1`,
+
+      `χ^λ_ρ = Σ_{ξ ∈ BS(λ, ρ_1)} (-1)^{ht(ξ)} · χ^{λ∖ξ}_{ρ∖ρ_1}`.
+
+      **This is the Murnaghan–Nakayama rule, written out.**  It was
+      `claim_ii_miss_computes_via : Prop` with a `_holds` witness beside
+      it — a field typed with the *universe* `Prop`, so the instance chose
+      the proposition and `⟨True, trivial⟩` discharged it.  The docstring
+      said the recursion "stays abstract because it requires enumeration of
+      border strips"; the enumeration is now a field, so it does not. -/
+  claim_ii_border_strip_recursion : ∀ lam ρ : ℕ,
+    haveI := ringR
+    chi_recursion lam ρ =
+      ((borderStrips lam ρ).map
+        (fun ξ => (-1 : R) ^ stripHeight ξ * chiReduced lam ρ ξ)).sum
   /-- Cache lookup operation `cache_get λ ρ` returns `some v` on hit,
       `none` on miss. -/
   cache_get : ℕ → ℕ → Option R
@@ -65,9 +84,12 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
 def qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
     (∀ lam ρ : ℕ, ctx.chi lam ρ = ctx.chi_recursion lam ρ) ∧
-    ctx.claim_ii_miss_computes_via ∧
+    (∀ lam ρ : ℕ, haveI := ctx.ringR
+      ctx.chi_recursion lam ρ =
+        ((ctx.borderStrips lam ρ).map
+          (fun ξ => (-1 : ctx.R) ^ ctx.stripHeight ξ * ctx.chiReduced lam ρ ξ)).sum) ∧
     (∀ (lam ρ : ℕ) (v : ctx.R), ctx.cache_get lam ρ = some v → v = ctx.chi lam ρ) :=
-  ⟨ctx.claim_i_looks_up_cache, ctx.claim_ii_miss_computes_via_holds,
+  ⟨ctx.claim_i_looks_up_cache, ctx.claim_ii_border_strip_recursion,
    ctx.claim_iii_stores_result_cache⟩
 
 end QOU.BraidsAndKnots
