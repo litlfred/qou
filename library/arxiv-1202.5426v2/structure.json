@@ -1,0 +1,133 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1202.5426v2",
+ "source": {
+  "file": "1202.5426v2.pdf",
+  "sha256": "6c7668ad72e33b4b7c03629d765b9014d4c1e6474d867ece48d1d2eeb7a997d6",
+  "bytes": 362547,
+  "pages": 49,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1202.5426",
+   "version": "2",
+   "primary_class": "math.AP",
+   "stamp_date": "23 Jul 2012"
+  },
+  "doi": null,
+  "title": "Hard analysis meets critical knots Stationary points of the M \u00f6bius energy are smooth S. Blatt\u2217 \u03a6. Reiter\u2217\u2217 A. Schikorra\u2217\u2217\u2217",
+  "authors_raw": "June 30, 2018",
+  "title_lines": [
+   "Hard analysis meets critical knots",
+   "Stationary points of the M \u00f6bius energy are smooth",
+   "S. Blatt\u2217 \u03a6. Reiter\u2217\u2217 A. Schikorra\u2217\u2217\u2217"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181029042433-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Euler-Lagrange equation: Proof of Theorem I",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Initial regularity: Proof of Theorem III",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Bootstrapping: Proof of Theorem IV",
+   "page": 32,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A Appendix",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 586,
+   "n_words": 92
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 8821,
+   "n_words": 1565
+  },
+  {
+   "id": "sec-001-2-euler-lagrange-equation-proof-of-theorem-i",
+   "number": "2",
+   "title": "Euler-Lagrange equation: Proof of Theorem I",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 16,
+   "n_chars": 16414,
+   "n_words": 2908
+  },
+  {
+   "id": "sec-002-3-initial-regularity-proof-of-theorem-iii",
+   "number": "3",
+   "title": "Initial regularity: Proof of Theorem III",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 32,
+   "n_chars": 21791,
+   "n_words": 4533
+  },
+  {
+   "id": "sec-003-4-bootstrapping-proof-of-theorem-iv",
+   "number": "4",
+   "title": "Bootstrapping: Proof of Theorem IV",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 49,
+   "n_chars": 25734,
+   "n_words": 4653
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 73346
+ }
+}
