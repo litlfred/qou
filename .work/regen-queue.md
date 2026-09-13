@@ -360,3 +360,32 @@ Gate: 6 NEW files → 4, total findings 30 → 28. **The remaining 4 are not
 defects** — see the `qou-fl9i` note: three import `q_parameter` before the
 flagged literal, which already raises dps 15 → 50 through the
 `qou_substrate/constants.py` floor, and this audit does not model that.
+
+## 15. `paper_six_term_isotope_sweep.py` — chirality factor serialised at true precision 2026-09-13
+
+**Same witness as §5** (`qou-qe81`'s re-run item), second defect, independent of
+the error rows.
+
+All **16** `witness_float64_padding_audit` findings in
+`paper-six-term-isotope-sweep.witness.json` are one field:
+`term5_chirality_factor_a_K`, in three places (`rows[]`,
+`all_modes.brane-legacy.rows[]`, `all_modes.drop.rows[]`).
+
+It is genuinely float64 and deliberately so. `aK_v2` narrows q with
+`qf = float(q_val)` because **its cache is keyed on a float64-rounded q** — its
+own docstring says as much — `_aK_v2_cached` returns `float(total)`, and `aK_v2`
+promotes that back with `mp.mpf(aK_f)`. The value carries 53 bits; `fmt()` was
+rendering 60:
+
+```
+fmt()                 1.5032359764467355667250103579135611653327941894531250000000
+str_at_true_precision 1.5032359764467356          <- the audit's own "really" value
+```
+
+Now `str_at_true_precision`. **Value-preserving** — only the rendering changes,
+and `aK_v2` is untouched, because per `qou-qrsp` the remedy for a
+genuinely-float64 quantity is to stop serialising 53 bits at 50 dps rather than
+to fake precision it never had. The neighbouring terms stay on `fmt`: they are
+mpf all the way down, which is what the long comment above that dict is about.
+
+Clears 16 of the gate's 54 NEW once this witness is regenerated.

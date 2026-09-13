@@ -84,7 +84,7 @@ from hecke_core import (  # noqa: E402
     Phi_q,
 )
 from experimental_constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps, fmt, str_at_true_precision  # noqa: E402
 
 HERE = Path(__file__).parent
 
@@ -869,7 +869,24 @@ def paper_six_term_mass(Z, N, include_inter=True,
         "term3_pair_gen_tower": t3,
         "term4_frobenius_codim_raw": t4_raw,
         "term4_frobenius_codim_scaled": t4,
-        "term5_chirality_factor_a_K": t5_factor,
+        # SERIALISED AT ITS TRUE PRECISION, not at OUTPUT_DPS. This one field
+        # is genuinely float64 and deliberately so: `aK_v2` narrows q with
+        # `qf = float(q_val)` because its cache is keyed on a float64-rounded
+        # q (its own docstring says so), `_aK_v2_cached` returns `float(total)`,
+        # and `aK_v2` then promotes that back with `mp.mpf(aK_f)`. So the value
+        # carries 53 bits, and `fmt()` was printing 60 digits of it -- the
+        # binary64 expansion, e.g.
+        # 1.50323597644673556672501035791356116533279418945312... for a value
+        # that is really 1.5032359764467356. Sixteen occurrences in this
+        # witness, all of them this field.
+        #
+        # NOT fixed by widening aK_v2: the f64 is a deliberate caching choice,
+        # and per bean qou-qrsp the remedy for a genuinely-float64 quantity is
+        # to stop serialising 53 bits at 50 dps, not to fake precision it never
+        # had. Value-preserving -- only the rendering changes. The neighbouring
+        # terms stay on `fmt` because they ARE mpf all the way down, which is
+        # what the comment above this dict is about.
+        "term5_chirality_factor_a_K": str_at_true_precision(t5_factor),
         "term5_chirality_source": chirality_source,
         "term5_additive_contribution": t5,
         "term6_cyclotomic_tail_MeV": t6_MeV,  # mpf — calibration-critical
