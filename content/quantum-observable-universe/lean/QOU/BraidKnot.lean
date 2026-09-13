@@ -37,6 +37,20 @@ import QOU.BraidKnot.HookSumBetaCoordinates
 -- is the REV_n energy rigidity WITHOUT asymptotics -- PR #7286 had it only as the measured
 -- `E ~ ln q_0 (2n)^{3/2} (gbar-2)^2 / 24`. Measured tight: zero gap against H_min at L = k.
 import QOU.BraidKnot.HookSumCompletedSquare
+-- The staircase's hook lengths in closed form (bean qou-hok7). Presenting delta_k as the
+-- sublevel set `{(i,j) : i+j < k}` makes it visibly self-transpose, so `colLen` is free and
+-- `hook (i,j) = 2(k-i-j) - 1` falls out -- the hook is constant along antidiagonals, and
+-- antidiagonal s carries s+1 cells. `staircase_hookSum` telescopes that into
+-- `Sum_c g(h(c)) = Sum_{s<k} (s+1) g(2(k-s)-1)`, which at `g = eps` IS the staircase's
+-- beta-side by `betaSide_eq_hookSum`. PR #7294 had this fact only ENUMERATED (k = 1..40).
+import QOU.BraidKnot.StaircaseHookMultiset
+-- The hook sum is a separable QUADRATIC form in the beta-coordinates (bean qou-hok7):
+-- composing `two_mul_sum_hookZ_betaForm` with `sum_pair_betaR_sub` leaves no pair term at all,
+-- so comparing two shapes of one size gives `2(H(nu) - H(delta_k)) = Sum 2(i-k) u_i + Sum u_i^2`
+-- with both terms non-negative. Hence the staircase is the UNIQUE minimiser of the hook sum at
+-- triangular n, and REV_n's cost term is a local harmonic penalty on displacement away from the
+-- staircase lattice -- quantised, since `Sum u_i^2` is an even integer when `Sum u_i = 0`.
+import QOU.BraidKnot.HookSumElasticity
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
