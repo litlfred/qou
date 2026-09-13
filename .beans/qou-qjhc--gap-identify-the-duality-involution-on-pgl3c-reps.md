@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-11T15:25:52Z
+updated_at: 2026-09-13T05:44:51Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -529,3 +529,83 @@ is short: ratio vector, integer left-kernel of the 128 x 6 matrix, check
 
 Bean stays OPEN.  Nothing here bears on whether duality equals the sigma-transport; it is
 a statement about the recorded artifact.
+
+
+---
+
+## UPDATE 2026-09-13 — the falsifiable form is ANSWERED; the bean stays open
+
+**A sibling answered issue #7092** (main \`f7fee734c3\`, session
+\`01CwN2Uy1xo99iLdJgrcKYbY\`), on the exact L6a4 class-1 point over
+K = Q[T]/(f), by the Z-kernel of the gauge exponent lattice — exactly in K, no
+floats, no tolerances, no fitting:
+
+* **sigma_b: IS a PGL(3)-gauge coboundary.** All 122 torus kernel relations have
+  product exactly 1, so the ratio is a homomorphism on the row lattice
+  L = {sum e = 0 mod 3}, i.e. an element of T_PGL(3)(K) — the group that actually
+  acts on Ptolemy coordinates. It does NOT lift to a diagonal SL(3) matrix over K
+  (r(3e_0) is not a cube in K, exact).
+* **sigma_a: is NOT.** 91 of 122 integer relations have product != 1.
+* **The scalar ansatz lambda_v^{t_i} (the issue as written): NOT a coboundary for
+  either sigma.**
+
+Gal(K/Q) = Z/2 x Z/2, both sigma involutions — which is what makes the two verdicts
+consistent with D being an involution.
+
+**The bean stays open, and the sibling says why in its own scope line:** this is a
+*point-level* fact about *this point*, **not an identity of maps on the variety**.
+It does not establish that rho -> rho^{-T} on representations induces sigma_b. That
+identification — the thing this bean is about — is untouched. Per repo rule 13a this
+bean is not closeable while that conjecture is open.
+
+## What this session added (branch \`claude/8-fold-way-qou-derivation-qj9uzv\`)
+
+**The FULL un-eliminated class-1 assignment, recovered exactly in K.** The six
+coordinates \`eliminate_fixed_ptolemys\` drops are all **cube roots of unity**:
+
+    c_0012_0 = c_0102_1 = c_0111_0 = c_1002_0 = c_2001_0 = 1
+    c_0012_1 = u^2                    (verified exactly: x == u^2, x^3 = 1 in K)
+
+That is **GGZ Remark 5.3 — vertex points take the value 1 — twisted by the
+obstruction cocycle.** In the trivial class every fixed coordinate is 1; here the
+class is non-trivial and exactly one of the six carries the mu_3 twist. It is the
+same mu_3 that \`PtolemyTwist.lean\` formalises as \`zpow3\`, arriving in the one
+place the recorded artifact had discarded it.
+
+Verification: 12 equations contain no unknown and vanish *before* anything is solved
+(an independent check of the recorded 26); each of the six is pinned by **6 to 10
+independent single-unknown equations**, all agreeing exactly in K; all **39/39**
+un-eliminated equations vanish; no recovered coordinate is zero.
+Producer \`computations/ptolemy/ptolemy_class1_full_assignment.py\`, output
+\`computations/ptolemy/L6a4-c1-ptolemy-FULL.json\`.
+
+## THREE ERRORS OF MINE RETRACTED HERE, all with the same symptom
+
+Every one presented as "0 solutions" and each had a different cause:
+
+1. **"the coboundary test is BLOCKED at the DATA"** (my commit \`6c2f3700c8\`) —
+   **false twice.** The test never needed the full assignment (the sibling ran it on
+   the eliminated coordinates via the kernel route, which my own docstring had
+   named), and the artifact *can* supply the full assignment. The error was
+   generalising *"my route cannot be verified"* into *"the test cannot be run"*.
+   File renamed \`..._superseded.py\` so the filename stops asserting it.
+2. **"NO candidate satisfies all equations"** — a solver artifact. sympy's general
+   nonlinear \`solve\` on all 39 returned nothing; that is not evidence of no solution.
+3. **"the system is LINEAR"** — wrong, and caught by my own assertion before any
+   number was produced. Degree 1 in *each* variable is not linear:
+   \`c_0012_0 = c_0111_0 * c_1002_0\` is bilinear. The system is **triangular**, which
+   is what makes it solvable.
+
+One honest sub-finding survives from (1) and is reusable: **0 of the 112
+identifications relate two coordinates the recorded file already knows**, because the
+26 are one representative per identification class — so nothing propagated along them
+can ever be cross-checked. Prefer a route whose own equations are the check.
+
+## Next, in priority order (agent judgement, not a finding)
+
+1. **Test whether sigma_b is the duality map ON THE VARIETY, not at a point.** The
+   full assignment now makes the {1,1,1,0} duality formula evaluable directly (it
+   needed 8 coordinates per tetrahedron and had at most 2). This is the bean's
+   actual subject and the gap the sibling explicitly left.
+2. Re-run the coboundary verdict against the FULL point, as an independent
+   confirmation of the sibling's result through different data.
