@@ -1,0 +1,314 @@
+# The (−2,3,7) pretzel's level-2 Stokes data, and the `s(x)` adjoint-weight test (2026-09-13)
+
+**Bean** `qou-lzzi`. **Producer**
+[`computations/probes/aomega_m3_pretzel_level2_stokes_probe.py`](../../computations/probes/aomega_m3_pretzel_level2_stokes_probe.py).
+**Sibling arcs** PR #7150, PR #7152 (`qou-m3ad`, `qou-x3iv`) — same question, different route.
+
+## 0. The question, and the criterion
+
+Garoufalidis–Gu–Mariño, *Peacock patterns and resurgence in complex Chern–Simons
+theory* (held, `library/arxiv-2012.00062v3/`) print the `q → 0` Stokes matrices of
+4₁ and 5₂ as polynomials in the **adjoint weight**
+
+$$
+s(x) \;=\; x^{-1} + 1 + x
+\qquad\text{(their (239))}
+$$
+
+namely
+
+| knot | GGM | `S⁺(x;0)` | at `x = 1` |
+|---|---|---|---|
+| 4₁ | (188) | `[[1, s], [0, 1]]` | `[[1, 3], [0, 1]]` |
+| 5₂ | (307) | `[[1, s+1, 0], [0, 1, 0], [−s, −s², 1]]` | `[[1, 4, 0], [0, 1, 0], [−3, −9, 1]]` |
+
+(The 5₂ row is the printed three-factor product `S_{σ₃σ₁}S_{σ₃σ₂}S_{σ₁σ₂}`,
+multiplied out; at `x = 1` it reproduces GGM (96) with Stokes constants 4, 3, 3, and
+`s(1)² = 9`.)
+
+So the criterion is sharp and checkable: **"`s(x)`-built" means every entry of
+`S^±(x;0)` lies in `ℤ[s(x)]`**, `s(x) = x + 1 + 1/x`.
+
+The question of this arc is whether the rank-6, **level-2** (−2,3,7) pretzel
+(SnapPy `m016` = K12n242) answers the same way.
+
+## 1. Why the operator, and not the blocks
+
+PR #7152 attacked the **blocks**: residues of the pretzel's state integral → six
+`(q^{1/4}, x^{1/2})`-series → fusion → the `σ₁σ₁` rotated index. That route is
+correct as far as it goes and is validated to `7.8·10⁻¹⁹` against the integral
+itself (§3k of
+[`2026-09-06-two-bridge-layering-from-farey-word.md`](2026-09-06-two-bridge-layering-from-farey-word.md)),
+but it stalls at the **level-2 fusion rule**: Garoufalidis–Zagier's Obs 3.9 makes
+the index the *weight-1 component of an ε-expansion at collided triple poles*, and
+§3k/§3m show that no reweighting of the six bare families — including the derived
+Gaussian monomial `x_k^{−A}` of §3m — reproduces it.
+
+This arc goes **upstream of the blocks**. GGM build the Stokes matrices out of the
+fundamental solution matrix `W_m(x;q)` of a linear q-difference equation:
+
+$$
+S^{+}(x;q) \;=\; A\cdot W_{-1}(x^{-1};q^{-1})\cdot W_{-1}(x;q)^{T}\cdot B
+$$
+
+— their (187a) for 4₁ and (305a) for 5₂, with `A`, `B` constant integer matrices —
+and the operator itself is (332) for the Theorem-28 family and (276) for 5₂. The
+`q → 0` entries of `S^±` are built out of that operator's **`q → 0` characteristic
+roots**, so the `s(x)` question can be answered by deriving the pretzel's operator,
+with no blocks and no fusion rule anywhere in the argument.
+
+## 2. The derivation
+
+**Faddeev's functional equation, from the held product form** (Garoufalidis–Kashaev
+`arxiv-1304.2705v1` (1); the dictionary is gate G0 of the sibling probe
+`aomega_m3_pretzel_one_dim_reduction_probe.py`). With
+`Φ_b(z) = (e^{2πb(z+c_b)};q)_∞ / (e^{2πb⁻¹(z−c_b)};q̃)_∞`, `q = e^{2πib²}`,
+`c_b = i(b+b⁻¹)/2`: the numerator's argument is multiplied by `q` under `z ↦ z+ib`
+and the denominator's by `e^{2πi} = 1`, so with `e^{2πbc_b} = −q^{1/2}`,
+
+$$
+\Phi_b(z+ib) \;=\; \frac{\Phi_b(z)}{1+q^{1/2}e^{2\pi b z}},
+\qquad
+\Phi_b(z-ib) \;=\; \Phi_b(z)\,\bigl(1+q^{-1/2}e^{2\pi b z}\bigr).
+\tag{FE}
+$$
+
+**The descendant operator.** For a one-dimensional state integral with descendant
+variable `t`,
+
+$$
+Z(t)=\int_{\mathbb{R}+i\varepsilon} F(v)\,e^{-A\pi i v^{2}+2\pi i v t}\,dv ,
+$$
+
+shift the contour `v → v − ib`. Every dilogarithm picks up its (FE) factor in the
+*numerator*; the Gaussian contributes `X^{−A}q^{A/2}` and the exponential contributes
+`w = e^{2πbt}`, where `X = e^{2πbv}` acts inside the integral as exactly the
+descendant shift `t → t − ib`. Writing `N(X)` for the product of the (FE) factors,
+
+$$
+P(X) \;=\; q^{A/2}\,w\,N(X)\;-\;X^{A},
+\qquad P(X)\cdot Z = 0 .
+\tag{OP}
+$$
+
+The second term is GGM (332)'s descendant term `−(−q)^A w^{-1} q^m S^A`; it carries
+`q^m`, so at fixed descendant index it vanishes as `q → 0`. GGM (276) shows this
+directly for 5₂ — the coefficient is `(s − q^{2+m})` and the `q^{2+m}` drops. The
+`q → 0` exponent analysis therefore runs on `N(X)`, the **offset polynomial**, and
+the probe records separately where the descendant term sits (for 5₂ its valuation
+*ties* the hull at `X^A`, which is why running the polygon on the full `P` returns a
+`w`-contaminated leading polynomial — real, and the descendant deformation rather
+than an exponent).
+
+**The three integrands** are §3h–3i's, derived there from each knot's Neumann–Zagier
+datum at its rank-one quad (not guessed):
+
+| knot | integrand | `A` | `r_eff = Σ αⱼ²` |
+|---|---|---|---|
+| 4₁ | `∫ Φ_b(v+u) Φ_b(v) e^{−πiv²+2πivt} dv` | 1 | 2 |
+| 5₂ | `∫ Φ_b(v) Φ_b(v+u) Φ_b(v−u) e^{−2πiv²+2πivt} dv` | 2 | 3 |
+| (−2,3,7) | `∫ Φ_b(v+u/2) Φ_b(v−u/2) Φ_b(2v−c_b) e^{−2πiv²+2πivt} dv` | 2 | **6** |
+
+The pretzel's third factor is at **doubled argument**, so it shifts by `−2ib` and
+contributes **two** (FE) factors. With `e^{2πb(2v−c_b)} = −q^{−1/2}X²`, those are
+
+$$
+\Phi_b\bigl(2v-c_b-2ib\bigr)=\Phi_b(2v-c_b)\,(1-q^{-1}X^{2})(1-q^{-2}X^{2}).
+$$
+
+## 3. The derived operators
+
+With `x = e^{2πbu}`, `σ := x^{1/2}+x^{−1/2}`, all exact in sympy:
+
+| knot | `N(X)` coefficients `(X⁰, X¹, …)` | degree |
+|---|---|---|
+| 4₁ | `(1,\; (1+x)q^{-1/2},\; x\,q^{-1})` | 2 |
+| 5₂ | `(1,\; s(x)\,q^{-1/2},\; s(x)\,q^{-1},\; q^{-3/2})` | 3 |
+| (−2,3,7) | `(1,\; \sigma q^{-1/2},\; -q^{-2},\; -\sigma(q^{-3/2}+q^{-5/2}),\; -q^{-2},\; \sigma q^{-7/2},\; q^{-4})` | **6** |
+
+**Gate G1 — 5₂ reproduces GGM (276) exactly.** The coefficients are `(1, s, s, 1)`
+in `s(x) = x+1+1/x`. GGM's (276) companion matrix is
+`[[0,1,0],[0,0,1],[1,−s,s−q^{2+m}]]`, i.e. the recurrence
+`y_m − s\,y_{m+1} + (s−q^{2+m})y_{m+2} − y_{m+3} = 0`. Same operator, same `s`.
+
+**Gate G2 — 4₁ reproduces GGM (332)** at `(A,r) = (1,2)` with pole offsets `{x, 1}`:
+`N = Π_k(1 + q^{−1/2}x_k X)`, elementary symmetric functions `e₁ = 1+x`, `e₂ = x`.
+
+**Gate G5 — the rank.** The pretzel's operator has **degree 6**: two from the unit
+dilogarithms, **four** from the doubled one. That is the pretzel's rank 6 — the
+twelve Garoufalidis–Zagier level-2 series `H_j^±`, `j = 0…5`, six per side — derived
+here from the state integral alone, independently of GZ.
+
+## 4. Where `s(x)` comes from
+
+Take the Newton polygon of `N(X)` in `q` and read the leading polynomial of each
+segment (substituting `X = q^{−\text{slope}}Y`):
+
+| knot | hull | segments (roots, slope) | leading polynomial(s) | roots |
+|---|---|---|---|---|
+| 4₁ | `(0,0)→(2,−1)` | 2 @ `−1/2` | `(Y+1)(xY+1)` | `−1, −1/x` |
+| 5₂ | `(0,0)→(3,−3/2)` | 3 @ `−1/2` | `(Y+1)(Y+x)(Y+1/x)` | `−1, −x, −1/x` |
+| (−2,3,7) | `(0,0)→(2,−2)→(6,−4)` | **2 @ `−1`, then 4 @ `−1/2`** | `−(Y−1)(Y+1)`; `(Y²−1)(Y²+σY+1)` | `±1`; `±1, −x^{1/2}, −x^{−1/2}` |
+
+**This is the mechanism.** For 5₂ the `q → 0` exponents are `{−1, −x, −1/x}` — the
+**adjoint weight set** of the meridian variable, up to sign — and
+
+$$
+(Y+1)(Y+x)(Y+x^{-1}) \;=\; Y^{3} + s\,Y^{2} + s\,Y + 1 ,
+\qquad e_1 = e_2 = s(x).
+$$
+
+So `s(x)` is not an ansatz and not a coincidence: it is the first (and second)
+elementary symmetric function of the pole offsets `x_k = e^{2πbu_k}` at
+`u = (0, u, −u)`. That is why it, and only it, appears in GGM (188)/(307).
+
+For 4₁ the offsets are `{1, x}` with `e₁ = 1+x`, `e₂ = x`; the `s(x)` that appears in
+(188) is `(1+x+x²)/x = (e₁²−e₂)/e₂`, the extra `x^{−1}` supplied by the `θ`-
+renormalisation of GGM (327) (`w = x^{−2}` for 4₁, per their (322)).
+
+## 5. The pretzel: the verdict
+
+**The pretzel's `q → 0` exponents are NOT the adjoint weights of `x`.** Its Newton
+polygon splits **2 + 4 across a `q^{1/2}` step** — the level-2 signature, visible in
+the operator with nothing else assumed — and the four exponents on the long segment
+are the roots of
+
+$$
+(Y^{2}-1)\,(Y^{2}+\sigma Y + 1),
+\qquad \sigma = x^{1/2}+x^{-1/2},
+$$
+
+i.e. `Y = ±1` and `Y = −x^{1/2}, −x^{−1/2}`. The x-dependent pair is the adjoint
+weight set **of the square root of the meridian variable**:
+
+$$
+\sigma \;=\; s\bigl(x^{1/2}\bigr) - 1 .
+$$
+
+**The extension is exactly degree 2 (gate G8c):**
+
+$$
+\sigma^{2} \;=\; s(x) + 1 ,
+\qquad\text{and } Y^{2}-(S+1) \text{ is irreducible over } \mathbb{Q}(S).
+$$
+
+So `σ = √(s(x)+1)` generates a **degree-2 extension of `ℤ[s(x)]` and is not a
+polynomial in `s(x)`**.
+
+> **`s(x)` verdict — NO.** The pretzel's `q → 0` Stokes data is not built from
+> `s(x) = x+1+1/x`. It is built from `σ = s(x^{1/2}) − 1`, which satisfies
+> `σ² = s(x)+1`. Equivalently: it *is* `s`-built, but on the **double cover**
+> `x = (x^{1/2})²` — which is what "level 2" means.
+
+### 5a. The grading, and the refinement that follows
+
+Gate G8b: the pretzel's operator is **invariant under the simultaneous flip**
+
+$$
+(q^{1/2},\,x^{1/2}) \longmapsto (-q^{1/2},\,-x^{1/2}) .
+$$
+
+Read off the coefficient table of §3: `σ` appears to an **odd** power exactly when
+`q` appears to a **half-integer** power. So level 2 and the quadratic extension are
+**one phenomenon**, not two — the deck transformation of the `q`-double cover is tied
+to the deck transformation of the `x`-double cover.
+
+The refinement this gives, which is the practically useful part:
+
+- **Stokes entries at integer powers of `q` carry even powers of `σ`, hence DO lie in
+  `ℤ[s(x)]`.**
+- **Entries at half-integer powers of `q` carry odd powers of `σ`, and do not.**
+
+**This is independently corroborated by the parent session's derived data.** The
+pretzel's `σ₁σ₁` rotated index (§3f, from SnapPy's `m016` triangulation through the
+DGG engine, and independently certified against GZ's `H_1^+H_1^-` in §3l) has **only
+integer powers of `q` and of `ζ`**, and its coefficients are exactly polynomials in
+`s(ζ)`:
+
+| order | (−2,3,7) coefficient in `s` |
+|---|---|
+| `q¹` | `−2(s+1)` |
+| `q²` | `s² − s − 3` |
+| `q³` | `5s² + 2s − 1` |
+
+Under the grading above that is *required*, not a coincidence — and it is why the
+`σ₁σ₁` entry alone could never settle the `s(x)` question. The half-integer-`q`
+sector, where `σ` actually shows, is precisely the part the index route cannot see.
+
+## 6. Gates
+
+Everything above is gated on 4₁ and 5₂, where GGM print the answer.
+
+| gate | what it checks | result |
+|---|---|---|
+| G1 | 5₂: `N(X) = (1, s, s, 1)` — GGM (276)/(332), offsets `{1,x,1/x}` | exact sympy |
+| G2 | 4₁: `N(X) = (1, 1+x, x)` — GGM (332) at `(A,r) = (1,2)` | exact sympy |
+| G3 | the (FE)-rearranged integrand identity, **pointwise**, all three knots | `≲ 2.3·10⁻²⁹` |
+| G4 | the derived recurrence on the **actual state integrals** (degree 6 for the pretzel) | quadrature-limited; see below |
+| G5 | degree 6 = the pretzel's rank 6 | exact |
+| G6 | GGM (188)/(307) multiplied out lie in `ℤ[s(x)]` | exact |
+| G7a/b | the Newton polygons and their leading polynomials | exact |
+| G8a/b/c | `x` only via `σ`; the `ℤ/2` grading; `σ² = s(x)+1` irreducible | exact |
+
+Two notes on the numerics, both worth carrying forward:
+
+- **G3 is the strong gate and G4 is the corroboration, not the other way round.** G3
+  tests the *algebra* of (OP) pointwise and lands at the arithmetic limit
+  (`10⁻²⁹` at `mp.dps = 30`). G4 tests the *contour shift*, which G3 cannot see, and
+  its residual is **quadrature-limited**: the integrand is a Gaussian chirp whose
+  oscillation frequency grows linearly in `|v|`, so `mp.quad`'s node density — not
+  `dps` — sets the floor.
+- **The convergence window is the whole difficulty in G4.** `Z(t')` converges on
+  `ℝ+iε` only for `−(r_eff−A)ε < Im\,t' < Aε`, and the ladder moves `Im t'` by
+  `−k\,\mathrm{Re}\,b`, so the whole degree-`d` ladder fits only if
+  `r_eff·ε > d·\mathrm{Re}\,b`. At `|b| = 1` that is **exactly marginal**
+  (`Im c_b = Re b` when `|b| = 1`), and the quadrature floors at `~10⁻⁶` however high
+  `dps` is set. Taking `|b| < 1` makes `Im(c_b)/Re(b) = (1+|b|^{−2})/2 > 1` and buys
+  a real margin; `|b| ≈ 0.55` is what makes the gate meaningful. Note also
+  `r_eff = Σ αⱼ²`, so the pretzel's doubled factor contributes **4, not 1** — its
+  integrand decays *faster* than 4₁'s or 5₂'s, not slower.
+
+## 7. Scope, and what is NOT established
+
+**Scope (a).** This is a statement about the `q → 0` exponents of the derived
+descendant operator, and hence about the **ring** in which the `q → 0` Stokes entries
+lie. It is not a scope-(b) structural exclusion of `s(x)` from the pretzel's Stokes
+data — indeed §5a says the opposite for the integer-`q` sector.
+
+**It does not produce the pretzel's `S⁺(x;q)` entry by entry.** GGM fix the left and
+right `GL(r)` normalisation matrices **per knot**: (187a) for 4₁ and (305a) for 5₂,
+and those come from the four region matrices `M_R(x;q)` — (186a)–(186d) for 4₁ and
+(94a)–(94d) for 5₂. **No held source prints the analogue for a rank-6, level-2
+knot**, and that is the precise missing input. Naming it exactly, so a later agent
+does not re-derive the wrong thing:
+
+> Missing: the four region matrices `M_R(x;q)`, `R ∈ {I,II,III,IV}`, for the
+> pretzel — equivalently the constant `A`, `B ∈ GL(6, ℤ[x^{±1/2}])` of the analogue
+> of (305a). This is a **normalisation**, not new q-series data: the blocks are
+> already derived (§3k, six families validated to `7.8·10⁻¹⁹`) and the operator is
+> derived here.
+
+Consequently the ring statement of §5 is what this arc establishes; the explicit
+integer matrix — the analogue of `[[1,4,0],[0,1,0],[−3,−9,1]]` at `x = 1` — is not,
+and cannot be read off without the region matrices or a Borel-resummation
+computation that fixes them.
+
+**One further thing this does not do.** It says nothing about which *orientation* of
+the pretzel GGM/GZ would use; the integrand here is SnapPy's, per §3i, and the index
+does not see orientation (§3l G5). Nothing in §§3–5 depends on the choice, since the
+exponent multiset is orientation-symmetric under `Y → 1/Y`, but a future attempt to
+pin the region matrices will have to settle it.
+
+## 8. What this changes for the arc
+
+- `qou-m3ad` item 1 ("is the pretzel's Stokes data `s(x)`-built?") now has a derived
+  answer **for the ring**, obtained without the level-2 fusion rule that blocked
+  §3k/§3m. The fusion rule remains open and remains the route to the explicit
+  matrix.
+- The `σ₁σ₁` index being a polynomial in `s(ζ)` — which §3f recorded as an
+  observation forced by `ζ ↔ ζ⁻¹` symmetry — now has a **reason**: the `ℤ/2` grading
+  of §5a puts the whole integer-`q` sector inside `ℤ[s(x)]`.
+- **`σ² = s(x)+1` is the concrete statement of "level 2" for this knot**, and is the
+  thing to carry into any downstream identification. Where the corpus needs a
+  level-2 analogue of an `s(x)` formula, the substitution is `s → σ²−1` with `σ` the
+  new generator, not `x → x²`.

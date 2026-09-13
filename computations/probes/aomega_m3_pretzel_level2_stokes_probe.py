@@ -209,6 +209,16 @@ KNOTS = {
 }
 
 
+def mp_eval(expr, Qv, XRv, Wv, Xv=None):
+    """Evaluate a sympy expression in (Q, XR, W, X) at mpmath values, WITHOUT float64.
+
+    `sp.N(...)` followed by `complex(...)` would downcast to float64 and floor every
+    numerical gate at ~1e-16; `lambdify(..., 'mpmath')` keeps mpf/mpc throughout.
+    """
+    f = sp.lambdify((Q, XR, W, X), expr, "mpmath")
+    return f(Qv, XRv, Wv, Xv if Xv is not None else 1)
+
+
 def _mp_setup(dps=30):
     import mpmath as mp
     mp.mp.dps = dps
@@ -263,10 +273,7 @@ def pointwise_identity(name, dps=30):
                 return g * mp.exp(-A * 1j * mp.pi * vv**2 + 2j * mp.pi * vv * t)
             lhs = integrand(v - 1j * b) / integrand(v)
             Xv = mp.exp(2 * mp.pi * b * v)
-            sub = {Q: complex(mp.sqrt(qq)), XR: complex(mp.sqrt(xv)),
-                   X: complex(Xv), W: complex(wv)}
-            Nv = mp.mpc(complex(sp.N(Nsym.as_expr().subs(sub), dps)))
-            rhs = qq ** mp.mpf(A) / 2 * 0  # placeholder, replaced below
+            Nv = mp_eval(Nsym.as_expr(), mp.sqrt(qq), mp.sqrt(xv), wv, Xv)
             rhs = mp.power(qq, mp.mpf(A) / 2) * wv * mp.power(Xv, -A) * Nv
             rel = abs(lhs / rhs - 1)
             worst = max(worst, rel)
@@ -279,9 +286,18 @@ def integral_recurrence(name, dps=30):
     """G4: sum_j c_j Z(t - i (j - A) b) = 0 on the actual state integrals.
 
     Convergence of Z(t') on R + i eps needs  -(r_eff - A) eps < Im(t') < A eps,
-    with r_eff = sum alpha_j^2 (the pretzel's doubled factor contributes 4, not 1).
-    b is chosen with |b| < 1 so that Im(c_b) / Re(b) = (1 + |b|^-2)/2 > 1, which is
-    what makes the whole window of shifts fit under the first pole (at Im = Im c_b).
+    with r_eff = sum alpha_j^2 (the pretzel's doubled factor contributes 4, not 1,
+    because Phi_b(2v - c_b) ~ exp(pi i (2v)^2) at +infinity).  The shifts move
+    Im(t') by -k Re(b) for k = j - A, so the whole ladder fits only if
+    r_eff * eps exceeds (deg) * Re(b).
+
+    b is chosen with |b| < 1: for |b| = rho, Im(c_b)/Re(b) = (1 + rho^-2)/2, which
+    is exactly 1 at rho = 1 (marginal) and grows as rho falls.  rho ~ 0.55 leaves a
+    real margin, which is what makes mp.quad converge -- at rho = 1 the decay rate
+    at one end of the ladder is ~0.7 and the quadrature floors at ~1e-6 no matter
+    what dps is set to.  eps must also satisfy eps < Im(c_b) (stay below the first
+    pole of the unit dilogarithms) and, for the pretzel, eps > Im(c_b)/2 (the
+    doubled factor's -c_b shift makes the integrand grow otherwise).
     """
     mp, make = _mp_setup(dps)
     spec = KNOTS[name]
@@ -290,8 +306,8 @@ def integral_recurrence(name, dps=30):
     _, Psym = descendant_operator(spec["offsets_sym"], A, spec["doubled"])
     cs = coeffs(Psym)
     rows = []
-    for bmod, bang, eps_frac in (("0.75", sp.Rational(1, 6), "0.85"),
-                                 ("0.70", sp.Rational(1, 5), "0.80")):
+    for bmod, bang, eps_frac in (("0.55", sp.Rational(1, 6), "0.90"),
+                                 ("0.60", sp.Rational(1, 5), "0.88")):
         b = mp.mpf(bmod) * mp.exp(1j * mp.pi * float(bang))
         Phi, qq, qt, cb = make(b)
         eps = mp.mpf(eps_frac) * mp.im(cb)
@@ -310,7 +326,6 @@ def integral_recurrence(name, dps=30):
         u = mp.mpf("0.13")
         xv = mp.exp(2 * mp.pi * b * u)
         wv = mp.exp(2 * mp.pi * b * t)
-        sub = {Q: complex(mp.sqrt(qq)), XR: complex(mp.sqrt(xv)), W: complex(wv)}
 
         def Z(tp):
             def f(sv):
@@ -319,14 +334,14 @@ def integral_recurrence(name, dps=30):
                 for (al, be) in spec["dilogs"]:
                     g *= Phi(al * v + be(u, cb))
                 return g * mp.exp(-A * 1j * mp.pi * v**2 + 2j * mp.pi * v * tp)
-            return mp.quad(f, [-40, -20, -10, -5, -2, -1, 0, 1, 2, 5, 10, 20, 40])
+            return mp.quad(f, [-60, -30, -15, -8, -4, -2, -1, 0, 1, 2, 4, 8, 15, 30, 60])
 
         tot = mp.mpc(0)
         mag = mp.mpf(0)
         for j, c in enumerate(cs):
             if sp.expand(c) == 0:
                 continue
-            cv = mp.mpc(complex(sp.N(c.subs(sub), dps)))
+            cv = mp_eval(c, mp.sqrt(qq), mp.sqrt(xv), wv)
             zj = Z(t - 1j * (j - A) * b)
             tot += cv * zj
             mag = max(mag, abs(cv * zj))
@@ -426,9 +441,28 @@ def main():
                          "degree_over_Z[s]": 2}
 
     print("\n=== Part 2: q -> 0 exponents by Newton polygon ===\n")
+    # The polygon is taken on N(X), the OFFSET polynomial, not on the full P(X).
+    # P = q^{A/2} w N(X) - X^A, and the second term is GGM (332)'s descendant term
+    # -(-q)^A w^{-1} q^m S^A -- it carries q^m, so at FIXED descendant index it
+    # vanishes as q -> 0 and does not contribute an exponent.  GGM (276) shows this
+    # directly for 5_2: the coefficient is (s - q^{2+m}), and the q^{2+m} drops.
+    # Keeping it would put a w-dependent term ON the 5_2 hull (its valuation ties
+    # the X^2 coefficient exactly) and contaminate the leading polynomial with w;
+    # that is real, and it is the descendant deformation, not an exponent.
+    descendant_on_hull = {}
+    for nm in ("4_1", "5_2", "pretzel"):
+        _, Pfull = ops[nm]
+        A = KNOTS[nm]["A"]
+        vN = val_q(sp.expand(q ** sp.Rational(A, 2) * W
+                             * (coeffs(ops[nm][0])[A])))
+        vD = sp.Integer(0)                       # -X^A has q-valuation 0
+        descendant_on_hull[nm] = {"A": A, "val_q_of_offset_term_at_X^A": str(vN),
+                                  "val_q_of_descendant_term": str(vD),
+                                  "descendant_ties_the_hull": bool(vN == vD)}
+
     newt = {}
     for nm in ("4_1", "5_2", "pretzel"):
-        pts, hull = newton(ops[nm][1])
+        pts, hull = newton(ops[nm][0])
         segs = [{"from": [int(a[0]), str(a[1])], "to": [int(b_[0]), str(b_[1])],
                  "slope_in_q": str((b_[1] - a[1]) / (b_[0] - a[0])),
                  "n_roots": int(b_[0] - a[0])}
@@ -439,12 +473,13 @@ def main():
             print(f"      {sg['from']} -> {sg['to']}   slope {sg['slope_in_q']}   "
                   f"{sg['n_roots']} root(s)")
     data["newton"] = newt
+    data["descendant_term_position"] = descendant_on_hull
 
     # 5_2: single segment, leading polynomial
-    pts52, hull52 = newton(ops["5_2"][1])
+    pts52, hull52 = newton(ops["5_2"][0])
     a, b_ = hull52[0], hull52[-1]
     slope52 = (b_[1] - a[1]) / (b_[0] - a[0])
-    lead52 = segment_leading_poly(ops["5_2"][1], int(a[0]), a[1], slope52)
+    lead52 = segment_leading_poly(ops["5_2"][0], int(a[0]), a[1], slope52)
     tgt52 = sp.expand((Y + 1) * (Y**2 + (x + 1 / x) * Y + 1))
     ok52 = sp.simplify(sp.expand(lead52 / sp.LC(sp.Poly(lead52, Y)) - tgt52)) == 0
     check("G7a-5_2 exponents: the (single) Newton segment has slope -1/2 and leading polynomial "
@@ -456,7 +491,7 @@ def main():
           roots=[str(r) for r in sp.roots(sp.Poly(sp.expand(lead52), Y))])
 
     # pretzel: the long segment
-    ptspz, hullpz = newton(ops["pretzel"][1])
+    ptspz, hullpz = newton(ops["pretzel"][0])
     longseg = None
     for a, b_ in zip(hullpz, hullpz[1:]):
         sl = (b_[1] - a[1]) / (b_[0] - a[0])
@@ -465,7 +500,7 @@ def main():
     leadpz = sp.Integer(0)
     if longseg:
         a, b_, sl = longseg
-        leadpz = segment_leading_poly(ops["pretzel"][1], int(a[0]), a[1], sl)
+        leadpz = segment_leading_poly(ops["pretzel"][0], int(a[0]), a[1], sl)
     quad = sp.expand(Y**2 + SIGMA * Y + 1)
     rem = sp.simplify(sp.rem(sp.Poly(sp.expand(leadpz), Y), sp.Poly(quad, Y)).as_expr()) \
         if leadpz != 0 else sp.Integer(1)
@@ -516,7 +551,7 @@ def main():
     check("G3-the (FE)-rearranged integrand identity  integrand(v - i b)/integrand(v) = "
           "q^{A/2} w X^{-A} N(X)  holds pointwise for ALL THREE knots (mpmath, dps 30; two values of b, "
           "three of v each).  This validates the operator algebra of (OP) independently of any contour.",
-          all(pw[nm]["worst_float"] < 1e-22 for nm in pw),
+          all(pw[nm]["worst_float"] < 1e-25 for nm in pw),
           worst_rel_err={nm: pw[nm]["worst_rel_err"] for nm in pw})
 
     rec = {}
@@ -531,8 +566,12 @@ def main():
         vals = [r["rel_float"] for r in rec[nm] if "rel_float" in r]
         check(f"G4-{nm}: the derived recurrence sum_j c_j Z(t - i (j - A) b) = 0 holds on the ACTUAL "
               f"state integral (mpmath, dps 30, two (b, eps) choices, t_I centred in the common "
-              f"convergence window).  {note}.  This tests the contour shift as well as the algebra.",
-              bool(vals) and max(vals) < 1e-14,
+              f"convergence window).  {note}.  This tests the contour shift as well as the algebra.  "
+              f"The residual here is QUADRATURE-limited, not arithmetic-limited: the integrand is a "
+              f"Gaussian chirp whose oscillation frequency grows linearly in |v|, so mp.quad's node "
+              f"density -- not dps -- sets the floor.  G3 is the exact algebraic gate (~1e-29); this "
+              f"one corroborates the CONTOUR SHIFT, which G3 cannot see.",
+              bool(vals) and max(vals) < 1e-13,
               worst_rel_residual=max(vals) if vals else None,
               rows=[{k: v for k, v in r.items() if k != "rel_float"} for r in rec[nm]])
 
