@@ -793,3 +793,61 @@ which are owner calls rather than re-runs; two are the known-slow skips; one is
 the unsafe-template producer. So roughly **14 are ordinary re-run or read
 work**, and the next pass should expect the reflections to start falling as
 those land.
+
+## 2026-09-13 — clusters, not sites: reading the flagged FIELD is the cheap move
+
+After `qou-nhkv` closed, 19 actionable remained. Rather than open 19 files, I
+dumped the flagged JSON path for each. That is nearly free and it groups them:
+
+    /data/tr_M_cross_check/proton/markov_trace_assembly_chain   braid_encoding_audit
+    /data/sources/proton/target_value                           applied_uniqueness_mass_table
+        └── both were the ORPHAN proton assembly chain → closed by qou-nhkv
+
+    /results[*]/peel_reference            cross_check_trM_cw_seminormal_leg
+    /tr_M_proton_markov_peel_reference    markov_weights_symbolic
+    /data/results[*]/bridge_witness_value markov_peel_atomic_witness  (×3 witnesses)
+        └── the PEEL cluster, upstream = markov/markov_peel_atomic_witness.py
+
+    /data/std_channel/proton_terms/T1_descended   vhat_std_vs_full_tower_compare
+    /complex_tower_plus_i0/proton/T1/abs          vhat_tower_im_cancellation
+    /trM_composition/proton_product_genuine       vhat_per_crossing_chain
+        └── the VHAT cluster, T1 term
+
+**The field name is a dependency edge.** `braid_encoding_audit`'s flagged field
+is literally `markov_trace_assembly_chain` — it names its own upstream. Reading
+19 fields found two clusters and confirmed a third had already been fixed;
+reading 19 files would have cost far more and found the same thing.
+
+### Peel cluster — in flight
+
+`markov/markov_peel_atomic_witness.py` is the upstream and is one of the three
+known slow producers (it timed out at 600 s in the safe sweep). Re-launched with
+a 3000 s budget; it is emitting canonical values as it goes (deuteron bridge
+`0.151968339204231607592665697751…`) and had reached ⁴He when this was written.
+It is on the SAFE list — no truncating open-with-import template.
+
+### VHAT cluster — upstream identified, and it is NOT what it first appears
+
+`vhat_std_vs_full_tower_compare` reads `PER_GEN_WITNESS` =
+`terms-2-3-atom-per-gen-mpfr-50dps.witness.json`. Two copies exist, one in
+`_deprecated/` (2026-04-27) and a live one (2026-08-29, pre-ruling) — which
+looks like the answer, and is not:
+
+- **neither copy contains `T1_descended_50dps`**, the key the consumer reads;
+- re-running the live producer `terms_2_3_atom_per_gen_mpfr_50dps.py` reports
+  **unchanged**, i.e. it recomputes identical values, so nothing there depends
+  on the intra-nucleon ordering. Terms 2 and 3 are not term 1.
+
+So the grouped T1 enters via `derive_full_tower`, not via the per-gen witness.
+**Not chased further** — that is the next thread rather than this one's tail,
+and stopping at a mapped edge is better than a half-traced one.
+
+### Method note for whoever continues
+
+Two cheap checks have each caught something today that a re-run would not:
+
+1. **Dump the flagged field before opening the file.** It names the upstream
+   often enough to be worth doing first, every time.
+2. **Compare the artifact's `computedAt` against your run.** A producer's exit
+   code answers "did it run?", not "did THIS artifact get rebuilt?" — that is
+   how the `--atoms` default hid two witnesses earlier today.
