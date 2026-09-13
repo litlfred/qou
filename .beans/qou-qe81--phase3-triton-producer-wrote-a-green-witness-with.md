@@ -344,3 +344,50 @@ to do and does not touch them.
 - [ ] The 7 mirror test failures still want an owner decision: point the tests
       at the computations layer, or regenerate their expectations from it.
       Still do NOT hand-patch the constants.
+
+---
+
+## 2026-09-13 — the four error-row witnesses: NONE now needs a producer fix
+
+Re-measured after the 702-commit merge. The bean's open item said "Three of
+the four are real defects whose producers need fixing". **That is no longer
+true of any of them** — all four are resolved or need only a re-run.
+
+| witness | exception rows | state |
+|---|---|---|
+| `producer-importability-audit` | 163 | **drained** — declares `expectErrors`, `basis: assertions` |
+| `delta-coupling-closed-form-probe` | **0** | **drained** — regenerated, `basis: vacuous` |
+| `paper-six-term-isotope-sweep` | 8 | producer FIXED (returns EMPTY rather than raising); witness stale |
+| `term6-residues-at-roots` | 4 | producer FIXED **by main**; witness stale |
+
+### `term6` — diagnosed, and the fix was already upstream
+
+Its four rows are the A≥2 atoms (A=1 proton and neutron succeed), all carrying
+the same
+
+    ValueError: LaurentQ.from_sympy: non-Laurent factor
+        -(1 - 1/q**4)*(q - 1)**2/12 + 1/2
+
+That factor **is** Laurent. Expanded it is
+
+    -q²/12 + q/6 + 5/12 + q⁻²/12 − q⁻³/6 + q⁻⁴/12
+
+— every exponent an integer. So the parser was rejecting an expression its own
+docstring promised to accept ("sums and products of the above"): its `is_Mul`
+branch takes only Numbers and powers of `q` as factors, so a PRODUCT OF SUMS
+failed even though both factors, and the product, are Laurent.
+
+**Main had already found it, from the identical expression, under bean
+`qou-ls7l`**, and added an expand-and-retry to `pyhecke/laurent_q.py` —
+expanding on RETRY rather than up front, so existing callers pay nothing.
+Verified here against the exact failing input: it now parses to
+`1/12 q³ − 1/6 q² − 1/2 q + 1/6 + 1/3 q⁻¹ + 1/6 q⁻² − 1/6 q⁻⁴ + 1/12 q⁻⁵`.
+
+So the remaining work on this item is **two re-runs, no code**. Both are in
+`.work/regen-queue.md`; both wait on the nuclide table, which holds the
+checkout.
+
+Worth noting for the gate's sake: both stale witnesses still serialise
+`allPassed: true` over rows that are exception text, which is exactly what the
+error-row gate demotes — they predate it. Re-running them is what makes the
+gate's verdict visible on them.

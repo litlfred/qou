@@ -63,3 +63,19 @@ branch was carrying:
 * `scriptFile` in `stamp_staleness_metadata` (`qou-4383`).
 
 Re-measure before re-doing.
+
+## 5. `qou-qe81`'s two stale error-row witnesses — RE-RUN ONLY, no code owed
+
+Re-measured 2026-09-13; neither needs a producer fix any more.
+
+* `computations/sweeps/paper_six_term_isotope_sweep.py` — returns EMPTY rather
+  than raising (fixed on this branch); its committed witness still carries 8
+  `FileNotFoundError` rows.
+* `computations/term6_residues_at_roots.py` — its 4 rows were
+  `LaurentQ.from_sympy: non-Laurent factor`, on an expression that IS Laurent
+  (`-q²/12 + q/6 + 5/12 + q⁻²/12 − q⁻³/6 + q⁻⁴/12`). **Main fixed the parser**
+  under `qou-ls7l` with an expand-and-retry; verified here against the exact
+  failing input.
+
+Both still serialise `allPassed: true` over exception text because they
+predate the error-row gate. Re-running is what makes that verdict visible.
