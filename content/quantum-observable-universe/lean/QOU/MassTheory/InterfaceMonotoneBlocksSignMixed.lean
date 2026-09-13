@@ -120,24 +120,31 @@ end CorpusApplication
 
 section Sharpness
 
-/-- A non-monotone interface law: the downward parabola `f d = 1 − (d − 1)²`,
-peaking at the midpoint of `[0, 2]`. -/
-noncomputable def hump (d : ℝ) : ℝ := 1 - (d - 1) ^ 2
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 
-theorem hump_values : hump 0 = 0 ∧ hump 1 = 1 ∧ hump 2 = 0 := by
+/-- A non-monotone interface law: the downward parabola `f d = 1 − (d − 1)²`,
+peaking at the midpoint of `[0, 2]`.
+
+Stated over a generic ordered field, not `ℝ`: nothing archimedean is used — no
+`Real.sqrt`, no `rpow`, no transcendental — so §7c keeps it on the generic side
+of the substrate/archimedean wall along with the rest of this file. -/
+def hump (d : R) : R := 1 - (d - 1) ^ 2
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+theorem hump_values : hump (0:R) = 0 ∧ hump (1:R) = 1 ∧ hump (2:R) = 0 := by
   refine ⟨?_, ?_, ?_⟩ <;> unfold hump <;> norm_num
 
 /-- It is not monotone: it rises then falls. -/
-theorem hump_not_monotone : ¬ Monotone hump := by
+theorem hump_not_monotone : ¬ Monotone (hump (R := R)) := by
   intro h
-  have := h (by norm_num : (1:ℝ) ≤ 2)
+  have := h (by norm_num : (1:R) ≤ 2)
   unfold hump at this
   norm_num at this
 
 /-- Nor antitone. -/
-theorem hump_not_antitone : ¬ Antitone hump := by
+theorem hump_not_antitone : ¬ Antitone (hump (R := R)) := by
   intro h
-  have := h (by norm_num : (0:ℝ) ≤ 1)
+  have := h (by norm_num : (0:R) ≤ 1)
   unfold hump at this
   norm_num at this
 
@@ -145,13 +152,13 @@ theorem hump_not_antitone : ¬ Antitone hump := by
 above both endpoints — so monotonicity is exactly the invariant that blocks the
 pattern, not a sufficient condition standing in for something weaker. -/
 theorem hump_realises_strict_max :
-    hump 0 < hump 1 ∧ hump 2 < hump 1 := by
+    hump (0:R) < hump 1 ∧ hump (2:R) < hump 1 := by
   unfold hump; norm_num
 
 /-- Stated as the escape it is: there exists an interface law under which the
 middle letter is the strict maximum, and it is necessarily non-monotone. -/
 theorem nonmonotone_escape_exists :
-    ∃ f : ℝ → ℝ, ¬ Monotone f ∧ ¬ Antitone f ∧ f 0 < f 1 ∧ f 2 < f 1 :=
+    ∃ f : R → R, ¬ Monotone f ∧ ¬ Antitone f ∧ f 0 < f 1 ∧ f 2 < f 1 :=
   ⟨hump, hump_not_monotone, hump_not_antitone, hump_realises_strict_max.1,
     hump_realises_strict_max.2⟩
 
