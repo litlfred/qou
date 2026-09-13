@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T12:47:38Z
+updated_at: 2026-09-13T13:15:01Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1869,3 +1869,44 @@ before this.
 Scope-(a). NO four-strand Q_beta prediction — E_0 and the
 element-to-observable map are H_3 constructions and the corpus does not define
 their n=4 analogue. The n=4 set is compared to ITSELF at n=3, structurally.
+
+
+
+### Part 5, same day — the SDP half of qou-ales, and it is a REAL selector (PR #7295)
+
+The ruling says selection is via gamma-gamma production AND the confinement SDP.
+Parts 1-4 did the gamma-gamma half; this is the SDP half, and it is the first
+DERIVED selector on this arc (PSD feasibility is structural, not a residual).
+
+**Three strands: the conjunction is EMPTY.** In the (2,1) block, exactly:
+`a = -1/(q(q^2+1))`, `a' = q^3/(q^2+1)` — **a' IS z_D** — and the gamma-gamma
+vertex has `det V = 1`, `tr V = -1 - h^2`. So V is an ELLIPTIC SL_2(R) element,
+and `V^3 = 1` forces `q = 1`: **the Borromean baryon is SDP-feasible only in the
+classical limit.** New Lean `QOU.Mass.PsdDetOneTrace` (sorry-free) proves a real
+PSD 2x2 of det 1 has trace >= 2 with equality only at the identity, and measured
+`tr(V^k) < 2` for k = 1..200 — so the exclusion is a theorem about the PSD cone,
+not arithmetic. This also EXPLAINS the k mod 3 banding of Part 2: a near-order-3
+rotation, exactly order 3 only at q = 1, so the bands drift.
+
+**Four strands: NON-empty and very selective — and my first draft was wrong.**
+It asserted infeasibility at n=4 too, having tested only the powers of ONE
+vertex; over all 2^k words the assertion FAILED. Of **8190** words to 12
+vertices, exactly **5** are feasible: `(v0v1)^2`, `(v0v1)^4`, `(v0v1)^6`, and two
+sporadic 10-vertex words. `(v0v1)^m` is feasible **iff m is even**.
+
+**The mechanism, not an analogy.** In BOTH 3-dim blocks the spectrum of `v0v1` is
+exactly `{-q^2, -q^-2, 1}` — two NEGATIVE eigenvalues — so odd powers cannot be
+PSD and even powers have spectrum `{q^-4, 1, q^4}`. Same cause as the H_2 rule
+(`sigma_0` has eigenvalue `-1/q`). The 1-dim and (2,2) blocks send every power to
+the identity; all discrimination lives in the two 3-dim blocks. And `(v0v1)^2` is
+NOT the identity there (max |M-I| = 0.348, 0.518), so its feasibility is genuine
+positivity rather than triviality.
+
+So the ruling's two halves are NOT in conflict — they simply have no common
+solution on three strands. **Smallest derived candidate: `(v0 v1)^2`, four
+vertices, eight letters.**
+
+NOT claimed: the feasible set is not characterised (only enumerated to 12
+vertices; the two sporadic words are unexplained); no cost/minimality is
+computed, so this NARROWS the candidate set without selecting a word; no
+observable is computed.
