@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-24T13:32:40Z
+updated_at: 2026-09-13T12:07:39Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -644,3 +644,83 @@ exit 0 / 0 errors on both edited files AND on their importer
 
 CAUTION FOR WHOEVER PICKS UP THE mu3 DOOR: this is a CLOSURE, not an opening.
 An escape route the corpus documented as available is, under canon, foreclosed.
+
+
+---
+
+## 2026-09-13 — read the largest re-padder statically; what it needs is NOT what this bean says
+
+**This bean's remaining work is gated on the `qou-uiut` table**, and that is a
+finding, not an excuse: *both* of its measurement tools —
+`producer_repad_sweep.py` and `float64_entry_tracer.py` — work by **running
+producers**, and two producers must never run in one checkout. So "re-measure
+and fix" cannot start until the table finishes. What can be done meanwhile is
+reading, and reading changed the picture for the largest item.
+
+### chirality (71 fields, the heaviest re-padder) — measured
+
+- **The committed witness has `0` padded fields.** Run
+  `witness_float64_padding_audit._walk` over
+  `chirality-avg-content-atomic.witness.json`: zero. The bean's "71" is the
+  **re-run projection**, not the committed state. Anyone reading the bean cold
+  will look at the corpus, see nothing, and conclude it is fixed.
+- **Part of the fix is already in.** `chirality_avg_content_atomic.py:246`
+  serialises `chi_lambda_beta` through `str_at_true_precision`, with a comment
+  that states the defect correctly: chi comes from the Rust kernel at
+  `precision="f64"`, carries 53 bits, and `str(<mpf>)` would print 50 dps of it.
+- **The remaining bare `str()` sites are a DIFFERENT DEFECT, and the fix this
+  bean prescribes does not apply to them.** `wedderburn_weight`,
+  `contribution`, `numerator_*_mp`, `denominator_mp`, `avg_content_*_mp`,
+  `a_K_exact_ribbon_twist_mp` are all serialised with bare `str()`. They are
+  not double expansions:
+  - `w_lam = dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q`, and this producer's
+    **own** `dim_q` (line 77, not the library one) is exact — `mpf(1)`,
+    `q_int(hook, q)` products, one division. No float enters.
+  - `contribution = c_lam * (chi[t] - chi[t^T]) * w_lam` is
+    integer × difference-of-two-doubles × exact-mpf, evaluated in mpf. The
+    result is a genuine 50-dps number.
+
+  So `is_f64_padded` correctly does **not** flag them, and stripping or
+  re-serialising them would be wrong.
+
+**The distinction that matters, and this bean currently conflates it:**
+
+| | what is wrong | can `is_f64_padded` see it? |
+|---|---|---|
+| **padding** | the printed digits ARE the binary64 expansion — fabricated | yes, that is its job |
+| **over-reported accuracy** | the digits are real output of exact arithmetic, but an input carried only 53 bits, so nothing past ~16 digits is meaningful | **no, and it never will** |
+
+chirality's aggregates are the second kind. They are honest arithmetic over a
+53-bit input, printed to 50 dps. No ratchet in this repo measures that, and the
+`kernel_precision: f64` tag the witness already carries is the only thing that
+records it. Fixing it means deciding how far a value derived from a 53-bit input
+may be printed — a convention question, not a transcription one, and it should
+not be smuggled in under "stop re-padding".
+
+### Incidental, worth its own bean
+
+`grep "def dim_q"` finds **~60 local re-definitions** across the corpus.
+`hecke_characters.specht_dim`'s docstring says the hook-length routine was
+"centralised here … so binding / observe-last consumers share one hook-length
+routine instead of re-deriving it (Gemini review, PR #2408)". That
+centralisation did not take. Each copy is a place a precision convention can
+diverge silently, and this producer's copy is one of them — exact, as it
+happens, but nothing checks that.
+
+### Also corrected: `hecke/hecke_characters.py` is not a producer defect
+
+This bean lists "one shared library downcast (hecke/hecke_characters.py:214,
+hit 527310x by su4)" among the Class A idioms to fix. Two things:
+
+- **The line number is stale** — 214 is now inside a `SeminormalPrecisionLoss`
+  raise.
+- **The float64 there is deliberate, documented, and has an exact twin.**
+  `build_seminormal_matrices` is the float64 path; `build_seminormal_matrices_mp`
+  is its exact counterpart; since `qou-8xb1` an `mpf` caller is dispatched to
+  the exact one automatically. Its docstring measures why flipping the default
+  would be a *false* fix: numpy silently re-truncates `mp.matrix` back to
+  float64 in `np.trace`, `np.abs(...)**2`, `np.eye(d) @ ...` and `np.sum`.
+
+So it is Class A "genuinely float64", where this bean's own prescription is
+"stop promoting it to mpf" — i.e. the fix is at the *serialisation* boundary in
+each consumer, not in the library.
