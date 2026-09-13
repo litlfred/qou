@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-09-13T19:43:39Z
+updated_at: 2026-09-13T19:59:39Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -894,3 +894,63 @@ and after. Self-test 13 -> 16.
 
 Sweep doc's stale table row corrected in place. Commit `941ca2a841b`
 (pushed as `e6c84697e4b`).
+
+
+## The float64-padding ratchet's NEW list is fully triaged (2026-09-13)
+
+Ran the gate: **70 padded occurrences, 26 distinct values, 11 files (6 live),
+baseline 13, NEW 58** — 25 distinct field-lines. Every one now has a verdict,
+and **all of it was settled statically**, without running a producer, because
+the `qou-uiut` table holds the checkout.
+
+| producer | fields | verdict |
+|---|---:|---|
+| `paper_six_term_isotope_sweep` | 12 | source fixed earlier — queue §15 |
+| `qbeta_markov_trace_norm_probe` | 6 | source fixed — §23 |
+| `casimir_macdonald_probe` | 2 | source fixed — §19 |
+| `binding_word_3A_reembedding_probe` | 2 | source fixed — §20 |
+| `binding_production_route_C_vs_D_probe` | 2 | RE-RUN ONLY — §21 |
+| `b_over_a_evaluator` | 1 | source fixed — §22 |
+
+**Four distinct mechanisms, not six bugs**, and only one is the plain
+"serialize at true precision" case this bean's earlier rounds fixed:
+
+1. **The anchor downcast** (casimir). `q_parameter` exports `Q`, a Python
+   **float**, beside `Q_MP`. `q = mpf(Q)` promoted 53 bits to 70 dps and fed
+   every Macdonald norm. Reproduced exactly: `fmt(mpf(Q))` **is** the
+   committed `parameters.substrate_q`. Gap 2.725e-17. Same defect as §17's
+   `hecke_division`, one module over.
+2. **A wall-clock timing serialized as mathematics** (3A re-embedding).
+   `fmt(mp.mpf(time.monotonic() - t0))` at OUTPUT_DPS. Value-preserving fix.
+3. **A hand-typed reference literal, wrong, whose padding was its shadow**
+   (`b_over_a`). Three AME per-nucleon literals, all disagreeing with the
+   registry (1.98e-7 / 2.73e-8 / 1.60e-7). `c_S` is FITTED to the 4He target,
+   so a binary64 target made every predicted B/A dyadic. Fixing the value
+   removed the padding as a side effect.
+4. **50 digits asked of a 53-bit input** (qbeta markov). `sp.Float(<json
+   float>, 50)`. NOT one of this bean's two upstream cases — the upstream
+   witness stores honest shortest-repr floats; the padding is added
+   downstream.
+
+### A measured gate gap, recorded and deliberately not patched
+
+`b_over_a_evaluator.py` has **zero entries** in `codata_truncation_audit`'s
+baseline. Its CANON carries `B_2H` … `B_7Li` as **total** binding energies,
+so a per-nucleon literal sits a factor of A from every canonical value and
+cannot be recognised as a truncation of one. `be50b759681` ("0 literals left
+tree-wide") missed these for the same reason. Invisible by construction, not
+tolerated. Not extended here: how many B/A literals exist tree-wide is its
+own measurement, and widening a red ratchet's vocabulary on a hunch is what
+this campaign keeps paying for.
+
+### One contradiction left open rather than guessed at
+
+`binding_production_route_C_vs_D` is RE-RUN ONLY on two independent static
+readings (live source yields a non-padded `E_0_MeV` under both import orders;
+its committed `B_AME2020_MeV` is a hand-typed value the current source
+replaced with a registry lookup). But its `computedAt` is today and its
+commit says it was deliberately re-run, while `experimental_constants.py` is
+byte-identical between that commit and HEAD. A re-run settles it; if it still
+pads, §21 is wrong and the defect is live.
+
+Commits `9acb30de7b4`, `2dcd37a7583`.
