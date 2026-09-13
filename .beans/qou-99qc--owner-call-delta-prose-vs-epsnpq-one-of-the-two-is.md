@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T15:34:53Z
+updated_at: 2026-09-13T16:05:35Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2310,3 +2310,55 @@ family collapses to one magnitude; no member is PSD-feasible. **Conditional:**
 that bar-oddness transfers from the retired `z = 1` cell to `z_D`.
 
 **BEAN STAYS todo (§13a)** — the subject is an open derivation.
+
+
+## LANDED 2026-09-13 — PR #7304 (`49e015595d4`), and the bean stays OPEN
+
+Seven probes (46 checks), two sorry-free Lean files. The bean's own open
+problem — what selects the un-ruled letters — was **worked, not deferred**.
+
+### The result: bar parity FORCES one number
+
+The parity bound proves no 11-crossing word is γγ-produced, so 5 of 11
+letters lie outside the ruling. The two bar-fixed (`-h/2`) letters and the
+gluon pair are shared between the nucleons, so **one** quark letter carries
+the whole p/n asymmetry. Imposing the corpus's own bar-odd property on
+`tr^{z_D}(Delta)`:
+
+* 26 nonzero-`Delta` ordered pairs -> **8 survivors**; the census assignment
+  is **not** among them.
+* The 8 collapse to ONE magnitude by the exact identity
+  `Delta(sigma,sigma) = -Delta(sigma^-1,sigma^-1)`, forcing
+  **Q_beta = 0.353415698 MeV, -54.825 %**.
+
+No selection was made — the constraint is a parity in `q`, never proximity
+to the measured value — and the forced answer is WORSE than the census's
+-16.678 %. That is the AGENTS.md ranking: derived beats selected.
+
+### The retraction, mine
+
+Parts 3 and 4 inferred from `tr_M >= 1` that the γγ route cannot reproduce
+Q_beta. **Wrong.** `Delta` is the neutron element MINUS the proton element,
+the trace is linear, and a lower bound on each word bounds no difference.
+Caught by calibration: `tr(p)` and `tr(n)` each failed to match the recorded
+cell while their difference matched to 1.4e-26. The Lean stands untouched;
+only prose was scoped, and a note in `GammaGammaTraceFloor.lean` stops a
+reader re-deriving it.
+
+### The SCOPE defect, also mine, fixed before merge (`04edd8b5d75`)
+
+I wrote "all four elements fail PSD, so the SDP half of the ruling rejects
+this family". That is **whole-element PSD = reading (B)**. This bean records
+the selected scope as **(A) core only**, under which reading 3 prunes
+nothing among the 5 free letters and the census element stands. So the PSD
+result is a MEASUREMENT under (B), not a rejection by the ruling — and under
+(A) it excludes nothing. Assertion renamed
+`no_configuration_is_whole_element_PSD_feasible_reading_B_only`.
+
+### STILL OPEN — do not close this bean
+
+1. **Which reading of the SDP scope the ruling means.** (A) and (B) give
+   opposite verdicts on this family. Owner call, not an agent one.
+2. **Whether the bar-odd hypothesis survives the move to `z_D`.** It is
+   attached to the retired `z = 1` closed form. Imposing it costs -54.825 %;
+   that is reported, not avoided.
