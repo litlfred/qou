@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-13T17:29:26Z
-updated_at: 2026-09-13T18:23:59Z
+updated_at: 2026-09-13T19:27:52Z
 ---
 
 ## The defect, measured
@@ -170,3 +170,81 @@ so it was buying nothing even on its own terms.
 That is an argument for the shared-serializer fix at the top of this bean —
 a `json.dump(..., default=fmt)` helper would remove the incentive for both
 groups. Still an owner call.
+
+
+## 2026-09-13, later — all 4 fixed; the class is closed at 5 of 38
+
+    binding_ladder_catalog                     114 -> 0    a12aee299b0
+    sweeps/low_isotope_binding_sweep           102 -> 21   029254b6492
+    probes/he3_brane_tower_structural_gap        5 -> 0    5e2726c3c39
+    binding_bring_enhancement_compare           39 -> 27   5e2726c3c39
+    deltalambda/..._extensivity_gap_synthesis  SOURCE ONLY 5e2726c3c39
+
+Every move in the four regenerated witnesses is the AME registry value
+against the old hand-typed literal (8.99e-8 to 4.10e-7), reaching them for
+the first time because their producers had been crashing. No verdict moves.
+
+## Two mechanics worth carrying forward
+
+**`isinstance(o, mp.mpf)` is not portable across these producers.**
+`deltalambda_extensivity_gap_synthesis_probe` does `from mpmath import mp,
+mpf, fabs`, where `mp` is mpmath's CONTEXT object, not the module. The test
+there has to be the directly-imported `mpf`. Two of the four import the
+module and one does not, so a copy-pasted `_ser` would have been silently
+wrong in exactly one place.
+
+**A producer can have more than one dump site, and the fatal one may not be
+the write.** `he3_brane_tower_structural_gap` also does
+`print("structural diagnosis:", json.dumps(structural, ...))`, holding the
+same mpf, which dies BEFORE the witness write is reached.
+
+## The one I did NOT regenerate, and why
+
+`deltalambda_extensivity_gap_synthesis`'s regenerated witness moves
+`B_base_MeV` for tritium **1.2648 -> 0.3209 (4x)**, `mu_ext_target`
+6.71 -> 26.43, `err_pct` -85.1 -> -96.2.
+
+**Not the fix.** The producer diff is one import, one `_ser` and one call
+site; zero arithmetic. Its own line 138 already does `float(B_base)`, so
+`_ser` touches only `B_AME_MeV` there -- 2 fields.
+
+It is **9 days of import-cone drift**: last written 2026-09-04 by
+`831980f1ce6` ("the nine y_lambda consumers re-run"), broken by
+`70ae502091a` the next day, and the y_lambda chain has moved since --
+`qou-za3q`'s Wenzl ruling landed on main this morning. Propagating a 4x move
+in a published Delta_lambda magnitude belongs to that arc, not to an idle
+pass. Source fix landed; witness left as recorded.
+
+**Whoever picks that up: check it against the Wenzl ruling first**, since
+AGENTS.md now records that re-weighting with the real Wenzl bridge FLIPS the
+sign of P_total at A=3 and A=4.
+
+## Separate defect found in that file, NOT fixed (Delta_lambda arc)
+
+Its numerology-guard **print is hardcoded** --
+
+    "4He doubly-magic needs the largest, 9.31; 3He the smallest, 3.29"
+
+-- against the table the same run computes, **8.19 / 26.43 / 19.19 / 28.80**.
+Not a rounding difference; the prose asserts a *non-monotone ordering claim*
+("3He the smallest") that its own numbers no longer support. Same class as
+the convention-C `c_k` analysis script whose hardcoded prose disagreed with
+its computed table by six orders of magnitude.
+
+## Final population accounting
+
+    38  candidates from the regression vector
+     5  CONFIRMED broken (13 % filter precision) -- ALL FIXED
+    29  clean
+     3  undecided on a 75 s timeout: canonical_tower, mass_at_3A_proper,
+        q_beta_complex_q_test1_phaseA -- a timeout is not a verdict
+     1  exit 77 by design (hyperbolic_volume_literal_audit reports findings
+        through its exit code)
+
+**The audit is scoped to two commits and this bean does not claim more.** A
+producer broken by some third mpf-lifting pass is outside the filter. The
+standing recommendation is unchanged and still an owner call: a shared
+`json.dump(..., default=fmt)` helper would close the class rather than its
+current members, and would also remove the incentive for the *companion*
+class -- producers DOWNCAST to avoid the crash, which do not fail, are
+invisible here, and quietly compute at f64.
