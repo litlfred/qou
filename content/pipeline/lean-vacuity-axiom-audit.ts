@@ -754,6 +754,35 @@ const PROJECTION_BODY = /^([a-z][\w']*)\.([A-Za-z_][\w']*)\s*$/;
 const TUPLE_PROJECTION =
   /^⟨\s*([a-z][\w']*)\.[A-Za-z_][\w']*\s*(?:,\s*\1\.[A-Za-z_][\w']*\s*)*⟩\s*$/;
 const EXACT_PROJECTION = /^by\s+exact\s+([a-z][\w']*)\.([A-Za-z_][\w']*)\s*$/;
+// An *applied* SINGLE field, `ctx.classical_limit s t hst` — the one-field
+// analogue of `APPLIED_TUPLE_PROJECTION` below, and blind for the same reason
+// its comment gives: `PROJECTION_BODY` ends at the field name, so any argument
+// after it kills the match. `detectSelfAssuming` then leaves `pat` undefined
+// and RETURNS BEFORE reaching `projectionTypeMatchesConclusion`, the structural
+// fallback that exists precisely to catch a projection whose field name escapes
+// `CONCLUSION_FIELD`. The strongest check the detector has was unreachable for
+// this shape.
+//
+// This is the subclass that matters, not a corner case: a class field carrying
+// a conclusion is almost always `∀ … → …`, so the theorem MUST apply it to the
+// binders to produce the conclusion. A self-assuming projection whose
+// conclusion is universally quantified was therefore invisible BY
+// CONSTRUCTION — and a universally quantified conclusion is the normal case.
+//
+// Measured on the QOU Lean tree (2871 .lean) when this was added:
+// `proof-no-self-assuming-projection` 26 -> 42, i.e. 16 bodies the four earlier
+// patterns could not see, every one of them passing the `CONCLUSION_FIELD` name
+// gate. Found by fixing an instance the audit never reported —
+// `QOU/BraidsKnots/mobius_frobenius_kernel.lean`, body
+// `ctx.classical_limit s t hst`, whose class docstring read "All fields are
+// inputs; none is the conclusion" while the conclusion was field three of
+// three. Bean `qou-metc`; issue #7329.
+//
+// Deliberately conservative: each argument must be an identifier-ish token, so
+// `ctx.foo (h.bar) x` does not match. Under-matching is the safe direction for
+// a criterion at `critical` severity.
+const APPLIED_PROJECTION =
+  /^(?:by\s+exact\s+)?([a-z][\w']*)\.([A-Za-z_][\w']*)(?:\s+[A-Za-z_][\w'.]*)+\s*$/;
 // An *applied*-field tuple `⟨ctx.impl_x ctx.active, ctx.impl_y ctx.active⟩`:
 // each component is a field `word.field` optionally APPLIED to further
 // `word[.field]` arguments. The `TUPLE_PROJECTION` regex above rejects the
@@ -972,6 +1001,9 @@ function detectSelfAssuming(
   } else if ((m = body.match(EXACT_PROJECTION))) {
     field = m[2];
     pat = "exact-field-projection";
+  } else if ((m = body.match(APPLIED_PROJECTION))) {
+    field = m[2];
+    pat = "applied-field-projection";
   } else if (TUPLE_PROJECTION.test(body)) {
     pat = "tuple-projection";
     field = body.match(/\.([A-Za-z_][\w']*)/)?.[1];
@@ -1032,7 +1064,17 @@ function detectSelfAssuming(
   // the detector's own primary criterion, and the §3b deferral does not apply.
   // Recommendation 4 of `docs/audits/2026-08-09-honest-placeholder-criterion.md`.
   const nameGateMatched = !!field && CONCLUSION_FIELD.test(field);
-  if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
+  // `applied-field-projection` is EXEMPT on landing for the same reason the
+  // applied-tuple and def-disguised patterns were: closing a coverage blindspot
+  // must not turn a `critical` gate red in the commit that discovers it. The 16
+  // it newly reaches still enter the review ledger, so `--check-ledger` demands
+  // an agent verdict on each. Promoting them to hard failures is a deliberate
+  // follow-up — issue #7329, bean `qou-metc` — not a side effect of this edit.
+  if (
+    (isDefProof && !nameGateMatched) ||
+    pat === "applied-tuple-projection" ||
+    pat === "applied-field-projection"
+  ) {
     const h = mk(d, "proof-no-self-assuming-projection", pat, true);
     h.exempt_reason =
       "canonical §3b placeholder projection (tracked; derivation pending)";
