@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T09:24:16Z
+updated_at: 2026-09-13T09:53:56Z
 ---
 
 
@@ -766,5 +766,53 @@ of that 1.7× width is slack in the *bound*. Tightening it is an argument about
 `Σ_i F(β_i) − Σ_{i<j} ε(β_i − β_j)` — and that expression is now a Lean theorem
 rather than a numerical observation, so a Lean-side bound on it is a route that
 did not exist yesterday.
+
+### 2026-09-13 — the 1.71× bracket is ONE term, and it has a name (PR #7286)
+
+**Claim.** The `[A√2, C√2] = [5.0959, 8.7277]` bracket on the Θ(√n) coefficient has
+ratio **exactly `C/A = 1.71267243954`** — no `√2`, no `n` — because
+
+    C = A + E_2,      E_2 := Σ_{d≥1} ε(2d)
+
+(the odds and evens partition the positive integers; `A` is the odd half). And `E_2`
+is **the staircase's pair term**: `δ_k` has β = (2k−1, 2k−3, …, 1), all gaps even, so
+`P_stair(k) = Σ_{d<k}(k−d)ε(2d)`.
+
+**Evidence** (`rev_coefficient_slack_is_the_pair_term_probe.py`, 8/8, mp.dps 80,
+Richardson k=800→1600):
+
+| | limit | target | rel |
+|---|---|---|---|
+| one-body / k | 6.1714057200791 | `C` | 7.9e-80 |
+| **pair / k** | 2.5680279943593 | **`E_2`** | 5.9e-80 |
+| R / k | 3.6033777257199 | `A` | 9.5e-80 |
+
+**Implication — the open problem moves.** The row-tangent bound reaches `C√2` through
+`R ≤ (ℓ−1)C`, which **discards the pair term outright**; the maximising shapes do not.
+So this is not diffuse slack to be chipped at from the shape side. The task is:
+**prove a pair-term LOWER bound that survives the energy trade-off.** That trade-off
+is the real content — `P` is small exactly when the β's are widely separated, which is
+exactly when `H` (hence `E`) is large. Any nontrivial pair floor lands the bound near
+`A√2` rather than 71% above it.
+
+**New exact fact (R4).** `H(δ_k) = H_min(T_k) = P_k` (square-pyramidal) at all 9
+triangular `n` tested, exact integers. **The staircase pays zero energy**, so its value
+IS its `R` — which is why `A√2` is a floor on `M_n` and not merely one shape's `R`.
+
+**Correction to my own #7279 reading.** That PR's "achievable ≈ 5.22" invites reading
+the excess over the staircase as converging to ~1.02. R5 declines it: `excess/√n` runs
+0.0236, 0.0783, 0.1043, 0.1129, **0.0947** — it **peaks at n=300 and FALLS at n=630**.
+#7279's own header says a failure to find a better shape does not lower the upper
+bound, so a turnover at the *largest* n is more likely the heuristic search weakening
+than a fact. Five points, all triangular, cannot separate a multiplicative excess from
+an additive one. **Do not quote ≈5.22 as the coefficient.**
+
+**NOT established:** that the true coefficient is `A√2`. Only that the bracket's width
+is one identified term and that the bound is where it lives.
+
+**Method note worth keeping.** R1 first FAILED at mp.dps 40 with residual 1.06e-39 —
+one ulp. The identity was testing my threshold, not itself. Fixed at the *precision*
+(dps 40 → 80, residual exactly 0) against a **derived** `3·N·ulp` bound, not by
+widening the tolerance.
 
 **Do not close this bean.**
