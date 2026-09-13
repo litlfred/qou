@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T11:01:32Z
-updated_at: 2026-09-08T03:41:37Z
+updated_at: 2026-09-13T05:17:15Z
 ---
 
 Found on PR #7061 while classifying witness churn from verification runs.
@@ -160,3 +160,52 @@ dirty witnesses is to inspect and decide, not to revert on sight. It also adds
 the useful caveat that the diff is still worth READING: if the movement is your
 own producer's, that is a real finding; it is the commit that is wrong, not the
 measurement.
+
+
+--------
+
+## 2026-09-13 — re-measured after 412 commits: the finding HOLDS, my own count did not
+
+Five days and 412 commits of `main` later. Re-measured before re-asserting anything,
+which is what this bean exists to make routine.
+
+### The finding stands
+
+`ms` is **still absent** from `_EPHEMERAL_META_FIELDS`. Live set, measured:
+
+    commitSha, computedAt, durationMs, durationSeconds, duration_sec,
+    elapsed_s, elapsed_sec, elapsed_seconds, environment, scriptCommitSha
+
+Ten entries, four of them timing spellings, and the bare `ms` is not one of them.
+So every masked-comparison consumer still reads an `ms` jitter as a real value
+change.
+
+### CORRECTION to my own figure: 28 -> 24
+
+This bean's headline said **28 witnesses under `computations/`**. Measured today:
+**24**. I cannot re-measure the past, so I do not know whether 28 was wrong when
+written or whether four have since been deleted or regenerated without the key —
+but the number in the bean is not the number in the tree, which is precisely the
+staleness class the bean is about. Quoting it without re-running was the risk;
+re-running was cheap.
+
+### And the scope was LOOSER than it needed to be
+
+"under `computations/`" is true and unhelpful. All **24 of 24** live in a single
+directory:
+
+    24  computations/deltalambda
+     0  everywhere else
+
+All values are `int`. That is a sharper fact than the bean recorded and it changes
+what the fix looks like: this is **one producer family**, not a scatter across the
+corpus. Emitting `durationMs` at that family's witness builder would drain the
+whole population, without touching the ambiguous-key question anywhere else.
+
+### What is still NOT established
+
+Whether all 24 are durations. The earlier note verified 12 of the then-28; today's
+re-measure counts and locates the key, it does not re-verify semantics. So the
+caveat against blind-masking `ms` stands unchanged — a field genuinely meaning
+milliseconds-of-something-measured would be wrongly hidden, and the producer-side
+fix avoids that question entirely.
