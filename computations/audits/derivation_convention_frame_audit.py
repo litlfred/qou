@@ -158,18 +158,12 @@ def canonical() -> dict[str, float]:
             "D": float(tr_m_nucleon("deuteron"))}
 
 
-def _canonical_via_registry_ast() -> dict[str, float]:
-    """The old AST route, kept for reference. NOT used — see `canonical()`."""
-    import ast
-    src = (ROOT / "computations" / "derivation_chain.py").read_text()
-    for node in ast.walk(ast.parse(src)):
-        if isinstance(node, ast.AnnAssign) and getattr(node.target, "id", "") == "TR_M_AT_Q0":
-            return {k.value: float(v.value) for k, v in zip(node.value.keys, node.value.values)}
-        if isinstance(node, ast.Assign) and any(
-            getattr(t, "id", "") == "TR_M_AT_Q0" for t in node.targets
-        ):
-            return {k.value: float(v.value) for k, v in zip(node.value.keys, node.value.values)}
-    raise SystemExit("TR_M_AT_Q0 not found in derivation_chain.py — registry moved?")
+# The old AST route lived here: it parsed `TR_M_AT_Q0` out of
+# `derivation_chain.py` to avoid executing that module. REMOVED 2026-09-13
+# rather than kept as reference, because it would now RAISE — the registry is
+# no longer a literal dict; it is served lazily by a module `__getattr__`
+# reading `canonical_trm_reference` (bean qou-4383). A "kept for reference"
+# helper that crashes is worse than a comment saying what it did.
 
 
 def _findings(text: str, canon: dict[str, float]) -> list[tuple[str, str, float]]:

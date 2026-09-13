@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T11:56:17Z
-updated_at: 2026-09-13T12:17:59Z
+updated_at: 2026-09-13T12:41:40Z
 ---
 
 ## LANDED: Mobius invariance IS the discriminator, and it FORCES the kernel
@@ -78,3 +78,5 @@ DO NOT cite this as "the exponent is forced by geometry" -- it is forced by
 invariance over all positive triples.
 
 BEAN STAYS OPEN on that sub-item.
+
+MERGED to main as 03ed1c3c8e (PR #7299, issue #7298). Bean STAYS OPEN per AGENTS.md 13a: the realisable-triples question is an open mathematical sub-item, not a recording task. Landing the theorem is not closing the question.

@@ -28,6 +28,15 @@ import QOU.BraidKnot.HookSumThicknessBound
 -- multiplicative `hookSide_betaR` transported through Multiplicative N, so it costs nothing
 -- and gives (II) a SECOND proof, from the hook multiset rather than from the closed form.
 import QOU.BraidKnot.HookSumBetaCoordinates
+-- Completing the square in those beta-coordinates (bean qou-hok7): with `a_i = 2L-3-4i`,
+-- `8 Sum_c h(c) = Sum_i (2 beta_i - a_i)^2 - Sum_i a_i^2`, so the hook sum is a POSITIVE-DEFINITE
+-- quadratic whose whole diagram-dependence is one sum of squares. Two consequences: the row
+-- deviations `d_i = 2 beta_i - a_i` satisfy `d_i - d_{i+1} = 2(beta_i - beta_{i+1}) - 4`, so they
+-- are constant exactly on the staircase; and Cauchy-Schwarz gives the parameter-free floor
+-- `(Sum d_i)^2 - L Sum a_i^2 <= 8 L Sum_c h(c)`, where `Sum d_i` is fixed by (n, L) alone. That
+-- is the REV_n energy rigidity WITHOUT asymptotics -- PR #7286 had it only as the measured
+-- `E ~ ln q_0 (2n)^{3/2} (gbar-2)^2 / 24`. Measured tight: zero gap against H_min at L = k.
+import QOU.BraidKnot.HookSumCompletedSquare
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
