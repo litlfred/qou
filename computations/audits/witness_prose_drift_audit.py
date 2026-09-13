@@ -358,6 +358,203 @@ def scan_witness(doc: dict):
     return out, None
 
 
+# ───────────────────────── PAIRED mode (--pairs), ADVISORY ─────────────────
+#
+# A SECOND detector over the same corpus, answering a different question, and
+# it exists because the one above cannot be made precise.
+#
+# `classify` asks "is this prose number near ANY number in the document?".
+# That has no null model. A witness holds hundreds of values spanning orders
+# of magnitude, so for any prose number the chance that SOMETHING lands in a
+# [0.05, 0.6] relative window is high -- "close-ish but not exact" is the
+# COMMON case under the null, not the surprising one. Measured two ways and
+# they agree: a precision-matched random control matched at 53 % against the
+# real candidates' 58 %, a lift of +5 pp; and hand-reading 34 NEW/GREW
+# findings found 3 genuine, i.e. ~9 % precision. No re-tuning of the band
+# edges fixes that, because the statistic is wrong rather than mis-calibrated.
+#
+# This asks instead: "does the prose NAME a field, and disagree with THAT
+# field?" `Reproduces tr_M = 0.160974145442` names tr_M; the witness carries
+# tr_M_at_q0. Compare those two and nothing else. No band, no upper cap, no
+# coincidence -- and no need for UNRELATED_REL, which is what had hidden the
+# largest drift in that very witness (0.160974145442 against data of
+# 0.0112374176598, a factor of 14.3).
+#
+# MEASURED on the corpus: 6 disagreements across 6 witnesses. Hand-read, 3
+# are genuine, 2 are candidates needing a domain read, 1 is a marginal
+# truncation, and none is clearly wrong. Against ~9 %, on a list short enough
+# to read in full.
+#
+# ADVISORY BY CONSTRUCTION. `--pairs` prints and exits 0; the gate's
+# invocation is untouched. A second detector should earn a blocking slot by
+# being run, not by being asserted.
+
+# The identifier must be the WHOLE left-hand side of the assignment.
+_PAIR_CONNECTOR = r"(?:\s*(?:=|==|≈|~|:|\bis\b|\bof\b|\bat\b|\bwas\b)\s*)"
+_PAIR_TOKEN = re.compile(r"([A-Za-z][A-Za-z0-9_]{1,39})" + _PAIR_CONNECTOR + r"$")
+
+# Three guards, each from a measured false positive. Without them the same
+# scan reports 16 rather than 6, and 10 of the 16 are this one mistake:
+#
+#   `1/q_0 = 0.9009182840`         -> 0.90 is 1/q_0, and CORRECT
+#   `b3/b2 = 0.64`                 -> 0.64 is the ratio, not b2
+#   `max(t)*n_target = 0.146058`   -> a product
+#   `m_eta/m_K = 1.109758`         -> a ratio; m_K itself is 493.677 MeV
+#   `S_free is 5.5x SMALLER than`  -> a multiplier, not a value
+#
+_PAIR_OPERATOR_LEAD = "/*+-^("
+_PAIR_COMPARATIVE = re.compile(
+    r"^\s*[x×]?\s*(?:smaller|larger|bigger|times|fold|short|above|below|"
+    r"higher|lower|more|less)\b", re.IGNORECASE)
+_PAIR_MULTIPLIER = re.compile(r"\s*(?:[x×]|-?fold)\b", re.IGNORECASE)
+# `0.78233341(61)` is concise-uncertainty notation: a MEASURED literature
+# constant with its standard error, so a citation rather than this witness's
+# own value, however its name collides. Corpus-wide only three prose numbers
+# carry it -- PDG `2.16(7)` and the two CODATA Q_beta figures -- and all
+# three are citations.
+_PAIR_UNCERTAINTY = re.compile(r"\(\d{1,3}\)")
+
+# Suffixes a data key adds that the prose leaves off: tr_M vs tr_M_at_q0.
+_PAIR_SUFFIXES = ("atq0", "q0", "deg", "mev", "gev", "kev", "pct", "percent",
+                  "ratio", "value", "abs", "sum")
+
+
+def _pair_norm(s: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", s.lower())
+
+
+def _pair_key_variants(key: str) -> set:
+    """Every name the prose might use for this key, by peeling unit suffixes."""
+    out = {_pair_norm(key)}
+    changed = True
+    while changed:
+        changed = False
+        for suf in _PAIR_SUFFIXES:
+            for v in list(out):
+                if v.endswith(suf) and len(v) > len(suf) and v[:-len(suf)] not in out:
+                    out.add(v[:-len(suf)])
+                    changed = True
+    return {v for v in out if len(v) >= 2}
+
+
+def _pair_leaves(obj, out=None, path=""):
+    """Leaf key -> [(numeric value, json path)], numeric strings included."""
+    out = {} if out is None else out
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if isinstance(v, (dict, list)):
+                _pair_leaves(v, out, path + "/" + k)
+            elif not isinstance(v, bool):
+                val = None
+                if isinstance(v, (int, float)):
+                    val = float(v)
+                elif isinstance(v, str):
+                    try:
+                        val = float(v)
+                    except ValueError:
+                        val = None
+                if val is not None:
+                    out.setdefault(k, []).append((val, path + "/" + k))
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            _pair_leaves(v, out, path + f"[{i}]")
+    return out
+
+
+def _pair_tolerance(raw: str) -> float:
+    """Half a unit in the last place the PROSE actually wrote.
+
+    This is the principled form of the ROUNDING bucket. A prose value written
+    `0.59` asserts two decimals and nothing more, so 0.5661 is consistent with
+    it; one written to twelve decimals asserts twelve, and
+    `L_nn = 0.907262271178` against data of 0.907262265533 is a real
+    disagreement at the ninth even though the relative distance is 6e-9. A
+    fixed relative band cannot express both.
+    """
+    low = raw.lower()
+    if "e" in low:
+        mant, _, exp = low.partition("e")
+        dec = len(mant.split(".")[1]) if "." in mant else 0
+        return 0.5 * 10 ** (-dec + int(exp))
+    dec = len(raw.split(".")[1]) if "." in raw else 0
+    return 0.5 * 10 ** (-dec)
+
+
+def scan_witness_pairs(doc: dict):
+    """-> [(raw, prose_token, data_key, data_value, json_path, context)]."""
+    desc = doc.get("description") or (doc.get("data") or {}).get("description")
+    if not isinstance(desc, str) or not desc.strip():
+        return []
+    rest = {k: v for k, v in doc.items()
+            if k != "description" and k not in PROVENANCE_KEYS}
+    index = {}
+    for key, entries in _pair_leaves(rest).items():
+        for variant in _pair_key_variants(key):
+            index.setdefault(variant, []).append((key, entries))
+    out = []
+    for match in NUM.finditer(desc):
+        raw = match.group(0)
+        before = desc[:match.start()]
+        if before and (before[-1].isalnum() or before[-1] == "."):
+            continue
+        if _LABEL_BEFORE.search(before[-16:]) or _SECTION_SYMBOL.search(before[-6:]):
+            continue
+        if _is_arxiv_id(raw):
+            continue
+        window = before[-60:]
+        tok = _PAIR_TOKEN.search(window)
+        if not tok:
+            continue
+        if tok.start() > 0 and window[tok.start() - 1] in _PAIR_OPERATOR_LEAD:
+            continue
+        after = desc[match.end():match.end() + 20]
+        if (_PAIR_UNCERTAINTY.match(after) or _PAIR_COMPARATIVE.match(after)
+                or _PAIR_MULTIPLIER.match(after)):
+            continue
+        cands = index.get(_pair_norm(tok.group(1)))
+        if not cands or len(cands) != 1:
+            continue                       # ambiguous name -> say nothing
+        key, entries = cands[0]
+        values = {v for v, _ in entries}
+        if len(values) != 1:
+            continue                       # same key, many values -> ambiguous
+        value = next(iter(values))
+        if abs(value - float(raw)) > _pair_tolerance(raw):
+            ctx = re.sub(r"\s+", " ",
+                         desc[max(0, match.start() - 70):match.end() + 30])
+            out.append((raw, tok.group(1), key, value, entries[0][1], ctx))
+    return out
+
+
+def _report_pairs(files: list) -> int:
+    print("=" * 78)
+    print("witness PROSE disagreeing with the field it NAMES  (advisory)")
+    print("=" * 78)
+    total = 0
+    for path in files:
+        try:
+            doc = json.loads((ROOT / path).read_text())
+        except Exception:                                  # noqa: BLE001
+            continue
+        if not isinstance(doc, dict):
+            continue
+        hits = scan_witness_pairs(doc)
+        if not hits:
+            continue
+        total += len(hits)
+        print(f"\n  {path}")
+        for raw, tok, key, value, jpath, ctx in hits:
+            print(f"     prose {tok} = {raw}")
+            print(f"     data  {key} = {value!r}   ({jpath})")
+            print(f"     …{ctx}…")
+    print(f"\n  paired disagreements : {total}")
+    print("\n  ADVISORY: this mode never fails the build. A prose number is "
+          "compared\n  ONLY against the field its own sentence names, to half a "
+          "unit in the\n  last place the prose wrote -- so a 2-decimal quote is "
+          "held to 2 decimals\n  and a 12-decimal one to 12.")
+    return 0
+
+
 BASELINE = HERE / "witness-prose-drift-baseline.json"
 
 
@@ -480,13 +677,50 @@ def _selftest() -> int:
         ({"description": "the residual is 3.1", "r": "3.5"}, ["3.1"],
          "...and the same digits after ordinary words are still a finding"),
     ]
+    pair_cases = [
+        ({"description": "Reproduces tr_M = 0.160974145442 over the stratum",
+          "data": {"tr_M_at_q0": 0.0112374176598}}, ["0.160974145442"],
+         "the type case: prose NAMES tr_M and the witness carries "
+         "tr_M_at_q0, 14.3x away -- invisible to the band detector, which "
+         "read it EXACT against a stale source string"),
+        ({"description": "Reproduces tr_M = 0.0112374 over the stratum",
+          "data": {"tr_M_at_q0": 0.0112374176598}}, [],
+         "ULP: a 7-decimal quote is held to 7 decimals and agrees"),
+        ({"description": "L_nn = 0.907262271178 per type",
+          "data": {"L_nn": 0.907262265533}}, ["0.907262271178"],
+         "...and a 12-decimal quote is held to 12, so a 9th-decimal "
+         "disagreement IS reported though it is 6e-9 relative"),
+        ({"description": "the chirality flip is 1/q_0 = 0.9009182840",
+          "data": {"q_0": 1.1099785827513808}}, [],
+         "OPERATOR: 0.90 is the value of 1/q_0, and it is correct"),
+        ({"description": "Large b3/b2=0.64 so binding is cooperative",
+          "data": {"b2": 2.2245662}}, [],
+         "OPERATOR: a ratio names its denominator last"),
+        ({"description": "the block-level S_free is 5.5× SMALLER than scalar",
+          "data": {"S_free": 0.6064289647}}, [],
+         "COMPARATIVE: 5.5 is a multiplier, not a value"),
+        ({"description": "CODATA gives Q_beta = 0.78233355931(38) here",
+          "data": {"Q_beta_MeV": 0.22356166452995638}}, [],
+         "UNCERTAINTY: 0.xxx(38) is a cited literature constant with its "
+         "standard error, so a citation whose name merely collides"),
+        ({"description": "the ratio r = 0.5 holds",
+          "data": {"r": 0.5, "nested": {"r": 0.9}}}, [],
+         "AMBIGUOUS: one name, two values -> say nothing rather than guess"),
+    ]
     bad = 0
     for doc, want, why in cases:
         got = [r for r, _, _ in scan_witness(doc)[0]]
         ok = got == want
         bad += not ok
         print(f"  {'ok  ' if ok else 'FAIL'} want={want!s:10} got={got!s:10}  {why}")
-    print(f"\nselftest: {len(cases) - bad}/{len(cases)} passed")
+    print("\n  --pairs (advisory second detector):")
+    for doc, want, why in pair_cases:
+        got = [r for r, _, _, _, _, _ in scan_witness_pairs(doc)]
+        ok = got == want
+        bad += not ok
+        print(f"  {'ok  ' if ok else 'FAIL'} want={want!s:10} got={got!s:10}  {why}")
+    total = len(cases) + len(pair_cases)
+    print(f"\nselftest: {total - bad}/{total} passed")
     return 1 if bad else 0
 
 
@@ -514,11 +748,18 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--rebaseline", action="store_true",
                     help="regenerate the baseline (DRAINING only)")
     ap.add_argument("--top", type=int, default=25)
+    ap.add_argument("--pairs", action="store_true",
+                    help="ADVISORY second detector: compare a prose number "
+                         "ONLY against the field its own sentence names, to "
+                         "half a unit in the last place the prose wrote. "
+                         "Always exits 0; the ratchet is untouched.")
     a = ap.parse_args(argv)
     if a.selftest:
         return _selftest()
 
     files = _tracked_witnesses()
+    if a.pairs:
+        return _report_pairs(files)
     findings, no_desc, unparsed = [], 0, 0
     for f in files:
         try:
