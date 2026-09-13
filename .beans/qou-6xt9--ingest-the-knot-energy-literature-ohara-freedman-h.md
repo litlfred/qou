@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T11:56:16Z
-updated_at: 2026-09-13T12:10:52Z
+updated_at: 2026-09-13T12:41:41Z
 ---
 
 ## THE PREMISE WAS WRONG, AND IT WAS MY CLAIM (2026-09-13)
@@ -93,3 +93,5 @@ Targets, in the order they pay off for this arc:
      Blatt/Reiter regularity survey) for the minimiser-existence statements
 
 BEAN STAYS OPEN -- blocked on owner upload, not on anything derivable here.
+
+PR #7299 merged WITHOUT this item. Still blocked on owner upload into uploads/ + scripts/migrate-uploads-to-library.py. Issue #7298 reopened to carry it.
