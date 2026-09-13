@@ -235,4 +235,112 @@ theorem two_mul_sum_hookZ_betaForm (μ : YoungDiagram) {L M : ℕ}
   rw [h2i]
   linarith
 
+/-! ## (I') The general one-body / two-body decomposition
+
+The identity (II) above is the `g = id` shadow of something much more general, and
+the general form is what the `REV_n` arc actually runs on: the shape free energy's
+one-body term is `Σ_i F(β_i)` and its two-body term is `−Σ_{i<j} ε(β_i − β_j)`,
+for `F` the partial sums of `ε`.
+
+That general form is **already in the corpus multiplicatively** —
+`QOU.SchurWeyl.hookSide_betaR` states it for an arbitrary `CommMonoid`, as the
+divisor-free hook-length formula with its Vandermonde denominator.  Transporting
+it through `Multiplicative N` turns the products into sums at no cost.  So (I')
+needs no new combinatorial input here; what it needed was noticing that the
+product identity and the sum identity are the same statement. -/
+
+/-- **(I')** For **any** `g : ℕ → N` into an additive commutative monoid,
+
+    Σ_{c∈μ} g(h(c)) + Σ_{i<j<L} g(β_i − β_j) = Σ_{i<L} Σ_{m=1}^{β_i} g(m),
+
+for every padding `L ≥ ℓ(μ)`.  The `j`-index runs as `i+1+k`, matching the
+corpus's `hookSide_betaR`; `sum_hookZ_betaForm_of_hookMultiset` below reindexes it
+to `Ico (i+1) L`.
+
+Row `i`'s hook lengths are `{1, …, β_i}` with `{β_i − β_j : j > i}` removed — that
+is the whole content, and it is `hookSide_betaR`'s, not this file's. -/
+theorem sum_hookF_add_pairF {N : Type*} [AddCommMonoid N] (g : ℕ → N)
+    (μ : YoungDiagram) {L : ℕ} (hL : μ.colLen 0 ≤ L) :
+    (∑ c ∈ μ.cells, g (QOU.QBeta.WenzlWeight.hook μ c))
+        + ∑ i ∈ range L, ∑ k ∈ range (L - (i + 1)),
+            g (QOU.SchurWeyl.betaR L μ i - QOU.SchurWeyl.betaR L μ (i + 1 + k))
+      = ∑ i ∈ range L, ∑ j ∈ range (QOU.SchurWeyl.betaR L μ i),
+          g (QOU.SchurWeyl.betaR L μ i - j) := by
+  have h := QOU.SchurWeyl.hookSide_betaR
+    (M := Multiplicative N) (fun n => Multiplicative.ofAdd (g n)) hL
+  apply Multiplicative.ofAdd.injective
+  simp only [QOU.Mathlib.SYTBeta.descFactF] at h
+  simpa only [ofAdd_add, ofAdd_sum] using h
+
+/-! ## (II) again, from the hook multiset — an independent second proof
+
+Everything above (II) went through `HookSumClosedForm`'s `2Σ_h = p₂(λ) + p₂(λ')`.
+The route below instead specialises (I') at `g = (· : ℤ)`.  The two proofs share
+no step: one is a reflection argument over the cells, the other is the hook-length
+formula's β-multiset.  Agreement is therefore a check on both. -/
+
+/-- The corpus's `ℕ`-valued hook, cast to `ℤ`, is `hookZ` — on a genuine cell,
+where both truncated subtractions are honest. -/
+theorem wenzlHook_cast (μ : YoungDiagram) {c : ℕ × ℕ} (hc : c ∈ μ.cells) :
+    ((QOU.QBeta.WenzlWeight.hook μ c : ℕ) : ℤ) = hookZ μ c := by
+  have hmem : (c.1, c.2) ∈ μ := by simpa using (YoungDiagram.mem_cells c).mp hc
+  have hrow : c.2 < μ.rowLen c.1 := YoungDiagram.mem_iff_lt_rowLen.mp hmem
+  have hcol : c.1 < μ.colLen c.2 := YoungDiagram.mem_iff_lt_colLen.mp hmem
+  rw [hookZ_eq]
+  unfold QOU.QBeta.WenzlWeight.hook
+  omega
+
+/-- `2 Σ_{j<b} (b − j) = b(b+1)`: the descending sum `b + (b−1) + ⋯ + 1`. -/
+theorem two_mul_sum_desc (b : ℕ) :
+    2 * ∑ j ∈ range b, ((b - j : ℕ) : ℤ) = (b : ℤ) * ((b : ℤ) + 1) := by
+  have hterm : ∀ j ∈ range b, ((b - j : ℕ) : ℤ) = (b : ℤ) - (j : ℤ) := by
+    intro j hj
+    rw [mem_range] at hj
+    omega
+  rw [Finset.sum_congr rfl hterm, Finset.sum_sub_distrib, Finset.sum_const,
+    Finset.card_range, nsmul_eq_mul]
+  have h2 := two_mul_sum_range_cast b
+  linear_combination (-1 : ℤ) * h2
+
+/-- **(II), proved a second time** — from the hook multiset (I') rather than from
+the closed form.  Statement identical to `two_mul_sum_hookZ_betaForm`, and it needs
+**no** column bound `M`. -/
+theorem sum_hookZ_betaForm_of_hookMultiset (μ : YoungDiagram) {L : ℕ}
+    (hL : μ.colLen 0 ≤ L) :
+    2 * ∑ c ∈ μ.cells, hookZ μ c
+      = ∑ i ∈ range L,
+          ((QOU.SchurWeyl.betaR L μ i : ℕ) : ℤ) * (((QOU.SchurWeyl.betaR L μ i : ℕ) : ℤ) + 1)
+        - 2 * ∑ i ∈ range L, ∑ j ∈ Ico (i + 1) L,
+            (((QOU.SchurWeyl.betaR L μ i : ℕ) : ℤ)
+              - ((QOU.SchurWeyl.betaR L μ j : ℕ) : ℤ)) := by
+  have key := sum_hookF_add_pairF (fun m => (m : ℤ)) μ hL
+  -- (a) the cell sum is the `hookZ` sum
+  have ha : ∑ c ∈ μ.cells, ((QOU.QBeta.WenzlWeight.hook μ c : ℕ) : ℤ)
+      = ∑ c ∈ μ.cells, hookZ μ c :=
+    Finset.sum_congr rfl fun c hc => wenzlHook_cast μ hc
+  -- (b) the pair sum, reindexed from `range (L − (i+1))` to `Ico (i+1) L`
+  have hb : ∀ i ∈ range L,
+      ∑ k ∈ range (L - (i + 1)),
+          ((QOU.SchurWeyl.betaR L μ i - QOU.SchurWeyl.betaR L μ (i + 1 + k) : ℕ) : ℤ)
+        = ∑ j ∈ Ico (i + 1) L,
+            (((QOU.SchurWeyl.betaR L μ i : ℕ) : ℤ)
+              - ((QOU.SchurWeyl.betaR L μ j : ℕ) : ℤ)) := by
+    intro i hi
+    rw [mem_range] at hi
+    rw [Finset.sum_Ico_eq_sum_range]
+    refine Finset.sum_congr rfl fun k hk => ?_
+    rw [mem_range] at hk
+    have hlt : QOU.SchurWeyl.betaR L μ (i + 1 + k) < QOU.SchurWeyl.betaR L μ i :=
+      QOU.SchurWeyl.betaR_lt (by omega) (by omega)
+    omega
+  -- (c) the descending sums
+  have hc2 : 2 * ∑ i ∈ range L, ∑ j ∈ range (QOU.SchurWeyl.betaR L μ i),
+        ((QOU.SchurWeyl.betaR L μ i - j : ℕ) : ℤ)
+      = ∑ i ∈ range L,
+          ((QOU.SchurWeyl.betaR L μ i : ℕ) : ℤ) * (((QOU.SchurWeyl.betaR L μ i : ℕ) : ℤ) + 1) := by
+    rw [Finset.mul_sum]
+    exact Finset.sum_congr rfl fun i _ => two_mul_sum_desc _
+  rw [ha, Finset.sum_congr rfl hb] at key
+  linarith [key, hc2]
+
 end QOU.BraidKnot.HookSum
