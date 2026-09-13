@@ -1,0 +1,92 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1303.6444v3",
+ "source_sha256": "4f12ace2197f70ca",
+ "brief": "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle",
+ "extended": "**VIRIAL EXPANSION BOUNDS**\n\n*STEPHEN JAMES TATE*\n\n14 pp, 14 sections.\n\n**Abstract.** In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle (1969). This technique is generalised to more recent cluster expansion bounds by Poghosyan and Ueltschi (2009), which are related to the work of Procacci (2007) and the tree-graph identity, detailed by Brydges (1986). The bounds achieved by Lebowitz and Penrose can also be sharpened by doing the actual optimisation and achieving ex- pressions in terms of the Lambert W-function. The diﬀerent bound from the cluster expansion shows some improvements for bounds on the convergence of the virial expan- sion in the case of positive potentials, which are allowed to have a hard core.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Background to the Paper; 2 Main Results; 3 Obtaining the Relationship; 4 General Derivation: Derivation for Theorem 2; 5 Derivation of Corollary 2.2 and comparisons ; 5.2 Morais-Procacci Bound; 5.3 Lebowitz-Penrose; 5.4 Comparison of the Bounds; 6 The Alternative Bound: Corollary 2.3; 7 Comparison of the Separate Bound: Propositio; Appendix A. Lagrange Inversion; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: Assuming cluster coeﬃcient bounds of the form:\n- Proposition 2.4: The bound in Corollary 2.3 is better than that\n- Corollary 2.2: The cluster expansion bounds:\n- Corollary 2.3: For cluster expansion bounds:",
+ "tokens": {
+  "brief": 48,
+  "extended": 383
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-background-to-the-paper",
+   "title": "Background to the Paper",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-main-results",
+   "title": "Main Results",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-3-obtaining-the-relationship",
+   "title": "Obtaining the Relationship",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-4-general-derivation-derivation-for-theorem-21",
+   "title": "General Derivation: Derivation for Theorem 2.1",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-005-5-derivation-of-corollary-22-and-comparisons-wit",
+   "title": "Derivation of Corollary 2.2 and comparisons with previous results",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-006-52-morais-procacci-bound",
+   "title": "Morais-Procacci Bound",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-007-53-lebowitz-penrose",
+   "title": "Lebowitz-Penrose",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-008-54-comparison-of-the-bounds",
+   "title": "Comparison of the Bounds",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-009-6-the-alternative-bound-corollary-23",
+   "title": "The Alternative Bound: Corollary 2.3",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-7-comparison-of-the-separate-bound-proposition-2",
+   "title": "Comparison of the Separate Bound: Proposition 2.4",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-011-appendix-a-lagrange-inversion",
+   "title": "Appendix A. Lagrange Inversion",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "14-14"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

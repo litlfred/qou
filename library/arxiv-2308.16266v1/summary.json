@@ -1,0 +1,30 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2308.16266v1",
+ "source_sha256": "59f0cbfb48d717bb",
+ "brief": "Distilling the essential elements of nuclear binding via neural-network quantum states — 2 sections: Distilling the essential elements ; Appendix: Wigner-Eckart",
+ "extended": "**Distilling the essential elements of nuclear binding via neural-network quantum states**\n\n*Alex Gnech, 1, 2 Bryce Fore, 3 and Alessandro Lovato 2, 3, 4*\n\n7 pp, 2 sections.\n\n**Outline.** Distilling the essential elements of nuclear b; Appendix: Wigner-Eckart",
+ "tokens": {
+  "brief": 40,
+  "extended": 64
+ },
+ "sections": [
+  {
+   "id": "sec-000-distilling-the-essential-elements-of-nuclear-bin",
+   "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-appendix-wigner-eckart",
+   "title": "Appendix: Wigner-Eckart",
+   "pages": "7-7"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,284 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1303.6444v3",
+ "source": {
+  "file": "1303.6444v3.pdf",
+  "sha256": "4f12ace2197f70ca9b6e2f8c6ee90d4c5d193c73e911153a62563f499d606379",
+  "bytes": 464221,
+  "pages": 14,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1303.6444",
+   "version": "3",
+   "primary_class": "math-ph",
+   "stamp_date": "24 Jul 2013"
+  },
+  "doi": null,
+  "title": "VIRIAL EXPANSION BOUNDS",
+  "authors_raw": "STEPHEN JAMES TATE",
+  "title_lines": [
+   "VIRIAL EXPANSION BOUNDS"
+  ],
+  "abstract": "In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle (1969). This technique is generalised to more recent cluster expansion bounds by Poghosyan and Ueltschi (2009), which are related to the work of Procacci (2007) and the tree-graph identity, detailed by Brydges (1986). The bounds achieved by Lebowitz and Penrose can also be sharpened by doing the actual optimisation and achieving ex- pressions in terms of the Lambert W-function. The di\ufb00erent bound from the cluster expansion shows some improvements for bounds on the convergence of the virial expan- sion in the case of positive potentials, which are allowed to have a hard core.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210917045905Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Background to the Paper",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "Main Results",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Obtaining the Relationship",
+   "page": 4,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "General Derivation: Derivation for Theorem 2.1",
+   "page": 5,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Derivation of Corollary 2.2 and comparisons with previous results",
+   "page": 7,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Derivation of Corollary 2.2",
+   "page": 7,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Morais-Procacci Bound",
+   "page": 7,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Lebowitz-Penrose",
+   "page": 8,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Comparison of the Bounds",
+   "page": 10,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "The Alternative Bound: Corollary 2.3",
+   "page": 11,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Comparison of the Separate Bound: Proposition 2.4",
+   "page": 12,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Lagrange Inversion",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 803,
+   "n_words": 128
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 725,
+   "n_words": 117
+  },
+  {
+   "id": "sec-001-11-background-to-the-paper",
+   "number": "1.1",
+   "title": "Background to the Paper",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1453,
+   "n_words": 214
+  },
+  {
+   "id": "sec-002-2-main-results",
+   "number": "2",
+   "title": "Main Results",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4785,
+   "n_words": 898
+  },
+  {
+   "id": "sec-003-3-obtaining-the-relationship",
+   "number": "3",
+   "title": "Obtaining the Relationship",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 886,
+   "n_words": 171
+  },
+  {
+   "id": "sec-004-4-general-derivation-derivation-for-theorem-21",
+   "number": "4",
+   "title": "General Derivation: Derivation for Theorem 2.1",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3556,
+   "n_words": 673
+  },
+  {
+   "id": "sec-005-5-derivation-of-corollary-22-and-comparisons-wit",
+   "number": "5",
+   "title": "Derivation of Corollary 2.2 and comparisons with previous results",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 609,
+   "n_words": 114
+  },
+  {
+   "id": "sec-006-52-morais-procacci-bound",
+   "number": "5.2",
+   "title": "Morais-Procacci Bound",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1969,
+   "n_words": 339
+  },
+  {
+   "id": "sec-007-53-lebowitz-penrose",
+   "number": "5.3",
+   "title": "Lebowitz-Penrose",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 1977,
+   "n_words": 438
+  },
+  {
+   "id": "sec-008-54-comparison-of-the-bounds",
+   "number": "5.4",
+   "title": "Comparison of the Bounds",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1057,
+   "n_words": 198
+  },
+  {
+   "id": "sec-009-6-the-alternative-bound-corollary-23",
+   "number": "6",
+   "title": "The Alternative Bound: Corollary 2.3",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 746,
+   "n_words": 147
+  },
+  {
+   "id": "sec-010-7-comparison-of-the-separate-bound-proposition-2",
+   "number": "7",
+   "title": "Comparison of the Separate Bound: Proposition 2.4",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1490,
+   "n_words": 288
+  },
+  {
+   "id": "sec-011-appendix-a-lagrange-inversion",
+   "number": null,
+   "title": "Appendix A. Lagrange Inversion",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1040,
+   "n_words": 197
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2449,
+   "n_words": 376
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 14,
+  "chars_total": 23545
+ }
+}
