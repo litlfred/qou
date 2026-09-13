@@ -22,7 +22,11 @@ import QOU.BraidKnot.HookSumThicknessBound
 -- `L >= l(mu)`. The REV_n shape free energy is one-body plus two-body in exactly these
 -- coordinates, and its energy term enters through the second identity. Verified numerically
 -- over every partition of n <= 16 before being proved; the corpus had beta-number PRODUCTS
--- (the hook-formula Vandermonde) but no identity about beta-number SUMS.
+-- (the hook-formula Vandermonde) but no identity about beta-number SUMS. Also (I'), the
+-- general one-body/two-body split `Sum_c g(h(c)) + Sum_{i<j} g(beta_i - beta_j)
+-- = Sum_i Sum_{m<=beta_i} g(m)` for ANY g into an AddCommMonoid -- which is SchurWeyl's
+-- multiplicative `hookSide_betaR` transported through Multiplicative N, so it costs nothing
+-- and gives (II) a SECOND proof, from the hook multiset rather than from the closed form.
 import QOU.BraidKnot.HookSumBetaCoordinates
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
