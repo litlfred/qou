@@ -357,6 +357,103 @@ theorem ud_mul_ne_one (hq : 0 < q) (hq1 : q ≠ 1) (l : Letter) :
     field_simp at hcon
     exact hs (by nlinarith)
 
+/-! ### Sign parity — the character's sign is `(−1)^{length}`, for EVERY word
+
+The two theorems immediately below (`protonWord_char_neg`, `neutronWord_char_neg`)
+each prove negativity for **one** word, by computing that word's closed form.
+This section proves the *mechanism*, which is stronger and is what generalises:
+every letter of the alphabet has negative character, so the sign of a product of
+them is decided by nothing but how many there are.
+
+Why it matters beyond bookkeeping: under the owner-selected SDP scope
+**(B) whole element** (2026-09-13, bean `qou-99qc`), the confinement SDP asks
+every Wedderburn projection of a candidate word to be `Matrix.PosSemidef`. The
+alternating block is **one-dimensional**, so there PSD is just `0 ≤ character`.
+Hence an odd-length word is excluded outright — no matter which letters it uses,
+in which order, on which generators. The corpus nucleon budget is **11**, which
+is odd, so this excludes the whole 11-crossing construction and not merely a
+choice within it. -/
+
+/-- **Every letter of the alphabet has strictly negative alternating
+character**, at every `q > 0`.
+
+Falsifiable and checked at all three constructors rather than asserted: it is
+the reason the parity below holds, and it fails the moment a letter with shift
+`d ≥ 1/(q² − 1)` is admitted — none of the corpus letters is remotely near that
+(`d ∈ {0, −1/2, −1}` against a threshold of `≈ 4.31` at the substrate pin). -/
+theorem letterChar_neg (hq : 0 < q) (l : Letter) : letterChar q l < 0 := by
+  cases l
+  · simp only [letterChar]
+    exact neg_lt_zero.mpr (inv_pos.mpr hq)
+  · simp only [letterChar]
+    exact div_neg_of_neg_of_pos (by nlinarith [sq_nonneg q]) (by linarith)
+  · simp only [letterChar]
+    exact neg_lt_zero.mpr hq
+
+/-- **The sign of a word's alternating character is `(−1)^{length}`.**
+
+Stated as the two halves at once, because that is what the induction proves:
+prepending a letter flips both the parity and the sign together. -/
+theorem wordChar_sign (hq : 0 < q) (w : List Letter) :
+    (Even w.length → 0 < wordChar q w) ∧ (Odd w.length → wordChar q w < 0) := by
+  induction w with
+  | nil =>
+      refine ⟨fun _ => by simp [wordChar], fun h => ?_⟩
+      simp at h
+  | cons l t ih =>
+      have hl := letterChar_neg hq l
+      have hcons : wordChar q (l :: t) = letterChar q l * wordChar q t := by
+        simp [wordChar]
+      refine ⟨fun he => ?_, fun ho => ?_⟩
+      · rw [hcons]
+        have ht : Odd t.length := by
+          rw [List.length_cons, Nat.even_add_one, Nat.not_even_iff_odd] at he
+          exact he
+        exact mul_pos_of_neg_of_neg hl (ih.2 ht)
+      · rw [hcons]
+        have ht : Even t.length := by
+          rw [List.length_cons, Nat.odd_add_one, Nat.not_odd_iff_even] at ho
+          exact ho
+        exact mul_neg_of_neg_of_pos hl (ih.1 ht)
+
+/-- An **odd-length** word has strictly negative alternating character. -/
+theorem wordChar_neg_of_odd (hq : 0 < q) {w : List Letter} (h : Odd w.length) :
+    wordChar q w < 0 :=
+  (wordChar_sign hq w).2 h
+
+/-- An **even-length** word has strictly positive alternating character. -/
+theorem wordChar_pos_of_even (hq : 0 < q) {w : List Letter} (h : Even w.length) :
+    0 < wordChar q w :=
+  (wordChar_sign hq w).1 h
+
+/-- **The headline: no 11-letter word can be PSD in the alternating block.**
+
+The alternating block is one-dimensional, so `Matrix.PosSemidef` there is
+exactly `0 ≤ wordChar`. Eleven is odd, so the character is strictly negative —
+for every assignment of letters, every ordering, every generator labelling.
+
+Under scope (B) this is a **scope-(b) structural exclusion** of the entire
+11-crossing nucleon construction, with the invariant named: the sign of the
+alternating character. It is independent of which letters carry the
+proton/neutron asymmetry, so no choice among them can repair it. -/
+theorem no_eleven_letter_word_is_alt_psd (hq : 0 < q) {w : List Letter}
+    (h : w.length = 11) : wordChar q w < 0 := by
+  refine wordChar_neg_of_odd hq ?_
+  rw [h]
+  decide
+
+/-- The companion positive statement, recorded so the exclusion above is not
+mistaken for "the character is always negative": at **even** length it is always
+positive, so the parity is a real discriminator rather than a blanket sign.
+Together with `GammaGammaWordSelection.altChar_eq_one` (every γγ word has
+character `1 > 0`) this is consistent — γγ words have even length. -/
+theorem alt_psd_iff_even (hq : 0 < q) (w : List Letter) :
+    0 < wordChar q w ↔ Even w.length := by
+  refine ⟨fun hpos => ?_, wordChar_pos_of_even hq⟩
+  by_contra hodd
+  rw [Nat.not_even_iff_odd] at hodd
+  exact absurd hpos (not_lt.mpr (wordChar_neg_of_odd hq hodd).le)
+
 theorem protonWord_char_neg (hq : 0 < q) : wordChar q protonWord < 0 := by
   rw [protonWord_char hq.ne']
   apply div_neg_of_neg_of_pos
