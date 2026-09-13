@@ -43,14 +43,26 @@ import _path_bridge as _bridge  # noqa: F401
 del _sys, _bridge
 
 import json
-import math
+from fractions import Fraction
 from itertools import combinations
 from pathlib import Path
 
 import mpmath as mp
 
-from _precision import set_compute_dps
+from _precision import set_compute_dps, fmt
 from witness_base import WitnessBuilder, record_upstream
+
+
+def _serialise(obj):
+    """Render mpf leaves with `_precision.fmt`; leave everything else alone."""
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()
+                if not k.startswith("_")}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
 
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -71,29 +83,44 @@ M_E = mp.mpf("0.51099895069")
 ATOMS = ["D", "T", "3He", "4He"]   # the four extensivity-gap isotopes
 
 
-def spearman(a: list[mp.mpf], b: list[mp.mpf]) -> float:
-    """Spearman rank-correlation with average-rank tie handling."""
+def spearman(a: list[mp.mpf], b: list[mp.mpf]) -> mp.mpf:
+    """Spearman rank-correlation with average-rank tie handling.
+
+    EXACT up to the two square roots.  Ranks are half-integers, so every
+    quantity here except the final radicals is a RATIONAL, and it is carried
+    as `Fraction` rather than as `float`.  This returned a `float` built with
+    `math.sqrt` over float ranks until 2026-09-13 — the case AGENTS.md names
+    directly ("never aggregate with `statistics` / `math` over floats"), and
+    not a cosmetic one here: the probe's PRUNE verdict is decided by
+    `rho_real > rho_junk + 0.25`, so this function's return value IS the
+    conclusion.
+    """
     def ranks(xs):
         order = sorted(range(len(xs)), key=lambda i: xs[i])
-        rk = [0.0] * len(xs)
+        rk = [Fraction(0)] * len(xs)
         i = 0
         while i < len(xs):
             j = i
             while j + 1 < len(xs) and xs[order[j + 1]] == xs[order[i]]:
                 j += 1
-            avg = (i + j) / 2.0 + 1.0
+            avg = Fraction(i + j, 2) + 1
             for k in range(i, j + 1):
                 rk[order[k]] = avg
             i = j + 1
         return rk
     ra, rb = ranks(a), ranks(b)
     n = len(a)
-    mean_a = sum(ra) / n
-    mean_b = sum(rb) / n
-    num = sum((ra[i] - mean_a) * (rb[i] - mean_b) for i in range(n))
-    da = math.sqrt(sum((ra[i] - mean_a) ** 2 for i in range(n)))
-    db = math.sqrt(sum((rb[i] - mean_b) ** 2 for i in range(n)))
-    return num / (da * db) if da > 0 and db > 0 else 0.0
+    mean_a = sum(ra, Fraction(0)) / n
+    mean_b = sum(rb, Fraction(0)) / n
+    num = sum(((ra[i] - mean_a) * (rb[i] - mean_b) for i in range(n)),
+              Fraction(0))
+    va = sum(((ra[i] - mean_a) ** 2 for i in range(n)), Fraction(0))
+    vb = sum(((rb[i] - mean_b) ** 2 for i in range(n)), Fraction(0))
+    if va <= 0 or vb <= 0:
+        return mp.mpf(0)
+    da = mp.sqrt(mp.mpf(va.numerator) / va.denominator)
+    db = mp.sqrt(mp.mpf(vb.numerator) / vb.denominator)
+    return (mp.mpf(num.numerator) / num.denominator) / (da * db)
 
 
 def order_desc(vals: dict[str, mp.mpf]) -> list[str]:
@@ -167,10 +194,10 @@ def main() -> int:
             scaled = cm[a] * scale
             rel = abs(scaled - mu_target[a]) / mu_target[a]
             per_iso[a] = {
-                "candidate_raw": float(cm[a]),
-                "candidate_scaled": float(scaled),
-                "mu_ext_target": float(mu_target[a]),
-                "rel_err": float(rel),
+                "candidate_raw": cm[a],
+                "candidate_scaled": scaled,
+                "mu_ext_target": mu_target[a],
+                "rel_err": rel,
             }
         max_rel = max(per_iso[a]["rel_err"] for a in ATOMS)
         c_order = order_desc(cm)
@@ -182,7 +209,7 @@ def main() -> int:
             "order_matches_mu": order_match,
             "D_rank_in_candidate": d_rank_cand,     # μ_ext has D at rank 2
             "spearman_vs_mu": rho,
-            "spread_max_over_min": float(cspread),
+            "spread_max_over_min": cspread,
             "monotone_or_uniform_note": (
                 "uniform (spread<1.3)" if cspread < mp.mpf("1.3")
                 else "non-uniform"),
@@ -248,14 +275,16 @@ def main() -> int:
         f"{verdict_tag} (scope-(a)). Cross-check: B_AME/B_base reproduces "
         f"mu_ext_target for all four isotopes ({xcheck_ok}). mu_ext is "
         f"NON-MONOTONE (order {'/'.join(mu_order)}, spread "
-        f"×{float(mu_spread):.2f}, deuteron 2nd-largest from its tiny "
-        f"B_base). NO parameter-free per-knot reading of the additive "
+        f"×{float(mu_spread):.2f}, {mu_order[1]} 2nd-largest). NO "
+        f"parameter-free per-knot reading of the additive "
         f"S(K)/tr_M structure reproduces that shape: every candidate that "
         f"has 4He as the max (S/m_e, S/(A m_e), 1/tr_M, constit_sum/tr_M) "
-        f"puts the DEUTERON SMALLEST (rank 4), the exact opposite of "
-        f"mu_ext's D-at-rank-2 — the per-knot S/(A m_e) family is "
-        f"monotone/compressed (spread ×1.14 across the four) and cannot "
-        f"supply mu_ext's ×2.83 non-monotone range, as the formalize-first "
+        f"puts the DEUTERON SMALLEST (rank 4) against mu_ext's "
+        f"D-at-rank-{mu_order.index('D') + 1} — the per-knot "
+        f"S/(A m_e) family is monotone/compressed (spread "
+        f"×{float(results['S/(A*m_e)']['spread_max_over_min']):.2f} across "
+        f"the four) and cannot supply mu_ext's ×{float(mu_spread):.2f} "
+        f"non-monotone range, as the formalize-first "
         f"uniformity argument predicts. tr_M(K) itself is anti-shaped "
         f"(4He MIN, not max). JUNK CONTROL: the best real candidate "
         f"({best_real}, Spearman {rho_real:+.2f}) does NOT beat the best "
@@ -295,21 +324,21 @@ def main() -> int:
     w.add_data("cross_check_B_AME_over_B_base_equals_mu_target", bool(xcheck_ok))
     w.add_data("targets", {
         a: {
-            "B_base_MeV": float(B_base[a]),
-            "B_AME_MeV": float(B_AME[a]),
-            "mu_ext_target": float(mu_target[a]),
-            "mu_ext_recomputed": float(mu_recomputed[a]),
+            "B_base_MeV": fmt(B_base[a]),
+            "B_AME_MeV": fmt(B_AME[a]),
+            "mu_ext_target": fmt(mu_target[a]),
+            "mu_ext_recomputed": fmt(mu_recomputed[a]),
             "A": Aof[a],
         } for a in ATOMS
     })
     w.add_data("mu_ext_order_desc", mu_order)
-    w.add_data("mu_ext_spread_max_over_min", float(mu_spread))
-    w.add_data("candidates", results)
+    w.add_data("mu_ext_spread_max_over_min", fmt(mu_spread))
+    w.add_data("candidates", _serialise(results))
     w.add_data("junk_control", {
         "best_real_candidate": best_real,
-        "best_real_spearman": rho_real,
+        "best_real_spearman": fmt(rho_real),
         "best_junk_candidate": best_junk,
-        "best_junk_spearman": rho_junk,
+        "best_junk_spearman": fmt(rho_junk),
         "real_beats_junk_by_0p25": bool(beats_junk),
         "any_real_order_matches_mu": bool(any_order_match),
         "any_real_D_at_rank2": bool(any_d_second),
@@ -331,9 +360,9 @@ def main() -> int:
     w.add_assertion(
         "no_perknot_candidate_reproduces_mu_ext_order",
         computed=str(bool(not any_order_match)), expected="True", tolerance=0,
-        source="No parameter-free per-knot S(K)/tr_M candidate matches the "
-               "non-monotone mu_ext desc order (D 2nd, 4He max); the S/(A m_e) "
-               "family puts D smallest.")
+        source=f"No parameter-free per-knot S(K)/tr_M candidate matches the "
+               f"non-monotone mu_ext desc order ({mu_order[1]} 2nd, "
+               f"{mu_order[0]} max); the S/(A m_e) family puts D smallest.")
 
     print("\n  RERUN VERDICT:")
     for chunk in verdict.split(". "):
