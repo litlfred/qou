@@ -3001,15 +3001,25 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-one** rows (re-counted 2026-09-13), and the groups below
->   split the FIRST THIRTY-FOUR seven ways — only the first group is about
->   conventions at all. **Rows 35-40 are NOT in this list**: 35 (the
+>   catalogues **forty-three** rows (re-counted 2026-09-13), and the groups
+>   below split the FIRST THIRTY-FOUR seven ways — only the first group is
+>   about conventions at all. **Rows 35-43 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
->   39 (the freshness is on the wrong object), and 40, which is the first row
+>   39 (the freshness is on the wrong object), 40, which is the first row
 >   in the table whose failure runs the OTHER way — an over-matching grep that
 >   fails to a false **COVERED** rather than a false all-clear, so it ends the
->   search instead of prolonging it:
+>   search instead of prolonging it — 41 (the query's character encoding), and
+>   **42-43, which are one arc and the sharpest pair in the table**: 42 is the
+>   body SHAPE of a self-assuming projection (an applied SINGLE field was
+>   unseen, so the case where the conclusion is universally quantified — the
+>   NORMAL case — was invisible by construction, 26 → 42 hits), and 43 is scan
+>   SCOPE on the `--review-ledger` write path, found while fixing 42 and
+>   **destroying 106 of 329 committed adjudications in the process**. Both are
+>   repeats of a repair the corpus had already made once: 42's fix exists one
+>   arity over as `APPLIED_TUPLE_PROJECTION`, and 43 is row 33 a second time on
+>   the same API, where the `--json` path refuses a partial scan and the ledger
+>   path never got the rule:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard

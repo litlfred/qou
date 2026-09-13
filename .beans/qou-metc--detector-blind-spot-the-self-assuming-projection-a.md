@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-13T17:33:19Z
-updated_at: 2026-09-13T17:33:39Z
+updated_at: 2026-09-13T18:26:53Z
 ---
 
 ## MEASURED 2026-09-13 on the QOU Lean tree (2870 .lean files)
@@ -95,3 +95,62 @@ promoting newly-covered patterns to hard failures is *"a deliberate follow-up,
 not a silent side effect of closing the blindspot"*, and 26 → 42 is a 62 %
 rise in a critical-severity criterion. The probe patch was applied in a
 scratch copy and reverted; `git diff` on the detector is clean.
+
+
+## LANDED 2026-09-13 — and finding the fix surfaced a WORSE defect
+
+Both are now taxonomy rows: 42 (this one) and 43 (the ledger).
+
+### Row 42 — the pattern, landed EXEMPT
+
+APPLIED_PROJECTION added beside the tuple form it is the one-field analogue of.
+Measured, QOU Lean tree, 2871 .lean:
+
+  counted (total_defects)      34 -> 34     gate stays green
+  this criterion, counted      26 -> 26
+  total_exempt                 42 -> 58     +16
+  files_flagged                61 -> 76
+  applied-field-projection      0 -> 16
+
+All 16 land EXEMPT, as the two prior coverage expansions did, and all 16 enter
+the review ledger so --check-ledger demands an agent verdict on each.
+Promoting them to hard failures is issue #7329 and is NOT done here.
+
+No regression: no previously-counted finding moved into the new exempt bucket
+(counted unchanged while exempt rose by exactly the 16 new entries).
+--selftest-docstring-sorry passes.
+
+### 🛑 Row 43 — I DESTROYED 106 COMMITTED ADJUDICATIONS FINDING IT
+
+Seeding the ledger for those 16, scoped to
+content/quantum-observable-universe/lean, rewrote
+docs/audits/lean-vacuity-review-ledger.json -863/+67 and deleted 106 of 329
+entries. Caught in the git diff and reverted; nothing committed. NO CHECK WOULD
+HAVE CAUGHT IT -- the run prints only "N candidate(s)".
+
+The deletion loop already carries a guard for the SAME confusion one axis over:
+it distinguishes "fixed" from "not produced by this scanner", added 2026-08-30
+after a run deleted 116 of 268 entries. It does not distinguish "fixed" from
+"NOT SCANNED". All 106 were in categories this audit DOES produce, so that
+guard preserved none of them. The ledger spans 22 roots across two papers; only
+223 entries live under the subtree scanned.
+
+And the --json path three hundred lines up ALREADY REFUSES a partial scan, in
+those words. The ledger is the other write path of the same API and never got
+the rule -- row 33 (qou-3ral) a second time.
+
+Fixed by SCOPING the deletion, not refusing the run: a partial scan still
+resolves stale entries inside what it looked at, and cannot touch what it did
+not. Regression test: the exact destructive command now preserves 210
+foreign-category and 45 unscanned-file entries.
+
+### WHAT IS STILL OPEN
+
+1. Adjudicating the 16. They are candidates from a deliberately conservative
+   regex, not verdicts. qou-z9ws measured 0 of 12 legitimate on the PREVIOUSLY
+   VISIBLE population -- evidence about that population, not this one.
+2. Whether to promote applied-field-projection from EXEMPT to COUNTED. Issue
+   #7329; an owner call, since it turns a critical gate red on 16 files.
+3. Seeding the ledger for the 16. Needs a CORPUS-WIDE scan across all 22 roots,
+   not the subtree scan that caused row 43. Deliberately not run here.
+4. qou-z9ws's 112-entry sizing is a FLOOR. Not re-sized.
