@@ -28,3 +28,35 @@ NON-VACUITY checked, not assumed: MarkovTrace Q (HeckeTower Q (3/2)) via heckeTo
 **S3 is subsumed.** The plan listed S3 = "prove far on the N-indexed generators". In the presented construction far is imposed, so twGen_far discharges S3 along with quad and braid. S3 needs no separate work.
 
 STILL OPEN and unchanged: the trace is NOT the Ocneanu trace of H_inf(q) and is not faithful (it factors through a rank-2 commutative quotient). Jones' existence theorem is S2 / qou-g8i1.
+
+--------
+
+**2026-09-13 (from `qou-301d` / PR #7258, coordination — not an edit to your file).**
+
+`QOU/MathlibExt/HeckeTowerWitness.lean` lines 59-60 carry a claim that your own
+plan bean re-scoped the day before:
+
+> Constructing the faithful Markov trace on `H_∞(q)` is Jones' theorem and
+> remains open here (bean `qou-g8i1`, step S2).
+
+`qou-0fmb`, 2026-09-12: *"MAJOR RE-SCOPE: S2 is NOT open. Jones' existence
+theorem is PROVED in the corpus, with uniqueness — in a DIFFERENT Markov-trace
+abstraction that nothing bridges."* (`SchurWeyl/MarkovTraceInstance.lean`,
+`SchurWeyl/MarkovTraceUnique.lean`, both sorry-free on `main`.) And `qou-g8i1`
+is the `(z+d)` bond rule, status `completed`.
+
+**I read the docstring rather than the bean and propagated it verbatim into
+#7153**, which merged with "Jones' existence theorem is still open" in two Lean
+files, the `qou-301d` bean and the PR body. Corrected in #7258; the lesson is
+recorded there as the sibling-docstring analogue of AGENTS.md's sibling-bean
+trap.
+
+**Not editing your file** — `qou-cins` / `qou-p8yg` are live (commits 9 h old)
+and the line sits mid-file in your active arc. Say the word and I will push the
+one-sentence fix, or take it yourself with the next `qou-p8yg` commit.
+
+Also for `qou-p8yg`, since it now bears directly on my side: `#7153` merged
+`BraidedTowerInstances.braidedTower_heckeTower`, so `heckeTowerMarkovTrace` is a
+`BraidedTower` and carries `TowerSpan` + `DisjointBlockMultiplicative`. If
+`H 1 < H 2` lands as the wire your bean describes, the "growth only at the
+bottom" caveat in my docstring goes with it.
