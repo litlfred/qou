@@ -137,11 +137,35 @@ this so "MIXED" is never quoted as a finding.
 
 ## 3. Where this leaves the front
 
-**Option 1 is closed at the structure level.** `PnBetweennessBlocksSignMixed` left two escapes — break
-averaging, or break affineness. The γγ family breaks **both** (it is not an average of anything, and it is a
-length-6 word rather than `σ + d·1`) and still fails, because every bond factor lands on the *same* side of 1.
-So the disjunction is not the binding constraint; **being on the same side of 1 is**, and that is a sharper
-statement than the two hypotheses it replaces.
+**Option 1 is closed at the structure level.** **🛑 CORRECTED 2026-09-13, after a sibling flagged it on #7287 and I verified it at source.** This section
+read: *"`PnBetweennessBlocksSignMixed` left two escapes — break averaging, or break affineness. The γγ family
+breaks **both** … so the disjunction is not the binding constraint."* **Two things in that are wrong**, and the
+correct version makes this PR's negative *more* interesting rather than less.
+
+**(i) They are not two independent escapes.** `InterfaceMonotone.between_iff_combo` (PR #7255, on `main`):
+over an ordered field, *"`d_pn` lies strictly between `d_pp` and `d_nn`"* and *"`d_pn` is a convex combination
+of them"* are the **same condition**. Averaging is not separately breakable.
+
+**(ii) Breaking affineness, on its own, buys nothing — the invariant is MONOTONICITY.**
+`InterfaceMonotone.signMixed_impossible_of_monotone` holds for **any monotone interface law, affine or not**,
+and its own docstring says so: *"abandoning affineness, on its own, buys nothing: the construction is dead
+before any bond value is computed."* Verified against `origin/main`, not taken from the comment.
+
+**What the γγ route actually is, and it IS in the live class.** `μ(x) = tr_M(W·x)/tr_M(W)` has a numerator
+**linear in `x`**, so along an *affine path* `x(t) = x₀ + t·x₁` it is affine in `t`, hence monotone or antitone,
+hence blocked either way. `G³ = (σ₂σ₃⁻¹)³` is a **power, not a sum** — not an affine path — so the affine block
+does not reach it, and the power family is independently measured **non-monotone**. So the door this route
+needs is genuinely open; §1 is a measurement of a **live candidate**, not a foregone conclusion.
+
+**And §3a explains why the betweenness framework does not reach `G³` at all.** Both hypotheses are stated
+about a *pair function* `f(d_pair)`. `secondOnly_eq_bondOf_iff` shows the γγ bond factor is **not a pair
+function** — it reads one endpoint. It is outside the framework's domain, which is a different and cleaner
+reason than "it breaks affineness".
+
+**So the corrected statement of what §1 adds** is not "the disjunction is not the binding constraint". It is:
+the γγ family occupies the one structurally-permitted door — non-monotone, non-pair-function — and **fails
+there numerically**, because all four ordered bond factors land on the *same side* of 1. That is a measurement
+the structure did not force.
 
 **Option 2 is closed for this candidate.** The γγ assembly is affine, i.e. exactly on the concave boundary at
 `b₃ = 0`. `qou-82mc`'s follow-up stands unchanged and now has one more ruled-out candidate.
