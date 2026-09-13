@@ -71,9 +71,18 @@ obstruction `DisjointBlockTraceLaw` identified and could not remove.
 * **`BraidRelations` is a hypothesis on the generators, not a theorem about
   them.** It is discharged for the presented tower `HeckeTowerWitness.HeckeTower`
   in `SandwichReducesHeckeInstance`, where the three relations hold *by
-  construction* — that is a genuine `h ≠ 0` instance, but a presented algebra is
-  the easy direction. Whether the *Ocneanu* trace on `H_∞(q)` satisfies
-  `MarkovTrace` faithfully is Jones' theorem and remains open (bean `qou-g8i1`).
+  construction* — a genuine `h ≠ 0` instance with a provably growing filtration,
+  but a presented algebra is the easy direction.
+* **And that instance exercises the FILTRATION only, not the trace.** Measured,
+  not assumed: `SandwichReducesHeckeInstance.towerTrace_mul` proves the Hecke
+  tower's trace is an algebra *homomorphism*, because the rank-2 Ocneanu trace is
+  multiplicative exactly on `z * z = h * z + 1` — which is the very hypothesis
+  `heckeTowerMarkovTrace` needs in order to be a `MarkovTrace`. So
+  `disjointBlock_heckeTower` is true and free, and no inhabited witness in the
+  corpus currently exercises the trace content at `h ≠ 0`: the one with a
+  provably non-multiplicative trace (`SymmetricGroupTowerWitness`) is at `h = 0`.
+  Closing that needs the faithful Ocneanu trace on `H_∞(q)` — Jones' theorem,
+  bean `qou-g8i1`. The table is in `SandwichReducesHeckeInstance`.
 * **No claim of linear independence.** `TowerSpan` is `≤`, not `=`, and the
   proof below uses only spanning.
 
