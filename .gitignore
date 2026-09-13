@@ -286,3 +286,4 @@ computations/.sparse-cache/
 # A derived cache keyed by the compiled kernel hash + q0 + dps + factors; it is
 # reproducible from the producers and can be large (~3 MB for deuterium alone).
 .work/kernel-memo/
+.work/hkt-supervise.log
