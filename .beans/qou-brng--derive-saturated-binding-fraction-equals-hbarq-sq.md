@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-12T19:12:09Z
+updated_at: 2026-09-13T05:22:13Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2881,3 +2881,13 @@ Probe: `computations/probes/rho_pp_kind_weight_does_not_close_b3_probe.py`, 7/7,
 
 
 2026-09-08 (Avenue 2 CLOSED over the encoding — branch claude/brng-avenue2-bulk-edge-set-2026-09-08). Invariant: LINEAR LAYOUT. atom_braid_word_3A emits every inter-nucleon letter at generator 3k+2, so the coordination graph of any word it can build (any ordering, any multiplicities) is a subgraph of the path on the ordering. Lean QOU/Mass/LinearLayoutNoBulk.lean (sorry-free, lean-direct exit 0): degree ≤ 2; |E| ≤ n; connected ⇒ the path, |E| = n−1, surface = 2; linearLayout_family_not_hasBulk. Probe linear_layout_no_bulk_probe.py 4/4: all 246 words A=2..8 × all orderings are the path (position-based AND strand-tracked); max-contact 3A−6, complete graph C(A,2) and the sub-affine true packing all violate |E| ≤ A and are inexpressible. Scope-(b): no edge set the encoding can express has a bulk. STILL OPEN (do not close this bean): the extensive term itself — a bulk needs either a different encoding with a DERIVED non-linear strand layout, or an extensive term that is not a coordination count; neither is derived, and choosing a layout to match the surface term would be selection against the target. Audit docs/audits/2026-09-08-linear-layout-no-bulk.md.
+
+
+
+## 2026-09-13 (session #7155, main review after 425 commits) — Avenue 2 branch rebased; workplan adjusted
+
+**State.** PR #7155 (Avenue 2: every expressible edge set is a linear layout ⇒ no bulk) was NOT merged; it sat conflicted on this bean file only. Rebased onto main c9fd78b0ad (union of both bean tails); the only dependency that moved on main is a docstring-only change to `mass_at_3A_proper.py` (qou-m6gp hyperbolic-branch note), so the probe premise is unchanged — re-run 4/4, witness byte-identical. Three documents on main already cite #7155's result as the current state of this bean (`2026-09-08-l2-1ppq-research-program-gaps.md` §2 lines 256/268, `2026-09-12-dominant-summand-extensive-test.md` line 116, cheat-sheet 9b currency block), while the Lean and probe are NOT on main — landing #7155 is the workplan priority for this front, so the citations resolve.
+
+**What landed on main and how it bears here.** (i) The escape enumeration (PR #7181, classes A–D) and its decisions — class C multiplicity sub-extensive (b), class B escapes invariant (2) not (1) (#7204), pn-averaging narrows class B (#7234), class D order-zero leg measured (#7230), dominant-summand channel none/anti-binding at A ≤ 7 (#7200, #7211), Ursell b₃ < 0 for every bond triple (#7198). None is an edge-set question inside the encoding; none contradicts or supersedes Avenue 2. The live remainder (classes B and D) lies outside what a coordination-graph invariant can decide. (ii) **Owner ruling qou-ales (2026-09-08): braid words are to be SELECTED by γγ production + confinement SDP at q₀, no census** (steps 1–10 landed). This is the one landing that touches Avenue 2's SCOPE: the invariant was measured on the template encoding `atom_braid_word_3A`. Structural note, not yet proved: a γγ vertex `σᵢσᵢ₊₁⁻¹` acts on strand positions i, i+1, i+2, which on the 3A-strand block line lie in at most two CONSECUTIVE blocks, so the position-based linear-layout invariant holds for every γγ-produced word on that line as well — `card_edgeFinset_le` and `linearLayout_family_not_hasBulk` apply unchanged. What does NOT transfer automatically is the strand-tracked graph: the template's vertices never migrate a strand across two interfaces (measured, 42/42 words); a γγ-selected word with vertices straddling interfaces could. **New workplan item:** once qou-ales produces selected atom words (step 2 admissibility per nucleus), measure the strand-tracked coordination graph on them and, if linear, state the γγ extension in Lean (a vertex touches ≤ 2 consecutive blocks). Until then Avenue 2 is closed over the template encoding only, as stated.
+
+**Untouched fronts still mine:** qou-gr3t (InteriorMarkov from the Hecke tower; #7153 reports TowerSpan proved from the braid relations — the missing piece), qou-d0qq steps 3–5, qou-8uxw, qou-denm (Kohno 1987 ingestion). No sibling appended to any of them since 2026-09-07.
