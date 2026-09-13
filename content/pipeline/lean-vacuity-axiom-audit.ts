@@ -1064,17 +1064,44 @@ function detectSelfAssuming(
   // the detector's own primary criterion, and the §3b deferral does not apply.
   // Recommendation 4 of `docs/audits/2026-08-09-honest-placeholder-criterion.md`.
   const nameGateMatched = !!field && CONCLUSION_FIELD.test(field);
-  // `applied-field-projection` is EXEMPT on landing for the same reason the
-  // applied-tuple and def-disguised patterns were: closing a coverage blindspot
-  // must not turn a `critical` gate red in the commit that discovers it. The 16
-  // it newly reaches still enter the review ledger, so `--check-ledger` demands
-  // an agent verdict on each. Promoting them to hard failures is a deliberate
-  // follow-up — issue #7329, bean `qou-metc` — not a side effect of this edit.
-  if (
-    (isDefProof && !nameGateMatched) ||
-    pat === "applied-tuple-projection" ||
-    pat === "applied-field-projection"
-  ) {
+  // NOTE the asymmetry between the two arms below: the first disjunct of the
+  // second arm respects `nameGateMatched`, and `applied-field-projection` does
+  // not. That is deliberate but narrow — the exemption is a LANDING
+  // concession, not a judgement, and ALL 21 hits it covers match
+  // `CONCLUSION_FIELD` (measured, not estimated — `claim_*` × 12, `*_holds`
+  // × 6, `exists_*`, `*_iff`, `*_eq`). Not 14, which is what this comment said
+  // before the names were run through the regex.
+  // Exempting them therefore swallows the detector's strongest signal, which is
+  // exactly what the 2026-08-09 narrowing above removed from the §3b carve-out.
+  // What makes it safe rather than a re-introduction is the ledger: they are
+  // seeded as `needs-agent`, and a `genuine` verdict promotes each one back to
+  // a counted defect. If that ledger route is ever removed, remove this
+  // exemption with it.
+  if (pat === "applied-field-projection") {
+    // EXEMPT on landing (#7332) so closing a coverage blindspot does not turn a
+    // `critical` gate red in the commit that discovers it — but the wording is
+    // load-bearing and #7332 got it wrong. `LEDGER_TRACKED_EXEMPT` keys on the
+    // literal "triage pending"; the shared reason string below says "derivation
+    // pending", so every hit taking that arm is dropped at the ledger-seeding
+    // site and never reaches an agent. #7332's own comment asserted the
+    // opposite — "the 16 it newly reaches still enter the review ledger" — and
+    // measured, 0 of them did, and the population is 21 rather than 16.
+    // "triage pending" here puts them in the ledger as `needs-agent`; an agent
+    // `genuine` verdict then promotes that ONE candidate to a counted defect
+    // (the `adjudicatedGenuine` path), which is the designed per-candidate
+    // route rather than a blanket promotion.
+    const h = mk(d, "proof-no-self-assuming-projection", pat, true);
+    h.exempt_reason =
+      "canonical §3b placeholder projection (tracked; triage pending)";
+    return h;
+  }
+  if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
+    // Same blindspot, NOT fixed here: these two arms keep the "derivation
+    // pending" wording, so their 13 candidates (6 `applied-tuple-projection`,
+    // 7 `tuple-projection` reaching this arm as `def` proofs) are still
+    // invisible to the ledger. Pre-existing, measured, and deliberately left
+    // for a follow-up rather than absorbed into the applied-field tranche —
+    // each needs its own agent verdict. Bean `qou-vh1o`.
     const h = mk(d, "proof-no-self-assuming-projection", pat, true);
     h.exempt_reason =
       "canonical §3b placeholder projection (tracked; derivation pending)";
