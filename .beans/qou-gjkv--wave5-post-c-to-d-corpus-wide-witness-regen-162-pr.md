@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T03:14:24Z
-updated_at: 2026-08-09T03:15:12Z
+updated_at: 2026-09-13T10:32:45Z
 ---
 
 
@@ -161,3 +161,38 @@ RAISE during the C excision. Fixed across two commits:
 1. VALUES review pass, bucket C and the 3 sign flips first.
 2. The 8-producer Habiro `check_q` coercion bug (pre-existing, own bean).
 3. The 3 stale doc citations of atomic-braid-mass-table (doc-only, from qou-c6xo).
+
+
+---
+
+## 🛑 At least one member of the 162 did NOT move for C→D — measured 2026-09-13 (bean `qou-5c64`)
+
+`binding-single-pipeline-comparison`, which this bean lists by name among its
+results, moves by **3.29×** on the traces it reads. Four hypotheses were tested
+against the June witness recovered at full 50-dps precision:
+
+| candidate | contribution |
+|---|---|
+| q₀ anchor, muon → proton | **3.9e-8** — negligible |
+| `y_lambda_at` convention **C → D** | **NO-OP.** All 11 partitions at `n = 6` agree to displayed precision; substituting `_y_lambda_at_convention_C_HISTORICAL` inside `tr_m_atom_zn` returns the same trace to 30 digits. |
+| `atom_braid_word_3A` intra-nucleon ordering, **grouped → borromean** (owner ruling `qou-hu1f`, 2026-09-05, `7db032fb48` / `deb9ff5728`) | **dominant** — forcing `grouped` moves `tr_free` 0.29901503 → 1.13171707 against June's 0.98352620 |
+| residual | 15 % (free) / 48 % (atom), unidentified |
+
+So this member's motion is driven by an **owner ruling four weeks LATER than
+this wave**, not by the C→D excision this wave is named for. The C→D component
+is measurably zero for it.
+
+**Consequence for acceptance, which is this bean's open item.** The wave's label
+is load-bearing: a reviewer accepting 162 witnesses "because C→D landed" would,
+for at least this one, be accepting a change from a different ruling that had
+not happened when the wave was measured. Before acceptance the 162 want
+re-triage against `qou-hu1f` as well — cheaply, since any producer whose cone
+reaches `atom_braid_word_3A` is a candidate and the parameter is directly
+forceable (`intra_order="grouped"`).
+
+Not claimed: how many of the 162 this applies to. One was measured. The wave's
+own numbers were taken 2026-08-09, before the ordering ruling existed, so no
+figure in this bean can distinguish the two causes.
+
+Full measurement, including the two hypotheses it killed (one of them mine):
+bean `qou-5c64`.
