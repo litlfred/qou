@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-19T21:19:40.305739+00:00",
-  "commitSha": "c98b2d81d82be6945629e484d0b7e586661a2e7e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-13T11:07:38.780367+00:00",
+  "commitSha": "6428128b27ea14f595d3582e9a5fe6a519571b71",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-tr-m-mpfr-50dps-proton",
   "scriptFile": "atomic_tr_m_mpfr_50dps.py",
-  "scriptHash": "7c63fadfb8d0",
-  "scriptCommitSha": "972b38b870a409b3425301deaf62a48ab4aaf05f",
+  "scriptHash": "f3868ed3e861",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +21,18 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/atomic_tr_m_mpfr_50dps.py",
+      "--anchor",
+      "proton"
+    ],
+    "reproduce": "python3 -u computations/atomic_tr_m_mpfr_50dps.py --anchor proton"
   },
   "description": "Plan F advance — tr_M(T_w, q_0) via the 3A-strand atom-braid convention for proton, neutron, deuteron, tritium, ³He, evaluated at q_0 to 50 dps via the Hoefsmit + Wenzl bridge (Σ_λ y_λ · χ_λ) and (where applicable) compared against the published Jones polynomial of the historical knot ID. Companion to proton-mass-mpfr-50dps.witness.json.  Tritium / ³He at H_9 unblocked vs. legacy sympy path (>4-min timeout).",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
@@ -31,10 +41,12 @@
   "method": "hoefsmit_wenzl_bridge: tr_M(W) = Σ_{λ ⊢ n} y_λ(q) · χ_λ(W); y_λ from y-lambda-mpfr-witness.json; χ_λ via per-partition Young-seminormal matrices in mpmath (sparse COO) at 50 dps; W is the atom_braid_word_3A Hecke-factor word",
   "structural_reference": "prop:full-pole-structure-mass-trace — tr_M(T_w, q) is meromorphic in q with simple poles at every primitive root of unity ζ_n^(j) (gcd(j,n)=1, n>=2); this witness reports tr_M evaluated at q = q_0 ≈ 1.11, the regular point used throughout the paper.  The prop's Mittag-Leffler / Habiro cyclotomic expansion expresses the same function as a sum over these poles; Habiro's convergence theorem guarantees the order-m Habiro truncation neglects only the ζ_1, …, ζ_m residues, so the values reported here are the LHS of the prop's equations (Mittag-Leffler eq. and Habiro eq.) at q = q_0.",
   "y_lambda_witness": "y-lambda-mpfr-witness.json",
+  "y_lambda_witness_role": "provenance pointer; y_λ recomputed live, not read",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "symbolic_cross_check_enabled": false,
-  "precision_caveat": "y-lambda-mpfr-witness.json was computed with q at f64 precision (its 'q' field stores str(float(Q0))); the y_λ values inherit f64-limited input. Bridge results agree with the prop-table canonical values to ~1e-15. To upgrade to full 50-dps precision, regenerate that witness with q_str at 50 dps (see y_lambda_mpfr_witness.py).",
+  "precision_caveat": "None affecting these values: y_λ is recomputed live at q_str (50 dps), not read from y-lambda-mpfr-witness.json. Bridge results agree with the prop-table canonical values to ~1e-15.",
+  "precision_caveat_superseded": "2026-08-14 regeneration; see qou-fq0f",
   "results": [
     {
       "atom": "proton",
@@ -45,19 +57,19 @@
       "rho_factor": 1,
       "word_length_3A": 11,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "1.14575969245730086968908159577411930594372806194352738498820",
-      "term1_b_pred_mev_50dps": "0.585482000588577852040745121990365703596116119839849815766248",
-      "bridge_elapsed_sec": "0.0039",
+      "tr_M_at_q0_50dps": "0.629328402202921918165345746778485927600219400634359762811677",
+      "term1_b_pred_mev_50dps": "0.321586153165107384634493726524860756870643423537938559156724",
+      "bridge_elapsed_sec": "0.0028",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000030",
-      "python_hoefsmit_elapsed_sec": "0.0039",
+      "rust_canonical_chi_elapsed_sec": "0.000329",
+      "python_hoefsmit_elapsed_sec": "0.0028",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "0.0112",
-        "tr_M_at_q0_50dps": "1.14575969245730086968908159577411930594372806194350000000000",
-        "abs_diff_vs_bridge": "2.73849881959983314115359806526592452923691173248340974270364e-50"
+        "elapsed_sec": "0.0151",
+        "tr_M_at_q0_50dps": "0.629328402202921918165345746778485927600219400634370000000000",
+        "abs_diff_vs_bridge": "1.02371883227503704128644329164112556577855375311207562610910e-50"
       },
       "historical_K_comparison": null
     },
@@ -70,19 +82,19 @@
       "rho_factor": 1,
       "word_length_3A": 11,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.987743688115809571634020165501294982055048759062827475627723",
-      "term1_b_pred_mev_50dps": "0.504735988177849314304842693277461873666292295697891467830268",
-      "bridge_elapsed_sec": "0.0005",
+      "tr_M_at_q0_50dps": "0.475133517155682212506090232675005799558407634708751231268857",
+      "term1_b_pred_mev_50dps": "0.242792728704202723961709704131385915364010766703456702938632",
+      "bridge_elapsed_sec": "0.0002",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000036",
-      "python_hoefsmit_elapsed_sec": "0.0005",
+      "rust_canonical_chi_elapsed_sec": "0.000030",
+      "python_hoefsmit_elapsed_sec": "0.0002",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "0.0051",
-        "tr_M_at_q0_50dps": "0.987743688115809571634020165501294982055048759062790000000000",
-        "abs_diff_vs_bridge": "3.74756277228315108771828349011582514091957097602251339593917e-50"
+        "elapsed_sec": "0.0072",
+        "tr_M_at_q0_50dps": "0.475133517155682212506090232675005799558407634708720000000000",
+        "abs_diff_vs_bridge": "3.12312688574894958093596046014538048120031960154654856933347e-50"
       },
       "historical_K_comparison": null
     },
@@ -95,25 +107,25 @@
       "rho_factor": 1,
       "word_length_3A": 23,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.575172243917771870826535343986180889152494352892855072730158",
-      "term1_b_pred_mev_50dps": "0.293912413107994160635157783785136636217455817724399508163355",
-      "bridge_elapsed_sec": "0.0069",
+      "tr_M_at_q0_50dps": "0.151968339204231607592665697751066141271240964655261151310301",
+      "term1_b_pred_mev_50dps": "0.0776556618714643410875840084907514910183914356129818259074850",
+      "bridge_elapsed_sec": "0.0107",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000033",
-      "python_hoefsmit_elapsed_sec": "0.0069",
+      "rust_canonical_chi_elapsed_sec": "0.000028",
+      "python_hoefsmit_elapsed_sec": "0.0107",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "2.5384",
-        "tr_M_at_q0_50dps": "0.575172243917771870826535343986180889152494352892840000000000",
-        "abs_diff_vs_bridge": "1.50727301584429972875243706100469305714922505469470888724198e-50"
+        "elapsed_sec": "0.5425",
+        "tr_M_at_q0_50dps": "0.151968339204231607592665697751066141271240964655260000000000",
+        "abs_diff_vs_bridge": "1.15131030079840486004321710082635326902003457787551290121462e-51"
       },
       "historical_K_comparison": {
         "historical_K": "6_2",
         "J_K_published": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + q**(-5)",
         "J_K_at_q0_50dps": "1.02692000712944499073276037961824228039812538488610000000000",
-        "tr_M_over_J_K_at_q0_50dps": "0.560094496089869679567662828324212936534058363039687246144182",
+        "tr_M_over_J_K_at_q0_50dps": "0.147984592908097605439958757974493419846627922764679214558565",
         "note": "If the ratio is a power of q_0, then tr_M = q_0^k · J_K, i.e. they agree up to writhe normalisation. q_0 = 1.1099785827513808075916690956..., so log(ratio)/log(q_0) should be close to an integer."
       }
     },
@@ -126,19 +138,19 @@
       "rho_factor": 1,
       "word_length_3A": 35,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.229310102104556507332090810268908879602801636456060069985205",
-      "term1_b_pred_mev_50dps": "0.117177221558045135914509695411204314208255180213261546054048",
-      "bridge_elapsed_sec": "0.6610",
+      "tr_M_at_q0_50dps": "0.0291440423609720653572542187918698440658388035647413094897483",
+      "term1_b_pred_mev_50dps": "0.0148925750653216356059590057822211698206975518962678406305579",
+      "bridge_elapsed_sec": "0.2634",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000043",
-      "python_hoefsmit_elapsed_sec": "0.6610",
+      "rust_canonical_chi_elapsed_sec": "0.000051",
+      "python_hoefsmit_elapsed_sec": "0.2634",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "7.4284",
-        "tr_M_at_q0_50dps": "0.229310102104556507332090810268908879602801636456050000000000",
-        "abs_diff_vs_bridge": "1.00699852054270256596537889544246678214306787058287195718571e-50"
+        "elapsed_sec": "11.4971",
+        "tr_M_at_q0_50dps": "0.0291440423609720653572542187918698440658388035647380000000000",
+        "abs_diff_vs_bridge": "3.30948974830119053923095055911481734929604465082535121089205e-51"
       },
       "historical_K_comparison": null
     },
@@ -151,19 +163,19 @@
       "rho_factor": 1,
       "word_length_3A": 35,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.403767036851428170368670253333402541155087070591893843566769",
-      "term1_b_pred_mev_50dps": "0.206324532154290356486297049903985173257629033628043711282490",
-      "bridge_elapsed_sec": "0.6230",
+      "tr_M_at_q0_50dps": "0.0585962536544363802189567154521302568308771072841873080383315",
+      "term1_b_pred_mev_50dps": "0.0299426241317820681552487540425674701657784066145622700370032",
+      "bridge_elapsed_sec": "0.2349",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000046",
-      "python_hoefsmit_elapsed_sec": "0.6230",
+      "rust_canonical_chi_elapsed_sec": "0.000054",
+      "python_hoefsmit_elapsed_sec": "0.2349",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "5.5110",
-        "tr_M_at_q0_50dps": "0.403767036851428170368670253333402541155087070591880000000000",
-        "abs_diff_vs_bridge": "1.38435667685178714694446244354196729702376231249923778682784e-50"
+        "elapsed_sec": "5.3765",
+        "tr_M_at_q0_50dps": "0.0585962536544363802189567154521302568308771072841830000000000",
+        "abs_diff_vs_bridge": "4.30803833153428720470994671318078504266872776022189474720842e-51"
       },
       "historical_K_comparison": null
     }

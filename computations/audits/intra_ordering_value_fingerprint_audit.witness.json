@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T10:28:16.133060+00:00",
-  "commitSha": "8a8e89767992304d78b082d963956de76907d5d0",
+  "computedAt": "2026-09-13T11:09:22.309144+00:00",
+  "commitSha": "6428128b27ea14f595d3582e9a5fe6a519571b71",
   "assertions": [
     {
       "name": "scan_completed",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
   "scriptHash": "782412b12f92",
-  "scriptCommitSha": "4b40a0f9fd664167e09bae1035d6f173aa1621f2",
+  "scriptCommitSha": "dbd92de872409da1b706aaf6fa4109c74b85c66b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -69,28 +69,6 @@
           "proton"
         ]
       ],
-      "computations/atomic-tr-m-mpfr-50dps-proton.witness.json": [
-        [
-          "/results[0]/tr_M_at_q0_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[0]/peel_cross_check/tr_M_at_q0_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[4]/tr_M_at_q0_50dps",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/results[4]/peel_cross_check/tr_M_at_q0_50dps",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "computations/audits/braid-encoding-audit.witness.json": [
         [
           "/data/tr_M_cross_check/proton/markov_trace_assembly_chain",
@@ -111,16 +89,6 @@
         ]
       ],
       "computations/audits/intra_ordering_value_fingerprint_audit.witness.json": [
-        [
-          "/data/source_hardcoded_grouped/computations/audits/h3_transition_cache_q_key_audit.py[0][1]",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/source_hardcoded_grouped/computations/audits/word_to_mpfr_template_scale_audit.py[0][1]",
-          "helium-3",
-          "proton"
-        ],
         [
           "/data/source_hardcoded_grouped/computations/derivation_chain.py[0][1]",
           "proton",
@@ -837,6 +805,7 @@
       "computations/a-K-via-lp-dual-hecke-basis.witness.json",
       "computations/a-K-via-lp-dual.witness.json",
       "computations/atomic-tr-m-helium4-canonical.witness.json",
+      "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
       "computations/atomic-tr-m-mpfr-50dps.witness.json",
       "computations/binding-triangle-3body-cluster.witness.json",
       "computations/brng-dominant-summand-ursell.witness.json",
@@ -907,7 +876,7 @@
       ],
       "computations/markov/assembly_chain_11_letter_recompute_probe.py": [
         [
-          73,
+          92,
           "1.145759692457300869689081",
           "proton",
           "proton"
@@ -915,13 +884,13 @@
       ],
       "computations/probes/path_b_defect_binding_probe.py": [
         [
-          121,
+          154,
           "1.145759692457300869689081",
           "proton",
           "proton"
         ],
         [
-          125,
+          158,
           "0.403767036851428170368670",
           "helium-3",
           "proton"
@@ -937,19 +906,19 @@
       ],
       "computations/qbeta/qbeta_chain_closed_form_probe.py": [
         [
-          108,
+          136,
           "1.1457596924573008697",
           "proton",
           "proton"
         ],
         [
-          113,
+          141,
           "1.14575969245730086",
           "proton",
           "proton"
         ],
         [
-          115,
+          143,
           "1.14575969245730086",
           "proton",
           "proton"
