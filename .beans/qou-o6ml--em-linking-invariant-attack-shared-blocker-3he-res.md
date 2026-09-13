@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T19:45:34Z
+updated_at: 2026-09-13T20:08:27Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1992,3 +1992,54 @@ of mutual invisibility between two beans on one question.
 **Both directions are now recorded**: this entry, and `qou-9v7t` is `completed`
 so it takes no update — its "live successor" line stands as a dated record of
 what was known then.
+
+
+---
+
+## 2026-09-13 — §9h LANDED: the charge-antisymmetric content is the configuration change TOO
+
+`MobiusMutualChannel.lean` §9h, two theorems, both sorry-free
+(`[propext, Classical.choice, Quot.sound]`; `lean -DautoImplicit=false -s 65536`
+exit 0, no output):
+
+* `mobius_b3_congr_of_sep_eq` — two instantiations agreeing on the **pair and
+  triple** separations have equal `b_3`. `Lquad` is unconstrained: `b_3` is
+  `triple - (pair + pair + pair)`, so the four-component assembly never enters.
+* `mobius_b3_differs_forces_sep_differ` — contrapositive: **any** difference in
+  `b_3` forces the separations to differ.
+
+**The argument is one observation about the signature, not new machinery.**
+`mobiusCrossingModel` takes **no charge argument**: its inputs are link
+embeddings and the arclength `s`; `CrossingModel` carries `w2`/`w3`/`w4` and
+nothing else; `toBindingMap` is built from those three. There is no point in the
+chain where a proton differs from a neutron — **two nuclei are two
+instantiations of one functional.**
+
+**What it buys the arc.** `qou-9v7t` records that the framework has **no EM term
+in any per-bond factor** (`f_pp = z`, `f_nn = z - h`,
+`f_pn = z - h(1/2 - δ/4)` — charge-*labelled*, not charge-*coupled*). §9h says
+route (2) **does not need one**: whatever charge-antisymmetric number this
+channel can supply is a derived geometry, exactly as §9g found for the many-body
+number. **One obligation, not two.** That is a narrowing of the arc — the EM
+target and the many-body target collapse onto the same missing object — and it
+is emphatically **not** a closure.
+
+**NOT CLAIMED** (in the section docstring, not only here): that the mirror
+partners' separations **do** differ in this framework, nor by how much. Same open
+item as §9g, now reached from the charge side as well. §9h is **not** a
+prediction of `b3_asym`; it says where any such prediction would have to come
+from.
+
+**Scope — the arity caveat is real.** `CrossingModel` is `Fin 4`-indexed, so
+`b_3 i j k` is a triple's cumulant *inside a four-component model*, while the
+mirror pair ³H/³He is A = 3. The theorems are stated for two **arbitrary**
+instantiations, which is what is proved; reading them as ³H and ³He is an
+interpretation that carries a spare fourth component with it.
+
+**Lean caught the first attempt, which is the point of writing it in Lean.**
+`BindingMap` is in namespace `QOU.Mass.PairwiseCumulantVanishing`, so the
+unqualified `simp only [BindingMap.b3, …]` was an unknown identifier, the `b_3`
+never unfolded, and the `rw` chain then reported "did not find an occurrence" —
+an error that reads like a wrong lemma and was a wrong *name*. Rewritten to bind
+the six `innerPairEnergy_congr_of_sep_eq` instances as `have`s and pass them to
+`simp`, which is also robust to rewrite order.
