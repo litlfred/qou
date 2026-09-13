@@ -2,6 +2,27 @@
 """The three inter-nucleon bond factors are a BAR-CONJUGATE PAIR and their
 (colour-corrected) MIDPOINT.
 
+🛑 **SUPERSEDED IN PART, same day, by PR #7285 — read this first.** A sibling
+session proved the stronger statement in Lean: all three bond constants are one
+interior bond factor
+
+    b(t) = z - h*t        `QOU.Hecke.BondLetterIdentification.tr_bond_interp`
+    pp t = 0        pn t = 1/2 - delta/4        nn t = 1
+
+so identities 1 and 3 below are the `t = 1` and `t = 1/2 - delta/4` rows
+restated, and **"the bonds are one parameter" is #7285's result, not this
+probe's.** Its version is also stronger: it holds for a bond with material on
+both sides, which no closed-form identity here addresses.
+
+What this file still contributes, narrowly: the reading of `t` as the **bar
+involution** rather than a mixing weight — `z - h` and `zbar` are the same
+number and different statements, since `z - zbar = h` exactly — plus identities
+4 and 5, which #7285 does not carry. Identity 5 is the one with content beyond
+restatement: the p-n letter is the ONLY one that breaks the bar symmetry, it
+breaks it solely through `delta`, and it does so at fifth order in `(q-1)`. In
+`b(t)` language, `t = 0` and `t = 1` are bar-conjugate endpoints, `t = 1/2` is
+the bar-EVEN midpoint, and `delta/4` IS the bar-symmetry breaking.
+
 `qbeta_bond_factors_derived_probe.py` derives five closed forms and records
 three identities, of which two concern the bonds:
 
@@ -261,7 +282,15 @@ def main() -> int:
             "qbeta_bond_factors_derived_probe are a BAR-CONJUGATE PAIR and "
             "their colour-displaced midpoint: b_pp = z, b_nn = z|_{q->1/q}, "
             "b_pn = (z + zbar)/2 + (delta/4)h.  Five symbolic identities, "
-            "each simplifying to exactly zero.  This RESTATES that probe's "
+            "each simplifying to exactly zero.  SUPERSEDED IN PART by PR "
+            "#7285, which proves the stronger statement in Lean — all three "
+            "are one interior bond factor b(t) = z - h.t "
+            "(QOU.Hecke.BondLetterIdentification.tr_bond_interp) at t = 0, "
+            "1/2 - delta/4, 1 — so identities 1 and 3 here are two of its "
+            "rows restated, and 'the bonds are one parameter' is that PR's "
+            "result rather than this probe's.  What is still this file's is "
+            "the reading of t as the BAR INVOLUTION rather than a mixing "
+            "weight, plus identities 4 and 5.  This RESTATES that probe's "
             "identity 2 (b_pp/b_nn = q^4) in the vocabulary of the bar "
             "involution rather than of a scale factor, and adds that the "
             "separation z - zbar is exactly the Hecke parameter h = q - q^-1, "

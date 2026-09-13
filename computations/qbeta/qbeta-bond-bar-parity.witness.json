@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T11:18:51.874644+00:00",
-  "commitSha": "2ecc439e7acb1a3c882ef0e5bbacd0f0c9217857",
+  "computedAt": "2026-09-13T12:48:45.583138+00:00",
+  "commitSha": "f57e3cff84f0cb310a292fbe1fc2bac7a15aa982",
   "assertions": [
     {
       "name": "five_bar_parity_identities_exactly_zero",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 872,
+  "durationMs": 879,
   "computation": "qbeta-bond-bar-parity",
   "scriptFile": "qbeta_bond_bar_parity_probe.py",
-  "scriptHash": "5c266ffad0f7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3ee07379d58b",
+  "scriptCommitSha": "5d1625deee05f382960da9a46b505428ce527917",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,7 +51,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_bond_bar_parity_probe.py"
   },
-  "description": "The three inter-nucleon bond factors of qbeta_bond_factors_derived_probe are a BAR-CONJUGATE PAIR and their colour-displaced midpoint: b_pp = z, b_nn = z|_{q->1/q}, b_pn = (z + zbar)/2 + (delta/4)h.  Five symbolic identities, each simplifying to exactly zero.  This RESTATES that probe's identity 2 (b_pp/b_nn = q^4) in the vocabulary of the bar involution rather than of a scale factor, and adds that the separation z - zbar is exactly the Hecke parameter h = q - q^-1, that the geometric mean sqrt(b_pp b_nn) = 1/(q + q^-1) is bar-fixed, and that b_pn's bar-odd part carries a FIFTH-order zero at q = 1 (1.6415e-05 relative at the proton pin), so the unlike-pair bond is the only one that breaks the symmetry and breaks it only through the colour weighting.  Identities between closed forms; NOT a claim that q -> q^-1 here is the Hecke-algebra bar involution acting on the Markov trace, and NOT independent of that probe's own GROUPED-frame caveat (bean qou-4383).",
+  "description": "The three inter-nucleon bond factors of qbeta_bond_factors_derived_probe are a BAR-CONJUGATE PAIR and their colour-displaced midpoint: b_pp = z, b_nn = z|_{q->1/q}, b_pn = (z + zbar)/2 + (delta/4)h.  Five symbolic identities, each simplifying to exactly zero.  SUPERSEDED IN PART by PR #7285, which proves the stronger statement in Lean — all three are one interior bond factor b(t) = z - h.t (QOU.Hecke.BondLetterIdentification.tr_bond_interp) at t = 0, 1/2 - delta/4, 1 — so identities 1 and 3 here are two of its rows restated, and 'the bonds are one parameter' is that PR's result rather than this probe's.  What is still this file's is the reading of t as the BAR INVOLUTION rather than a mixing weight, plus identities 4 and 5.  This RESTATES that probe's identity 2 (b_pp/b_nn = q^4) in the vocabulary of the bar involution rather than of a scale factor, and adds that the separation z - zbar is exactly the Hecke parameter h = q - q^-1, that the geometric mean sqrt(b_pp b_nn) = 1/(q + q^-1) is bar-fixed, and that b_pn's bar-odd part carries a FIFTH-order zero at q = 1 (1.6415e-05 relative at the proton pin), so the unlike-pair bond is the only one that breaks the symmetry and breaks it only through the colour weighting.  Identities between closed forms; NOT a claim that q -> q^-1 here is the Hecke-algebra bar involution acting on the Markov trace, and NOT independent of that probe's own GROUPED-frame caveat (bean qou-4383).",
   "contentBlock": "rem:jones-markov-trace-stabilisation",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
