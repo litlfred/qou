@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T07:58:29Z
-updated_at: 2026-09-13T08:39:58Z
+updated_at: 2026-09-13T08:51:09Z
 ---
 
 ## Result (2026-09-13) — the convexity route analysed; convexity is the WRONG invariant
@@ -164,3 +164,59 @@ any value of `p`. Scope (a). No aggregator is proposed and the magnitude is
 untouched. Asserting `p > 1` because it yields `b₃ > 0` would be the same
 selection-against-target this file exists to name — the requirement is a derived
 scaling degree, not a chosen one.
+
+
+## 2026-09-13 — `qou-q8vl`'s SECOND escape route is narrower than it was stated
+
+`qou-q8vl` records the open escape for a third bond family as: *"it must break
+the AVERAGING of the pn letter, or break AFFINENESS of the interface law."*
+**The second half is too weak.** Measured, then proved.
+
+`QOU/MassTheory/InterfaceMonotoneBlocksSignMixed.lean` (12 decls, lean-direct
+exit 0, `#print axioms` clean — and the three order-core theorems depend on
+**no axioms at all**).
+
+### What actually blocks the pattern
+
+Affineness is not the invariant. **Monotonicity is.** If `f` is monotone in
+*either* direction and `c` lies between `a` and `b`, then `f c` cannot strictly
+exceed both `f a` and `f b` — no linearity, no continuity, no algebra. The
+hypothesis is an order property and each proof is one `lt_of_lt_of_le` against
+`lt_irrefl`.
+
+Checked in exact `Fraction` before the Lean, at `a, c, b = 0, 1, 2`:
+
+    affine increasing   3x+5      c strict max?  NO
+    affine decreasing  -3x+5      c strict max?  NO
+    monotone NON-affine  x³       c strict max?  NO   <-- the point
+    antitone NON-affine -x³       c strict max?  NO
+    NON-monotone       1-(x-1)²   c strict max?  YES  <-- only escape
+
+`PnBetweennessBlocksSignMixed.pn_not_strict_max` is the `f = (z + ·)` instance
+of `pn_not_strict_max_of_monotone`.
+
+### Consequence for the open search — this is the usable part
+
+**A third bond family that merely abandons affineness gains nothing.** A cubic
+interface law `d ↦ d³` is as blocked as `d ↦ z + d`. The escape requires a
+**non-monotone** law, a strictly stronger demand over a much smaller space.
+
+So the cheap filter, before any number is computed: *is the candidate law
+monotone?* If yes, the sign-mixed pattern is already excluded and the
+construction is dead. That turns a vague "break affineness" into a
+one-line test.
+
+`hump_realises_strict_max` / `nonmonotone_escape_exists` show the narrowing is
+**sharp** rather than a disguised impossibility — the downward parabola
+`1 − (d−1)²` does put the middle strictly above both endpoints. So monotonicity
+is exactly the invariant, not a sufficient condition standing in for something
+weaker.
+
+### Scope
+
+Scope (b); the invariant is order-preservation, an identity rather than a
+measurement. **NOT claimed:** that a non-monotone interface law exists in the
+framework, is derivable, or is physical. Physically it would mean a larger letter
+offset *decreasing* the bond factor over some range and increasing it over
+another; whether the framework admits that is open and untouched here.
+`qou-q8vl`'s *first* escape — breaking the pn averaging — is also untouched.
