@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T07:58:29Z
-updated_at: 2026-09-13T08:51:09Z
+updated_at: 2026-09-13T09:00:40Z
 ---
 
 ## Result (2026-09-13) — the convexity route analysed; convexity is the WRONG invariant
@@ -220,3 +220,50 @@ framework, is derivable, or is physical. Physically it would mean a larger lette
 offset *decreasing* the bond factor over some range and increasing it over
 another; whether the framework admits that is open and untouched here.
 `qou-q8vl`'s *first* escape — breaking the pn averaging — is also untouched.
+
+
+## 2026-09-13 — the THIRD escape is NOT loose, and I nearly claimed it was
+
+Two of `qou-q8vl`'s hypotheses turned out stronger than needed — aggregator
+**convexity** weakens to a two-point secant condition, interface **affineness**
+weakens to monotonicity. I pattern-matched and went looking for the same gain in
+the third, that the pn letter is a strict convex **combination**, expecting it to
+weaken to mere **betweenness**.
+
+**The arithmetic refused it, before any Lean was written.** Over an ordered field
+the two are the SAME condition: any `c` strictly between `a` and `b` is
+`combo w a b` with the weight read off as `w = (b−c)/(b−a) ∈ (0,1)`, exactly.
+My probe looked like it showed a gap only because the value I picked to be
+"between but not a combination" (`d_pn = 7` against `0, 10`) **is** a combination,
+at `w = 3/10`.
+
+Proved rather than left as a remark, so the tightness is on record:
+
+    combo_of_between   a < c < b            →  ∃ w ∈ (0,1), combo w a b = c
+    between_of_combo   w ∈ (0,1)            →  a < combo w a b < b
+    between_iff_combo  (a < c ∧ c < b)      ↔  ∃ w ∈ (0,1), combo w a b = c
+
+lean-direct exit 0; `#print axioms` clean on all three.
+
+### Consequence — the escape analysis is now COMPLETE
+
+| hypothesis | status |
+|---|---|
+| aggregator **convexity** | weakens → secant monotonicity across one scale ratio |
+| interface **affineness** | weakens → order-monotonicity |
+| pn **averaging** | **already tight** — no sharpening exists |
+
+So the full characterisation of what a third bond family must do is:
+
+  **`d_pn` must lie OUTSIDE the interval spanned by `d_pp` and `d_nn`,
+   OR the interface law must be NON-MONOTONE.**
+
+Nothing weaker will do, and those are the only two doors. That closes
+`qou-q8vl`'s open-escape question as a question — it does not derive a family
+through either door, and neither door is shown to be reachable in the framework.
+
+**Method note worth keeping.** The pattern "the corpus stated a sufficient
+condition where a weaker one is the real invariant" held twice and then failed.
+Two instances is not a rule. The check that caught it cost one `Fraction`
+computation against a would-be counterexample; the claim would have cost a
+retraction.

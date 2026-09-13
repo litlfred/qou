@@ -157,4 +157,53 @@ theorem nonmonotone_escape_exists :
 
 end Sharpness
 
+
+section AveragingIsTight
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-!
+### The third escape is NOT loose — measured, then proved
+
+Two of `qou-q8vl`'s hypotheses turned out stronger than needed: aggregator
+**convexity** weakens to a two-point secant condition (`qou-2ss0`), and interface
+**affineness** weakens to monotonicity (above). It is tempting to expect the
+third — that the pn letter is a strict convex **combination** — to weaken to mere
+**betweenness** in the same way.
+
+**It does not.** Over an ordered field the two are the same condition, so the
+averaging hypothesis is already tight and there is no third gain to take.
+
+Recorded because the pattern-match was made and the arithmetic refused it. A
+negative that stops a search is worth the lines.
+-/
+
+/-- **Betweenness gives a weight.** Any value strictly between two others is a
+strict convex combination of them, with the weight read off explicitly. -/
+theorem combo_of_between {a b c : R} (hab : a < b) (hac : a < c) (hcb : c < b) :
+    ∃ w : R, 0 < w ∧ w < 1 ∧ combo w a b = c := by
+  refine ⟨(b - c) / (b - a), ?_, ?_, ?_⟩
+  · exact div_pos (by linarith) (by linarith)
+  · rw [div_lt_one (by linarith)]; linarith
+  · have hba : b - a ≠ 0 := ne_of_gt (sub_pos.mpr hab)
+    unfold combo
+    field_simp
+    linarith
+
+/-- **And a weight gives betweenness**, so the two hypotheses coincide. -/
+theorem between_of_combo {a b w : R} (hab : a < b) (hw0 : 0 < w) (hw1 : w < 1) :
+    a < combo w a b ∧ combo w a b < b := by
+  constructor <;> unfold combo <;> nlinarith [hab, hw0, hw1]
+
+/-- **The averaging hypothesis is exactly betweenness.** No weaker condition is
+hiding inside it, so unlike convexity and affineness this one admits no
+sharpening — `qou-q8vl`'s first escape is stated at full strength already. -/
+theorem between_iff_combo {a b c : R} (hab : a < b) :
+    (a < c ∧ c < b) ↔ ∃ w : R, 0 < w ∧ w < 1 ∧ combo w a b = c := by
+  constructor
+  · rintro ⟨h1, h2⟩; exact combo_of_between hab h1 h2
+  · rintro ⟨w, hw0, hw1, rfl⟩; exact between_of_combo hab hw0 hw1
+
+end AveragingIsTight
+
 end QOU.MassTheory.InterfaceMonotone
