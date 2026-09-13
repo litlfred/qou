@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-08T03:33:07.913813+00:00",
-  "commitSha": "df949839cf903142c4ac81fb24c1e93c5afbf4de",
+  "computedAt": "2026-09-13T05:31:12.700675+00:00",
+  "commitSha": "5ae4f243332be05373c262a773a940516b1c5ff4",
   "assertions": [
     {
       "name": "R_is_a_rational_function_of_q0_over_Q",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 13,
   "computation": "qbeta-n-question-arithmetic-reduction",
   "scriptFile": "qbeta_n_question_arithmetic_reduction_probe.py",
-  "scriptHash": "0ffa45b2ef6d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ace103d53367",
+  "scriptCommitSha": "5ae4f243332be05373c262a773a940516b1c5ff4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

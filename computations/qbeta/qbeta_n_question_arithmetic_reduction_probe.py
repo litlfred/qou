@@ -5,6 +5,33 @@ Bean `qou-cds1`, route 5.  Formalize-first structural prune (AGENTS.md
 §"Formalize-first probe discipline"): the invariant is found and the class is
 narrowed BEFORE any search, and no search on the target is run.
 
+## CORRECTION -- a sibling selected N three days before this probe
+
+The "no search on the target" note below says `N = 111` is neither excluded nor
+evidence, and that none should be searched for "until something independent
+selects it".  Something independent already had.
+`docs/audits/2026-09-05-cds1-fibre-reality-selects-n.md` +
+`qbeta_fibre_reality_selects_n_probe.py` (4/4), the SAME BEAN, landed
+2026-09-05 -- three days before this file.  They derive `N` from the
+framework's own reality constraint (`Q_beta` is measured, so `Q_A` must be real
+on the locus; one real equation in `phi = arg q`, with `theta` nowhere in the
+derivation) and get **N = 5** (modulus kept) or **N = 4** (analytically
+continued).  **`N = 111` is excluded under both**, at 22.20x and 27.74x.
+
+Missing it was a corpus-grep failure on paths 1 and 3 (`docs/audits/`,
+`computations/`), inside this probe's own bean.
+
+**This probe is not refuted by it, and the two are complementary.**  The
+sibling's exclusion is scope-(a), conditional on requiring `Q_A` real ON the
+fibre; its own scope note says a mechanism that computes on the fibre and
+projects to a real observable afterwards is untouched, "and is where the route
+would have to go".  The reduction here is about the ARITHMETIC NATURE of `R`
+and binds in exactly that untouched case.
+
+`RECORDED_CANDIDATES` below therefore reports what the surviving branch would
+DEMAND of each candidate, not a live candidate list -- the corpus has since
+excluded them on independent grounds.
+
 ## What #6755 left, and why it is not the end
 
 `qbeta_fibre_unit_circle_opens_route5_probe` established that the fibre locus
