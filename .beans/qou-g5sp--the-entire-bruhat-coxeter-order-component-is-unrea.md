@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-08T03:16:01Z
+updated_at: 2026-09-13T13:10:00Z
 ---
 
 ## The finding
@@ -354,3 +354,256 @@ reporting on itself.
 The scoping decision (whether to add the missing imports to `QOU.lean`) is the
 owner's and is untouched. It now has its measurement: **the blind spot held exactly
 one real defect across 1324 modules.**
+
+
+## 🟩 RETRACTED 2026-09-13 — the root COMPILES here, and my "container resource limit" does not exist
+
+Measured on `main` `c9fd78b0a`:
+
+    scripts/lean-library-sweep.py --package QOU --only-exact QOU --jobs 2
+    === library sweep: 1451 ok, 0 RED, 0 TIMEOUT + 0 UNVERIFIED, 0 skipped, 8542s ===
+    [1451/1451] ok   QOU
+
+**What I retract.** I wrote that the SIGSEGV five "are the same container
+resource limit that makes the library root unverifiable (`qou-ed8a`)". There is
+no such limit. The root was short **79 Mathlib oleans**; they build from source
+in 188 s, were seeded to `lake-cache/qou-v4-24-0-mathlib-gap-modules`
+(`d7e3ae8c662`, 2026-09-11), and with them restored the root and its entire
+1451-module dirty closure compile with nothing red, nothing timed out and
+nothing unverified.
+
+Every module flagged SIGSEGV-family or TIMEOUT passes: `HeckeH4BlockMap211`,
+`HeckeH4BlockMap31` (these two *concurrently*, 137 % and 98 % CPU),
+`OctonionDerivationsUpperBound`, `Witness12B`. The TIMEOUTs were CPU contention
+from the old `--jobs 3` default — `nproc//jobs` gave 1 thread each — which a
+sibling diagnosed in `2026-09-08-sweep-timeouts-were-contention.md` and this run
+confirms from the other side.
+
+**What survives.** The five `exit 139` observations themselves: something
+segfaulted, zero bytes of diagnostic. What is withdrawn is the attribution. And
+a defect in my own record — **I never named which five modules segfaulted**, so
+the claim could not be checked against the thing it was about, only against a
+family resemblance. Name the modules.
+
+**Consequence for this bean's open question.** "Sizing the ~1863 root-missing
+modules needs a different build environment" is also withdrawn. `--all` with
+`--only` chunking is built for a constrained container and this run demonstrates
+the capacity (1451 modules, 8542 s, disk comfortably inside). The sizing question
+is unblocked and needs no owner decision.
+
+**Trap found on the way, live in a fresh container (`qou-4h26`).** The first
+attempt reported `556 UNVERIFIED, 880 skipped` with zero source errors — pure
+path artifact. `lean-cache-restore.sh` fills the **root** mathlib tree (3559)
+while the sweep reads the **paper** tree (92), and Lean resolves a package from
+the first `LEAN_PATH` root holding that package's *directory*. Run
+`scripts/lean-sync-olean-trees.sh` after restoring, or the sweep measures the
+path rather than the corpus.
+
+Full write-up:
+`docs/audits/2026-09-13-library-root-compiles-1451-modules-zero-red.md`.
+
+
+## 🟩 THE SIZING QUESTION IS ANSWERED: ZERO defects in 2836 modules
+
+`scripts/lean-library-sweep.py --package QOU --all --jobs 2` on `main`
+`e22bd4561`:
+
+    === library sweep: 2821 ok, 0 RED, 1 TIMEOUT + 0 UNVERIFIED (NOT failing),
+        14 skipped (dependency red), 11426s ===
+
+**Zero RED, zero UNVERIFIED**, 3 h 10 m, every module rebuilt from source.
+Combined with this session's root-targeted run, **2830 of 2836 modules are
+judged `ok` and 0 are RED in either run**; 6 remain unjudged (below).
+
+### This is the third retraction in the arc, and it is mine
+
+I proposed two methods for this sizing and retracted both as unsound; then I
+recorded that it needed a **different build environment**. It did not. `--all`
+with `--only` chunking is built for a constrained container and did the whole
+library in one pass on 4 cores.
+
+### What a 0 means here, fixed BEFORE the result landed
+
+Read out of `lean-library-sweep.py`, not fitted afterwards. Under `--all`
+nothing is trusted -- every module is rebuilt from source in topological order,
+so a dependent cannot compile against a stale dependency olean. That is **5 of
+my 10 corpus-typecheck REDs, structurally impossible here.** A signal death
+(`rc < 0`, SIGSEGV) is classified UNVERIFIED and printed *"NOT a corpus defect
+on this evidence"* -- **the other 5.** TIMEOUT is its own label. So a RED would
+have been a source error against QOU source. There were none. Residual
+conditionality is against **Mathlib** (restored, not rebuilt), not QOU.
+
+### The reframing this forces on THIS bean
+
+The two-thirds-outside-the-root finding is a **build-coverage** fact, not a
+**correctness** fact. Those modules are not rotting -- every one compiles. What
+is true is that **nothing routinely checks them**, which is exactly how
+`BruhatRankCriterion` went red on `main` unnoticed (`qou-1u90`, #7185). Different
+problem, different fix: **coverage** -- reach them from the root, or run this
+sweep as the gate. Both are owner calls; neither is started.
+
+### The honest remainder
+
+`QOU.Machinery.HeckeH4BlockMap211` TIMEOUT at the default 1800 s, 14 skipped
+behind it. Not a new problem -- it compiled **ok** in the root run two hours
+earlier at the same budget; it sits near the wall. Nine of the 15 are covered by
+that run. **Six are genuinely unjudged**, and four of them are exactly the
+`QOU.Hecke.* H3A/H4A` family this bean named as the SIGSEGV class:
+
+    QOU.Hecke.FullRankFromWedderburn        QOU.Hecke.MarkovTraceOnH3A
+    QOU.Hecke.InstanceOnH3A                 QOU.Hecke.MarkovTraceOnH4A
+    QOU.Hecke.InstanceOnH4A                 QOU.Machinery.HeckeH4RepDecomp
+
+A `--only QOU.Hecke --timeout 5400` re-run is in flight. Until it reports these
+six are **unverified, not passing**.
+
+Full write-up:
+`docs/audits/2026-09-13-every-library-module-compiles-zero-defects.md`.
+
+
+## 🛑 THE CENTRAL PREMISE OF THIS BEAN IS FALSE. `lake build QOU` DOES build these modules
+
+Every "NOT in the root" claim above -- lines 35, 98-114, 140, 202-208, 272 -- says
+or implies that **`lake build QOU` does not compile the modules outside
+`QOU.lean`'s import closure**. It does. The paper lakefile declares the library
+with an explicit glob:
+
+    [[lean_lib]]
+    name = "QOU"
+    srcDir = "."
+    # WIDEN THE BUILD TO THE WHOLE TREE (bean qou-rc7b).
+    globs = ["QOU", "QOU.+"]
+
+A Lake library with no explicit `globs` defaults to `roots.map Glob.one` and
+builds only its root plus that root's transitive imports -- which is the state
+this bean describes. **That state ended on 2026-08-08**, a month before this bean
+was opened, when `qou-rc7b` (status `done`, *"BUILD COVERAGE: `lake build` reaches
+only 853 of 1618 QOU Lean modules -- 47% never compiled"*) added the glob. It is on
+`origin/main` today.
+
+So `lake build QOU` compiles **all 2836**, not a third of them. Corroborated
+independently by the background build's own log, which reports
+`[6459/6460] QOU.Eightfold.ObstructionClassForcesComplexType` -- a job count only
+a whole-tree build reaches.
+
+### What the numbers actually are
+
+Measured today by walking `import` lines from `QOU.lean` transitively:
+
+    library modules                 2836
+    reachable from QOU.lean         1451   (51.2%)
+    OUTSIDE the import closure      1385   (48.8%)
+    direct imports listed in QOU.lean  911
+
+**The `67%` figure asserted twice above was ALREADY CORRECTED on 2026-09-08** --
+by `scripts/lean-root-coverage-audit.py`'s own `CORRECTED` block, which states the
+cause (it counted the root's DIRECT import lines, not the transitive closure,
+understating coverage by 540 modules) and names the four places the overstatement
+reached, this bean's headline among them. Today's independent measure, 48.8%,
+agrees with that script's 47.7% and with `qou-rc7b`'s 47% in August.
+
+**So my withdrawal of the 67% is a RE-DISCOVERY, not a finding**, and I reached it
+by measuring rather than by grepping my own tool -- the corpus-grep failure this
+bean has now committed twice in one session.
+
+What IS new is the **premise**, which that correction did not touch: it fixed the
+count while leaving "a module outside the closure is built by nothing" standing.
+The glob falsifies that, and the two errors needed separate fixing.
+
+### The distinction the whole bean was missing
+
+**Import closure ≠ build coverage.** Those 1385 modules are outside `QOU.lean`'s
+import graph and *inside* `lake build QOU`. Both facts are true and this bean
+treated the first as implying the second.
+
+### So what IS the real gap?
+
+Not build coverage -- **nothing runs that build automatically.** CI auto-triggers
+are disabled repo-wide (`build.yml` is `workflow_dispatch`-only, owner directive
+2026-06-30, Actions billing). A breaking change therefore lands and nothing
+notices until an agent runs the build or a sweep by hand. That is how
+`BruhatRankCriterion` went red on `main` (`qou-1u90`, #7185) -- **not** because
+the module was unreachable.
+
+That reframes the fix and **removes the decision I was about to put to the
+owner**. I had named "reach them from the root, or make the sweep the gate" as an
+owner call, three times, in this bean, in #7272 and in chat. The first half is
+already done and has been for a month. The second half is a CI-trigger question
+the owner has already ruled on twice, most recently 2026-08-09 *with this exact
+failure cost on the table*, and AGENTS.md says not to re-propose it without a new
+reason. I do not have one. **Withdrawn -- there is nothing here for the owner to
+decide.**
+
+### One thing a sibling should know
+
+`BruhatRankCriterion.lean:606-610` on `main` carries, in the fix for `qou-1u90`:
+
+    -- That commit ported its callers across ten files and missed this
+    -- one, because this module is not in `QOU.lean`'s import closure, so
+    -- `lake build QOU` never compiles it.
+
+The first clause is right and the second is wrong, for the reason above. Flagged
+rather than edited: it is a sibling's file and the correction is theirs to make.
+
+**None of this touches the sizing result.** 2821 ok / 0 RED stands, and it is now
+*more* interesting rather than less: those modules were being built all along.
+
+
+### The premise's remaining carriers (measured 2026-09-13)
+
+Corrected here:
+
+  scripts/lean-root-coverage-audit.py  -- docstring; my own script
+
+Flagged, NOT edited -- a sibling's file and a dated audit doc:
+
+  scripts/lean-library-sweep.py:299    -- `--all` help text, "1863 of 2773 are
+                                          outside the root build"; both the count
+                                          and the premise are stale
+  QOU/Machinery/BruhatRankCriterion.lean:610 -- "`lake build QOU` never compiles
+                                          it", inside the qou-1u90 fix (#7185)
+  docs/audits/2026-09-08-full-library-sweep-and-five-false-reds.md:143
+
+The sweep help text is the one that matters most: it is read by every agent who
+runs `--all --help`, and it carries BOTH the superseded 67% count AND the false
+premise, in a script that is otherwise the corpus's best verification tool.
+
+
+## 🟩 COMPLETE: 2836 of 2836 judged, 0 RED
+
+Four runs, all on `main` `e22bd4561`:
+
+| run | selector | result |
+|---|---|---|
+| 1 | `--only-exact QOU` (root + dirty closure) | 1451 ok, 0 RED — incl. `[1451/1451] ok QOU` |
+| 2 | `--all` (every module) | 2821 ok, 0 RED, 1 TIMEOUT, 14 skipped behind it |
+| 3 | `--all --only QOU.Hecke --timeout 5400` | 269 ok, 0 RED |
+| 4 | `--all --only-exact QOU.Machinery.HeckeH4RepDecomp --timeout 5400` | 17 ok, 0 RED |
+
+**Union: every one of the 2836 library modules has been compiled from source and
+none is RED.** The TIMEOUT that blocked run 2, `HeckeH4BlockMap211`, passed in
+run 3 at the larger budget on an uncontended machine — confirming it as a budget
+artifact, not a property of the module.
+
+### Run 4 exists because I was wrong about run 3's scope
+
+I said the `--only QOU.Hecke` re-run would settle all six unjudged modules. It
+settled five. `QOU.Machinery.HeckeH4RepDecomp` is **not under the `QOU.Hecke`
+prefix** and nothing under that prefix imports it — it is a leaf — so the
+selector never reached it. A namespace prefix is not a dependency closure, and I
+treated it as one.
+
+### What this closes on the SIGSEGV retraction
+
+The four modules my bean named as the SIGSEGV class are measured and green:
+
+    QOU.Hecke.InstanceOnH3A       ok
+    QOU.Hecke.InstanceOnH4A       ok
+    QOU.Hecke.MarkovTraceOnH3A    ok
+    QOU.Hecke.MarkovTraceOnH4A    ok
+
+So whatever produced those five `exit 139` results, it was **not** a property of
+these modules and **not** a container limit. The observations stand; the
+attribution is dead. The sweep's `UNVERIFIED` class — whose source comment cites
+that very measurement as its motivating case — is the correct home for evidence
+of that shape, and it is where such a result would land today.

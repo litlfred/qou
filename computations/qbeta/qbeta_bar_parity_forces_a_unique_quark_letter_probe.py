@@ -61,21 +61,33 @@ what AGENTS.md asks for: implement the specification and report what it gives
 even when that is worse, and rank by derivational cleanliness rather than by
 residual.
 
-🛑 AND IT DOES NOT CLOSE Q_beta — though NOT for the reason a first draft of
-this file gave.  All four distinct elements do fail whole-element PSD
-feasibility, but that is a MEASUREMENT rather than a rejection by the ruling:
-the SDP scope question was answered **"(A) core only"** (bean `qou-99qc`,
-2026-09-12), under which reading 3 constrains 6 of the 11 letters and prunes
-NOTHING among the 5 the parity bound leaves free.  Whole-element PSD is reading
-(B), which was not selected.  Either way the SDP half does no work here, which
-is what leaves the bar-odd constraint above as the only derived handle on these
-letters — and one constraint that narrows to a single value is not a closure.
+🛑 AND UNDER THE RULED SCOPE IT IS EXCLUDED, NOT MERELY UNCLOSED.  The SDP
+scope question — does the confinement SDP of `qou-ales` constrain only the 6
+gamma-gamma core letters, or the whole 11-letter word? — was put to the owner
+on 2026-09-13 and answered **"(B) whole element"**: every Wedderburn projection
+of the full word must be `PosSemidef`.  Measured here, ALL SIX (slot, kind)
+configurations fail it, so under (B) the ruling rejects this entire one-letter
+family — the bar-odd survivors above AND the census assignment alike.
 
-SCOPE.  **(a) scope-limited.**  One hypothesis, one family, `n = 3`.  Its force
-is conditional on the bar-odd property transferring from the retired `z = 1`
-cell to the ruled `z_D` base, which is assumed here, not established.  What is
-unconditional: the census assignment is not bar-odd, the bar-odd family
-collapses to one value, and no member of the family is PSD-feasible.
+So the bar-parity result is a derivation whose answer the SDP half then
+excludes.  Both halves stand: the parity narrowing is real and forced, and the
+element it forces is inadmissible.  That is a stronger negative than "does not
+close", and it is what makes the open problem sharp — the un-ruled letters need
+a principle that is bar-consistent AND whole-element PSD-admissible, and no
+member of this family is.
+
+HISTORY, because the scoping moved twice and both moves were mine.  A first
+draft called the PSD failure a rejection by the ruling with no scope stated; a
+correction (`04edd8b5d75`) demoted it to "a measurement under reading (B), not
+selected", on the strength of the bean's then-recorded "(A) core only".  The
+owner has now selected (B), so the first draft's verdict is reinstated — but it
+is reinstated by a ruling, not by the argument that originally produced it.
+
+SCOPE.  **(a) scope-limited** for the parity half: one hypothesis, one family,
+`n = 3`, and its force is conditional on the bar-odd property transferring from
+the retired `z = 1` cell to the ruled `z_D` base, which is assumed here, not
+established.  **The PSD half is unconditional** given (B): the six
+configurations are measured infeasible, independent of the bar-odd assumption.
 """
 from __future__ import annotations
 
@@ -97,6 +109,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 import qbeta_e0  # noqa: E402
 from codata_constants import Q_BETA_MEV  # noqa: E402
 
@@ -313,18 +326,19 @@ def main() -> int:
 
     # ---- 6. it narrows; it does not close ----------------------------------
     feas = {(sl, k): psd_feasible(sl, k) for sl in SLOTS for k in KINDS}
-    check("no_configuration_is_whole_element_PSD_feasible_reading_B_only",
+    check("no_configuration_is_whole_element_PSD_feasible_so_reading_B_rejects_them_all",
           not any(feas.values()),
           f"all {len(feas)} (slot, kind) configurations FAIL Matrix.PosSemidef "
           f"on at least one Wedderburn block -- the census assignment and every "
-          f"bar-odd alternative alike. 🛑 THAT IS A MEASUREMENT, NOT A "
-          f"REJECTION BY THE RULING: the SDP scope question was answered "
-          f"'(A) core only' (bean qou-99qc, 2026-09-12), under which reading 3 "
-          f"constrains 6 of the 11 letters and prunes NOTHING among the 5 the "
-          f"parity bound leaves free. Applying PSD to the WHOLE element is "
-          f"reading (B), which was not selected. So the SDP half does no work "
-          f"on these letters either way, and the bar-odd constraint above is "
-          f"the ONLY derived handle on them", w)
+          f"bar-odd alternative alike. Under the OWNER-SELECTED scope "
+          f"'(B) whole element' (2026-09-13, bean qou-99qc), the confinement "
+          f"SDP of qou-ales applies to every Wedderburn projection of the full "
+          f"11-letter word, so the ruling REJECTS this entire one-letter "
+          f"family. The bar-parity derivation above therefore forces an element "
+          f"the SDP half then excludes: both halves stand, and the open problem "
+          f"is a principle that is bar-consistent AND whole-element "
+          f"PSD-admissible. (Reading (A) core-only would have excluded nothing "
+          f"here; it was not selected)", w)
 
     w.add_data("the_open_problem", {
         "parity_bound": "no 11-crossing word is gamma-gamma-produced, so 5 of "
@@ -371,23 +385,29 @@ def main() -> int:
         "census_Q_beta_MeV": mp.nstr(census_pred, 20),
         "census_err_pct": mp.nstr(census_pct, 12),
     })
-    w.add_data("does_not_close", {
+    w.add_data("ruled_out_by_the_sdp_half", {
         "psd_feasible": {f"slot{sl}_{k}": bool(feas[(sl, k)])
                          for sl in SLOTS for k in KINDS},
-        "reading": "a MEASUREMENT under reading (B), not a rejection by the "
-                   "ruling: the scope answer was '(A) core only', under which "
-                   "the SDP half prunes nothing among these 5 letters. So the "
-                   "bar-odd constraint is the only derived handle on them",
-        "scope_answer": "(A) core only -- bean qou-99qc 2026-09-12, itself "
-                        "recorded as SELECTED-with-ambiguity, not as a clean "
-                        "ruling",
+        "reading": "a REJECTION by the ruling. The owner selected scope "
+                   "'(B) whole element' on 2026-09-13 (bean qou-99qc), so the "
+                   "confinement SDP of qou-ales applies to every Wedderburn "
+                   "projection of the full 11-letter word. All 6 configurations "
+                   "fail it, so the whole one-letter family is inadmissible -- "
+                   "the bar-odd survivors and the census assignment alike",
+        "scope_answer": "(B) whole element -- owner ruling 2026-09-13, "
+                        "answering the fork this bean had carried as "
+                        "'(A) core only, SELECTED-with-ambiguity'",
+        "consequence": "the bar-parity derivation forces an element the SDP "
+                       "half excludes; the open problem is a principle that is "
+                       "bar-consistent AND whole-element PSD-admissible",
     })
     w.add_data("scope", {
         "class": "(a) scope-limited",
         "unconditional": ["the census assignment is not bar-odd",
                           "the bar-odd family collapses to one magnitude",
-                          "no member is whole-element PSD-feasible (reading B, "
-                          "a measurement; the selected scope is (A) core only)"],
+                          "no member is whole-element PSD-feasible -- which "
+                          "under the selected scope (B) is a rejection by the "
+                          "ruling, and does not depend on the bar-odd premise"],
         "conditional_on": "the bar-odd property transferring from the retired "
                           "z = 1 cell to the ruled z_D base",
         "no_selection_was_made": "the constraint is a parity in q, never "
@@ -396,6 +416,11 @@ def main() -> int:
     })
 
     ok = not FAILED
+    # AGENTS.md q0-anchor rule: "Say which pin you used. Any new witness
+    # must record its q0 so a later reader can tell which layer it belongs
+    # to without inferring it from a call site."
+    w.add_data("q0_pin", "proton")
+    w.add_data("q0_value", Q_50_DIGIT_STR)
     w.save()
     print(f"{'OK' if ok else 'FAILED'}: {len(FAILED)} failed assertion(s)")
     return 0 if ok else 1

@@ -71,14 +71,29 @@ AND ONE MEASUREMENT SURVIVES AND IS NEW: the scored element's proton and
 neutron words are **both PSD-INFEASIBLE**, two of three blocks each, and carry
 `det != 1` in every block.
 
-🛑 SCOPED 2026-09-13, after the first draft of this file called that "the SDP
-half of the ruling excludes the scored element".  It does not.  The SDP scope
-question was answered **"(A) core only"** (bean `qou-99qc`, 2026-09-12), under
-which reading 3 constrains the 6 gamma-gamma letters and prunes nothing among
-the other 5 — and under (A), in that entry's own words, "the census element
-stands".  Whole-element PSD is reading (B), which was NOT selected.  So this is
-a measurement about the element, not a rejection of it by the ruling.  The
-alternating-character exclusion already on record is separate and unaffected.
+🛑 AND UNDER THE RULED SCOPE THAT EXCLUDES THE SCORED ELEMENT.  The SDP scope
+question — whether the confinement SDP of `qou-ales` constrains only the 6
+gamma-gamma core letters or the whole 11-letter word — was put to the owner on
+2026-09-13 and answered **"(B) whole element"**.  So the infeasibility measured
+here is a rejection by the ruling: `nuc11_interleaved`, the element the L2
+dashboard currently scores for Q_beta / m_n / Delta_pn, is inadmissible under
+the selection rule the corpus says produced it.
+
+🛑 THE DASHBOARD IS NOT RE-SCORED HERE, and that is deliberate.  This file
+records the measurement and the ruling that makes it binding; choosing what
+replaces the element is a separate decision with its own blast radius (three
+dashboard rows and every figure quoted from them), and it is not an agent's to
+take.  Do not read a re-score into this probe.
+
+HISTORY, because the scoping moved twice and both moves were mine.  A first
+draft asserted the exclusion with no scope stated; a correction
+(`04edd8b5d75`) demoted it to a measurement under an unselected reading (B),
+on the strength of the bean's then-recorded "(A) core only, under which the
+census element stands".  The owner has now selected (B), so the exclusion is
+reinstated — by a ruling, not by the argument that first produced it.
+
+The alternating-character exclusion already on record is separate and
+unaffected by any of this.
 """
 from __future__ import annotations
 
@@ -100,6 +115,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 import qbeta_e0  # noqa: E402
 from codata_constants import Q_BETA_MEV  # noqa: E402
 
@@ -206,10 +222,13 @@ def main() -> int:
         "mentions Q_beta. Caught by the calibration step. What the difference "
         "functional actually gives, all 15 pairs reported: -100 % to +79.4 %, "
         "STRADDLING the target rather than sitting above it, best +5.15 % "
-        "against 7.73 % expected by chance. Surviving new MEASUREMENT: the "
-        "scored element's proton and neutron words are both PSD-INFEASIBLE (2 "
-        "of 3 blocks) with det != 1 everywhere -- which is reading (B), NOT a "
-        "rejection by the ruling, whose scope answer was '(A) core only'."
+        "against 7.73 % expected by chance. Surviving new FINDING: the scored "
+        "element's proton and neutron words are both PSD-INFEASIBLE (2 of 3 "
+        "blocks) with det != 1 everywhere -- and under the owner-selected SDP "
+        "scope '(B) whole element' (2026-09-13) that EXCLUDES nuc11_interleaved, "
+        "the element the L2 dashboard scores for Q_beta / m_n / Delta_pn. The "
+        "dashboard is deliberately NOT re-scored here; what replaces the element "
+        "is a separate decision."
     )
 
     E0 = qbeta_e0.canonical()
@@ -312,14 +331,15 @@ def main() -> int:
           all(infeas[k] for k in ("p", "n")),
           f"nuc11_interleaved fails Matrix.PosSemidef on {infeas['p']} for the "
           f"proton and {infeas['n']} for the neutron -- 2 of 3 H_3 blocks each "
-          f"-- and carries det != 1 in every block (proton: {dets['p']}). "
-          f"🛑 That is a MEASUREMENT under reading (B), NOT a rejection by the "
-          f"ruling: the SDP scope question was answered '(A) core only' (bean "
-          f"qou-99qc, 2026-09-12), under which reading 3 prunes nothing outside "
-          f"the gamma-gamma core and 'the census element stands'. The first "
-          f"draft of this assertion said the ruling excluded it; that was an "
-          f"over-application of the SDP half. The alternating-character "
-          f"exclusion already recorded is separate and unaffected", w)
+          f"-- and carries det != 1 in every block (proton: {dets['p']}). Under "
+          f"the OWNER-SELECTED SDP scope '(B) whole element' (2026-09-13, bean "
+          f"qou-99qc), the confinement SDP of qou-ales applies to every "
+          f"Wedderburn projection of the full 11-letter word, so this EXCLUDES "
+          f"the element the L2 dashboard scores for Q_beta / m_n / Delta_pn. "
+          f"The dashboard is NOT re-scored here -- what replaces the element is "
+          f"a separate decision. (Reading (A) core-only would have left it "
+          f"standing; it was not selected.) The alternating-character exclusion "
+          f"already recorded is separate and unaffected", w)
 
     w.add_data("retraction", {
         "what_I_asserted": "tr_M >= 1 per PSD-feasible gamma-gamma word means "
@@ -372,16 +392,25 @@ def main() -> int:
     w.add_data("scored_element_sdp_status", {
         "psd_infeasible_blocks": infeas,
         "block_determinants": dets,
-        "reading": "a MEASUREMENT under reading (B). NOT a rejection by the "
-                   "ruling: the scope answer was '(A) core only' (bean "
-                   "qou-99qc, 2026-09-12), under which the census element "
-                   "stands and reading 3 prunes nothing outside the core. The "
-                   "alternating-character exclusion is separate and unaffected",
-        "scope_answer": "(A) core only -- itself recorded as SELECTED-with-"
-                        "ambiguity in that bean entry, not as a clean ruling",
+        "reading": "a REJECTION by the ruling. The owner selected scope "
+                   "'(B) whole element' on 2026-09-13 (bean qou-99qc), so the "
+                   "confinement SDP of qou-ales applies to every Wedderburn "
+                   "projection of the full 11-letter word and nuc11_interleaved "
+                   "is inadmissible. The alternating-character exclusion is "
+                   "separate and unaffected",
+        "scope_answer": "(B) whole element -- owner ruling 2026-09-13, "
+                        "answering the fork this bean had carried as "
+                        "'(A) core only, SELECTED-with-ambiguity'",
+        "dashboard_not_rescored": "deliberate. nuc11_interleaved is the scored "
+                                  "element for the L2 rows Q_beta, m_n and "
+                                  "Delta_pn; choosing its replacement is a "
+                                  "separate decision, not taken here",
     })
     w.add_data("scope", {
-        "class": "(a) scope-limited -- a retraction plus a measurement",
+        "class": "(a) scope-limited for the retraction; (b) STRUCTURAL for the "
+                 "exclusion -- the invariant is Matrix.PosSemidef on every "
+                 "Wedderburn projection, which the selected scope (B) makes "
+                 "the ruling's own admissibility test",
         "what_is_now_OPEN": "whether any PAIR of PSD-feasible gamma-gamma "
                             "words reproduces Q_beta. Nothing here excludes "
                             "it, and picking the closest pair out of 15 would "
@@ -389,6 +418,11 @@ def main() -> int:
     })
 
     ok = not FAILED
+    # AGENTS.md q0-anchor rule: "Say which pin you used. Any new witness
+    # must record its q0 so a later reader can tell which layer it belongs
+    # to without inferring it from a call site."
+    w.add_data("q0_pin", "proton")
+    w.add_data("q0_value", Q_50_DIGIT_STR)
     w.save()
     print(f"{'OK' if ok else 'FAILED'}: {len(FAILED)} failed assertion(s)")
     return 0 if ok else 1

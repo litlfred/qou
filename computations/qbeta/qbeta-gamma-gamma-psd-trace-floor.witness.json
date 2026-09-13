@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T15:15:45.666321+00:00",
-  "commitSha": "ab9be56d8ebb4e7b92cd4144e50ea3fe0f051201",
+  "computedAt": "2026-09-13T16:45:03.482392+00:00",
+  "commitSha": "255f847724c762e8f185762ce679f71a8d5012a0",
   "assertions": [
     {
       "name": "convention_D_weights_are_zero_on_three_rows_and_positive_on_two",
@@ -55,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1029,
+  "durationMs": 1018,
   "computation": "qbeta-gamma-gamma-psd-trace-floor",
   "scriptFile": "qbeta_gamma_gamma_psd_trace_floor_probe.py",
-  "scriptHash": "91f52ce9b63f",
-  "scriptCommitSha": "034a309bf04797f578ca034148bd13d26900798f",
+  "scriptHash": "b1f622217b57",
+  "scriptCommitSha": "a64570260fc188bfb72d5ae70dee2d09bfe6b8dc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -198,6 +198,8 @@
       "first_strand_count_not_excluded": 6,
       "what_is_NOT_claimed": "that an n >= 6 gamma-gamma word reaches the target; only that this argument stops there",
       "what_it_replaces": "the n = 5 brute-force feasibility scan left as the next step by #7304"
-    }
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
   }
 }
