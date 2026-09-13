@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T08:40:16Z
+updated_at: 2026-09-13T09:24:16Z
 ---
 
 
@@ -719,3 +719,52 @@ finish in ~9 min; making it incremental is the cheap way to extend the table.
 
 Status unchanged: **do not close.** The coefficient is narrowed, not identified; the q-Borel
 negative (2026-08-21) is untouched.
+
+
+### 2026-09-13 — the arc's assertions are now Lean, and (I') was already in the corpus (PR #7282)
+
+**Claim.** The three identities this arc runs on are proved sorry-free, and the
+central one cost four lines because the corpus already had it in a different
+register.
+
+`content/quantum-observable-universe/lean/QOU/BraidKnot/HookSumBetaCoordinates.lean`,
+11 declarations, 0 `sorry`, axioms `[propext, Classical.choice, Quot.sound]` on all 11.
+
+| | |
+|---|---|
+| **(I')** `sum_hookF_add_pairF` | `Σ_c g(h(c)) + Σ_{i<j<L} g(β_i − β_j) = Σ_{i<L} Σ_{m≤β_i} g(m)`, any `g` into an `AddCommMonoid` |
+| **(III)** `two_mul_sum_betaR` | `2 Σ_{i<L} β_i = 2n + L(L−1)` |
+| **(II)** `two_mul_sum_hookZ_betaForm` | `2 Σ_c h(c) = Σ_i β_i(β_i+1) − 2 Σ_{i<j}(β_i − β_j)` |
+| **(II) again** `sum_hookZ_betaForm_of_hookMultiset` | same statement, **independent proof** |
+
+all for **every** padding `L ≥ ℓ(μ)`, not only `L = ℓ(μ)`.
+
+**The finding worth carrying forward.** `QOU.SchurWeyl.hookSide_betaR` already
+states, for an arbitrary `CommMonoid`,
+`∏_c f(h(c)) · ∏_{i<j<L} f(β_i − β_j) = ∏_{i<L} descFactF f β_i` — the
+divisor-free hook-length formula with its Vandermonde denominator. Instantiating
+`M = Multiplicative N` turns every product into a sum and **is** (I'). So the
+one-body/two-body split this arc has treated as its own structural input is the
+hook-length formula, and the corpus proved it months ago on the product side.
+`SchurWeyl.betaR L μ i = μ.rowLen i + (L−1−i)` is likewise *already* this arc's
+`β_i`; the Lean reuses it rather than redefining it.
+
+**What the corpus did NOT have**: any identity about β-number **sums**. A grep
+for a sum over `betaNum`/`betaR` returns nothing. That gap is what this file closes.
+
+**(II) now has two proofs sharing no step** — one through `HookSumClosedForm`'s
+`2Σ_h = p₂(λ) + p₂(λ')` (a reflection argument over the cells) plus a termwise
+polynomial identity and the vanishing `−3Σm² + (2L−1)Σm = 0` that *is* the
+padding-independence; the other through the hook multiset, needing no column
+bound `M`. Agreement checks both, and checks the numerical probe (#7070, all
+partitions of `n ≤ 16`) that motivated them.
+
+**Implications for this bean.** This formalizes the **foundation**, not the open
+question. The Θ(√n) coefficient is still open: #7270 brackets it from the bound
+side at `[8.7277, 8.8015]` and #7279 puts the achievable side near ≈5.22, so most
+of that 1.7× width is slack in the *bound*. Tightening it is an argument about
+`Σ_i F(β_i) − Σ_{i<j} ε(β_i − β_j)` — and that expression is now a Lean theorem
+rather than a numerical observation, so a Lean-side bound on it is a route that
+did not exist yesterday.
+
+**Do not close this bean.**
