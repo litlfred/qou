@@ -45,14 +45,21 @@ export default proposition({
         "(ii) the q-Laplacian resolvent `ρ_λ(s_*)` the producer applies was " +
         "absent — deleting it moves the total by 4.12× at A=2 and 9.87× at A=4, " +
         "so it is not a rounding; (iii) *\"strictly over all λ\"* did not " +
-        "describe the gated sum the producer computes, a factor 4.60 / 3.40 " +
-        "apart. The criterion's discriminator is `QOU.MassTheory." +
+        "describe the gated sum the producer computed at the time, a factor " +
+        "1.93 / 1.95 apart at the production truncation k_exact = 11 (4.60 / " +
+        "3.40 at k_exact = 4 — quote the tier). The criterion's discriminator is `QOU.MassTheory." +
         "UICFunctionalSelection.gate_not_a_function_of_displayed_data`: the " +
         "displayed summand is even in the trace, so the gate reads a sign the " +
         "formula has already discarded and the old text could not denote the " +
-        "producer at all. **Whether the gate itself belongs in the physics is " +
-        "NOT settled here** — see the scope section; beans `qou-sv7h`, " +
-        "`qou-brng`.",
+        "producer at all. **SUPERSEDED on divergence (iii) by PR #7253**, which " +
+        "dropped the Pass-2 gate from the producer on the same day (owner " +
+        "ruling, bean `qou-21oc`), after PR #7251 refuted its " +
+        "complementary-slackness justification sorry-free. The producer now " +
+        "sums over every enumerated λ, so this block's unrestricted reading " +
+        "and the producer agree and (iii) is closed — not by re-aligning the " +
+        "text to the gate, but by the gate going. Dropping it is NOT an " +
+        "accuracy gain: both totals are wrong-signed against AME2020 and the " +
+        "ungated one is further out. Beans `qou-sv7h`, `qou-brng`, `qou-21oc`.",
       see: "docs/audits/2026-09-12-uic-functional-resolution.md",
     },
   ],

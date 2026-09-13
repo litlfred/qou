@@ -67,6 +67,20 @@ import json  # noqa: E402
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import fmt  # noqa: E402
+
+
+def _serialise(obj):
+    """Render the mpf working state to witness JSON at the LAST moment."""
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
+
+
 
 import qbeta_ck_sseries_exact_rational as core  # noqa: E402
 
@@ -214,8 +228,11 @@ def main() -> int:
         regime = ("over-accel (entire; slope<0)" if Q > 1 and sl < 0 else
                   ("no accel (geometric rescale; still divergent)" if Q < 1 and sl > 0
                    else "?"))
-        arm1[tag] = {"Q": mp.nstr(Q, 8), "s": float(s), "root_slope": float(sl),
-                     "tail": float(tail), "regime": regime}
+        # `root_slope` is the sign test the `over` / `noacc` verdicts below are
+        # decided on, and `tail` is inverted to a radius in arm 2. mpf here,
+        # `fmt` at emission.
+        arm1[tag] = {"Q": mp.nstr(Q, 8), "s": s, "root_slope": sl,
+                     "tail": tail, "regime": regime}
         print(f"    {tag:12s} (s={float(s)}): slope={float(sl):+.4f} tail|b_k|^(1/k)={float(tail):.4f} → {regime}")
     sl0, tail0 = slope_tail([mp.mpf(0)] + d[1:], KMAX)
     over = all(arm1[t]["root_slope"] < 0 for t in ("substrate q0", "Q=2", "Q=3"))
@@ -226,8 +243,8 @@ def main() -> int:
     print("      exp(Bk+Ck·log k) class — the fixed-base Jackson transform cannot")
     print("      resolve the D-ladder singularity (scope-(a), conditional on the")
     print("      triple-confirmed divergence class; transform-side growth exact).")
-    wb.add_data("arm1_fixed_base_scan", arm1)
-    wb.add_data("arm1_raw_slope", float(sl0))
+    wb.add_data("arm1_fixed_base_scan", _serialise(arm1))
+    wb.add_data("arm1_raw_slope", fmt(sl0))
 
     # ---------------- ARM 2: Leroy estimator gate -------------------------
     print(f"\n  [ARM 2] Borel–Leroy s-scan with estimator gate (tol {float(GATE_TOL):.0%}):")
@@ -243,24 +260,31 @@ def main() -> int:
         rho_p, spread, nw = dlog_pade_radius(bser, KMAX)
         rho_r = 1 / tail if tail > 0 else None
         ok, rel = gate(rho_p, spread, rho_r)
-        row = {"s": float(s), "slope": float(sl),
-               "rho_root": float(rho_r) if rho_r else None,
-               "rho_pade": float(rho_p) if rho_p else None,
-               "pade_spread": float(spread) if spread is not None else None,
-               "gate_rel_gap": float(rel) if rel is not None else None,
+        # Rows carry mpf; `_serialise` renders them at `add_data`. `float()`
+        # here floored the scan's own outputs -- `gate_rel_gap` is the
+        # estimator gap the gate is decided on, and `slope` is compared to
+        # 1e-3 to locate s*.
+        row = {"s": s, "slope": sl,
+               "rho_root": rho_r if rho_r else None,
+               "rho_pade": rho_p if rho_p else None,
+               "pade_spread": spread if spread is not None else None,
+               "gate_rel_gap": rel if rel is not None else None,
                "gate_pass": ok}
         arm2.append(row)
         if ok and (best is None or rel < best[1]):
-            best = (float(s), rel)
+            best = (s, rel)
         s += mp.mpf("0.02")
     for row in arm2:
-        print(f"    s={row['s']:.2f}: slope={row['slope']:+.4f} ρ_root={row['rho_root'] and round(row['rho_root'],4)} "
-              f"ρ_padé={row['rho_pade'] and round(row['rho_pade'],4)} spread={row['pade_spread'] and round(row['pade_spread'],3)} "
-              f"gap={row['gate_rel_gap'] and round(row['gate_rel_gap'],3)} gate={'PASS' if row['gate_pass'] else 'fail'}")
+        def _r(v, n):   # display only
+            return round(float(v), n) if v is not None else None
+        print(f"    s={float(row['s']):.2f}: slope={float(row['slope']):+.4f} "
+              f"ρ_root={_r(row['rho_root'], 4)} ρ_padé={_r(row['rho_pade'], 4)} "
+              f"spread={_r(row['pade_spread'], 3)} gap={_r(row['gate_rel_gap'], 3)} "
+              f"gate={'PASS' if row['gate_pass'] else 'fail'}")
     gate_any = best is not None
     print(f"    s* (slope→0 crossing) ≈ {float(s_star) if s_star is not None else None}")
     print(f"    estimator gate passes anywhere: {gate_any}"
-          + (f" (best s={best[0]}, gap {float(best[1]):.3f})" if best else ""))
+          + (f" (best s={float(best[0])}, gap {float(best[1]):.3f})" if best else ""))
 
     # conformal-mapped core at the s* boundary (merged #3713 machinery)
     conf_res = {}
@@ -277,31 +301,33 @@ def main() -> int:
                                       ("converged", "A", "phase", "iters", "why")}
         conv_As = [mp.mpf(v["A"]) for v in conf_res.values()
                    if v.get("converged") and "A" in v]
-        conf_spread = (float((max(conv_As) - min(conv_As)) / (mp.fsum(conv_As) / len(conv_As)))
+        conf_spread = ((max(conv_As) - min(conv_As)) / (mp.fsum(conv_As) / len(conv_As))
                        if len(conv_As) >= 2 else None)
         print(f"    conformal-mapped core at s*={float(s_star):.2f}: "
               + "; ".join(f"{k}: A={v.get('A')} conv={v.get('converged')}" for k, v in conf_res.items()))
         conf_vs_root = None
         if conf_spread is not None:
-            print(f"      window spread of converged A: {conf_spread:.3f}")
+            print(f"      window spread of converged A: {float(conf_spread):.3f}")
             A_conf = mp.fsum(conv_As) / len(conv_As)
-            row_star = min(arm2, key=lambda r: abs(r["s"] - float(s_star)))
+            row_star = min(arm2, key=lambda r: abs(r["s"] - s_star))
             if row_star["rho_root"]:
-                conf_vs_root = float(abs(A_conf - row_star["rho_root"])
-                                     / max(A_conf, mp.mpf(row_star["rho_root"])))
+                # `row_star` values are mpf now, so no re-lift through float.
+                conf_vs_root = (abs(A_conf - row_star["rho_root"])
+                                / max(A_conf, row_star["rho_root"]))
                 print(f"      OBSERVATION (not a gate): conformal A≈{mp.nstr(A_conf, 5)} sits "
-                      f"within {conf_vs_root:.1%} of the root-test radius "
-                      f"{row_star['rho_root']:.4f} while raw dlog-Padé stays low "
-                      f"({row_star['rho_pade']:.4f}) — suggestive that the raw Padé is the "
+                      f"within {float(conf_vs_root):.1%} of the root-test radius "
+                      f"{float(row_star['rho_root']):.4f} while raw dlog-Padé stays low "
+                      f"({float(row_star['rho_pade']):.4f}) — suggestive that the raw Padé is the "
                       f"branch-cut-biased outlier; recorded for the extension arm, "
                       f"NOT promoted to a post-hoc gate.")
-    wb.add_data("arm2_leroy_gate_scan", arm2)
-    wb.add_data("arm2_s_star", float(s_star) if s_star is not None else None)
+    wb.add_data("arm2_leroy_gate_scan", _serialise(arm2))
+    wb.add_data("arm2_s_star", fmt(s_star) if s_star is not None else None)
     wb.add_data("arm2_gate_pass_anywhere", bool(gate_any))
     wb.add_data("arm2_conformal_at_s_star", conf_res)
-    wb.add_data("arm2_conformal_window_spread", conf_spread if s_star is not None else None)
+    wb.add_data("arm2_conformal_window_spread",
+                _serialise(conf_spread) if s_star is not None else None)
     wb.add_data("arm2_conformal_vs_root_gap_OBSERVATION_ONLY",
-                conf_vs_root if s_star is not None else None)
+                _serialise(conf_vs_root) if s_star is not None else None)
 
     # ---------------- ARM 3: parity-split acceleration --------------------
     print("\n  [ARM 3] parity-split (2-adic grading decomposition), gate per branch:")
@@ -316,14 +342,14 @@ def main() -> int:
             rho_p, spread, _ = dlog_pade_radius(bser, km)
             rho_r = 1 / tail if tail > 0 else None
             ok, rel = gate(rho_p, spread, rho_r)
-            rows.append({"s": float(sv), "slope": float(sl), "gate_pass": ok,
-                         "rho_root": float(rho_r) if rho_r else None,
-                         "rho_pade": float(rho_p) if rho_p else None,
-                         "gate_rel_gap": float(rel) if rel is not None else None})
+            rows.append({"s": sv, "slope": sl, "gate_pass": ok,
+                         "rho_root": rho_r if rho_r else None,
+                         "rho_pade": rho_p if rho_p else None,
+                         "gate_rel_gap": rel if rel is not None else None})
         npass = sum(1 for r in rows if r["gate_pass"])
         arm3[tag] = {"n_terms": km, "rows": rows, "n_gate_pass": npass}
         print(f"    {tag:4s} branch ({km} terms): gate passes at {npass}/{len(rows)} scanned s")
-    wb.add_data("arm3_parity_split", arm3)
+    wb.add_data("arm3_parity_split", _serialise(arm3))
 
     # ---------------- ARM 4: back-transform meridian self-check -----------
     print("\n  [ARM 4] Borel–Leroy back-transform self-check at the meridian + A2:")
@@ -354,7 +380,7 @@ def main() -> int:
     print("      (the S=0 zero at q* is NOT a zero of D: the sign structure lives in the")
     print("       h·D → S bridge — measured bridge datum, ord17 witness — consistent with")
     print("       KC21's smooth-zero, ladder-inversion-amplified reading)")
-    wb.add_data("arm4_back_transform", {"s_used": float(s_bt), **arm4})
+    wb.add_data("arm4_back_transform", _serialise({"s_used": s_bt, **arm4}))
     wb.add_data("arm4_A2_note",
                 "D(ũ) smooth and nonzero through q*; the S=0 structural zero lives in "
                 "the h·D→S bridge (ord17 measured ratio), not in the accelerated D — "
@@ -399,16 +425,16 @@ def main() -> int:
         "cross-check. Measurement only: no instanton action identified, no candidate "
         "value, no c_k wired, no fit, no tier change."
     )
-    wb.add_data("gate_tolerance", float(GATE_TOL))
+    wb.add_data("gate_tolerance", fmt(GATE_TOL))
     wb.add_data("singularity_resolved_at_this_k", resolved)
     wb.add_data("KMAX", KMAX)
     wb.add_data("verdict", verdict)
     wb.add_assertion("arm1_fixed_base_mismatch",
-                     computed=float(over and noacc), expected=1.0, tolerance=0.5,
+                     computed=str(int(over and noacc)), expected="1", tolerance="0.5",
                      source="Q>1 over-accelerates to an entire transform; Q<1 leaves the "
                             "divergence class unchanged; Leroy boundary is the only match")
     wb.add_assertion("arm4_back_transform_self_check",
-                     computed=float(self_check), expected=1.0, tolerance=0.5,
+                     computed=str(int(self_check)), expected="1", tolerance="0.5",
                      source="Borel–Leroy Γ(1+sk) back-transform equals the direct partial "
                             "sum at the meridian to <1e-15 at both anchors")
     # Was `computed=1.0, expected=1.0` named `no_identification_claimed` (bean

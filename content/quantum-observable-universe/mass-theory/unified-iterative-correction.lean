@@ -188,11 +188,13 @@ moves the accumulator's total by 4.12× at `A = 2` and 9.87× at `A = 4`
 (`computations/probes/uic_functional_resolution_probe.py`), so the omission was
 a factor, not a rounding.
 
-The **gate** — the producer's Pass-2 restriction to `tr M_λ ≤ 0` — is
-deliberately NOT asserted here.  It is underived: see
+The **gate** — the producer's former Pass-2 restriction to `tr M_λ ≤ 0` — is
+deliberately NOT asserted here.  It was underived: see
 `QOU.MassTheory.UICFunctionalSelection`, whose `uicGated_cs_eq` shows that
 genuine complementary slackness collapses the functional to a constant carrying
-no information about the atom. -/
+no information about the atom.  The restriction was removed from the producer on
+2026-09-12 (owner ruling, bean `qou-21oc`), so this file's unrestricted reading
+and `hecke_core_legacy.unified_iterative_correction` now agree. -/
 
 /-- The `q`-resolvent on the `λ`-block: `ρ_λ(s) = 1 / (μ_λ + s)`, with `μ_λ` the
     Jucys–Murphy `q`-Casimir eigenvalue.  The block-diagonal scalar of
