@@ -61,8 +61,9 @@
 >
 > **Everything this document concludes is unchanged and, if anything,
 > reinforced.** The sign was wrong at `−7.271` and is still wrong at `−15.814`;
-> it is still carried by term 1. Against AME2020 `+2.22456607 MeV` the `|ratio|`
-> goes from **3.26855×** to **7.10889×** and the residual from **9.4956682** to
+> it is still carried by term 1. Against AME2020 `+2.2245662 MeV` — read from
+> `ame_2020_binding_energies.ame_binding_mev(1, 2)`, not typed — the `|ratio|`
+> goes from **3.26855×** to **7.10889×** and the residual from **9.4956683** to
 > **18.038761 MeV** — i.e. *worse*. (Do not conflate those with bean
 > `qou-21oc`'s `11.37 → 19.92 MeV`, which is the residual of **term 1 alone**
 > against AME, a different quantity.) Dropping the gate buys honesty, not

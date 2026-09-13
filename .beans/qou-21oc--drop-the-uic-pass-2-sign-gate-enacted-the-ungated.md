@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T22:56:10Z
-updated_at: 2026-09-13T00:45:15Z
+updated_at: 2026-09-13T01:01:45Z
 ---
 
 
@@ -176,3 +176,20 @@ alone** against AME — a different quantity.
 **Not re-run, and left derived:** ⁴He `binding_energy(2, 2)`. Its term 1 is
 measured (`-15.9926510049258`, 1165.1 s) but the full function is a ~2x longer
 compute than the deuteron's 1180 s and was not attempted.
+
+
+### Correction to the section above, same day — an AME literal I typed
+
+The ratios above were first computed against `2.22456607`, a value I **typed**.
+The registry says `2.2245662` (`ame_2020_binding_energies.ame_binding_mev(1, 2)`,
+returns `mpf`). Disagreement `-1.3e-7`, relative `5.84e-8`.
+
+**What it changed: one digit.** `|ratio|` 3.26855x / 7.10889x are unmoved at
+6 s.f.; the gated residual goes `9.4956682 -> 9.4956683` MeV and the ungated
+`18.038761` is unmoved. So no conclusion turns on it — **which is precisely why
+a typed constant survives review**, and why the reference-literal ratchet exists.
+
+Fixed AT THE PRODUCER: the script now calls `ame_binding_mev(1, 2)` instead of
+carrying a literal. Caught by checking my own published figure against its
+source rather than by any gate — the literal was new in this commit, so it would
+have become baseline backlog on the next ratchet run.

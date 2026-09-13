@@ -54,8 +54,8 @@ and the measured terms reproduce the ORIGINAL gated total,
 `-9.14773623102088124311 + 1.87663410614413633433 = -7.27110212487674490878`,
 against the `-7.271102125` the 2026-09-02 audit printed.
 
-Against AME2020 `+2.22456607 MeV` the `|ratio|` goes `3.26855x -> 7.10889x` and
-the residual `9.4956682 -> 18.038761 MeV`.  WORSE, and that is the honest
+Against AME2020 `+2.2245662 MeV` (registry value) the `|ratio|` goes `3.26855x -> 7.10889x` and
+the residual `9.4956683 -> 18.038761 MeV`.  WORSE, and that is the honest
 outcome: the drop buys honesty, not accuracy.
 
 Wall: ~2 UIC runs at the production default, ~40 min total.  Launch as
@@ -181,10 +181,16 @@ def main():
           f"(nonzero here is the float64 cast at the public return, "
           f"not a term)", flush=True)
 
-    # AME2020 deuteron binding, as published text (9 s.f.), NOT re-fmt'd.
-    ame = mp.mpf("2.22456607")
+    # AME2020 deuteron binding.  READ FROM THE REGISTRY, never typed: a
+    # hand-copied constant that quietly disagrees with its source is what the
+    # reference-literal ratchet exists for, and this script carried
+    # `mpf("2.22456607")` until 2026-09-13 against a registry that says
+    # `2.2245662` -- a 5.84e-8 disagreement.  It moved only the 8th s.f. of the
+    # residual, which is exactly why a typed literal survives review.
+    from ame_2020_binding_energies import ame_binding_mev
+    ame = mp.mpf(ame_binding_mev(1, 2))   # Z = 1, A = 2
     print("", flush=True)
-    print(f"  AME2020 2H binding                 : +{mp.nstr(ame, 9)} MeV",
+    print(f"  AME2020 2H binding (registry)      : +{mp.nstr(ame, 9)} MeV",
           flush=True)
     print(f"  |ratio| measured / AME             : "
           f"{mp.nstr(abs(measured_public / ame), 6)}x", flush=True)
