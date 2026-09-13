@@ -53,6 +53,28 @@ says nothing about a word built from γγ vertices *plus* other letters, and
 `wordChar = 1` is **necessary, not sufficient** — being a product of vertices
 is a statement about the order, which this invariant is deliberately blind to.
 
+🛑 **`Letter` has three constructors, and the corpus has four templates.**
+`word_to_mpfr` also recognises `averaged_weighted`, carrying the substrate
+flavour split `δ(q) = (q−1)²(1 − q⁻⁴)/3` and the shift `d = −h(1/2 − δ/4)`. No
+census reading uses it, so nothing stated here is weakened — but the 2026-08-15
+owner ruling R3 makes `bring_color_weighted` canonical as the p/n convention,
+so a word built *next* may carry it. It is deliberately absent from `Letter`
+because the argument does not extend: its character carries an irreducible
+sextic rather than a power of `q` or of `(q²+1)/2`, so `ud_mul_ne_one`'s
+finite case analysis has no analogue and the unique-factorisation route is
+unavailable. The companion probe measures the sixteen four-letter pairings and
+records that **the general word-level exclusion over the four-letter alphabet
+is open**; adding a fourth constructor here without that argument would state
+less than it appears to.
+
+## What is NOT new here
+
+`qou-avt6` (completed 2026-08-26) already derives the monomial shape
+`eps(word) = q^m ([2]_q/2)^c` — for the **counit / trivial** representation
+`σ ↦ q`, not for the alternating one used here, and without stating the
+order-blindness or drawing its consequence for the γγ ruling's choice of
+ordering. The two shapes agree up to a fold, `(q²+1)/(2q) = [2]_q/2`.
+
 ## Base ring (§7c)
 
 `Letter` and `wordChar` are stated over a generic `[Field R] [CharZero R]` —
