@@ -9,6 +9,42 @@ verdict "not a question a measurement can answer" is too weak.
 **Scope:** **(b)** on two of three branches, each citing a named classical
 invariant. The third branch is open and is not closed here.
 
+## 🛑 CORRECTION — a sibling selected `N` three days before this, and I did not cite it
+
+This audit's *"no search on the target"* section (below) says `N = 111` is
+neither excluded nor evidence, and that none should be searched for **"until
+something independent selects it."** Something independent already had.
+
+[`2026-09-05-cds1-fibre-reality-selects-n.md`](2026-09-05-cds1-fibre-reality-selects-n.md)
+and `computations/qbeta/qbeta_fibre_reality_selects_n_probe.py` (4/4), **the same
+bean**, landed **2026-09-05** — three days before this file. They derive `N` from
+the framework's own reality constraint: `Q_β` is a measured Q-value, so the
+Form-A baseline `Q_A` must be real on the locus. That is one real equation in
+`φ = arg q`, with an exact solution set and **`θ` nowhere in the derivation**:
+
+| reading | admissible `N` | nearest nonzero phase | vs required `θ = 0.0566173` |
+|---|---|---|---|
+| A — modulus kept | **5** (degenerate 2) | `2π/5 = 1.256637` | 22.20× too large |
+| B — analytically continued | **4** (degenerate 1, 2) | `π/2 = 1.570796` | 27.74× too large |
+
+**`N = 111` is excluded under both**, and `#6755`'s "neither excluded nor
+evidence" status was already retired. Missing it was a corpus-grep failure on
+paths 1 and 3 — `docs/audits/` and `computations/` — inside the bean this file
+is filed under.
+
+**The two results are independent and complementary, and this one is not
+refuted.** The sibling's exclusion is explicitly **scope-(a)**, conditional on
+requiring `Q_A` real *on* the fibre; its own scope note says a mechanism that
+computes on the fibre and projects to a real observable *afterwards* is
+untouched by it, "and is where the route would have to go". The reduction below
+is about the **arithmetic nature of `R`** and binds in exactly that untouched
+case — so it constrains the branch the sibling leaves open, rather than
+re-deriving the branch it closes.
+
+**What this does change:** the degree table below reports candidates the corpus
+has since excluded on independent grounds. It stays as a record of what the
+surviving branch would *demand*, not as a live candidate list.
+
 ## What #6755 established, and where it stopped
 
 The fibre locus for route 5 is exactly `|q| = 1`: matching the Kohno–Drinfeld
