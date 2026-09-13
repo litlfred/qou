@@ -1,17 +1,18 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-07T19:38:01.153Z",
+  "generated": "2026-09-13T05:31:43.944Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3755,
-  "files_flagged": 104,
-  "total_defects": 71,
+  "scanned_files": 3804,
+  "files_flagged": 99,
+  "total_defects": 64,
   "total_exempt": 59,
   "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 27,
-    "proof-no-self-assuming-projection": 42,
+    "proof-claims-unencoded": 20,
+    "proof-no-self-assuming-projection": 41,
     "proof-no-decide-masking": 1,
-    "proof-docstring-sorry-mismatch": 1
+    "proof-docstring-sorry-mismatch": 1,
+    "proof-no-trivial-true": 1
   },
   "conjecture_graph": {
     "total": 310,
@@ -879,7 +880,7 @@
       {
         "name": "OSReflectionPositivity",
         "file": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.lean",
-        "line": 27
+        "line": 49
       },
       {
         "name": "PachnerPentagonBorromean",
@@ -1424,7 +1425,7 @@
       {
         "name": "WenzlPositivityImpliesSubstratePositivity",
         "file": "content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity.lean",
-        "line": 25
+        "line": 55
       },
       {
         "name": "WhippleRotationIntertwining",
@@ -1620,39 +1621,6 @@
     ]
   },
   "flagged": {
-    "content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity.lean": [
-      {
-        "line": 25,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class WenzlPositivityImpliesSubstratePositivity where",
-        "decl": "WenzlPositivityImpliesSubstratePositivity",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (holds) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [WenzlPositivityImpliesSubstratePositivity]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.lean": [
-      {
-        "line": 27,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class OSReflectionPositivity where",
-        "decl": "OSReflectionPositivity",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (holds) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [OSReflectionPositivity]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean": [
-      {
-        "line": 17,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure BringSurfaceSmoothness where",
-        "decl": "BringSurfaceSmoothness",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (transverse, intrinsic_resolution, regular_foliation) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [BringSurfaceSmoothness]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean": [
       {
         "line": 98,
@@ -2009,19 +1977,10 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean": [
       {
-        "line": 19,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class SpectralSequenceH3ExplicitContext where",
-        "decl": "SpectralSequenceH3ExplicitContext",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_i_d1_differential + claim_i_d1_differential_holds, claim_ii_d2_differential + claim_ii_d2_differential_holds, claim_iii_page_identifications_concretised + claim_iii_page_identifications_concretised_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [SpectralSequenceH3ExplicitContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 58,
+        "line": 81,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
-        "snippet": "def spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :",
+        "snippet": "def spectral_sequence_h3_explicit",
         "decl": "spectral_sequence_h3_explicit",
         "severity": "critical"
       }
@@ -2070,36 +2029,6 @@
         "snippet": "def ew_interface_knot [ctx : EwInterfaceKnotContext] :",
         "decl": "ew_interface_knot",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/qmn_recursive_memoized.lean": [
-      {
-        "line": 21,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class QmnRecursiveMemoizedContext extends QOU.Shared.MarkovTraceContext where",
-        "decl": "QmnRecursiveMemoizedContext",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_ii_miss_computes_via + claim_ii_miss_computes_via_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [QmnRecursiveMemoizedContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 66,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "tuple-projection",
-        "snippet": "def qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :",
-        "decl": "qmn_recursive_memoized",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/wenzl_qmn_synergy.lean": [
-      {
-        "line": 22,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where",
-        "decl": "WenzlQmnSynergyContext",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (claim_iii_atom_knot_identification + claim_iii_atom_knot_identification_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [WenzlQmnSynergyContext]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean": [
@@ -2280,17 +2209,6 @@
         "exempt": false,
         "detail": "the projected field `hi.limit` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/KnotTheory/MetallicPiecewise.lean": [
-      {
-        "line": 113,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class DeltaLambdaPiecewise where",
-        "decl": "DeltaLambdaPiecewise",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (piecewise_closure_exists) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [DeltaLambdaPiecewise]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean": [
@@ -2569,6 +2487,16 @@
         "pattern": "tuple-projection",
         "snippet": "theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :",
         "decl": "parity_regime_selection",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean": [
+      {
+        "line": 214,
+        "category": "proof-no-trivial-true",
+        "pattern": "exists-true-tautology",
+        "snippet": "theorem decoy_premise_irrelevant {C : Prop} (hC : C) :",
+        "decl": "decoy_premise_irrelevant",
         "severity": "critical"
       }
     ],
