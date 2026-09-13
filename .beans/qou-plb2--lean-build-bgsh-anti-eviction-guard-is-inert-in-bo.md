@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T05:41:01Z
-updated_at: 2026-09-13T05:41:01Z
+updated_at: 2026-09-13T05:43:14Z
 ---
 
 ## Measured 2026-09-13 by the lean-verifier subagent, on this container
@@ -56,3 +56,33 @@ run fails for a reason that looks like a source error.
 
 Full measurement in `.claude/agent-memory/lean-verifier/MEMORY.md` (TRAP entry,
 2026-09-13).
+
+
+## Sibling beans on the SAME script — checked, not duplicates
+
+The existence check surfaced two. I created this bean before reading them, then
+read them; they are distinct defects in `scripts/lean-build-bg.sh` and its
+library, so this stands, but it should not be read in isolation.
+
+- **`qou-n6u5`** (bug, **completed**) — *"calls two functions that do not exist,
+  so the local-mathlib redirect never runs"*: `mathlib_local_available` and
+  `mathlib_enable_local_redirect` were undefined, so Step 0 was dead code.
+  **Verified fixed 2026-09-13**: both are now defined in
+  `scripts/lib/lean-env.sh` at lines 130 and 141, and `lean-build-bg.sh:177-178`
+  resolves against them. The `completed` status is accurate — recorded because a
+  completed bean is worth re-checking rather than trusting, and this one holds
+  up. Different part of the script from this bean's guard.
+- **`qou-4h26`** (todo) — *"the paper mathlib olean tree is ~1678 modules short
+  of the root tree, so `scripts/lean-content-sweep.sh` emits ~855 phantom
+  MISSING-OLEAN REDs"*. **Corroborated and then some**: measured here the root
+  tree holds **3480** mathlib oleans and the paper tree **6**, a 3474 gap rather
+  than 1678. The 6 are `Cache/*` — the `cache` executable built by the killed
+  `lake update`, not a partial mathlib. It does **not** bite a `lean`-direct run
+  on this container, because `scripts/lean-direct-env.sh` sets an 11-entry
+  `LEAN_PATH` spanning all eight root package build dirs plus all three paper
+  build dirs, so the root tree is on the path; and there is exactly **one**
+  `Mathlib/` olean root here, so nothing shadows. That is a statement about
+  `lean`-direct, not about `lean-content-sweep.sh`, which `qou-4h26` still owns.
+
+Three open-or-recent beans now touch this one script. That density is itself
+worth noting to whoever next edits it.
