@@ -98,7 +98,7 @@ Fifty-one such mentions have accumulated.
 | `qou-kfcl` | 38 defabbrev fqns are declared in two library modu | owner call |
 | `qou-lt8x` | the convention d blast radius does not cover 31 of | owner decision |
 | `qou-m7py` | d2 rust gramrs tr m5z3 bug is load bearing under c | owner decision |
-| `qou-orph` | 761 of 1598 qou lean modules are never built by lake build | need owner |
+| ~~`qou-orph`~~ | ~~761 of 1598 qou lean modules are never built by lake build~~ | **WITHDRAWN 2026-09-13** — see note below |
 | `qou-p77d` | gap 883 non integral float64 at assertionscomputed | owner decision |
 | `qou-puwe` | defmass identity lean formalises multiplicative in | owner decision |
 | `qou-pwut` | 287 root level ad hoc qa writers bypass qa agent e | decision for the author |
@@ -133,3 +133,49 @@ Triage the 51 into *cheap ruling* vs *needs real thought*, and put the cheap one
 to the author in one batch. I would not do that unprompted: batching questions is
 itself a judgement about the author's attention, and the accessibility rules in
 AGENTS.md make that the author's call, not mine.
+
+
+## 🟩 WITHDRAWN 2026-09-13 — `qou-orph` never needed an owner (bean `qou-g5sp`)
+
+The row above asked the owner to decide something that had already been decided
+and is now measured. Both halves of its summary are false.
+
+**"never built by `lake build`" is false.**
+`content/quantum-observable-universe/lean/lakefile.toml` declares
+`globs = ["QOU", "QOU.+"]`; `QOU.+` is `Glob.andSubmodules`, so the library
+target is the whole tree and an unimported module IS compiled. That landed on
+**2026-08-08** (bean `qou-rc7b`, status done) — four weeks before this queue was
+written. `.github/workflows/lean-orphan-gate.yml` has carried the same
+correction since 2026-08-15 (bean `qou-kljb`), verified there by direct
+experiment on a throwaway package.
+
+**The decision the bean wanted an owner for no longer exists.** `qou-orph`'s own
+sequencing was: *"Measure before deciding … that number decides everything
+below; do not guess it"*, then wire the green ones in **if the failure count is
+small**, else quarantine the red ones. The branch point was the failure count.
+
+Measured 2026-09-13 on `main` `16ccc3f7e2` with `scripts/lean-library-sweep.py`
+(four runs unioned; `--all` rebuilds every module from source, so a RED there is
+a source error): **2836 of 2836 modules judged, 0 RED.** The failure count is
+zero, so the "small" branch is taken, the quarantine branch is empty, and there
+is nothing to sign off. Write-up:
+[`docs/audits/2026-09-13-every-library-module-compiles-zero-defects.md`](2026-09-13-every-library-module-compiles-zero-defects.md).
+
+**What survives is not an owner decision.** The reachability figure is real as a
+statement about the *import closure* — 1451 of 2836 reachable from `QOU.lean`,
+48.8% outside — and an unreferenced module is genuinely invisible to everything
+that walks imports (blueprint, doc-gen, dependency analysis, import-cone builds).
+It is not invisible to the compiler. And the live gap is that **nothing runs any
+of these builds automatically**: every workflow here is `workflow_dispatch`-only
+(owner directive 2026-06-30, Actions billing). That is a standing condition of
+the repo, already owner-decided, not a pending item.
+
+**The generalisable point for this queue.** A row here is a claim that the owner
+is the blocker. `qou-orph` sat in that position for nine days while the thing
+blocking it was a measurement any agent could take — and the measurement
+dissolved the decision rather than informing it. Before adding a row, check
+whether the option space collapses under something measurable; AGENTS.md
+§"NAMING A DECISION IS ASKING A QUESTION" says the same thing from the other
+end: *"when you cannot make an option legible without a paragraph of background,
+that is a signal the question is premature."*
+
