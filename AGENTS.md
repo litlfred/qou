@@ -1227,14 +1227,18 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
-8a. **Draft → ready: ONE REST CALL. Never close-and-reopen a
+8a. **Draft → ready: OPEN IT NON-DRAFT. The flip has no reliable
+   remedy, and SPACED RETRY IS NOT ONE. Never close-and-reopen a
    PR to get past it** (owner ruling, 2026-09-05; diagnosis corrected
-   2026-09-13). Use
+   2026-09-13, remedy re-scoped 2026-09-14). The documented replacement is
 
        POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
 
-   which returns `200 {"draft": false}` first try. `mcp__github__update_pull_request`
-   with `draft: false` fails — often for hours — with
+   which returned `200 {"draft": false}` first try on #7230 (2026-09-12) —
+   **but measured `503` five times running on #7350 (2026-09-14) while
+   plain REST was `200`, so it is NOT dependable; see the box below.**
+   `mcp__github__update_pull_request` with `draft: false` fails — often for
+   hours — with
 
        Failed to find pull request: API rate limit already exceeded
        for user ID 662242
@@ -1255,6 +1259,38 @@ ephemeral.
    > > *"GitHub GraphQL is not available from Claude Code sessions; use
    > > the REST API. For review threads, auto-merge, and
    > > draft/ready-for-review use the CCR routes on api.github.com"*
+   >
+   > **🛑 AND THE REMEDY IS NOT DEPENDABLE EITHER — measured 2026-09-14,
+   > correcting this very rule one day after it was written.** The first
+   > version of this correction said *"ONE REST CALL … returns `200` first
+   > try"*. On #7350 the CCR route returned **`503 "GitHub is temporarily
+   > unavailable"` on five consecutive attempts over ~50 s**, and the
+   > discriminator rules out a general outage:
+   >
+   > | call | result |
+   > |---|---|
+   > | `GET /repos/litlfred/qou`, `GET /pulls/{n}` | **200** — plain REST healthy |
+   > | `POST /pulls/{n}/ccr/ready_for_review` | **503** |
+   > | `GET  /pulls/{n}/ccr/review_threads` | **503** |
+   > | `POST /graphql` | **403** — still blocked |
+   >
+   > So the whole **CCR family** can be down while ordinary REST is fine.
+   > #7241's `200` was real; it is just not reproducible on demand.
+   >
+   > **Consequence, and it is the practical one: a draft PR cannot be
+   > merged, and on a bad day there may be NO way to un-draft it.** That
+   > makes *"open the PR non-draft in the first place"*, at the foot of this
+   > rule, the **primary** advice rather than a nicety —
+   > `create_pull_request` takes `draft` as a plain REST field and never
+   > touches either broken transport. When you are already holding a draft
+   > and all three paths fail, say so plainly and leave it; do **not**
+   > close-and-reopen, which remains forbidden.
+   >
+   > **`PATCH` is independently confirmed as a silent no-op.** Measured here
+   > with correct headers: `PATCH /pulls/7350 {"draft": false}` → **`200`**,
+   > and the authoritative re-read still says `draft: true`. (A first
+   > attempt returned `415` for want of `Content-Type: application/json` —
+   > a 415 is *your* bug, not evidence about the field.)
    >
    > That single fact explains what four prior sessions could not: the
    > measured "windows" were ~2 h, ~4 h, ~4 h and ~10 h and never
