@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-14T08:48:05Z
+updated_at: 2026-09-14T08:51:37Z
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -293,3 +293,70 @@ The two verdicts are left at `genuine`. Correcting them would exempt them and mo
 "It remains a genuine field-projection" — a judgement call between two prior readings,
 not a precision fix, so it waits (AGENTS.md §ASK THE OWNER). Recorded here because this
 bean owns the criterion.
+
+
+## CORRECTION to the block above (same session, 2026-09-14) — I merged two cases the corpus separates
+
+Three measurements after writing the block above, two of which I should have made first.
+
+### 1. A prior corpus artifact already adjudicated one of them — and it is in Lean
+
+`docs/audits/2026-08-30-context-classes-hand-adjudicated.lean` §`HandAdjudicated7` is
+headed **"`ConvergenceBound` and `QIntRatioBoundSmall` — NOT vacuous"** and says they are
+*"scored here rather than counted."* It backs that with **compiling** demonstrations:
+
+```lean
+example (q : ℝ) (hq : q > 1) (hq2 : q < 3/2) :
+    QIntRatioBoundSmall q hq hq2 1 (by norm_num) (by norm_num) := inferInstance
+example ... 2 ... := inferInstance
+```
+
+Its own discriminator is sharper than mine and worth adopting verbatim:
+**"A class refutable at one parameter assumes something at every parameter."**
+It demonstrates that too — `convergenceBound_refutable` exhibits `k = 4, C = 1, f = 100 vs 0`
+where the bound fails.
+
+So the contradiction is not one I found; the corpus recorded it on **2026-08-30**, the same
+day as the two ledger entries' `reviewed_at` (14:13:22Z). The ledger is the outlier.
+
+### 2. The two are NOT the same case — the index ranges differ, and that is the whole question
+
+I wrote *"Same accessor idiom"*, following the ledger entry's own evidence text. **Wrong**,
+and the prior audit adjudicates only the first:
+
+| accessor | index range | instances | reading |
+|---|---|---|---|
+| `qInt_ratio_bound_small` | `1 <= m <= 4` — **bounded** | m = 1,2,3,4 — **complete** | every ground instance is proved |
+| `qFact_ratio_bound` | `k : ℕ` — **UNBOUNDED** | k = 0,1,2,3 only | **assuming for k >= 4** |
+
+`QFactRatioBound` is not adjudicated in that audit file at all. Its class is refutable at a
+large enough `k` in exactly the sense quoted above, so by the audit's own criterion it
+**assumes something at every parameter** — which is the opposite of what my block concluded
+for it.
+
+### 3. And the general-`m` form still carries the assumption even where coverage is complete
+
+Instance resolution matches the index **syntactically**. The four instances have types at the
+literals `1,2,3,4`; `qInt_ratio_bound_small` is stated at a **variable** `m` with
+`hm : 1 <= m`, `hm4 : m <= 4`, and no instance matches a variable. So the theorem is
+dischargeable at each literal and is an assumption in its stated general form. Nothing
+unproved can be *extracted* (every ground case is proved), but "complete coverage" does not
+make the general-`m` statement a proof.
+
+### What this does and does not change
+
+**Unchanged, and if anything strengthened:** the `Contentless` criterion conflates
+*class has content* with *theorem is not a defect*. The prior audit's "NOT vacuous" is a
+verdict on the **class**; I treated it as settling the **theorem**, which is the same
+conflation running the other way. Both directions need the third axis.
+
+**Withdrawn:** my recommendation that both verdicts flip to `legit`. At most
+`qInt_ratio_bound_small` has a corpus artifact behind it, and even there the general-`m`
+form is arguable. `qFact_ratio_bound` should stay `genuine` on the unbounded index alone.
+
+### One fact that makes all of this currently academic
+
+`grep` across every `.lean`: **zero** instances of either class outside `QHookBound.lean`,
+and **zero** consumers of either accessor anywhere in the corpus — in-file uses are two
+comments. So the `k >= 4` laundering hazard I flagged is **unrealised**, and neither
+accessor is load-bearing for any result.
