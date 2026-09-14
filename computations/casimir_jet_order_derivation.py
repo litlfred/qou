@@ -81,7 +81,7 @@ from mpmath import mp, mpf, pi as mp_pi, zeta as mp_zeta  # noqa: E402
 
 from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -108,13 +108,18 @@ def casimir_prefactor_rank_0(q: "mpf") -> dict:
     zeta_neg_3_magnitude = mpf(1) / 120
     energy_prefactor = pi_sq * zeta_neg_3_magnitude / 6  # = π²/720
     force_prefactor = 3 * energy_prefactor  # = π²/240
+    # mpf-valued, NOT float(). `energy_prefactor` is read back in `main` by both
+    # verification tests -- an exact `max_diff == 0` and an `abs(...) < 1e-40` --
+    # and a float64 cast made the second one satisfiable only by landing on
+    # exact 0.0, which two identical binary64 values always do. Serialized once,
+    # at the witness.
     return {
-        "q_input": float(q),
-        "zeta_neg_3_used": float(zeta_neg_3_magnitude),
-        "energy_prefactor_c_q": float(energy_prefactor),
-        "force_prefactor_3c_q": float(force_prefactor),
-        "expected_textbook_energy": float(pi_sq / 720),
-        "expected_textbook_force": float(pi_sq / 240),
+        "q_input": q,
+        "zeta_neg_3_used": zeta_neg_3_magnitude,
+        "energy_prefactor_c_q": energy_prefactor,
+        "force_prefactor_3c_q": force_prefactor,
+        "expected_textbook_energy": pi_sq / 720,
+        "expected_textbook_force": pi_sq / 240,
     }
 
 
@@ -146,8 +151,18 @@ def main() -> int:
     energies = [r["energy_prefactor_c_q"] for r in results]
     max_diff = max(energies) - min(energies)
     is_q_independent = max_diff == 0
+    # mpf both sides, so the 1e-40 is a real tolerance rather than a synonym for
+    # "the same binary64 bit pattern".  The two routes to the number are NOT the
+    # same arithmetic -- the rows compute `pi_sq * (1/120) / 6`, the target is
+    # `pi_sq / 720` -- so they round differently and the test is non-trivially
+    # satisfied.  Measured at mp.dps = 70:
+    #     a - b       = 1.414949856e-73   (rel 1.032223638e-71)
+    #     a == b      ? False
+    # i.e. one ulp, passing the 1e-40 threshold with ~31 orders of margin.
+    # (The culprit is the operation ORDER, not 1/120 alone: mpf(1)/120 * 120 == 1
+    # exactly at this precision.)
     matches_textbook = all(
-        abs(r["energy_prefactor_c_q"] - float(pi_sq_720)) < 1e-40
+        abs(r["energy_prefactor_c_q"] - pi_sq_720) < mp.mpf(10) ** -40
         for r in results
     )
 
@@ -170,15 +185,18 @@ def main() -> int:
             "AND matches standard Casimir at substrate."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("target_energy_prefactor", float(pi_sq_720))
-        .add_parameter("target_force_prefactor", float(pi_sq_240))
-        .add_data("prefactor_at_three_q_values", results)
+        .add_parameter("target_energy_prefactor", fmt(pi_sq_720))
+        .add_parameter("target_force_prefactor", fmt(pi_sq_240))
+        .add_data(
+            "prefactor_at_three_q_values",
+            [{k: fmt(v) for k, v in r.items()} for r in results],
+        )
         .add_data(
             "verdict",
             {
                 "q_independence": bool(is_q_independent),
                 "matches_textbook": bool(matches_textbook),
-                "max_variation_across_q": float(max_diff),
+                "max_variation_across_q": fmt(max_diff),
                 "derivation_works": bool(derivation_works),
                 "interpretation": (
                     "Under jet-rank-0 axiom, QOU Casimir = standard "
