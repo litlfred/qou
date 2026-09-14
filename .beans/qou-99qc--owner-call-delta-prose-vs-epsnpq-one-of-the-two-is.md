@@ -2777,16 +2777,37 @@ selected on. The converse of consequence 1 is **not** claimed: a
 differing-writhe pair may still agree, and 26 of the 46 do. What is established
 is the one-way implication, which is what bounds the upgrade.
 
-**Incidental, and it contradicts AGENTS.md.** The library sweep could not run
-the new module: its dependency `QOU.Braiding.crossing_energy_channels` reports
-`UNVERIFIED — missing olean`. AGENTS.md describes that class as the cache branch
-being short, "absent from the **paper and root trees alike**". For this cone
-that is **false**: all **94** oleans the load needed were present in the **root**
-mathlib tree and absent from the **paper** one. Measured, root 3480 vs paper
-2337 mathlib oleans — **1148 apart**. So at least some of the 8 blocks AGENTS.md
-lists as unverifiable may be a tree asymmetry that a copy fixes, not a short
-seed. Not acted on beyond this session's local build cache (no repo change);
-worth a bean of its own before anyone re-seeds on the stated diagnosis.
+**🛑 RETRACTED, same session — my "incidental finding" was a re-derivation, and
+bean `qou-hv27` had it first, better.** I wrote here that the sweep's
+`UNVERIFIED — missing olean` on `QOU.Braiding.crossing_energy_channels` was a
+new discovery contradicting AGENTS.md, having measured root 3480 vs paper 2337
+mathlib oleans. `qou-hv27` (**completed 2026-09-07**) records the same asymmetry
+with a **sharper mechanism** and a **better repair**:
+
+* **Mechanism.** It is not that the paper tree is short — it is that a *partial*
+  tree **shadows** a complete one, and the sweep's `LEAN_PATH` ordering decides
+  which. Lean commits to the first root containing the module's top-level
+  namespace directory and never falls through (`qou-tpdg`). My framing missed
+  this entirely.
+* **Repair.** `cp -rln` — **hardlinks, zero disk cost**. I used plain `cp` for 94
+  files on a container already at 93 % full. Strictly worse, for no benefit.
+
+**How I got here is the instructive part.** I ran the six-path corpus-grep for
+the bean's *subject* and not for my own *incidental* observation, which is
+exactly the gap path 6 exists to close — a prior agent's conclusion sitting in a
+bean before it reaches any other artifact. A finding noticed in passing needs
+the checklist just as much as the one you went looking for.
+
+**What survives, and it is small:** AGENTS.md's own text still describes this
+UNVERIFIED class as the cache branch being short, "absent from the **paper and
+root trees alike**", which is not what either measurement shows. That wording is
+worth correcting against `qou-hv27`, and it is a docs fix rather than a finding.
+
+**And the limitation it caused is now gone.** Applying `qou-hv27`'s documented
+per-session repair (it does not survive a fresh container), the sweep gate runs
+the new module properly: **2 ok, 0 RED, 0 UNVERIFIED** — dependency rebuilt from
+source, not linked from a snapshot. So the verification below is the sound gate,
+not lean-direct against an olean whose source I had to argue was unchanged.
 
 **Open items unchanged.** Item 1 (what replaces `nuc11_interleaved` on the three
 L2 rows) is still the owner's decision and is untouched here. Item 3 (whether
