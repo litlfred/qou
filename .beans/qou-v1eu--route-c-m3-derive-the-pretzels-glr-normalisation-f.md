@@ -66,3 +66,47 @@ coefficients were correct all along. Compare sympy objects, never re-parsed stri
 normalisation or merely means the pretzel's Wronskian determinant is m-DEPENDENT (which
 is allowed — 4_1's is `x^{3m+3}`, also m-dependent, and GGM still normalise it). Do NOT
 read this as "the normalisation cannot exist"; scope (a).
+
+## Part 2 (2026-09-14) — the bar-involution constraint, and a CORRECTION to Part 1
+
+Producer `aomega_m3_wronskian_bar_involution_constraint_probe.py`, 5/6 (T1 a recorded
+negative).
+
+**The constraint.** Taking determinants of the orthogonality relation
+`pref * W_m(q) J W_l(q^-1)^T = RHS` gives, since det is multiplicative,
+
+    det W_m(q) * det W_l(q^-1)  =  det(RHS) / (pref^r * det J)  =:  c
+
+a BAR-INVOLUTION equation with `c` a constant fixed per knot. From GGM's printed pairings:
+**c = 1** for 4_1 ((137), `J = diag(1,-1)`) and **c = 4** for 5_2 ((92), `J` antidiagonal
+with a 2, prefactor 1/2). `c` is NOT universal.
+
+**Cross-checked against GGM's own data** (G2): their printed (136) `det W_m = x^{3m+3}`
+gives `det W_-1 = x^0 = 1`, carrying no `q` at all, so the product is 1 — matching the
+derived `c = 1` exactly. The derivation is calibrated, not assumed.
+
+**Why a theta.** GGM (109) extended to `|q| != 1` gives `theta(y;q^-1) = theta(y;q)^-1`,
+so a theta solves such an equation for free. That is why GGM's 5_2 answer IS a theta.
+
+### 🛑 CORRECTION to Part 1, found by this probe (G5)
+
+Part 1's G3 said the palindrome gauge is "what makes GGM's Wronskian m-INDEPENDENT".
+**Wrong for this knot.** A palindromic operator has ratio `(-1)^r`, which is
+m-independence only at **EVEN** rank; at odd rank it ALTERNATES. Measured: GGM's (254)
+has end coefficients `(1, -1)` and ratio **+1** — that is where their m-independence
+statement lives — while the palindromic (276) has `(1, 1)` and ratio **-1**. The two
+differ by the sign gauge `lambda = -1`, which flips the ratio by `lambda^-r = -1`.
+
+Contaminated and now corrected: this bean's Part 1 entry, the Part 1 commit message, and
+the Part 1 comment on PR #7377. Part 1's G2 (our 5_2 `N(X)` in its palindrome gauge IS
+GGM (276)) is UNAFFECTED and still holds; only the claim about what the gauge explains
+was wrong. The pretzel is rank 6, EVEN, so palindromy there would have given genuine
+m-independence — which is part of why its absence matters.
+
+### The gap, stated more sharply than "the GL(r) normalisation"
+
+At rank 6 what is missing is **one function `det W_0(x;q)` and one constant
+`c_pretzel`**, tied by that bar-involution equation, with `det W_m = q^{4m} det W_0` from
+Part 1. `c_pretzel` is unknown because **no held source prints a rank-6 orthogonality
+relation** — searched: GGM `arxiv-2012.00062v3` secs 011/015, whose only printed pairings
+are (137) at rank 2 and (92)/(93) at rank 3. T1, a recorded negative.
