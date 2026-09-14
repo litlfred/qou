@@ -365,14 +365,33 @@ This section proves the *mechanism*, which is stronger and is what generalises:
 every letter of the alphabet has negative character, so the sign of a product of
 them is decided by nothing but how many there are.
 
-Why it matters beyond bookkeeping: under the owner-selected SDP scope
-**(B) whole element** (2026-09-13, bean `qou-99qc`), the confinement SDP asks
-every Wedderburn projection of a candidate word to be `Matrix.PosSemidef`. The
-alternating block is **one-dimensional**, so there PSD is just `0 ≤ character`.
-Hence an odd-length word is excluded outright — no matter which letters it uses,
-in which order, on which generators. The corpus nucleon budget is **11**, which
-is odd, so this excludes the whole 11-crossing construction and not merely a
-choice within it. -/
+🛑 **SCOPE — this is a READING-1 statement, and reading 1 is PARKED (corrected
+2026-09-14, bean `qou-99qc`).** The theorems below are unaffected; what was
+wrong is what they were said to exclude. The corpus enumerates three PSD
+readings, and the owner selected **3** on 2026-09-12 (*"try PSD condfinement 3
+for now, but keep 1 2 for later"*, bean `qou-ales`):
+
+* **reading 1** — literal `Matrix.PosSemidef` on every Wedderburn block. Parked.
+* **reading 2** — symmetric-part PSD. Parked.
+* **reading 3** — Frobenius positivity, `χ_λ(w) ≥ 0` on every block with
+  `y_λ > 0`. **Selected.**
+
+The 2026-09-13 `(B) whole element` answer moved reading 3's **letter** scope; it
+did not change the reading. And under convention D `y_(1³) = 0` — that vanishing
+*is* convention D, the two-row truncation
+(`markovWeights_eq_jones_of_threeRow_eq_zero`) — so **reading 3 does not
+constrain the alternating block at all**, and measured, it admits odd lengths in
+quantity (9 and 11 both, both nucleons;
+`qbeta_reading3_does_not_constrain_the_budget_probe`, 8/8).
+
+So what these theorems give is: under **reading 1**, PSD in the one-dimensional
+alternating block is just `0 ≤ character`, hence an odd-length word is excluded
+outright — whatever its letters, order, or generators. That is not vacuous, it
+is *annihilating*: all three nucleon constructions in the tree are odd (9, 11,
+11; bean `qou-1qsw`), so reading 1 would empty the selection rather than narrow
+it, and a survivor would need an even-length model or a letter with shift
+`d ≥ 1/(q² − 1) ≈ 4.31`. Read this section as evidence about reading 1's
+viability for this corpus — not as a live exclusion. -/
 
 /-- **Every letter of the alphabet has strictly negative alternating
 character**, at every `q > 0`.
@@ -432,10 +451,13 @@ The alternating block is one-dimensional, so `Matrix.PosSemidef` there is
 exactly `0 ≤ wordChar`. Eleven is odd, so the character is strictly negative —
 for every assignment of letters, every ordering, every generator labelling.
 
-Under scope (B) this is a **scope-(b) structural exclusion** of the entire
-11-crossing nucleon construction, with the invariant named: the sign of the
-alternating character. It is independent of which letters carry the
-proton/neutron asymmetry, so no choice among them can repair it. -/
+🛑 **Under READING 1 only** (see the section note above; reading 3 is the live
+one and does not constrain this block). Within reading 1 it is a **scope-(b)
+structural exclusion** of the entire 11-crossing nucleon construction, with the
+invariant named: the sign of the alternating character. It is independent of
+which letters carry the proton/neutron asymmetry, so no choice among them can
+repair it — which is why it excludes *every* corpus nucleon model rather than
+selecting among them. -/
 theorem no_eleven_letter_word_is_alt_psd (hq : 0 < q) {w : List Letter}
     (h : w.length = 11) : wordChar q w < 0 := by
   refine wordChar_neg_of_odd hq ?_
@@ -473,9 +495,16 @@ Given an even-length core and an odd-length quark block — which is what the
 corpus construction supplies — the assembled word is admissible in the
 alternating block exactly when the gluon dressing is odd.
 
-This is the crossing-budget statement: it does not name a number, it fixes a
-parity, and every gluon count the corpus has proposed (2, and the retracted 4)
-is even and therefore fails it. -/
+This is the crossing-budget statement *as reading 1 sees it*: it does not name a
+number, it fixes a parity, and every gluon count the corpus has proposed (2, and
+the retracted 4) is even and therefore fails it.
+
+🛑 **It has no force under the live reading 3** (section note above). Measured
+across every generator assignment and every dressing over the alphabet, reading
+3 admits *every* count `k = 0…3` for both nucleons — 4/8, 18/48, 149/288,
+594/1728 for the proton — so there is no parity signal and no monotone in `k`.
+**Reading 3 does not decide the crossing budget.** Keep this theorem for the
+parked reading, and do not cite it as excluding a corpus gluon count today. -/
 theorem gluon_dressing_must_be_odd (hq : 0 < q) (core quark gluon : List Letter)
     (hc : Even core.length) (hk : Odd quark.length) :
     0 < wordChar q (core ++ quark ++ gluon) ↔ Odd gluon.length := by
