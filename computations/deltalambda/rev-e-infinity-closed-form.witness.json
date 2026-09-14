@@ -1,6 +1,6 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T06:24:06.188377+00:00",
+  "computedAt": "2026-09-14T06:51:46.776177+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_closed_form_probe.py"
   },
@@ -84,7 +84,91 @@
         "closed": "-2.3266290809595782124990552",
         "difference": "-4.01543e-56"
       }
-    ]
+    ],
+    "halves_R7": {
+      "lean_upward": "QOU.BraidKnot.EdgeDecoupling.sum_tails_eq_sum_min",
+      "lean_downward": "QOU.BraidKnot.EdgeDecoupling.sum_heads_eq_sum_min",
+      "lean_combined": "QOU.BraidKnot.EdgeDecoupling.run_pair_sum_eq_sum_min",
+      "upward_condition": "j < d",
+      "upward_kernel": "eps(2d) - eps(2d+1)",
+      "downward_condition": "ell <= j + d",
+      "downward_kernel": "eps(2d) - eps(2d-1)",
+      "max_half_asymmetry": "3.6032715214765954406",
+      "rows": [
+        {
+          "ell": 1,
+          "up_direct": "0.63412354660363655313512829",
+          "up_closed": "0.63412354660363655313512829",
+          "down_direct": "-1.0353497313605794084034211",
+          "down_closed": "-1.0353497313605794084034211",
+          "up_difference": "7.77877e-62",
+          "down_difference": "-6.22302e-60"
+        },
+        {
+          "ell": 2,
+          "up_direct": "0.95809271801614692176642379",
+          "up_closed": "0.95809271801614692176642379",
+          "down_direct": "-1.4764593581465044530843857",
+          "down_closed": "-1.4764593581465044530843857",
+          "up_difference": "2.33363e-61",
+          "down_difference": "-6.22302e-60"
+        },
+        {
+          "ell": 3,
+          "up_direct": "1.1471664292336288144441248",
+          "up_closed": "1.1471664292336288144441248",
+          "down_direct": "-1.7216398723464563040760984",
+          "down_closed": "-1.7216398723464563040760984",
+          "up_difference": "7.15647e-60",
+          "down_difference": "-6.68974e-60"
+        },
+        {
+          "ell": 5,
+          "up_direct": "1.3371313433582389339148943",
+          "up_closed": "1.3371313433582389339148943",
+          "down_direct": "-1.9616227050698784669938402",
+          "down_closed": "-1.9616227050698784669938402",
+          "up_difference": "2.08471e-59",
+          "down_difference": "-6.53417e-60"
+        },
+        {
+          "ell": 8,
+          "up_direct": "1.4349985131887863189858317",
+          "up_closed": "1.4349985131887863189858317",
+          "down_direct": "-2.0832492329029558101519296",
+          "down_closed": "-2.0832492329029558101519296",
+          "up_difference": "4.12275e-59",
+          "down_difference": "-1.18237e-59"
+        },
+        {
+          "ell": 12,
+          "up_direct": "1.465968666988174752843175",
+          "up_closed": "1.465968666988174752843175",
+          "down_direct": "-2.1214888300690957349515784",
+          "down_closed": "-2.1214888300690957349515784",
+          "up_difference": "6.76753e-59",
+          "down_difference": "-1.08903e-59"
+        },
+        {
+          "ell": 16,
+          "up_direct": "1.4717583032128415144557562",
+          "up_closed": "1.4717583032128415144557562",
+          "down_direct": "-2.1286248276914013811248617",
+          "down_closed": "-2.1286248276914013811248617",
+          "up_difference": "9.3812e-59",
+          "down_difference": "-1.12014e-59"
+        },
+        {
+          "ell": 24,
+          "up_direct": "1.4730523077179397659319969",
+          "up_closed": "1.4730523077179397659319969",
+          "down_direct": "-2.130219213758655674631414",
+          "down_closed": "-2.130219213758655674631414",
+          "up_difference": "1.46863e-58",
+          "down_difference": "-1.08903e-59"
+        }
+      ]
+    }
   },
   "edge_closed_form": {
     "tail_formula": "sum_{d>=m}[eps(2d) - eps(2d+u)] = sum_r (1/r)(1 - q^(-2ur)) q^(-4mr)/(1 - q^(-4r))",
@@ -280,6 +364,11 @@
       "name": "R1 the re-indexed run form reproduces the direct pair sum at every sampled length",
       "ok": true,
       "detail": "10 lengths from 1 to 32; worst difference 4.015e-56 against a floor of 1.0e-50 derived from the 55-digit truncation depths.  The direct side walks every straddling pair of the run; the closed side is one sum over distances, so this checks the re-indexing `sum_{j<=ell} sum_{d>=j} = sum_d min(d, ell)` rather than restating it"
+    },
+    {
+      "name": "R7 both halves of the run collect with the SAME multiplicity min(d, ell), separately",
+      "ok": true,
+      "detail": "8 lengths; worst difference 1.469e-58 against a floor of 1.0e-50.  R1 checks the SUM of the two halves, which a compensating error in the split would survive; this checks each half on its own, so it is the check that ties `EdgeDecoupling.sum_tails_eq_sum_min` (upward, condition `j < d`, kernel `eps(2d) - eps(2d+1)`) and `sum_heads_eq_sum_min` (downward, condition `ell <= j + d`, kernel `eps(2d) - eps(2d-1)`) to the two branches the probe actually walks.  The two halves are NOT equal to one another \u2014 they differ by up to 3.603, since the AP is asymmetric about a displaced row \u2014 so agreeing with the same multiplicity is a statement about the counting, not about a symmetry"
     },
     {
       "name": "R2 the run's intercept agrees between the distance sum and the Lambert series",
