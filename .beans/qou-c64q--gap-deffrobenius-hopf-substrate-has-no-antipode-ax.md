@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T18:01:40Z
-updated_at: 2026-09-14T18:02:32Z
+updated_at: 2026-09-14T19:05:39Z
 ---
 
 ## Measured 2026-09-14 (session: duality-sigma-hermitian-derivation)
@@ -68,3 +68,68 @@ Caution for whoever takes the decision: for `U_q(g)` the antipode satisfies
 `S^2 =` conjugation by `K_{2rho}`, which is NOT the identity, and the QOU
 ambient category is braided rather than symmetric. A genuinely q-deformed
 substrate plausibly wants `S^2 != id`.
+
+
+---
+
+## 🟩 RESOLVED 2026-09-14 — owner chose A + C; B answered NO
+
+Owner: **A yes** (add the standard Hopf antipode axiom), **C yes** (fix all
+three holes), and asked B: *"can we derive S^2 = id from A?"*
+
+### B: no, and the evidence is not mine
+
+- **Mathlib's own theorem carries the hypothesis.**
+  `CategoryTheory.HopfObj.antipode_antipode` is stated *"In a commutative Hopf
+  algebra, the antipode squares to the identity"* and takes
+  `comm : (beta_ A A).hom >> mu[A] = mu[A]` as an explicit argument. Re-exported
+  as `QOU.antipode_sq_of_comm` so the dependence is visible from inside the
+  corpus rather than asserted about it.
+- **The counterexamples are q-deformations.** `U_q(g)`:
+  `S^2(x) = K_{2rho} x K_{2rho}^{-1}`. Taft algebra of dim `n^2`: `S` has order
+  `2n`.
+
+Sharp for this framework: `comm` is close to the **negation** of q-deformation,
+and `def:quantum-universe` specifies braided-monoidal-not-symmetric precisely to
+keep the braiding non-trivial. `S^2 = id` is the wrong thing to want here.
+
+### Scope was larger than the question described
+
+The prose ALREADY asserted most of what was missing — axiom 1 "associative
+unital algebra object", axiom 2 "coassociative counital coalgebra object" — and
+**none** of assoc / 2 unit laws / coassoc / 2 counit laws was in either Lean
+carrier. A+C is mostly the Lean catching up with its own block; only the
+antipode condition is new mathematics.
+
+### What landed (`f23b41ee0d`)
+
+Eight law fields on both carriers, Mathlib field shapes. `.md` axiom 2 now
+states the Hopf condition and keeps the old equation under its correct name
+(counit multiplicativity). Two `authorNotes` on the `.ts`.
+
+**Payoff:** `QOU.FrobeniusHopfData.antipode_unique_of_left` — the antipode is
+**determined** by `(mu, eta, Delta, eps)`, no longer free data. Proof runs in
+`CategoryTheory.Conv A A`, which is a monoid only given the six C laws — that
+is why C was not optional.
+
+**Blast radius, measured first: one constructor.** `TrivialWitness.unitFrobHopf`
+(the unit object) is the only record literal in the corpus; all eight new laws
+discharge there by `coherence`, so the definition stays inhabited.
+
+**Scope correction to my own theorem:** `id_eq_zero_of_antipode_sq_eq_id`
+substituted `g = 0` for the antipode and so needed free data. No longer
+available. `AntipodeIndependence.lean` restated over a local
+`FrobeniusHopfDataPreAxiom` so the record stays machine-checked.
+
+### Still open, recorded not acted on
+
+1. **No bialgebra axiom.** The bimonoid compatibility is absent, so the
+   substrate is not a Hopf monoid in Mathlib's sense and `antipode_antipode`
+   cannot be applied to it even given `comm`. **Owner's call**, as this was.
+2. **Three structures named `FrobeniusHopfSubstrate`** with different field
+   sets (content block 8 fields; `categorical-reeb-derivation` obj/mul/unit;
+   `substrate-self-duality` obj/comul/frobeniusForm). The `markovZ` overload
+   defect again. Needs its own bean.
+
+Bean stays **in-progress** — item 1 is an open conjecture-adjacent decision
+(rule 13a).

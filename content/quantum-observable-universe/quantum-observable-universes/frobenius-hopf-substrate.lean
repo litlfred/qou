@@ -68,11 +68,12 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
     (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj
   /-- Left unit law — the "unital" of axiom 1. -/
   one_mul : unit ▷ obj ≫ mul = (λ_ obj).hom
-  /-- Right unit law. -/
+  /-- The right unit law is the mirror condition on the other tensor factor. -/
   mul_one : obj ◁ unit ≫ mul = (ρ_ obj).hom
   /-- Left counit law — the "counital" of axiom 2. -/
   counit_comul : comul ≫ counit ▷ obj = (λ_ obj).inv
-  /-- Right counit law. -/
+  /-- The right counit law is the mirror condition on the other tensor
+      factor. -/
   comul_counit : comul ≫ obj ◁ counit = (ρ_ obj).inv
   /-- Coassociativity — the "coassociative" of axiom 2. -/
   comul_assoc :
