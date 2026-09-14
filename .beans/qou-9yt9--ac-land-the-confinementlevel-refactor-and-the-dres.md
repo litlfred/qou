@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T08:23:07Z
+updated_at: 2026-09-14T08:32:09Z
 ---
 
 ## Landed (A + C)
@@ -388,3 +388,37 @@ that no other Mathlib route states terminality.
 
 **qou-9yt9 proof-claims-unencoded arc is now COMPLETE** at 1 remaining, which
 is ledger-`legit` and correctly stays.
+
+
+## MEASURED: 52 of 318 ledger verdicts predate the revision they cite (2026-09-14)
+
+New script `scripts/lean-vacuity-ledger-freshness-audit.py`. MEASUREMENT ONLY —
+the re-verify tool is not changed and the ledger is not edited.
+
+Invariant: `reviewed_at >= authored-time of the earliest revision whose content
+hashes to file_sha`. A verdict cannot have been made against a revision that did
+not yet exist.
+
+    entries                                     318
+      invariant holds                            92
+      STALE (verdict predates its own sha)       52    <- 34 genuine, 16 legit, 2 advisory
+      file_sha matches no revision                0
+      no reviewed_at (freshness uncheckable)    174
+
+Lead times reach **645 hours (27 days)**. The **174 undated** entries are a
+second, larger gap: `--check-ledger` cannot assess freshness on 55% of the
+ledger at all.
+
+**Two confounds ruled out, not assumed:**
+1. Rebase-merge (rule 8) rewrites COMMITTER dates and would manufacture exactly
+   this signature. Measured both ways — committer and author dates give
+   IDENTICAL counts (92/52/174). Script uses author date regardless.
+2. Content oscillation — `git log` is newest-first, so naive keying dates a hash
+   by its NEWEST occurrence. Script keeps the EARLIEST. Same counts.
+
+Hash convention confirmed against a known case first: sha256(blob)[:12] of the
+file at 21bac468c6 is exactly f5b88ba3250d.
+
+**OPEN DECISION (owner).** Whether `lean-vacuity-ledger-reverify.py` should
+enforce this invariant, and what to do with the 52 + 174. Not taken here — it is
+someone elses tool and a re-adjudication sweep is a change, not a measurement.
