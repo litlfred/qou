@@ -1,0 +1,145 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-14T07:14:14.675089+00:00",
+  "commitSha": "4e4afc649e1082cf2a44665a200b8e236cb21b8d",
+  "assertions": [
+    {
+      "name": "reproduces_step18_quoted_required_and_kd_character",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "kappa on the RETIRED z=1 cell is 0.998397668719 against step 18's quoted 0.998399 (|d| = 1.331e-6), and the Kohno-Drinfeld character (q + 1/q)/2 = 1.00544843335 against its quoted 1.005448 (|d| = 4.334e-7). Same object, so what follows is about step 18's own quantity and not a near-relative."
+    },
+    {
+      "name": "step18_hypothesis_is_false_on_both_ruled_cells",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "correction_below_one_excludes_real_spectrum carries the hypothesis (hk : k < 1). It holds on the retired cell (k = 0.9983976687) and FAILS on both ruled ones (k = 1.759364624 at z_D order-zero, 1.200249434 on the dashboard cell). The Lean theorem is correct and untouched -- it is a conditional and was always stated as one; its PREMISE is what the base change falsified."
+    },
+    {
+      "name": "on_a_ruled_base_the_elliptic_branch_is_excluded_not_the_hyperbolic",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "cosh(a) >= 1 for every real a (sampled min over a in [-4, 4] is 1.0; proved in general by real_spectrum_character_ge_one) while |cos| <= 1 (Real.cos_le_one, via ladderN2_lt_of_one_le). On a base needing kappa > 1 the ELLIPTIC generator is the excluded one and the HYPERBOLIC one is not -- the reverse of route 5's current narrowing to det A > 0 / |q| = 1 / the Kashaev locus, which was derived from the retired premise."
+    },
+    {
+      "name": "the_substrate_kd_generator_is_hyperbolic_and_on_the_right_side_now",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Kohno-Drinfeld scale-fixing gives hbar = 2 ln q, so det A = -(ln q)^2 = -0.01088698592 < 0 -- hyperbolic at the real q_0, which step 18 recorded as the defect. With kappa > 1 it is no longer a defect: the character 1.00544843335 is on the SAME side of 1 as the requirement. Right side, wrong size -- see the next check."
+    },
+    {
+      "name": "the_kd_character_is_on_the_right_side_but_the_wrong_size",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "cosh(ln q_0) = 1.00544843335 against 1.75936462427 required at z_D order-zero. Non-exclusion is not a derivation: route 5 goes from a STRUCTURAL obstruction back to a QUANTITATIVE gap, which stays open. Recorded as a quantity to check against; no search was run for a construction that produces it."
+    },
+    {
+      "name": "the_11x_and_139x_figures_are_one_gap_in_two_coordinates",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "a_req/a_KD = 11.16826965 and (kappa-1)/(KD-1) = 139.3730225 are the SAME gap at the same base, in the generator eigenvalue and in the character excess. A sibling branch recorded 139x as a correction of 11.2x; it is a change of coordinate, not a correction, and neither figure is wrong. With c_k (magnifier 1/u^2 = 13784.8735) and (1 - F) this arc has five coordinates for one deviation."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-ruled-base-inverts-route5-obstruction",
+  "scriptFile": "qbeta_ruled_base_inverts_the_route5_obstruction_probe.py",
+  "scriptHash": "5d8c7862155b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ruled_base_inverts_the_route5_obstruction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ruled_base_inverts_the_route5_obstruction_probe.py"
+  },
+  "description": "Route 5's step-18 obstruction (a real-spectrum holonomy has character cosh(a) >= 1, so it cannot supply a correction below 1) carries the explicit hypothesis kappa < 1. That hypothesis holds on the RETIRED z = 1 cell (kappa = 0.9983977, reproducing step 18's quoted 0.998399) and is FALSE on both cells of the base the owner ruled on 2026-09-08: kappa = 1.7593646 at the z_D order-zero E_0 and 1.2002494 on the dashboard's scored nuc11 cell. The Lean theorem correction_below_one_excludes_real_spectrum is correct and untouched -- it is a conditional; its PREMISE is what changed. Consequence: on a ruled base the two proved inequalities point the other way -- cosh >= 1 (real_spectrum_character_ge_one) and |cos| <= 1 (Real.cos_le_one, via ladderN2_lt_of_one_le) together exclude the ELLIPTIC generator and leave the HYPERBOLIC one, which is what the substrate's Kohno-Drinfeld generator already is at real q_0 (det A = -(ln q)^2 < 0). So the narrowing to det A > 0 / |q| = 1 / the Kashaev locus / the N = 111 question rests on a retired premise. This does NOT derive the correction: the KD character 1.0054484 is on the right side of 1 and the wrong size against 1.7593646, a scope-(a) gap that stays open.",
+  "bean": "qou-pdix",
+  "also": "qou-cds1",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "kappa_by_base": [
+    {
+      "base": "z = 1 (Form A)",
+      "note": "RETIRED 2026-09-08",
+      "Q_base_MeV": "0.783645827374621213074939751341396890525736441030295379745209",
+      "kappa": "0.998397668719255188542319854187145150046781313330416252524625",
+      "kappa_below_one": true,
+      "step18_exclusion": "FIRES"
+    },
+    {
+      "base": "z_D, order-zero E_0",
+      "note": "RULED",
+      "Q_base_MeV": "0.444700408521780409100962213024942779024902777364466679758098",
+      "kappa": "1.75936462427170005075830299049482271637631507919844436565484",
+      "kappa_below_one": false,
+      "step18_exclusion": "DOES NOT FIRE"
+    },
+    {
+      "base": "z = q (augmentation)",
+      "note": "the other admissible point",
+      "Q_base_MeV": "0.879890561260119838902965955941296576254288512481661072995723",
+      "kappa": "0.889190317068417406066676080193854412934942367758732965936608",
+      "kappa_below_one": true,
+      "step18_exclusion": "FIRES"
+    },
+    {
+      "base": "dashboard scored cell",
+      "note": "RULED (nuc11, tower E_0)",
+      "Q_base_MeV": "0.651856310059999999999999999999999999999999999999999788393285",
+      "kappa": "1.20024943392874227573307043435836257498103572242316471093154",
+      "kappa_below_one": false,
+      "step18_exclusion": "DOES NOT FIRE"
+    }
+  ],
+  "residual_gap_coordinates": [
+    {
+      "base": "z_D order-zero",
+      "kappa_required": "1.75936462427170005075830299049482271637631507919844436565484",
+      "generator_a_required": "1.16530530037334330294517297499168422907908529112433659962497",
+      "ratio_a_req_over_a_kd": "11.1682696535433455877290055307853616602482128167489248669007",
+      "ratio_character_excess": "139.373022480925058759932755403520912002588026392459476131557",
+      "ratio_character": "1.74983078784412195241770076013873811258911719582916493441975"
+    },
+    {
+      "base": "dashboard cell",
+      "kappa_required": "1.20024943392874227573307043435836257498103572242316471093154",
+      "generator_a_required": "0.622738411685304209369526855103753757748313578851001643498428",
+      "ratio_a_req_over_a_kd": "5.96831620270888227465617587591293217748659947350479421494451",
+      "ratio_character_excess": "36.7535805128014031846990883699877152774584359018351459918416",
+      "ratio_character": "1.19374539172083058224507061818456719959863121745117481387552"
+    }
+  ],
+  "kd_character": "1.00544843335356114987624598904593140794462037424206610809018",
+  "kd_generator_eigenvalue": "0.104340720319519512315906279973072397053744280828983354727011",
+  "kd_det_A": "-0.0108869859167961920402737761604184939706868225361470649088930",
+  "invariants_cited": "real_spectrum_character_ge_one (QOU/QBeta/HolonomySpectrumSignObstruction.lean, sorry-free) and Real.cos_le_one via ladderN2_lt_of_one_le (QOU/QBeta/LadderFactorBound.lean, sorry-free)",
+  "coordinate_warning": "the residual gap is 11.168 in the generator eigenvalue, 139.373 in the character excess (kappa-1)/(KD-1), and 1.7498 in the character ratio -- one gap, three spellings. A sibling recorded 139x as a correction of 11.2x; it is a change of coordinate. Say which coordinate before quoting a factor in this arc.",
+  "scope": "(b) for the reversal, citing two proved invariants; (a) for every number. Derives no alpha, selects no base -- that the ruled base makes the step-18 exclusion lapse is NOT a reason to prefer it (NO FITTING) -- and wires nothing."
+}
