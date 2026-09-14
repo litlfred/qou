@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-14T16:05:05Z
+updated_at: 2026-09-14T18:02:56Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1405,3 +1405,30 @@ formalised, and the file's Scope section says so).
    asserts and aborts there rather than reporting one.
 
 Audit: `docs/audits/2026-09-14-duality-sigma-is-conjugation-derivation.md`.
+
+
+---
+
+## 🛑 CORRECTION 2026-09-14 — my "cheapest of the three gaps" call was wrong
+
+This bean recommended `S^2 = id` for the QOU substrate antipode as *"the
+cheapest of the three to settle"* and as *"a single missing theorem in
+`def:frobenius-hopf-substrate`"*. **Both halves are wrong.**
+
+It is not a missing theorem, it is a missing **axiom**: measured, the block
+carries no antipode condition at all, so `S` is free data and `S^2 = id` is
+**INDEPENDENT** of the definition rather than unproved. And it is not cheap —
+it is an owner decision about a central definition, not agent work.
+
+Machine-checked: `QOU/QuantumObservableUniverse/AntipodeIndependence.lean`
+(sorry-free, `lean`-direct exit 0) plus
+`scripts/lean-structure-field-law-audit.py`, which gives the identical verdict
+on both Lean carriers. Tracked as `qou-c64q`; write-up in
+`docs/audits/2026-09-14-antipode-is-free-data-s-squared-is-independent.md`.
+
+Consequence for THIS bean: the intrinsic route to identifying the duality with
+complex conjugation (via `psi* = int_A . S(psi)` being an involution) is
+**blocked on a definition the owner has not written**, not on a proof. The
+archimedean signature argument of
+`docs/audits/2026-09-14-duality-sigma-is-conjugation-derivation.md` is
+unaffected and remains the live route.
