@@ -851,3 +851,35 @@ Two cheap checks have each caught something today that a re-run would not:
 2. **Compare the artifact's `computedAt` against your run.** A producer's exit
    code answers "did it run?", not "did THIS artifact get rebuilt?" — that is
    how the `--atoms` default hid two witnesses earlier today.
+
+## 2026-09-14 — the residue is explained, and it is not a value problem
+
+The live-emitter residue this bean had been chasing has a structural cause, now
+beaned separately as **`qou-t29k`**: 18 sites assemble the grouped intra-nucleon
+word BY CONSTRUCTION, by writing all of `_PROTON_G0` then all of `_PROTON_G1` —
+which is verbatim `nucleon_word_letters`' `intra_order="grouped"` branch.
+
+**Why this bean's tool could not see it.** The value fingerprint matches
+committed *numbers*, so it needs a witness carrying a |tr_M| at a canonical
+atom. It is blind to symbolic producers, to producers too slow to have been
+re-run, and to witnesses recording a ratio or a slope. That is why re-running
+six safe producers returned byte-identical output: the stale-value hypothesis
+was correctly retired, and the residue was never a value.
+
+The structural counterpart is
+`computations/audits/intra_ordering_structural_assembly_audit.py`, gate
+`intra-order assembly`, green on arrival.
+
+### Correction to my own triage here
+
+Three qbeta probes I filed under this bean as **hardcoded grouped values
+awaiting an owner call** are grouped *assemblies*:
+
+- `qbeta/qbeta_d_frame_trace_baseline_probe.py:103`
+- `qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py:105`
+- `qbeta/qbeta_epsnpq_functional_mismatch_probe.py:74`
+
+That is a different defect with a mechanical fix (call `nucleon_word_letters`),
+so they do **not** need the owner call I said they did. Two more of the
+actionable items are on the same list — `probes/b_pred_mirror_slope_closed_form.py`
+and `rho_k_h3a_gg_trajectory.py` — and move to `qou-t29k`.

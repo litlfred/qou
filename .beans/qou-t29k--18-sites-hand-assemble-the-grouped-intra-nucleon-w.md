@@ -1,10 +1,11 @@
 ---
 # qou-t29k
 title: '18 sites hand-assemble the grouped intra-nucleon word: a third mechanism, distinct from qou-cgyn and qou-y2o7'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-14T06:35:57Z
-updated_at: 2026-09-14T06:35:57Z
+updated_at: 2026-09-14T06:45:48Z
 ---
 
 ## The mechanism
@@ -120,3 +121,16 @@ switching a site to the canonical ordering moves **absolute** traces (3.785x at
 the three bond constants untouched, so each site needs reading for which kind
 of quantity it reports before it is switched. `legacy_marshalled_frame` almost
 certainly wants `intra_order="grouped"` **named**, not changed.
+
+## Progress
+
+**1 of 18 drained.** `legacy_marshalled_frame.legacy_marshal_intra` now calls
+the new named API `pyhecke.atom.grouped_word_from_chains`, which
+`nucleon_word_letters`' grouped branch also delegates to — one definition,
+where before there were a dozen transcriptions and no API for a caller holding
+chains rather than quarks. Values unmoved (proton 1.3215929842373446, neutron
+1.2575579046963120). Ratchet 18 -> 17.
+
+That site is the easy one: the module exists to BE the legacy frame. The
+remaining 17 each need reading first, and check E exists so that converting one
+to the named helper cannot be mistaken for fixing it.
