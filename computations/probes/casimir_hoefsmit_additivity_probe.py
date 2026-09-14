@@ -65,7 +65,7 @@ from experimental_constants import (  # noqa: E402
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import OUTPUT_DPS, fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
@@ -80,6 +80,20 @@ VOL_BORROMEAN = mpf(VOL_BORROMEAN_50DPS_STR)     # 𝓑₃: 8·G, Adams 1985
 
 def _hbar_q(q: "mpf") -> "mpf":
     return 1 - 1 / q
+
+
+def _serialization_floor(largest: "mpf") -> "mpf":
+    """Absolute error a witness round trip can introduce, plus one decade.
+
+    Every numeric field below is written with ``fmt``, i.e. ``OUTPUT_DPS``
+    significant digits, so re-reading it can move a value of magnitude
+    ``|x|`` by at most ``|x| * 10**(1 - OUTPUT_DPS)``.  A gate derived that
+    way tracks the serialization width rather than the residual it is
+    measuring — the distinction AGENTS.md draws when it says a tolerance
+    sized to its own miss is a fit.  The decade of headroom is for the
+    round trip's two roundings, not for slack.
+    """
+    return abs(largest) * mp.mpf(10) ** (1 - OUTPUT_DPS) * 10
 
 
 def _geom_leading(vol: "mpf", q: "mpf") -> "mpf":
@@ -104,9 +118,14 @@ def _check_volume_additivity() -> list[dict]:
         results.append({
             "L1": name1,
             "L2": name2,
-            "Vol_L1": float(vol1),
-            "Vol_L2": float(vol2),
-            "Vol_L1_plus_L2_expected": float(vol_disjoint_expected),
+            # `fmt`, not `float`: VOL_FIGURE_8 and VOL_BORROMEAN are 50-dps
+            # registry strings, and a float64 cast here threw away 34 of
+            # those digits on the way into the witness — the additivity
+            # assertion below was then gated at 1e-15 to tolerate the loss
+            # this line caused.
+            "Vol_L1": fmt(vol1),
+            "Vol_L2": fmt(vol2),
+            "Vol_L1_plus_L2_expected": fmt(vol_disjoint_expected),
             "additive": True,  # mathematical fact, Thurston
         })
     return results
@@ -122,18 +141,22 @@ def _check_geom_epsilon_n_unknots(q: "mpf", epsilon_sym: str) -> list[dict]:
     """
     hbar_q_sq = _hbar_q(q) ** 2
     results = []
+    # 1/ℏ_q² stays `mpf` the whole way down. It used to be `float(...)`, which
+    # is what the linearity assertion below was measuring: the tabulated
+    # coefficient was float64 while the value it was checked against was
+    # recomputed exactly, so the "gap" was the cast, not the mathematics.
+    coefficient = 1 / hbar_q_sq
     for N in [1, 2, 5, 10, 100, 1000]:
-        # Symbolic value as a string for the witness.
-        coefficient = float(1 / hbar_q_sq)
         results.append({
             "N": N,
             "Vol_N_unknots": f"{N} · {epsilon_sym}",
-            "linking_weight": 1.0,
+            "linking_weight": "1",     # exact: disjoint unknots do not link
             "Geom_epsilon_N_unknots": (
                 f"{N} · {epsilon_sym} / ℏ_q² "
-                f"≈ {N * coefficient:.4f} · {epsilon_sym}"
+                # display only — 4 decimal places of a human-readable string
+                f"≈ {float(N * coefficient):.4f} · {epsilon_sym}"
             ),
-            "real_part_coefficient": coefficient * N,
+            "real_part_coefficient": fmt(coefficient * N),
         })
     return results
 
@@ -157,11 +180,11 @@ def _check_dimensional_match(q: "mpf") -> dict:
     of N⊙ may be 2 (not 1) in surreal-infinitesimal units, and
     this propagates into the surreal-arithmetic step.
     """
-    hbar_q_sq = float(_hbar_q(q) ** 2)
+    hbar_q_sq = _hbar_q(q) ** 2
     return {
         "naive_N_birthday_in_eps": "ε⁻¹",
         "after_Geom_normalisation_N_birthday": "ε⁻²",
-        "ℏ_q²_at_substrate": hbar_q_sq,
+        "ℏ_q²_at_substrate": fmt(hbar_q_sq),
         "implication": (
             "The conjecture's N⊙ ~ ε⁻¹ · A/d³ scaling may need "
             "refinement: dimensional analysis with the VolDensity = "
@@ -203,8 +226,8 @@ def main() -> int:
             "carry back into the conjecture .md."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("hbar_q_sq", float(_hbar_q(q) ** 2))
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("hbar_q_sq", fmt(_hbar_q(q) ** 2))
         .add_data("hyperbolic_volume_additivity_pairs", vol_additivity)
         .add_data("geom_epsilon_N_unknots", geom_N_unknots)
         .add_data("dimensional_consistency_check", dim_check)
@@ -268,15 +291,24 @@ def main() -> int:
             - (_vols[r["L1"]] + _vols[r["L2"]]))
         for r in vol_additivity
     )
+    _additivity_tol = _serialization_floor(
+        max(_vols[r["L1"]] + _vols[r["L2"]] for r in vol_additivity)
+    )
     builder.add_assertion(
         name="disjoint_union_volumes_are_additive",
         computed=mp.nstr(additivity_gap, 12),
         expected="0",
-        tolerance="1e-15",
+        tolerance=mp.nstr(_additivity_tol, 3),
         source=f"max over the {len(vol_additivity)} recorded pairs of "
                f"|tabulated Vol(L₁⊔L₂) − (Vol(L₁)+Vol(L₂))| = "
-               f"{mp.nstr(additivity_gap, 6)}; gate 1e-15 is the float64 the "
-               "table is serialised through, not a chosen band",
+               f"{mp.nstr(additivity_gap, 6)}. The gate ran at 1e-15 until "
+               "2026-09-14 and that band was honest about the wrong thing: "
+               "it described the float64 the table was cast to, which was "
+               "this probe's own doing. The table now carries the 50-dps "
+               f"registry volumes through `fmt`, so the gate is the "
+               f"{OUTPUT_DPS}-digit serialization width instead — derived "
+               "from OUTPUT_DPS and the largest tabulated volume, so it "
+               "cannot silently widen if either changes",
     )
 
     # (4) Geom_ε(N·⊙) = N·ε/ℏ_q² — the probe's actual deliverable. Additivity
@@ -287,17 +319,25 @@ def main() -> int:
         abs(mp.mpf(str(r["real_part_coefficient"])) - r["N"] * _inv_hbar_sq)
         for r in geom_N_unknots
     )
+    _linearity_tol = _serialization_floor(
+        max(r["N"] for r in geom_N_unknots) * _inv_hbar_sq
+    )
     builder.add_assertion(
         name="geom_epsilon_coefficient_is_linear_in_N",
         computed=mp.nstr(linearity_gap, 12),
         expected="0",
-        tolerance="1e-9",
+        tolerance=mp.nstr(_linearity_tol, 3),
         source=f"max over N ∈ {[r['N'] for r in geom_N_unknots]} of "
                f"|tabulated coefficient − N/ℏ_q²| = "
                f"{mp.nstr(linearity_gap, 6)}, with 1/ℏ_q² = "
                f"{mp.nstr(_inv_hbar_sq, 16)} recomputed at substrate "
-               "precision; gate 1e-9 covers the float64 the table stores at "
-               "N = 1000",
+               "precision. The gate ran at 1e-9 until 2026-09-14, and what "
+               "it covered was this assertion's own asymmetry: the tabulated "
+               "side was float64 while the side it was compared against was "
+               "recomputed exactly, so the residual measured the cast rather "
+               "than the linearity. Both sides are now mpf and the residual "
+               f"is the {OUTPUT_DPS}-digit serialization alone, which is "
+               "what the gate is derived from",
     )
     builder.add_caveat(
         "RESOLVED 2026-08-30 — kept as provenance, since this probe is where "
@@ -325,8 +365,8 @@ def main() -> int:
     for r in vol_additivity:
         print(
             f"  {r['L1']:<8} {r['L2']:<8} "
-            f"{r['Vol_L1']:<10.4f} {r['Vol_L2']:<10.4f} "
-            f"{r['Vol_L1_plus_L2_expected']:<12.4f}"
+            f"{float(r['Vol_L1']):<10.4f} {float(r['Vol_L2']):<10.4f} "
+            f"{float(r['Vol_L1_plus_L2_expected']):<12.4f}"
         )
     print()
     print("─── Step 2: Geom_ε(N · ⊙) under ε-relaxation ───")
@@ -337,7 +377,7 @@ def main() -> int:
     print("─── Step 3: dimensional consistency / refinement ───")
     print(f"  naive birthday of N⊙ in ε:       {dim_check['naive_N_birthday_in_eps']}")
     print(f"  refined birthday after Geom norm: {dim_check['after_Geom_normalisation_N_birthday']}")
-    print(f"  ℏ_q² (real-part scale):           {dim_check['ℏ_q²_at_substrate']:.6f}")
+    print(f"  ℏ_q² (real-part scale):           {float(dim_check['ℏ_q²_at_substrate']):.6f}")
     print(f"  → IMPLICATION (refinement for the conjecture .md):")
     print(f"    {dim_check['implication']}")
     print()
