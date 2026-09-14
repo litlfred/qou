@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T10:19:47Z
+updated_at: 2026-09-14T17:04:56Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -339,3 +339,119 @@ run for §0 rows 9b/11 and §9.3. My remaining defects sit in the **§1 diagram 
 §2 step table**, which C1's scope does not name — so they are an uncovered
 surface of an authorised repair, not four new asks. §7.4 'Do not' checked
 against my work: clean.
+
+## 2026-09-14 — #7362 MERGED (e8289b4971); defect #2 now has a DERIVED disposition
+
+Walk PR merged (rebase, 17 commits). Then answered the 'restate' branch of
+defect #2 **from the corpus**, so it is no longer a three-way judgement.
+
+**The repair.** The criterion asks the torus-knot EVALUATIONS to span the
+character space of H_2 + H_3. An evaluation here is a MARKOV TRACE (step 3:
+`J_K(q) = tr_M(rho(beta_K))`), and `tr_M = sum_lambda y_lambda chi^lambda`. A
+block with `y_lambda = 0` is invisible to every evaluation at every genus. Under
+convention D's two-row truncation — derived from `dim V = 2`, pinned in Lean as
+`markovWeights_eq_jones_of_threeRow_eq_zero`'s hypothesis `y_(1^3) = 0`, and
+EXACTLY 0 in the committed witness — `(1,1,1)` is such a block:
+
+    observable directions = (2),(1,1) | (3),(2,1) = **4**, not 5
+
+Exact sweep over Q(q): rank_obs = 1,2,3,**4**,4,4,4 at g = 1..7. **g_min = 4
+exactly, first crossing.** The proof's ARITHMETIC was right; only its TARGET was
+wrong. Its conclusion stands.
+
+**Anti-fit, answered:** derivation order is truncation → target → genus; the cap
+predates anything about genus; the corrected criterion is met at 4,5,6,7 (not
+only 4 — a tuned target would be met at 4 alone); and it was derived AFTER the
+refutation, which is not withdrawn and is re-asserted in the probe.
+
+**NOT claimed:** that g=4 is derived — the route still opens in `Rep(SU_q(2))`
+and still `uses: [prop:cohomological-embedding]`, so it remains inside the
+chi=-6 <-> SU(2) cycle. No content block edited.
+
+Probe `computations/audits/genus_completeness_observable_target_probe.py`
+(13/13). Commit 86194f8f7e, **PR #7365**.
+
+**Remaining open:** defects #1 (step-11 hadronic E_0 — vacuous), #4 (step-7/8
+labels), #5 (M_QOU) still want the C1 scope decision; the interior mathematics
+of steps 7-9 untouched.
+
+## 2026-09-14 — defect #1 also answerable from the corpus; 4 judgements → 2
+
+`computations/qbeta/qbeta_e0.py` opens **'the ONE place E_0, the Q_beta energy
+scale, is defined'**, and its ENTIRE public API is:
+
+| `order_zero()` | `m_e/(q(q-1))` | **'NOT canonical'** |
+| `tower_summed()` | `m_e/(q(q-1))/(1-hbar_q^2)` | canonical |
+| `canonical()` | = tower_summed | 'every new producer should call' |
+
+**No hadronic variant.** One scale, both channels. So the cheat-sheet step-9 line
+is wrong TWICE: its 'lept' form IS `order_zero` (explicitly non-canonical), and
+its 'had' form names an object the API does not have (and is circular).
+
+The fix is **completed, owner-instructed work** the document has not absorbed —
+the module records two forms differing 0.9915 % 'with no signal at either call
+site', 'Unified here on owner instruction, 2026-09-12', tower_summed canonical by
+the 2026-09-03 full-tower ruling.
+
+Corpus-determined correct form: `E_0 = m_e/(q_0(q_0-1))/(1-hbar_q^2)`, call
+`qbeta_e0.canonical()`. Measured 4.1859813633 / 4.2274833556, ratio 1.00991486;
+12 producers route through it, 15 hand-roll (reported, NOT adjudicated —
+qou-y3bm's business).
+
+🛑 NOT claimed, and the module says it first: that the tower sum IS
+`sum_k hbar^2k = 1/(1-hbar^2)` — 'taken from the one live precedent, NOT
+derived' (qou-y3bm). **Canonical = BY RULING, not proved.** 🛑 And this is a doc
+line, not the Q_beta residual: E_0 moves Q_beta 0.9915 %, the convention-D
+functional 257x.
+
+Probe `computations/audits/step9_e0_canonical_form_probe.py` (9/9). Commit
+890105c71c, PR #7365 (now carries both #1 and #2).
+
+**Status: 4 judgements → 2.** #4 (step-7/8 labels) and #5 (M_QOU) still want the
+C1 scope decision. Neither #1 nor #2 makes g=4 DERIVED — the route still opens in
+`Rep(SU_q(2))` and stays inside the chi=-6 <-> SU(2) cycle.
+
+## 2026-09-14 — #5 measured: a JUDGEMENT, not a fix. PR #7365 MERGED (612cb27265)
+
+**#5 does NOT collapse the way #1 and #2 did**, and my 'one-symbol fix'
+characterisation is **withdrawn**.
+
+1. The symbol is **not meaningless** — its own sentence glosses it: 'On motivic
+   QOU inputs, R_top coincides exactly with the archimedean component of tau'.
+   'Defined nowhere' was true of a definition BLOCK, overstated as a
+   description of the reader's position.
+2. The gloss **has a Lean carrier** — 'QOU motivic' in six .lean files, incl.
+   `archimedean-functor-uniqueness.lean` and `MotivicSubstrate.lean`, which
+   axiomatises 'the QOU motivic substrate'.
+3. **But it is not a defined SUBSET.** `MotivicSubstrate`'s `Mhat` is 'the
+   dimension-completed localization K_0[L^-1]^' — i.e. Mhat IS \widehat{M},
+   entire. The Lean has no proper subobject, so `Mhat_QOU subset Mhat` names a
+   restriction the formalisation does not have.
+4. **And nothing EQUATES it with the siblings' scope.**
+   `def:algebraic-quantum-volume` is `Vol_alg(W) := tr_M(W)` — a trace value,
+   a different KIND of object. Exactly one block mentions both (the remark),
+   and relates them by **'exemplifies'** — an instance, not an equation.
+
+**Verdict:** replacing the symbol would ASSERT an identification the corpus
+does not make. Three non-equivalent dispositions, none corpus-chosen: define
+the subset / assert the identification / leave it.
+
+🛑 Negative result with its surface: searched content/**, docs/**, .beans/, the
+Lean tree. What would separate the readings is a block saying Mhat_QOU is (or
+is not) the image of the algebraic quantum volume — not found, which differs
+from proving none can exist.
+
+Probe caught my own over-claim again: I first asserted 'NO block mentions both'
+and it FAILED on the remark's Synthesis sentence.
+
+Probe `computations/audits/step9_mqou_scope_probe.py` (8/8). Commit 6118cb69a6.
+
+### PR #7365 merged (612cb27265, rebase) — carries #1, #2 and #5
+
+**Final tally of the walk's four defects:**
+- **#1** step-9/11 E_0 — **corpus-determined** (one canonical form, qbeta_e0)
+- **#2** g=4 completeness — **corpus-determined** (target 4; g_min=4 recovered)
+- **#4** step-7/8 labels — **still a judgement** (is the arrow a dependency claim?)
+- **#5** M_QOU — **still a judgement**, but smaller than the walk implied
+
+So ONE genuine judgement (#4) plus #5's disposition choice remain for the owner.

@@ -1,0 +1,119 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-14T16:47:52.909775+00:00",
+  "commitSha": "af112f9abad5b98aad1d33bf10b6bbecec8fe6a1",
+  "assertions": [
+    {
+      "name": "all_two_crossing_candidates_share_one_writhe",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every candidate has writhe +2, so ANY writhe-based normalisation of the Markov trace is identical across them. Without this the trace comparison below would be confounded by the normalisation rather than measuring the link"
+    },
+    {
+      "name": "the_four_tied_candidates_are_four_distinct_links",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "4 distinct (tr_p, tr_n) pairs over 4 candidates at equal writhe. The Markov trace at an admissible z is a link invariant after writhe normalisation (conjugation invariance is automatic for a trace; stabilisation gives the z factor), so equal writhe plus different trace is SUFFICIENT for different closures"
+    },
+    {
+      "name": "reordering_ALONE_changes_the_link",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sigma_1 sigma_0 and sigma_0 sigma_1 have the SAME letter multiset and the SAME writhe and differ only in order; their traces differ by 0.0677559 (proton) and 0.0142094 (neutron). The closure is order-SENSITIVE"
+    },
+    {
+      "name": "every_letter_sum_functional_is_structurally_barred_here",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "a sum over letters is constant on the permutation orbit of a letter multiset, and the closure is not -- so NO functional of the multiset alone can select among these candidates, for any q and any coefficients. This upgrades the E_cross tie from an observation to a scope-(b) exclusion of the whole letter-sum class, invariant named: order-sensitivity of the closure"
+    },
+    {
+      "name": "an_isotopy_class_energy_is_NOT_barred",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the candidates are distinct isotopy classes, so the O'Hara/Moebius INFIMUM -- which is a function of the class -- takes potentially different values on them. Green light: the Bring->O'Hara route is not stillborn on discriminability. It does NOT follow that the energy would in fact separate them; a prune establishes only that it is not excluded"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "qbeta-embedding-energy-can-discriminate",
+  "scriptFile": "qbeta_embedding_energy_can_discriminate_probe.py",
+  "scriptHash": "15ab940d5102",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_embedding_energy_can_discriminate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_embedding_energy_can_discriminate_probe.py"
+  },
+  "description": "A formalize-first prune run BEFORE the Bring->O'Hara bridge is built. Moebius energy is a property of an embedding, not a knot invariant; the invariant is the infimum over the isotopy class, so a selection rule built on it can only separate candidates that are DIFFERENT LINKS. Tested without any embedding: the Markov trace at the admissible z_D is a link invariant once normalised by writhe, and all four two-crossing gluon candidates have writhe +2 -- identical normalisation -- yet give four DISTINCT (tr_p, tr_n) pairs. The sharpest case is sigma_1 sigma_0 vs sigma_0 sigma_1: same letter multiset, same writhe, differing only in ORDER, and the traces differ. They are different links, so an isotopy-class energy is NOT structurally barred from breaking the tie -- green light for the route. It also upgrades the E_cross failure from an observation to a scope-(b) exclusion of the whole letter-sum CLASS: a sum over letters is constant on the permutation orbit of a multiset and the closure is not.",
+  "data": {
+    "method": {
+      "why_no_embedding_needed": "Moebius energy needs an embedding, but the QUESTION -- are these the same link? -- is answerable with a link invariant alone",
+      "invariant": "Markov trace at z_D, normalised by writhe",
+      "admissibility": "z_D = q^3/(q^2+1) is an admissible Markov parameter under convention D",
+      "direction": "distinguishing is SUFFICIENT, not necessary -- convention D annihilates the (1,1,1) block, so this truncated invariant may fail to separate some different links. The asymmetry is in the safe direction for a prune"
+    },
+    "candidates": {
+      "sigma_1 sigma_0": {
+        "writhe": 2,
+        "tr_p": "0.7735023413584560970992952",
+        "tr_n": "0.612125962792609388785861"
+      },
+      "sigma_0 sigma_1": {
+        "writhe": 2,
+        "tr_p": "0.7057464567455418905260122",
+        "tr_n": "0.6263353681398580000484073"
+      },
+      "sigma_1 sigma_1": {
+        "writhe": 2,
+        "tr_p": "0.7806838348770630997534738",
+        "tr_n": "0.6263353681398580000484073"
+      },
+      "sigma_0 sigma_0": {
+        "writhe": 2,
+        "tr_p": "0.6293284022029219181653457",
+        "tr_n": "0.4751335171556822125060902"
+      }
+    },
+    "verdict": {
+      "distinct_links": 4,
+      "of": 4,
+      "letter_sum_class": "scope-(b) excluded -- constant on the permutation orbit while the closure is not",
+      "isotopy_class_energy": "NOT excluded -- green light for the Bring->O'Hara route"
+    },
+    "scope": {
+      "class": "(b) structural for the letter-sum exclusion; (a) for the green light",
+      "not_claimed": [
+        "that the O'Hara/Moebius energy would in fact separate them",
+        "that the bridge is easy -- it still needs a canonical embedding or the minimiser",
+        "that any candidate should be adopted"
+      ],
+      "no_selection_by_accuracy": "no Q_beta appears in this probe at all"
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  }
+}
