@@ -2,8 +2,18 @@
 # γγ production forces the strand layout — and that is why there is no 3-cell
 
 `QOU/OneDim/NoThreeCellOnTheChain.lean` proves that a **linear layout** carries
-no triangle, hence no 3-cell.  It takes `LinearLayout` as a *hypothesis*.  This
-file supplies it, from the corpus's own γγ vertex.
+no triangle, hence no 3-cell, taking `LinearLayout` as a *hypothesis*.  This
+file reaches the same conclusion from the corpus's own γγ vertex, by an
+**independent combinatorial route**.
+
+🛑 **It does not discharge that hypothesis, and an earlier version of this
+docstring said it did.**  Nothing here imports, mentions, or produces
+`LinearLayout`: that predicate is about `SimpleGraph (Fin n)` and everything
+below is about `Finset ℕ`, with no bridge lemma between them.  Read this file
+as a second, independent derivation of "no 3-cell on the chain", not as the
+cited theorem with its hypothesis supplied.  Building the bridge — a lemma
+producing `LinearLayout G` for the contiguous block graph — is the work that
+would make the stronger sentence true, and it has not been done.
 
 ## The one input
 
@@ -20,6 +30,14 @@ exactly when every strand it touches belongs to that nucleon's own block.
 
 That single demand is the whole hypothesis.  Nothing here reads AME, CODATA,
 a census, or a q-value.
+
+**One step is by eye, and is flagged rather than hidden.**  `vertexStrands` is
+a *definition* in this file, hand-transcribed from `GammaGammaWordSelection
+.vertex`; it is not a theorem *about* that object.  The transcription is
+correct — `vertex i = [σᵢ, σᵢ₊₁⁻¹]` and `σⱼ` exchanges strands `j, j+1`, so the
+support is `{i,i+1} ∪ {i+1,i+2} = {i,i+1,i+2}` — but it is checked by reading,
+not by the compiler.  Formalising it would mean giving `Word` a strand-support
+function and proving `support (vertex i) = vertexStrands i`.
 
 ## What is proved
 
@@ -103,7 +121,7 @@ theorem bonded_symm {B C : Finset ℕ} (h : Bonded B C) : Bonded C B := by
 
 theorem card_triple (a : ℕ) : (triple a).card = 3 := by
   unfold triple
-  rw [Finset.card_insert_of_not_mem (by simp), Finset.card_insert_of_not_mem (by simp),
+  rw [Finset.card_insert_of_notMem (by simp), Finset.card_insert_of_notMem (by simp),
     Finset.card_singleton]
 
 theorem mem_triple {a x : ℕ} : x ∈ triple a ↔ x = a ∨ x = a + 1 ∨ x = a + 2 := by
@@ -144,7 +162,7 @@ theorem triple_disjoint_iff {a b : ℕ} :
     obtain ⟨h1, h2⟩ := hcon
     -- `a < b + 3` and `b < a + 3`, so the two runs overlap at some strand.
     have : ∃ x, x ∈ triple a ∧ x ∈ triple b := by
-      rcases le_or_lt a b with hab | hab
+      rcases le_or_gt a b with hab | hab
       · exact ⟨b, by rw [mem_triple]; omega, by rw [mem_triple]; omega⟩
       · exact ⟨a, by rw [mem_triple]; omega, by rw [mem_triple]; omega⟩
     obtain ⟨x, hxa, hxb⟩ := this
@@ -175,8 +193,10 @@ theorem bonded_iff_base_succ {a b : ℕ} (hd : Disjoint (triple a) (triple b)) :
 bonded: bonding forces each pair of bases to differ by exactly `3`, and three
 distinct naturals cannot pairwise differ by `3`.
 
-This is `NoThreeCellOnTheChain.no_triangle` with its `LinearLayout` hypothesis
-*derived* from the γγ vertex rather than assumed. -/
+This is the `Finset ℕ` analogue of `NoThreeCellOnTheChain.no_triangle`, reached
+from the γγ vertex instead of from a `LinearLayout` hypothesis.  The two are
+independent routes to the same conclusion; neither is derived from the other
+(see the 🛑 note at the top). -/
 theorem no_triangle_of_triples {a b c : ℕ}
     (hab : Disjoint (triple a) (triple b)) (hbc : Disjoint (triple b) (triple c))
     (hac : Disjoint (triple a) (triple c))
@@ -219,7 +239,7 @@ theorem mem_residueBlock {k x : ℕ} :
 
 theorem card_residueBlock (k : ℕ) : (residueBlock k).card = 3 := by
   unfold residueBlock
-  rw [Finset.card_insert_of_not_mem (by simp), Finset.card_insert_of_not_mem (by simp),
+  rw [Finset.card_insert_of_notMem (by simp), Finset.card_insert_of_notMem (by simp),
     Finset.card_singleton]
 
 /-- The three interleaved blocks are pairwise disjoint. -/
