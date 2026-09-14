@@ -2495,3 +2495,80 @@ word over this alphabet is admissible in the alternating block under scope (B).
    require even length. That is a question about the corpus's crossing
    accounting, not about letter selection.
 3. **Whether the bar-odd hypothesis survives the move to `z_D`** — unchanged.
+
+
+## 2026-09-14 — 🛑 I ATTACHED THREE MERGED PRs TO THE WRONG PSD READING. The parity exclusion is reading 1; the live reading is 3, and under it the budget is unconstrained.
+
+**What was wrong, and it was mine.** #7319 / #7325 / #7336 built a length-parity
+exclusion on the alternating block `(1,1,1)`, and I recorded the 2026-09-13 owner
+answer in AGENTS.md as *"every Wedderburn projection of the full 11-letter word
+must be `Matrix.PosSemidef`"*. **That sentence is reading 1.** The corpus
+enumerates three PSD readings and the owner selected **3** on 2026-09-12 —
+*"try PSD condfinement 3 for now, but keep 1 2 for later"* (`qou-ales`):
+
+| | criterion | status |
+|---|---|---|
+| reading 1 | literal `Matrix.PosSemidef` on every block | **parked** |
+| reading 2 | symmetric-part PSD | **parked** |
+| reading 3 | `χ_λ(w) ≥ 0` on every block with `y_λ > 0` | **SELECTED** |
+
+The 2026-09-13 fork was explicitly about **reading 3's** scope —
+`qbeta_reading3_scope_fork_probe` states it as *"(A) reading 3 applies to the
+γγ-selected core only / (B) reading 3 applies to the whole 11-crossing word"*.
+So **(B) moved the letter scope and left the reading alone.** Live criterion:
+reading 3, whole word.
+
+**Why that is fatal to the parity result specifically.** Under convention D
+`y_(1³) = 0`, and that vanishing *is* convention D (the two-row truncation,
+`markovWeights_eq_jones_of_threeRow_eq_zero`) — verified here exactly, `y_(3) +
+2y_(2,1) = 1.0`. So reading 3 never looks at the alternating block, which is
+where the entire parity theorem lives.
+
+**Measured — reading 3 does not constrain the crossing budget** (all generator
+assignments × all dressings over the corpus alphabet):
+
+| k | length | parity | admissible (p) | admissible (n) |
+|---|---|---|---|---|
+| 0 | 9 | odd | 4/8 | 4/8 |
+| 1 | 10 | even | 18/48 | 18/48 |
+| 2 | 11 | odd | 149/288 | 145/288 |
+| 3 | 12 | even | 594/1728 | 594/1728 |
+
+Odd lengths 9 and 11 are admissible in quantity; there is no parity signal and
+no monotone in k. **#7336's "the gluon dressing must be ODD" has no force under
+the live reading.**
+
+**Second correction — the quark family is NOT empty.**
+`qbeta_bar_parity_forces_a_unique_quark_letter_probe` checks
+`all(is_psd(M) for every block)` (reading 1) and concludes the SDP half rejects
+the whole family. Under reading 3 **one of six survives**: `(slot 2, sigma)`,
+`χ_(2,1) = +0.0574586606`. So **item 1 below has a candidate the reading-1
+measurement hid.** Not adopted — selecting it because it survives would be
+selection against the target.
+
+**What is UNCHANGED: the element rejection.** Both census assignments stay
+excluded under reading 3 — p `(0,sigma)` `χ_(2,1) = −0.2805933509`, n
+`(2,inv)` `−0.3719563247` — and `y_(2,1) = 0.2473 > 0`, so `(2,1)` **binds**.
+AGENTS.md called `(1,1,1)` the exclusion "already on record" with `(2,1)`
+"additional"; it is the other way round, and `(2,1)` alone is enough. Nothing
+downstream moves; **the L2 rows stay un-re-scored.**
+
+**What the parity theorem DOES say, and it is decision-relevant.** Under reading
+1 no odd-length word over the corpus alphabet is admissible, and **all three
+nucleon constructions are odd** (`qou-1qsw`). So adopting reading 1 would not
+tighten the selection, it would **empty** it — every nucleon model dies on
+length whatever its dressing, and a survivor would need an even-length model or
+a letter with shift `d ≥ 1/(q²−1) = 4.3094` against the alphabet's `{0, −½, −1}`.
+That is an argument about reading 1's viability for this corpus.
+
+Probe: `computations/qbeta/qbeta_reading3_does_not_constrain_the_budget_probe.py`
+(8/8, proton pin, convention D, 60 dps). The Lean stays sorry-free and unedited —
+only its scope line changes.
+
+**Open items, restated.**
+1. **What replaces `nuc11_interleaved`** on Q_β / m_n / Δ_pn — owner decision.
+   Now has at least one reading-3-admissible candidate in the corpus's own
+   family, and is **no longer** constrained to odd dressings.
+2. Superseded twice over: first by the length reframing, now by the reading
+   correction. The letters are not where the live constraint sits — `χ_(2,1)` is.
+3. Whether the bar-odd hypothesis survives the move to `z_D` — untouched.
