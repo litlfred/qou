@@ -170,14 +170,29 @@ confirmed live with a two-sided control before the verdict was trusted.
    | ambiguous (spatial *and* rep markers) | 27 | 3.5 % |
    | seminormal channel | 16 | 2.1 % |
 
-   Two corrections to what this document and its PR first said. **It is at least four senses,
-   not three** — the fourth is plain linear-algebraic dimension (*"`HH² ≅ k` is one-dimensional"*,
-   *"the outer derivation space is one-dimensional"*, *"a one-dimensional solution space"*), which
-   is neither spatial, nor a Wedderburn block, nor a seminormal channel, and which is most of the
-   unclassified bucket. And **the spatial sense — the subject of this entire audit — is the
-   rarest of them, at 4.7 %**: a reader meeting the phrase should assume it is *not* spatial.
+   **It is four senses, not three** — the fourth is plain linear-algebraic dimension
+   (*"`HH² ≅ k` is one-dimensional"*, *"the outer derivation space is one-dimensional"*), which is
+   neither spatial, nor a Wedderburn block, nor a seminormal channel. The audit now buckets it
+   explicitly (`LINALG`).
 
-   The classifier is a high-recall heuristic and its per-hit verdicts are an agent call; quote the
-   orders of magnitude, not the individual numbers as though adjudicated. **No file was renamed** —
-   a sweep is an owner decision under AGENTS.md's 2026-09-07 directive, and this is the blast
-   radius for it.
+   **🛑 And the alarming reading of that table is WRONG — it was mine, and I repeated it three
+   times before catching it.** I wrote that "a reader meeting the phrase should assume it is not
+   spatial", on the strength of the 37 % bucket then labelled `UNCLASSIFIED`. That label meant
+   *the classifier's regex had no marker*, **not** *a reader cannot tell*. Three separate samples
+   of it turned out to be plainly clear linear-algebraic and representation uses
+   (`Λ²ℂ² ≅ ℂ (one-dimensional)`, `binom(dim V, 2) = 1`, `the pretzel state integral is
+   one-dimensional`). The bucket is renamed `NO-MARKER` so the next reader is not misled the same
+   way.
+
+   **The number that actually matters is the qualified/bare split**, and it says the corpus is
+   fine: **526 of 773 uses carry a disambiguating noun directly after the phrase** — `block`,
+   `channel`, `representation`, `irrep`, `Wedderburn` — and are ambiguous to nobody. Of the 254
+   bare uses, most are still clear from their own sentence, and the genuinely **spatial** bare
+   uses number about **four**.
+
+   So there was no pervasive ambiguity to sweep, and sweeping 773 sites would have been churn.
+   What was missing was an **authoring rule**, now recorded in
+   [`notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md):
+   write the spatial sense as `dim M_k = d` or qualify it in words, because it is the rarest sense
+   and a bare use in *new* prose will be read as one of the other three. The other senses need no
+   change — the noun already carries them.

@@ -14,7 +14,7 @@ export default remark({
   },
   tags: [
     "temperley-lieb",
-    "one-dimensional",
+    "spatially-one-dimensional",
     "spin-chain",
     "convention-d",
     "bethe-string",
