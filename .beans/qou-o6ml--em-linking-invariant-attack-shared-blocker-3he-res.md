@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-14T06:37:22Z
+updated_at: 2026-09-14T07:55:03Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -2226,3 +2226,123 @@ topological invariant **of the braid word**, and `qou-ales` produces words — s
 unlike (2) and (3) it needs no infrastructure the corpus lacks, only a
 computation nobody has run. **NOT CLAIMED** that any length-4 invariant is
 nonzero here; that is unmeasured and is the obvious next probe.
+
+
+---
+
+## 2026-09-14 — 🛑 MY OWN "NEXT" WAS A FIT, and the ladder is UNASKABLE
+
+**Owner challenge, verbatim:** *"Why are we doing a census?! That's sounds like
+fitting. We should be in lean deriving"*
+
+**On the literal reading I was not proposing a census** — every use of the word in
+that hand-off was the *retired* census (`8₁₁` / `L6a4`, `qou-5vhf`, ruled out
+2026-09-08). The proposal was to compute an invariant of the **derived** word.
+
+**But the challenge is right about the thing underneath, and the entry above is
+withdrawn.** "Compute length 4, and if it vanishes, length 5…" is walking the
+Milnor ladder until a rung is nonzero — **selection of a discrete parameter
+against the target**, which the anti-fit directive names explicitly
+(*"Sweeping a discrete parameter for accuracy… Optimal against what? The data."*).
+The length would have been chosen by the residual. Same defect as a census, one
+level up.
+
+### The derivation that replaces it — the ladder is not merely unwalked, it is unaskable
+
+**Step 1 — the element is not a braid. PRIOR ART; cite it, do not re-derive.**
+[`braids-and-knots/markov-disambiguation.md`](../content/quantum-observable-universe/braids-and-knots/markov-disambiguation.md)
+(PR #5765, **2026-08-25**):
+
+> `tr_M` is defined on ALL of `H_n(q)` … no braid, no closure, and no topology
+> are needed for the number to exist. What the closure supplies is the
+> INTERPRETATION. … for `W` NOT in the image of `ρ : B_n → H_n(q)`, `tr_M(W)` is
+> a well-defined number **WITH NO LINK BEHIND IT**.
+
+`computations/binding_is_not_a_link_invariant_probe.py` (bean `qou-brng`)
+measures **which** letters leave the image, and the result is sharper than the
+tempting "the `d ≠ 0` ones" — under the module convention `σ⁻¹ = σ − h`, a
+`d = −h` letter **is** a generator:
+
+    pp   d = 0                 σ_g       IS a braid generator
+    nn   d = −h                σ_g − h   IS one too (= σ_g⁻¹)
+    pn   d = −h(1/2 − δ/4)               is NOT — the only bond letter that isn't
+
+**Step 2 — the family's LOWEST rung is branch-dependent. MEASURED from the
+committed witness, not quoted from the docstring.** To get a link at all the
+averaged letters must be **resolved**; `milnor-mubar-vanishes-on-every-triple.witness.json`
+records two resolutions, and the indeterminacy classes — determined by the
+pairwise linking numbers — differ at **every** isotope:
+
+| isotope | `delta_1` σ → σ⁻¹ | `delta_2` σ → σ⁻¹ |
+|---|---|---|
+| ²H | 1 → 0 | 0 → 1 |
+| ³H | 2 → 0 | 2 → 4 |
+| ³He | 3 → 0 | 1 → 4 |
+| ⁴He | 5 → 0 | 4 → 9 |
+| ⁶Li | 13 → 0 | 12 → 25 |
+| ⁸Be | 25 → 0 | 24 → 49 |
+| ¹⁰B | 41 → 0 | 40 → 81 |
+
+**14 of 14 compared fields differ.** The producer states the cause itself: *"lk
+is branch-dependent, so the Delta classes differ per branch."* So `lk`, the
+**length-2** member, is not a function of the element.
+
+**Step 3 — therefore `μ̄₁₂₃ = 0` on both branches is VANISHING, not
+well-definedness.** It agrees across resolutions *because it is zero*. The family
+was already broken at length 2, so that agreement carries no information about
+any higher rung.
+
+**Step 4 — so a nonzero higher rung would be branch-dependent**, and consuming it
+would require **choosing a resolution**. That choice is a free parameter selected
+against the target. **That is the fit, and it is structural** — not a discipline
+failure to be avoided by care, but a property of the object.
+
+### 🟩 FORMALISED — four theorems, `MilnorTripleLinkingMagnus.lean`
+
+`lean -DautoImplicit=false -s 65536` → **exit 0, zero bytes of output.**
+
+| theorem | axioms |
+|---|---|
+| `not_wellDefinedOnResolutions_of_ne` | **none at all** |
+| `not_familyWellDefined_of_one_member_ne` | **none at all** |
+| `wellDefined_of_const_zero` | **none at all** |
+| `familyWellDefined_nondegenerate` | `[propext, Classical.choice, Quot.sound]` |
+
+`not_familyWellDefined_of_one_member_ne` is load-bearing: **one** branch-dependent
+member refutes the whole family, so the `lk` measurement settles the ladder
+*before* any higher rung is computed. `wellDefined_of_const_zero` states the
+companion — a vanishing member is well-defined **vacuously** — which is what makes
+the μ̄₁₂₃ result non-evidence. The fourth is the anti-vacuity witness in both
+directions (a constant family satisfies the predicate; a two-resolution identity
+family does not), so the predicates are neither unsatisfiable nor trivial.
+
+### What this does to the trichotomy
+
+**Routes (1) and (2) both need a LINK; route (3) does not.** Milnor invariants are
+link invariants; Möbius energy is an invariant of an **embedding**. The canonical
+object is neither — it is an element of `H_{3A}(q)`. `tr_M` is a *linear
+functional on the algebra*, so it evaluates on the superposition directly. That is
+why `tr_M(W_atom)` has a value and `μ̄(W_atom)` does not.
+
+**So "the carrier blocker" is a CATEGORY MISMATCH, not a missing lookup.** Six
+routes terminated at *"which link IS the nucleus?"* and the answer is that the
+question has no referent: there is no map `H_n(q) → Links`, only
+`ρ : B_n → H_n(q)` running the other way, and the element is outside its image.
+Route (3) is the one asking in the right category — and is blocked on
+infrastructure (the von Neumann inductive limit) rather than on a category error.
+
+**NOT CLAIMED:** that no invariant of the element exists (`tr_M` is one); that
+some Milnor invariant could not be constant across **all** `2^(2A+1)` resolutions
+(only two are recorded, and one member's constancy is not the family's); that
+route (1) is refuted for a future carrier that IS a braid. What is derived is
+that on the carrier as built, the family is not well-defined.
+
+### One tension, flagged not resolved
+
+`binding_is_not_a_link_invariant_probe` says the word *"leaves the braid image
+exactly at the p-n bond"*, while `atom_braid_word_3A`'s docstring describes the
+per-**nucleon** block as eleven letters *"two of them averaged (`σ − (h/2)·1`)"* —
+and `−h/2` is in the outside set. Different letters (inter-nucleon bond vs
+intra-nucleon core), and a `Z ≥ 1, N = 0` word's status turns on it. **Does not
+affect anything above**: every nucleus this arc targets has both a proton and a
+neutron. Recorded so the next reader does not have to notice it twice.
