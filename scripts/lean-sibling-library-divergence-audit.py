@@ -189,7 +189,15 @@ def declarations(path: Path) -> dict[str, tuple[str, str]]:
         end = hits[i + 1].start() if i + 1 < len(hits) else len(body)
         stmt = " ".join(body[start:end].split())
         name = m.group(2)
-        ns = ns_for_offset(checkpoints, start)   # the namespace OPEN AT THIS DECL
+        # `mt.start(1)`, NOT `mt.start()`. DECL_RE opens with `^\s*`, and `\s`
+        # matches NEWLINES — so a match preceded by a blank line begins ON that
+        # blank line, and `mt.start()` can sit one or more lines above the
+        # declaration. Group 1 is the kind keyword, which is where the
+        # declaration actually starts. Measured: on
+        # `QOU/Archimedean/PauliWitness/witness_12C.lean` the `theorem` match
+        # reported line index 25, whose content is `"\n"`, against a real
+        # declaration further down.
+        ns = ns_for_offset(checkpoints, m.start(1))
         fq = f"{ns}.{name}" if ns and not name.startswith(ns) else name
         out[fq] = (m.group(1), stmt)
     return out
