@@ -386,6 +386,17 @@ is live at `computations/probes/rho_k_markov_multiplicativity_probe.py`, and it
 carries two passing assertions (`wenzl_branching_identity_machine_precision`,
 `branching_verified_all_lambda_6`).
 
+> **Identifier update, 2026-09-14 (bean `qou-840k`).** The first of those two is
+> now named **`wenzl_branching_identity_arithmetic_floor`**. The rename is not a
+> re-adjudication of anything in this section — both assertions still pass and the
+> shape this section calls correct is unchanged. It happened because the probe's
+> `~1e-14` was the **complex128 floor of its own character path**, not a property
+> of the identity: the producer called `char_fast.chi_lambda_fast` (numpy,
+> `dtype=complex`) rather than the mpmath sibling it has always had. On the
+> mpmath path the residue is **3.02e-70**, 56 orders lower, so "machine
+> precision" had become the wrong word for it. Only the identifier is corrected
+> here; the analysis above stands as written.
+
 The content is also accurate about what it rests on. `rho-k-graded-expansion.md`
 says the witness *"numerically verifies the [Wenzl 1988] branching identity"* —
 the **proof** is Wenzl 1988 Theorem 5, cited as such; the witness is
