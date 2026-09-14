@@ -343,10 +343,16 @@ def section4() -> None:
     print("    A generic-q disagreement could in principle collapse at one")
     print("    special q -- the definition explicitly permits ties.  So the")
     print("    q₀ evaluation is run separately rather than inferred.\n")
+    # 🛑 `constants.Q` is a plain float64 (`_solve_q_proton_f64`), so
+    # `mp.mpf(str(Q))` is a LAUNDERED f64 — ~17 correct digits wearing an mpf
+    # type.  The first version of this probe did exactly that, and
+    # `scripts/precision-gates.sh` caught it as the ONLY such site in the
+    # corpus.  Read the 50-digit STRING instead; that is the whole fix, and it
+    # is at the import, where AGENTS.md says to make it.
     try:
-        from qou_substrate.constants import Q as Q0            # noqa: E402
-        q0 = mp.mpf(str(Q0))
-        src = "qou_substrate.constants.Q (proton pin, owner directive 2026-08-07)"
+        from qou_substrate.constants import Q_50_DIGIT_STR      # noqa: E402
+        q0 = mp.mpf(Q_50_DIGIT_STR)
+        src = "qou_substrate.constants.Q_50_DIGIT_STR (proton pin, 2026-08-07)"
     except Exception as exc:                                   # pragma: no cover
         print(f"    substrate constant unavailable ({exc}); skipping")
         return
@@ -375,7 +381,13 @@ def section4() -> None:
         check(
             len(groups) != gb,
             f"🛑 at q₀ the counts still differ at n = {n} — no tie rescues it",
-            "compared at 1e-40, forty orders above the dps-60 floor, so this is\n"
+            "compared at 1e-40 against a q0 read from the 50-DIGIT STRING, so\n"
+            "the floor is the 50 digits of the anchor, not the ~17 of a float64.\n"
+            "That distinction is not pedantic here: the first version read the\n"
+            "float64 `constants.Q`, which made the 1e-40 threshold a comparison\n"
+            "of noise, and the claim below unsupportable.  The groups differ by\n"
+            "O(1) either way, so the CONCLUSION never depended on it -- but the\n"
+            "stated precision did, and it was wrong.  This is\n"
             "a statement about the mathematics and not about the arithmetic.",
         )
         print()
