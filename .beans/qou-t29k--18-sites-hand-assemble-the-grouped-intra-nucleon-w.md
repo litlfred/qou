@@ -159,3 +159,176 @@ target. See `qou-u8ji`.
 `nucleon_word_letters`" is the mechanical shape of the fix, but each site has
 to be read for what it reports first — some will move a claim, not just a
 number.
+
+## Triage, 2026-09-14 — 16 unguarded, 1 guarded, 2 excluded
+
+The audit now separates a DECLARED legacy branch from a silent default (the
+nearest enclosing `if` whose test names the ordering). Measured: **16 unguarded,
+1 guarded**. The guarded one, `closed_form_tau_M:564`, was already correct
+(`intra_order` defaults to borromean, grouped arm opt-in, resolved under
+`qou-y2o7`) and is now drained to `grouped_word_from_chains` — ratchet 17 -> 16,
+E 1 -> 2, both arms byte-exact.
+
+**Two of the sixteen are excluded pending an owner call**, and they are the only
+two I have examined in depth:
+
+| site | route | grouped | canonical | bean |
+|---|---|---|---|---|
+| `b_pred_mirror_slope_closed_form:90` | ratio `tau_p/tau_n` | 1.4223 vs measured 1.372 | 2.6936, +96 % | `qou-u8ji` |
+| `binding_multibond_wenzl:71` | difference `tr_vac - tr_b` | B(2H) -6.3 % vs AME | -75.2 % | `qou-y1w0` |
+
+Two for two. That is not a corpus-wide claim — fourteen remain unexamined and
+these two looked the most likely to be interesting — but it settles that this
+drain is not code hygiene.
+
+**The triage question for the remaining fourteen** is which class the reported
+quantity is in. `nucleon_word_letters` documents invariance only for
+`tr_M(W_atom)/tr_M(W_free)`, one nucleus over its own free word. Ratios between
+different nucleons, differences of traces, and absolute traces all move. A site
+is safe to switch iff it reports only the first kind — answerable by reading it,
+not by re-running it.
+
+## Triage map, 2026-09-14 end of session — 18 -> 14, four drained, two escalated
+
+**Drained (4, all zero numeric change, all verified by re-run):**
+
+| site | why it was safe |
+|---|---|
+| `legacy_marshalled_frame:78` | the module exists to BE the legacy frame |
+| `closed_form_tau_M:564` | already opt-in behind `intra_order`, defaulted borromean (`qou-y2o7`) |
+| `markov/d_frame_neutron_cyclotomic_rule_probe:121` | the measured `(m, cancelled)` is ordering-INVARIANT — established by the probe's own stale assertion, see below |
+| `qbeta/qbeta_delta_vs_deltaTbeta_settled_probe:105` | grouped is reasoned and dated (2026-09-06); it already passes `intra_order="grouped"` to its sibling call |
+
+**Escalated, NOT switched (2):** `b_pred_mirror_slope_closed_form` (`qou-u8ji`)
+and `binding_multibond_wenzl` (`qou-y1w0`). Both have agreement with experiment
+that exists only in the grouped frame.
+
+**Remaining 12, with what is known:**
+
+*Six qbeta probes* — `qbeta_chi_block_symbolic_closure_probe:79`,
+`qbeta_d_frame_baseline_element_consistency_probe:117`,
+`qbeta_d_frame_trace_baseline_probe:103`, `qbeta_delta_bar_parity_probe:184`,
+`qbeta_delta_element_fork_pricing_probe:181`,
+`qbeta_epsnpq_functional_mismatch_probe:74`. All compute
+`chi_lambda(beta_n) - chi_lambda(beta_p)` — the Delta element as a
+CROSS-NUCLEON DIFFERENCE, so **not** in the invariant class. **None of the six
+mentions `intra_order` and none carries a grouped pin literal**: their frame is
+inherited from the `_word` shape, undocumented, and possibly accidental. Their
+sibling `qbeta_delta_vs_deltaTbeta_settled_probe` reasoned the same choice out
+in forty lines; these six did not. Only `qbeta_chi_block_symbolic_closure_probe`
+references the `paper` closed forms, which the settled probe says are stated in
+the grouped frame — so that one likely NEEDS grouped and merely fails to say so;
+the other five are open.
+
+*`qbeta/qbeta_level_k_binding_operator_probe:257`* — same cluster, marked 🛑 in
+its own docstring; not read yet.
+
+*`binding_canonical:381`* — the module is marked "🛑 SUPERSEDED LAW ... kept for
+provenance and comparison; do not quote". Likely legacy-by-design, but it is
+production-adjacent and wants reading, not assuming.
+
+*`fitted_ideal_low_isotope_calibration:172`* — module PAUSED by owner ruling
+2026-08-26. Do not touch without unpausing.
+
+*`atom_orbit_reduction:92`*, *`chi_4he_binding_lossless:83`*,
+*`rho_k_h3a_gg_trajectory:127`* — unexamined.
+
+## What the triage method turned out to be
+
+Not "is the site broken" but **which class is the reported quantity in**:
+
+  1. `tr_M(W_atom)/tr_M(W_free)`, one nucleus over its own free word —
+     INVARIANT (documented in `nucleon_word_letters`, ~1e-60 at A = 2, 3, 4).
+     Covers `L` and the three bond constants.
+  2. A functional that is invariant for a different reason — the cyclotomic
+     `(m, cancelled)` is, because it counts per-GENERATOR content and
+     reordering moves no letter between generators.
+  3. Everything else — absolute traces, differences of traces, ratios between
+     DIFFERENT nucleons. These move by 3.785x (2H) to 14.325x (4He).
+
+Classes 1 and 2 are safe to switch; class 3 needs an owner call whenever the
+site's result is a claim rather than a number. Both escalations are class 3.
+
+## 18 -> 10, and the qbeta cluster was misdiagnosed as "silent"
+
+Four more drained: `qbeta_d_frame_trace_baseline_probe`,
+`qbeta_epsnpq_functional_mismatch_probe`,
+`qbeta_d_frame_baseline_element_consistency_probe`,
+`qbeta_chi_block_symbolic_closure_probe`. All four pass every assertion with
+every measured value unchanged (4/4, 7/7, 5/5, 9/9).
+
+They are **not** silent defaults. All four use
+`chi_monotone_transfer.chi_all_lambda`, which accepts only a monotone
+generator sequence, and the canonical borromean word is non-monotone by
+construction. Measured:
+
+    grouped   [0,0,0,0,0,0,0,1,1,1,1] -> OK, chi_(3) = 1.38249446339
+    borromean [0,1,0,1,0,1,0,0,1,0,0] -> ValueError: non-monotone word:
+                                          gen 0 after 1
+
+So grouped is **forced by the kernel**, and these are the SAFEST sites in the
+baseline, not the riskiest: a monotone-kernel caller cannot silently report a
+wrong-frame number — it either uses the grouped word correctly or raises. The
+declaration is what was missing, not the correctness. Each docstring now says
+so, and `qou-11l4` records that `qou-y2o7` — whose mechanism this is — closed
+as completed without these four in its blast radius.
+
+`qbeta_chi_block_symbolic_closure_probe` holds the QUARKS, so it now calls
+`nucleon_word_letters(..., intra_order="grouped")` rather than
+`grouped_word_from_chains`: same object, one caller closer to the definition.
+
+Ratchet 14 -> 10. E 4 -> 7.
+
+**Remaining 10**, none of them kernel-locked: `atom_orbit_reduction:92`,
+`binding_canonical:381`, `binding_multibond_wenzl:71` (escalated, `qou-y1w0`),
+`chi_4he_binding_lossless:83`, `fitted_ideal_low_isotope_calibration:172`
+(module PAUSED by owner ruling), `probes/b_pred_mirror_slope_closed_form:90`
+(escalated, `qou-u8ji`), `qbeta_delta_bar_parity_probe:184`,
+`qbeta_delta_element_fork_pricing_probe:181`,
+`qbeta_level_k_binding_operator_probe:257`, `rho_k_h3a_gg_trajectory:127`.
+
+The three remaining qbeta probes do NOT import `chi_monotone_transfer`, so
+whatever forces their frame is something else and has to be found per site.
+
+## Environment note
+
+The container restarted mid-session and came back with mpmath 1.3.0 -> 1.4.1
+and a rebuilt `pyhecke_native`. Every witness regenerated after that carries
+the new provenance. All four probes above produced byte-identical values
+across the change, so it is benign so far, but it is a corpus-wide provenance
+shift that did not come from any commit.
+
+## 10 -> 9: `qbeta_level_k_binding_operator_probe` switched, and it surfaced a RED
+
+First site where switching to the canonical ordering was the right call rather
+than a deferral, and the first time this drain's falsification criterion fired:
+I said I would report it if a site turned out safe to switch, and this one is.
+
+`chain_word` built the grouped word by hand while its docstring called it
+"`atom_braid_word_3A`'s own chain". Meanwhile `binding_block` in the SAME FILE
+calls that production builder directly — so one probe measured A = 2
+canonically and A = 3 in the superseded frame. Measured before switching:
+
+    grouped    ord_spread = 22.54043935 %   ppn row = 0.2488, -6.581, -28.75
+    borromean  ord_spread = 22.69262522 %   ppn row = 0.2488, -3.624, -2.978
+
+Per-block characters move by up to an order of magnitude; the SPREAD — the
+thing the function exists to measure — does not. Downstream assertion is a
+threshold (`> 0.1`), satisfied either way. Switched to `nucleon_word_letters`'
+DEFAULT rather than a named frame, so a future ruling reaches it by changing
+one default. Module docstring literal 22.54 % -> 22.69 %.
+
+**And the file is red on main, from the ordering ruling, unnoticed since
+2026-09-05** — `qou-g5oz`. Both its headline assertions fail today on a clean
+tree while its witness (2026-09-03, two days pre-ruling) still records
+`allPassed: true`. Under canonical the largest binding character falls -9.598
+-> 2.458 (under its own `> 5` bar) and the two small eigenphases do not exist
+at all. Third frame-conditional result in this drain, after `qou-u8ji` and
+`qou-y1w0`, and the first already RED rather than quietly wrong.
+
+**Remaining 9:** `atom_orbit_reduction:92`, `binding_canonical:381`,
+`binding_multibond_wenzl:71` (escalated), `chi_4he_binding_lossless:83`,
+`fitted_ideal_low_isotope_calibration:172` (module PAUSED),
+`probes/b_pred_mirror_slope_closed_form:90` (escalated),
+`qbeta_delta_bar_parity_probe:184`,
+`qbeta_delta_element_fork_pricing_probe:181`, `rho_k_h3a_gg_trajectory:127`.

@@ -1342,6 +1342,86 @@ theorem mobius_b3_ne_zero_forces_moved_sep (Lpair : LinkEmbedding M 4)
   rintro ⟨h3, h4⟩
   exact hb3 (mobius_b3_eq_zero_of_sep_eq Lpair Ltriple Lquad s h3 h4 i j k)
 
+/-! ### 9h. The charge-ANTISYMMETRIC content is the configuration difference too
+
+§9g localises the channel's *many-body* content in the configuration change.
+This localises its **charge-antisymmetric** content in the same place, and the
+argument is one observation about the signature rather than anything new:
+
+**`mobiusCrossingModel` takes no charge argument.** Its only inputs are link
+embeddings and the arclength `s`; `CrossingModel` carries `w2`, `w3`, `w4` and
+nothing else; `toBindingMap` is built from those three; and `BindingMap.b3` is
+`triple i j k - (pair i j + pair i k + pair j k)`. So there is no point in the
+chain at which a proton differs from a neutron. Two nuclei are two
+*instantiations* of one functional.
+
+Hence if two instantiations agree on the pair and triple separations, their `b₃`
+agree — and the contrapositive is the statement this channel owes: **any nonzero
+difference in `b₃` between two instantiations forces their separations to
+differ.**
+
+**Why this matters to the EM arc.** `qou-9v7t` splits the measured A = 3
+cumulant by isospin and names the halves: `b3_sym = 1.4262225` MeV, *"the strong
+channel's obligation"*, against `b3_asym = 0.3818775` MeV, *"the EM channel's"*.
+The corpus's own summary of that split is that **the framework has no EM term in
+any per-bond factor** (`f_pp = z`, `f_nn = z - h`, `f_pn = z - h(1/2 - δ/4)` —
+charge-*labelled* but not charge-*coupled*). The result below says route (2)
+does not need one: whatever charge-antisymmetric number this channel can supply
+is a derived geometry, exactly as §9g found for the many-body number. One
+obligation, not two.
+
+**Two scope notes, both load-bearing.**
+
+*Arity.* `CrossingModel` is `Fin 4`-indexed, so `b3 i j k` is a triple's cumulant
+*inside* a four-component model, while the mirror pair ³H/³He is A = 3. The
+theorem below is therefore stated for two arbitrary instantiations, which is what
+is proved; reading them as ³H and ³He is an interpretation, and it carries that
+spare fourth component with it.
+
+*Not claimed.* That the mirror partners' separations **do** differ in this
+framework, nor by how much — the same open item as §9g (`qou-a2w5`), now
+reached from the charge side as well. In particular this is **not** a prediction
+of `b3_asym`; it is a statement about where any such prediction would have to
+come from. -/
+
+/-- **The channel's `b₃` depends only on the pair and triple separations.**
+
+    Note `Lquad` is unconstrained: `BindingMap.b3` is built from `pair` and
+    `triple` alone, so the four-component assembly does not enter. -/
+theorem mobius_b3_congr_of_sep_eq
+    (Lpair Lpair' : LinkEmbedding M 4)
+    (Ltriple Ltriple' : Fin 4 → LinkEmbedding M 4)
+    (Lquad Lquad' : LinkEmbedding M 4) (s : ℝ) (i j k : Fin 4)
+    (hp : ∀ i' j' t, Lpair'.sep i' s j' t = Lpair.sep i' s j' t)
+    (ht : ∀ k' i' j' t, (Ltriple' k').sep i' s j' t = (Ltriple k').sep i' s j' t) :
+    (mobiusCrossingModel Lpair' Ltriple' Lquad' s).toBindingMap.b3 i j k
+      = (mobiusCrossingModel Lpair Ltriple Lquad s).toBindingMap.b3 i j k := by
+  have e1 := innerPairEnergy_congr_of_sep_eq Lpair Lpair' i j s (hp i j)
+  have e2 := innerPairEnergy_congr_of_sep_eq Lpair Lpair' i k s (hp i k)
+  have e3 := innerPairEnergy_congr_of_sep_eq Lpair Lpair' j k s (hp j k)
+  have t1 := innerPairEnergy_congr_of_sep_eq (Ltriple k) (Ltriple' k) i j s (ht k i j)
+  have t2 := innerPairEnergy_congr_of_sep_eq (Ltriple j) (Ltriple' j) i k s (ht j i k)
+  have t3 := innerPairEnergy_congr_of_sep_eq (Ltriple i) (Ltriple' i) j k s (ht i j k)
+  simp only [QOU.Mass.PairwiseCumulantVanishing.BindingMap.b3,
+    CrossingModel.toBindingMap, CrossingModel.tripleMutual, mobiusCrossingModel,
+    e1, e2, e3, t1, t2, t3]
+
+/-- **THE CHARGE-SIDE LOCALISATION.** Two instantiations whose `b₃` differ must
+    differ in their pair or triple separations.
+
+    Read with §9g: the many-body content and the charge-antisymmetric content of
+    this channel are the same obligation — a derived geometry — not two. -/
+theorem mobius_b3_differs_forces_sep_differ
+    (Lpair Lpair' : LinkEmbedding M 4)
+    (Ltriple Ltriple' : Fin 4 → LinkEmbedding M 4)
+    (Lquad Lquad' : LinkEmbedding M 4) (s : ℝ) {i j k : Fin 4}
+    (hne : (mobiusCrossingModel Lpair' Ltriple' Lquad' s).toBindingMap.b3 i j k
+      ≠ (mobiusCrossingModel Lpair Ltriple Lquad s).toBindingMap.b3 i j k) :
+    ¬ ((∀ i' j' t, Lpair'.sep i' s j' t = Lpair.sep i' s j' t) ∧
+       (∀ k' i' j' t, (Ltriple' k').sep i' s j' t = (Ltriple k').sep i' s j' t)) := by
+  rintro ⟨hp, ht⟩
+  exact hne (mobius_b3_congr_of_sep_eq Lpair Lpair' Ltriple Ltriple' Lquad Lquad' s i j k hp ht)
+
 end MobiusMutualChannel
 
 end QOU

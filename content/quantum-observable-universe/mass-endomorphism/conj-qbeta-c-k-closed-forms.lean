@@ -49,12 +49,24 @@ at finite q, or KLR canonical-basis Markov trace formula, remains
 open research-grade work.
 
 The class encodes the four conjectured closed forms as functions of
-q. The instance `defaultQBetaCKClosedForms` axiomatises these — the
+q. The **`def`** `defaultQBetaCKClosedForms` records these — the
 `closed_form_*` equations carry the conjectural content and would
 need `sorry` if treated as provable lemmas. The class itself does
 NOT carry a `sorry`; it just encodes the closed-form CONVENTION.
 Downstream theorems taking `[QBetaCKClosedForms]` as a hypothesis
-are conditional on this convention being right. -/
+are conditional on this convention being right.
+
+**`defaultQBetaCKClosedForms` is deliberately a `def`, NOT an
+`instance`** (demoted 2026-09-14, bean `qou-hjf4`). Its field values
+are FITTED — the residuals are in the paragraph above — so as a
+parameterless global `instance` it was resolved by instance search
+for every `[QBetaCKClosedForms]` binder, which made each
+"conditional" downstream result unconditional **on a fit**. That is
+the shape AGENTS.md §"Axiomatization is NOT a Proof" rule 2 forbids,
+and it is the same demotion `ClassicalLimitStpart` received on
+2026-08-24. The class is therefore **uninhabited by instance search**,
+which is the honest encoding of an open conjecture; `def` keeps the
+values citable by name without discharging anything. -/
 class QBetaCKClosedForms where
   /-- Hopf Jones at q=1, the c_3 anchor (derived, not conjectural). -/
   c_3 : ℝ
@@ -74,12 +86,20 @@ class QBetaCKClosedForms where
   c_7 : ℝ
   c_7_closed_form : c_7 = c_3^3
 
-/-- **Canonical instance** axiomatising the conjectured closed forms.
+/-- **Canonical witness** recording the conjectured closed forms.
 
     The `closed_form_*` equations are discharged by `rfl` against
     the chosen forms — this is NOT a derivation, just the
-    encoding of the conjectural assignment. -/
-noncomputable instance defaultQBetaCKClosedForms : QBetaCKClosedForms where
+    encoding of the conjectural assignment.
+
+    **`def`, not `instance`, and that is load-bearing.** These values
+    are fitted. As a parameterless global `instance` this was found by
+    instance search for every `[QBetaCKClosedForms]` binder in scope,
+    so `qbeta_c_k_closed_forms_derived` below — stated as a §3b-cond
+    conditional — was in practice discharged against a fit. Demoted
+    2026-09-14 (bean `qou-hjf4`); do not restore the `instance`
+    keyword without first deriving these forms. -/
+noncomputable def defaultQBetaCKClosedForms : QBetaCKClosedForms where
   c_3 := -2
   c_3_eq := rfl
   -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder § c_4 row
@@ -119,13 +139,25 @@ theorem qbeta_c_k_closed_forms_of_instance (q : ℝ) :
     "stated as a conjecture carrier so the `sorry` is honest 'open'". There
     is no `sorry` here.** The body is
     `⟨inst.c_4_closed_form q, inst.c_5_closed_form q⟩` — both conjuncts
-    projected verbatim from the `QBetaCKClosedForms` instance argument. The
-    openness is real and is carried by that class having no instance; but the
+    projected verbatim from the `QBetaCKClosedForms` instance argument; the
     prose and the code disagreed about the mechanism, which is the
     `proof-docstring-sorry-mismatch` defect (a reader auditing the prose
     records a queued gap, a reader running `#print axioms` records a proof).
     The honest description: this is a conditional restatement of the class
-    fields, open because nothing inhabits the class. -/
+    fields, open because nothing inhabits the class.
+
+    **Second correction (2026-09-14, bean `qou-hjf4`): that last clause was
+    FALSE when it was written.** `defaultQBetaCKClosedForms`, 49 lines above,
+    was a parameterless global `instance`, so instance search discharged the
+    `[inst : QBetaCKClosedForms]` binder here — and its values are fitted.
+    The 2026-08-09 correction fixed the `sorry` half of the mismatch and left
+    a second, larger one standing: the file's own class docstring named that
+    instance in the same breath as this docstring denied it existed. The
+    clause is now true because the declaration was demoted to a `def`, not
+    because it was ever accurate. Nothing downstream was laundered — measured
+    2026-09-14, the class and both theorems here are referenced by **no other
+    file** and this module has no importer — so the defect was contained to
+    this file's self-description. -/
 -- Ref: [manuscript] prop:qbeta-c-k-closed-forms
 -- Ref: [khovanov-rozansky2008] doi:10.4064/fm199-1-1
 theorem qbeta_c_k_closed_forms_derived

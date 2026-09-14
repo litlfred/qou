@@ -74,10 +74,25 @@ CLOSED = {
 
 
 def chains(quarks, qsym):
-    from pyhecke.atom import nucleon_gen_chains
-    g0, g1 = nucleon_gen_chains(list(quarks), q=qsym)
-    return ([(c, sp.simplify(d), 0) for c, d in g0]
-            + [(c, sp.simplify(d), 1) for c, d in g1])
+    """The nucleon word at symbolic q. GROUPED -- and that is FORCED.
+
+    `chi_monotone_transfer.chi_all_lambda`, which this probe uses, accepts only
+    a monotone generator sequence, and the canonical borromean word is
+    non-monotone by construction (core `(sigma_0 sigma_1^-1)^3`): feeding it
+    there raises `ValueError: non-monotone word: gen 0 after 1`. Measured, not
+    inferred. So the frame changes when the KERNEL does
+    (`chi_general_word.chi_all_lambda_any`, the remedy `closed_form_tau_M`
+    already took), not when this function does.
+
+    This one holds the QUARKS, so it asks `nucleon_word_letters` for the
+    legacy word by name rather than concatenating the two chains itself --
+    the same object, one caller closer to the definition. Beans `qou-11l4`
+    (this probe is missing from `qou-y2o7`'s blast radius, which is marked
+    completed) and `qou-t29k`.
+    """
+    from pyhecke.atom import nucleon_word_letters
+    return [(c, sp.simplify(d), off) for c, d, off in
+            nucleon_word_letters(list(quarks), q=qsym, intra_order="grouped")]
 
 
 def classify(word, qsym):
