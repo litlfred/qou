@@ -1,11 +1,11 @@
 ---
 # qou-a3qo
 title: 'AGENTS/cheat-sheet: "the lambda_A fit artifact" cites an audit measured 6-of-7 ROBUST'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-14T18:32:11Z
-updated_at: 2026-09-14T18:32:11Z
+updated_at: 2026-09-14T18:38:45Z
 ---
 
 ## 2026-09-14 — the finding, the fix, and the two things NOT touched
