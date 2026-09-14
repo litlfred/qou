@@ -1,15 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-14T07:38:15.894Z",
+  "generated": "2026-09-14T07:48:32.400Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3846,
-  "files_flagged": 108,
-  "total_defects": 69,
+  "files_flagged": 107,
+  "total_defects": 68,
   "total_exempt": 64,
   "total_promoted_from_exempt": 42,
   "categories": {
     "proof-no-self-assuming-projection": 57,
-    "proof-claims-unencoded": 8,
+    "proof-claims-unencoded": 7,
     "proof-no-trivial-true": 2,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1
@@ -3104,17 +3104,6 @@
         "exempt": false,
         "detail": "the projected field `inst.forms_agree` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.",
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
-      }
-    ],
-    "content/quantum-observable-universe/nuclear-interactions/universal-ilp-algorithm.lean": [
-      {
-        "line": 16,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure KnotOperator (q : ℝ) where",
-        "decl": "KnotOperator",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (is_knot) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [KnotOperator]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean": [
