@@ -159,3 +159,31 @@ target. See `qou-u8ji`.
 `nucleon_word_letters`" is the mechanical shape of the fix, but each site has
 to be read for what it reports first — some will move a claim, not just a
 number.
+
+## Triage, 2026-09-14 — 16 unguarded, 1 guarded, 2 excluded
+
+The audit now separates a DECLARED legacy branch from a silent default (the
+nearest enclosing `if` whose test names the ordering). Measured: **16 unguarded,
+1 guarded**. The guarded one, `closed_form_tau_M:564`, was already correct
+(`intra_order` defaults to borromean, grouped arm opt-in, resolved under
+`qou-y2o7`) and is now drained to `grouped_word_from_chains` — ratchet 17 -> 16,
+E 1 -> 2, both arms byte-exact.
+
+**Two of the sixteen are excluded pending an owner call**, and they are the only
+two I have examined in depth:
+
+| site | route | grouped | canonical | bean |
+|---|---|---|---|---|
+| `b_pred_mirror_slope_closed_form:90` | ratio `tau_p/tau_n` | 1.4223 vs measured 1.372 | 2.6936, +96 % | `qou-u8ji` |
+| `binding_multibond_wenzl:71` | difference `tr_vac - tr_b` | B(2H) -6.3 % vs AME | -75.2 % | `qou-y1w0` |
+
+Two for two. That is not a corpus-wide claim — fourteen remain unexamined and
+these two looked the most likely to be interesting — but it settles that this
+drain is not code hygiene.
+
+**The triage question for the remaining fourteen** is which class the reported
+quantity is in. `nucleon_word_letters` documents invariance only for
+`tr_M(W_atom)/tr_M(W_free)`, one nucleus over its own free word. Ratios between
+different nucleons, differences of traces, and absolute traces all move. A site
+is safe to switch iff it reports only the first kind — answerable by reading it,
+not by re-running it.
