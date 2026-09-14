@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T08:09:27Z
+updated_at: 2026-09-14T08:15:54Z
 ---
 
 ## Landed (A + C)
@@ -301,3 +301,39 @@ here.
 
 **Remaining 2** (post-all-three-merges): RungRule, TannakaKreinReconstruction.
 (TransferMatrixEigenphase is ledger `legit`.)
+
+
+## RungRule (PR #7360, 2026-09-14) — the property is NOT expressible in Lean
+
+`proof-claims-unencoded` **9 -> 6** on this branch. With all three PRs: **2**.
+
+`substrate_derived : Prop` was dead (written once as `True` by
+`depthBasedRule`, read nowhere). But the interesting part is WHY it was
+removed rather than parameterised:
+
+**Its stated property — "the rule does not directly reference any real-valued
+AME constant" — is a claim about how `k` is DEFINED, not about `k` as a
+function.** Two extensionally equal functions differ in provenance; Lean sees
+only the extension. So neither a field NOR a caller-supplied predicate on `k`
+can carry it. Parameterising would have produced a different, weaker property
+wearing the same name.
+
+**Generalisable test before reaching for the parameterise hammer: is the
+property EXTENSIONAL?** If it is about the definition/provenance/syntax rather
+than the value, no Lean encoding exists and the honest home is a source audit.
+This corpus already runs that shape — `scripts/precision-gates.sh` carries a
+no-free-parameter certificate. Recorded in the docstring so nobody "restores"
+the field.
+
+**Scope discipline, stated for consistency:** removal keeps `RungRule n`s
+arity, so `DeltaLambda`, `DeuteronVerification` and `CrystalDeltaLambdaScaffold`
+are untouched. Parameterising would have reached all three — which is exactly
+why I DECLINED to parameterise `HeckeAnyonicSubstrate` on #7357. Same boundary,
+applied the same way: in-file removal of a measured-dead field is corpus-derived
+(the `HadronFibreEmbedding` precedent); a 3-consumer arity change is the
+authors call.
+
+Consumers verified, not assumed: shadow sweep `rebuild=3`, 3x EXIT=0.
+
+**Remaining 1**: TannakaKreinReconstruction. (TransferMatrixEigenphase is
+ledger `legit` and stays.)
