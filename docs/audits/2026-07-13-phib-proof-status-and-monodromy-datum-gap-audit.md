@@ -121,7 +121,7 @@ consumes Φ_b.
 - **Binding:** goes through the **bar-EVEN** `conj:algebraic-geometric-dilog-equivalence`
   (`AlgebraicGeometricEquivalence` class): `Φ_n(x;q) → D(z) = Vol_hyp`, JSJ
   piecewise volume sum. **Item 1 (pole-cusp bijection) is proved sorry-free**
-  (`pole_cusp_bijection_proved`); items 2–3 are conditional on two fields — the
+  (`pole_cusp_bijection_proved`, renamed 2026-09-14 to `denomPolyLocal_roots_explicit`); items 2–3 are conditional on two fields — the
   volume-conjecture saddle asymptotic (`vc_asymptotic`, a *theorem* for `4₁` by
   Ohtsuki / Andersen–Hansen) and the matched-cusp identification
   (`pole_cusp_matched` = `conj:shared-denominator-cusp-holonomy`). So binding's
