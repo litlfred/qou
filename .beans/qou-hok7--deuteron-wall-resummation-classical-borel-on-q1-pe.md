@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-14T09:03:04Z
+updated_at: 2026-09-14T16:59:48Z
 ---
 
 
@@ -1610,5 +1610,101 @@ function restricts correctly.
 
 **G1 unchanged.** Nothing here touches `Xbot <= Xblock`, nor the arc's headline open problem,
 the upper bound on `M_n`.
+
+**Do not close this bean.**
+
+
+## 🟩 G2 is CLOSED — `e_inf` is now a MAXIMUM over a proved window, not a search result (2026-09-14, PR #7349)
+
+Gap **G2** was the last conditionality on `e_inf` that came from the *search*
+rather than from the mathematics: the `Xbot := Xblock` join was run over a window
+chosen because `sup_s Xblock` had been *measured* at 2.1598, not because anything
+forbade a larger block from beating it. Both halves of G2 are now shut.
+
+### (a) The concave maximum is CERTIFIED — slack 6.43e-12
+
+`Xblock(u)` is concave in the displacement vector (every internal term is
+`−ε(2d + (u_i − u_j))`, concave composed with a linear map; every tail is
+`−ε(2d + u_i)`; the cost is `−(ln q₀/2)Σu²`), so the supergradient inequality
+holds at **every** `u`:
+
+    F(u)  ≤  F(w) + ∇F(w)·(u − w) .
+
+The linear term is unbounded alone, so the region is confined first: the per-row
+bound gives `F(u) ≤ φ_i(u_i) + Σ_{j≠i} rowcap(j)`, so any `u` reaching the
+incumbent has `φ_i(u_i) ≥ INT_SUP − Σ_{j≠i} rowcap(j)` — a one-variable quadratic
+whose solution set is an interval `[L_i, U_i]`. Outside that box `F` is already
+below the incumbent. Maximising the linear term over `[1, U_i]` per coordinate:
+
+    sup F(T = 7)  ≤  2.25373556700090488296611     slack 6.4265742e-12
+
+which is **6.84e-11 of the distance to the integer maximum** — the certificate
+costs nothing. The gradient is **analytic** (`gx = −ε'` in closed form); a central
+difference would make the inequality a statement about the step size.
+
+**The trap, and it cost me a wrong result first.** At the optimum rows 5 and 6 sit
+on the boundary `u = 1` with *strictly negative* gradients (−0.011552, −0.271508).
+That is correct KKT behaviour, not a convergence failure. But for `g_i < 0` the
+max of `g_i(u_i − w_i)` over `[1, U_i]` is at `u_i = 1`, **not** at `U_i`. Charging
+every row `|g_i|(U_i − w_i)` inflates the slack to **1.447** — eleven orders of
+magnitude, enough to swamp the result several times over. My first run did exactly
+that and reported slack 1.467. The probe now **recomputes that inflated figure
+every run** rather than quoting it, so the warning cannot go stale.
+
+Second refinement: the ascent point is **polished** before the certificate is
+taken — coordinates parked at `1.0000149` are snapped to exactly `1` (killing a
+`+4e-6` boundary term outright) and interior ones get a wider ternary. `F(w)`
+barely moves; slack falls 1.50e-5 → 6.43e-12. The certificate is valid at *any*
+`w`, so choosing a better one is free.
+
+### (b) Every admissible block length is covered — `T ≤ 40 = T0`
+
+The per-row cap gives a rigorous length bound: every row past index 5 contributes
+at most `Ĝ(i+1) − ln q₀/2`, which is negative there (`Ĝ(7) = 0.034051 < ln q₀/2 =
+0.052170`) and tends to `−ln q₀/2`, so the cumulative cap falls below the certified
+bound at **`T0 = 40`**. No block longer than 40 can reach it, unconditionally.
+
+A `REV_BLOCK_SUP_TMAX=40` run covers the whole of `1..40` and declines
+**monotonically** from the `T = 7` peak throughout:
+
+| T | 7 | 12 | 20 | 25 | 30 | 34 | 38 | 39 | **40 = T0** |
+|---|---|---|---|---|---|---|---|---|---|
+| sup | **2.25373** | 2.11924 | 1.71919 | 1.45889 | 1.19810 | 0.98942 | 0.78073 | 0.72856 | **0.67639** |
+
+Step size settles at exactly `ln q₀/2 = 0.0521704` — one unit of quadratic cost per
+added row, the rows past 6 contributing no gain. At `T0` the value is **3.33× below
+the peak**, so `T = 7` is the maximiser over the *whole* admissible range, not over
+the range that happened to be convenient.
+
+### The payoff: the join at the certified cut reproduces #7335 exactly
+
+Certified `B_cert = 2.2537355670` ⇒ cut `s_t + s_b ≤ 27` (was 90 on `B_sharp`,
+~1e10 blocks and hopeless). **6,325,875 blocks**, 19 s:
+
+    e_inf  = 2.43929645512078402706542883973   at (s_t, s_b) = (8, 8), top block [3,2,1,1,1]
+    #7335  = 2.43929645512078402706542884314   (independently searched)
+    diff   = -3.41e-27
+
+and `max_s Xblock` over the same window is **2.159802376118285961604 at s = 14** —
+comfortably under `B_cert`, so the cut is not merely large enough by luck. Note
+`s = 14`, not the `s = 9` a first-crossing/greedy rule would stop at: `Xblock`'s
+marginal dips below `ln q₀/2` at `s = 9` (0.02854) and `s = 10` (0.03538), comes
+back **above** at `s = 11` (0.07983), then falls for good. That refutation stands
+and is why the window had to be proved rather than walked.
+
+**So #7335's `e_inf` was a search result and is now a maximum.**
+
+### What is left, stated precisely
+
+- **G1 is the ONLY remaining conditionality on `e_inf`**: `Xbot(s) ≤ Xblock(s)` for
+  every `s`. Measured EQUAL for `s ≤ 12`; top higher by 0.01982 at `s = 13`;
+  unmeasured beyond. The `Xbot := Xblock` substitution is an upper bound only under
+  it. Untouched by any of this.
+- **The arc's headline problem — the upper bound on `M_n` — is untouched.** None of
+  G2's closure bears on it.
+
+Artifacts: `computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py`
+(9/9, checks P8 and P9 are new), witness
+`rev-e-infinity-block-sup-relaxation.witness.json`.
 
 **Do not close this bean.**

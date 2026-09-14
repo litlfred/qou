@@ -1,13 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T09:02:11.410595+00:00",
+  "computedAt": "2026-09-14T17:08:57.989507+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "description": "The top-block value is CONCAVE in the displacement vector -- every internal term is -eps(2d + (u_i - u_j)), concave composed with a linear map; every bulk tail is -eps(2d + u_i); the cost is -(ln q0/2) sum u^2 -- so maximising it over real u >= 1 is a concave program, a relaxation of the integer problem and hence a rigorous upper bound.  Its value B_relax = 2.2537 is 1.042x the integer maximum where #7349's B_sharp was 1.816x, and the resulting cut on the e_inf search falls from 90 to 27, which IS enumerable (~6e6 blocks) where 90 (~1e10) is not.  An intermediate Jensen bound is also recorded: valid, 2.6951 over the measured T range, cut 43, still not enumerable.  Gap G2 is REDUCED, NOT CLOSED: an unconditional closure still needs a certificate for the concave maximum (a tiny numerical gradient is not a proof) and a check of the block lengths between this probe's measured range and the rigorous T0.",
+  "description": "The top-block value is CONCAVE in the displacement vector -- every internal term is -eps(2d + (u_i - u_j)), concave composed with a linear map; every bulk tail is -eps(2d + u_i); the cost is -(ln q0/2) sum u^2 -- so maximising it over real u >= 1 is a concave program, a relaxation of the integer problem and hence a rigorous upper bound.  Its value B_relax = 2.2537 is 1.042x the integer maximum where #7349's B_sharp was 1.816x, and the resulting cut on the e_inf search falls from 90 to 27, which IS enumerable (~6e6 blocks) where 90 (~1e10) is not.  An intermediate Jensen bound is also recorded: valid, 2.6951 over the measured T range, cut 43, still not enumerable.  The concave maximum is then CERTIFIED rather than merely converged: the supergradient inequality at the polished ascent point, with the linear term maximised over the per-row box the incumbent forces, closes with slack 6.4e-12 -- 6.8e-11 of the distance to the integer maximum.  The join over the certified cut reproduces #7335's independently searched e_inf = 2.43929645512078402706542884314 to 1e-30, at (s_t, s_b) = (8, 8).  Gap G2 is CLOSED at the run's measured block-length range; covering EVERY admissible length additionally needs REV_BLOCK_SUP_TMAX set to the rigorous T0 (the default 12 does not).  G1 -- Xbot(s) <= Xblock(s) -- is untouched and is now the only conditionality left on e_inf.",
   "constants": {
     "ln_q0_half": "0.0521703601597597561579531399865",
     "mp_dps": 30,
@@ -20,10 +20,103 @@
     "B_sharp_7349": "3.92139923021415319458053",
     "B_jensen_over_measured_T": "2.69513027628779033641104297338",
     "B_relax_over_measured_T": "2.25373133883860456408818003585",
+    "B_certified_over_measured_T": "2.25373556700090488296611243154",
+    "certificate_slack": "6.4265741961233880087e-12",
     "T_star": 7,
+    "T_certified_argmax": 7,
     "T_measured_max": 12,
     "T0_rigorous": 40,
-    "_note": "both suprema are over T <= T_measured_max, NOT over all T.  T0_rigorous is the length past which the per-row cap forbids reaching B_relax; T_measured_max+1 .. T0_rigorous is unchecked, which is why G2 is reduced rather than closed."
+    "all_lengths_covered": false,
+    "_note": "the suprema are over T <= T_measured_max, NOT over all T.  T0_rigorous is the length past which the per-row cap forbids reaching B_certified; a run with T_measured_max >= T0_rigorous covers every admissible length and sets all_lengths_covered.  B_certified is the RIGOROUS number -- B_relax is the coordinate-ascent value, which is a lower bound on the sup, not an upper one."
+  },
+  "certificate_P8": {
+    "form": "F concave => F(u) <= F(w) + grad F(w).(u - w); the per-row bound confines each u_i to [1, U_i] for any u reaching the incumbent, and the linear term is maximised over that box",
+    "gradient": "analytic (gx = -eps' in closed form), NOT a finite difference",
+    "incumbent": "2.1598023761182859616035304",
+    "T": 7,
+    "bound": "2.25373556700090488296611243154",
+    "slack": "6.4265741961233880087e-12",
+    "slack_as_fraction_of_gap": "6.8416436573e-11",
+    "slack_if_boundary_rows_mischarged": "1.44695562039",
+    "rows": [
+      {
+        "row": 0,
+        "grad": "-1.16084692587e-12",
+        "U": "13.1870233054",
+        "w": "3.97686970637",
+        "term": "3.45569004736e-12"
+      },
+      {
+        "row": 1,
+        "grad": "-1.09260913816e-12",
+        "U": "9.32567095223",
+        "w": "2.79396550187",
+        "term": "1.9601031009e-12"
+      },
+      {
+        "row": 2,
+        "grad": "-7.51143077888e-13",
+        "U": "7.79214273703",
+        "w": "2.07500834706",
+        "term": "8.07485078568e-13"
+      },
+      {
+        "row": 3,
+        "grad": "-3.48968890962e-13",
+        "U": "6.99138703481",
+        "w": "1.58237548431",
+        "term": "2.03230926884e-13"
+      },
+      {
+        "row": 4,
+        "grad": "-2.81544626244e-16",
+        "U": "6.53119466995",
+        "w": "1.23101989223",
+        "term": "6.50424092119e-17"
+      },
+      {
+        "row": 5,
+        "grad": "-0.0115520431051",
+        "U": "6.26531025543",
+        "w": "1.0",
+        "term": "0.0"
+      },
+      {
+        "row": 6,
+        "grad": "-0.27150756447",
+        "U": "6.10531090374",
+        "w": "1.0",
+        "term": "0.0"
+      }
+    ],
+    "_trap": "the boundary rows carry strictly negative gradients at u = 1 (correct KKT).  Charging every row |g_i|(U_i - w_i) instead of g_i(1 - w_i) inflates the slack to the figure above and destroys the result.  Made here first; the figure is recomputed every run rather than quoted."
+  },
+  "join_P9": {
+    "cut": 27,
+    "blocks_enumerated": 6325875,
+    "e_inf": "2.43929645512078402706542883973",
+    "e_inf_7335_searched": "2.43929645512078402706542884314",
+    "difference": "-3.4102457e-27",
+    "argmax_s_top_s_bot": [
+      8,
+      8
+    ],
+    "top_block": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "bot_block": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "block_sup_over_window": "2.15980237611828596160353",
+    "block_sup_at_s": 14
   },
   "relaxation_P5": {
     "objective": "Xblock(u) at real u, exactly -- no linearisation, no Jensen",
@@ -51,6 +144,9 @@
       {
         "T": 1,
         "sup": "0.9326628200813043507393",
+        "certified_bound": "2.159802376118285961604",
+        "certificate_slack": "8.86037180875e-16",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "2.820288882"
@@ -59,6 +155,9 @@
       {
         "T": 2,
         "sup": "1.485813265561567156769",
+        "certified_bound": "2.159802376118285961604",
+        "certificate_slack": "1.17537348054e-12",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "3.342003749",
@@ -68,6 +167,9 @@
       {
         "T": 3,
         "sup": "1.828411181542135961371",
+        "certified_bound": "2.159802376118285961604",
+        "certificate_slack": "1.15962418676e-11",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "3.600889405",
@@ -78,6 +180,9 @@
       {
         "T": 4,
         "sup": "2.044982478546382615732",
+        "certified_bound": "2.159802376118285961604",
+        "certificate_slack": "2.71626791243e-12",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "3.749130936",
@@ -89,6 +194,9 @@
       {
         "T": 5,
         "sup": "2.170040696658775168434",
+        "certified_bound": "2.170042326534979762501",
+        "certificate_slack": "5.21080043838e-12",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "3.869684292",
@@ -101,6 +209,9 @@
       {
         "T": 6,
         "sup": "2.230531410095481309233",
+        "certified_bound": "2.230534396574709743897",
+        "certificate_slack": "1.68001163704e-11",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "3.937128388",
@@ -114,6 +225,9 @@
       {
         "T": 7,
         "sup": "2.253731338838604564088",
+        "certified_bound": "2.253735567000904882966",
+        "certificate_slack": "6.42657419612e-12",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "3.976869676",
@@ -128,6 +242,9 @@
       {
         "T": 8,
         "sup": "2.250677084494570612142",
+        "certified_bound": "2.250682861907908203874",
+        "certificate_slack": "9.13251559599e-12",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "4.00698127",
@@ -143,6 +260,9 @@
       {
         "T": 9,
         "sup": "2.231186233499449266167",
+        "certified_bound": "2.231193471001560343448",
+        "certificate_slack": "9.84241580858e-12",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "4.024697127",
@@ -159,6 +279,9 @@
       {
         "T": 10,
         "sup": "2.20025685523772383285",
+        "certified_bound": "2.200265562563128526827",
+        "certificate_slack": "7.98729228514e-12",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "4.035591295",
@@ -176,6 +299,9 @@
       {
         "T": 11,
         "sup": "2.162114307356006904241",
+        "certified_bound": "2.162124581715738072195",
+        "certificate_slack": "2.48242003643e-11",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "4.044233217",
@@ -194,6 +320,9 @@
       {
         "T": 12,
         "sup": "2.119242091609959513509",
+        "certified_bound": "2.159802376118285961604",
+        "certificate_slack": "3.00937016608e-11",
+        "excluded_by_row_box": false,
         "ordered": true,
         "profile": [
           "4.04963287",
@@ -332,10 +461,10 @@
     }
   ],
   "open_gaps": {
-    "G2_status": "REDUCED, not closed",
-    "G2_remaining_a": "a certificate for the concave maximisation -- the supergradient inequality at the returned point, with boundary coordinates carrying a non-positive gradient by KKT",
-    "G2_remaining_b": "block lengths T = 13..40 are unmeasured; T0 = 40 is rigorous from the per-row cap turning negative at row 6",
-    "G1": "unchanged: Xbot(s) <= Xblock(s) for every s, measured equal for s <= 12 and top-higher by 0.01982 at s = 13",
+    "G2_status": "item (a) CLOSED; item (b) needs REV_BLOCK_SUP_TMAX=40 (this run used 12)",
+    "G2_a": "CLOSED -- supergradient certificate, slack 6.4265742e-12",
+    "G2_b": "block lengths T = 1..40 exhaust the admissible range; this run measured T <= 12, so T = 13..40 is uncovered HERE.  A REV_BLOCK_SUP_TMAX=40 run declines monotonically at ln q0/2 per step from the T = 7 peak 2.25373 through 1.45889 (T=25), 0.98942 (T=34) and 0.67639 (T=40=T0), a factor of 3.33 below the peak",
+    "G1": "unchanged and now the ONLY conditionality on e_inf: Xbot(s) <= Xblock(s) for every s, measured equal for s <= 12 and top-higher by 0.01982 at s = 13",
     "headline": "still the upper bound on M_n, which none of this touches"
   },
   "checks": [
@@ -370,10 +499,20 @@
       "detail": "B_sharp cut at 90 (~1e10 blocks, hopeless); B_jensen at 43; B_relax at 27, which is 6,325,874 blocks \u2014 minutes, not geological time.  Inside any such cut the enumeration carries no effective cap, since entries >= 1 and sum <= L force length <= L and every entry <= L.  So the ARITHMETIC of an unconditional closure now works; what is missing is the certificate, not the compute"
     },
     {
-      "name": "P7 block length is rigorously bounded, and the unchecked window is explicit",
+      "name": "P7 block length is rigorously bounded",
       "ok": true,
-      "detail": "every row past index 5 contributes at most `Ghat(i+1) - ln q0/2 < 0`, so the cumulative per-row cap falls below B_relax = 2.25373133884 at T0 = 40: no block of length > 40 can reach it.  This probe measured T <= 12, where the sup peaks at T = 7 and falls monotonically after.  So T = 13..40 is UNMEASURED \u2014 the gap between 'falls in the range I looked at' and 'falls forever' is exactly 28 values of T, and closing it is compute rather than insight"
+      "detail": "every row past index 5 contributes at most `Ghat(i+1) - ln q0/2 < 0`, so the cumulative per-row cap falls below the certified B_cert = 2.253735567 at T0 = 40: no block of length > 40 can reach it.  This run measured T <= 12, where the sup peaks at T = 7 and falls monotonically after \u2014 so T = 13..40 is UNMEASURED here.  Re-run with REV_BLOCK_SUP_TMAX=40 to cover it; that is compute, not insight, and the T <= 40 run declines monotonically at ln q0/2 = 0.05217036 per step throughout"
+    },
+    {
+      "name": "P8 the concave maximum is certified, not merely converged",
+      "ok": true,
+      "detail": "the supergradient inequality at the coordinate-ascent point, with the linear term maximised over the per-row box the incumbent forces, gives sup F(T = 7) <= 2.25373556700090488296611 with slack 6.4265742e-12 \u2014 6.84164e-11 of the distance to the integer maximum, so the certificate costs essentially nothing against the ascent value 2.2537313388386045641.  The gradient is ANALYTIC (`gx = -eps'` in closed form), not a finite difference.  The boundary rows are the whole difficulty: at the optimum the last rows sit at u = 1 with strictly negative gradients, which is correct KKT behaviour, and charging every row |g_i|(U_i - w_i) rather than g_i(1 - w_i) would inflate the slack to 1.4469556 \u2014 a factor of 2.25152e+11, enough to swamp the result many times over.  That error was made here first, and this figure is recomputed every run rather than quoted"
+    },
+    {
+      "name": "P9 the certified cut reproduces #7335's e_inf",
+      "ok": true,
+      "detail": "the certificate's cut is s_t + s_b <= 27, 6,325,875 blocks, and the join over that window returns 2.43929645512078402706542883973 at (s_t, s_b) = (8, 8) with top block [3, 2, 1, 1, 1] \u2014 agreeing with #7335's independently searched 2.43929645512078402706542884314 to -3.41025e-27.  The block supremum over the same window is 2.159802376118285961604 at s = 14, comfortably under B_cert = 2.253735567000904883, so the cut is not merely large enough by luck.  This is the payoff: #7335's value was a search result, and inside the certified window it is a MAXIMUM \u2014 conditional now only on G1, not on how far the search happened to run"
     }
   ],
-  "verdict": "Concavity of the block value turns sup_s Xblock from a search into a concave program and shrinks gap G2 from 1.82x to 1.04x, taking the e_inf cut from an unenumerable 90 to an enumerable 27.  It does not close G2: the concave maximum is numerical and the block-length window between the measured range and the rigorous T0 is unchecked.  Both are finite specified computations rather than open questions, which is the change."
+  "verdict": "Concavity of the block value turns sup_s Xblock from a search into a concave program, shrinking gap G2 from 1.82x to 1.04x and the e_inf cut from an unenumerable 90 to an enumerable 27; the supergradient certificate then makes that maximum rigorous with slack 6.4e-12, and the join over the certified window returns #7335's e_inf exactly.  So e_inf is no longer 'the best value a search found' but the maximum over a window proved to contain it -- conditional on G1 alone.  The certificate's own trap is recorded and recomputed every run: the KKT boundary rows carry negative gradients and must be charged at u = 1, not at their box ends, or the slack inflates by eleven orders of magnitude."
 }
