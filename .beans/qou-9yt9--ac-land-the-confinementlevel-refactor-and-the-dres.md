@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T07:58:19Z
+updated_at: 2026-09-14T08:09:27Z
 ---
 
 ## Landed (A + C)
@@ -249,3 +249,55 @@ data and encodes NONE of the four conditions it advertises.
 
 **Remaining 3** (post-all-three-merges): DegreeZeroDatum, RungRule,
 TannakaKreinReconstruction. (`TransferMatrixEigenphase` is ledger `legit`.)
+
+
+## DegreeZeroDatum (PR #7360, 2026-09-14) — the capstone proved nothing, and I was wrong about it
+
+`proof-claims-unencoded` **9 -> 7** on this branch. With all three PRs landed: **3**.
+
+**I had called this carrier "a legitimate use". The ledger was right; I was
+wrong.** Machine-checked before touching it:
+
+    example : exists d : DegreeZeroDatum, Inaccessible d :=
+      horizon_nonempty { formallyProvable := False, extractSteps := fun n => n }
+        not_false          -- compiled, exit 0
+
+The capstone headline — "a Turing-complete substrate necessarily hosts a region
+where degree-0 truth is inaccessible" — was proved by DEFINING a datum whose
+provability proposition is literally False. The structure carried no datum at
+all, only a Prop and a step-count, so there was nothing for provability to be
+ABOUT.
+
+**Why the wrong reading is tempting, and this is the transferable part:** the
+theorems DO take `not provable` as an explicit hypothesis, which LOOKS properly
+conditional. But a hypothesis about a constructor-chosen proposition is free to
+discharge. **A conditional-looking signature is not evidence of conditionality
+when the antecedent mentions a universe-Prop field.**
+
+Parameterised over a caller-supplied Datum + FormallyProvable; added
+`not_inaccessible_of_all_provable` for refutability.
+
+## TRAP (new, distinct from the commit-date one): a probe that IMPORTS the file you changed
+
+Run before committing, my two probes returned exit 0 and exit 1 — **both
+backwards** — because they compiled against the stale olean. I caught it ONLY
+because I had written the expected exit codes down first.
+
+And `lean-shadow-verify.sh` reports `rebuild=0` even post-commit for a target
+module: it compiles the TARGET fresh and rebuilds only its DEPENDENCIES into
+the shadow. A probe that imports the target still gets the stale olean.
+
+**Recipe that works** (real tree untouched, 2876 -> 2876 oleans):
+1. `cp -al <paper>/.lake/build/lib/lean $SHADOW`  (COMPLETE, not sparse — Lean
+   resolves a package from the first LEAN_PATH root holding it);
+2. `rm -f $SHADOW/<Mod>.olean` then `lean ... -o $SHADOW/<Mod>.olean`  (unlink
+   first, or the hardlink writes through into the real tree);
+3. prepend $SHADOW to LEAN_PATH with the real paper root removed;
+4. run the probes.
+
+**Write down the expected exit code BEFORE running a verification probe.** It
+is the only thing that distinguished a real result from a stale-olean artifact
+here.
+
+**Remaining 2** (post-all-three-merges): RungRule, TannakaKreinReconstruction.
+(TransferMatrixEigenphase is ledger `legit`.)
