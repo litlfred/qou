@@ -5,8 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T14:36:01Z
-updated_at: 2026-08-24T19:49:32Z
-updated_at: 2026-08-24T17:24:14Z
+updated_at: 2026-09-14T07:58:23Z
 ---
 
 From `scripts/trivially-inhabiting-instance-census.py` (PR #5621, audit
@@ -138,3 +137,50 @@ nothing constrains it** — not merely when a field holds a constant.
 Measure the blast radius of demoting `CrystalGraphRealization.canonical`
 (39 consumers) before touching it — same discipline #5581/#5621 used for their
 one-file demotions. The 11 lower-consumer rows are cheaper and could go first.
+
+
+## A 12th candidate, from a different detector — and the census gate cannot see it (2026-09-14)
+
+`mass-endomorphism/conj-qbeta-c-k-closed-forms.lean:82`
+`noncomputable instance defaultQBetaCKClosedForms : QBetaCKClosedForms`.
+
+Same class of defect as the three confirmed above and the same disposition as
+`ClassicalLimitStpart` (which is already in this bean's unread list): a
+**parameterless global instance** that instance search resolves for the
+`[inst : QBetaCKClosedForms]` of `qbeta_c_k_closed_forms_derived` (line 131),
+making a 3b-cond "conditional" theorem unconditional.
+
+**What makes it worse than a bookkeeping slip:** the instance's field values are
+FITTED, and the file says so in terms — *"whose instance values are FIT, not
+proved"*, residuals *"c_4 0.9%, c_5 2.4%, c_6 14%; c_7 signed-error +114%"*. So
+the theorem is unconditional **on a fit**. AGENTS.md "Axiomatization is NOT a
+Proof" rule 2 names exactly this.
+
+The file also contradicts itself about it: the **class** docstring names the
+instance (*"The instance `defaultQBetaCKClosedForms` axiomatises these"*), while
+the **theorem** docstring 49 lines later says the openness *"is carried by that
+class having no instance"*.
+
+**Scope, measured, so this is not oversold:** `QBetaCKClosedForms` and
+`qbeta_c_k_closed_forms_derived` are referenced by **no other file**. Nothing
+downstream is currently laundered; what is wrong is the file's self-description
+and the `instance`-vs-`def` declaration. Fix = the `ClassicalLimitStpart` one.
+
+**Why the census missed it — a candidate detector-blindness row, deliberately
+NOT written into the taxonomy here.** `trivially-inhabiting-instance-census.py`
+gates on a **constant** data field. This instance's fields are
+`fun q => -2 * (hoefsmitB q)^4` and siblings — *functions of `q`*, not
+constants — so the gate structurally cannot see it, even though a fitted
+closed form is no more derived than a constant is. The discriminator that would
+catch both is "the field's content is not derived from anything in the class",
+which is not mechanically checkable; a cheaper proxy is "parameterless global
+instance + the class is consumed as a `[C]` binder", dropping the constancy
+requirement entirely.
+
+(Not added to `docs/audits/2026-08-15-detector-blindness-taxonomy.md`: PR #7342
+is concurrently adding a row there and the row-count line is already contended —
+see the coordination comment on that PR.)
+
+Found by the `proof-no-self-assuming-projection` arm while adjudicating bean
+`qou-vh1o`; ledgered `genuine` with disposition
+`demote-instance-to-def-and-fix-docstring`.
