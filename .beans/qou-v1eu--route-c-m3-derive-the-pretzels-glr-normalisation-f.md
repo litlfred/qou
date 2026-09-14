@@ -194,3 +194,36 @@ Three causes remain UNSEPARATED, named rather than guessed between:
 **Next honest step:** read the u=0 section's OWN operator and `J` from the source, instead
 of importing (254) and an OCR'd `J` across sections. I stopped rather than try conventions
 until one closes — that is fitting a convention to a target.
+
+## Part 5 (2026-09-14) — the source read: 3 of 4 causes eliminated, Part 2 CONFIRMED, one cause left
+
+Same producer, now 4/5. The targeted source read Part 4 named was done.
+
+**Cause 2 and 3 eliminated — GGM (86), printed:**
+
+    y_m - 3 y_{m+1} + (3 - q^{2+m}) y_{m+2} - y_{m+3} = 0
+
+i.e. `a = (1, -3, 3 - q^{2+m}, -1)` — EXACTLY the operator Part 4 used at `x = 1`, with the
+`q^{2+m}` attachment confirmed on the `y_{m+2}` coefficient. And the blocks are the three
+`H^-_{k,m}(q)` with `(q;q)_n^3`, so rank 3 at u=0 is right.
+
+**Cause 1 eliminated AND Part 2 independently CONFIRMED — GGM Theorem 11 (91)/(92):**
+`det(W_m(q)) = 2`, constant; `J = [[0,0,1],[0,2,0],[1,0,0]]` exactly as read from OCR. So
+`det W(q) det W(1/q) = 2 x 2 = 4` — **exactly the `c` Part 2 derived from
+`det(RHS)/(pref^r det J)` without having seen (91)**. The whole (92) identity is
+determinant-consistent (both sides -1). Part 2's arithmetic is now verified against the
+source, not merely derived; only its ATTRIBUTION needed the Part 4 correction.
+
+**The one remaining cause, now NAMED rather than vague.** GGM's own relation, printed just
+above (91):
+
+    H^+_{k,m}(q^-1) = (-1)^k H^-_{k,-m}(q)
+
+The index **NEGATES** and a sign `(-1)^k` appears **per column**. So `W` at `q^-1` runs its
+index the OPPOSITE way to what the propagation law assumes, and carries a column sign — which
+is exactly the shape that produces a structured column-0 residue. The law's second factor must
+be rebuilt through that printed relation instead of a bare `q -> 1/q` substitution on the
+companion matrix.
+
+**Next honest step:** rebuild the second factor through `H^+_{k,m}(q^-1) = (-1)^k H^-_{k,-m}(q)`.
+That is one derivation, not a convention search — the relation is printed.
