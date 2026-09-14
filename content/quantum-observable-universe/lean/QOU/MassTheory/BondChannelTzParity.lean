@@ -35,12 +35,47 @@ family — every `f` affine in the pair's neutron count — with the invariant c
 the `T_z`-odd part of an affine function is its slope, and the slope here is
 `h(q)/2`, which vanishes only at `q = 1`.
 
-**Provenance.**  Bean `qou-1pig` measured the same defect numerically (`f_pn` is
-the arithmetic mean of `f_pp` and `f_nn` to `1.4e-4`, so the factor is a linear
-ramp in neutron count, "hence odd in `T_z`") and bean `qou-xwur` proposed the
-two-row partition channel as the place isospin actually lives.  Neither was
-formalised.  `bondL_strictMono` in the imported file already contained the energy
-half of §4 and is used rather than re-proved.
+**PROVENANCE — most of §2 is a RE-DERIVATION, and saying so is the point.**
+An earlier version of this docstring claimed the defect "was not formalised".
+That is false, and a corpus-grep found the prior art after the file was written:
+
+* `QOU.MassTheory.BondChargeRule.sumRule_like_pairs_differ` already proves the
+  like-pair difference, in an abstract charge parameterisation
+  (`sumRule c qi qj = (qi+qj−1)·c`, giving `2c`), and its own docstring cites
+  bean `qou-1pig` and writes `f_pp − f_nn = h = 2·(h/2)`.  So
+  `bondOfTz_pp_sub_nn` and the *magnitude* `h/2` of `bondOfTz_oddPart` are not
+  new; this file restates them in the `T_z` variable.
+* `computations/probes/pair-layer-isospin-parity.witness.json` already records
+  the same thing as a measurement: "the charge-antisymmetric (isovector) part of
+  the like-pair channel is `h/2`, **forced exactly by the Hecke skein relation**",
+  together with a number this file does not produce — the isovector term is
+  **1454×** the isoscalar one — and the observation that `bring_color_weighted`
+  cannot repair it, since it touches only the self-conjugate p–n factor.
+
+What is NOT in that prior art, and is what this file contributes:
+
+1. **The `iff`, quantified over `q`** — `bondOfTz_even_iff` /
+   `bondOfTz_even_iff_classical`.  The prior work computes the difference at the
+   substrate; this characterises *when it vanishes at all*, and the answer is
+   only `q = 1`.  That turns a measured defect into a structural exclusion.
+2. **The energy level, including the writhe term** — `writheExponent_odd` shows
+   the writhe normalisation is *itself* purely `T_z`-odd, so it adds a second odd
+   term rather than cancelling the first; `bondL_pp_ne_nn` then follows from
+   `bondL_strictMono`, already proved in the imported file and used rather than
+   re-proved.
+3. **The parity separation** — `multipletWeight_even` and
+   `channels_opposite_parity`, against bean `qou-xwur`'s two-row channel.
+
+**Related prior work that prices the obvious repair, and it LOSES.**  Bean
+`qou-nial` proposes replacing the centred *sum* rule with a charge *product*
+rule, under which `prodRule_like_pairs_are_strong_baseline` makes the strong
+channel exactly charge-symmetric.  Measured over 12 nuclei ²H–⁵⁶Fe against
+AME2020 (`bond_rule_dashboard_comparison_probe.py`), mean `|ln(model/AME)|` goes
+**0.808 → 0.940**: worse.  Its A=3 mirror agreement is "a flat line crossing a
+rising curve" — flat in `A`, identical at `A = 7` where the observed splitting
+has doubled.  Its own recommendation is *do not switch*.  So evenness in `T_z` is
+**not** by itself sufficient, and this file should not be read as arguing for that
+substitution.
 
 No `sorry`, no axiom beyond Mathlib's, no fitted constant.
 -/
