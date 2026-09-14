@@ -65,7 +65,7 @@ from experimental_constants import (  # noqa: E402
 )
 from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -101,12 +101,15 @@ def _check_volume_additivity() -> list[dict]:
         vol_disjoint_expected = vol1 + vol2
         # In the additive convention (Thurston), this IS the volume.
         # The probe just records the identity for the witness.
+        # mpf-valued: `Vol_L1_plus_L2_expected` is read back by the
+        # `hyperbolic_volume_additivity_exact` assertion, whose tolerance used to
+        # be sized to the float64 this cast introduced. Serialized at the witness.
         results.append({
             "L1": name1,
             "L2": name2,
-            "Vol_L1": float(vol1),
-            "Vol_L2": float(vol2),
-            "Vol_L1_plus_L2_expected": float(vol_disjoint_expected),
+            "Vol_L1": vol1,
+            "Vol_L2": vol2,
+            "Vol_L1_plus_L2_expected": vol_disjoint_expected,
             "additive": True,  # mathematical fact, Thurston
         })
     return results
@@ -123,8 +126,11 @@ def _check_geom_epsilon_n_unknots(q: "mpf", epsilon_sym: str) -> list[dict]:
     hbar_q_sq = _hbar_q(q) ** 2
     results = []
     for N in [1, 2, 5, 10, 100, 1000]:
-        # Symbolic value as a string for the witness.
-        coefficient = float(1 / hbar_q_sq)
+        # mpf, NOT float(). `real_part_coefficient` is read back by the
+        # `geom_epsilon_coefficient_is_linear_in_N` assertion, which compares it
+        # against the exact `N / ℏ_q²` -- so the float64 cast here was what the
+        # 1e-9 tolerance down there was sized to absorb.
+        coefficient = 1 / hbar_q_sq
         results.append({
             "N": N,
             "Vol_N_unknots": f"{N} · {epsilon_sym}",
@@ -157,11 +163,11 @@ def _check_dimensional_match(q: "mpf") -> dict:
     of N⊙ may be 2 (not 1) in surreal-infinitesimal units, and
     this propagates into the surreal-arithmetic step.
     """
-    hbar_q_sq = float(_hbar_q(q) ** 2)
+    hbar_q_sq = _hbar_q(q) ** 2
     return {
         "naive_N_birthday_in_eps": "ε⁻¹",
         "after_Geom_normalisation_N_birthday": "ε⁻²",
-        "ℏ_q²_at_substrate": hbar_q_sq,
+        "ℏ_q²_at_substrate": fmt(hbar_q_sq),
         "implication": (
             "The conjecture's N⊙ ~ ε⁻¹ · A/d³ scaling may need "
             "refinement: dimensional analysis with the VolDensity = "
@@ -207,10 +213,25 @@ def main() -> int:
             "carry back into the conjecture .md."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("hbar_q_sq", float(_hbar_q(q) ** 2))
-        .add_data("hyperbolic_volume_additivity_pairs", vol_additivity)
-        .add_data("geom_epsilon_N_unknots", geom_N_unknots)
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("hbar_q_sq", fmt(_hbar_q(q) ** 2))
+        .add_data(
+            "hyperbolic_volume_additivity_pairs",
+            [
+                {k: (fmt(v) if k.startswith("Vol_") else v) for k, v in r.items()}
+                for r in vol_additivity
+            ],
+        )
+        .add_data(
+            "geom_epsilon_N_unknots",
+            [
+                {
+                    k: (fmt(v) if k == "real_part_coefficient" else v)
+                    for k, v in r.items()
+                }
+                for r in geom_N_unknots
+            ],
+        )
         .add_data("dimensional_consistency_check", dim_check)
     )
 
@@ -276,11 +297,23 @@ def main() -> int:
         name="disjoint_union_volumes_are_additive",
         computed=mp.nstr(additivity_gap, 12),
         expected="0",
-        tolerance="1e-15",
+        # RETIGHTENED 1e-15 -> 1e-58. The old gate was explicitly sized to the
+        # float64 the table used to be serialised through; the table now carries
+        # 60-dps strings, so that justification is gone and 1e-15 would be
+        # green-by-omission across 43 orders. The new gate is the SERIALIZATION
+        # ROUND-TRIP BOUND, not the observed gap: the largest tabulated volume is
+        # 2*Vol(B_3) ~ 14.66, and 60 significant digits bound its round-trip
+        # error at 14.66e-60 ~ 1.5e-59, so 1e-58 is the principled floor. The
+        # measured gap is 0.0 EXACTLY -- the registry constants are 50-digit
+        # strings, so `fmt` at 60 dps writes them without loss -- and sizing the
+        # gate to that measurement instead would be the "tolerance sized to its
+        # own miss" defect AGENTS.md names.
+        tolerance="1e-58",
         source=f"max over the {len(vol_additivity)} recorded pairs of "
                f"|tabulated Vol(L₁⊔L₂) − (Vol(L₁)+Vol(L₂))| = "
-               f"{mp.nstr(additivity_gap, 6)}; gate 1e-15 is the float64 the "
-               "table is serialised through, not a chosen band",
+               f"{mp.nstr(additivity_gap, 6)}; gate 1e-58 is the 60-dps "
+               "serialization round-trip bound on the largest tabulated volume, "
+               "not a chosen band",
     )
 
     # (4) Geom_ε(N·⊙) = N·ε/ℏ_q² — the probe's actual deliverable. Additivity
@@ -295,13 +328,21 @@ def main() -> int:
         name="geom_epsilon_coefficient_is_linear_in_N",
         computed=mp.nstr(linearity_gap, 12),
         expected="0",
-        tolerance="1e-9",
+        # RETIGHTENED 1e-9 -> 1e-54, for the same reason as the gate above: the
+        # old one existed to cover the float64 the table stored, and the table
+        # now carries 60-dps strings. Principled bound, not the observed gap: the
+        # largest coefficient is 1000/ℏ_q² ~ 1.0186e5, so 60 significant digits
+        # bound its round-trip error at ~1.02e-55 and 1e-54 is the floor. The
+        # measured gap is 2.1365e-65, i.e. eleven orders INSIDE the gate -- which
+        # is what a non-fitted tolerance looks like, and is the number that shows
+        # the old 1e-9 was 56 orders of slack.
+        tolerance="1e-54",
         source=f"max over N ∈ {[r['N'] for r in geom_N_unknots]} of "
                f"|tabulated coefficient − N/ℏ_q²| = "
                f"{mp.nstr(linearity_gap, 6)}, with 1/ℏ_q² = "
                f"{mp.nstr(_inv_hbar_sq, 16)} recomputed at substrate "
-               "precision; gate 1e-9 covers the float64 the table stores at "
-               "N = 1000",
+               "precision; gate 1e-54 is the 60-dps serialization round-trip "
+               "bound at N = 1000, not a chosen band",
     )
     builder.add_caveat(
         "RESOLVED 2026-08-30 — kept as provenance, since this probe is where "
@@ -341,7 +382,9 @@ def main() -> int:
     print("─── Step 3: dimensional consistency / refinement ───")
     print(f"  naive birthday of N⊙ in ε:       {dim_check['naive_N_birthday_in_eps']}")
     print(f"  refined birthday after Geom norm: {dim_check['after_Geom_normalisation_N_birthday']}")
-    print(f"  ℏ_q² (real-part scale):           {dim_check['ℏ_q²_at_substrate']:.6f}")
+    # float() is DISPLAY-ONLY (AGENTS.md): the field is now a 60-dps decimal
+    # string, so this is a parse for the format spec, not arithmetic.
+    print(f"  ℏ_q² (real-part scale):           {float(dim_check['ℏ_q²_at_substrate']):.6f}")
     print(f"  → IMPLICATION (refinement for the conjecture .md):")
     print(f"    {dim_check['implication']}")
     print()
