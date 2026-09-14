@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T16:12:56Z
+updated_at: 2026-09-14T16:24:21Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -374,3 +374,39 @@ Probe `computations/audits/genus_completeness_observable_target_probe.py`
 **Remaining open:** defects #1 (step-11 hadronic E_0 — vacuous), #4 (step-7/8
 labels), #5 (M_QOU) still want the C1 scope decision; the interior mathematics
 of steps 7-9 untouched.
+
+## 2026-09-14 — defect #1 also answerable from the corpus; 4 judgements → 2
+
+`computations/qbeta/qbeta_e0.py` opens **'the ONE place E_0, the Q_beta energy
+scale, is defined'**, and its ENTIRE public API is:
+
+| `order_zero()` | `m_e/(q(q-1))` | **'NOT canonical'** |
+| `tower_summed()` | `m_e/(q(q-1))/(1-hbar_q^2)` | canonical |
+| `canonical()` | = tower_summed | 'every new producer should call' |
+
+**No hadronic variant.** One scale, both channels. So the cheat-sheet step-9 line
+is wrong TWICE: its 'lept' form IS `order_zero` (explicitly non-canonical), and
+its 'had' form names an object the API does not have (and is circular).
+
+The fix is **completed, owner-instructed work** the document has not absorbed —
+the module records two forms differing 0.9915 % 'with no signal at either call
+site', 'Unified here on owner instruction, 2026-09-12', tower_summed canonical by
+the 2026-09-03 full-tower ruling.
+
+Corpus-determined correct form: `E_0 = m_e/(q_0(q_0-1))/(1-hbar_q^2)`, call
+`qbeta_e0.canonical()`. Measured 4.1859813633 / 4.2274833556, ratio 1.00991486;
+12 producers route through it, 15 hand-roll (reported, NOT adjudicated —
+qou-y3bm's business).
+
+🛑 NOT claimed, and the module says it first: that the tower sum IS
+`sum_k hbar^2k = 1/(1-hbar^2)` — 'taken from the one live precedent, NOT
+derived' (qou-y3bm). **Canonical = BY RULING, not proved.** 🛑 And this is a doc
+line, not the Q_beta residual: E_0 moves Q_beta 0.9915 %, the convention-D
+functional 257x.
+
+Probe `computations/audits/step9_e0_canonical_form_probe.py` (9/9). Commit
+890105c71c, PR #7365 (now carries both #1 and #2).
+
+**Status: 4 judgements → 2.** #4 (step-7/8 labels) and #5 (M_QOU) still want the
+C1 scope decision. Neither #1 nor #2 makes g=4 DERIVED — the route still opens in
+`Rep(SU_q(2))` and stays inside the chi=-6 <-> SU(2) cycle.
