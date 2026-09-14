@@ -83,7 +83,7 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
 )
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -172,15 +172,18 @@ def main() -> int:
         wenzl_relh2 = (sy - sy_cl) / (sy_cl * h2) if sy_cl != 0 else None
         # (4) normalized trace = 1 identically
         syd = sum(classical_dim(p) * y_lambda_wenzl_bridge_numeric(p, q0) for p in parts)
+        # mpf-valued, NOT float(). These four are read back by `_spread` below
+        # and the resulting spread is compared against 1e-40 -- a threshold no
+        # float64 quantity can ever satisfy except by landing on exact zero, so
+        # casting here made the n-stability test decidable only in the one case
+        # where it happens to be trivially true. Serialized once, at the witness.
         per_n.append(
             {
                 "n": n,
-                "count_relh2": 0.0,                       # q-independent
-                "jones_unlink_relh2": float(jones_relh2),  # ∝ (n-1) → diverges
-                "wenzl_unnorm_relh2": (
-                    float(wenzl_relh2) if wenzl_relh2 is not None else None
-                ),
-                "normalized_trace": float(syd),           # ≡ 1
+                "count_relh2": mp.mpf(0),                 # q-independent
+                "jones_unlink_relh2": jones_relh2,        # ∝ (n-1) → diverges
+                "wenzl_unnorm_relh2": wenzl_relh2,
+                "normalized_trace": syd,                  # ≡ 1
             }
         )
 
@@ -199,7 +202,9 @@ def main() -> int:
         "jones_unlink": _spread("jones_unlink_relh2"),
         "wenzl_unnorm": _spread("wenzl_unnorm_relh2"),
     }
-    n_stable = sorted(k for k, v in n_spread.items() if v < 1e-40)
+    # mpf comparison now, so the 1e-40 is a real tolerance rather than a
+    # synonym for "exactly 0.0 in binary64".
+    n_stable = sorted(k for k, v in n_spread.items() if v < mp.mpf(10) ** -40)
 
     jones_grows = all(
         abs(per_n[i]["jones_unlink_relh2"]) > abs(per_n[i - 1]["jones_unlink_relh2"])
@@ -214,9 +219,16 @@ def main() -> int:
     target = mp.pi ** 2 / 720
     prefactor_ok = mp.almosteq(prefactor, target, rel_eps=mp.mpf(10) ** -40)
 
-    builder.add_parameter("substrate_q", float(q0))
-    builder.add_parameter("h2_substrate", float(h2))
-    builder.add_parameter("delta_quantum_dim", float(delta))
+    builder.add_parameter("substrate_q", fmt(q0))
+    builder.add_parameter("h2_substrate", fmt(h2))
+    builder.add_parameter("delta_quantum_dim", fmt(delta))
+
+    def _ser_per_n(row: dict) -> dict:
+        """Serialize one per-n row: mpf -> 60-dps string, None passes through."""
+        return {
+            k: (v if k == "n" or v is None else fmt(v))
+            for k, v in row.items()
+        }
 
     builder.add_data(
         "selection_principle",
@@ -224,7 +236,7 @@ def main() -> int:
             "criterion": "n-stability — a single-number observable cannot depend "
             "on the mode-cutoff n; functionals whose substrate-deviation grows "
             "with n are inadmissible.",
-            "per_n": per_n,
+            "per_n": [_ser_per_n(r) for r in per_n],
             "verdict": {
                 "bare_count": "n-STABLE (q-independent) → ADMISSIBLE, unique.",
                 "jones_unlink": f"rel-h² ∝ (n-1), slope≈{float(jones_linear_slope):.4f}, "
