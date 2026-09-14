@@ -208,7 +208,97 @@ alarm on it before checking.
   **the cheat sheet misstates step 10's objective**.
 - Two self-corrections: the dimension-weighted normalisation, and C5a's framing.
 
-**Next** (not done here): step 1 itself — *is the choice of `V` derived, or is it
-the framework's primitive?* Everything above now hangs on that one sentence, so it
-is the highest-value remaining question on this walk. Steps 4, 7, 8, 9, 11 also
-remain unwalked.
+---
+
+## Steps 1 and 4 — where `V` comes from, and the cycle at the root
+
+Step 3 left everything hanging on `V = fundamental of SU_q(2)`, so this walks it.
+
+**Step 1 does not choose `V`.** `prop:braid-action-tensor` reads *"For each object
+`V` in `𝐂`"* — the construction is for an **arbitrary** object.
+
+**Step 4 does.** `why-b3.md`:
+
+> *"The Descartes condition `χ(A) = −6` **forces** the gauge group to be a quantum
+> form of `SU(2)`, which has rank 1. Consequently, the fundamental representation
+> `V` is 2-dimensional."*
+
+So the dependency runs **step 4 → step 1**, against the direction the chain is
+drawn. That alone is worth recording: the chain is a line and the dependency is not.
+
+### The cycle, and only half of it is declared
+
+`chi-minus-six-chain.md` is the block that fixes `χ(A) = −6`. Its **Step 1** reads:
+
+> ***"Step 1: Start with the QOU triple.** We have `(𝐂, A, τ)` with gauge group
+> `G = SU(2)`."*
+
+and Step 2 uses `G = SU(2)` to get the rank-2 bundle that Riemann–Roch then turns
+into `χ = 2 − 2g`.
+
+So:
+
+```
+why-b3            :  χ = −6   FORCES   SU(2)  ⟹  dim V = 2
+chi-minus-six-chain: STARTS FROM  G = SU(2),  uses it at step 2
+```
+
+**Read as derivations, those form a cycle.**
+
+The block *does* declare a different circularity, in its own words:
+
+> *"Step 5, which fixes the branch-point count at six, reads that count off the
+> Weierstrass points of Bring's surface — the surface the chain then identifies at
+> Step 7 — so **the chain locates the value rather than deriving it from the axioms
+> alone**."*
+
+That candour is to its credit. **The step-1 assumption is the one it does not
+declare**, and it is the larger of the two, because `dim V = 2` is what everything
+downstream — the row cap, `y_(1³) = 0`, `z_D`, `α`, the flavour split — rests on.
+
+### 🛑 What this is and is not
+
+**This is not a claim that the mathematics is wrong.** Each block is sound read as
+a *consistency* statement: "given the QOU triple with `G = SU(2)`, `χ = −6`
+follows", and "given `χ = −6`, `SU(2)` follows" are both fine. The measured fact is
+that neither derives `SU(2)` from anything prior, and that the condition the whole
+chain rests on is **assumed at step 1 of the chain presented as deriving it**.
+Scope (a): an observation about the corpus's dependency structure.
+
+**There is a candidate independent route.** `cohomological-embedding.md` §(iv):
+
+> *"Genus 4 is forced. The QOU axioms require `T_{2,3}` and `T_{2,9}` to embed, but
+> `T_{2,11}` must not. This uniquely forces `g = 4` and `χ = −6`."*
+
+This does not visibly assume `SU(2)` — but it takes a **knot-embedding pattern** as
+input, which relocates the condition rather than removing it. Whether that route is
+genuinely independent is **not settled here**.
+
+### A rank contradiction, in passing
+
+- `why-b3.md`: `SU(2)` *"has **rank 1**"* — correct.
+- `descartes-knot-eigenbasis-derivation.md`: `χ = −6` *"sets the genus `g = 4` and
+  gauge group `SU_q(2)` to **rank 2**"*.
+
+`SU(2)` has rank 1; **2 is `dim V`**, not the rank. One of the two states a wrong
+rank as a derived consequence of `χ = −6`.
+
+---
+
+## Where the walk stands
+
+The chain's conditions do not accumulate step by step — they **converge on one**:
+
+```
+χ = −6  ⇄  G = SU(2)  ⟹  dim V = 2  ⟹  ℓ(λ) ≤ 2  ⟹  y_(1³)=0  ⟹  z_D  ⟹  α
+   ↑ cycle, half-declared        └──────── all of this is sorry-free ────────┘
+```
+
+Everything to the right of `dim V = 2` is **derived and sorry-free**. Everything to
+the left is a cycle with one leg undeclared. Step 10's `n_target` is the one
+*separate* open condition found.
+
+**Next**, in priority order: (1) whether `cohomological-embedding`'s route is
+genuinely independent of `SU(2)` — that is the question that would break the cycle;
+(2) the rank contradiction, which is a one-line fix someone should own; (3) steps
+7, 8, 9, 11, still unwalked.

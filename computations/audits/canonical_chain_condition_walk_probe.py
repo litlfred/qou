@@ -262,6 +262,53 @@ def main() -> int:
     print("      on which cell to adopt is NOT taken here.")
 
     print()
+    print("7. STEP 1/4 -- WHERE V COMES FROM, AND THE CYCLE AT THE ROOT")
+    quotes = [
+        ("content/quantum-observable-universe/braids-and-knots/why-b3.md",
+         "The Descartes condition $\\chi(A) = -6$ forces the gauge group to be a "
+         "quantum form of $\\mathrm{SU}(2)$",
+         "chi = -6  =>  SU(2)  =>  dim V = 2"),
+        ("content/quantum-observable-universe/brings-surface/chi-minus-six-chain.md",
+         "**Step 1: Start with the QOU triple.** We have $(\\mathbf{C}, A, \\tau)$ "
+         "with gauge group $G = \\mathrm{SU}(2)$",
+         "the chi = -6 chain STARTS FROM SU(2)"),
+        ("content/quantum-observable-universe/brings-surface/chi-minus-six-chain.md",
+         "so the chain locates the value rather than deriving it from the axioms alone",
+         "the chain DECLARES its step-5 circularity, in its own words"),
+        ("content/quantum-observable-universe/brings-surface/cohomological-embedding.md",
+         "This uniquely forces $g = 4$ and $\\chi = -6$",
+         "a SECOND route: the embeddability pattern T_{2,3}, T_{2,9} in / T_{2,11} out"),
+    ]
+    for rel, needle, gloss in quotes:
+        present = needle in (ROOT / rel).read_text()
+        ok &= present
+        print(f"   [{'FOUND' if present else 'MISSING'}] {rel.split('/')[-1]}")
+        print(f"            {gloss}")
+    print()
+    print("   Step 1's own proposition (prop:braid-action-tensor) says 'For each")
+    print("   object V in C' -- ARBITRARY.  So V is not fixed at step 1; it is fixed")
+    print("   by step 4 (Bring, chi = -6), which the chain draws DOWNSTREAM of it.")
+    print("   The dependency is a CYCLE, and only half of it is declared:")
+    print()
+    print("     why-b3:             chi = -6  FORCES  SU(2)  =>  dim V = 2")
+    print("     chi-minus-six step1: STARTS FROM  G = SU(2)  and uses it at step 2")
+    print("     chi-minus-six step5: reads 6 off Bring, which step 7 then identifies")
+    print("                          <- THIS one the block declares; the step-1 one it does not")
+    print()
+    print("   NOT a claim that the mathematics is wrong.  Each block is fine as a")
+    print("   CONSISTENCY statement.  The measured fact is that, read as derivations,")
+    print("   they form a cycle, and that the everything-hangs-on-it condition")
+    print("   (dim V = 2) is assumed at step 1 of the chain presented as deriving it.")
+    print("   cohomological-embedding's route may be independent -- it does not")
+    print("   visibly assume SU(2) -- but it takes a knot-embedding PATTERN as input,")
+    print("   which relocates the condition rather than removing it.")
+    print()
+    print("   ALSO: two blocks disagree on the RANK.  why-b3 says SU(2) has 'rank 1'")
+    print("   (correct); descartes-knot-eigenbasis-derivation says chi = -6 'sets the")
+    print("   genus g = 4 and gauge group SU_q(2) to rank 2'.  SU(2) has rank 1; 2 is")
+    print("   dim V.  One of the two is stating a wrong rank as a derived consequence.")
+
+    print()
     print("VERDICT:", "PASS -- steps 5 and 10 each carry a condition the chain's own "
           "step statement does not state; alpha is identified as a Wenzl weight"
           if ok else "FAIL")
