@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-09-14T06:23:59.012Z",
+  "updated_at": "2026-09-14T06:44:29.484Z",
   "entries": {
     "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3697,9 +3697,9 @@
       "pattern": "prop-universe-field",
       "line": 243,
       "verdict": "genuine",
-      "file_sha": "275618933ed9",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `degree_zero_blocked`, `degree_one_leaks`, `degree_two_leaks` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[HorizonStructure]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.\n\nNOTE: `horizon_nonempty : degree_zero_blocked → True` does mention `degree_zero_blocked` and constrains nothing — `P → True` is provable for every `P`. A consumer whose conclusion is `True` is not a consumer.",
+      "file_sha": "f6bd0596e01b",
+      "disposition": "horizon-nonempty-was-a-tautology",
+      "evidence": "FIXED 2026-09-14. All four propositions parameterised.\n\nTHE DEFECT WAS WORSE THAN THIS ENTRY RECORDED. Beyond the three `Prop`-universe fields, `horizon_nonempty` read `degree_zero_blocked -> True`, which is a TAUTOLOGY: `fun _ => trivial` discharges `X -> True` for every `X`. So the one field shaped like an implication constrained nothing, and the conclusion its docstring names -- \"the horizon is non-empty\" -- was never written into the type at all. It now carries `degreeZeroBlocked -> horizonNonempty` over named parameters.\n\n`computationalHorizonStructure` supplied `True` for all three conditions as FIELD VALUES, invisible outside the definition; they are now type arguments, so the declaration says on its face that it asserts nothing about leakage or non-emptiness. Encoding them needs the jet-horizon algebra this file deliberately does not import, so they are left visible rather than guessed at.\n\nlean -DautoImplicit=false -s 65536 exit 0. Self-contained: 1 file, no other consumer in the tree.\n\n--- prior evidence, unchanged ---\nADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `degree_zero_blocked`, `degree_one_leaks`, `degree_two_leaks` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[HorizonStructure]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.\n\nNOTE: `horizon_nonempty : degree_zero_blocked → True` does mention `degree_zero_blocked` and constrains nothing — `P → True` is provable for every `P`. A consumer whose conclusion is `True` is not a consumer.",
       "reviewed_at": "2026-09-07T09:55:00Z",
       "reviewer": {
         "kind": "agent",
@@ -3714,9 +3714,9 @@
       "pattern": "prop-universe-field",
       "line": 237,
       "verdict": "genuine",
-      "file_sha": "7dfdf4b1f7cd",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `q_regularized`, `classical_obstruction` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[ObstructionParallel]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "file_sha": "462ae76281ed",
+      "disposition": "vacuity-was-realised-now-visible-in-the-type",
+      "evidence": "FIXED 2026-09-14. `q_regularized` and `classical_obstruction` parameterised.\n\nTHE VACUITY WAS NOT MERELY POSSIBLE, IT WAS REALISED. Both instances in the file -- `nsParallel` and `computationalParallel` -- set BOTH `Prop`-universe fields to `True` explicitly, hidden inside the definitions. They now read `ObstructionParallel True True`, so what is being asserted is on the face of each declaration.\n\nNothing downstream weakens: `both_topologically_obstructed` uses `top_nonzero` alone, which is genuine content (`topological_invariant != 0`, discharged by `norm_num` at -6 and 8). Encoding the two would mean stating q-NS global well-posedness and the classical obstruction, both open -- an authorial call.\n\nlean -DautoImplicit=false -s 65536 exit 0. Self-contained: 1 file.\n\n--- prior evidence, unchanged ---\nADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `q_regularized`, `classical_obstruction` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[ObstructionParallel]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
       "reviewed_at": "2026-09-07T09:55:00Z",
       "reviewer": {
         "kind": "agent",
