@@ -234,31 +234,40 @@ theorem nontorsion_full_tree (_qt : NonTorsionReal) (c : ℕ) (hc : c > 0) :
     - Both are open at the classical limit (q → 1)
 
     This structure captures the parallel. -/
-structure ObstructionParallel where
+structure ObstructionParallel (qRegularized classicalObstruction : Prop) where
   /-- The topological invariant (χ for NS, deg P_L for computation). -/
   topological_invariant : ℤ
   /-- The topological invariant is nonzero. -/
   top_nonzero : topological_invariant ≠ 0
-  /-- At q > 1, the q-deformation regularizes. -/
-  q_regularized : Prop
-  /-- At q = 1 (classical limit), the obstruction is visible. -/
-  classical_obstruction : Prop
+  /-- At `q > 1`, the q-deformation regularizes. -/
+  q_regularized : qRegularized
+  /-- At `q = 1` (classical limit), the obstruction is visible. -/
+  classical_obstruction : classicalObstruction
 
 /-- The NS obstruction parallel. -/
-def nsParallel : ObstructionParallel where
+-- 🛑 `q_regularized` and `classical_obstruction` were `Prop`-UNIVERSE fields,
+-- and BOTH instances below set them to `True` — so the vacuity was not merely
+-- possible, it was realised, and hidden inside the definitions.  Parameterised
+-- 2026-09-14: the `True`s are now type arguments, on the face of each
+-- declaration.  Neither is consumed by any theorem in this file
+-- (`both_topologically_obstructed` uses `top_nonzero` alone, which is genuine
+-- content), so nothing downstream weakens.  Encoding them means stating
+-- q-NS global well-posedness and the classical obstruction, both open — an
+-- authorial call, not a cleanup.
+def nsParallel : ObstructionParallel True True where
   topological_invariant := -6  -- χ(A) for Descartes/Bring's
   top_nonzero := by norm_num
-  q_regularized := True  -- q-NS globally well-posed for q > 1
-  classical_obstruction := True  -- NS regularity open at q = 1
+  q_regularized := trivial  -- q-NS globally well-posed for q > 1: ASSERTED AS `True`
+  classical_obstruction := trivial  -- NS regularity open at q = 1: ASSERTED AS `True`
 
 /-- The computational obstruction parallel.
     (Using crossing number c = 3 as minimal nontrivial example;
     the Skein degree is c² - 1 = 8.) -/
-def computationalParallel : ObstructionParallel where
+def computationalParallel : ObstructionParallel True True where
   topological_invariant := 8  -- c² - 1 for c = 3 (trefoil)
   top_nonzero := by norm_num
-  q_regularized := True  -- BQP at torsion points
-  classical_obstruction := True  -- P ≠ NP at non-torsion q (conjectured)
+  q_regularized := trivial  -- BQP at torsion points: ASSERTED AS `True`
+  classical_obstruction := trivial  -- P ≠ NP at non-torsion q: ASSERTED AS `True`
 
 /-- Both parallels have nonzero topological invariant. -/
 theorem both_topologically_obstructed :
