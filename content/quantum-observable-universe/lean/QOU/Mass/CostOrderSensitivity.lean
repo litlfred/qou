@@ -48,11 +48,36 @@ instantiation in the entire corpus. Neither does `E_cross`. An
 abelianization-quantified theorem would have claimed a family it provably does
 not cover.
 
-The right invariant is the **multiset** of letters (equivalently `List.Perm`),
-which is what the sibling probe
+The right invariant **for a cost** is the **multiset** of letters (equivalently
+`List.Perm`), which is what the sibling probe
 `computations/qbeta/qbeta_embedding_energy_can_discriminate_probe.py` already
 names, and it is strictly coarser: every function of the exponent sum is a
 function of the multiset, not conversely.
+
+### …but the abelianization framing is RIGHT one step over, for the EMBEDDING
+
+Recorded 2026-09-14, after the retraction above and against it in part. The
+`geodesic → O'Hara` bridge (`qbeta_bring_ohara_bridge_probe.py`, merged #7374)
+sends a braid word to a cusp-torus lattice class
+
+    (m, ℓ) = (exponent sum, strand count)
+
+— its own words, at `:65`. **`m` is exactly the abelianization**: `e : B_d → ℤ`,
+`σ_i ↦ 1`, induces `B_d/[B_d,B_d] ≅ ℤ` (Black–Samson,
+`library/black-samson-phd2010sp/sections/sec-008-12-summary-of-thesis.md:126`),
+and `ℓ` does not depend on the word at all.
+
+So the abelianization is the wrong invariant for the **cost** and the right one
+for the **embedding map** — and that map is *strictly coarser* than the multiset,
+so it loses strictly more. `selected_not_determined_of_cost_factors` is
+quantified over an **arbitrary** quotient `π` precisely so it covers this case:
+instantiate `π = (writhe, strands)` and the sibling's measured negative — all
+four two-crossing gluon dressings share one class, one geodesic and one energy —
+is an instance of it.
+
+The lesson is about *which object* a blindness claim is attached to, not about
+the invariant: the same quotient that under-prunes on one side of the pipeline
+over-collapses on the other.
 
 ## Scope (AGENTS.md (a)/(b) vocabulary)
 

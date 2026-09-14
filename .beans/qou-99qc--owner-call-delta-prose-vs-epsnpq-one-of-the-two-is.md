@@ -2757,3 +2757,44 @@ is still **no map from a braid word to a curve in or on the Bring surface**, so
 the order-sensitive functional the owner's objection points at has nothing to
 consume. This result says what any replacement must have (it must not be
 constant on the multiset); it does not supply one.
+
+## 2026-09-14 (session gifted-feynman, 2) — my retraction was HALF wrong: the abelianization is right for the EMBEDDING
+
+The entry above retracts an abelianization framing as *"wrong for its own
+targets"*. That retraction is **correct for costs and wrong one step over**, and
+a sibling's merged bridge is what shows it.
+
+**The claim.** `qbeta_bring_ohara_bridge_probe.py` (7/7, merged #7374) sends a
+braid word to a cusp-torus lattice class
+
+    (m, ℓ) = (exponent sum, strand count)
+
+— verified at source, `:36-37` and `:65`, and again at `:343-344`
+(`m = BASE_WRITHE + writhe(g)`, `ell = STRANDS`). **`m` is exactly the
+abelianization**: `e : B_d → ℤ`, `σ_i ↦ 1`, induces `B_d/[B_d,B_d] ≅ ℤ`
+(Black–Samson, `library/black-samson-phd2010sp/…/sec-008-12-summary-of-thesis.md:126`),
+and `ℓ` does not depend on the word at all.
+
+**So the same quotient under-prunes on one side of the pipeline and
+over-collapses on the other.** Against the *cost* functions it is too coarse to
+bite — crossing count `n₊ + n₋` and `E_cross = n₊q − n₋q⁻¹` both survive it,
+which is why the retraction stands. Against the *embedding map* it is precisely
+what the corpus does, and it is **strictly coarser than the multiset**, so it
+loses strictly more.
+
+**Consequence for the Lean.** `selected_not_determined_of_cost_factors` is
+quantified over an **arbitrary** quotient `π`, so it covers this instance with
+no change: put `π = (writhe, strands)` and the sibling's measured negative —
+all four two-crossing gluon dressings share one class, one geodesic and one
+energy — is an instance of the general theorem rather than a separate fact.
+The docstring now records this beside the retraction.
+
+**The reusable lesson is about attachment, not about the invariant.** "X is
+blind to Y" is a claim about a *particular map*; carrying it to a neighbouring
+map in the same pipeline is not a corollary. I made that error in one direction
+and would have missed the true instance in the other.
+
+**Nothing re-scored, nothing selected.** The sibling's own scoping stands: the
+bridge does not select, the dashboard rows stay un-re-scored, and the
+`u = ln q₀` vs `u = 2 ln q₀` meridian-normalisation binary stays open with
+neither branch adopted.
