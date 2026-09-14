@@ -132,3 +132,39 @@ calls **2556** changed — **7** are pure mtime churn, 0.27 %. The olean tree
 genuinely is behind 2563 modules' last source commit. The rule is sound as
 written and needs no change; I had a fix drafted and it would have bought
 nothing. Probe kept at `docs/audits/2026-09-14-library-sweep-churn-probe.py`.
+
+### 🛑 …and my account of WHY it moved was wrong too. Corrected the same hour.
+
+The section above says the count moved because *"the restored cache branch
+changed between the two measurements."* **It did not.** Measured with
+`git ls-remote origin refs/heads/lake-cache/qou-v4-24-0` — free, no objects
+fetched — the branch head is **`a792c46d01b`**, exactly the 2026-09-06 head
+AGENTS.md records. No reseed.
+
+**The supported account, in two container steps, neither of them corpus repair:**
+
+| | QOU oleans present |
+|---|---|
+| 2026-09-06 container, when 1089 was measured | 2698 − 1089 = **1609** |
+| after restoring `lake-cache/qou-v4-24-0` (`a792c46d01b`) | **2702** |
+| this container today | **2793** |
+
+The first step is a **cache restore** (+1093). The second (+91) is a
+**concurrent background `lake build`**: 236 QOU oleans and 235 paired `.trace`
+files carry mtimes of 2026-09-13, later than the seed they would otherwise have
+come from, and `lean`-direct writes no trace — so Lake wrote them. AGENTS.md
+documents this exact behaviour in this container one week earlier: *"the QOU tree
+went 2660 → 2713 across a content sweep … `scripts/lean-build-bg.sh`, re-fired by
+this session's compaction, ran `lake build` concurrently."*
+
+**The conclusion is unchanged and sharper.** Under the reseed story the count
+tracked *someone's deliberate seeding decision*; under the measured one it tracks
+**whether a SessionStart hook happened to fire and how far it got before being
+quiesced.** That is a weaker thing still, and it is the one that is true.
+
+**The cheap discriminator, for next time:** `git ls-remote` returns a branch head
+without transferring a single object. AGENTS.md warns at length that *verifying*
+the cache branch costs ~1.7 GiB and has bricked a session at low disk — that
+warning is about `git fetch`, and it is what made me infer a reseed instead of
+checking one. `ls-remote` is not covered by it and settles the question in a
+second.
