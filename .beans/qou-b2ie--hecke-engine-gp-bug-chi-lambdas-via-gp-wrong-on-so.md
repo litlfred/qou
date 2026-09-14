@@ -256,3 +256,55 @@ the note above, not from this container.
 
 **Still open for THIS bean:** the 3 un-run producers of the risk set, and the
 output-path fix that would replace the substring attribution.
+
+## 2026-09-14 (triage fixed) — the output-path fix is NOT implementable; a different discriminator is
+
+I said the fix was to "key on the producer's declared output path, not on a
+substring of the payload". **Measured, that cannot be done** — the corpus does
+not carry the data:
+
+| candidate key | coverage |
+|---|---|
+| a declared producer field (`producer`, `computation.script`, `witness.producer`) | **18 of a 400 sample — 4.5 %** |
+| the witness-name → producer naming convention (`foo_bar.py` → `foo-bar.witness.json`) | **1780 of 3474 — 51.2 %** |
+
+Neither can replace the substring match. Recording that as a negative rather
+than leaving a fix in the bean that the next agent would spend a session
+discovering is impossible.
+
+**What DOES separate the false positive** is how many producer stems the witness
+names. An audit or inventory witness lists every script it audited, so a
+substring hit means *"it catalogued this producer"*, not *"this producer wrote
+it"*. Measured on the six candidates:
+
+    catalogue witnesses : 579, 132, 1595 producer stems named
+    real GP products    : 3, 4, 4
+
+Two orders of magnitude apart, no overlap, so the threshold is not delicate.
+Set at 20; the script prints each witness's count so a reader can see where it
+falls, and lists what it excluded (15 witnesses, up to **2162** stems named).
+
+    witnesses naming a grep-matched stem  : 55
+      producer never calls GP             : 40
+      live GP call, post-guard            : 12
+      live GP call, pre-guard or undated  :  3   <-- RISK SET
+
+### 🛑 The fixed script returns the SAME 3 the buggy one did — that is not vindication
+
+My original `next(...)`-over-a-set version also printed 3, with the same
+membership. It got there by nondeterministically attributing three witnesses to
+prose-only producers; the fixed version gets there by correctly excluding three
+audit catalogues. **A right answer by an unsound route is still unsound** — the
+membership would have differed on the next run, and the agreement here is
+coincidence, not evidence the bug was harmless.
+
+### Where the risk set now stands
+
+| witness | status |
+|---|---|
+| `derived-chi-catalogue-bridge-factor-omega` (2026-07-06) | **re-run: mathematically IDENTICAL** — clean |
+| `derived-chi-catalogue-production-wire-demo` (2026-07-07) | **settled: a grouped→interleaved WORD change, not a GP bug** (`qou-5c64`) |
+| `derived-chi-catalogue-matrix-m-mu-n-prototype` (2026-06-08) | **not examined** |
+
+So this bean's re-run half is down to **one** unexamined witness — and neither
+of the two examined ones turned out to carry a pre-fix GP number.

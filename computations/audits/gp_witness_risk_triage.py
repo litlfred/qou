@@ -18,9 +18,26 @@ detector-blindness class in `docs/audits/2026-08-15-detector-blindness-taxonomy.
   2. "the source file greps for chi_q_via_gp" is not "the source CALLS it" --
      16 of 30 grep-matched producers name it only in a docstring or comment.
 
+Three over-counting traps, all of the detector-blindness class:
+
+  1. "the witness blob names a GP producer" is not "a value came through GP".
+  2. "the source greps for chi_q_via_gp" is not "the source CALLS it" -- 16 of
+     30 grep-matched producers name it only in a docstring or comment.
+  3. an AUDIT/CATALOGUE witness names every script it audited, so a substring
+     match says "it listed this producer", not "this producer wrote it".
+
+Trap 3 is separated by how many producer stems the witness names: measured, the
+audit catalogues name 579/132/1595 and the real GP products name 3 or 4.
+
+NOT available as a cleaner key, both measured 2026-09-14 and both rejected:
+a declared producer field exists on only ~4.5% of witnesses (18 of a 400
+sample), and the witness-name-to-producer naming convention holds for only
+51.2% (1780 of 3474). Neither can replace the substring match; the traps above
+are what make it usable.
+
 Measured 2026-09-14 on `main`: 55 witnesses name a grep-matched producer;
-36 of those producers never call GP; 16 are post-guard; **3** are the real
-risk set. Read-only -- runs no producer and writes nothing.
+29 of those producers never call GP; 20 are post-guard; 3 are audit catalogues;
+**3** are the real risk set. Read-only -- runs no producer and writes nothing.
 """
 import ast, json, pathlib, subprocess, sys
 
@@ -58,6 +75,16 @@ for p in sorted(grepped):
         live.add(pathlib.Path(p).stem)
 
 stems = {pathlib.Path(p).stem for p in grepped}
+
+# Every producer stem in the tree, used only to recognise CATALOGUE witnesses.
+# An audit/inventory witness names the scripts it audited, so a substring match
+# against its payload says "it listed this producer", not "this producer wrote
+# it". Measured on the six candidates: the three audit catalogues name 579, 132
+# and 1595 producer stems; the three real GP products name 3 or 4. Two orders of
+# magnitude apart with no overlap, so the threshold is not delicate.
+ALL_STEMS = {q.stem for q in (ROOT / "computations").glob("**/*.py")}
+CATALOGUE_AT = 20
+
 rows = []
 for w in (ROOT / "computations").glob("**/*.witness.json"):
     if "_deprecated" in str(w):
@@ -78,8 +105,10 @@ for w in (ROOT / "computations").glob("**/*.witness.json"):
         continue
     at = (d.get("computedAt") or d.get("witness", {}).get("computedAt") or "")[:10]
     live_hits = [h for h in hits if h in live]
+    named = sum(1 for q in ALL_STEMS if q in blob)
     rows.append((at, live_hits[0] if live_hits else hits[0],
-                 bool(live_hits), str(w.relative_to(ROOT))))
+                 bool(live_hits) and named < CATALOGUE_AT,
+                 str(w.relative_to(ROOT)), named))
 
 risk = [r for r in rows if r[2] and (not r[0] or r[0] < GUARD)]
 print(f"grep-matched producers                : {len(grepped)}")
@@ -91,5 +120,10 @@ print(f"  producer never calls GP             : {sum(1 for r in rows if not r[2]
 print(f"  live GP call, computedAt >= {GUARD} : {sum(1 for r in rows if r[2] and r[0] and r[0] >= GUARD)}")
 print(f"  live GP call, pre-guard or undated  : {len(risk)}   <-- RISK SET")
 for r in sorted(risk):
-    print(f"    {r[0] or '(undated)'} | {r[1]} -> {r[3]}")
+    print(f"    {r[0] or '(undated)'} | {r[1]} -> {r[3]}  (names {r[4]} producers)")
+cat = [r for r in rows if r[2] is False and r[4] >= CATALOGUE_AT]
+if cat:
+    print(f"  excluded as CATALOGUE witnesses (name >= {CATALOGUE_AT} producers): {len(cat)}")
+    for r in sorted(cat)[:6]:
+        print(f"    {r[3]}  (names {r[4]})")
 sys.exit(0)
