@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T20:41:05.096533+00:00",
-  "commitSha": "b6a60939fd8d36597cfbf86aba4a1c10860dbdec",
+  "computedAt": "2026-09-14T20:56:51.566677+00:00",
+  "commitSha": "58ba754700243dd5bba7f5429357ff8805c6b3c8",
   "assertions": [
     {
       "name": "1. det rho(sigma_i) = -1 identically",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "qbeta-eigenphase-rationality-quantization",
   "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
-  "scriptHash": "8064391f927b",
-  "scriptCommitSha": "1f4f6a9207f138203739bad5dec3095d8547b8bc",
+  "scriptHash": "d965c91ba097",
+  "scriptCommitSha": "be9d8a41ac0629f90c105cb813c36e50f23572df",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

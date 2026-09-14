@@ -290,7 +290,14 @@ def main() -> int:
           det_ok)
     check("4. tr rho(w) has INTEGER coefficients, every word", integral_ok)
     check("5. no word is bounded-but-not-constant (the Laurent lemma, verified)",
-          not bounded_but_not_constant)
+          not bounded_but_not_constant,
+          "THE LAURENT LEMMA IS NOW FORMALISED: "
+          "QOU.QBeta.LaurentBoundedness.laurent_const_of_bounded (sorry-free, "
+          "5 declarations) proves that a Laurent polynomial bounded on (0, oo) "
+          "is constant there, and names the constant (P.coeff m). This line "
+          "asserted it numerically over the sampled words; it is now a "
+          "theorem, and this check is a cross-check of the theorem rather than "
+          "the evidence for it.")
     check("6. the constant characters that occur all lie in [-2, 2]",
           all(abs(c) <= 2 for c in constants),
           f"observed constant characters: {sorted(constants)}")
@@ -307,7 +314,13 @@ def main() -> int:
           "eigenvalues are roots of unity => alpha in 2*pi*Q",
           True,
           "general-d form; the d=2 instance is assertion 7 above. "
-          "The Lean twin of this step is NOT written - see bean qou-pdix.")
+          "THE KRONECKER STEP ITSELF IS STILL NOT FORMALISED - but the chain "
+          "is no longer entirely paper: its FIRST input, the Laurent "
+          "boundedness lemma behind assertion 5, is now "
+          "QOU.QBeta.LaurentBoundedness (sorry-free). What remains unwritten "
+          "is the step from a bounded-hence-integer character to a root of "
+          "unity. See bean qou-pdix; do not read the new file as closing "
+          "this assertion.")
 
     # ---- the ladder anchor numbers (PART 1's yardstick) --------------------
     # alpha_req and its window are NOT part-2 machinery: they are what makes
