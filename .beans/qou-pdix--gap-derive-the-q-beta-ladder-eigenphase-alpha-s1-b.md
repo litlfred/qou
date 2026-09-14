@@ -2795,3 +2795,45 @@ target, per the anti-fit directive.
 tree (108 commits of `origin/main` merged as `0433359e6f`), and the live `Q_β`
 dashboard row is still `err_ppb 1.668e+8` / `miss_factor 2.139e+7`, so Part 3's
 corrected figure holds across the merge. Part 3 is base-independent regardless.
+
+## 2026-09-14 (session gifted-feynman) — TRAP: `precision-gates.sh` in a bare container rewrites 12 audit witnesses with ITS OWN environment
+
+**The claim.** `scripts/precision-gates.sh --changed` exits **0** on this branch
+(the blocking ratchets are clean), but running it leaves **12 modified audit
+witnesses** in `computations/`, and those modifications are **artifacts of the
+container, not measurements of the corpus**. Restore them; do not commit them.
+
+**Evidence.** This container has no `scipy`, no `clarabel`, and `mpmath 1.3.0`.
+The committed witnesses record `scipy 1.17.1`, `clarabel 0.11.1`,
+`mpmath 1.4.1`. So the re-run does not merely refresh timestamps — it
+*removes* two packages from every `environment` block it touches and downgrades
+a third. The counts move with it:
+
+| witness | committed | this container |
+|---|---|---|
+| `witness-provenance-audit` | 105 | **91** |
+| `q0-anchor-consistency-audit` | 2 | **4** |
+| `witness-raw-float64-audit` `dirty_witnesses` | 981 | **978** |
+| `witness-value-copy-audit` `indexed_literals` | 232482 | **232638** |
+
+The provenance drop (105 → 91) is the one to notice: it moves in the direction
+a *missing dependency* produces, not the direction a drain produces, and
+committing it would read as 14 witnesses' worth of progress that nobody made.
+
+**Implication.** This is the AGENTS.md sibling-witness hazard one level up —
+the doc warns that *producers* write sibling witnesses, and the same is true of
+the **gate**. The gate's job is to tell you whether *your* change is clean; its
+exit code is the deliverable and the witnesses it rewrites are not. In a bare
+container the rewrite is worse than noise, because an `environment` block is
+exactly what a later agent consults to decide whether a re-run is comparable.
+
+**Action taken.** `git checkout -- computations/`; tree clean; nothing from the
+gate run is committed. The gate's verdict (**exit 0**) is recorded here and in
+PR #7262 instead.
+
+**Rule for the next agent.** After `precision-gates.sh`, run
+`git status --porcelain computations/` and restore anything it touched unless
+you deliberately intend a witness refresh AND your container's `environment`
+matches the committed one. Check that with
+`python3 -c "import scipy, clarabel, mpmath; print(mpmath.__version__)"` before
+trusting any count the gate prints.
