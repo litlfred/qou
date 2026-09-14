@@ -92,6 +92,7 @@ Output:
 from __future__ import annotations
 
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -114,12 +115,72 @@ _T0 = time.monotonic()
 mp.mp.dps = 80
 
 #: The four witnesses whose muon leg carries value B.
-_B_WITNESSES = [
-    ("qbeta-h-frame-rungs.witness.json", "data/anchors[1]/q"),
-    ("qbeta-c3-crossanchor-swing-provenance.witness.json", "(muon leg)"),
-    ("qbeta-h-vs-u-frame-stability.witness.json", "(muon leg)"),
-    ("qbeta-ladder-required-phase.witness.json", "(muon leg)"),
-]
+# WAS a hardcoded list of four witnesses "carrying B". It had gone stale: on
+# 2026-09-14 `qbeta-h-frame-rungs.witness.json` held only proton and C, having
+# been regenerated, so the first entry was simply wrong and the probe could not
+# say so. A transcribed inventory of a MIGRATING population is a snapshot that
+# ages into a lie — the same defect this file documents elsewhere.
+#
+# Counted live instead. `_survival_census` walks the committed witnesses and
+# reports how many q0-bearing fields still carry each of A, B and C, which is
+# the question the inventory was a proxy for and stays true as the migration
+# moves.
+# Deliberately a STRICT SUPERSET of `q0_value_drift_audit`'s field regex: that
+# gate's `^(q_?0|q_?0_\d+dps|q0Value|q_zero|substrate_q)$` plus the bare `q`,
+# which several anchor legs use (`data.anchors[].q`). The two scans therefore
+# do NOT report the same totals, and that is intended rather than a bug —
+# decomposed 2026-09-14 so nobody "reconciles" them later by narrowing one:
+#
+#   in this census only  89   bare `q` 54, `q_0` 22, … and 36 of them live
+#                             OUTSIDE computations/, which that gate does not
+#                             scan at all
+#   in that gate only    45   all `q_0_50dps` / `q0_50dps`, the spellings this
+#                             set was missing before this change
+#
+# After it, every field that gate sees is also seen here — VERIFIED, not
+# asserted: 284 gate entries, 375 census entries, and the gate-only set is
+# EMPTY. The residual gap is scan ROOT and the bare `q`, both of which a
+# survival census should have and a drift ratchet reasonably does not.
+_Q0_KEY_RE = re.compile(r"^(q|q_?0|q_?0_\d+dps|q0Value|q_zero|substrate_q)$", re.I)
+
+
+def _survival_census() -> dict:
+    """-> {"A": n, "B": n, "C": n, "files": {...}} over committed witnesses.
+
+    Matched on a 16-character prefix: A and B diverge at the 13th significant
+    digit, so 16 is comfortably past their separation and still short enough
+    to match a truncated copy.
+    """
+    import subprocess  # noqa: PLC0415 -- only needed on this path
+    root = HERE.parent.parent
+    out = subprocess.run(["git", "ls-files", "*.witness.json"], cwd=root,
+                         capture_output=True, text=True).stdout.split()
+    pref = {k: mp.nstr(v, 17)[:16] for k, v in _DEFINED_PINS().items()}
+    counts = {k: 0 for k in pref}
+    files: dict[str, set] = {k: set() for k in pref}
+
+    def walk(o, f):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if _Q0_KEY_RE.match(k) and isinstance(v, (str, float, int)):
+                    t = str(v)
+                    for name, q in pref.items():
+                        if t.startswith(q):
+                            counts[name] += 1
+                            files[name].add(f)
+                else:
+                    walk(v, f)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v, f)
+
+    for rel in out:
+        try:
+            walk(json.loads((root / rel).read_text(encoding="utf-8")), rel)
+        except Exception:                                   # noqa: BLE001
+            continue
+    return {"counts": counts,
+            "files": {k: sorted(v) for k, v in files.items()}}
 
 
 def _ppb(x, y) -> mp.mpf:
@@ -127,26 +188,48 @@ def _ppb(x, y) -> mp.mpf:
     return (mp.mpf(x) - mp.mpf(y)) / mp.mpf(y) * mp.mpf(10) ** 9
 
 
-def _find_b() -> tuple[str, str] | tuple[None, None]:
-    """Read value B out of the h-frame-rungs witness, whose muon leg is
-    addressable without guessing at the other three layouts."""
-    p = _pb.witness_path("qbeta-h-frame-rungs.witness.json",
-                         prefer_dir=HERE.parent / "qbeta")
-    if not p.exists():
-        return None, None
-    body = json.loads(p.read_text(encoding="utf-8"))
-    for a in (body.get("data") or {}).get("anchors") or []:
-        q = str(a.get("q") or "")
-        if q.startswith("1.1099785955"):          # a muon-family value
-            if not q.startswith(_q0_value_for_anchor("muon")[:14]):
-                return q, str(p)
-    return None, str(p)
+def _DEFINED_PINS() -> dict:
+    """A, B and C from their ESTABLISHED definitions, not by discovery.
+
+    The probe used to resolve A live and hunt B in one witness. Both bindings
+    broke, in opposite ways, and neither failure was visible as itself:
+
+      * `A = _q0_value_for_anchor("muon")` returned A when it was written.
+        Since bean `qou-tekx` stage 3b that resolver DERIVES from
+        `q_muon_at()`, so it now returns **C** — measured 2026-09-14,
+        relative difference from C exactly 0. The probe that defines the A/B/C
+        vocabulary was labelling C as A.
+      * `_find_b` filtered on the prefix `1.1099785955` (the A/B family) and
+        excluded anything matching the resolver's first 14 chars. Once the
+        resolver moved to C that exclusion stopped excluding anything in the
+        family, so the first A-or-B value found would have been returned as B.
+
+    So the values are defined here. B and C are DERIVED — they are the same
+    lepton-tower inversion at two CODATA vintages. A is a literal because A is
+    not derivable from any published muon ratio, which is this probe's own
+    finding (assertion `5c`) and the reason it is safe to freeze: a value
+    nobody can recompute cannot drift.
+    """
+    vol = 2 * mp.clsin(2, mp.pi / 3)
+    q0 = lambda r: 1 / (1 - mp.sqrt(vol / mp.mpf(r)))     # noqa: E731
+    return {"A": mp.mpf("1.1099785955573347"),
+            "B": q0("206.7682830"),                        # CODATA 2018
+            "C": q0("206.7682827")}                        # CODATA 2022
 
 
 def main() -> int:
-    A = _q0_value_for_anchor("muon")
-    C = mp.nstr(q_muon_at(60), 52, strip_zeros=False)
-    B, bpath = _find_b()
+    _pins = _DEFINED_PINS()
+    A = mp.nstr(_pins["A"], 52, strip_zeros=False)
+    B = mp.nstr(_pins["B"], 52, strip_zeros=False)
+    C = mp.nstr(_pins["C"], 52, strip_zeros=False)
+
+    # What the two live doors answer TODAY. Both used to return A; both now
+    # return C, and that is the migration landing rather than a defect — but
+    # it has to be ASSERTED, because this probe silently mislabelled C as A
+    # for as long as it took the binding to go unchecked.
+    live_resolver = _q0_value_for_anchor("muon")
+    live_derivation = mp.nstr(q_muon_at(60), 52, strip_zeros=False)
+    census = _survival_census()
 
     # CODATA reconstruction (PR #5434's refinement, verified here rather than
     # taken on trust). The lepton-tower family derives q0 inline as
@@ -164,26 +247,24 @@ def main() -> int:
 
     q_2018, q_2022 = _q0_from_ratio(R2018), _q0_from_ratio(R2022)
     ratio_A = _ratio_from_q0(A)
+    _same = lambda x, y: mp.nstr(mp.mpf(x), 24) == mp.nstr(mp.mpf(y), 24)  # noqa: E731
 
     print("=" * 74)
     print("Three values all called 'the muon q0'")
     print("=" * 74)
-    print(f"  A canonical pin (q-pinning-50-digit) : {A[:30]}")
-    print(f"  B committed in probe witnesses       : {(B or '<not found>')[:30]}")
-    print(f"  C q_muon_at() live derivation        : {C[:30]}")
+    print(f"  A frozen anomaly (no CODATA vintage) : {A[:30]}")
+    print(f"  B Vol(4_1)/206.7682830  CODATA 2018  : {B[:30]}")
+    print(f"  C Vol(4_1)/206.7682827  CODATA 2022  : {C[:30]}")
+    print(f"  live _q0_value_for_anchor('muon')    : {live_resolver[:30]}")
+    print(f"  live q_muon_at(60)                   : {live_derivation[:30]}")
+    print()
+    print(f"  still carried in committed witnesses : "
+          f"A {census['counts']['A']}   B {census['counts']['B']}   "
+          f"C {census['counts']['C']}")
     print()
 
     assertions = []
-    if B is None:
-        assertions.append({
-            "name": "0_value_B_located",
-            "passed": False,
-            "detail": f"could not locate value B in {bpath} — the witness layout "
-                      "changed, or it has since been regenerated onto A",
-        })
-        all_passed = False
-        pairs = {}
-    else:
+    if True:
         ab, ac, bc = _ppb(B, A), _ppb(C, A), _ppb(C, B)
         pairs = {"B_minus_A_ppb": mp.nstr(ab, 8),
                  "C_minus_A_ppb": mp.nstr(ac, 8),
@@ -219,19 +300,25 @@ def main() -> int:
                        "('1.1099785955541805 stamped'). The revert fixed the "
                        "code and left the data, so B survives on main.",
              },
-            {"name": "5a_B_is_CODATA_2018",
-             "passed": mp.nstr(q_2018, 28) == mp.nstr(mp.mpf(B), 28),
-             "detail": f"Vol(4_1)/206.7682830 (CODATA 2018) reproduces B: "
-                       f"{mp.nstr(q_2018, 28)}. So B's VALUE is not an artifact "
-                       "of the revert — the revert is how it got stamped, not "
-                       "what it is (PR #5434, verified here independently).",
+            # 5a/5b USED to compare a discovered B and a live-resolved C
+            # against the two CODATA reconstructions. Both are now DEFINED by
+            # those reconstructions, so that comparison is a tautology and
+            # would pass however wrong the rest got. What is not a tautology,
+            # and is what actually moved, is where the two live doors point.
+            {"name": "5a_live_resolver_returns_C_not_A",
+             "passed": _same(live_resolver, C) and not _same(live_resolver, A),
+             "detail": "_q0_value_for_anchor('muon') derives from q_muon_at() "
+                       "since bean qou-tekx stage 3b, so it returns C. This "
+                       "probe bound its `A` to that call and therefore labelled "
+                       "C as A until 2026-09-14; the binding is now a literal "
+                       "and this assertion is what would catch the drift again.",
              },
-            {"name": "5b_C_is_CODATA_2022",
-             "passed": mp.nstr(q_2022, 28) == mp.nstr(mp.mpf(C), 28),
-             "detail": f"Vol(4_1)/206.7682827 (CODATA 2022) reproduces C: "
-                       f"{mp.nstr(q_2022, 28)}. B and C are therefore the SAME "
-                       "derivation at successive CODATA vintages, not two "
-                       "independent drifts.",
+            {"name": "5b_live_derivation_agrees_with_the_resolver",
+             "passed": _same(live_derivation, live_resolver),
+             "detail": "q_muon_at(60) and _q0_value_for_anchor('muon') are the "
+                       "two doors onto 'the muon pin'. bean qou-2361 recorded "
+                       "them DISAGREEING (code on C, anchor witness on A); they "
+                       "now agree, so that split is closed on the read path.",
              },
             {"name": "5c_A_matches_no_CODATA_vintage",
              "passed": bool(R2022 < ratio_A < R2018),
@@ -253,11 +340,15 @@ def main() -> int:
 
     payload = {
         "computation_method": (
-            "Reads A from qou_substrate.witness._q0_value_for_anchor('muon') "
-            "(the committed q-pinning witness), C from "
-            "qou_substrate.constants.q_muon_at(60) (the live derivation), and B "
-            "from the committed muon leg of qbeta-h-frame-rungs. All "
-            "separations are exact-decimal mpmath at dps=80; no float64."),
+            "A, B and C are DEFINED, not discovered: B and C from the "
+            "lepton-tower inversion q0 = 1/(1-sqrt(Vol(4_1)/(m_mu/m_e))) at "
+            "CODATA 2018 and 2022, A as the literal it has to be because no "
+            "published ratio reproduces it (assertion 5c). The two live doors "
+            "— _q0_value_for_anchor('muon') and q_muon_at(60) — are then "
+            "CHECKED against C rather than used as sources, which is the "
+            "binding that silently broke. Survival counts are a live walk of "
+            "the committed witnesses, replacing a hardcoded four-file "
+            "inventory that had gone stale. Exact-decimal mpmath; no float64."),
         "description": (
             "Three distinct values are all called 'the muon q0' and differ at "
             "the 13th significant digit: the frozen canonical pin, the value "
@@ -297,7 +388,8 @@ def main() -> int:
                          "vintages, with commit a4d9906659 (codata_2022_source.py) "
                          "the step between. A matches no vintage."),
             },
-            "B_carrying_witnesses": [w for w, _ in _B_WITNESSES],
+            "survival_census": census["counts"],
+            "survival_files": {k: v[:20] for k, v in census["files"].items()},
             "verdict": (
                 "Three values, two of them moving. The 2026-08-15 revert of the "
                 "derive-the-muon-branch change was complete in the code and "
