@@ -30,7 +30,7 @@ growth of the filtration (`qou-p8yg`), not the existence of the limit.
 
 namespace QOU.SchurWeyl.HeckeDirectedSystem
 
-open QOU.SchurWeyl QOU.SchurWeyl.HeckeInclusion
+open QOU.SchurWeyl QOU.SchurWeyl.Hecke QOU.SchurWeyl.HeckeInclusion
 
 variable (K : Type*) [CommRing K] (q qi : K)
 
@@ -59,6 +59,19 @@ theorem heckeInclLE_trans (i j k : ℕ) (hij : i ≤ j) (hjk : j ≤ k) (x : Hec
       rw [heckeInclLE_succ K q qi j n hn, heckeInclLE_succ K q qi i n (hij.trans hn)]
       simp only [AlgHom.comp_apply]
       rw [ih]
+
+/-- The iterated inclusion is the identity on generator *indices*: `σ_m` at level
+`i` goes to `σ_m` at level `j`.  One step is `heckeIncl_σ` (`σ_i ↦ σ_{i.castSucc}`);
+this is the `Nat.le_induction` iterate, and it is what lets a generator be read at
+any level of the tower above the one it first appears in. -/
+theorem heckeInclLE_σ (i j : ℕ) (hij : i ≤ j) (m : ℕ) (hmi : m < i) :
+    heckeInclLE K q qi i j hij (σ K q qi i ⟨m, hmi⟩)
+      = σ K q qi j ⟨m, lt_of_lt_of_le hmi hij⟩ := by
+  induction j, hij using Nat.le_induction with
+  | base => rw [heckeInclLE_self]; rfl
+  | succ n hn ih =>
+      rw [heckeInclLE_succ K q qi i n hn, AlgHom.comp_apply, ih, heckeIncl_σ]
+      rfl
 
 /-- The Hecke tower is a directed system over `ℕ`. -/
 instance directedSystem :
