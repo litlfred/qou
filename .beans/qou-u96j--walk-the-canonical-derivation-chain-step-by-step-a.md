@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T10:19:47Z
+updated_at: 2026-09-14T16:12:56Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -339,3 +339,38 @@ run for §0 rows 9b/11 and §9.3. My remaining defects sit in the **§1 diagram 
 §2 step table**, which C1's scope does not name — so they are an uncovered
 surface of an authorised repair, not four new asks. §7.4 'Do not' checked
 against my work: clean.
+
+## 2026-09-14 — #7362 MERGED (e8289b4971); defect #2 now has a DERIVED disposition
+
+Walk PR merged (rebase, 17 commits). Then answered the 'restate' branch of
+defect #2 **from the corpus**, so it is no longer a three-way judgement.
+
+**The repair.** The criterion asks the torus-knot EVALUATIONS to span the
+character space of H_2 + H_3. An evaluation here is a MARKOV TRACE (step 3:
+`J_K(q) = tr_M(rho(beta_K))`), and `tr_M = sum_lambda y_lambda chi^lambda`. A
+block with `y_lambda = 0` is invisible to every evaluation at every genus. Under
+convention D's two-row truncation — derived from `dim V = 2`, pinned in Lean as
+`markovWeights_eq_jones_of_threeRow_eq_zero`'s hypothesis `y_(1^3) = 0`, and
+EXACTLY 0 in the committed witness — `(1,1,1)` is such a block:
+
+    observable directions = (2),(1,1) | (3),(2,1) = **4**, not 5
+
+Exact sweep over Q(q): rank_obs = 1,2,3,**4**,4,4,4 at g = 1..7. **g_min = 4
+exactly, first crossing.** The proof's ARITHMETIC was right; only its TARGET was
+wrong. Its conclusion stands.
+
+**Anti-fit, answered:** derivation order is truncation → target → genus; the cap
+predates anything about genus; the corrected criterion is met at 4,5,6,7 (not
+only 4 — a tuned target would be met at 4 alone); and it was derived AFTER the
+refutation, which is not withdrawn and is re-asserted in the probe.
+
+**NOT claimed:** that g=4 is derived — the route still opens in `Rep(SU_q(2))`
+and still `uses: [prop:cohomological-embedding]`, so it remains inside the
+chi=-6 <-> SU(2) cycle. No content block edited.
+
+Probe `computations/audits/genus_completeness_observable_target_probe.py`
+(13/13). Commit 86194f8f7e, **PR #7365**.
+
+**Remaining open:** defects #1 (step-11 hadronic E_0 — vacuous), #4 (step-7/8
+labels), #5 (M_QOU) still want the C1 scope decision; the interior mathematics
+of steps 7-9 untouched.
