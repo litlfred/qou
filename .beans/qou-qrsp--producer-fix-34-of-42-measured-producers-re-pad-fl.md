@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-09-14T18:19:43Z
+updated_at: 2026-09-14T18:50:18Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -777,3 +777,63 @@ witness needs a container with snappy.
 
 Padding ratchet over the tranche: 75 -> 73 occurrences, 13 -> 12 files.
 PR #7383.
+
+
+### The float64 table — closed (2026-09-14, PR #7383)
+
+The target the previous entry named. `casimir_hoefsmit_additivity_probe` had
+**two** float64 tables, not one, and each had a gate sized to its own cast:
+
+| site | was | gate was | gate said |
+|---|---|---|---|
+| `_check_geom_epsilon_n_unknots` | `coefficient = float(1 / hbar_q_sq)` | `1e-9` | *"covers the float64 the table stores at N = 1000"* |
+| `_check_volume_additivity` | `float(vol1)` on 50-dps registry volumes | `1e-15` | *"the float64 the table is serialised through"* |
+
+Both gates were honest about what they were tolerating and both were
+tolerating this producer's own doing. Assertion 4 in particular compared a
+float64 row against `N * (1/ℏ_q²)` recomputed exactly — so the residual it
+reported was the asymmetry, never the linearity it claims to test. That is why
+the q0 precision fix earlier in this tranche made it *larger*.
+
+**Result.** Both tables carry `mpf` end to end and serialize through
+`_precision.fmt`; `float()` survives only inside f-strings for display and the
+printed output is byte-identical.
+
+    assertion 4   1.69197e-11  ->  4.64747e-55     (3.6e43x)
+    assertion 3   float64      ->  exactly 0
+
+4.647e-55 is half of `101862 * 1e-59`, i.e. exactly the 60-digit rounding
+bound and nothing else — both sides of the comparison are now the same `mpf`.
+
+**The gates are derived now, not chosen.** `_serialization_floor(x)` returns
+`|x| * 10**(1 - OUTPUT_DPS) * 10`: the width the witness round trip is
+actually written at, plus one decade for its two roundings. 1.02e-53 and
+1.47e-57 fall out; a future OUTPUT_DPS change moves them with it, and no band
+can silently widen. This is the distinction AGENTS.md draws — a tolerance
+sized to its own miss is a fit; one derived from the serialization width is not.
+
+**Verified by control, not by the gates going quiet.** Perturbing one Geom row
+by 1e-50 fails the new gate (1.00000003e-50 > 1.02e-53) and would have
+**passed** the old 1e-9. Perturbing every pair sum by 1e-50 likewise fails
+1.47e-57 and would have passed 1e-15. The restored probe reproduces the clean
+witness with only `computedAt` differing.
+
+**Ratchet effect, isolated by reverting these two files alone and re-running:**
+
+    dirty_witnesses    977 -> 976     (-1)
+    total_fields     25420 -> 25400   (-20)
+    drained_files       33 -> 34      (+1)
+    new_not_baselined    1 -> 1       (unchanged)
+
+**Correction to my own commit message (`76a0e30d47`).** It says *"the
+baseline's 20 was already short of the 30 actually present"*. That is wrong.
+Both numbers are right and they answer different questions: a naive
+"any JSON float" walk of the witness finds **30**, the ratchet's own field
+definition counts **20** (it carves out classes this walk does not), and the
+baseline's 20 matches the ratchet exactly — confirmed by the isolated
+`total_fields` delta above landing on exactly -20. The baseline was never
+short. Do not "fix" it.
+
+`raw-float64-baseline.json` is left untouched: the entry records the historical
+floor and the audit computes the drain against it. Hand-editing it is the move
+the ratchet exists to prevent.
