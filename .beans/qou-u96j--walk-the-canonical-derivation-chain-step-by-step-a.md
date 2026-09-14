@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T10:05:55Z
+updated_at: 2026-09-14T10:19:47Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -306,3 +306,36 @@ strictly stronger and matches the block's own HH^k=0 argument, so the cheat
 sheet understates its own proposition.
 
 Commit ef5fcb5f5b, PR #7362.
+
+## 2026-09-14 — 🛑 WITHDRAWING the step-4 conclusion (defect #3)
+
+I claimed the step-4 arrow '6 basis elements <-> 6 torus knots' is 'a coincidence
+of counts, not a linear-algebraic identification'. **Too strong; withdrawn.**
+
+Cheat-sheet **§9.5** names the diagram's six explicitly — `{1, s1, s2, s1s2,
+s2s1, s1s2s1}`, the GB basis of H_3 — and exists precisely to correct 'a
+recurrent agent confusion … reading 6 basis elements as 6 INDEPENDENT
+SM-equivalent operators'. It calls them **GENERATORS**.
+
+Measured: span of the six knot words = **4 of 6**; subalgebra **generated** =
+**6 of 6**, products alone, no inverses. **Under §9.5's reading the six torus
+knots DO generate H_3(q).** My span result refutes only the BASIS reading, which
+§9.5 refutes at greater length — so the section corroborates the corpus.
+
+Residue: the §1 diagram's bare '<->' still invites the basis reading and §9.5 is
+~700 lines below it. And `{gamma, sigma_0, sigma_1, L_+, L_-, e^-}` is a THIRD
+six from another appendix, not what the diagram means.
+
+**Second instance of the same process failure in one session** (after step 7 /
+bean wpdb): greps scoped to the finding, never to whether the document already
+addressed it. §9.5 is in the SAME FILE as the diagram I was criticising. Pattern,
+not incident: **when the subject is a document, read the document.**
+
+Defect count drops 5 → 4. Probe 19/19 (new section 2b). Commit 7c746a9862.
+
+### Also read this session: 2026-09-08 audit §7.3 / §8.4
+C1 ('update the cheat sheet') is an **already-authorised** coordination repair,
+run for §0 rows 9b/11 and §9.3. My remaining defects sit in the **§1 diagram and
+§2 step table**, which C1's scope does not name — so they are an uncovered
+surface of an authorised repair, not four new asks. §7.4 'Do not' checked
+against my work: clean.
