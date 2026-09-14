@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T19:26:47Z
+updated_at: 2026-09-14T06:29:30Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1831,3 +1831,62 @@ scoping note supports, which is why this is an observation and not a filed defec
 2. **Why `hbar_q^2` rather than `q^-1`** — parity cannot say; something else must.
 3. Which Markov parameter (owner, coupled to `qou-99qc`) — unchanged.
 4. The block's own k=3/k=2 1.5136 gap — unchanged.
+
+
+## 2026-09-14 — a second invariant, one unifying hypothesis, and two things that survive both
+
+### The prune is now two-invariant: 2044 -> 121 -> 32
+
+Added **vanishing order at q = 1**, independent of parity:
+
+    q^2 - q^-2    order 1
+    X_baseline    order 3      =>  the prefactor must be order 2
+    hbar_q^2      order 2      <- is
+    q^-1          order 0      <- is NOT (it passed parity and is simpler)
+
+Parity AND order 2: **32 of 2044, 98.4 % pruned**, and `hbar^2` is the **unique
+minimal-degree survivor** (degree 2).
+
+🛑 **Order 2 is read off the corpus's own expression, not derived.** That is a
+weaker form of the same hazard the anti-fit rule names — selection against the
+corpus's *answer* rather than against the *data*. Stated in the probe's own output.
+
+### One hypothesis gives both constraints (3 new sorry-free Lean decls)
+
+With `barNorm f q := -(f q * f q^-1)`:
+
+* `barNorm_bar_even` — a bar-norm is bar-even for **every** f, no hypothesis on f
+* `barNorm_scaled_parity` — so `q^-1 * barNorm f` satisfies `C(1/q) = q^2 C(q)`
+  automatically, for **every** f
+* `hbarSq_eq_scaled_barNorm` — and at `f = hbar` the instance is **exactly** `hbar_q^2`
+
+Order 2 follows whenever f vanishes at q=1. So the two separately-measured
+constraints collapse into one structural hypothesis.
+
+### 🛑 Two things survive both prunes — this is where the arc actually stands
+
+1. **The hypothesis is not derived, AND it is DEGENERATE.** `f = (q-1)` gives the
+   **identical** prefactor (difference exactly 0). So even granting the bar-norm
+   hypothesis, it does not single out `hbar_q`. It well-poses the search; it does
+   not close it.
+2. **The `/3` is untouched by everything above.** Measured: both q-integer
+   readings of 3 give different denominators (3.0437, 3.0109 at q0), so the
+   corpus's `3` is a plain rational and not a q-integer in disguise — a statement
+   about FORM. The residuals are recorded and are explicitly NOT the argument.
+   Where the 3 comes from is **open**, exactly as it was.
+
+### Open list, unchanged in substance
+
+1. **The `/3`** — nothing has touched it. Sharpest remaining gap.
+2. **Why `hbar_q` and not `(q-1)`** — the bar-norm hypothesis cannot say; they
+   are the same prefactor. Something outside this family must.
+3. Which Markov parameter (owner, coupled to `qou-99qc`).
+4. The block's own k=3/k=2 1.5136 gap.
+
+### Noted, not touched (sibling arc)
+
+`precision-gates` RED gained `module-const precision` after this branch rebased
+over 32 commits of main. Sole LOSSY is
+`computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py:104`
+(`ROUTE5_THETA_PRINTED`), from the live `qou-pdix` arc — not this one. Reported
+rather than swept.
