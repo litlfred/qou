@@ -1,0 +1,83 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T20:36:54.267417+00:00",
+  "commitSha": "42dc92a21e9753593f9fbec1346592f32ffcd7d7",
+  "assertions": [
+    {
+      "name": "hecke_eigenvalues_give_det_minus_one_on_a_two_dim_block",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the Hecke relation (s-q)(s+1/q)=0 gives spectrum {q, -1/q}; on the 2-dim irreducible V_(2,1) both eigenvalues occur, so det = q * (-1/q) = -1. Symbolic in q -- holds for every q, not just at the anchor."
+    },
+    {
+      "name": "corpus_seminormal_matrices_reproduce_det_minus_one",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "dim(V_(2,1)) = 2; 2 generator block(s); every one satisfies the Hecke relation to < 1e-40 and has det = -1 to 1.04967e-140. Taken from the corpus's own block_structure/sigma_csr, NOT hand-written."
+    },
+    {
+      "name": "det_rho_word_equals_minus_one_to_the_length",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "det is multiplicative and every letter contributes -1 (inverses too, since 1/(-1) = -1), so det rho(w) = (-1)^len(w). Hence TransferMatrixSpectrum.det_eq (M.det = 1) holds iff len(w) is EVEN: len 2 -> det 1, len 3 -> det -1, len 6 -> det 1, len 10 -> det 1, len 11 -> det -1, len 12 -> det 1"
+    },
+    {
+      "name": "nuc11_interleaved_cannot_satisfy_det_eq",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the corpus's currently-scored element nuc11_interleaved has 11 letters, which is odd, so det rho = -1 != 1 and the element cannot carry alpha through this carrier. This is INDEPENDENT of qou-99qc's route to the same element: that one goes through the 1-dim alternating block's character and SDP-admissibility, this one through the 2-dim block's determinant and the carrier's det_eq."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2705,
+  "computation": "qbeta-eigenphase-carrier-det-forces-even-length",
+  "scriptFile": "qbeta_eigenphase_carrier_det_forces_even_length_probe.py",
+  "scriptHash": "fb3125667dd5",
+  "scriptCommitSha": "de4adbfbff7961c9d2fa664b12d209d89e1ef87e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_eigenphase_carrier_det_forces_even_length_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_eigenphase_carrier_det_forces_even_length_probe.py"
+  },
+  "description": "CORRECTED SAME DAY -- largely a RE-DERIVATION. Bean qou-pdix already carries the parity law twice (lines ~81 and ~1409) and states it MORE STRONGLY: 'the carrier's M.det = 1 field is automatic and free on the braid image -- it was never the obstruction'. qbeta_mbeta_v21_spectrum_under_d.py independently records det T_pp = det T_nn = -1 and labels its det=1 assertion 'even word length'. Corpus-grep path 6 (grep the beans) was not run before writing this, on the probe's own bean. What survives as this probe's own: the application to nuc11_interleaved (11 letters, odd -- the bean never names it), whose force is limited because branch 1 is independently excluded; and the Hecke-relation gate, which caught a hand-written sigma_2 that produced a nonsense determinant. Original description follows. The eigenphase carrier QOU.QBeta.EigenphaseCarrier.TransferMatrixSpectrum has two fields; its SECOND (det_eq : M.det = 1) is a parity constraint. Every Hecke generator has spectrum {q, -1/q} by the Hecke relation, so on the 2-dim irreducible V_(2,1) det rho(sigma) = -1 per letter and det rho(w) = (-1)^len(w). Hence only EVEN-length words can carry alpha through this carrier. Corroborates, and does not duplicate, QOU.Mass.AltCharShiftMultiset.wordChar_sign -- that is the 1-dim ALTERNATING block's CHARACTER, this is the 2-dim block's DETERMINANT, and they reach the same parity from different places. Consequence: nuc11_interleaved (11 letters, odd) cannot satisfy det_eq. No alpha is derived and no word is searched.",
+  "bean": "qou-pdix",
+  "duplicates": [
+    ".beans/qou-pdix lines ~81 and ~1409 -- same parity law, stated more strongly",
+    "computations/qbeta/qbeta_mbeta_v21_spectrum_under_d.py -- det T_pp = det T_nn = -1; 'even word length'"
+  ],
+  "own_contribution": [
+    "application to nuc11_interleaved (11 letters, odd); the bean never names it",
+    "Hecke-relation gate on the seminormal matrices"
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187360000000000",
+  "carrier": "QOU.QBeta.EigenphaseCarrier.TransferMatrixSpectrum",
+  "block": "V_(2,1) of H_3(q), dim 2",
+  "parity_law": "det rho(w) = (-1)^len(w)",
+  "corroborates": "QOU.Mass.AltCharShiftMultiset.wordChar_sign (different block, different quantity)",
+  "scope": "(a) scope-limited, and mostly NOT NEW (see duplicates). A NECESSARY but AUTOMATIC condition on the carrying word, not a derivation of alpha and not a sufficient condition for anything. It does not exclude alpha, does not select a word, and says nothing about trace_eq -- the field that actually carries alpha. An even-length word satisfying det_eq may still fail trace_eq."
+}

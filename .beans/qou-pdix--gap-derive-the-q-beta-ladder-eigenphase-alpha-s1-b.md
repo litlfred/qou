@@ -5,7 +5,8 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T18:45:00Z
+updated_at: 2026-09-13T20:51:46Z
+
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1743,6 +1744,276 @@ on the retired `z = 1` base the ladder was worth 1312×.
 
 ---
 
+## 2026-09-13 (later still) — attack C is closed too, by two results already on `main`
+
+With A and B measured earlier today, **C (Stokes / resurgence) was the one route
+I recommended as having no measured negative against it.** That recommendation
+was also wrong. The corpus already carries **two independent negatives**, and
+neither needed a new probe — this entry is a synthesis with citations, not a
+measurement.
+
+**No new compute was written for this entry.** Every figure below is read from
+an existing artifact and re-derived only where re-deriving was one line.
+
+### C-negative 1 — the channel where `α` lives is CONVERGENT
+
+[`2026-07-12-borel-alien-calculus-utilization-audit.md` §C4](../docs/audits/2026-07-12-borel-alien-calculus-utilization-audit.md)
+records the three-probe contradiction as resolved into a **channel dichotomy**,
+scope-**(b)** with cited invariant (the bridge growth-obstruction audit):
+
+| channel | growth | resurgent structure |
+|---|---|---|
+| **even** (4₁ / Ohtsuki) | Gevrey-1 **divergent**, ratios 1.32 → 3.63 → 4.93 rising without bound | yes |
+| **odd** (the **Q_β ladder**) | **convergent**, KC8 simple pole, `c_{k+1}/c_k → 1/u = 117.41` plateau | **no** |
+
+**A convergent series has no Stokes constant to extract.** The Stokes phenomenon
+*is* the resummation ambiguity of a divergent asymptotic series; where the sum is
+unambiguous there is no ambiguity for `α` to be. So "`α` is a Stokes constant"
+has nothing to attach to **in the channel the Q_β ladder occupies**. The *even*
+channel does have resurgent structure — but that is the 4₁/Ohtsuki object, not
+where `α` lives.
+
+### C-negative 2 — and "resurgence at the anchor" is refuted outright
+
+[`qbeta_c3_uq0_radius_branchpoint_probe.py`](../computations/qbeta/qbeta_c3_uq0_radius_branchpoint_probe.py)
+(bean `qou-iyj5`) computes the radius of convergence of the figure-8 argument map
+`u(q₀)` directly, from the branch points of the A-polynomial's longitude
+discriminant — exact algebra, no numerical integration:
+
+    disc_L A = (M−1)²(M+1)²(M²+1)²·(M²−M−1)(M²+M−1)(M²−M+1)(M²+M+1)
+    nearest geometric branch point: M² = φ² = (3+√5)/2
+    ⇒ R = 2·log φ = 0.962423650119        (the GOLDEN RATIO)
+    anchor u = ln q₀ = 0.10434072032 = 0.108·R      — deep inside
+
+and validates its own A-polynomial + `u`-convention against the corpus's
+**sorry-free** leading coefficient `(√3/4)u²`
+(`FigureEightComplexVolume.lean`) via a Puiseux expansion at `u = 0`. Its verdict,
+verbatim: *"The on-anchor-singularity / resurgence-at-anchor reading is
+REFUTED."* There is no singularity near the anchor for a Stokes phenomenon to
+live at.
+
+### What is NOT settled — and it is a specific, cheap measurement
+
+**The two negatives govern two different objects, and neither touches a third.**
+Per the notation register's `u` ruling, say which `u` you mean:
+
+| `u` | value | governed by |
+|---|---|---|
+| `u = ln q₀` (geometric argument map) | **0.10434072032** | C-negative 2 — analytic, R = 0.9624 |
+| `u_ladder = b·ℏ_q²` | **0.00851999999989** | C-negative 1 — convergent channel |
+
+They differ by **12.25×**. Now the loose end: C-negative 1's own recorded plateau
+is `c_{k+1}/c_k → 117.41`, and `1/u_ladder = 117.370892020289747`. Those agree to
+**0.033 %**. If the plateau really is `1/u_ladder`, the ladder's generating
+function has its nearest singularity at radius `≈ u_ladder` — i.e. **the ladder
+is evaluated at or extremely near its own radius of convergence**, where the term
+ratio `(c_{k+1}u^{k+1})/(c_k u^k) → 1` and the ratio test is inconclusive. Which
+side of the boundary is **not determined** by a plateau quoted to four figures:
+117.41 > 117.3709 would put the pole *inside* the evaluation point.
+
+**I am flagging this, not claiming it.** It is a candidate, it is cheap to
+settle (re-read the extracted `c_k` and compute the ratio to full precision
+rather than to a rounded plateau), and it sits in a *third* object that neither
+existing negative covers. It also does **not** rescue attack C: a pole at the
+evaluation radius is a convergence problem, not a Stokes constant.
+
+### Where that leaves the triage — all four routes are now accounted for
+
+| route | status |
+|---|---|
+| **A** Habiro | bridge closed at both admissible functionals (this bean, earlier today) |
+| **B** Faddeev / modular double | inert at the real substrate inside the derivable `z`-window (earlier today); intact on the root-of-unity face |
+| **C** Stokes / resurgence | closed by two independent results already on `main` (this entry) |
+| **D** two evaluation points | the trap — a fourth calibration under CAL-1/2/3 |
+
+**Recommendation — judgement, and it is the third I have given today; read that
+as a reason to trust it less, not more.** The triage's four routes are
+exhausted, so the honest next step is **not** to pick among them: it is to
+accept that `α` needs a route the triage does not list, and to say so in the
+bean rather than keep re-ranking four options that have each been measured out.
+The one structural fact that survives all of today's measurements is the
+replacement carrier the bean already states and leaves uninstantiated —
+`TransferMatrixSpectrum (q) (M) : M.trace = 2·cos(eigenphase q) ∧ M.det = 1` —
+whose discharge needs `M` produced from the **Hecke seminormal representation on
+V_(2,1)**, the "downstream work" the original docstring defers. That is the
+target; it is not one of A-D.
+
+**Default if nothing is done:** the triage still reads "attack B, cheapest
+formalize-first step of the four", and now all four have been measured against.
+
+**Bean stays `in-progress`.** `α` is underived and this entry derives nothing —
+per rule 13a it is not closeable while the conjecture is open.
+
+---
+
+## 2026-09-13 (same hour) — CORRECTION to the entry above, and a real finding underneath it
+
+The entry above flagged a "loose end": that C4's plateau `117.41` and
+`1/u_ladder = 117.370892` agree only to **0.033 %**, so the ladder's pole might
+sit just *inside* its evaluation point. **That gap does not exist. I
+manufactured it.**
+
+### What I did wrong
+
+I took `u_ladder ≈ 0.00852` from AGENTS.md's **rounded prose** and inverted it to
+get `b = 0.8678657617`. That is circular — a constant back-derived from a
+rounded figure. The exact Hoefsmit coupling is in the corpus:
+
+    b = sqrt(q^4 + q^2 + 1)/(q^2 + 1)     [qbeta_d_n2_factor_bar_invariance_probe.py:50]
+      = 0.86758406696525115565            (proton pin, mp.dps = 50)
+
+giving `u_ladder = b·ℏ_q² = 0.0085172345501561421893` and
+**`1/u_ladder = 117.409001`**. The recorded `117.41` is right to every figure it
+quotes. My `117.370892` was the inverse of the rounded prose, not of `u`.
+
+**The rule this cost me: a rounded figure in prose is not an input.** AGENTS.md
+quotes `u ≈ 0.00852` as an orientation number; using it to solve for another
+constant reintroduces the rounding as a fake signal. That is the second time
+today a phantom discrepancy came from taking a documented figure as data — and
+this document warns about exactly that, repeatedly.
+
+### What survives, and it is KC8's own claim rather than my inference
+
+The gate block hardcodes
+
+    noncomputable def u_substrate : ℝ := 0.008517234550156142
+      [q-beta-radius-of-convergence-gate.lean:75]
+
+which agrees with the live `u_ladder` to **2.2e-17** — the same number. So there
+is no discrepancy anywhere, and the gate is self-consistent.
+
+But that is precisely what makes the structural point sharp. KC8's registered
+statement is
+
+> *"`g(u) = sum c_k u^k` has its nearest singularity (simple pole) at
+> `u_substrate`; ratio test `c_{k+1}/c_k -> 1/u_substrate`"*
+> — `kernel-constraints-registry.json`
+
+and `u_substrate` **is** the point at which the ladder is evaluated. So the
+ladder is evaluated **exactly at its own radius of convergence** — not just
+inside it, not just outside it, but on the boundary, by KC8's own construction.
+Which side is therefore not a numerical question at all; it is definitional.
+
+### The finding that actually matters — KC8 is NOT a proved invariant
+
+| where | tier |
+|---|---|
+| `ck-dk-canonical-registry.md` row 348 | `gate §4(a), **empirical basis**` |
+| `kernel-constraints-registry.json` | `"tier": "gate"` |
+| `q-beta-radius-of-convergence-gate.lean` | **0 sorries**, and **two `axiom` declarations**: `qBetaLadderCoefficients : ℕ → ℝ`, `qBetaCandidatePoleLocation : ℝ` |
+
+That is the *"sorry-free ≠ derived"* / §"Axiomatization is NOT a Proof" shape:
+the file compiles clean because the content is axiomatised, not derived.
+
+**Consequence for the entry above.** The growth-obstruction audit labels its
+channel dichotomy **"scope-(b) with cited invariant"**. AGENTS.md's rule for
+scope-(b) is explicit — a structural exclusion is *"only permitted when a
+**proved invariant** forbids it … Cite the invariant. Without one, you may not
+write (b)."* On the odd side the cited invariant is KC8, which the registry
+tiers **empirical/gate** and whose Lean is **axiom-backed**. So the scope label
+is stronger than its own tier on that side.
+
+**This does NOT overturn the audit's arithmetic.** Given both growth classes as
+measured, a factorially-divergent series and a positive-radius one cannot be
+equated term-by-term; that contrast holds. What is over-labelled is the tier,
+not the comparison.
+
+### So attack C stays closed — on C-negative-2, not C-negative-1
+
+- **C-negative-2 is unaffected and is the load-bearing one**:
+  `qbeta_c3_uq0_radius_branchpoint_probe` is exact algebra from the
+  A-polynomial's longitude discriminant, validated against the corpus's
+  sorry-free `(√3/4)u²`. `R = 2 log φ = 0.9624`, anchor at `0.108·R`. *"The
+  on-anchor-singularity / resurgence-at-anchor reading is REFUTED."*
+- **C-negative-1 should be cited as empirical, not as a proved invariant.** It
+  still says what it says; it is simply not a scope-(b) foundation on its own.
+
+**Net: attack C remains closed, and my own framing of why was one tier too
+strong.** Fourth correction of my own work on this bean today.
+
+---
+
+## 2026-09-13 — route 5's ellipticity requirement is on the RETIRED base, and on the ruled base it INVERTS
+
+Probe: [`qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py`](computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py)
+— 6/6, proton pin, 50 dps, scope (b) for the two class statements / (a) for the
+numbers.
+
+**Steps 18→19→20 are one chain hanging on one number.** Step 18
+(`HolonomySpectrumSignObstruction`) excludes real-spectrum holonomies because
+their character is `cosh a ≥ 1` while the required correction is `0.998399 < 1`
+⇒ **needs elliptic**. Step 19 (`ImQCannotSupplyEllipticGenerator`) refutes `Im q`
+as the source at the archimedean level. Step 20
+(`qbeta_fibre_unit_circle_opens_route5_probe`) puts the locus on the fibre at
+`|q| = 1`, reducing it to "is `θ/2π` rational", with `N = 111` the only
+low-denominator candidate.
+
+**That number is computed on the `z = 1` cell.** Measured, not asserted: route 5
+uses `θ = acos(Q_β^exp/(Q_A(1−u²)))` with `Q_A = m_e|q²−2q−1|(q+1)/(2q³)`, and
+this probe reproduces its printed `0.05661730079406103` **to 1e-14** from that
+formula. The owner **retired `z = 1` as the base on 2026-09-08**. All three
+step-18/19/20 files are `87bf883793`, dated **2026-09-07** — **correct when
+written**, stale by a ruling one day later. Same class as the attack-A finding in
+#7326, second arc.
+
+**On the ruled base the requirement inverts.** `R(base) = Q_β^exp/(base·(1−u²))`:
+
+| base | Q_base (MeV) | R | consequence |
+|---|---|---|---|
+| `z = 1` (Form A) — **RETIRED** | 0.783645827375 | **0.998397668719** | needs elliptic |
+| `z_D = q³/(q²+1)` — **RULED** | 0.444700408522 | **1.75936462427** | elliptic **excluded** |
+| `z = q` (augmentation) | 0.87989056126 | **0.889190317068** | needs elliptic |
+| dashboard scored cell — **RULED** | 0.65185631006 | **1.20024943393** | elliptic **excluded** |
+
+An elliptic generator has character `cos θ ≤ 1` (`Real.cos_le_one`, the invariant
+the carrier file's own `replacement_excludes_some_matrix` already uses), so on
+both ruled bases `acos(R)` is **not real** — the exact mirror of step 18. What
+the ruled base asks for instead is the class step 18 excluded, at
+`a = arccosh(R)` = **1.16530530037** (`z_D`) / **0.622738411685** (dashboard).
+So steps 19 and 20 — `Im q`, `|q| = 1`, `θ/2π` rational, `N = 111` — are
+downstream of the **opposite** requirement and do not arise on the ruled base.
+
+**The direction is base-dependent, not uniform.** The augmentation keeps
+`R < 1`. So "route 5 needs an elliptic generator" is a fact about *which
+admissible functional is the base*, not about the framework — invisible while
+only the `z = 1` cell was in view. **This is not a reason to prefer a base**:
+per §NO FITTING a base is never chosen by which obstruction it removes, and the
+ruled base is ruled whatever it does to this chain.
+
+**It does NOT resurrect Kohno–Drinfeld.** KD's own `cosh(ln q₀) = (q₀+1/q₀)/2 =
+1.00544843335` misses R by **−42.85 %** (`z_D`) and **−16.23 %** (dashboard).
+The failure moves from a **class** exclusion (wrong side of 1) to a **magnitude**
+gap (right side, wrong size) — weaker, and a different problem.
+
+**Not retracted:** steps 18–20's algebra is exact and correct for the target they
+were given. What changed is the target.
+
+### Secondary: `θ = 0.0565947` in prose is the convention-C FORM value
+
+Live at three sites, **all in `87bf883793` — the same commit whose probe corrects
+the target to the experimental `0.05661730079`**:
+`EigenphaseCarrierVacuity.lean:221`, `BringEllipticCurveJInvariant.lean:39`,
+`nuclear-interactions/q-beta-cos-resummation.lean:191` (plus this bean and
+`qou-cds1`). The gap is **3.99e-4**, which is precisely route 5's own documented
+"moved it by 4.0e-4" form-vs-experiment correction; this bean records 0.0565947
+as `|α_N1|` in convention **C** to 7 digits.
+
+**NOT swept.** On the ruled base `θ` does not exist at all, so these need
+*re-deriving*, not re-numbering — and the 2026-09-07 ask-first directive governs.
+Recorded for the owner.
+
+**How it was found, and it is my own error:** this probe's first draft took
+`0.0565947` from that Lean prose as its reproduction target and **failed its own
+check 1**. A rounded figure in prose is not an input — the third time this
+session I have had to relearn that, and the second time it produced a phantom
+discrepancy before the producer was run.
+
+### What is next
+
+`trace_eq` is still the open field. What the ruled base now asks for is a
+real-spectrum generator at `a ≈ 1.165`, against KD's `ln q₀ = 0.104` — a factor
+**11.2**. That is the concrete, falsifiable target replacing the elliptic ask,
+and nothing in the corpus supplies it yet.
 ## 2026-09-13 — attack B measured: INERT at the substrate, inside a derivable z-window
 
 The route triage above recommends **attack B (Faddeev `Φ_b` / modular double)**
@@ -1966,3 +2237,172 @@ Stokes-constant extraction as open research, so it is in scope.
 
 **Default if nothing is done:** the triage still reads "attack B, cheapest
 formalize-first step of the four", which two measurements now contradict.
+
+---
+
+## 2026-09-13 (correction) — my `det_eq` "prune" is a RE-DERIVATION of THIS BEAN
+
+Earlier today I committed
+[`qbeta_eigenphase_carrier_det_forces_even_length_probe.py`](computations/qbeta/qbeta_eigenphase_carrier_det_forces_even_length_probe.py)
+and framed it as a formalize-first prune on the carrier's second field:
+`det ρ(w) = (−1)^len(w)`, so `det_eq` ⟺ even length.
+
+**That is already in this bean, twice, and stated more strongly.**
+
+- **line ~81** — *"det rho(sigma_i^{±1}) = -1, so det rho(w) = (-1)^L; det M = 1
+  forces L even and lambda = ±1, leaving the trace in ±Z[q,q^-1]."*
+- **line ~1409** — *"`det ρ(σ) = −1` for all four generators, so an even-length
+  word has `det = +1` exactly. **The carrier's `M.det = 1` field is automatic and
+  free on the braid image — it was never the obstruction.** Odd-length words have
+  `det = −1` and cannot meet it at all, so the image splits cleanly by parity."*
+
+And `qbeta_mbeta_v21_spectrum_under_d.py` independently records
+`det T_pp = det T_nn = −1` ("Hecke unimodularity") and labels its
+`σ₁σ₂⁻¹` det = 1 assertion **"even word length"**.
+
+**The bean's framing is stronger than mine, in the direction that matters.** It
+calls `det_eq` **free** — never the obstruction. I called it "a prune that
+bites". A necessary-but-automatic condition does not bite, and describing it that
+way overstates what it buys. The correction stands independently of the
+arithmetic, which is fine.
+
+**What actually survives as mine**, and it is small:
+
+1. **`nuc11_interleaved`** — eleven letters, odd, so it cannot satisfy `det_eq`.
+   The bean never names it (grep: zero hits). Force limited: branch 1 (M in the
+   braid image) is independently excluded by
+   `BraidImageEigenphaseAlgebraic.coeffs_zero_of_surjective_nonpos`, so the
+   parity bites on a branch already closed.
+2. **The Hecke-relation gate** on the seminormal matrices, which caught a
+   hand-written `σ₂` that produced the nonsense determinant
+   `−q²+q−3+1/q−1/q²`.
+
+**How it happened:** corpus-grep **path 6 — "grep the beans" — was not run**
+before writing that probe, on the very bean the probe is filed under. Path 6's
+own rationale in AGENTS.md names this exact failure: a prior agent's conclusion
+sits in the bean before it reaches any other artifact. That is now seven
+corpus-grep interventions in this session, and this is the one that got through.
+
+**Not retracted, scoped.** The probe stays — its two small contributions are
+real and its docstring, witness `description`, `duplicates` and `own_contribution`
+fields now say plainly what is re-derived and what is not. Contaminated sites
+corrected: the probe docstring, its witness, this bean, and the PR #7340 body.
+
+**Unaffected:** the route-5 retired-base finding in the entry above is NOT in
+this bean or anywhere else (checked: `retired`/`z = 1`/`Form A`/`arccosh` all
+return only my own entry). That one stands.
+
+---
+
+## 2026-09-13 — blast radius of the retired `z = 1` base: 42 single-base `.py` files, and one of them is the canonical ladder producer
+
+Audit: [`qbeta_retired_z1_base_consumer_audit.py`](computations/qbeta/qbeta_retired_z1_base_consumer_audit.py)
+— 3/3. **Measurement only.** It changes nothing and proposes nothing; the
+2026-09-07 ask-first directive permits measuring and forbids the sweep, and this
+is the blast radius that directive asks to be put in front of the owner.
+
+**Why count.** Three consumers of the retired cell were found *by accident* in
+one day, across two arcs: the 2026-08-08 `Δtr_M` vs Form-A negative (#7326),
+route 5's ellipticity target `θ` (#7340), and `qbeta_alpha_required_c_vs_d_probe`.
+Three by accident is a reason to count rather than keep stumbling.
+
+| bucket (`.py`, AST on assignment RHS) | count |
+|---|---|
+| **SINGLE-BASE** — binds the retired cell, no `z_D` in the file | **42** |
+| **COMPARISON** — binds both; deliberate, not a defect | 39 |
+| **MENTION-ONLY** — signature in no assignment RHS | 46 |
+| `.lean` / `.md` / `.json` — counted, **not** classified | 12 / 49 / 38 |
+| `.beans` — excluded as records | 11 |
+
+**The consequential hit: `computations/qbeta/qbeta_ck_cache.py` is SINGLE-BASE.**
+That is the canonical `c_k` extraction producer — not a dated record, not a
+comparison, but the producer the ladder is read from. Consistent with AGENTS.md's
+own note that it **refuses to run under convention D**.
+
+### The first number was wrong, and the calibration check is what caught it
+
+The first run reported **29** SINGLE-BASE. Its calibration check then resolved
+two of the three hand-found consumers into **MENTION-ONLY** — impossible for a
+real consumer, so the classifier was wrong, not the corpus. Two missing
+spellings, both algebraically identical to `q²−2q−1`:
+
+- **absolute value pre-resolved** — `(2*q + 1 - q**2)`, legitimate because
+  `q₀²−2q₀−1 = −1.988 < 0`, so the corpus drops the `abs()`
+  (`qbeta_alpha_required_c_vs_d_probe.py:85`);
+- **Horner form** — `q*(q - 2) - 1`
+  (`qbeta_delta_tr_vs_ruled_base_probe.py:149`).
+
+Widened (five spellings, `(q-1)**2 - 2` added pre-emptively), all three
+calibrate into real buckets and the count goes **29 → 42**, a **45 %**
+undercount by the naive regex. This is row-44 material for the
+detector-blindness taxonomy and it was hit on first contact.
+
+**Two process notes, both self-corrections.** Three of the audit's original
+checks were `check(..., True, ...)` — self-certifying assertions of exactly the
+kind this corpus bans. The calibration one now resolves buckets and **fails** if
+a known consumer is missing; the two that were scope statements rather than
+measurements moved into witness fields, where nothing pretends they were tested.
+Had the calibration stayed hardcoded, 29 would have shipped.
+
+### What this is NOT
+
+**SINGLE-BASE is a candidate set, not a defect list.** A dated audit doc, a
+historical record, or a probe whose subject *is* the retired form is legitimately
+single-base. Separating those from genuine stale consumers is a reading task, not
+a regex task, and is left to the owner. **Declared blind spots:** a cell reached
+through a function call is invisible (the return-form blindness that made the
+convention-C producer audit read 0 for months); a two-step build is bucketed by
+its assignment only; `.lean`/`.md`/`.ts` are counted, never classified.
+
+The witness measures the **tree**, so it goes stale on any commit touching these
+files. Re-run it; do not quote it.
+
+---
+
+## 2026-09-13 (correction) — the route-5 gap is **139×**, not the "factor 11.2" I reported an hour ago
+
+Two additions to
+[`qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py`](computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py)
+(now 8/8).
+
+### 1. Cross-validated against `qou-99qc` — the two figure-pairs are NOT in conflict
+
+`qou-99qc` inverts the functional for CODATA, gets `z* = 0.99850`, and reports
+`z = q` at **+11.17 %** and `z_D` at **−38.64 %**. This arc records **+12.470 %**
+and **−43.157 %**. A reader meeting both pairs will conclude one is stale. They
+are the same shortfall in two coordinates:
+
+| | in `z` (qou-99qc) | in `Q_β` (this arc) |
+|---|---|---|
+| `z = q` (augmentation) | +11.1646 % | **+12.47006 %** |
+| `z_D` (ruled) | −38.6392 % | **−43.15716 %** |
+
+Reproduced by pushing the z-distances through the exact functional
+`h²/2 − z·h`; both land on this arc's figures. The non-proportionality is the
+`h²/2` term. **Not a discrepancy** — recorded so neither pair gets "corrected"
+into the other.
+
+### 2. My own "factor 11.2" understated the gap by an order of magnitude
+
+I reported the ruled base's target as *"a real-spectrum generator at `a ≈ 1.165`
+against KD's `ln q₀ = 0.104` — a factor 11.2"*. The arithmetic is right
+(`a_needed/a_KD = 11.1683`) and **the framing is wrong**, in the direction that
+flatters the route.
+
+`a` enters only through `cosh`, and near `a = 0`, `cosh a − 1 ≈ a²/2`. So a ratio
+in `a` is roughly the **square root** of the ratio in the quantity the correction
+must actually supply. Measured:
+
+```
+deviation needed   R − 1                = 75.936 %
+KD supplies        cosh(ln q₀) − 1      =  0.5448 %
+ratio                                    = 139.373×
+```
+
+**Quote 139×, not 11.2×.** Stating a `cosh`-mediated gap in its pre-`cosh`
+coordinate is a systematic understatement, not a rounding difference — and I
+made it in the same turn that corrected two other framing errors.
+
+Contaminated sites: this bean's preceding entry, the PR #7340 body's
+recommendation, and two chat reports. The probe and witness now carry the
+correction in a `gap_magnitude_correction` field.

@@ -1,0 +1,147 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-13T20:50:55.977000+00:00",
+  "commitSha": "ccd14ff592e0b6b1c4e3c932b1a9f48e430c6bb6",
+  "assertions": [
+    {
+      "name": "route5_theta_reproduces_from_the_retired_z_eq_1_cell",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "theta = acos(Q_beta^exp / (Q_A*(1-u^2))) with Q_A the z=1 cell gives 0.0566173007941, reproducing route 5's printed 0.056617301 to rel 8.389e-17. So the ellipticity target's base is MEASURED to be the z = 1 cell, not inferred from prose. R(z=1) = 0.99839766871926 < 1."
+    },
+    {
+      "name": "on_both_ruled_bases_R_exceeds_one_so_elliptic_is_excluded",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "R(z_D) = 1.75936462427 and R(dashboard) = 1.20024943393, both > 1. An elliptic generator has character cos(theta) <= 1 (Real.cos_le_one -- the SAME invariant the carrier file's replacement_excludes_some_matrix already uses), so on the ruled base no elliptic generator can supply the correction: acos(R) is not real. This is the exact MIRROR of step 18, which excluded real spectrum because cosh a >= 1 > 0.998399."
+    },
+    {
+      "name": "the_direction_is_base_dependent_not_uniform",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "R lands on BOTH sides of 1 across the four bases: z=1 0.9983976687 and augmentation 0.8891903171 are below, z_D 1.759364624 and the dashboard cell 1.200249434 are above. So 'route 5 needs an elliptic generator' is not a fact about the framework -- it is a fact about which admissible functional is the base, and that was invisible while only the z=1 cell was in view. NOT a reason to prefer a base: per AGENTS.md NO FITTING a base is never chosen by which obstruction it removes."
+    },
+    {
+      "name": "ruled_base_asks_for_a_REAL_spectrum_generator_and_names_its_value",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "with R > 1 the equation cosh(a) = R HAS a real solution, so the class step 18 excluded is the class the ruled base requires: a = 1.16530530037 on z_D and a = 0.622738411685 on the dashboard cell. Steps 19 (Im q) and 20 (the |q| = 1 fibre locus, theta/2pi rational, N = 111) are downstream of the OPPOSITE requirement and do not arise on the ruled base at all."
+    },
+    {
+      "name": "prose_theta_is_the_convention_C_form_value_not_the_live_target",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "three Lean files and two beans carry 'theta = 0.0565947' for this quantity; the live producer computes 0.05661730079406103, a relative 0.000399185 away. That gap IS the documented form-vs-experiment correction (route 5's own docstring: 'moved it by 4.0e-4'), and the bean records 0.0565947 as |alpha_N1| in convention C to 7 digits. So the prose figure is the convention-C FORM value. Live sites, all in commit 87bf883793 -- the SAME commit whose probe corrects the target: EigenphaseCarrierVacuity.lean:221, BringEllipticCurveJInvariant.lean:39, nuclear-interactions/q-beta-cos-resummation.lean:191. NOT swept: on the ruled base theta does not exist at all (check 2), so these would need re-deriving rather than re-numbering, and AGENTS.md's 2026-09-07 ask-first directive governs. Recorded, not fixed. This probe's own first draft took 0.0565947 from that prose as an input and failed its own check -- which is how the discrepancy was found."
+    },
+    {
+      "name": "kohno_drinfeld_own_value_still_misses_on_every_base",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "KD fixes hbar = 2 ln q by matching the Hecke pair, giving character cosh(ln q_0) = (q_0 + 1/q_0)/2 = 1.00544843335. Against R that is 0.706208 % on z=1, -42.8516 % on z_D and -16.23 % on the dashboard cell. So the ruled base does NOT resurrect Kohno-Drinfeld: it moves the failure from a CLASS exclusion (wrong side of 1) to a MAGNITUDE gap (right side, wrong size), which is a weaker obstruction and a different problem."
+    },
+    {
+      "name": "qou_99qc_z_space_figures_and_this_arcs_q_space_figures_agree",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "bean qou-99qc reports z = q at +11.17 % and z_D at -38.64 % from its inverted z* = 0.99850; reproduced here as distances IN z: 11.1646 % and -38.6392 %. Pushed through the exact functional h^2/2 - z*h those become residuals in Q_beta of 12.47006 % and -43.15716 %, reproducing this arc's +12.470 % and -43.157 %. NOT a discrepancy -- two coordinates for one shortfall. Recorded because a reader meeting both pairs will otherwise conclude one is stale."
+    },
+    {
+      "name": "stating_the_gap_in_a_understates_it_by_an_order_of_magnitude",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "CORRECTION to this session's own framing. The route-5 gap on the ruled base was reported as 'a factor 11.2', i.e. a_needed/a_KD = 11.1683. But `a` enters only through cosh, and near a = 0, cosh a - 1 ~ a^2/2, so a ratio in `a` is about the SQUARE ROOT of the ratio in the deviation the correction must actually supply. That deviation ratio is (R - 1)/(cosh(ln q_0) - 1) = 139.373x -- Kohno-Drinfeld supplies 0.5448 % where 75.936 % is needed. Quote the deviation ratio; 'factor 11.2' understates the gap by roughly an order of magnitude and flatters the route."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-route5-ellipticity-target-retired-base",
+  "scriptFile": "qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py",
+  "scriptHash": "836b6590d6b5",
+  "scriptCommitSha": "800ad92e48e026808671e2c3c143de80b148554f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py"
+  },
+  "description": "Route 5's ellipticity requirement is computed from the RETIRED z = 1 cell. Reproduced here: theta = acos(Q_beta^exp/(Q_A(1-u^2))) with Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) gives route 5's printed 0.05659469. The owner retired that cell as the base on 2026-09-08; the three step-18/19/20 files are dated 2026-09-07, so they were correct when written. On BOTH ruled bases the required factor R = Q_beta^exp/(base(1-u^2)) EXCEEDS 1, and an elliptic generator has character cos(theta) <= 1 -- so the requirement inverts: the ruled base excludes the elliptic class and requires the real-spectrum class step 18 excluded. Steps 19 (Im q) and 20 (the |q|=1 fibre locus, theta/2pi rational, N=111) are downstream of the opposite requirement. The direction is NOT uniform -- the augmentation base keeps R < 1 -- so it is a fact about the base, not about the framework, and is explicitly NOT a reason to prefer a base. Kohno-Drinfeld's own cosh(ln q_0) = 1.00545 still misses on every base, so the failure moves from a class exclusion to a magnitude gap.",
+  "bean": "qou-pdix",
+  "parent_bean": "qou-cds1",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "bases": [
+    {
+      "base": "z = 1 (Form A)",
+      "note": "RETIRED as base 2026-09-08",
+      "Q_base_MeV": "0.783645827374621213074939751341396890525736441030295379745209",
+      "R": "0.998397668719255188542319854187145150046781313330417588906980",
+      "side": "< 1  -> needs ELLIPTIC"
+    },
+    {
+      "base": "z_D = q^3/(q^2+1)",
+      "note": "RULED (order-zero E_0, old element)",
+      "Q_base_MeV": "0.444700408521780409100962213024942779024902777364466679758098",
+      "R": "1.75936462427170005075830299049482271637631507919844436565484",
+      "side": "> 1  -> ELLIPTIC EXCLUDED"
+    },
+    {
+      "base": "z = q (augmentation)",
+      "note": "the other admissible point",
+      "Q_base_MeV": "0.879890561260119838902965955941296576254288512481661072995723",
+      "R": "0.889190317068417406066676080193854412934942367758732965936608",
+      "side": "< 1  -> needs ELLIPTIC"
+    },
+    {
+      "base": "dashboard scored cell",
+      "note": "RULED (nuc11_interleaved, tower E_0)",
+      "Q_base_MeV": "0.651856310059999999999999999999999999999999999999999788393285",
+      "R": "1.20024943392874227573307043435836257498103572242316471093154",
+      "side": "> 1  -> ELLIPTIC EXCLUDED"
+    }
+  ],
+  "prose_theta_stale_sites": [
+    "content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean:221",
+    "content/quantum-observable-universe/lean/QOU/QBeta/BringEllipticCurveJInvariant.lean:39",
+    "content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean:191"
+  ],
+  "retired_base_ruling": "owner 2026-09-08: eps = Markov trace at z_D = q^3/(q^2+1); z = 1 retired as base",
+  "supersedes_nothing": "steps 18-20 are NOT retracted: their algebra is exact and correct for the target they were given. What changed is the target.",
+  "invariants_cited": [
+    "Real.cos_le_one (elliptic character <= 1) -- Mathlib, and already used by QOU.QBeta.EigenphaseCarrier.replacement_excludes_some_matrix",
+    "1 <= cosh (real-spectrum character >= 1) -- QOU.QBeta.HolonomySpectrumSignObstruction, sorry-free"
+  ],
+  "gap_magnitude_correction": "The route-5 gap on the ruled base must be quoted as the DEVIATION ratio (R-1)/(cosh(ln q0)-1), not as a_needed/a_KD. `a` enters only through cosh and cosh a - 1 ~ a^2/2 near 0, so the ratio in `a` is about the square root of the ratio that matters and understates the gap by roughly an order of magnitude.",
+  "cross_validation": "bean qou-99qc's z-space figures (z* = 0.99850; z = q at +11.17 %, z_D at -38.64 %) and this arc's Q_beta residuals (+12.470 %, -43.157 %) are the SAME statement in two coordinates, related by the exact functional h^2/2 - z*h. Not a discrepancy.",
+  "scope": "(b) for the two class statements, each citing a proved invariant; (a) for every number. Derives no alpha, selects no base, proposes no wiring, and does not show that no connection exists."
+}
