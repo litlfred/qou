@@ -93,6 +93,43 @@ over-collapses on the other.
 
 Generic throughout: cost in an `AddCommMonoid`, comparison in a `Preorder`
 (AGENTS.md §7c). Bean `qou-99qc`.
+
+## 🟩 THE REPLACEMENT THIS FILE DEMANDS HAS BEEN BUILT — by a sibling, and
+   not by me (2026-09-14, later the same day)
+
+This file says, in the paragraph above, that it supplies **no** replacement
+cost — only the statement that a replacement must not be constant on the fibre.
+That gap is now filled, by `claude/99qc-crossing-budget-parity-2026-09-14`
+(PR #7390) and its commits now on `main`:
+
+* `QOU.QBeta.ECatBlockDecomposition.pairSum_not_perm_invariant` and
+  `blockCost_can_separate` — a **pair kernel** in the cost socket, whose
+  `1/d_arc²` separation weight is what breaks the tie; and
+* `qbeta_ecat_pair_kernel_probe` (4/4), which measures it: four distinct
+  values over the four gluon dressings, against **one** value for every
+  letter-sum.
+
+**It escapes THIS file's quotient, not only permutation.**
+`QOU.QBeta.LetterSumBlindness.bridgeClass_perm_blind` is exactly the
+`(exponent sum, strands)` map named in the paragraph above as the corpus's
+embedding map, and the four candidates all sit at **writhe +2, length 2** —
+one fibre of it — while the kernel gives four distinct values there. So the
+positive instance of `selected_not_determined_of_cost_factors`'s hypothesis
+failing is already measured, across assertions 1 and 2 of that probe.
+
+**Deliberately NOT re-derived here.** Per the convergence rule, the second
+route verifies and cites rather than re-deriving: nothing in this file is
+changed, no companion lemma is added, and the credit is theirs. The two
+results are complementary and their own commit says how — theirs turns on
+**permutation** of letters, mine on the **writhe/count split** at fixed
+writhe; neither implies the other.
+
+**What is still open is narrower, not closed.** Their probe's own assertion 4
+scopes it: the kernel is a *discretisation*, its continuum limit is not proved
+to be `E_cat`, and the classical-limit leg it would need is assumed. That leg
+is the `CategoricalMobiusEnergy.classicalLimit` field, which
+`QOU.MobiusEnergy.classicalLimit_unconstraining` (this branch, sorry-free)
+shows constrains **nothing** as encoded. Reported to them on #7390.
 -/
 import Mathlib.Data.List.Perm.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Lemmas

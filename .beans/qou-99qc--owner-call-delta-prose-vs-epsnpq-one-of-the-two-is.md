@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T17:13:35Z
+updated_at: 2026-09-14T21:48:58Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2798,3 +2798,54 @@ and would have missed the true instance in the other.
 bridge does not select, the dashboard rows stay un-re-scored, and the
 `u = ln q₀` vs `u = 2 ln q₀` meridian-normalisation binary stays open with
 neither branch adopted.
+
+
+## 2026-09-14 (session gifted-feynman, 6) — the replacement my theorem demanded HAS been built, by a sibling; I am not re-deriving it
+
+My entry above ends: *"This result says what any replacement must have (it must
+not be constant on the multiset); it does not supply one."* **A sibling
+supplied one, and it is on `main`.**
+
+`claude/99qc-crossing-budget-parity-2026-09-14` (PR #7390), commits
+`380f5935c2` / `aa224aba03` / `27250649ff`:
+
+* `QOU.QBeta.ECatBlockDecomposition.pairSum_not_perm_invariant` and
+  `blockCost_can_separate` — a **pair kernel** in the cost socket, with the
+  O'Hara `1/d_arc²` separation weight doing the work;
+* `qbeta_ecat_pair_kernel_probe` (4/4), run here against the merged tree: four
+  distinct proton values over the four gluon dressings
+  (`8.68872560885`, `7.76875635932`, `8.89780952920`, `9.06507666548`) against
+  **one** value for every letter-sum, and a control showing the sharp pair
+  separating by `0.91996925` weighted against **exactly 0.0** unweighted.
+
+**It escapes MY quotient, not only permutation — and that composition is
+already measured, so there is nothing for me to add.**
+`LetterSumBlindness.bridgeClass_perm_blind` is exactly the
+`(exponent sum, strands)` map my own entry identified as the corpus's
+embedding map; all four candidates sit at **writhe +2, length 2**, one fibre
+of it; the kernel separates them. That is assertions 1 and 2 of their probe.
+
+**Deliberately not re-derived.** Per the convergence rule the second route
+verifies and cites. I added no companion lemma; `CostOrderSensitivity.lean`
+gains a docstring section recording the finding and the credit, nothing more.
+Their commit's own account of the complementarity is correct: theirs turns on
+**permutation** of letters, mine on the **writhe/count split** at fixed
+writhe, and neither implies the other.
+
+**What stays open is narrower, not closed**, and their assertion 4 scopes it
+themselves: the kernel is a **discretisation**, its continuum limit is not
+proved to be `E_cat`, and the classical-limit leg it would need is *assumed*.
+
+**That leg is worse than assumed, and I proved it this session.**
+`CategoricalMobiusEnergy.classicalLimit` has `classicalLimitConst` as a **free
+field of the same structure**, so it is satisfiable for any pair of energies by
+exactly one `k` — `QOU.MobiusEnergy.classicalLimit_unconstraining` and
+`classicalLimitConst_eq` (sorry-free). So a future agent cannot close the
+continuum-limit question by appealing to that field. Reported on #7390;
+**not repaired** — §ASK THE OWNER applies and it stays an owner decision.
+
+**The replacement ELEMENT is still an owner call.** None of this selects a
+word. Their own declined claims stand (not `E_cat`; nothing selects a word;
+`t_lambda` not computed), and this bean's first open item — what replaces
+`nuc11_interleaved` after the confinement-SDP reading-3 rejection — is
+untouched by all of it.
