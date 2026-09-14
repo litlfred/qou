@@ -61,6 +61,7 @@ Bean `qou-pzsi`; the fork it collapses is also stated at `qou-99qc` and at
 """
 from __future__ import annotations
 
+import itertools
 import sys
 from pathlib import Path
 
@@ -84,6 +85,18 @@ CANDIDATES = {
     "gluon_s1_s1":                NUC9 + [1, 1],
     "gluon_s0_s0":                NUC9 + [0, 0],
 }
+
+
+#: `nuc11_constructed(kind, gens, hopf)` is the properties blocks' OWN recipe and
+#: is really SIXTEEN words: the blocks give the typed quark shifts but never say
+#: which generator each quark crossing sits on, so `qou-vtlj` scans 8 assignments
+#: x 2 Hopf orientations. All sixteen are enumerated here -- covering three of the
+#: four census families and calling that "every candidate" would be a sample
+#: dressed as a census.
+for _gens in itertools.product((0, 1), repeat=3):
+    for _hopf, _hname in (((1, 0), "L-"), ((0, 1), "L+")):
+        CANDIDATES[f"nuc11_constructed[gens={_gens},hopf={_hname}]"] = (
+            [0, 1] * 3 + list(_gens) + list(_hopf))
 
 
 def underlying_permutation(gens, n=STRANDS):
@@ -167,11 +180,22 @@ def main() -> int:
           "[KS97] is not held, and the link case is untreated in the held "
           "literature. Do NOT write 'no minimiser exists'.")
 
+    n_constructed = sum(1 for k in rows if k.startswith("nuc11_constructed"))
+    check("6. the sweep is EXHAUSTIVE over the census, not a sample -- all 16 "
+          "readings of nuc11_constructed are included and every one is a link",
+          n_constructed == 16
+          and all(v["components"] == 2 for k, v in rows.items()
+                  if k.startswith("nuc11_constructed")),
+          f"{n_constructed} constructed readings (8 quark-generator assignments "
+          f"x 2 Hopf orientations, per qou-vtlj), all 2-component; "
+          f"{len(rows)} words in total across all four census families, with "
+          f"ZERO knots among them.")
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/5: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/6: {', '.join(failures)}")
     else:
-        print("5/5 assertions hold.")
+        print("6/6 assertions hold.")
 
     print("""
 CONSEQUENCE for bean qou-pzsi
@@ -202,9 +226,7 @@ CONSEQUENCE for bean qou-pzsi
 
     wb = WitnessBuilder("qbeta-candidate-closures-are-links")
     wb.set_description(
-        "Every scored Delta candidate -- nuc9, nuc11_interleaved (the LIVE "
-        "SCORED element), nuc11_gen_grouped and all four two-crossing gluon "
-        "dressings -- closes to a 2-COMPONENT LINK on 3 strands, computed as "
+        "Every scored Delta candidate closes to a 2-COMPONENT LINK on 3 strands, computed as "
         "the cycle count of the word's underlying permutation in S_3 (exact "
         "integer arithmetic; no floats anywhere). NOT ONE is a knot. So "
         "Freedman-He-Wang Theorem B, which hypothesises 'a smooth prime (not a "
@@ -254,6 +276,7 @@ CONSEQUENCE for bean qou-pzsi
         "the live scored element nuc11_interleaved is among them",
         "the order-differing pair is not what the prune rests on",
         "scope: (b) for non-applicability, (a) for non-existence",
+        "exhaustive over the census: all 16 constructed readings included",
     ], 1):
         wb.add_assertion(f"{i}. {nm}", "FAIL" if nm in failures else "PASS", "PASS")
     out = wb.save()
