@@ -1194,6 +1194,24 @@ export const references: Reference[] = [
     DOI: "10.1007/BF01223371",
   }),
 
+  // ── Witten 1988 (gravity) — NOT the same paper as witten1988 ───
+  ref({
+    id: "witten1988gravity",
+    type: "article-journal",
+    title: "2 + 1 dimensional gravity as an exactly soluble system",
+    author: [
+      { family: "Witten", given: "Edward" },
+    ],
+    "container-title": "Nuclear Physics B",
+    issued: { "date-parts": [[1988]] },
+    volume: "311",
+    issue: "1",
+    page: "46-78",
+    DOI: "10.1016/0550-3213(88)90143-5",
+    note:
+      "Shows that 2+1 dimensional gravity (with or without a cosmological constant) is exactly soluble classically and quantum-mechanically, because it IS a Chern-Simons gauge theory — gauge group ISO(2,1) for Lambda = 0, SL(2,R) x SL(2,R) for Lambda < 0, SL(2,C) for Lambda > 0. That identification is what makes the root-of-unity WRT/Chern-Simons TQFT and 3d quantum gravity the SAME object rather than two theories in analogy, so it is the citation that names the reachable gravity target of this framework precisely. DISTINCT FROM [witten1988], which is 'Topological quantum field theory', Comm. Math. Phys. 117 (1988) 353-386 — the Donaldson-theory / TQFT-axioms paper. Two Witten 1988 papers on adjacent subjects: check the container title (Nucl. Phys. B 311 here, Comm. Math. Phys. 117 there) before citing either, and do not let a [witten1988] cite be read as this paper. SCOPE CAVEAT, TO BE STATED WHEREVER THIS IS CITED: 3d gravity has NO local degrees of freedom — no gravitons, no propagating waves, no inverse-square law — which is precisely why it is exactly soluble. So this route reaches 3d TOPOLOGICAL quantum gravity, which is genuinely rigorous, and provably NOT the 4d theory; a citation of this paper is never evidence about 4d gravity. Registered 2026-09-14 (bean qou-2583); metadata (volume/issue/pages/DOI) verified against the ADS and Elsevier records, PDF body not read in-sandbox.",
+  }),
+
   // ── Witten 1989 — Quantum field theory and the Jones polynomial ─
   ref({
     id: "witten1989",
