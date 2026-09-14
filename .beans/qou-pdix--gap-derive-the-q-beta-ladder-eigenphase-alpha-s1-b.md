@@ -2474,3 +2474,77 @@ removes).
 The open question is no longer "what is α" but **what object supplies a factor
 above 1 at all** — the ladder's multiplicative form cannot, whatever its phase.
 That is a question about the *base or the assembly*, not about the phase.
+
+---
+
+## 2026-09-14 — the question above has an answer already in the corpus, and it reverses route 5
+
+The entry above closes asking *"what object supplies a factor above 1 at all"*.
+Route 5's own machinery does — and it is the branch route 5 currently treats as
+excluded.
+
+**The step-18 obstruction is conditional, and its hypothesis is false on the
+ruled base.** `qbeta_holonomy_spectrum_sign_obstruction_probe` argues a
+real-spectrum holonomy has character `cosh(a) ≥ 1` and so cannot supply a
+correction **below 1** — *"1.005448 against a required 0.998399: wrong SIDE of
+1."* That `0.998399` is the requirement on the **retired** `z = 1` cell.
+Measured (`qbeta_ruled_base_inverts_the_route5_obstruction_probe`, 6/6, proton
+pin, 50 dps), with `κ = F_required/(1 − u²)`:
+
+| base | `κ` | hypothesis `κ < 1` |
+|---|---|---|
+| `z = 1` (Form A) — RETIRED | 0.998397668719 | TRUE → **fires** |
+| `z_D`, order-zero `E₀` — RULED | 1.7593646242717 | FALSE → **does not fire** |
+| `z = q` (augmentation) | 0.889190317068 | TRUE → fires |
+| dashboard scored cell — RULED | 1.20024943392874 | FALSE → **does not fire** |
+
+Calibrated first against step 18's own two quoted figures (required and KD
+character), to 1.3e-6 and 4.3e-7 — same object, not a near-relative.
+
+**The Lean is untouched and correct.** `correction_below_one_excludes_real_spectrum`
+carries the hypothesis `(hκ : κ < 1)` explicitly and was always a conditional.
+What the base change falsified is its **premise** — AGENTS.md's
+*conditional-proved ≠ premise-established*, here in the direction where the
+corpus stated the conditional properly and the prose around it then treated the
+hypothesis as settled.
+
+**On a ruled base the two proved inequalities point the other way.** `cosh ≥ 1`
+(`real_spectrum_character_ge_one`, sorry-free) and `|cos| ≤ 1`
+(`Real.cos_le_one`, via `ladderN2_lt_of_one_le`, sorry-free) together exclude the
+**elliptic** generator and leave the **hyperbolic** one — which is what the
+substrate's Kohno–Drinfeld generator already is at real `q₀` (`ħ = 2 ln q`,
+`det A = −(ln q)² = −0.01088698592 < 0`). Step 18 recorded that as the defect; it
+is no longer a defect.
+
+**So the narrowing to `det A > 0` / `|q| = 1` / the Kashaev locus / the `N = 111`
+question rests on a retired premise.** `qbeta_fibre_unit_circle_opens_route5_probe`
+is not wrong — its `det A > 0 ⟺ |q| = 1` identity is exact — but the *requirement*
+that sent route 5 to the fibre no longer holds on the ruled base.
+
+**This does not derive anything.** The KD character `1.00544843335` is on the
+right side of 1 and the wrong size against `1.75936462427` required. Route 5 goes
+from a **structural** obstruction back to a **quantitative** gap, which stays
+open. Non-exclusion is not a derivation, and per NO FITTING the fact that the
+ruled base makes this exclusion lapse is not a reason to prefer it. The required
+character and generator eigenvalue are recorded to check **against**; no search
+was run for a construction producing them.
+
+### The coordinate, again — and it resolves a live disagreement
+
+The residual gap at the `z_D` order-zero base, in three spellings:
+
+    generator eigenvalue    a_req / a_KD       =  11.16826965
+    character excess        (κ − 1)/(KD − 1)   = 139.3730225
+    character ratio         κ / KD             =   1.7498308
+
+A sibling branch (`claude/cds1-pdix-attack-c-stokes-2026-09-13`) recorded *"the
+route-5 gap is 139x, not the 'factor 11.2' I reported an hour ago"*. **Both are
+right and they are the same gap** — the second is a change of coordinate, not a
+correction, and neither figure should be retracted.
+
+With `c_k` (magnifier `1/u² = 13784.8735`) and `1 − F`, this arc now has **five**
+coordinates for one deviation. Every confusion in it so far — the `−100.21 %`
+above, the 11.2/139 pair here — has been about which one is in use. **Say the
+coordinate before quoting a factor.**
+
+**Status: still open.** α is underived; the gap is quantitative. Rule 13a.

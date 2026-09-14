@@ -8253,3 +8253,39 @@ specification.** At the order-zero `E₀` the ruled functional gives
 searched **on** — do not hunt for an element whose Markov trace lands there. The
 dashboard's own scored element already fails the confinement-SDP selection rule
 (owner ruling 2026-09-13), so the assembly is under review independently.
+
+---
+
+## 2026-09-14 (2) — the route-5 obstruction that shaped this arc is base-conditional
+
+Companion to the entry above, and it changes what "blocked on `qou-pdix`" means.
+
+The entry above established that the ladder's factor cannot reach the ruled base
+for **any** phase (`cos ≤ 1`, so `F ≤ 1 − u² = 0.99992745` against `F_required`
+of 1.7594 / 1.2002). The natural next question — *what supplies a factor above 1*
+— turns out to be answered by route 5's own machinery, in the branch route 5
+currently treats as excluded.
+
+`correction_below_one_excludes_real_spectrum` (step 18, sorry-free) carries the
+hypothesis `(hκ : κ < 1)`. Measured at 50 dps on the proton pin
+(`qbeta_ruled_base_inverts_the_route5_obstruction_probe`, 6/6): `κ = 0.998398` on
+the **retired** `z = 1` cell — reproducing step 18's own quoted `0.998399` — and
+`κ = 1.759365` / `1.200249` on the two **ruled** cells. The exclusion does not
+fire on either.
+
+**Consequence for this bean.** Two sorry-free inequalities on a base needing
+`κ > 1` — `cosh ≥ 1` and `|cos| ≤ 1` — exclude the **elliptic** generator and
+leave the **hyperbolic** one, which the substrate's Kohno–Drinfeld generator
+already is at real `q₀` (`det A = −(ln q)² < 0`). The `det A > 0` / `|q| = 1` /
+Kashaev-locus / `N = 111` narrowing was derived from the retired requirement.
+
+The Lean stands; only its premise moved. Nothing here derives `c_k` or `α`, and
+nothing selects a base — per NO FITTING, an exclusion lapsing is not a reason to
+prefer the base it lapses on.
+
+**This bean stays blocked and open**, but the blocker is better described: not
+*"derive α"* (which the entry above shows cannot close it) and not *"find an
+elliptic construction"* (which this entry shows was never required on the ruled
+base), but the **quantitative** gap between the hyperbolic character available at
+`q₀` (`1.00544843`) and the one required (`1.75936462`) — 11.17× in the generator
+eigenvalue, 139.37× in the character excess. Rule 13a.
