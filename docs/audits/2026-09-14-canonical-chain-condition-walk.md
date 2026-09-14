@@ -577,6 +577,69 @@ derivation step vacuous**, and that the code it summarises does not.
 
 ---
 
+## Steps 7–8 — the diagram's arrow is not a `uses[]` edge
+
+The step table already flags step 8's carrier honestly:
+`conj:jet-convergence-classical-limit` — *"(conjecture, not prop — corpus
+kind)"*. That is not the finding. **It is a *dependent* conjecture**, though:
+its own `uses[]` is `["conj:jet-filtered-knot-factor"]`, so step 8 stands on a
+second conjecture beneath it, which the table does not say.
+
+The walk's question — if steps 9–11 are downstream of a conjecture, do they
+declare it (AGENTS.md §3b)? — turns out to have a prior question in front of
+it. Measured over the corpus's own dependency graph (3565 labelled blocks
+parsed from the `.ts` manifests):
+
+| step | carrier | cone | reaches the named 7/8 carriers |
+|---|---|---:|---|
+| 9 | `prop:atom-knot-mass-derivation` | 79 | **none** |
+| 10 | `prop:confinement-sdp` | 3 | **none** |
+| 11 | `prop:neutron-qvalue-symbolic` | 102 | **none** |
+
+**🛑 But that is a statement about LABELS, not about dependence — and my first
+framing got it wrong.** I wrote it as *"steps 9–11 stand independently of the
+GB/jet machinery"*. They do not: step 9's cone **does** reach
+`prop:jet-prefix-gb-filtration`, the same machinery under a different label.
+Section 4 of the probe is the measurement that caught it. This is the *grep the
+claim shape, not the topic* failure one label over.
+
+So the honest, narrow statement: **the diagram's arrow is not a `uses[]` edge,
+and the blocks it names for steps 7–8 are not the blocks the dependency graph
+routes through.** An agent tracing the chain formally, by the manifests, will
+not find what the cheat sheet sends it to.
+
+Conjecture counts in the cones, for completeness: step 9 has **4**
+(`conj:canonical-knot-id-sdp`, `conj:brane-tower-z-habiro`,
+`conj:confinement-grading-correspondence`, `conj:crystal-graph-realization`)
+by two independent routes; steps 10 and 11 have **zero**.
+
+[`chain_uses_graph_vs_diagram_probe.py`](../../computations/audits/chain_uses_graph_vs_diagram_probe.py),
+12/12. Manifest parsing and graph reachability only — no arithmetic, so no
+precision question arises.
+
+### 🛑 Prior art — what this pass deliberately does NOT report as new
+
+Two things this data invites re-reporting, both already in the corpus and found
+by corpus-grep **before** anything was written:
+
+- **`prop:atom-knot-mass-derivation` is an already-adjudicated §3b-cond item-5
+  violation.** Its Lean carries `[h : AtomKnotMassDerivationConjecture]` and
+  the class field's type is character-for-character the theorem's conclusion,
+  discharged by `h.atom_knot_mass_derivation cert T_w` — a bare projection.
+  Bean **`qou-tmmt`** (2026-09-04) adjudicated 9 candidates, confirmed 8
+  including this one, and is still `todo`.
+- **`MassIdentity` reduces to `B_pred ≥ 0 ∧ |B_pred − B_AME| ≤ B_AME/4`** — a
+  25 % tolerance against AME, so even a repaired conditional theorem would
+  assert agreement-within-25 %, not the mass identity the `.md` states. The
+  Lean docstring says so, and it is reported in
+  [`2026-06-07-proof-rater-baseline-audit.md`](2026-06-07-proof-rater-baseline-audit.md).
+
+Recorded because the checklist is what stopped a re-derivation here, not
+because the findings are mine. **What survives as new from this pass is the
+graph measurement alone.**
+
+---
+
 ## Where the walk stands
 
 The chain's conditions do not accumulate step by step — they **converge on one**:
@@ -621,7 +684,16 @@ genus misses by one (§"Answering (1)" above).
    derives nothing.
 4. **The rank contradiction** (`why-b3` "rank 1" vs `descartes-knot-eigenbasis`
    "rank 2") — still a one-line fix someone should own.
-5. **Steps 7, 8, 9 (the leptonic leg)**, still unwalked.
+5. **The cheat sheet's step-7/8 labels** do not match the blocks the `uses[]`
+   graph routes through (`prop:jet-prefix-gb-filtration`, not
+   `prop:gb-spectral-sequence` / `conj:jet-convergence-classical-limit`). The
+   cheapest of the four document fixes. **Default:** an agent tracing the chain
+   by the manifests keeps not finding what the diagram names.
+6. **All eleven steps are now walked** at least to the level of "what condition
+   enters". What is *not* done is the interior mathematics of steps 7–9 — the
+   GB spectral sequence's actual collapse, and the Archimedean realisation
+   functor, whose absence is what `MassIdentity`'s 25 % tolerance stands in
+   for.
 
 Note what (1) does *not* threaten: `g = 4` itself. Route 2's embeddability
 arithmetic is clean and independent of this defect.
