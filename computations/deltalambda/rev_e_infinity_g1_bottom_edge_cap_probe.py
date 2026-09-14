@@ -54,19 +54,43 @@ of `s` the capped class happens to still contain a maximiser.  What survives fro
 only the qualitative claim, which all four settings support: **the break is governed by `BMAX`,
 saturates it, and recedes as `BMAX` grows.**
 
+## 🛑 Raising only ONE cap is the same mistake one level up
+
+The sweep above raises `BMAX` against the *committed* `TMAX = 8`, and taken alone it misleads —
+because the top class is capped too.  Push it one step further, to `BMAX = 12`, and the **bottom
+overtakes the top** at `s = 16, 17, 18` by `0.050 / 0.069 / 0.060`.  Read at face value that is a
+**refutation of G1**.  It is not one: the top winner saturates its own `TMAX = 8` from `s = 15`
+on, so past there it is the *top* table that has run out of rows.
+
+The only honest comparison caps both classes alike, and that is `G1f`.  With both at 12 rows the
+two tables are **exactly equal for `s = 1..16`**, the top is strictly higher from `s = 17`, and
+**the bottom exceeds the top at no `s` at all**.
+
+Note the symmetric run (**16**) is *shorter* than the one-sided sweep's **17**, and the shorter
+number is the honest one: at `BMAX = 11` against `TMAX = 8` the two tables agree at `s = 17`
+because **both** are truncated there, so that agreement is two truncations meeting rather than
+two suprema.  A longer agreement run is not automatically better evidence.
+
+`G1g` is why an equal cap is still not a *fair* cap: the bottom's maximisers are flat and long
+where the top's are steep and short, so at the same `s` the bottom needs strictly more rows (at
+`s = 14`, ten against seven).  A numerically equal row cap therefore favours the top — which is
+exactly how `BMAX = 9` against `TMAX = 8` came to look balanced.
+
 ## What this does NOT do — G1 is still OPEN
 
-Enumerating a larger class gives a better **lower** bound on `Xbot`.  A lower bound can only ever
-*refute* `Xbot <= Xblock`; it can never prove it.  So this probe does not close G1 and does not
-weaken it either.  What changes is the evidence:
+Every table here is a maximum over a **capped** class, so every value is a **lower** bound on its
+own supremum.  A lower bound can only ever *refute* `Xbot <= Xblock`; it can never prove it.  So
+this probe does not close G1 and does not weaken it.  What changes is the evidence:
 
   - the one recorded observation pointing *toward* G1 (`s = 13`) is withdrawn as an artifact;
-  - the observations *consistent with* G1 extend from `s <= 12` to `s <= 17` — exact equality
-    in 40-digit integer arithmetic at every one, across two different evaluators (`ap_value` in
-    the `k -> infinity` AP for the top, `delta_excess` on a finite `k = 320` staircase frame
-    with a `P` extension for the bottom) and two unrelated maximiser shapes;
-  - `s <= 17` covers the certified join window's argmax `s_b = 8` with room to spare, though not
-    the whole window `s_b <= 27`.
+  - at matched caps the two edges agree **exactly** for `s = 1..16` — 40-digit integer equality
+    at every one, across two different evaluators (`ap_value` in the `k -> infinity` AP for the
+    top, `delta_excess` on a finite `k = 320` staircase frame with a `P` extension for the
+    bottom) and two unrelated maximiser shapes;
+  - **no exceedance anywhere**, at any cap setting where the comparison is symmetric;
+  - `s <= 16` covers the certified join window's argmax `s_b = 8` with room to spare, though not
+    the whole window `s_b <= 27`.  Past `s = 16` the bottom winner is cap-saturated, so `s >= 17`
+    is undetermined rather than settled in the top's favour.
 
 **What would actually close G1** is an upper bound on `Xbot` of the kind #7349 built for
 `Xblock` — a per-row coercivity bound on the bottom edge's own evaluator, then a certificate.
@@ -84,6 +108,14 @@ bottom class inside that cut would remove G1 from the argument entirely rather t
   G1d  the recorded `s = 13` violation is GONE at `BMAX >= 10`: the tables are equal there
   G1e  the maximisers are not reflections of one another — different lengths, different shapes,
        identical values
+  G1f  **the symmetric comparison** — both classes at the same row cap: exact equality for
+       `s = 1..16`, and the bottom exceeds the top at NO `s`.  Without this, G1a-G1e read as a
+       refutation of G1 that is really the top's own cap
+  G1g  the bottom needs strictly more rows than the top at the same `s`, so an equal cap is not
+       a fair one — the reason `BMAX = 9` vs `TMAX = 8` looked balanced
+
+`G1f`/`G1g` cost ~8 min (4.05M top profiles at 12 rows).  `REV_G1_SKIP_SYM=1` skips them and the
+probe then says, in its own output, that what remains is not a G1 verdict.
 
 Proton-pinned; exact integer arithmetic at scale 1e-40 throughout, inherited from
 `rev_e_infinity_edge_limit_probe.py` whose definitions this file executes directly rather than
@@ -139,6 +171,13 @@ RECORDED_DIFF = mp.mpf("0.0198162676389039602300948111946348416306")
 SETTINGS = [(8, 6), (BMAX, BUMAX), (10, 3), (11, 3)]
 if os.environ.get("REV_G1_BMAX12"):
     SETTINGS.append((12, 3))
+
+# The symmetric comparison (G1f/G1g): BOTH classes at the same row cap.  `top_profiles` at 12
+# rows is 4.05M profiles / ~4 min, so it is opt-out rather than opt-in — skipping it is what
+# produced the half-story this probe exists to correct.
+SYM_ROWS = int(os.environ.get("REV_G1_SYM_ROWS", "12"))
+SYM_TUMAX, SYM_BUMAX = 5, 3
+SKIP_SYM = bool(os.environ.get("REV_G1_SKIP_SYM"))
 
 CHECKS: list[tuple[str, bool, str]] = []
 
@@ -229,9 +268,100 @@ check(
     + " -> ".join(f"{r['equal_through']} (BMAX {r['BMAX']})" for r in ROWS)
     + f".  The committed cap {BMAX} gives {_eq_c}; {_WIDEST_BM} gives {_eq_w}.  BUMAX is not "
       f"the constraint — raising it 3 -> 6 while dropping BMAX 9 -> 8 made the agreement "
-      f"SHORTER ({ROWS[0]['equal_through']}), which is the row cap talking, not the entry cap",
+      f"SHORTER ({ROWS[0]['equal_through']}), which is the row cap talking, not the entry cap."
+      f"  NOTE this is only half the story — the TOP class is capped too, at TMAX = {TMAX}, and "
+      f"G1f below is what makes the comparison symmetric",
 )
 print(flush=True)
+
+# --------------------------------------------------------------------------------------------
+# 🛑 G1f/G1g exist because G1a-G1e, alone, MISLEAD.  Raising only BMAX eventually makes the
+# bottom table exceed the top's — at BMAX = 12 the bottom is higher at s = 16,17,18 by 0.050 /
+# 0.069 / 0.060 — which reads as a refutation of G1 and is not one: the TOP winner saturates its
+# own TMAX = 8 from s = 15 on, so it is the top table that has run out of rows there.  The only
+# honest comparison caps both classes alike.
+# --------------------------------------------------------------------------------------------
+SYM: dict = {}
+if SKIP_SYM:
+    print(f"G1f/G1g  SKIPPED (REV_G1_SKIP_SYM) — the asymmetric result above is NOT a G1 verdict")
+    print(flush=True)
+else:
+    print(f"G1f/G1g  the SYMMETRIC comparison — both classes at {SYM_ROWS} rows")
+    _t0 = time.time()
+    _symtops = top_profiles(SYM_ROWS, SYM_TUMAX)
+    _TSYM = block_table(_symtops)
+    print(f"    top  rows <= {SYM_ROWS} entries <= {SYM_TUMAX}: {len(_symtops):,} profiles, "
+          f"{time.time() - _t0:.0f}s", flush=True)
+    _t0 = time.time()
+    _symbots = bot_profiles(SYM_ROWS, SYM_BUMAX)
+    _BSYM = bot_table(_symbots)
+    print(f"    bot  rows <= {SYM_ROWS} entries <= {SYM_BUMAX}: {len(_symbots):,} profiles, "
+          f"{time.time() - _t0:.0f}s", flush=True)
+
+    _shared = sorted(set(_TSYM) & set(_BSYM))
+    _sym_rows = []
+    for _s in _shared:
+        _tv, _tp = _TSYM[_s][0], _TSYM[_s][1]
+        _bv, _bp = _BSYM[_s][0], _BSYM[_s][1]
+        _sym_rows.append({
+            "s": _s, "top": mp.nstr(sc(_tv), 20), "bot": mp.nstr(sc(_bv), 20),
+            "top_rows": len(_tp), "bot_rows": len(_bp),
+            "top_capped": len(_tp) == SYM_ROWS, "bot_capped": len(_bp) == SYM_ROWS,
+            "equal": _tv == _bv, "bot_exceeds": _bv > _tv,
+        })
+    _eq_sym = [r["s"] for r in _sym_rows if r["equal"]]
+    _exceed = [r["s"] for r in _sym_rows if r["bot_exceeds"]]
+    _eq_run = max((r["s"] for r in _sym_rows
+                   if all(q["equal"] for q in _sym_rows if q["s"] <= r["s"])), default=0)
+    for _r in _sym_rows[:22]:
+        print(f"    s = {_r['s']:3d}  top {_r['top']:>22} {_r['top_rows']:2d}"
+              f"{'*' if _r['top_capped'] else ' '}   bot {_r['bot']:>22} {_r['bot_rows']:2d}"
+              f"{'*' if _r['bot_capped'] else ' '}   "
+              f"{'EQUAL' if _r['equal'] else ('*** BOT HIGHER ***' if _r['bot_exceeds'] else 'top higher')}")
+    print("    * = winner saturates the shared row cap, so that value is a LOWER bound only",
+          flush=True)
+    SYM = {"rows": SYM_ROWS, "top_umax": SYM_TUMAX, "bot_umax": SYM_BUMAX,
+           "equal_through": _eq_run, "equal_at": _eq_sym, "bot_exceeds_at": _exceed,
+           "table": _sym_rows}
+    check(
+        "G1f at EQUAL row caps the two tables agree, and the bottom never exceeds the top",
+        (not _exceed) and _eq_run >= _eq_c,
+        f"with both classes capped at {SYM_ROWS} rows the tables are EXACTLY equal for every "
+        f"s = 1..{_eq_run} and the bottom exceeds the top at NO s in the measured range.  That "
+        f"is the comparison G1 actually asks for, and G1a-G1e do not make it: raising BMAX "
+        f"alone to 12 against the committed TMAX = {TMAX} puts the BOTTOM higher at s = 16,17,18 "
+        f"by 0.050/0.069/0.060, which reads as a refutation of G1 and is an artifact of the TOP "
+        f"cap — the top winner saturates TMAX = {TMAX} from s = 15 on.  Nothing measured here "
+        f"refutes G1, and the apparent refutation was mine.  NOTE the symmetric run "
+        f"({_eq_run}) is SHORTER than the one-sided sweep's {_eq_w}, and the symmetric one is "
+        f"the honest figure: at BMAX = {_WIDEST_BM} / TMAX = {TMAX} the two tables agree at "
+        f"s = 17 only because BOTH are capped there, so that agreement is two truncations "
+        f"meeting rather than two suprema",
+    )
+    _both_free = [r for r in _sym_rows
+                  if r["equal"] and not r["bot_capped"] and not r["top_capped"]]
+    _more = [r for r in _both_free if r["bot_rows"] > r["top_rows"]]
+    _same = [r for r in _both_free if r["bot_rows"] == r["top_rows"]]
+    _fewer = [r for r in _both_free if r["bot_rows"] < r["top_rows"]]
+    _at14 = next((r for r in _sym_rows if r["s"] == 14), None)
+    check(
+        "G1g the bottom needs MORE rows than the top for the same s — why equal caps are not fair",
+        bool(_both_free) and not _fewer and len(_more) >= len(_both_free) - 1,
+        f"over the {len(_both_free)} s-values where both winners sit strictly inside the cap the "
+        f"bottom uses MORE rows at {len(_more)}, the same at {len(_same)} "
+        f"(s = {[r['s'] for r in _same]}, where both are a single row) and FEWER at "
+        f"{len(_fewer)}"
+        + (f".  At s = 14 the top needs {_at14['top_rows']} rows and the bottom "
+           f"{_at14['bot_rows']}" if _at14 else "")
+        + f".  The bottom's winners are flat and long, the top's steep and short, so a "
+          f"NUMERICALLY equal row cap still favours the top — which is exactly why the committed "
+          f"BMAX {BMAX} against TMAX {TMAX} looked fair and was not.  A fair cap gives the "
+          f"bottom MORE rows, not the same number",
+    )
+    SYM["rows_more"] = [r["s"] for r in _more]
+    SYM["rows_same"] = [r["s"] for r in _same]
+    SYM["rows_fewer"] = [r["s"] for r in _fewer]
+    print(flush=True)
 
 # --------------------------------------------------------------------------------------------
 print("G1d  the corpus's recorded counter-evidence")
@@ -278,11 +408,15 @@ check(
 print(flush=True)
 
 # --------------------------------------------------------------------------------------------
-print(f"  agreement extends from s <= {_eq_c} (committed cap) to s <= {_eq_w} (BMAX "
-      f"{_WIDEST_BM})")
-print(f"  the join's argmax s_b = 8 sits well inside it; the full window s_b <= 27 does not")
-print("  G1 is STILL OPEN — a larger enumeration is a better LOWER bound on Xbot, and a lower")
-print("  bound can only refute Xbot <= Xblock, never prove it")
+print(f"  one-sided sweep: agreement {_eq_c} (committed BMAX {BMAX}) -> {_eq_w} (BMAX "
+      f"{_WIDEST_BM}) — NOT a G1 verdict, the top cap is untested there")
+if SYM:
+    print(f"  SYMMETRIC ({SYM_ROWS} rows both sides): exact equality s = 1..{SYM['equal_through']}"
+          f", bottom exceeds top at "
+          f"{SYM['bot_exceeds_at'] if SYM['bot_exceeds_at'] else 'NO s'}")
+print("  the join's argmax s_b = 8 sits well inside it; the full window s_b <= 27 does not")
+print("  G1 is STILL OPEN — every table here is a capped maximum, so a LOWER bound on its own")
+print("  supremum, and a lower bound can only refute Xbot <= Xblock, never prove it")
 print()
 
 _wit = {
@@ -306,12 +440,23 @@ _wit = {
         "not exist.  BUMAX is not the constraint: raising it 3 -> 6 while dropping BMAX 9 -> 8 "
         "made the agreement SHORTER.  A prediction of the agent's -- break = BMAX + 4, fitted "
         "to the first two settings -- was REFUTED by the other two (15 and 18, not 14 and 15); "
-        "saturating the cap is necessary but not sufficient to lose the maximum.  G1 is NOT "
-        "closed and is not weakened: a larger enumeration is a better LOWER bound on Xbot, "
-        "which can only refute the inequality, never prove it.  What changed is the evidence -- "
-        "the one observation pointing toward G1 is withdrawn, and the observations consistent "
-        "with it extend from s <= 12 to s <= 17, in exact integer arithmetic, across two "
-        "different evaluators and two unrelated maximiser shapes."
+        "saturating the cap is necessary but not sufficient to lose the maximum.  RAISING ONLY "
+        "BMAX IS THE SAME MISTAKE ONE LEVEL UP: at BMAX = 12 against the committed TMAX = 8 the "
+        "BOTTOM overtakes the top at s = 16,17,18 by 0.050/0.069/0.060, which reads as a "
+        "refutation of G1 and is an artifact of the TOP cap (the top winner saturates TMAX = 8 "
+        "from s = 15 on).  The symmetric comparison is the one G1 asks for: with both classes "
+        "at 12 rows the tables are EXACTLY equal for s = 1..16, the top is strictly higher from "
+        "s = 17, and the bottom exceeds the top at NO s.  An equal cap is still not a fair one "
+        "-- at every s where both winners are strictly inside the cap the bottom uses more rows "
+        "than the top (s = 14: ten against seven) -- which is how BMAX 9 vs TMAX 8 came to look "
+        "balanced.  G1 is NOT "
+        "closed and is not weakened: EVERY table here is a capped maximum, hence a LOWER bound "
+        "on its own supremum, and a lower bound can only refute the inequality, never prove it.  "
+        "What changed is the evidence -- the one observation pointing toward G1 is withdrawn, "
+        "the two edges agree exactly for s = 1..16 at matched caps in exact integer arithmetic "
+        "across two different evaluators and two unrelated maximiser shapes, and there is no "
+        "exceedance anywhere.  Past s = 16 the bottom winner is cap-saturated, so s >= 17 is "
+        "undetermined rather than settled in the top's favour."
     ),
     "constants": {
         "recorded_s": RECORDED_S,
@@ -319,9 +464,13 @@ _wit = {
         "committed_BMAX": BMAX, "committed_BUMAX": BUMAX,
         "committed_TMAX": TMAX, "committed_TUMAX": TUMAX,
         "agreement_committed_cap": _eq_c,
-        "agreement_widest_cap": _eq_w,
+        "agreement_widest_cap_ONE_SIDED": _eq_w,
         "widest_BMAX": _WIDEST_BM,
+        "_note": ("agreement_widest_cap_ONE_SIDED raises BMAX against the COMMITTED TMAX and is "
+                  "NOT a G1 verdict -- the top class is capped too.  The symmetric figure is "
+                  "symmetric_comparison_G1f.equal_through."),
     },
+    "symmetric_comparison_G1f": SYM,
     "cap_sweep": ROWS,
     "maximiser_shapes": _shape,
     "refuted_prediction": {
@@ -340,6 +489,10 @@ _wit = {
         "why_this_cannot_close_it": ("enumerating a larger class bounds Xbot from BELOW; a "
                                      "lower bound can refute Xbot <= Xblock but never prove "
                                      "it"),
+        "_one_sided_sweep_is_not_a_verdict": (
+            "raising BMAX alone against a fixed TMAX eventually puts the BOTTOM higher (at "
+            "BMAX = 12 vs TMAX = 8, at s = 16,17,18) purely because the TOP cap binds there.  "
+            "Any future re-measurement must raise both caps or it will 'refute' G1 spuriously."),
         "what_would_close_it": ("an upper bound on Xbot of the kind #7349 built for Xblock -- a "
                                 "per-row coercivity bound on the bottom edge's own evaluator, "
                                 "then a supergradient certificate"),
@@ -352,10 +505,13 @@ _wit = {
     "checks": [{"name": n, "ok": o, "detail": d} for n, o, d in CHECKS],
     "verdict": (
         "The single observation the corpus records in G1's favour is an artifact of the bottom "
-        "edge's row cap, and it vanishes when the cap is lifted.  G1 itself is untouched -- "
-        "still open, still the only conditionality on e_inf -- but its evidence base is now "
-        "honest: exact agreement through s = 17 across two evaluators and two unrelated "
-        "maximiser shapes, and nothing at all pointing the other way."
+        "edge's row cap, and it vanishes when the cap is lifted.  Lifting only that cap then "
+        "manufactures the opposite artifact -- the bottom 'refuting' G1 at s = 16,17,18 because "
+        "the TOP cap binds there -- so the comparison has to be symmetric to mean anything.  It "
+        "is: at matched caps the two edges are exactly equal for s = 1..16 and the bottom "
+        "exceeds the top at no s.  G1 itself is untouched, still open, still the only "
+        "conditionality on e_inf; what is now honest is its evidence base, and the reason an "
+        "equal cap is not a fair cap (the bottom's winners need more rows than the top's)."
     ),
 }
 

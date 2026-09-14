@@ -1,13 +1,13 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T18:01:55.803638+00:00",
+  "computedAt": "2026-09-14T19:54:14.636893+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py"
   },
   "bean": "qou-hok7",
   "anchor": "physical_proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "description": "G1 -- Xbot(s) <= Xblock(s), the last conditionality on e_inf -- has one recorded observation in its favour: the corpus states the two edge tables are EQUAL for s <= 12 and the top is higher by 0.01982 at s = 13.  That figure is an ENUMERATION ARTIFACT.  The bottom class is capped at BMAX = 9 rows while its maximisers are flat and long (entries 1-3, one row per unit of s) where the top's are steep and short, so the bottom exhausts its row budget first; from there Xbot understates its own supremum.  Varying the cap moves the break point -- BMAX 8/9/10/11 give agreement through s = 11/12/14/17 -- and at EVERY setting the winning profile at the break uses exactly BMAX rows.  At BMAX >= 10 the tables are exactly equal at s = 13 and the 0.01982 does not exist.  BUMAX is not the constraint: raising it 3 -> 6 while dropping BMAX 9 -> 8 made the agreement SHORTER.  A prediction of the agent's -- break = BMAX + 4, fitted to the first two settings -- was REFUTED by the other two (15 and 18, not 14 and 15); saturating the cap is necessary but not sufficient to lose the maximum.  G1 is NOT closed and is not weakened: a larger enumeration is a better LOWER bound on Xbot, which can only refute the inequality, never prove it.  What changed is the evidence -- the one observation pointing toward G1 is withdrawn, and the observations consistent with it extend from s <= 12 to s <= 17, in exact integer arithmetic, across two different evaluators and two unrelated maximiser shapes.",
+  "description": "G1 -- Xbot(s) <= Xblock(s), the last conditionality on e_inf -- has one recorded observation in its favour: the corpus states the two edge tables are EQUAL for s <= 12 and the top is higher by 0.01982 at s = 13.  That figure is an ENUMERATION ARTIFACT.  The bottom class is capped at BMAX = 9 rows while its maximisers are flat and long (entries 1-3, one row per unit of s) where the top's are steep and short, so the bottom exhausts its row budget first; from there Xbot understates its own supremum.  Varying the cap moves the break point -- BMAX 8/9/10/11 give agreement through s = 11/12/14/17 -- and at EVERY setting the winning profile at the break uses exactly BMAX rows.  At BMAX >= 10 the tables are exactly equal at s = 13 and the 0.01982 does not exist.  BUMAX is not the constraint: raising it 3 -> 6 while dropping BMAX 9 -> 8 made the agreement SHORTER.  A prediction of the agent's -- break = BMAX + 4, fitted to the first two settings -- was REFUTED by the other two (15 and 18, not 14 and 15); saturating the cap is necessary but not sufficient to lose the maximum.  RAISING ONLY BMAX IS THE SAME MISTAKE ONE LEVEL UP: at BMAX = 12 against the committed TMAX = 8 the BOTTOM overtakes the top at s = 16,17,18 by 0.050/0.069/0.060, which reads as a refutation of G1 and is an artifact of the TOP cap (the top winner saturates TMAX = 8 from s = 15 on).  The symmetric comparison is the one G1 asks for: with both classes at 12 rows the tables are EXACTLY equal for s = 1..16, the top is strictly higher from s = 17, and the bottom exceeds the top at NO s.  An equal cap is still not a fair one -- at every s where both winners are strictly inside the cap the bottom uses more rows than the top (s = 14: ten against seven) -- which is how BMAX 9 vs TMAX 8 came to look balanced.  G1 is NOT closed and is not weakened: EVERY table here is a capped maximum, hence a LOWER bound on its own supremum, and a lower bound can only refute the inequality, never prove it.  What changed is the evidence -- the one observation pointing toward G1 is withdrawn, the two edges agree exactly for s = 1..16 at matched caps in exact integer arithmetic across two different evaluators and two unrelated maximiser shapes, and there is no exceedance anywhere.  Past s = 16 the bottom winner is cap-saturated, so s >= 17 is undetermined rather than settled in the top's favour.",
   "constants": {
     "recorded_s": 13,
     "recorded_diff": "0.0198162676389039602300948111946",
@@ -16,8 +16,419 @@
     "committed_TMAX": 8,
     "committed_TUMAX": 6,
     "agreement_committed_cap": 12,
-    "agreement_widest_cap": 17,
-    "widest_BMAX": 11
+    "agreement_widest_cap_ONE_SIDED": 17,
+    "widest_BMAX": 11,
+    "_note": "agreement_widest_cap_ONE_SIDED raises BMAX against the COMMITTED TMAX and is NOT a G1 verdict -- the top class is capped too.  The symmetric figure is symmetric_comparison_G1f.equal_through."
+  },
+  "symmetric_comparison_G1f": {
+    "rows": 12,
+    "top_umax": 5,
+    "bot_umax": 3,
+    "equal_through": 16,
+    "equal_at": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "bot_exceeds_at": [],
+    "table": [
+      {
+        "s": 1,
+        "top": "0.58195318644387679698",
+        "bot": "0.58195318644387679698",
+        "top_rows": 1,
+        "bot_rows": 1,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 2,
+        "top": "0.86655173275052257318",
+        "bot": "0.86655173275052257318",
+        "top_rows": 1,
+        "bot_rows": 2,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 3,
+        "top": "1.2525758066084261765",
+        "bot": "1.2525758066084261765",
+        "top_rows": 2,
+        "bot_rows": 3,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 4,
+        "top": "1.4268624863007931192",
+        "bot": "1.4268624863007931192",
+        "top_rows": 3,
+        "bot_rows": 4,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 5,
+        "top": "1.5758239680738485655",
+        "bot": "1.5758239680738485655",
+        "top_rows": 3,
+        "bot_rows": 5,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 6,
+        "top": "1.7787186643996741388",
+        "bot": "1.7787186643996741388",
+        "top_rows": 3,
+        "bot_rows": 5,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 7,
+        "top": "1.9102261813656564737",
+        "bot": "1.9102261813656564737",
+        "top_rows": 4,
+        "bot_rows": 6,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 8,
+        "top": "1.9654443710777499961",
+        "bot": "1.9654443710777499961",
+        "top_rows": 5,
+        "bot_rows": 7,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 9,
+        "top": "1.9939850018726837152",
+        "bot": "1.9939850018726837152",
+        "top_rows": 5,
+        "bot_rows": 7,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 10,
+        "top": "2.0293602458581136105",
+        "bot": "2.0293602458581136105",
+        "top_rows": 5,
+        "bot_rows": 8,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 11,
+        "top": "2.1091926474796784457",
+        "bot": "2.1091926474796784457",
+        "top_rows": 5,
+        "bot_rows": 8,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 12,
+        "top": "2.1511154321060134496",
+        "bot": "2.1511154321060134496",
+        "top_rows": 6,
+        "bot_rows": 9,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 13,
+        "top": "2.156693167813466521",
+        "bot": "2.156693167813466521",
+        "top_rows": 7,
+        "bot_rows": 10,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 14,
+        "top": "2.1598023761182859616",
+        "bot": "2.1598023761182859616",
+        "top_rows": 7,
+        "bot_rows": 10,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 15,
+        "top": "2.1534744218348540048",
+        "bot": "2.1534744218348540048",
+        "top_rows": 8,
+        "bot_rows": 11,
+        "top_capped": false,
+        "bot_capped": false,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 16,
+        "top": "2.1301891570055377129",
+        "bot": "2.1301891570055377129",
+        "top_rows": 9,
+        "bot_rows": 12,
+        "top_capped": false,
+        "bot_capped": true,
+        "equal": true,
+        "bot_exceeds": false
+      },
+      {
+        "s": 17,
+        "top": "2.0965357307870412001",
+        "bot": "2.0663634247356502235",
+        "top_rows": 10,
+        "bot_rows": 12,
+        "top_capped": false,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 18,
+        "top": "2.0563562861663778757",
+        "bot": "1.9858139748105435024",
+        "top_rows": 11,
+        "bot_rows": 12,
+        "top_capped": false,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 19,
+        "top": "2.0119989713984074787",
+        "bot": "1.8978063269709357717",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 20,
+        "top": "1.9590541226230827598",
+        "bot": "1.7939830626998375519",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 21,
+        "top": "1.881938594075098474",
+        "bot": "1.6637757833214142358",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 22,
+        "top": "1.8284045874310763803",
+        "bot": "1.5035718817330596067",
+        "top_rows": 11,
+        "bot_rows": 12,
+        "top_capped": false,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 23,
+        "top": "1.7873927410433253088",
+        "bot": "1.3005454546804259875",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 24,
+        "top": "1.7190613707389383972",
+        "bot": "1.1043030410270958774",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 25,
+        "top": "1.6110528686587659177",
+        "bot": "0.8755746139058909213",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 26,
+        "top": "1.5078115539283019165",
+        "bot": "0.63401736816344321737",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 27,
+        "top": "1.3824396776628889478",
+        "bot": "0.34185039309538791075",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 28,
+        "top": "1.2307561041724097617",
+        "bot": "0.05707523220158176712",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 29,
+        "top": "1.0595083521382510619",
+        "bot": "-0.30781978134286986267",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 30,
+        "top": "0.88556656121667678631",
+        "bot": "-0.82550461853050170997",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 31,
+        "top": "0.7012792818031581385",
+        "bot": "-1.3479432950501528317",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 32,
+        "top": "0.50464243361327974415",
+        "bot": "-1.9069525277023426066",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      },
+      {
+        "s": 33,
+        "top": "0.29119487524078525465",
+        "bot": "-2.8473489417304843994",
+        "top_rows": 12,
+        "bot_rows": 12,
+        "top_capped": true,
+        "bot_capped": true,
+        "equal": false,
+        "bot_exceeds": false
+      }
+    ],
+    "rows_more": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "rows_same": [
+      1
+    ],
+    "rows_fewer": []
   },
   "cap_sweep": [
     {
@@ -41,7 +452,7 @@
       ],
       "diff_at_break": "0.0935446451924306989159327334020026078439",
       "recorded_s_equal": false,
-      "seconds": 458
+      "seconds": 452
     },
     {
       "BMAX": 9,
@@ -90,7 +501,7 @@
       ],
       "diff_at_break": "0.0841999049019077445279590676594701095394",
       "recorded_s_equal": true,
-      "seconds": 29
+      "seconds": 28
     },
     {
       "BMAX": 11,
@@ -116,7 +527,7 @@
       ],
       "diff_at_break": "0.0432736153354366196775547179137111586393",
       "recorded_s_equal": true,
-      "seconds": 83
+      "seconds": 82
     }
   ],
   "maximiser_shapes": [
@@ -377,6 +788,7 @@
   "open_gaps": {
     "G1_status": "STILL OPEN -- neither closed nor weakened",
     "why_this_cannot_close_it": "enumerating a larger class bounds Xbot from BELOW; a lower bound can refute Xbot <= Xblock but never prove it",
+    "_one_sided_sweep_is_not_a_verdict": "raising BMAX alone against a fixed TMAX eventually puts the BOTTOM higher (at BMAX = 12 vs TMAX = 8, at s = 16,17,18) purely because the TOP cap binds there.  Any future re-measurement must raise both caps or it will 'refute' G1 spuriously.",
     "what_would_close_it": "an upper bound on Xbot of the kind #7349 built for Xblock -- a per-row coercivity bound on the bottom edge's own evaluator, then a supergradient certificate",
     "how_to_BYPASS_it": "the join needs a certified cut, not a pointwise inequality.  A certified bound on Xbot plus an honest enumeration of the bottom class inside that cut removes G1 from the argument rather than proving it",
     "headline": "still the upper bound on M_n, which none of this touches"
@@ -395,7 +807,17 @@
     {
       "name": "G1c raising the row cap strictly extends the agreement",
       "ok": true,
-      "detail": "equal-through runs 11 (BMAX 8) -> 12 (BMAX 9) -> 14 (BMAX 10) -> 17 (BMAX 11).  The committed cap 9 gives 12; 11 gives 17.  BUMAX is not the constraint \u2014 raising it 3 -> 6 while dropping BMAX 9 -> 8 made the agreement SHORTER (11), which is the row cap talking, not the entry cap"
+      "detail": "equal-through runs 11 (BMAX 8) -> 12 (BMAX 9) -> 14 (BMAX 10) -> 17 (BMAX 11).  The committed cap 9 gives 12; 11 gives 17.  BUMAX is not the constraint \u2014 raising it 3 -> 6 while dropping BMAX 9 -> 8 made the agreement SHORTER (11), which is the row cap talking, not the entry cap.  NOTE this is only half the story \u2014 the TOP class is capped too, at TMAX = 8, and G1f below is what makes the comparison symmetric"
+    },
+    {
+      "name": "G1f at EQUAL row caps the two tables agree, and the bottom never exceeds the top",
+      "ok": true,
+      "detail": "with both classes capped at 12 rows the tables are EXACTLY equal for every s = 1..16 and the bottom exceeds the top at NO s in the measured range.  That is the comparison G1 actually asks for, and G1a-G1e do not make it: raising BMAX alone to 12 against the committed TMAX = 8 puts the BOTTOM higher at s = 16,17,18 by 0.050/0.069/0.060, which reads as a refutation of G1 and is an artifact of the TOP cap \u2014 the top winner saturates TMAX = 8 from s = 15 on.  Nothing measured here refutes G1, and the apparent refutation was mine.  NOTE the symmetric run (16) is SHORTER than the one-sided sweep's 17, and the symmetric one is the honest figure: at BMAX = 11 / TMAX = 8 the two tables agree at s = 17 only because BOTH are capped there, so that agreement is two truncations meeting rather than two suprema"
+    },
+    {
+      "name": "G1g the bottom needs MORE rows than the top for the same s \u2014 why equal caps are not fair",
+      "ok": true,
+      "detail": "over the 15 s-values where both winners sit strictly inside the cap the bottom uses MORE rows at 14, the same at 1 (s = [1], where both are a single row) and FEWER at 0.  At s = 14 the top needs 7 rows and the bottom 10.  The bottom's winners are flat and long, the top's steep and short, so a NUMERICALLY equal row cap still favours the top \u2014 which is exactly why the committed BMAX 9 against TMAX 8 looked fair and was not.  A fair cap gives the bottom MORE rows, not the same number"
     },
     {
       "name": "G1d the recorded s = 13 violation is an artifact and disappears when the cap is lifted",
@@ -408,5 +830,5 @@
       "detail": "11 of 12 maximiser pairs are not reverses of one another, and all 12 are worth exactly the same.  At s = 8 the top winner is [3, 2, 1, 1, 1] (5 rows) and the bottom winner is [1, 1, 1, 1, 2, 1, 1] (7 rows).  Whatever makes Xbot = Xblock, it is not 'read the block backwards' \u2014 which is why the row caps are not interchangeable and why nobody noticed the bottom class was the smaller one"
     }
   ],
-  "verdict": "The single observation the corpus records in G1's favour is an artifact of the bottom edge's row cap, and it vanishes when the cap is lifted.  G1 itself is untouched -- still open, still the only conditionality on e_inf -- but its evidence base is now honest: exact agreement through s = 17 across two evaluators and two unrelated maximiser shapes, and nothing at all pointing the other way."
+  "verdict": "The single observation the corpus records in G1's favour is an artifact of the bottom edge's row cap, and it vanishes when the cap is lifted.  Lifting only that cap then manufactures the opposite artifact -- the bottom 'refuting' G1 at s = 16,17,18 because the TOP cap binds there -- so the comparison has to be symmetric to mean anything.  It is: at matched caps the two edges are exactly equal for s = 1..16 and the bottom exceeds the top at no s.  G1 itself is untouched, still open, still the only conditionality on e_inf; what is now honest is its evidence base, and the reason an equal cap is not a fair cap (the bottom's winners need more rows than the top's)."
 }

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-14T18:08:07Z
+updated_at: 2026-09-14T19:17:35Z
 ---
 
 
@@ -1793,5 +1793,87 @@ that the bypass is the better target — it is the same machinery already built 
 and it retires the conditionality instead of discharging it.
 
 Probe: `computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py` (5/5).
+
+**Do not close this bean.**
+
+
+## 🛑 CORRECTION TO MY OWN CORRECTION — the one-sided sweep was half the story, and the missing half nearly produced a false G1 REFUTATION (2026-09-14, PR #7349)
+
+The entry above diagnoses the `s = 13` figure as the **bottom** enumeration running out of rows,
+and demonstrates it by raising `BMAX` 8 → 9 → 10 → 11 against the committed `TMAX = 8`. That
+diagnosis is **correct and is confirmed below**. The *method* is not sound, and pushing it one
+step further shows why.
+
+### At `BMAX = 12` the bottom OVERTAKES the top — and that is not a refutation
+
+| s | top (`TMAX=8`) | bot (`BMAX=12`) | top − bot |
+|---|---|---|---|
+| 16 | 2.0802943029 | **2.1301891570** | **−0.0498949** |
+| 17 | 1.9971122429 | **2.0663634247** | **−0.0692512** |
+| 18 | 1.9261369638 | **1.9858139748** | **−0.0596770** |
+
+Read at face value that **refutes G1** (`Xbot(s) ≤ Xblock(s)`). I was one edit away from writing
+that down. It is an artifact of the **top's own cap**: the top maximiser saturates `TMAX = 8` from
+`s = 15` on (`[4,3,2,2,1,1,1,1]`), so past there it is the *top* table that has run out of rows.
+**Raising one cap against a fixed other is the same mistake the entry above is about, one level
+up**, and it fails in the more dangerous direction — toward a false refutation rather than a
+false confirmation.
+
+### The symmetric comparison, which is the one G1 actually asks for
+
+Both classes at **12 rows** (top entries ≤ 5, bottom ≤ 3; 4,054,896 and 797,161 profiles):
+
+- **exact equality for every `s = 1..16`**, 40-digit integer, no tolerance;
+- the top is strictly higher from `s = 17`;
+- **the bottom exceeds the top at NO `s` in the measured range** — nothing here refutes G1.
+
+So the `s = 13` withdrawal stands and is *strengthened*: at matched caps the two are equal there,
+and the honest agreement run is `s ≤ 16` rather than the `s ≤ 17` the one-sided sweep reported.
+
+### Why an equal cap is still not a FAIR cap
+
+At every `s` where both winners sit strictly inside the cap, the **bottom needs more rows than the
+top** — at `s = 14`, **ten against seven**; at `s = 8`, seven against five. The bottom's
+maximisers are flat and long (`[1,1,1,1,2,1,1]`), the top's steep and short (`[3,2,1,1,1]`). A
+numerically equal row cap therefore systematically favours the top, which is exactly how the
+committed `BMAX = 9` against `TMAX = 8` came to look balanced when it is not. **A fair cap gives
+the bottom more rows, not the same number.**
+
+### Two hypotheses of mine, both refuted en route
+
+1. **"The bottom edge pays an extra cost the top does not, so `Xbot ≤ Xblock` is structural."**
+   The cost is real — `delta_excess` carries `lin = Σ_{i>k}(i−k)u_i`, absent from `ap_value`,
+   worth `ln(q₀)·lin` and reaching **0.7304** at the `s ≥ 11` winners (`lin = 7`). But it does not
+   give the inequality: the bottom reaches the *same* maximum while paying it, so the gain side
+   must exceed the top's by exactly that handicap at every `s`. Not a relabelling, and not a
+   proof. *(I first printed `lin` through the probe's `sc()` scaler, which divides by 1e40 and
+   made a 0.73 handicap read as `7e-40`. The number was never wrong; the display was.)*
+2. **"The agreement is a value-preserving correspondence between the two classes."** **Refuted.**
+   Compared value *multisets* per `s`: identical for `s ≤ 9`, but from `s = 10` the bottom class
+   **misses** top values it cannot attain (1 at `s=10`, 3 at 11, 9 at 12, 24 at 13, 61 at 14) —
+   while being much *larger* in count (1,902 vs 953 at `s = 14`). So it is a coincidence of
+   **maxima**, not a bijection, which makes the exact agreement over sixteen values of `s` more
+   striking rather than less.
+
+### Structural context worth recording
+
+`staircase_beta(k, L)` is **two different environments**: rows `i ≤ k` are an AP of **gap 2** (the
+top edge's world), rows `i > k` are consecutive, **gap 1** (the bottom wall). The bottom block
+straddles them — at `pe = 3` its lowest three rows are in the gap-1 wall and the rest in the gap-2
+AP. So the two edges are not the same problem in different coordinates, and their agreement is not
+a symmetry of the frame.
+
+### Status
+
+**G1 is STILL OPEN, neither closed nor weakened.** Every table here is a maximum over a *capped*
+class, hence a **lower** bound on its own supremum, and a lower bound can only refute the
+inequality, never prove it. Past `s = 16` the bottom winner is cap-saturated, so `s ≥ 17` is
+**undetermined**, not settled in the top's favour. `s ≤ 16` covers the certified join window's
+argmax `s_b = 8` comfortably; it does not cover the full window `s_b ≤ 27`.
+
+Probe `rev_e_infinity_g1_bottom_edge_cap_probe.py` gains **G1f** (the symmetric comparison) and
+**G1g** (the row-count asymmetry); its docstring, summary, witness `description` and `verdict` are
+corrected, and the witness field is renamed `agreement_widest_cap_ONE_SIDED` with a `_note`
+saying it is not a G1 verdict — so the next agent cannot read the one-sided number as one.
 
 **Do not close this bean.**
