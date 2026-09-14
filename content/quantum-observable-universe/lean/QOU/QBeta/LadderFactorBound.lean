@@ -82,4 +82,48 @@ theorem ladder_lt_of_one_le (u a F P : ℝ) (hu : 0 < u) (hu2 : u ^ 2 < 1)
   rw [this]
   linarith
 
+/-! ## The `P` hypothesis, discharged for an arbitrary truncation order
+
+`ladder_lt_of_one_le` takes `P ∈ (0, 1]` as a *hypothesis*, and `rung_lt_one`
+shows this corpus's rungs are each below 1 — which left the join between the
+two to be made numerically, per truncation order. #7276 asked whether the
+product bound was formalized or discharged by measurement; it was the latter.
+It is now the former.
+
+`prod_pos_le_one` is the induction: a finite list of reals each in `(0, 1]` has
+its product in `(0, 1]`. `ladder_lt_of_rungs` composes it with the cap, so the
+exclusion holds at **every** truncation order with no numerical step at all —
+the measured half of the argument is now only about *which* `c_k` the corpus
+records, never about what their product does. -/
+
+/-- A finite product of factors each in `(0, 1]` lies in `(0, 1]`. -/
+theorem prod_pos_le_one (l : List ℝ) (h : ∀ x ∈ l, 0 < x ∧ x ≤ 1) :
+    0 < l.prod ∧ l.prod ≤ 1 := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+      have ha := h a (by simp)
+      have ht : ∀ x ∈ t, 0 < x ∧ x ≤ 1 := fun x hx => h x (by simp [hx])
+      obtain ⟨hp, hle⟩ := ih ht
+      rw [List.prod_cons]
+      exact ⟨mul_pos ha.1 hp, by nlinarith [ha.1, ha.2, hp, hle]⟩
+
+/-- The ladder is below any requirement `≥ 1` at EVERY truncation order, given
+only that each rung lies in `(0, 1]`. No per-order numerical discharge. -/
+theorem ladder_lt_of_rungs (u a F : ℝ) (hu : 0 < u) (hu2 : u ^ 2 < 1) (hF : 1 ≤ F)
+    (l : List ℝ) (hl : ∀ x ∈ l, 0 < x ∧ x ≤ 1) :
+    Real.cos (a - u / 2) * (1 - u ^ 2) * l.prod < F := by
+  obtain ⟨hP0, hP1⟩ := prod_pos_le_one l hl
+  have hu2p : (0:ℝ) < u ^ 2 := pow_pos hu 2
+  have hq : (0:ℝ) < 1 - u ^ 2 := by linarith
+  have hqP : (0:ℝ) < (1 - u ^ 2) * l.prod := mul_pos hq hP0
+  have s1 : Real.cos (a - u / 2) * ((1 - u ^ 2) * l.prod)
+      ≤ 1 * ((1 - u ^ 2) * l.prod) :=
+    mul_le_mul_of_nonneg_right (Real.cos_le_one _) (le_of_lt hqP)
+  have s2 : (1 - u ^ 2) * l.prod ≤ (1 - u ^ 2) * 1 :=
+    mul_le_mul_of_nonneg_left hP1 (le_of_lt hq)
+  have e : Real.cos (a - u / 2) * (1 - u ^ 2) * l.prod
+      = Real.cos (a - u / 2) * ((1 - u ^ 2) * l.prod) := by ring
+  rw [e]; linarith
+
 end QOU.QBeta.LadderFactorBound

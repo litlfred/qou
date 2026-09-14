@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-14T08:29:15.525902+00:00",
-  "commitSha": "73062c49f82577ec99d9604934c7fd529107c743",
+  "computedAt": "2026-09-14T08:39:33.560971+00:00",
+  "commitSha": "124a13c77bd2eaf2388a773247c48ff9f279c045",
   "assertions": [
     {
       "name": "reproduces_cds1_F_table_on_the_retired_base",
@@ -59,14 +59,22 @@
       "passed": true,
       "tolerance": "exact",
       "source": "stated so the size is on the record, NOT as a specification to search against: at the order-zero E_0 the ruled functional gives |eps| = 0.106235639848, and reproducing CODATA would need 0.186893667722 — a factor 1.759236994. Per AGENTS.md NO FITTING a target may be checked AGAINST, never searched ON: do not hunt for an element whose Markov trace lands here. The dashboard's own scored element already fails the confinement-SDP selection rule (owner ruling 2026-09-13), so the assembly is under review independently of this number."
+    },
+    {
+      "name": "sign_F_minus_one_is_a_FOURTH_coordinate_and_does_NOT_survive",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The trap above says to report F directly, and F does survive the base change -- but sign(F - 1) does NOT, and a reader who switched to F can still be caught by it. Measured, the sign is '-' on the retired z = 1 and augmentation cells and '+' on both ruled cells, so any argument whose content is 'the requirement is BELOW 1' is retired-base-only even when stated in F. #7276 hit exactly this from another arc: it avoided the (1 - F) trap, used F, and still drafted a cross-check reading 'the required factor is below 1 ... structurally the same obstruction as cosh a >= 1 > 0.998399' -- where 0.998399 is the z = 1 cell's own number. So this arc has FOUR coordinates with different base-sensitivity (c_k, 1 - F, sign(F - 1), F), and only F survives. Credit: sibling PR #7276."
     }
   ],
   "allPassed": true,
-  "durationMs": 54,
+  "durationMs": 5,
   "computation": "qbeta-ladder-form-cannot-reach-ruled-base",
   "scriptFile": "qbeta_ladder_form_cannot_reach_ruled_base_probe.py",
-  "scriptHash": "1e646dcc4919",
-  "scriptCommitSha": "c51aab532ab8437ef213a1c080410b21b16d96a4",
+  "scriptHash": "57aa15166330",
+  "scriptCommitSha": "124a13c77bd2eaf2388a773247c48ff9f279c045",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -139,6 +147,28 @@
   "ladder_sup_over_all_phases": "0.999927456715617626498201895199068388200910824829001040100072",
   "full_ladder_is_reducing": "every c_k the corpus records or derives is NEGATIVE (c_2 = -1 structural, c_3 = -2.0693425728 recorded, c_5 = -(b^2+1/2) derived), so each factor (1 + c_k u^k) < 1 and F is strictly below 1 at EVERY truncation order -- not merely at the N=2 one check 3 bounds. Reaching F > 1 needs a POSITIVE coefficient; none of the derived ones is.",
   "invariant_cited": "cos <= 1 (Real.cos_le_one, Mathlib; already used by QOU.QBeta.EigenphaseCarrier.replacement_excludes_some_matrix)",
-  "coordinate_warning": "qou-cds1's table reports relative deviation of (1 - F), not of F. Once F_required > 1 that ratio compares opposite-signed quantities and is meaningless; report F directly on a ruled base.",
+  "sign_F_minus_one_by_base": [
+    {
+      "base": "z = 1 (Form A)",
+      "F_required": "0.998325241673246588884133709366744904990942384746366140300153",
+      "sign_F_minus_1": "-"
+    },
+    {
+      "base": "z_D, order-zero E_0",
+      "F_required": "1.75923699418342922111603553962877438597463501119148358155092",
+      "sign_F_minus_1": "+"
+    },
+    {
+      "base": "z = q (augmentation)",
+      "F_required": "0.889125812282376259000054824106951643755791348346495294149076",
+      "sign_F_minus_1": "-"
+    },
+    {
+      "base": "dashboard scored cell",
+      "F_required": "1.20016236389210554401362656706148402208126813341393104771141",
+      "sign_F_minus_1": "+"
+    }
+  ],
+  "coordinate_warning": "qou-cds1's table reports relative deviation of (1 - F), not of F. Once F_required > 1 that ratio compares opposite-signed quantities and is meaningless; report F directly on a ruled base. AND NOTE sign(F - 1) is a FOURTH coordinate that does not survive either: an argument whose content is 'the requirement is below 1' is retired-base-only even when stated in F. Four coordinates, only F survives (credit: sibling PR #7276, which hit this using F).",
   "scope": "(b) for the exclusion, citing a proved invariant; (a) for every number. Derives no alpha, selects no base, wires nothing."
 }
