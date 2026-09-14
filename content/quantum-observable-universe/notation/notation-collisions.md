@@ -346,3 +346,45 @@ families in
 [`notation-register.md`](notation-register.md), are the internal instances of
 the same discipline — resolve a name to its definition before reasoning about
 what it denotes.
+
+## "One-dimensional": four senses, and the spatial one is the rarest
+
+A word collision rather than a glyph collision, and the reason it is recorded
+here is the reverse of the usual one: the corpus is mostly *already*
+unambiguous, and the hazard is an agent concluding otherwise from a raw count.
+
+Four unrelated senses share the phrase.
+
+- **Representation dimension** — a Wedderburn block, irrep or character of
+  dimension one; a one-row or one-column Young diagram.
+- **Linear-algebraic dimension** — a solution space, a cohomology group, a
+  module of forms: *"$HH^2 \cong k$ is one-dimensional"*, *"$\Lambda^2 H^*$ is
+  one-dimensional"*.
+- **Seminormal channel dimension** — the channel on which a generator acts by a
+  scalar (`AlphaShiftOneDimChannel`). Both Lean files whose names contain
+  `OneDimChannel` are this sense or the one above, **not** the spatial one.
+- **Spatial dimension** — $\dim M_k = 1$: the descent stratum, the linear
+  layout, the filament.
+
+**Measured** (773 occurrences across `content/`, the Lean tree, `computations/`
+and `docs/`; [`one_dimensional_sense_audit.py`](../../../computations/audits/one_dimensional_sense_audit.py)):
+**526 carry a disambiguating noun immediately after the phrase** — `block`,
+`channel`, `representation`, `character`, `irrep`, `Wedderburn` — and are not
+ambiguous to anyone. Of the 254 bare uses, the overwhelming majority are clear
+from their own sentence, and the genuinely *spatial* bare uses number about
+**four**.
+
+**The authoring rule, which is about new writing rather than a sweep.** Write
+the spatial sense as $\dim M_k = d$, or qualify it in words as *spatially
+one-dimensional* / *one spatial dimension*. It is the rarest sense by more than
+an order of magnitude, so a bare "one-dimensional" in new prose will be read as
+one of the other three. The other senses need no change: they are already
+carried by the noun, and rewriting them would be churn.
+
+**Do not repeat the alarmist reading.** The 773 figure, and a classifier bucket
+labelled "unclassified", were both produced in this corpus and both invite the
+conclusion that the phrase is pervasively ambiguous. They do not support it —
+"unclassified" there means the classifier's regex had no marker, not that a
+reader cannot tell. Three separate samples of that bucket turned out to be
+plainly clear linear-algebraic and representation uses. If you re-measure, count
+the **bare** uses whose own sentence leaves the sense open; that number is small.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-14T14:21:18Z
+updated_at: 2026-09-14T18:02:56Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1341,3 +1341,94 @@ shape-independent.
 Probe: `computations/ptolemy/ptolemy_duality_sigma_is_complex_conjugation.py`.
 Audit: `docs/audits/2026-09-14-ptolemy-lex-free-stage2-and-the-l6a4-gb-wall.md`
 sections 5d-5e.
+
+
+### 2026-09-14 (evening) — the MECHANISM, and why it cannot start from the Lagrangian
+
+#7356 merged (46ba3c0243). Follow-up on branch
+`claude/duality-sigma-hermitian-derivation-2026-09-14`.
+
+**The mechanism.** The untwisted duality relation `A sigma(rho) A^-1 = rho^-T` is,
+after one line of rearrangement, `rho^T A sigma(rho) = A` -- i.e. exactly the
+invariance of the sigma-sesquilinear form `H(v,w) = v^T A sigma(w)`. The duality
+intertwiner and an invariant form are THE SAME OBJECT. Schur (solution space =
+[K:Q] free Q-params = one K-dimension, verified per case) makes it canonical.
+
+It normalises Hermitian CONSTRUCTIVELY: `A^dagger = c A` by Schur, `N(c) = 1` by
+applying dagger twice, and `d := x + c sigma(x)` satisfies `sigma(d) c = d` for
+every x, so `A_herm := d A` is Hermitian on the nose. Hilbert 90 with a produced
+witness. Measured c: -1 (5_2 orbit0), t+5 (m004), a cubic (L6a4), 1 (orbit1).
+
+**Signature (2,1) -- i.e. PU(2,1) -- at every embedding, all four points.** Two
+independent exact methods required to agree (Jacobi on the sigma-fixed leading
+principal minors; roots of the characteristic polynomial at 50 dps). So these are
+SPHERICAL CR representations. Corroborating detail: `A_herm[0,0] = 0` in every
+case, i.e. `e_0` is a null vector, which a definite form cannot have.
+
+**THE CAVEAT THAT MATTERS (audit section 3).** Steps 1-2 hold for ANY involution,
+so they do NOT single out conjugation -- and measured, the other two involutions
+on 5_2 orbit 0 admit no invariant form at all (nullspace 0). What conjugation
+supplies is the SIGNATURE, an archimedean invariant that an abstract involution
+does not have.
+
+**WHY THE LAGRANGIAN ROUTE IS BLOCKED -- measured, all six grep paths.** The
+corpus's reality/conjugation arc and its Lagrangian arc DO NOT TOUCH ANYWHERE:
+zero matches in both directions between `QOU/Eightfold/` and any
+Lagrangian/action term. Three specific gaps:
+
+1. The only anti-structure inside `L_q` is the antipode S (`psi* = int_A o S(psi)`),
+   and `def:frobenius-hopf-substrate` NOWHERE asserts `S^2 = id`. The S^2 hits in
+   the corpus are all the HECKE antipode, a different object. So the involutivity
+   hypothesis has no supplier upstream.
+2. `L_q` is fibre-independent by `alg:categorical-action`'s own statement, while a
+   signature is archimedean. Any Lagrangian route must pass THROUGH the
+   archimedean specialisation, not around it.
+3. `prop:categorical-self-duality` is unformalised by its own admission.
+
+**Lean, sorry-free**: `QOU/Eightfold/DualityIntertwinerIsHermitianForm.lean` --
+`invariantForm_of_intertwiner`, `hilbert90_witness`,
+`hermitian_of_hilbert90_witness`, `hermitian_representative`. lean-direct exit 0
+with `-DautoImplicit=false`; `#print axioms` clean on all four (propext /
+Classical.choice / Quot.sound, no sorryAx). Stated over a general CommRing with an
+arbitrary ring endomorphism, which localises what is algebra (all of the
+formalised part) and what needs the archimedean place (the signature, NOT
+formalised, and the file's Scope section says so).
+
+**STILL OPEN — bean stays open:**
+1. Why are these representations PU(2,1) at all? That is the input here, not the
+   output.
+2. The converse: must a duality sigma be conjugation? Nothing here shows it.
+3. The Lagrangian connection, blocked on the three gaps above. `S^2 = id` for the
+   QOU substrate antipode is the cheapest of the three to settle and is the one I
+   would attack first.
+4. Orbit 1 (not CM) still has no signature at 4 of its 6 embeddings; the probe
+   asserts and aborts there rather than reporting one.
+
+Audit: `docs/audits/2026-09-14-duality-sigma-is-conjugation-derivation.md`.
+
+
+---
+
+## 🛑 CORRECTION 2026-09-14 — my "cheapest of the three gaps" call was wrong
+
+This bean recommended `S^2 = id` for the QOU substrate antipode as *"the
+cheapest of the three to settle"* and as *"a single missing theorem in
+`def:frobenius-hopf-substrate`"*. **Both halves are wrong.**
+
+It is not a missing theorem, it is a missing **axiom**: measured, the block
+carries no antipode condition at all, so `S` is free data and `S^2 = id` is
+**INDEPENDENT** of the definition rather than unproved. And it is not cheap —
+it is an owner decision about a central definition, not agent work.
+
+Machine-checked: `QOU/QuantumObservableUniverse/AntipodeIndependence.lean`
+(sorry-free, `lean`-direct exit 0) plus
+`scripts/lean-structure-field-law-audit.py`, which gives the identical verdict
+on both Lean carriers. Tracked as `qou-c64q`; write-up in
+`docs/audits/2026-09-14-antipode-is-free-data-s-squared-is-independent.md`.
+
+Consequence for THIS bean: the intrinsic route to identifying the duality with
+complex conjugation (via `psi* = int_A . S(psi)` being an involution) is
+**blocked on a definition the owner has not written**, not on a proof. The
+archimedean signature argument of
+`docs/audits/2026-09-14-duality-sigma-is-conjugation-derivation.md` is
+unaffected and remains the live route.

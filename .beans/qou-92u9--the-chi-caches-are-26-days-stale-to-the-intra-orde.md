@@ -295,3 +295,48 @@ is not read as confirmed.
 
 Re-running it needs a budget well past 40 minutes and is the last open item on
 this bean.
+
+## 2026-09-14 — the `scriptFile` conclusion above was right about the FIELD and wrong about the READER
+
+This bean corrected itself once already, concluding the proposed `scriptFile`
+fix was **"unnecessary — the provenance already exists under another key"**,
+because `save_witness` writes `producer` and every stale cache carried
+`producer: chi_at_q0_via_hoefsmit_mpfr.py`.
+
+That is true of the information and false of the tooling.
+`witness_import_cone_staleness_audit.py` — the audit whose whole job is the
+direction self- and upstream-staleness miss — read
+
+    script_file = w.get("scriptFile")
+    if not script_file:
+        continue
+
+and `continue`d **silently, into no bucket**, so its four summary counts did not
+add up to `witnesses scanned` and nothing said why. Measured today:
+
+    witnesses with no scriptFile              399
+      ...of which DO carry producer            42   <- recoverable, dropped
+      ...of which carry neither               357
+
+**The six caches this bean is about are among the 42.** So the audit that would
+have flagged them could not see them — not because the provenance was missing,
+but because the reader looked under one key. "The information exists" and "the
+checker reads it" are different claims, and this bean asserted the first as
+though it settled the second.
+
+**Fixed.** The audit now falls back to `producer` (taking `Path(...).name`,
+since `producer` is sometimes a path where the index is keyed by basename) and
+COUNTS what it still cannot resolve. Re-run, the summary is honest:
+
+    no scriptFile, used producer : 42   <- were silently dropped before 2026-09-14
+    no producer field at all     : 357  <- still invisible; nothing names their producer
+
+Downstream, `SELF-stale` moved 613 -> 632 and `no usable computedAt` 73 -> 96:
+the recovered 42 now get processed and land in existing buckets rather than
+vanishing. Most are self-stale, i.e. already covered by the validator this audit
+defers to — which is the outcome this bean predicted, now actually demonstrated
+instead of assumed.
+
+**Still open here:** the 357 with neither key. Nothing in those files names a
+producer, so no cone can be walked for them at all. That is a genuine remaining
+blind spot and it is now reported as one instead of being invisible.

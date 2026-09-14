@@ -1,0 +1,114 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-14T18:46:36.084632+00:00",
+  "commitSha": "d7562f1d43d05ee9fd6ee7d45d3f48146ecd09e9",
+  "assertions": [
+    {
+      "name": "all_four_candidates_are_tied_by_every_letter_sum",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "all four have writhe +2 and length 2, so the crossing COUNT (the corpus's live cost in GammaGammaWordSelection) and the crossing ENERGY E_cross (a sum over letters) take one value across all four. LetterSumBlindness.letterSum_perm_invariant makes this structural rather than coincidental: no letter-sum, for any q and any coefficients, can do better"
+    },
+    {
+      "name": "the_pair_kernel_separates_the_candidates_a_letter_sum_ties",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "4 distinct proton values over 4 candidates, against ONE value for every letter-sum. So a separation-weighted pair kernel is a cost that can distinguish what the crossing count cannot -- which is the precondition the GammaGammaWordSelection cost socket needs and the crossing count fails. It does NOT follow that this cost should be adopted or minimised; that is a choice this probe does not make"
+    },
+    {
+      "name": "the_separation_weight_is_what_breaks_the_tie_not_the_pairing",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "on the SHARP pair -- same letter multiset, same writhe, differing only in ORDER -- the weighted kernel separates by 0.91996925 against 0.0 unweighted. This is the measured form of ECatBlockDecomposition.pairSum_not_perm_invariant: pairing alone is not enough, because a kernel symmetric in its two letters and blind to their separation is permutation-invariant again. The 1/d_arc^2 factor of the O'Hara integrand is doing the work, and it is the factor the spec supplies rather than one chosen here"
+    },
+    {
+      "name": "this_is_a_discretisation_and_not_E_cat",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "E_cat is a continuum double integral over S^1 x S^1 and has no producer in the corpus -- `energy : R` in CategoricalMobiusEnergy is a bare structure field. What is computed here is a discretisation whose three factors are read off prop:mobius-energy; whether its continuum limit is E_cat is UNPROVED, and the classical-limit leg it would need is assumed rather than derived and carries an unretired blindness incident (E_cat = 1 + const for every knot, no sorry). Recorded as an assertion so the boundary travels with the numbers"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 65,
+  "computation": "qbeta-ecat-pair-kernel",
+  "scriptFile": "qbeta_ecat_pair_kernel_probe.py",
+  "scriptHash": "e69ff42dd665",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ecat_pair_kernel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ecat_pair_kernel_probe.py"
+  },
+  "description": "Implements the discretised E_cat double integral as a separation-weighted pair kernel over the braid word -- each factor read off prop:mobius-energy rather than chosen: the letter pair for D(g(s)) (x) D(g(t)), the Markov trace tr_M(w_i w_j) for lambda . tr_A, and 1/d_arc^2 for the measure factor, with d_arc the CYCLIC separation since a braid closure is a circle. Measures whether this cost separates the four two-crossing gluon candidates that every letter-sum provably ties, and contrasts it against the same sum with the separation weight removed -- the control for ECatBlockDecomposition.pairSum_not_perm_invariant. It is NOT E_cat (that is a continuum integral with no producer), it selects no word, and the per-block split is proved a refinement in Lean but not computed here.",
+  "data": {
+    "pair_energies": {
+      "sigma_1 sigma_0": {
+        "proton": "8.68872560885262676342465595137",
+        "neutron": "8.37092118801408636079687035775"
+      },
+      "sigma_0 sigma_1": {
+        "proton": "7.76875635932244682814337007717",
+        "neutron": "7.45095193848390642551558448355"
+      },
+      "sigma_1 sigma_1": {
+        "proton": "8.8978095292003949305340391046",
+        "neutron": "8.58000510836185452790625351098"
+      },
+      "sigma_0 sigma_0 (LIVE)": {
+        "proton": "9.06507666547860946422154562718",
+        "neutron": "8.74727224464006906159376003356"
+      }
+    },
+    "unweighted_control_proton": {
+      "sigma_1 sigma_0": "34.6134315674846071698465151244",
+      "sigma_0 sigma_1": "34.6134315674846071698465151244",
+      "sigma_1 sigma_1": "34.6134315674846071698465151244",
+      "sigma_0 sigma_0 (LIVE)": "36.1188357939885379730340738276"
+    },
+    "kernel": {
+      "form": "E_pair(w) = sum_{i<j} tr_M(w_i w_j) / d_arc(i,j)^2",
+      "d_arc": "min(j-i, L-(j-i)) -- cyclic, because a braid closure is a circle",
+      "markov_parameter": "z_D = q^3/(q^2+1) (convention D)",
+      "provenance": "each factor read off prop:mobius-energy; no fitted constant, no chosen branch"
+    },
+    "socket": {
+      "target": "QOU/Mass/GammaGammaWordSelection.SDPSelected, field `cost : W -> R`",
+      "currently": "fun w => (w.length : R) -- the crossing count, a letter-sum, excluded scope-(b)",
+      "status": "this probe supplies a cost that SEPARATES; it does not instantiate the selection, and adopting it is an owner decision (bean qou-99qc)"
+    },
+    "scope": {
+      "class": "(a) scope-limited -- one discretisation, four candidates, one nucleus pair",
+      "not_claimed": [
+        "that this is E_cat, or that its continuum limit is",
+        "that any word should be selected by minimising it",
+        "that the per-block split t_lambda is computed -- it is PROVED a refinement in Lean (blockDecomposition_of_linear, from linearity alone) and left uncomputed here",
+        "that the MobiusEnergy classical-limit leg is sound -- it is assumed and carries an unretired blindness incident"
+      ],
+      "no_selection_by_accuracy": "no Q_beta, no CODATA, no residual, no experimental number in this probe"
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  }
+}

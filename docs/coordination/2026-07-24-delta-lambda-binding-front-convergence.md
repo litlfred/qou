@@ -88,7 +88,7 @@ Background scoping of `conj:algebraic-geometric-dilog-equivalence` (the redirect
 target) found:
 
 - **The conjecture's structure is settled and honest.** §1 pole side is a
-  sorry-free theorem (`pole_cusp_bijection_proved`); §2 Bloch–Wigner asymptotic
+  sorry-free theorem (`pole_cusp_bijection_proved`, renamed 2026-09-14 to `denomPolyLocal_roots_explicit`); §2 Bloch–Wigner asymptotic
   is *derived conditionally* from two class fields — `vc_asymptotic` (a
   literature theorem for 4₁ via Ohtsuki / Andersen–Hansen) and `pole_cusp_matched`
   (= `conj:shared-denominator-cusp-holonomy`). The bar-odd shape `S = A/u³` is

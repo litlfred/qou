@@ -565,3 +565,66 @@ So the migration is not a rename alone — **drop the explicit `_` placeholder**
 gives a confusing arity error rather than a deprecation notice. The deprecation
 itself is a **warning**, so it passes `lake build` and only fails a
 zero-warnings gate.
+
+## TRAP — `field_simp; ring` residual `2⁻¹ * 2` over a generic `[Field R]` = the STATEMENT is false in char 2 (2026-09-14)
+
+Symptom, in a file obeying AGENTS.md §7c (generic `{R : Type*} [Field R]`, no `ℝ`):
+
+```
+⊢ -1 + q ^ 2 + q ^ 2 * 2⁻¹ * 2 + 2⁻¹ * 2 = q ^ 2 * 2
+Try this: ring_nf
+  Note that `ring` works primarily in *commutative* rings … consider `noncomm_ring`
+```
+
+**The "noncommutative ring" hint is a RED HERRING** — `R` is a field. The real
+content is that `2⁻¹ * 2 = 1` needs `(2 : R) ≠ 0`, which `Field` does **not**
+give: `Mathlib` defines `0⁻¹ = 0`, so in characteristic 2 any `x / 2` silently
+collapses to `0` and no tactic can close the goal. **A leftover `2⁻¹ * 2` (or
+`3⁻¹ * 3`, …) that `ring` will not discharge is a characteristic obstruction,
+not a tactic-selection problem.** Anything whose definition divides by a numeral
+— a half-sum, an average, a midpoint, `(q + q⁻¹)/2` — carries it.
+
+Fixes, in order of preference: add `(h2 : (2:R) ≠ 0)`; or `[CharZero R]` (then
+`have h2 : (2:R) ≠ 0 := two_ne_zero`); or move the statement past the
+archimedean wall to `ℝ`. `field_simp` picks `h2` up from context automatically —
+it does **not** need to be passed, and passing `hq` alone is what leaves the
+residual.
+
+**Do not report this as "unproved" — report it as FALSE, with the witness.**
+A red tactic alone is only evidence about the tactic (MEMORY.md §19). The
+three-line decisive form, all sorry-free, ~5 s:
+
+```lean
+theorem aniso_char_two (h2 : (2:R) = 0) (q : R) : (q + q⁻¹)/2 = 0 := by
+  rw [div_eq_mul_inv, h2, inv_zero, mul_zero]
+theorem sub_inv_ne_zero_char_two (h2 : (2:R) = 0) {q : R} (hq : q ≠ 0) (hq1 : q ≠ 1) :
+    q - q⁻¹ ≠ 0 := by
+  intro h
+  have hinv : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
+  have hsq : q * q = 1 := by linear_combination q * h + hinv
+  have hz : (q - 1) * (q - 1) = 0 := by linear_combination hsq + (1 - q) * h2
+  exact hq1 (sub_eq_zero.mp (mul_self_eq_zero.mp hz))
+```
+
+`linear_combination`, not `linarith` — `linarith` needs an **order** and `R` has
+none; over a bare field it fails with the unhelpful "failed to find a
+contradiction".
+
+**Inhabiting the counterexample.** `ZMod 2` is often NOT enough: its only
+nonzero element is `1`, so an identity failing only at `q ∉ {0,1}` still holds
+there. (It *does* refute a claim of the shape `… / 2 = q`, since LHS collapses to
+`0 ≠ 1`.) For the rest use **GF(4) = `GaloisField 2 2`**, and note two gotchas:
+there is **no `Fintype` instance** (get one with `haveI : Fintype F4 :=
+Fintype.ofFinite F4`), `GaloisField.card` is stated in **`Nat.card`** (bridge with
+`Nat.card_eq_fintype_card`), and both need a `local instance : Fact (Nat.Prime 2)
+:= ⟨Nat.prime_two⟩`. `∃ q, q ≠ 0 ∧ q ≠ 1` then follows from
+`card = 4 > 2 ≥ card {0,1}` by `Finset.card_le_card` + `omega`. Also: `decide`
+gets **stuck** on `ZMod 2` field division (`ZMod.decidableEq` will not reduce
+through `Field.inv`) — route through the abstract lemma with `(by decide)` for the
+`(2 : ZMod 2) = 0` and `q ≠ 0` side conditions instead.
+
+**Why it matters at the gate:** an erroring declaration is still ADDED to the
+environment with `sorryAx`, so `#print axioms` on it reads
+`[propext, sorryAx, Classical.choice, Quot.sound]`. That is the tell that
+separates "this decl failed" from "this decl is fine" when a multi-error file
+still produces axiom output.
