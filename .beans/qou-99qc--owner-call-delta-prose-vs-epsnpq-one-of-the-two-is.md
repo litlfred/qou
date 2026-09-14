@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T17:13:35Z
+updated_at: 2026-09-14T22:07:35Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2702,3 +2702,59 @@ order-sensitive and can rank a longer word below a shorter one.
 **Nothing adopted.** σ₁⁻¹ is not selected — that would swap one proxy for
 another, and point 3 shows the energy does not separate what remains. The Q_β
 column is a reported consequence, never an input to an ordering.
+
+
+## ILP does NOT escape the S4 relative-interior exclusion (2026-09-14)
+
+Owner asked to "make sure you are doing ILP". Checked, and it is excluded —
+for a proved reason, not a failed search. Probe
+`computations/meson/operator_selection_ilp_does_not_escape_s4.py` (9/9, exact
+sympy over Q, emits no witness per qou-pb1w); Lean
+`QOU/QBeta/IntegralityDoesNotEscapeRelativeInterior.lean` (7 decls, sorry-free,
+lean-direct exit 0).
+
+**The escape was real and had to be closed.** S4 (`qou-v7qj`) excludes every
+linear objective from selecting B_3 by the FACE argument — extrema on a face,
+so a relative-interior minimiser is constant. That is a statement about a
+CONVEX POLYHEDRON. An ILP's feasible set is not convex; the governing object
+is the integer hull `conv(P ∩ L)`, whose faces need not be faces of `P`, so a
+relative-interior point of `P` genuinely can be a vertex of the integer hull.
+
+**Reading 1, over Z^6 — B_3 is not feasible at all.** Its NF coordinates are
+Z-Laurent polynomials in q at q_0 and are not integers; worst coordinate (L+)
+is 0.0456 from Z. Stronger and cheaper than S4's negative: not "no objective
+picks it out" but "it is not in the set".
+
+**Reading 2, over Z[q_0,q_0^-1]^6 — that is not a lattice, it is DENSE.** For
+real q > 1, Z[q] is discrete in R iff q is Pisot (classical); the smallest
+Pisot number is the plastic number 1.3247... (Siegel 1944); q_0 = 1.10998 is
+below it. A dense feasible subset has the same closed convex hull, so the
+integer hull adds no faces. Made constructive: [A6] exhibits a feasible
+lattice point beating B_3, 0.8642 against 0.9986.
+
+**The Lean strengthens rather than restates S4:** convexity was never what the
+face argument used. `linear_min_two_sided_kills_direction` gets `f d = 0` over
+an ARBITRARY set S from two-sided reachability and linearity alone. So an ILP
+cannot escape by non-convexity; it could only escape by the lattice being
+COARSE near the point, which density rules out.
+
+**Unconditional — does not need q_0 irrational** (which this corpus cannot
+prove; q_0 is pinned through Vol(4_1) = 2 Cl_2(pi/3)). All three cases give
+density; only q_0 in Z is discrete, and 1 < q_0 < 2. The Pisot test needs no
+decimal expansion of theta: x^3-x-1 is increasing on (1,oo), so q_0 < theta is
+exactly the sign of q_0^3 - q_0 - 1 — proved as an iff in §3 of the Lean.
+
+**Correction made in the writing, worth keeping:** the ring is Z[1/(p*r)], NOT
+Z[1/r] — q_0^-1 = r/p puts powers of p in denominators, and B_3's own
+coordinates carry 192- to 479-digit denominators for that reason. The first
+run tested membership against Z[1/r] and FAILED [A6] on a point plainly in the
+ring. The false negative was indistinguishable from a real one.
+
+**SCOPE (b)**, structural, invariant cited: the Pisot bound for reading 2,
+non-membership for reading 1. It excludes LINEAR objectives over these
+lattices. It says nothing about non-linear principles (S4 refuted two
+separately) and nothing about other elements.
+
+**Still open, unchanged:** what replaces `nuc11_interleaved` after the
+2026-09-13 reading-3 whole-word ruling rejected it on (2,1). That is an owner
+decision and this prune narrows the search without answering it.
