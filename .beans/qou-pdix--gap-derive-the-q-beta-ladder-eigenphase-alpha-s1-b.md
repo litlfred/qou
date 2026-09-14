@@ -2578,3 +2578,79 @@ Worth noting *which* error this was: quoting a figure that had already moved, fr
 a bean entry, while writing a bean entry about quoting figures in the wrong
 coordinate. #7262's Part 4 names this exact failure class and its own Part 3 was
 an instance; so was this.
+
+---
+
+## 2026-09-14 (3) — the branch the reversal re-opens is closed too, and route 5 now has ONE live branch on either reading
+
+The entry above re-opened the hyperbolic branch. Re-opening a branch is not a
+result, so it has been worked. Two of its three cases are now closed.
+
+**Case 1 — constant residue: EXCLUDED as a function.** Kohno–Drinfeld fixes
+`ħ = 2 ln q`, so a constant-residue generator eigenvalue is `c·ln q` and its
+character is `cosh(c ln q)`. `PhaseFailsLogFunctionalEquation` excludes exactly
+this holonomy on the **elliptic** reading via `ln(q²) = 2 ln q`. The hyperbolic
+reading observes the **character** rather than the angle, so the analogue is the
+cosh double-angle law — `χ(q²) = 2χ(q)² − 1`, holding for **every `c` at once**.
+Measured, `κ(q)` on the `z_D` base misses it by **62.30 / 70.47 / 68.79 /
+59.30 %** at `q ∈ {q₀, 1.5, 2, 3}`, against **1.9e-60** for a genuine character.
+
+*The check the argument needed:* the identity is **not** scale-invariant and `κ`
+carries the experimental `Q_cod` as an overall scale. Solving
+`2λ²κ(q)² − λκ(q²) − 1 = 0` gives `λ(q)` spreading **28.86 %** over five points
+against `|λ − 1| ≤ 1.6e-61` for a genuine character — so it is not a
+normalisation artifact.
+
+**Case 2 — arbitrary `q`-dependent residue: VACUOUS.** `cosh` is onto
+`[1, ∞)`, so wherever `1 ≤ κ` a residue reproducing it exists by construction:
+`a(q) := arcosh(κ(q))`, read off the answer. Measured, `κ` stays `≥ 1`
+throughout `q ∈ (1, 10]` — **1.5333** at `q → 1⁺` rising monotonically to
+**8.0243** at `q = 10`, no crossing — so the vacuity is not conditional in the
+physical domain. Had `κ` dipped below 1 anywhere that region would have been a
+genuine constraint (`cosh ≥ 1` always); it does not.
+
+**Case 3 — derived `q`-dependence: OPEN.** The only contentful branch.
+
+### The trichotomy now mirrors the elliptic one exactly
+
+| | elliptic | hyperbolic |
+|---|---|---|
+| constant | `ln(q²) = 2 ln q` → **excluded** | Chebyshev doubling → **excluded** |
+| arbitrary | `EigenphaseCarrierVacuity`: *"M arbitrary — CIRCULAR"* | `arcosh(κ)` → **vacuous** |
+| derived | **open** | **open** |
+
+Reached independently on the two sides. **So route 5 has one live branch on
+either reading, and it is the same branch.** Step 18 claimed to close all three
+at once *"by a sign argument that never reads the residues"* — that argument is
+the one the ruled base voids, and what replaces it closes two of three.
+
+### Scope, load-bearing
+
+Case 1 is scope-**(b)** for *"as a function of `q`"* **only**. At `q₀` alone the
+free `c` reaches the requirement **exactly** (`c = 5.96831620`, defect `0.0`), so
+a pointwise match is always available and carries no information.
+
+### A prune that FAILED, recorded as a failure
+
+Cross-anchor rigidity — the obvious test — has **no power** here. With the pins
+11.6141 ppb apart, `c` is amplified **9.58×** and `c_3` **2.05889e+6×** (through
+its `1/u³` extraction): ratio **2.15e5**. The pins' agreement on `c` to ~1e-7 is
+evidence about the *test*, not about `c`. An agent reading only the agreement
+would conclude `c` is anchor-independent, which this does **not** show. The `c_3`
+swing reproduces AGENTS.md's recorded 2.3912 %, which is the calibration.
+
+*(My first re-derivation of `c_3` gave −2710 — I divided by the bare base where
+the corpus divides by the N=2 ladder value. The recorded pair is used instead.)*
+
+### Not pursued
+
+`c = 5.96832` at the live cell is **0.5281 %** from 6. Check-**against** only: a
+near-integer found by solving against the target is selection against the target,
+and the cell is provisional anyway — the 2026-09-13 ruling records that its
+element `nuc11_interleaved` **fails** the confinement SDP on `(2,1)` and
+`(1,1,1)`, so `c` moves when the element is replaced. No search was run for a
+reason `c` should be 6, and none should be until something independent selects
+one.
+
+**Status: still open.** Branch 3 is a live open problem on both readings.
+Rule 13a.
