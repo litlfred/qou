@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-14T06:34:43Z
+updated_at: 2026-09-14T06:37:22Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -2192,3 +2192,37 @@ checkable against the probe by a reader who has neither in context, and the
 escape is closed in the statement rather than in prose that a later agent can
 reasonably not find. Recorded this way deliberately, so it is not mistaken for a
 theorem doing work it is not doing.
+
+
+
+---
+
+## 2026-09-14 — ROUTES (1) AND (2) NOW HAVE THE SAME TERMINUS, FOR THE SAME REASON
+
+Recorded as a synthesis, **not** a new theorem. Route (2)'s content is already
+localised by §9g (many-body) and §9h (charge-antisymmetric); adding further
+`X forces Y` relocations would be padding, and AGENTS.md's Lean discipline says
+so explicitly. What is worth writing down is that the two routes converged today.
+
+| | topological channel | what remains |
+|---|---|---|
+| **(1) Milnor** | **EMPTY — measured.** `μ̄ = 0` on every triple of the derived carrier (`qou-2g9j`). | length ≥ 4, newly well-defined |
+| **(2) Möbius** | **UNREACHABLE — proved.** `no_positive_uniform_mutual_lower_bound`: no topological lower bound reaches the pairwise channel (CONSTRAINT 3, `qou-dux3`). | a metric configuration (`sep`), `qou-a2w5` |
+
+**Different mechanisms, same shape.** One channel is empty by computation, the
+other unreachable by proof — and in both cases what is left is **geometry the
+corpus cannot currently supply**. Route (3) is a third instance: its grading
+collapses to degree 0 on the finite `H_{3A}(q)`, and reaching the affine object
+needs the von Neumann inductive limit, which `markov-trace-inductive-limit.lean`
+marks as open R&D.
+
+**So all three routes are blocked on a MISSING OBJECT rather than on a wrong
+idea**, and the three missing objects are different: a higher-length invariant, a
+metric configuration, an inductive limit. That is the arc's real state, and it is
+more useful than any per-route verdict.
+
+**The one that may close on its own:** route (1) at length ≥ 4. Its input is a
+topological invariant **of the braid word**, and `qou-ales` produces words — so
+unlike (2) and (3) it needs no infrastructure the corpus lacks, only a
+computation nobody has run. **NOT CLAIMED** that any length-4 invariant is
+nonzero here; that is unmeasured and is the obvious next probe.
