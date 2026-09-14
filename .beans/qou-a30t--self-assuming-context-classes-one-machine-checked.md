@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-12T12:30:45Z
+updated_at: 2026-09-14T08:48:05Z
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -225,3 +225,71 @@ figures will finish the list and still have carriers left.
 
 The right population query is a **detector run over the tree**, not a ledger query. That
 has not been done here and the figures above should not be quoted until it is.
+
+
+## The `Contentless` criterion is sound but UNDER-DISCRIMINATING — measured on 2 of the 46 (2026-09-14, from qou-9yt9)
+
+`Contentless K C := Nonempty K ↔ C` correctly captures *"this declaration adds no
+logical content."* It does **not** capture *"this declaration is a defect"* — because it
+says nothing about **how `Nonempty K` is obtained.** Two cases collapse into one verdict:
+
+| `Nonempty K` is … | reading |
+|---|---|
+| **assumed** (no instance, or instance is `sorry`/`True`) | self-assuming projection — defect |
+| **proved** (closed instances over the index range) | the **Mathlib accessor idiom** — legit |
+
+Both satisfy `Nonempty K ↔ C`. The criterion cannot separate them, and the corpus already
+contains the separation as a **verdict/disposition contradiction inside the ledger**.
+
+### The two measured instances, both in `QOU/Archimedean/QHookBound.lean`
+
+`qInt_ratio_bound_small` (:415) and `qFact_ratio_bound` (:608) each carry
+`verdict: genuine` with `disposition: accessor-idiom-legit` — and entry 2's own evidence
+says *"Same accessor idiom as qInt_ratio_bound_small; re-confirms prior **legit**"* while
+entry 1's says *"It remains a **genuine** field-projection."* The two entries disagree
+about the same idiom.
+
+**The substance decides it, and it is machine-checkable in three greps:**
+
+1. **The field is not a universe-`Prop`.** `bound : |qIntReal q m / m - 1| <= (q - q⁻¹)^2 * m / 6`
+   — a concrete inequality fixed by the class parameters. A constructor cannot choose it;
+   `True` cannot discharge it. (Contrast the seven carriers closed under `qou-9yt9`, whose
+   fields were typed with the universe `Prop` and *were* constructor-chosen.)
+2. **Every instance is closed.** All **8** instances (`qIntRatioBoundSmall_one..four`,
+   `qFactRatioBound_zero..three`) take **no context-class binder** — they are `nlinarith` /
+   `simp` / `qInt_ratio_bound_m1` proofs, so they cannot be chaining the assumption.
+3. **Zero `sorry` in the file** (`grep -c` on the word = 0).
+
+`QIntRatioBoundSmall` binds `1 <= m` and `m <= 4`, so those four instances cover the
+**entire index range** — `Nonempty K` is a theorem for every admissible `m`, given only
+`q > 1` and `q < 3/2`.
+
+### Proposed third axis for the criterion
+
+```
+field type is universe Prop                                     -> irreparably vacuous
+concrete field type, no closed instance                         -> self-assuming (defect)
+concrete field type, closed instances covering the index range  -> accessor idiom (legit)
+```
+
+Axis 1 is already greppable; axis 3 is `instance` decls whose signature carries no
+`[_ : <ContextClass> ...]` binder, plus a sorry check. Neither needs the class to be read
+semantically.
+
+### Scope — what this does NOT establish
+
+- Measured on **2 of the 46**, chosen because their own ledger entries contradict
+  themselves. **I have not re-read the other 44**, and I am not proposing a sweep.
+- **`QFactRatioBound` has a real coverage gap**: `k : ℕ` is **unbounded** and instances
+  exist only for `k = 0,1,2,3`. For `k >= 4` the accessor is *unusable* (no instance found),
+  not *unsound* — but a downstream file supplying its own `instance ... := ⟨sorry⟩` would
+  turn it back into laundering. That is caught by the sorry audit, not by this criterion.
+- I did **not** verify that no consumer supplies such an instance.
+
+### Not enacted
+
+The two verdicts are left at `genuine`. Correcting them would exempt them and move
+`proof-no-self-assuming-projection` 57 -> 55, and it overrides another agent's explicit
+"It remains a genuine field-projection" — a judgement call between two prior readings,
+not a precision fix, so it waits (AGENTS.md §ASK THE OWNER). Recorded here because this
+bean owns the criterion.
