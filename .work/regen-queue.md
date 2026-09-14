@@ -842,3 +842,77 @@ default 15 dps and the numbers it emits are HONESTLY float64 — no fake
 precision to detect". One of that comment's three claims has gone stale: it
 says "the padding / raw-float64 / import-time gates all pass it", and it is a
 REGRESSED entry on the raw-float64 ratchet today.
+
+## 27. `q0_value_drift_audit` — 4 NEW, all historical pins, and BOTH obvious fixes are mass drains
+
+Ran the gate (read-only; its tree-measuring witness restored by explicit
+single path). RED with **4 NEW**, and every one is a deliberately recorded
+historical pin rather than a drifted value:
+
+    _deprecated/alpha-high-precision.witness.json          q_0                       -0.0769 ppb
+    probes/…_D_eigenvalue_no_pin_produces_probe            data.D_spectrum_at_retired.q0   -0.0798
+    probes/two_blocks_publish…at_different_pins_probe      data.figures_at_retired.q0      -0.0798
+    probes/two_blocks_publish…at_different_pins_probe      data.figures_at_frozen_A.q0     -0.0769
+
+Verified by matching each value against the probe's own `PINS` dict — they
+are `retired`, `retired`, `frozen_A`, and `frozen_A` exactly. The probe's
+whole subject is evaluating one identity at several pins and reporting how
+far apart they are; the deprecated witness used the `frozen_A` pin when it
+was current.
+
+**The classification is CORRECT, which is what makes this hard.** The audit
+resolves both anchors LIVE (`_q0_value_for_anchor`) and its header explains
+why: a drift detector whose reference is a transcription cannot see the
+reference drift. Under the 2026-08-22 owner ruling ("A → CODATA 2022") the
+canonical anchor moved **+0.0769 ppb**, so a value at the pre-ruling anchor A
+reads as −0.0769 ppb today, correctly. `frozen_A` is literally that A.
+
+### Both obvious remedies are drain-by-exclusion, measured
+
+**Add `retired`/`frozen_A` to the anchor set** (they would fit the existing
+"legitimate non-canonical" bucket that holds 2606 proton-pin rows). Measured
+with the audit's own classifier over all 206 STALE rows:
+
+    ppb vs canonical    count    of which _deprecated
+       -0.07978           199            179
+       -14.09               3              0
+       -0.07694             2              1
+        -5.03               1              0
+       -0.07454             1              0
+
+**201 of 206 sit at the pre-ruling anchor.** Adding it as a known pin
+reclassifies 98 % of the gate's content — it would not drain the backlog,
+it would delete it.
+
+**Exclude `_deprecated/`**, which is the other instinct and looks like a
+consistency fix: this audit is the ONLY one of six in the family with no
+`_deprecated` handling (`q0_stamp_vs_parameter`, `witness_prose_drift`,
+`witness_raw_float64`, `witness_float64_padding`, `q0_anchor_consistency` all
+exclude it). But **179 of the 329 baselined stale keys (54 %) are in
+`_deprecated/`** — the audit's convention is plainly that deprecated files
+are scanned and baselined, and removing them retroactively rewrites the
+accounting. Also drain-by-exclusion.
+
+### So what this gate is actually reporting
+
+A **migration backlog**: ~201 witnesses still carry the pre-ruling anchor A,
+179 of them retired and therefore never re-runnable. That is real and
+correctly tracked. The 4 NEW are new arrivals in the same class, three of
+them deliberate.
+
+**NOT FIXED, and not by caution — by measurement.** The only remedy that is
+not a mass drain is a per-field DECLARATION, the shape
+`witness_raw_float64_audit` already uses for `precision_tier:
+float64-integrator`: let a producer say "this q0 is a historical pin, on
+purpose" and have the audit carve it out by declaration rather than by name
+or by value. That is a design change to a blocking gate and belongs to
+whoever owns it. Recording the measurement so the next person does not spend
+the same hour rediscovering that both easy fixes are wrong.
+
+Two smaller observations, unfixed:
+- It collects with `HERE.rglob("*.witness.json")` where all five siblings use
+  `git ls-files`, so an untracked witness in a working tree can change a
+  blocking gate's verdict.
+- `_deprecated/alpha-high-precision.witness.json` can never be repaired: it
+  is retired, so nobody will re-run it, and it will sit on the NEW list until
+  something changes structurally.
