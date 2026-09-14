@@ -1307,3 +1307,45 @@ probe here emits no timing field at all and carries **zero** float64 values.
 one than `e_∞` was.
 
 **Do not close this bean.**
+
+### 2026-09-14 — a re-run I made silently cut the exhaustive enumeration by two rungs
+
+Caught in the post-rebase verification, not by a gate. The rename of `"seconds"` →
+`"elapsed_sec"` (previous entry) required re-running `rev_exact_maximiser_small_n_probe.py`.
+Its reach is an **environment variable**:
+
+    K_MAX = int(os.environ.get("REV_EXACT_KMAX", "10"))
+
+The witness committed on `main` was built with `REV_EXACT_KMAX=12`. My re-run used the default,
+so `exact_rows` went `k = 1..12` → `k = 1..10` — the corpus's only exhaustive enumeration of
+every partition of `T_k`, narrowed by two rungs, with **no diagnostic anywhere**: the producer
+printed `10/10 checks pass`, and the witness is internally consistent at its smaller reach.
+
+**What made it visible was a downstream count, not the producer.** `e_inf`'s E1 calibration reads
+that witness and reported *"4 values of k"* where the previous run said 6. The check's own text
+then made it worse, because the range was **hardcoded** — it printed `4 values of k (7..12,
+n = 28..78)`, i.e. the right count beside the wrong range, which reads as a formatting quirk
+rather than as two missing rungs.
+
+**Fixed three ways**, in increasing order of what they buy:
+
+1. Regenerated at `REV_EXACT_KMAX=12`, restoring `k = 1..12`.
+2. E1's range is now **derived from the data** it loaded, so a count and a range can no longer
+   disagree.
+3. The probe reads and records `upstream_enumeration_kmax`, and prints it, so the reach of the
+   enumeration this calibration rests on is a stated number rather than an assumption.
+
+**Scope checked, not assumed:** of the four producers re-run this session, only this one reads
+an environment variable at all (`grep -nE "os\.environ|getenv"` over all four). The other two
+regenerated witnesses are **row-identical to `main`** — `rev-excess-scaling-exponent` 11 rows,
+`rev-edge-relaxation-window` 7 rows, same sets.
+
+`e_inf` is unaffected: `2.43929645512078402706542884314`, settled from `k = 520`. E1 is a
+calibration of the shape class, not an input to the value.
+
+**The reusable shape:** a producer whose *reach* is an env var with a modest default will
+silently shrink under any re-run that does not set it — a rename, a lint fix, a provenance
+refresh. The witness stays self-consistent, so nothing downstream fails; only a consumer that
+counts rows can see it.
+
+**Do not close this bean.**

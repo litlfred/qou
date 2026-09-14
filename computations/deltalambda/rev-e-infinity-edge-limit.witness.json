@@ -1,6 +1,6 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-13T20:24:58.598177+00:00",
+  "computedAt": "2026-09-14T06:14:42.933532+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_edge_limit_probe.py"
   },
@@ -101,8 +101,50 @@
       "evaluators_agree": true,
       "excess_full_minus_exhaustive": 0,
       "rounding_ulp_bound": 176
+    },
+    {
+      "k": 11,
+      "n": 66,
+      "in_class": true,
+      "rebuild_matches": true,
+      "top": [
+        1
+      ],
+      "run_head": 3,
+      "run_length": 4,
+      "bottom": [
+        1,
+        1,
+        1
+      ],
+      "extension": 1,
+      "evaluators_agree": true,
+      "excess_full_minus_exhaustive": -2,
+      "rounding_ulp_bound": 206
+    },
+    {
+      "k": 12,
+      "n": 78,
+      "in_class": true,
+      "rebuild_matches": true,
+      "top": [
+        2,
+        1
+      ],
+      "run_head": 3,
+      "run_length": 6,
+      "bottom": [
+        1,
+        1,
+        1
+      ],
+      "extension": 1,
+      "evaluators_agree": true,
+      "excess_full_minus_exhaustive": 3,
+      "rounding_ulp_bound": 251
     }
   ],
+  "upstream_enumeration_kmax": 12,
   "k40_against_7331_E2": {
     "class": "2.41409064417390445671009",
     "pr7331": "2.41409064417390445671009",
@@ -450,7 +492,7 @@
     {
       "name": "E1 every exhaustively-found maximiser is in the shape class, and two independent evaluators reproduce its excess",
       "ok": true,
-      "detail": "4 values of k (7..12, n = 28..78).  Each maximiser decomposes as a positive top block, ONE contiguous run of -1 whose length is exactly s_t + s_b, and a positive bottom block, with nothing in between \u2014 so the three-piece class is the shape the enumeration FOUND, not a shape imposed on it, and `make_u` rebuilds each u byte-for-byte from that decomposition.  The two evaluators agree with each other on the nose at every k, sharing no code path (one is the O(L^2) definition, the other sums over displaced rows through a bisect window).  Against #7305's own M_n - V(delta_k) the worst deviation is 2 units at 1e-40 against a budget of 84: #7305 accumulates rounded phi per CELL while this probe accumulates rounded eps per PAIR, so two integer sums of the same quantity agree only to their operation count, and that count is what the budget is.  k <= 6 is excluded \u2014 there the staircase is itself the maximiser, with no displacement to decompose"
+      "detail": "6 values of k (7..12, n = 28..78) \u2014 every k the committed enumeration covers above 6.  Each maximiser decomposes as a positive top block, ONE contiguous run of -1 whose length is exactly s_t + s_b, and a positive bottom block, with nothing in between \u2014 so the three-piece class is the shape the enumeration FOUND, not a shape imposed on it, and `make_u` rebuilds each u byte-for-byte from that decomposition.  The two evaluators agree with each other on the nose at every k, sharing no code path (one is the O(L^2) definition, the other sums over displaced rows through a bisect window).  Against #7305's own M_n - V(delta_k) the worst deviation is 3 units at 1e-40 against a budget of 84: #7305 accumulates rounded phi per CELL while this probe accumulates rounded eps per PAIR, so two integer sums of the same quantity agree only to their operation count, and that count is what the budget is.  k <= 6 is excluded \u2014 there the staircase is itself the maximiser, with no displacement to decompose"
     },
     {
       "name": "E2 this probe reproduces PR #7331's maximum on #7331's own shape, and its class reaches at least as high",
