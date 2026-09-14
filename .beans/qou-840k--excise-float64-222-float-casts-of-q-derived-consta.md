@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-07T04:44:03Z
+updated_at: 2026-09-14T09:03:20Z
 ---
 
 
@@ -667,3 +667,114 @@ A 29-file PR applying `q_at(mp.mp.dps)` would have compiled, **passed the
 F64_CAST gate by removing the matched shape, and changed no result**. A green
 gate over an unchanged defect is precisely what this gate family exists to
 prevent.
+
+
+## F64_IMPORT re-measured 2026-09-14: 119 -> 173, and a measured case where the advisory tier hid a real defect
+
+Re-ran `f64_into_mpmath_audit.py --tier F64_IMPORT` on
+`claude/raw-float64-drain-2026-09-13` (rebased on main `8b7b663b566`):
+
+    LAUNDERED        34      <- NOT zero; qou-tj98 closed on "exits 0"
+    F64_CAST        225
+    F64_ENGINE_ENTRY 45
+    F64_IMPORT      173      <- qou-tj98 recorded 119
+
+**qou-tj98 is `completed` on the acceptance test `--tier LAUNDERED` exits 0,
+and that tier now lists 34.** Not re-opening it here — recording that its
+acceptance no longer holds, so it must not be cited as evidence the laundering
+class is closed.
+
+### The measured case
+
+`computations/probes/casimir_grid_sweep_probe.py` sat in F64_IMPORT — the tier
+whose own footer says it "never fail[s] a run" — while carrying
+
+    from q_parameter import Q        # float(_d["q"]), a float64 constant
+    q = mpf(Q)                       # round-trip: the whole sweep at ~17 digits
+
+Fixed to `Q_MP` (commit 3c1317dea45). Every field diffed against the committed
+witness, 183 in / 183 out / 0 lost / 0 gained:
+
+    rel_residue fields   n= 26   ALL moved   max 4.26e-13   median 1.9e-14
+    every other numeric  n=112    55 moved   max 6.67e-16   median 6.9e-17
+
+The residues are the probe's HEADLINE quantity and they were good to ~13
+digits, not 16. `rel_res = |val - pi_sq_720| / pi_sq_720` with `val` within
+0.04 % of the target cancels ~3.4 digits and amplifies the 1e-16 cap.
+
+### The control, and the discriminator it gives
+
+`casimir_phi_q_markov_probe.py` — same tier, same import, same `q = mpf(Q)`,
+same edit (commit 0b92461054b). Its 26 residue fields moved **4.13e-15**, a
+factor ~100 less, because it is a NULL RESULT: nothing is near the target, so
+nothing cancels.
+
+So F64_IMPORT is a genuinely MIXED bucket and qou-tj98's "review individually,
+do not bulk-edit" is right. The discriminator this pair supplies:
+
+  **does the file form a difference of near-equal quantities?**
+
+If yes the f64 cap is amplified into the reported digits; if no it stays at
+f64 epsilon and is harmless. Unfortunately that ranks the probes that FIND
+something above the ones that do not — i.e. the dangerous cases are exactly
+the ones whose conclusion someone will quote.
+
+### Still live in this bucket, same `q = mpf(Q)` shape
+
+  computations/probes/casimir_carlitz_q_bernoulli_probe.py:127
+  computations/probes/casimir_macdonald_probe.py:209
+
+and `mp.mpf(HBAR_Q)` in `probes/c4_two_nucleon_probe.py:71`,
+`probes/c4_a3_a4_long_compute_probe.py:85`, `probes/c3_he4_long_compute_probe.py:113`,
+`probes/c3_borromean_all_cases_probe.py:80`.
+
+### Correction to my own commit message
+
+Commit 0b92461054b says the tier finding is "raised as bean qou-lz8f". That is
+the wrong bean — `qou-lz8f` is the mpf/json destructive-write class — and the
+finding is not new besides: this bucket has been tracked here (qou-840k) and
+in qou-tj98 since 2026-08-08. What is new is the re-measured count and the
+grid-sweep/phi-q pair above.
+
+Not proposing a tier re-ranking: re-severity-ing a live gate is an owner call.
+
+
+### CORRECTION, same hour — I COUNTED LINES, NOT FINDINGS. Four of the five numbers above are wrong, and one inverts its own conclusion.
+
+The table above came from `grep -c ""` on each `--tier` run's stdout, i.e. the
+LINE COUNT of the output file. `--tier X` prints all six tier headers plus ~30
+lines of explanatory boilerplate every time, so the count is dominated by
+prose. Re-read from the tier header lines themselves:
+
+    tier              I WROTE   ACTUALLY                        fails a run?
+    LAUNDERED           34      **none**                        yes
+    F64_CAST           225      104 file(s), 184 site(s)        yes
+    F64_ENGINE_ENTRY    45      0 file(s), 0 site(s)            no
+    F64_IMPORT         173      139 file(s)                     no
+
+**The inverted one is LAUNDERED.** I wrote that qou-tj98 "is `completed` on the
+acceptance test `--tier LAUNDERED` exits 0, and that tier now lists 34 ...
+must not be cited as evidence the laundering class is closed." The tier prints
+the literal string `LAUNDERED — none.` **qou-tj98's acceptance HOLDS.** Strike
+that paragraph; it was an accusation manufactured entirely by my own
+miscount, against a bean that is correct.
+
+**F64_IMPORT is 119 -> 139, growth of 20, not 119 -> 173.** Of the 139, 129 are
+under `computations/`; the rest are `qou-mass/src/qou_mass/_internal/` (the
+GENERATED mirror — never hand-edit, see AGENTS.md), `tools/pyhecke`, and one
+`tools/qou-substrate` test. No truncation in the listing; the 129/139 gap is
+those ten paths, not a cap.
+
+**The live failing number for this bean is F64_CAST: 104 files, 184 sites**,
+and the audit's own text calls them "defects" rather than circumstantial.
+That is the figure to work, and it is the one my table buried.
+
+**What survives unchanged.** The grid-sweep / phi-q pair is a direct
+measurement of two witnesses and does not depend on any tier count: 4.26e-13
+vs 4.13e-15 on the same edit, and the near-cancellation discriminator. Both
+commits' witness diffs stand.
+
+**Contaminated elsewhere:** commit `0b92461054b` (pushed, PR #7318) says
+"Measured: 173 files sit in F64_IMPORT". Read 139. The rest of that message —
+the two witness diffs, the tier's advisory status, the two named live
+`q = mpf(Q)` files — is unaffected.
