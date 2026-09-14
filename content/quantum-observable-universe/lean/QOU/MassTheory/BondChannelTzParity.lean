@@ -270,7 +270,25 @@ charge dependence is one bond factor times the charge-blind scalar `z² − hz �
 This section proves the consequence, and it is the general statement rather than
 the instance: **multiplying by anything charge-blind cannot move a mirror odd/even
 ratio.**  Any proposal of the shape "keep the bond factor, multiply it by a new
-scalar" therefore inherits §3's exclusion verbatim, whatever the scalar is. -/
+scalar" therefore inherits §3's exclusion verbatim, whatever the scalar is.
+
+**🛑 SCOPE — the `n = 4` factorisation does NOT generalise, measured the same day.**
+`parity_ratio_const_mul` is a theorem about a charge-blind multiplier and is
+unconditional.  What is *word-specific* is the premise that the cross term HAS that
+shape.  The same probe extended to `n = 5`, with two re-crossings
+(`b₀b₁b₀b₂b₁b₃b₂` against `b₀²b₁²b₂²b₃`) and symbolic `q`, gives
+
+    Δ₅ = f₃ · (z² − hz − 1) · ( f₀² + f₂² + (q⁴+1)/(q²+1)² )
+
+— the *peeled* bond still factors out linearly, but the two **interleaved** bonds
+now enter **quadratically** (additively, with no `f₀f₂` cross term), so the
+mirror-even part becomes charge-dependent and the parity ratio is **no longer
+forced**.  Measured: `Δ₅ odd/even ≠ f odd/even`.
+
+So do **not** cite §7 as closing the word-class route.  It closes the `n = 4`
+cross term, and the mechanism it closes — "bond factor × charge-blind scalar" —
+whenever a construction actually has that shape.  At `n = 5` the route is open, and
+the interesting object is the sum of squares.  Bean `qou-vwu3`. -/
 
 /-- Mirror-even part of a function of the pair isospin projection. -/
 noncomputable def evenPart (F : ℝ → ℝ) (tz : ℝ) : ℝ := (F tz + F (-tz)) / 2

@@ -302,6 +302,68 @@ def main() -> int:
     print()
     print(f"  mirror-EVEN part = {sp.factor(sp.simplify(even))}")
 
+    # ---- n = 5: does the n=4 factorisation GENERALISE?  It does not. -------
+    #
+    # The n=4 answer is a prune only if it survives a longer word.  At n=4 there
+    # is ONE re-crossing; the natural next case has TWO:
+    #     interleaved  b0 b1 b0 b2 b1 b3 b2      sequential  b0^2 b1^2 b2^2 b3
+    # both on the generator multiset {0,0,1,1,2,2,3}.
+    log("n=5: tracing the two-interleaving word pair (symbolic q)")
+    d3 = sp.symbols("d3")
+    sigma5, tr5 = route_rep(5, q)
+    I32 = sp.eye(32)
+    g = [sigma5(i) for i in range(4)]
+    bb = [g[0] + d0 * I32, g[1] + d1 * I32, g[2] + d2 * I32, g[3] + d3 * I32]
+    D5 = sp.cancel(sp.together(
+        tr5(bb[0] * bb[1] * bb[0] * bb[2] * bb[1] * bb[3] * bb[2])
+        - tr5(bb[0] * bb[0] * bb[1] * bb[1] * bb[2] * bb[2] * bb[3])))
+    log("n=5: difference formed; testing the closed form")
+
+    c_q = (q ** 4 + 1) / (q ** 2 + 1) ** 2
+    fz = lambda dd: z_D + dd  # noqa: E731
+    D5_closed = sp.cancel(sp.together(
+        fz(d3) * markov_defect * (fz(d0) ** 2 + fz(d2) ** 2 + c_q)))
+    check(
+        "N5_closed_form_f3_times_defect_times_SUM_OF_SQUARES",
+        sp.simplify(D5 - D5_closed) == 0,
+        "Delta_5 = f3 * (z^2 - hz - 1) * (f0^2 + f2^2 + (q^4+1)/(q^2+1)^2), exactly, "
+        "symbolic in q.  The PEELED bond still factors out linearly, exactly as at "
+        "n=4 -- but the two INTERLEAVED bonds now enter QUADRATICALLY, additively, "
+        "with no f0*f2 cross term.",
+    )
+    check(
+        "N5_the_never_recrossed_bond_still_drops_out",
+        not sp.expand(D5).has(d1),
+        "d1 is absent: bond 1 is the one generator that never re-crosses after a "
+        "neighbour, and it contributes nothing to the defect at either n.",
+    )
+    check(
+        "N5_interleaved_bonds_enter_at_DEGREE_TWO",
+        sp.degree(sp.expand(D5), d0) == 2 and sp.degree(sp.expand(D5), d2) == 2,
+        f"degree in d0 = {sp.degree(sp.expand(D5), d0)}, in d2 = "
+        f"{sp.degree(sp.expand(D5), d2)}, in d3 = {sp.degree(sp.expand(D5), d3)}.  "
+        f"At n=4 every dressing that appeared was LINEAR; here the interleaved pair "
+        f"is quadratic, and a quadratic has a charge-DEPENDENT mirror-even part.",
+    )
+
+    def M5(e):
+        return e.subs({d0: -h_q - d0, d2: -h_q - d2, d3: -h_q - d3}, simultaneous=True)
+
+    even5 = sp.cancel(sp.together((D5 + M5(D5)) / 2))
+    odd5 = sp.cancel(sp.together((D5 - M5(D5)) / 2))
+    ratio_still_forced = sp.simplify(
+        sp.cancel(odd5 / even5) - sp.cancel(f2_odd / f2_even)) == 0
+    check(
+        "N5_PARITY_RATIO_IS_NO_LONGER_FORCED_so_the_n4_prune_is_WORD_SPECIFIC",
+        not ratio_still_forced,
+        f"Delta_5 odd/even == bond-factor odd/even?  {ratio_still_forced}.  At n=4 it "
+        f"WAS (that is the whole n=4 prune); here it is not, because the mirror-even "
+        f"part now depends on the charges (even5 has d0: "
+        f"{even5.has(d0)}, d2: {even5.has(d2)}).  So `parity_ratio_const_mul` does not "
+        f"apply, and the n=4 exclusion does NOT generalise: the word-class route is "
+        f"OPEN at n=5.",
+    )
+
     # ---- the 3H / 3He mirror pattern, at the live dressings ----------------
     from _li_2_q_util import flavor_split_leading  # noqa: E402
 
@@ -385,6 +447,19 @@ def main() -> int:
             ),
         },
         "at_proton_pin": payload_pin,
+        "n5_generalisation": {
+            "closed_form": "Delta_5 = f3 * (z^2 - h z - 1) * (f0^2 + f2^2 + (q^4+1)/(q^2+1)^2)",
+            "peeled_bond_still_factors": True,
+            "interleaved_bonds_degree": 2,
+            "d1_absent": True,
+            "parity_ratio_still_forced": bool(ratio_still_forced),
+            "consequence": (
+                "The n=4 prune is WORD-SPECIFIC. At n=4 the charge dependence is linear "
+                "in one bond, which forces the parity ratio; at n=5 the interleaved bonds "
+                "enter quadratically, the mirror-even part becomes charge-dependent, and "
+                "the ratio is no longer forced. The word-class route is OPEN at n=5."
+            ),
+        },
         "scope": (
             "(a) scope-limited: n=4, three bonds, exact and symbolic. Not a nucleus. "
             "Does NOT claim the production word is interleaved -- it is sequential "
