@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T06:18:30Z
-updated_at: 2026-09-07T08:22:05Z
+updated_at: 2026-09-14T19:53:35Z
 ---
 
 Found while draining `qou-wpp2` (the vendor mirror ratchet). The mirror drain
@@ -154,3 +154,79 @@ The defensible claim is the narrower one: a recorded artifact consumed by three
 diagnostics, two migrations behind. Worth carrying forward because the same
 mistake is easy here — several beans describe this file in terms of the
 dashboard, and the dependency does not exist in code.
+
+## 2026-09-14 — the headline defect is FIXED, and this bean never recorded it. Class drained 28 -> 3.
+
+Re-ran this bean's own detector (`computations/audits/witness_braid_word_ordering_audit.py`,
+which DID land on main as `fe830d7abe`) on `main` `2b8206e504`.
+
+### The class drained, against a GROWING denominator
+
+    field                        bean (2026-09-07)   today
+    stored word fields                       3355     3480
+    of atom length (12A-1)                    128      178
+    and atom-SHAPED                            29       34
+    ATOM-LENGTH AND MONOTONE                   28        3   <- the flagged class
+
+So the corpus grew on every other row and the flagged count still fell **28 -> 3**,
+**8 files -> 3**, **6 distinct sources -> 2** (one of the three is a `qou-mass`
+mirror of another).
+
+Gone since this bean was written: `canonical-mass-table-extended` (9),
+`low-isotope-mass-table` (5), `deltalambda/he4-magnus-omega2-sign` (1),
+`deltalambda/triton-magnus-omega2-sign` (1).
+
+### This bean's own subject was fixed 25 MINUTES after it was filed
+
+`canonical-mass-table-extended.witness.json` now carries **zero**
+`braid_word_canonical` fields — the field is gone, not corrected — and its
+`computedAt` is **2026-09-07T06:43:25Z** against this bean's `created_at`
+**06:18:30Z**. The bean was never updated, so its body has read as a live defect
+for a week while stating *'Not fixed here'*.
+
+### The central alarm is refuted — verified against the shipped API
+
+The bean's sharpest claim is that `qou_mass.api` prefers the shard *by design*,
+so *'a pre-ruling shard preferred by design overrides a correctly-fixed live
+path'*. Measured on the freshly-synced package today:
+
+    canonical_braid(1,0).generators = (0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0)
+    monotone (= grouped, superseded)? False
+    compute_tr_M(1,0) = 0.629328402202921918165345746778485927600219400634
+
+**`0.62932840220292…` is this bean's own stated CANONICAL value**, not its
+superseded `1.14575969245730086968`. The shard no longer carries the field, so
+the documented shard-first preference now falls through to the corrected live
+path. The shipped-API defect is closed.
+
+### The residual 3, adjudicated
+
+All three are the same test vector plus its mirror:
+
+    markov/markov-trace-axiomatic-multi-atom.witness.json  /atoms/proton/word
+    markov/markov-trace-recursive.witness.json             /test_cases[5]/word
+    qou-mass/src/qou_mass/markov-trace-recursive.witness.json   (mirror of the above)
+
+`test_cases[5]` is **named** `σ_1^7 σ_2^4 (proton)` and carries
+`tr_M_symbolic_full` — a closed form in `q`. Its job is *'given word W, does the
+recursion reproduce the symbolic trace?'*, and that is **convention-neutral**:
+the symbolic result is exact for whatever word is fed. `computedAt`
+2026-09-05T17:10, the same day as the ruling.
+
+**Verdict: the computation is sound; the LABEL is stale.** Calling the grouped
+word '(proton)' asserts an identification the 2026-09-05 ruling retired. That is
+a naming defect of the same shape as `qou-khue`'s missing `prediction_route`
+field — a reader meets a superseded identification with nothing saying so.
+
+### Left open deliberately
+
+**Not closed.** Two reasons. The label call is a change inside someone else's
+test harness and is neither a precision increase nor corpus-fixed (the corpus
+fixes that the word is superseded, not what the test case should be called), so
+it waits under ASK-THE-OWNER. And this bean now carries the census for the
+class, which is the useful thing to keep open.
+
+**Also still true and unaddressed:** the detector is on main but **wired into no
+gate** — `grep` finds no reference from `scripts/` or `.github/`. A one-shot
+audit nobody runs is how 28 became invisible in the first place. Wiring it is a
+gate change and also waits.
