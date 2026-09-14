@@ -56,13 +56,30 @@ The two ends are therefore **one** asymptotic lemma applied twice, not two.
 Verified `lean`-direct with `-DautoImplicit=false -s 65536`: exit 0, no
 diagnostics, no `sorry`, no `axiom`.
 
-Note for whoever next builds here: `Mathlib.Analysis.Polynomial.Basic` and
+Note for whoever next builds here.  `Mathlib.Analysis.Polynomial.Basic` and
 `Mathlib.Analysis.Asymptotics.SpecificAsymptotics` are **not** in the restored
-`lake-cache/qou-v4-24-0`; `scripts/lean-build-mathlib-gap-cone.py
-Mathlib.Analysis.Polynomial.Basic` builds both in ~5 s.  They land in the
-**paper** mathlib tree, which `scripts/lean-direct-env.sh` puts *after* the root
-tree, so prepend it to `LEAN_PATH` or the import will still not resolve — the
-trap AGENTS.md records under the library-root gap.
+`lake-cache/qou-v4-24-0`.  Build them into the **root** tree, which is the one
+`scripts/lean-direct-env.sh` resolves first:
+
+    scripts/lean-build-mathlib-gap-cone.py Mathlib.Analysis.Polynomial.Basic \
+      --dest "$(git rev-parse --show-toplevel)/.lake/packages/mathlib/.lake/build/lib/lean"
+
+~7 s.  After that the **stock** `lean-direct-env.sh` verifies this file with no
+`LEAN_PATH` override at all.
+
+🛑 **An earlier revision of this note said to build into the default (paper)
+tree and PREPEND it to `LEAN_PATH`.  That advice was wrong and is retracted.**
+It does make this file compile — and it breaks `QOU/MobiusEnergy.lean`, because
+the paper tree lacks `Mathlib.GroupTheory.SpecificGroups.Dihedral`, which the
+root tree has.  The two trees are missing **different** modules, so *neither*
+ordering verifies the whole set: root-first reds this file, paper-first reds
+`MobiusEnergy`.  Measured on all five files of this branch, both ways.  Path
+ordering is not the fix; completing the root tree is.
+
+Also: a **0-second** failure from the gap-cone script means the module's
+*source* is absent — i.e. it was renamed upstream — not that the build failed.
+`Mathlib.Analysis.SpecialFunctions.Polynomials` is such a case in this
+toolchain; the lemmas moved to `Mathlib.Analysis.Polynomial.Basic`.
 -/
 
 import Mathlib.Analysis.Polynomial.Basic

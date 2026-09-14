@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T20:58:00Z
+updated_at: 2026-09-14T23:04:00Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -3281,3 +3281,41 @@ failures this session were that path ordering, not the proof. A third was
 this Mathlib: the gap-cone builder reports it as one missing module and then
 fails in 0 s because the *source* is absent. A 0-second failure from that script
 means a renamed module, not a build error.
+
+
+## 2026-09-14 (session gifted-feynman, 7) — 🛑 CORRECTION: my own `LEAN_PATH` advice was wrong, and it would have RED-ed a file
+
+The entry above told the next agent to build the missing Mathlib modules into
+the default (**paper**) tree and **prepend** it to `LEAN_PATH`. **Retracted.**
+It makes `LaurentBoundedness` compile and it **breaks `QOU/MobiusEnergy.lean`**,
+which needs `Mathlib.GroupTheory.SpecificGroups.Dihedral` — present in the
+**root** tree and absent from the paper one.
+
+**The two trees are missing DIFFERENT modules, so neither ordering verifies the
+whole set.** Measured on all five Lean files of this branch, both ways:
+
+| `LEAN_PATH` | result |
+|---|---|
+| paper tree **prepended** (my old advice) | `MobiusEnergy` **RED** — no `Dihedral` |
+| paper tree **appended** | `LaurentBoundedness` **RED** — no `Analysis.Polynomial.Basic` |
+| **stock `lean-direct-env.sh`, after the fix below** | **all five exit 0** |
+
+**Path ordering is not the fix; completing the root tree is:**
+
+    scripts/lean-build-mathlib-gap-cone.py Mathlib.Analysis.Polynomial.Basic \
+      --dest "$(git rev-parse --show-toplevel)/.lake/packages/mathlib/.lake/build/lib/lean"
+
+~7 s, and afterwards the **stock** env needs no override at all. The file's own
+docstring now carries the corrected recipe and the retraction.
+
+**Why this is worth its own entry rather than a silent edit.** The wrong advice
+was *load-bearing and plausible* — it was derived from a real failure, it fixed
+the file I was looking at, and I verified that file and no other. Verifying the
+one file the advice was written for is exactly what hides this class. The
+20-commit merge is what surfaced it, because the check-in re-verified **all
+five** rather than the one I had changed.
+
+**Also checked this pass, and it is a real check rather than an assumption:**
+`main` landed a **sharpened** `scripts/lean-self-assuming-audit.py` (the
+conjunctive `⟨X.a, X.b, X.c⟩` blind spot, taxonomy row 46, +7 hits). Run against
+this branch: **none of the five files is flagged.**
