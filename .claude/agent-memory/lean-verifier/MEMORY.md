@@ -386,7 +386,10 @@ block's sidecar (128 files for one block) — revert all but yours.
    files that *construct* an instance.
 2. **A partial `LEAN_PATH` overlay shadows the whole namespace** — the first
    root holding a `QOU/` dir wins. Use a complete `cp -al` mirror, `rm -f`-ing
-   each olean before rebuilding it (else you truncate the shared inode).
+   each olean before rebuilding it (else you truncate the shared inode). The
+   same rule has a **second failure direction**: an overlay placed *after* the
+   real tree is **inert**, not layered — `lean` never falls through to it for a
+   module the earlier root also has (measured 2026-09-14; harness §2).
 3. **Truncated oleans segfault**: exit 139, zero errors, 0–1 s. Olean SIZE is
    not a test (50–226 KB inside a normal range). Two causes: a disk-full local
    build, **and the restored cache itself** — so a clean `df` does NOT clear it
