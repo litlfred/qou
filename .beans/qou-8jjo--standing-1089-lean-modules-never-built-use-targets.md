@@ -168,3 +168,35 @@ the cache branch costs ~1.7 GiB and has bricked a session at low disk — that
 warning is about `git fetch`, and it is what made me infer a reseed instead of
 checking one. `ls-remote` is not covered by it and settles the question in a
 second.
+
+---
+
+## RESULT: the 62 delta modules all compile — 2026-09-14
+
+    targets                            62
+    EXIT=0                             62
+    non-zero exit                       0
+    cone rebuilt from source   406 of 406
+    REBUILD FAILED                      0
+    wall                          ~26 min
+
+Five benign warnings (four `section variable(s) unused` in
+`QOU.BraidsAndKnots.ComponentCountSelectivity`, one `unused variable Γ` in
+`QOU/OptionE/RungSelection.lean:82`).
+
+So the library's compile status is **current against today's source** for the
+first time, and the answer is the 2026-09-13 answer: nothing is broken. Full
+write-up, including the first real-workload level-width distribution for the
+#7387 parallel rebuild:
+[`docs/audits/2026-09-14-library-delta-sweep-62-modules.md`](../docs/audits/2026-09-14-library-delta-sweep-62-modules.md).
+
+**This bean stays open**, and deliberately. Its standing condition is not
+"is anything broken" — that is answered and keeps being answered. It is that
+*the answer perishes*, at the measured ~62 modules/day. What has changed is that
+the maintenance now costs ~26 min rather than 3 h 10 m, so it is affordable to
+re-run per tranche instead of per month.
+
+**What would actually close it:** a delta sweep that runs without an agent
+deciding to run one — keyed off the last-swept commit recorded somewhere durable
+rather than off a human remembering which audit doc holds it. That is a design
+question, not a measurement, and it is not started.
