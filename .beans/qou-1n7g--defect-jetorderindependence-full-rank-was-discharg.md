@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-09T22:14:20Z
-updated_at: 2026-09-14T20:07:45Z
+updated_at: 2026-09-14T20:43:31Z
 ---
 
 
@@ -163,3 +163,35 @@ What changed is the evidence under it: the defect is now verified *absent from t
 whole corpus* rather than from one file, and the file is verified *to compile*
 rather than to read correctly. The no-op remains safe — nothing breaks if this
 stays `todo`.
+
+## 2026-09-14 (same session, later) — the constant is not the only stale thing in that file
+
+Working `qou-xc8t` straight after the verification above turned up something the
+three verification entries all missed, because all three checked the *shape* of
+the discharge and none re-ran the producer.
+
+**`jetJacobianBase` and `jetPivots` do not reproduce.** The Lean's literals and
+the committed witness (2026-06-08) agree with each other and disagree with
+`jet_order_pivots.py` as it stands today:
+
+| | Lean + witness | live producer |
+|---|---|---|
+| elimination det | `1/16` | **`−11/4`** |
+| LU pivots | `(1/4, 2, 1/8)` | **`(1/4, 1, −11)`** |
+
+Two of three rows moved (`Borromean` is unchanged, and the `h^0` column is
+unchanged for all three). Producer drift, not import-cone drift — the producer's
+own `scriptHash` is `1eadd3f17d76` against the witness's `380671554d5b`. The
+braid words are unchanged and still match the Lean docstring.
+
+**This does not reopen the defect and does not weaken the verification above.**
+There is still no `JetOrderIndependence` instance anywhere, `ofPivots` still has
+no consumer, and the file still compiles `exit 0` — `−11/4 ≠ 0` the same as
+`1/16 ≠ 0`, so every theorem in it remains true. What is no longer true is the
+docstring's claim that these literals are *"witnessed from the framework's own
+canonical Markov traces"*: they were, three months ago.
+
+Recorded here only so a reader of this bean does not take "verified three times"
+to mean the file's numbers were checked — they were not, until now. Full
+measurement, the options and the recommendation are in **`qou-xc8t`**, which owns
+the discharge routes; nothing is proposed here.
