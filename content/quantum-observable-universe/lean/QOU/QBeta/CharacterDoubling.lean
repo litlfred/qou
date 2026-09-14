@@ -87,4 +87,39 @@ theorem not_constant_residue_character_of_doubling_fails
   apply hfail
   rw [hc (q ^ 2) (by positivity), hc q hq, char_doubling_of_constant_residue c q]
 
+/-! ## The second survivor is vacuous
+
+Excluding the *constant*-residue case leaves "a `q`-dependent residue" as a
+survivor. It carries no content: `cosh` is onto `[1, ∞)`, so wherever the
+requirement satisfies `1 ≤ κ` a residue reproducing it exists by construction —
+one defines `a(q) := arcosh(κ(q))` from the answer. Measured, `κ` on the `z_D`
+base is `≥ 1` throughout `q ∈ (1, 10]` (1.5333 at `q → 1⁺`, rising monotonically
+to 8.0243 at `q = 10`), so the vacuity is not conditional in the physical
+domain.
+
+This is the same disposition `EigenphaseCarrierVacuity` gives the elliptic
+trichotomy's middle branch ("`M` arbitrary — CIRCULAR"), reached independently
+on the hyperbolic side. Only the third branch — a residue whose `q`-dependence
+is *derived* rather than read off the requirement — can carry content. -/
+
+/-- `cosh` is onto `[1, ∞)`, witnessed explicitly. -/
+theorem cosh_arcosh (y : ℝ) (hy : 1 ≤ y) :
+    Real.cosh (Real.log (y + Real.sqrt (y ^ 2 - 1))) = y := by
+  have hy0 : (0:ℝ) ≤ y ^ 2 - 1 := by nlinarith
+  set s := Real.sqrt (y ^ 2 - 1) with hs
+  have hs2 : s ^ 2 = y ^ 2 - 1 := Real.sq_sqrt hy0
+  have hsnn : 0 ≤ s := Real.sqrt_nonneg _
+  have hpos : (0:ℝ) < y + s := by linarith
+  have hmul : (y + s) * (y - s) = 1 := by nlinarith [hs2]
+  have hinv : (y + s)⁻¹ = y - s := inv_eq_of_mul_eq_one_right hmul
+  rw [Real.cosh_eq, Real.exp_log hpos, Real.exp_neg, Real.exp_log hpos, hinv]
+  ring
+
+/-- So a `q`-dependent residue reproducing any requirement `≥ 1` exists by
+construction: the second survivor is vacuous, not open. -/
+theorem exists_q_dependent_residue_of_one_le
+    {K : ℝ → ℝ} (hK : ∀ x : ℝ, 1 ≤ K x) :
+    ∃ a : ℝ → ℝ, ∀ x : ℝ, Real.cosh (a x) = K x :=
+  ⟨fun x => Real.log (K x + Real.sqrt (K x ^ 2 - 1)), fun x => cosh_arcosh (K x) (hK x)⟩
+
 end QOU.QBeta.CharacterDoubling

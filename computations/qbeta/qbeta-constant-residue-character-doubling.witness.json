@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-14T07:33:37.014255+00:00",
-  "commitSha": "6dec0d9febad993d1d4381aedb027fa419b10535",
+  "computedAt": "2026-09-14T07:40:55.212671+00:00",
+  "commitSha": "6a6c6eee52db2ce1ecb14515e5497f3049b59053",
   "assertions": [
     {
       "name": "cross_anchor_prune_FAILS_and_the_reason_is_sensitivity",
@@ -51,14 +51,22 @@
       "passed": true,
       "tolerance": "exact",
       "source": "c at the live cell is 5.96831620271, which is 0.5281 % from 6. Recorded as a check-AGAINST and NOT pursued: a near-integer found by solving against the target is selection against the target (NO FITTING), and the cell is provisional besides -- the 2026-09-13 owner ruling records that its element nuc11_interleaved FAILS the confinement SDP on (2,1) and (1,1,1), so c moves when the element is replaced. No search was run for a reason c should be 6."
+    },
+    {
+      "name": "the_q_dependent_residue_survivor_is_VACUOUS_not_open",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "cosh is onto [1, inf), so wherever 1 <= kappa a q-dependent residue reproducing it exists BY CONSTRUCTION -- one sets a(q) := arcosh(kappa(q)), reading the residue off the answer. Measured, kappa on the z_D base stays >= 1 throughout q in (1, 10] (min 1.53328285794 at the low end, rising to 8.02430932715 at q = 10), so the vacuity is not conditional in the physical domain. Proved in general by QOU.QBeta.CharacterDoubling.exists_q_dependent_residue_of_one_le. Same disposition EigenphaseCarrierVacuity gives the elliptic trichotomy's middle branch ('M arbitrary -- CIRCULAR'), reached independently on the hyperbolic side. Only a residue whose q-dependence is DERIVED can carry content."
     }
   ],
   "allPassed": true,
   "durationMs": 5,
   "computation": "qbeta-constant-residue-character-doubling",
   "scriptFile": "qbeta_constant_residue_character_doubling_probe.py",
-  "scriptHash": "f29f1ab5aad4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "de198976dce6",
+  "scriptCommitSha": "6a6c6eee52db2ce1ecb14515e5497f3049b59053",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -152,6 +160,58 @@
     }
   ],
   "rescaling_lambda_spread": "0.288607940480434225659994235858943797454726652404226152805766",
+  "kappa_ge_one_scan": [
+    {
+      "q": "1.001",
+      "kappa": "1.53328285793662165422849602530454564126508853048403992528894",
+      "ge_one": true
+    },
+    {
+      "q": "1.01",
+      "kappa": "1.55376045771907583756922313060223442346842530342512999841048",
+      "ge_one": true
+    },
+    {
+      "q": "1.05",
+      "kappa": "1.64089428344309943283086943120286879823090935331759176311940",
+      "ge_one": true
+    },
+    {
+      "q": "1.1",
+      "kappa": "1.74067176653418111453800234760344359927416814828992711545988",
+      "ge_one": true
+    },
+    {
+      "q": "1.2",
+      "kappa": "1.91037896415875983346878580449249307572210732410564741033757",
+      "ge_one": true
+    },
+    {
+      "q": "1.5",
+      "kappa": "2.23772856606260042467337199058160404776929449004937597417882",
+      "ge_one": true
+    },
+    {
+      "q": "2",
+      "kappa": "2.53461768835652802195749038186346664377307007250667762335158",
+      "ge_one": true
+    },
+    {
+      "q": "3",
+      "kappa": "3.07289117586086987893964815327149015566693654635699060169807",
+      "ge_one": true
+    },
+    {
+      "q": "5",
+      "kappa": "4.37533306931352500887904327903409620918514795766959939377459",
+      "ge_one": true
+    },
+    {
+      "q": "10",
+      "kappa": "8.02430932714737973886750385539258138353783123101176088848765",
+      "ge_one": true
+    }
+  ],
   "invariant_cited": "QOU.QBeta.CharacterDoubling (sorry-free, this PR): cosh_doubling, char_doubling_of_constant_residue, not_constant_residue_character_of_doubling_fails -- the last quantified over all c at once, exactly as its elliptic sibling QOU.QBeta.PhaseFailsLogFunctionalEquation is.",
   "failed_prune_recorded": "cross-anchor rigidity. Reported as a failure with its measured reason rather than omitted: the two pins are 11.6141 ppb apart and c carries no magnifier, so the test is 2.15e5 times less sensitive here than where the corpus uses it. An agent reading only the agreement would conclude c is anchor-independent, which this does NOT show.",
   "not_pursued": "c = 5.96832 at the live cell is 0.5281 % from 6. Check-AGAINST only. Selection against the target is forbidden (NO FITTING), and the cell is provisional -- its element nuc11_interleaved fails the confinement SDP per the 2026-09-13 owner ruling.",
