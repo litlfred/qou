@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T09:32:54Z
+updated_at: 2026-09-14T09:47:38Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -207,3 +207,35 @@ Commit 119b61f7fb, PR #7362.
 **Still open:** the g=4 completeness sentence; the step-4 arrow wording; this
 hadronic-E_0 line (highest priority of the three doc fixes); the why-b3 rank
 contradiction; steps 7, 8, 9-leptonic unwalked.
+
+## 2026-09-14 — steps 7-8 walked: ALL ELEVEN STEPS NOW COVERED
+
+Measured over the corpus dependency graph (3565 labelled blocks from .ts):
+
+1. `conj:jet-convergence-classical-limit` (step 8) is a **dependent**
+   conjecture — `uses: [conj:jet-filtered-knot-factor]`. The step table flags
+   it as a conjecture but not that it stands on a second one.
+2. None of steps 9/10/11 reaches — through `uses[]` — any of the three
+   carriers the step table NAMES for steps 7-8. Cones: 79 / 3 / 102.
+
+**Corrected my own framing**: I first wrote 'steps 9-11 stand independently of
+the GB/jet machinery'. Too strong — step 9's cone DOES reach
+`prop:jet-prefix-gb-filtration`, the same machinery under a different label.
+So the claim is about LABELS: the diagram's arrow is not a `uses[]` edge.
+
+Conjectures in cones: step 9 has 4 via two routes; steps 10, 11 have zero.
+
+**PRIOR ART, cited not re-derived** (corpus-grep caught both before writing):
+`prop:atom-knot-mass-derivation` is an already-adjudicated §3b-cond item-5
+violation — bean **qou-tmmt**, 8 confirmed of 9, still todo; and `MassIdentity`
+reducing to a 25 % AME tolerance is in `2026-06-07-proof-rater-baseline-audit.md`.
+What survives as new is the graph measurement alone.
+
+Probe `computations/audits/chain_uses_graph_vs_diagram_probe.py` (12/12).
+Commit 0a92add9ed, PR #7362.
+
+**Bean stays in-progress.** All eleven steps are walked to the level of 'what
+condition enters', but four document fixes are open for the owner (g=4
+completeness sentence; step-4 arrow; hadronic E_0; step-7/8 labels) plus the
+why-b3 rank contradiction — and the interior mathematics of steps 7-9 (the GB
+collapse, the Archimedean realisation functor) is untouched.
