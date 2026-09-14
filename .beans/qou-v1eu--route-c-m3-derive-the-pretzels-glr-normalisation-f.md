@@ -391,3 +391,57 @@ did not have Theorem 28.
 
 **Gate 3 is now unblocked**: use the bar-substitution propagation law with (332)'s companion at
 `r = 6, A = 2`, and Part 1's `det W_m = q^{4m} det W_0` for the determinant shape.
+
+## Part 10 (2026-09-14) — GATE 3 DONE: the SL-vs-GL choice is FORCED by the Casoratian ratio
+
+Probe: `computations/probes/aomega_m3_gate3_determinant_ladder_probe.py` (2/3; T1 is a
+deliberate negative). The bean's title question — "derive the pretzel's GL(r) normalisation" —
+has its **group** half answered, and it was never a per-knot choice.
+
+**The derivation.** GGM's pairing has the shape `W_M(q) J W_L(q^-1)^T = G_{M,L}` (the (92) /
+(137) family). Taking determinants and using Part 1's Casoratian ladder
+`det W_{m+1} = ratio * det W_m` (ratio = `(-1)^r a_0/a_r`, GGM Thm 16(c)) on BOTH factors:
+
+    det G_{M,L} = ratio^M * ratio_bar^L * det J * c ,      ratio_bar = ratio|_{q->1/q, x->1/x}
+
+with `c` Part 2's pairing constant. **Every index dependence of the pairing determinant is the
+Casoratian ratio, and nothing else.** So:
+
+    ratio^M * ratio_bar^L identically 1   <=>   det G is index-independent   <=>   SL is available
+    otherwise                                                                     GL, never SL
+
+That is a statement about the operator's end coefficients alone — `a_0` and `a_r` — and it is
+decided before any matrix is written down.
+
+**Calibrated 2-for-2 against GGM's own printed choices**, which is what makes it a derivation
+rather than an observation:
+
+| knot | ratio | `ratio^M ratio_bar^L` | predicts | GGM prints |
+|---|---|---|---|---|
+| 4_1 | `q/x` | `(q/x)^{M-L}` | GL | **GL(2, Z[q^+-, x^+-])** (138) |
+| 5_2 at u=0 | `1` | `1` | SL | **SL(3, Z[q^+-])** (93) |
+| (-2,3,7) | `q^4` | `q^{4(M-L)}` | **GL, not SL** | — none printed |
+
+**The pretzel prediction:** `det G_{M,L} = q^{4(M-L)} * det J * c`. A nonconstant unit monomial,
+so **SL is impossible off the diagonal `M = L`** and the normalisation group is GL(6). The
+q^4 is Part 1's measured pretzel ratio (end-pair root `q^{2/3}`, no palindrome gauge).
+
+**A second independent grouping.** On index-dependence the pretzel groups with **4_1**, not with
+5_2-at-u=0 — the same partition Part 9 found from the branch structure (Theorem 28's single
+holomorphic definition vs (87)'s two branches). Two unrelated features, same split.
+
+**What this does NOT close (T1, recorded as a failing assertion on purpose).** `det J` and `c`
+individually. The ladder gives their PRODUCT's index dependence; pinning the constant needs the
+explicit rank-6 pairing blocks, and no held source prints a rank-6 pairing. That is the same
+missing input `qou-lzzi` names — a normalisation, not new q-series data — now reduced from
+"the whole GL(r) normalisation" to "one constant".
+
+### Arc meta-finding (Parts 1-10)
+
+Five self-corrections in ten parts, and **every one was resolved by reading more of GGM, not by
+computing more**: Part 1's G3 wording (fixed by Part 2's G5), Part 2's attribution of (92)/(93)
+(fixed by Part 4 — they are the u=0 specialisation), Part 3's premise (retracted outright), Part
+5's "no free choices" (Part 6: a definition not yet located), Part 8's guess (Part 9: Theorem 28).
+Three of the five looked like compute bugs and were source-reading gaps. The one genuine compute
+bug found in the tranche — Part 12b's `(-1)**(-k)` float — was found by reading a WITNESS, also
+not by computing.
