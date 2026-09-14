@@ -85,6 +85,7 @@ Neither gap is the arc's headline open problem, which remains the upper bound on
   S6  the join over the reduced space is `(8, 8)` and reproduces #7335's `e_inf` exactly
   S7  at `s <= 23` the enumeration carries no effective cap, and lifting the nominal caps to
       24/12 leaves every value at `s <= 23` unchanged
+  S8  the scaled-integer tables the enumeration runs on agree with a direct mpmath evaluation
 
 Proton-pinned; mpmath builds three tables, then the enumeration is exact integer arithmetic at
 scale 1e-40.  No float64.
@@ -435,6 +436,49 @@ check(
 print(flush=True)
 
 # --------------------------------------------------------------------------------------------
+print("S8  the table evaluator against a direct mpmath one")
+
+
+def exact_block_mpmath(u) -> mp.mpf:
+    """The block value computed straight from `eps`, with no table and no rounding.
+
+    Deliberately the slow route: every bulk tail is summed term by term to DEPTH2 in mpmath
+    rather than looked up, and nothing passes through the 1e-40 integer scale.  It shares no
+    code with the enumeration, so agreement checks the tables' construction — their truncation
+    depth and their rounding — and not merely their use.
+    """
+    n = len(u)
+    tot = mp.mpf(0)
+    for i in range(n):
+        for j in range(i + 1, n):
+            tot += eps(2 * (j - i)) - eps(2 * (j - i) + u[i] - u[j])
+        tot += mp.fsum(eps(2 * d) - eps(2 * d + u[i]) for d in range(n - i, DEPTH2))
+    return tot - LNQ_HALF * sum(x * x for x in u)
+
+
+_s8_probe = [_tbl_c[_s][1] for _s in (1, 2, 5, 8, 11, 14, 20)] + [(4, 3, 2, 2, 1, 1, 1)]
+_s8 = []
+for _u in _s8_probe:
+    _a, _b = exact_block(_u), exact_block_mpmath(_u)
+    _s8.append({"profile": list(_u), "table": mp.nstr(_a, 26), "direct": mp.nstr(_b, 26),
+                "difference": mp.nstr(_a - _b, 6)})
+    print(f"    {str(list(_u)):28s} table {mp.nstr(_a, 20):24s} diff {mp.nstr(_a - _b, 4)}",
+          flush=True)
+_s8_worst = max(abs(mp.mpf(r["difference"])) for r in _s8)
+_scale_floor = mp.mpf(10) ** (-SCALE_DIGITS) * 200
+check(
+    "S8 the scaled-integer tables agree with a direct mpmath evaluation",
+    _s8_worst < _scale_floor,
+    f"{len(_s8)} profiles including the argmax {list(_tbl_c[8][1])} and the peak "
+    f"{list(_tbl_c[14][1])}; worst difference {mp.nstr(_s8_worst, 4)} against a floor of "
+    f"{mp.nstr(_scale_floor, 3)} — the 1e-{SCALE_DIGITS} integer scale times the number of "
+    f"rounded table entries a profile of this size touches.  The enumeration is fast because it "
+    f"looks values up and adds integers; this confirms the lookup tables were built right, "
+    f"which the enumeration cannot check on its own since it uses them for everything",
+)
+print(flush=True)
+
+# --------------------------------------------------------------------------------------------
 print(f"  e_inf = {mp.nstr(_best_j, 30)}  at (s_t, s_b) = (8, 8)")
 print(f"  reduced search space: s_t + s_b <= {_L_CUT} (measured B) or <= {_L_RIG} (rigorous)")
 print(f"  remaining gaps: G1 Xbot <= Xblock;  G2 sup_s Xblock = {mp.nstr(_B_meas, 24)}")
@@ -492,6 +536,11 @@ _wit = {
         "searched_7335": mp.nstr(E_INF_7335, 30),
         "difference": mp.nstr(_best_j - E_INF_7335, 20),
         "blocks_enumerated": _nodes_f,
+    },
+    "evaluator_crosscheck_S8": {
+        "worst_difference": mp.nstr(_s8_worst, 20),
+        "floor": mp.nstr(_scale_floor, 10),
+        "rows": _s8,
     },
     "open_gaps": {
         "G1": ("Xbot(s) <= Xblock(s) for every s.  #7335's E7 measured the two tables equal "
