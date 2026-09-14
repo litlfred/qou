@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-14T07:49:13Z
+updated_at: 2026-09-14T17:59:27Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8251,3 +8251,175 @@ ansatz survives as it stands; the numbers do not. Still blocked on qou-pdix
 (alpha), where every named attack is now closed or forbidden.
 
 Audit: docs/audits/2026-09-13-d2-convention-enters-at-one-rung.md
+
+---
+
+## 2026-09-14 — on the RULED base the ladder is excluded for EVERY phase, so α is not the blocker
+
+Probe: [`qbeta_ladder_form_cannot_reach_ruled_base_probe.py`](computations/qbeta/qbeta_ladder_form_cannot_reach_ruled_base_probe.py)
+— 5/5, proton pin, 50 dps. Scope **(b)** for the exclusion (proved invariant
+cited); (a) for the numbers.
+
+**`qou-cds1`'s last entry (2026-09-08) holds two halves that do not fit
+together.** It adopts the ruled base and keeps the old blocker in one sentence:
+*"eps := tr_M at z_D … the D-frame ladder is to be re-derived on the z_D base
+(0.4447004 MeV, −43.157 %) … the blocker is still the N=1 phase (qou-pdix)."*
+
+The ladder's correction factor is `F(α) = cos(α − u/2)·(1 − u²)·Π(1 + c_k u^k)`,
+and what it must supply is `F_required = Q_codata/Q_base`:
+
+| base | Q_base (MeV) | `F_required` | |
+|---|---|---|---|
+| `z = 1` (Form A) — **RETIRED** | 0.783645827375 | **0.998325241673** | < 1 |
+| `z_D`, order-zero `E₀` — **RULED** | 0.444700408522 | **1.75923699418** | **> 1** |
+| `z = q` (augmentation) | 0.87989056126 | **0.889125812282** | < 1 |
+| dashboard scored cell — **RULED** | 0.65185631006 | **1.20016236389** | **> 1** |
+
+**`cos ≤ 1`, so `F_N2(α) = cos(α − u/2)(1 − u²) ≤ 1 − u² = 0.99992745…` for
+EVERY real α** — the supremum is attained at `α = u/2` and is still below 1.
+Both ruled cells need more than 1. **No phase closes it**, derived or fitted.
+
+**So deriving α cannot unblock this ladder on the base the bean adopted.** The
+blocker line was correct for the retired cell — there `F_required = 0.9983 < 1`,
+a small phase fits, and α is exactly the interesting unknown. It does not
+survive the base change.
+
+**Pushing the shortfall into the rungs instead is not a route either:** it needs
+`c_2 ≈ 1.047e4` (z_D) or `2.760e3` (dashboard cell) against the structural
+`c_2 = −1` — four orders, wrong sign. The `1/u² = 13784.87` magnifier is why,
+which is this bean's own finding about `c_k` being the wrong coordinate.
+
+### Calibration, run before anything was concluded
+
+The probe first reproduces **this bean's own F-table** on the retired base —
+**−0.0762164 / −35.9111 / −3.17063 %** against the recorded −0.076 / −35.9 /
+−3.17 — so the machinery is the bean's, not a re-invention.
+
+### A coordinate trap this exposes
+
+That table reports relative deviation of **`1 − F`**, not of `F`. On the retired
+base both are small and positive and the ratio is informative. On a ruled base
+`1 − F_required = −0.7592` is **negative** while the model's `1 − F_N2 = +0.0016`
+stays positive, so the same ratio returns −100.21 % — opposite-signed
+quantities, meaningless rather than merely large. **Report `F` directly on a
+ruled base;** the reldev table is retired-base-only.
+
+### What this does NOT say
+
+It does **not** retire α: `qou-pdix` stays open on its own terms, α is still the
+N=1 phase, and this says only that α is not what stands between the ladder and
+the ruled base. It does **not** refute the ladder or the forced bar-odd
+projection `a_odd = a − h²/4` — both C-frame, sorry-free, untouched. And it does
+**not** choose a base: `F_required < 1` on the retired cell is **not** a reason
+to prefer it (§NO FITTING — a base is never chosen by which obstruction it
+removes).
+
+### What it changes about the next step
+
+The open question is no longer "what is α" but **what object supplies a factor
+above 1 at all** — the ladder's multiplicative form cannot, whatever its phase.
+That is a question about the *base or the assembly*, not about the phase.
+
+**Addendum, same probe (now 7/7): "a higher rung saves it" does not work.**
+Check 3 bounds only the N=2 truncation, so the natural objection is that a later
+rung could lift `F` above 1. It cannot — **every `c_k` this corpus records or
+derives is negative**:
+
+| | value | `(1 + c_k u^k)` |
+|---|---|---|
+| `c_2` structural | −1 | 0.999927456715617626 |
+| `c_3` recorded (proton) | −2.0693425728 | 0.999998721419095324 |
+| `c_5` derived `−(b²+½)` | −1.25270211325 | 0.999999999943851153 |
+| product | | **0.999926178171320707 < 1** |
+
+So each factor is below 1, the product is below 1, and with `cos ≤ 1` the whole
+`F` is **strictly below 1 at every truncation order**. Reaching `F > 1` needs a
+**positive** coefficient and none of the derived ones is.
+
+**The target, stated so its size is on the record — and explicitly not a search
+specification.** At the order-zero `E₀` the ruled functional gives
+`|ε| = 0.106235639848`; reproducing CODATA needs `0.186893667722`, a factor
+**1.759236994**. Per §NO FITTING a target may be checked **against**, never
+searched **on** — do not hunt for an element whose Markov trace lands there. The
+dashboard's own scored element already fails the confinement-SDP selection rule
+(owner ruling 2026-09-13), so the assembly is under review independently.
+
+---
+
+## 2026-09-14 (2) — the route-5 obstruction that shaped this arc is base-conditional
+
+Companion to the entry above, and it changes what "blocked on `qou-pdix`" means.
+
+The entry above established that the ladder's factor cannot reach the ruled base
+for **any** phase (`cos ≤ 1`, so `F ≤ 1 − u² = 0.99992745` against `F_required`
+of 1.7594 / 1.2002). The natural next question — *what supplies a factor above 1*
+— turns out to be answered by route 5's own machinery, in the branch route 5
+currently treats as excluded.
+
+`correction_below_one_excludes_real_spectrum` (step 18, sorry-free) carries the
+hypothesis `(hκ : κ < 1)`. Measured at 50 dps on the proton pin
+(`qbeta_ruled_base_inverts_the_route5_obstruction_probe`, 6/6): `κ = 0.998398` on
+the **retired** `z = 1` cell — reproducing step 18's own quoted `0.998399` — and
+`κ = 1.759365` / `1.200249` on the two **ruled** cells. The exclusion does not
+fire on either.
+
+**Consequence for this bean.** Two sorry-free inequalities on a base needing
+`κ > 1` — `cosh ≥ 1` and `|cos| ≤ 1` — exclude the **elliptic** generator and
+leave the **hyperbolic** one, which the substrate's Kohno–Drinfeld generator
+already is at real `q₀` (`det A = −(ln q)² < 0`). The `det A > 0` / `|q| = 1` /
+Kashaev-locus / `N = 111` narrowing was derived from the retired requirement.
+
+The Lean stands; only its premise moved. Nothing here derives `c_k` or `α`, and
+nothing selects a base — per NO FITTING, an exclusion lapsing is not a reason to
+prefer the base it lapses on.
+
+**This bean stays blocked and open**, but the blocker is better described: not
+*"derive α"* (which the entry above shows cannot close it) and not *"find an
+elliptic construction"* (which this entry shows was never required on the ruled
+base), but the **quantitative** gap between the hyperbolic character available at
+`q₀` (`1.00544843`) and the one required (`1.75936462`) — 11.17× in the generator
+eigenvalue, 139.37× in the character excess. Rule 13a.
+## 2026-09-14 — the phase is NOT what blocks this bean, and AGENTS.md said it was
+
+Recorded here because `qou-cds1`'s previous entry is 2026-09-08 and predates the
+result. **Status stays `in-progress`; nothing is closed** (§13a — the subject is
+open).
+
+**The claim.** "Blocked on the phase `qou-pdix`" is correct only for the
+**retired `z = 1` cell**. It did not survive the 2026-09-08 ruling that made
+`z_D` the base, and nothing re-checked it then.
+
+**The evidence.** The ladder's N=2 factor is `F_N2(α) = cos(α − u/2)·(1 − u²)`,
+so `cos ≤ 1` caps it at `1 − u² = 0.99992745` for **every real α** (supremum at
+`α = u/2`, still below 1). What it must supply is `F_required = Q_codata /
+Q_base`, recomputed at 70 dps:
+
+| base | `Q_base` (MeV) | `F_required` | vs cap |
+|---|---|---|---|
+| `z = 1` (Form A) — RETIRED | 0.783645827375 | 0.998325241673 | reachable |
+| `z_D`, order-zero `E₀` — RULED | 0.444700408522 | **1.75923699418** | **excluded** |
+| `z = q` (augmentation) | 0.87989056126 | 0.889125812282 | reachable |
+| dashboard scored cell — RULED | 0.65185631006 | **1.20016236389** | **excluded** |
+
+**The two cells a cosine can reach are exactly the two the ruling does not
+select.** Inverting the cap gives `u = 0.008517628778` against AGENTS.md's
+`u ≈ 0.00852` — consistent.
+
+**The implication.** No value of α unblocks this bean on the ruled base. The
+live question is **what object supplies a factor above 1 at all** — about the
+base or the assembly, not the phase. An agent sent to derive α as *the* `Q_β` L2
+blocker is working off the critical path.
+
+**Provenance.** Established twice, independently and sorry-free, in PR #7355
+(`LadderFactorBound.lean`, 4 lemmas, 7/7 probe) and PR #7262
+(`EigenphaseQuantization.lean`, 19/19, base-independent table) — **both still
+open**. Verified rather than taken on trust, and **merged**, in
+`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1
+(PR #7276, merged as `f3cb908ee7`), which recomputed all four `F_required` at
+70 dps and inspected the Lean for `sorry`. **Cite the merged audit, not the two
+PRs**, when checking this.
+
+**AGENTS.md fixed in the same PR** — both "blocked on the phase `qou-pdix`"
+sites now point at a scoping note carrying the table above. That edit is
+exemption 2 under §ASK THE OWNER (derived from a corpus artifact — the merged
+audit), not agent judgement.

@@ -199,6 +199,56 @@ the stronger statement that the tail's generator is structurally a **D** object.
 Two independent surfaces agreeing on the entry point is worth having. What is
 not worth having is the inference that was drawn from it.
 
+## 🛑 SECOND CORRECTION — on the RULED base, NO phase works. `α` is not the blocker.
+
+**Added 2026-09-14, from a sibling result that landed on `main` while this was in
+review.** Everything above about *where the convention enters* stands. The
+sentence this document used to close on — *"it is waiting on a single
+eigenphase"* — does not.
+
+**The argument.** The ladder's N=2 factor is
+`F_N2(α) = cos(α − u/2)·(1 − u²)`. Since `cos ≤ 1`, it is capped at `1 − u²` for
+**every real `α`** — the supremum sits at `α = u/2` and is still below 1. What it
+must supply is `F_required = Q_codata / Q_base`. Recomputed here independently at
+`mp.dps = 70`:
+
+```
+cap = 1 − u²  =  0.99992745              (u = 0.008517628778)
+
+  z = 1 (Form A) — RETIRED        Q_base 0.783645827375   F_req 0.998325241673   reachable
+  z_D order-zero E₀ — RULED       Q_base 0.444700408522   F_req 1.75923699418    EXCLUDED
+  z = q (augmentation)            Q_base 0.87989056126    F_req 0.889125812282   reachable
+  dashboard scored cell — RULED   Q_base 0.65185631006    F_req 1.20016236389    EXCLUDED
+```
+
+**The two cells a cosine can reach are exactly the two the ruling does not
+select.** So no value of `α` unblocks the ladder on the ruled base, and *"blocked
+on `qou-pdix`"* was correct only for the retired `z = 1` cell — it did not
+survive the 2026-09-08 ruling, and nothing re-checked it at the time.
+
+**What this changes here.** "One phase to derive, five values to re-extract" is
+withdrawn as a statement about the *ruled* base. What survives unchanged is the
+localisation itself: the convention enters at one place, the tail factors are
+`z`-free, and their generator satisfies a D-specific identity. Those are facts
+about the ansatz and they hold whatever the base. What was wrong was the
+inference that fixing that one place would unblock the ladder.
+
+**The live question is therefore not the phase.** It is *what object supplies a
+factor above 1 at all* — a question about the base or the assembly. An agent sent
+to derive `α` as **the** `Q_β` L2 blocker is off the critical path.
+
+**Verification.** The bound is established twice, independently and sorry-free,
+in `LadderFactorBound.lean` (4 lemmas) and `EigenphaseQuantization.lean`
+(base-independent table); both were still open PRs at the time. **Cite the merged
+audit, not those PRs:**
+[`2026-09-13-formb-probe-adjudication-and-cds1-state.md`](2026-09-13-formb-probe-adjudication-and-cds1-state.md)
+§5.1, merged as `f3cb908ee7`, which recomputed all four `F_required` at 70 dps
+and inspected the Lean for `sorry`. The four figures above were re-derived here
+from scratch and reproduce it exactly.
+
+**Read the section below with that in mind** — it surveys the attacks on `α`, and
+`α` is no longer the thing to attack.
+
 ## The blocker, for whoever takes `α` next — all four named attacks are now closed
 
 **Re-checked 2026-09-14 against `main` `8b367484ed`, 426 commits after this was
@@ -221,8 +271,9 @@ base**, and on the ruled base it **inverts**; the gap there is **139×**, not th
 
 **This does not weaken the finding above — it sharpens why it matters.** With
 every route to `α` closed, the useful thing to know is exactly how much the
-blocker costs. The answer is: **one phase to derive, five values to
-re-extract.** The *factors* `N2…N5` are z-free as
+blocker costs. On the retired `z = 1` cell the answer was **one phase to derive,
+five values to re-extract**; on the ruled base no phase suffices at all (see the
+second correction above). The *factors* `N2…N5` are z-free as
 defined and phase-independent as proved, and their generator `b` satisfies a
 D-specific identity. So the D-frame ladder is not waiting on a five-coefficient
 re-derivation behind a closed door; it is waiting on a single eigenphase, after

@@ -98,6 +98,16 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 DPS = 50
 
+# Raise precision AT MODULE SCOPE, above the constants below. Without this the
+# module-level `mp.mpf("...")` calls are built at mpmath's default dps=15 and
+# the 17-significant-digit ROUTE5_THETA_PRINTED is ROUNDED AT CONSTRUCTION --
+# it stops being the value it records. `main()` already calls
+# `set_compute_dps(DPS)`, which is too late for a module constant; the call is
+# idempotent, so having both is safe. Caught by
+# computations/module_const_precision_audit.py (its only LOSSY row).
+set_compute_dps(DPS)
+mp.dps = DPS
+
 # Route 5's own printed value, taken by RUNNING
 # qbeta_fibre_unit_circle_opens_route5_probe.py, not from any docstring.
 # Used ONLY as a reproduction target for check 1; nothing is derived from it.

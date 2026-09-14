@@ -1,0 +1,534 @@
+{
+  "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "computedAt": "2026-09-14T06:14:42.933532+00:00",
+  "computation": {
+    "script": "computations/deltalambda/rev_e_infinity_edge_limit_probe.py"
+  },
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "e_inf, the last unknown constant in the REV_n asymptotics, as a three-piece decomposition rather than a single-n measurement.  The maximiser's run of -1 has a FREE position (#7323), and a free position goes to infinity because displaced rows interact only through eps, which dies geometrically -- so at the optimum the run sits far from both blocks and the excess splits into three mutually non-interacting k-free pieces: e_inf = max over (s_t, s_b) of Xblock(s_t) + Xrun(s_t+s_b) + Xbot(s_b), the run length forced by sum u = 0.  That also explains #7331's non-additivity: two isolated edges each carry their own run, so their sum double-counts one run's interface.  Exhaustive over an explicit shape class -- a rigorous LOWER bound on the true e_k -- where the class is the shape #7305's full enumeration independently found at every k <= 12 and every one of its bounds is widened in E5.  NOT a proof that the limit exists: the upper bound on M_n is still open.",
+  "constants": {
+    "ln_q0": "0.104340720319519512315906279973",
+    "scale_digits": 40,
+    "eps_vanishes_at_m": 445,
+    "ap_tail_depth": 234
+  },
+  "shape_class": {
+    "top_rows_max": 8,
+    "top_value_max": 6,
+    "top_profiles": 75073,
+    "bottom_rows_max": 9,
+    "bottom_value_max": 3,
+    "bottom_profiles": 29524,
+    "run_length_max": 40,
+    "extension_max": 8,
+    "k_bot": 320,
+    "k_big": 760,
+    "separation": 250
+  },
+  "exhaustive_maximisers_E1": [
+    {
+      "k": 7,
+      "n": 28,
+      "in_class": true,
+      "rebuild_matches": true,
+      "top": [
+        1
+      ],
+      "run_head": 3,
+      "run_length": 2,
+      "bottom": [
+        1
+      ],
+      "extension": 0,
+      "evaluators_agree": true,
+      "excess_full_minus_exhaustive": 0,
+      "rounding_ulp_bound": 84
+    },
+    {
+      "k": 8,
+      "n": 36,
+      "in_class": true,
+      "rebuild_matches": true,
+      "top": [
+        1
+      ],
+      "run_head": 3,
+      "run_length": 2,
+      "bottom": [
+        1
+      ],
+      "extension": 0,
+      "evaluators_agree": true,
+      "excess_full_minus_exhaustive": 0,
+      "rounding_ulp_bound": 104
+    },
+    {
+      "k": 9,
+      "n": 45,
+      "in_class": true,
+      "rebuild_matches": true,
+      "top": [
+        1
+      ],
+      "run_head": 4,
+      "run_length": 2,
+      "bottom": [
+        1
+      ],
+      "extension": 0,
+      "evaluators_agree": true,
+      "excess_full_minus_exhaustive": -2,
+      "rounding_ulp_bound": 126
+    },
+    {
+      "k": 10,
+      "n": 55,
+      "in_class": true,
+      "rebuild_matches": true,
+      "top": [
+        1
+      ],
+      "run_head": 3,
+      "run_length": 4,
+      "bottom": [
+        1,
+        1,
+        1
+      ],
+      "extension": 1,
+      "evaluators_agree": true,
+      "excess_full_minus_exhaustive": 0,
+      "rounding_ulp_bound": 176
+    },
+    {
+      "k": 11,
+      "n": 66,
+      "in_class": true,
+      "rebuild_matches": true,
+      "top": [
+        1
+      ],
+      "run_head": 3,
+      "run_length": 4,
+      "bottom": [
+        1,
+        1,
+        1
+      ],
+      "extension": 1,
+      "evaluators_agree": true,
+      "excess_full_minus_exhaustive": -2,
+      "rounding_ulp_bound": 206
+    },
+    {
+      "k": 12,
+      "n": 78,
+      "in_class": true,
+      "rebuild_matches": true,
+      "top": [
+        2,
+        1
+      ],
+      "run_head": 3,
+      "run_length": 6,
+      "bottom": [
+        1,
+        1,
+        1
+      ],
+      "extension": 1,
+      "evaluators_agree": true,
+      "excess_full_minus_exhaustive": 3,
+      "rounding_ulp_bound": 251
+    }
+  ],
+  "upstream_enumeration_kmax": 12,
+  "k40_against_7331_E2": {
+    "class": "2.41409064417390445671009",
+    "pr7331": "2.41409064417390445671009",
+    "difference_scaled": -31601091401868215,
+    "recording_floor_scaled": 100000000000000000,
+    "argmax": {
+      "top": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "bottom": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "run_head": 13,
+      "run_length": 14,
+      "extension": 2
+    }
+  },
+  "three_piece_identity_E3": {
+    "k": 760,
+    "crossing_pairs_scaled": 0,
+    "definition_scaled": "24392964551207840270654288431375975287762",
+    "sum_of_pieces_scaled": "24392964551207840270654288431375975287762",
+    "piece_in_frame_vs_k_free": {
+      "top": 0,
+      "run": 0,
+      "bottom": 0
+    }
+  },
+  "separation_scan_E3b": [
+    {
+      "separation": 0,
+      "value": "-0.053248575966228036598091334",
+      "scaled": "-532485759662280365980913339981004719414",
+      "shortfall_from_split": "5271006600092620675326278754216542106039"
+    },
+    {
+      "separation": 1,
+      "value": "0.19230582564752544612154963",
+      "scaled": "1923058256475254461215496314558106990731",
+      "shortfall_from_split": "2815462583955085848129869099677430395894"
+    },
+    {
+      "separation": 2,
+      "value": "0.30468794637412839492714107",
+      "scaled": "3046879463741283949271410711272750379438",
+      "shortfall_from_split": "1691641376689056360073954702962787007187"
+    },
+    {
+      "separation": 3,
+      "value": "0.36781416912671140839104182",
+      "scaled": "3678141691267114083910418194787049296291",
+      "shortfall_from_split": "1060379149163226225434947219448488090334"
+    },
+    {
+      "separation": 5,
+      "value": "0.42995842218571861995510985",
+      "scaled": "4299584221857186199551098518458789851493",
+      "shortfall_from_split": "438936618573154109794266895776747535132"
+    },
+    {
+      "separation": 8,
+      "value": "0.46159308063840003993874608",
+      "scaled": "4615930806384000399387460787657684616111",
+      "shortfall_from_split": "122590034046339909957904626577852770514"
+    },
+    {
+      "separation": 12,
+      "value": "0.47155985618031647138862364",
+      "scaled": "4715598561803164713886236395954995782452",
+      "shortfall_from_split": "22922278627175595459129018280541604173"
+    },
+    {
+      "separation": 20,
+      "value": "0.4737708961214469212991685",
+      "scaled": "4737708961214469212991685005469878724378",
+      "shortfall_from_split": "811879215871096353680408765658662247"
+    },
+    {
+      "separation": 40,
+      "value": "0.47385206479892324537070296",
+      "scaled": "4738520647989232453707029576314712122138",
+      "shortfall_from_split": "192441107855638335837920825264487"
+    },
+    {
+      "separation": 80,
+      "value": "0.47385208404303294959522778",
+      "scaled": "4738520840430329495952277832814355924719",
+      "shortfall_from_split": "10813393087581421181461906"
+    },
+    {
+      "separation": 160,
+      "value": "0.47385208404303403093453654",
+      "scaled": "4738520840430340309345365414201395282076",
+      "shortfall_from_split": "34142104549"
+    },
+    {
+      "separation": 250,
+      "value": "0.47385208404303403093453654",
+      "scaled": "4738520840430340309345365414235537386625",
+      "shortfall_from_split": "0"
+    }
+  ],
+  "finite_k_ladder_E4": [
+    {
+      "k": 40,
+      "n": 820,
+      "run_head": 12,
+      "value": "2.40190430721845241090347747455",
+      "scaled": "24019043072184524109034774745545326514713",
+      "crossing_scaled": -62927769909288996295670732540058424575,
+      "deficit_scaled": "373921479023316161619513685830648773049"
+    },
+    {
+      "k": 60,
+      "n": 1830,
+      "run_head": 22,
+      "value": "2.43872843929305297395781972813",
+      "scaled": "24387284392930529739578197281298643605135",
+      "crossing_scaled": -965606001927719653260261783386004154,
+      "deficit_scaled": "5680158277310531076091150077331682627"
+    },
+    {
+      "k": 100,
+      "n": 5050,
+      "run_head": 42,
+      "value": "2.43929632050281066923833673366",
+      "scaled": "24392963205028106692383367336590350078981",
+      "crossing_scaled": -228880771835266664188467221209145,
+      "deficit_scaled": "1346179733578270921094785625208781"
+    },
+    {
+      "k": 160,
+      "n": 12880,
+      "run_head": 72,
+      "value": "2.43929645512029272211725196222",
+      "scaled": "24392964551202927221172519622162945996420",
+      "crossing_scaled": -835328723469668634096098240,
+      "deficit_scaled": "4913049481768809213029291342"
+    },
+    {
+      "k": 240,
+      "n": 28920,
+      "run_head": 112,
+      "value": "2.43929645512078402703782209287",
+      "scaled": "24392964551207840270378220928746389513682",
+      "crossing_scaled": -46937673927118303491,
+      "deficit_scaled": "276067502629585774080"
+    },
+    {
+      "k": 320,
+      "n": 51360,
+      "run_head": 152,
+      "value": "2.43929645512078402706542884159",
+      "scaled": "24392964551207840270654288415863559568886",
+      "crossing_scaled": -2637458968892,
+      "deficit_scaled": "15512415718876"
+    },
+    {
+      "k": 400,
+      "n": 80200,
+      "run_head": 192,
+      "value": "2.43929645512078402706542884314",
+      "scaled": "24392964551207840270654288431375974416068",
+      "crossing_scaled": -148202,
+      "deficit_scaled": "871694"
+    },
+    {
+      "k": 460,
+      "n": 106030,
+      "run_head": 222,
+      "value": "2.43929645512078402706542884314",
+      "scaled": "24392964551207840270654288431375975287756",
+      "crossing_scaled": 1,
+      "deficit_scaled": "6"
+    },
+    {
+      "k": 520,
+      "n": 135460,
+      "run_head": 252,
+      "value": "2.43929645512078402706542884314",
+      "scaled": "24392964551207840270654288431375975287762",
+      "crossing_scaled": 0,
+      "deficit_scaled": "0"
+    },
+    {
+      "k": 600,
+      "n": 180300,
+      "run_head": 292,
+      "value": "2.43929645512078402706542884314",
+      "scaled": "24392964551207840270654288431375975287762",
+      "crossing_scaled": 0,
+      "deficit_scaled": "0"
+    },
+    {
+      "k": 700,
+      "n": 245350,
+      "run_head": 342,
+      "value": "2.43929645512078402706542884314",
+      "scaled": "24392964551207840270654288431375975287762",
+      "crossing_scaled": 0,
+      "deficit_scaled": "0"
+    },
+    {
+      "k": 760,
+      "n": 289180,
+      "run_head": 372,
+      "value": "2.43929645512078402706542884314",
+      "scaled": "24392964551207840270654288431375975287762",
+      "crossing_scaled": 0,
+      "deficit_scaled": "0"
+    }
+  ],
+  "one_edge_energy_E7": {
+    "top_block": [
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "bottom_block": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "s_t": 8,
+    "s_b": 8,
+    "difference_scaled": 0,
+    "E_edge": "1.96544437107774999613089230171",
+    "top_block_transpose": [
+      5,
+      2,
+      1
+    ],
+    "transpose_correspondence_identified": false,
+    "run": "-1.49159228703471596519635576029",
+    "identity": "e_inf = 2 * E_edge + Xrun(2 * s)",
+    "tables_agree_up_to_block_sum": 12,
+    "tables_first_differ_at": 13,
+    "table_difference_by_block_sum": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 198162676389039602300948111946348416306,
+      "14": 1508366637637079084126933776286570648131,
+      "15": 2390303733896029707166369889413736053861,
+      "16": 3138293532117473053413480147783208150226,
+      "17": 4304809881416210134970238023929263592586,
+      "18": 5808863188249223131428474662803379290456,
+      "19": 8408879251196665504748607889751432587106,
+      "20": 9951335905931858134530033309172350783374,
+      "21": 13565110291856814485503190797294414784501,
+      "22": 16215222184795754119814961508785714019263,
+      "23": 19388011152093739546152890077217817734488,
+      "24": 26968833486448741611272250967816903687246
+    }
+  },
+  "settled_from_k": 520,
+  "widening_E5": {
+    "top_profiles": 3317656,
+    "bottom_profiles": 88573,
+    "run_length_max": 60,
+    "extension_max": 12,
+    "e_inf_widened": "2.43929645512078402706542884314",
+    "difference_scaled": 0,
+    "argmax": {
+      "top": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "bottom": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "extension": 2,
+      "run_length": 16
+    }
+  },
+  "against_single_n_E6": {
+    "n": 3916,
+    "k": 88,
+    "single_n_excess": "2.4392948082722254204",
+    "e_inf": "2.43929645512078402706542884314",
+    "difference": "1.6468485586066654288e-6"
+  },
+  "e_infinity": {
+    "value": "2.43929645512078402706542884314",
+    "scaled": "24392964551207840270654288431375975287762",
+    "top_block": "1.96544437107774999613089230171",
+    "run": "-1.49159228703471596519635576029",
+    "bottom_block": "1.96544437107774999613089230171",
+    "limiting_shape": {
+      "top": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "run_length": 16,
+      "bottom": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "extension": 2,
+      "s_t": 8,
+      "s_b": 8
+    }
+  },
+  "checks": [
+    {
+      "name": "E1 every exhaustively-found maximiser is in the shape class, and two independent evaluators reproduce its excess",
+      "ok": true,
+      "detail": "6 values of k (7..12, n = 28..78) \u2014 every k the committed enumeration covers above 6.  Each maximiser decomposes as a positive top block, ONE contiguous run of -1 whose length is exactly s_t + s_b, and a positive bottom block, with nothing in between \u2014 so the three-piece class is the shape the enumeration FOUND, not a shape imposed on it, and `make_u` rebuilds each u byte-for-byte from that decomposition.  The two evaluators agree with each other on the nose at every k, sharing no code path (one is the O(L^2) definition, the other sums over displaced rows through a bisect window).  Against #7305's own M_n - V(delta_k) the worst deviation is 3 units at 1e-40 against a budget of 84: #7305 accumulates rounded phi per CELL while this probe accumulates rounded eps per PAIR, so two integer sums of the same quantity agree only to their operation count, and that count is what the budget is.  k <= 6 is excluded \u2014 there the staircase is itself the maximiser, with no displacement to decompose"
+    },
+    {
+      "name": "E2 this probe reproduces PR #7331's maximum on #7331's own shape, and its class reaches at least as high",
+      "ok": true,
+      "detail": "#7331 reported top [3, 2, 1, 1], bottom [1, 1, 1, 2, 1, 1], run at row 13, P = 2.  That shape is inside this class, and `excess_full` here returns 2.41409064417390445671 against the 2.41409064417390445671 #7331's witness records \u2014 agreeing to the 24 significant digits the witness carries, with two different evaluators.  A bounded joint search over this class (block sums <= 10, 4 profiles per sum, every run position) then reaches 2.41409064417390445671, -3.16e-24 relative to #7331 \u2014 so the class is at least as wide as the one #7331 searched"
+    },
+    {
+      "name": "E3 the three pieces are independent at k = 760, and each equals its k-free value exactly",
+      "ok": true,
+      "detail": "the top block, the run and the bottom block sit >= 250 rows apart, so every pair between two different groups is >= 500 apart in beta where eps is identically zero from m = 445: the crossing term is exactly 0 at scale 1e-40.  Each piece re-evaluated in the real k = 760 frame by `delta_excess` returns the same scaled integer as its k-free closed form (differences 0, 0, 0), and the three sum to the O(L^2) definition on the assembled shape (difference 0).  That is the decomposition holding as an identity between three independent evaluators, not an approximation with a tolerance"
+    },
+    {
+      "name": "E3b the block and the run repel, so the free position runs to infinity and the split is the supremum",
+      "ok": true,
+      "detail": "the combined top-block-plus-run value increases monotonically in their separation over 12 sampled separations and reaches Xblock + Xrun exactly (shortfall 0 at separation 250), having been short by 0.5271 when adjacent.  This is the assumption the whole decomposition rests on and it is the one an agent would be tempted to assert: if the interaction were ATTRACTIVE the optimum would put the run against the block, the three pieces would not separate, and e_inf computed this way would be an understatement.  It is repulsive, so 'the position is free' (#7323) means 'the position goes to infinity', and the sup is attained in the limit rather than at any finite k"
+    },
+    {
+      "name": "E4 the finite-k shortfall vanishes exactly when the crossing term does, and never from above",
+      "ok": true,
+      "detail": "the limiting shape's exact excess is the SAME scaled integer at every k from 520 up (4 rungs, agreeing to 1e-40), and at every smaller k it falls short \u2014 always from BELOW, never above \u2014 exactly where the crossing term is nonzero.  The two switch off TOGETHER, which is what ties the finite-k correction to the crossing pairs.  They are NOT equal: at k = 460 the crossing term is 1 unit while the shortfall is 6, because the shortfall also carries each piece's OWN truncation \u2014 the top block's AP does not yet extend 234 rows, and neither does the run's.  Reading the two columns as the same number would be wrong; what is measured is that they have the same support.  The threshold is arithmetic rather than asymptotic: a crossing pair is ~2 * (separation) apart in beta and eps is identically 0 from m = 445, and with the run placed midway the binding separation is ~k/2, which is why this settles later than a two-piece split would.  This is the sequence HAVING converged, not a proof that it converges \u2014 that needs the upper bound on M_n the arc still lacks"
+    },
+    {
+      "name": "E5 widening every bound of the class moves neither e_inf nor its argmax",
+      "ok": true,
+      "detail": "top rows 8 -> 10 and values 6 -> 8 (75073 -> 3317656 profiles), bottom rows 9 -> 10 (29524 -> 88573), run length 40 -> 60, extension 8 -> 12: e_inf is the same scaled integer (difference 0) and the argmax is the same shape.  Without this the maximum would be an artefact of where the enumeration stopped, and e_inf would be a statement about the search rather than about the problem \u2014 which is exactly what the first version of this probe was, with every one of its caps binding at the argmax"
+    },
+    {
+      "name": "E6 e_inf sits above the single-n reading, as e_k increasing requires",
+      "ok": true,
+      "detail": "e_inf = 2.43929645512078402706543 against the 2.43929480827222542 recorded at n = 3916 (k = 88) \u2014 higher by 1.64685e-6, 6.751e-5 % of e_inf.  It MUST be higher: e_k is increasing and that row is a finite-k value of the same sequence, so a converged limit below it would mean one of the two searches is wrong.  The sign is the check; the size is how much of kappa the single-n reading was missing"
+    },
+    {
+      "name": "E7 the two block energies are EQUAL as exact integers \u2014 one edge energy, seen twice",
+      "ok": true,
+      "detail": "the top block [3, 2, 1, 1, 1] and the bottom block [1, 1, 1, 1, 2, 1, 1] are different shapes found by two searches that share no code path \u2014 one closed-form in the AP, one `delta_excess` in a real frame \u2014 and their energies agree to every one of 40 decimal places (difference exactly 0), with equal sums s_t = s_b = 8.  #7331 saw the same equality for its block-plus-run edges and it survives here to the k-free blocks.  The likely mechanism is that the staircase is self-conjugate and the hook multiset is a transpose invariant \u2014 but these two tuples are NOT literally conjugate partitions: [3, 2, 1, 1, 1] transposes to [5, 2, 1], which is not [1, 1, 1, 1, 2, 1, 1].  #7331's witness calls its own pair 'that conjugate pair' and this probe repeated the claim before checking it; the EQUALITY is measured to the last digit, the transpose correspondence between these particular tuples is NOT, and identifying it is open.  So e_inf collapses to ONE edge energy and one run: e_inf = 2 * E_edge + Xrun(2 * s), with E_edge = 1.96544437107774999613089, s = 8, and Xrun(16) = -1.49159228703471596519636.  The equality is also a check on the two evaluators, not only an observation about the shapes.  One level up, the two TABLES agree as functions of the block sum for s <= 12 and first part at s = 13, where the top table is higher by 0.01982.  WHY they part is not measured here \u2014 a row cap on one side is the obvious candidate and has not been checked \u2014 and it does not reach e_inf, whose argmax is at s = 8"
+    }
+  ],
+  "verdict": "The REV_n excess splits into three independent k-free pieces -- a top block, a run of -1 whose length is forced, and a bottom block -- because the run's free position runs to infinity.  e_inf is the maximum of their sum, and the rung where e_k stops moving is identified rather than guessed: the crossing pair term and the deficit from the limit vanish together.  It remains a lower bound on the true limit, exhaustive over a class whose every bound is checked non-binding."
+}

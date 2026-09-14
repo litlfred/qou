@@ -5,8 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T20:51:46Z
-
+updated_at: 2026-09-14T17:59:52Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2406,3 +2405,322 @@ made it in the same turn that corrected two other framing errors.
 Contaminated sites: this bean's preceding entry, the PR #7340 body's
 recommendation, and two chat reports. The probe and witness now carry the
 correction in a `gap_magnitude_correction` field.
+
+---
+
+## 2026-09-14 — on the RULED base the ladder is excluded for EVERY phase, so α is not the blocker
+
+Probe: [`qbeta_ladder_form_cannot_reach_ruled_base_probe.py`](computations/qbeta/qbeta_ladder_form_cannot_reach_ruled_base_probe.py)
+— 5/5, proton pin, 50 dps. Scope **(b)** for the exclusion (proved invariant
+cited); (a) for the numbers.
+
+**`qou-cds1`'s last entry (2026-09-08) holds two halves that do not fit
+together.** It adopts the ruled base and keeps the old blocker in one sentence:
+*"eps := tr_M at z_D … the D-frame ladder is to be re-derived on the z_D base
+(0.4447004 MeV, −43.157 %) … the blocker is still the N=1 phase (qou-pdix)."*
+
+The ladder's correction factor is `F(α) = cos(α − u/2)·(1 − u²)·Π(1 + c_k u^k)`,
+and what it must supply is `F_required = Q_codata/Q_base`:
+
+| base | Q_base (MeV) | `F_required` | |
+|---|---|---|---|
+| `z = 1` (Form A) — **RETIRED** | 0.783645827375 | **0.998325241673** | < 1 |
+| `z_D`, order-zero `E₀` — **RULED** | 0.444700408522 | **1.75923699418** | **> 1** |
+| `z = q` (augmentation) | 0.87989056126 | **0.889125812282** | < 1 |
+| dashboard scored cell — **RULED** | 0.65185631006 | **1.20016236389** | **> 1** |
+
+**`cos ≤ 1`, so `F_N2(α) = cos(α − u/2)(1 − u²) ≤ 1 − u² = 0.99992745…` for
+EVERY real α** — the supremum is attained at `α = u/2` and is still below 1.
+Both ruled cells need more than 1. **No phase closes it**, derived or fitted.
+
+**So deriving α cannot unblock this ladder on the base the bean adopted.** The
+blocker line was correct for the retired cell — there `F_required = 0.9983 < 1`,
+a small phase fits, and α is exactly the interesting unknown. It does not
+survive the base change.
+
+**Pushing the shortfall into the rungs instead is not a route either:** it needs
+`c_2 ≈ 1.047e4` (z_D) or `2.760e3` (dashboard cell) against the structural
+`c_2 = −1` — four orders, wrong sign. The `1/u² = 13784.87` magnifier is why,
+which is this bean's own finding about `c_k` being the wrong coordinate.
+
+### Calibration, run before anything was concluded
+
+The probe first reproduces **this bean's own F-table** on the retired base —
+**−0.0762164 / −35.9111 / −3.17063 %** against the recorded −0.076 / −35.9 /
+−3.17 — so the machinery is the bean's, not a re-invention.
+
+### A coordinate trap this exposes
+
+That table reports relative deviation of **`1 − F`**, not of `F`. On the retired
+base both are small and positive and the ratio is informative. On a ruled base
+`1 − F_required = −0.7592` is **negative** while the model's `1 − F_N2 = +0.0016`
+stays positive, so the same ratio returns −100.21 % — opposite-signed
+quantities, meaningless rather than merely large. **Report `F` directly on a
+ruled base;** the reldev table is retired-base-only.
+
+### What this does NOT say
+
+It does **not** retire α: `qou-pdix` stays open on its own terms, α is still the
+N=1 phase, and this says only that α is not what stands between the ladder and
+the ruled base. It does **not** refute the ladder or the forced bar-odd
+projection `a_odd = a − h²/4` — both C-frame, sorry-free, untouched. And it does
+**not** choose a base: `F_required < 1` on the retired cell is **not** a reason
+to prefer it (§NO FITTING — a base is never chosen by which obstruction it
+removes).
+
+### What it changes about the next step
+
+The open question is no longer "what is α" but **what object supplies a factor
+above 1 at all** — the ladder's multiplicative form cannot, whatever its phase.
+That is a question about the *base or the assembly*, not about the phase.
+
+---
+
+## 2026-09-14 — the question above has an answer already in the corpus, and it reverses route 5
+
+The entry above closes asking *"what object supplies a factor above 1 at all"*.
+Route 5's own machinery does — and it is the branch route 5 currently treats as
+excluded.
+
+**The step-18 obstruction is conditional, and its hypothesis is false on the
+ruled base.** `qbeta_holonomy_spectrum_sign_obstruction_probe` argues a
+real-spectrum holonomy has character `cosh(a) ≥ 1` and so cannot supply a
+correction **below 1** — *"1.005448 against a required 0.998399: wrong SIDE of
+1."* That `0.998399` is the requirement on the **retired** `z = 1` cell.
+Measured (`qbeta_ruled_base_inverts_the_route5_obstruction_probe`, 6/6, proton
+pin, 50 dps), with `κ = F_required/(1 − u²)`:
+
+| base | `κ` | hypothesis `κ < 1` |
+|---|---|---|
+| `z = 1` (Form A) — RETIRED | 0.998397668719 | TRUE → **fires** |
+| `z_D`, order-zero `E₀` — RULED | 1.7593646242717 | FALSE → **does not fire** |
+| `z = q` (augmentation) | 0.889190317068 | TRUE → fires |
+| dashboard scored cell — RULED | 1.20024943392874 | FALSE → **does not fire** |
+
+Calibrated first against step 18's own two quoted figures (required and KD
+character), to 1.3e-6 and 4.3e-7 — same object, not a near-relative.
+
+**The Lean is untouched and correct.** `correction_below_one_excludes_real_spectrum`
+carries the hypothesis `(hκ : κ < 1)` explicitly and was always a conditional.
+What the base change falsified is its **premise** — AGENTS.md's
+*conditional-proved ≠ premise-established*, here in the direction where the
+corpus stated the conditional properly and the prose around it then treated the
+hypothesis as settled.
+
+**On a ruled base the two proved inequalities point the other way.** `cosh ≥ 1`
+(`real_spectrum_character_ge_one`, sorry-free) and `|cos| ≤ 1`
+(`Real.cos_le_one`, via `ladderN2_lt_of_one_le`, sorry-free) together exclude the
+**elliptic** generator and leave the **hyperbolic** one — which is what the
+substrate's Kohno–Drinfeld generator already is at real `q₀` (`ħ = 2 ln q`,
+`det A = −(ln q)² = −0.01088698592 < 0`). Step 18 recorded that as the defect; it
+is no longer a defect.
+
+**So the narrowing to `det A > 0` / `|q| = 1` / the Kashaev locus / the `N = 111`
+question rests on a retired premise.** `qbeta_fibre_unit_circle_opens_route5_probe`
+is not wrong — its `det A > 0 ⟺ |q| = 1` identity is exact — but the *requirement*
+that sent route 5 to the fibre no longer holds on the ruled base.
+
+**This does not derive anything.** The KD character `1.00544843335` is on the
+right side of 1 and the wrong size against `1.75936462427` required. Route 5 goes
+from a **structural** obstruction back to a **quantitative** gap, which stays
+open. Non-exclusion is not a derivation, and per NO FITTING the fact that the
+ruled base makes this exclusion lapse is not a reason to prefer it. The required
+character and generator eigenvalue are recorded to check **against**; no search
+was run for a construction producing them.
+
+### The coordinate, again — and it resolves a live disagreement
+
+The residual gap at the `z_D` order-zero base, in three spellings:
+
+    generator eigenvalue    a_req / a_KD       =  11.16826965
+    character excess        (κ − 1)/(KD − 1)   = 139.3730225
+    character ratio         κ / KD             =   1.7498308
+
+A sibling branch (`claude/cds1-pdix-attack-c-stokes-2026-09-13`) recorded *"the
+route-5 gap is 139x, not the 'factor 11.2' I reported an hour ago"*. **Both are
+right and they are the same gap** — the second is a change of coordinate, not a
+correction, and neither figure should be retracted.
+
+With `c_k` (magnifier `1/u² = 13784.8735`) and `1 − F`, this arc now has **five**
+coordinates for one deviation. Every confusion in it so far — the `−100.21 %`
+above, the 11.2/139 pair here — has been about which one is in use. **Say the
+coordinate before quoting a factor.**
+
+**Status: still open.** α is underived; the gap is quantitative. Rule 13a.
+
+### 🛑 Two corrections to the entry immediately above, same day
+
+**1. The `cos ≤ 1` exclusion in the 2026-09-14 entry *before* this one is not
+original — PR #7262 Part 3 has it**, reached independently and done better:
+sorry-free Lean strictly covering mine (`cos_rung_lt_of_base_short`,
+`cos_rung_lt_of_base_short_ladder`), a fuller base table including the bar-odd
+survivor at **2.2136**, and a self-correction mine lacked. Per §"Measured
+research-overlap … converge on landing", **#7262 lands the exclusion** and #7355
+re-scopes to the route-5 reversal above, citing Part 3 rather than restating it.
+Two independent derivations strengthen it; two claims of priority do not.
+
+#7262 also already names the mirror — *"this bean's own 2026-08-22 entry
+excluded a `cosh` re-reading because `cosh ≥ 1` sat on the wrong side of a
+required value below 1"*. The reversal above is that mirror's **consequence**,
+traced into the step-18 → step-19 → fibre-unit-circle chain that still assumes
+the `cosh` branch is shut.
+
+**2. I led with a superseded cell.** The tables above put `z_D` order-zero /
+`κ = 1.7594` first. The **live scored row** has been `nuc11_interleaved` /
+**`κ = 1.20024943`** since 2026-09-12 (`173da443b6` tower-summed `E₀`,
+`573b2ece24` the γγ element). Both appear in my probe — the "dashboard scored
+cell" row *is* the live one, matching #7262's 1.2002 to six digits — but the
+framing was wrong. **Quote 1.2002.** Every conclusion is unaffected: 1.2002 is
+still above 1, so the hypothesis still fails and the reversal still holds.
+
+Worth noting *which* error this was: quoting a figure that had already moved, from
+a bean entry, while writing a bean entry about quoting figures in the wrong
+coordinate. #7262's Part 4 names this exact failure class and its own Part 3 was
+an instance; so was this.
+
+---
+
+## 2026-09-14 (3) — the branch the reversal re-opens is closed too, and route 5 now has ONE live branch on either reading
+
+The entry above re-opened the hyperbolic branch. Re-opening a branch is not a
+result, so it has been worked. Two of its three cases are now closed.
+
+**Case 1 — constant residue: EXCLUDED as a function.** Kohno–Drinfeld fixes
+`ħ = 2 ln q`, so a constant-residue generator eigenvalue is `c·ln q` and its
+character is `cosh(c ln q)`. `PhaseFailsLogFunctionalEquation` excludes exactly
+this holonomy on the **elliptic** reading via `ln(q²) = 2 ln q`. The hyperbolic
+reading observes the **character** rather than the angle, so the analogue is the
+cosh double-angle law — `χ(q²) = 2χ(q)² − 1`, holding for **every `c` at once**.
+Measured, `κ(q)` on the `z_D` base misses it by **62.30 / 70.47 / 68.79 /
+59.30 %** at `q ∈ {q₀, 1.5, 2, 3}`, against **1.9e-60** for a genuine character.
+
+*The check the argument needed:* the identity is **not** scale-invariant and `κ`
+carries the experimental `Q_cod` as an overall scale. Solving
+`2λ²κ(q)² − λκ(q²) − 1 = 0` gives `λ(q)` spreading **28.86 %** over five points
+against `|λ − 1| ≤ 1.6e-61` for a genuine character — so it is not a
+normalisation artifact.
+
+**Case 2 — arbitrary `q`-dependent residue: VACUOUS.** `cosh` is onto
+`[1, ∞)`, so wherever `1 ≤ κ` a residue reproducing it exists by construction:
+`a(q) := arcosh(κ(q))`, read off the answer. Measured, `κ` stays `≥ 1`
+throughout `q ∈ (1, 10]` — **1.5333** at `q → 1⁺` rising monotonically to
+**8.0243** at `q = 10`, no crossing — so the vacuity is not conditional in the
+physical domain. Had `κ` dipped below 1 anywhere that region would have been a
+genuine constraint (`cosh ≥ 1` always); it does not.
+
+**Case 3 — derived `q`-dependence: OPEN.** The only contentful branch.
+
+### The trichotomy now mirrors the elliptic one exactly
+
+| | elliptic | hyperbolic |
+|---|---|---|
+| constant | `ln(q²) = 2 ln q` → **excluded** | Chebyshev doubling → **excluded** |
+| arbitrary | `EigenphaseCarrierVacuity`: *"M arbitrary — CIRCULAR"* | `arcosh(κ)` → **vacuous** |
+| derived | **open** | **open** |
+
+Reached independently on the two sides. **So route 5 has one live branch on
+either reading, and it is the same branch.** Step 18 claimed to close all three
+at once *"by a sign argument that never reads the residues"* — that argument is
+the one the ruled base voids, and what replaces it closes two of three.
+
+### Scope, load-bearing
+
+Case 1 is scope-**(b)** for *"as a function of `q`"* **only**. At `q₀` alone the
+free `c` reaches the requirement **exactly** (`c = 5.96831620`, defect `0.0`), so
+a pointwise match is always available and carries no information.
+
+### A prune that FAILED, recorded as a failure
+
+Cross-anchor rigidity — the obvious test — has **no power** here. With the pins
+11.6141 ppb apart, `c` is amplified **9.58×** and `c_3` **2.05889e+6×** (through
+its `1/u³` extraction): ratio **2.15e5**. The pins' agreement on `c` to ~1e-7 is
+evidence about the *test*, not about `c`. An agent reading only the agreement
+would conclude `c` is anchor-independent, which this does **not** show. The `c_3`
+swing reproduces AGENTS.md's recorded 2.3912 %, which is the calibration.
+
+*(My first re-derivation of `c_3` gave −2710 — I divided by the bare base where
+the corpus divides by the N=2 ladder value. The recorded pair is used instead.)*
+
+### Not pursued
+
+`c = 5.96832` at the live cell is **0.5281 %** from 6. Check-**against** only: a
+near-integer found by solving against the target is selection against the target,
+and the cell is provisional anyway — the 2026-09-13 ruling records that its
+element `nuc11_interleaved` **fails** the confinement SDP on `(2,1)` and
+`(1,1,1)`, so `c` moves when the element is replaced. No search was run for a
+reason `c` should be 6, and none should be until something independent selects
+one.
+
+**Status: still open.** Branch 3 is a live open problem on both readings.
+Rule 13a.
+
+---
+
+## 2026-09-14 (4) — swept properly, and a tooling trap found by doing so
+
+**The Lean was verified with bare `lean`-direct only.** AGENTS.md is explicit
+that on a branch touching `.lean` this is a claim about the **olean snapshot**,
+not about the library source — a file calling a moved signature compiles clean
+*and* is red against the source it names, both at once, with no signal. The
+sweep is the gate. Run:
+
+| module | result |
+|---|---|
+| `QOU.QBeta.CharacterDoubling` | **1 ok, 0 RED** (126 s, shadow built) |
+| `QOU.QBeta.LadderFactorBound` | **1 ok, 0 RED** (3 s, shadow reused) |
+
+Dirty closure 1 in each case; 2877 library modules, 2876 snapshot-current.
+
+### 🛑 `--only-exact` is NOT repeatable, and it fails silently
+
+Passing it twice —
+
+    scripts/lean-library-sweep.py --only-exact A --only-exact B
+
+— sweeps **B only**. The flag is `store`, not `append`, so the first value is
+dropped without a word; the run's own selection line reads `selection
+QOU.QBeta.CharacterDoubling` and the summary reads `1 ok`. **An agent reading
+"1 ok, 0 RED" after asking for two modules would report both verified having
+verified one.** Caught here only because the module count in the summary did
+not match the number of modules asked for.
+
+That is the taxonomy's own class — a verification tool silently covering less
+than it was asked to, and reporting success — applied to the sweep rather than
+to a detector. **Sweep one module per invocation**, or check that the reported
+count matches what you asked for.
+
+**Not fixed here.** Making the flag repeatable is a change to shared tooling and
+falls outside both exemptions of the 2026-09-07 ask-first directive — it is
+neither a precision fix nor corpus-derived. Raised rather than enacted.
+
+**No taxonomy row added either**, for the same reason plus a practical one: a
+sibling and I collided on that document's row numbering once already today
+(row 44 → 45), and it is not my document to grow unasked.
+## 2026-09-14 — still open, and explicitly NOT retired; only its priority changes
+
+**Status stays `in-progress`. Nothing here closes this bean** (§13a — α is still
+the ladder's N=1 phase and is still underived).
+
+What changed is that α is **off the `Q_β` L2 critical path**, not that it is
+answered. `qou-cds1` is not blocked on this bean on the ruled base: `cos ≤ 1`
+caps the N=2 factor `F_N2(α) = cos(α − u/2)·(1 − u²)` at `1 − u² = 0.99992745`
+for **every real α**, while `F_required = Q_codata / Q_base` is **above 1** on
+both bases the 2026-09-08 ruling selects — `1.75923699418` at `z_D` with
+order-zero `E₀`, `1.20016236389` at the dashboard scored cell. The two cells a
+cosine can reach (`z = 1`, retired; `z = q`, the augmentation) are exactly the
+two the ruling does not select. So no value of α unblocks `qou-cds1`.
+
+**The reusable half:** this bean was described in AGENTS.md as *the* S1 blocker,
+and that framing was correct only for the retired `z = 1` cell. Deriving α
+remains worth doing on its own terms; it is not the thing standing between the
+corpus and a `Q_β` ladder on an admissible base.
+
+**Provenance.** PR #7355 (`LadderFactorBound.lean`, 4 lemmas, 7/7 probe) and PR
+#7262 (`EigenphaseQuantization.lean`, 19/19) — both sorry-free, both still open.
+Verified and **merged** in
+`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1/§5.1a
+(PR #7276, `f3cb908ee7`). Cite the merged audit, not the two PRs.
+
+Previous entry here was 2026-09-12 and predates this. AGENTS.md's two
+"blocked on the phase `qou-pdix`" sites are scoped in the same PR as this
+append.

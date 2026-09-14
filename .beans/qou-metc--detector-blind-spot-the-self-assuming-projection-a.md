@@ -1,11 +1,11 @@
 ---
 # qou-metc
 title: 'DETECTOR BLIND SPOT: the self-assuming-projection audit cannot see an APPLIED single projection — 26 counted becomes 42, and the tuple case was already fixed this way'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-13T17:33:19Z
-updated_at: 2026-09-13T18:26:53Z
+updated_at: 2026-09-14T08:00:20Z
 ---
 
 ## MEASURED 2026-09-13 on the QOU Lean tree (2870 .lean files)
@@ -154,3 +154,126 @@ foreign-category and 45 unscanned-file entries.
 3. Seeding the ledger for the 16. Needs a CORPUS-WIDE scan across all 22 roots,
    not the subtree scan that caused row 43. Deliberately not run here.
 4. qou-z9ws's 112-entry sizing is a FLOOR. Not re-sized.
+
+
+## Item 1 DONE — PR #7341 (2026-09-13)
+
+**The population was 21, not 16** (the 16 counted only `lean/QOU/`; five more
+are content-block siblings under `mass-theory/`), and **none of the 21 were
+reaching the ledger at all** — #7332 exempted them with the reason
+`"tracked; derivation pending"` while `--review-ledger` seeds only on the
+literal `triage pending`. Measured corpus-wide: 0 of 21 seeded. Taxonomy row 44.
+
+**Verdicts: 15 genuine / 5 advisory / 1 legit.** Discriminator applied was
+`qou-z9ws`'s — a projection is the accessor idiom only when something builds
+the bundle — and **13 of the 14 carriers have zero builders**; the 14th's only
+builder is a documented content-free zero skeleton. The `legit` is
+`dH_verticalReflection`, where `dH_eq` is a *theorem* on a bundle constructed
+in the same file.
+
+Whole corpus: **56 → 71** defect candidates, 80 → 65 exempt, 26 → 41 promoted.
+`--check-ledger` exit 0, zero `needs-agent`.
+
+## Item 2 DISSOLVES
+
+It was framed as a blanket "promote the pattern EXEMPT → COUNTED". The audit
+has no such switch: promotion is per-candidate via `adjudicatedGenuine`, which
+already accounts for 26 of the pre-existing defects. The only decision was the
+adjudication, and it is in #7341 with per-candidate evidence.
+
+## Item 3 is BIGGER than it looked
+
+A full-corpus `--review-ledger` run would delete **33** entries whose candidates
+no longer fire (spot-checked three — all genuinely repaired by `qou-9yt9` /
+`qou-ghy5`, so the deletions are correct) and reset **~20** more on file-sha
+drift, each needing re-adjudication. `--check-ledger` reads green on `main` only
+because nobody has re-run `--review-ledger` whole-corpus. Budget for ~20
+re-adjudications, not for a mechanical sweep.
+
+## Item 4 unchanged
+
+`qou-z9ws`'s 112-entry sizing is still a floor.
+
+## New, filed separately
+
+- `qou-vh1o` — the 13 candidates on the two OTHER exemption arms, still
+  invisible, with file:line list and the four steps to close.
+
+
+## Items 3 and 4 DONE (2026-09-14, commit 617677b8b8)
+
+### Item 3 — corpus-wide seeding
+
+Ledger **350 → 321**. `--check-ledger` exit 0 over all **108** candidates;
+re-run changes 0 entries; `--selftest-docstring-sorry` exit 0.
+Defects **71 → 72**, promoted **41 → 42**.
+
+**14 of the 18 `needs-agent` were NOT adjudication.** `file_sha` is a
+whole-file hash, so a verdict expires on any edit to its file, however far from
+the declaration. `scripts/lean-vacuity-ledger-reverify.py` compares the
+DECLARATION instead: **IDENTICAL=14, CHANGED=0, NOT-FOUND=0, UNADJUDICATED=4**
+across three categories. Those 14 were restored with a dated re-verification
+line, not re-decided.
+
+Its docstring carries the trap that made me use it rather than hand-read:
+*IDENTICAL means nothing without a prior verdict* — a past run reported a clean
+22/22 where 21 had never been adjudicated, so "21 of those greens were about
+nothing". It refused to restore the 4 below, correctly.
+
+**The 4 genuinely unadjudicated:** `volume_perturbation` **genuine** (field IS
+the conclusion; zero builders; the class docstring says "All fields are
+*inputs*" and then concedes the field was added "to repair the refutable
+encoding" — that repair made a refutable statement an assumed one);
+`ordering_extends` **advisory** (`P → P`, but a fully disclosed tombstone whose
+docstring opens by saying so and leaves the real claim open);
+`decoy_premise_irrelevant` **legit** (the detector flagged the file written to
+*prove* the detector's finding — `ProofHygiene/SelfAssumingContexts.lean`; the
+`True` in the witness IS the content); `proton_neutron_indistinguishable`
+**genuine** (`f 3 = f 3`, the exact `X = X := rfl` form rule 5 bans; fix is to
+take the counts as hypotheses).
+
+Side finding for the convention arc (`qou-961o` / `qou-cxjq`), not part of any
+verdict: `VolumePerturbationContext.z_def` is **convention C**
+(`1/(√q + 1/√q)` ≈ 0.4993), not canonical D (≈ 0.6127). Same sqrt-variable
+spelling in `wenzl-qmn-synergy.lean:116,134` and
+`QBetaPerBlockChiClosedForms.lean:1267`.
+
+### Item 4 — `qou-z9ws` re-sized, and its "112" is NOT what a fresh measurement returns
+
+🛑 **The current ledger yields 112 for a DIFFERENT population, and reporting
+that as confirmation would have been wrong.**
+
+- **`qou-z9ws`'s metric** is *"the 112 `genuine` `proof-no-self-assuming-projection`
+  entries"* — one category, `genuine` only. Its own record closes a drain at
+  **112 → 90**.
+- **Today that metric is 56**, of which **15 are this session's
+  `applied-field-projection` verdicts** — so it stood at **41** before this
+  tranche. The 90 → 41 movement is **not** explained by this session (only 1 of
+  my 33 deletions was in that category) and I did not measure its cause.
+- **The coincidental 112** is *all verdicts across the seven self-assuming
+  patterns*: `field-projection` 48, `applied-field-projection` 21,
+  `decoy-hypothesis` 17, `prop-universe-field` 13, `tuple-projection` 10,
+  `exact-field-projection` 3 — 85 genuine / 21 legit / 6 advisory.
+
+So the bean's headline number and a naive re-measurement agree numerically and
+disagree about everything else. Quote the metric with its scope, or a reader
+concludes nothing has moved when it has more than halved.
+
+### Bean stays `in-progress`
+
+All four items are done, but the work is unmerged: it rides #7341, which is
+parked on the owner for the 56 → 71 (now 72) decision.
+
+
+## MERGED — closing 2026-09-14
+
+#7341 merged as `e5327d0d5b337d51d13c276d3b5bbfbd9e49e4d6` (rebase-merge, 8/8
+commits replayed, branch preserved). All four items are on `main`; the
+"unmerged" reason for staying `in-progress` is discharged.
+
+The 13-candidate residue this tranche deliberately left is closed separately in
+`qou-vh1o` (landed 2026-09-14: 6 genuine / 6 advisory / 1 legit; audit witness
+70 -> 76 defects, exempt 64 -> 58, promoted 42 -> 48). Two author-call findings
+from that adjudication are tracked in `qou-hjf4` (the fitted
+`defaultQBetaCKClosedForms` instance) and `qou-klr1` (three fluid-dynamics
+propositions formalised twice, library copy vacuous).

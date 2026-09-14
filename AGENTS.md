@@ -586,6 +586,23 @@ user's last message, not the most recently mentioned file.
 > queues are **not** converted into beans. (Part of the qou side of
 > the Folio-Assistant Infrastructure Migration — the `miga` epic.)
 
+> **A bean is an APPEND-ONLY ledger, and concurrent appends collide on
+> essentially every landing (measured 2026-09-13).** `main` takes **169
+> commits / 24 h**; `.beans/qou-brng--…` is touched by **9** of them and
+> `.beans/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
+> goes un-mergeable roughly **every 2.7 h**. In the #7237 / #7245 /
+> #7251 / #7253 cluster, **four of the five collision surfaces were
+> these two files** — no content, no Lean, no compute — and `qou-brng`
+> conflicted three times in about forty minutes, twice while the
+> previous resolution was being committed. Clearing them ahead of merge
+> is not winnable by hand; resolve **at merge time** with
+> [`scripts/bean-append-merge.py`](scripts/bean-append-merge.py), which
+> keeps `main` byte-for-byte, appends the branch's note verbatim, takes
+> the later `updated_at`, and asserts `len(merged) == len(main) +
+> len(note)` so nothing is invented. It **refuses** (exit 2, markers left
+> intact) unless BOTH sides are pure appends — an edit to existing text
+> is a real conflict and stays a human's job.
+
 1. **Start a bean list at session start.** As soon as you have
    enough context (after reading the user's first request, the
    SessionStart hooks, and the current branch / PR state), create a
@@ -1210,19 +1227,106 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
-8a. **Draft → ready: SPACED RETRY ONLY. Never close-and-reopen a
-   PR to get past it** (owner ruling, 2026-09-05). Flipping a draft
-   PR to ready goes through GitHub's GraphQL API, which needs a
-   node-ID lookup, and that lookup is the thing being rate-limited
-   on this repo's shared token. So `mcp__github__update_pull_request`
-   with `draft: false` fails — often for hours — with
+8a. **Draft → ready: ONE REST CALL, and READ THE STATUS CODE — a 403
+   never clears, a 503 does. Never close-and-reopen a PR to get past
+   it** (owner ruling, 2026-09-05; diagnosis corrected 2026-09-13,
+   remedy measured 2026-09-14). Use
+
+       POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
+
+   It returns `200 {"draft": false}`. **On a `503` from that route, retry
+   spaced — it is a transient CCR-family outage and it does clear; measured
+   windows of ≥ 15 min. On the `403` from GraphQL, never retry — that one
+   is a hard block. The status code is the discriminator; see the box.**
+   `mcp__github__update_pull_request` with `draft: false` fails — often for
+   hours — with
 
        Failed to find pull request: API rate limit already exceeded
        for user ID 662242
 
    while every REST path (title, body, state, create, merge, and all
-   reads) keeps working. **Retry the same `draft: false` call, spaced
-   out — typically off a `send_later` check-in — until it lands.**
+   reads) keeps working.
+
+   > **🛑 THIS RULE PREVIOUSLY SAID "SPACED RETRY ONLY", AND THAT
+   > ADVICE COULD NEVER SUCCEED (corrected 2026-09-13).** It attributed
+   > the failure to a rate-limited **node-ID lookup**. Measured twice,
+   > independently: GraphQL is **403-BLOCKED session-wide from Claude
+   > Code**, not rate-limited, so there is no limiter draining and no
+   > wait to sit out. #7241 got the 403 while *supplying* the node_id
+   > from a prior REST read — the lookup skipped entirely — and a
+   > read-only `query { viewer { login } }`, which does no lookup at
+   > all, returns the same 403. The body says so in words:
+   >
+   > > *"GitHub GraphQL is not available from Claude Code sessions; use
+   > > the REST API. For review threads, auto-merge, and
+   > > draft/ready-for-review use the CCR routes on api.github.com"*
+   >
+   > **🛑 THE CCR ROUTE GOES DOWN IN WINDOWS, AND A 503 IS NOT A 403 —
+   > measured end-to-end on #7350, 2026-09-14.** This passage has been
+   > corrected three times in two days and the final shape is the useful
+   > one, so read the table rather than any one sentence:
+   >
+   > | time | `ccr/ready_for_review` | plain REST | GraphQL |
+   > |---|---|---|---|
+   > | #7230, 09-12 | **200** first try | — | — |
+   > | #7350, 06:30–06:45 | **503** × 6 over ~15 min | **200** | **403** |
+   > | #7350, 07:40 | **200**, flip succeeded | **200** | **403** |
+   >
+   > The middle row was briefly written up here as *"not dependable"* and
+   > *"sustained unavailability"*. **Both overstated it**: the route came
+   > back within the hour and the flip went through on the seventh attempt.
+   > What is true is narrower and more useful — the **CCR family** has
+   > outage windows of at least fifteen minutes during which **ordinary
+   > REST answers normally**, so a 503 there says nothing about the rest of
+   > the API.
+   >
+   > **So the two failure modes take OPPOSITE responses, and the original
+   > rule paired them the wrong way round:**
+   >
+   > - **`403` from GraphQL — never retry.** A hard session-wide block. It
+   >   was measured at every point above, an hour apart, including on a
+   >   query doing no node-ID lookup at all. Nothing drains; §8a's old
+   >   *"retry until it lands"* could never succeed.
+   > - **`503` from a CCR route — retry, spaced.** A transient outage that
+   >   clears. This is where spaced retry actually belongs.
+   >
+   > **Still worth doing anyway: open the PR non-draft in the first place**
+   > where the work is already verified. `create_pull_request` takes `draft`
+   > as a plain REST field and never touches either transport, so it cannot
+   > be caught by a window at all. And if you are holding a draft while the
+   > window is open, wait it out and say so; do **not** close-and-reopen,
+   > which remains forbidden.
+   >
+   > **`PATCH` is independently confirmed as a silent no-op.** Measured here
+   > with correct headers: `PATCH /pulls/7350 {"draft": false}` → **`200`**,
+   > and the authoritative re-read still says `draft: true`. (A first
+   > attempt returned `415` for want of `Content-Type: application/json` —
+   > a 415 is *your* bug, not evidence about the field.)
+   >
+   > That single fact explains what four prior sessions could not: the
+   > measured "windows" were ~2 h, ~4 h, ~4 h and ~10 h and never
+   > agreed, because nothing was draining. **An agent following the old
+   > wording waits forever**, and at least one armed a `send_later`
+   > check-in to do exactly that.
+   >
+   > **The 403 body names four more routes, and had been discarded
+   > unread across at least five sessions:**
+   >
+   >     GET  /repos/{owner}/{repo}/pulls/{n}/ccr/review_threads
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/comments/{id}/resolve   (or /unresolve)
+   >     PUT  /repos/{owner}/{repo}/pulls/{n}/ccr/auto_merge              (or DELETE)
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/convert_to_draft
+   >
+   > `ccr/review_threads` is worth as much as the draft flip: "review
+   > threads are GraphQL, therefore unreadable" has a direct REST answer
+   > too. **Read the body of a 403 before believing its status line.**
+   >
+   > Also measured: `PATCH /pulls/{n}` with `{"draft": false}` returns
+   > **200 and the re-read still says `draft: true`** — REST accepts the
+   > field and silently discards it. So a 200 there is not evidence
+   > either. Recorded in `.claude/agent-memory/merge-coordinator/`
+   > (PR #7241, merged 2026-09-13).
 
    **Do NOT close the draft and create a replacement PR for the same
    head.** It works, which is exactly why it keeps getting
@@ -1237,7 +1341,7 @@ ephemeral.
    independently forbid close-and-reopen; this ruling extends that to
    the undraft case, which those rules do not name.
 
-   **Two measured traps when retrying.**
+   **Two measured traps, which survive the correction above.**
 
    - **The error is not evidence the call did nothing.** A sibling
      session measured (2026-09-05) that `update_pull_request` calls
@@ -1246,9 +1350,9 @@ ephemeral.
      landed anyway** — only the draft flip was dropped. Always
      confirm with `pull_request_read` before re-sending a mutation,
      or you will write it twice.
-   - **Retry `draft: false` ALONE.** Bundling other fields makes the
-     partial-success case above harder to read, and none of them need
-     the limiter.
+   - **Send the flip ALONE, then re-READ.** Bundling other fields
+     makes the partial-success case above harder to read. This applies
+     to the `ccr/ready_for_review` route as much as to the old one.
 
    **The fix that avoids the problem entirely: open the PR non-draft
    in the first place** where the work is already verified.
@@ -2219,7 +2323,8 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > C-frame cross-check; the augmentation cell (+12.470 %) is the other
   > admissible point and is proportional to `z_D`'s
   > (`α = (q⁴+1)/(q²+1)²`). The c_k ladder is to be re-derived on the `z_D`
-  > base (`qou-cds1`, blocked on the phase `qou-pdix`); the dashboard rows
+  > base (`qou-cds1`) — 🛑 **but NOT because of the phase; see the scoping note
+  > at the end of this section**; the dashboard rows
   > Q_β / m_n / Δ_pn are NOT yet re-scored on it. Same day, the owner also
   > ruled that every canonical **braid word** is to be selected via γγ
   > (pair-production) construction + the confinement SDP at q₀, never by
@@ -2233,6 +2338,48 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > initiative — that picks the option. Full enumeration:
   > [`docs/audits/2026-09-05-qbeta-functional-decision-options.md`](docs/audits/2026-09-05-qbeta-functional-decision-options.md)
   > §6.
+  >
+  > **🛑 SCOPING NOTE (2026-09-14) — `qou-cds1` is NOT blocked on the phase
+  > `qou-pdix`, and this document said it was in two places.** Both sites now
+  > point here. The old reading is correct only for the **retired `z = 1`
+  > cell**; it did not survive the 2026-09-08 ruling that made `z_D` the base,
+  > and nothing re-checked it at the time.
+  >
+  > The ladder's N=2 factor is `F_N2(α) = cos(α − u/2)·(1 − u²)`, so
+  > `cos ≤ 1` caps it at `1 − u² = 0.99992745` **for every real α** — the
+  > supremum sits at `α = u/2` and is still below 1. What the ladder must
+  > supply is `F_required = Q_codata / Q_base`, and on the two bases the ruling
+  > actually selects that number is **above 1**:
+  >
+  > | base | `Q_base` (MeV) | `F_required` | vs the cap |
+  > |---|---|---|---|
+  > | `z = 1` (Form A) — **RETIRED** | 0.783645827375 | 0.998325241673 | reachable |
+  > | `z_D`, order-zero `E₀` — **RULED** | 0.444700408522 | **1.75923699418** | **excluded** |
+  > | `z = q` (augmentation) | 0.87989056126 | 0.889125812282 | reachable |
+  > | dashboard scored cell — **RULED** | 0.65185631006 | **1.20016236389** | **excluded** |
+  >
+  > **The two cells a cosine can reach are exactly the two the ruling does not
+  > select.** So no value of α unblocks `qou-cds1` on the ruled base, and an
+  > agent sent to derive α as *the* `Q_β` L2 blocker is working off the
+  > critical path. The live question is **what object supplies a factor above 1
+  > at all** — about the base or the assembly, not the phase.
+  >
+  > **`qou-pdix` is NOT retired and stays open** (§13a): α is still the
+  > ladder's N=1 phase and is still underived. Only its *priority* changes.
+  >
+  > Established twice, independently and sorry-free — PR #7355
+  > (`LadderFactorBound.lean`, 4 lemmas, 7/7 probe) and PR #7262
+  > (`EigenphaseQuantization.lean`, 19/19, base-independent table) — and
+  > verified rather than taken on trust in
+  > [`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1](docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md)
+  > (merged as #7276), which recomputed all four `F_required` at 70 dps and
+  > inspected the Lean for `sorry`. **That merged audit is the corpus artifact
+  > this note is derived from**; the two PRs are still open, so cite the audit,
+  > not them, when checking it.
+  >
+  > **The two beans do not carry this yet** — `qou-cds1`'s last entry is
+  > 2026-09-08 and `qou-pdix`'s 2026-09-12, both predating the result. Appended
+  > alongside this note.
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
@@ -2434,14 +2581,36 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   > two halves, and the paragraph above is about the *construction* half. The
   > scope of the *confinement SDP* half was put to the owner as a fork — does
   > it constrain only the 6 γγ core letters, or the whole word? — and the
-  > answer is **(B) whole element**: every Wedderburn projection of the full
-  > 11-letter word must be `Matrix.PosSemidef`.
+  > answer is **(B) whole element**.
+  >
+  > 🛑 **THE READING NAMED HERE WAS WRONG, AND IT WAS MINE (corrected
+  > 2026-09-14, bean `qou-99qc`).** This sentence read *"every Wedderburn
+  > projection of the full 11-letter word must be `Matrix.PosSemidef`"*. That
+  > is **reading 1**, and reading 1 is **parked**. The corpus enumerates three
+  > PSD readings — 1 literal `Matrix.PosSemidef`, 2 symmetric-part PSD, 3
+  > Frobenius positivity (`χ_λ(w) ≥ 0` on every block with `y_λ > 0`) — and
+  > the owner selected **3** on 2026-09-12: *"try PSD condfinement 3 for now,
+  > but keep 1 2 for later"* (bean `qou-ales`). The 2026-09-13 fork was
+  > explicitly about **reading 3's** scope — the probe states it as *"(A)
+  > reading 3 applies to the γγ-selected core only / (B) reading 3 applies to
+  > the whole 11-crossing word"* — so **(B) moved the letter scope and did not
+  > change the reading.** Live criterion: **reading 3, whole word.**
+  >
+  > **What that changes, and what it does not.** Under convention D
+  > `y_(1³) = 0` *by construction* — that vanishing **is** convention D
+  > (`markovWeights_eq_jones_of_threeRow_eq_zero`) — so reading 3 does **not**
+  > constrain the alternating block at all. Any exclusion resting on the
+  > `(1,1,1)` sign is a reading-**1** exclusion, not a live one.
   >
   > Measured, `nuc11_interleaved` fails on `(2,1)` and `(1,1,1)` for **both**
   > nucleons (proton block dets `1.38249446339` / `-1.02197249381` /
   > `-0.739223570776`; neutron `1.1221068216` / `-1.02197249381` /
-  > `-0.910762214553`). `(1,1,1)` is the alternating character and was already
-  > on record as a sign exclusion; the `(2,1)` failure is additional. **So the
+  > `-0.910762214553`). **Only the `(2,1)` failure binds** — `y_(2,1) =
+  > 0.2473 > 0` — and it binds for both nucleons, so **the element rejection
+  > STANDS on `(2,1)` alone** and nothing downstream of it moves. This
+  > paragraph previously called `(1,1,1)` an exclusion *"already on record"*
+  > with `(2,1)` *"additional"*, which inverts which of the two is doing the
+  > work. **So the
   > three L2 rows above are scored on an element the selection rule that is
   > supposed to produce it rejects** — do not quote them as though the element
   > were ruled-in, and do not read the 6-of-11 paragraph as an all-clear for
@@ -2461,8 +2630,11 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   2026-09-12, when item (iii) of the 2026-09-08 ruling was re-scored on owner
   authorisation (`qou-99qc`); that figure was convention-C on the retired
   `z = 1` cell. **Do not quote the new figure as convention D's accuracy** —
-  no ladder exists on an admissible base (`qou-cds1`, blocked on the phase
-  `qou-pdix`), and a second re-score is authorised for when one does
+  no ladder exists on an admissible base (`qou-cds1`; 🛑 the phase `qou-pdix`
+  is **not** what blocks it — see the 🛑 SCOPING NOTE (2026-09-14) at the end
+  of the Q_β ruling block in §"Canonical derivation chain", and
+  [`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1](docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md)),
+  and a second re-score is authorised for when one does
   (`qou-iagg`). Quote the witness, not this paragraph — the Habiro-exact 5.7 ppb result was against the
   pre-re-pin (muon-anchored) q₀ and has not been refreshed since the
   2026-05-28 proton-anchor re-pin
@@ -3001,16 +3173,16 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-three** rows (re-counted 2026-09-13), and the groups
+>   catalogues **forty-five** rows (re-counted 2026-09-14), and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
->   about conventions at all. **Rows 35-43 are NOT in this list**: 35 (the
+>   about conventions at all. **Rows 35-45 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
 >   39 (the freshness is on the wrong object), 40, which is the first row
 >   in the table whose failure runs the OTHER way — an over-matching grep that
 >   fails to a false **COVERED** rather than a false all-clear, so it ends the
 >   search instead of prolonging it — 41 (the query's character encoding), and
->   **42-43, which are one arc and the sharpest pair in the table**: 42 is the
+>   **42-44, which are one arc and the sharpest group in the table**: 42 is the
 >   body SHAPE of a self-assuming projection (an applied SINGLE field was
 >   unseen, so the case where the conclusion is universally quantified — the
 >   NORMAL case — was invisible by construction, 26 → 42 hits), and 43 is scan
@@ -3019,7 +3191,31 @@ Do not regress either.
 >   repeats of a repair the corpus had already made once: 42's fix exists one
 >   arity over as `APPLIED_TUPLE_PROJECTION`, and 43 is row 33 a second time on
 >   the same API, where the `--json` path refuses a partial scan and the ledger
->   path never got the rule:
+>   path never got the rule. **44 is the third**, and it is the one to
+>   internalise: the ledger seeds only candidates whose exemption text matches
+>   the literal `triage pending`, and a sibling emit site spells its reason
+>   `derivation pending` — so 34 candidates were exempted into silence rather
+>   than queued, while a code comment eight lines above the bug asserted they
+>   "still enter the review ledger". Rows 33, 43 and 44 are one lesson said
+>   three times: **a queue is only a queue on the paths that actually write to
+>   it, and an exemption is only a deferral if the thing it defers to can see
+>   it.** Do not read an empty ledger, or a clean `--check-ledger`, as evidence
+>   about the corpus.
+>
+>   **45** is the newest and is about an ALGEBRAIC signature rather than a
+>   spelling: `q**2 - 2*q - 1`, the factor identifying the retired Q_β base,
+>   is also written with the **absolute value pre-resolved**
+>   (`2*q + 1 - q**2`, legitimate since `q₀²−2q₀−1 < 0`, so no `abs()`
+>   appears) and in **Horner form** (`q*(q - 2) - 1`) — a 45 % undercount,
+>   29 → 42 files, the corrected set including `qbeta_ck_cache.py`, the
+>   canonical `c_k` producer. Its reusable half is a rule about AUDITS and it
+>   is row 44's twin from the other side: 44 is an exemption the queue cannot
+>   see, 45 is a **calibration check that certifies itself**. The audit's was
+>   a hardcoded `check(..., True, ...)`; replacing it with one that resolves
+>   known consumers to their actual bucket and FAILS on a miss is what exposed
+>   the blindness. **An audit that self-certifies its calibration cannot
+>   discover its own blind spot** — 29 would otherwise have shipped with a
+>   clean 3/3 beside it:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard

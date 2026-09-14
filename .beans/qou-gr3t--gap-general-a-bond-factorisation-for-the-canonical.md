@@ -89,3 +89,7 @@ Ocneanu trace. That pointer is stale — `qou-g8i1` is `completed` and is about 
 carrier is `qou-ejde` / PR #7274. Also, faithfulness on `H_∞(q)` is *refuted* at
 convention D (`conventionD_weight_eq_zero_iff_rowLens`); the attainable target is
 `H_∞(q)/rad` — bean `qou-phlk`.
+
+
+
+2026-09-13: PR #7265 (InteriorMarkov is a theorem of every braided tower; bond product on every braided tower) MERGED by the owner at 08:11Z, rebase, head f46577c373. Remaining item — the HeckeCoset.MarkovTraceFamily → OcneanuTrace.MarkovTrace bridge — is being built by a sibling on PR #7274 (qou-0fmb); coordination ask posted there: give the bridged trace a BraidedTower instance, then tr_bondWord_of_braided applies to the production trace with no further work. Bean stays OPEN until that instantiation exists.

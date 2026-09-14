@@ -1064,20 +1064,58 @@ function detectSelfAssuming(
   // the detector's own primary criterion, and the §3b deferral does not apply.
   // Recommendation 4 of `docs/audits/2026-08-09-honest-placeholder-criterion.md`.
   const nameGateMatched = !!field && CONCLUSION_FIELD.test(field);
-  // `applied-field-projection` is EXEMPT on landing for the same reason the
-  // applied-tuple and def-disguised patterns were: closing a coverage blindspot
-  // must not turn a `critical` gate red in the commit that discovers it. The 16
-  // it newly reaches still enter the review ledger, so `--check-ledger` demands
-  // an agent verdict on each. Promoting them to hard failures is a deliberate
-  // follow-up — issue #7329, bean `qou-metc` — not a side effect of this edit.
-  if (
-    (isDefProof && !nameGateMatched) ||
-    pat === "applied-tuple-projection" ||
-    pat === "applied-field-projection"
-  ) {
+  // NOTE the asymmetry between the two arms below: the first disjunct of the
+  // second arm respects `nameGateMatched`, and `applied-field-projection` does
+  // not. That is deliberate but narrow — the exemption is a LANDING
+  // concession, not a judgement, and ALL 21 hits it covers match
+  // `CONCLUSION_FIELD` (measured, not estimated — `claim_*` × 12, `*_holds`
+  // × 6, `exists_*`, `*_iff`, `*_eq`). Not 14, which is what this comment said
+  // before the names were run through the regex.
+  // Exempting them therefore swallows the detector's strongest signal, which is
+  // exactly what the 2026-08-09 narrowing above removed from the §3b carve-out.
+  // What makes it safe rather than a re-introduction is the ledger: they are
+  // seeded as `needs-agent`, and a `genuine` verdict promotes each one back to
+  // a counted defect. If that ledger route is ever removed, remove this
+  // exemption with it.
+  if (pat === "applied-field-projection") {
+    // EXEMPT on landing (#7332) so closing a coverage blindspot does not turn a
+    // `critical` gate red in the commit that discovers it — but the wording is
+    // load-bearing and #7332 got it wrong. `LEDGER_TRACKED_EXEMPT` keys on the
+    // literal "triage pending"; the shared reason string USED TO say
+    // "derivation pending", so every hit taking that arm was dropped at the
+    // ledger-seeding site and never reached an agent. #7332's own comment
+    // asserted the opposite — "the 16 it newly reaches still enter the review
+    // ledger" — and measured, 0 of them did, and the population is 21 rather
+    // than 16. Fixed for this arm in #7341 and for the arm below in the
+    // follow-up (bean `qou-vh1o`); both now emit "triage pending".
+    // "triage pending" here puts them in the ledger as `needs-agent`; an agent
+    // `genuine` verdict then promotes that ONE candidate to a counted defect
+    // (the `adjudicatedGenuine` path), which is the designed per-candidate
+    // route rather than a blanket promotion.
     const h = mk(d, "proof-no-self-assuming-projection", pat, true);
     h.exempt_reason =
-      "canonical §3b placeholder projection (tracked; derivation pending)";
+      "canonical §3b placeholder projection (tracked; triage pending)";
+    return h;
+  }
+  if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
+    // The last arm on the "derivation pending" wording, CLOSED here (bean
+    // `qou-vh1o`, follow-up to #7341). Both arms now emit "triage pending", so
+    // `LEDGER_TRACKED_EXEMPT` reaches every exempted self-assuming candidate
+    // and none is exempted into silence. The 13 this seeds — 6
+    // `applied-tuple-projection` and 7 `tuple-projection` arriving as `def`
+    // proofs — were adjudicated before the wording moved, so the seeding turns
+    // up no unadjudicated queue: 6 genuine, 6 advisory, 1 legit.
+    //
+    // They are NOT the applied-field tranche's defect class. Four shapes:
+    // an ANTECEDENT-ASSERTING context (a free `Prop` field, a field asserting
+    // it, and `impl_* : P -> conclusion`, with the theorem doing modus ponens
+    // — the class supplies both premises); a conjunction of the class's own
+    // fields; an accessor on an EXPLICIT structure argument, which is ordinary
+    // mathematics and not a projection defect; and one instance of the correct
+    // §3b-cond pattern.
+    const h = mk(d, "proof-no-self-assuming-projection", pat, true);
+    h.exempt_reason =
+      "canonical §3b placeholder projection (tracked; triage pending)";
     return h;
   }
   // Precision: exempt a two-field tuple-projection that derives a top-level

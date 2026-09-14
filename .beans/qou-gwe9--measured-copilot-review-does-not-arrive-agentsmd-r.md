@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-09-13T06:49:45Z
+updated_at: 2026-09-14T11:33:38Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -1009,3 +1009,40 @@ as evidence.
 **Practical consequence, unchanged:** do not block a merge on a Copilot review,
 and do not re-request on every wake. One request per PR, then proceed on the
 agent-owned verification gate.
+
+
+## Fresh data point, 2026-09-14 — two explicit requests, zero reviews, on a repo where reviews DID work on 2026-08-30
+
+This bean was reopened because `qou#6122` (~3 min) and `folio-assistant#153` (~4 min) showed
+reviews arriving. Today's measurement is the other outcome, on the same repo, and it is a
+clean controlled pair rather than a background scan.
+
+| PR | requested | observed | elapsed | reviews |
+|---|---|---|---|---|
+| `qou#7360` | 2026-09-14 ~08:40Z | 08:54Z, 09:29Z, 10:27Z | **1 h 47 m** | **0** |
+| `qou#7360` (2nd) | 2026-09-14 10:27Z | 11:28Z | **1 h 01 m** | **0** |
+
+Siblings `#7357` and `#7359`, never requested, also show **0** — so the zero is not specific
+to the requested PR.
+
+**What this does and does not discriminate.** AGENTS.md records the mechanism as UNSETTLED
+with three candidates. This pair rules out one framing only: *"it works now, the 2026-08
+zeros were historical."* It does not separate quota-refusal-at-request-time from
+per-repo/per-account gating, because `request_copilot_review` returns **no output on
+success or refusal alike** — there is no observable difference between "queued" and
+"refused" at the call site.
+
+**The signal AGENTS.md warns about held.** `get_check_runs` reports `total_count: 0`
+throughout, exactly as it does when a review *is* coming, so it discriminated nothing here
+either. Do not read it as "no review is coming" — and do not read it as the opposite.
+
+**The 3-4 minute figure is the useful operational rule.** On the two 2026-08-30 successes a
+review landed in 3-4 min. Here, nothing at 14 min, 49 min, 1 h 47 m, or 1 h 01 m. So
+**a review that has not arrived within ~10 minutes is not coming**, and further waiting or
+re-requesting is spend with no return. Two requests is the cap I applied; a third would have
+been superstition.
+
+**Consequence for rule 10 Phase-4, stated plainly:** on `qou#7357`/`#7359`/`#7360` there is
+**no external review gate at all** — CI is dispatch-only, Gemini is sunset, Copilot did not
+respond to two requests. The agent's own verification tabled in each PR body is not the last
+gate standing, it is the only one, which is what AGENTS.md's corrected text already says.
