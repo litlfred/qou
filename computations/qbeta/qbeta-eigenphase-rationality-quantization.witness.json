@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T20:31:11.685100+00:00",
-  "commitSha": "1de507f9ab6bd037dcbc8a963c84491275f67008",
+  "computedAt": "2026-09-14T20:41:05.096533+00:00",
+  "commitSha": "b6a60939fd8d36597cfbf86aba4a1c10860dbdec",
   "assertions": [
     {
       "name": "1. det rho(sigma_i) = -1 identically",
@@ -87,14 +87,20 @@
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
+    },
+    {
+      "name": "15. the near-2pi landing is a one-cell coincidence - priced, not a lead",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
     }
   ],
   "allPassed": true,
   "durationMs": 3,
   "computation": "qbeta-eigenphase-rationality-quantization",
   "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
-  "scriptHash": "391859a6b6f0",
-  "scriptCommitSha": "5f37b2f68334c5e8a676062f62b35168c6f8711e",
+  "scriptHash": "8064391f927b",
+  "scriptCommitSha": "1f4f6a9207f138203739bad5dec3095d8547b8bc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

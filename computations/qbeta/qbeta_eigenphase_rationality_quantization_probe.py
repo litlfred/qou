@@ -461,7 +461,8 @@ def main() -> int:
           f"(rel 9.6e-5, ~55 alpha_req windows) - RECORDED so a later reader "
           f"does not read it as new; it is not a candidate and chasing a c "
           f"that fits would be selection against the target. Nothing here is "
-          f"proposed.")
+          f"proposed. ASSERTION 15 PRICES THAT LANDING and finds it cheap - "
+          f"read it before treating this line as a lead.")
 
     # The other admissible cell, for the record.
     Q_aug = mp.mpf("0.8798906")   # z = q augmentation cell (AGENTS.md)
@@ -474,11 +475,79 @@ def main() -> int:
           f"RECORDED ONLY - z_D is the owner-ruled cell and nothing here "
           f"proposes changing it.")
 
+    # ---- assertion 15: PRICE the 2*pi landing rather than leaving it noted --
+    # Assertion 13 RECORDS that arccosh(required)/hbar_q lands ~9.6e-5 from
+    # 2*pi and refuses to treat it as a candidate. That refusal was right and
+    # was unpriced: "recorded, not proposed" leaves the next reader to decide
+    # how impressed to be. Two measurements settle it, and both say "not much".
+    _hb = hbar
+    _cell_ratios = {}
+    for _name, _pct, _adm in CELLS:
+        _f = 1 / (1 + _pct / 100)
+        if _f > 1:
+            _cell_ratios[_name] = mp.acosh(_f) / _hb
+    _vals = list(_cell_ratios.values())
+    _spread = (max(_vals) - min(_vals)) / min(_vals)
+
+    # Look-elsewhere: a FIXED grid, fixed before any result was inspected.
+    _divs = {"ln q": lnq, "h": hh, "hbar_q": _hb, "u": u_p, "q-1": q_p - 1,
+             "q": q_p, "h^2": hh ** 2, "hbar_q^2": _hb ** 2, "1": mp.mpf(1)}
+    _targs = {"pi": mp.pi, "2pi": 2 * mp.pi, "pi/2": mp.pi / 2,
+              "pi/3": mp.pi / 3, "3pi": 3 * mp.pi, "e": mp.e, "2e": 2 * mp.e,
+              "sqrt2": mp.sqrt(2), "sqrt3": mp.sqrt(3), "sqrt5": mp.sqrt(5),
+              "1": mp.mpf(1), "2": mp.mpf(2), "3": mp.mpf(3), "4": mp.mpf(4),
+              "6": mp.mpf(6), "12": mp.mpf(12), "ln2": mp.log(2),
+              "phi": (1 + mp.sqrt(5)) / 2, "Vol41": 2 * mp.clsin(2, mp.pi / 3)}
+    _TOL = mp.mpf("1e-4")
+    _hits = {}
+    for _dn, _d in _divs.items():
+        for _tn, _t in _targs.items():
+            if abs(ac / _d - _t) / _t < _TOL:
+                # collapse algebraically identical hits: x/(k*d) ~ t/k is the
+                # SAME statement as x/d ~ t. Key on the VALUE of x/(d*t).
+                _hits.setdefault(mp.nstr(ac / (_d * _t), 12), (_dn, _tn))
+    _n_ind = len(_hits)
+    _expected = len(_divs) * len(_targs) * 2 * _TOL
+
+    print(f"\n  arccosh(required)/hbar_q across the cells needing a factor:")
+    for _n, _v in _cell_ratios.items():
+        print(f"    {_n:<44} {mp.nstr(_v, 10)}")
+    print(f"    spread across cells = {mp.nstr(_spread * 100, 6)} %")
+    print(f"    independent look-elsewhere hits at 1e-4 over "
+          f"{len(_divs)}x{len(_targs)} trials: {_n_ind} "
+          f"(expected {mp.nstr(_expected, 4)})")
+
+    check("15. the near-2*pi landing of assertion 13 is a ONE-CELL numerical "
+          "coincidence, not a structure - priced, and it does not survive",
+          _spread > 1 and _n_ind <= 1,
+          f"(a) CELL-DEPENDENCE: arccosh(F)/hbar_q runs "
+          f"{mp.nstr(min(_vals), 8)} -> {mp.nstr(max(_vals), 8)} over the four "
+          f"cells that need a factor at all, a spread of "
+          f"{mp.nstr(_spread * 100, 5)} %. All four share the same q_0, so the "
+          f"ratio varies exactly as arccosh(F) does: the 2*pi lands on ONE "
+          f"value of F and on no structure. "
+          f"(b) LOOK-ELSEWHERE: {_n_ind} independent hit over "
+          f"{len(_divs) * len(_targs)} (divisor, target) trials at 1e-4 "
+          f"relative, against {mp.nstr(_expected, 4)} expected - about 1 in "
+          f"50, not 1 in 10000. The single-trial figure quoted in assertion 13 "
+          f"(9.6e-5) overstates it by ~50x. Note x/(2*hbar_q) ~ pi and "
+          f"x/hbar_q ~ 2*pi are the SAME statement; a grid carrying both "
+          f"double-counts, which this one collapses. "
+          f"(c) DECISIVE: F = Q_codata/Q_base is a ratio to an EXPERIMENTAL "
+          f"value, so any identity pinning arccosh(F)/hbar_q is a constraint "
+          f"on the MEASURED Q_beta, not a prediction, unless derived from the "
+          f"base independently - and per the 2026-09-13 ruling the scored "
+          f"element is REJECTED by the confinement-SDP selection rule, so "
+          f"F_live moves when the element is replaced. A coincidence attached "
+          f"to a number under revision is worth nothing. Scope-(a): this does "
+          f"NOT exclude a cosh structure, it prices THIS near-coincidence and "
+          f"finds it cheap.")
+
     print()
     if failures:
-        print(f"FAILED {len(failures)}/14: {', '.join(failures)}")
+        print(f"FAILED {len(failures)}/15: {', '.join(failures)}")
     else:
-        print("14/14 assertions hold.")
+        print("15/15 assertions hold.")
 
     print("""
 CONSEQUENCE
@@ -610,6 +679,7 @@ CONSEQUENCE
         "the 2026-08-22 cosh exclusion is base-dependent and is VOID under D",
         "no clean cosh closed form on offer - re-opening only, no candidate",
         "only the augmentation cell admits a bounded rung (recorded only)",
+        "the near-2pi landing is a one-cell coincidence - priced, not a lead",
     ], 1):
         wb.add_assertion(f"{i}. {nm}",
                          "FAIL" if nm in failures else "PASS", "PASS")
