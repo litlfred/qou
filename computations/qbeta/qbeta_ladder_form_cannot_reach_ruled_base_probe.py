@@ -86,7 +86,37 @@ DPS = 50
 
 # The dashboard's currently-scored Q_beta prediction, read from
 # computations/per-observable-100x-status.witness.json (row obs == "Q_beta").
-DASHBOARD_PRED_MEV = "0.651856310060"
+_EXPECTED_PREFIX = "0.651856310060"
+
+def _dashboard_qbeta_mev():
+    """Read the scored Q_beta cell from the dashboard witness, at FULL precision.
+
+    Hardcoding the 12-digit truncation silently loses ~5e-13 and, worse, goes
+    stale without saying so -- the exact defect this arc keeps documenting. The
+    witness carries 60 digits; reading it turns a staleness hazard into a
+    failing assertion. `_EXPECTED_PREFIX` is the value this probe's prose was
+    written against, so a dashboard move is LOUD rather than invisible.
+    """
+    import json
+    w = _COMP / "per-observable-100x-status.witness.json"
+    if not w.exists():
+        raise SystemExit(f"dashboard witness missing: {w}")
+    d = json.loads(w.read_text())
+    v = d.get("data", {}).get("qbeta_ruled_base", {}).get("Q_beta_MeV")
+    if v is None:
+        for r in d.get("data", {}).get("rows", []) or d.get("rows", []):
+            if r.get("obs") == "Q_beta":
+                v = r.get("pred_MeV")
+                break
+    if v is None:
+        raise SystemExit("dashboard witness carries no Q_beta cell")
+    if not str(v).startswith(_EXPECTED_PREFIX):
+        raise SystemExit(
+            f"DASHBOARD MOVED: witness Q_beta = {v}, this probe's prose was "
+            f"written against {_EXPECTED_PREFIX}. Re-read the prose before "
+            f"re-running -- do not just update the literal."
+        )
+    return str(v)
 
 RESULTS: list[dict] = []
 
@@ -121,7 +151,7 @@ def main() -> int:
     base_z1 = m_e * abs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)   # RETIRED
     base_zD = abs(h ** 2 / 2 - h * z_d) * E0                            # RULED
     base_aug = abs(h ** 2 / 2 - h * q) * E0
-    base_dash = mp.mpf(DASHBOARD_PRED_MEV)                              # RULED cell
+    base_dash = mp.mpf(_dashboard_qbeta_mev())                              # RULED cell
 
     # ---- the three phase cells, verbatim from the magnifier probe ----------
     CELLS = [

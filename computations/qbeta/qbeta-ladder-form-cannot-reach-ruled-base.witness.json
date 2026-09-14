@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-14T06:48:59.074426+00:00",
-  "commitSha": "66113d3d8627d54c04900efa1d98035242ec72ba",
+  "computedAt": "2026-09-14T08:29:15.525902+00:00",
+  "commitSha": "73062c49f82577ec99d9604934c7fd529107c743",
   "assertions": [
     {
       "name": "reproduces_cds1_F_table_on_the_retired_base",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 54,
   "computation": "qbeta-ladder-form-cannot-reach-ruled-base",
   "scriptFile": "qbeta_ladder_form_cannot_reach_ruled_base_probe.py",
-  "scriptHash": "c2ffc1a51a5a",
-  "scriptCommitSha": "66113d3d8627d54c04900efa1d98035242ec72ba",
+  "scriptHash": "1e646dcc4919",
+  "scriptCommitSha": "c51aab532ab8437ef213a1c080410b21b16d96a4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -117,8 +117,8 @@
     {
       "base": "dashboard scored cell",
       "note": "RULED (nuc11, tower E_0)",
-      "Q_base_MeV": "0.651856310059999999999999999999999999999999999999999788393285",
-      "F_required": "1.20016236389272700016731659771761817284079509735750179778007",
+      "Q_base_MeV": "0.651856310060337537759386764180716953854105083179664964351635",
+      "F_required": "1.20016236389210554401362656706148402208126813341393104771141",
       "exceeds_one": true
     }
   ],
