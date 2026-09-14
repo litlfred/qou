@@ -308,3 +308,43 @@ coincidence, not evidence the bug was harmless.
 
 So this bean's re-run half is down to **one** unexamined witness — and neither
 of the two examined ones turned out to carry a pre-fix GP number.
+
+## 2026-09-14 (residual answered) — 0 committed witnesses carry a pre-fix GP number
+
+The last candidate, `derived-chi-catalogue-matrix-m-mu-n-prototype`, was a
+**fourth** defect in my triage: `derived_chi_catalogue_matrix_m` is a stem
+**prefix** of `derived_chi_catalogue_matrix_m_mu_n`, so a bare substring match
+credited the shorter producer with the longer one's witness. Running the shorter
+producer is what exposed it — it writes `...-matrix-m-validation`, not
+`...-mu-n-prototype`. The real owner **does not mention a GP symbol at all**.
+Measured hazard: 1 of 30 GP-grep stems, and that one has three superstring
+siblings. Fixed with a word-boundary match.
+
+**The substring attribution failed in four distinct ways, every one found by
+RUNNING something rather than by reading the code:**
+
+1. prose-only mentions (16 of 30 producers),
+2. audit/catalogue witnesses (up to 2162 stems named),
+3. nondeterministic `next(...)` over a set (silently halved the set),
+4. stem-prefix collision.
+
+**Final disposition of this bean's re-run residual:**
+
+| candidate | disposition |
+|---|---|
+| `bridge-factor-omega` (2026-07-06) | re-ran **mathematically identical** |
+| `production-wire-demo` (2026-07-07) | moved — but the **braid word** changed grouped→interleaved (`qou-5c64`), not the kernel |
+| `matrix-m-mu-n-prototype` (2026-06-08) | misattributed; real producer never touches GP |
+
+**So no committed witness carries a pre-fix GP number**, and the "re-run of
+GP-witness consumers" half of the residual is answered. The wheel half was
+answered above (maturin runs here; reproducer passes).
+
+**What this does NOT close.** The bean's 2026-07-17 text sets a further
+milestone — *"the Geck–Pfeiffer 2000 §3.2 cuspidal-move reduction … OR routing
+every GP consumer to the seminormal kernel"* — and then reports the cyclic-shift
+completion landing and validating against the seminormal kernel on the H₁₂
+reproducer plus an n=4..8 random battery. Whether that **meets** the §3.2
+milestone or merely covers the tested range is a mathematical judgement about
+completeness, not something this session measured. Status left `in-progress` on
+that ground alone.
