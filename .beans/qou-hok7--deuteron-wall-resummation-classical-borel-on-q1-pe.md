@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-14T16:59:48Z
+updated_at: 2026-09-14T18:08:07Z
 ---
 
 
@@ -1706,5 +1706,92 @@ and is why the window had to be proved rather than walked.
 Artifacts: `computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py`
 (9/9, checks P8 and P9 are new), witness
 `rev-e-infinity-block-sup-relaxation.witness.json`.
+
+**Do not close this bean.**
+
+
+## 🛑 CORRECTION — G1's only recorded supporting evidence is an ARTIFACT (2026-09-14, PR #7349)
+
+The entry above says G1's evidence is *"measured EQUAL for `s ≤ 12`; top higher by 0.01982 at
+`s = 13`"*, and treats that second clause as a data point in G1's favour — the one place the
+inequality is strict, and strict in the right direction. **It is not a data point.**
+
+`Xbot` is tabulated by enumerating bottom profiles with a cap of `BMAX = 9` **rows**. Its
+maximisers are **flat and long** (entries 1–3, roughly one row per unit of `s`) where the top's
+are **steep and short** — at `s = 8` the top winner is `[3,2,1,1,1]` (5 rows) and the bottom
+winner is `[1,1,1,1,2,1,1]` (7 rows), *worth exactly the same to all 40 digits*. So the bottom
+class exhausts its row budget first, and from that point `Xbot` understates its own supremum.
+
+Vary the cap and the break point moves with it. At **every** setting the winner at the break
+uses **exactly `BMAX` rows**:
+
+| `BMAX` | `BUMAX` | equal through | breaks at | winner rows at break |
+|---|---|---|---|---|
+| 8 | 6 | `s = 11` | 12 | 8 = cap |
+| **9** | **3** | **`s = 12`** | **13** | **9 = cap** ← the committed row, the one quoted |
+| 10 | 3 | `s = 14` | 15 | 10 = cap |
+| 11 | 3 | **`s = 17`** | 18 | 11 = cap |
+
+**At `BMAX ≥ 10` the two tables are EXACTLY EQUAL at `s = 13`.** The 0.01982 does not exist.
+`BUMAX` is not the constraint: raising it 3 → 6 while dropping `BMAX` 9 → 8 made the agreement
+*shorter*, not longer.
+
+### A prediction of mine that was REFUTED
+
+From the first two rows I read off "break = `BMAX` + 4" and predicted 14 and 15 for `BMAX` 10
+and 11. **Both wrong** — 15 and 18. A two-point linear fit on a cap effect, which is exactly
+what this repo tells agents not to trust. What survives is only the qualitative claim, which all
+four settings support: the break is governed by `BMAX`, saturates it, and recedes as `BMAX`
+grows — but not by a fixed offset, because saturating the cap is **necessary and not sufficient**
+to lose the maximum (at `BMAX = 11` the winner reaches 11 rows at `s = 15` and equality survives
+to `s = 17`).
+
+### What this does and does not change
+
+- **G1 is NOT closed and NOT weakened.** Enumerating a larger class bounds `Xbot` from **below**,
+  and a lower bound can only ever *refute* `Xbot ≤ Xblock`, never prove it.
+- **Withdrawn**: the `s = 13` observation, as evidence in either direction.
+- **Strengthened**: exact agreement now runs through `s ≤ 17` rather than `s ≤ 12` — in exact
+  40-digit integer arithmetic, across two *different* evaluators (`ap_value` in the `k → ∞` AP
+  for the top; `delta_excess` on a finite `k = 320` staircase frame with a `P` extension for the
+  bottom) and two *unrelated* maximiser shapes. 11 of 12 maximiser pairs are not reverses of one
+  another, so whatever makes `Xbot = Xblock` it is **not** "read the block backwards".
+- `s ≤ 17` covers the certified join window's argmax `s_b = 8` comfortably; it does not cover the
+  whole window `s_b ≤ 27`.
+
+### Where the stale sentence still lives
+
+The quoted figure appears in #7335's E7, in three witness `description`s, in two probe headers,
+in this bean above, and in #7349's body. #7349's body is corrected. The rest are dated records of
+their own analyses and are left as such — the same decision as the `4.66e6` drain (`qou-3nva`).
+
+### Lean
+
+`QOU/BraidKnot/SupergradientCertificate.lean`, six sorry-free declarations (`propext /
+Classical.choice / Quot.sound` only):
+
+- `sup_le_of_supergradient` — the G2 certificate as a general theorem: a supergradient inequality
+  at `w` (what concavity supplies) plus confinement of any competitive `u` to a box (what the
+  coercivity bound supplies) gives an explicit bound on `F` **everywhere**, including outside the
+  box, where it is already below the incumbent.
+- `box_mul_sub_le` — its load-bearing step, the case split on `sign g`.
+- `boundary_charge_eq_zero` / `abs_charge_pos` — why that split is worth 2.25e11 rather than
+  being a refinement: a coordinate pinned to `lo` with `g < 0` contributes **exactly zero**,
+  where `|g|(hi − lo)` contributes strictly positively.
+- `capped_lt_not_sufficient` — the G1 point as a non-implication, with an explicit witness
+  (`0 ≤ 2`, `0 < 1`, `¬(2 ≤ 1)`): a capped maximum falling short of a bound implies nothing about
+  the true one.
+- `capped_gt_is_sufficient` — the direction that *is* valid: only **exceeding** a bound refutes.
+
+### What would actually settle G1
+
+An **upper** bound on `Xbot` of the kind #7349 built for `Xblock` — a per-row coercivity bound on
+the bottom edge's own evaluator, then a certificate. Or **bypass it**: the join needs a certified
+cut, not a pointwise inequality, so a certified bound on `Xbot` plus an honest enumeration of the
+bottom class inside that cut removes G1 from the argument rather than proving it. My judgement is
+that the bypass is the better target — it is the same machinery already built for the top edge,
+and it retires the conditionality instead of discharging it.
+
+Probe: `computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py` (5/5).
 
 **Do not close this bean.**
