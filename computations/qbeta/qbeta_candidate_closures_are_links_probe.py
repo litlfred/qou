@@ -226,7 +226,12 @@ CONSEQUENCE for bean qou-pzsi
 
     wb = WitnessBuilder("qbeta-candidate-closures-are-links")
     wb.set_description(
-        "Every scored Delta candidate closes to a 2-COMPONENT LINK on 3 strands, computed as "
+        "All 23 scored Delta candidates -- EXHAUSTIVE over the census's four "
+        "families: nuc9, nuc11_interleaved (the LIVE SCORED element), "
+        "nuc11_gen_grouped, all 16 readings of nuc11_constructed (8 quark-"
+        "generator assignments x 2 Hopf orientations, per qou-vtlj) and the four "
+        "two-crossing gluon dressings -- close to a 2-COMPONENT LINK on 3 "
+        "strands, computed as "
         "the cycle count of the word's underlying permutation in S_3 (exact "
         "integer arithmetic; no floats anywhere). NOT ONE is a knot. So "
         "Freedman-He-Wang Theorem B, which hypothesises 'a smooth prime (not a "

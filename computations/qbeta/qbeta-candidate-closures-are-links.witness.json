@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T18:46:39.893455+00:00",
-  "commitSha": "7e20600784bbc4b36e74e86a4fc8743d3ab1d6f5",
+  "computedAt": "2026-09-14T18:48:19.116140+00:00",
+  "commitSha": "b467c3048a3e0828034afbeb748783588a354b53",
   "assertions": [
     {
       "name": "1. every scored candidate closes to a 2-component link",
@@ -45,8 +45,8 @@
   "durationMs": 4,
   "computation": "qbeta-candidate-closures-are-links",
   "scriptFile": "qbeta_candidate_closures_are_links_probe.py",
-  "scriptHash": "01eaa3581e8d",
-  "scriptCommitSha": "6424ced6af6c539037ea5617cba64945c62a76a1",
+  "scriptHash": "1d6b09ed3648",
+  "scriptCommitSha": "b467c3048a3e0828034afbeb748783588a354b53",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,7 +67,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_candidate_closures_are_links_probe.py"
   },
-  "description": "Every scored Delta candidate closes to a 2-COMPONENT LINK on 3 strands, computed as the cycle count of the word's underlying permutation in S_3 (exact integer arithmetic; no floats anywhere). NOT ONE is a knot. So Freedman-He-Wang Theorem B, which hypothesises 'a smooth prime (not a connected sum) KNOT' and quantifies over a single closed curve, DOES NOT APPLY to any of them -- scope-(b), invariant = component count. This collapses route (1) of the qou-pzsi fork. It does NOT show that no minimiser exists: that is the Kusner-Sullivan CONJECTURE from numerical experiments, [KS97] is not held, and the held literature does not treat links at all -- scope-(a), NOT established.",
+  "description": "All 23 scored Delta candidates -- EXHAUSTIVE over the census's four families: nuc9, nuc11_interleaved (the LIVE SCORED element), nuc11_gen_grouped, all 16 readings of nuc11_constructed (8 quark-generator assignments x 2 Hopf orientations, per qou-vtlj) and the four two-crossing gluon dressings -- close to a 2-COMPONENT LINK on 3 strands, computed as the cycle count of the word's underlying permutation in S_3 (exact integer arithmetic; no floats anywhere). NOT ONE is a knot. So Freedman-He-Wang Theorem B, which hypothesises 'a smooth prime (not a connected sum) KNOT' and quantifies over a single closed curve, DOES NOT APPLY to any of them -- scope-(b), invariant = component count. This collapses route (1) of the qou-pzsi fork. It does NOT show that no minimiser exists: that is the Kusner-Sullivan CONJECTURE from numerical experiments, [KS97] is not held, and the held literature does not treat links at all -- scope-(a), NOT established.",
   "data": {
     "closures": {
       "nuc9": {
