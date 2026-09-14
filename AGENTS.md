@@ -3173,9 +3173,11 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-five** rows (re-counted 2026-09-14), and the groups
+>   catalogues **forty-seven** rows (re-counted 2026-09-14 — measure with
+>   `grep -cE '^\| [0-9]+ \|'`, and note a naive `^\| [0-9]` reads 49 because
+>   it also matches a second table's rows), and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
->   about conventions at all. **Rows 35-45 are NOT in this list**: 35 (the
+>   about conventions at all. **Rows 35-47 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
 >   39 (the freshness is on the wrong object), 40, which is the first row
@@ -3215,7 +3217,27 @@ Do not regress either.
 >   known consumers to their actual bucket and FAILS on a miss is what exposed
 >   the blindness. **An audit that self-certifies its calibration cannot
 >   discover its own blind spot** — 29 would otherwise have shipped with a
->   clean 3/3 beside it:
+>   clean 3/3 beside it.
+>
+>   **46-47** are the newest and are one pair: *what a clean float64 signal
+>   does NOT tell you.* **46** is the one to internalise, because it is a
+>   blind spot in GREP rather than in an audit — reviewing `mpf(str(Q))` /
+>   `mpf(Q)` by pattern, where `Q` is assumed to be the float64
+>   `q_parameter.Q`. **`from q_parameter import Q_MP as Q` rebinds that
+>   name**, so byte-identical call text is a float64 cap in one file and a
+>   harmless decimal round-trip in another: measured, 3 of 8 casimir sites
+>   were never caps, and the round-trip loss is **4.406e-70** against a cap's
+>   **2.725e-17**. `f64_into_mpmath_audit.py` gets this RIGHT — it tracks the
+>   import `asname` — and I was one step from filing a blind spot against a
+>   `completed` bean (`qou-tj98`) and the ledger resting on its tier exiting
+>   0. **The audit reads bindings; grep reads spellings.** **47** is the
+>   corollary on the other gate: the **raw-float64 ratchet is evidence about
+>   the RECORDED value, never about the computation** —
+>   `casimir-macdonald-probe` read **0** on it while its producer computed
+>   every value from a double, and fixing that moved 183 of 405 fields.
+>   Corollary for ranking: its baseline says 196 and its live count was 0, so
+>   **rank off disk, never off the baseline**, which never moves down by
+>   design. Beans `qou-lz8f` / `qou-840k`, PR #7318:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard
