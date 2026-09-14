@@ -306,10 +306,31 @@ def section5() -> None:
 
 
 def section5b() -> None:
-    """Defect #4's OTHER half: the cheat sheet understates its own carrier."""
-    print("\n=== 5b. 🛑 the cheat sheet disagrees with its own step-7 carriers ===\n")
+    """Defect #4's OTHER half -- FIXED 2026-09-14 on owner instruction.
+
+    🛑 A DETECTOR TRAP LIVES HERE, and the first version of this section fell
+    into it.  The fix WRITES A CORRECTION NOTE THAT QUOTES THE OLD WORDING, so
+    a naive `"collapses at $E_2$" in cheat` still matches -- the detector
+    cannot tell a RECORD of a defect from a LIVE one, and reported the defect
+    as present after it had been repaired.  That is the detector-blindness
+    class the corpus already catalogues 45 rows of.
+
+    The discriminator used below: count occurrences OUTSIDE the correction
+    note, and separately assert the note exists.  A quoted defect then reads
+    as history, which is what it is.
+    """
+    print("\n=== 5b. defect #4's other half — FIXED, and the detector trap it set ===\n")
     cheat = read(REPO / "docs" / "canonical-derivation-cheat-sheet.md")
     coll = read(PAPER / "mass-theory" / "spectral-sequence-collapse.md")
+
+    MARK = "🛑 Corrected 2026-09-14 on owner instruction"
+    # Strip the correction note (to end of its table cell) before counting.
+    if MARK in cheat:
+        i = cheat.index(MARK)
+        j = cheat.index("\n", i)
+        stripped = cheat[:i] + cheat[j:]
+    else:                                                    # pragma: no cover
+        stripped = cheat
 
     check(
         "collapses at $E_1$" in coll,
@@ -317,21 +338,29 @@ def section5b() -> None:
         "its own first line, and its Lean docstring agrees.",
     )
     check(
-        "collapses at $E_2$" in cheat or "collapse at $E_2$" in cheat
-        or "collapse at E_2" in cheat,
-        "🛑 but the cheat sheet says E_2 — in the §1 diagram AND the §2 table",
-        "E_1 collapse is STRICTLY STRONGER than E_2 collapse, so the document\n"
-        "UNDERSTATES the carrier it cites.  That direction is worth naming:\n"
-        "an understatement reads as a weaker result rather than as an error,\n"
-        "so nothing flags it.",
+        MARK in cheat,
+        "the cheat sheet now carries the correction note, with the history",
+        "E_1 collapse is STRICTLY STRONGER than E_2, so the row had been\n"
+        "UNDERSTATING its own carrier -- a direction that reads as a weaker\n"
+        "result rather than an error, so nothing flagged it.",
     )
     check(
-        "Filtration by Coxeter length" in cheat,
-        "🛑 and its step-7 row names the COXETER-LENGTH filtration",
-        "which is precisely the reading excluded at every n >= 2 by\n"
+        "collapse at E_2" not in stripped and "collapses at $E_2$" not in stripped,
+        "🛑 and OUTSIDE that note there is no E_2 left — §1 diagram and §2 table both fixed",
+        "counted with the correction note stripped, because the note QUOTES\n"
+        "the old wording and a naive substring test matches it.  That trap is\n"
+        "the reason this check is written this way.",
+    )
+    check(
+        "Filtration by Coxeter length" not in stripped,
+        "🛑 and the step-7 row no longer names the COXETER-LENGTH filtration",
+        "which is the reading excluded at every n >= 2 by\n"
         "`QOU.BraidKnot.shift_cannot_fill_a_gap` (sorry-free, 2026-08-26).\n"
-        "So the row names an excluded object as THE GB filtration — while the\n"
-        "carrier it cites in the same row names a different one (§6).",
+        "The row now names `J^•` and says which reading is open (§6).",
+    )
+    check(
+        "qou-sw8n" in cheat,
+        "and it points at the bean carrying the open question",
     )
 
 
