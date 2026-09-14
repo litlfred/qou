@@ -285,6 +285,119 @@ rank as a derived consequence of `χ = −6`.
 
 ---
 
+## Answering (1): is there a route to `g = 4` that does not already hold `SU(2)`?
+
+This was the walk's top-priority next question, because it is the one that would
+break the cycle above. The corpus offers **three** routes to `g = 4` / `χ = −6`.
+All three name `SU(2)` in their own first or last sentence, so **none of them
+breaks the cycle** — and the third, which looked most promising because its
+argument is combinatorial, turns out to state a criterion that its own genus
+does not meet.
+
+Measured in
+[`genus_completeness_rank_probe.py`](../../computations/audits/genus_completeness_rank_probe.py)
+(22/22, exact symbolic linear algebra over `ℚ(q)` — sympy `Symbol`/`Rational`
+throughout, no float anywhere, so no precision claim arises).
+
+### The three routes, each in its own words
+
+| route | block | where `SU(2)` enters |
+|---|---|---|
+| 1 | `chi-minus-six-chain.md` | **step 1**: *"We have `(𝐂, A, τ)` with gauge group `G = SU(2)`"* — assumed outright |
+| 2 | `cohomological-embedding.md` | closing line: *"the unique minimal environment that supports `SU₂` reconstruction"* |
+| 3 | `genus-from-hecke-completeness-proof.md` | first line: *"The braiding on `V₁^{⊗n}` in `Rep(SU_q(2))` gives `H_n(q)`"* |
+
+and `why-b3.md` supplies the return arrow — *"The Descartes condition `χ(A) = −6`
+forces the gauge group to be a quantum form of `SU(2)`"*. So all three genus
+routes sit **inside** the cycle rather than entering it from outside.
+
+Route 3 is not even formally independent of route 2: its manifest declares
+`uses: ["prop:cohomological-embedding"]`.
+
+### 🛑 Route 3's completeness criterion is not met at `g = 4`
+
+The proof's load-bearing sentence is:
+
+> *"At `g = 3`: 4 evaluations cannot span a 5-dimensional space (rank ≤ 4). At
+> `g = 4`: 6 evaluations span 5 irreps (verified numerically: the `6 × 5` matrix
+> has rank 5 for all `q > 1`, `q ≠` root of unity). Therefore `g_min = 4`."*
+
+and `vertex-algebra-relations.md` fixes what the matrix is:
+`M_ij = χ_{λ_j}(T_{(r_i, s_i)})` over the irreps `λ ⊢ r` of `H_2(q) ⊕ H_3(q)`.
+
+**`T_{r,s}` is the closure of a braid word on `r` strands**, so a row with
+`r_i = 2` has support only in the two `H_2` columns and a row with `r_i = 3`
+only in the three `H_3` columns. `M` is block-diagonal and rank is additive over
+the blocks. At `g = 4` there are four `r = 2` rows (≤ 2 columns ⟹ rank ≤ 2) and
+**two** `r = 3` rows (2 rows ⟹ rank ≤ 2):
+
+```
+rank(M) ≤ 2 + 2 = 4 < 5
+```
+
+This is structural — no `q`, no arithmetic. **No numerical verification at any
+`q` could have returned 5.** Confirmed by exact symbolic rank, and the block
+decomposition is measured rather than asserted (the `r = 2` rows' `H_3` entries
+and the `r = 3` rows' `H_2` entries are checked to be the zero submatrices).
+
+The full sweep is the decisive object:
+
+| `g` | knots | (`r=2`, `r=3`) | rank | target | met? |
+|---:|---:|:---:|---:|---:|:---:|
+| 1 | 1 | (1, 0) | 1 | 5 | no |
+| 2 | 2 | (2, 0) | 2 | 5 | no |
+| 3 | 4 | (3, 1) | 3 | 5 | no |
+| **4** | **6** | **(4, 2)** | **4** | **5** | **no** |
+| 5 | 7 | (5, 2) | 4 | 5 | no |
+| **6** | **9** | **(6, 3)** | **5** | **5** | **YES** |
+| 7 | 11 | (7, 4) | 5 | 5 | yes |
+
+Read three things off it.
+
+- **The criterion is not blind** — the rank climbs 3 → 4 across `g = 3 → 4`, so
+  the proof's *exclusion* of `g = 3` is correct on its own terms. Only the
+  *acceptance* at `g = 4` is wrong, and it is wrong **by one**.
+  *(I expected rank 4 at `g = 3` as well, i.e. that the criterion could not
+  discriminate at all. That was wrong and the table corrected it; recorded
+  because a negative claimed one way and true another way is worth more as the
+  correction than as the claim.)*
+- **`g = 5` adds nothing.** `T_{2,11}` is a fifth `r = 2` row against two `H_2`
+  columns. Only a third `r = 3` knot can move the rank, and `T_{3,7}` has
+  Seifert genus 6.
+- **Taken self-consistently the criterion gives `g_min = 6`, not 4** — and at
+  `g = 6` the proof's own restriction to `r ∈ {2,3}` lapses, because `T_{4,5}`
+  has genus 6, `H_4` enters, and the target moves from 5 to 10. **The criterion
+  has no fixed point at 4; pushed self-consistently it escalates.**
+
+Every other reading falls short too. Stabilising all six words into `H_3` gives
+a `6 × 3` matrix — rank ≤ 3 at any genus.
+
+**And "verified numerically" has nothing behind it.** No producer in
+`computations/` computes this matrix. (Two `computations/audits/*.witness.json`
+name the lemma; both are corpus-wide *inventories* that list every block in the
+tree — and one of them, `i1-no-probe-audit`, exists precisely to record which
+blocks have no probe, so its hit is evidence for this point, not against it.)
+The Lean carrier is declared `validation: "not_checked"`.
+
+### 🛑 What this is and is not
+
+**Scope (b), narrowly**, with a named invariant: rank subadditivity over a block
+decomposition. The claim is that **this route's stated criterion cannot be met at
+`g = 4`** — not at some `q`, at none.
+
+It is **not** a claim that the genus is not 4, and **not** a claim against Bring's
+surface. Routes 1 and 2 are untouched by it; `g = 4` may well be right, and route 2's
+`T_{2,3}`/`T_{2,9}`/`T_{2,11}` embeddability arithmetic is independently clean
+(1, 4, 5 against `g`, so `g ≥ 4` and `g < 5`). What is established is that route 3
+cannot serve as the independent confirmation its `uses`-free reading would make it,
+and that one sentence of it is false as written.
+
+**It is also not a fitting finding.** Nothing here was selected against a target;
+the criterion was taken exactly as the corpus states it and evaluated at every
+genus, including the ones that do not help.
+
+---
+
 ## Where the walk stands
 
 The chain's conditions do not accumulate step by step — they **converge on one**:
@@ -298,7 +411,25 @@ Everything to the right of `dim V = 2` is **derived and sorry-free**. Everything
 the left is a cycle with one leg undeclared. Step 10's `n_target` is the one
 *separate* open condition found.
 
-**Next**, in priority order: (1) whether `cohomological-embedding`'s route is
-genuinely independent of `SU(2)` — that is the question that would break the cycle;
-(2) the rank contradiction, which is a one-line fix someone should own; (3) steps
-7, 8, 9, 11, still unwalked.
+**(1) is now answered and the answer is no** — all three corpus routes to `g = 4`
+name `SU(2)` in their own first or last sentence, so **the cycle is not broken by
+anything currently in the corpus**, and one of the three states a criterion its own
+genus misses by one (§"Answering (1)" above).
+
+**Next**, in priority order:
+
+1. **The `g = 4` completeness sentence needs an owner decision.** It is false as
+   written and has no producer. Three dispositions, none taken here: re-scope it
+   to what the rank sweep shows (the criterion is first met at `g = 6`, which
+   does not support `g = 4`); restate the criterion so `g = 4` meets it (what
+   *should* the target dimension be, if the observables are Markov traces and
+   `y_(1³) = 0` makes one of the five directions unobservable?); or retire the
+   route, since it `uses` route 2 and is not independent anyway. This is a
+   judgement about what the argument was meant to say, which is the author's,
+   not mine.
+2. **The rank contradiction** (`why-b3` "rank 1" vs `descartes-knot-eigenbasis`
+   "rank 2") — still a one-line fix someone should own.
+3. **Steps 7, 8, 9, 11**, still unwalked.
+
+Note what (1) does *not* threaten: `g = 4` itself. Route 2's embeddability
+arithmetic is clean and independent of this defect.
