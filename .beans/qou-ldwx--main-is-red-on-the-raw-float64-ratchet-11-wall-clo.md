@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-13T14:35:27Z
-updated_at: 2026-09-13T16:18:07Z
+updated_at: 2026-09-14T08:05:17Z
 ---
 
 ---
@@ -42,3 +42,47 @@ iterating on it would collide.
 
 **Total inherited-red on the ratchet: 17 fields across 2 witnesses.** Any branch
 rebasing onto `main` now sees `NEW: 2`. Both are `qou-hok7`'s.
+
+
+## 2026-09-14 08:10 — count check #5: 4 → 1, and I OVERSTATED this bean's own finding
+
+**Correcting my own entry from three hours ago.** Check #4 recorded the count
+going 2 → 3 → 4 and called it *"the ordinary rate at which `main` adds
+raw-float64 fields that no producer-side fix catches"*. The last clause is
+wrong, and the evidence is main's next 80 commits.
+
+Measured on `origin/main` `8b7b663b566`:
+
+    NEW: 1   (was 4)
+      1  computations/audits/braid-encoding-audit.witness.json   main-identical
+
+All **three** `qou-hok7` entries are gone, and they were **drained at the
+producer, not baselined** — `dirty_now = 0` AND `in_baseline = None` for each,
+by `a6716329856` *"witness(qou-hok7): regenerate the three producers behind
+the corrections"*.
+
+**So the population CHURNS; it does not accumulate.** Entries arrive from
+ordinary `main` work and the owning arc drains them, here within ~14 hours.
+What this bean legitimately establishes is that **a NEW-count snapshot is
+not a backlog** — it is a rate measurement, and reading one as evidence of
+neglect (which check #4's wording invites) is wrong.
+
+Trajectory, complete:
+
+    2026-09-13 ~16:00   2 entries, 17 fields
+    2026-09-13 ~19:15   3 entries, 24 fields
+    2026-09-14 ~06:05   4 entries, 25 fields
+    2026-09-14 ~08:10   1 entry,   1 field    <- three drained at the producer
+
+**What this does NOT change:** every one of these was correctly identified as
+*not this branch's* and correctly left alone. The operational rule stands —
+verify byte-identity against `origin/main`, do not drain another branch's
+fresh output, record and move on.
+
+**Where the wrong framing reached:** check #4's text in this bean, and the
+commit message of `f024eebdd22` on
+`claude/raw-float64-drain-2026-09-13`, which repeats "the ordinary rate at
+which main adds raw-float64 fields that no producer-side fix catches". The
+commit is immutable; this entry is the correction of record. The PR body for
+#7318 says only that the entries are inherited and byte-identical, which is
+accurate and needs no change.
