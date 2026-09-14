@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T19:44:28Z
-updated_at: 2026-09-14T19:59:39Z
+updated_at: 2026-09-14T20:13:36Z
 ---
 
 ## 2026-09-14 — the measurement (probe 15/15, exact combinatorics, read-only)
@@ -169,3 +169,65 @@ monotone. `mass_at_3A_proper.py` records (measured 2026-09-07, bean
 monotone ⇒ `#T(2,k)` argument no longer applies. Two files on `main` give
 different groundings for the same identity; the identity survives on connected
 sums, the Lean file's stated reason does not.
+
+
+## 2026-09-14 — item C answered: the band reading does not DERIVE a layout, it removes the selector
+
+Owner picked C (measure bands first) + B (re-read γγ on bands) + fix the
+`MonotoneWord` docstring. C is done and it substantially collapses B.
+
+`computations/onedim/band_gamma_gamma_vertex_admits_everything_probe.py`, 11/11.
+
+**The band vertex, defined by keeping the Artin vertex's actual structure.**
+`GammaGammaWordSelection.vertex`'s own docstring says the vertex is *"one photon
+on strands `(i, i+1)` and one anti-photon on `(i+1, i+2)`"* — two crossings of
+opposite sign **sharing exactly one strand**. Keep that, drop adjacency:
+
+    band vertex = a_{ts} a_{t's'}^{-1}  with  |{s,t} ∩ {s',t'}| = 1
+
+Verified a strict generalisation, not a different object:
+`σᵢσᵢ₊₁⁻¹ = a_{i+1,i} a_{i+2,i+1}⁻¹` exactly (CHECK 3).
+
+**Measured:**
+
+| reading | A=2 | A=3 | A=4 |
+|---|---|---|---|
+| partitions | 10 | 280 | 15400 |
+| **Artin admits** | **1** | **1** | **1** |
+| **band admits** | **10** | **280** | **15400** |
+| band, with a triangle | 0 | 234 | 13969 |
+
+Every three strands `a < b < c` are the support of `a_{b,a} a_{c,b}⁻¹` (they
+share `b`) — verified on all C(9,3)=84 and C(12,3)=220 triples. **So the band
+reading imposes no layout constraint at all.**
+
+Also verified: every band generator has **writhe 1** (conjugate of a single
+crossing), so every band vertex has writhe **0** and **passes
+`writhe_eq_zero`** — the corpus's writhe test structurally cannot separate the
+two readings. And a non-adjacent band vertex is **not** a `GammaGammaWord`:
+`a_{2,0}a_{3,2}⁻¹` expands to sign pattern `(+,+,−,−)`, violating the inductive
+definition.
+
+**What this does to the question.** The fork is not "does the framework have a
+3-cell". It is **where the selection happens**:
+
+- *Artin*: the γγ half of `qou-ales` picks the LAYOUT uniquely (contiguous),
+  the confinement SDP then picks the WORD within it. No 3-cell.
+- *Band*: the γγ half is **vacuous as a layout selector**. Every layout is
+  admissible, 83.6 % / 90.7 % carry a triangle, and the whole burden falls on
+  the confinement SDP alone (reading 3, Frobenius positivity, owner ruling
+  2026-09-12).
+
+Adopting the band reading *because* it yields a 3-cell would be selection
+against the target — it yields one by yielding everything. **What would make it
+a derivation is running the confinement SDP over the enlarged candidate set.**
+`EnumeratorSelectionDegeneracy` counts **27** inter-nucleon band generators in
+`B₉` against the **2** an enumerator has searched, so that space is real and
+almost entirely unexplored. That is what B now means, and it is a compute task
+rather than a definitional one.
+
+Independently: a triangle does not by itself flip `b₃` — measured `b₃ < 0` on a
+triangle whenever all three bonds are repulsive
+(`single_letter_interface_forces_bond_product_probe.py` CHECK 6), and both
+derived bond families are repulsive. So the band reading reopens the
+**surface-holonomy** route to the extensive term, not the Mayer route.
