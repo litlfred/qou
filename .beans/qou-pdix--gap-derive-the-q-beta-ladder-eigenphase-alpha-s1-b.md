@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T20:42:09Z
+updated_at: 2026-09-14T20:58:00Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -3227,3 +3227,57 @@ nothing.
 structure — Part 4's re-opening of that route stands untouched. It prices
 **this** near-coincidence and finds it cheap, so a later agent does not spend a
 session on it. Assertion 13 now points here.
+
+
+## 2026-09-14 (session gifted-feynman, 5) — the Laurent-boundedness lemma is FORMALISED; the Kronecker step still is not
+
+Assertion 5 of the eigenphase probe — *"no word is bounded-but-not-constant"* —
+was a **paper step asserted numerically** over the sampled words, and it is the
+hinge of PART 1: the sibling exclusion probe closes the braid-image branch only
+against a **q-varying** ansatz, so a constant `α` walks straight through it.
+
+**`QOU.QBeta.LaurentBoundedness`** — 5 declarations, sorry-free, `lean`-direct
+exit 0 with `-DautoImplicit=false -s 65536`, `#print axioms` on all 5 =
+`[propext, Classical.choice, Quot.sound]`.
+
+**The argument is one asymptotic lemma applied twice, not two.** The `q → ∞`
+end is `degree_le_of_bounded_div_pow`, off Mathlib's
+`abs_div_tendsto_atTop_of_degree_gt`. The `q → 0⁺` end needs **no** second
+asymptotic argument, because
+
+    P(x) / x^m  =  (reflect m P)(1/x)        for x ≠ 0, given deg P ≤ m
+
+(`laurent_reflect`, from `Polynomial.eval₂_reflect_mul_pow` through
+`RingHom.id`) — the Laurent polynomial **is** an honest polynomial read at
+`1/x`, with no division on the right. `q ↦ 1/q` is a bijection of `(0,∞)`, so
+boundedness transports and the same lemma finishes it.
+`laurent_const_of_bounded` **names** the constant (`P.coeff m`) rather than
+asserting existence.
+
+**🛑 Scope — three things this does NOT do, all of them recorded in the file's
+own docstring so they cannot be misread later:**
+
+1. **The Kronecker step is still not formalised.** Assertion 8 read *"the Lean
+   twin of this step is NOT written"*; it now reads that the chain's **first
+   input** is written and that the step from bounded-hence-integer to
+   root-of-unity is not. Do **not** read the new file as closing assertion 8.
+2. **This is not L2 progress.** Part 3 already established the phase is off the
+   L2 critical path — the `Q_β` residual is a base/assembly problem. This
+   closes a named gap in an argument whose conclusion does not move L2, and
+   reporting it as L2 progress would be wrong.
+3. **No integrality claim.** Bounded ⟹ constant is here; constant ⟹ integer
+   runs through `σ⁻¹ = σ − (q − q⁻¹)I` and is a separate argument about the
+   Hecke presentation.
+
+**Container note, worth more than the lemma to the next agent.**
+`Mathlib.Analysis.Polynomial.Basic` and
+`Mathlib.Analysis.Asymptotics.SpecificAsymptotics` are **not** in the restored
+`lake-cache/qou-v4-24-0`; `scripts/lean-build-mathlib-gap-cone.py
+Mathlib.Analysis.Polynomial.Basic` builds both in **~5 s**. They land in the
+**paper** mathlib tree, which `scripts/lean-direct-env.sh` puts *after* the root
+tree — prepend it to `LEAN_PATH` or the import still will not resolve. Two
+failures this session were that path ordering, not the proof. A third was
+`Mathlib.Analysis.SpecialFunctions.Polynomials`, which **no longer exists** in
+this Mathlib: the gap-cone builder reports it as one missing module and then
+fails in 0 s because the *source* is absent. A 0-second failure from that script
+means a renamed module, not a build error.
