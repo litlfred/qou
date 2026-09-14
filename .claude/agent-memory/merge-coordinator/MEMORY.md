@@ -141,7 +141,11 @@ any `AskUserQuestion` as chat prose above the call; `multiSelect: true`, 🟡.
 ## STABLE — un-draft is ONE REST call; the rate-limit message is a LIE twice over
 
 **`POST /repos/litlfred/qou/pulls/<n>/ccr/ready_for_review` → `200 {"draft":
-false}`** — measured #7230 2026-09-12, **first try**, after `draft:false` returned
+false}`** — measured #7230 2026-09-12, first try; **but it also returns `503`
+"GitHub is temporarily unavailable" in outage windows — 81 min / 7 attempts on
+#7393 2026-09-14. A `503` HERE is the transient that DOES clear (retry spaced);
+the `403` below is the one that never does. Read the code, not the failure.**
+It fires after `draft:false` returned
 the usual *"rate limit already exceeded for user ID 662242"*. Two misdirections
 behind that message: `PATCH /pulls/<n> {"draft": false}` returns **200 with `draft`
 still true** (REST ignores the field, silently), and GraphQL is **403-BLOCKED
