@@ -1,23 +1,74 @@
 {
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
-  "computedAt": "2026-09-05T15:31:02.529445+00:00",
-  "commitSha": "e7511e3a01e09bc23e696b4e1c155df9c9cfc70d",
+  "engineVersion": "1.4.1",
+  "computedAt": "2026-09-14T08:14:03.770810+00:00",
+  "commitSha": "ff9d2d0ca6da8f506efb6db3e59ba10c8683a8b2",
   "assertions": [
     {
-      "name": "0_value_B_located",
-      "computed": "0",
+      "name": "1_three_distinct_values",
+      "computed": "1",
       "expected": "1",
-      "passed": false,
-      "detail": "could not locate value B in /workspace/qou/computations/qbeta/qbeta-h-frame-rungs.witness.json — the witness layout changed, or it has since been regenerated onto A"
+      "passed": true,
+      "detail": "3 distinct values at the anchor audit's own 14-char discrimination width (_MATCH_PREFIX), which is what it uses to tell muon from proton"
+    },
+    {
+      "name": "2_separations_exceed_L1_target",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "every pairwise separation exceeds the L1 compute target of 1 ppQ = 1e-15 relative = 1e-6 ppb, so this is not arithmetic noise"
+    },
+    {
+      "name": "3_separations_below_mu_p_tension",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "all three sit INSIDE the ~11.5 ppb muon-proton gap, so none of them is a mislabelled proton value — this is a muon-vs-muon discrepancy, a class the anchor vocabulary has no way to express"
+    },
+    {
+      "name": "4_B_is_the_reverted_derivation_value",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "B matches the number `_q0_value_for_anchor`'s docstring records as the WRONG side of the 2026-08-15 revert ('1.1099785955541805 stamped'). The revert fixed the code and left the data, so B survives on main."
+    },
+    {
+      "name": "5a_live_resolver_returns_C_not_A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "_q0_value_for_anchor('muon') derives from q_muon_at() since bean qou-tekx stage 3b, so it returns C. This probe bound its `A` to that call and therefore labelled C as A until 2026-09-14; the binding is now a literal and this assertion is what would catch the drift again."
+    },
+    {
+      "name": "5b_live_derivation_agrees_with_the_resolver",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "q_muon_at(60) and _q0_value_for_anchor('muon') are the two doors onto 'the muon pin'. bean qou-2361 recorded them DISAGREEING (code on C, anchor witness on A); they now agree, so that split is closed on the read path."
+    },
+    {
+      "name": "5c_A_matches_no_CODATA_vintage",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "inverting A gives m_mu/m_e = 206.7682829893151, which matches NEITHER published figure and sits strictly between them (5.17e-11 from 2018, 1.40e-9 from 2022). So 'A is just the old CODATA' is measurably FALSE — A is not reproducible from a published muon ratio at all."
+    },
+    {
+      "name": "5_C_is_not_B",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "q_muon_at() no longer returns what it returned when these witnesses were written — it derives over a CODATA input and drifts as that input updates, while A is frozen. Two moving targets, one fixed."
     }
   ],
-  "allPassed": false,
-  "durationMs": 7,
+  "allPassed": true,
+  "allPassedBasis": "assertions",
+  "durationMs": 1435,
+  "durationMsBaseline": "caller",
   "computation": "muon-pin-three-values",
   "scriptFile": "muon_pin_three_values_probe.py",
-  "scriptHash": "ba5f7a9c836a",
-  "scriptCommitSha": "27ac264f8de7a499860f71c707295f8c8e7838b6",
+  "scriptHash": "0feebcaa302f",
+  "scriptCommitSha": "ff9d2d0ca6da8f506efb6db3e59ba10c8683a8b2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +80,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -38,31 +92,90 @@
     "reproduce": "python3 -u computations/audits/muon_pin_three_values_probe.py"
   },
   "description": "Three distinct values are all called 'the muon q0' and differ at the 13th significant digit: the frozen canonical pin, the value left inside four probe witnesses by a code change that was reverted without regenerating them, and today's live q_muon_at() derivation, which has drifted again since. All three sit inside the 11.5 ppb muon-proton gap, so this is a muon-vs-muon discrepancy the anchor vocabulary cannot currently express.",
-  "computation_method": "Reads A from qou_substrate.witness._q0_value_for_anchor('muon') (the committed q-pinning witness), C from qou_substrate.constants.q_muon_at(60) (the live derivation), and B from the committed muon leg of qbeta-h-frame-rungs. All separations are exact-decimal mpmath at dps=80; no float64.",
+  "computation_method": "A, B and C are DEFINED, not discovered: B and C from the lepton-tower inversion q0 = 1/(1-sqrt(Vol(4_1)/(m_mu/m_e))) at CODATA 2018 and 2022, A as the literal it has to be because no published ratio reproduces it (assertion 5c). The two live doors — _q0_value_for_anchor('muon') and q_muon_at(60) — are then CHECKED against C rather than used as sources, which is the binding that silently broke. Survival counts are a live walk of the committed witnesses, replacing a hardcoded four-file inventory that had gone stale. Exact-decimal mpmath; no float64.",
   "audit_only": true,
   "tier": "empirical",
   "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+  "q0Value": "1.109978595557334700000000000000000000000000000000000",
   "q0AnchorReason": "Muon-layer throughout: every value compared is a muon q0 and the canonical muon pin is the reference. No proton quantity is read, so this is not a cross-anchor comparison and not a layer straddle.",
   "scope": "scope-(a) MEASUREMENT, not a ruling. Does not say which value is correct, changes no pin, wires nothing. Choosing between A and C is an owner/registry question about what the ideal CAL-2 muon pin means; regenerating the B-carrying witnesses is a separate migration.",
   "result": {
-    "A_canonical_pin": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-    "B_committed_in_probe_witnesses": null,
+    "A_canonical_pin": "1.109978595557334700000000000000000000000000000000000",
+    "B_committed_in_probe_witnesses": "1.109978595554180575281594079609509377993282279958686",
     "C_q_muon_at_live": "1.109978595642739046681795129380001752700065561029012",
-    "separations": {},
+    "separations": {
+      "B_minus_A_ppb": "-0.0028416086",
+      "C_minus_A_ppb": "0.076942337",
+      "C_minus_B_ppb": "0.079783945"
+    },
     "codata_reconstruction": {
       "vol_4_1": "2.029883212819307250042405",
       "q0_from_CODATA_2018": "1.10997859555418057528159407961",
       "q0_from_CODATA_2022": "1.10997859564273904668179512938",
-      "m_mu_over_m_e_implied_by_A": "206.7682827",
+      "m_mu_over_m_e_implied_by_A": "206.7682829893151",
       "note": "B = CODATA 2018, C = CODATA 2022 — the same inline derivation q0 = 1/(1-sqrt(Vol(4_1)/(m_mu/m_e))) at two vintages, with commit a4d9906659 (codata_2022_source.py) the step between. A matches no vintage."
     },
-    "B_carrying_witnesses": [
-      "qbeta-h-frame-rungs.witness.json",
-      "qbeta-c3-crossanchor-swing-provenance.witness.json",
-      "qbeta-h-vs-u-frame-stability.witness.json",
-      "qbeta-ladder-required-phase.witness.json"
-    ],
+    "survival_census": {
+      "A": 11,
+      "B": 256,
+      "C": 108
+    },
+    "survival_files": {
+      "A": [
+        "computations/_deprecated/alpha-high-precision.witness.json",
+        "computations/audits/muon-pin-three-values.witness.json",
+        "computations/casimir-xi-2-dig-deeper.witness.json",
+        "computations/markov-identity-symbolic.witness.json",
+        "computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.witness.json",
+        "qou-mass/src/qou_mass/data/_deprecated/ame-2020-binding-energies.witness.json",
+        "qou-mass/src/qou_mass/data/_deprecated/atomic-tr-m-mpfr-50dps.witness.json",
+        "qou-mass/src/qou_mass/data/_deprecated/q-pinning-50-digit.witness.json"
+      ],
+      "B": [
+        "computations/_deprecated/T5-categorical-attribution-candidates.witness.json",
+        "computations/_deprecated/V-222-projection-probe.witness.json",
+        "computations/_deprecated/a-minus-2-q-substrate-probe.witness.json",
+        "computations/_deprecated/alpha-blend-tower.witness.json",
+        "computations/_deprecated/alpha-em-correction-derivation-attempts.witness.json",
+        "computations/_deprecated/alpha-em-q9-q10-derivation.witness.json",
+        "computations/_deprecated/alpha-k-via-wenzl-bridge.witness.json",
+        "computations/_deprecated/alpha-lambda-mev-bridge-probe.witness.json",
+        "computations/_deprecated/atom-full-partition-3A.witness.json",
+        "computations/_deprecated/atom-level-wedderburn-tower.witness.json",
+        "computations/_deprecated/atom-mass-branching.witness.json",
+        "computations/_deprecated/atom-sdp-gluon-search.witness.json",
+        "computations/_deprecated/atom-wedderburn-blend.witness.json",
+        "computations/_deprecated/atomic-tr-m-wenzl-bridge.witness.json",
+        "computations/_deprecated/beta-decay-energy-scale.witness.json",
+        "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
+        "computations/_deprecated/beta-decay-residue-sum-h3-probe.witness.json",
+        "computations/_deprecated/binding-fast-pipeline.witness.json",
+        "computations/_deprecated/binding-from-level-walk.witness.json",
+        "computations/_deprecated/binding-full-content-pair.witness.json"
+      ],
+      "C": [
+        "computations/alpha-em-form-ladder.witness.json",
+        "computations/alpha/alpha_em_form_comparison_probe.witness.json",
+        "computations/atomic-tr-m-mpfr-50dps.witness.json",
+        "computations/audits/q0-anchor-consistency-audit.witness.json",
+        "computations/canonical-lepton-braid-words.witness.json",
+        "computations/canonical-tr-m-via-chi-cache-muon.witness.json",
+        "computations/chi-helium-3-h9-at-q0-50dps-muon.witness.json",
+        "computations/chi-helium-4-h12-at-q0-50dps-muon.witness.json",
+        "computations/chi-tritium-h9-at-q0-50dps-muon.witness.json",
+        "computations/cross-check-trM-1ppb.witness.json",
+        "computations/cross-check-trM-cw-seminormal.witness.json",
+        "computations/deltalambda/he4-binding-k-presentation-correction.witness.json",
+        "computations/deltalambda/he4-binding-k-stage2.witness.json",
+        "computations/deltalambda/he4-stage2-ranking-seminormal-xcheck.witness.json",
+        "computations/deltalambda/rho-k-h3a-residual-decomposition.witness.json",
+        "computations/descartes-n3-channel-separation.witness.json",
+        "computations/f-ell-derivation-via-per-braid-mass-tower.witness.json",
+        "computations/habiro-interpolation-wlambda.witness.json",
+        "computations/hadron-knot-table.witness.json",
+        "computations/lepton-tower-probe-1-cinquefoil-muon.witness.json"
+      ]
+    },
     "verdict": "Three values, two of them moving. The 2026-08-15 revert of the derive-the-muon-branch change was complete in the code and incomplete in the data, and q_muon_at() has drifted again on top of that. Until it is ruled which of A and C a 'muon-anchored' quantity should use, a producer that calls q_muon_at() cannot be honestly stamped against the canonical pin -- the audit correctly reports Q0_FLIP, and stamping the constant instead would make its per-leg check a tautology."
   },
   "context": {
