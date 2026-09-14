@@ -88,7 +88,9 @@ Asserted -- each can genuinely fail:
   * each of the three lower brackets has trace zero;
   * `M` is an involution and exchanges the pp and nn dressings;
   * the stabilisation tie-in: `Delta_4 = (z + d2) * Delta_3` at exact rational sample
-    points, reproducing the merged `n = 4` closed form from this `n = 3` one.
+    points, reproducing the merged `n = 4` closed form from this `n = 3` one.  The
+    GENERAL statement is `interleaved_cross_term_dressed` (Lean, sorry-free); the sample
+    points here are a cross-check of the harness against it, not the evidence for it.
 
 **The dressing-dependence VERDICT is reported, not asserted.**  Asserting "d0 and d1 are
 absent" would be asserting the answer; the probe prints which symbols survive.
@@ -102,8 +104,6 @@ so this constrains a candidate route rather than correcting a computed observabl
 
 from __future__ import annotations
 
-import datetime
-import json
 import sys
 import time
 from pathlib import Path
@@ -116,6 +116,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 
 import _path_bridge as _bridge  # noqa: E402, F401
 import sympy as sp  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 
@@ -321,64 +322,122 @@ def main() -> int:
         "Delta_3 the n=3 dressed cross term measured above -- reproducing the merged "
         "closed form of dressed-interleaved-cross-term-charge-parity.witness.json "
         "from this n=3 one.  The n=4 charge dependence is the STABILISER's dressing "
-        "alone; the square's own two drop out.",
+        "alone; the square's own two drop out.  Lean (general, sorry-free): "
+        "QOU.MathlibExt.RevisitClass.interleaved_cross_term_dressed, via "
+        "tr_dressed_stab (a dressed letter peels linearly at every level of the tower).",
     )
 
-    # ---- witness -------------------------------------------------------------
-    passed = sum(1 for c in _CHECKS if c["passed"])
-    total = len(_CHECKS)
-    witness = {
-        "$schema": "https://litlfred.github.io/qou/schemas/witness.schema.json",
-        "name": "cyclic-square-cross-term-dressing-blind",
-        "description": (
-            "The minimal (n=3) cyclic-square cross term is independent of the dressings "
-            "d0, d1 on its own two alternating letters; the charge dependence of the n=4 "
-            "interleaved defect is the STABILISING letter's dressing alone."
-        ),
-        "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "bean": "qou-vwu3",
-        "scope": "(a) as a measurement; (b) as an exclusion of this word class",
-        "convention": "D (z = q^3/(q^2+1))",
-        "q0_pin": "none -- the n=3 result is exact in symbolic q; the n=4 tie-in uses "
-                  "exact rational sample points, not a physical anchor",
+    # ---- witness (canonical WitnessBuilder: engine / scriptFile / scriptHash /
+    # commitSha / precisionMetadata / environment are stamped for us, and no raw
+    # float reaches the JSON) --------------------------------------------------
+    b = WitnessBuilder(
+        name="cyclic-square-cross-term-dressing-blind",
+        _script_path=Path(__file__),
+        output_dir=_HERE,
+        start_time=_T0,
+    )
+    b.set_description(
+        "The minimal (n=3) cyclic-square cross term is INDEPENDENT of the dressings "
+        "d0, d1 on its own two alternating letters: tr(b0 b1 b0 b1) - tr(b0^2 b1^2) = "
+        "z^2 - h z - 1, the same value as for bare generators. Exact sympy over "
+        "Q(q, d0, d1), no floating point. The mechanism is the four-bracket "
+        "decomposition, whose three lower brackets are exactly the three revisits "
+        "RevisitClassCrossTerm.lean already proves cross-term-free. Consequence: a "
+        "cyclically braided triple contributes the identical cross term whatever "
+        "charges sit on its two alternating letters, so this word class cannot "
+        "distinguish pp from nn and is not a candidate carrier for a "
+        "charge-antisymmetric (EM / mirror) term. The n=4 defect's charge dependence "
+        "is therefore the STABILISING letter's dressing alone, which is the mechanism "
+        "behind the closed form (z + d2)(z^2 - h z - 1) that "
+        "dressed-interleaved-cross-term-charge-parity.witness.json measured without "
+        "one. Scope (a) as a measurement, (b) as an exclusion of this word class; "
+        "three strands is not a nucleus and the production atom word is sequential, "
+        "so no production number moves. The GENERAL statements are Lean theorems "
+        "(sorry-free); this probe is the concrete confirmation in one representation."
+    )
+    b.add_data("method", {
         "representation": "spin-1/2 V^{tensor n}, mu-weighted quantum trace / [2]^n",
         "arithmetic": "exact symbolic (sympy over Q(q, d0, d1)); no floating point",
-        "verdict": {
-            "Delta_3_factored": str(sp.factor(dressed)),
-            "free_symbols": free,
-            "d0_present": bool(d0_present),
-            "d1_present": bool(d1_present),
-            "reading": (
-                "the cyclic square's cross term is BLIND to the square's own dressings; "
-                "the word class cannot distinguish pp from nn and is not a candidate "
-                "carrier for a charge-antisymmetric term"
-            ),
+        "convention": "D (z = q^3/(q^2+1))",
+        "harness_provenance": ("route_rep verbatim from "
+                               "markov_trace_n4_interleaved_cross_term_probe, already "
+                               "cross-checked against the Ocneanu axioms"),
+    })
+    b.add_data("verdict", {
+        "Delta_3_factored": str(sp.factor(dressed)),
+        "free_symbols": free,
+        "d0_present": bool(d0_present),
+        "d1_present": bool(d1_present),
+        "reading": ("the cyclic square's cross term is BLIND to the square's own "
+                    "dressings; the word class cannot distinguish pp from nn and is "
+                    "not a candidate carrier for a charge-antisymmetric term"),
+    })
+    b.add_data("four_brackets", {
+        "identity": "(acac - a^2c^2) + t(aca - a^2c) + s(cac - ac^2) + st(ca - ac)",
+        "why_no_s2_t2_terms": ("each would multiply the SAME monomial in a, c in both "
+                               "words, so it cancels"),
+        "tr_bracket_t": str(tr_t),
+        "tr_bracket_s": str(tr_s),
+        "tr_bracket_st": str(tr_st),
+        "lean": {
+            "decomposition": "QOU.MathlibExt.RevisitClass.dressed_difference_expand",
+            "bracket_1": "QOU.MathlibExt.RevisitClass.cyclicSquare_cross_term",
+            "bracket_t": "QOU.MathlibExt.RevisitClass.oneStepRevisit_eq_monotone",
+            "bracket_s": "QOU.MathlibExt.RevisitClass.mirrorRevisit_eq_monotone",
+            "bracket_st": "QOU.MathlibExt.RevisitClass.tr_bondCommutator",
+            "theorem": "QOU.MathlibExt.RevisitClass.cyclicSquare_cross_term_dressed",
+            "axioms": "[propext, Classical.choice, Quot.sound] -- sorry-free",
         },
-        "four_brackets": {
-            "identity": "(acac - a^2c^2) + t(aca - a^2c) + s(cac - ac^2) + st(ca - ac)",
-            "tr_bracket_t": str(tr_t),
-            "tr_bracket_s": str(tr_s),
-            "tr_bracket_st": str(tr_st),
-            "lean": {
-                "decomposition": "QOU.MathlibExt.RevisitClass.dressed_difference_expand",
-                "bracket_1": "QOU.MathlibExt.RevisitClass.cyclicSquare_cross_term",
-                "bracket_t": "QOU.MathlibExt.RevisitClass.oneStepRevisit_eq_monotone",
-                "bracket_s": "QOU.MathlibExt.RevisitClass.mirrorRevisit_eq_monotone",
-                "bracket_st": "QOU.MathlibExt.RevisitClass.tr_bondCommutator",
-                "theorem": "QOU.MathlibExt.RevisitClass.cyclicSquare_cross_term_dressed",
-                "axioms": "[propext, Classical.choice, Quot.sound] -- sorry-free",
-            },
-        },
-        "bare_limit_control": str(sp.factor(bare)),
+    })
+    b.add_data("control", {
+        "bare_limit": str(sp.factor(bare)),
         "markov_defect_convD": str(sp.factor(defect)),
-        "stabilisation_tie_in": ties,
-        "assertions": _CHECKS,
-        "assertions_passed": passed,
-        "assertions_total": total,
-        "elapsed_seconds": round(time.monotonic() - _T0, 2),
-    }
-    out = _HERE / "cyclic-square-cross-term-dressing-blind.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+        "role": ("if the bare limit does not reproduce the convention-D Markov defect "
+                 "the harness is wrong and nothing else here is about the Hecke algebra"),
+    })
+    b.add_data("stabilisation_tie_in", {
+        "identity": "Delta_4 = (z + d2) * Delta_3 = (z + d2) * (z^2 - h z - 1)",
+        "method": ("exact rational sample points; the symbolic n=4 form is recorded in "
+                   "dressed-interleaved-cross-term-charge-parity.witness.json, and the "
+                   "GENERAL statement is the Lean theorem below, which is a proof rather "
+                   "than a sample"),
+        "lean": {
+            "theorem": "QOU.MathlibExt.RevisitClass.interleaved_cross_term_dressed",
+            "linear_peel": "QOU.MathlibExt.RevisitClass.tr_dressed_stab",
+            "axioms": "[propext, Classical.choice, Quot.sound] -- sorry-free",
+        },
+        "samples": ties,
+    })
+    b.add_data("scope", {
+        "measurement": "(a) -- one representation, three strands, not a nucleus",
+        "exclusion": ("(b) for this word class -- the exclusion rests on a proved "
+                      "bracket identity plus three proved vanishings, not on a "
+                      "numerical miss"),
+        "production_impact": ("none; the production atom word is sequential, so no "
+                              "production number moves"),
+        "free_parameters": 0,
+    })
+    for c in _CHECKS:
+        b.add_assertion(
+            name=c["name"],
+            computed="1" if c["passed"] else "0",
+            expected="1",
+            tolerance="0",
+            unit="bool",
+            source=c["detail"],
+        )
+
+    passed = sum(1 for c in _CHECKS if c["passed"])
+    total = len(_CHECKS)
+    out = b.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "reads no q0. The n=3 result is exact in a symbolic q over Q(q, d0, d1); "
+            "the n=4 tie-in evaluates at exact rational sample points chosen for "
+            "arithmetic convenience, not at any substrate pin. No q0Value exists, and "
+            "no number here would move if the anchor were re-pinned."
+        ),
+    })
     print(f"\nwitness -> {out}")
     print(f"{passed}/{total} assertions passed")
     return 0 if passed == total else 1
