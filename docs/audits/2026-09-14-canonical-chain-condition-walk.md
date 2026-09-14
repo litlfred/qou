@@ -470,6 +470,113 @@ arrow gives it — and that the corpus block already treats it correctly.
 
 ---
 
+## Step 11 — 🛑 the cheat sheet's hadronic `𝔈₀` inverts what step 11 derives
+
+The step table gives **two** forms for the energy scale at step 9:
+
+```
+step  9.  𝔈₀ = m_e/(q₀(q₀−1)) = m_e c_q² ℏ_q    (lept)
+          𝔈₀ = Q_β / |h(h−2)/2|                  (had)
+```
+
+and step 11 as `Q_β = |Δ(net(T_w))|·𝔈₀`, with `Δ(net) = h(h−2)/2 ≈ −0.1872071945`
+for the free neutron. Substituting the hadronic form:
+
+```
+Q_β  =  |h(h−2)/2| · ( Q_β / |h(h−2)/2| )  =  Q_β
+```
+
+**identically.** Read literally, **step 11 derives its own input.** This is
+AGENTS.md §"Derive-then-check" item 8 verbatim: *if it is true by unfolding, it
+is notation, not a derivation.*
+
+### The circularity is convention-independent
+
+Which is what makes it worth recording. Whichever functional `Δ(net)` turns out
+to be — the retired `z = 1` cell, the augmentation at `z = q`, or the **ruled**
+Markov trace at `z_D = q³/(q²+1)` (owner ruling 2026-09-08) — defining
+`𝔈₀ := Q_β/|Δ|` and then computing `Q_β := |Δ|·𝔈₀` is an identity. **The
+`qou-99qc` fork cannot repair it.** Demonstrated over exact rationals at four
+values of `Δ`, including one nine orders of magnitude from any physical scale.
+
+### What the hadronic form actually is
+
+At the proton pin:
+
+| | MeV | |
+|---|---:|---|
+| `𝔈₀` leptonic, `m_e/(q₀(q₀−1))` | 4.1859813633 | step 9 |
+| `𝔈₀` **tower-summed** | 4.2274833556 | **production** |
+| `𝔈₀` hadronic, `Q_β/|Δ|` | 4.1789708525 | cheat sheet |
+
+`𝔈₀^lept / 𝔈₀^had = 1.00167757` — a gap of **0.1678 %**, which *is* the famous
+"0.17 % vs CODATA" for `Q_β`. So the hadronic line is **that agreement written
+backwards**: not a second, independent determination of `𝔈₀`, but the first one
+with the residual divided out. And AGENTS.md **retires** that cell as the base
+(owner ruling 2026-09-08), so the line carries no content the corpus still
+stands behind.
+
+### Production does not do this
+
+The live producers carry a **closed substrate expression with no `Q_β` in it** —
+found in four `computations/qbeta/` files:
+
+```python
+E0 = M_E/(Q0*(Q0 - 1))/(1 - HBAR_Q**2)      # tower-summed, as ruled
+```
+
+So the defect is in the **primary coordination document, not the compute** —
+the same class as C10b above, but worse: C10b makes the chain look *more fitted*
+than it is, while this one makes a derivation step **vacuous**.
+
+With the production `𝔈₀`, `|Δ|·𝔈₀ = 0.7914152989` MeV against CODATA
+`0.7823334` — **+1.161 %**, a number that *can be wrong*, which the hadronic
+form's exact 0.00 % cannot.
+
+> 🛑 **Do not quote that +1.161 % as the framework's `Q_β` accuracy.** It is a
+> **mixed cell** — the old functional `Δ(net) = h(h−2)/2` against the new
+> tower-summed `𝔈₀`. The ruled cell is `ε` = the Markov trace at `z_D` on the
+> γγ-selected element, recorded in AGENTS.md at **−16.678 %** and itself scored
+> on an element the confinement SDP rejects (owner ruling 2026-09-13). Quote
+> the witness.
+
+[`step11_qbeta_e0_circularity_probe.py`](../../computations/audits/step11_qbeta_e0_circularity_probe.py),
+10/10, mpmath `dps = 60`, no float64.
+
+> **Two corrections inside this probe, both mine, both the error classes the
+> walk keeps finding.**
+>
+> 1. **I asserted bit-equality at `dps = 60` for an arbitrary `Δ`, and it
+>    failed** on `π/10` — correctly. Bit-equality is a claim about the
+>    *arithmetic*; the identity is *algebraic*, and holds bit-exactly for `dnet`
+>    only because that division round-trips. The demonstration now runs over
+>    exact rationals, which is the honest way to show an algebraic identity —
+>    asserting it in floating point would have been exactly what AGENTS.md names
+>    as reporting an arithmetic floor as exactness.
+> 2. **The precision gate caught a laundering defect in the probe itself.**
+>    `mpf(str(Q))` pushes a **float64** through a string into a 60-dps
+>    computation; `f64-into-mpmath` flagged it, and the fix is
+>    `mpf(Q_50_DIGIT_STR)`. The same pass found I had hardcoded `Q_β` as
+>    `0.7823334` from AGENTS.md prose when the live table carries
+>    `Q_NEUTRON_MEV = 0.7823334093099085` — 1.2e-8 relative away, which moved
+>    `𝔈₀^had` in its 9th digit (4.1789708027 → **4.1789708525**) and the gap
+>    from 0.167758 % to 0.167757 %. **The conclusions are untouched**; only
+>    these figures were wrong, and they are the figures quoted above.
+
+### 🛑 What this is and is not
+
+**Scope (b)** for the narrow claim, invariant = the algebraic identity
+`|Δ|·(X/|Δ|) = X` for `Δ ≠ 0`: the cheat sheet's hadronic `𝔈₀`, substituted into
+step 11, cannot produce a falsifiable `Q_β`.
+
+It is **not** a claim that `Q_β` is circular in the framework — production is
+not circular, and the measurement above is what establishes that. It is **not**
+a claim about which `Δ` is right (that is `qou-99qc`, an owner call). What is
+established is that **one line of the primary coordination document makes a
+derivation step vacuous**, and that the code it summarises does not.
+
+---
+
 ## Where the walk stands
 
 The chain's conditions do not accumulate step by step — they **converge on one**:
@@ -505,9 +612,16 @@ genus misses by one (§"Answering (1)" above).
    A wording fix to the primary coordination document, so the owner's, not
    mine. **Default if nothing is done:** the diagram keeps overstating a
    correspondence the block underneath it states correctly.
-3. **The rank contradiction** (`why-b3` "rank 1" vs `descartes-knot-eigenbasis`
+3. **The cheat sheet's hadronic `𝔈₀ = Q_β/|h(h−2)/2|`** makes step 11 vacuous
+   as written, and is the 0.17 % agreement inverted — a cell the corpus has
+   retired. Production is not circular. **Highest priority of the three
+   document fixes**, because a vacuous derivation step is worse than an
+   overstated correspondence. **Default if nothing is done:** an agent reading
+   step 9 + step 11 together concludes `Q_β` is derived when that reading
+   derives nothing.
+4. **The rank contradiction** (`why-b3` "rank 1" vs `descartes-knot-eigenbasis`
    "rank 2") — still a one-line fix someone should own.
-4. **Steps 7, 8, 9, 11**, still unwalked.
+5. **Steps 7, 8, 9 (the leptonic leg)**, still unwalked.
 
 Note what (1) does *not* threaten: `g = 4` itself. Route 2's embeddability
 arithmetic is clean and independent of this defect.
