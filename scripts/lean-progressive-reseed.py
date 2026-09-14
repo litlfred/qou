@@ -77,6 +77,33 @@ def census():
     return oleans, dirty, changed, never, by
 
 
+def pull_in(prefix: str, exact: bool, dirty, imports, untrusted) -> set:
+    """The modules a chunk will ACTUALLY compile, by the sweep's own rule.
+
+    `lean-library-sweep.py` seeds on the selection and then transitively pulls
+    in every *untrusted* import across namespaces, because a dependency the
+    snapshot cannot vouch for would otherwise be a guaranteed spurious RED.
+    Sizing a chunk by its own module count therefore understates it, and for
+    the LIBRARY ROOT it understates it catastrophically: `QOU` imports the whole
+    library, so its pull-in is the entire dirty closure.
+
+    MEASURED: the root chunk was estimated at ~1 MB and was compiling
+    `QOU.Mathlib.HeckeAlgebra` at 3.4 GB RSS with the shadow back at 2.4 GB when
+    it was killed.  That is the SECOND time this driver blew up on the root
+    chunk -- the first was `--only` being a prefix, fixed by `--only-exact`, and
+    fixing it exposed this one underneath.  A guard that counts the wrong set is
+    not a weaker guard, it is a guard pointed at the wrong question.
+    """
+    seeds = {m for m in dirty if (m == prefix if exact else m.startswith(prefix))}
+    need, stack = set(seeds), list(seeds)
+    while stack:
+        for d in imports[stack.pop()]:
+            if d in untrusted and d not in need:
+                need.add(d)
+                stack.append(d)
+    return need
+
+
 def install(shadow: pathlib.Path, real: pathlib.Path) -> tuple[int, int, float]:
     """Copy shadow oleans that were REBUILT (hardlink broken) or are NEW.
 
@@ -157,7 +184,7 @@ def main() -> int:
     args = ap.parse_args()
 
     oleans, dirty, changed, never, by = census()
-    exact_names = {p for p in by if p in dirty}   # a chunk that IS a module
+    deferred: list[str] = []
     print(f"olean tree: {oleans}")
     print(f"dirty closure {len(dirty)}  (changed {len(changed)}, never-built {len(never)})")
     if args.list:
@@ -172,26 +199,61 @@ def main() -> int:
 
     rc = 0
     for i, p in enumerate(todo, 1):
+        # Recompute before every chunk, not once up front.  Earlier chunks make
+        # their modules trusted, which SHRINKS later chunks' pull-in -- the
+        # library root in particular goes from "the whole dirty closure" to
+        # nearly nothing once its dependencies are fresh.  A single up-front
+        # sizing would refuse it forever.
+        m = _sweep_module()
+        oleans = m.find_oleans()
+        mod2path, imports = m.load_graph()
+        dirty, changed, never, untrusted = m.dirty_closure(mod2path, imports, oleans)
+        exact = p in dirty
+        need = pull_in(p, exact, dirty, imports, untrusted)
+        if not need:
+            print(f"[{i}/{len(todo)}] {p}  already clean, skipping")
+            continue
+        est = len(need) * 1.2
+        if est > free_mb() - args.min_free_mb:
+            print(f"[{i}/{len(todo)}] {p}  DEFER: pull-in {len(need)} modules "
+                  f"~{est:.0f} MB, {free_mb():.0f} MB free (reserve "
+                  f"{args.min_free_mb}) -- retry after other chunks shrink it")
+            deferred.append(p)
+            continue
         if free_mb() < args.min_free_mb:
             print(f"STOP before {p}: free {free_mb():.0f} MB < --min-free-mb "
                   f"{args.min_free_mb}")
             return 2
-        n = by.get(p, 0)
-        exact = p in exact_names
-        # ~1.2 MB per rebuilt olean, measured on this corpus (the sweep's own
-        # docstring says 0.22 MB and is low by ~5x).  Refuse a chunk that
-        # cannot fit rather than discovering it mid-build.
-        est = n * 1.2
-        if not exact and est > free_mb() - args.min_free_mb:
-            print(f"[{i}/{len(todo)}] {p}  SKIP: ~{est:.0f} MB needed, "
-                  f"{free_mb():.0f} MB free (reserve {args.min_free_mb}) -- "
-                  f"split this prefix further")
-            rc |= 4
-            continue
-        print(f"[{i}/{len(todo)}] {p}  ({n} dirty"
+        print(f"[{i}/{len(todo)}] {p}  (pull-in {len(need)}"
               f"{', exact' if exact else ''}, ~{est:.0f} MB)")
         rc |= run_chunk(p, pathlib.Path(args.shadow), args.jobs, args.timeout,
                         exact=exact)
+
+    if deferred:
+        print(f"\nretrying {len(deferred)} deferred chunk(s); their pull-in "
+              f"should have shrunk as earlier chunks made modules trusted")
+        for i, p in enumerate(deferred, 1):
+            m = _sweep_module()
+            oleans = m.find_oleans()
+            mod2path, imports = m.load_graph()
+            dirty, changed, never, untrusted = m.dirty_closure(
+                mod2path, imports, oleans)
+            exact = p in dirty
+            need = pull_in(p, exact, dirty, imports, untrusted)
+            est = len(need) * 1.2
+            if not need:
+                print(f"[retry {i}/{len(deferred)}] {p}  now clean")
+                continue
+            if est > free_mb() - args.min_free_mb:
+                print(f"[retry {i}/{len(deferred)}] {p}  STILL TOO BIG: "
+                      f"pull-in {len(need)} ~{est:.0f} MB vs {free_mb():.0f} MB "
+                      f"free -- split this prefix one level deeper")
+                rc |= 4
+                continue
+            print(f"[retry {i}/{len(deferred)}] {p}  (pull-in {len(need)}, "
+                  f"~{est:.0f} MB)")
+            rc |= run_chunk(p, pathlib.Path(args.shadow), args.jobs,
+                            args.timeout, exact=exact)
     return rc
 
 
