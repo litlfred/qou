@@ -2793,3 +2793,41 @@ L2 rows) is still the owner's decision and is untouched here. Item 3 (whether
 the bar-odd hypothesis survives the move to `z_D`) is untouched. This narrows
 the cost question that superseded item 2; it does not close it, because the
 functional the argument points at is not built.
+
+### Same day, the closing move: the energy's only ADMISSIBLE form *is* the count
+
+The section above shows the energy is a **word** functional. A word functional
+has exactly one canonical descent to the object — its extremum over the fibre —
+and here that extremum is computable, because the writhe is constant on a braid
+class while the count is not. `crossingEnergy = symChannel(W) + (p+m)·(q−q⁻¹)/2`
+with `W` invariant and `q − q⁻¹ > 0`, so:
+
+**`isLeast_energy_iff_isLeast_count_of_writhe_eq`** (sorry-free; the file is now
+10 theorems, `lean`-direct exit 0, `#print axioms` clean on all of them) — over
+any finite family of presentations sharing a writhe, which is what a braid class
+is, **the energy-minimal presentation is exactly the count-minimal one.**
+
+So making the energy admissible turns it **into** the crossing-count cost it was
+proposed to replace, up to an additive invariant. That closes the "energy
+instead of count" proposal as posed, rather than merely bounding it.
+
+**And the proposed replacement inherits the same defect.** Checked directly:
+`QOU.MobiusEnergy.ClassicalMobiusEnergy` is a functional of an **embedding**,
+and its own docstring says so — *"this structure holds no isotopy-class data"*.
+So as encoded it is no more a braid-element invariant than `E_cross` is, and
+swapping it in would swap one presentation-dependent cost for another.
+
+**This is what makes the Bring embedding load-bearing rather than an
+implementation detail.** What repairs an embedding functional is either the FHW
+minimiser (the infimum over the isotopy class — bean `qou-zfs6`) or a
+**canonical** embedding, and the Bring surface is the candidate canonical
+embedding. The owner's instinct that the Bring half matters is therefore right
+for a sharper reason than "it is where the geometry lives": without it the
+proposal does not clear the admissibility bar its own objection implies.
+
+**Caveat carried forward, not re-derived:** `MobiusEnergy.lean` has 2 sorries
+and its header records a prior vacuity incident in which `unknot_iff` read
+`value = 4 ↔ True`, forcing `value = 4` for every instance and making `E_cat`
+blind to the knot, with no `sorry` to flag it. That leg cannot bear weight
+unexamined — the observation above is about the structure's *arity*, which is
+visible from the docstring and is unaffected by the sorries.

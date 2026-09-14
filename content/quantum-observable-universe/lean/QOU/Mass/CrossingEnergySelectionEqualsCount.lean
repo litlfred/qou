@@ -45,8 +45,11 @@ measured disagreement the probe found — `σ₁` versus `σ₁⁻¹`, tied at c
 separated by energy — is precisely a writhe difference (`+1` against `−1`), and
 by these lemmas that is the only way the two costs can ever disagree.
 
-So the objection to the count is NOT answered by the energy: a genuine upgrade
-must be a functional that is not a function of `(p, m)` at all. An embedding
+So the objection to the count is NOT answered by the energy, and
+`isLeast_energy_iff_isLeast_count_of_writhe_eq` closes it: the energy's only
+admissible descent to the braid element — its minimum over the class — IS
+count-minimisation. A genuine upgrade must be a functional that is not a
+function of `(p, m)` at all. An embedding
 energy (O'Hara / Möbius via the Bring surface) is such a functional; that is the
 structural reason the owner's proposed direction is the right class, and it is
 not built.
@@ -151,5 +154,44 @@ theorem crossingEnergy_sub_eq_writhe_term_of_count_eq {p₁ m₁ p₂ m₂ : ℕ
     asymChannel_eq_of_count_eq q hc]
   simp only [symChannel]
   ring
+
+/-! ## The admissible descent of the energy IS the crossing count
+
+`crossingEnergy_lt_of_cancelling_pair` says the energy is a word functional, so
+it does not descend to the braid element. A word functional has exactly one
+canonical descent — its extremum over the fibre — and here that extremum is
+computable, because the writhe is constant on a braid class while the count is
+not.
+
+`isLeast_energy_iff_isLeast_count_of_writhe_eq` is the consequence, over any
+finite family of presentations sharing a writhe (which every braid class is):
+**the energy-minimal presentation is exactly the count-minimal one.** So making
+the energy admissible turns it *into* the crossing-count cost it was proposed to
+replace, up to an additive invariant.
+
+This is why the Bring embedding is the load-bearing part of the owner's
+proposal rather than an implementation detail. The corpus's own
+`QOU.MobiusEnergy.ClassicalMobiusEnergy` is likewise a functional of an
+EMBEDDING — its docstring says so outright, *"this structure holds no
+isotopy-class data"* — so it inherits the same defect, and what repairs it is
+either the FHW minimiser or a canonical embedding. The Bring surface is the
+candidate canonical embedding. Without one, swapping in an embedding energy
+swaps one presentation-dependent cost for another. -/
+
+/-- **The energy-minimal presentation is the count-minimal one.** Over any
+finite nonempty family of presentations sharing a writhe — which is what a
+braid class is, the writhe being invariant — minimising `crossingEnergy` and
+minimising the crossing count are the same problem. -/
+theorem isLeast_energy_iff_isLeast_count_of_writhe_eq {q : ℝ} (hq : 1 < q)
+    (S : Finset (ℕ × ℕ))
+    (hw : ∀ a ∈ S, ∀ b ∈ S, (a.1 : ℝ) - a.2 = (b.1 : ℝ) - b.2)
+    {x : ℕ × ℕ} (hx : x ∈ S) :
+    (∀ y ∈ S, crossingEnergy x.1 x.2 q ≤ crossingEnergy y.1 y.2 q)
+      ↔ (∀ y ∈ S, (x.1 : ℝ) + x.2 ≤ (y.1 : ℝ) + y.2) := by
+  constructor
+  · intro h y hy
+    exact (energy_le_iff_count_le_of_writhe_eq hq (hw x hx y hy)).mp (h y hy)
+  · intro h y hy
+    exact (energy_le_iff_count_le_of_writhe_eq hq (hw x hx y hy)).mpr (h y hy)
 
 end QOU.Mass.CrossingEnergySelectionEqualsCount
