@@ -1,11 +1,11 @@
 ---
 # qou-00ot
 title: 'GATED: three c_k content-block claims the witness layer already scopes and the paper does not'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-09-14T08:02:26Z
-updated_at: 2026-09-14T08:03:08Z
+updated_at: 2026-09-14T18:11:17Z
 ---
 
 Found 2026-09-14 while tracing the D2 convention finding (PR #7343, qou-cds1)
@@ -86,3 +86,53 @@ Blast radius: all three are rendered paper content. #3 is the one a referee
 reads as a headline precision claim. 12 of the 15 content blocks mentioning
 J_Hopf carry zero convention-scope markers; the other 3 are definition-index,
 mba-step11 and markov-pair-z2.
+
+## ENACTED 2026-09-14 — owner picked A, B and C (PR #7343, commit 66bd7adc0f)
+
+All three done. Verification and the deliberate non-fixes:
+
+**A** — qbeta-ck-truncation-canonical.md gains a *Convention frame* section
+carrying the C→D re-extraction table, the one-rung localisation, the z-swap
+invalidity, and the one convention-IMMUNE pillar (swing ratio 1.00522). Sidecar
+clean: 92 criteria, 84 pass / 8 n/a, **zero non-pass**.
+
+**B** — c_3 = -2.0098 marked SUPERSEDED in place with the three live
+convention-C extractions; proton named as the one to read. Also recorded,
+measured: the other five entries have **no live producer** anywhere under
+computations/. c_5 deliberately untouched (it is current).
+
+**C** — the '+6.02 ppb, satisfying the 7.8 ppb target' claim rewritten to give
+both figures and state plainly that they are different objects (ruled z_D base
+with zero rungs vs five-rung ladder on the retired z = 1 cell).
+
+**Also fixed in passing** — trap-negation-contrast (major) fired on the block I
+was editing: 'are not arbitrary fits. They are tautologically determined' was
+assert-by-denying; restated plainly.
+
+**Sec 4d compliance** — every date, ruling reference and PR number was stripped
+from prose and moved to authorNotes on both .ts siblings.
+voice-author-notes-pollution went 1 (A) + 3 (B) → 0.
+
+## NOT cleared, deliberately — read before re-running the sweep
+
+trap-superlative and trap-negation-contrast are still result=fail in B's
+sidecar. Both are **agent** verdicts (agent:q16, 2026-08-15, sha b038f72bacf)
+written against text this commit changes:
+
+- trap-superlative's quoted evidence now has **zero occurrences** in the file.
+- trap-negation-contrast's sentence is rewritten to the wording its own evidence
+  points at in the sibling block.
+
+I did not append a pass. Clearing a criterion that flagged my own prose is
+self-certification, which is the shape the anti-laundering discipline warns
+about. Both are checkable with a grep; a fresh agent pass should re-verdict.
+
+voice-editorializing (minor, line 29) is script-authored, live, and
+**byte-identical to main** — pre-existing, out of scope.
+
+## Left open elsewhere
+
+The block's filename says conj- while its kind is `proposition`
+(prop:qbeta-c-k-closed-forms) and its body calls its own contents conjectures.
+Noted, not touched — a kind change is a Sec 3b propagation question, not part of
+this bean.
