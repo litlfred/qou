@@ -1,11 +1,11 @@
 ---
 # qou-9ven
 title: '1D-C: the missing 2D/3D descent rungs — make d a real binder'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-14T16:44:07Z
-updated_at: 2026-09-14T17:56:39Z
+updated_at: 2026-09-14T18:13:01Z
 parent: qou-ifto
 ---
 
