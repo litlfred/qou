@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T17:22:59.020984+00:00",
-  "commitSha": "0433359e6ff59b35a1a21cba94736ff2bd06416b",
+  "computedAt": "2026-09-14T17:59:00.372850+00:00",
+  "commitSha": "379d47d9744be05e0a5cda9a18e268ff579cd2c4",
   "assertions": [
     {
       "name": "1. det rho(sigma_i) = -1 identically",
@@ -53,78 +53,48 @@
       "passed": true
     },
     {
-      "name": "9. 2*pi/120 is the unique rational phase in the window, N <= 1000",
+      "name": "9. alpha_req is NOT in the quantized set",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
     },
     {
-      "name": "10. candidate inside window, convention C outside",
+      "name": "10. every admissible cell needs a factor > 1; no cosine rung supplies it",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
     },
     {
-      "name": "11. candidate |c3| < 1 < |c3| of convention C",
+      "name": "11. the two reachable cells are exactly the two the ruling does NOT select",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
     },
     {
-      "name": "12. coincidence priced: which denominator won is the informative fact",
+      "name": "12. the 2026-08-22 cosh exclusion is base-dependent and is VOID under D",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
     },
     {
-      "name": "13. cross-anchor swing identical for candidate and C - no discrimination",
+      "name": "13. no clean cosh closed form on offer - re-opening only, no candidate",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
     },
     {
-      "name": "14. no element of order 120 in S_5 or 2I - the obvious mechanism is dead",
-      "computed": "PASS",
-      "expected": "PASS",
-      "passed": true
-    },
-    {
-      "name": "15. every admissible cell needs a factor > 1; no cosine rung supplies it",
-      "computed": "PASS",
-      "expected": "PASS",
-      "passed": true
-    },
-    {
-      "name": "16. the two reachable cells are exactly the two the ruling does NOT select",
-      "computed": "PASS",
-      "expected": "PASS",
-      "passed": true
-    },
-    {
-      "name": "17. the 2026-08-22 cosh exclusion is base-dependent and is VOID under D",
-      "computed": "PASS",
-      "expected": "PASS",
-      "passed": true
-    },
-    {
-      "name": "18. no clean cosh closed form on offer - re-opening only, no candidate",
-      "computed": "PASS",
-      "expected": "PASS",
-      "passed": true
-    },
-    {
-      "name": "19. only the augmentation cell admits a bounded rung (recorded only)",
+      "name": "14. only the augmentation cell admits a bounded rung (recorded only)",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "qbeta-eigenphase-rationality-quantization",
   "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
-  "scriptHash": "310cd3a88d2d",
-  "scriptCommitSha": "748592a886d3c854e856a7e80f660a4ad1534b06",
+  "scriptHash": "a59caa8086a5",
+  "scriptCommitSha": "1b4d10ad3d3fdf6285644bd3caf4fa5fbfe59b24",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -145,7 +115,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py"
   },
-  "description": "Two results of different status. PART 1 (scope-(b), proved): the sibling braid-image exclusion closes only a q-VARYING ansatz; carrying its boundedness argument through integrality shows a q-uniform braid-image eigenphase on V_(2,1) lies in the five-element set {0, pi/3, pi/2, 2pi/3, pi} (general d: Kronecker gives alpha in 2*pi*Q), so the CONSTANT case is closed too and alpha is convention-free. PART 2 (A FIT, labelled): given that quantization, 2*pi/120 is the unique primitive rational phase with N <= 1000 inside the ladder window, 19x closer than convention C, implying |c3| ~ 0.11 vs -2.069. It is SELECTION AGAINST THE TARGET and is not adopted, not wired; the cross-anchor swing is identical for both and discriminates nothing. It also bears on the RETIRED z=1 base and moves no dashboard row -- the ruled z_D base misses by 43%, which is not a phase problem.",
+  "description": "PART 1 (scope-(b), proved): the sibling braid-image exclusion closes only a q-VARYING ansatz; carrying its boundedness argument through integrality shows a q-uniform braid-image eigenphase on V_(2,1) lies in the five-element set {0, pi/3, pi/2, 2pi/3, pi} (general d: Kronecker gives alpha in 2*pi*Q), so the CONSTANT case is closed too and alpha is convention-free; alpha_req is not in that set. PART 3 (scope-(b), proved, BASE-INDEPENDENT): deriving alpha cannot unblock qou-cds1 at all -- every base cell the 2026-09-08 ruling admits sits BELOW CODATA and so needs a ladder factor ABOVE 1, while the N=1 rung is a cosine bounded by 1 and the N=2 rung is < 1. The Q_beta L2 residual is a BASE problem, not a phase problem. PART 4: the 2026-08-22 cosh exclusion was computed on the retired z=1 base and is VOID on the ruled one -- re-opened, with no candidate offered. A rational-phase candidate (2*pi/120) was carried in an earlier revision and was EXCISED on owner ruling 2026-09-14 as a fit.",
   "data": {
     "part1_structural": {
       "words_swept": 5460,
@@ -187,41 +157,12 @@
       "augmentation_cell_note": "CODATA/Q(z=q) = 0.8891 < 1, so only the augmentation cell admits a bounded multiplicative rung. RECORDED ONLY - z_D is owner-ruled and nothing here proposes changing it.",
       "conclusion": "Deriving alpha CANNOT unblock qou-cds1. The N=1 rung is a cosine, bounded by 1, and the ruled base needs a factor 1.759 > 1. The Q_beta L2 residual is a BASE problem, not a phase problem. Scope-(b), citing Real.cos_le_one; Lean twin QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short (sorry-free)."
     },
-    "part2_measurement_is_a_fit": {
-      "fit_status": "SELECTION AGAINST TARGET - not a derivation, not adopted",
-      "base_status": "RETIRED z=1 cell; moves no dashboard row",
-      "unique_hit_N_le_1000": [
-        [
-          120,
-          1
-        ]
-      ],
-      "expected_hits_N_le_120": "0.0152439481648103707627924884962707021400067553887228606589574",
-      "expected_hits_N_le_1000": "1.05724739629502879687081000014992645357340057802243147049010",
-      "p_denominator_is_120_given_one_hit": "0.000105196717862402693035977277508941721018304228908058068588260",
-      "cross_anchor_c3_swing_candidate": "0.0489434322891020386500206519264356544672544000942030217093290",
-      "cross_anchor_c3_swing_convention_C": "0.0494822652411623743864995613731682915482550767508353761256800",
-      "mechanism_for_120": "NONE IDENTIFIED; the icosahedral reading is refuted - S_5 max element order 6, 2I max 10, so no primitive 120th root of unity arises",
-      "S5_element_orders": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "twoI_order_and_element_orders": [
-        120,
-        [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          10
-        ]
-      ],
+    "part2_excised": {
+      "status": "EXCISED on owner ruling 2026-09-14 - it was a fit",
+      "what_it_was": "2*pi/120 as the unique primitive rational phase with N <= 1000 inside the |c3| <= 1 ladder window",
+      "why_excised": "selection against the target (AGENTS.md NO FITTING); cross-anchor swing identical to convention C so it discriminated nothing; a unique hit at N <= 1000 is generic (E = 1.06); and the icosahedral mechanism is refuted - S_5 max element order 6, 2I max 10, so no primitive 120th root of unity arises",
+      "also_moot": "its base is the RETIRED z=1 cell, and by part 3 no phase matters on any admissible base",
+      "history": "bean qou-pdix; PR #7262",
       "anchors": {
         "proton": {
           "q": "1.10997858275138080759166909561076887987449912187357873607281",
@@ -229,10 +170,7 @@
           "window": "0.0000109188954779461631285168868228782960365456228657642407878528",
           "alpha_C": "-0.0523361202682288387988645268899341706130483170063913394628427",
           "C_windows_from_required": "2.06644076772191995705195608594805334338836037573049797736072",
-          "cand_2pi_over_120": "-0.0523598775598298873077107230546583814032861566562517636829157",
-          "cand_windows_from_required": "0.109355460846543211831127110029338485451730122577357536496695",
-          "c3_implied_by_C": "-2.06934257711516783787971951724962858902203099810343886691284",
-          "c3_implied_by_cand": "0.109532126904094660554820912457911047101396095855972842887357"
+          "c3_implied_by_C": "-2.06934257711516783787971951724962858902203099810343886691284"
         },
         "muon": {
           "q": "1.10997859564273904668179512938000175270006556102901155697405",
@@ -240,10 +178,7 @@
           "window": "0.0000109190050253229102323936350853989865658702781152094102327814",
           "alpha_C": "-0.0523361261306329914387156968056517003995486652718903362771579",
           "C_windows_from_required": "2.01701829351440454419791588205723025157869351759630925463346",
-          "cand_2pi_over_120": "-0.0523598775598298873077107230546583814032861566562517636829157",
-          "cand_windows_from_required": "0.158219206771795987914897403077208555810648152641608687200771",
-          "c3_implied_by_C": "-2.01986031187400546349321995587646029747377592135260349078716",
-          "c3_implied_by_cand": "0.158475559193196699204841564384346701568650495950175864596686"
+          "c3_implied_by_C": "-2.01986031187400546349321995587646029747377592135260349078716"
         }
       }
     }
