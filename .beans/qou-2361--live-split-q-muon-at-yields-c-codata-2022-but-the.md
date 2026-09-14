@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:41:19Z
-updated_at: 2026-08-22T20:24:13Z
+updated_at: 2026-09-14T08:14:35Z
 ---
 
 Found while attributing a witness refresh on the cds1 branch (PR #5448).
@@ -95,3 +95,48 @@ q0Anchor: muon. Witnesses carrying C: 4.
    never hand-edit).
 3. qou-mass/src/qou_mass/_internal/witness_polynomial.py:48 — a third hardcode,
    sp.Rational('1.10997859555733471').
+
+
+---
+
+## The split is CLOSED on the read path — measured 2026-09-14
+
+Not resolving this bean (it is unclaimed and the migration half may still be
+owed); recording the measurement so nobody re-derives it.
+
+This bean recorded `q_muon_at()` on **C** while `q-pinning-50-digit.witness.json`
+— what `_q0_value_for_anchor('muon')` READS — held **A**, so the two doors onto
+"the muon pin" disagreed by ~80 ppb. Both now answer C:
+
+    q-pinning-50-digit.witness.json  derived_50_digit.q  -> C
+    q-pinning-50-digit.witness.json  q0Value             -> C
+    _q0_value_for_anchor('muon')                         -> C
+    q_muon_at(60)                                        -> C
+
+Two things closed it, from opposite ends: the witness was regenerated onto C,
+and bean `qou-tekx` stage 3b changed the resolver to DERIVE from `q_muon_at()`
+rather than read the witness back, so the loop this bean's §1 describes cannot
+reopen by the witness drifting alone.
+
+**It is now asserted rather than left to inspection.**
+`audits/muon_pin_three_values_probe.py` gained `5b_live_derivation_agrees_with
+_the_resolver`, which fails if the two doors ever split again.
+
+### What that same change turned up
+
+That probe had bound `A = _q0_value_for_anchor("muon")`, which after `qou-tekx`
+returns **C** — so the probe defining the A/B/C vocabulary was labelling C as A,
+and its `_find_b` exclusion guard (written against the resolver returning A)
+had stopped excluding anything. Both fixed in `ff9d2d0ca6d`; A/B/C are now
+defined rather than discovered, and the probe went 1 failing assertion -> 8/8.
+
+### Migration state, counted live rather than inventoried
+
+The probe now walks the committed witnesses instead of consulting a hardcoded
+four-file list that had gone stale:
+
+    A  11 fields     B  256 fields     C  108 fields
+
+So B is still much the largest population — the regeneration half of the A/B/C
+migration is substantially outstanding, which is the part of this bean that may
+still be live.
