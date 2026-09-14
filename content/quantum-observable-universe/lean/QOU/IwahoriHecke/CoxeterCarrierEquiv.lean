@@ -1,6 +1,7 @@
 import QOU.Hecke.IwahoriHecke
 import QOU.MathlibExt.IwahoriHeckeAlgebra
 import QOU.SchurWeyl.HeckeCarrierEquiv
+import QOU.IwahoriHecke.BalancedGenerators
 import Mathlib.GroupTheory.Coxeter.Matrix
 
 /-!
@@ -287,6 +288,21 @@ on the right is the one `QOU/IwahoriHecke/` is built on. -/
 noncomputable def skeinCoxeterEquiv {K : Type*} [Field K] (q : K) (hq : q ≠ 0) (n : ℕ) :
     QOU.SchurWeyl.Hecke K q q⁻¹ n ≃ₐ[K] HeckeAlgebra K (q ^ 2) (AMat n) :=
   (QOU.SchurWeyl.skeinIwahoriEquiv q hq n).trans (coxeterCarrierEquiv K (q ^ 2) n)
+
+/-- **The target is *literally* `Balanced.BalancedHecke`**, not merely isomorphic to it.
+
+`BalancedHecke M q` is by definition `HeckeAlgebra R (q * q) M`, so taking `Q = q * q`
+directly in `carrierEquiv` — rather than composing through `skeinIwahoriEquiv`, which
+fixes `q ^ 2` — lands on that object on the nose, with no transport along `pow_two`.
+
+This is what makes the headline claim checkable rather than asserted: the algebra on the
+left carries the proved-unique Ocneanu trace, and the algebra on the right is the one
+`IwahoriHecke/BalancedGenerators.lean` builds its §7a generators `σ_i = qi · T_i` on. -/
+noncomputable def skeinBalancedEquiv {K : Type*} [Field K] (q : K) (hq : q ≠ 0) (n : ℕ) :
+    QOU.SchurWeyl.Hecke K q q⁻¹ n ≃ₐ[K] Balanced.BalancedHecke (AMat n) q :=
+  (QOU.SchurWeyl.carrierEquiv K q q⁻¹ (q * q) q⁻¹ q n
+      (by field_simp) (by field_simp) (by field_simp)).trans
+    (coxeterCarrierEquiv K (q * q) n)
 
 /-- The composite sends the skein generator `σ_i` to `q⁻¹ • T_i` — the §7a rescaling,
     now landing in the Coxeter presentation. -/
