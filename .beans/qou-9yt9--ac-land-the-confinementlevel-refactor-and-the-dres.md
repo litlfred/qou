@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T08:32:09Z
+updated_at: 2026-09-14T08:40:28Z
 ---
 
 ## Landed (A + C)
@@ -422,3 +422,29 @@ file at 21bac468c6 is exactly f5b88ba3250d.
 **OPEN DECISION (owner).** Whether `lean-vacuity-ledger-reverify.py` should
 enforce this invariant, and what to do with the 52 + 174. Not taken here — it is
 someone elses tool and a re-adjudication sweep is a change, not a measurement.
+
+
+## Sibling coordination with #7361 — verified non-collision (2026-09-14)
+
+A different agent's PR #7361 (`claude/vh1o-second-arm-verdicts-2026-09-14`) widens the
+audit script's second `exempt_reason` arm (`"derivation pending"` alongside
+`"triage pending"`) and writes 13 adjudications. It flagged possible overlap on all
+three of my PRs. **Measured, both directions, no collision:**
+
+1. **Its arm-widening cannot un-exempt my `@marker`.** Two independent mechanisms in
+   `content/pipeline/lean-vacuity-axiom-audit.ts`: `MARKER_OPT_OUT` (line 2053) suppresses
+   at *detection*; `LEDGER_TRACKED_EXEMPT` (line 1724) — the widened arm — governs
+   ledger-seeding of an *already-emitted* candidate. A `@marker` candidate never reaches
+   the second gate. Doubly safe: my TannakaKrein verdict is `legit`, and only `genuine`
+   promotes under their change.
+2. **Ledger writes are disjoint.** Diffed their ledger against `origin/main`: 13 entries
+   added/changed, **0** touching my four carriers. Theirs are the q-NS / vortex /
+   root-of-unity / cosimplicial family; mine are the seven `Prop`-carrier keys. Clean union.
+
+Replied once on #7361 with the measurement and the merge protocol (re-run the audit,
+never hand-merge the generated witness).
+
+**One stale figure left uncorrected, deliberately.** My own auto-`/coordinate` comment on
+#7357 quotes the combined `proof-claims-unencoded` residual as **4**; it is now **1**
+(TannakaKrein closed afterwards). The three PR bodies — the read-first durable artifacts —
+carry the live figures, so three correction comments would be noise.
