@@ -2434,14 +2434,36 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   > two halves, and the paragraph above is about the *construction* half. The
   > scope of the *confinement SDP* half was put to the owner as a fork — does
   > it constrain only the 6 γγ core letters, or the whole word? — and the
-  > answer is **(B) whole element**: every Wedderburn projection of the full
-  > 11-letter word must be `Matrix.PosSemidef`.
+  > answer is **(B) whole element**.
+  >
+  > 🛑 **THE READING NAMED HERE WAS WRONG, AND IT WAS MINE (corrected
+  > 2026-09-14, bean `qou-99qc`).** This sentence read *"every Wedderburn
+  > projection of the full 11-letter word must be `Matrix.PosSemidef`"*. That
+  > is **reading 1**, and reading 1 is **parked**. The corpus enumerates three
+  > PSD readings — 1 literal `Matrix.PosSemidef`, 2 symmetric-part PSD, 3
+  > Frobenius positivity (`χ_λ(w) ≥ 0` on every block with `y_λ > 0`) — and
+  > the owner selected **3** on 2026-09-12: *"try PSD condfinement 3 for now,
+  > but keep 1 2 for later"* (bean `qou-ales`). The 2026-09-13 fork was
+  > explicitly about **reading 3's** scope — the probe states it as *"(A)
+  > reading 3 applies to the γγ-selected core only / (B) reading 3 applies to
+  > the whole 11-crossing word"* — so **(B) moved the letter scope and did not
+  > change the reading.** Live criterion: **reading 3, whole word.**
+  >
+  > **What that changes, and what it does not.** Under convention D
+  > `y_(1³) = 0` *by construction* — that vanishing **is** convention D
+  > (`markovWeights_eq_jones_of_threeRow_eq_zero`) — so reading 3 does **not**
+  > constrain the alternating block at all. Any exclusion resting on the
+  > `(1,1,1)` sign is a reading-**1** exclusion, not a live one.
   >
   > Measured, `nuc11_interleaved` fails on `(2,1)` and `(1,1,1)` for **both**
   > nucleons (proton block dets `1.38249446339` / `-1.02197249381` /
   > `-0.739223570776`; neutron `1.1221068216` / `-1.02197249381` /
-  > `-0.910762214553`). `(1,1,1)` is the alternating character and was already
-  > on record as a sign exclusion; the `(2,1)` failure is additional. **So the
+  > `-0.910762214553`). **Only the `(2,1)` failure binds** — `y_(2,1) =
+  > 0.2473 > 0` — and it binds for both nucleons, so **the element rejection
+  > STANDS on `(2,1)` alone** and nothing downstream of it moves. This
+  > paragraph previously called `(1,1,1)` an exclusion *"already on record"*
+  > with `(2,1)` *"additional"*, which inverts which of the two is doing the
+  > work. **So the
   > three L2 rows above are scored on an element the selection rule that is
   > supposed to produce it rejects** — do not quote them as though the element
   > were ruled-in, and do not read the 6-of-11 paragraph as an all-clear for
@@ -3001,9 +3023,9 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-four** rows (re-counted 2026-09-13), and the groups
+>   catalogues **forty-five** rows (re-counted 2026-09-14), and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
->   about conventions at all. **Rows 35-44 are NOT in this list**: 35 (the
+>   about conventions at all. **Rows 35-45 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
 >   39 (the freshness is on the wrong object), 40, which is the first row
@@ -3028,7 +3050,22 @@ Do not regress either.
 >   three times: **a queue is only a queue on the paths that actually write to
 >   it, and an exemption is only a deferral if the thing it defers to can see
 >   it.** Do not read an empty ledger, or a clean `--check-ledger`, as evidence
->   about the corpus:
+>   about the corpus.
+>
+>   **45** is the newest and is about an ALGEBRAIC signature rather than a
+>   spelling: `q**2 - 2*q - 1`, the factor identifying the retired Q_β base,
+>   is also written with the **absolute value pre-resolved**
+>   (`2*q + 1 - q**2`, legitimate since `q₀²−2q₀−1 < 0`, so no `abs()`
+>   appears) and in **Horner form** (`q*(q - 2) - 1`) — a 45 % undercount,
+>   29 → 42 files, the corrected set including `qbeta_ck_cache.py`, the
+>   canonical `c_k` producer. Its reusable half is a rule about AUDITS and it
+>   is row 44's twin from the other side: 44 is an exemption the queue cannot
+>   see, 45 is a **calibration check that certifies itself**. The audit's was
+>   a hardcoded `check(..., True, ...)`; replacing it with one that resolves
+>   known consumers to their actual bucket and FAILS on a miss is what exposed
+>   the blindness. **An audit that self-certifies its calibration cannot
+>   discover its own blind spot** — 29 would otherwise have shipped with a
+>   clean 3/3 beside it:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard

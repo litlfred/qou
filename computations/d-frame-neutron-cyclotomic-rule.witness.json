@@ -24,7 +24,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.04"
+      "elapsed_sec": "0.02"
     },
     {
       "variant": "neutron (real word)",
@@ -52,7 +52,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.09"
+      "elapsed_sec": "0.06"
     },
     {
       "variant": "proton + one gen0 zero->full",
@@ -66,7 +66,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.08"
+      "elapsed_sec": "0.05"
     },
     {
       "variant": "neutron - one gen1 full->zero",
@@ -80,7 +80,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.05"
+      "elapsed_sec": "0.03"
     },
     {
       "variant": "proton, avg moved gen1->gen0",
@@ -108,7 +108,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.11"
+      "elapsed_sec": "0.08"
     },
     {
       "variant": "2 avg on gen0",
@@ -122,7 +122,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.04"
+      "elapsed_sec": "0.03"
     },
     {
       "variant": "1 avg each",
@@ -136,7 +136,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.04"
+      "elapsed_sec": "0.03"
     },
     {
       "variant": "0 avg anywhere",
@@ -150,7 +150,7 @@
       "cancelled": 0,
       "rule_prediction": 0,
       "rule_holds": true,
-      "elapsed_sec": "0.13"
+      "elapsed_sec": "0.09"
     },
     {
       "variant": "3 avg on gen0",
@@ -164,7 +164,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.12"
+      "elapsed_sec": "0.07"
     },
     {
       "variant": "2 avg gen0 + 1 gen1",
@@ -178,7 +178,7 @@
       "cancelled": 2,
       "rule_prediction": 2,
       "rule_holds": true,
-      "elapsed_sec": "0.07"
+      "elapsed_sec": "0.04"
     }
   ],
   "assertions": [
@@ -209,14 +209,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "48a866713339",
-  "scriptCommitSha": "d65a0983421dd86573789f0f4551e4148f801713",
-  "commitSha": "7fbf708ba84b5f3af0504a392812d74d47e13817",
+  "scriptFile": "markov/d_frame_neutron_cyclotomic_rule_probe.py",
+  "scriptHash": "c7d8bb7457d4",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "commitSha": "5fc0589d3e74b6ea99a9a9400f829ab3c6c00120",
   "engine": "sympy",
-  "computedAt": "2026-08-24T13:26:44.506527+00:00",
+  "computedAt": "2026-09-14T08:05:28.087376+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "markov/d_frame_neutron_cyclotomic_rule_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

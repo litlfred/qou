@@ -1081,11 +1081,13 @@ function detectSelfAssuming(
     // EXEMPT on landing (#7332) so closing a coverage blindspot does not turn a
     // `critical` gate red in the commit that discovers it — but the wording is
     // load-bearing and #7332 got it wrong. `LEDGER_TRACKED_EXEMPT` keys on the
-    // literal "triage pending"; the shared reason string below says "derivation
-    // pending", so every hit taking that arm is dropped at the ledger-seeding
-    // site and never reaches an agent. #7332's own comment asserted the
-    // opposite — "the 16 it newly reaches still enter the review ledger" — and
-    // measured, 0 of them did, and the population is 21 rather than 16.
+    // literal "triage pending"; the shared reason string USED TO say
+    // "derivation pending", so every hit taking that arm was dropped at the
+    // ledger-seeding site and never reached an agent. #7332's own comment
+    // asserted the opposite — "the 16 it newly reaches still enter the review
+    // ledger" — and measured, 0 of them did, and the population is 21 rather
+    // than 16. Fixed for this arm in #7341 and for the arm below in the
+    // follow-up (bean `qou-vh1o`); both now emit "triage pending".
     // "triage pending" here puts them in the ledger as `needs-agent`; an agent
     // `genuine` verdict then promotes that ONE candidate to a counted defect
     // (the `adjudicatedGenuine` path), which is the designed per-candidate
@@ -1096,15 +1098,24 @@ function detectSelfAssuming(
     return h;
   }
   if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
-    // Same blindspot, NOT fixed here: these two arms keep the "derivation
-    // pending" wording, so their 13 candidates (6 `applied-tuple-projection`,
-    // 7 `tuple-projection` reaching this arm as `def` proofs) are still
-    // invisible to the ledger. Pre-existing, measured, and deliberately left
-    // for a follow-up rather than absorbed into the applied-field tranche —
-    // each needs its own agent verdict. Bean `qou-vh1o`.
+    // The last arm on the "derivation pending" wording, CLOSED here (bean
+    // `qou-vh1o`, follow-up to #7341). Both arms now emit "triage pending", so
+    // `LEDGER_TRACKED_EXEMPT` reaches every exempted self-assuming candidate
+    // and none is exempted into silence. The 13 this seeds — 6
+    // `applied-tuple-projection` and 7 `tuple-projection` arriving as `def`
+    // proofs — were adjudicated before the wording moved, so the seeding turns
+    // up no unadjudicated queue: 6 genuine, 6 advisory, 1 legit.
+    //
+    // They are NOT the applied-field tranche's defect class. Four shapes:
+    // an ANTECEDENT-ASSERTING context (a free `Prop` field, a field asserting
+    // it, and `impl_* : P -> conclusion`, with the theorem doing modus ponens
+    // — the class supplies both premises); a conjunction of the class's own
+    // fields; an accessor on an EXPLICIT structure argument, which is ordinary
+    // mathematics and not a projection defect; and one instance of the correct
+    // §3b-cond pattern.
     const h = mk(d, "proof-no-self-assuming-projection", pat, true);
     h.exempt_reason =
-      "canonical §3b placeholder projection (tracked; derivation pending)";
+      "canonical §3b placeholder projection (tracked; triage pending)";
     return h;
   }
   // Precision: exempt a two-field tuple-projection that derives a top-level

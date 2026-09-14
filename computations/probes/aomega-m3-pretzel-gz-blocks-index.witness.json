@@ -1,0 +1,265 @@
+{
+  "name": "aomega-m3-pretzel-gz-blocks-index",
+  "description": "Garoufalidis-Zagier's twelve level-2 q-series for the (-2,3,7) pretzel implemented from App A.6, gated on their printed terms and quadratic relation; Obs 3.9 H1+H1- certified against the derived rotated index at zeta=1; Prop 3.8 checked numerically.",
+  "computation": "aomega-m3-pretzel-gz-blocks-index",
+  "engine": "python+fractions+sympy+mpmath",
+  "scriptFile": "aomega_m3_pretzel_gz_blocks_index_probe.py",
+  "computedAt": "2026-09-13T08:25:48.162706+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "QMAX_half_units": 16,
+    "EMAX": 2,
+    "mp_dps": 30,
+    "source": "library/arxiv-2111.06645/ (= arXiv 2304.09377v2) §3.5, App A.6, Prop 3.8, Obs 3.9"
+  },
+  "data": {
+    "H": {
+      "0+": {
+        "0": "1",
+        "3": "1",
+        "4": "3",
+        "5": "7",
+        "6": "13",
+        "7": "22",
+        "8": "34"
+      },
+      "1+": {
+        "0": "1",
+        "1": "-4",
+        "2": "-8",
+        "3": "-3",
+        "4": "3",
+        "5": "25",
+        "6": "39",
+        "7": "70",
+        "8": "78"
+      },
+      "2+": {
+        "0": "2/3",
+        "1": "-6",
+        "2": "6",
+        "3": "242/3",
+        "4": "200",
+        "5": "1256/3",
+        "6": "2042/3",
+        "7": "3170/3",
+        "8": "4562/3"
+      },
+      "0-": {
+        "0": "1",
+        "2": "1",
+        "3": "3",
+        "4": "7",
+        "5": "13",
+        "6": "23",
+        "7": "37",
+        "8": "59"
+      },
+      "1-": {
+        "0": "1",
+        "1": "-4",
+        "2": "-5",
+        "3": "1",
+        "4": "7",
+        "5": "21",
+        "6": "23",
+        "7": "33",
+        "8": "19"
+      },
+      "2-": {
+        "0": "5/6",
+        "1": "-10",
+        "2": "17/6",
+        "3": "141/2",
+        "4": "971/6",
+        "5": "1913/6",
+        "6": "2791/6",
+        "7": "4361/6",
+        "8": "6391/6"
+      },
+      "3+": {
+        "1": "1",
+        "2": "3",
+        "5/2": "-2",
+        "3": "8",
+        "7/2": "-8",
+        "4": "19",
+        "9/2": "-24",
+        "5": "45",
+        "11/2": "-60",
+        "6": "100",
+        "13/2": "-138",
+        "7": "215",
+        "15/2": "-294",
+        "8": "441"
+      },
+      "3-": {
+        "1": "1",
+        "3/2": "4",
+        "2": "9",
+        "5/2": "18",
+        "3": "31",
+        "7/2": "48",
+        "4": "73",
+        "9/2": "106",
+        "5": "148",
+        "11/2": "204",
+        "6": "278",
+        "13/2": "372",
+        "7": "497",
+        "15/2": "662",
+        "8": "869"
+      },
+      "5+": {
+        "1": "1",
+        "2": "3",
+        "5/2": "2",
+        "3": "8",
+        "7/2": "8",
+        "4": "19",
+        "9/2": "24",
+        "5": "45",
+        "11/2": "60",
+        "6": "100",
+        "13/2": "138",
+        "7": "215",
+        "15/2": "294",
+        "8": "441"
+      },
+      "5-": {
+        "1": "1",
+        "3/2": "-4",
+        "2": "9",
+        "5/2": "-18",
+        "3": "31",
+        "7/2": "-48",
+        "4": "73",
+        "9/2": "-106",
+        "5": "148",
+        "11/2": "-204",
+        "6": "278",
+        "13/2": "-372",
+        "7": "497",
+        "15/2": "-662",
+        "8": "869"
+      },
+      "4+": {
+        "0": "1",
+        "1": "4",
+        "2": "12",
+        "3": "33",
+        "4": "79",
+        "5": "179",
+        "6": "381",
+        "7": "778",
+        "8": "1526"
+      },
+      "4-": {
+        "0": "1/4",
+        "1": "-1",
+        "2": "5/4",
+        "3": "-5/4",
+        "4": "15/4",
+        "5": "-27/4",
+        "6": "35/4",
+        "7": "-59/4",
+        "8": "91/4"
+      }
+    },
+    "H1H1": {
+      "0": "1",
+      "1": "-8",
+      "2": "3",
+      "3": "50",
+      "4": "58",
+      "5": "13",
+      "6": "-196",
+      "7": "-456",
+      "8": "-711"
+    },
+    "quadratic_relation_residual": {},
+    "numerics": {
+      "series_vs_numeric_max_abs_diff_at_q=0.05_(truncation q^8)": "1.4137e-8",
+      "G4": {
+        "tau": "(0.35 + 0.6j)",
+        "lhs_2e^{i pi/4}int(3.16)": "(0.59279422331717 + 0.25056090828374j)",
+        "rhs_prop3.8": "(-1.5184712399929 + 0.3951127053547j)",
+        "ratio": "(-0.325419912729 - 0.249684314324j)",
+        "ratio_without_(-1)^delta": "(1.0 - 1.88736237356e-14j)"
+      },
+      "G5": {
+        "int_(3.16)": "(0.29817106625174 - 0.12099774890404j)",
+        "int_(56)": "(-0.10964478344772 + 0.49604967086927j)",
+        "ratio": "(-0.359234305028 - 0.521687471774j)",
+        "abs_ratio": "0.63340911275"
+      }
+    }
+  },
+  "verdict": "HELD-TEXT PAIRING, IMPLEMENTED AND GATED: GZ's twelve q^{1/2}-series for the (-2,3,7) pretzel reproduce their printed (3.17) exactly; the quadratic relation holds; Obs 3.9 gives H1+ H1- = 1 - 8q + 3q^2 + 50q^3 + 58q^4 + ..., equal to the derived sigma_1 sigma_1 index at zeta = 1 (Part 7, SnapPy/DGG) to q^3 and to GZ's printed total index to q^7. Prop 3.8 holds numerically to 1e-12 with h_j(1/tau) = H_j^-(q~) and no (-1)^{delta_j} (measured convention). GZ's (3.16) form is the mirror of GK (56)/Part 11's; the index is blind to it. So the level-2 pairing that Part 12b could not guess is: at u = 0 the even-even poles are triple, the residue carries eps-derivatives, and the INDEX is the weight-1 component H1+ H1- alone, while the other pairings sum to zero (the quadratic relation). The pretzel's total index is now certified from held blocks against our derived index; the zeta-graded (rotated) certification needs the u-deformation of GZ's blocks — the six families of Part 12b are the natural candidates (next).",
+  "assertions": [
+    {
+      "name": "G1-the twelve series reproduce GZ (3.17) term by term (every printed coefficient)",
+      "passed": true,
+      "mismatches": []
+    },
+    {
+      "name": "G2-the quadratic relation 1/2 H0+H2- - H1+H1- + 1/2 H2+H0- - H3+H3- + H4+H4- - H5+H5- = 0 to q^6",
+      "passed": true,
+      "residual": {}
+    },
+    {
+      "name": "G3-Obs 3.9: H1+ H1- == the derived sigma_1 sigma_1 index at zeta = 1 to q^3 (and GZ's printed total index to q^7)",
+      "passed": true,
+      "H1H1": [
+        "1",
+        "-8",
+        "3",
+        "50",
+        "58",
+        "13",
+        "-196",
+        "-456"
+      ],
+      "derived": [
+        "1",
+        "-8",
+        "3",
+        "50"
+      ]
+    },
+    {
+      "name": "G3b-H1+ H1- has integer q-powers only (the level-2 series pair to an integer-power index)",
+      "passed": true,
+      "fractional": {}
+    },
+    {
+      "name": "G4-Prop 3.8 holds numerically: 2 e^{i pi/4} * int(3.16) == the tau-weighted pairing with h_j(1/tau) = H_j^-(q~) and NO (-1)^{delta_j} sign (ratio 1 to 1e-12); with the printed (+-1)^{delta_j} read as a sign on the lower half-plane side the identity FAILS — recorded as the measured convention",
+      "passed": true,
+      "tau": "(0.35 + 0.6j)",
+      "lhs_2e^{i pi/4}int(3.16)": "(0.59279422331717 + 0.25056090828374j)",
+      "rhs_prop3.8": "(-1.5184712399929 + 0.3951127053547j)",
+      "ratio": "(-0.325419912729 - 0.249684314324j)",
+      "ratio_without_(-1)^delta": "(1.0 - 1.88736237356e-14j)"
+    },
+    {
+      "name": "G0-numeric implementation of the twelve agrees with the exact series at q = 0.05 (limited by the numerical eps-derivatives of the generating functions, ~1e-8)",
+      "passed": true,
+      "max_abs_diff": "1.4137e-8"
+    },
+    {
+      "name": "G5-the (3.16) integrand form e^{-pi i (2x-c_b)^2} and the GK (56)/Part 11 form e^{-2 pi i x^2} are DIFFERENT functions of b (ratio not a unit; the A = 4 form is the A = 2 form's mirror, Part 11) — same knot, opposite orientation, and the index does not see it",
+      "passed": true,
+      "int_(3.16)": "(0.29817106625174 - 0.12099774890404j)",
+      "int_(56)": "(-0.10964478344772 + 0.49604967086927j)",
+      "ratio": "(-0.359234305028 - 0.521687471774j)",
+      "abs_ratio": "0.63340911275"
+    }
+  ],
+  "scriptHash": "f53bacff4bc8",
+  "scriptCommitSha": "unknown",
+  "commitSha": "1fc1809cfe42ab8e3e55671a3aa9ec8ea5c689ab",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

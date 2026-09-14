@@ -337,6 +337,519 @@ holds the method (Garoufalidis–Kashaev, *From state integrals to q-series*, `a
 4₁ instance (`qbeta_m1_rotated_index_from_blocks.py`); the pretzel instance is the tranche
 `qou-m3ad` Part 8 names. The `s`-polynomial table above is the exact `σ₁σ₁` entry and stands.
 
+## 3g. The sister hypothesis, tested and refuted in its natural configuration (2026-09-08)
+
+**Producer:** [`computations/probes/aomega_m3_sister_i13_block_index_certification_probe.py`](../../computations/probes/aomega_m3_sister_i13_block_index_certification_probe.py)
+(bean `qou-x3iv`; owner: "compute the pretzel's state-integral asymptotics in-sandbox").
+
+**The hypothesis (H-I13).** GK `arxiv-1304.2705v1` §1.3: `I_{1,2} = I_{4₁}`, `I_{2,3} = I_{5₂}`. The
+pretzel (−2,3,7) is the 5₂ *sister* (same volume, same trace field), so the natural candidate is the
+other member `(A,B) = (1,3)` of the same one-dimensional family, i.e. the same two q-series towers
+with the roles of `q` and `q̃` exchanged. If true, GGM `arxiv-2012.00062v3` Theorem 28 gives the
+pretzel's holomorphic blocks explicitly and item 1 runs.
+
+**The test, entirely from held text.** GGM (315)–(316): `S⁺₁₁(x;q) = Σ_k H_k(x;q)·H_k(x⁻¹;q⁻¹)`
+over the three 5₂ blocks `H(x,y,z;q) = Σ_n q^{n(n+1)} zⁿ (q^{1+n}x;q)_∞ (q^{1+n}y;q)_∞ / (q;q)_n`
+(pinned by their (270) `lim_{z→0} H = (qx)_∞(qy)_∞`; it is `G_{2,3}` of (325) at `y₃ = 1`), block
+arguments from (326) with `x = (1,x,1/x)`, `w = 1`; the `q⁻¹` side by their (106)
+`(u;q⁻¹)_∞ = (qu;q)_∞⁻¹`. Gates: the (106) rule reproduces their printed `J₋` from `J₊`
+(4₁, (127a/b)); the `(2,3)` bilinear reproduces their printed (316) to q² and the **derived** 5₂
+index (§3f) to q³. The `(1,3)` candidate is the same construction with `A = 1`.
+
+**Result.** The `(1,3)` bilinear is **identical** to the `(2,3)` bilinear at every order computed
+(to q³, symbolically in `x`): `1 − (x⁻²+3x⁻¹+4+3x+x²)q + (x⁻³+x⁻²−1+x²+x³)q² + (s⁴−2s−1)q³`, i.e.
+the 5₂ index, `1 − 12q + 3q² + 74q³` at `x = 1`; the pretzel's derived index is
+`1 − (2x+4+2/x)q + …`, `1 − 8q + 3q² + 50q³`. So **H-I13 is refuted in the 5₂ configuration**
+`u = (0,u,−u)`, `t = 0`, and the mechanism is structural rather than numerical: the `A ↔ r−A`
+exchange (the `q ↔ q̃` swap) is invisible in the `σ₁σ₁` entry — GK Lemma 1.5(a),
+`F_{A,B}(q⁻¹,x) = F_{B−A,B}(q,x)`, is exactly the symmetry that makes the two bilinears
+coincide. Hence no member of the one-dimensional family *with this `u`-configuration* can
+separate the pretzel from 5₂ in `σ₁σ₁`, and the pretzel is not the "`q ↔ q̃` sister" of 5₂
+inside the GK family. Scope-(a) with respect to the configuration only: a `(1,3)` or other
+one-dimensional integral with a *different* `u`-configuration is not excluded by this test, and the
+three-dimensional DG (5.2) integral for `m016` is untouched.
+
+**What this leaves.** The derived pretzel index is now known to be *not* reproducible by the
+one-dimensional sister construction, so the honest route to the pretzel's blocks is the
+three-dimensional state integral of `m016` (DG `arxiv-1202.6268v2` eq (5.2)) evaluated by
+residues, or a one-dimensional reduction derived (not guessed) from its NZ datum. Both are
+research computations with the same certificate: the derived index family of §3f.
+
+## 3h. The pretzel's state integral IS one-dimensional — with one dilogarithm at doubled argument (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_nz_rank_one_probe.py`](../../computations/probes/aomega_m3_pretzel_nz_rank_one_probe.py)
+(8/8; bean `qou-x3iv`, Part 10). Derived, not guessed: DG `arxiv-1202.6268v2` (2.7)–(2.8) give the
+Neumann–Zagier matrices `A = G − G'`, `B = G'' − G'` (first `N−1` edges plus the meridian, `Z'`
+eliminated), and (5.2) gives the state integral's inter-tetrahedron Gaussian as the symmetric
+`B⁻¹A`; SnapPy's `gluing_equations()` docstring fixes the column convention (interleaved `z, z', z''`
+per tetrahedron); a quad-type change is a cyclic relabelling per tetrahedron, all `3^N` enumerated.
+
+**The criterion.** If `B⁻¹A = c·v vᵀ` has rank one, a Hubbard–Stratonovich transform on the single
+direction `v` reduces the `N`-dimensional integral to one dimension, in which tetrahedron `i` enters
+through the Fourier transform of its dilogarithm at `v_i` times the auxiliary variable (DG (C.18),
+(C.25): the S-type generator acts by Fourier transform and the transform of the quantum dilogarithm is
+again a quantum dilogarithm times a Gaussian). So rank one with `v = (1,…,1)` is the unit-coefficient
+family `∫ Π_j Φ_b(t + u_j) e^{−Aπit²…}` of GK / GGM Theorem 28, and `A = 1/c`.
+
+> **Corrected 2026-09-13 (§3i).** `A = 1/c` is wrong as the Gaussian coefficient of the reduced integral: the
+> exact reduction gives `A = Σ v_i² − 1/c` (4₁: 1, 5₂: **1**, pretzel: 2), and `1/c` is the coefficient of the
+> *orientation-reversed* integral (`A_mirror = Σ v_i² − A = 1/c`). The two agree for 4₁ only because it is
+> amphichiral; the 5₂ row's "A = 2 ✓" was read off the printed form, not derived. The gates of the Part 10
+> probe test only `v` and `c`, so its 8/8 stands; its docstring and gate labels carried the same wrong clause and
+> are corrected in the same commit, as is bean `qou-x3iv` Part 10 and the PR #7152 table.
+
+| knot | rank-one quads | `v` | `c` | printed form |
+|---|---|---|---|---|
+| 4₁ | 3 of 9 | (1,1) | 1 | GK `I_{1,2}`, A = 1 ✓ |
+| 5₂ | 1 of 27 | (1,1,1) | 1/2 | GK `I_{2,3}` / GGM (240), A = 2 ✓ — **corrected in §3i: the reduction gives A = 1 (`I_{1,3}`, the mirror); A = 2 is `A_mirror = 1/c`** |
+| (−2,3,7) | 1 of 27 | **(1,1,2)** | 1/4 | — |
+
+The two gates reproduce the printed one-dimensional forms exactly. **The pretzel's state integral is
+one-dimensional, but one of its three quantum dilogarithms enters at *doubled* argument**, which is
+outside both unit-coefficient families. That is why the `(1,3)` sister candidate of §3g failed (every
+unit-coefficient member with the 5₂ configuration gives 5₂'s index), and it is the mechanism behind
+GGM's "level 2": the doubled argument halves that factor's pole spacing, so the residue sum runs in
+`q^{1/2}`. The (2.9) symplectic identity `ABᵀ = BAᵀ` holds for every quad choice of all three knots
+(a check that the convention was read correctly).
+
+**Not yet done.** The exact linear shifts and prefactor of the reduced integral (from `ν`, the
+flattening `f`, and the Fourier-transform constants; DG (C.20)–(C.23), (C.25) are held), then the
+residue evaluation to `q^{1/2}`-series blocks, then the certificate: GGM (19) against the derived
+index of §3f. The `qou-x3iv` plan is re-scoped to this route; the three-dimensional DG (5.2)
+integral is no longer needed.
+
+## 3i. The exact one-dimensional reduction, and what it says about 5₂'s orientation (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_one_dim_reduction_probe.py`](../../computations/probes/aomega_m3_pretzel_one_dim_reduction_probe.py)
+(bean `qou-x3iv`, Part 11). Every step is a held equation except one, which is checked numerically.
+
+**Inputs, all held.** DG `arxiv-1202.6268v2` (5.2) at `u = 0`; its (5.5)–(5.6) definition of `ψ_ℏ`; the
+Fourier transform (C.18); the single-tetrahedron transform identity (C.25); the normalisation ambiguity
+(5.4). GK `arxiv-1304.2705v1` (1) for `Φ_b`, its functional equation and `I_{A,B}`; GGM `arxiv-2012.00062v3`
+(125), (240) at `u = m = μ = 0`.
+
+**D1 — dictionary.** Matching the two product formulas term by term (numerator `(q e^{−Z};q)_∞` against
+`(−q^{1/2}e^{2πbx};q)_∞`, denominator `(e^{−LZ};q̃)_∞` against `(−q̃^{1/2}e^{2πb⁻¹x};q̃)_∞`, using
+`e^{2πb c_b} = −q^{1/2}` and `Lq⁻¹ = q̃`) gives
+
+$$
+\psi_\hbar(Z) = \Phi_b\!\Bigl(c_b - \frac{Z}{2\pi b}\Bigr),\qquad \hbar = 2\pi i b^2,\qquad i\pi + \tfrac{\hbar}{2} = 2\pi b\,c_b .
+$$
+
+The recurrent DG shift `iπ + ℏ/2` is `2πb c_b`; that is why every shift below is a multiple of `c_b`.
+
+**D2 — the Fourier transform of one dilogarithm.** (C.25) says the (C.18) transform of
+`e^{(Z² − (2πi+ℏ)Z)/2ℏ} ψ_ℏ(Z)` is `C·ψ_ℏ(Z')`. The (C.18) transform applied twice is reflection
+(`ℏ` pure imaginary), so inverting,
+
+$$
+\widehat{\psi_\hbar}(P) = C^{-1}\, e^{(P^2 + (2\pi i+\hbar)P)/2\hbar}\;\psi_\hbar(-P)
+$$
+
+up to a (5.4)-class constant. This is the one step not printed in held text; the probe checks it
+numerically (the ratio of the two sides is independent of `P` to `7·10⁻⁹` across three frequencies, and equals the (5.4)-class unit `e^{5πi/6}` at the test point; the residual is tanh-sinh quadrature error at 22 digits).
+
+**D3 — the reduction.** With `B⁻¹A = c·vvᵀ` (§3h) and `w := B⁻¹ν`, the exponent of (5.2) is
+`(1/ℏ)[½c(v·Z)² − (iπ+ℏ/2) w·Z] + const`. A Hubbard–Stratonovich transform on `s = v·Z` makes every `Z_i`
+appear linearly, `e^{P_i Z_i/ℏ}` with `P_i = c v_i W − (iπ+ℏ/2) w_i`, and (C.18) turns each `Z_i` integral
+into `√(2πiℏ)·ψ̂(P_i)`. Substituting D2 and `t = −cW`, then `t = −2πb x`, and completing the square:
+
+$$
+Z_{\mathcal T} \;\propto\; \int e^{-\pi i A x^2}\;\prod_{i=1}^{N}\Phi_b\bigl(v_i x + \sigma_i c_b\bigr)\,dx,
+\qquad A = \sum_i v_i^2 - \frac1c,\qquad
+\sigma_i = 1 - w_i - v_i\,\frac{\Lambda}{A},\quad \Lambda = \sum_i v_i(1-w_i).
+$$
+
+The probe verifies `A` and `Λ` by expanding the exponent symbolically (`sympy.Poly`), and records the
+constant prefactor (all of it (5.4)-class apart from the `ℏ`-power). Two measured facts make the shifts
+this clean for the three knots: `w ∥ v` (`κ = 1, 1, ½`), and `c Σv_i² + κ = 1 + c Σ v_i`, which is exactly
+the statement that every unit-coefficient factor is unshifted. **Neither is general**: in the one-cusped
+census with 2–4 tetrahedra there are 17 rank-one quads, 10 collinear, and the identity holds for 9 of those
+(it fails at m019, `c = −1`). Rank one alone gives one dimension; collinearity is what puts all the shift on
+the doubled factor.
+
+| knot | `c` | `v` | `w = B⁻¹ν` | `A` | reduced integral (SnapPy orientation) | `A_mirror = 1/c` |
+|---|---|---|---|---|---|---|
+| 4₁ | 1 | (1,1) | (1,1) | 1 | `∫ Φ_b(x)² e^{−πix²}` = GK `I_{1,2}` = GGM (125) ✓ | 1 |
+| 5₂ | ½ | (1,1,1) | (1,1,1) | **1** | `∫ Φ_b(x)³ e^{−πix²}` = GK `I_{1,3}` | 2 |
+| (−2,3,7) | ¼ | (1,1,2) | (½,½,1) | 2 | `∫ Φ_b(x)² Φ_b(2x − c_b) e^{−2πix²}` | 4 |
+
+**The 5₂ gate lands on `I_{1,3}`, not the printed `I_{2,3}` — and that is orientation, measured.**
+Numerically (mpmath, GK's contour `ℝ + iε`), `I_{1,3}(b)` and `I_{2,3}(b)` are *different* functions: their
+ratio is not a (5.4)-class constant and its modulus varies with `b` (`1.000` at `|b| = 1`, `0.787` at
+`|b| = 0.8`). But at `|b| = 1` they satisfy `I_{1,3} = u · conj(Φ_b(0)⁶ I_{2,3})` with `u` a (5.4)-class unit
+(`(q̃/q)^{n/24} e^{iπm/4}`, found at both unit-modulus `b` tested). Complex conjugation of a state integral is
+the state integral of the orientation-reversed manifold; so DG (5.2) on SnapPy's m015 datum is the 5₂ state
+integral with the *opposite* orientation to KLV/AK's, and the printed `A = 2` is recovered as
+`A_mirror = Σv² − A = 1/c` (the `x → −x` + functional-equation image, then conjugation). The reduction is
+exact; the gate passes as "mirror". The interpretive step (conjugation = orientation reversal) is standard
+but the held sources do not print it — GK cite [AK] for `I_{2,3} = I_{5₂}` and that paper is not held.
+
+**This closes §3g's loose end.** The `(1,3)` and `(2,3)` block bilinears coincided because they are the two
+orientations of the same knot, and the `σ₁σ₁` index does not see orientation. H-I13 was not a distinct
+hypothesis; it was 5₂ again.
+
+**Held precedent, found after the derivation (2026-09-13, corpus-grep for the doubled argument).** Garoufalidis–Kashaev,
+*Evaluation of state integrals at rational points*, `arxiv-1411.6062v2` §2.3 eq. (56), prints
+`I_{(−2,3,7)}(b) = ∫ Φ_b(x)² Φ_b(2x − c_b) e^{−2πix²} dx` — character for character the form derived here — and attributes
+it to *"the second author computed the state-integral invariant … the result of the long computation"*, taken there as
+input. So the four-line reduction from the Neumann–Zagier datum (rank one, `w ∥ v`, one Fourier transform per
+tetrahedron) reproduces Kashaev's unpublished computation, and fixes the orientation question of the previous paragraph
+in GK's favour: my pretzel integral **is** GK's, with no mirror. The same paper (§2.2) assigns `(A,B) = (1,3)` to 5₂ —
+the `I_{1,3}` this reduction lands on — while their 2013 paper assigns `I_{2,3}`; the two GK conventions are the two
+orientations, exactly as measured above. Their (57b)–(57c) also give the rational-point building blocks
+`g_k(x,q) = q^{k(k+1)}x^{2k}/((qx;q)_k²(qx²;q)_{2k})`, `g(x) = x²/((1−x)²(1−x²)²)`, whose equation `g(x) = 1` has **six**
+solutions in two cubic fields (discriminants −23 and 49) matching the six nonabelian parabolic representations — so the
+pretzel has six blocks, which is what §3k's residue sum has (two unit families plus four parity classes).
+
+**The pretzel, explicit.** In SnapPy's orientation
+$$
+Z_{m016} \;\propto\; \int \Phi_b(x)^2\,\Phi_b(2x - c_b)\,e^{-2\pi i x^2}\,dx,
+$$
+and its mirror carries the same three dilogarithms with `e^{−4πix² + 4πic_b x}`. The doubled factor is the
+only one shifted, by `−c_b`; its poles sit at `c_b + (ibm + ib⁻¹n)/2`, halving the lattice spacing, and the
+Gaussian cross term at those points is `e^{πimn}` instead of `1` — the `q`- and `q̃`-halves of the residue
+sum are coupled by the parity of `(m,n)`. That is GGM's "level 2" as a mechanism rather than an observation.
+Which of the two orientations is GGM/GZ's pretzel is **not settled here** (open; recorded in the bean).
+
+**Part 12, as now scoped.** Residues at the half-lattice: triple poles where `m, n` are both even (from
+`Φ_b(x)²` and the doubled factor together), simple otherwise; the parity coupling should split the sum into a
+`2 × 2` block structure in `q^{1/2}`. Then the `σ₁σ₁` block against the derived rotated index of §3f. Both
+orientations must be carried until one is matched.
+
+## 3j. The meridian deformation, and one dictionary for all three knots (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_u_deformed_reduction_probe.py`](../../computations/probes/aomega_m3_pretzel_u_deformed_reduction_probe.py)
+(3/3; bean `qou-x3iv`, Part 12a). DG (C.21)/(C.23) add one term to the exponent at meridian parameter `u`
+(`u_vec = (0,…,0,u)`, `m = e^u` the meridian eigenvalue): `−(2/ℏ) Z·B⁻¹u_vec`. Through §3i's reduction it
+shifts tetrahedron `i` by `−2β_i ū`, `β = B⁻¹e_N`, `ū = u/2πb`, and the cross terms add a `u`-linear term in
+`x`. The `u`-only constants of (C.23) (which need the completion `(C, D)`) are overall factors and are not
+derived here.
+
+| knot | `β = B⁻¹e_N` | `u`-deformed reduced integral (SnapPy orientation), `u_G := −2ū` |
+|---|---|---|
+| 4₁ | (2, 1) | `∫ Φ_b(x + u_G) Φ_b(x) e^{−πix² − 4πi u_G x}` |
+| 5₂ | (1, 0, −1) | `∫ Φ_b(x + u_G) Φ_b(x) Φ_b(x − u_G) e^{−πix²}` |
+| (−2,3,7) | (½, −½, 0) | `∫ Φ_b(x + u_G/2) Φ_b(x − u_G/2) Φ_b(2x − c_b) e^{−2πix²}` |
+
+**One dictionary serves both gates.** With `u_G = −2ū`, i.e. `x_G = e^{2πb u_G} = m^{−2}`, the 4₁ row is
+GGM (125)/(322) *including its `u`-dependence* — shifts `(u, 0)` and the linear term `w = −2u` — and the 5₂
+row is (240)/(323): shifts `(0, u, −u)`, no linear term. So GGM's block variable is the inverse square of DG's
+meridian eigenvalue (the square is the SL₂ vs PSL₂ holonomy; the inverse is the orientation of §3i).
+
+**The pretzel's deformation sits on the two unit factors at half the meridian variable**, `±u_G/2`
+(`x_G^{1/2} = m^{−1}`), and the doubled factor is undeformed. That is a second level-2 signature, now in `x`
+rather than `q`: the unit factors' pole families are `c_b ∓ u_G/2 + ibm + ib⁻¹n`, the doubled factor's is
+`c_b + (ibm + ib⁻¹n)/2`, and the residue sum will carry `x_G^{1/2}` and `q^{1/2}` together. Whether the
+`σ₁σ₁` bilinear closes to integer powers of `ζ = x_G` (as the derived index of §3f has) is exactly what Part
+12b must decide.
+
+## 3k. Residues: the 5₂ index certified from the state integral alone; the pretzel's level-2 pairing is the open item (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_residue_blocks_probe.py`](../../computations/probes/aomega_m3_pretzel_residue_blocks_probe.py)
+(bean `qou-x3iv`, Part 12b). Three failing tests are kept deliberately; they record a scope-(a) negative.
+
+**The residue calculus, derived and validated.** GK `arxiv-1304.2705v1` Lemma 2.1 gives `Φ_b` near a pole
+`x_{m,n} = c_b + ibm + ib⁻¹n` as `K_{m,n}·φ_m·φ̃_n/(1 − e^{2πb⁻¹x})`. Applied to the reduced integrals of §3i–§3j,
+every pole family contributes
+
+$$
+{-}\frac{b}{2\pi}\,\frac{(q;q)_\infty}{(\tilde q;\tilde q)_\infty}\;e^{-A\pi i(u_F-c_b)^2}\;w_F\;
+\Bigl(\sum_m S_F(m;q,x)\Bigr)\Bigl(\sum_n S_F(n;\tilde q^{-1},\tilde x)\Bigr),
+$$
+
+with **one** summand function `S_F` per family (the `q̃`-side is the same summand at `(q̃⁻¹, x̃)`, made
+convergent by GGM (106)), and the *same* constant for every family — the powers of `(q)_∞/(q̃)_∞` from `K`
+cancel against the `φ`'s however many dilogarithms there are. `w_F = 1` for a unit factor's poles. For the
+pretzel's doubled factor `Φ_b(2x − c_b)` the residue is halved (`w = ½`), its lattice `c_b + (ibm + ib⁻¹n)/2`
+splits by the parities `(ε, δ)` of `(m, n)`, the Gaussian cross term is `e^{πimn} = (−1)^{εδ}`, the `q`-side
+carries `q^{3ε/4}` with products shifted by `q^{ε/2}` and evaluated at `ξ = (−1)^δ x^{1/2}`, and the `q̃`-side
+mirrors this at `(−1)^ε x̃^{1/2}`:
+
+| knot | family | `S_F(m)` |
+|---|---|---|
+| 5₂ (`I_{1,3}(u)`) | pole of `Φ_b(x + u_k)`, `u_k ∈ (u,0,−u)` | `(−1)^m q^{m(m+1)/2} x_k^{−m} Π_{j≠k}(q^{m+1}x_j/x_k;q)_∞/(q;q)_m` |
+| pretzel | `Φ_b(x ± u/2)` | `q^{m(m+1)} x^{∓m} (q^{m+1}x^{∓1};q)_∞ (q^{2m+1}x^{∓1};q)_∞/(q;q)_m` |
+| pretzel | `Φ_b(2x − c_b)`, parity `ε` | `(−1)^ε q^{m'(m'+1)+εm'+3ε/4} (q^{m'+1+ε/2}ξ;q)_∞ (q^{m'+1+ε/2}ξ⁻¹;q)_∞/(q;q)_{2m'+ε}` |
+
+Validated numerically against the integrals themselves (mpmath, GK's contour, fractional nome powers taken from
+the *defining* logarithm — at `b = e^{iπ/6}` the nome is a negative real and a principal `q^{3/4}` picks the wrong
+root): relative error `5.6·10⁻²⁰` for 5₂ and `7.8·10⁻¹⁹` for the pretzel, and every individual pole of every
+family checked by a small contour integral. Dropping the `(−1)^{εδ}` coupling moves the pretzel sum by `2·10⁻⁴`;
+it is load-bearing. (The pretzel integral converges on `ℝ + iε` only for `ε > Im c_b/2`, because the doubled
+factor's `−c_b` shift makes it grow like `e^{2π(b+b⁻¹)x}`.)
+
+**5₂: the index, certified from DG (5.2) alone.** The bare-block fusion `Σ_k S_k(x;q)·S_k(x⁻¹;q⁻¹)` (no θ's, no
+Gaussians; the `q⁻¹` evaluation by (106) and `(q;q⁻¹)_n = (−1)^n q^{−n(n+1)/2}(q;q)_n`) equals the derived
+`σ₁σ₁` rotated index of §3f **exactly to `q³`** at `ζ = x`:
+`1 − (ζ² + 3ζ + 4 + 3/ζ + 1/ζ²) q + (ζ³ + ζ² − 1 + ζ⁻² + ζ⁻³) q² + (ζ⁴ + 4ζ³ + 10ζ² + 14ζ + 16 + …) q³`. This is
+GGM (21) for 5₂ reproduced from the Neumann–Zagier datum and residues, not transcribed from their (316) — and it
+holds on the *mirror* integral `I_{1,3}`, confirming that the index does not see orientation. That the θ-factors
+of the Gaussians cancel in the fusion is derived, not assumed: by GGM (111a)/(112) the family Gaussians are
+`θ(X;q)^{−2}θ(X̃;q̃⁻¹)^{−2}·X^{∓1}X̃^{∓1}` relative to family 3, and `θ(X;q)^{−2}θ(X⁻¹;q⁻¹)^{−2} = 1` by (109).
+
+**The pretzel: a scope-(a) negative, with the obstruction exhibited.** The same bare-block fusion, with the
+θ-consistent family weights `1, 1, ½(−1)^{εδ}`, does **not** give the derived pretzel index — for any of the
+eight level-2 branches of the fusion (`q̃^{1/4} ↦ ω q^{−1/4}`, `ω⁴ = 1`; `x̃^{1/2} ↦ σ x^{−1/2}`), at `ζ ∈ {x, x^{1/2}}`
+or their mirrors. Fractional `q`-powers survive (`q^{3/4}, q^{5/4}, …`), and the obstruction is already at order
+`q⁰`: the three families contribute
+
+$$
+\frac{1}{(1-X^2)^2},\qquad \frac{X^4}{(1-X^2)^2},\qquad -\frac{X}{2(1-X)^2},\qquad X = x^{1/2},
+$$
+
+which sum to `(2X² + 3X + 2)/(2(1+X)²)`, and **no constant reweighting** `α, β, γ` of these three pieces equals `1`
+(the `X` and `X³` terms of `(1 − X²)²` cannot be produced; checked as a linear system). So the level-2 pairing of
+the parity-split blocks is not a reweighting of the naive families: the true holomorphic blocks of a level-2 knot
+must pair the `(ε, δ)` pieces differently (plausibly through the two branches `±X` of `x^{1/2}`), and the held
+sources do not print that rule — BDP14, which GGM cite for (19), is not in the library.
+
+**What this fixes and what it leaves.** Fixed: the pretzel state integral as an explicit sum of six
+`(q^{1/4}, x^{1/2})`-series bilinears, exact and validated. Open: the fusion rule at level 2, hence the
+`σ₁σ₁` certification and, downstream, `qou-m3ad` item 1 for the pretzel. The 5₂ certification is the
+positive result of this part and is independent of GGM's printed blocks.
+
+## 3l. The level-2 pairing, from held text: the pretzel's index certified (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_gz_blocks_index_probe.py`](../../computations/probes/aomega_m3_pretzel_gz_blocks_index_probe.py)
+(bean `qou-x3iv`, Part 13). Source: Garoufalidis–Zagier, *Knots and their related q-series*, held at
+`library/arxiv-2111.06645/` (a mis-keyed directory — the PDF is arXiv 2304.09377v2), §3.5, Prop. 3.8, Obs. 3.9,
+App. A.6.
+
+**What GZ print, and what §3k could not guess.** The pretzel has *level 2*: its factorisation involves twelve
+`q^{1/2}`-series `H_j^±`, `j = 0,…,5`, spanning weight spaces of dimensions 1, 4, 1 (the "ε-deformation degree"
+`δ = (0,1,2,0,0,0)`). Their integrand is the same one as §3i's up to orientation, with poles "of third order when
+`m, n` are even and of first order otherwise" — exactly the pole structure of §3k. At `u = 0` the even–even poles
+are triple, their residues carry `ε`-derivatives, and
+
+$$
+\mathrm{Ind}_{(-2,3,7)}(q) = H_1^+(q)\,H_1^-(q),
+\qquad
+\tfrac12 H_0^+H_2^- - H_1^+H_1^- + \tfrac12 H_2^+H_0^- - H_3^+H_3^- + H_4^+H_4^- - H_5^+H_5^- = 0 .
+$$
+
+The index is the **weight-1 component alone**; every other pairing cancels through the quadratic relation. That is
+why no reweighting of §3k's bare families could reach `1` at `q⁰`: the pairing is not a sum over pole families, it
+is a derivative structure at the collided poles.
+
+**Implemented verbatim and gated.** The twelve series were built exactly (bivariate truncated series in `(ε, q^{1/2})`
+over `ℚ`, from the three generating functions and the six direct `q`-hypergeometric definitions of A.6, with
+`E₂ = 1 − 24Σσ₁(N)qⁿ`):
+
+- **G1** every printed coefficient of GZ (3.17) — 63 of them across the twelve series — is reproduced.
+- **G2** the quadratic relation holds to `q⁶`.
+- **G3** `H_1^+H_1^- = 1 − 8q + 3q² + 50q³ + 58q⁴ + 13q⁵ − 196q⁶ − 456q⁷`, equal to **our derived `σ₁σ₁` index at `ζ = 1`**
+  (§3f, SnapPy triangulation + the DGG engine, to `q³`) and to GZ's printed total index to `q⁷`. Integer powers only.
+- **G4** Prop. 3.8 holds numerically to `10⁻¹²` against the integral (3.16) itself — but with `h_j(1/τ) = H_j^-(q̃)`
+  and **no** `(−1)^{δ_j}`; with the printed `(±1)^{δ_j}` read as a sign on the lower half-plane the identity fails.
+  Recorded as the measured convention.
+- **G5** GZ's integrand `e^{−πi(2x−c_b)²}` and the GK (56) / §3i form `e^{−2πix²}` are different functions of `b`
+  (ratio modulus 0.63 at the test point): the `A = 4` form is the mirror of §3i's `A = 2` form, as computed there.
+  Same knot, opposite orientation; the index does not see it.
+
+**What is now certified and what is not.** The pretzel's *total* index (`ζ = 1`) is certified from held blocks
+against our independent derivation. The `ζ`-graded `σ₁σ₁` entry — GGM's (21), the object Route C actually needs —
+is not yet: it requires the `u`-deformation of GZ's construction, in which the triple poles split into the three
+simple families of §3k and the weight-1 derivative becomes a finite difference at `±u/2`. The six validated
+families of §3k are the natural carriers of that deformation, and pinning the pairing to them is the next step.
+
+## 3m. What the Gaussians contribute to the fusion — a monomial, and it does not close the gap (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_gaussian_theta_fusion_probe.py`](../../computations/probes/aomega_m3_pretzel_gaussian_theta_fusion_probe.py)
+(bean `qou-x3iv`, Part 14; 2/4, the two failures deliberate). This closes an *assumption* §3k made, with a
+derivation rather than a second guess.
+
+**The assumption.** §3k carried each family's Gaussian prefactor `e^{−Aπi(u_F−c_b)²}` in the numerical validation,
+where it is required, and dropped it in the `q`-series fusion, on the 5₂ precedent that its theta factorisation
+cancels between the `q`- and `q̃`-sides. The obvious suspicion about §3k's negative is that this drop was wrong.
+
+**What it actually contributes, derived.** By GGM (111a) with `r = −1`, the Gaussian factorises as
+`[θ(−q^{−1/2}x_k;q)·θ(−q̃^{1/2}x̃_k;q̃^{−1})]^{−A}` times a `k`-independent constant. Under the fusion the second
+factor becomes `θ(−q^{−1/2}x_k^{−1};q)^{−1}` by (109), so the pair contributes `[θ(y;q)/θ(q^{−1}y^{−1};q)]^{−A}`
+with `y = −q^{−1/2}x_k`. Since `θ` is inversion-symmetric (from (108)) and `θ(q^{−1}w;q) = q^{−1/2}wθ(w;q)`
+by (109), that ratio is the **monomial** `q^{1/2}y = −x_k`, so each family enters the fusion weighted by
+
+$$
+x_k^{-A} ,\qquad x_k = e^{2\pi b\,u_k}\ \text{the family's pole offset.}
+$$
+
+Not `1`. Verified numerically to `4·10⁻²⁶` at three `(b, u)`.
+
+**For 5₂ the monomial is absorbed, and that is checkable.** Its offsets are `x, 1, x⁻¹`, and applying a nontrivial
+`x_k^{∓A}` weighting **breaks** the §3k match against the derived index at every exponent tried. So the bare fusion
+was the right one there: the blocks' own `x`-powers already carry it, exactly as GGM's printed (241b)/(241c)
+theta-renormalisations do.
+
+**For the pretzel it is not absorbed — and it still does not close the gap.** The offsets are `X = x^{1/2}`,
+`X^{−1}`, `1`, so the weights are `x^{−1}, x, 1`. Applied across all eight level-2 branches and both sign
+conventions, the `q⁰` row moves from §3k's `(2X²+3X+2)/(2(1+X)²)` to
+
+| weighting | `q⁰` row |
+|---|---|
+| `x_k^{−A}` | `(2X⁶+4X⁵+6X⁴+7X³+6X²+4X+2)/(2X²(X+1)²)` |
+| `x_k^{+A}` | `−X/(2(X+1)²)` |
+
+and neither reaches `1`; fractional `q`-powers survive in every branch, and no branch reproduces the derived index.
+**Scope (a)** for the monomial-reweighting family: the omitted Gaussians are a real omission, now derived and
+quantified, and they are *not* what §3k was missing.
+
+**So §3l's reading stands.** The level-2 pairing is the derivative structure at the collided triple poles that
+Garoufalidis–Zagier print — the index is the weight-1 component of an `ε`-expansion — and no reweighting of the
+six bare families, monomial or otherwise, can produce it. The remaining route is the `u`-deformation of GZ's
+construction itself, in which their `ε`-derivative becomes a finite difference between the `±u/2` families.
+
+## 3n. Why no pairing could have worked: the residue families are not a block basis (2026-09-13)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_block_basis_rank_probe.py`](../../computations/probes/aomega_m3_pretzel_block_basis_rank_probe.py)
+(bean `qou-x3iv`, Part 15; 5/5). §§3k and 3m each tried a pairing and failed. This one asks whether any pairing
+could have worked, and the answer is no, with the obstruction exhibited as an invariant.
+
+**The measurement.** Switch the meridian deformation off — `u → 0`, i.e. `X = x^{1/2} → 1`, the limit in which
+Garoufalidis–Zagier's poles collide — and evaluate each of the six families' `q`-side series term by term:
+
+| family | `u → 0` limit |
+|---|---|
+| `F1` (pole of `Φ_b(x + u_G/2)`) | `1 − 2q + 3q³ + q⁴ − 5q⁶ + …` |
+| `F2` (pole of `Φ_b(x − u_G/2)`) | **identical to `F1`** |
+| `F3(0,0)` (even–even half-lattice) | **identical to `F1`** |
+| `F3(0,1)` | `1 + 2q + 4q² + 7q³ + 13q⁴ + 20q⁵ + 35q⁶ + …` |
+| `F3(1,0)` | `−q^{3/4} − q^{7/4} + 2q^{9/4} − q^{11/4} + …` |
+| `F3(1,1)` | `−q^{3/4} − q^{7/4} − 2q^{9/4} − q^{11/4} + …` |
+
+**Three of the six share one limit — and they are exactly the three whose poles collide into GZ's triple pole.**
+So the family has rank **4**, not 6. GZ's own six blocks, by contrast, are independent (rank 6, verified once
+enough orders are carried; at `q³` there are too few columns to decide, which is why the truncation here was
+raised deliberately and the degeneracy checked across five coefficients rather than two).
+
+**That is the obstruction, as an invariant.** A set of six functions that degenerates to four cannot be a basis
+of the six-dimensional block space GZ's weight decomposition `1 + 4 + 1` requires, so **no** pairing of them —
+diagonal, off-diagonal, reweighted, or branch-twisted — can be the `σ₁σ₁` index. §3k's eight-branch scan and
+§3m's monomial reweighting were searching inside a space that does not contain the answer.
+
+**A second, independent confirmation.** §3k's `q⁰` row is `(2X²+3X+2)/(2(X+1)²)`, which tends to `7/8` as `u → 0`,
+against the derived index's `1` at `ζ = 1`. The failure therefore survives the limit, so it is not an artefact of
+how `ζ` was identified with `x` or `x^{1/2}`.
+
+**What this says about the meridian deformation.** The natural hope after §3l was that `u` regularises GZ's
+`ε`-expansion — that separating the poles would separate the three blocks. It does not: `u` separates the *poles*
+without separating the *limits*. The index needs the value, first and second derivatives of the colliding triple
+(GZ's `H_0, H_1, H_2`), and those are not recovered by any evaluation of the separated families.
+
+**Scope and what is untouched.** Scope (a) for "the residue families as a block basis", with the invariant named.
+Parts 12b and 14 stand exactly as recorded: they factorise the **integral**, validated to `10⁻¹⁹`, and that is a
+different object from the index — the two are related only through GGM (19), which pairs blocks. The remaining
+route to the `ζ`-graded entry is therefore to build the `ε`-expansion at the collision in the `u`-deformed
+setting, or to reach the Stokes data by an operator route that does not need blocks at all (sibling #7333).
+
+## 3o. The Z/2 behind the degeneracy, and the basis that survives it (2026-09-14)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_symmetry_adapted_basis_probe.py`](../../computations/probes/aomega_m3_pretzel_symmetry_adapted_basis_probe.py)
+(bean `qou-x3iv`, Part 16; 5/6, the one failure a recorded negative). §3n showed the raw families degenerate. This
+finds why, and repairs it.
+
+**The symmetry.** `X ↔ 1/X` is an **exact** symmetry of all six residue families: it exchanges the two unit
+families, `F1(1/X) = F2(X)`, and fixes each of the four parity classes individually. So §3n's degeneracy is not an
+accident — it is the symmetry. `F1` and `F2` are exchanged, so their antisymmetric part is *forced* to vanish at
+the fixed point `X = 1`. This is the same `ℤ/2` the operator route reaches independently in #7333, where it appears
+as `σ`-parity tied to half-integrality in `q`; two derivations, from residues and from the `q`-difference operator,
+landing on one structure.
+
+**The repair, in two steps, each forced.** Divide by the antisymmetric coordinate `W = X − 1/X`, which vanishes to
+first order at the fixed point: rank `4 → 5`. One residual coincidence remains, `sym(F1,F2) = F3(0,0)` at `X = 1`,
+and it vanishes to order **exactly 2** in `W` at every `q`-order computed. Dividing that difference by `W²`
+completes the basis: rank `4 → 6`. The exponent is forced rather than chosen — taking that slot at `W¹` instead
+gives rank 5, and the probe checks both.
+
+**The grading, and what it matches.** Ordering the six by their order of vanishing at the fixed point:
+
+| weight | elements | count |
+|---|---|---|
+| 0 | `sym(F1,F2)`, `F3(0,1)`, `F3(1,0)`, `F3(1,1)` | 4 |
+| 1 | `anti(F1,F2)/W` | 1 |
+| 2 | `(sym(F1,F2) − F3(0,0))/W²` | 1 |
+
+Dimensions `(4, 1, 1)` — **exactly** Garoufalidis–Zagier's printed weight decomposition for this knot (§3.5:
+`W₀ = ⟨H₀,H₃,H₄,H₅⟩`, `W₁ = ⟨H₁⟩`, `W₂ = ⟨H₂⟩`), derived here from the residues rather than transcribed.
+
+**So the meridian deformation does carry the `ε`-expansion**, and §3n's negative stands unchanged alongside that:
+it is not carried by *evaluating* the separated families, which is what §3n excluded, but by the *orders of
+vanishing* of their symmetry-adapted combinations at the fixed point. Those are different objects, and only the
+second survives the collision.
+
+**What is still open (T1, a recorded negative).** GZ's Obs 3.9 says the index is the weight-1 component alone.
+Fusing this basis's weight-1 element with its `q → q⁻¹, x → x⁻¹` partner does **not** give the derived rotated
+index, at `ζ ∈ {x, x^{1/2}, 1/x}`. Its `q¹` coefficient is `−2(X²+1)²/((X−1)²(X+1)²)`, which is not the index's
+`−(2ζ+4+2/ζ)` under any of those identifications. The weight-1 element is therefore the right *slot* but not yet
+the right *normalisation* — the theta dressing that §3m showed to be a monomial for the raw families has not been
+worked out for the symmetry-adapted ones, and that is the next step rather than a new search.
+
+## 3p. The one-sided dressing is a theta, and the dressed weight-1 bilinear lies in ℤ[s(x)] (2026-09-14)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_onesided_theta_dressing_probe.py`](../../computations/probes/aomega_m3_pretzel_onesided_theta_dressing_probe.py)
+(bean `qou-x3iv`, Part 17; 7/9, the two failures recorded negatives). §3o named the open item as *"the theta dressing
+that §3m showed to be a monomial for the raw families has not been worked out for the symmetry-adapted ones"*. This
+works it out, and the answer changes what kind of object the dressing is.
+
+**A one-sided block cannot carry half a monomial.** §3m derived that the Gaussian prefactors contribute the monomial
+`x_F^{−A}` to the *fused* bilinear, family by family. Splitting that derivation before the collapse — the q-side
+factor is `θ(−q^{−1/2}x_F;q)^{−A}`, the q̃-side is `θ(−q^{−1/2}x_F^{−1};q)^{+A}` after the fusion and GGM (109) — and
+evaluating the theta with GGM (108) at `y = −q^{−1/2}x` (so `−q^{1/2}y = x`, `−q^{1/2}y^{−1} = q/x`) gives the closed
+form
+
+```tex
+\theta\bigl(-q^{-1/2}x;q\bigr) \;=\; (x;q)_\infty\,(q/x;q)_\infty .
+```
+
+Since `(x;q)_∞ = (1−x)(qx;q)_∞`, the *ratio* of the two factors is `(−x_F)^{−A}` — §3m reproduced — but the factors
+themselves are not monomials, and they do not act uniformly. For the pretzel (`x_F = X, X^{−1}` for `F1, F2`; `A = 2`):
+
+| term | weight |
+|---|---|
+| diagonal `D₁D̃₁`, `D₂D̃₂` | `X^{−2}`, `X^{+2}` (§3m's monomials) |
+| cross `D₁D̃₂`, `D₂D̃₁` | **1** |
+
+**So the dressing weights the diagonal and the cross terms of the weight-1 bilinear differently.** That is outside the
+uniform per-family monomial class §3m tested and §3n excluded, which is exactly why neither found it. It is also
+exactly ℤ/2-equivariant, `D₁(1/X) = D₂(X)` as series, so §3o's symmetry-adapted basis and its (4,1,1) grading survive
+the dressing unchanged and the weight-1 slot is still the antisymmetric one.
+
+**Where the dressed bilinear lives, and this is the result.** Two exact identities, both measured rather than posited:
+
+1. `W² = (X − 1/X)² = X² − 2 + X^{−2} = s(x) − 3`, so §3o's division by `W²` is a division *inside* the
+   adjoint-weight ring, not an extraneous factor.
+2. Every row of the dressed weight-1 fusion is a rational function of **`s(x)` alone**, with denominator exactly
+   `(s − 3)¹` — one simple pole, at `s = 3`, i.e. at the fixed point `x = 1`.
+
+Undoing the `1/W²` clears that single pole and leaves, through `q⁴`:
+
+| order | dressed weight-1 bilinear, in `s = x + 1 + 1/x` |
+|---|---|
+| `q⁰` | `s` |
+| `q¹` | `−2(s² − 1)` |
+| `q²` | `s³ − 2s² − 5s − 1` |
+| `q³` | `5s³ − 5s² − 11s − 3` |
+| `q⁴` | `−2s⁴ + 7s³ + 9s² − 10s − 8` |
+
+**Integer coefficients, no denominator: the bilinear is in `ℤ[s(x)]`** — precisely the ring GGM's (188)/(307) Stokes
+entries live in, and precisely what sibling #7333 predicts for *integer* powers of `q` from its ℤ/2 grading
+(`σ`-parity tied to half-integrality). Two independent routes, residues and the `q`-difference operator, now agree on
+the ring as well as on the rank and the grading.
+
+**What is still open (T1, T2, recorded negatives).** The bilinear is not yet the index: its `q⁰` row is `s(x)` where
+the index's is `1`, and no branch/ζ identification closes the remaining rows. What separates them is therefore a
+**single normalisation inside `ℤ[s]`** — and that is the same missing input #7333 names from the operator side, the
+per-knot `GL(r)` normalisation that GGM fix by hand in (186a)–(186d)/(94a)–(94d) and that no held source prints for a
+rank-6, level-2 knot. The two routes converge on one gap rather than on two.
+
+**A float64 defect found while running this, and fixed at the source.** `branch_twist` in the Part 12b producer
+computed `omega ** (−k)` with `omega` arriving as a Python `int` from its own branch list, and `(−1) ** (−k)` in
+Python is a **float**. That floated **45 symbolic coefficients** of the committed
+`aomega-m3-pretzel-residue-blocks.witness.json` — the bilinear rows themselves, e.g.
+`-1.0*zeta**2 - 3.0*zeta - 4.0 - 3.0/zeta - 1.0/zeta**2`. Coerced to `sp.sympify` at the source; the witness now
+carries 57 → 12 floats, the remaining 12 being the legitimate mpmath numerical-validation rows, and the producer's
+5/8 verdict is unchanged, so no recorded result moved. Worth noting that every precision gate was blind to it: the
+numbers sat inside JSON *strings*, which the float64 ratchets do not parse.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who

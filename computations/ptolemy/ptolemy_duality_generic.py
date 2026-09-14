@@ -59,18 +59,22 @@ from snappy.ptolemy.coordinates import PtolemyCoordinates                    # n
 t = sp.Symbol('t')
 
 
-def automorphisms(fe, deg):
-    """Every root of the minimal polynomial IN K, as a polynomial g(t) with g(t)^deg < deg.
+def _automorphisms_via_solve(fe, deg):
+    """The original route: solve f(g(t)) = 0 mod f for the coefficients of g.
 
-    |Aut(K/Q)| < [K:Q] exactly when K/Q is not normal; the caller must read the count.
+    RETAINED AS A CROSS-CHECK, NOT AS THE PRIMARY ROUTE.  It is a system of `deg`
+    polynomial equations in `deg` unknowns of degree `deg`, i.e. a Groebner basis
+    computation wearing `sp.solve`'s clothes, and its cost is what it sounds like.
+    Measured on `5_2` class 1 orbit 0 ([K:Q] = 4): >40 min, no answer, against
+    0.1 s for the factorisation route below.  Used by --cross-check only.
     """
     a = sp.symbols(f'a0:{deg}')
     g = sum(a[i] * t ** i for i in range(deg))
     r = sp.rem(sp.Poly(sp.expand(fe.subs(t, g)), t), sp.Poly(fe, t))
     eqs = [sp.expand(c) for c in sp.Poly(r, t).all_coeffs()]
     out = []
-    for s in sp.solve(eqs, a, dict=True):
-        gg = sp.expand(g.subs(s))
+    for s_ in sp.solve(eqs, a, dict=True):
+        gg = sp.expand(g.subs(s_))
         if gg.free_symbols - {t}:
             continue                      # under-determined: not a single map
         # RATIONAL coefficients only.  sp.solve also returns the NUMERIC roots of f as
@@ -86,6 +90,106 @@ def automorphisms(fe, deg):
     return out
 
 
+def automorphisms(fe, deg):
+    """Every root of the minimal polynomial IN K, as a polynomial g(t) of degree < deg.
+
+    |Aut(K/Q)| < [K:Q] exactly when K/Q is not normal; the caller must read the count.
+
+    ROUTE: factor f over K = Q(alpha) and read off the LINEAR factors.  A root of f
+    lies in K iff it is a root of a linear factor over K, so this is exactly the same
+    set as solving f(g(t)) = 0 mod f for g's coefficients -- but it is a univariate
+    factorisation over a number field rather than a multivariate solve, which is why
+    it runs in fractions of a second where the other route does not finish.  This is
+    a change of ALGORITHM, not of definition: the object computed is unchanged.
+
+    Cross-checked three ways on `5_2` class 1 (see the audit doc): against the solve
+    route where that terminates, against the group axioms by direct polynomial
+    arithmetic mod f (identity present, closed under composition, every element
+    invertible -- `_check_group`, asserted on every run), and against
+    f(g(t)) == 0 mod f for every g returned.
+
+    Coefficients are rational automatically: a linear factor over K has its root in K
+    by construction, so the numeric-embedding contamination the solve route had to
+    filter out cannot arise.
+
+    DO NOT reintroduce a substitution on `sp.rootof`'s return value.  Its SHAPE varies
+    with f and all three shapes occur in this corpus:
+
+        5_2   monic quartic      ComplexRootOf
+        L6a4  NON-monic quartic  Mul   125*CRootOf(64*_x^4 - 760*_x^3 + ..., 0)
+        m004  quadratic          Add   -11/2 - sqrt(3)*I/2   (solved in radicals)
+
+    while the factorisation writes its coefficients in terms of the bare CRootOf atom.
+    Substituting the whole `rootof` value therefore matched only part of the L6a4
+    expression and left a mixed t/CRootOf result, and substituting the atom instead
+    then failed on m004, which has no atom at all.  `to_number_field(r, alpha)`
+    re-expresses r in the power basis of alpha regardless of how either is spelled;
+    `.as_poly(t)` is then g itself.  (Both wrong versions were caught by the guard
+    below rather than returning a wrong automorphism count -- keep the guard.)
+    """
+    x = sp.Symbol('_x')
+    fx = sp.expand(fe.subs(t, x))
+    alpha = sp.AlgebraicNumber(sp.rootof(fx, 0))
+    out = []
+    for fac, _mult in sp.factor_list(sp.Poly(fx, x), extension=alpha)[1]:
+        pf = sp.Poly(fac, x)
+        if pf.degree() != 1:
+            continue                      # a root of f NOT in K -- K/Q is not normal
+        c1, c0 = pf.all_coeffs()
+        gg = sp.expand(sp.to_number_field(-c0 / c1, alpha).as_poly(t).as_expr())
+        if gg.has(sp.CRootOf) or gg.has(sp.AlgebraicNumber) or (gg.free_symbols - {t}):
+            raise RuntimeError(f'root not expressible over Q in the power basis: {gg}')
+        if gg not in out:
+            out.append(gg)
+    return out
+
+
+def _element_orders(autos, fe):
+    """Multiplicative order of each automorphism -- names the group, not just its size.
+
+    [1,2,2,2] is the Klein four-group and [1,2,4,4] is cyclic C4; both have order 4
+    and they give DIFFERENT subgroup lattices, so the transport argument's reach
+    differs between them.  The count alone does not distinguish them.
+    """
+    fp = sp.Poly(fe, t)
+    comp = lambda u, v: sp.expand(sp.rem(sp.Poly(sp.expand(u.subs(t, v)), t), fp).as_expr())
+    out = []
+    for g in autos:
+        y, n = sp.expand(g), 1
+        while y != sp.expand(t) and n <= 4 * len(autos) + 4:
+            y, n = comp(g, y), n + 1
+        out.append(n)
+    return out
+
+
+def _check_group(autos, fe):
+    """Verify the returned set really is Aut(K/Q), by polynomial arithmetic mod f only.
+
+    This does NOT trust the route that produced it.  A route that silently drops an
+    automorphism reports K/Q as non-normal when it is normal -- which is a wrong
+    mathematical claim about the manifold, not a performance regression -- and a
+    route that admits a spurious one breaks composition.  Both are caught here:
+
+      roots       f(g(t)) == 0 mod f for every g          (each g is genuinely a root)
+      identity    t is in the set
+      closed      g o h mod f is in the set for all g, h
+      inverses    every g has an h with g o h == t
+
+    Cheap (|Aut|^2 polynomial compositions mod f) and independent of `sp.solve`,
+    `factor_list`, and NumberField alike.
+    """
+    fp = sp.Poly(fe, t)
+    comp = lambda u, v: sp.expand(sp.rem(sp.Poly(sp.expand(u.subs(t, v)), t), fp).as_expr())
+    S = {sp.expand(g) for g in autos}
+    return {
+        'roots': all(sp.rem(sp.Poly(sp.expand(fe.subs(t, g)), t), fp).as_expr() == 0
+                     for g in autos),
+        'identity': sp.expand(t) in S,
+        'closed': all(comp(u, v) in S for u in autos for v in autos),
+        'inverses': all(any(comp(u, v) == sp.expand(t) for v in autos) for u in autos),
+    }
+
+
 def main(stem):
     d = json.loads((HERE / f'{stem}-ptolemy-in-K.json').read_text())
     NAME, KCLS = d['manifold'], d['obstruction_class']
@@ -98,10 +202,14 @@ def main(stem):
 
     autos = automorphisms(fe, DEG)
     normal = (len(autos) == DEG)
+    grp = _check_group(autos, fe)
+    assert all(grp.values()), f"automorphism set is not a group: {grp}"
     print(f"\n=== automorphisms of K (computed, not assumed) ===")
     for i, g in enumerate(autos):
         print(f"   sigma_{i}: t -> {g}")
     print(f"   |Aut(K/Q)| = {len(autos)}, [K:Q] = {DEG}  ->  K/Q normal: {normal}")
+    print(f"   group axioms verified mod f (roots/identity/closed/inverses): {grp}")
+    print(f"   element orders: {sorted(_element_orders(autos, fe))}")
     if len(autos) <= 1:
         print("\n   *** UNASKABLE: K admits only the identity, so there is no candidate "
               "sigma. This is not a refutation. ***")
@@ -200,6 +308,8 @@ def main(stem):
 
     report = {'probe': 'ptolemy_duality_generic', 'manifold': NAME, 'obstruction_class': KCLS,
               'field': d['field'], 'n_automorphisms': len(autos), 'K_over_Q_normal': normal,
+              'automorphism_element_orders': sorted(_element_orders(autos, fe)),
+              'automorphism_group_axioms_verified': grp,
               'relator_gate': gate, 'sl3_lift': sl3, 'rows': {}}
     print(f"\n=== the test: UNTWISTED (lambda pinned to 1) and TWISTED (lambda measured) ===")
     print(f"   {'sigma':24s} {'untwisted':>16s} {'twisted':>16s}  {'lambda on gens':>18s}")

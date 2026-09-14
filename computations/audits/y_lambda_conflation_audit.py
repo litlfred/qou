@@ -80,14 +80,23 @@ SKIP_DIRS = {"__pycache__", "node_modules", ".git", ".lake", "library",
 #: A detector that fires on its own definition of the defect is noise.
 SELF = os.path.abspath(__file__)
 
-#: Check D's standing backlog. D is a RATCHET, not a pass/fail gate: 86 witness
-#: columns across 55 files already carry an undeclared `y_lambda`, and per this
+#: Check D's standing backlog. D is a RATCHET, not a pass/fail gate: 48 tracked
+#: witness columns already carry an undeclared `y_lambda`, and per this
 #: repo's own doctrine (scripts/precision-gates.sh: "a gate that is red on
 #: arrival gets skipped, which is how a checker goes quiet") a detector that
 #: cannot be green cannot be a gate. A/B/C are pass/fail — they were all zero
 #: after the qou-za3q/qou-q2q7 fixes, so they can only fire on a regression.
 #: THE BASELINE DRAINS, NEVER GROWS. Re-baselining upward to go green defeats
 #: the mechanism; declare `weight_family` at the producer instead.
+#:
+#: IT READ 55 UNTIL 2026-09-14, AND SEVEN OF THOSE WERE NOT CORPUS FILES. The
+#: walk counted gitignored chi caches (`.gitignore:230`), so the number moved
+#: whenever a sibling regenerated one — it went 55 -> 56 within a day of this
+#: audit landing, on a file no other machine has. `tracked_only()` now filters
+#: to what git tracks. THE 55 -> 48 DROP IS A SCOPE CORRECTION, NOT SEVEN
+#: FIXES: the seven were `chi-{deuteron,dineutron,diproton,helium-3,neutron,
+#: proton,tritium}-*-at-q<hex>-50dps.witness.json`, all still undeclared, just
+#: not part of the corpus. Nothing was declared to earn it.
 BASELINE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                         "y-lambda-undeclared-column-baseline.json")
 
@@ -121,12 +130,28 @@ _WENZL_SOURCE = re.compile(r"wenzl|markov", re.I)
 TEXT_EXT = {".py", ".md", ".ts", ".lean", ".json"}
 
 
+def tracked_only() -> set[str] | None:
+    """Tracked-file filter for check D — see `_tracked_corpus` for why.
+
+    Shared with `intra_ordering_structural_assembly_audit` rather than copied:
+    this audit's sibling exists precisely because the corpus transcribes shared
+    one-liners instead of calling them.
+    """
+    from _tracked_corpus import tracked_files          # noqa: PLC0415
+    return tracked_files(ROOT, verify=SELF)
+
+
 def _iter_files(root: str):
+    tracked = tracked_only()
     for dirpath, dirs, files in os.walk(root):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
         for fn in sorted(files):
-            if os.path.splitext(fn)[1] in TEXT_EXT:
-                yield os.path.join(dirpath, fn)
+            if os.path.splitext(fn)[1] not in TEXT_EXT:
+                continue
+            p = os.path.join(dirpath, fn)
+            if tracked is not None and os.path.abspath(p) not in tracked:
+                continue
+            yield p
 
 
 # ---------------------------------------------------------------- check A ----
@@ -402,6 +427,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"     new since baseline : {len(d_new)}"
           f"{'' if partial else f'      drained : {len(d_fixed)}'}")
     print("  selftest : PASS (3 must-fire, 3 must-stay-quiet)")
+    if tracked_only() is None:
+        print("     ⚠ git unavailable — scanning the WORKING DIRECTORY, so "
+              "untracked artifacts are counted and D is not reproducible")
 
     if abc:
         print()

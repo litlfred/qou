@@ -1,11 +1,11 @@
 ---
 # qou-metc
 title: 'DETECTOR BLIND SPOT: the self-assuming-projection audit cannot see an APPLIED single projection — 26 counted becomes 42, and the tuple case was already fixed this way'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-13T17:33:19Z
-updated_at: 2026-09-14T06:07:06Z
+updated_at: 2026-09-14T08:00:20Z
 ---
 
 ## MEASURED 2026-09-13 on the QOU Lean tree (2870 .lean files)
@@ -263,3 +263,17 @@ concludes nothing has moved when it has more than halved.
 
 All four items are done, but the work is unmerged: it rides #7341, which is
 parked on the owner for the 56 → 71 (now 72) decision.
+
+
+## MERGED — closing 2026-09-14
+
+#7341 merged as `e5327d0d5b337d51d13c276d3b5bbfbd9e49e4d6` (rebase-merge, 8/8
+commits replayed, branch preserved). All four items are on `main`; the
+"unmerged" reason for staying `in-progress` is discharged.
+
+The 13-candidate residue this tranche deliberately left is closed separately in
+`qou-vh1o` (landed 2026-09-14: 6 genuine / 6 advisory / 1 legit; audit witness
+70 -> 76 defects, exempt 64 -> 58, promoted 42 -> 48). Two author-call findings
+from that adjudication are tracked in `qou-hjf4` (the fitted
+`defaultQBetaCKClosedForms` instance) and `qou-klr1` (three fluid-dynamics
+propositions formalised twice, library copy vacuous).

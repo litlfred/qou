@@ -102,8 +102,23 @@ def _sha():
 
 
 def _word(g0, g1):
-    return ([(mp.mpf(str(c)), mp.mpf(str(d)), 0) for c, d in g0]
-            + [(mp.mpf(str(c)), mp.mpf(str(d)), 1) for c, d in g1])
+    """The GROUPED nucleon word, deliberately — see `main`'s calibration note.
+
+    Named rather than written out (bean `qou-t29k`). This probe's choice of the
+    historical frame is reasoned and dated (2026-09-06, `qou-y2o7`): the qu2w
+    calibration, the pinned pre/post-fix values, and the `paper` closed forms
+    below are all stated in it, and it passes `intra_order="grouped"` to
+    `compute_tau_M_nucleon_H3` for exactly that reason. That reasoning sat
+    forty lines from this helper, which left the helper indistinguishable from
+    the sites that have no reasoning at all. Output unchanged:
+    `grouped_word_from_chains` IS this concatenation, mpf conversion preserved
+    per chain.
+    """
+    from pyhecke.atom import grouped_word_from_chains
+    return grouped_word_from_chains(
+        [(mp.mpf(str(c)), mp.mpf(str(d))) for c, d in g0],
+        [(mp.mpf(str(c)), mp.mpf(str(d))) for c, d in g1],
+    )
 
 
 def main():
