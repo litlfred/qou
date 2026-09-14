@@ -640,6 +640,64 @@ graph measurement alone.**
 
 ---
 
+## Step 9 — the exit to ℝ is correctly scoped, under one undefined symbol
+
+This is the step where the chain crosses from `ℚ(q)` to ℝ, so it is where an
+unstated condition would matter most. **It is the most carefully written step
+in the chain**, and the finding here is correspondingly small.
+
+The carrier is `def:archimedean-realization-functor`,
+`𝓡_top : 𝓜̂ →^{χ_top} 𝓜̂ ⊗ ℤ →^{π_∞} ℝ`. The block **withdraws its own name**:
+*"The word 'functor' in the name and label is **legacy** … `𝓡_top` is a
+realization / evaluation — a ring homomorphism out of `K_0(Var)` — not a functor
+between categories."* That candour is the opposite of a defect and is worth
+saying, given how much of this walk is about documents overstating.
+
+**The condition that enters is declared: the agreement is SCOPED.** The
+follow-on remark states
+
+```
+𝓡_top  =  τ_arch  :=  π_∞ ∘ τ      on  𝓜̂_QOU ⊆ 𝓜̂
+```
+
+so `τ`'s status as *"the exclusive exit from the categorical substrate to the
+real numbers"* is established **on a subdomain**, not in general. That is a real
+condition, correctly flagged.
+
+### 🛑 The one defect: `𝓜̂_QOU` occurs once in the corpus and is defined nowhere
+
+The same agreement is stated **three times under two names**:
+
+| block | scope named | resolves? |
+|---|---|---|
+| `archimedean-realization-functor-interpretation.md` | `𝓜̂_QOU` | **no — 1 occurrence corpus-wide** |
+| `vol-through-tau.md` | "the algebraic quantum volume" | yes — `def:algebraic-quantum-volume` |
+| `vol-as-motivic-period.md` | "the algebraic quantum volume domain" | yes — same |
+
+Measured across every `.md` under `content/`: **`\widehat{\mathcal{M}}_{\mathrm{QOU}}`
+appears exactly once**, in the sentence that uses it. Its two siblings state the
+identical claim scoped to a **defined** block. So this is a **one-symbol fix** —
+the remark should say what its siblings say.
+
+### What is NOT claimed
+
+**Not** that `χ_top` is ill-defined. The remark does allow it to be *"an integer
+(Euler characteristic) **or** a refined Hodge-theoretic invariant like hyperbolic
+volume"* — two invariants with different codomains under one name — and `χ_top`
+has **no notation-register entry**. That is an overload worth noting, but the
+blocks that *use* it scope it to the volume domain, so it is recorded here and
+not measured as a defect.
+
+**And not** that step 9 hides a condition. It declares one. The contrast with
+step 11 is the point: both steps concern the crossing to ℝ, and step 9 states
+its scope while step 11's `𝔈₀` line quietly inverts its own output.
+
+Pinned in section 8 of
+[`canonical_chain_condition_walk_probe.py`](../../computations/audits/canonical_chain_condition_walk_probe.py)
+— four exact quotes asserted at source plus the corpus-wide `𝓜̂_QOU` count.
+
+---
+
 ## Where the walk stands
 
 The chain's conditions do not accumulate step by step — they **converge on one**:
