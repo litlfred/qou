@@ -4,7 +4,7 @@ title: 'SCREEN: 46 Lean files carry numeric literals citing a producer whose wit
 status: todo
 type: task
 created_at: 2026-09-14T20:56:23Z
-updated_at: 2026-09-14T21:34:53Z
+updated_at: 2026-09-14T21:38:12Z
 ---
 
 
@@ -488,3 +488,47 @@ subset, it would train readers to ignore it.
 
 Bean stays open on the environment-pinning decision (option B) and on the
 `qou-oots` witness finding, neither of which is mine to take.
+
+---
+
+## 2026-09-14 — four candidate taxonomy rows, drafted but NOT added
+
+This session's screen produced four distinct blind spots. The
+detector-blindness taxonomy
+([`2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md))
+is where they belong, but **it states no intake convention** — no "add a row
+when", no format note — so adding rows is a judgement about what belongs in
+someone else's document, which the 2026-09-07 directive does not exempt.
+Drafted here so the addition is a copy-paste for whoever owns it.
+
+**All four run the OVER-matching direction** — they fail to a false *hit*, not a
+false all-clear. The table's own note says row 40 is the first of that kind, so
+these would thicken a thin and useful part of it.
+
+| draft | class |
+|---|---|
+| a | **scan SCOPE, for a whole LANGUAGE** — every literal audit in the corpus is `rglob("*.py")` (`assertion_on_literal_audit`, `hardcoded_literal_audit`) or `rglob("*.ts")` (`lean_ref_resolution_audit`); the `.lean` surface carrying witnessed constants is covered by none. Same shape as `convention-c-producer-audit.py` walking only `*.py` while the Lean Markov surface went uncounted. |
+| b | **a CITATION IDENTIFIER that lexes as a decimal** — `arXiv:1208.1663`, `arXiv:1906.12122`. Matching on both sides of a Lean/witness comparison because both cite the same paper; shared *bibliography* is the likeliest thing those two texts have in common. Section and equation numbers (`§2.2-2.3`, `eq (2.7)`) are the same class. |
+| c | **a MATHEMATICAL CONSTANT of the construction** — `M004AngleStructure`'s `1/3` is the regular ideal tetrahedron angle in π-units (`theorem GA_regular : GA (1/3) … (1/3)`). It appears on both sides because both discuss the same mathematics. Not fixable by regex; needs semantics. |
+| d | **an INDEX RANGE written with a slash** — `T3WritheVsDeltaLambdaSign`'s `4/5` is *"the height-4/5 columns"*, a pair of column indices, not a ratio. Same non-fixability as (c). |
+
+And one bug rather than a blind spot, worth the same shelf because it is the
+reason (b) survived a fix: **an unanchored pattern applied to PREFIX text.**
+`(?:arXiv|arxiv)\s*:\s*\d` in an alternation matched against the characters
+*before* a number can never fire — the digit it wants *is* the number. The
+anchored sibling branch worked, so the filter looked half-alive, and **the
+corpus-wide counts did not move**, so nothing revealed it but re-reading the
+ranked list by hand. Pinned now with five predicate unit cases in `--selftest`.
+
+### A staleness I went looking for and did not find
+
+Checked whether AGENTS.md's *"catalogues **forty-five** rows (re-counted
+2026-09-14)"* had gone stale again — its own parenthesis records six prior
+staleness events and says *"re-count the table; do not trust this sentence,
+including this parenthesis."* A first loose count (`grep -cE '^\| *[0-9]+'`)
+returned **47** and looked like a seventh. Counting the numbered first cells
+exactly (`grep -oE '^\| *[0-9]+ *\|'`) gives **45**, contiguous 1-45, highest 45.
+
+**AGENTS.md is correct; the discrepancy was my own regex.** Recorded because the
+near-miss is the point: I was two minutes from "correcting" a current figure in
+the document that exists to warn against exactly that.
