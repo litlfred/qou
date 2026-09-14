@@ -64,7 +64,7 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp, mpf, pi as mp_pi, sqrt as mp_sqrt  # noqa: E402
 
 from _phi_q_util import phi_q  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -116,7 +116,7 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    q = mpf(Q_50_DIGIT_STR)
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
 

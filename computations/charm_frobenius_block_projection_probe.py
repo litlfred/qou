@@ -68,7 +68,7 @@ from _precision import set_compute_dps, json_safe_float  # noqa: E402
 set_compute_dps()
 
 # Experimental (proton) substrate q_0 -- the standing default for new compute.
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as Q0_STR  # noqa: E402
 
 
 def f64_json(o):
@@ -95,7 +95,7 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
 )
 
-Q = mp.mpf(Q0)
+Q = mp.mpf(Q0_STR)
 QI = 1 / Q
 H = Q - QI  # h = q - 1/q
 
