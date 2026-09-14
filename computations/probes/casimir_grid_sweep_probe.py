@@ -57,9 +57,9 @@ from experimental_constants import (  # noqa: E402
     VOL_BORROMEAN_50DPS_STR,
 )
 from _phi_q_util import phi_q  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -85,7 +85,10 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    # `q_parameter.Q` is `float(_d["q"])` — a float64 module constant, so the
+    # old `mpf(Q)` was a round-trip that capped the whole sweep at ~17 digits.
+    # `Q_MP` is the mpf twin, carrying the full 49-digit pin.
+    q = Q_MP
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
     one_percent = pi_sq_720 / 100
@@ -126,10 +129,12 @@ def main() -> int:
             rel_res = abs(val - pi_sq_720) / pi_sq_720
             if rel_res < 0.02:  # within 2%
                 form = f"{na} · {nb}^{b_exp}" if b_exp != 1 else f"{na} · {nb}"
+                # mpf-valued: `rel_residue` is sorted on and thresholded below,
+                # so it is arithmetic. Serialized once, at the witness.
                 matches.append({
                     "form": form,
-                    "value": float(val),
-                    "rel_residue": float(rel_res),
+                    "value": val,
+                    "rel_residue": rel_res,
                     "n_terms": 2,
                 })
 
@@ -172,8 +177,8 @@ def main() -> int:
                             form = f"{npi}·{nb}{b_str}/{nc}{c_str}"
                             matches.append({
                                 "form": form,
-                                "value": float(val),
-                                "rel_residue": float(rel_res),
+                                "value": val,
+                                "rel_residue": rel_res,
                                 "n_terms": 3,
                             })
 
@@ -202,6 +207,10 @@ def main() -> int:
         1 for m in nontrivial_matches if m["rel_residue"] < 0.01
     )
 
+    def _ser(m: dict) -> dict:
+        """Serialize one match for the witness: mpf -> 60-dps string."""
+        return {**m, "value": fmt(m["value"]), "rel_residue": fmt(m["rel_residue"])}
+
     (
         builder
         .set_description(
@@ -222,20 +231,20 @@ def main() -> int:
             "Casimir)."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("target_pi_sq_720", float(pi_sq_720))
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("target_pi_sq_720", fmt(pi_sq_720))
         .add_parameter("primitive_count", len(primitives))
         .add_data(
             "primitive_values_at_substrate",
-            {k: float(v) for k, v in primitives.items()},
+            {k: fmt(v) for k, v in primitives.items()},
         )
         .add_data(
             "all_within_2pct_matches",
-            matches[:50],  # cap to avoid huge witness
+            [_ser(m) for m in matches[:50]],  # cap to avoid huge witness
         )
         .add_data(
             "top10_nontrivial_matches",
-            top10_nontrivial,
+            [_ser(m) for m in top10_nontrivial],
         )
         .add_assertion(
             name="zero_nontrivial_substrate_combinations_within_one_percent",
