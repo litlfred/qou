@@ -562,9 +562,39 @@ of A away. `codata_truncation_audit`'s CANON carries `B_2H` … `B_7Li` as
 totals for the same reason, so a B/A literal cannot be matched against any
 canonical value and cannot be called a truncation of one. This file has
 **zero entries in that gate's baseline** — invisible by construction rather
-than tolerated. Not extended here: how many B/A literals exist tree-wide is
-its own measurement, and widening a red ratchet's vocabulary on a hunch is
-the move this campaign keeps paying for.
+than tolerated. Not extended here, and now MEASURED (2026-09-14)
+rather than merely deferred: **the extension cannot work the way the
+total-binding rows do.** Built a B/A canon from the registry (684 values,
+Z<=30, unbound nuclides dropped -- they come back NEGATIVE) and swept every
+tracked `.py` for >=6-significant-digit literals inside its range:
+
+    median relative gap between neighbouring B/A values   2.76e-4
+    values in the 6.4-8.8 MeV band                        620
+    union of their 1e-4 windows covers                    41.6% of that band
+
+So a literal in that band matches *something* about two times in five by
+coincidence. That is the prose-drift band detector's defect one dataset over:
+no null model, so "close to some canonical value" is the COMMON case rather
+than the surprising one. Total binding energies work because they span
+2-500+ MeV sparsely; per-nucleon values all pile into 2.4 MeV.
+
+The sweep's 30 hits bear that out -- `8.4817962` (tritium's TOTAL binding)
+matching B/A(Si-32) at 3.86e-5, an LP-solver residual, a raw-float64 test
+fixture. **Zero are B/A literals.** The single tight one (5.69e-8) is
+`vs measured peak B/A = 8.794555 at A = 62` in a print statement: the Ni-62
+peak, quoted correctly, agreeing with the registry.
+
+What could work instead, not attempted here: the gate's own
+`MIN_SHARED_DIGITS = 6`, which is scale-free and far tighter than a relative
+window, or requiring a nuclide name or (Z, A) in the literal's context.
+Either is a different check from the one CANON implements, so it is a gate
+DESIGN question and not a row addition.
+
+THE FIRST RUN OF THIS SWEEP WAS WRONG, and the shape is worth keeping:
+`abs(x - v) / v` with a negative `v` (B-6 is unbound, -2.8 MeV) yields a
+negative "distance" that passes every upper-bound filter, so the first pass
+reported every literal in the tree -- pi, sqrt(2), Vol(4_1), the anchor.
+`abs()` was on the numerator only.
 
 **The padding was downstream of the typo.** `fit_c_s_to_4he` solves `c_S` so
 that ⁴He's predicted B/A hits the target exactly, so a binary64 target made
