@@ -1,7 +1,7 @@
 ---
 # qou-orph
 title: 'INFRA (measured): 761 of 1598 QOU Lean modules are never built by `lake build`'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - lakefile
     - ci
 created_at: 2026-08-07T23:50:00Z
-updated_at: 2026-08-07T23:50:00Z
+updated_at: 2026-09-13T17:25:00Z
 ---
 
 
@@ -271,3 +271,97 @@ real gate** today. That is a limitation of the repo, not of this change.
   one), bean or fix the red ones. Do not wire in a red module and leave
   `lake build` broken.
 * **The eight known failures** listed above still need owners.
+
+
+## 🟩 STEP 1 IS DONE, AND THE ANSWER IS ZERO — measured 2026-09-13 (bean qou-g5sp)
+
+This bean's §"To fix — the honest sequencing" opens:
+
+> **1. Measure before deciding.** Compile the 758 orphans *individually* … and
+> count how many already fail. **That number decides everything below; do not
+> guess it.**
+
+**The number is ZERO.** Measured on `main` `16ccc3f7e2` with
+`scripts/lean-library-sweep.py`, which compiles each module from source into a
+hardlinked shadow — never invoking `lake`, so the restored olean cache is not
+evicted. Four runs, unioned:
+
+| run | selector | judged | RED |
+|---|---|---|---|
+| 1 | `--only-exact QOU` (the library root) | 1451 | 0 |
+| 2 | `--all` | 2821 ok, 1 TIMEOUT, 14 skipped | 0 |
+| 3 | `--all --only QOU.Hecke --timeout 5400` | 269 | 0 |
+| 4 | `--all --only-exact …HeckeH4RepDecomp --timeout 5400` | 17 | 0 |
+
+**2836 of 2836 modules judged, 0 RED.** Under `--all` nothing is trusted: every
+module is rebuilt from source, so the stale-dependency false-RED class is
+structurally impossible, and a signal death is reported `UNVERIFIED` rather than
+RED. Write-up:
+`docs/audits/2026-09-13-every-library-module-compiles-zero-defects.md`.
+
+### What that settles, step by step
+
+* **Step 1 — measure.** Done. Not the 758 sampled, the whole 2836.
+* **Step 2 — "if the failure count is small, wire them in and let `lake build`
+  hold the line."** Already done, by bean **`qou-rc7b`** on 2026-08-08: the paper
+  lakefile now declares `globs = ["QOU", "QOU.+"]`, and `QOU.+` is
+  `Glob.andSubmodules`, so the library target is the whole tree. The measurement
+  above is the retroactive justification that step 2 was the right branch.
+* **Step 3 — quarantine the red ones.** **Moot.** There are none.
+* **Step 4 — a gate that fails on a NEW orphan.** Done:
+  `.github/workflows/lean-orphan-gate.yml`, diff-scoped, as this bean specified.
+* **§"Remaining on this bean" — "604 orphans still unmeasured."** Now measured;
+  all green.
+* **§"The eight known failures … still need owners."** All eight are inside the
+  2836 and none is RED, so all eight have been repaired in the intervening five
+  weeks. Named for a reader who wants to check one: `QOU.MathlibExt`,
+  `QOU.MathlibExt.FrobeniusInnerProduct`, `QOU.MathlibExt.PosSemidefDiagZero`,
+  `QOU.QBeta.FaddeevModularDouble`, `QOU.Archimedean.BreitWheelerPairProduction`,
+  `QOU.Archimedean.TorusKnot`, `QOU.Archimedean.QMomentum`,
+  `QOU.Archimedean.yekutieli_leading_coefficient`.
+
+### The title is now false, and so is the premise it spread
+
+`761 of 1598 QOU Lean modules are never built by lake build` — they ARE built,
+and have been since 2026-08-08. The reachability figure survives as a statement
+about the **import closure** (measured 2026-09-13: 1451 of 2836 reachable from
+`QOU.lean`, 48.8% outside — consistent with this bean's 47% and with
+`lean-root-coverage-audit.py`'s 47.7%), but "outside the import closure" and
+"not built" are different claims and this bean's title conflates them.
+
+That conflation propagated. It was corrected in
+`.github/workflows/lean-orphan-gate.yml` on 2026-08-15 (bean `qou-kljb`, verified
+there by direct experiment on a throwaway package) and left standing in
+`.github/workflows/lean-content-siblings.yml` — the very sentence this bean set
+out to fix, re-broken in the fixing — until the PR carrying this append. It also
+reached `scripts/lean-root-coverage-audit.py`'s docstring and
+`scripts/lean-library-sweep.py`'s `--all` help text, both corrected in #7272.
+
+### The caution in step 3 was sound, and the outcome resolved it
+
+> Do **not** set `globs = ["QOU.+"]` as a first move: it converts a silent,
+> survivable problem into a red default build, which is worse than the status quo
+> until step 1 has been done.
+
+`qou-rc7b` set the glob anyway, before step 1. On the evidence available at the
+time that was the riskier branch, and this bean was right to say so — the hazard
+simply did not materialise, because the modules were green. Recording it rather
+than quietly dropping it: the reasoning was correct under uncertainty and the
+measurement, arriving five weeks later, is what retires it.
+
+### What genuinely remains, and it is NOT a compile backlog
+
+Nothing runs any of this automatically. Every workflow in this repo is
+`workflow_dispatch`-only (owner directive 2026-06-30, Actions billing), so
+`lake build QOU` builds the whole tree and **nobody builds it** unless an agent
+asks. That — not coverage, not breakage — is the live gap, and it is a standing
+condition of the repo rather than a task this bean can close.
+
+The narrower thing the orphan gate still protects, quoting its own header: an
+unreferenced module is invisible to everything that *walks imports* — blueprint,
+doc-gen, dependency analysis, import-cone builds rooted at `QOU`. It is not
+invisible to the compiler. Do not quote this bean as evidence about build
+coverage.
+
+Status → completed; the remaining gap above is a repo condition, not this bean's
+task.

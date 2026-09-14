@@ -5,7 +5,29 @@ import Mathlib.Tactic.Abel
 /-!
 # QOU.Hecke.MarkovBondFactor — the per-bond trace factor `tr_M(c·σ + d) = c·z + d`
 
-> **STATUS (2026-06-10):**
+> **STATUS (2026-09-13) — both theorems machine-verified in this file, against
+> its real import cone.** Superseding the 2026-06-10 note below:
+> `lean -DautoImplicit=false -s 65536 QOU/Hecke/MarkovBondFactor.lean` is
+> **exit 0 in 2.8 s**, and `#print axioms` on **both** `trace_bond_crossing`
+> and `trace_bond_pair_factorizes` gives `[propext, Classical.choice,
+> Quot.sound]` — no `sorry`, no `sorryAx`.
+>
+> Two claims in the old note were true when written and are now stale.
+> `trace_bond_pair_factorizes` was recorded as *"drafted; its `ring`/`abel` step
+> is not yet machine-confirmed — the restored Mathlib cache is missing
+> `Mathlib.Tactic.Ring`/`Abel`"*: the cache carries them now and the step
+> elaborates. And `trace_bond_crossing` was verified *"standalone … with a
+> minimal stand-in class"*; it is now verified against the real
+> `MarkovTrace`/`HeckeAlgebra` classes of this file, which is the stronger
+> check. (The old note's `[propext, Quot.sound]` reflects the stand-in harness;
+> the real cone adds `Classical.choice`.)
+>
+> **Still true:** the module is **standalone — imported by nobody** (grep over
+> `content/**/*.lean`: zero `import QOU.Hecke.MarkovBondFactor`). Whether to
+> re-wire it into the `QOU.Hecke` aggregator is a build-graph decision and is
+> deliberately **not** taken here.
+>
+> Original note, kept for the record:
 > - `trace_bond_crossing` (the per-bond factor `tr_M(c·σ+d) = c·z+d`) is
 >   **MACHINE-VERIFIED** — its proof logic was elaborated standalone against
 >   Mathlib on lean v4.24.0 with a minimal stand-in class carrying the same
@@ -56,10 +78,31 @@ interior-generator Markov property (`tr(a·σ_g·b) = z·tr(a·b)` for `a` below
 bond), `tr_bondWord_of_interiorMarkov` proves the general-`A` bond product from it for arbitrary
 (non-monotone) block words, `interiorMarkov_ascending` proves it unconditionally in the monotone
 case, and `not_interiorMarkov_cmTower` exhibits a `MarkovTower` satisfying every field and
-violating it — so the property is independent of the abstract tower axioms and is a theorem of the
-*Hecke* tower (quadratic + braid + word-spanning), still to be proved there. The `n = 9` exact
-identity (`route_c_step3_bond_factorisation_exact_probe.py`, 76/76) is scope-(b) evidence at
-fixed `A`.
+violating it — so the property is independent of the abstract tower axioms.
+
+**PROVED for the Hecke tower (2026-09-13, PR #7265 + #7337).** The clause that stood here —
+*"is a theorem of the Hecke tower (quadratic + braid + word-spanning), still to be proved there"* —
+named the right target and is now out of date on its own conclusion.
+`QOU.Hecke.InteriorMarkovOfBraidedTower.interiorMarkov_of_braided` discharges `InteriorMarkov` on
+**every** `BraidedTower` (the three Iwahori–Hecke relations: quadratic, far-commutation, braid),
+through `HeckeSandwichReduces.disjointBlock_of_braided`; composing with
+`tr_bondWord_of_interiorMarkov` gives the general-`A` bond product unconditionally there, and
+`QOU.Hecke.PureBondChainProduct.tr_pureBondChain_of_braided` states it in the bare-product shape
+this docstring quotes. Both sorry-free.
+
+**Three limits, or this gets over-quoted.** (i) The coefficient is `1`: the proved shape is
+`∏_k (z + d_k)`, not `∏_k (c_k·z + d_k)`, because `c • σ + d` factors only over a field — no
+restriction on the corpus, since all three bond types listed above carry `c = 1`. (ii) It is proved
+in a **different class**. `MarkovTrace n q A` below is fixed-level and single-algebra with no
+filtration, so it cannot state "`a` below the bond, `b` above it" — which is exactly what "the class
+does not yet carry" recorded, and remains true of *this* class; the proof lives in the tower
+vocabulary and transporting it here is a separate bridge. (iii) A braided tower is not yet the
+**production** trace: the Ocneanu trace of `H_n(q)` at `z = q³/(q²+1)` is proved unique as a
+`HeckeCoset.MarkovTraceFamily` and is not packaged as an `OcneanuTrace.MarkovTrace` (bean
+`qou-gr3t`, remaining item).
+
+The `n = 9` exact identity (`route_c_step3_bond_factorisation_exact_probe.py`, 76/76) remains the
+independent scope-(b) evidence at fixed `A`, on the canonical non-monotone word.
 
 ## References
 
