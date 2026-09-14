@@ -107,12 +107,42 @@ from q_parameter import q_at, q_muon_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 DPS = 60
-DASHBOARD_PRED_MEV = "0.651856310060"
+_EXPECTED_PREFIX = "0.651856310060"
 
 # AGENTS.md's recorded c_3 extractions (see docstring section 1 for why these
 # are used rather than a fresh re-derivation).
 C3_PROTON = "-2.0693425728"
 C3_MUON_2022 = "-2.01986031"
+
+def _dashboard_qbeta_mev():
+    """Read the scored Q_beta cell from the dashboard witness, at FULL precision.
+
+    Hardcoding the 12-digit truncation silently loses ~5e-13 and, worse, goes
+    stale without saying so -- the exact defect this arc keeps documenting. The
+    witness carries 60 digits; reading it turns a staleness hazard into a
+    failing assertion. `_EXPECTED_PREFIX` is the value this probe's prose was
+    written against, so a dashboard move is LOUD rather than invisible.
+    """
+    import json
+    w = _COMP / "per-observable-100x-status.witness.json"
+    if not w.exists():
+        raise SystemExit(f"dashboard witness missing: {w}")
+    d = json.loads(w.read_text())
+    v = d.get("data", {}).get("qbeta_ruled_base", {}).get("Q_beta_MeV")
+    if v is None:
+        for r in d.get("data", {}).get("rows", []) or d.get("rows", []):
+            if r.get("obs") == "Q_beta":
+                v = r.get("pred_MeV")
+                break
+    if v is None:
+        raise SystemExit("dashboard witness carries no Q_beta cell")
+    if not str(v).startswith(_EXPECTED_PREFIX):
+        raise SystemExit(
+            f"DASHBOARD MOVED: witness Q_beta = {v}, this probe's prose was "
+            f"written against {_EXPECTED_PREFIX}. Re-read the prose before "
+            f"re-running -- do not just update the literal."
+        )
+    return str(v)
 
 RESULTS: list[dict] = []
 
@@ -150,7 +180,7 @@ def main() -> int:
         hbar = (q - 1) / q
         b = mp.sqrt((h ** 2 + 3) / (h ** 2 + 4))
         u = b * hbar ** 2
-        return (q_cod / mp.mpf(DASHBOARD_PRED_MEV)) / (1 - u ** 2)
+        return (q_cod / mp.mpf(_dashboard_qbeta_mev())) / (1 - u ** 2)
 
     # ---- 1. the FAILED cross-anchor prune, and its measured reason ---------
     rel_dq = abs(q0 - q_mu) / q0
