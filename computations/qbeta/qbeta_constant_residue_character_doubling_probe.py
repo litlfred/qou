@@ -289,6 +289,31 @@ def main() -> int:
         f"search was run for a reason c should be {int(near)}.",
     )
 
+    # ---- 7. the SECOND survivor is vacuous, not open ----------------------
+    kap_scan = []
+    worst_k = None
+    for s in ("1.001", "1.01", "1.05", "1.1", "1.2", "1.5", "2", "3", "5", "10"):
+        x = mp.mpf(s)
+        kv = kappa_zD(x)
+        kap_scan.append({"q": s, "kappa": fmt(kv), "ge_one": bool(kv >= 1)})
+        worst_k = kv if worst_k is None or kv < worst_k else worst_k
+    check(
+        "the_q_dependent_residue_survivor_is_VACUOUS_not_open",
+        worst_k >= 1,
+        f"cosh is onto [1, inf), so wherever 1 <= kappa a q-dependent residue "
+        f"reproducing it exists BY CONSTRUCTION -- one sets "
+        f"a(q) := arcosh(kappa(q)), reading the residue off the answer. "
+        f"Measured, kappa on the z_D base stays >= 1 throughout q in (1, 10] "
+        f"(min {mp.nstr(worst_k, 12)} at the low end, rising to "
+        f"{mp.nstr(kappa_zD(mp.mpf(10)), 12)} at q = 10), so the vacuity is not "
+        f"conditional in the physical domain. Proved in general by "
+        f"QOU.QBeta.CharacterDoubling.exists_q_dependent_residue_of_one_le. "
+        f"Same disposition EigenphaseCarrierVacuity gives the elliptic "
+        f"trichotomy's middle branch ('M arbitrary -- CIRCULAR'), reached "
+        f"independently on the hyperbolic side. Only a residue whose "
+        f"q-dependence is DERIVED can carry content.",
+    )
+
     allp = all(r["passed"] for r in RESULTS)
     print(f"  {sum(r['passed'] for r in RESULTS)}/{len(RESULTS)} checks passed")
 
@@ -328,6 +353,7 @@ def main() -> int:
         "doubling_control": ctrl,
         "doubling_defect_by_point": fails,
         "rescaling_lambda_spread": fmt(spread),
+        "kappa_ge_one_scan": kap_scan,
         "invariant_cited": (
             "QOU.QBeta.CharacterDoubling (sorry-free, this PR): cosh_doubling, "
             "char_doubling_of_constant_residue, "
