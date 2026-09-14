@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-07T09:40:36Z
+updated_at: 2026-09-14T07:26:52Z
 ---
 
 ## Landed (A + C)
@@ -212,3 +212,54 @@ that `Group` has instances and `JetProlongationQOU` has none. Default if
 nothing is decided: the flags stay and nothing moves. My judgement: narrow the
 rule to hypothesis carriers — but it changes another agent's measured
 criterion, so it is not mine to make.
+
+
+## HeckeAnyonicSubstrate — both carriers closed (PR #7357, 2026-09-14)
+
+`proof-claims-unencoded` **9 -> 7**; `total_defects` 70 -> 68; review ledger 321 -> 319.
+Grepping the audit run for `HeckeAnyonic` now returns nothing.
+
+**Four defects, two of them not in the ledger.**
+
+1. Library `heckeQuadratic : Prop` — ENCODED from the block's own displayed
+   equation `(T_{s_i} - q)(T_{s_i} + 1) = 0`, and CONSUMED by
+   `braidAction_injective` (first reader of the field in the corpus).
+   `NormalForm` gained `AddCommGroup`/`Module R` instance fields, which the
+   field's own docstring had already named as the blocker.
+2. **The `.ts` lean.ref pointed at a DELETED declaration.** Not flagged
+   anywhere. `qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate` was removed
+   2026-09-05 by the `qou-k4oq` retraction; the manifest was never updated.
+3. Content stub deleted (§0a shadowing stub) — also the same-namespace
+   duplicate the sibling-divergence audit reports.
+4. File header enumerated "observation-functor compatibility", which no field
+   carries and none ever did. Corrected (it CANNOT be encoded here — no tau);
+   the content lives at `KazhdanLusztigClassicalLimit.kl_compatible_with_tau`.
+
+**2 and 3 hid each other.** Ref resolution checks the SIBLING FIRST, so the
+dangling ref resolved to the stub beside it and validation stayed green.
+Neither is visible while the other is present — worth remembering as a shape.
+
+**Left open, deliberately (author's call, not mine).** The class is STILL
+satisfiable by a degenerate model (`zeroQCounterModel` at q=0; `PUnit` at any
+q, already in local/lean-generation). Encoding more fields will not change it:
+the conjecture's content is EXHAUSTION, and exhaustion cannot be stated by a
+class whose INSTANCE chooses `NormalForm`. Fixing it means making
+`NormalForm`/`braidAction` caller-supplied parameters — the `DimMasterPentagon`
+shape from #6671 — a class-arity change reaching `KazhdanLusztigClassicalLimit`,
+`RootOfUnityMTCTruncation` and `lusztig-canonical-basis-q-eq-1`.
+
+**Two TRAPs measured this session, both about the tooling, not the corpus:**
+
+- `lean-shadow-verify.sh` keys staleness on the source's GIT COMMIT DATE, so it
+  CANNOT see uncommitted work. My first run reported `rebuild=0` and 3x EXIT=0
+  against the OLD olean — a false green on the file I was editing. Commit
+  first, then sweep; `rebuild=N>0` is the signal the run means anything.
+- The vacuity ledger does NOT self-prune, though
+  `local/lean-proof-vacuity-audit` says it does. After the fix,
+  `--review-ledger` left both keys and did not write the file;
+  `--check-ledger` exits 0 with an entry pointing at a DELETED path. The last
+  shrink (350 -> 321) was an explicit `33 deleted` commit. Prune by hand.
+
+**Remaining 7:** HadronFibreEmbedding, DegreeZeroDatum, RungRule,
+TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
+BringPeriodSublattice, TannakaKreinReconstruction.
