@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T23:04:00Z
+updated_at: 2026-09-14T23:12:47Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -3319,3 +3319,45 @@ five** rather than the one I had changed.
 `main` landed a **sharpened** `scripts/lean-self-assuming-audit.py` (the
 conjunctive `⟨X.a, X.b, X.c⟩` blind spot, taxonomy row 46, +7 hits). Run against
 this branch: **none of the five files is flagged.**
+
+
+## 2026-09-14 (session gifted-feynman, 8) — the Kronecker gap is NOT LOAD-BEARING, and the d=2 chain is now complete in Lean
+
+Assertion 8 carried *"the Lean twin of this step is NOT written"* for the
+general-`d` Kronecker step. I went to close it and found the more useful thing:
+**it does not need closing.**
+
+**Why.** `V_(2,1)` is **2-dimensional**, so the conclusion this probe actually
+draws — *"a q-uniform braid-image eigenphase on `V_(2,1)` lies in
+`{0, π/3, π/2, 2π/3, π}`"* — is the **`d = 2`** case. At `d = 2` the argument
+is elementary: an integer trace with `|tr| ≤ 2` has five values, full stop. No
+Kronecker anywhere in it. The general-`d` step therefore **generalises a
+conclusion already had**, and nothing downstream consumes the generalisation.
+Leaving it open costs nothing — a different situation from a gap that blocks,
+and the assertion's wording did not distinguish the two.
+
+**The `d = 2` chain is now complete in Lean, sorry-free end to end:**
+
+| step | carrier |
+|---|---|
+| bounded ⟹ constant | `LaurentBoundedness.laurent_const_of_bounded` (this session) |
+| constant integer character ⟹ cos α ∈ 5 values | `EigenphaseQuantization.two_cos_eq_int_cases` (existing) |
+| **⟹ α ∈ {0, π/3, π/2, 2π/3, π}** | `EigenphaseQuantization.phase_quantized` **(new)** |
+| the whole thing | `EigenphaseQuantization.braid_eigenphase_quantized` **(new)** |
+
+`#print axioms` on both new theorems: `[propext, Classical.choice, Quot.sound]`.
+
+**The `phase_quantized` step was a real gap, not bookkeeping.**
+`two_cos_eq_int_cases` quantises the **cosine**; the corpus's sentence is about
+the **phase**. Those are different statements and the bridge was prose
+arithmetic. `Real.injOn_cos` is what makes it an equality rather than a
+containment.
+
+**The cost of closing the general-`d` step, measured rather than guessed:**
+**Mathlib has no Kronecker theorem.** `Mathlib/` contains only
+`kroneckerTMul*` — the matrix *product*, unrelated. So it is a from-scratch
+formalisation: bounded roots ⟹ bounded elementary symmetric functions ⟹
+finitely many monic integer polynomials of that degree and height ⟹ pigeonhole
+on powers ⟹ finite order. Days, not hours, for a generalisation nothing
+consumes. **Recommendation (my judgement, not a finding): leave it open and
+say why, which assertion 8 now does.**

@@ -68,6 +68,7 @@ no `Q_β` closure exists.  It says the gap lives in the **base**, not in any run
 so the `Q_β` L2 residual is not a phase problem and must not be worked as one.
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 import Mathlib.Tactic
 
 namespace QOU.QBeta.EigenphaseQuantization
@@ -150,5 +151,78 @@ theorem not_braid_eigenphase_of_two_cos_mem_Ioo {α : ℝ}
     (h1 : 1 < 2 * Real.cos α) (h2 : 2 * Real.cos α < 2) :
     ¬ ∃ c : ℤ, 2 * Real.cos α = (c : ℝ) :=
   not_isInt_of_mem_Ioo_one_two h1 h2
+
+
+/-! ### The five-element PHASE set, and why Kronecker is not load-bearing
+
+`two_cos_eq_int_cases` above quantises the **cosine** — five values. The
+corpus's stated conclusion is about the **phase**: *"a q-uniform braid-image
+eigenphase on `V_(2,1)` lies in the five-element set `{0, π/3, π/2, 2π/3,
+π}`"*. Those are different statements, and the bridge between them was prose
+arithmetic until now. `phase_quantized` is that bridge, via `Real.injOn_cos`.
+
+🟩 **This closes the load-bearing half of `qbeta_eigenphase_...`'s assertion 8,
+and shows the unformalised half is DECORATIVE.** That assertion reads
+*"Kronecker: q-uniform ellipticity ⟹ integer char poly ⟹ eigenvalues are roots
+of unity ⟹ α ∈ 2πℚ"*, marked general-`d`, with a note that its Lean twin is
+unwritten. Two things follow from the chain below, and the second is the useful
+one:
+
+* **`V_(2,1)` is 2-dimensional**, so the corpus's conclusion is the `d = 2`
+  case — and at `d = 2` the argument is elementary: an integer trace with
+  `|tr| ≤ 2` has five values, full stop. **No Kronecker.**
+* Therefore the unformalised general-`d` step **is not on the path to anything
+  the corpus asserts**. It generalises a conclusion already had. Leaving it
+  open costs nothing; that is a different situation from a gap that blocks.
+
+Worth recording because the cost of closing it is not small:
+**Mathlib has no Kronecker's theorem** (measured — `Mathlib/` contains only
+`kroneckerTMul*`, the matrix product, unrelated), so formalising it means
+proving from scratch that an algebraic integer with all conjugates on the unit
+circle is a root of unity: bounded roots ⟹ bounded elementary symmetric
+functions ⟹ finitely many monic integer polynomials of that degree and height
+⟹ pigeonhole on powers ⟹ finite order. Days, not hours — and for a
+generalisation nothing downstream consumes.
+-/
+
+/-- **The five-element phase set.** On `[0, π]`, the five quantised cosine
+values pin `α` to exactly `{0, π/3, π/2, 2π/3, π}`.
+
+`Real.injOn_cos` is what makes this an equality rather than a containment. -/
+theorem phase_quantized {α : ℝ} (hmem : α ∈ Set.Icc 0 π)
+    (h : Real.cos α = -1 ∨ Real.cos α = -1/2 ∨ Real.cos α = 0
+      ∨ Real.cos α = 1/2 ∨ Real.cos α = 1) :
+    α = 0 ∨ α = π/3 ∨ α = π/2 ∨ α = 2*π/3 ∨ α = π := by
+  have hpi := Real.pi_pos
+  have h0 : (0:ℝ) ∈ Set.Icc 0 π := ⟨le_refl _, le_of_lt hpi⟩
+  have h3 : π/3 ∈ Set.Icc 0 π := ⟨by linarith, by linarith⟩
+  have h2 : π/2 ∈ Set.Icc 0 π := ⟨by linarith, by linarith⟩
+  have h23 : 2*π/3 ∈ Set.Icc 0 π := ⟨by linarith, by linarith⟩
+  have hp : π ∈ Set.Icc 0 π := ⟨le_of_lt hpi, le_refl _⟩
+  have hcos23 : Real.cos (2*π/3) = -(1/2) := by
+    have e : (2 * π / 3) = π - π / 3 := by ring
+    rw [e, Real.cos_pi_sub, Real.cos_pi_div_three]
+  rcases h with h | h | h | h | h
+  · right; right; right; right
+    exact Real.injOn_cos hmem hp (by rw [h, Real.cos_pi])
+  · right; right; right; left
+    exact Real.injOn_cos hmem h23 (by rw [h, hcos23]; ring)
+  · right; right; left
+    exact Real.injOn_cos hmem h2 (by rw [h, Real.cos_pi_div_two])
+  · right; left
+    exact Real.injOn_cos hmem h3 (by rw [h, Real.cos_pi_div_three])
+  · left
+    exact Real.injOn_cos hmem h0 (by rw [h, Real.cos_zero])
+
+/-- **The corpus's Part-1 conclusion, as one theorem.**  A `q`-uniform
+braid-image eigenphase on `V_(2,1)` — i.e. one whose character is a constant
+integer — lies in `{0, π/3, π/2, 2π/3, π}`.
+
+This is the `d = 2` case and it needs no Kronecker step; see the section
+docstring above. -/
+theorem braid_eigenphase_quantized {α : ℝ} {c : ℤ}
+    (hmem : α ∈ Set.Icc 0 π) (h : 2 * Real.cos α = (c : ℝ)) :
+    α = 0 ∨ α = π/3 ∨ α = π/2 ∨ α = 2*π/3 ∨ α = π :=
+  phase_quantized hmem (two_cos_eq_int_cases h)
 
 end QOU.QBeta.EigenphaseQuantization

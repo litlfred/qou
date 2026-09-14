@@ -314,13 +314,20 @@ def main() -> int:
           "eigenvalues are roots of unity => alpha in 2*pi*Q",
           True,
           "general-d form; the d=2 instance is assertion 7 above. "
-          "THE KRONECKER STEP ITSELF IS STILL NOT FORMALISED - but the chain "
-          "is no longer entirely paper: its FIRST input, the Laurent "
-          "boundedness lemma behind assertion 5, is now "
-          "QOU.QBeta.LaurentBoundedness (sorry-free). What remains unwritten "
-          "is the step from a bounded-hence-integer character to a root of "
-          "unity. See bean qou-pdix; do not read the new file as closing "
-          "this assertion.")
+          "THE KRONECKER STEP IS STILL NOT FORMALISED, AND IS NOW KNOWN NOT "
+          "TO BE LOAD-BEARING. V_(2,1) is 2-DIMENSIONAL, so the conclusion "
+          "this probe actually draws is the d=2 case, and at d=2 the argument "
+          "is elementary - an integer trace with |tr| <= 2 has five values, no "
+          "Kronecker. That d=2 chain is now COMPLETE in Lean, sorry-free: "
+          "LaurentBoundedness.laurent_const_of_bounded (bounded => constant) "
+          "and EigenphaseQuantization.braid_eigenphase_quantized (integer "
+          "character => alpha in {0, pi/3, pi/2, 2pi/3, pi}, via "
+          "Real.injOn_cos). So the general-d step GENERALISES a conclusion "
+          "already had; leaving it open costs nothing. Cost of closing it, "
+          "measured: Mathlib has NO Kronecker theorem (only kroneckerTMul*, "
+          "the matrix product), so it is a from-scratch formalisation - "
+          "bounded roots => bounded symmetric functions => finitely many "
+          "monic integer polys => pigeonhole => finite order. Bean qou-pdix.")
 
     # ---- the ladder anchor numbers (PART 1's yardstick) --------------------
     # alpha_req and its window are NOT part-2 machinery: they are what makes
