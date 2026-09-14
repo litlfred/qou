@@ -114,7 +114,15 @@ already stated this way** (`Qbase * d < Qtarget` is a hypothesis, not a
 literal), so only this probe's instantiation and prose were stale.
 
 So no phase whatsoever repairs a base that is 43 % low, because a cosine cannot
-exceed one.  The `c₃` that would be required instead is `1.23e6`, not `O(1)`.
+exceed one.  The `c₃` that would be required instead is **324098.7 on the LIVE
+SCORED cell** (`nuc11_interleaved`, tower `E₀`, factor 1.20016), not `O(1)`.
+(This line read `1.23e6` until 2026-09-14.  That is `(F−1)/u³` on the
+**superseded** `z_D` order-zero cell, `F = 1.7592` — arithmetically right for
+its own cell and wrong for the one this probe now scores.  The correction that
+moved the scored cell is recorded in `stale_figure_corrected` one screen below,
+and the prose was not moved with it.  The live value is
+`c3_required_on_live_cell` in this probe's own witness; quote the witness,
+never this docstring.)
 **The `Q_β` L2 residual is a BASE problem, not a phase problem, and not a ladder
 problem at all.**  Scope-(b), citing `Real.cos_le_one`.
 
