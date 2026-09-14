@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-09-14T06:44:29.484Z",
+  "updated_at": "2026-09-14T07:39:18.865Z",
   "entries": {
     "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3832,23 +3832,6 @@
       "evidence": "Every field of this carrier is typed bare `: Prop` -- the UNIVERSE of propositions, not a proposition. An instance therefore supplies a proposition rather than a proof of one, so `instance := <True>` type-checks and discharges the class, and every `[C]`-conditional theorem downstream is conditional on nothing. Measured per carrier by extracting the field list from the declaration (docstring-aware). This is the shape AGENTS.md 3b-tax forbids; the worked fix is IsospinFromCanonicalBowtie (D9) in PR #6671, which re-encodes the content as caller-supplied parameters and proves its own refutability.",
       "reviewer": "claude-session-01CSQEiZ",
       "reviewed_at": "2026-09-04"
-    },
-    "content/quantum-observable-universe/observations/magic-numbers-bring.lean::BringPeriodSublattice::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 34,
-      "verdict": "genuine",
-      "file_sha": "2eb0837b7cd4",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `s5_stable`, `tau_stable` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[BringPeriodSublattice]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
-      }
     },
     "content/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.lean::QuantumLanglandsDual::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",

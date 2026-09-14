@@ -1,21 +1,21 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-14T06:43:36.470Z",
+  "generated": "2026-09-14T07:38:15.894Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3846,
-  "files_flagged": 109,
-  "total_defects": 70,
+  "files_flagged": 108,
+  "total_defects": 69,
   "total_exempt": 64,
   "total_promoted_from_exempt": 42,
   "categories": {
     "proof-no-self-assuming-projection": 57,
-    "proof-claims-unencoded": 9,
+    "proof-claims-unencoded": 8,
     "proof-no-trivial-true": 2,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1
   },
   "conjecture_graph": {
-    "total": 310,
+    "total": 309,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -791,11 +791,6 @@
         "name": "MagicNumbersBring",
         "file": "content/quantum-observable-universe/lean/QOU/Conjectures/MagicNumbersBring.lean",
         "line": 48
-      },
-      {
-        "name": "MagicNumbersBring",
-        "file": "content/quantum-observable-universe/observations/magic-numbers-bring.lean",
-        "line": 50
       },
       {
         "name": "MarkovDisjointStabilisation",
@@ -3120,17 +3115,6 @@
         "decl": "KnotOperator",
         "severity": "major",
         "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (is_knot) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [KnotOperator]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/observations/magic-numbers-bring.lean": [
-      {
-        "line": 34,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "structure BringPeriodSublattice where",
-        "decl": "BringPeriodSublattice",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (s5_stable, tau_stable) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [BringPeriodSublattice]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean": [
