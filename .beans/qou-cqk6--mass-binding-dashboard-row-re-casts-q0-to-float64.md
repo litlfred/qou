@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-13T14:05:57Z
-updated_at: 2026-09-13T14:14:44Z
+updated_at: 2026-09-14T20:17:19Z
 ---
 
 ## The claim
@@ -257,3 +257,113 @@ the witness stays stale until whoever owns `B_sym_ent` re-runs it.
 work** — 245 of its fields drain by re-running today. It is blocked on a decision
 about `B_sym_ent`. Its sibling `probes/su4-occupancy-binding-mass-probe` (167
 fields, the `--group low` run of the same script) is in the same position.
+
+---
+
+## 2026-09-14 — the SECOND FINDING's probable cause is REFUTED by measurement, and a named commit replaces it
+
+The entry above attributes the 20 % `B_sym_ent` move to catastrophic cancellation
+at `mass_binding_dashboard.py:719`, calling it *"the canonical
+catastrophic-cancellation site"*. **It is not cancelling, and the producer's own
+comment three lines above says so.** Lines 708-715:
+
+> *"Measured impact on E_multilink was 5e-22..3e-19 relative (2H/3H/3He/4He),
+> i.e. none of the displayed digits moved — **the two defects differ at O(1), so
+> the subtraction below is not in fact near-cancelling at these parameters.**"*
+
+The entry cites that same comment block for its *other* caveat (the "5e-22..3e-19
+is a different change" warning) and does not read the sentence next to it.
+
+### Measured, at `mp.dps = 60`, all four light isotopes
+
+`|defect0 − defecti| / |defect0|` — the cancellation ratio. Near-cancelling would
+be `≪ 1`:
+
+| iso | ratio |
+|---|---:|
+| ²H | **0.1818** |
+| ³H | **0.1761** |
+| ³He | **0.3352** |
+| ⁴He | **0.3305** |
+
+The two defects differ by **18–34 %**. There is no cancellation to be
+catastrophic. Scope (b) — this is a *measured* property of the quantities at
+these parameters, not a failure of one construction to reproduce a number.
+
+### My own alternative hypothesis is ALSO refuted, and I am recording it because it was the better one
+
+`B_sym` uses only the **forward** leg; `E_multilink` additionally uses the
+**inverse** leg at `1/q`. A change confined to the inverse leg would move
+`B_sym_ent` and leave `B_sym` at the f64 floor — *exactly* the observed
+signature. And lines 702-704 document precisely such a change: the inverse leg
+*"used to divide into `_mp.mpf(str(q_parameter.Q))` — the f64 — so the
+inverse-anchor leg was capped at ~17 digits while the forward leg was not."*
+
+Tested directly rather than by bisection (the clone is shallow, and `git blame`
+on those lines returns the boundary commit `^638f298ffb`, so blame cannot reach
+the author). Computing `E_multilink/alpha` both ways:
+
+```
+q_inv_new = 0.9009182839557414921608229    (50-dps string)
+q_inv_old = 0.9009182839557414983226296    (f64-capped)
+differ by rel 6.84e-18
+
+              E/alpha new        E/alpha old        old/new
+2H          0.0133667750002    0.0133667750002        1.0
+3H         0.00994080155647   0.00994080155647        1.0
+3He         0.0217161702422    0.0217161702422        1.0
+4He         0.0129184715125    0.0129184715125        1.0
+```
+
+**Byte-identical, `old/new = 1.0` on every isotope.** A 6.8e-18 move in `q` does
+not survive to `E_multilink` at 12 digits. The inverse-leg precision fix is real
+and correct and is **not** what moved `B_sym_ent`.
+
+Script: `scratchpad/emulti.py` (measurement only, writes nothing; mpf end to end,
+no `float()` anywhere, per the probes-are-not-exempt rule).
+
+### What IS in the window — a named commit with a mechanism
+
+The witness's `computedAt` is **2026-08-29T04:14:20Z**. Two non-merge commits
+touch the relevant cone after it, and only one of them touches the trace:
+
+```
+818a244f13  2026-09-05  fix(qou-wdij): route non-monotone words to the general-word
+                        kernel — the atom trace producer runs again
+                        [computations/tr_m_atom_via_transfer.py]
+dce9a3f9c5  2026-09-05  fix(qou-4ohh): the dashboard's own accuracy claim was the
+                        f64 floor [computations/mass_binding_dashboard.py]
+```
+
+`tr_m_atom_via_transfer` is the module supplying `ta`/`tf`/`ta_i`/`tf_i`, and it
+is the **same module AGENTS.md names as the worked example of import-cone drift**
+(`binding_canonical` source-stable while `tr_M_atom` moved 48 %). `818a244f13`
+changes *which kernel computes the trace* for non-monotone words — and under the
+2026-09-05 intra-nucleon ordering ruling (`qou-hu1f`) the canonical word is
+**borromean**, where a monotone generator sequence is the **superseded grouped**
+word. So the production word is exactly the class this commit re-routes.
+
+**I am stating that as the live candidate, not as the cause.** What is
+established is that the two previously-offered causes are refuted and that
+`818a244f13` is in the window and touches the right quantity by the right
+mechanism. What is *not* established is that it produces the 14–28 % per-row
+move; confirming that means running the trace under both kernels, which I did
+not do.
+
+### What this changes for whoever picks the bean up
+
+The blocker is unchanged — `B_sym_ent` still needs a decision before the 245-field
+drain can land, and that decision is still the owner's. What changes is **where to
+look**: not at line 719, which is measurably fine, but at the kernel routing in
+`tr_m_atom_via_transfer`. An owner deciding on the cancellation story would be
+deciding on a refuted premise, and the fix implied by it (harden line 719) would
+change nothing.
+
+Also worth recording against the entry above: **option B has LANDED.**
+`su4_occupancy_binding_probe.py` on main emits the honest reason string
+(*"W_lambda ITSELF is finite and representable at this A; only the f64
+intermediate is not"*) with a 12-line comment. The two **witness** rows still
+carry the old false text, because the witness cannot be refreshed without
+re-running — i.e. it is blocked on the same `B_sym_ent` decision. So B is done at
+the producer and incomplete in the artifact, which is the normal state and not a
+second defect.
