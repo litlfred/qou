@@ -183,6 +183,63 @@ def scan() -> tuple[list[tuple], dict]:
     return sorted(rows), stats
 
 
+
+# --------------------------------------------------------------------------
+# STAGE 2 -- narrow before spending producer runs.
+#
+# Stage 1's signal is necessary and weak. The defect shape is sharper: the Lean
+# literal MATCHES THE STALE WITNESS, so the Lean is carrying that witness's data
+# and the producer has since moved. When none of a Lean file's literals appear
+# anywhere in the cited witness, the citation is a pointer ("see this script")
+# rather than a provenance claim over numbers, and no producer run is needed.
+#
+# Measured 2026-09-14: 46 -> 22 needing a run, 24 pointers. The one confirmed
+# defect ranks FIRST by shared-literal count (5 of 5), which is the ordering a
+# triage filter should produce and was not tuned for.
+#
+# The "pointer" bucket is a triage bucket, NOT an all-clear: a Lean file could
+# carry a number the producer emits in a form this extractor does not match
+# (different precision, symbolic form).
+# --------------------------------------------------------------------------
+
+def _witness_numbers(wpath: Path) -> set[str]:
+    """Numeric-looking tokens anywhere in the witness, normalised."""
+    txt = (ROOT / wpath).read_text()
+    out = {m.replace(" ", "") for m in re.findall(r"-?\d+\.\d+|-?\d+\s*/\s*\d+", txt)}
+    try:
+        d = json.loads(txt)
+    except Exception:
+        return out
+
+    def walk(o):
+        if isinstance(o, dict):
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+        elif isinstance(o, float):
+            out.add(repr(o))
+        elif isinstance(o, str):
+            for m in re.findall(r"-?\d+\.\d+|-?\d+\s*/\s*\d+", o):
+                out.add(m.replace(" ", ""))
+
+    walk(d)
+    return out
+
+
+def stage2(rows):
+    """Split stage-1 rows into (needs_run, pointer), ranked by shared literals."""
+    needs, pointer = [], []
+    for lf, prod, wpath, wh, lh, n in rows:
+        lits = {x.replace(" ", "") for x in NUM.findall((ROOT / lf).read_text())}
+        shared = sorted(lits & _witness_numbers(wpath))
+        (needs if shared else pointer).append((lf, prod, wpath, shared, len(lits)))
+    needs.sort(key=lambda r: -len(r[3]))
+    pointer.sort()
+    return needs, pointer
+
+
 def main(argv: list[str]) -> int:
     selftest = "--selftest" in argv
     rows, stats = scan()
@@ -219,6 +276,22 @@ def main(argv: list[str]) -> int:
         print(f"      producer {prod}")
         print(f"      witness  {wpath}   scriptHash {wh} != live {lh}   ({n} literals)")
     print()
+    if "--stage2" in argv:
+        needs, pointer = stage2(rows)
+        print("=" * 70)
+        print(f"STAGE 2 -- needs a fresh producer run : {len(needs)}")
+        print(f"          pointer, not a claim        : {len(pointer)}")
+        print()
+        for lf, prod, wpath, shared, nl in needs:
+            print(f"  {lf}")
+            print(f"      producer {prod}")
+            print(f"      {len(shared)} of {nl} Lean literals also in the witness: "
+                  f"{shared[:8]}{' ...' if len(shared) > 8 else ''}")
+        print()
+        for lf, prod, wpath, shared, nl in pointer:
+            print(f"  [pointer] {lf}  ({nl} literals, 0 shared)  <- {prod}")
+        print()
+
     print("These are CANDIDATES TO READ, not files to change. A hit means the")
     print("provenance claim is unverified, not that the Lean's numbers are wrong;")
     print("confirming one means reading its literals against a fresh producer run.")

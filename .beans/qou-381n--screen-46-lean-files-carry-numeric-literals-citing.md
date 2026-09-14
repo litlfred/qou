@@ -4,7 +4,7 @@ title: 'SCREEN: 46 Lean files carry numeric literals citing a producer whose wit
 status: todo
 type: task
 created_at: 2026-09-14T20:56:23Z
-updated_at: 2026-09-14T20:57:17Z
+updated_at: 2026-09-14T21:13:06Z
 ---
 
 
@@ -140,3 +140,97 @@ theorem, witness or content block changes on any hit. The reason it matters is
 that these docstrings are exactly what a reviewer checks a Lean constant against
 — the sentence is doing the work an audit would otherwise do, and on at least
 one file it has been wrong for three months.
+
+---
+
+## 2026-09-14 (later) — stage 2 halves the queue, and the first verification is a SPLIT verdict
+
+### Stage 2: 46 → 22, and the confirmed defect ranks first
+
+Stage 1's signal is necessary and weak. The defect shape is sharper: **the Lean
+literal matches the stale witness**, so the Lean is carrying that witness's data
+and the producer has since moved. When none of a Lean file's literals appear
+anywhere in the cited witness, the citation is a pointer (*"see this script"*),
+not a provenance claim over numbers, and no producer run is needed.
+
+```
+stage-1 candidates                                      46
+  NEEDS A FRESH RUN (Lean literal also in the witness)  22
+  pointer, not a claim                                  24
+```
+
+**The filter calibrates.** Ranked by shared-literal count the one confirmed
+defect is **first** — `JetOrderIndependence` at **5 of 5**, including `1/16` and
+`55/16`, the two that moved. That ordering was not tuned for.
+
+Top of the ranked queue:
+
+| Lean file | producer | shared |
+|---|---|---:|
+| `JetOrderIndependence` | `jet_order_pivots` | **5/5** ← confirmed |
+| `DepthStratifiedWeightRequirements` | `phi_k_weight_family_discriminator` | 4/4 |
+| `M004AngleStructure` | `borromean_angle_structure_lp_probe` | 4/5 |
+| `ModularDoubleReciprocity` | `qbeta_modular_double_reciprocity` | 4/7 |
+| `MarginalRatioExtensivity` | `four_body_term_and_the_h12_collapse_probe` | 3/30 |
+
+Folded into the screen as `--stage2`. The pointer bucket is a triage bucket, not
+an all-clear: a Lean file could carry a number the producer emits in a form the
+extractor does not match (different precision, a symbolic form).
+
+### First verification — and the two halves disagree
+
+Ran `phi_k_weight_family_discriminator.py` (rank 2) against
+`DepthStratifiedWeightRequirements.lean`. **The two objects give opposite
+answers, and conflating them would be the error.**
+
+**The Lean docstring is CURRENT — a true negative.** Lines 118-119 record
+`Σ_λ d_q²/[n]_q! = 0.991 / 1.111 / 1.517` at `n = 6 / 9 / 12`. The fresh run
+prints `c_n by atom: D=0.99107952  T=1.1109231  3He=1.1109231  4He=1.5171332` —
+`D` is `A=2, n=6`, `T`/`³He` are `A=3, n=9`, `⁴He` is `A=4, n=12`. **They
+match.** These are the same figures AGENTS.md quotes in its `y_λ`
+notation-collision rule, so that passage is current too. The screen flagged this
+file and the check cleared it, which is the triage working rather than failing.
+
+**But the WITNESS is a genuine positive, and it is not subtle.**
+`computations/probes/phi-k-weight-family-discriminator.witness.json` moves
+substantively on a fresh run — 113 lines changed:
+
+| field | committed | fresh | move |
+|---|---|---|---:|
+| per-atom ratio `D` | 0.319160181993 | 0.260208414211 | −18.5 % |
+| per-atom ratio `T` | 0.342478004989 | 0.410555725660 | +19.9 % |
+| per-atom ratio `³He` | 0.355503230366 | 0.396317631720 | +11.5 % |
+| per-atom ratio `⁴He` | 0.498568409744 | 0.318456126967 | **−36.1 %** |
+| `max_over_min` (one block) | 1.50146673070 | 2.35943846094 | **+57.1 %** |
+| `max_over_min` (other) | 1.56212597270 | 1.57779573310 | +1.0 % |
+| **`allPassed`** | **`true`** | **`false`** | two assertions flip |
+
+So the committed witness publishes `allPassed: true` for a configuration that
+now **fails two of its eight assertions**, and per-atom numbers that have moved
+by up to a third. That belongs to **`qou-oots`** — the open question of whether
+`dim_q²` is the right numerator against the Molien `f^λ dim_q(λ)` — which is
+exactly the territory these ratios decide.
+
+**Environment is a live confound I have NOT excluded.** The diff also carries
+`pyhecke_native_build: e3fab84c4c1df76a → 5df83fbc24b06f8a`, so this container's
+native build differs from the one that wrote the witness. AGENTS.md's worked
+case (`binding_canonical`) checked environment and found it inert; **I did not
+do that check here**, so I cannot say whether the 36 % move is the producer or
+the build. Anyone acting on this must run that discriminator first.
+
+**The witness was reverted, not committed.** It is another arc's published
+artifact, the fresh run FAILS two assertions, and adopting it would publish a
+regression I do not own — three separate reasons, any one sufficient under the
+2026-09-07 directive.
+
+### What this changes for the triage
+
+The first verified hit shows the screen's two failure modes are **independent**:
+a Lean docstring can be current while its cited witness is badly stale. So the
+triage should record **two verdicts per hit**, not one — *is the Lean's number
+current?* and *is the witness's payload current?* — because the answer differed
+on the very first case.
+
+Running tally: **2 of 22 checked** — 1 Lean-side defect (`JetOrderIndependence`),
+1 Lean-side clean with a witness-side finding (`phi_k_weight_family_discriminator`
+→ `qou-oots`). 20 unverified.
