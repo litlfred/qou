@@ -126,6 +126,59 @@ theorem q_mul_hbarSq_bar_even {q : R} (hq : q ≠ 0) :
   field_simp
   ring
 
+/-! ### The bar-norm hypothesis: one structure that gives both constraints
+
+Sections above establish two separate facts about the prefactor `C`: it obeys
+`C(q⁻¹) = q²·C(q)` (parity), and — measured, not proved here — it vanishes to
+order 2 at `q = 1`, which is what makes the baseline vanish to order 3.
+
+**Both follow from a single hypothesis**: that `C` is `q⁻¹` times the *bar-norm*
+of something.  For any `f`, write
+
+    barNorm f q  :=  -(f q · f q⁻¹)
+
+Then `barNorm f` is bar-even for free (`barNorm_bar_even`), so `q⁻¹ · barNorm f`
+satisfies the parity condition for free (`barNorm_scaled_parity`) — for **every**
+`f`, with no computation.  And when `f` vanishes at `q = 1` so does `f q⁻¹`, so
+the product vanishes to order 2; that half is arithmetic rather than a theorem
+here, but it is the same one hypothesis doing both jobs.
+
+`ℏ_q` is the instance: `q⁻¹ · barNorm hbarOf q = ℏ_q²` exactly
+(`hbarSq_eq_scaled_barNorm`).
+
+🛑 **The hypothesis itself is NOT derived.** Nothing here says the prefactor must
+be a bar-norm.  What is shown is that assuming it collapses two independent
+constraints into one, and that `ℏ_q` is then the minimal instance — a
+well-posedness result about the search, not a closure of it.  The `/3` is
+untouched by this too. -/
+
+/-- The bar-norm of `f` at `q`: `-(f q · f q⁻¹)`. -/
+noncomputable def barNorm (f : R → R) (q : R) : R := -(f q * f q⁻¹)
+
+/-- **A bar-norm is bar-even, for every `f`** — no hypothesis on `f` at all. -/
+theorem barNorm_bar_even (f : R → R) (q : R) :
+    barNorm f q⁻¹ = barNorm f q := by
+  unfold barNorm
+  rw [inv_inv]
+  ring
+
+/-- **`q⁻¹` times a bar-norm satisfies the parity constraint automatically.**
+This is the structural content: the condition `C(q⁻¹) = q²·C(q)` that §1 measured
+of `ℏ_q²` is not special to `ℏ_q` — it holds of `q⁻¹ · barNorm f` for every `f`. -/
+theorem barNorm_scaled_parity (f : R → R) {q : R} (hq : q ≠ 0) :
+    (q⁻¹)⁻¹ * barNorm f q⁻¹ = q ^ 2 * (q⁻¹ * barNorm f q) := by
+  rw [barNorm_bar_even, inv_inv]
+  field_simp
+
+/-- **`ℏ_q²` is the instance at `f = ℏ`.**  `q⁻¹ · barNorm hbarOf q = ℏ_q²`,
+exactly — so the corpus's prefactor is `q⁻¹` times the bar-norm of `ℏ_q`, and its
+parity is then a corollary of `barNorm_scaled_parity` rather than a coincidence. -/
+theorem hbarSq_eq_scaled_barNorm {q : R} (hq : q ≠ 0) :
+    q⁻¹ * barNorm hbarOf q = hbarOf q ^ 2 := by
+  unfold barNorm hbarOf
+  field_simp
+  ring
+
 section CharZeroSection
 
 variable [CharZero R]

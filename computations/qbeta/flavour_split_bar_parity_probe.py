@@ -134,6 +134,7 @@ def main() -> int:
     names = list(gens)
     total = 0
     survivors = []
+    _surv_full = []
     for exps in itertools.product(range(-2, 3), repeat=len(names)):
         if sum(abs(e) for e in exps) > 4 or all(e == 0 for e in exps):
             continue
@@ -142,8 +143,10 @@ def main() -> int:
         for n, e in zip(names, exps):
             C *= gens[n] ** e
         if sp.simplify(bar(C) / C - _q**2) == 0:
-            survivors.append((sum(abs(e) for e in exps),
-                              "*".join(f"{n}^{e}" for n, e in zip(names, exps) if e)))
+            lbl = "*".join(f"{n}^{e}" for n, e in zip(names, exps) if e)
+            deg = sum(abs(e) for e in exps)
+            survivors.append((deg, lbl))
+            _surv_full.append((lbl, C, deg))
     survivors.sort()
     n_surv = len(survivors)
     ok &= (total == 2044) and (n_surv == 121)
@@ -182,9 +185,79 @@ def main() -> int:
     print("      is the retired z = 1 cell, is the one the corpus already supports.")
 
     print()
+    print("7. A SECOND, INDEPENDENT INVARIANT: VANISHING ORDER AT q = 1")
+    _e = sp.symbols("e", positive=True)
+
+    def vorder(x):
+        s = sp.simplify(x.subs(_q, 1 + _e))
+        return sp.limit(sp.log(sp.Abs(s)) / sp.log(_e), _e, 0)
+
+    o_R, o_X = vorder(SYM), vorder(X_BASELINE)
+    o_hb2, o_qinv = vorder(HBAR**2), vorder(1 / _q)
+    ok &= (o_R == 1) and (o_X == 3) and (o_hb2 == 2) and (o_qinv == 0)
+    print(f"   q^2 - q^-2   order {o_R}      X_baseline   order {o_X}")
+    print(f"   hbar_q^2     order {o_hb2}      q^-1         order {o_qinv}")
+    print("   -> the corpus's baseline vanishes to order 3; with R at order 1 that")
+    print("      forces a prefactor of order 2, which hbar_q^2 is and q^-1 is not.")
+    order2 = sorted((d, l) for l, C, d in _surv_full if vorder(C) == 2)
+    ok &= len(order2) == 32 and order2[0][1] == "hbar^2" and order2[0][0] == 2
+    print(f"   parity AND order 2:  {len(order2)} of {total}  "
+          f"({100*(1-len(order2)/total):.1f} % pruned)")
+    print(f"   unique minimal-degree survivor: {order2[0][1]} (degree {order2[0][0]})")
+    print("   🛑 BUT order 2 is read OFF THE CORPUS'S OWN EXPRESSION, not derived.")
+    print("      It is a weaker form of the same hazard: selection against the")
+    print("      corpus's answer rather than against the data.  Labelled, not hidden.")
+
+    print()
+    print("8. ONE HYPOTHESIS GIVES BOTH CONSTRAINTS  (Lean: barNorm_scaled_parity)")
+    print("   If C = (1/q) * barNorm(f), barNorm(f)(q) := -f(q) f(1/q), then:")
+    for lbl, f in (("f = hbar_q", HBAR), ("f = h", H), ("f = (q-1)", _q - 1)):
+        C = sp.simplify(-f * bar(f) / _q)
+        par = sp.simplify(bar(C) / C - _q**2) == 0
+        o = vorder(C)
+        print(f"   {lbl:12s}: C = {str(sp.factor(C)):22s} parity {par}, order {o}")
+    inst = sp.simplify(-HBAR * bar(HBAR) / _q - HBAR**2)
+    ok &= inst == 0
+    print(f"   and at f = hbar_q the instance is EXACTLY hbar_q^2: {inst}  "
+          f"{'EXACT' if inst == 0 else 'MISMATCH'}")
+    degen = sp.simplify(-HBAR * bar(HBAR) / _q - (-(_q - 1) * bar(_q - 1) / _q))
+    ok &= degen == 0
+    print(f"   AND IT IS DEGENERATE: f = (q-1) gives the IDENTICAL prefactor "
+          f"(difference {degen}).")
+    print("   -> parity is automatic for EVERY f (proved in Lean, no hypothesis on f);")
+    print("      order 2 follows whenever f vanishes at q = 1.  The hypothesis that")
+    print("      the prefactor IS a bar-norm is NOT derived — and even granting it,")
+    print("      it does not single out hbar_q, since (q-1) has the same bar-norm up")
+    print("      to the 1/q.  It well-poses the search; it does not close it.")
+
+    print()
+    print("9. THE 3 DOES NOT q-DEFORM  (and this is NOT an accuracy argument)")
+    tgt = mp.mpf("0.0013774698046076")
+    from qou_substrate.constants import Q_50_DIGIT_STR      # noqa: PLC0415
+    q0 = mp.mpf(Q_50_DIGIT_STR)
+
+    def at(e):
+        return mp.mpf(str(sp.N(e.subs(_q, sp.Float(str(q0), 50)), 45)))
+
+    core = HBAR**2 * SYM
+    variants = [("plain 3 (the corpus's)", sp.Integer(3)),
+                ("[3]_q = q^2 + 1 + q^-2", T3),
+                ("[3]_q = q + 1 + q^-1", _q + 1 + 1 / _q)]
+    for lbl, d in variants:
+        v = at(core / d)
+        print(f"   {lbl:26s} denom {mp.nstr(at(d), 10):>14s}  "
+              f"delta {mp.nstr(v, 12):>16s}  rel {mp.nstr((v-tgt)/tgt, 6):>12s}")
+    print("   -> the three denominators are DIFFERENT numbers, so the corpus's `3`")
+    print("      is a plain rational and not a q-integer in disguise.  That is a")
+    print("      statement about FORM.  The residual column is printed for the")
+    print("      record and is explicitly NOT the argument: per NO-FITTING,")
+    print("      accuracy is never a tie-breaker.  Where the 3 comes from is OPEN.")
+
+    print()
     print("VERDICT:", "PASS -- the baseline is bar-odd after one unit of framing; the "
-          "prefactor is 1/q times the bar-norm of hbar_q; parity prunes 94 % and "
-          "derives nothing" if ok else "FAIL")
+          "prefactor is 1/q times the bar-norm of hbar_q; parity + order prune to 32 "
+          "of 2044 with hbar^2 minimal; and NOTHING here derives the 3"
+          if ok else "FAIL")
     return 0 if ok else 1
 
 
