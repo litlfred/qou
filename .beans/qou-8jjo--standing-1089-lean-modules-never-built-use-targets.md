@@ -59,3 +59,76 @@ catch. It read like the finding and was not.
 condition cannot sit unseen. A module with no olean is not a broken module; it is
 an unbuilt one, and ~840 attempts say the difference matters. Close this only when
 the count reaches zero or somebody decides the corpus does not need one.
+
+---
+
+## 🛑 The headline number is CONTAINER STATE, not corpus progress — 2026-09-14
+
+Re-measured today, same script, same flag:
+
+    python3 scripts/lean-olean-staleness-audit.py --targets 10
+    never built: 97 of 2886 module(s); 36 imported by ≥1 other, 61 leaves
+
+**1089 → 97 is not 992 modules repaired.** Nothing was repaired. The count is
+`(source modules) − (oleans present in THIS container)`, and between the two
+measurements the restored cache branch changed: AGENTS.md records the
+2026-09-06 seed at 2702 QOU oleans, and this container holds **2793**, all
+2793 trace-paired. A different restore gives a different count with no change
+to the corpus whatever.
+
+So the number this bean is titled after is not a corpus property and cannot be
+driven to zero by any amount of building — a fresh container on a thinner
+cache branch would report ~1100 again tomorrow. **Do not read a movement in it
+as progress, in either direction.** That is the same container-scoped-inference
+trap the `--all` audit retracted three times
+(`docs/audits/2026-09-13-every-library-module-compiles-zero-defects.md`).
+
+## What the corpus-level answer actually is, and its half-life
+
+The question behind the title — *is any library module broken?* — was answered
+on 2026-09-13 by a full `--all` sweep at `e22bd4561`: **2830 of 2836 judged,
+0 RED**. That is a statement about source, not about oleans, and it is the
+right kind of answer.
+
+It is also **perishable, and faster than anyone had measured**:
+
+| | |
+|---|---|
+| library modules at `e22bd4561` (2026-09-13) | 2835 |
+| library modules at `316eafa36e` (2026-09-14) | **2886** |
+| added since the sweep | **51** |
+| modified since the sweep | **11** |
+| **unjudged against current source** | **62** |
+
+**~62 modules of unjudged surface per day**, i.e. a full sweep's green decays
+at roughly 2 %/day. A 3 h 10 m `--all` run buys about a day. That is the real
+argument for this bean's "use `--targets`, not another `--all` sweep" — not
+that `--all` re-confirms the easy modules (it does), but that its answer is
+stale before the next session starts.
+
+## The cheap replacement: sweep the DELTA, not the closure
+
+    git diff --name-only <last-sweep-commit>..HEAD \
+      -- content/quantum-observable-universe/lean/QOU | grep '\.lean$'
+    scripts/lean-shadow-verify.sh $(that list)
+
+Measured on today's 62: `cone=414 rebuild=406 levels=23 widest=110` — a few
+tens of minutes against 3 h 10 m, and it judges exactly the modules whose
+status is actually unknown.
+
+**Do NOT reach for the sweep's own dirty-closure mode for this.** It reports
+`DIRTY CLOSURE 2821 (97.7 %)` here, so it costs an `--all` run.
+
+### A hypothesis about that 97.7 % — mine, and MEASURED FALSE
+
+`lean-library-sweep.py`'s freshness rule takes `max(last-commit-date, on-disk
+mtime)`, and its own comment at line 232 says *"branch switching rewrites the
+mtime of every differing file … some of that widening is churn"*. I inferred
+the 97.7 % was mostly that churn, and that restricting the mtime term to files
+dirty in the working tree (`git status --porcelain`) would collapse it.
+
+It does not. Of 2563 modules the current rule calls changed, the stricter rule
+calls **2556** changed — **7** are pure mtime churn, 0.27 %. The olean tree
+genuinely is behind 2563 modules' last source commit. The rule is sound as
+written and needs no change; I had a fix drafted and it would have bought
+nothing. Probe kept at `docs/audits/2026-09-14-library-sweep-churn-probe.py`.
