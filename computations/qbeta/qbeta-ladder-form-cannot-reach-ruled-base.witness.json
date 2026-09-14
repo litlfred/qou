@@ -1,0 +1,174 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-14T08:39:33.560971+00:00",
+  "commitSha": "124a13c77bd2eaf2388a773247c48ff9f279c045",
+  "assertions": [
+    {
+      "name": "reproduces_cds1_F_table_on_the_retired_base",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the three phase cells reproduce bean qou-cds1's recorded -0.076 % / -35.9 % / -3.17 % to better than 0.005 absolute, so the machinery below is the bean's own and not a re-invention. Note the coordinate: these are relative deviations of (1 - F), not of F."
+    },
+    {
+      "name": "every_ruled_base_needs_F_above_one",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "F_required = 1.759236994 on the z_D order-zero base and 1.200162364 on the dashboard's scored cell — both ABOVE 1 — against 0.9983252417 on the retired z = 1 cell, which is below. The sign of (1 - F_required) flips with the base."
+    },
+    {
+      "name": "ladder_form_is_bounded_by_one_for_every_phase",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "F_N2(alpha) = cos(alpha - u/2)*(1 - u^2), and cos <= 1 (Real.cos_le_one — the same proved invariant the eigenphase carrier's own replacement_excludes_some_matrix uses), so sup over ALL real alpha is attained at alpha = u/2 and equals 1 - u^2 = 0.9999274567156176265. Every ruled base needs more than 1. **No phase closes it** — so deriving alpha cannot unblock the ladder on the ruled base, and qou-cds1's 'the blocker is still the N=1 phase' does not hold for the base the same entry adopts."
+    },
+    {
+      "name": "closing_inside_the_ladder_needs_c2_four_orders_from_structural",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "if the shortfall were pushed into the rungs instead, the leading coefficient would have to be c_2 ~ 10467.745 on the z_D base and 2760.4131 on the dashboard cell, against the structural c_2 = -1 — four orders of magnitude, and the wrong sign. The magnifier 1/u^2 = 13784.874 is why c_k is the wrong coordinate to read this in (qou-cds1's own finding)."
+    },
+    {
+      "name": "the_reldev_coordinate_is_meaningless_once_F_required_exceeds_one",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "on the ruled base 1 - F_required = -0.75923699 is NEGATIVE while the model's 1 - F_N2 = 0.0016216579 stays positive, so qou-cds1's reldev coordinate returns -100.21359 % — a ratio of opposite-signed quantities, meaningless rather than merely large. Report F directly on a ruled base; the reldev table is retired-base-only."
+    },
+    {
+      "name": "every_recorded_rung_reduces_so_no_truncation_order_helps",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the objection check 3 invites is 'a higher rung saves it'. It does not: every c_k the corpus records or derives is NEGATIVE — c_2 = -1 (structural), c_3 = -2.0693425728 (recorded proton extraction), c_5 = -(b^2 + 1/2) = -1.25270211325 (derived) — so each factor (1 + c_k u^k) < 1 and the product is 0.99992617817132 < 1. With cos <= 1 the whole F is strictly below 1 at EVERY truncation order, not merely at N=2. Reaching F > 1 needs a POSITIVE coefficient, and none of the derived ones is."
+    },
+    {
+      "name": "the_target_is_stated_as_a_magnitude_not_as_a_search",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "stated so the size is on the record, NOT as a specification to search against: at the order-zero E_0 the ruled functional gives |eps| = 0.106235639848, and reproducing CODATA would need 0.186893667722 — a factor 1.759236994. Per AGENTS.md NO FITTING a target may be checked AGAINST, never searched ON: do not hunt for an element whose Markov trace lands here. The dashboard's own scored element already fails the confinement-SDP selection rule (owner ruling 2026-09-13), so the assembly is under review independently of this number."
+    },
+    {
+      "name": "sign_F_minus_one_is_a_FOURTH_coordinate_and_does_NOT_survive",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The trap above says to report F directly, and F does survive the base change -- but sign(F - 1) does NOT, and a reader who switched to F can still be caught by it. Measured, the sign is '-' on the retired z = 1 and augmentation cells and '+' on both ruled cells, so any argument whose content is 'the requirement is BELOW 1' is retired-base-only even when stated in F. #7276 hit exactly this from another arc: it avoided the (1 - F) trap, used F, and still drafted a cross-check reading 'the required factor is below 1 ... structurally the same obstruction as cosh a >= 1 > 0.998399' -- where 0.998399 is the z = 1 cell's own number. So this arc has FOUR coordinates with different base-sensitivity (c_k, 1 - F, sign(F - 1), F), and only F survives. Credit: sibling PR #7276."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-ladder-form-cannot-reach-ruled-base",
+  "scriptFile": "qbeta_ladder_form_cannot_reach_ruled_base_probe.py",
+  "scriptHash": "57aa15166330",
+  "scriptCommitSha": "124a13c77bd2eaf2388a773247c48ff9f279c045",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ladder_form_cannot_reach_ruled_base_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ladder_form_cannot_reach_ruled_base_probe.py"
+  },
+  "description": "On the owner-ruled Q_beta base the ladder's correction factor F_N2(alpha) = cos(alpha - u/2)(1 - u^2) is bounded above by 1 - u^2 for EVERY real alpha (cos <= 1), while F_required = Q_codata/Q_base EXCEEDS 1 on both ruled cells (1.7594 at z_D order-zero E_0, 1.2002 on the dashboard's scored nuc11 cell) and is BELOW 1 only on the retired z = 1 cell (0.9983). So no phase closes the ladder on the ruled base, and qou-cds1's standing blocker — 'the blocker is still the N=1 phase (qou-pdix)' — does not hold for the base that same entry adopts. Calibrated first by reproducing qou-cds1's own F-table (-0.076 / -35.9 / -3.17 %) on the retired base. Does not retire alpha as a question, does not refute the ladder or the forced bar-odd projection (both C-frame, untouched), and does not choose a base: F_required < 1 on the retired cell is NOT a reason to prefer it (NO FITTING).",
+  "bean": "qou-cds1",
+  "also": "qou-pdix",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "bases": [
+    {
+      "base": "z = 1 (Form A)",
+      "note": "RETIRED 2026-09-08",
+      "Q_base_MeV": "0.783645827374621213074939751341396890525736441030295379745209",
+      "F_required": "0.998325241673246588884133709366744904990942384746366140300153",
+      "exceeds_one": false
+    },
+    {
+      "base": "z_D, order-zero E_0",
+      "note": "RULED",
+      "Q_base_MeV": "0.444700408521780409100962213024942779024902777364466679758098",
+      "F_required": "1.75923699418342922111603553962877438597463501119148358155092",
+      "exceeds_one": true
+    },
+    {
+      "base": "z = q (augmentation)",
+      "note": "the other admissible point",
+      "Q_base_MeV": "0.879890561260119838902965955941296576254288512481661072995723",
+      "F_required": "0.889125812282376259000054824106951643755791348346495294149076",
+      "exceeds_one": false
+    },
+    {
+      "base": "dashboard scored cell",
+      "note": "RULED (nuc11, tower E_0)",
+      "Q_base_MeV": "0.651856310060337537759386764180716953854105083179664964351635",
+      "F_required": "1.20016236389210554401362656706148402208126813341393104771141",
+      "exceeds_one": true
+    }
+  ],
+  "retired_base_reldev_table": [
+    {
+      "cell": "C  alpha=(z_C-1)h/2",
+      "reldev_pct": "-0.0762164429914270271249580068834233941724237691807554784358814"
+    },
+    {
+      "cell": "D  z-swap",
+      "reldev_pct": "-35.9111050886258358235359297653634571474481894541569865483316"
+    },
+    {
+      "cell": "D  bar-odd (forced)",
+      "reldev_pct": "-3.17063389316862782889116074642207609054518550042225848489725"
+    }
+  ],
+  "ladder_sup_over_all_phases": "0.999927456715617626498201895199068388200910824829001040100072",
+  "full_ladder_is_reducing": "every c_k the corpus records or derives is NEGATIVE (c_2 = -1 structural, c_3 = -2.0693425728 recorded, c_5 = -(b^2+1/2) derived), so each factor (1 + c_k u^k) < 1 and F is strictly below 1 at EVERY truncation order -- not merely at the N=2 one check 3 bounds. Reaching F > 1 needs a POSITIVE coefficient; none of the derived ones is.",
+  "invariant_cited": "cos <= 1 (Real.cos_le_one, Mathlib; already used by QOU.QBeta.EigenphaseCarrier.replacement_excludes_some_matrix)",
+  "sign_F_minus_one_by_base": [
+    {
+      "base": "z = 1 (Form A)",
+      "F_required": "0.998325241673246588884133709366744904990942384746366140300153",
+      "sign_F_minus_1": "-"
+    },
+    {
+      "base": "z_D, order-zero E_0",
+      "F_required": "1.75923699418342922111603553962877438597463501119148358155092",
+      "sign_F_minus_1": "+"
+    },
+    {
+      "base": "z = q (augmentation)",
+      "F_required": "0.889125812282376259000054824106951643755791348346495294149076",
+      "sign_F_minus_1": "-"
+    },
+    {
+      "base": "dashboard scored cell",
+      "F_required": "1.20016236389210554401362656706148402208126813341393104771141",
+      "sign_F_minus_1": "+"
+    }
+  ],
+  "coordinate_warning": "qou-cds1's table reports relative deviation of (1 - F), not of F. Once F_required > 1 that ratio compares opposite-signed quantities and is meaningless; report F directly on a ruled base. AND NOTE sign(F - 1) is a FOURTH coordinate that does not survive either: an argument whose content is 'the requirement is below 1' is retired-base-only even when stated in F. Four coordinates, only F survives (credit: sibling PR #7276, which hit this using F).",
+  "scope": "(b) for the exclusion, citing a proved invariant; (a) for every number. Derives no alpha, selects no base, wires nothing."
+}

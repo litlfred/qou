@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-09-13T06:25:00Z
+updated_at: 2026-09-14T07:08:16Z
 ---
 
 Parent epic: qou-08a2. Records the 2026-09-12 finding that the growing+h!=0 BraidedTower instance (qou-301d's remaining gap) is a WIRING job, not a from-scratch build -- the two halves already exist and are unconnected.
@@ -141,3 +141,190 @@ rather than `HeckeTowerWitness`'s collapse functional.
   `qou-ejde` should re-target the citation before building on it.
 
 Not taken — `qou-ejde` / `qou-p8yg` are a live arc. Handing the measurement over.
+
+--------
+
+**2026-09-13 — INTENT (from `qou-301d`, branch `claude/markovtrace-colimit-bridge-2026-09-13`): taking the colimit bridge, with the route named.**
+
+No live branch on this arc and both beans are `todo`; the last commits landed
+straight to `main` 11 h ago. Taking it rather than leaving it, per the
+stalled-claim rule. Say so and I will hand it straight back.
+
+**Why now.** Since `qou-301d` and `qou-gr3t` merged
+(`HeckeSandwichReduces.disjointBlock_of_braided`,
+`InteriorMarkovOfBraidedTower.tr_bondWord_of_braided`), this bridge is the
+**single blocker for both arcs**: the bond product and the disjoint-block law
+are theorems of every `BraidedTower`, and the only `OcneanuTrace.MarkovTrace`
+in the tree — `heckeTowerMarkovTrace` — factors through a rank-2 quotient and
+is not faithful. The production Ocneanu trace exists and is unique, but as a
+`HeckeCoset.MarkovTraceFamily`.
+
+**Route.** Build `OcneanuTrace.MarkovTrace` on the colimit of the Hecke tower:
+
+1. **Directed system.** `f i j (h : i ≤ j) : Hecke K q qi i →ₐ[K] Hecke K q qi j`
+   by `Nat.leRec` over `SchurWeyl.heckeIncl`, with `DirectedSystem` from
+   `Nat.leRec_self` / `Nat.leRec_succ`.
+2. **Carrier.** `A := DirectLimit (Hecke K q qi) f`. Per the measurement already
+   in these beans, `@DirectLimit` and `@DirectLimit.Ring.of` carry **no
+   injectivity hypothesis**, so this step does not wait on `qou-ejde`.
+3. **Filtration.** `H n := (DirectLimit.Ring.of … n).range`; `H_mono` from
+   `DirectLimit.Ring.of_f`. Only `Monotone` is required — **not** strictness,
+   which is `qou-p8yg`.
+4. **Trace.** descends by the universal property; `MarkovTraceFamily.tr_incl`
+   IS the compatibility condition (`DirectLimit.Module.lift`).
+5. **Generators.** `g n := of (n+1) (σ …)`, `ginv n := of (n+1) (σInv …)`;
+   `ginv_mul` / `mul_ginv` from `SchurWeyl.σUnit` under `q * qi = 1`.
+6. **Axioms.** `tr_mul_comm` ← `tr_cyclic`, `tr_one` ← `tr_one`,
+   `markov` ← `tr_markov`, at `z = q³/(q²+1)`.
+
+**What I expect to be hard, stated in advance so a failure is legible.** Step 5
+is the one I flagged as unchecked when I handed over the `DirectLimit`
+measurement — `ginv` needs `σ⁻¹` to survive into the colimit, and `σUnit`
+requires `q * qi = 1`, which `ocneanuMarkovTrace` supplies only at
+`qi = q⁻¹` over `ℝ`. Step 4 needs a *linear* lift, not the ring lift. If either
+blocks, I will say which and leave the gap rather than axiomatise it.
+
+**Scope I am NOT claiming.** This bridges the abstractions; it does not make
+`heckeTowerMarkovTrace` faithful, prove strict growth (`qou-p8yg`), or derive
+the bond product for the production atom word. Nothing here closes either bean
+on its own.
+
+
+--------
+
+**2026-09-14 — DONE, all six steps, sorry-free. And read the scope line: this is the SCHUR-WEYL tower, not `QOU/IwahoriHecke/`.**
+
+Branch `claude/markovtrace-colimit-bridge-2026-09-13`, PR #7274. Every step of
+the route in the INTENT block above landed as written, and both hazards I
+flagged in advance resolved the way I guessed:
+
+| step | declaration | file |
+|---|---|---|
+| 1 directed system | `heckeInclLE`, `directedSystem`, `heckeInclLE_σ` | `SchurWeyl/HeckeDirectedSystem.lean` |
+| 2 carrier + filtration | `HeckeLim`, `instAlgebraHeckeLim`, `ofLimₐ`, `H`, `H_mono` | `SchurWeyl/HeckeColimit.lean` |
+| 3 generators | `gLim`, `ginvLim`, `gLim_eq`, `gLim_quadratic/braid/far` | same |
+| 4 trace | `wtrace_inclLE`, `trLim` | `SchurWeyl/HeckeColimitMarkovTrace.lean` |
+| 5-6 axioms | `trLim_cyclic/one/markov/markov_inv`, `heckeColimitMarkovTrace` | same |
+| payoff | `braidedTower_heckeColimit`, `towerSpan_heckeColimit`, `disjointBlock_heckeColimit` | same |
+
+`lean`-direct `-DautoImplicit=false -s 65536` exit 0 on all three files, zero
+warnings, zero `sorry`; `#print axioms` is `[propext, Classical.choice,
+Quot.sound]` throughout (`heckeInclLE_σ` is `[propext, Quot.sound]`).
+
+**🛑 SCOPE — what this bean's TITLE asks for is still NOT done.** The title says
+*"wire IwahoriHecke algebra to the BraidedTower theorem"*, and the body's "two
+halves" section means `QOU/IwahoriHecke/` — the 20-file Coxeter-group
+implementation over `Mathlib.GroupTheory.Coxeter`. **I wired
+`QOU/SchurWeyl/Hecke` instead**, which is a *different* construction (a
+`RingQuot` of `FreeAlgebra K (Fin n)`). The grep finding recorded above — that
+`IwahoriHecke/` mentions no `OcneanuTrace` / `BraidedTower` / `TowerSpan` —
+**is still true and this branch does not change it.**
+
+The reason for the substitution is not evasion and should be checked rather than
+taken: the production Ocneanu trace, the one proved to exist and be unique
+(`MarkovTraceInstance.wtrace` / `ocneanuMarkovTrace`,
+`HeckeCoset.markovTrace_unique`), is defined on the **SchurWeyl** algebras, not
+on `IwahoriHecke/`. So the SchurWeyl tower is where a `MarkovTrace` could be
+built out of material that already exists; the `IwahoriHecke/` route would need
+its own trace first. Whether the two algebras are isomorphic is not established
+anywhere I could find, and I did not assume it.
+
+**What IS now closed, and it is the thing both arcs were blocked on.**
+`TowerSpan` and `DisjointBlockMultiplicative` were proved abstractly in #7153
+but inhabited only on `heckeTowerMarkovTrace` (a free carrier whose trace
+factors through a rank-2 quotient — not faithful) and on the symmetric group
+(`h = 0`). They now hold on a tower carrying the **genuine Ocneanu trace at
+convention D**, `z = q³/(q²+1)`.
+
+**The two flagged hazards, resolved:**
+
+* Step 4 did need the **linear** lift. `wtrace` is `ℝ`-linear and is *not*
+  multiplicative, so `DirectLimit.Ring.lift` does not apply at all;
+  `DirectLimit.Module.lift` does, and its compatibility hypothesis wants the
+  *iterated* inclusion, hence `wtrace_inclLE` as the `Nat.le_induction` iterate
+  of the sibling's one-step `wtrace_incl`.
+* Step 5's `q * qi = 1` is discharged by `hq0 : q ≠ 0` at `qi = q⁻¹` and never
+  surfaces in the instance. `ginvLim` is *defined* unconditionally (`σInv` is);
+  only the two inverse laws carry the hypothesis.
+
+**Two measurements worth keeping, neither of which was in the plan:**
+
+1. **Mathlib supplies no `Algebra R (DirectLimit …)` instance.** Enumerated the
+   whole namespace out of the olean: `instModule` and the
+   `instRing`/`instCommRing`/`instField` family, nothing algebra-valued, and
+   `inferInstance` fails. Built here with `Algebra.ofModule` over the
+   *existing* `instModule` — deliberately **not** `RingHom.toAlgebra'`, which
+   also typechecks and would mint a second `SMul K (HeckeLim …)`, putting a
+   diamond against the colimit's own scalar action.
+2. **`DirectLimit.Module.of` and `DirectLimit.Ring.of` are the same function**
+   (`rfl`). That is what makes the two `Algebra.ofModule` laws cheap.
+
+**`zinv` is derived, not posited:** `σ⁻¹ = σ - (q - q⁻¹)·1`, so
+`tr(a σ⁻¹) = tr(a σ) - (q - q⁻¹) tr a`, giving `zinv = q³/(q²+1) - (q - q⁻¹)`.
+`z` is inherited from `wtrace_markov`. No parameter is chosen.
+
+**Still open, assumed nowhere:** injectivity of `ofLim n` (`qou-ejde`) — so
+`H n` is the *image* of level `n`, not a copy of it; strict growth
+(`qou-p8yg`); faithfulness of `trLim`; the bond product for the production atom
+word; and the `IwahoriHecke/` wiring this bean is titled for.
+
+**Staying `todo`** — the titled subject is not done, and per AGENTS.md §13a a
+bean whose subject is open is not closed by recording progress on it.
+
+
+--------
+
+**2026-09-14 — CORRECTION to my own figure above: the "99 of 102 stale" was measured with a criterion this repo records as UNSOUND. The sound number is 102 of 102, and the verification is unaffected.**
+
+**What I asserted.** The DONE entry above, PR #7274's body, and a coordination
+comment on that PR all say *"99 of the 102 modules in this PR's import cone are
+stale"*.
+
+**How it was measured, and why that was wrong.** I compared each olean's
+**mtime** against its own source's last commit
+(`git log -1 --format=%ct <src>` vs `os.path.getmtime(<olean>)`).
+`.claude/agent-memory/lean-verifier/MEMORY.md` already records that exact
+criterion as **UNSOUND**, with the mechanism: a restored tarball gives oleans
+the *extraction* time, so an olean built from an old source looks fresh. It
+therefore **under**-reports staleness. The sound criterion in the same entry is
+the **seed commit** — dirty = source changed since the cache's seed, or olean
+missing, or an import dirty.
+
+**Re-measured with the sound criterion.** Seed `bbb4127145` (2026-08-23 17:00Z,
+the last `main` commit before the oldest QOU olean in this container):
+**102 of 102 dirty**, with **99 root causes** (source changed since seed) and
+the remaining 3 dirty because they are new on this branch. So the mtime
+criterion was short by exactly 3 — and the 3 it called "fresh" were oleans I
+had built myself minutes earlier.
+
+**The verification does not depend on this at all, and is if anything better
+than I claimed.** I rebuilt **all 102** from source rather than a computed
+subset, which is exactly what the sound criterion demands. The criterion only
+chose *which* to rebuild, and I chose all of them. `lean`-direct exit 0 on all
+three files against that rebuilt cone, `#print axioms` clean, 0 RED across the
+102 — unchanged.
+
+**Also measured, and not previously recorded anywhere: the oldest-olean
+heuristic is a LOWER BOUND on the seed, and on a reseeded cache it can be far
+too old.** `tar` preserves the archive's mtimes, which are *build* times, and a
+reseed from an incremental `lake build` rewrites only what was dirty — so one
+tarball holds oleans built across weeks. In this tree the oldest **QOU** olean
+is 2026-08-23 and the oldest **mathlib** olean is 2026-09-06, a **14-day
+spread** inside a cache whose branch describes it as a single 2026-09-06 seed.
+Too-old a seed **over**-reports staleness, which is the safe direction; the
+mtime criterion under-reports, which is not. Recorded in the `lean-verifier`
+memory's dirty-closure entry, whose own seed baseline was stale
+(`19e299946a` / 2026-08-16) and is now re-measured per container.
+
+**Contamination check, since a wrong figure in this corpus has repeatedly
+survived in five other places after being fixed in one.** The figure appears
+in exactly three artifacts, all mine and all from this session: this bean,
+PR #7274's body, and one comment on #7274. All three are corrected. It reached
+no audit doc, no content block and no witness.
+
+**Separate finding, NOT acted on: `lean-verifier/MEMORY.md` is 734 lines
+against the 200-line cap AGENTS.md states for it** (the cap exists to bound
+what an agent must read; the file is 3.7x over). Restructuring it is a change
+I have not made — per §ASK THE OWNER it is neither a precision fix nor
+corpus-derived, and splitting a memory file another agent owns is exactly the
+kind of tidying that rule gates. Flagging it rather than doing it.

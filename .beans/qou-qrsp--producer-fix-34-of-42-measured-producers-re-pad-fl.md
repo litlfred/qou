@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-08-24T13:32:40Z
+updated_at: 2026-09-14T07:11:09Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -644,3 +644,72 @@ exit 0 / 0 errors on both edited files AND on their importer
 
 CAUTION FOR WHOEVER PICKS UP THE mu3 DOOR: this is a CLOSURE, not an opening.
 An escape route the corpus documented as available is, under canon, foreclosed.
+
+## The "not mechanizable" judgment IS decidable for one slice (2026-09-14)
+
+This bean states that localization is mechanizable but the judgment is not:
+
+> "For each re-padder decide whether the quantity is GENUINELY float64 (then
+> stop promoting it to mpf) or was DOWNCAST upstream from full precision."
+
+That is decidable whenever the float arrived from a named constant in
+`qou_substrate.constants` AND that module also carries a higher-precision
+string twin. Then it was demonstrably not genuinely float64: the corpus holds
+a better value one import away and the site declined it.
+
+`computations/audits/mpf_untokened_float_constant_audit.py` decides that slice.
+It is strictly WEAKER than `float64_entry_tracer.py` at finding sites — static,
+named constants only, blind to JSON/numpy/library entries — and does not
+replace it. It answers a different question: not *where did a float enter* but
+*was a better value available and refused*.
+
+**214 sites match the shape; 10 are defects.** Quoting the 214 would be a 21x
+over-flag. Most float64 constants here are CODATA measurements carrying ~11-12
+significant digits, which a float64 holds to ~17, so wrapping one in `mpf`
+loses nothing that exists — `M_E_MEV`, 112 sites, is the type case and is fine.
+This is the same over-flag shape this bean already records for `is_f64_padded`
+(Class B, 9 producers / 39 fields, "the detector is wrong about them").
+
+The twin set is **derived** at import time, not hardcoded, and that paid
+immediately: it found 4 twins where a hand-written list of the obvious names
+found 2 — `MASS_RATIO_MU_E` (diverging at significant digit **10**) and
+`VOL_FIGURE_EIGHT` (digit 17). No site declines either of those, so the defect
+count is unaffected, but a hardcoded list would have been wrong the moment one
+did.
+
+### The 10, all one-line fixes
+
+    Q -> Q_50_DIGIT_STR                        (diverge at digit 18)   9 sites
+      casimir_jet_order_derivation.py:134
+      homfly_ocneanu_trace.py:289
+      probes/casimir_carlitz_q_bernoulli_probe.py:127
+      probes/casimir_grid_sweep_probe.py:88
+      probes/casimir_hoefsmit_additivity_probe.py:184
+      probes/casimir_macdonald_probe.py:209
+      probes/casimir_phi_q_markov_probe.py:119
+      probes/casimir_q_factorial_probe.py:115
+      substrate/frakV_zeta4_fibre_vs_observable_probe.py:54
+
+    MASS_RATIO_P_E -> MASS_RATIO_P_E_STR       (diverge at digit 18)   1 site
+      codata_registry_triangulation_probe.py:117
+
+NOT FIXED HERE. Each changes a published number, so per this bean's own rule
+the source fix and the witness regeneration are separate commits, and the
+owner-gate default (AGENTS.md §"ASK THE OWNER BEFORE CHANGING THINGS") makes
+a 10-file tranche across two families an ask rather than a drive-by — even
+though the change is squarely exemption 1 (it removes a float64 path).
+
+`casimir_macdonald_probe` is the safest single demonstration: its conclusion is
+a NULL RESULT (no sub-1% matches), which an 18th-digit move cannot touch.
+
+### How it surfaced
+
+Not by looking for it. `scripts/precision-gates.sh` reports the float64-padding
+ratchet at **75 occurrences / 63 NEW / 13 files** against a committed witness
+recording **22 / 10 / 7** — so that witness understates the live tree ~3.4x.
+Tracing the largest contributor
+(`sweeps/paper-six-term-isotope-sweep.witness.json`, 45 of the 75) reproduced
+its published field byte-for-byte as `fmt(mp.mpf(<the float64>))`, which is
+this shape. Six of the eight live offending files were last written by
+precision-drain sweeps themselves (`qou-4383` x3, `qou-baye`) — consistent with
+what `qou-3jwy` already recorded, one drain tranche later.

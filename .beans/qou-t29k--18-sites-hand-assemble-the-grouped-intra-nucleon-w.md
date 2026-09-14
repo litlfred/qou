@@ -332,3 +332,120 @@ at all. Third frame-conditional result in this drain, after `qou-u8ji` and
 `probes/b_pred_mirror_slope_closed_form:90` (escalated),
 `qbeta_delta_bar_parity_probe:184`,
 `qbeta_delta_element_fork_pricing_probe:181`, `rho_k_h3a_gg_trajectory:127`.
+
+## 9 -> 6: the last three tractable sites, and the shared-helper theory was WRONG
+
+I expected `qbeta_net_trace_invariance_probe`'s shared helpers to force the
+frame at the two delta probes, the way `chi_monotone_transfer` did for four
+siblings. **They do not.** `_mult` multiplies `L[g] + d*ONE` in whatever order
+it is handed and the regular-representation helpers are frame-agnostic, so
+those two sites were genuinely undeclared choices — my stated falsifier, and it
+fired. Recording it rather than inventing a constraint.
+
+So I measured instead. Reordering the SAME symbols into the borromean word
+(a permutation, so nothing depends on precision or q):
+
+| probe | grouped | borromean | what moves |
+|---|---|---|---|
+| `qbeta_delta_bar_parity_probe` | 16/16 | **15/16** | `net_equals_tr_at_z_one_ONLY_when_e_minus_vanishes` |
+| `qbeta_delta_element_fork_pricing_probe` | 15/15 | **13/15** | both `calibration_*` legs |
+| `rho_k_h3a_gg_trajectory` | allPassed | **allPassed** | nothing asserted |
+
+**Every substantive Delta-fork conclusion is frame-INVARIANT** — the two models
+are different elements, the corpus counit and trace closed forms fail on the
+long model and hold on the short one, chi^(2,1) vanishes on the short model
+only, the phase identity, the bar-parity split, the fork surviving descent.
+The fork — what `qou-cds1` / `qou-bg3w` are about — does not depend on the
+intra ordering. That is a positive result, not just an absence.
+
+**Disposition, three different answers for three sites:**
+
+1. **The two delta probes: DECLARED grouped.** Their calibration legs check
+   against committed grouped-era witnesses and published values, so they are
+   frame-bound by construction — the same reason their settled sibling chose
+   grouped deliberately. Switching would break the calibration without changing
+   a finding. Both re-run 16/16 and 15/15 with every measured value
+   byte-identical.
+2. **`rho_k_h3a_gg_trajectory`: SWITCHED.** Its docstring claimed "the canonical
+   word" and delivered grouped. Uniquely here the ordering IS the subject —
+   every prefix is one gg-pair EVENT, so the trajectory is the letter sequence,
+   and the grouped bucketing has no physical reading while the borromean word
+   does (confinement core, then quark pairs, then gluons). Closure holds either
+   way (p 2.673e-51 -> 0.0, n 1.336e-51 -> 6.682e-51, LP gaps 0.0 throughout),
+   so **no assertion in that file discriminates** — the per-step trajectory
+   changes and nothing checks it, which is why re-running could never have
+   caught this one. Checked first that the two interpreting documents quote no
+   per-step sequence.
+3. One real content finding fell out: **`qou-epmq`** — `Delta_L`'s `e_minus`
+   coordinate is 0 grouped and `-(q^2-1)^2 Phi_12(q)^2 / (2 q^6)` canonical, so
+   `net` and `tr_M(z=1)` stop coinciding on the long model. The vanishing was a
+   property of the grouped word, not of the element.
+
+**Remaining 6, of which only 3 are actionable:** `atom_orbit_reduction:92`,
+`binding_canonical:381`, `chi_4he_binding_lossless:83`. The other three are
+`binding_multibond_wenzl` (escalated, `qou-y1w0`),
+`b_pred_mirror_slope_closed_form` (escalated, `qou-u8ji`) and
+`fitted_ideal_low_isotope_calibration` (module PAUSED by owner ruling
+2026-08-26).
+
+## 6 -> 4: `chi_4he_binding_lossless` SWITCHED, `binding_canonical` DECLARED
+
+**`chi_4he_binding_lossless` — switched, and this is the cleanest verification
+in the whole drain.** `_hp_binding_word` claimed to mirror `atom_braid_word_3A`
+and did on every axis but the one it did not name: its interfaces already
+matched (p-p `sigma`, n-n `sigma - h`, p-n colour-weighted), and only the intra
+ordering was grouped. The claim is true now.
+
+Safe to switch, checked first rather than assumed: the single assertion
+`mpfr_binding_chi_extends_f64_atomic` compares MPFR against f64 for the SAME
+word, so it moves with the word; and nothing consumes the per-λ table — the only
+other file naming the cache is `f64_into_mpmath_audit.py`, matching on filename.
+
+Re-ran (874 s, 77/77 λ⊢12, f64 gate max rel 1.1157e-14, PASS):
+
+    committed (grouped)  tr_M = 0.160974145442407381825873440980716...
+    after switch         tr_M = 0.011237417659767421564199549374410...
+
+Both land exactly on the known constants — the grouped ⁴He pin and the
+canonical ⁴He pin — and their ratio is **14.3248**, precisely the documented
+⁴He absolute-trace factor. End-to-end confirmation that the switch did what it
+was supposed to and nothing else.
+
+**NOT the staleness `qou-92u9` tracks**, and worth keeping distinct: those six
+caches come from `chi_at_q0_via_hoefsmit_mpfr.py`, which calls
+`atom_braid_word_3A` with no `intra_order`, so a fresh run there is already
+canonical and the artifact is merely old. This one hand-built the word, so no
+re-run could ever have corrected it. That bean records this producer only as a
+665 s runtime observation, never as a defect.
+
+**`binding_canonical:381` — declared, not switched.** Two reasons, the first
+decisive: below the site, `tr_free = tau_p^Z tau_n^N` and `tr_atom =
+closed_form_tau_M(..., tau_p, tau_n)`, so the ratio is `prod f_i(q)` and **the
+taus cancel in everything that survived the refutation** — the bond factors
+b_pp / b_pn / b_nn are tau-independent, and the live law is the log-RATIO
+`B = E_0 log(tr_free/tr_atom)` in `binding_log_free_energy.py`. Only
+`Delta_tr = tr_free - tr_atom` scales with them, and that is the REFUTED law
+this module is marked "do not quote" for. Second: re-framing a superseded
+provenance number makes it stop matching the record it exists to preserve — the
+header's 1592x residual spread was measured against these values. Verified a
+no-op: word byte-identical, tau_p = 1.145759692457300869689 unchanged.
+
+**Remaining 4, only 1 actionable:** `atom_orbit_reduction:92`. The other three
+are the two escalated owner calls (`qou-y1w0`, `qou-u8ji`) and the module PAUSED
+on 2026-08-26.
+
+### What `atom_orbit_reduction` needs, for whoever picks it up
+
+The module is internally SPLIT and that is the finding:
+`atom_braid_orbit_representative` **delegates to the canonical
+`atom_braid_word_3A`** (so `orbit_reduction_crosscheck`'s byte-identity assert
+`rep.word == atom_braid_word_3A(Z, N)` holds), while `atom_braid_word_ordered`
+— the sibling that takes an arbitrary nucleon ordering, which
+`atom_braid_word_3A` cannot express — is hand-built grouped. Same inconsistency
+`level_k` had, and the same likely fix.
+
+Its one real consumer of the ordered builder,
+`probes/canonical_ordering_dof_probe`, uses it for RATIOS across four nucleon
+orderings (`npn/pnn`, `pnp/ppn`), all four in the same frame — so the frame is a
+controlled constant there, as it was for `level_k`'s `ord_spread`. Measure those
+two ratios both ways before switching; `level_k`'s moved only 22.54 % -> 22.69 %.

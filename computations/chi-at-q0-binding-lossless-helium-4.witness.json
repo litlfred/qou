@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T10:25:58.690567+00:00",
-  "commitSha": "53c2900b12568a2c1bbad4d9dc87bf25b58a7a51",
+  "computedAt": "2026-09-14T18:16:31.406316+00:00",
+  "commitSha": "64b4f8a007c9a9293142031f38e0d523a9607ac2",
   "assertions": [
     {
       "name": "mpfr_binding_chi_extends_f64_atomic",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 656684,
+  "durationMs": 874074,
   "computation": "chi-at-q0-binding-lossless-helium-4",
   "scriptFile": "chi_4he_binding_lossless.py",
-  "scriptHash": "f6c14ecf744f",
-  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "scriptHash": "ffd22191264e",
+  "scriptCommitSha": "46ba3c0243f537f046dfd6ffa8e995ace65802f5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
   "data": {
     "n_partitions": 77,
     "precision": "mpfr-50dps-rust-binding-atomic",
-    "tr_M_at_q0": "0.160974145442407381825873440980716853923607354133437712352866",
-    "gate_vs_f64_atomic_same_word_max_rel": "3.5430432e-14"
+    "tr_M_at_q0": "0.0112374176597674215641995493744106072696626960812620248660386",
+    "gate_vs_f64_atomic_same_word_max_rel": "1.1157451e-14"
   }
 }

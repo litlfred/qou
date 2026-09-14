@@ -51,6 +51,27 @@ One file in the overlay therefore makes every *other* `QOU` module report
 `object file '/tmp/ovl/QOU/X.olean' … does not exist`. The mirror must be
 complete.
 
+**The same rule bites the OTHER way round, and this direction is the quiet one
+(measured 2026-09-14).** A *complete* overlay placed **after** the real tree on
+`LEAN_PATH` is **inert**: `lean` commits to the first root holding `QOU/`, which
+is now the real tree, and never falls through to the overlay for any module the
+real tree also has. So an appended shadow silently verifies against the *stale*
+oleans it was built to bypass, and reports `exit 0` while doing it. It announces
+itself only indirectly — a module present *only* in the shadow fails with
+`object file … does not exist` naming a path in the **real** tree, which reads
+as a missing dependency rather than as a search-order bug. The §3 harness is
+immune because it prepends; both repo sweeps are too
+(`lean-shadow-verify.sh:206` `LP="$SHADOW:…"`, `lean-library-sweep.py:474`
+`[str(shadow)] + pkg_roots + …`), and `lean-library-sweep.py:425-434` documents
+the masking direction at its own guard. The exposure is **ad-hoc** harnesses
+written from scratch, which is where it happened: a 102-module cone sweep whose
+first run appended, reported 102/102 green, and had to be re-run prepended
+(same verdict, but the first run was not evidence for it).
+
+The two directions are worth holding together because they fail in opposite
+ways: **prepended + incomplete** → loud false RED; **appended + complete** →
+silent false GREEN. Only the second one can ship.
+
 ## 3. The harness that does work
 
 ```bash
