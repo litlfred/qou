@@ -63,7 +63,7 @@ from experimental_constants import (  # noqa: E402
     VOL_BORROMEAN_50DPS_STR,
     VOL_4_1_50DPS_STR,
 )
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -181,7 +181,7 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)
+    q = mpf(Q_50_DIGIT_STR)
     vol_additivity = _check_volume_additivity()
     geom_N_unknots = _check_geom_epsilon_n_unknots(q, epsilon_sym="ε")
     dim_check = _check_dimensional_match(q)
