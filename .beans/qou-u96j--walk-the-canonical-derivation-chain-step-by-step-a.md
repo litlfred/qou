@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T10:00:04Z
+updated_at: 2026-09-14T10:05:55Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -278,3 +278,31 @@ plus the why-b3 rank-1 vs descartes-knot rank-2 contradiction.
 **Bean stays in-progress**: the interior mathematics of steps 7-9 is untouched —
 the GB spectral sequence's actual collapse, and the Archimedean realisation
 whose absence `MassIdentity`'s 25 % tolerance stands in for.
+
+## 2026-09-14 — step 7 is PRIOR ART; process miss recorded
+
+Step 7's interior: the step-9 theorem's HYPOTHESES are free —
+`GbSpectralSequenceCollapseAtE2 := (gbSpectralCollapsePage = 2)` i.e. `2 = 2`,
+and `YekutieliFiniteSliceMultiplicativeTrace T_w := Nonempty T_w`.
+
+**Already reported verbatim** in `2026-09-08-l2-1ppq-research-program-gaps.md`
+row 7, bean **wpdb**. I re-derived it. The Lean declares it itself in its
+docstrings ('pinning the collapse page to 2 by construction … awaits Mathlib
+spectral-sequence support') — honest authoring, not laundering.
+
+**THE PROCESS MISS.** That audit walks the SAME CHAIN step by step and I did not
+find it until step 7. Every corpus-grep I ran was scoped to the FINDING; none
+asked 'has anyone walked this chain?'. A topic-scoped grep is how the checklist
+gets skipped without feeling skipped.
+
+**Measured overlap** — 4 of 5 defects are NOT in that audit (#1 hadronic E_0
+circularity, #2 g=4 rank-5, #3 step-4 span, #4 uses[] graph, #5 M_QOU); the
+step-7 one IS. Its step-10 row is close to but not identical with C10a (one
+caller named circular, vs three inequivalent meanings measured).
+
+**Possibly new, stated cautiously:** the collapse PAGE disagrees — cheat sheet
+says E_2 in three places, `prop:spectral-sequence-collapse` says E_1. E_1 is
+strictly stronger and matches the block's own HH^k=0 argument, so the cheat
+sheet understates its own proposition.
+
+Commit ef5fcb5f5b, PR #7362.
