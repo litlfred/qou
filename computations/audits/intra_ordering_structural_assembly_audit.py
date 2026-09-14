@@ -275,6 +275,23 @@ def scan_file(path: str) -> list[dict]:
     return found
 
 
+def tracked_only() -> set[str] | None:
+    """Tracked-file filter — see `_tracked_corpus` for why a ratchet needs one.
+
+    Same helper `y_lambda_conflation_audit` uses. Its check D counted
+    gitignored chi caches and moved whenever a sibling regenerated one; the
+    risk here is smaller (untracked `.py` is usually a scratch script rather
+    than a cache) but identical in kind, and this audit of all audits should
+    not transcribe a shared helper instead of calling it.
+    """
+    from _tracked_corpus import tracked_files          # noqa: PLC0415
+    #: `verify` names a file OUTSIDE this directory on purpose. Pointing it at
+    #: SELF proved nothing: the first version listed only `computations/audits`
+    #: and SELF is in there, so the check passed while every scanned source
+    #: outside it read as untracked and A/B collapsed 17 -> 0.
+    return tracked_files(HERE, verify=os.path.join(REPO, "AGENTS.md"))
+
+
 def iter_sources(files: list[str] | None):
     if files:
         for f in files:
@@ -282,6 +299,7 @@ def iter_sources(files: list[str] | None):
             if p not in EXEMPT and p.endswith(".py"):
                 yield p
         return
+    tracked = tracked_only()
     roots = [ROOT, os.path.join(REPO, "tools", "pyhecke")]
     for base in roots:
         for dirpath, dirnames, filenames in os.walk(base):
@@ -289,9 +307,12 @@ def iter_sources(files: list[str] | None):
             for fn in sorted(filenames):
                 if not fn.endswith(".py"):
                     continue
-                p = os.path.join(dirpath, fn)
-                if os.path.abspath(p) not in EXEMPT:
-                    yield p
+                p = os.path.abspath(os.path.join(dirpath, fn))
+                if p in EXEMPT:
+                    continue
+                if tracked is not None and p not in tracked:
+                    continue
+                yield p
 
 
 # ── check D: the matcher must still describe `nucleon_word_letters` ──────────
