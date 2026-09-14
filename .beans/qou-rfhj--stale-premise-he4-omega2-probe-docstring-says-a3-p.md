@@ -1,11 +1,11 @@
 ---
 # qou-rfhj
 title: 'STALE PREMISE: he4 Omega2 probe docstring says A=3 P<0 ''NO flip vs A=2''; both committed and fresh triton witnesses say sign=+1, sign_flip_vs_A2=True'
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-09-08T06:44:54Z
-updated_at: 2026-09-11T14:46:20Z
+updated_at: 2026-09-14T08:08:18Z
 parent: qou-9c80
 ---
 
@@ -55,3 +55,19 @@ A>=3" rather than failing it. The comparison logic was always right
 (flip = P_sign != a3_sign) — only the prose asserted an unchecked claim about A=2.
 Verdict now derived from the measured signs; docstring corrected with the measured
 A=3 value and the A=4 result.
+
+## CLOSED 2026-09-14 — verified on main, status was the only thing left open
+
+The body has said RESOLVED since 2026-09-11; the `status:` field never moved.
+Verified before closing, not taken on the body's word:
+
+  dee94bf5bf  fix(qou-rfhj, qou-z3q9): derive the verdict from measured signs,
+              stop reporting an absence as zero, stamp both caches on source
+
+is an ancestor of origin/main, and the only surviving mention of the stale
+premise in computations/deltalambda/he4_magnus_omega2_sign_sparse_probe.py is a
+comment DESCRIBING the fix (line 14: 'which asserted "A=2 and A=3 were both
+negative" without checking. Fixed').
+
+Rule 13a checked: the subject is a stale docstring and a hardcoded verdict
+string — mechanical, no conjecture is being closed.
