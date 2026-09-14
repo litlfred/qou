@@ -10,13 +10,32 @@ knots in Sigma_4".  Two sixes are being set against each other, and the "<->"
 is doing real work in the chain: it is what carries the genus into the
 particle content.
 
-THE TWO SIXES ARE DIFFERENT OBJECTS, and the corpus is clearer than the
-diagram about this.  `appendix-knot-operations/knot-operator-basis-table.md`
-names the actual NF basis -- `{ gamma, sigma_0, sigma_1, L_+, L_-, e^- }` --
-and treats the torus knots as OPERATORS acting on it, tabulating
-`b_i . beta(T_{m,n}) . b_j` for every basis pair and every knot.  So the
-block does not claim the knots ARE the basis; the diagram's "<->" does, or
-at least reads that way.
+🛑 READ SECTION 2b BEFORE QUOTING SECTIONS 2 OR 3.  Sections 1-3 were written
+before I had read cheat-sheet §9.5, and §9.5 answers most of what they raise.
+Its text is on disk and was one grep away; I ran topic-scoped greps instead.
+
+WHAT §9.5 SAYS, and it is the thing to know.  The diagram's six basis elements
+are `{1, s1, s2, s1s2, s2s1, s1s2s1}` -- the GB basis of H_3 -- and §9.5 exists
+precisely to correct "a recurrent agent confusion ... reading '6 basis
+elements' as 6 independent SM-equivalent operators".  It calls them
+**GENERATORS** whose multiplicative closure climbs the GB/jet tower.
+
+So the right question is not what the six knots SPAN but what they GENERATE.
+Measured in section 2b: **they generate all of H_3(q), 6 of 6, by products
+alone.**  Section 2's framing -- "a coincidence of counts, not a
+linear-algebraic identification" -- is therefore WITHDRAWN: there is a correct
+algebraic sense in which the six knots answer to the six-element basis, and it
+is the sense §9.5 tells readers to use.
+
+WHAT SURVIVES.  The span measurement (4 of 6) refutes the BASIS reading, which
+is the same reading §9.5 refutes at greater length.  So sections 1-3
+CORROBORATE the corpus rather than finding a defect in it.  The one narrow
+residue: the §1 diagram's bare "<->" still invites the basis reading, and §9.5
+sits ~700 lines below it.
+
+Section 3's `{ gamma, sigma_0, sigma_1, L_+, L_-, e^- }` is a THIRD six, from a
+different appendix, and is not what the diagram means.  Kept because the
+arithmetic is still correct and the three-sixes picture is worth having.
 
 WHAT IS MEASURED.  The one linear-algebraic content the identification could
 have: do the six torus-knot braid words span H_3(q)?  They do not.  Exact
@@ -44,13 +63,10 @@ the *cheap structural argument that prunes the class* -- AGENTS.md
 formalize-first -- rather than a numerical search.
 
 WHAT THIS DOES NOT CLAIM.  Not that step 4 is wrong, and not that the
-particle-content assignment fails.  The knots are used as operators, and an
-operator family spanning a 4-dimensional subspace is not thereby defective.
-The claim is narrow: **the "6 <-> 6" is a coincidence of counts, not a
-linear-algebraic identification**, so it cannot carry the weight the chain
-diagram's arrow gives it.  Scope (b) for that narrow claim, invariant named
-above; scope (a) for anything about the particle assignment, which is
-untouched.
+particle-content assignment fails.  Scope (b) applies ONLY to the narrow
+arithmetic -- the six knot words span 4 of 6, at no q rather than at some q,
+by the invariant named above.  It does NOT apply to any reading of the
+diagram, per section 2b.
 
 Run:  python3 computations/audits/step4_torus_knot_span_probe.py
 """
@@ -190,8 +206,78 @@ def section2(irr) -> None:
 
 # ---------------------------------------------------------------------------
 
+def section2b(irr) -> None:
+    """🛑 THE CORRECTION.  Span is not the right test, and the cheat sheet says so.
+
+    Added after reading cheat-sheet §9.5, which I had not read when sections 1-2
+    were written.  That section states the six as
+    `{1, s1, s2, s1s2, s2s1, s1s2s1}` -- the GB basis of H_3 -- and exists
+    precisely to correct "a recurrent agent confusion ... reading '6 basis
+    elements' as 6 independent SM-equivalent operators".  It calls them
+    **GENERATORS** whose multiplicative closure climbs the GB/jet tower.
+
+    Under THAT reading the right question is not what the six knots SPAN but
+    what they GENERATE -- and measured below, they generate all of H_3(q), by
+    products alone, no inverses needed.
+    """
+    print("\n=== 2b. 🛑 CORRECTION: they SPAN 4, but they GENERATE all 6 ===\n")
+
+    knots = [(2, 3), (2, 5), (2, 7), (2, 9), (3, 4), (3, 5)]
+    gens = [
+        (
+            (sp.Matrix([[q**s]]), irr["(2,1)"][0] ** s, sp.Matrix([[(-qi) ** s]]))
+            if r == 2 else
+            (sp.Matrix([[q ** (2 * s)]]),
+             (irr["(2,1)"][0] * irr["(2,1)"][1]) ** s,
+             sp.Matrix([[(-qi) ** (2 * s)]]))
+        )
+        for (r, s) in knots
+    ]
+
+    def flat(t):
+        return list(t[0]) + list(t[1]) + list(t[2])
+
+    ident = (sp.Matrix([[1]]), sp.eye(2), sp.Matrix([[1]]))
+    seen = sp.Matrix([flat(ident)])
+    cur = [ident]
+    for _ in range(6):
+        new = []
+        for a in cur:
+            for g in gens:
+                p = (sp.simplify(a[0] * g[0]),
+                     sp.simplify(a[1] * g[1]),
+                     sp.simplify(a[2] * g[2]))
+                cand = seen.col_join(sp.Matrix([flat(p)]))
+                if cand.rank() > seen.rank():
+                    seen = cand
+                    new.append(p)
+        if not new:
+            break
+        cur = new
+
+    check(
+        seen.rank() == 6,
+        "the six torus knots GENERATE all of H_3(q) -- 6 of 6",
+        "by products alone; no inverses needed.\n"
+        "\n"
+        "SO SECTION 2's FRAMING WAS TOO STRONG AND IS WITHDRAWN.  I wrote that\n"
+        "the '6 <-> 6' is 'a coincidence of counts, not a linear-algebraic\n"
+        "identification'.  There IS a correct algebraic sense in which the six\n"
+        "knots answer to the six-element basis: they generate the same algebra,\n"
+        "and generation is exactly the reading cheat-sheet §9.5 tells readers to\n"
+        "use.  My span measurement does not refute that reading; it refutes the\n"
+        "BASIS reading -- which §9.5 already refutes, in more detail, and which\n"
+        "it calls a 'recurrent agent confusion'.\n"
+        "\n"
+        "So section 2 CORROBORATES the corpus rather than finding a defect in it.\n"
+        "What is left is narrow: the §1 DIAGRAM's bare '<->' still invites the\n"
+        "basis reading that §9.5 spends a section correcting, and §9.5 is 700\n"
+        "lines below the diagram.",
+    )
+
+
 def section3() -> None:
-    print("\n=== 3. the corpus names a DIFFERENT six ===\n")
+    print("\n=== 3. a THIRD six, in a different appendix ===\n")
 
     p = CONTENT / "appendix-knot-operations" / "knot-operator-basis-table.md"
     txt = p.read_text(encoding="utf-8") if p.exists() else ""
@@ -204,10 +290,22 @@ def section3() -> None:
         r"b_i \cdot \beta(T_{m,n}) \cdot b_j" in txt,
         "and the torus knots appear as OPERATORS on that basis, not as it",
         "the block tabulates b_i . beta(T_{m,n}) . b_j for every basis pair\n"
-        "and every knot -- so the corpus does not claim the knots are the\n"
-        "basis.  The cheat sheet's \"6 basis elements <-> 6 torus knots\"\n"
-        "arrow is what reads that way, and section 2 is why it cannot be\n"
-        "taken linear-algebraically.",
+        "and every knot.\n"
+        "\n"
+        "NOTE this is a THIRD six, not the one the diagram means.  Cheat-sheet\n"
+        "§9.5 names the diagram's six explicitly as the GB basis of H_3,\n"
+        "{1, s1, s2, s1s2, s2s1, s1s2s1}.  Section 2 was written reaching for\n"
+        "the wrong second six; that does not change its arithmetic, but it does\n"
+        "change what the arithmetic is ABOUT.  See section 2b.",
+    )
+
+    # And pin §9.5 itself, so this correction cannot go stale silently.
+    cs = (REPO / "docs" / "canonical-derivation-cheat-sheet.md").read_text(encoding="utf-8")
+    check(
+        "A recurrent agent confusion is reading \"6 basis elements\" as **6 independent" in cs,
+        "cheat-sheet §9.5 already warns against the basis reading",
+        "it calls them GENERATORS and describes the multiplicative closure\n"
+        "climbing the GB/jet tower -- which section 2b measures and confirms.",
     )
 
 
@@ -217,6 +315,7 @@ def main() -> int:
     irr = h3_irreps()
     section1(irr)
     section2(irr)
+    section2b(irr)
     section3()
     print("\n" + "=" * 72)
     if FAILURES:
