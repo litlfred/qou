@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-14T18:27:55Z
+updated_at: 2026-09-14T18:50:40Z
 ---
 
 
@@ -1008,3 +1008,85 @@ audit's stricter regex beat my looser one, and the stricter one was right.**
 
 **My judgement: B then A.** The flag is cheap and it is the difference between a
 queue and a trap; C is real work that should be scoped per-witness.
+
+
+## The LOCAL queue splits THREE ways by `fmt` usage, and 12 of them are abandoned
+## drains (measured 2026-09-14)
+
+Correcting a claim I made in PR #7318's own body. It states the clean class is
+filtered on *"producer exists, calls `set_compute_dps()`, no numpy, not an
+orphan, **`fmt(` count zero**"*. **There is no `fmt` filter.**
+`grep -n fmt computations/audits/drain_queue_relay_partition.py` returns nothing;
+the script's only producer-side tests are
+
+```python
+if "set_compute_dps" not in src or "import numpy" in src:
+    continue
+```
+
+So the queue silently mixes producers at three different stages, with three
+different costs:
+
+| class | producers | dirty fields |
+|---|---:|---:|
+| `fmt` **called** — partial drain | 34 | 444 |
+| `fmt` **imported, NEVER called** | **12** | **200** |
+| no `fmt` anywhere | 239 | 3600 |
+
+### Why the middle class is worth naming
+
+Twelve producers import `fmt` and call it **zero** times while making `float()`
+calls. That is not a style variation, it is the fingerprint of a drain that was
+started and abandoned — someone added the import, meaning they had decided the
+mpf-to-string move was correct here, and then the calls never landed. They are
+the cheapest targets in the whole queue: the import is present, the intent is
+documented by its own presence, and the only work is at the recording sites.
+
+```
+   57  computations/alpha/alpha-5-jucys-murphy-central.witness.json      fmt=0  float=24
+   39  computations/probes/brane-tower-two-avenues-probe.witness.json
+   37  computations/entanglement-orders.witness.json
+   26  computations/probes/khovanov-klr-rank-cohomology-probe.witness.json
+   10  computations/q-beta-predicted.witness.json
+    9  computations/q-beta-form-a-n1-extension.witness.json
+    9  computations/chirality-avg-content-chiral.witness.json
+    6  computations/sdp-gamma-gamma-to-qqbar.witness.json
+```
+
+`alpha_5_jucys_murphy_central` is the extreme case: `from _precision import
+set_compute_dps, fmt` on line 61, **0** `fmt(` calls, **24** `float(` calls.
+
+### Why the partial-drain class is worth naming separately
+
+A partial drain is lower-risk than a virgin producer for a different reason: the
+author already made the per-field judgement for some fields, so the remaining
+`float()` sites are usually the ones missed rather than the ones deliberately
+kept. Note that both kinds of deliberate keep exist in this corpus and must not
+be "finished" blindly — `casimir_d6_qcorrection` keeps one float on purpose
+(a 6-figure SnapPy citation) and `casimir_xi_2_dig_deeper` keeps sixteen (cited
+4-decimal survey values). So a `fmt`-calling producer with float()s left is a
+*candidate*, never a to-do.
+
+High fields-per-float is the signal to rank on, not raw field count — it means
+each remaining cast sits inside a loop and one edit clears many fields:
+
+```
+   90 fields  fmt=1  float=2    brane-tower-isospin-diagnosis    (WITHHELD — other arcs' drift)
+   27 fields  fmt=1  float=10   binding-bring-enhancement-compare (mine, this session, 39 -> 27)
+   21 fields  fmt=1  float=3    sweeps/low-isotope-binding-sweep  (mine, 102 -> 21)
+   33 fields  fmt=2  float=1    qbeta/qbeta-cosh-q-sinh-q-candidate-scan
+```
+
+### Option
+
+Adding a `fmt`-usage column to the partition script is the same shape as the
+downstream-column proposal above (option B there): ~10 lines, no published number
+moves, and it turns the queue from one list into three ranked by cost. Same
+reason for not doing it unasked — it adds a capability rather than making code
+agree with the corpus. Bundling both columns into one patch would be the
+efficient version if the author wants either.
+
+**Correction count for this session: this is the fifth claim of mine to need
+fixing** — after the qou-840k tier line counts, the three casimir "float64 caps"
+that were not caps, the qou-0p2h remedy, and the two wrong downstream re-scans.
+Four of the five were a detector or filter I described without reading its source.
