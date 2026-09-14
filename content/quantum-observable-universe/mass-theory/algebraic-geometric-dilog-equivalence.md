@@ -95,7 +95,7 @@ matched-cusp volume identification supplied by
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)) —
 and the statement bundle `QOU.QPochhammer.algebraic_geometric_equivalence`
 *derives* both halves: item 1 (pole side) unconditionally, as the sorry-free
-theorem `pole_cusp_bijection_proved` (each $x = q^{-k}$ is a genuine root of
+theorem `denomPolyLocal_roots_explicit` (each $x = q^{-k}$ is a genuine root of
 $(x;q)_n$), and item 2 (Bloch–Wigner asymptotic) from the class fields.
 The class asserts nothing provable-outright; no instance is fabricated. This
 matches the conjectural-class pattern used for
