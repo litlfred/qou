@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T08:59:11Z
+updated_at: 2026-09-14T09:12:21Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -141,3 +141,33 @@ no float). Commit f504492523, PR #7362.
 **Still open** (the bean stays in-progress): the g=4 completeness sentence needs
 an owner disposition (re-scope / restate / retire); the why-b3 rank-1 vs
 descartes-knot rank-2 contradiction; steps 7, 8, 9, 11 unwalked.
+
+## 2026-09-14 — step 4: the "6 <-> 6" is a coincidence of counts
+
+Walked step 4 with the tool the genus finding built. The cheat sheet's arrow
+`6 basis elements <-> 6 torus knots <-> particle content` sets two different
+sixes against each other. The corpus is clearer than the diagram:
+`knot-operator-basis-table.md` names the NF basis
+`{gamma, sigma_0, sigma_1, L_+, L_-, e^-}` and treats the knots as OPERATORS
+on it.
+
+Measured, exact over Q(q) via the faithful rep (3)+(2,1)+(1,1,1) — so the span
+in the ALGEBRA, not of characters: the six torus-knot words span **4 of H_3's
+6 dimensions**. Four 2-strand words span 2 (Hecke collapses sigma_1^s into
+span{1,sigma_1}; seven of them still span 2, measured s=3..15), two 3-strand
+words span 2.
+
+**The same 2+2 as the genus finding, one level down** — there four 2-strand
+ROWS filled two H_2 columns and two 3-strand rows two of three H_3 columns.
+One structural fact surfacing in both a character space and an algebra.
+
+Scope (b) for the narrow claim only. NOT a claim step 4 is wrong; the knots are
+used as operators and a 4-dim operator family is not defective. The "6<->6"
+simply cannot be a linear-algebraic identification.
+
+Probe `computations/audits/step4_torus_knot_span_probe.py` (17/17). Commit
+bba57cb415, PR #7362.
+
+**Still open:** the g=4 completeness sentence; the cheat-sheet step-4 arrow
+wording; the why-b3 rank-1 vs descartes-knot rank-2 contradiction; steps 7, 8,
+9, 11 unwalked.
