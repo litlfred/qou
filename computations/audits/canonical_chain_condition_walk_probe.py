@@ -308,9 +308,71 @@ def main() -> int:
     print("   genus g = 4 and gauge group SU_q(2) to rank 2'.  SU(2) has rank 1; 2 is")
     print("   dim V.  One of the two is stating a wrong rank as a derived consequence.")
 
+    # ---------------------------------------------------------------------
+    print()
+    print("8. STEP 9 -- the exit to R is SCOPED, and one of its three names does")
+    print("   not resolve.")
+    print()
+
+    step9 = [
+        ("content/quantum-observable-universe/mass-theory/"
+         "archimedean-realization-functor.md",
+         "The word \"functor\" in the name and label is **legacy**",
+         "the block WITHDRAWS 'functor': R_top is a realization/evaluation,\n"
+         "            a ring hom out of K_0(Var), not a functor.  Candid, not a defect."),
+        ("content/quantum-observable-universe/mass-theory/"
+         "archimedean-realization-functor-interpretation.md",
+         "\\quad\\text{on } \\widehat{\\mathcal{M}}_{\\mathrm{QOU}}",
+         "the identification R_top = tau_arch is SCOPED to a subset M_QOU"),
+        ("content/quantum-observable-universe/mass-theory/vol-through-tau.md",
+         "On the algebraic quantum volume, $\\tau_{\\mathrm{arch}}$ coincides with",
+         "a SIBLING states the same agreement scoped to the algebraic quantum\n"
+         "            volume -- and `def:algebraic-quantum-volume` EXISTS"),
+        ("content/quantum-observable-universe/mass-theory/vol-as-motivic-period.md",
+         "These pictures agree on the algebraic quantum volume domain",
+         "and a third states it for all three pictures, same scope"),
+    ]
+    for rel, needle, gloss in step9:
+        present = needle in (ROOT / rel).read_text()
+        ok &= present
+        print(f"   [{'FOUND' if present else 'MISSING'}] {rel.split('/')[-1]}")
+        print(f"            {gloss}")
+
+    # M_QOU: how many times does it occur in the whole corpus?
+    hits = 0
+    for p in (ROOT / "content").rglob("*.md"):
+        try:
+            if "\\widehat{\\mathcal{M}}_{\\mathrm{QOU}}" in p.read_text(encoding="utf-8"):
+                hits += 1
+        except Exception:                                   # pragma: no cover
+            continue
+    ok &= hits == 1
+    print()
+    print(f"   M_QOU occurrences across content/**.md : {hits}")
+    print()
+    print("   So the agreement is stated THREE times under TWO names for the same")
+    print("   domain.  Two of them say 'the algebraic quantum volume', which")
+    print("   resolves to `def:algebraic-quantum-volume`.  The third says M_QOU,")
+    print("   which occurs exactly ONCE in the corpus -- in the sentence that uses")
+    print("   it -- and is defined nowhere.")
+    print()
+    print("   THE SUBSTANCE IS FINE AND THE CORPUS IS CAREFUL HERE.  The condition")
+    print("   entering at step 9 is real, declared, and correctly scoped: the")
+    print("   'exclusive exit to R' is established ON the algebraic quantum volume,")
+    print("   not in general.  The defect is one undefined SYMBOL in one remark,")
+    print("   where its two siblings use a defined one.  A one-symbol fix.")
+    print()
+    print("   NOT claimed: that chi_top is ill-defined.  The remark allows it to be")
+    print("   'an integer (Euler characteristic) OR a refined Hodge-theoretic")
+    print("   invariant like hyperbolic volume' -- two invariants with different")
+    print("   codomains under one name -- and chi_top has NO notation-register")
+    print("   entry.  That is an overload worth noting, but the blocks that USE it")
+    print("   scope it to the volume domain, so it is not measured as a defect here.")
+
     print()
     print("VERDICT:", "PASS -- steps 5 and 10 each carry a condition the chain's own "
-          "step statement does not state; alpha is identified as a Wenzl weight"
+          "step statement does not state; alpha is identified as a Wenzl weight; "
+          "step 9's exit to R is correctly scoped under one undefined symbol"
           if ok else "FAIL")
     return 0 if ok else 1
 
