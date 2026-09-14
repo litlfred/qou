@@ -182,3 +182,143 @@ presupposed a dual the Lean does not need. It was held as *"not
 agent-actionable — needs owner pick, not agent work"* for three weeks, put to
 the owner as three explicit rewordings, and resolved by the owner choosing
 one. The antipode hole is a larger version of that, and takes the same route.
+
+---
+
+# RESOLVED the same day — owner chose A + C; and the answer to B is *no*
+
+The owner was given four options (add the standard Hopf axiom / assert
+`S² = id` directly / fix all three holes / leave it) and answered **A yes,
+C yes**, plus a question on B: *"can we derive [`S² = id`] from A?"*
+
+## What was implemented (A + C)
+
+**The scope was larger than the question described it, and the reason is worth
+stating**: the prose *already asserted* most of what was missing. Axiom 1 says
+`(μ, η)` make `A` an *"associative unital algebra object"* and axiom 2 says
+`(Δ, ε)` make it a *"coassociative counital coalgebra object"* — and **none of
+associativity, the two unit laws, coassociativity or the two counit laws was in
+either Lean carrier**. So A+C is mostly the Lean catching up with its own block;
+only the antipode condition is genuinely new mathematics in the definition.
+
+Eight law fields added to both `QOU.FrobeniusHopfData` (library) and
+`QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate` (content-block sibling), with
+Mathlib's exact field shapes:
+
+| field | what the prose already said |
+|---|---|
+| `one_mul`, `mul_one`, `mul_assoc` | axiom 1 — "associative unital algebra object" |
+| `counit_comul`, `comul_counit`, `comul_assoc` | axiom 2 — "coassociative counital coalgebra object" |
+| `antipode_left`, `antipode_right` | **nothing** — genuinely new |
+
+The `.md` axiom 2 now states the Hopf condition
+`μ ∘ (S ⊗ id) ∘ Δ = η ∘ ε = μ ∘ (id ⊗ S) ∘ Δ` and keeps the old equation under
+its correct name (multiplicativity of the counit).
+
+**Blast radius, measured before touching anything: one constructor.** Nothing in
+the corpus builds a `FrobeniusHopfData` by record literal except
+`QOU.TrivialWitness.unitFrobHopf` — the unit object `A = 𝟙`, which is what makes
+`Nonempty (QuantumUniverse R)` a theorem rather than an axiom. **All eight new
+laws are discharged there by `coherence`**, so the definition is still inhabited
+and the axioms are still mutually consistent. Every other mention of
+`FrobeniusHopfData` in the corpus is a consumer (`(fh : FrobeniusHopfData C)`)
+or a field, and consumers are unaffected by added laws.
+
+## What A buys: the antipode stops being data
+
+`QOU.FrobeniusHopfData.antipode_unique_of_left` — sorry-free, `lean`-direct
+exit 0, `#print axioms` `[propext, Quot.sound]`:
+
+> Any `S'` with `Δ ≫ S' ▷ A ≫ μ = ε ≫ η` satisfies `S' = S`.
+
+So `antipode` is no longer a free field — it is determined by `(μ, η, Δ, ε)`,
+and a `FrobeniusHopfData` cannot carry a wrong one. **This is the whole point
+of option A**, and it is why C was not optional: the proof runs in the
+convolution monoid `Conv A A` (`f * g = Δ ≫ f ▷ A ≫ A ◁ g ≫ μ`, unit `ε ≫ η`),
+which is a *monoid* only given associativity, coassociativity and the four
+unit/counit laws, and inverses are unique only in a monoid. The six
+"bookkeeping" laws of C are exactly what the uniqueness argument spends.
+
+Stated in the one-sided form deliberately: only `antipode_left` is used, so the
+theorem does not carry a hypothesis it does not spend. `antipode_unique` is the
+usual two-sided corollary.
+
+Mathlib supplies the monoid (`CategoryTheory.Conv`, `Monoid` instance);
+`toMonObj` / `toComonObj` are field-for-field transports, which is why the new
+fields were given Mathlib's exact shapes rather than equivalent ones.
+
+## The answer to B: **no — `S² = id` does not follow from A**
+
+Two pieces of evidence, neither of them this session's own reasoning.
+
+1. **Mathlib's own theorem carries the hypothesis.**
+   `CategoryTheory.HopfObj.antipode_antipode` is stated *"In a commutative Hopf
+   algebra, the antipode squares to the identity"* and takes
+   `comm : (β_ A A).hom ≫ μ[A] = μ[A]` as an explicit argument — braided
+   commutativity of the multiplication. Re-exported as
+   `QOU.antipode_sq_of_comm` so the dependence is visible from inside this
+   corpus rather than asserted about it.
+2. **The standard counterexamples are q-deformations.** For `U_q(𝔤)`,
+   `S²(x) = K_{2ρ} x K_{2ρ}⁻¹ ≠ x`; for the Taft algebra of dimension `n²` the
+   antipode has order `2n`.
+
+This is the sharp part for the framework: `comm` is close to the *negation* of
+q-deformation, and `def:quantum-universe` specifies its category as **braided
+monoidal, not symmetric** precisely to keep the braiding non-trivial. So
+`S² = id` is not a mild extra hypothesis one might hope to prove later — on the
+evidence it is the wrong thing to want here.
+
+## A scope correction to my own theorem, from earlier the same day
+
+`id_eq_zero_of_antipode_sq_eq_id` derived a zero object from `S ≫ S = 𝟙` by
+substituting `g = 0` for the antipode. **That substitution required `antipode`
+to be free data and is no longer available** — with the axioms in place `S` is
+determined, so it cannot be chosen. The theorem remains true of the pre-axiom
+structure it is now stated over and says nothing about the current one. The
+whole of `AntipodeIndependence.lean` was restated over a local
+`FrobeniusHopfDataPreAxiom` reproducing the old shape, so the record of what was
+wrong stays machine-checked instead of being deleted or silently rotting.
+
+## What is still missing, recorded and NOT acted on
+
+**`FrobeniusHopfData` is not asserted to be a bialgebra.** The bimonoid
+compatibility `Δ ∘ μ = (μ ⊗ μ) ∘ τ ∘ (Δ ⊗ Δ)` (`CategoryTheory.BimonObj`)
+appears nowhere in the block — axiom 2 asks only for a coalgebra object, and the
+Frobenius relation of axiom 3 is a *different* compatibility that does not imply
+it. Consequence: the substrate is not a Hopf monoid in Mathlib's sense, so
+`antipode_antipode` cannot be applied to it even if `comm` were supplied. Adding
+a bialgebra axiom is a further change to the definition and is the owner's call,
+exactly as the antipode axiom was. Recorded in the block's `authorNotes` and in
+bean `qou-c64q`.
+
+**Three different structures are named `FrobeniusHopfSubstrate`**, with
+different field sets: the content-block one (8 data fields),
+`categorical-reeb-derivation.lean` (`obj`, `mul`, `unit`) and
+`substrate-self-duality.lean` (`obj`, `comul`, `frobeniusForm`). Neither
+of the latter two carries an antipode, so this change does not touch them — but
+it is the `markovZ` overload defect again, one name spanning incompatible
+objects, and it is worth its own bean rather than a silent fix here.
+
+## Verification
+
+- `lean`-direct `-DautoImplicit=false -s 65536`, **exit 0, zero warnings** on
+  `CategoricalFoundations.lean`, `TrivialWitness.lean`, `AntipodeDetermined.lean`,
+  `AntipodeIndependence.lean` and `frobenius-hopf-substrate.lean`, each against a
+  shadow tree carrying the freshly-built `CategoricalFoundations` — not against
+  the stale snapshot (`qou-56qy`).
+- `#print axioms` on all six new declarations: no `sorryAx`. `toMonObj` /
+  `toComonObj` depend on **no axioms at all**; the three uniqueness theorems on
+  `[propext, Quot.sound]`; `antipode_sq_of_comm` on those plus
+  `Classical.choice`.
+- Six Mathlib modules were missing from the restored olean cache
+  (`Mon_`, `Comon_`, `Bimon_`, `Conv`, `Hopf_`, `Braided.Opposite`) — the
+  documented cache-gap class. Built from source in ~30 s total; the cone was
+  computed with a corrected import parser, the first version having broken on
+  Mathlib's leading `/-` copyright block and reported a cone of 2.
+- `scripts/lean-structure-field-law-audit.py` on both carriers now reports
+  **every data field constrained**, against `unit` / `counit` / `antipode` free
+  before.
+- Render-QA grep battery clean on the edited `.md` (balanced `$`, `$$`, braces,
+  `\bigl`/`\bigr`, `\begin`/`\end`, fences; no list-parser hijack). The Hopf
+  condition is inline `$…$` rather than display math deliberately — it sits
+  inside a numbered list item, where `$$` is fragile.

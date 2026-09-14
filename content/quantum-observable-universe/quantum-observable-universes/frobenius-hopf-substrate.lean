@@ -66,5 +66,30 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
     (λ_ obj).inv ≫ (coevaluation ▷ obj) ≫
     (α_ obj obj obj).hom ≫
     (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj
+  /-- Left unit law — the "unital" of axiom 1. -/
+  one_mul : unit ▷ obj ≫ mul = (λ_ obj).hom
+  /-- Right unit law. -/
+  mul_one : obj ◁ unit ≫ mul = (ρ_ obj).hom
+  /-- Left counit law — the "counital" of axiom 2. -/
+  counit_comul : comul ≫ counit ▷ obj = (λ_ obj).inv
+  /-- Right counit law. -/
+  comul_counit : comul ≫ obj ◁ counit = (ρ_ obj).inv
+  /-- Coassociativity — the "coassociative" of axiom 2. -/
+  comul_assoc :
+    comul ≫ obj ◁ comul = comul ≫ (comul ▷ obj) ≫ (α_ obj obj obj).hom
+  /-- **Antipode axiom (left)** — `Δ ≫ S ▷ A ≫ μ = ε ≫ η`.
+
+      `S` is the convolution inverse of `id_A`, hence unique: the antipode is
+      *determined* by `(μ, η, Δ, ε)` and is not free data.
+
+      Added 2026-09-14 on owner decision (beans `qou-c64q`, `qou-qjhc`).  Until
+      then this structure named `antipode` and constrained it with nothing, so
+      every question about `S` — `S² = id` included — was independent of the
+      definition rather than open.  Record of that state:
+      `QOU.AntipodeIndependence`; the uniqueness proof lives in
+      `QOU.QuantumObservableUniverse.AntipodeDetermined`. -/
+  antipode_left : comul ≫ antipode ▷ obj ≫ mul = counit ≫ unit
+  /-- **Antipode axiom (right)** — `Δ ≫ A ◁ S ≫ μ = ε ≫ η`. -/
+  antipode_right : comul ≫ obj ◁ antipode ≫ mul = counit ≫ unit
 
 end QOU.AlgebraicSubstrate
