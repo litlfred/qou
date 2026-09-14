@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T09:12:21Z
+updated_at: 2026-09-14T09:32:54Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -171,3 +171,39 @@ bba57cb415, PR #7362.
 **Still open:** the g=4 completeness sentence; the cheat-sheet step-4 arrow
 wording; the why-b3 rank-1 vs descartes-knot rank-2 contradiction; steps 7, 8,
 9, 11 unwalked.
+
+## 2026-09-14 — step 11: the cheat sheet's hadronic E_0 is circular
+
+Step 9 gives `E_0 = Q_beta/|h(h-2)/2|` (hadronic); step 11 gives
+`Q_beta = |Delta(net)|.E_0`. Substituting: **Q_beta = Q_beta, identically** —
+step 11 derives its own input. AGENTS.md Derive-then-check item 8 verbatim.
+
+**Convention-independent**, which is the point: whichever Delta is right
+(z=1 / z=q / the ruled z_D), `E_0 := Q_beta/|Delta|` then `Q_beta := |Delta|.E_0`
+is an identity. qou-99qc cannot repair it. Shown over exact rationals at 4 Deltas.
+
+**What the hadronic form is:** `E_0 lept / E_0 had = 1.00167757`, a gap of
+0.1678 % — i.e. the famous '0.17 % vs CODATA' written backwards, and a cell
+AGENTS.md has RETIRED as the base.
+
+**Production is NOT circular** — 4 computations/qbeta/ files carry
+`E0 = M_E/(Q0*(Q0-1))/(1-HBAR_Q**2)`, a closed substrate expression with no
+Q_beta in it. So the defect is in the coordination document, not the compute;
+same class as C10b but worse (C10b overstates fittedness, this makes a step
+vacuous).
+
+Scope (b), invariant = |D|.(X/|D|) = X.
+
+**Two corrections to my own probe**: (i) I asserted bit-equality at dps=60 for
+arbitrary Delta and it correctly FAILED on pi/10 — the identity is algebraic,
+not arithmetic; now over exact rationals. (ii) The precision gate caught
+`mpf(str(Q))` laundering a float64 — fixed to `mpf(Q_50_DIGIT_STR)`; same pass
+found Q_beta hardcoded from prose vs the live `Q_NEUTRON_MEV`, moving E_0 had
+in its 9th digit.
+
+Probe `computations/audits/step11_qbeta_e0_circularity_probe.py` (10/10).
+Commit 119b61f7fb, PR #7362.
+
+**Still open:** the g=4 completeness sentence; the step-4 arrow wording; this
+hadronic-E_0 line (highest priority of the three doc fixes); the why-b3 rank
+contradiction; steps 7, 8, 9-leptonic unwalked.
