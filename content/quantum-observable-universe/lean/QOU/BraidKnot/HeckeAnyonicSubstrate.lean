@@ -10,9 +10,21 @@ relation `(T_{s_i} - q)(T_{s_i} + 1) = 0`.
 
 The `class HeckeAnyonicSubstrate` plays the role of `sorry` for the
 conjecture: providing an instance asserts that the QOU substrate's
-full particle spectrum is realised as `H_n(R, q)`-modules, and the
-class fields encode the structural content (braid action, Hecke
-quadratic, observation-functor compatibility).  Downstream theorems
+full particle spectrum is realised as `H_n(R, q)`-modules.
+
+**What the fields actually carry** (corrected 2026-09-14): the braid
+action and the Hecke quadratic relation, and nothing else.  This
+paragraph used to list a third item, *observation-functor
+compatibility*, which no field encodes and none ever did — the
+`proof-claims-unencoded` pattern of AGENTS.md §3b-tax, a docstring
+enumerating properties the fields do not carry.  That content is not
+missing from the corpus, it lives one file over as
+`KazhdanLusztigClassicalLimit.kl_compatible_with_tau`, which takes
+`[HeckeAnyonicSubstrate R q]` as a hypothesis and states the `q = 1`
+collapse of the statistical phase under `τ`.  It cannot be stated
+here: this class has no `τ` and no target for it to land in.
+
+Downstream theorems
 take the class as `[HeckeAnyonicSubstrate q]` and are conditional on
 the conjecture per AGENTS.md §3b-cond.
 
