@@ -993,7 +993,37 @@ def has_native() -> bool:
 
 def build_atom_nf(Z: int, N: int):
     """Build the atom NF for (Z, N). Native-dispatched; falls back
-    to hecke_core.build_atom_nf when the wheel is absent."""
+    to hecke_core.build_atom_nf when the wheel is absent.
+
+    **What this models, and what it is refuted by** — owner ruling D1 (ledger `docs/coordination/2026-09-05-owner-gated-bean-triage.md`), 2026-09-13.
+
+    This is the **ATOM**: all pairs, `11A + C(A,2) + Z` letters, including the
+    `Z` electron crossings. Its sibling `mass_at_3A_proper.atom_braid_word_3A`
+    is the **NUCLEUS**: a linear chain, `A-1` interfaces, `12A-1` letters, no
+    electrons. **They model different objects and disagree silently.** Neither
+    is selected as correct, because both topologies are refuted:
+
+    * the complete graph `C(A,2)` this builder uses is excluded structurally by
+      `QOU.Mass.CoordinationSaturation` (it gives `B/A = eps*(A-1)/2`, unbounded,
+      so no plateau -- observed saturation forces bounded degree);
+    * the chain its sibling uses is excluded by
+      `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` (the chain
+      bond sum is arrangement-invariant only when `L_pp = L_pn = L_nn`, and a
+      nucleus has no arrangement).
+
+    Bean `t7qv` RESULT 4 measures all-pairs as roughly halving the A-scaling
+    error (2H/3He +40.0% against the chain's +73.5%) -- but **RESULT 5 refutes a
+    one-parameter falloff outright** (`f = +2.030` from A-scaling against
+    `f = -0.697` from the mirror; one of them is negative). Quoting RESULT 4
+    without RESULT 5 sells a preference between refuted options as a result.
+
+    **Consumers.** This one reaches the paper: `all_nuclides_sdp_admissibility.py`
+    names it as its per-nucleus categorical object, and that producer is the
+    `computation.script` of the content block
+    `nuclear-interactions/demand-stability`.
+
+    The topology question stays open under bean `qou-brng`.
+    """
     if _native_ok():
         return _native.build_atom_nf(Z, N)
     import hecke_core  # type: ignore[import-not-found]
