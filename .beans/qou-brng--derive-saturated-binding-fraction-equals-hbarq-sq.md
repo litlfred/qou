@@ -2980,6 +2980,14 @@ scope-(b)).
 
 Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.
 
+**Cross-reference.** The 2026-09-12 note above (PR #7237) reports that
+`y_0_eq_zero_of_radical` makes the LP "price nothing" and that the Pass-2 gate has
+no derivation. That is the same LP reached from the **dual** side; the entry below
+reaches it from the **active-set** side. Neither subsumes the other — `y_0*` is the
+net-constraint shadow price and the active set is `{i : y_i* > 0}` — but together
+they leave the operator-selection LP with no surviving route to a binding
+multiplier.
+
 ## 2026-09-14 — the non-orthogonal escape does not exist; |active| is pinned by a DIMENSION COUNT
 
 The 2026-09-12 entry above named a live direction: *"a **non-orthogonal**
