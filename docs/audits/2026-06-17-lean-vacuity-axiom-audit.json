@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-14T06:43:36.470Z",
+  "generated": "2026-09-14T07:56:03.557Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3846,
+  "scanned_files": 3847,
   "files_flagged": 109,
-  "total_defects": 70,
-  "total_exempt": 64,
-  "total_promoted_from_exempt": 42,
+  "total_defects": 76,
+  "total_exempt": 58,
+  "total_promoted_from_exempt": 48,
   "categories": {
-    "proof-no-self-assuming-projection": 57,
+    "proof-no-self-assuming-projection": 63,
     "proof-claims-unencoded": 9,
     "proof-no-trivial-true": 2,
     "proof-no-decide-masking": 1,
@@ -1630,7 +1630,7 @@
         "decl": "acoustic_horizon_regularity",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean": [
@@ -1642,7 +1642,7 @@
         "decl": "discrete_vortex_spectrum",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean": [
@@ -1653,8 +1653,8 @@
         "snippet": "def root_of_unity_truncation_conditional",
         "decl": "root_of_unity_truncation_conditional",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean": [
@@ -1665,8 +1665,8 @@
         "snippet": "def vorticity_lower_bound_conditional",
         "decl": "vorticity_lower_bound_conditional",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.lean": [
@@ -2119,8 +2119,8 @@
         "snippet": "theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] :",
         "decl": "acoustic_horizon_conditions",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/discrete_vortex_spectrum.lean": [
@@ -2131,8 +2131,8 @@
         "snippet": "theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :",
         "decl": "discrete_vortex_spectrum",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean": [
@@ -2167,8 +2167,8 @@
         "snippet": "theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :",
         "decl": "root_of_unity_truncation",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Information/GeometryOfIncompleteness.lean": [
@@ -2791,7 +2791,7 @@
         "decl": "ccg_cosimplicial_identities",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean": [
@@ -2803,7 +2803,7 @@
         "decl": "ccg_crossed_module_structure",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean": [
@@ -2825,8 +2825,8 @@
         "snippet": "theorem qbeta_c_k_closed_forms_derived",
         "decl": "qbeta_c_k_closed_forms_derived",
         "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt": false,
+        "promoted_from_exempt": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean": [
@@ -2871,7 +2871,7 @@
         "decl": "crystal_basis_reduction",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean": [
@@ -3009,7 +3009,7 @@
         "decl": "bar_even_kernel_implies_q_one_shadow",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       },
       {
         "line": 133,
@@ -3045,7 +3045,7 @@
         "decl": "qbeta_q_eq_one_shadow_anchors",
         "severity": "critical",
         "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "exempt_reason": "canonical §3b placeholder projection (tracked; triage pending)"
       }
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean": [
