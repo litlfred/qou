@@ -1,0 +1,23 @@
+{
+  "_comment": "Sites assembling the grouped intra-nucleon word by construction. DRAINS, NEVER GROWS: fix by calling pyhecke.atom.nucleon_word_letters.",
+  "sites": [
+    "computations/atom_orbit_reduction.py:92:B",
+    "computations/binding_canonical.py:381:A",
+    "computations/binding_multibond_wenzl.py:71:B",
+    "computations/chi_4he_binding_lossless.py:83:B",
+    "computations/closed_form_tau_M.py:564:A",
+    "computations/fitted_ideal_low_isotope_calibration.py:172:A",
+    "computations/legacy_marshalled_frame.py:87:A",
+    "computations/markov/d_frame_neutron_cyclotomic_rule_probe.py:121:A",
+    "computations/probes/b_pred_mirror_slope_closed_form.py:90:A",
+    "computations/qbeta/qbeta_chi_block_symbolic_closure_probe.py:79:A",
+    "computations/qbeta/qbeta_d_frame_baseline_element_consistency_probe.py:117:A",
+    "computations/qbeta/qbeta_d_frame_trace_baseline_probe.py:103:A",
+    "computations/qbeta/qbeta_delta_bar_parity_probe.py:184:B",
+    "computations/qbeta/qbeta_delta_element_fork_pricing_probe.py:181:B",
+    "computations/qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py:105:A",
+    "computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py:74:A",
+    "computations/qbeta/qbeta_level_k_binding_operator_probe.py:257:B",
+    "computations/rho_k_h3a_gg_trajectory.py:127:B"
+  ]
+}
