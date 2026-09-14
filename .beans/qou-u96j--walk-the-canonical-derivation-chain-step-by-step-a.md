@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T09:47:38Z
+updated_at: 2026-09-14T10:00:04Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -239,3 +239,42 @@ condition enters', but four document fixes are open for the owner (g=4
 completeness sentence; step-4 arrow; hadronic E_0; step-7/8 labels) plus the
 why-b3 rank contradiction — and the interior mathematics of steps 7-9 (the GB
 collapse, the Archimedean realisation functor) is untouched.
+
+## 2026-09-14 — step 9 walked; the walk is COMPLETE
+
+Step 9 is where the chain crosses Q(q) -> R, so where an unstated condition
+would matter most. **It is the most carefully written step**, and the finding is
+small.
+
+- `def:archimedean-realization-functor` **withdraws its own name**: 'functor' is
+  legacy; R_top is a ring hom out of K_0(Var), a realization/evaluation.
+- **The condition IS declared**: `R_top = tau_arch on M_QOU subset M` — so tau's
+  'exclusive exit to R' holds on a SUBDOMAIN, not in general.
+- **One defect**: `M_QOU` occurs **exactly once** across every `.md` in
+  `content/` — in the sentence that uses it — and is defined nowhere. Its two
+  siblings (`vol-through-tau`, `vol-as-motivic-period`) state the identical
+  agreement scoped to `def:algebraic-quantum-volume`, which EXISTS. One-symbol fix.
+- **Not claimed**: that `chi_top` is ill-defined. The remark allows it to be an
+  Euler characteristic OR a hyperbolic volume — two codomains, one name, no
+  notation-register entry. Recorded as an overload, not measured as a defect.
+
+The contrast with step 11 is the point: both concern the crossing to R; step 9
+states its scope, step 11's E_0 line inverts its own output.
+
+Pinned as section 8 of `canonical_chain_condition_walk_probe.py` (4 quotes at
+source + the corpus-wide count). VERDICT PASS. Commit 254d250f3c, PR #7362.
+
+### Walk status: all 11 steps covered
+
+FIVE document defects open for the owner, none in the compute, all with safe
+no-op defaults:
+1. step 11 hadronic `E_0` — makes the step **vacuous** (highest)
+2. `g = 4` completeness sentence — **false as written**, no producer
+3. step-4 `6 <-> 6` arrow — reads as an identification that does not hold
+4. step-7/8 labels — do not match the `uses[]` graph
+5. step-9 `M_QOU` — undefined symbol (cheapest, one symbol)
+plus the why-b3 rank-1 vs descartes-knot rank-2 contradiction.
+
+**Bean stays in-progress**: the interior mathematics of steps 7-9 is untouched —
+the GB spectral sequence's actual collapse, and the Archimedean realisation
+whose absence `MassIdentity`'s 25 % tolerance stands in for.
