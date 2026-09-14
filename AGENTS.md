@@ -1235,8 +1235,9 @@ ephemeral.
        POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
 
    which returned `200 {"draft": false}` first try on #7230 (2026-09-12) —
-   **but measured `503` five times running on #7350 (2026-09-14) while
-   plain REST was `200`, so it is NOT dependable; see the box below.**
+   **but measured `503` on six attempts across fifteen minutes on #7350
+   (2026-09-14) while plain REST was `200`, so it is NOT dependable; see
+   the box below.**
    `mcp__github__update_pull_request` with `draft: false` fails — often for
    hours — with
 
@@ -1264,8 +1265,10 @@ ephemeral.
    > correcting this very rule one day after it was written.** The first
    > version of this correction said *"ONE REST CALL … returns `200` first
    > try"*. On #7350 the CCR route returned **`503 "GitHub is temporarily
-   > unavailable"` on five consecutive attempts over ~50 s**, and the
-   > discriminator rules out a general outage:
+   > unavailable"` on six attempts spread across fifteen minutes** — five
+   > consecutive over ~50 s, then one more ~15 min later, so this is a
+   > sustained unavailability and not a momentary blip. The discriminator
+   > rules out a general outage, and was re-taken at both ends:
    >
    > | call | result |
    > |---|---|
