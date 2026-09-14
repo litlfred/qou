@@ -1,0 +1,127 @@
+{
+  "$schema": "https://litlfred.github.io/qou/schemas/witness.schema.json",
+  "name": "cyclic-square-cross-term-dressing-blind",
+  "description": "The minimal (n=3) cyclic-square cross term is independent of the dressings d0, d1 on its own two alternating letters; the charge dependence of the n=4 interleaved defect is the STABILISING letter's dressing alone.",
+  "computedAt": "2026-09-14T19:54:00.780637+00:00",
+  "bean": "qou-vwu3",
+  "scope": "(a) as a measurement; (b) as an exclusion of this word class",
+  "convention": "D (z = q^3/(q^2+1))",
+  "q0_pin": "none -- the n=3 result is exact in symbolic q; the n=4 tie-in uses exact rational sample points, not a physical anchor",
+  "representation": "spin-1/2 V^{tensor n}, mu-weighted quantum trace / [2]^n",
+  "arithmetic": "exact symbolic (sympy over Q(q, d0, d1)); no floating point",
+  "verdict": {
+    "Delta_3_factored": "-(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "free_symbols": [
+      "q"
+    ],
+    "d0_present": false,
+    "d1_present": false,
+    "reading": "the cyclic square's cross term is BLIND to the square's own dressings; the word class cannot distinguish pp from nn and is not a candidate carrier for a charge-antisymmetric term"
+  },
+  "four_brackets": {
+    "identity": "(acac - a^2c^2) + t(aca - a^2c) + s(cac - ac^2) + st(ca - ac)",
+    "tr_bracket_t": "0",
+    "tr_bracket_s": "0",
+    "tr_bracket_st": "0",
+    "lean": {
+      "decomposition": "QOU.MathlibExt.RevisitClass.dressed_difference_expand",
+      "bracket_1": "QOU.MathlibExt.RevisitClass.cyclicSquare_cross_term",
+      "bracket_t": "QOU.MathlibExt.RevisitClass.oneStepRevisit_eq_monotone",
+      "bracket_s": "QOU.MathlibExt.RevisitClass.mirrorRevisit_eq_monotone",
+      "bracket_st": "QOU.MathlibExt.RevisitClass.tr_bondCommutator",
+      "theorem": "QOU.MathlibExt.RevisitClass.cyclicSquare_cross_term_dressed",
+      "axioms": "[propext, Classical.choice, Quot.sound] -- sorry-free"
+    }
+  },
+  "bare_limit_control": "-(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+  "markov_defect_convD": "-(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+  "stabilisation_tie_in": [
+    {
+      "q": "5/4",
+      "d": [
+        "0",
+        "-1/3",
+        "2/7"
+      ],
+      "Delta_4": "-220149/275684",
+      "(z + d2) * Delta_3": "-220149/275684",
+      "agrees": true
+    },
+    {
+      "q": "7/3",
+      "d": [
+        "1/5",
+        "3/2",
+        "-4/9"
+      ],
+      "Delta_4": "-2329631/1756008",
+      "(z + d2) * Delta_3": "-2329631/1756008",
+      "agrees": true
+    }
+  ],
+  "assertions": [
+    {
+      "name": "REP_hecke_relation_holds",
+      "passed": true,
+      "detail": "sigma^2 = h sigma + 1 in the representation -- if this fails the rep is not Hecke."
+    },
+    {
+      "name": "REP_braid_relation_holds",
+      "passed": true,
+      "detail": "sigma0 sigma1 sigma0 = sigma1 sigma0 sigma1 in the representation."
+    },
+    {
+      "name": "BRACKET_decomposition_is_exact",
+      "passed": true,
+      "detail": "(a+s)(c+t)(a+s)(c+t) - (a+s)^2(c+t)^2 = (acac - a^2c^2) + t(aca - a^2c) + s(cac - ac^2) + st(ca - ac).  Lean: dressed_difference_expand."
+    },
+    {
+      "name": "BRACKET_t_trace_vanishes",
+      "passed": true,
+      "detail": "tr(aca - a^2c) = 0.  Lean: oneStepRevisit_eq_monotone."
+    },
+    {
+      "name": "BRACKET_s_trace_vanishes",
+      "passed": true,
+      "detail": "tr(cac - ac^2) = 0.  Lean: mirrorRevisit_eq_monotone (new)."
+    },
+    {
+      "name": "BRACKET_st_trace_vanishes",
+      "passed": true,
+      "detail": "tr(ca - ac) = 0.  Lean: tr_bondCommutator (new)."
+    },
+    {
+      "name": "CONTROL_bare_limit_is_the_markov_defect",
+      "passed": true,
+      "detail": "tr((g0 g1)^2) - tr(g0^2 g1^2) = -(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2; z^2 - h z - 1 at convention D = -(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2.  If this fails the harness is wrong and nothing else here is about the Hecke algebra."
+    },
+    {
+      "name": "DRESSED_equals_bare",
+      "passed": true,
+      "detail": "Delta_3(d0,d1) = -(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2; bare Delta_3 = -(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2.  Lean: cyclicSquare_cross_term_dressed (sorry-free)."
+    },
+    {
+      "name": "M_is_an_involution",
+      "passed": true,
+      "detail": "M(M(d)) = d for M : d |-> -h - d."
+    },
+    {
+      "name": "M_exchanges_pp_and_nn",
+      "passed": true,
+      "detail": "M(d_pp = 0) = -q + 1/q = d_nn, and M(d_nn) = d_pp."
+    },
+    {
+      "name": "PARITY_odd_part_vanishes",
+      "passed": true,
+      "detail": "(Delta_3(d) - Delta_3(M d))/2 = 0.  A quantity free of d0, d1 is trivially M-even in them, so the square's own letters carry no charge-odd part."
+    },
+    {
+      "name": "STABILISATION_Delta4_eq_z_plus_d2_times_Delta3",
+      "passed": true,
+      "detail": "Delta_4 = (z + d2) * (z^2 - h z - 1) at exact rational sample points, with Delta_3 the n=3 dressed cross term measured above -- reproducing the merged closed form of dressed-interleaved-cross-term-charge-parity.witness.json from this n=3 one.  The n=4 charge dependence is the STABILISER's dressing alone; the square's own two drop out."
+    }
+  ],
+  "assertions_passed": 12,
+  "assertions_total": 12,
+  "elapsed_seconds": 0.64
+}
