@@ -537,7 +537,22 @@ def main() -> int:
                 "and the multiplicativity defect is such an object."
             ),
         },
-        "q0Anchor": "physical_proton",
+        # `q0_anchor_consistency_audit` maps only the tokens
+        # muon / proton / independent / ambiguous / comparison.  "physical_proton"
+        # was not one of them, so this witness sat in Q0_ANCHOR_UNRECOGNISED -- a
+        # GATING verdict under --strict.  The token goes in `q0Anchor`, the value in
+        # `q0Value` so the audit can check self-consistency, and the prose in
+        # `q0AnchorReason`.  Fixed 2026-09-14 (qou-vwu3).
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
+        "q0AnchorReason": (
+            "the symbolic results (the factorisation, the parity split, the n=5 and "
+            "n=6 generalisations) are exact in q and pin-independent; the numerical "
+            "magnitudes under `at_proton_pin` are evaluated at the experimental "
+            "(proton) pin, which is the standing default for all production compute "
+            "(AGENTS.md owner directive 2026-08-07).  No muon-layer quantity is read "
+            "on any path, so there is no layer straddle."
+        ),
         "convention": "D (z = q^3/(q^2+1))",
         "mirror_map": "d -> -h - d  (p<->n on each bond; exchanges d_pp=0 and d_nn=-h)",
         "verdict": {
