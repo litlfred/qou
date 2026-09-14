@@ -308,3 +308,45 @@ no fixed guard catches it. Declare assumptions on `q` and `m` in any symbolic q-
 
 **Next:** gate 2 (rank 2, 4_1) should now follow the same derivation; then rank 6, where the
 same machinery applies and Part 1's `det W_m = q^{4m} det W_0` supplies the shape.
+
+## Part 8 (2026-09-14) — 🟢 GATE 2 DONE, by a DIFFERENT route than gate 1
+
+### 🛑 Correcting Part 7's forecast
+
+Part 7 said gates 2 and 3 were "the same derivation applied twice, with no open questions in
+between". **Wrong.** GGM sec-011 line 208: for 4_1, the `|q| > 1` case "can be obtained by
+**analytic continuation**". There is **no** two-branch piecewise definition like (87). So:
+
+| knot | how `W(q^-1)` is obtained |
+|---|---|
+| 5_2 (u=0) | **(87)**: a piecewise definition, `R . W^-_{-m-2}(q^-1) . diag(1,-1,1)` — a DIFFERENT block family |
+| 4_1 | **analytic continuation** of the same function — genuinely `W` bar-substituted |
+
+So Parts 3-5's bar-substitution assumption was **right for 4_1 and wrong for 5_2**. The two
+knots have structurally different `W(q^-1)`, and that is not an artifact of how I read them.
+
+### Gate 2, done
+
+Propagating 4_1's printed (137) `G_{-1,-1} = [[x^-2+x^-1-1, 1],[1,0]]` by the companion matrix
+of (135) gives, at every step, entries that are Laurent polynomials and determinants that are
+unit monomials:
+
+    G_{-1,-1}  det = -1
+    G_{0,-1}   det = -x^3      Laurent: yes
+    G_{1,-1}   det = -x^6      Laurent: yes
+    G_{2,-1}   det = -x^9      Laurent: yes
+
+which is exactly what (138)'s `GL(2, Z[q^+-, x^+-])` claims, verified rather than assumed.
+
+**Third independent confirmation of Part 1.** That determinant ladder steps by `x^3` per index
+— precisely the Casoratian ratio Part 1 derived for 4_1 and calibrated against GGM's printed
+(136). Part 1's rule has now been confirmed three separate ways: against (136) directly, via
+the Part 2 bar-involution constant against (91), and now via this propagation.
+
+### What gate 3 actually needs
+
+Not "the same machinery" but a prior question, now sharply posed: **does the pretzel's `W`
+follow 5_2's (87)-style two-branch structure or 4_1's analytic continuation?** The pretzel is
+level 2 with a `q^{1/2}` grading (#7333), which is exactly the kind of structure that forces a
+branch definition — but that is a guess and is labelled one. It must be read or derived, not
+assumed, and it is THE question gate 3 turns on.
