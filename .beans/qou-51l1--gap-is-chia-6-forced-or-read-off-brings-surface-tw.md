@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:59:53Z
-updated_at: 2026-09-14T20:00:46Z
+updated_at: 2026-09-14T21:47:24Z
 ---
 
 Raised 2026-09-14, session `claude/funny-faraday-nyyfla`. REPORT ONLY — no prose
@@ -153,3 +153,54 @@ already consistent with option 2). No witness, no producer, no number moves.
 with the definition block it is summarising, it is one line, and it is exactly
 reversible. But it states a weaker claim than the current text, which is why it
 is the owner's call and not mine.
+
+
+---
+
+## Corpus sweep, 2026-09-14 — the owner is right about the load-bearing half, and THREE of my own claims above were wrong
+
+Full six-path sweep run (path 0 `corpus_search` unavailable — `paper-assistant` MCP failed to connect, ENOENT). Verdict: **derived-modulo-a-named-input.** The SHAPE of chi(A) is an axiom consequence; the VALUE -6 is not.
+
+### Corrections to this bean's own claims
+
+1. **Claim C ("There is NO Lean theorem deriving chi(A) = -6; it is a structure FIELD everywhere") is FALSE.** Two counterexamples, both sorry-free:
+   - `QOU.Archimedean.bringTilingEuler_eq` (`lean/QOU/Archimedean/EmCouplingBringZeroMode.lean:206`) — `-6` genuinely **computed**, `114 - 360 + 240`, by `norm_num` from a face count. This is a class-(c) conclusion, not a field.
+   - `QOU.Information.chi_eq_neg_six` (`lean/QOU/Information/ChiMinusSix.lean:87`) — `-6` is the conclusion and the class carries no `-6` field (it is class (b), conditional on `[QOUObstruction]`).
+2. **Missed a completed bean** — `qou-uy5c`, the `ChiMinusSix.lean` bean. Path 6 hit 20 files and did not read it.
+3. **The circularity finding is DISSOLVED** by an artifact this bean did not check — see below.
+
+### What the axioms DO give (no chi input anywhere)
+
+- **chi(A) is a single scalar** — observability kills `HH^0`; Frobenius-Hopf self-duality + Van den Bergh/Yekutieli duality + Drinfeld rigidity give `HH^2 = k`.
+- **`dim V = 2`, `G subset SU(2)`** — **sorry-free, verified**:
+  `QOU.SU2EmergenceRankForced.su2_emergence_rank_forced` takes `hvol : exteriorSquareDim N = 1` (QOU axiom 5, the categorical volume constraint) + dagger + det, concludes `N = 2 AND G subset SU(N)`. Via `exteriorSquareDim_eq_one_iff` (`BraidsAndKnots/VolumeConstraintForcesFibreTwo.lean:151`). Re-verified independently: **0 real `sorry`** in either file (an earlier grep reported 2 and 3 — all the phrase "sorry-free" inside docstrings), and **zero** occurrences of chi / euler / genus / bring / -6.
+- **chi(A) = 2 - 2g** — Riemann-Roch given `dim V = 2` and `det V` trivial.
+- **g >= 1** — obstruction non-triviality needs `H^2(M_0, C*) != 0`.
+
+### The circularity in `docs/audits/2026-09-14-canonical-chain-condition-walk.md` is textual, not logical
+
+That audit names a cycle: `why-b3.md` says chi = -6 forces SU(2); `chi-minus-six-chain.md` Step 1 starts from SU(2). It surveyed three **genus** routes and concluded all three sit inside the cycle. It never checked the **SU(2)** side — and `su2_emergence_rank_forced` enters from outside with no chi input. So Step 1 of the chain is not question-begging, and `why-b3`'s return arrow is a redundant second route rather than the only one.
+
+### The single missing step
+
+> a derivation of the **branch-point count 6** (equivalently the tiling face count 240, equivalently `g = 4`) from the five QOU axioms, without reading it off Bring's surface or off the particle spectrum.
+
+Every existing route supplies that number from outside: the Weierstrass points of a surface identified two steps later; a classical `(2,4,5)` tiling count (`bringTilingFaces : N := 240`, a bare `def` with no corpus source — it is Riera-Rodriguez `[Gamma*:Gamma] = 120`, i.e. a **citation**, held at `library/pjm-v154-n1-p09-s/`); a knot-embedding pattern whose proof is a **comment** (`cohomological-embedding.lean:105-108`, the theorem at `:103` constructs a witness with `genus := 4` and closes by `rfl`); or a rank criterion that is measurably unmet (new bean).
+
+### Independent corroboration inside the corpus
+
+- `brings-surface/universality-general.md` treats chi as a **free parameter**: *"For **any admissible Euler characteristic** chi ... Bring's curve **distinguishes** the Descartes case chi = -6, but analogous universal objects are **expected at other values of chi**."* If the axioms forced -6 no other chi would be admissible. Cleanest single piece of evidence, cited by neither this bean nor the audit.
+- `qou-1vau` (todo) reached the same conclusion first: the `{5,4}` map's `30 - 60 + 24 = -6` is *"a consistency cross-check, **not a second derivation** of the branch-point count."*
+- `qou-uy5c` (completed) titles itself **"conditional"**: *"Bring genus 4 ==> chi = 2-2g = -6"* — genus is the input.
+
+### The `tr(id_A)` route is an `axiom`, and the symbol carries three incompatible values
+
+`descartes_trace` (`climax-volume-mass/vertex-algebra-relations.lean:236`) is an **`axiom`** asserting `MarkovTrace hp (singleton []) = -6` for **every** `n` and **every** `hp : HeckeParams` — and the `MarkovTrace` it constrains is itself an `axiom` (`:104`). Assumption on assumption; per AGENTS.md "Axiomatization is NOT a Proof" this is not a derivation. Three corpus sites give three values for the same symbol: `-6` (`brings-euler-characteristic.md`), `[2]_q = q + q^-1 ~ 2.011` (`knot-operator-selection-proof.md:66`), `chi(CP^1) = 2` (`quantum-characteristic-classes-su2.md:10`) — and `substrate-line-bundle-base-not-fibre.md:8` says chi(A) is *"strictly independent of q"*, contradicting the q_0-specialisation claim that `lem:brings-euler-characteristic`'s proof offers. Separating these is a separate job.
+
+### Disposition
+
+The contradiction this bean reported is **real but smaller than stated**: `chapter-overview.md:30` ("the lifting obstructions **force** chi(A) = -6") overstates by exactly one step. Honest wording that is exactly what is proved:
+
+> *"The lifting obstructions reduce the entire obstruction to a single scalar chi(A) = 2 - 2g with g >= 1; the Descartes condition fixes its value at -6."*
+
+Not enacting that edit — it is a content change outside the ask-first exemptions, and the author's reading of the chain is the one that decides it.
