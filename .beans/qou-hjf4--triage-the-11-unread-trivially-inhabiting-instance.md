@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T14:36:01Z
-updated_at: 2026-09-14T07:58:23Z
+updated_at: 2026-09-14T16:04:10Z
 ---
 
 From `scripts/trivially-inhabiting-instance-census.py` (PR #5621, audit
@@ -184,3 +184,45 @@ see the coordination comment on that PR.)
 Found by the `proof-no-self-assuming-projection` arm while adjudicating bean
 `qou-vh1o`; ledgered `genuine` with disposition
 `demote-instance-to-def-and-fix-docstring`.
+
+
+## `defaultQBetaCKClosedForms` DEMOTED and VERIFIED — 2026-09-14 (PR #7364)
+
+`noncomputable instance` -> `noncomputable def`, plus three docstring
+corrections. `lean -DautoImplicit=false -s 65536` exit 0, zero diagnostics;
+`#print axioms` on both theorems shows the three standard Mathlib axioms and
+**no `sorryAx`**.
+
+**The decisive check was two-sided, and that is the reusable part.** A one-sided
+"instance search now fails" run cannot distinguish a working demotion from a
+broken probe. Three cells:
+
+| probe | declaration | `#synth QBetaCKClosedForms` |
+|---|---|---|
+| edited file | `def` | **fails to synthesize** |
+| scratch copy, `instance` restored | `instance` | succeeds |
+| **actual `HEAD`, pre-edit** | `instance` | succeeds |
+
+The third row is what matters: this bean's premise is now **confirmed
+empirically on the real pre-edit file** rather than inferred from reading. The
+positive control's `sed` was guarded (exactly one line rewritten, asserted both
+ways) — an unguarded `sed` that matches nothing is a known false green.
+
+**A trap worth recording for the next demotion in this bean's list.** The
+"nothing but the agent checks library Lean" exemption is scoped to
+`content/<paper>/lean/QOU/**`. This file sits in a **chapter** directory beside
+`.ts`/`.md` siblings, so it carries a `.qa.json`, and the edit made
+`source_hashes.lean` stale (`866e46508f42` -> `bcd1a46140fd`). Refreshed via
+`qa-sweep` in the same commit. Several of the 11 unread candidates in this bean
+are in chapter directories too — check for a sidecar before assuming the
+library exemption applies.
+
+**Containment re-measured independently by the verifier**: no `.lean` outside
+this file mentions `QBetaCKClosedForms`, `defaultQBetaCKClosedForms` or
+`qbeta_c_k_closed_forms`; no importer; the content block's `lean.ref` points at
+the CLASS, so the demotion cannot break it.
+
+Remaining in this bean: the 11 unread trivially-inhabiting-instance candidates
+(unchanged) and the detector-blindness note added 2026-09-14 (the census gates
+on a CONSTANT data field, so a field that is a fitted FUNCTION of `q` is
+structurally invisible to it).
