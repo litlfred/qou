@@ -94,6 +94,20 @@ describe the data"), never a scope-(b) exclusion. The comparison number +0.288
 in that docstring is also the N = 10 row, not N = 8 (0.341), and neither is the
 thermodynamic binding 0.2.
 
+## WHAT THIS IS AND IS NOT ABOUT (scope, before anything is carried onward)
+
+The numerator q^n + q^-n is the Temperley-Lieb loop parameter delta = q + 1/q at
+level n, and the denominator [n]_q is the quantum dimension, so the band reads
+E_n(k) = -2(delta_n - 2 cos k)/[n]_q with delta_n = q^n + q^-n. That is a
+suggestive shape for this corpus and it is NOT a measured bridge to the Hecke
+tower. `tl_is_the_xxz_chain_probe` identifies TL_n(delta) with the
+U_q(sl_2)-symmetric OPEN chain plus a boundary field
+((q - 1/q)/2)(sz_1 - sz_n); the Hamiltonian diagonalised HERE is the PERIODIC
+chain with no boundary term. The two differ by boundary operators, which do not
+change a bulk band in the thermodynamic limit — but that step is an argument,
+not something this probe measured, and it is the likeliest misreading of the
+formula above. Nothing here identifies the chain's sites with anything physical.
+
 ## METHOD
 
 The m = 2 sector at fixed momentum reduces exactly to a real-symmetric

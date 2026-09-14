@@ -34,10 +34,19 @@ being built from the MEASURED one-magnon dispersion rather than a formula.
   (54.5 -> 70.2 over N = 8..14). CHECK 4 asserts that drift, so the
   non-convergence is a measured fact rather than a caveat. Quoting any of these
   as a thermodynamic-limit binding would be wrong.
-* **A candidate band formula was refuted.** The form
-  `-2 sinh(eta) sinh(2 eta)/(cosh 2eta - cos k)` was tried and does not
-  describe the data: at q = 2, k = 0 it gives -2.5 where the measurement gives
-  +0.288. It is not used anywhere and is recorded only so it is not re-tried.
+* **A candidate band formula "was refuted" -- 🛑 THAT WAS WRONG, RE-SCOPED
+  2026-09-14.** The form `-2 sinh(eta) sinh(2 eta)/(cosh 2eta - cos k)` gave
+  -2.5 at q = 2, k = 0 against a measured +0.288, and this docstring recorded it
+  as REFUTED with "do not re-try it". It is not refuted. It is HALF the n = 2
+  string energy written in the string-centre RAPIDITY lambda, and
+  `lambda(k = 0) = pi`, not 0 -- so evaluating it at k = 0 reads the band at the
+  opposite end of its own zone. Supplied with `lambda(k)` and the factor 2 it
+  reproduces the measured band to 3.7e-40 (`xxz_n_string_band_probe`, CHECK 9).
+  A scope-(a) negative -- "this expression, as I applied it, does not describe
+  the data" -- never the scope-(b) exclusion the word REFUTED asserts. The
+  numerical observation stands; only my scope was wrong, and AGENTS.md
+  §"Before declaring refuted" is the rule I broke. Also: +0.288 is the N = 10
+  row, not N = 8 (0.341), and neither is the thermodynamic binding.
 * **The sign convention caught an earlier error.** With `+Delta sz sz` and
   `Delta > 0` the all-up state is the TOP of the band, so the bound state lies
   ABOVE the continuum. A first pass looked below it and found nothing --
@@ -170,10 +179,15 @@ VERDICT
   momentum sector, and its binding is ~1.5-2 orders of magnitude below the
   q = 2 control — the quantitative form of "only marginally inside the massive
   phase".
-  NOT established: the band energy. It is not converged at accessible N, and
-  the candidate formula recorded in the docstring is REFUTED. `qou-6b9y` stays
-  open; the next step is finite-size scaling or a direct two-string Bethe
-  solve, not another diagonalisation at these sizes.""")
+  NOT established HERE: the band energy. It is not converged at accessible N.
+  SUPERSEDED 2026-09-14 -- the band IS extractable and was extracted in
+  `xxz_n_string_band_probe`: E_n(k) = -2(q^n + q^-n - 2 cos k)/[n]_q. What
+  blocked this probe was dense ED at N <= 14 against a bound state 184 sites
+  across; the m=2 momentum block is exactly tridiagonal in the relative
+  coordinate, which makes N = 4096 cost seconds. The "not converged" verdict
+  above was right; its suspected cause was not, and two other claims in this
+  file are corrected there -- see that probe's docstring. The candidate formula
+  called REFUTED above is re-scoped to (a); it is not refuted.""")
     return 1 if failures else 0
 
 
