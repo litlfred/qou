@@ -32,19 +32,39 @@ this file takes the colimit and builds the filtration.
   statement that it is compatible with the tower maps.
 * `H` and `H_mono` — the range filtration and its monotonicity.  This is the
   `MarkovTrace.H` / `MarkovTrace.H_mono` pair.
+* `gLim` / `ginvLim` and `gLim_mem` / `ginvLim_mem` — the generator adjoined at
+  step `n` (the image of `σ_n`, which first exists at level `n+1`) and its
+  candidate inverse.  These are the `MarkovTrace.g` / `ginv` / `g_mem` /
+  `ginv_mem` fields.
+* `gLim_eq` / `ginvLim_eq` — each generator read at *any* level above the one it
+  first appears in.  This is the workhorse: two generators of different index
+  live in different Hecke algebras, and the only way to multiply them is to push
+  both into a common level, where the relation already holds.
+* `gLim_quadratic`, `gLim_braid`, `gLim_far` — the three defining relations,
+  transported.  Together these are exactly the `MathlibExt.BraidedTower` fields,
+  so the colimit is a braided tower and `TowerSpan` / `DisjointBlockTraceLaw`
+  apply to it once the trace is in place.
+* `ginvLim_mul_gLim` / `gLim_mul_ginvLim` — the two inverse laws, **each
+  carrying `hqi : q * qi = 1` as an explicit hypothesis**.  `σInv` is defined
+  unconditionally as `σ - (q - qi)·1`; it inverts `σ` only at `qi = q⁻¹`.  This
+  is a hypothesis of the Hecke algebra, not a gap: the braid group maps into
+  `Hecke K q qi n` only when the generators are units.
 
 ## What is NOT proved here
 
-Nothing about a trace.  `H n` is the *image* of level `n`, which coincides with
-level `n` itself only when `ofLim n` is injective; that is exactly the open
-question of `qou-ejde` and is **not** used anywhere below.  The Markov
-stabilisation axiom, the generators `g`/`ginv`, and the trace itself are steps
-3–6 and are not in this file.
+Nothing about a trace.  The `MarkovTrace` fields `tr`, `tr_mul_comm`, `tr_one`,
+`markov` and `markov_inv` are steps 4–6 and are not in this file, so no
+`MarkovTrace` instance is constructed here and none is claimed.
+
+`H n` is the *image* of level `n`.  It coincides with a copy of
+`Hecke K q qi n` only when `ofLim n` is injective — exactly the open question of
+bean `qou-ejde` — and that is **not** assumed anywhere below.  Every statement
+here is about the image.
 -/
 
 namespace QOU.SchurWeyl.HeckeColimit
 
-open QOU.SchurWeyl QOU.SchurWeyl.HeckeInclusion QOU.SchurWeyl.HeckeDirectedSystem
+open QOU.SchurWeyl QOU.SchurWeyl.Hecke QOU.SchurWeyl.HeckeInclusion QOU.SchurWeyl.HeckeDirectedSystem
 
 variable (K : Type*) [CommRing K] (q qi : K)
 
@@ -150,5 +170,94 @@ theorem H_mono : Monotone (H K q qi) := by
   intro i j hij y hy
   obtain ⟨x, rfl⟩ := hy
   exact ⟨heckeInclLE K q qi i j hij x, ofLimₐ_comp K q qi hij x⟩
+
+/-! ## The generators
+
+The generator adjoined at step `n` is `σ_n`, which first exists at level `n+1`.
+`gLim_eq` reads it at any level above that, which is what lets two generators of
+*different* index be compared: push both up to a common level and use the
+relation that already holds in `Hecke K q qi j`.
+-/
+
+/-- The generator adjoined at step `n`: the image of `σ_n ∈ Hecke K q qi (n+1)`.
+This is the `MarkovTrace.g` field. -/
+noncomputable def gLim (n : ℕ) : HeckeLim K q qi :=
+  ofLimₐ K q qi (n + 1) (σ K q qi (n + 1) ⟨n, Nat.lt_succ_self n⟩)
+
+/-- The inverse generator at step `n`: the image of `σ_n⁻¹ = σ_n - (q - qi)·1`.
+
+`σInv` is *defined* unconditionally; it is a two-sided inverse only when
+`q * qi = 1`, which is the hypothesis `hqi` carried by the two lemmas below —
+not by this definition.  This is the `MarkovTrace.ginv` field. -/
+noncomputable def ginvLim (n : ℕ) : HeckeLim K q qi :=
+  ofLimₐ K q qi (n + 1) (σInv K q qi (n + 1) ⟨n, Nat.lt_succ_self n⟩)
+
+theorem gLim_mem (n : ℕ) : gLim K q qi n ∈ H K q qi (n + 1) :=
+  ofLim_mem_H K q qi (n + 1) _
+
+theorem ginvLim_mem (n : ℕ) : ginvLim K q qi n ∈ H K q qi (n + 1) :=
+  ofLim_mem_H K q qi (n + 1) _
+
+/-- The generator `g n` read at any level `j > n` of the tower. -/
+theorem gLim_eq (n j : ℕ) (hnj : n < j) :
+    gLim K q qi n = ofLimₐ K q qi j (σ K q qi j ⟨n, hnj⟩) := by
+  rw [gLim, ← heckeInclLE_σ K q qi (n + 1) j hnj n (Nat.lt_succ_self n)]
+  exact (ofLimₐ_comp K q qi hnj _).symm
+
+/-- The inverse generator `ginv n` read at any level `j > n` of the tower. -/
+theorem ginvLim_eq (n j : ℕ) (hnj : n < j) :
+    ginvLim K q qi n = ofLimₐ K q qi j (σInv K q qi j ⟨n, hnj⟩) := by
+  have h : heckeInclLE K q qi (n + 1) j hnj (σInv K q qi (n + 1) ⟨n, Nat.lt_succ_self n⟩)
+      = σInv K q qi j ⟨n, hnj⟩ := by
+    simp only [σInv, map_sub, map_smul, map_one,
+      heckeInclLE_σ K q qi (n + 1) j hnj n (Nat.lt_succ_self n)]
+  rw [ginvLim, ← h]
+  exact (ofLimₐ_comp K q qi hnj _).symm
+
+/-! ## The relations, transported to the colimit -/
+
+/-- **Quadratic.**  `g n * g n = (q - qi) • g n + (q * qi) • 1`. -/
+theorem gLim_quadratic (n : ℕ) :
+    gLim K q qi n * gLim K q qi n
+      = (q - qi) • gLim K q qi n + (q * qi) • 1 := by
+  simp only [gLim]
+  rw [← map_mul, σ_quadratic, map_add, map_smul, map_smul, map_one]
+
+/-- **Braid.**  `g (m+1) * g m * g (m+1) = g m * g (m+1) * g m`, obtained by
+reading both generators at level `m + 2`. -/
+theorem gLim_braid (m : ℕ) :
+    gLim K q qi (m + 1) * gLim K q qi m * gLim K q qi (m + 1)
+      = gLim K q qi m * gLim K q qi (m + 1) * gLim K q qi m := by
+  have hm : m < m + 2 := by omega
+  have hm1 : m + 1 < m + 2 := by omega
+  rw [gLim_eq K q qi m (m + 2) hm, gLim_eq K q qi (m + 1) (m + 2) hm1,
+    ← map_mul, ← map_mul, ← map_mul, ← map_mul]
+  have hb := σ_braid K q qi (m + 2) ⟨m, hm⟩ (by simp)
+  have hidx : (⟨((⟨m, hm⟩ : Fin (m + 2)) : ℕ) + 1, by simp⟩ : Fin (m + 2))
+      = ⟨m + 1, hm1⟩ := rfl
+  rw [hidx] at hb
+  rw [hb]
+
+/-- **Far commutation.**  `g m * g k = g k * g m` when `k + 1 < m`, obtained by
+reading both generators at level `m + 1`. -/
+theorem gLim_far (m k : ℕ) (hk : k + 1 < m) :
+    gLim K q qi m * gLim K q qi k = gLim K q qi k * gLim K q qi m := by
+  have hkm : k < m + 1 := by omega
+  have hmm : m < m + 1 := by omega
+  rw [gLim_eq K q qi m (m + 1) hmm, gLim_eq K q qi k (m + 1) hkm,
+    ← map_mul, ← map_mul]
+  exact congrArg _ (σ_commute K q qi (m + 1) ⟨m, hmm⟩ ⟨k, hkm⟩ (by simpa using hk))
+
+/-! ## The generators are units exactly when `q * qi = 1` -/
+
+/-- `ginv n * g n = 1`, when `q * qi = 1`.  This is `MarkovTrace.ginv_mul`. -/
+theorem ginvLim_mul_gLim (hqi : q * qi = 1) (n : ℕ) :
+    ginvLim K q qi n * gLim K q qi n = 1 := by
+  rw [ginvLim, gLim, ← map_mul, σInv_mul_σ K q qi (n + 1) hqi, map_one]
+
+/-- `g n * ginv n = 1`, when `q * qi = 1`.  This is `MarkovTrace.mul_ginv`. -/
+theorem gLim_mul_ginvLim (hqi : q * qi = 1) (n : ℕ) :
+    gLim K q qi n * ginvLim K q qi n = 1 := by
+  rw [ginvLim, gLim, ← map_mul, σ_mul_σInv K q qi (n + 1) hqi, map_one]
 
 end QOU.SchurWeyl.HeckeColimit
