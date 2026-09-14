@@ -1,0 +1,124 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-14T19:02:03.634326+00:00",
+  "commitSha": "ba7241b7faeeb54fe6dd1483d5c89c1316b50bc9",
+  "assertions": [
+    {
+      "name": "the_block_assembly_reproduces_the_independent_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "worst |sum_lambda y_lambda chi_lambda(pair) - tr_M(pair)| = 2.60595e-50 over 5 pairs, including pairs whose letters are NOT braid generators (d = -1/2 and d = -1). This validates two things at once: the linearity expansion of chi_lambda(sigma_a + d_a h)(sigma_b + d_b h), and the convention-D weights y_lambda. Two independent engines -- the seminormal mpfr character kernel and the normal-form trace -- agreeing to this tolerance is evidence the decomposition is the corpus's own, not a re-derivation that happens to be close"
+    },
+    {
+      "name": "convention_D_kills_the_alternating_block_and_normalises_the_identity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "y_(1^3) = 0 exactly -- that vanishing IS convention D (markovWeights_eq_jones_of_threeRow_eq_zero), not a truncation applied here -- and sum_lambda y_lambda dim_lambda = 1.0 recovers tr_M(1) = 1. So the cost vector has a structurally zero column at n = 3 and is effectively 2-dimensional. A reader seeing that zero should know it is the convention"
+    },
+    {
+      "name": "the_block_cost_vectors_reconstruct_the_scalar_and_separate",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "4 distinct totals over 4 candidates, each total being sum_lambda t_lambda -- the Lean identity total_eq_sum_blockCosts realised numerically. So the vector is a refinement of the separating scalar and not a different quantity, which is what makes it admissible in the `cost : W -> R` socket while carrying strictly more information than the scalar does"
+    },
+    {
+      "name": "the_vector_carries_information_the_scalar_does_not",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "measured on these four: 0 candidate pairs share a total, so on THIS family the scalar already separates and the refinement is not needed. Stated plainly rather than omitted -- blockVector_strictly_finer_than_total proves the vector CAN carry more, and that is a general fact; it does not assert that it does so here. What the vector buys on this family is not extra separation but the right TYPE for the LP, whose objective min sum_lambda t_lambda x_lambda reads the components and not the total"
+    },
+    {
+      "name": "all_the_separation_lives_in_the_mixed_symmetry_block",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "t_(3) takes ONE value across all four candidates (8.6760259262744171317) while t_(2,1) takes 4 distinct values. The trivial block is blind here and the alternating block is identically zero under convention D, so the whole discriminating content of this cost sits in the mixed-symmetry block. Worth recording because that is the SAME block the 2026-09-13 reading-3 ruling binds on: `nuc11_interleaved` fails Frobenius positivity on (2,1), and `y_(2,1) > 0` is what makes that failure bind. Cost and constraint are therefore carried by one block. This is an observation about where the information is, NOT a claim that the two are the same condition or that either determines the other"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 229,
+  "computation": "qbeta-ecat-block-cost-vector",
+  "scriptFile": "qbeta_ecat_block_cost_vector_probe.py",
+  "scriptHash": "ef58a535c15b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ecat_block_cost_vector_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ecat_block_cost_vector_probe.py"
+  },
+  "description": "Computes the per-block cost vector t_lambda of the discretised E_cat pair kernel, closing the step between a separating scalar and the vector the operator-selection LP/SDP takes. chi_lambda of a letter pair is obtained EXACTLY by linearity -- a letter sigma + d h I is not a braid word for d != 0, and expanding the product gives four seminormal characters of braid words of length <= 2. The assembly is VERIFIED, not assumed: sum_lambda y_lambda chi_lambda(pair) is reassembled and compared against the independent tr_at engine. Under convention D y_(1^3) = 0, so the alternating block contributes nothing and the vector is effectively 2-dimensional at n = 3. Selects no word and runs no LP.",
+  "data": {
+    "block_cost_vectors_proton": {
+      "sigma_1 sigma_0": {
+        "(3,)": "8.67602592627441713165606122362",
+        "(2, 1)": "0.012699682578209631768594727748",
+        "(1, 1, 1)": "0.0"
+      },
+      "sigma_0 sigma_1": {
+        "(3,)": "8.67602592627441713165606122362",
+        "(2, 1)": "-0.907269566951970303512691146455",
+        "(1, 1, 1)": "0.0"
+      },
+      "sigma_1 sigma_1": {
+        "(3,)": "8.67602592627441713165606122362",
+        "(2, 1)": "0.221783602925977798877977880976",
+        "(1, 1, 1)": "0.0"
+      },
+      "sigma_0 sigma_0 (LIVE)": {
+        "(3,)": "8.67602592627441713165606122362",
+        "(2, 1)": "0.389050739204192332565484403558",
+        "(1, 1, 1)": "0.0"
+      }
+    },
+    "totals_proton": {
+      "sigma_1 sigma_0": "8.68872560885262676342465595137",
+      "sigma_0 sigma_1": "7.76875635932244682814337007717",
+      "sigma_1 sigma_1": "8.8978095292003949305340391046",
+      "sigma_0 sigma_0 (LIVE)": "9.06507666547860946422154562718"
+    },
+    "y_lambda_convention_D": {
+      "(3,)": "0.50540422650393080318755870324",
+      "(2, 1)": "0.24729788674803459840622064838",
+      "(1, 1, 1)": "0.0"
+    },
+    "method": {
+      "chi_of_a_letter_pair": "exact by linearity: chi(s_a s_b) + d_b h chi(s_a) + d_a h chi(s_b) + d_a d_b h^2 dim",
+      "why_needed": "a letter sigma + d h I is not a braid word for d != 0; d = -1 is sigma^{-1}, d = -1/2 the bar-fixed letter",
+      "character_engine": "seminormal mpfr kernel (pyhecke_native 0.9.0), skein-validated",
+      "validated_against": "computations independent normal-form trace tr_at"
+    },
+    "scope": {
+      "class": "(a) scope-limited -- one discretisation, four candidates, n = 3, proton",
+      "not_claimed": [
+        "that this is E_cat -- it is the per-block refinement of a DISCRETISATION whose continuum limit is unproved",
+        "that any word is selected -- no LP is run here",
+        "that this cost should be adopted; that is an owner decision (qou-99qc)"
+      ],
+      "no_selection_by_accuracy": "no Q_beta, no CODATA, no residual"
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  }
+}

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T17:04:56Z
+updated_at: 2026-09-14T17:55:06Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -455,3 +455,36 @@ Probe `computations/audits/step9_mqou_scope_probe.py` (8/8). Commit 6118cb69a6.
 - **#5** M_QOU — **still a judgement**, but smaller than the walk implied
 
 So ONE genuine judgement (#4) plus #5's disposition choice remain for the owner.
+
+
+## 2026-09-14 — the derivation attempt on steps 7–9 returned PRIOR ART; and a fourth `J^•`
+
+**Step 7's interior is closed.** I derived what I took to be a new obstruction
+— `1 = Σ_λ e_λ` uses every primitive idempotent, so a filtration with `1 ∈ F_0`
+whose induced centre grading is `span{e_λ : δ(λ) = c}` forces `δ` constant,
+which `gbDepth_ne_on_H4` refutes from `n = 4` up. **That is Route A**, proved
+sorry-free on 2026-08-26 as
+`QOU.BraidKnot.unit_in_degree_zero_forces_constant_grading`, and formalised
+better than mine (it keys on `π l u = 1`, never mentioning a basis). Its
+docstring already excludes the candidate I would have tried next — the
+Jucys–Murphy content filtration. Four audits, three sorry-free Lean files,
+three exact probes. Nothing there to derive.
+
+**Defect #4 has changed, and half of it is now corpus-determined.** The
+cheat-sheet step-7 row says *"Filtration by Coxeter length `ℓ(w)`; spectral
+sequence collapses at `E_2`"*, while the carrier block
+`prop:spectral-sequence-collapse` says **`E_1`** in its own first line — and
+`E_1` collapse is strictly stronger, so the document **understates its own
+carrier**. Separately, the Coxeter-length reading is the one excluded at every
+`n ≥ 2` (`no-shift-rescues`, sorry-free `shift_cannot_fill_a_gap`).
+
+**🛑 And the walk found a FOURTH reading of `J^•` that no audit has** —
+`def:confinement-level`, cited by `prop:gb-spectral-sequence` itself. It
+evades both exclusion routes structurally (unit at the top, non-monomial) and
+ties step 7 to step 10. Bean **`qou-sw8n`**, priority high.
+
+The residue of defect #4 is still a judgement: whether the §1 diagram's arrow
+asserts *dependency* (so the labels should name `prop:jet-prefix-gb-filtration`,
+which is where the `uses[]` graph actually routes) or is narrative.
+
+Probe: `computations/audits/step7_bridge_disposition_probe.py`, 23/23. PR #7375.
