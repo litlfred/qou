@@ -350,3 +350,44 @@ follow 5_2's (87)-style two-branch structure or 4_1's analytic continuation?** T
 level 2 with a `q^{1/2}` grading (#7333), which is exactly the kind of structure that forces a
 branch definition — but that is a guess and is labelled one. It must be read or derived, not
 assumed, and it is THE question gate 3 turns on.
+
+## Part 9 (2026-09-14) — gate 3's prior question ANSWERED from the source; my guess was wrong
+
+Part 8 posed the question gate 3 turns on — does the pretzel's `W` follow 5_2-at-u=0's
+two-branch (87), or 4_1's analytic continuation? — and guessed, **labelled as a guess**, that
+the level-2 `q^{1/2}` grading "would force a branch definition".
+
+**It does not.** GGM **§7, Theorem 28** — "One-dimensional state integrals and their
+descendants", which is exactly the pretzel's setting (#7152 Part 11 derived its state integral
+as one-dimensional) — gives the GENERAL family:
+
+    (331)  W_m(x,w;q) = [ B^{(k)}_{m+j} ]_{j,k}          rows = shifts, cols = the r blocks
+    (332)  Bhat = prod_{k=1..r} (1 - x_k S_m)  -  (-q)^A w^-1 q^m S_m^A
+
+and part (b) states the entries are **holomorphic functions of `|q| != 1`** — ONE definition on
+both regions, no piecewise branch. So the pretzel follows **4_1's structure**, and its
+propagation law's second factor is the bar-substitution form: the one Parts 3-5 originally
+assumed, which was wrong only for 5_2 at u=0.
+
+**Level-2-ness lives in `A` and the `x_k`, not in a branch structure.** Good thing the guess
+was labelled.
+
+### Bonus: (332) CONFIRMS #7333's derived operator against GGM's general theorem
+
+#7333 derived `P(X) = q^{A/2} w prod_j (1 + a_j X/Q) - X^A` from the contour shift and
+Faddeev's functional equation, having only GGM's 4_1 and 5_2 SPECIAL cases to check against.
+(332) is the same shape — a product of `r` linear factors in the shift, minus a term carrying
+`S^A` — and the degrees agree across all three:
+
+| knot | r | A | max(r, A) | #7333's derived degree |
+|---|---|---|---|---|
+| 4_1 | 2 | 1 | 2 | 2 |
+| 5_2 | 3 | 2 | 3 | 3 |
+| pretzel | 6 | 2 | **6** | **6** |
+
+The pretzel's `r = 6` (2 unit dilogarithms + 4 from the doubled `Phi_b(2v - c_b)`) is exactly
+the degree #7333 derived independently. That is a cross-check #7333 could not run, because it
+did not have Theorem 28.
+
+**Gate 3 is now unblocked**: use the bar-substitution propagation law with (332)'s companion at
+`r = 6, A = 2`, and Part 1's `det W_m = q^{4m} det W_0` for the determinant shape.
