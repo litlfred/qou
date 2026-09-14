@@ -264,4 +264,209 @@ theorem exchange_symmetry_forces_agreement_on_pm_one (F : ℤ → ℤ)
     F 1 = F (-1) := by
   rwa [mubar_borromean_eq_one, mubar_swapped_eq_neg_one] at hsym
 
+/-! ## The third prune: the carrier's own μ̄ is ZERO, which closes the even branch
+
+The two prunes above are about the *shape* of `E_EM` as a function of `μ̄₁₂₃`:
+odd is forbidden (`odd_symmetric_functional_vanishes`), and the sign is
+invisible (`exchange_symmetry_forces_agreement_on_pm_one`). What survived was
+the **even** branch — `|μ̄₁₂₃|`, `μ̄₁₂₃²` — kept alive by
+`even_symmetric_functional_can_be_nonzero`, whose witness `F m = m²` is nonzero
+precisely because the Borromean sits at `μ̄₁₂₃ = ±1`.
+
+**The derived carrier does not sit at ±1. It sits at 0.**
+[`computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py`](../../../../../computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py)
+computes `μ̄` on **every** triple of the canonical atom word's closure and gets
+**zero** — for ²H, ³H, ³He, ⁴He, ⁶Li, ⁸Be, ¹⁰B, in both crossing-resolution
+branches, across all three indeterminacy classes. Its positive controls run the
+same code path: the Borromean is asserted **nonzero** and the Hopf link at
+`μ = 2, lk = 1`, so the zeros are a result and not a broken implementation.
+
+**The mathematical content below is that hypothesis, not the proofs.** The
+proofs are a rewrite and a `funext`; they are short because the work was the
+computation. What the statements buy is that the prune is written down in a form
+a reader can check against the probe, and — the part that matters — that it
+closes the escape an author would actually reach for.
+
+**The escape it closes.** Faced with "μ̄ vanishes on my triple", the natural move
+is *use a different triple*, or *use a symmetric function of all of them*. The
+second theorem covers that: a functional of the **whole family** of triple
+invariants is equally constant, because the family is pointwise zero. So the
+even branch is closed on the derived carrier, not merely inconvenienced.
+
+**Scope.** This is scope (a) **on the derived carrier as computed**, inherited
+verbatim from the probe. It says nothing about Milnor invariants of length > 3 —
+which is what this route's own title ("higher-order Milnor") names, and which the
+probe explicitly does not touch — and nothing about a future carrier. The
+Borromean control in that same probe is a standing counterexample to any reading
+of this as "μ̄ vanishes on every link".
+
+**Not claimed:** that a length-4 or higher Milnor invariant vanishes, or that
+this route is dead. Its length-3 rung is. -/
+
+/-- **A functional of an invariant that vanishes across a family is constant on
+    it** — so it supplies neither a difference between two members nor an
+    A-dependent profile.
+
+    Instantiate `ι` at the isotopes and `μ` at `μ̄₁₂₃` of a chosen triple: with
+    the probe's measured `hμ`, every `E_EM` built from `μ̄₁₂₃` — **including every
+    even one** — takes the same value at ³H and ³He. -/
+theorem constant_of_vanishing_invariant {ι : Type*} (F : ℤ → ℤ) (μ : ι → ℤ)
+    (hμ : ∀ i, μ i = 0) (i j : ι) : F (μ i) = F (μ j) := by
+  rw [hμ i, hμ j]
+
+/-- **The same, for a functional of the WHOLE family of triples** — which is the
+    escape a reader reaches for when told one triple vanishes.
+
+    `κ` indexes the triples; `μ i` is the isotope's full vector of triple
+    invariants. The probe's result is `∀ i t, μ i t = 0`, so the vectors are
+    equal and any `F` whatever — symmetric function, norm, maximum — is constant
+    across isotopes. -/
+theorem constant_of_all_triples_vanishing {ι κ : Type*} (F : (κ → ℤ) → ℤ)
+    (μ : ι → κ → ℤ) (hμ : ∀ i t, μ i t = 0) (i j : ι) : F (μ i) = F (μ j) := by
+  have h : μ i = μ j := funext fun t => by rw [hμ i t, hμ j t]
+  rw [h]
+
+/-- **Hence no charge-antisymmetric content**: the mirror difference this route
+    would have to supply is zero. -/
+theorem no_asymmetry_of_all_triples_vanishing {ι κ : Type*} (F : (κ → ℤ) → ℤ)
+    (μ : ι → κ → ℤ) (hμ : ∀ i t, μ i t = 0) (i j : ι) : F (μ i) - F (μ j) = 0 :=
+  sub_eq_zero_of_eq (constant_of_all_triples_vanishing F μ hμ i j)
+
+/-! ## The fourth prune: a link invariant of a NON-LINK — the ladder is unaskable
+
+The prune above closes the length-3 rung on the derived carrier, and leaves the
+obvious question: *what about length 4?* **Do not answer it by computing length
+4.** Walking up the Milnor ladder until a rung is nonzero is selection of a
+discrete parameter against the target — the anti-fit directive names exactly
+that. This section derives, instead, that the ladder is asking for something the
+object does not have.
+
+**The atom element is not a braid, and the corpus established this before this
+section — cite it, do not re-derive it.**
+[`braids-and-knots/markov-disambiguation.md`](../../../braids-and-knots/markov-disambiguation.md)
+(PR #5765, 2026-08-25) states the category fact directly:
+
+> `tr_M` is defined on ALL of `H_n(q)` … no braid, no closure, and no topology
+> are needed for the number to exist. What the closure supplies is the
+> INTERPRETATION. … for `W` in `H_n(q)` that is NOT in the image of
+> `ρ : B_n → H_n(q)`, `tr_M(W)` is a well-defined number **WITH NO LINK BEHIND
+> IT**.
+
+and `computations/binding_is_not_a_link_invariant_probe.py` (bean `qou-brng`)
+measures **which** letters leave the image. Its result is sharper than "the
+averaged ones are the `d ≠ 0` ones", which is the reading to avoid: under this
+module's convention `σ⁻¹ = σ - h`, a `d = -h` letter **is** a braid generator.
+Per bond type —
+
+    pp   d = 0                    σ_g        IS a braid generator
+    nn   d = -h                   σ_g - h    IS one too (= σ_g⁻¹)
+    pn   d = -h(1/2 - δ/4)                   is NOT — the only bond letter that isn't
+
+Milnor invariants are invariants of **links** — closures of braids. A
+superposition is not a link, so it has none; to get one you must **resolve** the
+averaged letters, and each resolution is a different link.
+
+**One tension, flagged rather than resolved.** That probe concludes the word
+*"leaves the braid image exactly at the p-n bond"*, while `atom_braid_word_3A`'s
+own docstring describes the per-**nucleon** block as eleven letters *"two of them
+averaged (`σ - (h/2)·1`)"* — and `-h/2` is in the outside set. Those are
+statements about different letters (inter-nucleon bonds vs intra-nucleon core),
+and whether a `Z ≥ 1, N = 0` word would be inside the image turns on it. **It
+does not affect anything below**: every nucleus this arc targets has both a
+proton and a neutron, so the element is outside `ρ` on either reading. Recorded
+so the next reader does not have to notice it twice.
+
+**And the family's LOWEST rung is already branch-dependent.** Measured in
+`milnor-mubar-vanishes-on-every-triple.witness.json`: the indeterminacy classes,
+which are determined by the pairwise linking numbers, differ between the two
+recorded resolutions at **every** isotope —
+
+    isotope   delta_1 (sigma -> sigma^-1)   delta_2 (sigma -> sigma^-1)
+    2H            1 -> 0                        0 -> 1
+    3H            2 -> 0                        2 -> 4
+    3He           3 -> 0                        1 -> 4
+    4He           5 -> 0                        4 -> 9
+    6Li          13 -> 0                       12 -> 25
+    8Be          25 -> 0                       24 -> 49
+    10B          41 -> 0                       40 -> 81
+
+— 14 of 14 compared fields differ, and the producer states the cause directly:
+*"lk is branch-dependent, so the Delta classes differ per branch."* So `lk`, the
+length-2 member, is **not a function of the element**.
+
+**Therefore `μ̄₁₂₃ = 0` on both branches is VANISHING, not well-definedness.** It
+agrees across resolutions because it is zero, and the theorem below says that
+carries no information about any other member: the family was already broken at
+length 2. A *nonzero* higher rung would be branch-dependent like `lk`, and
+consuming it would require **choosing a resolution** — a free parameter selected
+against the target, which is the fit this section exists to refuse.
+
+**Where this leaves the three routes.** Route (1) is not blocked by a missing
+computation; it is asking for a **link invariant of a non-link**, and the only
+way to make its question well-posed is a choice that is itself a fit. The Hecke
+trace channel asks in the **right category** — `tr_M` is defined on `H_n(q)`,
+which is where the element actually lives — and is blocked on infrastructure
+rather than on a category error.
+
+**Not claimed:** that no invariant of the element exists (`tr_M` is one); that
+some Milnor invariant could not turn out constant across *all* `2^(2A+1)`
+resolutions (only two are recorded, and constancy of one member is not the
+family's); that route (1) is refuted for a future carrier that IS a braid. What
+is derived is that on the carrier as built, the family is not well-defined. -/
+
+/-- An invariant is **well-defined on a superposed element** exactly when it is
+    constant across the element's resolutions. `R` indexes resolutions, `res`
+    sends each to the link it resolves to. -/
+def WellDefinedOnResolutions {R I : Type*} (res : R → I) (inv : I → ℤ) : Prop :=
+  ∀ r r', inv (res r) = inv (res r')
+
+/-- A **family** of invariants is well-defined on the element when every member
+    is. This is the right object: a route does not consume one invariant, it
+    consumes a ladder. -/
+def FamilyWellDefinedOnResolutions {R I κ : Type*} (res : R → I)
+    (fam : κ → I → ℤ) : Prop :=
+  ∀ k, WellDefinedOnResolutions res (fam k)
+
+/-- **Two resolutions with different values refute well-definedness.** This is
+    the shape of the `lk` measurement: exhibit the σ and σ⁻¹ branches. -/
+theorem not_wellDefinedOnResolutions_of_ne {R I : Type*} (res : R → I)
+    (inv : I → ℤ) {r r' : R} (h : inv (res r) ≠ inv (res r')) :
+    ¬ WellDefinedOnResolutions res inv :=
+  fun hw => h (hw r r')
+
+/-- **ONE branch-dependent member refutes the whole family.**
+
+    This is the load-bearing statement. `lk` is measured branch-dependent, so the
+    Milnor family is not well-defined on the atom element — and that is settled
+    *before* any higher rung is computed. Walking the ladder cannot repair it. -/
+theorem not_familyWellDefined_of_one_member_ne {R I κ : Type*} (res : R → I)
+    (fam : κ → I → ℤ) {k : κ} {r r' : R} (h : fam k (res r) ≠ fam k (res r')) :
+    ¬ FamilyWellDefinedOnResolutions res fam :=
+  fun hf => h (hf k r r')
+
+/-- **A member that vanishes everywhere is constant VACUOUSLY.**
+
+    `μ̄₁₂₃ = 0` on both recorded branches, so it *is* well-defined on its own —
+    and this says so, to make precise that the agreement is the zero, not a
+    structural property. Composed with the theorem above, it is the whole point:
+    a vanishing member is well-defined while the family is not. -/
+theorem wellDefined_of_const_zero {R I : Type*} (res : R → I) (inv : I → ℤ)
+    (h : ∀ r, inv (res r) = 0) : WellDefinedOnResolutions res inv :=
+  fun r r' => by rw [h r, h r']
+
+/-- **The definitions are not vacuous, in both directions.** A constant family is
+    well-defined; the identity family on `ℤ` with two distinct resolutions is
+    not. Without this pair, everything above would be consistent with the
+    predicates being unsatisfiable or trivially satisfiable. -/
+theorem familyWellDefined_nondegenerate :
+    FamilyWellDefinedOnResolutions (R := Bool) (κ := Unit) (fun _ => (0 : ℤ))
+        (fun _ n => n)
+      ∧ ¬ FamilyWellDefinedOnResolutions (R := Bool) (κ := Unit)
+          (fun b => if b then (1 : ℤ) else 0) (fun _ n => n) := by
+  constructor
+  · intro _ _ _; rfl
+  · intro hf
+    have := hf () true false
+    simp at this
+
 end QOU.BraidsAndKnots.MilnorTripleLinkingMagnus

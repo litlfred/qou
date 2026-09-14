@@ -1,0 +1,70 @@
+{
+ "probe": "ptolemy_duality_generic",
+ "manifold": "L6a4",
+ "obstruction_class": 1,
+ "field": {
+  "generator": "t",
+  "min_poly": "64*t**4 - 95000*t**3 + 101015625*t**2 - 59375000000*t + 25000000000000",
+  "degree": 4,
+  "irreducible_over_Q": true
+ },
+ "n_automorphisms": 4,
+ "K_over_Q_normal": true,
+ "automorphism_element_orders": [
+  1,
+  2,
+  2,
+  2
+ ],
+ "automorphism_group_axioms_verified": {
+  "roots": true,
+  "identity": true,
+  "closed": true,
+  "inverses": true
+ },
+ "relator_gate": true,
+ "sl3_lift": true,
+ "rows": {
+  "t -> t": {
+   "untwisted_dim": 0,
+   "untwisted_found": false,
+   "twisted_dim": 0,
+   "twisted_found": false,
+   "lambda": "mu_3",
+   "is_identity": true
+  },
+  "t -> 361*t**3/161625000 - 19*t**2/8000 + 1293*t/512 - 760000/1293": {
+   "untwisted_dim": 0,
+   "untwisted_found": false,
+   "twisted_dim": 0,
+   "twisted_found": false,
+   "lambda": "mu_3",
+   "is_identity": false
+  },
+  "t -> -64*t**3/101015625 - t + 760000/1293": {
+   "untwisted_dim": 0,
+   "untwisted_found": false,
+   "twisted_dim": 0,
+   "twisted_found": false,
+   "lambda": "all 1",
+   "is_identity": false
+  },
+  "t -> -t**3/625000 + 19*t**2/8000 - 1293*t/512 + 11875/8": {
+   "untwisted_dim": 4,
+   "untwisted_found": true,
+   "twisted_dim": 4,
+   "twisted_found": true,
+   "lambda": "all 1",
+   "is_identity": false
+  }
+ },
+ "refutation_control_passes": true,
+ "untwisted_winners": [
+  "t -> -t**3/625000 + 19*t**2/8000 - 1293*t/512 + 11875/8"
+ ],
+ "twisted_winners": [
+  "t -> -t**3/625000 + 19*t**2/8000 - 1293*t/512 + 11875/8"
+ ],
+ "schur_dims_ok": true,
+ "verdict": "UNTWISTED duality HOLDS for ['t -> -t**3/625000 + 19*t**2/8000 - 1293*t/512 + 11875/8'] -- an equality of GL(3,K) representations, reproducing the L6a4 class-1 phenomenon on L6a4."
+}

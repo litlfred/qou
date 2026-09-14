@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T14:55:00Z
+updated_at: 2026-09-14T14:21:18Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1196,3 +1196,148 @@ is the same ported code with a different input.
 
 Probe: `computations/ptolemy/ptolemy_second_manifold_cost.py`. Bean stays open under rule 13a.
 
+## 2026-09-14 — the 5_2 wall was an algorithm choice, not the container
+
+`5_2` class 1 is EXTRACTED on a 16 GB container. The previous record — mine —
+said it needed a bigger machine on the strength of 7.9 GB RSS at 717 s. That
+measured the symptom. Stage 2 was asking Singular for a LEX Groebner basis of
+(eqs, T-lin, h) in a 12-variable ring over Q, and lex is where rational
+coefficients explode; `stdfglm` makes the lex basis cheaper to reach but still
+builds it.
+
+Nothing downstream needs a lex basis. Where T is primitive the shape lemma gives
+{1, T, ..., T^(d-1)} as a basis of the component ring, so each coordinate comes
+from DEGREVLEX normal forms plus one small exact linear solve. Measured: deg-4
+component 14.9 s, deg-6 component 17.9 s, Singular RSS 15 MB (sampled).
+
+STRUCTURAL FINDING, and it constrains the arc: `5_2` class 1 has TWO genuine
+Galois orbits (degrees 4 and 6), where L6a4 class 1 has one. PR #7290 section 1
+upgrades per-point to for-all-x by 'four distinct points in a degree-4
+zero-dimensional scheme leaves no room -- the orbit IS the whole variety'. That
+argument does NOT transfer to `5_2`: a per-point result upgrades only within one
+orbit, and the two orbits must be tested separately.
+
+Also added: coordinates are now back-substituted into the Ptolemy equations mod
+h(T) before a point is written. NEITHER route verified its own output before.
+
+Corrected here too: both L6a4 classes are 27 variables / 33 equations. The
+earlier note calling class 2 'a variable-count wall (27 vs 7)' was comparing
+L6a4 to m004, not class 1 to class 2, so it does not explain why class 1 is
+solved and class 2 is not.
+
+Branch claude/ptolemy-lex-free-stage2-2026-09-14; issue #7346. Bean stays OPEN
+(rule 13a) -- the general duality identification is still a conjecture.
+
+
+### 2026-09-14 — `5_2` class 1 answered, on BOTH orbits, and the test finally SELECTS
+
+Three things landed, in dependency order.
+
+**1. The producer was discarding every Galois orbit but the first** (`674c2b6307`).
+`ptolemy_exact_point.py` printed *"the variety is NOT a single Galois orbit, so a
+per-point result does not upgrade to 'for all x' for free"* and then wrote
+`to_point_json(genuine[0])` into one file. Orbit 1 of `5_2` class 1 had no
+addressable artifact at all, so the one inference the NOTE forbids was the only one
+a consumer could make. Each genuine orbit now gets its own point file plus a
+`provenance.orbit_index`; orbit 0 keeps the unsuffixed name, so no committed
+artifact moves.
+
+**2. `Aut(K/Q)` was the reason the duality probe could not run on `5_2`**
+(`350e00d152`). It solved `f(g(t)) = 0 mod f` for the `deg` coefficients of `g` —
+`deg` equations of degree `deg` in `deg` unknowns, a Groebner basis inside
+`sp.solve`. Two runs on the degree-4 orbit were killed at 25 and 40 minutes with no
+output past the header. Factoring `f` over `K` and reading the linear factors gives
+the same set: 0.025 s / 0.082 s / 0.316 s at degrees 2 / 4 / 6. Evidenced by route
+agreement on `m004`, an unchanged `m004` calibration witness, `assert`ed group
+axioms mod `f` on every run, and recorded element orders.
+
+**3. The answer, per orbit — and they cannot be pooled.**
+
+- **Orbit 0**, `[K:Q] = 4`, `|Aut| = 4`, orders `[1,2,2,2]` => `Gal(K/Q) = V_4`.
+  **Exactly one of the three involutions** carries an untwisted intertwiner,
+  `FOUND(4)`, lambda = 1; the other two fail untwisted *and* twisted; the identity
+  control fails; Schur holds at dimension 4.
+- **Orbit 1**, `[K:Q] = 6`, `|Aut| = 2` => `K/Q` **not normal**, orders `[1,2]`.
+  The unique non-identity sigma carries an untwisted intertwiner, `FOUND(6)`,
+  lambda = 1; control fails; Schur holds at dimension 6.
+
+**Why orbit 0 is the first informative run.** `m004` and L6a4 class 1 both have
+`|Aut| = 2`, so their single candidate succeeding is equally consistent with *"any
+non-identity sigma works"*. Three involutions and one success is a genuine
+selection.
+
+**This does NOT close the bean, and the gap is sharper than before.** Two open
+items, both raised BY this measurement rather than settled by it:
+
+- **Which invariant distinguishes the winning involution in `V_4`?** The
+  measurement says one of three is special; it does not say why. Until that is
+  identified, "the duality sigma" is a name for something located by search.
+- **Orbit 1 has an intertwiner but no transport argument.** `K/Q` is not normal
+  there, so the `C_2` is not a quotient of a Galois group acting on all six roots.
+  The orbit-0 upgrade route is unavailable on orbit 1 even though the conclusion
+  looks the same.
+
+Audit: `docs/audits/2026-09-14-ptolemy-lex-free-stage2-and-the-l6a4-gb-wall.md`
+sections 5a-5c.
+
+
+### 2026-09-14 (later) — the duality sigma is IDENTIFIED: complex conjugation of K
+
+The open item from this morning's entry ("which invariant distinguishes the
+winning involution in `V_4`?") is measured.
+
+**The corpus already had a criterion and it does NOT select.**
+`ptolemy_duality_galois_check.py` establishes that cocycle negation is
+`u -> u^2`, "the nontrivial automorphism of mu_3, i.e. complex conjugation OF
+THE CUBE ROOT OF UNITY". When `Gal(K/Q) = V_4`, TWO of the three involutions
+invert `zeta_3`, so that criterion halves the candidates and stops. L6a4 is
+where this is visible, because the older probes hardcode exactly the surviving
+pair:
+
+    sigma_a   inverts zeta_3 True   is conj(K) False   intertwiner False
+    sigma_b   inverts zeta_3 True   is conj(K) True    intertwiner True
+
+"Complex conjugation of mu_3" and "complex conjugation of K" are different
+claims and only the second selects.
+
+**Two notions, kept separate because they come apart here.** (CM) K totally
+imaginary and `Fix(sigma)` totally real -- embedding-independent, decided
+exactly by Sturm root counts, no tolerance. (EMB) `sigma(alpha) = conj(alpha)`
+at one embedding, 60 digits. An earlier version of the probe asserted these
+must agree and CRASHED on `5_2` orbit 1, whose K is totally imaginary but NOT
+CM: `Fix(sigma)` has degree 3 and is not totally real, so (CM) is False while
+(EMB) holds at 2 of 6 embeddings. The crash was correct.
+
+    CM-conjugation, TESTABLE (>1 candidate) and HOLDS : 5_2-c1-orbit0, L6a4-c1
+    corroborates but cannot select (|Aut| = 2)        : m004-c1
+    K not CM, per-embedding statement only            : 5_2-c1-orbit1
+    FAILS                                             : none
+
+**What is NOT new, stated plainly:** the L6a4 selection itself is already in
+`L6a4-c1-duality-orbit-untwisted.json` (`works_per_point` is `sigma_b` at every
+point; `id`/`tau`/`sigma_a` fail) and the coboundary witness already records the
+group as `Z/2 x Z/2`. New here is the IDENTIFICATION of the selected element,
+and a second manifold on which the selection is exercised at all.
+
+**Also fixed a latent regression I had introduced hours earlier.** The
+factorisation route substituted `sp.rootof`'s return value, whose SHAPE varies
+with f -- `ComplexRootOf` (5_2, monic), `Mul` `125*CRootOf(...)` (L6a4,
+NON-monic), `Add` in radicals (m004, quadratic). It was developed against three
+fields and all three were monic; the first non-monic field broke it. Both wrong
+fixes were caught by the route's own guard rather than returning a wrong
+automorphism count. Now uses `sp.to_number_field(r, alpha).as_poly(t)`, which is
+shape-independent.
+
+**STILL OPEN, and the bean stays open on all three:**
+
+1. **Why should duality be realised by complex conjugation?** This is a measured
+   regularity over four points, not a theorem. No mechanism is offered.
+2. **Orbit 1 is weaker than it looks.** Its K is not CM, so only the
+   per-embedding statement is available there, and `|Aut| = 2` means it could
+   not have selected anything anyway.
+3. **The transport argument still does not reach orbit 1** (K/Q not normal) --
+   unchanged from this morning.
+
+Probe: `computations/ptolemy/ptolemy_duality_sigma_is_complex_conjugation.py`.
+Audit: `docs/audits/2026-09-14-ptolemy-lex-free-stage2-and-the-l6a4-gb-wall.md`
+sections 5d-5e.

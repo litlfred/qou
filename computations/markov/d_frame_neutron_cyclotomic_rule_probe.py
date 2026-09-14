@@ -59,12 +59,38 @@ averaged ud-couplings on one generator; the proton (uud) spreads its two
 across both.  The p/n asymmetry in cyclotomic content is that placement, not a
 difference in how many couplings each nucleon has -- both have exactly two.
 
+## The rule is INTRA-ORDERING INVARIANT, and this probe was already testing it
+
+The twelve words below are assembled grouped -- all gen0 letters, then all
+gen1 -- which is `pyhecke.atom.nucleon_word_letters`' `intra_order="grouped"`
+(bean `qou-t29k`).  That is deliberate here, and it costs nothing, for a reason
+this probe already carried the test for.
+
+`real_words_reproduce_production_builder` compares `measure()` on the two REAL
+words against `measure(atom_braid_word_3A(...))`.  When the witness was last
+written (2026-08-24) the production builder was itself grouped, so the
+assertion compared two identical words and established nothing about ordering.
+The 2026-09-05 ruling (`qou-hu1f`) made that default **borromean**, which
+silently turned it into a live cross-ordering test -- one nobody had run.  Run
+on 2026-09-14 it PASSES, and every measured value in the witness is unchanged
+(only `elapsed_sec` moved).
+
+So `(m, cancelled)` is the same for the canonical and the grouped word.  That
+is a real invariance and a narrow one: the TRACE is emphatically not invariant
+(one proton, `|tr_M|` 1.1457596924573009 grouped against 0.6293284022029219
+canonical, ~82% apart).  What survives reordering is the cyclotomic denominator
+structure, which comes from the z-content and the Hecke collapse rather than
+from where the letters sit relative to one another -- consistent with the
+reading above, since `max(g0avg, g1avg)` is a per-generator COUNT and
+reordering moves no letter between generators.
+
 ## Scope
 
 Scope-(a): a measurement of these twelve 3-strand configurations under
 `bring_color_weighted` at convention D.  The reading in the previous section
 is an INTERPRETATION of the rule, not a proof of it; the falsifiable content
-is the `max(g0avg, g1avg) >= 2` criterion and its saturation.
+is the `max(g0avg, g1avg) >= 2` criterion and its saturation.  The invariance
+above is measured on the two real words, not proved for all twelve.
 
 Exact symbols throughout; no float is formed in any measured quantity (the
 `d` templates are numeric only so that `crossing_from_cd` can RECOGNISE which
@@ -118,7 +144,16 @@ def main() -> int:
         return int(m), int(act)
 
     def build(g0, g1):
-        return [(1.0, d, 0) for d in g0] + [(1.0, d, 1) for d in g1]
+        # Grouped, via the named helper. DELIBERATE, and free: see the
+        # ordering-invariance section in the module docstring — the measured
+        # `(m, cancelled)` is the same for the canonical word, which
+        # `real_words_reproduce_production_builder` now checks live. The twelve
+        # cases are synthetic per-generator COMPOSITIONS, several with no
+        # nucleon behind them ("3 avg on gen0"), so `nucleon_word_letters` —
+        # which takes quarks — is not the right entry point for them.
+        from pyhecke.atom import grouped_word_from_chains
+        return grouped_word_from_chains([(1.0, d) for d in g0],
+                                        [(1.0, d) for d in g1])
 
     P0 = [ZERO] * 4 + [AVG] + [ZERO] * 2
     P1 = [FULL] * 3 + [AVG]

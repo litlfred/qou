@@ -71,8 +71,27 @@ set_compute_dps()
 
 
 def _word(g0, g1):
-    return ([(mp.mpf(str(c)), mp.mpf(str(d)), 0) for c, d in g0]
-            + [(mp.mpf(str(c)), mp.mpf(str(d)), 1) for c, d in g1])
+    """The nucleon word. GROUPED -- and that is FORCED, not chosen.
+
+    `chi_monotone_transfer.chi_all_lambda`, which this probe uses, accepts only
+    a monotone generator sequence. The canonical borromean word is non-monotone
+    by construction -- its core is `(sigma_0 sigma_1^-1)^3` -- so feeding it
+    here raises `ValueError: non-monotone word: gen 0 after 1`. Measured, not
+    inferred. The frame therefore cannot be changed by editing this helper; it
+    changes when the kernel does (`chi_general_word.chi_all_lambda_any`, the
+    remedy `closed_form_tau_M` already took).
+
+    Named via `grouped_word_from_chains` so the constraint is visible at the
+    call site instead of one import line away. Beans `qou-11l4` (this probe is
+    missing from `qou-y2o7`'s blast radius, which is marked completed) and
+    `qou-t29k`. Output unchanged: the helper IS this concatenation, with the
+    mpf conversion preserved per chain.
+    """
+    from pyhecke.atom import grouped_word_from_chains
+    return grouped_word_from_chains(
+        [(mp.mpf(str(c)), mp.mpf(str(d))) for c, d in g0],
+        [(mp.mpf(str(c)), mp.mpf(str(d))) for c, d in g1],
+    )
 
 
 def main() -> int:
