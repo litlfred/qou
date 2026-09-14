@@ -3001,9 +3001,9 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-four** rows (re-counted 2026-09-13), and the groups
+>   catalogues **forty-five** rows (re-counted 2026-09-14), and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
->   about conventions at all. **Rows 35-44 are NOT in this list**: 35 (the
+>   about conventions at all. **Rows 35-45 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
 >   39 (the freshness is on the wrong object), 40, which is the first row
@@ -3028,7 +3028,22 @@ Do not regress either.
 >   three times: **a queue is only a queue on the paths that actually write to
 >   it, and an exemption is only a deferral if the thing it defers to can see
 >   it.** Do not read an empty ledger, or a clean `--check-ledger`, as evidence
->   about the corpus:
+>   about the corpus.
+>
+>   **45** is the newest and is about an ALGEBRAIC signature rather than a
+>   spelling: `q**2 - 2*q - 1`, the factor identifying the retired Q_β base,
+>   is also written with the **absolute value pre-resolved**
+>   (`2*q + 1 - q**2`, legitimate since `q₀²−2q₀−1 < 0`, so no `abs()`
+>   appears) and in **Horner form** (`q*(q - 2) - 1`) — a 45 % undercount,
+>   29 → 42 files, the corrected set including `qbeta_ck_cache.py`, the
+>   canonical `c_k` producer. Its reusable half is a rule about AUDITS and it
+>   is row 44's twin from the other side: 44 is an exemption the queue cannot
+>   see, 45 is a **calibration check that certifies itself**. The audit's was
+>   a hardcoded `check(..., True, ...)`; replacing it with one that resolves
+>   known consumers to their actual bucket and FAILS on a miss is what exposed
+>   the blindness. **An audit that self-certifies its calibration cannot
+>   discover its own blind spot** — 29 would otherwise have shipped with a
+>   clean 3/3 beside it:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
 >   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard
