@@ -9,6 +9,8 @@ export default remark({
   cites: ["jones1985", "jimbo1986"],
   computation: {
     script: "computations/onedim/tl_is_the_xxz_chain_probe.py",
+    engine: "python+mpmath",
+    status: "verified",
   },
   tags: [
     "temperley-lieb",
