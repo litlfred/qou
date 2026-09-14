@@ -248,3 +248,52 @@ Not "is the site broken" but **which class is the reported quantity in**:
 
 Classes 1 and 2 are safe to switch; class 3 needs an owner call whenever the
 site's result is a claim rather than a number. Both escalations are class 3.
+
+## 18 -> 10, and the qbeta cluster was misdiagnosed as "silent"
+
+Four more drained: `qbeta_d_frame_trace_baseline_probe`,
+`qbeta_epsnpq_functional_mismatch_probe`,
+`qbeta_d_frame_baseline_element_consistency_probe`,
+`qbeta_chi_block_symbolic_closure_probe`. All four pass every assertion with
+every measured value unchanged (4/4, 7/7, 5/5, 9/9).
+
+They are **not** silent defaults. All four use
+`chi_monotone_transfer.chi_all_lambda`, which accepts only a monotone
+generator sequence, and the canonical borromean word is non-monotone by
+construction. Measured:
+
+    grouped   [0,0,0,0,0,0,0,1,1,1,1] -> OK, chi_(3) = 1.38249446339
+    borromean [0,1,0,1,0,1,0,0,1,0,0] -> ValueError: non-monotone word:
+                                          gen 0 after 1
+
+So grouped is **forced by the kernel**, and these are the SAFEST sites in the
+baseline, not the riskiest: a monotone-kernel caller cannot silently report a
+wrong-frame number — it either uses the grouped word correctly or raises. The
+declaration is what was missing, not the correctness. Each docstring now says
+so, and `qou-11l4` records that `qou-y2o7` — whose mechanism this is — closed
+as completed without these four in its blast radius.
+
+`qbeta_chi_block_symbolic_closure_probe` holds the QUARKS, so it now calls
+`nucleon_word_letters(..., intra_order="grouped")` rather than
+`grouped_word_from_chains`: same object, one caller closer to the definition.
+
+Ratchet 14 -> 10. E 4 -> 7.
+
+**Remaining 10**, none of them kernel-locked: `atom_orbit_reduction:92`,
+`binding_canonical:381`, `binding_multibond_wenzl:71` (escalated, `qou-y1w0`),
+`chi_4he_binding_lossless:83`, `fitted_ideal_low_isotope_calibration:172`
+(module PAUSED by owner ruling), `probes/b_pred_mirror_slope_closed_form:90`
+(escalated, `qou-u8ji`), `qbeta_delta_bar_parity_probe:184`,
+`qbeta_delta_element_fork_pricing_probe:181`,
+`qbeta_level_k_binding_operator_probe:257`, `rho_k_h3a_gg_trajectory:127`.
+
+The three remaining qbeta probes do NOT import `chi_monotone_transfer`, so
+whatever forces their frame is something else and has to be found per site.
+
+## Environment note
+
+The container restarted mid-session and came back with mpmath 1.3.0 -> 1.4.1
+and a rebuilt `pyhecke_native`. Every witness regenerated after that carries
+the new provenance. All four probes above produced byte-identical values
+across the change, so it is benign so far, but it is a corpus-wide provenance
+shift that did not come from any commit.
