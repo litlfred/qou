@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-13T17:33:19Z
-updated_at: 2026-09-13T19:51:43Z
+updated_at: 2026-09-14T06:07:06Z
 ---
 
 ## MEASURED 2026-09-13 on the QOU Lean tree (2870 .lean files)
@@ -198,3 +198,68 @@ re-adjudications, not for a mechanical sweep.
 
 - `qou-vh1o` — the 13 candidates on the two OTHER exemption arms, still
   invisible, with file:line list and the four steps to close.
+
+
+## Items 3 and 4 DONE (2026-09-14, commit 617677b8b8)
+
+### Item 3 — corpus-wide seeding
+
+Ledger **350 → 321**. `--check-ledger` exit 0 over all **108** candidates;
+re-run changes 0 entries; `--selftest-docstring-sorry` exit 0.
+Defects **71 → 72**, promoted **41 → 42**.
+
+**14 of the 18 `needs-agent` were NOT adjudication.** `file_sha` is a
+whole-file hash, so a verdict expires on any edit to its file, however far from
+the declaration. `scripts/lean-vacuity-ledger-reverify.py` compares the
+DECLARATION instead: **IDENTICAL=14, CHANGED=0, NOT-FOUND=0, UNADJUDICATED=4**
+across three categories. Those 14 were restored with a dated re-verification
+line, not re-decided.
+
+Its docstring carries the trap that made me use it rather than hand-read:
+*IDENTICAL means nothing without a prior verdict* — a past run reported a clean
+22/22 where 21 had never been adjudicated, so "21 of those greens were about
+nothing". It refused to restore the 4 below, correctly.
+
+**The 4 genuinely unadjudicated:** `volume_perturbation` **genuine** (field IS
+the conclusion; zero builders; the class docstring says "All fields are
+*inputs*" and then concedes the field was added "to repair the refutable
+encoding" — that repair made a refutable statement an assumed one);
+`ordering_extends` **advisory** (`P → P`, but a fully disclosed tombstone whose
+docstring opens by saying so and leaves the real claim open);
+`decoy_premise_irrelevant` **legit** (the detector flagged the file written to
+*prove* the detector's finding — `ProofHygiene/SelfAssumingContexts.lean`; the
+`True` in the witness IS the content); `proton_neutron_indistinguishable`
+**genuine** (`f 3 = f 3`, the exact `X = X := rfl` form rule 5 bans; fix is to
+take the counts as hypotheses).
+
+Side finding for the convention arc (`qou-961o` / `qou-cxjq`), not part of any
+verdict: `VolumePerturbationContext.z_def` is **convention C**
+(`1/(√q + 1/√q)` ≈ 0.4993), not canonical D (≈ 0.6127). Same sqrt-variable
+spelling in `wenzl-qmn-synergy.lean:116,134` and
+`QBetaPerBlockChiClosedForms.lean:1267`.
+
+### Item 4 — `qou-z9ws` re-sized, and its "112" is NOT what a fresh measurement returns
+
+🛑 **The current ledger yields 112 for a DIFFERENT population, and reporting
+that as confirmation would have been wrong.**
+
+- **`qou-z9ws`'s metric** is *"the 112 `genuine` `proof-no-self-assuming-projection`
+  entries"* — one category, `genuine` only. Its own record closes a drain at
+  **112 → 90**.
+- **Today that metric is 56**, of which **15 are this session's
+  `applied-field-projection` verdicts** — so it stood at **41** before this
+  tranche. The 90 → 41 movement is **not** explained by this session (only 1 of
+  my 33 deletions was in that category) and I did not measure its cause.
+- **The coincidental 112** is *all verdicts across the seven self-assuming
+  patterns*: `field-projection` 48, `applied-field-projection` 21,
+  `decoy-hypothesis` 17, `prop-universe-field` 13, `tuple-projection` 10,
+  `exact-field-projection` 3 — 85 genuine / 21 legit / 6 advisory.
+
+So the bean's headline number and a naive re-measurement agree numerically and
+disagree about everything else. Quote the metric with its scope, or a reader
+concludes nothing has moved when it has more than halved.
+
+### Bean stays `in-progress`
+
+All four items are done, but the work is unmerged: it rides #7341, which is
+parked on the owner for the 56 → 71 (now 72) decision.
