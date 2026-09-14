@@ -110,3 +110,43 @@ At rank 6 what is missing is **one function `det W_0(x;q)` and one constant
 Part 1. `c_pretzel` is unknown because **no held source prints a rank-6 orthogonality
 relation** — searched: GGM `arxiv-2012.00062v3` secs 011/015, whose only printed pairings
 are (137) at rank 2 and (92)/(93) at rank 3. T1, a recorded negative.
+
+## Part 3 (2026-09-14) — 🛑 RETRACTED PREMISE, and one surviving result
+
+Producer `aomega_m3_pairing_matrix_from_companion_probe.py`, 2/4. The two FAILs are the
+superseded gates, kept as measured rather than deleted.
+
+**What I set out to do and why it is wrong.** Parts 1-2 left `c_pretzel` unknown because no
+held source prints a rank-6 orthogonality relation. The obvious move is to stop depending on
+a printed source: `W_{m+1} = A_m W_m` with `A_m` the companion matrix, so if the pairing
+`W_m(q) J W_l(q^-1)^T` were constant in `m` it would hold iff
+
+    A J Abar^T = J                      <-- WRONG, retracted
+
+which is LINEAR in `J` and would have solved the whole problem. **The pairing is not
+m-invariant.** GGM (92) reads
+
+    (1/2) W_{m-1}(x;q) J W_{-m-1}(x;q^-1)^T = [[1,0,0],[0,0,1],[0,1,3-q^m]]
+
+whose RIGHT-HAND SIDE CARRIES `q^m`, and whose two indices shift in OPPOSITE directions
+(`m-1` against `-m-1`). So (93) is an **INTEGRALITY** statement — Laurent entries,
+determinant 1 — not an invariance. There is no such equation to solve.
+
+**A harness bug sat underneath the wrong premise and would have hidden it.** `linsolve` was
+fed `Poly(..., *unknowns).coeffs()`, which contain none of the unknowns, so it returned
+EmptySet and every solution dimension read `None`. Repairing THAT alone would have produced
+a confidently wrong `J`. Deliberately NOT repaired — a probe on a retracted premise should
+not be made to work. Two failures stacked and only the harness one was visible; the premise
+error was found by re-reading GGM (92), not by debugging.
+
+**What survives, and it is worth keeping (G1).** The determinant necessary condition
+`det A * det Abar = 1` holds for **all three knots including the pretzel**
+(`det A` = `q/x`, `-q^{3/2}`, `q^4`; each times its bar = 1). So **Part 1's rank-6
+palindromy obstruction does NOT by itself forbid a pairing** — the two obstructions are
+separate, and the pretzel is not excluded on determinant grounds.
+
+**Where that leaves the gap.** Unchanged from Part 2: one function `det W_0(x;q)` and one
+constant `c_pretzel`, tied by the bar-involution equation. The shortcut is closed; a real
+route needs the integrality statement (93) worked out at rank 6, or the blocks-side reading
+of Part 17's `Z[s]` bilinear — and that second one risks reading `c` off the target, which
+is the fit this tranche exists to avoid.
