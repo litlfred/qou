@@ -479,8 +479,21 @@ know `main` is green is to rebuild what the cache cannot vouch for. Recipe
    (regenerate it; `main` adds modules daily).
 2. **Dirty = source changed since the cache's SEED COMMIT, or olean missing,
    or an import dirty.** Seed commit = last `main` commit before the OLDEST
-   olean mtime in the restored tree (2026-08-16 `19e299946a` for
-   `lake-cache/qou-v4-24-0` as of 2026-09-04). Measured: **1,494 of 2,600**.
+   olean mtime in the restored tree. **Re-measure it per container** — it is
+   `bbb4127145` (2026-08-23 17:00Z) here on 2026-09-14, against the
+   2026-08-16 `19e299946a` this line carried since 2026-09-04. Measured then:
+   **1,494 of 2,600**.
+
+   **The oldest-olean heuristic is a LOWER BOUND on the seed, and on a
+   RESEEDED cache it can be far too old (2026-09-14).** `tar` preserves the
+   archive's mtimes, which are *build* times, and a reseed from an
+   incremental `lake build` rewrites only what was dirty — so one tarball
+   holds oleans built across weeks. Measured in one restored tree: oldest
+   **QOU** olean 2026-08-23, oldest **mathlib** olean 2026-09-06, a 14-day
+   spread in a cache the branch describes as one 2026-09-06 seed. Too-old a
+   seed **over**-reports staleness, which is the safe direction (you rebuild
+   more than needed) — unlike the mtime criterion below, which under-reports.
+   Do not read a closure count as the true dirty set in either direction.
 3. `tools/full_rebuild.sh` over that list (put `Archimedean/PauliWitness/*`
    LAST — 25 modules at 10+ min each, nothing imports them — so the rest
    reports in ~90 min); Monitor on `^FAIL|^progress|^DONE`.
