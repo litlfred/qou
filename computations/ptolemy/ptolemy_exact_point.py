@@ -329,15 +329,32 @@ if __name__ == '__main__':
     if len(genuine) > 1:
         print(f"   NOTE: {len(genuine)} genuine components -- the variety is NOT a single "
               f"Galois orbit, so a per-point result does not upgrade to 'for all x' for free")
-    g = genuine[0]
-    print(f"\n   chosen: K = Q[t]/({g['min_poly_T']}), degree {g['field_degree']}, "
-          f"disc {g['discriminant']}")
-    pj = to_point_json(a.manifold, a.obstruction_class, g)
-    pj['provenance']['degenerate_components_discarded'] = len(degen)
-    pj['provenance']['genuine_components'] = len(genuine)
     stem = f"{a.manifold}-c{a.obstruction_class}"
     (HERE / f'{stem}-exact-components.json').write_text(json.dumps(res, indent=1) + "\n")
-    if a.write:
-        (HERE / f'{stem}-ptolemy-in-K.json').write_text(json.dumps(pj, indent=1) + "\n")
-        print(f"   point -> {HERE / f'{stem}-ptolemy-in-K.json'}")
+
+    # ONE POINT FILE PER GENUINE ORBIT.  This used to write `genuine[0]` only --
+    # directly under the NOTE above saying the variety is not a single Galois
+    # orbit.  The producer diagnosed the multi-orbit case and then emitted data
+    # that could only describe one of them, so every downstream consumer saw a
+    # one-orbit variety no matter what was measured.  `5_2` class 1 is the case
+    # that exposed it: two genuine orbits, degrees 4 and 6, and only the deg-4
+    # one reachable.  A per-orbit result cannot be pooled across orbits, so the
+    # orbits have to be separately addressable to be separately testable.
+    for idx, g in enumerate(genuine):
+        pj = to_point_json(a.manifold, a.obstruction_class, g)
+        pj['provenance']['degenerate_components_discarded'] = len(degen)
+        pj['provenance']['genuine_components'] = len(genuine)
+        pj['provenance']['orbit_index'] = idx
+        label = "chosen" if idx == 0 else f"orbit {idx}"
+        print(f"\n   {label}: K = Q[t]/({g['min_poly_T']}), degree {g['field_degree']}, "
+              f"disc {g['discriminant']}")
+        if not a.write:
+            continue
+        # orbit 0 keeps the historical unsuffixed name so existing consumers and
+        # the committed L6a4 / m004 artifacts do not move.
+        names = [f'{stem}-ptolemy-in-K.json'] if idx == 0 else []
+        names.append(f'{stem}-orbit{idx}-ptolemy-in-K.json')
+        for n in names:
+            (HERE / n).write_text(json.dumps(pj, indent=1) + "\n")
+            print(f"   point -> {HERE / n}")
     print(f"   components -> {HERE / f'{stem}-exact-components.json'}")
