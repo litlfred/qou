@@ -304,6 +304,48 @@ def section5() -> None:
     print("    That has not happened.  A banner-gap over an open conjecture and a")
     print("    banner-gap over an excluded construction are different objects.")
 
+    # ---------------------------------------------------------------- 🛑
+    print("\n    🛑 CORRECTION (same session).  I first wrote the above as though")
+    print("    the block were a RECORDED DEFECT.  It is not, and the distinction")
+    print("    decides the disposition, so it is measured here rather than said.")
+    p = AUDITS / "2026-05-01-p3-1-conjectural-propagation.witness.json"
+    d = json.load(open(p, encoding="utf-8"))
+    L = "prop:jet-prefix-gb-filtration"
+    in_viol = any(x.get("label") == L for x in d.get("violators", []))
+    in_cond = any(x.get("label") == L for x in d.get("conditional_on_class", []))
+    print(f"\n      violators            : {len(d.get('violators', [])):4d}   contains block: {in_viol}")
+    print(f"      conditional_on_class : {len(d.get('conditional_on_class', [])):4d}   contains block: {in_cond}\n")
+    check(
+        in_cond and not in_viol,
+        "🛑 the propagation audit classes it CONDITIONAL-ON-CLASS, not a violator",
+        "i.e. the audit that decides whether a `proposition` kind is LEGITIMATE\n"
+        "downstream of a conjecture PASSES this block.  `conj:confinement-\n"
+        "grading-correspondence` carries a real Lean class\n"
+        "(`QOU.BraidKnot.ConfinementGradingCorrespondence`), which is §3b-cond\n"
+        "requirement (1), and that is what the audit keys on.",
+    )
+    b = json.load(open(AUDITS / "2026-05-09-conditional-class-banner.witness.json",
+                       encoding="utf-8"))
+    # These are ints in this witness, lists in the sibling — normalise.
+    def _n(x):
+        return len(x) if isinstance(x, list) else int(x)
+    tot = _n(b.get("conditional_on_class", 0))
+    nb = _n(b.get("missing_md_conditional_banner", 0))
+    nl = _n(b.get("missing_lean_class_hypothesis", 0))
+    fc = _n(b.get("fully_compliant", 0))
+    print(f"      conditional-on-class blocks      : {tot}")
+    print(f"        fully compliant                : {fc}")
+    print(f"        missing .md banner             : {nb}")
+    print(f"        missing Lean class hypothesis  : {nl}\n")
+    check(
+        fc * 10 < tot,
+        "🛑 and the banner gap is the POPULATION NORM, not this block's defect",
+        f"only {fc} of {tot} conditional-on-class blocks are fully compliant\n"
+        f"({100*fc//tot} %).  This block is utterly typical.  Singling it out\n"
+        "for demotion would make the corpus LESS uniform, not more -- and it\n"
+        "is not a recorded violation to begin with.",
+    )
+
 
 def section5b() -> None:
     """Defect #4's OTHER half -- FIXED 2026-09-14 on owner instruction.
