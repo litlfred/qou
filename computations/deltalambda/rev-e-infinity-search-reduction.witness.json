@@ -1,6 +1,6 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-09-14T07:28:46.061954+00:00",
+  "computedAt": "2026-09-14T07:42:34.907396+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_search_reduction_probe.py"
   },
@@ -18,14 +18,20 @@
     "G_1": "1.7293231880132282725241222999",
     "G_half": "1.08314550703034554883112559026",
     "N_star": "107.762074679460348871595973296",
-    "B_rigorous": "10.5551320927234643539984101558"
+    "B_rigorous": "10.5551320927234643539984101558",
+    "Ghat_1": "0.777072792472441674676783274014",
+    "B_sharp": "3.92139923021415319458052718373"
   },
   "coercivity_S3": {
     "per_term": "eps(2d) - eps(2d+D) <= g(d) D  for every sign of D,  g(d) = |eps'(2d)|",
-    "assembled": "Xblock(u) <= S_1 - G_1 + G_half sqrt(N) - (ln q0/2) N,  N = sum v^2",
-    "uniform": "B_rig = S_1 - G_1 + G_half^2 / (2 ln q0)",
+    "assembled_cauchy_schwarz": "Xblock(u) <= S_1 - G_1 + G_half sqrt(N) - (ln q0/2) N,  N = sum v^2",
+    "assembled_per_row": "Xblock(u) <= sum_i [ u_i Ghat(i+1) - (ln q0/2) u_i^2 ],  Ghat(m) = sum_{d>=m} |eps'(2d)|",
+    "uniform_cauchy_schwarz": "B_rig = S_1 - G_1 + G_half^2 / (2 ln q0)",
+    "uniform_per_row": "B_sharp = sum_m Ghat(m)^2 / (2 ln q0)",
     "B_rigorous": "10.5551320927234643539984101558",
-    "unconditional_ell_cut": 345,
+    "B_sharp": "3.92139923021415319458052718373",
+    "unconditional_ell_cut": 90,
+    "unconditional_ell_cut_cauchy_schwarz": 345,
     "measured_B": "2.1598023761182859616035303726",
     "measured_B_at_s": 14,
     "measured_ell_cut": 23,
@@ -810,14 +816,14 @@
       "detail": "minimum slack 0.0 over 2130 pairs, attained at D = 0 where the two sides are equal by construction.  Both signs matter and they are different arguments: for D > 0 it is `int_a^(a+D)|eps'| <= D|eps'(a)|`, for D < 0 it is `-int_(a+D)^a |eps'| <= -|D||eps'(a)|`, and both hold because `|eps'|` is decreasing.  Dropping the D < 0 case \u2014 keeping only `D^+` \u2014 is what makes the bound diverge: the negative pair terms are exactly what stops a long alternating profile from collecting g(1) per step at linear cost"
     },
     {
-      "name": "S2 the coercivity bound is never violated",
+      "name": "S2 both coercivity bounds hold, and the per-row one is far tighter",
       "ok": true,
-      "detail": "0 violations over 40 per-sum maximisers drawn from 8346945 enumerated blocks; tightest slack 5.38217.  The bound is checked against the maximiser at each sum, which is where it is tightest \u2014 a bound that survives the argmax survives everything below it at that sum"
+      "detail": "0 violations of either bound over 40 per-sum maximisers drawn from 8346945 enumerated blocks.  Tightest slack 5.38217 for the Cauchy-Schwarz route against 0.142949 for the per-row one \u2014 a factor 37.651, which locates the loss: it is the Cauchy-Schwarz step `top_d <= sqrt(d N)`, applied once per distance, that counts the same top rows over and over.  Summing by ROW instead never introduces it.  Both are checked at the maximiser of each sum, which is where a bound is tightest"
     },
     {
       "name": "S3 the maximisation is coercive: only finitely many (s_t, s_b) can win",
       "ok": true,
-      "detail": "B_rig = 10.555132092723464354 bounds EVERY valid block, with no cap on its length or its entries and no fitted constant anywhere in the chain.  Since Xrun falls linearly at -ln q0/2 per unit, that forces s_t + s_b <= 345.  This is the part that needs no measurement: the search space is finite as a matter of the inequality, not of the table.  It is also CRUDE \u2014 B_rig is 4.887x the measured maximum, and 345 is far past any enumeration, so it settles finiteness and not the value"
+      "detail": "B_sharp = 3.9213992302141531946 bounds EVERY valid block, with no cap on its length or its entries and no fitted constant anywhere in the chain.  Since Xrun falls linearly at -ln q0/2 per unit, that forces s_t + s_b <= 90.  This is the part that needs no measurement: the search space is finite as a matter of the inequality, not of the table.  The per-row route beats the Cauchy-Schwarz one by 2.6917x (10.555132 -> 3.9213992, cut 345 -> 90) and it is the more legible of the two: row i counted from the free top edge only sees distances >= i+1 on its way to the bulk, so `Ghat(i+1)` is the most it can gain per unit.  It is STILL NOT ENUMERABLE \u2014 90 is far past any feasible search, and 1.816x the measured maximum \u2014 so this settles finiteness and not the value"
     },
     {
       "name": "S4 the marginal is NOT monotone \u2014 the greedy / first-crossing argument is refuted",

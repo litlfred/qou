@@ -48,9 +48,23 @@ block's length and entries** — which is what makes the search finite at all:
 
     Xblock(u)  <=  B_rig  :=  S_1 - G_1 + G_half^2 / (2 ln q0)   for EVERY valid block.
 
-`B_rig` is crude (about 4.9x the measured maximum), and crudeness costs: the unconditional cut
-it gives is `s_t + s_b <= L_rig`, a finite but impractical range.  The practical cut uses the
-measured `B` instead and is therefore conditional on it.
+**Summing by ROW instead of by pair distance is 2.7x better, and more legible.**  The
+Cauchy-Schwarz step above is applied once per distance `d`, so it charges the same top rows
+again at every `d`.  Collect the linearisation by row and it telescopes to one coefficient per
+row, with a reading: row `i` counted from the free top edge only ever sees distances `>= i + 1`
+on its way down to the bulk, so the most it can gain per unit of displacement is
+
+    Ghat(m)  :=  sum_{d >= m} |eps'(2d)| ,     coefficient of row i  =  Ghat(i + 1) .
+
+Each row is then a downward parabola in its own `u_i` and the whole thing maximises termwise:
+
+    Xblock(u)  <=  sum_i [ u_i Ghat(i+1) - (ln q0/2) u_i^2 ]  <=  B_sharp
+    B_sharp    :=  sum_{m>=1} Ghat(m)^2 / (2 ln q0)  =  3.92139923021415319 .
+
+Both bounds are checked; the per-row one is roughly 40x tighter at the argmax.  It is still
+crude in absolute terms — 1.82x the measured maximum — and crudeness costs: the unconditional
+cut it gives is `s_t + s_b <= 90`, finite but far past any feasible enumeration.  The practical
+cut uses the measured `B` instead and is therefore conditional on it.
 
 ## What this establishes, and what it does not
 
@@ -69,16 +83,20 @@ and the answer is `(8, 8)` with `Xbot` replaced by `Xblock`.
 
   G2  `sup_s Xblock(s) = 2.1598023761182859616035` (attained at `s = 14`).  Measured over
       `s <= 26` with the caps lifted to 24/12 and the argmax using at most length 18 and entry
-      4 — non-binding — but not proved.  `B_rig` bounds the sup rigorously and far too loosely
-      to substitute for it.
+      4 — non-binding — but not proved.  `B_sharp = 3.9214` bounds the sup rigorously at 1.82x,
+      which is close enough to be interesting and not close enough to substitute: it cuts at
+      `s_t + s_b <= 90` where the measured `B` cuts at 23, and 90 is not enumerable.  Closing
+      G2 is therefore the same thing as tightening `B_sharp` by a factor under two — which is
+      the most tractable-looking open item in this file.
 
 Neither gap is the arc's headline open problem, which remains the upper bound on `M_n`.
 
 ## Checks
 
   S1  the per-term convexity inequality holds on a wide grid, both signs of `D`
-  S2  the assembled bound is never violated, on every block of the enumerated class
-  S3  `B_rig` is finite and explicit, and gives an unconditional cut on `s_t + s_b`
+  S2  both assembled bounds hold on every block of the enumerated class, and the per-row
+      route is far tighter — which locates the loss in the Cauchy-Schwarz step
+  S3  the uniform bound is finite and explicit, and gives an unconditional cut on `s_t + s_b`
   S4  the marginal is NOT monotone — it re-crosses `ln q0/2` upward at `s = 11`
   S5  `Xblock` peaks at `s = 14`, but the join's argmax is `s = 8`: the block gives up 0.194
       of its own maximum to shorten the run by 12
@@ -162,10 +180,26 @@ def xrun(ell: int) -> mp.mpf:
     return mp.fsum(min(d, ell) * T_KERNEL[d - 1] for d in range(1, DEPTH4)) - LNQ_HALF * ell
 
 
-def bound(u) -> mp.mpf:
-    """`S_1 - G_1 + G_half sqrt(N) - (ln q0/2) N`, the assembled coercivity bound."""
+GHAT = {m: mp.fsum(g(d) for d in range(m, DEPTH2)) for m in range(1, DEPTH2)}
+B_SHARP = mp.fsum(GHAT[m] ** 2 for m in range(1, DEPTH2)) / (2 * LNQ)
+
+
+def bound_cs(u) -> mp.mpf:
+    """`S_1 - G_1 + G_half sqrt(N) - (ln q0/2) N`, the Cauchy-Schwarz route."""
     N = sum(x * x for x in u)
     return S_1 - G_1 + G_HALF * mp.sqrt(N) - LNQ_HALF * N
+
+
+def bound_row(u) -> mp.mpf:
+    """`sum_i [ u_i Ghat(i+1) - (ln q0/2) u_i^2 ]`, the per-row route.
+
+    Summing the linearisation by ROW rather than by pair distance telescopes to a single
+    coefficient per row, and that coefficient has a reading: row `i` counted from the free top
+    edge only ever sees distances `>= i + 1` on its way down to the bulk, so the most it can
+    gain per unit of displacement is `Ghat(i+1) = sum_{d >= i+1} |eps'(2d)|`.  Each row is then
+    a downward parabola in its own `u_i` and the whole thing maximises termwise.
+    """
+    return mp.fsum(u[i] * GHAT[i + 1] - LNQ_HALF * u[i] * u[i] for i in range(len(u)))
 
 
 # --------------------------------------------------------------------------------------------
@@ -283,50 +317,68 @@ def exact_block(u) -> mp.mpf:
     return sc(tot)
 
 
-_s2_viol = 0
-_s2_tight = None
+_s2_viol_cs = _s2_viol_row = 0
+_s2_tight_cs = _s2_tight_row = None
 for _s, (_val, _prof) in sorted(_tbl_c.items()):
-    _v, _b = sc(_val), bound(_prof)
-    if _v > _b:
-        _s2_viol += 1
-    if _s2_tight is None or _b - _v < _s2_tight[0]:
-        _s2_tight = (_b - _v, _s, _prof)
+    _v = sc(_val)
+    _bc, _br = bound_cs(_prof), bound_row(_prof)
+    if _v > _bc:
+        _s2_viol_cs += 1
+    if _v > _br:
+        _s2_viol_row += 1
+    if _s2_tight_cs is None or _bc - _v < _s2_tight_cs[0]:
+        _s2_tight_cs = (_bc - _v, _s, _prof)
+    if _s2_tight_row is None or _br - _v < _s2_tight_row[0]:
+        _s2_tight_row = (_br - _v, _s, _prof)
 print(f"    checked the argmax at each of {len(_tbl_c)} block sums (from {_nodes_c} enumerated "
       f"blocks)")
-print(f"    tightest slack {mp.nstr(_s2_tight[0], 8)} at s = {_s2_tight[1]}, "
-      f"{list(_s2_tight[2])}", flush=True)
+print(f"    Cauchy-Schwarz route: {_s2_viol_cs} violations, tightest slack "
+      f"{mp.nstr(_s2_tight_cs[0], 8)} at {list(_s2_tight_cs[2])}")
+print(f"    per-row route:        {_s2_viol_row} violations, tightest slack "
+      f"{mp.nstr(_s2_tight_row[0], 8)} at {list(_s2_tight_row[2])}", flush=True)
 check(
-    "S2 the coercivity bound is never violated",
-    _s2_viol == 0,
-    f"0 violations over {len(_tbl_c)} per-sum maximisers drawn from {_nodes_c} enumerated "
-    f"blocks; tightest slack {mp.nstr(_s2_tight[0], 6)}.  The bound is checked against the "
-    f"maximiser at each sum, which is where it is tightest — a bound that survives the argmax "
-    f"survives everything below it at that sum",
+    "S2 both coercivity bounds hold, and the per-row one is far tighter",
+    _s2_viol_cs == 0 and _s2_viol_row == 0 and _s2_tight_row[0] < _s2_tight_cs[0],
+    f"0 violations of either bound over {len(_tbl_c)} per-sum maximisers drawn from "
+    f"{_nodes_c} enumerated blocks.  Tightest slack {mp.nstr(_s2_tight_cs[0], 6)} for the "
+    f"Cauchy-Schwarz route against {mp.nstr(_s2_tight_row[0], 6)} for the per-row one — a "
+    f"factor {mp.nstr(_s2_tight_cs[0] / _s2_tight_row[0], 5)}, which locates the loss: it is "
+    f"the Cauchy-Schwarz step `top_d <= sqrt(d N)`, applied once per distance, that counts the "
+    f"same top rows over and over.  Summing by ROW instead never introduces it.  Both are "
+    f"checked at the maximiser of each sum, which is where a bound is tightest",
 )
 print(flush=True)
 
 # --------------------------------------------------------------------------------------------
-print("S3  the rigorous uniform bound and the unconditional cut")
-print(f"    S_1    = sum_d d eps(2d)         = {mp.nstr(S_1, 24)}")
-print(f"    G_1    = sum_d d g(d)            = {mp.nstr(G_1, 24)}")
-print(f"    G_half = sum_d sqrt(d) g(d)      = {mp.nstr(G_HALF, 24)}")
-print(f"    N*     = (G_half / ln q0)^2      = {mp.nstr(N_STAR, 24)}")
-print(f"    B_rig  = S_1 - G_1 + G_half^2/(2 ln q0) = {mp.nstr(B_RIG, 24)}")
+print("S3  the rigorous uniform bounds and the unconditional cut")
+print(f"    S_1     = sum_d d eps(2d)        = {mp.nstr(S_1, 24)}")
+print(f"    G_1     = sum_d d g(d)           = {mp.nstr(G_1, 24)}")
+print(f"    G_half  = sum_d sqrt(d) g(d)     = {mp.nstr(G_HALF, 24)}")
+print(f"    Ghat(1) = sum_d g(d)             = {mp.nstr(GHAT[1], 24)}")
+print(f"    B_rig   = S_1 - G_1 + G_half^2/(2 ln q0)  = {mp.nstr(B_RIG, 24)}")
+print(f"    B_sharp = sum_m Ghat(m)^2 / (2 ln q0)     = {mp.nstr(B_SHARP, 24)}")
 _thresh_rig = E_INF_7335 - 2 * B_RIG
 _L_RIG = max(ell for ell in range(1, 4000) if xrun(ell) > _thresh_rig)
-print(f"    unconditional: a winner needs Xrun(ell) > e_inf - 2 B_rig = "
-      f"{mp.nstr(_thresh_rig, 12)}")
-print(f"    largest such ell = {_L_RIG}  =>  s_t + s_b <= {_L_RIG}", flush=True)
+_thresh_sharp = E_INF_7335 - 2 * B_SHARP
+_L_SHARP = max(ell for ell in range(1, 4000) if xrun(ell) > _thresh_sharp)
+print(f"    unconditional cut, B_rig:   Xrun(ell) > {mp.nstr(_thresh_rig, 12):16s} "
+      f"=>  s_t + s_b <= {_L_RIG}")
+print(f"    unconditional cut, B_sharp: Xrun(ell) > {mp.nstr(_thresh_sharp, 12):16s} "
+      f"=>  s_t + s_b <= {_L_SHARP}", flush=True)
 check(
     "S3 the maximisation is coercive: only finitely many (s_t, s_b) can win",
-    mp.isfinite(B_RIG) and _L_RIG < 4000 - 1,
-    f"B_rig = {mp.nstr(B_RIG, 20)} bounds EVERY valid block, with no cap on its length or its "
-    f"entries and no fitted constant anywhere in the chain.  Since Xrun falls linearly at "
-    f"-ln q0/2 per unit, that forces s_t + s_b <= {_L_RIG}.  This is the part that needs no "
+    mp.isfinite(B_SHARP) and _L_SHARP < _L_RIG,
+    f"B_sharp = {mp.nstr(B_SHARP, 20)} bounds EVERY valid block, with no cap on its length or "
+    f"its entries and no fitted constant anywhere in the chain.  Since Xrun falls linearly at "
+    f"-ln q0/2 per unit, that forces s_t + s_b <= {_L_SHARP}.  This is the part that needs no "
     f"measurement: the search space is finite as a matter of the inequality, not of the table.  "
-    f"It is also CRUDE — B_rig is {mp.nstr(B_RIG / mp.mpf('2.1598023761182859616'), 4)}x the "
-    f"measured maximum, and {_L_RIG} is far past any enumeration, so it settles finiteness and "
-    f"not the value",
+    f"The per-row route beats the Cauchy-Schwarz one by "
+    f"{mp.nstr(B_RIG / B_SHARP, 5)}x ({mp.nstr(B_RIG, 8)} -> {mp.nstr(B_SHARP, 8)}, cut "
+    f"{_L_RIG} -> {_L_SHARP}) and it is the more legible of the two: row i counted from the "
+    f"free top edge only sees distances >= i+1 on its way to the bulk, so `Ghat(i+1)` is the "
+    f"most it can gain per unit.  It is STILL NOT ENUMERABLE — {_L_SHARP} is far past any "
+    f"feasible search, and {mp.nstr(B_SHARP / mp.mpf('2.1598023761182859616'), 4)}x the "
+    f"measured maximum — so this settles finiteness and not the value",
 )
 print(flush=True)
 
@@ -480,7 +532,9 @@ print(flush=True)
 
 # --------------------------------------------------------------------------------------------
 print(f"  e_inf = {mp.nstr(_best_j, 30)}  at (s_t, s_b) = (8, 8)")
-print(f"  reduced search space: s_t + s_b <= {_L_CUT} (measured B) or <= {_L_RIG} (rigorous)")
+print(f"  reduced search space: s_t + s_b <= {_L_CUT} (measured B = {mp.nstr(_B_meas, 12)}), "
+      f"<= {_L_SHARP} (rigorous B_sharp = {mp.nstr(B_SHARP, 12)}), "
+      f"<= {_L_RIG} (B_rig = {mp.nstr(B_RIG, 12)})")
 print(f"  remaining gaps: G1 Xbot <= Xblock;  G2 sup_s Xblock = {mp.nstr(_B_meas, 24)}")
 print()
 
@@ -510,13 +564,21 @@ _wit = {
         "eps_depth": DEPTH2, "T_depth": DEPTH4,
         "S_1": mp.nstr(S_1, 30), "G_1": mp.nstr(G_1, 30), "G_half": mp.nstr(G_HALF, 30),
         "N_star": mp.nstr(N_STAR, 30), "B_rigorous": mp.nstr(B_RIG, 30),
+        "Ghat_1": mp.nstr(GHAT[1], 30), "B_sharp": mp.nstr(B_SHARP, 30),
     },
     "coercivity_S3": {
         "per_term": "eps(2d) - eps(2d+D) <= g(d) D  for every sign of D,  g(d) = |eps'(2d)|",
-        "assembled": "Xblock(u) <= S_1 - G_1 + G_half sqrt(N) - (ln q0/2) N,  N = sum v^2",
-        "uniform": "B_rig = S_1 - G_1 + G_half^2 / (2 ln q0)",
+        "assembled_cauchy_schwarz":
+            "Xblock(u) <= S_1 - G_1 + G_half sqrt(N) - (ln q0/2) N,  N = sum v^2",
+        "assembled_per_row":
+            "Xblock(u) <= sum_i [ u_i Ghat(i+1) - (ln q0/2) u_i^2 ],  "
+            "Ghat(m) = sum_{d>=m} |eps'(2d)|",
+        "uniform_cauchy_schwarz": "B_rig = S_1 - G_1 + G_half^2 / (2 ln q0)",
+        "uniform_per_row": "B_sharp = sum_m Ghat(m)^2 / (2 ln q0)",
         "B_rigorous": mp.nstr(B_RIG, 30),
-        "unconditional_ell_cut": _L_RIG,
+        "B_sharp": mp.nstr(B_SHARP, 30),
+        "unconditional_ell_cut": _L_SHARP,
+        "unconditional_ell_cut_cauchy_schwarz": _L_RIG,
         "measured_B": mp.nstr(_B_meas, 30), "measured_B_at_s": _s_peak,
         "measured_ell_cut": _L_CUT,
         "crudeness_factor": mp.nstr(B_RIG / _B_meas, 10),
