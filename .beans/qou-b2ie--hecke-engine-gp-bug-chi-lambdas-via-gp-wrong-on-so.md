@@ -196,3 +196,63 @@ record.
 
 **Still open:** the 3 un-run producers, the 28-cell discriminator, and the
 output-path fix to the triage.
+
+## 2026-09-14 (settled) — the 30/30 → 2/30 move is NOT a GP bug. The braid word changed.
+
+Chased to a cause. **It is not this bean's.**
+
+### The decisive signature
+
+Of 30 partitions of `n = 9`, exactly **2** still match, and they are
+
+    lambda = (9,)                    ->  q^35    ( +70 in half-exponents)
+    lambda = (1,1,1,1,1,1,1,1,1)     -> -q^-35   ( -70 in half-exponents)
+
+the **trivial and sign representations** — the only two whose character depends
+on nothing but the **writhe**. Every cell that can distinguish one braid word
+from another disagrees; the only two that cannot, agree. That is not what a
+kernel bug looks like; it is what comparing two *different words of equal
+writhe* looks like.
+
+### Confirmed directly — the catalogue records the word it used
+
+    CATALOGUE braid_word : sigma_1·sigma_1·sigma_1·sigma_1·sigma_1·sigma_1·sigma_1·sigma_2·… (35 crossings)
+    TODAY     braid_word : sigma_1·sigma_2·sigma_1·sigma_2·sigma_1·sigma_2·sigma_1·sigma_1·… (35 crossings)
+                           >>> DIFFERENT <<<
+
+**Grouped** then, **interleaved** now — same 35 crossings, same writhe `+35`.
+Both sides pass the exact trivial-rep identity `chi_[n](T_b) = q^writhe`, and
+`chi_gp_trivial_rep_consistent` returns `True`, so **neither** the stored table
+nor the fresh one is wrong in the way this bean's guard detects.
+
+### Mechanism, and it belongs to another bean
+
+`derivation_ref` names `atom_braid_word_3A` from
+`computations/mass_at_3A_proper.py` — and that is still where it lives. Four
+commits have touched that file since the catalogue was built, three of them
+`qou-5c64`, whose own messages are about **grouped vs interleaved** bond
+ordering ("grouped reproduces ANY pre-2026-09-05 number"). So the word changed
+under the catalogue; the kernel did not change under it.
+
+**Consequence.** The committed `derived-chi-catalogue-production-wire-demo`
+witness is **stale w.r.t. the word convention**, not wrong w.r.t. the GP kernel,
+and its "30/30 cells match" is a true statement about a word that is no longer
+the production word. Refreshing it is `qou-5c64`'s arc, not this one — and per
+the note above, not from this container.
+
+### Two wrong turns of mine on the way here, both caught before they landed
+
+- **"The stored table is degenerate."** I read `(7,2)` and `(7,1,1)` as having
+  *identical* stored characters, and `(6,3)`/`(6,2,1)` as exactly `2:1`
+  proportional, and was about to report that as evidence the stored side was
+  broken. Both were artifacts of reading the **first six terms** of truncated
+  output. Measured over the full polynomials: **0 identical pairs and 0
+  proportional pairs, in BOTH tables.** Retracted before publication.
+- **"The generator moved to `_deprecated/`."** A grep for
+  `def atom_braid_word_3A` matched `atom_braid_word_3A_sdp_gluon` in
+  `_deprecated/atom_braid_sdp_gluon.py` — a **different function sharing the
+  prefix**. The real generator never moved. Anchoring a grep to a `def` line is
+  not anchoring it to a *name*.
+
+**Still open for THIS bean:** the 3 un-run producers of the risk set, and the
+output-path fix that would replace the substring attribution.
