@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-14T06:22:01Z
+updated_at: 2026-09-14T08:14:55Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1227,3 +1227,55 @@ solved and class 2 is not.
 
 Branch claude/ptolemy-lex-free-stage2-2026-09-14; issue #7346. Bean stays OPEN
 (rule 13a) -- the general duality identification is still a conjecture.
+
+
+### 2026-09-14 — `5_2` class 1 answered, on BOTH orbits, and the test finally SELECTS
+
+Three things landed, in dependency order.
+
+**1. The producer was discarding every Galois orbit but the first** (`674c2b6307`).
+`ptolemy_exact_point.py` printed *"the variety is NOT a single Galois orbit, so a
+per-point result does not upgrade to 'for all x' for free"* and then wrote
+`to_point_json(genuine[0])` into one file. Orbit 1 of `5_2` class 1 had no
+addressable artifact at all, so the one inference the NOTE forbids was the only one
+a consumer could make. Each genuine orbit now gets its own point file plus a
+`provenance.orbit_index`; orbit 0 keeps the unsuffixed name, so no committed
+artifact moves.
+
+**2. `Aut(K/Q)` was the reason the duality probe could not run on `5_2`**
+(`350e00d152`). It solved `f(g(t)) = 0 mod f` for the `deg` coefficients of `g` —
+`deg` equations of degree `deg` in `deg` unknowns, a Groebner basis inside
+`sp.solve`. Two runs on the degree-4 orbit were killed at 25 and 40 minutes with no
+output past the header. Factoring `f` over `K` and reading the linear factors gives
+the same set: 0.025 s / 0.082 s / 0.316 s at degrees 2 / 4 / 6. Evidenced by route
+agreement on `m004`, an unchanged `m004` calibration witness, `assert`ed group
+axioms mod `f` on every run, and recorded element orders.
+
+**3. The answer, per orbit — and they cannot be pooled.**
+
+- **Orbit 0**, `[K:Q] = 4`, `|Aut| = 4`, orders `[1,2,2,2]` => `Gal(K/Q) = V_4`.
+  **Exactly one of the three involutions** carries an untwisted intertwiner,
+  `FOUND(4)`, lambda = 1; the other two fail untwisted *and* twisted; the identity
+  control fails; Schur holds at dimension 4.
+- **Orbit 1**, `[K:Q] = 6`, `|Aut| = 2` => `K/Q` **not normal**, orders `[1,2]`.
+  The unique non-identity sigma carries an untwisted intertwiner, `FOUND(6)`,
+  lambda = 1; control fails; Schur holds at dimension 6.
+
+**Why orbit 0 is the first informative run.** `m004` and L6a4 class 1 both have
+`|Aut| = 2`, so their single candidate succeeding is equally consistent with *"any
+non-identity sigma works"*. Three involutions and one success is a genuine
+selection.
+
+**This does NOT close the bean, and the gap is sharper than before.** Two open
+items, both raised BY this measurement rather than settled by it:
+
+- **Which invariant distinguishes the winning involution in `V_4`?** The
+  measurement says one of three is special; it does not say why. Until that is
+  identified, "the duality sigma" is a name for something located by search.
+- **Orbit 1 has an intertwiner but no transport argument.** `K/Q` is not normal
+  there, so the `C_2` is not a quotient of a Galois group acting on all six roots.
+  The orbit-0 upgrade route is unavailable on orbit 1 even though the conclusion
+  looks the same.
+
+Audit: `docs/audits/2026-09-14-ptolemy-lex-free-stage2-and-the-l6a4-gb-wall.md`
+sections 5a-5c.
