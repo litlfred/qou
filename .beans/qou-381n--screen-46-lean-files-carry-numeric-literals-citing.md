@@ -4,7 +4,7 @@ title: 'SCREEN: 46 Lean files carry numeric literals citing a producer whose wit
 status: todo
 type: task
 created_at: 2026-09-14T20:56:23Z
-updated_at: 2026-09-14T21:20:55Z
+updated_at: 2026-09-14T21:30:15Z
 ---
 
 
@@ -328,3 +328,88 @@ checks. C is honest and cheap; A extends it wherever the arithmetic is exact.
 
 Tally unchanged at **2 of 22 decided** — and now with a reason the other 20 are
 not merely unchecked but **uncheckable here**.
+
+---
+
+## 2026-09-14 (later still) — the ranking was inflated by arXiv IDs, and my first fix for it did not work
+
+### Option A: only 3 of the 22 are exactly computable — and that is why the one confirmed defect was confirmable
+
+The `--env` split says 0 of 22 have a matching environment. But **an environment
+difference only matters if the producer uses the differing package**, and the
+differences are `mpmath` (9), `pyhecke_native_build` (4) and one
+python/numpy/scipy case — **`sympy` matched everywhere it was recorded**. So a
+producer computing only in sympy exact arithmetic is interpretable here whatever
+its witness's environment block says about packages it never calls.
+
+Classified by import cone (producer + local one-hop):
+
+```
+EXACT   (no mpmath/numpy/scipy/native)  ->  re-runnable here :  3
+INEXACT (uses at least one)             ->  confounded       : 19
+```
+
+`jet_order_pivots` is one of the 3. **That is why its defect was confirmable at
+all** — sympy Rationals end to end, no compiled extension, no float. A useful
+internal consistency check on the method, not a coincidence.
+
+Of the 19, **17 fail on `mpmath` alone**, which this container has at 1.4.1
+against the witnesses' 1.3.0.
+
+### 🛑 Then the two other "exact" candidates turned out to be citation artifacts
+
+Their shared literals were `1208.1663` and `1906.12122` — **arXiv identifiers**,
+matching on both sides because the Lean docstring and the witness `description`
+cite the same paper:
+
+```
+M004AngleStructure.lean:76   -- Ref: [garoufalidis2012] arXiv:1208.1663 §2.2-2.3
+witness description          1208.1663 eq (2.7) in pi-units ...
+
+T3WritheVsDeltaLambdaSign:23 Hammer-Koenig-van Kolck arXiv:1906.12122 p.12
+witness description          1906.12122 p.12: Pauli principle => isospin sign ...
+```
+
+**Shared bibliography is the single likeliest thing a Lean docstring and a
+witness description have in common**, so without a filter the ranking is
+inflated by citations. Section and equation numbers (`§2.2-2.3`, `Sec 2.2`,
+`eq (2.7)`) are the same class. This is an **over-matching** blind spot — it
+fails to a false hit rather than a false all-clear, which is the rarer and
+easier-to-catch direction.
+
+### 🛑 And my first fix for it silently did nothing
+
+The filter shipped with `(?:arXiv|arxiv)\s*:\s*\d` in an alternation applied to
+the text **immediately before** the matched number. The digit in that pattern
+*is* the matched number, so it is never in the prefix — **that branch could
+never fire**. The anchored section branch worked (which is why `2.2` dropped and
+`1208.1663` did not), and **the corpus-wide counts did not move at all**, so
+nothing revealed it but re-reading the ranked list by hand.
+
+Fixed by anchoring every alternative with `$`. Both arXiv IDs are now gone.
+**Five predicate unit cases are pinned in `--selftest`** so the branch cannot
+silently die again — the counts were not a detector for it, and would not be.
+
+### What the corrected ranking says
+
+The split is **still 22 / 24** — removing literals changes counts, not buckets,
+unless a file drops to zero. But the top changes:
+
+| Lean file | shared, corrected |
+|---|---|
+| `JetOrderIndependence` | `1/16 1/2 1/4 1/8 55/16` — **5/5, confirmed** |
+| `DepthStratifiedWeightRequirements` | `0.991 1.111 1.517 6/9` — 4/4, Lean-side clean |
+| `ModularDoubleReciprocity` | `0.0 0.00187 0.10434 378.3` — 4/7 |
+| `M004AngleStructure` | `1/2 1/3` — was 4/4, now **2/3** |
+| `T3WritheVsDeltaLambdaSign` | `4/5` — was 2/2, now **1/2** |
+
+**So after removing citations, the only candidate with both a strong literal
+signal and an exactly re-runnable producer is the one already confirmed.** The
+other two exact ones now share only generic small rationals (`1/2`, `1/3`,
+`4/5`) — what chance produces. That is a negative, and it is the useful kind: in
+this container the screen's actionable surface is essentially exhausted at one.
+
+Both are still worth running, being cheap and interpretable, and that is the
+next step rather than a conclusion.
+
+Tally: **2 of 22 decided**, 3 exactly checkable here, 19 environment-blocked.

@@ -202,10 +202,44 @@ def scan() -> tuple[list[tuple], dict]:
 # (different precision, symbolic form).
 # --------------------------------------------------------------------------
 
+# Tokens that LOOK like decimals but are identifiers, not data. Found the hard
+# way (2026-09-14): the two highest-ranked "exact, re-runnable" candidates after
+# the known positive shared `1208.1663` and `1906.12122` with their witnesses --
+# both arXiv IDs, matching on both sides because the Lean and the witness cite
+# THE SAME PAPER. Shared bibliography is the single likeliest thing a Lean
+# docstring and a witness description have in common, so without this the
+# ranking is inflated by citations. Section and equation numbers (`§2.2-2.3`,
+# `Sec 2.2`, `eq (2.7)`) are the same class. This is an OVER-matching blind spot:
+# it fails to a false hit rather than a false all-clear.
+_CITATION_CTX = re.compile(
+    # Applied to the text IMMEDIATELY BEFORE the number, so every alternative
+    # must be anchored with `$`. An unanchored `arXiv\s*:\s*\d` cannot fire here
+    # -- the digit is the matched number, not part of the prefix. That bug shipped
+    # in the first version of this filter and was caught only by re-running.
+    r"(?:arXiv|arxiv)\s*:\s*$|"                              # arXiv:1208.1663
+    r"(?:§|Sec(?:tion)?\.?|[Pp]\.|[Ee]q\.?\s*\()\s*$"        # §2.2, Sec 2.2, eq (2.7)
+)
+_TRIVIAL_RATIO = re.compile(r"^(\d+)/\1$")   # 3/3, 1/1 -- carries no information
+
+
+def _data_literals(text: str) -> set[str]:
+    """Numeric literals with citation identifiers and trivial ratios removed."""
+    out = set()
+    for m in NUM.finditer(text):
+        tok = m.group(0).replace(" ", "")
+        if _TRIVIAL_RATIO.match(tok):
+            continue
+        before = text[max(0, m.start() - 24):m.start()]
+        if _CITATION_CTX.search(before):
+            continue
+        out.add(tok)
+    return out
+
+
 def _witness_numbers(wpath: Path) -> set[str]:
     """Numeric-looking tokens anywhere in the witness, normalised."""
     txt = (ROOT / wpath).read_text()
-    out = {m.replace(" ", "") for m in re.findall(r"-?\d+\.\d+|-?\d+\s*/\s*\d+", txt)}
+    out = _data_literals(txt)
     try:
         d = json.loads(txt)
     except Exception:
@@ -232,7 +266,7 @@ def stage2(rows):
     """Split stage-1 rows into (needs_run, pointer), ranked by shared literals."""
     needs, pointer = [], []
     for lf, prod, wpath, wh, lh, n in rows:
-        lits = {x.replace(" ", "") for x in NUM.findall((ROOT / lf).read_text())}
+        lits = _data_literals((ROOT / lf).read_text())
         shared = sorted(lits & _witness_numbers(wpath))
         (needs if shared else pointer).append((lf, prod, wpath, shared, len(lits)))
     needs.sort(key=lambda r: -len(r[3]))
@@ -313,6 +347,28 @@ def main(argv: list[str]) -> int:
     rows, stats = scan()
 
     if selftest:
+        # Predicate unit cases. The citation filter shipped BROKEN once -- an
+        # unanchored `arXiv\s*:\s*\d` applied to prefix text, which can never
+        # fire -- and the whole-corpus counts did not move, so nothing revealed
+        # it but a by-hand re-read of the ranked list. These pin it.
+        cases = [
+            ("-- Ref: [g2012] arXiv:1208.1663 (angle structures)", set()),
+            ("van Kolck arXiv:1906.12122 p.12) admits two readings", set()),
+            ("eq (2.7) in pi-units", set()),
+            ("a ratio of 3/3 and 4/5", {"4/5"}),
+            ("!![1/4, -1, 55/16; 1/2, 0, -1/16; 1, 0, 0]",
+             {"1/4", "55/16", "1/2", "1/16"}),
+        ]
+        bad = [(t, exp, got) for t, exp in cases
+               if (got := _data_literals(t)) != exp]
+        print("selftest: citation/trivial-ratio filter")
+        for t, exp, got in bad:
+            print(f"  FAIL {t!r}\n       expected {sorted(exp)} got {sorted(got)}")
+        if bad:
+            print("FAIL — the literal filter regressed.")
+            return 1
+        print(f"          {len(cases)}/{len(cases)} predicate cases PASS")
+
         hit = any(
             str(r[0]).endswith(SELFTEST_LEAN) and str(r[1]) == SELFTEST_PRODUCER
             for r in rows
