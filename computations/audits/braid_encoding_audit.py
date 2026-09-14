@@ -632,6 +632,22 @@ def main() -> int:
     #     two findings). Asserted at 1e-3, four orders looser than the
     #     derivation's own claimed tolerance, so this is not a tight-tolerance
     #     artifact.
+    # UPDATE 2026-09-13 (bean qou-4383). The assembly-chain side of this
+    # comparison moved from the grouped-era 1.145759692457300869689081 to the
+    # canonical 0.629328402202922, because
+    # markov-trace-assembly-proton.derivation.json now has a live builder on
+    # the canonical 11-letter element (bean qou-nhkv). It was an ORPHAN before,
+    # frozen in the pre-ruling frame.
+    #
+    # THIS ASSERTION STILL FAILS, AND THE GAP WIDENED — 43.46% -> ~67%. That is
+    # not a regression, and the fix is not to loosen it. The OTHER side,
+    # `phase_1_6_closed_form` = 1.884319467…, is computed on the ALL-POSITIVE
+    # sigma^7 sigma^4 word, which `trm_proton_five_values_census` (bean
+    # qou-soj6) established is a DIFFERENT element of H_3(q) from the canonical
+    # one — {sigma: 6, sigma_inv: 3, averaged: 2}. So the two sides were never
+    # computing the same object, and the assembly side simply stopped sharing
+    # the other's error. Closing this needs the option-b side recomputed on the
+    # canonical word, not a tolerance.
     if _ob is not None and _ch is not None:
         w.add_assertion(
             "the two independent tr_M(p,q0) derivations agree",

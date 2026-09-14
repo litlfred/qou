@@ -1,0 +1,109 @@
+{
+  "engine": "/home/user/qou/computations/qbeta/qbeta_phib_dual_validity_window_probe.py",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T16:59:41.069684+00:00",
+  "commitSha": "4c6c247ea76bc8bb18b14b47fd864e8d80417eeb",
+  "assertions": [
+    {
+      "name": "dual_phase_factor_matches_the_derived_form",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "k=0 dual phase computed (6.91893898351e-83 - 1.39673598121e-141j) vs derived e^-|log q~|/2 = 6.91893898351e-83; rel 4.45424e-59. It is REAL and positive, so the suppression is a pure modulus effect -- confirming (i) from the b-map rather than assuming it."
+    },
+    {
+      "name": "reciprocity_reproduced_independently_of_its_own_producer",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "|log q| * |log q~| = 39.47841760435743447533796 vs 4pi^2 = 39.47841760435743447533796; rel 0.0. Recomputed here from the b-map alone, matching qbeta_modular_double_reciprocity."
+    },
+    {
+      "name": "k0_inversion_reproduces_the_full_product_as_derived",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the derived z*(d) of (*) lands the measured |D_b(z*)-1| within 3.09615e-13 decades of its 10^-d target at d=16,30,50. This CONFIRMS the derivation rather than testing it: successive k differ by exp(-4pi^2/t) = 10^-164.32, so the k>=1 tail was known to be irrelevant before measuring, and the ratios are 1.0 for that reason. What it rules out is an algebra slip in (*). The window formula is derived from the b-map, not fitted to these three points; the residual is the k>=1 tail plus the linearisation of log(1+x)."
+    },
+    {
+      "name": "inside_the_window_Phi_b_IS_the_compact_half_product",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "at z = z*(50)/2 = 1.07392341193 the dual half departs from 1 by 5.1887379e-67. So at the substrate, inside the window, Phi_b and the corpus's compact half-product are the SAME function -- an alpha-derivation evaluating Phi_b there is using the compact object and the modular double is invisible to it."
+    },
+    {
+      "name": "outside_the_window_the_dual_is_NOT_negligible",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "at z = 2*z*(0) = 10.9743300344 the dual half departs from 1 by 1.445308309e+82 -- order 1 or larger. 'q~ = 4.8e-165, therefore drop the dual half' is FALSE as a global statement; the suppression is a modulus that the e^{2 pi z / b} growth overcomes, since |1/b| = 7.760023186 at this substrate."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-phib-dual-validity-window",
+  "scriptFile": "qbeta_phib_dual_validity_window_probe.py",
+  "scriptHash": "8f6a73e266ad",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_phib_dual_validity_window_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_phib_dual_validity_window_probe.py"
+  },
+  "description": "The z-window in which the modular-dual half of Faddeev Phi_b is numerically inert at the real substrate. Derived from the corpus b-map (b = sqrt(t/2pi) e^{+i pi/4}, t = ln q0): the k-th dual factor departs from 1 by exp(-(4pi^2/t)(k+1/2) + 2 pi z Re(1/b)), giving z*(d) = [(4pi^2/t)/2 - d ln10] / (2 pi Re(1/b)). Measured against direct evaluation at d=16,30,50. For qou-pdix attack B: inside the window Phi_b IS the compact half-product, so an alpha derivation evaluating Phi_b at the substrate there cannot see the modular double at all. Corrects the reading that q~ ~ 4.8e-165 licenses dropping the dual half globally -- it does not, because |1/b| ~ 7.76 makes e^{2 pi z / b} grow. Scope (a), b_+ branch.",
+  "bean": "qou-pdix",
+  "q0Anchor": "proton",
+  "derived_window_formula": "z*(d) = [(4 pi^2 / ln q0)/2 - d*ln(10)] / (2 pi Re(1/b))",
+  "constants": {
+    "q0": "1.109978582751380807591669095610768879874",
+    "t_ln_q0": "0.1043407203195195123159062799730723970537",
+    "abs_log_qtilde_4pi2_over_t": "378.3606005734275161275769811011469764693",
+    "re_b_inverse": "5.487165017223338348766665645037805151403",
+    "abs_b_inverse": "7.760023186336442775624365098871146012213",
+    "growth_slope_2pi_re_binv": "34.4768746142875020842111749676561531535"
+  },
+  "window_table": [
+    {
+      "decades_d": 16,
+      "z_star_derived": "4.4185831953479481144",
+      "measured_departure": "1.0e-16",
+      "target_10^-d": "1.0e-16",
+      "ratio_measured_over_target": "1.0"
+    },
+    {
+      "decades_d": 30,
+      "z_star_derived": "3.4835741012069816593",
+      "measured_departure": "1.0e-30",
+      "target_10^-d": "1.0e-30",
+      "ratio_measured_over_target": "1.0"
+    },
+    {
+      "decades_d": 50,
+      "z_star_derived": "2.1478468238627438663",
+      "measured_departure": "9.99999999999e-51",
+      "target_10^-d": "1.0e-50",
+      "ratio_measured_over_target": "0.999999999999"
+    }
+  ],
+  "scope": "(a) scope-limited: the b_+ substrate branch under the corpus's own b-map and product convention. REFINES rather than refutes qbeta_fmap_modular_dual_missing_probe, which already concludes 'dual negligible at the substrate' from |q~| alone and states no z-restriction; what is added is that the restriction exists, is needed, and is closed-form. Does NOT weaken Phi_b routes at |q| = 1 -- that same probe measures |q~| = 1 there, the dual IS order-one, and that is where the Q_beta decay saddle sits. Asserts nothing about alpha."
+}
