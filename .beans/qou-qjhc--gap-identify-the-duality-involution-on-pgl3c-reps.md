@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-13T14:55:00Z
+updated_at: 2026-09-14T06:22:01Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1196,3 +1196,34 @@ is the same ported code with a different input.
 
 Probe: `computations/ptolemy/ptolemy_second_manifold_cost.py`. Bean stays open under rule 13a.
 
+## 2026-09-14 — the 5_2 wall was an algorithm choice, not the container
+
+`5_2` class 1 is EXTRACTED on a 16 GB container. The previous record — mine —
+said it needed a bigger machine on the strength of 7.9 GB RSS at 717 s. That
+measured the symptom. Stage 2 was asking Singular for a LEX Groebner basis of
+(eqs, T-lin, h) in a 12-variable ring over Q, and lex is where rational
+coefficients explode; `stdfglm` makes the lex basis cheaper to reach but still
+builds it.
+
+Nothing downstream needs a lex basis. Where T is primitive the shape lemma gives
+{1, T, ..., T^(d-1)} as a basis of the component ring, so each coordinate comes
+from DEGREVLEX normal forms plus one small exact linear solve. Measured: deg-4
+component 14.9 s, deg-6 component 17.9 s, Singular RSS 15 MB (sampled).
+
+STRUCTURAL FINDING, and it constrains the arc: `5_2` class 1 has TWO genuine
+Galois orbits (degrees 4 and 6), where L6a4 class 1 has one. PR #7290 section 1
+upgrades per-point to for-all-x by 'four distinct points in a degree-4
+zero-dimensional scheme leaves no room -- the orbit IS the whole variety'. That
+argument does NOT transfer to `5_2`: a per-point result upgrades only within one
+orbit, and the two orbits must be tested separately.
+
+Also added: coordinates are now back-substituted into the Ptolemy equations mod
+h(T) before a point is written. NEITHER route verified its own output before.
+
+Corrected here too: both L6a4 classes are 27 variables / 33 equations. The
+earlier note calling class 2 'a variable-count wall (27 vs 7)' was comparing
+L6a4 to m004, not class 1 to class 2, so it does not explain why class 1 is
+solved and class 2 is not.
+
+Branch claude/ptolemy-lex-free-stage2-2026-09-14; issue #7346. Bean stays OPEN
+(rule 13a) -- the general duality identification is still a conjecture.
