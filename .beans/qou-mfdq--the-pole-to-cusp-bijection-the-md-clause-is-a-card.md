@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-14T15:56:47Z
-updated_at: 2026-09-14T15:56:47Z
+updated_at: 2026-09-14T16:51:48Z
 ---
 
 Measured 2026-09-14 while running the one cheap check that could open or close
@@ -175,3 +175,90 @@ connects the algebraic side to the geometric side cannot be literally right,
 and the Lean named for it establishes only the algebraic half. So the arc's
 joint is **stated, cited, half-proved, and mis-stated at the join** — which is
 a more useful answer than either "it's real" or "it's decorative".
+
+
+---
+
+## 🛑 CORRECTION (2026-09-14, same day): Finding 2 is a RE-REPORT, and this bean said it was not
+
+Finding 2 above asserts, in bold, **"Not a re-report."** That is **false**, and
+it merged to `main` in PR #7364 before I caught it.
+
+**`docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md`
+already contains the finding, ten days earlier, with the same reasoning and a
+proposed name.** Its §"Claim-shape defect" box, verbatim:
+
+> **🛑 Claim-shape defect — the theorem is named for something it does not
+> contain.** The wrapper is called **`pole_cusp_bijection_proved`** … **There is
+> no cusp in it, and no bijection** — it exhibits `n` roots of a polynomial. The
+> *file* is honest about this in prose …, so the defect is the **name**, which
+> is what a downstream reader greps. Anyone citing `pole_cusp_bijection_proved`
+> as evidence for L2 is citing a polynomial root-finding lemma.
+
+and its §"Two moves, in order, neither of which is research" item 1:
+
+> Also **rename `pole_cusp_bijection_proved`** to say what it proves
+> (`qPochDenom_roots_explicit` or similar) — the current name is the sort of
+> thing that gets cited as evidence for L2.
+
+So the finding, the argument, the emphasis on *the name being what a reader
+greps*, and the remedy were all already on record.
+
+### How I missed it, which is the part worth keeping
+
+**The corpus-grep did not fail. I did.** My path-1 grep
+(`pole.*cusp.*bijection\|pole-to-cusp` over `docs/`) **returned this exact file
+in its hit list**. I opened `2026-07-11-algebraic-geometric-dilog-provability.md`
+from the same list, found it discussed the pole/cusp split, satisfied myself that
+it covered a *different* (older, class-field) version, and declared novelty —
+**without opening the other hit**.
+
+That is a distinct failure from the ones this repo catalogues. The documented
+classes are *the grep missed it* (wrong words, wrong tier, wrong tree). This was
+**the grep found it and I did not read it**: a hit list treated as a checklist
+item rather than a list of things to open. The discipline says the six paths must
+return empty before declaring an item open — mine returned **five hits** on path
+1 and I read one.
+
+**Rule for next time, stated so it is checkable:** when a path returns multiple
+hits, novelty may be declared only after every hit is opened, or after each
+skipped one is named with the reason it was skipped. "I read the most relevant-
+looking one" is not a reason.
+
+### What survives, and what does not
+
+- **Finding 2 — WITHDRAWN as novel.** It is a confirmation of the 2026-09-04
+  audit, independently reached. Independent confirmation has some value; it is
+  not a finding, and this bean claimed it was.
+- **Finding 1 (the `n`-set ↔ 4-set cardinality mismatch in `.md` clause (1))** —
+  the 2026-09-04 audit discusses *scope* nearby ("L2/L3 are stated for the
+  `Φ_q`-piece `K_S`, not for general knots … a reader who takes it as a general
+  pole↔cusp statement is over-reading it") but makes **no counting argument**.
+  Believed to survive. Flagged as believed rather than established, because this
+  correction is precisely about over-claiming novelty.
+- **Finding 3 (the borrowed-name detector blind by construction)** — the
+  2026-09-04 audit does not mention `lean-borrowed-name-audit.py` at all.
+  Believed to survive, same caveat.
+
+### The rename LANDED, and it is now a documented-recommendation execution
+
+Renamed `pole_cusp_bijection_proved` → **`denomPolyLocal_roots_explicit`** (5
+occurrences in the `.lean` + 1 in the `.md`). The name follows this file's own
+convention — its siblings are `denomPolyLocal_succ` and
+`denomPolyLocal_eq_zero_at_pole` — which is within the audit's
+"`qPochDenom_roots_explicit` **or similar**" (`qPochDenom` is the generic twin in
+`lean/QOU/QBeta/QPochhammerPoles.lean`, not this file's local object).
+
+This also **changes the authorisation basis and strengthens it**: it is no longer
+an agent-proposed change awaiting a call, it is the execution of a recommendation
+the corpus already recorded — AGENTS.md §"ASK THE OWNER" exemption 2
+(*derived from the corpus*, checkable by opening the artifact it cites) — with
+the owner's explicit "rename" on top.
+
+**Dated docs deliberately left carrying the old name** (3 files, 4 lines):
+`2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md`,
+`2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md` (×3),
+`docs/coordination/2026-07-24-delta-lambda-binding-front-convergence.md`. Same
+decision as the `4.66e6` drain (`qou-3nva`): dated audits are records of their
+own analysis. Whether to mark the 2026-09-04 recommendation as landed is a
+separate, cheap call and is **not** taken here.
