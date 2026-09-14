@@ -158,7 +158,26 @@ confirmed live with a two-sided control before the verdict was trusted.
    reduction suggest, and it has not been checked.
 2. **`qou-dz1h`** — whether route (b) of §2 applies to nucleons.
 3. **`qou-6b9y`** — the XXZ `n`-string band by momentum-resolved ED.
-4. **`qou-st2v`** — disambiguate "one-dimensional", which the corpus uses for three unrelated
-   things: spatial dimension; Wedderburn/representation dimension (the ~172-hit majority in
-   `content/`); and seminormal-channel dimension (`AlphaShiftOneDimChannel.lean`). Both existing
-   "OneDimChannel" Lean files are the representation sense.
+4. **`qou-st2v`** — disambiguate "one-dimensional". **Measured**, not estimated, by
+   [`computations/audits/one_dimensional_sense_audit.py`](../../computations/audits/one_dimensional_sense_audit.py):
+   **773 hits** across `content/`, `lean`, `computations/` and `docs/`.
+
+   | sense | hits | share |
+   |---|---|---|
+   | representation / Wedderburn block | 408 | 52.8 % |
+   | **no marker disambiguates it** | 286 | 37.0 % |
+   | **spatial** | **36** | **4.7 %** |
+   | ambiguous (spatial *and* rep markers) | 27 | 3.5 % |
+   | seminormal channel | 16 | 2.1 % |
+
+   Two corrections to what this document and its PR first said. **It is at least four senses,
+   not three** — the fourth is plain linear-algebraic dimension (*"`HH² ≅ k` is one-dimensional"*,
+   *"the outer derivation space is one-dimensional"*, *"a one-dimensional solution space"*), which
+   is neither spatial, nor a Wedderburn block, nor a seminormal channel, and which is most of the
+   unclassified bucket. And **the spatial sense — the subject of this entire audit — is the
+   rarest of them, at 4.7 %**: a reader meeting the phrase should assume it is *not* spatial.
+
+   The classifier is a high-recall heuristic and its per-hit verdicts are an agent call; quote the
+   orders of magnitude, not the individual numbers as though adjudicated. **No file was renamed** —
+   a sweep is an owner decision under AGENTS.md's 2026-09-07 directive, and this is the blast
+   radius for it.
