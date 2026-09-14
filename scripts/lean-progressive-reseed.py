@@ -208,7 +208,14 @@ def main() -> int:
         oleans = m.find_oleans()
         mod2path, imports = m.load_graph()
         dirty, changed, never, untrusted = m.dirty_closure(mod2path, imports, oleans)
-        exact = p in dirty
+        # --only-exact ONLY for the library root.  For any other name `--only`
+        # is a superset -- "QOU.Hecke".startswith("QOU.Hecke") is true, so the
+        # prefix form covers the module AND its namespace.  Using --only-exact
+        # merely because the chunk name is also a module SKIPS the namespace:
+        # measured, that left 90 of the 109 residual modules unbuilt
+        # (QOU.Hecke 33, QOU.Archimedean 20, QOU.QBeta 19, QOU.BraidKnot 18),
+        # every one of them under a prefix that happens to be a module too.
+        exact = (p == "QOU")
         need = pull_in(p, exact, dirty, imports, untrusted)
         if not need:
             print(f"[{i}/{len(todo)}] {p}  already clean, skipping")
@@ -238,7 +245,7 @@ def main() -> int:
             mod2path, imports = m.load_graph()
             dirty, changed, never, untrusted = m.dirty_closure(
                 mod2path, imports, oleans)
-            exact = p in dirty
+            exact = (p == "QOU")
             need = pull_in(p, exact, dirty, imports, untrusted)
             est = len(need) * 1.2
             if not need:
