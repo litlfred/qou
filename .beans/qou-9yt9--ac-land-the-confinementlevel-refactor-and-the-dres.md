@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T08:15:54Z
+updated_at: 2026-09-14T08:23:07Z
 ---
 
 ## Landed (A + C)
@@ -337,3 +337,54 @@ Consumers verified, not assumed: shadow sweep `rebuild=3`, 3x EXIT=0.
 
 **Remaining 1**: TannakaKreinReconstruction. (TransferMatrixEigenphase is
 ledger `legit` and stays.)
+
+
+## TannakaKreinReconstruction (PR #7360, 2026-09-14) — I predicted wrong, and the LEDGER was the defect
+
+`proof-claims-unencoded` **9 -> 5** on this branch. With all three PRs: **1**
+(TransferMatrixEigenphase, ledger `legit`, stays).
+
+**I predicted this would follow the arc pattern (flagged field = smaller half).
+It does not.** This file had already had a careful honesty pass; the ledger was
+wrong about it.
+
+**The verdict describes a field that no longer exists.** Prior evidence names
+TWO fields — "monoidal_equiv, universal_property are typed with the UNIVERSE
+Prop". Commit 21bac468c6 had already replaced monoidal_equiv with
+`equiv : C = RepCat` (real DATA, a CategoryTheory.Equivalence) and renamed it so
+name and type agree.
+
+**TRAP — a ledger re-verification can RESTORE a verdict older than the sha it
+checks against:**
+
+    adjudication reviewed_at   2026-09-07T09:55:00Z
+    commit 21bac468c6          2026-09-07T19:24:51Z    <- 9.5 HOURS LATER
+
+`file_sha` records 21bac468c6. `lean-vacuity-ledger-reverify.py` compares the
+declaration against that sha — post-fix vs post-fix — reports IDENTICAL, and
+restores a PRE-fix verdict saying "the prior reading applies unchanged".
+**Cheap invariant it could check: `reviewed_at` >= commit-time-of(file_sha).**
+Reported, not fixed (someone elses tool).
+
+**Combined with the HadronFibreEmbedding finding, the ledger is now known
+unreliable in BOTH directions**: a `FIXED` verdict that was not (HFE), and a
+`genuine` verdict on an already-fixed carrier (TK). **Trust the audit run.**
+
+**Disposition: `@marker`, not a code change.** The remaining field asserts
+terminality over factorisations through Hopf-algebra representation categories.
+VERIFIED not assumed: Mathlib `RepresentationTheory.Rep` is
+`abbrev Rep (k G : Type u) [Ring k] [Monoid G]` — a MONOID. No `Rep k H` for a
+Hopf algebra to quantify over; also why `RepCat` is a carried field. So the
+justification is correct. Applied the AGENTS.md 3b-tax `@marker` opt-out; audit
+row moves MAJOR -> EXEMPT. Ledger re-adjudicated genuine -> legit (not pruned:
+the candidate still exists, now exempt).
+
+NOT laundering under 1a: the field is unchanged and no less open; `@marker`
+makes an already-written justification machine-readable. Audit label: "honestly
+framed; tracked not counted".
+
+SCOPE: verified Mathlib Rep needs [Monoid G]; did NOT exhaustively establish
+that no other Mathlib route states terminality.
+
+**qou-9yt9 proof-claims-unencoded arc is now COMPLETE** at 1 remaining, which
+is ledger-`legit` and correctly stays.
