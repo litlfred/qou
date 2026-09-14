@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-14T16:04:45Z
+updated_at: 2026-09-14T17:13:48Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -3098,3 +3098,234 @@ like-species bonds"* is untouched and is still this bean's real target.
 
 Probe: `computations/probes/pn_averaging_weight_is_derived_probe.py`, all
 assertions pass, 70 dps, proton pin, convention D, no float64.
+
+
+
+## 2026-09-14 — class B: multiplicity BREAKS affineness, and still cannot make pn extremal
+
+The affineness half of class B's remaining escape. **The escape is real. It does
+not deliver.**
+
+**The escape exists.** Affineness is an `m = 1` fact. `tr(σ_g + d·I) = z + d` is
+affine, but `(σ_g + d·I)^m` has trace of **degree `m`** in `d` — already
+`(d²+1) + (2d+h)z` at `m = 2`, verified symbolically. Measured, **betweenness
+itself fails from `m = 12`.** So `pn_betweenness_blocks_signMixed`'s hypothesis is
+genuinely breakable, which is what the 2026-09-12 entry said class B needs.
+
+**It breaks the wrong way.** Diagonalising, `σ_g` has Hecke eigenvalues `q` and
+`−q⁻¹`, so `F_m(d) = w₊(d+q)^m + w₋(d−q⁻¹)^m` with `w₊+w₋ = 1`, and
+`F_m′ = m·F_{m−1}` — monotonicity in `d`, hence betweenness, survives exactly
+while `F_{m−1} > 0`. That stops at `m = 7` (`F_7(d_nn) < 0`). But the `b₃ > 0`
+pattern needs `μ_pn` to be the strict **MAXIMUM**, and it is at **no `m` in
+1..200**; betweenness breaks by pn becoming the strict **minimum**.
+
+**Why — the invariant.** The pn letter sits at the spectral **balance point**. At
+`d = −h/2` exactly, `(d+q) + (d−q⁻¹) = 0`: the two eigenvalue magnitudes coincide
+at `[2]_q/2`. The corpus's `bring_color_weighted` letter is displaced from it by
+exactly `h·δ/4 = 7.190163e-05` — the number `pyhecke/constants.py` records in its
+own convention note. So
+
+| letter | `d` | spectral radius |
+|---|---|---|
+| pp | `0` | `q` |
+| nn | `−h` | `q` |
+| pn | `≈ −h/2` | `≈ [2]_q/2` |
+
+and **AM-GM** gives `q > [2]_q/2 > 1` for every `q > 1`. Measured growth rates at
+`m = 200`: **1.10840** (pp), **1.00549** (pn), **1.10225** (nn), against
+`q = 1.10998` and `[2]_q/2 = 1.00545`.
+
+The gap is closed-form: `q/([2]_q/2) = 2q²/(q²+1) = 1 + tanh(ln q)` — exactly
+**`1 + δ_CP`**, the crossing discriminant `qou-hjs8` proved θ-free and
+`QOU.Braiding.em_strong_ratio_tanh` already carries.
+
+**Lean** `QOU/MassTheory/PnBalancePointSpectralGap.lean`, 7 declarations,
+sorry-free, `lean`-direct exit 0, `#print axioms` = propext / Classical.choice /
+Quot.sound only.
+
+**Scope (b)** asymptotically; invariant = AM-GM on the two Hecke eigenvalues,
+which mentions no numerical value. Small-`m` is **measured** (1..200), not proved.
+
+**NOT excluded:** a derived pn letter **not** at the balance point. That is now
+the whole of class B's remaining room, and it is far narrower than "break
+affineness" — the displacement from balance is `7.19e-05`, and it would have to
+move `ρ_pn` above `q`. **Untouched: MAGNITUDE** (this bean's real target), class D,
+and the extensive term. **Bean stays OPEN.**
+## 2026-09-14 — the MAGNITUDE: the "4.0× short" headline is quoted at an inexpressible degree
+
+This bean's magnitude question is calibrated against `a_A^eff = 5.963 MeV` vs the
+SEMF's `23.7`, i.e. **4.0× short** — the figure AGENTS.md quotes. **It is
+evaluated at `k = 12`.**
+
+`qbeta_class_b_nonsigndefinite_bond_probe` computes
+`a_A^eff(k,m) = E₀·δ(m)·k/4`, and its own constant reads
+`K_DEGREES = (2, 12)  # chain and close-packed`.
+`QOU.Mass.LinearLayoutNoBulk` (sorry-free, merged **PR #7155**) proves the
+encoding **cannot express degree 12** — its docstring names the case: *"the
+max-contact packing (degree up to 12) and the complete graph (degree `n−1`) are
+not linear-layout graphs"*. `atom_braid_word_3A` emits every inter-nucleon letter
+at generator `3k+2`, so any word it builds has a **path** coordination graph,
+`k ≤ 2`.
+
+**Neither the probe nor R5/R8/R9 mentions `LinearLayout`** (grep: zero hits in
+the probe). Both results are on `main` and have never been composed.
+
+**Measured** — same bond factors, same formula, only `k` differs:
+
+| | `a_A^eff` | vs SEMF 23.7 |
+|---|---|---|
+| quoted, `k = 12` (close-packed, **not expressible**) | 5.962911209 MeV | **3.97457×** short |
+| expressible, `k = 2` (the chain the encoding emits) | 0.9938185348 MeV | **23.8474×** short |
+
+exactly the degree ratio `12/2 = 6` (asserted to 1e-30). The R5 cells reproduce
+the recorded 0.441 / 2.647 MeV, so the formula is untouched.
+
+**And the m-scan is not available as a selection** — R9 reports the whole
+`m = 1..12` table precisely because picking the maximising `m` is the
+discrete-parameter fit the NO FITTING directive names. At the canonical `m = 1`
+and expressible `k = 2` the derived law gives **−0.045993397 MeV**: negative, the
+wrong SEMF sign, before magnitude is reached at all. **So at the encoding's own
+layout and canonical multiplicity the gap is not a shortfall — it is a SIGN
+failure, and the magnitude question arises only on cells the layout result
+excludes.**
+
+### A correction I made and retracted inside the session
+
+I first read `E₀·δ·k/4` as substituting the degree `k` into
+`symmetryCoeff = energySlope·μ/4`'s **mixing** parameter `μ`, reconstructed
+`μ ≤ 2k/A` from `bondSum_wellMixed`'s own non-negativity, and concluded the cap
+was understated 2×. **Wrong.** `SymmetrySignAmGm.lean` states the well-mixed
+assignment as `E_pn ≈ 2E·ZN/A²`, i.e. `μ = k/A` — the **value**, where I used a
+**bound** 2× looser; with `μ = k/A` the SEMF's own `1/A` cancels it and the
+probe's formula is exactly right. The retracted claim flattered the framework;
+the surviving one does not.
+
+### Inherited scope limit — load-bearing
+
+`LinearLayoutNoBulk` is closed over the **template** encoding
+`atom_braid_word_3A` only. The γγ-selected words of owner ruling `qou-ales` have
+**not** been measured strand-tracked, and that is this bean's existing open
+workplan item. If such a word expresses a higher degree, the 4.0× could return.
+
+**Scope: a correction to a quoted figure.** No derivation, bond factor or formula
+changes. It makes the gap **wider**. NOT claimed: that `k = 2` is the right
+physical model (`bondSum_wellMixed` is a mean-field model by its own docstring
+and a chain is not well-mixed); that the magnitude is closed, narrowed or
+reopened; that any bond family is excluded. **Bean stays OPEN.**
+
+Probe: `computations/qbeta/qbeta_magnitude_at_the_expressible_degree_probe.py`.
+
+
+## The amplitude: what is proved, what is open, where it enters (2026-09-14)
+
+Answering the owner's question — *"what are properties/constraints of amplitude?
+where is it emerging in canonical derivation/cheat sheet for mass/binding?"* —
+as a consolidation of corpus facts. No new derivation; every line below cites an
+existing sorry-free file or an owner ruling.
+
+### There are TWO amplitudes, and the whole bean is about their assignment
+
+At fixed hyperbolic volume (`BindingMassRung.lean:8-9`):
+
+    mass    :  m(K) = m_e · Vol(K) · lw / hbar_q^2      lw = SELF-linking weight
+    binding :  B(K) = m_e · Vol(K) · M                  M  = MUTUAL coordination count
+
+`lw` is the density factor of step **9a**; `M` is the multiplicity of step **9b**.
+Vol(K) is common to both — the amplitude is the *density* half, not the geometry.
+
+### Properties, each with its carrier
+
+| property | mass amplitude `lw` | binding amplitude `M` | carrier |
+|---|---|---|---|
+| bar parity | **even** (cosh / signed channel) | **odd** (sinh / count channel) | `BrunnianBindingChannel` |
+| type | q-dimension, rational in q | bare integer count | ibid. (open item ii) |
+| sign | writhe, sign-changing | unsigned, non-negative | ibid. |
+| order in hbar_q | O(hbar^-2) — order-2 pole, residue `lw` | O(1) | `BindingMassRung` |
+| classical limit q->1 | `lw(1) = 5/2` finite nonzero => pole genuine | A-dependent integer | `MuWenzlClosure` |
+| closed form at the proton | `(3q^2+4+3q^-2)/4 = 5/2 + (3/4)h^2` | `M_n = n-1` (chain) | `MassVolDensity`, `LinearChainBondCount` |
+| degree bound | — | `deg <= 2` (no bulk); complete graph excluded | `LinearLayoutNoBulk`, `CoordinationSaturation` |
+
+### The assignment is FORCED, not postulated — three sorry-free results
+
+1. **Partition is a theorem.** Every crossing is intra- or inter-component, so
+   assembly = self + mutual exactly; with `B := sum(isolated) - assembled` the self
+   energies cancel and `binding_eq_neg_mutualEnergy` gives `B = -(mutual)`.
+   Falsifiable corollary `binding_indep_of_self`: binding depends on NO self-crossing.
+   (`SelfMutualPartition`)
+2. **Parity picks the channel.** `signed = (n+ - n-)(q+q^-1)/2` (writhe = 2 lk),
+   `unsigned = (n+ + n-)(q-q^-1)/2` (count). The 3He/4He carrier L6a4 is **Brunnian**:
+   every pairwise lk is 0, so `n+ = n-` and the signed channel is EMPTY. Binding must
+   therefore ride the unsigned count channel — which is why `M` is a count and not a
+   linking number. (`BrunnianBindingChannel`)
+3. **The bar-odd shape is unique.** The bar-odd part is free rank one over the
+   bar-even, generated by `h = q - q^-1`. The `h` prefactor of the count channel is
+   not a choice. (`BarParityRankOne.isBarOdd_iff`)
+
+### The rung dichotomy, exactly
+
+    massMultiplier_pole_residue :  hbar^2 * (lw/hbar^2) = lw
+    bindingOverMass_eq          :  B/m = (M/lw) * hbar_q^2
+    bindingOverMass_tendsto_zero:  B/m -> 0  as hbar_q -> 0
+
+So mass DIVERGES and binding VANISHES at the classical point: rest mass is generated
+by the deformation being small; nuclear binding is an O(hbar_q^2) quantum correction.
+
+Numerics at the proton pin, mp.dps = 50 (recomputed 2026-09-14):
+
+    q0        = 1.1099785827513808076
+    h         = 0.20906029879563931545
+    hbar_q    = 0.099081716044258507846
+    hbar_q^2  = 0.0098171864542750738119
+    lw_A(q0)  = 2.5327796563993914921
+    lw/hbar^2 = 257.99445372624517683
+
+    (M/lw)*hbar^2 :  M=1 -> 3.87605e-3   M=2 -> 7.75210e-3   M=3 -> 1.16282e-2
+    AME B/m       :  d 1.18605e-3        4He 7.59130e-3      56Fe 9.45010e-3
+
+**FLAG, not a finding.** M=2 lands 2.1 % from 4He's AME B/m. That is NOT evidence:
+no derived rule gives M=2 for 4He (the arc's own z = A-1 gives 3, and
+`CoordinationSaturation` excludes the complete graph that produces it). Choosing M
+because it lands is selection against the target — AGENTS.md NO FITTING. Coincidence
+until a rule derives it; recorded here so the next agent does not rediscover it and
+mistake it for a result.
+
+### What the corpus already REFUTED about `lw`
+
+`lw = lambda_A` is **excised for absolute mass** (owner ruling 2026-06-24). The form
+`m(K) = m_e Vol(K) lw/hbar_q^2` read at K = B_3 gives m_p ~ 966 MeV (+2.96 %), and the
+long-quoted "+2.89-3.86 % absolute-mass gap" is the **lambda_A fit artifact**, not a
+missing wire-up (`2026-06-24-lambda-a-refutation-artifact-audit.md`). Absolute mass is
+excised as a prediction entirely (2026-08-11). What survives:
+* the ALGEBRAIC identity `lw = (1/4) sum_{lam |- 4} dim_q V_lam` (proved) — `lw` is a
+  derived object;
+* `vol_density_per_block` for **binding ratios only**, where the scale cancels.
+
+So the mass amplitude is derived as algebra and refuted as an absolute-mass amplitude.
+Its live role is the ratio.
+
+### The three open residuals, in the sources' own words
+
+* `BindingMassRung`: *"It does NOT derive **why** binding lacks the cusp factor — that
+  residual kernel is the open item."*  (Why does 1/hbar_q^2 attach to the self channel
+  and not the mutual one? CAL-2 puts it in `m_mu/m_e = Vol(4_1)/hbar_q^2`; nothing
+  derives that the mutual channel escapes it.)
+* `BrunnianBindingChannel`: *"(i) the exact map from `n+ + n-` to the graph-degree
+  `z = A-1`; (ii) why the surviving count channel enters as a **bare integer** while
+  the self/mass channel keeps the full q-dimension self-trace `lw`."*
+* `SelfMutualPartition`: *"the identification of the substrate mass observable with this
+  crossing energy at the full Markov-trace granularity ... its lift to the exact mass
+  formula is the remaining modelling step, not a fit."*
+
+(ii) and the `BindingMassRung` item are the SAME question from two sides: integer vs
+q-dimension is exactly cusp-factor-absent vs cusp-factor-present. That is this bean.
+
+### Magnitude, the other half — where it currently stands
+
+The binding amplitude's magnitude is capped by `delta <= 2 ln q0 = 0.2086814406` with
+`a_A^eff = E0 * delta * k / 4`. At the only degree the layout can express (`k = 2`, the
+chain, `LinearLayoutNoBulk` degree <= 2) this gives **0.9938185348 MeV against the SEMF
+`a_A = 23.7 MeV` — 23.8474x short**, and at the canonical multiplicity m = 1 the sign is
+wrong (-0.045993397 MeV). PR #7373.
+
+So the amplitude's ASSIGNMENT is forced and proved; its MAGNITUDE is short by 23.8x at
+the expressible degree. Those are the two halves of this bean, and only the first is done.
