@@ -1227,17 +1227,17 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
-8a. **Draft → ready: OPEN IT NON-DRAFT. The flip has no reliable
-   remedy, and SPACED RETRY IS NOT ONE. Never close-and-reopen a
-   PR to get past it** (owner ruling, 2026-09-05; diagnosis corrected
-   2026-09-13, remedy re-scoped 2026-09-14). The documented replacement is
+8a. **Draft → ready: ONE REST CALL, and READ THE STATUS CODE — a 403
+   never clears, a 503 does. Never close-and-reopen a PR to get past
+   it** (owner ruling, 2026-09-05; diagnosis corrected 2026-09-13,
+   remedy measured 2026-09-14). Use
 
        POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
 
-   which returned `200 {"draft": false}` first try on #7230 (2026-09-12) —
-   **but measured `503` on six attempts across fifteen minutes on #7350
-   (2026-09-14) while plain REST was `200`, so it is NOT dependable; see
-   the box below.**
+   It returns `200 {"draft": false}`. **On a `503` from that route, retry
+   spaced — it is a transient CCR-family outage and it does clear; measured
+   windows of ≥ 15 min. On the `403` from GraphQL, never retry — that one
+   is a hard block. The status code is the discriminator; see the box.**
    `mcp__github__update_pull_request` with `draft: false` fails — often for
    hours — with
 
@@ -1261,33 +1261,41 @@ ephemeral.
    > > the REST API. For review threads, auto-merge, and
    > > draft/ready-for-review use the CCR routes on api.github.com"*
    >
-   > **🛑 AND THE REMEDY IS NOT DEPENDABLE EITHER — measured 2026-09-14,
-   > correcting this very rule one day after it was written.** The first
-   > version of this correction said *"ONE REST CALL … returns `200` first
-   > try"*. On #7350 the CCR route returned **`503 "GitHub is temporarily
-   > unavailable"` on six attempts spread across fifteen minutes** — five
-   > consecutive over ~50 s, then one more ~15 min later, so this is a
-   > sustained unavailability and not a momentary blip. The discriminator
-   > rules out a general outage, and was re-taken at both ends:
+   > **🛑 THE CCR ROUTE GOES DOWN IN WINDOWS, AND A 503 IS NOT A 403 —
+   > measured end-to-end on #7350, 2026-09-14.** This passage has been
+   > corrected three times in two days and the final shape is the useful
+   > one, so read the table rather than any one sentence:
    >
-   > | call | result |
-   > |---|---|
-   > | `GET /repos/litlfred/qou`, `GET /pulls/{n}` | **200** — plain REST healthy |
-   > | `POST /pulls/{n}/ccr/ready_for_review` | **503** |
-   > | `GET  /pulls/{n}/ccr/review_threads` | **503** |
-   > | `POST /graphql` | **403** — still blocked |
+   > | time | `ccr/ready_for_review` | plain REST | GraphQL |
+   > |---|---|---|---|
+   > | #7230, 09-12 | **200** first try | — | — |
+   > | #7350, 06:30–06:45 | **503** × 6 over ~15 min | **200** | **403** |
+   > | #7350, 07:40 | **200**, flip succeeded | **200** | **403** |
    >
-   > So the whole **CCR family** can be down while ordinary REST is fine.
-   > #7241's `200` was real; it is just not reproducible on demand.
+   > The middle row was briefly written up here as *"not dependable"* and
+   > *"sustained unavailability"*. **Both overstated it**: the route came
+   > back within the hour and the flip went through on the seventh attempt.
+   > What is true is narrower and more useful — the **CCR family** has
+   > outage windows of at least fifteen minutes during which **ordinary
+   > REST answers normally**, so a 503 there says nothing about the rest of
+   > the API.
    >
-   > **Consequence, and it is the practical one: a draft PR cannot be
-   > merged, and on a bad day there may be NO way to un-draft it.** That
-   > makes *"open the PR non-draft in the first place"*, at the foot of this
-   > rule, the **primary** advice rather than a nicety —
-   > `create_pull_request` takes `draft` as a plain REST field and never
-   > touches either broken transport. When you are already holding a draft
-   > and all three paths fail, say so plainly and leave it; do **not**
-   > close-and-reopen, which remains forbidden.
+   > **So the two failure modes take OPPOSITE responses, and the original
+   > rule paired them the wrong way round:**
+   >
+   > - **`403` from GraphQL — never retry.** A hard session-wide block. It
+   >   was measured at every point above, an hour apart, including on a
+   >   query doing no node-ID lookup at all. Nothing drains; §8a's old
+   >   *"retry until it lands"* could never succeed.
+   > - **`503` from a CCR route — retry, spaced.** A transient outage that
+   >   clears. This is where spaced retry actually belongs.
+   >
+   > **Still worth doing anyway: open the PR non-draft in the first place**
+   > where the work is already verified. `create_pull_request` takes `draft`
+   > as a plain REST field and never touches either transport, so it cannot
+   > be caught by a window at all. And if you are holding a draft while the
+   > window is open, wait it out and say so; do **not** close-and-reopen,
+   > which remains forbidden.
    >
    > **`PATCH` is independently confirmed as a silent no-op.** Measured here
    > with correct headers: `PATCH /pulls/7350 {"draft": false}` → **`200`**,
