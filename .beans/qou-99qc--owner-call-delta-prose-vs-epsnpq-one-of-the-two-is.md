@@ -2852,3 +2852,70 @@ and its header records a prior vacuity incident in which `unknot_iff` read
 blind to the knot, with no `sorry` to flag it. That leg cannot bear weight
 unexamined — the observation above is about the structure's *arity*, which is
 visible from the docstring and is unaffected by the sorries.
+
+### 2026-09-14, ~1 h later — 🛑 my "it remains unbuilt" went STALE while the PR was open, and a sibling reached the same exclusion by a different invariant
+
+The entry above ends by naming the open target: *"a genuine upgrade must be a
+functional that is not a function of `(n₊, n₋)` at all... An embedding energy is
+exactly that... It remains unbuilt."* **Three commits landed on `main` between
+18:34 and 19:10 that make that false**, and the convergence is worth recording
+rather than quietly deleting.
+
+**What landed** (branch `claude/lean-crossing-budget-invariants-2026-09-14`,
+PR #7391, now closed):
+
+* `380f5935c2` — **`QOU/QBeta/LetterSumBlindness.lean`**, sorry-free.
+  `letterSum_perm_invariant`, `no_letterSum_separates`,
+  `crossingCount_perm_blind`, **`crossingEnergy_perm_blind`**,
+  `factorsThrough_blind`, plus a scope lemma
+  (`objective_blindness_does_not_transfer_to_constrained_optimum`) delimiting
+  the exclusion so it does not kill the SDP route.
+* `aa224aba03` — **`QOU/QBeta/ECatBlockDecomposition.lean`** + probe
+  `qbeta_ecat_pair_kernel_probe.py` (4/4): a **pair kernel** dropped into the
+  `cost : W → R` socket of `GammaGammaWordSelection`, with
+  `pairSum_not_perm_invariant` — a pair sum whose kernel reads the **separation**
+  of the two letters escapes the letter-sum exclusion. Four distinct values over
+  the four 2-crossing gluons against one value for every letter-sum.
+* `27250649ff` — the per-block cost vector `t_λ`.
+
+**The two results are COMPLEMENTARY, and neither implies the other.** Stating
+this precisely because "both exclude letter-sums" invites collapsing them:
+
+| | invariant used | what it says |
+|---|---|---|
+| **theirs** | permutation of letters | `E_cross` cannot **separate** two reorderings — a statement about the letter *multiset* |
+| **mine** | the writhe/count channel split | `E_cross` and the count are **the same ordering** at fixed writhe; they differ by exactly the writhe term at fixed count; the energy's admissible descent **is** count-minimisation |
+
+Permutation-blindness says nothing about how the energy *compares to the count*
+across different multisets, which is my whole result. And
+`crossingEnergy_lt_of_cancelling_pair` is orthogonal to both: a cancelling pair
+**changes** the multiset, so permutation-invariance cannot reach it — that
+lemma is about the map word → braid *element*, not word → multiset.
+
+**Their control is my `crossingEnergy_eq_of_writhe_and_count_eq`, measured.**
+With the separation weight removed, the sharp pair — *"same multiset, same
+writhe, differing only in ORDER"* — reads `34.6134315674846072` for **both**, a
+difference of **exactly 0.0**, against `0.91996925` weighted. That is the forced
+tie my Lean states, arrived at from the other direction and used as a control
+rather than as a theorem.
+
+**What is corrected in my PR body:** "It remains unbuilt" → built, with the
+citation. **What is NOT corrected:** every theorem and every measured figure in
+the entry above stands; the re-verification after merging `main` (69 commits) is
+**2 ok, 0 RED, 0 UNVERIFIED**.
+
+**What their own commit message declines to claim, carried here so it is not
+lost downstream:** the discretisation is **not** `E_cat` (whether its continuum
+limit is `E_cat` is unproved), **nothing selects a word** — *"a cost that
+separates is a precondition for selection, not a selection"* — the per-block
+`t_λ` is proved a refinement but **not computed**, and the `MobiusEnergy`
+classical-limit leg stays assumed with its blindness incident unretired
+(`qou-pzsi`). So the open item is narrower than before and is **not** closed:
+a separating cost now exists; **which** cost, and whether minimising it is
+legitimate, is untouched.
+
+**Coordination note.** I posted intent on #7391 at 18:44 naming my distinct
+angle; it landed ~30 min later. That is the sanctioned research-overlap pattern
+working as intended (AGENTS.md §Parallel exploration) — two routes, one
+exclusion, neither re-deriving the other. Converging per that rule: I do not
+re-derive their pair kernel, and this bean cites it.
