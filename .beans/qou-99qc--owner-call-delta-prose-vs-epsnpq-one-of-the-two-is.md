@@ -2702,3 +2702,58 @@ order-sensitive and can rank a longer word below a shorter one.
 **Nothing adopted.** σ₁⁻¹ is not selected — that would swap one proxy for
 another, and point 3 shows the energy does not separate what remains. The Q_β
 column is a reported consequence, never an input to an ordering.
+
+## 2026-09-14 (session gifted-feynman) — the Lean step `cost_eq` stops short of, and a wrong turn worth keeping
+
+**Claim.** `FrobeniusSelected.cost_eq` says two *selected* words have equal
+**cost**. The step this bean needs is the next one: that the selection predicate
+can hold of **two different words**, so the rule does not determine the word.
+Nothing in the corpus drew it. `QOU.Mass.CostOrderSensitivity` now does, for an
+**arbitrary quotient** the cost factors through — sorry-free, `lean`-direct
+exit 0 (`-DautoImplicit=false -s 65536`), `#print axioms` clean on all eight
+declarations (two depend on **no axioms at all**; the rest only `propext` /
+`Quot.sound`).
+
+| declaration | statement |
+|---|---|
+| `minimal_transfers_along_fibre` | minimality transfers along a fibre of `π` |
+| `selected_not_determined_of_cost_factors` | …so **both** words are selected |
+| `lengthCost_not_determined` | the corpus's own crossing-count cost |
+| `letterSumCost_not_determined` | any letter-sum cost |
+
+**Cited, not re-derived.** The *invariance* half is already held four times
+over and the file says so: `OptionELevelAcceptanceTest.monoidHom_order_blind`
+(the multiplicative twin), `AltCharShiftMultiset.wordChar_of_perm`,
+`YekutieliIntegration.holonomy_perm`, and **definitionally** in
+`crossing-energy.lean`, which models `BraidWord := List Bool` and reads only two
+counts. The letter-sum scope-(b) exclusion is already prose on `main`
+(`qbeta_embedding_energy_can_discriminate_probe.py:46–52`, bean `qou-pzsi`).
+
+**🛑 The wrong turn, recorded because it is the interesting part.** This was
+first drafted around the **abelianization** — *"a cost factoring through
+`B_n^ab ≅ ℤ` cannot separate two words of equal exponent sum"*. **That framing
+is wrong for its own targets.** `B_n^ab` records only `e = n₊ − n₋`, so of the
+corpus's own three crossing-energy components only `baseline` (the writhe)
+factors through it. **Crossing count `n₊ + n₋` does not** — and it is
+`FrobeniusSelected`'s *only* instantiation in the entire corpus — and neither
+does `E_cross = n₊q − n₋q⁻¹`. An abelianization-quantified theorem would have
+claimed a family it provably does not cover: the `da-arity-conflation` shape.
+The right invariant is the **multiset** (equivalently `List.Perm`), strictly
+coarser, and it is what the sibling probe already names. **Caught by the
+corpus-grep checklist before anything was committed** — paths 1–6 with the
+claim SHAPE rather than the topic, which is exactly the case §"Grep the claim
+SHAPE" exists for.
+
+**Scope, deliberately narrow.** It does **not** prove a selection cost must be
+order-sensitive — blindness *precludes separating these candidates*, it does not
+*force* a replacement to see order. That caution is this bean's own (~line 1100)
+and is restated inside the file so the theorems are not read as more than they
+are. It does **not** exhibit a rearrangement pair inside the live `cands` that
+is also feasible; that stays a measurement. It proposes **no** replacement cost
+and re-scores **nothing**.
+
+**What this leaves as the live open item** is unchanged and is `qou-pzsi`: there
+is still **no map from a braid word to a curve in or on the Bring surface**, so
+the order-sensitive functional the owner's objection points at has nothing to
+consume. This result says what any replacement must have (it must not be
+constant on the multiset); it does not supply one.
