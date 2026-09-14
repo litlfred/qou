@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T08:40:28Z
+updated_at: 2026-09-14T18:03:09Z
 ---
 
 ## Landed (A + C)
@@ -576,3 +576,57 @@ never hand-merge the generated witness).
 #7357 quotes the combined `proof-claims-unencoded` residual as **4**; it is now **1**
 (TannakaKrein closed afterwards). The three PR bodies — the read-first durable artifacts —
 carry the live figures, so three correction comments would be noise.
+
+
+## ARC LANDED — all three PRs merged 2026-09-14, and the predicted figure held exactly
+
+Owner gave the merge word; #7357, #7359, #7360 are on `main` as `42f9215581`,
+`a73425a3f4`, `d45e2686ce`.
+
+**`proof-claims-unencoded` 9 → 1**, verified by running the audit **on `main` itself**
+after merging rather than trusting the pre-merge runs. The surviving 1 is
+`TransferMatrixEigenphase` (`QOU/QBeta/EigenphaseCarrierVacuity.lean`), verdict `legit` —
+the exact declaration all three PR bodies named as the one that correctly stays.
+`--check-ledger` exit 0. Main's committed witness reproduces byte-for-byte apart from
+`generated` and `scanned_files 3854 → 3856` (two `.lean` landed between the run and the
+merge); every substantive count identical, so no follow-up commit.
+
+### Four things worth carrying, none of them the count
+
+**1. A branch that merged `main` in cannot be rebase-merged.** GitHub returns
+`405 This branch can't be rebased`. Rule 8's remaining options are squash — forbidden
+without explicit per-PR permission — and a merge commit, the documented exception. Merge
+commits were used for all three, which preserves the per-cluster commits rule 8 exists to
+protect. **Merge permission is not method permission**; say which you used and why.
+
+**2. Each merge conflicted the next, and the ledger union held every time.** Resolution
+was identical three times: three-way diff against the merge base with a HARD ASSERTION of
+zero intersection in del/del, mod/mod, ourmod/theirdel, ourdel/theirmod and add/add, then
+apply ours onto theirs. 330 → 328 → 325. The assertion never fired — but it is what makes
+the union a verification rather than a hope, and it is cheap.
+
+**3. A new conflict class: the shared bean itself.** #7359 and #7360 both conflicted on
+THIS file, because #7357 carried its own appends into `main` first. Resolved as a
+chronological append-union (theirs, then ours), with the section list printed and checked
+after each resolve — 16 sections, none dropped. `scripts/bean-append-merge.py` exists for
+this but is on the unmerged #7350, so it was done by hand.
+
+**4. The audit dirties a witness that is not yours.** Every run of
+`lean-vacuity-axiom-audit.ts` rewrites `computations/witness-raw-float64-audit.witness.json`
+(ratchet 981 → 978 dirty). That is another arc's drain — restore it, never commit it. A
+blanket `git checkout -- computations/` was safe ONLY because these branches own nothing
+there, confirmed before each use; on a branch that owns files there it deletes them.
+
+### Status: this bean stays IN-PROGRESS
+
+The three PRs are landed and verified, but this bean is a long-running arc covering more
+than them, and two decisions raised during the arc are still open and recorded on
+`qou-a30t` (another agent's bean, deliberately not taken over):
+
+- **(a)** the ledger-freshness invariant `reviewed_at >= commit-time(file_sha)` — 52 of 318
+  verdicts predate the revision they cite, 174 carry no `reviewed_at` at all;
+- **(b)** the two `QHookBound` verdicts — my recommendation to flip them to `legit` is
+  **WITHDRAWN**, after measuring that `QFactRatioBound`'s index is unbounded with instances
+  only to `k = 3`.
+
+Neither is enacted. Closing this bean would bury both.
