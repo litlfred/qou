@@ -80,43 +80,62 @@ def atom_braid_word_ordered(ordering, *, m_pp: int = 1, m_pn: int = 1,
     the species intra-crossings (gens ``3k``, ``3k+1``) then the
     adjacency-typed inter-crossing (gen ``3k+2``).
 
-    ⚠ **IT NO LONGER MATCHES** ``atom_braid_word_3A`` on the canonical
-    ``'p'*Z + 'n'*N``, and this docstring claimed it did until 2026-09-14
-    (bean ``qou-t29k``). Two divergences, both dating from rulings this file
-    was never updated for:
+    ⚠ **IT STILL DOES NOT MATCH** ``atom_braid_word_3A`` on the canonical
+    ``'p'*Z + 'n'*N``, though it is now one divergence closer. This docstring
+    claimed a full match until 2026-09-14 (bean ``qou-t29k``); there were two
+    divergences, from two different rulings this file was never updated for.
 
-      * **Intra ordering.** The loops below emit all of ``g0`` then all of
-        ``g1``, which is ``nucleon_word_letters``' ``intra_order="grouped"``;
-        ``atom_braid_word_3A`` has defaulted to the borromean interleaving
-        since the 2026-09-05 ruling (``qou-hu1f``). Different elements of
-        H₃(q) — one proton, ``|tr_M|`` 1.1457596924573009 against
-        0.6293284022029219.
-      * **Colour convention.** The p-n interface here is ``-h/2``, which is
-        ``strict_averaged`` (colour-BLIND); the canonical convention is
-        ``bring_color_weighted`` (owner ruling 2026-08-15, reaffirmed
-        2026-08-26).
+      * **Intra ordering — FIXED 2026-09-14.** The loops below emitted all of
+        ``g0`` then all of ``g1``, which is ``nucleon_word_letters``'
+        ``intra_order="grouped"``, while ``atom_braid_word_3A`` has defaulted
+        to the borromean interleaving since the 2026-09-05 ruling
+        (``qou-hu1f``). Different elements of H₃(q) — one proton, ``|tr_M|``
+        1.1457596924573009 against 0.6293284022029219. The word now comes from
+        ``nucleon_word_letters``' own default, so a future ruling reaches this
+        function by changing one default rather than silently not reaching it.
+      * **Colour convention — STILL DIVERGENT, out of scope here.** The p-n
+        interface below is ``-h/2``, which is ``strict_averaged``
+        (colour-BLIND); the canonical convention is ``bring_color_weighted``
+        (owner ruling 2026-08-15, reaffirmed 2026-08-26). That is a separate
+        axis from ``qou-t29k`` and is left as it was rather than fixed in
+        passing.
 
-    The ORBIT IDENTITY this module exists for is unaffected, since both sides
-    of ``tr_M(β_{Z,N}) = tr_M(representative)`` are built here and move
-    together. The ABSOLUTE traces are not: they are grouped-frame,
-    colour-blind values. The claim above is corrected rather than the code,
-    because switching moves every consumer's numbers and none of them has been
-    read for what it reports — see ``qou-t29k`` for the triage that decides
-    that, and ``qou-u8ji`` / ``qou-y1w0`` for two sites where the switch turned
-    out to move a claim rather than a number.
+    **Why the intra fix was safe, measured rather than argued.** The module is
+    internally split: ``atom_braid_orbit_representative`` (and so
+    ``tr_M_via_orbit_representative``, and so every assertion in
+    ``orbit_reduction_crosscheck``) already DELEGATES to the production
+    ``atom_braid_word_3A`` and was always canonical — which is why that file's
+    byte-identity check ``rep.word == atom_braid_word_3A(Z, N)`` holds. Only
+    this function, the one that takes an ARBITRARY ordering that
+    ``atom_braid_word_3A`` cannot express, was grouped. So the two halves of
+    one module disagreed.
+
+    Its one real consumer, ``probes/canonical_ordering_dof_probe``, reports
+    RATIOS across four nucleon orderings, and those are **exactly** invariant:
+
+        T_npn_over_pnn     1.258976624909173    both frames, every digit
+        He3_pnp_over_ppn   0.8293909084880151   both frames, every digit
+
+    while the absolute traces move by 7.868x (``|tr| npn`` 0.2886552152 ->
+    0.03668647715), precisely the documented ³H factor. The cancellation is
+    exact rather than approximate because ``npn`` and ``pnn`` carry the same
+    multiset of nucleons — the per-nucleon intra factor is identical and
+    divides out. (Contrast ``level_k``'s ordering spread, where the analogous
+    quantity moved 22.54 % -> 22.69 %.)
+
+    The ORBIT IDENTITY this module exists for was never at risk either way,
+    since both sides of ``tr_M(β_{Z,N}) = tr_M(representative)`` come from the
+    same builder and move together.
     """
-    from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0,
-                            _NEUTRON_G1, h)
+    from hecke_core import h
+    from pyhecke.atom import nucleon_word_letters
     A = len(ordering)
     h_num = float(h)
     word: list[tuple[float, float, int]] = []
     for k, nuc in enumerate(ordering):
-        g0 = _PROTON_G0 if nuc == "p" else _NEUTRON_G0
-        g1 = _PROTON_G1 if nuc == "p" else _NEUTRON_G1
-        for c, d in g0:
-            word.append((float(c), float(d), 3 * k))
-        for c, d in g1:
-            word.append((float(c), float(d), 3 * k + 1))
+        quarks = ["u", "u", "d"] if nuc == "p" else ["u", "d", "d"]
+        for c, d, off in nucleon_word_letters(quarks):
+            word.append((float(c), float(d), 3 * k + off))
         if include_inter and k < A - 1:
             t = _interface_type(nuc, ordering[k + 1])
             if t == "pp":

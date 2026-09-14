@@ -208,6 +208,46 @@ failed a `1e-50` check at ~1e-48 while the same check passed at A = 4 in
 there. Pass `dps=DPS` explicitly at every call site; a green at small A is
 not evidence the precision is what the header says.
 
+## TRAP — a FINITE-SIZE threshold is an artifact in its own right, and it manufactures positives
+
+Distinct from "thresholds that encode your prose": there the *assertion* was
+wrong, here the *threshold* was. Measured on the XXZ two-magnon bound state
+(`qou-6b9y`): a level was counted as "above the continuum" against a continuum
+edge rebuilt from the FINITE-N one-magnon spectrum. At k = 0 that edge is exact
+(the momentum pair `(a, -a)` contains `a = 0`), so the k = 0 numbers were fine —
+but in ODD momentum sectors the same construction is short by
+`8|cos(pi m/N)|(1 - cos(pi/N))`, which at N = 14 is **21-53x the quantity being
+detected**. Eight sectors were reported bound that in fact sit BELOW the true
+edge. **Whenever a detection reads "X exceeds T", measure T's own finite-size
+error against the size of X** — and report the count against BOTH the finite and
+the thermodynamic threshold, never only the one you built.
+
+Two companions from the same measurement:
+
+- **Before extrapolating in system size, compute the object's own length scale.**
+  The bound state's extent is `xi = 1/log(Delta)` = **184 sites** at q0 against
+  4.48 at a q = 2 control; N = 8..14 was 13x too small and NO accessible dense ED
+  would have converged. The fix was not a bigger N, it was a **reduction**: the
+  two-magnon block at fixed momentum is exactly real-symmetric TRIDIAGONAL in the
+  relative coordinate (dim ~N/2, not ~N^2/2), and Sturm-sequence bisection gives
+  its top eigenvalue in O(N). N = 4096 then costs **2.6 s** where N = 14 had been
+  the ceiling. Ask for the reduction before asking for the cluster.
+- **A finite-size ratio quoted as an order of magnitude is a FLOOR.** "1.5-2
+  orders of magnitude below the control", read off N <= 14, is **3.23 orders**
+  (1693.5) in the limit — the N = 14 reading was 24x short and still climbing.
+
+## TRAP — mpmath `eig` fails where `eighe`/`eigsy` succeed; for a tridiagonal use Sturm
+
+`mpmath.eig` runs a generic nonsymmetric QR and raises
+`RuntimeError: qr: failed to converge after N steps` on matrices the Hermitian
+routine handles without complaint — measured on a **12x12 real symmetric
+tridiagonal** and a **52x52 Hermitian** momentum block, both fine under
+`eighe(H, eigvals_only=True)`. A probe that builds a Hermitian matrix and calls
+`eig` is one size increase away from a crash that looks like a physics wall.
+For a symmetric tridiagonal go further: Sturm-sequence bisection counts
+eigenvalues below `lam` in O(n) per evaluation and reaches any single eigenvalue
+to full working precision, which is what makes n ~ 2000 cheap.
+
 ## STABLE — long-compute logging discipline
 
 Any background Python expected to run > 5 min (mass table beyond ⁴He,
@@ -457,3 +497,17 @@ TRAPs.
     in 4 fields, all four wall-clock, two inside an assertion's sentence.
   * **`git checkout -- computations/` is what the gate PRINTS and it eats source
     edits.** Revert the 11 contended audit witnesses BY NAME.
+- 2026-09-14 (`qou-6b9y`, PR #7372): extracted the XXZ n-string band the sibling
+  probe could not, `E_n(k) = -2(q^n + q^-n - 2 cos k)/[n]_q`. Gates: family run in
+  full via `precision-gates.sh --changed` — **EXIT 1, 10 blocking reds, ALL
+  pre-existing**; my files appear in **zero** of the 525 log lines, and the branch
+  touches nothing else under `computations/`. `probe-float64-guard --strict` clean
+  on all three `onedim/` files. Two new TRAPs above, both mine before they were
+  caught. Three operational notes: **the gate run reverts the ephemeral-only audit
+  witnesses itself** and names the substantive movers separately — revert THOSE by
+  name, never `git checkout -- computations/`; **a concurrent sibling on the same
+  checkout committed my uncommitted working-tree edit into its own commit**
+  (`9534fba59`) while I ran the gates, which is the `git commit -- <paths>` rule
+  from 2026-09-04 seen from the other side — commit before a 5-minute gate run, not
+  after; and **`q_at(mp.dps)` is the right anchor call for a probe** (proton pin,
+  production default) with explicit rational controls beside it.
