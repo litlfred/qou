@@ -492,7 +492,26 @@ def self_test() -> list[str]:
 # ── baseline ─────────────────────────────────────────────────────────────────
 
 def _key(f: dict) -> str:
-    return f"{f['path']}:{f['line']}:{f['check']}"
+    """Baseline identity for a finding — DELIBERATELY WITHOUT THE LINE NUMBER.
+
+    It was `path:line:check`, and adding a docstring above a site immediately
+    invented a NEW finding and a DRAINED one for the same unchanged code. A
+    ratchet that goes red when someone writes a comment is a ratchet people
+    learn to re-baseline past, which is the failure this file's header warns
+    about arriving by a different road. The `detail` string identifies the
+    shape (`… in g0] + [… in g1`, or the two accumulator names), which is what
+    the baseline is actually tracking; the line is reporting detail, not
+    identity. The ordinal disambiguates repeats of one shape in one file.
+    """
+    return f"{f['path']}::{f['check']}::{f['detail']}::{f.get('ord', 0)}"
+
+
+def _assign_ordinals(findings: list[dict]) -> None:
+    seen: dict[tuple, int] = {}
+    for f in sorted(findings, key=lambda x: (x["path"], x["check"], x["line"])):
+        k = (f["path"], f["check"], f["detail"])
+        f["ord"] = seen.get(k, 0)
+        seen[k] = f["ord"] + 1
 
 
 def _load_baseline() -> set[str]:
@@ -531,6 +550,7 @@ def main(argv: list[str] | None = None) -> int:
     findings: list[dict] = []
     for path in iter_sources(args.files):
         findings.extend(scan_file(path))
+    _assign_ordinals(findings)
 
     ab = [f for f in findings if f["check"] in ("A", "B")]
     c = [f for f in findings if f["check"] == "C"]

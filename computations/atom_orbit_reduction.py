@@ -78,8 +78,32 @@ def atom_braid_word_ordered(ordering, *, m_pp: int = 1, m_pn: int = 1,
 
     ``ordering`` is a sequence over ``{'p', 'n'}``. Emits, per nucleon ``k``,
     the species intra-crossings (gens ``3k``, ``3k+1``) then the
-    adjacency-typed inter-crossing (gen ``3k+2``). Matches
-    ``atom_braid_word_3A`` exactly on the canonical ``'p'*Z + 'n'*N``.
+    adjacency-typed inter-crossing (gen ``3k+2``).
+
+    ⚠ **IT NO LONGER MATCHES** ``atom_braid_word_3A`` on the canonical
+    ``'p'*Z + 'n'*N``, and this docstring claimed it did until 2026-09-14
+    (bean ``qou-t29k``). Two divergences, both dating from rulings this file
+    was never updated for:
+
+      * **Intra ordering.** The loops below emit all of ``g0`` then all of
+        ``g1``, which is ``nucleon_word_letters``' ``intra_order="grouped"``;
+        ``atom_braid_word_3A`` has defaulted to the borromean interleaving
+        since the 2026-09-05 ruling (``qou-hu1f``). Different elements of
+        H₃(q) — one proton, ``|tr_M|`` 1.1457596924573009 against
+        0.6293284022029219.
+      * **Colour convention.** The p-n interface here is ``-h/2``, which is
+        ``strict_averaged`` (colour-BLIND); the canonical convention is
+        ``bring_color_weighted`` (owner ruling 2026-08-15, reaffirmed
+        2026-08-26).
+
+    The ORBIT IDENTITY this module exists for is unaffected, since both sides
+    of ``tr_M(β_{Z,N}) = tr_M(representative)`` are built here and move
+    together. The ABSOLUTE traces are not: they are grouped-frame,
+    colour-blind values. The claim above is corrected rather than the code,
+    because switching moves every consumer's numbers and none of them has been
+    read for what it reports — see ``qou-t29k`` for the triage that decides
+    that, and ``qou-u8ji`` / ``qou-y1w0`` for two sites where the switch turned
+    out to move a claim rather than a number.
     """
     from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0,
                             _NEUTRON_G1, h)
