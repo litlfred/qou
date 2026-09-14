@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T16:24:21Z
+updated_at: 2026-09-14T17:04:56Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -410,3 +410,48 @@ Probe `computations/audits/step9_e0_canonical_form_probe.py` (9/9). Commit
 **Status: 4 judgements → 2.** #4 (step-7/8 labels) and #5 (M_QOU) still want the
 C1 scope decision. Neither #1 nor #2 makes g=4 DERIVED — the route still opens in
 `Rep(SU_q(2))` and stays inside the chi=-6 <-> SU(2) cycle.
+
+## 2026-09-14 — #5 measured: a JUDGEMENT, not a fix. PR #7365 MERGED (612cb27265)
+
+**#5 does NOT collapse the way #1 and #2 did**, and my 'one-symbol fix'
+characterisation is **withdrawn**.
+
+1. The symbol is **not meaningless** — its own sentence glosses it: 'On motivic
+   QOU inputs, R_top coincides exactly with the archimedean component of tau'.
+   'Defined nowhere' was true of a definition BLOCK, overstated as a
+   description of the reader's position.
+2. The gloss **has a Lean carrier** — 'QOU motivic' in six .lean files, incl.
+   `archimedean-functor-uniqueness.lean` and `MotivicSubstrate.lean`, which
+   axiomatises 'the QOU motivic substrate'.
+3. **But it is not a defined SUBSET.** `MotivicSubstrate`'s `Mhat` is 'the
+   dimension-completed localization K_0[L^-1]^' — i.e. Mhat IS \widehat{M},
+   entire. The Lean has no proper subobject, so `Mhat_QOU subset Mhat` names a
+   restriction the formalisation does not have.
+4. **And nothing EQUATES it with the siblings' scope.**
+   `def:algebraic-quantum-volume` is `Vol_alg(W) := tr_M(W)` — a trace value,
+   a different KIND of object. Exactly one block mentions both (the remark),
+   and relates them by **'exemplifies'** — an instance, not an equation.
+
+**Verdict:** replacing the symbol would ASSERT an identification the corpus
+does not make. Three non-equivalent dispositions, none corpus-chosen: define
+the subset / assert the identification / leave it.
+
+🛑 Negative result with its surface: searched content/**, docs/**, .beans/, the
+Lean tree. What would separate the readings is a block saying Mhat_QOU is (or
+is not) the image of the algebraic quantum volume — not found, which differs
+from proving none can exist.
+
+Probe caught my own over-claim again: I first asserted 'NO block mentions both'
+and it FAILED on the remark's Synthesis sentence.
+
+Probe `computations/audits/step9_mqou_scope_probe.py` (8/8). Commit 6118cb69a6.
+
+### PR #7365 merged (612cb27265, rebase) — carries #1, #2 and #5
+
+**Final tally of the walk's four defects:**
+- **#1** step-9/11 E_0 — **corpus-determined** (one canonical form, qbeta_e0)
+- **#2** g=4 completeness — **corpus-determined** (target 4; g_min=4 recovered)
+- **#4** step-7/8 labels — **still a judgement** (is the arrow a dependency claim?)
+- **#5** M_QOU — **still a judgement**, but smaller than the walk implied
+
+So ONE genuine judgement (#4) plus #5's disposition choice remain for the owner.
