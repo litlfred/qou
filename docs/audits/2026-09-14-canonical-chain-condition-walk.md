@@ -49,6 +49,15 @@ The step is stated as
 
 — a sum over **all** partitions of `n`.
 
+> ### 🛑 Read §"Step 3" below before C5a — it corrects C5a's framing
+>
+> C5a as first written called the two-row cap *"a condition the chain's step
+> statement does not carry"*, which reads as though it were a truncation bolted
+> on at step 5. **It is not.** The cap is derived in the corpus from the step-1
+> choice of the fibre `V`, and it is what *forces* the Markov parameter. What
+> step 5's statement omits is the **hypothesis**, not the truncation. The
+> measurement in C5a is correct; its emphasis was wrong.
+
 ### C5a — the sum runs over TWO-ROW partitions only
 
 Measured against the committed `computations/y-lambda-at-q0.witness.json`
@@ -139,12 +148,67 @@ energy, i.e. that the chain fits AME at its selection step. It does not.
 
 ---
 
+---
+
+## Step 3 — the "unique trace", and where the fork actually roots
+
+This was the next item; walking it **closed the question, in the direction
+opposite to what I expected**, and corrects C5a above.
+
+`rem:markov-axioms-primitive` states it correctly: axioms 1–2 (normalisation +
+cyclicity) with an unspecified stabilisation parameter admit a **one-parameter
+family**. So the cheat sheet's step 3 — *"Unique trace `tr_M`"* — is the
+compressed form, and `z` is where the condition would enter.
+
+**But the parameter is then forced, and the forcing is sorry-free:**
+
+```
+V = fundamental of SU_q(2)      ← the HYPOTHESIS, and the only one
+  ⟹ ℓ(λ) ≤ 2                     lem:feynman-eigenbasis-decomposition
+  ⟹ y_(1³) = 0
+  ⟹ [+ faithfulness y_(2,1) ≠ 0]  markovWeights_eq_jones_of_threeRow_eq_zero
+  ⟹ y_(2,1) = 1/[2]_q², y_(3) = (q⁴+1)/(q²+1)² = α, z = q³/(q²+1) = z_D
+```
+
+Verified symbolically and against the committed witness: `y_(3)` and `y_(2,1)`
+both reproduce to 30 dps. So **`α` is not merely observed to equal `y_(3)` — it
+follows**, as `y_(3) = 1 − 2/[2]_q²`.
+
+**The competing root `z = q` is `markovWeights_degenerate_root`**: `y = (1,0,0)`,
+so `y_(2,1) = 0` and the trace is **not faithful** on `TL₃` (`z·[2]_q = q²+1 ≠ q²`).
+
+### What that does to the fork
+
+This is a **derivation-first discriminator** on the fork `qou-99qc` / `qou-qqm4`
+have been carrying, and it uses **no residual at all** — exactly the ranking
+AGENTS.md's anti-fit rule demands. And it points **away** from the augmentation,
+which is the cell that reproduced the flavour-split baseline *exactly* in #7334.
+
+**Recorded, not acted on.** Which cell to adopt remains the owner's call; what
+changes is that the call is no longer between two equally-derived options.
+
+### And a measurement note
+
+`grep -c sorry` on `MarkovTraceTLUniqueness.lean` returns **1**, and that hit is
+the word inside a **comment** (*"sorry-free, `lean`-direct exit 0"*). The file has
+no `sorry` tactic. Counting the word is not counting the tactic — I raised a false
+alarm on it before checking.
+
+---
+
 ## What the walk has produced so far
 
-Two steps, each carrying a condition its own statement omits; one identification
-(`α` = Wenzl weight) that retires an apparent coincidence across two arcs; one
-documentation defect in the primary coordination document; and one self-correction.
+- **Step 3 + step 5 reduce to ONE condition**, and it sits at **step 1**: the
+  choice `V = fundamental of SU_q(2)`. Everything else — the row cap, `y_(1³) = 0`,
+  `z_D`, `α` — is derived from it, sorry-free.
+- **`α` is derived**, not coincidental: it is `y_(3) = 1 − 2/[2]_q²`.
+- **The augmentation is proved degenerate**, which informs the open fork without
+  using accuracy.
+- **Step 10 carries a genuinely open condition** (`n_target`, three meanings) and
+  **the cheat sheet misstates step 10's objective**.
+- Two self-corrections: the dimension-weighted normalisation, and C5a's framing.
 
-**Next** (not done here): step 3's "unique trace", which is where the `z`
-parameter enters and therefore where the `qou-99qc` / `qou-qqm4` fork is most
-likely to be rooted.
+**Next** (not done here): step 1 itself — *is the choice of `V` derived, or is it
+the framework's primitive?* Everything above now hangs on that one sentence, so it
+is the highest-value remaining question on this walk. Steps 4, 7, 8, 9, 11 also
+remain unwalked.

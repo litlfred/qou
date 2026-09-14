@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T08:08:32Z
+updated_at: 2026-09-14T08:23:23Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -56,3 +56,59 @@ AME at its selection step.
 ### Next
 Step 3's "unique trace" — where `z` enters, and the likeliest root of the
 `qou-99qc` / `qou-qqm4` fork. Not established here, so not asserted.
+
+
+## 2026-09-14 (cont.) — step 3 walked, and it CORRECTS the tranche above
+
+Walking step 3 closed the question **in the direction opposite to my expectation**,
+and corrects C5a.
+
+### The whole fork reduces to ONE condition, and it sits at STEP 1
+
+`rem:markov-axioms-primitive` states correctly that axioms 1-2 admit a
+**one-parameter family** — so the cheat sheet's "unique trace" at step 3 is the
+compressed form. But the parameter is then **forced**, sorry-free:
+
+    V = fundamental of SU_q(2)      <- the HYPOTHESIS, and the only one
+      => l(lambda) <= 2               lem:feynman-eigenbasis-decomposition
+      => y_(1^3) = 0
+      => [+ faithfulness]             markovWeights_eq_jones_of_threeRow_eq_zero
+      => y_(2,1) = 1/[2]_q^2, y_(3) = alpha, z = q^3/(q^2+1) = z_D
+
+Verified symbolically and against the committed witness (both reproduce to 30 dps).
+
+### 🛑 This CORRECTS C5a
+
+I called the two-row cap "a condition the chain's step statement does not carry",
+which reads as a truncation bolted on at step 5. **It is not** — it is derived
+from the step-1 choice of `V`, and it is what FORCES `z_D`. What step 5 omits is
+the **hypothesis**, not the truncation. The measurement was right; the emphasis
+was wrong.
+
+### alpha is DERIVED, not coincidental
+
+`y_(3) = 1 - 2/[2]_q^2 = (q^4+1)/(q^2+1)^2`. It follows from the theorem; it was
+never an observed coincidence needing explanation.
+
+### A derivation-first discriminator on the fork
+
+`z = q` is `markovWeights_degenerate_root`: `y = (1,0,0)`, so `y_(2,1) = 0` and
+the trace is **not faithful** on TL_3 (`z[2]_q = q^2+1 != q^2`).
+
+That discriminates the `qou-99qc` / `qou-qqm4` fork **using no residual at all** —
+the ranking the anti-fit rule demands — and it points **away** from the
+augmentation, the cell that reproduced the flavour-split baseline exactly in
+#7334. **Recorded, not acted on**: which cell to adopt is still the owner's call;
+what changes is that it is no longer a choice between two equally-derived options.
+
+### Measurement note
+
+`grep -c sorry` on MarkovTraceTLUniqueness.lean returns 1 — the word inside a
+COMMENT ("sorry-free, lean-direct exit 0"). No `sorry` tactic. I raised a false
+alarm on it before checking. Counting the word is not counting the tactic.
+
+### Next
+
+**Step 1 itself: is the choice of `V` derived, or is it the framework's
+primitive?** Everything above now hangs on that one sentence, so it is the
+highest-value remaining question. Steps 4, 7, 8, 9, 11 also remain unwalked.
