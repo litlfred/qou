@@ -2654,3 +2654,46 @@ one.
 
 **Status: still open.** Branch 3 is a live open problem on both readings.
 Rule 13a.
+
+---
+
+## 2026-09-14 (4) — swept properly, and a tooling trap found by doing so
+
+**The Lean was verified with bare `lean`-direct only.** AGENTS.md is explicit
+that on a branch touching `.lean` this is a claim about the **olean snapshot**,
+not about the library source — a file calling a moved signature compiles clean
+*and* is red against the source it names, both at once, with no signal. The
+sweep is the gate. Run:
+
+| module | result |
+|---|---|
+| `QOU.QBeta.CharacterDoubling` | **1 ok, 0 RED** (126 s, shadow built) |
+| `QOU.QBeta.LadderFactorBound` | **1 ok, 0 RED** (3 s, shadow reused) |
+
+Dirty closure 1 in each case; 2877 library modules, 2876 snapshot-current.
+
+### 🛑 `--only-exact` is NOT repeatable, and it fails silently
+
+Passing it twice —
+
+    scripts/lean-library-sweep.py --only-exact A --only-exact B
+
+— sweeps **B only**. The flag is `store`, not `append`, so the first value is
+dropped without a word; the run's own selection line reads `selection
+QOU.QBeta.CharacterDoubling` and the summary reads `1 ok`. **An agent reading
+"1 ok, 0 RED" after asking for two modules would report both verified having
+verified one.** Caught here only because the module count in the summary did
+not match the number of modules asked for.
+
+That is the taxonomy's own class — a verification tool silently covering less
+than it was asked to, and reporting success — applied to the sweep rather than
+to a detector. **Sweep one module per invocation**, or check that the reported
+count matches what you asked for.
+
+**Not fixed here.** Making the flag repeatable is a change to shared tooling and
+falls outside both exemptions of the 2026-09-07 ask-first directive — it is
+neither a precision fix nor corpus-derived. Raised rather than enacted.
+
+**No taxonomy row added either**, for the same reason plus a practical one: a
+sibling and I collided on that document's row numbering once already today
+(row 44 → 45), and it is not my document to grow unasked.
