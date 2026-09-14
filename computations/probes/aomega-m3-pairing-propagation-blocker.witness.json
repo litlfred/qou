@@ -1,0 +1,216 @@
+{
+  "name": "aomega-m3-pairing-propagation-blocker",
+  "description": "The corrected pairing propagation law, the u=0 re-attribution of GGM (92)/(93), and the residue that survives every index variant — recorded as a characterised blocker.",
+  "computation": "aomega-m3-pairing-propagation-blocker",
+  "engine": "python+sympy",
+  "scriptFile": "aomega_m3_pairing_propagation_blocker_probe.py",
+  "computedAt": "2026-09-14T18:27:03.223203+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "parameters": {
+    "law": "G_{M+1} = A_M G_M (Abar^T)^{-1}"
+  },
+  "data": {
+    "rhs92_contains_x": false,
+    "s_at_x_1": 3,
+    "residue_x_dependent": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "residue_at_x_1": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "variants": {
+      "inv-3": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "inv-2": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "noinv": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "verdict": "BLOCKER, characterised. Part 3 retracted the invariance premise; the correct law is G_{M+1} = A_M G_M (Abar^T)^{-1}, inverted because GGM (92) moves its two indices in OPPOSITE directions. Testing it exposed a CORRECTION to Part 2 (G1): (92)/(93) carry no x and their constant is s(1) = 3, so they are the u = 0 specialisation from the Conjecture-12 section, NOT 5_2's x-dependent pairing — Part 2's c = 4 is arithmetically correct but was mis-attributed, and scopes to the u=0 rank-3 case. That reading is corroborated rather than assumed (G2): specialising to x = 1 cuts the residue from 3 nonzero entries to 2. It still does not close: entries (1,0) and (2,0) survive every index variant tried. Three causes remain unseparated and are named rather than guessed between. The next honest step is to read the u=0 section's own operator and J from the source instead of importing (254) and an OCR'd J across sections.",
+  "assertions": [
+    {
+      "name": "G1-CORRECTION to Part 2: GGM (92)/(93) carry NO x and their constant is s(1) = 3, so they are the u = 0 (x = 1) specialisation from the Conjecture-12 section — NOT 5_2's x-dependent pairing. Part 2's c = 4 is arithmetically right but was mis-attributed to 5_2; it scopes to the u=0 rank-3 case",
+      "passed": true,
+      "rhs_symbols": [
+        "m",
+        "q"
+      ],
+      "s_at_1": 3
+    },
+    {
+      "name": "G2-specialising the operator to x = 1 strictly REDUCES the residue (3 nonzero entries -> 2), which is evidence FOR the u=0 reading rather than an assumption of it",
+      "passed": true,
+      "residue_x_dependent": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "residue_at_x_1": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "T1-the propagation law closes under some index variant. It does NOT: entries (1,0) and (2,0) survive every variant tried — column 0, rows 1-2. Recorded as a blocker rather than pursued by trying conventions until one closes, which would be fitting a convention to a target",
+      "passed": false,
+      "variants": {
+        "inv-3": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "inv-2": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "noinv": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "unseparated_causes": [
+        "GGM's J for the u=0 rank-3 case may not be [[0,0,1],[0,2,0],[1,0,0]] as read from OCR",
+        "the operator whose Wronskian (244) defines may differ from (254) at u=0",
+        "the q^{2+m} index attachment in the companion matrix may shift"
+      ],
+      "next_honest_step": "read the u=0 section's own operator and J from the source rather than importing (254) and the OCR'd J across sections"
+    }
+  ],
+  "scriptHash": "54e6ef1bb2be",
+  "scriptCommitSha": "unknown",
+  "commitSha": "3ca013dd8385d587f084fc07619006e9768ab03d",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

@@ -150,3 +150,47 @@ constant `c_pretzel`, tied by the bar-involution equation. The shortcut is close
 route needs the integrality statement (93) worked out at rank 6, or the blocks-side reading
 of Part 17's `Z[s]` bilinear — and that second one risks reading `c` off the target, which
 is the fit this tranche exists to avoid.
+
+## Part 4 (2026-09-14) — 🛑 CORRECTION to Part 2's attribution, and a characterised blocker
+
+Producer `aomega_m3_pairing_propagation_blocker_probe.py`, 2/3 (T1 the blocker).
+
+**The corrected law.** Part 3 retracted the invariance premise. The right one, since
+`W_{m+1} = A_m W_m` (GGM (130)/(244) define `W` with ROWS = shifts, so this direction is
+confirmed, not assumed) and GGM (92) moves its two indices in OPPOSITE directions:
+
+    G_M := W_M J Wbar_{-M-2}^T     satisfies     G_{M+1} = A_M G_M (Abar^T)^{-1}
+
+the inverse because the second index DECREASES.
+
+### 🛑 CORRECTION to Part 2: (92)/(93) are the u=0 case, not 5_2's
+
+Part 2 called `c = 4` "the 5_2 constant, from (92)". The arithmetic
+`det(RHS)/(pref^r det J) = 4` is right; the **attribution is wrong**. (92)/(93) are NOT in
+the 5_2 sections (013/015) — they sit in the earlier Conjecture-12 section, and their RHS
+`[[1,0,0],[0,0,1],[0,1,3-q^m]]` contains **no x at all**, while 5_2's operator (254) does.
+The `3` in that RHS is `s(x)` at `x = 1`. So they are the **u = 0 (x = 1) specialisation**,
+and Part 2 paired a u=0 pairing with an x-dependent operator.
+
+**Scope `c = 4` to "the u=0 rank-3 case of Conjecture 12", never to 5_2 generally.**
+Contaminated: this bean's Part 2 entry, the Part 2 commit message, the Part 2 PR comment.
+Part 2's `c = 1` for 4_1 is UNAFFECTED — (137) is in the 4_1 section and carries `x`
+explicitly (`x^-2 + x^-1 - 1`), and it was cross-checked against 4_1's own printed (136).
+
+**The reading is corroborated, not assumed** (G2): specialising the operator to `x = 1`
+cuts the residue from THREE nonzero entries to TWO.
+
+### The blocker
+
+The law still does not close. Entries **(1,0) and (2,0)** — column 0, rows 1-2 — survive
+every index variant tried (`inv-3`, `inv-2`; the un-inverted variant is far worse at 9/9,
+which independently confirms the inverse belongs there).
+
+Three causes remain UNSEPARATED, named rather than guessed between:
+1. the `J` for the u=0 rank-3 case may not be `[[0,0,1],[0,2,0],[1,0,0]]` as read from OCR;
+2. the operator whose Wronskian (244) defines may differ from (254) at u=0;
+3. the `q^{2+m}` index attachment in the companion matrix may shift.
+
+**Next honest step:** read the u=0 section's OWN operator and `J` from the source, instead
+of importing (254) and an OCR'd `J` across sections. I stopped rather than try conventions
+until one closes — that is fitting a convention to a target.
