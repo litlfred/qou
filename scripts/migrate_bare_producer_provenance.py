@@ -430,6 +430,25 @@ def apply_one(plan: dict) -> str | None:
     `_path_bridge.py` rather than counting `.parent`s -- the idiom
     `computations/substrate/_precision.py` adopted after a fixed count proved
     wrong in both layouts it lives in.
+
+    CORRECTED AGAIN 2026-09-14 (same bean). The 2026-08-30 fix above was
+    INERT and shipped that way: it inserted the directory holding
+    `_path_bridge.py` onto `sys.path` -- `computations/` -- and then imported
+    `qou_substrate`, which is not under `computations/`. The directory that
+    holds it, `tools/qou-substrate/python`, is added by `_path_bridge.py:61`
+    when the module is IMPORTED. The block located the bridge and never used
+    it, so on a bare container the emitted stamp still raised the very error
+    this correction was written to remove.
+
+    It could not be caught by running it in the usual dev image, which has the
+    package pip-installed editable (`_editable_impl_qou_substrate.pth`) and so
+    resolves `qou_substrate` whatever `sys.path` says. Verified instead under a
+    simulation of the bare state -- `sys.path` with that one `.pth` entry
+    filtered out and the stdlib kept -- where no bootstrap FAILS, the
+    2026-08-30 block FAILS, and the block with `import _path_bridge` passes.
+
+    Nothing in the corpus carried the broken form: 0 files matched the emitted
+    bootstrap, so the correction had never been run.
     """
     path = ROOT / plan["path"]
     lines = path.read_text(errors="ignore").split("\n")
@@ -473,6 +492,17 @@ def apply_one(plan: dict) -> str | None:
         f"{pad}for _anc in _pl.Path(__file__).resolve().parents:",
         f"{pad}    if (_anc / '_path_bridge.py').exists():",
         f"{pad}        _sys.path.insert(0, str(_anc)); break",
+        # AND USE IT. Inserting the bridge's DIRECTORY is not enough: that
+        # directory is `computations/`, and `qou_substrate` does not live
+        # there -- it is `tools/qou-substrate/python`, which `_path_bridge.py`
+        # adds at line 61 when IMPORTED. Without this line the block above
+        # locates the bridge and then never uses it, so the emitted stamp
+        # still raises ModuleNotFoundError on a container that lacks the
+        # package. Measured 2026-09-14 under a bare-container simulation
+        # (sys.path with the editable .pth entry filtered out, stdlib kept):
+        # no bootstrap FAILS, this block without the next line FAILS, with it
+        # OK. Bean qou-ya1e.
+        f"{pad}import _path_bridge  # noqa: F401,E402 -- adds the substrate path",
         f"{pad}from qou_substrate.witness import WitnessBuilder as _WB",
         # `stamp_staleness_metadata` does NOT write `scriptFile` -- it stamps
         # scriptHash / scriptCommitSha / commitSha / engine / computedAt /

@@ -1,11 +1,11 @@
 ---
 # qou-ya1e
 title: '16 of 43 producers cannot run: the provenance stamp imports qou_substrate, which is not on sys.path'
-status: todo
+status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-30T15:43:31Z
-updated_at: 2026-09-14T15:00:40Z
+updated_at: 2026-09-14T15:03:07Z
 ---
 
 Measured 2026-08-30 by running the `qou-j0nv` regeneration batch — 43 producers,
@@ -152,3 +152,49 @@ reach a stamp. It is a ceiling on a looser criterion, not a re-measurement.
 
 Either way it must be validated on a container **without** the `.pth`. Set back
 to `todo`: not progressed, since neither branch is verifiable from here.
+
+
+---
+
+## The injector is fixed, and it IS verifiable here after all (2026-09-14, later)
+
+**Correcting my note above**: I set this back to `todo` saying neither remedy
+was verifiable from this container. That was too pessimistic. The editable
+`.pth` does exactly one thing — it puts `tools/qou-substrate/python` on
+`sys.path` — so filtering that single entry out, while keeping the stdlib and
+site-packages, reproduces the bare state precisely. The defect is testable
+here; I had simply concluded otherwise from a rig that was itself broken.
+
+Under that simulation, on a real candidate producer:
+
+    no bootstrap at all                       FAIL  ModuleNotFoundError: qou_substrate
+    the injector's 2026-08-30 block           FAIL  ModuleNotFoundError: qou_substrate
+    ...with `import _path_bridge` added       OK
+
+So the 2026-08-30 correction was inert, now confirmed by execution rather than
+by reading. `scripts/migrate_bare_producer_provenance.py` now emits:
+
+    import sys as _sys, pathlib as _pl
+    for _anc in _pl.Path(__file__).resolve().parents:
+        if (_anc / '_path_bridge.py').exists():
+            _sys.path.insert(0, str(_anc)); break
+    import _path_bridge          # <- the line that was missing
+    from qou_substrate.witness import WitnessBuilder as _WB
+
+Verified by extracting the emitted lines FROM THE SCRIPT and running them, not
+by retyping them: without the new line FAIL, as emitted now OK.
+
+### Still owed
+
+The **389** already-stamped producers still carry no bootstrap. The inflow is
+now correct, so the population is bounded, but draining it is a separate bulk
+pass — and one that is now verifiable the same way, per file, under the same
+simulation. I did not do it in this session: it is a 389-file diff on a branch
+siblings also push to, and it changes nothing in any container that has the
+`.pth`.
+
+Worth deciding first, because it may make the drain unnecessary: is the
+installed substrate the intended state? If yes, `AGENTS.md`'s
+"a bare container is the default" needs updating and this whole class
+dissolves. If no, the `.pth` in the dev image is masking a defect that CI
+would hit.
