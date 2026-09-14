@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-14T06:43:57Z
+updated_at: 2026-09-14T06:53:21Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1948,3 +1948,54 @@ a STRONGER statement than the one I set out to prove. sympy confirms: `q^2 = [1]
 
 Items 1-new and 3 are the same shape: both are classical-vs-deformed / which-cell
 choices with measured consequences, and both are owner calls rather than agent ones.
+
+
+## 2026-09-14 (cont.) — the `/3` and the k=3/k=2 gap are ONE defect
+
+Closes the last item the arc had located but not explained. An **explanation**,
+not a repair.
+
+### The step that unifies them (proved, `central_value_unweighted`)
+
+**A central element needs no measure.** The three channel weights sum to 1, so a
+value every channel agrees on passes through the weighted average unchanged. No
+measure factor — and in particular no `1/3` — can appear on that side.
+
+* The block's **narrative** half proves exactly that of `sigma^3 - sigma^-3 =
+  3h + h^3 = q^3 - q^-3`. Read as its own argument dictates, it carries **no 1/3
+  at all**.
+* The block's **formula** half uses k=2, where `sigma^2 - sigma^-2 =
+  h(sigma + sigma^-1)` is **not** central, so evaluating it **requires** a
+  measure — which is where `weightRatio`, and at q=1 the `1/3`, comes from.
+
+So the two sections are not two numbers for one object. They are **two different
+kinds of object** — a scalar in the algebra vs an algebra element requiring a
+measure — and the `1/3` is the **fingerprint of the switch**: it can only appear
+on the side that needs one.
+
+### Measured, four cells at the proton q0
+
+| cell | value | rel to observed |
+|---|---|---|
+| k=3, no measure (what centrality dictates) | 0.0062469 | **+353.5 %** |
+| k=3, with a 1/3 anyway | 0.0020823 | +51.2 % |
+| k=2, classical 1/3 (the corpus) | 0.0013757 | −0.128 % |
+| k=2, deformed weight(q) | 0.0013956 | +1.32 % |
+
+The narrative object evaluated honestly is off by **4.5x**. Scope (a): a measured
+negative about what the block's own argument yields, with **no** invariant
+excluding a k=3 route that supplies its normalisation some other way.
+
+### Open list — all four original items now resolved or handed off
+
+1. ~~The `/3`~~ — identified (q=1 value of the corpus's own H_3 Plancherel weight).
+2. **Why `hbar_q` and not `(q-1)`** — OPEN. The bar-norm hypothesis cannot say;
+   they give the identical prefactor. Needs a constraint outside that family.
+3. Which Markov parameter — **owner call**, coupled to `qou-99qc`.
+4. ~~The k=3/k=2 1.5136 gap~~ — explained: same defect as (1).
+
+What is left is **(2), one genuine open question**, plus **two owner decisions**
+of the same shape: classical-vs-deformed measure, and augmentation-vs-z_D
+parameter. Both are choices with measured consequences, neither is an agent call.
+
+**Bean stays open** (open conjecture).
