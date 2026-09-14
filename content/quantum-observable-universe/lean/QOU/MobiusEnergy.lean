@@ -609,4 +609,41 @@ theorem exclusionZone_positive (q : ℝ) (hq : q > 1) :
     0 < hbarQ q :=
   hbarQ_pos q hq
 
+/-! ## §5  The classical-limit field constrains nothing — measured 2026-09-14
+
+`CategoricalMobiusEnergy.classicalLimit` reads
+`energy = (1/4) * classicalEnergy.value + classicalLimitConst`, which looks like
+the bridge from the categorical energy to the classical one. **It is not a
+constraint on that pair at all**, because `classicalLimitConst` is a *free field
+of the same structure*, appearing once and linearly. Given any `energy` and any
+`classicalEnergy` whatever, exactly one constant satisfies the equation — so the
+field defines `classicalLimitConst` rather than relating the two energies.
+
+The mathematical statement the docstring quotes,
+`lim_{q→1} E_cat(γ) = ¼ E(γ) + const`, means a **universal** constant: the same
+for every knot. Encoded **per instance**, that content is gone.
+
+This is the same class as the incident the `ClassicalMobiusEnergy.unknot_iff`
+docstring records — *"no `sorry`, no `axiom` and no tautological conclusion, so
+no vacuity detector saw it"* — one field over, and it survived that repair. It
+is recorded, not repaired: making the constant universal changes what the
+structure asserts, which is an authoring decision for the owner, not a fix an
+agent should make unasked. Bean `qou-pzsi`. -/
+
+/-- **`classicalLimitConst` is determined by the other two fields.** -/
+theorem classicalLimitConst_eq {M : Type*} (cme : CategoricalMobiusEnergy M) :
+    cme.classicalLimitConst = cme.energy - (1 / 4) * cme.classicalEnergy.value := by
+  have h := cme.classicalLimit
+  linarith
+
+/-- **So the classical-limit field relates the two energies not at all.** For
+*any* real `e` and *any* classical energy `c`, exactly one constant makes the
+equation hold. A field that can always be satisfied, whatever the quantities it
+mentions, asserts nothing about them. -/
+theorem classicalLimit_unconstraining (e : ℝ) (c : ClassicalMobiusEnergy) :
+    ∃! k : ℝ, e = (1 / 4) * c.value + k := by
+  refine ⟨e - (1 / 4) * c.value, by ring, ?_⟩
+  intro k hk
+  linarith
+
 end QOU

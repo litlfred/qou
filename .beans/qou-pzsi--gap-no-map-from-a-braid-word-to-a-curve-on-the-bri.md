@@ -91,3 +91,67 @@ Not "build the bridge". First establish which of (1) or (2) above the Bring
 surface is supposed to supply, and whether `E_cat`'s classical limit is sound
 after the recorded vacuity incident. Until then the gluon dressing stays
 unselected and the `qou-99qc` dashboard rows stay un-re-scored.
+
+## 2026-09-14 (session gifted-feynman) — the caveat checked: both its reasons are wrong, and its conclusion is right for a better one
+
+This bean's "Next honest step" names two things to establish before building.
+The second — *whether `E_cat`'s classical limit is sound after the recorded
+vacuity incident* — is settled here. **Both stated grounds for doubt are wrong,
+and a third, worse one is proved.**
+
+**1. "`QOU/MobiusEnergy.lean` carries 2 sorries" — FALSE. It carries ZERO.**
+Measured on the merged head: `grep -cE '(^|[[:space:]])sorry([[:space:]]|$)'`
+returns **0**, and the file is `lean`-direct **exit 0**
+(`-DautoImplicit=false -s 65536`), so that is an elaborated fact, not a parse
+artifact. The three `sorry` strings in the file are all prose — two inside the
+docstring *describing* the incident, one in a §-heading.
+
+**2. The vacuity incident is FIXED, and has been since 2026-08-30.** The field
+now reads `unknot_iff : value = 4 ↔ isUnknot`, which is the Freedman–He–Wang
+statement. The broken spelling was `value = 4 ↔ True`; `P ↔ True` is `P`, so it
+forced `value = 4` for *every* instance and, through `classicalLimit`, made
+`E_cat = 1 + const` for every knot. The file's own docstring records the repair.
+So the bean's caveat is **stale**, not merely imprecise.
+
+**3. 🛑 But there is a SECOND defect in the very same field, it is live, and it
+is worse.** `CategoricalMobiusEnergy.classicalLimit` reads
+
+    energy = (1/4) * classicalEnergy.value + classicalLimitConst
+
+and `classicalLimitConst` is a **free field of the same structure**, occurring
+once and linearly. So the field **constrains the pair `(energy,
+classicalEnergy)` not at all**: for any `e` and any `c` whatever, exactly one
+constant satisfies it. Proved, sorry-free, appended to the file itself:
+
+| declaration | statement |
+|---|---|
+| `QOU.classicalLimitConst_eq` | `classicalLimitConst = energy − ¼·classicalEnergy.value` — determined by the other two fields |
+| `QOU.classicalLimit_unconstraining` | `∃! k, e = ¼·c.value + k` for **every** `e` and **every** `c` |
+
+`#print axioms` on both: `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
+
+**Why it matters, in the framework's terms.** The mathematical statement the
+docstring quotes — `lim_{q→1} E_cat(γ) = ¼ E(γ) + const` — means a **universal**
+constant, the same for every knot. That is what carries the content. Encoded
+**per instance**, the content is gone: the categorical energy and the classical
+energy are related by nothing.
+
+**It is the same class as the incident the file already records** — *"no
+`sorry`, no `axiom` and no tautological conclusion, so no vacuity detector saw
+it"* — one field over, and it **survived that repair**. The 2026-08-30 fix
+corrected `unknot_iff` and did not look at the field consuming it.
+
+**Not repaired, deliberately.** Making the constant universal changes what the
+structure asserts; that is an authoring decision for the owner, not an agent's
+fix, and §ASK THE OWNER applies. Recorded in the file and here.
+
+**Corpus-grep before claiming:** `classicalLimitConst` appears **nowhere else**
+in the corpus — not in any bean, audit, probe or other `.lean`. Not previously
+recorded.
+
+**So this bean's conclusion stands and its reasons should be replaced.** The
+categorical↔classical leg still cannot bear weight — not because of sorries
+(there are none) or the old blindness (fixed), but because the bridge field is
+unconstraining as encoded. Open item (1) — *which of minimiser-or-canonical-
+embedding the Bring surface is meant to supply* — is untouched and remains the
+live research question.
