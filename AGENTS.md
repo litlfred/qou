@@ -3173,7 +3173,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-five** rows (re-counted 2026-09-14), and the groups
+>   catalogues **forty-six** rows (re-counted 2026-09-14), and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
 >   about conventions at all. **Rows 35-45 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
