@@ -97,6 +97,49 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
       Frobenius object in a monoidal category. -/
   frobenius_relation :
     mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
+  /-- **Left unit law.**  `η ▷ A ≫ μ = λ_A`.  Axiom 1 of
+      `def:frobenius-hopf-substrate` says `(μ, η)` make `A` an *associative
+      unital* algebra object; this is half of "unital".
+
+      Field shape matches `CategoryTheory.MonObj.one_mul` exactly, so
+      `toMonObj` is a field-for-field transport. -/
+  one_mul : unit ▷ obj ≫ mul = (λ_ obj).hom
+  /-- **Right unit law.**  `A ◁ η ≫ μ = ρ_A`.  The other half of "unital". -/
+  mul_one : obj ◁ unit ≫ mul = (ρ_ obj).hom
+  /-- **Associativity.**  `(μ ▷ A) ≫ μ = α ≫ (A ◁ μ) ≫ μ` — the "associative"
+      of axiom 1.  Matches `CategoryTheory.MonObj.mul_assoc`. -/
+  mul_assoc : (mul ▷ obj) ≫ mul = (α_ obj obj obj).hom ≫ (obj ◁ mul) ≫ mul
+  /-- **Left counit law.**  `Δ ≫ ε ▷ A = λ_A⁻¹`.  Axiom 2 says `(Δ, ε)` make
+      `A` a *coassociative counital* coalgebra object; this is half of
+      "counital".  Matches `CategoryTheory.ComonObj.counit_comul`. -/
+  counit_comul : comul ≫ counit ▷ obj = (λ_ obj).inv
+  /-- **Right counit law.**  `Δ ≫ A ◁ ε = ρ_A⁻¹`. -/
+  comul_counit : comul ≫ obj ◁ counit = (ρ_ obj).inv
+  /-- **Coassociativity.**  The "coassociative" of axiom 2.  Matches
+      `CategoryTheory.ComonObj.comul_assoc`. -/
+  comul_assoc :
+    comul ≫ obj ◁ comul = comul ≫ (comul ▷ obj) ≫ (α_ obj obj obj).hom
+  /-- **Antipode axiom (left).**  `Δ ≫ S ▷ A ≫ μ = ε ≫ η`.
+
+      This is the Hopf condition proper: `S` is the convolution inverse of
+      `id_A`.  It is what makes `S` *determined* rather than free data —
+      convolution inverses are unique in a monoid, so
+      `QOU.FrobeniusHopfData.antipode_unique` follows.
+
+      **Added 2026-09-14** (owner decision; beans `qou-c64q` / `qou-qjhc`).
+      Before that, `def:frobenius-hopf-substrate` named `S` and constrained
+      it with nothing: its axiom 2 wrote `ε ∘ μ = u ∘ (ε ⊗ ε)`, which is
+      multiplicativity of the *counit* and does not mention `S` at all.  `S`
+      was therefore free data, and every question about it — `S² = id`
+      included — was independent of the definition rather than open.  The
+      machine-checked record of that prior state is
+      `QOU.AntipodeIndependence`.
+
+      Field shape matches `CategoryTheory.HopfObj.antipode_left`. -/
+  antipode_left : comul ≫ antipode ▷ obj ≫ mul = counit ≫ unit
+  /-- **Antipode axiom (right).**  `Δ ≫ A ◁ S ≫ μ = ε ≫ η`.  Matches
+      `CategoryTheory.HopfObj.antipode_right`. -/
+  antipode_right : comul ≫ obj ◁ antipode ≫ mul = counit ≫ unit
 
 namespace FrobeniusHopfData
 
