@@ -429,6 +429,40 @@ RADICAL = np.array([(-1.0 / q0) ** len(w) for w in NF_BASIS])
 #: A survey of the corpus found ZERO arithmetic consumers of it — no `@`, no
 #: `.dot`, no indexing — so nothing is broken by its absence; see
 #: `gram_inverse()` below for the migration error.
+#:
+#: ⚠ FLOAT64 END TO END — `G` is built from the float64 `q0`/`h`/`z`, and the
+#: pseudo-inverse is taken in float64. Use `gram_quotient_pinv_mp()` for
+#: anything that reports digits past ~15 or feeds a witness.
+#:
+#: BUT DO NOT OVERSTATE THE DEFECT, because the obvious alarm is the wrong
+#: one and was written here once. `cond(G) = 4.9e16` looks catastrophic and
+#: is not: the singular values are
+#: `[4.230, 0.7527, 0.7527, 0.7527, 0.7527, 8.6e-17]`, so the whole
+#: conditioning is the ZERO the pseudo-inverse discards by construction, and
+#: the conditioning of what it actually inverts — the quotient — is **5.62**.
+#: The rank decision is not fragile either: numpy's rcond cutoff is 5.6e-15
+#: against a smallest KEPT singular value of 0.753, a margin of 1.3e14.
+#: Measured against the exact 60-dps pseudo-inverse, every entry agrees to
+#: **4.0e-16 relative** — float64 epsilon, i.e. as good as float64 gets.
+#:
+#: So the honest statement is narrow: this constant is correct and carries
+#: ~16 digits, which is below the corpus's 1-ppQ L1 target and far below
+#: what a witness records. It is not broken, it is short. That is why the
+#: mpmath twin is a second route rather than a replacement, and why this
+#: constant is NOT deprecated.
+#:
+#: One thing the mp twin does buy structurally: it builds the projector from
+#: the PROVED radical (`radical_mp`, `det G = 0` exactly over Q) instead of
+#: from an SVD, so the rank is decided by the algebra and not by a tolerance
+#: that happens to have a large margin at THIS q.
+#:
+#: ⚠ `||G @ G_PINV - I||_max = 0.2234` (Frobenius exactly 1.0) is NOT an
+#: error: it is the radical projector `v vᵀ/(v·v)`, which it reproduces to
+#: 5.8e-16 — correct behaviour for a rank-5 pseudo-inverse. Do not confuse
+#: it with the **1.64** quoted above, which belongs to `np.linalg.inv` and
+#: is a genuine breakdown. Those two figures were conflated in this very
+#: docstring on 2026-09-14; they differ by 7x and describe opposite
+#: situations.
 G_PINV = np.linalg.pinv(G)
 
 # Identity NF: the trivial braid [1, 0, 0, 0, 0, 0]
@@ -522,6 +556,7 @@ __all__ = [
     # 50-dps mpmath Gram / trace (NO float64)
     "z_mp", "h_mp", "tr_m_mp", "hm_mp", "gram_matrix_mp",
     "radical_mp", "gram_inverse_mp", "gram_quotient_solve_mp",
+    "gram_quotient_pinv_mp", "gram_quotient_pinv_mp_strings",
     "gram_matrix_mp_strings", "tr_m_mp_strings",
     # Native-dispatched atom kernels
     "build_atom_nf", "atom_per_generator_volumes", "has_native",
@@ -561,7 +596,11 @@ def gram_inverse() -> np.ndarray:
 
 
 def gram_quotient_inverse() -> np.ndarray:
-    """Inverse of the trace form on the quotient `H_3(q)/rad` (float64)."""
+    """Inverse of the trace form on the quotient `H_3(q)/rad` (float64).
+
+    NOTE: float64, and the rank cutoff is float64 too — see `G_PINV`'s note.
+    The float64-free twin is `gram_quotient_pinv_mp()`.
+    """
     return G_PINV
 
 
@@ -875,6 +914,76 @@ def gram_quotient_solve_mp(rhs, dps: int = _GRAM_MP_DPS, q=None):
                 A[i, j] = Gm[i, j] + v[i] * v[j] / vv
         x = _mp.lu_solve(A, b_perp)
         return [+x[i] for i in range(6)], +(coeff * _mp.sqrt(vv))
+
+
+def gram_quotient_pinv_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
+    """Moore-Penrose pseudo-inverse of the Gram at mpmath precision — the
+    float64-free twin of the module constant `G_PINV`. NO float64.
+
+    Returns a 6x6 list-of-lists of `mpmath.mpf`.
+
+    WHY THIS EXISTS, stated at the size it actually is. `G_PINV =
+    np.linalg.pinv(G)` is float64 end to end — `G` is assembled from the
+    float64 `q0`/`h`/`z` — so it carries ~16 digits, below the corpus's 1-ppQ
+    L1 target and far below what a witness records. That is the whole defect.
+
+    It is NOT numerically broken, and the alarm that suggests otherwise is a
+    trap: `cond(G) = 4.9e16` is entirely the ZERO singular value that a
+    pseudo-inverse discards by construction, and the conditioning of what it
+    actually inverts is 5.62. Measured entry by entry against this function,
+    `G_PINV` agrees to 4.0e-16 relative — float64 epsilon. Anyone reaching
+    for this expecting to *repair* a wrong number will find the same number
+    with more digits after it.
+
+    What this route does buy beyond digits is structural: the rank is decided
+    by the PROVED radical below, not by an rcond tolerance. That tolerance
+    currently has a margin of 1.3e14 at the substrate q_0, so it is in no
+    danger here — but it is a tolerance, and the margin is q-dependent.
+
+    METHOD — no SVD, no rcond, no numerically-extracted null vector. With `v`
+    the PROVED radical (`radical_mp`: the three-strand q-antisymmetriser,
+    `det G = 0` exactly over Q at three independent rational q) and
+    `P = v v^T / (v.v)` the orthogonal projector onto it,
+
+        A := G + P   is invertible        (it is G on v-perp, the identity on v)
+        G^+ = A^-1 - P
+
+    which is the Moore-Penrose pseudo-inverse: on `v`-perp it inverts `G`
+    (`P` vanishes there), and on `span(v)` it gives `A^-1 v - P v = v - v = 0`.
+    So the cutoff that decides rank is the algebra, not a tolerance — the one
+    place a pinv of a singular matrix can silently go wrong.
+
+    This is the matrix form of `gram_quotient_solve_mp`, and agrees with it:
+    that function returns `A^-1 Q rhs` with `Q = I - P`, and `A^-1 Q =
+    A^-1 - P` because `A^-1 P = P`. Prefer the solve when you have one
+    right-hand side (it also hands back the radical component, which is the
+    part no solution can reach); prefer this when you need the operator.
+
+    NOT AN INVERSE, and the name says so. Under convention D the form is
+    singular, so `G^-1` does not exist — `gram_inverse_mp()` raises for that
+    reason and this is not a way around it. Dualising a vector with a nonzero
+    radical component still has no answer; this returns the minimum-norm
+    solution of the projected system and silently discards that component, so
+    use `gram_quotient_solve_mp` when you need to know whether it was zero.
+    """
+    with _mp.workdps(dps):
+        Gm = _mp.matrix(gram_matrix_mp(dps, q))
+        v = _mp.matrix(radical_mp(dps, q))
+        vv = _mp.fsum(v[i] * v[i] for i in range(6))
+        A = _mp.matrix(6, 6)
+        for i in range(6):
+            for j in range(6):
+                A[i, j] = Gm[i, j] + v[i] * v[j] / vv
+        Ainv = A ** -1
+        return [[+(Ainv[i, j] - v[i] * v[j] / vv) for j in range(6)]
+                for i in range(6)]
+
+
+def gram_quotient_pinv_mp_strings(dps: int = _GRAM_MP_DPS) -> list:
+    """`gram_quotient_pinv_mp` as decimal strings — ready to marshal across
+    the PyO3 / CLI boundary, or into a witness, without any float64."""
+    P = gram_quotient_pinv_mp(dps)
+    return [[_mp.nstr(P[i][j], dps - 5) for j in range(6)] for i in range(6)]
 
 
 def gram_matrix_mp_strings(dps: int = _GRAM_MP_DPS) -> list:
