@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-09-14T07:57:04.903Z",
+  "updated_at": "2026-09-14T08:07:43.279Z",
   "entries": {
     "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3741,23 +3741,6 @@
         "agent_skill": "local/lean-proof-vacuity-audit",
         "agent_model": "claude-opus-5",
         "agent_date": "2026-09-14"
-      }
-    },
-    "content/quantum-observable-universe/lean/QOU/Information/GeometryOfIncompleteness.lean::DegreeZeroDatum::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 32,
-      "verdict": "genuine",
-      "file_sha": "5059b70037b2",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `formallyProvable` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[DegreeZeroDatum]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
       }
     },
     "content/quantum-observable-universe/lean/QOU/OptionE/RungSelection.lean::RungRule::proof-claims-unencoded": {
