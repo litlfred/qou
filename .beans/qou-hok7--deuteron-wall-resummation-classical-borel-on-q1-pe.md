@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-14T07:23:05Z
+updated_at: 2026-09-14T07:45:32Z
 ---
 
 
@@ -1518,5 +1518,32 @@ Also this session: `EdgeDecoupling.lean` gained the run's re-indexing (`card_fil
 `run_direct` walks — R1 checked only their sum, which a compensating error in the split would
 survive. The two halves are NOT the same lemma: different conditions, different kernels, and
 measured they differ by up to 3.603.
+
+**Do not close this bean.**
+
+
+### Tightened the same day: the Cauchy-Schwarz step was the loss (2.7x)
+
+`B_rig` applied `top_d <= sqrt(d N)` once per pair distance, charging the same top rows again
+at every `d`. Collecting the linearisation **by row** telescopes to one coefficient per row,
+and it has a reading: row `i` from the free top edge only ever sees distances `>= i+1` on its
+way to the bulk, so the most it can gain per unit of displacement is
+
+    Ghat(m) := sum_{d>=m} |eps'(2d)| ,    coefficient of row i = Ghat(i+1)
+    Xblock(u) <= sum_i [ u_i Ghat(i+1) - (ln q0/2) u_i^2 ] <= B_sharp
+    B_sharp   := sum_m Ghat(m)^2 / (2 ln q0) = 3.92139923021415319458
+
+against `B_rig = 10.5551320927234643540`. Tightest slack at the per-sum maximisers: **0.142949
+vs 5.38217**, a factor 37.65. Unconditional cut **345 -> 90**.
+
+**Still not enumerable** — 90 is far past any feasible search. What it changes is the shape of
+**G2**: closing it is now the same thing as tightening `B_sharp` by a factor under two (it is
+1.816x the measured maximum). That makes G2 the most tractable-looking open item here, ahead
+of G1.
+
+Probe 8/8 (S8 added: the scaled-integer tables the enumeration runs on against a direct mpmath
+evaluator, worst 2.06e-40 against a 2.0e-38 floor — the enumeration uses those tables for
+everything, so it cannot check them itself). Library sweep `--only QOU.BraidKnot` 337 ok 0 RED
+0 TIMEOUT 0 skipped (671 s); `--only QOU.BraidKnot.SearchCoercivity` 1 ok 0 RED.
 
 **Do not close this bean.**
