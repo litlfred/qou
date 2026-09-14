@@ -398,6 +398,78 @@ genus, including the ones that do not help.
 
 ---
 
+## Step 4 — "6 basis elements ↔ 6 torus knots" is a coincidence of counts
+
+Walking one step further with the same tool. The cheat sheet's diagram renders
+step 4 as
+
+```
+step 4. Bring χ = −6  ↓  6 basis elements ↔ 6 torus knots ↔ particle content
+```
+
+and its step table supplies the arithmetic: *"`dim H_3(q) = 6` = # embeddable
+torus knots in `Σ_4`"*. The `↔` is load-bearing — it is what carries the genus
+into the particle content.
+
+**Two different sixes are being set against each other, and the corpus is
+clearer about this than the diagram is.**
+[`knot-operator-basis-table.md`](../../content/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.md)
+names the actual NF basis — `{γ, σ₀, σ₁, L₊, L₋, e⁻}` — and treats the torus
+knots as **operators acting on** it, tabulating `b_i · β(T_{m,n}) · b_j` for
+every basis pair and every knot. So the block does not claim the knots *are*
+the basis. The diagram's arrow is what reads that way.
+
+### The one linear-algebraic content the identification could have, measured
+
+Do the six torus-knot braid words span `H_3(q)`? Exact symbolic rank over
+`ℚ(q)` through the faithful representation `(3) ⊕ (2,1) ⊕ (1,1,1)` —
+`1 + 4 + 1 = 6` matrix coordinates, so by Wedderburn the span of the six image
+vectors **is** the span of the six words in the algebra, not merely of their
+characters:
+
+```
+rank = 4,  against dim H_3(q) = 6
+```
+
+and the reason is structural, so it holds at every `q`:
+
+| | words | span |
+|---|---|---|
+| 2-strand `T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}` | 4 | **2** |
+| 3-strand `T_{3,4}, T_{3,5}` | 2 | **2** |
+| | | **4 < 6** |
+
+`σ₁^s` collapses into `span{1, σ₁}` by the Hecke relation, so **any** number of
+`T_{2,s}` spans at most 2 — measured at seven of them (`s = 3…15`), still 2.
+Adding `T_{2,11}` at `g = 5` adds nothing, exactly as in the genus sweep.
+
+**This is the same 2 + 2 as §"Answering (1)", from the same cause**, one level
+down: there the four 2-strand rows filled two `H_2` columns and the two
+3-strand rows two of three `H_3` columns; here the four 2-strand words fill a
+2-dimensional subalgebra and the two 3-strand words 2 more. One structural
+fact — *the six knots are four copies of a 2-dimensional story plus two more* —
+surfacing in both a character space and an algebra.
+
+[`step4_torus_knot_span_probe.py`](../../computations/audits/step4_torus_knot_span_probe.py),
+17/17, exact over `ℚ(q)`, no float. The `(2,1)` irrep is solved from the braid
+relation rather than transcribed, with braid and Hecke relations asserted in
+all three irreps.
+
+### 🛑 What this is and is not
+
+**Scope (b) for the narrow claim** — the six knots do not span `H_3(q)`, at no
+`q` rather than at some `q`; invariant = rank subadditivity over the
+2-strand/3-strand split, plus the Hecke collapse of `σ₁^s`.
+
+It is **not** a claim that step 4 is wrong, and **not** a claim against the
+particle-content assignment. The knots are used as *operators*, and an operator
+family spanning a 4-dimensional subspace is not thereby defective. What is
+established is that **the "6 ↔ 6" is a coincidence of counts, not a
+linear-algebraic identification**, so it cannot carry the weight the diagram's
+arrow gives it — and that the corpus block already treats it correctly.
+
+---
+
 ## Where the walk stands
 
 The chain's conditions do not accumulate step by step — they **converge on one**:
@@ -427,9 +499,15 @@ genus misses by one (§"Answering (1)" above).
    route, since it `uses` route 2 and is not independent anyway. This is a
    judgement about what the argument was meant to say, which is the author's,
    not mine.
-2. **The rank contradiction** (`why-b3` "rank 1" vs `descartes-knot-eigenbasis`
+2. **The cheat sheet's step-4 arrow** — *"6 basis elements ↔ 6 torus knots"* —
+   reads as a linear-algebraic identification that does not hold (the knots
+   span 4 of 6 dimensions), while the corpus block it summarises is correct.
+   A wording fix to the primary coordination document, so the owner's, not
+   mine. **Default if nothing is done:** the diagram keeps overstating a
+   correspondence the block underneath it states correctly.
+3. **The rank contradiction** (`why-b3` "rank 1" vs `descartes-knot-eigenbasis`
    "rank 2") — still a one-line fix someone should own.
-3. **Steps 7, 8, 9, 11**, still unwalked.
+4. **Steps 7, 8, 9, 11**, still unwalked.
 
 Note what (1) does *not* threaten: `g = 4` itself. Route 2's embeddability
 arithmetic is clean and independent of this defect.
