@@ -708,3 +708,83 @@ Side benefit worth knowing: as `seconds` these fields were substantive, so
 each witness showed a real diff on every re-run for no informational reason.
 As `elapsed_sec` the drift machinery ignores them, the way it already does
 `durationMs`.
+
+## 25. The raw-float64 ratchet's 8 REGRESSED entries — classified, 1 fixable, 7 not by serialisation
+
+Triaged all eight. The split that matters is the one bean `qou-gqt5` drew for
+the largest of them: **float64 BY CONSTRUCTION** (the producer never holds an
+exact value — `qou-gqt5`'s territory, a rewrite) versus **an mpf narrowed at
+the witness edge** (`qou-qrsp`'s, a one-line serialisation fix). Deciding it
+per producer is the whole job; the remedies are not interchangeable.
+
+| witness | delta | imports mpmath | verdict |
+|---|---:|---|---|
+| binding-single-pipeline-comparison | 299→413 | yes | by construction — **already triaged**, `qou-gqt5` 2026-09-13 |
+| atom-vhyp-closure-matrix-m | 10→41 | **no** | by construction |
+| multi-level-jet-sum | 11→27 | **no** | by construction |
+| active-set-lr-scaling-profile | 5→6 | **no** | by construction |
+| lp-confinement-nf-forcing | 9→10 | **no** | by construction |
+| catalan-binding | 34→44 | yes | mixed — `float(pa["total"])` at the edge, unexamined |
+| delta-lambda-qdim-route-probe | 24→26 | yes | mixed — `float(target)` at the edge, unexamined |
+| delta-lambda-2row-stratum | 128→136 | yes | **narrowed at the TOP — see below** |
+
+Four never import mpmath at all, so there is no exact value to serialise and
+no serialisation remedy exists. That is a cheap, total test and it settles
+half the list without reading a line of logic.
+
+### `delta_lambda_2row_stratum_analysis.py` — and the trap I nearly fell into
+
+The edge looks like the classic §16 defect:
+
+    :246   "contribution":     float(c_l),
+    :247   "abs_contribution": float(abs(c_l)),
+    :275   "delta":            float(delta),
+
+with `c_l = mp.mpf(t["y_at_q0"]) * mp.mpf(t["chi_q_at_q0"])` at `:241` — an
+mpf product, apparently exact, narrowed on the way out. **It is not.** Thirty
+lines up, in the same file:
+
+    :211   "y_at_q0":     float(e["y_lambda"]),
+    :212   "chi_q_at_q0": float(e["chi_lambda"]),
+
+and the cache those come from is literally named
+`chi-{atom}-h{n}-at-q0-50dps.witness.json`, storing both as **50-digit
+strings**. So 34 of 50 digits are discarded at the door and `c_l` was never
+exact. Fixing the edge would have claimed a precision destroyed upstream —
+the "conceals a real loss" half of this bean's own trap, reached by reading
+one call site and not the one above it.
+
+The live fallback path narrows too, and it is the familiar shape:
+
+    :219   global_wedderburn_sum_q_hecke_seminormal(Z=Z, N=N, q_val=float(Q_MP))
+
+the anchor at 53 bits, exactly §17's `hecke_division` and §19's Casimir.
+
+**The remedy is at `:210-212`, and it is safe in mechanism**: pass the strings
+through unchanged, since `:241` already calls `mp.mpf(...)` on them and mpf
+parses a decimal string faithfully. No signature changes, no new imports.
+
+**NOT DONE, deliberately.** It does not move one field; it moves the numeric
+inputs of the whole analysis — `sector_mass`, `contribution_total`,
+`frac_2row` and both the e1 and e2 sub-ansätze, which currently compute from
+53-bit inputs via `mp.mpf(r["contribution"])` at `:269` and `:284` (reading
+back the value narrowed at `:246`). Bean `qou-5c64` is the warning: the
+zbws regeneration of `binding-single-pipeline-comparison` flipped two
+assertions from True to False and they are committed red in the tree today.
+A change with that reach gets verified by a run, not queued on a hope.
+
+### While measuring this: `qou-qrsp`'s ordering prediction, quantified
+
+The bean says "fix serialisation BEFORE zbws's regeneration batch runs, or
+the batch will land another few hundred raw-float64 fields". Batch 1
+(`07b03deb106`, 2026-09-04, 29 witnesses) is in the tree. Measured with the
+audit's own counter, before vs after that commit:
+
+    TOTAL raw-float64   1205 -> 1348   (+143)
+    gained 3 witnesses   lost 2   unchanged 24
+
+So the hazard is **real but far more concentrated than stated**: +143, not
+"a few hundred", and 114 of it is one witness. 24 of 29 were untouched. The
+prediction's direction was right and its magnitude was pessimistic — worth
+correcting in place, because the number is what the next person will plan
+against.
