@@ -272,3 +272,39 @@ recursion is NOT yet established -- the `H^-` series (90a-c) carry `(-1)^n q^{n(
 against `H^+`'s `q^{n(n+1)+nm}`, so they are different objects and may well satisfy different
 operators. That is the next thing to read or derive, and it is the last piece before the
 rank-3 calibration closes.
+
+## Part 7 (2026-09-14) — 🟢 GATE 1 DONE: the propagation law CLOSES, and the blocker was mostly mine
+
+Producer `aomega_m3_pairing_propagation_closes_probe.py`, **3/3**.
+
+**The law, derived with NO free parameters** from four printed inputs — (86) the recursion,
+(88) the block matrix, (87) the two-branch definition, and Theorem 11, which supplies the
+`W^-` law without a further lookup by making BOTH branches of (87) solve (86):
+
+    W^-_{n-1}(q) = R Abar_{-n-2} R W^-_n(q)          [from Thm 11 applied to (87)'s |q|>1 branch]
+    P_{m+1} = A_{m-1} . P_m . R . ([R Abar_{-m-2} R]^T)^{-1} . R
+
+with `P_m` GGM's printed (92) RHS. **It closes EXACTLY** — verified at eight explicit integer
+`m` with `q` carrying NO assumptions (G1), and symbolically in `m` under positivity (G2).
+
+**Gate 1 of issue #7376 is done.** The rank-3 calibration holds.
+
+### 🛑 The Parts 3-5 blocker had three causes and only ONE was mathematics
+
+1. Part 3's m-invariance premise — wrong, retracted there.
+2. **(real)** GGM (87) makes `W` at `q^-1` a DIFFERENT block family,
+   `R W^-_{-m-2}(q^-1) S`, not "the same `W` bar-substituted" — found by Part 6's source read.
+3. A **sympy artifact**: with `q` unassumed, `(1/q)^m` does not fold to `q^-m`, so entry (1,0)
+   displayed as `q**m - 1/(1/q)**m` — identically zero, shown as nonzero.
+
+So **two of the three were my harness**, and I characterised the whole thing as a
+mathematical blocker across three parts. That ratio is the durable lesson here, not the law.
+
+**Caveat, recorded rather than smoothed over (G3).** The nonzero DISPLAY is **path-dependent**:
+this probe's own code path simplifies the entry to `0` outright, so the literal
+`q**m - 1/(1/q)**m` is NOT reproducible here — only the vanishing is. A residue that reads zero
+or nonzero depending on how `simplify` is reached is a WORSE hazard than a stable one, because
+no fixed guard catches it. Declare assumptions on `q` and `m` in any symbolic q-difference work.
+
+**Next:** gate 2 (rank 2, 4_1) should now follow the same derivation; then rank 6, where the
+same machinery applies and Part 1's `det W_m = q^{4m} det W_0` supplies the shape.
