@@ -494,10 +494,15 @@ straddle fix is its own work.
 
 ### D2 — AUTHORISED, and the authorisation is smaller than it looks
 
-See the entry below for what was authorised. The finding that changes its
-scope: **the `c_k` tail needs no re-derivation** — only the N=1 phase does.
+See the entry below for what was authorised. The finding that shapes it: the
+Markov convention reaches the ladder at **exactly one place**, the N=1 eigenphase
+`α = (z − 1)·h/2`; the tail factors `N2…N5` never mention `z`. So the work is
+**one phase to derive, then five values to re-extract** — the ansatz survives,
+the numbers do not. Every extracted `c_k` divides through `Q_N1`, so all five
+rungs and their near-matches stay C-conditional exactly as AGENTS.md says
+(measured on `main`: implied `c₂` −1.0176 → −9.2989, `c₃` −2.0693 → −974.43).
 Full working:
-[`2026-09-13-d2-ck-tail-is-already-convention-d.md`](../audits/2026-09-13-d2-ck-tail-is-already-convention-d.md).
+[`2026-09-13-d2-convention-enters-at-one-rung.md`](../audits/2026-09-13-d2-convention-enters-at-one-rung.md).
 
 ---
 
