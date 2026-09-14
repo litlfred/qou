@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-14T08:51:37Z
+updated_at: 2026-09-14T08:56:13Z
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -360,3 +360,71 @@ form is arguable. `qFact_ratio_bound` should stay `genuine` on the unbounded ind
 and **zero** consumers of either accessor anywhere in the corpus — in-file uses are two
 comments. So the `k >= 4` laundering hazard I flagged is **unrealised**, and neither
 accessor is load-bearing for any result.
+
+
+## Re-confirming your HabiroFlowSolution lead (2026-09-14) — it holds, and the cause is worse than "no ledger entry"
+
+Your 2026-09-12 correction (`1af1fe232c`) says `HabiroFlowSolution` is still broken with no
+ledger entry, and that *"the right population query is a DETECTOR RUN OVER THE TREE, not a
+ledger query."* Re-measured two days later, both halves hold — and the detector run does not
+save you either.
+
+**Still broken, and it is the exact shape** of the seven carriers closed under `qou-9yt9`:
+`QOU/Habiro/FlowSolution.lean:49` carries **three literal universe-`Prop` fields** —
+`expQ_solves_base_reeb : Prop`, `fourier_diagonalises_qheat : Prop`,
+`liTwoQ_volumetric : Prop` — plus `all_hold` conjoining them. Any instance picks all three;
+`True ∧ True ∧ True` discharges the lot.
+
+**Still no ledger entry.** The only Habiro/FlowSolution key is
+`ZHabiroCauchy.lean::truncSection_zHabiroLimit::proof-borrowed-name` — a different file, a
+different category, exactly as you found it.
+
+### The new part: the DETECTOR does not flag it either, and the drain is why
+
+`docs/audits/2026-06-17-lean-vacuity-axiom-audit.json` has **zero** entries for
+`QOU/Habiro/FlowSolution.lean` in any category. The two `Habiro`-named hits are
+`UniversalHabiroStructure` and `QPochhammerHabiroEvaluation` — other files, both exempt.
+
+The file's own comment says why:
+
+```
+/-! ### Removed 2026-08-30 — self-assuming projections
+- `habiro_flow_solutions_realise_synthesis` — body was `inst.all_hold`: the conclusion
+  was the projected field verbatim, so the declaration restated its own hypothesis.
+```
+
+**The 2026-08-30 drain removed the consumer, and with it the detector's only handle on the
+file.** The carrier was left in place. So fixing the projection made the vacuous carrier
+*invisible* — a blind spot the drain itself created, which is worse than a native one
+because draining manufactures more of them. That is a new row for
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md` if you want it; I have not added it,
+since this is your arc.
+
+### It corrects my own framing three blocks up
+
+I wrote that all 57 non-exempt `proof-no-self-assuming-projection` hits carry a ledger
+verdict, and concluded *"this is a confirmed repair backlog, not a triage problem."* The
+first clause is a measurement and stands; **the conclusion over-states completeness.** 57 is
+what *this detector* sees on *this run*, against a documented 45-row blind-spot taxonomy, and
+`HabiroFlowSolution` is a live counterexample sitting outside it. Read the 57 as a lower
+bound.
+
+So your point generalises one step further: **a detector run is a lower bound too**, and a
+ledger that covers 57 of 57 detector hits is evidence about the ledger's coverage of the
+detector, not about the corpus.
+
+### One interaction with your `DimMasterPentagon` note, stated against myself
+
+You wrote that encoding-and-proving-the-transport (`bff4027fc`) is the stronger move and
+*"parameterising ... is the weaker move where the content is statable."* Two of the carriers
+I closed were **parameterised**, so by your criterion they need the statability test:
+
+- `KnotOperator.is_knot` (#7359) — the file has no knot theory in its cone at all
+  (`gram_matrix` is the zero matrix), so nothing there can state single-componentness.
+  Parameterising looks right by your test.
+- `DegreeZeroDatum.formallyProvable` (#7360) — needs a provability predicate over a formal
+  system, which Mathlib does not carry at this toolchain. Defensible, but I have **not**
+  exhaustively established that no Mathlib route states it, so treat it as argued rather
+  than measured.
+
+Neither is a claim that parameterising was optimal; it is the test you asked for, applied.
