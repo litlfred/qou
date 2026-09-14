@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-14T07:45:32Z
+updated_at: 2026-09-14T09:03:04Z
 ---
 
 
@@ -1545,5 +1545,70 @@ Probe 8/8 (S8 added: the scaled-integer tables the enumeration runs on against a
 evaluator, worst 2.06e-40 against a 2.0e-38 floor — the enumeration uses those tables for
 everything, so it cannot check them itself). Library sweep `--only QOU.BraidKnot` 337 ok 0 RED
 0 TIMEOUT 0 skipped (671 s); `--only QOU.BraidKnot.SearchCoercivity` 1 ok 0 RED.
+
+**Do not close this bean.**
+
+
+### G2 shrinks 1.82x -> 1.04x: the block value is CONCAVE (2026-09-14)
+
+Probe [`rev_e_infinity_block_sup_relaxation_probe.py`](computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py), 7/7.
+
+**Where `B_sharp = 3.9214` lost it.** Row 0 alone is **73.79 %** of it — budget 2.8936, attained
+at `u_0 = 7.447`. That is fiction: the per-row bound is the tangent at `u = 0` with no cap,
+while a single row's gain saturates at `S_e(1) = 2.568` and then turns over. The true best
+single-row block is `[3]` at **0.9297** — 3.11x less — and `[8]` is worth **-1.149** against a
+bound of 2.878. The linear bound calls a block worth minus one worth nearly three.
+
+**Fix 1, Jensen.** `f(x) = eps(2d) - eps(2d+x)` is concave, so the distance-`d` pair sum obeys
+`sum_i f(Delta_i) <= (T-d) f(mean)`, saturating at `(T-d) eps(2d)`. Valid (0 violations),
+`B_jensen = 2.6951` over `T <= 12` (2.69566 at `T = 13` in a longer run, 2.5532 by `T = 20`).
+Cut `90 -> 43`. **Still not enumerable** (~1e10 blocks).
+
+**Fix 2, and this is the one.** The same second-derivative fact applies to the whole objective:
+every internal term is `-eps(2d + (u_i - u_j))` — concave composed with a linear map — every
+bulk tail is `-eps(2d + u_i)`, the cost is `-(ln q0/2) sum u^2`. **`Xblock` is concave in `u`**
+(verified on 200 random ordered triples, min gap `+0.00147`, not assumed). So maximising over
+real `u >= 1` is a **concave program**, a relaxation of the integer problem and hence a rigorous
+upper bound:
+
+    B_relax = 2.253731338838604564088   at T = 7
+    argmax  [3.9769, 2.794, 2.075, 1.5824, 1.231, 1.0, 1.0]
+
+against the integer maximum 2.1598023761 — **1.04349x**, where `B_sharp` was **1.81563x**. The
+argmax is recognisably the integer argmax `[4,3,2,2,1,1,1]` with integrality let out. The AP
+ordering constraint was dropped from the program (a further relaxation) and comes out satisfied
+at every `T`.
+
+| bound | value | cut | blocks |
+|---|---|---|---|
+| `B_sharp` (#7349) | 3.9213992302 | 90 | ~1e10 — hopeless |
+| `B_jensen` (T<=12) | 2.6951302763 | 43 | ~1e10 — hopeless |
+| **`B_relax`** (T<=12) | **2.2537313388** | **27** | **6,325,874 — minutes** |
+| integer sup (measured) | 2.1598023761 | 23 | 696,615 |
+
+So the **arithmetic** of an unconditional closure now works: 27 is enumerable, and inside any
+such cut the enumeration carries no effective cap (entries `>= 1`, sum `<= L` force length
+`<= L` and every entry `<= L`).
+
+**G2 is REDUCED, NOT CLOSED.** Two finite, specified computations remain — neither is an open
+question:
+
+- **(a) a certificate for the concave maximum.** Coordinate ascent on a concave function reaches
+  the global max and the gradient there is tiny, but *a tiny numerical gradient is not a proof*.
+  What settles it is the supergradient inequality `F(u) <= F(w) + grad F(w).(u - w)` at the
+  returned `w`, with boundary coordinates (`u_i = 1`) carrying `grad <= 0` by KKT.
+- **(b) block lengths `T = 13..40`.** Every row past index 5 contributes at most
+  `Ghat(i+1) - ln q0/2 < 0`, so the cumulative per-row cap falls below `B_relax` at a rigorous
+  **`T0 = 40`**. This probe measured `T <= 12` (peak at 7, monotone decline after). The 28
+  values between are compute, not insight.
+
+Until both are done the cut of 27 is NOT usable and the practical cut stays at 23 on the
+measured `B`. Validation: `F([4,3,2,2,1,1,1])` reproduces #7349's enumerated maximum to
+**3.5e-21**, and the Lambert tail resummation agrees with the direct sum to 1e-22 at 5 points —
+both matter, since the relaxation is only a relaxation of the right problem if the extended
+function restricts correctly.
+
+**G1 unchanged.** Nothing here touches `Xbot <= Xblock`, nor the arc's headline open problem,
+the upper bound on `M_n`.
 
 **Do not close this bean.**
