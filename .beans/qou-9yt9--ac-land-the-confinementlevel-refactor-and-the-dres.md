@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T07:26:52Z
+updated_at: 2026-09-14T07:50:35Z
 ---
 
 ## Landed (A + C)
@@ -263,3 +263,81 @@ shape from #6671 — a class-arity change reaching `KazhdanLusztigClassicalLimit
 **Remaining 7:** HadronFibreEmbedding, DegreeZeroDatum, RungRule,
 TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
 BringPeriodSublattice, TannakaKreinReconstruction.
+
+## BringPeriodSublattice / magic-numbers-bring (PR #7359, 2026-09-14)
+
+`proof-claims-unencoded` **9 -> 8** on main's base (the 8 still holds BOTH
+HeckeAnyonicSubstrate carriers, fixed on #7357 and not yet in main). Combined
+once both land: **6**.
+
+**The ledger flagged the SMALLER half again.** It flags
+`structure BringPeriodSublattice`'s two universe-`Prop` fields
+(`s5_stable`, `tau_stable`). The bigger defect was unflagged:
+**`MagicNumbersBring` is declared TWICE with different fields and OPPOSITE
+dispositions** —
+
+- library `QOU/Conjectures/MagicNumbersBring.lean` (`QOU.Conjectures`):
+  no instance, with a standing comment explaining that the identity model
+  `magicLattice n := n` "discharges rank_eq_magic by rfl for ANY set of
+  naturals ... captures none of the conjecture's content";
+- content sibling (`QOU.AlgebraicSubstrate`): a global
+  `instance canonical` that IS that identity model (`rank := n`,
+  `s5_stable := True`, `tau_stable := True`).
+
+So one file declared the conjecture open and the file beside it closed it
+using the construction the first one names and rejects. Deleted the sibling
+(§0a shadowing stub + §3b-tax fabricated instance), repointed the ref to
+`qou:QOU.Conjectures.MagicNumbersBring`. Zero consumers of
+`ranks_match_magic_set` / `BringPeriodSublattice` / the sibling `magicSet`.
+
+**PATTERN, now twice in two carriers — worth expecting on the rest.** In both
+HeckeAnyonicSubstrate and this one, the ledger-flagged bare-`Prop` field was
+accompanied by a LARGER unflagged defect in the same file: a dangling
+`lean.ref` there, a fabricated instance here. The detector keys on field
+types and cannot see either. **When you open a flagged carrier, read the whole
+file and its `.ts`/`.jsonld`, not just the flagged field.**
+
+**Also: `ranks_match_magic_set` was vacuous independently of the class** —
+`exists L, L.rank = n` is satisfied by `<n, True, True>` for every n,
+because `rank` is a free `Nat` field. A conditional theorem can be vacuous
+for a reason that has nothing to do with the conjecture it cites.
+
+**Branch hygiene note:** I cut this branch from the HeckeAnyonicSubstrate
+branch by mistake, so #7359 initially carried #7357's six commits.
+Rebased `--onto origin/main` and force-pushed before any review. Check
+`git diff --name-only origin/main...HEAD` after `git checkout -b`.
+
+**Remaining 6** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
+RungRule, TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
+TannakaKreinReconstruction.
+
+
+## KnotOperator / universal-ilp-algorithm (PR #7359, 2026-09-14)
+
+`proof-claims-unencoded` **8 -> 7** on this branch (PR running total 9 -> 7;
+combined with #7357 once both land: **5**).
+
+**THIRD time the flagged field was the smaller half.** And this one shows why
+"is the field consumed?" is the WRONG test: `is_knot : Prop` WAS read —
+`universal_ilp` had `K.is_knot AND ...` — but reading a field whose value the
+CONSTRUCTOR picked constrains nothing. Parameterised it
+(`IsSingleComponent` caller-supplied) and proved the structure refutable:
+`knotOperator_isEmpty_of_never_single_component`.
+
+**The larger unflagged half: `gram_matrix` is the ZERO matrix**, so
+`frobenius_positive` is `0 >= 0` and the whole LP predicate holds of every
+operator. Its docstring already SAID this and nothing checked it; now
+`universal_ilp_holds_of_zero_gram` proves it, so it stops compiling the moment
+a real Gram lands.
+
+**Corpus correction while there:** that docstring called the intended
+Halverson-Ram Gram "sharper". Under convention D it is SINGULAR —
+`mass-theory/frobenius-gram-matrix`: `y_(1^3) = 0` symbolically, the (1^3)
+block IS the radical, `det G = 0` exactly, `G_INV` gone and `G_PINV` on
+`H_3(q)/rad` in its place. **NOT wired** — `frobenius_positive` over a rank-5
+form is a different condition and the radical's treatment is a modelling
+choice. Author's call.
+
+**Remaining 5** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
+RungRule, TransferMatrixEigenphase (ledger `legit` — leave),
+TannakaKreinReconstruction.
