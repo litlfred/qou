@@ -104,13 +104,28 @@ def free_mb() -> float:
     return s.f_bavail * s.f_frsize / 1e6
 
 
-def run_chunk(prefix: str, shadow_root: pathlib.Path, jobs: int, timeout: int) -> int:
+def run_chunk(prefix: str, shadow_root: pathlib.Path, jobs: int, timeout: int,
+              exact: bool = False) -> int:
+    """Rebuild one chunk into a shadow, install the fresh oleans, reclaim.
+
+    `exact` selects `--only-exact` over `--only`, and it is NOT cosmetic.
+    `--only` is a PREFIX, so the library root chunk `QOU` matches every module
+    in the corpus: the chunk silently becomes a whole-corpus sweep needing
+    ~1.5 GB of shadow.  AGENTS.md documents this trap and this driver walked
+    into it anyway on its first full run -- caught at 482 MB free with the
+    shadow already at 2.4 GB, by watching, not by a guard.
+
+    Note what did NOT save it: `--min-free-mb` is checked BEFORE a chunk, so it
+    cannot stop a chunk that turns out to be 50x its advertised size once it is
+    running.  Sizing the chunk correctly up front is the only defence.
+    """
     real = _sweep_module().find_oleans()
     shutil.rmtree(shadow_root, ignore_errors=True)
     shadow_root.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     cp = subprocess.run(
-        [sys.executable, str(SWEEP), "--package", "QOU", "--only", prefix,
+        [sys.executable, str(SWEEP), "--package", "QOU",
+         "--only-exact" if exact else "--only", prefix,
          "--shadow", str(shadow_root), "--jobs", str(jobs),
          "--timeout", str(timeout)],
         cwd=ROOT, capture_output=True, text=True)
@@ -142,6 +157,7 @@ def main() -> int:
     args = ap.parse_args()
 
     oleans, dirty, changed, never, by = census()
+    exact_names = {p for p in by if p in dirty}   # a chunk that IS a module
     print(f"olean tree: {oleans}")
     print(f"dirty closure {len(dirty)}  (changed {len(changed)}, never-built {len(never)})")
     if args.list:
@@ -160,8 +176,22 @@ def main() -> int:
             print(f"STOP before {p}: free {free_mb():.0f} MB < --min-free-mb "
                   f"{args.min_free_mb}")
             return 2
-        print(f"[{i}/{len(todo)}] {p}  ({by.get(p, 0)} dirty)")
-        rc |= run_chunk(p, pathlib.Path(args.shadow), args.jobs, args.timeout)
+        n = by.get(p, 0)
+        exact = p in exact_names
+        # ~1.2 MB per rebuilt olean, measured on this corpus (the sweep's own
+        # docstring says 0.22 MB and is low by ~5x).  Refuse a chunk that
+        # cannot fit rather than discovering it mid-build.
+        est = n * 1.2
+        if not exact and est > free_mb() - args.min_free_mb:
+            print(f"[{i}/{len(todo)}] {p}  SKIP: ~{est:.0f} MB needed, "
+                  f"{free_mb():.0f} MB free (reserve {args.min_free_mb}) -- "
+                  f"split this prefix further")
+            rc |= 4
+            continue
+        print(f"[{i}/{len(todo)}] {p}  ({n} dirty"
+              f"{', exact' if exact else ''}, ~{est:.0f} MB)")
+        rc |= run_chunk(p, pathlib.Path(args.shadow), args.jobs, args.timeout,
+                        exact=exact)
     return rc
 
 
