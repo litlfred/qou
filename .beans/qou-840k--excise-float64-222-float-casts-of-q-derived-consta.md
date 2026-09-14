@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-14T18:50:40Z
+updated_at: 2026-09-14T19:25:42Z
 ---
 
 
@@ -1090,3 +1090,91 @@ efficient version if the author wants either.
 fixing** — after the qou-840k tier line counts, the three casimir "float64 caps"
 that were not caps, the qou-0p2h remedy, and the two wrong downstream re-scans.
 Four of the five were a detector or filter I described without reading its source.
+
+
+## A FOURTH reason a LOCAL witness is not drainable: its INPUTS are float64 at source (2026-09-14)
+
+The partition script's LOCAL bucket means "this producer reads no other
+witness". It does **not** mean the producer's numbers are mpf. Nine of the 284
+LOCAL producers take their substrate constants from `computations/substrate/hecke_core.py`,
+whose module-level `h` and `z` are **plain Python floats** — verified by import,
+not inferred:
+
+```
+h  float  0.20906029879563937
+z  float  0.6126880371464652
+```
+
+So `mp.mpf(str(float(h_val)))` — which is literally what
+`probes/brane_tower_two_avenues_probe.py` writes — is a **no-op**: the value was
+already a double, the cast lifts the double's binary expansion, and `fmt` then
+writes ~45 further characters of binary64 tail. The raw-float64 ratchet would
+read 0 for that file while every recorded value stayed float64-derived. That is
+laundering, and it is the one outcome this whole arc exists to prevent.
+
+**Screened and deliberately NOT drained: `probes/brane_tower_two_avenues_probe.py`
+(39 fields).** It looked like the ideal next target — no downstream readers,
+reads only its own witness, `fmt` already imported with 0 calls, 23 `float()`
+sites, so one edit clears many fields. The `hecke_core` import is what
+disqualifies it.
+
+### Measured populations (post-rebase onto `main` f580bec78cf, 2026-09-14T19:2xZ)
+
+Same predicates as `drain_queue_relay_partition.py`, imported rather than
+re-spelled, so the LOCAL set here IS that script's LOCAL set:
+
+```
+LOCAL total                284 producers  4187 fields
+  hecke_core (capped)        9 producers   698 fields
+  bare Q, no Q_MP (capped)   9 producers   231 fields
+  genuinely drainable      266 producers  3258 fields
+```
+
+`hecke_core` bucket, by field count:
+
+```
+  452  hadron-knot-table                          (also >50 min per bound atom — excluded twice over)
+   90  brane-tower-isospin-diagnosis              (also WITHHELD: other arcs' drift)
+   39  probes/brane-tower-two-avenues-probe
+   37  entanglement-orders                        (also has a downstream reader: unified_low_isotope_predictor.py)
+   34  catalan-binding
+   25  deltalambda/he4-stage2-ranking-seminormal-xcheck
+   12  probes/b-pred-mirror-slope-closed-form
+    7  binding-multibond-wenzl
+    2  rho-k-graded-atomic-mass
+```
+
+`bare Q` bucket (imports `Q` with no `Q_MP`; `q_parameter.Q = float(_d["q"])`,
+so the substrate pin is capped at ~17 digits before the producer starts):
+
+```
+   67  symmetrized-constituent-general
+   42  probes/rho-k-markov-multiplicativity
+   41  per-atom-rho-deviation
+   35  m-p-m-e-li2q
+   20  probes/binding-depth-stratified-derived-alpha-probe
+   18  probes/gg-production-bond-probe
+    4  binding-depth-stratified
+    2  probes/probe-convention-d-vs-c-borromean
+    2  proton-wedderburn-block-diagnostic
+```
+
+**The `bare Q` bucket is the cheap one and is a genuine precision fix, not a
+launder** — unlike `hecke_core`, `q_parameter` carries `Q_MP = mpf(_d["q"])`, the
+full pin, one import away. The ordering rule from earlier in this bean applies:
+`Q -> Q_MP` **first**, `fmt` after. Draining these nine in the other order is
+exactly the laundering case.
+
+**`hecke_core` is the expensive one and its fix is upstream, in `hecke_core`
+itself** — the module would have to serve `h` and `z` as mpf (or add `_MP`
+siblings, matching `q_parameter`'s own convention). That touches 9 producers'
+recorded numbers at once and is not this branch's scope. Filing it as the
+finding, not doing it.
+
+### Figure that moved, so do not quote the old one
+
+An earlier measurement this session read **8 producers / 673 fields** for
+`hecke_core` and **267 / 3283** clean. The delta is exactly the 25 fields of
+`deltalambda/he4-stage2-ranking-seminormal-xcheck`, and the LOCAL total moved
+287 -> 284 / 4368 -> 4187 across the same rebase (54 main commits). Re-measure
+with the script rather than quoting either figure.
