@@ -26,8 +26,17 @@ that matrix identity has five entries, three of which are `0 = 0`. The two that
 carry content are the scalar identities `twoMul_eq` / `twoInv_eq` below — the
 statement that the anisotropy and the Hecke parameter `h = q - q⁻¹` recombine
 to `2q` and `2q⁻¹` on the two singlet-channel diagonal entries. Those are the
-file's algebraic content and are proved here, over a generic field (AGENTS.md
-§7c — no `ℝ`, no ordering, nothing archimedean).
+file's algebraic content and are proved here, over any field **in which `2` is
+invertible** (AGENTS.md §7c — no `ℝ`, no ordering, nothing archimedean).
+
+The hypothesis `(2 : R) ≠ 0` is not a technicality to be optimised away: the
+anisotropy is a *half*-sum, so a field where `2 = 0` is one where halving is not
+defined. Mathlib's `0⁻¹ = 0` convention makes that failure silent rather than
+loud — in characteristic `2` every `x / 2` here collapses to `0` and all three
+identities become **false**, not merely unprovable. They were first stated
+without the hypothesis and `lean`-direct caught it; the negations are witnessed
+over `GaloisField 2 2` and, for `tlLoop_add_heckeH`, already in `ZMod 2` at
+`q = 1`. Do not remove the binder.
 
 The matrix assembly itself is verified numerically at `mp.dps = 60`, at both
 documented `q₀` pins, in
@@ -65,7 +74,7 @@ def heckeH (q : R) : R := q - q⁻¹
 /-- **Content of the `|↑↓⟩` diagonal entry.** The anisotropy and the Hecke
 parameter recombine to `2q`: this is why the TL generator's `(↑↓,↑↓)` entry is
 `q` and not something requiring a further constant. -/
-theorem twoMul_eq (hq : q ≠ 0) :
+theorem twoMul_eq (hq : q ≠ 0) (h2 : (2 : R) ≠ 0) :
     2 * xxzAnisotropy q + heckeH q = 2 * q := by
   unfold xxzAnisotropy tlLoop heckeH
   field_simp
@@ -74,7 +83,7 @@ theorem twoMul_eq (hq : q ≠ 0) :
 /-- **Content of the `|↓↑⟩` diagonal entry**, the partner of `twoMul_eq`: the
 same two quantities recombine to `2q⁻¹` with the opposite sign on `h`. The two
 together are the whole non-trivial content of the two-site matrix identity. -/
-theorem twoInv_eq (hq : q ≠ 0) :
+theorem twoInv_eq (hq : q ≠ 0) (h2 : (2 : R) ≠ 0) :
     2 * xxzAnisotropy q - heckeH q = 2 * q⁻¹ := by
   unfold xxzAnisotropy tlLoop heckeH
   field_simp
@@ -86,7 +95,8 @@ theorem xxzAnisotropy_eq (q : R) : xxzAnisotropy q = (q + q⁻¹) / 2 := rfl
 /-- `δ` and `h` determine `q`: their half-sum is `q`. Records that no
 information is lost in passing from the Hecke presentation to the chain
 presentation — the map is invertible, not a projection. -/
-theorem tlLoop_add_heckeH (hq : q ≠ 0) : (tlLoop q + heckeH q) / 2 = q := by
+theorem tlLoop_add_heckeH (hq : q ≠ 0) (h2 : (2 : R) ≠ 0) :
+    (tlLoop q + heckeH q) / 2 = q := by
   unfold tlLoop heckeH
   field_simp
   ring
