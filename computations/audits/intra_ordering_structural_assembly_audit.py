@@ -229,6 +229,31 @@ def match_sequential_loops(body) -> list[tuple[int, str]]:
     return hits
 
 
+#: A branch test that names the ordering choice. A concat inside one is a
+#: DECLARED legacy path, not a silent default — `closed_form_tau_M`'s
+#: `if intra_order == "grouped"` (resolved under `qou-y2o7`) is the model: the
+#: parameter defaults to borromean, the canonical arm calls the real producer,
+#: and the grouped arm is opt-in and documented. Flagging that the same way as
+#: an unconditional concat would put a fixed site and a broken one in one
+#: undifferentiated list, which is how a 17-entry baseline stops being read.
+_GUARD_TEST = re.compile(r"grouped|intra_order|legacy|historical", re.I)
+
+
+def _guarding_branch(node, parents: dict) -> str | None:
+    """The nearest enclosing `if` whose test names the ordering, if any."""
+    cur = parents.get(id(node))
+    while cur is not None:
+        if isinstance(cur, ast.If):
+            try:
+                test = ast.unparse(cur.test)
+            except Exception:                       # pragma: no cover
+                test = ""
+            if _GUARD_TEST.search(test):
+                return test[:80]
+        cur = parents.get(id(cur))
+    return None
+
+
 def scan_file(path: str) -> list[dict]:
     """A and B findings for one source file, plus C if the frame is stamped."""
     try:
@@ -240,20 +265,30 @@ def scan_file(path: str) -> list[dict]:
     except SyntaxError:
         return []
 
+    parents: dict = {}
+    for parent in ast.walk(tree):
+        for child in ast.iter_child_nodes(parent):
+            parents[id(child)] = parent
+
     rel = os.path.relpath(path, REPO)
     found: list[dict] = []
     for node in ast.walk(tree):
         d = match_grouped_concat(node)
         if d:
             found.append({"check": "A", "path": rel,
-                          "line": getattr(node, "lineno", 0), "detail": d})
+                          "line": getattr(node, "lineno", 0), "detail": d,
+                          "guard": _guarding_branch(node, parents)})
     for node in ast.walk(tree):
         for field in ("body", "orelse", "finalbody"):
             body = getattr(node, field, None)
             if isinstance(body, list):
                 for line, d in match_sequential_loops(body):
+                    stmt = next((x for x in body
+                                 if getattr(x, "lineno", None) == line), None)
                     found.append({"check": "B", "path": rel,
-                                  "line": line, "detail": d})
+                                  "line": line, "detail": d,
+                                  "guard": _guarding_branch(stmt, parents)
+                                           if stmt is not None else None})
 
     if found and _FRAME_STAMP.search(src):
         found.append({
@@ -526,11 +561,20 @@ def main(argv: list[str] | None = None) -> int:
           f"must-stay-quiet)")
 
     if ab:
-        print()
-        for f in sorted(ab, key=_key):
-            mark = "NEW " if _key(f) in new else "    "
-            print(f"  {mark}[{f['check']}] {f['path']}:{f['line']}")
-            print(f"           {f['detail']}")
+        guarded = [f for f in ab if f.get("guard")]
+        bare = [f for f in ab if not f.get("guard")]
+        for label, group in (("UNGUARDED — a silent default", bare),
+                             ("guarded — a declared legacy branch", guarded)):
+            if not group:
+                continue
+            print()
+            print(f"  {label}: {len(group)}")
+            for f in sorted(group, key=_key):
+                mark = "NEW " if _key(f) in new else "    "
+                print(f"  {mark}[{f['check']}] {f['path']}:{f['line']}")
+                print(f"           {f['detail']}")
+                if f.get("guard"):
+                    print(f"           under: if {f['guard']}")
     if c:
         print()
         for f in c:
