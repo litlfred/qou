@@ -5,8 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T06:45:46Z
-
+updated_at: 2026-09-14T17:59:52Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2697,3 +2696,31 @@ neither a precision fix nor corpus-derived. Raised rather than enacted.
 **No taxonomy row added either**, for the same reason plus a practical one: a
 sibling and I collided on that document's row numbering once already today
 (row 44 → 45), and it is not my document to grow unasked.
+## 2026-09-14 — still open, and explicitly NOT retired; only its priority changes
+
+**Status stays `in-progress`. Nothing here closes this bean** (§13a — α is still
+the ladder's N=1 phase and is still underived).
+
+What changed is that α is **off the `Q_β` L2 critical path**, not that it is
+answered. `qou-cds1` is not blocked on this bean on the ruled base: `cos ≤ 1`
+caps the N=2 factor `F_N2(α) = cos(α − u/2)·(1 − u²)` at `1 − u² = 0.99992745`
+for **every real α**, while `F_required = Q_codata / Q_base` is **above 1** on
+both bases the 2026-09-08 ruling selects — `1.75923699418` at `z_D` with
+order-zero `E₀`, `1.20016236389` at the dashboard scored cell. The two cells a
+cosine can reach (`z = 1`, retired; `z = q`, the augmentation) are exactly the
+two the ruling does not select. So no value of α unblocks `qou-cds1`.
+
+**The reusable half:** this bean was described in AGENTS.md as *the* S1 blocker,
+and that framing was correct only for the retired `z = 1` cell. Deriving α
+remains worth doing on its own terms; it is not the thing standing between the
+corpus and a `Q_β` ladder on an admissible base.
+
+**Provenance.** PR #7355 (`LadderFactorBound.lean`, 4 lemmas, 7/7 probe) and PR
+#7262 (`EigenphaseQuantization.lean`, 19/19) — both sorry-free, both still open.
+Verified and **merged** in
+`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1/§5.1a
+(PR #7276, `f3cb908ee7`). Cite the merged audit, not the two PRs.
+
+Previous entry here was 2026-09-12 and predates this. AGENTS.md's two
+"blocked on the phase `qou-pdix`" sites are scoped in the same PR as this
+append.
