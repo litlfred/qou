@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-14T06:44:17.433670+00:00",
-  "commitSha": "42ec05c5ff9d32f0805f666744ecc004c335bd0e",
+  "computedAt": "2026-09-14T06:48:59.074426+00:00",
+  "commitSha": "66113d3d8627d54c04900efa1d98035242ec72ba",
   "assertions": [
     {
       "name": "reproduces_cds1_F_table_on_the_retired_base",
@@ -43,14 +43,30 @@
       "passed": true,
       "tolerance": "exact",
       "source": "on the ruled base 1 - F_required = -0.75923699 is NEGATIVE while the model's 1 - F_N2 = 0.0016216579 stays positive, so qou-cds1's reldev coordinate returns -100.21359 % — a ratio of opposite-signed quantities, meaningless rather than merely large. Report F directly on a ruled base; the reldev table is retired-base-only."
+    },
+    {
+      "name": "every_recorded_rung_reduces_so_no_truncation_order_helps",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the objection check 3 invites is 'a higher rung saves it'. It does not: every c_k the corpus records or derives is NEGATIVE — c_2 = -1 (structural), c_3 = -2.0693425728 (recorded proton extraction), c_5 = -(b^2 + 1/2) = -1.25270211325 (derived) — so each factor (1 + c_k u^k) < 1 and the product is 0.99992617817132 < 1. With cos <= 1 the whole F is strictly below 1 at EVERY truncation order, not merely at N=2. Reaching F > 1 needs a POSITIVE coefficient, and none of the derived ones is."
+    },
+    {
+      "name": "the_target_is_stated_as_a_magnitude_not_as_a_search",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "stated so the size is on the record, NOT as a specification to search against: at the order-zero E_0 the ruled functional gives |eps| = 0.106235639848, and reproducing CODATA would need 0.186893667722 — a factor 1.759236994. Per AGENTS.md NO FITTING a target may be checked AGAINST, never searched ON: do not hunt for an element whose Markov trace lands here. The dashboard's own scored element already fails the confinement-SDP selection rule (owner ruling 2026-09-13), so the assembly is under review independently of this number."
     }
   ],
   "allPassed": true,
-  "durationMs": 66,
+  "durationMs": 5,
   "computation": "qbeta-ladder-form-cannot-reach-ruled-base",
   "scriptFile": "qbeta_ladder_form_cannot_reach_ruled_base_probe.py",
-  "scriptHash": "88d0e7801a58",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c2ffc1a51a5a",
+  "scriptCommitSha": "66113d3d8627d54c04900efa1d98035242ec72ba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -121,6 +137,7 @@
     }
   ],
   "ladder_sup_over_all_phases": "0.999927456715617626498201895199068388200910824829001040100072",
+  "full_ladder_is_reducing": "every c_k the corpus records or derives is NEGATIVE (c_2 = -1 structural, c_3 = -2.0693425728 recorded, c_5 = -(b^2+1/2) derived), so each factor (1 + c_k u^k) < 1 and F is strictly below 1 at EVERY truncation order -- not merely at the N=2 one check 3 bounds. Reaching F > 1 needs a POSITIVE coefficient; none of the derived ones is.",
   "invariant_cited": "cos <= 1 (Real.cos_le_one, Mathlib; already used by QOU.QBeta.EigenphaseCarrier.replacement_excludes_some_matrix)",
   "coordinate_warning": "qou-cds1's table reports relative deviation of (1 - F), not of F. Once F_required > 1 that ratio compares opposite-signed quantities and is meaningless; report F directly on a ruled base.",
   "scope": "(b) for the exclusion, citing a proved invariant; (a) for every number. Derives no alpha, selects no base, wires nothing."
