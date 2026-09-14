@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-14T06:29:30Z
+updated_at: 2026-09-14T06:43:57Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1890,3 +1890,61 @@ over 32 commits of main. Sole LOSSY is
 `computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py:104`
 (`ROUTE5_THETA_PRINTED`), from the live `qou-pdix` arc — not this one. Reported
 rather than swept.
+
+
+## 2026-09-14 (cont.) — the `/3` is IDENTIFIED: it is the q=1 value of the corpus's own channel weight
+
+This closes the open item both prior passes named as the sharpest gap.
+
+### The chain, exact and in Lean (`FlavourSplitThreeChannelWeight.lean`, 10 decls, sorry-free)
+
+1. The three substrate weights of `docs/audits/2026-06-17-hecke-channel-chirality-binding.md`
+   **are the q-deformed Plancherel measure of `H_3`**: at q=1 they are 1/6, 2/3,
+   1/6 = `(f^lam)^2/n!` for (3), (2,1), (1^3) with `f = 1,2,1`, `n! = 6`. They sum
+   to 1 at every q.
+2. The k=2 reversal is `2h*sigma - h^2`, so `(c,d) = (2h, -h^2)` and the channel
+   values are `R`, `alpha*R`, `-R` with `alpha = (q^4+1)/(q^2+1)^2`.
+3. sym and alt cancel under `w_sym = w_alt`, leaving
+   `w_sym*R + w_std*alpha*R + w_alt*(-R) = (q^4+1)/(q^4+4q^2+1) * R`.
+4. **That weight at q = 1 is exactly 1/3.**
+
+So the `1/3` was never a free constant.
+
+### 🛑 Identified is not settled
+
+The corpus's expression pairs a **classical (q=1) measure** with **q-deformed
+channel values** and a q-deformed `hbar_q^2`. Three distinct numbers at q0:
+
+| object | value |
+|---|---|
+| fully deformed `w(q)` x `value(q)` | 0.338154459866 |
+| classical `w(1)` x `value(q)` | 0.336936151003 |
+| the corpus's `1/3` | 0.333333333333 |
+
+AGENTS.md's notation register names exactly this defect class: *"Three
+partition-weight families ... are distinct at q != 1 and coincide at q = 1; never
+conflate."* Here it is **1.45 %** on the weight and moves the baseline from
+**-0.128 % to +1.32 %**.
+
+Which measure is correct is a **modelling question, OPEN** — and per NO-FITTING it
+must not be answered by residual: the **least** deformed option is the **most**
+accurate, so choosing by accuracy would keep `1/3` for the wrong reason.
+
+### A correction made in authoring — the point of formalize-first
+
+I first stated the condition for the deformed weight to equal 1/3 as `q^4 = 2q^2`.
+**`lean` rejected it.** The truth is `q^4 + 1 = 2q^2`, i.e. `(q^2-1)^2 = 0`, i.e.
+**q^2 = 1 and nothing else** — the register's rule made exact for this weight, and
+a STRONGER statement than the one I set out to prove. sympy confirms: `q^2 = [1]`.
+
+### Open list after three passes
+
+1. ~~The `/3`~~ — **identified.** What replaces it: classical vs deformed measure,
+   a modelling choice with exact size 1.45 %.
+2. **Why `hbar_q` and not `(q-1)`** — the bar-norm hypothesis cannot say; they give
+   the identical prefactor.
+3. Which Markov parameter (owner, coupled to `qou-99qc`).
+4. The block's own k=3/k=2 1.5136 gap.
+
+Items 1-new and 3 are the same shape: both are classical-vs-deformed / which-cell
+choices with measured consequences, and both are owner calls rather than agent ones.
