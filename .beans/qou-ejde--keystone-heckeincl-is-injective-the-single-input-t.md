@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T20:55:31Z
-updated_at: 2026-09-13T06:25:00Z
+updated_at: 2026-09-13T08:30:00Z
 ---
 
 Parent: qou-0fmb (plan), epic qou-08a2. Opened 2026-09-12 after the plan re-scope
@@ -172,3 +172,50 @@ rather than `HeckeTowerWitness`'s collapse functional.
   `qou-ejde` should re-target the citation before building on it.
 
 Not taken — `qou-ejde` / `qou-p8yg` are a live arc. Handing the measurement over.
+
+--------
+
+**2026-09-13 — INTENT (from `qou-301d`, branch `claude/markovtrace-colimit-bridge-2026-09-13`): taking the colimit bridge, with the route named.**
+
+No live branch on this arc and both beans are `todo`; the last commits landed
+straight to `main` 11 h ago. Taking it rather than leaving it, per the
+stalled-claim rule. Say so and I will hand it straight back.
+
+**Why now.** Since `qou-301d` and `qou-gr3t` merged
+(`HeckeSandwichReduces.disjointBlock_of_braided`,
+`InteriorMarkovOfBraidedTower.tr_bondWord_of_braided`), this bridge is the
+**single blocker for both arcs**: the bond product and the disjoint-block law
+are theorems of every `BraidedTower`, and the only `OcneanuTrace.MarkovTrace`
+in the tree — `heckeTowerMarkovTrace` — factors through a rank-2 quotient and
+is not faithful. The production Ocneanu trace exists and is unique, but as a
+`HeckeCoset.MarkovTraceFamily`.
+
+**Route.** Build `OcneanuTrace.MarkovTrace` on the colimit of the Hecke tower:
+
+1. **Directed system.** `f i j (h : i ≤ j) : Hecke K q qi i →ₐ[K] Hecke K q qi j`
+   by `Nat.leRec` over `SchurWeyl.heckeIncl`, with `DirectedSystem` from
+   `Nat.leRec_self` / `Nat.leRec_succ`.
+2. **Carrier.** `A := DirectLimit (Hecke K q qi) f`. Per the measurement already
+   in these beans, `@DirectLimit` and `@DirectLimit.Ring.of` carry **no
+   injectivity hypothesis**, so this step does not wait on `qou-ejde`.
+3. **Filtration.** `H n := (DirectLimit.Ring.of … n).range`; `H_mono` from
+   `DirectLimit.Ring.of_f`. Only `Monotone` is required — **not** strictness,
+   which is `qou-p8yg`.
+4. **Trace.** descends by the universal property; `MarkovTraceFamily.tr_incl`
+   IS the compatibility condition (`DirectLimit.Module.lift`).
+5. **Generators.** `g n := of (n+1) (σ …)`, `ginv n := of (n+1) (σInv …)`;
+   `ginv_mul` / `mul_ginv` from `SchurWeyl.σUnit` under `q * qi = 1`.
+6. **Axioms.** `tr_mul_comm` ← `tr_cyclic`, `tr_one` ← `tr_one`,
+   `markov` ← `tr_markov`, at `z = q³/(q²+1)`.
+
+**What I expect to be hard, stated in advance so a failure is legible.** Step 5
+is the one I flagged as unchecked when I handed over the `DirectLimit`
+measurement — `ginv` needs `σ⁻¹` to survive into the colimit, and `σUnit`
+requires `q * qi = 1`, which `ocneanuMarkovTrace` supplies only at
+`qi = q⁻¹` over `ℝ`. Step 4 needs a *linear* lift, not the ring lift. If either
+blocks, I will say which and leave the gap rather than axiomatise it.
+
+**Scope I am NOT claiming.** This bridges the abstractions; it does not make
+`heckeTowerMarkovTrace` faithful, prove strict growth (`qou-p8yg`), or derive
+the bond product for the production atom word. Nothing here closes either bean
+on its own.

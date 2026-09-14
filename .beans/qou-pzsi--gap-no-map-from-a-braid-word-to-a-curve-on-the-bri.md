@@ -155,3 +155,70 @@ categorical↔classical leg still cannot bear weight — not because of sorries
 unconstraining as encoded. Open item (1) — *which of minimiser-or-canonical-
 embedding the Bring surface is meant to supply* — is untouched and remains the
 live research question.
+
+---
+
+## CORRECTION (2026-09-14) — the headline claim of this bean is WRONG
+
+This bean, and PR #7370 which opened it, assert that the corpus has **no map
+from a braid word to a curve in or on the Bring surface**. The owner said
+otherwise and was right. `computations/qbeta/qbeta_cusp_lattice_geodesic_probe.py`
+carries exactly that map, on the author's own steering of 2026-07-27: *"we can
+associate to a braid word a geodesic (flow) on the torus for the particle/vortex
+path"*. It is filed under **geodesic**; I searched for *embed / curve /
+parametrise* near *bring*, and for consumers of the Möbius integrators, and the
+map was one word away from every query I ran. A detector-blindness instance in
+my own corpus-grep, not in a tool.
+
+What was genuinely missing was the **geodesic → O'Hara energy** step, and that is
+now built (`qbeta_bring_ohara_bridge_probe.py`, 7/7, merged #7374).
+
+## What the built bridge gives — a NEGATIVE, and it is structural
+
+`(m, ℓ) = (exponent sum, strand count)`. Both are letter-sum-type: the exponent
+sum is a sum over letters, the strand count does not depend on the word at all.
+So all four two-crossing gluon dressings share one lattice class, one geodesic
+and one energy. **The O'Hara energy is innocent; the cusp-torus embedding is the
+lossy step**, and it provably forgets the knot — the class is computed before the
+modulus is ever consulted, so no modulus can repair it.
+
+## Modulus sensitivity — DERIVED from Neumann–Zagier, correcting my own number
+
+The bridge computes at `ω = e^{iπ/3}`, the shape at the **complete** structure
+`u = 0`; the framework evaluates at meridian log-holonomy `∼ ln q₀ ≠ 0`, which
+is the concern `qbeta_cusp_shape_drift_robustness_probe` raises. I first answered
+it by drifting `ω` by hand at the `O(u) = 10.4 %` scale and reported 3.9–16.3 %
+energy shifts. **That was an assumption about the drift dressed as a measurement
+of it.**
+
+`qbeta_neumann_zagier_cusp_modulus_probe.py` (8/8) derives the deformation from
+NZ's own gluing equations (65)–(66) for `4₁` by series-inverting `u(v)`:
+
+    τ(u) = 2√−3 · (1 + u²/3 + O(u⁴))
+
+with `τ₀ = c₁ = 2√−3` and `c₃/c₁ = 1/3` **exactly**, matching NZ eq. (68) at
+that slot; NZ eq. (52)'s odd-only structure is **verified on the computed
+series**, not imposed, which is what forces the leading correction to be `u²`.
+Cross-check worth having: `2√−3 = −2 + 4ω` **exactly**, so the NZ
+meridian–longitude lattice is the index-4 sublattice of the corpus's hexagonal
+`ℤ⟨1, ω⟩` (`cusp-shape-bar-parity.md`) — two independent sources, one lattice,
+an exact integer relation.
+
+Consequence: the real drift is **second order**, so the `(2,3)` energy moves
+**0.163 %** (`u = ln q₀`) or **0.637 %** (`u = 2 ln q₀`), against the 4.29 % my
+hand-picked `O(u)` drift gave. The bridge's figures are **robust at the
+sub-percent level**, and the concern is answered without needing the
+normalisation binary resolved — both branches clear it.
+
+## What stays OPEN
+
+The `u = ln q₀` vs `u = 2 ln q₀` meridian normalisation is the same factor of two
+as bean `qou-yh67`'s NZ-½ binary (`κ_shape = √3/2` vs `κ_pot = √3/4`, the
+`Φ = 2𝔙` factor), which `qou-yh67` records **cannot be settled numerically**.
+Both branches are computed and **neither is adopted** — choosing the one that
+lands a target is selection against the target. The factor enters `τ` squared, so
+the two drifts differ by exactly 4×.
+
+The `qou-99qc` dashboard rows stay un-re-scored and the gluon dressing stays
+unselected: this bridge does not select, and nothing here proposes that it
+should.

@@ -448,3 +448,45 @@ Five coordination comments landed on #7287 while I was working. One (from `qou-2
 **A conflation to avoid**, flagged before anyone makes it: the sibling's measured non-monotone family is `μ(σ^m)` — powers of ONE generator, `μ > 1` at `m = 2,4,5,6,7,8` and NOT at `m = 3`. Mine is `μ((σ₂σ₃⁻¹)^m)` at `m = 3`, where I measure `μ > 1`. **Different objects**; there is no conflict, and the coincidence of the index `3` is exactly the kind of collision AGENTS.md's notation rules exist for.
 
 **Scope question answered** (from #7304/#7319, owner ruled SDP scope **(B) whole element**, not (A)): my Options 1/2 closure does **not** lean on PSD scope at all. `G³` is taken as GIVEN from `qou-ales` steps 6–7; I re-derive no selection. So the (A)→(B) ruling does not move anything here.
+
+## 2026-09-14 — the FIRST BRICK is answered, and it dissolves. My own framing was wrong.
+
+Options 1 and 2 merged (#7287, `db8d3cefd9`); #7256 merged (`20e40ba1c4`). Both replay-verified.
+Then the brick, which needed no compute.
+
+**The brick asked:** *"whether pair-locality itself is derivable at a root of unity … if
+pair-locality is genuinely a generic-`q` fact, the theorem has no hypothesis to stand on there."*
+
+**The antecedent is false.** Pair-locality is not a generic-`q` fact; it is not a corpus fact at
+any `q`. Three measurements on `main` `db8d3cefd9`:
+
+1. **`PairLocal` contains no `q`** — `(∀ i j k, w3 i j k = w2 i j) ∧ (∀ i j, w4 i j = w2 i j)`
+   over a generic `{R : Type*}`. There is nothing in it for a root of unity to act on. Whether
+   it holds is a fact about how a carrier populates `w2/w3/w4`, not about the fibre `H_n(q)`.
+2. **The proved direction is the refutation, and it is `q`-free.** `not_pairLocal_of_b3_ne_zero`
+   reaches `¬PairLocal` from the measured AME `b₃ = +1.4262225` MeV — its own file calls this
+   "the load-bearing direction … from data with no unsatisfied hypothesis at all".
+3. **The bridge I cited as established is flagged conjectural in the audit I cited it from.**
+   `2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md` §2: *"§2 states this as a
+   **conjecture to prove, not a theorem** — the bridge from 'formal' to 'pair-local' is the thing
+   to formalise first."* Its §2.1 "What is proved" lists `HH^{k≥1} = 0` and both directions of the
+   pair-locality implication, and does **not** list "pair-locality holds".
+
+**So `b₃` is ALREADY unconstrained by `b3_eq_zero_of_pairLocal` at every `q`, `q₀` included**, and
+a root of unity buys nothing on this lever — it was never locked. An agent proving "pair-locality
+fails at roots of unity" would be negating something nobody proved, against a `q`-free predicate.
+
+**This re-aims the Habiro route rather than weakening it.** What genuinely holds at generic `q`
+and fails at a root of unity is **semisimplicity**, hence `HH^{k≥1} = 0` — the audit's "higher
+structure" row, recorded as invisible to `tr_M` because `tr_M` is the Euler characteristic.
+
+**Sharpened brick (the next one):** does `tr_M` acquire anything to see where `H_n(q)` is not
+semisimple? Degree 0 of a complex does not change when higher degrees become non-zero; an Euler
+characteristic does. Which is `tr_M`, and does the difference reach `q₀`? That is well-posed, is
+not about `PairLocal`, and is where ROAST item 4 already pointed.
+
+**Method note.** I asserted the `HH`→pair-local bridge as background in this bean's own body.
+Checking it cost one grep, and the cited audit's next sentence said it was conjectural. **A bean
+is not a primary source — including one's own.**
+
+Write-up: `docs/audits/2026-09-14-pair-locality-is-not-a-generic-q-fact-the-brick-dissolves.md`.

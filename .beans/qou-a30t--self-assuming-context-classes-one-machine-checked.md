@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-12T12:02:39Z
-updated_at: 2026-09-12T12:30:45Z
+updated_at: 2026-09-14T08:56:13Z
 ---
 
 ## The criterion (2026-09-12, PR #7208)
@@ -225,3 +225,206 @@ figures will finish the list and still have carriers left.
 
 The right population query is a **detector run over the tree**, not a ledger query. That
 has not been done here and the figures above should not be quoted until it is.
+
+
+## The `Contentless` criterion is sound but UNDER-DISCRIMINATING — measured on 2 of the 46 (2026-09-14, from qou-9yt9)
+
+`Contentless K C := Nonempty K ↔ C` correctly captures *"this declaration adds no
+logical content."* It does **not** capture *"this declaration is a defect"* — because it
+says nothing about **how `Nonempty K` is obtained.** Two cases collapse into one verdict:
+
+| `Nonempty K` is … | reading |
+|---|---|
+| **assumed** (no instance, or instance is `sorry`/`True`) | self-assuming projection — defect |
+| **proved** (closed instances over the index range) | the **Mathlib accessor idiom** — legit |
+
+Both satisfy `Nonempty K ↔ C`. The criterion cannot separate them, and the corpus already
+contains the separation as a **verdict/disposition contradiction inside the ledger**.
+
+### The two measured instances, both in `QOU/Archimedean/QHookBound.lean`
+
+`qInt_ratio_bound_small` (:415) and `qFact_ratio_bound` (:608) each carry
+`verdict: genuine` with `disposition: accessor-idiom-legit` — and entry 2's own evidence
+says *"Same accessor idiom as qInt_ratio_bound_small; re-confirms prior **legit**"* while
+entry 1's says *"It remains a **genuine** field-projection."* The two entries disagree
+about the same idiom.
+
+**The substance decides it, and it is machine-checkable in three greps:**
+
+1. **The field is not a universe-`Prop`.** `bound : |qIntReal q m / m - 1| <= (q - q⁻¹)^2 * m / 6`
+   — a concrete inequality fixed by the class parameters. A constructor cannot choose it;
+   `True` cannot discharge it. (Contrast the seven carriers closed under `qou-9yt9`, whose
+   fields were typed with the universe `Prop` and *were* constructor-chosen.)
+2. **Every instance is closed.** All **8** instances (`qIntRatioBoundSmall_one..four`,
+   `qFactRatioBound_zero..three`) take **no context-class binder** — they are `nlinarith` /
+   `simp` / `qInt_ratio_bound_m1` proofs, so they cannot be chaining the assumption.
+3. **Zero `sorry` in the file** (`grep -c` on the word = 0).
+
+`QIntRatioBoundSmall` binds `1 <= m` and `m <= 4`, so those four instances cover the
+**entire index range** — `Nonempty K` is a theorem for every admissible `m`, given only
+`q > 1` and `q < 3/2`.
+
+### Proposed third axis for the criterion
+
+```
+field type is universe Prop                                     -> irreparably vacuous
+concrete field type, no closed instance                         -> self-assuming (defect)
+concrete field type, closed instances covering the index range  -> accessor idiom (legit)
+```
+
+Axis 1 is already greppable; axis 3 is `instance` decls whose signature carries no
+`[_ : <ContextClass> ...]` binder, plus a sorry check. Neither needs the class to be read
+semantically.
+
+### Scope — what this does NOT establish
+
+- Measured on **2 of the 46**, chosen because their own ledger entries contradict
+  themselves. **I have not re-read the other 44**, and I am not proposing a sweep.
+- **`QFactRatioBound` has a real coverage gap**: `k : ℕ` is **unbounded** and instances
+  exist only for `k = 0,1,2,3`. For `k >= 4` the accessor is *unusable* (no instance found),
+  not *unsound* — but a downstream file supplying its own `instance ... := ⟨sorry⟩` would
+  turn it back into laundering. That is caught by the sorry audit, not by this criterion.
+- I did **not** verify that no consumer supplies such an instance.
+
+### Not enacted
+
+The two verdicts are left at `genuine`. Correcting them would exempt them and move
+`proof-no-self-assuming-projection` 57 -> 55, and it overrides another agent's explicit
+"It remains a genuine field-projection" — a judgement call between two prior readings,
+not a precision fix, so it waits (AGENTS.md §ASK THE OWNER). Recorded here because this
+bean owns the criterion.
+
+
+## CORRECTION to the block above (same session, 2026-09-14) — I merged two cases the corpus separates
+
+Three measurements after writing the block above, two of which I should have made first.
+
+### 1. A prior corpus artifact already adjudicated one of them — and it is in Lean
+
+`docs/audits/2026-08-30-context-classes-hand-adjudicated.lean` §`HandAdjudicated7` is
+headed **"`ConvergenceBound` and `QIntRatioBoundSmall` — NOT vacuous"** and says they are
+*"scored here rather than counted."* It backs that with **compiling** demonstrations:
+
+```lean
+example (q : ℝ) (hq : q > 1) (hq2 : q < 3/2) :
+    QIntRatioBoundSmall q hq hq2 1 (by norm_num) (by norm_num) := inferInstance
+example ... 2 ... := inferInstance
+```
+
+Its own discriminator is sharper than mine and worth adopting verbatim:
+**"A class refutable at one parameter assumes something at every parameter."**
+It demonstrates that too — `convergenceBound_refutable` exhibits `k = 4, C = 1, f = 100 vs 0`
+where the bound fails.
+
+So the contradiction is not one I found; the corpus recorded it on **2026-08-30**, the same
+day as the two ledger entries' `reviewed_at` (14:13:22Z). The ledger is the outlier.
+
+### 2. The two are NOT the same case — the index ranges differ, and that is the whole question
+
+I wrote *"Same accessor idiom"*, following the ledger entry's own evidence text. **Wrong**,
+and the prior audit adjudicates only the first:
+
+| accessor | index range | instances | reading |
+|---|---|---|---|
+| `qInt_ratio_bound_small` | `1 <= m <= 4` — **bounded** | m = 1,2,3,4 — **complete** | every ground instance is proved |
+| `qFact_ratio_bound` | `k : ℕ` — **UNBOUNDED** | k = 0,1,2,3 only | **assuming for k >= 4** |
+
+`QFactRatioBound` is not adjudicated in that audit file at all. Its class is refutable at a
+large enough `k` in exactly the sense quoted above, so by the audit's own criterion it
+**assumes something at every parameter** — which is the opposite of what my block concluded
+for it.
+
+### 3. And the general-`m` form still carries the assumption even where coverage is complete
+
+Instance resolution matches the index **syntactically**. The four instances have types at the
+literals `1,2,3,4`; `qInt_ratio_bound_small` is stated at a **variable** `m` with
+`hm : 1 <= m`, `hm4 : m <= 4`, and no instance matches a variable. So the theorem is
+dischargeable at each literal and is an assumption in its stated general form. Nothing
+unproved can be *extracted* (every ground case is proved), but "complete coverage" does not
+make the general-`m` statement a proof.
+
+### What this does and does not change
+
+**Unchanged, and if anything strengthened:** the `Contentless` criterion conflates
+*class has content* with *theorem is not a defect*. The prior audit's "NOT vacuous" is a
+verdict on the **class**; I treated it as settling the **theorem**, which is the same
+conflation running the other way. Both directions need the third axis.
+
+**Withdrawn:** my recommendation that both verdicts flip to `legit`. At most
+`qInt_ratio_bound_small` has a corpus artifact behind it, and even there the general-`m`
+form is arguable. `qFact_ratio_bound` should stay `genuine` on the unbounded index alone.
+
+### One fact that makes all of this currently academic
+
+`grep` across every `.lean`: **zero** instances of either class outside `QHookBound.lean`,
+and **zero** consumers of either accessor anywhere in the corpus — in-file uses are two
+comments. So the `k >= 4` laundering hazard I flagged is **unrealised**, and neither
+accessor is load-bearing for any result.
+
+
+## Re-confirming your HabiroFlowSolution lead (2026-09-14) — it holds, and the cause is worse than "no ledger entry"
+
+Your 2026-09-12 correction (`1af1fe232c`) says `HabiroFlowSolution` is still broken with no
+ledger entry, and that *"the right population query is a DETECTOR RUN OVER THE TREE, not a
+ledger query."* Re-measured two days later, both halves hold — and the detector run does not
+save you either.
+
+**Still broken, and it is the exact shape** of the seven carriers closed under `qou-9yt9`:
+`QOU/Habiro/FlowSolution.lean:49` carries **three literal universe-`Prop` fields** —
+`expQ_solves_base_reeb : Prop`, `fourier_diagonalises_qheat : Prop`,
+`liTwoQ_volumetric : Prop` — plus `all_hold` conjoining them. Any instance picks all three;
+`True ∧ True ∧ True` discharges the lot.
+
+**Still no ledger entry.** The only Habiro/FlowSolution key is
+`ZHabiroCauchy.lean::truncSection_zHabiroLimit::proof-borrowed-name` — a different file, a
+different category, exactly as you found it.
+
+### The new part: the DETECTOR does not flag it either, and the drain is why
+
+`docs/audits/2026-06-17-lean-vacuity-axiom-audit.json` has **zero** entries for
+`QOU/Habiro/FlowSolution.lean` in any category. The two `Habiro`-named hits are
+`UniversalHabiroStructure` and `QPochhammerHabiroEvaluation` — other files, both exempt.
+
+The file's own comment says why:
+
+```
+/-! ### Removed 2026-08-30 — self-assuming projections
+- `habiro_flow_solutions_realise_synthesis` — body was `inst.all_hold`: the conclusion
+  was the projected field verbatim, so the declaration restated its own hypothesis.
+```
+
+**The 2026-08-30 drain removed the consumer, and with it the detector's only handle on the
+file.** The carrier was left in place. So fixing the projection made the vacuous carrier
+*invisible* — a blind spot the drain itself created, which is worse than a native one
+because draining manufactures more of them. That is a new row for
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md` if you want it; I have not added it,
+since this is your arc.
+
+### It corrects my own framing three blocks up
+
+I wrote that all 57 non-exempt `proof-no-self-assuming-projection` hits carry a ledger
+verdict, and concluded *"this is a confirmed repair backlog, not a triage problem."* The
+first clause is a measurement and stands; **the conclusion over-states completeness.** 57 is
+what *this detector* sees on *this run*, against a documented 45-row blind-spot taxonomy, and
+`HabiroFlowSolution` is a live counterexample sitting outside it. Read the 57 as a lower
+bound.
+
+So your point generalises one step further: **a detector run is a lower bound too**, and a
+ledger that covers 57 of 57 detector hits is evidence about the ledger's coverage of the
+detector, not about the corpus.
+
+### One interaction with your `DimMasterPentagon` note, stated against myself
+
+You wrote that encoding-and-proving-the-transport (`bff4027fc`) is the stronger move and
+*"parameterising ... is the weaker move where the content is statable."* Two of the carriers
+I closed were **parameterised**, so by your criterion they need the statability test:
+
+- `KnotOperator.is_knot` (#7359) — the file has no knot theory in its cone at all
+  (`gram_matrix` is the zero matrix), so nothing there can state single-componentness.
+  Parameterising looks right by your test.
+- `DegreeZeroDatum.formallyProvable` (#7360) — needs a provability predicate over a formal
+  system, which Mathlib does not carry at this toolchain. Defensible, but I have **not**
+  exhaustively established that no Mathlib route states it, so treat it as argued rather
+  than measured.
+
+Neither is a claim that parameterising was optimal; it is the test you asked for, applied.
