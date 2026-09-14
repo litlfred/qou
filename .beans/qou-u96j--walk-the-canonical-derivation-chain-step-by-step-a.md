@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T07:49:59Z
-updated_at: 2026-09-14T08:23:23Z
+updated_at: 2026-09-14T08:59:11Z
 ---
 
 ## 2026-09-14 — first tranche: steps 5 and 10 walked
@@ -112,3 +112,32 @@ alarm on it before checking. Counting the word is not counting the tactic.
 **Step 1 itself: is the choice of `V` derived, or is it the framework's
 primitive?** Everything above now hangs on that one sentence, so it is the
 highest-value remaining question. Steps 4, 7, 8, 9, 11 also remain unwalked.
+
+## 2026-09-14 — (1) answered: no route to g=4 escapes SU(2)
+
+The walk's top-priority open question was whether any corpus route to the genus
+is independent of SU(2). **Answer: no.** Three routes exist; all three name
+SU(2) in their own first or last sentence, and route 3 declares
+`uses: ["prop:cohomological-embedding"]` so is not even formally independent.
+
+**And route 3's stated criterion is not met at g = 4.** Its claim that the 6x5
+character matrix 'has rank 5 (verified numerically)' is structurally impossible:
+T_{r,s} closes a braid word on r strands, so M is block-diagonal and rank is
+additive; at g=4 four r=2 rows (rank <=2) and TWO r=3 rows (rank <=2) give
+rank <= 4 < 5, at no q rather than at some q. Exact sweep over Q(q):
+g = 1..7 -> rank 1,2,3,4,4,5,5. First met at g=6, where the proof's own
+restriction to r in {2,3} lapses (T_{4,5} has genus 6). No producer computes
+the matrix; Lean carrier is validation: not_checked.
+
+Corrected my own claim mid-probe: rank at g=3 is 3, not 4, so the *exclusion*
+of g=3 is correct and only the *acceptance* at g=4 is wrong — by one.
+
+Scope (b), invariant = rank subadditivity over a block decomposition. NOT a
+claim that g != 4; routes 1 and 2 untouched and route 2's arithmetic is clean.
+
+Probe `computations/audits/genus_completeness_rank_probe.py` (22/22, exact,
+no float). Commit f504492523, PR #7362.
+
+**Still open** (the bean stays in-progress): the g=4 completeness sentence needs
+an owner disposition (re-scope / restate / retire); the why-b3 rank-1 vs
+descartes-knot rank-2 contradiction; steps 7, 8, 9, 11 unwalked.
