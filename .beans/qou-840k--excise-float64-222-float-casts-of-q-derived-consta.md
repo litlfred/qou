@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-14T17:58:21Z
+updated_at: 2026-09-14T18:27:55Z
 ---
 
 
@@ -908,3 +908,103 @@ in `git status` after a re-run has PASSED the baseline check, not failed to writ
 now the second wins. Residue 8.6154% either way and the conclusion is untouched,
 but the tie-break is arbitrary and is now VISIBLE where float64 rounding hid it.
 Not fixed — making it deterministic is a tidy, not a precision fix.
+
+
+## 🛑 "LOCAL (drainable now)" OVERSTATES BY 22 % — the partition models only the
+## UPSTREAM direction (measured 2026-09-14)
+
+`computations/audits/drain_queue_relay_partition.py` asks *"does this producer
+READ another witness?"*. It does not ask *"does another producer read THIS
+witness?"* — so an **upstream** witness lands in LOCAL, labelled "drainable
+without touching an upstream", and draining it breaks its consumers.
+
+Measured with the partition's OWN criterion and regex:
+
+```
+partition LOCAL:              287 witnesses,  4368 fields
+of those, READ downstream:     25 witnesses,   945 fields   (22 % of LOCAL fields)
+```
+
+Top five, all currently advertised as drainable now:
+
+| fields | witness | readers |
+|---:|---|---:|
+| 452 | `hadron-knot-table` | 2 |
+| 78 | `deltalambda/alpha-cluster-volume-additivity` | **3** |
+| 72 | `bw-chirality-isotopes` | 2 |
+| 67 | `symmetrized-constituent-general` | 2 |
+| 42 | `probes/rho-k-markov-multiplicativity` | 1 |
+
+`hadron-knot-table` is already excluded for runtime (>50 min per bound atom), so
+the live figure is **24 witnesses / 493 fields**. The genuinely safe remainder is
+**262 witnesses / 3,423 fields** — still the right queue, just 22 % smaller than
+advertised.
+
+### Demonstrated on the 78-field case, and it breaks 5 of 6 consumption patterns
+
+`alpha-cluster-volume-additivity.witness.json` is read by three producers.
+Serializing its fields with `fmt` (the drain) turns floats into strings, and
+their consumption splits two ways:
+
+```
+inter_cluster:172   float(b_ame - b_add) - row['deficit_MeV']   TypeError: float - str
+inter_cluster:223   rows[i]['deficit_MeV'] / rows[i]['H1_...']  TypeError: str / str
+inter_cluster:225   rows[i]['deficit_MeV'] > 7                  TypeError: str > int
+mixed_multibond:183 r['deficit_MeV'] - r['pred_deficit_MeV']    TypeError: str - str
+mixed_multibond:196 f"{c['deficit_MeV']:8.4f}"                  ValueError: format 'f' on str
+alpha_activation:161 mp.mpf(str(ADD['12C']['deficit_MeV']))     ok  <- the only safe form
+```
+
+Five of six break. The one that survives is `mp.mpf(str(...))`, which is
+string-agnostic — so a codebase that used it uniformly would be drain-safe, and
+this one does not.
+
+**Severity, stated precisely rather than dramatised.** All three relays write via
+the destructive shape this arc already documents —
+`json.dump(wit, open(out, "w"), indent=1)` at lines 456 / 535 / 445 — where
+`open(..., "w")` truncates before `json.dump` can raise. But every failing site
+above sits in the ANALYSIS section, upstream of those lines, so the crash happens
+before the write and **the downstream witnesses survive**. Three crashing
+producers, not three destroyed witnesses. I checked the line ordering rather than
+assuming the worse case.
+
+### I nearly filed a false blind spot against the partition script — third time
+### this session
+
+My first two re-scans returned 26 / 882 and 100 / 5,272 and BOTH were wrong,
+because I matched witness names with a bare `grep -oE '[\w./-]+\.witness\.json'`.
+The committed script uses
+
+```python
+WIT_READ = re.compile(r"""["'][^"']*\.witness\.json["']""")
+```
+
+— a **quoted literal whose closing quote is immediately after `.witness.json`** —
+and that is the better discriminator, because it separates *opening* a file from
+*citing* one in prose. The worked case: `alpha_cluster_volume_additivity_probe.py`
+mentions `binding-link-volumes.witness.json` three times, and all three are prose
+— one comment, and two `"source": "binding-link-volumes.witness.json (deprecated
+volume-search ID)"` provenance strings, whose trailing text defeats the regex by
+design. My grep called it a RELAY; the script correctly calls it LOCAL.
+
+So: **the tool is sound in the direction it measures, and its label is the
+overclaim.** The reusable rule is the one this session keeps re-learning from the
+other side — *the audit reads bindings, grep reads spellings* — here as **an
+audit's stricter regex beat my looser one, and the stricter one was right.**
+
+### Options
+
+- **A — record it and drain only the 262 safe witnesses.** Free; the 24 stay
+  listed as drainable and the next agent can hit the same rake. *This is what I
+  did, absent authorisation for B.*
+- **B — add a downstream column to the partition script**, so a LOCAL entry with
+  readers is flagged and its readers named. ~20 lines, changes no published
+  number, only the queue's advice. Not taken: it adds a capability rather than
+  making code agree with the corpus, so it is not clearly inside either
+  2026-09-07 exemption.
+- **C — drain the 24 together with their readers**, porting each reader to
+  `mp.mpf(str(...))` in the same commit. Correct and much larger; the reader
+  edits touch producers in other arcs.
+
+**My judgement: B then A.** The flag is cheap and it is the difference between a
+queue and a trap; C is real work that should be scoped per-witness.
