@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:29:44.908529+00:00",
-  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
+  "computedAt": "2026-09-14T16:09:26.230769+00:00",
+  "commitSha": "07e13c73e4ea5b35c1f4023f38c57b0055175691",
   "assertions": [
     {
       "name": "prefactor_pi2_over_720_from_disjoint_count",
@@ -31,11 +31,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 41,
   "computation": "casimir-n-unknot-construction",
   "scriptFile": "casimir_n_unknot_construction.py",
-  "scriptHash": "b3f20d929af0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "b7d10a3bf647",
+  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,7 +50,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [

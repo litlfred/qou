@@ -79,7 +79,7 @@ sys.path.insert(0, str(HERE))
 
 from mpmath import mp, mpf, pi as mp_pi, zeta as mp_zeta  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -131,7 +131,11 @@ def main() -> int:
     # ─── Test at 3 different q values ───
     q_values = [
         mpf("1.05"),
-        mpf(Q),       # substrate
+        # `Q_MP`, NOT `mpf(Q)`: `q_parameter.Q` is `float(_d["q"])`, so
+        # `mpf(Q)` lifts the DOUBLE's binary expansion and caps the substrate
+        # row at ~17 digits while the two comparison rows (1.05, 1.5) are
+        # exact.  `Q_MP = mpf(_d["q"])` is the full 49-digit pin.
+        Q_MP,         # substrate
         mpf("1.5"),
     ]
     results = []
