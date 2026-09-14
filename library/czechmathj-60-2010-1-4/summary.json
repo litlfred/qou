@@ -1,0 +1,65 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "czechmathj-60-2010-1-4",
+ "source_sha256": "7595f81d1398d0bf",
+ "brief": "Czechoslovak Mathematical Journal — 9 sections: Front matter; Introduction; Composition-Diamond lemma for left",
+ "extended": "**Czechoslovak Mathematical Journal**\n\n*Yuqun Chen; Yongshan Chen; Chanyan Zhong*\n\n19 pp, 9 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Composition-Diamond lemma for left ideals of; 3 Composition-Diamond lemma for “double-free” ; 4 Highest weight modules over sl2; 5 Verma modules over Kac-Moody algebras; 6 Verma modules over the coefficient algebra o; 7 Universal enveloping module for a Sabinin al; References",
+ "tokens": {
+  "brief": 27,
+  "extended": 106
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-composition-diamond-lemma-for-left-ideals-of-a",
+   "title": "Composition-Diamond lemma for left ideals of a free algebra",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-3-composition-diamond-lemma-for-double-free-modu",
+   "title": "Composition-Diamond lemma for “double-free” modules",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-003-4-highest-weight-modules-over-sl2",
+   "title": "Highest weight modules over sl2",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-004-5-verma-modules-over-kac-moody-algebras",
+   "title": "Verma modules over Kac-Moody algebras",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-005-6-verma-modules-over-the-coefficient-algebra-of",
+   "title": "Verma modules over the coefficient algebra of a",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-006-7-universal-enveloping-module-for-a-sabinin-alge",
+   "title": "Universal enveloping module for a Sabinin algebra",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "18-19"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

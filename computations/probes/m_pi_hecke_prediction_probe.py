@@ -366,8 +366,13 @@ def main():
     candidates.append(("(l')  m_μ · (1 + net(𝓜_+))", m_mu * (1 + net_meson)))
 
     # ── SCORE & SORT ─────────────────────────────────────────────
+    # NO-FLOAT64 (2026-09-13): `miss` stays an mpf end to end. It was
+    # `float(fabs(...))` — a float64 that was BOTH the sort key and the
+    # published `miss_ppm` / `miss_ppb`, i.e. computation, not display.
+    # Sorting on the mpf keeps the ranking exact; the witness serializes
+    # with `mp.nstr` at the same width as its neighbours.
     def miss_ppm(pred):
-        return float(fabs(ppm(pred, M_PI_PDG_MEV)))
+        return fabs(ppm(pred, M_PI_PDG_MEV))
 
     scored = sorted(
         ((label, pred, miss_ppm(pred)) for label, pred in candidates),
@@ -380,12 +385,14 @@ def main():
     print(f"  {'rank':>4}  {'pred (MeV)':>16}  {'miss (ppm)':>14}  formula")
     print(f"  {'-'*4}  {'-'*16}  {'-'*14}  {'-'*60}")
     for rank, (label, pred, miss) in enumerate(scored[:20], 1):
-        miss_str = f"{miss:>14.3e}" if miss >= 1.0 else f"{miss * 1000:>11.3f} ppb"
+        # float() here is DISPLAY ONLY (AGENTS.md permits it in an f-string).
+        miss_str = (f"{float(miss):>14.3e}" if miss >= 1
+                    else f"{float(miss * 1000):>11.3f} ppb")
         print(f"  {rank:>4}  {float(pred):>16.6f}  {miss_str}  {label}")
     print()
 
     best_label, best_pred, best_miss_ppm = scored[0]
-    best_miss_ppb = best_miss_ppm * 1000.0
+    best_miss_ppb = best_miss_ppm * 1000
 
     print("=" * 78)
     print("  BEST MATCH")
@@ -393,29 +400,30 @@ def main():
     print(f"  Formula: {best_label}")
     print(f"  Pred:    {mp.nstr(best_pred, 14)} MeV")
     print(f"  PDG:     {mp.nstr(M_PI_PDG_MEV, 14)} MeV")
-    print(f"  Miss:    {best_miss_ppm:.3e} ppm  ({best_miss_ppb:.3e} ppb)")
+    print(f"  Miss:    {float(best_miss_ppm):.3e} ppm  "
+          f"({float(best_miss_ppb):.3e} ppb)")
     print(f"  PDG exp: ±1.3 ppb")
     print()
 
     # ── VERDICT ──────────────────────────────────────────────────
-    if best_miss_ppb < 1.3:
+    if best_miss_ppb < mpf("1.3"):
         verdict = "DERIVABLE — best candidate matches PDG within experimental precision"
         cal3_status = "m_π is NOT a CAL-3 candidate (reduces to CAL-1+CAL-2)"
-    elif best_miss_ppm < 100:
+    elif best_miss_ppm < mpf(100):
         verdict = (
-            f"NEARLY-DERIVABLE — best candidate within {best_miss_ppm:.1f} ppm. "
+            f"NEARLY-DERIVABLE — best candidate within {float(best_miss_ppm):.1f} ppm. "
             "Likely indicates a formula correction is needed, not new physics."
         )
         cal3_status = "m_π is a WEAK CAL-3 candidate (close match suggests derivable)"
-    elif best_miss_ppm < 10000:
+    elif best_miss_ppm < mpf(10000):
         verdict = (
-            f"PARTIAL — best candidate within {best_miss_ppm:.0f} ppm. "
+            f"PARTIAL — best candidate within {float(best_miss_ppm):.0f} ppm. "
             "Order of magnitude correct but no exact formula found."
         )
         cal3_status = "m_π is a MODERATE CAL-3 candidate"
     else:
         verdict = (
-            f"NOT DERIVABLE from tried formulas — best miss {best_miss_ppm:.0f} ppm. "
+            f"NOT DERIVABLE from tried formulas — best miss {float(best_miss_ppm):.0f} ppm. "
             "Suggests m_π carries information beyond (m_e, q_0)."
         )
         cal3_status = (
@@ -471,16 +479,16 @@ def main():
     w.add_data("E0_candidates_MeV",
                {k: mp.nstr(v, 18) for k, v in E0s.items()})
 
+    pdg_err_ppb = M_PI_PDG_ERR_MEV / M_PI_PDG_MEV * mpf("1e9")
+
     w.add_data("top_20_candidates", [
         {
             "rank": i + 1,
             "formula": label,
             "pred_MeV": mp.nstr(pred, 18),
-            "miss_ppm": miss,
-            "miss_ppb": miss * 1000.0,
-            "within_pdg_err": (miss * 1000.0) < float(
-                M_PI_PDG_ERR_MEV / M_PI_PDG_MEV * mpf("1e9")
-            ),
+            "miss_ppm": mp.nstr(miss, 18),
+            "miss_ppb": mp.nstr(miss * 1000, 18),
+            "within_pdg_err": bool((miss * 1000) < pdg_err_ppb),
         }
         for i, (label, pred, miss) in enumerate(scored[:20])
     ])
@@ -489,20 +497,18 @@ def main():
         "formula": best_label,
         "pred_MeV": mp.nstr(best_pred, 25),
         "pdg_MeV": mp.nstr(M_PI_PDG_MEV, 18),
-        "miss_ppm": best_miss_ppm,
-        "miss_ppb": best_miss_ppb,
-        "pdg_exp_precision_ppb": float(
-            M_PI_PDG_ERR_MEV / M_PI_PDG_MEV * mpf("1e9")
-        ),
-        "matches_within_pdg_error": best_miss_ppb < 1.3,
+        "miss_ppm": mp.nstr(best_miss_ppm, 18),
+        "miss_ppb": mp.nstr(best_miss_ppb, 18),
+        "pdg_exp_precision_ppb": mp.nstr(pdg_err_ppb, 18),
+        "matches_within_pdg_error": bool(best_miss_ppb < mpf("1.3")),
     })
 
     w.add_data("verdict", {
         "summary": verdict,
         "cal3_status": cal3_status,
         "n_candidates_tried": len(candidates),
-        "best_miss_ppm": best_miss_ppm,
-        "best_miss_ppb": best_miss_ppb,
+        "best_miss_ppm": mp.nstr(best_miss_ppm, 18),
+        "best_miss_ppb": mp.nstr(best_miss_ppb, 18),
     })
 
     w.add_caveat(
@@ -523,9 +529,11 @@ def main():
 
     w.add_assertion(
         name="best_miss_below_1ppb_means_derivable",
-        computed=best_miss_ppb,
-        expected=0.0,
-        tolerance=1.3,  # PDG exp precision
+        # add_assertion takes STRINGS to keep the value out of float64
+        # (qou-t0rf); `passed` coerces with float() either way.
+        computed=mp.nstr(best_miss_ppb, 18),
+        expected="0",
+        tolerance="1.3",  # PDG exp precision
         unit="ppb",
         source=(
             "If the best candidate matches m_π± within 1.3 ppb (PDG "

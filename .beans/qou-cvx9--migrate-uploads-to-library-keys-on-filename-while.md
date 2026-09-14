@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T13:48:45Z
-updated_at: 2026-09-07T09:58:38Z
+updated_at: 2026-09-13T09:31:12Z
 ---
 
 Found pre-merge on #6955 while probing its merge ordering against #6942. **A defect
@@ -308,3 +308,49 @@ caught all 23, including the one the write-path guard could not.
 
 --selftest is calibrated by REVERTING the condition (plant orphan -> must be DETECTED and report()
 must return non-zero; remove it -> must be clean), not by observing a pass.
+
+
+---
+
+## 2026-09-13 — three fresh instances of the known blanket-rewrite cost, one of which FALSIFIES a record
+
+Hit while ingesting `library/arxiv-astro-ph-0203462v1/0203462v1.pdf` (owner upload `7ac8aacd5f`, Hill
+et al. 2002 on CS 31082-001). **Not a new defect class** — this script's own
+header already documents it at lines 28-39 and 271-272: the rewrite is total
+*by design*, including beans, to avoid ~485 dangling references, and
+*"blanket rewrite cannot tell a citation from a sentence"*. Recording three
+live instances, because two of them are worse than a dangling link.
+
+`--apply` rewrote three files that were narrating history, not linking:
+
+1. **`.beans/qou-4lbh`** — *"a correct path update, `uploads/roth_lemma.pdf`
+   -> `library/roth-lemma/roth_lemma.pdf`"* became
+   *"`library/roth-lemma/roth_lemma.pdf` -> `library/roth-lemma/roth_lemma.pdf`"*.
+   An arrow from a thing to itself. Nonsense, but visibly so.
+
+2. **`.beans/qou-cvx9` (this bean)** — *"The first draft wrote
+   `uploads/1808.02836v2.pdf` as a literal in the selftest"* became *"wrote
+   `library/arxiv-1808.02836v2/1808.02836v2.pdf` as a literal"*. **This one
+   falsifies a historical claim**: the first draft did not write that. The
+   sentence is now confidently false rather than obviously broken, which is
+   the more expensive failure.
+
+3. **`scripts/library-orphan-audit.py`** — a docstring quoting git's own
+   output, *"`R100 uploads/0705.2975v1.pdf -> library/arxiv-0705.2975v1/...`"*,
+   became `R100 library/... -> library/...`. A rename record with identical
+   source and target is not a rename; verbatim quoted evidence, now wrong.
+
+All three **reverted** rather than committed. They will be rewritten again on
+the next `--apply`, so this is a recurrence, not a repair.
+
+**The pattern worth naming:** the files hit are the ones *describing the
+migration itself*, because those are exactly the files that legitimately
+contain `uploads/` paths as historical text. So the script's blast radius is
+biased toward its own documentation — and toward the beans a future agent
+would read to understand it.
+
+**NOT FIXED, and deliberately not.** The obvious fix (skip `.beans/`, or skip
+lines containing an arrow, or require the path to resolve) is a change to
+somebody else's script, is neither a precision increase nor corpus-derived,
+and therefore needs the owner per AGENTS.md 2026-09-07. Put here for that
+decision rather than made.

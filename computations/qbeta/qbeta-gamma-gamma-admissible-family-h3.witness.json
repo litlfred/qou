@@ -1,0 +1,353 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T11:59:00.775152+00:00",
+  "commitSha": "afa70ad678a5c30e7fe1e776d8469484d9350356",
+  "assertions": [
+    {
+      "name": "nf_basis_is_six_so_h3_has_two_generators",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "|NF basis| = 6 = 3! -- H_3, two Artin generators, so a vertex sigma_i sigma_{i+1}^-1 needs i+1 < 2, i.e. i = 0. Formalised as gammaGamma_threeStrand (sorry-free)"
+    },
+    {
+      "name": "family_alternating_character_is_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "k = 0..24; max |altChar - 1| = 9.67197e-46 -- the positive control for altChar_eq_one (sorry-free)"
+    },
+    {
+      "name": "family_e_minus_coordinate_vanishes",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "nf[e^-] == 0 exactly, symbolically in h, for every k = 0..24. `qbeta-counit-closed-form.md` calls this something the nucleon models 'happen to satisfy'; under gamma-gamma it is forced"
+    },
+    {
+      "name": "e_minus_vanishing_forces_net_eq_z1_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr_M|_{z=1} - net = h * nf[e^-] identically (residual 0 for all k = 0..24), and nf[e^-] = 0, so net and the retired z = 1 cell COINCIDE on every gamma-gamma word"
+    },
+    {
+      "name": "derived_member_k3_is_borromean_and_misses_by_440_pct",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "k = 3 is `GammaGammaWordSelection.borromean` -- three pair-production events, derived, not chosen against a number. |tr_M^zD(core^3)|*E0 = 4.22140492718 MeV against Q_beta = 0.78233341 MeV: 439.592 %"
+    },
+    {
+      "name": "k_mod_3_eq_1_band_descends_monotonically_through_the_target",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "band k = 1,4,...,22: ['1.045448', '0.9127171', '0.7871023', '0.6693336', '0.5600959', '0.4600241', '0.3697003', '0.2896494'] MeV -- strictly decreasing and it brackets Q_beta between k = 7 and k = 10. A monotone sweep through a target always has a nearest member"
+    },
+    {
+      "name": "difference_grid_straddles_the_target_so_a_match_is_density",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "300 unordered pairs over k,l <= 24, spanning [0.00607843, 3.93783] MeV and straddling Q_beta. Local spacing 1.28915 %; best (k,l) = (8, 23) at 0.454942 %; a grid of that spacing misses by ~0.322287 % BY CHANCE, so the best match is not better than chance. Within 1 %: 2; within 5 %: 7"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1343,
+  "computation": "qbeta-gamma-gamma-admissible-family-h3",
+  "scriptFile": "qbeta_gamma_gamma_admissible_family_h3_probe.py",
+  "scriptHash": "31597d75c2f5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_gamma_gamma_admissible_family_h3_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_gamma_gamma_admissible_family_h3_probe.py"
+  },
+  "description": "On three strands the only gamma-gamma vertex is sigma_0 sigma_1^{-1}, so every gamma-gamma word is (sigma_0 sigma_1^{-1})^k -- one integer of freedom. Every member has a vanishing e^- coordinate (so the counit block's 'happen to satisfy' is forced, not accidental). The derived member k=3 (borromean) misses Q_beta by +439.6 %; the members that match are selected, and the difference grid's best residual (0.455 %) is not even better than the 0.32 % expected by chance from its own 1.29 % spacing. Scope-(a): it excludes a METHOD (selecting k by residual), not the gamma-gamma route.",
+  "data": {
+    "family": [
+      {
+        "k": 0,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "1.0",
+        "pred_MeV": "4.2274833556290305503",
+        "err_pct_vs_Q_beta": "440.3685055",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 1,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.24729788674803459841",
+        "pred_MeV": "1.0454477001095492695",
+        "err_pct_vs_Q_beta": "33.63198947",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 2,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.28019564227269498143",
+        "pred_MeV": "1.184522414027604024",
+        "err_pct_vs_Q_beta": "51.40890046",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 3,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.99856216383678726595",
+        "pred_MeV": "4.2214049271809272109",
+        "err_pct_vs_Q_beta": "439.5915441",
+        "is_derived_by_the_corpus": true
+      },
+      {
+        "k": 4,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.2159008097537719265",
+        "pred_MeV": "0.91271707970090067293",
+        "err_pct_vs_Q_beta": "16.6659979",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 5,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.31440280262459328043",
+        "pred_MeV": "1.3291326150585873746",
+        "err_pct_vs_Q_beta": "69.89337258",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 6,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.99425701519550615352",
+        "pred_MeV": "4.2032049829564023722",
+        "err_pct_vs_Q_beta": "437.2651774",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 7,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.18618695976743407594",
+        "pred_MeV": "0.78710227345199951286",
+        "err_pct_vs_Q_beta": "0.6095691928",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 8,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.34972048097601920118",
+        "pred_MeV": "1.4784375124487001938",
+        "err_pct_vs_Q_beta": "88.97793365",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 9,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.9871095850155061246",
+        "pred_MeV": "4.1729893408349316441",
+        "err_pct_vs_Q_beta": "433.4029312",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 10,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.15832909866992690655",
+        "pred_MeV": "0.66933362933886247656",
+        "err_pct_vs_Q_beta": "-14.44394157",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 11,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.38594333373992407974",
+        "pred_MeV": "1.6315690196015090936",
+        "err_pct_vs_Q_beta": "108.5516225",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 12,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.97716142979256634832",
+        "pred_MeV": "4.1309336802107397321",
+        "err_pct_vs_Q_beta": "428.0272614",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 13,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.13248919727564950793",
+        "pred_MeV": "0.56009587628345939424",
+        "err_pct_vs_Q_beta": "-28.40701047",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 14,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.42286075447593934833",
+        "pred_MeV": "1.7876368012957676761",
+        "err_pct_vs_Q_beta": "128.5006339",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 15,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.96447038996165734359",
+        "pred_MeV": "4.0772825205599468483",
+        "err_pct_vs_Q_beta": "421.1694232",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 16,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.10881749360388749563",
+        "pred_MeV": "0.46002414301170287894",
+        "err_pct_vs_Q_beta": "-41.19845361",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 17,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.46025809839560846233",
+        "pred_MeV": "1.9457334502609033845",
+        "err_pct_vs_Q_beta": "148.7089808",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 18,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.94911025360183474032",
+        "pred_MeV": "4.0123477997586045072",
+        "err_pct_vs_Q_beta": "412.8692893",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 19,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.087451619366871364814",
+        "pred_MeV": "0.36970026529625407343",
+        "err_pct_vs_Q_beta": "-52.74389914",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 20,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.49791793034732986258",
+        "pred_MeV": "2.1049397630125919525",
+        "err_pct_vs_Q_beta": "169.0591679",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 21,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.93117032741854780077",
+        "pred_MeV": "3.9365070604175455295",
+        "err_pct_vs_Q_beta": "403.1751182",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 22,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.068515799753261694393",
+        "pred_MeV": "0.28964940305452545122",
+        "err_pct_vs_Q_beta": "-62.97621968",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 23,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.53562128902499311676",
+        "pred_MeV": "2.2643300842737247343",
+        "err_pct_vs_Q_beta": "189.4328755",
+        "is_derived_by_the_corpus": false
+      },
+      {
+        "k": 24,
+        "e_minus": "0",
+        "alt_char": "1.0",
+        "tr_M_zD": "0.9107549174977517943",
+        "pred_MeV": "3.8502012547790366272",
+        "err_pct_vs_Q_beta": "392.1432736",
+        "is_derived_by_the_corpus": false
+      }
+    ],
+    "derived_member": {
+      "k": 3,
+      "name": "borromean, (sigma_0 sigma_1^-1)^3",
+      "why_derived": "three pair-production events; GammaGammaWordSelection.borromean, not selected against any number",
+      "pred_MeV": "4.2214049271809272109",
+      "err_pct": "439.5915441"
+    },
+    "selection_is_forbidden": {
+      "single_k_band_spacing_pct": "10.232321",
+      "single_k_best": {
+        "k": 7,
+        "err_pct": "0.60956919"
+      },
+      "difference_grid_spacing_pct": "1.2891465",
+      "difference_grid_best": {
+        "pair": [
+          8,
+          23
+        ],
+        "err_pct": "0.45494182"
+      },
+      "expected_best_by_chance_pct": "0.32228663",
+      "pairs_within_1_pct": 2,
+      "pairs_within_5_pct": 7,
+      "verdict": "the residual carries no information at this precision; choosing k or (k,l) by it is selection against the target (AGENTS.md NO FITTING) and is forbidden",
+      "k_max_enumerated": 24
+    },
+    "scope": "a",
+    "what_this_does_not_exclude": [
+      "H_4 and above, where more vertices exist and the one-integer collapse does not apply",
+      "a word mixing gamma-gamma vertices with other letters",
+      "any route that DERIVES k from something other than the residual -- which is exactly what is missing"
+    ],
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736",
+    "E0_MeV": "4.2274833556290305503",
+    "E0_form": "tower_summed (canonical, qbeta_e0.canonical)",
+    "Q_beta_MeV": "0.78233341"
+  }
+}

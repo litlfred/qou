@@ -1,0 +1,153 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T18:23:48.841462+00:00",
+  "commitSha": "e994fd1475c26ad70de12a271f68444f503bfec6",
+  "assertions": [
+    {
+      "name": "harness_reproduces_the_recorded_form_A_negative",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "leading orders Delta(net)_A = -2*eps^1 and Delta tr_M = -5/4*eps^1, matching qbeta-delta-tr-vs-formA.witness.json's recorded '-2 eps' and '-5/4 eps'. The harness is trusted against the existing record BEFORE anything new is read from it."
+    },
+    {
+      "name": "delta_tr_is_NOT_the_ruled_z_D_slot_object",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Delta tr_M - tr_M(Delta, z_D) does not vanish identically. Leading orders: Delta tr_M = -5/4*eps^1, tr_M at z_D = -1*eps^1. So the 2026-08-08 negative EXTENDS to the ruled base -- re-aiming it at the canonical convention does not rescue the identification."
+    },
+    {
+      "name": "delta_tr_is_NOT_the_augmentation_slot_object_either",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Delta tr_M - tr_M(Delta, z=q) does not vanish identically either (leading -2*eps^1). Both admissible functionals are tested, so this is not a statement about the ruled cell alone."
+    },
+    {
+      "name": "the_z_D_mismatch_is_structural_not_a_normalisation",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the term-by-term ratio is NOT constant across k (5 distinct values over 5 orders; sign set ['-1', '1']). A constant ratio would mean the two series differ only by normalisation, which would make the mismatch uninteresting. It is not constant, so the objects are structurally distinct -- the same discipline the sibling probe applied to the Form A negative."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1804,
+  "computation": "qbeta-delta-tr-vs-ruled-base",
+  "scriptFile": "qbeta_delta_tr_vs_ruled_base_probe.py",
+  "scriptHash": "4311f9db651b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_delta_tr_vs_ruled_base_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_delta_tr_vs_ruled_base_probe.py"
+  },
+  "data": {
+    "upstream_witness_hashes": [
+      {
+        "path": "habiro-coefficients-atomic.witness.json",
+        "sha256": "4ec945d56ca192a8d4bf0a5890bcddf0fadba045e93d12a816c847f8b4299bf3",
+        "size_bytes": 23838,
+        "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
+        "scriptCommitSha": "126edfa8929a1489af3b7466099d46492545b86f",
+        "computedAt": "2026-09-06T12:47:31.488343+00:00"
+      }
+    ]
+  },
+  "description": "Re-aims the corpus's 2026-08-08 negative against the Habiro route at the RULED base. qbeta-delta-tr-vs-formA compares Delta tr_M against Form A's net-winding slot -- the z = 1 cell, which the owner retired as the base on 2026-09-08, one day after that witness was last touched. This re-runs the same comparison against the Markov trace at z_D = q^3/(q^2+1) (the ruled epsilon) and against the augmentation z = q (the other admissible point), calibrating first against the recorded Form A figures. Scope (a), proton pin, convention D. Asserts nothing about alpha.",
+  "bean": "qou-pdix",
+  "q0Anchor": "proton",
+  "taylor_basis": "eps = q - 1",
+  "leading_taylor_coefficients": {
+    "delta_tr_M": {
+      "eps^0": "0",
+      "eps^1": "-5/4",
+      "eps^2": "-11/8",
+      "eps^3": "1/8",
+      "eps^4": "-5",
+      "eps^5": "589/16"
+    },
+    "delta_net_A_RETIRED": {
+      "eps^0": "0",
+      "eps^1": "-2",
+      "eps^2": "3",
+      "eps^3": "-3",
+      "eps^4": "7/2",
+      "eps^5": "-4"
+    },
+    "tr_M_at_z_D_RULED": {
+      "eps^0": "0",
+      "eps^1": "-1",
+      "eps^2": "1/2",
+      "eps^3": "-2",
+      "eps^4": "11/4",
+      "eps^5": "-13/4"
+    },
+    "tr_M_at_z_q_augmentation": {
+      "eps^0": "0",
+      "eps^1": "-2",
+      "eps^2": "1",
+      "eps^3": "-2",
+      "eps^4": "5/2",
+      "eps^5": "-3"
+    }
+  },
+  "ratio_delta_tr_over_tr_zD": {
+    "k=1": "5/4",
+    "k=2": "-11/4",
+    "k=3": "-1/16",
+    "k=4": "-20/11",
+    "k=5": "-589/52"
+  },
+  "numerical_at_q0": [
+    {
+      "slot_object": "Delta tr_M (Habiro)",
+      "status": "the object under test",
+      "value_at_q0": "-0.154194885047239705659255514103480128041811765925643945675228",
+      "Q_MeV": "0.645456915123079459561875876075278510358024641700341073567997",
+      "err_pct_vs_codata": "-17.4959285335349484939066392435610317342134647694222034050852"
+    },
+    {
+      "slot_object": "Delta(net)_A (z = 1)",
+      "status": "RETIRED as base 2026-09-08",
+      "value_at_q0": "-0.187207194529378320729836545290980788975650514906301240979951",
+      "Q_MeV": "0.783645827374621213074939751341396890525736441030260633803977",
+      "err_pct_vs_codata": "0.167756873104829946723350200931500391578271731359144157174855"
+    },
+    {
+      "slot_object": "tr_M at z_D",
+      "status": "RULED base 2026-09-08",
+      "value_at_q0": "-0.106235639848092790892141987160551894399375838398474615901997",
+      "Q_MeV": "0.444700408521780409100962213024942779024902777364453315934547",
+      "err_pct_vs_codata": "-43.1571752874458076893075387059482675607649443821710971260668"
+    },
+    {
+      "slot_object": "tr_M at z = q (augmentation)",
+      "status": "the other admissible point",
+      "value_at_q0": "-0.210199349900502936568794845696942029965574442560284383124630",
+      "Q_MeV": "0.879890561260119838902965955941296576254288512481637018113333",
+      "err_pct_vs_codata": "12.4700224724220718163168459940365762376459714265113987796162"
+    }
+  ],
+  "scope": "(a) scope-limited: these exact objects at the proton pin under convention D. It does NOT derive alpha, does not exclude the Habiro ring from an alpha closure by another route, and does not retract the 2026-08-08 Form A negative -- that inequality is an exact algebraic fact and stands on its own terms. What it settles is only whether re-aiming that negative at the ruled base changes its verdict."
+}

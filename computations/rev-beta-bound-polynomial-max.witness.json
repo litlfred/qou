@@ -58,98 +58,72 @@
       "pass": true
     },
     {
-      "check": "R3_the_relaxed_maximum_rate_measured_where_enumeration_cannot_reach",
-      "detail": "over n = 40..4,000 \u2014 a range on which p(n) runs from 37,338 to about 1.0e64, so no enumeration reaches any of the last five points \u2014 the relaxed maximum divided by sqrt(n) varies by 95.42% (9.66613 -> 210.878) while divided by n^(3/4) it rises (3.84359 -> 26.5165). Reported as measured; R4 states what it does and does not settle.",
+      "check": "R3_the_rise_was_an_artefact_of_this_probes_own_H_bound",
+      "detail": "every partition of n satisfies H >= H_min(n), so a lower bound on H that falls BELOW H_min(n) is not merely loose, it is feeding the maximiser energy no shape can have. Measured at this probe's own argmax: Hhat/H_min(n) falls 1.7051 -> 0.47237 over n = 40..4000. At n = 4000 that is 116747.92 against H_min = 238520, and the missing energy 12705.8 is essentially the whole 13337 the original R3 reported. The column half spreads n - l cells over lambda_1 - 1 columns, impossible with 151 rows. **The original R3's rise is withdrawn**, and with it the R4 'anti-caveat' that called it a clear signal rather than a misread column.",
       "pass": true
     },
     {
-      "check": "R5_neither_the_l_cap_nor_the_eps_truncation_is_doing_the_work",
-      "detail": "the row scan is capped at l <= 8*sqrt(n)+8 and the argmax l lands strictly inside it at every n (22/58, 26/88, 27/134, 43/208, 78/328, 151/513), so the cap is not binding \u2014 a binding cap would under-estimate the max and is reported as a FAILURE here rather than passing quietly. The eps truncation (drop terms with argument > 300) differs from the untruncated sum by at most 7.81e-26 on six spot shapes spanning the scanned (l, W) range.",
+      "check": "R4_the_clamp_is_free_and_valid_and_the_staircase_is_the_validity_check",
+      "detail": "clamping Hhat to H_min(n) is valid for every partition and costs nothing, and it is what the original probe should have had. It is NOT sufficient: divided by sqrt(n) the clamped maximum runs 9.66613 -> 26.3601 over n = 40..4000.\n\n        **The check here is VALIDITY, not the rate**, and it is what found a SECOND defect in the original instrument. The staircase attains R = A*sqrt(2n) at zero energy, so any valid upper bound on M_n must sit above it: 32.2296, 80.574, 203.838, 322.296 at n = 40, 250, 1600, 4000. The first run of this repair reported 169.4 at n = 4000, BELOW the staircase floor 322.296 \u2014 not a bound at all.\n\n        The cause is the early-break heuristic `if v < best - 50: break`, inherited from the original probe. The value is UNIMODAL in W \u2014 at n = 4000, l = 88 it runs 57 -> 126 -> 260 -> 326 -> 362 -> 438 -> 507 before collapsing \u2014 so a break keyed on the GLOBAL best fires at W = 87 and abandons the row before its peak. (88, 174) alone gives 326.4, above the staircase floor, and the search never saw it. Keyed on each row's own best instead.\n\n        So the original #7081 numbers were unsound in TWO independent ways: Hhat fed the maximiser impossible energy (R3), and the search under-explored every row (here). They push in opposite directions, which is why neither showed up as an obvious absurdity \u2014 the reported figure was neither an upper nor a lower bound on anything.",
       "pass": true
     },
     {
-      "check": "R6_the_relaxation_is_TIGHT_so_the_loss_is_the_beta_bound_itself",
-      "detail": "I wrote this check expecting Hhat to be the weak link and it is NOT. At the relaxation's own argmax (l, W), Hhat reaches 99.325-100.0% of the TRUE minimum hook sum over partitions with exactly that (l, W) \u2014 exact at two of three. And the relaxation as a whole overshoots the enumerated max(B - E) by at most 0.1492 (n=16..40). So passing from a partition to the two integers (l, W) costs essentially nothing.\n\n        That inverts the finding, and makes it more useful. The relaxation is a FAITHFUL instrument, and what it faithfully reports is that the beta-bound of #7070 is itself too weak: its own maximum grows faster than n^(3/4) (R3), while the truth is somewhere in [sqrt n, n^(3/4)]. The lossy step is the Jensen inequality on the pair term \u2014 applied at the MEAN of each distance class, it under-counts badly for a shape whose beta-gaps are mostly 1 with a few large ones, which is exactly what the maximizer then selects (argmax W/l ~ 1.7 at every n).\n\n        The consequence for the next attempt is concrete: a better bound on the pair term can now be TESTED in polynomial time at n = 4000 without enumerating anything, on an instrument calibrated against the truth at n <= 40. Sharpening H further is not worth doing \u2014 there is under 1% left in it.",
+      "check": "R5_independent_check_the_row_tangent_floor_DOES_give_sqrt_n",
+      "detail": "substituting #7185's row-indexed floor 2(H - H^+) >= (l-k)^2 - r for the Cauchy-Schwarz Hhat, in THIS probe's own maximiser and with no other change, the maximum divided by sqrt(n) falls 35.7205 -> 9.60867 and Richardson on the last two (the correction is O(1/sqrt n)) gives 8.746179, while divided by n^(3/4) it falls 14.2037 -> 0.679435.\n\n        **The target is a BAND, not the single constant 8.80.** Maximising (l-1)C - ((l-k)^2 - r)L/2 exactly gives (k-1)C + C^2/(2L) + rL/2, so the ratio oscillates with r in [C*sqrt2, (C+L/2)*sqrt2] = [8.727686, 8.801466] \u2014 the 8.80 quoted on qou-hok7 is the r = k upper envelope, attained only when n sits just below a triangular number. Richardson lands inside that band. The argmax sits l - k = 59 rows above the staircase at EVERY n, against the predicted C/L = 59.14667.\n\n        This is an INDEPENDENT confirmation of #7185 from the instrument whose broken version appeared to contradict it: same maximiser, same eps table, same entropy term, only the energy floor swapped. Also checked here, since #7185 names it as its one honest Lean gap: H^+ = P_k + r(k+1) equals H_min_closed(n) at all eight test n (CONFIRMED) \u2014 numerically, not proved.",
       "pass": true
     },
     {
-      "check": "R4_verdict_the_route_is_sound_and_the_current_bound_is_not_strong_enough",
-      "detail": "**The transfer this probe was built to attempt does not fire, and the reason is clean.** The plan was: the relaxed maximum is an upper bound on M_n (R1, R2), and REV_n <= M_n + log p(n) with log p(n) ~ 2.5651*sqrt(n), so a sqrt(n) rate for the relaxation would give REV_n = O(sqrt n) and settle that the 3/4 is NOT sharp. Measured, the sqrt(n) column is not flat (95.42% spread) and the n^(3/4) column RISES, so the relaxation's own growth exceeds n^(3/4) and nothing transfers.\n\n        What that is evidence ABOUT is the bound, not the truth. R6 shows the (l, W) relaxation is tight to under 1%, so this is the beta-bound of #7070 failing on its own, at the Jensen step \u2014 NOT a fact about REV_n, which stays in [Omega(sqrt n), O(n^(3/4))] exactly as before. Sharpness remains OPEN, and no claim is made in either direction.\n\n        Two things survive as usable. The reduction itself: maximizing any bound of the form B(l, W) now costs O(n^2) instead of p(n), so a replacement for the Jensen step is testable at n = 4000 against a calibrated instrument. And the negative is sharp \u2014 'the pair term needs a bound that survives gap sequences of mostly 1s with a few large jumps' is a far more specific target than 'a sharper bound on R_lambda'.\n\n        Anti-caveat, since the mirror-image mistake is on the record: this is NOT the #7065 situation. There the statistic could not discriminate because the range was below its resolving point. Here the reading is a clear RISE across two orders of magnitude in n, not a flat column being over-read, so the negative does not depend on where the control's peak sits.",
+      "check": "R6_corrected_verdict_the_loss_WAS_Hhat_and_my_refutation_of_that_was_the_error",
+      "detail": "The original R6 asserted 'the relaxation is tight, so the beta-bound itself is the weak step'. That is **withdrawn**. The loss was Hhat, which was this probe's FIRST hypothesis; the 99.3-100 % calibration that overturned it was measured at n <= 40, where l - k is small, and then applied at n = 4000, where Hhat is under half of H_min. The calibration was sound; extrapolating it was not.\n\n        What survives from the arc: R1 and R2 here; #7093's three refutations about P_min (brute-forced, independent of Hhat); and the measurement that the coupling factor shrinks with l. What is withdrawn: 'the (l, W) relaxation is faithful', 'the loss is the Jensen step', and the impact arithmetic in #7093/#7185's predecessor that was computed against this probe's inflated ~3x.\n\n        Sharpness is settled and this probe did not settle it: REV_n = Theta(sqrt n) (#7185). R5 reproduces that conclusion here from the corrected floor.",
       "pass": true
     }
   ],
   "checks_passed": 6,
   "checks_total": 6,
-  "computedAt": "2026-09-07T12:39:15.326393+00:00",
+  "computedAt": "2026-09-13T06:27:09.310339+00:00",
   "dps": 40,
   "probe": "rev_beta_bound_polynomial_max_probe",
   "q0_anchor": "physical_proton",
   "rate_scan": [
     {
+      "H_min": 240,
+      "Hhat": "409.2202381",
+      "Hhat_over_Hmin": "1.70508",
       "argmax_l_W": [
         22,
         37
       ],
-      "ell_cap": 58,
-      "n": 40,
-      "over_n34": "3.843593716",
-      "over_sqrt_n": "9.666126457",
-      "relaxed_max": "61.1339515114"
+      "n": 40
     },
     {
+      "H_min": 3729,
+      "Hhat": "2698.793056",
+      "Hhat_over_Hmin": "0.723731",
       "argmax_l_W": [
-        26,
-        47
+        41,
+        76
       ],
-      "ell_cap": 88,
-      "n": 100,
-      "over_n34": "3.379786564",
-      "over_sqrt_n": "10.68782355",
-      "relaxed_max": "106.878235476"
+      "n": 250
     },
     {
+      "H_min": 60344,
+      "Hhat": "32571.34775",
+      "Hhat_over_Hmin": "0.539761",
       "argmax_l_W": [
-        27,
-        62
+        116,
+        228
       ],
-      "ell_cap": 134,
-      "n": 250,
-      "over_n34": "3.685931768",
-      "over_sqrt_n": "14.65656822",
-      "relaxed_max": "231.740691253"
+      "n": 1600
     },
     {
+      "H_min": 238520,
+      "Hhat": "112670.3271",
+      "Hhat_over_Hmin": "0.472373",
       "argmax_l_W": [
-        43,
-        105
+        207,
+        411
       ],
-      "ell_cap": 208,
-      "n": 625,
-      "over_n34": "5.943117714",
-      "over_sqrt_n": "29.71558857",
-      "relaxed_max": "742.889714269"
-    },
-    {
-      "argmax_l_W": [
-        78,
-        192
-      ],
-      "ell_cap": 328,
-      "n": 1600,
-      "over_n34": "12.13896654",
-      "over_sqrt_n": "76.7735654",
-      "relaxed_max": "3070.94261592"
-    },
-    {
-      "argmax_l_W": [
-        151,
-        357
-      ],
-      "ell_cap": 513,
-      "n": 4000,
-      "over_n34": "26.5164965",
-      "over_sqrt_n": "210.877935",
-      "relaxed_max": "13337.091657"
+      "n": 4000
     }
   ],
   "relaxation": "M_n <= max_(l,W) [ l*C - J(l,W) - F(n) - (Hhat(n,l,W) - H_min(n)) ln q0 ], with 2*Hhat = min over admissible lambda_1 of lambda_1^2 + (n-lambda_1)^2/(l-1) + n^2/lambda_1",

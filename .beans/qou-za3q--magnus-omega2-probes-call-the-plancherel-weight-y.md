@@ -1,11 +1,11 @@
 ---
 # qou-za3q
 title: magnus-Omega2 probes call the Plancherel weight y_lambda; 91% of their work is on shapes tr_M annihilates
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
-updated_at: 2026-09-12T03:55:51Z
+updated_at: 2026-09-13T16:19:37Z
 parent: qou-x631
 ---
 
@@ -240,9 +240,12 @@ suffice, and at 3.35× it completed and exposed the stale witness.
 
 ### Open
 
-- [ ] Regenerate `he4-magnus-omega2-sign.witness.json` (source 2026-09-04) —
+- [x] Regenerate `he4-magnus-omega2-sign.witness.json` (source 2026-09-04) —
       until then A=4 is undetermined and no cross-A sign-change claim can be
-      made under either weight.
+      made under either weight. **DONE BY A SIBLING 2026-09-11** (77/77
+      partitions, max dim 7700, 8.0 h on 3 workers; landed via `88aa20325de`,
+      PR #7197). P_total(A=4) = +34.126027285, sign +1. Not my work — ticked
+      here on 2026-09-13 because the box outlived the task.
 
 ### ⁴He regeneration — 63/77 banked, not finished
 
@@ -275,10 +278,17 @@ Two things did come out of the attempt:
   which `deuteron`/`triton` do not. Porting that to the dense probes is likely a
   further large win and is not done.
 
-- [ ] Resume ⁴He (14 partitions, multi-hour) and re-run the robustness probe;
-      only then is A=4 in play.
-- [ ] Port far-commutativity from the sparse probe to the dense deuteron/triton
-      probes.
+- [x] Resume ⁴He (14 partitions, multi-hour) and re-run the robustness probe;
+      only then is A=4 in play. **DONE BY A SIBLING**, same landing. The
+      re-run is the first with all three sources post-ruling, so nothing is
+      excluded from the gate: Wenzl(A=4) = −20.466481428, and the two weight
+      families disagree at A=3 **and** A=4.
+- [x] Port far-commutativity from the sparse probe to the dense deuteron/triton
+      probes. **DONE BY A SIBLING** — `abs(_a - _b) >= 2: continue` is in both
+      dense probes now (deuteron :237, triton :244), with the multiplicity fold
+      beside it. Verified by witness equality against the committed run, and
+      the port is what made triton runnable in a session tail (~40 min, from a
+      2400 s timeout). Not my work; ticked 2026-09-13.
 
 ## 2026-09-08 coordination: same kernel as qou-x631, qou-k5r5, qou-o6ov, qou-omr7
 
@@ -437,3 +447,139 @@ about to call open.
 **None of the conclusions move.** Every sign is unchanged, the sign columns are
 unchanged (Plancherel `-,+,+`; Wenzl `-,-,-`), and the A=3/A=4 disagreement
 stands. This correction is entirely about published precision.
+
+## 2026-09-13 — the naming half is closed and now has a DETECTOR. Decision 1 is still OPEN.
+
+Three checkboxes above were ticked with **sibling attribution**, not claimed:
+`88aa20325de` / PR #7197 regenerated ⁴He and re-ran the robustness probe, and
+the far-commutativity port to the dense probes landed with them. Everything
+below is this session's.
+
+### The name is fixed everywhere, and the rule is no longer prose-only
+
+`qou-q2q7` closed the pairing line at 7 sites; correcting it exposed 4 more
+(three copies of a `weight_family_note` literal asserting robustness that is
+false at A=3 and A=4, and the triton verdict stating the headline finding on
+the non-headline arm). Details in that bean.
+
+**New: `computations/audits/y_lambda_conflation_audit.py`**, wired **blocking**
+into `scripts/precision-gates.sh` — this repo's own doctrine is that *"a gate
+outside this array is a gate nobody runs"*. Four checks:
+
+| | what it catches | status |
+|---|---|---|
+| A | the identification `y_λ = d_q(λ)²/[n]_q!` written out in text | 0, blocking |
+| B | AST: a self-declared Plancherel producer's value stored under a `y_lambda` name/key | 0, blocking |
+| C | a Plancherel producer whose own name says `y_lambda` | 0, blocking |
+| D | a witness `y_lambda` column with no `weight_family` beside it | **55**, ratchet |
+
+D is a ratchet, not pass/fail: 55 such columns already exist across the corpus,
+and `precision-gates.sh` says in its own header that a gate red on arrival gets
+skipped. **The baseline drains, never grows.** Self-test is 3 must-fire /
+3 must-stay-quiet, and the detector excludes its own file — a detector that
+fires on its own definition of the defect is noise.
+
+**It immediately found a fourth probe nobody had listed**: `wedderburn_weight`
+in `deltalambda/deuteron_interface_handle_curvature_probe.py`, docstring
+`y_λ = d_q(λ)² / [n]_q!`. That is the case for the detector in one line — five
+sessions of hand-grepping this bean had not turned it up.
+
+Recorded in `AGENTS.md` beside the three-families rule it enforces.
+
+### Why B and C are AST checks, not greps
+
+The conflation survived a `qou-9yt9` docstring-claims-gap sweep because the
+docstring and the code **agreed** — both said `y_λ`, and both were wrong about
+which `y_λ`. A text detector alone repeats that blind spot. B keys on a
+*declaration* ("quantum Plancherel" in the producer's own docstring) rather
+than on the arithmetic, so a producer that renames itself without changing what
+it computes still trips, and one that genuinely changes family stops tripping
+when it says so.
+
+### DECISION 1 REMAINS OPEN, and it now decides more than a label
+
+Nothing here chooses a measure. What is settled is that the choice is not
+cosmetic:
+
+    atom      Plancherel      Wenzl (headline)
+    deuteron   -15.095          -6.921
+    triton      +2.470         -13.931
+    ⁴He        +34.126         -20.466
+    -> Plancherel -,+,+ (one sign change, deuteron→triton)
+       Wenzl      -,-,- (none anywhere in A = 2,3,4)
+
+The programme's target A-dependent sign change **exists under one measure and
+not the other**. Preferring the one that yields the wanted sign is selection
+against the target (AGENTS.md), so the honest reading stands: under the
+production Markov weight the sign change is not exhibited in A = 2, 3, 4.
+
+`qou-gba1` (option E — derive the pairing from what Ω₂ *is*) is now the only
+path that resolves this, and materially more important than when it was beaned:
+it no longer settles a label, it settles whether the phenomenon exists.
+
+---
+
+# 🛑 DECISION 1 — RESOLVED. OWNER RULING 2026-09-13: **ADOPT WENZL.**
+
+The Magnus Ω₂ pairing is `P = Σ_λ y_λ^Wenzl · tr(ρ_λ Ω₂_λ)`, the production
+Markov weight. The quantum Plancherel measure `d_q(λ)²/[n]_q!` is **not** the
+pairing.
+
+## What the ruling rests on
+
+Not consistency-with-production, and not which answer it yields. `qou-gba1`
+(option E) derived it: a nucleus is a **link**, a braid word only presents it,
+and the Markov trace is *characterised* (Jones–Ocneanu) by `tr(1)=1`,
+cyclicity, and `tr_{n+1}(x·σ_{n-1}) = z·tr_n(x)`. Wenzl realises all three at
+`z = q³/(q²+1)`; Plancherel satisfies neither the first (tr(1) = 11.1 / 26.3 /
+66.3 at n = 6 / 7 / 8) nor the third, **having no z at all** — the ratio it
+would need moves from −10.867 to +0.179 between two stabilisations of the same
+word.
+
+The pairing inherits an exact, parameter-free stabilisation law under Wenzl,
+confirmed to a relative **4.4e-141** and falsified at the two wrong values a
+reader might substitute (z = q: 49 % / 69 % off; z = 1: 38 % / 54 %). Witness
+`computations/deltalambda/magnus-omega2-markov-stabilisation.witness.json`,
+6/6 assertions.
+
+**The sign never enters that argument.** That is what makes the ruling usable:
+it is not selection against the target.
+
+## THE CONSEQUENCE, WHICH TRAVELS WITH THE RULING
+
+    atom      P (Wenzl, adopted)      P (Plancherel, rejected)
+    deuteron   −6.921                  −15.095
+    triton    −13.931                   +2.470
+    ⁴He       −20.466                  +34.126
+
+    adopted   −, −, −    NO sign change anywhere in A = 2, 3, 4
+    rejected  −, +, +    one sign change, deuteron → triton
+
+**Under the adopted measure the programme's target A-dependent sign change is
+NOT exhibited in A = 2, 3, 4.** This must be stated wherever the Magnus sign
+result is cited. The measure was chosen on principle and the phenomenon did not
+survive it; reporting the ruling without the consequence would be the fitting
+this ruling exists to avoid.
+
+What survives untouched: **sign-indefiniteness at A=2** — the property that
+cleared the non-negativity wall the quadrature ‖F_q‖² could not — holds under
+both weight families and under both intra-nucleon words, because it is a
+statement about a commutator's trace pairing. `qou-dp32` is unaffected.
+
+## Status of the five options
+
+| | | |
+|---|---|---|
+| `qou-q2q7` | A — adopt Wenzl | **ADOPTED**, already completed |
+| `qou-94yt` | B — keep Plancherel | **REFUSED by the ruling** |
+| `qou-smvw` | C — report both families | **SUBSUMED** — both arms are computed and emitted; `headline_pairing` names the adopted one |
+| `qou-ia4w` | D — normalise Plancherel | **REFUSED by the ruling** |
+| `qou-gba1` | E — derive the pairing | **the ruling's basis**; its remaining item (identify the functional whose stationarity gives the binding correction) stays open but no longer blocks anything |
+
+## Code state at the ruling
+
+Already aligned: all three sign probes declare `headline_pairing:
+"P_total_wenzl"` and emit both arms, `weight_family` is declared beside every
+`y_lambda` column, and the naming rule has a blocking detector
+(`computations/audits/y_lambda_conflation_audit.py`). Option A landed the
+mechanics; this ruling makes them principled rather than provisional.

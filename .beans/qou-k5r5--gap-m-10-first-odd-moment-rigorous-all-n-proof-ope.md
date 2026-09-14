@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-12T11:29:30Z
+updated_at: 2026-09-13T11:10:00Z
 parent: qou-x631
 ---
 
@@ -1761,3 +1761,88 @@ all of `L^2`).
 **Status: OPEN.** This closes a *worry*, not the gap. The remaining routes are
 unchanged: an upper bound on `Q = Sum dmu (2 - 2 delta)^2`, or a direct
 termwise/support argument on `M1 = Sum dmu g k`.
+
+## 2026-09-13 — rho is CONCAVE, so the site-density input is ONE MOMENT of kappa, not the distribution
+
+`computations/deltalambda/wlambda_covariance_epic_M1_site_density_jensen_reduction.py`,
+**7/7 PASS, exit 0, 22.5 s**, exact `Fraction` for kappa and all first moments, mpmath 40 dps
+for `rho`. No float64. PR #7291.
+
+Corpus-greped first (six paths). `..._M1_jensen_route.py` already applies Jensen **in this
+arc**, but to a different object — the area functional `A_sigma`, for the opposite-sign
+edges. Jensen on the SITE distribution is absent, and so is any use of `rho`'s concavity.
+
+### The reduction
+
+`..._M1_kappa_site_distribution.py` identifies `E_omega[density]` exactly as the kappa-mass on
+drop sites and records its VKLS prediction (~0.36) as *"evidence, not proof"*, the open input
+being the **whole distribution of kappa**. It need not be:
+
+    rho(u)   = 1/2 - arcsin(u/2)/pi
+    rho''(u) = -u / (pi (4 - u^2)^{3/2})   <  0   on (0,2)
+
+so rho is **strictly concave**, and Jensen gives `E_kappa[rho(U)] <= rho(E_kappa[U])`. Since
+`rho(m) < 1/2` for EVERY `m > 0`, the required `E_omega[density] < 1/2` follows from a LOWER
+BOUND ON THE KAPPA-MEAN ALONE. The open input drops from a distribution to a first moment.
+
+### The support caveat, which is load-bearing and is measured rather than waved
+
+The producer's `rho` CLAMPS — `asin(min(u,2)/2)` — and that clamped `rho~` is **not** concave
+across `u = 2`: `rho'(2^-) = -inf` and the extension is flat, so the slope *increases* there
+and plain Jensen does not apply to it. Measured, not asserted:
+`rho~(2.2) - (rho~(1.9) + rho~(2.5))/2 = -0.0505 < 0`.
+
+Handled by conditioning, which is exact and needs no extra hypothesis, since `rho~` vanishes
+off `{U <= 2}`:
+
+    E_kappa[rho~(U)] = p * E_kappa[rho(U) | U <= 2]  <=  p * rho( E_kappa[U | U <= 2] )
+
+and it costs nothing: `p = kappa({U <= 2}) >= 0.998 at every n measured`.
+
+### What was checked
+
+- **Concavity three independent ways**: sympy symbolic second derivative; the closed form at
+  40 dps on a grid in (0,2); and midpoint concavity from `rho` ITSELF over all 741 grid pairs,
+  using no derivative at all.
+- **Jensen verified against the ACTUAL kappa at every n = 8..30** — the one measurement that
+  could falsify the reduction. Min slack `+0.00287` (at n = 8), i.e. **nearly tight**, so the
+  reduction loses almost nothing.
+- **Bound < 1/2 at every n reached**, max `0.3976` at n = 8.
+- **CONTROL**: `sum_t kappa(t) == sum_e w_e` exactly (Fraction) at every n — the Lean
+  `kappa_sum`, and what makes this probe's kappa the sibling's kappa rather than a lookalike.
+- Conditioned kappa-mean rises `0.632` (n=8) -> `0.807` (n=30). To certify
+  `E_omega[density]_VKLS <= 1/2 - eps` needs cond mean `>= 2 sin(pi eps)`: 0.313 for eps=0.05,
+  0.618 for 0.10, 0.908 for 0.15.
+
+### Scope — what this is NOT
+
+- **Same-sign edges only** (the producer's own restriction). `S_opp` saturates near 0.118,
+  ~36% of `S`, and is untouched by this.
+- It bounds the **VKLS-PREDICTED** density, not the finite-n empirical one. The sibling
+  measured actual/prediction at ~0.5 over `n <= 48` and rising, so at every n reached here the
+  empirical density sits well BELOW the bound and Jensen is not yet the binding constraint.
+  Closing the route still needs the VKLS limit as an input, exactly as before.
+- **It does not lower-bound the kappa-mean.** That is the reduced open problem and is not
+  attempted. A reduction is not a proof.
+- Range is small (n <= 30, against the sibling's 48); nothing here is an asymptotic claim.
+
+### One wording mismatch in the sibling, recorded because it inverts an inequality
+
+`..._M1_kappa_site_distribution.py`'s docstring describes its `vkls_ceiling` as *"the VKLS
+local density at the measured position"*, i.e. `rho(E_kappa[U])`. Its CODE computes
+`krho = sum_t kappa * rho(t/sqrt n)`, i.e. `E_kappa[rho(U)]`. By the concavity above those are
+ordered `E_kappa[rho] <= rho(E_kappa[U])`, so the code computes the **sharper** of the two
+while the prose names the weaker. The recorded number is correct; only the description names
+a different object. Not fixed here (it is the sibling's file and the arc is live).
+
+### What I looked for and did NOT find — four things already in the corpus
+
+Recorded so the next agent does not re-derive them: `M_1 ~ Cov(Sum_cells c^2, Sum_cells(i+j))`
+is the PR #5366 antidiagonal reformulation; `Sum_h = Sum_u d_u(d_u + |u|) = D + A` is already
+the `D + A` identity; `P = E_w(A) = E(A,W)` because `Delta W = g (|u|+|v|)` exactly is the
+Fulman identity; and `D` non-increasing away from the main diagonal (whence
+`g > 0 => Delta_m <= -1` on same-sign edges) is `..._M1_telescoping_route.py`'s *"on the
+positive axis D is non-increasing and 1-Lipschitz"*. All four were re-derived independently
+here and all four were already held.
+
+`qou-k5r5` stays OPEN.

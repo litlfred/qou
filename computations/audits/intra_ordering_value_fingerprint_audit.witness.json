@@ -1,22 +1,28 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:46:52.212166+00:00",
-  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
+  "computedAt": "2026-09-13T20:51:06.924981+00:00",
+  "commitSha": "064b63bf0cd90f39bfb8ec400d3c1fcc6d1dbab4",
   "assertions": [
     {
       "name": "scan_completed",
       "computed": "1",
       "expected": "1",
       "passed": true
+    },
+    {
+      "name": "source_files_scanned_for_literals",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
-  "scriptHash": "10d33efab559",
-  "scriptCommitSha": "4b40a0f9fd664167e09bae1035d6f173aa1621f2",
+  "scriptHash": "6e54d4ce93c4",
+  "scriptCommitSha": "1660c49f2ffe48802c11fb6d79993b6b460c27ab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,7 +48,7 @@
   "description": "Scans every committed witness for grouped-era |tr_M| values, matched to 15 significant digits against fingerprints computed live from atom_braid_word_3A under both orderings at both documented pins. Keys on the VALUE rather than on a symptom, because the ordering ruling has escaped three symptom-keyed sweeps.",
   "data": {
     "significant_digits_required": 15,
-    "witness_files_scanned": 3572,
+    "witness_files_scanned": 3670,
     "grouped_candidates": {
       "computations/atomic-mass-via-rho-k.witness.json": [
         [
@@ -60,28 +66,6 @@
         [
           "/results[0]/disjoint_product/abs_tr_p_50dps",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/atomic-tr-m-mpfr-50dps-proton.witness.json": [
-        [
-          "/results[0]/tr_M_at_q0_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[0]/peel_cross_check/tr_M_at_q0_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[4]/tr_M_at_q0_50dps",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/results[4]/peel_cross_check/tr_M_at_q0_50dps",
-          "helium-3",
           "proton"
         ]
       ],
@@ -186,18 +170,6 @@
           "proton"
         ]
       ],
-      "computations/cross-check-trM-cw-seminormal.witness.json": [
-        [
-          "/results[0]/peel_reference",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[4]/peel_reference",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "computations/cross-check-trM-wenzl-lr-1ppb.witness.json": [
         [
           "/rows[3]/value_a",
@@ -227,18 +199,6 @@
         [
           "/rows[8]/value_b",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/deltalambda/ka-additive-cluster-derivation.witness.json": [
-        [
-          "/data/joint_traces_q0/p",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/joint_traces_q0/3He",
-          "helium-3",
           "proton"
         ]
       ],
@@ -300,28 +260,6 @@
           "muon-live"
         ]
       ],
-      "computations/markov/markov-peel-atomic-tr-m.witness.json": [
-        [
-          "/data/results[0]/tr_M_at_q0",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/results[0]/bridge_witness_value",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/results[4]/tr_M_at_q0",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/results[4]/bridge_witness_value",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "computations/markov/markov-pipeline-cross-validation.witness.json": [
         [
           "/assertions[2]/computed",
@@ -340,13 +278,6 @@
         ],
         [
           "/data/checks[2]/term6_value",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/markov/markov_weights_symbolic.witness.json": [
-        [
-          "/tr_M_proton_markov_peel_reference",
           "proton",
           "proton"
         ]
@@ -405,62 +336,12 @@
           "/data/approach_A_6term_sum/3He/t1_t4_only",
           "helium-3",
           "proton"
-        ],
-        [
-          "/data/approach_B_categorical_ratio/proton/tr_M_q0",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/probe-9b-laurent-degree-10a5.witness.json": [
-        [
-          "/data/nucleon_traces/tr_p_at_q0",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/isotope_rows[2]/tr_atom_closed",
-          "helium-3",
-          "proton"
         ]
       ],
       "computations/probes/b-pred-mirror-slope-closed-form.witness.json": [
         [
           "/parameters/tau_p",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/probes/binding-production-route-c-vs-d-trit-heli.witness.json": [
-        [
-          "/data/helium-3/tr_M_atom_D",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/binding-sum-c-vs-d-trit-heli.witness.json": [
-        [
-          "/data/helium-3/tr_M_D",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/graded-hecke-energy-probe.witness.json": [
-        [
-          "/assertions[0]/expected",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/results/proton/target_tr_M",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/probes/mirror-parity-linear-trace-probe.witness.json": [
-        [
-          "/data/rows[2]/tr_atom_q0",
-          "helium-3",
           "proton"
         ]
       ],
@@ -493,9 +374,23 @@
           "proton"
         ]
       ],
+      "computations/qbeta/qbeta-chain-closed-form.witness.json": [
+        [
+          "/parameters/t_p",
+          "proton",
+          "proton"
+        ]
+      ],
       "computations/qbeta/qbeta-mixed-chain-closed-form.witness.json": [
         [
           "/parameters/t_p",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/qbeta/qbeta-option-e-order-dof-range.witness.json": [
+        [
+          "/data/tr_zD_range_per_word/p/max",
           "proton",
           "proton"
         ]
@@ -517,55 +412,6 @@
           "proton"
         ]
       ],
-      "computations/skein-proton-canonical.witness.json": [
-        [
-          "/data/atlas_cross_check/atlas_layer_1_value",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/sweeps/paper-six-term-isotope-sweep.witness.json": [
-        [
-          "/rows[0]/term1_canonical_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
-          "/all_modes/brane-legacy/rows[0]/term1_canonical_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
-          "/all_modes/drop/rows[0]/term1_canonical_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
-          "/all_modes/q1-base/rows[0]/term1_canonical_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
-          "/all_modes/r-side-bare/rows[0]/term1_canonical_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
-          "/all_modes/li2q/rows[0]/term1_canonical_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
-          "/all_modes/habiro/rows[0]/term1_canonical_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
-          "/all_modes/combined/rows[0]/term1_canonical_tr_M",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/tr-m-algebraic-q.witness.json": [
         [
           "/data/rows[0]/tr_atom_q0_algebraic",
@@ -577,18 +423,6 @@
         [
           "/data/cross_check_table[0]/canonical_abs_tr_M",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/tr-m-q-hecke-seminormal.witness.json": [
-        [
-          "/data/cross_check_table[0]/canonical_abs_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/cross_check_table[4]/canonical_abs_tr_M",
-          "helium-3",
           "proton"
         ]
       ],
@@ -650,28 +484,6 @@
           "proton"
         ]
       ],
-      "qou-mass/src/qou_mass/atomic-tr-m-mpfr-50dps-proton.witness.json": [
-        [
-          "/results[0]/tr_M_at_q0_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[0]/peel_cross_check/tr_M_at_q0_50dps",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[4]/tr_M_at_q0_50dps",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/results[4]/peel_cross_check/tr_M_at_q0_50dps",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "qou-mass/src/qou_mass/markov-peel-atomic-tr-m.witness.json": [
         [
           "/data/results[0]/tr_M_at_q0",
@@ -708,22 +520,240 @@
       ]
     },
     "grouped_deliberate": [
-      "computations/probes/nucleon-h3-marshalling-divergence.witness.json",
       "computations/probes/the_character_closure_block_and_a_lean_file_publish_convention_c_probe.witness.json"
     ],
+    "grouped_actionable": [
+      "computations/atomic-tr-m-helium4.witness.json",
+      "computations/audits/braid-encoding-audit.witness.json",
+      "computations/binding-combiner-markov-peel-fallback.witness.json",
+      "computations/brane-tower-full-channel-trace-audit.witness.json",
+      "computations/convergence-safe-vhat-tower.witness.json",
+      "computations/markov/markov-peel-atomic-tr-m-muon.witness.json",
+      "computations/probes/b-pred-mirror-slope-closed-form.witness.json",
+      "computations/probes/path-b-defect-binding-probe.witness.json",
+      "computations/qbeta/qbeta-chain-closed-form.witness.json",
+      "computations/qbeta/qbeta-option-e-order-dof-range.witness.json",
+      "computations/rho-k-h3a-gg-trajectory.witness.json",
+      "computations/tr-m-algebraic-q.witness.json",
+      "computations/vhat-per-crossing-chain.witness.json",
+      "computations/vhat-std-vs-full-tower-compare.witness.json",
+      "computations/vhat-tower-im-cancellation.witness.json",
+      "qou-mass/src/qou_mass/markov-peel-atomic-tr-m.witness.json",
+      "qou-mass/src/qou_mass/markov_weights_symbolic.witness.json"
+    ],
+    "grouped_downstream_reflections": [
+      "computations/atomic-mass-via-rho-k.witness.json",
+      "computations/audits/fitted-labelled-canonical-audit.witness.json",
+      "computations/binding-K-direct.witness.json",
+      "computations/canonical-tr-m-three-path-comparison.witness.json",
+      "computations/cross-check-trM-wenzl-lr-1ppb.witness.json",
+      "computations/derivation-chain-audit.witness.json",
+      "computations/markov-identity-symbolic.witness.json",
+      "computations/markov/markov-pipeline-cross-validation.witness.json",
+      "computations/mass-formula-6term-mpfr-50dps.witness.json",
+      "computations/nucleus-real-sdp-proton.witness.json",
+      "computations/phase5/phase2-m-e-hecke-diagnostic.witness.json",
+      "computations/qbeta/qbeta-bond-factors-derived.witness.json",
+      "computations/qbeta/qbeta-mixed-chain-closed-form.witness.json",
+      "computations/tr-m-jones-markov-cross-check.witness.json",
+      "computations/witness-value-copy-audit.witness.json"
+    ],
+    "grouped_unresolved_producer": [
+      "computations/chain-binding-closed-form.witness.json",
+      "computations/logratio-exactly-extensive.witness.json"
+    ],
+    "producer_classification": {
+      "computations/atomic-mass-via-rho-k.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "atomic_mass_via_rho_k.py"
+      },
+      "computations/atomic-tr-m-helium4.witness.json": {
+        "kind": "computes",
+        "why": "calls atom_braid_word_3A, tr_M_via_wenzl_bridge_mpfr",
+        "scriptFile": "atomic_tr_m_helium4.py"
+      },
+      "computations/audits/braid-encoding-audit.witness.json": {
+        "kind": "computes",
+        "why": "calls atom_braid_word_3A",
+        "scriptFile": "braid_encoding_audit.py"
+      },
+      "computations/audits/fitted-labelled-canonical-audit.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "fitted_labelled_canonical_audit.py"
+      },
+      "computations/binding-K-direct.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "binding_K_direct.py"
+      },
+      "computations/binding-combiner-markov-peel-fallback.witness.json": {
+        "kind": "computes",
+        "why": "calls atom_braid_word_3A",
+        "scriptFile": "binding_combiner_markov_peel_fallback.py"
+      },
+      "computations/brane-tower-full-channel-trace-audit.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "brane_tower_full_channel_trace_audit.py"
+      },
+      "computations/canonical-tr-m-three-path-comparison.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "canonical_tr_m_three_path_comparison.py"
+      },
+      "computations/chain-binding-closed-form.witness.json": {
+        "kind": "unresolved",
+        "why": "witness names no scriptFile",
+        "scriptFile": null
+      },
+      "computations/convergence-safe-vhat-tower.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "convergence_safe_vhat_tower.py"
+      },
+      "computations/cross-check-trM-wenzl-lr-1ppb.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "cross_check_trM_wenzl_lr_1ppb.py"
+      },
+      "computations/derivation-chain-audit.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "derivation_chain_validator.py"
+      },
+      "computations/logratio-exactly-extensive.witness.json": {
+        "kind": "unresolved",
+        "why": "witness names no scriptFile",
+        "scriptFile": null
+      },
+      "computations/markov-identity-symbolic.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "markov/markov_identity_symbolic_probe.py"
+      },
+      "computations/markov/markov-peel-atomic-tr-m-muon.witness.json": {
+        "kind": "computes",
+        "why": "calls atom_braid_word_3A",
+        "scriptFile": "markov_peel_atomic_witness.py"
+      },
+      "computations/markov/markov-pipeline-cross-validation.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "markov_pipeline_cross_validator.py"
+      },
+      "computations/mass-formula-6term-mpfr-50dps.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "mass_formula_6term_mpfr_50dps.py"
+      },
+      "computations/nucleus-real-sdp-proton.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "nucleus_real_sdp.py"
+      },
+      "computations/phase5/phase2-m-e-hecke-diagnostic.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "phase2_proton_m_e_hecke_diagnostic.py"
+      },
+      "computations/probes/b-pred-mirror-slope-closed-form.witness.json": {
+        "kind": "computes",
+        "why": "calls tr_M_via_wenzl_bridge_mpfr",
+        "scriptFile": "b_pred_mirror_slope_closed_form.py"
+      },
+      "computations/probes/path-b-defect-binding-probe.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "path_b_defect_binding_probe.py"
+      },
+      "computations/qbeta/qbeta-bond-factors-derived.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "qbeta_bond_factors_derived_probe.py"
+      },
+      "computations/qbeta/qbeta-chain-closed-form.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "qbeta_chain_closed_form_probe.py"
+      },
+      "computations/qbeta/qbeta-mixed-chain-closed-form.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "qbeta_mixed_chain_closed_form_probe.py"
+      },
+      "computations/qbeta/qbeta-option-e-order-dof-range.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "qbeta_option_e_order_dof_range_probe.py"
+      },
+      "computations/rho-k-h3a-gg-trajectory.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "rho_k_h3a_gg_trajectory.py"
+      },
+      "computations/tr-m-algebraic-q.witness.json": {
+        "kind": "computes",
+        "why": "calls tr_m_atom_zn",
+        "scriptFile": "tr_m_algebraic_q.py"
+      },
+      "computations/tr-m-jones-markov-cross-check.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "tr_m_jones_markov_cross_check.py"
+      },
+      "computations/vhat-per-crossing-chain.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "vhat_per_crossing_chain.py"
+      },
+      "computations/vhat-std-vs-full-tower-compare.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "vhat_std_vs_full_tower_compare.py"
+      },
+      "computations/vhat-tower-im-cancellation.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "vhat_tower_im_cancellation.py"
+      },
+      "computations/witness-value-copy-audit.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "witness_value_copy_audit.py"
+      },
+      "qou-mass/src/qou_mass/markov-peel-atomic-tr-m.witness.json": {
+        "kind": "computes",
+        "why": "calls atom_braid_word_3A",
+        "scriptFile": "markov_peel_atomic_witness.py"
+      },
+      "qou-mass/src/qou_mass/markov_weights_symbolic.witness.json": {
+        "kind": "computes",
+        "why": "calls atom_braid_word_3A, tr_M_canonical",
+        "scriptFile": "markov_weights_symbolic.py"
+      }
+    },
     "borromean_hits": [
       "computations/a-K-via-lp-dual-full.witness.json",
       "computations/a-K-via-lp-dual-hecke-basis.witness.json",
       "computations/a-K-via-lp-dual.witness.json",
+      "computations/applied-uniqueness-mass-table.witness.json",
       "computations/atomic-tr-m-helium4-canonical.witness.json",
+      "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
       "computations/atomic-tr-m-mpfr-50dps.witness.json",
+      "computations/audits/canonical-a-k-magnitude-audit.witness.json",
       "computations/binding-triangle-3body-cluster.witness.json",
+      "computations/brng-dominant-summand-ursell.witness.json",
+      "computations/brng-two-row-dominant-block-a6.witness.json",
       "computations/canonical-mass-table-extended.witness.json",
       "computations/canonical-tr-m-via-chi-cache.witness.json",
       "computations/chi-neutron-h3-at-q0-50dps.witness.json",
       "computations/cross-check-trM-1ppb.witness.json",
+      "computations/cross-check-trM-cw-seminormal.witness.json",
       "computations/delta-lambda-empirical-tabulation.witness.json",
       "computations/deltalambda/he4-binding-k-presentation-correction.witness.json",
+      "computations/deltalambda/ka-additive-cluster-derivation.witness.json",
       "computations/deuteron-from-scratch-ledger.witness.json",
       "computations/emitted-particle-tracker.witness.json",
       "computations/habiro-coefficients-neutron.witness.json",
@@ -732,10 +762,13 @@
       "computations/habiro/habiro-exact-qbeta.witness.json",
       "computations/habiro/habiro-interpolate-cross-validation.witness.json",
       "computations/low-isotope-mass-table.witness.json",
+      "computations/markov/markov-peel-atomic-tr-m.witness.json",
       "computations/markov/markov-substrate-realization.witness.json",
       "computations/markov/markov_weights_symbolic.witness.json",
       "computations/per-knot-density-per-block-wiring.witness.json",
       "computations/per-knot-mass-table-demonstration.witness.json",
+      "computations/phase5/phase2-m-e-hecke-diagnostic.witness.json",
+      "computations/probe-9b-laurent-degree-10a5.witness.json",
       "computations/probe-9b-manybody-expansion.witness.json",
       "computations/probes/binding-closed-form-c-vs-d.witness.json",
       "computations/probes/gap-a4-He3-residual-probe-perknot-rerun.witness.json",
@@ -752,18 +785,78 @@
       "computations/probes/path-b-habiro-mass-probe.witness.json",
       "computations/probes/qbeta-habiro-element-probe.witness.json",
       "computations/probes/rho-k-h3a-co-casimir-perknot-rerun.witness.json",
+      "computations/qbeta/qbeta-bar-parity-forces-a-unique-quark-letter.witness.json",
       "computations/qbeta/qbeta-habiro-pochhammer-convention.witness.json",
       "computations/qbeta/qbeta-habiro-taylor-investigation.witness.json",
+      "computations/qbeta/qbeta-qbeta-scores-a-difference.witness.json",
+      "computations/sweeps/paper-six-term-isotope-sweep.witness.json",
       "computations/symmetrized-constituent-general.witness.json",
       "computations/term6-full-pole-sum.witness.json",
       "computations/tr-m-q-hecke-seminormal.witness.json",
+      "qou-mass/src/qou_mass/atomic-tr-m-mpfr-50dps-proton.witness.json",
       "qou-mass/src/qou_mass/atomic-tr-m-mpfr-50dps.witness.json",
       "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json",
       "qou-mass/src/qou_mass/habiro-coefficients-atomic.witness.json"
+    ],
+    "source_hardcoded_grouped": {
+      "computations/probes/path_b_defect_binding_probe.py": [
+        [
+          154,
+          "1.145759692457300869689081",
+          "proton",
+          "proton"
+        ],
+        [
+          158,
+          "0.403767036851428170368670",
+          "helium-3",
+          "proton"
+        ]
+      ],
+      "computations/qbeta/qbeta_bond_factors_derived_probe.py": [
+        [
+          139,
+          "1.1457596924573008697",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/qbeta/qbeta_chain_closed_form_probe.py": [
+        [
+          136,
+          "1.1457596924573008697",
+          "proton",
+          "proton"
+        ],
+        [
+          141,
+          "1.14575969245730086",
+          "proton",
+          "proton"
+        ],
+        [
+          143,
+          "1.14575969245730086",
+          "proton",
+          "proton"
+        ]
+      ],
+      "computations/qbeta/qbeta_mixed_chain_closed_form_probe.py": [
+        [
+          120,
+          "1.1457596924573008697",
+          "proton",
+          "proton"
+        ]
+      ]
+    },
+    "source_deliberate_grouped": [
+      "computations/qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py"
     ]
   },
   "caveats": [
     "A hit says the WITNESS payload is grouped-era; it does not say the producer is. Re-run the producer to tell a stale artifact from a live source defect. A non-hit is not a clean bill: a witness recording only derived quantities carries no |tr_M| for this to match.",
+    "The SOURCE scan reads literals reachable as code, with docstrings excluded (comments never enter an AST). That exclusion is load-bearing, not a convenience: mass_at_3A_proper's docstring quotes both the grouped and the borromean |tr_M| precisely because it EXPLAINS the 2026-09-05 ruling, and flagging it would be flagging the documentation of the fix. Strings are not skipped wholesale, because mp.mpf(\"1.1457...\") is how this corpus writes a high-precision constant.",
     "Fingerprints are computed live, never transcribed, so a re-pin moves them rather than silently invalidating the scan. Only the five atoms at A <= 3 and the two documented pins are covered."
   ]
 }

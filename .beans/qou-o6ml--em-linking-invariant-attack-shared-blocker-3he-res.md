@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-03T12:36:02Z
+updated_at: 2026-09-13T17:02:26Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1434,3 +1434,423 @@ is the ingredient the arc does not have un-fitted. Read this as *relocated to a
 known blocker*, not as *refuted*. Eq. (43) is untouched throughout.
 
 No probe — this is pure structure, and a probe would be padding.
+
+## ROUTE (2) CORRECTION 2026-09-13 — steps (i) and (ii) were ALREADY DONE
+
+This bean's "Next for route (2), in order: (i) give KnotEmbedding an ambient
+metric; (ii) write the O'Hara integrand with its intrinsic subtraction; (iii)
+only then ask whether it reproduces kappa(A)" describes the PRE-FIX state and is
+stale. Measured against the file on main:
+
+  (i) DONE -- KnotEmbedding carries ambientDist, ambient_symm, ambient_nonneg and
+      chord_le_arc, added 2026-08-30 by this bean's own ROAST commit. LinkEmbedding
+      adds cross-component sep with disjoint and sep_self.
+  (ii) DONE -- oharaIntegrand = 1/ambientDist^2 - 1/arcLengthDist^2 exists, and
+      oharaIntegrand_nonneg is DERIVED from chord_le_arc, not assumed.
+  (iii) The kappa(A) gate is RETIRED by PR #7080: the series constrains only the
+      product s*p, so it cannot adjudicate between candidate invariants.
+
+What was actually missing was the INTEGRAL, which the file's own docstrings name
+three times. That is now supplied for the mutual channel in PR #7284 (bean
+qou-pc85) -- and it needed no O'Hara theorem, because the mutual channel has no
+diagonal singularity. Route (2) is no longer blocked on infrastructure.
+
+I reported the blocker from this bean's prose without opening the file. Recording
+the correction here so the next reader does not re-pay it.
+
+## CORRECTION 2026-09-13 — the ROAST's O2 argument does not apply to the channel this bean needs
+
+The ROAST above says the literature Mobius/O'Hara energy is "subtracted by
+construction", and concludes "a functional whose regularising subtraction is
+intrinsic is not vulnerable to that argument. So O2 is a reason to PREFER route
+(2) over route (1)'s kernel". I repeated that on PR #7284 before checking it.
+
+IT IS WRONG FOR THE MUTUAL CHANNEL. The intrinsic subtraction is in the SELF
+term 1/ambient^2 - 1/arc^2, and by THIS BEAN's own split the self term belongs
+to qou-bn8e ("this bean owns only the pairwise/linking channel"). The mutual
+term carries no subtraction, and QOU.MobiusEnergy states it in its own theorem:
+
+    mutualIntegrand_eq_ohara_without_subtraction
+      -- the O'Hara integrand with the subtraction DROPPED (1/D^2 = 0)
+
+and PR #7284's own section 1 proves mutualIntegrand_pos_of_ne: STRICTLY
+POSITIVE, unconditionally, no hypothesis at all. That is exactly the property
+that excluded coth under O2 (qou-17mq, PRs #7020/#7080).
+
+So route (2)'s mutual channel is in coth's position, not immune to it. O2 is
+NOT a reason to prefer route (2) over route (1) on this ground — that comparison
+should be withdrawn.
+
+WHAT SURVIVES, and it is the useful half: the fix is #7080's closure, unchanged
+in shape. Zero mean forces the subtraction constant to be the kernel's own mean
+— there c0 = <coth>_M, here the mean of 1/sep^2 — so it is determined by the
+geometry rather than chosen. Proved sorry-free on #7284
+(zeroMeanMutualKernel_integral_zero, zeroMeanMutualKernel_not_pos): the
+subtracted kernel satisfies O2 and genuinely changes sign.
+
+The gate is therefore CLEARED, but earned rather than free. Anyone citing
+"O'Hara's subtraction protects route (2)" must say which channel they mean.
+
+
+## 🟩 The library NOW HOLDS the knot-energy literature — 11 sources, incl. O'Hara's original
+
+This bean's own path-5 finding — *"the library holds NO knot-energy source, and my
+first grep said the opposite"* — was **true as measured, and the sources were on
+disk the whole time**, one directory away from where path 5 looks.
+
+They were in **`uploads/`**, the incoming queue. AGENTS.md: *"corpus-grep path 5
+searches `library/` only, so anything still in `uploads/` is invisible to it — an
+un-ingested paper will not be found by any 'has the corpus got this?' check,
+which is exactly how a held source gets re-derived."* That is this bean, exactly.
+
+Ingested 2026-09-13 (`pdf-structure.py` → `migrate-uploads-to-library.py --apply`
+→ `summarize-library.py --apply`), 14 ok / 0 failed:
+
+| doc-id | work |
+|---|---|
+| `1-s20-0040938391900102-main` | **O'Hara, _Energy of a Knot_, Topology 1991** — the primary |
+| `arxiv-1111.6782v2` | Blatt & Reiter, *Stationary Points of O'Hara's Knot Energies* |
+| `arxiv-1202.5426v2` | *Hard analysis meets critical knots* — stationary points of the Möbius energy |
+| `arxiv-1308.2499v1` | Blatt & Reiter, *Towards a regularity theory for integral Menger curvature* |
+| `arxiv-1904.13129v1` | Vorderobermeier, *regularity of critical points for O'Hara's knot energies* |
+| `arxiv-1905.06064v1` | Blatt, Reiter & Schikorra, *On O'Hara knot energies I: regularity for critical knots* |
+| `arxiv-1908.11677v1` | Kawakami, *Variational formulae and estimates of O'Hara's knot energies* |
+| `arxiv-2103.07383v1` | Steenebrügge, *Analyticity of critical points of the generalized integral Menger curvature* |
+| `arxiv-2208.12678v4` | Lipton & Nair, *Stationary curves under the Möbius–Plateau energy* |
+| `arxiv-2505.02719v2` | Freches, Schumacher, Steenebrügge et al., *Palais–Smale condition in geometric knot theory* |
+| `arxiv-2512.02998v1` | Blatt, Gilsbach, Reiter et al., *Stability of knot equivalence at low regularity, symmetric critical knots* |
+
+Measured on the same greps, before → after:
+
+```
+tier 1 (INDEX.md) knot-energy rows        0  ->  4
+documents mentioning O'Hara (tier 3)           14
+O'Hara's own paper greppable                   yes
+```
+
+## What this changes for this arc, and what it does NOT
+
+**Does not** retract or confirm anything here. The O2 gate, the mutual-channel
+retraction (`b6f0259fe`), the arbitrary-density proof (`bbacee7d9`) and the
+orientation-blindness result (`a5694110b`) all stand on their own Lean and are
+untouched by what the library holds.
+
+**Does** mean the next pass on this arc can run path 5 for real. In particular
+`1905.06064v1` (regularity for critical knots) and `2505.02719v2` (Palais–Smale)
+are on exactly the variational question the O2 gate sits in, and **none of them
+had been read** when the gate was argued — they could not be.
+
+So: **re-run path 5 before the next "this is open" or "no theorem exists"
+declaration on this arc.** The three tiers are cheap now
+(`grep -i <topic> library/INDEX.md`, then `summary.json`, then
+`grep -rln <topic> library/<doc-id>/sections/`).
+
+## Caution, so the next agent does not over-read this
+
+These are **ingested, not read**. `structure.json` + `sections/` make them
+greppable; nobody has adjudicated whether any of them supplies the O'Hara
+theorem the mutual channel was said not to need. Holding a source and having
+checked it are different claims — that distinction is what `qou-pc85` was
+originally about.
+
+## 2026-09-13 — this bean is BLIND to its own successor, and its closing measurement SURVIVES a re-check
+
+Two things, and they point opposite ways. Recording both because the second is a
+correction to the line I was building from the first.
+
+### 1. The carrier blocker got an OWNER RULING, and this bean does not know
+
+This bean's terminal state is: every route ends at *"which link is the nucleus?"*,
+and `qou-5vhf` establishes the A <= 4 assignments are an admitted AME-driven census
+search — so route (2) reaches one kappa point on a fitted carrier and fails this
+bean's own no-tuned-constant (CAL-4) gate.
+
+**On 2026-09-08 the owner ruled census OUT and named the replacement**, verbatim:
+*"All selection of great words should be done through gamma gamma production and
+the semi-definite product solutions at q_0. Shouldn't use census."* That is bean
+`qou-ales`, and it has run to **step 10** (PRs #7184, #7207, #7222, #7233), all
+sorry-free: the Frobenius-positivity reading selects `beta_Bor` on the whole
+interval `1 < q <= 23/20`; the H_6 pp bond `G^3` is selected through branching; the
+reading-3 survivors are exactly `3 | k`; and step 10 derives the last measured
+quantity of the pp channel in closed form, giving `diproton_unbound_of_response_closed_form`
+for every `q > 1` with no measurement.
+
+**Measured: `grep -in "gamma.gamma\|qou-ales\|7184\|7207\|7222\|7233"` on this bean
+returns ONE hit, and it is a coincidental digit match inside a number (line 871).**
+So the bean whose single terminal blocker is carrier selection carries no record
+that carrier selection was ruled on five days ago and has an active arc. Fixed by
+this entry.
+
+### 2. But the closing measurement is NOT stale — and I checked because it looked like it was
+
+The natural next move is to ask whether this bean's route-(2) closure is still
+valid, because its refutation sits in `he4-link-volume-braid-closure.witness.json`
+**computed 2026-07-04**, and the producer's import cone changed after it:
+`he4_link_volume_braid_closure` -> `canonical_braid_crossings.atom_canonical_crossings`
+-> `mass_at_3A_proper.atom_braid_word_3A`, whose default `intra_order` became
+`"borromean"` in `7db032fb48` (2026-09-05). That same commit moved `tr_M(p)` by
+45 % and left >= 8 witnesses carrying retired values (`qou-sikd`). Textbook
+import-cone drift.
+
+**Re-measured, and the refutation holds** —
+`computations/probes/atom_closure_component_count_probe.py`, 5/5, bean `qou-mbbf`:
+
+| isotope | A | comps (borromean) | comps (grouped) | census carrier |
+|---|---|---|---|---|
+| 2H | 2 | 3 | 3 | Hopf (2) |
+| 3H | 3 | **4** | **4** | `8_11` (1) |
+| 3He | 3 | **4** | **4** | `L6a4` (3) |
+| 4He | 4 | 5 | 5 | none identified |
+| 6Li | 6 | 7 | 7 | — |
+
+The two words genuinely differ (asserted, so the invariance is not vacuous) and the
+count is identical under both. **Structural reason, not coincidence:** the count is
+the orbit count of the induced permutation, and crossing SIGN does not enter it —
+the two orderings differ in sign pattern and letter order, not in which
+transpositions occur.
+
+**And it is stronger than this bean states.** Not "refuted at the two isotopes where
+the answer is checkable" — the closure has exactly `A + 1` components on `3A`
+strands at **every** A tested, so the two families agree at no A at all.
+
+### What that leaves
+
+The blocker is real, structural, and not a re-run away. **But it is now a
+disagreement between two objects of which only one was ever derived:** the census
+carrier (an admitted AME fit, ruled out 2026-09-08) and the `A + 1`-component
+closure of the canonical word. This bean has always read the disagreement as
+refuting the closure. That reading was reasonable while the carrier was the fixed
+point; after the ruling it is the carrier that has no standing.
+
+**Not claimed, and this is the owner's call rather than an agent's:** that `A + 1`
+is right. Nothing here derives a binding link, and nothing here reopens route (2) —
+its `kappa(A)` gate is still retired (#7080) and its energy machinery still has
+nothing un-fitted to consume. What changes is only which of the two disagreeing
+objects should be treated as the target.
+
+Volume and geometricity are **NOT** re-measured (`snappy`/`spherogram` absent in
+this container); the component count alone decides the identification question.
+
+## 2026-09-13 (later) — the carrier alternative is CLOSED BY MEASUREMENT: the closure is not hyperbolic
+
+The entry above left one question for the owner: since the census carrier is an
+admitted AME fit that the 2026-09-08 ruling excludes as a selection mechanism,
+should the `A + 1`-component closure of the canonical word become the target
+instead? It named the missing input: **is that closure hyperbolic?**
+
+Measured (`computations/probes/atom_closure_geometry_probe.py`, 5/5, SnapPy
+calibrated against `Vol(4_1) = 2.0298832128`): **no, and not marginally.** 3H,
+3He and 4He are non-geometric with volume exactly 0 in all SIX settings — both
+intra-orderings crossed with all three averaging modes — returning `contains
+degenerate tetrahedra` on 12/12 randomised attempts each. The 2026-07-04 rows
+reproduce exactly under the live word.
+
+**So there is no second candidate.** The closure has no hyperbolic volume to
+feed the volume-based binding route; promoting it would delete the route's input
+rather than re-base it. This bean's long-standing reading — that the component
+mismatch refutes the closure — is correct, and now for a second, independent
+reason.
+
+**The blocker restated, sharper than before.** It is not *"which of two objects
+is the carrier"*. It is: **the only available carrier is the fitted one**, the
+selection mechanism that produced it has been ruled out, and the framework's own
+canonical word cannot supply a replacement — refuted from two directions now
+(component count, `qou-mbbf`; non-geometricity, here). Route (2)'s machinery
+still has nothing un-fitted to consume, and that is now established rather than
+inferred from the A<=4 assignment's provenance alone.
+
+**What is still genuinely open**, unchanged: `qou-ales`'s gamma-gamma route
+selects WORDS (beta_Bor, the H_6 bond `G^3`) and has not been asked to produce a
+binding LINK; the flux leg (eq. 43's topological factor is A-independent, so it
+relocates kappa(A) into the per-component flux — a fall of 1.449 across
+A = 3...41, derivable from corpus braid geometry, not derived); and `qou-bn8e`'s
+self-energy channel via its route (ii).
+
+By-product, filed separately as `qou-v5sr`: the producer's baked `CLOSURE` table
+is stale for the two NUCLEON rows (hyperbolic under the live word, recorded
+non-geometric), and its own "every mode agrees" comment is false for them. The
+volumes are mode-dependent by 2x and are NOT derived quantities — see that bean
+before quoting any of them.
+
+## 2026-09-13 (later still) — this bean's OWN TRIP-WIRE IS TRIPPED, by this session's ingest, and the bound it named now exists
+
+The 2026-09-03 upper-bound entry closes with an assertion deliberately left as a
+wire: *"the library holds nothing anyway ... **zero** files matching
+`ropelength|ideal knot` ... **Asserted so that a future acquisition flips the**
+[result]"*. **That acquisition happened today, in this arc's own ingest, and
+nobody noticed — including me: I named the flux leg as "next" without reading
+the entry that set the wire.**
+
+### Live re-scan, and one self-reference trap avoided
+
+    library/*/sections   7 documents   (was 0)
+    library/*/ocr        0
+    docs/                0
+    computations/        4  <- SELF-REFERENCE, not new hits
+    content/             2  <- SELF-REFERENCE, not new hits
+
+The `computations/` and `content/` hits are **this bean's own artifacts**
+(`em_linking_upper_bound_precision_budget.py` + its witness,
+`MirrorSplitIsASmallFractionOfTheEnergy.lean`) plus two unrelated Frenet/torsion
+files. A probe that scans for a term *contains* that term, so a naive re-grep
+finds the assertion itself. **The original "zero" was correct.**
+
+All **7** library documents were added **today**, by this session's ingest
+commits `d9be1158a9` and `3938aa5ffc`.
+
+### 🟩 And the bound the entry named as missing now EXISTS in the corpus
+
+`library/1-s20-s0166864101002632-main` = **Rawdon & Simon, _Möbius energy of
+thick knots_, Topology Appl. 125 (2002) 97-109.**
+
+> **Theorem 8.** If K is a smooth knot in R³ then **E_O4(K) < 4.57 · E_L(K)^{4/3}**
+
+That is an **upper** bound on a Möbius-type energy in terms of a geometric
+quantity (ropelength) — precisely what the 2026-09-03 entry named: *"What would
+restore a constraint is an UPPER bound, which eq. (43) does not supply."* And
+the paper states its own paradigm in terms that cover this arc's kernel:
+
+> *"our goal is partly the theorem itself and partly the paradigm: **any 'energy'
+> defined in terms of inverse-square distances should have an analogous bound**,
+> with the proof following this model."*
+
+The mutual channel's kernel is `1/sep²`. So the paradigm applies by the source's
+own statement, not by analogy I am drawing.
+
+### 🛑 BUT THE ROUTE DOES NOT REVIVE, and the reason is the one the entry gave
+
+That entry is explicit that availability is *"the weaker half of the finding,
+not the point"* — the route dies on **precision**. The requirement is unchanged:
+the combined slack `(U₁−B₁)+(U₂−B₂)` must beat `ΔE/E ≤ (r−1)/A`, which at
+`A = 63` with a generous factor-2 flux ratio is **1.5873016 %**, and the budget
+*sharpens 21-fold across the ladder*.
+
+**I have the bound's SHAPE, not its SLACK.** `E < 4.57·L^{4/3}` is an explicit
+constant, which is better than the order-of-magnitude estimates the entry
+assumed — so the entry's *reason* ("nothing in that literature is tight to a
+percent") is now a claim about a bound the corpus can actually inspect, rather
+than a general one about the literature. But determining whether it beats
+1.587 % needs both sides evaluated on an **actual carrier**.
+
+### So this is the FIFTH independent path to the same terminus
+
+Route (1) pruned (even in `μ̄₁₂₃`). Route (2) → carrier. Route (4) `qou-0hdx`
+scrapped → carrier. Flux leg → saturation is prior → the two escapes are one →
+carrier. **And now the upper-bound leg, newly supplied, → carrier.**
+
+Combined with today's two measurements — the closure has `A+1` components
+(`qou-mbbf`) and is **non-geometric with volume 0 in all six settings** — the
+arc's position is: *every path terminates at carrier identification, the only
+candidate is the admitted AME fit whose selection mechanism the owner ruled out
+on 2026-09-08, and the framework's own canonical word cannot supply a
+replacement.*
+
+### What is now genuinely actionable, and it is NOT this bean's
+
+Nothing here moves without a **derived binding link**. `qou-ales` selects
+*words* (`β_Bor`, the H₆ bond `G³`) and has never been asked to produce a
+*link*. That is the one live question, and it belongs to that bean.
+
+**NOT claimed:** that Theorem 8 is or is not tight enough (unmeasured — it needs
+a carrier); that the arc revives; that Rawdon & Simon's paradigm has been
+checked against the mutual kernel beyond quoting the authors' own statement.
+Beans `qou-mbbf`, `qou-hs0c`; PR #7322.
+
+## CONSTRAINT 3 — ROUTE (2) CANNOT GET ITS MAGNITUDE FROM TOPOLOGY (2026-09-13, qou-dux3)
+
+Route (2) is "Mobius/knot-energy class (nonzero for unlinked pairs; corpus
+MobiusEnergy.lean exists)". The hope in that parenthesis is that a knot-energy
+bound hands the pairwise channel a parameter-free positive number off the
+Borromean topology. It does not, and the reason is now proved rather than
+suspected.
+
+MobiusMutualChannel.lean section 9 (17 declarations, sorry-free, all
+[propext, Classical.choice, Quot.sound]) derives the LINK analogue of
+Bryson-Freedman-He-Wang's Theorem D -- which qou-dux3 had recorded as missing
+from the held literature:
+
+    4*pi*|lk(gamma_1, gamma_2)|  <=  E_mutual(gamma_1, gamma_2)
+
+from Gauss's linking integral plus |det(a,b,c)| <= |a||b||c|. Elementary: one
+power of |gamma_1 - gamma_2| from the determinant bound cancels the cube in the
+Gauss kernel, leaving exactly the Mobius mutual integrand.
+
+WHY IT DOES NOT HELP HERE. Every pairwise lk_ij of the Borromean link is 0
+(this bean's own constraint 2, from mirror_split_s3_em_functional_probe.py A3).
+So the bound reads 0 <= E_mutual -- and lk_bound_iff_nonneg_of_lk_zero proves
+that its conclusion at lk = 0 is EQUIVALENT to section 3's
+innerPairEnergy_nonneg, which holds with no hypotheses at all. It adds nothing.
+
+AND NO OTHER TOPOLOGICAL BOUND WILL EITHER. no_positive_uniform_mutual_lower_bound:
+no positive constant lower-bounds the mutual pair energy, because the
+separatedLink family realises every small positive value via section 3's own
+innerPairEnergy_le. Scope (b), invariant cited (the separation bound of
+section 1). It excludes TOPOLOGICAL lower bounds only.
+
+WHAT THIS LEAVES ROUTE (2). A geometric magnitude, from a DERIVED
+configuration. That is not excluded by anything here and it is now the only
+shape route (2) can take. Note the interaction with this bean's gate: a derived
+configuration has to reproduce the kappa(A) profile 3.2 -> 2.1-2.3 with no
+tuned constant, so "derive the geometry" is the whole of the remaining work,
+not a step in it.
+
+RELATION TO CONSTRAINT 2. Consistent, and from the other side. Constraint 2
+says an admissible w_ij must be EVEN in mubar_123, killing the linear ansatz.
+The Gauss bound is linear in lk, and lk vanishes. Both say the same thing: the
+first-order linking channel is blind to the Borromean configuration.
+
+Section 7-8 of the same file separately prove that Mobius invariance FORCES the
+inverse-square kernel (uniquely, and on geometrically realisable distance
+triples), so route (2)'s kernel is not a modelling choice. The kernel is
+settled; the magnitude is the open thing.
+
+
+## CONSTRAINT 3b — WHERE route (2)'s many-body content must live (2026-09-13, section 9g)
+
+Constraint 3 above is a negative: no topological lower bound reaches the
+pairwise channel. Section 9g of MobiusMutualChannel.lean turns it into a
+LOCALISATION by composing with this corpus's own pair-locality theorem.
+
+THE INSTINCT THAT IS WRONG, and worth recording because it is the obvious one.
+"The Mobius mutual energy is a two-body functional, therefore the channel is
+PairLocal, therefore b_3 = 0 by b3_eq_zero_of_pairLocal, therefore route (2) is
+dead." The first clause is right; the second DOES NOT FOLLOW. PairLocal
+(QOU.Mass.CrossingModelPairLocality) compares a pair's energy ACROSS ASSEMBLIES
+-- w3 i j k = w2 i j and w4 i j = w2 i j -- and a two-body functional still
+moves when the assembly moves the pair. Being two-body is a statement about the
+integrand; pair-locality is a statement about the configurations.
+
+WHAT IS TRUE, 5 declarations, all [propext, Classical.choice, Quot.sound], no
+sorryAx; whole file 52/52, lean -DautoImplicit=false -s 65536 exit 0.
+
+  mobiusCrossingModel                     the CrossingModel this channel induces,
+                                          one LinkEmbedding per assembly.
+  mobiusCrossingModel_pairLocal_of_sep_eq if the assemblies do not move the
+                                          pair's separations, it is PairLocal.
+  mobius_b3_eq_zero_of_sep_eq             hence b_3 vanishes IDENTICALLY, via
+                                          b3_eq_zero_of_pairLocal.
+  mobius_b3_ne_zero_forces_moved_sep      contrapositive: any nonzero b_3 from
+                                          this channel is ENTIRELY the
+                                          assembly's effect on the separations.
+
+AME2020 measures b_3 = +1.4262225 MeV (AmeBindingNotPairwise.ame_b3_eq), so the
+hypothesis is not idle.
+
+CONSEQUENCE. Route (2)'s entire many-body content is the configuration change
+and nothing else. Read with constraint 3 -- no topological floor -- the two say
+the same thing from opposite ends: EVERY NUMBER ROUTE (2) CAN SUPPLY IS A
+DERIVED GEOMETRY. That is not a refutation of the route; it is a specification
+of what it owes, and it says the route's deliverable is the same object
+qou-ales is deriving (gamma-gamma + the confinement SDP at q_0), not a separate
+one.
+
+RELEVANCE TO THE b_3 ARC. qou-brng / qou-rwhv / qou-rraz own the extensive term
+(measured b_3 = +1.4262 MeV, model exactly 0) and qou-eptr proposes EP/Pachner
+as a non-pair-local extensive carrier. Section 9g does not supply that carrier.
+What it supplies is the statement that the MOBIUS channel is not disqualified
+from contributing -- its b_3 is zero only under a hypothesis (separations
+unchanged across assemblies) that a bound configuration does not satisfy.
+
+NOT CLAIMED: that the assemblies DO move the separations in this framework, nor
+by how much. That is a geometric measurement section 9g does not make, and it is
+the open thing.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-12T19:08:13Z
+updated_at: 2026-09-13T11:00:00Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8101,3 +8101,63 @@ Same correction appended to `qou-bg3w` and `qou-1qsw`, and applied to
 
 NOT closing or re-statusing this bean -- it is in-progress and belongs to
 another agent's arc.
+
+---
+
+## 2026-09-13 — the N question's last branch closed, and the ω-grade written in
+
+Three landings, plus a correction to the first of them.
+
+**#7149 (`8f6771235f`)** reduced the route-5 `N` question to a trichotomy on
+the arithmetic nature of `q₀`. Two branches closed; one survived — `q₀`
+algebraic irrational, which by the pinning identity needs `Vol(4₁)` algebraic.
+
+**#7263 (`f6f17fa092`)** closed it. `QOU/Archimedean/VolumeTranscendence.lean`
+already carried `HyperbolicVolumeIndependence`, whose `no_relation` quantifies
+over arbitrary finitely-supported `f : ℕ × ℕ × ℕ → ℚ`; restricted to the
+`(i,0,0)` slice that is Mathlib's `transcendental_iff` verbatim. The file drew
+only the *irrationality* rung and `Transcendental` appeared nowhere in it — but
+`SingleVolumeIrrational` cannot touch the survivor, since an irrational may be
+algebraic and the survivor is precisely the algebraic-irrational case.
+`volTranscendental [HyperbolicVolumeIndependence] : Transcendental ℚ vol_4_1`,
+lean-direct exit 0, axioms `[propext, Classical.choice, Quot.sound]`, no
+`sorryAx`. **Not a proof of transcendence** — the class has no instance and
+this adds none; the `[Instance]` binder is the §3b-tax dependency edge.
+
+**#7289** writes the ω-grade into `conj:kashaev-surreal`, which was thorough
+about what `st` *is* and silent on what it discards. At `N = ω` the leading
+monomial of `δ_N := (2π/N)log⟨4₁⟩_N − Vol(4₁)` is `(log ω)/ω`, strictly between
+grade −1 and grade 0. Both halves matter: `ord_ω(δ) = −1` coarsely (so
+`st(δ) = 0` and the figure-eight discharge stands), **and** `δ` is not a
+grade-(−1) monomial because `ω·δ` diverges. Three consequences, all written
+down before measurement and all landing: `N·δ/log N → 3π` from below with the
+derived offset (gap `0.0183 → 0.000295`, halving on each doubling); `N·δ`
+divergent (`35.22 → 67.81`); `1/N` Richardson leaving `3π log 2 = 6.53275827`
+(measured `6.53058` at N=800).
+
+### 🛑 The correction, and it is mine
+
+The #7263 probe and its witness `description` attributed the sub-leading
+asymptotic to *"the cited Ohtsuki / Andersen–Hansen expansion"* and said it was
+not re-derived here. **Written without running the corpus-grep.**
+`prop:one-loop-prefactor-provenance` **derives** both `3^{-1/4}` and the power
+`3/2` from the one-variable saddle at `θ* = 5π/6` (Lean
+`c_pow_four_eq_third`), and says in its own words that the `4₁` calibration the
+whole `c_σ` arc rested on is thereby retired. Near-miss worth recording:
+`ohtsuki2016` in `references.ts` is about the **5₂** knot, not `4₁` — reaching
+for it would have been a second wrong attribution in the act of fixing the
+first.
+
+#7289 corrects all seven sites in the probe and re-runs it: **every numeric
+field is byte-identical**, only the attribution words move. What does *not*
+change is that the `O(1/N²)` tail is **measured** (check 1), not derived — the
+proposition states a leading asymptotic and records the step from its two
+machine-checked analytic inputs to the saddle hypotheses as still assumed.
+
+### What this does NOT do for `qou-cds1`
+
+Nothing here touches the D-frame re-derivation of the `c_k` ladder, which is
+this bean's subject and remains **open** (still blocked on the phase
+`qou-pdix`). The `N` question was one branch of the route-5 sub-arc; closing it
+conditionally on an instance-free conjecture class does not produce a `c_k`.
+

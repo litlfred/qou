@@ -151,6 +151,7 @@ def search_single(target: mp.mpf, label: str) -> list[dict]:
     """For each knot K and exponent k in SEARCH_KS, compute Vol(K) / hbar_q^k
     and record the relative error against target."""
     results: list[dict] = []
+    _keys: list[mp.mpf] = []   # parallel EXACT sort keys (never serialized)
     for knot, vol_str in KNOT_VOL_TABLE.items():
         vol = mp.mpf(vol_str)
         if vol == 0:
@@ -165,14 +166,23 @@ def search_single(target: mp.mpf, label: str) -> list[dict]:
                 "predicted": fmt(prediction, 12),
                 "target": fmt(target, 12),
                 "rel_err": fmt(err, 6),
-                "rel_err_float": float(err),
+                # NO-FLOAT64 (2026-09-13): the former `rel_err_float` was a
+                # float64 shadow of `err` that existed only as this function's
+                # sort key — it published no quantity `rel_err` does not
+                # already carry. Keeping the mpf OUT of the record and sorting
+                # on it makes the ordering exact and removes float64 from the
+                # witness. It is deliberately NOT re-emitted at higher
+                # precision: TARGET_TAU_OVER_E is "3477.23", six significant
+                # figures, so `rel_err` is ceilinged there and anything wider
+                # would be manufactured digits (the mirror of float64).
                 "match_loose_1pct": bool(err < THRESH_LOOSE),
                 "match_mid_0p1pct": bool(err < THRESH_MID),
                 "match_tight_100ppm": bool(err < THRESH_TIGHT),
                 "context": label,
             })
-    results.sort(key=lambda r: r["rel_err_float"])
-    return results
+            _keys.append(err)
+    order = sorted(range(len(results)), key=lambda i: _keys[i])
+    return [results[i] for i in order]
 
 
 def search_product(target: mp.mpf, label: str) -> list[dict]:
@@ -181,6 +191,7 @@ def search_product(target: mp.mpf, label: str) -> list[dict]:
     knots = [(name, mp.mpf(v)) for name, v in KNOT_VOL_TABLE.items()
              if mp.mpf(v) != 0]
     results: list[dict] = []
+    _keys: list[mp.mpf] = []   # parallel EXACT sort keys (never serialized)
     seen = set()
     for i, (n1, v1) in enumerate(knots):
         for j, (n2, v2) in enumerate(knots):
@@ -201,14 +212,15 @@ def search_product(target: mp.mpf, label: str) -> list[dict]:
                         "predicted": fmt(prediction, 12),
                         "target": fmt(target, 12),
                         "rel_err": fmt(err, 6),
-                        "rel_err_float": float(err),
+                        # NO-FLOAT64 (2026-09-13) — see search_single.
                         "match_loose_1pct": bool(err < THRESH_LOOSE),
                         "match_mid_0p1pct": bool(err < THRESH_MID),
                         "match_tight_100ppm": bool(err < THRESH_TIGHT),
                         "context": label,
                     })
-    results.sort(key=lambda r: r["rel_err_float"])
-    return results
+                    _keys.append(err)
+    order = sorted(range(len(results)), key=lambda i: _keys[i])
+    return [results[i] for i in order]
 
 
 def main() -> None:

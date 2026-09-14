@@ -191,6 +191,17 @@ of one Mathlib olean.** That distinction is the whole purpose of the UNVERIFIED
 class; under the classification this branch started with, it would have read as a
 red root.
 
+> **🟩 SUPERSEDED 2026-09-13 — the root COMPILES here now.** The missing olean was
+> seeded to `lake-cache/qou-v4-24-0-mathlib-gap-modules` (7 → 86 oleans,
+> `d7e3ae8c662`, 2026-09-11) and is restored by
+> `scripts/lean-restore-gap-oleans.sh`. With it on disk,
+> `lean-library-sweep.py --package QOU --only-exact QOU --jobs 2` on `main`
+> `c9fd78b0a` reports **1451 ok, 0 RED, 0 TIMEOUT, 0 UNVERIFIED, 0 skipped**,
+> ending `[1451/1451] ok QOU`. The *reasoning* in this section was right and its
+> UNVERIFIED class is what made the gap legible as a gap; only the state has
+> moved. See
+> [`2026-09-13-library-root-compiles-1451-modules-zero-red.md`](2026-09-13-library-root-compiles-1451-modules-zero-red.md).
+
 ### The answer to `qou-g5sp`, on the corrected denominator
 
 | | count |
@@ -274,3 +285,16 @@ They also judged the full extension infeasible here, on two grounds: SIGSEGV
 closures and ~860 MB disk. **The disk half is what the chunking answers.** The
 SIGSEGV half stands untouched — those modules still will not compile in this
 container; they are now labelled unverified rather than mistaken for defects.
+
+> **🛑 RETRACTED 2026-09-13 by the agent whose measurement it rests on — the
+> SIGSEGV half does NOT stand.** "Those modules still will not compile in this
+> container" traces to my five `exit 139` results at `333e491eaa4`, and to my
+> attribution of them to *"the same container resource limit that makes the
+> library root unverifiable (`qou-ed8a`)"*. **That limit does not exist** — it was
+> 79 missing Mathlib oleans. Every module either of us flagged as SIGSEGV-family
+> or TIMEOUT compiles: `HeckeH4BlockMap211`, `HeckeH4BlockMap31`,
+> `OctonionDerivationsUpperBound` and `Witness12B` are all **ok** in the
+> 2026-09-13 run, the first two *concurrently*. The five `exit 139` observations
+> themselves stand — something segfaulted — but the attribution was a symptom
+> matched to a cone diagnosed elsewhere, and this document inherited it from me on
+> family resemblance, which is the exact move it is otherwise about.

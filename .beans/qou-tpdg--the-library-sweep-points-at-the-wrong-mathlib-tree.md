@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-09-11T14:31:54Z
+updated_at: 2026-09-13T09:22:35Z
 ---
 
 ## 2026-09-05 — measured, fixed, verified. PR #6827
@@ -310,3 +310,73 @@ which is what appears to put the seed into the missing set.
 Not fixed here: it is a sibling's script on a sibling's live bean, and the
 duplication rule reserves settled mechanical work to one owner. Handing over the
 repro.
+
+
+## 2026-09-13 — §3's open question is SETTLED for two named modules: not contention, not the module
+
+§3 above withdrew the truncated-olean attribution for the six `signal 11` modules
+and named a second hypothesis — `--jobs 3` contention under memory pressure —
+closing with *"my run cannot distinguish it."* This run distinguishes it, on two
+**different** modules, and the answer is neither hypothesis.
+
+Hit while verifying #7281 (`qou-qqm4`), `--only-exact QOU.Mass.ProductionChainBondProduct`:
+
+    [2/12] UNVERIFIED  QOU.Mass.StrandLayoutForcesChain        (killed by signal 11)
+    [5/12] UNVERIFIED  QOU.MathlibExt.DisjointBlockTraceLaw    (killed by signal 11)
+
+**Reproducible across four configurations**, all after `lean-sync-olean-trees.sh`
+(both mathlib trees at 3477, 1780 linked, 3 zero-byte oleans repaired) and after
+`lean-restore-gap-oleans.sh` (86 oleans into both trees):
+
+| configuration | result |
+|---|---|
+| `--jobs 2` (4 of 4 cores, 2 threads each) | signal 11, both |
+| `--jobs 1` (4 threads) | signal 11, both |
+| `--jobs 1` + caller `LEAN_NUM_THREADS=1` | signal 11, both |
+| **lean-direct, same container, minutes later** | **exit 0, 0 errors, both** |
+
+### What that excludes
+
+- **Contention / memory pressure — REFUTED for these two.** `--jobs 1` with
+  `LEAN_NUM_THREADS=1` is a single `lean` process with a single elaboration
+  thread, and it still dies. This is the hypothesis §3 could not test.
+- **A module defect — REFUTED.** Both compile clean under
+  `lean -DautoImplicit=false -s 65536`, exit 0, zero errors. `DisjointBlockTraceLaw`
+  emits four `unnecessarySimpa` linter warnings and nothing else.
+- **The 0-byte truncation subclass — EXCLUDED here.** `find -name '*.olean' -size 0`
+  returns **0** in the shadow and **0** across both real trees. (Partial truncation
+  at nonzero length is NOT excluded — that needs reference sizes I did not have.)
+- **Flag difference — EXCLUDED.** The sweep passes the same `LEAN_OPTS`
+  (`-DautoImplicit=false`, `-s 65536`, line 71), so it is not the stack or
+  auto-implicit.
+
+### What remains — the shadow is the only difference left
+
+lean-direct resolves imports against the **real** olean trees; the sweep resolves
+them against its **hardlinked shadow**, from which it unlinks the dirty modules to
+force a rebuild. Both segfaulters are `never built (new)` in the paper tree. So the
+live candidate is that the shadow presents these two an import environment the real
+trees do not — not tested here, and I am not asserting it.
+
+### The consequence that matters, and it sharpens §1
+
+§1 records that `skipped (dependency red)` says RED when it means UNVERIFIED, across
+31 unrelated modules. **The sharper form: the sweep printed `0 RED` while never
+compiling the module it was invoked for by name.**
+
+    === library sweep: 4 ok, 0 RED, ... 6 skipped (dependency red) ===
+    SKIPPED QOU.Mass.ProductionChainBondProduct  (red dependency: ...)
+
+`--only-exact QOU.Mass.ProductionChainBondProduct` is a request to verify exactly one
+module. That module was **skipped**, cascaded from the two segfaults, and the summary
+line reads `0 RED`. An agent quoting that summary as its Phase-4 Lean gate reports a
+green for a module the gate never looked at. That is a **false-green channel in the
+documented gate**, not merely a mislabel.
+
+Workaround used for #7281, and it is general: build the cone by hand into a
+persistent `--shadow`, in dependency order, with lean-direct `-o`. All seven cone
+modules exit 0, then the target compiles against them — exit 0, 0 errors, 0 warnings,
+and `#print axioms` clean on all four theorems.
+
+Not fixed here: both the label and the cascade are changes to the shared gate, which
+is an owner call under the 2026-09-07 ASK-BEFORE-CHANGING directive.

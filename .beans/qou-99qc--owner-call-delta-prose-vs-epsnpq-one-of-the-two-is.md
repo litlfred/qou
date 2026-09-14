@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-12T20:20:00Z
+updated_at: 2026-09-13T17:13:35Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -1729,3 +1729,769 @@ were computed at order-zero and mixing bases is the silent-revert trap that
 commit's own audit records at §6. **The ranking is invariant** — residual is
 strictly increasing in `E₀`, and `E₀ > 0` is common to every candidate — so no
 conclusion on this bean depends on the base.
+
+
+
+## 2026-09-13 — the element question: ordering is provably not the lever (PR #7295)
+
+The alternating character `sigma_i |-> -1/q` is a 1-dim rep of `H_3(q)`, so a
+word's character is a product of SCALARS and depends only on the MULTISET of
+its letter shifts. Measured on 3840 (permutation, generator-assignment) pairs:
+exactly ONE distinct value. Lean `wordChar_of_perm` (sorry-free).
+
+Consequence for this bean's element half. R2 of the gamma-gamma ruling
+(`qou-ales`, #7212) picked the nucleon ORDERING. **An ordering choice cannot
+make a word gamma-gamma-produced** — the invariant that `altChar_eq_one` pins
+at +1 cannot see one. So the 5 census-derived letters of `nuc11_interleaved`
+are not repairable by re-ordering or by re-assigning generators; a
+gamma-gamma-derived replacement has to change WHICH letters are present.
+
+Closed form over the three-shift alphabet the census uses, with a/b/c counting
+the shifts 0 / -h / -h/2:
+
+    altChar(w) = (-1)^(a+b+c) q^(b-a-c) ((q^2+1)/2)^c  = 1  <=>  c = 0 and a = b
+
+Every corpus nucleon carries c = 2, and `-h/2` — the mixed ud crossing — is
+BOTH the unique bar-fixed shift (#7283) and the unique shift whose character
+pairs with nothing to give 1. One letter, two independent obstructions;
+`qou-e58e` measured that bar IS p<->n conjugation, so that is not a notational
+coincidence.
+
+Coverage, stated honestly: FIVE of the census's six Delta families —
+four at word level (`nuc9`, `nuc11_interleaved`, `nuc11_gen_grouped`, the 16
+`blocks CONSTRUCTED` readings = 19 readings = 38 words), one (`delta_S`, the
+short model) only at the Delta level because it is given as an NF vector and has
+no shift multiset. `blocks AS STATED` is NOT covered — nothing constructs it.
+
+NOT NEW: `qou-avt6` (2026-08-26) already has the monomial shape
+`q^m ([2]_q/2)^c`, for the COUNIT rep `sigma |-> q`. This is the ALTERNATING
+rep, which is the one the gamma-gamma lemma pins — a different functional, same
+shape.
+
+OPEN, spun out as `qou-efqx`: the fourth (`averaged_weighted`, colour-weighted)
+template, which R3 makes canonical. Its character carries an irreducible sextic,
+so the argument does not extend; only the pin-level pairing fact is measured.
+
+Bean stays `todo` (AGENTS.md §13a — the element is an open conjecture; this
+narrows it, it does not close it).
+
+
+
+### Same day, the positive half (PR #7295 part 2)
+
+On three strands the gamma-gamma ruling leaves **one integer**. `H_3(q)` has two
+Artin generators, so a vertex `sigma_i sigma_{i+1}^-1` needs `i+1 < 2`, i.e.
+`i = 0`: every gamma-gamma word is `(sigma_0 sigma_1^-1)^k`. Lean
+`gammaGamma_threeStrand`, sorry-free. `k = 3` is `borromean`.
+
+Two structural findings. Every member has a **vanishing `e^-` coordinate**
+(symbolic, k = 0..24) — so `qbeta-counit-closed-form.md`'s "which both nucleon
+models happen to satisfy" is FORCED under gamma-gamma, not accidental; and
+`tr_M|_{z=1} - net = h*nf[e^-]` identically, so net and the retired z=1 cell
+COINCIDE on every gamma-gamma word.
+
+**The derived member misses by 440 %.** `|tr_M^{z_D}(core^3)|*E_0 = 4.22140`
+MeV against `Q_beta = 0.78233`: **+439.592 %**. That is the honest number for
+the route as a single-word Q_beta carrier on three strands.
+
+**And the matching members are selected, measurably.** The k=1 (mod 3) band
+descends monotonically THROUGH the target (k=7 gives +0.610 %); the difference
+grid over k,l <= 24 is 300 pairs straddling it, local spacing 1.29 %, best
+(8,23) at +0.455 % — against **0.322 % expected by chance** from that spacing.
+The best match is not even better than chance. Choosing k or (k,l) by residual
+is selection against the target and is forbidden.
+
+So the live question is sharper: **either `k` is derived from something other
+than the residual, or the gamma-gamma carrier for Q_beta is not a single
+three-strand word.** Both open. Scope-(a) — no invariant here forbids the
+gamma-gamma route; what is excluded is the METHOD.
+
+
+
+### Part 3, same day — the H_3 collapse is an ACCIDENT OF THREE STRANDS (PR #7295)
+
+The three-strand collapse was never about the Hecke algebra. Lean, sorry-free:
+`gammaGamma_iff_vertexWord` — the gamma-gamma words are EXACTLY the free monoid
+on the vertices; `gammaGamma_index_lt` — on n strands only n-2 vertex indices
+exist. ONE at n=3 (hence the cyclic monoid), TWO at n=4.
+
+Measured (general-n T-basis reducer, validated against the corpus's hand-coded
+H_3 tables, and independently recovering growth k+1 at n=3):
+
+                      n = 3                 n = 4
+  vertices            1                     2
+  growth (k <= 8)     k+1 = 1..9            2^(k+1)-1 = 1,3,7,...,511
+  span rank           3 of 6                21 of 24
+
+At n=4 EVERY one of the 2^k words of length 2k is a distinct element of H_4 —
+the Hecke relations impose no collapse at all — and the span goes from half the
+algebra to seven eighths.
+
+**So the +439.592 % H_3 miss must NOT be quoted for H_4.** It is a fact about a
+one-integer family. At four strands the family is free and nearly fills the
+algebra.
+
+Caveat stated: growth and rank are measured at a generic rational h, so both
+are LOWER bounds on the symbolic answer — the safe direction, since reaching
+the maximum establishes it exactly. Two generic values agree.
+
+NOT claimed: no four-strand Markov trace is computed, so nothing is said about
+whether an H_4 gamma-gamma element reproduces an observable. And which 3 of the
+24 dimensions are missing from the span is not measured.
+
+
+
+### Part 4, same day — the general-n Ocneanu trace, and the H_4 trace set (PR #7295)
+
+The corpus had NO general-n Markov trace: `pyhecke.gram` carries the H_3 vector
+`[1, z, z, z^2, z^2, z(hz+1)]` as a hand-coded literal and nothing generalises
+it. Built one from the three defining properties via the S_{n-1}-coset
+decomposition, validated three ways — it reproduces the H_3 literal exactly
+(symbolic in h AND z), satisfies tr(xy)=tr(yx) on H_4 pairs, and satisfies the
+Markov property at n=4 against n=3. The latter two are NOT inputs to the
+recursion, so they are real tests; the first `coset_factor` failed them.
+
+Measured, gamma-gamma trace sets at z_D, proton pin, k <= 8 vertices:
+
+                  count    range                    median gap
+    n = 3            9     [0.18618696, 1.0]        0.032897756
+    n = 4          511     [0.11139758, 1.1374052]  0.0025322918
+
+**13.0x denser**, so the anti-fit conclusion sharpens — selection by residual
+was already forbidden at n=3 and at n=4 is not even tempting.
+
+**And barely wider.** 511 distinct elements spanning 21 of 24 dimensions have
+traces confined to a band only ~1.3x the n=3 one. The trace is a very LOSSY
+functional on the gamma-gamma set: free growth in the algebra does not buy a
+wide trace image. That is a constraint in its own right and was invisible
+before this.
+
+Scope-(a). NO four-strand Q_beta prediction — E_0 and the
+element-to-observable map are H_3 constructions and the corpus does not define
+their n=4 analogue. The n=4 set is compared to ITSELF at n=3, structurally.
+
+
+
+### Part 5, same day — the SDP half of qou-ales, and it is a REAL selector (PR #7295)
+
+The ruling says selection is via gamma-gamma production AND the confinement SDP.
+Parts 1-4 did the gamma-gamma half; this is the SDP half, and it is the first
+DERIVED selector on this arc (PSD feasibility is structural, not a residual).
+
+**Three strands: the conjunction is EMPTY.** In the (2,1) block, exactly:
+`a = -1/(q(q^2+1))`, `a' = q^3/(q^2+1)` — **a' IS z_D** — and the gamma-gamma
+vertex has `det V = 1`, `tr V = -1 - h^2`. So V is an ELLIPTIC SL_2(R) element,
+and `V^3 = 1` forces `q = 1`: **the Borromean baryon is SDP-feasible only in the
+classical limit.** New Lean `QOU.Mass.PsdDetOneTrace` (sorry-free) proves a real
+PSD 2x2 of det 1 has trace >= 2 with equality only at the identity, and measured
+`tr(V^k) < 2` for k = 1..200 — so the exclusion is a theorem about the PSD cone,
+not arithmetic. This also EXPLAINS the k mod 3 banding of Part 2: a near-order-3
+rotation, exactly order 3 only at q = 1, so the bands drift.
+
+**Four strands: NON-empty and very selective — and my first draft was wrong.**
+It asserted infeasibility at n=4 too, having tested only the powers of ONE
+vertex; over all 2^k words the assertion FAILED. Of **8190** words to 12
+vertices, exactly **5** are feasible: `(v0v1)^2`, `(v0v1)^4`, `(v0v1)^6`, and two
+sporadic 10-vertex words. `(v0v1)^m` is feasible **iff m is even**.
+
+**The mechanism, not an analogy.** In BOTH 3-dim blocks the spectrum of `v0v1` is
+exactly `{-q^2, -q^-2, 1}` — two NEGATIVE eigenvalues — so odd powers cannot be
+PSD and even powers have spectrum `{q^-4, 1, q^4}`. Same cause as the H_2 rule
+(`sigma_0` has eigenvalue `-1/q`). The 1-dim and (2,2) blocks send every power to
+the identity; all discrimination lives in the two 3-dim blocks. And `(v0v1)^2` is
+NOT the identity there (max |M-I| = 0.348, 0.518), so its feasibility is genuine
+positivity rather than triviality.
+
+So the ruling's two halves are NOT in conflict — they simply have no common
+solution on three strands. **Smallest derived candidate: `(v0 v1)^2`, four
+vertices, eight letters.**
+
+NOT claimed: the feasible set is not characterised (only enumerated to 12
+vertices; the two sporadic words are unexplained); no cost/minimality is
+computed, so this NARROWS the candidate set without selecting a word; no
+observable is computed.
+
+
+
+### Part 6, same day — SDPSelected has a UNIQUE solution (PR #7295)
+
+Part 5 did the feasibility half and said it did not compute minimality. This is
+minimality, and it closes the selection.
+
+The cost is the corpus's: `mba-step10-confinement-sdp.md` states
+`minimize Sum_i t_i x_i` with `t_i = tr_M(b_i)`, so the objective on a word is
+its Markov trace. Evaluated with the general-n Ocneanu recursion from Part 4
+(re-verified against pyhecke.gram's H_3 vector so this cannot inherit a silent
+breakage).
+
+Costs at z_D, proton pin, over the five PSD-feasible words:
+
+    (v0 v1)^2    (0,1,0,1)                   1.032897755524660383   <- MIN
+    sporadic A   (0,0,1,1,0,1,1,0,0,1)       1.073238807935729209
+    sporadic B   (0,1,1,0,0,1,0,0,1,1)       1.073238807935729209
+    (v0 v1)^4    (0,1,0,1,0,1,0,1)           1.137405209118677445
+    (v0 v1)^6    (0,1,0,1,0,1,0,1,0,1,0,1)   1.331992492573499969
+
+The minimum is STRICT and ATTAINED, not merely least-in-a-truncation: cost on
+the even alternating family is strictly increasing in m (1.0329 -> 4.0944 for
+m = 2..14), so extending the enumeration cannot beat m = 2.
+
+**SDPSelected -> `(v0 v1)^2`: four vertices, eight letters, four strands.**
+DERIVED — no continuous parameter tuned, no discrete choice made against a
+measured value, no observable entering at any point. This is the arc's first
+complete derived selection.
+
+Observation flagged as such: the two sporadic words have EXACTLY equal cost
+(< 1e-30) while their `net` differs (1.1426 vs 0.9495), so whatever relates
+them does not preserve net. Unexplained; two data points are not a pattern.
+
+TWO GAPS, and the result may not be quoted without them:
+1. the LP's `net(x) = n_target` constraint is NOT imposed (it belongs to the
+   mixture formulation; net is reported per word so it can be applied later);
+2. "unique" means among gamma-gamma words of at most 12 vertices on four
+   strands — a cheaper feasible word at 13+ vertices is not excluded, though a
+   cheaper ALTERNATING one is, by monotonicity.
+
+NOT DONE, deliberately: no Q_beta comparison. E_0 and the
+element-to-observable map are H_3 constructions with no corpus-defined n = 4
+analogue, and reporting a residual would re-introduce the
+selection-against-the-target the earlier parts measured and rejected. The word
+is derived; what it predicts is a separate question.
+
+
+
+### 🛑 Part 6 RETRACTED, same day (PR #7295)
+
+Part 6 above claimed SDPSelected has a unique solution, `(v0 v1)^2`. **It does
+not, and I withdraw that.**
+
+The EMPTY gamma-gamma word — zero vertices, `GammaGammaWord.nil`, the identity
+of `H_n` — is PSD-feasible in every block (the identity matrix is PSD) and its
+Markov trace is exactly **1.0**, against 1.032897755524660383 for `(v0 v1)^2`.
+So over the candidate set as the Lean states it, **SDPSelected selects the empty
+word**, vacuously. Part 6 silently restricted to words with >= 1 vertex.
+
+**The corpus already proved this one level up, and I cited the block without
+reading it.** `prop:operator-selection-lp` §"Degeneracy of this program":
+`b_1 = 1` so `G_1j = t_j`, hence the first Frobenius positivity constraint IS
+the objective bounded below by zero — optimal value identically 0 for every n,
+q and trace convention; and the minimiser set is a positive-dimensional
+mirror-closed face, so which vertex a solver returns is its pivoting rule. That
+block states outright that *"downstream blocks have read the program as a
+selection principle, which it is not"*. I became one of those readers before
+becoming an independent confirmation of it in the discrete setting.
+
+**WHAT SURVIVES, quote these separately:**
+1. **Feasibility does the real work and is untouched** — Part 5's 5-of-8190 at
+   n=4, none at n=3. A genuine structural zero-parameter filter.
+2. Among **NON-EMPTY** gamma-gamma words of <= 12 vertices on four strands,
+   `(v0 v1)^2` is the strict minimiser with the minimum ATTAINED. True about a
+   RESTRICTED set; **not** SDPSelected.
+
+So the arc does NOT have a complete derived selection. It has a derived
+*filter* (feasibility) and no derived *selector*. The open problem is what
+breaks the tie among the 5 — and the corpus's own degeneracy result says the LP
+objective cannot be it.
+
+
+## Part 7 (PR #7304) — crossing energy is the THIRD degenerate functional, and no γγ word binds
+
+`computations/qbeta/qbeta_gamma_gamma_crossing_energy_probe.py` (6/6).
+
+**Calibrated first, by data, not by reading.** `def:crossing-energy` gives the
+electron (left trefoil `T_(2,3)`, three POSITIVE crossings) `E_cross = 3q =
+3.329935748` against the `~3.330` in `pair-creation-energy.md`, and the positron
+(mirror) `-3/q = -2.702754852` against `~-2.703`. A reversed sign convention
+would have swapped these, so the orientation is pinned.
+
+**Closed form.** `E_cross(k-vertex γγ word) = k*h` EXACTLY (k = 0..14). A vertex
+`σ_i σ_{i+1}^{-1}` is one positive crossing and one negative: `q + (-1/q) = h`.
+
+**Order-blind, again.** 3840 (permutation, index-assignment) pairs of a 5-vertex
+word → 1 distinct value. Same blindness as #7295's alternating character, for
+the same structural reason (a sum over letters). Second order-blind functional
+on this family.
+
+**The substantive finding.** `h > 0` for every `q > 1`, so `E_cross > 0` for
+every non-empty γγ word, and `def:crossing-energy` reads positive as *repulsion
+dominates*. **NO γγ word is binding-dominated — any number of strands, any
+q > 1.** At q_0, `h = 0.20906029879563932`.
+
+**Degenerate again.** `E_cross(empty) = 0`, below all five PSD-feasible words
+(0.8362 / 1.6725 / 2.0906 / 2.0906 / 2.5087). So this is the THIRD functional
+here whose unconstrained optimum is the trivial answer, after the Markov trace
+and the LP objective — the latter proved degenerate by
+`prop:operator-selection-lp`'s own "Degeneracy of this program" section.
+
+**It does not separate.** Ordering among non-empty words is by vertex count
+alone; the two sporadic 10-vertex words TIE exactly.
+
+**NOT implemented, deliberately:** `knot-operator-selection-proof.md`'s demand
+constraint `⟨Φ, dem(K)⟩_F ≥ ‖dem(K)‖_F`, which is the stated reason an
+unconstrained minimum need not be the last word. Building `dem(K)` requires
+choosing which K the nucleon is, which is the question — implementing it here
+would be circular.
+
+Scope-(a): one functional, one family. It does not exclude a binding-dominated
+canonical word; it says the γγ construction alone cannot supply one under this
+energy.
+
+
+## Part 8 (PR #7304) — what the ruling PREDICTS for Q_β: +458 % to +620 %, and the 0.11 % near-hit is worse than chance
+
+`computations/qbeta/qbeta_gamma_gamma_qbeta_prediction_probe.py` (7/7).
+
+Nobody had scored the γγ + confinement-SDP admissible set against Q_β. This
+does, through the dashboard's own path (`|tr^{z_D}| · E_0`, canonical
+tower-summed `E_0`), calibrated first: the census element `nuc11_interleaved`
+scores -16.67794 % against the -16.678 % AGENTS.md records.
+
+**All five PSD-feasible words of #7295**, ordered by vertex count, NOT residual:
+
+    (v0 v1)^2     4 vertices   4.36655806955 MeV   +458.1454 %
+    (v0 v1)^4     8            4.80836159015       +514.618  %
+    sporadic A   10            4.53709919716       +479.9445 %
+    sporadic B   10            4.53709919716       +479.9445 %
+    (v0 v1)^6    12            5.63097609218       +619.7668 %
+
+**The structural point.** The five agree with EACH OTHER to a factor 1.28957
+while missing the measurement by 5.58x to 7.20x. Internal spread < smallest
+miss, so **no re-selection inside the admissible set can reach Q_β** — the
+choice of word is not the free parameter.
+
+**It is the SDP half that excludes the measured value, not γγ.** Target
+`|tr^{z_D}| = 0.185059` sits BELOW 1 = tr(empty word) and below the smallest
+feasible trace 1.032898. PSD feasibility pushes the trace up; the target is
+under the whole feasible set.
+
+**THE TRAP, disarmed.** Drop the SDP half and the unconstrained family straddles
+the target (8190 words, |tr| in [0.003435, 1.331992]) with a best match at
+**0.110577 %** — eleven `v_0` and one `v_1`. Worth nothing, and MEASURED to be:
+529 distinct trace values, 50 within ±10 % of the target, median spacing
+0.000346646 → expected best-by-chance **0.04683 %**, observed **0.110577 %** —
+**worse than chance**. Same control and verdict as the H_3 difference-grid check
+(0.455 % observed vs 0.322 % expected). The twelve tying words are one
+order-blind orbit, none PSD-feasible.
+
+Scope-(a): one functional, one family, n = 4. Says nothing about n > 4, a
+different E_0, or a tower correction. The demand constraint is still NOT imposed.
+
+
+## Part 9 (PR #7304) — the PSD trace FLOOR: scope-(b) exclusion for n ≤ 5, no enumeration
+
+`computations/qbeta/qbeta_gamma_gamma_psd_trace_floor_probe.py` (7/7).
+
+Part 8 left "enumerate the feasible set at n = 5, then n = 6" as next. **That
+search is unnecessary at n = 5.** Formalize-first: the invariant prunes the
+class before the scan runs.
+
+**Three ingredients, each machine-verified:**
+
+1. **Convention D IS the two-row truncation with strictly positive weights.**
+   `y_(n−k,k) = [n−2k+1]_q/[2]_q^n`, and `y = 0` on three rows or more. Checked
+   n = 3..8: all 42 partitions with ≥3 rows carry exactly 0; all 21 one- and
+   two-row partitions carry `y > 0`.
+2. **PSD feasibility ⟹ every character is non-negative.** A PosSemidef matrix
+   has non-negative trace, so `χ_λ(w) = Tr(ρ_λ(w)) ≥ 0`.
+3. **The trivial block is pinned at exactly 1.** Trivial rep: `σ ↦ q`, so
+   `σ⁻¹ = σ − h ↦ q − h = 1/q`, and a γγ vertex ↦ `q·(1/q) = 1`. Measured to
+   2.2e-40 on 80 words at n = 3..6. **Counit twin of
+   `GammaGammaWordSelection.altChar_eq_one`** (sorry-free, alternating char).
+
+**Hence** in `tr_M = Σ_λ y_λ χ_λ` every term is ≥ 0 and the trivial term is
+exactly `y_(n)`:
+
+    tr_M(w)  ≥  y_(n)  =  [n+1]_q / [2]_q^n
+
+for EVERY PSD-feasible γγ word on n strands — no enumeration, word-independent.
+
+**What it excludes.** Target `|tr_M| = 0.185059`. Floor: **0.7527 / 0.5054 /
+0.3193 / 0.1943** at n = 2/3/4/5 (all exclude), **0.1153** at n = 6 (does not).
+So **no γγ + confinement-SDP word on five strands or fewer can reproduce
+Q_β** — scope-(b), invariant named above.
+
+The floor decays like `(q/[2]_q)^n ≈ 0.552^n` against a fixed target, so the
+crossing is **one-sided**: the exclusion is a prefix of the strand counts,
+never scattered. And it is **loose** where checkable (measured min at n = 4 is
+1.0329, 3.2× the floor), which makes the exclusion conservative.
+
+**NOTHING claimed at n ≥ 6**, recorded as a machine assertion rather than a
+prose caveat: the floor dropping below the target means the ARGUMENT stops, not
+that a feasible word reaches it.
+
+Cross-checked: the Frobenius pairing agrees with the independent Ocneanu
+recursion to 5.0e-36 over 28 words at n = 3, 4, 5.
+
+**Lean status: NOT formalised.** Ingredient 3 has a sorry-free alternating
+twin; `WedderburnBlocks.PSDFeasible` already carries ingredient 2's hypothesis
+shape. The composite bound is the open formalisation.
+
+
+## Part 10 (PR #7304) — 🛑 tr_M ≥ 1 at EVERY n, which SUPERSEDES part 9's floor
+
+`computations/qbeta/qbeta_gamma_gamma_trace_ge_one_probe.py` (8/8) + Lean
+`PsdDetOneTrace.card_le_trace_of_det_one`, `GammaGammaTraceFloor.pairing_ge_one_of_psdFeasible`
+(both sorry-free).
+
+**Part 9's floor was mine and it was weak.** It kept the trivial block's term of
+the Frobenius pairing and discarded the rest as *merely* non-negative. They are
+not merely non-negative — each is bounded below by its own block dimension —
+and keeping them gives a bound that is stronger AND n-independent.
+
+**Four ingredients, all measured:**
+
+1. **Every γγ vertex has determinant 1 in every block.** `σᵢ` and `σᵢ₊₁` are
+   conjugate in the braid group ⟹ same block determinant ⟹
+   `det(σᵢσᵢ₊₁⁻¹) = 1`. Measured 7.2e-40 over 78 (block, vertex) cases at
+   n = 3..6; the conjugacy fact itself to 4.9e-40. Multiplicative, so every
+   WORD inherits it — 2.1e-39 over 590 (word, block) pairs.
+2. **PSD + det 1 ⟹ trace ≥ dim** (AM-GM). Now **general-dimension Lean**
+   (`card_le_trace_of_det_one`); #7295 had only the 2×2 case, and blocks reach
+   dim 16 at n = 6.
+3. **Convention-D weights are non-negative.**
+4. **`Σ y_λ dim_λ = 1`** — the Markov normalisation, 4.6e-41 at n = 3..8. This
+   is what makes the bound the value **1**.
+
+⟹ **`tr_M(w) ≥ 1` for every PSD-feasible γγ word, at every n.** **TIGHT** —
+the empty word is the identity in every block, measured exactly 1.0.
+
+**Consequence.** Target `|tr_M| = 0.185059` is below 1 by a factor **5.4037**,
+so the γγ + confinement-SDP route **cannot reach Q_β at ANY strand count**. The
+smallest Q_β the family can predict is exactly `E₀ = 4.2274834 MeV` =
+**+440.369 %**; the five measured n=4 words land +458 %..+620 %, above that
+minimum as they must.
+
+**Part 9 is superseded in strength, not retracted** — its numbers stand, its
+scope ("excluded n ≤ 5, open n ≥ 6") was short. Its floor is below 1 at every
+n ≥ 2. Kept in the corpus because stopping at the first block is an easy
+mistake, and its decay lemma is why the weaker exclusion was one-sided.
+
+**Scope (b), ALL n**, for this functional (`ε` = Markov trace at `z_D`) and this
+`E₀` only. Says nothing about another route, a different `E₀`, or a **tower
+correction** — and the tower correction is LIVE, since `E₀` is canonical by
+ruling with an OPEN series (`qou-y3bm`).
+
+
+## 🛑 Part 11 (PR #7304) — RETRACTION of parts 9 and 10's Q_β reading
+
+`computations/qbeta/qbeta_qbeta_scores_a_difference_probe.py` (6/6).
+
+**Both over-claims were mine, and the calibration step caught them.**
+
+**What I asserted** (parts 9 and 10): the floor `[n+1]_q/[2]_q^n` and then
+`tr_M ≥ 1` mean "no γγ + confinement-SDP word can reproduce Q_β" — for n ≤ 5,
+then at every n, with minimum prediction `E₀` = +440.369 %.
+
+**What is true.** `Q_β = |ε(Δ)|·E₀` where **Δ = NEUTRON element − PROTON
+element**. Source says so verbatim: `delta_of` — *"Delta = neutron - proton,
+coordinatewise in the NF basis"*. The Markov trace is **linear**, so
+`tr(Δ) = tr(n-word) − tr(p-word)`, and two quantities each ≥ 1 have a difference
+bounded by **nothing**. Neither exclusion follows. Both withdrawn.
+
+**How caught.** Reconstructing `nuc11_interleaved` letter by letter gave
+tr(p) = 0.6293284022029219, tr(n) = 0.4751335171556822 — **neither** matching
+the recorded `tr_conv_D = -0.1541948850472397056592555`. Their **difference**
+matches to 1.4e-26, every recorded digit.
+
+**What the difference functional gives**, all 15 pairs reported (picking the
+closest would be selection against the target): **−100 % to +79.4 %**. They
+**STRADDLE** the target rather than sitting above it — the opposite of the
+retracted claim. Best +5.15 % against expected-by-chance **7.73 %** on an
+11-value grid: same order, not evidence.
+
+**Survives untouched** (measured, not inferred): `tr_M ≥ 1` per **individual**
+PSD-feasible γγ word, tight; the det-1 fact; AM-GM; weight non-negativity; the
+Markov normalisation; the floor and its decay; **every Lean theorem** (they are
+about pairings and PSD matrices, none mentions Q_β); the crossing-energy results.
+
+**One NEW finding survives:** the scored element's proton and neutron words are
+**both PSD-infeasible** — `(2,1)` and `(1,1,1)` fail for each — with `det ≠ 1`
+in every block. So the **SDP half** of the ruling excludes the scored element
+directly at the element level, independently of the altChar exclusion.
+
+**Fixed in the same commit**, so nothing false is left standing: both probes'
+title lines, descriptions, scope paragraphs and assertion names (one was
+*named* `Q_beta_is_excluded_at_every_strand_count`); a scoping note on the
+prediction probe (it scores single words, also not the scoring path); and a
+docstring note on `GammaGammaTraceFloor.lean`.
+
+**Now OPEN:** whether any **pair** of PSD-feasible γγ words reproduces Q_β.
+
+
+## Part 12 (PR #7304) — under the ruling the p/n asymmetry has ONE home, and the corpus keeps it where the ruling forbids
+
+`computations/qbeta/qbeta_pn_asymmetry_has_one_home_under_the_ruling_probe.py` (6/6).
+
+Part 11 established Q_β is scored on `Δ = n-word − p-word`, so the ruling must
+select **two** words and something must separate them. This asks *what*.
+
+**The corpus's answer today.** `nuc11_interleaved` = `core(6 γγ letters) ·
+quark(3) · gluon(2)`, and **the core and gluon pair are IDENTICAL between
+proton and neutron**. Three letters of eleven carry the whole asymmetry:
+`(σ₀)(σ₀−h/2)(σ₁−h/2)` vs `(σ₀−h/2)(σ₀−h/2)(σ₁−h)`.
+
+**Why that is exactly what the ruling fixes.** altChar is multiplicative and
+pinned at **1** on every γγ word (`altChar_eq_one`, sorry-free). Measured: core
+= **1.0 exactly**; quark blocks = **−0.9108** (p) and **−1.1221** (n), both
+negative ⟹ neither is γγ-expressible — and they are precisely where the
+nucleons diverge, by **23.2 %** in that invariant. Under the ruling both words
+would be 1 and the invariant could not separate them at all.
+
+Not a defect in corpus or ruling — it is **the tension between them, localised
+to three letters**.
+
+**What is left.** A γγ word's only freedom is which vertices and how many, and
+the trace is blind to their **order**. So under the ruling the p/n asymmetry
+has exactly one home: **the vertex multiset**. (Argument, not measurement;
+asserted so it is machine-recorded; holds at every n.)
+
+**Upgrades part 11:** at n = 4 the PSD-feasible set is 6 words, so exactly
+**15** unordered (n, p) assignments — the 15-pair table is **EXHAUSTIVE** at
+that strand count, not a sample. Its −100 %..+79.4 % span is therefore a
+statement about the ruling, not about a selection.
+
+**Cross-checked by two routes** — per-letter altChar product vs the `(1,1,1)`
+Hoefsmit block trace, agreeing to **4.6e-39**. This is the check whose absence
+caused part 11's retraction: without it the letter encoding is an unchecked
+convention, which is what it was when I read `tr_conv_D` as one word's trace.
+
+Scope-(a) + one structural observation. No pair is selected; doing so by
+residual would be selection against the target.
+
+
+## Part 13 (PR #7304) — BAR PARITY forces a unique Q_β from the un-ruled letter, and the census assignment FAILS it
+
+`computations/qbeta/qbeta_bar_parity_forces_a_unique_quark_letter_probe.py` (6/6).
+
+Working this bean's own open problem: the parity bound proves 5 of 11 letters
+lie outside the ruling; of those, the two bar-fixed (`−h/2`) and the gluon pair
+are **shared** between the nucleons, so **one** quark letter carries the whole
+p/n asymmetry. What selects it?
+
+**The hypothesis is the corpus's, not mine.** AGENTS.md line 2182: Q_β is *"the
+bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π"*. That is
+attached to the **published closed form** — the `z = 1` cell the 2026-09-08
+ruling retired as a base — so whether it survives to `z_D` is precisely the
+open question. Impose it and see.
+
+**The freedom.** Odd letter in any of 3 quark slots, either member of the
+bar-pair (`σ` shift 0, `σ⁻¹` shift `−h`). Slots 0 and 1 are both generator 0
+and give **exactly** the same trace ⟹ only **4 distinct elements**, and 26 of
+the 30 ordered (p,n) pairs have nonzero Δ.
+
+**The result.** Requiring `tr^{z_D}(Δ)(1/q) = −tr^{z_D}(Δ)(q)` leaves **8 of
+26**, and **the census assignment is NOT among them**. Every survivor gives both
+nucleons the **same** member of the bar-pair, differing only in generator; the
+census gives them **opposite** members — exactly what destroys the parity.
+
+**And the 8 need no choosing between.** Symbolically
+`Δ(σ,σ) = −Δ(σ⁻¹,σ⁻¹)` **exactly**, so all eight share one magnitude:
+
+    |tr(Δ)| = (q⁶−1)(q⁴+1)(q¹²−4q¹⁰+6q⁸−7q⁶+6q⁴−4q²+1) / (4q⁹(q²+1)²)
+
+forcing **Q_β = 0.353415698 MeV, −54.825 %**.
+
+🛑 **No selection was made** — the constraint is a parity in `q`, never
+proximity to the measured value; it narrows 26 → 8; the 8 collapse. Nothing
+left to pick. And the forced answer is **worse** than the census's −16.678 %,
+which is the ranking AGENTS.md mandates: report what the specification gives
+even when worse; rank by derivational cleanliness, never by residual.
+
+🛑 **It does not close Q_β.** All four distinct elements **FAIL PSD**, so the
+SDP half rejects this entire one-letter family — census and bar-odd alike.
+Narrows the problem; does not solve it.
+
+**Calibrated first** (the check whose absence caused part 11's retraction): the
+(slot, kind) coordinates reproduce `tr_conv_D = -0.1541948850472397056592555`
+to 1.4e-26.
+
+Scope-(a). **Unconditional:** the census assignment is not bar-odd; the bar-odd
+family collapses to one magnitude; no member is PSD-feasible. **Conditional:**
+that bar-oddness transfers from the retired `z = 1` cell to `z_D`.
+
+**BEAN STAYS todo (§13a)** — the subject is an open derivation.
+
+
+## LANDED 2026-09-13 — PR #7304 (`49e015595d4`), and the bean stays OPEN
+
+Seven probes (46 checks), two sorry-free Lean files. The bean's own open
+problem — what selects the un-ruled letters — was **worked, not deferred**.
+
+### The result: bar parity FORCES one number
+
+The parity bound proves no 11-crossing word is γγ-produced, so 5 of 11
+letters lie outside the ruling. The two bar-fixed (`-h/2`) letters and the
+gluon pair are shared between the nucleons, so **one** quark letter carries
+the whole p/n asymmetry. Imposing the corpus's own bar-odd property on
+`tr^{z_D}(Delta)`:
+
+* 26 nonzero-`Delta` ordered pairs -> **8 survivors**; the census assignment
+  is **not** among them.
+* The 8 collapse to ONE magnitude by the exact identity
+  `Delta(sigma,sigma) = -Delta(sigma^-1,sigma^-1)`, forcing
+  **Q_beta = 0.353415698 MeV, -54.825 %**.
+
+No selection was made — the constraint is a parity in `q`, never proximity
+to the measured value — and the forced answer is WORSE than the census's
+-16.678 %. That is the AGENTS.md ranking: derived beats selected.
+
+### The retraction, mine
+
+Parts 3 and 4 inferred from `tr_M >= 1` that the γγ route cannot reproduce
+Q_beta. **Wrong.** `Delta` is the neutron element MINUS the proton element,
+the trace is linear, and a lower bound on each word bounds no difference.
+Caught by calibration: `tr(p)` and `tr(n)` each failed to match the recorded
+cell while their difference matched to 1.4e-26. The Lean stands untouched;
+only prose was scoped, and a note in `GammaGammaTraceFloor.lean` stops a
+reader re-deriving it.
+
+### The SCOPE defect, also mine, fixed before merge (`04edd8b5d75`)
+
+I wrote "all four elements fail PSD, so the SDP half of the ruling rejects
+this family". That is **whole-element PSD = reading (B)**. This bean records
+the selected scope as **(A) core only**, under which reading 3 prunes
+nothing among the 5 free letters and the census element stands. So the PSD
+result is a MEASUREMENT under (B), not a rejection by the ruling — and under
+(A) it excludes nothing. Assertion renamed
+`no_configuration_is_whole_element_PSD_feasible_reading_B_only`.
+
+### STILL OPEN — do not close this bean
+
+1. **Which reading of the SDP scope the ruling means.** (A) and (B) give
+   opposite verdicts on this family. Owner call, not an agent one.
+2. **Whether the bar-odd hypothesis survives the move to `z_D`.** It is
+   attached to the retired `z = 1` closed form. Imposing it costs -54.825 %;
+   that is reported, not avoided.
+
+
+## 🟧 OWNER RULING 2026-09-13 — SDP scope is **(B) whole element**
+
+The fork this bean carried as *"(A) core only, SELECTED-with-ambiguity"* was put
+to the owner with both options framed. **The owner answered "B".**
+
+**What (B) means.** The confinement SDP of `qou-ales` constrains **every
+Wedderburn projection of the full 11-letter word**, not only the 6 gamma-gamma
+core letters. Reading (A) — the core-only reading, under which reading 3 prunes
+nothing among the 5 letters the parity bound leaves free and "the census element
+stands" — is NOT the ruling.
+
+### Consequence 1 — the one-letter quark family is rejected outright
+
+All **6** (slot, kind) configurations fail `Matrix.PosSemidef` on at least one
+Wedderburn block. Under (B) that is a rejection by the ruling, not a
+measurement. It takes out BOTH arms at once:
+
+* the **8 bar-odd survivors** and their forced `Q_beta = 0.353415698 MeV`
+  (-54.825 %), and
+* the **census assignment**.
+
+So the bar-parity derivation forces an element the SDP half then excludes. Both
+halves stand — the parity narrowing is real and forced, and the element it
+forces is inadmissible. That is a stronger negative than "does not close".
+
+### Consequence 2 — the DASHBOARD'S SCORED ELEMENT is excluded
+
+`nuc11_interleaved` — the element `per-observable-100x-status.witness.json`
+currently scores for the **Q_beta, m_n and Delta_pn** rows — fails
+`Matrix.PosSemidef` on `(2,1)` and `(1,1,1)` for **both** nucleons. Block
+determinants, proton: `(3,) 1.38249446339`, `(2,1) -1.02197249381`,
+`(1,1,1) -0.739223570776`; neutron: `1.1221068216`, `-1.02197249381`,
+`-0.910762214553`. The `(1,1,1)` entries are the alternating character and are
+the already-recorded sign exclusion; the `(2,1)` failure is additional.
+
+So under the ruled scope the L2 dashboard scores an element the selection rule
+that is supposed to produce it rejects.
+
+### What was NOT done, deliberately
+
+**The dashboard is not re-scored.** Choosing what replaces the element is a
+separate decision with its own blast radius (three L2 rows and every figure
+quoted from them), and it is not an agent's to take. See "still open" below.
+
+### Recorded in
+
+`qbeta_bar_parity_forces_a_unique_quark_letter_probe.py` and
+`qbeta_qbeta_scores_a_difference_probe.py` — docstrings, witness descriptions,
+`scope` blocks and the two assertion names inverted; both re-run 6/6, both
+witnesses verified to carry the ruling and to no longer carry the superseded
+"(A) core only / NOT a rejection" text.
+
+The scoping of these two probes has now moved **twice**, and both moves were
+mine: asserted unscoped, demoted to "measurement under unselected (B)", and now
+reinstated by ruling. The verdict matches the first draft; it is reinstated by
+the owner's answer, not by the argument that first produced it.
+
+## STILL OPEN after this ruling — the bean stays `todo`
+
+1. **What replaces `nuc11_interleaved`** on the three L2 dashboard rows. The
+   ruled scope excludes it and nothing derived replaces it yet. Re-scoring is
+   an owner decision (cf. `qou-iagg`, which records the authorisation pattern).
+2. **A principle for the 5 un-ruled letters that is BOTH bar-consistent AND
+   whole-element PSD-admissible.** The one-letter family supplies neither
+   jointly — that is now the sharp form of the open problem.
+3. **Whether the bar-odd hypothesis survives the move to `z_D`** at all. It is
+   attached to the retired `z = 1` closed form; imposing it costs -54.825 %.
+
+
+## 2026-09-13 — item 2 is REFRAMED, not answered: the obstruction is the LENGTH
+
+Working item 2 ("a principle for the 5 un-ruled letters that is both
+bar-consistent and whole-element PSD-admissible"), formalize-first found an
+invariant that prunes the search instead of narrowing it.
+
+**The theorem** (`QOU.Mass.AltCharShiftMultiset`, sorry-free, lean-direct exit 0,
+`#print axioms` clean on all six new declarations):
+
+* `letterChar_neg` — EVERY letter of the corpus alphabet has strictly negative
+  alternating character: `sigma -> -1/q = -0.9009`, bar-fixed
+  `-> -(q^2+1)/(2q) = -1.0054`, `sigma^-1 -> -q = -1.1100`.
+* `wordChar_sign` — therefore `sign(wordChar w) = (-1)^len(w)` for ANY letters,
+  ANY order, ANY generator labelling.
+* `no_eleven_letter_word_is_alt_psd` — the alternating block is
+  ONE-DIMENSIONAL, so under scope (B) PSD there is exactly `0 <= character`.
+  Eleven is odd. So **every** 11-letter word over this alphabet is excluded.
+
+**Why this reframes item 2.** The obstruction does not depend on which letters
+carry the p/n asymmetry, so no choice among the 5 un-ruled letters can repair
+it. Item 2 as posed has no answer AT LENGTH 11. The question to ask instead is
+about the crossing budget.
+
+**What the corpus already had, and why this is not a re-derivation.**
+`protonWord_char_neg` / `neutronWord_char_neg` were already proved — each for
+ONE word, by computing that word's closed form. The mechanism (per-letter
+negativity, hence parity) was not, and it is the part that generalises. Found
+by corpus-grep before writing; without it I would have re-derived the two-word
+case and called it new.
+
+**Two independent parity obstructions, same direction.** Gamma-gamma words have
+even length (`gammaGamma_length_even`), which is why the CONSTRUCTION half of
+the ruling reaches only 6 of the 11 letters. The SDP half under (B) ALSO
+demands even length, by a completely different argument. Neither uses the other.
+
+**Confirmation** (`qbeta_altchar_sign_is_length_parity_probe.py`, 6/6):
+exhaustive over all **1092** words at lengths 1..6 with ZERO exceptions, and the
+INDEPENDENT engine route (Hoefsmit `(1,1,1)` matrices, never the scalar model)
+agrees to **2.28e-39**. Per-letter products also reproduce every block value
+recorded in #7304 to 15 digits.
+
+**Honest limit, from the Lean docstring rather than discovered later:**
+per-letter negativity fails for a letter with shift `d >= 1/(q^2-1) ~ 4.3094`.
+Every corpus letter has `d` in {0, -1/2, -1}; the closest is `d = 0`, short by
+4.3094. So this excludes words over the CORPUS ALPHABET, not over every
+conceivable alphabet. A letter with a large positive shift is the only escape
+this argument leaves open, and nothing in the corpus supplies one.
+
+**What is NOT claimed:** that no nucleon word exists. Only that no ODD-length
+word over this alphabet is admissible in the alternating block under scope (B).
+
+### The open items, restated after this
+
+1. **What replaces `nuc11_interleaved`** on the three L2 rows. Owner decision,
+   unchanged, and now sharper: the replacement cannot be another 11-letter word
+   over this alphabet.
+2. ~~A principle for the 5 un-ruled letters~~ **superseded** — no such principle
+   exists at length 11. The live question is whether the **11-crossing budget**
+   is correct, given that scope (B) and the gamma-gamma construction BOTH
+   require even length. That is a question about the corpus's crossing
+   accounting, not about letter selection.
+3. **Whether the bar-odd hypothesis survives the move to `z_D`** — unchanged.

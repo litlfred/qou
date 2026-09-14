@@ -1,0 +1,45 @@
+{
+ "probe": "ptolemy_duality_is_sigma_on_characters",
+ "manifold": "L6a4",
+ "obstruction_class": 1,
+ "max_word_length": 4,
+ "reduced_words": 936,
+ "invariant": "I(w) = chi(w)^3/det(w); test sigma(I(w)) == I(w^-1)",
+ "rows": {
+  "id": {
+   "failing_words": 582,
+   "verdict": "REFUTED (582 witnesses)",
+   "shortest_witness": "ac"
+  },
+  "tau": {
+   "failing_words": 774,
+   "verdict": "REFUTED (774 witnesses)",
+   "shortest_witness": "ab"
+  },
+  "sigma_a": {
+   "failing_words": 790,
+   "verdict": "REFUTED (790 witnesses)",
+   "shortest_witness": "ab"
+  },
+  "sigma_b": {
+   "failing_words": 0,
+   "verdict": "HOLDS on every word tested",
+   "shortest_witness": null
+  }
+ },
+ "G3_id_fails_reproducing_complex_type": true,
+ "passing": [
+  "sigma_b"
+ ],
+ "prediction_held": true,
+ "verdict": "sigma_b is the ONLY automorphism for which the necessary character identity holds; id, tau and sigma_a are each REFUTED by an explicit word. Corroborates rho^{-T} ~ sigma_b(rho) on every word tested; does NOT prove isomorphism.",
+ "stage2_intertwiner_scalar": {
+  "defined_on": 936,
+  "of_words": 936,
+  "chi_inv_zero": 0,
+  "values_in_mu3": 936,
+  "multiplicativity_checked": 2580,
+  "multiplicativity_failures": 0,
+  "distinct_values": 1
+ }
+}

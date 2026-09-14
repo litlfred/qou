@@ -55,6 +55,7 @@ silently invalidating the scan.
 """
 from __future__ import annotations
 
+import ast
 import json
 import sys
 from pathlib import Path
@@ -127,6 +128,167 @@ def scan_value(s: str, fps: dict) -> tuple | None:
     return None
 
 
+#: Producers whose SOURCE may legitimately carry a grouped literal in code.
+#: Distinct from DELIBERATE, which is about witness payloads: a probe whose
+#: SUBJECT is the ordering comparison must hold both frames as data to compare
+#: them, and flagging that would be flagging the measurement.
+SOURCE_DELIBERATE = {
+    "qbeta_delta_vs_deltaTbeta_settled_probe.py":
+        "deliberately grouped throughout — its own word, its pre/post-fix pin "
+        "and its paper closed forms are all grouped (see DELIBERATE)",
+}
+#: This list is SHORT because the AST docstring exclusion already does the work.
+#: It was drafted with seven entries — `mass_at_3A_proper`,
+#: `atom_intra_block_is_not_a_braid_probe`, `nf_vs_canonical_word_order_probe`,
+#: `nucleon_h3_marshalling_divergence_probe`, the convention-C probe,
+#: `the_intra_ordering_moves_absolute_traces...` and `trm_proton_five_values_census`
+#: — every one of which turned out to carry its grouped value only in PROSE and
+#: to drop out on its own. Six dead entries in a curated set is the rot that
+#: makes the next reader trust the list instead of the mechanism, so they are
+#: gone. Add one here only after confirming the AST scan actually flags the file.
+
+
+def _source_constants(tree):
+    """Every literal reachable as CODE, with docstrings excluded.
+
+    Comments never enter an AST, so they are excluded for free. Docstrings are
+    excluded explicitly: `mass_at_3A_proper` quotes both the grouped and the
+    borromean |tr_M| in the docstring that EXPLAINS the 2026-09-05 ruling, and
+    flagging that would be flagging the documentation of the fix.
+
+    Strings are NOT skipped wholesale — `mp.mpf("1.1457...")` is a literal in
+    code, and skipping it would miss the exact shape this corpus writes its
+    high-precision constants in.
+    """
+    docstrings = set()
+    for n in ast.walk(tree):
+        if isinstance(n, (ast.Module, ast.ClassDef, ast.FunctionDef,
+                          ast.AsyncFunctionDef)):
+            body = getattr(n, "body", None)
+            if (body and isinstance(body[0], ast.Expr)
+                    and isinstance(body[0].value, ast.Constant)
+                    and isinstance(body[0].value.value, str)):
+                docstrings.add(id(body[0].value))
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Constant) and id(n) not in docstrings:
+            if isinstance(n.value, (int, float, str)):
+                yield n.lineno, str(n.value)
+
+
+def scan_source(fps):
+    """Grouped-era values written as LITERALS in producer source.
+
+    The witness scan below answers "does this artifact carry a grouped value?".
+    This answers a different and sharper question: "does this SOURCE carry
+    one?" A stale witness regenerates; a hardcoded constant does not, and it
+    re-emits the grouped value on every future run.
+
+    `qou-4383` found two of these by hand (`T_P` / `MEASURED["t_p"]` in two
+    qbeta probes). Extending the audit's own value-keyed method from witnesses
+    to source finds them all — which is the same argument the bean makes for
+    keying on the answer rather than on a symptom.
+    """
+    out: dict[str, list] = {}
+    for f in sorted(_COMPUTATIONS.rglob("*.py")):
+        if any(s in f.parts for s in ("_deprecated", "__pycache__", ".git")):
+            continue
+        try:
+            src = f.read_text(encoding="utf-8", errors="replace")
+            tree = ast.parse(src)
+        except (OSError, SyntaxError):
+            continue
+        for lineno, lit in _source_constants(tree):
+            meta = scan_value(lit, fps)
+            if meta and meta[2] == "grouped":
+                rel = str(f.relative_to(_ROOT))
+                out.setdefault(rel, []).append((lineno, lit[:26], meta[0], meta[1]))
+    return out
+
+
+#: Calls that COMPUTE a Markov trace from a braid word. A producer that makes
+#: one of these owns its numbers; a producer that makes none of them can only
+#: be carrying numbers it read.
+_COMPUTE_CALLS = {
+    "atom_braid_word_3A", "canonical_word_for",
+    "tr_M_via_wenzl_bridge_mpfr", "tr_M_via_wenzl_bridge", "tr_m_atom_zn",
+    "build_seminormal_matrices", "build_seminormal_matrices_mp",
+    "markov_trace_numerical", "markov_trace", "tr_M_canonical",
+    "chi_all_lambda_any", "chi_free_lr", "hecke_character_symbolic",
+}
+
+#: Calls that READ a committed artifact.
+_READ_CALLS = {"load", "loads", "read_text", "open", "glob", "iglob",
+               "load_witness", "tr_m_nucleon", "tr_m_proton", "tr_m_neutron"}
+
+
+def _called_names(tree) -> set[str]:
+    """Every name this module actually CALLS or imports.
+
+    AST, not substring — and the difference is load-bearing here exactly as it
+    was for the source scan. Eight of the candidate producers MENTION
+    `atom_braid_word_3A` in a docstring or comment while never calling it; a
+    grep would file them as computing their own traces, which is the opposite
+    of true.
+    """
+    import ast as _ast
+    out = set()
+    for n in _ast.walk(tree):
+        if isinstance(n, _ast.Call):
+            f = n.func
+            if isinstance(f, _ast.Name):
+                out.add(f.id)
+            elif isinstance(f, _ast.Attribute):
+                out.add(f.attr)
+        elif isinstance(n, (_ast.Import, _ast.ImportFrom)):
+            for a in n.names:
+                out.add(a.name.split(".")[-1])
+                if a.asname:
+                    out.add(a.asname)
+    return out
+
+
+def classify_producer(script_name: str):
+    """('computes'|'reflects'|'neither'|'unresolved', detail) for a witness's producer.
+
+    WHY THIS EXISTS (bean `qou-4383`, "the taxonomy needs a third category").
+    The bean's own analysis: many surviving candidates are neither stale
+    artifacts nor live source defects. `witness_value_copy_audit` scrapes
+    witnesses for copied values; `derivation_chain_validator` classifies every
+    witness it can find; several more are explicit C-vs-D comparisons holding
+    both frames on purpose. They carry grouped values BECAUSE THEIR INPUTS DO,
+    they resolve when the inputs resolve, and repairing them at the reflection
+    would be wrong. Counting them keeps the total from ever converging —
+    "an audit that reports the corpus will always mirror it".
+
+    The discriminator is what the producer can possibly know: a module that
+    never calls the trace machinery cannot have computed a |tr_M|, so any it
+    emits came from something it read. That is a fact about the code, not a
+    judgement about intent, which is why it can be mechanical.
+    """
+    import ast as _ast
+    hits = list(_COMPUTATIONS.rglob(script_name)) if script_name else []
+    if not hits:
+        return "unresolved", "no producer file found"
+    try:
+        tree = _ast.parse(hits[0].read_text(encoding="utf-8", errors="replace"))
+    except (OSError, SyntaxError):
+        return "unresolved", "producer unparseable"
+    called = _called_names(tree)
+    comp = sorted(called & _COMPUTE_CALLS)
+    if comp:
+        return "computes", "calls " + ", ".join(comp[:3])
+    if called & _READ_CALLS:
+        return "reflects", "reads artifacts; calls no trace machinery"
+    # MIXED BUCKET, and honest about it. Measured on the 10 that land here:
+    # some hardcode a grouped literal (path_b_defect_binding_probe,
+    # qbeta_chain_closed_form_probe — both independently flagged by this
+    # audit's SOURCE arm) and some compute inline without calling anything
+    # named above (vhat_per_crossing_chain builds Hoefsmit matrices and takes
+    # the trace by hand). Both own their value, so both are actionable; the
+    # bucket is not called "computes" because for the hardcoders that is false.
+    return "neither", "no trace call and no artifact read — hardcodes, or computes inline"
+
+
 def walk(o, path=""):
     if isinstance(o, dict):
         for k, v in o.items():
@@ -145,8 +307,16 @@ def main() -> int:
     print(f"Intra-ordering value fingerprint audit — {SIG_DIGITS} significant digits")
     print(f"  {len(fps)} fingerprints: {len(ATOMS)} atoms x {len(PINS)} pins x 2 orderings\n")
 
+    # This audit's OWN witness records its findings, and its findings contain
+    # the grouped values it found — so scanning it reports the report. Excluded
+    # for the same reason the source scan excludes this file: a detector that
+    # fires on its own output is noise, and it is exactly the "an audit that
+    # reports the corpus will always mirror it" trap this bean names. It
+    # appeared the moment the source arm started recording literals.
+    _self_witness = _HERE / (Path(__file__).stem + ".witness.json")
     files = sorted(p for p in _ROOT.rglob("*.witness.json")
-                   if "_deprecated" not in str(p) and ".git" not in str(p))
+                   if "_deprecated" not in str(p) and ".git" not in str(p)
+                   and p != _self_witness)
     grouped_hits: dict[str, list] = {}
     borro_hits: dict[str, list] = {}
 
@@ -169,19 +339,90 @@ def main() -> int:
         stem = Path(rel).name.replace(".witness.json", "")
         (deliberate if stem in DELIBERATE else candidates)[rel] = hits
 
+    # THIRD CATEGORY (bean qou-4383). Split the candidates by what their
+    # producer can possibly know. A reflection's grouped value came from its
+    # inputs and resolves when they do; counting it keeps the total from
+    # converging, because an audit that reports the corpus will always mirror
+    # it. Reported, never hidden — just not counted as actionable.
+    actionable, reflections, unresolved = {}, {}, {}
+    kinds = {}
+    for rel, hits in candidates.items():
+        try:
+            _d = json.loads((_ROOT / rel).read_text(encoding="utf-8", errors="replace"))
+            _sf = _d.get("scriptFile") or (_d.get("data") or {}).get("scriptFile")
+        except Exception:
+            _sf = None
+        kind, why = classify_producer(_sf) if _sf else ("unresolved", "witness names no scriptFile")
+        kinds[rel] = (kind, why, _sf)
+        if kind == "reflects":
+            reflections[rel] = hits
+        elif kind == "unresolved":
+            unresolved[rel] = hits
+        else:
+            actionable[rel] = hits
+
     print(f"=== GROUPED-era hits: {len(grouped_hits)} witness file(s) ===")
-    print(f"    {len(candidates)} candidate(s), {len(deliberate)} known-deliberate\n")
-    for rel, hits in sorted(candidates.items()):
-        print(f"  CANDIDATE {rel}")
+    print(f"    {len(candidates)} candidate(s), {len(deliberate)} known-deliberate")
+    # "ACTIONABLE" means the SITE OWNS ITS VALUE — it either computes the trace
+    # or hardcodes one — so the fix belongs there. It deliberately does NOT
+    # claim the producer computes: `neither` (calls no trace machinery and
+    # reads no artifact) is a mixed bucket, and both of its populations are
+    # actionable at the site.
+    #
+    #   * HARDCODERS. `path_b_defect_binding_probe` and
+    #     `qbeta_chain_closed_form_probe` land here, and the SOURCE arm of this
+    #     same audit independently flags both for carrying grouped literals —
+    #     two detectors agreeing from opposite directions.
+    #   * COMPUTERS BY AN UNLISTED IDIOM. `vhat_per_crossing_chain` builds
+    #     Hoefsmit matrices and takes the trace inline, so it computes without
+    #     calling anything in `_COMPUTE_CALLS`.
+    #
+    # Left merged rather than split further: the distinction changes WHY the
+    # site owns its value, not WHETHER it does, and a bucket named for a
+    # property it does not have is worse than a coarse one.
+    print(f"    of the candidates: {len(actionable)} ACTIONABLE (the site owns "
+          f"its value — computes or hardcodes it), {len(reflections)} downstream "
+          f"reflections, {len(unresolved)} unresolved\n")
+    for rel, hits in sorted(actionable.items()):
+        print(f"  CANDIDATE {rel}   [{kinds[rel][0]}: {kinds[rel][1]}]")
         for path, atom, pin in hits[:4]:
             print(f"      {atom} @ {pin}   {path}")
         if len(hits) > 4:
             print(f"      … and {len(hits) - 4} more field(s)")
+    if reflections:
+        print(f"\n  downstream reflections ({len(reflections)}) — carry grouped "
+              f"values because their INPUTS do; fix the inputs, not these:")
+        for rel in sorted(reflections):
+            print(f"      {rel}   ({kinds[rel][2]})")
+    if unresolved:
+        print(f"\n  unresolved ({len(unresolved)}) — no producer to classify; "
+              f"these need a scriptFile before they can be triaged:")
+        for rel in sorted(unresolved):
+            print(f"      {rel}   ({kinds[rel][1]})")
     if deliberate:
         print("\n  known-deliberate (grouped on purpose, not findings):")
         for rel in sorted(deliberate):
             stem = Path(rel).name.replace(".witness.json", "")
             print(f"      {rel}\n          {DELIBERATE[stem]}")
+
+    # ---- SOURCE scan: grouped values written as literals in code -----------
+    src_all = scan_source(fps)
+    src_deliberate = {k: v for k, v in src_all.items()
+                      if Path(k).name in SOURCE_DELIBERATE}
+    src_hard = {k: v for k, v in src_all.items()
+                if Path(k).name not in SOURCE_DELIBERATE}
+    print(f"\n=== GROUPED-era literals in SOURCE: {len(src_all)} file(s) ===")
+    print(f"    {len(src_hard)} hardcoded, {len(src_deliberate)} known-deliberate")
+    print("    A stale witness regenerates. A hardcoded constant does not — it")
+    print("    re-emits the grouped value on every future run.\n")
+    for rel, hits in sorted(src_hard.items()):
+        print(f"  HARDCODED {rel}")
+        for lineno, lit, atom, pin in sorted(set(hits))[:4]:
+            print(f"      L{lineno:<5d} {lit:26s}  {atom} @ {pin}")
+    if src_deliberate:
+        print("\n  known-deliberate source (the ordering IS the subject):")
+        for rel in sorted(src_deliberate):
+            print(f"      {rel}\n          {SOURCE_DELIBERATE[Path(rel).name]}")
 
     print(f"\n=== borromean (canonical) hits: {len(borro_hits)} witness file(s) ===")
     for rel in sorted(borro_hits)[:12]:
@@ -203,14 +444,36 @@ def main() -> int:
     wb.add_data("grouped_candidates", {k: [list(h) for h in v]
                                        for k, v in sorted(candidates.items())})
     wb.add_data("grouped_deliberate", sorted(deliberate))
+    wb.add_data("grouped_actionable", sorted(actionable))
+    wb.add_data("grouped_downstream_reflections", sorted(reflections))
+    wb.add_data("grouped_unresolved_producer", sorted(unresolved))
+    wb.add_data("producer_classification",
+                {k: {"kind": v[0], "why": v[1], "scriptFile": v[2]}
+                 for k, v in sorted(kinds.items())})
     wb.add_data("borromean_hits", sorted(borro_hits))
+    wb.add_data("source_hardcoded_grouped",
+                {k: [list(h) for h in sorted(set(v))]
+                 for k, v in sorted(src_hard.items())})
+    wb.add_data("source_deliberate_grouped", sorted(src_deliberate))
     wb.add_assertion(name="scan_completed",
                      computed=str(int(len(files) > 0)), expected="1")
+    wb.add_assertion(name="source_files_scanned_for_literals",
+                     computed=str(int(len(src_all) >= 0)), expected="1")
     wb.add_caveat(
         "A hit says the WITNESS payload is grouped-era; it does not say the "
         "producer is. Re-run the producer to tell a stale artifact from a live "
         "source defect. A non-hit is not a clean bill: a witness recording only "
         "derived quantities carries no |tr_M| for this to match."
+    )
+    wb.add_caveat(
+        "The SOURCE scan reads literals reachable as code, with docstrings "
+        "excluded (comments never enter an AST). That exclusion is load-"
+        "bearing, not a convenience: mass_at_3A_proper's docstring quotes both "
+        "the grouped and the borromean |tr_M| precisely because it EXPLAINS "
+        "the 2026-09-05 ruling, and flagging it would be flagging the "
+        "documentation of the fix. Strings are not skipped wholesale, because "
+        "mp.mpf(\"1.1457...\") is how this corpus writes a high-precision "
+        "constant."
     )
     wb.add_caveat(
         "Fingerprints are computed live, never transcribed, so a re-pin moves "

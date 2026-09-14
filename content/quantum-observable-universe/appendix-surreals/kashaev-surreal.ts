@@ -14,13 +14,24 @@ export default conjecture({
     "standard-part",
     "open-problem",
     "reformulation",
+    "omega-grade",
+    "asymptotics",
   ],
   uses: [
     "rem:kashaev-volume-density",
     "conj:kashaev-volume-conjecture",
     "def:surreal-blowup-calculus",
     "def:ecalle-borel-resummation",
+    "prop:one-loop-prefactor-provenance",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/qbeta/kashaev_remainder_omega_grade_probe.py",
+    witness: [
+      "computations/qbeta/kashaev-remainder-omega-grade.witness.json",
+    ],
+    status: "verified",
+  },
   cites: [
     "kashaev1997",
     "murakami-murakami2001",
@@ -31,6 +42,32 @@ export default conjecture({
     "fantini-rella2024",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-09-13",
+      body:
+        "**The \u03c9-grade section's input is the corpus, not a citation.** " +
+        "The probe backing that section " +
+        "(`kashaev_remainder_omega_grade_probe.py`, merged as " +
+        "`f6f17fa092`) and its witness `description` both attribute the " +
+        "sub-leading asymptotic " +
+        "$\\langle 4_1\\rangle_N = (N^{3/2}/3^{1/4})e^{NV/2\\pi}(1+O(1/N))$ " +
+        "to *\"the cited Ohtsuki / Andersen\u2013Hansen expansion\"*, and " +
+        "state that it is not re-derived here. That framing is weaker than " +
+        "the truth and was written without checking: " +
+        "[`prop:one-loop-prefactor-provenance`](../mass-theory/one-loop-prefactor-provenance.md) " +
+        "**derives** both $3^{-1/4}$ and the power $3/2$ from the " +
+        "one-variable saddle at $\\theta^\\ast = 5\\pi/6$ " +
+        "(Lean `c_pow_four_eq_third`), and records that the $4_1$ " +
+        "calibration the $c_\\sigma$ arc once rested on is thereby retired. " +
+        "The `.md` section here is written against that proposition. Two " +
+        "things do NOT change: the $O(1/N^2)$ tail is **measured** (check 1 " +
+        "of the probe), not derived \u2014 the proposition states a leading " +
+        "asymptotic and leaves the step from its two machine-checked " +
+        "analytic inputs to the saddle hypotheses assumed; and the scope " +
+        "stays (a), an asymptotic statement about $4_1$ alone.",
+      see: "content/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md",
+    },
     {
       kind: "status",
       date: "2026-07-13",

@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1706.06494v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "3745319210df19bd640f2b2b31ba7fb48375a6d92f3af876bd2b62d40bdd4517",
+  "file": "1706.06494v2.pdf"
+ },
+ "provenance": {
+  "title": "Sampling General N-Body Interactions with Auxiliary Fields",
+  "authors": "Christopher K\u00f6rber,1,\u2217 Evan Berkowitz,1,\u2020 and Thomas Luu1,\u2021",
+  "arxiv": {
+   "id": "1706.06494",
+   "version": "2",
+   "primary_class": "nucl-th",
+   "stamp_date": "29 Jun 2017"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

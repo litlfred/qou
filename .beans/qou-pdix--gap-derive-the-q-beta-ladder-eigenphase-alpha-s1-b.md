@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T16:42:51Z
+updated_at: 2026-09-13T18:45:00Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1741,8 +1741,234 @@ A is the better structural fit but risks circularity.
 base-only at ~1.7e+8 ppb precisely because no ladder exists on an admissible base;
 on the retired `z = 1` base the ladder was worth 1312×.
 
+---
 
-## 2026-09-13 — the braid-image exclusion left the CONSTANT case open; closed by QUANTIZATION
+## 2026-09-13 — attack B measured: INERT at the substrate, inside a derivable z-window
+
+The route triage above recommends **attack B (Faddeev `Φ_b` / modular double)**
+as *"the textbook bridge for this exact modulus gap"*, on the judgement that the
+Lean assets make formalize-first cheap. Measured at the real substrate, the
+bridge does not bridge, and the corpus already half-held the reason **five days
+before the triage was written**.
+
+Probe: [`computations/qbeta/qbeta_phib_dual_validity_window_probe.py`](../computations/qbeta/qbeta_phib_dual_validity_window_probe.py),
+5/5, witness `qbeta-phib-dual-validity-window.witness.json`, proton pin, scope (a).
+
+### 1. The premise was already excluded on `main`, on 2026-09-07
+
+`qbeta_modular_double_reciprocity.py` (scope-**(b)**, landed **2026-09-07**)
+proves `log q · log q̃ = 4π²` identically in `y`. At the proton pin
+`t = ln q₀ = 0.10434072`, that *forces*
+
+    |log q̃| = 4π²/t = 378.3606        ⇒    q̃ = 4.787e-165
+
+Reproduced here independently from the b-map alone (rel `0.0`), so it is not a
+re-read of that producer's own output. The modular dual is not a bridge at a
+real substrate — it is 165 decades away. **The triage did not cite this**, and
+it predates the triage by five days.
+
+### 2. But "q̃ ≈ 1e-165, therefore drop the dual half" is FALSE as a global claim
+
+This is the part the corpus does **not** hold. `qbeta_fmap_modular_dual_missing_probe.py`
+states the conclusion — *"|q̃| ≈ 0 at the substrate ⇒ dual NEGLIGIBLE ⇒ Φ_b ≈ phi_q
+here"* — inferring it from the **size of `q̃` alone**. That probe evaluates no
+product, writes **no witness**, and contains **no occurrence of an argument
+variable at all** (`grep -c z` = 0 over its 115 lines).
+
+The inference is not valid as stated. The k-th dual factor is
+
+    1 + q̃^{k+1/2} · e^{2πz/b}
+
+and the **second factor grows in `z`**, at `2π Re(1/b) = 34.4769` per unit,
+because `|1/b| = 7.7600` at this substrate. Measured: at `z = 10.9743` the dual
+half departs from 1 by **1.4453e+82** — the 378-nat suppression is overcome.
+
+### 3. The window, in closed form, derived before measuring
+
+    z*(d) = [ (4π²/ln q₀)/2 − d·ln 10 ] / ( 2π Re(1/b) )
+
+giving `z* = 4.4186` at double precision and `2.1478` at 50 digits. It
+reproduces the measured departure at `d = 16, 30, 50` to `3.1e-13` decades —
+which **confirms the algebra rather than testing it**: successive `k` differ by
+`exp(−4π²/t) = 10^−164.32`, so the tail was known irrelevant in advance and the
+ratios are 1.0 for that reason. The check is named
+`k0_inversion_reproduces_the_full_product_as_derived` so it cannot be quoted as
+evidence *for* the window; the window's content is checks 4 and 5.
+
+### 4. The pdix consequence
+
+Inside the window, `Φ_b` and the corpus's compact half-product are the **same
+function** (departure `5.19e-67` at `z = 1.0739`). So any α-derivation that
+evaluates `Φ_b` at the real substrate with an O(1) argument **is using the
+compact object**, and the modular double is invisible to it. **Attack B buys
+nothing it did not already have there** — unless an α-route drives `|z|` past
+~2–4, and no route yet does, because no route yet exists.
+
+### What this does NOT show — read before quoting it
+
+- **It does not weaken attack B on the root-of-unity face, where B is correctly
+  aimed.** That same existing probe measures `|q̃| = 1` at `q = e^{4πi/5}`; the
+  dual is genuinely order-one there, the compact form genuinely fails, and that
+  is where the Q_β decay saddle sits. Nothing here touches it. Quote the finding
+  narrowly: **the modular double is inert AT THE REAL SUBSTRATE for O(1)
+  arguments.**
+- It is a **refinement** of the existing probe, not a refutation. That probe's
+  conclusion is correct in a window; it simply states no window.
+- Scope (a), `b₊` branch, corpus b-map and product convention. Asserts nothing
+  about α.
+
+### Correcting my own earlier claim in this session
+
+I said the triage *"names 3 Faddeev Lean files where there are 18"*. **Both
+numbers were wrong**, and my 18 was an undercount of exactly the kind I was
+flagging. Measured on this tree, `.lake` artifacts excluded — say which you
+mean, they are four different populations:
+
+| measure | count |
+|---|---|
+| files whose **name** carries `Faddeev`/`PhiB` | **38** |
+| files that **mention** `Faddeev`/`Phi_b`/`PhiB` | **110** |
+| files that **declare** such an identifier (`def`/`theorem`/`class`/…) | **37** |
+| **sorry-free** among the 110 | **73** |
+
+The triage names 3. Among the ones it omits is
+`QOU/QBeta/FaddeevModularDouble.lean` — sorry-free, and *itself attack B's
+structural core*.
+
+### Recommendation — judgement, not a finding
+
+**Re-rank A above B for the substrate face.** Attack A (Habiro / roots of unity)
+is now the only one of the four whose premise survives measurement where the
+anchors sit, and the triage already calls it *"the better structural fit"*,
+declining it only for circularity risk. Attack B should be **re-scoped**, not
+dropped: from *"the textbook bridge for this exact modulus gap"* to *"the right
+tool on the root-of-unity face, where the dual is order-one"* — which is where
+the decay saddle is anyway. The cost of the re-scope is a paragraph; the cost of
+not making it is a formalize-first tranche against a bridge that is 165 decades
+inert at the point it would be evaluated.
+
+**Default if nothing is done:** the triage stands as written, and the next agent
+reads "cheapest formalize-first step of the four" and spends a tranche on it.
+
+### Follow-on noticed, not actioned
+
+`qbeta_fmap_modular_dual_missing_probe.py` **writes no witness** — it is in the
+`qou-4383` "producer that exits 0 and writes nothing" class (that sweep is the
+current `main` HEAD). Not fixed here: it is someone else's arc, and changing it
+is outside the two AGENTS.md exemptions.
+
+---
+
+## 2026-09-13 (later) — attack A measured; MY OWN RECOMMENDATION ABOVE IS WITHDRAWN
+
+Earlier today, in the entry above, I recommended **re-ranking attack A above
+attack B for the substrate face**, on the grounds that B's premise had been
+measured false and A's had not. **That recommendation was wrong.** A's premise
+had been measured too — by a prior agent, against a target that has since been
+retired — and once re-aimed the negative holds. Both routes now carry measured
+negatives on their principal route.
+
+Probe: [`computations/qbeta/qbeta_delta_tr_vs_ruled_base_probe.py`](../computations/qbeta/qbeta_delta_tr_vs_ruled_base_probe.py),
+4/4, witness `qbeta-delta-tr-vs-ruled-base.witness.json`, proton pin, convention D, scope (a).
+
+### 1. The triage's stated reason for declining A is not what the corpus shows
+
+The triage declines A for *"circularity — the Habiro-element construction is
+part of what `qou-cds1` waits on"*. Measured:
+`prop:habiro-precision-ladder-equivalence` — the block that would carry A's
+bridge — has a **one-element `uses[]` cone**, `thm:jones-markov-trace`. It is
+**not** downstream of `qou-cds1`. Attack A does not loop.
+
+### 2. What actually blocks it, established by a prior agent, not by me
+
+`QOU.BraidKnot.QbetaHabiroTaylorBridgeClass` equates `precisionLadderCoeff` and
+`habiroTaylorCoeff`, and **both are `opaque ... := fun _ => 0`** with no
+defining properties (lines 214 / 221; `habiroTaylorCoeff` has 3 occurrences,
+all in that one file — no consumers). So it is a **named hole**, not a
+hypothesis-carrying conditional, and its companion theorem is the §3b-cond
+item-5 self-assuming projection (`:= h.ck_eq_taylor k`; the file's own
+docstring says so and is scrupulous about it).
+
+All of that was already established in
+`qbeta_habiro_bridge_class_is_not_a_lean_target_probe.py`, which went further
+than I did — it verified the seal does **not** leak under six tactics
+(`rfl`, `unfold`, `simp`, `decide`, `norm_num`, `aesop`, all `lean`-direct) and
+drew the right conclusion: *"Progress on the bridge is COMPUTATIONAL — give the
+two sequences definitions — not deductive."* **I re-derived its structural half
+before finding it.** Credit where due; this entry does not re-do it.
+
+### 3. The corpus ran that computation, and it is aimed at a RETIRED cell
+
+`qbeta-delta-tr-vs-formA.witness.json` (`computedAt` 2026-08-08, last touched
+`87bf883793` on 2026-09-07) finds Habiro `Δtr_M` and Form A's net-winding slot
+structurally distinct: `−5/4 ε` against `−2 ε`. The sibling probe verified that
+inference is not a mere normalisation.
+
+**But its comparison target is `Abs((q²−1)(q(q−2)−1))/(2q³(q−1))`, which is
+algebraically identical to the published `|q²−2q−1|(q+1)/(2q³)` — the `z = 1`
+cell.** The owner **retired that cell as the base on 2026-09-08**, one day
+after that witness was last touched, ruling `ε` = the Markov trace at
+`z_D = q³/(q²+1)`. So the one computational test of A's bridge was aimed at a
+functional that is no longer canonical, and nothing had re-aimed it.
+
+### 4. Re-aimed at the ruled base, the negative HOLDS — at both admissible points
+
+| leading Taylor, `ε = q − 1` | `Δtr_M` | slot object |
+|---|---|---|
+| vs `tr_M` at `z_D` (**RULED**) | `−5/4 ε` | `−1 ε` |
+| vs `tr_M` at `z = q` (augmentation) | `−5/4 ε` | `−2 ε` |
+
+and the `z_D` mismatch is **structural, not a normalisation** — the
+term-by-term ratio runs `5/4, −11/4, −1/16, −20/11, −589/52`: five distinct
+values over five orders, **sign change at k = 2**. Same discipline the sibling
+probe applied to the Form A negative, applied here for the same reason.
+
+**Calibrated before anything new was read off the harness.** It reproduces the
+recorded `−2 ε` / `−5/4 ε` exactly, and independently reproduces **all three**
+recorded cells: `z = 1` at **+0.1677568 %** (recorded 0.17 %), `z = q` at
+**+12.470022 %** (recorded +12.470 %), `z_D` at **−43.15717 % / 0.4447004085
+MeV** (recorded −43.157 % / 0.4447004).
+
+### 5. A trap, flagged rather than taken
+
+`Δtr_M` **itself** lands at **−17.49592 %** — better than *both* admissible
+functionals. Under §NO FITTING that is **not** a point in its favour and must
+not become one: it is a third object with a better residual that is **not
+admissible**, which is precisely the selection-against-the-target shape the
+directive names. Recorded so the next agent meets it as a trap rather than as
+a lead.
+
+### Scope — read before quoting
+
+Scope **(a)**, proton pin, convention D. It does **not** derive `α`; does
+**not** retract the 2026-08-08 Form A negative (that inequality is exact
+algebra and stands on its own terms); and does **not** exclude the Habiro ring
+from an `α` closure by another route. What is closed is **this specific
+identification** — `Δtr_M` as the slot object — now at both admissible
+functionals rather than only at the retired one.
+
+### Where that leaves the four routes
+
+| route | status after today |
+|---|---|
+| **A** Habiro | bridge closed at both admissible functionals (this entry). Not circular; the triage's reason was wrong. Broader Habiro routes untouched. |
+| **B** Faddeev / modular double | inert at the real substrate inside the derivable `z`-window (entry above). Untouched on the root-of-unity face, where it is correctly aimed. |
+| **C** Stokes / resurgence | unmeasured |
+| **D** two evaluation points | the trap — a fourth calibration |
+
+**Recommendation — judgement, not a finding, and it replaces mine from this
+morning.** Neither A nor B is now the obvious next spend. **C (Stokes /
+resurgence) is the only one of the four with no measured negative against it**,
+and it is the one whose framing dissolves rather than fights the
+elliptic-at-real-`q` obstruction — `α` as a Stokes constant is complex *by
+nature* and defined by continuation across the gap. AGENTS.md already lists
+Stokes-constant extraction as open research, so it is in scope.
+
+**Default if nothing is done:** the triage still reads "attack B, cheapest
+formalize-first step of the four", which two measurements now contradict.
+
+
+## 2026-09-13 (session gifted-feynman) — the braid-image exclusion left the CONSTANT case open; closed by QUANTIZATION
 
 **Part 1 is a result (scope-(b), proved invariant). Part 2 is a fit and is labelled
 one.** Probe: `computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py`
@@ -1828,7 +2054,7 @@ above, that requires an element of order divisible by 120 from somewhere the
 framework actually supplies, and no such source is identified here.
 
 
-## 2026-09-13 (2) — 🛑 DERIVING α CANNOT UNBLOCK `qou-cds1`. The gap is in the BASE.
+## 2026-09-13 (session gifted-feynman, 2) — 🛑 DERIVING α CANNOT UNBLOCK `qou-cds1`. The gap is in the BASE.
 
 **This supersedes the dependency chain the whole S1 tranche is organised around.**
 Lean twin sorry-free (`lean`-direct exit 0, axioms `[propext, Classical.choice,
@@ -1893,7 +2119,7 @@ Weaker still, and its scope is now doubly moot: its base is retired, **and** on
 the live base no `α` at all can matter. Kept recorded, not adopted, not wired.
 
 
-## 2026-09-13 (3) — Part 3 RE-OPENS the cosh route: that exclusion was computed on the retired base
+## 2026-09-13 (session gifted-feynman, 3) — Part 3 RE-OPENS the cosh route: that exclusion was computed on the retired base
 
 **A re-opening, not a candidate.** Nothing is proposed, nothing is wired.
 

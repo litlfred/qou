@@ -62,15 +62,24 @@ an `M` automatically satisfies the recurrence kernel `x² − τ·x + 1` (Cayley
 conjecture's *content* is the **geometric identification** of `M`, not the kernel's form (which is
 forced) nor the value of `τ` (which is never fitted). The falsifiable functional target is that the
 *same* `M` reproduces the whole `(n−1,1)` recurrence family, not the single scalar `τ`. -/
-class BringWPlaneMonodromy where
+class BringWPlaneMonodromy (is_seifert_gauss_manin : Prop) where
   /-- The Gauss–Manin monodromy operator on the rank-2 W-plane `H¹(E)`. -/
   M : Matrix (Fin 2) (Fin 2) ℝ
   /-- Unimodular: `det M = 1` (the symplectic structure of `H¹` of an elliptic curve). -/
   unimodular : M.det = 1
-  /-- The geometric identification (the open §3b content): `M` is the genuine Seifert / Gauss–Manin
-      monodromy of `E = Bring/S₄` along the S³/2I fibration. Carried as an abstract proposition. -/
-  is_seifert_gauss_manin : Prop
-  /-- **The conjecture**: the geometric identification holds (the §3b conjectural input). -/
+  /-- **The conjecture**: the geometric identification holds — `M` is the genuine Seifert /
+      Gauss–Manin monodromy of `E = Bring/S₄` along the S³/2I fibration (the §3b conjectural input).
+
+      **Parameterised 2026-09-13.**  `is_seifert_gauss_manin` was a *field* typed with the
+      universe `Prop` alongside this witness, so the instance chose the proposition and
+      `⟨True, trivial⟩` discharged the pair — the geometric identification, which the class
+      docstring calls the conjecture's whole *content*, cost nothing to assume.  As a parameter
+      it is fixed by the binder and visible in every consumer's type.
+
+      It is a parameter rather than an encoding deliberately: identifying `M` with the genuine
+      Seifert monodromy is the open geometric claim itself, so writing a proposition for it here
+      would be guessing at the conjecture rather than carrying it.  `monodromy_satisfies_recurrence`
+      below is unaffected — it uses `unimodular` only, and never this field. -/
   seifert_holds : is_seifert_gauss_manin
 
 /-- **The carried monodromy satisfies the recurrence kernel (sorry-free, from the class).**
@@ -79,7 +88,8 @@ kernel `R(x) = x² − (tr M)·x + 1`, with `τ = tr M`. Discharged from `unimod
 applied to the class's `unimodular` field; the geometric identification (`is_seifert_gauss_manin`)
 is not needed for the *algebraic* recurrence — only for the open claim that this `M` is the genuine
 Seifert monodromy. -/
-theorem monodromy_satisfies_recurrence [self : BringWPlaneMonodromy] :
+theorem monodromy_satisfies_recurrence {is_seifert_gauss_manin : Prop}
+    [self : BringWPlaneMonodromy is_seifert_gauss_manin] :
     self.M * self.M = self.M.trace • self.M - 1 :=
   unimodular_two_recurrence self.M self.unimodular
 

@@ -295,9 +295,18 @@ def main() -> int:
                     help="stop after N modules (for a smoke test)")
     ap.add_argument("--all", action="store_true",
                     help="compile EVERY module, not just the dirty closure -- the "
-                         "measurement for 'how much of the library compiles', since "
-                         "1863 of 2773 are outside the root build and so outside "
-                         "every routine check.  Hours, not minutes.")
+                         "measurement for 'how much of the library compiles'.  "
+                         "CORRECTED 2026-09-13: this said '1863 of 2773 are outside "
+                         "the ROOT BUILD'.  Both halves were wrong.  The count came "
+                         "from a direct-import measure corrected on 2026-09-08 (the "
+                         "transitive figure is ~48%%, 1385 of 2836); and `lake build "
+                         "QOU` builds the WHOLE TREE, because the paper lakefile "
+                         "declares globs = [\"QOU\", \"QOU.+\"] (bean qou-rc7b, done "
+                         "2026-08-08) -- so those modules are outside the root's "
+                         "IMPORT CLOSURE, not outside the build.  What IS true is "
+                         "that nothing runs that build automatically (CI is "
+                         "workflow_dispatch-only), which is why this flag is worth "
+                         "having.  Hours, not minutes.  Bean qou-g5sp.")
     ap.add_argument("--only", metavar="PREFIX",
                     help="restrict to modules whose name starts with PREFIX "
                          "(e.g. QOU.BraidKnot).  Exists so a --all run can be "

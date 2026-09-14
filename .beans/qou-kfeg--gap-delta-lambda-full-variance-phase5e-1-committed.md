@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T09:10:24Z
-updated_at: 2026-09-07T11:22:14Z
+updated_at: 2026-09-07T17:55:32Z
 ---
 
 ## What is established
@@ -121,3 +121,27 @@ for downstream consumers)` -- so it does not use the downgraded libraries
 itself. Whether a transitive import does is NOT established here, and the
 HEAD-vs-modified comparison cannot separate environment from staleness because
 both runs share this container.
+
+
+---
+
+## The commit archaeology in this bean, and in any sibling bean, CANNOT be done in an agent clone (measured 2026-09-07)
+
+This bean records witnesses that are not reproducible from their own producers, and it — like several attempts since — reached for `git log -- <path>` to ask *when* and *why* producer and witness diverged. **That question is not answerable here, and the answer git gives is confidently wrong.**
+
+Agent clones of this repo are **shallow**. `git rev-parse --is-shallow-repository` returns `true`, `.git/shallow` exists, and the boundary commit **`78c74bc5ed4`** has **no parents** in the clone. Everything older than the boundary is grafted onto it, so:
+
+- `git log --oneline -- computations/delta_lambda_fr_identity_phase5c.py` returns **exactly one commit** — the boundary. Not "the file was written once"; "this clone cannot see before the boundary".
+- `git show --name-only 78c74bc5ed4` lists **45,567 files** (3,427 witnesses, 4,298 `.py`). It is not a mass commit; it is the horizon.
+- `git log -S "<symbol>" -- <file>` also returns only the boundary, so you cannot localise when a function appeared either.
+- 2,625 of those 3,427 witnesses have a `computedAt` predating the boundary — which looks exactly like a systematic "edited the producer, committed a stale witness" pattern and **is not evidence of one at all**.
+
+I walked into all four of these in one session, and built a causal story on the fourth ("the commit that fixed the layer straddle did not re-run the producer") before checking `.git/shallow`. The story was withdrawn; the underlying staleness was real, because it had been measured a different way.
+
+**What IS measurable in a shallow clone, and is what these beans should rely on:**
+
+- **Self-staleness**, from the witness alone: recorded `witness.scriptHash` vs a fresh SHA-256 of the producer. For `delta-lambda-fr-identity-phase5c`: recorded `7f4542540f92`, live `11711368bfb6`, `computedAt 2026-08-10` — self-stale, no history needed.
+- **Input disagreement at HEAD**: does the committed witness's value match the committed input it reads? For `binding-reeb-phase-decomposition`, the recorded `χ_atom` matched **no** committed version of `atom-chi-rust-d`, while a fresh run matched it byte-for-byte. That settles *which* record is right without settling *when* it went wrong.
+- **A fresh run**, diffed field-by-field against the committed witness.
+
+AGENTS.md already warns about the shallow boundary — under the `rewritten`/`scriptCommitSha` discussion, where it notes a sha can be missing "merely because the history was never fetched". This is the same fact reached from the other side: **`git log -- <path>` is not a source of provenance here.** Do not ask a shallow clone *when*; ask the artifacts *what*.

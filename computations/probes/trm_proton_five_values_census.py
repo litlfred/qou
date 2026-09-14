@@ -28,7 +28,28 @@ value, from `hecke-canonical-chi` once its REPO_ROOT path bug was fixed, is
     tr_M(p, q_0) = 1.14575969245730086935241774516176649113
     tr_M(n, q_0) = 0.98774368811580957144294046174148798302
 
-which is a SIXTH value, matching none of the five below. The table's "status"
+which is a SIXTH value, matching none of the five below.
+
+    ⚠ SUPERSEDED FIVE DAYS LATER, and this docstring is the place a reader
+    looks for "which value is right", so: those two are the GROUPED-era
+    values. The 2026-09-05 intra-nucleon ordering ruling (bean `qou-hu1f`,
+    owner) made the borromean word `(σ₀σ₁⁻¹)³` canonical, and under it
+
+        tr_M(p, q_0) = 0.62932840220292191816534574677848592760
+        tr_M(n, q_0) = 0.47513351715568221250609023267500579956
+
+    Measured 2026-09-13 under bean `qou-4383` by recomputing with
+    `atom_braid_word_3A` forced to each ordering: the two values above this
+    note reproduce exactly under `grouped`, these two under `borromean`.
+
+    Nothing else in this census changes. Its finding — that five claimants
+    existed and which explanations were ruled out — stands; only the label
+    "canonical" moves from the grouped pair to the borromean one. Note what
+    this makes of the census's own conclusion: correcting `TR_M_AT_Q0` from
+    1.63315 to the then-canonical value landed a number that a ruling
+    superseded within the week. A hardcoded constant does not track a ruling,
+    which is the argument for `canonical_trm_reference.tr_m_nucleon()` over
+    any registry entry. The table's "status"
 column is kept as-recorded; read it as "agrees with the all-positive-word
 trace", not as "canonical".
 

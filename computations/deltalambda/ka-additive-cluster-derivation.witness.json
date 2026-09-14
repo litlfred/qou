@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T19:48:07.859985+00:00",
-  "commitSha": "8e0271c058d5cce2765007ee70a3683d5c4cbf1c",
+  "computedAt": "2026-09-13T14:22:13.174862+00:00",
+  "commitSha": "1660c49f2ffe48802c11fb6d79993b6b460c27ab",
   "assertions": [
     {
       "name": "residual_is_clean_connected_triple",
@@ -26,7 +26,7 @@
   "computation": "ka-additive-cluster-derivation",
   "scriptFile": "ka_additive_cluster_derivation_probe.py",
   "scriptHash": "0c4c8908daae",
-  "scriptCommitSha": "4b5a448ed7451f7e08f9f9f720a3f290bfdb523d",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -63,54 +63,54 @@
       "4He": 9.313340597451814
     },
     "joint_traces_q0": {
-      "p": "1.1457596924573008696890815957738932545371799161536",
-      "n": "0.98774368811580957163402016550116668245971310667473",
-      "pp": "0.80431557826254455458611307884403339326863928354344",
-      "nn": "0.39379439527917916577261554646082057838726195498266",
-      "pn": "0.5751722439177718708265353439858617251768310907401",
-      "T": "0.22931010210455650733209081026882237514112239545267",
-      "3He": "0.40376703685142817036867025333324052165346969994438",
-      "4He": "0.16097414544240738182587344098076450724643379378599"
+      "p": "0.62932840220292191816534574677848592760021940063436",
+      "n": "0.47513351715568221250609023267500579955840763470875",
+      "pp": "0.24265769357303563546596564215242391573508393942502",
+      "nn": "0.091119712327008618658042973317644864267477249826237",
+      "pn": "0.15196833920423160759266569775106614127124096465528",
+      "T": "0.02914404236097206535725421879186984406583880356474",
+      "3He": "0.058596253654436380218956715452130256830877107284187",
+      "4He": "0.011237417659767421564199549374410607269662696081262"
     },
-    "gateA_producer_vs_cached_deuteron_rel": "9.3594898179212755486121261397087074381873457790363e-52",
-    "kappa2_deuteron_anchored": 5.4921118820977455,
+    "gateA_producer_vs_cached_deuteron_rel": "0.7357863825814977972839338399602283360252046022421",
+    "kappa2_deuteron_anchored": 1.4510907476361838,
     "C2_per_isotope": {
       "D": 4.852902577599116,
-      "T": 15.335059213446675,
-      "3He": 13.889425788408024,
-      "4He": 29.2244850018547
+      "T": 16.133618211809427,
+      "3He": 13.36967391122025,
+      "4He": 29.503292123029677
     },
     "C3_residual": {
       "D": 0.0,
-      "T": -11.890912289120827,
-      "3He": -11.59759720891833,
-      "4He": -20.911144404402886
+      "T": -12.689471287483578,
+      "3He": -11.077845331730558,
+      "4He": -21.18995152557786
     },
     "connected_cumulant_c2": {
-      "pp": -0.5084496945973042,
-      "pn": -0.5565446604044382,
-      "nn": -0.5818431981334425
+      "pp": -0.15339654424624702,
+      "pn": -0.14704667798040846,
+      "nn": -0.13463214679772034
     },
     "connected_cumulant_b": {
-      "T": 0.8775633078161565,
-      "3He": 0.8846422790568665,
-      "4He": -2.014393724710743
+      "T": 0.11153342998280681,
+      "3He": 0.12838275204751026,
+      "4He": -0.14062248042116796
     },
     "connected_cumulant_b_qinv": {
-      "T": -0.025222566093476024,
-      "3He": -0.015650554659220207,
-      "4He": -0.012814281055883028
+      "T": 7.755079304930361e-05,
+      "3He": 0.0001760657754161237,
+      "4He": -1.3603657890858361e-05
     },
     "C3_over_bconn_ratio": {
-      "T": -13.549919627692422,
-      "3He": -13.109928706191551,
-      "4He": 10.380862563204035
+      "T": -113.77280595996818,
+      "3He": -86.28764499168088,
+      "4He": 150.68679959358852
     },
     "single_scale_fit": false,
     "parity_rel_diff": {
-      "T": -1.0287415914827196,
-      "3He": -1.0176913934928653,
-      "4He": -0.9936386412950512
+      "T": -0.999304685661857,
+      "3He": -0.9986285869978004,
+      "4He": -0.99990326114395
     },
     "parity_verdict": "NOT bar-even (I-par FAIL)",
     "conn_verdict": "naive 1/(tr^3) disconnected (cumulant=0); genuine joint-trace cumulant well-defined but residual does not track it",
@@ -118,12 +118,12 @@
     "he4_max_reproduced": false,
     "junk_control": {
       "C3_over_triplecount": {
-        "T": -11.890912289120827,
-        "3He": -11.59759720891833,
-        "4He": -5.227786101100722
+        "T": -12.689471287483578,
+        "3He": -11.077845331730558,
+        "4He": -5.297487881394465
       },
-      "junk_spread": 0.45385162061878487,
-      "cumulant_spread": 2.9130545433428034,
+      "junk_spread": 0.4532058991193071,
+      "cumulant_spread": 10.155903732993083,
       "cumulant_beats_junk": false
     },
     "final_verdict": "scope-(a) NEGATIVE — the connected 3-cluster channel is CONSTRAINED, not closed, on four independent grounds: (1) MAGNITUDE — the frozen Mayer-b₂ bond-sum, forced to absolute μ_ext scale by the only a-priori anchor (the pure-2-body deuteron), OVERSHOOTS T/³He/⁴He by 4–5× because μ_ext−1 is strongly SUB-extensive in bond count (D 4.85/1 bond vs ⁴He 8.31/6 bonds); the residual C₃ is dominated by this overshoot. (2) I-conn — the naive per-knot triple 1/(tr_a tr_b tr_c) is a product of 1-body traces ⇒ connected cumulant ≡ 0 ⇒ fully disconnected (mean-field, already inside the ceiling). The genuinely-connected joint-trace cumulant is well-defined (b₃(T)=+0.939, b₃(³He)=+0.951 — nearly isospin-blind; b₄(⁴He)=−2.210) but the residual does NOT track it (C₃/b = −12.6/−12.2/+9.5; no single scale, sign flips). (3) I-par — the connected cumulant is NOT bar-even (b₃ shifts ~−19%, b₄ −24% under q↦q⁻¹; the single-nucleon trace itself shifts +12–13%), so the object carries bar-odd (p−n) content — wrong channel for the bar-even scale. (4) 4He-max — b₄(⁴He) is NEGATIVE, opposite in sign to the positive b₃(T/³He), so no parameter-free connected-triple makes ⁴He the maximum; the junk triple-count is more self-consistent than the connected cumulant. A-locality C₃(D)=0 holds trivially (the one gate that passes). Reported to #3808: freeze nothing new; the per-knot-trace side does not supply k(A). No fit, no wiring.",
