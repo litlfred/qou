@@ -57,13 +57,27 @@ C. **A frame declared but not built (blocking).** A file carrying an A or B
    trusts the field: this is the pin/ordering guard defeated by a correct-
    looking stamp. Zero today, so it is a gate rather than a ratchet.
 
-D. **Detector integrity (blocking).** The A matcher is run against
-   `nucleon_word_letters` itself and MUST fire on its grouped branch. If that
-   branch is ever rewritten, the pattern below stops describing "grouped" and
-   this audit would go quiet while the defect it names got easier to commit.
-   Binding the matcher to the definition it claims to track is what stops a
-   silent retirement — the failure mode `scripts/precision-gates.sh` calls "how
-   a checker goes quiet", reached from the other direction.
+D. **Detector integrity (blocking).** The A matcher is run against `atom.py`
+   itself and MUST fire on the grouped assembly's own definition. If that gets
+   rewritten, the pattern below stops describing "grouped" and this audit would
+   go quiet while the defect it names got easier to commit. Binding the matcher
+   to the definition it claims to track is what stops a silent retirement — the
+   failure mode `scripts/precision-gates.sh` calls "how a checker goes quiet",
+   reached from the other direction. Scoped to the FILE, not to a named
+   function: it was pinned to `nucleon_word_letters` first, and hoisting the
+   assembly into `grouped_word_from_chains` — the refactor this audit's own
+   remedy asked for — broke it within the hour. A check that fails when the
+   code it guards is tidied trains people to loosen it.
+
+E. **Declared grouped assembly (advisory, never blocking).** Calls to
+   `pyhecke.atom.grouped_word_from_chains`, counted and listed. That helper is
+   the remedy for a site where the LEGACY frame is genuinely the object under
+   study and the caller holds chains rather than quarks — the case
+   `legacy_marshalled_frame` is in. Counting it is what keeps the remedy
+   honest: converting an A/B site to a named call drains the ratchet, so
+   without E a lazy sweep could green this gate while every value stayed
+   wrong. E makes each such conversion show up as a visible, greppable choice
+   instead of a disappearance.
 
 NOT FLAGGED, deliberately
 -------------------------
@@ -86,6 +100,11 @@ A and B are RATCHETS against a committed baseline, not pass/fail. They are red
 on arrival, and per this repo's doctrine a gate that is red on arrival gets
 skipped. THE BASELINE DRAINS, NEVER GROWS: fix at the site by calling
 `nucleon_word_letters`, then `--rebaseline` to lower it.
+
+Draining is NOT uniform work. Switching a site to the canonical ordering moves
+**absolute** traces (3.785× at 2H, 7.868× at 3H, 6.891× at 3He, 14.325× at 4He)
+while leaving log-ratios and the three bond constants untouched, so each site
+has to be read for which kind of quantity it reports before it is switched.
 
 Exit 0 when clean, 1 otherwise. `--self-test` runs the fixtures only;
 `--files a.py b.py` scans a subset (and then refuses `--rebaseline`, since a
@@ -243,6 +262,16 @@ def scan_file(path: str) -> list[dict]:
                        "grouped word by hand — the stamp reports the "
                        "production builder's default, not what this file built"),
         })
+
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call):
+            fn = (node.func.id if isinstance(node.func, ast.Name)
+                  else node.func.attr if isinstance(node.func, ast.Attribute)
+                  else None)
+            if fn == "grouped_word_from_chains":
+                found.append({"check": "E", "path": rel,
+                              "line": node.lineno,
+                              "detail": "declared grouped assembly"})
     return found
 
 
@@ -268,26 +297,33 @@ def iter_sources(files: list[str] | None):
 # ── check D: the matcher must still describe `nucleon_word_letters` ──────────
 
 def check_detector_integrity() -> tuple[bool, str]:
-    """A must fire on `nucleon_word_letters`' own grouped branch."""
+    """A must fire on the grouped assembly's own definition, in `atom.py`.
+
+    Deliberately scoped to the FILE rather than to a named function. It was
+    pinned to `nucleon_word_letters` at first, and hoisting the assembly into
+    `grouped_word_from_chains` — a refactor this audit's own remedy asked for —
+    broke it within the hour. A check that fails when the code it guards is
+    tidied trains people to loosen it. What must hold is that atom.py still
+    defines the shape somewhere; where it lives is not this audit's business.
+    """
     if not os.path.exists(ATOM_PY):
         return False, f"{ATOM_PY} not found — cannot confirm the matcher"
     try:
         tree = ast.parse(open(ATOM_PY, encoding="utf-8").read())
     except (OSError, SyntaxError) as exc:
         return False, f"{ATOM_PY} unreadable: {exc}"
-    for node in ast.walk(tree):
-        if (isinstance(node, ast.FunctionDef)
-                and node.name == "nucleon_word_letters"):
-            for sub in ast.walk(node):
-                d = match_grouped_concat(sub)
-                if d:
-                    return True, f"matched at atom.py:{sub.lineno}  {d}"
-            return False, ("`nucleon_word_letters` no longer contains the "
-                           "concat shape this audit matches on — the grouped "
-                           "branch was rewritten and checks A/B now describe "
-                           "nothing. Re-derive the matcher from the new "
-                           "definition before trusting a green run.")
-    return False, "`nucleon_word_letters` not found in atom.py"
+    for sub in ast.walk(tree):
+        d = match_grouped_concat(sub)
+        if d:
+            fn = next((n.name for n in ast.walk(tree)
+                       if isinstance(n, ast.FunctionDef)
+                       and n.lineno <= sub.lineno
+                       and sub.lineno <= (n.end_lineno or n.lineno)), "?")
+            return True, f"matched in atom.py:{sub.lineno} ({fn})  {d}"
+    return False, ("atom.py no longer contains the concat shape this audit "
+                   "matches on — the grouped assembly was rewritten and checks "
+                   "A/B now describe nothing. Re-derive the matcher from the "
+                   "new definition before trusting a green run.")
 
 
 # ── self-test ────────────────────────────────────────────────────────────────
@@ -427,6 +463,7 @@ def main(argv: list[str] | None = None) -> int:
 
     ab = [f for f in findings if f["check"] in ("A", "B")]
     c = [f for f in findings if f["check"] == "C"]
+    e = [f for f in findings if f["check"] == "E"]
     keys = {_key(f) for f in ab}
     base = _load_baseline()
     new = sorted(k for k in keys if k not in base)
@@ -456,6 +493,8 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  C  frame stamped but not built            : {len(c)}   (blocking)")
     print(f"  D  detector integrity                     : "
           f"{'PASS' if ok_d else 'FAIL'}   (blocking)")
+    print(f"  E  DECLARED grouped assembly              : {len(e)}"
+          f"   (advisory — counted, never blocking)")
     if partial:
         print("     partial scan (--files): the drain count needs a "
               "whole-tree run")
@@ -479,6 +518,15 @@ def main(argv: list[str] | None = None) -> int:
     if not ok_d:
         print()
         print(f"  [D] {msg_d}")
+    if e:
+        print()
+        print("  Declared grouped uses (`grouped_word_from_chains`). Each is a")
+        print("  visible choice, not a defect — but converting an A/B site here")
+        print("  is only correct where the LEGACY frame is the object under")
+        print("  study. Converting one that wanted the canonical word launders")
+        print("  the defect and drains the ratchet for nothing:")
+        for f in sorted(e, key=_key):
+            print(f"  [E] {f['path']}:{f['line']}")
     if fixed:
         print()
         print(f"  {len(fixed)} baseline sites no longer fire — run with "

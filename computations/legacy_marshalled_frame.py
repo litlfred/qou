@@ -80,13 +80,24 @@ def legacy_marshal_intra(chain_g0, chain_g1, h_val: float | None = None):
 
     Was duplicated verbatim as `marshal_intra` in two scripts. LOSSY by
     construction — see the module docstring.
+
+    LOSSY IN A SECOND WAY THE MODULE DOCSTRING DID NOT NAME: the assembly below
+    is the GROUPED intra ordering, all of g0 then all of g1. It used to be
+    written out inline here, which made it indistinguishable from the dozen
+    other unnamed transcriptions of that line the corpus grew (bean
+    `qou-t29k`). It now says so, by calling the one definition. That is the
+    right call *for this module*, which exists to be the legacy frame and
+    documents its own legacy values two functions down — it is NOT the right
+    call for a site that wanted the canonical word, and the audit counts these
+    calls (check E) precisely so the difference stays visible.
+
+    Nothing moves numerically: `grouped_word_from_chains` is the same
+    concatenation, hoisted.
     """
+    from pyhecke.atom import grouped_word_from_chains
     if h_val is None:
         h_val = legacy_h_val()
-    chain_with_gens = (
-        [(c, d, 0) for c, d in chain_g0]
-        + [(c, d, 1) for c, d in chain_g1]
-    )
+    chain_with_gens = grouped_word_from_chains(chain_g0, chain_g1)
     return marshal_to_chi_lambda_braid(chain_with_gens, h_val)
 
 
