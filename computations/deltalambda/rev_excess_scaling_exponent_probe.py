@@ -463,7 +463,7 @@ _out = {
          "V_best": mp.nstr(r["V_best"], 20), "excess": mp.nstr(r["excess"], 20),
          "excess_over_sqrt_n": mp.nstr(r["e_over_sqrtn"], 16),
          "excess_over_n_quarter": mp.nstr(r["e_over_n25"], 16),
-         "seconds": round(r["sec"], 2)}
+         "elapsed_sec": round(r["sec"], 2)}
         for r in _rows
     ],
     "exponent_R3": {

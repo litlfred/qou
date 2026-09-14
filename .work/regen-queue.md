@@ -652,3 +652,59 @@ of the INPUT changes, to `repr(coords_witness[k])`.
 Verified against the real upstream values: all 6 go `is_f64_padded` True ->
 False, and each new string equals the audit's own `real_digits` of the
 committed one. **Value-preserving** — no digit that was ever there is lost.
+
+## 24. Four `rev_*` probes — `seconds` is a wall-clock duration the gate could not recognise
+
+All 24 raw-float64 fields in the three NEW entries on that ratchet are named
+`seconds`, and every one is a timing:
+
+    rev-excess-scaling-exponent   11    scaling_R2[i].seconds    0.08 .. 1374.86
+    rev-edge-relaxation-window     7    rows[i].seconds          0.34 ..   54.74
+    rev-exact-maximiser-small-n    6    exact_rows[i].seconds    0    ..   63.43
+
+**Not a precision defect.** `witness_raw_float64_audit` already carves out
+wall-clock durations — 101 fields across 59 witnesses — but only under a key
+it recognises. Renamed to `elapsed_sec`. Verified with the audit's OWN
+counter (`_count` on the real documents, key renamed in memory):
+
+    rev-edge-relaxation-window     raw  7 -> 0    ephemeral 0 -> 7
+    rev-exact-maximiser-small-n    raw  6 -> 0    ephemeral 0 -> 6
+    rev-excess-scaling-exponent    raw 11 -> 0    ephemeral 0 -> 11
+
+**WHY THE FIX IS A RENAME AND NOT A WIDER CARVE-OUT.** The obvious move —
+add `seconds` to `qou_substrate.witness._EPHEMERAL_META_FIELDS` — **does
+nothing, silently.** The audit does not use that set; it uses a SUBSTRING
+SELECT over it (`"dur" in n or "elapsed" in n`), so a name in the mask that
+matches neither is never carved. Its own source says so in capitals and
+records that an agent tried exactly that and had to retract the
+prescription; widening needs both halves and is the open question on bean
+`qou-ywee`. `elapsed_sec` satisfies both — it is in the mask and it contains
+"elapsed" — so it needs no gate change at all.
+
+And widening would have been wrong on its own terms. `seconds` is a generic
+word: a half-life is legitimately in seconds, and reserving the name by fiat
+would silence a real finding the day one appears. Measured first — only
+these 3 witnesses carry a `seconds` leaf corpus-wide, all timings, so there
+is no counterexample today and the hazard is entirely about tomorrow. The
+neighbouring trap is in the same comment: a `/time/` substring would excuse
+`y_times_chi`, the Frobenius pairing, 177 fields.
+
+Also renamed in `rev_max_large_n_scan.py`, whose witness is NOT committed —
+so the same NEW would arrive the moment anyone ran it.
+
+NO CONSUMER READS THE FIELD. Every other `"seconds"` in the tree is
+`isoformat(timespec="seconds")` or a write site; `producer_repad_sweep.py`
+writes one into a plain JSON report, not a witness, and is left alone.
+
+**VERIFICATION IS PARTIAL AND THAT IS STATED.** These four run at module
+level — the dict literals holding the field ARE module-level statements — so
+they cannot be imported without running them, and the table holds the
+checkout. `ast.parse` clean on all four; the change introduces no name, only
+a dict-key string and two comments; and the drain is verified against the
+audit's own counter rather than predicted. What is not verified is a live
+re-run.
+
+Side benefit worth knowing: as `seconds` these fields were substantive, so
+each witness showed a real diff on every re-run for no informational reason.
+As `elapsed_sec` the drift machinery ignores them, the way it already does
+`durationMs`.

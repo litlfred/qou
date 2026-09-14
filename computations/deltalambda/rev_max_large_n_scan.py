@@ -146,7 +146,7 @@ def main() -> int:
         M = (sum(et60[h] for h in hs) - sf) - (H - hmin) * lnq
 
         r = {"n": n, "M": mp.nstr(M, 16), "argmax": list(lam), "partitions": cnt,
-             "seconds": round(el, 1),
+             "elapsed_sec": round(el, 1),
              "M_over_sqrt_n": mp.nstr(M / mp.sqrt(n), 10),
              "M_over_n34": mp.nstr(M / (mp.mpf(n) ** mp.mpf("0.75")), 10)}
         rows.append(r)

@@ -277,7 +277,9 @@ for k in range(1, K_MAX + 1):
         "staircase_beta_in_frame": b0,
         "displacements": disp,
         "staircase_is_argmax": stair in set(argmax),
-        "seconds": round(dt, 2),
+        # `elapsed_sec`, not `seconds` -- the raw-float64 audit only carves
+        # out a wall-clock duration under a key it recognises (bean qou-ywee).
+        "elapsed_sec": round(dt, 2),
     })
     print(f"  {k:3d} {n:5d} {mp.nstr(mp.mpf(v_stair) / SCALE, 12):>16} "
           f"{mp.nstr(mp.mpf(best) / SCALE, 12):>16} {mp.nstr(e_k, 12):>16} "
