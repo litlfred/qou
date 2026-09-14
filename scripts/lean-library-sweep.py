@@ -128,7 +128,17 @@ def load_graph() -> tuple[dict, dict]:
 def last_commit_times() -> dict[str, int]:
     """Repo-relative path -> unix time of its most recent commit, in one pass."""
     out = subprocess.run(
-        ["git", "log", "--format=%ct", "--name-only", "--", str(PKG / LIB)],
+        # BOTH paths.  `PKG/LIB` is the namespace DIRECTORY; the library root
+        # module `PKG/LIB.lean` sits BESIDE it and is not under it, so a log
+        # scoped to the directory alone never sees the root and returns no time
+        # for it.  `dirty_closure` then marks a module with no commit time as
+        # changed UNCONDITIONALLY, so the root was permanently dirty by
+        # construction -- a floor of exactly 1 that no amount of rebuilding can
+        # clear.  Measured 2026-09-14: after a full progressive reseed took the
+        # QOU closure 1261 -> 1, that surviving 1 was the root, and it was this,
+        # not work left undone.
+        ["git", "log", "--format=%ct", "--name-only", "--",
+         str(PKG / LIB), str(PKG / f"{LIB}.lean")],
         cwd=ROOT, capture_output=True, text=True).stdout
     times, ts = {}, None
     for line in out.splitlines():
