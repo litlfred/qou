@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-09-14T07:08:16Z
+updated_at: 2026-09-14T18:57:46Z
 ---
 
 Parent epic: qou-08a2. Records the 2026-09-12 finding that the growing+h!=0 BraidedTower instance (qou-301d's remaining gap) is a WIRING job, not a from-scratch build -- the two halves already exist and are unconnected.
@@ -328,3 +328,54 @@ what an agent must read; the file is 3.7x over). Restructuring it is a change
 I have not made — per §ASK THE OWNER it is neither a precision fix nor
 corpus-derived, and splitting a memory file another agent owns is exactly the
 kind of tidying that rule gates. Flagging it rather than doing it.
+
+## 2026-09-14 — the isomorphism route: the missing leg is LANDED, and the remaining gap is NOT a wiring step
+
+**Status stays `todo`** (§13a — the wiring this bean is titled for is not complete).
+
+**What the corpus already had, found by corpus-grep rather than rebuilt.** Two of the
+three legs of the isomorphism route existed:
+
+- `QOU.SchurWeyl.carrierEquiv` — `Hecke K q qi n ≃ₐ QOU.Hecke.IwahoriHecke K Q n`
+- `QOU.IwahoriHecke.Balanced` — `σ_i := qi · T_i` on the Coxeter-matrix family
+
+**Both cross the NORMALISATION** (skein `σ² = (q−qi)σ + 1` vs Iwahori `(T−Q)(T+1) = 0`,
+at `Q = q²`). **Neither crosses the INDEX PRESENTATION**, and that was the real gap:
+`QOU.Hecke.IwahoriHecke` states its braid content as two explicit clauses on `Fin n`,
+while `MathlibExt.HeckeAlgebra` states it as one `altProd` clause against a Coxeter
+matrix quantified over all pairs. That is `qou-img9`'s defect in a specific instance.
+
+**Landed (PR #7395), sorry-free:**
+
+    coxeterCarrierEquiv : QOU.Hecke.IwahoriHecke K Q n ≃ₐ[K] HeckeAlgebra K Q (Aₙ n)
+    skeinBalancedEquiv  : SchurWeyl.Hecke K q q⁻¹ n ≃ₐ[K] Balanced.BalancedHecke (Aₙ n) q
+
+The second lands on `BalancedHecke` **on the nose** (no `pow_two` transport), so the
+claim "the algebra with the proved-unique Ocneanu trace is the algebra
+`QOU/IwahoriHecke/` is built on" is machine-checked rather than asserted.
+
+The content is finite: `Aₙ` entries are 1/3/2 and `altProd` there is `a` / `a·(b·a)` /
+`a·b`, so the quantified clause is exactly the two explicit ones plus a diagonal
+triviality — a five-way case split (`altProd_of_explicit`, `braid_of_altProd`,
+`comm_of_altProd`). No hypothesis on `Q`; `[CommRing K]` suffices.
+
+Verification: `lean -DautoImplicit=false -s 65536` exit 0, 0 errors, 0 warnings;
+0 `sorry`; `#print axioms` `[propext, Classical.choice, Quot.sound]` on all seven
+declarations, no `sorryAx`.
+
+**🛑 THE REMAINING GAP IS NOT A WIRING STEP — measured, so the next agent does not go
+looking.** Transporting the `OcneanuTrace.MarkovTrace` / `BraidedTower` instance needs
+the equivalences to commute with the level inclusions. **There is no inclusion
+`HeckeAlgebra n → HeckeAlgebra (n+1)` anywhere on the Coxeter side**:
+`grep -rn 'HeckeAlgebra.*→ₐ.*HeckeAlgebra\|heckeIncl' IwahoriHecke/ MathlibExt/` returns
+only `SchurWeyl.HeckeInclusion.heckeIncl` and prose about it. So the tower the
+transport would land on **has to be constructed first**. That is the next honest step,
+and it is real work, not plumbing.
+
+Also not done: `TypeA.IwahoriHeckeOfSn` re-indexing (`Fin (n-1)`, truncated
+subtraction), and anything about the `Set.univ`-indexed `Defn.IwahoriHecke`.
+
+**Caveat on the novelty claim.** `corpus_search` (path 0) was unavailable — the
+`paper-assistant` MCP server failed to connect (`ENOENT … start-folio-assistant.sh`).
+Paths 1–6 are greps and share the blind spot path 0 covers, so "nothing connected
+them" rests on lexical search plus reading both files.
