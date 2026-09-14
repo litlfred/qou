@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-09-13T08:30:00Z
+updated_at: 2026-09-14T06:46:52Z
 ---
 
 Parent epic: qou-08a2. Records the 2026-09-12 finding that the growing+h!=0 BraidedTower instance (qou-301d's remaining gap) is a WIRING job, not a from-scratch build -- the two halves already exist and are unconnected.
@@ -188,3 +188,85 @@ blocks, I will say which and leave the gap rather than axiomatise it.
 `heckeTowerMarkovTrace` faithful, prove strict growth (`qou-p8yg`), or derive
 the bond product for the production atom word. Nothing here closes either bean
 on its own.
+
+
+--------
+
+**2026-09-14 — DONE, all six steps, sorry-free. And read the scope line: this is the SCHUR-WEYL tower, not `QOU/IwahoriHecke/`.**
+
+Branch `claude/markovtrace-colimit-bridge-2026-09-13`, PR #7274. Every step of
+the route in the INTENT block above landed as written, and both hazards I
+flagged in advance resolved the way I guessed:
+
+| step | declaration | file |
+|---|---|---|
+| 1 directed system | `heckeInclLE`, `directedSystem`, `heckeInclLE_σ` | `SchurWeyl/HeckeDirectedSystem.lean` |
+| 2 carrier + filtration | `HeckeLim`, `instAlgebraHeckeLim`, `ofLimₐ`, `H`, `H_mono` | `SchurWeyl/HeckeColimit.lean` |
+| 3 generators | `gLim`, `ginvLim`, `gLim_eq`, `gLim_quadratic/braid/far` | same |
+| 4 trace | `wtrace_inclLE`, `trLim` | `SchurWeyl/HeckeColimitMarkovTrace.lean` |
+| 5-6 axioms | `trLim_cyclic/one/markov/markov_inv`, `heckeColimitMarkovTrace` | same |
+| payoff | `braidedTower_heckeColimit`, `towerSpan_heckeColimit`, `disjointBlock_heckeColimit` | same |
+
+`lean`-direct `-DautoImplicit=false -s 65536` exit 0 on all three files, zero
+warnings, zero `sorry`; `#print axioms` is `[propext, Classical.choice,
+Quot.sound]` throughout (`heckeInclLE_σ` is `[propext, Quot.sound]`).
+
+**🛑 SCOPE — what this bean's TITLE asks for is still NOT done.** The title says
+*"wire IwahoriHecke algebra to the BraidedTower theorem"*, and the body's "two
+halves" section means `QOU/IwahoriHecke/` — the 20-file Coxeter-group
+implementation over `Mathlib.GroupTheory.Coxeter`. **I wired
+`QOU/SchurWeyl/Hecke` instead**, which is a *different* construction (a
+`RingQuot` of `FreeAlgebra K (Fin n)`). The grep finding recorded above — that
+`IwahoriHecke/` mentions no `OcneanuTrace` / `BraidedTower` / `TowerSpan` —
+**is still true and this branch does not change it.**
+
+The reason for the substitution is not evasion and should be checked rather than
+taken: the production Ocneanu trace, the one proved to exist and be unique
+(`MarkovTraceInstance.wtrace` / `ocneanuMarkovTrace`,
+`HeckeCoset.markovTrace_unique`), is defined on the **SchurWeyl** algebras, not
+on `IwahoriHecke/`. So the SchurWeyl tower is where a `MarkovTrace` could be
+built out of material that already exists; the `IwahoriHecke/` route would need
+its own trace first. Whether the two algebras are isomorphic is not established
+anywhere I could find, and I did not assume it.
+
+**What IS now closed, and it is the thing both arcs were blocked on.**
+`TowerSpan` and `DisjointBlockMultiplicative` were proved abstractly in #7153
+but inhabited only on `heckeTowerMarkovTrace` (a free carrier whose trace
+factors through a rank-2 quotient — not faithful) and on the symmetric group
+(`h = 0`). They now hold on a tower carrying the **genuine Ocneanu trace at
+convention D**, `z = q³/(q²+1)`.
+
+**The two flagged hazards, resolved:**
+
+* Step 4 did need the **linear** lift. `wtrace` is `ℝ`-linear and is *not*
+  multiplicative, so `DirectLimit.Ring.lift` does not apply at all;
+  `DirectLimit.Module.lift` does, and its compatibility hypothesis wants the
+  *iterated* inclusion, hence `wtrace_inclLE` as the `Nat.le_induction` iterate
+  of the sibling's one-step `wtrace_incl`.
+* Step 5's `q * qi = 1` is discharged by `hq0 : q ≠ 0` at `qi = q⁻¹` and never
+  surfaces in the instance. `ginvLim` is *defined* unconditionally (`σInv` is);
+  only the two inverse laws carry the hypothesis.
+
+**Two measurements worth keeping, neither of which was in the plan:**
+
+1. **Mathlib supplies no `Algebra R (DirectLimit …)` instance.** Enumerated the
+   whole namespace out of the olean: `instModule` and the
+   `instRing`/`instCommRing`/`instField` family, nothing algebra-valued, and
+   `inferInstance` fails. Built here with `Algebra.ofModule` over the
+   *existing* `instModule` — deliberately **not** `RingHom.toAlgebra'`, which
+   also typechecks and would mint a second `SMul K (HeckeLim …)`, putting a
+   diamond against the colimit's own scalar action.
+2. **`DirectLimit.Module.of` and `DirectLimit.Ring.of` are the same function**
+   (`rfl`). That is what makes the two `Algebra.ofModule` laws cheap.
+
+**`zinv` is derived, not posited:** `σ⁻¹ = σ - (q - q⁻¹)·1`, so
+`tr(a σ⁻¹) = tr(a σ) - (q - q⁻¹) tr a`, giving `zinv = q³/(q²+1) - (q - q⁻¹)`.
+`z` is inherited from `wtrace_markov`. No parameter is chosen.
+
+**Still open, assumed nowhere:** injectivity of `ofLim n` (`qou-ejde`) — so
+`H n` is the *image* of level `n`, not a copy of it; strict growth
+(`qou-p8yg`); faithfulness of `trLim`; the bond product for the production atom
+word; and the `IwahoriHecke/` wiring this bean is titled for.
+
+**Staying `todo`** — the titled subject is not done, and per AGENTS.md §13a a
+bean whose subject is open is not closed by recording progress on it.
