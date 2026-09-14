@@ -8,7 +8,9 @@ unrelated things, and a reader cannot tell them apart from the word:
   SPATIAL   the spatial dimension of a base manifold or a nucleon layout
             (`dim M_k = 1`, the linear layout, the filament)
   REP       a Wedderburn block / irrep / character of dimension one
-            (a one-row or one-column Young diagram) -- believed the majority
+            (a one-row or one-column Young diagram) -- the majority
+  LINALG    a plain vector-space dimension: a solution space, a cohomology
+            group, a module of forms ("HH^2 = k is one-dimensional")
   CHANNEL   a seminormal CHANNEL of dimension one (`AlphaShiftOneDimChannel`)
 
 This script MEASURES the split. It changes nothing: per AGENTS.md's 2026-09-07
@@ -38,19 +40,34 @@ SPATIAL = re.compile(r"\bdim M|manifold|\bbase\b|spatial|space-?like|filament|"
                      r"\blayout\b|\bchain\b|\blattice\b|\balong a line\b|"
                      r"\bcoordination\b|\bnucleon\b|\bsite\b|brane|descent", re.I)
 CHANNEL = re.compile(r"seminormal|alpha_?shift|alphashift|scalar channel", re.I)
+LINALG = re.compile(r"solution space|derivation space|cohomolog|\bHH\^|\bker\b|"
+                    r"vector space|eigenspace|\bsubspace\b|\bLambda\^|\bOmega\^", re.I)
+
+# A use is QUALIFIED when a disambiguating noun follows the phrase directly.
+# That is the split that matters: a qualified use is not ambiguous to anyone.
+QUALIFIED = re.compile(r"(one[- ]dimensional|1[- ]dimensional)\s+"
+                       r"(block|blocks|channel|channels|representation|representations|"
+                       r"character|characters|irrep|irreps|rep|reps|wedderburn|radical|"
+                       r"summand|module|modules|space|spaces|subspace|kernel|"
+                       r"solution|state|states|stratum|sign|trivial|alternating|symmetric)",
+                       re.I)
+BARE = re.compile(r"(one[- ]dimensional|1[- ]dimensional)(?!\s*[A-Za-z\\$])", re.I)
 
 
 def classify(ctx):
     r, s, c = bool(REP.search(ctx)), bool(SPATIAL.search(ctx)), bool(CHANNEL.search(ctx))
+    l = bool(LINALG.search(ctx))
     if c and not s:
         return "CHANNEL"
+    if l and not s:
+        return "LINALG"
     if r and not s:
         return "REP"
     if s and not r:
         return "SPATIAL"
     if s and r:
         return "AMBIGUOUS(both)"
-    return "UNCLASSIFIED"
+    return "NO-MARKER"
 
 
 def scan(globs):
@@ -89,15 +106,17 @@ def main():
         tot = sum(c.values())
         print(f"  {label:18} {tot:>5} hits   " +
               "  ".join(f"{k}={v}" for k, v in sorted(c.items())))
-        unclassified += [h for h in hits if h[0] in ("UNCLASSIFIED", "AMBIGUOUS(both)")]
+        unclassified += [h for h in hits if h[0] in ("NO-MARKER", "AMBIGUOUS(both)")]
 
     tot = sum(grand.values())
     print(f"\n  {'TOTAL':18} {tot:>5} hits")
     for k, v in sorted(grand.items(), key=lambda kv: -kv[1]):
         print(f"      {k:18} {v:>5}  ({100.0 * v / tot:.1f}%)")
 
-    print(f"\n  Hits no marker disambiguates: {len(unclassified)}")
-    print("  (these are exactly the ones a READER also cannot disambiguate)")
+    print(f"\n  Hits the classifier has no marker for: {len(unclassified)}")
+    print("  !! NOT the same as 'a reader cannot disambiguate them'. Three separate")
+    print("     samples of this bucket were plainly clear linear-algebraic and")
+    print("     representation uses. Do NOT quote it as an ambiguity count.")
     for k, p, n, ln in unclassified[:15]:
         print(f"    [{k:16}] {p}:{n}")
         print(f"        {ln}")
@@ -105,12 +124,19 @@ def main():
         print(f"    ... and {len(unclassified) - 15} more")
 
     print("""
-SCOPE
-  Heuristic classifier, high recall by design; the per-hit verdict is an agent
-  call. Quote the bucket ORDERS OF MAGNITUDE and the UNCLASSIFIED count, not
-  the individual numbers as though they were adjudicated.
-  No file is modified. A rename sweep is an owner decision (AGENTS.md
-  2026-09-07); this supplies the blast radius for it.""")
+SCOPE -- read this before quoting any number above
+  The number that MATTERS is the qualified/bare split, not the sense buckets. A
+  use with a disambiguating noun after it ("one-dimensional Wedderburn block")
+  is not ambiguous to anyone, and those are the large majority. Of the bare
+  uses, most are still clear from their own sentence; the genuinely SPATIAL
+  bare uses number about four.
+  The sense classifier is a high-recall heuristic and its "NO-MARKER" bucket
+  means the REGEX had no marker -- it is not an ambiguity count, and reading it
+  as one overstates the problem by an order of magnitude. That mistake was made
+  three times in this corpus before being caught; the bucket is named
+  NO-MARKER rather than UNCLASSIFIED for exactly that reason.
+  No file is modified. The authoring rule lives in
+  content/quantum-observable-universe/notation/notation-collisions.md.""")
     return 0
 
 
