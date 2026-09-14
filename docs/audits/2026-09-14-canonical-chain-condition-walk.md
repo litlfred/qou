@@ -698,6 +698,69 @@ Pinned in section 8 of
 
 ---
 
+## 🛑 Step 7, and a process failure of mine worth more than the finding
+
+Walking step 7's interior turned up that the step-9 theorem's *hypotheses* are
+free:
+
+```lean
+def gbSpectralCollapsePage : ℕ := 2
+def GbSpectralSequenceCollapseAtE2 : Prop := gbSpectralCollapsePage = 2   -- 2 = 2
+def YekutieliFiniteSliceMultiplicativeTrace (T_w : Type*) : Prop := Nonempty T_w
+```
+
+and both are hypotheses of `atom_knot_mass_derivation`. **This is already
+reported**, verbatim, in
+[`2026-09-08-l2-1ppq-research-program-gaps.md`](2026-09-08-l2-1ppq-research-program-gaps.md)
+row 7 — *"`gbSpectralCollapsePage := 2` and `GbSpectralSequenceCollapseAtE2 :=
+(2 = 2)` — **true by definition**"*, bean **`wpdb`**. I re-derived it. Credit
+there, not here.
+
+**In fairness to the Lean: it declares this itself.** Its docstrings say
+*"pinning the collapse page to 2 by construction. Genuine content … awaits
+Mathlib spectral-sequence support"*. That is honest authoring, not laundering —
+the gap is stated at the site.
+
+### The process miss
+
+**That audit walks the same chain, step by step, and I did not find it until
+step 7.** Every corpus-grep I ran was scoped to the *finding* — "has anyone
+questioned the rank-5 claim", "is `M̂_QOU` defined" — and none asked the prior
+question, *"has anyone walked this chain?"*. The checklist exists for exactly
+that, and a topic-scoped grep is how it gets skipped without feeling skipped.
+
+### Measured overlap, so the next reader does not have to re-check
+
+| my defect | in `2026-09-08`? |
+|---|---|
+| #1 step-11 hadronic `𝔈₀` circularity | **no** (line 412 is q₀'s "third determination", a different circularity) |
+| #2 `g = 4` rank-5 unmeetable | **no** — zero hits for rank-5 / completeness / `genus-from-hecke` |
+| #3 step-4 `6 ↔ 6` span = 4 of 6 | **no** (its row 4 is the *Lean absence* and a 7-generator count — adjacent, different claim) |
+| #4 steps 7–8 `uses[]` vs diagram | **no** |
+| #5 step-9 `𝓜̂_QOU` undefined | **no** |
+| step-7 `2 = 2` hypothesis | **YES — prior art, bean `wpdb`** |
+
+Its step-10 row is **close to but not the same as** C10a above: it names
+`nucleus_operator_selection_sdp.py` sweeping `n_target = |tr_M(W_atom)|` as
+*"circular as a selector"*, i.e. one caller; C10a measures **three inequivalent
+production meanings** across three callers against a spec declaring
+`n_target ∈ ℤ≥0`. Read together rather than as duplicates.
+
+### One small thing that does look new
+
+The **collapse page disagrees across artifacts**: the cheat sheet says `E_2` in
+three places (line 49 "🟢 derived", the line-167 diagram, the line-254 step
+table), while `prop:spectral-sequence-collapse`'s own statement says the
+sequence *"collapses at `E_1`"*. Collapse at `E_1` is **strictly stronger**
+(all differentials vanish a page earlier), and the block's stated reason —
+`HH^k(A,A) = 0` for semisimple `A` — is an `E_1` argument. So the cheat sheet
+**understates** its own proposition. Safe direction, like C10b, and stated
+cautiously: the 2026-09-08 audit's row 7 says "collapse at `E_2` is a class
+field" and does not raise `E_1`, so this appears unreported, but it is a small
+claim and I have not searched for it exhaustively.
+
+---
+
 ## Where the walk stands
 
 The chain's conditions do not accumulate step by step — they **converge on one**:
