@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-14T06:19:14Z
+updated_at: 2026-09-14T16:04:45Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -3047,3 +3047,46 @@ non-zero net constraint; over any field, so every `n`, `q` and trace convention.
 active set only); the γγ-selected-word strand-tracked follow-up (blocked on
 `qou-ales` step 2); escape classes B and D of PR #7181. **Bean stays OPEN.**
 
+
+
+## 2026-09-14 — class B: the AVERAGING escape is closed at the corpus's own `δ`
+
+The 2026-09-12 entry narrowed class B's remaining escape to two hypotheses —
+break the **averaging** of the pn letter, or break **affineness** of the
+interface law — and noted *"neither mentions a numerical value"*.
+
+`pn_betweenness_blocks_signMixed` carries the averaging half under
+`-2 < δ < 2`, the range on which `corpusWeight δ = 1/2 + δ/4` is a strict convex
+weight. Read as a Lean hypothesis, that looks like something a third bond family
+might violate. **It is not an assumption — `δ` is derived, and lands three orders
+of magnitude inside.**
+
+| | |
+|---|---|
+| `δ(q₀)` | `0.00137571080703` |
+| `2 / δ(q₀)` | **1453.7939** — factor inside the range |
+| `δ(q) = 2` at | `q = 3.458099300`, i.e. **3.115×** the substrate modulus |
+| sign | `δ > 0` for every `q > 1`, so `w > 1/2` always — never near either end of `(0,1)` |
+
+**Identification checked, not assumed** (two `delta` across two layers is the
+`da-arity-conflation` trap). Derived symbolically, exact:
+
+- `z(1/q) − (z − h) = 0`, so `f_nn = z − h` (the constants' `fNN_eq_fPP_bar`);
+- `w·f_pp + (1−w)·f_nn − (z − h(1/2 − δ/4)) = 0` with `w = 1/2 + δ/4`;
+- `δ − ħ_q²·h_q·[2]_q/3 = 0`, the docstring's alternative spelling.
+
+So `pyhecke.constants`' `eps = δ/4` convention (canonical `bring_color_weighted`,
+owner ruling R3) **is** the Lean's `corpusWeight`. Cross-checked:
+`pn_interface_offset(q0)` matches `−h(1−δ/2)/2` to **0.0** at 70 dps.
+
+**Consequence: affineness of `μ = z + d` is the sole surviving class-B
+hypothesis.** Untouched here.
+
+Scope (b) for the averaging half — it discharges an existing sorry-free theorem's
+hypothesis from a derived quantity rather than assuming it. **NOT claimed:** that
+no third bond family exists, that class B is excluded, or anything about
+**magnitude** — *"what derived object puts `b_pn` more than 5× below both
+like-species bonds"* is untouched and is still this bean's real target.
+
+Probe: `computations/probes/pn_averaging_weight_is_derived_probe.py`, all
+assertions pass, 70 dps, proton pin, convention D, no float64.
