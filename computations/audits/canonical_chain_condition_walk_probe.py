@@ -23,18 +23,45 @@ THE THREE MEASURED FINDINGS
 The step is stated as `H_n(q) = (+)_{lam |- n} M_{d_lam}` with
 `tr_M = sum_lam y_lam chi^lam` -- over ALL partitions of n.  Measured against the
 committed `y-lambda-at-q0.witness.json`, every y_lam with three or more rows is
-EXACTLY 0, at n = 2, 3, 4 and 5.  The production family is
-`y_lambda_su_n(n, q, 2)` and that trailing `2` is a row cap.  So the partition
-sum the chain advertises is not the sum production computes, and the restriction
-is a condition the step statement does not carry.  (AGENTS.md does say
-"convention D = the two-row truncation" -- so this is known; what is missing is
-that the CHAIN's own step statement does not say it.)
+EXACTLY 0, at every n from 2 to 12 (at n=12: 7 nonzero, 70 zero).  The production
+family is `y_lambda_su_n(n, q, 2)` and that trailing `2` is a row cap.
 
-**C5b -- `alpha` is not an ad-hoc ratio; it is a Wenzl weight.**
+    🛑 SECTION 6 CORRECTS THE FRAMING OF THIS ONE, AND THE CORRECTION MATTERS.
+    This paragraph first called the row cap "a condition the step statement does
+    not carry", which reads as though it were a truncation bolted on at step 5.
+    It is not.  The cap is DERIVED, in the corpus, from the step-1 choice of the
+    fibre `V`, and it is what FORCES the Markov parameter.  What step 5's
+    statement omits is the HYPOTHESIS, not the truncation.  See section 6.
+
+**C5b -- `alpha` is not an ad-hoc ratio; it is a Wenzl weight, and it is DERIVED.**
 `y_(3)` at n = 3 equals `(q^4+1)/(q^2+1)^2` exactly.  That is the same `alpha`
 that the 2026-09-08 Q_beta ruling names as the augmentation-to-z_D factor and that
 `QOU/Hecke/MarkovCrossingReversal.lean` found relating the two admissible cells of
-the flavour split.  It was the trivial block's Wenzl weight all along.
+the flavour split.  Section 6 shows it is not merely *observed* to equal `y_(3)`:
+it follows from `markovWeights_eq_jones_of_threeRow_eq_zero` as
+`y_(3) = 1 - 2/[2]_q^2`.
+
+**C3 (step 3) -- the whole fork reduces to ONE condition, and it sits at step 1.**
+`rem:markov-axioms-primitive` states correctly that axioms 1-2 admit a
+ONE-PARAMETER FAMILY, so the cheat sheet's "unique trace tr_M" at step 3 is the
+compressed form.  But the parameter is then FORCED, by a sorry-free chain:
+
+    V = fundamental of SU_q(2)        <- the hypothesis, and the only one
+      => l(lambda) <= 2               lem:feynman-eigenbasis-decomposition
+      => y_(1^3) = 0
+      => [+ faithfulness]             markovWeights_eq_jones_of_threeRow_eq_zero
+      => y_(2,1) = 1/[2]_q^2, y_(3) = alpha, z = q^3/(q^2+1) = z_D
+
+and the competing root z = q is `markovWeights_degenerate_root`: y = (1,0,0), so
+`y_(2,1) = 0` and the trace is NOT FAITHFUL on TL_3.  That is a DERIVATION-FIRST
+discriminator on the fork `qou-99qc` / `qou-qqm4` have been carrying, using no
+residual at all -- and it points AWAY from the cell that reproduced the
+flavour-split baseline exactly in #7334.  Recorded; the owner call is not taken.
+
+A measurement note worth keeping: `grep -c sorry` on
+`MarkovTraceTLUniqueness.lean` returns 1, and that hit is the word inside a
+COMMENT ("sorry-free, lean-direct exit 0").  The file has no `sorry` tactic.
+Counting the word is not counting the tactic.
 
 **C5c -- the normalisation is DIMENSION-WEIGHTED, and a naive reading gets it
 wrong.**  `sum_lam d_lam * y_lam = 1` exactly at every n (this is `tr_M(1) = 1`,
@@ -119,13 +146,13 @@ def main() -> int:
 
     print()
     print("2. STEP 5b -- alpha IS THE TRIVIAL BLOCK'S WENZL WEIGHT, EXACTLY")
-    y3 = mp.mpf([r for r in by_n["3"] if r["partition"] == [3]][0]["y_at_q0_50dps"])
+    y3w = mp.mpf([r for r in by_n["3"] if r["partition"] == [3]][0]["y_at_q0_50dps"])
     a0 = mp.mpf(str(sp.N(ALPHA.subs(_q, sp.Float(str(q0), 50)), 46)))
-    agree = abs(y3 - a0) < mp.mpf("1e-45")
+    agree = abs(y3w - a0) < mp.mpf("1e-45")
     ok &= agree
-    print(f"   y_(3) at n=3            = {mp.nstr(y3, 30)}")
+    print(f"   y_(3) at n=3            = {mp.nstr(y3w, 30)}")
     print(f"   alpha = (q^4+1)/(q^2+1)^2 = {mp.nstr(a0, 30)}")
-    print(f"   agree to 45 dps: {agree}   |diff| = {mp.nstr(abs(y3-a0), 6)}")
+    print(f"   agree to 45 dps: {agree}   |diff| = {mp.nstr(abs(y3w-a0), 6)}")
     print("   -> the alpha of the 2026-09-08 Q_beta ruling and of the flavour-split")
     print("      fork is not an ad-hoc ratio; it is this Wenzl weight.")
 
@@ -188,6 +215,51 @@ def main() -> int:
     print("      have no such term.  The defect points the SAFE way -- the doc looks")
     print("      MORE fitted than the code -- but it is in the PRIMARY coordination")
     print("      document, and an agent reading it would conclude the chain fits AME.")
+
+    print()
+    print("6. STEP 3 -- AND THE WHOLE FORK REDUCES TO **ONE** CONDITION, AT STEP 1")
+    print("   [This section CORRECTS section 1's framing -- see the docstring.]")
+    qs = sp.symbols("qs", positive=True)
+    t2 = qs + 1 / qs
+    y21 = 1 / t2**2
+    y3 = 1 - 2 * y21
+    zz = qs**2 / t2
+    a_sym = (qs**4 + 1) / (qs**2 + 1) ** 2
+    zD_sym = qs**3 / (qs**2 + 1)
+    e1 = sp.simplify(y3 - a_sym)
+    e2 = sp.simplify(zz - zD_sym)
+    ok &= (e1 == 0) and (e2 == 0)
+    print("   rem:markov-axioms-primitive: axioms 1-2 admit a ONE-PARAMETER FAMILY;")
+    print("   axiom 3's member is then FORCED, and the forcing is sorry-free Lean:")
+    print()
+    print("     V = fundamental of SU_q(2)         <- HYPOTHESIS, and the only one")
+    print("       => l(lambda) <= 2 row cap          lem:feynman-eigenbasis-decomposition")
+    print("       => y_(1^3) = 0")
+    print("       => [+ faithfulness y_(2,1) != 0]   markovWeights_eq_jones_of_threeRow_eq_zero")
+    print("       => y_(2,1) = 1/[2]_q^2, y_(3) = (q^4+1)/(q^2+1)^2, z = q^3/(q^2+1)")
+    print()
+    print(f"   y_(3) - alpha = {e1}      z - z_D = {e2}      "
+          f"{'BOTH EXACT' if e1 == 0 and e2 == 0 else 'MISMATCH'}")
+    dy3 = mp.mpf(str(sp.N(y3.subs(qs, sp.Float(str(q0), 50)), 46)))
+    dy21 = mp.mpf(str(sp.N(y21.subs(qs, sp.Float(str(q0), 50)), 46)))
+    w21 = mp.mpf([r for r in by_n["3"] if r["partition"] == [2, 1]][0]["y_at_q0_50dps"])
+    match = abs(dy3 - y3w) < mp.mpf("1e-45") and abs(dy21 - w21) < mp.mpf("1e-45")
+    ok &= match
+    print(f"   derived vs committed witness at q0: y_(3) and y_(2,1) both agree: {match}")
+    print()
+    print("   SO: the two-row cap is NOT a truncation bolted onto step 5 -- it is")
+    print("   DERIVED from the step-1 choice of V, and it is what FORCES z_D.  And")
+    print("   alpha is not merely 'observed to equal y_(3)': it IS y_(3), derived.")
+    print()
+    print("   The augmentation z = q is markovWeights_degenerate_root: y = (1,0,0),")
+    print("   so y_(2,1) = 0 and the trace is NOT FAITHFUL on TL_3.")
+    print(f"   check  z*[2]_q - q^2  at z=q  =  {sp.factor(sp.simplify(qs*t2 - qs**2))}"
+          "   (= 1, so != q^2)")
+    print("   -> that is a DERIVATION-FIRST discriminator on the fork qou-99qc /")
+    print("      qou-qqm4 have been carrying, and it uses no residual at all.  The")
+    print("      cell that reproduced the flavour-split baseline exactly (#7334) is")
+    print("      the corpus's own proved-degenerate root.  Recorded; the owner call")
+    print("      on which cell to adopt is NOT taken here.")
 
     print()
     print("VERDICT:", "PASS -- steps 5 and 10 each carry a condition the chain's own "
