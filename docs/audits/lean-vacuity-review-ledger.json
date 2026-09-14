@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-09-14T06:44:29.484Z",
+  "updated_at": "2026-09-14T07:56:03.563Z",
   "entries": {
     "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3692,40 +3692,6 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/information-theory/computational-horizon.lean::HorizonStructure::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 243,
-      "verdict": "genuine",
-      "file_sha": "f6bd0596e01b",
-      "disposition": "horizon-nonempty-was-a-tautology",
-      "evidence": "FIXED 2026-09-14. All four propositions parameterised.\n\nTHE DEFECT WAS WORSE THAN THIS ENTRY RECORDED. Beyond the three `Prop`-universe fields, `horizon_nonempty` read `degree_zero_blocked -> True`, which is a TAUTOLOGY: `fun _ => trivial` discharges `X -> True` for every `X`. So the one field shaped like an implication constrained nothing, and the conclusion its docstring names -- \"the horizon is non-empty\" -- was never written into the type at all. It now carries `degreeZeroBlocked -> horizonNonempty` over named parameters.\n\n`computationalHorizonStructure` supplied `True` for all three conditions as FIELD VALUES, invisible outside the definition; they are now type arguments, so the declaration says on its face that it asserts nothing about leakage or non-emptiness. Encoding them needs the jet-horizon algebra this file deliberately does not import, so they are left visible rather than guessed at.\n\nlean -DautoImplicit=false -s 65536 exit 0. Self-contained: 1 file, no other consumer in the tree.\n\n--- prior evidence, unchanged ---\nADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `degree_zero_blocked`, `degree_one_leaks`, `degree_two_leaks` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[HorizonStructure]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.\n\nNOTE: `horizon_nonempty : degree_zero_blocked → True` does mention `degree_zero_blocked` and constrains nothing — `P → True` is provable for every `P`. A consumer whose conclusion is `True` is not a consumer.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
-      }
-    },
-    "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean::ObstructionParallel::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 237,
-      "verdict": "genuine",
-      "file_sha": "462ae76281ed",
-      "disposition": "vacuity-was-realised-now-visible-in-the-type",
-      "evidence": "FIXED 2026-09-14. `q_regularized` and `classical_obstruction` parameterised.\n\nTHE VACUITY WAS NOT MERELY POSSIBLE, IT WAS REALISED. Both instances in the file -- `nsParallel` and `computationalParallel` -- set BOTH `Prop`-universe fields to `True` explicitly, hidden inside the definitions. They now read `ObstructionParallel True True`, so what is being asserted is on the face of each declaration.\n\nNothing downstream weakens: `both_topologically_obstructed` uses `top_nonzero` alone, which is genuine content (`topological_invariant != 0`, discharged by `norm_num` at -6 and 8). Encoding the two would mean stating q-NS global well-posedness and the classical obstruction, both open -- an authorial call.\n\nlean -DautoImplicit=false -s 65536 exit 0. Self-contained: 1 file.\n\n--- prior evidence, unchanged ---\nADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `q_regularized`, `classical_obstruction` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[ObstructionParallel]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
-      }
-    },
     "content/quantum-observable-universe/knots-particles-confinement/hadron-fibre-embedding.lean::HadronFibreEmbedding::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
@@ -4313,6 +4279,240 @@
         "agent_date": "2026-09-14"
       },
       "source": "agent adjudication, bean qou-metc item 3 (corpus-wide ledger seeding)"
+    },
+    "content/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean::acoustic_horizon_regularity::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 98,
+      "verdict": "advisory",
+      "file_sha": "82860b342436",
+      "disposition": "placeholder-disclosed",
+      "evidence": "SHAPE (B) conjunction-of-own-fields, but ADVISORY not genuine: it is declared `def` rather than `theorem` (so it makes no proof claim), the carrier is a real hypothesis bundle, and -- decisively -- this same file carries GENUINELY PROVED siblings: `acoustic_horizon_criterion_iff` closes by `rw [ctx.mach_def, div_eq_one_iff_eq (ne_of_gt ctx.cs_pos)]` and `acoustic_horizon_hawking_temperature` by `field_simp`. A file that proves what it can prove and bundles what it cannot is disclosing, not laundering. Needs presentation work (say in the docstring that this one is a bundle), not restructuring.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean::discrete_vortex_spectrum::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 91,
+      "verdict": "advisory",
+      "file_sha": "d3958fa3c76d",
+      "disposition": "placeholder-disclosed",
+      "evidence": "SHAPE (B) conjunction-of-own-fields; ADVISORY on the same grounds as its `acoustic-horizon-conditions.lean` counterpart -- declared `def`, carrier is a real hypothesis bundle, and the content-block sibling file is the one the block's `lean.ref` resolves to (AGENTS.md 0a) and is the better formalisation of the pair. Presentation, not restructuring.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean::root_of_unity_truncation_conditional::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 73,
+      "verdict": "genuine",
+      "file_sha": "67894ace6ffa",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "SHAPE (B) conjunction-of-own-fields, with a docstring that DENIES the defect. The docstring says \"it composes them; it does not assume its own conclusion\" over a proof `<the class's own conclusion fields>` whose components ARE the conclusion in pieces. `P -> Q -> (P /\\ Q)` has no content. The identical denial sentence appears verbatim on `vorticity_lower_bound_conditional` in `fluid-dynamics/vorticity-lower-bound.lean` -- same authoring pass, so this is a pattern rather than a slip.\n\nThis is the item-5 shape stated in AGENTS.md 3b-cond: the class must carry the sub-hypotheses and the theorem must DERIVE the conclusion from them; here the class carries the conclusion itself, one conjunct per field.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean::vorticity_lower_bound_conditional::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 85,
+      "verdict": "genuine",
+      "file_sha": "89176c706da5",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "SHAPE (B) conjunction-of-own-fields, with a docstring that DENIES the defect. The docstring says \"it composes them; it does not assume its own conclusion\" over a proof `<ctx.separation_decay, ctx.vorticity_lower, ctx.bkm_diverges>` whose components ARE the conclusion in pieces. `P -> Q -> (P /\\ Q)` has no content. The identical denial sentence appears verbatim on `root_of_unity_truncation_conditional` in `fluid-dynamics/root-of-unity-truncation.lean` -- same authoring pass, so this is a pattern rather than a slip.\n\nThis is the item-5 shape stated in AGENTS.md 3b-cond: the class must carry the sub-hypotheses and the theorem must DERIVE the conclusion from them; here the class carries the conclusion itself, one conjunct per field.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean::acoustic_horizon_conditions::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "applied-tuple-projection",
+      "line": 43,
+      "verdict": "genuine",
+      "file_sha": "45135d0eb1e1",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "SHAPE (A) antecedent-asserting context. The class carries a FREE `Prop` field `acoustic_horizon_formed`, a field `horizon_active` ASSERTING it, and `impl_*` implications to the conclusion; the theorem does modus ponens `<ctx.impl_x ctx.horizon_active, ...>`. The class supplies BOTH premises, so the conclusion is assumed with two fields of ceremony -- and because the `Prop` is free, `<True, trivial, ...>` inhabits the premise, so no instance is constrained by anything. Second defect: the docstring claims \"(3b-conditional, fully proved)\", which is precisely what AGENTS.md 3b-cond item 5 forbids -- the class carries the conclusion's own premises rather than genuine sub-hypotheses the theorem composes.\n\nSCOPE, measured: this library module has ZERO importers, and the same proposition also has a content-block sibling at `content/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean` which per AGENTS.md 0a is what the block's `lean.ref` actually resolves to (sibling-first) -- and the sibling is the BETTER formalisation. So the defect is contained: it compiles under `lake build QOU` (inside the Lake glob) but nothing consumes it. Whether to delete the library twin or promote the sibling into the library is an author call, not an agent call.\n\nThe sibling's `acoustic_horizon_criterion_iff` is genuinely proved (`rw [ctx.mach_def, div_eq_one_iff_eq (ne_of_gt ctx.cs_pos)]`) and `acoustic_horizon_hawking_temperature` closes by `field_simp`.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/discrete_vortex_spectrum.lean::discrete_vortex_spectrum::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "applied-tuple-projection",
+      "line": 70,
+      "verdict": "genuine",
+      "file_sha": "1499d8578179",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "SHAPE (A) antecedent-asserting context. The class carries a FREE `Prop` field `vortex_quantisation_holds`, a field `quantisation_active` ASSERTING it, and `impl_*` implications to the conclusion; the theorem does modus ponens `<ctx.impl_x ctx.quantisation_active, ...>`. The class supplies BOTH premises, so the conclusion is assumed with two fields of ceremony -- and because the `Prop` is free, `<True, trivial, ...>` inhabits the premise, so no instance is constrained by anything. Second defect: the docstring claims \"(3b-conditional, fully proved)\", which is precisely what AGENTS.md 3b-cond item 5 forbids -- the class carries the conclusion's own premises rather than genuine sub-hypotheses the theorem composes.\n\nSCOPE, measured: this library module has ZERO importers, and the same proposition also has a content-block sibling at `content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean` which per AGENTS.md 0a is what the block's `lean.ref` actually resolves to (sibling-first) -- and the sibling is the BETTER formalisation. So the defect is contained: it compiles under `lake build QOU` (inside the Lake glob) but nothing consumes it. Whether to delete the library twin or promote the sibling into the library is an author call, not an agent call.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/root_of_unity_truncation.lean::root_of_unity_truncation::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "applied-tuple-projection",
+      "line": 69,
+      "verdict": "genuine",
+      "file_sha": "29f3c6a626f6",
+      "disposition": "restate-to-derive-or-demote",
+      "evidence": "SHAPE (A) antecedent-asserting context. The class carries a FREE `Prop` field `truncation_holds`, a field `truncation_active` ASSERTING it, and `impl_*` implications to the conclusion; the theorem does modus ponens `<ctx.impl_x ctx.truncation_active, ...>`. The class supplies BOTH premises, so the conclusion is assumed with two fields of ceremony -- and because the `Prop` is free, `<True, trivial, ...>` inhabits the premise, so no instance is constrained by anything. Second defect: the docstring claims \"(3b-conditional, fully proved)\", which is precisely what AGENTS.md 3b-cond item 5 forbids -- the class carries the conclusion's own premises rather than genuine sub-hypotheses the theorem composes.\n\nSCOPE, measured: this library module has ZERO importers, and the same proposition also has a content-block sibling at `content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean` which per AGENTS.md 0a is what the block's `lean.ref` actually resolves to (sibling-first) -- and the sibling is the BETTER formalisation. So the defect is contained: it compiles under `lake build QOU` (inside the Lake glob) but nothing consumes it. Whether to delete the library twin or promote the sibling into the library is an author call, not an agent call.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean::ccg_cosimplicial_identities::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 43,
+      "verdict": "advisory",
+      "file_sha": "4ab289b8299d",
+      "disposition": "structure-field-accessor",
+      "evidence": "SHAPE (C) accessor on an EXPLICIT structure argument -- NOT a self-assuming projection. It takes `(ccg : CosimplicialCrossedGroupoid M)` as an ordinary argument, not as a class hypothesis, and projects a field that any constructor of that structure must supply. \"For any CCG, the cosimplicial identities hold\" is ordinary mathematics; the detector fires on the proof body's shape, not on the logic. ADVISORY rather than `legit` only because the statement would read better as a direct use of the field than as a restated theorem.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean::ccg_crossed_module_structure::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "applied-tuple-projection",
+      "line": 35,
+      "verdict": "advisory",
+      "file_sha": "a1b8c98359b8",
+      "disposition": "restructure-statement",
+      "evidence": "SHAPE (C) accessor on an EXPLICIT structure argument, so not a self-assuming projection on the logic. ADVISORY (rather than `legit`, unlike its `ccg-cosimplicial-identities.lean` neighbour) because of a SEPARATE weakness the detector did not flag: the conclusion `Nonempty CrossedModule` mentions neither `ccg` nor `n`, so the `forall n` is VACUOUS and the statement proved is strictly weaker than the docstring's claim. Fix the statement, not the proof.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean::qbeta_c_k_closed_forms_derived::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "applied-tuple-projection",
+      "line": 131,
+      "verdict": "genuine",
+      "file_sha": "866e46508f42",
+      "disposition": "demote-instance-to-def-and-fix-docstring",
+      "evidence": "GENUINE, and the projection shape is the lesser half of it. The theorem's docstring says the openness \"is carried by that class having no instance\". There IS an instance 49 lines above -- `noncomputable instance defaultQBetaCKClosedForms : QBetaCKClosedForms` at line 82 -- parameterless and global, so instance search resolves the theorem's `[inst : QBetaCKClosedForms]` to it. The file contradicts itself: the CLASS docstring names the instance (\"The instance `defaultQBetaCKClosedForms` axiomatises these\") while the THEOREM docstring 49 lines later says nothing inhabits the class.\n\nWhy it matters beyond bookkeeping: that instance's values are FITTED and the file says so -- \"whose instance values are FIT, not proved\", with residuals \"c_4 0.9%, c_5 2.4%, c_6 14%; c_7 signed-error +114%\". So a 3b-cond \"conditional\" result is in practice UNCONDITIONAL on a fit. That is the shape AGENTS.md \"Axiomatization is NOT a Proof\" rule 2 names, and the same trap as `ClassicalLimitStpart`, demoted `instance` -> `def` on 2026-08-24 for exactly this reason.\n\nSCOPE, measured, so this is not oversold: `QBetaCKClosedForms` and `qbeta_c_k_closed_forms_derived` are referenced by NO other file -- the instance's reach is file-local, so nothing downstream is currently laundered. What is wrong is the file's own self-description and the `instance`-vs-`def` declaration. Fix is the `ClassicalLimitStpart` one: demote to `def`, correct the theorem docstring.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean::crystal_basis_reduction::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "applied-tuple-projection",
+      "line": 122,
+      "verdict": "legit",
+      "file_sha": "1b8e9cca58e0",
+      "disposition": "no-change",
+      "evidence": "SHAPE (D) -- the CORRECT AGENTS.md 3b-cond pattern, and worth citing as the reference encoding. The class carries `ReducesTo` IMPLICATIONS; the theorem applies them to CALLER-SUPPLIED `hCount` / `hDepth` / `hLimit`; and the conclusion `chirality /\\ term7 /\\ zHabiro` is NO FIELD of the class. That is exactly item 5's requirement -- class carries sub-hypotheses, theorem derives the conclusion by composing them.\n\nIts own docstring already says so, and records that it was REPAIRED from the bad shape (\"the part the previous encoding -- a bare `Prop` field handed back -- did not state\"). So the detector is firing on the repaired form of a defect it correctly caught earlier: a false positive with good provenance.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_q_one_shadow::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 123,
+      "verdict": "advisory",
+      "file_sha": "aef8d4c64cbc",
+      "disposition": "named-open-input-accessor",
+      "evidence": "EXEMPLAR -- do not 'fix' this one. It is `def` not `theorem`; the docstring says \"Assumed, not derived here\" in terms; and the class is PARAMETRIC over the caller's functions, so no global parameterless instance can discharge it (the failure mode that makes `conj-qbeta-c-k-closed-forms.lean` genuine). A named, disclosed, uninhabitable-by-default accessor onto an open input is the honest 3b encoding of a hypothesis, not a self-assuming projection.\n\nNote also that a counterpart declaration in this same file, `bar_even_kernel_implies_direction_sanity`, is already ledgered `genuine` -- so the split here is per-declaration and was decided on the declaration, not on the file.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
+    },
+    "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean::qbeta_q_eq_one_shadow_anchors::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "tuple-projection",
+      "line": 86,
+      "verdict": "advisory",
+      "file_sha": "998c8ff1880c",
+      "disposition": "named-open-input-accessor",
+      "evidence": "EXEMPLAR -- do not 'fix' this one, for the same three reasons as `bar_even_kernel_implies_q_one_shadow`: `def` not `theorem`, \"Assumed, not derived here\" stated in terms, and a class parametric over the caller's functions so no global instance can discharge it. Additional positive evidence specific to this file: `q_eq_one_shadow_gate_reject_c2` DERIVES a real negation that the class does not contain, so the carrier is being used as a hypothesis bundle that does work, not as a place to park the conclusion.",
+      "reviewed_at": "2026-09-13T21:07:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-13",
+        "agent_model": "claude-opus-5"
+      },
+      "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     }
   }
 }
