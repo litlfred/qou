@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T13:48:45Z
-updated_at: 2026-09-13T09:31:12Z
+updated_at: 2026-09-14T19:45:00Z
 ---
 
 Found pre-merge on #6955 while probing its merge ordering against #6942. **A defect
@@ -354,3 +354,57 @@ lines containing an arrow, or require the path to resolve) is a change to
 somebody else's script, is neither a precision increase nor corpus-derived,
 and therefore needs the owner per AGENTS.md 2026-09-07. Put here for that
 decision rather than made.
+
+---
+
+## Update 2026-09-06: the pipeline is being run CONCURRENTLY by three agents, which raises the guard's value
+
+Measured on `origin` while coordinating #6942's merge — **three open PRs are draining
+`uploads/` at once**, and their document sets nest:
+
+| PR | doc dirs touched | writes `INDEX.md` |
+|---|---|---|
+| #6955 | **20** | yes |
+| #6962 | **12** | yes |
+| #6964 | **15** | yes |
+
+All 12 of #6962's dirs are in both others: **12 ⊂ 15 ⊂ 20**.
+
+The *content* is the same, not merely the scope. `git rev-parse <branch>:library/<doc>`:
+
+```
+arxiv-0902.0350v1   : 6962 tree == 6955 tree ;  6964 +1 file (the PDF)
+arxiv-2601.07906v2  : 6962 tree == 6955 tree ;  6964 +1 file (the PDF)
+```
+
+So #6962 and #6955 produce **byte-identical trees** for the shared documents, and
+#6964 is #6962's ingest plus the migrate step.
+
+### Why this belongs on this bean
+
+The orphan defect above is a silent failure on the **skip** path. A skip is common
+precisely when *another agent has already ingested the document* — which is the
+normal state when three PRs run the pipeline concurrently. So the concurrency does
+not merely duplicate effort; it **drives traffic through the exact path that
+produces invisible orphans**. The guard (refuse to move a PDF into a dir with no
+`structure.json`) is what turns that into a loud skip.
+
+### The other cost, which is not this bean's to fix
+
+All three regenerate `INDEX.md`, so two of the three conflict on it, and a
+hand-resolved index conflict is how rows go missing. The index already carries
+that damage: **642 dirs against 589 rows**; subtracting the 23 duplicates whose
+row is correctly omitted leaves **8 sectioned documents with no row**, invisible to
+tier 1 of corpus-grep path 5 while their sections sit on disk.
+
+Coordination comments posted on #6962 and #6964 with the measurements and a stated
+recommendation (land the superset, let the others reduce to no-ops) marked as
+judgement. Neither PR was touched.
+
+### Standing hazard, not a one-off
+
+`uploads/` is a **live incoming queue**, not a one-time backlog (AGENTS.md corrects
+this explicitly). So "N agents ingest the same drop" recurs every time the owner
+drops PDFs, and nothing in the pipeline claims ownership of a drain. Worth a
+claim mechanism — a bean claimed before draining, or a marker file — but that is a
+process proposal, not written here.
