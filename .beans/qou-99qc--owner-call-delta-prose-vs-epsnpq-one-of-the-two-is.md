@@ -2630,3 +2630,75 @@ cost to it is an extrapolation of the principle, not a theorem about it). **No
 Q_β residual was computed for any of these**, precisely so the selection cannot
 be contaminated by proximity to the measured value. The dashboard stays
 un-re-scored.
+
+
+## 2026-09-14 — 🟧 OWNER OBJECTION: crossing COUNT is the wrong cost. Measured — and it changes the answer.
+
+Owner, verbatim: *"The selection rule shouldn't be minimum crossing... It may be
+higher energy than a non-minimal crossing. A sibling has worked on connecting
+hecke energy to O'Hara energy via brings embedding. Can we compare that as a
+selection principle... You're minimizing not just the hecke energy but how the
+knot is embedded into brings surface."*
+
+**The objection holds, measured.** Probe
+`computations/qbeta/qbeta_crossing_energy_separates_the_gluon_probe.py` (7/7).
+
+**Part 7's verdict is right and is about γγ words.** `E_cross(k-vertex γγ word)
+= k·h` exactly (reproduced), so there energy is *proportional to* count and
+swapping the cost changes nothing; `E_cross(empty) = 0` sits below every
+non-empty γγ word, which is the degeneracy that retired the functional.
+
+**The gluon is not a γγ word, and there the two costs DISAGREE:**
+
+| gluon | \|G\| | reading-3 | `E_cross` | Q_β MeV | vs CODATA |
+|---|---|---|---|---|---|
+| (empty) | 0 | no | 0 | 0.5457 | −30.25 % |
+| σ₁ | 1 | **yes** | **+1.10998** | 0.5111 | −34.68 % |
+| **σ₁⁻¹** | 1 | **yes** | **−0.90092** | 0.3970 | −49.26 % |
+| σ₀σ₀ (live) | 2 | no | +2.21996 | 0.6519 | −16.68 % |
+| σ₁σ₀ | 2 | yes | +2.21996 | 0.6822 | −12.80 % |
+| **σ₀σ₁** | 2 | yes | **+2.21996** | **0.3357** | **−57.09 %** |
+| σ₁σ₁ | 2 | yes | +2.21996 | 0.6525 | −16.60 % |
+
+1. **Count ties σ₁ and σ₁⁻¹ at 1; energy strictly prefers σ₁⁻¹.** A negative
+   crossing carries negative energy, which no count can see. The choice of cost
+   is a real decision, not a formality.
+2. **The degeneracy dissolves here.** `E_cross(empty) = 0` but `σ₁⁻¹ < 0`, so
+   the empty word is *not* the energy minimum. γγ words are sign-**balanced** by
+   construction and never offer a bare negative crossing; the gluon does. Part
+   7's verdict does not transfer, and the functional is **usable** on the gluon.
+3. **🛑 But it is a letter-sum, so it is order-blind — and that is the sharp
+   part.** `σ₁σ₀` and `σ₀σ₁` tie **exactly** at `2q`, while their Q_β differ by
+   a **factor of two** (0.6822 vs 0.3357 MeV). The observable depends on the
+   ordering and the functional cannot see it. All three feasible 2-crossing
+   gluons tie at one energy.
+
+**So the owner's proposed direction is the right class of fix**, and for the
+reason point 3 exposes: an embedding energy is *not* a letter-sum — it is
+order-sensitive and can rank a longer word below a shorter one.
+
+**What exists / what is missing (searched `computations/`, `tools/`):**
+
+- **Exists** — `mobius_cross_energy_hopf_calibration.py`, calibrated against the
+  **proved** `E(Hopf) = 2π²` (Agol–Marques–Neves, arXiv:1205.0825); a Borromean
+  companion; `QOU.MobiusEnergy` with a categorical `E_cat` from the
+  Frobenius–Hopf comultiplication and the encoded `E_cat = ¼·E_classical +
+  const`; Bring period-matrix / mapping-torus-residue machinery. Beans `qou-zfs6`
+  (Möbius invariance / FHW bound / minimiser as Lean gates) and `qou-dux3` are
+  `completed`.
+- **Missing** — **any map from a braid word to a curve in or on the Bring
+  surface.** The integrators consume hand-parametrised *named* embeddings (Hopf,
+  Borromean). An absence on the surfaces searched, not a proof of absence.
+- **Caveat** — `MobiusEnergy.lean` carries **2 sorries**, and its own header
+  records a prior vacuity incident in which `classicalLimit` made `E_cat` blind
+  (`E_cat = 1 + const` for every knot) *with no `sorry` to flag it*. That leg
+  cannot bear weight unexamined.
+- **The hard part** — Möbius energy is a property of an **embedding**, not a knot
+  invariant; the invariant is the **infimum** over the isotopy class. So a bridge
+  needs either the minimiser (FHW) or a **canonical** embedding — which is
+  exactly what the Bring surface would supply. That is the research content, not
+  a wiring job.
+
+**Nothing adopted.** σ₁⁻¹ is not selected — that would swap one proxy for
+another, and point 3 shows the energy does not separate what remains. The Q_β
+column is a reported consequence, never an input to an ordering.
