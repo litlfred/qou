@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-14T19:25:42Z
+updated_at: 2026-09-14T19:51:16Z
 ---
 
 
@@ -1178,3 +1178,92 @@ An earlier measurement this session read **8 producers / 673 fields** for
 `deltalambda/he4-stage2-ranking-seminormal-xcheck`, and the LOCAL total moved
 287 -> 284 / 4368 -> 4187 across the same rebase (54 main commits). Re-measure
 with the script rather than quoting either figure.
+
+
+## A FIFTH class, and it is invisible to the partition script by construction: the double-precision CHARACTER path (2026-09-14)
+
+Found by draining `probes/rho_k_markov_multiplicativity_probe.py` (42 -> 0), where
+the fix was not serialization at all. `computations/substrate/char_fast.py`
+exposes two character evaluators:
+
+```
+chi_lambda_fast(shape, word, q_val=None, precision="double") -> complex
+    sp.lambdify(..., modules=["numpy"]);  np.asarray(fn(q_val), dtype=complex)
+    prod = prod @ (complex(c)*sigmas_num[g] + complex(d)*I)
+
+chi_lambda_fast_mp(shape, word, q_val) -> mpmath.mpc
+    sp.lambdify(..., modules=["mpmath"]);  mp.matrix arithmetic
+```
+
+The first is **complex128 whatever `q_val` you hand it** — the σ_i matrices are
+built `dtype=complex` and the products are numpy. So a producer can pass the
+50-digit pin, set `mp.dps = 70`, and still be capped at ~1e-16, which is exactly
+what happened: the rho_k probe reported max branching residue `1.60e-14`, its own
+prose called that "machine precision", and its assertion was NAMED
+`wenzl_branching_identity_machine_precision` with a 1e-12 gate. On the mpmath
+sibling the same identity verifies at **3.02e-70** — 56 orders lower.
+
+**Why the partition script cannot see this.** Its producer test is
+`"set_compute_dps" in src and "import numpy" not in src`. The numpy is in
+`char_fast`, not in the caller, so a double-path caller passes the filter and
+lands in LOCAL looking drainable. In the rho_k case that verdict was *right* —
+the file WAS drainable, just not by removing casts — but the filter reached it by
+luck rather than by seeing the cap. Nothing in the queue distinguishes
+"drainable by serializing" from "drainable only by changing the arithmetic" from
+"not drainable at all". Candidate row 48 for
+[`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
+— same family as rows 17-21 (a cap the detector is structurally unable to reach),
+but one import hop further out than any of them.
+
+### Measured surface
+
+Live (non-`_deprecated`) callers of the double path, and the dirty fields behind
+them:
+
+```
+   28  computations/probes/poly-q-proof.witness.json                      <- probes/poly_q_proof_probe.py (5 double calls)
+   62  computations/sublemma-2-1-h9-tritium-verify.witness.json           <- sublemma_2_1_h9_tritium_verify.py (2)
+   95  computations/sublemma-2-1-A-operator-extract-h12-nn.witness.json   <- sublemma_2_1_A_operator_extract_h12_nn.py (1)
+  ---
+  185  fields, 3 witnesses, CONFIRMED behind the double path
+```
+
+Six further callers exist and their status is **undetermined, not clean** —
+`sublemma_2_1_h9_branching_basis`, `sublemma_2_1_h12_he4_branching`,
+`sublemma_2_1_A_operator_extract_h9`,
+`sublemma_2_1_A_operator_extract_h12_nn_streamed`,
+`a_operator/A_operator_extract_at_level`, and `nuclide_braid_pipeline`. The first
+five are library/pipeline modules whose witness `producer_for` does not resolve by
+name, so "no dirty witness resolved to it" is an artifact of the resolver, not a
+measurement. Do not read that line as an all-clear.
+
+**`nuclide_braid_pipeline.py` is the one to look at first** — it calls the double
+path once and the mpmath path twice, i.e. it is a candidate *layer straddle
+inside one producer*, mixing complex128 characters with 70-dps ones. That is the
+shape AGENTS.md's "never straddle the two layers inside one quantity" rule exists
+for, one level down from the q₀ pin it was written about. Not measured here.
+
+Also `computations/_deprecated/rho_k_markov_multiplicativity_probe.py` is a
+3-double-call copy of the file drained today; the live one is under `probes/`.
+
+### Two caveats on the fix, both recorded at the site
+
+- The mpmath path is ~10x slower (its own docstring). Fine at H₆ (Specht dims
+  ≤ 16); the H₉/H₁₂ A-operator extracts in the list above are already named in
+  AGENTS.md as long-compute, so switching those is a cost decision, not a free
+  precision win.
+- **Retighten the gate from the SERIALIZATION ROUND-TRIP bound, never from the new
+  residue.** rho_k went 1e-12 -> 1e-58, derived as (largest serialized character
+  2.813) x 10^-OUTPUT_DPS ~= 2.8e-60 with a decade of headroom. Sizing it to
+  3e-70 would be a bound sized to its own miss.
+
+### One downstream artifact left deliberately stale, and it UNDERSTATES
+
+`content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md`
+line 43 cites the verification as *"machine precision ($3.2 \times 10^{-14}$)"*.
+That is now 56 orders pessimistic. The block belongs to the mass-endomorphism
+arc, so it was not edited — rewriting another arc's published figure is an owner
+call and not a side effect of a float64 drain. It understates rather than
+overstates, so nothing downstream is inflated by leaving it; the discrepancy is
+recorded in the producer docstring and the witness description so a reader
+comparing the two is not misled.
