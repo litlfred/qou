@@ -5,8 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T20:51:46Z
-
+updated_at: 2026-09-14T06:36:53Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2696,3 +2695,63 @@ correction**, and `Q_β = |ε(Δ)|·E₀` with `Δ` a *difference* of two words
 (sibling retraction `a64570260f`) is a reminder that the surrounding structure
 is additive one level down. If a D-frame ladder were additive, the cosine bound
 would not apply. That limit belongs beside the result.
+
+
+## 2026-09-14 (session gifted-feynman, 2) — 🛑 MY OWN Part 3 WAS AN INSTANCE OF THE CLASS IT DOCUMENTS
+
+**Correcting my own figure, and the correction is the point.** Part 3 hardcoded
+one base cell, `Q_D = 0.4447004` MeV (−43.157 %), giving a required ladder
+factor of **1.7592**. **That cell had already moved when I wrote it.**
+
+The scored base changed twice on 2026-09-13 — `173da443b6` made the
+tower-summed `E₀` canonical, then `573b2ece24` migrated the scored element to
+the γγ word `nuc11_interleaved`. The live dashboard row has read **1.668e+8 ppb,
+−16.678 %** since 2026-09-12, not 4.316e+8 / −43.157 %. Verified directly
+against `origin/main:computations/per-observable-100x-status.witness.json`.
+
+**So the required factor is 1.2002, not 1.7592 — wrong by 1.47×.** My *Part 4*,
+in the same probe, names exactly this failure class ("an argument aimed at a
+cell that has since moved"), and Part 3 was an instance of it. The
+`AGENTS.md` paragraph I read the figure from even carries the instruction that
+would have caught it — *"Quote the witness, not this paragraph"* — and I quoted
+the paragraph.
+
+### What is contaminated, and what is not
+
+  * **The conclusion is UNAFFECTED.** 1.2002 is still > 1, so a cosine rung
+    still cannot reach it.
+  * **The Lean is UNAFFECTED.** `cos_rung_lt_of_base_short` takes
+    `Qbase * d < Qtarget` as a *hypothesis*, never a literal, so the theorem was
+    already stated at the right generality. Only the probe's instantiation and
+    its prose carried the stale number.
+  * **Contaminated and now fixed:** the probe docstring, its Part 3 block, its
+    witness, the 2026-09-13 (2) bean entry above, PR #7262's body and one PR
+    comment. All quote 1.7592 / 0.4447004.
+
+### The fix is to stop naming a cell at all
+
+The exclusion is **base-independent**, and stating it that way makes it immune
+to the element moving again — which it may, since the 2026-09-13 ruling records
+that the scored element **fails** the confinement SDP and its replacement is an
+open owner decision:
+
+| cell | vs CODATA | required factor | `cos` rung reaches it? |
+|---|---|---|---|
+| `nuc11_interleaved`, tower `E₀` — **LIVE** | −16.678 % | **1.2002** | **no** |
+| `z_D` on `Δ_S`, tower `E₀` | −42.594 % | **1.7420** | **no** |
+| `z_D` on `Δ_S`, order-zero `E₀` | −43.157 % | **1.7592** | **no** |
+| bar-odd survivor (parity-forced) | −54.825 % | **2.2136** | **no** |
+| augmentation `z = q` — *not ruled* | +12.470 % | 0.8891 | yes |
+| retired `z = 1` — *retired* | +0.17 % | 0.9983 | yes |
+
+**Every cell the ruling admits sits below CODATA**, so each needs a factor
+above 1, and the `N = 1` rung is a cosine bounded by 1 while the `N = 2` rung is
+`0.99992745 < 1`. **The two cells a cosine can reach are exactly the two the
+ruling does not select.** So the exclusion holds for the live element, for its
+two predecessors, for the parity-forced alternative, and for whatever replaces
+the element provided the replacement is below CODATA.
+
+`c₃` required on the live cell: **324098.7**, not `O(1)`. (It was 1.23e6 on the
+stale cell — same order of conclusion, different number.)
+
+Probe re-run 19/19; Lean re-verified `exit 0`, axioms unchanged.

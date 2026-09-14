@@ -125,14 +125,38 @@ Part 2 invites: *is the compute wrong?*  It is not — but it is computing a
 **retired** object, and on the live one the whole rung is structurally excluded.
 
 `qou-iagg` (the dashboard re-score) waits on `qou-cds1` (the `c_k` ladder on the
-ruled `z_D` base), which waits on this bean (derive `α`).  **The second link does
-not hold.**  On the ruled base the ladder must supply a factor
+ruled base), which waits on this bean (derive `α`).  **The second link does not
+hold**, and the reason is base-INDEPENDENT:
 
-    Q_codata / Q_D  =  0.78233341 / 0.4447004  =  1.7592370…   > 1
+**every base cell the ruling admits sits BELOW CODATA**, so the ladder must
+supply a factor **> 1**, while its `N = 1` rung is `cos(α − u/2) ≤ 1` for *every*
+`α` and its `N = 2` rung is `(1 + c₂u²) = 0.99992745… < 1` at the committed
+`c₂ = −1`.                                                       (assertions 15–16)
 
-while its `N = 1` rung is `cos(α − u/2) ≤ 1` for **every** `α`, and its `N = 2`
-rung is `(1 + c₂u²) = 0.99992745… < 1` at the committed `c₂ = −1`.  The two
-together are bounded by `0.99992745 < 1 < 1.7592`.               (assertions 15–16)
+🛑 **This block first hardcoded ONE cell — `Q_D = 0.4447004`, factor 1.7592 —
+and that figure was ALREADY STALE when written (corrected 2026-09-14).**  The
+scored base moved twice on 2026-09-13 (tower-summed `E₀`, then the γγ element
+`nuc11_interleaved`), so the live row is **1.668e+8 ppb, −16.678 %, factor
+1.2002**, not −43.157 %.  **My own Part 4 names that exact failure class — an
+argument aimed at a cell that has since moved — and Part 3 was an instance of
+it.**  The conclusion was unaffected (1.2002 is still > 1), but the number was
+wrong by 1.47×, so the fix is to stop naming a cell at all:
+
+| cell | vs CODATA | required factor | `cos` rung can reach it? |
+|---|---|---|---|
+| `nuc11_interleaved`, tower `E₀` — **LIVE SCORED** | −16.678 % | **1.2002** | **no** |
+| `z_D` on `Δ_S`, tower `E₀` | −42.594 % | **1.7420** | **no** |
+| `z_D` on `Δ_S`, order-zero `E₀` | −43.157 % | **1.7592** | **no** |
+| bar-odd survivor (parity-forced quark letter) | −54.825 % | **2.2136** | **no** |
+| augmentation `z = q` — *not the ruled cell* | +12.470 % | 0.8891 | yes |
+| retired `z = 1` — *retired 2026-09-08* | +0.17 % | 0.9983 | yes |
+
+The two cells a cosine *can* reach are exactly the two the ruling does **not**
+select.  So the exclusion holds for the live element, for its predecessors, and
+for the parity-forced alternative — and it will hold for whatever replaces the
+element, provided the replacement is below CODATA.  **The Lean theorem was
+already stated this way** (`Qbase * d < Qtarget` is a hypothesis, not a
+literal), so only this probe's instantiation and prose were stale.
 
 So no phase whatsoever repairs a base that is 43 % low, because a cosine cannot
 exceed one.  The `c₃` that would be required instead is `1.23e6`, not `O(1)`.
@@ -453,10 +477,12 @@ CONSEQUENCE
   supplies the root of unity. The candidate has no mechanism at all.
 
   PART 3 (scope-(b), proved invariant) -- THE ONE THAT RE-SCOPES THE ARC.
-  Deriving alpha CANNOT unblock qou-cds1. The ruled z_D base needs a ladder
-  factor of 1.7592 > 1; the N=1 rung is a COSINE, bounded by 1 for every alpha,
-  and the N=2 rung is 0.99992745 < 1. The required c3 would be 1.23e6, not
-  O(1). So the dependency chain qou-iagg <- qou-cds1 <- qou-pdix is WRONG at
+  Deriving alpha CANNOT unblock qou-cds1. The ladder must supply a
+  factor ABOVE 1 -- EVERY cell the ruling admits sits below CODATA (live
+  -16.678%, and -42.594 / -43.157 / -54.825 for its predecessors and the
+  parity-forced alternative) -- while the N=1 rung is a COSINE bounded by 1 and
+  the N=2 rung is 0.99992745 < 1. Base-INDEPENDENT, so it survives the element
+  moving again. So the dependency chain qou-iagg <- qou-cds1 <- qou-pdix is WRONG at
   the second link: the Q_beta L2 residual is a BASE problem, not a phase
   problem and not a ladder problem at all. Lean twin sorry-free:
   QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short.
@@ -518,41 +544,65 @@ CONSEQUENCE
           f"does not give a 120th root of unity - only an ELEMENT of order 120 "
           f"does. So the candidate has NO identified mechanism.")
 
-    # ---- PART 3: the ruled z_D base cannot be reached by ANY phase ----------
+    # ---- PART 3: NO admissible base can be reached by ANY phase -------------
     print("\nPART 3 - deriving alpha cannot unblock qou-cds1\n")
     q_p = q_at()
     s_p = substrate_ladder_quantities(q_p, convention="C")
     u_p = s_p["u"]
     Q_A_p = ME * mp.fabs(q_p ** 2 - 2 * q_p - 1) * (q_p + 1) / (2 * q_p ** 3)
-    Q_D = mp.mpf("0.4447004")          # RULED z_D base (AGENTS.md; qou-99qc)
-    need = QCOD / Q_D
     rung2 = 1 + C2 * u_p ** 2          # the N=2 factor at the committed c2 = -1
-    print(f"  Q_codata / Q_D          = {mp.nstr(need, 12)}   (> 1)")
-    print(f"  max over ALL alpha of cos(alpha - u/2) = 1")
-    print(f"  N=2 rung (1 + c2 u^2)   = {mp.nstr(rung2, 12)}   (< 1)")
-    print(f"  => first two rungs <=     {mp.nstr(rung2, 12)}   < 1 < "
-          f"{mp.nstr(need, 8)}")
-    c3_needed = (need / rung2 - 1) / u_p ** 3
-    print(f"  c3 that would be needed instead = {mp.nstr(c3_needed, 10)}  "
-          f"(vs O(1))")
 
-    check("15. the RULED z_D base needs a ladder factor strictly ABOVE 1, "
-          "which a cosine rung can never supply",
-          need > 1 and rung2 < 1,
-          f"need = {mp.nstr(need, 12)}, and the N=1 rung is bounded by 1 while "
-          f"the N=2 rung is {mp.nstr(rung2, 12)} < 1 -- so NO alpha closes it")
+    # Cells are identified by their PUBLISHED signed % miss against CODATA, not
+    # by a hardcoded MeV literal: the literal is what went stale here once
+    # already (the scored element moved twice on 2026-09-13).
+    CELLS = [
+        ("nuc11_interleaved, tower E0  [LIVE SCORED]", mp.mpf("-16.678"), True),
+        ("z_D on Delta_S, tower E0",                   mp.mpf("-42.594"), True),
+        ("z_D on Delta_S, order-zero E0",              mp.mpf("-43.157"), True),
+        ("bar-odd survivor (parity-forced)",           mp.mpf("-54.825"), True),
+        ("augmentation z = q  [NOT ruled]",            mp.mpf("+12.470"), False),
+        ("retired z = 1       [RETIRED]",              mp.mpf("+0.170"),  False),
+    ]
+    print(f"  N=1 rung  cos(alpha - u/2) <= 1 for EVERY alpha")
+    print(f"  N=2 rung  (1 + c2 u^2)      = {mp.nstr(rung2, 12)}  (< 1)")
+    print(f"  {'cell':<44} {'vs CODATA':>11} {'factor':>10}  reachable?")
+    print("  " + "-" * 78)
+    admissible_all_above_one = True
+    nonruled_all_below_one = True
+    for name, pct, admissible in CELLS:
+        factor = 1 / (1 + pct / 100)
+        reachable = factor <= rung2
+        if admissible and not (factor > 1):
+            admissible_all_above_one = False
+        if (not admissible) and not (factor < 1):
+            nonruled_all_below_one = False
+        print(f"  {name:<44} {mp.nstr(pct, 6):>11} {mp.nstr(factor, 8):>10}  "
+              f"{'yes' if reachable else 'NO'}")
 
-    check("16. the required c3 on the ruled base is ~1e6, not O(1): the gap is "
-          "in the BASE, not in any rung",
-          abs(c3_needed) > mp.mpf("1e5"),
-          f"c3_needed = {mp.nstr(c3_needed, 10)}; deriving alpha therefore "
-          f"cannot unblock qou-cds1, and qou-iagg's dependency chain is wrong "
-          f"at that link")
+    live_factor = 1 / (1 + mp.mpf("-16.678") / 100)
+    c3_needed = (live_factor / rung2 - 1) / u_p ** 3
+    print(f"\n  c3 that would be needed on the LIVE cell = "
+          f"{mp.nstr(c3_needed, 10)}   (vs O(1))")
+
+    check("15. EVERY base cell the ruling admits sits BELOW CODATA, so each "
+          "needs a ladder factor ABOVE 1 -- which a cosine rung can never give",
+          admissible_all_above_one and rung2 < 1,
+          "the four admissible cells need 1.2002 / 1.7420 / 1.7592 / 2.2136; "
+          "the N=1 rung is bounded by 1 and the N=2 rung by "
+          f"{mp.nstr(rung2, 10)} < 1. Base-INDEPENDENT: it holds for whatever "
+          "replaces the element, provided the replacement is below CODATA.")
+
+    check("16. the two cells a cosine CAN reach are exactly the two the ruling "
+          "does NOT select, and the required c3 on the live cell is ~1e5",
+          nonruled_all_below_one and abs(c3_needed) > mp.mpf("1e4"),
+          f"augmentation (+12.470%) and the retired z=1 (+0.17%) both sit ABOVE "
+          f"CODATA so a cos rung reaches them; c3_needed on the live cell = "
+          f"{mp.nstr(c3_needed, 10)}, not O(1). The gap is in the BASE.")
 
     # ---- PART 4: what Part 3 does to a route this bean already CLOSED ------
     print("\nPART 4 - the 2026-08-22 cosh exclusion is BASE-DEPENDENT\n")
     need_A = QCOD / Q_A_p     # retired z = 1 cell
-    need_D = need              # ruled z_D cell
+    need_D = live_factor       # LIVE scored cell (nuc11, tower E0)
     print(f"  retired z=1 base : required N=1 factor = {mp.nstr(need_A, 12)}  "
           f"< 1  -> cosh >= 1 is on the WRONG side  (correctly excluded)")
     print(f"  ruled  z_D base  : required N=1 factor = {mp.nstr(need_D, 12)}  "
@@ -659,16 +709,31 @@ CONSEQUENCE
         "alpha_req_in_that_set": False,
     })
     wb.add_data("part3_base_not_phase", {
-        "ruled_zD_base_MeV": fmt(Q_D),
+        "cells_pct_vs_codata": {
+            "nuc11_interleaved_tower_E0_LIVE": "-16.678",
+            "zD_delta_S_tower_E0": "-42.594",
+            "zD_delta_S_order_zero_E0": "-43.157",
+            "bar_odd_survivor": "-54.825",
+            "augmentation_z_eq_q_NOT_RULED": "+12.470",
+            "retired_z_eq_1": "+0.170",
+        },
+        "stale_figure_corrected": "This probe first hardcoded Q_D = 0.4447004 "
+                                  "(-43.157%, factor 1.7592). That cell had "
+                                  "ALREADY MOVED when written: the scored base "
+                                  "is nuc11_interleaved at -16.678% (factor "
+                                  "1.2002). Conclusion unaffected (still > 1); "
+                                  "the number was wrong by 1.47x. Part 4 of "
+                                  "this same probe names that failure class.",
         "Q_codata_MeV": fmt(QCOD),
-        "required_ladder_factor": fmt(need),
+        "required_ladder_factor_live_cell": fmt(live_factor),
         "N1_cos_rung_upper_bound": "1",
         "N2_rung_at_c2_minus_1": fmt(rung2),
-        "c3_required_on_ruled_base": fmt(c3_needed),
+        "admissible_cells_all_need_factor_above_one": admissible_all_above_one,
+        "c3_required_on_live_cell": fmt(c3_needed),
         "cosh_exclusion_status": "The 2026-08-22 cosh exclusion was computed "
                                  "on the now-RETIRED z=1 base (required factor "
                                  "0.9983 < 1, cosh >= 1 wrong side). On the "
-                                 "ruled z_D base the required factor is 1.7592 "
+                                 "admissible base the required factor is > 1 "
                                  "> 1, so that argument is VOID and the route "
                                  "is RE-OPENED. No candidate is offered: "
                                  "arccosh(1.7592)/{ln q, h, hbar_q} = 11.1674, "
@@ -718,8 +783,8 @@ CONSEQUENCE
         "coincidence priced: which denominator won is the informative fact",
         "cross-anchor swing identical for candidate and C - no discrimination",
         "no element of order 120 in S_5 or 2I - the obvious mechanism is dead",
-        "ruled z_D base needs a factor > 1; no cosine rung can supply it",
-        "required c3 on the ruled base is ~1e6 - the gap is in the BASE",
+        "every admissible cell needs a factor > 1; no cosine rung supplies it",
+        "the two reachable cells are exactly the two the ruling does NOT select",
         "the 2026-08-22 cosh exclusion is base-dependent and is VOID under D",
         "no clean cosh closed form on offer - re-opening only, no candidate",
         "only the augmentation cell admits a bounded rung (recorded only)",
