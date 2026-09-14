@@ -2702,3 +2702,94 @@ order-sensitive and can rank a longer word below a shorter one.
 **Nothing adopted.** σ₁⁻¹ is not selected — that would swap one proxy for
 another, and point 3 shows the energy does not separate what remains. The Q_β
 column is a reported consequence, never an input to an ordering.
+
+## 2026-09-14 — the owner's proposed cost is the one it replaces: crossing ENERGY = crossing COUNT + a writhe term
+
+The section above records the owner's objection to crossing count as the
+selection cost, and measures that crossing energy disagrees with it on the
+gluon. It left open **when** they disagree. Answered exactly, and from the
+corpus's own decomposition rather than a new principle.
+
+**The structure is already in the tree.** `QOU.Braiding.crossingEnergy p m q =
+p·q − m·q⁻¹` splits (`crossingEnergy_split`,
+`lean/QOU/Braiding/crossing_energy_channels.lean`) into
+
+    symChannel  = (p − m)·(q + q⁻¹)/2      multiplicity = the WRITHE
+    asymChannel = (p + m)·(q − q⁻¹)/2      multiplicity = the COUNT
+
+and the writhe is a braid invariant while the crossing count is not. Every
+result below is that one asymmetry.
+
+**THE LEAN** —
+`lean/QOU/Mass/CrossingEnergySelectionEqualsCount.lean`, 9 theorems,
+sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, `#print axioms` clean
+on all nine (`propext, Classical.choice, Quot.sound` only):
+
+* `energy_le_iff_count_le_of_writhe_eq` — at fixed writhe the energy ordering
+  and the count ordering are **the same ordering**, as an `iff`. Swapping the
+  cost changes **no** selection inside a fixed-writhe family.
+* `crossingEnergy_sub_eq_writhe_term_of_count_eq` — at fixed count the two
+  energies differ by exactly `(W₁ − W₂)·symmetricWeight q`.
+* `crossingEnergy_lt_of_cancelling_pair` — a cancelling pair leaves the braid
+  element alone and strictly raises the energy by `q − q⁻¹ > 0`.
+
+**THE MEASUREMENT** — `qbeta_crossing_energy_is_count_plus_writhe_probe.py`,
+8/8, 60 dps, proton pin, convention D:
+
+| check | result |
+|---|---|
+| `E_cross = n₊·h + W/q` on 11 candidates | exact, `< 1e-50` |
+| `tr_M` over all 10 cyclic rotations of the 11-letter word | max deviation `1.55575e-61` |
+| `tr_M` with the gluon **prepended** instead of appended | delta **exactly 0** |
+| `tr_M` with `σ₁σ₁⁻¹` appended | delta **exactly 0** |
+| `E_cross` under that same insertion | `+h = 0.20906029879563931543` exactly |
+| equal-writhe ordered pairs, orderings agree | **9 / 9** |
+| differing-writhe pairs where the costs disagree | 20 of 46 |
+| the sibling's headline `σ₁` vs `σ₁⁻¹` gap | `2.0108968667071222998` = the writhe term exactly |
+
+**THREE CONSEQUENCES.**
+
+1. **The objection to the count is not answered by the energy.** Crossing energy
+   *is* crossing count plus a writhe correction. It re-ranks candidates **iff**
+   their writhes differ, never otherwise — so the measured disagreement the
+   sibling probe found (`σ₁` vs `σ₁⁻¹`, tied at count 1) is a writhe difference
+   and is the *only* kind of disagreement available. **A genuine upgrade must be
+   a functional that is not a function of `(n₊, n₋)` at all.** An embedding
+   energy is exactly that, which is the structural reason the owner's direction
+   is the right class rather than an analogy. It remains unbuilt.
+
+2. **The cost is a WORD functional; the observable is a BRAID-ELEMENT one.**
+   Inserting a cancelling pair leaves `tr_M` exactly unchanged and raises
+   `E_cross` by `h`. So `E_cross` ranks two presentations of one object
+   differently while the thing being predicted ranks them identically. That is
+   an admissibility problem for any letter-sum cost, independent of which one.
+
+3. **A free prune on the candidate set.** `tr_M` is cyclic, so a *contiguous*
+   gluon's **position** in the word is not a degree of freedom — prepended and
+   appended give the identical trace. Only genuinely non-contiguous
+   interleavings differ. Nothing in the corpus was relying on the placement, but
+   it narrows what an enumeration has to cover.
+
+**WHAT IS NOT CLAIMED, and one thing explicitly NOT measured.** Neither cost is
+adopted or retired; no candidate is selected; **no Q_β is computed in the
+probe at all**, deliberately — a target that is never evaluated cannot be
+selected on. The converse of consequence 1 is **not** claimed: a
+differing-writhe pair may still agree, and 26 of the 46 do. What is established
+is the one-way implication, which is what bounds the upgrade.
+
+**Incidental, and it contradicts AGENTS.md.** The library sweep could not run
+the new module: its dependency `QOU.Braiding.crossing_energy_channels` reports
+`UNVERIFIED — missing olean`. AGENTS.md describes that class as the cache branch
+being short, "absent from the **paper and root trees alike**". For this cone
+that is **false**: all **94** oleans the load needed were present in the **root**
+mathlib tree and absent from the **paper** one. Measured, root 3480 vs paper
+2337 mathlib oleans — **1148 apart**. So at least some of the 8 blocks AGENTS.md
+lists as unverifiable may be a tree asymmetry that a copy fixes, not a short
+seed. Not acted on beyond this session's local build cache (no repo change);
+worth a bean of its own before anyone re-seeds on the stated diagnosis.
+
+**Open items unchanged.** Item 1 (what replaces `nuc11_interleaved` on the three
+L2 rows) is still the owner's decision and is untouched here. Item 3 (whether
+the bar-odd hypothesis survives the move to `z_D`) is untouched. This narrows
+the cost question that superseded item 2; it does not close it, because the
+functional the argument points at is not built.
