@@ -240,6 +240,74 @@ def stage2(rows):
     return needs, pointer
 
 
+
+# --------------------------------------------------------------------------
+# STAGE 3 (--env) -- is a re-run even INTERPRETABLE in this container?
+#
+# The first verification (phi_k_weight_family_discriminator, 2026-09-14) moved a
+# per-atom ratio by 36% AND carried a pyhecke_native_build change, so a moved
+# number does not by itself implicate the producer. Checking the recorded
+# environment up front says which re-runs can be read at all.
+#
+# `pyhecke_native_build` is sha256(<compiled .so>)[:16] -- a CONTENT HASH of the
+# compiled extension, not a module attribute. Read it through the corpus's own
+# `qou_substrate.witness._pyhecke_native_build_hash`; guessing at attribute names
+# (BUILD_ID, __build__) reports ABSENT and manufactures a false difference. That
+# error was made here first.
+#
+# MEASURED 2026-09-14 over the 22 stage-2 candidates:
+#     environment MATCHES (re-run interpretable)   0
+#     environment DIFFERS (a move is confounded)  13
+#     no environment block (cannot tell)           9
+# Commonest difference: mpmath 1.3.0 -> 1.4.1 (9 of 13). One witness
+# (s5_so3_su2_u1_fiber_action) was written under python 3.13.12 / numpy 2.5.0 /
+# scipy 1.18.0 -- NEWER than this container.
+# --------------------------------------------------------------------------
+
+_ENV_KEYS = ("python", "numpy", "scipy", "sympy", "mpmath",
+             "pyhecke_native", "clarabel", "pyhecke_native_build")
+
+
+def live_environment() -> dict:
+    import importlib
+    import platform
+    out = {"python": platform.python_version()}
+    for mod in ("numpy", "scipy", "sympy", "mpmath", "pyhecke_native", "clarabel"):
+        try:
+            out[mod] = getattr(importlib.import_module(mod), "__version__", "?")
+        except Exception:
+            out[mod] = None
+    try:
+        sys.path.insert(0, str(ROOT / "tools" / "qou-substrate" / "python"))
+        from qou_substrate.witness import _pyhecke_native_build_hash
+        out["pyhecke_native_build"] = _pyhecke_native_build_hash()
+    except Exception:
+        out["pyhecke_native_build"] = None
+    return out
+
+
+def environment_split(rows):
+    """(match, differ, no_block) over stage-1 rows, against this container."""
+    live = live_environment()
+    match, differ, no_block = [], [], []
+    for lf, prod, wpath, wh, lh, n in rows:
+        try:
+            d = json.loads((ROOT / wpath).read_text())
+        except Exception:
+            no_block.append((lf, prod, [])); continue
+        w = d.get("witness", d)
+        env = w.get("environment") or d.get("environment")
+        if not env:
+            no_block.append((lf, prod, [])); continue
+        diffs = [
+            f"{k}: witness {v} vs live {live.get(k) if live.get(k) is not None else 'ABSENT'}"
+            for k, v in env.items()
+            if k in _ENV_KEYS and str(live.get(k)) != str(v)
+        ]
+        (differ if diffs else match).append((lf, prod, diffs))
+    return live, match, differ, no_block
+
+
 def main(argv: list[str]) -> int:
     selftest = "--selftest" in argv
     rows, stats = scan()
@@ -290,6 +358,31 @@ def main(argv: list[str]) -> int:
         print()
         for lf, prod, wpath, shared, nl in pointer:
             print(f"  [pointer] {lf}  ({nl} literals, 0 shared)  <- {prod}")
+        print()
+
+    if "--env" in argv:
+        needs = stage2(rows)[0] if "--stage2" in argv else rows
+        live, match, differ, no_block = environment_split(
+            [(lf, prod, wpath, None, None, nl) for lf, prod, wpath, _s, nl in needs]
+            if "--stage2" in argv else rows
+        )
+        print("=" * 70)
+        print("THIS CONTAINER:")
+        for k in _ENV_KEYS:
+            v = live.get(k)
+            print(f"  {k:24s} {v if v is not None else 'ABSENT'}")
+        print()
+        print(f"environment MATCHES (re-run interpretable) : {len(match)}")
+        for lf, prod, _ in match:
+            print(f"   {Path(lf).name:52s} <- {Path(prod).name}")
+        print(f"environment DIFFERS (a move is confounded) : {len(differ)}")
+        for lf, prod, diffs in differ:
+            print(f"   {Path(lf).name:52s} <- {Path(prod).name}")
+            for d_ in diffs:
+                print(f"        {d_}")
+        print(f"no environment block (cannot tell)         : {len(no_block)}")
+        for lf, prod, _ in no_block:
+            print(f"   {Path(lf).name:52s} <- {Path(prod).name}")
         print()
 
     print("These are CANDIDATES TO READ, not files to change. A hit means the")

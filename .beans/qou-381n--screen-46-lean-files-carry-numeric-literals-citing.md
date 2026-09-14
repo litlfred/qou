@@ -4,7 +4,7 @@ title: 'SCREEN: 46 Lean files carry numeric literals citing a producer whose wit
 status: todo
 type: task
 created_at: 2026-09-14T20:56:23Z
-updated_at: 2026-09-14T21:13:06Z
+updated_at: 2026-09-14T21:20:55Z
 ---
 
 
@@ -234,3 +234,97 @@ on the very first case.
 Running tally: **2 of 22 checked** — 1 Lean-side defect (`JetOrderIndependence`),
 1 Lean-side clean with a witness-side finding (`phi_k_weight_family_discriminator`
 → `qou-oots`). 20 unverified.
+
+---
+
+## 2026-09-14 (later still) — 🛑 ZERO of the 22 can be re-run interpretably in this container
+
+The first verification flagged environment as an unexcluded confound. Measuring
+it across the whole stage-2 queue changes the triage plan rather than refining
+it.
+
+```
+stage-2 'needs a fresh producer run' candidates : 22
+  environment MATCHES (re-run interpretable)    :  0
+  environment DIFFERS (a move is confounded)    : 13
+  no environment block (cannot tell)            :  9
+```
+
+**Not one.** Every re-run this container can perform produces a number whose
+movement cannot be attributed to the producer.
+
+This container: python 3.11.15, numpy 2.4.6, scipy 1.17.1, sympy 1.14.0,
+mpmath **1.4.1**, pyhecke_native 0.9.0, clarabel 0.11.1,
+`pyhecke_native_build` **`5df83fbc24b06f8a`**.
+
+**The commonest difference is `mpmath 1.3.0 → 1.4.1`, 9 of the 13.** A minor
+release of the arbitrary-precision library these producers compute in is not a
+cosmetic difference — it is exactly where transcendental rounding can move.
+
+**Four differ on `pyhecke_native_build`**, and the three witness values are all
+distinct (`e3fab84c4c1df76a`, `47b406d9ba6e343f`, `30fd920c241a54fa`) — so the
+compiled extension has been rebuilt at least three times across this corpus's
+history and none of those binaries is the one here.
+
+**One is from the future**: `s5_so3_su2_u1_fiber_action`'s witness was written
+under python 3.13.12 / numpy 2.5.0 / scipy 1.18.0 — *newer* than this container
+on three axes at once.
+
+### A bug I made first, recorded because it manufactures false differences
+
+`pyhecke_native_build` is **`sha256(<compiled .so>)[:16]`** — a content hash of
+the compiled extension, not a module attribute. My first pass guessed at
+`BUILD_ID` / `__build__`, got `None`, and reported the live value as **ABSENT**,
+which turns a real 4-file difference into a confident-looking one against
+nothing. Read it through the corpus's own
+`qou_substrate.witness._pyhecke_native_build_hash`, which is what the committed
+`--env` mode now does. The *conclusion* was unchanged (all three still differ
+from `5df83fbc24b06f8a`), but it was right by luck for one pass.
+
+### What this does to the first verification
+
+It **settles** the caveat on `phi_k_weight_family_discriminator`: the only
+environment difference is `pyhecke_native_build`, and it is real. So the 36 %
+per-atom move and the `allPassed: true → false` flip are **confounded by a
+different compiled binary**, not attributed to the producer. The witness-side
+finding stands as *"this witness does not reproduce here"*; it does **not**
+stand as *"the producer regressed"*. Whoever owns `qou-oots` needs the matching
+binary, or a build-independent check, before reading anything into those
+numbers.
+
+`JetOrderIndependence` is **unaffected** — it is in the no-environment-block
+bucket, and its defect was established from the producer's **source hash** and a
+pure-SymPy rational computation, neither of which depends on a compiled
+extension. That confirmation stands.
+
+### Consequence — the triage as scoped is not runnable here
+
+"Run each producer and compare" cannot yield a clean verdict in this container
+for any of the 22. Three honest routes remain:
+
+**A. Re-scope to source-level verification only.** Decide each hit by reading
+the producer's *source* against the Lean's literals, as was done for
+`JetOrderIndependence` (exact rationals, no floating point, no compiled
+extension). *Costs*: manual, per file. *Risks*: only works where the quantity is
+exactly computable — probably a minority. *Commits to*: nothing.
+
+**B. Pin the environment.** Install `mpmath==1.3.0` and rebuild
+`pyhecke_native` to match a target witness, then re-run. *Costs*: a build per
+distinct target binary — at least three. *Risks*: disk (3.2 G free here) and the
+rebuild may not reproduce the recorded hash at all. *Commits to*: maintaining a
+matched environment.
+
+**C. Record the environment gap as the finding and stop.** The screen's real
+message becomes *"46 Lean provenance claims cite producers, and 22 of them
+cannot be checked in a stock container"* — which is itself worth knowing, and
+is arguably the more useful result.
+
+**D. Do nothing.** 20 stay unverified.
+
+**Recommendation, my judgement: C plus A on the exactly-computable subset.**
+B is the only route to a clean numeric verdict and it is expensive, uncertain,
+and buys verification of a class that has so far produced one real defect in two
+checks. C is honest and cheap; A extends it wherever the arithmetic is exact.
+
+Tally unchanged at **2 of 22 decided** — and now with a reason the other 20 are
+not merely unchecked but **uncheckable here**.
