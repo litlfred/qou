@@ -8229,3 +8229,27 @@ removes).
 The open question is no longer "what is α" but **what object supplies a factor
 above 1 at all** — the ladder's multiplicative form cannot, whatever its phase.
 That is a question about the *base or the assembly*, not about the phase.
+
+**Addendum, same probe (now 7/7): "a higher rung saves it" does not work.**
+Check 3 bounds only the N=2 truncation, so the natural objection is that a later
+rung could lift `F` above 1. It cannot — **every `c_k` this corpus records or
+derives is negative**:
+
+| | value | `(1 + c_k u^k)` |
+|---|---|---|
+| `c_2` structural | −1 | 0.999927456715617626 |
+| `c_3` recorded (proton) | −2.0693425728 | 0.999998721419095324 |
+| `c_5` derived `−(b²+½)` | −1.25270211325 | 0.999999999943851153 |
+| product | | **0.999926178171320707 < 1** |
+
+So each factor is below 1, the product is below 1, and with `cos ≤ 1` the whole
+`F` is **strictly below 1 at every truncation order**. Reaching `F > 1` needs a
+**positive** coefficient and none of the derived ones is.
+
+**The target, stated so its size is on the record — and explicitly not a search
+specification.** At the order-zero `E₀` the ruled functional gives
+`|ε| = 0.106235639848`; reproducing CODATA needs `0.186893667722`, a factor
+**1.759236994**. Per §NO FITTING a target may be checked **against**, never
+searched **on** — do not hunt for an element whose Markov trace lands there. The
+dashboard's own scored element already fails the confinement-SDP selection rule
+(owner ruling 2026-09-13), so the assembly is under review independently.

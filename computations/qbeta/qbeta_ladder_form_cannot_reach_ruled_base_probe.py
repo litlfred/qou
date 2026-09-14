@@ -230,6 +230,53 @@ def main() -> int:
         f"a ruled base; the reldev table is retired-base-only.",
     )
 
+    # ---- 6. the obvious objection: could a HIGHER RUNG save it? -----------
+    # F is cos * prod_k (1 + c_k u^k). Check 3 bounds only the N=2 truncation.
+    # Every c_k the corpus records or derives is NEGATIVE, so every factor is
+    # below 1 and the product is below 1 at EVERY truncation order.
+    C3 = mp.mpf("-2.0693425728")          # recorded, proton extraction
+    c5 = -(b ** 2 + mp.mpf(1) / 2)        # derived form -(b^2 + 1/2)
+    LADDER = [(2, mp.mpf(-1)), (3, C3), (5, c5)]
+    factors = [(k, 1 + c * u ** k) for k, c in LADDER]
+    prod = mp.mpf(1)
+    for _, f in factors:
+        prod *= f
+    all_neg = all(c < 0 for _, c in LADDER)
+    all_below = all(f < 1 for _, f in factors)
+    print("  full recorded ladder — every factor below 1")
+    for (k, c), (_, f) in zip(LADDER, factors):
+        print(f"    c_{k} = {mp.nstr(c, 12):>16}   (1 + c_{k} u^{k}) = {mp.nstr(f, 18)}")
+    print(f"    product = {mp.nstr(prod, 18)}   (< 1)\n")
+    check(
+        "every_recorded_rung_reduces_so_no_truncation_order_helps",
+        all_neg and all_below and prod < 1,
+        f"the objection check 3 invites is 'a higher rung saves it'. It does "
+        f"not: every c_k the corpus records or derives is NEGATIVE — c_2 = -1 "
+        f"(structural), c_3 = {mp.nstr(C3, 12)} (recorded proton extraction), "
+        f"c_5 = -(b^2 + 1/2) = {mp.nstr(c5, 12)} (derived) — so each factor "
+        f"(1 + c_k u^k) < 1 and the product is {mp.nstr(prod, 14)} < 1. With "
+        f"cos <= 1 the whole F is strictly below 1 at EVERY truncation order, "
+        f"not merely at N=2. Reaching F > 1 needs a POSITIVE coefficient, and "
+        f"none of the derived ones is.",
+    )
+
+    # ---- 7. the target, stated — and explicitly not to be searched on -----
+    eps_zD = abs(h ** 2 / 2 - h * z_d)
+    eps_needed = eps_zD * Fr_zD
+    check(
+        "the_target_is_stated_as_a_magnitude_not_as_a_search",
+        eps_needed > eps_zD,
+        f"stated so the size is on the record, NOT as a specification to search "
+        f"against: at the order-zero E_0 the ruled functional gives "
+        f"|eps| = {mp.nstr(eps_zD, 12)}, and reproducing CODATA would need "
+        f"{mp.nstr(eps_needed, 12)} — a factor {mp.nstr(Fr_zD, 10)}. Per "
+        f"AGENTS.md NO FITTING a target may be checked AGAINST, never searched "
+        f"ON: do not hunt for an element whose Markov trace lands here. The "
+        f"dashboard's own scored element already fails the confinement-SDP "
+        f"selection rule (owner ruling 2026-09-13), so the assembly is under "
+        f"review independently of this number.",
+    )
+
     allp = all(r["passed"] for r in RESULTS)
     print(f"  {sum(r['passed'] for r in RESULTS)}/{len(RESULTS)} checks passed")
 
@@ -261,6 +308,14 @@ def main() -> int:
         "bases": brows,
         "retired_base_reldev_table": rows_retired,
         "ladder_sup_over_all_phases": fmt(cap),
+        "full_ladder_is_reducing": (
+            "every c_k the corpus records or derives is NEGATIVE (c_2 = -1 "
+            "structural, c_3 = -2.0693425728 recorded, c_5 = -(b^2+1/2) derived), "
+            "so each factor (1 + c_k u^k) < 1 and F is strictly below 1 at EVERY "
+            "truncation order -- not merely at the N=2 one check 3 bounds. "
+            "Reaching F > 1 needs a POSITIVE coefficient; none of the derived "
+            "ones is."
+        ),
         "invariant_cited": (
             "cos <= 1 (Real.cos_le_one, Mathlib; already used by "
             "QOU.QBeta.EigenphaseCarrier.replacement_excludes_some_matrix)"
