@@ -84,18 +84,43 @@ the claim here is only that **this corpus does not carry it** — grepped over
 result is the `k = 3` one cited above.  The `library/` tier was not searched, so
 this is not a claim about the literature.
 
-## And the conjecture's own channel gives the WRONG SIGN
+## 🛑 RETRACTED — this section said the conjecture's OWN channel gives the wrong sign
 
-`conj:flavor-split-habiro-derivation` states its channel choice, and it is the
-*alternating* one: *"The weak interaction is strictly left-handed, so it projects
-onto the fully alternating channel of `H₄`, the sign-block partition `(1⁴)`. … In
-the alternating channel the generator acts by its sign eigenvalue `−q⁻¹`."*
-Evaluate `reversal_two` there and the sign comes out backwards —
-`alternatingSplit q < 0` for every `1 < q`, i.e. **a neutron lighter than the
-proton**.  The *symmetric* channel `σ ↦ q` reproduces `δ` exactly
-(`flavourSplit_eq_hbarSq_symmetric_div_three`, `symmetricSplit_pos`), and the two
-are exact negatives (`splits_sum_zero`), so the channel choice is the entire
-content: the magnitude is settled and only the sign is at stake.
+**Superseded 2026-09-13, in the same arc.  The mathematics below is untouched and
+correct; the sentence that read it onto the block was wrong.**
+
+What this section said: that `conj:flavor-split-habiro-derivation` "states its
+channel choice, and it is the *alternating* one", quoting *"The weak interaction
+is strictly left-handed, so it projects onto the fully alternating channel of
+`H₄`"*, and concluded that the block's own channel therefore gives the flavour
+split backwards.
+
+**What is actually true: that conflated the block's two LEVELS.**  The block has
+a baseline and a residual, and the alternating channel is claimed for the
+*residual* — the ≈ 1.76e-6, 0.128 % Schwinger-analogue refinement sitting on top
+of the baseline, in structural parallel with the `α_EM` `(1 − h²α)` term.  It is
+**not** claimed for the baseline, which the block carries channel-free as a
+central scalar.  So there is no wrong-sign claim to make against the block here.
+
+**What replaces it, and it is sharper.**  The block's *narrative* half derives
+the reversal at `k = 3` (`q³ − q⁻³`, central — the odd case of `reversal_rec`)
+while its *formula* half displays `X_baseline = (q−1)²(1−q⁻⁴)/3`, which is the
+reversal at `k = 2`.  Those are different numbers — `ℏ_q²(q³−q⁻³)/3` is +51.17 %
+against the measured split where the displayed baseline is −0.128 % — related by
+an undeclared factor ≈ 1.5136.  So the quantity the block actually uses sits at
+`k = 2`, where by `reversal_two` the reversal is **not** central, and needs a
+trace rather than a channel.  That trace is `2hz − h²`, and it reproduces the
+baseline **exactly** at the augmentation `z = q` and `α = (q⁴+1)/(q²+1)²` times
+it at the canonical `z_D`.  See `QOU/Hecke/MarkovCrossingReversal.lean` and
+`computations/qbeta/flavour_split_baseline_is_augmentation_trace_probe.py`.
+
+**What survives here unchanged.**  `alternatingSplit_neg`, `symmetricSplit_pos`,
+`alternating_eq_neg_symmetric` and `splits_sum_zero` are all correct and are used
+downstream: they are what make the equal-weight sym/alt channel average vanish
+identically (`MarkovCrossingReversal.channelAverage_eq_zero'`, against the
+`w_sym = w_alt` of `docs/audits/2026-06-17-hecke-channel-chirality-binding.md`).
+Read the theorems below as statements about the two one-dimensional channels —
+which is all they ever were — and not as a claim about what the block asserts.
 
 **Conditional on an identification the block does not make.**  That `δ`'s
 numerator *is* the `k = 2` crossing reversal is a reading — the natural one given
@@ -323,21 +348,34 @@ theorem reversal_rec (hcen : ∀ x : R, h * x = x * h)
 §7c: this section — and only this section — is over `ℝ`, because it uses the
 ordering (`1 < q`).  Everything above is generic.
 
-**The point.**  `conj:flavor-split-habiro-derivation` states its own channel
-choice, and it is the *alternating* one: *"The weak interaction is strictly
-left-handed, so it projects onto the fully alternating channel of `H₄`, the
-sign-block partition `(1⁴)`. … In the alternating channel the generator acts by
-its sign eigenvalue `−q⁻¹`."*  Evaluate `reversal_two` there and the sign comes
-out **backwards**: `alternatingSplit q < 0`, i.e. `m_n < m_p`.  The **symmetric**
-channel `σ ↦ q` is the one that reproduces `δ` exactly.
+**The point** — corrected 2026-09-13; see the 🛑 retraction in the file header.
+These are statements about the two **one-dimensional** representations of the
+Hecke algebra, `σ ↦ q` (symmetric, trivial) and `σ ↦ −q⁻¹` (alternating, sign),
+and that is all they have ever been.  The `k = 2` reversal evaluates on them to
+exact negatives (`alternating_eq_neg_symmetric`), so the symmetric one is
+positive and the alternating one negative for every `q > 1`.
 
-**This is conditional on an identification the block does not make.**  That
-`δ`'s numerator *is* the `k = 2` crossing reversal is a reading — the natural one
-given the block derives its one exact result that way, but it is mine, not the
-block's, which calls `(q−1)²(1−q⁻⁴)/3` "a structured near-match, not a derived
-closed form".  So read the pair of outcomes, not one of them: if the reading is
-right, the stated channel points the wrong way; if it is wrong, the block owes an
-account of where `h·[2]_q` comes from, since it is then not the reversal.
+They are **not** a claim about what `conj:flavor-split-habiro-derivation`
+asserts.  An earlier version of this paragraph read the block's "the weak
+interaction is strictly left-handed, so it projects onto the fully alternating
+channel of `H₄`" as its channel choice *for the flavour split*.  It is the
+block's channel choice for the **residual**, the 0.128 % refinement, not for the
+baseline.  Retracted in full in the header.
+
+**Where these two theorems are actually used.**  `splits_sum_zero` is what makes
+the equal-weight symmetric/alternating channel average vanish identically, given
+the corpus's own `w_sym = w_alt = q²/(q⁴+4q²+1)`
+(`docs/audits/2026-06-17-hecke-channel-chirality-binding.md`).  That excludes the
+averaged reading of the split — scope (b), invariant = the weight equality plus
+the exact negation — and is stated as
+`MarkovCrossingReversal.channelAverage_eq_zero'`.
+
+**The identification is still mine, not the block's.**  That `δ`'s numerator *is*
+the `k = 2` crossing reversal is a reading; the block calls `(q−1)²(1−q⁻⁴)/3` "a
+structured near-match, not a derived closed form".  What changed is that the
+reading now has a *trace* behind it rather than a channel:
+`tr_z(σ²−σ⁻²) = 2hz − h²` reproduces that expression exactly at the augmentation
+`z = q` (`MarkovCrossingReversal.baselineX_eq_augmentation_trace`).
 -/
 
 section Archimedean
@@ -374,14 +412,18 @@ theorem flavourSplit_eq_hbarSq_symmetric_div_three {q : ℝ} (hq : q ≠ 0) :
 /-- The split built from the symmetric channel. -/
 noncomputable def symmetricSplit (q : ℝ) : ℝ := (1 - q⁻¹) ^ 2 * symmetricValue q / 3
 
-/-- The split built from the alternating channel — the one the conjecture's own
-left-handedness argument selects. -/
+/-- The split built from the **alternating** (sign) one-dimensional channel
+`σ ↦ −q⁻¹`.  (Earlier docstring: "the one the conjecture's own left-handedness
+argument selects" — retracted, see the file header; the block selects that
+channel for its *residual*, not for the split.) -/
 noncomputable def alternatingSplit (q : ℝ) : ℝ :=
   (1 - q⁻¹) ^ 2 * alternatingValue q / 3
 
-/-- **The conjecture's own channel gives the split with the wrong sign.**
-`δ = (m_n − m_p)/M_N` is positive; `alternatingSplit q < 0` for every `1 < q`,
-i.e. a neutron *lighter* than the proton.  Conditional on the identification
+/-- **The alternating channel gives the split negative**: `alternatingSplit q < 0`
+for every `1 < q`, i.e. a neutron *lighter* than the proton, where
+`δ = (m_n − m_p)/M_N` is positive.  With `symmetricSplit_pos` this is what makes
+`splits_sum_zero` bite: the two one-dimensional channels cancel under the
+corpus's equal weights `w_sym = w_alt`.  Conditional on the identification
 described in the section header, which is not the block's. -/
 theorem alternatingSplit_neg {q : ℝ} (hq : 1 < q) : alternatingSplit q < 0 := by
   have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq

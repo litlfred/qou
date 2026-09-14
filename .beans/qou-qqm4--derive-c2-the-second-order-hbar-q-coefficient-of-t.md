@@ -5,11 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-13T16:37:08Z
-updated_at: 2026-09-13T14:22:41Z
-updated_at: 2026-09-13T13:50:50Z
-updated_at: 2026-09-13T13:07:38Z
-updated_at: 2026-09-13T12:47:52Z
+updated_at: 2026-09-14T06:53:21Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -1689,3 +1685,317 @@ exit 0 / 0 warnings; `#print axioms` clean on all 15 declarations.  Probe 7/7.
 identity:** which channel the weak vertex projects onto, and why.  The corpus
 asserts left-handed ⇒ alternating; the flavour split needs symmetric.  One of the
 two has to give, and neither is derived here.
+
+
+## 2026-09-13 — the baseline IS the Markov trace of the k=2 reversal, at the AUGMENTATION
+
+### First: I RETRACT part of #7320
+
+#7320 said the conjecture's OWN stated channel gives the split the wrong sign,
+reading its "the weak interaction is strictly left-handed, so it projects onto
+the fully alternating channel of H_4" as a claim about the split. **That
+conflated the block's two levels.** The alternating channel is claimed there for
+the RESIDUAL — the ~1.76e-6, 0.128 % Schwinger-analogue refinement on top of the
+baseline — not for the baseline, which the block carries channel-free. There was
+no wrong-sign claim to make against the block.
+
+Found by reading the block's .md in full rather than only its .lean. Both of this
+session's retractions came from skipping that read. Corrected at all three sites
+(CrossingReversalParity.lean header + Archimedean section + two docstrings;
+crossing_reversal_parity_probe.py docstring + section 7 + VERDICT). Every theorem
+of #7320 survives untouched and is now USED — see the channel-average result
+below.
+
+### What replaces it, and it is sharper: the block's two halves do not connect
+
+* NARRATIVE half derives the reversal at **k = 3**: `sigma^3 - sigma^-3 = q^3 - q^-3`,
+  central — correct, the odd case of `reversal_rec`.
+* FORMULA half displays `X_baseline = (q-1)^2(1-q^-4)/3`, which is the reversal
+  at **k = 2**.
+
+Measured: `hbar_q^2(q^3-q^-3)/3 = 0.00208228` is **+51.17 %** against the measured
+split, where the displayed baseline is **-0.128 %**. They differ by
+`(q^2-q+1)(q^2+q+1)/(q(q^2+1)) = 1.5136`, a factor the block neither states nor
+derives. So the quantity actually used sits at k = 2, where by `reversal_two` the
+reversal is NOT central — and needs a trace, not a channel.
+
+### The trace, and it pins the Markov parameter
+
+`tr(1) = 1` and `tr(sigma) = z` fix it on `2h*sigma - h^2`:
+
+    tr_z(sigma^2 - sigma^-2) = 2hz - h^2 = h*(b_pp + b_nn)
+
+— h times the sum of the corpus's own two like-pair bond letters (`tr_bond_interp`
+at t = 0, 1). At the two admissible parameters of `qou-99qc`:
+
+| parameter | `tr_z` | `hbar_q^2 tr_z/3` | vs measured |
+|---|---|---|---|
+| augmentation `z = q` | `q^2 - q^-2` EXACTLY | **= X_baseline exactly** | -0.128 % |
+| convention D `z_D` | `alpha*(q^2-q^-2)` | `alpha*X_baseline` | **-49.5 %** |
+
+`alpha = (q^4+1)/(q^2+1)^2`, with `1/2 < alpha < 1` strictly for every q > 1
+(both bounds factored, not asserted); `alpha(q0) = 0.505404`.
+
+**alpha is NOT a new constant** — it is literally the same rational function as
+the 2026-09-08 Q_beta ruling's augmentation-to-z_D factor. Same two Markov
+parameters, same ratio, second observable.
+
+### Also: the equal-weight channel average VANISHES
+
+`docs/audits/2026-06-17-hecke-channel-chirality-binding.md` carries
+`w_sym = w_alt = q^2/(q^4+4q^2+1)` (verified: equal, both bar-invariant, three
+sum to 1). With #7320's `alternating_eq_neg_symmetric` the weighted sum is
+identically zero. Scope (b) for the averaged reading only — invariant = weight
+equality + exact negation; says nothing about the standard channel or unequal
+weights.
+
+### WHAT IS NOT DERIVED — do not read this bean as closing anything
+
+That the split IS `hbar_q^2 tr_z(...)/3` for any z. The `hbar_q^2/3` prefactor is
+the block's, unexplained there and unexplained here. GIVEN that shape the
+parameter is pinned; the shape itself is not derived.
+
+**The exactness at z = q is NOT offered as evidence for the augmentation.**
+NO-FITTING: selecting a branch because it reproduces the measured value is
+fitting even with no continuous parameter, and accuracy is never a tie-breaker.
+This is the FORK and its exact size, reported as a consequence: under the ruled
+z_D the construction predicts a model flavour split 49.5 % low. That is
+falsifiable, and it is the owner's call, not mine — the Q_beta half is `qou-99qc`,
+where the owner ruled for z_D against the augmentation.
+
+### Artifacts
+
+* `QOU/Hecke/MarkovCrossingReversal.lean` — 12 decls, lean-direct exit 0 / 0
+  errors / 0 warnings, `#print axioms` propext+choice+Quot.sound only on all 12
+* `computations/qbeta/flavour_split_baseline_is_augmentation_trace_probe.py` — 7/7
+* corrections to `CrossingReversalParity.lean` and `crossing_reversal_parity_probe.py`
+
+### STILL OPEN (bean stays open — open conjecture)
+
+1. Where `hbar_q^2/3` comes from. Unexplained by everyone.
+2. Which Markov parameter the flavour split takes — owner decision, coupled to
+   `qou-99qc`. A consistency answer across Q_beta and the split is wanted, not
+   two independent picks.
+3. The block's 1.5136 gap between its own two halves is unaddressed by this work;
+   it is *located*, not closed.
+
+
+## 2026-09-13 (cont.) — the prefactor carries ONE unit of framing; a 94 % prune, not a derivation
+
+Attacking the item I named as next: where `hbar_q^2/3` comes from. Result is a
+**necessary condition**, not a closure — stated that way in the Lean header, the
+probe docstring, the commit and here.
+
+### Exact, and in Lean (`QOU/Hecke/FlavourSplitBarParity.lean`, 9 decls, sorry-free)
+
+Under the bar involution `q -> 1/q`:
+
+    X_baseline(1/q) = -q^2 * X_baseline(q)    neither bar-even nor bar-odd
+    q * X_baseline  is bar-ODD                 exactly one unit of framing
+    w = 1 is the ONLY integer weight
+
+Since `q^2 - q^-2` is itself bar-odd, the constraint on any prefactor `C` is
+`C(1/q) = q^2 C(q)`. The sharpest positive statement, exact:
+
+    q * hbar_q^2 = (q-1)^2/q = -hbar_q * hbar_(1/q)
+
+— **the prefactor is `1/q` times the bar-norm of `hbar_q`.**
+
+### 🛑 What this does NOT do
+
+Scanned 2044 monomials in `hbar_q, h, [2]_q, [3]_q, z_D, (q-1), q` (exponents in
+[-2,2], degree <= 4): **121 satisfy the parity condition, 94.1 % pruned** — and
+`hbar_q^2` is one survivor among many. **`q^-1` alone passes at degree 1 and is
+simpler.** So parity narrows the search and does not close it.
+
+**The `/3` is untouched.** 3 is bar-invariant, so this argument says literally
+nothing about it. Where the 3 comes from is exactly as open as before I started.
+
+### Honest negative, scope (a) — the cheat sheet's sinh half
+
+AGENTS.md calls `Q_beta` "the bar-odd sinh partner of the bar-even cosh meson
+scale m_pi". The **cosh half checks out** (`[2]_q` is bar-even). The **sinh half
+does not hold of the published closed form**: its bar ratio is
+`-q^3(q^2+2q-1)/(q^2-2q-1)`, not a monomial in q, so NO integer framing weight
+makes it bar-odd or bar-even.
+
+Three readings are consistent and **I separated none of them**: (i) the
+description names a structural sector, not that expression; (ii) the expression
+is the `z = 1` cell the 2026-09-05 scoping note already retires as inadmissible
+under convention D; (iii) the description is wrong. (ii) is what the corpus's own
+scoping note supports, which is why this is an observation and not a filed defect.
+
+### Where that leaves the open list
+
+1. **The `/3`** — completely untouched by parity. Still the sharpest gap.
+2. **Why `hbar_q^2` rather than `q^-1`** — parity cannot say; something else must.
+3. Which Markov parameter (owner, coupled to `qou-99qc`) — unchanged.
+4. The block's own k=3/k=2 1.5136 gap — unchanged.
+
+
+## 2026-09-14 — a second invariant, one unifying hypothesis, and two things that survive both
+
+### The prune is now two-invariant: 2044 -> 121 -> 32
+
+Added **vanishing order at q = 1**, independent of parity:
+
+    q^2 - q^-2    order 1
+    X_baseline    order 3      =>  the prefactor must be order 2
+    hbar_q^2      order 2      <- is
+    q^-1          order 0      <- is NOT (it passed parity and is simpler)
+
+Parity AND order 2: **32 of 2044, 98.4 % pruned**, and `hbar^2` is the **unique
+minimal-degree survivor** (degree 2).
+
+🛑 **Order 2 is read off the corpus's own expression, not derived.** That is a
+weaker form of the same hazard the anti-fit rule names — selection against the
+corpus's *answer* rather than against the *data*. Stated in the probe's own output.
+
+### One hypothesis gives both constraints (3 new sorry-free Lean decls)
+
+With `barNorm f q := -(f q * f q^-1)`:
+
+* `barNorm_bar_even` — a bar-norm is bar-even for **every** f, no hypothesis on f
+* `barNorm_scaled_parity` — so `q^-1 * barNorm f` satisfies `C(1/q) = q^2 C(q)`
+  automatically, for **every** f
+* `hbarSq_eq_scaled_barNorm` — and at `f = hbar` the instance is **exactly** `hbar_q^2`
+
+Order 2 follows whenever f vanishes at q=1. So the two separately-measured
+constraints collapse into one structural hypothesis.
+
+### 🛑 Two things survive both prunes — this is where the arc actually stands
+
+1. **The hypothesis is not derived, AND it is DEGENERATE.** `f = (q-1)` gives the
+   **identical** prefactor (difference exactly 0). So even granting the bar-norm
+   hypothesis, it does not single out `hbar_q`. It well-poses the search; it does
+   not close it.
+2. **The `/3` is untouched by everything above.** Measured: both q-integer
+   readings of 3 give different denominators (3.0437, 3.0109 at q0), so the
+   corpus's `3` is a plain rational and not a q-integer in disguise — a statement
+   about FORM. The residuals are recorded and are explicitly NOT the argument.
+   Where the 3 comes from is **open**, exactly as it was.
+
+### Open list, unchanged in substance
+
+1. **The `/3`** — nothing has touched it. Sharpest remaining gap.
+2. **Why `hbar_q` and not `(q-1)`** — the bar-norm hypothesis cannot say; they
+   are the same prefactor. Something outside this family must.
+3. Which Markov parameter (owner, coupled to `qou-99qc`).
+4. The block's own k=3/k=2 1.5136 gap.
+
+### Noted, not touched (sibling arc)
+
+`precision-gates` RED gained `module-const precision` after this branch rebased
+over 32 commits of main. Sole LOSSY is
+`computations/qbeta/qbeta_route5_ellipticity_target_is_on_a_retired_base_probe.py:104`
+(`ROUTE5_THETA_PRINTED`), from the live `qou-pdix` arc — not this one. Reported
+rather than swept.
+
+
+## 2026-09-14 (cont.) — the `/3` is IDENTIFIED: it is the q=1 value of the corpus's own channel weight
+
+This closes the open item both prior passes named as the sharpest gap.
+
+### The chain, exact and in Lean (`FlavourSplitThreeChannelWeight.lean`, 10 decls, sorry-free)
+
+1. The three substrate weights of `docs/audits/2026-06-17-hecke-channel-chirality-binding.md`
+   **are the q-deformed Plancherel measure of `H_3`**: at q=1 they are 1/6, 2/3,
+   1/6 = `(f^lam)^2/n!` for (3), (2,1), (1^3) with `f = 1,2,1`, `n! = 6`. They sum
+   to 1 at every q.
+2. The k=2 reversal is `2h*sigma - h^2`, so `(c,d) = (2h, -h^2)` and the channel
+   values are `R`, `alpha*R`, `-R` with `alpha = (q^4+1)/(q^2+1)^2`.
+3. sym and alt cancel under `w_sym = w_alt`, leaving
+   `w_sym*R + w_std*alpha*R + w_alt*(-R) = (q^4+1)/(q^4+4q^2+1) * R`.
+4. **That weight at q = 1 is exactly 1/3.**
+
+So the `1/3` was never a free constant.
+
+### 🛑 Identified is not settled
+
+The corpus's expression pairs a **classical (q=1) measure** with **q-deformed
+channel values** and a q-deformed `hbar_q^2`. Three distinct numbers at q0:
+
+| object | value |
+|---|---|
+| fully deformed `w(q)` x `value(q)` | 0.338154459866 |
+| classical `w(1)` x `value(q)` | 0.336936151003 |
+| the corpus's `1/3` | 0.333333333333 |
+
+AGENTS.md's notation register names exactly this defect class: *"Three
+partition-weight families ... are distinct at q != 1 and coincide at q = 1; never
+conflate."* Here it is **1.45 %** on the weight and moves the baseline from
+**-0.128 % to +1.32 %**.
+
+Which measure is correct is a **modelling question, OPEN** — and per NO-FITTING it
+must not be answered by residual: the **least** deformed option is the **most**
+accurate, so choosing by accuracy would keep `1/3` for the wrong reason.
+
+### A correction made in authoring — the point of formalize-first
+
+I first stated the condition for the deformed weight to equal 1/3 as `q^4 = 2q^2`.
+**`lean` rejected it.** The truth is `q^4 + 1 = 2q^2`, i.e. `(q^2-1)^2 = 0`, i.e.
+**q^2 = 1 and nothing else** — the register's rule made exact for this weight, and
+a STRONGER statement than the one I set out to prove. sympy confirms: `q^2 = [1]`.
+
+### Open list after three passes
+
+1. ~~The `/3`~~ — **identified.** What replaces it: classical vs deformed measure,
+   a modelling choice with exact size 1.45 %.
+2. **Why `hbar_q` and not `(q-1)`** — the bar-norm hypothesis cannot say; they give
+   the identical prefactor.
+3. Which Markov parameter (owner, coupled to `qou-99qc`).
+4. The block's own k=3/k=2 1.5136 gap.
+
+Items 1-new and 3 are the same shape: both are classical-vs-deformed / which-cell
+choices with measured consequences, and both are owner calls rather than agent ones.
+
+
+## 2026-09-14 (cont.) — the `/3` and the k=3/k=2 gap are ONE defect
+
+Closes the last item the arc had located but not explained. An **explanation**,
+not a repair.
+
+### The step that unifies them (proved, `central_value_unweighted`)
+
+**A central element needs no measure.** The three channel weights sum to 1, so a
+value every channel agrees on passes through the weighted average unchanged. No
+measure factor — and in particular no `1/3` — can appear on that side.
+
+* The block's **narrative** half proves exactly that of `sigma^3 - sigma^-3 =
+  3h + h^3 = q^3 - q^-3`. Read as its own argument dictates, it carries **no 1/3
+  at all**.
+* The block's **formula** half uses k=2, where `sigma^2 - sigma^-2 =
+  h(sigma + sigma^-1)` is **not** central, so evaluating it **requires** a
+  measure — which is where `weightRatio`, and at q=1 the `1/3`, comes from.
+
+So the two sections are not two numbers for one object. They are **two different
+kinds of object** — a scalar in the algebra vs an algebra element requiring a
+measure — and the `1/3` is the **fingerprint of the switch**: it can only appear
+on the side that needs one.
+
+### Measured, four cells at the proton q0
+
+| cell | value | rel to observed |
+|---|---|---|
+| k=3, no measure (what centrality dictates) | 0.0062469 | **+353.5 %** |
+| k=3, with a 1/3 anyway | 0.0020823 | +51.2 % |
+| k=2, classical 1/3 (the corpus) | 0.0013757 | −0.128 % |
+| k=2, deformed weight(q) | 0.0013956 | +1.32 % |
+
+The narrative object evaluated honestly is off by **4.5x**. Scope (a): a measured
+negative about what the block's own argument yields, with **no** invariant
+excluding a k=3 route that supplies its normalisation some other way.
+
+### Open list — all four original items now resolved or handed off
+
+1. ~~The `/3`~~ — identified (q=1 value of the corpus's own H_3 Plancherel weight).
+2. **Why `hbar_q` and not `(q-1)`** — OPEN. The bar-norm hypothesis cannot say;
+   they give the identical prefactor. Needs a constraint outside that family.
+3. Which Markov parameter — **owner call**, coupled to `qou-99qc`.
+4. ~~The k=3/k=2 1.5136 gap~~ — explained: same defect as (1).
+
+What is left is **(2), one genuine open question**, plus **two owner decisions**
+of the same shape: classical-vs-deformed measure, and augmentation-vs-z_D
+parameter. Both are choices with measured consequences, neither is an agent call.
+
+**Bean stays open** (open conjecture).
