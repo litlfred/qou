@@ -1,11 +1,11 @@
 ---
 # qou-vwu3
 title: Is the Markov-trace bond-multiplicativity defect CHARGE-sensitive? The n=4 cross term is derived on BARE generators; the production bonds are charge-dressed
-status: completed
+status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T17:46:48Z
-updated_at: 2026-09-14T17:55:36Z
+updated_at: 2026-09-14T18:08:19Z
 ---
 
 ## ANSWERED 2026-09-14 — the defect IS charge-sensitive, and its charge dependence is ONE bond factor
@@ -81,3 +81,43 @@ charge-blind factor cannot change a ratio. **(a)** as a statement about word-cla
 routes in general — this is one interleaved word at `n = 4`, and other classes at
 higher `n` need not factor this way. Which word class a nucleus is remains `qou-5vhf`;
 the production atom word is sequential, so **no production number moves**.
+
+
+## 🛑 SAME DAY — the n=4 prune does NOT generalise. Reopened.
+
+Tested immediately, because a prune is only a prune if it survives a longer word.
+At `n = 5` with **two** re-crossings (`b₀b₁b₀b₂b₁b₃b₂` against `b₀²b₁²b₂²b₃`, same
+generator multiset), symbolic in `q`, 2 seconds:
+
+    Δ₅ = f₃ · (z² − h z − 1) · ( f₀² + f₂² + (q⁴+1)/(q²+1)² )
+
+verified exactly. Three structural facts:
+
+- the **peeled** bond `f₃` still factors out **linearly**, exactly as at `n = 4`;
+- the **interleaved** bonds `f₀`, `f₂` now enter at **degree 2** — additively, with
+  **no `f₀f₂` cross term**;
+- `d₁`, the one generator that never re-crosses after a neighbour, is **absent at
+  both `n`**.
+
+**Consequence, and it reverses this bean's headline.** A quadratic has a
+charge-DEPENDENT mirror-even part, so the parity ratio is no longer forced —
+measured, `Δ₅ odd/even ≠ f odd/even`, where at `n = 4` it was equal and that
+equality *was* the whole prune. `parity_ratio_const_mul` is unconditional and
+untouched; what is word-specific is the *premise* that the cross term has the shape
+"bond factor × charge-blind scalar". At `n = 4` it does. At `n = 5` it does not.
+
+**So the word-class route is OPEN at `n = 5`, and the interesting object is the sum
+of squares.** The `n=4` answer stands as recorded — it closes that cross term, and it
+closes the mechanism wherever a construction genuinely has that shape.
+
+Probe now 15/15. Lean §7 carries the scope caveat so the theorem cannot be cited as
+closing the route.
+
+**Open, in order:**
+- [ ] Split `Δ₅` under the mirror and report the odd/even ratio against the bond
+      factor's and against the AME target. It is a derived number — `f₀`, `f₂`, `f₃`
+      and `c(q)` are all fixed by `q₀`, nothing chosen.
+- [ ] Is `f₀² + f₂²` (sum of squares, no cross term) a general pattern or an `n=5`
+      accident? `n = 6` decides, and the probe runs in seconds.
+- [ ] Which word class a nucleus actually is — `qou-5vhf`, unchanged. The production
+      atom word is sequential, so none of this moves a production number yet.

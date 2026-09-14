@@ -34,6 +34,14 @@
     "mirror_difference": "0.157360128700565030054030215833",
     "bare_cross_term": "-0.461171580324343072688571278874"
   },
+  "n5_generalisation": {
+    "closed_form": "Delta_5 = f3 * (z^2 - h z - 1) * (f0^2 + f2^2 + (q^4+1)/(q^2+1)^2)",
+    "peeled_bond_still_factors": true,
+    "interleaved_bonds_degree": 2,
+    "d1_absent": true,
+    "parity_ratio_still_forced": false,
+    "consequence": "The n=4 prune is WORD-SPECIFIC. At n=4 the charge dependence is linear in one bond, which forces the parity ratio; at n=5 the interleaved bonds enter quadratically, the mirror-even part becomes charge-dependent, and the ratio is no longer forced. The word-class route is OPEN at n=5."
+  },
   "scope": "(a) scope-limited: n=4, three bonds, exact and symbolic. Not a nucleus. Does NOT claim the production word is interleaved -- it is sequential (qou-5vhf is which word class a nucleus is).",
   "assertions": [
     {
@@ -90,8 +98,28 @@
       "name": "PARITY_RATIO_IS_IDENTICAL_TO_THE_BOND_FACTOR_ITSELF",
       "passed": true,
       "detail": "Delta_odd/Delta_even == f2_odd/f2_even identically.  Multiplying by a charge-blind scalar cannot move an odd/even ratio, so the cross term inherits the bond channel's isospin parity structure VERBATIM -- the same structure QOU.MassTheory.BondChannelTzParity proves cannot be even at any q > 1."
+    },
+    {
+      "name": "N5_closed_form_f3_times_defect_times_SUM_OF_SQUARES",
+      "passed": true,
+      "detail": "Delta_5 = f3 * (z^2 - hz - 1) * (f0^2 + f2^2 + (q^4+1)/(q^2+1)^2), exactly, symbolic in q.  The PEELED bond still factors out linearly, exactly as at n=4 -- but the two INTERLEAVED bonds now enter QUADRATICALLY, additively, with no f0*f2 cross term."
+    },
+    {
+      "name": "N5_the_never_recrossed_bond_still_drops_out",
+      "passed": true,
+      "detail": "d1 is absent: bond 1 is the one generator that never re-crosses after a neighbour, and it contributes nothing to the defect at either n."
+    },
+    {
+      "name": "N5_interleaved_bonds_enter_at_DEGREE_TWO",
+      "passed": true,
+      "detail": "degree in d0 = 2, in d2 = 2, in d3 = 1.  At n=4 every dressing that appeared was LINEAR; here the interleaved pair is quadratic, and a quadratic has a charge-DEPENDENT mirror-even part."
+    },
+    {
+      "name": "N5_PARITY_RATIO_IS_NO_LONGER_FORCED_so_the_n4_prune_is_WORD_SPECIFIC",
+      "passed": true,
+      "detail": "Delta_5 odd/even == bond-factor odd/even?  False.  At n=4 it WAS (that is the whole n=4 prune); here it is not, because the mirror-even part now depends on the charges (even5 has d0: True, d2: True).  So `parity_ratio_const_mul` does not apply, and the n=4 exclusion does NOT generalise: the word-class route is OPEN at n=5."
     }
   ],
   "free_parameters": 0,
-  "computedAt": "2026-09-14T17:51:16.208497+00:00"
+  "computedAt": "2026-09-14T18:06:05.465741+00:00"
 }
