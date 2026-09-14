@@ -1,11 +1,11 @@
 ---
 # qou-vh1o
 title: 'GAP: 13 self-assuming-projection candidates never reach the review ledger (derivation-pending exemption arms)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-09-13T19:43:07Z
-updated_at: 2026-09-13T21:07:00Z
+updated_at: 2026-09-14T07:59:46Z
 ---
 
 ## The finding
@@ -221,3 +221,42 @@ Contained, then — but a downstream library file that imports
 `QOU.FluidDynamics.acoustic_horizon_conditions` gets the shape-(A) version,
 not the proved one. Whether to delete the library twins or promote the
 siblings into the library is an author call, not an agent call.
+
+
+## LANDED 2026-09-14 — the 13 verdicts are in the ledger
+
+Second arm's `exempt_reason` migrated "derivation pending" -> "triage pending",
+the 13 seeded, and all 13 adjudicated verdicts written.
+
+**Measured delta on the audit witness** (`docs/audits/2026-06-17-lean-vacuity-axiom-audit.json`):
+
+| field | before | after |
+|---|---|---|
+| `total_defects` | 70 | **76** |
+| `total_exempt` | 64 | **58** |
+| `total_promoted_from_exempt` | 42 | **48** |
+| `proof-no-self-assuming-projection` | 57 | **63** |
+
+Exactly the 6 `genuine` verdicts moving from exempt to counted; the other 7
+(6 `advisory` + 1 `legit`) correctly stay exempt. (`scanned_files` also moved
+3846 -> 3847 — **not from this change**: the tree carries no new `.lean`
+(`git status` clean apart from the three edited files), and the category delta
+is exactly +6, so the extra file contributed no candidate.)
+
+**Gates, all green on the final tree:**
+
+- `--check-ledger` exit 0 — "all 119 candidate(s) carry a fresh agent verdict"
+- `--selftest-docstring-sorry` exit 0 — 4 suppressed / 8 still flagged
+- idempotence: a second `--review-ledger` run added 0, removed 0, changed 0
+
+**Ledger:** 332 entries, 0 `needs-agent`; verdict split now
+135 genuine / 133 legit / 51 advisory across all categories.
+
+## The two findings did NOT ride this PR — they are author calls
+
+Both are recorded above and are now tracked separately:
+
+- **the fitted `defaultQBetaCKClosedForms` instance** — appended to `qou-hjf4`,
+  which owns the global-instance-discharges-a-3b-binder class and already
+  carries the `ClassicalLimitStpart` precedent this one matches.
+- **the three doubly-formalised fluid-dynamics propositions** — bean `qou-klr1` (the §0a-INVERTED case: sibling proved, library twin vacuous, so a sweep written against §0a's documented direction would delete the wrong file of each pair).
