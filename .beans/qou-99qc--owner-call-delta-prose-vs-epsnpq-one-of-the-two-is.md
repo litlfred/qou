@@ -2495,3 +2495,210 @@ word over this alphabet is admissible in the alternating block under scope (B).
    require even length. That is a question about the corpus's crossing
    accounting, not about letter selection.
 3. **Whether the bar-odd hypothesis survives the move to `z_D`** — unchanged.
+
+
+## 2026-09-14 — 🛑 I ATTACHED THREE MERGED PRs TO THE WRONG PSD READING. The parity exclusion is reading 1; the live reading is 3, and under it the budget is unconstrained.
+
+**What was wrong, and it was mine.** #7319 / #7325 / #7336 built a length-parity
+exclusion on the alternating block `(1,1,1)`, and I recorded the 2026-09-13 owner
+answer in AGENTS.md as *"every Wedderburn projection of the full 11-letter word
+must be `Matrix.PosSemidef`"*. **That sentence is reading 1.** The corpus
+enumerates three PSD readings and the owner selected **3** on 2026-09-12 —
+*"try PSD condfinement 3 for now, but keep 1 2 for later"* (`qou-ales`):
+
+| | criterion | status |
+|---|---|---|
+| reading 1 | literal `Matrix.PosSemidef` on every block | **parked** |
+| reading 2 | symmetric-part PSD | **parked** |
+| reading 3 | `χ_λ(w) ≥ 0` on every block with `y_λ > 0` | **SELECTED** |
+
+The 2026-09-13 fork was explicitly about **reading 3's** scope —
+`qbeta_reading3_scope_fork_probe` states it as *"(A) reading 3 applies to the
+γγ-selected core only / (B) reading 3 applies to the whole 11-crossing word"*.
+So **(B) moved the letter scope and left the reading alone.** Live criterion:
+reading 3, whole word.
+
+**Why that is fatal to the parity result specifically.** Under convention D
+`y_(1³) = 0`, and that vanishing *is* convention D (the two-row truncation,
+`markovWeights_eq_jones_of_threeRow_eq_zero`) — verified here exactly, `y_(3) +
+2y_(2,1) = 1.0`. So reading 3 never looks at the alternating block, which is
+where the entire parity theorem lives.
+
+**Measured — reading 3 does not constrain the crossing budget** (all generator
+assignments × all dressings over the corpus alphabet):
+
+| k | length | parity | admissible (p) | admissible (n) |
+|---|---|---|---|---|
+| 0 | 9 | odd | 4/8 | 4/8 |
+| 1 | 10 | even | 18/48 | 18/48 |
+| 2 | 11 | odd | 149/288 | 145/288 |
+| 3 | 12 | even | 594/1728 | 594/1728 |
+
+Odd lengths 9 and 11 are admissible in quantity; there is no parity signal and
+no monotone in k. **#7336's "the gluon dressing must be ODD" has no force under
+the live reading.**
+
+**Second correction — the quark family is NOT empty.**
+`qbeta_bar_parity_forces_a_unique_quark_letter_probe` checks
+`all(is_psd(M) for every block)` (reading 1) and concludes the SDP half rejects
+the whole family. Under reading 3 **one of six survives**: `(slot 2, sigma)`,
+`χ_(2,1) = +0.0574586606`. So **item 1 below has a candidate the reading-1
+measurement hid.** Not adopted — selecting it because it survives would be
+selection against the target.
+
+**What is UNCHANGED: the element rejection.** Both census assignments stay
+excluded under reading 3 — p `(0,sigma)` `χ_(2,1) = −0.2805933509`, n
+`(2,inv)` `−0.3719563247` — and `y_(2,1) = 0.2473 > 0`, so `(2,1)` **binds**.
+AGENTS.md called `(1,1,1)` the exclusion "already on record" with `(2,1)`
+"additional"; it is the other way round, and `(2,1)` alone is enough. Nothing
+downstream moves; **the L2 rows stay un-re-scored.**
+
+**What the parity theorem DOES say, and it is decision-relevant.** Under reading
+1 no odd-length word over the corpus alphabet is admissible, and **all three
+nucleon constructions are odd** (`qou-1qsw`). So adopting reading 1 would not
+tighten the selection, it would **empty** it — every nucleon model dies on
+length whatever its dressing, and a survivor would need an even-length model or
+a letter with shift `d ≥ 1/(q²−1) = 4.3094` against the alphabet's `{0, −½, −1}`.
+That is an argument about reading 1's viability for this corpus.
+
+Probe: `computations/qbeta/qbeta_reading3_does_not_constrain_the_budget_probe.py`
+(8/8, proton pin, convention D, 60 dps). The Lean stays sorry-free and unedited —
+only its scope line changes.
+
+**Open items, restated.**
+1. **What replaces `nuc11_interleaved`** on Q_β / m_n / Δ_pn — owner decision.
+   Now has at least one reading-3-admissible candidate in the corpus's own
+   family, and is **no longer** constrained to odd dressings.
+2. Superseded twice over: first by the length reframing, now by the reading
+   correction. The letters are not where the live constraint sits — `χ_(2,1)` is.
+3. Whether the bar-odd hypothesis survives the move to `z_D` — untouched.
+
+
+## 2026-09-14 — what DOES fix the budget: the corpus's own cost function. It selects k = 0 (or 1), never the live 11.
+
+The correction above leaves the budget question OPEN rather than answered —
+reading 3 admits every dressing count. **The answer was already in the corpus.**
+
+**The selection principle, from the Lean.** `FrobeniusSelected B y cands cost w`
+= `w` is reading-3-feasible **and** `cost w ≤ cost w'` for every feasible
+candidate, with the corpus instantiating `cost = fun w => (w.length : R)` — the
+**crossing count**. That is exactly how `frobeniusSelected_borromean` picks the
+6-letter core. So the budget has a derived answer: the minimal-cost
+reading-3-feasible dressing.
+
+**Measured** (all generator assignments × all dressings, 4144 words):
+
+| k | length | parity | reading 3 (p) | reading 3 (n) | reading 1 (p/n) |
+|---|---|---|---|---|---|
+| 0 | 9 | odd | 4/8 | 4/8 | **0/0** |
+| 1 | 10 | even | 18/48 | 18/48 | **0/0** |
+| 2 | 11 | odd | 149/288 | 145/288 | **0/0** |
+| 3 | 12 | even | 594/1728 | 594/1728 | **0/0** |
+
+1. **Minimal cost selects `k = 0`** — the empty dressing is reading-3-feasible
+   (4/8, both nucleons), so the cost-minimal word is the **9-letter** core+quark
+   with **no gluon crossings**.
+2. **Excluding the empty dressing gives `k = 1`, still not 2.**
+   `frobeniusSelected_nil` records that the crossing-count cost makes the empty
+   word trivially selected — which is why the core selection restricts to
+   non-zero vertex powers. Whether the same exclusion applies to the dressing is
+   an **unstated modelling choice**. It does not rescue 11.
+3. **So the live `nuc11_interleaved` (k = 2) is cost-minimal under NEITHER
+   convention.** That is a second, independent reason the scored element is not
+   what the ruling produces — the first being its `(2,1)` failure.
+4. **The principle fixes the BUDGET, not the WORD.** At k = 0 four assignments
+   tie, carrying **two** distinct traces per nucleon (p `0.6121259628` /
+   `0.6263353681`; n `0.4830505246` / `0.4902320181`). `cost_eq` gives equal
+   cost, not a unique word. A 2-fold degeneracy survives and is **not** closed.
+
+**🛑 And this corrects my own correction, one level down.** The entry above says
+reading 1 would empty the selection *by parity* (all corpus nucleon models are
+odd). Measured, **reading 1 admits ZERO words at every k — including k = 1 and
+k = 3, which are EVEN total lengths that `alt_psd_iff_even` permits.** The
+`(2,1)` block excludes those independently of parity. So reading 1 is
+annihilating **outright**, and the parity theorem is not the binding constraint
+even where it applies. The parity result is still true and still the clean
+structural statement for odd lengths; it is simply not what does the work.
+
+Probe: `computations/qbeta/qbeta_cost_minimal_budget_under_reading3_probe.py`
+(7/7, proton pin, convention D, 60 dps).
+
+**Not claimed, deliberately.** That `k = 0` should be adopted — that is an owner
+call and it hangs on the unstated empty-dressing convention. That the
+crossing-count cost is the right cost for the *dressing* (extending the core's
+cost to it is an extrapolation of the principle, not a theorem about it). **No
+Q_β residual was computed for any of these**, precisely so the selection cannot
+be contaminated by proximity to the measured value. The dashboard stays
+un-re-scored.
+
+
+## 2026-09-14 — 🟧 OWNER OBJECTION: crossing COUNT is the wrong cost. Measured — and it changes the answer.
+
+Owner, verbatim: *"The selection rule shouldn't be minimum crossing... It may be
+higher energy than a non-minimal crossing. A sibling has worked on connecting
+hecke energy to O'Hara energy via brings embedding. Can we compare that as a
+selection principle... You're minimizing not just the hecke energy but how the
+knot is embedded into brings surface."*
+
+**The objection holds, measured.** Probe
+`computations/qbeta/qbeta_crossing_energy_separates_the_gluon_probe.py` (7/7).
+
+**Part 7's verdict is right and is about γγ words.** `E_cross(k-vertex γγ word)
+= k·h` exactly (reproduced), so there energy is *proportional to* count and
+swapping the cost changes nothing; `E_cross(empty) = 0` sits below every
+non-empty γγ word, which is the degeneracy that retired the functional.
+
+**The gluon is not a γγ word, and there the two costs DISAGREE:**
+
+| gluon | \|G\| | reading-3 | `E_cross` | Q_β MeV | vs CODATA |
+|---|---|---|---|---|---|
+| (empty) | 0 | no | 0 | 0.5457 | −30.25 % |
+| σ₁ | 1 | **yes** | **+1.10998** | 0.5111 | −34.68 % |
+| **σ₁⁻¹** | 1 | **yes** | **−0.90092** | 0.3970 | −49.26 % |
+| σ₀σ₀ (live) | 2 | no | +2.21996 | 0.6519 | −16.68 % |
+| σ₁σ₀ | 2 | yes | +2.21996 | 0.6822 | −12.80 % |
+| **σ₀σ₁** | 2 | yes | **+2.21996** | **0.3357** | **−57.09 %** |
+| σ₁σ₁ | 2 | yes | +2.21996 | 0.6525 | −16.60 % |
+
+1. **Count ties σ₁ and σ₁⁻¹ at 1; energy strictly prefers σ₁⁻¹.** A negative
+   crossing carries negative energy, which no count can see. The choice of cost
+   is a real decision, not a formality.
+2. **The degeneracy dissolves here.** `E_cross(empty) = 0` but `σ₁⁻¹ < 0`, so
+   the empty word is *not* the energy minimum. γγ words are sign-**balanced** by
+   construction and never offer a bare negative crossing; the gluon does. Part
+   7's verdict does not transfer, and the functional is **usable** on the gluon.
+3. **🛑 But it is a letter-sum, so it is order-blind — and that is the sharp
+   part.** `σ₁σ₀` and `σ₀σ₁` tie **exactly** at `2q`, while their Q_β differ by
+   a **factor of two** (0.6822 vs 0.3357 MeV). The observable depends on the
+   ordering and the functional cannot see it. All three feasible 2-crossing
+   gluons tie at one energy.
+
+**So the owner's proposed direction is the right class of fix**, and for the
+reason point 3 exposes: an embedding energy is *not* a letter-sum — it is
+order-sensitive and can rank a longer word below a shorter one.
+
+**What exists / what is missing (searched `computations/`, `tools/`):**
+
+- **Exists** — `mobius_cross_energy_hopf_calibration.py`, calibrated against the
+  **proved** `E(Hopf) = 2π²` (Agol–Marques–Neves, arXiv:1205.0825); a Borromean
+  companion; `QOU.MobiusEnergy` with a categorical `E_cat` from the
+  Frobenius–Hopf comultiplication and the encoded `E_cat = ¼·E_classical +
+  const`; Bring period-matrix / mapping-torus-residue machinery. Beans `qou-zfs6`
+  (Möbius invariance / FHW bound / minimiser as Lean gates) and `qou-dux3` are
+  `completed`.
+- **Missing** — **any map from a braid word to a curve in or on the Bring
+  surface.** The integrators consume hand-parametrised *named* embeddings (Hopf,
+  Borromean). An absence on the surfaces searched, not a proof of absence.
+- **Caveat** — `MobiusEnergy.lean` carries **2 sorries**, and its own header
+  records a prior vacuity incident in which `classicalLimit` made `E_cat` blind
+  (`E_cat = 1 + const` for every knot) *with no `sorry` to flag it*. That leg
+  cannot bear weight unexamined.
+- **The hard part** — Möbius energy is a property of an **embedding**, not a knot
+  invariant; the invariant is the **infimum** over the isotopy class. So a bridge
+  needs either the minimiser (FHW) or a **canonical** embedding — which is
+  exactly what the Bring surface would supply. That is the research content, not
+  a wiring job.
+
+**Nothing adopted.** σ₁⁻¹ is not selected — that would swap one proxy for
+another, and point 3 shows the energy does not separate what remains. The Q_β
+column is a reported consequence, never an input to an ordering.
