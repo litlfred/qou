@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T09:42:03.278132+00:00",
-  "commitSha": "a4140cde96558b97a449d7e38e120ed536b93857",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-14T18:12:24.816578+00:00",
+  "commitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "casimir-q-factorial-probe",
   "scriptFile": "casimir_q_factorial_probe.py",
-  "scriptHash": "29e1c4cea5aa",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "86e6b6db8864",
+  "scriptCommitSha": "5c2af221b76dcec548fe73f7d849c792cf69b763",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -51,7 +51,7 @@
         "[n]_q!_sym_at_substrate": 6.120579277915064,
         "[n]_q!_sym_at_q→1": 6.000000000011,
         "classical_n_factorial": 6.0,
-        "{n}!_q_poch_at_substrate": 7.051613910787675,
+        "{n}!_q_poch_at_substrate": 7.051613910787674,
         "{n}!_q_poch_at_q→1": 6.000009000005
       },
       "4": {
@@ -65,21 +65,21 @@
         "[n]_q!_sym_at_substrate": 131.31308484471597,
         "[n]_q!_sym_at_q→1": 120.000000001,
         "classical_n_factorial": 120.0,
-        "{n}!_q_poch_at_substrate": 206.81747174220294,
+        "{n}!_q_poch_at_substrate": 206.8174717422029,
         "{n}!_q_poch_at_q→1": 120.00060000145
       },
       "6": {
         "[n]_q!_sym_at_substrate": 838.8393566737277,
         "[n]_q!_sym_at_q→1": 720.0000000102,
         "classical_n_factorial": 720.0,
-        "{n}!_q_poch_at_substrate": 1636.429123788148,
+        "{n}!_q_poch_at_substrate": 1636.4291237881478,
         "{n}!_q_poch_at_q→1": 720.0054000201001
       },
       "7": {
-        "[n]_q!_sym_at_substrate": 6396.437008845357,
+        "[n]_q!_sym_at_substrate": 6396.437008845356,
         "[n]_q!_sym_at_q→1": 5040.00000011172,
         "classical_n_factorial": 5040.0,
-        "{n}!_q_poch_at_substrate": 16008.580225805077,
+        "{n}!_q_poch_at_substrate": 16008.580225805073,
         "{n}!_q_poch_at_q→1": 5040.052920279301
       }
     },
@@ -88,15 +88,15 @@
         "form": "π²/(6·[5]_q!_sym)",
         "value_at_substrate": 0.012526810018921114,
         "value_at_q→1": 0.013707783890287656,
-        "rel_residue_substrate": 0.08615352276655634,
+        "rel_residue_substrate": 0.0861535227665563,
         "rel_residue_classical": 8.333324999967506e-12,
         "classical_limit_ok": true
       },
       {
         "form": "π²/(6·{5}!_q_poch)",
-        "value_at_substrate": 0.007953554663402081,
+        "value_at_substrate": 0.007953554663402083,
         "value_at_q→1": 0.013707715351659494,
-        "rel_residue_substrate": 0.41977822768484735,
+        "rel_residue_substrate": 0.41977822768484724,
         "rel_residue_classical": 4.999987083355834e-06,
         "classical_limit_ok": true
       },
@@ -110,9 +110,9 @@
       },
       {
         "form": "π²/([6]_q·[5]_q!)",
-        "value_at_substrate": 0.01176578605017481,
+        "value_at_substrate": 0.011765786050174813,
         "value_at_q→1": 0.013707783890207693,
-        "rel_residue_substrate": 0.14167117425792305,
+        "rel_residue_substrate": 0.141671174257923,
         "rel_residue_classical": 1.4166652499900033e-11,
         "classical_limit_ok": true
       },
@@ -120,15 +120,15 @@
         "form": "π²/(6·([5]_q!+[5]_{q⁻¹}!)/2)",
         "value_at_substrate": 0.012526810018921114,
         "value_at_q→1": 0.013707783890287656,
-        "rel_residue_substrate": 0.08615352276655634,
+        "rel_residue_substrate": 0.0861535227665563,
         "rel_residue_classical": 8.333324999967506e-12,
         "classical_limit_ok": true
       },
       {
         "form": "π²/(6·(1-q²)·(1-q³)·(1-q⁴)·(1-q⁵)/(1-q)⁴)",
-        "value_at_substrate": 0.007953554663402081,
+        "value_at_substrate": 0.007953554663402083,
         "value_at_q→1": 0.013707715351659494,
-        "rel_residue_substrate": 0.41977822768484735,
+        "rel_residue_substrate": 0.41977822768484724,
         "rel_residue_classical": 4.999987083355834e-06,
         "classical_limit_ok": true
       }
@@ -137,7 +137,7 @@
       "form": "π²/(6·[5]_q!_sym)",
       "value_at_substrate": 0.012526810018921114,
       "value_at_q→1": 0.013707783890287656,
-      "rel_residue_substrate": 0.08615352276655634,
+      "rel_residue_substrate": 0.0861535227665563,
       "rel_residue_classical": 8.333324999967506e-12,
       "classical_limit_ok": true
     },
