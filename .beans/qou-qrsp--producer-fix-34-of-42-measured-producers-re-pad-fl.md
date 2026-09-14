@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T09:01:16Z
-updated_at: 2026-09-14T07:11:09Z
+updated_at: 2026-09-14T18:19:43Z
 ---
 
 Follow-up to qou-gqt5 (parent-less: beans disallows task-under-task).
@@ -713,3 +713,67 @@ its published field byte-for-byte as `fmt(mp.mpf(<the float64>))`, which is
 this shape. Six of the eight live offending files were last written by
 precision-drain sweeps themselves (`qou-4383` x3, `qou-baye`) — consistent with
 what `qou-3jwy` already recorded, one drain tranche later.
+
+## The 18 are worked: 12 fixed, 6 adjudicated deliberate (2026-09-14)
+
+The "10 defects" figure this bean carried from #7344 was wrong **in both
+directions**, and the tool was the reason. It matched a bare `Name` against
+`qou_substrate.constants` without asking what the file itself had bound that
+name to:
+
+    reported                              10
+    cleared by their own import alias     -3   (homfly imports Q_50_DIGIT_STR AS Q)
+    newly visible                        +11   (Q as Q0 / Q0_PROTON / Q0_PROTON_F64)
+    ------------------------------------------
+    actual                                18   across 16 files
+
+`_bound_names()` resolves the aliases; cleared sites get their own reported
+bucket. Detector now reads 18 -> **6** after the fixes, and the 6 are exactly
+the adjudicated-deliberate set.
+
+### The six that are NOT defects, with the reason each
+
+- `phi_k_weight_family_discriminator.py:559` — computes
+  `|mpf(Q0_PROTON_F64) - mpf(Q0_PROTON_STR)| / mpf(Q0_PROTON_STR)`. It **measures
+  this very gap**; substituting the string makes it compute zero.
+- `codata_registry_triangulation_probe.py:117` — registry-vintage regression
+  guard. Its subject IS the float the registry serves; it is how the 1.35 ppb
+  CODATA-2018/2022 straddle behind the old 437x `m_p` "miss" was caught.
+- `m_p_m_e_li2q.py:67` — inside `Li_2_q_f64`, declared an f64 wrapper, returns
+  `float(...)`; a better anchor cannot survive the return.
+- `probe_chirality_delta_lambda_the3_diagnostic.py:120,122` — an assert at
+  `rel_eps=1e-15` against a divergence at 1e-18, three orders inside tolerance.
+- `hecke_core_symbolic_migration.py:109` — `nstr(..., 17)` display, truncated
+  before the difference appears.
+
+### The result that justifies the tranche
+
+`frakV_zeta4_fibre_vs_observable_probe` asserts a quantity IS zero. It could
+only show `8.5246e-32` because the float64 anchor was its floor. At the 50-digit
+anchor it shows **`4.1041e-72`** — forty orders closer to its own claim. The
+probe had been measuring its input's truncation, not the mathematics. Its
+`1.10998` fallback (a 6-digit truncation applied silently) is gone; it raises.
+
+### Two things in the diff that are NOT this fix
+
+- **A stale AME input.** `a4_interface_magnitude_one_scalar_gate` moves
+  `B_4He_AME` 28.29566000 -> 28.29566240 MeV. A q0 edit cannot move an AME
+  binding energy; the committed witness predated the longer live value and the
+  re-run carried the correction along.
+- **One residual got worse and that is correct.** `casimir_hoefsmit_additivity`
+  assertion 4 runs 7.3902e-12 -> 1.6920e-11 against a 1e-9 gate, because the
+  quantity measures **the tabulated coefficients' own float64 storage**. A more
+  precise q0 exposes that truncation rather than fixing it. The table is the
+  next target, not q0.
+
+### One witness deliberately NOT regenerated
+
+`charm-frobenius-block-projection.witness.json` stays on its committed content.
+This container has no `snappy` (OPTIONAL to that producer), so a re-run here
+returns the witness **48 fields short** — the whole
+`reading_B_snappy_complex_volume` block (hyperbolic volume + Chern-Simons per
+candidate word) and `q0AnchorReason`. The source fix is correct and landed; the
+witness needs a container with snappy.
+
+Padding ratchet over the tranche: 75 -> 73 occurrences, 13 -> 12 files.
+PR #7383.
