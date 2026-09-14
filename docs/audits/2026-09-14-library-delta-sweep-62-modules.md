@@ -92,6 +92,43 @@ favourable regime is where the work is. The open follow-up from `qou-srb1`
 stands: a global work queue would remove the tail's barrier cost. It is not
 done, and it is a larger change to the script that guards the real olean tree.
 
+## Companion: the content-block siblings, and they churn ~8x slower
+
+The same delta method over the *other* Lean population — content-block `.lean`
+siblings, `content/**/*.lean` outside the `lean/` package trees — whose last full
+sweep was **938/938, 0 RED at `16ccc3f7e2`** (2026-09-13,
+[`2026-09-13-every-content-sibling-compiles-zero-red.md`](2026-09-13-every-content-sibling-compiles-zero-red.md)).
+
+Delta at `2fe7032695`: **0 added, 8 modified, 2 deleted** (938 -> 936 siblings).
+
+```
+scripts/lean-content-sweep.sh $(the 8)
+# cone=6 changed_since_snapshot=2652 rebuild=6 levels=3 widest=3
+=== swept 8, RED 0 ===
+```
+
+All 8 `exit 0`, 0 errors, under a minute. The cone is **6**, not hundreds,
+because most content siblings import only Mathlib — AGENTS.md records that just
+262 of 938 import `QOU` at all — so their exposure to library churn is small by
+construction.
+
+**The two populations have very different half-lives, and that is the reusable
+finding:**
+
+| population | size | changed in one day | full-sweep cost | delta cost |
+|---|---|---|---|---|
+| library modules | 2886 | **62** | 3 h 10 m | ~26 min |
+| content siblings | 936 | **8** | ~55 min | **< 1 min** |
+
+So they do not want the same cadence. The library needs a delta pass per tranche;
+the content siblings can ride a much longer interval, and when they do need one it
+is nearly free.
+
+**Scope, stated rather than implied.** `cone=6` means the shadow's other ~2787
+modules were trusted from the snapshot. They are not in these 8 blocks' import
+cones, so they cannot affect the verdict — but the green is a claim about these
+8 against their own cones, not about the 936.
+
 ## Artifacts
 
 - log: `/tmp/claude-0/delta-sweep.log` (container-local, not committed)
