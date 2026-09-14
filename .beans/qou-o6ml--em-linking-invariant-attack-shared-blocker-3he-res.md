@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T17:02:26Z
+updated_at: 2026-09-14T07:55:03Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -235,7 +235,9 @@ answer); route (3) needs the von Neumann inductive limit (open R&D).
 earlier ranking accordingly.
 
 
-## ROUTE (2) — the positive half of the μ̄ prune, PROVED 2026-08-30
+## ROUTE (1) [was mis-headed ROUTE (2)] — the positive half of the μ̄ prune, PROVED 2026-08-30
+
+> **Heading corrected 2026-09-14.** This read *"ROUTE (2)"* and the body says "route (2)" throughout. **The object is route (1)'s.** These three lemmas live in `MilnorTripleLinkingMagnus.lean` and constrain functionals of `μ̄₁₂₃`, a Milnor invariant — route (1)'s apparatus. Route (2) is the Möbius/knot-energy class, whose object is a conformally-invariant integral, not a Milnor invariant. The misfiling made route (1) read as pruned-and-abandoned while its **positive half was credited to a different route**, which is how a live branch goes missing. Body text left as written (it is the dated record); only the heading and this note are new.
 
 The prune I contributed from `qou-bn8e` (route (1)'s linear ansatz dies:
 `odd_symmetric_functional_vanishes`) said what `E_EM` may **not** be. Route (2)
@@ -1854,3 +1856,493 @@ unchanged across assemblies) that a bound configuration does not satisfy.
 NOT CLAIMED: that the assemblies DO move the separations in this framework, nor
 by how much. That is a geometric measurement section 9g does not make, and it is
 the open thing.
+
+## 2026-09-13 — CONSTRAINT 3b's open item is now TRACKED: `qou-a2w5`
+
+Section 9g ends by naming the arc's one precisely-stated open problem — *"that
+the assemblies DO move the separations in this framework, nor by how much …
+it is the open thing"* — and gives it no tracker. Measured: that phrase occurred
+in **exactly one file corpus-wide** (this one), so it was one bean-read away from
+being lost inside 1,856 lines.
+
+Extracted to **`qou-a2w5`** with the measurement that decides whether it is
+workable today. It is not, and the reason is checked rather than assumed:
+`sep` is a **bare field** of `LinkEmbedding` (`MobiusEnergy.lean:228`) carrying
+only `sep_symm` / `sep_nonneg` / `disjoint` / `sep_self` — no derivation — and
+every concrete `LinkEmbedding` in the tree is a synthetic test family
+(`shrinkingLink`, a counterexample; `separatedLink m R`, the family used to
+prove no uniform lower bound exists; a bare `Nonempty` witness). **None is a
+nucleus.**
+
+**So this is the SIXTH relocation to the carrier blocker** — after routes (1),
+(2), (4), the flux leg and the upper-bound leg. Recorded plainly so the new bean
+is not read as an independent front.
+
+**What changed is the SHAPE of the requirement, and that is the useful half.**
+The carrier blocker was *which census link is the nucleus* — a topological type,
+for a hyperbolic-volume lookup. Section 9g needs a canonical **metric**
+configuration: separations, not volume. Two consequences worth keeping:
+
+1. `qou-mbbf`'s non-geometricity result does **not** close this. A
+   non-hyperbolic link still embeds in `R^3` with perfectly good separations;
+   it simply carries no canonical hyperbolic metric. The measurement that
+   killed the volume route leaves this one open.
+2. The requirement is therefore **strictly weaker** than the volume route's —
+   the one direction this arc has not been pushed.
+
+And section 9g's own conclusion matches `qou-mbbf`'s, reached the same day from
+the carrier side without contact: **the route's deliverable is the object
+`qou-ales` is deriving, not a separate one.** Two independent arrivals.
+
+
+---
+
+## 2026-09-13 — `qou-9v7t` PINS THIS ARC'S TARGET NUMBER, and neither bean cites the other
+
+Found while correcting `qou-a2w5`'s `b_3` claim (PR #7339). This is a
+corpus-grep find, not a derivation: **two beans on the same question, mutually
+invisible.**
+
+### The number this arc owes
+
+`qou-9v7t` (2026-08-29, PR #5990,
+`computations/b3-charge-decomposition-a3.witness.json`) splits the A = 3
+three-body cumulant by isospin and **names the halves**:
+
+| part | value (MeV) | `qou-9v7t`'s own label |
+|---|---|---|
+| `b3_sym`  | 1.4262225 | *"the strong channel's obligation"* |
+| `b3_asym` | 0.3818775 | ***"the EM channel's"*** |
+
+This arc is the **EM-linking** invariant. So the A = 3 figure it owes is
+plausibly `b3_asym`, and the widely-quoted `1.4262225` — which `qou-a2w5` and
+four `.lean` docstrings cite — belongs to the **strong** channel and is **not**
+this arc's target.
+
+**Flagged, NOT concluded.** That route (2)'s `mobiusCrossingModel.b3` is the
+asym part rather than the sym part (or neither) is a further read of
+`mobiusCrossingModel`, and I have not made it. What is established is only that
+the corpus already carries a charge-split with an EM half, and that this arc
+does not cite it.
+
+### QUOTE IT TO 5 FIGURES, NOT 7 — measured
+
+The decomposition does **not** close exactly against the A = 3 values
+`PairwiseCumulantVanishing.lean:75-76` quotes:
+
+    b3_sym + b3_asym = 1.8081000  vs  b3(3H)  = 1.808100   EXACT
+    b3_sym - b3_asym = 1.0443450  vs  b3(3He) = 1.044360   off by 1.5e-5
+
+i.e. `qou-9v7t` computed from a `B(3He)` about **15 eV** below the one that file
+quotes. Same class as the 8e-6 MeV residual that file already records on
+`b3_sym` ("AME input precision"), and the two are the same defect seen from
+opposite ends: sym is low by 7.5e-6 and asym high by 7.5e-6, which is why the
+3H sum closes and the 3He difference does not.
+
+**Consequence for this arc:** the EM obligation is `0.38187` MeV good to ~5
+significant figures. A route reproducing `0.3818775` to 7 figures would be
+matching AME input noise, not physics. Worth knowing *before* a route is graded.
+
+### `qou-9v7t` ALSO STATES THIS ARC'S PREMISE INDEPENDENTLY
+
+Verbatim from that bean:
+
+> the A=3 mirror pair is where the EM channel shows up in binding, and **the
+> framework has no EM term in any per-bond factor** (`f_pp = z`, `f_nn = z - h`,
+> `f_pn = z - h(1/2 - delta/4)`)
+
+That is this arc's premise — a two-like-charge term `w_ij` absent from the
+per-bond factors — reached from the binding side by an agent that was not
+working this arc. **Independent corroboration of the premise, from a different
+direction.** Note the three factors are charge-*labelled* but carry no charge
+*coupling*: `f_pp` and `f_nn` differ by `h`, not by anything electromagnetic.
+
+### THREE CONSTRAINTS ON THIS ARC'S ROUTES, from `qou-9v7t`'s four results
+
+1. **The mirror splitting is the Coulomb displacement energy**, essentially
+   exactly: `b3(3H) - b3(3He) = B(3H) - B(3He) = 0.76374` MeV, because the
+   pair-additive `3*B(2H)` cancels in a mirror pair. So this arc's A = 3 target
+   is not a fitted residual — it is a difference of two measured bindings, which
+   is the cleanest kind of target available.
+2. **9 of 10 existing candidates get the sign BACKWARDS.** Only the product
+   3-bond term is right-signed, and at **21.8%** of the displacement. The
+   wrong-signed ones reach 65% magnitude — *worse*, not better. Any new route
+   must clear the sign before magnitude is worth measuring.
+3. **The current sign is an accident, not a prediction** — two competing non-EM
+   sources, `tau_p/tau_n = 1.1600` favouring 3He against a bond-product ratio
+   `0.6494` favouring 3H, with different terms dominated by different ones. So
+   the framework's present agreement in sign, where it has it, carries no
+   evidential weight for this arc.
+
+### THE ABSENCE CLAIM THAT SENT THIS ARC LOOKING, AND IT WAS FALSE
+
+`qou-9v7t` closes: *"what supplies the **EM channel** at A=3 is a second
+[question], and nothing in the corpus currently addresses it."*
+
+**The corpus did address it.** This bean was created **2026-08-01**, four weeks
+earlier, `in-progress`, with "the two-like-charge EM-linking invariant that owns
+the 3He mirror residual" in its own title. So that sentence is an
+absence-of-evidence claim that was false when written.
+
+Worth recording for the reason rather than the fault: **corpus-grep path 6
+(`.beans/`) was added to AGENTS.md on 2026-08-26 — three days before.** The
+first five paths cannot reach a bean, and this arc's statement of the problem
+existed **only** as a bean at that date. It is the exact failure mode the path-6
+note was written for, landing three days after the fix, and it cost four weeks
+of mutual invisibility between two beans on one question.
+
+**Both directions are now recorded**: this entry, and `qou-9v7t` is `completed`
+so it takes no update — its "live successor" line stands as a dated record of
+what was known then.
+
+
+---
+
+## 2026-09-13 — §9h LANDED: the charge-antisymmetric content is the configuration change TOO
+
+`MobiusMutualChannel.lean` §9h, two theorems, both sorry-free
+(`[propext, Classical.choice, Quot.sound]`; `lean -DautoImplicit=false -s 65536`
+exit 0, no output):
+
+* `mobius_b3_congr_of_sep_eq` — two instantiations agreeing on the **pair and
+  triple** separations have equal `b_3`. `Lquad` is unconstrained: `b_3` is
+  `triple - (pair + pair + pair)`, so the four-component assembly never enters.
+* `mobius_b3_differs_forces_sep_differ` — contrapositive: **any** difference in
+  `b_3` forces the separations to differ.
+
+**The argument is one observation about the signature, not new machinery.**
+`mobiusCrossingModel` takes **no charge argument**: its inputs are link
+embeddings and the arclength `s`; `CrossingModel` carries `w2`/`w3`/`w4` and
+nothing else; `toBindingMap` is built from those three. There is no point in the
+chain where a proton differs from a neutron — **two nuclei are two
+instantiations of one functional.**
+
+**What it buys the arc.** `qou-9v7t` records that the framework has **no EM term
+in any per-bond factor** (`f_pp = z`, `f_nn = z - h`,
+`f_pn = z - h(1/2 - δ/4)` — charge-*labelled*, not charge-*coupled*). §9h says
+route (2) **does not need one**: whatever charge-antisymmetric number this
+channel can supply is a derived geometry, exactly as §9g found for the many-body
+number. **One obligation, not two.** That is a narrowing of the arc — the EM
+target and the many-body target collapse onto the same missing object — and it
+is emphatically **not** a closure.
+
+**NOT CLAIMED** (in the section docstring, not only here): that the mirror
+partners' separations **do** differ in this framework, nor by how much. Same open
+item as §9g, now reached from the charge side as well. §9h is **not** a
+prediction of `b3_asym`; it says where any such prediction would have to come
+from.
+
+**Scope — the arity caveat is real.** `CrossingModel` is `Fin 4`-indexed, so
+`b_3 i j k` is a triple's cumulant *inside a four-component model*, while the
+mirror pair ³H/³He is A = 3. The theorems are stated for two **arbitrary**
+instantiations, which is what is proved; reading them as ³H and ³He is an
+interpretation that carries a spare fourth component with it.
+
+**Lean caught the first attempt, which is the point of writing it in Lean.**
+`BindingMap` is in namespace `QOU.Mass.PairwiseCumulantVanishing`, so the
+unqualified `simp only [BindingMap.b3, …]` was an unknown identifier, the `b_3`
+never unfolded, and the `rw` chain then reported "did not find an occurrence" —
+an error that reads like a wrong lemma and was a wrong *name*. Rewritten to bind
+the six `innerPairEnergy_congr_of_sep_eq` instances as `have`s and pass them to
+`simp`, which is also robust to rewrite order.
+
+
+---
+
+## 2026-09-14 — 🛑 ROUTE (1)'s LENGTH-3 RUNG IS CLOSED BY MEASUREMENT, and this bean does not cite the measurement
+
+Third mutual-invisibility case on this bean in two days (after `qou-9v7t` and
+`qou-a2w5`). Corpus-grepped: **this bean cites neither
+`computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py` nor bean
+`qou-2g9j`**, and that probe answers route (1) directly.
+
+### The measurement
+
+`milnor_mubar_vanishes_on_every_triple_probe.py` (bean `qou-2g9j`, successor to
+`qou-768r` route 3) computes `μ̄` on **every triple** of the canonical atom word's
+closure:
+
+> **`μ̄ = 0` on EVERY triple, in BOTH crossing-resolution branches, for ²H, ³H,
+> ³He, ⁴He, ⁶Li, ⁸Be, ¹⁰B** — across all three indeterminacy classes
+> (`Δ = 0` structural, `Δ = 2` the residual, `Δ = 1` no information by
+> definition).
+
+**Its positive controls are what make the null worth anything**, and they run
+the *same code path*: the Borromean rings (closure of `(σ₁σ₂⁻¹)³`) asserted
+**nonzero**, the Hopf link asserted at `μ = 2, lk = 1`. So the zeros are a
+result, not a broken implementation.
+
+**Re-run this session: 5/5 assertions pass**, including
+`triples_of_the_carrier_with_NONZERO_mubar = 0`. Needed
+`PYTHONPATH=computations` — it is one of the `_path_bridge` bootstrap scripts
+(`qou-0e1t`).
+
+### Why this closes route (1)'s length-3 rung, and it is NOT the chirality argument
+
+The two existing prunes constrain the **shape** of `E_EM` as a function of
+`μ̄₁₂₃`: odd is forbidden (`odd_symmetric_functional_vanishes`), and the sign is
+invisible (`exchange_symmetry_forces_agreement_on_pm_one`). What survived was
+the **even** branch — `|μ̄₁₂₃|`, `μ̄₁₂₃²` — kept alive by
+`even_symmetric_functional_can_be_nonzero`, whose witness `F m = m²` is nonzero
+**precisely because the Borromean sits at `μ̄₁₂₃ = ±1`**.
+
+**The derived carrier does not sit at ±1. It sits at 0.** So `F(0) = 0` for that
+witness, and for every functional `F` the value is the single constant `F(0)` at
+**every** isotope. Two consequences:
+
+1. **No charge-antisymmetric content.** `b3_asym` would be
+   `F(μ̄(³H)) − F(μ̄(³He)) = F(0) − F(0) = 0`.
+2. **No `κ(A)` profile.** A constant cannot produce an A-dependent one, and
+   `κ(A)` spans A = 3…63.
+
+This is **stronger than the chirality prune and independent of it** — it does not
+care whether `F` is even, odd, or neither.
+
+### The escape it closes
+
+"Use a different triple" / "use a symmetric function of all of them" is the move
+an author reaches for here, and it does not work: the probe measured **every**
+triple, so the whole vector is zero and any functional of the vector is equally
+constant. Formalised below rather than left as prose.
+
+### 🟢 SETTLED: my question (b) — spatial vs isospin mirror — and the answer is moot
+
+I asked whether `exchange_symmetry_forces_agreement_on_pm_one` blocks the EM
+target, since it constrains behaviour under one reflection while `b3_asym` is a
+p↔n difference. **Read at the source: `swappedLongitude` exchanges "the two
+like-charged components"** — identical-particle exchange, neither a spatial
+mirror nor p↔n. So the two reflections are **genuinely different** and the
+chirality prune does **not** reach `b3_asym`.
+
+**But it does not matter**, because the vanishing above kills the channel
+regardless of reflection. Recorded because the distinction is real and a future
+agent will otherwise re-ask it.
+
+### 🛑 SCOPE — and this is where route (1) is NOT dead
+
+Scope (a) **on the derived carrier as computed**, inherited verbatim from the
+probe, which states it itself: it does **not** say Milnor invariants vanish on
+every carrier (the Borromean control in that same file is a counterexample), and
+**it does not touch invariants of length > 3**.
+
+**Route (1)'s own title is "higher-order Milnor / third-order helicity", so
+length > 3 IS its stated scope.** What is closed is the **length-3 rung**. And
+there is a structural reason the next rung is the natural one: when all length-3
+Milnor invariants vanish, the length-4 invariants become **well-defined with
+lower indeterminacy**. So the vanishing is not only a prune — it is what makes
+the next rung askable.
+
+**NOT CLAIMED:** that any length-4 invariant is nonzero on this carrier
+(unmeasured); that route (1) is dead; that the carrier is final — it is not, the
+census assignments are retired (`qou-ales`, owner ruling 2026-09-08).
+
+### 🛑 AND THE COMMITTED WITNESS IS STALE IN ITS COUNTS — recorded for `qou-2g9j`
+
+Re-running reproduces the **headline** but not the **population**:
+
+| assertion | committed | fresh (2026-09-14) |
+|---|---|---|
+| `triples_of_the_carrier_with_NONZERO_mubar` | 0 | **0** ✔ |
+| `delta_2_triples_examined` | **256** | **173** (−32.4 %) |
+
+`Δ = 2` is the class the probe's own docstring calls *"THE RESIDUAL — one bit
+available, and it is 0"*, so the residual population itself shrank by a third.
+
+**Cause: import-cone drift, not a producer edit.** The producer's only commit
+since (`6b2692f7b9`) *creates* the file on this path — a rebase artifact, +328
+lines, no content edit — while `canonical_braid_crossings.py` /
+`mass_at_3A_proper.py` moved three times in the same window (`ee1ff95d6a`,
+`9cef96fbf0`, `99e2ddc1d9`). The canonical braid word changed underneath a
+source-stable producer: exactly the class AGENTS.md flags as **invisible to
+`git diff <producer>`**.
+
+**Witness deliberately NOT committed.** The fresh run also **degrades the
+environment block** — this container lacks `clarabel`, `scipy`, `sympy`, and the
+producer's own guard says so: *"the numbers can be identical while the
+provenance silently degrades."* Reverted rather than commit a weaker record. The
+count correction belongs in a run with the full environment.
+
+### Method note against myself
+
+Four times this session I wrote a conditional label into a command
+(`"(empty above = none found)"`) **before** seeing its output, and was wrong every
+time — twice on greps that returned hits, once on a witness diff that had
+substantive changes, once on a producer-history check that found a commit. A
+verdict baked into an invocation is not a check. Stopped.
+
+### 🟩 FORMALISED — three theorems, `MilnorTripleLinkingMagnus.lean`
+
+`lean -DautoImplicit=false -s 65536` → **exit 0, zero bytes of output**.
+
+| theorem | axioms |
+|---|---|
+| `constant_of_vanishing_invariant` | **none at all** |
+| `constant_of_all_triples_vanishing` | `[Quot.sound]` |
+| `no_asymmetry_of_all_triples_vanishing` | `[propext, Quot.sound]` |
+
+All sorry-free. The second is the one that closes the escape — it quantifies over
+a functional of the **whole family** of triple invariants (`F : (κ → ℤ) → ℤ`),
+not one triple, so "use a different triple" and "use a symmetric function of all
+of them" are both covered.
+
+**The docstring says plainly that the mathematical content is the HYPOTHESIS,
+not the proofs.** The proofs are a rewrite and a `funext`; they are short because
+the work was the computation. Writing them down buys two things: the prune is
+checkable against the probe by a reader who has neither in context, and the
+escape is closed in the statement rather than in prose that a later agent can
+reasonably not find. Recorded this way deliberately, so it is not mistaken for a
+theorem doing work it is not doing.
+
+
+
+---
+
+## 2026-09-14 — ROUTES (1) AND (2) NOW HAVE THE SAME TERMINUS, FOR THE SAME REASON
+
+Recorded as a synthesis, **not** a new theorem. Route (2)'s content is already
+localised by §9g (many-body) and §9h (charge-antisymmetric); adding further
+`X forces Y` relocations would be padding, and AGENTS.md's Lean discipline says
+so explicitly. What is worth writing down is that the two routes converged today.
+
+| | topological channel | what remains |
+|---|---|---|
+| **(1) Milnor** | **EMPTY — measured.** `μ̄ = 0` on every triple of the derived carrier (`qou-2g9j`). | length ≥ 4, newly well-defined |
+| **(2) Möbius** | **UNREACHABLE — proved.** `no_positive_uniform_mutual_lower_bound`: no topological lower bound reaches the pairwise channel (CONSTRAINT 3, `qou-dux3`). | a metric configuration (`sep`), `qou-a2w5` |
+
+**Different mechanisms, same shape.** One channel is empty by computation, the
+other unreachable by proof — and in both cases what is left is **geometry the
+corpus cannot currently supply**. Route (3) is a third instance: its grading
+collapses to degree 0 on the finite `H_{3A}(q)`, and reaching the affine object
+needs the von Neumann inductive limit, which `markov-trace-inductive-limit.lean`
+marks as open R&D.
+
+**So all three routes are blocked on a MISSING OBJECT rather than on a wrong
+idea**, and the three missing objects are different: a higher-length invariant, a
+metric configuration, an inductive limit. That is the arc's real state, and it is
+more useful than any per-route verdict.
+
+**The one that may close on its own:** route (1) at length ≥ 4. Its input is a
+topological invariant **of the braid word**, and `qou-ales` produces words — so
+unlike (2) and (3) it needs no infrastructure the corpus lacks, only a
+computation nobody has run. **NOT CLAIMED** that any length-4 invariant is
+nonzero here; that is unmeasured and is the obvious next probe.
+
+
+---
+
+## 2026-09-14 — 🛑 MY OWN "NEXT" WAS A FIT, and the ladder is UNASKABLE
+
+**Owner challenge, verbatim:** *"Why are we doing a census?! That's sounds like
+fitting. We should be in lean deriving"*
+
+**On the literal reading I was not proposing a census** — every use of the word in
+that hand-off was the *retired* census (`8₁₁` / `L6a4`, `qou-5vhf`, ruled out
+2026-09-08). The proposal was to compute an invariant of the **derived** word.
+
+**But the challenge is right about the thing underneath, and the entry above is
+withdrawn.** "Compute length 4, and if it vanishes, length 5…" is walking the
+Milnor ladder until a rung is nonzero — **selection of a discrete parameter
+against the target**, which the anti-fit directive names explicitly
+(*"Sweeping a discrete parameter for accuracy… Optimal against what? The data."*).
+The length would have been chosen by the residual. Same defect as a census, one
+level up.
+
+### The derivation that replaces it — the ladder is not merely unwalked, it is unaskable
+
+**Step 1 — the element is not a braid. PRIOR ART; cite it, do not re-derive.**
+[`braids-and-knots/markov-disambiguation.md`](../content/quantum-observable-universe/braids-and-knots/markov-disambiguation.md)
+(PR #5765, **2026-08-25**):
+
+> `tr_M` is defined on ALL of `H_n(q)` … no braid, no closure, and no topology
+> are needed for the number to exist. What the closure supplies is the
+> INTERPRETATION. … for `W` NOT in the image of `ρ : B_n → H_n(q)`, `tr_M(W)` is
+> a well-defined number **WITH NO LINK BEHIND IT**.
+
+`computations/binding_is_not_a_link_invariant_probe.py` (bean `qou-brng`)
+measures **which** letters leave the image, and the result is sharper than the
+tempting "the `d ≠ 0` ones" — under the module convention `σ⁻¹ = σ − h`, a
+`d = −h` letter **is** a generator:
+
+    pp   d = 0                 σ_g       IS a braid generator
+    nn   d = −h                σ_g − h   IS one too (= σ_g⁻¹)
+    pn   d = −h(1/2 − δ/4)               is NOT — the only bond letter that isn't
+
+**Step 2 — the family's LOWEST rung is branch-dependent. MEASURED from the
+committed witness, not quoted from the docstring.** To get a link at all the
+averaged letters must be **resolved**; `milnor-mubar-vanishes-on-every-triple.witness.json`
+records two resolutions, and the indeterminacy classes — determined by the
+pairwise linking numbers — differ at **every** isotope:
+
+| isotope | `delta_1` σ → σ⁻¹ | `delta_2` σ → σ⁻¹ |
+|---|---|---|
+| ²H | 1 → 0 | 0 → 1 |
+| ³H | 2 → 0 | 2 → 4 |
+| ³He | 3 → 0 | 1 → 4 |
+| ⁴He | 5 → 0 | 4 → 9 |
+| ⁶Li | 13 → 0 | 12 → 25 |
+| ⁸Be | 25 → 0 | 24 → 49 |
+| ¹⁰B | 41 → 0 | 40 → 81 |
+
+**14 of 14 compared fields differ.** The producer states the cause itself: *"lk
+is branch-dependent, so the Delta classes differ per branch."* So `lk`, the
+**length-2** member, is not a function of the element.
+
+**Step 3 — therefore `μ̄₁₂₃ = 0` on both branches is VANISHING, not
+well-definedness.** It agrees across resolutions *because it is zero*. The family
+was already broken at length 2, so that agreement carries no information about
+any higher rung.
+
+**Step 4 — so a nonzero higher rung would be branch-dependent**, and consuming it
+would require **choosing a resolution**. That choice is a free parameter selected
+against the target. **That is the fit, and it is structural** — not a discipline
+failure to be avoided by care, but a property of the object.
+
+### 🟩 FORMALISED — four theorems, `MilnorTripleLinkingMagnus.lean`
+
+`lean -DautoImplicit=false -s 65536` → **exit 0, zero bytes of output.**
+
+| theorem | axioms |
+|---|---|
+| `not_wellDefinedOnResolutions_of_ne` | **none at all** |
+| `not_familyWellDefined_of_one_member_ne` | **none at all** |
+| `wellDefined_of_const_zero` | **none at all** |
+| `familyWellDefined_nondegenerate` | `[propext, Classical.choice, Quot.sound]` |
+
+`not_familyWellDefined_of_one_member_ne` is load-bearing: **one** branch-dependent
+member refutes the whole family, so the `lk` measurement settles the ladder
+*before* any higher rung is computed. `wellDefined_of_const_zero` states the
+companion — a vanishing member is well-defined **vacuously** — which is what makes
+the μ̄₁₂₃ result non-evidence. The fourth is the anti-vacuity witness in both
+directions (a constant family satisfies the predicate; a two-resolution identity
+family does not), so the predicates are neither unsatisfiable nor trivial.
+
+### What this does to the trichotomy
+
+**Routes (1) and (2) both need a LINK; route (3) does not.** Milnor invariants are
+link invariants; Möbius energy is an invariant of an **embedding**. The canonical
+object is neither — it is an element of `H_{3A}(q)`. `tr_M` is a *linear
+functional on the algebra*, so it evaluates on the superposition directly. That is
+why `tr_M(W_atom)` has a value and `μ̄(W_atom)` does not.
+
+**So "the carrier blocker" is a CATEGORY MISMATCH, not a missing lookup.** Six
+routes terminated at *"which link IS the nucleus?"* and the answer is that the
+question has no referent: there is no map `H_n(q) → Links`, only
+`ρ : B_n → H_n(q)` running the other way, and the element is outside its image.
+Route (3) is the one asking in the right category — and is blocked on
+infrastructure (the von Neumann inductive limit) rather than on a category error.
+
+**NOT CLAIMED:** that no invariant of the element exists (`tr_M` is one); that
+some Milnor invariant could not be constant across **all** `2^(2A+1)` resolutions
+(only two are recorded, and one member's constancy is not the family's); that
+route (1) is refuted for a future carrier that IS a braid. What is derived is
+that on the carrier as built, the family is not well-defined.
+
+### One tension, flagged not resolved
+
+`binding_is_not_a_link_invariant_probe` says the word *"leaves the braid image
+exactly at the p-n bond"*, while `atom_braid_word_3A`'s docstring describes the
+per-**nucleon** block as eleven letters *"two of them averaged (`σ − (h/2)·1`)"* —
+and `−h/2` is in the outside set. Different letters (inter-nucleon bond vs
+intra-nucleon core), and a `Z ≥ 1, N = 0` word's status turns on it. **Does not
+affect anything above**: every nucleus this arc targets has both a proton and a
+neutron. Recorded so the next reader does not have to notice it twice.

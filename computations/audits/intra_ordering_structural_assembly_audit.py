@@ -229,6 +229,46 @@ def match_sequential_loops(body) -> list[tuple[int, str]]:
     return hits
 
 
+#: A branch test that names the ordering choice. A concat inside one is a
+#: DECLARED legacy path, not a silent default — `closed_form_tau_M`'s
+#: `if intra_order == "grouped"` (resolved under `qou-y2o7`) is the model: the
+#: parameter defaults to borromean, the canonical arm calls the real producer,
+#: and the grouped arm is opt-in and documented. Flagging that the same way as
+#: an unconditional concat would put a fixed site and a broken one in one
+#: undifferentiated list, which is how a 17-entry baseline stops being read.
+_GUARD_TEST = re.compile(r"grouped|intra_order|legacy|historical", re.I)
+
+
+#: A file-level declaration of the legacy frame. `_word(g0, g1)` is typically
+#: a module-level helper, so a branch test never encloses it — the declaration
+#: lives at the CALL SITE instead, as an explicit `intra_order="grouped"`
+#: passed to something else. `qbeta_delta_vs_deltaTbeta_settled_probe` is the
+#: model: its `_word` is a bare concat, and eight lines below it calls
+#: `compute_tau_M_nucleon_H3(..., intra_order="grouped")` under a comment
+#: giving the dated reason (2026-09-06, `qou-y2o7`) — everything it compares
+#: against is stated in that frame. Weaker evidence than a branch test, since
+#: it is file-scoped rather than expression-scoped, so it is reported as its
+#: own reason rather than folded in.
+_FILE_DECLARES_GROUPED = re.compile(r"""intra_order\s*=\s*["']grouped["']""")
+
+
+def _guarding_branch(node, parents: dict, src: str) -> str | None:
+    """Why this concat is a DECLARED legacy assembly rather than a default."""
+    cur = parents.get(id(node))
+    while cur is not None:
+        if isinstance(cur, ast.If):
+            try:
+                test = ast.unparse(cur.test)
+            except Exception:                       # pragma: no cover
+                test = ""
+            if _GUARD_TEST.search(test):
+                return f"if {test[:76]}"
+        cur = parents.get(id(cur))
+    if _FILE_DECLARES_GROUPED.search(src):
+        return 'file passes intra_order="grouped" explicitly'
+    return None
+
+
 def scan_file(path: str) -> list[dict]:
     """A and B findings for one source file, plus C if the frame is stamped."""
     try:
@@ -240,20 +280,30 @@ def scan_file(path: str) -> list[dict]:
     except SyntaxError:
         return []
 
+    parents: dict = {}
+    for parent in ast.walk(tree):
+        for child in ast.iter_child_nodes(parent):
+            parents[id(child)] = parent
+
     rel = os.path.relpath(path, REPO)
     found: list[dict] = []
     for node in ast.walk(tree):
         d = match_grouped_concat(node)
         if d:
             found.append({"check": "A", "path": rel,
-                          "line": getattr(node, "lineno", 0), "detail": d})
+                          "line": getattr(node, "lineno", 0), "detail": d,
+                          "guard": _guarding_branch(node, parents, src)})
     for node in ast.walk(tree):
         for field in ("body", "orelse", "finalbody"):
             body = getattr(node, field, None)
             if isinstance(body, list):
                 for line, d in match_sequential_loops(body):
+                    stmt = next((x for x in body
+                                 if getattr(x, "lineno", None) == line), None)
                     found.append({"check": "B", "path": rel,
-                                  "line": line, "detail": d})
+                                  "line": line, "detail": d,
+                                  "guard": _guarding_branch(stmt, parents, src)
+                                           if stmt is not None else None})
 
     if found and _FRAME_STAMP.search(src):
         found.append({
@@ -275,6 +325,23 @@ def scan_file(path: str) -> list[dict]:
     return found
 
 
+def tracked_only() -> set[str] | None:
+    """Tracked-file filter — see `_tracked_corpus` for why a ratchet needs one.
+
+    Same helper `y_lambda_conflation_audit` uses. Its check D counted
+    gitignored chi caches and moved whenever a sibling regenerated one; the
+    risk here is smaller (untracked `.py` is usually a scratch script rather
+    than a cache) but identical in kind, and this audit of all audits should
+    not transcribe a shared helper instead of calling it.
+    """
+    from _tracked_corpus import tracked_files          # noqa: PLC0415
+    #: `verify` names a file OUTSIDE this directory on purpose. Pointing it at
+    #: SELF proved nothing: the first version listed only `computations/audits`
+    #: and SELF is in there, so the check passed while every scanned source
+    #: outside it read as untracked and A/B collapsed 17 -> 0.
+    return tracked_files(HERE, verify=os.path.join(REPO, "AGENTS.md"))
+
+
 def iter_sources(files: list[str] | None):
     if files:
         for f in files:
@@ -282,6 +349,7 @@ def iter_sources(files: list[str] | None):
             if p not in EXEMPT and p.endswith(".py"):
                 yield p
         return
+    tracked = tracked_only()
     roots = [ROOT, os.path.join(REPO, "tools", "pyhecke")]
     for base in roots:
         for dirpath, dirnames, filenames in os.walk(base):
@@ -289,9 +357,12 @@ def iter_sources(files: list[str] | None):
             for fn in sorted(filenames):
                 if not fn.endswith(".py"):
                     continue
-                p = os.path.join(dirpath, fn)
-                if os.path.abspath(p) not in EXEMPT:
-                    yield p
+                p = os.path.abspath(os.path.join(dirpath, fn))
+                if p in EXEMPT:
+                    continue
+                if tracked is not None and p not in tracked:
+                    continue
+                yield p
 
 
 # ── check D: the matcher must still describe `nucleon_word_letters` ──────────
@@ -421,7 +492,26 @@ def self_test() -> list[str]:
 # ── baseline ─────────────────────────────────────────────────────────────────
 
 def _key(f: dict) -> str:
-    return f"{f['path']}:{f['line']}:{f['check']}"
+    """Baseline identity for a finding — DELIBERATELY WITHOUT THE LINE NUMBER.
+
+    It was `path:line:check`, and adding a docstring above a site immediately
+    invented a NEW finding and a DRAINED one for the same unchanged code. A
+    ratchet that goes red when someone writes a comment is a ratchet people
+    learn to re-baseline past, which is the failure this file's header warns
+    about arriving by a different road. The `detail` string identifies the
+    shape (`… in g0] + [… in g1`, or the two accumulator names), which is what
+    the baseline is actually tracking; the line is reporting detail, not
+    identity. The ordinal disambiguates repeats of one shape in one file.
+    """
+    return f"{f['path']}::{f['check']}::{f['detail']}::{f.get('ord', 0)}"
+
+
+def _assign_ordinals(findings: list[dict]) -> None:
+    seen: dict[tuple, int] = {}
+    for f in sorted(findings, key=lambda x: (x["path"], x["check"], x["line"])):
+        k = (f["path"], f["check"], f["detail"])
+        f["ord"] = seen.get(k, 0)
+        seen[k] = f["ord"] + 1
 
 
 def _load_baseline() -> set[str]:
@@ -460,6 +550,7 @@ def main(argv: list[str] | None = None) -> int:
     findings: list[dict] = []
     for path in iter_sources(args.files):
         findings.extend(scan_file(path))
+    _assign_ordinals(findings)
 
     ab = [f for f in findings if f["check"] in ("A", "B")]
     c = [f for f in findings if f["check"] == "C"]
@@ -505,11 +596,20 @@ def main(argv: list[str] | None = None) -> int:
           f"must-stay-quiet)")
 
     if ab:
-        print()
-        for f in sorted(ab, key=_key):
-            mark = "NEW " if _key(f) in new else "    "
-            print(f"  {mark}[{f['check']}] {f['path']}:{f['line']}")
-            print(f"           {f['detail']}")
+        guarded = [f for f in ab if f.get("guard")]
+        bare = [f for f in ab if not f.get("guard")]
+        for label, group in (("UNGUARDED — a silent default", bare),
+                             ("guarded — a declared legacy branch", guarded)):
+            if not group:
+                continue
+            print()
+            print(f"  {label}: {len(group)}")
+            for f in sorted(group, key=_key):
+                mark = "NEW " if _key(f) in new else "    "
+                print(f"  {mark}[{f['check']}] {f['path']}:{f['line']}")
+                print(f"           {f['detail']}")
+                if f.get("guard"):
+                    print(f"           declared by: {f['guard']}")
     if c:
         print()
         for f in c:

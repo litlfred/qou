@@ -5,8 +5,11 @@ WHAT THIS ESTABLISHES
 ---------------------
 `QOU.FlavorSplit.topological_flavor_split_of_central` proves the proton/neutron
 crossing reversal `sigma^3 - sigma^-3` is the central scalar `h(h^2+3) = q^3 -
-q^-3`, and `conj:flavor-split-habiro-derivation` builds an H_4 alternating-channel
-route to the substrate flavour split on it:
+q^-3`, and `conj:flavor-split-habiro-derivation` builds on it.  (Corrected
+2026-09-13: this line read "builds an H_4 alternating-channel route to the
+substrate flavour split on it".  The block's alternating channel is its choice for
+the RESIDUAL -- the 0.128 % refinement -- not for the split; see section 7 and
+`flavour_split_baseline_is_augmentation_trace_probe.py`.)  Its baseline is
 
     delta = (q-1)^2 (1 - q^-4)/3 = hbar_q^2 * h * [2]_q / 3 ,   [2]_q = q + 1/q.
 
@@ -40,10 +43,21 @@ Its two values on the Hecke spectrum `{q, -1/q}` are `+(q^2 - q^-2)` and
 delta's numerator through a crossing reversal requires CHOOSING the symmetric
 channel, and the algebra does not supply that choice.
 
+**SUPERSEDED IN PART, 2026-09-13 -- the algebra DOES supply it, through the trace
+rather than through a channel.**  Because the element is `2 h sigma - h^2`, the
+Markov trace is fixed on it by `tr(1) = 1` and `tr(sigma) = z` alone:
+`tr_z(sigma^2 - sigma^-2) = 2hz - h^2`.  That reproduces `q^2 - q^-2` EXACTLY at
+the augmentation `z = q`, and `alpha = (q^4+1)/(q^2+1)^2` times it at convention D
+`z_D = q^3/(q^2+1)`.  So the open step is not "choose a channel" but "choose a
+Markov parameter", which is the same fork as Q_beta (bean qou-99qc) with the same
+alpha.  See `flavour_split_baseline_is_augmentation_trace_probe.py` and
+`QOU/Hecke/MarkovCrossingReversal.lean`.  The parity measurement below is
+unaffected.
+
 Scope (b) within the single-generator family `sigma^k - sigma^-k`, invariant named
 (the parity).  Nothing here excludes `h*[2]_q` arising from some other Hecke
 element -- it says the one exact result the conjecture rests on does not reach it,
-and names the step (channel selection) a repair must supply.
+and names the step a repair must supply.
 
 Run: python3 computations/qbeta/crossing_reversal_parity_probe.py
 """
@@ -179,11 +193,15 @@ def main() -> int:
     print(f"   D_3 vs q^3 - q^-3: rel {mp.nstr(rel, 3)}   {'OK' if good else 'MISMATCH'}")
 
     print()
-    print("7. THE CONJECTURE'S OWN CHANNEL GIVES THE WRONG SIGN")
-    print("   conj:flavor-split-habiro-derivation selects the ALTERNATING channel:")
-    print("   'the weak interaction is strictly left-handed, so it projects onto the")
-    print("    fully alternating channel of H_4 ... the generator acts by its sign")
-    print("    eigenvalue -q^-1.'  Evaluate the k = 2 reversal there:")
+    print("7. THE TWO ONE-DIMENSIONAL CHANNELS ARE EXACT NEGATIVES")
+    print("   [RETRACTED HEADING -- this section read 'the conjecture's own channel")
+    print("    gives the wrong sign', quoting the block's 'strictly left-handed ...")
+    print("    fully alternating channel of H_4'.  That conflated the block's two")
+    print("    LEVELS: the alternating channel is its choice for the RESIDUAL (the")
+    print("    0.128 % Schwinger-analogue refinement), not for the baseline.  See")
+    print("    flavour_split_baseline_is_augmentation_trace_probe.py.  The algebra")
+    print("    below is correct and unchanged; only the reading was wrong.]")
+    print("   Evaluate the k = 2 reversal on sigma -> q and sigma -> -q^-1:")
     hbar2 = (1 - 1 / _q) ** 2
     sym_split = sp.simplify(hbar2 * sym / 3)
     alt_split = sp.simplify(hbar2 * anti / 3)
@@ -200,19 +218,25 @@ def main() -> int:
     ok &= neg and (v_sym > 0)
     print(f"   at the proton q0:  symmetric = {mp.nstr(v_sym, 14)}   "
           f"alternating = {mp.nstr(v_alt, 14)}")
-    print(f"   -> the stated channel gives delta < 0, i.e. m_n < m_p: "
+    print(f"   -> alternating < 0 (m_n < m_p), symmetric > 0: "
           f"{'CONFIRMED' if neg else 'NOT CONFIRMED'}")
+    print("   WHERE THIS IS USED: the two are exact negatives, and the corpus's own")
+    print("   three-channel weights are EQUAL on them, w_sym = w_alt = q^2/(q^4+4q^2+1)")
+    print("   (docs/audits/2026-06-17-hecke-channel-chirality-binding.md), so the")
+    print("   equal-weight average of the reversal VANISHES identically.  That is a")
+    print("   scope-(b) exclusion of the averaged reading -- invariant = the weight")
+    print("   equality plus the exact negation -- and says nothing about the standard")
+    print("   channel or about unequal weights.")
     print("   CONDITIONAL on the identification 'delta's numerator IS the k = 2")
     print("   reversal', which is THIS PROBE's reading and not the block's -- the")
     print("   block calls (q-1)^2(1-q^-4)/3 'a structured near-match, not a derived")
-    print("   closed form'.  Read the pair: if the reading is right the stated")
-    print("   channel points the wrong way; if it is wrong the block owes an account")
-    print("   of where h*[2]_q comes from, since it is then not the reversal.")
+    print("   closed form'.  That reading now has a TRACE behind it rather than a")
+    print("   channel: tr_z(sigma^2-sigma^-2) = 2hz - h^2 reproduces the block's")
+    print("   expression exactly at the augmentation z = q.")
 
     print()
-    print("VERDICT:", "PASS — the reversal is central only at odd k, delta's "
-          "numerator sits at k = 2, and the stated channel gives the wrong sign"
-          if ok else "FAIL")
+    print("VERDICT:", "PASS — the reversal is central only at odd k, and delta's "
+          "numerator sits at k = 2, where it is not" if ok else "FAIL")
     return 0 if ok else 1
 
 

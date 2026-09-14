@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T04:31:11.461325+00:00",
-  "commitSha": "2cf6afcbf851cafa4930ae51405dc9695855b64c",
+  "computedAt": "2026-09-14T09:51:59.482558+00:00",
+  "commitSha": "a5a4ae7f32cc69dfa76dc06153cb92611bc28837",
   "assertions": [
     {
       "name": "third_row_vanishes_at_N_equals_2",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "qbeta-d-frame-trace-baseline",
   "scriptFile": "qbeta_d_frame_trace_baseline_probe.py",
-  "scriptHash": "bac1b9ca22d9",
-  "scriptCommitSha": "48c8469267939dcf4c13b2faa3b6bff51d60255c",
+  "scriptHash": "870c9002e7cc",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,7 +53,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [

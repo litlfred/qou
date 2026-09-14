@@ -1,11 +1,11 @@
 ---
 # qou-ix0x
 title: The binding's divergent series is G, its Borel-Stokes plane is EMPTY, and the untried summation is the Habiro/cyclotomic one
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:46:20Z
-updated_at: 2026-09-07T08:48:33Z
+updated_at: 2026-09-13T08:26:53Z
 ---
 
 Owner pointer, 2026-09-07: *"On A_infty there was a divergent series..."*, against the standing target *"ultimate target is to close gap in binding"*.
@@ -345,3 +345,106 @@ Three strands per nucleon is exactly where a three-body channel lives. So the ro
 **Scope discipline for whoever writes this up:** the grep found **no named proved invariant** forbidding a spin-dependent weight in a triple channel. The four existing spin refutations are a 2-body magnitude degeneracy (`InterfaceScalar.separable_interface_degenerate` — different arity, and it constrains magnitude degeneracy, **not** a sign under component swap), a `Δ_λ` magnitude failure (Pauli/Wigner-SU(4) plethysm, zero free parameters, deuteron −92.69 %), an SU(4) row bound (correctly scope-(b), and **vacuous for `n ≤ 4`**), and a dimension-count coincidence. **Any refutation written here is scope-(a).** Do not write (b).
 
 **One library note.** `arxiv-1906.12122v2` (Hammer–König–van Kolck) is held, registered and already cited by `T3WritheVsDeltaLambdaSign.lean` as the `τ₁·τ₂` exchange-symmetry template — so the literature side of this is not a gap. And Moffatt–Ricca is already used, in `fluid-dynamics/helicity-conservation.lean`, as **hypotheses** (`hCWF`, `hSelf`, cited not proved) and in the **fluid** chapter rather than the nuclear one.
+
+
+---
+**2026-09-13 — OPTION 1 RE-AIMED. The bean's "form of `w3`" question has been answered on `main` while this bean sat at `todo`, and the live frontier is now ONE hypothesis, not the Habiro route.**
+
+Owner instruction this session: *"work qou-ix0x — push option 1 as far as possible. then option 2"*, against the `qou-brng` framing of 2026-09-13 (Option 1 = a further derived source of per-pair variation inside the bond/count channel; Option 2 = the channel is not where `b₃` lives).
+
+**What landed on `main` since this bean's last entry (2026-09-11), none of it recorded here.** The 2026-09-12 Ursell arc turns the `b₃` sign into an exact algebraic condition:
+
+- `QOU.MassTheory.B3SignOneRoot.b3corpus_chain` — `b3corpus f01 1 f12 = −((f01−1)(f12−1))` exactly. So **`b₃ > 0` iff EXACTLY ONE of the two chain bonds exceeds 1.** Not "a bond above 1" — the AGENTS.md bullet and the Ursell audit §4 both said that and it is necessary-not-sufficient; flipping *both* bonds leaves `b₃` byte-identical.
+- `PnBetweennessBlocksSignMixed` (`qou-q8vl`) reduces the escape to **two hypotheses**: the pn letter's AVERAGING, and AFFINENESS of the interface law `μ = z + d`.
+- The required pattern is the two-nucleon spectrum: unlike pair binds, like pairs do not.
+
+**Option 1's live route is the γγ ruling, and it is DERIVED, not chosen.** The owner ruled 2026-09-08 (`qou-ales`) that every canonical braid word is selected by γγ pair-production + the confinement SDP. `QOU/Mass/GammaGammaEscapesSingleCrossing.lean` (sorry-free, on `main`) then establishes: no non-empty γγ word is a single crossing (`length_even`), the writhe/`T₃` grading is identically trivial on one (`writhe_eq_zero`), and step 3 MEASURED the γγ-selected bond `G³ = (σ₂σ₃⁻¹)³` **unbinding the diproton** — `tr_atom/tr_free = 1.001058 > 1`, `B_pp = −4.47` keV.
+
+That is `μ_pp > 1` by derivation, which is the like-pair half of the required pattern, and it breaks AFFINENESS (a length-6 word is not `σ + d·1`). `qou-q8vl`'s open item is literally *"a THIRD bond family that supplies the sign-mixed pattern by derivation"*; `qou-ales` step 8's own not-claimed list names *"the dineutron side"*. **Neither arc has connected to the other.** That junction is this bean's Option-1 push.
+
+**THE DECISIVE MEASUREMENT, and I state the failure mode BEFORE running it so the result cannot be read as a fit.** Under γγ the bond WORD is the same `G³` for every pair; only the nucleon blocks `W_free(Z,N)` differ. Step 3 records that the template ratio equals `z_D` *"by connected-sum multiplicativity"*, which suggests `μ = tr(W_free·bond)/tr(W_free)` is **independent of `W_free`**. If it is:
+
+> a pair-type-INDEPENDENT bond word gives `μ_pp = μ_pn = μ_nn`, so the two chain bonds are equal, so they are never on opposite sides of 1, so `b₃ < 0` — and **Option 1 closes structurally**, not numerically.
+
+The γγ route then survives only if the SELECTED WORD is itself pair-dependent (the deuteron SDP choosing some `G^m`, m ≠ 3). Step 3 solved the diproton only.
+
+So the measurement is: compute `μ = tr_M(W_free·bond)/tr_M(W_free)` at `(Z,N) ∈ {(2,0),(1,1),(0,2)}` for the template `σ₂` bond and for `G³`, and read off whether it depends on `(Z,N)`. Nothing is tuned: the word is fixed by a ruling dated three days before this session and made for reasons unrelated to `b₃`; the sign condition is Lean-proved. **A negative here is the expected outcome and is the result** — it would convert `qou-q8vl`'s two-hypothesis disjunction into a one-line structural statement about what a bond family must do.
+
+Branch `claude/b3-affineness-is-the-last-hypothesis-2026-09-13`.
+
+
+---
+**2026-09-13 — BOTH OPTIONS PUSHED TO A STRUCTURAL STOP. Neither closes the gap, and TWO of my own stated predictions were refuted along the way.**
+
+Audit: [`2026-09-13-b3-sign-options-1-and-2-at-the-gamma-gamma-junction.md`](../docs/audits/2026-09-13-b3-sign-options-1-and-2-at-the-gamma-gamma-junction.md). PR #7287.
+
+### Option 1 — the γγ bond IS pair-dependent, and still cannot sign-mix
+
+Probe `gamma_gamma_bond_is_pair_independent_probe.py`, 11/11, 60 dps, proton pin.
+
+| ordered pair | μ(template σ₂) | μ(G³) |
+|---|---|---|
+| pp | 0.612688037146465252 | **1.00105775254515984** |
+| pn | 0.612688037146465252 | **1.00061119140688078** |
+| np | 0.612688037146465252 | **1.00105775254515984** |
+| nn | 0.612688037146465252 | **1.00061119140688078** |
+
+**My stated expectation was REFUTED.** The entry above recorded, before the run, that the likely outcome was pair-INDEPENDENCE. `G³` is pair-DEPENDENT — spread `4.47e-4` against the template's `1.6e-61`.
+
+**Option 1 closes anyway, for a sharper reason: ALL FOUR exceed 1.** So every `A=3` chain gets TWO bonds above 1, never exactly one, and `b3corpus_chain` gives `b₃ < 0` on both atoms (³He `−6.46e-7`, ³H `−3.74e-7`).
+
+**And the dependence is ONE-SIDED.** The `np` order-reversal control gives `μ_np = μ_pp` and `μ_pn = μ_nn` to `1.6e-61`, while `μ_pn ≠ μ_np` by `4.47e-4`. So μ is not a function of the PAIR — it is a function of the SECOND nucleon, i.e. **order-dependent**, and `ChainBondOrderDependence.orderIndependent_iff` records that a nucleus has no arrangement. **Mechanism MEASURED, NOT PROVED**: `G³`'s `σ₃` is inside block 1, but `G³` also carries `σ₂`, adjacent to block 0's `σ₁`, so far-commutation does not explain it.
+
+### Option 2 — the γγ assembly is EXACTLY AFFINE, which is the wrong side
+
+Probe `gamma_gamma_aggregator_convexity_probe.py`, 6/6, `A=3` in `H₉`, restricted to the `y_λ>0` blocks (the 25 dropped carry `y=0` exactly — verified, a restriction not an approximation).
+
+`δ := μ_both − μ₀·μ₁` is `0` to the 60-dps floor on all four contents — **the same floor as the template control**. So the bond product HOLDS for `G³`, the log-assembly is additive in bond count, and `qou-82mc`'s `b₃` is **0, not positive**. **My second prediction (non-affineness) was REFUTED too.**
+
+Two by-products worth keeping:
+- **`ProductionChainBondProduct`'s strand-window hypotheses are SUFFICIENT but NOT NECESSARY** — `G³` violates them and the product holds anyway. A note for `qou-qqm4`, not a defect.
+- The per-content `δ` signs (`−,+,0,0`) are **round-off at the arithmetic floor, not structure**; asserted in the probe so "MIXED" is never quoted as a finding.
+
+### What this changes for the front
+
+`PnBetweennessBlocksSignMixed` left two escapes — break averaging, or break affineness. **The γγ family breaks BOTH and still fails.** So that disjunction is not the binding constraint; **every bond factor landing on the SAME SIDE of 1 is**, which is sharper than the two hypotheses it replaces.
+
+**NOT claimed:** that no bond family exists; that no convex `Φ` exists; any magnitude; that the one-sidedness mechanism is understood.
+
+**This bean's own Habiro/cyclotomic route is untouched and still unexcluded** — it was not worked here, and nothing above bears on it.
+
+
+---
+**2026-09-13 (later) — LEAN. Owner asked "Lean.prove assertions?". Two of the thirteen had provable content, and the first CORRECTS my own framing above.**
+
+`QOU/MassTheory/SecondArgBondNotPairFunction.lean`, 7 decls, `lean`-direct **exit 0, ZERO errors and ZERO warnings** (`-DautoImplicit=false -s 65536`, restored cache 3480 mathlib + 2713 QOU oleans, traces present). `#print axioms`: six on `[propext]` alone, one on `[propext, Classical.choice, Quot.sound]` from `classical`. **No `sorryAx`.**
+
+**Most assertions are NOT theorems** — they are numeric measurements at `q₀`. The structural ones were already proved on `main` (`b3corpus_chain_neg_of_same_sign`, `b3_eq_zero_ofBondFunctional`) and are cited, not re-proved. Saying so rather than manufacturing Lean around measurements.
+
+**The correction.** The entry above says the one-sidedness makes the bond *"order-dependent, and `ChainBondOrderDependence.orderIndependent_iff` records that a nucleus has no arrangement"*. That is weaker than the truth. `bondOf` is **symmetric in its two nucleon arguments by construction** (`bondOf_comm`), so
+
+    secondOnly_eq_bondOf_iff : (∃ Lpp Lpn Lnn, secondOnly f = bondOf …) ↔ f true = f false
+
+— a second-argument-only bond is **not of the `bondOf` form at all** unless constant. The corpus's chain calculus is stated over `bondOf`, so the γγ bond falls **outside its domain** rather than violating its conclusion. Measured `f true = 1.00105775 ≠ 1.00061119 = f false`, so it is not any `bondOf`. Two anti-vacuity guards included (`secondOnly_const_is_bondOf`, `bondOf_ne_secondOnly_witness`).
+
+**Second:** `weighted_diff_supported_on_multidim` formalises the cross-arc reconciliation with `qou-99qc`/#7295 — if every 1-dim block agrees on two words, the whole weighted-character difference sits on dimension `≠ 1`. The reconciliation no longer depends on `q₀`.
+
+**NOT claimed:** that the γγ bond is wrong, that the one-sidedness mechanism is understood (still measured, not proved), or anything about γγ word selection.
+
+
+---
+**2026-09-13 (later still) — MY FRAMING WAS WRONG AND A SIBLING CAUGHT IT. The measurements stand; what they MEAN is better than I said.**
+
+Five coordination comments landed on #7287 while I was working. One (from `qou-2ss0` / PR #7255, merged) corrects this bean's own framing, and I verified it against `origin/main` rather than taking the comment as primary.
+
+**What I said:** *"`PnBetweennessBlocksSignMixed` left two escapes — break averaging, or break affineness. The γγ family breaks BOTH and still fails."*
+
+**Both halves are wrong.** `InterfaceMonotone.between_iff_combo`: betweenness and convex-combination are the **same condition**, so averaging is not separately breakable. And `signMixed_impossible_of_monotone` holds for **any monotone law, affine or not** — its docstring: *"abandoning affineness, on its own, buys nothing: the construction is dead before any bond value is computed."* **The invariant is MONOTONICITY, not affineness.**
+
+**The correction makes my negative STRONGER, not weaker.** `μ(x) = tr_M(W·x)/tr_M(W)` is linear in `x`, so any *affine path* is monotone-or-antitone and blocked either way. `G³` is a **power, not a sum** — not an affine path — and the power family is independently measured non-monotone. So the γγ route occupies the one structurally-permitted door, and §1's result is a measurement of a **live candidate**, not a foregone conclusion.
+
+**And my own Lean supplies the cleaner reason.** Both hypotheses are about a *pair function* `f(d_pair)`. `secondOnly_eq_bondOf_iff` shows the γγ bond is **not a pair function at all**. It is outside the framework's domain — which is why "it breaks affineness" was the wrong thing to say.
+
+**A conflation to avoid**, flagged before anyone makes it: the sibling's measured non-monotone family is `μ(σ^m)` — powers of ONE generator, `μ > 1` at `m = 2,4,5,6,7,8` and NOT at `m = 3`. Mine is `μ((σ₂σ₃⁻¹)^m)` at `m = 3`, where I measure `μ > 1`. **Different objects**; there is no conflict, and the coincidence of the index `3` is exactly the kind of collision AGENTS.md's notation rules exist for.
+
+**Scope question answered** (from #7304/#7319, owner ruled SDP scope **(B) whole element**, not (A)): my Options 1/2 closure does **not** lean on PSD scope at all. `G³` is taken as GIVEN from `qou-ales` steps 6–7; I re-derive no selection. So the (A)→(B) ruling does not move anything here.
