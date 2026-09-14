@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-13T05:42:41Z
+updated_at: 2026-09-14T16:29:23Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2944,6 +2944,7 @@ without naming the basis.
 Audit: `docs/audits/2026-09-12-uic-gate-primal-lp-hunt.md`. Stays OPEN.
 
 
+
 ## 2026-09-12 — note from the UIC functional resolution (PR #7237, bean `qou-t6be`)
 
 Not a step on this bean's open problem; recorded because it changes what a reader
@@ -2978,3 +2979,175 @@ scope-(b)).
 **This bean stays OPEN.**
 
 Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.
+
+**Cross-reference.** The 2026-09-12 note above (PR #7237) reports that
+`y_0_eq_zero_of_radical` makes the LP "price nothing" and that the Pass-2 gate has
+no derivation. That is the same LP reached from the **dual** side; the entry below
+reaches it from the **active-set** side. Neither subsumes the other — `y_0*` is the
+net-constraint shadow price and the active set is `{i : y_i* > 0}` — but together
+they leave the operator-selection LP with no surviving route to a binding
+multiplier.
+
+## 2026-09-14 — the non-orthogonal escape does not exist; |active| is pinned by a DIMENSION COUNT
+
+The 2026-09-12 entry above named a live direction: *"a **non-orthogonal**
+operator basis. Actual braid sub-words overlap, so their Gram is dense and the LP
+recovers discriminating power. That is the natural next thing to try for this
+bean, and nothing here touches it."*
+
+**It is not there.** The active-set cardinality is `d - 1` whatever the Gram.
+
+**Lean** (sorry-free, `lean`-direct exit 0, `#print axioms` = propext /
+Classical.choice / Quot.sound only):
+`QOU/MassTheory/LPActiveSetDimension.lean` — `exists_slack`,
+`tightSetCard_lt`, `activeSetCard_lt`, `activeSetCard_le_pred`.
+
+Complementary slackness gives `(G x*)_i = ⟨e_i, Φ*⟩_F` with `Φ* = Σ_j x*_j e_j`,
+so an active index is a basis element Frobenius-orthogonal to the selected
+operator. Then
+
+| | |
+|---|---|
+| **upper** | `G` invertible, `n_target ≠ 0` ⇒ at most `d−1` tight. All `d` tight ⇒ `Gx = 0` ⇒ `x = 0` ⇒ `1ᵀx = 0 ≠ n_target`. |
+| **lower** | a basic optimum needs `d` independent active constraints; the equality gives 1, the box gives 0 at an interior optimum, so `d−1` come from `Gx ≥ 0`. |
+
+`activeSetCard_lt`'s **statement** is the finding: it mentions neither the cost
+vector `t`, nor `n_target` beyond its non-vanishing, nor any property of `G`
+beyond invertibility — **in particular not its sparsity**. The active set counts
+the **basis**, not the nucleus. A binding multiplier must depend on the nucleus.
+
+**Measured** (`computations/probes/lp_active_set_is_pinned_by_dimension_probe.py`,
+all assertions pass). Corpus-derived non-orthogonal basis, no new Markov traces:
+`e_S := Σ_{l∈S} P_l` over cyclic windows of the H₆ blocks, so
+`⟨e_S,e_T⟩ = Σ_{l∈S∩T} tr_M(P_l)`. Off-diagonal fraction **0.000 → 1.000**, rank
+11 of 11 throughout, every duality gap `< 1e-20`, and `|active| = 10 = d−1` at
+every window width and every target.
+
+**The two escapes are the two degenerate cases, and the corpus is in both** —
+singular `G` (kernel, but the operators are then not a basis: production
+interface templates, **rank 6 of 11**) and indefinite `G` (LP unbounded, box
+corner: the braid sub-word basis, eigenvalues `[-1.579, -1.140, 0.441, 8.43, …]`).
+So `h6_block_selection_lp_probe.py` **already tried the sub-word basis and
+RETRACTED it** (2026-08-16) as a box artifact — the "nothing here touches it"
+above is stale against the very file that entry cites as independent confirmation.
+
+### 🛑 A number in the entry above should not be quoted
+
+It reports *"a controlled diagnostic changing only `G` gives 5-of-6 active for
+`G = diag(t)` against 3-of-6 for a dense PSD `G`"* and reads the 3 as the dense
+Gram recovering discriminating power. Reproduced exactly (same seed 7, same
+matrices, `h6_block_selection_lp_probe.py:145-150`), **the 3-of-6 solve is
+invalid**:
+
+    max|x*|     = 3.7135e+06   against M_bound = 1e6
+    primal_obj  = -357264      for a MAXIMisation
+    duality_gap = 3.5726e+05   where well-posed solves give < 1e-20
+
+It is the same box artifact that file retracts one screen below; the retraction
+was applied to the sub-word half and not to the controlled-diagnostic half. A
+well-posed dense PSD instance gives **5 = d−1**, like everything else.
+
+**Scope (b)** structural exclusion; invariant = invertibility of the Gram plus a
+non-zero net constraint; over any field, so every `n`, `q` and trace convention.
+
+**NOT touched, and still this bean's real target:** the extensive term itself
+(a bulk, not a surface); the LP's optimal **value** and `y_0*` (this is about the
+active set only); the γγ-selected-word strand-tracked follow-up (blocked on
+`qou-ales` step 2); escape classes B and D of PR #7181. **Bean stays OPEN.**
+
+
+
+## 2026-09-14 — class B: the AVERAGING escape is closed at the corpus's own `δ`
+
+The 2026-09-12 entry narrowed class B's remaining escape to two hypotheses —
+break the **averaging** of the pn letter, or break **affineness** of the
+interface law — and noted *"neither mentions a numerical value"*.
+
+`pn_betweenness_blocks_signMixed` carries the averaging half under
+`-2 < δ < 2`, the range on which `corpusWeight δ = 1/2 + δ/4` is a strict convex
+weight. Read as a Lean hypothesis, that looks like something a third bond family
+might violate. **It is not an assumption — `δ` is derived, and lands three orders
+of magnitude inside.**
+
+| | |
+|---|---|
+| `δ(q₀)` | `0.00137571080703` |
+| `2 / δ(q₀)` | **1453.7939** — factor inside the range |
+| `δ(q) = 2` at | `q = 3.458099300`, i.e. **3.115×** the substrate modulus |
+| sign | `δ > 0` for every `q > 1`, so `w > 1/2` always — never near either end of `(0,1)` |
+
+**Identification checked, not assumed** (two `delta` across two layers is the
+`da-arity-conflation` trap). Derived symbolically, exact:
+
+- `z(1/q) − (z − h) = 0`, so `f_nn = z − h` (the constants' `fNN_eq_fPP_bar`);
+- `w·f_pp + (1−w)·f_nn − (z − h(1/2 − δ/4)) = 0` with `w = 1/2 + δ/4`;
+- `δ − ħ_q²·h_q·[2]_q/3 = 0`, the docstring's alternative spelling.
+
+So `pyhecke.constants`' `eps = δ/4` convention (canonical `bring_color_weighted`,
+owner ruling R3) **is** the Lean's `corpusWeight`. Cross-checked:
+`pn_interface_offset(q0)` matches `−h(1−δ/2)/2` to **0.0** at 70 dps.
+
+**Consequence: affineness of `μ = z + d` is the sole surviving class-B
+hypothesis.** Untouched here.
+
+Scope (b) for the averaging half — it discharges an existing sorry-free theorem's
+hypothesis from a derived quantity rather than assuming it. **NOT claimed:** that
+no third bond family exists, that class B is excluded, or anything about
+**magnitude** — *"what derived object puts `b_pn` more than 5× below both
+like-species bonds"* is untouched and is still this bean's real target.
+
+Probe: `computations/probes/pn_averaging_weight_is_derived_probe.py`, all
+assertions pass, 70 dps, proton pin, convention D, no float64.
+
+
+
+## 2026-09-14 — class B: multiplicity BREAKS affineness, and still cannot make pn extremal
+
+The affineness half of class B's remaining escape. **The escape is real. It does
+not deliver.**
+
+**The escape exists.** Affineness is an `m = 1` fact. `tr(σ_g + d·I) = z + d` is
+affine, but `(σ_g + d·I)^m` has trace of **degree `m`** in `d` — already
+`(d²+1) + (2d+h)z` at `m = 2`, verified symbolically. Measured, **betweenness
+itself fails from `m = 12`.** So `pn_betweenness_blocks_signMixed`'s hypothesis is
+genuinely breakable, which is what the 2026-09-12 entry said class B needs.
+
+**It breaks the wrong way.** Diagonalising, `σ_g` has Hecke eigenvalues `q` and
+`−q⁻¹`, so `F_m(d) = w₊(d+q)^m + w₋(d−q⁻¹)^m` with `w₊+w₋ = 1`, and
+`F_m′ = m·F_{m−1}` — monotonicity in `d`, hence betweenness, survives exactly
+while `F_{m−1} > 0`. That stops at `m = 7` (`F_7(d_nn) < 0`). But the `b₃ > 0`
+pattern needs `μ_pn` to be the strict **MAXIMUM**, and it is at **no `m` in
+1..200**; betweenness breaks by pn becoming the strict **minimum**.
+
+**Why — the invariant.** The pn letter sits at the spectral **balance point**. At
+`d = −h/2` exactly, `(d+q) + (d−q⁻¹) = 0`: the two eigenvalue magnitudes coincide
+at `[2]_q/2`. The corpus's `bring_color_weighted` letter is displaced from it by
+exactly `h·δ/4 = 7.190163e-05` — the number `pyhecke/constants.py` records in its
+own convention note. So
+
+| letter | `d` | spectral radius |
+|---|---|---|
+| pp | `0` | `q` |
+| nn | `−h` | `q` |
+| pn | `≈ −h/2` | `≈ [2]_q/2` |
+
+and **AM-GM** gives `q > [2]_q/2 > 1` for every `q > 1`. Measured growth rates at
+`m = 200`: **1.10840** (pp), **1.00549** (pn), **1.10225** (nn), against
+`q = 1.10998` and `[2]_q/2 = 1.00545`.
+
+The gap is closed-form: `q/([2]_q/2) = 2q²/(q²+1) = 1 + tanh(ln q)` — exactly
+**`1 + δ_CP`**, the crossing discriminant `qou-hjs8` proved θ-free and
+`QOU.Braiding.em_strong_ratio_tanh` already carries.
+
+**Lean** `QOU/MassTheory/PnBalancePointSpectralGap.lean`, 7 declarations,
+sorry-free, `lean`-direct exit 0, `#print axioms` = propext / Classical.choice /
+Quot.sound only.
+
+**Scope (b)** asymptotically; invariant = AM-GM on the two Hecke eigenvalues,
+which mentions no numerical value. Small-`m` is **measured** (1..200), not proved.
+
+**NOT excluded:** a derived pn letter **not** at the balance point. That is now
+the whole of class B's remaining room, and it is far narrower than "break
+affineness" — the displacement from balance is `7.19e-05`, and it would have to
+move `ρ_pn` above `q`. **Untouched: MAGNITUDE** (this bean's real target), class D,
+and the extensive term. **Bean stays OPEN.**
