@@ -1,15 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-14T08:14:57.634Z",
+  "generated": "2026-09-14T08:21:22.524Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3847,
   "files_flagged": 106,
-  "total_defects": 67,
-  "total_exempt": 64,
+  "total_defects": 66,
+  "total_exempt": 65,
   "total_promoted_from_exempt": 42,
   "categories": {
     "proof-no-self-assuming-projection": 57,
-    "proof-claims-unencoded": 6,
+    "proof-claims-unencoded": 5,
     "proof-no-trivial-true": 2,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1
@@ -3163,7 +3163,9 @@
         "snippet": "structure TannakaKreinReconstruction",
         "decl": "TannakaKreinReconstruction",
         "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (universal_property) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [TannakaKreinReconstruction]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
+        "exempt": true,
+        "exempt_reason": "explicit @marker / opaque-tag opt-out",
+        "detail": "unconsumed universe-typed field(s) `: Prop` (universal_property) — honestly framed; tracked not counted"
       }
     ]
   }
