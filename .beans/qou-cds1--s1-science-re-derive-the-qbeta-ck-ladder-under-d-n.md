@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-14T06:45:46Z
+updated_at: 2026-09-14T17:59:27Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8289,3 +8289,47 @@ elliptic construction"* (which this entry shows was never required on the ruled
 base), but the **quantitative** gap between the hyperbolic character available at
 `q₀` (`1.00544843`) and the one required (`1.75936462`) — 11.17× in the generator
 eigenvalue, 139.37× in the character excess. Rule 13a.
+## 2026-09-14 — the phase is NOT what blocks this bean, and AGENTS.md said it was
+
+Recorded here because `qou-cds1`'s previous entry is 2026-09-08 and predates the
+result. **Status stays `in-progress`; nothing is closed** (§13a — the subject is
+open).
+
+**The claim.** "Blocked on the phase `qou-pdix`" is correct only for the
+**retired `z = 1` cell**. It did not survive the 2026-09-08 ruling that made
+`z_D` the base, and nothing re-checked it then.
+
+**The evidence.** The ladder's N=2 factor is `F_N2(α) = cos(α − u/2)·(1 − u²)`,
+so `cos ≤ 1` caps it at `1 − u² = 0.99992745` for **every real α** (supremum at
+`α = u/2`, still below 1). What it must supply is `F_required = Q_codata /
+Q_base`, recomputed at 70 dps:
+
+| base | `Q_base` (MeV) | `F_required` | vs cap |
+|---|---|---|---|
+| `z = 1` (Form A) — RETIRED | 0.783645827375 | 0.998325241673 | reachable |
+| `z_D`, order-zero `E₀` — RULED | 0.444700408522 | **1.75923699418** | **excluded** |
+| `z = q` (augmentation) | 0.87989056126 | 0.889125812282 | reachable |
+| dashboard scored cell — RULED | 0.65185631006 | **1.20016236389** | **excluded** |
+
+**The two cells a cosine can reach are exactly the two the ruling does not
+select.** Inverting the cap gives `u = 0.008517628778` against AGENTS.md's
+`u ≈ 0.00852` — consistent.
+
+**The implication.** No value of α unblocks this bean on the ruled base. The
+live question is **what object supplies a factor above 1 at all** — about the
+base or the assembly, not the phase. An agent sent to derive α as *the* `Q_β` L2
+blocker is working off the critical path.
+
+**Provenance.** Established twice, independently and sorry-free, in PR #7355
+(`LadderFactorBound.lean`, 4 lemmas, 7/7 probe) and PR #7262
+(`EigenphaseQuantization.lean`, 19/19, base-independent table) — **both still
+open**. Verified rather than taken on trust, and **merged**, in
+`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1
+(PR #7276, merged as `f3cb908ee7`), which recomputed all four `F_required` at
+70 dps and inspected the Lean for `sorry`. **Cite the merged audit, not the two
+PRs**, when checking this.
+
+**AGENTS.md fixed in the same PR** — both "blocked on the phase `qou-pdix`"
+sites now point at a scoping note carrying the table above. That edit is
+exemption 2 under §ASK THE OWNER (derived from a corpus artifact — the merged
+audit), not agent judgement.

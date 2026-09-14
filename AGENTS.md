@@ -2323,7 +2323,8 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > C-frame cross-check; the augmentation cell (+12.470 %) is the other
   > admissible point and is proportional to `z_D`'s
   > (`α = (q⁴+1)/(q²+1)²`). The c_k ladder is to be re-derived on the `z_D`
-  > base (`qou-cds1`, blocked on the phase `qou-pdix`); the dashboard rows
+  > base (`qou-cds1`) — 🛑 **but NOT because of the phase; see the scoping note
+  > at the end of this section**; the dashboard rows
   > Q_β / m_n / Δ_pn are NOT yet re-scored on it. Same day, the owner also
   > ruled that every canonical **braid word** is to be selected via γγ
   > (pair-production) construction + the confinement SDP at q₀, never by
@@ -2337,6 +2338,48 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   > initiative — that picks the option. Full enumeration:
   > [`docs/audits/2026-09-05-qbeta-functional-decision-options.md`](docs/audits/2026-09-05-qbeta-functional-decision-options.md)
   > §6.
+  >
+  > **🛑 SCOPING NOTE (2026-09-14) — `qou-cds1` is NOT blocked on the phase
+  > `qou-pdix`, and this document said it was in two places.** Both sites now
+  > point here. The old reading is correct only for the **retired `z = 1`
+  > cell**; it did not survive the 2026-09-08 ruling that made `z_D` the base,
+  > and nothing re-checked it at the time.
+  >
+  > The ladder's N=2 factor is `F_N2(α) = cos(α − u/2)·(1 − u²)`, so
+  > `cos ≤ 1` caps it at `1 − u² = 0.99992745` **for every real α** — the
+  > supremum sits at `α = u/2` and is still below 1. What the ladder must
+  > supply is `F_required = Q_codata / Q_base`, and on the two bases the ruling
+  > actually selects that number is **above 1**:
+  >
+  > | base | `Q_base` (MeV) | `F_required` | vs the cap |
+  > |---|---|---|---|
+  > | `z = 1` (Form A) — **RETIRED** | 0.783645827375 | 0.998325241673 | reachable |
+  > | `z_D`, order-zero `E₀` — **RULED** | 0.444700408522 | **1.75923699418** | **excluded** |
+  > | `z = q` (augmentation) | 0.87989056126 | 0.889125812282 | reachable |
+  > | dashboard scored cell — **RULED** | 0.65185631006 | **1.20016236389** | **excluded** |
+  >
+  > **The two cells a cosine can reach are exactly the two the ruling does not
+  > select.** So no value of α unblocks `qou-cds1` on the ruled base, and an
+  > agent sent to derive α as *the* `Q_β` L2 blocker is working off the
+  > critical path. The live question is **what object supplies a factor above 1
+  > at all** — about the base or the assembly, not the phase.
+  >
+  > **`qou-pdix` is NOT retired and stays open** (§13a): α is still the
+  > ladder's N=1 phase and is still underived. Only its *priority* changes.
+  >
+  > Established twice, independently and sorry-free — PR #7355
+  > (`LadderFactorBound.lean`, 4 lemmas, 7/7 probe) and PR #7262
+  > (`EigenphaseQuantization.lean`, 19/19, base-independent table) — and
+  > verified rather than taken on trust in
+  > [`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1](docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md)
+  > (merged as #7276), which recomputed all four `F_required` at 70 dps and
+  > inspected the Lean for `sorry`. **That merged audit is the corpus artifact
+  > this note is derived from**; the two PRs are still open, so cite the audit,
+  > not them, when checking it.
+  >
+  > **The two beans do not carry this yet** — `qou-cds1`'s last entry is
+  > 2026-09-08 and `qou-pdix`'s 2026-09-12, both predating the result. Appended
+  > alongside this note.
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
@@ -2587,8 +2630,11 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   2026-09-12, when item (iii) of the 2026-09-08 ruling was re-scored on owner
   authorisation (`qou-99qc`); that figure was convention-C on the retired
   `z = 1` cell. **Do not quote the new figure as convention D's accuracy** —
-  no ladder exists on an admissible base (`qou-cds1`, blocked on the phase
-  `qou-pdix`), and a second re-score is authorised for when one does
+  no ladder exists on an admissible base (`qou-cds1`; 🛑 the phase `qou-pdix`
+  is **not** what blocks it — see the 🛑 SCOPING NOTE (2026-09-14) at the end
+  of the Q_β ruling block in §"Canonical derivation chain", and
+  [`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1](docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md)),
+  and a second re-score is authorised for when one does
   (`qou-iagg`). Quote the witness, not this paragraph — the Habiro-exact 5.7 ppb result was against the
   pre-re-pin (muon-anchored) q₀ and has not been refreshed since the
   2026-05-28 proton-anchor re-pin
