@@ -3173,9 +3173,10 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-five** rows (re-counted 2026-09-14), and the groups
+>   catalogues **forty-six** rows (re-counted 2026-09-14; 46 landed the same
+>   day in `81a8ac98b9`, after this line last said forty-five), and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
->   about conventions at all. **Rows 35-45 are NOT in this list**: 35 (the
+>   about conventions at all. **Rows 35-46 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator
 >   is an applied argument), 38 (the value audit's variable resolution),
 >   39 (the freshness is on the wrong object), 40, which is the first row
@@ -3202,7 +3203,14 @@ Do not regress either.
 >   it.** Do not read an empty ledger, or a clean `--check-ledger`, as evidence
 >   about the corpus.
 >
->   **45** is the newest and is about an ALGEBRAIC signature rather than a
+>   **46** is the newest — **the PROOF TERM'S GRAMMAR**: `lean-self-assuming-audit.py`
+>   had a rule for a bare binder and one for a single qualified projection, and
+>   the character `⟨` occurred NOWHERE in the file, so every CONJUNCTIVE form of
+>   a self-assuming projection — Lean's anonymous constructor — was invisible.
+>   Landed by a sibling in `81a8ac98b9`; see
+>   [`2026-09-14-conjunctive-self-assuming-blind-spot.md`](docs/audits/2026-09-14-conjunctive-self-assuming-blind-spot.md).
+>
+>   **45** is about an ALGEBRAIC signature rather than a
 >   spelling: `q**2 - 2*q - 1`, the factor identifying the retired Q_β base,
 >   is also written with the **absolute value pre-resolved**
 >   (`2*q + 1 - q**2`, legitimate since `q₀²−2q₀−1 < 0`, so no `abs()`
