@@ -44,6 +44,14 @@ supplies one, the box supplies none at an interior optimum, so d-1 come from
 atom's traces, the target, or the Gram's density -- it counts the basis.  A
 binding multiplier must depend on the nucleus; this cannot.
 
+## Lean
+
+`content/quantum-observable-universe/lean/QOU/MassTheory/LPActiveSetDimension.lean`
+-- `exists_slack`, `tightSetCard_lt`, `activeSetCard_lt`, `activeSetCard_le_pred`,
+sorry-free over any field (`lean`-direct exit 0; `#print axioms` shows only
+propext / Classical.choice / Quot.sound).  `activeSetCard_lt`'s statement mentions
+neither the cost vector nor the Gram's sparsity, which is the point.
+
 ## Scope
 
 **Scope (b), structural exclusion.**  Invariant: invertibility of the Frobenius
