@@ -586,6 +586,23 @@ user's last message, not the most recently mentioned file.
 > queues are **not** converted into beans. (Part of the qou side of
 > the Folio-Assistant Infrastructure Migration — the `miga` epic.)
 
+> **A bean is an APPEND-ONLY ledger, and concurrent appends collide on
+> essentially every landing (measured 2026-09-13).** `main` takes **169
+> commits / 24 h**; `.beans/qou-brng--…` is touched by **9** of them and
+> `.beans/qou-zlra--…` by **6**, so a branch that appends to `qou-brng`
+> goes un-mergeable roughly **every 2.7 h**. In the #7237 / #7245 /
+> #7251 / #7253 cluster, **four of the five collision surfaces were
+> these two files** — no content, no Lean, no compute — and `qou-brng`
+> conflicted three times in about forty minutes, twice while the
+> previous resolution was being committed. Clearing them ahead of merge
+> is not winnable by hand; resolve **at merge time** with
+> [`scripts/bean-append-merge.py`](scripts/bean-append-merge.py), which
+> keeps `main` byte-for-byte, appends the branch's note verbatim, takes
+> the later `updated_at`, and asserts `len(merged) == len(main) +
+> len(note)` so nothing is invented. It **refuses** (exit 2, markers left
+> intact) unless BOTH sides are pure appends — an edit to existing text
+> is a real conflict and stays a human's job.
+
 1. **Start a bean list at session start.** As soon as you have
    enough context (after reading the user's first request, the
    SessionStart hooks, and the current branch / PR state), create a
@@ -1210,19 +1227,59 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
-8a. **Draft → ready: SPACED RETRY ONLY. Never close-and-reopen a
-   PR to get past it** (owner ruling, 2026-09-05). Flipping a draft
-   PR to ready goes through GitHub's GraphQL API, which needs a
-   node-ID lookup, and that lookup is the thing being rate-limited
-   on this repo's shared token. So `mcp__github__update_pull_request`
+8a. **Draft → ready: ONE REST CALL. Never close-and-reopen a
+   PR to get past it** (owner ruling, 2026-09-05; diagnosis corrected
+   2026-09-13). Use
+
+       POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
+
+   which returns `200 {"draft": false}` first try. `mcp__github__update_pull_request`
    with `draft: false` fails — often for hours — with
 
        Failed to find pull request: API rate limit already exceeded
        for user ID 662242
 
    while every REST path (title, body, state, create, merge, and all
-   reads) keeps working. **Retry the same `draft: false` call, spaced
-   out — typically off a `send_later` check-in — until it lands.**
+   reads) keeps working.
+
+   > **🛑 THIS RULE PREVIOUSLY SAID "SPACED RETRY ONLY", AND THAT
+   > ADVICE COULD NEVER SUCCEED (corrected 2026-09-13).** It attributed
+   > the failure to a rate-limited **node-ID lookup**. Measured twice,
+   > independently: GraphQL is **403-BLOCKED session-wide from Claude
+   > Code**, not rate-limited, so there is no limiter draining and no
+   > wait to sit out. #7241 got the 403 while *supplying* the node_id
+   > from a prior REST read — the lookup skipped entirely — and a
+   > read-only `query { viewer { login } }`, which does no lookup at
+   > all, returns the same 403. The body says so in words:
+   >
+   > > *"GitHub GraphQL is not available from Claude Code sessions; use
+   > > the REST API. For review threads, auto-merge, and
+   > > draft/ready-for-review use the CCR routes on api.github.com"*
+   >
+   > That single fact explains what four prior sessions could not: the
+   > measured "windows" were ~2 h, ~4 h, ~4 h and ~10 h and never
+   > agreed, because nothing was draining. **An agent following the old
+   > wording waits forever**, and at least one armed a `send_later`
+   > check-in to do exactly that.
+   >
+   > **The 403 body names four more routes, and had been discarded
+   > unread across at least five sessions:**
+   >
+   >     GET  /repos/{owner}/{repo}/pulls/{n}/ccr/review_threads
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/comments/{id}/resolve   (or /unresolve)
+   >     PUT  /repos/{owner}/{repo}/pulls/{n}/ccr/auto_merge              (or DELETE)
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/ready_for_review
+   >     POST /repos/{owner}/{repo}/pulls/{n}/ccr/convert_to_draft
+   >
+   > `ccr/review_threads` is worth as much as the draft flip: "review
+   > threads are GraphQL, therefore unreadable" has a direct REST answer
+   > too. **Read the body of a 403 before believing its status line.**
+   >
+   > Also measured: `PATCH /pulls/{n}` with `{"draft": false}` returns
+   > **200 and the re-read still says `draft: true`** — REST accepts the
+   > field and silently discards it. So a 200 there is not evidence
+   > either. Recorded in `.claude/agent-memory/merge-coordinator/`
+   > (PR #7241, merged 2026-09-13).
 
    **Do NOT close the draft and create a replacement PR for the same
    head.** It works, which is exactly why it keeps getting
@@ -1237,7 +1294,7 @@ ephemeral.
    independently forbid close-and-reopen; this ruling extends that to
    the undraft case, which those rules do not name.
 
-   **Two measured traps when retrying.**
+   **Two measured traps, which survive the correction above.**
 
    - **The error is not evidence the call did nothing.** A sibling
      session measured (2026-09-05) that `update_pull_request` calls
@@ -1246,9 +1303,9 @@ ephemeral.
      landed anyway** — only the draft flip was dropped. Always
      confirm with `pull_request_read` before re-sending a mutation,
      or you will write it twice.
-   - **Retry `draft: false` ALONE.** Bundling other fields makes the
-     partial-success case above harder to read, and none of them need
-     the limiter.
+   - **Send the flip ALONE, then re-READ.** Bundling other fields
+     makes the partial-success case above harder to read. This applies
+     to the `ccr/ready_for_review` route as much as to the old one.
 
    **The fix that avoids the problem entirely: open the PR non-draft
    in the first place** where the work is already verified.
