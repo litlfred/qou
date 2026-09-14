@@ -1349,3 +1349,58 @@ refresh. The witness stays self-consistent, so nothing downstream fails; only a 
 counts rows can see it.
 
 **Do not close this bean.**
+
+---
+
+## 2026-09-14 — both pieces of `e_∞` are CLOSED FORMS in `q₀` (PR #7349)
+
+The previous entry left `e_∞ = 2·E_edge + Xrun(2s)` with both terms `k`-free but obtained by
+**search**. Both values are now explicit convergent series; only the argmax *shape* is still a
+search result.
+
+**The run.** A run of `ℓ` consecutive `−1`s in a bi-infinite AP of gap 2 leaves every internal
+gap alone and moves only the straddling pairs. Collecting by distance and re-indexing
+(`Σ_{j≤ℓ} Σ_{d≥j} = Σ_d min(d,ℓ)`):
+
+    Xrun(ℓ) = Σ_{d≥1} min(d,ℓ)·T(d) − (ln q₀/2)·ℓ ,   T(d) = 2ε(2d) − ε(2d−1) − ε(2d+1)
+
+`T` is a **second difference** of `ε` along the progression, so where `ε` decays like `q₀^{−2d}`,
+`T` decays like `q₀^{−4d}`. The intercept resums to a single Lambert-type series:
+
+    C = Σ_d d·T(d) = −Σ_{r≥1} (1/r)·(q^r − q^{−r})²·q^{−4r}/(1 − q^{−4r})²
+      = −0.657177947545899893947060755021
+
+**The edge.** Same expansion. Every block-to-bulk tail is
+`Σ_{d≥m}[ε(2d) − ε(2d+u)] = Σ_r (1/r)(1 − q^{−2ur})·q^{−4mr}/(1 − q^{−4r})`, so `E_edge` is a
+finite sum of Lambert series plus finitely many `ε` values — no lattice sum at all.
+
+**Assembled**, the two closed forms reproduce #7335's *independently searched* `e_∞` to the 30
+digits its witness records. #7335 searched in scaled integers; this evaluates two series.
+Nothing is shared but the argmax shape.
+
+**The asymptote is NOT a shortcut.** At `ℓ = 16` — the length `e_∞` uses — the exact `min(d,ℓ)`
+form and the linear asymptote `C − (ln q₀/2)ℓ` differ by **3.1e-4**, four orders above anything
+else in this arc, falling to 9.8e-19 by `ℓ = 96`. Quoting the asymptote as `Xrun` would corrupt
+`e_∞` in its fourth decimal.
+
+**🛑 Two of my own tolerance derivations were wrong, and the probe caught both.** "Derived, not
+chosen" is not the same as "right":
+
+1. The intercept series decays like `q^{−2r}`, **not** `q^{−4r}` — `(q^r − q^{−r})²` contributes
+   `q^{2r}` and cancels half the decay. I gave it half the depth it needed and the identity read
+   as failing at 1e-30. The depth was short; the mathematics was fine.
+2. R5 demanded the secant slope equal `−ln q₀/2` **exactly**, where the approach is asymptotic.
+   The bound is now computed from the same `T`.
+
+Both fixed at the derivation, neither by widening a tolerance.
+
+**What is NOT closed.** The **search**: `[3,2,1,1,1]` and `ℓ = 16` are inputs from #7335 and
+nothing here proves them optimal. And the **existence of the limit** — still the upper bound on
+`M_n`.
+
+**Next:** two targets, and the first is much smaller than it was. (a) Close the *search* — with
+`E_edge(u)` now an explicit function of `u`, the block optimisation is an analytic question
+rather than an enumeration, and `T`'s sign structure may bound which blocks can win. (b) The
+upper bound on `M_n`, which is the arc's one real open problem and is untouched by any of this.
+
+**Do not close this bean.**
