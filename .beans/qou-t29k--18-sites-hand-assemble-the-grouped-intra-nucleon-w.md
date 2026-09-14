@@ -449,3 +449,63 @@ Its one real consumer of the ordered builder,
 orderings (`npn/pnn`, `pnp/ppn`), all four in the same frame — so the frame is a
 controlled constant there, as it was for `level_k`'s `ord_spread`. Measure those
 two ratios both ways before switching; `level_k`'s moved only 22.54 % -> 22.69 %.
+
+## 4 -> 3. THE ACTIONABLE DRAIN IS COMPLETE.
+
+`atom_orbit_reduction:92` switched. All three remaining sites are blocked on
+decisions that are not mine:
+
+| site | blocked on |
+|---|---|
+| `probes/b_pred_mirror_slope_closed_form:90` | owner call, `qou-u8ji` |
+| `binding_multibond_wenzl:71` | owner call, `qou-y1w0` |
+| `fitted_ideal_low_isotope_calibration:172` | module PAUSED, owner ruling 2026-08-26 |
+
+**18 -> 3 over the arc**, none of it by re-running: every site was read for what
+it reports, and the disposition was measured before it was made.
+
+### The last switch, and why it was the safest of them
+
+The module was internally SPLIT. `atom_braid_orbit_representative` — and so
+`tr_M_via_orbit_representative`, and so every assertion in
+`orbit_reduction_crosscheck` — already DELEGATED to the production
+`atom_braid_word_3A` and was always canonical. Only `atom_braid_word_ordered`,
+the sibling taking an ARBITRARY nucleon ordering that `atom_braid_word_3A`
+cannot express, was hand-built grouped. Two halves of one module in two frames.
+
+Its one real consumer, `probes/canonical_ordering_dof_probe`, reports ratios
+across four nucleon orderings, and those are **exactly** invariant:
+
+    T_npn_over_pnn     1.258976624909173     both frames, every digit
+    He3_pnp_over_ppn   0.8293909084880151    both frames, every digit
+
+while the absolute traces move by 7.868x (|tr| npn 0.2886552152 ->
+0.03668647715), precisely the documented ³H factor. Exact rather than
+approximate because `npn` and `pnn` carry the same nucleon multiset, so the
+per-nucleon intra factor divides out — contrast `level_k`'s analogous spread,
+which moved 22.54 % -> 22.69 %. Post-switch the word is length 35 with
+generator sequence [0,1,0,1,0,1,0,0,1,0,0,2], the borromean interleave plus the
+interface.
+
+The **colour convention** at that site is still `strict_averaged` (colour-blind
+`-h/2`) against the canonical `bring_color_weighted`. That is a different owner
+ruling (2026-08-15) and a different axis from this bean; left as it was, and
+now said so in the docstring rather than fixed in passing.
+
+### Two pre-existing reds found next to it, both verified on a clean tree
+
+Neither is from this work and neither is a `qou-t29k` defect:
+
+  * `orbit_reduction_crosscheck` FAILS `N2_he4_value_smoke` — reads the
+    canonical ⁴He `0.011237417659767421` against a pin of
+    `0.0553483351637685668` whose witness (2026-05-30) still says
+    `allPassed: True`. Bean `qou-uujo`. Its code is right; the pin is stale,
+    and is not the grouped value either, so re-pinning needs that number's
+    provenance checked.
+  * `canonical_ordering_dof_probe` CRASHES in Part 6,
+    `TypeError: cannot create mpf from None`. Part 6 is already tracked as
+    blocked by `qou-xy5f`.
+
+Because both consumers are red for unrelated reasons, the switch was verified
+directly instead — ratios, absolute traces and word structure all as predicted
+above.

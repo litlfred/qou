@@ -1,7 +1,6 @@
 {
   "_comment": "Sites assembling the grouped intra-nucleon word by construction. DRAINS, NEVER GROWS: fix by calling pyhecke.atom.nucleon_word_letters.",
   "sites": [
-    "computations/atom_orbit_reduction.py::B::for \u2026 in g0: word.append(\u2026) then for \u2026 in g1: same accumulator::0",
     "computations/binding_multibond_wenzl.py::B::for \u2026 in g0: word.append(\u2026) then for \u2026 in g1: same accumulator::0",
     "computations/fitted_ideal_low_isotope_calibration.py::A::[(\u2026, 0) for \u2026 in g0] + [(\u2026, 1) for \u2026 in g1]::0",
     "computations/probes/b_pred_mirror_slope_closed_form.py::A::[(\u2026, 0) for \u2026 in g0] + [(\u2026, 1) for \u2026 in g1]::0"

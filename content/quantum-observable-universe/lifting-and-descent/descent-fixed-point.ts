@@ -9,5 +9,7 @@ export default remark({
     "def:brane-boundary",
     "prop:descent-eigenspaces",
     "rem:descent-reduction",
+    "rem:descent-reduction-two",
+    "rem:descent-reduction-three",
   ],
 });
