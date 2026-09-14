@@ -2548,3 +2548,33 @@ above, the 11.2/139 pair here — has been about which one is in use. **Say the
 coordinate before quoting a factor.**
 
 **Status: still open.** α is underived; the gap is quantitative. Rule 13a.
+
+### 🛑 Two corrections to the entry immediately above, same day
+
+**1. The `cos ≤ 1` exclusion in the 2026-09-14 entry *before* this one is not
+original — PR #7262 Part 3 has it**, reached independently and done better:
+sorry-free Lean strictly covering mine (`cos_rung_lt_of_base_short`,
+`cos_rung_lt_of_base_short_ladder`), a fuller base table including the bar-odd
+survivor at **2.2136**, and a self-correction mine lacked. Per §"Measured
+research-overlap … converge on landing", **#7262 lands the exclusion** and #7355
+re-scopes to the route-5 reversal above, citing Part 3 rather than restating it.
+Two independent derivations strengthen it; two claims of priority do not.
+
+#7262 also already names the mirror — *"this bean's own 2026-08-22 entry
+excluded a `cosh` re-reading because `cosh ≥ 1` sat on the wrong side of a
+required value below 1"*. The reversal above is that mirror's **consequence**,
+traced into the step-18 → step-19 → fibre-unit-circle chain that still assumes
+the `cosh` branch is shut.
+
+**2. I led with a superseded cell.** The tables above put `z_D` order-zero /
+`κ = 1.7594` first. The **live scored row** has been `nuc11_interleaved` /
+**`κ = 1.20024943`** since 2026-09-12 (`173da443b6` tower-summed `E₀`,
+`573b2ece24` the γγ element). Both appear in my probe — the "dashboard scored
+cell" row *is* the live one, matching #7262's 1.2002 to six digits — but the
+framing was wrong. **Quote 1.2002.** Every conclusion is unaffected: 1.2002 is
+still above 1, so the hypothesis still fails and the reversal still holds.
+
+Worth noting *which* error this was: quoting a figure that had already moved, from
+a bean entry, while writing a bean entry about quoting figures in the wrong
+coordinate. #7262's Part 4 names this exact failure class and its own Part 3 was
+an instance; so was this.
