@@ -187,3 +187,64 @@ quantity is in. `nucleon_word_letters` documents invariance only for
 different nucleons, differences of traces, and absolute traces all move. A site
 is safe to switch iff it reports only the first kind — answerable by reading it,
 not by re-running it.
+
+## Triage map, 2026-09-14 end of session — 18 -> 14, four drained, two escalated
+
+**Drained (4, all zero numeric change, all verified by re-run):**
+
+| site | why it was safe |
+|---|---|
+| `legacy_marshalled_frame:78` | the module exists to BE the legacy frame |
+| `closed_form_tau_M:564` | already opt-in behind `intra_order`, defaulted borromean (`qou-y2o7`) |
+| `markov/d_frame_neutron_cyclotomic_rule_probe:121` | the measured `(m, cancelled)` is ordering-INVARIANT — established by the probe's own stale assertion, see below |
+| `qbeta/qbeta_delta_vs_deltaTbeta_settled_probe:105` | grouped is reasoned and dated (2026-09-06); it already passes `intra_order="grouped"` to its sibling call |
+
+**Escalated, NOT switched (2):** `b_pred_mirror_slope_closed_form` (`qou-u8ji`)
+and `binding_multibond_wenzl` (`qou-y1w0`). Both have agreement with experiment
+that exists only in the grouped frame.
+
+**Remaining 12, with what is known:**
+
+*Six qbeta probes* — `qbeta_chi_block_symbolic_closure_probe:79`,
+`qbeta_d_frame_baseline_element_consistency_probe:117`,
+`qbeta_d_frame_trace_baseline_probe:103`, `qbeta_delta_bar_parity_probe:184`,
+`qbeta_delta_element_fork_pricing_probe:181`,
+`qbeta_epsnpq_functional_mismatch_probe:74`. All compute
+`chi_lambda(beta_n) - chi_lambda(beta_p)` — the Delta element as a
+CROSS-NUCLEON DIFFERENCE, so **not** in the invariant class. **None of the six
+mentions `intra_order` and none carries a grouped pin literal**: their frame is
+inherited from the `_word` shape, undocumented, and possibly accidental. Their
+sibling `qbeta_delta_vs_deltaTbeta_settled_probe` reasoned the same choice out
+in forty lines; these six did not. Only `qbeta_chi_block_symbolic_closure_probe`
+references the `paper` closed forms, which the settled probe says are stated in
+the grouped frame — so that one likely NEEDS grouped and merely fails to say so;
+the other five are open.
+
+*`qbeta/qbeta_level_k_binding_operator_probe:257`* — same cluster, marked 🛑 in
+its own docstring; not read yet.
+
+*`binding_canonical:381`* — the module is marked "🛑 SUPERSEDED LAW ... kept for
+provenance and comparison; do not quote". Likely legacy-by-design, but it is
+production-adjacent and wants reading, not assuming.
+
+*`fitted_ideal_low_isotope_calibration:172`* — module PAUSED by owner ruling
+2026-08-26. Do not touch without unpausing.
+
+*`atom_orbit_reduction:92`*, *`chi_4he_binding_lossless:83`*,
+*`rho_k_h3a_gg_trajectory:127`* — unexamined.
+
+## What the triage method turned out to be
+
+Not "is the site broken" but **which class is the reported quantity in**:
+
+  1. `tr_M(W_atom)/tr_M(W_free)`, one nucleus over its own free word —
+     INVARIANT (documented in `nucleon_word_letters`, ~1e-60 at A = 2, 3, 4).
+     Covers `L` and the three bond constants.
+  2. A functional that is invariant for a different reason — the cyclotomic
+     `(m, cancelled)` is, because it counts per-GENERATOR content and
+     reordering moves no letter between generators.
+  3. Everything else — absolute traces, differences of traces, ratios between
+     DIFFERENT nucleons. These move by 3.785x (2H) to 14.325x (4He).
+
+Classes 1 and 2 are safe to switch; class 3 needs an owner call whenever the
+site's result is a claim rather than a number. Both escalations are class 3.

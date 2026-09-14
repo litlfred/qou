@@ -239,8 +239,21 @@ def match_sequential_loops(body) -> list[tuple[int, str]]:
 _GUARD_TEST = re.compile(r"grouped|intra_order|legacy|historical", re.I)
 
 
-def _guarding_branch(node, parents: dict) -> str | None:
-    """The nearest enclosing `if` whose test names the ordering, if any."""
+#: A file-level declaration of the legacy frame. `_word(g0, g1)` is typically
+#: a module-level helper, so a branch test never encloses it — the declaration
+#: lives at the CALL SITE instead, as an explicit `intra_order="grouped"`
+#: passed to something else. `qbeta_delta_vs_deltaTbeta_settled_probe` is the
+#: model: its `_word` is a bare concat, and eight lines below it calls
+#: `compute_tau_M_nucleon_H3(..., intra_order="grouped")` under a comment
+#: giving the dated reason (2026-09-06, `qou-y2o7`) — everything it compares
+#: against is stated in that frame. Weaker evidence than a branch test, since
+#: it is file-scoped rather than expression-scoped, so it is reported as its
+#: own reason rather than folded in.
+_FILE_DECLARES_GROUPED = re.compile(r"""intra_order\s*=\s*["']grouped["']""")
+
+
+def _guarding_branch(node, parents: dict, src: str) -> str | None:
+    """Why this concat is a DECLARED legacy assembly rather than a default."""
     cur = parents.get(id(node))
     while cur is not None:
         if isinstance(cur, ast.If):
@@ -249,8 +262,10 @@ def _guarding_branch(node, parents: dict) -> str | None:
             except Exception:                       # pragma: no cover
                 test = ""
             if _GUARD_TEST.search(test):
-                return test[:80]
+                return f"if {test[:76]}"
         cur = parents.get(id(cur))
+    if _FILE_DECLARES_GROUPED.search(src):
+        return 'file passes intra_order="grouped" explicitly'
     return None
 
 
@@ -277,7 +292,7 @@ def scan_file(path: str) -> list[dict]:
         if d:
             found.append({"check": "A", "path": rel,
                           "line": getattr(node, "lineno", 0), "detail": d,
-                          "guard": _guarding_branch(node, parents)})
+                          "guard": _guarding_branch(node, parents, src)})
     for node in ast.walk(tree):
         for field in ("body", "orelse", "finalbody"):
             body = getattr(node, field, None)
@@ -287,7 +302,7 @@ def scan_file(path: str) -> list[dict]:
                                  if getattr(x, "lineno", None) == line), None)
                     found.append({"check": "B", "path": rel,
                                   "line": line, "detail": d,
-                                  "guard": _guarding_branch(stmt, parents)
+                                  "guard": _guarding_branch(stmt, parents, src)
                                            if stmt is not None else None})
 
     if found and _FRAME_STAMP.search(src):
@@ -574,7 +589,7 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  {mark}[{f['check']}] {f['path']}:{f['line']}")
                 print(f"           {f['detail']}")
                 if f.get("guard"):
-                    print(f"           under: if {f['guard']}")
+                    print(f"           declared by: {f['guard']}")
     if c:
         print()
         for f in c:
