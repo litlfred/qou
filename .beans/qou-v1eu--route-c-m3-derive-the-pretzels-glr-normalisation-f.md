@@ -227,3 +227,48 @@ companion matrix.
 
 **Next honest step:** rebuild the second factor through `H^+_{k,m}(q^-1) = (-1)^k H^-_{k,-m}(q)`.
 That is one derivation, not a convention search — the relation is printed.
+
+## Part 6 (2026-09-14) — GGM (87)/(88) found: the blocker's MECHANISM is resolved
+
+**Correction to Part 5's characterisation first.** Part 5 said the remaining step was "one
+derivation, not a convention search -- the relation is printed". That was **over-confident**.
+The `H^+/H^-` relation is printed, but how `W_m` is ASSEMBLED from the blocks was not in
+anything I had read: Theorem 11 only says "`W_m(q)` is a fundamental solution". So the missing
+piece was not a free choice and not a printed relation either -- it was a **definition I had
+not located**. Located now.
+
+**GGM (87)/(88):**
+
+    W_m(q) = W^+_m(q)                                  |q| < 1
+           = R . W^-_{-m-2}(q^-1) . diag(1,-1,1)       |q| > 1        (87)
+
+    W^eps_m(q) = [ H^eps_{k, m+j} ]_{j,k}              rows = SHIFTS, cols = the 3 blocks  (88)
+
+Two things fall out.
+
+1. **My matrix convention was right** -- (88) has rows = shifts, so `W_{m+1} = A_m W_m` is
+   confirmed, as Part 4 already inferred from (130)/(244).
+2. **The mechanism of the residue.** In (92), with `l = -m-1` so `-l-2 = m-1`:
+
+       second factor = W_{-m-1}(q^-1) = R . W^-_{m-1}(q) . S
+       first  factor = W^+_{m-1}(q)
+
+   so **(92) pairs TWO DIFFERENT block families**, `W^+` against `W^-`:
+
+       (1/2) W^+_{m-1} (J S) (W^-_{m-1})^T R  =  RHS
+
+   My propagation test treated `W(q^-1)` as "the same `W`, bar-substituted". It is not. That
+   is a deeper error than the index direction Part 4 chased, and it explains the structured
+   column-0 residue: a column sign `S` and a row reversal `R` sit in the identity, and the two
+   factors obey DIFFERENT recursions.
+
+**The Part-6 derivation was sound, applied to the wrong object.** Deriving from the printed
+`H^+_{k,m}(q^-1) = (-1)^k H^-_{k,-m}(q)` gave `W_l(q^-1) = R W_{-l-2}(q) S`, which is
+structurally (87) itself. The reasoning reproduced their definition; the mistake was assuming
+ONE family throughout rather than the +/- pair (87) prescribes.
+
+**What remains.** `W^+` solves (86) (Theorem 11). Whether `W^-` solves (86) or a different
+recursion is NOT yet established -- the `H^-` series (90a-c) carry `(-1)^n q^{n(n+1)/2 + nm}`
+against `H^+`'s `q^{n(n+1)+nm}`, so they are different objects and may well satisfy different
+operators. That is the next thing to read or derive, and it is the last piece before the
+rank-3 calibration closes.
