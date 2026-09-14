@@ -380,4 +380,113 @@ theorem crossTerm_oddPart_ne_zero {q : ℝ} (hq1 : 1 < q) :
     simpa using bondOfTz_oddPart_ne_zero hq1
   exact mul_ne_zero hd hb
 
+/-! ## §8. The parity ratio is EXACTLY linear in `T_z`, with slope `(q⁴−1)/(q⁴+1)`
+
+Added 2026-09-14 (bean `qou-vwu3`, second tranche).  §7 shows the `n = 4` cross
+term inherits the bond factor's parity ratio; this computes that ratio in closed
+form, and the answer is tighter than "inherits":
+
+    oddPart / evenPart  =  ((q⁴ − 1)/(q⁴ + 1)) · T_z        exactly.
+
+So on the physical range `|T_z| ≤ 1` the ratio is **capped** at `(q⁴−1)/(q⁴+1)`,
+attained only at the pure like-pairs `T_z = ±1`.  Nothing in the interleaved
+`n = 4` word can exceed it, for any bond assignment.
+
+**Only algebra appears below.**  The comparison against a measured mirror
+splitting is deliberately NOT formalised — it belongs in the probe and the bean,
+not in a proof.  What Lean carries is the cap; what the cap is worth is an
+empirical question asked elsewhere.
+
+**And the cap is a statement about `n = 4` alone.**  Measured the same day, the
+achievable `|ratio|` at the proton anchor grows with word length —
+`0.2057` at `n = 4`, `0.3928` at `n = 5`, `0.4935` at `n = 6` — because more
+dressings enter the kernel quadratically and the mirror image can be driven
+closer to zero.  `ratio = (a − b)/(a + b)` with `a`, `b` the value and its
+mirror, so `|ratio| < 1` exactly while `a` and `b` share a sign, and the
+envelope approaches `1` as the slot count grows.  **A longer word can therefore
+be made to bracket any target below 1, which is why reaching one by choosing `n`
+is selection against the target and not a derivation.** -/
+
+/-- The exact parity-ratio slope of the bond channel: `(q⁴ − 1)/(q⁴ + 1)`. -/
+noncomputable def parityRatioSlope (q : ℝ) : ℝ := (q ^ 4 - 1) / (q ^ 4 + 1)
+
+/-- **The parity ratio is exactly `slope · T_z`.**
+
+Both parts were computed in §2: the odd part is `(h/2)·T_z` and the even part is
+the constant `z_D − h/2 = (q⁴+1)/(2q(q²+1))`.  Their quotient collapses to
+`(q⁴−1)/(q⁴+1)` times `T_z`, with the `2q(q²+1)` cancelling against `h = q − q⁻¹`. -/
+theorem bondOfTz_parity_ratio_eq {q : ℝ} (hq0 : 0 < q) (tz : ℝ) :
+    oddPart (bondOfTz q) tz / evenPart (bondOfTz q) tz = parityRatioSlope q * tz := by
+  -- `hqne`, not `hq`: `hq` is the Hecke-parameter FUNCTION in this namespace, and a
+  -- local hypothesis of that name shadows it, so `hq q` then elaborates as applying
+  -- the hypothesis to `q`.  That is what the first draft of this proof did.
+  have hqne : q ≠ 0 := ne_of_gt hq0
+  have h2 : q ^ 2 + 1 ≠ 0 := by positivity
+  have h4 : q ^ 4 + 1 ≠ 0 := by positivity
+  have hodd : oddPart (bondOfTz q) tz = hq q / 2 * tz := by
+    unfold oddPart
+    have := bondOfTz_oddPart q tz
+    unfold oddPart at this
+    linarith [this]
+  have heven : evenPart (bondOfTz q) tz = zD q - hq q / 2 := by
+    unfold evenPart
+    have := bondOfTz_evenPart q tz
+    unfold evenPart at this
+    linarith [this]
+  rw [hodd, heven]
+  have hev : zD q - hq q / 2 = (q ^ 4 + 1) / (2 * q * (q ^ 2 + 1)) := by
+    unfold zD hq; field_simp; ring
+  rw [hev]
+  unfold parityRatioSlope hq
+  field_simp
+  ring
+
+/-- The slope is strictly positive for `q > 1`, and strictly below `1` for every
+`q` — so the ratio is bounded by `1` in magnitude on `|T_z| ≤ 1`, whatever `q` is. -/
+theorem parityRatioSlope_lt_one {q : ℝ} (hq0 : 0 < q) : parityRatioSlope q < 1 := by
+  unfold parityRatioSlope
+  rw [div_lt_one (by positivity)]
+  linarith
+
+/-- `1 ≤ q` forces `1 ≤ q⁴` — the step both bounds below need. -/
+theorem one_le_pow_four {q : ℝ} (hq1 : 1 ≤ q) : 1 ≤ q ^ 4 := by
+  have h2 : 1 ≤ q ^ 2 := by nlinarith
+  nlinarith [sq_nonneg (q ^ 2 - 1)]
+
+theorem parityRatioSlope_nonneg {q : ℝ} (hq1 : 1 ≤ q) : 0 ≤ parityRatioSlope q := by
+  unfold parityRatioSlope
+  apply div_nonneg _ (by positivity)
+  linarith [one_le_pow_four hq1]
+
+theorem parityRatioSlope_pos {q : ℝ} (hq1 : 1 < q) : 0 < parityRatioSlope q := by
+  unfold parityRatioSlope
+  apply div_pos _ (by positivity)
+  have h2 : 1 < q ^ 2 := by nlinarith
+  nlinarith [sq_nonneg (q ^ 2 - 1)]
+
+/-- **THE CAP.**  On the physical range `|T_z| ≤ 1` the `n = 4` parity ratio
+cannot exceed `(q⁴−1)/(q⁴+1)` in magnitude, for any bond assignment.
+
+This is the scope-(b) content of the second tranche: it is not that the observed
+ratio is missed by some amount, it is that the interleaved `n = 4` cross term has
+no assignment reaching past this bound at all. -/
+theorem bondOfTz_parity_ratio_cap {q : ℝ} (hq1 : 1 ≤ q) {tz : ℝ} (htz : |tz| ≤ 1) :
+    |oddPart (bondOfTz q) tz / evenPart (bondOfTz q) tz| ≤ parityRatioSlope q := by
+  have hq0 : 0 < q := lt_of_lt_of_le zero_lt_one hq1
+  rw [bondOfTz_parity_ratio_eq hq0, abs_mul]
+  have hs : |parityRatioSlope q| = parityRatioSlope q :=
+    abs_of_nonneg (parityRatioSlope_nonneg hq1)
+  rw [hs]
+  calc parityRatioSlope q * |tz| ≤ parityRatioSlope q * 1 := by
+        apply mul_le_mul_of_nonneg_left htz
+        rw [← hs]; exact abs_nonneg _
+    _ = parityRatioSlope q := by ring
+
+/-- The same cap transfers to the `n = 4` interleaved cross term, by §7. -/
+theorem crossTerm_parity_ratio_cap {q : ℝ} (hq1 : 1 ≤ q) (hd : markovDefect q ≠ 0)
+    {tz : ℝ} (htz : |tz| ≤ 1) :
+    |oddPart (crossTerm q) tz / evenPart (crossTerm q) tz| ≤ parityRatioSlope q := by
+  rw [crossTerm_parity_ratio_eq_bond hd]
+  exact bondOfTz_parity_ratio_cap hq1 htz
+
 end QOU.MassTheory.BondChannelTzParity

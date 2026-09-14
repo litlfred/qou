@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T17:46:48Z
-updated_at: 2026-09-14T18:08:19Z
+updated_at: 2026-09-14T18:37:18Z
 ---
 
 ## ANSWERED 2026-09-14 — the defect IS charge-sensitive, and its charge dependence is ONE bond factor
@@ -121,3 +121,71 @@ closing the route.
       accident? `n = 6` decides, and the probe runs in seconds.
 - [ ] Which word class a nucleus actually is — `qou-5vhf`, unchanged. The production
       atom word is sequential, so none of this moves a production number yet.
+
+
+## Both open items ANSWERED — 2026-09-14 second tranche
+
+Probe now **20/20**; Lean §8 adds 7 theorems, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`. Sweep 7 ok / 0 RED.
+
+### Item 1 — the parity ratio in closed form, and it CAPS
+
+The `n = 4` ratio is not merely "inherited from the bond factor" (§7) — it is
+
+    odd/even  =  ((q⁴ − 1)/(q⁴ + 1)) · T_z        EXACTLY
+
+so on the physical range `|T_z| ≤ 1` it is **capped** at `(q⁴−1)/(q⁴+1)`, attained
+only at the pure like-pairs. At the proton anchor the cap is **0.205704077252**.
+
+Enumerated over **all 27** `(d₀,d₂,d₃)` assignments — nothing selected — the `n=4`
+achievable range is exactly `[−0.2057040773, +0.2057040773]`, and the AME target
+(derived, not transcribed: `b3_asym/b3_sym = 0.267754902581`) **exceeds the cap by
+30.17 %**. So this is a scope-**(b)** exclusion with the invariant named: *no bond
+assignment whatsoever* lets the `n = 4` interleaved cross term reach the observed
+mirror-asymmetry ratio.
+
+Internal check that passed on the way: `pn,nn,nn` and `nn,pn,nn` agree to all
+digits, confirming `d₀` and `d₂` enter symmetrically as the `f₀²+f₂²` form requires.
+
+**Deliberately NOT formalised: the comparison to AME.** Lean carries the cap as
+pure algebra; what the cap is worth is an empirical question and belongs in the
+probe and this bean. (Owner preference: empirical predictions do not enter formal
+proofs.)
+
+### Item 2 — NO. The sum of squares is an `n = 5` accident.
+
+At `n = 6` with **three** re-crossings (`b₀b₁b₀b₂b₁b₃b₂b₄b₃`), symbolic in `q`,
+14 s:
+
+- **cross terms appear** — `d₀d₁`, `d₀d₃`, `d₂d₃` all carry nonzero coefficients,
+  where `n=5` had `f₀² + f₂²` **additively with no `f₀f₂` term**;
+- **`d₁` no longer drops** — degrees are `[2,2,2,2,1]` in `(d₀,d₁,d₂,d₃,d₄)`,
+  against `[2,0,2,1]` at `n=5`. So "the never-recrossed bond drops out" is also
+  not general.
+
+**What DOES generalise, now 3-for-3:** the Markov-**peeled** bond factors out
+linearly, `Δ_n = f_last · (z²−hz−1) · K_n`, at `n = 4, 5, 6`.
+
+### 🛑 The fit hazard this exposes, and it is the more important half
+
+Max `|ratio|` over all assignments, at the proton anchor:
+
+    n = 4   0.2057040773      AME target NOT reachable
+    n = 5   0.3928278687      reachable
+    n = 6   0.4935268768      reachable
+
+The envelope **grows strictly with word length** and is bounded by 1 — since
+`ratio = (a−b)/(a+b)` with `b` the mirror image, `|ratio| < 1` exactly while `a`
+and `b` share a sign, and the bound is approached as more dressings enter the
+kernel. **A long enough word can be made to bracket any target below 1.** So the
+`n = 4` cap is a real exclusion, and `n ≥ 5` is **not a prediction**: reaching the
+observed ratio by choosing `n`, or by choosing the assignment, is selection
+against the target and is forbidden (§NO FITTING). No assignment at `n = 5` even
+equals the target — the nearest bracket it at `0.2058` and `0.3022`.
+
+### Status
+
+Items 1 and 2 are closed. Bean stays **`todo`**: item 3 is unchanged and is the
+one that matters — **which word class a nucleus actually is** (`qou-5vhf`). Until
+that is derived independently, nothing here predicts anything, and the production
+atom word is sequential, so no production number moves.

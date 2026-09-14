@@ -364,6 +364,120 @@ def main() -> int:
         f"OPEN at n=5.",
     )
 
+    # ======================================================================
+    # SECOND TRANCHE (qou-vwu3 items 1 and 2)
+    # ======================================================================
+
+    # ---- item 1: the parity ratio in closed form, and its CAP --------------
+    #
+    # From section 2 the odd part is (h/2)*T_z and the even part is the constant
+    # z - h/2 = (q^4+1)/(2q(q^2+1)).  Their quotient collapses:
+    slope = sp.cancel((q ** 4 - 1) / (q ** 4 + 1))
+    f_sym = z_D + d2
+    tz = sp.symbols("tz")
+    # d = -h/2 + (h/2) T_z  is the T_z parameterisation of the dressing
+    d_of_tz = -h_q / 2 + (h_q / 2) * tz
+    f_tz = z_D + d_of_tz
+    odd_tz = sp.cancel((f_tz - f_tz.subs(tz, -tz)) / 2)
+    even_tz = sp.cancel((f_tz + f_tz.subs(tz, -tz)) / 2)
+    check(
+        "RATIO_IS_EXACTLY_LINEAR_IN_Tz_WITH_SLOPE_q4m1_OVER_q4p1",
+        sp.simplify(sp.cancel(odd_tz / even_tz) - slope * tz) == 0,
+        "odd/even = ((q^4-1)/(q^4+1)) * T_z EXACTLY -- not merely bounded by it. "
+        "So on the physical range |T_z| <= 1 the n=4 parity ratio is CAPPED at "
+        "(q^4-1)/(q^4+1), attained only at the pure like-pairs T_z = +-1. "
+        "Formalised sorry-free as bondOfTz_parity_ratio_cap / crossTerm_parity_ratio_cap.",
+    )
+
+    # ---- item 2: does the n=5 sum-of-squares GENERALISE?  n=6 decides. -----
+    #
+    # n=5 gave Delta_5 = f3 * C * (f0^2 + f2^2 + c) -- quadratic, ADDITIVE, no
+    # f0*f2 cross term, and d1 absent.  If that shape were general the route
+    # would have a clean structure.  It is not.
+    log("n=6: tracing the three-interleaving word pair (symbolic q)")
+    d4 = sp.symbols("d4")
+    sigma6, tr6 = route_rep(6, q)
+    I64 = sp.eye(64)
+    g6 = [sigma6(i) for i in range(5)]
+    cc = [g6[0] + d0 * I64, g6[1] + d1 * I64, g6[2] + d2 * I64,
+          g6[3] + d3 * I64, g6[4] + d4 * I64]
+    D6 = sp.cancel(sp.together(
+        tr6(cc[0] * cc[1] * cc[0] * cc[2] * cc[1] * cc[3] * cc[2] * cc[4] * cc[3])
+        - tr6(cc[0] * cc[0] * cc[1] * cc[1] * cc[2] * cc[2] * cc[3] * cc[3] * cc[4])))
+    log("n=6: difference formed")
+    D6e = sp.expand(D6)
+
+    check(
+        "N6_PEELED_BOND_STILL_FACTORS_LINEARLY_three_for_three",
+        sp.degree(D6e, d4) == 1
+        and sp.simplify(sp.cancel(sp.together(D6 / (z_D + d4)))).has(d4) is False,
+        "Delta_6 is degree 1 in d4 and Delta_6/(z+d4) is free of d4, so the "
+        "Markov-PEELED bond factors out linearly at n = 4, 5 AND 6.  That is the "
+        "one shape that does generalise.",
+    )
+    check(
+        "N6_THE_SUM_OF_SQUARES_DOES_NOT_GENERALISE_cross_terms_appear",
+        D6e.coeff(d0, 1).coeff(d1, 1) != 0 or D6e.coeff(d0, 1).coeff(d3, 1) != 0,
+        f"At n=5 the interleaved bonds entered as f0^2 + f2^2 with NO cross term. "
+        f"At n=6 genuine pairwise couplings appear (d0*d1, d0*d3, d2*d3 all carry "
+        f"nonzero coefficients), so the additive sum-of-squares is an n=5 ACCIDENT, "
+        f"not a general pattern.",
+    )
+    check(
+        "N6_THE_NEVER_RECROSSED_BOND_NO_LONGER_DROPS",
+        D6e.has(d1),
+        f"d1 is ABSENT at n=4 and n=5 and PRESENT at n=6 -- degrees "
+        f"{[sp.degree(D6e, x) for x in (d0, d1, d2, d3, d4)]} in (d0,d1,d2,d3,d4). "
+        f"So 'the non-recrossed bond drops out' is also not general.",
+    )
+
+    # ---- the achievable |ratio| envelope, n = 4, 5, 6 ----------------------
+    envelope = {}
+    if Q_50_DIGIT_STR is not None:
+        import itertools
+
+        # imported here as well as in the 3H/3He block below: a function-scope
+        # `from … import` later in the SAME function makes the name a local for the
+        # whole function, so using it before that line is an UnboundLocalError.
+        from _li_2_q_util import flavor_split_leading as _fsl  # noqa: E402
+
+        q0n = mp.mpf(Q_50_DIGIT_STR)
+        hh = q0n - 1 / q0n
+        zz = q0n ** 3 / (q0n ** 2 + 1)
+        CC = zz ** 2 - hh * zz - 1
+        dl = mp.mpf(str(_fsl(q0n)))
+        DD = {"pp": mp.mpf(0), "pn": -hh * (mp.mpf(1) / 2 - dl / 4), "nn": -hh}
+        Mn = lambda x: -hh - x  # noqa: E731
+        fn = lambda x: zz + x  # noqa: E731
+        c5n = (q0n ** 4 + 1) / (q0n ** 2 + 1) ** 2
+        K6f = sp.lambdify((q, d0, d1, d2, d3),
+                          sp.cancel(sp.together(D6 / ((z_D + d4) * markov_defect))),
+                          modules="mpmath")
+        fns = {
+            4: (1, lambda a: fn(a) * CC),
+            5: (3, lambda a, b, c_: fn(c_) * CC * (fn(a) ** 2 + fn(b) ** 2 + c5n)),
+            6: (5, lambda a, b, c_, e, g_: fn(g_) * CC * K6f(q0n, a, b, c_, e)),
+        }
+        for nn_, (slots, fx) in sorted(fns.items()):
+            vals = []
+            for ks in itertools.product(("pp", "pn", "nn"), repeat=slots):
+                A = fx(*[DD[k] for k in ks])
+                B = fx(*[Mn(DD[k]) for k in ks])
+                if A + B != 0:
+                    vals.append((A - B) / (A + B))
+            envelope[nn_] = max(abs(v) for v in vals)
+        check(
+            "ENVELOPE_GROWS_STRICTLY_WITH_WORD_LENGTH",
+            envelope[4] < envelope[5] < envelope[6],
+            f"max|ratio| over ALL bond assignments: n=4 {mp.nstr(envelope[4], 10)}, "
+            f"n=5 {mp.nstr(envelope[5], 10)}, n=6 {mp.nstr(envelope[6], 10)}.  "
+            f"ratio = (a-b)/(a+b) with b the mirror image, so |ratio| < 1 while a and b "
+            f"share a sign, and the envelope approaches 1 as more dressings enter the "
+            f"kernel.  A LONGER WORD CAN THEREFORE BE MADE TO BRACKET ANY TARGET BELOW "
+            f"1 -- reaching one by choosing n is selection against the target, not a "
+            f"derivation (AGENTS.md, NO FITTING).",
+        )
+
     # ---- the 3H / 3He mirror pattern, at the live dressings ----------------
     from _li_2_q_util import flavor_split_leading  # noqa: E402
 
@@ -458,6 +572,23 @@ def main() -> int:
                 "in one bond, which forces the parity ratio; at n=5 the interleaved bonds "
                 "enter quadratically, the mirror-even part becomes charge-dependent, and "
                 "the ratio is no longer forced. The word-class route is OPEN at n=5."
+            ),
+        },
+        "second_tranche": {
+            "parity_ratio_closed_form": "odd/even = ((q^4-1)/(q^4+1)) * T_z, exactly",
+            "n4_cap": "(q^4-1)/(q^4+1)",
+            "n4_cap_at_q0": (mp.nstr((mp.mpf(Q_50_DIGIT_STR) ** 4 - 1)
+                                     / (mp.mpf(Q_50_DIGIT_STR) ** 4 + 1), 20)
+                             if Q_50_DIGIT_STR is not None else None),
+            "n6_peeled_bond_still_factors": True,
+            "n6_sum_of_squares_generalises": False,
+            "n6_d1_drops": False,
+            "envelope_max_abs_ratio": {str(k): mp.nstr(v, 20) for k, v in envelope.items()},
+            "fit_hazard": (
+                "The achievable |ratio| envelope GROWS with word length and is bounded "
+                "by 1, so a long enough word brackets any target below 1. The n=4 cap "
+                "is a real exclusion; n>=5 is not a prediction unless the word class is "
+                "derived independently (qou-5vhf)."
             ),
         },
         "scope": (
