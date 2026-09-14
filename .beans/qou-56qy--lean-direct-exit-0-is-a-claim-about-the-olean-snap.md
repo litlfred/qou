@@ -500,3 +500,71 @@ displaced, then reasoned about it anyway.
 
 The new branch is verified good on its own terms; the gap is that no
 before/after comparison exists.
+
+--------
+
+**2026-09-14, RE-MEASURED on `main` `d534ac2a8e`: the drift has MORE THAN
+DOUBLED, and the number that governs whether a green means anything was never
+recorded.**
+
+This bean's headline is "305 modules stale", measured 2026-09-05. Nine days
+later, using **the sweep's own definition** rather than a second spelling of the
+question (`scripts/lean-library-sweep.py --report`, added in the same PR so this
+is one command rather than an import of the module's internals):
+
+```
+modules in graph                              2872
+never built (no olean at all)                 123
+changed (source newer than its own olean)     683   <- the bean's 305
+standard-dirty (snapshot cannot vouch)        683
+DIRTY CLOSURE (changed + their importers)     1252  (43.6% of the library)
+clean in snapshot                             1620
+```
+
+**305 -> 683.** The drift compounds; it does not drain. And **1252** is the
+figure that actually decides whether a `lean`-direct exit 0 is evidence about
+`main` — a module is untrustworthy if anything it imports moved, not only if it
+moved itself — and this bean never carried it.
+
+**Open item 1 is closed but does NOT generalise.** `cscb` / `qou-e7xv` swept the
+content-block siblings to 938/938 green. That is the *sibling* population. The
+*library* population above is a different set and is 43.6 % dirty.
+
+**Two packages neither sweep covers, quantified:** UGB is **23 of 29 never
+built** (79.3 %), Fred2005 has **no olean tree at all**. AGENTS.md notes the
+scripts are QOU-only; these are the numbers behind that note.
+
+**The failure mode recurred, and was found the same way it was found the first
+time — by accident.** Building #7337 I hit
+`QOU.MathlibExt.DisjointBlockTraceLaw`: cached olean 2026-09-07, source
+2026-09-13, `unknown identifier 'sandwich'` (defined at line 548, added after
+the snapshot). Red against the cache, clean against source. The whole live
+bond-product / colimit cone is dirty — `OcneanuTrace`, `MarkovBondFactor`,
+`PureBondChainProduct`, `InteriorMarkovOfBraidedTower`,
+`ProductionChainBondProduct`, `SchurWeyl.MarkovTraceInstance` — and #7274 is
+committing into it now.
+
+**RETRACTED before it was written anywhere durable: a "239 re-restorable / 77
+irreducible" split.** The reasoning was that 2248 of 2753 QOU oleans here carry
+mtime **2026-08-29** while `refs/heads/lake-cache/qou-v4-24-0` is
+`a792c46d01b6e350` — the head AGENTS.md records as a **2026-09-06** reseed — so
+most of the drift would vanish on a re-restore. **`tar` preserves mtimes**, so a
+seed built incrementally on top of a restore carries old dates too, and the two
+cases are indistinguishable from here. Nor is this tree the seed as-published:
+`mathlib` 3407 against the recorded 3480, QOU 2751 against 2702 — a restore plus
+local rebuilds.
+
+Settling it costs a ~1.7 GiB fetch and this container has **642 MB free**
+(`df` reads 252 G at 99 %; the real limit is the ~38 G per-session quota, and
+deleting a 2.4 G *hardlinked* shadow returned 12 MB). So **remedy #2 (reseed)
+stays open and, separately, cannot be executed from a container in this state** —
+worth knowing before someone plans it as an idle-pass job.
+
+**Open work, updated.**
+1. ~~Sweep the 263 content-block siblings~~ — done, 938/938 green (`cscb`).
+2. **Reseed** — still open, still unmeasured, and needs a container with room.
+3. **Decide the AGENTS.md wording** — still open. §"VERIFY a single file with
+   lean-direct" now carries a `qou-56qy` caveat block, but does not give the
+   reader a way to find out whether *their* file is in the dirty 43.6 %.
+   `--report --only <prefix>` is that way; whether AGENTS.md should say so is an
+   owner call, not taken here.

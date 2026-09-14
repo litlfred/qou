@@ -214,6 +214,134 @@ rule to hypothesis carriers — but it changes another agent's measured
 criterion, so it is not mine to make.
 
 
+## HeckeAnyonicSubstrate — both carriers closed (PR #7357, 2026-09-14)
+
+`proof-claims-unencoded` **9 -> 7**; `total_defects` 70 -> 68; review ledger 321 -> 319.
+Grepping the audit run for `HeckeAnyonic` now returns nothing.
+
+**Four defects, two of them not in the ledger.**
+
+1. Library `heckeQuadratic : Prop` — ENCODED from the block's own displayed
+   equation `(T_{s_i} - q)(T_{s_i} + 1) = 0`, and CONSUMED by
+   `braidAction_injective` (first reader of the field in the corpus).
+   `NormalForm` gained `AddCommGroup`/`Module R` instance fields, which the
+   field's own docstring had already named as the blocker.
+2. **The `.ts` lean.ref pointed at a DELETED declaration.** Not flagged
+   anywhere. `qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate` was removed
+   2026-09-05 by the `qou-k4oq` retraction; the manifest was never updated.
+3. Content stub deleted (§0a shadowing stub) — also the same-namespace
+   duplicate the sibling-divergence audit reports.
+4. File header enumerated "observation-functor compatibility", which no field
+   carries and none ever did. Corrected (it CANNOT be encoded here — no tau);
+   the content lives at `KazhdanLusztigClassicalLimit.kl_compatible_with_tau`.
+
+**2 and 3 hid each other.** Ref resolution checks the SIBLING FIRST, so the
+dangling ref resolved to the stub beside it and validation stayed green.
+Neither is visible while the other is present — worth remembering as a shape.
+
+**Left open, deliberately (author's call, not mine).** The class is STILL
+satisfiable by a degenerate model (`zeroQCounterModel` at q=0; `PUnit` at any
+q, already in local/lean-generation). Encoding more fields will not change it:
+the conjecture's content is EXHAUSTION, and exhaustion cannot be stated by a
+class whose INSTANCE chooses `NormalForm`. Fixing it means making
+`NormalForm`/`braidAction` caller-supplied parameters — the `DimMasterPentagon`
+shape from #6671 — a class-arity change reaching `KazhdanLusztigClassicalLimit`,
+`RootOfUnityMTCTruncation` and `lusztig-canonical-basis-q-eq-1`.
+
+**Two TRAPs measured this session, both about the tooling, not the corpus:**
+
+- `lean-shadow-verify.sh` keys staleness on the source's GIT COMMIT DATE, so it
+  CANNOT see uncommitted work. My first run reported `rebuild=0` and 3x EXIT=0
+  against the OLD olean — a false green on the file I was editing. Commit
+  first, then sweep; `rebuild=N>0` is the signal the run means anything.
+- The vacuity ledger does NOT self-prune, though
+  `local/lean-proof-vacuity-audit` says it does. After the fix,
+  `--review-ledger` left both keys and did not write the file;
+  `--check-ledger` exits 0 with an entry pointing at a DELETED path. The last
+  shrink (350 -> 321) was an explicit `33 deleted` commit. Prune by hand.
+
+**Remaining 7:** HadronFibreEmbedding, DegreeZeroDatum, RungRule,
+TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
+BringPeriodSublattice, TannakaKreinReconstruction.
+
+## BringPeriodSublattice / magic-numbers-bring (PR #7359, 2026-09-14)
+
+`proof-claims-unencoded` **9 -> 8** on main's base (the 8 still holds BOTH
+HeckeAnyonicSubstrate carriers, fixed on #7357 and not yet in main). Combined
+once both land: **6**.
+
+**The ledger flagged the SMALLER half again.** It flags
+`structure BringPeriodSublattice`'s two universe-`Prop` fields
+(`s5_stable`, `tau_stable`). The bigger defect was unflagged:
+**`MagicNumbersBring` is declared TWICE with different fields and OPPOSITE
+dispositions** —
+
+- library `QOU/Conjectures/MagicNumbersBring.lean` (`QOU.Conjectures`):
+  no instance, with a standing comment explaining that the identity model
+  `magicLattice n := n` "discharges rank_eq_magic by rfl for ANY set of
+  naturals ... captures none of the conjecture's content";
+- content sibling (`QOU.AlgebraicSubstrate`): a global
+  `instance canonical` that IS that identity model (`rank := n`,
+  `s5_stable := True`, `tau_stable := True`).
+
+So one file declared the conjecture open and the file beside it closed it
+using the construction the first one names and rejects. Deleted the sibling
+(§0a shadowing stub + §3b-tax fabricated instance), repointed the ref to
+`qou:QOU.Conjectures.MagicNumbersBring`. Zero consumers of
+`ranks_match_magic_set` / `BringPeriodSublattice` / the sibling `magicSet`.
+
+**PATTERN, now twice in two carriers — worth expecting on the rest.** In both
+HeckeAnyonicSubstrate and this one, the ledger-flagged bare-`Prop` field was
+accompanied by a LARGER unflagged defect in the same file: a dangling
+`lean.ref` there, a fabricated instance here. The detector keys on field
+types and cannot see either. **When you open a flagged carrier, read the whole
+file and its `.ts`/`.jsonld`, not just the flagged field.**
+
+**Also: `ranks_match_magic_set` was vacuous independently of the class** —
+`exists L, L.rank = n` is satisfied by `<n, True, True>` for every n,
+because `rank` is a free `Nat` field. A conditional theorem can be vacuous
+for a reason that has nothing to do with the conjecture it cites.
+
+**Branch hygiene note:** I cut this branch from the HeckeAnyonicSubstrate
+branch by mistake, so #7359 initially carried #7357's six commits.
+Rebased `--onto origin/main` and force-pushed before any review. Check
+`git diff --name-only origin/main...HEAD` after `git checkout -b`.
+
+**Remaining 6** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
+RungRule, TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
+TannakaKreinReconstruction.
+
+
+## KnotOperator / universal-ilp-algorithm (PR #7359, 2026-09-14)
+
+`proof-claims-unencoded` **8 -> 7** on this branch (PR running total 9 -> 7;
+combined with #7357 once both land: **5**).
+
+**THIRD time the flagged field was the smaller half.** And this one shows why
+"is the field consumed?" is the WRONG test: `is_knot : Prop` WAS read —
+`universal_ilp` had `K.is_knot AND ...` — but reading a field whose value the
+CONSTRUCTOR picked constrains nothing. Parameterised it
+(`IsSingleComponent` caller-supplied) and proved the structure refutable:
+`knotOperator_isEmpty_of_never_single_component`.
+
+**The larger unflagged half: `gram_matrix` is the ZERO matrix**, so
+`frobenius_positive` is `0 >= 0` and the whole LP predicate holds of every
+operator. Its docstring already SAID this and nothing checked it; now
+`universal_ilp_holds_of_zero_gram` proves it, so it stops compiling the moment
+a real Gram lands.
+
+**Corpus correction while there:** that docstring called the intended
+Halverson-Ram Gram "sharper". Under convention D it is SINGULAR —
+`mass-theory/frobenius-gram-matrix`: `y_(1^3) = 0` symbolically, the (1^3)
+block IS the radical, `det G = 0` exactly, `G_INV` gone and `G_PINV` on
+`H_3(q)/rad` in its place. **NOT wired** — `frobenius_positive` over a rank-5
+form is a different condition and the radical's treatment is a modelling
+choice. Author's call.
+
+**Remaining 5** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
+RungRule, TransferMatrixEigenphase (ledger `legit` — leave),
+TannakaKreinReconstruction.
+
 ## HadronFibreEmbedding (PR #7360, 2026-09-14) — the ledger said FIXED and it was not
 
 `proof-claims-unencoded` **9 -> 8** on main's base. With all three PRs landed: **4**.

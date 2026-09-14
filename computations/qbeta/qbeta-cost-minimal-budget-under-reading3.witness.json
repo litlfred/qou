@@ -1,0 +1,175 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-14T08:13:26.134343+00:00",
+  "commitSha": "d5fcd0f93a1b1f0cd81c6d6977f3c5ab43e2b794",
+  "assertions": [
+    {
+      "name": "y_1cubed_vanishes_under_convention_D",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "y_(3) + 2 y_(2,1) = 1 to 0.0, so y_(1^3) = 0 exactly and reading 3 sees only (3) and (2,1)"
+    },
+    {
+      "name": "chi21_of_the_identity_is_the_block_dimension",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "chi_(2,1)(1) = 2.0 = 2, the block dimension -- the extraction is calibrated before any verdict"
+    },
+    {
+      "name": "reading1_is_feasible_NOWHERE_in_this_family",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "0 reading-1-feasible words across all k = 0..3 and both nucleons, out of 4144 checked. Literal Matrix.PosSemidef on every block admits nothing here"
+    },
+    {
+      "name": "reading1_fails_even_at_the_EVEN_lengths_parity_permits",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "k = 1 and k = 3 are total lengths 10 and 12, which alt_psd_iff_even permits, and reading 1 still admits ZERO. So the (2,1) block excludes them independently of parity -- the parity theorem is not the binding constraint even where it applies, which CORRECTS my own sibling-probe framing of reading 1 as annihilating 'by parity'"
+    },
+    {
+      "name": "minimal_cost_selects_k_zero_not_the_live_eleven",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the empty dressing is reading-3-feasible (4/8 proton, 4/8 neutron), so the cost-minimal word is the 9-letter core+quark with NO gluon dressing. The live model is k = 2"
+    },
+    {
+      "name": "excluding_the_empty_dressing_gives_one_still_not_two",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "frobeniusSelected_nil records that the crossing-count cost makes the EMPTY word trivially selected, which is why the core selection restricts to non-zero vertex powers. Applying the same exclusion to the dressing gives k = 1 (length 10), NOT k = 2. So the live budget is unselected under both conventions"
+    },
+    {
+      "name": "the_cost_minimal_set_does_NOT_pin_a_unique_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "proton 4 words / 2 traces, neutron 4 / 2. FrobeniusSelected.cost_eq gives equal COST, not a unique word, and measured the words do not agree on the trace. A 2-fold degeneracy survives the selection and is NOT closed here"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8746,
+  "computation": "qbeta-cost-minimal-budget-under-reading3",
+  "scriptFile": "qbeta_cost_minimal_budget_under_reading3_probe.py",
+  "scriptHash": "ef91ad30019d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_cost_minimal_budget_under_reading3_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_cost_minimal_budget_under_reading3_probe.py"
+  },
+  "description": "Reading 3 admits every dressing count, so it does not fix the crossing budget. The corpus's own selection principle does: FrobeniusSelected takes the MINIMAL-COST reading-3-feasible candidate with cost = crossing count (the Lean's own instantiation, which selects beta_Bor for the core). Applied to the dressing that gives k = 0 -- the 9-letter word, no gluon crossings -- and k = 1 if the empty dressing is excluded the way frobeniusSelected_nil forced for the core. Either way the live 11-letter nuc11_interleaved (k = 2) is NOT what the principle selects. The principle fixes the BUDGET, not the word: four assignments tie at k = 0 carrying two distinct traces per nucleon. And reading 1 is feasible NOWHERE in this family (0 of 8/48/288/1728), including at the EVEN lengths the parity theorem permits -- so it is annihilating outright, not by parity, correcting my own framing.",
+  "data": {
+    "cost_function": {
+      "source": "QOU/Mass/GammaGammaFrobeniusSelection.lean, frobeniusSelected_borromean",
+      "cost": "fun w => (w.length : R) -- the crossing count",
+      "principle": "FrobeniusSelected = reading-3-feasible AND minimal cost among feasible candidates",
+      "caveat": "extending the H_3 core's cost to the dressing is an extrapolation of the corpus's principle, not a theorem"
+    },
+    "feasibility_by_k": {
+      "k0": {
+        "length": 9,
+        "parity": "odd",
+        "reading3_p": 4,
+        "reading3_n": 4,
+        "reading1_p": 0,
+        "reading1_n": 0,
+        "total_p": 8,
+        "total_n": 8
+      },
+      "k1": {
+        "length": 10,
+        "parity": "even",
+        "reading3_p": 18,
+        "reading3_n": 18,
+        "reading1_p": 0,
+        "reading1_n": 0,
+        "total_p": 48,
+        "total_n": 48
+      },
+      "k2": {
+        "length": 11,
+        "parity": "odd",
+        "reading3_p": 149,
+        "reading3_n": 145,
+        "reading1_p": 0,
+        "reading1_n": 0,
+        "total_p": 288,
+        "total_n": 288
+      },
+      "k3": {
+        "length": 12,
+        "parity": "even",
+        "reading3_p": 594,
+        "reading3_n": 594,
+        "reading1_p": 0,
+        "reading1_n": 0,
+        "total_p": 1728,
+        "total_n": 1728
+      }
+    },
+    "selection": {
+      "k_min": 0,
+      "k_min_excluding_empty": 1,
+      "live_model_k": 2,
+      "verdict": "the live 11-letter nuc11_interleaved is cost-minimal under NEITHER convention",
+      "residual_degeneracy": {
+        "p": {
+          "n_words": 4,
+          "traces": [
+            "0.61212596279260938879",
+            "0.62633536813985800005"
+          ]
+        },
+        "n": {
+          "n_words": 4,
+          "traces": [
+            "0.48305052462229010823",
+            "0.49023201814089711088"
+          ]
+        }
+      }
+    },
+    "scope": {
+      "class": "(a) scope-limited",
+      "unconditional": [
+        "reading 1 admits 0 words in this family at k = 0..3",
+        "the empty dressing is reading-3-feasible",
+        "k = 2 is not the reading-3 cost minimum, with or without the empty dressing",
+        "the cost-minimal set carries 2 distinct traces per nucleon"
+      ],
+      "not_claimed": [
+        "that k = 0 should be adopted -- owner's call, and it hangs on the unstated empty-dressing convention",
+        "that the crossing-count cost is the right cost for the dressing",
+        "any re-scoring of the L2 dashboard"
+      ],
+      "no_selection_by_accuracy": "no Q_beta residual is computed here, deliberately -- the selection is by derived cost, never by proximity to the measured value"
+    },
+    "q0_pin": "proton",
+    "q0_value": "1.1099785827513808075916690956107688798744991218736"
+  }
+}
