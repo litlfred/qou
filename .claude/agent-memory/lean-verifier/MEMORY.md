@@ -407,6 +407,19 @@ block's sidecar (128 files for one block) — revert all but yours.
 
 ## TRAP — a theorem that IS a refutation needs more than the gate → `verification-harness.md` §19
 
+**A `False`-CONCLUDING theorem is a different animal — §19a.** The stock
+instruction *"prove `0 = 1` from the same hypotheses; if you can, they are
+contradictory and the theorem is vacuous"* **cannot discriminate**: `False.elim`
+gives you `0 = 1` for every *true* such theorem, and the hypothesis set is
+unsatisfiable *necessarily* (else the theorem is false). Both questions are
+answered before you open the file. The discriminating test is **DROP-ONE** — for
+each hypothesis, a witness satisfying the other `n−1` **and refuting that one**,
+stated as one conjunction so the second half is forced. Measured 2026-09-14: 6/6
+on `no_triangle_of_triples`. And put a **negative control on your own adversarial
+file** (4-5 deliberately false `example`s, require exit 1 at each seeded line) —
+the §19 guard-the-harness rule, which does not otherwise apply when nothing is
+`sed`-mutated.
+
 `exit 0` + clean `#print axioms` does **not** detect an unused or unsatisfiable
 hypothesis, and for a refutation that failure mode "proves" a route dead on
 nothing. A red mutant proves only **syntactic** dependence (`rewrite failed`);
