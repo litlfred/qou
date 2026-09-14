@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-13T20:08:27Z
+updated_at: 2026-09-14T06:34:43Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -235,7 +235,9 @@ answer); route (3) needs the von Neumann inductive limit (open R&D).
 earlier ranking accordingly.
 
 
-## ROUTE (2) — the positive half of the μ̄ prune, PROVED 2026-08-30
+## ROUTE (1) [was mis-headed ROUTE (2)] — the positive half of the μ̄ prune, PROVED 2026-08-30
+
+> **Heading corrected 2026-09-14.** This read *"ROUTE (2)"* and the body says "route (2)" throughout. **The object is route (1)'s.** These three lemmas live in `MilnorTripleLinkingMagnus.lean` and constrain functionals of `μ̄₁₂₃`, a Milnor invariant — route (1)'s apparatus. Route (2) is the Möbius/knot-energy class, whose object is a conformally-invariant integral, not a Milnor invariant. The misfiling made route (1) read as pruned-and-abandoned while its **positive half was credited to a different route**, which is how a live branch goes missing. Body text left as written (it is the dated record); only the heading and this note are new.
 
 The prune I contributed from `qou-bn8e` (route (1)'s linear ansatz dies:
 `odd_symmetric_functional_vanishes`) said what `E_EM` may **not** be. Route (2)
@@ -2043,3 +2045,150 @@ never unfolded, and the `rw` chain then reported "did not find an occurrence" �
 an error that reads like a wrong lemma and was a wrong *name*. Rewritten to bind
 the six `innerPairEnergy_congr_of_sep_eq` instances as `have`s and pass them to
 `simp`, which is also robust to rewrite order.
+
+
+---
+
+## 2026-09-14 — 🛑 ROUTE (1)'s LENGTH-3 RUNG IS CLOSED BY MEASUREMENT, and this bean does not cite the measurement
+
+Third mutual-invisibility case on this bean in two days (after `qou-9v7t` and
+`qou-a2w5`). Corpus-grepped: **this bean cites neither
+`computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py` nor bean
+`qou-2g9j`**, and that probe answers route (1) directly.
+
+### The measurement
+
+`milnor_mubar_vanishes_on_every_triple_probe.py` (bean `qou-2g9j`, successor to
+`qou-768r` route 3) computes `μ̄` on **every triple** of the canonical atom word's
+closure:
+
+> **`μ̄ = 0` on EVERY triple, in BOTH crossing-resolution branches, for ²H, ³H,
+> ³He, ⁴He, ⁶Li, ⁸Be, ¹⁰B** — across all three indeterminacy classes
+> (`Δ = 0` structural, `Δ = 2` the residual, `Δ = 1` no information by
+> definition).
+
+**Its positive controls are what make the null worth anything**, and they run
+the *same code path*: the Borromean rings (closure of `(σ₁σ₂⁻¹)³`) asserted
+**nonzero**, the Hopf link asserted at `μ = 2, lk = 1`. So the zeros are a
+result, not a broken implementation.
+
+**Re-run this session: 5/5 assertions pass**, including
+`triples_of_the_carrier_with_NONZERO_mubar = 0`. Needed
+`PYTHONPATH=computations` — it is one of the `_path_bridge` bootstrap scripts
+(`qou-0e1t`).
+
+### Why this closes route (1)'s length-3 rung, and it is NOT the chirality argument
+
+The two existing prunes constrain the **shape** of `E_EM` as a function of
+`μ̄₁₂₃`: odd is forbidden (`odd_symmetric_functional_vanishes`), and the sign is
+invisible (`exchange_symmetry_forces_agreement_on_pm_one`). What survived was
+the **even** branch — `|μ̄₁₂₃|`, `μ̄₁₂₃²` — kept alive by
+`even_symmetric_functional_can_be_nonzero`, whose witness `F m = m²` is nonzero
+**precisely because the Borromean sits at `μ̄₁₂₃ = ±1`**.
+
+**The derived carrier does not sit at ±1. It sits at 0.** So `F(0) = 0` for that
+witness, and for every functional `F` the value is the single constant `F(0)` at
+**every** isotope. Two consequences:
+
+1. **No charge-antisymmetric content.** `b3_asym` would be
+   `F(μ̄(³H)) − F(μ̄(³He)) = F(0) − F(0) = 0`.
+2. **No `κ(A)` profile.** A constant cannot produce an A-dependent one, and
+   `κ(A)` spans A = 3…63.
+
+This is **stronger than the chirality prune and independent of it** — it does not
+care whether `F` is even, odd, or neither.
+
+### The escape it closes
+
+"Use a different triple" / "use a symmetric function of all of them" is the move
+an author reaches for here, and it does not work: the probe measured **every**
+triple, so the whole vector is zero and any functional of the vector is equally
+constant. Formalised below rather than left as prose.
+
+### 🟢 SETTLED: my question (b) — spatial vs isospin mirror — and the answer is moot
+
+I asked whether `exchange_symmetry_forces_agreement_on_pm_one` blocks the EM
+target, since it constrains behaviour under one reflection while `b3_asym` is a
+p↔n difference. **Read at the source: `swappedLongitude` exchanges "the two
+like-charged components"** — identical-particle exchange, neither a spatial
+mirror nor p↔n. So the two reflections are **genuinely different** and the
+chirality prune does **not** reach `b3_asym`.
+
+**But it does not matter**, because the vanishing above kills the channel
+regardless of reflection. Recorded because the distinction is real and a future
+agent will otherwise re-ask it.
+
+### 🛑 SCOPE — and this is where route (1) is NOT dead
+
+Scope (a) **on the derived carrier as computed**, inherited verbatim from the
+probe, which states it itself: it does **not** say Milnor invariants vanish on
+every carrier (the Borromean control in that same file is a counterexample), and
+**it does not touch invariants of length > 3**.
+
+**Route (1)'s own title is "higher-order Milnor / third-order helicity", so
+length > 3 IS its stated scope.** What is closed is the **length-3 rung**. And
+there is a structural reason the next rung is the natural one: when all length-3
+Milnor invariants vanish, the length-4 invariants become **well-defined with
+lower indeterminacy**. So the vanishing is not only a prune — it is what makes
+the next rung askable.
+
+**NOT CLAIMED:** that any length-4 invariant is nonzero on this carrier
+(unmeasured); that route (1) is dead; that the carrier is final — it is not, the
+census assignments are retired (`qou-ales`, owner ruling 2026-09-08).
+
+### 🛑 AND THE COMMITTED WITNESS IS STALE IN ITS COUNTS — recorded for `qou-2g9j`
+
+Re-running reproduces the **headline** but not the **population**:
+
+| assertion | committed | fresh (2026-09-14) |
+|---|---|---|
+| `triples_of_the_carrier_with_NONZERO_mubar` | 0 | **0** ✔ |
+| `delta_2_triples_examined` | **256** | **173** (−32.4 %) |
+
+`Δ = 2` is the class the probe's own docstring calls *"THE RESIDUAL — one bit
+available, and it is 0"*, so the residual population itself shrank by a third.
+
+**Cause: import-cone drift, not a producer edit.** The producer's only commit
+since (`6b2692f7b9`) *creates* the file on this path — a rebase artifact, +328
+lines, no content edit — while `canonical_braid_crossings.py` /
+`mass_at_3A_proper.py` moved three times in the same window (`ee1ff95d6a`,
+`9cef96fbf0`, `99e2ddc1d9`). The canonical braid word changed underneath a
+source-stable producer: exactly the class AGENTS.md flags as **invisible to
+`git diff <producer>`**.
+
+**Witness deliberately NOT committed.** The fresh run also **degrades the
+environment block** — this container lacks `clarabel`, `scipy`, `sympy`, and the
+producer's own guard says so: *"the numbers can be identical while the
+provenance silently degrades."* Reverted rather than commit a weaker record. The
+count correction belongs in a run with the full environment.
+
+### Method note against myself
+
+Four times this session I wrote a conditional label into a command
+(`"(empty above = none found)"`) **before** seeing its output, and was wrong every
+time — twice on greps that returned hits, once on a witness diff that had
+substantive changes, once on a producer-history check that found a commit. A
+verdict baked into an invocation is not a check. Stopped.
+
+### 🟩 FORMALISED — three theorems, `MilnorTripleLinkingMagnus.lean`
+
+`lean -DautoImplicit=false -s 65536` → **exit 0, zero bytes of output**.
+
+| theorem | axioms |
+|---|---|
+| `constant_of_vanishing_invariant` | **none at all** |
+| `constant_of_all_triples_vanishing` | `[Quot.sound]` |
+| `no_asymmetry_of_all_triples_vanishing` | `[propext, Quot.sound]` |
+
+All sorry-free. The second is the one that closes the escape — it quantifies over
+a functional of the **whole family** of triple invariants (`F : (κ → ℤ) → ℤ`),
+not one triple, so "use a different triple" and "use a symmetric function of all
+of them" are both covered.
+
+**The docstring says plainly that the mathematical content is the HYPOTHESIS,
+not the proofs.** The proofs are a rewrite and a `funext`; they are short because
+the work was the computation. Writing them down buys two things: the prune is
+checkable against the probe by a reader who has neither in context, and the
+escape is closed in the statement rather than in prose that a later agent can
+reasonably not find. Recorded this way deliberately, so it is not mistaken for a
+theorem doing work it is not doing.

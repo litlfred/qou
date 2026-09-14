@@ -264,4 +264,72 @@ theorem exchange_symmetry_forces_agreement_on_pm_one (F : ℤ → ℤ)
     F 1 = F (-1) := by
   rwa [mubar_borromean_eq_one, mubar_swapped_eq_neg_one] at hsym
 
+/-! ## The third prune: the carrier's own μ̄ is ZERO, which closes the even branch
+
+The two prunes above are about the *shape* of `E_EM` as a function of `μ̄₁₂₃`:
+odd is forbidden (`odd_symmetric_functional_vanishes`), and the sign is
+invisible (`exchange_symmetry_forces_agreement_on_pm_one`). What survived was
+the **even** branch — `|μ̄₁₂₃|`, `μ̄₁₂₃²` — kept alive by
+`even_symmetric_functional_can_be_nonzero`, whose witness `F m = m²` is nonzero
+precisely because the Borromean sits at `μ̄₁₂₃ = ±1`.
+
+**The derived carrier does not sit at ±1. It sits at 0.**
+[`computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py`](../../../../../computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py)
+computes `μ̄` on **every** triple of the canonical atom word's closure and gets
+**zero** — for ²H, ³H, ³He, ⁴He, ⁶Li, ⁸Be, ¹⁰B, in both crossing-resolution
+branches, across all three indeterminacy classes. Its positive controls run the
+same code path: the Borromean is asserted **nonzero** and the Hopf link at
+`μ = 2, lk = 1`, so the zeros are a result and not a broken implementation.
+
+**The mathematical content below is that hypothesis, not the proofs.** The
+proofs are a rewrite and a `funext`; they are short because the work was the
+computation. What the statements buy is that the prune is written down in a form
+a reader can check against the probe, and — the part that matters — that it
+closes the escape an author would actually reach for.
+
+**The escape it closes.** Faced with "μ̄ vanishes on my triple", the natural move
+is *use a different triple*, or *use a symmetric function of all of them*. The
+second theorem covers that: a functional of the **whole family** of triple
+invariants is equally constant, because the family is pointwise zero. So the
+even branch is closed on the derived carrier, not merely inconvenienced.
+
+**Scope.** This is scope (a) **on the derived carrier as computed**, inherited
+verbatim from the probe. It says nothing about Milnor invariants of length > 3 —
+which is what this route's own title ("higher-order Milnor") names, and which the
+probe explicitly does not touch — and nothing about a future carrier. The
+Borromean control in that same probe is a standing counterexample to any reading
+of this as "μ̄ vanishes on every link".
+
+**Not claimed:** that a length-4 or higher Milnor invariant vanishes, or that
+this route is dead. Its length-3 rung is. -/
+
+/-- **A functional of an invariant that vanishes across a family is constant on
+    it** — so it supplies neither a difference between two members nor an
+    A-dependent profile.
+
+    Instantiate `ι` at the isotopes and `μ` at `μ̄₁₂₃` of a chosen triple: with
+    the probe's measured `hμ`, every `E_EM` built from `μ̄₁₂₃` — **including every
+    even one** — takes the same value at ³H and ³He. -/
+theorem constant_of_vanishing_invariant {ι : Type*} (F : ℤ → ℤ) (μ : ι → ℤ)
+    (hμ : ∀ i, μ i = 0) (i j : ι) : F (μ i) = F (μ j) := by
+  rw [hμ i, hμ j]
+
+/-- **The same, for a functional of the WHOLE family of triples** — which is the
+    escape a reader reaches for when told one triple vanishes.
+
+    `κ` indexes the triples; `μ i` is the isotope's full vector of triple
+    invariants. The probe's result is `∀ i t, μ i t = 0`, so the vectors are
+    equal and any `F` whatever — symmetric function, norm, maximum — is constant
+    across isotopes. -/
+theorem constant_of_all_triples_vanishing {ι κ : Type*} (F : (κ → ℤ) → ℤ)
+    (μ : ι → κ → ℤ) (hμ : ∀ i t, μ i t = 0) (i j : ι) : F (μ i) = F (μ j) := by
+  have h : μ i = μ j := funext fun t => by rw [hμ i t, hμ j t]
+  rw [h]
+
+/-- **Hence no charge-antisymmetric content**: the mirror difference this route
+    would have to supply is zero. -/
+theorem no_asymmetry_of_all_triples_vanishing {ι κ : Type*} (F : (κ → ℤ) → ℤ)
+    (μ : ι → κ → ℤ) (hμ : ∀ i t, μ i t = 0) (i j : ι) : F (μ i) - F (μ j) = 0 :=
+  sub_eq_zero_of_eq (constant_of_all_triples_vanishing F μ hμ i j)
+
 end QOU.BraidsAndKnots.MilnorTripleLinkingMagnus
