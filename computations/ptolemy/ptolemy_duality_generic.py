@@ -90,20 +90,6 @@ def _automorphisms_via_solve(fe, deg):
     return out
 
 
-def _flatten_algebraic(e):
-    """Drop AlgebraicNumber wrappers to plain expressions.
-
-    `factor_list(..., extension=alpha)` returns coefficients as AlgebraicNumber
-    nodes.  Such a node prints like an ordinary expression but carries its own
-    generator, so `Poly(expr, A)` raises "A**4 contains an element of the set of
-    generators" on an expression that looks like a polynomial in A.  Flattening
-    twice is deliberate: a quotient of two such nodes nests them.
-    """
-    f = lambda z: z.replace(lambda w: isinstance(w, sp.AlgebraicNumber),
-                            lambda w: w.as_expr())
-    return sp.expand(f(sp.expand(f(e))))
-
-
 def automorphisms(fe, deg):
     """Every root of the minimal polynomial IN K, as a polynomial g(t) of degree < deg.
 
@@ -111,31 +97,47 @@ def automorphisms(fe, deg):
 
     ROUTE: factor f over K = Q(alpha) and read off the LINEAR factors.  A root of f
     lies in K iff it is a root of a linear factor over K, so this is exactly the same
-    set as the equation-solving route above -- but it is a univariate factorisation
-    over a number field rather than a multivariate solve, which is why it runs in
-    fractions of a second where the other route does not finish.  This is a change of
-    ALGORITHM, not of definition: the object computed is unchanged.
+    set as solving f(g(t)) = 0 mod f for g's coefficients -- but it is a univariate
+    factorisation over a number field rather than a multivariate solve, which is why
+    it runs in fractions of a second where the other route does not finish.  This is
+    a change of ALGORITHM, not of definition: the object computed is unchanged.
 
-    Cross-checked three ways on `5_2` class 1 (see the audit doc): against the
-    solve route where that terminates, against the group axioms by direct
-    polynomial arithmetic mod f (identity present, closed under composition, every
-    element invertible), and against f(g(t)) == 0 mod f for every g returned.
+    Cross-checked three ways on `5_2` class 1 (see the audit doc): against the solve
+    route where that terminates, against the group axioms by direct polynomial
+    arithmetic mod f (identity present, closed under composition, every element
+    invertible -- `_check_group`, asserted on every run), and against
+    f(g(t)) == 0 mod f for every g returned.
 
-    Coefficients are rational automatically here: a linear factor over K has its
-    root in K by construction, so the numeric-embedding contamination the solve
-    route had to filter out cannot arise.
+    Coefficients are rational automatically: a linear factor over K has its root in K
+    by construction, so the numeric-embedding contamination the solve route had to
+    filter out cannot arise.
+
+    DO NOT reintroduce a substitution on `sp.rootof`'s return value.  Its SHAPE varies
+    with f and all three shapes occur in this corpus:
+
+        5_2   monic quartic      ComplexRootOf
+        L6a4  NON-monic quartic  Mul   125*CRootOf(64*_x^4 - 760*_x^3 + ..., 0)
+        m004  quadratic          Add   -11/2 - sqrt(3)*I/2   (solved in radicals)
+
+    while the factorisation writes its coefficients in terms of the bare CRootOf atom.
+    Substituting the whole `rootof` value therefore matched only part of the L6a4
+    expression and left a mixed t/CRootOf result, and substituting the atom instead
+    then failed on m004, which has no atom at all.  `to_number_field(r, alpha)`
+    re-expresses r in the power basis of alpha regardless of how either is spelled;
+    `.as_poly(t)` is then g itself.  (Both wrong versions were caught by the guard
+    below rather than returning a wrong automorphism count -- keep the guard.)
     """
     x = sp.Symbol('_x')
     fx = sp.expand(fe.subs(t, x))
-    rt = sp.rootof(fx, 0)
+    alpha = sp.AlgebraicNumber(sp.rootof(fx, 0))
     out = []
-    for fac, _mult in sp.factor_list(sp.Poly(fx, x), extension=sp.AlgebraicNumber(rt))[1]:
+    for fac, _mult in sp.factor_list(sp.Poly(fx, x), extension=alpha)[1]:
         pf = sp.Poly(fac, x)
         if pf.degree() != 1:
             continue                      # a root of f NOT in K -- K/Q is not normal
         c1, c0 = pf.all_coeffs()
-        gg = sp.expand(_flatten_algebraic(-c0 / c1).subs(rt, t))
-        if gg.has(sp.CRootOf) or gg.has(sp.AlgebraicNumber):
+        gg = sp.expand(sp.to_number_field(-c0 / c1, alpha).as_poly(t).as_expr())
+        if gg.has(sp.CRootOf) or gg.has(sp.AlgebraicNumber) or (gg.free_symbols - {t}):
             raise RuntimeError(f'root not expressible over Q in the power basis: {gg}')
         if gg not in out:
             out.append(gg)
