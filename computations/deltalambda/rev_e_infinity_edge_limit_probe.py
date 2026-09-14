@@ -418,6 +418,11 @@ print(flush=True)
 # --------------------------------------------------------------------------------------------
 print("E1  the FULL-ENUMERATION maximiser of #7305 against the shape class")
 _EX = json.load(open(os.path.join(_HERE, "rev-exact-maximiser-small-n.witness.json")))
+# The upstream producer's reach is an ENVIRONMENT VARIABLE (`REV_EXACT_KMAX`, default 10), so a
+# re-run without it silently narrows this calibration from k <= 12 to k <= 10 and nothing else
+# in the chain notices.  Record the reach so the narrowing is visible in the witness.
+_EX_KMAX = max(r["k"] for r in _EX["exact_rows"])
+print(f"    upstream enumeration reaches k = {_EX_KMAX} (REV_EXACT_KMAX; default 10)", flush=True)
 _e1 = []
 for _r in _EX["exact_rows"]:
     _k = _r["k"]
@@ -477,7 +482,8 @@ check(
     "E1 every exhaustively-found maximiser is in the shape class, and two independent evaluators "
     "reproduce its excess",
     not _e1_bad,
-    f"{len(_e1)} values of k (7..12, n = 28..78).  Each maximiser decomposes as a positive top "
+    f"{len(_e1)} values of k ({_e1[0]['k']}..{_e1[-1]['k']}, n = {_e1[0]['n']}..{_e1[-1]['n']}) — "
+    f"every k the committed enumeration covers above 6.  Each maximiser decomposes as a positive top "
     f"block, ONE contiguous run of -1 whose length is exactly s_t + s_b, and a positive bottom "
     f"block, with nothing in between — so the three-piece class is the shape the enumeration "
     f"FOUND, not a shape imposed on it, and `make_u` rebuilds each u byte-for-byte from that "
@@ -904,6 +910,7 @@ _wit = {
         "k_bot": K_BOT, "k_big": K_BIG, "separation": SEP,
     },
     "exhaustive_maximisers_E1": _e1,
+    "upstream_enumeration_kmax": _EX_KMAX,
     "k40_against_7331_E2": {
         "class": mp.nstr(sc(_best40), 24), "pr7331": mp.nstr(_k40_ref, 24),
         "difference_scaled": _e2_gap, "recording_floor_scaled": _e2_floor,
