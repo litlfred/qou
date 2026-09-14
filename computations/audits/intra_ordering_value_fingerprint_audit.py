@@ -101,21 +101,81 @@ DELIBERATE = {
         "its SUBJECT is the convention-C trace table that "
         "prop:q-hecke-seminormal-character-closure publishes; carrying C-era "
         "values is the finding, not a defect (qou-4383)",
+    "colour-weighting-trace-magnitude":
+        "its SUBJECT is the colour comparison — it holds the colour-BLIND and "
+        "the colour-weighted trace side by side to measure the gap, so both "
+        "frames are the measurement (qou-fv0s; found by the colour axis added "
+        "under qou-uujo)",
+    "colour-weighting-across-mixed-nuclei":
+        "the sibling of the above, extending that measurement from the "
+        "deuteron to T / 3He / 4He because the linear coefficient tr(A B) is "
+        "word-specific and does not transfer; same reason, same registry entry",
 }
 
 
-def fingerprints() -> dict[str, tuple[str, str, str]]:
-    """{15-sig-digit prefix: (atom, pin, ordering)} computed live."""
-    out: dict[str, tuple[str, str, str]] = {}
+def fingerprints() -> dict[str, tuple[str, str, str, str]]:
+    """{15-sig-digit prefix: (atom, pin, ordering, colour convention)} — live.
+
+    THE COLOUR AXIS IS THE SECOND SUPERSEDED STATE, added 2026-09-14
+    (bean `qou-uujo`). This swept `intra_order` only and always took
+    `pn_convention`'s default, so it could see the 2026-09-05 ordering ruling
+    and not the 2026-08-15 colour one. Tracing the ⁴He pin
+    `0.0553483351637685668` turned up a lineage of at least five states, of
+    which this audit covered two:
+
+        convention C, muon q₀          0.0553483458766980
+        convention C, proton q₀        0.0553483351637685
+        convention D, colour-BLIND     (the axis added here)
+        convention D, colour-weighted, grouped
+        convention D, colour-weighted, borromean   <- canonical
+
+    `binding_canonical` quotes the colour-blind deuteron by name as
+    `0.575090871629810316751633`, against `0.575172243917771870826535` for the
+    canonical convention, so these values are demonstrably in circulation.
+
+    **Convention C is deliberately NOT covered, and cannot be.** It is a
+    property of the TRACE, not the word: `Z_MARKOV` is a module constant at
+    `mass_at_3A_proper:121` with no flag, so no live fingerprint can be
+    computed for it. Adding it would mean transcribing literals, which is
+    exactly what this audit's design forbids — every fingerprint here is
+    recomputed, so a re-pin moves them rather than silently invalidating the
+    scan. A convention-C detector would need a different mechanism and should
+    not be bolted on here.
+
+    A lone nucleon has no p-n interface, so the two conventions give the SAME
+    number for `proton` and `neutron`. That is not a collision to report — the
+    entry is marked `either` and stored once.
+    """
+    out: dict[str, tuple[str, str, str, str]] = {}
     for pin, qs in PINS.items():
         q = mp.mpf(qs)
         for atom, (Z, N) in ATOMS.items():
             n = 3 * (Z + N)
             for order in ("grouped", "borromean"):
-                word = M.atom_braid_word_3A(Z, N, q=q, intra_order=order)
-                v = abs(B.tr_M_via_wenzl_bridge_mpfr(word, n, qs, dps=50))
-                out[mp.nstr(v, SIG_DIGITS).rstrip("0")] = (atom, pin, order)
+                # canonical convention FIRST, so a colour-independent atom is
+                # recorded under it and `strict_averaged` folds into `either`.
+                for conv in ("bring_color_weighted", "strict_averaged"):
+                    word = M.atom_braid_word_3A(Z, N, q=q, intra_order=order,
+                                                pn_convention=conv)
+                    v = abs(B.tr_M_via_wenzl_bridge_mpfr(word, n, qs, dps=50))
+                    key = mp.nstr(v, SIG_DIGITS).rstrip("0")
+                    prev = out.get(key)
+                    if prev is not None:
+                        if prev[:3] == (atom, pin, order):
+                            out[key] = (atom, pin, order, "either")
+                        continue
+                    out[key] = (atom, pin, order, conv)
     return out
+
+
+def _axis(order: str, conv: str) -> str:
+    """Which superseded axis a hit sits on — both are possible at once."""
+    bits = []
+    if order == "grouped":
+        bits.append("grouped")
+    if conv == "strict_averaged":
+        bits.append("colour-blind")
+    return "+".join(bits) if bits else "canonical"
 
 
 def scan_value(s: str, fps: dict) -> tuple | None:
@@ -305,7 +365,10 @@ def walk(o, path=""):
 def main() -> int:
     fps = fingerprints()
     print(f"Intra-ordering value fingerprint audit — {SIG_DIGITS} significant digits")
-    print(f"  {len(fps)} fingerprints: {len(ATOMS)} atoms x {len(PINS)} pins x 2 orderings\n")
+    print(f"  {len(fps)} fingerprints: {len(ATOMS)} atoms x "
+          f"{len(PINS)} pins x 2 orderings x 2 colour conventions "
+          f"(a lone nucleon has no p-n interface, so its two "
+          f"conventions coincide and fold to one entry)\n")
 
     # This audit's OWN witness records its findings, and its findings contain
     # the grouped values it found — so scanning it reports the report. Excluded
@@ -329,10 +392,15 @@ def main() -> int:
             meta = scan_value(s, fps)
             if meta is None:
                 continue
-            atom, pin, order = meta
+            atom, pin, order, conv = meta
             rel = str(f.relative_to(_ROOT))
-            bucket = grouped_hits if order == "grouped" else borro_hits
-            bucket.setdefault(rel, []).append((path, atom, pin))
+            # SUPERSEDED ON EITHER AXIS. This tested `order == "grouped"` only,
+            # so a value in the canonical ordering but the colour-BLIND
+            # convention read as clean. Both are superseded states and both
+            # belong in the same bucket (bean `qou-uujo`).
+            superseded = (order == "grouped") or (conv == "strict_averaged")
+            bucket = grouped_hits if superseded else borro_hits
+            bucket.setdefault(rel, []).append((path, atom, pin, order, conv))
 
     deliberate, candidates = {}, {}
     for rel, hits in grouped_hits.items():
@@ -361,7 +429,15 @@ def main() -> int:
         else:
             actionable[rel] = hits
 
-    print(f"=== GROUPED-era hits: {len(grouped_hits)} witness file(s) ===")
+    _n_ord = sum(1 for hs in grouped_hits.values() for h in hs
+                 if h[3] == "grouped" and h[4] != "strict_averaged")
+    _n_col = sum(1 for hs in grouped_hits.values() for h in hs
+                 if h[3] != "grouped" and h[4] == "strict_averaged")
+    _n_both = sum(1 for hs in grouped_hits.values() for h in hs
+                  if h[3] == "grouped" and h[4] == "strict_averaged")
+    print(f"=== SUPERSEDED-era hits: {len(grouped_hits)} witness file(s) ===")
+    print(f"    by axis: {_n_ord} grouped only, {_n_col} colour-blind only, "
+          f"{_n_both} both")
     print(f"    {len(candidates)} candidate(s), {len(deliberate)} known-deliberate")
     # "ACTIONABLE" means the SITE OWNS ITS VALUE — it either computes the trace
     # or hardcodes one — so the fix belongs there. It deliberately does NOT
@@ -385,8 +461,8 @@ def main() -> int:
           f"reflections, {len(unresolved)} unresolved\n")
     for rel, hits in sorted(actionable.items()):
         print(f"  CANDIDATE {rel}   [{kinds[rel][0]}: {kinds[rel][1]}]")
-        for path, atom, pin in hits[:4]:
-            print(f"      {atom} @ {pin}   {path}")
+        for path, atom, pin, order, conv in hits[:4]:
+            print(f"      {atom} @ {pin} [{_axis(order, conv)}]   {path}")
         if len(hits) > 4:
             print(f"      … and {len(hits) - 4} more field(s)")
     if reflections:

@@ -42,9 +42,22 @@ import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate import codata as _codata  # noqa: E402
 
 set_compute_dps()
-CODATA = mp.mpf("137.035999084")
+# Read from the registry, not hardcoded (2026-09-14). This carried the literal
+# `137.035999084` — CODATA **2018** — while the two ladder probes were migrated
+# to the registry at `aa546b4ba1` (2026-09-07) and this one was missed. The
+# 2018 -> 2022 shift is +0.6787 ppb, which is 2.2x alpha_EM's own residual and
+# FLIPS ITS SIGN, so a hardcoded edition is not a small staleness here: this
+# probe's published `alpha_inv_residual_ppb.proton` was the 2018 figure while
+# the dashboard next to it reported the 2022 one.
+# Reading the registry also removes the choice — the value moves when the table
+# does. (Note for anyone re-checking `qou-rbdi`: its claim that codata.py has
+# "NO fine-structure entry" is false; it greps the module SOURCE and cannot see
+# entries parsed at runtime from data/allascii.txt.)
+_ALPHA_INV = _codata.codata("inverse fine-structure constant")
+CODATA = mp.mpf(_ALPHA_INV.value_str)
 # Both pins read BY NAME (bean qou-4bef, 2026-09-03): the muon literal this carried was the
 # pin RETIRED 2026-08-22/28; the muon leg now tracks the CODATA lepton ratio. The docstring
 # figures above were computed at the retired pin — the witness carries the live ones.
