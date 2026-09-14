@@ -88,6 +88,24 @@ PINS = {
     "retired": "1.1099785955541805752815940796095093779932822799587",
 }
 
+# Which entry of the corpus's A/B/C muon-pin vocabulary each of this probe's
+# own pin names is. That vocabulary is established in
+# `audits/muon_pin_three_values_probe.py` (PR #5434); these local names predate
+# it, and they do NOT line up by spelling — this probe's "retired" is B, the
+# CODATA-2018 derivation, while `audits/retired_pin_live_code_audit.py` calls
+# A the retired pin. Mapping by name rather than by value would get it wrong.
+#
+# `q0_historical_pin` tells `q0_value_drift_audit` that the q0 beside it is a
+# pin this probe RECORDS rather than an anchor it computed at, so the field is
+# carved out instead of reported as drift for ever. The audit RESOLVES the
+# label and checks the value against it, so a wrong entry here does not
+# silence anything — it fails as DECLARATION-MISMATCH.
+#
+# `proton` and `muon_live` are deliberately absent: they already classify as
+# `proton-pin` and `canonical`, and declaring a live anchor would be claiming
+# it is history.
+_REGISTRY_PIN = {"retired": "B", "frozen_A": "A"}
+
 #: What the block published before this correction, and what it says now.
 WAS = "4.23033920"
 NOW = "4.23033923"
@@ -231,11 +249,14 @@ def main() -> int:
             "agreement consistent with six 8-decimal roundings. That is internal "
             "consistency, not verification. qou-i229.")
         for name, evs in spectra.items():
-            wb.add_data(f"D_spectrum_at_{name}", {
+            _row = {
                 "q0": PINS[name],
                 "eigenvalues": [mp.nstr(e, 16) for e in evs],
                 "largest_to_8dp": to_dp(evs[-1]),
-            })
+            }
+            if name in _REGISTRY_PIN:
+                _row["q0_historical_pin"] = _REGISTRY_PIN[name]
+            wb.add_data(f"D_spectrum_at_{name}", _row)
         wb.add_data("correction", {
             "block": "prop:frobenius-gram-matrix",
             "was": WAS,

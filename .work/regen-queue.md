@@ -916,3 +916,82 @@ Two smaller observations, unfixed:
 - `_deprecated/alpha-high-precision.witness.json` can never be repaired: it
   is retired, so nobody will re-run it, and it will sit on the NEW list until
   something changes structurally.
+
+## 28. `q0_value_drift_audit` — DECLARED historical pins, fixed properly (bean `qou-zru5`)
+
+§27 recorded this as a design question for the gate's owner. Built instead.
+Two false-positive classes, two different fixes, and **neither moves the
+census**: `stale total` stays 206, the baseline stays 329, canonical 83,
+proton-pin 2606, TOTAL 2920 — byte-identical before and after. NEW 4 → 3 now,
+→ 0 once two probes regenerate.
+
+### The vocabulary this rests on, which already existed
+
+`audits/muon_pin_three_values_probe.py` (PR #5434) established that the corpus
+carries three muon-family values and what each IS:
+
+| | value | what it is | ppb vs live canonical |
+|---|---|---|---|
+| **A** | `1.1099785955573347…` | the self-certified anomaly — inverted it gives m_mu/m_e = 206.768282989315, matching NO published figure, so it is not that derivation at any vintage and **cannot be derived** | −0.076942 |
+| **B** | Vol(4₁)/206.7682830 | the lepton-tower derivation at **CODATA 2018** | −0.079784 |
+| **C** | Vol(4₁)/206.7682827 | …at **CODATA 2022** — today's canonical muon pin | 0 |
+
+Those are exactly the two buckets this gate's backlog falls into — **199 rows
+at B, 2 at A** — which is how the registry was checked rather than assumed.
+B and C are DERIVED in the audit, for the reason its header gives for the live
+anchors. A is the one literal the evidence forces, and it is safe for the
+reason that makes it exceptional: it is not reproducible from anything, so it
+cannot move.
+
+### Fix 1 — a CHECKED per-field declaration
+
+A producer writes `q0_historical_pin: "B"` beside a q0 field. The audit
+resolves that label and **verifies the value matches** (tolerance 1e-13, which
+is 28× tighter than the 2.842e-12 A–B separation, and far looser than the
+shortest stored form). Unlike a bare `precision_tier` assertion **a
+declaration cannot launder a value**: declare B on something that is not B and
+it reports `DECLARATION-MISMATCH`, which blocks with no baseline.
+
+Proved not vacuous: swapping the mapping in the real witnesses turns both
+fields into `DECLARATION-MISMATCH`.
+
+### Fix 2 — retired witnesses exempt from the NEW check ONLY
+
+A `_deprecated/` witness cannot REGRESS — nobody re-runs an excised producer —
+so a NEW finding there is the anchor moving beneath a frozen file, unfixable by
+the very remedy the banner prescribes. Exempted from NEW, **never from the
+census or the baseline**, and reported on its own line so it cannot vanish.
+This is NOT §27's rejected `_deprecated` exclusion, which would have dropped
+179 of the 329 baselined keys.
+
+### Producer side
+
+`_REGISTRY_PIN = {"retired": "B", "frozen_A": "A"}` in both pins probes.
+**The names do not line up by spelling** — this probe's `retired` is B, while
+`audits/retired_pin_live_code_audit.py` calls A the retired pin — so mapping by
+name rather than by value would have got it backwards. `proton` and
+`muon_live` are deliberately undeclared: they already classify as `proton-pin`
+and `canonical`, and declaring a live anchor would be claiming it is history.
+
+### Verified
+
+* Self-test **13/13**, both directions, and the gate row flipped `no` → `yes`
+  in `scripts/precision-gates.sh` (a carve-out that cannot be shown to refuse
+  is a hole).
+* Live run: NEW 4 → 3, the retired one moved to its own non-gating line, every
+  census number unchanged, no DECLARATION failures.
+* Post-regeneration simulated by injecting the declaration into the committed
+  witnesses: all three go `STALE → declared-historical`.
+
+### Still owed
+
+The two probes must be re-run for the 3 to drain — queued here, blocked on the
+`qou-uiut` table like everything else.
+
+### Side finding, not fixed
+
+`muon_pin_three_values_probe.py:147` does `A = _q0_value_for_anchor("muon")`.
+Since bean `qou-tekx` stage 3b that resolver DERIVES from `q_muon_at()`, which
+is **C** — measured here, relative difference exactly 0. So the probe that
+defines the A/B/C vocabulary can no longer distinguish A from C, and labels C
+as A. Its conclusions about B are unaffected.

@@ -100,6 +100,24 @@ PINS = {
     "frozen_A": "1.1099785955573347",
 }
 
+# Which entry of the corpus's A/B/C muon-pin vocabulary each of this probe's
+# own pin names is. That vocabulary is established in
+# `audits/muon_pin_three_values_probe.py` (PR #5434); these local names predate
+# it, and they do NOT line up by spelling — this probe's "retired" is B, the
+# CODATA-2018 derivation, while `audits/retired_pin_live_code_audit.py` calls
+# A the retired pin. Mapping by name rather than by value would get it wrong.
+#
+# `q0_historical_pin` tells `q0_value_drift_audit` that the q0 beside it is a
+# pin this probe RECORDS rather than an anchor it computed at, so the field is
+# carved out instead of reported as drift for ever. The audit RESOLVES the
+# label and checks the value against it, so a wrong entry here does not
+# silence anything — it fails as DECLARATION-MISMATCH.
+#
+# `proton` and `muon_live` are deliberately absent: they already classify as
+# `proton-pin` and `canonical`, and declaring a live anchor would be claiming
+# it is history.
+_REGISTRY_PIN = {"retired": "B", "frozen_A": "A"}
+
 CITED_WITNESS = COMP / "delta-q-decoration.witness.json"
 SIBLING_BLOCK = "prop:em-coupling-projection"
 
@@ -266,11 +284,14 @@ def main() -> int:
             "live compute for this quantity sits at the other pin. qou-i229.")
         for pin_name, s in PINS.items():
             q = mp.mpf(s)
-            wb.add_data(f"figures_at_{pin_name}", {
+            _row = {
                 "q0": mp.nstr(q, 20),
                 **{n: mp.nstr(fn(q), 15) for n, fn, _p in PUBLISHED},
                 "rounds_to_published": f"{scores[pin_name]}/4",
-            })
+            }
+            if pin_name in _REGISTRY_PIN:
+                _row["q0_historical_pin"] = _REGISTRY_PIN[pin_name]
+            wb.add_data(f"figures_at_{pin_name}", _row)
         wb.add_data("published_by_the_block",
                     {n: p for n, _f, p in PUBLISHED})
         wb.add_data("identity_disagreement", {

@@ -118,6 +118,78 @@ EXCLUDE_FIELD = re.compile(r"star|\*|anchor$|err|sigma|unit", re.I)
 Q_LO, Q_HI = mpf("1.1"), mpf("1.12")
 
 
+# ── DECLARED historical pins ─────────────────────────────────────────────
+#
+# Some witnesses record a retired pin ON PURPOSE. `two_blocks_publish_the_two
+# _sides_of_one_identity_at_different_pins_probe` evaluates one identity at
+# several pins and reports their separation: the retired values ARE its
+# measurement, not drift in it. Without a way to say so they are permanently
+# NEW on this gate, and the two obvious cures both delete the gate instead of
+# draining it (measured 2026-09-14, bean `qou-zru5`):
+#
+#   * adding these values to the anchor set reclassifies 201 of the 206 STALE
+#     rows, because ~all of the backlog IS the pre-ruling pin;
+#   * excluding `_deprecated/` drops 179 of the 329 BASELINED keys.
+#
+# So the carve-out is per FIELD and, unlike a bare `precision_tier` assertion,
+# it is CHECKED: the producer names WHICH pin, and the value must match that
+# pin. Declaring `B` on something that is not B still reports — as
+# DECLARATION-MISMATCH, which blocks. A declaration cannot launder a value.
+#
+# WHAT A, B AND C ARE (`audits/muon_pin_three_values_probe.py`, PR #5434):
+#
+#   A  1.1099785955573347…    the self-certified anomaly. Inverted it gives
+#                             m_mu/m_e = 206.768282989315, matching NO
+#                             published figure, so it is not that derivation
+#                             at any CODATA vintage and CANNOT be derived.
+#   B  Vol(4_1)/206.7682830   the lepton-tower derivation at CODATA 2018
+#   C  Vol(4_1)/206.7682827   ...and at CODATA 2022 — today's canonical muon
+#                             pin, which is `Q_CANONICAL` resolved live above.
+#
+# B and C are DERIVED for the reason the header gives for the live anchors: a
+# transcribed reference cannot be seen to drift. A is the one exception the
+# evidence forces, and it is safe for the reason that makes it an exception —
+# A is retired and not reproducible from anything, so it cannot move.
+#
+# MEASURED against the live canonical: A -0.076942 ppb, B -0.079784 ppb. Those
+# are exactly the two buckets this gate's STALE population falls into (199
+# rows at B, 2 at A), which is how the registry was checked rather than
+# assumed.
+_VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)
+
+
+def _q0_from_muon_ratio(ratio: str) -> mpf:
+    """The lepton-tower inversion: hbar_q^2 = Vol(4_1)/(m_mu/m_e)."""
+    return 1 / (1 - mp.sqrt(_VOL_4_1 / mpf(ratio)))
+
+
+HISTORICAL_PINS = {
+    "A": mpf("1.1099785955573347"),          # not derivable — see above
+    "B": _q0_from_muon_ratio("206.7682830"),  # CODATA 2018
+    "C": Q_CANONICAL,                         # CODATA 2022 == live canonical
+}
+
+#: The key a producer writes NEXT TO a q0 field to declare it historical.
+#: Deliberately not matched by `Q0_FIELD`, so it can never be read as a value.
+DECL_KEY = "q0_historical_pin"
+
+#: A and B are only 2.842e-12 apart in relative terms, so the tolerance has to
+#: sit well inside that or a declaration could not tell them apart. 1e-13 is
+#: 28x tighter than the gap and still far looser than any truncation in the
+#: corpus (the shortest stored form, A at 17 digits, is exact).
+DECL_TOL = mpf("1e-13")
+
+
+def classify_declared(x: mpf, label: object) -> tuple[str, mpf]:
+    """Classify a value whose field DECLARED which historical pin it records."""
+    pin = HISTORICAL_PINS.get(str(label))
+    if pin is None:
+        return "DECLARATION-UNKNOWN", _ppb(x)
+    if abs(x - pin) / pin < DECL_TOL:
+        return "declared-historical", _ppb(x)
+    return "DECLARATION-MISMATCH", _ppb(x)
+
+
 def _ppb(x: mpf) -> mpf:
     return (x - Q_CANONICAL) / Q_CANONICAL * mpf(10) ** 9
 
@@ -135,6 +207,9 @@ def classify(x: mpf) -> tuple[str, mpf]:
 
 def _walk(obj, path: str, out: list) -> None:
     if isinstance(obj, dict):
+        # Read once per dict: a declaration applies to the q0 field beside it,
+        # which is the narrowest scope that can express "this one is a pin".
+        declared = obj.get(DECL_KEY)
         for k, v in obj.items():
             p = f"{path}.{k}" if path else k
             if isinstance(v, (str, float, int)) and Q0_FIELD.match(k) and not EXCLUDE_FIELD.search(k):
@@ -143,9 +218,13 @@ def _walk(obj, path: str, out: list) -> None:
                 except Exception:
                     continue
                 if Q_LO < x < Q_HI:
-                    cls, d = classify(x)
-                    out.append({"field": p, "value": str(v), "class": cls,
-                                "ppb_vs_canonical": float(d)})
+                    cls, d = (classify_declared(x, declared) if declared is not None
+                              else classify(x))
+                    row = {"field": p, "value": str(v), "class": cls,
+                           "ppb_vs_canonical": float(d)}
+                    if declared is not None:
+                        row["declared_pin"] = str(declared)
+                    out.append(row)
             else:
                 _walk(v, p, out)
     elif isinstance(obj, list):
@@ -237,8 +316,79 @@ def layer_mismatches(canonical_rows: list) -> list:
     return {"mismatch": out, "legit": legit, "unresolved": unresolved}
 
 
+def is_retired(row: dict) -> bool:
+    """True for a witness under `_deprecated/` — excised, never re-run."""
+    return "_deprecated" in str(row.get("file", "")).split("/")
+
+
+def _selftest() -> int:
+    """Both directions. A carve-out that cannot be shown to REFUSE is a hole."""
+    B = HISTORICAL_PINS["B"]
+    A = HISTORICAL_PINS["A"]
+    cases = [
+        # (containing dict, expected class, why)
+        ({"q_0": mp.nstr(B, 30)}, "STALE",
+         "the backlog case: pin B, undeclared, is drift — 199 rows look like this"),
+        ({"q_0": mp.nstr(B, 30), DECL_KEY: "B"}, "declared-historical",
+         "...and the SAME value declared as B is the probe's measurement"),
+        ({"q_0": mp.nstr(B, 30), DECL_KEY: "A"}, "DECLARATION-MISMATCH",
+         "A DECLARATION CANNOT LAUNDER A VALUE: B declared as A still reports"),
+        ({"q_0": mp.nstr(A, 20), DECL_KEY: "A"}, "declared-historical",
+         "A is carried as a literal because it is not derivable from any "
+         "published muon ratio; it still has to MATCH"),
+        ({"q_0": mp.nstr(B, 30), DECL_KEY: "Z"}, "DECLARATION-UNKNOWN",
+         "an unresolvable label is a blocking failure, never a silent pass"),
+        ({"q_0": mp.nstr(Q_CANONICAL, 30)}, "canonical",
+         "the live canonical muon pin, undeclared"),
+        ({"q_0": mp.nstr(_Q_PROTON, 30)}, "proton-pin",
+         "the documented physical-observations layer, undeclared"),
+        ({"q_0": mp.nstr(B + B * mpf("1e-12"), 30), DECL_KEY: "B"},
+         "DECLARATION-MISMATCH",
+         "TOLERANCE: 1e-12 off B is refused — it has to be, because A and B "
+         "are only 2.842e-12 apart and a looser window could not tell them "
+         "apart"),
+        ({"q_0": mp.nstr(B + B * mpf("1e-15"), 30), DECL_KEY: "B"},
+         "declared-historical",
+         "...while a truncation-scale difference is accepted"),
+    ]
+    bad = 0
+    for obj, want, why in cases:
+        out = []
+        _walk(obj, "", out)
+        got = out[0]["class"] if out else "NO-ROW"
+        ok = got == want
+        bad += not ok
+        print(f"  {'ok  ' if ok else 'FAIL'} want={want:22s} got={got:22s} {why}")
+
+    # the declaration key must never itself read as a q0 value
+    out = []
+    _walk({DECL_KEY: "B"}, "", out)
+    ok = not out
+    bad += not ok
+    print(f"  {'ok  ' if ok else 'FAIL'} want={'(no row)':22s} "
+          f"got={('(no row)' if ok else out[0]['class']):22s} "
+          "the declaration key is not matched by Q0_FIELD, so it cannot be "
+          "read as a value")
+
+    # retired predicate, both ways
+    for f, want in (("computations/_deprecated/x.witness.json", True),
+                    ("computations/probes/x.witness.json", False),
+                    ("computations/not_deprecated_really/x.witness.json", False)):
+        got = is_retired({"file": f})
+        ok = got == want
+        bad += not ok
+        print(f"  {'ok  ' if ok else 'FAIL'} is_retired({f.split('/')[1][:22]:24s}) "
+              f"-> {got}  (want {want})")
+
+    print(f"\nselftest: {len(cases) + 4 - bad}/{len(cases) + 4} passed")
+    return 1 if bad else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--self-test", "--selftest", action="store_true",
+                    dest="selftest",
+                    help="prove the detector fires AND refuses, then exit")
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 on stale values NOT already in the baseline")
     ap.add_argument("--rebaseline", action="store_true",
@@ -249,6 +399,8 @@ def main() -> int:
                          "printed, not written to the witness, cannot change the "
                          "exit code.")
     args = ap.parse_args()
+    if args.selftest:
+        return _selftest()
 
     rows = scan()
     by = {}
@@ -260,18 +412,38 @@ def main() -> int:
     print("=" * 74)
     print("q0-VALUE DRIFT AUDIT")
     print("=" * 74)
-    for cls in ("canonical", "proton-pin", "STALE", "unknown"):
+    for cls in ("canonical", "proton-pin", "declared-historical", "STALE",
+                "unknown", "DECLARATION-MISMATCH", "DECLARATION-UNKNOWN"):
         n = len(by.get(cls, []))
+        if n == 0 and cls.startswith("DECLARATION"):
+            continue
         note = {"proton-pin": "  (documented physical-observations layer — legitimate)",
-                "canonical": "  (CAL-2 muon pin — the computations/ convention)"}.get(cls, "")
-        print(f"  {cls:<12} {n:>5}{note}")
+                "canonical": "  (CAL-2 muon pin — the computations/ convention)",
+                "declared-historical": "  (field DECLARES which retired pin it records, and matches it)",
+                "DECLARATION-MISMATCH": "  (BLOCKING — declared a pin it does not match)",
+                "DECLARATION-UNKNOWN": "  (BLOCKING — declared a pin this audit cannot resolve)",
+                }.get(cls, "")
+        print(f"  {cls:<20} {n:>5}{note}")
     print(f"  {'TOTAL':<12} {len(rows):>5} q0-bearing fields in *.witness.json")
 
     prior = []
     if BASELINE.exists():
         prior = json.loads(BASELINE.read_text())["stale_keys"]
     key = lambda r: f"{r['file']}::{r['field']}"
-    new_stale = [r for r in stale if key(r) not in set(prior)]
+    _prior = set(prior)
+    # A retired witness cannot REGRESS: nobody re-runs a producer that has been
+    # excised, so a NEW finding under `_deprecated/` is always the anchor moving
+    # beneath a frozen file rather than anyone's change — unfixable by the very
+    # remedy the banner prescribes ("fix by RE-RUNNING THE PRODUCER").
+    #
+    # THIS IS NOT THE `_deprecated` EXCLUSION THAT WOULD BE A DRAIN. It applies
+    # to the NEW check only. The census, the `stale total` and the baseline are
+    # untouched, so 179 of the 329 baselined keys stay counted exactly as they
+    # were and no number goes down. Retired arrivals are reported on their own
+    # line instead of vanishing.
+    unbaselined = [r for r in stale if key(r) not in _prior]
+    new_stale = [r for r in unbaselined if not is_retired(r)]
+    new_retired = [r for r in unbaselined if is_retired(r)]
 
     if stale:
         print(f"\n  stale total: {len(stale)}   baseline: {len(prior)}   NEW: {len(new_stale)}")
@@ -282,6 +454,14 @@ def main() -> int:
                 print(f"    {r['file']}  {r['field']}  ({r['ppb_vs_canonical']:+.3g} ppb)")
             if len(new_stale) > 25:
                 print(f"    ... and {len(new_stale) - 25} more")
+        if new_retired:
+            print(f"\n  {len(new_retired)} unbaselined stale field(s) under "
+                  "_deprecated/ — REPORTED, not gating:")
+            for r in new_retired[:10]:
+                print(f"    {r['file']}  {r['field']}  ({r['ppb_vs_canonical']:+.3g} ppb)")
+            print("    Their producers are excised, so re-running them — the only "
+                  "fix this\n    gate prescribes — is not available. Still counted "
+                  "in `stale total`.")
     if unknown:
         print(f"\n  ⚠ {len(unknown)} value(s) matching no anchor — needs a human look:")
         for r in unknown[:10]:
@@ -350,7 +530,21 @@ def main() -> int:
                 print(f"    … and {len(mism) - 20} more")
         print("\n  Exit code unchanged — `new_stale` remains the only gate.")
 
-    return 1 if (args.strict and new_stale) else 0
+    # A declaration that does not check out is a HARDER failure than stale
+    # drift: stale is a backlog with a known remedy, a false declaration is an
+    # attempt to carve out a value that is not what it claims. It blocks under
+    # --strict regardless of any baseline, and there is no baseline for it.
+    bad_decl = by.get("DECLARATION-MISMATCH", []) + by.get("DECLARATION-UNKNOWN", [])
+    if bad_decl:
+        print(f"\n  ✗ {len(bad_decl)} DECLARATION failure(s) — a field named a "
+              "historical pin it does not match,\n    or one this audit cannot "
+              "resolve. Fix the declaration or the value; there is no\n    baseline "
+              "for these and adding one is not the remedy.")
+        for r in bad_decl[:10]:
+            print(f"    {r['file']}  {r['field']}  declared={r.get('declared_pin')!r}"
+                  f"  ({r['ppb_vs_canonical']:+.3g} ppb)")
+
+    return 1 if (args.strict and (new_stale or bad_decl)) else 0
 
 
 if __name__ == "__main__":

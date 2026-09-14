@@ -136,7 +136,10 @@ GATES=(
   # rho-k-co-casimir-extended, where a partial write showed 4 -> 0 raw floats
   # with durationMs 2,552,837 -> 519. Neither gate subsumes the other.
   "witness shape guard|computations/witness_shape_guard.py||yes|yes"
-  "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|no|yes"
+  # --self-test since 2026-09-14 (bean qou-zru5): the DECLARED-historical-pin
+  # carve-out has to be shown to REFUSE as well as to fire, or it is a hole
+  # rather than a carve-out. 13 cases, both directions.
+  "q0-value drift ratchet|computations/q0_value_drift_audit.py|--strict|yes|yes"
   # BLOCKING and green on arrival (CODE sites 0, measured on main at
   # 74c00bb0). Guards the queue #5439 drained from 61 to 0: an executable
   # literal that is NEAR a NIST CODATA-2022 table value but not equal to it
@@ -398,8 +401,9 @@ GATES=(
   #   17 genuinely bare. Three of these were drained in #5373 (55 -> 52) by
   #      wiring their producers through WitnessBuilder.wrap_legacy.
   #
-  # No --self-test (like q0-anchor flip, q0-value drift, audits-tree
-  # raw-float64 and the no-free-parameter cert). Verified by hand instead:
+  # No --self-test (like q0-anchor flip, audits-tree raw-float64 and the
+  # no-free-parameter cert; q0-value drift LEFT this list on 2026-09-14).
+  # Verified by hand instead:
   # --strict exits 1 at 52 from repo root, and 0 is reachable — the count moved
   # 55 -> 52 under the drain, so the detector demonstrably tracks the tree.
   "witness provenance completeness (advisory)|computations/audits/witness_provenance_audit.py|--strict|no|no"
