@@ -1,0 +1,97 @@
+{
+  "description": "Charge parity of the Markov-trace bond-multiplicativity defect at n=4. The recorded cross term z(z^2-hz-1) is on BARE generators; this dresses the letters as sigma_i + d_i*I with the canonical bond dressings and splits the defect under the charge conjugation d -> -h-d. The verdict is REPORTED, not asserted. Scope (a): n=4 with three bonds, not a nucleus; the production atom word is sequential so no production number moves.",
+  "bean": "qou-vwu3",
+  "builds_on": {
+    "audit": "docs/audits/2026-09-03-markov-trace-not-bond-multiplicative-n4.md",
+    "bean": "qou-kru4",
+    "harness": "computations/probes/markov_trace_n4_interleaved_cross_term_probe.py route_rep",
+    "why": "qou-brng closes the Ocneanu trace family (rank bound), the magnitude (cyclic_trace_kills_iterCommTower), mu-bar_123 (channel-blind) and the whole linking-data class (lk IS I_3, both channels at I_3 = 0). Its closure note leaves open 'an invariant reading the braid word beyond its linking data', and the multiplicativity defect is such an object."
+  },
+  "q0Anchor": "physical_proton",
+  "convention": "D (z = q^3/(q^2+1))",
+  "mirror_map": "d -> -h - d  (p<->n on each bond; exchanges d_pp=0 and d_nn=-h)",
+  "verdict": {
+    "odd_part_identically_zero": false,
+    "odd_part": "Mul(Pow(Symbol('q', positive=True), Integer(-1)), Pow(Add(Pow(Symbol('q', positive=True), Integer(4)), Mul(Integer(2), Pow(Symbol('q', positive=True), Integer(2))), Integer(1)), Integer(-1)), Add(Mul(Integer(-1), Symbol('d2'), Pow(Symbol('q', positive=True), Integer(5))), Mul(Integer(-1), Symbol('d2'), Pow(Symbol('q', positive=True), Integer(3))), Mul(Integer(-1), Symbol('d2'), Symbol('q', positive=True)), Mul(Integer(-1), Rational(1, 2), Pow(Symbol('q', positive=True), Integer(6))), Rational(1, 2)))",
+    "odd_part_factored": "-(q**2 - q + 1)*(q**2 + q + 1)*(2*d2*q + q**2 - 1)/(2*q*(q**2 + 1)**2)",
+    "even_part_factored": "-(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(2*q*(q**2 + 1)**3)"
+  },
+  "bare_limit_control": "-q**3*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**3",
+  "factorisation": {
+    "identity": "Delta(d0,d1,d2) = (z + d2) * (z^2 - h*z - 1)",
+    "markov_defect_convD": "-(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2",
+    "d0_present": false,
+    "d1_present": false,
+    "consequence": "The cross term's entire charge dependence is one bond factor times a charge-blind scalar, so its mirror odd/even RATIO equals the bond factor's own. The interleaved word class changes the MAGNITUDE of the bond channel (extra binding, which is what qou-kru4 wants it for) and provably cannot change its CHARGE PARITY."
+  },
+  "at_proton_pin": {
+    "q0": "1.10997858275138080759166909561",
+    "d_pp": "0.0",
+    "d_pn": "-0.10445824776972628901783406629",
+    "d_nn": "-0.20906029879563931543084621313",
+    "Delta_3H_pattern": "-0.303811451623778042634541063041",
+    "Delta_3He_pattern": "-0.461171580324343072688571278874",
+    "mirror_difference": "0.157360128700565030054030215833",
+    "bare_cross_term": "-0.461171580324343072688571278874"
+  },
+  "scope": "(a) scope-limited: n=4, three bonds, exact and symbolic. Not a nucleus. Does NOT claim the production word is interleaved -- it is sequential (qou-5vhf is which word class a nucleus is).",
+  "assertions": [
+    {
+      "name": "REP_hecke_relation_holds",
+      "passed": true,
+      "detail": "sigma^2 = h sigma + 1 in the representation -- if this fails the rep is not Hecke."
+    },
+    {
+      "name": "REP_braid_relation_holds",
+      "passed": true,
+      "detail": "sigma0 sigma1 sigma0 = sigma1 sigma0 sigma1 in the representation."
+    },
+    {
+      "name": "CONTROL_bare_limit_reproduces_the_recorded_cross_term",
+      "passed": true,
+      "detail": "Delta|_(d=0) = -q**3*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**3; recorded (qou-kru4 audit) = -q^3(q^2-q+1)(q^2+q+1)/(q^2+1)^3.  If this fails, the dressing is wrong and nothing else in this probe means anything."
+    },
+    {
+      "name": "MIRROR_is_an_involution",
+      "passed": true,
+      "detail": "M(M(d)) = d, so the even/odd split below is well defined."
+    },
+    {
+      "name": "MIRROR_exchanges_the_pp_and_nn_dressings",
+      "passed": true,
+      "detail": "M(d_pp = 0) = -h = d_nn and M(d_nn) = d_pp.  This is what makes M the charge conjugation rather than an arbitrary affine map."
+    },
+    {
+      "name": "SPLIT_reconstructs_Delta",
+      "passed": true,
+      "detail": "Delta = even + odd exactly."
+    },
+    {
+      "name": "SPLIT_even_part_is_mirror_even",
+      "passed": true,
+      "detail": "even(M d) = +even(d)."
+    },
+    {
+      "name": "SPLIT_odd_part_is_mirror_odd",
+      "passed": true,
+      "detail": "odd(M d) = -odd(d)."
+    },
+    {
+      "name": "FACTORISATION_Delta_eq_lastBondFactor_times_MarkovDefect",
+      "passed": true,
+      "detail": "Delta = (z + d2)(z^2 - hz - 1) EXACTLY.  The convention-D Markov defect z^2-hz-1 = -(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**2 is charge-BLIND, so the entire charge dependence of the cross term is the single factor f2."
+    },
+    {
+      "name": "CHARGE_DEPENDENCE_IS_ONLY_THROUGH_THE_PEELED_BOND",
+      "passed": true,
+      "detail": "d0 present in Delta: False;  d1 present: False.  The two INTERLEAVED bonds drop out entirely; only d2 -- the bond on the generator that is Markov-peeled -- survives.  So the object that reads the word beyond its linking data does not read the CHARGES of the letters it interleaves."
+    },
+    {
+      "name": "PARITY_RATIO_IS_IDENTICAL_TO_THE_BOND_FACTOR_ITSELF",
+      "passed": true,
+      "detail": "Delta_odd/Delta_even == f2_odd/f2_even identically.  Multiplying by a charge-blind scalar cannot move an odd/even ratio, so the cross term inherits the bond channel's isospin parity structure VERBATIM -- the same structure QOU.MassTheory.BondChannelTzParity proves cannot be even at any q > 1."
+    }
+  ],
+  "free_parameters": 0,
+  "computedAt": "2026-09-14T17:51:16.208497+00:00"
+}

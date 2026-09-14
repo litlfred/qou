@@ -245,4 +245,121 @@ theorem channels_opposite_parity {q : ℝ} (hq1 : 1 < q) :
       ∧ (∀ tz : ℤ, multipletWeight q (-tz) = multipletWeight q tz) :=
   ⟨bondOfTz_oddPart_ne_zero hq1, multipletWeight_even q⟩
 
+/-! ## §7. A charge-blind multiplier cannot change the `T_z` parity ratio
+
+Added 2026-09-14 (bean `qou-vwu3`), and it generalises a measurement rather than
+restating one.  The extensive-term arc's one surviving lead is the Markov trace's
+failure of **bond-multiplicativity**: on an interleaved word class the trace of a
+product of bond letters is not the product of their traces
+(`docs/audits/2026-09-03-markov-trace-not-bond-multiplicative-n4.md`, bean
+`qou-kru4`).  That defect reads the braid *word* beyond its linking data, which is
+exactly what bean `qou-brng` leaves open after closing the Ocneanu trace family, the
+magnitude, `μ̄₁₂₃` and the whole linking-data class.
+
+Measured exactly this session with charge-**dressed** letters `b_i = σ_i + d_i·1`
+(`computations/probes/dressed_interleaved_cross_term_charge_parity_probe.py`, 11/11,
+sympy over `ℚ(q,d₀,d₁,d₂)`, with the bare limit reproducing the recorded closed form
+as its control):
+
+    Δ(d₀,d₁,d₂) = (z + d₂) · (z² − h z − 1)          exactly,
+
+with `d₀` and `d₁` **absent** — the two interleaved bonds drop out, and only the
+Markov-peeled bond survives.  So the defect *is* charge-sensitive, and its entire
+charge dependence is one bond factor times the charge-blind scalar `z² − hz − 1`.
+
+This section proves the consequence, and it is the general statement rather than
+the instance: **multiplying by anything charge-blind cannot move a mirror odd/even
+ratio.**  Any proposal of the shape "keep the bond factor, multiply it by a new
+scalar" therefore inherits §3's exclusion verbatim, whatever the scalar is. -/
+
+/-- Mirror-even part of a function of the pair isospin projection. -/
+noncomputable def evenPart (F : ℝ → ℝ) (tz : ℝ) : ℝ := (F tz + F (-tz)) / 2
+
+/-- Mirror-odd part of a function of the pair isospin projection. -/
+noncomputable def oddPart (F : ℝ → ℝ) (tz : ℝ) : ℝ := (F tz - F (-tz)) / 2
+
+@[simp] theorem evenPart_const_mul (c : ℝ) (F : ℝ → ℝ) (tz : ℝ) :
+    evenPart (fun t => c * F t) tz = c * evenPart F tz := by
+  unfold evenPart; ring
+
+@[simp] theorem oddPart_const_mul (c : ℝ) (F : ℝ → ℝ) (tz : ℝ) :
+    oddPart (fun t => c * F t) tz = c * oddPart F tz := by
+  unfold oddPart; ring
+
+/-- **A charge-blind multiplier leaves the parity ratio exactly fixed.**
+
+`c` is any nonzero scalar not depending on `T_z`.  Both parts scale by `c`, so the
+ratio does not move at all — no choice of `c`, however large, however `q`-dependent,
+changes it. -/
+theorem parity_ratio_const_mul {c : ℝ} (hc : c ≠ 0) (F : ℝ → ℝ) (tz : ℝ) :
+    oddPart (fun t => c * F t) tz / evenPart (fun t => c * F t) tz
+      = oddPart F tz / evenPart F tz := by
+  rw [evenPart_const_mul, oddPart_const_mul, mul_div_mul_left _ _ hc]
+
+/-- The convention-D Markov defect `z² − hz − 1`.  It is a function of `q` alone, so
+it is charge-blind by construction — that is the whole reason §7 applies to it. -/
+noncomputable def markovDefect (q : ℝ) : ℝ := zD q ^ 2 - hq q * zD q - 1
+
+/-- The `n = 4` interleaved cross term, as a function of the peeled bond's isospin
+projection: `Δ(T_z) = f(T_z) · (z² − hz − 1)`, the identity measured above. -/
+noncomputable def crossTerm (q tz : ℝ) : ℝ := bondOfTz q tz * markovDefect q
+
+/-- **The cross term's parity ratio is the bond factor's own.**
+
+So the interleaved word class changes the *magnitude* of the bond channel — which is
+what `qou-kru4` wants it for, the defect being negative and hence extra binding — and
+provably does **not** change its charge parity. -/
+theorem crossTerm_parity_ratio_eq_bond {q : ℝ} (hd : markovDefect q ≠ 0) (tz : ℝ) :
+    oddPart (crossTerm q) tz / evenPart (crossTerm q) tz
+      = oddPart (bondOfTz q) tz / evenPart (bondOfTz q) tz := by
+  have hfun : crossTerm q = fun t => markovDefect q * bondOfTz q t := by
+    funext t; unfold crossTerm; ring
+  rw [hfun, parity_ratio_const_mul hd]
+
+/-- **The cross term is even in `T_z` iff the bond factor is** (given a nonvanishing
+defect) — so §3's exclusion transfers: at every `q > 1` the cross term is odd too. -/
+theorem crossTerm_even_iff {q : ℝ} (hd : markovDefect q ≠ 0) :
+    (∀ tz : ℝ, crossTerm q tz = crossTerm q (-tz)) ↔ hq q = 0 := by
+  constructor
+  · intro hall
+    refine (bondOfTz_even_iff q).mp ?_
+    intro tz
+    have := hall tz
+    unfold crossTerm at this
+    exact mul_right_cancel₀ hd this
+  · intro h tz
+    unfold crossTerm
+    rw [(bondOfTz_even_iff q).mpr h tz]
+
+/-- The defect does not vanish at any `q > 1`: `z² − hz − 1 = −(q⁴+q²+1)/(q²+1)²`,
+which is strictly negative. -/
+theorem markovDefect_ne_zero {q : ℝ} (hq0 : 0 < q) : markovDefect q ≠ 0 := by
+  have hq2 : (0:ℝ) < q ^ 2 + 1 := by positivity
+  have hne : (q ^ 2 + 1) ≠ 0 := ne_of_gt hq2
+  have hq0' : q ≠ 0 := ne_of_gt hq0
+  have key : markovDefect q = -((q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2) := by
+    unfold markovDefect zD hq
+    field_simp
+    ring
+  rw [key]
+  have hnum : (0:ℝ) < q ^ 4 + q ^ 2 + 1 := by positivity
+  have : (0:ℝ) < (q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2 := by positivity
+  linarith [this]
+
+/-- **The transfer, stated as the prune it is.**  At every `q > 1` the interleaved
+cross term has a nonzero `T_z`-odd part, with the *same* odd/even ratio as the bond
+factor it multiplies.  The word-class route can supply magnitude; it cannot supply a
+different charge structure. -/
+theorem crossTerm_oddPart_ne_zero {q : ℝ} (hq1 : 1 < q) :
+    oddPart (crossTerm q) 1 ≠ 0 := by
+  have hq0 : 0 < q := lt_trans zero_lt_one hq1
+  have hd := markovDefect_ne_zero hq0
+  have hfun : crossTerm q = fun t => markovDefect q * bondOfTz q t := by
+    funext t; unfold crossTerm; ring
+  rw [hfun, oddPart_const_mul]
+  have hb : oddPart (bondOfTz q) 1 ≠ 0 := by
+    unfold oddPart
+    simpa using bondOfTz_oddPart_ne_zero hq1
+  exact mul_ne_zero hd hb
+
 end QOU.MassTheory.BondChannelTzParity
