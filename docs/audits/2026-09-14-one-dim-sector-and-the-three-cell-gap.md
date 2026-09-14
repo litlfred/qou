@@ -89,9 +89,7 @@ pairwise consecutive.
 
 **So the corpus's one identified candidate for the missing extensive term is structurally
 unavailable on the corpus's own production geometry** — not blocked by the unevaluated `γ ≠ 0`,
-but by there being no 3-cell to integrate it over. `threeCell_weight_vanishes` states it with the
-quantifier order that carries the content: `∀ w`, so no choice of curvature evades it, because the
-obstruction is the absence of the domain rather than the vanishing of the integrand.
+but by there being no 3-cell to integrate it over.
 
 This is a second, independent obstruction, and it is the cheaper one to act on. `γ ≠ 0` is a
 question about a stipulated curvature; this is a question about the layout — and
@@ -114,7 +112,7 @@ it cannot be found.
 - No comparison to the ultracold-cesium measurement is made. [arXiv:2505.10550](https://arxiv.org/abs/2505.10550)
   is what prompted the question; it is not evidence for anything above.
 
-## Two corrections made in the course of this work
+## Three corrections made in the course of this work
 
 **A `q₀` derivation.** The proton pin was first computed by applying the *muon* relation
 `m_μ/m_e = Vol(4₁)/ℏ_q²` to the proton ratio, giving `1.0344`. The proton pin has its own
@@ -129,6 +127,21 @@ the muon value reproduces the anchor witness digit-for-digit.
 `GaloisField 2 2` and — for `tlLoop_add_heckeH` — already in `ZMod 2` at `q = 1`. Fixed by adding
 `(h2 : (2:R) ≠ 0)`, the honest signature for a statement about halving. Re-verified exit 0, all
 `sorryAx` gone.
+
+**A third statement was vacuous and is deleted.** The same file first carried
+`threeCell_weight_vanishes : ∀ w, … → w a b c = 0`, on the reasoning that the `∀ w` showed no
+choice of curvature could evade the obstruction. That defence is wrong. Its hypotheses are exactly
+the ones `no_triangle` proves unsatisfiable, so every instance is vacuously true — and the mutant
+test is decisive rather than a matter of taste: the *identical* hypotheses also prove
+`w a b c = r` for arbitrary `r`, and prove `0 = 1`. Both mutants compile, and Lean's own
+`unused variable 'w'` warning fires on them, because `w` never enters the proof. So the conclusion
+`= 0` was not distinguished by the theorem; the `∀ w` sat outside the vacuity rather than
+protecting against it. The intuition is real and is carried in full by `no_triangle` alone: there
+is no 3-cell **at all**, independently of any weight. Deleting it costs the file's thesis nothing.
+
+This one was caught by asking for it adversarially. It is the shape AGENTS.md §3b-cond names — a
+carrier whose "theorem" merely projects an assumption — and it would very likely have reached a
+reviewer otherwise.
 
 Worth recording: `one_lt_anisotropy`, the declaration flagged in advance as most likely to fail,
 was green with clean axioms throughout. The failure was entirely in the section expected to be

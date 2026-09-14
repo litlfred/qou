@@ -29,6 +29,18 @@ consecutive. So the corpus's one identified candidate for the missing extensive 
 **structurally unavailable on the corpus's own production geometry** — not blocked by the
 unevaluated `γ ≠ 0`, but by there being no 3-cell to integrate it over.
 
+The combinatorial fact is stated **once**, as `no_triangle`, and that is deliberate. A first
+version of this file also carried a `threeCell_weight_vanishes : ∀ w, … → w a b c = 0`, on the
+reasoning that the `∀ w` showed no choice of curvature could evade the obstruction. **That was
+wrong and the theorem is deleted.** Its hypotheses are exactly the ones `no_triangle` proves
+unsatisfiable, so every instance is vacuously true: the identical hypotheses also prove
+`w a b c = r` for arbitrary `r`, and prove `0 = 1` — both mutants compile, and Lean's own
+`unused variable 'w'` warning fires on them, because `w` never enters the proof. The conclusion
+`= 0` was not distinguished by the theorem; the `∀ w` sat *outside* the vacuity rather than
+protecting against it. The intuition it reached for is real and is already carried in full by
+`no_triangle`: there is no 3-cell **at all**, independently of any weight. This is AGENTS.md
+"Strict Lean Discipline" item 8 — read the statement and ask whether it could be wrong.
+
 That is a second, independent obstruction, and it is the cheaper one to act on: `γ ≠ 0` is a
 question about a stipulated curvature, whereas this one is a question about the layout, and
 `LinearLayoutNoBulk` already closes its own docstring with *"a bulk needs a non-linear layout,
@@ -68,19 +80,5 @@ is **not** a linear layout, so it is not a coordination graph the nuclear encodi
 theorem not_linearLayout_of_triangle {n : ℕ} {G : SimpleGraph (Fin n)} (a b c : Fin n)
     (hab : G.Adj a b) (hbc : G.Adj b c) (hac : G.Adj a c) : ¬ LinearLayout G :=
   fun hL => no_triangle hL a b c hab hbc hac
-
-/-- **The consequence for any 3-cell-supported functional.** Let `w` assign a weight to each
-ordered triple of sites, supported on mutually adjacent triples — the shape of an abelian volume
-term `∫γ` integrated over a 3-cell. On a linear layout every such weight vanishes, so the total
-contribution is zero for **every** `w`, whatever `γ` is.
-
-The quantifier order carries the content: this is `∀ w, …`, so it is not a statement about one
-candidate curvature that happens to vanish. No choice of `γ` evades it, because the obstruction
-is the absence of the domain rather than the vanishing of the integrand. -/
-theorem threeCell_weight_vanishes {n : ℕ} {G : SimpleGraph (Fin n)} (hL : LinearLayout G)
-    {R : Type*} [Zero R] (w : Fin n → Fin n → Fin n → R)
-    (a b c : Fin n) (hab : G.Adj a b) (hbc : G.Adj b c) (hac : G.Adj a c) :
-    w a b c = 0 :=
-  absurd (no_triangle hL a b c hab hbc hac) not_false
 
 end QOU.OneDim
