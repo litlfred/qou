@@ -783,6 +783,73 @@ index, at `ζ ∈ {x, x^{1/2}, 1/x}`. Its `q¹` coefficient is `−2(X²+1)²/((
 the right *normalisation* — the theta dressing that §3m showed to be a monomial for the raw families has not been
 worked out for the symmetry-adapted ones, and that is the next step rather than a new search.
 
+## 3p. The one-sided dressing is a theta, and the dressed weight-1 bilinear lies in ℤ[s(x)] (2026-09-14)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_onesided_theta_dressing_probe.py`](../../computations/probes/aomega_m3_pretzel_onesided_theta_dressing_probe.py)
+(bean `qou-x3iv`, Part 17; 7/9, the two failures recorded negatives). §3o named the open item as *"the theta dressing
+that §3m showed to be a monomial for the raw families has not been worked out for the symmetry-adapted ones"*. This
+works it out, and the answer changes what kind of object the dressing is.
+
+**A one-sided block cannot carry half a monomial.** §3m derived that the Gaussian prefactors contribute the monomial
+`x_F^{−A}` to the *fused* bilinear, family by family. Splitting that derivation before the collapse — the q-side
+factor is `θ(−q^{−1/2}x_F;q)^{−A}`, the q̃-side is `θ(−q^{−1/2}x_F^{−1};q)^{+A}` after the fusion and GGM (109) — and
+evaluating the theta with GGM (108) at `y = −q^{−1/2}x` (so `−q^{1/2}y = x`, `−q^{1/2}y^{−1} = q/x`) gives the closed
+form
+
+```tex
+\theta\bigl(-q^{-1/2}x;q\bigr) \;=\; (x;q)_\infty\,(q/x;q)_\infty .
+```
+
+Since `(x;q)_∞ = (1−x)(qx;q)_∞`, the *ratio* of the two factors is `(−x_F)^{−A}` — §3m reproduced — but the factors
+themselves are not monomials, and they do not act uniformly. For the pretzel (`x_F = X, X^{−1}` for `F1, F2`; `A = 2`):
+
+| term | weight |
+|---|---|
+| diagonal `D₁D̃₁`, `D₂D̃₂` | `X^{−2}`, `X^{+2}` (§3m's monomials) |
+| cross `D₁D̃₂`, `D₂D̃₁` | **1** |
+
+**So the dressing weights the diagonal and the cross terms of the weight-1 bilinear differently.** That is outside the
+uniform per-family monomial class §3m tested and §3n excluded, which is exactly why neither found it. It is also
+exactly ℤ/2-equivariant, `D₁(1/X) = D₂(X)` as series, so §3o's symmetry-adapted basis and its (4,1,1) grading survive
+the dressing unchanged and the weight-1 slot is still the antisymmetric one.
+
+**Where the dressed bilinear lives, and this is the result.** Two exact identities, both measured rather than posited:
+
+1. `W² = (X − 1/X)² = X² − 2 + X^{−2} = s(x) − 3`, so §3o's division by `W²` is a division *inside* the
+   adjoint-weight ring, not an extraneous factor.
+2. Every row of the dressed weight-1 fusion is a rational function of **`s(x)` alone**, with denominator exactly
+   `(s − 3)¹` — one simple pole, at `s = 3`, i.e. at the fixed point `x = 1`.
+
+Undoing the `1/W²` clears that single pole and leaves, through `q⁴`:
+
+| order | dressed weight-1 bilinear, in `s = x + 1 + 1/x` |
+|---|---|
+| `q⁰` | `s` |
+| `q¹` | `−2(s² − 1)` |
+| `q²` | `s³ − 2s² − 5s − 1` |
+| `q³` | `5s³ − 5s² − 11s − 3` |
+| `q⁴` | `−2s⁴ + 7s³ + 9s² − 10s − 8` |
+
+**Integer coefficients, no denominator: the bilinear is in `ℤ[s(x)]`** — precisely the ring GGM's (188)/(307) Stokes
+entries live in, and precisely what sibling #7333 predicts for *integer* powers of `q` from its ℤ/2 grading
+(`σ`-parity tied to half-integrality). Two independent routes, residues and the `q`-difference operator, now agree on
+the ring as well as on the rank and the grading.
+
+**What is still open (T1, T2, recorded negatives).** The bilinear is not yet the index: its `q⁰` row is `s(x)` where
+the index's is `1`, and no branch/ζ identification closes the remaining rows. What separates them is therefore a
+**single normalisation inside `ℤ[s]`** — and that is the same missing input #7333 names from the operator side, the
+per-knot `GL(r)` normalisation that GGM fix by hand in (186a)–(186d)/(94a)–(94d) and that no held source prints for a
+rank-6, level-2 knot. The two routes converge on one gap rather than on two.
+
+**A float64 defect found while running this, and fixed at the source.** `branch_twist` in the Part 12b producer
+computed `omega ** (−k)` with `omega` arriving as a Python `int` from its own branch list, and `(−1) ** (−k)` in
+Python is a **float**. That floated **45 symbolic coefficients** of the committed
+`aomega-m3-pretzel-residue-blocks.witness.json` — the bilinear rows themselves, e.g.
+`-1.0*zeta**2 - 3.0*zeta - 4.0 - 3.0/zeta - 1.0/zeta**2`. Coerced to `sp.sympify` at the source; the witness now
+carries 57 → 12 floats, the remaining 12 being the legitimate mpmath numerical-validation rows, and the producer's
+5/8 verdict is unchanged, so no recorded result moved. Worth noting that every precision gate was blind to it: the
+numbers sat inside JSON *strings*, which the float64 ratchets do not parse.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who

@@ -1,0 +1,178 @@
+{
+  "name": "aomega-m3-pretzel-onesided-theta-dressing",
+  "description": "The one-sided Gaussian dressing of the pretzel's residue families, derived from GGM (108)/(109) in closed q-Pochhammer form, its collapse to Part 14's pair monomial, and the dressed weight-1 fusion.",
+  "computation": "aomega-m3-pretzel-onesided-theta-dressing",
+  "engine": "python+sympy",
+  "scriptFile": "aomega_m3_pretzel_onesided_theta_dressing_probe.py",
+  "computedAt": "2026-09-14T07:00:50.044683+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "QMAX": 4,
+    "A": 2,
+    "orientation": "SnapPy's (Part 11)",
+    "theta_closed_form": "theta(-q^{-1/2}x;q) = (x;q)_inf (q/x;q)_inf  [GGM (108)]"
+  },
+  "data": {
+    "diagonal_weights": {
+      "D1*Dt1": "X**(-2)",
+      "D2*Dt2": "X**2"
+    },
+    "cross_weights": {
+      "D1*Dt2": "1",
+      "D2*Dt1": "1"
+    },
+    "z2_equivariant": true,
+    "index_matches": {
+      "omega=1,sigma=+1,zeta=x": false,
+      "omega=1,sigma=+1,zeta=x^{1/2}": false,
+      "omega=1,sigma=+1,zeta=1/x": false,
+      "omega=1,sigma=+1,zeta=x^{-1/2}": false,
+      "omega=1,sigma=-1,zeta=x": false,
+      "omega=1,sigma=-1,zeta=x^{1/2}": false,
+      "omega=1,sigma=-1,zeta=1/x": false,
+      "omega=1,sigma=-1,zeta=x^{-1/2}": false,
+      "omega=-1,sigma=+1,zeta=x": false,
+      "omega=-1,sigma=+1,zeta=x^{1/2}": false,
+      "omega=-1,sigma=+1,zeta=1/x": false,
+      "omega=-1,sigma=+1,zeta=x^{-1/2}": false,
+      "omega=-1,sigma=-1,zeta=x": false,
+      "omega=-1,sigma=-1,zeta=x^{1/2}": false,
+      "omega=-1,sigma=-1,zeta=1/x": false,
+      "omega=-1,sigma=-1,zeta=x^{-1/2}": false,
+      "omega=i,sigma=+1,zeta=x": false,
+      "omega=i,sigma=+1,zeta=x^{1/2}": false,
+      "omega=i,sigma=+1,zeta=1/x": false,
+      "omega=i,sigma=+1,zeta=x^{-1/2}": false,
+      "omega=i,sigma=-1,zeta=x": false,
+      "omega=i,sigma=-1,zeta=x^{1/2}": false,
+      "omega=i,sigma=-1,zeta=1/x": false,
+      "omega=i,sigma=-1,zeta=x^{-1/2}": false,
+      "omega=-i,sigma=+1,zeta=x": false,
+      "omega=-i,sigma=+1,zeta=x^{1/2}": false,
+      "omega=-i,sigma=+1,zeta=1/x": false,
+      "omega=-i,sigma=+1,zeta=x^{-1/2}": false,
+      "omega=-i,sigma=-1,zeta=x": false,
+      "omega=-i,sigma=-1,zeta=x^{1/2}": false,
+      "omega=-i,sigma=-1,zeta=1/x": false,
+      "omega=-i,sigma=-1,zeta=x^{-1/2}": false
+    },
+    "q0_one_branches": [],
+    "dressed_low_rows": {
+      "omega=1,sigma=+1": {
+        "0": "-(X**2 - X + 1)*(X**2 + X + 1)/((X - 1)**2*(X + 1)**2)",
+        "1": "2*(X**2 + 1)**2*(X**4 + 1)/(X**2*(X - 1)**2*(X + 1)**2)"
+      },
+      "omega=1,sigma=-1": {
+        "0": "-(X**2 - X + 1)*(X**2 + X + 1)/(X - 1)**4",
+        "1": "2*(X**2 + 1)*(X**6 - 2*X**5 + X**4 - 2*X**3 + X**2 - 2*X + 1)/(X**2*(X - 1)**4)"
+      },
+      "omega=-1,sigma=+1": {
+        "0": "-(X**2 - X + 1)*(X**2 + X + 1)/((X - 1)**2*(X + 1)**2)",
+        "1": "2*(X**2 + 1)**2*(X**4 + 1)/(X**2*(X - 1)**2*(X + 1)**2)"
+      },
+      "omega=-1,sigma=-1": {
+        "0": "-(X**2 - X + 1)*(X**2 + X + 1)/(X - 1)**4",
+        "1": "2*(X**2 + 1)*(X**6 - 2*X**5 + X**4 - 2*X**3 + X**2 - 2*X + 1)/(X**2*(X - 1)**4)"
+      },
+      "omega=i,sigma=+1": {
+        "0": "-(X**2 - X + 1)*(X**2 + X + 1)/((X - 1)**2*(X + 1)**2)",
+        "1": "2*(X**2 + 1)**2*(X**4 + 1)/(X**2*(X - 1)**2*(X + 1)**2)"
+      },
+      "omega=i,sigma=-1": {
+        "0": "-(X**2 - X + 1)*(X**2 + X + 1)/(X - 1)**4",
+        "1": "2*(X**2 + 1)*(X**6 - 2*X**5 + X**4 - 2*X**3 + X**2 - 2*X + 1)/(X**2*(X - 1)**4)"
+      },
+      "omega=-i,sigma=+1": {
+        "0": "-(X**2 - X + 1)*(X**2 + X + 1)/((X - 1)**2*(X + 1)**2)",
+        "1": "2*(X**2 + 1)**2*(X**4 + 1)/(X**2*(X - 1)**2*(X + 1)**2)"
+      },
+      "omega=-i,sigma=-1": {
+        "0": "-(X**2 - X + 1)*(X**2 + X + 1)/(X - 1)**4",
+        "1": "2*(X**2 + 1)*(X**6 - 2*X**5 + X**4 - 2*X**3 + X**2 - 2*X + 1)/(X**2*(X - 1)**4)"
+      }
+    },
+    "W_squared_identity": "W^2 = s(x) - 3",
+    "rows_in_adjoint_weight_s": {
+      "0": "(-s)/(s-3)**1",
+      "1": "(2*(s - 1)*(s + 1))/(s-3)**1",
+      "2": "(-s**3 + 2*s**2 + 5*s + 1)/(s-3)**1",
+      "3": "(-5*s**3 + 5*s**2 + 11*s + 3)/(s-3)**1",
+      "4": "(2*s**4 - 7*s**3 - 9*s**2 + 10*s + 8)/(s-3)**1"
+    },
+    "rows_in_s_reference_branch": "omega=-i,sigma=+1",
+    "undivided_bilinear_in_Z_of_s": {
+      "0": "s",
+      "1": "2 - 2*s**2",
+      "2": "s**3 - 2*s**2 - 5*s - 1",
+      "3": "5*s**3 - 5*s**2 - 11*s - 3",
+      "4": "-2*s**4 + 7*s**3 + 9*s**2 - 10*s - 8"
+    }
+  },
+  "verdict": "DERIVED: the one-sided Gaussian dressing of a residue family is a THETA, not a monomial — theta(-q^{-1/2} x_F; q) = (x_F;q)_inf (q/x_F;q)_inf by GGM (108) — and Part 14's monomial x_F^{-A} is only what the PAIR collapses to, via (x;q)_inf = (1-x)(qx;q)_inf. Splitting it before the collapse gives, for the pretzel at A = 2: diagonal weights D_1 D~_1 = X^-2 and D_2 D~_2 = X^+2 (G1, Part 14 reproduced) but CROSS weights D_1 D~_2 = D_2 D~_1 = 1 (G2). So the dressing weights the diagonal and the cross terms of the weight-1 bilinear DIFFERENTLY, which is outside the uniform per-family monomial class that Part 14 tested and Part 15 excluded — that is why neither found it. It is exactly Z/2-equivariant (G3), so Part 16's symmetry-adapted basis and its (4,1,1) grading are unchanged and the weight-1 slot is still the antisymmetric one. Transporting GZ Obs 3.9 to the DRESSED basis: index match = False; branches with q^0 row = 1: none. AND, measured: W^2 = s(x) - 3 EXACTLY, and every row of the dressed fusion is a rational function of the ADJOINT WEIGHT s(x) alone, with denominator a power of (s-3) — q^0 = -s/(s-3), q^1 = 2(s^2-1)/(s-3) — so it lives in exactly the ring GGM's Stokes matrices live in, which is what #7333's Z/2 grading predicts for integer powers of q. What separates it from the index is therefore a NORMALISATION in that ring, and that is #7333's named missing input too: the two routes converge on one gap. Sharper still (G7): WITHOUT the 1/W^2 the same bilinear lies in Z[s] exactly — integer coefficients, no denominator, the ring GGM's (188)/(307) entries live in — with q^0 row s(x) against the index's 1.",
+  "assertions": [
+    {
+      "name": "G1-the one-sided theta factors reproduce Part 14's PAIR monomial exactly: D_1 D~_1 = X^-2 and D_2 D~_2 = X^+2 (so this split is consistent with the established result, not a new convention)",
+      "passed": true,
+      "diag_1": "X**(-2)",
+      "diag_2": "X**2"
+    },
+    {
+      "name": "G2-the CROSS products carry weight ONE: D_1 D~_2 = D_2 D~_1 = 1",
+      "passed": true,
+      "cross_12": "1",
+      "cross_21": "1"
+    },
+    {
+      "name": "G3-the dressing is exactly Z/2-equivariant, D_1(1/X) = D_2(X) — so Part 16's symmetry adaptation survives it unchanged, and the weight-1 slot is still the antisymmetric one",
+      "passed": true
+    },
+    {
+      "name": "G4-diagonal and cross weights DIFFER (X^-2, X^+2 vs 1), so the dressing is not a uniform per-family monomial reweighting — it is outside the class Part 14 tested and Part 15 excluded",
+      "passed": true
+    },
+    {
+      "name": "T1-the DRESSED weight-1 element's fusion reproduces the derived rotated index to q^3 under some branch and zeta identification",
+      "passed": false,
+      "matches": "none"
+    },
+    {
+      "name": "T2-at least one branch's dressed q^0 row equals 1 (the index's constant term), which the BARE Part 16 fusion did not give",
+      "passed": false,
+      "branches": []
+    },
+    {
+      "name": "G5-the antisymmetric coordinate squares to the adjoint weight shifted: W^2 = s(x) - 3 exactly, so Part 16's division by W^2 is a division inside the adjoint-weight ring, not an extraneous factor",
+      "passed": true,
+      "identity": "W^2 = (X - 1/X)^2 = X^2 - 2 + X^-2 = s(x) - 3"
+    },
+    {
+      "name": "G7-without Part 16's 1/W^2 the dressed weight-1 bilinear lies in Z[s] EXACTLY — a polynomial in the adjoint weight with integer coefficients, no denominator — which is precisely the ring GGM's (188)/(307) Stokes entries live in; its q^0 row is s(x) where the index's is 1, so the whole residual gap is one normalisation",
+      "passed": true,
+      "rows": {
+        "0": "s",
+        "1": "2 - 2*s**2",
+        "2": "s**3 - 2*s**2 - 5*s - 1",
+        "3": "5*s**3 - 5*s**2 - 11*s - 3",
+        "4": "-2*s**4 + 7*s**3 + 9*s**2 - 10*s - 8"
+      }
+    },
+    {
+      "name": "G6-every row of the dressed weight-1 fusion is a rational function of the ADJOINT WEIGHT s(x) alone, denominator a power of (s - 3) = W^2 — the same ring GGM's Stokes matrices live in, which is what sibling #7333's Z/2 grading predicts for integer powers of q",
+      "passed": true,
+      "rows_in_s": {
+        "0": "(-s)/(s-3)**1",
+        "1": "(2*(s - 1)*(s + 1))/(s-3)**1",
+        "2": "(-s**3 + 2*s**2 + 5*s + 1)/(s-3)**1",
+        "3": "(-5*s**3 + 5*s**2 + 11*s + 3)/(s-3)**1",
+        "4": "(2*s**4 - 7*s**3 - 9*s**2 + 10*s + 8)/(s-3)**1"
+      }
+    }
+  ],
+  "scriptHash": "c90241f2055e",
+  "scriptCommitSha": "unknown",
+  "commitSha": "b8b4b37d74818c034650c8c303edd56c2ac99344",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

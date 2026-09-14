@@ -350,9 +350,11 @@ def branch_twist(ser, omega, sigma):
     """Level-2 fusion branch: the q~-side series is in Q~ = q~^{1/4} and X~ = x~^{1/2}; the fusion q~ -> q^-1, x~ -> x^-1
     fixes them only up to Q~ -> omega Q^-1 (omega^4 = 1) and X~ -> sigma X^-1 (sigma = +-1).  A fused Ser was built with
     omega = sigma = 1; its Q-exponent k came from Q~^{-k}, so the twist multiplies coefficient k by omega^{-k} and maps X -> sigma X."""
-    d = {}
+    om = sp.sympify(omega)          # NEVER a Python int: (-1) ** (-k) is a FLOAT in Python,
+    sg = sp.sympify(sigma)          # which silently floated 57 coefficients of this probe's
+    d = {}                          # own committed witness (Part 17, 2026-09-14).
     for k, v in ser.d.items():
-        d[k] = sp.cancel(v.subs(Xs, sigma * Xs) * omega ** (-k))
+        d[k] = sp.cancel(v.subs(Xs, sg * Xs) * om ** (-k))
     return Ser(d)
 
 

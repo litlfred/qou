@@ -60,3 +60,30 @@ PART 15 (2026-09-13, measured, probe aomega_m3_pretzel_block_basis_rank_probe.py
 
 
 PART 16 (2026-09-14, derived, probe aomega_m3_pretzel_symmetry_adapted_basis_probe.py 5/6, T1 the recorded negative): WHY Part 15's degeneracy happens, and the basis that survives it. (1) X <-> 1/X is an EXACT Z/2 on all six families: F1(1/X) = F2(X), each parity class fixed. So the degeneracy is the symmetry — the antisymmetric part is FORCED to vanish at the fixed point. Same Z/2 the operator route reaches independently (#7333, sigma-parity <-> half-integrality in q): two derivations, residues and q-difference operator, one structure. (2) Dividing by W = X - 1/X (vanishing to first order) lifts rank 4 -> 5; the residual coincidence sym(F1,F2) = F3(0,0) at X=1 vanishes to order EXACTLY 2, so dividing by W^2 completes to RANK 6. Exponent forced: W^1 gives rank 5, checked. (3) Grading by order of vanishing = (4,1,1): weight 0 {sym, F3(0,1), F3(1,0), F3(1,1)}, weight 1 {anti/W}, weight 2 {(sym-F3(0,0))/W^2} — EXACTLY GZ's printed weight decomposition (§3.5 W_0 = <H_0,H_3,H_4,H_5>, W_1 = <H_1>, W_2 = <H_2>), derived from residues not transcribed. So the meridian deformation DOES carry the eps-expansion — not by evaluating the separated families (Part 15's negative stands) but in the ORDERS OF VANISHING of their symmetry-adapted combinations. OPEN (T1): GZ Obs 3.9 says the index is the weight-1 component alone; fusing anti/W with its q->q^-1, x->x^-1 partner does NOT give the derived index at zeta in {x, x^{1/2}, 1/x} — its q^1 coefficient is -2(X^2+1)^2/((X-1)^2(X+1)^2), not -(2 zeta + 4 + 2/zeta). Right SLOT, wrong NORMALISATION: the theta dressing (Part 14's monomial for the raw families) has not been worked out for the symmetry-adapted ones. That is the next step, not a new search. Audit §3o.
+
+## Part 17 (2026-09-14) — the one-sided dressing is a theta; the dressed weight-1 bilinear is in ℤ[s(x)]
+
+Producer `aomega_m3_pretzel_onesided_theta_dressing_probe.py`, 7/9 (T1/T2 recorded
+negatives). Closes §3o's named open item; audit §3p.
+
+- **Derived:** `θ(−q^{−1/2}x;q) = (x;q)_∞ (q/x;q)_∞` (GGM 108 at `y = −q^{−1/2}x`). The
+  one-sided Gaussian dressing is this theta to the `−A`; Part 14's monomial `x_F^{−A}` is
+  only what the **pair ratio** collapses to, via `(x;q)_∞ = (1−x)(qx;q)_∞`.
+- **Diagonal vs cross:** `D₁D̃₁ = X^{−2}`, `D₂D̃₂ = X^{+2}` (Part 14 reproduced) but
+  `D₁D̃₂ = D₂D̃₁ = 1`. The dressing is therefore **outside** the uniform per-family
+  monomial class Part 14 tested and Part 15 excluded — which is why neither found it.
+- **Equivariant:** `D₁(1/X) = D₂(X)` exactly, so Part 16's basis and (4,1,1) grading are
+  unchanged.
+- **`W² = s(x) − 3` exactly.** So Part 16's `/W²` is a division inside the adjoint-weight
+  ring. Every dressed row is in `ℚ(s)` with denominator exactly `(s−3)¹`.
+- **Undivided, the bilinear is in `ℤ[s]`:** `q⁰ = s`, `q¹ = −2(s²−1)`,
+  `q² = s³−2s²−5s−1`, `q³ = 5s³−5s²−11s−3`, `q⁴ = −2s⁴+7s³+9s²−10s−8`. That is the ring
+  GGM's (188)/(307) entries live in, and what #7333 predicts for integer `q`-powers.
+- **Still open:** `q⁰` is `s(x)` where the index's is `1`. One normalisation inside `ℤ[s]`
+  separates them — the same `GL(r)` normalisation #7333 names from the operator side. The
+  two routes converge on **one** gap.
+- **Float64 defect fixed at the source:** `branch_twist`'s `omega ** (−k)` took a Python
+  `int` omega, and `(−1) ** (−k)` is a Python float — 45 symbolic coefficients of the
+  committed Part 12b witness were float-formatted. Coerced with `sp.sympify`; witness
+  57 → 12 floats (the 12 are the legitimate mpmath rows), verdict unchanged. Every
+  precision gate was blind to it: the numbers sit inside JSON **strings**.
