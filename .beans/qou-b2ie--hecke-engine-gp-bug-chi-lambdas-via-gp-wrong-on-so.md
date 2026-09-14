@@ -128,3 +128,71 @@ the row count is quoted in AGENTS.md and updating it is its own edit.
 **Still open:** re-run those 6 producers and diff against the committed
 witnesses. Producers write SIBLING witnesses, so that needs a whole-tree
 snapshot and restore, not a single-file one.
+
+## 2026-09-14 (later) — 3 of the 6 re-run: one clean, one MOVED 30/30 → 2/30, cause NOT established
+
+Tree snapshotted and **restored** afterwards (`git checkout -- computations/`,
+verified clean); nothing regenerated was committed, for a reason given below.
+
+| witness | verdict on re-run |
+|---|---|
+| `derived-chi-catalogue-bridge-factor-omega` (2026-07-06) | **mathematically IDENTICAL** — only `durationMs` and `engineVersion` moved |
+| `derived-chi-catalogue-production-wire-demo` (2026-07-07) | **MOVED**: `matches 30 → 2`, `compute_mismatches 0 → 28`, `allPassed True → False` |
+| `derived_chi_catalogue_lr_scaffold` | exit 0, wrote **no** tracked witness — see the attribution defect below |
+
+### The move is measured; its CAUSE is not, and three explanations survive
+
+The committed witness says *"30/30 cells match direct compute"*; re-running now
+gives **2/30**, against a catalogue of 342 loaded cells. It is exactly the shape
+the bean predicts — a pre-guard witness recording an agreement the fixed kernel
+no longer reproduces — and that is **not** sufficient to conclude it:
+
+- **(A) the committed catalogue carries pre-fix GP numbers.** Both sides were
+  computed the same wrong way in July, so they agreed; the kernel is fixed, the
+  stored catalogue is not, so they now disagree.
+- **(B) the environment.** This container is **downgraded** relative to the
+  witness: python `3.13.12 → 3.11.15`, numpy `2.5.0 → 2.4.6`, scipy
+  `1.18.0 → 1.17.1`. The producer's own guard flagged exactly this, unprompted.
+- **(C) the catalogue file changed** independently since 2026-07-07.
+
+**The discriminator is the 28 cells themselves**: a `q`-exponent shift is (A),
+float noise is (B). The producer prints only the count, so getting them needs a
+small change to it or a standalone comparison — **not done.**
+
+Naming (A) because it fits is the error this repo has made before — the
+`binding_canonical` 48 % move was reported as environment and was import-cone
+drift. One run does not separate them.
+
+**Scope.** `production_wire_demo` is a *demo* whose verdict field is a wire-up
+readiness check, so a mismatch is not by itself a published physics number being
+wrong. It **is** evidence about the catalogue it reads, and that catalogue has
+other consumers.
+
+### 🛑 This container CANNOT legitimately refresh these witnesses
+
+The producers' own environment guard refuses the direction: *"the environment
+block records LESS than the witness on disk … install it and re-run rather than
+committing the weaker record; the numbers can be identical while the provenance
+silently degrades."* So a re-run here is a **measurement only**. Refreshing needs
+a container at python 3.13 / numpy 2.5 / scipy 1.18 or newer.
+
+### A second attribution defect in my own triage
+
+`derived_chi_catalogue_lr_scaffold` exited 0 and wrote **no** tracked witness,
+yet the triage lists it against `audits/canonical-script-input-audit.witness.json`.
+The triage matches on *"the witness blob contains the producer's stem"*, which is
+**not** "the producer owns that witness" — an audit witness naming the scripts it
+audited matches too. That over-counts in the same direction as the two traps its
+docstring already names. The fix is to key on the producer's declared output
+path, not on a substring of the payload; **not done**, and the 6 should be read
+as an upper bound until it is.
+
+### Environment note
+
+`mpmath`, `numpy`, `sympy`, `scipy` were absent on this container and were
+installed to run any of this at all — the bare-container default AGENTS.md
+documents. Versions are those listed under (B), i.e. **older** than the witnesses
+record.
+
+**Still open:** the 3 un-run producers, the 28-cell discriminator, and the
+output-path fix to the triage.
