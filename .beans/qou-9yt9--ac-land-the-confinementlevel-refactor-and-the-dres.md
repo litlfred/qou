@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T07:41:37Z
+updated_at: 2026-09-14T07:50:35Z
 ---
 
 ## Landed (A + C)
@@ -259,4 +259,35 @@ Rebased `--onto origin/main` and force-pushed before any review. Check
 
 **Remaining 6** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
 RungRule, TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
+TannakaKreinReconstruction.
+
+
+## KnotOperator / universal-ilp-algorithm (PR #7359, 2026-09-14)
+
+`proof-claims-unencoded` **8 -> 7** on this branch (PR running total 9 -> 7;
+combined with #7357 once both land: **5**).
+
+**THIRD time the flagged field was the smaller half.** And this one shows why
+"is the field consumed?" is the WRONG test: `is_knot : Prop` WAS read —
+`universal_ilp` had `K.is_knot AND ...` — but reading a field whose value the
+CONSTRUCTOR picked constrains nothing. Parameterised it
+(`IsSingleComponent` caller-supplied) and proved the structure refutable:
+`knotOperator_isEmpty_of_never_single_component`.
+
+**The larger unflagged half: `gram_matrix` is the ZERO matrix**, so
+`frobenius_positive` is `0 >= 0` and the whole LP predicate holds of every
+operator. Its docstring already SAID this and nothing checked it; now
+`universal_ilp_holds_of_zero_gram` proves it, so it stops compiling the moment
+a real Gram lands.
+
+**Corpus correction while there:** that docstring called the intended
+Halverson-Ram Gram "sharper". Under convention D it is SINGULAR —
+`mass-theory/frobenius-gram-matrix`: `y_(1^3) = 0` symbolically, the (1^3)
+block IS the radical, `det G = 0` exactly, `G_INV` gone and `G_PINV` on
+`H_3(q)/rad` in its place. **NOT wired** — `frobenius_positive` over a rank-5
+form is a different condition and the radical's treatment is a modelling
+choice. Author's call.
+
+**Remaining 5** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
+RungRule, TransferMatrixEigenphase (ledger `legit` — leave),
 TannakaKreinReconstruction.
