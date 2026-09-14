@@ -192,4 +192,50 @@ theorem classical_point_iff (q : R) :
   · intro h; linear_combination h
   · intro h; linear_combination h
 
+/-! ### Why the block's two sections are different KINDS of object
+
+This is the step that unifies the `/3` with the `k=3` / `k=2` gap the arc has
+been carrying as a separate open item.
+
+**A central element needs no measure.**  If every channel sees the same value `s`
+— which is exactly what "central scalar" means, and what the block proves of
+`σ³ - σ⁻³ = 3h + h³` — then the weighted combination returns `s` unchanged,
+because the weights sum to 1 (`central_value_unweighted`).  No `1/3`, no measure,
+nothing to choose.
+
+**A non-central element does.**  `σ² - σ⁻² = h(σ + σ⁻¹)` is not central
+(`CrossingReversalParity.reversal_two`), so it has three distinct channel values
+and evaluating it *requires* picking a measure — which is where `weightRatio`,
+and at `q = 1` the `1/3`, comes from.
+
+So the block's narrative half and its formula half are not two numbers for one
+object; they are **two different kinds of object**, and the `1/3` is the
+fingerprint of the switch: it can only appear on the side that needs a measure.
+Measured at the proton `q₀` against the observed split, the narrative object read
+as its own centrality argument dictates — no measure, so no `1/3` — is
+**+353.5 %**, against `-0.128 %` for the formula's. Scope (a): a measured negative
+about what the block's own argument yields, with no invariant excluding a `k = 3`
+route that supplies its normalisation some other way. -/
+
+/-- **A central value passes through the channel average untouched.**  The three
+weights sum to 1, so a quantity every channel agrees on is returned as-is — there
+is no measure factor and in particular no `1/3` on this side. -/
+theorem central_value_unweighted {q : R} (hd : weightDen q ≠ 0) (s : R) :
+    wSym q * s + wStd q * s + wSym q * s = s := by
+  have h : wSym q + wStd q + wSym q = 1 := weights_sum_one hd
+  calc wSym q * s + wStd q * s + wSym q * s
+      = (wSym q + wStd q + wSym q) * s := by ring
+    _ = 1 * s := by rw [h]
+    _ = s := one_mul s
+
+/-- The block's narrative object, `σ³ - σ⁻³ = 3h + h³`, as a value. -/
+noncomputable def k3Value (q : R) : R := 3 * hOf q + hOf q ^ 3
+
+/-- It is the central scalar `q³ - q⁻³`, exactly as the block states. -/
+theorem k3Value_eq {q : R} (hq : q ≠ 0) :
+    k3Value q = q ^ 3 - (q ^ 3)⁻¹ := by
+  unfold k3Value hOf
+  field_simp
+  ring
+
 end QOU.Hecke.FlavourSplitThreeChannelWeight
