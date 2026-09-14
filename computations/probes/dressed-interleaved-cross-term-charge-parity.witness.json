@@ -42,6 +42,20 @@
     "parity_ratio_still_forced": false,
     "consequence": "The n=4 prune is WORD-SPECIFIC. At n=4 the charge dependence is linear in one bond, which forces the parity ratio; at n=5 the interleaved bonds enter quadratically, the mirror-even part becomes charge-dependent, and the ratio is no longer forced. The word-class route is OPEN at n=5."
   },
+  "second_tranche": {
+    "parity_ratio_closed_form": "odd/even = ((q^4-1)/(q^4+1)) * T_z, exactly",
+    "n4_cap": "(q^4-1)/(q^4+1)",
+    "n4_cap_at_q0": "0.20570407725231313125",
+    "n6_peeled_bond_still_factors": true,
+    "n6_sum_of_squares_generalises": false,
+    "n6_d1_drops": false,
+    "envelope_max_abs_ratio": {
+      "4": "0.20570407725231313125",
+      "5": "0.39282786874717767372",
+      "6": "0.49352687675957229077"
+    },
+    "fit_hazard": "The achievable |ratio| envelope GROWS with word length and is bounded by 1, so a long enough word brackets any target below 1. The n=4 cap is a real exclusion; n>=5 is not a prediction unless the word class is derived independently (qou-5vhf)."
+  },
   "scope": "(a) scope-limited: n=4, three bonds, exact and symbolic. Not a nucleus. Does NOT claim the production word is interleaved -- it is sequential (qou-5vhf is which word class a nucleus is).",
   "assertions": [
     {
@@ -118,8 +132,33 @@
       "name": "N5_PARITY_RATIO_IS_NO_LONGER_FORCED_so_the_n4_prune_is_WORD_SPECIFIC",
       "passed": true,
       "detail": "Delta_5 odd/even == bond-factor odd/even?  False.  At n=4 it WAS (that is the whole n=4 prune); here it is not, because the mirror-even part now depends on the charges (even5 has d0: True, d2: True).  So `parity_ratio_const_mul` does not apply, and the n=4 exclusion does NOT generalise: the word-class route is OPEN at n=5."
+    },
+    {
+      "name": "RATIO_IS_EXACTLY_LINEAR_IN_Tz_WITH_SLOPE_q4m1_OVER_q4p1",
+      "passed": true,
+      "detail": "odd/even = ((q^4-1)/(q^4+1)) * T_z EXACTLY -- not merely bounded by it. So on the physical range |T_z| <= 1 the n=4 parity ratio is CAPPED at (q^4-1)/(q^4+1), attained only at the pure like-pairs T_z = +-1. Formalised sorry-free as bondOfTz_parity_ratio_cap / crossTerm_parity_ratio_cap."
+    },
+    {
+      "name": "N6_PEELED_BOND_STILL_FACTORS_LINEARLY_three_for_three",
+      "passed": true,
+      "detail": "Delta_6 is degree 1 in d4 and Delta_6/(z+d4) is free of d4, so the Markov-PEELED bond factors out linearly at n = 4, 5 AND 6.  That is the one shape that does generalise."
+    },
+    {
+      "name": "N6_THE_SUM_OF_SQUARES_DOES_NOT_GENERALISE_cross_terms_appear",
+      "passed": true,
+      "detail": "At n=5 the interleaved bonds entered as f0^2 + f2^2 with NO cross term. At n=6 genuine pairwise couplings appear (d0*d1, d0*d3, d2*d3 all carry nonzero coefficients), so the additive sum-of-squares is an n=5 ACCIDENT, not a general pattern."
+    },
+    {
+      "name": "N6_THE_NEVER_RECROSSED_BOND_NO_LONGER_DROPS",
+      "passed": true,
+      "detail": "d1 is ABSENT at n=4 and n=5 and PRESENT at n=6 -- degrees [2, 2, 2, 2, 1] in (d0,d1,d2,d3,d4). So 'the non-recrossed bond drops out' is also not general."
+    },
+    {
+      "name": "ENVELOPE_GROWS_STRICTLY_WITH_WORD_LENGTH",
+      "passed": true,
+      "detail": "max|ratio| over ALL bond assignments: n=4 0.2057040773, n=5 0.3928278687, n=6 0.4935268768.  ratio = (a-b)/(a+b) with b the mirror image, so |ratio| < 1 while a and b share a sign, and the envelope approaches 1 as more dressings enter the kernel.  A LONGER WORD CAN THEREFORE BE MADE TO BRACKET ANY TARGET BELOW 1 -- reaching one by choosing n is selection against the target, not a derivation (AGENTS.md, NO FITTING)."
     }
   ],
   "free_parameters": 0,
-  "computedAt": "2026-09-14T18:06:05.465741+00:00"
+  "computedAt": "2026-09-14T18:36:35.185160+00:00"
 }
