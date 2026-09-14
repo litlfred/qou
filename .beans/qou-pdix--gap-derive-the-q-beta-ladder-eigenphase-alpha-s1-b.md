@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T20:51:46Z
+updated_at: 2026-09-14T06:45:46Z
 
 ---
 
@@ -2406,3 +2406,71 @@ made it in the same turn that corrected two other framing errors.
 Contaminated sites: this bean's preceding entry, the PR #7340 body's
 recommendation, and two chat reports. The probe and witness now carry the
 correction in a `gap_magnitude_correction` field.
+
+---
+
+## 2026-09-14 — on the RULED base the ladder is excluded for EVERY phase, so α is not the blocker
+
+Probe: [`qbeta_ladder_form_cannot_reach_ruled_base_probe.py`](computations/qbeta/qbeta_ladder_form_cannot_reach_ruled_base_probe.py)
+— 5/5, proton pin, 50 dps. Scope **(b)** for the exclusion (proved invariant
+cited); (a) for the numbers.
+
+**`qou-cds1`'s last entry (2026-09-08) holds two halves that do not fit
+together.** It adopts the ruled base and keeps the old blocker in one sentence:
+*"eps := tr_M at z_D … the D-frame ladder is to be re-derived on the z_D base
+(0.4447004 MeV, −43.157 %) … the blocker is still the N=1 phase (qou-pdix)."*
+
+The ladder's correction factor is `F(α) = cos(α − u/2)·(1 − u²)·Π(1 + c_k u^k)`,
+and what it must supply is `F_required = Q_codata/Q_base`:
+
+| base | Q_base (MeV) | `F_required` | |
+|---|---|---|---|
+| `z = 1` (Form A) — **RETIRED** | 0.783645827375 | **0.998325241673** | < 1 |
+| `z_D`, order-zero `E₀` — **RULED** | 0.444700408522 | **1.75923699418** | **> 1** |
+| `z = q` (augmentation) | 0.87989056126 | **0.889125812282** | < 1 |
+| dashboard scored cell — **RULED** | 0.65185631006 | **1.20016236389** | **> 1** |
+
+**`cos ≤ 1`, so `F_N2(α) = cos(α − u/2)(1 − u²) ≤ 1 − u² = 0.99992745…` for
+EVERY real α** — the supremum is attained at `α = u/2` and is still below 1.
+Both ruled cells need more than 1. **No phase closes it**, derived or fitted.
+
+**So deriving α cannot unblock this ladder on the base the bean adopted.** The
+blocker line was correct for the retired cell — there `F_required = 0.9983 < 1`,
+a small phase fits, and α is exactly the interesting unknown. It does not
+survive the base change.
+
+**Pushing the shortfall into the rungs instead is not a route either:** it needs
+`c_2 ≈ 1.047e4` (z_D) or `2.760e3` (dashboard cell) against the structural
+`c_2 = −1` — four orders, wrong sign. The `1/u² = 13784.87` magnifier is why,
+which is this bean's own finding about `c_k` being the wrong coordinate.
+
+### Calibration, run before anything was concluded
+
+The probe first reproduces **this bean's own F-table** on the retired base —
+**−0.0762164 / −35.9111 / −3.17063 %** against the recorded −0.076 / −35.9 /
+−3.17 — so the machinery is the bean's, not a re-invention.
+
+### A coordinate trap this exposes
+
+That table reports relative deviation of **`1 − F`**, not of `F`. On the retired
+base both are small and positive and the ratio is informative. On a ruled base
+`1 − F_required = −0.7592` is **negative** while the model's `1 − F_N2 = +0.0016`
+stays positive, so the same ratio returns −100.21 % — opposite-signed
+quantities, meaningless rather than merely large. **Report `F` directly on a
+ruled base;** the reldev table is retired-base-only.
+
+### What this does NOT say
+
+It does **not** retire α: `qou-pdix` stays open on its own terms, α is still the
+N=1 phase, and this says only that α is not what stands between the ladder and
+the ruled base. It does **not** refute the ladder or the forced bar-odd
+projection `a_odd = a − h²/4` — both C-frame, sorry-free, untouched. And it does
+**not** choose a base: `F_required < 1` on the retired cell is **not** a reason
+to prefer it (§NO FITTING — a base is never chosen by which obstruction it
+removes).
+
+### What it changes about the next step
+
+The open question is no longer "what is α" but **what object supplies a factor
+above 1 at all** — the ladder's multiplicative form cannot, whatever its phase.
+That is a question about the *base or the assembly*, not about the phase.
