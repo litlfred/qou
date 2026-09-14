@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T18:01:40Z
-updated_at: 2026-09-14T19:05:39Z
+updated_at: 2026-09-14T20:00:51Z
 ---
 
 ## Measured 2026-09-14 (session: duality-sigma-hermitian-derivation)
@@ -133,3 +133,51 @@ available. `AntipodeIndependence.lean` restated over a local
 
 Bean stays **in-progress** — item 1 is an open conjecture-adjacent decision
 (rule 13a).
+
+
+---
+
+## 🟩 The remaining "owner decision" is SETTLED BY PROOF (2026-09-14, same day)
+
+The resolution above left one item as the owner's call: whether to also add the
+bialgebra (bimonoid) compatibility. **It is not a decision — the axiom must not
+be added, and that is now a theorem.**
+
+One of the four bimonoid axioms ON ITS OWN — `Delta . eta = eta (x) eta`,
+Mathlib's `BimonObj.one_comul` — collapses the substrate to the tensor unit:
+
+- `comul_eq_of_one_comul` : `Delta = (lambda_A)^-1 >> (eta |> A)`, i.e. `Delta(x) = 1 (x) x`
+- `counit_comp_unit`      : `eps >> eta = id_A` — `id_A` factors through `1_C`
+- `isoUnit`               : with `eta >> eps = id`, an isomorphism `A ~= 1_C`
+- `not_one_comul_of_nontrivial` : contrapositive, the usable form
+
+All sorry-free, lean-direct exit 0, `#print axioms` clean; the two structural
+lemmas depend on NO axioms at all. File:
+`QOU/QuantumObservableUniverse/FrobeniusBialgebraCollapse.lean`.
+
+Mechanism: the Frobenius relation makes `Delta` a bimodule map, hence determined
+by `Delta(1)`; the bimonoid axiom makes `Delta(1)` degenerate; the counit law
+forces `x = eps(x).1`. No braiding used — and `one_comul` is the only bimonoid
+axiom statable without one, so the collapse is reachable at exactly this
+structure's level.
+
+**Expected, not alarming.** A finite-dimensional Hopf algebra IS Frobenius, but
+its Frobenius comultiplication is not its Hopf comultiplication; forcing them to
+coincide is what collapses. Axiom 3 fixes `Delta` as the Frobenius one, so the
+substrate is a Frobenius monoid carrying an antipode, not a Hopf monoid. The
+name should be read that way.
+
+**Not excluded:** a Hopf structure on `A` borne by a DIFFERENT comultiplication.
+Separate object; the corpus does not have one.
+
+Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md`.
+Block `authorNotes` updated: the old "recorded, not acted on" caveat now points
+at the proof.
+
+### New gap opened by this: `qou-aawz`
+
+The corpus has exactly ONE witness of `FrobeniusHopfData` and it is `A = 1`
+(`TrivialWitness.unitFrobHopf`). So consistency of the axioms is established
+only by the trivial object. The collapse result does NOT show the current axioms
+force `A = 1` — but a definition whose only model is trivial, one axiom away
+from a proof that trivial is the only model, is worth testing. Priority high.

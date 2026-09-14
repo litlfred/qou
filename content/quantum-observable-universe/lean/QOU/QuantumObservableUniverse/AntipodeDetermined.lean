@@ -65,8 +65,22 @@ does not extend to a `HopfObj` and `antipode_sq_of_comm` cannot be applied to
 it directly; it is stated for Mathlib's `HopfObj` and recorded here as the
 answer to the `S² = id` question, not as a theorem about the substrate.
 
-Recorded, not acted on — adding a bialgebra axiom is a further change to the
-definition and is the owner's call, as the antipode axiom was.
+**🛑 Superseded 2026-09-14, same day: the bialgebra axiom must NOT be added.**
+This paragraph left it as the owner's call. It is not a decision — it is
+settled by proof. `QOU.FrobeniusHopfData.counit_comp_unit`
+(`FrobeniusBialgebraCollapse.lean`, sorry-free) shows that one of the four
+bimonoid axioms *on its own*, `Δ ∘ η = η ⊗ η`, forces `ε ≫ η = 𝟙_A` — the
+substrate object becomes a retract of the tensor unit, and with the second
+unit-side axiom an isomorphism `A ≅ 𝟙_C`. The Frobenius relation makes `Δ` a
+bimodule map, hence determined by `Δ(1)`; the bimonoid axiom makes `Δ(1)`
+degenerate; the counit law finishes it.
+
+So the substrate is a Frobenius monoid carrying an antipode, and cannot be
+promoted to a Hopf monoid on this `Δ`. That is the expected state of affairs —
+a finite-dimensional Hopf algebra is Frobenius, but its Frobenius
+comultiplication is not its Hopf comultiplication — and it is why
+`antipode_sq_of_comm` below is stated for Mathlib's `HopfObj` rather than
+transported to `FrobeniusHopfData`.
 
 ## References
 
