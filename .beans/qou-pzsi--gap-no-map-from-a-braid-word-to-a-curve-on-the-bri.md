@@ -222,3 +222,84 @@ the two drifts differ by exactly 4×.
 The `qou-99qc` dashboard rows stay un-re-scored and the gluon dressing stays
 unselected: this bridge does not select, and nothing here proposes that it
 should.
+
+## 2026-09-14 (session gifted-feynman, 2) — THE FORK COLLAPSES: the answer is NEITHER
+
+This bean asks which of (1) the FHW minimiser or (2) a canonical Bring embedding
+supplies "the energy of a braid word", and calls it the research content.
+**Measured, and neither branch survives.** Probe
+`computations/qbeta/qbeta_candidate_closures_are_links_probe.py` (5/5).
+
+### Route (1) cannot be cited: the candidates are LINKS, not knots
+
+The closure of a braid word has one component per cycle of its underlying
+permutation. Computed exactly in `S₃` (integer arithmetic; **no floats anywhere
+in the probe**, inputs, intermediates or witness):
+
+| candidate | letters | permutation | components |
+|---|---|---|---|
+| `nuc9` | 9 | `(0,2,1)` | **2** |
+| **`nuc11_interleaved`** — LIVE SCORED | 11 | `(0,2,1)` | **2** |
+| `nuc11_gen_grouped` | 11 | `(1,0,2)` | **2** |
+| `…σ₁σ₀` | 11 | `(1,0,2)` | **2** |
+| `…σ₀σ₁` | 11 | `(2,1,0)` | **2** |
+| `…σ₁σ₁` | 11 | `(0,2,1)` | **2** |
+| `…σ₀σ₀` | 11 | `(0,2,1)` | **2** |
+
+**Not one is a knot.** FHW Theorem B, as held
+(`library/arxiv-math-9301212v1/sections/sec-000-2-…md:12-14`), reads verbatim:
+
+> Theorem B. If K is a smooth prime (not a connected sum) **knot**, then there
+> exists a simple closed rectifiable γ_K of knot type K with E(γ_K) ≤ E(γ) for
+> all rectifiable loops γ which are topologically ambient isotopic to K.
+
+and the document quantifies throughout over **a single** curve `γ : S¹ → R³`
+(`sec-front-matter.md:25-26`). A 2-component link satisfies neither hypothesis.
+**Scope-(b); the invariant is the component count.**
+
+**The corpus agrees from the other side.** `def:hadron`
+(`content/…/knots-particles-confinement/hadron.md:3`) defines a hadron as
+`K_1,…,K_n` **prime knot types** ⊕ `𝓛` a **link** — a composite of primes *and*
+a link, i.e. both things Theorem B excludes, at once.
+
+### 🛑 What is NOT claimed, and the distinction is load-bearing
+
+This does **not** show no minimiser exists for these links. That is the
+**Kusner–Sullivan CONJECTURE**, and the held text says so in terms
+(`library/arxiv-1905.06064v1/sections/sec-000-1-introduction.md:85-86`):
+*"Kusner and Sullivan **conjectured** that there are no minimizers in composite
+knot classes, **supporting their intuition with numerical experiments** [33]."*
+`[KS97]` is **not held**; FHW 1994 itself is **not held** (only the 1993 BAMS
+announcement); and the held literature does not treat **links** at all. So:
+Theorem B **does not apply** (proved), whether a minimiser exists anyway is
+**open** — do not upgrade it.
+
+### Route (2) is asserted nowhere
+
+A canonical embedding of a braid word into/onto the **Bring** surface is not
+proved, not conjectured, and not named as an object. Three homonyms are not it:
+`prop:cohomological-embedding` is a genus/spectral admissibility **filter** for
+**torus knots** and supplies no curve (and the corpus already flags the naive
+geometric reading as **WRONG AS STATED**,
+`docs/audits/2026-08-01-tau-knot-discussion-review.md:33`); *canonical
+embedding* in the Bring audits means the algebro-geometric map of the genus-4
+curve; and `qbeta_cusp_lattice_geodesic_probe` lands on the **genus-1 cusp
+torus**, not Bring — its own bridge probe says *"the genus-4 Bring curve itself
+is not used here"* — and is proved order-blind.
+
+### So the question to ask is a different one
+
+Not *which* of the two, but **whether the selection object should be a curve in
+R³ at all**, given that every scored element is a 2-component link, that
+`def:hadron` says so independently, and that the owner-ruled selection rule
+(γγ + confinement SDP, `qou-ales`) already rejects `nuc11_interleaved` on the
+`(2,1)` block. **That is an owner decision and is not taken here.** Nothing
+selected, nothing re-scored.
+
+### Two stale claims found in passing
+
+`qou-6xt9`'s "WHAT IS ACTUALLY MISSING" lists (a) O'Hara 1991 not greppable and
+(b) its DOI unverified. **Both are closed**: the paper is ingested at
+`library/1-s20-0040938391900102-main/`, and `content/schema/references.ts:5602`
+records the DOI verified 2026-09-13 against that full text. That bean wants an
+update; not edited here, since it is another arc's.

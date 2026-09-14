@@ -1,0 +1,157 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-14T18:38:50.426296+00:00",
+  "commitSha": "2a0e830fd04c26ba57b2fff84f3b602ffc806616",
+  "assertions": [
+    {
+      "name": "1. every scored candidate closes to a 2-component link",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "2. not one candidate is a knot (what FHW Thm B requires)",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "3. the live scored element nuc11_interleaved is among them",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "4. the order-differing pair is not what the prune rests on",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    {
+      "name": "5. scope: (b) for non-applicability, (a) for non-existence",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-candidate-closures-are-links",
+  "scriptFile": "qbeta_candidate_closures_are_links_probe.py",
+  "scriptHash": "8ca1c1914147",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_candidate_closures_are_links_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_candidate_closures_are_links_probe.py"
+  },
+  "description": "Every scored Delta candidate -- nuc9, nuc11_interleaved (the LIVE SCORED element), nuc11_gen_grouped and all four two-crossing gluon dressings -- closes to a 2-COMPONENT LINK on 3 strands, computed as the cycle count of the word's underlying permutation in S_3 (exact integer arithmetic; no floats anywhere). NOT ONE is a knot. So Freedman-He-Wang Theorem B, which hypothesises 'a smooth prime (not a connected sum) KNOT' and quantifies over a single closed curve, DOES NOT APPLY to any of them -- scope-(b), invariant = component count. This collapses route (1) of the qou-pzsi fork. It does NOT show that no minimiser exists: that is the Kusner-Sullivan CONJECTURE from numerical experiments, [KS97] is not held, and the held literature does not treat links at all -- scope-(a), NOT established.",
+  "data": {
+    "closures": {
+      "nuc9": {
+        "length": 9,
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "components": 2,
+        "is_knot": false
+      },
+      "nuc11_interleaved": {
+        "length": 11,
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "components": 2,
+        "is_knot": false
+      },
+      "nuc11_gen_grouped": {
+        "length": 11,
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "components": 2,
+        "is_knot": false
+      },
+      "gluon_s1_s0": {
+        "length": 11,
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "components": 2,
+        "is_knot": false
+      },
+      "gluon_s0_s1": {
+        "length": 11,
+        "permutation": [
+          2,
+          1,
+          0
+        ],
+        "components": 2,
+        "is_knot": false
+      },
+      "gluon_s1_s1": {
+        "length": 11,
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "components": 2,
+        "is_knot": false
+      },
+      "gluon_s0_s0": {
+        "length": 11,
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "components": 2,
+        "is_knot": false
+      }
+    },
+    "scope": {
+      "proved_here": "FHW Theorem B does not APPLY to any scored candidate (scope-(b); invariant = component count = 2)",
+      "NOT_proved_here": "that no minimiser exists for these links (scope-(a)); that is the Kusner-Sullivan conjecture",
+      "theorem_B_verbatim": "If K is a smooth prime (not a connected sum) knot, then there exists a simple closed rectifiable gamma_K of knot type K with E(gamma_K) <= E(gamma) for all rectifiable loops gamma which are topologically ambient isotopic to K.",
+      "theorem_B_source": "library/arxiv-math-9301212v1/sections/sec-000-2-steve-bryson-m-h-freedman-z-x-he-and-zhenghan.md:12-14 (Bull. AMS 28(1) 1993)",
+      "kusner_sullivan_is_a_conjecture": "library/arxiv-1905.06064v1/sections/sec-000-1-introduction.md:85-86",
+      "freedman_he_wang_1994_held": false,
+      "kusner_sullivan_1997_held": false,
+      "corpus_agrees_from_the_other_side": "def:hadron defines a hadron as a composite of PRIME KNOT TYPES plus a LINK -- both excluded by Thm B"
+    },
+    "route_2_status": {
+      "canonical_embedding_of_a_braid_word_on_bring": "ASSERTED NOWHERE -- not proved, not conjectured, not named as an object",
+      "homonyms_that_are_not_it": [
+        "prop:cohomological-embedding -- a genus/spectral admissibility FILTER, stated for torus knots T_{r,s} only; supplies no curve",
+        "the algebro-geometric canonical map Bring < P^4 of a genus-4 curve",
+        "qbeta_cusp_lattice_geodesic_probe -- a genus-1 CUSP TORUS geodesic, not Bring, and proved order-blind by qbeta_bring_ohara_bridge_probe"
+      ]
+    }
+  }
+}
