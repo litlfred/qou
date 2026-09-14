@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T17:50:19Z
+updated_at: 2026-09-14T07:23:05Z
 ---
 
 
@@ -1402,5 +1402,121 @@ nothing here proves them optimal. And the **existence of the limit** — still t
 `E_edge(u)` now an explicit function of `u`, the block optimisation is an analytic question
 rather than an enumeration, and `T`'s sign structure may bound which blocks can win. (b) The
 upper bound on `M_n`, which is the arc's one real open problem and is untouched by any of this.
+
+**Do not close this bean.**
+
+
+---
+
+## The search is COERCIVE, and the greedy route into it is REFUTED (2026-09-14)
+
+Probe [`rev_e_infinity_search_reduction_probe.py`](computations/deltalambda/rev_e_infinity_search_reduction_probe.py), 7/7.
+Lean [`SearchCoercivity.lean`](content/quantum-observable-universe/lean/QOU/BraidKnot/SearchCoercivity.lean), four declarations, sorry-free.
+
+### The negative first, because it kills the argument a reader reaches for
+
+`Xrun` loses `ln q0/2 = 0.05217036` per unit of run length, so the obvious way to bound the
+block sum `s` is: find the first `s` where the block's marginal gain drops below that, and
+stop. That is a greedy / first-crossing exchange argument and it needs `Xblock` to have
+decreasing increments.
+
+**It does not.** Measured marginals:
+
+| s | Xblock(s) | marginal | vs ln q0/2 |
+|---|---|---|---|
+| 8 | 1.965444371077749996131 | 0.05521818971 | above |
+| 9 | 1.993985001872683715154 | 0.02854063079 | BELOW |
+| 10 | 2.029360245858113610495 | 0.03537524399 | BELOW |
+| 11 | 2.109192647479678445684 | **0.07983240162** | **above** |
+| 12 | 2.151115432106013449567 | 0.04192278463 | BELOW |
+| 13 | 2.156693167813466520995 | 0.00557773571 | BELOW |
+| 14 | **2.159802376118285961604** | 0.00310920830 | BELOW |
+
+The marginal re-crosses upward at `s = 11`. A first-crossing rule stops at `s = 9` and misses
+everything above it — including `s = 14`, where `Xblock` actually peaks. So `Xblock` is **not
+discretely concave** and no greedy rule closes this search. Scope (a): the greedy route does
+not close it; this says nothing about whether some other argument does.
+
+### What does work: coercivity, with no fitted constant
+
+`eps(m) = -log(1 - q0^(-2m))` is convex decreasing, so for **every** sign of `D`
+
+    eps(2d) - eps(2d + D)  <=  |eps'(2d)| * D  =:  g(d) * D
+
+(`D > 0`: `int_a^(a+D)|eps'| <= D|eps'(a)|`; `D < 0`: `-int_(a+D)^a|eps'| <= -|D||eps'(a)|`;
+both because `|eps'|` is decreasing). Summing over pairs **telescopes** — the distance-`d`
+pairs of a block contribute `(top d entries) - (bottom d entries)` — and with `top_d <=
+sqrt(d N)`, `bottom_d >= d`, and the bulk tails bounded by `sum_d d eps(2d) =: S_1`:
+
+    Xblock(u)  <=  S_1 - G_1 + G_half * sqrt(N) - (ln q0/2) N ,   N = sum v^2
+
+a downward parabola in `sqrt(N)`, hence **uniformly bounded in the block's length AND its
+entries**:
+
+    S_1    = 6.66246903314631884630
+    G_1    = 1.72932318801322827252
+    G_half = 1.08314550703034554883
+    B_rig  = S_1 - G_1 + G_half^2/(2 ln q0) = 10.5551320927234643540
+
+`B_rig` bounds every valid block. Since `Xrun` falls linearly, only finitely many `(s_t, s_b)`
+can win: **unconditionally `s_t + s_b <= 345`**. Checked: 0 violations over the per-sum
+maximisers of 8,346,945 enumerated blocks.
+
+**Both signs of `D` are load-bearing.** Keeping only `D+` — dropping the negative pair terms —
+makes the bound diverge: nothing then stops a long alternating profile from collecting `g(1)`
+per step at merely linear cost.
+
+### The practical cut, and it lands on the incumbent
+
+With the **measured** `B = 2.15980237611828596160353` (at `s = 14`) the cut is `s_t + s_b <=
+23`. Inside it the enumeration carries **no effective cap at all** — entries `>= 1` and sum
+`<= 23` force length `<= 23` and every entry `<= 23`, so `TMAX = UMAX = SMAX = 23` is exhaustive
+— and over all 696,616 blocks the join with `Xbot := Xblock` is maximised at
+
+    (s_t, s_b) = (8, 8),   value = 2.43929645512078402706542884314
+
+reproducing #7335's independently searched `e_inf` to `-2.4e-30`. A second run widened to
+24/12 over `s <= 26` agrees at **every** `s <= 23`; its argmax profiles reach length 18 and
+entry 4, both inside their caps. #7335's published caps were 8/6 and this is the check it could
+not make, its enumeration being over profiles rather than incremental.
+
+### A structural fact worth keeping
+
+`Xblock` peaks at `s = 14` (2.15980) but the join puts the top block at `s = 8` (1.96544) —
+**the block gives up 0.19435800 of its own maximum** to shorten `ell` by 12 and buy back
+0.62635367 on the run. Neither edge's shape can be read off its own table; that is why the
+search is over pairs. Relatedly, `Xblock` and `Xrun` share the same asymptotic slope
+`-ln q0/2`, so the join is coercive in `s_t` at rate `ln q0`.
+
+### The two gaps, now sharp enough to name
+
+**G1.** `Xbot(s) <= Xblock(s)` for every `s`. #7335's E7 measured the two tables EQUAL for
+`s <= 12` and the top higher by 0.01982 at `s = 13`; beyond that unmeasured. The join above
+substitutes `Xblock` for `Xbot`, which is an upper bound **only if G1 holds**.
+
+**G2.** `sup_s Xblock(s) = 2.15980237611828596160353`. Measured over `s <= 26` with caps
+lifted and non-binding; bounded rigorously only by `B_rig`, which at 4.887x is far too crude to
+substitute.
+
+Under G1 and G2 the `(s_t, s_b)` search is **closed** and `e_inf` is exactly the value above.
+Neither gap is the arc's headline open problem, which remains **the upper bound on `M_n`**.
+
+### Lean
+
+`SearchCoercivity.lean` carries the two halves, both `propext/Classical.choice/Quot.sound` only:
+
+- `sub_le_mul_of_antitone_step` / `sub_le_neg_mul_of_antitone_step` — the linearisation, stated
+  DISCRETELY (a sequence whose downward steps are antitone) and proved by induction. No
+  derivative, no integral, no `Real.log`. The downward twin is the half an agent drops.
+- `join_lt_of_lt_sum` / `le_of_le_join` — the reduction: `f, g <= B` and `h` below `V - 2B`
+  past `L` confine any pair reaching `V` to `a + b <= L`. Pure order arithmetic, independent of
+  what `f`, `g`, `h` are.
+
+Also this session: `EdgeDecoupling.lean` gained the run's re-indexing (`card_filter_lt`,
+`card_filter_ge`, `sum_tails_eq_sum_min`, `sum_heads_eq_sum_min`,
+`run_pair_sum_eq_sum_min`), with probe check R7 tying each half separately to the two branches
+`run_direct` walks — R1 checked only their sum, which a compensating error in the split would
+survive. The two halves are NOT the same lemma: different conditions, different kernels, and
+measured they differ by up to 3.603.
 
 **Do not close this bean.**

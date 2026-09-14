@@ -60,6 +60,16 @@ import QOU.BraidKnot.HookSumElasticity
 -- block, the run and the bottom block stop interacting, and e_inf becomes a sum of three
 -- k-free pieces rather than a single-n measurement.
 import QOU.BraidKnot.EdgeDecoupling
+--- The maximisation that decomposition leaves behind is over a FINITE set (bean qou-hok7).
+--- `e_inf = max over (a, b) of [f a + h (a + b) + g b]` ranges over all pairs of naturals, but
+--- the two edge energies are bounded above while the run falls linearly, so `le_of_le_join`
+--- confines any pair matching an incumbent to `a + b <= L`. The bound on the edges comes from
+--- `sub_le_mul_of_antitone_step` and its downward twin: a sequence with ANTITONE downward steps
+--- -- `eps` convex decreasing, in discrete form, proved by induction with no analysis -- has
+--- `e a - e (a + D) <= D * delta a` for both signs of `D`, which linearises every pair term and
+--- lets the block's pair sum telescope. Both signs matter: keeping only `D > 0` drops the
+--- negative pair terms and the bound diverges.
+import QOU.BraidKnot.SearchCoercivity
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
