@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-07T09:40:36Z
+updated_at: 2026-09-14T07:41:37Z
 ---
 
 ## Landed (A + C)
@@ -212,3 +212,51 @@ that `Group` has instances and `JetProlongationQOU` has none. Default if
 nothing is decided: the flags stay and nothing moves. My judgement: narrow the
 rule to hypothesis carriers — but it changes another agent's measured
 criterion, so it is not mine to make.
+
+
+## BringPeriodSublattice / magic-numbers-bring (PR #7359, 2026-09-14)
+
+`proof-claims-unencoded` **9 -> 8** on main's base (the 8 still holds BOTH
+HeckeAnyonicSubstrate carriers, fixed on #7357 and not yet in main). Combined
+once both land: **6**.
+
+**The ledger flagged the SMALLER half again.** It flags
+`structure BringPeriodSublattice`'s two universe-`Prop` fields
+(`s5_stable`, `tau_stable`). The bigger defect was unflagged:
+**`MagicNumbersBring` is declared TWICE with different fields and OPPOSITE
+dispositions** —
+
+- library `QOU/Conjectures/MagicNumbersBring.lean` (`QOU.Conjectures`):
+  no instance, with a standing comment explaining that the identity model
+  `magicLattice n := n` "discharges rank_eq_magic by rfl for ANY set of
+  naturals ... captures none of the conjecture's content";
+- content sibling (`QOU.AlgebraicSubstrate`): a global
+  `instance canonical` that IS that identity model (`rank := n`,
+  `s5_stable := True`, `tau_stable := True`).
+
+So one file declared the conjecture open and the file beside it closed it
+using the construction the first one names and rejects. Deleted the sibling
+(§0a shadowing stub + §3b-tax fabricated instance), repointed the ref to
+`qou:QOU.Conjectures.MagicNumbersBring`. Zero consumers of
+`ranks_match_magic_set` / `BringPeriodSublattice` / the sibling `magicSet`.
+
+**PATTERN, now twice in two carriers — worth expecting on the rest.** In both
+HeckeAnyonicSubstrate and this one, the ledger-flagged bare-`Prop` field was
+accompanied by a LARGER unflagged defect in the same file: a dangling
+`lean.ref` there, a fabricated instance here. The detector keys on field
+types and cannot see either. **When you open a flagged carrier, read the whole
+file and its `.ts`/`.jsonld`, not just the flagged field.**
+
+**Also: `ranks_match_magic_set` was vacuous independently of the class** —
+`exists L, L.rank = n` is satisfied by `<n, True, True>` for every n,
+because `rank` is a free `Nat` field. A conditional theorem can be vacuous
+for a reason that has nothing to do with the conjecture it cites.
+
+**Branch hygiene note:** I cut this branch from the HeckeAnyonicSubstrate
+branch by mistake, so #7359 initially carried #7357's six commits.
+Rebased `--onto origin/main` and force-pushed before any review. Check
+`git diff --name-only origin/main...HEAD` after `git checkout -b`.
+
+**Remaining 6** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
+RungRule, TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
+TannakaKreinReconstruction.
