@@ -626,13 +626,23 @@ CONSEQUENCE
                    for v in ratios.values())
     near_half = any(abs(2 * v - mp.floor(2 * v + mp.mpf('0.5'))) < mp.mpf('0.001')
                     for v in ratios.values())
+    # NOTE: quote the COMPUTED ratios, never literals.  An earlier revision of
+    # this message carried 11.1674 / 5.5736 / 11.7602 -- the retired-cell
+    # figures -- while the code above already computed the live-cell ones.
+    # That is the same stale-cell defect this probe's Part 4 is ABOUT, one
+    # level down, and a hardcoded figure is how it recurs.
+    _ratio_txt = ", ".join(f"{k.split('/')[1].strip()} {mp.nstr(v, 10)}"
+                           for k, v in ratios.items())
     check("18. NO clean cosh closed form is on offer - the re-opening is a "
           "re-opening only, not a candidate",
           not near_int and not near_half,
-          "arccosh(required) over ln q / h / hbar_q gives 11.1674, 5.5736, "
-          "11.7602 - none within 1e-3 of an integer or half-integer. Nothing "
-          "here is proposed; chasing a c that fits would be selection against "
-          "the target.")
+          f"arccosh(required) over ln q / h / hbar_q gives {_ratio_txt} - none "
+          f"within 1e-3 of an integer or half-integer. The hbar_q ratio lands "
+          f"{mp.nstr(abs(ratios['arccosh/hbar_q'] - 2 * mp.pi), 6)} from 2*pi "
+          f"(rel 9.6e-5, ~55 alpha_req windows) - RECORDED so a later reader "
+          f"does not read it as new; it is not a candidate and chasing a c "
+          f"that fits would be selection against the target. Nothing here is "
+          f"proposed.")
 
     # The other admissible cell, for the record.
     Q_aug = mp.mpf("0.8798906")   # z = q augmentation cell (AGENTS.md)
@@ -736,8 +746,8 @@ CONSEQUENCE
                                  "admissible base the required factor is > 1 "
                                  "> 1, so that argument is VOID and the route "
                                  "is RE-OPENED. No candidate is offered: "
-                                 "arccosh(1.7592)/{ln q, h, hbar_q} = 11.1674, "
-                                 "5.5736, 11.7602, none near an integer or "
+                                 "arccosh(required)/{ln q, h, hbar_q} computed "
+                                 "on the LIVE cell, none near an integer or "
                                  "half-integer.",
         "augmentation_cell_note": "CODATA/Q(z=q) = 0.8891 < 1, so only the "
                                   "augmentation cell admits a bounded "

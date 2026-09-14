@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T06:35:56.176629+00:00",
-  "commitSha": "b746cc26ddced12afb1feea098d96ea1a00b73fa",
+  "computedAt": "2026-09-14T17:22:59.020984+00:00",
+  "commitSha": "0433359e6ff59b35a1a21cba94736ff2bd06416b",
   "assertions": [
     {
       "name": "1. det rho(sigma_i) = -1 identically",
@@ -123,8 +123,8 @@
   "durationMs": 5,
   "computation": "qbeta-eigenphase-rationality-quantization",
   "scriptFile": "qbeta_eigenphase_rationality_quantization_probe.py",
-  "scriptHash": "af687ffaf1d7",
-  "scriptCommitSha": "133ef7c2874ffbf5c76631ce8ad9671f025051f9",
+  "scriptHash": "310cd3a88d2d",
+  "scriptCommitSha": "748592a886d3c854e856a7e80f660a4ad1534b06",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -183,7 +183,7 @@
       "N2_rung_at_c2_minus_1": "0.999927456715617626498201895199068388200910824829000565864302",
       "admissible_cells_all_need_factor_above_one": true,
       "c3_required_on_live_cell": "324098.735988813964079934839915649511283381262641527593443787",
-      "cosh_exclusion_status": "The 2026-08-22 cosh exclusion was computed on the now-RETIRED z=1 base (required factor 0.9983 < 1, cosh >= 1 wrong side). On the admissible base the required factor is > 1 > 1, so that argument is VOID and the route is RE-OPENED. No candidate is offered: arccosh(1.7592)/{ln q, h, hbar_q} = 11.1674, 5.5736, 11.7602, none near an integer or half-integer.",
+      "cosh_exclusion_status": "The 2026-08-22 cosh exclusion was computed on the now-RETIRED z=1 base (required factor 0.9983 < 1, cosh >= 1 wrong side). On the admissible base the required factor is > 1 > 1, so that argument is VOID and the route is RE-OPENED. No candidate is offered: arccosh(required)/{ln q, h, hbar_q} computed on the LIVE cell, none near an integer or half-integer.",
       "augmentation_cell_note": "CODATA/Q(z=q) = 0.8891 < 1, so only the augmentation cell admits a bounded multiplicative rung. RECORDED ONLY - z_D is owner-ruled and nothing here proposes changing it.",
       "conclusion": "Deriving alpha CANNOT unblock qou-cds1. The N=1 rung is a cosine, bounded by 1, and the ruled base needs a factor 1.759 > 1. The Q_beta L2 residual is a BASE problem, not a phase problem. Scope-(b), citing Real.cos_le_one; Lean twin QOU.QBeta.EigenphaseQuantization.cos_rung_lt_of_base_short (sorry-free)."
     },

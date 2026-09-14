@@ -2755,3 +2755,43 @@ the element provided the replacement is below CODATA.
 stale cell — same order of conclusion, different number.)
 
 Probe re-run 19/19; Lean re-verified `exit 0`, axioms unchanged.
+
+## 2026-09-14 (session gifted-feynman) — the SAME stale-cell defect, inside the probe that documents it
+
+Third instance this arc, and the first one *inside* the artifact whose Part 4
+is about the defect class.
+
+**The claim.** Assertion 18's failure message in
+`qbeta_eigenphase_rationality_quantization_probe.py` hardcoded
+`arccosh(required)/{ln q, h, ℏ_q} = 11.1674, 5.5736, 11.7602`. Those are the
+**retired-cell** ratios (`need = 1.7592`, the `z_D`-on-`Δ_S`-order-zero-`E₀`
+cell). The code four lines above already computed `need_D = live_factor`, i.e.
+the **live** `nuc11_interleaved` / tower-`E₀` cell, so the printed table and the
+assertion message disagreed by 47 % on every figure.
+
+**Evidence.** Live-cell ratios, computed: `ln q 5.967071281`, `h 2.97812889`,
+`ℏ_q 6.283788176`, from `arccosh(1.2001632) = 0.62260851569`. The assertion's
+own *predicate* (`not near_int and not near_half`) was always evaluated on the
+computed ratios and is unaffected — **the test was right and its explanation
+was wrong**, which is the worst shape: a reader checking the reasoning gets
+retired numbers from a passing assertion.
+
+**Implication.** The defect is a hardcoded literal in a message, so the fix is
+structural rather than arithmetic: the message now interpolates `ratios`
+directly and no literal remains to go stale. Same treatment applied to the
+witness note. Assertion count unchanged, **19/19**.
+
+**Recorded, not proposed.** Computing the live-cell ratios surfaces
+`arccosh/ℏ_q = 6.283788176` against `2π = 6.283185307` — `6.029e-4` apart, rel
+`9.6e-5`, about **55 `α_req` windows**. That is *not* a hit (the window is
+`1.0919e-5`), it is not within the assertion's own `1e-3` integer tolerance
+under any reading, and no mechanism is offered. It is written into the
+assertion message only so a later reader who recomputes it does not read it as
+a discovery. Chasing a `c` that makes it exact would be selection against the
+target, per the anti-fit directive.
+
+**What did NOT change.** Parts 1 and 3 and the Lean twin are untouched;
+`EigenphaseQuantization.lean` is `lean`-direct exit 0 against the post-merge
+tree (108 commits of `origin/main` merged as `0433359e6f`), and the live `Q_β`
+dashboard row is still `err_ppb 1.668e+8` / `miss_factor 2.139e+7`, so Part 3's
+corrected figure holds across the merge. Part 3 is base-independent regardless.
