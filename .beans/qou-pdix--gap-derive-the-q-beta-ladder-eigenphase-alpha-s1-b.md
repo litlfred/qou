@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T20:32:51Z
+updated_at: 2026-09-14T20:42:09Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -3184,3 +3184,46 @@ re-derivation that would void `LadderFactorBound.ladder_lt_of_rungs` with a
 single positive rung. `C_min = 2279.46` against a corpus whose largest live
 `|c_k|` is 2.0693 — a factor of 1101.5, and still 177.1 against the largest
 coefficient the corpus has ever held. Full record on `qou-cds1`.
+
+
+## 2026-09-14 (session gifted-feynman, 4) — the near-2π landing is PRICED, and it is cheap
+
+The session's own assertion 13 recorded that `arccosh(F_required)/ℏ_q` lands
+`9.6e-5` from `2π` and refused to treat it as a candidate. The refusal was
+right; it was **unpriced**, and `9.6e-5` reads impressive to a cold reader.
+Assertion 15 prices it. Three measurements, all saying not much:
+
+**(a) Cell-dependence.** `arccosh(F)/ℏ_q` over the four cells that need a
+factor at all:
+
+| cell | `arccosh(F)/ℏ_q` |
+|---|---|
+| `nuc11_interleaved`, tower `E₀` (LIVE SCORED) | **6.283788176** |
+| `z_D` on `Δ_S`, tower `E₀` | 11.63893426 |
+| `z_D` on `Δ_S`, order-zero `E₀` | 11.7601251 |
+| bar-odd survivor (parity-forced) | 14.45612053 |
+
+A **130.05 %** spread. All four share the same `q₀`, so the ratio varies
+exactly as `arccosh(F)` does — the `2π` attaches to **one value of `F`** and to
+no structure.
+
+**(b) Look-elsewhere.** **1** independent hit over **171** (divisor, target)
+trials at `1e-4` relative, against **0.0342** expected — about **1 in 50**, not
+1 in 10000. The single-trial `9.6e-5` overstates it by ~50×. The grid is fixed
+in the source before any result is inspected, and it **collapses algebraically
+identical hits**: `x/(2ℏ_q) ≈ π` and `x/ℏ_q ≈ 2π` are the same statement, and a
+naive grid carrying both reports two hits where there is one. Mine did, until
+it was keyed on `x/(d·t)` rather than on `(d, t)`.
+
+**(c) Decisive, and not a statistics argument.** `F = Q_codata/Q_base` is a
+ratio to an **experimental** value, so any identity pinning `arccosh(F)/ℏ_q` is
+a constraint on the **measured** `Q_β`, not a prediction, unless the base
+derives it independently. And per the 2026-09-13 ruling the scored element is
+**rejected** by the confinement-SDP selection rule, so `F_live` moves when the
+element is replaced. A coincidence attached to a number under revision is worth
+nothing.
+
+**Scope-(a), stated in the assertion itself:** this does **not** exclude a cosh
+structure — Part 4's re-opening of that route stands untouched. It prices
+**this** near-coincidence and finds it cheap, so a later agent does not spend a
+session on it. Assertion 13 now points here.
