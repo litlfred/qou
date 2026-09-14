@@ -25,6 +25,8 @@ Three over-counting traps, all of the detector-blindness class:
      30 grep-matched producers name it only in a docstring or comment.
   3. an AUDIT/CATALOGUE witness names every script it audited, so a substring
      match says "it listed this producer", not "this producer wrote it".
+  4. a producer stem that is a PREFIX of another stem is credited with the
+     longer one's witnesses unless the match is word-bounded.
 
 Trap 3 is separated by how many producer stems the witness names: measured, the
 audit catalogues name 579/132/1595 and the real GP products name 3 or 4.
@@ -35,11 +37,21 @@ sample), and the witness-name-to-producer naming convention holds for only
 51.2% (1780 of 3474). Neither can replace the substring match; the traps above
 are what make it usable.
 
-Measured 2026-09-14 on `main`: 55 witnesses name a grep-matched producer;
-29 of those producers never call GP; 20 are post-guard; 3 are audit catalogues;
-**3** are the real risk set. Read-only -- runs no producer and writes nothing.
+Measured 2026-09-14 on `main` with all four traps closed: **2 flagged**, and
+both were then disposed of BY MEASUREMENT, so **0 committed witnesses carry a
+pre-fix GP number**:
+
+  derived-chi-catalogue-bridge-factor-omega   re-ran mathematically IDENTICAL
+  derived-chi-catalogue-production-wire-demo  moved, but because the BRAID WORD
+                                              changed grouped->interleaved
+                                              (bean `qou-5c64`), not the kernel
+
+A third candidate, `...-matrix-m-mu-n-prototype`, was trap 4 -- its real
+producer never mentions a GP symbol. This script flags candidates; it does not
+know which have been investigated, so it will keep printing those 2. Read-only
+-- runs no producer and writes nothing.
 """
-import ast, json, pathlib, subprocess, sys
+import ast, json, pathlib, re, subprocess, sys
 
 GP = {"chi_lambdas_via_gp", "chi_q_via_gp", "chi_via_gp_hoefsmit"}
 GUARD = "2026-07-17"          # PR #3812, refuse-on-disagreement
@@ -100,7 +112,14 @@ for w in (ROOT / "computations").glob("**/*.witness.json"):
     # risk in one run and safe in the next. Measured: that single-pick gave 3
     # where the correct answer is 6. Classify as risk if ANY naming producer
     # makes a live GP call.
-    hits = [s for s in stems if s in blob]
+    # Word-BOUNDARY match, never a bare substring. A producer stem that is a
+    # PREFIX of another stem is otherwise credited with the longer one's
+    # witnesses: `derived_chi_catalogue_matrix_m` is a prefix of
+    # `..._mu_n`, `..._multi_a_benchmark` and `..._numerical`, and that alone
+    # put `derived-chi-catalogue-matrix-m-mu-n-prototype` in the risk set --
+    # whose real producer does not mention a GP symbol at all. `\b` treats `_`
+    # as a word character, so `stem\b` will not match `stem_mu_n`.
+    hits = [s for s in stems if re.search(rf"{re.escape(s)}\b", blob)]
     if not hits:
         continue
     at = (d.get("computedAt") or d.get("witness", {}).get("computedAt") or "")[:10]
