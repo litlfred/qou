@@ -156,7 +156,7 @@ from pathlib import Path
 
 import mpmath as mp
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
@@ -165,19 +165,52 @@ from hecke_core import atom_per_generator_volumes  # noqa: E402
 from mass_endomorphism import Phi_q  # noqa: E402
 
 
+def _ser(o):
+    """Recursively replace mpf with its full-precision decimal string.
+
+    The write below passes `default=str`, which does NOT do this job: at the
+    working precision `str(mpf)` emits COMPUTE_DPS (70) digits, i.e. the ~10
+    guard digits `_precision` exists to truncate, so the record would claim
+    more precision than the arithmetic carries. `fmt` emits OUTPUT_DPS (60).
+    """
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_ser(v) for v in o]
+    return o
+
+
+def scalar_mpf(v):
+    """Coerce a per-generator volume to an mpmath float, SIGNED.
+
+    `atom_per_generator_volumes` returns a dict per generator
+    (`std`/`sym`/`alt`/`full`, values as decimal STRINGS) rather than the bare
+    scalar it once returned. `abs_mpf` below was adapted for that; the
+    `Phi_q` call one line down in `diagnose_atom` was not, so the producer
+    died with `TypeError: unhashable type: 'dict'` before writing anything.
+    The unwrap is factored out here so the two callers cannot drift apart
+    again. No `str(float(...))` round-trip -- the strings parse at full
+    precision.
+    """
+    return mp.mpf(v["full"] if isinstance(v, dict) else v)
+
+
 def abs_mpf(v):
-    """Coerce a per-generator volume to abs mpmath float; no
-    `str(float(...))` round-trip (preserves precision)."""
-    x = v["full"] if isinstance(v, dict) else v
-    return abs(mp.mpf(x))
+    """Magnitude of a per-generator volume."""
+    return abs(scalar_mpf(v))
 
 
 def diagnose_atom(label, Z, N):
     A = Z + N
     inter = (A >= 2)
     vols = atom_per_generator_volumes(Z, N, include_inter=inter)
-    abs_vols = [float(abs_mpf(v)) for v in vols]
-    phi_vals = [float(Phi_q(v)) for v in vols]
+    # mpf throughout; serialized by _ser() at the write. `Phi_q` takes the
+    # SIGNED volume, which is what it received before the dict change --
+    # abs_mpf() would silently change its argument.
+    abs_vols = [abs_mpf(v) for v in vols]
+    phi_vals = [Phi_q(scalar_mpf(v)) for v in vols]
     return {
         "atom": label, "Z": Z, "N": N, "A": A,
         "n_generators": len(vols),
@@ -284,7 +317,7 @@ def main() -> int:
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         witness, script_path=__file__, engine=None, q0_anchor=None)
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out.write_text(json.dumps(_ser(witness), indent=2, default=str))
     print(f"\n  Witness: {out}")
     return 0
 
