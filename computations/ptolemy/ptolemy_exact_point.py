@@ -82,6 +82,80 @@ def sing(script, timeout=900):
         return r.stdout
 
 
+def _coords_via_normal_forms(vrs, eqs, lin, h, nf_timeout):
+    """Coordinates from DEGREVLEX normal forms alone -- no lex Groebner basis.
+
+    The old route asked Singular for a LEX basis of (eqs, T - lin, h) in a
+    12-variable ring over Q.  Lex is where rational coefficients explode, and
+    `stdfglm` does not avoid that: FGLM makes the lex basis cheaper to REACH,
+    it still has to build it.  Measured on `5_2` class 1 that reached
+    7.9 GB RSS at 717 s and returned nothing.
+
+    Nothing here needs the lex basis.  What a component needs is each
+    coordinate as a polynomial in T, and when T is a primitive element the
+    shape lemma says {1, T, ..., T^(d-1)} already spans the component ring.
+    So reduce T^i and each v to degrevlex normal forms -- cheap -- and solve
+    the one small exact linear system that expresses v over that basis.
+
+    Returns (coords | None, status).  A failure is NAMED, never silent:
+    OUT_OF_SPAN means the shape lemma does not apply here (T is not
+    separating, or the component is non-reduced), which is a real fact about
+    the geometry and the caller should fall back rather than fudge.
+    """
+    d = sp.Poly(h, T).degree()
+    hs = str(sp.expand(h)).replace('**', '^')
+    body = "".join(f'"P{i}:"; reduce(T^{i},G);\n' for i in range(d))
+    body += "".join(f'"V{v}:"; reduce({v},G);\n' for v in vrs)
+    out = sing(f'ring r=0,({",".join(vrs)},T),dp;\n'
+               f'ideal I={",".join(eqs)},T-({lin}),{hs};\n'
+               f'ideal G=std(I);\n"VDIM:"; vdim(G);\n{body}quit;\n',
+               timeout=nf_timeout)
+    if out is None:
+        return None, 'TIMEOUT'
+    L = [l.strip() for l in out.splitlines() if l.strip()]
+    blk = {}
+    for i, l in enumerate(L):
+        if l.endswith(':') and i + 1 < len(L):
+            blk[l[:-1]] = L[i + 1]
+    if any(f'P{i}' not in blk for i in range(d)) or any(f'V{v}' not in blk for v in vrs):
+        return None, 'INCOMPLETE_OUTPUT'
+    syms = [sp.Symbol(v) for v in vrs] + [T]
+    basis = [sp.Poly(sp.expand(sp.sympify(blk[f'P{i}'].replace('^', '**'))), *syms)
+             for i in range(d)]
+    mons = sorted(set().union(*(set(b.monoms()) for b in basis)))
+    M = sp.Matrix([[b.coeff_monomial(m) for b in basis] for m in mons])
+    coords = {}
+    for v in vrs:
+        w = sp.Poly(sp.expand(sp.sympify(blk[f'V{v}'].replace('^', '**'))), *syms)
+        if set(w.monoms()) - set(mons):
+            return None, f'OUT_OF_SPAN:{v}'
+        b = sp.Matrix([w.coeff_monomial(m) for m in mons])
+        sol = M.solve(b) if M.rows == M.cols else M.solve_least_squares(b)
+        if sp.expand(M * sol - b) != sp.zeros(M.rows, 1):
+            return None, f'INCONSISTENT:{v}'
+        coords[v] = str(sp.expand(sum(sol[i] * T ** i for i in range(d))))
+    return coords, 'OK'
+
+
+def _verify_coords(vrs, eqs, coords, h):
+    """Back-substitute the coordinates into the Ptolemy equations mod h(T).
+
+    NEITHER route verified its own output before this was added -- both
+    trusted Singular's normal forms and wrote the point out.  This is the
+    check that makes a component's coordinates a measurement rather than a
+    report: every defining equation must vanish in Q[T]/(h).
+    """
+    hp = sp.Poly(h, T)
+    sub = {sp.Symbol(v): sp.sympify(c.replace('^', '**')) for v, c in coords.items()}
+    for e in eqs:
+        r = sp.expand(sp.sympify(e.replace('^', '**')).subs(sub))
+        if r == 0:
+            continue
+        if sp.rem(sp.Poly(r, T), hp).as_expr() != 0:
+            return False
+    return True
+
+
 def extract(name, cls, verbose=True, elim_timeout=240, nf_timeout=900):
     M = snappy.Manifold(name)
     V = M.ptolemy_variety(3, obstruction_class=cls, eliminate_fixed_ptolemys=True)
@@ -140,38 +214,48 @@ def extract(name, cls, verbose=True, elim_timeout=240, nf_timeout=900):
         hp = sp.Poly(h, T)
         if hp.degree() < 1:
             continue
-        hs = str(sp.expand(h)).replace('**', '^')
-        body = "\n".join(f'"{v}:"; reduce({v},G);' for v in vrs)
-        # stdfglm, NOT std: the ideal is ZERO-DIMENSIONAL, so FGLM converts a cheap
-        # degrevlex basis into the lex one we need.  A direct lex std on 11 variables
-        # (5_2 class 1) did not finish in 10 minutes, while the SAME system solves in
-        # 0.4 s under degrevlex -- the cost was the ORDERING, not the system.
-        out = sing(f'ring r=0,({",".join(vrs)},T),lp;\n'
-                   f'ideal I={",".join(eqs)},T-({lin}),{hs};\n'
-                   f'ideal G;\n'
-                   f'if (dim(std(I))==0) {{ G=stdfglm(I); }} else {{ G=std(I); }}\n'
-                   f'{body}\nquit;\n', timeout=nf_timeout)
-        # sing() returns None on timeout.  The stage-1 loop guards that and moves to the
-        # next primitive element; THIS call had no guard, so a stage-2 wall surfaced as
-        # `AttributeError: 'NoneType' object has no attribute 'splitlines'` -- an opaque
-        # crash in place of the one fact worth reporting, which is that the normal-form
-        # step exceeded its budget on a named component.  Report the wall instead.
-        if out is None:
-            walled.append({'min_poly_T': str(sp.expand(h)), 'degree': hp.degree(),
-                           'budget_s': nf_timeout})
-            if verbose:
-                print(f"   component: min poly {sp.expand(h)}  deg {hp.degree()}  "
-                      f"-> NORMAL-FORM WALL at {nf_timeout}s", flush=True)
-            continue
-        L = [l.strip() for l in out.splitlines() if l.strip()]
-        co = {}
-        for i, l in enumerate(L):
-            if l.endswith(':') and l[:-1] in vrs and i + 1 < len(L):
-                co[l[:-1]] = L[i + 1]
-        if len(co) != len(vrs):
-            continue
+        # LEX-FREE ROUTE FIRST.  See _coords_via_normal_forms: the lex basis the
+        # old route builds is the whole cost, and nothing downstream needs it.
+        nf_coords, nf_status = _coords_via_normal_forms(vrs, eqs, lin, h, nf_timeout)
+        if nf_coords is not None and _verify_coords(vrs, eqs, nf_coords, h):
+            co, route = nf_coords, 'normal-form'
+        else:
+            co, route = None, f'lex-fallback(after {nf_status})'
+        if co is None:
+            # FALLBACK: the historical lex route.  Kept because the lex-free route
+            # is only valid where the shape lemma applies -- if T fails to separate
+            # the component, OUT_OF_SPAN fires and this is the honest answer, at
+            # its own (large) cost.  stdfglm makes the lex basis cheaper to reach
+            # but still builds it, which is why this walls where the other does not.
+            hs = str(sp.expand(h)).replace('**', '^')
+            body = "\n".join(f'"{v}:"; reduce({v},G);' for v in vrs)
+            out = sing(f'ring r=0,({",".join(vrs)},T),lp;\n'
+                       f'ideal I={",".join(eqs)},T-({lin}),{hs};\n'
+                       f'ideal G;\n'
+                       f'if (dim(std(I))==0) {{ G=stdfglm(I); }} else {{ G=std(I); }}\n'
+                       f'{body}\nquit;\n', timeout=nf_timeout)
+            # sing() returns None on timeout.  Report the wall rather than crashing
+            # on it: a stage-2 wall used to surface as `AttributeError: 'NoneType'
+            # object has no attribute 'splitlines'`, an opaque traceback in place of
+            # the one fact worth reporting -- which component, at which budget.
+            if out is None:
+                walled.append({'min_poly_T': str(sp.expand(h)), 'degree': hp.degree(),
+                               'budget_s': nf_timeout, 'after': route})
+                if verbose:
+                    print(f"   component: min poly {sp.expand(h)}  deg {hp.degree()}  "
+                          f"-> NORMAL-FORM WALL at {nf_timeout}s ({route})", flush=True)
+                continue
+            L = [l.strip() for l in out.splitlines() if l.strip()]
+            co = {}
+            for i, l in enumerate(L):
+                if l.endswith(':') and l[:-1] in vrs and i + 1 < len(L):
+                    co[l[:-1]] = L[i + 1]
+            if len(co) != len(vrs):
+                continue
         zeros = [v for v, c in co.items() if c.strip() == '0']
-        rec = {'min_poly_T': str(sp.expand(h)), 'field_degree': hp.degree(),
+        rec = {'stage2_route': route,
+               'equations_verified': bool(_verify_coords(vrs, eqs, co, h)),
+               'min_poly_T': str(sp.expand(h)), 'field_degree': hp.degree(),
                'irreducible_over_Q': bool(hp.is_irreducible),
                'discriminant': str(sp.discriminant(hp)),
                'zero_coordinates': zeros, 'n_zero': len(zeros),
