@@ -2919,3 +2919,61 @@ angle; it landed ~30 min later. That is the sanctioned research-overlap pattern
 working as intended (AGENTS.md §Parallel exploration) — two routes, one
 exclusion, neither re-deriving the other. Converging per that rule: I do not
 re-derive their pair kernel, and this bean cites it.
+
+### 2026-09-14 21:46–22:29Z — the classical-limit BRIDGE FIELD is vacuous, and an attribution correction
+
+Two cross-branch notes landed on #7390. Both verified here rather than taken.
+
+**1. `MobiusEnergy.classicalLimit` constrains nothing** (reported by #7262;
+checked at the structure, not at their theorem, because it is **not on `main`**):
+
+```lean
+classicalLimitConst : ℝ
+classicalLimit : energy = (1 / 4) * classicalEnergy.value + classicalLimitConst
+```
+
+`classicalLimitConst` is a **free field of the same structure**, so for any pair
+`(energy, classicalEnergy)` exactly one `k` satisfies it — the field relates the
+two energies **not at all**. #7262 proves it sorry-free as
+`classicalLimit_unconstraining` / `classicalLimitConst_eq`, on that branch only;
+the structure field is checkable on `main` today.
+
+**This compounds with the entry above rather than repeating it.** That entry
+established `ClassicalMobiusEnergy` is a functional of an **embedding** (its own
+docstring: *"this structure holds no isotopy-class data"*). Now the **bridge**
+field is vacuous too. So there are **two independent reasons** the
+classical-limit route cannot bear weight: the functional is of a presentation,
+and the field that would connect it to `E_cat` asserts nothing. It is also the
+same defect class as the header's recorded incident (`unknot_iff : value = 4 ↔
+True`) **one field over** — a structure whose constraint is discharged by a free
+companion field, with no `sorry` to flag it. Not repaired: §ASK THE OWNER,
+neither exemption applies.
+
+**2. An attribution correction, made because the commenter said they would cite
+it.** #7262 credited `blockCost_can_separate`, `pairSum_not_perm_invariant`,
+`bridgeClass_perm_blind` and `qbeta_ecat_pair_kernel_probe` to #7390. **All four
+are #7391's** (`aa224aba03` / `380f5935c2`, both on `main`). Measured: this
+branch's `git diff --name-only origin/main...HEAD` is exactly four files — the
+bean, the probe, its witness, and
+`QOU/Mass/CrossingEnergySelectionEqualsCount.lean` — and none contains those
+names. Cause is partly mine: `cf2cc9d011`'s body *describes* #7391's work next
+to my own, which is presumably how it got attached. **Lesson worth keeping: when
+a PR body summarises a sibling's landing, name the sibling in the same sentence
+as the declaration, not in a heading two paragraphs up.**
+
+**3. From #7399 — the ILP escape is closed, and it composes with this entry.**
+A linear objective cannot select `𝓑₃` by the face argument (S4, `qou-v7qj`), and
+the obvious reply — *"the face argument needs convexity, an integer program is
+not convex"* — is measured not to escape: over `ℤ⁶` `𝓑₃` is not feasible at all
+(worst coordinate `0.0456` from ℤ), and over `ℤ[q₀,q₀⁻¹]⁶` **that ring is
+dense**, because `ℤ[q]` is discrete iff `q` is Pisot and `q₀ = 1.10998` sits
+below the plastic number `1.3247…` (Siegel 1944); constructively a feasible
+lattice point beats `𝓑₃` at `0.8642` vs `0.9986`. Their
+`linear_min_two_sided_kills_direction` gets `f d = 0` over an arbitrary set from
+two-sided reachability and linearity alone — **convexity was never the
+load-bearing hypothesis**, so non-convexity buys nothing.
+
+Composed with this entry: **if crossing energy IS the count, then the count is
+both permutation-blind and unable to select by any linear program, integer or
+not.** That is a constraint on where the selection can come from — not a problem
+with the reduction.
