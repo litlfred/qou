@@ -123,6 +123,7 @@ HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
 ROOT = COMP.parent
 sys.path.insert(0, str(ROOT / "tools" / "pyhecke" / "python"))
+sys.path.insert(0, str(ROOT / "tools" / "qou-substrate" / "python"))
 sys.path.insert(0, str(COMP / "substrate"))
 sys.path.insert(0, str(COMP))
 import _path_bridge  # noqa: F401,E402
@@ -132,6 +133,7 @@ import mpmath as mp  # noqa: E402
 from pyhecke.atom import nucleon_gen_chains  # noqa: E402
 from pyhecke.gram import _hm_mp  # noqa: E402
 from q_parameter import q_at  # noqa: E402
+from qou_substrate.codata import value_str as _codata_value_str  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -141,8 +143,13 @@ except Exception:  # pragma: no cover
 
 NF = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NAMES = ["gamma", "sigma_0", "sigma_1", "L+", "L-", "e-"]
-# standard values, ordering comparison only
-M_N_OVER_M_P = 1.00137841917
+# Reference value for an ORDERING comparison only -- it enters no predicate,
+# only the printed line and the assertion's `source` text. Read from the
+# registry rather than typed: the literal here was `1.00137841917`, the
+# CODATA-2018 figure, against the 2022 adjustment's `1.00137841946`
+# (0.29 ppb apart). Caught by computations/codata_corpus_literal_scan.py as
+# the corpus's ONLY remaining executable stale-edition site.
+M_N_OVER_M_P = _codata_value_str("neutron-proton mass ratio")
 Q_TRITIUM_KEV = 18.592
 
 

@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:hecke-anyonic-substrate",
   title:
     "Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation",
-  lean: { ref: "qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate", validation: "stub" },
+  lean: { ref: "qou:QOU.BraidKnot.HeckeAnyonicSubstrate", validation: "stub" },
   uses: [
     "def:hecke-normal-form",
     "def:observation",

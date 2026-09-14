@@ -266,7 +266,7 @@ Audit: `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md
   sorry-free). Honest instantiation forces `volume = 0`. Not a live contradiction
   (`opaque`; the theorem is `ℂ → ℝ` and unwired). Fix is a **re-typing** to
   `Im z > 0`, reusing `IdealTetrahedron.param`. Scope **(a)**.
-- **🛑 Claim-shape:** `pole_cusp_bijection_proved` (`:124`) contains **no cusp and
+- **🛑 Claim-shape:** `pole_cusp_bijection_proved` (renamed 2026-09-14 to `denomPolyLocal_roots_explicit`) (`:124`) contains **no cusp and
   no bijection** — it exhibits `n` roots of `(x;q)_n`. The file's prose is honest;
   the NAME is what gets cited.
 - **Bring's surface DOES have its hyperbolic structure used** —

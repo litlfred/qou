@@ -386,7 +386,10 @@ block's sidecar (128 files for one block) — revert all but yours.
    files that *construct* an instance.
 2. **A partial `LEAN_PATH` overlay shadows the whole namespace** — the first
    root holding a `QOU/` dir wins. Use a complete `cp -al` mirror, `rm -f`-ing
-   each olean before rebuilding it (else you truncate the shared inode).
+   each olean before rebuilding it (else you truncate the shared inode). The
+   same rule has a **second failure direction**: an overlay placed *after* the
+   real tree is **inert**, not layered — `lean` never falls through to it for a
+   module the earlier root also has (measured 2026-09-14; harness §2).
 3. **Truncated oleans segfault**: exit 139, zero errors, 0–1 s. Olean SIZE is
    not a test (50–226 KB inside a normal range). Two causes: a disk-full local
    build, **and the restored cache itself** — so a clean `df` does NOT clear it
@@ -479,8 +482,21 @@ know `main` is green is to rebuild what the cache cannot vouch for. Recipe
    (regenerate it; `main` adds modules daily).
 2. **Dirty = source changed since the cache's SEED COMMIT, or olean missing,
    or an import dirty.** Seed commit = last `main` commit before the OLDEST
-   olean mtime in the restored tree (2026-08-16 `19e299946a` for
-   `lake-cache/qou-v4-24-0` as of 2026-09-04). Measured: **1,494 of 2,600**.
+   olean mtime in the restored tree. **Re-measure it per container** — it is
+   `bbb4127145` (2026-08-23 17:00Z) here on 2026-09-14, against the
+   2026-08-16 `19e299946a` this line carried since 2026-09-04. Measured then:
+   **1,494 of 2,600**.
+
+   **The oldest-olean heuristic is a LOWER BOUND on the seed, and on a
+   RESEEDED cache it can be far too old (2026-09-14).** `tar` preserves the
+   archive's mtimes, which are *build* times, and a reseed from an
+   incremental `lake build` rewrites only what was dirty — so one tarball
+   holds oleans built across weeks. Measured in one restored tree: oldest
+   **QOU** olean 2026-08-23, oldest **mathlib** olean 2026-09-06, a 14-day
+   spread in a cache the branch describes as one 2026-09-06 seed. Too-old a
+   seed **over**-reports staleness, which is the safe direction (you rebuild
+   more than needed) — unlike the mtime criterion below, which under-reports.
+   Do not read a closure count as the true dirty set in either direction.
 3. `tools/full_rebuild.sh` over that list (put `Archimedean/PauliWitness/*`
    LAST — 25 modules at 10+ min each, nothing imports them — so the rest
    reports in ~90 min); Monitor on `^FAIL|^progress|^DONE`.
@@ -531,7 +547,7 @@ merge is not a current claim.
 | whole restore, fresh container | `find . -name '*.olean' \| wc -l` | **6492** = root 3758 (mathlib 3480) + QOU 2703 + UGB 29 + Fred2005 2; archive = 32461 entries / 6492 olean / 6493 trace. Tree read 6502 = those +10 pre-existing. Trace coverage **100.0 % (3758/3758)** | 2026-09-13 |
 | restore cost, streamed (no tarball on disk) | §STABLE streaming recipe | fetch **1m33s** (1.70 GiB, 20 parts), extract **58 s**; disk 16 G → 25 G used, 14 G free | 2026-09-13 |
 | lean-direct, 3-import Mathlib-only file (`Mathlib.Tactic` + `Ring.Defs` + `Fin.VecNotation`) | `time lean -DautoImplicit=false -s 65536 <f>` | **19.8 s cold / 2.9 s warm**; `user` 2.0 s BOTH — cold page cache, not a rebuild | 2026-09-13 |
-| restore ALREADY present + bg build running | as above | **10408** = root packages 3758 + per-paper build 2806 + per-paper packages 3813. Root count 3758 matched the seed EXACTLY, so the restore was in place and **no fetch was needed** — check before spending 1.7 GiB | 2026-09-12 |
+| restore ALREADY present + bg build running | as above | **6502** = root packages 3758 (mathlib 3480) + per-paper build 2703 + per-paper packages 10 + UGB 28 + Fred2005 2. Root 3758 AND per-paper-build 2703 both matched the seed EXACTLY ⇒ restore in place, **no fetch** (10408 on 2026-09-12, when per-paper packages held 3813). Root mathlib **100 % trace-paired** (3480/3480) | 2026-09-14 |
 | union mirror over both trees, one `MathlibExt` file | `cp -aln` per §17 | **6687 oleans, 5.1 G apparent, `df` free UNMOVED** (12 G before AND after `rm -rf`) — hardlinks; also immune to the concurrent `lake build`. Real trees unchanged after removal (3758 / 2816 / 3813), so the `rm -f`-before-write rule held | 2026-09-12 |
 | lean-direct, `MathlibExt/HeckeTowerWitness.lean` (warm) | `time lean -DautoImplicit=false -s 65536 <f>` | **2.9 s** wall / 4.0 s user; dep rebuilds 51 s cold (user 5.6 s — page cache) and 2.8 s warm | 2026-09-12 |
 | cold vs warm lean-direct, `QBeta/ConventionDAdmissibleRoots.lean` | `time lean -DautoImplicit=false -s 65536 <f>` | **1m05s cold / 4.5 s warm**; `user` 3.3 s both — cold PAGE CACHE, not a rebuild | 2026-09-11 |

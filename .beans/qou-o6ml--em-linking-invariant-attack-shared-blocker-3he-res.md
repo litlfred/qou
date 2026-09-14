@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-14T07:55:03Z
+updated_at: 2026-09-14T17:07:10Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -2346,3 +2346,77 @@ and `−h/2` is in the outside set. Different letters (inter-nucleon bond vs
 intra-nucleon core), and a `Z ≥ 1, N = 0` word's status turns on it. **Does not
 affect anything above**: every nucleus this arc targets has both a proton and a
 neutron. Recorded so the next reader does not have to notice it twice.
+
+
+## Can an EM coupling enter `H_n(q)` AT ALL — six-path survey, 2026-09-14
+
+Owner selected this alongside the even-in-`T_z` Lean front. Survey run as a
+corpus-grepper pass; `corpus_search` (path 0) was **not available** — the
+`paper-assistant` MCP failed to connect — so every absence below is grep-scoped.
+Items marked ✅ I verified directly against the file; the rest are the survey's.
+
+**The premise this arc has been running on is true but NARROW.** "The framework
+has no EM term in any per-bond factor" is a statement about `interface_factor`,
+not about the framework. EM is already inside the q-algebra twice:
+
+- `prop:em-coupling-projection`: `α_EM(q) = q⁻¹/([9]_q·[10]_q)`, with sorry-free
+  bar-parity Lean (`QOU/Interactions/EmCouplingBarParity.lean`).
+- `computations/coulomb_energy.py` — *"the EM-sector binding term"*,
+  `E_C = (3/5)Z(Z−1)·α_EM·ℏc/R` with `α_EM` **derived** (CODATA only until
+  2026-08-09) and `R₀ = λ̄_π = ℏc/m_π`, the CAL-3 length; the empirical
+  `r₀ = 1.2 fm` is explicitly *not* the default. The residual import is the
+  **form** (uniform charged sphere), not the constants.
+
+So the open question is **coupling, not existence** — and specifically coupling
+to the *per-bond* factor, which is the one place it has never been done.
+
+**Two scope-(b) exclusions that bound this arc, with invariants named:**
+
+1. `QOU/Mass/BraneTowerIsospinBlind.lean` — if the per-subset weight is
+   **Markov-invariant**, two isobars on the same `3A` strands get an identical
+   tower term, so the contribution to mirror splitting is exactly **0**. Invariant
+   `tr_M(σ_i) = z`. **Anything Markov-invariant cannot carry charge** — which is
+   why a charge coupling has to be a non-Markov-invariant functional. This is the
+   sharpest constraint on the whole arc and it was not cited here before.
+2. `qou-556v` (completed) — Coulomb cannot come from **any bounded-degree** bond
+   graph. Handshake lemma `2E ≤ dn` ⇒ covered-pair share `≤ d/(Z−1) → 0`; at
+   Z=82, chain 2.47%, deltahedra 6.17%, close packing 14.81%. Lean
+   `QOU/Hecke/BoundedDegreeCoulomb.lean`. Owner reframe: *"it is the FALLOFF, not
+   the coupling"* — the q-derived channels are Yukawa (`μ = −ln b`, `b < 1`) and
+   the photon is the massless boundary, a different growth class `Θ(n²)`.
+
+**An even-in-`T_z` bond has already been built, and the obvious repair is priced
+and LOSES:**
+
+- ✅ `qou-nial` / `bond_rule_dashboard_comparison_probe.py` — the charge
+  **product** rule makes the strong channel exactly charge-symmetric
+  (`prodRule_like_pairs_are_strong_baseline`), and over 12 nuclei ²H–⁵⁶Fe mean
+  `|ln(model/AME)|` goes **0.808 → 0.940**: worse. Its A=3 mirror match is *"a
+  flat line crossing a rising curve"* — flat in `A`, identical at `A = 7` where
+  the observed splitting has doubled. Own recommendation: **do not switch.**
+- `gg_production_bond_probe.py` — replaces every inter-nucleon crossing with the
+  flavour-blind `σ_avg = σ − (h/2)·I`, the *same* factor for pp/pn/nn, i.e.
+  exactly even in `T_z`. The 78% `L_nn/L_pp` asymmetry collapses toward 0 and
+  charge symmetry then breaks only at `δ ≈ 0.14%`. Not wired (gated on the s5-so3
+  keystone). **Note the timing:** the 2026-09-08 owner ruling (`qou-ales`) makes
+  γγ pair-production construction canonical for braid-word selection, and this
+  probe is that ruling applied to the bond layer, written before it.
+
+**Grading status.** The framework's interface grading is `T₃` (odd) — the audit
+`2026-08-16-interface-graded-by-t3-but-the-physics-is-graded-by-t.md` says so in
+those words, and notes the `T` (even) split already exists algebraically as the
+Hecke spectral projectors `P±` with scalars `y_(2)`, `y_(1,1)`, needing **no new
+parameter**, and is unused. **Absence (searched, not found):** no `U(1)` factor,
+no charge operator, no `T_z` grading attached to an algebra element anywhere in
+`lean/QOU/`. So `qou-9v7t`'s "charge-labelled but not charge-coupled" is
+confirmed for the bond layer specifically.
+
+**Library gap found in passing:** `library/arxiv-nucl-th-0409040v2/` is the
+**Tjon line** paper (Nogga/Epelbaum et al.) — held, `ocr`-tier, and **not in
+`references.ts`**, while `docs/audits/2026-08-07-l2-closure-attack-options-non-em-terms.md`
+§A7 says *"Tjon appears once, undeveloped"* without knowing the source is held.
+
+**Net for this arc:** route (3) is not refuted and is now better bounded. What is
+open is narrower than "can EM enter" — it is *a non-Markov-invariant,
+exchange-sensitive per-pair functional that couples charge inside the algebra
+rather than labelling it outside*. Bean stays `in-progress`.

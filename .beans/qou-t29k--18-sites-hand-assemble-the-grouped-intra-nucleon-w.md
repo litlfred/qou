@@ -387,3 +387,125 @@ intra ordering. That is a positive result, not just an absence.
 `b_pred_mirror_slope_closed_form` (escalated, `qou-u8ji`) and
 `fitted_ideal_low_isotope_calibration` (module PAUSED by owner ruling
 2026-08-26).
+
+## 6 -> 4: `chi_4he_binding_lossless` SWITCHED, `binding_canonical` DECLARED
+
+**`chi_4he_binding_lossless` — switched, and this is the cleanest verification
+in the whole drain.** `_hp_binding_word` claimed to mirror `atom_braid_word_3A`
+and did on every axis but the one it did not name: its interfaces already
+matched (p-p `sigma`, n-n `sigma - h`, p-n colour-weighted), and only the intra
+ordering was grouped. The claim is true now.
+
+Safe to switch, checked first rather than assumed: the single assertion
+`mpfr_binding_chi_extends_f64_atomic` compares MPFR against f64 for the SAME
+word, so it moves with the word; and nothing consumes the per-λ table — the only
+other file naming the cache is `f64_into_mpmath_audit.py`, matching on filename.
+
+Re-ran (874 s, 77/77 λ⊢12, f64 gate max rel 1.1157e-14, PASS):
+
+    committed (grouped)  tr_M = 0.160974145442407381825873440980716...
+    after switch         tr_M = 0.011237417659767421564199549374410...
+
+Both land exactly on the known constants — the grouped ⁴He pin and the
+canonical ⁴He pin — and their ratio is **14.3248**, precisely the documented
+⁴He absolute-trace factor. End-to-end confirmation that the switch did what it
+was supposed to and nothing else.
+
+**NOT the staleness `qou-92u9` tracks**, and worth keeping distinct: those six
+caches come from `chi_at_q0_via_hoefsmit_mpfr.py`, which calls
+`atom_braid_word_3A` with no `intra_order`, so a fresh run there is already
+canonical and the artifact is merely old. This one hand-built the word, so no
+re-run could ever have corrected it. That bean records this producer only as a
+665 s runtime observation, never as a defect.
+
+**`binding_canonical:381` — declared, not switched.** Two reasons, the first
+decisive: below the site, `tr_free = tau_p^Z tau_n^N` and `tr_atom =
+closed_form_tau_M(..., tau_p, tau_n)`, so the ratio is `prod f_i(q)` and **the
+taus cancel in everything that survived the refutation** — the bond factors
+b_pp / b_pn / b_nn are tau-independent, and the live law is the log-RATIO
+`B = E_0 log(tr_free/tr_atom)` in `binding_log_free_energy.py`. Only
+`Delta_tr = tr_free - tr_atom` scales with them, and that is the REFUTED law
+this module is marked "do not quote" for. Second: re-framing a superseded
+provenance number makes it stop matching the record it exists to preserve — the
+header's 1592x residual spread was measured against these values. Verified a
+no-op: word byte-identical, tau_p = 1.145759692457300869689 unchanged.
+
+**Remaining 4, only 1 actionable:** `atom_orbit_reduction:92`. The other three
+are the two escalated owner calls (`qou-y1w0`, `qou-u8ji`) and the module PAUSED
+on 2026-08-26.
+
+### What `atom_orbit_reduction` needs, for whoever picks it up
+
+The module is internally SPLIT and that is the finding:
+`atom_braid_orbit_representative` **delegates to the canonical
+`atom_braid_word_3A`** (so `orbit_reduction_crosscheck`'s byte-identity assert
+`rep.word == atom_braid_word_3A(Z, N)` holds), while `atom_braid_word_ordered`
+— the sibling that takes an arbitrary nucleon ordering, which
+`atom_braid_word_3A` cannot express — is hand-built grouped. Same inconsistency
+`level_k` had, and the same likely fix.
+
+Its one real consumer of the ordered builder,
+`probes/canonical_ordering_dof_probe`, uses it for RATIOS across four nucleon
+orderings (`npn/pnn`, `pnp/ppn`), all four in the same frame — so the frame is a
+controlled constant there, as it was for `level_k`'s `ord_spread`. Measure those
+two ratios both ways before switching; `level_k`'s moved only 22.54 % -> 22.69 %.
+
+## 4 -> 3. THE ACTIONABLE DRAIN IS COMPLETE.
+
+`atom_orbit_reduction:92` switched. All three remaining sites are blocked on
+decisions that are not mine:
+
+| site | blocked on |
+|---|---|
+| `probes/b_pred_mirror_slope_closed_form:90` | owner call, `qou-u8ji` |
+| `binding_multibond_wenzl:71` | owner call, `qou-y1w0` |
+| `fitted_ideal_low_isotope_calibration:172` | module PAUSED, owner ruling 2026-08-26 |
+
+**18 -> 3 over the arc**, none of it by re-running: every site was read for what
+it reports, and the disposition was measured before it was made.
+
+### The last switch, and why it was the safest of them
+
+The module was internally SPLIT. `atom_braid_orbit_representative` — and so
+`tr_M_via_orbit_representative`, and so every assertion in
+`orbit_reduction_crosscheck` — already DELEGATED to the production
+`atom_braid_word_3A` and was always canonical. Only `atom_braid_word_ordered`,
+the sibling taking an ARBITRARY nucleon ordering that `atom_braid_word_3A`
+cannot express, was hand-built grouped. Two halves of one module in two frames.
+
+Its one real consumer, `probes/canonical_ordering_dof_probe`, reports ratios
+across four nucleon orderings, and those are **exactly** invariant:
+
+    T_npn_over_pnn     1.258976624909173     both frames, every digit
+    He3_pnp_over_ppn   0.8293909084880151    both frames, every digit
+
+while the absolute traces move by 7.868x (|tr| npn 0.2886552152 ->
+0.03668647715), precisely the documented ³H factor. Exact rather than
+approximate because `npn` and `pnn` carry the same nucleon multiset, so the
+per-nucleon intra factor divides out — contrast `level_k`'s analogous spread,
+which moved 22.54 % -> 22.69 %. Post-switch the word is length 35 with
+generator sequence [0,1,0,1,0,1,0,0,1,0,0,2], the borromean interleave plus the
+interface.
+
+The **colour convention** at that site is still `strict_averaged` (colour-blind
+`-h/2`) against the canonical `bring_color_weighted`. That is a different owner
+ruling (2026-08-15) and a different axis from this bean; left as it was, and
+now said so in the docstring rather than fixed in passing.
+
+### Two pre-existing reds found next to it, both verified on a clean tree
+
+Neither is from this work and neither is a `qou-t29k` defect:
+
+  * `orbit_reduction_crosscheck` FAILS `N2_he4_value_smoke` — reads the
+    canonical ⁴He `0.011237417659767421` against a pin of
+    `0.0553483351637685668` whose witness (2026-05-30) still says
+    `allPassed: True`. Bean `qou-uujo`. Its code is right; the pin is stale,
+    and is not the grouped value either, so re-pinning needs that number's
+    provenance checked.
+  * `canonical_ordering_dof_probe` CRASHES in Part 6,
+    `TypeError: cannot create mpf from None`. Part 6 is already tracked as
+    blocked by `qou-xy5f`.
+
+Because both consumers are red for unrelated reasons, the switch was verified
+directly instead — ratios, absolute traces and word structure all as predicted
+above.
