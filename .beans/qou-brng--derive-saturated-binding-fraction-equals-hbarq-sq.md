@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-14T17:13:48Z
+updated_at: 2026-09-14T17:55:06Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -3329,3 +3329,58 @@ wrong (-0.045993397 MeV). PR #7373.
 
 So the amplitude's ASSIGNMENT is forced and proved; its MAGNITUDE is short by 23.8x at
 the expressible degree. Those are the two halves of this bean, and only the first is done.
+## 2026-09-14 — the ideal-Fermi-gas lead, evaluated and NEGATIVE
+
+A corpus-grep sweep of this front surfaced the one lead with **no corpus
+trace**, from `library/arxiv-nucl-th-0507064v2` (Horowitz–Schwenk, low-density
+neutron matter): *"for the ideal Fermi gas `b^(3)_n = 3^{-5/2} = 0.06`"* —
+positive, from exchange statistics alone, with **no pair interaction at all**.
+Since every corpus mechanism for `b₃` is a bond object and
+`b3corpus_chain_pos_iff` is a statement about bond factors, a degeneracy
+contribution is invisible to it. It looked like a live escape.
+
+**It is not, and the reason is worth more than the lead: the two `b₃` are in
+opposite sign conventions.** Derived in
+`computations/audits/b3_ideal_fermi_gas_lead_evaluation_probe.py` (8/8):
+
+- the classical cluster integral is `b₃^cluster ∝ +∫φᵀ₃`, so it carries the
+  sign of `+φᵀ₃`;
+- the corpus defines `b₃^corpus = −φᵀ₃` (the minus is what makes `b₃ > 0` mean
+  binding-increasing when binding is `−α·log μ`);
+- hence `sign(b₃^corpus) = −sign(b₃^cluster)`, identically.
+
+So the ideal gas's `+0.064` maps to **negative** in corpus convention — the
+same sign the corpus already has, and the same sign that blocks this front.
+
+**And the anomaly dissolves entirely.** A classical gas with purely
+**repulsive** pair interaction also has `b₃^cluster > 0`, because that *is* the
+Ursell alternation. The ideal Fermi gas does not carry an unusual sign in its
+own convention; it carries the ordinary one. There was never a sign anomaly to
+exploit — there was a convention difference.
+
+### What survives, narrowly
+
+In the corpus frame the free case (`μ_e = 1`) gives `b₃ = 0` **exactly** over
+ℚ, while a free Fermi gas does not. That is a concrete, physically-realised
+witness that the **non-Mayer escape class is non-empty** — the one route the
+2026-09-12 Ursell audit lists as explicitly scope-(a) un-excluded. It is a
+witness that the class is non-empty. It is **not** a mechanism, **not** a sign,
+and **not** a magnitude.
+
+And it cuts against itself: exchange statistics in this framework **are** the
+Hecke algebra (`H_n(q)` is the q-deformation of `S_n`, and the statistics
+content already sits inside `tr_M = Σ_λ y_λ χ^λ`), so this is **class C**,
+already attacked on two channels — multiplicity (sub-extensive, scope (b)) and
+dominant summand (wrong sign at `A ≥ 5`, scope (a)). Whether the ideal-gas
+analogue is a *third* class-C channel is open and is not settled.
+
+**Recommendation, marked as judgement:** do not spend a tranche here. Recorded
+as evaluated-and-negative so the next agent who greps `nucl-th-0507064` does
+not re-open it. The two routes the same sweep found genuinely live are
+unchanged — the γγ-selected word's **strand-tracked** coordination graph
+(blocked on `qou-ales` step 2) and `qou-2ss0`'s **superlinearity** question.
+
+Section 1 of the probe also re-derives the corpus identity exactly over ℚ:
+`Δ³W = +φᵀ₃`, collapsing on a chain to `g₀₁·g₁₂`, matching `b3corpus_chain`.
+
+PR #7375. `mpmath` dps 60 + `Fraction`; no float anywhere.
