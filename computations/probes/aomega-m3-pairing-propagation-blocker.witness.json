@@ -4,7 +4,7 @@
   "computation": "aomega-m3-pairing-propagation-blocker",
   "engine": "python+sympy",
   "scriptFile": "aomega_m3_pairing_propagation_blocker_probe.py",
-  "computedAt": "2026-09-14T18:27:03.223203+00:00",
+  "computedAt": "2026-09-14T18:36:25.151310+00:00",
   "durationMs": 0,
   "auditOnly": true,
   "parameters": {
@@ -138,6 +138,22 @@
       ]
     },
     {
+      "name": "G3-source read ELIMINATES cause 2 and cause 3: GGM (86) is y_m - 3y_{m+1} + (3-q^{2+m})y_{m+2} - y_{m+3} = 0, i.e. exactly the operator this probe used at x = 1, with the q^{2+m} attachment confirmed on the y_{m+2} coefficient",
+      "passed": true,
+      "ggm_86": [
+        "1",
+        "-3",
+        "3 - q**(m + 2)",
+        "-1"
+      ]
+    },
+    {
+      "name": "G4-source read CONFIRMS Part 2 and eliminates cause 1: GGM (91) prints det W_m(q) = 2, so det W(q) det W(1/q) = 4 — exactly the c Part 2 derived from det(RHS)/(pref^r det J) without having seen (91); and (92)'s printed J is [[0,0,1],[0,2,0],[1,0,0]] as read",
+      "passed": true,
+      "ggm_91_detW": 2,
+      "part2_derived_c": "4"
+    },
+    {
       "name": "T1-the propagation law closes under some index variant. It does NOT: entries (1,0) and (2,0) survive every variant tried — column 0, rows 1-2. Recorded as a blocker rather than pursued by trying conventions until one closes, which would be fitting a convention to a target",
       "passed": false,
       "variants": {
@@ -200,17 +216,18 @@
           ]
         ]
       },
-      "unseparated_causes": [
-        "GGM's J for the u=0 rank-3 case may not be [[0,0,1],[0,2,0],[1,0,0]] as read from OCR",
-        "the operator whose Wronskian (244) defines may differ from (254) at u=0",
-        "the q^{2+m} index attachment in the companion matrix may shift"
+      "eliminated_by_source_read": [
+        "cause 1 (the J matrix) — (92) prints [[0,0,1],[0,2,0],[1,0,0]], as read",
+        "cause 2 (the operator) — (86) is exactly the one used, at x = 1",
+        "cause 3 (the q^{2+m} attachment) — confirmed on the y_{m+2} coefficient"
       ],
-      "next_honest_step": "read the u=0 section's own operator and J from the source rather than importing (254) and the OCR'd J across sections"
+      "remaining_cause": "GGM's OWN relation H^+_{k,m}(q^-1) = (-1)^k H^-_{k,-m}(q): the index NEGATES and a sign (-1)^k appears per column, so W at q^-1 runs its index the OPPOSITE way to what this law assumes — which is the shape that produces a structured column-0 residue",
+      "next_honest_step": "rebuild the second factor through that printed relation instead of assuming a bare q -> 1/q substitution on the companion matrix"
     }
   ],
-  "scriptHash": "54e6ef1bb2be",
-  "scriptCommitSha": "unknown",
-  "commitSha": "3ca013dd8385d587f084fc07619006e9768ab03d",
+  "scriptHash": "1134e4d34685",
+  "scriptCommitSha": "92514fbbb9e3631c01b134af456997b7f65bc1ae",
+  "commitSha": "92514fbbb9e3631c01b134af456997b7f65bc1ae",
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

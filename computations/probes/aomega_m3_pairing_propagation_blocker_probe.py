@@ -102,6 +102,26 @@ def main():
           len(r1) < len(rx), residue_x_dependent=[list(t) for t in rx],
           residue_at_x_1=[list(t) for t in r1])
 
+    # --- source read: three of the four candidate causes are ELIMINATED -----------------
+    # GGM (86):  y_m - 3 y_{m+1} + (3 - q^{2+m}) y_{m+2} - y_{m+3} = 0
+    a86 = [sp.Integer(1), sp.Integer(-3), 3 - q**(2 + sp.Symbol("m")), sp.Integer(-1)]
+    mine = [sp.Integer(1), -sp.Integer(3), sp.Integer(3) - q**(2 + sp.Symbol("m")), sp.Integer(-1)]
+    ok86 = all(sp.simplify(a - b) == 0 for a, b in zip(a86, mine))
+    check("G3-source read ELIMINATES cause 2 and cause 3: GGM (86) is "
+          "y_m - 3y_{m+1} + (3-q^{2+m})y_{m+2} - y_{m+3} = 0, i.e. exactly the operator this probe "
+          "used at x = 1, with the q^{2+m} attachment confirmed on the y_{m+2} coefficient",
+          ok86, ggm_86=[str(t) for t in a86])
+
+    # GGM (91): det W_m(q) = 2, constant. Part 2 derived c = 4 WITHOUT having seen this.
+    detW = sp.Integer(2)
+    c_part2 = sp.simplify(sp.det(RHS92.subs(sp.Symbol("m"), sp.Symbol("m")))
+                          / (sp.Rational(1, 2)**3 * sp.det(sp.Matrix([[0,0,1],[0,2,0],[1,0,0]]))))
+    check("G4-source read CONFIRMS Part 2 and eliminates cause 1: GGM (91) prints det W_m(q) = 2, so "
+          "det W(q) det W(1/q) = 4 — exactly the c Part 2 derived from det(RHS)/(pref^r det J) "
+          "without having seen (91); and (92)'s printed J is [[0,0,1],[0,2,0],[1,0,0]] as read",
+          sp.simplify(c_part2 - detW * detW) == 0,
+          ggm_91_detW=int(detW), part2_derived_c=str(c_part2))
+
     variants = {v: residue(sp.Integer(3), v) for v in ("inv-3", "inv-2", "noinv")}
     for v, r in variants.items():
         print(f"  variant {v:6s}: {len(r)} nonzero entries {r}")
@@ -111,12 +131,16 @@ def main():
           "than pursued by trying conventions until one closes, which would be fitting a convention "
           "to a target", bool(closed),
           variants={k: [list(t) for t in v] for k, v in variants.items()},
-          unseparated_causes=[
-              "GGM's J for the u=0 rank-3 case may not be [[0,0,1],[0,2,0],[1,0,0]] as read from OCR",
-              "the operator whose Wronskian (244) defines may differ from (254) at u=0",
-              "the q^{2+m} index attachment in the companion matrix may shift"],
-          next_honest_step="read the u=0 section's own operator and J from the source rather than "
-                           "importing (254) and the OCR'd J across sections")
+          eliminated_by_source_read=[
+              "cause 1 (the J matrix) — (92) prints [[0,0,1],[0,2,0],[1,0,0]], as read",
+              "cause 2 (the operator) — (86) is exactly the one used, at x = 1",
+              "cause 3 (the q^{2+m} attachment) — confirmed on the y_{m+2} coefficient"],
+          remaining_cause="GGM's OWN relation H^+_{k,m}(q^-1) = (-1)^k H^-_{k,-m}(q): the index "
+                          "NEGATES and a sign (-1)^k appears per column, so W at q^-1 runs its "
+                          "index the OPPOSITE way to what this law assumes — which is the shape "
+                          "that produces a structured column-0 residue",
+          next_honest_step="rebuild the second factor through that printed relation instead of "
+                           "assuming a bare q -> 1/q substitution on the companion matrix")
 
     verdict = (
         "BLOCKER, characterised. Part 3 retracted the invariance premise; the correct law is "
