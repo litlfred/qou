@@ -1,124 +1,145 @@
-"""The Ocneanu framing ratio IS the bar-anomaly of the Markov parameter, and the
-mass/binding amplitude asymmetry is exactly one framing quantum.
+"""The cusp factor's bar-anomaly equals the Ocneanu framing quantum at N = 2 only
+-- plus the naming bridge between two corpus theorems that are the same number.
 
-BEAN qou-brng, residual (ii).  `QOU.Mass.BrunnianBindingChannel` states the open
-item in these words:
+WHAT THIS IS, AND WHAT IT IS NOT.  An earlier version of this probe claimed five
+results.  A six-path corpus-grep established that THREE OF THEM ARE ALREADY
+CORPUS THEOREMS and that a fourth "refutation" is likewise already proved.  This
+version keeps only what survived, credits every prior-art site, and records the
+retractions as checks so they cannot be re-derived a third time.
 
-    "(ii) why the surviving count channel enters as a *bare integer* while the
-     self/mass channel keeps the full q-dimension self-trace `lw`."
+NOTATION.  bar : q -> 1/q.  For a Laurent-type X, the BAR ANOMALY is
 
-and `QOU.Mass.BindingMassRung` states the same thing from the other side --
-"it does NOT derive *why* binding lacks the cusp factor".  This probe does not
-close either.  What it does is replace a qualitative contrast ("q-dimension vs
-integer") with an exact, single-quantity statement, and locate where that one
-quantity lives.
+    omega(X) := X / bar(X).
 
-DEFINITION.  For a Laurent-type expression X in q, write the BAR ANOMALY
+omega = 1 is bar-even, omega = -1 is bar-odd, and a monomial omega = q^k is
+framing weight k.  h = q - 1/q.  hbar_q = 1 - 1/q is the CAL-2 cusp factor.
+z_D = q^3/(q^2+1) is the convention-D Markov parameter; z_- = z - h is the
+negative-crossing loop value; a is the Ocneanu framing quantum, a^2 = z/z_-.
 
-    omega(X)  :=  X / bar(X),        bar : q -> 1/q.
+===============================================================================
+RETRACTED -- already in the corpus, do not re-derive a third time
+===============================================================================
 
-omega(X) = 1 says X is bar-even; omega(X) = -1 says bar-odd.  A monomial
-omega = q^k says X carries framing weight, in the sense made precise below.
+R1.  bar(z_D) = z_- EXACTLY.  Held at three sites:
+     * `QOU.MassTheory.barZ`, content/.../lean/QOU/MassTheory/PnInterfaceBarStructure.lean:95
+       `markovZ q^-1 = markovZ q - heckeH q`, over [Field K] [CharZero K], sorry-free.
+     * content/.../mass-theory/interface-knot-markov-z-proof.md:49-69, the section
+       "The three factors are one bar-orbit".
+     * probes/pn_interface_bar_structure_probe.py, 17 assertions.
 
-THE FIVE RESULTS.
+R2.  a^2 = z/bar(z), i.e. the framing ratio IS the bar-anomaly.  Held as
+     `markovZ_bar_weight` in content/.../lean/QOU/Hecke/ClosedFormInterfaceFactors.lean:310,
+     whose own docstring says the two readings are the same statement:
+         "This is the fact that reconciles `markovZ_bar_weight` ('bar scales z by
+          q^-4') with `QOU.MassTheory.barZ` ('bar sends z to z - h'): the two
+          statements are the same statement."
+     Also QOU/QBeta/LadderParityReflection.lean:37 as bar(z_D) = q^-4 z_D.
 
-(1) bar(z) = z_-, EXACTLY, in convention D.  The negative-crossing loop value
-    -- defined in `prop:markov-z-reconciliation` as z_- = z - (q - 1/q), forced
-    by the Hecke quadratic relation from the one-sided stabilisation rule -- is
-    the BAR CONJUGATE of the Markov parameter.  Consequence:
+R3.  z_N - bar(z_N) = h for EVERY N of the Ocneanu family z_N = q^N/[N]_q.
+     Held in content/.../lean/QOU/QBeta/MarkovZFullBarCondition.lean, verified
+     "symbolically in N" by computations/markov_z_full_bar_condition_probe.py
+     (2026-08-08).  The condition is named as a Prop: `FullBar` in
+     QOU/QBeta/DecayFibreBarParity.lean:62.
 
-        a^2  =  z / z_-  =  z / bar(z)  =  omega(z),
+R4.  Convention C is bar-even and therefore fails the full-bar condition.  Held
+     and Lean-proved: `barEven_fullBar_forces_classical`, `zC_fails_fullBar`
+     (MarkovZFullBarCondition.lean), `barEven_not_fullBar`
+     (DecayFibreBarParity.lean:165), `QOU.QBeta.z_bar_invariant`.  The earlier
+     version of this probe asserted that the corpus's only structural argument
+     against C was the log-derivative one in markov-z-reconciliation.md.  THAT
+     WAS WRONG: the bar-involution argument has been on main since 2026-08-08.
 
-    so the Ocneanu FRAMING RATIO is literally the bar-anomaly of z.  The corpus
-    proves a^2 = q^4 sorry-free (`QOU.Information.markov_framing_ratio_eq`); what
-    is added here is that this ratio is not merely a ratio which happens to be a
-    monomial, but the bar-anomaly itself.
+R5.  The writhe route to the mass/binding asymmetry is refuted.  Already proved,
+     and more strongly than the earlier version of this probe managed --
+     QOU.MassTheory.PoincareCenteringOfQ3 (lean-direct exit 0, 8 decls):
+     `borromean_writhe_zero`, `writhe_prefactor_is_one` (a^writhe = 1 for ANY a),
+     `no_writhe_prefactor_yields_inv_cube`.  Quantified over ALL writhe
+     prefactors, not just the one word.  Scope (b), invariant: a writhe
+     prefactor is multiplicative in the writhe, so at w = 0 every one is 1.
 
-(2) It holds for the WHOLE Ocneanu family, with a one-line proof.  For
-    z_N = q^N/[N]_q with the symmetric [N]_q = (q^N - q^-N)/(q - q^-1),
+R6.  lw carries no framing, as a TYPE fact.  computations/lw_is_framing_independent_probe.py
+     (3/3): `linking_weight_family_a` has signature (q, q_inv=None) -> mpf and
+     "takes NO knot, NO diagram, NO framing".  It is a function of the crossing
+     number alone, so two knots of equal crossing number and opposite writhe get
+     the same lw.  CONSEQUENCE, and it retracts the earlier framing of this arc:
+     whatever the extra q-power is, IT CANNOT LIVE ON lw.
 
-        z_N - bar(z_N)  =  (q^N - q^-N)/[N]_q  =  [N]_q * h / [N]_q  =  h
+===============================================================================
+CORRECTED -- a row of the earlier bar-anomaly table contradicted the corpus
+===============================================================================
 
-    identically in N.  So the Ocneanu family is exactly the family on which the
-    BAR INVOLUTION and the HECKE QUADRATIC RELATION agree about what z_- is.
+C1.  omega(M) = 1 was WRONG for the corpus's DERIVED binding channel.
+     QOU.Mass.BrunnianBindingChannel.countChannel is the count TIMES h,
+         countChannel np nn q = (np + nn) * (q - q^-1) / 2,
+     and `countChannel_barOdd` (BrunnianBindingChannel.lean:241) proves it
+     BAR-ODD, so omega = -1, not +1.  The bare integer M of the earlier table
+     comes from BindingMassRung, where M, lw, hbar are FREE REAL PARAMETERS
+     carrying no parity content at all.  The two objects differ by exactly one
+     bar-odd factor.  What survives the correction is the FRAMING-WEIGHT
+     contrast, not the parity one:
+         mass multiplier   omega = q^2   -- a monomial, framing weight 2
+         binding channel   omega = -1    -- a sign,     framing weight 0
+     Framing weight is the exponent of q; a sign is not a framing weight.
 
-(3) Convention C fails precisely this, and the failure is sharper than
-    "structureless".  z_C = 1/(q^{1/2} + q^{-1/2}) is BAR-EVEN, so bar(z_C) = z_C
-    while the Hecke relation forces z_{C,-} = z_C - h /= z_C.  In C the bar
-    involution says the negative-crossing loop value equals the positive one.
-    This is INDEPENDENT of the empirical figures on record (195.8 ppm on
-    tr_M(beta_Bor), -197 ppm on m_p) and independent of the corpus's existing
-    structural argument (the log-derivative argument that C's a^2 is not q^t for
-    any real t, in `markov-z-reconciliation.md`).  SCOPE: this probe does NOT
-    establish that bar(z) = z_- is REQUIRED.  Both conventions satisfy
-    tr_M(1) = (z - z_-)/h = 1 and both are admissible.  Whether bar-compatibility
-    is a constraint or an aesthetic preference is not settled here.
+C2.  tr_M(K, q) is NOT bar-even in general, so the "one framing quantum" figure
+     is right for the DEPRECATED global-scalar form and wrong for the canonical
+     per-block one.  With per_knot_density_per_block = [Vol(K)/hbar_q^2]*tr_M
+     (_li_2_q_util.py:649), omega(mass) = q^2 * omega(tr_M), and the corpus
+     MEASURED omega(tr_M) /= 1: shifts of +13.2 % / +11.8 % under q -> 1/q
+     (docs/coordination/2026-07-18-ka-additive-cluster-negative-structural-findings.md,
+     bean qou-7uxa), i.e. omega ~ 0.883 / 0.894 -- not a monomial in q at all.
+     The Borromean case IS bar-even (`trM_borromean_bar_invariant`,
+     BorromeanMarkovTrace.lean:262) because the Borromean link is AMPHICHIRAL,
+     which is an A-family fact and not a general one.
 
-(4) (1) EXPLAINS why the Ocneanu weights are bar-even.  Under bar the weight
-    formula's numerator factor z q^c - z_- q^-c maps to z_- q^-c - z q^c and its
-    denominator q^h - q^-h maps to q^-h - q^h: both flip sign, so each cell's
-    factor is fixed and w_lambda is bar-even.  That is a CONSEQUENCE of bar(z) = z_-,
-    not an independent fact, and it is confirmed numerically against the live
-    producer `y_lambda_su_n` at 60 dps.
+C3.  hbar_q^2 -> q^2 is already in the corpus, in different vocabulary:
+     interface-knot-markov-z-proof.md:119-126 localises the same factor and
+     calls it "the two quanta of substrate Planck action".  Same number,
+     different interpretive frame.
 
-(5) THE AMPLITUDE ASYMMETRY IS ONE FRAMING QUANTUM.  With a = q^2 the convention-D
-    framing quantum:
+===============================================================================
+WHAT IS NEW -- the only two things this probe lands
+===============================================================================
 
-        omega(lw)          = 1        self-linking weight, bar-even
-        omega(M)           = 1        binding multiplier -- ANY integer
-        omega(h)           = -1       Hecke deformation, bar-odd
-        omega(1/hbar_q^2)  = q^2 = a  the CAL-2 cusp factor: ONE framing quantum
-        omega(z_D)         = q^4 = a^2
+N1.  omega(1/hbar_q^2) = a holds at N = 2 AND AT NO OTHER N.  With the Ocneanu
+     family's framing quantum a_N = q^N, omega(1/hbar_q^2) = q^2 matches a_N
+     exactly when N = 2 -- and N = 2 is convention D, the sl_2 point of the
+     family (`QOU.QBeta.WenzlWeight.level_eq_two_of_conventionD`).  The
+     six-path grep found NO corpus artifact evaluating hbar_q's bar-anomaly
+     against the family index N: the two halves each exist and nothing composes
+     them.  (Path 0, corpus_search, was DOWN -- the paper-assistant MCP server
+     failed ENOENT -- so this is grep-open, not graph-open.)
 
-    so the MASS multiplier lw/hbar_q^2 carries exactly ONE Ocneanu framing quantum
-    and the BINDING multiplier carries NONE.  That is the whole of residual (ii),
-    as one exponent rather than a qualitative contrast.  And it is sl_2-specific:
-    omega(1/hbar_q^2) = a = q^N holds at N = 2 and at no other N, and N = 2 is
-    convention D, the sl_2 point of the Ocneanu family.
+N2.  THE NAMING BRIDGE.  `markovZ_bar_weight`'s q^-4 and `markov_framing_ratio_eq`'s
+     a^2 = q^4 are the same number, in two files, with no cross-reference
+     between them.  `markov_framing_ratio_eq` (information-theory/toffoli-lp-stability.lean:792)
+     has exactly four citation sites corpus-wide and NONE is in the mass or
+     binding chain.  So the corpus knows "bar scales z by q^-4" and knows "the
+     Ocneanu framing ratio is q^4" and does not record that these are one fact.
 
-WHERE THE FRAMING QUANTUM IS NOT.  The obvious mechanism -- "the self channel
-carries a writhe, the mutual channel of a Brunnian link has writhe zero
-(`brunnian_signedChannel_zero`), so only the self channel is framed" -- does NOT
-survive, and this probe records the refutation rather than the story.  The
-canonical Borromean braid word is (sigma_1 sigma_2^-1)^3, of exponent sum ZERO,
-and the checks below show every H_3 character of it is bar-even.  Since the
-Ocneanu weights are bar-even too (result 4), tr_M(beta_Bor) is bar-even and the
-trace contributes NO framing weight at all.  The entire anomaly of the mass
-amplitude is in hbar_q, which is not a trace object: it enters from CAL-2,
-m_mu/m_e = Vol(4_1)/hbar_q^2.
+WHAT THIS DOES NOT DO.  It does not close residual (ii) of bean qou-brng, and it
+does not reach it.  The corpus's own 2026-08-30 entry in that bean declares the
+self-vs-mutual FRAMING of residual (ii) mis-posed -- lw is a representation-
+theoretic Wedderburn q-dimension sum, M a topological coordination count, so
+the question "why does one linking notion split two ways" is not the situation.
+The live carrier for the mass channel's extra q-power is bean qou-24w9, which is
+further along: it identifies /q^3 as 1/y^Schur_(3), the q-Schur Plancherel
+weight at the content sum c((3)) = 0+1+2 = 3, and explains the bar-asymmetry by
+bar sending lambda -> lambda' with c(lambda') = -c(lambda) -- a single-block
+weight picking the chirality-extremal block.  That is a different mechanism from
+framing, and the bar-symmetrised repair of hbar_q was already TESTED AND REFUTED
+there (q re-solves to 1.12303, m_mu/m_e misses by -27.16 %, 1,286,334x worse;
+qbeta/fbor_normalisation_barsymmetry_probe.py).
 
-The mechanism behind that bar-evenness is AMPHICHIRALITY, not the exponent sum,
-and the probe separates the two.  Bar acts on H_n(q) by sigma -> sigma^-1, with
-NO sign: applying bar to sigma^2 = h sigma + 1 gives X^2 = -h X + 1 (h is
-bar-odd), and sigma^-2 = -h sigma^-1 + 1 satisfies it while (-sigma^-1) does not.
-The signed guess -sigma^-1 is checked and recorded as FAILING, because it is the
-natural guess and it is wrong.  So bar sends a braid word to its MIRROR --
-verified ENTRYWISE on rho(beta_Bor) -- and the Borromean link is amphichiral,
-which is why its character is fixed.  A nonzero exponent sum does NOT by itself
-force a bar anomaly: sigma_1 sigma_2 has exponent sum 2 and (2,1)-character the
-constant -1, so it would have been a VACUOUS control.  The live control is
-sigma_1 itself, whose character is h, bar-ODD.
+TERMINOLOGY HAZARD, recorded.  "framing quantum" is overloaded in this corpus,
+a markovZ/markovZc-class collision: the RIBBON twist theta = q^{1/2} gives a
+framing ladder q^{T/2} (bean qou-gzs0), while the OCNEANU framing ratio gives
+a = q^2.  These differ by a = theta^4.  N1 is about the Ocneanu one.
 
-PRECISION.  Everything here is EXACT symbolic sympy over the ring generated by
-s = sqrt(q); there are no floats and no numerics of any kind, so no witness is
-emitted and no anchor is read.  (The bar-evenness of the Ocneanu weights was
-additionally confirmed against the live producer `y_lambda_su_n(3, q, 2)` at
-mp.dps = 60, agreeing at q_0 and 1/q_0 to better than 1e-50, but that check
-needs PYTHONPATH wiring and is deliberately not carried here -- result 4 derives
-it symbolically instead.)  The exit code is the verdict, matching the sibling
-`markov_loop_value_product_and_framing_ratio.py`.
-
-So residual (ii) is RELOCATED, not closed: the question "why does binding lack
-the cusp factor" is a question about the CAL-2 calibration, not about the
-self-vs-mutual structure of the trace.  Stated as a scope-(a) negative per
-AGENTS.md: this construction, alone, does not source the asymmetry from the
-writhe.  No invariant is claimed to forbid a writhe-based route in general --
-only that the canonical Borromean word cannot supply one, because its writhe is
-zero.
-
-CONTROL.  A writhe-bearing braid is checked alongside, so that "bar-even at
-beta_Bor" is a measured fact about that word and not a triviality of the setup.
-
+PRECISION.  Exact symbolic sympy over the ring generated by s = sqrt(q).  No
+floats, no numerics, no anchor read, no witness emitted, nothing re-scored, no
+convention adopted or retired.  The exit code is the verdict, matching the
+sibling markov_loop_value_product_and_framing_ratio.py.
 """
 
 from __future__ import annotations
@@ -139,13 +160,11 @@ def check(label: str, ok: bool, detail: str = "") -> None:
             print(f"         {line}")
 
 
-# --- exact setup: s = sqrt(q) so that convention C is expressible too ---------
 s = sp.symbols("s", positive=True)
 q = s ** 2
 
 
 def bar(e):
-    """The bar involution q -> 1/q, i.e. s -> 1/s."""
     return sp.cancel(sp.together(sp.sympify(e).subs(s, 1 / s)))
 
 
@@ -158,209 +177,83 @@ def zero(e) -> bool:
     return sp.simplify(sp.together(sp.cancel(sp.sympify(e)))) == 0
 
 
-h = q - 1 / q                      # Hecke deformation
-hbar_q = 1 - 1 / q                 # CAL-2 cusp factor
-lw = (3 * q ** 2 + 4 + 3 / q ** 2) / 4   # linking_weight_family_a
-zD = q ** 3 / (q ** 2 + 1)         # convention D  (QOU.Information.markovZ)
-zDneg = zD - h                     # forced by the Hecke quadratic relation
-zC = 1 / (s + 1 / s)               # convention C  (excised for mass/binding)
-a = q ** 2                         # Ocneanu framing quantum, convention D
+h = q - 1 / q
+hbar_q = 1 - 1 / q
+zD = q ** 3 / (q ** 2 + 1)
+zDneg = zD - h
+a = q ** 2
 
 
 def qint_sym(n: int):
-    """Symmetric quantum integer [n]_q = (q^n - q^-n)/(q - q^-1)."""
     return sp.cancel((q ** n - q ** (-n)) / (q - 1 / q))
 
 
 def main() -> int:
     print()
     print("=" * 74)
-    print("  bar-anomaly of the two amplitudes -- bean qou-brng residual (ii)")
+    print("  cusp-factor bar-anomaly vs the Ocneanu family index -- bean qou-brng")
     print("=" * 74)
     print()
 
-    # ---- 1. bar(z) = z_- in convention D ------------------------------------
-    print("1. The negative-crossing loop value is the bar conjugate of z")
-    check("D: bar(z) == z_-  (exactly)", zero(bar(zD) - zDneg),
-          f"bar(z_D) = {sp.cancel(bar(zD))}\n"
-          f"z_-      = {sp.cancel(zDneg)}")
-    check("D: the framing ratio IS the bar-anomaly, a^2 = z/bar(z) = omega(z)",
-          zero(sp.cancel(zD / zDneg) - omega(zD)),
-          f"omega(z_D) = {omega(zD)} = q^4 = a^2")
-    check("D: a^2 = q^4, matching QOU.Information.markov_framing_ratio_eq",
-          zero(sp.cancel(zD / zDneg) - q ** 4))
-    print()
-
-    # ---- 2. the whole Ocneanu family ----------------------------------------
-    print("2. bar(z_N) = z_N - h for the WHOLE family z_N = q^N/[N]_q")
-    print("   reason, one line:  z_N - bar(z_N) = (q^N - q^-N)/[N]_q = [N]_q h/[N]_q = h")
-    fam_ok = True
-    for n in range(1, 9):
-        zN = sp.cancel(q ** n / qint_sym(n))
-        if not zero(bar(zN) - (zN - h)):
-            fam_ok = False
-        if not zero(omega(zN) - q ** (2 * n)):
-            fam_ok = False
-    check("family: bar(z_N) = z_N - h and omega(z_N) = q^{2N}, for N = 1..8", fam_ok,
-          "so the Ocneanu family is exactly where the BAR INVOLUTION and the\n"
-          "HECKE QUADRATIC RELATION agree about what z_- is")
-    check("D is the N = 2 member", zero(sp.cancel(q ** 2 / qint_sym(2)) - zD),
+    # ---- N1: the one genuinely new claim ------------------------------------
+    print("N1. NEW: omega(1/hbar_q^2) = a_N = q^N at N = 2 and at no other N")
+    check("omega(1/hbar_q^2) = q^2",
+          zero(omega(1 / hbar_q ** 2) - q ** 2),
+          f"omega(1/hbar_q^2) = {omega(1 / hbar_q ** 2)} = q^2")
+    matching = [n for n in range(1, 9) if zero(omega(1 / hbar_q ** 2) - q ** n)]
+    check("matches the family framing quantum a_N = q^N only at N = 2",
+          matching == [2],
+          f"matching N over 1..8: {matching}\n"
+          "N = 2 is convention D, the sl_2 point (WenzlWeight.level_eq_two_of_conventionD)")
+    check("D IS the N = 2 member of z_N = q^N/[N]_q",
+          zero(sp.cancel(q ** 2 / qint_sym(2)) - zD),
           f"q^2/[2]_q = {sp.cancel(q ** 2 / qint_sym(2))} = z_D")
     print()
 
-    # ---- 3. convention C fails exactly this ---------------------------------
-    print("3. Convention C: bar says z_- = z, the Hecke relation says z_- = z - h")
-    check("C: z_C is BAR-EVEN", zero(bar(zC) - zC),
-          f"bar(z_C) = {sp.cancel(bar(zC))} = z_C")
-    check("C: bar(z_C) != z_C - h  (the two disagree)", not zero(bar(zC) - (zC - h)),
-          f"bar(z_C) - (z_C - h) = {sp.cancel(bar(zC) - (zC - h))}, which is -(-h) = h != 0")
-    check("C: omega(z_C) = 1, so C carries NO framing weight at all",
-          zero(omega(zC) - 1),
-          "yet its z_- is displaced from z by h -- that is the inconsistency")
-    check("BOTH are admissible: tr_M(1) = (z - z_-)/h = 1 in each",
-          zero((zD - zDneg) / h - 1) and zero((zC - (zC - h)) / h - 1),
-          "SCOPE: this does NOT show bar-compatibility is REQUIRED; see docstring")
+    # ---- N2: the naming bridge ----------------------------------------------
+    print("N2. NEW: the naming bridge -- two corpus theorems are one number")
+    check("bar(z_D) = q^-4 * z_D   (markovZ_bar_weight, ClosedFormInterfaceFactors)",
+          zero(bar(zD) - zD / q ** 4))
+    check("z_D/z_- = q^4 = a^2     (markov_framing_ratio_eq, toffoli-lp-stability)",
+          zero(sp.cancel(zD / zDneg) - q ** 4))
+    check("=> they are the SAME statement: omega(z_D) = a^2",
+          zero(omega(zD) - a ** 2) and zero(sp.cancel(zD / zDneg) - omega(zD)),
+          "markov_framing_ratio_eq has 4 citation sites corpus-wide and NONE is\n"
+          "in the mass or binding chain; no file records that these coincide")
     print()
 
-    # ---- 4. bar(z) = z_- explains bar-even Ocneanu weights -------------------
-    print("4. bar(z) = z_- forces the Ocneanu weights to be bar-even")
-    # Ocneanu weight over a partition: prod over cells of
-    #   (z q^c - z_- q^-c) / (q^hook - q^-hook)
-    # Under bar, numerator -> z_- q^-c - z q^c = -(num); denominator -> -(den).
-    # (content, hook) per cell.  lambda = (2,1) has hooks 3,1,1 -- NOT 3,2,1.
-    LAMBDA_3 = {
-        "(3)": [(0, 3), (1, 2), (2, 1)],
-        "(2,1)": [(0, 3), (1, 1), (-1, 1)],
-        "(1,1,1)": [(0, 3), (-1, 2), (-2, 1)],
-    }
-
-    def ocneanu_weight(cells):
-        return sp.cancel(sp.prod([(zD * q ** c - zDneg * q ** (-c)) / (q ** hk - q ** (-hk))
-                                  for c, hk in cells]))
-
-    num_den_ok = True
-    for cells in LAMBDA_3.values():
-        for c, hk in cells:
-            if not zero(bar(zD * q ** c - zDneg * q ** (-c)) + (zD * q ** c - zDneg * q ** (-c))):
-                num_den_ok = False
-            if not zero(bar(q ** hk - q ** (-hk)) + (q ** hk - q ** (-hk))):
-                num_den_ok = False
-    check("each cell factor: numerator and denominator are BOTH bar-ODD",
-          num_den_ok,
-          "numerator  z q^c - z_- q^-c  ->  z_- q^-c - z q^c  = -(itself), USING bar(z) = z_-\n"
-          "denominator q^hk - q^-hk     ->  q^-hk - q^hk      = -(itself)\n"
-          "so their ratio is bar-EVEN, cell by cell, for every partition")
-    weights = {lam: ocneanu_weight(cells) for lam, cells in LAMBDA_3.items()}
-    check("every convention-D weight at n = 3 is bar-even",
-          all(zero(bar(w) - w) for w in weights.values()),
-          "\n".join(f"w_{lam} = {sp.factor(w)}" for lam, w in weights.items()))
-    check("and they are the REGISTERED values: [4]_q/[2]_q^3, 1/[2]_q^2, 0",
-          zero(weights["(3)"] - qint_sym(4) / qint_sym(2) ** 3)
-          and zero(weights["(2,1)"] - 1 / qint_sym(2) ** 2)
-          and zero(weights["(1,1,1)"]),
-          "w_(1^3) = 0 is the sl_2 row bound, not a coincidence of the trace")
+    # ---- R: the retractions, re-verified so they are not re-derived ---------
+    print("R.  RETRACTED -- already corpus theorems (verified here only as credit)")
+    check("R1 bar(z_D) = z_-        -- QOU.MassTheory.barZ (PnInterfaceBarStructure.lean:95)",
+          zero(bar(zD) - zDneg))
+    check("R3 z_N - bar(z_N) = h for N = 1..8  -- MarkovZFullBarCondition.lean",
+          all(zero(bar(sp.cancel(q ** n / qint_sym(n)))
+                   - (sp.cancel(q ** n / qint_sym(n)) - h)) for n in range(1, 9)),
+          "reason, one line: z_N - bar(z_N) = (q^N - q^-N)/[N]_q = [N]_q h/[N]_q = h")
+    zC = 1 / (s + 1 / s)
+    check("R4 z_C is bar-even, so C fails full-bar -- barEven_fullBar_forces_classical",
+          zero(bar(zC) - zC) and not zero(bar(zC) - (zC - h)),
+          "the earlier version of this probe wrongly claimed the corpus's only\n"
+          "structural argument against C was the log-derivative one; the\n"
+          "bar-involution argument has been on main since 2026-08-08")
     print()
 
-    # ---- 5. the bar-anomaly table -------------------------------------------
-    print("5. The amplitude asymmetry is ONE framing quantum")
-    check("omega(lw) = 1            (self-linking weight is bar-even)",
-          zero(omega(lw) - 1))
-    check("omega(M) = 1             (binding multiplier -- any integer)",
-          all(zero(omega(sp.Integer(k)) - 1) for k in (1, 2, 3, 7)))
-    check("omega(h) = -1            (Hecke deformation is bar-odd)",
-          zero(omega(h) + 1))
-    check("omega(1/hbar_q^2) = a    (cusp factor: ONE framing quantum)",
-          zero(omega(1 / hbar_q ** 2) - a),
-          f"omega(1/hbar_q^2) = {omega(1 / hbar_q ** 2)} = q^2 = a")
-    check("omega(z_D) = a^2", zero(omega(zD) - a ** 2))
-    check("omega(MASS mult lw/hbar_q^2) = a,  omega(BINDING mult M) = 1",
-          zero(omega(lw / hbar_q ** 2) - a) and zero(omega(sp.Integer(3)) - 1),
-          "that is residual (ii), as one exponent")
-    only_two = [n for n in range(1, 7) if zero(omega(1 / hbar_q ** 2) - q ** n)]
-    check("and it is sl_2-specific: omega(1/hbar_q^2) = q^N only at N = 2",
-          only_two == [2], f"matching N: {only_two}  (N = 2 is convention D)")
-    print()
-
-    # ---- 6. the writhe route does NOT supply it -----------------------------
-    print("6. REFUTATION of the writhe route: beta_Bor has exponent sum ZERO")
-    # H_3 irreps.  Hecke relation sigma^2 = h sigma + 1, eigenvalues q and -1/q.
-    sig1_3 = sp.Matrix([[q]])                     # lambda = (3):     sigma -> q
-    sig1_111 = sp.Matrix([[-1 / q]])              # lambda = (1,1,1): sigma -> -1/q
-    # lambda = (2,1): 2-dimensional
-    sig1_21 = sp.Matrix([[q, 1], [0, -1 / q]])
-    sig2_21 = sp.Matrix([[-1 / q, 0], [1, q]])
-
-    def mat_zero(M) -> bool:
-        return all(zero(x) for x in sp.Matrix(M))
-
-    I2 = sp.eye(2)
-    check("(2,1): Hecke relation sigma^2 = h sigma + 1 holds for both generators",
-          mat_zero(sig1_21 ** 2 - (h * sig1_21 + I2))
-          and mat_zero(sig2_21 ** 2 - (h * sig2_21 + I2)))
-    check("(2,1): braid relation s1 s2 s1 = s2 s1 s2 holds",
-          mat_zero(sig1_21 * sig2_21 * sig1_21 - sig2_21 * sig1_21 * sig2_21))
-
-    # canonical Borromean word: (sigma_1 sigma_2^-1)^3, exponent sum 0
-    word = [(1, 1), (2, -1)] * 3
-    expsum = sum(e for _, e in word)
-    check("canonical Borromean word (s1 s2^-1)^3 has exponent sum 0",
-          expsum == 0, f"exponent sum = {expsum}  (BORROMEAN_WORD = [1,-2,1,-2,1,-2])")
-
-    def rep_word(wd, g1, g2):
-        dim = g1.shape[0]
-        M = sp.eye(dim)
-        for gen, e in wd:
-            g = g1 if gen == 1 else g2
-            M = M * (g if e > 0 else g.inv())
-        return sp.simplify(M)
-
-    chis = {
-        "(3)": sp.cancel(rep_word(word, sig1_3, sig1_3).trace()),
-        "(2,1)": sp.cancel(rep_word(word, sig1_21, sig2_21).trace()),
-        "(1,1,1)": sp.cancel(rep_word(word, sig1_111, sig1_111).trace()),
-    }
-    all_even = all(zero(bar(v) - v) for v in chis.values())
-    check("EVERY H_3 character of beta_Bor is BAR-EVEN", all_even,
-          "\n".join(f"chi_{k}(beta_Bor) = {v}" for k, v in chis.items()))
-    check("=> tr_M(beta_Bor) is bar-even: bar-even weights x bar-even characters",
-          all_even,
-          "so the TRACE contributes no framing weight; the whole anomaly of the\n"
-          "mass amplitude is in hbar_q, which enters from CAL-2, not from the trace")
-
-    # WHY beta_Bor comes out bar-even.  Bar acts on H_n(q) by sigma -> sigma^-1,
-    # with NO sign: applying bar to sigma^2 = h sigma + 1 gives X^2 = -h X + 1
-    # (h is bar-odd), and sigma^-2 = -h sigma^-1 + 1 satisfies exactly that,
-    # while (-sigma^-1)^2 = -h sigma^-1 + 1 /= h sigma^-1 + 1 does not.
-    # So bar sends a braid word to its MIRROR, and the Borromean link is
-    # amphichiral -- which is why its character is fixed.
-    check("bar acts on H_3 by sigma -> sigma^-1 (no sign): sigma^-2 = -h sigma^-1 + 1",
-          mat_zero(sp.expand(sig1_21.inv() ** 2 - (-h * sig1_21.inv() + I2))),
-          "and the sign-carrying alternative FAILS: (-sigma^-1) does not satisfy it")
-    check("the signed alternative -sigma^-1 does NOT satisfy the barred relation",
-          not mat_zero(sp.expand((-sig1_21.inv()) ** 2 - (-h * (-sig1_21.inv()) + I2))),
-          "recorded because it is the natural guess and it is wrong")
-    mirror = [(g, -e) for g, e in word]
-    check("bar(rho(beta_Bor)) = rho(mirror beta_Bor), ENTRYWISE",
-          mat_zero(rep_word(word, sig1_21, sig2_21).applyfunc(bar)
-                   - rep_word(mirror, sig1_21, sig2_21)),
-          "so bar = mirror on characters; the Borromean link is AMPHICHIRAL,\n"
-          "hence its character is bar-fixed -- that is the actual mechanism")
-
-    # CONTROL: a writhe-bearing word must NOT be bar-even, or the test is vacuous.
-    # sigma_1 sigma_2 is a poor control -- its (2,1) character is the constant -1.
-    # sigma_1 alone (exponent sum 1) has character h, which is bar-ODD.
-    ctrl = [(1, 1)]                    # sigma_1, exponent sum +1
-    chi_ctrl = sp.cancel(rep_word(ctrl, sig1_21, sig2_21).trace())
-    check("CONTROL: the writhe-1 word s1 is NOT bar-even (test is not vacuous)",
-          not zero(bar(chi_ctrl) - chi_ctrl),
-          f"chi_(2,1)(s1) = {chi_ctrl} = h,  omega = {omega(chi_ctrl)} (bar-ODD)")
-    ctrl2 = [(1, 1), (2, 1)]           # sigma_1 sigma_2, exponent sum +2
-    chi_ctrl2 = sp.cancel(rep_word(ctrl2, sig1_21, sig2_21).trace())
-    check("NOTE: s1 s2 would have been a VACUOUS control -- its character is -1",
-          zero(chi_ctrl2 + 1),
-          f"chi_(2,1)(s1 s2) = {chi_ctrl2}, bar-even despite exponent sum 2.\n"
-          "So a nonzero exponent sum does NOT by itself force a bar anomaly in\n"
-          "the character; recorded so the control is not mistaken for a law.")
+    # ---- C1: the correction -------------------------------------------------
+    print("C1. CORRECTED: the derived binding channel is BAR-ODD, not bar-even")
+    np_, nn_ = sp.symbols("np nn", nonnegative=True)
+    count_channel = (np_ + nn_) * (q - 1 / q) / 2      # BrunnianBindingChannel.countChannel
+    check("countChannel = (n+ + n-)*h/2 is BAR-ODD (countChannel_barOdd)",
+          zero(bar(count_channel) + count_channel),
+          f"omega(countChannel) = {omega(count_channel)}, NOT +1")
+    check("the bare integer M of BindingMassRung carries no parity content",
+          all(zero(omega(sp.Integer(k)) - 1) for k in (1, 2, 3, 7)),
+          "M, lw, hbar are free real parameters there, hypothesis only lw /= 0;\n"
+          "so omega(M) = 1 is a statement about a free parameter, not a result")
+    check("what survives is the FRAMING-WEIGHT contrast, not the parity one",
+          zero(omega(1 / hbar_q ** 2) - q ** 2) and zero(omega(count_channel) + 1),
+          "mass multiplier  omega = q^2  -- a monomial, framing weight 2\n"
+          "binding channel  omega = -1   -- a sign,     framing weight 0\n"
+          "a sign is not a framing weight; the exponent of q is")
     print()
 
     n_ok = sum(1 for _, ok in CHECKS if ok)
@@ -368,16 +261,17 @@ def main() -> int:
     print(f"  {n_ok}/{len(CHECKS)} assertions")
     print("=" * 74)
     print()
-    print("  VERDICT.  The Ocneanu framing ratio a^2 is the bar-anomaly of the")
-    print("  Markov parameter, bar(z) = z_-, and that holds for the whole family")
-    print("  z_N = q^N/[N]_q while convention C's bar-even z fails it.  Residual")
-    print("  (ii) of qou-brng becomes one exponent: the mass amplitude carries")
-    print("  omega = a, one framing quantum; the binding amplitude carries")
-    print("  omega = 1, none.  It is NOT closed -- and the writhe route is")
-    print("  REFUTED as its source (scope (a)): the canonical Borromean word has")
-    print("  exponent sum zero and every H_3 character of it is bar-even, so the")
-    print("  trace supplies no framing weight.  The anomaly is entirely in the")
-    print("  CAL-2 cusp factor hbar_q.  Residual (ii) is relocated to CAL-2.")
+    print("  VERDICT.  Two things are new: omega(1/hbar_q^2) matches the Ocneanu")
+    print("  family's framing quantum a_N = q^N at N = 2 and no other N, and the")
+    print("  naming bridge between markovZ_bar_weight's q^-4 and")
+    print("  markov_framing_ratio_eq's a^2 = q^4, which no file records as one")
+    print("  fact.  Everything else this probe once claimed is already a corpus")
+    print("  theorem and is retracted above with its site.  Residual (ii) of")
+    print("  qou-brng is NOT closed and is NOT reached: the corpus's own")
+    print("  2026-08-30 entry in that bean declares the self-vs-mutual framing")
+    print("  of it mis-posed, and the live carrier for the mass channel's extra")
+    print("  q-power is bean qou-24w9 on a q-Schur Plancherel route, not a")
+    print("  framing one.")
     return 0 if n_ok == len(CHECKS) else 1
 
 
