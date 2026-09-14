@@ -1,0 +1,615 @@
+{
+  "name": "aomega-m3-pretzel-level2-stokes",
+  "description": "The (-2,3,7) pretzel's level-2 descendant q-difference operator, derived from its state integral by contour shift + Faddeev's functional equation; its q -> 0 exponents by Newton polygon; and the s(x) = x + 1 + 1/x verdict.  Gated on 4_1 and 5_2, where the same derivation reproduces GGM (276)/(332) exactly and GGM print the q -> 0 Stokes matrices (188)/(307).",
+  "computation": "aomega-m3-pretzel-level2-stokes",
+  "engine": "python+sympy+mpmath",
+  "scriptFile": "aomega_m3_pretzel_level2_stokes_probe.py",
+  "computedAt": "2026-09-14T17:28:45.364880+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-13-pretzel-level2-stokes-matrix.md",
+  "parameters": {
+    "mp_dps_numerical_gates": 30,
+    "symbolic": "exact sympy over Q(q^{1/2}, x^{1/2}, w); no float64 anywhere",
+    "conventions": "x = e^{2 pi b u}, w = e^{2 pi b t}, q = e^{2 pi i b^2}, c_b = i(b + 1/b)/2, sigma = x^{1/2} + x^{-1/2}, s(x) = x + 1 + 1/x (GGM (239))",
+    "held_sources": [
+      "library/arxiv-2012.00062v3 (GGM, Peacock patterns and resurgence in complex Chern-Simons theory): (186), (187a), (188), (239), (276), (305a), (307), (321), (326), (327), (331), (332)",
+      "library/arxiv-2111.06645 (GZ, Knots and their related q-series; the directory is mis-keyed, the PDF is arXiv 2304.09377v2): SS3.5, SS4, SS4.1, SS5.2",
+      "library/arxiv-1304.2705v1 (Garoufalidis-Kashaev, From state integrals to q-series): (1)"
+    ],
+    "integrands": {
+      "4_1": "int Phi_b(v+u) Phi_b(v) e^{-pi i v^2 + 2 pi i v t} dv",
+      "5_2": "int Phi_b(v) Phi_b(v+u) Phi_b(v-u) e^{-2 pi i v^2 + 2 pi i v t} dv",
+      "pretzel": "int Phi_b(v+u/2) Phi_b(v-u/2) Phi_b(2v-c_b) e^{-2 pi i v^2 + 2 pi i v t} dv"
+    }
+  },
+  "data": {
+    "4_1": {
+      "degree": 2,
+      "N_coeffs": [
+        "1",
+        "(XR**2 + 1)/Q",
+        "XR**2/Q**2"
+      ],
+      "P_coeffs": [
+        "Q*W",
+        "W*XR**2 + W - 1",
+        "W*XR**2/Q"
+      ]
+    },
+    "5_2": {
+      "degree": 3,
+      "N_coeffs": [
+        "1",
+        "(XR**4 + XR**2 + 1)/(Q*XR**2)",
+        "(XR**4 + XR**2 + 1)/(Q**2*XR**2)",
+        "Q**(-3)"
+      ],
+      "P_coeffs": [
+        "Q**2*W",
+        "Q*W*(XR**4 + XR**2 + 1)/XR**2",
+        "W*XR**2 + W + W/XR**2 - 1",
+        "W/Q"
+      ]
+    },
+    "pretzel": {
+      "degree": 6,
+      "N_coeffs": [
+        "1",
+        "(XR**2 + 1)/(Q*XR)",
+        "-1/Q**4",
+        "(-Q**2*XR**2 - Q**2 - XR**2 - 1)/(Q**5*XR)",
+        "-1/Q**4",
+        "(XR**2 + 1)/(Q**7*XR)",
+        "Q**(-8)"
+      ],
+      "P_coeffs": [
+        "Q**2*W",
+        "Q*W*(XR**2 + 1)/XR",
+        "-1 - W/Q**2",
+        "W*(-Q**2*XR**2 - Q**2 - XR**2 - 1)/(Q**3*XR)",
+        "-W/Q**2",
+        "W*(XR**2 + 1)/(Q**5*XR)",
+        "W/Q**6"
+      ]
+    },
+    "extension": {
+      "sigma": "x^{1/2} + x^{-1/2}",
+      "minimal_polynomial": "Y^2 - (s(x) + 1)",
+      "degree_over_Z[s]": 2
+    },
+    "newton": {
+      "4_1": {
+        "points": [
+          [
+            0,
+            "0"
+          ],
+          [
+            1,
+            "-1/2"
+          ],
+          [
+            2,
+            "-1"
+          ]
+        ],
+        "segments": [
+          {
+            "from": [
+              0,
+              "0"
+            ],
+            "to": [
+              2,
+              "-1"
+            ],
+            "slope_in_q": "-1/2",
+            "n_roots": 2
+          }
+        ]
+      },
+      "5_2": {
+        "points": [
+          [
+            0,
+            "0"
+          ],
+          [
+            1,
+            "-1/2"
+          ],
+          [
+            2,
+            "-1"
+          ],
+          [
+            3,
+            "-3/2"
+          ]
+        ],
+        "segments": [
+          {
+            "from": [
+              0,
+              "0"
+            ],
+            "to": [
+              3,
+              "-3/2"
+            ],
+            "slope_in_q": "-1/2",
+            "n_roots": 3
+          }
+        ]
+      },
+      "pretzel": {
+        "points": [
+          [
+            0,
+            "0"
+          ],
+          [
+            1,
+            "-1/2"
+          ],
+          [
+            2,
+            "-2"
+          ],
+          [
+            3,
+            "-5/2"
+          ],
+          [
+            4,
+            "-2"
+          ],
+          [
+            5,
+            "-7/2"
+          ],
+          [
+            6,
+            "-4"
+          ]
+        ],
+        "segments": [
+          {
+            "from": [
+              0,
+              "0"
+            ],
+            "to": [
+              2,
+              "-2"
+            ],
+            "slope_in_q": "-1",
+            "n_roots": 2
+          },
+          {
+            "from": [
+              2,
+              "-2"
+            ],
+            "to": [
+              6,
+              "-4"
+            ],
+            "slope_in_q": "-1/2",
+            "n_roots": 4
+          }
+        ]
+      }
+    },
+    "descendant_term_position": {
+      "4_1": {
+        "A": 1,
+        "val_q_of_offset_term_at_X^A": "0",
+        "val_q_of_descendant_term": "0",
+        "descendant_ties_the_hull": true
+      },
+      "5_2": {
+        "A": 2,
+        "val_q_of_offset_term_at_X^A": "0",
+        "val_q_of_descendant_term": "0",
+        "descendant_ties_the_hull": true
+      },
+      "pretzel": {
+        "A": 2,
+        "val_q_of_offset_term_at_X^A": "-1",
+        "val_q_of_descendant_term": "0",
+        "descendant_ties_the_hull": false
+      }
+    },
+    "pretzel_long_segment": {
+      "leading_poly": "XR*Y**3 - XR*Y + Y**4 - 1 + Y**3/XR - Y/XR",
+      "factored": "(XR + Y)*(Y - 1)*(Y + 1)*(XR*Y + 1)/XR"
+    },
+    "printed_stokes_q0": {
+      "S_plus_41": "[[1, XR**2 + 1 + XR**(-2)], [0, 1]]",
+      "S_minus_41": "[[1, 0], [-XR**2 - 1 - 1/XR**2, 1]]",
+      "S_plus_52": "[[1, XR**2 + 2 + XR**(-2), 0], [0, 1, 0], [-XR**2 - 1 - 1/XR**2, -XR**4 - 2*XR**2 - 3 - 2/XR**2 - 1/XR**4, 1]]",
+      "S_plus_52_at_x1": "[[1, 4, 0], [0, 1, 0], [-3, -9, 1]]"
+    },
+    "pointwise_identity": {
+      "4_1": {
+        "knot": "4_1",
+        "worst_rel_err": "5.17445e-30",
+        "samples": [
+          "1.156e-30",
+          "1.457e-31",
+          "2.007e-30",
+          "2.326e-30",
+          "5.798e-31",
+          "5.174e-30"
+        ],
+        "below_1e-25": true
+      },
+      "5_2": {
+        "knot": "5_2",
+        "worst_rel_err": "8.02107e-30",
+        "samples": [
+          "1.915e-30",
+          "3.569e-31",
+          "7.334e-30",
+          "3.46e-30",
+          "1.139e-30",
+          "8.021e-30"
+        ],
+        "below_1e-25": true
+      },
+      "pretzel": {
+        "knot": "pretzel",
+        "worst_rel_err": "2.21169e-29",
+        "samples": [
+          "1.418e-30",
+          "4.985e-31",
+          "2.212e-29",
+          "9.619e-30",
+          "1.869e-31",
+          "1.808e-29"
+        ],
+        "below_1e-25": true
+      }
+    },
+    "integral_recurrence": {
+      "4_1": [
+        {
+          "knot": "4_1",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.0j)",
+          "u": "0.13",
+          "degree": 2,
+          "Im_lin": "0.0",
+          "abs_residual": "1.71012e-21",
+          "abs_largest_term": "0.857428",
+          "rel_residual": "1.99448e-21",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.72111049",
+            "0.72111049"
+          ]
+        },
+        {
+          "knot": "4_1",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.0j)",
+          "u": "0.13",
+          "degree": 2,
+          "Im_lin": "0.0",
+          "abs_residual": "6.8843e-19",
+          "abs_largest_term": "1.24533",
+          "rel_residual": "5.5281e-19",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.5663119",
+            "0.5663119"
+          ]
+        }
+      ],
+      "5_2": [
+        {
+          "knot": "5_2",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.36055524j)",
+          "u": "0.13",
+          "degree": 3,
+          "Im_lin": "0.0",
+          "abs_residual": "1.27819e-20",
+          "abs_largest_term": "1.10934",
+          "rel_residual": "1.15221e-20",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.72111049",
+            "1.442221"
+          ]
+        },
+        {
+          "knot": "5_2",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.28315595j)",
+          "u": "0.13",
+          "degree": 3,
+          "Im_lin": "0.0",
+          "abs_residual": "4.91454e-18",
+          "abs_largest_term": "1.63967",
+          "rel_residual": "2.99727e-18",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.5663119",
+            "1.1326238"
+          ]
+        }
+      ],
+      "pretzel": [
+        {
+          "knot": "pretzel",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.43599568j)",
+          "u": "0.13",
+          "degree": 6,
+          "Im_lin": "-2.31421",
+          "abs_residual": "2.89732e-20",
+          "abs_largest_term": "7.06988",
+          "rel_residual": "4.09812e-21",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.57022962",
+            "1.442221"
+          ]
+        },
+        {
+          "knot": "pretzel",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.44495935j)",
+          "u": "0.13",
+          "degree": 6,
+          "Im_lin": "-2.02254",
+          "abs_residual": "7.39034e-18",
+          "abs_largest_term": "11.3993",
+          "rel_residual": "6.48316e-19",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.2427051",
+            "1.1326238"
+          ]
+        }
+      ]
+    }
+  },
+  "verdict": "DERIVED, from held text only (GK arxiv-1304.2705v1 (1) for Phi_b; GGM arxiv-2012.00062v3 (188), (239), (276), (307), (321), (332)).  The descendant q-difference operator of a one-dimensional state integral follows from the contour shift v -> v - i b and Faddeev's functional equation: P(X) = q^{A/2} w N(X) - X^A with N the product of the shift factors. Its q -> 0 characteristic roots are the exponents the q -> 0 Stokes matrix is built from. GATE 5_2: offsets {1, x, 1/x} -- the adjoint weight set -- give N = (1, s, s, 1), reproducing GGM (276) EXACTLY; s(x) is e1 = e2 of that set, which is the mechanism behind GGM (307).  GATE 4_1: offsets {x, 1}, N = (1, 1+x, x), and s(x) = (1 + x + x^2)/x surfaces in (188) through the (327) theta-renormalisation.  PRETZEL (-2,3,7): the doubled dilogarithm Phi_b(2v - c_b) shifts by -2 i b and contributes TWO factors, so the operator has DEGREE 6 -- the rank, confirmed independently of GZ.  Its x-dependence is entirely through sigma = x^{1/2} + x^{-1/2} = s(x^{1/2}) - 1.  The Newton polygon splits the six exponents 2 + 4 across a q^{1/2} step, and the x-dependent pair are the roots of Y^2 + sigma Y + 1, i.e. -x^{1/2} and -x^{-1/2}.  S(X) VERDICT: NO -- the pretzel's q -> 0 Stokes data is not built from s(x) = x + 1 + 1/x. It is built from sigma = s(x^{1/2}) - 1, which satisfies sigma^2 = s(x) + 1 and generates a DEGREE-2 extension of Z[s(x)].  The operator carries an exact Z/2 grading in which sigma is odd precisely when q is half-integral, so 'level 2' and 'the quadratic extension of Z[s(x)]' are the same phenomenon.  The refinement that follows: Stokes entries at INTEGER powers of q carry EVEN powers of sigma and therefore DO lie in Z[s(x)] -- consistent with the parent session's independently derived sigma_1 sigma_1 rotated index, whose coefficients are polynomials in s(zeta) with integer powers of zeta only -- while entries at HALF-INTEGER powers of q carry odd powers of sigma and do not.  SCOPE (a).  This is a statement about the q -> 0 exponents of the derived descendant operator, hence about the RING the Stokes entries lie in.  It does NOT produce the pretzel's S+(x;q) entry by entry: GGM fix the left and right GL(r) normalisation matrices per knot ((187a) for 4_1, (305a) for 5_2), and those come from the four region matrices M_R(x;q) ((186a)-(186d) for 4_1, (94a)-(94d) for 5_2).  No held source prints the analogue for a rank-6, level-2 knot; that is the precise missing input, and it is a normalisation, not new q-series data.",
+  "assertions": [
+    {
+      "label": "G2-4_1: N(X) = 1 + q^{-1/2}(1 + x) X + q^{-1} x X^2, i.e. prod over the pole offsets {x, 1} -- GGM (332) with (A, r) = (1, 2).  Elementary symmetric functions e1 = 1 + x, e2 = x; s(x) = (1 + x + x^2)/x = (e1^2 - e2)/e2 is what appears in GGM (188) after the (327) theta-renormalisation.",
+      "passed": true,
+      "N_coeffs": [
+        "1",
+        "(XR**2 + 1)/Q",
+        "XR**2/Q**2"
+      ]
+    },
+    {
+      "label": "G1-5_2: N(X) = 1 + q^{-1/2} s(x) X + q^{-1} s(x) X^2 + q^{-3/2} X^3, i.e. coefficients (1, s, s, 1) -- EXACTLY GGM (276) / (332) with pole offsets {1, x, 1/x}, the ADJOINT WEIGHT SET.  This is where s(x) comes from: it is e1 = e2 of that set.",
+      "passed": true,
+      "N_coeffs": [
+        "1",
+        "(XR**4 + XR**2 + 1)/(Q*XR**2)",
+        "(XR**4 + XR**2 + 1)/(Q**2*XR**2)",
+        "Q**(-3)"
+      ],
+      "s_of_x": "XR**2 + 1 + XR**(-2)"
+    },
+    {
+      "label": "G5-rank: the derived pretzel operator has degree 6 -- the pretzel's rank 6 (GZ's twelve level-2 series H_j^pm, j = 0..5, six per side).  The two unit dilogarithms give degree 2; the DOUBLED dilogarithm Phi_b(2v - c_b) shifts by -2 i b and gives degree 4, not 2.",
+      "passed": true,
+      "degree": 6,
+      "from_unit_dilogarithms": 2,
+      "from_doubled_dilogarithm": 4
+    },
+    {
+      "label": "G8a-pretzel: every coefficient of N(X) is invariant under x^{1/2} -> x^{-1/2}, so the x-dependence is entirely through sigma = x^{1/2} + x^{-1/2} = s(x^{1/2}) - 1.",
+      "passed": true,
+      "N_coeffs": [
+        "1",
+        "(XR**2 + 1)/(Q*XR)",
+        "-1/Q**4",
+        "(-Q**2*XR**2 - Q**2 - XR**2 - 1)/(Q**5*XR)",
+        "-1/Q**4",
+        "(XR**2 + 1)/(Q**7*XR)",
+        "Q**(-8)"
+      ]
+    },
+    {
+      "label": "G8b-pretzel LEVEL GRADING: P(X) is invariant under the simultaneous flip (q^{1/2}, x^{1/2}) -> (-q^{1/2}, -x^{1/2}).  Equivalently sigma appears to an ODD power exactly when q appears to a HALF-INTEGER power.  That is level 2: the deck transformation of the double cover x = (x^{1/2})^2 is tied to the deck transformation of q^{1/2}.",
+      "passed": true
+    },
+    {
+      "label": "G8c-the extension: sigma^2 = s(x) + 1, and Y^2 - (S + 1) is irreducible over Q(S).  So sigma = sqrt(s(x) + 1) generates a DEGREE-2 extension of Z[s(x)] and is NOT a polynomial in s(x).  Even powers of sigma lie in Z[s(x)]; odd powers do not.",
+      "passed": true,
+      "identity": "sigma^2 - s(x) - 1 = 0",
+      "sigma_squared": "XR**2 + 2 + XR**(-2)",
+      "s_plus_1": "XR**2 + 2 + XR**(-2)"
+    },
+    {
+      "label": "G7a-5_2 exponents: the (single) Newton segment has slope -1/2 and leading polynomial proportional to Y^3 + s Y^2 + s Y + 1 = (Y + 1)(Y^2 + (x + 1/x) Y + 1), roots Y in {-1, -x, -1/x}.  The q -> 0 exponents are the ADJOINT WEIGHT SET of x, up to sign -- which is why s(x) = e1 = e2 appears in GGM (188) / (307).",
+      "passed": true,
+      "slope": "-1/2",
+      "leading_poly": "XR**2*Y**2 + XR**2*Y + Y**3 + Y**2 + Y + 1 + Y**2/XR**2 + Y/XR**2",
+      "factored": "(XR**2 + Y)*(Y + 1)*(XR**2*Y + 1)/XR**2",
+      "roots": [
+        "-1",
+        "-XR**2",
+        "-1/XR**2"
+      ]
+    },
+    {
+      "label": "G7b-PRETZEL exponents: the Newton polygon splits 2 + 4 across a q^{1/2} step -- the level-2 signature.  The long (4-root) segment's leading polynomial is divisible by Y^2 + sigma Y + 1, whose roots are Y = -x^{1/2} and Y = -x^{-1/2}.  So the x-dependent q -> 0 exponents of the pretzel are the adjoint weights of x^{1/2}, NOT of x.",
+      "passed": true,
+      "n_segments": 2,
+      "segment_root_counts": [
+        2,
+        4
+      ],
+      "segment_slopes": [
+        "-1",
+        "-1/2"
+      ],
+      "leading_poly": "XR*Y**3 - XR*Y + Y**4 - 1 + Y**3/XR - Y/XR",
+      "factored": "(XR + Y)*(Y - 1)*(Y + 1)*(XR*Y + 1)/XR",
+      "quadratic_factor": "Y^2 + sigma Y + 1  (roots -x^{1/2}, -x^{-1/2})"
+    },
+    {
+      "label": "G6-the criterion: GGM (188) for 4_1 and (307) for 5_2, multiplied out, have every entry in Z[s(x)]: 4_1 gives [[1, s], [0, 1]] and 5_2 gives [[1, s+1, 0], [0, 1, 0], [-s, -s^2, 1]]. At x = 1, s(1) = 3, and these are GGM (59) / (96) with Stokes constants 3 and (4, 3, 3).",
+      "passed": true,
+      "S_plus_41": "[[1, XR**2 + 1 + XR**(-2)], [0, 1]]",
+      "S_minus_41": "[[1, 0], [-XR**2 - 1 - 1/XR**2, 1]]",
+      "S_plus_52": "[[1, XR**2 + 2 + XR**(-2), 0], [0, 1, 0], [-XR**2 - 1 - 1/XR**2, -XR**4 - 2*XR**2 - 3 - 2/XR**2 - 1/XR**4, 1]]",
+      "S_plus_41_at_x1": "[[1, 3], [0, 1]]",
+      "S_plus_52_at_x1": "[[1, 4, 0], [0, 1, 0], [-3, -9, 1]]"
+    },
+    {
+      "label": "G3-the (FE)-rearranged integrand identity  integrand(v - i b)/integrand(v) = q^{A/2} w X^{-A} N(X)  holds pointwise for ALL THREE knots (mpmath, dps 30; two values of b, three of v each).  This validates the operator algebra of (OP) independently of any contour.",
+      "passed": true,
+      "worst_rel_err": {
+        "4_1": "5.17445e-30",
+        "5_2": "8.02107e-30",
+        "pretzel": "2.21169e-29"
+      }
+    },
+    {
+      "label": "G4-4_1: the derived recurrence sum_j c_j Z(t - i (j - A) b) = 0 holds on the ACTUAL state integral (mpmath, dps 30, two (b, eps) choices, t_I centred in the common convergence window).  degree 2.  This tests the contour shift as well as the algebra.  The residual here is QUADRATURE-limited, not arithmetic-limited: the integrand is a Gaussian chirp whose oscillation frequency grows linearly in |v|, so mp.quad's node density -- not dps -- sets the floor.  G3 is the exact algebraic gate (~1e-29); this one corroborates the CONTOUR SHIFT, which G3 cannot see.",
+      "passed": true,
+      "worst_rel_residual": "5.5281e-19",
+      "rows": [
+        {
+          "knot": "4_1",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.0j)",
+          "u": "0.13",
+          "degree": 2,
+          "Im_lin": "0.0",
+          "abs_residual": "1.71012e-21",
+          "abs_largest_term": "0.857428",
+          "rel_residual": "1.99448e-21",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.72111049",
+            "0.72111049"
+          ]
+        },
+        {
+          "knot": "4_1",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.0j)",
+          "u": "0.13",
+          "degree": 2,
+          "Im_lin": "0.0",
+          "abs_residual": "6.8843e-19",
+          "abs_largest_term": "1.24533",
+          "rel_residual": "5.5281e-19",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.5663119",
+            "0.5663119"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "G4-5_2: the derived recurrence sum_j c_j Z(t - i (j - A) b) = 0 holds on the ACTUAL state integral (mpmath, dps 30, two (b, eps) choices, t_I centred in the common convergence window).  degree 3, coefficients (1, s, s, 1).  This tests the contour shift as well as the algebra.  The residual here is QUADRATURE-limited, not arithmetic-limited: the integrand is a Gaussian chirp whose oscillation frequency grows linearly in |v|, so mp.quad's node density -- not dps -- sets the floor.  G3 is the exact algebraic gate (~1e-29); this one corroborates the CONTOUR SHIFT, which G3 cannot see.",
+      "passed": true,
+      "worst_rel_residual": "2.99727e-18",
+      "rows": [
+        {
+          "knot": "5_2",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.36055524j)",
+          "u": "0.13",
+          "degree": 3,
+          "Im_lin": "0.0",
+          "abs_residual": "1.27819e-20",
+          "abs_largest_term": "1.10934",
+          "rel_residual": "1.15221e-20",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.72111049",
+            "1.442221"
+          ]
+        },
+        {
+          "knot": "5_2",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.28315595j)",
+          "u": "0.13",
+          "degree": 3,
+          "Im_lin": "0.0",
+          "abs_residual": "4.91454e-18",
+          "abs_largest_term": "1.63967",
+          "rel_residual": "2.99727e-18",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.5663119",
+            "1.1326238"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "G4-pretzel: the derived recurrence sum_j c_j Z(t - i (j - A) b) = 0 holds on the ACTUAL state integral (mpmath, dps 30, two (b, eps) choices, t_I centred in the common convergence window).  DEGREE 6 -- the decisive gate.  This tests the contour shift as well as the algebra.  The residual here is QUADRATURE-limited, not arithmetic-limited: the integrand is a Gaussian chirp whose oscillation frequency grows linearly in |v|, so mp.quad's node density -- not dps -- sets the floor.  G3 is the exact algebraic gate (~1e-29); this one corroborates the CONTOUR SHIFT, which G3 cannot see.",
+      "passed": true,
+      "worst_rel_residual": "6.48316e-19",
+      "rows": [
+        {
+          "knot": "pretzel",
+          "b": "(0.38971143 + 0.225j)",
+          "eps": "1.11082",
+          "t": "(0.07 + 0.43599568j)",
+          "u": "0.13",
+          "degree": 6,
+          "Im_lin": "-2.31421",
+          "abs_residual": "2.89732e-20",
+          "abs_largest_term": "7.06988",
+          "rel_residual": "4.09812e-21",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.57022962",
+            "1.442221"
+          ]
+        },
+        {
+          "knot": "pretzel",
+          "b": "(0.4045085 + 0.29389263j)",
+          "eps": "0.97082",
+          "t": "(0.07 + 0.44495935j)",
+          "u": "0.13",
+          "degree": 6,
+          "Im_lin": "-2.02254",
+          "abs_residual": "7.39034e-18",
+          "abs_largest_term": "11.3993",
+          "rel_residual": "6.48316e-19",
+          "below_1e-13": true,
+          "convergence_window_tI": [
+            "-0.2427051",
+            "1.1326238"
+          ]
+        }
+      ]
+    }
+  ],
+  "scriptHash": "cfc12144af05",
+  "scriptCommitSha": "4cdd86445ff65a1ece111cef38662810a2979ade",
+  "commitSha": "71dc35aac5c6e3cc907ff639a5430e5bc2f67b74",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

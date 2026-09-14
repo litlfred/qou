@@ -219,3 +219,36 @@ about your branch. Do not widen or edit a baseline to green it. Confirm main
 alone is also red before treating any red as yours. Running the full family also
 **dirties the tree-measuring audit witnesses** listed above; revert them by
 name, never with a blanket `git checkout -- computations/`.
+
+## Second instance, 2026-09-13 — and the concurrent writer was MY OWN SUB-AGENT
+
+The shared-worktree TRAP is confirmed a second time, by a different mechanism
+that is worth naming because it defeats the obvious assumption.
+
+The first instance (#6395) was a **sibling session**. This one was an agent
+**dispatched from the session it collided with** — `Agent(...)` on the
+`qou-cds1` / #6233 adjudication, launched from the session then building
+`qou-0fmb` step 1. A dispatched sub-agent runs in **the same clone**, so it can
+`git commit` onto the parent's checked-out branch. Its own PR body (#7276)
+records the collision verbatim: *"A concurrent session shares this clone and
+moved `HEAD` mid-task, so the first commit landed on
+`claude/markovtrace-colimit-bridge-2026-09-13`."*
+
+**Do not assume a sub-agent you dispatched is isolated.** It is not, unless it
+creates a worktree — which this one did, on its own initiative, after noticing.
+
+**No damage, and the reason is worth keeping.** The agent never pushed the
+stray commit, reset to the branch's *pushed* tip, and left the parent's
+untracked file alone. The parent verified afterwards rather than assuming:
+local `HEAD` = remote tip = `04c43df680`, the step-1 commit reachable from the
+remote, the file present and committed, the working tree clean, and the file
+re-compiled `exit 0`. **Run that check rather than trusting the report** — the
+agent's note said it reset the branch to `cbd6804843`, which if read carelessly
+sounds like the parent's later push was lost; it was not, because the reset
+predated it.
+
+**Practical rule for the parent.** After any dispatched agent reports touching
+git, verify four things before continuing: `git rev-parse HEAD` against the
+remote tip, your last commit reachable from the remote, `git status` clean, and
+your changed files still compiling. All four are cheap; the failure they catch
+is not.

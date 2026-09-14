@@ -332,3 +332,58 @@ at all. Third frame-conditional result in this drain, after `qou-u8ji` and
 `probes/b_pred_mirror_slope_closed_form:90` (escalated),
 `qbeta_delta_bar_parity_probe:184`,
 `qbeta_delta_element_fork_pricing_probe:181`, `rho_k_h3a_gg_trajectory:127`.
+
+## 9 -> 6: the last three tractable sites, and the shared-helper theory was WRONG
+
+I expected `qbeta_net_trace_invariance_probe`'s shared helpers to force the
+frame at the two delta probes, the way `chi_monotone_transfer` did for four
+siblings. **They do not.** `_mult` multiplies `L[g] + d*ONE` in whatever order
+it is handed and the regular-representation helpers are frame-agnostic, so
+those two sites were genuinely undeclared choices — my stated falsifier, and it
+fired. Recording it rather than inventing a constraint.
+
+So I measured instead. Reordering the SAME symbols into the borromean word
+(a permutation, so nothing depends on precision or q):
+
+| probe | grouped | borromean | what moves |
+|---|---|---|---|
+| `qbeta_delta_bar_parity_probe` | 16/16 | **15/16** | `net_equals_tr_at_z_one_ONLY_when_e_minus_vanishes` |
+| `qbeta_delta_element_fork_pricing_probe` | 15/15 | **13/15** | both `calibration_*` legs |
+| `rho_k_h3a_gg_trajectory` | allPassed | **allPassed** | nothing asserted |
+
+**Every substantive Delta-fork conclusion is frame-INVARIANT** — the two models
+are different elements, the corpus counit and trace closed forms fail on the
+long model and hold on the short one, chi^(2,1) vanishes on the short model
+only, the phase identity, the bar-parity split, the fork surviving descent.
+The fork — what `qou-cds1` / `qou-bg3w` are about — does not depend on the
+intra ordering. That is a positive result, not just an absence.
+
+**Disposition, three different answers for three sites:**
+
+1. **The two delta probes: DECLARED grouped.** Their calibration legs check
+   against committed grouped-era witnesses and published values, so they are
+   frame-bound by construction — the same reason their settled sibling chose
+   grouped deliberately. Switching would break the calibration without changing
+   a finding. Both re-run 16/16 and 15/15 with every measured value
+   byte-identical.
+2. **`rho_k_h3a_gg_trajectory`: SWITCHED.** Its docstring claimed "the canonical
+   word" and delivered grouped. Uniquely here the ordering IS the subject —
+   every prefix is one gg-pair EVENT, so the trajectory is the letter sequence,
+   and the grouped bucketing has no physical reading while the borromean word
+   does (confinement core, then quark pairs, then gluons). Closure holds either
+   way (p 2.673e-51 -> 0.0, n 1.336e-51 -> 6.682e-51, LP gaps 0.0 throughout),
+   so **no assertion in that file discriminates** — the per-step trajectory
+   changes and nothing checks it, which is why re-running could never have
+   caught this one. Checked first that the two interpreting documents quote no
+   per-step sequence.
+3. One real content finding fell out: **`qou-epmq`** — `Delta_L`'s `e_minus`
+   coordinate is 0 grouped and `-(q^2-1)^2 Phi_12(q)^2 / (2 q^6)` canonical, so
+   `net` and `tr_M(z=1)` stop coinciding on the long model. The vanishing was a
+   property of the grouped word, not of the element.
+
+**Remaining 6, of which only 3 are actionable:** `atom_orbit_reduction:92`,
+`binding_canonical:381`, `chi_4he_binding_lossless:83`. The other three are
+`binding_multibond_wenzl` (escalated, `qou-y1w0`),
+`b_pred_mirror_slope_closed_form` (escalated, `qou-u8ji`) and
+`fitted_ideal_low_isotope_calibration` (module PAUSED by owner ruling
+2026-08-26).

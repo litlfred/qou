@@ -165,9 +165,9 @@ Recipes and full diagnosis: [`api-down-and-shared-worktree.md`](api-down-and-sha
    does not clear on retry. **Intermittent** (down #6395/#6400/#6415, up #6404
    same day). Merge git-natively: branch first, then the **same SHA** to `main`,
    non-force (FF-only, self-guarding).
-2. **`/home/user/qou` is SHARED with concurrent siblings** — a sibling's commit
-   landed on my branch and nearly shipped in #6395. Symptom: **`HEAD` is not
-   what you set it to**. Work in `git worktree add --detach`; never
+2. **`/home/user/qou` is SHARED — with siblings AND any agent YOU dispatch**
+   (2nd instance #7276). A commit landed on my branch, nearly shipping in #6395.
+   Symptom: **`HEAD` is not what you set**. Use `git worktree add --detach`; never
    `git add -A`; never `git checkout <ref> -- <path>` to peek (it writes the
    index) — use `git show <ref>:<path> >`.
 3. **`probe-float64-guard`**: `# float64-ok:` must sit **on** the flagged line;
