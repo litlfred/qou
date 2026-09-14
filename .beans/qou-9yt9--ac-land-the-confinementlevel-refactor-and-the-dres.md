@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-14T07:26:52Z
+updated_at: 2026-09-14T18:03:09Z
 ---
 
 ## Landed (A + C)
@@ -263,3 +263,370 @@ shape from #6671 — a class-arity change reaching `KazhdanLusztigClassicalLimit
 **Remaining 7:** HadronFibreEmbedding, DegreeZeroDatum, RungRule,
 TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
 BringPeriodSublattice, TannakaKreinReconstruction.
+
+## BringPeriodSublattice / magic-numbers-bring (PR #7359, 2026-09-14)
+
+`proof-claims-unencoded` **9 -> 8** on main's base (the 8 still holds BOTH
+HeckeAnyonicSubstrate carriers, fixed on #7357 and not yet in main). Combined
+once both land: **6**.
+
+**The ledger flagged the SMALLER half again.** It flags
+`structure BringPeriodSublattice`'s two universe-`Prop` fields
+(`s5_stable`, `tau_stable`). The bigger defect was unflagged:
+**`MagicNumbersBring` is declared TWICE with different fields and OPPOSITE
+dispositions** —
+
+- library `QOU/Conjectures/MagicNumbersBring.lean` (`QOU.Conjectures`):
+  no instance, with a standing comment explaining that the identity model
+  `magicLattice n := n` "discharges rank_eq_magic by rfl for ANY set of
+  naturals ... captures none of the conjecture's content";
+- content sibling (`QOU.AlgebraicSubstrate`): a global
+  `instance canonical` that IS that identity model (`rank := n`,
+  `s5_stable := True`, `tau_stable := True`).
+
+So one file declared the conjecture open and the file beside it closed it
+using the construction the first one names and rejects. Deleted the sibling
+(§0a shadowing stub + §3b-tax fabricated instance), repointed the ref to
+`qou:QOU.Conjectures.MagicNumbersBring`. Zero consumers of
+`ranks_match_magic_set` / `BringPeriodSublattice` / the sibling `magicSet`.
+
+**PATTERN, now twice in two carriers — worth expecting on the rest.** In both
+HeckeAnyonicSubstrate and this one, the ledger-flagged bare-`Prop` field was
+accompanied by a LARGER unflagged defect in the same file: a dangling
+`lean.ref` there, a fabricated instance here. The detector keys on field
+types and cannot see either. **When you open a flagged carrier, read the whole
+file and its `.ts`/`.jsonld`, not just the flagged field.**
+
+**Also: `ranks_match_magic_set` was vacuous independently of the class** —
+`exists L, L.rank = n` is satisfied by `<n, True, True>` for every n,
+because `rank` is a free `Nat` field. A conditional theorem can be vacuous
+for a reason that has nothing to do with the conjecture it cites.
+
+**Branch hygiene note:** I cut this branch from the HeckeAnyonicSubstrate
+branch by mistake, so #7359 initially carried #7357's six commits.
+Rebased `--onto origin/main` and force-pushed before any review. Check
+`git diff --name-only origin/main...HEAD` after `git checkout -b`.
+
+**Remaining 6** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
+RungRule, TransferMatrixEigenphase (ledger `legit` — leave), KnotOperator,
+TannakaKreinReconstruction.
+
+
+## KnotOperator / universal-ilp-algorithm (PR #7359, 2026-09-14)
+
+`proof-claims-unencoded` **8 -> 7** on this branch (PR running total 9 -> 7;
+combined with #7357 once both land: **5**).
+
+**THIRD time the flagged field was the smaller half.** And this one shows why
+"is the field consumed?" is the WRONG test: `is_knot : Prop` WAS read —
+`universal_ilp` had `K.is_knot AND ...` — but reading a field whose value the
+CONSTRUCTOR picked constrains nothing. Parameterised it
+(`IsSingleComponent` caller-supplied) and proved the structure refutable:
+`knotOperator_isEmpty_of_never_single_component`.
+
+**The larger unflagged half: `gram_matrix` is the ZERO matrix**, so
+`frobenius_positive` is `0 >= 0` and the whole LP predicate holds of every
+operator. Its docstring already SAID this and nothing checked it; now
+`universal_ilp_holds_of_zero_gram` proves it, so it stops compiling the moment
+a real Gram lands.
+
+**Corpus correction while there:** that docstring called the intended
+Halverson-Ram Gram "sharper". Under convention D it is SINGULAR —
+`mass-theory/frobenius-gram-matrix`: `y_(1^3) = 0` symbolically, the (1^3)
+block IS the radical, `det G = 0` exactly, `G_INV` gone and `G_PINV` on
+`H_3(q)/rad` in its place. **NOT wired** — `frobenius_positive` over a rank-5
+form is a different condition and the radical's treatment is a modelling
+choice. Author's call.
+
+**Remaining 5** (post-both-merges): HadronFibreEmbedding, DegreeZeroDatum,
+RungRule, TransferMatrixEigenphase (ledger `legit` — leave),
+TannakaKreinReconstruction.
+
+## HadronFibreEmbedding (PR #7360, 2026-09-14) — the ledger said FIXED and it was not
+
+`proof-claims-unencoded` **9 -> 8** on main's base. With all three PRs landed: **4**.
+
+**A ledger entry saying `FIXED` is not evidence the carrier is clean.** This
+entry read `FIXED 2026-09-07` / `dead-field-removed` and the carrier kept
+tripping the audit — because that fix removed one of **TWO** universe-`Prop`
+fields and kept the other. **Trust the audit run, not the ledger verdict.**
+
+**Why it kept `confined`: a NAME COLLISION.** The docstring recorded
+"`confined` is kept: it is read by four declarations". Re-measured, those four
+read a DIFFERENT `confined`:
+- `DownQuark.confined` / `UpQuark.confined` are **Bool** (`= true := rfl`);
+- `ConfinedParticle.confined` / `ConfinementPhaseStratification.confined` are
+  applied to a parameter (`h.confined q`) — functions on another carrier;
+- `confinedNet` is a different name again;
+- and the standalone `confined` predicate was itself removed 2026-09-02 for
+  being `fun _ _ => True`.
+
+**Zero** `.confined` projections on a `HadronFibreEmbedding`, **zero**
+`confined :=` sites. Dead. Removed.
+
+**Two lessons, and this carrier failed BOTH ways at once:**
+1. **A field name is not an identifier** — resolve a "who reads this?" claim to
+   the DECLARATION, not the token. Same hazard AGENTS.md records for
+   `markovZ`.
+2. **Consumption is not the test anyway** (established on `KnotOperator`): a
+   universe-`Prop` field is chosen by the constructor, so a genuine reader
+   still gets no constraint.
+
+Both docstrings corrected: with both Prop fields gone the structure is pure
+data and encodes NONE of the four conditions it advertises.
+
+**Remaining 3** (post-all-three-merges): DegreeZeroDatum, RungRule,
+TannakaKreinReconstruction. (`TransferMatrixEigenphase` is ledger `legit`.)
+
+
+## DegreeZeroDatum (PR #7360, 2026-09-14) — the capstone proved nothing, and I was wrong about it
+
+`proof-claims-unencoded` **9 -> 7** on this branch. With all three PRs landed: **3**.
+
+**I had called this carrier "a legitimate use". The ledger was right; I was
+wrong.** Machine-checked before touching it:
+
+    example : exists d : DegreeZeroDatum, Inaccessible d :=
+      horizon_nonempty { formallyProvable := False, extractSteps := fun n => n }
+        not_false          -- compiled, exit 0
+
+The capstone headline — "a Turing-complete substrate necessarily hosts a region
+where degree-0 truth is inaccessible" — was proved by DEFINING a datum whose
+provability proposition is literally False. The structure carried no datum at
+all, only a Prop and a step-count, so there was nothing for provability to be
+ABOUT.
+
+**Why the wrong reading is tempting, and this is the transferable part:** the
+theorems DO take `not provable` as an explicit hypothesis, which LOOKS properly
+conditional. But a hypothesis about a constructor-chosen proposition is free to
+discharge. **A conditional-looking signature is not evidence of conditionality
+when the antecedent mentions a universe-Prop field.**
+
+Parameterised over a caller-supplied Datum + FormallyProvable; added
+`not_inaccessible_of_all_provable` for refutability.
+
+## TRAP (new, distinct from the commit-date one): a probe that IMPORTS the file you changed
+
+Run before committing, my two probes returned exit 0 and exit 1 — **both
+backwards** — because they compiled against the stale olean. I caught it ONLY
+because I had written the expected exit codes down first.
+
+And `lean-shadow-verify.sh` reports `rebuild=0` even post-commit for a target
+module: it compiles the TARGET fresh and rebuilds only its DEPENDENCIES into
+the shadow. A probe that imports the target still gets the stale olean.
+
+**Recipe that works** (real tree untouched, 2876 -> 2876 oleans):
+1. `cp -al <paper>/.lake/build/lib/lean $SHADOW`  (COMPLETE, not sparse — Lean
+   resolves a package from the first LEAN_PATH root holding it);
+2. `rm -f $SHADOW/<Mod>.olean` then `lean ... -o $SHADOW/<Mod>.olean`  (unlink
+   first, or the hardlink writes through into the real tree);
+3. prepend $SHADOW to LEAN_PATH with the real paper root removed;
+4. run the probes.
+
+**Write down the expected exit code BEFORE running a verification probe.** It
+is the only thing that distinguished a real result from a stale-olean artifact
+here.
+
+**Remaining 2** (post-all-three-merges): RungRule, TannakaKreinReconstruction.
+(TransferMatrixEigenphase is ledger `legit`.)
+
+
+## RungRule (PR #7360, 2026-09-14) — the property is NOT expressible in Lean
+
+`proof-claims-unencoded` **9 -> 6** on this branch. With all three PRs: **2**.
+
+`substrate_derived : Prop` was dead (written once as `True` by
+`depthBasedRule`, read nowhere). But the interesting part is WHY it was
+removed rather than parameterised:
+
+**Its stated property — "the rule does not directly reference any real-valued
+AME constant" — is a claim about how `k` is DEFINED, not about `k` as a
+function.** Two extensionally equal functions differ in provenance; Lean sees
+only the extension. So neither a field NOR a caller-supplied predicate on `k`
+can carry it. Parameterising would have produced a different, weaker property
+wearing the same name.
+
+**Generalisable test before reaching for the parameterise hammer: is the
+property EXTENSIONAL?** If it is about the definition/provenance/syntax rather
+than the value, no Lean encoding exists and the honest home is a source audit.
+This corpus already runs that shape — `scripts/precision-gates.sh` carries a
+no-free-parameter certificate. Recorded in the docstring so nobody "restores"
+the field.
+
+**Scope discipline, stated for consistency:** removal keeps `RungRule n`s
+arity, so `DeltaLambda`, `DeuteronVerification` and `CrystalDeltaLambdaScaffold`
+are untouched. Parameterising would have reached all three — which is exactly
+why I DECLINED to parameterise `HeckeAnyonicSubstrate` on #7357. Same boundary,
+applied the same way: in-file removal of a measured-dead field is corpus-derived
+(the `HadronFibreEmbedding` precedent); a 3-consumer arity change is the
+authors call.
+
+Consumers verified, not assumed: shadow sweep `rebuild=3`, 3x EXIT=0.
+
+**Remaining 1**: TannakaKreinReconstruction. (TransferMatrixEigenphase is
+ledger `legit` and stays.)
+
+
+## TannakaKreinReconstruction (PR #7360, 2026-09-14) — I predicted wrong, and the LEDGER was the defect
+
+`proof-claims-unencoded` **9 -> 5** on this branch. With all three PRs: **1**
+(TransferMatrixEigenphase, ledger `legit`, stays).
+
+**I predicted this would follow the arc pattern (flagged field = smaller half).
+It does not.** This file had already had a careful honesty pass; the ledger was
+wrong about it.
+
+**The verdict describes a field that no longer exists.** Prior evidence names
+TWO fields — "monoidal_equiv, universal_property are typed with the UNIVERSE
+Prop". Commit 21bac468c6 had already replaced monoidal_equiv with
+`equiv : C = RepCat` (real DATA, a CategoryTheory.Equivalence) and renamed it so
+name and type agree.
+
+**TRAP — a ledger re-verification can RESTORE a verdict older than the sha it
+checks against:**
+
+    adjudication reviewed_at   2026-09-07T09:55:00Z
+    commit 21bac468c6          2026-09-07T19:24:51Z    <- 9.5 HOURS LATER
+
+`file_sha` records 21bac468c6. `lean-vacuity-ledger-reverify.py` compares the
+declaration against that sha — post-fix vs post-fix — reports IDENTICAL, and
+restores a PRE-fix verdict saying "the prior reading applies unchanged".
+**Cheap invariant it could check: `reviewed_at` >= commit-time-of(file_sha).**
+Reported, not fixed (someone elses tool).
+
+**Combined with the HadronFibreEmbedding finding, the ledger is now known
+unreliable in BOTH directions**: a `FIXED` verdict that was not (HFE), and a
+`genuine` verdict on an already-fixed carrier (TK). **Trust the audit run.**
+
+**Disposition: `@marker`, not a code change.** The remaining field asserts
+terminality over factorisations through Hopf-algebra representation categories.
+VERIFIED not assumed: Mathlib `RepresentationTheory.Rep` is
+`abbrev Rep (k G : Type u) [Ring k] [Monoid G]` — a MONOID. No `Rep k H` for a
+Hopf algebra to quantify over; also why `RepCat` is a carried field. So the
+justification is correct. Applied the AGENTS.md 3b-tax `@marker` opt-out; audit
+row moves MAJOR -> EXEMPT. Ledger re-adjudicated genuine -> legit (not pruned:
+the candidate still exists, now exempt).
+
+NOT laundering under 1a: the field is unchanged and no less open; `@marker`
+makes an already-written justification machine-readable. Audit label: "honestly
+framed; tracked not counted".
+
+SCOPE: verified Mathlib Rep needs [Monoid G]; did NOT exhaustively establish
+that no other Mathlib route states terminality.
+
+**qou-9yt9 proof-claims-unencoded arc is now COMPLETE** at 1 remaining, which
+is ledger-`legit` and correctly stays.
+
+
+## MEASURED: 52 of 318 ledger verdicts predate the revision they cite (2026-09-14)
+
+New script `scripts/lean-vacuity-ledger-freshness-audit.py`. MEASUREMENT ONLY —
+the re-verify tool is not changed and the ledger is not edited.
+
+Invariant: `reviewed_at >= authored-time of the earliest revision whose content
+hashes to file_sha`. A verdict cannot have been made against a revision that did
+not yet exist.
+
+    entries                                     318
+      invariant holds                            92
+      STALE (verdict predates its own sha)       52    <- 34 genuine, 16 legit, 2 advisory
+      file_sha matches no revision                0
+      no reviewed_at (freshness uncheckable)    174
+
+Lead times reach **645 hours (27 days)**. The **174 undated** entries are a
+second, larger gap: `--check-ledger` cannot assess freshness on 55% of the
+ledger at all.
+
+**Two confounds ruled out, not assumed:**
+1. Rebase-merge (rule 8) rewrites COMMITTER dates and would manufacture exactly
+   this signature. Measured both ways — committer and author dates give
+   IDENTICAL counts (92/52/174). Script uses author date regardless.
+2. Content oscillation — `git log` is newest-first, so naive keying dates a hash
+   by its NEWEST occurrence. Script keeps the EARLIEST. Same counts.
+
+Hash convention confirmed against a known case first: sha256(blob)[:12] of the
+file at 21bac468c6 is exactly f5b88ba3250d.
+
+**OPEN DECISION (owner).** Whether `lean-vacuity-ledger-reverify.py` should
+enforce this invariant, and what to do with the 52 + 174. Not taken here — it is
+someone elses tool and a re-adjudication sweep is a change, not a measurement.
+
+
+## Sibling coordination with #7361 — verified non-collision (2026-09-14)
+
+A different agent's PR #7361 (`claude/vh1o-second-arm-verdicts-2026-09-14`) widens the
+audit script's second `exempt_reason` arm (`"derivation pending"` alongside
+`"triage pending"`) and writes 13 adjudications. It flagged possible overlap on all
+three of my PRs. **Measured, both directions, no collision:**
+
+1. **Its arm-widening cannot un-exempt my `@marker`.** Two independent mechanisms in
+   `content/pipeline/lean-vacuity-axiom-audit.ts`: `MARKER_OPT_OUT` (line 2053) suppresses
+   at *detection*; `LEDGER_TRACKED_EXEMPT` (line 1724) — the widened arm — governs
+   ledger-seeding of an *already-emitted* candidate. A `@marker` candidate never reaches
+   the second gate. Doubly safe: my TannakaKrein verdict is `legit`, and only `genuine`
+   promotes under their change.
+2. **Ledger writes are disjoint.** Diffed their ledger against `origin/main`: 13 entries
+   added/changed, **0** touching my four carriers. Theirs are the q-NS / vortex /
+   root-of-unity / cosimplicial family; mine are the seven `Prop`-carrier keys. Clean union.
+
+Replied once on #7361 with the measurement and the merge protocol (re-run the audit,
+never hand-merge the generated witness).
+
+**One stale figure left uncorrected, deliberately.** My own auto-`/coordinate` comment on
+#7357 quotes the combined `proof-claims-unencoded` residual as **4**; it is now **1**
+(TannakaKrein closed afterwards). The three PR bodies — the read-first durable artifacts —
+carry the live figures, so three correction comments would be noise.
+
+
+## ARC LANDED — all three PRs merged 2026-09-14, and the predicted figure held exactly
+
+Owner gave the merge word; #7357, #7359, #7360 are on `main` as `42f9215581`,
+`a73425a3f4`, `d45e2686ce`.
+
+**`proof-claims-unencoded` 9 → 1**, verified by running the audit **on `main` itself**
+after merging rather than trusting the pre-merge runs. The surviving 1 is
+`TransferMatrixEigenphase` (`QOU/QBeta/EigenphaseCarrierVacuity.lean`), verdict `legit` —
+the exact declaration all three PR bodies named as the one that correctly stays.
+`--check-ledger` exit 0. Main's committed witness reproduces byte-for-byte apart from
+`generated` and `scanned_files 3854 → 3856` (two `.lean` landed between the run and the
+merge); every substantive count identical, so no follow-up commit.
+
+### Four things worth carrying, none of them the count
+
+**1. A branch that merged `main` in cannot be rebase-merged.** GitHub returns
+`405 This branch can't be rebased`. Rule 8's remaining options are squash — forbidden
+without explicit per-PR permission — and a merge commit, the documented exception. Merge
+commits were used for all three, which preserves the per-cluster commits rule 8 exists to
+protect. **Merge permission is not method permission**; say which you used and why.
+
+**2. Each merge conflicted the next, and the ledger union held every time.** Resolution
+was identical three times: three-way diff against the merge base with a HARD ASSERTION of
+zero intersection in del/del, mod/mod, ourmod/theirdel, ourdel/theirmod and add/add, then
+apply ours onto theirs. 330 → 328 → 325. The assertion never fired — but it is what makes
+the union a verification rather than a hope, and it is cheap.
+
+**3. A new conflict class: the shared bean itself.** #7359 and #7360 both conflicted on
+THIS file, because #7357 carried its own appends into `main` first. Resolved as a
+chronological append-union (theirs, then ours), with the section list printed and checked
+after each resolve — 16 sections, none dropped. `scripts/bean-append-merge.py` exists for
+this but is on the unmerged #7350, so it was done by hand.
+
+**4. The audit dirties a witness that is not yours.** Every run of
+`lean-vacuity-axiom-audit.ts` rewrites `computations/witness-raw-float64-audit.witness.json`
+(ratchet 981 → 978 dirty). That is another arc's drain — restore it, never commit it. A
+blanket `git checkout -- computations/` was safe ONLY because these branches own nothing
+there, confirmed before each use; on a branch that owns files there it deletes them.
+
+### Status: this bean stays IN-PROGRESS
+
+The three PRs are landed and verified, but this bean is a long-running arc covering more
+than them, and two decisions raised during the arc are still open and recorded on
+`qou-a30t` (another agent's bean, deliberately not taken over):
+
+- **(a)** the ledger-freshness invariant `reviewed_at >= commit-time(file_sha)` — 52 of 318
+  verdicts predate the revision they cite, 174 carry no `reviewed_at` at all;
+- **(b)** the two `QHookBound` verdicts — my recommendation to flip them to `legit` is
+  **WITHDRAWN**, after measuring that `QFactRatioBound`'s index is unbounded with instances
+  only to `k = 3`.
+
+Neither is enacted. Closing this bean would bury both.

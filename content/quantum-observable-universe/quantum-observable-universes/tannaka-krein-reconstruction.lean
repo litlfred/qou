@@ -109,10 +109,18 @@ structure TannakaKreinReconstruction
       named `equiv` rather than `monoidal_equiv` so the type and the name
       agree; the monoidal half is what remains open. -/
   equiv : C ≌ RepCat
-  /-- Universal property: `carrier` is terminal among factorisations of `τ`
-      through Hopf-algebra representations.
+  /-- `@marker` — Universal property: `carrier` is terminal among
+      factorisations of `τ` through Hopf-algebra representations.
 
-      **Still a `Prop`-universe field, and knowingly so.**  Terminality
+      **Still a `Prop`-universe field, and knowingly so** — hence the
+      `@marker` opt-out of AGENTS.md §3b-tax, which is the corpus's
+      vocabulary for a genuinely-open opaque field ("honestly framed;
+      tracked not counted").  The justification below was written
+      2026-09-07 and is VERIFIED, not taken on trust: Mathlib's
+      `RepresentationTheory.Rep` is `abbrev Rep (k G : Type u) [Ring k]
+      [Monoid G]`, so it is defined for a **monoid**, and there is no
+      `Rep k H` for a Hopf algebra `H` to quantify over.  That is also why
+      `RepCat` above has to be carried as a field rather than referenced.  Terminality
       quantifies over all such factorisations, and a factorisation is a
       functor into `Rep` of another Hopf algebra — the same missing
       infrastructure, one level up.  Every other field in this structure was

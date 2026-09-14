@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-09-14T07:22:03.301Z",
+  "updated_at": "2026-09-14T08:21:14.232Z",
   "entries": {
     "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -194,23 +194,6 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "RE-VERIFIED 2026-09-07. The declaration is BYTE-IDENTICAL to its text at f03af6607, the revision whose file_sha this entry recorded; only the rest of the file moved, and `file_sha` is a whole-file hash, so the expiry was never about this declaration. The prior reading applies unchanged, so the verdict `genuine` is restored rather than re-decided. Evidence: scripts/lean-vacuity-ledger-reverify.py, 14/14 IDENTICAL.\n\n--- prior evidence, unchanged ---\n`ctx.isOpen` has type `IsOpen (confinementLocus P)`, the conclusion verbatim, and the theorem adds nothing. The context class is indexed by `P` -- the conclusion's own data -- so there is no side hypothesis it could be conditional on.\n\nThe audit currently carries a triage-pending exemption on this one (\"type-matched projection; field name escapes CONCLUSION_FIELD\"). That exemption is about the DETECTOR's name gate, not about the declaration: `isOpen` simply is not in the CONCLUSION_FIELD name list. On the merits it is the ordinary item-5 shape.",
       "reviewed_at": "2026-09-07T09:35:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
-      }
-    },
-    "content/quantum-observable-universe/knots-particles-confinement/hadron-fibre-embedding.lean::HadronFibreEmbedding::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 42,
-      "verdict": "genuine",
-      "file_sha": "198eb54aa3ac",
-      "disposition": "dead-field-removed",
-      "evidence": "FIXED 2026-09-07. `integrable` removed. Typed with the UNIVERSE `Prop`, so an instance chose the proposition and `True` was legal. Measured DEAD before removal — zero `.field` reads and zero `field :=` construction sites across the 3722-file Lean tree — so deletion loses no consumer, and it is more honest than an `@marker` opt-out, which would declare the empty field sanctioned and invite a future `[C]`-conditional theorem over it. What the field PROMISED is recorded in the structure docstring, together with what stating it would require.\n\n--- prior evidence, unchanged ---\nADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `integrable`, `confined` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[HadronFibreEmbedding]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
-      "reviewed_at": "2026-09-07T10:30:00Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
@@ -1645,23 +1628,6 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Information/GeometryOfIncompleteness.lean::DegreeZeroDatum::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 32,
-      "verdict": "genuine",
-      "file_sha": "5059b70037b2",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `formallyProvable` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[DegreeZeroDatum]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
-      }
-    },
     "content/quantum-observable-universe/lean/QOU/Information/toffoli_transfer_matrix.lean::toffoli_transfer_matrix::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
@@ -2372,23 +2338,6 @@
         "agent_date": "2026-09-13"
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
-    },
-    "content/quantum-observable-universe/lean/QOU/OptionE/RungSelection.lean::RungRule::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 48,
-      "verdict": "genuine",
-      "file_sha": "fc84a9174c21",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `substrate_derived` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[RungRule]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
-      }
     },
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/FrobeniusPositivityPredicate.lean::frobPos_zero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -4267,23 +4216,6 @@
         "agent_date": "2026-09-14"
       }
     },
-    "content/quantum-observable-universe/nuclear-interactions/universal-ilp-algorithm.lean::KnotOperator::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 16,
-      "verdict": "genuine",
-      "file_sha": "87f9ff16a0c5",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `is_knot` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[KnotOperator]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.\n\nNOTE: the field line carries a trailing `--` comment; that does not make the type anything other than bare `Prop`.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
-      }
-    },
     "content/quantum-observable-universe/nuclear-interactions/wigner-su4-from-spin-isospin.lean::WignerSu4FromSpinIsospin::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
@@ -4323,23 +4255,6 @@
         "id": "local/lean-proof-vacuity-audit",
         "agent_skill": "local/lean-proof-vacuity-audit",
         "agent_date": "2026-08-30"
-      }
-    },
-    "content/quantum-observable-universe/observations/magic-numbers-bring.lean::BringPeriodSublattice::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "prop-universe-field",
-      "line": 34,
-      "verdict": "genuine",
-      "file_sha": "2eb0837b7cd4",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `s5_stable`, `tau_stable` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[BringPeriodSublattice]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-09-07",
-        "agent_model": "claude-opus-5"
       }
     },
     "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean::alexander_weight_diff_six::proof-borrowed-name": {
@@ -4447,17 +4362,17 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 76,
-      "verdict": "genuine",
+      "verdict": "legit",
       "file_sha": "f5b88ba3250d",
-      "disposition": "encode-the-property-consume-it-or-demote",
-      "evidence": "RE-VERIFIED 2026-09-14 by `scripts/lean-vacuity-ledger-reverify.py`: the DECLARATION is byte-identical to its text at 21bac468c, the revision whose file_sha this entry recorded. `file_sha` is a WHOLE-FILE hash, so the expiry was caused by an edit elsewhere in the file and was never about this declaration. The prior reading therefore applies unchanged and the verdict `genuine` is RESTORED, not re-decided. (Run: 14 rows, IDENTICAL=14, CHANGED=0, NOT-FOUND=0 across the three categories.)\n\n--- prior evidence, unchanged ---\nADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `monoidal_equiv`, `universal_property` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[TannakaKreinReconstruction]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
-      "reviewed_at": "2026-09-07T09:55:00Z",
+      "disposition": "marker-opt-out-genuinely-unencodable",
+      "evidence": "RE-ADJUDICATED 2026-09-14 genuine -> legit. The prior verdict was STALE, and its own re-verification could not see that.\n\nTIMELINE. The adjudication is stamped reviewed_at 2026-09-07T09:55:00Z. The revision whose file_sha it records, 21bac468c6, was committed 2026-09-07T19:24:51Z -- 9.5 HOURS LATER. A verdict cannot have been made against a revision that did not yet exist, so the recorded file_sha is not the text the verdict was made against.\n\nWHAT IT DESCRIBES IS GONE. The prior evidence names TWO fields: 'monoidal_equiv, universal_property are typed with the UNIVERSE Prop'. Commit 21bac468c6 replaced monoidal_equiv with `equiv : C === RepCat` (real DATA, a CategoryTheory.Equivalence) and renamed it so the name and the type agree. Only one field remains, and the same commit added a written justification for leaving it.\n\nWHY THE RE-VERIFY MISSED IT. scripts/lean-vacuity-ledger-reverify.py checks whether the DECLARATION text changed since the recorded file_sha. Here it compared post-fix text to post-fix text, reported IDENTICAL, and RESTORED a verdict written ~9.5h before that sha existed. The tool assumes file_sha is the revision the verdict was made against; reviewed_at < commit-time-of(file_sha) falsifies that assumption and is a cheap invariant it could check.\n\nTHE REMAINING FIELD IS GENUINELY UNENCODABLE, VERIFIED NOT ASSUMED. universal_property asserts terminality among factorisations of tau through Hopf-algebra representation categories. Mathlib's RepresentationTheory.Rep is `abbrev Rep (k G : Type u) [Ring k] [Monoid G]` -- defined for a MONOID. There is no `Rep k H` for a Hopf algebra H to quantify over, which is also why RepCat has to be carried as a field rather than referenced. Annotated with the AGENTS.md 3b-tax `@marker` opt-out, the corpus's own vocabulary for a genuinely-open opaque field; the audit now reports the row EXEMPT(explicit @marker / opaque-tag opt-out) rather than MAJOR.\n\nSCOPE OF THIS VERDICT. I verified that Mathlib's Rep needs [Monoid G]. I did NOT exhaustively establish that no other Mathlib route could state terminality; the justification is specific, checkable and corroborated by RepCat's existence, which is the basis for `legit` here.\n\n--- prior evidence, superseded ---\nRE-VERIFIED 2026-09-14 by `scripts/lean-vacuity-ledger-reverify.py`: the DECLARATION is byte-identical to its text at 21bac468c, the revision whose file_sha this entry recorded. `file_sha` is a WHOLE-FILE hash, so the expiry was caused by an edit elsewhere in the file and was never about this declaration. The prior reading therefore applies unchanged and the verdict `genuine` is RESTORED, not re-decided. (Run: 14 rows, IDENTICAL=14, CHANGED=0, NOT-FOUND=0 across the three categories.)\n\n--- prior evidence, unchanged ---\nADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `monoidal_equiv`, `universal_property` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[TannakaKreinReconstruction]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-14T08:21:14Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
         "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-5",
-        "agent_date": "2026-09-14"
+        "agent_date": "2026-09-14",
+        "agent_model": "claude-opus-5"
       }
     },
     "content/quantum-observable-universe/stochastic-mechanics/reverse-limit-q-to-infinity.lean::ReverseLimitQToInfinity::proof-claims-unencoded": {

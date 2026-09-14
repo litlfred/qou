@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Magic numbers $\\mathfrak{M} = \\{2, 8, 20, 28, 50, 82, 126\\}$ as ranks of $S_5$-stable Bring period sub-lattices",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.MagicNumbersBring",
+    ref: "qou:QOU.Conjectures.MagicNumbersBring",
     validation: "not_checked",
   },
   uses: [
