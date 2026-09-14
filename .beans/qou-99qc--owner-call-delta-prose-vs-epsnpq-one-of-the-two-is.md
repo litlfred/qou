@@ -2572,3 +2572,61 @@ only its scope line changes.
 2. Superseded twice over: first by the length reframing, now by the reading
    correction. The letters are not where the live constraint sits — `χ_(2,1)` is.
 3. Whether the bar-odd hypothesis survives the move to `z_D` — untouched.
+
+
+## 2026-09-14 — what DOES fix the budget: the corpus's own cost function. It selects k = 0 (or 1), never the live 11.
+
+The correction above leaves the budget question OPEN rather than answered —
+reading 3 admits every dressing count. **The answer was already in the corpus.**
+
+**The selection principle, from the Lean.** `FrobeniusSelected B y cands cost w`
+= `w` is reading-3-feasible **and** `cost w ≤ cost w'` for every feasible
+candidate, with the corpus instantiating `cost = fun w => (w.length : R)` — the
+**crossing count**. That is exactly how `frobeniusSelected_borromean` picks the
+6-letter core. So the budget has a derived answer: the minimal-cost
+reading-3-feasible dressing.
+
+**Measured** (all generator assignments × all dressings, 4144 words):
+
+| k | length | parity | reading 3 (p) | reading 3 (n) | reading 1 (p/n) |
+|---|---|---|---|---|---|
+| 0 | 9 | odd | 4/8 | 4/8 | **0/0** |
+| 1 | 10 | even | 18/48 | 18/48 | **0/0** |
+| 2 | 11 | odd | 149/288 | 145/288 | **0/0** |
+| 3 | 12 | even | 594/1728 | 594/1728 | **0/0** |
+
+1. **Minimal cost selects `k = 0`** — the empty dressing is reading-3-feasible
+   (4/8, both nucleons), so the cost-minimal word is the **9-letter** core+quark
+   with **no gluon crossings**.
+2. **Excluding the empty dressing gives `k = 1`, still not 2.**
+   `frobeniusSelected_nil` records that the crossing-count cost makes the empty
+   word trivially selected — which is why the core selection restricts to
+   non-zero vertex powers. Whether the same exclusion applies to the dressing is
+   an **unstated modelling choice**. It does not rescue 11.
+3. **So the live `nuc11_interleaved` (k = 2) is cost-minimal under NEITHER
+   convention.** That is a second, independent reason the scored element is not
+   what the ruling produces — the first being its `(2,1)` failure.
+4. **The principle fixes the BUDGET, not the WORD.** At k = 0 four assignments
+   tie, carrying **two** distinct traces per nucleon (p `0.6121259628` /
+   `0.6263353681`; n `0.4830505246` / `0.4902320181`). `cost_eq` gives equal
+   cost, not a unique word. A 2-fold degeneracy survives and is **not** closed.
+
+**🛑 And this corrects my own correction, one level down.** The entry above says
+reading 1 would empty the selection *by parity* (all corpus nucleon models are
+odd). Measured, **reading 1 admits ZERO words at every k — including k = 1 and
+k = 3, which are EVEN total lengths that `alt_psd_iff_even` permits.** The
+`(2,1)` block excludes those independently of parity. So reading 1 is
+annihilating **outright**, and the parity theorem is not the binding constraint
+even where it applies. The parity result is still true and still the clean
+structural statement for odd lengths; it is simply not what does the work.
+
+Probe: `computations/qbeta/qbeta_cost_minimal_budget_under_reading3_probe.py`
+(7/7, proton pin, convention D, 60 dps).
+
+**Not claimed, deliberately.** That `k = 0` should be adopted — that is an owner
+call and it hangs on the unstated empty-dressing convention. That the
+crossing-count cost is the right cost for the *dressing* (extending the core's
+cost to it is an extrapolation of the principle, not a theorem about it). **No
+Q_β residual was computed for any of these**, precisely so the selection cannot
+be contaminated by proximity to the measured value. The dashboard stays
+un-re-scored.
