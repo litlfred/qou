@@ -1,0 +1,159 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-14T07:33:37.014255+00:00",
+  "commitSha": "6dec0d9febad993d1d4381aedb027fa419b10535",
+  "assertions": [
+    {
+      "name": "cross_anchor_prune_FAILS_and_the_reason_is_sensitivity",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "c agrees across the two pins to ~1e-7 relative, and that is NOT evidence of anchor-independence -- the test has no power here. c_3 is amplified 2.05889e+6x (extracted through 1/u^3); c is amplified 9.57631x (no magnifier). Ratio 214998.0x. Recorded as a FAILED prune. The c_3 swing reproduces AGENTS.md's recorded 2.3912 % (2.39121 %), which is the calibration."
+    },
+    {
+      "name": "doubling_identity_is_exact_for_a_genuine_constant_residue_character",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "chi(q^2) - (2 chi(q)^2 - 1) is at most 1.867e-60 over c in {0.5, 5.968, 11.168, -3.2} -- zero to the arithmetic's floor, for every c. Proved in general by QOU.QBeta.CharacterDoubling.char_doubling_of_constant_residue (sorry-free), which is the hyperbolic analogue of ln(q^2) = 2 ln q."
+    },
+    {
+      "name": "requirement_function_fails_the_doubling_identity_at_every_point",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "kappa(q) = Q_codata/(Q_base(q)(1-u^2)) on the z_D base misses chi(q^2) = 2 chi(q)^2 - 1 by at least 59.304 % across q in {q0, 1.5, 2, 3} -- so it is the character of NO constant-residue holonomy, for any c at once (QOU.QBeta.CharacterDoubling.not_constant_residue_character_of_doubling_fails)."
+    },
+    {
+      "name": "no_rescaling_rescues_it_so_the_prune_is_not_a_normalisation_artifact",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The doubling identity is NOT scale-invariant and kappa carries the experimental Q_codata as an overall scale, so a single lambda might have rescued it. Solving 2 lam^2 kappa(q)^2 - lam kappa(q^2) - 1 = 0 gives lam(q) spreading 28.8608 % over five points, against |lam - 1| <= 1.556e-61 for a genuine character. One constant cannot do it."
+    },
+    {
+      "name": "at_a_point_the_exclusion_does_NOT_hold_and_that_is_the_scope",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "At q0 alone the free c reaches the requirement exactly: c = 5.96831620270888 gives cosh(c ln q0) = kappa to 0.0. So scope-(b) covers 'as a FUNCTION of q' ONLY; a pointwise match is always available and carries no information. Quoting this exclusion without that scope would be the over-claim AGENTS.md's (a)/(b) rule exists to prevent."
+    },
+    {
+      "name": "the_near_integer_is_recorded_as_a_check_against_and_not_pursued",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "c at the live cell is 5.96831620271, which is 0.5281 % from 6. Recorded as a check-AGAINST and NOT pursued: a near-integer found by solving against the target is selection against the target (NO FITTING), and the cell is provisional besides -- the 2026-09-13 owner ruling records that its element nuc11_interleaved FAILS the confinement SDP on (2,1) and (1,1,1), so c moves when the element is replaced. No search was run for a reason c should be 6."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "qbeta-constant-residue-character-doubling",
+  "scriptFile": "qbeta_constant_residue_character_doubling_probe.py",
+  "scriptHash": "f29f1ab5aad4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_constant_residue_character_doubling_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_constant_residue_character_doubling_probe.py"
+  },
+  "description": "The hyperbolic branch that the ruled base re-opens for route 5 is itself closed for CONSTANT residues. Kohno-Drinfeld fixes hbar = 2 ln q, so a constant-residue generator eigenvalue is c*ln q and its character is cosh(c ln q), which satisfies chi(q^2) = 2 chi(q)^2 - 1 for EVERY c (the cosh double-angle law; the hyperbolic analogue of the ln(q^2) = 2 ln q identity that PhaseFailsLogFunctionalEquation uses to exclude the same holonomy on the elliptic reading). The requirement function kappa(q) = Q_codata/(Q_base(q)(1-u^2)) on the z_D base misses that identity by 59-70 % across q in {q0, 1.5, 2, 3}, and no rescaling rescues it (lambda(q) spreads 28.86 % against lambda == 1 for a genuine character). ALSO REPORTS A FAILED PRUNE: cross-anchor rigidity, the obvious test, has no power here -- c is amplified ~9.6x across the two pins while c_3 is amplified ~2.06e6x through its 1/u^3 extraction, a ratio of 2.15e5, so the pins' agreement on c is evidence about the test and not about c. SCOPE: (b) for 'as a FUNCTION of q' only; at a single q0 the free c reaches any kappa >= 1 and the exclusion does NOT hold. What survives is what the elliptic sibling leaves open -- a q-dependent residue, a non-flat construction, or a q-dependent-parameter transcendental object.",
+  "bean": "qou-pdix",
+  "also": "qou-cds1",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357873607281",
+  "cross_anchor_amplification": [
+    {
+      "quantity": "c (z_D order-zero)",
+      "proton": "11.1682696535433455877290055307853616602482128167488821020506",
+      "muon": "11.1682685685838719945044171723453194107460850904125553549170",
+      "rel_swing": "0.0000000971466043756384944001747021681609385721820209161258532584036",
+      "amplification": "8.36456859270330917518034539740509224306225516279117790863144"
+    },
+    {
+      "quantity": "c (dashboard, LIVE)",
+      "proton": "5.96831620270888227465617587591293217748659947350474115454039",
+      "muon": "5.96831553891378159383356239307585105801691499386037964456018",
+      "rel_swing": "0.000000111219827860249963499235318300018866466224407285260874151160",
+      "amplification": "9.57630876534279189858639124497730456911023330439772126428528"
+    },
+    {
+      "quantity": "c_3 (recorded)",
+      "proton": "-2.0693425728",
+      "muon": "-2.01986031",
+      "rel_swing": "0.0239120692003384467362754486505483448197098823056698290144025",
+      "amplification": "2058889.69877218640008915369538439509325882726608967278507806"
+    }
+  ],
+  "doubling_control": [
+    {
+      "c": "0.5",
+      "defect": "-1.55575381946528542678601601344503106014756304218029178327528e-61"
+    },
+    {
+      "c": "5.96831598119334",
+      "defect": "3.11150763893057085357203202689006212029512608436058356655056e-61"
+    },
+    {
+      "c": "11.1682695203772",
+      "defect": "1.86690458335834251214321921613403727217707565061635013993033e-60"
+    },
+    {
+      "c": "-3.2",
+      "defect": "1.55575381946528542678601601344503106014756304218029178327528e-61"
+    }
+  ],
+  "doubling_defect_by_point": [
+    {
+      "q": "1.10997858275138080759166909561076887987449912187357873607281",
+      "lhs": "1.95697208797539522642866867814755216224015736939433174667551",
+      "rhs": "5.19072776227740058272029245816412621225671516518718459768466",
+      "rel_defect": "0.622986953352224063798739666919589306700223575878570902341603"
+    },
+    {
+      "q": "1.50000000000000000000000000000000000000000000000000000000000",
+      "lhs": "2.66187364631942904703403566206666650973926669569220548246969",
+      "rhs": "9.01485827074516374614918051781352636856570478756112552943833",
+      "rel_defect": "0.704723738701728931117616816010538607268573811736090670543167"
+    },
+    {
+      "q": "2.00000000000000000000000000000000000000000000000000000000000",
+      "lhs": "3.69777787731621176813834199128287842039768182592895736115989",
+      "rhs": "11.8485736522595796111386544847259093129437137368932633396228",
+      "rel_defect": "0.687913669118221005617600026078251942453890140788781908752729"
+    },
+    {
+      "q": "3.00000000000000000000000000000000000000000000000000000000000",
+      "lhs": "7.27868118444612984737662165983811283438142349543937206043835",
+      "rhs": "17.8853203573671990667500465681031668478381116389833296827159",
+      "rel_defect": "0.593036018421221894295644279228860937612207326476093643014607"
+    }
+  ],
+  "rescaling_lambda_spread": "0.288607940480434225659994235858943797454726652404226152805766",
+  "invariant_cited": "QOU.QBeta.CharacterDoubling (sorry-free, this PR): cosh_doubling, char_doubling_of_constant_residue, not_constant_residue_character_of_doubling_fails -- the last quantified over all c at once, exactly as its elliptic sibling QOU.QBeta.PhaseFailsLogFunctionalEquation is.",
+  "failed_prune_recorded": "cross-anchor rigidity. Reported as a failure with its measured reason rather than omitted: the two pins are 11.6141 ppb apart and c carries no magnifier, so the test is 2.15e5 times less sensitive here than where the corpus uses it. An agent reading only the agreement would conclude c is anchor-independent, which this does NOT show.",
+  "not_pursued": "c = 5.96832 at the live cell is 0.5281 % from 6. Check-AGAINST only. Selection against the target is forbidden (NO FITTING), and the cell is provisional -- its element nuc11_interleaved fails the confinement SDP per the 2026-09-13 owner ruling.",
+  "scope": "(b) for the constant-residue exclusion AS A FUNCTION, citing a proved identity; (a) for every number; explicitly NOT an exclusion at a point. Derives no alpha, selects no base, wires nothing."
+}
