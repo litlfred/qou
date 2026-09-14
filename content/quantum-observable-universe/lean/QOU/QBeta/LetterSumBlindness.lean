@@ -60,11 +60,36 @@
   Anyone citing this file to rule that route out is over-reading it.
 
   What §4 does NOT claim: that such an optimum WOULD separate the four
-  candidates, or that a per-block geometric cost `t_λ` exists. `t` is indexed
-  by Wedderburn block `λ ⊢ n` while the O'Hara energy is indexed by lattice
-  class, and no map between those index sets is in the corpus. That gap is
-  real and is not closed here. §4 establishes only that the exclusion does not
-  reach the route -- a prune says what is not forbidden, never what works.
+  candidates. §4 establishes only that the exclusion does not reach the route
+  -- a prune says what is not forbidden, never what works.
+
+  🛑 A CORRECTION TO THIS FILE'S OWN FIRST DRAFT, which said "`t` is indexed by
+  Wedderburn block `λ ⊢ n` while the O'Hara energy is indexed by lattice class,
+  and no map between those index sets is in the corpus". THAT WAS WRONG, and it
+  was a corpus-grep miss rather than a measurement. `QOU/MobiusEnergy.lean`
+  (`prop:mobius-energy`) defines the categorical Möbius energy as
+
+      E_cat(γ) = λ ∘ tr_A ∬ (Δ(γ(s)) ⊗ Δ(γ(t))) ⋆_q ‖dγ/ds ∧_q dγ/dt‖ ds dt
+
+  with `λ` the FROBENIUS FORM and `tr_A` the ALGEBRA TRACE. That composite is
+  the object the canonical chain decomposes as `tr_M = Σ_λ y_λ χ_λ`, so the
+  categorical energy IS a sum over partition representations -- the
+  non-abelian Stokes step being what puts the `S¹ × S¹` double integral into
+  `H_n(q)` so that Wedderburn can split it. The per-block pieces are exactly
+  the `t_λ` the route needs, and the index mismatch asserted above does not
+  exist.
+
+  Two things do stand in the way, and neither is an index mismatch:
+
+  * It is SPECIFIED, NOT IMPLEMENTED. The formula lives in a docstring. In the
+    Lean, `energy : ℝ` is a bare structure FIELD; nothing computes the double
+    integral and nothing computes `χ_λ` of the resulting element.
+  * The classical-limit leg is ASSUMED and has a recorded blindness incident.
+    `classicalLimit : energy = (1/4) · classicalEnergy.value + const` is a
+    structure field, not a theorem, and that file's own header records a case
+    where it made `E_cat` blind -- `E_cat = 1 + const` for EVERY knot, with no
+    `sorry` and seen by no detector. Check that leg before building on it
+    (bean `qou-pzsi` carries the same warning).
 
   Sorry-free. No `axiom`, no conditional class, no `native_decide`.
 
