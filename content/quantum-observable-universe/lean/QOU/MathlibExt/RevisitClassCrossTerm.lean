@@ -359,5 +359,76 @@ theorem cyclicSquare_cross_term_dressed (m : ℕ) (h s t : R) (x : A) (hx : x �
   rw [hD4, hB2, hB3, hB4]
   ring
 
+/-- A dressed letter lies in any level of the tower above its own. -/
+theorem dressed_mem (m n : ℕ) (d : R) (hmn : m + 1 ≤ n) : dressed T m d ∈ T.H n :=
+  (T.H n).add_mem (T.H_mono hmn (T.g_mem m)) ((T.H n).smul_mem (T.H n).one_mem d)
+
+/-- **A dressed letter peels LINEARLY at the top of the tower.**  `tr(a · bₙ) = (z + d)·tr a`
+for any `a ∈ H n` and `bₙ = gₙ + d·1`.
+
+This is the one thing the `n = 4, 5, 6` dressed-defect probes record as generalising
+(`qou-vwu3`: *"what DOES generalise, now 3-for-3: the Markov-peeled bond factors out
+linearly"*).  Here it is a theorem rather than a 3-for-3 pattern: it holds for every `n`,
+every dressing, and every `a` in the tower, and it is immediate from `markov` (T3) plus
+linearity of `tr`.  Nothing about interleaving is used. -/
+theorem tr_dressed_stab (n : ℕ) (d : R) (a : A) (ha : a ∈ T.H n) :
+    T.tr (a * dressed T n d) = (T.z + d) * T.tr a := by
+  rw [dressed, mul_add, mul_smul_comm, mul_one, map_add, map_smul, smul_eq_mul,
+    T.markov n a ha]
+  ring
+
+/-- **The `n = 4` dressed cross term, derived: `(z + d₂)·(z² − h z − 1)`.**
+
+The charge dependence of the whole interleaved-vs-sequential defect at `n = 4` is the
+*stabilising* letter's dressing **alone**: `d₀` and `d₁` — the dressings of the two letters
+that actually alternate — cancel, by `cyclicSquare_cross_term_dressed`, and the surviving
+`(z + d₂)` is the linear peel of `tr_dressed_stab`.
+
+This is the closed form measured exactly in
+`computations/probes/dressed-interleaved-cross-term-charge-parity.witness.json`
+(`Delta(d0,d1,d2) = (z + d2) * (z^2 - h*z - 1)`, sympy over `ℚ(q,d₀,d₁,d₂)`), reported
+there without a mechanism.  The mechanism is that the `n = 4` word is the three-strand
+cyclic square stabilised once, and the square is dressing-blind. -/
+theorem interleaved_cross_term_dressed (h d0 d1 d2 : R)
+    (hq0 : T.g 0 * T.g 0 = h • T.g 0 + 1) (hq1 : T.g 1 * T.g 1 = h • T.g 1 + 1)
+    (hbraid : T.g 0 * T.g 1 * T.g 0 = T.g 1 * T.g 0 * T.g 1) :
+    T.tr (dressed T 0 d0 * dressed T 1 d1 * dressed T 0 d0 * dressed T 2 d2 * dressed T 1 d1)
+        - T.tr (dressed T 0 d0 * dressed T 0 d0 * dressed T 1 d1 * dressed T 1 d1
+            * dressed T 2 d2)
+      = (T.z + d2) * (T.z ^ 2 - h * T.z - 1) := by
+  set b0 := dressed T 0 d0 with hb0
+  set b1 := dressed T 1 d1 with hb1
+  have m0 : b0 ∈ T.H 2 := dressed_mem T 0 2 d0 (by omega)
+  have m1 : b1 ∈ T.H 2 := dressed_mem T 1 2 d1 (by omega)
+  have mI : b1 * b0 * b1 * b0 ∈ T.H 2 :=
+    (T.H 2).mul_mem ((T.H 2).mul_mem ((T.H 2).mul_mem m1 m0) m1) m0
+  have mS : b0 * b0 * b1 * b1 ∈ T.H 2 :=
+    (T.H 2).mul_mem ((T.H 2).mul_mem ((T.H 2).mul_mem m0 m0) m1) m1
+  -- interleaved: rotate the trailing `b1` to the front, then peel `b2`
+  have hI : T.tr (b0 * b1 * b0 * dressed T 2 d2 * b1)
+      = (T.z + d2) * T.tr (b1 * b0 * b1 * b0) := by
+    rw [T.tr_mul_comm (b0 * b1 * b0 * dressed T 2 d2) b1]
+    have e : b1 * (b0 * b1 * b0 * dressed T 2 d2)
+        = b1 * b0 * b1 * b0 * dressed T 2 d2 := by simp only [mul_assoc]
+    rw [e, tr_dressed_stab T 2 d2 _ mI]
+  -- sequential: peel `b2` directly
+  have hS : T.tr (b0 * b0 * b1 * b1 * dressed T 2 d2)
+      = (T.z + d2) * T.tr (b0 * b0 * b1 * b1) :=
+    tr_dressed_stab T 2 d2 _ mS
+  -- the three-strand bracket, with trivial prefix
+  have hone : (1 : A) ∈ T.H 0 := (T.H 0).one_mem
+  have hxc : (1 : A) * T.g 1 = T.g 1 * (1 : A) := by rw [one_mul, mul_one]
+  have hsq := cyclicSquare_cross_term_dressed T 0 h d0 d1 1 hone hq0 hq1 hbraid hxc
+  rw [one_mul, one_mul, T.tr_one, mul_one] at hsq
+  -- rotate the cyclic square so it matches `hsq`, and reassociate the Hopf chain
+  have hrot : T.tr (b1 * b0 * b1 * b0) = T.tr (b0 * b1 * b0 * b1) := by
+    rw [T.tr_mul_comm (b1 * b0 * b1) b0]
+    congr 1
+    simp only [mul_assoc]
+  have hassoc : T.tr (b0 * b0 * b1 * b1) = T.tr (b0 * b0 * (b1 * b1)) := by
+    congr 1
+    simp only [mul_assoc]
+  rw [hI, hS, hrot, hassoc, ← mul_sub, hsq]
+
 end QOU.MathlibExt.RevisitClass
 
