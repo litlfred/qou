@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-14T09:03:20Z
+updated_at: 2026-09-14T17:58:21Z
 ---
 
 
@@ -778,3 +778,133 @@ commits' witness diffs stand.
 "Measured: 173 files sit in F64_IMPORT". Read 139. The rest of that message —
 the two witness diffs, the tier's advisory status, the two named live
 `q = mpf(Q)` files — is unaffected.
+
+
+## Casimir family drained, 2026-09-14 (branch claude/raw-float64-drain-2026-09-13)
+
+Nine producers, unmodified-first baseline on every one before editing.
+
+| producer | before | after | why the after is what it is |
+|---|---|---|---|
+| casimir_grid_sweep | 81 | 0 | serializer + a genuine `mpf(Q)` cap |
+| casimir_phi_q_markov | 80 | 0 | serializer + cap (control for the above) |
+| casimir_q_factorial | 54 | 0 | serializer |
+| casimir_carlitz_q_bernoulli | 33 | 0 | serializer |
+| casimir_jet_order_derivation | 20 | 0 | serializer + a 1e-40 test made real |
+| casimir_hoefsmit_additivity | 20 | 0 | serializer + TWO gates retightened |
+| casimir_n_unknot_construction | 17 | 0 | serializer + a 1e-40 test made real |
+| casimir_xi_2_dig_deeper | 18 | **16** | 16 are the CORRECT record — see below |
+| casimir_d6_qcorrection | 5 | **1** | 1 is the CORRECT record — see below |
+| casimir_epsilon_vacuum | 12 | 0 | was running at `mp.dps = 15` (`qou-0p2h`) |
+
+Ratchet throughout: NEW 1 / REGRESSED 0 (the inherited
+`computations/audits/braid-encoding-audit.witness.json`). Padding ratchet: 61 NEW
+before and after, none of them a casimir witness, and this branch touches none of
+the 11 files it reports.
+
+## Finding 1 — THE DIRTY COUNT IS NOT A MEASURE OF REMAINING DEBT
+
+Two files cannot reach 0 without making the corpus WORSE, and this is the
+opposite of every blind spot in the detector-blindness taxonomy: the ratchet here
+sees too MUCH, by design.
+
+- `casimir_xi_2_dig_deeper`, 16 survivors. All in
+  `finding_B3_survey_numbers_not_reproducible`: 8 are CITED survey values
+  (0.9946, 0.9839, 0.9680, 0.7510, recorded twice each), 4 decimals and no more;
+  8 are derived from them and deliberately `round(..., 4)` because 4 is what the
+  input justifies.
+- `casimir_d6_qcorrection`, 1 survivor. `rows[5].vol = 2.82812` is Vol(5_2), a
+  cited SnapPy value with no closed form available here. Measured what `fmt`
+  would do:
+  `fmt(mpf("2.82812")) = 2.82812000000000000000000000000000000000000000000000000000000`
+  — 60 significant figures claimed for a 6-figure datum. That is the padding
+  defect with the sign flipped (padding a SHORT source rather than a binary64
+  one), and the padding audit does not flag it BECAUSE THE ZEROS ARE REAL, which
+  makes it the more dangerous form.
+
+An agent draining by count will eventually reach a file where the only way to
+move the number down is to overstate a citation. At that point the number is the
+wrong target.
+
+## Finding 2 — A TOLERANCE SIZED TO A FLOAT64 CAST, and the obligation that
+## comes with removing the cast
+
+`casimir_hoefsmit_additivity_probe` had two assertions that read their own
+recorded values back and whose tolerances were EXPLICITLY sized to the float64
+the recording introduced. The witness said so in its own `source` strings:
+
+    "gate 1e-15 is the float64 the table is serialised through, not a chosen band"
+    "gate 1e-9 covers the float64 the table stores at N = 1000"
+
+Both honest as written; both FALSE the moment the cast goes. Carrying mpf through
+collapsed the gaps:
+
+    disjoint_union_volumes_are_additive      6.29520766772e-16  ->  0.0 EXACTLY
+    geom_epsilon_coefficient_is_linear_in_N  1.69196699728e-11  ->  2.1365027428e-65
+
+i.e. the float64 was not merely *covered by* the gates, it was their ENTIRE
+CONTENT. Retightened 1e-15 -> 1e-58 and 1e-9 -> 1e-54, both from the
+SERIALIZATION ROUND-TRIP BOUND (largest value x 1e-60) and NOT from the observed
+gap — sizing a gate to its own measurement is the fit defect AGENTS.md names.
+Left alone, 1e-9 would have been 56 orders of slack on a quantity now known to
+1e-65.
+
+**So a `float()` -> `fmt()` change is not always local.** If any assertion,
+threshold or tolerance downstream was sized to that cast, removing it obliges
+retightening, and the witness's own justification text becomes a false statement
+that must be rewritten. Grep the file for `tolerance=` before calling a drain
+done.
+
+## Finding 3 — three 1e-40 thresholds that could not fail
+
+`casimir_n_unknot_construction` (`n_stable`), `casimir_jet_order_derivation`
+(`matches_textbook`), and by the same shape `_spread` in the former: a threshold
+of 1e-40 applied to float64 quantities of order 0.1-1e5 is satisfiable only by
+landing on EXACTLY 0.0, which two identical double expressions always do. Each
+gave the right answer for the wrong reason. All three now mpf on both sides.
+
+Verdicts unchanged in every case, and checked rather than assumed:
+`bare_count_is_uniquely_n_stable` computed '1', n-stable set `['bare_count']`;
+`q_independence`/`matches_textbook`/`derivation_works` all True. What changed is
+that jet-order's test is now NON-TRIVIALLY satisfied — the rows compute
+`pi_sq * (1/120) / 6` against a `pi_sq / 720` target, which round differently:
+`a - b = 1.414949856e-73` (rel 1.032e-71), one ulp, clearing 1e-40 by ~31 orders.
+Under float64 the two were the same bit pattern.
+
+## Finding 4 — the DISCRIMINATOR for whether a float64 cast matters
+
+Two files in this family both moved ZERO recorded fields when their cast was
+removed, and the two facts mean opposite things:
+
+- `xi-2`: the cast sat 14 orders BELOW the input noise (4-decimal survey values).
+  A discipline fix; it could not have changed anything.
+- `n-unknot`: the cast sat ABOVE the tolerance the code tests against. It made a
+  test undecidable. A correctness fix that happens to leave today's answer alone.
+
+So the discriminator is not the SIZE of the cast but its size RELATIVE TO THE
+TOLERANCE THE CODE COMPARES AGAINST. Read the comparison, not the cast.
+
+## Finding 5 — the builder's guard counts more than the ratchet does
+
+`qou_substrate.witness._check_raw_float64` has no integral carve-out, so four
+`vol: 0.0` rows are raw float64 to it and invisible to the corpus ratchet (9 vs 5
+on the d6 witness). It is the better LOCATOR — it prints exact JSON paths at the
+producer — but it only fires when the witness is actually WRITTEN: `save()`
+short-circuits an unchanged payload and skips the guard with it. An unmodified
+re-run printing no warning is NOT an all-clear, and a witness that does not appear
+in `git status` after a re-run has PASSED the baseline check, not failed to write.
+
+## Also learned
+
+`round()` on an mpf returns an mpf that is not exactly rounded —
+`round(mpf('-0.12345678901234567890'), 4) = -0.1234999999...9998` — so where a
+4-decimal record is wanted the cast must come FIRST, `round(float(x), 4)`.
+
+`min()` on float64 keys HIDES TIES. In `casimir_q_factorial`,
+`best_classical_ok` flipped from `pi^2/(6*[5]_q!_sym)` to
+`pi^2/(6*([5]_q!+[5]_{q^-1}!)/2)` — two MATHEMATICALLY IDENTICAL expressions
+(`[k]_q` is invariant under q -> 1/q), differing by 5.6e-71, i.e. one ulp at dps
+70. `float(r1) == float(r5)` was True, so `min()` used to return the first;
+now the second wins. Residue 8.6154% either way and the conclusion is untouched,
+but the tie-break is arbitrary and is now VISIBLE where float64 rounding hid it.
+Not fixed — making it deterministic is a tidy, not a precision fix.
