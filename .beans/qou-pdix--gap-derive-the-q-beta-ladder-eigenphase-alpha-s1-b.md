@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-13T18:45:00Z
+updated_at: 2026-09-14T06:08:01Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2177,3 +2177,82 @@ So `qou-cds1` needs a **form** decision before any coefficient work, and that
 decision is the author's — it is not something to settle by which shape fits.
 
 Probe now 19/19.
+
+
+## 2026-09-14 — SYNTHESIS across two sessions: the retired-cell staleness is a CLASS, and it cuts both ways
+
+Merged `origin/main` into `claude/gifted-feynman-fhjzwv`. Both sessions worked
+this bean on 2026-09-13 in parallel; **nothing duplicated** — the two entry sets
+are disjoint and this reconciles them.
+
+### 1. Two sessions, two places, the SAME defect class — independently
+
+The sibling entry *"attack A measured"* found that the one computational test of
+A's bridge *"was aimed at a functional that is no longer canonical, and nothing
+had re-aimed it"* — `qbeta-delta-tr-vs-formA.witness.json` compares against the
+`z = 1` cell, retired as the base on **2026-09-08**, one day after that witness
+was last touched.
+
+This session found the same thing in two different places:
+
+  * the **2026-08-22 (8) cosh exclusion** — its `required N1 = 0.99839767 < 1`
+    is the `z = 1` cell's requirement; on the ruled base the requirement is
+    `1.7592 > 1` and the exclusion is **void**;
+  * the **ladder form itself** — `α_req` and its window are inverted from that
+    same retired base.
+
+**Neither session found the other's instance.** Two independent hits make this a
+**class**, not two accidents: *the 2026-09-08 base ruling silently invalidated
+arguments that were computed against the old cell, and the corpus was not swept
+for them.* Assume more remain. The cheap test is: does the artifact's number
+trace to `Q_A = m_e|q²−2q−1|(q+1)/(2q³)`? If so it is aimed at a retired cell.
+
+### 2. 🛑 It cuts BOTH ways, and that is the part a sweep would get wrong
+
+The sibling's instance invalidated a **positive** (a bridge test) and the
+re-aimed negative *held*. This session's cosh instance invalidated a
+**negative** — a route the bean had closed is now **re-opened**. A sweep that
+assumes "stale ⇒ the claim was too optimistic" will re-close the cosh horn by
+reflex. It must be re-aimed, not re-asserted, in each direction.
+
+### 3. Part 3 is UPSTREAM of both attacks, and changes what they are for
+
+Attacks A and B are both routes to **derive `α`**. Part 3 (this session,
+sorry-free Lean) shows that on the ruled `z_D` base **no `α` whatsoever** moves
+`Q_β`, because the `N = 1` rung is a cosine bounded by 1 while the required
+factor is `1.7592 > 1`.
+
+So the two measured negatives on A and B, and any future positive on either,
+are **moot for the L2 `Q_β` gap** — they bear only on `qou-pdix`'s own stated
+goal of deriving `α` as mathematics. This does not diminish them; it re-labels
+what they are evidence about. **`α` is not on the L2 critical path.**
+
+Combined state of the tranche:
+
+| item | status |
+|---|---|
+| attack A (Habiro / roots of unity) | measured negative, re-aimed at the ruled base — sibling |
+| attack B (Faddeev modular double) | measured negative, inert at the substrate — sibling |
+| branch (1), braid image, `q`-varying `α` | closed (prior) |
+| branch (1), braid image, **constant** `α` | closed this session by quantization, Lean sorry-free |
+| **any `α` at all, for L2** | **excluded this session — the gap is in the BASE**, Lean sorry-free |
+| the cosh / modular form | **RE-OPENED** — its exclusion was aimed at the retired cell |
+
+### 4. What is actually left, stated without a recommendation
+
+`qou-cds1` needs a **form** decision before any coefficient work: the committed
+multiplicative-cos ladder cannot reach a base that is 43 % low, and the one
+alternative form the bean considered (cosh) was dismissed on a base that no
+longer holds. **No closed form is on offer for it** — `arccosh(1.7592370279) =
+1.16521714843` over `ln q` / `h` / `ℏ_q` gives 11.1674, 5.5736, 11.7602, none
+near an integer or half-integer. Choosing a shape because it fits would be
+selection against the target; this is an author decision, not an agent one.
+
+### 5. Scope limit on Part 3, stated explicitly
+
+Part 3 assumes the correction multiplies the base — `Q = Q_base · cos(…) ·
+Π(1 + c_k u^k)`, the committed form. **It does not exclude a non-multiplicative
+correction**, and `Q_β = |ε(Δ)|·E₀` with `Δ` a *difference* of two words
+(sibling retraction `a64570260f`) is a reminder that the surrounding structure
+is additive one level down. If a D-frame ladder were additive, the cosine bound
+would not apply. That limit belongs beside the result.
