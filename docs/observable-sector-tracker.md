@@ -72,7 +72,7 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 Corrected 2026-08-18.)
 m_p was dropped 2026-07-04: its "0.0004 ppb" was the fitted Habiro
 tower (see banner above); de-fitted it is +1.35 ppb, a ~437× miss.
-m_μ is a **9.5σ proton-anchored prediction** (209.8 ppb — the μ–p
+m_μ is a **9.70σ proton-anchored prediction** (211.2 ppb — the μ–p
 substrate tension), **not** "~0 ppb / met": the earlier ~0 ppb value
 was the **muon-q₀ CAL-2 calibration tautology** mis-scored as a
 prediction (see AGENTS.md §"q₀ anchor convention" + bean `tnjb`).
@@ -93,7 +93,25 @@ near-match.
 |---|---|---|---|---|---|
 | **m_e** | CAL-1 anchor (CODATA 2022) | — | `codata_masses.py` → `codata-masses.witness.json` | 0 ppb (anchor) | DERIVED (anchor) |
 | **m_μ / m_e** | `Vol(4_1) / ℏ_q²` | `mass-formula-validation.md`, Lean `m_mu_over_m_e_via_vol_4_1` | `m_p_borromean_verification_50dps.py` | exact at q₀ | DERIVED |
-| **m_μ** | `m_e · (m_μ/m_e)` | derived | proton-anchored prediction (μ–p tension) | 209.8 ppb (9.5σ) | PREDICTION (not anchor) |
+| **m_μ** | `m_e · (m_μ/m_e)` | derived | proton-anchored prediction (μ–p tension) | 211.2 ppb (**9.70σ** on the MASS σ) | PREDICTION (not anchor) |
+<!-- Both m_μ rows above read `209.8 ppb (9.5σ)` until 2026-09-14. Two separate
+     corrections, and they are not the same kind of thing:
+       1. 209.8 -> 211.2 ppb is genuine STALENESS — 209.8 is the CODATA-2018
+         residual; the muon anchor moved to CODATA 2022 on 2026-08-22
+         (fca08de7d2). Live source: per-observable-100x-status.witness.json,
+         rows[] where obs == "m_mu", err_ppb 211.2. This tracker was missed by
+         the qou-m4au drain, which swept AGENTS.md, docs/precision-goals.md and
+         two content blocks.
+       2. 9.5 -> 9.70 sigma is NOT staleness, it is the DENOMINATOR. One
+         residual, two published sigma: 211.20/21.768 = 9.7022 against the
+         sigma on the MASS m_mu (witness sigma_exp_ppb 21.77), and
+         211.20/22.247 = 9.4934 against the sigma on the RATIO m_mu/m_e
+         (constants.MASS_RATIO_MU_E_ERR 4.6e-6 over 206.7682827). These rows
+         name the MASS and quote the dashboard's mass-denominated ppb, so 9.70
+         is the figure that belongs here. Corpus sites that say 9.5 sigma of
+         the RATIO are correct as written and must NOT be swept — adjudicated
+         in epistemic-status-of-calibrations.ts authorNotes (bean qou-silm)
+         and restated in AGENTS.md ss q0-anchor convention. -->
 | **m_τ** | `m_e · (Vol(4_1) / ℏ_q²)²` (?) — **claimed** but not pin-tight | `m-tau-knot-prediction.md` | `m_tau_knot_prediction.py` | ~few % off | **PARTIAL** — has prediction, not in 100× dashboard, not Lean-proved |
 | **m_e generations** (electron family relationships) | — | — | — | — | OPEN — no canonical chain for the 3-generation structure |
 

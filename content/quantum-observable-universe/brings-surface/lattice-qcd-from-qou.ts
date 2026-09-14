@@ -3,7 +3,8 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "thm:qu-to-qou",
   label: "rem:lattice-qcd-from-qou",
-  title: "Lattice QCD as the $q\\to 1$ shadow of the $q$-deformed surface state-sum",
+  title:
+    "Lattice gauge theory as a proposed $q\\to 1$ shadow of the $q$-deformed surface state-sum",
   tags: ["yekutieli", "brings-surface", "non-abelian-stokes", "lattice-gauge"],
   uses: [
     "thm:qu-to-qou",

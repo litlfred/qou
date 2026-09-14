@@ -3443,15 +3443,51 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **970.2×** (211.2 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.49σ on the RATIO / 9.70σ on the MASS** — say which (see the note below); misses L2 100× by **970.2×** (211.2 ppb) — the μ–p substrate tension |
+
+> **🛑 "9.5σ" and "9.70σ" are the SAME residual against DIFFERENT σ, and
+> neither is stale — do NOT sweep one into the other (measured 2026-09-14).**
+> The residual is one number, `err_ppb = 211.20`. It is divided by two
+> different published uncertainties, and this table cell used to carry one of
+> each with no label, which is what makes the sweep look obviously right:
+>
+> | denominator | σ | t | source |
+> |---|---:|---:|---|
+> | **σ on the RATIO** `m_μ/m_e` | 22.247 ppb | **9.4934σ** | `qou_substrate.constants.MASS_RATIO_MU_E_ERR = 4.6e-6` over `206.7682827` |
+> | **σ on the MASS** `m_μ` | 21.768 ppb | **9.7022σ** | `per-observable-100x-status.witness.json` row `m_mu`: `sigma_exp_MeV 2.30000e-6` over `codata_MeV 105.658375496`, published as `sigma_exp_ppb 21.77` |
+>
+> **The ratio σ is the right denominator for a residual on the ratio
+> relation** `m_μ/m_e = Vol(4₁)/ℏ_q²`, which is what CAL-2 actually asserts;
+> the mass σ is what the L2 dashboard scores against, and every *dashboard*
+> figure — `211.2`, `21.77`, `target_100x_ppb 0.2177`, `miss_factor 970.2` —
+> is mass-denominated. So a cell quoting `970.2×` alongside a bare `9.5σ` is
+> mixing frames, even though both halves are individually correct. Quote the
+> denominator, or quote both.
+>
+> **This was already adjudicated and the adjudication was already durable** —
+> `epistemic-status-of-calibrations.ts`, `authorNotes` (bean `qou-silm`):
+> *"Different denominators, not a stale figure — do not 'reconcile' them."*
+> It was invisible from here, which is why it is restated here.
+>
+> **It is also not a CODATA-edition artifact**, the other tempting reading:
+> at CODATA 2018 the ratio figure was **9.534σ** (recorded in
+> `mu-p-residual-two-readings.ts`), at CODATA 2022 it is **9.4934σ**. The
+> 2026-08-22 re-pin moved it by 0.04σ and it rounds to 9.5 on both sides, so
+> the edition change did not make `9.5σ` wrong.
+>
+> Every live content block that says `9.5σ` says it of the **ratio**, in a
+> sentence that names the ratio or the 22 ppb, and is correct as written:
+> `epistemic-status-of-calibrations.md`, `mu-p-residual-two-readings.md`
+> (which shows `σ_exp ≈ 2.2e-8` inline), `three-calibration-inputs-context.md`.
+> Leave them.
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
 CAL-2.** (CAL-1 = m_e; CAL-2 = 𝔇_β, proxy m_μ/m_e; CAL-3 = 𝔇_π, proxy
 m_π; Q_β = ℏ/𝔇_β is the **CAL-2 proxy**, not CAL-3 — see the decay-width
 cheat-sheet ruling above.) Pin on the most precise ratio so the unavoidable ~11.6 ppb
-theory residual lands where least significant (proton-anchor → 9.5σ on
-muon; muon-anchor → ~1.4e4 σ on proton — that figure read "~4000σ" until
+theory residual lands where least significant (proton-anchor → 9.49σ on the
+muon ratio; muon-anchor → ~1.4e4 σ on the proton ratio — that figure read "~4000σ" until
 2026-09-04 and was the CODATA-2018 one, computed against σ(m_p/m_e) = 0.06 ppb;
 at the live 0.017 ppb the same 243.86 ppb miss is 1.4e4 σ, and the two-line rule
 above already carries the tighter σ).
