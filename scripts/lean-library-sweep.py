@@ -326,6 +326,19 @@ def main() -> int:
                          "module starts with it, so the root's chunk silently "
                          "became the whole corpus (measured: `TO COMPILE 2774 "
                          "[--only QOU + its untrusted deps]`).")
+    ap.add_argument("--report", action="store_true",
+                    help="print the snapshot-drift census and EXIT 0 without "
+                         "compiling anything.  Exists because the numbers this "
+                         "sweep already computes are the answer to a question "
+                         "nobody could ask cheaply: `lean`-direct exit 0 is a "
+                         "claim about the olean SNAPSHOT, not about the library "
+                         "source (bean qou-56qy), and the size of that gap was "
+                         "only obtainable by importing this module and calling "
+                         "its internals -- which is how the last measurement got "
+                         "`len()` of a 4-tuple and reported a closure of 4 "
+                         "against a 683-module seed.  A closure cannot be smaller "
+                         "than its seed; print it here so the check is one "
+                         "command and that class of error has nowhere to live.")
     ap.add_argument("--package", action="append", metavar="LIB",
                     help="library name (QOU, UGB, Fred2005); repeatable, "
                          "default all discovered")
@@ -354,11 +367,48 @@ def main() -> int:
 
 
 def sweep_one(args) -> int:
-    oleans = find_oleans()
+    if args.report:
+        # Report mode must survive a package with no snapshot at all, because
+        # that IS one of the things worth reporting.  `find_oleans` exits for
+        # the sweep path on purpose -- a gate with no tree to check against
+        # must not silently pass -- so catch it here only, leaving that
+        # behaviour untouched for every non-report run.  Measured: without
+        # this, a plain `--report` aborts on Fred2005 (no olean tree in a
+        # container restored from the qou cache branch) and never reaches QOU,
+        # which is the package anyone running it cares about.
+        try:
+            oleans = find_oleans()
+        except SystemExit as e:
+            print(f"  no snapshot for {LIB}: {e}")
+            return 0
+    else:
+        oleans = find_oleans()
     print(f"olean tree: {oleans}")
     mod2path, imports = load_graph()
     dirty, changed, never_built, untrusted = dirty_closure(mod2path, imports,
                                                 oleans, all_dirty=args.all)
+
+    if args.report:
+        total = len(mod2path)
+        pct = (100.0 * len(dirty) / total) if total else 0.0
+        print(f"  modules in graph                              {total}")
+        print(f"  never built (no olean at all)                 {len(never_built)}")
+        print(f"  changed (source newer than its own olean)     {len(changed)}")
+        print(f"  standard-dirty (snapshot cannot vouch)        {len(untrusted)}")
+        print(f"  DIRTY CLOSURE (changed + their importers)     {len(dirty)}"
+              f"  ({pct:.1f}% of the library)")
+        print(f"  clean in snapshot                             {total - len(dirty)}")
+        print("  -- a `lean`-direct green on any DIRTY module is a claim about "
+              "the snapshot, not the source; rebuild its cone first.")
+        if sel := (args.only or args.only_exact):
+            hit = ({m for m in dirty if m == args.only_exact} if args.only_exact
+                   else {m for m in dirty if m.startswith(args.only)})
+            print(f"  selection {sel}: {len(hit)} of them are dirty")
+            for m in sorted(hit):
+                tag = ("NEVER-BUILT" if m in never_built
+                       else "CHANGED" if m in changed else "via-imports")
+                print(f"      {tag:12s} {m}")
+        return 0
     sel = args.only or args.only_exact
     if sel:
         # Filter the population to compile, NOT the import graph -- dependencies
