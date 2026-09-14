@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-07T09:40:36Z
+updated_at: 2026-09-14T07:58:19Z
 ---
 
 ## Landed (A + C)
@@ -212,3 +212,40 @@ that `Group` has instances and `JetProlongationQOU` has none. Default if
 nothing is decided: the flags stay and nothing moves. My judgement: narrow the
 rule to hypothesis carriers — but it changes another agent's measured
 criterion, so it is not mine to make.
+
+
+## HadronFibreEmbedding (PR #7360, 2026-09-14) — the ledger said FIXED and it was not
+
+`proof-claims-unencoded` **9 -> 8** on main's base. With all three PRs landed: **4**.
+
+**A ledger entry saying `FIXED` is not evidence the carrier is clean.** This
+entry read `FIXED 2026-09-07` / `dead-field-removed` and the carrier kept
+tripping the audit — because that fix removed one of **TWO** universe-`Prop`
+fields and kept the other. **Trust the audit run, not the ledger verdict.**
+
+**Why it kept `confined`: a NAME COLLISION.** The docstring recorded
+"`confined` is kept: it is read by four declarations". Re-measured, those four
+read a DIFFERENT `confined`:
+- `DownQuark.confined` / `UpQuark.confined` are **Bool** (`= true := rfl`);
+- `ConfinedParticle.confined` / `ConfinementPhaseStratification.confined` are
+  applied to a parameter (`h.confined q`) — functions on another carrier;
+- `confinedNet` is a different name again;
+- and the standalone `confined` predicate was itself removed 2026-09-02 for
+  being `fun _ _ => True`.
+
+**Zero** `.confined` projections on a `HadronFibreEmbedding`, **zero**
+`confined :=` sites. Dead. Removed.
+
+**Two lessons, and this carrier failed BOTH ways at once:**
+1. **A field name is not an identifier** — resolve a "who reads this?" claim to
+   the DECLARATION, not the token. Same hazard AGENTS.md records for
+   `markovZ`.
+2. **Consumption is not the test anyway** (established on `KnotOperator`): a
+   universe-`Prop` field is chosen by the constructor, so a genuine reader
+   still gets no constraint.
+
+Both docstrings corrected: with both Prop fields gone the structure is pure
+data and encodes NONE of the four conditions it advertises.
+
+**Remaining 3** (post-all-three-merges): DegreeZeroDatum, RungRule,
+TannakaKreinReconstruction. (`TransferMatrixEigenphase` is ledger `legit`.)
