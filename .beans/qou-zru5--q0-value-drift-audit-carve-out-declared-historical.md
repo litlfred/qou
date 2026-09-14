@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-14T07:59:16Z
-updated_at: 2026-09-14T07:59:16Z
+updated_at: 2026-09-14T08:06:49Z
 ---
 
 `q0_value_drift_audit` is RED on 4 NEW findings and all four are false positives, but
@@ -58,3 +58,56 @@ the zero point is chosen.
 Collects with `HERE.rglob("*.witness.json")` where all five sibling gates use
 `git ls-files`, so an untracked witness in a working tree can change a blocking
 gate's verdict.
+
+
+---
+
+## BUILT 2026-09-14 — commit `44f946d8e49`
+
+Both fixes landed, and **neither moved the census**: `stale total` 206,
+baseline 329, canonical 83, proton-pin 2606, TOTAL 2920 — identical before and
+after. That was the requirement; it is what made the two obvious remedies
+unusable.
+
+**NEW 4 → 3**, and → 0 once the two probes regenerate.
+
+### What the design rests on
+
+The A/B/C muon-pin vocabulary already existed in
+`audits/muon_pin_three_values_probe.py` (PR #5434). A = the self-certified
+anomaly (not derivable from any published muon ratio — that is its defining
+property); B = Vol(4₁)/206.7682830 at CODATA 2018; C = Vol(4₁)/206.7682827 at
+CODATA 2022 = today's canonical. Measured −0.076942 and −0.079784 ppb, which
+are **exactly** this gate's two backlog buckets (2 rows at A, 199 at B). That
+is how the registry was checked rather than asserted. B and C are DERIVED in
+the audit; A is the one literal the evidence forces.
+
+### Delivered
+
+1. `q0_historical_pin` — a per-field declaration the audit **resolves and
+   verifies** (tol 1e-13, 28× inside the A–B gap). `DECLARATION-MISMATCH` and
+   `DECLARATION-UNKNOWN` block with no baseline, so a declaration cannot
+   launder a value. Proved by swapping the mapping on the real witnesses:
+   both become MISMATCH.
+2. `_deprecated/` exempt from the **NEW check only** — reported on its own
+   non-gating line, still counted in the census and baseline.
+3. `_REGISTRY_PIN` in both pins probes. The local names do **not** line up by
+   spelling (this probe's `retired` is B; `retired_pin_live_code_audit` calls
+   A the retired pin), so a name-based mapping would have been backwards.
+4. `--self-test` 13/13 both directions; gate row flipped `no` → `yes` in
+   `scripts/precision-gates.sh`.
+
+### Still owed
+
+The two probes must be re-run for the remaining 3 to drain. Queued as §28,
+blocked on the `qou-uiut` table. Post-regeneration verified by simulation:
+injecting the declaration into the committed witnesses moves all three
+`STALE → declared-historical`.
+
+### Side finding, filed not fixed
+
+`muon_pin_three_values_probe.py:147` binds `A = _q0_value_for_anchor("muon")`.
+Since `qou-tekx` stage 3b that resolver derives from `q_muon_at()` and returns
+**C** — measured, relative difference exactly 0. The probe that defines the
+A/B/C vocabulary can no longer distinguish A from C, and labels C as A. Its
+conclusions about B are unaffected. Worth its own bean.
