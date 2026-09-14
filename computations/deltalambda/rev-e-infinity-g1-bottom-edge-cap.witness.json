@@ -1,0 +1,412 @@
+{
+  "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "computedAt": "2026-09-14T18:01:55.803638+00:00",
+  "computation": {
+    "script": "computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py"
+  },
+  "bean": "qou-hok7",
+  "anchor": "physical_proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "G1 -- Xbot(s) <= Xblock(s), the last conditionality on e_inf -- has one recorded observation in its favour: the corpus states the two edge tables are EQUAL for s <= 12 and the top is higher by 0.01982 at s = 13.  That figure is an ENUMERATION ARTIFACT.  The bottom class is capped at BMAX = 9 rows while its maximisers are flat and long (entries 1-3, one row per unit of s) where the top's are steep and short, so the bottom exhausts its row budget first; from there Xbot understates its own supremum.  Varying the cap moves the break point -- BMAX 8/9/10/11 give agreement through s = 11/12/14/17 -- and at EVERY setting the winning profile at the break uses exactly BMAX rows.  At BMAX >= 10 the tables are exactly equal at s = 13 and the 0.01982 does not exist.  BUMAX is not the constraint: raising it 3 -> 6 while dropping BMAX 9 -> 8 made the agreement SHORTER.  A prediction of the agent's -- break = BMAX + 4, fitted to the first two settings -- was REFUTED by the other two (15 and 18, not 14 and 15); saturating the cap is necessary but not sufficient to lose the maximum.  G1 is NOT closed and is not weakened: a larger enumeration is a better LOWER bound on Xbot, which can only refute the inequality, never prove it.  What changed is the evidence -- the one observation pointing toward G1 is withdrawn, and the observations consistent with it extend from s <= 12 to s <= 17, in exact integer arithmetic, across two different evaluators and two unrelated maximiser shapes.",
+  "constants": {
+    "recorded_s": 13,
+    "recorded_diff": "0.0198162676389039602300948111946",
+    "committed_BMAX": 9,
+    "committed_BUMAX": 3,
+    "committed_TMAX": 8,
+    "committed_TUMAX": 6,
+    "agreement_committed_cap": 12,
+    "agreement_widest_cap": 17,
+    "widest_BMAX": 11
+  },
+  "cap_sweep": [
+    {
+      "BMAX": 8,
+      "BUMAX": 6,
+      "profiles": 2015539,
+      "keys": 33,
+      "equal_through": 11,
+      "breaks_at": 12,
+      "winner_rows_at_break": 8,
+      "cap_saturated_at_break": true,
+      "winner_at_break": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "diff_at_break": "0.0935446451924306989159327334020026078439",
+      "recorded_s_equal": false,
+      "seconds": 458
+    },
+    {
+      "BMAX": 9,
+      "BUMAX": 3,
+      "profiles": 29524,
+      "keys": 24,
+      "equal_through": 12,
+      "breaks_at": 13,
+      "winner_rows_at_break": 9,
+      "cap_saturated_at_break": true,
+      "winner_at_break": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "diff_at_break": "0.0198162676389039602300948111946348416306",
+      "recorded_s_equal": false,
+      "seconds": 9
+    },
+    {
+      "BMAX": 10,
+      "BUMAX": 3,
+      "profiles": 88573,
+      "keys": 27,
+      "equal_through": 14,
+      "breaks_at": 15,
+      "winner_rows_at_break": 10,
+      "cap_saturated_at_break": true,
+      "winner_at_break": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "diff_at_break": "0.0841999049019077445279590676594701095394",
+      "recorded_s_equal": true,
+      "seconds": 29
+    },
+    {
+      "BMAX": 11,
+      "BUMAX": 3,
+      "profiles": 265720,
+      "keys": 30,
+      "equal_through": 17,
+      "breaks_at": 18,
+      "winner_rows_at_break": 11,
+      "cap_saturated_at_break": true,
+      "winner_at_break": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1
+      ],
+      "diff_at_break": "0.0432736153354366196775547179137111586393",
+      "recorded_s_equal": true,
+      "seconds": 83
+    }
+  ],
+  "maximiser_shapes": [
+    {
+      "s": 1,
+      "top": [
+        1
+      ],
+      "bot": [
+        1
+      ],
+      "top_rows": 1,
+      "bot_rows": 1,
+      "is_reverse": true,
+      "equal_value": true
+    },
+    {
+      "s": 2,
+      "top": [
+        2
+      ],
+      "bot": [
+        1,
+        1
+      ],
+      "top_rows": 1,
+      "bot_rows": 2,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 3,
+      "top": [
+        2,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1
+      ],
+      "top_rows": 2,
+      "bot_rows": 3,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 4,
+      "top": [
+        2,
+        1,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "top_rows": 3,
+      "bot_rows": 4,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 5,
+      "top": [
+        3,
+        1,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "top_rows": 3,
+      "bot_rows": 5,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 6,
+      "top": [
+        3,
+        2,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "top_rows": 3,
+      "bot_rows": 5,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 7,
+      "top": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "top_rows": 4,
+      "bot_rows": 6,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 8,
+      "top": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "top_rows": 5,
+      "bot_rows": 7,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 9,
+      "top": [
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "top_rows": 5,
+      "bot_rows": 7,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 10,
+      "top": [
+        4,
+        2,
+        2,
+        1,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "top_rows": 5,
+      "bot_rows": 8,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 11,
+      "top": [
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "top_rows": 5,
+      "bot_rows": 8,
+      "is_reverse": false,
+      "equal_value": true
+    },
+    {
+      "s": 12,
+      "top": [
+        4,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "bot": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "top_rows": 6,
+      "bot_rows": 9,
+      "is_reverse": false,
+      "equal_value": true
+    }
+  ],
+  "refuted_prediction": {
+    "claim": "break point = BMAX + 4, read off the BMAX = 8 and 9 rows",
+    "predicted": {
+      "BMAX_10": 14,
+      "BMAX_11": 15
+    },
+    "measured": {
+      "BMAX_10": 15,
+      "BMAX_11": 18
+    },
+    "status": "REFUTED",
+    "what_survives": "the break is governed by BMAX, saturates it, and recedes as BMAX grows -- but not by a fixed offset, because cap saturation is necessary and not sufficient to lose the maximum (at BMAX = 11 the winner reaches 11 rows at s = 15 and equality survives to s = 17)"
+  },
+  "open_gaps": {
+    "G1_status": "STILL OPEN -- neither closed nor weakened",
+    "why_this_cannot_close_it": "enumerating a larger class bounds Xbot from BELOW; a lower bound can refute Xbot <= Xblock but never prove it",
+    "what_would_close_it": "an upper bound on Xbot of the kind #7349 built for Xblock -- a per-row coercivity bound on the bottom edge's own evaluator, then a supergradient certificate",
+    "how_to_BYPASS_it": "the join needs a certified cut, not a pointwise inequality.  A certified bound on Xbot plus an honest enumeration of the bottom class inside that cut removes G1 from the argument rather than proving it",
+    "headline": "still the upper bound on M_n, which none of this touches"
+  },
+  "checks": [
+    {
+      "name": "G1a the two tables agree EXACTLY, in integers, wherever the bottom class is not capped",
+      "ok": true,
+      "detail": "at BMAX = 11 the tables are equal for every s = 1..17, as exact integers at scale 1e-40 \u2014 no tolerance is involved, the values are identical.  They come from DIFFERENT evaluators (`ap_value` in the k -> infinity AP for the top; `delta_excess` on a finite k = 320 staircase frame with a P extension for the bottom) and from different maximiser shapes, so this is agreement, not a shared code path"
+    },
+    {
+      "name": "G1b every break point is the ROW cap saturating, at every setting tried",
+      "ok": true,
+      "detail": "at each of BMAX=8, BMAX=9, BMAX=10, BMAX=11 the winning bottom profile at the first disagreement uses exactly BMAX rows: 8 -> [1, 1, 2, 2, 2, 2, 1, 1]; 9 -> [1, 1, 1, 2, 2, 2, 2, 1, 1]; 10 -> [1, 1, 1, 2, 2, 2, 2, 2, 1, 1]; 11 -> [1, 1, 1, 2, 2, 2, 2, 3, 2, 1, 1].  The bottom maximisers are FLAT and LONG (entries 1-3) where the top's are STEEP and SHORT, so the bottom class exhausts its row budget first and from there on Xbot understates its own supremum"
+    },
+    {
+      "name": "G1c raising the row cap strictly extends the agreement",
+      "ok": true,
+      "detail": "equal-through runs 11 (BMAX 8) -> 12 (BMAX 9) -> 14 (BMAX 10) -> 17 (BMAX 11).  The committed cap 9 gives 12; 11 gives 17.  BUMAX is not the constraint \u2014 raising it 3 -> 6 while dropping BMAX 9 -> 8 made the agreement SHORTER (11), which is the row cap talking, not the entry cap"
+    },
+    {
+      "name": "G1d the recorded s = 13 violation is an artifact and disappears when the cap is lifted",
+      "ok": true,
+      "detail": "at the committed BMAX = 9 the figure reproduces (that part of the record is correct), and at BMAX >= 10 the two tables are EXACTLY EQUAL at s = 13.  So the 0.01982 is the bottom enumeration running out of rows, not the bottom edge being worth less.  It is quoted as a data point in G1's favour in #7335's E7, in three witness descriptions, in two probe headers, in bean qou-hok7 and in #7349's body; it is WITHDRAWN as evidence in either direction"
+    },
+    {
+      "name": "G1e equal values, unrelated shapes \u2014 the agreement is not a symmetry of the profile",
+      "ok": true,
+      "detail": "11 of 12 maximiser pairs are not reverses of one another, and all 12 are worth exactly the same.  At s = 8 the top winner is [3, 2, 1, 1, 1] (5 rows) and the bottom winner is [1, 1, 1, 1, 2, 1, 1] (7 rows).  Whatever makes Xbot = Xblock, it is not 'read the block backwards' \u2014 which is why the row caps are not interchangeable and why nobody noticed the bottom class was the smaller one"
+    }
+  ],
+  "verdict": "The single observation the corpus records in G1's favour is an artifact of the bottom edge's row cap, and it vanishes when the cap is lifted.  G1 itself is untouched -- still open, still the only conditionality on e_inf -- but its evidence base is now honest: exact agreement through s = 17 across two evaluators and two unrelated maximiser shapes, and nothing at all pointing the other way."
+}
