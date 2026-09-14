@@ -297,3 +297,38 @@ and a rebuilt `pyhecke_native`. Every witness regenerated after that carries
 the new provenance. All four probes above produced byte-identical values
 across the change, so it is benign so far, but it is a corpus-wide provenance
 shift that did not come from any commit.
+
+## 10 -> 9: `qbeta_level_k_binding_operator_probe` switched, and it surfaced a RED
+
+First site where switching to the canonical ordering was the right call rather
+than a deferral, and the first time this drain's falsification criterion fired:
+I said I would report it if a site turned out safe to switch, and this one is.
+
+`chain_word` built the grouped word by hand while its docstring called it
+"`atom_braid_word_3A`'s own chain". Meanwhile `binding_block` in the SAME FILE
+calls that production builder directly — so one probe measured A = 2
+canonically and A = 3 in the superseded frame. Measured before switching:
+
+    grouped    ord_spread = 22.54043935 %   ppn row = 0.2488, -6.581, -28.75
+    borromean  ord_spread = 22.69262522 %   ppn row = 0.2488, -3.624, -2.978
+
+Per-block characters move by up to an order of magnitude; the SPREAD — the
+thing the function exists to measure — does not. Downstream assertion is a
+threshold (`> 0.1`), satisfied either way. Switched to `nucleon_word_letters`'
+DEFAULT rather than a named frame, so a future ruling reaches it by changing
+one default. Module docstring literal 22.54 % -> 22.69 %.
+
+**And the file is red on main, from the ordering ruling, unnoticed since
+2026-09-05** — `qou-g5oz`. Both its headline assertions fail today on a clean
+tree while its witness (2026-09-03, two days pre-ruling) still records
+`allPassed: true`. Under canonical the largest binding character falls -9.598
+-> 2.458 (under its own `> 5` bar) and the two small eigenphases do not exist
+at all. Third frame-conditional result in this drain, after `qou-u8ji` and
+`qou-y1w0`, and the first already RED rather than quietly wrong.
+
+**Remaining 9:** `atom_orbit_reduction:92`, `binding_canonical:381`,
+`binding_multibond_wenzl:71` (escalated), `chi_4he_binding_lossless:83`,
+`fitted_ideal_low_isotope_calibration:172` (module PAUSED),
+`probes/b_pred_mirror_slope_closed_form:90` (escalated),
+`qbeta_delta_bar_parity_probe:184`,
+`qbeta_delta_element_fork_pricing_probe:181`, `rho_k_h3a_gg_trajectory:127`.
