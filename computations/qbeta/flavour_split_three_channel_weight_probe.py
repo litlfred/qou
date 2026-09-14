@@ -167,6 +167,30 @@ def main() -> int:
     print("      correct is a modelling question and is OPEN.")
 
     print()
+    print("6. THE `/3` AND THE k=3 / k=2 GAP ARE ONE DEFECT")
+    K3 = _q**3 - _q**-3
+    cen = sp.simplify(3 * H + H**3 - K3)
+    ok &= cen == 0
+    print(f"   sigma^3 - sigma^-3 = 3h + h^3 - (q^3-q^-3) = {cen}   central scalar")
+    print("   A central element needs NO measure: the weights sum to 1, so the")
+    print("   channel average returns it unchanged (Lean: central_value_unweighted).")
+    print("   So the narrative object, read as its OWN centrality argument dictates,")
+    print("   carries no 1/3 at all.  Four cells, against the measured split:")
+    cells = (("k=3, no measure (centrality dictates)", HBAR**2 * K3),
+             ("k=3, with a 1/3 anyway", HBAR**2 * K3 / 3),
+             ("k=2, classical 1/3 (the corpus)", X_BASELINE),
+             ("k=2, deformed weight(q)", HBAR**2 * WEIGHT_RATIO * R))
+    for lbl, e in cells:
+        v = at(e)
+        print(f"      {lbl:38s} = {mp.nstr(v, 12):>16s}  rel {mp.nstr((v-tgt)/tgt, 6):>12s}")
+    print("   -> the two halves are different KINDS of object, not two numbers for")
+    print("      one object: a central scalar (no measure) vs an algebra element")
+    print("      (needs one).  The 1/3 is the FINGERPRINT of the switch -- it can")
+    print("      only appear on the side that needs a measure.  Scope (a): a")
+    print("      measured negative about what the block's own argument yields, with")
+    print("      no invariant excluding a k=3 route that normalises some other way.")
+
+    print()
     print("VERDICT:", "PASS -- the 1/3 is the q=1 value of the corpus's own "
           "three-channel weight, which is the Plancherel measure of H_3; the "
           "classical-vs-deformed choice is identified and left open"
