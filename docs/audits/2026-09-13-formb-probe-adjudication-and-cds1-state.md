@@ -3,8 +3,12 @@
 **Date:** 2026-09-14 · **Beans:** `qou-cds1` (S1), `qou-pdix` (the S1 blocker)
 · **Branch:** `claude/cds1-formb-adjudication-2026-09-13` · **PR:** #7276
 · **Scope: (a) throughout.** No `c_k` value is proposed, no route is wired, no
-bean is closed. Two corpus corrections are recorded in §6, one of them to a
-claim of my own made earlier in this same session.
+bean is closed. **Three corrections are recorded, two of them to claims of my
+own made earlier in this same session** — §5.3a (a cross-check that is
+retired-base-only) and §6.2 (a robustness reading that was backwards) — plus
+§6.1 (a misattributed block in bean `qou-cds1`). §5.1 reports the `qou-cds1`
+blocker as two sibling PRs establish it rather than as AGENTS.md states it,
+with their arithmetic re-verified here.
 
 ## Scope
 
@@ -329,34 +333,100 @@ artifact is not landable as-is.
 
 ## 5. `qou-cds1` — state of play
 
-**Status `in-progress`.** AGENTS.md's claim that it is blocked on the phase
-`qou-pdix` is **verified**, from both ends.
+**Status `in-progress`.** The blocker must be reported as two sibling PRs
+establish it, **not** as AGENTS.md states it. AGENTS.md's "blocked on the phase
+`qou-pdix`" is correct only for the **retired** `z = 1` cell and did not survive
+the 2026-09-08 base ruling.
 
-### 5.1 The base is settled; the blocker is the phase
+### 5.1 🛑 The phase is NOT the blocker on the ruled base
 
-Bean `qou-cds1`, latest substantive entry (line 8065, 2026-09-08):
+Two open PRs reach this independently, from opposite directions, and both landed
+within hours of this audit:
 
-> **BASE SETTLED by owner ruling (qou-99qc): ε := tr_M at z_D.** The D-frame
-> ladder is to be re-derived on the z_D base (0.4447004 MeV, −43.157 %).
-> Structural c₂ = −1 remains the self-consistency check; **the blocker is still
-> the N=1 phase (qou-pdix)**. No z-swap of the C ladder
-> (`decayLadder_zC_threeRow_ne_zero`).
+- **#7355** (`claude/cds1-ladder-bounded-by-cos-2026-09-14`, head `4e4afc649e`,
+  open, non-draft) — `QOU/QBeta/LadderFactorBound.lean`, 4 lemmas, plus a 7/7
+  probe.
+- **#7262** (`claude/gifted-feynman-fhjzwv`, head `748592a886`, draft) —
+  `QOU/QBeta/EigenphaseQuantization.lean`, 5 declarations, 19/19 probe, reaching
+  it via a base-independent table.
 
-And from `qou-pdix`'s own body: *"Parent: qou-cds1 (tranche S1). **This is the
-S1 blocker.**"*
+**The argument.** The ladder's correction factor is
+`F(α) = cos(α − u/2)·(1 − u²)·Π(1 + c_k u^k)` and what it must supply is
+`F_required = Q_codata / Q_base`. Since `cos ≤ 1`,
+
+```
+F_N2(α) = cos(α − u/2)·(1 − u²)  ≤  1 − u²  =  0.99992745…
+```
+
+for **every real α** — the supremum is at `α = u/2` and is still below 1. Every
+cell the 2026-09-08 ruling admits sits *below* CODATA, so each needs a factor
+*above* 1.
+
+**Verified here independently rather than taken on trust.** All four
+`F_required` values recomputed from `Q_codata / Q_base` at 70 dps:
+
+| base | `Q_base` (MeV) | `F_required` | #7355 quotes | excluded by the cap? |
+|---|---|---|---|---|
+| `z = 1` (Form A) — **RETIRED** | 0.783645827375 | 0.998325241673 | 0.998325241673 ✓ | no |
+| `z_D`, order-zero `E₀` — **RULED** | 0.444700408522 | **1.75923699418** | 1.75923699418 ✓ | **yes** |
+| `z = q` (augmentation) | 0.87989056126 | 0.889125812282 | 0.889125812282 ✓ | no |
+| dashboard scored cell — **RULED** | 0.65185631006 | **1.20016236389** | 1.20016236389 ✓ | **yes** |
+
+and the cap itself: inverting `1 − u² = 0.99992745` gives `u = 0.008517628778`,
+against AGENTS.md's `u ≈ 0.00852` — consistent. **The two cells a cosine can
+reach are exactly the two the ruling does not select** (#7262's phrasing, and it
+is the sharpest statement of the finding).
+
+`LadderFactorBound.lean` is **genuinely sorry-free** — its two `grep` hits for
+`sorry` are the strings "sorry-free" and "no `sorry`" in the docstring; the four
+theorems discharge by `nlinarith` off `Real.cos_le_one` / `Real.neg_one_le_cos`
+and by explicit `mul_le_mul_of_nonneg_*` steps. The statements are non-vacuous
+(real hypotheses, falsifiable inequality conclusions). Scope-**(b)** is
+justified *for the exclusion given `F_required > 1`*, with the invariant cited;
+the `F_required > 1` input is scope-(a) numerics, and #7355's body says so.
+
+**Pushing the shortfall into the rungs is excluded too.** It needs
+`c₂ ≈ 1.047e4` (`z_D`) or `2.760e3` (dashboard cell) against the structural
+`c₂ = −1` — four orders and the wrong sign — and every recorded `c_k` is
+negative, so each further rung multiplies `F` by something below 1 and shrinks
+it monotonically.
+
+**So the live open question is not "what is α" but "what object supplies a
+factor above 1 at all" — a question about the base or the assembly, not the
+phase.**
+
+### 5.1a `qou-pdix` is NOT retired by this
+
+It stays open on its own terms: α is still the ladder's N=1 phase, and it is
+still underived. #7355 says only that α is not what stands between the ladder
+and the ruled base. Per AGENTS.md §13a it must not be closed. Its own body
+("**This is the S1 blocker**") and `qou-cds1` line 8065 ("the blocker is still
+the N=1 phase") are the statements now superseded — **and neither bean has been
+updated**: `qou-cds1`'s latest entry is 2026-09-08 and `qou-pdix`'s is
+2026-09-12, both predating the two PRs, which are unmerged. So this conclusion
+currently lives **only in #7355 and #7262**, in neither bean and not in
+AGENTS.md. A reader checking the beans alone will still find the old framing.
+
+### 5.2 What `qou-pdix` needs (unchanged, and now off the L2 critical path)
+
+Bean `qou-cds1` line 8065 (2026-09-08) records the base: **owner ruling
+`qou-99qc`, ε := tr_M at z_D**, with "no z-swap of the C ladder"
+(`decayLadder_zC_threeRow_ne_zero`).
 
 Bean statuses as measured: `qou-cds1` in-progress, `qou-pdix` in-progress,
 `qou-99qc` todo, `qou-iagg` todo, `qou-06wh` in-progress, `qou-ughq` todo,
 `qou-54g5` todo.
 
-*(Aside, not this audit's subject: the `0.4447004 MeV / −43.157 %` figure in
-that entry is the 2026-09-08 order-zero-`E₀` cell and has since been superseded
-twice — tower-summed `E₀`, then the `nuc11_interleaved` element. AGENTS.md
-carries the correction; quote the dashboard witness, not either text.)*
+*(The `0.4447004 MeV / −43.157 %` figure in that entry is the 2026-09-08
+order-zero-`E₀` cell and has since been superseded twice — tower-summed `E₀`,
+then the `nuc11_interleaved` element. #7262 carries a self-correction for
+exactly this, having hardcoded that cell after it had already moved: the live
+required factor is **1.2002, not 1.7592 — wrong by 1.47×** — with the
+conclusion unaffected since both exceed 1. Quote the dashboard witness, not
+either text.)*
 
-### 5.2 What `qou-pdix` needs
-
-**A derivation of the eigenphase α.** The `c_k` *tail* is settled — `tail_common`
+**A derivation of the eigenphase α is still what `qou-pdix` needs** — it is
+simply no longer on the L2 critical path for `Q_β`. The `c_k` *tail* is settled — `tail_common`
 proves `z` reaches the ladder only through the N=1 phase, so `c₂`…`c₅` are
 phase-blind. There is nothing to port from convention C, because the C carrier
 is **proved vacuous**: `QOU.Interactions.TransferMatrixEigenphase` is documented
@@ -413,14 +483,22 @@ Three independent reasons, any one sufficient:
    the disposition "not being landed" already taken (§2).
 2. **It attacks a class the bean already prunes.** The hull argument *is* the
    bean's own 2026-08-29 exclusion.
-3. **It cannot reach the blocker, by construction.** The blocker is the
-   eigenphase α, and the probe's entire premise is to *route around* the
-   phase — "at the Wedderburn decomposition instead of through the phase
-   alpha". The class it routes to is the one the hull excludes. So a *sound*
-   result here removes a route; it supplies no α.
+3. **It cannot reach the blocker — and per §5.1 that is now true twice over.**
+   The probe's premise is to route *around* the phase ("at the Wedderburn
+   decomposition instead of through the phase alpha"), and the class it routes
+   to is the one the hull excludes. Worse for it, the phase it routes around is
+   no longer the blocker anyway: the live question is what supplies a factor
+   above 1, and the probe's class is bounded *away* from the target on every
+   base (§5.3a). So a sound result here removes a route; it supplies neither an
+   α nor a factor above 1.
 
-There is a genuine cross-check worth keeping, and it is a consistency note
-rather than progress. Restating the hull as a correction factor `F = Q/Q_A`:
+### 5.3a 🛑 A cross-check I drafted here, and its scope — RETIRED-BASE-ONLY
+
+I first wrote the following as a consistency note. It is arithmetically right
+and **its framing is retired-base-only**; recorded with the correction because
+the trap is live and #7355 names it.
+
+Restating the hull as a correction factor `F = Q/Q_A`:
 
 ```
 F_required            = 0.99832524167325    (< 1)
@@ -428,12 +506,76 @@ F at hull lower edge  = 1.004261219055      (>= 1)
 F at hull upper edge  = 1.1047050540249
 ```
 
-The required factor is **below 1** and the whole block-resolved class sits
-**above 1** — structurally the same obstruction as
-`HolonomySpectrumSignObstruction.lean`'s `cosh a ≥ 1 > 0.998399`, reached
-through convexity instead of through a real spectrum. Two different arguments
-landing on "the correction has to be sub-unit and this class is not" is a useful
-corroboration of both.
+— and I read that as *"the required factor is below 1 while the whole
+block-resolved class sits above 1, structurally the same obstruction as
+`HolonomySpectrumSignObstruction.lean`'s `cosh a ≥ 1 > 0.998399`."*
+
+**The `Q_A` in that ratio is the retired `z = 1` cell.** The #6233 probe's
+`q_a(q) = m_e·|q²−2q−1|(q+1)/(2q³)` evaluates to `0.783645827374621` MeV, which
+is #7355's `z = 1 (Form A) — RETIRED` base to 1e-11. So `F_required = 0.9983`
+is the retired-cell number, and `0.998399` — the value the `cosh` obstruction is
+stated against — is the same cell's. **On a ruled base the sub-unit/super-unit
+framing dissolves**, because `F_required` is then itself above 1:
+
+| base | `F_required` | hull as `F` | target below hull? |
+|---|---|---|---|
+| `z = 1` — RETIRED | 0.9983252417 | [1.0042612, 1.1047051] | yes |
+| `z_D`, order-zero `E₀` — RULED | **1.759236994** | [1.7696973, 1.9466982] | yes |
+| `z = q` (augmentation) | 0.8891258123 | [0.8944125, 0.98386952] | yes |
+| dashboard cell — RULED | **1.200162364** | [1.2072985, 1.3280496] | yes |
+
+**What survives and what does not.** The **hull exclusion survives on every
+base**, and trivially so — the hull and `Q_codata` are both fixed MeV
+quantities, so dividing both by any positive `Q_base` cannot reorder them. The
+exclusion is a statement in MeV and is base-invariant. What does **not** survive
+is my *analogy*: on the ruled cells both the requirement and the class sit above
+1, so "the correction must be sub-unit and this class is not" is not the
+obstruction there, and the comparison to `cosh a ≥ 1 > 0.998399` is unavailable.
+
+**This is a variant of the coordinate trap #7355 documents**, and worth stating
+precisely because I did not fall into the version it warns about. #7355's trap is
+that `qbeta_ck_coordinate_magnifier_probe.py` reports the relative deviation of
+**`1 − F`**, which on a ruled base compares a negative with a positive and
+returns a meaningless `−100.21 %`. I used **`F`** — the coordinate #7355 says is
+the one that survives the base change — and still erred, by treating *`F`'s
+relation to 1* as carrying the physics. `F` survives; `sign(F − 1)` does not.
+That makes **four** coordinates in this arc with different base-sensitivity:
+`c_k`, `1 − F`, `sign(F − 1)`, and `F` itself.
+
+### 5.3b One connection neither sibling PR makes
+
+PR #7334 (`qou-qqm4`, open, non-draft) prices an augmentation-vs-`z_D` fork on
+the flavour split by the ratio `α = (q⁴+1)/(q²+1)²`, `α(q₀) = 0.505404`, and
+notes it is "literally the same rational function" as AGENTS.md's 2026-09-08
+`Q_β` ruling proportionality.
+
+**That `α` is identically the #6233 probe's convention-D weight on the trivial
+block.** Verified symbolically and numerically:
+
+```
+#7334 fork ratio alpha         = (q**4 + 1)/(q**2 + 1)**2
+#6233 D weight y_(3)           = (q**4 + 1)/(q**2 + 1)**2
+identical as functions?          True
+
+alpha(q0)                      = 0.5054042265039308031875587
+probe y_(3) from the live helper= 0.5054042265039308031875587
+|difference|                     = 0.0
+```
+
+and since `f^{(3)} = 1`, the probe's `p_{(3)}` is the same number — its witness
+records `D_p_lambda["(3,)"] = 0.505404226503930803187558703240…`.
+
+**Stated precisely, because the obvious reading is wrong:** `α` is *not*
+`z_D/z_q`, which is `q²/(q²+1)` and is a different function. `α` is the ratio of
+the **reversal traces** `tr_z(σ² − σ⁻²) = 2hz − h²` at the two admissible
+parameters, and *that* equals `(q⁴+1)/(q²+1)²` exactly. I checked both forms.
+
+So the Markov-parameter fork #7334 prices and the Wedderburn weight the #6233
+probe puts on the symmetric block are one rational function. Unsurprising in
+hindsight — both descend from the same convention-D weight system — but neither
+PR says it, and it means a decision on `qou-99qc`'s fork moves that weight too.
+**Recorded as a connection, not a result:** it derives nothing and selects
+nothing.
 
 ---
 
@@ -470,7 +612,7 @@ the distinction in play: the cap removes `(1,1,1)`, which is the block setting
 C's *upper* edge, which is why the two hulls differ at the top and agree at the
 bottom.
 
-### 6.2 A claim of my own, made earlier in this session, that was wrong
+### 6.2 A second claim of my own that was wrong (see also §5.3a)
 
 On first reading the probe's sweep line —
 
@@ -528,13 +670,21 @@ novel.
 | 3 | `computations/` | **HITS.** `qbeta_phase_block_resolution_probe.py` (18/18), `qbeta_alpha_commutator_floor_probe.py` (22/22), `qbeta_d_frame_tl_quotient_phase_probe.py`, `qbeta_class_b_nonsigndefinite_bond_probe.py`, `qbeta_ladder_alpha_provenance_probe.py` (5/5) |
 | 4 | `docs/coordination/` | hits, none on point: `1ppb.md`, `option-e.md`, `convention-slip-registry.json` |
 | 5 | `library/` — INDEX.md, `summary.json`, `sections/`, **`ocr/`** | **HITS, none used above.** `arxiv-math-9806163v1` *Weights of Markov traces on Hecke algebras*, `arxiv-0911.4494v2` *The geometry of Markov traces*, `arxiv-1403.4021v2` (BMW), `arxiv-2507.19896v1` (Jucys–Murphy). All four tiers walked, `ocr/` included (empty for this topic). These are the *weights* literature — relevant to `qou-pdix`'s surviving non-scalar-normalisation route, cited here as available rather than used. |
-| 6 | `.beans/` | **DECISIVE.** `qou-cds1` lines 2425–2510 carry the probe's whole result and its non-landing decision (§2, §4.1). Also `qou-pdix`, `qou-ughq` (todo — `H_2` block-resolve fallback), `qou-06wh`, `qou-54g5`, `qou-99qc`, `qou-iagg`. |
+| 6 | `.beans/` | **DECISIVE.** `qou-cds1` lines 2425–2510 carry the probe's whole result and its non-landing decision (§2, §4.1). Also `qou-pdix`, `qou-ughq` (todo — `H_2` block-resolve fallback), `qou-06wh`, `qou-54g5`, `qou-99qc`, `qou-iagg`. **Neither `qou-cds1` nor `qou-pdix` yet carries §5.1's conclusion** — their latest entries are 2026-09-08 and 2026-09-12, both predating #7355/#7262. |
+| **7** | **open sibling PRs** — *not a checklist path; added because paths 1–6 cannot see unmerged work* | **DECISIVE for §5.1.** #7355 and #7262 both establish that α is not the blocker on the ruled base, independently. #7334 supplies the `α = (q⁴+1)/(q²+1)²` fork that §5.3b connects to the probe's `y_{(3)}`. This is the gap that let AGENTS.md's framing look current: a conclusion reached in an open PR is invisible to every grep path until it merges. |
 
 **Nothing is declared open in this document that was not already open in the
-corpus.** The two open items named — `qou-cds1` and its blocker `qou-pdix` — are
-open per their own `in-progress` beans, and no bean is closed or re-statused
-here. Per AGENTS.md §13a, `qou-pdix`'s subject is an open derivation and must
-not be closed while it stands.
+corpus.** The two open items named — `qou-cds1` and `qou-pdix` — are open per
+their own `in-progress` beans, and no bean is closed or re-statused here. Per
+AGENTS.md §13a, `qou-pdix`'s subject is an open derivation and must not be
+closed while it stands; §5.1a says explicitly that #7355 does not retire it.
+
+**Sibling overlap.** PR #7274 (colimit bridge, out of draft, mergeable) touches
+neither `computations/` nor the `c_k` arc — no overlap with this branch. #7355,
+#7262 and #7334 are cited above, not duplicated: this document verifies their
+arithmetic and adds the §5.3b connection, per AGENTS.md's measured-research-
+overlap rule ("when one route lands a result, the other re-scopes to verify /
+extend rather than re-derive, and cites it").
 
 ---
 
@@ -560,6 +710,18 @@ owning agent recorded deliberately, on an arc this session does not hold.
 
 The two probe files were staged into this worktree only to be executed, and
 have been left untracked and uncommitted.
+
+**On the `qou-cds1` half — one thing is worth an owner's attention and it is not
+a decision this document should take.** §5.1's conclusion (α is not the blocker
+on the ruled base) is established, twice, with sorry-free Lean — and it lives
+**only in two unmerged PRs**. AGENTS.md's precision-goals section and both beans
+still carry the superseded framing, so an agent following the documented route
+today is sent to derive α as the `Q_β` L2 blocker, which §5.1 shows is off the
+critical path. **The cheapest fix is landing #7355** (non-draft, `mergeable_state:
+clean`, agent-side verification stated) and appending its conclusion to
+`qou-cds1` and `qou-pdix`; that is the owning agents' call under §ASK THE OWNER,
+and this document deliberately does not edit those beans or AGENTS.md. Recorded
+here so the staleness is visible rather than inferred.
 
 ## Scope
 
