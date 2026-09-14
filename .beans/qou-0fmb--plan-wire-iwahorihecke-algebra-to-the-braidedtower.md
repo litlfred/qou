@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-09-14T06:46:52Z
+updated_at: 2026-09-14T07:08:16Z
 ---
 
 Parent epic: qou-08a2. Records the 2026-09-12 finding that the growing+h!=0 BraidedTower instance (qou-301d's remaining gap) is a WIRING job, not a from-scratch build -- the two halves already exist and are unconnected.
@@ -270,3 +270,61 @@ word; and the `IwahoriHecke/` wiring this bean is titled for.
 
 **Staying `todo`** — the titled subject is not done, and per AGENTS.md §13a a
 bean whose subject is open is not closed by recording progress on it.
+
+
+--------
+
+**2026-09-14 — CORRECTION to my own figure above: the "99 of 102 stale" was measured with a criterion this repo records as UNSOUND. The sound number is 102 of 102, and the verification is unaffected.**
+
+**What I asserted.** The DONE entry above, PR #7274's body, and a coordination
+comment on that PR all say *"99 of the 102 modules in this PR's import cone are
+stale"*.
+
+**How it was measured, and why that was wrong.** I compared each olean's
+**mtime** against its own source's last commit
+(`git log -1 --format=%ct <src>` vs `os.path.getmtime(<olean>)`).
+`.claude/agent-memory/lean-verifier/MEMORY.md` already records that exact
+criterion as **UNSOUND**, with the mechanism: a restored tarball gives oleans
+the *extraction* time, so an olean built from an old source looks fresh. It
+therefore **under**-reports staleness. The sound criterion in the same entry is
+the **seed commit** — dirty = source changed since the cache's seed, or olean
+missing, or an import dirty.
+
+**Re-measured with the sound criterion.** Seed `bbb4127145` (2026-08-23 17:00Z,
+the last `main` commit before the oldest QOU olean in this container):
+**102 of 102 dirty**, with **99 root causes** (source changed since seed) and
+the remaining 3 dirty because they are new on this branch. So the mtime
+criterion was short by exactly 3 — and the 3 it called "fresh" were oleans I
+had built myself minutes earlier.
+
+**The verification does not depend on this at all, and is if anything better
+than I claimed.** I rebuilt **all 102** from source rather than a computed
+subset, which is exactly what the sound criterion demands. The criterion only
+chose *which* to rebuild, and I chose all of them. `lean`-direct exit 0 on all
+three files against that rebuilt cone, `#print axioms` clean, 0 RED across the
+102 — unchanged.
+
+**Also measured, and not previously recorded anywhere: the oldest-olean
+heuristic is a LOWER BOUND on the seed, and on a reseeded cache it can be far
+too old.** `tar` preserves the archive's mtimes, which are *build* times, and a
+reseed from an incremental `lake build` rewrites only what was dirty — so one
+tarball holds oleans built across weeks. In this tree the oldest **QOU** olean
+is 2026-08-23 and the oldest **mathlib** olean is 2026-09-06, a **14-day
+spread** inside a cache whose branch describes it as a single 2026-09-06 seed.
+Too-old a seed **over**-reports staleness, which is the safe direction; the
+mtime criterion under-reports, which is not. Recorded in the `lean-verifier`
+memory's dirty-closure entry, whose own seed baseline was stale
+(`19e299946a` / 2026-08-16) and is now re-measured per container.
+
+**Contamination check, since a wrong figure in this corpus has repeatedly
+survived in five other places after being fixed in one.** The figure appears
+in exactly three artifacts, all mine and all from this session: this bean,
+PR #7274's body, and one comment on #7274. All three are corrected. It reached
+no audit doc, no content block and no witness.
+
+**Separate finding, NOT acted on: `lean-verifier/MEMORY.md` is 734 lines
+against the 200-line cap AGENTS.md states for it** (the cap exists to bound
+what an agent must read; the file is 3.7x over). Restructuring it is a change
+I have not made — per §ASK THE OWNER it is neither a precision fix nor
+corpus-derived, and splitting a memory file another agent owns is exactly the
+kind of tidying that rule gates. Flagging it rather than doing it.
