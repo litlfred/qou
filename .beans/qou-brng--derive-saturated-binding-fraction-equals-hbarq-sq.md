@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-14T16:04:45Z
+updated_at: 2026-09-14T16:29:23Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -3098,3 +3098,56 @@ like-species bonds"* is untouched and is still this bean's real target.
 
 Probe: `computations/probes/pn_averaging_weight_is_derived_probe.py`, all
 assertions pass, 70 dps, proton pin, convention D, no float64.
+
+
+
+## 2026-09-14 — class B: multiplicity BREAKS affineness, and still cannot make pn extremal
+
+The affineness half of class B's remaining escape. **The escape is real. It does
+not deliver.**
+
+**The escape exists.** Affineness is an `m = 1` fact. `tr(σ_g + d·I) = z + d` is
+affine, but `(σ_g + d·I)^m` has trace of **degree `m`** in `d` — already
+`(d²+1) + (2d+h)z` at `m = 2`, verified symbolically. Measured, **betweenness
+itself fails from `m = 12`.** So `pn_betweenness_blocks_signMixed`'s hypothesis is
+genuinely breakable, which is what the 2026-09-12 entry said class B needs.
+
+**It breaks the wrong way.** Diagonalising, `σ_g` has Hecke eigenvalues `q` and
+`−q⁻¹`, so `F_m(d) = w₊(d+q)^m + w₋(d−q⁻¹)^m` with `w₊+w₋ = 1`, and
+`F_m′ = m·F_{m−1}` — monotonicity in `d`, hence betweenness, survives exactly
+while `F_{m−1} > 0`. That stops at `m = 7` (`F_7(d_nn) < 0`). But the `b₃ > 0`
+pattern needs `μ_pn` to be the strict **MAXIMUM**, and it is at **no `m` in
+1..200**; betweenness breaks by pn becoming the strict **minimum**.
+
+**Why — the invariant.** The pn letter sits at the spectral **balance point**. At
+`d = −h/2` exactly, `(d+q) + (d−q⁻¹) = 0`: the two eigenvalue magnitudes coincide
+at `[2]_q/2`. The corpus's `bring_color_weighted` letter is displaced from it by
+exactly `h·δ/4 = 7.190163e-05` — the number `pyhecke/constants.py` records in its
+own convention note. So
+
+| letter | `d` | spectral radius |
+|---|---|---|
+| pp | `0` | `q` |
+| nn | `−h` | `q` |
+| pn | `≈ −h/2` | `≈ [2]_q/2` |
+
+and **AM-GM** gives `q > [2]_q/2 > 1` for every `q > 1`. Measured growth rates at
+`m = 200`: **1.10840** (pp), **1.00549** (pn), **1.10225** (nn), against
+`q = 1.10998` and `[2]_q/2 = 1.00545`.
+
+The gap is closed-form: `q/([2]_q/2) = 2q²/(q²+1) = 1 + tanh(ln q)` — exactly
+**`1 + δ_CP`**, the crossing discriminant `qou-hjs8` proved θ-free and
+`QOU.Braiding.em_strong_ratio_tanh` already carries.
+
+**Lean** `QOU/MassTheory/PnBalancePointSpectralGap.lean`, 7 declarations,
+sorry-free, `lean`-direct exit 0, `#print axioms` = propext / Classical.choice /
+Quot.sound only.
+
+**Scope (b)** asymptotically; invariant = AM-GM on the two Hecke eigenvalues,
+which mentions no numerical value. Small-`m` is **measured** (1..200), not proved.
+
+**NOT excluded:** a derived pn letter **not** at the balance point. That is now
+the whole of class B's remaining room, and it is far narrower than "break
+affineness" — the displacement from balance is `7.19e-05`, and it would have to
+move `ρ_pn` above `q`. **Untouched: MAGNITUDE** (this bean's real target), class D,
+and the extensive term. **Bean stays OPEN.**
