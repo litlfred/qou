@@ -307,6 +307,30 @@ def main() -> int:
         f"review independently of this number.",
     )
 
+    # ---- 8. a FOURTH coordinate, found by a sibling using the "safe" one ---
+    sgn_rows = []
+    for nm, bs, note in BASES:
+        Fr = q_cod / bs
+        sgn_rows.append({"base": nm, "F_required": fmt(Fr),
+                         "sign_F_minus_1": "+" if Fr > 1 else "-"})
+    signs = {r["sign_F_minus_1"] for r in sgn_rows}
+    check(
+        "sign_F_minus_one_is_a_FOURTH_coordinate_and_does_NOT_survive",
+        len(signs) == 2,
+        "The trap above says to report F directly, and F does survive the base "
+        "change -- but sign(F - 1) does NOT, and a reader who switched to F "
+        "can still be caught by it. Measured, the sign is '-' on the retired "
+        "z = 1 and augmentation cells and '+' on both ruled cells, so any "
+        "argument whose content is 'the requirement is BELOW 1' is "
+        "retired-base-only even when stated in F. #7276 hit exactly this from "
+        "another arc: it avoided the (1 - F) trap, used F, and still drafted a "
+        "cross-check reading 'the required factor is below 1 ... structurally "
+        "the same obstruction as cosh a >= 1 > 0.998399' -- where 0.998399 is "
+        "the z = 1 cell's own number. So this arc has FOUR coordinates with "
+        "different base-sensitivity (c_k, 1 - F, sign(F - 1), F), and only F "
+        "survives. Credit: sibling PR #7276.",
+    )
+
     allp = all(r["passed"] for r in RESULTS)
     print(f"  {sum(r['passed'] for r in RESULTS)}/{len(RESULTS)} checks passed")
 
@@ -350,10 +374,15 @@ def main() -> int:
             "cos <= 1 (Real.cos_le_one, Mathlib; already used by "
             "QOU.QBeta.EigenphaseCarrier.replacement_excludes_some_matrix)"
         ),
+        "sign_F_minus_one_by_base": sgn_rows,
         "coordinate_warning": (
             "qou-cds1's table reports relative deviation of (1 - F), not of F. "
             "Once F_required > 1 that ratio compares opposite-signed quantities "
-            "and is meaningless; report F directly on a ruled base."
+            "and is meaningless; report F directly on a ruled base. AND NOTE "
+            "sign(F - 1) is a FOURTH coordinate that does not survive either: "
+            "an argument whose content is 'the requirement is below 1' is "
+            "retired-base-only even when stated in F. Four coordinates, only F "
+            "survives (credit: sibling PR #7276, which hit this using F)."
         ),
         "scope": (
             "(b) for the exclusion, citing a proved invariant; (a) for every "
