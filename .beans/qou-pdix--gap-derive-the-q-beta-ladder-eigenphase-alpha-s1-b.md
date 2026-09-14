@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T17:59:52Z
+updated_at: 2026-09-14T20:32:51Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -3156,3 +3156,31 @@ Verified and **merged** in
 Previous entry here was 2026-09-12 and predates this. AGENTS.md's two
 "blocked on the phase `qou-pdix`" sites are scoped in the same PR as this
 append.
+
+
+## 2026-09-14 (session gifted-feynman, 3) — a stale figure in this arc's own probe, and the sign-free bound
+
+**Stale figure, fixed at the producer.**
+`qbeta_eigenphase_rationality_quantization_probe.py:117` read *"the `c₃` that
+would be required instead is `1.23e6`"* while **its own witness** carries
+`c3_required_on_live_cell = 324098.735988813964`. Both are right for their own
+cell — `(F−1)/u³` is 1.23e6 on the **superseded** `z_D` order-zero cell
+(`F = 1.7592`) and 324098.7 on the **LIVE SCORED** one (`nuc11_interleaved`,
+tower `E₀`, `F = 1.20016`) — so it is a cell-attribution error, not arithmetic.
+
+What makes it worth recording: that same file carries a
+`stale_figure_corrected` witness field **one screen below the bad line**,
+documenting this exact failure class for this exact quantity. The code was
+corrected and the prose was not moved with it. Fixed to name the cell beside
+the number and to point readers at the witness field rather than the docstring.
+Found by the corpus-grep checklist, not by me.
+
+**The phase stays open and its priority is unchanged** — α is still the
+ladder's N=1 phase and still underived. What is new is that the *reason* it is
+off the L2 critical path no longer leans on the signs of the `c_k`:
+`QOU.QBeta.LadderUniformBound` (sorry-free, 7 declarations) proves the
+exclusion from **uniform boundedness** instead, so it survives the `qou-cds1`
+re-derivation that would void `LadderFactorBound.ladder_lt_of_rungs` with a
+single positive rung. `C_min = 2279.46` against a corpus whose largest live
+`|c_k|` is 2.0693 — a factor of 1101.5, and still 177.1 against the largest
+coefficient the corpus has ever held. Full record on `qou-cds1`.
