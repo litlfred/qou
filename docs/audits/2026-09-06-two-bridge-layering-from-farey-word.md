@@ -741,6 +741,48 @@ different object from the index — the two are related only through GGM (19), w
 route to the `ζ`-graded entry is therefore to build the `ε`-expansion at the collision in the `u`-deformed
 setting, or to reach the Stokes data by an operator route that does not need blocks at all (sibling #7333).
 
+## 3o. The Z/2 behind the degeneracy, and the basis that survives it (2026-09-14)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_symmetry_adapted_basis_probe.py`](../../computations/probes/aomega_m3_pretzel_symmetry_adapted_basis_probe.py)
+(bean `qou-x3iv`, Part 16; 5/6, the one failure a recorded negative). §3n showed the raw families degenerate. This
+finds why, and repairs it.
+
+**The symmetry.** `X ↔ 1/X` is an **exact** symmetry of all six residue families: it exchanges the two unit
+families, `F1(1/X) = F2(X)`, and fixes each of the four parity classes individually. So §3n's degeneracy is not an
+accident — it is the symmetry. `F1` and `F2` are exchanged, so their antisymmetric part is *forced* to vanish at
+the fixed point `X = 1`. This is the same `ℤ/2` the operator route reaches independently in #7333, where it appears
+as `σ`-parity tied to half-integrality in `q`; two derivations, from residues and from the `q`-difference operator,
+landing on one structure.
+
+**The repair, in two steps, each forced.** Divide by the antisymmetric coordinate `W = X − 1/X`, which vanishes to
+first order at the fixed point: rank `4 → 5`. One residual coincidence remains, `sym(F1,F2) = F3(0,0)` at `X = 1`,
+and it vanishes to order **exactly 2** in `W` at every `q`-order computed. Dividing that difference by `W²`
+completes the basis: rank `4 → 6`. The exponent is forced rather than chosen — taking that slot at `W¹` instead
+gives rank 5, and the probe checks both.
+
+**The grading, and what it matches.** Ordering the six by their order of vanishing at the fixed point:
+
+| weight | elements | count |
+|---|---|---|
+| 0 | `sym(F1,F2)`, `F3(0,1)`, `F3(1,0)`, `F3(1,1)` | 4 |
+| 1 | `anti(F1,F2)/W` | 1 |
+| 2 | `(sym(F1,F2) − F3(0,0))/W²` | 1 |
+
+Dimensions `(4, 1, 1)` — **exactly** Garoufalidis–Zagier's printed weight decomposition for this knot (§3.5:
+`W₀ = ⟨H₀,H₃,H₄,H₅⟩`, `W₁ = ⟨H₁⟩`, `W₂ = ⟨H₂⟩`), derived here from the residues rather than transcribed.
+
+**So the meridian deformation does carry the `ε`-expansion**, and §3n's negative stands unchanged alongside that:
+it is not carried by *evaluating* the separated families, which is what §3n excluded, but by the *orders of
+vanishing* of their symmetry-adapted combinations at the fixed point. Those are different objects, and only the
+second survives the collision.
+
+**What is still open (T1, a recorded negative).** GZ's Obs 3.9 says the index is the weight-1 component alone.
+Fusing this basis's weight-1 element with its `q → q⁻¹, x → x⁻¹` partner does **not** give the derived rotated
+index, at `ζ ∈ {x, x^{1/2}, 1/x}`. Its `q¹` coefficient is `−2(X²+1)²/((X−1)²(X+1)²)`, which is not the index's
+`−(2ζ+4+2/ζ)` under any of those identifications. The weight-1 element is therefore the right *slot* but not yet
+the right *normalisation* — the theta dressing that §3m showed to be a monomial for the raw families has not been
+worked out for the symmetry-adapted ones, and that is the next step rather than a new search.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
