@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T15:57:17Z
-updated_at: 2026-09-14T15:58:10Z
+updated_at: 2026-09-14T18:17:10Z
 ---
 
 ## The blind spot, measured on the same file at two revisions
@@ -99,3 +99,131 @@ Row 46 for `docs/audits/2026-08-15-detector-blindness-taxonomy.md` (45 rows as
 of 2026-09-14). Its family is 22/25/26 — *the interesting thing is assumed to
 appear syntactically at this site* — one level up: here the assumption is that
 a file computing in mpmath will MENTION mpmath.
+
+
+## 🛑 THE REMEDY THIS BEAN IMPLIES IS A NO-OP ON ALL FIVE FILES (measured 2026-09-14)
+
+This bean's population is correct and its diagnosis of the audit's blind spot is
+correct. Its **implied fix is not.** An agent that adds `set_compute_dps()` to
+these five files will change **nothing at all** and record it as a precision fix.
+
+### The measurement
+
+`set_compute_dps()` is `mp.dps = 70`. It only affects **mpmath** arithmetic.
+Measured across all five files:
+
+| file | mpmath mentions | `mpf(` | `mp.*` calls | `fmt(` |
+|---|---:|---:|---:|---:|
+| `atom_mass_derived.py` | **0** | 0 | 0 | 0 |
+| `b_over_a_evaluator.py` | **0** | 0 | 0 | 0 |
+| `d_density_derivation.py` | **0** | 0 | 0 | 0 |
+| `gap_a1_binding_k_sdp_feasibility.py` | **0** | 0 | 0 | 0 |
+| `probes/homflypt_operator_valued_probe.py` | **0** | 0 | 0 | 0 |
+
+`grep -nE "mpmath|import mpf"` over all five returns **nothing**. There is no
+mpmath arithmetic in any of them for `mp.dps` to raise.
+
+This bean already records that the pre-fix file "names mpmath zero times" — it
+treats that as the *audit's* blind spot, which it is. What it does not say is
+that the same fact makes the dps fix **inert**.
+
+### What they actually are: the qou-840k class, and worse than the label
+
+**All five import a float64 `Q`, and none imports the `Q_MP` twin:**
+
+```
+atom_mass_derived            from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val
+b_over_a_evaluator           from q_parameter import Q as Q0
+d_density_derivation         from q_parameter import Q as Q0
+gap_a1_binding_k_sdp_...     from q_parameter import Q as Q_FLOAT   (then Q0 = float(Q_FLOAT))
+probes/homflypt_operator...  from q_parameter import Q, HA
+```
+
+So the mpf constant each one imports (`M_P_MEV`, `ALPHA_EM_INV`, `M_E_MEV`,
+`Q_NEUTRON_MEV`) enters float64 arithmetic and is demoted on first contact with
+`Q`. The mpf import is the only reason they appear in this bean's population, and
+it is the part that does not matter.
+
+`atom_mass_derived` is the clearest case and shows the real shape. Its entire
+Gröbner-Shirshov reduction is float64 **by construction**, not by dps:
+
+```python
+def hecke_mul(t1, t2):
+    result = {}
+    ...
+            result[w] = result.get(w, 0.0) + c1 * c2      # <- float seed
+    return {w: c for w, c in result.items() if abs(c) > 1e-15}
+```
+
+`0.0` seeds a Python float and `c1 * c2` stays one. `M_P_MEV` enters once, at the
+very end, as `E0_MEV = M_P_MEV / PROTON_TR` with `PROTON_TR` float64. Thirteen
+float-seeded accumulators in that file; `b_over_a_evaluator` additionally uses
+`math.log`; `gap_a1` imports scipy.
+
+### And the ORDER matters — dps first MANUFACTURES padding
+
+If a value computed from the float64 `Q` later reaches `fmt`, raising dps first
+writes binary64 garbage at full width. Measured at `mp.dps = 70`:
+
+```
+Q      (float64) = 1.1099785827513808
+Q_MP   (mpf)     = 1.1099785827513808075916690956107688798744991218736
+rel |Q_MP - mpf(Q)| / Q_MP = 2.7246e-17
+
+fmt(1 - 1/mpf(Q)) = 0.0990817160442585323856217273770931223272006069395152743184997
+fmt(1 - 1/Q_MP)   = 0.0990817160442585078391771175189060639852583733894449264766881
+                                      ^ diverges after 18 characters
+```
+
+The two strings agree for **18 characters**, so `fmt` on the float64-sourced
+value writes **~45 characters of binary64 expansion**. That is the
+`casimir_epsilon_vacuum` defect (9 padding hits) with its magnitude measured
+generally: **fix `Q` -> `Q_MP` FIRST, never dps first.**
+
+### Load-bearing thresholds, so this is not a mechanical conversion either
+
+Converting these to mpf changes *structural* decisions, not just digits:
+
+- `atom_mass_derived` prunes GS words at `abs(c) > 1e-15` in two places
+  (`hecke_mul`, `reduce_nf`) — that threshold decides **which words survive the
+  reduction**, and it is sized to float64 noise.
+- `d_density_derivation` *classifies* coefficients at `1e-12`
+  (`elif abs(dd - (-H_A_VAL / 2)) < 1e-12`) — deciding which exact value a
+  coefficient equals.
+- `gap_a1_binding_k_sdp_feasibility` selects the LP **active set** at
+  `yi > 1e-9`, and falls back to `float("nan")` for `y0_star`.
+
+Same class as the three 1e-40 thresholds and the two hoefsmit tolerances drained
+on `claude/raw-float64-drain-2026-09-13`: a threshold sized to the arithmetic it
+sits on has to be re-derived when the arithmetic changes, and re-deriving it is a
+judgement, not a sweep.
+
+### Corrected recommendation
+
+**This bean should be re-scoped or closed into `qou-840k`.** Its five files are
+float64 producers needing a real conversion plus a threshold re-derivation each —
+the same verdict my own earlier note reached for `jet_knot_invariants` (171
+fields) and `delta_q_decoration` (158): *"also lack the call but compute in float
+throughout, so it buys nothing."* The five here are that same class; the mpf-const
+import is incidental.
+
+**What the bean is still right about, and it is the valuable half:** the audit
+`never_raises_dps_audit.py` cannot see a file that never names mpmath, and that
+blind spot is real and worth keeping. It just does not follow that the files it
+misses are one-liners.
+
+### Correction to my own recommendation, one turn earlier
+
+I told the author that `qou-0p2h` was higher-value than more serializer drains
+because "a producer at dps 15 is COMPUTING wrong, not merely recording short."
+**That reasoning does not apply to these five.** They are not computing at dps 15
+— they are computing in float64, which is a larger problem with a different and
+more expensive fix. The conclusion that they matter more than serializer drains
+may well survive; the argument I gave for it does not.
+
+Baseline established anyway, so the next agent does not pay for it again:
+`atom_mass_derived` unmodified-first reproduces its committed witness EXACTLY —
+189 fields, 0 lost, 0 gained, 0 moved, 0 structural, witness not rewritten. Cost
+~6 min wall (25.8 s on the first atom rising to 166.8 s on the last). Note its
+current output is already `Δ = -100.0000%` against observed mass; that is
+pre-existing and not a precision artefact.
