@@ -72,7 +72,7 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     classical_dim,
     partitions_of,
 )
-from q_parameter import Q_MP as Q_MP  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -108,10 +108,9 @@ def main() -> int:
     )
     builder.set_content_block("conj:casimir-epsilon-vacuum")
 
-    # `Q_MP`, NOT `mpf(Q)` / `mpf(str(Q))`: `q_parameter.Q` is
-    # `float(_d["q"])`, so either form lifts the DOUBLE's binary expansion and
-    # caps this whole probe at ~17 digits.  `Q_MP = mpf(_d["q"])` is the full
-    # 49-digit pin.  Same convention as casimir_q_zeta_probe / _beta_2_derivation.
+    # Was `mp.mpf(str(Q))` where the import already read `Q_MP as Q` — a decimal
+    # round-trip of an mpf, NOT a float64 lift.  Using Q_MP directly drops the
+    # round-trip and the alias that made the two indistinguishable by grep.
     q0 = Q_MP
     h = q0 - 1 / q0
     h2 = h * h

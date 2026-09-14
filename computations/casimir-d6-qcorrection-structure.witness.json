@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-14T16:09:25.408948+00:00",
-  "commitSha": "07e13c73e4ea5b35c1f4023f38c57b0055175691",
+  "computedAt": "2026-09-14T16:59:08.345695+00:00",
+  "commitSha": "1f19521c859ad07bd38880d0d359d8aa049a73f7",
   "assertions": [
     {
       "name": "jones_4_1_leading_h2_coefficient_is_three_quarters",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "casimir-d6-qcorrection-structure",
   "scriptFile": "casimir_d6_qcorrection_structure.py",
-  "scriptHash": "46bb1e3c16eb",
-  "scriptCommitSha": "5fcf333ba64453d05e9da8ed4e850bca5838cdca",
+  "scriptHash": "f792457ea39a",
+  "scriptCommitSha": "1f19521c859ad07bd38880d0d359d8aa049a73f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

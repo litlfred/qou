@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-14T16:09:26.230769+00:00",
-  "commitSha": "07e13c73e4ea5b35c1f4023f38c57b0055175691",
+  "computedAt": "2026-09-14T16:59:08.966559+00:00",
+  "commitSha": "1f19521c859ad07bd38880d0d359d8aa049a73f7",
   "assertions": [
     {
       "name": "prefactor_pi2_over_720_from_disjoint_count",
@@ -31,11 +31,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 41,
+  "durationMs": 47,
   "computation": "casimir-n-unknot-construction",
   "scriptFile": "casimir_n_unknot_construction.py",
-  "scriptHash": "b7d10a3bf647",
-  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
+  "scriptHash": "8fe844009087",
+  "scriptCommitSha": "1f19521c859ad07bd38880d0d359d8aa049a73f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
