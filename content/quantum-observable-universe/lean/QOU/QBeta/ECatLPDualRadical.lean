@@ -92,6 +92,7 @@
   -- Ref: [manuscript] .beans/qou-99qc
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Lemmas
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.FieldSimp
@@ -217,5 +218,39 @@ theorem cost_from_gram_makes_objective_a_constraint_readout
   refine Finset.sum_congr rfl ?_
   intro j _
   rw [ht j]
+
+/-- **A DIAGONAL Gram kills every cost built on its own diagonal.**
+
+This is the general form of the negative measured in
+`qbeta_ecat_lp_radical_pairing_probe` (5/5), and it is stated for the diagonal
+case because that is the case measured -- the dense-Gram version needs a sum
+swap this file does not carry, and claiming it would be asserting more than is
+proved.
+
+Setting: `G = diag g`, so `t_j = g_j * u_j` for a cost built from the diagonal,
+and `v` is in the radical, i.e. `g_j * v_j = 0` for every `j`. Then
+`⟨t, v⟩ = 0` — so by §2 the shadow price collapses.
+
+**The block-basis instance.** There `g_λ = y_λ * dim_λ` and the cost is
+`t_λ = y_λ * f(λ)`, which is `g_λ * u_λ` with `u_λ = f(λ)/dim_λ` wherever
+`dim_λ ≠ 0`. So the measured collapse was an instance of this and not a
+coincidence of convention D: the SAME `y_λ` that makes the Gram entry vanish
+makes the cost component vanish, for every `f`.
+
+**The design constraint for whoever builds the next cost:** against a diagonal
+Gram, no cost proportional to that diagonal escapes. Escaping requires a
+component where the Gram has none — on the six-operator basis, a component
+along the q-antisymmetriser `(-q³, q², q², -q, -q, 1)`. Being geometric is not
+sufficient and being non-Hecke is not sufficient. -/
+theorem diagonal_gram_kills_every_cost_on_its_diagonal
+    (g u v : ι → R) (t : ι → R)
+    (hrad : ∀ j, g j * v j = 0)
+    (ht : ∀ j, t j = g j * u j) :
+    ∑ j, t j * v j = 0 := by
+  refine Finset.sum_eq_zero ?_
+  intro j _
+  rw [ht j]
+  calc g j * u j * v j = u j * (g j * v j) := by ring
+    _ = 0 := by rw [hrad j, mul_zero]
 
 end QOU.QBeta.ECatLPDualRadical
