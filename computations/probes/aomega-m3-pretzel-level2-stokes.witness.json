@@ -4,7 +4,7 @@
   "computation": "aomega-m3-pretzel-level2-stokes",
   "engine": "python+sympy+mpmath",
   "scriptFile": "aomega_m3_pretzel_level2_stokes_probe.py",
-  "computedAt": "2026-09-13T19:23:35.941441+00:00",
+  "computedAt": "2026-09-14T17:28:45.364880+00:00",
   "durationMs": 0,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-09-13-pretzel-level2-stokes-matrix.md",
@@ -608,8 +608,8 @@
     }
   ],
   "scriptHash": "cfc12144af05",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6d4a3e03fa3523df66926c1251d4ad9223d1dbde",
+  "scriptCommitSha": "4cdd86445ff65a1ece111cef38662810a2979ade",
+  "commitSha": "71dc35aac5c6e3cc907ff639a5430e5bc2f67b74",
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
