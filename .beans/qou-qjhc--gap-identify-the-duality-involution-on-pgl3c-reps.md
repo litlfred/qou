@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-14T08:14:55Z
+updated_at: 2026-09-14T14:21:18Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -1279,3 +1279,65 @@ items, both raised BY this measurement rather than settled by it:
 
 Audit: `docs/audits/2026-09-14-ptolemy-lex-free-stage2-and-the-l6a4-gb-wall.md`
 sections 5a-5c.
+
+
+### 2026-09-14 (later) — the duality sigma is IDENTIFIED: complex conjugation of K
+
+The open item from this morning's entry ("which invariant distinguishes the
+winning involution in `V_4`?") is measured.
+
+**The corpus already had a criterion and it does NOT select.**
+`ptolemy_duality_galois_check.py` establishes that cocycle negation is
+`u -> u^2`, "the nontrivial automorphism of mu_3, i.e. complex conjugation OF
+THE CUBE ROOT OF UNITY". When `Gal(K/Q) = V_4`, TWO of the three involutions
+invert `zeta_3`, so that criterion halves the candidates and stops. L6a4 is
+where this is visible, because the older probes hardcode exactly the surviving
+pair:
+
+    sigma_a   inverts zeta_3 True   is conj(K) False   intertwiner False
+    sigma_b   inverts zeta_3 True   is conj(K) True    intertwiner True
+
+"Complex conjugation of mu_3" and "complex conjugation of K" are different
+claims and only the second selects.
+
+**Two notions, kept separate because they come apart here.** (CM) K totally
+imaginary and `Fix(sigma)` totally real -- embedding-independent, decided
+exactly by Sturm root counts, no tolerance. (EMB) `sigma(alpha) = conj(alpha)`
+at one embedding, 60 digits. An earlier version of the probe asserted these
+must agree and CRASHED on `5_2` orbit 1, whose K is totally imaginary but NOT
+CM: `Fix(sigma)` has degree 3 and is not totally real, so (CM) is False while
+(EMB) holds at 2 of 6 embeddings. The crash was correct.
+
+    CM-conjugation, TESTABLE (>1 candidate) and HOLDS : 5_2-c1-orbit0, L6a4-c1
+    corroborates but cannot select (|Aut| = 2)        : m004-c1
+    K not CM, per-embedding statement only            : 5_2-c1-orbit1
+    FAILS                                             : none
+
+**What is NOT new, stated plainly:** the L6a4 selection itself is already in
+`L6a4-c1-duality-orbit-untwisted.json` (`works_per_point` is `sigma_b` at every
+point; `id`/`tau`/`sigma_a` fail) and the coboundary witness already records the
+group as `Z/2 x Z/2`. New here is the IDENTIFICATION of the selected element,
+and a second manifold on which the selection is exercised at all.
+
+**Also fixed a latent regression I had introduced hours earlier.** The
+factorisation route substituted `sp.rootof`'s return value, whose SHAPE varies
+with f -- `ComplexRootOf` (5_2, monic), `Mul` `125*CRootOf(...)` (L6a4,
+NON-monic), `Add` in radicals (m004, quadratic). It was developed against three
+fields and all three were monic; the first non-monic field broke it. Both wrong
+fixes were caught by the route's own guard rather than returning a wrong
+automorphism count. Now uses `sp.to_number_field(r, alpha).as_poly(t)`, which is
+shape-independent.
+
+**STILL OPEN, and the bean stays open on all three:**
+
+1. **Why should duality be realised by complex conjugation?** This is a measured
+   regularity over four points, not a theorem. No mechanism is offered.
+2. **Orbit 1 is weaker than it looks.** Its K is not CM, so only the
+   per-embedding statement is available there, and `|Aut| = 2` means it could
+   not have selected anything anyway.
+3. **The transport argument still does not reach orbit 1** (K/Q not normal) --
+   unchanged from this morning.
+
+Probe: `computations/ptolemy/ptolemy_duality_sigma_is_complex_conjugation.py`.
+Audit: `docs/audits/2026-09-14-ptolemy-lex-free-stage2-and-the-l6a4-gb-wall.md`
+sections 5d-5e.

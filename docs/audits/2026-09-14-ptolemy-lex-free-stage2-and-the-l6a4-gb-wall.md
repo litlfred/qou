@@ -145,6 +145,87 @@ though the intertwiner exists. And the selection in orbit 0 says σ is distingui
 among the three involutions; it does not say *which* invariant distinguishes it.
 That is the open question this measurement hands to `qou-qjhc`.
 
+## 5d. The route was latently broken on a NON-MONIC field
+
+The factorisation route converted a root to a polynomial in `t` by substituting
+`sp.rootof(fx, 0)`. That return value's **shape varies with `f`**, and all three
+shapes occur here:
+
+| | `f` | `sp.rootof` returns |
+|---|---|---|
+| `5_2` | monic quartic | `ComplexRootOf` |
+| `L6a4` | **non-monic** quartic `64t⁴ − 95000t³ + …` | `Mul` — `125*CRootOf(64_x⁴ − 760_x³ + …, 0)` |
+| `m004` | quadratic | `Add` — `−11/2 − √3·i/2`, solved in radicals |
+
+while the factorisation writes its coefficients in terms of the **bare `CRootOf`
+atom**. On L6a4 the substitution matched only part of the expression and left a
+mixed `t`/`CRootOf` result; substituting the atom instead then failed on `m004`,
+which has no atom at all. **Both wrong fixes were caught by the route's own
+guard** rather than returning a wrong automorphism count — which is the failure
+mode §5b lists first, and the reason the guard stays.
+
+`sp.to_number_field(r, α).as_poly(t)` re-expresses `r` in `α`'s power basis
+regardless of how either is spelled. Verified on all five point files with the
+checks the guard cannot make (`f(g) ≡ 0 mod f`, identity present, closed under
+composition); `m004` and both `5_2` orbits reproduce byte-identically.
+
+**The bug was latent, and that is the lesson.** The route was developed and
+cross-checked on three fields, and all three happened to be monic. The first
+non-monic field in the corpus broke it (`3e2254ba00`).
+
+## 5e. WHICH automorphism is the duality σ — it is complex conjugation
+
+§8 asked which invariant distinguishes the winning involution. Measured answer:
+**σ is complex conjugation of `K`.**
+
+**The corpus already had a criterion, and it does not select.**
+[`ptolemy_duality_galois_check.py`](../../computations/ptolemy/ptolemy_duality_galois_check.py)
+establishes that cocycle negation is `u ↦ u²` — *"the nontrivial automorphism of
+μ₃, i.e. complex conjugation **of the cube root of unity**"*. When
+`Gal(K/ℚ) = V₄`, **two** of the three involutions invert `ζ₃`, so that criterion
+halves the candidates and stops. L6a4 is where this is visible, because the
+older probes hardcode exactly that surviving pair:
+
+| | inverts `ζ₃` | is conj(`K`) | intertwiner |
+|---|---|---|---|
+| `sigma_a` | ✔ | ✘ | ✘ |
+| `sigma_b` | ✔ | ✔ | ✔ |
+
+*"Complex conjugation of μ₃"* and *"complex conjugation of `K`"* are different
+claims and only the second selects — the arity distinction AGENTS.md §"Grep the
+claim SHAPE" is about, arrived at from the other direction.
+
+**Two notions, kept separate because they come apart on this corpus.**
+**(CM)** `K` totally imaginary and `Fix(σ)` totally real — embedding-independent,
+decided exactly by Sturm root counts on a minimal polynomial obtained by linear
+algebra in the power basis, no tolerance anywhere. **(EMB)** `σ(α) = ᾱ` at one
+embedding, at 60 digits. An earlier version of the probe asserted these must
+agree and **crashed** on `5_2` orbit 1, whose `K` is totally imaginary but **not
+CM**: `Fix(σ)` has degree 3 and is not totally real, so (CM) is false while (EMB)
+holds at **2 of 6** embeddings. The crash was correct — collapsing them would
+have reported a uniform result on a criterion silently meaning different things
+per case.
+
+| case | `[K:ℚ]` | `#Aut(K/Q)` | verdict |
+|---|---|---|---|
+| `5_2-c1-orbit0` | 4 | 4 | **CM conjugation, testable, HOLDS** |
+| `L6a4-c1` | 4 | 4 | **CM conjugation, testable, HOLDS** |
+| `m004-c1` | 2 | 2 | CM conjugation — corroborates, cannot select |
+| `5_2-c1-orbit1` | 6 | 2 | `K` not CM — per-embedding statement only |
+| — | | | **fails: none** |
+
+**What is and is not new.** The L6a4 *selection* is **not** new — it is already in
+`L6a4-c1-duality-orbit-untwisted.json` (`works_per_point` is `sigma_b` at every
+point; `id`/`tau`/`sigma_a` fail) and the coboundary witness even records the
+group as `ℤ/2 × ℤ/2`. New here: the **identification** of the selected element,
+and a **second manifold** on which the selection is exercised at all.
+
+This is a measured regularity over every exact point the corpus holds, **not a
+theorem**, and it says nothing about *why* duality should be realised by
+conjugation. Probe:
+[`ptolemy_duality_sigma_is_complex_conjugation.py`](../../computations/ptolemy/ptolemy_duality_sigma_is_complex_conjugation.py).
+Bean `qou-qjhc` stays open.
+
 ## 6. L6a4 class 2 — a NEGATIVE, and what it rules out
 
 The three recorded class-2 walls (msolve RUR > 3000 s; mod-p GB > 2700 s at
