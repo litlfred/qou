@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-13T17:29:26Z
-updated_at: 2026-09-13T19:27:52Z
+updated_at: 2026-09-14T06:24:46Z
 ---
 
 ## The defect, measured
@@ -248,3 +248,50 @@ standing recommendation is unchanged and still an owner call: a shared
 current members, and would also remove the incentive for the *companion*
 class -- producers DOWNCAST to avoid the crash, which do not fail, are
 invisible here, and quietly compute at f64.
+
+
+## 2026-09-14 — a SIXTH broken producer, and it is a DIFFERENT class
+
+`brane_tower_isospin_diagnosis` exits 1 in 3.2 s with
+`TypeError: unhashable type: 'dict'` at
+`phi_vals = [float(Phi_q(v)) for v in vols]`.
+
+**This bean's audit cannot see it, correctly.** The five here die at
+`json.dump`; this one dies **before writing** — 0 files touched, so it is
+**non-destructive**. `mpf_json_encoder_audit` keys on serialization and this
+is a *call-signature* failure, so the miss is a scope boundary, not a blind
+spot.
+
+**Same half-done shape as everything else in this arc, though.**
+`atom_per_generator_volumes` used to return a bare scalar per generator and
+now returns a dict (`std`/`sym`/`alt`/`full`, values as decimal strings).
+`abs_mpf` in that same file was adapted —
+
+    x = v["full"] if isinstance(v, dict) else v
+
+— and the line that uses it, `abs_vols = [...]`, is *immediately above* the
+line that passes the raw dict to `Phi_q`. **One line adapted, its neighbour
+not.** Fixed in `ce2eef20bf1` by factoring the unwrap into `scalar_mpf()` so
+the two callers cannot drift apart again; `full` is not a choice I made, it
+is the one `abs_mpf` already made.
+
+**Its witness is NOT regenerated** — a re-run moves `phi_q_per_gen` by up to
+**rel 23.92** and `sum_phi_q` by 14.47 across 90 fields, because the witness
+predates the API change entirely. Those numbers are the *subject* of the
+document (the −737 MeV Φ_q pathology), so restating them belongs to the
+Φ_q / Li_2^q migration arc.
+
+## The class the audit CAN see is unchanged: still 5, still all fixed
+
+Nothing new found in that class. What this adds is the boundary: **"a
+producer broken by an upstream change" is strictly larger than "a producer
+that cannot serialize an mpf"**, and the second is the only part with a
+detector. The general population is producers that have not been run since
+something upstream of them changed shape — signature, return type, or
+value — and the only screen that finds those is running them.
+
+Which this session has been doing one at a time, as screen step (d) of the
+drain: baseline the unmodified producer BEFORE editing. That step has now
+produced four separate findings it was not looking for (`adjacent-vs-full`'s
+270-field drift, `deltalambda_extensivity`'s 4×, this one's 24×, and this
+crash). **It is the highest-yield step in the screen and it costs one run.**
