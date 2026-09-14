@@ -1,0 +1,185 @@
+{
+  "name": "aomega-m3-pretzel-gaussian-theta-fusion",
+  "description": "What each residue family's Gaussian prefactor contributes to the sigma1-sigma1 fusion: derived from GGM (108)/(109)/(111a) to be the monomial x_k^{-A}, checked numerically, and applied to the 5_2 and pretzel bilinears.",
+  "computation": "aomega-m3-pretzel-gaussian-theta-fusion",
+  "engine": "python+sympy+mpmath",
+  "scriptFile": "aomega_m3_pretzel_gaussian_theta_fusion_probe.py",
+  "computedAt": "2026-09-13T17:59:20.321960+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "QORDER": 3,
+    "mp_dps": 25,
+    "orientation": "SnapPy's (Part 11)",
+    "families": "Part 12b's validated six (2 unit + 4 parity classes)"
+  },
+  "data": {
+    "theta_gate": [
+      {
+        "b": "(0.81087198 + 0.39049537j)",
+        "u": "0.11",
+        "lhs": "(-1.6880313415103 - 0.46697836391735j)",
+        "rhs_q^{1/2}y_=_-x_k": "(-1.6880313415103 - 0.46697836391735j)",
+        "rel_err": "3.9118e-26"
+      },
+      {
+        "b": "(0.80901699 + 0.58778525j)",
+        "u": "0.2",
+        "lhs": "(-2.0435954078416 - 1.8608682532605j)",
+        "rhs_q^{1/2}y_=_-x_k": "(-2.0435954078416 - 1.8608682532605j)",
+        "rel_err": "5.4433e-26"
+      },
+      {
+        "b": "(0.70476947 + 0.25651511j)",
+        "u": "-0.17",
+        "lhs": "(-0.45347765885451 + 0.12745592916153j)",
+        "rhs_q^{1/2}y_=_-x_k": "(-0.45347765885451 + 0.12745592916153j)",
+        "rel_err": "5.2422e-26"
+      }
+    ],
+    "five_two": {
+      "A=1,x_k^{-A}": false,
+      "A=1,x_k^{+A}": false,
+      "A=2,x_k^{-A}": false,
+      "A=2,x_k^{+A}": false
+    },
+    "pretzel_branches": {
+      "A=2,x_k^-A,omega=1,sigma=+1": {
+        "q0": "(2*X**6 + 4*X**5 + 6*X**4 + 7*X**3 + 6*X**2 + 4*X + 2)/(2*X**2*(X + 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^-A,omega=1,sigma=-1": {
+        "q0": "(2*X**6 - 4*X**5 + 6*X**4 - 7*X**3 + 6*X**2 - 4*X + 2)/(2*X**2*(X - 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^-A,omega=i,sigma=+1": {
+        "q0": "(2*X**6 + 4*X**5 + 6*X**4 + 7*X**3 + 6*X**2 + 4*X + 2)/(2*X**2*(X + 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^-A,omega=i,sigma=-1": {
+        "q0": "(2*X**6 - 4*X**5 + 6*X**4 - 7*X**3 + 6*X**2 - 4*X + 2)/(2*X**2*(X - 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^-A,omega=-1,sigma=+1": {
+        "q0": "(2*X**6 + 4*X**5 + 6*X**4 + 7*X**3 + 6*X**2 + 4*X + 2)/(2*X**2*(X + 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^-A,omega=-1,sigma=-1": {
+        "q0": "(2*X**6 - 4*X**5 + 6*X**4 - 7*X**3 + 6*X**2 - 4*X + 2)/(2*X**2*(X - 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^-A,omega=-i,sigma=+1": {
+        "q0": "(2*X**6 + 4*X**5 + 6*X**4 + 7*X**3 + 6*X**2 + 4*X + 2)/(2*X**2*(X + 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^-A,omega=-i,sigma=-1": {
+        "q0": "(2*X**6 - 4*X**5 + 6*X**4 - 7*X**3 + 6*X**2 - 4*X + 2)/(2*X**2*(X - 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^+A,omega=1,sigma=+1": {
+        "q0": "-X/(2*(X + 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^+A,omega=1,sigma=-1": {
+        "q0": "X/(2*(X - 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^+A,omega=i,sigma=+1": {
+        "q0": "-X/(2*(X + 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^+A,omega=i,sigma=-1": {
+        "q0": "X/(2*(X - 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^+A,omega=-1,sigma=+1": {
+        "q0": "-X/(2*(X + 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^+A,omega=-1,sigma=-1": {
+        "q0": "X/(2*(X - 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^+A,omega=-i,sigma=+1": {
+        "q0": "-X/(2*(X + 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      },
+      "A=2,x_k^+A,omega=-i,sigma=-1": {
+        "q0": "X/(2*(X - 1)**2)",
+        "fractional_rows": 6,
+        "match": []
+      }
+    }
+  },
+  "verdict": "DERIVED: the Gaussian prefactor of each residue family contributes a MONOMIAL x_k^{-A} to the sigma_1 sigma_1 fusion, not 1 — proved from GGM (108), (109), (111a) (theta is symmetric and q-shifts by a monomial) and checked numerically to 1e-15. For 5_2 the monomial is absorbed by the blocks' own x-powers, which is why Part 12b's bare fusion was right there (G2 confirms a nontrivial weighting BREAKS the 5_2 match). For the pretzel the offsets are X = x^{1/2}, X^{-1}, 1, so the weights are x^{-1}, x, 1 — and NO weighting/branch combination reproduces the derived index. See T1a/T1b: the q^0 rows obtained are recorded per branch. The level-2 pairing therefore still needs GZ's derivative structure at the collided poles (Part 13), not a monomial reweighting; this probe closes the 'did you forget the Gaussians?' question with a derived answer rather than an assumption.",
+  "assertions": [
+    {
+      "name": "G1-theta(y;q) theta(-q^{-1/2}x^{-1};q^{-1}) == q^{1/2} y = -x_k at three (b,u): the Gaussians contribute the MONOMIAL x_k^{-A} to the fusion, not 1",
+      "passed": true,
+      "rows": [
+        {
+          "b": "(0.81087198 + 0.39049537j)",
+          "u": "0.11",
+          "lhs": "(-1.6880313415103 - 0.46697836391735j)",
+          "rhs_q^{1/2}y_=_-x_k": "(-1.6880313415103 - 0.46697836391735j)",
+          "rel_err": "3.9118e-26"
+        },
+        {
+          "b": "(0.80901699 + 0.58778525j)",
+          "u": "0.2",
+          "lhs": "(-2.0435954078416 - 1.8608682532605j)",
+          "rhs_q^{1/2}y_=_-x_k": "(-2.0435954078416 - 1.8608682532605j)",
+          "rel_err": "5.4433e-26"
+        },
+        {
+          "b": "(0.70476947 + 0.25651511j)",
+          "u": "-0.17",
+          "lhs": "(-0.45347765885451 + 0.12745592916153j)",
+          "rhs_q^{1/2}y_=_-x_k": "(-0.45347765885451 + 0.12745592916153j)",
+          "rel_err": "5.2422e-26"
+        }
+      ]
+    },
+    {
+      "name": "G2-5_2: the bare fusion (weights 1) is the one that matches; a nontrivial x_k^{-A} weighting does NOT — so for 5_2 the monomial is absorbed by the blocks' own x-powers (the Part 12b result stands)",
+      "passed": true,
+      "tried": {
+        "A=1,x_k^{-A}": false,
+        "A=1,x_k^{+A}": false,
+        "A=2,x_k^{-A}": false,
+        "A=2,x_k^{+A}": false
+      }
+    },
+    {
+      "name": "T1a-some weighting/branch makes the pretzel q^0 row equal 1",
+      "passed": false,
+      "branches": []
+    },
+    {
+      "name": "T1b-some weighting/branch reproduces the derived pretzel index to q^3",
+      "passed": false,
+      "matches": {}
+    }
+  ],
+  "scriptHash": "47b88ffab13d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "1f7602c9c1ab36cc111a13320d4bbffbee06ccb7",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

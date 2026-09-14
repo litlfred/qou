@@ -180,3 +180,31 @@ NOT closed here: per rule 13a I am not completing a bean I did not verify line
 by line, and the two abstractions are genuinely different objects (see qou-0fmb).
 Whoever picks this up should first read MarkovTraceInstance.lean and decide
 whether this bean's subject is that theorem or its bridge.
+
+
+## 2026-09-13 — the general-`A` shape this bean is cited for now exists (status unchanged: still `completed`)
+
+Recording an artifact, not reopening. `MarkovBondFactor`'s header cites `qou-g8i1`
+for the general-`A` gap, and the route-C plan
+(`docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md` §A step 4) costs
+closing it at **4–8 h, high risk**. It is closed, and not by new mathematics:
+`interiorMarkov_of_braided` (#7265) discharges `InteriorMarkov` on every
+`BraidedTower`, and `QOU/Hecke/PureBondChainProduct.tr_pureBondChain_of_braided`
+(PR #7337) states the resulting product in this bean's own shape —
+`tr ((σ_{g₀}+d₀)·⋯) = ∏_k (z + d_k)`, strictly increasing bonds, sorry-free.
+
+The closing paragraph above asks whoever picks this up to *"decide whether this
+bean's subject is that theorem or its bridge"*. The answer is now sharper: the
+**theorem** is done in the tower vocabulary; the **bridge** is two distinct
+bridges, and neither is this bean's.
+
+1. `MarkovBondFactor`'s `QOU.Hecke.MarkovTrace n q A` is fixed-level,
+   single-algebra, **no filtration**, so it cannot state "`a` below the bond,
+   `b` above it". "The class does not yet carry it" stays true of that class.
+2. The production Ocneanu trace is a `HeckeCoset.MarkovTraceFamily`, not an
+   `OcneanuTrace.MarkovTrace` with a `BraidedTower` instance — `qou-gr3t`'s
+   remaining item, `qou-0fmb`.
+
+Caveat on quoting: the proved shape is `∏_k (z + d_k)`, coefficient `1`, not
+`∏_k (c_k·z + d_k)`. All three production bond types carry `c = 1`, so this does
+not bind the corpus.

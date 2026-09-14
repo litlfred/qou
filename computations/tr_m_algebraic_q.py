@@ -18,9 +18,23 @@ The atom word uses only:
 so every factor is `σ_g + d·I` with d a symbolic element of ℚ(q): no q₀ bake.
 
 Verified (see __main__ / witness): `tr_M_algebraic(Z,N).subs(q, q₀)` reproduces
-the canonical transfer value `tr_m_atom_zn(Z,N)` to ~1e-8 for D/T/³He — the
+the canonical transfer value `tr_m_atom_zn(Z,N)` to ~1e-13 for D/T/³He — the
 algebra is exact, the residual is float64 cancellation in evaluating the
 degree-O(100) rational at q₀ (the transfer is 50-dps).
+
+THE "~1e-8" IN THE LINE ABOVE USED TO READ AS THE FLOOR, AND IT WAS THE
+GROUPED ORDERING (bean `qou-4383`). `build_atom_symbolic_q` laid its intra
+letters down as all of `_PROTON_G0` then all of `_PROTON_G1` — which is
+*exactly* how `pyhecke.atom.nucleon_word_letters` defines `intra_order=
+"grouped"`, since those two constants are the canonical letters **bucketed by
+generator** and, as `mass_at_3A_proper` says at its own definition, "cannot
+express the interleaving". So the mirror was structurally incapable of the
+canonical borromean word no matter what values it read. The deuteron sat
+4.23e-01 from the transfer and the witness had been recording that, with
+`allPassed: false`, since 2026-09-07. Under `nucleon_word_letters` it closes
+to 8.9e-14, so the real evaluation floor is ~5 orders below the old claim —
+and the old claim was never a floor at all, it was an ordering defect from an
+era when the transfer was grouped too and the two agreed.
 
 This is a generic-q builder ("at least for q like q₀"): pass any `q` (a sympy
 Symbol for the full ℚ(q) form, or a numeric value to evaluate there). A true
@@ -72,7 +86,7 @@ def flavor_split_leading_sym(q):
 
 
 def build_atom_symbolic_q(Z: int, N: int, q=None, *, include_inter: bool = True,
-                          reduce_every: int = 4):
+                          reduce_every: int = 4, intra_order: str | None = None):
     """q-parameterized atom braid as a reduced `SymbolicHeckeElement`.
 
     Mirrors `mass_at_3A_proper.atom_braid_word_3A` (canonical
@@ -80,11 +94,30 @@ def build_atom_symbolic_q(Z: int, N: int, q=None, *, include_inter: bool = True,
     mapped by value to {0, −h/2, −h}, interfaces built by TYPE so the p-n colour
     δ stays symbolic (it is numerically indistinguishable from −h/2, so it must
     be placed structurally, not matched).
+
+    `intra_order` defaults to whatever `atom_braid_word_3A` declares canonical,
+    read off its signature rather than restated here, so this mirror tracks the
+    frame instead of pinning a second copy of it. Pass `"grouped"` only to
+    reproduce the legacy word (the falsification leg in `__main__` does).
+
+    THE INTRA LETTERS COME FROM `nucleon_word_letters`, NOT FROM
+    `_PROTON_G0`/`_PROTON_G1`. Writing all of `g0` and then all of `g1` — which
+    is what this function did until bean `qou-4383` — is not an ordering choice
+    that happens to be wrong; it is the *definition* of `intra_order="grouped"`
+    in `pyhecke.atom`, so no value fed into that loop shape could have produced
+    the canonical word. σ₀ and σ₁ are adjacent and do not commute: the two
+    orderings are different elements of H₃(q) whose |tr_M| differ by ~82 % at
+    one proton. Any other consumer of those two constants that assembles a word
+    by concatenating them has the same defect by construction; the mechanical
+    detector is `audits/intra_ordering_structural_assembly_audit.py`.
     """
-    from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1)
     from q_parameter import HA as _h_num
     from hecke_symbolic import SymbolicHeckeDivision, SymbolicHeckeElement
+    from pyhecke.atom import nucleon_word_letters
 
+    if intra_order is None:
+        from canonical_trm_reference import _canonical_ordering
+        intra_order = _canonical_ordering()
     if q is None:
         q = sp.Symbol("q", positive=True)
     h = q - 1 / q
@@ -104,12 +137,9 @@ def build_atom_symbolic_q(Z: int, N: int, q=None, *, include_inter: bool = True,
     ordering = ["p"] * Z + ["n"] * N
     factors: list[tuple] = []
     for k, nuc in enumerate(ordering):
-        g0 = _PROTON_G0 if nuc == "p" else _NEUTRON_G0
-        g1 = _PROTON_G1 if nuc == "p" else _NEUTRON_G1
-        for _c, d in g0:
-            factors.append((_intra_d(float(d)), 3 * k))
-        for _c, d in g1:
-            factors.append((_intra_d(float(d)), 3 * k + 1))
+        quarks = ["u", "u", "d"] if nuc == "p" else ["u", "d", "d"]
+        for _c, d, off in nucleon_word_letters(quarks, intra_order=intra_order):
+            factors.append((_intra_d(float(d)), 3 * k + off))
         if include_inter and k < A - 1:
             nxt = ordering[k + 1]
             if nuc == "p" and nxt == "p":
@@ -134,12 +164,14 @@ def build_atom_symbolic_q(Z: int, N: int, q=None, *, include_inter: bool = True,
     return elem
 
 
-def tr_M_algebraic(Z: int, N: int, q=None, *, include_inter: bool = True):
+def tr_M_algebraic(Z: int, N: int, q=None, *, include_inter: bool = True,
+                   intra_order: str | None = None):
     """Algebraic Markov trace `tr_M(q) ∈ ℚ(q)` of the (Z,N) atom braid."""
     from markov_trace_canonical import tr_M_element
     if q is None:
         q = sp.Symbol("q", positive=True)
-    elem = build_atom_symbolic_q(Z, N, q, include_inter=include_inter)
+    elem = build_atom_symbolic_q(Z, N, q, include_inter=include_inter,
+                                 intra_order=intra_order)
     return sp.expand(tr_M_element(elem, 3 * (Z + N), simplify=False))
 
 
@@ -157,12 +189,16 @@ def main() -> int:
     except Exception:
         WitnessBuilder = None
 
+    from canonical_trm_reference import _canonical_ordering
+    frame = _canonical_ordering()
+
     q = sp.Symbol("q", positive=True)
     q0 = float(Q0)
     atoms = [("D", 1, 1), ("T", 1, 2)] + ([("3He", 2, 1)] if args.full else [])
 
     rows = []
     print(f"algebraic tr_M(q) ∈ ℚ(q)  — q₀ cross-check vs transfer  (q₀={q0:.6f})")
+    print(f"  intra-nucleon ordering frame: {frame}")
     for nm, Z, N in atoms:
         ta_q = tr_M_algebraic(Z, N, q, include_inter=True)
         tf_q = tr_M_algebraic(Z, N, q, include_inter=False)
@@ -183,6 +219,21 @@ def main() -> int:
                   - float(flavor_split_leading(Q0)))
     print(f"  δ(q₀): symbolic vs _li_2_q_util  Δ={d_delta:.1e}")
 
+    # FALSIFICATION: the legacy grouped word must NOT reproduce the transfer.
+    # Without this leg the check above passes for two reasons that look alike —
+    # the mirror is in the canonical ordering, or the ordering does not matter
+    # here — and only the first is true. It matters by 4.2e-01 at the deuteron
+    # (bean `qou-4383`); the assertion is a floor, not a tolerance, so a future
+    # regression back to the `_PROTON_G0`+`_PROTON_G1` concatenation fails here
+    # instead of quietly re-widening the match test.
+    gz, gn = atoms[0][1], atoms[0][2]
+    g_atom = float(tr_M_algebraic(gz, gn, q, include_inter=True,
+                                  intra_order="grouped").subs(q, q0))
+    _ta_ref = rows[0]["tr_atom_transfer"]
+    grouped_gap = abs(g_atom - _ta_ref)
+    print(f"  falsification: grouped {atoms[0][0]} tr_atom {g_atom:.9f} "
+          f"vs transfer {_ta_ref:.9f} (Δ={grouped_gap:.1e}, must be ≫ 0)")
+
     if WitnessBuilder is not None:
         w = WitnessBuilder("tr-m-algebraic-q", engine="sympy")
         w.set_description(
@@ -190,10 +241,14 @@ def main() -> int:
             "braid word with the colour split flavor_split_leading(q) kept "
             "SYMBOLIC (vs the production q₀-baked float), so the trace is a clean "
             "Laurent object. Cross-checked: tr_M_algebraic(Z,N).subs(q,q₀) == the "
-            "canonical transfer value tr_m_atom_zn(Z,N) to ~1e-8 for D/T(/³He) "
-            "(float64-eval floor of the exact form)."
+            "canonical transfer value tr_m_atom_zn(Z,N) to ~1e-13 for D/T(/³He) "
+            "(float64-eval floor of the exact form), in the canonical "
+            "intra-nucleon ordering, with the legacy grouped word carried as an "
+            "explicit falsification."
         )
         w.add_parameter("q0", q0)
+        w.add_parameter("intra_ordering_frame", frame)
+        w.add_data("intra_ordering_frame", frame)
         w.add_data("rows", rows)
         worst = max([r["abs_diff_atom"] for r in rows]
                     + [r["abs_diff_free"] for r in rows])
@@ -215,6 +270,20 @@ def main() -> int:
         w.add_assertion(name="symbolic_delta_matches_li2q",
                         computed=d_delta, expected=0.0, tolerance=1e-12,
                         source="flavor_split_leading_sym(q₀) vs _li_2_q_util")
+        # THE TOLERANCE ABOVE STAYS AT 1e-9 THOUGH THE MEASUREMENT IS ~1e-13.
+        # That is deliberate and is not the mistake the comment above records:
+        # 1e-9 is derived (catastrophic cancellation evaluating a degree-O(100)
+        # rational in float64 at q₀ ≈ 1.11, with headroom for the larger atoms),
+        # not reverse-engineered from a residual nobody could account for. What
+        # guards the ORDERING is the falsification leg below, which fails on a
+        # regression the match test alone would keep passing.
+        w.add_assertion(
+            name="grouped_ordering_is_falsified",
+            computed=1.0 if grouped_gap > 1e-3 else 0.0, expected=1.0,
+            tolerance=0.0,
+            source=f"|tr_M_algebraic({atoms[0][0]}, grouped) − transfer| = "
+                   f"{grouped_gap:.6e} must exceed 1e-3; the two intra-nucleon "
+                   f"orderings are different elements of H_3(q) (bean qou-hu1f)")
         out = w.save()
         print(f"  witness: {out}")
     return 0

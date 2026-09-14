@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-09-12T18:49:40Z
+updated_at: 2026-09-13T19:31:00Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -1013,3 +1013,56 @@ calibration constant `qbeta_option_e_order_dof_range_probe` (merged) asserts at
 
 NOT closing this bean; only recording the correction. Status left as the owning
 agent set it.
+
+
+## 2026-09-13 — ALL THREE constructors are excluded, so picking among them does not help
+
+From the `qou-99qc` parity work (`d6ca6af2f0d`, `c33e7d8914a`, both merged /
+open on #7336). This does not resolve which constructor is canonical; it
+changes what resolving it would buy.
+
+**The alternating character's sign is `(-1)^length`** over the corpus alphabet
+(`QOU.Mass.AltCharShiftMultiset.wordChar_sign`, sorry-free): every letter has
+strictly negative character, so a product of them is decided in sign by nothing
+but how many there are. Under the owner-selected SDP scope **(B) whole
+element** (2026-09-13) the alternating block is one-dimensional, so PSD there
+is exactly `0 <= character`.
+
+**All three constructors in the table above have ODD crossing counts — 9, 11,
+11 — so all three are excluded.** The 24 % net disagreement this bean is about
+is real and still worth settling, but no choice among the three produces an
+element admissible in the alternating block. They differ by 2, so they do not
+even differ in parity.
+
+**Where the obstruction actually sits:** core `B_3 = (sigma_0 sigma_1^-1)^3` is
+6 letters (EVEN), the quark block is 3 (ODD), the gluon dressing 2 (EVEN). Only
+the quark block is odd, so `gluon_dressing_must_be_odd` — the whole question
+reduces to the dressing's parity, and every count the corpus proposes (2, and
+the retracted 4) is even.
+
+**And the obvious repair is closed**: `even_dressing_cannot_repair` (sorry-free)
+— appending an even-length dressing preserves inadmissibility, and gamma-gamma
+words are even by `GammaGammaWordSelection.length_even`. So **no amount of
+gamma-gamma pair-production can fix any of the three.** Whatever supplies the
+missing odd letter is by that fact not gamma-gamma-produced.
+
+Swept confirmation: 364 dressings over the alphabet at lengths 0..5, uniformly
+admissible at every odd length and uniformly excluded at every even one, no
+mixed length (`qbeta_crossing_budget_gluon_parity_probe.py`, 6/6).
+
+### 🛑 Separately — the net figures in the table above are SUPERSEDED
+
+They are quoted at `q = 111/100`, not at the substrate pin.
+`qbeta_d1_eleven_crossing_exclusion_probe.py` corrected them on 2026-09-12 and
+records the correction explicitly; this bean still carries the pre-correction
+values:
+
+    constructor           this bean (q=111/100)   corrected (substrate pin)
+    build_nucleon_nf      -0.1883216147           -0.1882906015
+    build_atom_nf_exact   -0.2272041420           -0.2271597118
+    nucleon_gen_chains    -0.2332458961           -0.2331977113
+
+185 ppm, about 16000x the mu-p tension. The 24 % disagreement the bean is about
+is unaffected — it is far larger than this — so the defect stands exactly as
+filed; only the three decimals are wrong. Flagged rather than edited in place,
+since the table is this bean's own record of what it found.

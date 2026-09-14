@@ -1,6 +1,6 @@
 {
  "schema": "qou-witness/v1",
- "computedAt": "2026-09-13T17:40:03.596181+00:00",
+ "computedAt": "2026-09-13T19:42:14.041355+00:00",
  "computation": "rev_edge_separability_probe.py",
  "bean": "qou-hok7",
  "anchor": "physical_proton",
@@ -481,7 +481,7 @@
   {
    "name": "S5 max E_top = max E_bot exactly \u2014 one edge energy, seen twice",
    "ok": true,
-   "detail": "both 0.89852649642062312021, equal as scaled INTEGERS (difference exactly 0).  The staircase is self-conjugate and the hook multiset is a transpose invariant, so a top-edge deformation and its conjugate bottom-edge deformation carry the same excess; (3, 2, 1, 1) and (1, 1, 1, 2, 1, 1) are that pair.  So there is one edge energy here, not two, and the exact equality of two independently-maximised searches is a check on the evaluator as much as an observation about the shapes"
+   "detail": "both 0.89852649642062312021, equal as scaled INTEGERS (difference exactly 0).  So there is one edge energy here, not two, and the exact equality of two independently-maximised searches is a check on the evaluator as much as an observation about the shapes.  CORRECTED 2026-09-13 (PR #7335): this detail used to add that the staircase is self-conjugate and the hook multiset a transpose invariant, 'so a top-edge deformation and its conjugate bottom-edge deformation carry the same excess; (3, 2, 1, 1) and (1, 1, 1, 2, 1, 1) are that pair'.  The last clause is FALSE and was never checked \u2014 (3, 2, 1, 1) transposes to [4, 2, 1], which is not [1, 1, 1, 2, 1, 1].  Transpose invariance remains the likely mechanism; the correspondence between these particular tuples is not identified.  The EQUALITY is measured and stands"
   }
  ],
  "verdict": "REFUTED: e_k does not add over its two edges.  The COST does separate exactly, but the gain does not \u2014 E_both exceeds E_top + E_bot by ~0.6 at k = 40, fourteen orders above the far-field scale.  The size identifies the mechanism: one joint run has TWO interfaces where two single-edge runs have FOUR, so combining saves an interface pair.  The argmax does survive \u2014 the joint optimum is the pair each edge picks alone \u2014 so the two edges choose independently and only the value fails to add. Separately established: the number of extension rows is a SHAPE parameter and must be searched; fixing it at 3 gave 2.3684 at k = 40, which is below e_35 = 2.3764 and so impossible.  Best in class at k = 40: 2.414090644173904."

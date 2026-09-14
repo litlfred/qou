@@ -2942,3 +2942,39 @@ for the identity-containing NF basis and fails for a diagonal one. Measured
 without naming the basis.
 
 Audit: `docs/audits/2026-09-12-uic-gate-primal-lp-hunt.md`. Stays OPEN.
+
+
+## 2026-09-12 — note from the UIC functional resolution (PR #7237, bean `qou-t6be`)
+
+Not a step on this bean's open problem; recorded because it changes what a reader
+of `unified_iterative_correction`'s output is looking at.
+
+Under the owner's ruling *"resolve functionals ... what lean provable"*,
+`prop:unified-iterative-correction` was restated to match the producer: the
+q-Laplacian resolvent `rho_lambda(s_*)` the block omitted is now in the formula,
+`u_lambda` is stated as the closed form rather than as an "LP shadow price"
+(refuted on both available readings), and the summation range is stated as the
+gated set rather than "strictly over all lambda". **No producer changed and no
+number moved.**
+
+**What this bean should take from it.** The gate — Pass 2's restriction to
+`tr M_lambda <= 0` — is now marked in the corpus as **asserted, not derived**,
+with the disproof cited: genuine complementary slackness for `<Phi, pi> >= 0`
+makes "tight" mean `tr = 0`, under which the functional collapses to
+`(sum c_lambda) * f(0)` and reads NOTHING about the atom
+(`QOU.MassTheory.UICFunctionalSelection.uicGated_cs_eq`, sorry-free); measured,
+0 of 10 active blocks sit at `tr = 0`. Combined with `y_0_eq_zero_of_radical`
+(the LP prices nothing), the gate has no derivation at all.
+
+That matters here because `uic_sign_forced_by_gate_probe` already showed the
+gate FORCES `B < 0` for any nucleus and explains the measured A-independence. So
+the wrong-signed, A-independent binding that this bean's extensive-term frontier
+is trying to explain is, to that extent, a property of an **undefended selection
+rule** rather than of the nucleus. Whether to keep the gate is an owner call and
+was deliberately NOT taken in #7237 — dropping it moves every binding number by
+3.4-4.6x on an argument that only refutes a justification (scope-(a), not
+scope-(b)).
+
+**This bean stays OPEN.**
+
+Audit: `docs/audits/2026-09-12-uic-functional-resolution.md`.
