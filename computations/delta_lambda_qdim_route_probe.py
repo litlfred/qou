@@ -63,7 +63,7 @@ _T0 = _time.monotonic()
 import json, math, os, hashlib, datetime
 from mpmath import mp, mpf
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
@@ -164,12 +164,20 @@ def main():
             l1["classic"] += base * dim_classic(list(p))
             for conv, fn in CONVENTIONS.items():
                 l1[conv] += base * abs(fn(list(p), q0))
-        ratios = {k: float(v / abs(target)) for k, v in l1.items()}
+        # mpf, not float. Everything upstream is exact -- q_0 and
+        # y_at_q0_50dps are 50-digit STRINGS in the pinned witnesses and
+        # M_E_MEV is mpf("...") -- so narrowing here threw the precision away
+        # at the last step and put 26 raw float64 fields in the witness.
+        # Every consumer below takes mpf: `>= 1.0`, min/max and the `:.3g`
+        # and `:>12.3f` format specs all work on it. Only json.dumps does
+        # not, which is why the conversion happens at the witness boundary
+        # and nowhere earlier.
+        ratios = {k: v / abs(target) for k, v in l1.items()}
         for v in ratios.values():
             span_min = v if span_min is None else min(span_min, v)
             span_max = v if span_max is None else max(span_max, v)
         rows.append({"atom": name, "B_AME_MeV": B,
-                     "target_units_m_e": float(target),
+                     "target_units_m_e": target,
                      "ceiling_over_target": ratios})
 
     any_overshoot = any(r["ceiling_over_target"][c] >= 1.0
@@ -213,7 +221,7 @@ def main():
             "the surrounding analysis, not as this run's measurement.) "
             "Scope (a), NOT a (b) exclusion (no invariant)."
         ),
-        "he4_ceiling_span": {"min": _he4_span[0], "max": _he4_span[1],
+        "he4_ceiling_span": {"min": fmt(_he4_span[0]), "max": fmt(_he4_span[1]),
                              "conventions": _he4_span[2]},
         "scope": "(a) scope-limited — route (i) is convention-under-determined; q-dim convention is a hidden DOF",
         "conventions": {
@@ -221,10 +229,16 @@ def main():
             "unbalanced": "[n]_q!/∏[h]_q, [k]=(1-q^k)/(1-q)",
             "fake_degree": "q^{n(λ)}·unbalanced, n(λ)=Σ(i-1)λ_i (principal specialization)",
         },
-        "parameters": {"q_0": float(q0), "m_e_MeV": float(M_E_MEV)},
+        # `q_0` was `float(q0)` -- the anchor at 53 bits in the very field a
+        # reader checks it in, and the same downcast as hecke_division and the
+        # Casimir probe, arriving at the serializer instead of the computation.
+        "parameters": {"q_0": fmt(q0), "m_e_MeV": fmt(M_E_MEV)},
         "data": {
-            "rows": rows,
-            "ceiling_span_across_conventions": [span_min, span_max],
+            "rows": [{**r, "target_units_m_e": fmt(r["target_units_m_e"]),
+                      "ceiling_over_target": {k: fmt(v) for k, v
+                                              in r["ceiling_over_target"].items()}}
+                     for r in rows],
+            "ceiling_span_across_conventions": [fmt(span_min), fmt(span_max)],
             "some_convention_overshoots_target": any_overshoot,
         },
     }

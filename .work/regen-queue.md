@@ -788,3 +788,57 @@ So the hazard is **real but far more concentrated than stated**: +143, not
 prediction's direction was right and its magnitude was pessimistic — worth
 correcting in place, because the number is what the next person will plan
 against.
+
+## 26. `delta_lambda_qdim_route_probe.py` — the genuine edge-narrowing case, all 26 fields
+
+The one REGRESSED entry (24 -> 26) that really is `qou-qrsp`'s rather than
+`qou-gqt5`'s, confirmed by checking the TOP of the file first — the discipline
+§25 was written to enforce.
+
+Everything upstream is exact. `y-lambda-at-q0.witness.json` stores `q_0` as a
+**54-digit string** and `y_at_q0_50dps` as a **50-digit string**; `M_E_MEV` is
+`mpf("0.51099895069")`; `B_AME_MeV` is already a full-precision string; and all
+of `l1`, `base` and `target` are mpf. The precision survives to the last step
+and is thrown away there:
+
+    :167   ratios = {k: float(v / abs(target)) ...}
+    :172   "target_units_m_e": float(target)
+    :224   "parameters": {"q_0": float(q0), "m_e_MeV": float(M_E_MEV)}
+    :230   "ceiling_span_across_conventions": [span_min, span_max]
+    :216   "he4_ceiling_span": {"min": …, "max": …}
+
+`float(q0)` is the anchor at 53 bits **in the very field a reader checks it
+in** — the same downcast as §17's `hecke_division` and §19's Casimir, arriving
+at the serializer rather than the computation.
+
+**Why the values could stay mpf all the way to the boundary.** Four consumers
+read them back, and mpmath handles every one: `>= 1.0` (`any_overshoot`),
+`min`/`max` (`_he4_span`), and the `:.3g` and `:>12.3f` format specs in the
+description and the console table. Only `json.dumps` refuses an mpf — so the
+conversion belongs at the witness boundary and nowhere earlier, which is how
+it is now written.
+
+VERIFIED STATICALLY (the single-producer rule forbids running it while the
+table holds the checkout): the patched assembly re-run on mpf inputs shaped
+like the real ones gives `_count` **0 raw float64**, down from 26, with
+`json.dumps` clean and all four consumers behaving.
+
+**NO COMPUTED VALUE MOVES** — the mpf arithmetic is untouched; only its
+rendering gains digits. The one derived quantity that could in principle
+change is `any_overshoot`, a `>= 1.0` test now evaluated on mpf rather than
+float64. Checked against the committed witness: the nearest ratio to the
+threshold is tritium's `fake_degree` at 1.0772, i.e. **7.72e-2** away, so a 1e-17 change
+cannot flip it.
+
+Failure mode if I got it wrong is LOUD, not silent: an mpf reaching
+`json.dumps` raises `TypeError` on the next run. That is the distinction from
+§25's `delta_lambda_2row_stratum_analysis`, which was left alone because its
+risk was silently moving a scientific conclusion.
+
+Also settled here, without a fix: **`catalan_binding.py` (34 -> 44) is
+DECLARED float64**, so it is `qou-gqt5`'s and no serialisation remedy exists.
+Its own header says so — "every mpmath value in it was built at mpmath's
+default 15 dps and the numbers it emits are HONESTLY float64 — no fake
+precision to detect". One of that comment's three claims has gone stale: it
+says "the padding / raw-float64 / import-time gates all pass it", and it is a
+REGRESSED entry on the raw-float64 ratchet today.
