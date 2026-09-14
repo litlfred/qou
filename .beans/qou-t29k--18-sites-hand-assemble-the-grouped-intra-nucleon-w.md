@@ -134,3 +134,28 @@ chains rather than quarks. Values unmoved (proton 1.3215929842373446, neutron
 That site is the easy one: the module exists to BE the legacy frame. The
 remaining 17 each need reading first, and check E exists so that converting one
 to the named helper cannot be mistaken for fixing it.
+
+## One site is EXCLUDED pending an owner call — `qou-u8ji`
+
+`probes/b_pred_mirror_slope_closed_form.py:90` is not drainable mechanically.
+Its headline result — the framework half of the writhe coefficient kappa,
+`plateau = log_q0(tau_p/tau_n)` — holds **only** in the grouped ordering:
+
+| ordering | plateau | kappa_FW |
+|---|---|---|
+| grouped (as committed) | 1.4223 | -0.3556 |
+| borromean (canonical) | **2.6936** | **-0.6734** |
+
+against a measured mirror slope of 1.372. Canonical overshoots by 96 %, and
+`kappa_AME` — the piece attributed to experiment — flips from -0.094 to +0.236.
+
+`tau_p/tau_n` is a ratio between two DIFFERENT nucleons, so it is not in the
+ordering-invariant class that `nucleon_word_letters` documents (that covers
+`tr_M(W_atom)/tr_M(W_free)`, one nucleus over its own free word). Left
+unswitched; picking the ordering that matches would be selection against the
+target. See `qou-u8ji`.
+
+**This is the general lesson for the remaining 16.** "Call
+`nucleon_word_letters`" is the mechanical shape of the fix, but each site has
+to be read for what it reports first — some will move a claim, not just a
+number.
