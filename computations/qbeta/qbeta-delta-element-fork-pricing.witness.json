@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T01:19:21.123706+00:00",
-  "commitSha": "888bf76c110cc30dd9820024bff0c27eed0badd4",
+  "computedAt": "2026-09-14T17:43:55.581190+00:00",
+  "commitSha": "de500afd7404550c7db431c7e42bfcfc85c62b30",
   "assertions": [
     {
       "name": "short_model_net_coefficients_factor_as_one_and_two_crossings",
@@ -111,11 +111,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3744,
+  "durationMs": 6314,
   "computation": "qbeta-delta-element-fork-pricing",
   "scriptFile": "qbeta_delta_element_fork_pricing_probe.py",
-  "scriptHash": "f461dbbf56ad",
-  "scriptCommitSha": "6a76abdde6ef1331b25b7873cb8ccccac2204a21",
+  "scriptHash": "c63e88dc9687",
+  "scriptCommitSha": "46ba3c0243f537f046dfd6ffa8e995ace65802f5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -128,9 +128,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
