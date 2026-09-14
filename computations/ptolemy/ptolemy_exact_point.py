@@ -288,7 +288,13 @@ def to_point_json(name, cls, rec):
                       'irreducible_over_Q': rec['irreducible_over_Q'],
                       'discriminant': rec['discriminant']},
             'provenance': {'producer': 'ptolemy_exact_point.py',
-                           'method': 'primitive element + lex GB, coordinates as normal forms',
+                           # route-accurate: the default path builds NO lex basis.
+                           # Do not restore the old 'primitive element + lex GB'
+                           # wording -- it described this file while the file was
+                           # produced by the lex-free route.
+                           'method': f"primitive element + {rec.get('stage2_route', 'unknown')} "
+                                     f"coordinates, back-substitution verified="
+                                     f"{rec.get('equations_verified')}",
                            'degenerate_components_discarded': None},
             'ptolemy': co}
 
