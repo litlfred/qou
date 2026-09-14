@@ -395,10 +395,10 @@ check(
 )
 
 # --------------------------------------------------------------------------------------------
-# S5 — the two edges are conjugate
+# S5 — the two edge energies are equal (the transpose correspondence is NOT identified)
 # --------------------------------------------------------------------------------------------
 print()
-print("S5  the two edge energies are EQUAL — the edges are transposes, not two different things")
+print("S5  the two edge energies are EQUAL — one edge energy, seen twice")
 _et = E_top[best_top]
 _eb = E_bot[best_bot]
 print(f"    E_top {best_top}          = {mp.nstr(mp.mpf(_et) / SCALE, 22)}")
@@ -408,11 +408,16 @@ check(
     "S5 max E_top = max E_bot exactly — one edge energy, seen twice",
     _et == _eb,
     f"both {mp.nstr(mp.mpf(_et) / SCALE, 20)}, equal as scaled INTEGERS (difference exactly "
-    f"{_et - _eb}).  The staircase is self-conjugate and the hook multiset is a transpose "
-    f"invariant, so a top-edge deformation and its conjugate bottom-edge deformation carry the "
-    f"same excess; {best_top} and {best_bot} are that pair.  So there is one edge energy here, "
-    f"not two, and the exact equality of two independently-maximised searches is a check on the "
-    f"evaluator as much as an observation about the shapes",
+    f"{_et - _eb}).  So there is one edge energy here, not two, and the exact equality of two "
+    f"independently-maximised searches is a check on the evaluator as much as an observation "
+    f"about the shapes.  CORRECTED 2026-09-13 (PR #7335): this detail used to add that the "
+    f"staircase is self-conjugate and the hook multiset a transpose invariant, 'so a top-edge "
+    f"deformation and its conjugate bottom-edge deformation carry the same excess; {best_top} "
+    f"and {best_bot} are that pair'.  The last clause is FALSE and was never checked — "
+    f"{best_top} transposes to "
+    f"{[sum(1 for x in best_top if x > j) for j in range(max(best_top))]}, which is not "
+    f"{list(best_bot)}.  Transpose invariance remains the likely mechanism; the correspondence "
+    f"between these particular tuples is not identified.  The EQUALITY is measured and stands",
 )
 
 _best_in_class = mp.mpf(_direct) / SCALE

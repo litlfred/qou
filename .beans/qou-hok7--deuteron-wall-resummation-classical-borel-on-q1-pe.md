@@ -1227,3 +1227,125 @@ shortcut fails; what is now known exactly is the cost side, the argmax structure
 two edges are one object. Best in class at `k = 40` is `2.41409064417390445671`.
 
 **Do not close this bean.**
+
+---
+
+## 2026-09-13 — `e_∞` is a sum of **three** k-free pieces, and it has a value (PR #7335)
+
+`e_∞` was the one number left: `κ = −A/2 − B − C + e_∞` with the first three explicit convergent
+series, and #7294 says so in its own words — *"e_inf is measured at a single n rather than proved
+to be a limit."* That single reading was `2.4392948082722254204` at `n = 3916` (`k = 88`).
+
+**The resolution of the previous entry's non-additivity is one sentence: the run belongs to one
+edge, not to both.** The entry above stopped at "the residual is an interface count". It is, and
+what that means is that the isolated single-edge shapes each carried their **own** run, so their
+sum double-counts one run's interface. Put the run in neither edge and make it its **own** piece.
+
+**The load-bearing step is #7323's "the run's position is free."** A displaced row interacts with
+another only through `ε`, which decays geometrically — so a free position is a position that goes
+to **infinity**. Measured, not asserted (E3b): the block-plus-run value rises monotonically with
+separation, `−0.0532` adjacent → `0.4739` at separation 250, reaching `Xblock + Xrun` **exactly**.
+Had the interaction been attractive the pieces would not separate and this whole decomposition
+would understate the limit.
+
+    e_∞ = max over (s_t, s_b)  [ Xblock(s_t) + Xrun(s_t + s_b) + Xbot(s_b) ]
+
+**`e_∞ = 2.43929645512078402706542884314`**, and it collapses further, because the two block
+energies are **equal as exact integers** (E7):
+
+    e_∞  =  2 · E_edge  +  Xrun(2s)
+         =  2 × 1.965444371077749996131  +  (−1.491592287034715965196)
+
+with `E_edge` on `[3,2,1,1,1]` (top) and `[1,1,1,1,2,1,1]` (bottom), `s = 8`, run length 16,
+extension `P = 2`. **One edge energy, one run.**
+
+**🛑 Correction to the entry above, and to #7331's witness.** That entry says the two shapes
+"are that [conjugate] pair" and #7331's `S5` detail says the same. **They are not conjugate
+partitions.** Measured: `(3,2,1,1,1)ᵀ = (5,2,1)`, which is not `(1,1,1,1,2,1,1)`; `(3,2,1,1)ᵀ =
+(4,2,1)`, which is not `(1,1,1,2,1,1)`. The **equality of the energies is measured** and holds
+to the last of 40 digits, twice, by evaluators sharing no code path. The transpose invariance of
+the hook multiset remains the likely *mechanism* — but the correspondence between these
+particular tuples is **not identified**, and I repeated #7331's claim before checking it.
+Contaminated: #7331's witness `edge_energy` detail, the bean entry above, and the first draft of
+this one.
+
+**Where the sequence stops moving is measured, not guessed.** The finite-`k` shortfall is nonzero
+exactly where a pair still crosses between groups, and both switch off at the same rung — `k = 520`
+with the run at the midpoint. They are **not equal**: at `k = 460` the crossing term is 1 unit and
+the shortfall 6, because the shortfall also carries each piece's own AP truncation. Reading the two
+columns as one number would be wrong; what is measured is that they share a support.
+
+**The first version of this probe was a statement about its own search, and E5 is why.** Its argmax
+sat on *every* cap at once — `ell = ELL_MAX`, `p = lt + PWIN`, `len(bot) = BMAX` — and it returned
+`2.4392152671991969174`, **below** the `k = 88` heuristic, which `e_k` increasing forbids. That
+impossibility is what exposed it, the same way the extension-row count was exposed in the entry
+above. Widened (75073 → 3317656 top profiles, 29524 → 88573 bottom, run 40 → 60, `P` 8 → 12) the
+value and the argmax do not move.
+
+**Lean, sorry-free** — `QOU/BraidKnot/EdgeDecoupling.lean`, `[propext, Classical.choice,
+Quot.sound]`, `lean -DautoImplicit=false -s 65536` exit 0. `sum_pairs_split` makes "restrict the
+displacement to one group" an exact summand in any `AddCommMonoid`; `cross_sum_le` bounds the
+cross part by `|A|·|B|·g R` for an antitone kernel at separation `R`; `cross_sum_le_geom` is the
+archimedean specialisation that sends it to zero geometrically.
+
+**What is NOT established.** That the limit **exists**. `e_k` here is exhaustive over a shape
+class, so every value is a rigorous **lower** bound; the class is the shape #7305's full
+enumeration independently found at every `k ≤ 12` (E1) and reaches #7331's own `k = 40` maximum
+(E2), but an upper bound on `M_n` is still the arc's open item and nothing here supplies one.
+
+**A defect this session introduced three times, now fixed.** The raw-float64 ratchet reported
+three NEW dirty witnesses, all from this session's own merged PRs — `rev-excess-scaling-exponent`
+(#7294 re-run), `rev-edge-relaxation-window` (#7323), `rev-exact-maximiser-small-n` (#7305). Every
+one of the 30 raw floats is a wall-clock `"seconds"` field. `witness_raw_float64_audit.py` carves
+out runtime durations **by field name**, and its own self-test at line 699 asserts that
+`"seconds"` is *counted* — the carve-out covers only names containing `dur` or `elapsed`. So the
+fix is a rename to `elapsed_sec` at the producer plus a re-run, not a baseline entry. The new
+probe here emits no timing field at all and carries **zero** float64 values.
+
+**Next:** `E_edge` and `Xrun(ℓ)` are now single k-free numbers over a semi-infinite AP with a
+`ε`-kernel. Whether either has a closed form is the remaining question, and it is a much smaller
+one than `e_∞` was.
+
+**Do not close this bean.**
+
+### 2026-09-14 — a re-run I made silently cut the exhaustive enumeration by two rungs
+
+Caught in the post-rebase verification, not by a gate. The rename of `"seconds"` →
+`"elapsed_sec"` (previous entry) required re-running `rev_exact_maximiser_small_n_probe.py`.
+Its reach is an **environment variable**:
+
+    K_MAX = int(os.environ.get("REV_EXACT_KMAX", "10"))
+
+The witness committed on `main` was built with `REV_EXACT_KMAX=12`. My re-run used the default,
+so `exact_rows` went `k = 1..12` → `k = 1..10` — the corpus's only exhaustive enumeration of
+every partition of `T_k`, narrowed by two rungs, with **no diagnostic anywhere**: the producer
+printed `10/10 checks pass`, and the witness is internally consistent at its smaller reach.
+
+**What made it visible was a downstream count, not the producer.** `e_inf`'s E1 calibration reads
+that witness and reported *"4 values of k"* where the previous run said 6. The check's own text
+then made it worse, because the range was **hardcoded** — it printed `4 values of k (7..12,
+n = 28..78)`, i.e. the right count beside the wrong range, which reads as a formatting quirk
+rather than as two missing rungs.
+
+**Fixed three ways**, in increasing order of what they buy:
+
+1. Regenerated at `REV_EXACT_KMAX=12`, restoring `k = 1..12`.
+2. E1's range is now **derived from the data** it loaded, so a count and a range can no longer
+   disagree.
+3. The probe reads and records `upstream_enumeration_kmax`, and prints it, so the reach of the
+   enumeration this calibration rests on is a stated number rather than an assumption.
+
+**Scope checked, not assumed:** of the four producers re-run this session, only this one reads
+an environment variable at all (`grep -nE "os\.environ|getenv"` over all four). The other two
+regenerated witnesses are **row-identical to `main`** — `rev-excess-scaling-exponent` 11 rows,
+`rev-edge-relaxation-window` 7 rows, same sets.
+
+`e_inf` is unaffected: `2.43929645512078402706542884314`, settled from `k = 520`. E1 is a
+calibration of the shape class, not an input to the value.
+
+**The reusable shape:** a producer whose *reach* is an env var with a modest default will
+silently shrink under any re-run that does not set it — a rename, a lint fix, a provenance
+refresh. The witness stays self-consistent, so nothing downstream fails; only a consumer that
+counts rows can see it.
+
+**Do not close this bean.**

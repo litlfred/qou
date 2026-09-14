@@ -79,11 +79,101 @@ DECL_RE = re.compile(
     re.M,
 )
 NS_RE = re.compile(r"^\s*namespace\s+([A-Za-z_][A-Za-z0-9_'.]*)", re.M)
+# `section` takes MODIFIERS — `noncomputable section` is the common one here —
+# so anchoring the keyword at line start misses it while its bare `end` still
+# pops the stack. Measured: that single spelling blanked the namespace for
+# every declaration after line 49 of `heisenberg-commutator-prop.lean`, losing
+# three true file pairs. A named `section Foo` is legal too, so the name is
+# optional for `section` and required for `namespace`.
+NS_OPEN_RE = re.compile(
+    r"^\s*(?:noncomputable\s+|private\s+|protected\s+|scoped\s+|unsafe\s+|partial\s+)*"
+    r"(namespace|section)(?:\s+([A-Za-z_][A-Za-z0-9_'.]*))?\s*$"
+)
+NS_END_RE = re.compile(r"^\s*end\s*([A-Za-z_][A-Za-z0-9_'.]*)?\s*$")
+
+
+def namespace_at(body: str) -> list[tuple[int, str]]:
+    """(offset, enclosing-namespace) checkpoints, from a real OPEN/END STACK.
+
+    Replaces `".".join(NS_RE.findall(body))`, which concatenated EVERY
+    `namespace` line in the file regardless of whether it was still open.  The
+    script's own docstring named that as its known limitation and predicted the
+    error direction correctly — MISSED pairs, so every count it produced was a
+    lower bound.
+
+    Confirmed instance, which is what this fix is verified against:
+    `lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean` opens `namespace
+    QOU.BraidKnot`, closes the class, then opens a NESTED `namespace
+    HeckeAnyonicSubstrate` for the class's lemmas.  Concatenation gave the
+    class the name `QOU.BraidKnot.HeckeAnyonicSubstrate.HeckeAnyonicSubstrate`,
+    which matches nothing — so its duplicate in
+    `nuclear-interactions/hecke-anyonic-substrate.lean`, a DIFFERENT class of
+    the same real name `QOU.BraidKnot.HeckeAnyonicSubstrate` in the SAME
+    namespace, was invisible.
+
+    `section` is tracked alongside `namespace` because a `section ... end` pair
+    otherwise pops a namespace off the stack — the same defect
+    `lean-duplicate-fqn-audit.py` records having had to fix.  Only `namespace`
+    frames contribute to the name; `section` frames are pushed so that their
+    `end` consumes the right frame and no more.
+    """
+    stack: list[tuple[str, str]] = []          # (kind, name)
+    checkpoints: list[tuple[int, str]] = []
+    off = 0
+    for line in body.splitlines(keepends=True):
+        m = NS_OPEN_RE.match(line)
+        if m and (m.group(1) == "section" or m.group(2)):
+            stack.append((m.group(1), m.group(2) or ""))
+        else:
+            e = NS_END_RE.match(line)
+            if e:
+                want = e.group(1)
+                if want:
+                    for i in range(len(stack) - 1, -1, -1):
+                        if stack[i][1] == want:
+                            del stack[i:]
+                            break
+                    else:
+                        if stack:
+                            stack.pop()
+                elif stack:
+                    stack.pop()
+        checkpoints.append(
+            (off, ".".join(n for k, n in stack if k == "namespace" and n))
+        )
+        off += len(line)
+    return checkpoints
+
+
+def ns_for_offset(checkpoints: list[tuple[int, str]], pos: int) -> str:
+    lo, hi, best = 0, len(checkpoints) - 1, ""
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        if checkpoints[mid][0] <= pos:
+            best = checkpoints[mid][1]; lo = mid + 1
+        else:
+            hi = mid - 1
+    return best
+
+
+def _blank_keep_newlines(m: re.Match) -> str:
+    """Replace a comment with spaces, PRESERVING its newlines and length."""
+    return "".join("\n" if c == "\n" else " " for c in m.group(0))
 
 
 def strip_comments(text: str) -> str:
-    text = re.sub(r"/-.*?-/", " ", text, flags=re.S)   # block + doc comments
-    text = re.sub(r"--[^\n]*", " ", text)              # line comments
+    # Blank comments IN PLACE rather than collapsing them to a single space,
+    # so that line structure survives for the line-based namespace stack below.
+    #
+    # HONESTY NOTE: I introduced this believing it was what lost three true
+    # file pairs. It was not — measured, it changes no verdict on this corpus
+    # (207 file pairs either way); the real cause was `noncomputable section`,
+    # fixed in NS_OPEN_RE. It is kept because a line-based scan should not
+    # depend on comments happening not to precede a `namespace` line, and
+    # because it keeps byte offsets aligned for `ns_for_offset`. The normalised
+    # statement text is unchanged either way (whitespace collapses downstream).
+    text = re.sub(r"/-.*?-/", _blank_keep_newlines, text, flags=re.S)
+    text = re.sub(r"--[^\n]*", _blank_keep_newlines, text)
     return text
 
 
@@ -91,7 +181,7 @@ def declarations(path: Path) -> dict[str, tuple[str, str]]:
     """fully-qualified name -> (kind, normalised statement text)."""
     raw = path.read_text(encoding="utf8", errors="replace")
     body = strip_comments(raw)
-    ns = ".".join(NS_RE.findall(body))          # nested namespaces concatenate
+    checkpoints = namespace_at(body)
     out: dict[str, tuple[str, str]] = {}
     hits = list(DECL_RE.finditer(body))
     for i, m in enumerate(hits):
@@ -99,6 +189,15 @@ def declarations(path: Path) -> dict[str, tuple[str, str]]:
         end = hits[i + 1].start() if i + 1 < len(hits) else len(body)
         stmt = " ".join(body[start:end].split())
         name = m.group(2)
+        # `mt.start(1)`, NOT `mt.start()`. DECL_RE opens with `^\s*`, and `\s`
+        # matches NEWLINES — so a match preceded by a blank line begins ON that
+        # blank line, and `mt.start()` can sit one or more lines above the
+        # declaration. Group 1 is the kind keyword, which is where the
+        # declaration actually starts. Measured: on
+        # `QOU/Archimedean/PauliWitness/witness_12C.lean` the `theorem` match
+        # reported line index 25, whose content is `"\n"`, against a real
+        # declaration further down.
+        ns = ns_for_offset(checkpoints, m.start(1))
         fq = f"{ns}.{name}" if ns and not name.startswith(ns) else name
         out[fq] = (m.group(1), stmt)
     return out

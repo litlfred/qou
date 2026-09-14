@@ -12,12 +12,35 @@ name: lean-content-siblings
 #
 # NOTE (bean qou-orph, 2026-08-08): this header used to explain the exclusion as
 # "the qou lakefile globs srcDir='.' = the lean/ tree only", which reads as
-# though everything INSIDE lean/ is covered by `lake build`. It is not. `globs`
-# is unset, so Lake's default target is the single module `QOU` plus its
+# though everything INSIDE lean/ is covered by `lake build`.
+#
+# 🛑 CORRECTION 2026-09-13 (bean qou-g5sp). That note then said "It is not.
+# `globs` is unset, so Lake's default target is the single module `QOU` plus its
 # transitive import closure — 47% of the modules under lean/QOU/ are imported by
-# nothing and are never compiled either. That is a separate problem with its own
-# gate (.github/workflows/lean-orphan-gate.yml); this workflow remains only about
-# siblings outside the lean/ tree.
+# nothing and are never compiled either." BOTH of the last two clauses are now
+# false, and the second was already false the day the note was written.
+#
+#   * `globs` is NOT unset. `content/quantum-observable-universe/lean/lakefile.toml`
+#     declares `globs = ["QOU", "QOU.+"]`, and `QOU.+` is `Glob.andSubmodules`,
+#     so the library target is the WHOLE tree. That landed on 2026-08-08 (bean
+#     qou-rc7b) — the same date as this note, which is presumably how they
+#     crossed.
+#   * So a module outside `QOU.lean`'s import closure IS compiled by
+#     `lake build QOU`. `.github/workflows/lean-orphan-gate.yml` carries the same
+#     correction (bean qou-kljb, 2026-08-15), verified there by direct experiment
+#     on a throwaway package; it is the file to read on this point.
+#
+# Measured here 2026-09-13: `lean-library-sweep.py --all` judged all 2836 modules
+# under lean/QOU/ — the ~48% outside the import closure included — at ZERO source
+# errors. So there is no unchecked-breakage backlog inside lean/ for this note to
+# point at.
+#
+# What REMAINS true, and is this workflow's actual reason to exist: nothing runs
+# any of these builds automatically — every workflow in this repo is
+# `workflow_dispatch`-only (owner directive 2026-06-30, Actions billing) — and
+# the content-block siblings under content/<paper>/<chapter>/ are outside the
+# Lake globs no matter what, since `srcDir = "."` is the `lean/` dir. Those two
+# facts, not build coverage inside lean/, are why this gate is here.
 #
 # Jobs:
 #   gate — bun-only, no Lean toolchain:

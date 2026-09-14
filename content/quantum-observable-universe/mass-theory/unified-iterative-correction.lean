@@ -119,7 +119,18 @@ noncomputable def stepDeltaPartition
     (m_e H_q_lambda y_lambda Lk Lk_prev : F) : F :=
   m_e * H_q_lambda * y_lambda * (Lk - Lk_prev)
 
-/-- (2,2) instance of the per-partition step delta. -/
+/-- (2,2) instance of the per-partition step delta, at the **historical**
+    Wedderburn-weighted scale `m_e · H_q((2,2)) · w_(2,2)`.
+
+    This is neither of the two scales `hecke_core_legacy` carries: the
+    superseded `C_lambda_kerov_MeV = w_λ · y_λ · H_q · m_e` (`:535`) nor the
+    live `C_lambda_resolvent_MeV = H_q · y_λ · ρ_λ(s_*) · m_e` (`:548`) — it
+    omits `y_λ` entirely.  Kept because the telescoping theorems stated about
+    it are true of it; for the scale the producer actually applies, and which
+    `prop:unified-iterative-correction` now states, use `stepDeltaResolvent`
+    below.  (Resolved 2026-09-12 under the owner's ruling *"resolve functionals
+    ... what lean provable"*; audit
+    `docs/audits/2026-09-12-uic-functional-resolution.md`.) -/
 noncomputable def stepDelta (q m_e Lk Lk_prev : F) : F :=
   Delta22 q m_e * w22 q * (Lk - Lk_prev)
 
@@ -166,12 +177,84 @@ theorem unified_telescope_partition {A : ℕ}
   unfold stepDeltaPartition
   rw [← Finset.mul_sum, step_telescope, hL0]
 
+/-! ## §6  The resolvent-damped scale — the live production convention
+
+Added 2026-09-12 under the owner's ruling *"resolve functionals ... what lean
+provable"*.  `prop:unified-iterative-correction` displayed
+`m_e · H_q(λ) · u_λ` with no resolvent while the producer has applied
+`m_e · H_q(λ) · y_λ · ρ_λ(s_*)` since the q-heat-spectrum derivation replaced
+the ad-hoc Kerov multiplier (`hecke_core_legacy.py:545-548`).  Deleting `ρ_λ`
+moves the accumulator's total by 4.12× at `A = 2` and 9.87× at `A = 4`
+(`computations/probes/uic_functional_resolution_probe.py`), so the omission was
+a factor, not a rounding.
+
+The **gate** — the producer's former Pass-2 restriction to `tr M_λ ≤ 0` — is
+deliberately NOT asserted here.  It was underived: see
+`QOU.MassTheory.UICFunctionalSelection`, whose `uicGated_cs_eq` shows that
+genuine complementary slackness collapses the functional to a constant carrying
+no information about the atom.  The restriction was removed from the producer on
+2026-09-12 (owner ruling, bean `qou-21oc`), so this file's unrestricted reading
+and `hecke_core_legacy.unified_iterative_correction` now agree. -/
+
+/-- The `q`-resolvent on the `λ`-block: `ρ_λ(s) = 1 / (μ_λ + s)`, with `μ_λ` the
+    Jucys–Murphy `q`-Casimir eigenvalue.  The block-diagonal scalar of
+    `def:q-resolvent`'s `R_q(s) = (s + Δ̂_q)⁻¹`. -/
+noncomputable def qResolvent (mu s : F) : F := 1 / (mu + s)
+
+/-- Per-partition per-step contribution at the **live** scale:
+    `ΔB_λ = m_e · H_q(λ) · y_λ · ρ_λ(s_*) · (L_k − L_{k−1})`. -/
+noncomputable def stepDeltaResolvent
+    (m_e H_q_lambda y_lambda mu s Lk Lk_prev : F) : F :=
+  m_e * H_q_lambda * y_lambda * qResolvent mu s * (Lk - Lk_prev)
+
+/-- **The resolvent occupies the weight slot.**
+
+The live scale is the general per-partition shape with `y_λ` replaced by
+`y_λ · ρ_λ(s_*)`, so every structural result already proved about
+`stepDeltaPartition` transfers verbatim.  This is why adding the omitted factor
+to the content block is a restatement rather than a new derivation. -/
+theorem stepDeltaResolvent_eq_partition
+    (m_e H_q_lambda y_lambda mu s Lk Lk_prev : F) :
+    stepDeltaResolvent m_e H_q_lambda y_lambda mu s Lk Lk_prev
+      = stepDeltaPartition m_e H_q_lambda (y_lambda * qResolvent mu s)
+          Lk Lk_prev := by
+  unfold stepDeltaResolvent stepDeltaPartition
+  ring
+
+/-- **The resolvent-damped accumulator telescopes.**
+
+The per-partition total is `m_e · H_q(λ) · y_λ · ρ_λ(s_*) · (L_A − ln d_λ)` —
+exactly the closed form `prop:unified-iterative-correction` now displays, and
+the identity that lets the producer's total be reconstructed from the final
+trace alone (verified to rel 2.7e-63 in the probe). -/
+theorem unified_telescope_resolvent {A : ℕ}
+    (m_e H_q_lambda y_lambda mu s : F) (L : ℕ → F) (L0 : F)
+    (hL0 : L 0 = L0) :
+    (Finset.range A).sum
+      (fun k => stepDeltaResolvent m_e H_q_lambda y_lambda mu s
+                  (L (k + 1)) (L k))
+    = m_e * H_q_lambda * y_lambda * qResolvent mu s * (L A - L0) := by
+  simp only [stepDeltaResolvent_eq_partition]
+  rw [unified_telescope_partition m_e H_q_lambda (y_lambda * qResolvent mu s)
+        L L0 hL0]
+  ring
+
 /-- Convenience name matching the proposition label.
-    Single-partition (2,2) instance. -/
+    Single-partition (2,2) instance at the historical `w_(2,2)` scale; see
+    `stepDelta`'s docstring and `unified_telescope_resolvent` for the live one. -/
 theorem unified_iterative_correction {A : ℕ} (q m_e : F) (L : ℕ → F)
     (hL0 : L 0 = (2 : F)) :
     (Finset.range A).sum (fun k => stepDelta q m_e (L (k+1)) (L k))
     = Delta22 q m_e * w22 q * (L A - 2) :=
   unified_telescope q m_e L hL0
+
+/-! ## Axiom audit -/
+
+#print axioms step_telescope
+#print axioms unified_telescope
+#print axioms unified_telescope_partition
+#print axioms stepDeltaResolvent_eq_partition
+#print axioms unified_telescope_resolvent
+#print axioms unified_iterative_correction
 
 end QOU.Archimedean.ConfinedKnotBinding.Unified

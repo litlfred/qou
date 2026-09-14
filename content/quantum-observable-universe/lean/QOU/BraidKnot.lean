@@ -51,6 +51,15 @@ import QOU.BraidKnot.StaircaseHookMultiset
 -- triangular n, and REV_n's cost term is a local harmonic penalty on displacement away from the
 -- staircase lattice -- quantised, since `Sum u_i^2` is an even integer when `Sum u_i = 0`.
 import QOU.BraidKnot.HookSumElasticity
+-- Separated groups of rows do not interact (bean qou-hok7). The hook sum splits over any
+-- partition of the rows by inspection; the REV_n objective's PAIR term is the only thing that
+-- can tie two groups together, and `sum_pairs_split` makes that split exact while
+-- `cross_sum_le` bounds the cross part by `|A| * |B| * g R` at separation `R`. With the kernel
+-- `eps(m) = -log(1 - q0^(-2m))` geometric, `cross_sum_le_geom` sends it to zero geometrically.
+-- That is what turns the maximiser's FREE run position (#7323) into a decomposition: the top
+-- block, the run and the bottom block stop interacting, and e_inf becomes a sum of three
+-- k-free pieces rather than a single-n measurement.
+import QOU.BraidKnot.EdgeDecoupling
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
