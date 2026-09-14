@@ -4,7 +4,7 @@ title: 'SCREEN: 46 Lean files carry numeric literals citing a producer whose wit
 status: todo
 type: task
 created_at: 2026-09-14T20:56:23Z
-updated_at: 2026-09-14T21:30:15Z
+updated_at: 2026-09-14T21:34:53Z
 ---
 
 
@@ -413,3 +413,78 @@ Both are still worth running, being cheap and interpretable, and that is the
 next step rather than a conclusion.
 
 Tally: **2 of 22 decided**, 3 exactly checkable here, 19 environment-blocked.
+
+---
+
+## 2026-09-14 (final for this session) — the exactly-checkable set is CLOSED at 3: 1 defect, 1 clean, 1 unrunnable
+
+Ran the two remaining exact producers. Option A is now complete, and it ends
+smaller than it started.
+
+### `t3_writhe_vs_delta_lambda_sign` — CLEAN, true negative
+
+Exit 0, and the witness reproduces **byte-identically on substance**. The only
+diff is three *added* provenance fields the old witness predates:
+
+```
++  "scriptFile": "t3_writhe_vs_delta_lambda_sign.py",
++  "q0Anchor": "independent",
++  "q0AnchorReason": "producer declared q0-independent at the stamp site ..."
+```
+
+**No numeric field moved.** Witness reverted (the additions are not mine to
+land).
+
+### `borromean_angle_structure_lp_probe` — UNRUNNABLE here, and the guard is working
+
+Exit 2, with its reason on **stdout**:
+
+> `WALL: SnapPy is not importable — gluing data cannot be obtained from the
+> source; refusing to hand-guess it (anti-guessing rule).`
+
+That is a refusal, not a crash — the class AGENTS.md documents as *"exit non-zero
+BY DESIGN ... guards working correctly, and both explain themselves on stdout."*
+
+**And it exposes a gap in my own `--env` scan**: `snappy` was not in `_ENV_KEYS`,
+so a producer gated on an optional dependency read as *exact and re-runnable*
+while being unrunnable. Added (measured: `ModuleNotFoundError` here). Absence is
+the signal; witnesses predating the key simply will not carry it.
+
+### 🛑 Two more false-positive classes, and neither is fixable by regex
+
+Both remaining candidates' shared literals turned out not to be data:
+
+- **A mathematical constant of the construction.** `M004AngleStructure`'s `1/3`
+  is *the regular ideal tetrahedron angle in π-units* — `theorem GA_regular :
+  GA (1/3) (1/3) (1/3) (1/3) (1/3) (1/3)`. It appears on both sides because both
+  discuss the same mathematics, not because one copied a number from the other.
+- **An index range written with a slash.** `T3WritheVsDeltaLambdaSign`'s `4/5`
+  is *"the height-4/5 columns"* — a pair of column indices, not a ratio.
+
+Together with the arXiv-identifier class this is **three** ways a shared token
+means nothing. The first was fixable by regex; these two need semantics and are
+recorded as a known limit rather than chased. Practical consequence: **a low
+shared count is close to worthless as evidence** — only `JetOrderIndependence`'s
+5/5, where the shared set is a matrix's own entries, was ever a real signal.
+
+### Where this leaves the screen
+
+| bucket | count | resolution |
+|---|---:|---|
+| exactly checkable here | 3 | **1 defect, 1 clean, 1 unrunnable — CLOSED** |
+| environment-blocked (mpmath / native) | 19 | needs a pinned environment |
+| pointer, not a claim | 24 | no shared number |
+
+**The exactly-checkable set is exhausted and produced exactly one real defect**,
+the one that motivated the screen. That is the honest yield: 1 in 46 candidates,
+1 in 3 checkable.
+
+**Recommendation, unchanged in direction but firmer: option C.** The screen's
+durable value is the *statement* — 46 Lean provenance claims cite producers, 22
+carry numbers from a moved producer, and only 3 can be checked without a pinned
+environment — not a queue anyone should work down. Wiring it as a gate would be
+wrong: with three false-positive classes and a 1-in-3 hit rate on the checkable
+subset, it would train readers to ignore it.
+
+Bean stays open on the environment-pinning decision (option B) and on the
+`qou-oots` witness finding, neither of which is mine to take.

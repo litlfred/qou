@@ -298,15 +298,21 @@ def stage2(rows):
 # scipy 1.18.0 -- NEWER than this container.
 # --------------------------------------------------------------------------
 
+# `snappy` earns its place: borromean_angle_structure_lp_probe REFUSES to run
+# without it ("WALL: SnapPy is not importable -- gluing data cannot be obtained
+# from the source; refusing to hand-guess it"), so a producer gated on an
+# optional dependency reads as re-runnable while being unrunnable. Absence is the
+# signal here, and witnesses that predate the key will simply not carry it.
 _ENV_KEYS = ("python", "numpy", "scipy", "sympy", "mpmath",
-             "pyhecke_native", "clarabel", "pyhecke_native_build")
+             "pyhecke_native", "clarabel", "pyhecke_native_build", "snappy")
 
 
 def live_environment() -> dict:
     import importlib
     import platform
     out = {"python": platform.python_version()}
-    for mod in ("numpy", "scipy", "sympy", "mpmath", "pyhecke_native", "clarabel"):
+    for mod in ("numpy", "scipy", "sympy", "mpmath", "pyhecke_native",
+                "clarabel", "snappy"):
         try:
             out[mod] = getattr(importlib.import_module(mod), "__version__", "?")
         except Exception:
