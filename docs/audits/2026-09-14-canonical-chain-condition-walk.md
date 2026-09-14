@@ -455,18 +455,42 @@ surfacing in both a character space and an algebra.
 relation rather than transcribed, with braid and Hecke relations asserted in
 all three irreps.
 
-### 🛑 What this is and is not
+### 🛑 WITHDRAWN — the cheat sheet's own §9.5 answers this, and I had not read it
 
-**Scope (b) for the narrow claim** — the six knots do not span `H_3(q)`, at no
-`q` rather than at some `q`; invariant = rank subadditivity over the
-2-strand/3-strand split, plus the Hecke collapse of `σ₁^s`.
+Everything above is arithmetically correct and **its conclusion is withdrawn.**
 
-It is **not** a claim that step 4 is wrong, and **not** a claim against the
-particle-content assignment. The knots are used as *operators*, and an operator
-family spanning a 4-dimensional subspace is not thereby defective. What is
-established is that **the "6 ↔ 6" is a coincidence of counts, not a
-linear-algebraic identification**, so it cannot carry the weight the diagram's
-arrow gives it — and that the corpus block already treats it correctly.
+[§9.5 of the cheat sheet](../canonical-derivation-cheat-sheet.md) names the
+diagram's six explicitly — `{1, σ₁, σ₂, σ₁σ₂, σ₂σ₁, σ₁σ₂σ₁}`, the **GB basis of
+`H_3`** — and exists precisely to correct *"a recurrent agent confusion …
+reading '6 basis elements' as **6 independent** SM-equivalent operators"*. It
+calls them **GENERATORS** whose multiplicative closure climbs the GB/jet tower.
+
+So the right question is not what the six knots **span** but what they
+**generate**. Measured:
+
+| | |
+|---|---:|
+| span of the six knot words | **4** of 6 |
+| **subalgebra generated** by them (products alone, no inverses) | **6 of 6** |
+
+**Under the reading §9.5 tells readers to use, the six torus knots do generate
+`H_3(q)`.** So *"the `6 ↔ 6` is a coincidence of counts, not a linear-algebraic
+identification"* is **too strong and is withdrawn**: there is a correct
+algebraic sense in which the six knots answer to the six-element basis.
+
+What the span measurement *does* refute is the **basis** reading — which §9.5
+refutes already, at greater length, and calls a recurrent agent confusion. **So
+this section corroborates the corpus rather than finding a defect in it.**
+
+The one narrow residue: the §1 diagram's bare `↔` still invites the basis
+reading, and §9.5 sits ~700 lines below it.
+
+Also note `{γ, σ₀, σ₁, L₊, L₋, e⁻}` is a **third** six, from a different
+appendix, and is not what the diagram means — I reached for it because I had not
+read §9.5.
+
+**Scope (b) now applies only to the arithmetic** (span = 4 of 6, at no `q`),
+**not to any reading of the diagram.**
 
 ---
 
@@ -790,12 +814,11 @@ genus misses by one (§"Answering (1)" above).
    route, since it `uses` route 2 and is not independent anyway. This is a
    judgement about what the argument was meant to say, which is the author's,
    not mine.
-2. **The cheat sheet's step-4 arrow** — *"6 basis elements ↔ 6 torus knots"* —
-   reads as a linear-algebraic identification that does not hold (the knots
-   span 4 of 6 dimensions), while the corpus block it summarises is correct.
-   A wording fix to the primary coordination document, so the owner's, not
-   mine. **Default if nothing is done:** the diagram keeps overstating a
-   correspondence the block underneath it states correctly.
+2. ~~**The cheat sheet's step-4 arrow**~~ — **WITHDRAWN.** §9.5 of the cheat
+   sheet already names the six as the GB basis and calls them *generators*,
+   and measured, the six knots **do generate `H_3`** (6 of 6). Only the basis
+   reading fails, and §9.5 refutes that itself. Residue: the §1 diagram's bare
+   `↔` invites the reading §9.5 sits 700 lines below correcting.
 3. **The cheat sheet's hadronic `𝔈₀ = Q_β/|h(h−2)/2|`** makes step 11 vacuous
    as written, and is the 0.17 % agreement inverted — a cell the corpus has
    retired. Production is not circular. **Highest priority of the three
