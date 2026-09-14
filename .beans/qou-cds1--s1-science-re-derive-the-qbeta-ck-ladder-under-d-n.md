@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-13T11:00:00Z
+updated_at: 2026-09-14T07:49:13Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8210,3 +8210,44 @@ named attacks on `α` closed or forbidden** (A withdrawn by its own author, B
 pruned then measured inert, C closed by PR #7340, D a fourth calibration). With
 every route shut, the useful thing to know is what the blocker costs — and it
 costs one rung, not five.
+
+## 2026-09-14 — where the convention enters, measured (PR #7343)
+
+Owner authorised D2 (*"work convention-D c_k re-derivation"*). Measuring the
+scope first:
+
+**The Markov convention reaches this ladder at exactly ONE place** — the N=1
+eigenphase `alpha = (z-1)*h/2`. The tail factors N2..N5 never mention z. Two
+independent surfaces agree:
+
+- Python: `qbeta_utils.py:225` says so outright and guards it (`_WITHHELD =
+  ("z","alpha")`, raises rather than hand out a convention unnamed).
+- Lean (new, this PR): `N2_factor..N5_factor` are built from `hoefsmitB` and
+  `hbarQ'` alone; `Q_beta_categorical_ofPhase_tail_common` proves the tail is
+  phase-independent; `hoefsmitB_sq_eq_one_sub_stdWeightD` gives
+  `b^2 = 1 - y_(2,1)^D`, so the tail's generator is structurally a D object.
+
+**But that does NOT make four rungs convention-blind, and my first draft said it
+did.** Every extracted c_k divides through Q_N1, so the single entry point
+propagates to all five. AGENTS.md's "treat every c_k conclusion as
+C-conditional" is correct as written; the draft's "too strong for c2..c5" is
+withdrawn.
+
+Already on main with a committed witness, and my corpus-grep missed it:
+`qbeta_c3_ladder_trace_convention_sensitivity_probe.py` (2026-09-05, witness
+2026-08-31, 10/10 PASS, proton, 60 dps):
+
+    implied c2   -1.017623798 (C)  ->  -9.298862871 (D)
+    c3 proton    -2.069342577 (C)  ->  -974.4318877 (D)
+    dist to -Vol(4_1) under D: 972.402004534
+    swing_D/swing_C = 1.00522   <- the ONE convention-immune pillar
+
+Its own assertion names: implied_c2_is_minus1_in_C_frame_only,
+h1_volume_proximity_does_not_survive_D_reextraction. Grep failure was on the
+CLAIM SHAPE, not the topic.
+
+**Net scope for this bean: one phase to derive, five values to re-extract.** The
+ansatz survives as it stands; the numbers do not. Still blocked on qou-pdix
+(alpha), where every named attack is now closed or forbidden.
+
+Audit: docs/audits/2026-09-13-d2-convention-enters-at-one-rung.md
