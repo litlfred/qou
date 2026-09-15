@@ -95,3 +95,38 @@ instance binder (`[C X]` + `ClassName.field`), which is how all three
 `variational_*` theorems are spelled, so the audit scores 0 on GaugeTheory.lean.
 Successor cause to `qou-24m2` (which fixed the NAMED `[ctx : C]` case — confirmed
 still working by probe). 91 candidates, LOWER BOUND, shape not defects.
+
+## 2026-09-15 (later) — existence constructors, and the objection they close
+`QuadraticAction` had no existence constructor, which the formalizer skill
+requires: without one every downstream statement about it is vacuously
+satisfiable. Adding `QuadraticAction.ofFunctional eps` (the action
+`e |-> (eps e)^2` from any linear functional, plus `Inhabited` via
+`ofFunctional 0`) turned out to close the strongest objection to this whole
+branch, so it was not bookkeeping.
+
+  ofFunctional_variation : (ofFunctional eps).variation e d = 2 * eps e * eps d
+
+`ofFunctional eps` NEVER SEES A FIELD except through the SCALAR `eps e`, and its
+variational derivative is a bilinear form on the field space regardless. So
+"but the action is a scalar anyway" is not a defence of the scalar
+`einsteinTensor` slot: the action is a scalar in BOTH shapes, and only the
+DOMAIN decides the rank of the derivative.
+
+`contractionAction d eta eps` is the same construction on the pairing field
+space, built from nothing but a co-pairing and a scalar reading of `End(1_C)`:
+`value T = (eps (eta >> T))^2` — the square of EXACTLY the scalar the corpus
+keeps — and `variation T d = 2 * eps (eta >> T) * eps (eta >> d)`, still rank-2.
+So the same scalar data `HasAction` reads produces a rank-2 derivative once its
+domain is the pairings.
+
+Re-verified on the extended file: `lean -DautoImplicit=false -s 65536` exit 0,
+no errors, no warnings; `#print axioms` on all **19** declarations gives
+propext / Classical.choice / Quot.sound only, **sorryAx count 0**;
+`lean-self-assuming-audit.py` 0 candidates; `grep -c sorry` 0.
+
+### Bean stays IN-PROGRESS, deliberately
+The gap this bean names is not closed. `HasAction.action` still has the scalar
+domain; `MonoidalCalcVar.lean` and `GaugeTheory.lean` are untouched. Retyping
+`HasAction.action` to take a field space is neither a precision fix nor
+corpus-derived, so per AGENTS.md "ASK THE OWNER BEFORE CHANGING THINGS" it is an
+owner call. It is cheap when wanted: zero instances, zero consumers.
