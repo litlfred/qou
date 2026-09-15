@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-09-15T06:50:47Z
+updated_at: 2026-09-15T09:43:22Z
 ---
 
 Child of `qou-51l1` (which established that the χ = −6 chain is
@@ -236,3 +236,233 @@ not derived. The two `appendix-surreals/` hits are about the zeta VALUE
 (`corpus_search` / MCP `paper-assistant` failed to connect this session,
 ENOENT). So this is "no axiom-level source for an order-5 automorphism on
 the block-manifest surface", not "there is none".
+
+
+---
+
+## Session 2026-09-15 (`claude/weierstrass-transitivity-from-axioms-2026-09-15`) — the transitivity route, tested and NEGATIVE
+
+**Status stays `todo`** (AGENTS.md §13a: the subject is an open derivation).
+
+Assigned: the one narrowing this bean's prior session found that does not name
+six — Laing & Singerman Thm 15, transitivity of `Aut` on the Weierstrass points,
+which was recorded as giving `χ(A) ∈ {−4, −6}` from a homogeneity hypothesis.
+**Q1** — does an axiom force transitivity? **Q2** (secondary) — does an axiom
+supply an order-5 automorphism, searched on the surfaces the prior pass skipped?
+
+### Outcome in one line
+
+**The route fails, and not because the right axiom was not found: the hypothesis
+that does the narrowing is not the transitivity.** Transitivity has *zero*
+narrowing power on the genus, and that is a **scope-(b) structural exclusion**
+whose invariant is an explicit infinite family in a **held, published** source.
+
+### 1. Laing & Singerman has TWO hypotheses, and the prior framing dropped one
+
+`g³ − g` is the **total Weierstrass weight** at every genus `g ≥ 2` (Hurwitz),
+and every Weierstrass point carries weight `≥ 1`. So "`g³ − g` Weierstrass
+points" is not a count sitting next to transitivity — it is the independent
+hypothesis that **every Weierstrass point is simple** (weight exactly 1), since
+`|W| ≤ g³ − g` always, with equality iff all weights are 1.
+
+This is not an inference of mine. **The corpus already holds the paper that says
+it verbatim**, and it had never been read here:
+
+> *"Laing and Singerman in [24] searched for all Riemann surfaces of genus
+> `g > 2` admitting a transitive action on the Weierstrass points, **but under
+> the additional assumption that such points are simple (namely, of weight
+> 1)**."*
+
+— S. Reyes-Carocca & P. Speziali, *Infinitely many Riemann surfaces with a
+transitive action on the Weierstrass points*, arXiv:2211.08164v2, §4:
+`library/arxiv-2211.08164v2/sections/sec-003-4-simple-weierstrass-points.md`.
+Registered in `content/schema/references.ts:13545`, indexed at
+`library/INDEX.md:364`. The prior session's own record cites this arXiv id via
+`content/bib-qa-verifications.json:11038` — so the document was known and its
+decisive content was not.
+
+### 2. Transitivity alone narrows NOTHING — scope (b)
+
+Two independent witnesses, both from that held source:
+
+- **Its title is the theorem.** *"There are infinitely many pairwise
+  non-isomorphic, non-hyperelliptic compact Riemann surfaces with automorphism
+  group acting transitively on the Weierstrass points."* (§1). It falsifies
+  three of Singerman's own conjectures, and the Magaard–Völklein expectation
+  that no such infinite non-hyperelliptic family exists.
+- **The Accola–Maclachlan curve of genus `g ≥ 2`** is transitive on its
+  Weierstrass points **at every genus** (§1 item 1). `2g + 2` points of weight
+  `g(g−1)/2`, carrying the full `g³ − g` — verified exactly for `g = 2…60`
+  (probe T3), and simple **only** at `g = 2`.
+
+So a `predicate = transitivity` cuts out **no genus at all**. Any axiom whose
+content is transitivity — however it is stated, from whatever reading of
+observability — buys nothing. This is not "no axiom was found"; it is *there is
+nothing here for an axiom to supply*.
+
+### 3. The operative hypothesis is a GENERICITY condition, anti-correlated with symmetry
+
+Simplicity is what narrows, and it is the wrong **shape** for an
+observability-style axiom to supply. The sharpest evidence is inside the
+classification's own data — the four published configurations (probe T5):
+
+| configuration | genus | \|W\| | weight | \|Aut\| | stab | transitive | simple |
+|---|---|---|---|---|---|---|---|
+| Bring | 4 | 60 | 1 | 120 | 2 | ✓ | ✓ |
+| Klein's quartic | 3 | 24 | 1 | 168 | 7 | ✓ | ✓ |
+| `K₃` long orbit | 3 | 24 | 1 | 24 | 1 | ✓ | ✓ |
+| `K₃` short orbit | 3 | 12 | **2** | 24 | 2 | ✓ | **✗** |
+
+`|W|·w = g³ − g` in all four; `|W|` divides `|Aut|` in all four. **4/4
+transitive, 3/4 simple** — transitivity separates *nothing* and simplicity is
+the entire discriminator. And the one that fails simplicity is, by the source's
+§4, exactly **Fermat's quartic and `C₃`** — the two *most symmetric* members of
+`K₃`. So more symmetry does not give simplicity; inside the very family the
+theorem is about, it takes it away.
+
+(Bring's stabiliser `120/60 = 2` independently reproduces Braden &
+Disney-Hogg's *"preserved by the transposition (ij) only"* — a cross-check that
+the table is transcribed correctly.)
+
+### 4. Derived here, and it is the arc's first non-read-off narrowing: `g ≤ 8`
+
+With **no classification input at all**: transitivity makes `W` a single orbit,
+so `|W|` divides `|Aut|`; simplicity gives `|W| = g³ − g`; Hurwitz gives
+`|Aut| ≤ 84(g − 1)`. Cancelling the common `(g − 1)`:
+
+    (g−1)·g·(g+1) ≤ 84(g−1)  ⟹  g(g+1) ≤ 84  ⟹  g ≤ 8.
+
+Cut-off exact (`g=8`: 504 ≤ 588 holds; `g=9`: 720 > 672 fails), scanned to
+`g = 400` with no re-entry. Strictly weaker than the cited `g ∈ {3,4}` — and
+unlike it, it needs **neither Laing & Singerman (not held) nor anything read off
+Bring's curve**. Every classical input is a hypothesis of the theorem consuming
+it, so nothing is assumed as an `axiom`.
+
+### 5. Framing correction: `χ = −2` survives; the route gives `{−2, −4, −6}`
+
+Both classification papers stipulate genus `> 2`. That is a hypothesis, not a
+conclusion, and **genus 2 satisfies both (H1) and (H2) unconditionally**: at
+`g = 2` the *maximum* weight `g(g−1)/2` is itself `1`, so every genus-2
+Weierstrass point is simple, there are `2g+2 = 6` of them and `g³−g = 6` agrees;
+and the Accola–Maclachlan curve of genus 2 supplies transitivity (§1 item 1
+states the family for `g ≥ 2`).
+
+Nothing in `ex:chi-minus-six-derivation` supplies `g > 2` — Step 4 gives
+`g ≥ 1`, observability gives `χ ≠ 0`, i.e. `g ≥ 2`. So the route's honest output
+is **three** values, not two. `−6` is 1 of 3 with the classification, 1 of 7
+under the self-contained bound of §4.
+
+*(A curiosity, not a derivation: the genus-2 case is a real "six" — six simple
+Weierstrass points carrying a transitive action. It is not the corpus's six.)*
+
+### 6. Q1, answered
+
+**No.** And the reason is prior to any search for the right reading of
+observability. The corpus encodes observability twice and neither encoding
+reaches a surface automorphism group:
+
+- `QOU.FluidDynamics.QOUFluidUniverse.observability` — an **opaque `Prop`
+  field** (`qou_ns_in_qou.lean:77`), no content at all;
+- `QOU.FluidDynamics.ObservabilityData`
+  (`observability_q_independent.lean:56`) — its only content in the corpus: a
+  single `hom_rank : ℕ` with `observable : hom_rank = 0`, i.e.
+  `Hom_𝐂(𝟙, Ad(A)) = 0`.
+
+That is a statement about a Hom-space in the monoidal category, about the
+algebra object `A`. No theorem in the corpus relates it to `Aut(M₀)` acting on
+anything. **But building that bridge would not help**: by §2 it would deliver
+(H1), which narrows nothing. The hypothesis that narrows is (H2), and §3 is the
+argument — an argument, not a theorem — that a homogeneity axiom is the wrong
+shape for it.
+
+**Anti-fit note.** I did not pick a reading of observability to make
+transitivity come out. The route was tested as assigned and the measurement
+went the other way; §3's anti-correlation is the held source's own data, not a
+selection of mine.
+
+### 7. Q2 — the unsearched surfaces, searched. Same answer, wider.
+
+The prior session's negative covered `content/quantum-observable-universe/*/*.ts`
+only. Searched this session: **`computations/`, `docs/`, `.beans/`, and the
+`library/*/ocr/` tier** (26 directories) that a `sections/` grep misses.
+
+There **is** an order-5 structure outside `brings-surface/` — the binary
+icosahedral `Σ(2,3,5) = 2I` (order 120) of the `Δ_λ` / WRT arc:
+`computations/lr_modulus_identification_sigma235.py`,
+`computations/deltalambda/deltalambda_icosahedral_smatrix_magnitude_probe.py`,
+`computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py`,
+`content/.../mass-theory/cyclotomic-boundary-at-keystone.md`,
+`conj:klein-bring-icosahedral-bridge`.
+
+**It is the same read-off, one level down.** `docs/coordination/s5-so3-keystone.md`
+states its own goal as the fibre map `S₅ ⊃ A₅ ≅ I ⊂ SO(3)` tying the Wedderburn
+action on `H₅(q)` *"to icosahedral rotations on **Bring's quintic surface**"* —
+so `Σ(2,3,5)` enters **through `S₅ = Aut(Bring)`**, not from an axiom. And
+`conj:klein-bring-icosahedral-bridge` is stated in terms of Bring outright.
+`lr_modulus_identification_sigma235.py` opens *"TARGET (conjectured shape, per
+the s5-so3 ledger)"* — posited, not derived.
+
+**The one route to order 5 that does NOT pass through Bring is McKay
+`2I ↔ Ê₈`** — and it is blocked at the joint this bean already recorded: §5(a),
+nothing in the axioms makes `G` finite, so the ADE list does not apply to the
+object the axioms deliver; and granting finiteness, observability prunes to four
+families and nothing selects the icosahedral one.
+
+So: **no axiom-level source for an order-5 automorphism on any surface now
+searched.** Still not searched: the knowledge graph (`corpus_search` / MCP
+`paper-assistant` again failed to connect, ENOENT).
+
+### Artifacts, both on the branch
+
+- **`content/quantum-observable-universe/lean/QOU/BringsSurface/WeierstrassTransitivityNotForced.lean`**
+  — sorry-free, **import-free**, `lean -DautoImplicit=false -s 65536` exit 0.
+  12 declarations; `#print axioms` kernel-checked: no `sorryAx`, no custom
+  axiom — `[propext, Quot.sound]` on seven, **nothing at all** on the other
+  five. `scripts/lean-self-assuming-audit.py` 0 hits, and the `qou-1ccx` blind
+  spot (projection through an anonymous instance binder) **cannot apply**: the
+  file declares no `class` and no `structure`.
+- **`computations/weierstrass_transitivity_narrowing_probe.py`** +
+  **`computations/weierstrass-transitivity-narrowing.witness.json`** — 22/22,
+  exact `int` throughout, no float / mpmath / substrate parameter
+  (`q0Anchor: independent`). Independent route: divisor enumeration over the
+  total weight, plus the direct cross-check of the held source's four
+  configurations. `scripts/precision-gates.sh --changed` exit 0 (the 13 audit
+  witnesses the gate run rewrote were restored, not committed).
+
+### Scope, per AGENTS.md §"Before declaring refuted"
+
+- **§2 is scope (b)** for the transitivity half: the invariant is an explicit
+  infinite family (Accola–Maclachlan at every `g ≥ 2`) in a published held
+  source, plus that source's main theorem. Not a claim that no homogeneity
+  hypothesis of any kind could narrow — a claim about *this* one.
+- **§3 and §6 are scope (a)**: no axiom supplying simplicity was found on the
+  surfaces searched. The shape argument is an argument, not a proof.
+- **§7 is scope (a)**, widened: no axiom-level order-5 source on
+  `computations/` / `docs/` / `.beans/` / `library/*/ocr/` either.
+- **Not excluded:** `g = 4` may still be right; the classification is genuine;
+  §4's `g ≤ 8` is a real narrowing.
+
+### Sharpest statement of what remains
+
+> Steps 3+4 pin `χ(A)` to the non-positive even integers. The transitivity route
+> narrows only as the **conjunction** of a homogeneity condition (H1) and a
+> genericity condition (H2), and **neither half narrows alone** — (H1) is
+> realised at every genus, (H2) is the generic condition. The narrowing is a
+> pure conjunction effect between two conditions that pull in *opposite*
+> directions, which is exactly why only finitely many surfaces satisfy both. No
+> QOU axiom supplies either half; and because the two pull opposite ways, an
+> axiom supplying one is evidence *against* the other. Selecting `g = 4` from
+> the survivors still needs an order-5 automorphism, for which no axiom-level
+> source exists on any surface yet searched.
+
+**So the next question is no longer "which axiom gives transitivity".** It is
+whether anything in the framework supplies a *genericity* statement about the
+Weierstrass locus — that no Weierstrass point is exceptional. That is the
+opposite register from observability, and I did not find a candidate.
+
+### Not done, deliberately
+
+No content block was edited. Correcting `ex:chi-minus-six-derivation`'s
+`{−4, −6}` to `{−2, −4, −6}`, and re-describing Step 5's narrowing as
+carried by simplicity rather than transitivity, are both readings of the chain —
+the owner's call, the same disposition `qou-51l1` and the prior session took.
