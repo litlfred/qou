@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-14T22:07:35Z
+updated_at: 2026-09-15T08:21:15Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2758,3 +2758,47 @@ separately) and nothing about other elements.
 **Still open, unchanged:** what replaces `nuc11_interleaved` after the
 2026-09-13 reading-3 whole-word ruling rejected it on (2,1). That is an owner
 decision and this prune narrows the search without answering it.
+
+
+## TOWER (2026-09-15): the H_3 ILP answer was a truncation artifact
+
+Owner: *"Have O'Hara on the full tower.... I suspect the longer words (which are
+from gamma gamma production are higher in tower), only do order 0 when we need
+the observables."* Confirmed, and worse than stated: **the H_3 probe could not
+SEE the gamma-gamma operator.**
+
+`GammaGammaH6Interface.lean:37` records the gamma-gamma-produced bond as
+`(sigma_2 sigma_3^-1)^m` -- generators 2 and 3, i.e. **H_6**. My ILP alphabet was
+`{sigma_0, sigma_1}` = H_3, so that operator is outside the catalogue at EVERY
+length, and reading 3 was evaluated in the wrong algebra (3 blocks, not 11).
+
+`computations/qbeta/qbeta_knot_operator_ilp_h6_tower_probe.py` (6/6):
+
+* **Convention D IS the two-row truncation**, exactly: `y_lambda > 0` iff the
+  partition has <= 2 rows. At H_6 that is (6), (5,1), (4,2), (3,3) -- FOUR of
+  eleven bind. The H_3 rule `y_(1^3) = 0` is the n = 3 case of the same fact.
+* **The gamma-gamma bond is INFEASIBLE at m = 1, 2 and FEASIBLE at m = 3**
+  (E = 3.0990) -- the same `3 | k` pattern as the vertex-power family.
+* **The decisive table**, at FIXED length (a mixed-length argmin is vacuous by
+  `PairEnergyRewardsShort.pairEnergy_singleton_le`):
+
+      len   H_6 feas   H_6 min         H_3sub feas   H_3sub min      same?
+        1         10   0.0                       4   0.0             yes
+        2         68   0.1629153512              8   0.9156174644    NO
+        3        551   1.1261598926             62   1.2414481668    NO
+
+  At length 2 the H_3 answer is **5.6x worse** than the true optimum. The H_6
+  winners `s0is2i` and `s0s1s3` use generators an H_3 catalogue cannot express.
+  The previously reported `1.2414 / s0is0is1i` is **RETRACTED as an artifact**.
+
+Precision: `chi_lambda_braid_mpf` at 60 dps, NOT
+`mass_at_3A_proper.chi_lambda_of_word`, whose own docstring says "This is a
+float64 kernel, and the return annotation is the contract".
+
+Landed on `claude/lp-dual-radical-formalize-first-2026-09-14` (PR #7399) as
+commit `9078329dd68`.
+
+**Still open (unchanged):** what replaces `nuc11_interleaved`. The H_6 table
+says which operator the ILP selects at each fixed length; it does not settle the
+element, because the reading-3 + PSD-3 whole-word criterion is the owner's and
+five of `nuc11_interleaved`'s eleven letters remain census-derived.
