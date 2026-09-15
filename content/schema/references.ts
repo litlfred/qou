@@ -1292,8 +1292,7 @@ export const references: Reference[] = [
     ],
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2008]] },
-    note: "arXiv:0801.3233",
-    note: "PDF library/arxiv-0801.3233v4/0801.3233v4.pdf (ingested 2026-09-05, owner upload 8a730706). The twisted quantization map is Thm 6.1 here (citing [Ye5] = arXiv:0905.0488, where it is Thm 0.10.1 / Thm 11.1). The corpus's former '[Thm 4.5]{yekutieli2010} twisted quantization map' citation was re-keyed 2026-09-06 to yekutieli2015-twisted-dq Thm 0.10.1 (bean qou-smw9).",
+    note: "arXiv:0801.3233. PDF library/arxiv-0801.3233v4/0801.3233v4.pdf (ingested 2026-09-05, owner upload 8a730706). The twisted quantization map is Thm 6.1 here (citing [Ye5] = arXiv:0905.0488, where it is Thm 0.10.1 / Thm 11.1). The corpus's former '[Thm 4.5]{yekutieli2010} twisted quantization map' citation was re-keyed 2026-09-06 to yekutieli2015-twisted-dq Thm 0.10.1 (bean qou-smw9).",
     URL: "https://arxiv.org/abs/0801.3233",
   }),
 
