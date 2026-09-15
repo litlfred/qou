@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T19:44:28Z
-updated_at: 2026-09-15T06:54:07Z
+updated_at: 2026-09-15T07:09:21Z
 ---
 
 ## 2026-09-14 — the measurement (probe 15/15, exact combinatorics, read-only)
@@ -388,3 +388,63 @@ is not checking the report.
 What survives from that grep and remains useful: no derived convex aggregator
 exists in the corpus, and `sign_carries_no_information_beyond_the_secant` makes
 "find a convex Φ" circular — so scaling is still the non-circular route.
+
+
+## 2026-09-15 — item 3 closed (R8), and my own commit message was stale
+
+`computations/onedim/tl_open_chain_string_band_probe.py`, **24/24**, `mp.dps = 50`,
+both pins, 477 s — the agent's figure. **My own independent re-run is in
+progress at the time of writing**; confirmed so far: tree clean, the blob at HEAD
+byte-identical to the verified version, CHECK 1-7 passing with values matching
+the report exactly (`8.55285e-50`, `2.005e-50`, `9.58398597343`), and the two
+headline numbers reproduced from scratch at 40 dps — `ξ = 1/ln Δ = 184.038545493`
+and `B(0) = 4(Δ−1)²/Δ = 0.0001180982535690475`, the latter rounding to the
+periodic probe's independently-recorded `1.180983e-4`. The full 24/24 is the
+agent's claim until my run completes.
+
+**Headline: the periodic band IS the TL chain's band; the periodic SPECTRUM is
+not.**
+
+- **The Hermiticity worry does not bite**, and the premise behind it was wrong:
+  the boundary field `((q−q⁻¹)/2)(σᶻ₁−σᶻₙ)` is reflection-**odd**, not
+  anti-Hermitian. Diagonal in `σᶻ` with real entries for real `q > 1`, so
+  `H_TL^open` is real symmetric — `max|Hᵢⱼ − Hⱼᵢ| = 0` **identically**.
+  Reflection *is* broken (`2(q−1/q) = 0.4181206`).
+- **Right about the band.** At `q = 3` (`ξ = 1.96`) inverting the open levels
+  through the periodic `E₂(k)` gives an evenly spaced ladder with one common
+  `L_eff` — the whole band, not just its edge (10 levels clear the continuum at
+  `N = 24`, spread 3.9 %). The `n = 3` band is there too.
+- **Incomplete about the spectrum, twice.** (1) The boundary operators **add a
+  state the ring lacks** — `E = 0`, degenerate with the vacuum, **above** the
+  whole `n = 2` band, every magnon sector, the `U_q(sl₂)` vacuum descendant,
+  localised at one end with ratio **exactly `1/q`** (dev `2.005e-50`), decay
+  length `1/ln q` = 9.584 sites; not finite-size. (2) They **remove momentum** —
+  only `k → 0` survives extremal search, and exponential `z^N` convergence
+  becomes a power law.
+- **Honest negative at the substrate, scope (a).** `ξ = 1/ln Δ` = **184 sites**;
+  one level clearing the thermodynamic edge needs `N ≈ 291`. At `N ≤ 24` the
+  string is not resolved at all, and the finite-`N` edge manufactures a positive
+  (+0.104 above it, −0.067 below the thermodynamic one, at `N = 24`).
+- **Edge-independent confirmation, and the reusable form:** a real composite has
+  `L_eff = N − c`. At controls `L_eff − N` is stable (3.1 %); **at the pins the
+  stable statistic is `L_eff/N ≈ 0.49→0.50`** (2.6 %) — a box that is a fixed
+  *fraction* of the chain is not a box.
+- **The trap to carry forward:** the pins show a **cleaner** `N⁻²` law than the
+  controls (2.045–2.053 vs 2.32–2.60), **and the cleanliness is the artifact** —
+  `L_eff ∝ N` gives exactly 2 by construction. A tidy power law is evidence
+  *against* a formed string.
+- **Band bottom unreachable at any `N`:** `E₂(π) = −4Δ` is strictly interior to
+  the two-magnon spectrum (`−4Δ > −8Δ − 8` for every `Δ > 0`; 196 levels below it
+  at `N = 24`). Momentum is what separated it on the ring.
+
+**Re-scoped in place, not retracted:** `xxz_n_string_band_probe.py`'s own
+bridging sentence said the boundary operators "do not change a bulk band … but
+that step is an argument, not something this probe measured". The argument has
+now been run; it is right about the band and incomplete about the spectrum. That
+probe flagged its own gap correctly and its formula stands.
+
+**And my own commit message is stale.** `577ad180f` checkpointed this file as
+"IN PROGRESS, NOT VERIFIED". The blob at HEAD is byte-identical to the version
+that passed 24/24 (`git diff HEAD` empty; CHECK 18/19 present at HEAD), so a
+reader trusting that message would discount a passing probe. Corrected in the
+follow-up commit rather than by rewriting pushed history.
