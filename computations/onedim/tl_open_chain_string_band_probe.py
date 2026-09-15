@@ -57,11 +57,25 @@ family, two ranges.
    n = 2 band, sampled at quantised momenta** -- but only where the string is
    short compared with the box.  Inverting each level of the U_q block
    W_{N/2-2} through the PERIODIC formula E_2(k) returns an evenly spaced
-   ladder k_m ~ pi m / L_eff with a single L_eff ~ N - 3 (CHECK 11).  The
-   convergence of the band edge is a POWER LAW, measured local exponent -> 2
-   (CHECK 12), not the exponential z^N of the ring: the residual is not an error
-   but the band's own curvature between k = 0 and the smallest momentum the box
-   admits.
+   ladder k_m ~ pi m / L_eff with a single L_eff ~ N - 3 (CHECK 11; at q = 3,
+   ladder spread 7.3% at N = 12 falling to 3.9% at N = 24).  The band edge then
+   converges as a POWER LAW rather than by the ring's exponential z^N, because
+   the residual is not an error: it is the band's own curvature between k = 0
+   and the smallest momentum a box of length L_eff admits.  The MEASURED local
+   exponent is 2.51 -> 2.32 (q = 3) and 2.60 -> 2.52 (q = 2) over N = 12..24 --
+   decreasing, consistent with the 2N/(N-c) an L_eff = N - c box gives, but
+   **the asymptote 2 is not reached at these sizes and is not measured here**
+   (CHECK 12).
+
+5. **The ladder also DISCRIMINATES, and that is what settles the substrate
+   case** (CHECK 18).  At q = 3 the stable statistic is the DEFICIT L_eff - N
+   (spread 3.1% over N = 12..24, against 14.8% for the ratio L_eff/N) -- a
+   composite particle in a chain of N sites.  At BOTH pins the stable statistic
+   is the RATIO, L_eff/N ~ 1/2 (spread 2.7%, against 64% for the deficit), and a
+   box that is a fixed fraction of the chain is not a box.  Consequently the
+   pins show a CLEANER N^-2 law than the controls (exponent 2.045-2.054 against
+   2.32-2.60) and that cleanliness is the artefact, not a better convergence:
+   L_eff proportional to N gives exactly 2 by construction (CHECK 19).
 
 ## MEASURED — and the honest negative
 
@@ -454,24 +468,40 @@ def main():
           f"{len(ladder_detail)} (control, N) blocks with >=3 clear levels")
 
     print("\n  convergence of the band EDGE, top(W) -> E_2(0):")
-    rate_ok = []
-    for lab, q in CONTROLS:
+
+    def exponents(lab, q):
         E0 = E_string(2, q, 0)
         gaps = [(N, E0 - store[(lab, N)][2][-1]) for N in (12, 16, 20, 24)]
-        print(f"    {lab}:")
+        out = []
         for i, (N, g) in enumerate(gaps):
-            line = f"      N={N:3d}  E_2(0) - top(W) = {nstr(g, 12)}"
             if i:
                 Np, gp = gaps[i - 1]
-                p = log(gp / g) / log(mpf(N) / Np)
-                line += f"   local exponent p = {nstr(p, 8)}"
-                if N == 24:
-                    rate_ok.append(p)
+                out.append((N, log(gp / g) / log(mpf(N) / Np)))
+        return gaps, out
+
+    ctl_exp = {}
+    for lab, q in CONTROLS:
+        gaps, exps = exponents(lab, q)
+        ctl_exp[lab] = [e for _, e in exps]
+        print(f"    {lab}:")
+        ed = dict(exps)
+        for N, g in gaps:
+            line = f"      N={N:3d}  E_2(0) - top(W) = {nstr(g, 12)}"
+            if N in ed:
+                line += f"   local exponent p = {nstr(ed[N], 8)}"
             print(line)
-    check("12. the edge converges as a POWER LAW with local exponent -> 2 "
-          "(the band's own curvature over the box's smallest momentum)",
-          all(mpf("1.8") < p < mpf("2.6") for p in rate_ok),
-          f"exponents at the largest step: {[nstr(p, 6) for p in rate_ok]}")
+    # thresholds set FROM the run above (q=3: 2.508/2.393/2.317, q=2:
+    # 2.599/2.578/2.523), not from expectation.
+    allp = [p_ for v in ctl_exp.values() for p_ in v]
+    decreasing = all(v[i] > v[i + 1] for v in ctl_exp.values()
+                     for i in range(len(v) - 1))
+    check("12. the edge converges as a POWER LAW; the MEASURED local exponent is "
+          "2.3-2.6 and DECREASING with N at both controls -- not 2. An effective "
+          "box L_eff = N - c gives 2N/(N-c) > 2 with asymptote 2; the asymptote "
+          "is NOT reached at N <= 24 and is not measured here",
+          all(mpf("2.25") < p_ < mpf("2.70") for p_ in allp) and decreasing,
+          f"q=3 {[nstr(x, 6) for x in ctl_exp['q = 3 control']]}, "
+          f"q=2 {[nstr(x, 6) for x in ctl_exp['q = 2 control']]}")
 
     # n = 3 at the sharpest control
     q = mpf(3)
@@ -567,6 +597,55 @@ def main():
           all(interior) and all(c > 0 for c in below),
           f"levels below E_2(pi) at N=24: {below}")
 
+    # ------------------------------------------------- the ladder discriminates
+    print()
+    print("=" * 74)
+    print("G.  THE SAME LADDER TEST SEPARATES A FORMED STRING FROM AN UNFORMED ONE")
+    print("=" * 74)
+    print("    L_eff = pi / k, k from inverting top(W) through the PERIODIC E_2(k).")
+    print("    A composite particle in a chain of N sites has L_eff = N - c with c")
+    print("    fixed.  A box that is a fixed FRACTION of the chain is not a box.")
+    disc = {}
+    for lab, q in ALLQ:
+        Ls = []
+        for N in (12, 16, 20, 24):
+            k = k_of_E(2, q, store[(lab, N)][2][-1])
+            Ls.append((N, pi / k if k is not None else None))
+        offs = [L - N for N, L in Ls]
+        fracs = [L / N for N, L in Ls]
+        so = (max(offs) - min(offs)) / abs(mp.fsum(offs) / len(offs))
+        sf = (max(fracs) - min(fracs)) / (mp.fsum(fracs) / len(fracs))
+        disc[lab] = (so, sf)
+        print(f"\n    {lab}")
+        print("      " + "   ".join(f"N={N}: L_eff={nstr(L, 6)}" for N, L in Ls))
+        print(f"      L_eff - N : {[nstr(x, 6) for x in offs]}   spread "
+              f"{nstr(so * 100, 4)}%")
+        print(f"      L_eff / N : {[nstr(x, 6) for x in fracs]}   spread "
+              f"{nstr(sf * 100, 4)}%")
+    # thresholds from the run: q=3 gives 3.1% vs 14.8%; the pins give 64% vs 2.7%.
+    check("18. the ladder DISCRIMINATES: at the sharp control the deficit L_eff - N "
+          "is the stable statistic (a formed string in the chain); at BOTH pins the "
+          "stable statistic is the RATIO L_eff/N ~ 1/2, which is not a box",
+          disc["q = 3 control"][0] * 3 < disc["q = 3 control"][1]
+          and all(disc[lab][1] * 5 < disc[lab][0] for lab, _ in ANCHORS),
+          "q=3: (L-N) spread " + nstr(disc["q = 3 control"][0] * 100, 4) + "% vs "
+          "(L/N) spread " + nstr(disc["q = 3 control"][1] * 100, 4) + "%;  pins: "
+          + ", ".join(nstr(disc[lab][1] * 100, 4) + "% vs " + nstr(disc[lab][0] * 100, 4) + "%"
+                      for lab, _ in ANCHORS))
+
+    pin_exp = {}
+    for lab, q in ANCHORS:
+        _, exps = exponents(lab, q)
+        pin_exp[lab] = [e for _, e in exps]
+    check("19. the pins' convergence exponent is CLOSER to 2 than the controls' -- "
+          "and that cleanliness is the ARTEFACT: L_eff proportional to N gives "
+          "exactly 2 by construction, so a clean N^-2 here is evidence AGAINST a "
+          "formed string, not for convergence",
+          all(mpf("2.0") < p_ < mpf("2.10") for v in pin_exp.values() for p_ in v)
+          and all(p_ > mpf("2.25") for v in ctl_exp.values() for p_ in v),
+          "pins " + "; ".join(f"{[nstr(x, 6) for x in v]}" for v in pin_exp.values())
+          + f"  vs controls {[nstr(x, 6) for x in ctl_exp['q = 3 control']]}")
+
     # pin independence
     dp = (q_p + 1 / q_p) / 2
     dm = (q_m + 1 / q_m) / 2
@@ -599,19 +678,24 @@ def main():
   3. THE BOUNDARY FIELD DOES NOT DESTROY THE BAND.  At the controls the open
      chain reproduces the PERIODIC band E_2(k) in full, sampled at a quantised
      ladder k_m ~ pi m / L_eff (CHECK 11), and the n = 3 band as well (CHECK 13).
-     The band EDGE converges as a POWER LAW, local exponent -> 2 (CHECK 12),
-     where the ring converges exponentially as z^N.  That is not a defect in the
-     open chain: the residual is the band's own curvature between k = 0 and the
-     smallest momentum a box of length L admits, so it is a statement about
-     which k the geometry can reach, not about the Hamiltonian.
+     The band EDGE converges by a POWER LAW where the ring converges
+     exponentially as z^N.  That is not a defect in the open chain: the residual
+     is the band's own curvature between k = 0 and the smallest momentum a box
+     of length L_eff admits, so it is a statement about which k the geometry can
+     reach, not about the Hamiltonian.  The measured local exponent is 2.3-2.6
+     and still falling at N = 24 (CHECK 12); the asymptotic 2 is consistent with
+     an L_eff = N - c box but is NOT measured here, and is not claimed.
 
   4. AT THE SUBSTRATE THE EXTRACTION FAILS -- scope (a).  This construction, at
      N <= 24, did not reproduce the numbers: xi = 184 sites, and one level clears
      the two-magnon continuum only at N ~ 291 (CHECK 14).  At N = 12..24 the top
      level is above the FINITE-N edge and below the THERMODYNAMIC one (CHECK 15)
-     -- the apparent binding is the depression of the edge.  No scope-(b)
-     exclusion is claimed: nothing here shows the band is absent, only that a
-     box this small cannot resolve it.
+     -- the apparent binding is the depression of the edge.  The ladder test says
+     the same thing independently of any edge: the implied box is a fixed
+     FRACTION of the chain rather than the chain minus a constant, so no string
+     has formed (CHECK 18), and the tidy N^-2 the pins display is that fact, not
+     convergence (CHECK 19).  No scope-(b) exclusion is claimed: nothing here
+     shows the band is absent, only that a box this small cannot resolve it.
 
   5. THE BAND BOTTOM IS NOT EXTRACTABLE AT ANY N -- scope (a), with an invariant
      named for the mechanism but NOT as a scope-(b) refutation of any ingredient.
