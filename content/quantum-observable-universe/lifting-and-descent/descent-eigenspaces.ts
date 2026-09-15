@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:descent-eigenspaces",
+  examples: ["ex:descent-eigenspaces-su2"],
   title: "Eigenspaces of the descent involution",
   tags: ["descent", "eigenspace", "bosonic", "fermionic"],
   // Was `qou:QOU.Torsion.idempotent_direct_sum_decomposition`. No declaration
