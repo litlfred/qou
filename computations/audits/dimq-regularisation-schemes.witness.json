@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-15T19:55:16.485285+00:00",
-  "commitSha": "ae7a85c5a475042aabd502c9fd7e72d580c34f3e",
+  "computedAt": "2026-09-15T20:04:47.146601+00:00",
+  "commitSha": "cf24fa1e4e2aa1ee0522b70361dcbb226f22d63a",
   "assertions": [],
   "allPassed": true,
   "durationMs": 4,
   "computation": "dimq-regularisation-schemes",
   "scriptFile": "dimq_regularisation_schemes_probe.py",
-  "scriptHash": "6d7c74104c41",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7a713915d2de",
+  "scriptCommitSha": "cf24fa1e4e2aa1ee0522b70361dcbb226f22d63a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,7 +45,16 @@
     "[2,2,1]": 0,
     "[3,1,1]": 0
   },
-  "checks": 14,
+  "alt2_standard_s5_decomposition": {
+    "[5] trivial": 0,
+    "[1^5] sign": 0,
+    "[4,1] standard": 0,
+    "[2,1^3]": 0,
+    "[3,2]": 0,
+    "[2,2,1]": 0,
+    "[3,1,1]": 1
+  },
+  "checks": 16,
   "failures": [],
   "scope": "b for 'neither scheme gives -6 at q0'; a elsewhere; no regularisation selected"
 }
