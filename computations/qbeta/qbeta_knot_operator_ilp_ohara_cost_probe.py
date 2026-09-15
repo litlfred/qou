@@ -144,28 +144,24 @@ MAX_LEN = 4
 #: Reading 3 is `chi >= 0`, so an exact zero IS feasible and `>= -TIE_TOL` is
 #: the faithful test, not a loosened one.
 #:
-#: 🛑 AND RAISING `mp.dps` CANNOT FIX ANY OF IT -- the limit is the ANCHOR, not
-#: the arithmetic. `Q_50_DIGIT_STR` carries exactly 50 significant digits, and
-#: `chi` responds to `q` at ORDER 1: perturbing `q` by a relative 1e-k moves
-#: `chi` by about 2e-k (measured: 1e-50 -> 2.14e-50; 1e-52 -> a ~2e-52 shift;
-#: 1e-60 -> no change to 12 digits). So `chi` is knowable to ~2e-50 whatever
-#: the working precision.
+#: 🛑 THE `chi` VALUES ARE EXACTLY ZERO, AS AN IDENTITY IN `q` -- verified by
+#: binding `q` consistently and watching the residue shrink like 10^-dps at
+#: SEVERAL q (1.11: 0.0, 1.05e-150, -1.63e-301; 1.5: -3.9e-61, 6.9e-151,
+#: 6.5e-301; the anchor: 1.28e-60, 7.75e-121, 2.06e-241). For `s0s1s1` the NF
+#: is `sigma_0 + h*L_+` exactly over Q(q), so `chi_(2,1) = h*(1 + chi(s0s1))`
+#: and the identity reduces to `tr_(2,1)(sigma_0 sigma_1) = -1` for all q.
+#: So TIE_TOL absorbs ORDINARY floating-point residue on an exact zero, and
+#: raising `mp.dps` shrinks that residue as you would expect.
 #:
-#: That is why the artifact is STABLE rather than shrinking: `chi_(2,1)` of two
-#: rotations of `s0s1s1` sits at -5.11494191126e-52 unchanged from dps 60 to
-#: 300, while the third rotation shrinks like 10^-dps (0.0, 7.8e-62, -1.2e-91,
-#: -1.9e-121, -3.3e-201, -5.6e-301). The shrinking one is the honest zero; the
-#: stable one is the exact value AT THE TRUNCATED q. Raising dps computes the
-#: truncated-q answer more sharply, which is not the same as computing a better
-#: answer. `TIE_TOL = 1e-50` is therefore the anchor's information content, not
-#: a fudge factor -- and it is the floor for ANY order-1 function of q here.
-#: Tie tolerance. 🛑 NEVER compare these costs with `==`. `E_ohara` is
-#: cyclic-invariant as mathematics, but two rotations of one word accumulate
-#: their pair sums in a different ORDER, so they differ by ~1e-61 at 60 dps.
-#: Exact equality therefore SPLITS orbits that are genuinely tied, and the
-#: first version of this probe reported fold counts (6 at length 3, 2 at
-#: length 4) that were artifacts of bitwise equality rather than measurements
-#: of the degeneracy. Measured spreads across rotations: 3.1e-61, 1.6e-61, 0.0.
+#: 🛑 AN EARLIER VERSION OF THIS COMMENT SAID THE OPPOSITE -- that the residue
+#: was a STABLE -5.11494191126e-52 pinned by the 50-digit anchor, and that no
+#: amount of dps could help. That was a LAYER STRADDLE in the measuring script,
+#: not a property of the corpus: it rebound `q` in the character kernel but not
+#: in `_order`, whose `word_nf` folds with `_order.H0`. So the NF was computed
+#: at the anchor while chi was evaluated at the perturbed q, and the "stable"
+#: value was an artifact of mixing the two. It also produced a spurious
+#: "root of chi at q_0 to 40 digits", which does not exist. Rebind `_order.Q0`,
+#: `_order.H0` and `_order.ZD` together with the kernel's, or measure nothing.
 TIE_TOL = mp.mpf("1e-50")
 
 FAILURES: list[str] = []
