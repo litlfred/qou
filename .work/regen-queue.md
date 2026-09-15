@@ -68,7 +68,8 @@ Extended to ⁴He 2026-09-13 against the pre-merge 7/19 checkpoint
 published digits: `1.585008128481302646181274372854265156921902187277`. Its
 `frobenius_stable` is still `True` with 0 violations, so the gate drop has not
 disturbed the Frobenius column at A=4 — the first real datum for §2, though
-si28/ca40/fe56 are where the FAILs live and they are still to come.
+ne20/si28/ca40/fe56 are where the FAILs live (FOUR — see §2's 2026-09-15
+correction) and they are still to come.
 
 **`tr_M` is bit-identical at every atom**, so this is not `oiz3` moving the
 trace. It is `156f03f53b0`, "drop the UIC Pass-2 sign gate — honesty, NOT
@@ -98,6 +99,19 @@ name on a disproved selection is what let it be read as the answer.
 
 The si28 / ca40 / fe56 Frobenius verdicts (all FAIL) came from the old kernel
 and must be read off the new witness, not assumed.
+
+**CORRECTION 2026-09-15: there are FOUR, not three — `ne20` fails too.** The
+committed witness (computedAt 2026-09-07T19:39) carries
+`FAIL LP_stable(ne20)` alongside si28/ca40/fe56, and so does the live run, so
+this is stable rather than new. The FAIL boundary sits at **A >= 20**:
+everything through o16 passes, everything from ne20 up fails. Reading this
+section's list of three and checking a run against it would score ne20 as an
+unexpected regression, which it is not.
+
+Worth stating because the live log looks alarming and is not: tr_M climbs
+224 (ne20) -> 1.8e6 (si28) -> 1.5e15 (ca40), and B_MeV with it to 8.17e6 for
+ca40 against a physical ~342 MeV. That is the violation this section is about,
+at the scale it is about — not a numerical breakdown to be debugged.
 
 The margin argument still stands on its own terms — the violations are
 **10 %–84 % of the scale** and ~1e9 × the tolerance, so nothing that moves
