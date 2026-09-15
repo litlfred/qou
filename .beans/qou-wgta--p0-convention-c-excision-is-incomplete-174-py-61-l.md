@@ -480,3 +480,32 @@ Chosen because it is the oldest in-progress full-surface tracker and is cited as
 | qou-cds2 | in-progress (parent qou-cdx1) | S2 (SCIENCE): pyhecke.gram.z and the Gram singularity |
 
 Related, not in the audit's nine: qou-8iru (in-progress, D is Temperley-Lieb), qou-cds1 (in-progress, S1 ladder re-derivation), qou-cdx1 (todo, milestone). Previously measured cross-citation: cds2↔8iru, htsi→t9r1, htsi→cds2, eea0→wgta, cds2→wgta only.
+
+## 2026-09-15 — the tr_M detection gap is closed (`qou-ng7j`)
+
+Owner directive "excise convention C", worked against this hub rather than a
+new bean. `qou-ng7j` had recorded since 2026-08-10 that a convention-C `tr_M`
+is invisible to every detector, because `_is_convention_c` keys on `y_λ`
+tables. It is now covered: `intra_ordering_value_fingerprint_audit` gained a
+trace-convention axis, 32 -> 64 live fingerprints, no transcription.
+
+Two things worth carrying into the rest of the campaign:
+
+  * **No production change was needed.** The convention enters through the
+    WEIGHTS — `jones_wenzl_weight` already takes `z` — so `tr_M^C = Σ_λ
+    ω_λ(q, z_C) · χ^λ(W)` is computable live. I had proposed parameterising
+    `Z_MARKOV` and that was the wrong route.
+  * **The D pipeline discards what a C value needs.** The Wenzl row cap zeroes
+    every >2-row partition, so the bridge evaluates χ on 4 of 11 partitions at
+    the deuteron; under C all 7 of 7 of the capped ones are live. Any future C
+    detector that re-reads a D breakdown will be structurally blind for this
+    reason, not for a missing pattern.
+
+One net finding: `qbeta-habiro-phase5q-dn-refactorize` carries convention-C
+proton/neutron traces and a field named `tr_M_D_q0_witness` holding a
+convention-C deuteron, in a file that records `z_q0` as the D parameter. Details
+and the corroboration against `qou-mass/CHANGELOG.md` are on `qou-ng7j`.
+
+Eight of the twelve C hits are the five `*-c-vs-d-*` comparison probes, now in
+the audit's `DELIBERATE` registry — explicitly, not by a shared-stem regex,
+per `qou-4bq3`.
