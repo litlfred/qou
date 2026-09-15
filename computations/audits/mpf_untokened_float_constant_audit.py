@@ -113,12 +113,41 @@ def _string_twins(floats: set[str]) -> dict[str, tuple[str, int]]:
     return out
 
 
+def _bound_names(tree: ast.Module) -> dict[str, str]:
+    """local name -> the ORIGINAL name it was imported under.
+
+    Exists because the first version of this audit matched a bare `Name`
+    against `qou_substrate.constants` and never asked what the file itself had
+    bound that name to. `homfly_ocneanu_trace.py` does
+
+        from q_parameter import Q_50_DIGIT_STR as Q
+        q0 = mp.mpf(Q)                     # already the 50-digit STRING
+
+    which the name-only match reported as a lossy `mpf(Q)`. It is the opposite
+    -- the file is doing exactly what this audit recommends. One of ten
+    reported defects was this, i.e. a 10 % false-positive rate from a single
+    unhandled spelling; the same class as every other row in the corpus's
+    detector-blindness taxonomy.
+    """
+    out: dict[str, str] = {}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ImportFrom):
+            for al in node.names:
+                out[al.asname or al.name] = al.name
+        elif isinstance(node, ast.Import):
+            for al in node.names:
+                if al.asname:
+                    out[al.asname] = al.name
+    return out
+
+
 def main() -> int:
     floats = _float_constants()
     twins = _string_twins(floats)
 
     defects: list[tuple[str, int, str]] = []
     benign = 0
+    aliased_away = 0
     for p in sorted((ROOT / "computations").rglob("*.py")):
         if p.resolve() == pathlib.Path(__file__).resolve():
             continue
@@ -126,6 +155,7 @@ def main() -> int:
             tree = ast.parse(p.read_text())
         except (SyntaxError, UnicodeDecodeError):
             continue
+        bound = _bound_names(tree)
         for node in ast.walk(tree):
             if not isinstance(node, ast.Call) or not node.args:
                 continue
@@ -134,9 +164,19 @@ def main() -> int:
             if nm != "mpf":
                 continue
             a = node.args[0]
-            arg = (a.id if isinstance(a, ast.Name)
-                   else a.attr if isinstance(a, ast.Attribute) else None)
+            local = (a.id if isinstance(a, ast.Name)
+                     else a.attr if isinstance(a, ast.Attribute) else None)
+            if local is None:
+                continue
+            # Resolve what THIS FILE bound the name to. A bare `Name` may be an
+            # alias -- `from q_parameter import Q_50_DIGIT_STR as Q` makes the
+            # local name `Q` the high-precision STRING, and flagging it is a
+            # false positive. An `Attribute` (`C.Q`) names the original
+            # directly, so it resolves to itself.
+            arg = bound.get(local, local) if isinstance(a, ast.Name) else local
             if arg not in floats:
+                if local in floats:
+                    aliased_away += 1   # flagged by name, cleared by its import
                 continue
             rel = str(p.relative_to(ROOT))
             if arg in twins:
@@ -153,6 +193,7 @@ def main() -> int:
         print(f"        {f} -> {s}   (diverge at significant digit {d})")
     print()
     print(f"  sites wrapping a constant with NO better twin : {benign}  (not defects)")
+    print(f"  sites cleared by their own import alias       : {aliased_away}  (not defects)")
     print(f"  sites DECLINING an available better twin      : {len(defects)}")
     print()
     if defects:

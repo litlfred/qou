@@ -170,10 +170,17 @@ def main() -> int:
     )
     # The module's own docstring states there are 2A+1 averaged letters; the counter
     # is measured here independently, so this is a genuine cross-check.
+    # RESIDUAL against 0, not value against target: the verdict path
+    # (qou_substrate/witness.py) compares float(computed) to float(expected),
+    # so a value-vs-value form here could not resolve anything below the
+    # float64 floor and the tolerance below it was unreachable by ~10^4.
+    # A residual near zero IS representable as a float64 all the way down, so
+    # the same tolerance is a real bound on it.
+    # Gate: computations/audits/tolerance_below_arithmetic_floor_audit.py.
     w.add_assertion(
         "averaged_letter_slope_matches_module_docstring",
-        computed=mp.nstr(counters["averaged_letters"], 20),
-        expected="2",
+        computed=mp.nstr(abs(counters["averaged_letters"] - 2), 20),
+        expected="0",
         tolerance="1e-20",
         source="measured slope vs mass_at_3A_proper's documented '2A + 1 such non-braid letters'",
     )

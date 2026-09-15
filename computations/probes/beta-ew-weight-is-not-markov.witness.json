@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T12:22:45.217356+00:00",
-  "commitSha": "6dc176454cc02a14e8f4ef51fc1f9dd2885aee04",
+  "computedAt": "2026-09-07T19:55:24.991697+00:00",
+  "commitSha": "bcc83be3dd9f64aac41dd75556e0de646969166b",
   "assertions": [
     {
       "name": "the_two_weights_have_DIFFERENT_SUPPORT",
@@ -20,11 +20,11 @@
     },
     {
       "name": "markov_trace_of_identity_is_one",
-      "computed": "1.00000000000000000000000000000000000000000000000000000000000",
-      "expected": "1",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
-      "source": "SUM_lam y_lam chi^lam(1) = 1 exactly -- y_lam IS a normalised Markov trace, confirming the weights were read correctly"
+      "source": "|SUM_lam y_lam chi^lam(1) - 1| = 0 exactly -- y_lam IS a normalised Markov trace, confirming the weights were read correctly"
     },
     {
       "name": "consumer_weighting_of_identity_is_NOT_one",
@@ -35,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 17,
   "computation": "beta-ew-weight-is-not-markov",
   "scriptFile": "beta_ew_weight_is_not_markov_probe.py",
-  "scriptHash": "4bc8865116ca",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "15d4deb851de",
+  "scriptCommitSha": "04394a543a9862402e28d97a7f764680477b3e6e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,7 +54,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

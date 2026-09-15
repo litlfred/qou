@@ -804,3 +804,56 @@ leaves a citation that resolves and still misdescribes. Report both.
   `algebraMap (h*c) * x = algebraMap (c*h) * x`; the fix is an explicit
   `mul_comm h c` in the `rw` chain. Cousin of the `noncomm_ring` trap already in
   `authoring-traps-v4-24-0.md`.
+
+## 19a. TRAP — on a `False`-CONCLUDING theorem the mutant test is TAUTOLOGICALLY passed; use DROP-ONE (measured 2026-09-14, `GammaGammaForcesTheLayout.lean`)
+
+§19's mutation test assumes a theorem with a *contentful* conclusion. A theorem
+of the shape `(h₁ … hₙ) : False` is different in kind, and the standard
+adversarial instruction — *"with the same hypotheses, can you prove some OTHER
+absurd conclusion (e.g. `0 = 1`)? if yes the hypotheses are contradictory and the
+theorem is vacuous"* — **cannot discriminate**. It is passed by construction:
+
+    example (…same hypotheses…) : (0:ℕ) = 1 := (thm h₁ … hₙ).elim
+
+compiles for **every** true `False`-concluding theorem, because `False.elim`
+gives you anything. And "are the hypotheses contradictory?" is not a defect
+question either — for a `False` conclusion the hypothesis set is unsatisfiable
+**necessarily**, else the theorem would be false. Both questions are answered
+before you look at the file.
+
+**The question that does discriminate is DROP-ONE.** For each hypothesis `hᵢ`,
+exhibit a witness satisfying the other `n−1` **and refuting `hᵢ`**. `n` witnesses
+⇒ no proper subset is already contradictory ⇒ every hypothesis is load-bearing
+and the theorem is about a real option space one step away from being inhabited.
+Stating each as a single conjunction `h₁ ∧ … ∧ ¬hᵢ ∧ … ∧ hₙ` is what forces the
+second half; a witness list that merely satisfies `n−1` proves nothing, since the
+theorem itself guarantees you cannot satisfy all `n`.
+
+Worked, `no_triangle_of_triples` (6 hypotheses: 3 `Disjoint`, 3 `Bonded`) — all
+six drop-one witnesses compile, at bases `(a,b,c)`:
+
+| dropped | witness | why the dropped one fails |
+|---|---|---|
+| `bac` | 0, 3, 6 | the honest linear chain — ends are 2 apart |
+| `bab` | 0, 6, 3 | same chain relabelled |
+| `bbc` | 3, 0, 6 | same chain relabelled |
+| `hab` | 3, 3, 0 | a set is not `Disjoint` from itself |
+| `hbc` | 0, 3, 3 | ditto |
+| `hac` | 3, 0, 3 | ditto |
+
+The last three depend on a fact worth knowing in its own right: **this `Bonded`
+is reflexive on any block holding two consecutive elements** (`∃ s, s ∈ B ∧
+s+1 ∈ C` at `B = C`), so `a = b` satisfies every bonding while failing only the
+disjointness. Without that the three `Disjoint` hypotheses would have looked
+decorative.
+
+**And put a NEGATIVE CONTROL on your own adversarial file.** Its green run is
+worthless if it cannot go red — the §19 "guard the harness" rule, one level up,
+because here nothing is `sed`-mutated so there is no diff to check. Append 4-5
+*deliberately false* `example`s (a bond that does not exist, the negation of one
+that does, `Disjoint X X`, an equality of two visibly different `Finset`s) and
+require `exit 1` **with an error at each expected line number**. Measured: exit 1,
+5 errors at exactly the 5 seeded lines. Two of the five failed via `Tactic
+`decide` proved that the proposition … is false`, which is a stronger red than
+`omega could not prove the goal` — prefer a decidable formulation for the control
+where the objects are concrete finite sets.

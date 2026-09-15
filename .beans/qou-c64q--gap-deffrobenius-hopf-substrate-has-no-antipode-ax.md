@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T18:01:40Z
-updated_at: 2026-09-14T19:05:39Z
+updated_at: 2026-09-15T02:14:07Z
 ---
 
 ## Measured 2026-09-14 (session: duality-sigma-hermitian-derivation)
@@ -133,3 +133,101 @@ available. `AntipodeIndependence.lean` restated over a local
 
 Bean stays **in-progress** — item 1 is an open conjecture-adjacent decision
 (rule 13a).
+
+
+---
+
+## 🟩 The remaining "owner decision" is SETTLED BY PROOF (2026-09-14, same day)
+
+The resolution above left one item as the owner's call: whether to also add the
+bialgebra (bimonoid) compatibility. **It is not a decision — the axiom must not
+be added, and that is now a theorem.**
+
+One of the four bimonoid axioms ON ITS OWN — `Delta . eta = eta (x) eta`,
+Mathlib's `BimonObj.one_comul` — collapses the substrate to the tensor unit:
+
+- `comul_eq_of_one_comul` : `Delta = (lambda_A)^-1 >> (eta |> A)`, i.e. `Delta(x) = 1 (x) x`
+- `counit_comp_unit`      : `eps >> eta = id_A` — `id_A` factors through `1_C`
+- `isoUnit`               : with `eta >> eps = id`, an isomorphism `A ~= 1_C`
+- `not_one_comul_of_nontrivial` : contrapositive, the usable form
+
+All sorry-free, lean-direct exit 0, `#print axioms` clean; the two structural
+lemmas depend on NO axioms at all. File:
+`QOU/QuantumObservableUniverse/FrobeniusBialgebraCollapse.lean`.
+
+Mechanism: the Frobenius relation makes `Delta` a bimodule map, hence determined
+by `Delta(1)`; the bimonoid axiom makes `Delta(1)` degenerate; the counit law
+forces `x = eps(x).1`. No braiding used — and `one_comul` is the only bimonoid
+axiom statable without one, so the collapse is reachable at exactly this
+structure's level.
+
+**Expected, not alarming.** A finite-dimensional Hopf algebra IS Frobenius, but
+its Frobenius comultiplication is not its Hopf comultiplication; forcing them to
+coincide is what collapses. Axiom 3 fixes `Delta` as the Frobenius one, so the
+substrate is a Frobenius monoid carrying an antipode, not a Hopf monoid. The
+name should be read that way.
+
+**Not excluded:** a Hopf structure on `A` borne by a DIFFERENT comultiplication.
+Separate object; the corpus does not have one.
+
+Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md`.
+Block `authorNotes` updated: the old "recorded, not acted on" caveat now points
+at the proof.
+
+### New gap opened by this: `qou-aawz`
+
+The corpus has exactly ONE witness of `FrobeniusHopfData` and it is `A = 1`
+(`TrivialWitness.unitFrobHopf`). So consistency of the axioms is established
+only by the trivial object. The collapse result does NOT show the current axioms
+force `A = 1` — but a definition whose only model is trivial, one axiom away
+from a proof that trivial is the only model, is worth testing. Priority high.
+
+
+## 2026-09-15 — the axiom added on owner decision A excludes counit-unitality
+
+Sorry-free, `lean`-direct exit 0, `#print axioms` = `[propext, Quot.sound]`
+(no `Classical.choice`):
+`QOU.FrobeniusHopfData.scalar_id_eq_counit_unit`, in
+`QOU/QuantumObservableUniverse/FrobeniusBialgebraCollapse.lean`.
+
+With **no hypothesis beyond the structure's own fields**, `antipode_left`
+together with the Frobenius relation forces
+
+    eps(1) . x  =  eps(x) . 1     for every x
+
+i.e. `eps >> eta = (lambda_A)^-1 >> ((eta >> eps) |> A) >> (lambda_A).hom`.
+
+Mechanism, two steps: the Frobenius relation makes `Delta` a right `A`-module
+map, so the convolution `S * id` is left multiplication by the single element
+`(S * id)(1)` (`convolution_eq_left_mul`, which uses NO antipode axiom and is
+true whatever `S` is); `antipode_left` then says that same convolution is
+`eps(-) . 1`; evaluating at `1` identifies the element as `eps(1) . 1`.
+
+Consequences, all sorry-free:
+- `counit_comp_unit_of_unital` -- if `eps(1) = 1` then `eps >> eta = id_A`
+- `isoUnitOfUnital`            -- and then `A = 1_C`
+- `counit_not_unital_of_nontrivial` -- contrapositive: a NON-TRIVIAL substrate
+  has a NON-UNITAL counit
+
+So both unit-side bimonoid axioms are individually excluded for a non-trivial
+`A`: `one_comul` (`Delta(1) = 1 (x) 1`) by the earlier result, `one_counit`
+(`eps(1) = 1`) by this one. The second is the sharper statement because
+`eps(1) = 1` is a NORMALISATION, assumed without comment of every bialgebra
+and Hopf algebra, not a structural compatibility.
+
+### Scope -- load-bearing, do not overstate this
+
+`eps(1) = 1` is NOT a field of `FrobeniusHopfData` and nothing here supplies
+it. This is therefore NOT a proof that the stated axioms are inconsistent, nor
+that `A = 1_C`. What is proved is the identity above and its contrapositive.
+
+### What it means for decision A
+
+Decision A (add the Hopf antipode condition) is not neutral with respect to the
+rest of the definition: it is what excludes counit-unitality. Before it, `S`
+was free data and nothing of the kind followed. Whether the framework wants a
+substrate whose counit is non-unital is an owner question -- bean `qou-aawz`,
+which stays open. Nothing here is a reason to revert the axiom.
+
+Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md` (leading
+section). PR #7405.

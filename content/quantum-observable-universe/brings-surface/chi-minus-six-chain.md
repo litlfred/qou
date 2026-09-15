@@ -12,7 +12,7 @@ $$
 
 **Step 4: Obstructions require $g \geq 1$.** The lifting obstructions require $\kappa_n \neq 0$ at every level of the brane tower. The obstruction classes lie in $H^2(M_0, B)$. For these to be non-trivial, we need $H^2(M_0, \mathbb{C}^*) \neq 0$, which requires $g \geq 1$.
 
-**Step 5: The Frobenius--Hopf structure fixes 6 branch points.** The Frobenius--Hopf structure forces the algebra to have exactly 6 branch points in its geometric :refterm[descent]{#descent} (from the $S_3 \subset S_5$ orbits on the 6 Weierstrass points of Bring's surface). This fixes $|\chi(A)| = 6$.
+**Step 5: The Frobenius--Hopf structure fixes 6 branch points.** The Frobenius--Hopf structure forces the algebra to have exactly 6 branch points in its geometric :refterm[descent]{#descent} (from the six Weierstrass points fixed by each transposition in $S_5$ -- Bring's curve carries $60$ in a single $\mathrm{Aut}$-orbit and $60 = 6 \times 10$ -- whose degree-$2$ quotient has genus $1$). This fixes $|\chi(A)| = 6$.
 
 **Step 6: The sign is negative.** The bundle has more obstructions than sections. Specifically, $\chi(V) = -6$ means $h^0(V) - h^1(V) = -6$, so $h^1(V) \geq 6$ (obstructions dominate).
 

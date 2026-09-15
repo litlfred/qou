@@ -1,0 +1,503 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-15T06:47:37.342420+00:00",
+  "commitSha": "fb0947c122c35a5c0bc3f08eb19e5d91329d4d7a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "chi-branch-point-count-genericity",
+  "scriptFile": "chi_branch_point_count_genericity_probe.py",
+  "scriptHash": "874706815667",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/chi_branch_point_count_genericity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/chi_branch_point_count_genericity_probe.py"
+  },
+  "description": "Is the branch-point count 6 of the chi(A) = -6 chain FORCED or merely IN RANGE? Exact-rational genericity probe over five candidate sources, including the finite-subgroup/ADE route. Companion to the sorry-free Lean QOU/BringsSurface/BranchPointSixNotForced.lean.",
+  "name": "chi-branch-point-count-genericity",
+  "audit_only": true,
+  "tier": "exact structural probe (no fit, nothing wired; scope-(a)/(b) framing per AGENTS.md)",
+  "bean": "qou-qhcr",
+  "arithmetic": "exact int / fractions.Fraction throughout; no float64",
+  "T1_step34_admissible_chi_g_1_to_20": [
+    0,
+    -2,
+    -4,
+    -6,
+    -8,
+    -10,
+    -12,
+    -14,
+    -16,
+    -18,
+    -20,
+    -22,
+    -24,
+    -26,
+    -28,
+    -30,
+    -32,
+    -34,
+    -36,
+    -38
+  ],
+  "T2_degree": 4,
+  "T2_branch_points": 6,
+  "T2_total_ramification_range": [
+    6,
+    18
+  ],
+  "T2_genus_range_admitted": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "T3_weierstrass_total_weight_genus_four": 60,
+  "T3_split": {
+    "per_transposition": 6,
+    "transpositions_in_S5": 10
+  },
+  "T3_repaired_step5": {
+    "degree": 2,
+    "base_genus": 1,
+    "total_ramification": 6,
+    "chi": -6
+  },
+  "T3_other_triples_giving_minus_six": [
+    {
+      "d": 2,
+      "h": 2,
+      "R": 2
+    },
+    {
+      "d": 3,
+      "h": 2,
+      "R": 0
+    }
+  ],
+  "T4_bracketing_pairs": {
+    "1": [
+      3,
+      5
+    ],
+    "2": [
+      5,
+      7
+    ],
+    "3": [
+      7,
+      9
+    ],
+    "4": [
+      9,
+      11
+    ],
+    "5": [
+      11,
+      13
+    ],
+    "6": [
+      13,
+      15
+    ],
+    "7": [
+      15,
+      17
+    ],
+    "8": [
+      17,
+      19
+    ],
+    "9": [
+      19,
+      21
+    ],
+    "10": [
+      21,
+      23
+    ],
+    "11": [
+      23,
+      25
+    ],
+    "12": [
+      25,
+      27
+    ]
+  },
+  "T5_ade_orbit_table": {
+    "cyclic_2": {
+      "rotation_order": 2,
+      "cone_orders": [
+        2,
+        2
+      ],
+      "exceptional_orbit_sizes": [
+        1,
+        1
+      ],
+      "orbifold_euler_char": "1",
+      "contains_six": false
+    },
+    "cyclic_3": {
+      "rotation_order": 3,
+      "cone_orders": [
+        3,
+        3
+      ],
+      "exceptional_orbit_sizes": [
+        1,
+        1
+      ],
+      "orbifold_euler_char": "2/3",
+      "contains_six": false
+    },
+    "cyclic_5": {
+      "rotation_order": 5,
+      "cone_orders": [
+        5,
+        5
+      ],
+      "exceptional_orbit_sizes": [
+        1,
+        1
+      ],
+      "orbifold_euler_char": "2/5",
+      "contains_six": false
+    },
+    "cyclic_7": {
+      "rotation_order": 7,
+      "cone_orders": [
+        7,
+        7
+      ],
+      "exceptional_orbit_sizes": [
+        1,
+        1
+      ],
+      "orbifold_euler_char": "2/7",
+      "contains_six": false
+    },
+    "dihedral_2": {
+      "rotation_order": 4,
+      "cone_orders": [
+        2,
+        2,
+        2
+      ],
+      "exceptional_orbit_sizes": [
+        2,
+        2,
+        2
+      ],
+      "orbifold_euler_char": "1/2",
+      "contains_six": false
+    },
+    "dihedral_3": {
+      "rotation_order": 6,
+      "cone_orders": [
+        2,
+        2,
+        3
+      ],
+      "exceptional_orbit_sizes": [
+        3,
+        3,
+        2
+      ],
+      "orbifold_euler_char": "1/3",
+      "contains_six": false
+    },
+    "dihedral_4": {
+      "rotation_order": 8,
+      "cone_orders": [
+        2,
+        2,
+        4
+      ],
+      "exceptional_orbit_sizes": [
+        4,
+        4,
+        2
+      ],
+      "orbifold_euler_char": "1/4",
+      "contains_six": false
+    },
+    "dihedral_5": {
+      "rotation_order": 10,
+      "cone_orders": [
+        2,
+        2,
+        5
+      ],
+      "exceptional_orbit_sizes": [
+        5,
+        5,
+        2
+      ],
+      "orbifold_euler_char": "1/5",
+      "contains_six": false
+    },
+    "dihedral_6": {
+      "rotation_order": 12,
+      "cone_orders": [
+        2,
+        2,
+        6
+      ],
+      "exceptional_orbit_sizes": [
+        6,
+        6,
+        2
+      ],
+      "orbifold_euler_char": "1/6",
+      "contains_six": true
+    },
+    "dihedral_7": {
+      "rotation_order": 14,
+      "cone_orders": [
+        2,
+        2,
+        7
+      ],
+      "exceptional_orbit_sizes": [
+        7,
+        7,
+        2
+      ],
+      "orbifold_euler_char": "1/7",
+      "contains_six": false
+    },
+    "tetrahedral_E6": {
+      "rotation_order": 12,
+      "cone_orders": [
+        2,
+        3,
+        3
+      ],
+      "exceptional_orbit_sizes": [
+        6,
+        4,
+        4
+      ],
+      "orbifold_euler_char": "1/6",
+      "contains_six": true
+    },
+    "octahedral_E7": {
+      "rotation_order": 24,
+      "cone_orders": [
+        2,
+        3,
+        4
+      ],
+      "exceptional_orbit_sizes": [
+        12,
+        8,
+        6
+      ],
+      "orbifold_euler_char": "1/12",
+      "contains_six": true
+    },
+    "icosahedral_E8": {
+      "rotation_order": 60,
+      "cone_orders": [
+        2,
+        3,
+        5
+      ],
+      "exceptional_orbit_sizes": [
+        30,
+        20,
+        12
+      ],
+      "orbifold_euler_char": "1/30",
+      "contains_six": false
+    }
+  },
+  "T5_families_with_six_point_orbit": [
+    "dihedral_6",
+    "octahedral_E7",
+    "tetrahedral_E6"
+  ],
+  "T5_sylow_candidates": {
+    "n5_A5": [
+      1,
+      6
+    ],
+    "n3_A4": [
+      1,
+      4
+    ],
+    "n3_S4": [
+      1,
+      4
+    ]
+  },
+  "T5_A5_natural_invariants": {
+    "irreducible_representation_dimensions": [
+      1,
+      3,
+      3,
+      4,
+      5
+    ],
+    "conjugacy_class_sizes": [
+      1,
+      15,
+      20,
+      12,
+      12
+    ],
+    "exceptional_orbit_sizes_on_P1": [
+      30,
+      20,
+      12
+    ],
+    "sylow_counts_p2_p3_p5": [
+      5,
+      10,
+      6
+    ]
+  },
+  "T6_transitivity_admissible_genera": [
+    3,
+    4
+  ],
+  "T6_transitivity_admissible_chi": [
+    -4,
+    -6
+  ],
+  "T6_aut_orders": {
+    "bring_g4": 120,
+    "klein_g3": 168,
+    "s4_curve_g3": 24
+  },
+  "T6_has_order_five_element": {
+    "bring_g4": true,
+    "klein_g3": false,
+    "s4_curve_g3": false
+  },
+  "checks": [
+    {
+      "name": "T1_admissible_set_is_even_nonpositive",
+      "passed": true,
+      "detail": "g = 1..20 gives chi in [0, -2, -4, -6, -8, -10] ... (even, <= 0)"
+    },
+    {
+      "name": "T1_minus_six_not_singled_out",
+      "passed": true,
+      "detail": "-4, -6 and -8 are all admissible; Step 5 alone picks -6 out of a countably infinite set"
+    },
+    {
+      "name": "T2_six_points_degree_four_spans_genus_0_to_6",
+      "passed": true,
+      "detail": "R in [6, 18] gives genus [0, 1, 2, 3, 4, 5, 6] -- the branch COUNT alone determines nothing near g = 4"
+    },
+    {
+      "name": "T2_corpus_R_is_what_gives_minus_six",
+      "passed": true,
+      "detail": "chi = -6 needs R = 14 at d = 4 and R = 12 at d = 3; both corpus blocks are consistent only as different maps"
+    },
+    {
+      "name": "T3_weierstrass_count_is_sixty",
+      "passed": true,
+      "detail": "g^3 - g at g = 4 is 60, and Aut(B) = S_5 acts TRANSITIVELY on all of them -- so there is no set of six for an S_3 to act on"
+    },
+    {
+      "name": "T3_sixty_splits_as_six_by_ten",
+      "passed": true,
+      "detail": "60 = 6 x 10: six Weierstrass points fixed by each of the ten TRANSPOSITIONS in S_5 (same source, next paragraph) -- the real carrier of the 6 is an involution, not an S_3"
+    },
+    {
+      "name": "T3_transposition_quotient_gives_minus_six",
+      "passed": true,
+      "detail": "chi(B) = 2*chi(torus) - 6 = -6, so B/<tau> has genus 1 -- a coherent reading of Step 5, but still read off Bring"
+    },
+    {
+      "name": "T3_ramification_six_not_forced_by_chi",
+      "passed": true,
+      "detail": "(d,h,R) = (2,1,6), (2,2,2) and (3,2,0) all give -6: the 6 arrives with the choice of base genus, not from chi"
+    },
+    {
+      "name": "T4_pair_brackets_every_genus",
+      "passed": true,
+      "detail": "T_(2,2g+1)/T_(2,2g+3) brackets every g in 1..12; at g = 4 that pair is (9, 11) -- exactly the corpus's (9, 11). The constraints restate the target rather than derive it"
+    },
+    {
+      "name": "T5_klein_relation_holds_for_every_family",
+      "passed": true,
+      "detail": "chi_orb = 2 - sum_i (1 - 1/m_i) = 2/|G| exactly for all 13 families -- cross-checks every cone order and orbit size"
+    },
+    {
+      "name": "T5_six_is_NOT_an_icosahedral_orbit_size",
+      "passed": true,
+      "detail": "icosahedral orbits are [30, 20, 12] -- all >= 12, so no orbit reading of 'branch points on P(V)' can return 6 for E_8"
+    },
+    {
+      "name": "T5_six_IS_a_tetrahedral_and_octahedral_orbit_size",
+      "passed": true,
+      "detail": "tetrahedral [6, 4, 4], octahedral [12, 8, 6] -- an orbit reading of 6 points AWAY from the icosahedral case"
+    },
+    {
+      "name": "T5_orbit_reading_does_not_pick_a_unique_type",
+      "passed": true,
+      "detail": "families with a 6-point exceptional orbit: ['dihedral_6', 'octahedral_E7', 'tetrahedral_E6']"
+    },
+    {
+      "name": "T5_sylow_arithmetic_leaves_two_candidates",
+      "passed": true,
+      "detail": "n_5(A_5) in [1, 6], n_3(A_4) in [1, 4], n_3(S_4) in [1, 4]; simplicity of A_5 picks 6 -- that last input is cited, not derived"
+    },
+    {
+      "name": "T5_sylow_and_orbit_readings_disagree",
+      "passed": true,
+      "detail": "on the icosahedral group the Sylow reading gives 6 and the orbit reading does not; on the tetrahedral group the orbit reading gives 6 and the Sylow reading does not. 6 is a property of the CHOSEN INVARIANT, not of the ADE type"
+    },
+    {
+      "name": "T5_six_occurs_once_among_A5_invariants",
+      "passed": true,
+      "detail": "of 16 natural integer invariants of A_5, exactly 1 equals 6, and it is n_5. So 6 is not generic for A_5 -- but it is also not selected by anything in the axioms"
+    },
+    {
+      "name": "T6_transitivity_narrows_chi_to_two_values",
+      "passed": true,
+      "detail": "homogeneity narrows chi(A) from the infinite set of T1 to [-4, -6]"
+    },
+    {
+      "name": "T6_order_five_selects_bring",
+      "passed": true,
+      "detail": "by Cauchy an order-5 automorphism exists iff 5 | |Aut|: {'bring_g4': 120, 'klein_g3': 168, 's4_curve_g3': 24} -- only the genus-4 case qualifies"
+    }
+  ],
+  "verdict": {
+    "branch_point_count_six_derived": false,
+    "ade_route_scope": "scope-(b) for the SPECIFIC implication 'icosahedral type => six branch points on P(V)': the invariant is the orbit-size formula |G|/m_i and it is proved, and the icosahedral orbits are 30/20/12. NOT a claim that no finite-group route can produce a 6 -- three other ADE types do.",
+    "finiteness_gap": "su2_emergence_rank_forced constrains G only by 'unitary and det 1', which SU(2) itself satisfies. The ADE list classifies FINITE subgroups, so it does not apply to the object the axioms deliver. This is prior to the type question.",
+    "sharpest_open_statement": "Steps 3+4 pin chi(A) to the non-positive even integers and no further; every candidate source tested here either restates the target (torus-knot brackets, T4), reads it off Bring (Weierstrass / transposition fixed points, T3), or fails to produce a 6 at all (ADE orbits, T5). The one hypothesis that narrows without naming 6 is transitivity of Aut on the Weierstrass points, which gives chi in {-4, -6} (T6); separating those two needs an order-5 automorphism. Both are group-theoretic and neither is derived from the five QOU axioms."
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-free: the probe is exact integer / Fraction combinatorics (Euler characteristics, Riemann-Hurwitz, finite-rotation-group orbit and Sylow counts). No substrate parameter is read anywhere in the import cone, so neither the ideal-muon nor the physical-proton layer applies."
+}

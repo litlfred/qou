@@ -9,4 +9,12 @@ export default lemma({
   tags: ["euler-characteristic", "brings-surface", "categorical-trace", "descartes-substrate"],
   uses: ["prop:euler-char-stability"],
   proofs: ["prf:brings-euler-characteristic"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-09-15",
+      body:
+        "**🟧 OWNER RULING 2026-09-15 settles the symbol: `tr(id_A)` is the quantum dimension `dim_q(A)`, the Euler characteristic of an object IN THE QOU CATEGORY — so it is q-DEPENDENT.** Consequence for this block: the `-6` here is a **topological** Euler characteristic `chi_eu(Sigma_4)`, a different object from the categorical trace, so it is not a competing value and is not wrong. But the `prop:euler-char-stability` bridge this block invokes is now a **substantive claim relating two different things** rather than a restatement — it equates a q-dependent quantity with a q-independent integer, which can hold at most on a locus in q. Whether that locus contains q_0 is open. And this block's own proof recovers -6 as *\"the quantum dimension specialised at q_0\"* — now the right register, but a quantum dimension of -6 is **negative**, while dim_q of an object in a rigid category with positive structure constants is positive (the fundamental gives +2.0109). So the -6 needs the Euler-characteristic-of-a-complex sense, an alternating sum, not a naive dim_q. Not decided here. Register entry in `notation/notation-collisions.md`; bean `qou-2uf0`.",
+    },
+  ],
 });
