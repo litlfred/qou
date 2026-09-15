@@ -231,10 +231,13 @@ theorem dq_squared_nonzero (q : ℝ) (hq : q > 1) :
 -- Ref: [manuscript] §4/vertex-algebra-relations
 theorem descartes_genus : (2 : ℤ) - 2 * 4 = -6 := by norm_num
 
-/-- The Markov trace of the identity equals the Euler characteristic. -/
--- Ref: [manuscript] §4/vertex-algebra-relations
-axiom descartes_trace {n : ℕ} (hp : HeckeParams) :
-    MarkovTrace hp (AlgElement.singleton ([] : List (HeckeGen n))) = -6
+/- `descartes_trace` RETIRED 2026-09-15.  It asserted, as an `axiom` over the
+    `axiom MarkovTrace`, that the Markov trace of the identity is `-6` for every
+    strand count and every parameter.  Under the owner ruling `tr(id_X) = dim_q(X)`
+    that value is a quantum dimension (positive, `q`-dependent, and for the
+    Frobenius–Hopf object divergent); `-6` is `chi_eu(M_0)`, the Euler
+    characteristic of the base curve.  It had no consumers.  See
+    `docs/audits/2026-09-15-chi-as-a-component-of-the-chern-character.md`. -/
 
 -- ═══════════════════════════════════════════════════════════════════
 -- C-7: Self-dual curvature (instanton)

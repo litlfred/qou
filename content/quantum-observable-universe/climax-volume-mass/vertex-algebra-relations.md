@@ -14,7 +14,7 @@ Each axiom is translated into knot coordinates below.
 
 ## QU Axioms (Quantum Universe)
 
-### QU-1: Rigid braided monoidal structure
+### QOU-1: Rigid braided monoidal structure (rigidity is a quantum-observable-universe condition; a quantum universe is braided but not rigid)
 
 The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke representation $\rho_n\colon B_n \to H_n(R, q)$. We write $\sigma_i$ both for the braid generator in $B_n$ and for its image $\rho_n(\sigma_i)$ in $H_n(R, q)$. Three families of relations encode rigidity and braiding:
 

@@ -19,7 +19,9 @@ file supplies that infrastructure for any associative `R`-algebra `A`:
 This makes precise the objects the P-vs-NP residue lives among (`OuterDerivationResidue`):
 the decision residue is a **nonzero class in `HH1`**, and PROBE A's computation
 `dim HH1(H₃(ζ)) = 1` (root of unity) vs `= 0` (generic) is a statement about this
-very quotient. All sorry-free, generic `{R : CommRing} {A : Ring} [Algebra R A]`. -/
+very quotient. Generic `{R : CommRing} {A : Ring} [Algebra R A]`.  NOT sorry-free:
+the file carries `sorry` (8 as of 2026-09-15), each with its `-- Ref:`; the header
+claimed otherwise until then. -/
 
 namespace QOU.Information
 

@@ -44,7 +44,7 @@ universe u v
 -- Ref: [manuscript] §1-quantum-observable-universe
 structure CategoricalDiracOperator (R : Type*) [CommRing R]
     (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R C]
     (fh : FrobeniusHopfData C) where
   /-- The underlying connection `∇` (Definition `def:categorical-connection`). -/

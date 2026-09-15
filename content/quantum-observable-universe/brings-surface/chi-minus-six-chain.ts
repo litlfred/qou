@@ -2,7 +2,7 @@ import { example } from "../../schema/builders";
 
 export default example({
   label: "ex:chi-minus-six-derivation",
-  title: "$\\chi(A) = -6$: complete derivation chain",
+  title: "$\\chi_{\\mathrm{eu}}(M_0) = -6$: the derivation chain",
   interprets: "def:archimedean-condition",
   uses: [
     "def:archimedean-condition",
@@ -10,6 +10,7 @@ export default example({
     "prop:euler-char-stability",
     "rem:kummer-tower",
     "thm:motivic-perpetual-obstruction",
+    "rem:three-euler-characteristics",
   ],
   tags: ["descartes", "chi", "derivation", "example", "motivic-galois"],
   cites: ["braden-disney-hogg-2022"],

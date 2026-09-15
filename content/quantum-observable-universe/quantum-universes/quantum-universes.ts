@@ -3,7 +3,8 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Chapter 1: Quantum Universes.
  *
- * The QU axioms: a rigid symmetric monoidal category with a
+ * The QU axioms: a braided monoidal category (rigidity is imposed only
+ * in Chapter 2, on a quantum observable universe) with a
  * Frobenius--Hopf object, a fibre functor, and a differential
  * calculus.  Chapter 2 adds observability, measurability, and the
  * volume constraint to obtain the Quantum Observable Universe (QOU).
