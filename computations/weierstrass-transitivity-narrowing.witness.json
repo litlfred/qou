@@ -1,0 +1,302 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-15T09:36:19.834367+00:00",
+  "commitSha": "cfd1ff05a7d96e5e3a48032d9ed4090abac1de75",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "weierstrass-transitivity-narrowing",
+  "scriptFile": "weierstrass_transitivity_narrowing_probe.py",
+  "scriptHash": "add7ab7e71f9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/weierstrass_transitivity_narrowing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/weierstrass_transitivity_narrowing_probe.py"
+  },
+  "description": "Does transitivity of Aut on the Weierstrass points narrow chi(A)? No: it forces the weights EQUAL and nothing more, and is realised at every genus >= 2. The narrowing in Laing & Singerman Thm 15 is carried entirely by the SECOND hypothesis, simplicity (weight 1), which is a genericity condition anti-correlated with symmetry.",
+  "bean": "qou-qhcr",
+  "leanCompanion": "content/quantum-observable-universe/lean/QOU/BringsSurface/WeierstrassTransitivityNotForced.lean",
+  "T1_total_weight": {
+    "2": 6,
+    "3": 24,
+    "4": 60,
+    "5": 120,
+    "6": 210,
+    "7": 336,
+    "8": 504,
+    "9": 720,
+    "10": 990,
+    "11": 1320,
+    "12": 1716
+  },
+  "T1_max_weight": {
+    "2": 1,
+    "3": 3,
+    "4": 6,
+    "5": 10,
+    "6": 15,
+    "7": 21,
+    "8": 28,
+    "9": 36,
+    "10": 45,
+    "11": 55,
+    "12": 66
+  },
+  "T1_min_point_count": {
+    "2": 6,
+    "3": 8,
+    "4": 10,
+    "5": 12,
+    "6": 14,
+    "7": 16,
+    "8": 18,
+    "9": 20,
+    "10": 22,
+    "11": 24,
+    "12": 26
+  },
+  "T2_transitive_config_counts": {
+    "2": 1,
+    "3": 3,
+    "4": 6,
+    "5": 8,
+    "6": 9,
+    "7": 11,
+    "8": 14,
+    "9": 17,
+    "10": 14,
+    "11": 19,
+    "12": 15
+  },
+  "T3_accola_maclachlan_simple_genera": [
+    2
+  ],
+  "T4_hurwitz_survivors": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "T4_cutoff": {
+    "g8_total": 504,
+    "g8_bound": 588,
+    "g9_total": 720,
+    "g9_bound": 672
+  },
+  "T5_configs": [
+    {
+      "label": "bring_g4",
+      "genus": 4,
+      "n_weierstrass": 60,
+      "weight": 1,
+      "aut_order": 120,
+      "stabiliser_order": 2,
+      "transitive_possible": true,
+      "simple": true,
+      "source": "Braden & Disney-Hogg Prop. 3.3: 60 Weierstrass points, Aut = S_5 transitive, each preserved by one transposition only"
+    },
+    {
+      "label": "klein_quartic_g3",
+      "genus": 3,
+      "n_weierstrass": 24,
+      "weight": 1,
+      "aut_order": 168,
+      "stabiliser_order": 7,
+      "transitive_possible": true,
+      "simple": true,
+      "source": "Klein's quartic, Aut = PSL(2,7); a member of the K_3 family"
+    },
+    {
+      "label": "k3_long_orbit_g3",
+      "genus": 3,
+      "n_weierstrass": 24,
+      "weight": 1,
+      "aut_order": 24,
+      "stabiliser_order": 1,
+      "transitive_possible": true,
+      "simple": true,
+      "source": "Reyes-Carocca & Speziali section 4 scenario (1): the Weierstrass points form a long orbit and they are simple; Aut contains S_4"
+    },
+    {
+      "label": "k3_short_orbit_g3",
+      "genus": 3,
+      "n_weierstrass": 12,
+      "weight": 2,
+      "aut_order": 24,
+      "stabiliser_order": 2,
+      "transitive_possible": true,
+      "simple": false,
+      "source": "Reyes-Carocca & Speziali section 4 scenario (2): a short orbit of length 12, points DOUBLE; exactly Fermat's quartic and C_3"
+    }
+  ],
+  "T7_chi_with_classification": [
+    -2,
+    -4,
+    -6
+  ],
+  "T7_chi_hurwitz_only": [
+    -2,
+    -4,
+    -6,
+    -8,
+    -10,
+    -12,
+    -14
+  ],
+  "T8_aut_orders": {
+    "bring_g4": 120,
+    "klein_quartic_g3": 168,
+    "k3_long_orbit_g3": 24,
+    "k3_short_orbit_g3": 24
+  },
+  "T8_order_five_divides": {
+    "bring_g4": true,
+    "klein_quartic_g3": false,
+    "k3_long_orbit_g3": false,
+    "k3_short_orbit_g3": false
+  },
+  "checks": [
+    {
+      "name": "T1_total_weight_factors",
+      "passed": true,
+      "detail": "g^3 - g == (g-1)*g*(g+1) for all g in 2..60 (this is the form QOU.BringsSurface.WeierstrassTransitivityNotForced.totalWeight carries, so Lean and probe agree on the object)"
+    },
+    {
+      "name": "T1_min_point_count_is_2g_plus_2",
+      "passed": true,
+      "detail": "total/maxweight == 2g+2 exactly (no remainder) for all g in 2..60: a surface has at least 2g+2 Weierstrass points, with equality exactly in the hyperelliptic case"
+    },
+    {
+      "name": "T1_simplicity_is_max_point_count",
+      "passed": true,
+      "detail": "every weight >= 1 and the weights sum to g^3-g, so |W| <= g^3-g with equality iff every weight is 1: 'g^3-g Weierstrass points' IS the simplicity hypothesis, not a separate count"
+    },
+    {
+      "name": "T2_transitivity_leaves_many_configs",
+      "passed": true,
+      "detail": "transitivity fixes only that the weight is CONSTANT; the number of arithmetically admissible (|W|, w) pairs is {2: 1, 3: 3, 4: 6, 5: 8, 6: 9, 7: 11, 8: 14, 9: 17, 10: 14, 11: 19, 12: 15} for g = 2..12 -- at every genus >= 3 more than one, and exactly one (w = 1) of them is the simple one"
+    },
+    {
+      "name": "T2_simple_is_one_config_among_several",
+      "passed": true,
+      "detail": "w = 1 is one admissible weight among (count) {3: (1, 3), 4: (1, 6), 8: (1, 14)} at g = 3, 4, 8 -- so simplicity is a genuine extra hypothesis, carrying real information beyond transitivity"
+    },
+    {
+      "name": "T3_accola_maclachlan_total_weight",
+      "passed": true,
+      "detail": "(2g+2) * g(g-1)/2 == g^3 - g exactly for all g in 2..60: the hyperelliptic datum carries the full Weierstrass weight, so nothing in the arithmetic obstructs a transitive action at any genus"
+    },
+    {
+      "name": "T3_accola_simple_only_at_genus_two",
+      "passed": true,
+      "detail": "the Accola-Maclachlan weight g(g-1)/2 equals 1 only at g = 2 (simple genera found: [2]); for every g >= 3 the family is TRANSITIVE and NOT SIMPLE, i.e. invisible to a theorem hypothesising g^3-g Weierstrass points while still being transitive"
+    },
+    {
+      "name": "T3_transitivity_narrows_nothing",
+      "passed": true,
+      "detail": "scope (b): transitivity ALONE cuts out no genus at all -- an explicit infinite family realises it at every g >= 2, and the held source's main theorem (its title) adds infinitely many non-hyperelliptic examples besides"
+    },
+    {
+      "name": "T4_hurwitz_bound_gives_g_le_8",
+      "passed": true,
+      "detail": "{g >= 2 : g^3-g <= 84(g-1)} == [2, 3, 4, 5, 6, 7, 8] over the scan 2..400 -- exactly g = 2..8, with no re-entry higher up"
+    },
+    {
+      "name": "T4_cutoff_is_exact",
+      "passed": true,
+      "detail": "g=8: 504 <= 588 holds; g=9: 720 > 672 fails -- 8 is the argument's exact cut-off, not a slack bound"
+    },
+    {
+      "name": "T4_cancellation_agrees_with_lean",
+      "passed": true,
+      "detail": "(g-1)g(g+1) <= 84(g-1)  <=>  g(g+1) <= 84  for every g >= 2 -- the cancellation step of QOU...WeierstrassTransitivityNotForced.genus_le_eight, verified independently rather than re-proved"
+    },
+    {
+      "name": "T4_weaker_than_classification",
+      "passed": true,
+      "detail": "the derived range [2, 3, 4, 5, 6, 7, 8] strictly contains the cited {3, 4}: this is a genuine but WEAKER narrowing, obtained without Laing & Singerman (not held) and without reading anything off Bring's curve"
+    },
+    {
+      "name": "T5_all_configs_carry_total_weight",
+      "passed": true,
+      "detail": "|W| * w == g^3 - g for all four published configurations: bring_g4: 60*1=60==60, klein_quartic_g3: 24*1=24==24, k3_long_orbit_g3: 24*1=24==24, k3_short_orbit_g3: 12*2=24==24"
+    },
+    {
+      "name": "T5_all_configs_are_transitive",
+      "passed": true,
+      "detail": "|W| divides |Aut| in all four (orbit-stabiliser, so a single orbit is possible in each); stabiliser orders {'bring_g4': 2, 'klein_quartic_g3': 7, 'k3_long_orbit_g3': 1, 'k3_short_orbit_g3': 2}. Bring's stabiliser order 2 reproduces Braden & Disney-Hogg's 'preserved by the transposition (ij) only'"
+    },
+    {
+      "name": "T5_simplicity_separates_transitivity_does_not",
+      "passed": true,
+      "detail": "4/4 transitive, 3/4 simple. Simple: ['bring_g4', 'klein_quartic_g3', 'k3_long_orbit_g3']. NOT simple: ['k3_short_orbit_g3']. So within the classification's own data transitivity separates NOTHING and simplicity is the whole discriminator"
+    },
+    {
+      "name": "T5_failing_members_are_the_most_symmetric",
+      "passed": true,
+      "detail": "the non-simple configuration is exactly Fermat's quartic and C_3 (held source section 4), the two most symmetric members of K_3 -- so simplicity is ANTI-correlated with symmetry inside the very family the theorem is about; a homogeneity axiom pushes away from it"
+    },
+    {
+      "name": "T6_genus_two_is_automatically_simple",
+      "passed": true,
+      "detail": "at g = 2 the MAXIMUM weight g(g-1)/2 is itself 1, so every genus-2 Weierstrass point is simple; there are 2g+2 = 6 of them and g^3-g = 6 agrees. (H2) holds for EVERY genus-2 surface, and the Accola-Maclachlan curve of genus 2 supplies (H1) (held source section 1 item 1 states the family for g >= 2)"
+    },
+    {
+      "name": "T7_classification_admissible_chi",
+      "passed": true,
+      "detail": "with the classification AND genus 2: chi in [-2, -4, -6] -- THREE values, not the two the arc's framing claims. chi = -2 survives because nothing in the chain supplies g > 2 (Step 4 gives g >= 1, observability gives chi != 0, i.e. g >= 2)"
+    },
+    {
+      "name": "T7_hurwitz_admissible_chi",
+      "passed": true,
+      "detail": "with the self-contained T4 bound only: chi in [-2, -4, -6, -8, -10, -12, -14] -- seven values, a real narrowing from the infinite set Steps 3+4 leave, and not to -6"
+    },
+    {
+      "name": "T7_minus_six_admissible_not_unique",
+      "passed": true,
+      "detail": "-6 is 1 of 3 under the classification and 1 of 7 under the derived bound: the route NARROWS and does not SELECT"
+    },
+    {
+      "name": "T8_order_five_selects_bring_among_g_gt_2",
+      "passed": true,
+      "detail": "5 divides |Aut| only for Bring among the genus>2 configurations: {'bring_g4': 120, 'klein_quartic_g3': 168, 'k3_long_orbit_g3': 24, 'k3_short_orbit_g3': 24} -> divisible by 5: {'bring_g4': True, 'klein_quartic_g3': False, 'k3_long_orbit_g3': False, 'k3_short_orbit_g3': False}. So order 5 is what would select g = 4 -- but it is an EXTRA input, not supplied by transitivity or simplicity"
+    },
+    {
+      "name": "T8_genus_two_not_settled_here",
+      "passed": true,
+      "detail": "whether a genus-2 surface can carry BOTH an order-5 automorphism and a transitive action on its 6 Weierstrass points is NOT decided by this probe: it needs the genus-2 automorphism classification (Bolza), which this corpus does not hold. Recorded as open rather than asserted"
+    }
+  ],
+  "verdict": {
+    "transitivity_derives_six": false,
+    "transitivity_scope": "scope-(b) structural exclusion of the TRANSITIVITY half: transitivity alone, however sourced, cuts out no genus. The invariant is an explicit infinite family in a published held source -- the Accola-Maclachlan curves realise it at every g >= 2 (arXiv:2211.08164v2 section 1 item 1), and that source's main theorem adds infinitely many non-hyperelliptic examples. This is NOT 'no axiom was found'; it is 'there is nothing here for an axiom to supply'.",
+    "simplicity_scope": "scope-(a) on the SIMPLICITY half: no QOU axiom supplying weight-1 was found on the surfaces searched for bean qou-qhcr. What is argued structurally -- an argument, not a theorem -- is that simplicity is a GENERICITY condition anti-correlated with symmetry inside the classification's own family K_3 (T5), so a homogeneity axiom of the observability register is the wrong SHAPE to supply it.",
+    "framing_correction": "the route's honest output is chi(A) in {-2, -4, -6}, not {-4, -6}: the classification is stated for genus > 2, genus 2 satisfies both hypotheses unconditionally (T6), and nothing in ex:chi-minus-six-derivation supplies g > 2.",
+    "derived_here": "transitivity + simplicity + Hurwitz's |Aut| <= 84(g-1) forces g <= 8 (T4), with 8 the argument's exact cut-off. Strictly weaker than the cited g in {3,4} and independent of it: the first narrowing in this arc from a finite classical input rather than read off Bring's curve.",
+    "sharpest_open_statement": "Steps 3+4 pin chi(A) to the non-positive even integers. The transitivity route narrows further only in conjunction with simplicity, and NEITHER half narrows alone -- transitivity is realised at every genus, simplicity is the generic condition. The narrowing is a pure conjunction effect between a homogeneity condition and a genericity condition that pull in opposite directions, which is why only finitely many surfaces satisfy both. No QOU axiom supplies either half, and observability -- whose only content in the corpus is rank Hom(1, Ad(A)) = 0 -- is a statement about a Hom-space in the monoidal category with no theorem relating it to Aut(M_0) acting on anything."
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-free: the probe is exact integer combinatorics (Weierstrass weights and counts, Hurwitz bounds, orbit-stabiliser divisibility, divisor enumeration). No substrate parameter is read anywhere in the import cone, so neither the ideal-muon nor the physical-proton layer applies."
+}
