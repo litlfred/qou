@@ -7,7 +7,9 @@ export default remark({
   tags: ["torus-knot", "hecke-algebra", "rank", "genus", "scope-b"],
   uses: ["lem:genus-from-hecke-completeness"],
   computation: {
+    engine: "sympy",
     script: "computations/audits/genus_completeness_rank_probe.py",
+    status: "verified",
   },
   authorNotes: [
     {
