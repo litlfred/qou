@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-14T19:59:47Z
-updated_at: 2026-09-15T02:14:34Z
+updated_at: 2026-09-15T06:46:23Z
 ---
 
 ## Surfaced 2026-09-14 while proving the bialgebra collapse
@@ -102,3 +102,58 @@ space moved.
 
 Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md` (leading
 section). PR #7405.
+
+
+## 2026-09-15 — ANSWERED for the linear case: there is NO non-trivial model
+
+This bean listed two acceptable outcomes. **The second one landed**: a proof
+that the current axioms already force `A = 1`, restricted to the linear
+setting. PR #7413, issue #7412.
+
+`QOU.FrobeniusHopfData.dichotomy_of_scalars_field` (sorry-free): in a
+preadditive monoidal category whose scalars `End(1_C)` form a field, every
+`FrobeniusHopfData` has `A` a ZERO OBJECT or a RETRACT OF `1_C`. Over
+`ModuleCat k` that is `dim A <= 1`.
+
+Write `sigma = eta >> eps` for the scalar `eps(1)`.
+
+  frobeniusLoop_counit_unit       Delta >> (A <| (eps >> eta)) >> mu = id_A
+                                  -- counit + unit law only, NO antipode
+  id_factors_through_unitCounit   id_A factors through a map carrying sigma
+                                  -- NO hypothesis at all
+  retract_of_unit_of_isIso        sigma invertible  ==> A retract of 1_C
+  id_eq_zero_of_unitCounit_eq..   sigma = 0         ==> id_A = 0, A is zero
+  dichotomy_of_scalars_field      scalars a field   ==> no third case
+
+### This CORRECTS my own 2026-09-15 entry above
+
+That entry said a non-trivial witness "must have `eps(1) != 1`", and treated a
+non-unital counit as the surviving corner. **The corner is empty over a
+field**: a non-trivial model needs `eps(1)` neither invertible nor zero, and a
+field has no such element. Describing the complement of one point understated
+a constraint whose admissible set is empty.
+
+The candidate this bean named is excluded twice over. Beyond `eps(1) = 1`, the
+probe `computations/probes/frobenius_hopf_no_nontrivial_model_probe.py` tests
+the SHARP prediction -- for `|G| > 1` NO linear `S'` at all satisfies the left
+antipode axiom against the Frobenius comultiplication -- by solving the whole
+`|G|^2` system exactly over Q. 5/5 agree (trivial, Z/2, Z/3, Z/4, S_3):
+consistent exactly at `|G| = 1`.
+
+### STAYS OPEN, and precisely why
+
+The zero branch needs `MonoidalPreadditive`. Over a BARE monoidal category
+`sigma = 0` is not statable and nothing here proves anything. **Whether a
+non-linear monoidal category admits a non-trivial `FrobeniusHopfData` is
+unresolved**, and that is now the whole of this bean.
+
+Second, weaker limit: "retract of `1_C`" is not "`= 1_C`" unless the unit is
+indecomposable. That holds in `ModuleCat k`; it is not assumed in the theorem.
+
+### What would close it
+
+Either exhibit a non-trivial `FrobeniusHopfData` in a monoidal category that is
+not preadditive, or extend the zero branch to a setting without zero morphisms
+(if that is even possible -- the argument as it stands is genuinely additive).
+
+Audit: `docs/audits/2026-09-15-frobenius-hopf-has-no-nontrivial-linear-model.md`.
