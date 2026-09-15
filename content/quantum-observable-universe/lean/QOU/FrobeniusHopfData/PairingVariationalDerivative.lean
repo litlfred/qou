@@ -153,6 +153,52 @@ theorem polarization (e δ : V) :
     Q.variation e δ = Q.value (e + δ) - Q.value e - Q.value δ := by
   rw [Q.value_add e δ]; ring
 
+/-! #### Existence constructors
+
+A `structure` with no inhabitant leaves every downstream statement about it
+vacuously satisfiable, so `QuadraticAction` gets an existence constructor before
+anything is built on it. -/
+
+/-- The quadratic action `e ↦ (ε e) ^ 2` attached to a linear functional `ε` on
+    the field space.  This is the existence constructor: every field space
+    carrying a functional carries an action.
+
+    It is also the case that matters here.  `ε` is a **scalar** reading of a
+    field, so this action is built entirely out of scalars — and
+    `ofFunctional_variation` shows its variational derivative is a bilinear form
+    on the field space all the same.  Rank-2-ness comes from *what is varied*,
+    never from what the action's values are. -/
+def ofFunctional (ε : V →ₗ[R] R) : QuadraticAction R V where
+  form :=
+    LinearMap.mk₂ R (fun x y => ε x * ε y)
+      (fun x₁ x₂ y => by simp only [map_add]; ring)
+      (fun c x y => by simp only [map_smul, smul_eq_mul]; ring)
+      (fun x y₁ y₂ => by simp only [map_add]; ring)
+      (fun c x y => by simp only [map_smul, smul_eq_mul]; ring)
+  form_symm := fun x y => by simp only [LinearMap.mk₂_apply]; ring
+
+@[simp] lemma ofFunctional_form (ε : V →ₗ[R] R) (x y : V) :
+    (ofFunctional ε).form x y = ε x * ε y := rfl
+
+/-- The action of `ofFunctional ε` is the square of the scalar reading. -/
+theorem ofFunctional_value (ε : V →ₗ[R] R) (e : V) :
+    (ofFunctional ε).value e = (ε e) ^ 2 := by
+  simp only [value, ofFunctional_form]; ring
+
+/-- **An action built entirely from a scalar reading still has a rank-2
+    variational derivative.**  `ofFunctional ε` never sees a field except through
+    the scalar `ε e`, yet its derivative is the bilinear form
+    `(e, δ) ↦ 2 · ε e · ε δ` on the field space.  So the corpus's scalar-valued
+    `einsteinTensor` slot is not defensible on the ground that "the action is a
+    scalar anyway": the action is a scalar in *both* shapes, and only the domain
+    decides the rank of the derivative. -/
+theorem ofFunctional_variation (ε : V →ₗ[R] R) (e δ : V) :
+    (ofFunctional ε).variation e δ = 2 * ε e * ε δ := by
+  simp only [variation_apply, ofFunctional_form]; ring
+
+/-- Non-vacuity: every field space carries at least the zero action. -/
+instance : Inhabited (QuadraticAction R V) := ⟨ofFunctional 0⟩
+
 end QuadraticAction
 
 end FieldSpace
@@ -255,6 +301,38 @@ theorem exists_contract_not_reflecting (G T : fieldSpace d) (hGT : G ≠ T) :
     ∃ η : 𝟙_ C ⟶ d.dual ⊗ d.obj,
       contract (R := R) d η G = contract (R := R) d η T ∧ G ≠ T :=
   ⟨0, by simp, hGT⟩
+
+/-- **Existence constructor for `PairingFieldAction`**, built only from
+    ingredients the corpus already has: contract a rank-2 pairing field against a
+    co-pairing `η`, read the resulting scalar with `ε`, and square it.
+
+    This is the wiring the corpus's `HasAction` could not carry.  `HasAction`
+    has no instance anywhere, and could not usefully have one: its domain is
+    `End(𝟙_C)`, so there is nothing to vary.  Here the same scalar data produces
+    an action on the **pairings**, and `QuadraticAction.ofFunctional_variation`
+    then gives it a rank-2 variational derivative. -/
+def contractionAction (η : 𝟙_ C ⟶ d.dual ⊗ d.obj)
+    (ε : (𝟙_ C ⟶ 𝟙_ C) →ₗ[R] R) : PairingFieldAction (R := R) d :=
+  QuadraticAction.ofFunctional (ε.comp (contract (R := R) d η))
+
+/-- The contraction action's value: the square of the scalar the corpus keeps. -/
+theorem contractionAction_value (η : 𝟙_ C ⟶ d.dual ⊗ d.obj)
+    (ε : (𝟙_ C ⟶ 𝟙_ C) →ₗ[R] R) (T : fieldSpace d) :
+    (contractionAction (R := R) d η ε).value T = (ε (η ≫ T)) ^ 2 := by
+  simp only [contractionAction, QuadraticAction.ofFunctional_value,
+    LinearMap.comp_apply, contract_apply]
+
+/-- **The punchline, on the corpus's own ingredients.**  The action here is
+    nothing but the corpus's scalar, squared — and its variational derivative is
+    still a bilinear form on the rank-2 pairing field space.  Compare
+    `ExternalCurrents.einsteinTensor`, which stores one value of `η ≫ T` and
+    therefore cannot carry this. -/
+theorem contractionAction_variation (η : 𝟙_ C ⟶ d.dual ⊗ d.obj)
+    (ε : (𝟙_ C ⟶ 𝟙_ C) →ₗ[R] R) (T δ : fieldSpace d) :
+    (contractionAction (R := R) d η ε).variation T δ
+      = 2 * ε (η ≫ T) * ε (η ≫ δ) := by
+  simp only [contractionAction, QuadraticAction.ofFunctional_variation,
+    LinearMap.comp_apply, contract_apply]
 
 end Categorical
 

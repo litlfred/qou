@@ -95,7 +95,24 @@ axiomatises the equations of motion on the ground that a categorical calculus of
 variations "does not yet exist in Lean/Mathlib"; **for the quadratic case that
 is not so**, and no axiom is required.
 
-### §1a — the separating witness
+### §1a — existence constructors (non-vacuity)
+
+The formalizer skill requires an existence constructor for every `structure`:
+without one, downstream statements about it are vacuously satisfiable.
+
+`QuadraticAction.ofFunctional ε` builds the action `e ↦ (ε e) ^ 2` from any
+linear functional `ε : V →ₗ[R] R`, with `instance : Inhabited (QuadraticAction R V)`
+via `ofFunctional 0`. It is also the case that matters, and it forecloses the
+obvious objection to this whole file — *"but the action is a scalar anyway"*:
+
+> `ofFunctional_variation` — `(ofFunctional ε).variation e δ = 2 * ε e * ε δ`.
+
+`ofFunctional ε` never sees a field except through the **scalar** `ε e`, and its
+variational derivative is a bilinear form on the field space regardless. The
+action is a scalar in *both* shapes. Only the **domain** decides the rank of the
+derivative.
+
+### §1b — the separating witness
 
 `value_does_not_determine_variation` exhibits, over `ℤ`, two fields with the
 **same action value** and **different derivatives**. This is the precise reason
@@ -135,6 +152,22 @@ scalar-valued Einstein-shaped equation is **strictly weaker** than the rank-2
 identity it is named after. `contract_eq_iff` states the exact residue: scalar
 equality is rank-2 equality *modulo* `LinearMap.ker (contract d η)`.
 
+### §2b — the wiring, on the corpus's own ingredients
+
+`contractionAction d η ε := QuadraticAction.ofFunctional (ε.comp (contract d η))`
+is an existence constructor for `PairingFieldAction` built from nothing but a
+co-pairing and a scalar reading of `End(𝟙_C)`:
+
+| | |
+|---|---|
+| `contractionAction_value` | `value T = (ε (η ≫ T)) ^ 2` — the square of exactly the scalar the corpus keeps |
+| `contractionAction_variation` | `variation T δ = 2 * ε (η ≫ T) * ε (η ≫ δ)` — still a bilinear form on the pairings |
+
+So the same scalar data that `MonoidalCalcVar.HasAction` reads *produces a
+rank-2 variational derivative* once its domain is the pairings.
+`HasAction` has no instance anywhere and could not usefully have one: its domain
+is `End(𝟙_C)`, so there is nothing to vary.
+
 ### Verification
 
 `lean -DautoImplicit=false -s 65536` → **exit 0**, no errors, no warnings
@@ -142,7 +175,7 @@ equality is rank-2 equality *modulo* `LinearMap.ker (contract d η)`.
 invoked, so the restore is not evicted). The flags matter: a bare `lean` does
 not read the lakefile, so `autoImplicit` defaults true.
 
-`#print axioms` on all 12 declarations: `propext`, `Classical.choice`,
+`#print axioms` on all 19 declarations: `propext`, `Classical.choice`,
 `Quot.sound` only — **no `sorryAx`**. Kernel-checked, not grep-checked.
 
 `scripts/lean-self-assuming-audit.py` on the new file: **0 candidates**.
