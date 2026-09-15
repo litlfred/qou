@@ -1,6 +1,8 @@
 **Proof.**
-At genus $g = 4$ (from
-[genus from Hecke completeness](#lem:genus-from-hecke-completeness)),
+At genus $g = 4$ (taken as given; the cited
+[genus from Hecke completeness](#lem:genus-from-hecke-completeness)
+proves a count, not the spanning condition that would fix $g$ --
+see [the block-rank remark](#rem:torus-evaluation-block-rank)),
 the Seifert embedding
 $\iota \colon F_p \hookrightarrow \Sigma_4$ induces
 $\iota_* \colon H_1(F_p) \to H_1(\Sigma_4)$.  The
