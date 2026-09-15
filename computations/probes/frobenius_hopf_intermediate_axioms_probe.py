@@ -414,9 +414,52 @@ def main() -> int:
     print()
 
     print("The design tension, if the table shows what it should: the ONLY family")
-    print("that excludes S = id everywhere is the current antipode axiom, and it is")
-    print("the only one with no non-trivial model. Everything weaker admits k[G] and")
-    print("leaves S under-determined on abelian groups.")
+    print("that excludes S = id everywhere is the convolution antipode axiom, and it")
+    print("is the only one with no non-trivial model. Everything weaker admits k[G]")
+    print("and leaves S under-determined on abelian groups.")
+    print()
+
+    # ---- the adopted axiom set, as a single verdict ----
+    print("=" * 78)
+    print("THE ADOPTED AXIOM SET (2026-09-15), AS A UNIT")
+    print()
+    print("`def:frobenius-hopf-substrate` axiom 2 now asks for all six at once:")
+    print("  anti-algebra + anti-coalgebra + S(1)=1 + eps.S=eps + S^2=id + lambda.S=lambda")
+    print("The claim the change rests on is that k[G] with S(g) = g^-1 IS a model.")
+    print("This is that claim, as one yes/no per group:")
+    print()
+
+    ADOPTED = [ax_anti_algebra, ax_anti_coalgebra, ax_involutive, ax_form_invariant]
+    bad_model = []
+    for G in groups:
+        row = []
+        for label, S in candidates:
+            A = GroupAlgebra(G, S)
+            struct = all(fn(A) for _, fn in STRUCTURE_AXIOMS)
+            adopted = all(fn(A) for fn in ADOPTED)
+            row.append((label, struct and adopted))
+        inv_ok = row[0][1]
+        id_ok = row[1][1]
+        # what we require: S = inv is always a model; S = id is EXCLUDED on
+        # non-abelian groups (that is the whole point of the anti-algebra law).
+        want_id = G.abelian
+        verdict = "OK" if (inv_ok and id_ok == want_id) else "MISMATCH"
+        if verdict != "OK":
+            bad_model.append(G.name)
+        print(f"  {G.name:>5}  |G| = {G.order:<2}  "
+              f"S = inv: {'MODEL' if inv_ok else 'not a model':<12}"
+              f"S = id: {'model' if id_ok else 'EXCLUDED':<12}{verdict}")
+
+    print()
+    if bad_model:
+        print(f"MISMATCH on: {', '.join(bad_model)} -- the adopted axiom set does NOT")
+        print("behave as the change assumes. This is a falsification, not a nit.")
+        return 1
+
+    print("Every group: k[G] with the classical antipode IS a model, and the vacuous")
+    print("S = id is EXCLUDED exactly on the non-abelian ones. That is the trade the")
+    print("change accepts -- S is constrained, not determined. On a commutative A the")
+    print("axioms cannot tell S = id from anything else, and nothing here hides that.")
     return 0
 
 
