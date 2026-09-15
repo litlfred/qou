@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T19:44:28Z
-updated_at: 2026-09-15T06:46:10Z
+updated_at: 2026-09-15T06:54:07Z
 ---
 
 ## 2026-09-14 — the measurement (probe 15/15, exact combinatorics, read-only)
@@ -345,3 +345,46 @@ open.
 **Corrected in this probe, my arithmetic:** the first run asserted "exactly six
 bands cross the interface". It is **nine** (|block 0| × |block 1| = 3×3). The
 check now states the correct count and says where the wrong one came from.
+
+
+## 2026-09-15 — WITHDRAWN: my own chain/triangle correction was wrong
+
+The 2026-09-15 entry above says the convex-aggregator route *"does not even
+apply"* to the production chain, because `b3Agg` is stated at `m₃ = 3` while the
+chain has 2 bonds. **That is wrong and is withdrawn.**
+`computations/onedim/b3_bond_count_and_the_scaling_criterion_probe.py`, 7/7.
+
+**The `3` in `b3Agg Φ g = Φ(3g) − 3Φ(g)` is two different numbers.** The Ursell
+inversion is `b₃ = B(3-cluster) − Σ over the C(3,2) = 3 PAIRS of B(pair)`. The
+first `3` is the cluster's **bond count**; the second is the **pair count**,
+which is 3 for *any* 3-cluster whatever its bond graph. On a chain the unbonded
+pair contributes `Φ(0) = 0` — the through-the-origin condition already assumed —
+so the chain form is `Φ(2g) − **2**Φ(g)`. The claim used the chain's bond count
+with the triangle's pair count.
+
+**Both consequences reverse:**
+
+- **Convexity IS sufficient on the chain.** Jensen at `0` and `m` with weights
+  `(1−1/m, 1/m)` gives `Φ(1) ≤ Φ(m)/m`, hence `b₃(m) ≥ 0` for every `m ≥ 1`. The
+  chain is the `m = 2` case of the identical argument.
+- **The scaling criterion is `p > 1` at every bond count.** `b₃(m) = C(mᵖ − m)`,
+  so `b₃ > 0` ⟺ `mᵖ > m` ⟺ `p > 1`, and `m` cancels out.
+
+**Validated by reproducing two independent corpus results from one formula.**
+With `b₃(m) = Φ(m) − m·Φ(1)` and the multiplicative assembly `Φ(m) = 1 − fᵐ`:
+`m = 3` → `−(f−1)²(f+2)` = `MayerThreeBodySign.b3_le_of_nonneg`; `m = 2` →
+`−(f−1)²` = the corpus's chain `−g₁₂g₂₃` at equal bonds. Symbolic, deviation 0.
+
+**How it got in, and the lesson.** The claim came from a corpus-grep that marked
+it explicitly as *its own algebra, not the corpus's*, and asked for it to be
+checked. I checked its two **corpus** claims — the bean's status and `b3Agg`'s
+definition, both correct — and propagated its **algebra** unchecked, in the same
+entry where I wrote *"a sibling's report is not a primary source"* about a
+different claim of the same report. Checking the corpus half of a mixed report
+is not checking the report.
+
+**Net effect on `qou-2ss0`:** none. Its scaling target is unchanged, and the
+"join the two arcs" Lean task filed above is **not needed for this purpose**.
+What survives from that grep and remains useful: no derived convex aggregator
+exists in the corpus, and `sign_carries_no_information_beyond_the_secant` makes
+"find a convex Φ" circular — so scaling is still the non-circular route.

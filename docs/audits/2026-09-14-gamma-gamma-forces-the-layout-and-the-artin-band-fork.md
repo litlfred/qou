@@ -219,14 +219,36 @@ three-body correction to `Z₁₂₃` that is **negative and at least**
 > *"🛑 TITLE IS NOW MISLEADING 2026-09-13 — convexity is SUFFICIENT but STRICTLY
 > UNNECESSARY"* — naming **`qou-2ss0`** (in-progress) as the live carrier.
 >
-> **And the equivalence does not hold for a chain.** `b3Agg Φ g := Φ(3g) − 3Φ(g)`
-> (`AggregatorConvexityDichotomy.lean:101`), whose own docstring says `g` is the common bond
-> weight and **`3` the three-body bond count** — i.e. the statement is at the **triangle's**
-> `m₃ = 3`. The production `A = 3` word is a **two-bond chain**, and that is forced
-> (`QOU.Mass.StrandLayoutForcesChain`). At chain counts the quantity is `Φ(2g) − 3Φ(g)`, and
-> convexity-through-the-origin yields only `Φ(2g) ≥ 2Φ(g)`, hence `≥ −Φ(g)` — **no sign at
-> all.** So the convex-aggregator route does not even apply to the object in question
-> without first closing the chain.
+> **🛑 WITHDRAWN 2026-09-15, one day later — this paragraph was wrong, and it was mine.**
+> It read: *"the equivalence does not hold for a chain … at chain counts the quantity is
+> `Φ(2g) − 3Φ(g)`, and convexity-through-the-origin yields only `Φ(2g) ≥ 2Φ(g)`, hence
+> `≥ −Φ(g)` — no sign at all."*
+>
+> **The `3` in `b3Agg Φ g = Φ(3g) − 3Φ(g)` is two different numbers.** The Ursell inversion
+> is `b₃ = B(3-cluster) − Σ over the C(3,2) = 3 PAIRS of B(pair)`: the first `3` is the
+> cluster's **bond count** (the aggregator's argument), the second is the **pair count**,
+> which is `3` for *any* 3-cluster whatever its bond graph. On a chain the unbonded pair
+> contributes `Φ(0) = 0` — the same through-the-origin condition already assumed — so the
+> chain form is `Φ(2g) − **2**Φ(g)`. The version above used the chain's bond count with the
+> triangle's pair count.
+>
+> **Both consequences therefore reverse.** Convexity through the origin gives `Φ(1) ≤ Φ(m)/m`
+> for every `m ≥ 1` by Jensen at `0` and `m`, so **`b₃ ≥ 0` at every bond count** — the
+> chain is the `m = 2` case of the very same argument, and the route was never inapplicable
+> to it. And the scaling criterion is `b₃(m) = C(mᵖ − m)`, so **`b₃ > 0` ⟺ `p > 1` at every
+> `m`** — the bond count cancels out entirely.
+>
+> Verified by reproducing **both** of the corpus's own independently-recorded results from
+> the single general form `b₃(m) = Φ(m) − m·Φ(1)` with the multiplicative assembly
+> `Φ(m) = 1 − fᵐ`: `m = 3` gives `−(f−1)²(f+2)` (`MayerThreeBodySign.b3_le_of_nonneg`) and
+> `m = 2` gives `−(f−1)²`, which is the corpus's chain `−g₁₂g₂₃` at equal bonds. Probe
+> [`b3_bond_count_and_the_scaling_criterion_probe.py`](../../computations/onedim/b3_bond_count_and_the_scaling_criterion_probe.py), 7/7.
+>
+> **How it got in.** The claim came from a corpus-grep that marked it explicitly as its own
+> algebra, not the corpus's, and asked for it to be checked. I checked its two *corpus*
+> claims — the bean's status and `b3Agg`'s definition, both correct — and propagated the
+> algebra unchecked. The distinction is real about the statement's **literal domain** and
+> immaterial to the **criterion**.
 >
 > **The route is circular anyway, and that is a theorem.**
 > `B3AggSecantCharacterisation.sign_carries_no_information_beyond_the_secant`: for `g > 0`,
@@ -437,11 +459,10 @@ almost entirely unexplored.
    measured as `±1.6e-61`, the arithmetic floor). The live task is the **scaling** question:
    derive the assembly law's homogeneity degree `p` from a Hecke-side structural property and
    read the sign off `p > 1`, rather than choosing a `Φ`.
-5. **The chain-vs-triangle bond-count mismatch.** `b3Agg` is stated at `m₃ = 3`; the
-   production word is a two-bond chain. `QOU/Mass/UrsellChainMismatch.lean` formalises that
-   divergence, but neither it nor `UniformBondSimpleGraphExclusion.lean` contains the string
-   "aggregator" — **the two arcs have never been joined**, and joining them is a small,
-   well-posed Lean task.
+5. ~~**The chain-vs-triangle bond-count mismatch.**~~ **Closed 2026-09-15, and it was never
+   open** — see the withdrawal in §4. The bond count does not change the sign criterion, so
+   joining `UrsellChainMismatch` to the aggregator arc is not needed *for this purpose*.
+   (The two arcs still do not reference each other, which may matter for something else.)
 6. **The periodic-vs-open band gap**: the XXZ n-string band was measured on the *periodic*
    chain while `tl_is_the_xxz_chain_probe` identifies TL with the *open* chain plus a
    boundary field `((q−q⁻¹)/2)(σᶻ₁ − σᶻₙ)`. Under investigation.
