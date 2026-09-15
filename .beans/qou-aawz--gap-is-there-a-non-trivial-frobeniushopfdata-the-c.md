@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-14T19:59:47Z
-updated_at: 2026-09-15T06:46:23Z
+updated_at: 2026-09-15T08:44:53Z
 ---
 
 ## Surfaced 2026-09-14 while proving the bialgebra collapse
@@ -157,3 +157,28 @@ not preadditive, or extend the zero branch to a setting without zero morphisms
 (if that is even possible -- the argument as it stands is genuinely additive).
 
 Audit: `docs/audits/2026-09-15-frobenius-hopf-has-no-nontrivial-linear-model.md`.
+
+
+## 2026-09-15 — the axiom that had no models is GONE, and this bean is STILL OPEN
+
+On owner decision the convolution antipode condition was replaced by the
+anti-automorphism package (`qou-c64q`). So the definition now HAS non-trivial
+models: `k[G]` with the Frobenius comultiplication and `S(g) = g^-1`, measured
+7/7 over Z/1..4, V_4, S_3, D_4 by exact integer arithmetic.
+
+**That does NOT close this bean, and the distinction matters.** This bean asks
+whether a non-trivial `FrobeniusHopfData` exists IN THE CORPUS. `k[G]` is a
+model *in Python*. `QOU.TrivialWitness.unitFrobHopf` (`A = 1`) is still the
+ONLY record-literal construction in Lean. The literal claim this bean was
+opened on is therefore unchanged.
+
+### What would close it now
+
+Formalise `k[G]` as a `FrobeniusHopfData (ModuleCat k)` in Lean -- the
+Frobenius comultiplication from the dual basis, `S(g) = g^-1`, the six new
+antipode laws discharged. The Python probe says every one of them holds, so
+this is transcription rather than research, but it is real work and it is not
+done.
+
+Until then the corpus's consistency proof for this definition still rests
+entirely on the trivial object, exactly as when this bean was opened.
