@@ -95,4 +95,15 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
   antipode_unit : unit ≫ antipode = unit
   /-- **Antipode axiom 4 — `S` preserves the counit.** -/
   antipode_counit : antipode ≫ counit = counit
-  /-- **Antipode axiom 5 — `S` is invol
+  /-- **Antipode axiom 5 — `S` is involutive.**  `S ≫ S = 𝟙_A`.
+
+      On its own this pins nothing: `S = 𝟙_A` satisfies it on every group
+      tested (`computations/probes/frobenius_hopf_intermediate_axioms_probe.py`).
+      It earns its place only alongside `antipode_anti_mul`, which `𝟙_A`
+      fails whenever `A` is non-commutative. -/
+  antipode_involutive : antipode ≫ antipode = 𝟙 obj
+  /-- **Antipode axiom 6 — `S` preserves the Frobenius form.**
+      `S ≫ λ = λ`, so the pairing `⟨a, b⟩ = λ(ab)` is `S`-invariant. -/
+  antipode_frobeniusForm : antipode ≫ frobeniusForm = frobeniusForm
+
+end QOU.AlgebraicSubstrate
