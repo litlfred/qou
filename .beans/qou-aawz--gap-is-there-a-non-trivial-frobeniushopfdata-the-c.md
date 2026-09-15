@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-14T19:59:47Z
-updated_at: 2026-09-14T20:00:23Z
+updated_at: 2026-09-15T02:14:34Z
 ---
 
 ## Surfaced 2026-09-14 while proving the bialgebra collapse
@@ -57,3 +57,48 @@ untested**.
 
 Context: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md`; parent bean
 `qou-c64q`.
+
+
+## 2026-09-15 — NARROWED, still open. A non-trivial witness must have eps(1) != 1
+
+This bean listed two outcomes: exhibit a non-trivial witness, or prove the
+current axioms already force `A = 1`. **The result below is NEITHER**, and it
+is worth saying so plainly rather than filing it under the second.
+
+`QOU.FrobeniusHopfData.scalar_id_eq_counit_unit` (sorry-free, `#print axioms`
+= `[propext, Quot.sound]`) proves, with no hypothesis beyond the structure's
+own fields:
+
+    eps(1) . x  =  eps(x) . 1     for every x
+
+`eps(1) = 1` is NOT a field of `FrobeniusHopfData`, so this does not force
+`A = 1`. What it does is close off the natural candidates:
+`counit_not_unital_of_nontrivial` says a non-trivial `FrobeniusHopfData` has a
+**non-unital counit**.
+
+### The candidate this bean named is now excluded
+
+`k[G]` with the Frobenius (dual-basis) comultiplication and `S(g) = g^-1` has
+`eps(1) = 1` under the usual normalisation `eps(sum a_g g) = a_e`, so by the
+theorem it cannot satisfy `antipode_left` unless `|G| = 1`. A hand check agrees
+and shows why: the Frobenius `Delta(1) = sum_h h (x) h^-1`, so
+`(S * id)(1) = sum_h S(h) . h^-1 = sum_h h^-2`, which is `1` only for the
+trivial group.
+
+The only visible escape is to rescale `eps` by a constant, which is exactly the
+corner the theorem says a non-trivial witness has to sit in -- an `eps` that is
+not a counit in the normalised sense.
+
+### What would close this bean
+
+Unchanged in kind, narrower in target: a `FrobeniusHopfData C` with
+`eps >> eta != id_A`, which now additionally must have `eta >> eps != id_1`.
+Search among Frobenius algebras with a deliberately non-normalised Frobenius
+form, or accept that the definition wants one and record that as a property of
+the substrate rather than an accident.
+
+**STAYS OPEN.** The question this bean asks is unanswered; only the search
+space moved.
+
+Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md` (leading
+section). PR #7405.
