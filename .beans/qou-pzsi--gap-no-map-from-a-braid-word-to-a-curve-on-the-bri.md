@@ -3,8 +3,9 @@
 title: 'GAP: no map from a braid word to a curve on the Bring surface — the embedding-energy selection rule cannot be built without it'
 status: todo
 type: task
+priority: normal
 created_at: 2026-09-14T16:50:05Z
-updated_at: 2026-09-14T16:50:05Z
+updated_at: 2026-09-15T20:03:17Z
 ---
 
 
@@ -303,3 +304,33 @@ selected, nothing re-scored.
 `library/1-s20-0040938391900102-main/`, and `content/schema/references.ts:5602`
 records the DOI verified 2026-09-13 against that full text. That bean wants an
 update; not edited here, since it is another arc's.
+
+## Option 4 enacted 2026-09-15 — the Möbius block is scoped in its own prose
+
+The owner picked options 4 / 2 / 3 on `CategoricalMobiusEnergy.classicalLimit`
+and asked for the formalize-first comparison first. The comparison established
+that **option 2 (make the constant universal) is not available as the structure
+is encoded** — `no_universal_classicalLimitConst` is now a sorry-free theorem,
+so 2 is a request for new structure, not a value to supply. Option 4 is enacted;
+option 3 (retire the field) is NOT, because retiring it would delete the affine
+shape that is the block's actual content.
+
+Enacted:
+
+- `climax-volume-mass/mobius-energy.md` — a paragraph after the classical-limit
+  display saying the additive constant is not determined by the construction,
+  that every real value is realised by an additive shift preserving both Möbius
+  invariance and the relation, and that a topological reading needs further
+  structure fixing the additive zero of `E_cat`.
+- `climax-volume-mass/mobius-energy.ts` — an `authorNotes` entry naming the
+  three declarations and their axiom set.
+
+Verification: render-QA grep battery clean (`$$` 6, inline `$` 52, braces 33/33,
+`\Bigl`/`\Bigr` 3/3, no list-parser hijack, no non-ASCII inside math — the em
+dashes are in prose, matching the file's existing §Archimedean paragraph);
+`run-validate content/quantum-observable-universe` against pinned platform
+`df28d02` → **2 issue(s)**, both pre-existing and unrelated (a bibliography info
+line, `lem:piece-a-corner-removal-obligation` without a Lean declaration).
+No Lean changed in this commit.
+
+The research target that option 2 actually names is `qou-uh5f`.

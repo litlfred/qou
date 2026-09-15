@@ -38,6 +38,29 @@ export default proposition({
         "constrained a private `q_real` tied to the context's own `q` by " +
         "nothing) — which the deleted sibling was not.",
     },
+    {
+      kind: "note",
+      date: "2026-09-15",
+      body:
+        "**The additive constant in the classical limit is unconstrained \u2014 " +
+        "proved, not suspected** (bean `qou-pzsi`). " +
+        "`CategoricalMobiusEnergy` (in `QOU/MobiusEnergy.lean`) carries " +
+        "`classicalLimit : energy = (1/4) * classicalEnergy.value + " +
+        "classicalLimitConst` with `classicalLimitConst : \u211d` a free field " +
+        "of the same structure. `shiftEnergy` adds a real `d` to `energy`, to " +
+        "`energyUnderMobius` and to `classicalLimitConst`, preserving " +
+        "`mobiusInvariant` and `classicalLimit`; so " +
+        "`classicalLimitConst_surjective` realises every real value at fixed " +
+        "`classicalEnergy`, and `no_universal_classicalLimitConst` rules out any " +
+        "`k` holding for all instances. All sorry-free, axioms " +
+        "`[propext, Classical.choice, Quot.sound]`. " +
+        "The `.md` now states the scope: what the block establishes is the " +
+        "*shape* of the limit (affine in the classical energy, slope 1/4), not a " +
+        "topological normalisation. Fixing the constant to a knot-type invariant " +
+        "needs structure pinning the additive zero of `E_cat` \u2014 the " +
+        "structure as encoded does not supply it, so that is a research target " +
+        "rather than a field to fill in.",
+    },
   ],
   tags: ["mobius-energy", "categorical-mass", "knot-energy", "q-deformation"],
   uses: [

@@ -29,6 +29,17 @@ $$
   +  \text{const}.
 $$
 
+The additive constant is not determined by the construction. Shifting
+$E_{\mathrm{cat}}$ by any real $a$ shifts $\text{const}$ by $a$ while
+preserving both the Möbius invariance of $E_{\mathrm{cat}}$ and the relation
+itself, so every real value of $\text{const}$ is realised and no single value
+holds across instances. Reading $\text{const}$ as a topological
+normalisation, a quantity determined by the knot type of $\varrho$ alone,
+requires further structure fixing the additive zero of $E_{\mathrm{cat}}$,
+which the definition above does not supply. What is established here is the
+*shape* of the classical limit: the categorical energy is an affine function of
+the classical Möbius energy with slope $1/4$.
+
 Here $E(\varrho)$ is the classical Möbius energy
 
 $$
