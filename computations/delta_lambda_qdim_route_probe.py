@@ -186,8 +186,13 @@ def main():
     # data contradicts (bean qou-n62l).
     _he4_row = next((r for r in rows if r["atom"] in ("4He", "He4")), None)
     _he4_c = _he4_row["ceiling_over_target"] if _he4_row else {}
-    _he4_span = (min(_he4_c.values()) if _he4_c else float("nan"),
-                 max(_he4_c.values()) if _he4_c else float("nan"),
+    # `mp.nan`, not `float("nan")`. Since these now reach `fmt` (this file
+    # serializes at full precision), a float64 sentinel taints the value the
+    # mixed-arithmetic gate follows, even though the branch cannot fire —
+    # ISOTOPES always carries 4He. mpf nan formats identically under `:.3g`
+    # and `fmt`, so removing the taint costs nothing and beats annotating it.
+    _he4_span = (min(_he4_c.values()) if _he4_c else mp.nan,
+                 max(_he4_c.values()) if _he4_c else mp.nan,
                  sorted(_he4_c))
 
     witness = {

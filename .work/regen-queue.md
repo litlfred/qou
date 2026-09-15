@@ -995,3 +995,55 @@ Since bean `qou-tekx` stage 3b that resolver DERIVES from `q_muon_at()`, which
 is **C** — measured here, relative difference exactly 0. So the probe that
 defines the A/B/C vocabulary can no longer distinguish A from C, and labels C
 as A. Its conclusions about B are unaffected.
+
+## 29. I regressed the mixed-arithmetic gate with §20 and §26, and the suite hid it
+
+Both fixes routed a float64 value through `fmt()`, which is exactly what
+`mpf_mixed_arithmetic_audit` flags as `[serialized] fmt(<float64-tainted>)`.
+Four new candidates, all mine:
+
+    binding_word_3A_reembedding_probe:757-758   fmt(float(t_fixed)) — §20
+    delta_lambda_qdim_route_probe:224 (x2)      fmt(_he4_span[...]) — §26
+
+Neither existed before. The §26 one is the subtler: before that change the
+span went into the witness *unserialized*, so the `float("nan")` sentinel at
+`:189` tainted nothing; wrapping it in `fmt` is what made the taint reachable.
+
+**THE SUITE HID IT.** `scripts/precision-gates.sh` reports RED/green per gate,
+not counts, and `mixed mpf/f64 -> serializer` was ALREADY RED at session start.
+So a gate I was adding findings to looked exactly the same as before. I ran the
+full suite after those commits and read "no new gate went red" as "no
+regression" — which is only true for gates that were green. **On an already-red
+gate, only the count is evidence**, and the suite does not print it.
+
+### Two different fixes, because they are two different facts
+
+* **§20's timing is genuinely float64.** `time.monotonic()` returns a binary64
+  and there is no mpf to carry end to end, so the honest move is the audit's
+  own escape hatch, `# float64-intentional: <reason>`.
+* **§26's nan is not.** The sentinel only exists for a branch that cannot fire
+  (ISOTOPES always carries 4He). `mp.nan` formats identically under `:.3g` and
+  `fmt`, so the taint is REMOVED rather than annotated — and as a bonus the
+  field serializes as the string `"nan"` instead of a bare float NaN, which
+  `json.dumps` writes as invalid JSON.
+
+Prefer removing a taint to marking it. A marker is a standing assertion that
+has to stay true; `mp.nan` is just correct.
+
+### The marker went one line too high — again
+
+`marked()` is `lines[lineno-3 : lineno+1]` on a **0-indexed** list, so it
+covers the two source lines above the finding and the finding itself. A
+comment block three lines up is outside it. My first placement sat at 757 for
+a finding at 760 and did nothing; the count stayed at 7 until I moved the
+marker adjacent to the call. This is the second time this session a marker
+landed one line high — the rule is **the marker goes on the line immediately
+above, not at the top of the explanatory block.**
+
+### Measured
+
+    candidates   9 -> 5      (baseline 3)
+    deliberate  10 -> 12
+    files        6 -> 4
+
+5 is the pre-session population; both of my files are off the list.

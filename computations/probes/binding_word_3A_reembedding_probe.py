@@ -754,6 +754,11 @@ def main() -> int:
     # `0.12464838699997926596552133560180664062500000000000` for a value that
     # is 0.12464838699997927. `fmt` sends a float to its natural repr, which
     # is the whole of what a timer measured. Value-preserving.
+    # A wall-clock duration from time.monotonic() IS a binary64 and nothing
+    # more, so there is no mpf to carry end to end here. The marker has to sit
+    # on the line ABOVE the call: `marked()` scans lines[lineno-3:lineno+1],
+    # which is 0-indexed, so a comment three source lines up is outside it.
+    # float64-intentional: fmt(float(...)) serializes exactly what was measured
     w.add_data("A2_path_sum_cost_s", {"fixed_Hk": fmt(float(t_fixed)),
                                       "three_A": fmt(float(t_re))})
     w.add_caveat(
