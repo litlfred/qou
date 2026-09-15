@@ -4,13 +4,11 @@ export default remark({
   label: "rem:three-euler-characteristics",
   title: "The three Euler characteristics, and the trace that is not one",
   interprets: "lem:brings-euler-characteristic",
-  uses: [
-    "lem:brings-euler-characteristic",
+  uses: ["lem:brings-euler-characteristic", "rem:hkr-theorem", "conj:wigner-axiom"],
+  foreshadows: [
     "def:archimedean-condition",
     "rem:chern-character-and-riemann-roch",
-    "rem:hkr-theorem",
     "rem:euler-characteristic-of-the-regular-representation",
-    "conj:wigner-axiom",
   ],
   cites: ["hartshorne-1977", "loday-1998"],
   tags: ["euler-characteristic", "hochschild-homology", "quantum-dimension", "notation", "brings-surface"],

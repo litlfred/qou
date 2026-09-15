@@ -7,7 +7,8 @@ export default lemma({
   },
   title: "Euler characteristic of Bring's surface",
   tags: ["euler-characteristic", "brings-surface", "categorical-trace", "descartes-substrate"],
-  uses: ["prop:euler-char-stability", "rem:hkr-theorem", "rem:three-euler-characteristics"],
+  uses: ["prop:euler-char-stability", "rem:hkr-theorem"],
+  foreshadows: ["rem:three-euler-characteristics", "rem:euler-characteristic-of-the-regular-representation"],
   proofs: ["prf:brings-euler-characteristic"],
   authorNotes: [
     {
