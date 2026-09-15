@@ -1,11 +1,11 @@
 ---
 # qou-qhcr
 title: 'GAP: derive the branch-point count 6 from the five QOU axioms (the ONE missing step in the chi = -6 chain)'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-09-15T06:46:44Z
+updated_at: 2026-09-15T06:50:47Z
 ---
 
 Child of `qou-51l1` (which established that the χ = −6 chain is
@@ -211,3 +211,28 @@ No content block was edited. Correcting Step 5's parenthetical is arguably
 AGENTS.md exemption 2 (a held source decides it), but *what Step 5 should
 say instead* is a reading of the chain, and that is the owner's call — the
 same disposition `qou-51l1` took on `chapter-overview.md:30`.
+
+
+---
+
+## Session close, 2026-09-15 (`claude/chi-branch-point-count-2026-09-15`)
+
+**Status stays `todo`: the subject is an open derivation and AGENTS.md
+§13a forbids closing a bean whose subject is an open conjecture.** This
+session tested the assigned route and reported a negative; it did not
+derive the 6.
+
+One more negative, scoped so it is not mistaken for a stronger claim.
+**Surface searched: every `content/quantum-observable-universe/*/*.ts`
+block manifest.** Of the fifteen carrying an order-5 group structure,
+**all** are in `brings-surface/` or downstream of it
+(`mass-endomorphism/color-spacetime-s5-factorization`,
+`mass-theory/bring-trilog-*`). `rem:fivefold-symmetry` opens with *"Bring's
+surface Σ₄ possesses an S₅ automorphism group"* — the 5 is read off Bring,
+not derived. The two `appendix-surreals/` hits are about the zeta VALUE
+ζ(5), a different object.
+
+**Not searched:** `computations/`, `docs/`, and the knowledge graph
+(`corpus_search` / MCP `paper-assistant` failed to connect this session,
+ENOENT). So this is "no axiom-level source for an order-5 automorphism on
+the block-manifest surface", not "there is none".
