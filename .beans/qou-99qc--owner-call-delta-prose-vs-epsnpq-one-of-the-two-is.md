@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-13T17:13:35Z
+updated_at: 2026-09-15T08:21:15Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -2703,6 +2703,106 @@ order-sensitive and can rank a longer word below a shorter one.
 another, and point 3 shows the energy does not separate what remains. The Q_β
 column is a reported consequence, never an input to an ordering.
 
+
+## ILP does NOT escape the S4 relative-interior exclusion (2026-09-14)
+
+Owner asked to "make sure you are doing ILP". Checked, and it is excluded —
+for a proved reason, not a failed search. Probe
+`computations/meson/operator_selection_ilp_does_not_escape_s4.py` (9/9, exact
+sympy over Q, emits no witness per qou-pb1w); Lean
+`QOU/QBeta/IntegralityDoesNotEscapeRelativeInterior.lean` (7 decls, sorry-free,
+lean-direct exit 0).
+
+**The escape was real and had to be closed.** S4 (`qou-v7qj`) excludes every
+linear objective from selecting B_3 by the FACE argument — extrema on a face,
+so a relative-interior minimiser is constant. That is a statement about a
+CONVEX POLYHEDRON. An ILP's feasible set is not convex; the governing object
+is the integer hull `conv(P ∩ L)`, whose faces need not be faces of `P`, so a
+relative-interior point of `P` genuinely can be a vertex of the integer hull.
+
+**Reading 1, over Z^6 — B_3 is not feasible at all.** Its NF coordinates are
+Z-Laurent polynomials in q at q_0 and are not integers; worst coordinate (L+)
+is 0.0456 from Z. Stronger and cheaper than S4's negative: not "no objective
+picks it out" but "it is not in the set".
+
+**Reading 2, over Z[q_0,q_0^-1]^6 — that is not a lattice, it is DENSE.** For
+real q > 1, Z[q] is discrete in R iff q is Pisot (classical); the smallest
+Pisot number is the plastic number 1.3247... (Siegel 1944); q_0 = 1.10998 is
+below it. A dense feasible subset has the same closed convex hull, so the
+integer hull adds no faces. Made constructive: [A6] exhibits a feasible
+lattice point beating B_3, 0.8642 against 0.9986.
+
+**The Lean strengthens rather than restates S4:** convexity was never what the
+face argument used. `linear_min_two_sided_kills_direction` gets `f d = 0` over
+an ARBITRARY set S from two-sided reachability and linearity alone. So an ILP
+cannot escape by non-convexity; it could only escape by the lattice being
+COARSE near the point, which density rules out.
+
+**Unconditional — does not need q_0 irrational** (which this corpus cannot
+prove; q_0 is pinned through Vol(4_1) = 2 Cl_2(pi/3)). All three cases give
+density; only q_0 in Z is discrete, and 1 < q_0 < 2. The Pisot test needs no
+decimal expansion of theta: x^3-x-1 is increasing on (1,oo), so q_0 < theta is
+exactly the sign of q_0^3 - q_0 - 1 — proved as an iff in §3 of the Lean.
+
+**Correction made in the writing, worth keeping:** the ring is Z[1/(p*r)], NOT
+Z[1/r] — q_0^-1 = r/p puts powers of p in denominators, and B_3's own
+coordinates carry 192- to 479-digit denominators for that reason. The first
+run tested membership against Z[1/r] and FAILED [A6] on a point plainly in the
+ring. The false negative was indistinguishable from a real one.
+
+**SCOPE (b)**, structural, invariant cited: the Pisot bound for reading 2,
+non-membership for reading 1. It excludes LINEAR objectives over these
+lattices. It says nothing about non-linear principles (S4 refuted two
+separately) and nothing about other elements.
+
+**Still open, unchanged:** what replaces `nuc11_interleaved` after the
+2026-09-13 reading-3 whole-word ruling rejected it on (2,1). That is an owner
+decision and this prune narrows the search without answering it.
+
+
+## TOWER (2026-09-15): the H_3 ILP answer was a truncation artifact
+
+Owner: *"Have O'Hara on the full tower.... I suspect the longer words (which are
+from gamma gamma production are higher in tower), only do order 0 when we need
+the observables."* Confirmed, and worse than stated: **the H_3 probe could not
+SEE the gamma-gamma operator.**
+
+`GammaGammaH6Interface.lean:37` records the gamma-gamma-produced bond as
+`(sigma_2 sigma_3^-1)^m` -- generators 2 and 3, i.e. **H_6**. My ILP alphabet was
+`{sigma_0, sigma_1}` = H_3, so that operator is outside the catalogue at EVERY
+length, and reading 3 was evaluated in the wrong algebra (3 blocks, not 11).
+
+`computations/qbeta/qbeta_knot_operator_ilp_h6_tower_probe.py` (6/6):
+
+* **Convention D IS the two-row truncation**, exactly: `y_lambda > 0` iff the
+  partition has <= 2 rows. At H_6 that is (6), (5,1), (4,2), (3,3) -- FOUR of
+  eleven bind. The H_3 rule `y_(1^3) = 0` is the n = 3 case of the same fact.
+* **The gamma-gamma bond is INFEASIBLE at m = 1, 2 and FEASIBLE at m = 3**
+  (E = 3.0990) -- the same `3 | k` pattern as the vertex-power family.
+* **The decisive table**, at FIXED length (a mixed-length argmin is vacuous by
+  `PairEnergyRewardsShort.pairEnergy_singleton_le`):
+
+      len   H_6 feas   H_6 min         H_3sub feas   H_3sub min      same?
+        1         10   0.0                       4   0.0             yes
+        2         68   0.1629153512              8   0.9156174644    NO
+        3        551   1.1261598926             62   1.2414481668    NO
+
+  At length 2 the H_3 answer is **5.6x worse** than the true optimum. The H_6
+  winners `s0is2i` and `s0s1s3` use generators an H_3 catalogue cannot express.
+  The previously reported `1.2414 / s0is0is1i` is **RETRACTED as an artifact**.
+
+Precision: `chi_lambda_braid_mpf` at 60 dps, NOT
+`mass_at_3A_proper.chi_lambda_of_word`, whose own docstring says "This is a
+float64 kernel, and the return annotation is the contract".
+
+Landed on `claude/lp-dual-radical-formalize-first-2026-09-14` (PR #7399) as
+commit `9078329dd68`.
+
+**Still open (unchanged):** what replaces `nuc11_interleaved`. The H_6 table
+says which operator the ILP selects at each fixed length; it does not settle the
+element, because the reading-3 + PSD-3 whole-word criterion is the owner's and
+five of `nuc11_interleaved`'s eleven letters remain census-derived.
+
 ## 2026-09-14 — the owner's proposed cost is the one it replaces: crossing ENERGY = crossing COUNT + a writhe term
 
 The section above records the owner's objection to crossing count as the
@@ -2977,3 +3077,74 @@ Composed with this entry: **if crossing energy IS the count, then the count is
 both permutation-blind and unable to select by any linear program, integer or
 not.** That is a constraint on where the selection can come from — not a problem
 with the reduction.
+
+### 2026-09-15 10:25Z — twelve `qou-99qc` commits landed overnight; what they do to this entry, checked rather than assumed
+
+`main` moved 24 → 85 while #7390 sat open, and **twelve** of those are on this
+bean. The merge conflicted on exactly the file AGENTS.md predicts — this bean —
+and was resolved losslessly with the prescribed
+[`scripts/bean-append-merge.py`](scripts/bean-append-merge.py) (`+16309 ch
+appended`, `main` byte-for-byte preserved), not by hand.
+
+**THE ONE THAT CONTINUES THIS ENTRY DIRECTLY.** `b7b5e3e290` adds
+`QOU/Mass/PairEnergyRewardsShort.lean` (7 decls, sorry-free), stated for an
+**arbitrary** kernel `K`:
+
+* `pairEnergy_singleton_le` — under non-negativity a **1-letter word is a global
+  minimiser over every word**;
+* `exists_singleton_minimiser` — any catalogue containing a singleton has its
+  optimum there, whatever else it holds;
+* the contrapositive — **to select anything longer, the kernel must go negative
+  somewhere.**
+
+**Composed with this entry, the lesson is sharper than either half.** Mine:
+minimising `E_cross` *is* minimising the count
+(`isLeast_energy_iff_isLeast_count_of_writhe_eq`). Theirs: minimising a
+non-negative pair energy picks the shortest word. Both say the same thing about
+a different functional — **plain minimisation drives you to the degenerate short
+end, so the pathology is the MINIMISATION FRAME, not the particular cost.** A
+cost that *separates* (the pair kernel of `aa224aba03`) is therefore still not
+enough: separation is necessary, and the selection rule must additionally not be
+bare minimisation of a non-negative functional.
+
+**An observation, marked as suggestive and NOT a theorem.** Their contrapositive
+says a selecting kernel must go negative somewhere, and the table in the entry
+above already *exhibits* negativity: `E_cross(σ₁⁻¹) = −0.90091828395574` and
+`E_cross(σ₀⁻¹σ₁⁻¹) = −1.8018365679115` — a negative crossing carries negative
+energy. **Scope: mine is a letter-sum, negative per LETTER; theirs is a kernel
+on letter PAIRS.** So this is not an instance of their hypothesis, only evidence
+that the corpus's own energy convention supplies the sign structure their design
+constraint asks for. Do not cite it as satisfying the hypothesis.
+
+**WHAT DOES NOT TOUCH THIS ENTRY, checked three ways rather than assumed.**
+`6fb8dafe3c` reports two hazards that look like they should land on my probe —
+*"the H_3 legacy path is float64"* (`atom_per_generator_volumes` warns but
+RETURNS, and its `mpf` is bit-exactly a padded float64; 32 callers) and *"the
+H_3 answer is a truncation artifact at every length ≥ 2"*. Neither reaches it:
+
+1. **Import cone.** Walked all 19 modules reachable from
+   `qbeta_crossing_energy_is_count_plus_writhe_probe`: `atom_per_generator_volumes`
+   appears in **none**.
+2. **Re-ran the probe on the merged tree — 8/8, and the witness is byte-
+   UNCHANGED**, so no import-cone drift moved a number.
+3. **Structurally, and this is the durable half.** Checks 1, 3, 4, 5 and 6 use
+   **no `tr_M` at all** — they are algebra on `E_cross`. Checks 2 are
+   *invariance* claims (cyclic rotation, contiguous-block position, cancelling
+   pair), which hold for **any** trace, whatever algebra it is taken in; the
+   measured `1.55575e-61` and exact-`0` deltas are what establish that `tr_at`
+   *is* a trace. So **no claim in this arc depends on H_3 vs H_6** — only on
+   tr_M being a trace. That was luck rather than design, and is worth stating
+   explicitly so a future reader does not re-litigate it.
+
+**Verification after the merge:** library sweep on
+`QOU.Mass.CrossingEnergySelectionEqualsCount` — **2 ok, 0 RED, 0 TIMEOUT,
+0 UNVERIFIED, 0 skipped** (176 s), dependency rebuilt from source.
+
+**Also worth carrying: they caught a LAYER STRADDLE in their own measuring
+script** — it rebound `q` in the character kernel but not in `_order`, whose
+`word_nf` folds with `_order.H0`, so the NF was at the anchor while `χ` was at
+the perturbed `q`. That produced three false claims, including a "root of
+`χ_(2,1)` at `q₀` agreeing to 40 digits"; measured correctly, `χ_(2,1)(s0s1s1)`
+shrinks like `10^-dps` at **every** `q` and is identically zero, with no root.
+Exactly the straddle class AGENTS.md §"Never straddle the two layers" warns
+about, one layer over — and it was caught by the author, not by a gate.

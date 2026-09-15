@@ -10,7 +10,7 @@ alpha_em_anchor_preference_probe.py), the ladder is:
   form A  (quadratic, α²H + αT − 1 = 0; NO Schwinger)        1/α resid = +0.9937 ppb
   form B  (cubic, +derived Schwinger (1−h²α), RT phase 3)    1/α resid = −0.3652 ppb  = 2.38 σ_α
 
-So α_EM with the RT-phase-3-DERIVED Schwinger self-energy factor (1−h²α) — NOT a
+So α_EM with the structurally-motivated Schwinger self-energy factor (1−h²α) — NOT a
 fitted knob — lands 2.38 σ from CODATA. Far closer than the ~80 ppb muon-anchor
 headline, and better than form A at the same anchor.
 
@@ -39,10 +39,11 @@ which is UNCOMPUTED (the RT phase-2 EmFermionLoop program). It is NOT the Ohtsuk
 c₂ is ~590× smaller). Note c₂ is now NEGATIVE — under the 2018 pin it read +8.1e-4;
 that sign is the edition flip above, not new physics.
 
-HONEST STATUS: with the correct anchor + the derived Schwinger term, α_EM is the
+HONEST STATUS: with the correct anchor + the structurally-motivated Schwinger term, α_EM is the
 closest any not-yet-met observable sits to its L2 target — 238× short, against
 970× for m_μ and 152–177× for the Q_β trio. No coefficient fitted here (the
-Schwinger factor is derived; only q0 is the documented proton pin); scope-(a).
+Schwinger factor is not fitted but is NOT derived — its exact check failed in
+2026-07-14; only q0 is the documented proton pin); scope-(a).
 
 Companion: alpha_em_anchor_preference_probe.py, alpha_em_form_ladder_probe.py (#3612,
 which used form A only), QOU/Archimedean/EmCouplingBringZeroMode.lean (#3625).
@@ -118,7 +119,12 @@ def main() -> int:
         "1x comparison, not the L2 one, and the two must not be conflated. Remaining 2-loop "
         "c2 ~ -9.4e-4 (uncomputed, NOT Ohtsuki kappa1=0.554; the sign is the edition flip). "
         "Closest any not-yet-met observable sits to its L2 target: 238x vs 970x (m_mu) and "
-        "152-177x (Q_beta trio). Schwinger factor derived (not fitted); q0 = documented "
+        "152-177x (Q_beta trio). Schwinger factor NOT FITTED (measured: the c hitting "
+        "CODATA exactly is 0.7312340272, 1-sigma window [0.61846303, 0.84400502], "
+        "so the published c=1 is OUTSIDE it at 2.383 sigma) but NOT DERIVED either "
+        "-- the exact vertex-moment check (2026-07-14 audit) gives +0.1281 vs the "
+        "claimed -0.0437, wrong order and sign; honest tier is "
+        "structurally-motivated / empirically-anchored. q0 = documented "
         "proton pin; scope-(a)."
     )
     wb.set_content_block("prop:em-coupling-bring-zero-mode")

@@ -101,21 +101,150 @@ DELIBERATE = {
         "its SUBJECT is the convention-C trace table that "
         "prop:q-hecke-seminormal-character-closure publishes; carrying C-era "
         "values is the finding, not a defect (qou-4383)",
+    "colour-weighting-trace-magnitude":
+        "its SUBJECT is the colour comparison — it holds the colour-BLIND and "
+        "the colour-weighted trace side by side to measure the gap, so both "
+        "frames are the measurement (qou-fv0s; found by the colour axis added "
+        "under qou-uujo)",
+    # The five C-vs-D comparison probes. Their SUBJECT is the convention gap,
+    # so each holds the convention-C trace beside the D one and both are the
+    # measurement — the same shape as the two colour probes below. Listed
+    # explicitly rather than matched on the shared `-c-vs-d-` stem because
+    # `qou-4bq3` records a DELIBERATE regex over-blocking 8 of 24 B3 verdicts:
+    # a pattern that is right today silently swallows tomorrow's real finding.
+    # Found by the convention-C axis added under `qou-ng7j`.
+    "binding-closed-form-c-vs-d":
+        "holds tau_H3_C and tr_M_atom_C beside their D counterparts; the gap "
+        "is the measurement",
+    "binding-production-route-c-vs-d-deut":
+        "production-route C-vs-D at the deuteron; carries tr_M_atom_C by design",
+    "binding-production-route-c-vs-d-trit-heli":
+        "the same at tritium / helium-3",
+    "binding-sum-c-vs-d-deut":
+        "binding-sum C-vs-D at the deuteron; carries tr_M_C by design",
+    "binding-sum-c-vs-d-trit-heli":
+        "the same at tritium / helium-3",
+    "colour-weighting-across-mixed-nuclei":
+        "the sibling of the above, extending that measurement from the "
+        "deuteron to T / 3He / 4He because the linear coefficient tr(A B) is "
+        "word-specific and does not transfer; same reason, same registry entry",
 }
 
 
-def fingerprints() -> dict[str, tuple[str, str, str]]:
-    """{15-sig-digit prefix: (atom, pin, ordering)} computed live."""
-    out: dict[str, tuple[str, str, str]] = {}
+def fingerprints() -> dict[str, tuple[str, str, str, str]]:
+    """{15-sig-digit prefix: (atom, pin, ordering, colour convention)} — live.
+
+    THE COLOUR AXIS IS THE SECOND SUPERSEDED STATE, added 2026-09-14
+    (bean `qou-uujo`). This swept `intra_order` only and always took
+    `pn_convention`'s default, so it could see the 2026-09-05 ordering ruling
+    and not the 2026-08-15 colour one. Tracing the ⁴He pin
+    `0.0553483351637685668` turned up a lineage of at least five states, of
+    which this audit covered two:
+
+        convention C, muon q₀          0.0553483458766980
+        convention C, proton q₀        0.0553483351637685
+        convention D, colour-BLIND     (the axis added here)
+        convention D, colour-weighted, grouped
+        convention D, colour-weighted, borromean   <- canonical
+
+    `binding_canonical` quotes the colour-blind deuteron by name as
+    `0.575090871629810316751633`, against `0.575172243917771870826535` for the
+    canonical convention, so these values are demonstrably in circulation.
+
+    **Convention C is deliberately NOT covered, and cannot be.** It is a
+    property of the TRACE, not the word: `Z_MARKOV` is a module constant at
+    `mass_at_3A_proper:121` with no flag, so no live fingerprint can be
+    computed for it. Adding it would mean transcribing literals, which is
+    exactly what this audit's design forbids — every fingerprint here is
+    recomputed, so a re-pin moves them rather than silently invalidating the
+    scan. A convention-C detector would need a different mechanism and should
+    not be bolted on here.
+
+    A lone nucleon has no p-n interface, so the two conventions give the SAME
+    number for `proton` and `neutron`. That is not a collision to report — the
+    entry is marked `either` and stored once.
+    """
+    out: dict[str, tuple[str, str, str, str, str]] = {}
+
+    def _add(v, meta):
+        """Record one fingerprint, folding a colour-independent duplicate.
+
+        A lone nucleon has no p-n interface, so its two colour conventions give
+        the SAME number. That is not a collision to report — the first (always
+        the canonical convention) is kept and marked `either`.
+        """
+        key = mp.nstr(v, SIG_DIGITS).rstrip("0")
+        prev = out.get(key)
+        if prev is not None:
+            if prev[0] == meta[0] and prev[1] == meta[1] \
+                    and prev[2] == meta[2] and prev[4] == meta[4]:
+                out[key] = (meta[0], meta[1], meta[2], "either", meta[4])
+            return
+        out[key] = meta
+
     for pin, qs in PINS.items():
         q = mp.mpf(qs)
+        z_c = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
         for atom, (Z, N) in ATOMS.items():
             n = 3 * (Z + N)
             for order in ("grouped", "borromean"):
-                word = M.atom_braid_word_3A(Z, N, q=q, intra_order=order)
-                v = abs(B.tr_M_via_wenzl_bridge_mpfr(word, n, qs, dps=50))
-                out[mp.nstr(v, SIG_DIGITS).rstrip("0")] = (atom, pin, order)
+                # canonical convention FIRST, so a colour-independent atom is
+                # recorded under it and `strict_averaged` folds into `either`.
+                for conv in ("bring_color_weighted", "strict_averaged"):
+                    word = M.atom_braid_word_3A(Z, N, q=q, intra_order=order,
+                                                pn_convention=conv)
+                    # D: the production path, left exactly as it was.
+                    v_d = abs(B.tr_M_via_wenzl_bridge_mpfr(word, n, qs, dps=50))
+                    _add(v_d, (atom, pin, order, conv, "D"))
+                    # C: NOT reachable through that path, and this is the
+                    # second reason `qou-ng7j`'s blindness is structural rather
+                    # than a missing pattern. The bridge evaluates chi only
+                    # where y_lambda is nonzero, and under D the Wenzl row cap
+                    # zeroes every partition with more than two rows — for the
+                    # deuteron it evaluates 4 of 11. Under C **every channel is
+                    # live** (measured: 7 of 7 three-or-more-row partitions
+                    # carry nonzero weight), so a C trace needs exactly the chi
+                    # the D pipeline discards. Hence the full table here.
+                    chi = _chi_all(word, n, q)
+                    v_c = abs(sum((M.jones_wenzl_weight(tuple(lam), q=q, z=z_c)
+                                   * val for lam, val in chi.items()),
+                                  mp.mpf(0)))
+                    _add(v_c, (atom, pin, order, conv, "C"))
+        # THE MARKOV PARAMETER ITSELF, not an atom trace. `qou-ng7j`'s table
+        # lists `z` as a convention-dependent quantity the detector sees "only
+        # if it happens to match a listed decimal" — it never did. z_C is one
+        # number per pin, so it costs two fingerprints.
+        _add(z_c, ("z", pin, "n/a", "n/a", "C"))
     return out
+
+
+#: A JSON path that declares its value is convention C. Deliberately matched on
+#: the PATH, not the file — see the note at its use site.
+_C_LABELLED_PATH = __import__("re").compile(
+    r"convention|/C/|(^|[/_\[])C($|[/_\]])|z_C|_c_for|c_sqrt|naive|cited",
+    __import__("re").I)
+
+
+def _chi_all(word, n, q):
+    """Per-partition chi for EVERY partition of n — no row cap.
+
+    `chi_general_word.chi_all_lambda_any` accepts a non-monotone word, which
+    the canonical borromean ordering is by construction. Cheap: 0.1 s at n = 9.
+    """
+    from chi_general_word import chi_all_lambda_any     # noqa: PLC0415
+    return chi_all_lambda_any(word, n, dps=50, q=q)
+
+
+def _axis(order: str, conv: str, trace: str = "D") -> str:
+    """Which superseded axis a hit sits on — all three are possible at once."""
+    bits = []
+    if trace == "C":
+        bits.append("convention-C")
+    if order == "grouped":
+        bits.append("grouped")
+    if conv == "strict_averaged":
+        bits.append("colour-blind")
+    return "+".join(bits) if bits else "canonical"
 
 
 def scan_value(s: str, fps: dict) -> tuple | None:
@@ -305,7 +434,11 @@ def walk(o, path=""):
 def main() -> int:
     fps = fingerprints()
     print(f"Intra-ordering value fingerprint audit — {SIG_DIGITS} significant digits")
-    print(f"  {len(fps)} fingerprints: {len(ATOMS)} atoms x {len(PINS)} pins x 2 orderings\n")
+    print(f"  {len(fps)} fingerprints: {len(ATOMS)} atoms x "
+          f"{len(PINS)} pins x 2 orderings x 2 colour conventions x "
+          f"2 trace conventions (C/D), plus z_C itself at each pin — a "
+          f"lone nucleon has no p-n interface, so its two colour "
+          f"conventions coincide and fold to one entry\n")
 
     # This audit's OWN witness records its findings, and its findings contain
     # the grouped values it found — so scanning it reports the report. Excluded
@@ -329,10 +462,33 @@ def main() -> int:
             meta = scan_value(s, fps)
             if meta is None:
                 continue
-            atom, pin, order = meta
+            atom, pin, order, conv, trace = meta
             rel = str(f.relative_to(_ROOT))
-            bucket = grouped_hits if order == "grouped" else borro_hits
-            bucket.setdefault(rel, []).append((path, atom, pin))
+            # A `z` value sitting in a field whose PATH names the convention is
+            # the author saying so: `/conventions/C_sqrt_q_over_q_plus_1`,
+            # `/parameters/z_C_for_comparison`, `/data/conventions/C/z_at_q0`.
+            # Measured at 15 sig digits: 82 z_C hits over 52 files, of which 41
+            # files are self-declaring like that and 11 are not.
+            #
+            # Discriminating on the PATH rather than the file stem is the whole
+            # point. `qou-ztee` records that this audit family has "no way to
+            # mark a deliberate comparison", and a registry does not scale to
+            # 41 entries; `qou-4bq3` records a DELIBERATE stem regex
+            # over-blocking 8 of 24 verdicts. A path label is narrower than
+            # either: it exempts the one FIELD the author labelled, not the
+            # whole file.
+            if atom == "z" and _C_LABELLED_PATH.search(path):
+                continue
+            # SUPERSEDED ON ANY OF THREE AXES. This tested `order == "grouped"`
+            # only, so a value in the canonical ordering but the colour-BLIND
+            # convention read as clean (`qou-uujo`), and a convention-C TRACE
+            # was invisible entirely (`qou-ng7j`). All three are superseded
+            # states and all three belong in the same bucket.
+            superseded = (order == "grouped") or (conv == "strict_averaged") \
+                or (trace == "C")
+            bucket = grouped_hits if superseded else borro_hits
+            bucket.setdefault(rel, []).append(
+                (path, atom, pin, order, conv, trace))
 
     deliberate, candidates = {}, {}
     for rel, hits in grouped_hits.items():
@@ -361,7 +517,17 @@ def main() -> int:
         else:
             actionable[rel] = hits
 
-    print(f"=== GROUPED-era hits: {len(grouped_hits)} witness file(s) ===")
+    _all = [h for hs in grouped_hits.values() for h in hs]
+    _n_c = sum(1 for h in _all if h[5] == "C")
+    _n_ord = sum(1 for h in _all
+                 if h[5] != "C" and h[3] == "grouped" and h[4] != "strict_averaged")
+    _n_col = sum(1 for h in _all
+                 if h[5] != "C" and h[3] != "grouped" and h[4] == "strict_averaged")
+    _n_both = sum(1 for h in _all
+                  if h[5] != "C" and h[3] == "grouped" and h[4] == "strict_averaged")
+    print(f"=== SUPERSEDED-era hits: {len(grouped_hits)} witness file(s) ===")
+    print(f"    by axis: {_n_c} convention-C (any word frame), "
+          f"{_n_ord} grouped only, {_n_col} colour-blind only, {_n_both} both")
     print(f"    {len(candidates)} candidate(s), {len(deliberate)} known-deliberate")
     # "ACTIONABLE" means the SITE OWNS ITS VALUE — it either computes the trace
     # or hardcodes one — so the fix belongs there. It deliberately does NOT
@@ -385,8 +551,8 @@ def main() -> int:
           f"reflections, {len(unresolved)} unresolved\n")
     for rel, hits in sorted(actionable.items()):
         print(f"  CANDIDATE {rel}   [{kinds[rel][0]}: {kinds[rel][1]}]")
-        for path, atom, pin in hits[:4]:
-            print(f"      {atom} @ {pin}   {path}")
+        for path, atom, pin, order, conv, trace in hits[:4]:
+            print(f"      {atom} @ {pin} [{_axis(order, conv, trace)}]   {path}")
         if len(hits) > 4:
             print(f"      … and {len(hits) - 4} more field(s)")
     if reflections:

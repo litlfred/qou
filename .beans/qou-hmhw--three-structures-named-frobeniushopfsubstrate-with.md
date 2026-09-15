@@ -1,11 +1,11 @@
 ---
 # qou-hmhw
 title: Three structures named FrobeniusHopfSubstrate with different field sets -- the markovZ overload defect again
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-14T19:43:55Z
-updated_at: 2026-09-14T19:44:26Z
+updated_at: 2026-09-15T06:46:24Z
 ---
 
 ## Measured 2026-09-14 (PR #7369, while adding the Hopf antipode axiom)
@@ -53,3 +53,37 @@ Rename the two local carriers to say what they are
 eight-field block — the same move that resolved `markovZ`. Cheap: both are
 file-local with no cross-file consumers of the NAME, only of the declarations
 that take them.
+
+
+## 2026-09-15 — DONE. The collision was on the FULLY QUALIFIED name
+
+Measured before renaming: all three files declare `namespace
+QOU.AlgebraicSubstrate`, so all three structures are
+`QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate` -- one fully qualified name,
+three incompatible field sets. Latent rather than a build error only because
+nothing imports two of them, and a content block's
+`lean.ref: "qou:QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate"` is ambiguous
+today. That is sharper than this bean's own "three structures named ...".
+
+Renamed on owner authorisation (2026-09-15), per this bean's own suggestion:
+
+  categorical-reeb-derivation.lean  obj, mul, unit         -> ReebAlgebraData
+  substrate-self-duality.lean       obj, comul, frobForm   -> SelfDualPairingData
+  frobenius-hopf-substrate.lean     8 fields + 11 laws     -> unchanged
+
+`.lean`-only change. Neither local carrier's `.ts` referenced the colliding
+name (they point at `CategoricalReebDerivation` / `substrate_self_duality`),
+and `definition-index.md`'s single mention is the canonical block's.
+
+Also withdrew the reeb file's "Keep the two in sync" note, which is what
+produced the collision: they are different structures with different
+obligations, so there is nothing to synchronise. Each docstring now states what
+its carrier is NOT -- in particular that the antipode axioms added on
+2026-09-14 (`qou-c64q`) do not reach it.
+
+Verification: `lean` -DautoImplicit=false -s 65536, exit 0 zero warnings on
+both. One `structure FrobeniusHopfSubstrate` declaration remains in the tree;
+every other occurrence is prose.
+
+PR #7413, issue #7412. Completing under the AGENTS.md rule 13a carve-out: the
+whole task was mechanical (a rename), and it touches no open conjecture.
