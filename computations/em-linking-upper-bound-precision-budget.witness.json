@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T21:10:02.719555+00:00",
-  "commitSha": "eff0bda177eb637b171e5efc06cdb0b3e892b774",
+  "computedAt": "2026-09-07T19:59:31.346277+00:00",
+  "commitSha": "bcc83be3dd9f64aac41dd75556e0de646969166b",
   "assertions": [
     {
       "name": "split_is_at_most_1_6_percent_of_the_energy_at_A63",
@@ -15,8 +15,8 @@
     },
     {
       "name": "budget_tightens_with_A_by_exactly_A_max_over_A_min",
-      "computed": "21.0",
-      "expected": "21",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-8",
       "unit": "ratio",
@@ -33,20 +33,20 @@
     },
     {
       "name": "no_ropelength_or_ideal_knot_source_in_the_repo",
-      "computed": "0",
+      "computed": "3",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "tolerance": "0",
       "unit": "files",
       "source": "LIVE scan of docs/, computations/, content/ and library/ (both the sections/ and ocr/ tiers, all library directories). Zero. Asserted so that acquiring such a source FLIPS this assertion and prompts a revisit -- rather than this probe asserting a remembered absence. Note the precision argument does not depend on this: acquisition would not rescue the route."
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 0,
   "computation": "em-linking-upper-bound-precision-budget",
   "scriptFile": "em_linking_upper_bound_precision_budget.py",
-  "scriptHash": "b28879149a7d",
-  "scriptCommitSha": "eefcee9ce43bd7bc67e58d7fac6022bbe86bcad5",
+  "scriptHash": "f963c4c6e5dd",
+  "scriptCommitSha": "d98c675e77f92d294d2e8a4d1d0477925d210f3e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,7 +61,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -228,8 +228,12 @@
         "content",
         "library"
       ],
-      "file_hits": 0,
-      "paths": [],
+      "file_hits": 3,
+      "paths": [
+        "computations/probes/the_torsion_half_is_not_an_invariant_probe.py",
+        "computations/probes/the_torsion_half_is_not_an_invariant_probe.witness.json",
+        "content/quantum-observable-universe/mass-theory/frenet-framing-is-not-an-invariant.md"
+      ],
       "why_this_is_here": "the cheaper-looking answer to 'the route needs an upper bound' is 'go acquire one'. Recorded as a LIVE scan so a future acquisition flips this assertion; but note the precision argument above is independent of it, so acquiring the source would not rescue the route"
     },
     "what_this_does_NOT_exclude": {

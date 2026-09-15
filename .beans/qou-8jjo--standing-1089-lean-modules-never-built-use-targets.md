@@ -59,3 +59,144 @@ catch. It read like the finding and was not.
 condition cannot sit unseen. A module with no olean is not a broken module; it is
 an unbuilt one, and ~840 attempts say the difference matters. Close this only when
 the count reaches zero or somebody decides the corpus does not need one.
+
+---
+
+## 🛑 The headline number is CONTAINER STATE, not corpus progress — 2026-09-14
+
+Re-measured today, same script, same flag:
+
+    python3 scripts/lean-olean-staleness-audit.py --targets 10
+    never built: 97 of 2886 module(s); 36 imported by ≥1 other, 61 leaves
+
+**1089 → 97 is not 992 modules repaired.** Nothing was repaired. The count is
+`(source modules) − (oleans present in THIS container)`, and between the two
+measurements the restored cache branch changed: AGENTS.md records the
+2026-09-06 seed at 2702 QOU oleans, and this container holds **2793**, all
+2793 trace-paired. A different restore gives a different count with no change
+to the corpus whatever.
+
+So the number this bean is titled after is not a corpus property and cannot be
+driven to zero by any amount of building — a fresh container on a thinner
+cache branch would report ~1100 again tomorrow. **Do not read a movement in it
+as progress, in either direction.** That is the same container-scoped-inference
+trap the `--all` audit retracted three times
+(`docs/audits/2026-09-13-every-library-module-compiles-zero-defects.md`).
+
+## What the corpus-level answer actually is, and its half-life
+
+The question behind the title — *is any library module broken?* — was answered
+on 2026-09-13 by a full `--all` sweep at `e22bd4561`: **2830 of 2836 judged,
+0 RED**. That is a statement about source, not about oleans, and it is the
+right kind of answer.
+
+It is also **perishable, and faster than anyone had measured**:
+
+| | |
+|---|---|
+| library modules at `e22bd4561` (2026-09-13) | 2835 |
+| library modules at `316eafa36e` (2026-09-14) | **2886** |
+| added since the sweep | **51** |
+| modified since the sweep | **11** |
+| **unjudged against current source** | **62** |
+
+**~62 modules of unjudged surface per day**, i.e. a full sweep's green decays
+at roughly 2 %/day. A 3 h 10 m `--all` run buys about a day. That is the real
+argument for this bean's "use `--targets`, not another `--all` sweep" — not
+that `--all` re-confirms the easy modules (it does), but that its answer is
+stale before the next session starts.
+
+## The cheap replacement: sweep the DELTA, not the closure
+
+    git diff --name-only <last-sweep-commit>..HEAD \
+      -- content/quantum-observable-universe/lean/QOU | grep '\.lean$'
+    scripts/lean-shadow-verify.sh $(that list)
+
+Measured on today's 62: `cone=414 rebuild=406 levels=23 widest=110` — a few
+tens of minutes against 3 h 10 m, and it judges exactly the modules whose
+status is actually unknown.
+
+**Do NOT reach for the sweep's own dirty-closure mode for this.** It reports
+`DIRTY CLOSURE 2821 (97.7 %)` here, so it costs an `--all` run.
+
+### A hypothesis about that 97.7 % — mine, and MEASURED FALSE
+
+`lean-library-sweep.py`'s freshness rule takes `max(last-commit-date, on-disk
+mtime)`, and its own comment at line 232 says *"branch switching rewrites the
+mtime of every differing file … some of that widening is churn"*. I inferred
+the 97.7 % was mostly that churn, and that restricting the mtime term to files
+dirty in the working tree (`git status --porcelain`) would collapse it.
+
+It does not. Of 2563 modules the current rule calls changed, the stricter rule
+calls **2556** changed — **7** are pure mtime churn, 0.27 %. The olean tree
+genuinely is behind 2563 modules' last source commit. The rule is sound as
+written and needs no change; I had a fix drafted and it would have bought
+nothing. Probe kept at `docs/audits/2026-09-14-library-sweep-churn-probe.py`.
+
+### 🛑 …and my account of WHY it moved was wrong too. Corrected the same hour.
+
+The section above says the count moved because *"the restored cache branch
+changed between the two measurements."* **It did not.** Measured with
+`git ls-remote origin refs/heads/lake-cache/qou-v4-24-0` — free, no objects
+fetched — the branch head is **`a792c46d01b`**, exactly the 2026-09-06 head
+AGENTS.md records. No reseed.
+
+**The supported account, in two container steps, neither of them corpus repair:**
+
+| | QOU oleans present |
+|---|---|
+| 2026-09-06 container, when 1089 was measured | 2698 − 1089 = **1609** |
+| after restoring `lake-cache/qou-v4-24-0` (`a792c46d01b`) | **2702** |
+| this container today | **2793** |
+
+The first step is a **cache restore** (+1093). The second (+91) is a
+**concurrent background `lake build`**: 236 QOU oleans and 235 paired `.trace`
+files carry mtimes of 2026-09-13, later than the seed they would otherwise have
+come from, and `lean`-direct writes no trace — so Lake wrote them. AGENTS.md
+documents this exact behaviour in this container one week earlier: *"the QOU tree
+went 2660 → 2713 across a content sweep … `scripts/lean-build-bg.sh`, re-fired by
+this session's compaction, ran `lake build` concurrently."*
+
+**The conclusion is unchanged and sharper.** Under the reseed story the count
+tracked *someone's deliberate seeding decision*; under the measured one it tracks
+**whether a SessionStart hook happened to fire and how far it got before being
+quiesced.** That is a weaker thing still, and it is the one that is true.
+
+**The cheap discriminator, for next time:** `git ls-remote` returns a branch head
+without transferring a single object. AGENTS.md warns at length that *verifying*
+the cache branch costs ~1.7 GiB and has bricked a session at low disk — that
+warning is about `git fetch`, and it is what made me infer a reseed instead of
+checking one. `ls-remote` is not covered by it and settles the question in a
+second.
+
+---
+
+## RESULT: the 62 delta modules all compile — 2026-09-14
+
+    targets                            62
+    EXIT=0                             62
+    non-zero exit                       0
+    cone rebuilt from source   406 of 406
+    REBUILD FAILED                      0
+    wall                          ~26 min
+
+Five benign warnings (four `section variable(s) unused` in
+`QOU.BraidsAndKnots.ComponentCountSelectivity`, one `unused variable Γ` in
+`QOU/OptionE/RungSelection.lean:82`).
+
+So the library's compile status is **current against today's source** for the
+first time, and the answer is the 2026-09-13 answer: nothing is broken. Full
+write-up, including the first real-workload level-width distribution for the
+#7387 parallel rebuild:
+[`docs/audits/2026-09-14-library-delta-sweep-62-modules.md`](../docs/audits/2026-09-14-library-delta-sweep-62-modules.md).
+
+**This bean stays open**, and deliberately. Its standing condition is not
+"is anything broken" — that is answered and keeps being answered. It is that
+*the answer perishes*, at the measured ~62 modules/day. What has changed is that
+the maintenance now costs ~26 min rather than 3 h 10 m, so it is affordable to
+re-run per tranche instead of per month.
+
+**What would actually close it:** a delta sweep that runs without an agent
+deciding to run one — keyed off the last-swept commit recorded somewhere durable
+rather than off a human remembering which audit doc holds it. That is a design
+question, not a measurement, and it is not started.

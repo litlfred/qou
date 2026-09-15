@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:13:13.365552+00:00",
-  "commitSha": "4f83a2c2dd29788823227451fc2712ce81d1b00b",
+  "computedAt": "2026-09-07T19:55:25.835459+00:00",
+  "commitSha": "bcc83be3dd9f64aac41dd75556e0de646969166b",
   "assertions": [
     {
       "name": "all_counters_exactly_linear_in_A",
@@ -13,8 +13,8 @@
     },
     {
       "name": "averaged_letter_slope_matches_module_docstring",
-      "computed": "2.0",
-      "expected": "2",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-20",
       "source": "measured slope vs mass_at_3A_proper's documented '2A + 1 such non-braid letters'"
@@ -28,11 +28,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 11,
   "computation": "extensive-counter-family-probe",
   "scriptFile": "extensive_counter_family_probe.py",
-  "scriptHash": "62b3cf14a3e7",
-  "scriptCommitSha": "696f77937b54ec68812dca139b231922ae6b58d6",
+  "scriptHash": "5d63ec709b75",
+  "scriptCommitSha": "dcc2e65caebec9249d70aefeb8363c663c2d0ef0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,8 +42,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
