@@ -17,6 +17,7 @@ and one fork that is the owner's to settle.
 | **R3** | Closing the chain into a triangle does **not** flip `b₃` | (b), Ursell identity | probe 11/11 |
 | **R4** | The **band** reading admits **every** layout — it removes the selector, it does not derive one | measured | probe 11/11 |
 | **R5** | At H₃ the band reading **changes nothing** the confinement SDP selects — all six band vertices are one conjugacy class | (a), one algebra one pin | probe 8/8 |
+| **R8** | **Item 3 closed.** The periodic band **is** the TL chain's band; the periodic *spectrum* is not, and at `q₀` the open chain cannot resolve the string at any reachable `N` | (a) | probe 24/24 |
 | **R6** | **And at H₆ either** — 120 band vertices, 108 of them inter-block, all one class, all selecting `G³` | (a), two algebras one pin | probe 11/11 |
 | **C1** | The corpus refuses the Coxeter framing; `EnumeratorSelectionDegeneracy` says **bands** are the right generating set | correction | corpus-grep |
 | **C2** | My own "single-letter ⟺ interval" claim was **false** (20 counterexamples) | correction | own probe |
@@ -422,6 +423,79 @@ underivable from the γγ + SDP rule as it currently stands**, and the reason is
 not which generating set you choose — it is that the γγ half constrains the
 layout either completely or not at all, and the SDP half is blind to the layout
 because it acts on the word, whose selected form is the same either way.
+
+## 5d. R8 — item 3: the periodic-vs-open band gap, closed
+
+`tl_is_the_xxz_chain_probe` (17/17) identifies Temperley–Lieb with the **open**
+chain plus a boundary field `((q−q⁻¹)/2)(σᶻ₁ − σᶻₙ)`, while the n-string band was
+extracted on the **periodic** chain. That gap was the third item of #7394.
+Closed by [`tl_open_chain_string_band_probe.py`](../../computations/onedim/tl_open_chain_string_band_probe.py),
+**24/24**, `mp.dps = 50`, both pins, 477 s.
+
+**The Hermiticity worry does not bite, and the premise behind it was wrong.**
+The boundary field is reflection-**odd**, not anti-Hermitian: it is diagonal in
+the `σᶻ` basis with real entries for real `q > 1`, so `H_TL^open = −2Σeᵢ` is real
+symmetric — `max|Hᵢⱼ − Hⱼᵢ| = 0` **identically**, not to a tolerance. Reflection
+*is* broken (`max|PHP − H| = 2(q − 1/q) = 0.4181206`). So "band" language is
+safe. (It would flip at a root of unity, where `(q−q⁻¹)/2` is imaginary.)
+
+**Right about the band.** At controls with small correlation length (`q = 3`,
+`ξ = 1.96`), inverting the open chain's levels through the *periodic* `E₂(k)`
+returns an evenly spaced ladder with one common `L_eff` — the open chain
+reproduces the **whole** band, not merely its edge (10 levels clear the
+continuum at `N = 24`, ladder spread 3.9 %). The `n = 3` band is there too,
+`dim W = N(N−1)(N−5)/6 = 154` exactly at `N = 12`.
+
+**Incomplete about the spectrum, twice over.** The boundary operators
+
+1. **add a state the ring does not have** — at `E = 0`, degenerate with the
+   vacuum, **above the entire `n = 2` band**, in every magnon sector. It is the
+   `U_q(sl₂)` descendant of the ferromagnetic vacuum, exponentially localised at
+   one end with amplitude ratio **exactly `1/q`** (`max|ψ_{j+1}/ψ_j − 1/q|` =
+   `2.005e-50`, the arithmetic floor) and decay length `1/ln q` = **9.584**
+   sites. Not a finite-size effect;
+2. **remove momentum** — only the `k → 0` edge survives an extremal search, and
+   the ring's exponential `z^N` convergence becomes a **power law** (exponent
+   2.3–2.6 at the controls, still falling at `N = 24`).
+
+Falling out of the same analysis, the open `m = 1` sector is **exact at every
+`N`** with no finite-size correction:
+`spec = {0} ∪ {−4Δ + 4cos(πm/N) : m = 1..N−1}`, worst deviation `8.55e-50` over
+4 anchors × 9 sizes.
+
+**The honest negative at the substrate, and it is the important half.** At `q₀`
+the correlation length is `ξ = 1/ln Δ` = **184 sites**. For even one level to
+clear the *thermodynamic* two-magnon edge the box must admit `k < 0.0109`, i.e.
+`N ≈ 291` — far beyond dense ED. At `N ≤ 24` the string is **not resolved at
+all**, and the finite-`N` edge manufactures an apparent positive: the top level
+sits above the finite-`N` edge (+0.104 at `N = 24`, "bound") and below the
+thermodynamic one (−0.067, "not bound").
+
+**A second, edge-independent test agrees**, and its form is the reusable part.
+A composite particle in a chain of `N` sites has `L_eff = N − c` with `c` fixed.
+At the controls `L_eff − N` is the stable statistic (spread 3.1 % at `q = 3`);
+**at the pins the stable statistic is instead `L_eff/N ≈ 0.49→0.50`** (spread
+2.6 %) — a "box" that is a fixed *fraction* of the chain is not a box, so no
+string has formed.
+
+> **The trap worth carrying forward:** the pins show a **cleaner** `N⁻²` law than
+> the controls (exponents 2.045–2.053 against 2.32–2.60) — **and that cleanliness
+> is the artifact.** `L_eff ∝ N` gives exactly 2 by construction. A tidy power
+> law here is evidence *against* a formed string, not for convergence.
+
+**What was re-scoped, and what was not.** Neither probe's headline is wrong and
+neither is retracted. One bridging sentence in `xxz_n_string_band_probe.py`'s own
+scope section — which said the boundary operators "do not change a bulk band …
+but that step is an argument, not something this probe measured" — has been
+corrected in place: the argument has now been run, and it is right about the
+band and incomplete about the spectrum. That probe deserves credit for flagging
+the gap itself.
+
+**Scope (a)** throughout; no scope-(b) exclusion is claimed. The band-bottom
+`E₂(π) = −4Δ` is separately unreachable from the open chain at any `N` — it is
+strictly interior to the two-magnon spectrum (`−4Δ > −8Δ − 8` for every `Δ > 0`;
+196 levels lie below it at `N = 24`), so momentum is what separated it on the
+ring.
 
 ## 6. The fork, stated properly
 
