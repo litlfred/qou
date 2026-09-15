@@ -489,6 +489,7 @@ import QOU.BringsSurface.OctonionCocycle
 import QOU.Brings.RamificationParityMonodromy
 import QOU.Brings.CategoricalLagrangianDMCubic
 import QOU.Brings.HeckeMapFaceSize
+import QOU.Brings.S5CharactersOnBringDeformations
 import QOU.BringCone
 import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
