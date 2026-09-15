@@ -4,7 +4,7 @@ export default remark({
   label: "rem:hkr-theorem",
   title: "The Hochschild–Kostant–Rosenberg theorem, and what it does not say at $q \\neq 1$",
   interprets: "def:classical-limit-obstruction",
-  uses: ["def:classical-limit-obstruction", "rem:hochschild-kummer-connection"],
+  uses: ["def:hochschild-homology", "def:classical-limit-obstruction", "rem:hochschild-kummer-connection"],
   cites: ["hkr-1962", "loday-1998", "kontsevich-2003", "hartshorne-1977"],
   tags: ["hochschild-homology", "hkr", "classical-limit", "deformation-theory", "lifting"],
   authorNotes: [

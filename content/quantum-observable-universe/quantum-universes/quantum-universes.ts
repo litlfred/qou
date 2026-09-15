@@ -75,6 +75,10 @@ export default chapter({
         "tannaka-dual",
         "simple-objects-V",
         "unit-simplicity",
+        "hochschild-homology",
+        "grothendieck-group-of-a-qou",
+        "chern-character",
+        "su2-characters-and-quantum-dimension",
       ],
     }),
 

@@ -13,6 +13,7 @@ export default remark({
     "motivic-galois",
   ],
   uses: [
+    "def:hochschild-homology",
     "def:quantum-characteristic-classes",
     "def:motivic-substrate",
   ],
