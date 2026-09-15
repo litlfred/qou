@@ -11,7 +11,7 @@ export default example({
       kind: "note",
       date: "2026-09-15",
       body:
-        "**Scope: this block's `tr(id_A) = chi(CP^1) = 2` and `lem:brings-euler-characteristic`'s `-6` are the SAME bridge applied to DIFFERENT `S`.** Both invoke `prop:euler-char-stability` (`tr(id_{A_n}) = chi_top(S_n)`); this one takes `S = SU(2)/U(1) = CP^1` (genus 0), that one takes the generic fibre to be Bring's `Sigma_4` (genus 4). At most one of the two describes the state bundle of the Descartes universe, and the corpus does not yet say which. Register entry in `notation/notation-collisions.md`; bean `qou-2uf0`.",
+        "**🟧 OWNER RULING 2026-09-15 settles the symbol: `tr(id_A)` is the quantum dimension `dim_q(A)`, the Euler characteristic of an object IN THE QOU CATEGORY — so it is q-DEPENDENT.** Consequence for this block: `chi_eu(CP^1) = 2` is a **topological** Euler characteristic, a different object from the categorical trace, so it does not compete with `lem:brings-euler-characteristic`'s -6 as a value of one quantity. What remains open is that the two apply the same `prop:euler-char-stability` bridge to **different S** — `SU(2)/U(1) = CP^1` here, the generic fibre taken as Bring's `Sigma_4` there — so at most one describes the Descartes universe's state bundle. Register entry in `notation/notation-collisions.md`; bean `qou-2uf0`.",
     },
   ],
 });
