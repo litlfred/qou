@@ -190,10 +190,25 @@ def write_baseline(path: Path, files: list[str], prev: set[str], rev: str,
     created; that is the refill this gate exists to stop.
     """
     grew = sorted(set(files) - prev)
-    if prev and len(files) > len(prev) and not establish:
+    # GUARD ON THE SET, NOT THE COUNT. `grew` is the right quantity and was
+    # already computed here; the test beside it asked whether the file got
+    # BIGGER. Those differ exactly when a drain and a refill happen together,
+    # which is the normal state of this corpus -- measured 2026-09-15:
+    #
+    #     baseline 1677   live 1596   drained 247   NEW 166
+    #
+    # so `len(files) < len(prev)` passed and a rebaseline would have banked
+    # all 166 new unstamped witnesses while reporting a 81-entry drain. The
+    # docstring above already forbids that ("must never be used to absorb a
+    # witness your own branch created"); the condition did not implement it.
+    # A net drain does not make a refill acceptable, and netting is precisely
+    # what hides one.
+    if prev and grew and not establish:
         print(
-            f"REFUSED: --rebaseline would GROW the baseline "
-            f"{len(prev)} -> {len(files)}.\n"
+            f"REFUSED: --rebaseline would ADMIT {len(grew)} entr"
+            f"{'y' if len(grew) == 1 else 'ies'} not in the current baseline "
+            f"({len(prev)} -> {len(files)}"
+            f"{', a net DRAIN — which does not make the refill acceptable' if len(files) <= len(prev) else ''}).\n"
             "Baselines drain, never grow. Those entries are a refill: declare "
             "their producers, or have them record an honest q0Anchor.\n"
             "If and ONLY if they landed on main independently of your branch, "
@@ -283,11 +298,35 @@ def selftest() -> int:
         new_w.rename(new_w.with_name("brand-new-audit.witness.json"))
         got = set(scan_worktree())
         assert not (got - base), "D: an audit-emitted witness fired"
+
+        # E/F: a rebaseline that DRAINS MORE THAN IT ADMITS must still be
+        # refused. This is the case the old count-based guard waved through,
+        # and it is the corpus's normal state rather than a corner: measured
+        # 2026-09-15, baseline 1677 / live 1596 / drained 247 / NEW 166, so
+        # the file shrinks by 81 while 166 fresh unstamped witnesses are
+        # banked. Netting is exactly what hides a refill.
+        import io, contextlib
+        bpath = tmp / "computations" / "probe-baseline.json"
+        prev3 = {"computations/a.witness.json", "computations/b.witness.json",
+                 "computations/c.witness.json"}
+        shrink_with_refill = ["computations/a.witness.json",
+                              "computations/d.witness.json"]     # -2 +1 = net -1
+        with contextlib.redirect_stderr(io.StringIO()):
+            rc = write_baseline(bpath, shrink_with_refill, prev3, "deadbeef", None)
+        assert rc == 1, ("E: a NET-DRAINING rebaseline that admits a new entry "
+                         "was permitted — the guard is counting, not comparing")
+        with contextlib.redirect_stderr(io.StringIO()):
+            rc = write_baseline(bpath, shrink_with_refill, prev3, "deadbeef",
+                                "landed on main, not this branch")
+        assert rc == 0, "F: --establish must still permit it, with the reason recorded"
+        assert "d.witness.json" in bpath.read_text(), \
+            "F: the admitted entry must appear in the file a reviewer diffs"
     finally:
         REPO, BASELINE = saved
         shutil.rmtree(tmp, ignore_errors=True)
     print("selftest OK: A backlog tolerated, B new caught, C stamped ignored, "
-          "D audit-emitted out of scope")
+          "D audit-emitted out of scope, E net-draining refill REFUSED, "
+          "F --establish still permits it")
     return 0
 
 

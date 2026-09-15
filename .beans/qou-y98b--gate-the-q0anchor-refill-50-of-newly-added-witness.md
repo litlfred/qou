@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-28T15:24:07Z
-updated_at: 2026-09-13T14:04:33Z
+updated_at: 2026-09-15T00:57:58Z
 ---
 
 Claimed by branch `claude/q0-anchor-refill-gate-2026-08-28`, PR #5891.
@@ -553,3 +553,50 @@ Mostly `qbeta/*` and `probes/*`, none created in this session; they arrived with
 the branch's earlier history. Left for the drain rather than stamped piecemeal:
 each needs a producer edit plus a re-run, and re-runs are blocked behind the
 `qou-uiut` table holding this checkout.
+
+
+---
+
+## The drain-only guard was counting, not comparing (2026-09-15)
+
+`write_baseline` computed the right quantity and then tested the wrong one:
+
+    grew = sorted(set(files) - prev)                       # the set difference
+    if prev and len(files) > len(prev) and not establish:  # ...guarded on COUNTS
+
+Those agree only when a drain and a refill do not happen together — and
+together is this corpus's normal state. Measured on the working tree today:
+
+    baseline 1677    live 1596    drained 247    NEW 166
+
+so `--rebaseline` saw the file SHRINK by 81 and wrote it, banking all 166 fresh
+unstamped witnesses as tolerated backlog. The ratchet's own rule ("DRAINS
+ONLY... Never add an entry to silence a red gate") and `write_baseline`'s own
+docstring ("must never be used to absorb a witness your own branch created;
+that is the refill this gate exists to stop") both forbid exactly that. The
+condition did not implement them.
+
+**Netting is what hides a refill**, and a gate whose whole purpose is the
+refill is the worst place to net.
+
+Now guarded on `grew` being non-empty. `--establish "<reason>"` still permits
+it deliberately and still records the admitted entries into the file, so the
+escape hatch is unchanged — only the silent path is closed.
+
+Verified on the real corpus: `--rebaseline` now prints
+
+    REFUSED: --rebaseline would ADMIT 166 entries not in the current baseline
+    (1677 -> 1596, a net DRAIN — which does not make the refill acceptable).
+
+and leaves the baseline byte-identical (md5 unchanged, git clean).
+
+Self-test 4 cases -> 6. The two new ones are the shape that was waved through:
+**E** a net-draining rebaseline that admits one entry must be REFUSED, and
+**F** `--establish` must still permit it AND write the admitted entry into the
+file a reviewer diffs.
+
+### Not fixed here
+
+The 166 themselves. This stops them being laundered; draining them is the
+producer-side work this bean is about, and none of it is possible while the
+`qou-uiut` table holds the checkout.
