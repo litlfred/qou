@@ -8423,3 +8423,55 @@ PRs**, when checking this.
 sites now point at a scoping note carrying the table above. That edit is
 exemption 2 under §ASK THE OWNER (derived from a corpus artifact — the merged
 audit), not agent judgement.
+
+── 2026-09-15 — the search over z is CLOSED, negatively ──────────────────
+
+Probe: `computations/qbeta/qbeta_ruled_base_affine_solve_probe.py`, 2/2.
+Status unchanged: this closes a line of enquiry, it does not unblock the bean.
+
+**What was already settled.** `qbeta_ladder_form_cannot_reach_ruled_base_probe`
+bounds the ladder factor `F(alpha) <= 1 - u^2 < 1` for every real alpha, and the
+merged 2026-09-13 audit §5.1 adds that the rungs cannot help either — every
+recorded `c_k` is negative, so each shrinks `F` monotonically. So the FORM is
+bounded by 1 and `Q_pred = Q_base * F <= Q_base`.
+
+**What was not computed: whether any z reaches CODATA at all.** Both prior
+results test the two admissible roots. The base is AFFINE in z —
+
+    tr_M(Delta_S)(z) = A + B z,  A = q^2/2 - 1 + 1/(2q^2),  B = 1/q - q < 0
+    Q_beta(z)        = |tr_M(Delta_S)(z)| * E_0,   E_0 = m_e/(q(q-1))
+
+— so the family inverts in closed form. A monotone affine map has exactly one
+preimage, so this reports THE z, not a best one: **no fit is involved and none
+is possible.**
+
+Rebuilt from `q_0` alone and calibrated against the audit's three published
+cells before inverting anything:
+
+    z_D (RULED)          Q = 0.444700408522 MeV   published 0.444700408522   rel 4.9e-13
+    z=q (augmentation)   Q = 0.87989056126        published 0.87989056126    rel 1.4e-13
+    z=1 (retired)        Q = 0.783645827375       published 0.783645827375   rel 4.8e-13
+
+    z REQUIRED for CODATA = 0.99850030441113
+       to z_D 0.385812     to q 0.111478     to the excluded z=1 0.0014997
+       an admissible convention-D root?  NO
+
+**The reading.** The ruled base's shortfall is not a missing factor, not a
+phase, and not a rung. Within this assembly it would have to be a different z,
+and the only z that works is inadmissible — it sits 0.15 % below the excluded
+coordinate sum, which is exactly why that retired cell so nearly worked
+(`F_required` 0.9983). So the live question the audit states — *what object
+supplies a factor above 1* — has a sharper answer on this assembly: **nothing
+can, because the shortfall is not multiplicative.** Any route to CODATA under D
+must change the ELEMENT or the FUNCTIONAL, not the parameter.
+
+**Not proposed.** `z = 0.9985` is reported as the inadmissible preimage, not as
+a candidate. Adopting it is the forbidden return to the coordinate sum
+(`ConventionDAdmissibleRoots.one_not_root`), the same trap
+`qbeta_d_frame_admissible_base_correction_search_probe` diagnoses for the
+augmentation base. Nothing here touches the C-frame ladder results.
+
+**Checked before writing:** no existing probe inverts the family —
+`qbeta_zd_gap_anatomy_probe` decomposes the gap and
+`qbeta_cds1_terminus_status_probe` recomputes the load-bearing numbers, neither
+solves for z.

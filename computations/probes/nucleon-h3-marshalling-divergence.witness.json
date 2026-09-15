@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:07:29.427008+00:00",
-  "commitSha": "fd240796ff7d3d24986537da648133440b61bbd4",
+  "computedAt": "2026-09-13T05:27:24.793284+00:00",
+  "commitSha": "e49a3cbd4e6a3bad14704de3335114d7772e15a6",
   "assertions": [
     {
       "name": "d_preserving_reproduces_habiro_p",
@@ -22,8 +22,8 @@
     },
     {
       "name": "qu2w_fix_holds_marshalled_equals_d_preserving",
-      "computed": "1.0",
-      "expected": "1.0",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-30",
       "source": "(tau_p*tau_n)^2 ratio between the two paths. Before the qou-qu2w fix this was 2.157, matching the independently observed 0.34716 / 0.16097 and closing the chain from root cause to reported symptom. It is 1.0 once the marshaller stops dropping `d`, and a drift away from 1.0 means that defect has returned."
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 62,
+  "durationMs": 71,
   "computation": "nucleon-h3-marshalling-divergence",
   "scriptFile": "nucleon_h3_marshalling_divergence_probe.py",
-  "scriptHash": "947ab6a4d8e8",
-  "scriptCommitSha": "38daa36696955f13ca28deae3faf0feb803479c8",
+  "scriptHash": "aab4bf46b40a",
+  "scriptCommitSha": "e49a3cbd4e6a3bad14704de3335114d7772e15a6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

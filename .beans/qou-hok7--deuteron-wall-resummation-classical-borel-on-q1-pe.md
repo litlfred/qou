@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-13T17:50:19Z
+updated_at: 2026-09-14T19:17:35Z
 ---
 
 
@@ -1347,5 +1347,533 @@ calibration of the shape class, not an input to the value.
 silently shrink under any re-run that does not set it — a rename, a lint fix, a provenance
 refresh. The witness stays self-consistent, so nothing downstream fails; only a consumer that
 counts rows can see it.
+
+**Do not close this bean.**
+
+---
+
+## 2026-09-14 — both pieces of `e_∞` are CLOSED FORMS in `q₀` (PR #7349)
+
+The previous entry left `e_∞ = 2·E_edge + Xrun(2s)` with both terms `k`-free but obtained by
+**search**. Both values are now explicit convergent series; only the argmax *shape* is still a
+search result.
+
+**The run.** A run of `ℓ` consecutive `−1`s in a bi-infinite AP of gap 2 leaves every internal
+gap alone and moves only the straddling pairs. Collecting by distance and re-indexing
+(`Σ_{j≤ℓ} Σ_{d≥j} = Σ_d min(d,ℓ)`):
+
+    Xrun(ℓ) = Σ_{d≥1} min(d,ℓ)·T(d) − (ln q₀/2)·ℓ ,   T(d) = 2ε(2d) − ε(2d−1) − ε(2d+1)
+
+`T` is a **second difference** of `ε` along the progression, so where `ε` decays like `q₀^{−2d}`,
+`T` decays like `q₀^{−4d}`. The intercept resums to a single Lambert-type series:
+
+    C = Σ_d d·T(d) = −Σ_{r≥1} (1/r)·(q^r − q^{−r})²·q^{−4r}/(1 − q^{−4r})²
+      = −0.657177947545899893947060755021
+
+**The edge.** Same expansion. Every block-to-bulk tail is
+`Σ_{d≥m}[ε(2d) − ε(2d+u)] = Σ_r (1/r)(1 − q^{−2ur})·q^{−4mr}/(1 − q^{−4r})`, so `E_edge` is a
+finite sum of Lambert series plus finitely many `ε` values — no lattice sum at all.
+
+**Assembled**, the two closed forms reproduce #7335's *independently searched* `e_∞` to the 30
+digits its witness records. #7335 searched in scaled integers; this evaluates two series.
+Nothing is shared but the argmax shape.
+
+**The asymptote is NOT a shortcut.** At `ℓ = 16` — the length `e_∞` uses — the exact `min(d,ℓ)`
+form and the linear asymptote `C − (ln q₀/2)ℓ` differ by **3.1e-4**, four orders above anything
+else in this arc, falling to 9.8e-19 by `ℓ = 96`. Quoting the asymptote as `Xrun` would corrupt
+`e_∞` in its fourth decimal.
+
+**🛑 Two of my own tolerance derivations were wrong, and the probe caught both.** "Derived, not
+chosen" is not the same as "right":
+
+1. The intercept series decays like `q^{−2r}`, **not** `q^{−4r}` — `(q^r − q^{−r})²` contributes
+   `q^{2r}` and cancels half the decay. I gave it half the depth it needed and the identity read
+   as failing at 1e-30. The depth was short; the mathematics was fine.
+2. R5 demanded the secant slope equal `−ln q₀/2` **exactly**, where the approach is asymptotic.
+   The bound is now computed from the same `T`.
+
+Both fixed at the derivation, neither by widening a tolerance.
+
+**What is NOT closed.** The **search**: `[3,2,1,1,1]` and `ℓ = 16` are inputs from #7335 and
+nothing here proves them optimal. And the **existence of the limit** — still the upper bound on
+`M_n`.
+
+**Next:** two targets, and the first is much smaller than it was. (a) Close the *search* — with
+`E_edge(u)` now an explicit function of `u`, the block optimisation is an analytic question
+rather than an enumeration, and `T`'s sign structure may bound which blocks can win. (b) The
+upper bound on `M_n`, which is the arc's one real open problem and is untouched by any of this.
+
+**Do not close this bean.**
+
+
+---
+
+## The search is COERCIVE, and the greedy route into it is REFUTED (2026-09-14)
+
+Probe [`rev_e_infinity_search_reduction_probe.py`](computations/deltalambda/rev_e_infinity_search_reduction_probe.py), 7/7.
+Lean [`SearchCoercivity.lean`](content/quantum-observable-universe/lean/QOU/BraidKnot/SearchCoercivity.lean), four declarations, sorry-free.
+
+### The negative first, because it kills the argument a reader reaches for
+
+`Xrun` loses `ln q0/2 = 0.05217036` per unit of run length, so the obvious way to bound the
+block sum `s` is: find the first `s` where the block's marginal gain drops below that, and
+stop. That is a greedy / first-crossing exchange argument and it needs `Xblock` to have
+decreasing increments.
+
+**It does not.** Measured marginals:
+
+| s | Xblock(s) | marginal | vs ln q0/2 |
+|---|---|---|---|
+| 8 | 1.965444371077749996131 | 0.05521818971 | above |
+| 9 | 1.993985001872683715154 | 0.02854063079 | BELOW |
+| 10 | 2.029360245858113610495 | 0.03537524399 | BELOW |
+| 11 | 2.109192647479678445684 | **0.07983240162** | **above** |
+| 12 | 2.151115432106013449567 | 0.04192278463 | BELOW |
+| 13 | 2.156693167813466520995 | 0.00557773571 | BELOW |
+| 14 | **2.159802376118285961604** | 0.00310920830 | BELOW |
+
+The marginal re-crosses upward at `s = 11`. A first-crossing rule stops at `s = 9` and misses
+everything above it — including `s = 14`, where `Xblock` actually peaks. So `Xblock` is **not
+discretely concave** and no greedy rule closes this search. Scope (a): the greedy route does
+not close it; this says nothing about whether some other argument does.
+
+### What does work: coercivity, with no fitted constant
+
+`eps(m) = -log(1 - q0^(-2m))` is convex decreasing, so for **every** sign of `D`
+
+    eps(2d) - eps(2d + D)  <=  |eps'(2d)| * D  =:  g(d) * D
+
+(`D > 0`: `int_a^(a+D)|eps'| <= D|eps'(a)|`; `D < 0`: `-int_(a+D)^a|eps'| <= -|D||eps'(a)|`;
+both because `|eps'|` is decreasing). Summing over pairs **telescopes** — the distance-`d`
+pairs of a block contribute `(top d entries) - (bottom d entries)` — and with `top_d <=
+sqrt(d N)`, `bottom_d >= d`, and the bulk tails bounded by `sum_d d eps(2d) =: S_1`:
+
+    Xblock(u)  <=  S_1 - G_1 + G_half * sqrt(N) - (ln q0/2) N ,   N = sum v^2
+
+a downward parabola in `sqrt(N)`, hence **uniformly bounded in the block's length AND its
+entries**:
+
+    S_1    = 6.66246903314631884630
+    G_1    = 1.72932318801322827252
+    G_half = 1.08314550703034554883
+    B_rig  = S_1 - G_1 + G_half^2/(2 ln q0) = 10.5551320927234643540
+
+`B_rig` bounds every valid block. Since `Xrun` falls linearly, only finitely many `(s_t, s_b)`
+can win: **unconditionally `s_t + s_b <= 345`**. Checked: 0 violations over the per-sum
+maximisers of 8,346,945 enumerated blocks.
+
+**Both signs of `D` are load-bearing.** Keeping only `D+` — dropping the negative pair terms —
+makes the bound diverge: nothing then stops a long alternating profile from collecting `g(1)`
+per step at merely linear cost.
+
+### The practical cut, and it lands on the incumbent
+
+With the **measured** `B = 2.15980237611828596160353` (at `s = 14`) the cut is `s_t + s_b <=
+23`. Inside it the enumeration carries **no effective cap at all** — entries `>= 1` and sum
+`<= 23` force length `<= 23` and every entry `<= 23`, so `TMAX = UMAX = SMAX = 23` is exhaustive
+— and over all 696,616 blocks the join with `Xbot := Xblock` is maximised at
+
+    (s_t, s_b) = (8, 8),   value = 2.43929645512078402706542884314
+
+reproducing #7335's independently searched `e_inf` to `-2.4e-30`. A second run widened to
+24/12 over `s <= 26` agrees at **every** `s <= 23`; its argmax profiles reach length 18 and
+entry 4, both inside their caps. #7335's published caps were 8/6 and this is the check it could
+not make, its enumeration being over profiles rather than incremental.
+
+### A structural fact worth keeping
+
+`Xblock` peaks at `s = 14` (2.15980) but the join puts the top block at `s = 8` (1.96544) —
+**the block gives up 0.19435800 of its own maximum** to shorten `ell` by 12 and buy back
+0.62635367 on the run. Neither edge's shape can be read off its own table; that is why the
+search is over pairs. Relatedly, `Xblock` and `Xrun` share the same asymptotic slope
+`-ln q0/2`, so the join is coercive in `s_t` at rate `ln q0`.
+
+### The two gaps, now sharp enough to name
+
+**G1.** `Xbot(s) <= Xblock(s)` for every `s`. #7335's E7 measured the two tables EQUAL for
+`s <= 12` and the top higher by 0.01982 at `s = 13`; beyond that unmeasured. The join above
+substitutes `Xblock` for `Xbot`, which is an upper bound **only if G1 holds**.
+
+**G2.** `sup_s Xblock(s) = 2.15980237611828596160353`. Measured over `s <= 26` with caps
+lifted and non-binding; bounded rigorously only by `B_rig`, which at 4.887x is far too crude to
+substitute.
+
+Under G1 and G2 the `(s_t, s_b)` search is **closed** and `e_inf` is exactly the value above.
+Neither gap is the arc's headline open problem, which remains **the upper bound on `M_n`**.
+
+### Lean
+
+`SearchCoercivity.lean` carries the two halves, both `propext/Classical.choice/Quot.sound` only:
+
+- `sub_le_mul_of_antitone_step` / `sub_le_neg_mul_of_antitone_step` — the linearisation, stated
+  DISCRETELY (a sequence whose downward steps are antitone) and proved by induction. No
+  derivative, no integral, no `Real.log`. The downward twin is the half an agent drops.
+- `join_lt_of_lt_sum` / `le_of_le_join` — the reduction: `f, g <= B` and `h` below `V - 2B`
+  past `L` confine any pair reaching `V` to `a + b <= L`. Pure order arithmetic, independent of
+  what `f`, `g`, `h` are.
+
+Also this session: `EdgeDecoupling.lean` gained the run's re-indexing (`card_filter_lt`,
+`card_filter_ge`, `sum_tails_eq_sum_min`, `sum_heads_eq_sum_min`,
+`run_pair_sum_eq_sum_min`), with probe check R7 tying each half separately to the two branches
+`run_direct` walks — R1 checked only their sum, which a compensating error in the split would
+survive. The two halves are NOT the same lemma: different conditions, different kernels, and
+measured they differ by up to 3.603.
+
+**Do not close this bean.**
+
+
+### Tightened the same day: the Cauchy-Schwarz step was the loss (2.7x)
+
+`B_rig` applied `top_d <= sqrt(d N)` once per pair distance, charging the same top rows again
+at every `d`. Collecting the linearisation **by row** telescopes to one coefficient per row,
+and it has a reading: row `i` from the free top edge only ever sees distances `>= i+1` on its
+way to the bulk, so the most it can gain per unit of displacement is
+
+    Ghat(m) := sum_{d>=m} |eps'(2d)| ,    coefficient of row i = Ghat(i+1)
+    Xblock(u) <= sum_i [ u_i Ghat(i+1) - (ln q0/2) u_i^2 ] <= B_sharp
+    B_sharp   := sum_m Ghat(m)^2 / (2 ln q0) = 3.92139923021415319458
+
+against `B_rig = 10.5551320927234643540`. Tightest slack at the per-sum maximisers: **0.142949
+vs 5.38217**, a factor 37.65. Unconditional cut **345 -> 90**.
+
+**Still not enumerable** — 90 is far past any feasible search. What it changes is the shape of
+**G2**: closing it is now the same thing as tightening `B_sharp` by a factor under two (it is
+1.816x the measured maximum). That makes G2 the most tractable-looking open item here, ahead
+of G1.
+
+Probe 8/8 (S8 added: the scaled-integer tables the enumeration runs on against a direct mpmath
+evaluator, worst 2.06e-40 against a 2.0e-38 floor — the enumeration uses those tables for
+everything, so it cannot check them itself). Library sweep `--only QOU.BraidKnot` 337 ok 0 RED
+0 TIMEOUT 0 skipped (671 s); `--only QOU.BraidKnot.SearchCoercivity` 1 ok 0 RED.
+
+**Do not close this bean.**
+
+
+### G2 shrinks 1.82x -> 1.04x: the block value is CONCAVE (2026-09-14)
+
+Probe [`rev_e_infinity_block_sup_relaxation_probe.py`](computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py), 7/7.
+
+**Where `B_sharp = 3.9214` lost it.** Row 0 alone is **73.79 %** of it — budget 2.8936, attained
+at `u_0 = 7.447`. That is fiction: the per-row bound is the tangent at `u = 0` with no cap,
+while a single row's gain saturates at `S_e(1) = 2.568` and then turns over. The true best
+single-row block is `[3]` at **0.9297** — 3.11x less — and `[8]` is worth **-1.149** against a
+bound of 2.878. The linear bound calls a block worth minus one worth nearly three.
+
+**Fix 1, Jensen.** `f(x) = eps(2d) - eps(2d+x)` is concave, so the distance-`d` pair sum obeys
+`sum_i f(Delta_i) <= (T-d) f(mean)`, saturating at `(T-d) eps(2d)`. Valid (0 violations),
+`B_jensen = 2.6951` over `T <= 12` (2.69566 at `T = 13` in a longer run, 2.5532 by `T = 20`).
+Cut `90 -> 43`. **Still not enumerable** (~1e10 blocks).
+
+**Fix 2, and this is the one.** The same second-derivative fact applies to the whole objective:
+every internal term is `-eps(2d + (u_i - u_j))` — concave composed with a linear map — every
+bulk tail is `-eps(2d + u_i)`, the cost is `-(ln q0/2) sum u^2`. **`Xblock` is concave in `u`**
+(verified on 200 random ordered triples, min gap `+0.00147`, not assumed). So maximising over
+real `u >= 1` is a **concave program**, a relaxation of the integer problem and hence a rigorous
+upper bound:
+
+    B_relax = 2.253731338838604564088   at T = 7
+    argmax  [3.9769, 2.794, 2.075, 1.5824, 1.231, 1.0, 1.0]
+
+against the integer maximum 2.1598023761 — **1.04349x**, where `B_sharp` was **1.81563x**. The
+argmax is recognisably the integer argmax `[4,3,2,2,1,1,1]` with integrality let out. The AP
+ordering constraint was dropped from the program (a further relaxation) and comes out satisfied
+at every `T`.
+
+| bound | value | cut | blocks |
+|---|---|---|---|
+| `B_sharp` (#7349) | 3.9213992302 | 90 | ~1e10 — hopeless |
+| `B_jensen` (T<=12) | 2.6951302763 | 43 | ~1e10 — hopeless |
+| **`B_relax`** (T<=12) | **2.2537313388** | **27** | **6,325,874 — minutes** |
+| integer sup (measured) | 2.1598023761 | 23 | 696,615 |
+
+So the **arithmetic** of an unconditional closure now works: 27 is enumerable, and inside any
+such cut the enumeration carries no effective cap (entries `>= 1`, sum `<= L` force length
+`<= L` and every entry `<= L`).
+
+**G2 is REDUCED, NOT CLOSED.** Two finite, specified computations remain — neither is an open
+question:
+
+- **(a) a certificate for the concave maximum.** Coordinate ascent on a concave function reaches
+  the global max and the gradient there is tiny, but *a tiny numerical gradient is not a proof*.
+  What settles it is the supergradient inequality `F(u) <= F(w) + grad F(w).(u - w)` at the
+  returned `w`, with boundary coordinates (`u_i = 1`) carrying `grad <= 0` by KKT.
+- **(b) block lengths `T = 13..40`.** Every row past index 5 contributes at most
+  `Ghat(i+1) - ln q0/2 < 0`, so the cumulative per-row cap falls below `B_relax` at a rigorous
+  **`T0 = 40`**. This probe measured `T <= 12` (peak at 7, monotone decline after). The 28
+  values between are compute, not insight.
+
+Until both are done the cut of 27 is NOT usable and the practical cut stays at 23 on the
+measured `B`. Validation: `F([4,3,2,2,1,1,1])` reproduces #7349's enumerated maximum to
+**3.5e-21**, and the Lambert tail resummation agrees with the direct sum to 1e-22 at 5 points —
+both matter, since the relaxation is only a relaxation of the right problem if the extended
+function restricts correctly.
+
+**G1 unchanged.** Nothing here touches `Xbot <= Xblock`, nor the arc's headline open problem,
+the upper bound on `M_n`.
+
+**Do not close this bean.**
+
+
+## 🟩 G2 is CLOSED — `e_inf` is now a MAXIMUM over a proved window, not a search result (2026-09-14, PR #7349)
+
+Gap **G2** was the last conditionality on `e_inf` that came from the *search*
+rather than from the mathematics: the `Xbot := Xblock` join was run over a window
+chosen because `sup_s Xblock` had been *measured* at 2.1598, not because anything
+forbade a larger block from beating it. Both halves of G2 are now shut.
+
+### (a) The concave maximum is CERTIFIED — slack 6.43e-12
+
+`Xblock(u)` is concave in the displacement vector (every internal term is
+`−ε(2d + (u_i − u_j))`, concave composed with a linear map; every tail is
+`−ε(2d + u_i)`; the cost is `−(ln q₀/2)Σu²`), so the supergradient inequality
+holds at **every** `u`:
+
+    F(u)  ≤  F(w) + ∇F(w)·(u − w) .
+
+The linear term is unbounded alone, so the region is confined first: the per-row
+bound gives `F(u) ≤ φ_i(u_i) + Σ_{j≠i} rowcap(j)`, so any `u` reaching the
+incumbent has `φ_i(u_i) ≥ INT_SUP − Σ_{j≠i} rowcap(j)` — a one-variable quadratic
+whose solution set is an interval `[L_i, U_i]`. Outside that box `F` is already
+below the incumbent. Maximising the linear term over `[1, U_i]` per coordinate:
+
+    sup F(T = 7)  ≤  2.25373556700090488296611     slack 6.4265742e-12
+
+which is **6.84e-11 of the distance to the integer maximum** — the certificate
+costs nothing. The gradient is **analytic** (`gx = −ε'` in closed form); a central
+difference would make the inequality a statement about the step size.
+
+**The trap, and it cost me a wrong result first.** At the optimum rows 5 and 6 sit
+on the boundary `u = 1` with *strictly negative* gradients (−0.011552, −0.271508).
+That is correct KKT behaviour, not a convergence failure. But for `g_i < 0` the
+max of `g_i(u_i − w_i)` over `[1, U_i]` is at `u_i = 1`, **not** at `U_i`. Charging
+every row `|g_i|(U_i − w_i)` inflates the slack to **1.447** — eleven orders of
+magnitude, enough to swamp the result several times over. My first run did exactly
+that and reported slack 1.467. The probe now **recomputes that inflated figure
+every run** rather than quoting it, so the warning cannot go stale.
+
+Second refinement: the ascent point is **polished** before the certificate is
+taken — coordinates parked at `1.0000149` are snapped to exactly `1` (killing a
+`+4e-6` boundary term outright) and interior ones get a wider ternary. `F(w)`
+barely moves; slack falls 1.50e-5 → 6.43e-12. The certificate is valid at *any*
+`w`, so choosing a better one is free.
+
+### (b) Every admissible block length is covered — `T ≤ 40 = T0`
+
+The per-row cap gives a rigorous length bound: every row past index 5 contributes
+at most `Ĝ(i+1) − ln q₀/2`, which is negative there (`Ĝ(7) = 0.034051 < ln q₀/2 =
+0.052170`) and tends to `−ln q₀/2`, so the cumulative cap falls below the certified
+bound at **`T0 = 40`**. No block longer than 40 can reach it, unconditionally.
+
+A `REV_BLOCK_SUP_TMAX=40` run covers the whole of `1..40` and declines
+**monotonically** from the `T = 7` peak throughout:
+
+| T | 7 | 12 | 20 | 25 | 30 | 34 | 38 | 39 | **40 = T0** |
+|---|---|---|---|---|---|---|---|---|---|
+| sup | **2.25373** | 2.11924 | 1.71919 | 1.45889 | 1.19810 | 0.98942 | 0.78073 | 0.72856 | **0.67639** |
+
+Step size settles at exactly `ln q₀/2 = 0.0521704` — one unit of quadratic cost per
+added row, the rows past 6 contributing no gain. At `T0` the value is **3.33× below
+the peak**, so `T = 7` is the maximiser over the *whole* admissible range, not over
+the range that happened to be convenient.
+
+### The payoff: the join at the certified cut reproduces #7335 exactly
+
+Certified `B_cert = 2.2537355670` ⇒ cut `s_t + s_b ≤ 27` (was 90 on `B_sharp`,
+~1e10 blocks and hopeless). **6,325,875 blocks**, 19 s:
+
+    e_inf  = 2.43929645512078402706542883973   at (s_t, s_b) = (8, 8), top block [3,2,1,1,1]
+    #7335  = 2.43929645512078402706542884314   (independently searched)
+    diff   = -3.41e-27
+
+and `max_s Xblock` over the same window is **2.159802376118285961604 at s = 14** —
+comfortably under `B_cert`, so the cut is not merely large enough by luck. Note
+`s = 14`, not the `s = 9` a first-crossing/greedy rule would stop at: `Xblock`'s
+marginal dips below `ln q₀/2` at `s = 9` (0.02854) and `s = 10` (0.03538), comes
+back **above** at `s = 11` (0.07983), then falls for good. That refutation stands
+and is why the window had to be proved rather than walked.
+
+**So #7335's `e_inf` was a search result and is now a maximum.**
+
+### What is left, stated precisely
+
+- **G1 is the ONLY remaining conditionality on `e_inf`**: `Xbot(s) ≤ Xblock(s)` for
+  every `s`. Measured EQUAL for `s ≤ 12`; top higher by 0.01982 at `s = 13`;
+  unmeasured beyond. The `Xbot := Xblock` substitution is an upper bound only under
+  it. Untouched by any of this.
+- **The arc's headline problem — the upper bound on `M_n` — is untouched.** None of
+  G2's closure bears on it.
+
+Artifacts: `computations/deltalambda/rev_e_infinity_block_sup_relaxation_probe.py`
+(9/9, checks P8 and P9 are new), witness
+`rev-e-infinity-block-sup-relaxation.witness.json`.
+
+**Do not close this bean.**
+
+
+## 🛑 CORRECTION — G1's only recorded supporting evidence is an ARTIFACT (2026-09-14, PR #7349)
+
+The entry above says G1's evidence is *"measured EQUAL for `s ≤ 12`; top higher by 0.01982 at
+`s = 13`"*, and treats that second clause as a data point in G1's favour — the one place the
+inequality is strict, and strict in the right direction. **It is not a data point.**
+
+`Xbot` is tabulated by enumerating bottom profiles with a cap of `BMAX = 9` **rows**. Its
+maximisers are **flat and long** (entries 1–3, roughly one row per unit of `s`) where the top's
+are **steep and short** — at `s = 8` the top winner is `[3,2,1,1,1]` (5 rows) and the bottom
+winner is `[1,1,1,1,2,1,1]` (7 rows), *worth exactly the same to all 40 digits*. So the bottom
+class exhausts its row budget first, and from that point `Xbot` understates its own supremum.
+
+Vary the cap and the break point moves with it. At **every** setting the winner at the break
+uses **exactly `BMAX` rows**:
+
+| `BMAX` | `BUMAX` | equal through | breaks at | winner rows at break |
+|---|---|---|---|---|
+| 8 | 6 | `s = 11` | 12 | 8 = cap |
+| **9** | **3** | **`s = 12`** | **13** | **9 = cap** ← the committed row, the one quoted |
+| 10 | 3 | `s = 14` | 15 | 10 = cap |
+| 11 | 3 | **`s = 17`** | 18 | 11 = cap |
+
+**At `BMAX ≥ 10` the two tables are EXACTLY EQUAL at `s = 13`.** The 0.01982 does not exist.
+`BUMAX` is not the constraint: raising it 3 → 6 while dropping `BMAX` 9 → 8 made the agreement
+*shorter*, not longer.
+
+### A prediction of mine that was REFUTED
+
+From the first two rows I read off "break = `BMAX` + 4" and predicted 14 and 15 for `BMAX` 10
+and 11. **Both wrong** — 15 and 18. A two-point linear fit on a cap effect, which is exactly
+what this repo tells agents not to trust. What survives is only the qualitative claim, which all
+four settings support: the break is governed by `BMAX`, saturates it, and recedes as `BMAX`
+grows — but not by a fixed offset, because saturating the cap is **necessary and not sufficient**
+to lose the maximum (at `BMAX = 11` the winner reaches 11 rows at `s = 15` and equality survives
+to `s = 17`).
+
+### What this does and does not change
+
+- **G1 is NOT closed and NOT weakened.** Enumerating a larger class bounds `Xbot` from **below**,
+  and a lower bound can only ever *refute* `Xbot ≤ Xblock`, never prove it.
+- **Withdrawn**: the `s = 13` observation, as evidence in either direction.
+- **Strengthened**: exact agreement now runs through `s ≤ 17` rather than `s ≤ 12` — in exact
+  40-digit integer arithmetic, across two *different* evaluators (`ap_value` in the `k → ∞` AP
+  for the top; `delta_excess` on a finite `k = 320` staircase frame with a `P` extension for the
+  bottom) and two *unrelated* maximiser shapes. 11 of 12 maximiser pairs are not reverses of one
+  another, so whatever makes `Xbot = Xblock` it is **not** "read the block backwards".
+- `s ≤ 17` covers the certified join window's argmax `s_b = 8` comfortably; it does not cover the
+  whole window `s_b ≤ 27`.
+
+### Where the stale sentence still lives
+
+The quoted figure appears in #7335's E7, in three witness `description`s, in two probe headers,
+in this bean above, and in #7349's body. #7349's body is corrected. The rest are dated records of
+their own analyses and are left as such — the same decision as the `4.66e6` drain (`qou-3nva`).
+
+### Lean
+
+`QOU/BraidKnot/SupergradientCertificate.lean`, six sorry-free declarations (`propext /
+Classical.choice / Quot.sound` only):
+
+- `sup_le_of_supergradient` — the G2 certificate as a general theorem: a supergradient inequality
+  at `w` (what concavity supplies) plus confinement of any competitive `u` to a box (what the
+  coercivity bound supplies) gives an explicit bound on `F` **everywhere**, including outside the
+  box, where it is already below the incumbent.
+- `box_mul_sub_le` — its load-bearing step, the case split on `sign g`.
+- `boundary_charge_eq_zero` / `abs_charge_pos` — why that split is worth 2.25e11 rather than
+  being a refinement: a coordinate pinned to `lo` with `g < 0` contributes **exactly zero**,
+  where `|g|(hi − lo)` contributes strictly positively.
+- `capped_lt_not_sufficient` — the G1 point as a non-implication, with an explicit witness
+  (`0 ≤ 2`, `0 < 1`, `¬(2 ≤ 1)`): a capped maximum falling short of a bound implies nothing about
+  the true one.
+- `capped_gt_is_sufficient` — the direction that *is* valid: only **exceeding** a bound refutes.
+
+### What would actually settle G1
+
+An **upper** bound on `Xbot` of the kind #7349 built for `Xblock` — a per-row coercivity bound on
+the bottom edge's own evaluator, then a certificate. Or **bypass it**: the join needs a certified
+cut, not a pointwise inequality, so a certified bound on `Xbot` plus an honest enumeration of the
+bottom class inside that cut removes G1 from the argument rather than proving it. My judgement is
+that the bypass is the better target — it is the same machinery already built for the top edge,
+and it retires the conditionality instead of discharging it.
+
+Probe: `computations/deltalambda/rev_e_infinity_g1_bottom_edge_cap_probe.py` (5/5).
+
+**Do not close this bean.**
+
+
+## 🛑 CORRECTION TO MY OWN CORRECTION — the one-sided sweep was half the story, and the missing half nearly produced a false G1 REFUTATION (2026-09-14, PR #7349)
+
+The entry above diagnoses the `s = 13` figure as the **bottom** enumeration running out of rows,
+and demonstrates it by raising `BMAX` 8 → 9 → 10 → 11 against the committed `TMAX = 8`. That
+diagnosis is **correct and is confirmed below**. The *method* is not sound, and pushing it one
+step further shows why.
+
+### At `BMAX = 12` the bottom OVERTAKES the top — and that is not a refutation
+
+| s | top (`TMAX=8`) | bot (`BMAX=12`) | top − bot |
+|---|---|---|---|
+| 16 | 2.0802943029 | **2.1301891570** | **−0.0498949** |
+| 17 | 1.9971122429 | **2.0663634247** | **−0.0692512** |
+| 18 | 1.9261369638 | **1.9858139748** | **−0.0596770** |
+
+Read at face value that **refutes G1** (`Xbot(s) ≤ Xblock(s)`). I was one edit away from writing
+that down. It is an artifact of the **top's own cap**: the top maximiser saturates `TMAX = 8` from
+`s = 15` on (`[4,3,2,2,1,1,1,1]`), so past there it is the *top* table that has run out of rows.
+**Raising one cap against a fixed other is the same mistake the entry above is about, one level
+up**, and it fails in the more dangerous direction — toward a false refutation rather than a
+false confirmation.
+
+### The symmetric comparison, which is the one G1 actually asks for
+
+Both classes at **12 rows** (top entries ≤ 5, bottom ≤ 3; 4,054,896 and 797,161 profiles):
+
+- **exact equality for every `s = 1..16`**, 40-digit integer, no tolerance;
+- the top is strictly higher from `s = 17`;
+- **the bottom exceeds the top at NO `s` in the measured range** — nothing here refutes G1.
+
+So the `s = 13` withdrawal stands and is *strengthened*: at matched caps the two are equal there,
+and the honest agreement run is `s ≤ 16` rather than the `s ≤ 17` the one-sided sweep reported.
+
+### Why an equal cap is still not a FAIR cap
+
+At every `s` where both winners sit strictly inside the cap, the **bottom needs more rows than the
+top** — at `s = 14`, **ten against seven**; at `s = 8`, seven against five. The bottom's
+maximisers are flat and long (`[1,1,1,1,2,1,1]`), the top's steep and short (`[3,2,1,1,1]`). A
+numerically equal row cap therefore systematically favours the top, which is exactly how the
+committed `BMAX = 9` against `TMAX = 8` came to look balanced when it is not. **A fair cap gives
+the bottom more rows, not the same number.**
+
+### Two hypotheses of mine, both refuted en route
+
+1. **"The bottom edge pays an extra cost the top does not, so `Xbot ≤ Xblock` is structural."**
+   The cost is real — `delta_excess` carries `lin = Σ_{i>k}(i−k)u_i`, absent from `ap_value`,
+   worth `ln(q₀)·lin` and reaching **0.7304** at the `s ≥ 11` winners (`lin = 7`). But it does not
+   give the inequality: the bottom reaches the *same* maximum while paying it, so the gain side
+   must exceed the top's by exactly that handicap at every `s`. Not a relabelling, and not a
+   proof. *(I first printed `lin` through the probe's `sc()` scaler, which divides by 1e40 and
+   made a 0.73 handicap read as `7e-40`. The number was never wrong; the display was.)*
+2. **"The agreement is a value-preserving correspondence between the two classes."** **Refuted.**
+   Compared value *multisets* per `s`: identical for `s ≤ 9`, but from `s = 10` the bottom class
+   **misses** top values it cannot attain (1 at `s=10`, 3 at 11, 9 at 12, 24 at 13, 61 at 14) —
+   while being much *larger* in count (1,902 vs 953 at `s = 14`). So it is a coincidence of
+   **maxima**, not a bijection, which makes the exact agreement over sixteen values of `s` more
+   striking rather than less.
+
+### Structural context worth recording
+
+`staircase_beta(k, L)` is **two different environments**: rows `i ≤ k` are an AP of **gap 2** (the
+top edge's world), rows `i > k` are consecutive, **gap 1** (the bottom wall). The bottom block
+straddles them — at `pe = 3` its lowest three rows are in the gap-1 wall and the rest in the gap-2
+AP. So the two edges are not the same problem in different coordinates, and their agreement is not
+a symmetry of the frame.
+
+### Status
+
+**G1 is STILL OPEN, neither closed nor weakened.** Every table here is a maximum over a *capped*
+class, hence a **lower** bound on its own supremum, and a lower bound can only refute the
+inequality, never prove it. Past `s = 16` the bottom winner is cap-saturated, so `s ≥ 17` is
+**undetermined**, not settled in the top's favour. `s ≤ 16` covers the certified join window's
+argmax `s_b = 8` comfortably; it does not cover the full window `s_b ≤ 27`.
+
+Probe `rev_e_infinity_g1_bottom_edge_cap_probe.py` gains **G1f** (the symmetric comparison) and
+**G1g** (the row-count asymmetry); its docstring, summary, witness `description` and `verdict` are
+corrected, and the witness field is renamed `agreement_widest_cap_ONE_SIDED` with a `_note`
+saying it is not a G1 verdict — so the next agent cannot read the one-sided number as one.
 
 **Do not close this bean.**

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T07:05:48.276565+00:00",
-  "commitSha": "fdcdbe895768b9bed2dd3d3740341264f44ebc4a",
+  "computedAt": "2026-09-13T05:27:25.090456+00:00",
+  "commitSha": "e49a3cbd4e6a3bad14704de3335114d7772e15a6",
   "assertions": [
     {
       "name": "vol_4_1_agrees_across_clausen_and_dilog",
@@ -14,11 +14,11 @@
     },
     {
       "name": "vol_4_1_matches_known_value",
-      "computed": "2.02988321281930725004240510854904057188337862",
-      "expected": "2.02988321281930725004240510854904057188337861506",
+      "computed": "5.99584033487e-49",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
-      "source": "the figure-eight knot's hyperbolic volume to 45 places, a known constant independent of this substrate"
+      "source": "|2·Cl₂(π/3) − 2.02988321281930725004240510854904057188337861506|; the figure-eight knot's hyperbolic volume to 45 places, a known constant independent of this substrate"
     },
     {
       "name": "m_mu_q_sensitivity_analytic_matches_numeric",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 38,
   "computation": "mu-substrate-tension-audit-100dps",
   "scriptFile": "mu_substrate_tension_audit_100dps.py",
-  "scriptHash": "35efc48f3d03",
-  "scriptCommitSha": "e8b4dea4ee4b1a0469126f92d786d9647a3b1c61",
+  "scriptHash": "15e0baf87767",
+  "scriptCommitSha": "e49a3cbd4e6a3bad14704de3335114d7772e15a6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -70,6 +70,26 @@ def h_frame_series():
     hbar = (q - 1) / q
     b = sp.sqrt((hh ** 2 + 3) / (hh ** 2 + 4))
     u = b * hbar ** 2
+    # CONVENTION C, DELIBERATELY, AND SAID SO — this was the silent part.
+    #
+    # `z_C = sqrt(q)/(q+1) = 1/(sqrt(q) + 1/sqrt(q)) = 0.49932033418369445241`
+    # at the proton pin, against the canonical `z_D = q^3/(q^2+1) =
+    # 0.61268803714646525160` (owner ruling 2026-08-15). This site fed the
+    # ladder's `alpha = (z-1)h/2` from C while declaring nothing — neither the
+    # variable name nor the module docstring said which frame it was in, so a
+    # reader had no way to know (bean `qou-qgtk`, measured down to three such
+    # sites on 2026-09-15).
+    #
+    # NOT SWAPPED TO z_D, and that is not caution — it is the rule.
+    # `qbeta_ladder_convention_fee_probe` records that the published agreement
+    # needs z_C, that substituting z_D sends the ladder to 601192 ppb, and that
+    # this number is NOT "what convention D gives": AGENTS.md and
+    # `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` both state the ladder must be
+    # RE-DERIVED under D and that **a z-swap is not a valid move**. If the decay
+    # channel's decomposition kills the third row then its trace IS z_D, and the
+    # existing C-frame ladder is not that trace. Excising C here therefore means
+    # DECLARING it, the `qou-cexc` precedent ("declared, not silent"), and
+    # leaving the re-derivation to the arc that owns it.
     z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
     alpha = (z - 1) * hh / 2
 

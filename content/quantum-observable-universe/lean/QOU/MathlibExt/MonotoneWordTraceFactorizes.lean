@@ -25,10 +25,30 @@ order can carry a cross term (`content_reorder_defect`), the ascending order nev
 
 `computations/mass_at_3A_proper.py::atom_braid_word_3A` writes each nucleon on generators
 `3k, 3k+1` and the inter-nucleon bond as a **single** letter at `3k+2`, walking the chain once
-in ascending order. So the production word is monotone in the sense above, and the per-bond
-product form of the production trace — the bond-additivity of the binding, `qou-ls86`'s
-`n = 3` identity, the absence of the `n = 4` cross term — is a **theorem about the ordering**,
-not a property of the Markov trace. It is also the algebraic face of the topological fact
+in ascending order.
+
+🛑 **CORRECTION (2026-09-14, bean `qou-u5qs`). This passage used to continue "so the
+production word is monotone in the sense above", and that is no longer true of the live
+word.** Since the 2026-09-05 owner ruling (bean `qou-hu1f`) each nucleon's confinement core
+is the **alternating** `(σ₀σ₁⁻¹)³`, not a run of one generator — and `σ₀`, `σ₁` are adjacent
+and do not commute, so the core is not a `stabWord` in the sense this file defines.
+`mass_at_3A_proper.py` records the same thing from the topological side (measured
+2026-09-07, bean `qou-m6gp`): *"The 2026-09-05 alternating core `(σ₀σ₁⁻¹)³` is NOT monotone,
+so the monotone ⇒ #T(2,k) ⇒ Vol = 0 argument no longer applies."*
+
+**What survives, and it is the whole per-bond product form — only the reason changed.** The
+grounding is now **connected-sum multiplicativity**: each interface is a *single* letter, so
+every atom branch closure is the connected sum of its `A` nucleon pieces (measured, 800/800
+branches over ²H/³H/³He/⁴He decompose into exactly `A` summands), and the Markov trace is
+blind to letter order *inside* a summand. So `tr_M(W_atom)/tr_M(W_free)` is identical under
+the grouped and alternating intra-orderings to `~1e-60` at `A = 2, 3, 4`, and the
+bond-additivity of the binding, `qou-ls86`'s `n = 3` identity and the absence of the `n = 4`
+cross term all stand — as theorems about the **interface being one letter**, not about the
+ordering.
+
+The theorems in this file are untouched: they are stated for an arbitrary `stabWord` and
+prove exactly what they say. It is only the claim that the *production* word is one of them
+that was stale. It is also the algebraic face of the topological fact
 recorded on 2026-08-25 (`docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md`): a
 monotone word closes to a connected sum of `(2, k)` torus links, with hyperbolic volume `0`.
 Both statements have the same single hypothesis. See

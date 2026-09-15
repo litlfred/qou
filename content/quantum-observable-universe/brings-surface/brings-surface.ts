@@ -214,6 +214,7 @@ export default chapter({
         "embeddability-closure-interpretation",
         "genus-from-hecke-completeness",
         "genus-from-hecke-completeness-proof",
+        "torus-evaluation-block-rank",
         "chebyshev-degree-genus",
         "chebyshev-degree-genus-proof",
       ],

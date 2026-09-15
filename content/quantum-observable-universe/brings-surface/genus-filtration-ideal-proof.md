@@ -1,8 +1,11 @@
 **Proof.**
 The argument decomposes into four steps.  By
 ([genus from Hecke completeness](#lem:genus-from-hecke-completeness)),
-the minimum genus at which the torus-knot evaluations span
-$H_2(q) \oplus H_3(q)$ is $g_{\min} = 4$.  By
+$g = 4$ is the least genus at which the embeddable
+torus knots number at least the five irreducibles of
+$H_2(q) \oplus H_3(q)$ -- a count, not a spanning statement
+([the block-rank remark](#rem:torus-evaluation-block-rank)), so
+$g = 4$ is taken as given here.  By
 ([Chebyshev degree = Seifert genus](#lem:chebyshev-degree-genus)),
 the Hecke recurrence $a_{n+1} = s\,a_n + a_{n-1}$ produces
 $\deg_u a_p = (p-1)/2 = g(T_{2,p})$ in the variable $u = s^2$,
