@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:topological-mass",
+  examples: ["ex:topological-mass-su2"],
   title: "Topological Decomposition of Mass",
   tags: ["mass", "topological-decomposition", "descent-involution"],
   lean: { ref: "qou:QOU.Torsion.mass_decomposition_categorical",

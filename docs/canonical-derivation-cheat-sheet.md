@@ -1119,6 +1119,45 @@ choice.
 
 ---
 
+## 10. The 2026-09-15 decisions, and the open mass-binding gaps as of that date (bean `qou-6tdg`)
+
+Owner ask (queued 2026-09-15): make this sheet reflect every decision of that day, and name the specific open gaps rather than gesturing at them. Each row below names the artifact a reader checks; none of the numbers here is new — they are the day's results collected in one place.
+
+### 10.1 Decisions enacted on PR #7426 (owner selections A, B, C; "both, distinct symbols"; "go with your recommendations")
+
+| decision | what changed | where to read it |
+|---|---|---|
+| **A — the four "Euler characteristics" separated by name.** `χ_eu(M₀) = 2 − 2g = −6` (topological, the alternating sum of the base curve's Hochschild homology); `χ(M₀, V) = deg V + rk V·(1 − g)` (sheaf, Riemann–Roch); `dim_q(X) = tr(id_X)` (rigid trace, $q$-dependent, positive); `w(A)` (the Wigner obstruction class). The Descartes condition is restated as `g(M₀) = 4`. | `rem:three-euler-characteristics`, `rem:chern-character-and-riemann-roch`, `lem:brings-euler-characteristic` (restated), `notation/notation-collisions.md`; Lean `QOU/Information/EulerCharacteristicOfHochschild.lean` (`hhEuler_bring = −6`), `QOU/Brings/S5CharactersOnBringDeformations.lean` |
+| **B — the explicit `K₀ → HH₀ → R` layer.** `def:hochschild-homology`, `def:grothendieck-group-of-a-qou`, `def:chern-character`, and **`dim_q = ev ∘ ch`** proved (`QOU/GrothendieckChern.lean`, `dimQK0_eq_evDimQ_chernCharacter`); `ex:su2-characters-and-quantum-dimension` shows the two evaluations `n+1` and `[n+1]_q` of one character. `rem:categorical-trace-is-the-markov-trace`: the normalised rigid trace of `V^{⊗n}` *is* `tr_M` at `z_D` (`qtrace_rHecke_div` for one generator; the weights `[n−2k+1]_q/[2]_q^n` are quantum Schur–Weyl). `rem:hkr-theorem` states HKR with its hypotheses (commutative, smooth, char 0) — it says nothing about `HH²(𝒰_q, Ad)`. | chapter 1 (quantum-universes) and mass-theory; `rem:trace-ledger` |
+| **C — the `HH²` scalar cut from the χ chain; one-dimensionality is the Wigner axiom.** `conj:wigner-axiom` (W1: `dim Obs = 1`; W2: the generator realises `e(TM₀) ∈ H²(M₀; k)`), cited to Wigner's Courant lecture (`wigner1960`); class `QOU.AlgebraicSubstrate.WignerAxiom`. Why it is an axiom and not a theorem: Brown–Zhang duality is cohomology-to-*homology* with a Nakayama twist; a deformation direction lives in `HH²`, not `HH¹`; and at `q = 1` Whitehead's lemmas make the space **zero** (`rem:classical-shadow-of-the-substrate`). Equivariance forces the target into `H²(M₀; k)`: the `S₅`-invariant Hochschild ledger of the base is `k` in `HH⁰`, `k²` in `HH₀`, `0` in `HH², HH¹, HH_{±1}` (`QOU/Brings/WignerTargetEquivariance.lean`). `thm:qou-obstruction-reduction` is conditional on the axiom. | stochastic-mechanics; `docs/audits/2026-09-15-chi-as-a-component-of-the-chern-character.md` §2.4, §12 |
+| **D — the regularisation negative recorded, none selected.** `dim_q(A)` for `A = 𝒪_q(SU(2))` is the divergent Peter–Weyl sum `Σ[m]_q²`; ζ-regularised `0`, Hadamard `−1/(q−q⁻¹)²`; `= −6` only at `u² = 1/6` (`QOU/Information/DimqRegularisationIdentities.lean`; probe `dimq_regularisation_schemes_probe.py` 16/16). | `rem:euler-characteristic-of-the-regular-representation` |
+| **`tr(id_A)` ruling (owner, same day): it is `dim_q(A)`, $q$-dependent.** The `−6` downstream is `χ_eu`, a different object; not a competing value. | bean `qou-2uf0` (completed); register entry |
+| **Bring cone link (finding, owner-gated).** The link of the affine cone over Bring's curve is the circle bundle of `K⁻¹` over the curve, Euler number `−deg K = 2 − 2g = −6 = χ_eu`, infinite `π₁`; the quaternionic model is the cone over the Hopf bundle (Euler number `−1`). The 3-Sasakian description is a local model of the fibre, not the link. Lean `QOU/Brings/BringConeLinkEulerNumber.lean`; the rewording of `lem:bring-cone-reeb-quaternionic-twist` awaits the owner. | bean `qou-rydq` (todo), `rem:spatial-realization-base-generality` |
+| **EFT / power counting (attack option 1, owner: "do as suggested"): a clean negative.** Every bond factor is `z_D + d_kind` with `z_D(1) = 1/2`, `d_kind(0) = 0`, so the body-number expansion has a classical floor (`b₃ = −5/8 ≠ 0` at `q = 1`; ε-valuation 0). The framework's ordered expansion is the **jet tower** (ratio `q⁻²`), not body number. Lean `QOU/MassTheory/BondFactorClassicalFloor.lean`; probe 15/15. | bean `qou-olxi`, `rem:body-number-expansion-classical-floor` |
+| **Yekutieli's hypotheses made explicit.** Formal parameter vs the real `q − 1`; which theorem the lifting cites (Čech, no nilpotence); smoothness of the base as "`Ω¹(A)` dualisable of constant rank"; characteristic zero for the DG-Lie half. Two rows change wording in definitions and are left for the owner. | `rem:yekutieli-setting-explicit` |
+| **The running example's spine.** 35 `ex:*-su2` blocks; 14 back-links repaired; 47 definitions in the three foundational chapters have no SU(2) example, five recommended first. | `docs/audits/2026-09-15-running-example-placement-audit.md`, bean `qou-zq1r` |
+
+### 10.2 The open mass-binding gaps, by name (status as of 2026-09-15; re-check the bean before quoting)
+
+| gap | what is open, precisely | bean | status |
+|---|---|---|---|
+| **The extensive term.** The super-pairwise additive object that turns the intensive per-block `Δ_λ` into an extensive binding; scaling pruned four ways (saturation, chain order-dependence, body-order depth ≥ 3, `b₃ < 0` on every bond triple); the coefficient/mechanism is open. Now also: the body-number expansion is *not* ε-ordered (§10.1), so no power counting closes it. | `qou-brng` | in-progress |
+| **`b₃`'s sign.** Every derived bond scalar is confined to `(0,1)`; a chain needs exactly one bond above 1 (sign-mixed pair = the two-nucleon spectrum); both derived bond families are excluded from supplying it; `σ²` is not the fix (binds the diproton). | `qou-q8vl`, `qou-kj4v`; `qou-82mc` (completed: the sign is a convexity property of the aggregator) | in-progress / todo |
+| **The scored element.** `nuc11_interleaved` fails the whole-word Frobenius positivity (reading 3) on `(2,1)` for both nucleons; the replacement is an owner decision; the L2 rows `Q_β / m_n / Δ_pn` are scored on a rejected element. | `qou-99qc` | todo (owner call) |
+| **The `c_k` ladder on the ruled base.** Not a `z`-swap (proved); on the `z_D` base no cosine ladder reaches the required factor `> 1` (`F_required = 1.759`), so the live question is the base or the assembly, not the phase. | `qou-cds1` (ladder), `qou-pdix` (phase α, de-prioritised), `qou-iagg` (second re-score) | in-progress / in-progress / todo |
+| **The Gram singularity under D.** `pyhecke.gram.z` is settled by the convention ruling; the singular Gram matrix at `z_D` is a numerical blocker, not a convention question. | `qou-cds2` | in-progress |
+| **The Plancherel numerator.** `dim_q²/[n]_q!` vs Molien's `f^λ dim_q(λ)` (sums to `[n]_q!` exactly, Lean); the `y_lambda` conflation audit is wired blocking; the choice moves the sign of `P_total` at `A = 3, 4`. | `qou-oots`, `qou-za3q` | in-progress |
+| **Braid-word selection.** Every canonical word via γγ production + confinement SDP at `q₀`, never census; reading 3 whole-word; the γγ half reaches 6 of 11 letters. | `qou-ales` | in-progress |
+| **Deuteron knot.** Canonical braid closure, `Vol = 0`; binding is not a hyperbolic-volume term; three inconsistent assignments blocked the Bloch-group magnitude. | `qou-e5jf` | todo |
+| **Tetraplectic structure.** Vacuous at `m = 1` (a volume form); reaches SU(2), not SU(3), and that SU(2) is already spent. | `qou-8p1g` | in-progress |
+| **The Wigner axiom itself.** `dim Obs = 1` at `q ≠ 1` is assumed; no computation of `HH²(𝒰_q(𝔤), Ad)` at the substrate parameter exists in the corpus; at `q = 1` the space is zero. What would settle it: that computation (twisted theory, Hadfield–Krähmer), or a derivation of the line from the axioms. | `conj:wigner-axiom`; `qou-mjt3` (Lean ledger, now written) | conjecture |
+| **A derived-level archimedean realisation.** The fibre functor lands in `Vect`; no kernel on `Spec(A) × M₀`, so no Fourier–Mukai trace map and no application of Orlov. A definition to be made. | `rem:fourier-mukai-and-orlov` | open direction, no bean |
+| **The link lemma rewording.** Owner-gated content change (options on the bean). | `qou-rydq` | todo (owner call) |
+
+**What is NOT on this list, on purpose:** the substrate derivation of `q₀` (forever gated, 2026-08-02), a fourth calibration constant (banned), and any per-case dispatch or selection against the AME/CODATA target (banned). A route through any of them is not a gap to close; it is a route to refuse.
+
+---
+
 ## See also
 
 - [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) — paper-side rendering of this chain
