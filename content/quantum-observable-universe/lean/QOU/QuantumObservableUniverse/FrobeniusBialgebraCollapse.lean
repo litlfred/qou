@@ -114,7 +114,7 @@ namespace QOU.FrobeniusHopfData
 
 universe u v
 
-variable {C : Type u} [Category.{v} C] [MonoidalCategory C]
+variable {C : Type u} [Category.{v} C] [MonoidalCategory C] [BraidedCategory C]
 variable (F : QOU.FrobeniusHopfData C)
 
 /-! ### Two spellings of the left unit law -/
@@ -221,6 +221,27 @@ which is `scalar_id_eq_counit_unit` below.  As soon as `ε(1) = 1` — the
 standard unitality of a counit, and Mathlib's `BimonObj.one_counit` — this says
 `x = ε(x)·1`: the object is the tensor unit. -/
 
+/-- **The left convolution condition, as a proposition rather than a field.**
+
+    `Δ ≫ (S ▷ A) ≫ μ = ε ≫ η` — Mathlib's `HopfObj.antipode_left`, and what
+    `FrobeniusHopfData` carried as a field between 2026-09-14 and 2026-09-15.
+
+    It is stated here as a `Prop` because the structure no longer carries it:
+    it has **no non-trivial model over a field** (see
+    `QOU.QuantumObservableUniverse.FrobeniusHopfModelDichotomy`), and was
+    replaced by the anti-automorphism package on owner decision.
+
+    Nothing is lost by the move.  A hypothesis is strictly stronger than a
+    field: the theorems below now constrain **any** morphism satisfying this,
+    rather than only a structure that declares it. -/
+def ConvolutionLeft (F : FrobeniusHopfData C) : Prop :=
+  F.comul ≫ (F.antipode ▷ F.obj) ≫ F.mul = F.counit ≫ F.unit
+
+/-- **The right convolution condition.**  `Δ ≫ (A ◁ S) ≫ μ = ε ≫ η` —
+    Mathlib's `HopfObj.antipode_right`.  See `ConvolutionLeft`. -/
+def ConvolutionRight (F : FrobeniusHopfData C) : Prop :=
+  F.comul ≫ (F.obj ◁ F.antipode) ≫ F.mul = F.counit ≫ F.unit
+
 /-- Pushing `S ▷ A` past a right multiplication, by **associativity of `μ`**.
     In elements: `S(x₁)·(x₂·b) = (S(x₁)·x₂)·b`. -/
 theorem convolution_reassoc :
@@ -254,11 +275,11 @@ theorem convolution_eq_left_mul :
     Read in elements: `ε(1)·x = ε(x)·1` for every `x`. -/
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 --      (a Frobenius comultiplication is a bimodule map, hence determined by Δ(1))
-theorem scalar_id_eq_counit_unit :
+theorem scalar_id_eq_counit_unit_of_convolutionLeft (hconv : F.ConvolutionLeft) :
     F.counit ≫ F.unit
       = (λ_ F.obj).inv ≫ ((F.unit ≫ F.counit) ▷ F.obj) ≫ (λ_ F.obj).hom := by
   have h := convolution_eq_left_mul F
-  rw [F.antipode_left] at h
+  rw [show F.comul ≫ (F.antipode ▷ F.obj) ≫ F.mul = F.counit ≫ F.unit from hconv] at h
   rw [h]
   simp only [comp_whiskerRight, Category.assoc, F.one_mul]
 
@@ -271,17 +292,19 @@ theorem scalar_id_eq_counit_unit :
 
     **This needs no bimonoid comultiplication axiom.**  It is the antipode
     axiom (added 2026-09-14, bean `qou-c64q`) plus the Frobenius relation. -/
-theorem counit_comp_unit_of_unital (h : F.unit ≫ F.counit = 𝟙 (𝟙_ C)) :
+theorem counit_comp_unit_of_unital (hconv : F.ConvolutionLeft)
+    (h : F.unit ≫ F.counit = 𝟙 (𝟙_ C)) :
     F.counit ≫ F.unit = 𝟙 F.obj := by
-  rw [scalar_id_eq_counit_unit F, h]
+  rw [scalar_id_eq_counit_unit_of_convolutionLeft F hconv, h]
   simp
 
 /-- **`A ≅ 𝟙_C`** from unitality of the counit alone. -/
-noncomputable def isoUnitOfUnital (h : F.unit ≫ F.counit = 𝟙 (𝟙_ C)) :
+noncomputable def isoUnitOfUnital (hconv : F.ConvolutionLeft)
+    (h : F.unit ≫ F.counit = 𝟙 (𝟙_ C)) :
     F.obj ≅ 𝟙_ C where
   hom := F.counit
   inv := F.unit
-  hom_inv_id := F.counit_comp_unit_of_unital h
+  hom_inv_id := F.counit_comp_unit_of_unital hconv h
   inv_hom_id := h
 
 /-- **Contrapositive, the usable form.**  A `FrobeniusHopfData` whose object is
@@ -290,8 +313,9 @@ noncomputable def isoUnitOfUnital (h : F.unit ≫ F.counit = 𝟙 (𝟙_ C)) :
     So a non-trivial substrate is not merely "not a bialgebra" — its counit
     fails the most basic normalisation any coalgebra-with-unit is assumed to
     have. That is the live question recorded in bean `qou-aawz`. -/
-theorem counit_not_unital_of_nontrivial (hnt : F.counit ≫ F.unit ≠ 𝟙 F.obj) :
+theorem counit_not_unital_of_nontrivial (hconv : F.ConvolutionLeft)
+    (hnt : F.counit ≫ F.unit ≠ 𝟙 F.obj) :
     F.unit ≫ F.counit ≠ 𝟙 (𝟙_ C) :=
-  fun h => hnt (F.counit_comp_unit_of_unital h)
+  fun h => hnt (F.counit_comp_unit_of_unital hconv h)
 
 end QOU.FrobeniusHopfData
