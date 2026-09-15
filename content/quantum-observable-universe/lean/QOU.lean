@@ -1544,6 +1544,7 @@ import QOU.MassTheory.PnOffsetBarOddClass
 -- orphan population (986 of 2257 modules); their only type-check was the
 -- lean-direct run in that PR.  Wiring them here is the other half of the fix.
 import QOU.AlgebraicSubstrate.LocalQZetaFunction
+import QOU.AlgebraicSubstrate.WignerAxiom
 import QOU.Archimedean.ParticleKnots
 
 -- Same fix, same reason, a third module (bean qou-aemx follow-on).
