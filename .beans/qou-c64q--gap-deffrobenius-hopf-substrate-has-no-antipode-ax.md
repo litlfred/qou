@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T18:01:40Z
-updated_at: 2026-09-15T02:14:07Z
+updated_at: 2026-09-15T08:44:53Z
 ---
 
 ## Measured 2026-09-14 (session: duality-sigma-hermitian-derivation)
@@ -231,3 +231,52 @@ which stays open. Nothing here is a reason to revert the axiom.
 
 Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md` (leading
 section). PR #7405.
+
+
+## 2026-09-15 — the convolution axiom is REPLACED by the anti-automorphism package (owner decision)
+
+`def:frobenius-hopf-substrate` axiom 2 carried the convolution condition from
+2026-09-14 to 2026-09-15. `qou-aawz`'s dichotomy proved it has NO non-trivial
+model over a field, so it could not be kept. Replaced, on owner instruction,
+by six laws: `S` reverses `mu` and `Delta`, fixes `eta`, preserves `eps` and
+`lambda`, and squares to the identity.
+
+  antipode_anti_mul       mu >> S  = (S (x) S) >> beta >> mu
+  antipode_anti_comul     S >> Delta = Delta >> beta >> (S (x) S)
+  antipode_unit           eta >> S = eta
+  antipode_counit         S >> eps = eps
+  antipode_involutive     S >> S = id
+  antipode_frobeniusForm  S >> lambda = lambda
+
+`FrobeniusHopfData` now takes `[BraidedCategory C]` -- "reverses" needs a way
+to exchange tensor factors. Corpus-derived, not a new demand: the block's own
+prose places the substrate at the level of a quantum universe, which is braided
+monoidal, and `QOU.QuantumUniverse` ALREADY carried a `braidedInst` field that
+was going unused.
+
+### What it buys, measured
+
+`k[G]` with the FROBENIUS comultiplication and the classical `S(g) = g^-1` IS a
+model -- Z/1..4, V_4, S_3, D_4, exact integer arithmetic, 7/7. The definition
+has non-trivial models again. The vacuous `S = id` is EXCLUDED exactly on the
+non-abelian groups.
+
+### 🔴 What it does NOT fix, and this bean stays OPEN for it
+
+**On a COMMUTATIVE `A` the package still admits `S = id`**, and nothing in the
+definition says `A` is non-commutative. Measured: `S = id` is a model on Z/2,
+Z/3, Z/4 and V_4. So the defect this bean was opened for -- a named morphism
+constrained by nothing -- is repaired exactly where `A` is non-commutative and
+NOWHERE ELSE. The framework's `A` is meant to be a Hecke/braid object and so
+non-commutative, but that is an expectation about intended models, not an axiom.
+
+`S` is also no longer DETERMINED. Uniqueness came only from the convolution
+identity, which is the one with no models; the two cannot both be had.
+
+The three collapse theorems are not deleted -- they now take the convolution
+condition as an explicit hypothesis (`ConvolutionLeft` / `ConvolutionRight`),
+which is strictly stronger than reading it off a field. They are also now
+INERT: nothing in the corpus satisfies that hypothesis, so they are archival.
+
+Audit: `docs/audits/2026-09-15-antipode-anti-automorphism-package.md` (incl. a
+red-team section against this change). PR pending.
