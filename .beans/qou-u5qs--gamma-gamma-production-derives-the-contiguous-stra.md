@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T19:44:28Z
-updated_at: 2026-09-15T07:09:21Z
+updated_at: 2026-09-15T07:18:21Z
 ---
 
 ## 2026-09-14 — the measurement (probe 15/15, exact combinatorics, read-only)
@@ -445,3 +445,42 @@ probe flagged its own gap correctly and its formula stands.
 that passed 24/24 (`git diff HEAD` empty; CHECK 18/19 present at HEAD), so a
 reader trusting that message would discount a passing probe. Corrected in the
 follow-up commit rather than by rewriting pushed history.
+
+
+## 2026-09-15 — R9: the scaling route measured; it is not a new escape
+
+`computations/onedim/scaling_route_on_the_derived_assemblies_probe.py`, 8/8.
+
+`b3Agg_of_scales` gives **`b₃ > 0` ⟺ `c > 3`** where `Φ(3g) = c·Φ(g)`, with no
+convexity, differentiability or homogeneity hypothesis. **`p > 1` is the special
+case `c = 3ᵖ`** and applies only to a `p`-homogeneous `Φ` — which matters here,
+because the corpus's multiplicative assembly is **exponential** in bond count,
+not a power, so the `p` framing does not apply to it and the `c` one does.
+
+| derived assembly | `Φ(m)` | `c = Φ(3)/Φ(1)` | `b₃ > 0` iff |
+|---|---|---|---|
+| multiplicative `W = 1−Z` | `1 − fᵐ` | `1 + f + f²` | **`f > 1`** |
+| log free energy | `m·φ` | **3 exactly** | never (`b₃ = 0`) |
+
+`c > 3` for the multiplicative assembly factors as `(f+2)(f−1) > 0` ⟺ `f > 1` —
+**the attractive-bond escape `qou-q8vl` already closes** for every derived bond
+family. Cross-checked by recovering `MayerThreeBodySign.b3_le_of_nonneg`'s
+`−(f−1)²(f+2)` from the `c`-form exactly.
+
+**So the scaling route, on the assemblies the corpus derives, is the
+attractive-bond question in different coordinates. Not a new escape.**
+
+**Where a new one would have to come from, and the convergence that makes it
+credible:** a different `Φ` means a non-multiplicative trace, i.e. a cross term
+`X`. On the two-bond chain `b₃ = −(f−1)² − X`, so `b₃ > 0` ⟺ `X < −(f−1)²` —
+**the same target derived independently from the Ursell side** (`Z₁₂₃` below the
+additive value by at least `|b₃|`), since `(f−1)² = g² = |b₃|` at equal bonds.
+Two routes, one target.
+
+🛑 **NOT settled, and deliberately not claimed:** whether the corpus's one exact
+cross term (`−0.4611715803`, proton pin) is large enough. It is a difference of
+**traces**; `Z` is a **ratio**. No conversion is attempted here and the
+comparison must not be made until one is. What *is* settled: it lives on
+adjacent generators in `H₄` while the chain's interface generators sit at
+`3k+2`, three apart and far-commuting, so no reordering of the chain's bonds
+produces it.
