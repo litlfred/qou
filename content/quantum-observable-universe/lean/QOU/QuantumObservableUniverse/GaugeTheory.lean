@@ -284,7 +284,8 @@ co-pairing used here. -/
     substrate itself; the rank-2 field space is not a wider type with nothing
     in it. -/
 def frobeniusPairing {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C) :
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C) :
     PairingSpace C fh.obj fh.obj :=
   fh.mul ≫ fh.frobeniusForm
 
@@ -297,6 +298,7 @@ def frobeniusPairing {C : Type u} [CategoryTheory.Category.{v} C]
     uses additivity of `MonoidalCalcVar.contract`. -/
 theorem variational_einstein_contracted {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
@@ -315,6 +317,7 @@ theorem variational_einstein_contracted {C : Type u}
     This is the declaration to cite for "the scalar form was not lost". -/
 theorem variational_einstein_scalar {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
@@ -337,6 +340,7 @@ theorem variational_einstein_scalar {C : Type u}
     here. -/
 theorem coevaluation_contract_eq_iff {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] (fh : FrobeniusHopfData C)
     (G T : PairingSpace C fh.obj fh.obj) :
     fh.coevaluation ≫ G = fh.coevaluation ≫ T
