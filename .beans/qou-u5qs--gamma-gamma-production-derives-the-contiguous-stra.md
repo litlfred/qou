@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T19:44:28Z
-updated_at: 2026-09-15T07:18:21Z
+updated_at: 2026-09-15T08:56:28Z
 ---
 
 ## 2026-09-14 — the measurement (probe 15/15, exact combinatorics, read-only)
@@ -484,3 +484,60 @@ comparison must not be made until one is. What *is* settled: it lives on
 adjacent generators in `H₄` while the chain's interface generators sit at
 `3k+2`, three apart and far-commuting, so no reordering of the chain's bonds
 produces it.
+
+
+---
+
+## 2026-09-15 — the arc closes: route (b) is structurally unavailable on this word
+
+PR #7418, commits `a168dab3b` / `bbe37ed72`. Audit:
+`docs/audits/2026-09-15-the-chain-factorizes-and-route-b-closes.md`.
+
+The previous audit's §7 open item 4 refused to compare the corpus's exact cross
+term to the route-(b) target "until a conversion exists". It exists now, and the
+answer went further than a comparison.
+
+**R10 — the conversion.** `Z = tr_M(W_atom)/tr_free`, so a numerator deviation
+`Δ` is a ratio deviation `X = Δ/tr_free`, and the threshold in trace units is
+`tr_free·|b₃|`: ³H **0.0416666246879**, ³He **0.0358421011448**.
+
+**R11 — measured.** Six measurements (²H/³H/³He × proton/muon, `H₆` and `H₉`):
+`tr_M(W_atom) = tr_free·∏(z+d_e)` to every printed digit, rel. dev.
+2.56e-61 … 9.17e-61. `|Δ|/threshold = 6.4e-61`.
+
+**R12 — and it is a theorem.** `SingleCrossingChainFactorizes.lean`, 23 decls,
+sorry-free, all `[propext, Classical.choice, Quot.sound]`.
+`three_body_cumulant_vanishes` is identical zero, stated division-free over a
+bare `CommRing`.
+
+🛑 **A REDUCTION, NOT A CLOSURE.** The whole thing is conditional on `TowerSpan`,
+which is unproved and not provable from `MarkovTrace`. Per AGENTS.md
+§"Axiomatization is NOT a Proof" the bond product is **still not unconditionally
+derived**. The gain is that the cross-term question is no longer independent — it
+collapses into the single algebraic gap the corpus had already isolated. Do not
+quote R12 as an impossibility.
+
+**C8 — my own retraction.** The brief for the Lean file claimed the
+single-crossing join does not follow from the disjoint-block law + stabilisation.
+False: group `a * g m` into one left factor in `H (m+1)` and apply the law
+THERE — it is `∀ n, …`. Three tactic lines, no new hypothesis anywhere in the
+file. `DisjointBlockTraceLaw.lean` records the identical error one level down
+(`TwoSidedMarkov`, retracted 2026-09-07). Recorded as a TRAP in
+`.claude/agent-memory/lean-verifier/MEMORY.md`.
+
+**C9 — an upstream over-reach, left in place.** `UrsellPartitionFunctionB3.lean:18`
+grounds `Z_S = ∏_e f_e` on `tr_stabWord_eq_prod_tr`, whose hypothesis is the
+ASCENDING-word condition; the production word fails it (under `qou-hu1f` a
+nucleon's sequence is `[0,1,0,1,0,1,0,0,1,0,0]`, maximal level four times). That
+file covers the gap by measurement ("to 1e-40") in the same breath. Its file is
+untouched; `tr_chainWord` is the theorem that covers the word actually used.
+
+**Where the arc hands off.** Route (b) needs a cross term `X < −(f−1)²`, and
+`X = 0` identically here. So it cannot be entered by re-deriving or
+re-normalising this word — it needs interfaces that are **adjacent and
+non-commuting**. Which word is selected is `qou-ales` / `qou-99qc`, not a free
+parameter of the assembly. Posted to PR #7262.
+
+**Still open on this bean:** ⁴He (`H₁₂` did not complete at 60 dps in 28 min);
+the confinement SDP over the band candidate set; the `LinearLayout` bridge
+lemma; `vertexStrands` as a theorem.
