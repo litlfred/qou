@@ -41,6 +41,7 @@ universe u v
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The underlying categorical action, carrying the gravity, gauge,
       and matter term morphisms `tr(q·R_∫)`, `∫_A∘tr_A(F∧_q⋆_qF)`, and
@@ -58,6 +59,7 @@ structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
 noncomputable def qou_canonical_action_dirac_sq
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
     (ca : QOUCanonicalAction C fh) :
     -- The Dirac squared operator decomposes into gravity + gauge.
@@ -107,6 +109,7 @@ noncomputable def qou_canonical_action_dirac_sq
 def qou_canonical_action_unique_up_to_scalar
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
     (ca₁ ca₂ : QOUCanonicalAction C fh) : Prop :=
   -- The two actions' term-triples are related by a common unit
