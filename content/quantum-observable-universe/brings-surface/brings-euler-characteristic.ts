@@ -5,11 +5,17 @@ export default lemma({
   lean: { ref: "qou:QOU.ArchimedeanUniverse.brings_euler_characteristic",
     validation: "not_checked",
   },
-  title: "Categorical Euler characteristic of $\\mathcal{O}_q(\\mathrm{SU}(2))$ on Bring's surface",
+  title: "Euler characteristic of Bring's surface",
   tags: ["euler-characteristic", "brings-surface", "categorical-trace", "descartes-substrate"],
-  uses: ["prop:euler-char-stability"],
+  uses: ["prop:euler-char-stability", "rem:hkr-theorem", "rem:three-euler-characteristics"],
   proofs: ["prf:brings-euler-characteristic"],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-09-15",
+      body:
+        "**ENACTED (owner selection A, 'separate by name', 2026-09-15).** The statement no longer calls `-6` a categorical trace: it is `chi_eu(Sigma_4)`, the topological Euler characteristic of the base curve, with its Hochschild reading. The proof's sentence recovering `-6` as \"the quantum dimension specialised at q_0\" is withdrawn — under the ruling `tr(id_A) = dim_q(A)`, the Peter–Weyl series for `A = O_q(SU(2))` diverges and its regularised value is `0` (zeta) or `-1/(q-q^-1)^2` (Hadamard), never `-6` (`computations/audits/dimq_regularisation_schemes_probe.py`, 16/16). Analysis: `docs/audits/2026-09-15-chi-as-a-component-of-the-chern-character.md`. The Lean sibling `brings_euler_characteristic` still proves `2 - 2g = -6` from `g = 4` and is unaffected.",
+    },
     {
       kind: "note",
       date: "2026-09-15",

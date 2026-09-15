@@ -1,7 +1,9 @@
-*The categorical Euler characteristic $\chi(A) = \mathrm{tr}(\mathrm{id}_A)$ for $A = \mathcal{O}_q(\mathrm{SU}(2))$ on Bring's surface $\Sigma_4$ equals*
+*Bring's surface $\Sigma_4$ has topological Euler characteristic*
 
 $$
-  \chi(A) = \chi(\Sigma_4) = 2 - 2g(\Sigma_4) = -6.
+  \chi_{\mathrm{eu}}(\Sigma_4) = 2 - 2g(\Sigma_4) = 2 - 8 = -6 .
 $$
 
-*This value is recovered as the quantum dimension specialised at the Descartes substrate parameter $q_0$.*
+*Equivalently, in the Hodge decomposition of its Hochschild homology ([HKR](#rem:hkr-theorem)) one has $\dim HH_0(\Sigma_4) = 2$ and $\dim HH_{\pm 1}(\Sigma_4) = 4$, and $-6$ is the alternating sum $\sum_n (-1)^n \dim HH_n(\Sigma_4)$.*
+
+This is an invariant of the base curve of the archimedean realisation, not of the substrate object $A$. The categorical trace $\mathrm{tr}(\mathrm{id}_A) = \dim_q(A)$ is a different quantity ([the three Euler characteristics](#rem:three-euler-characteristics)); for $A = \mathcal{O}_q(\mathrm{SU}(2))$ its regularised value is $0$ ([Euler characteristic of the regular representation](#rem:euler-characteristic-of-the-regular-representation)).

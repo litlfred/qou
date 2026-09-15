@@ -27,7 +27,7 @@ Here $R_{\int}$ denotes the **Frobenius–Ricci endomorphism**, $F_\nabla$ denot
 
 [*Models of QOUs*](#chap:models-qou) examines concrete archimedean, $p$-adic, and finite-field realisations. The archimedean model maps directly to physical reality; non-archimedean models supply arithmetic analogues. This establishes the genus-four state space—Bring's surface.
 
-[*Lifting and Descent*](#chap:torsion) resolves global extensions of local categorical data. The quantum lifting condition states that an object admits a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$ vanishes. The descent involution $\hat{\tau}$ decomposes the algebra into observable (descended) and pre-observable (transient) modes. The lifting obstructions reduce the whole obstruction to a single scalar $\chi(A) = 2 - 2g$ with $g \geq 1$; the Descartes condition fixes its value at $-6$. The Kummer exact sequence filtrates the obstruction space, revealing a perpetual obstruction $\kappa_0$ that blocks infinite jet refinement.
+[*Lifting and Descent*](#chap:torsion) resolves global extensions of local categorical data. The quantum lifting condition states that an object admits a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$ vanishes. The descent involution $\hat{\tau}$ decomposes the algebra into observable (descended) and pre-observable (transient) modes. The lifting obstructions reduce to the genus of the base curve: $\chi_{\mathrm{eu}}(M_0) = 2 - 2g$ with $g \geq 1$, and the Descartes condition fixes $g = 4$. The Kummer exact sequence filtrates the obstruction space, revealing a perpetual obstruction $\kappa_0$ that blocks infinite jet refinement.
 
 **Part II: Structural Mechanics.**
 [*Braids and Knots*](#chap:path-integrals-braiding) replaces continuum path integrals with discrete braid-group representations inside the Iwahori–Hecke algebra $H_n(q)$. The substrate parameter $q$ fixes the crossing energy:
@@ -40,7 +40,7 @@ $$
 $$
 The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 calibration rather than a prediction of the ratio.
 
-[*Bring's Surface*](#chap:brings-surface) exploits the genus-four curve with $\chi = -6$ and maximal automorphism group $S_5$. Its color tubes provide coordinates for spacetime and electromagnetic fields. Embeddable knots construct the homology basis.
+[*Bring's Surface*](#chap:brings-surface) exploits the genus-four curve with $\chi_{\mathrm{eu}} = -6$ and maximal automorphism group $S_5$. Its color tubes provide coordinates for spacetime and electromagnetic fields. Embeddable knots construct the homology basis.
 
 [*The Mass Endomorphism*](#chap:mass-endomorphism) extracts mass from the spectral data of a single categorical endomorphism. Mass is a categorical invariant: the Markov trace $\mathrm{tr}_M$ of a distinguished Hecke element. A recursive Gröbner–Shirshov reduction evaluates this trace, and the **mass endomorphism conjecture** resums the brane tower.
 

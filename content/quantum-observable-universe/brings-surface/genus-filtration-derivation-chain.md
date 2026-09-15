@@ -6,7 +6,7 @@ The chain from the algebra to Bring's surface runs:
 4. **Chebyshev overflow**: At $g = 4$, $a_9$ fits (degree $4$), and $a_{11}$ overflows (degree $5$).
 5. **Ideal**: The genus-filtration ideal $\mathfrak{I}_4 = (u^5)$ kills $T_{2,p}$ for $p \geq 11$.
 6. **Yekutieli**: The leading coefficient $c_{g+1} = 1$ yields a nonzero obstruction via $d_q^2 \neq 0$.
-7. **Bring surface**: $\Sigma_4$ is the unique genus-$4$ curve with maximal symmetry ($S_5$), fixed by $\chi = -6$.
+7. **Bring surface**: $\Sigma_4$ is the unique genus-$4$ curve with maximal symmetry ($S_5$), fixed by $\chi_{\mathrm{eu}}(M_0) = -6$.
 
 **Step 3 does not hold, so the chain does not deliver the genus.** The evaluation matrix is block-diagonal — a $T_{r,s}$ is a closure on $r$ strands and so evaluates only in the $H_r(q)$ columns — and at $g = 4$ its rank is at most $2 + 2 = 4$, for every $q$ ([the block-rank remark](#rem:torus-evaluation-block-rank)). What step 3 can support is the weaker *count* statement: $g = 4$ is the least genus at which the number of embeddable $T_{r,s}$, $r \in \{2,3\}$, reaches the five irreducibles. A count of five vectors is not a spanning set, so steps 4 through 7 take $g = 4$ as given rather than receiving it from step 2.
 
