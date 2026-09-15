@@ -99,7 +99,46 @@ export default definition({
         "the identity above plus its contrapositive. Whether the framework wants " +
         "a substrate whose counit is non-unital is an open question for the " +
         "author, bean `qou-aawz`; nothing here is a reason to revert axiom 2. " +
-        "Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md`.",
+        "Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md`. " +
+        "**Superseded the next day — see the note below: over a field the " +
+        "non-unital corner is empty, so this is not an open option either.**",
+    },
+    {
+      kind: "caveat",
+      date: "2026-09-15",
+      body:
+        "**Over a field this definition has NO non-trivial model.** The note " +
+        "above treats a non-unital counit as the surviving corner for a " +
+        "non-trivial substrate. It is not one. Write " +
+        "$\\sigma = \\eta \\circ \\varepsilon$ for the scalar " +
+        "$\\varepsilon(1)$. Then axiom 3 plus the antipode condition of " +
+        "axiom 2 give, with no further hypothesis, that $\\mathrm{id}_A$ " +
+        "factors through a morphism carrying $\\sigma$ in the middle " +
+        "(`id_factors_through_unitCounit`). So if $\\sigma$ is **invertible**, " +
+        "$A$ is a retract of $\\mathbf{1}$ (`retract_of_unit_of_isIso`); and if " +
+        "$\\sigma = 0$, then $\\mathrm{id}_A = 0$ and $A$ is a zero object " +
+        "(`id_eq_zero_of_unitCounit_eq_zero`). A field has no element that is " +
+        "neither, so in any preadditive monoidal category with field scalars — " +
+        "$\\mathbf{Mod}_k$, $\\mathbf{FdRep}_k(G)$, any $k$-linear abelian " +
+        "monoidal category with simple unit — **every** model has " +
+        "$\\dim A \\le 1$ (`dichotomy_of_scalars_field`, sorry-free, in " +
+        "`FrobeniusHopfModelDichotomy.lean`). " +
+        "**Two limits, both real.** The zero branch needs " +
+        "`MonoidalPreadditive`, so a *bare* monoidal category is untouched and " +
+        "whether one admits a non-trivial model is open (`qou-aawz`). And " +
+        "\"retract of $\\mathbf{1}$\" is \"$\\cong \\mathbf{1}$\" only where the " +
+        "unit is indecomposable. " +
+        "**Why this is the classical fact rather than a defect:** a " +
+        "finite-dimensional Hopf algebra *is* Frobenius, but its Frobenius " +
+        "comultiplication is not its Hopf comultiplication. Axiom 3 pins " +
+        "$\\Delta$ to the Frobenius one and axiom 2 then asks for an antipode " +
+        "against *that* $\\Delta$; the collapse is the price of forcing them to " +
+        "coincide. The group algebra is the worked case: with the dual-basis " +
+        "$\\Delta(1) = \\sum_h h \\otimes h^{-1}$, no linear map at all — not " +
+        "merely $g \\mapsto g^{-1}$ — satisfies the antipode condition for " +
+        "$|G| > 1$, verified by exact rational elimination on the full " +
+        "$|G|^2$ system for $\\mathbb{Z}/2, \\mathbb{Z}/3, \\mathbb{Z}/4, S_3$. " +
+        "Audit: `docs/audits/2026-09-15-frobenius-hopf-has-no-nontrivial-linear-model.md`.",
     },
   ],
 });

@@ -53,6 +53,34 @@ narrows the first: any non-trivial witness must have `ε(1) ≠ 1`, which rules 
 every textbook Frobenius algebra one would reach for first. That bean stays
 open.
 
+> **🛑 SUPERSEDED THE NEXT DAY, and the sentence that fails is *"this is
+> neither"* (2026-09-15).** The paragraph above treats `ε(1) ≠ 1` as the
+> surviving corner. **Over a field the corner is empty**, and the same identity
+> is what closes it: `id_factors_through_unitCounit` shows `𝟙_A` factors through
+> a morphism carrying `σ = ε(1)`, so `σ` invertible makes `A` a retract of
+> `𝟙_C` and `σ = 0` makes `𝟙_A = 0`. A field has no third kind of element, so
+> in any preadditive monoidal category with field scalars **every** model has
+> `dim A ≤ 1` — `QOU.FrobeniusHopfData.dichotomy_of_scalars_field`, sorry-free,
+> in `FrobeniusHopfModelDichotomy.lean`.
+>
+> So this *is* `qou-aawz`'s second outcome after all, restricted to the linear
+> setting. Describing the complement of one point ("`ε(1) ≠ 1`") understated a
+> constraint whose admissible set is empty.
+>
+> **The theorems above are untouched** — only this interpretive sentence was too
+> weak. **`qou-aawz` still stays open**, now for a narrower reason: the zero
+> branch needs `MonoidalPreadditive`, so a *bare* monoidal category is
+> unaddressed.
+>
+> The `k[G]` paragraph below is likewise weaker than what is true. It checks
+> that the standard `S(g) = g⁻¹` fails. The sharp statement, verified by exact
+> rational elimination on the full `|G|²` system for `ℤ/2, ℤ/3, ℤ/4, S₃`, is
+> that **no linear map whatever** satisfies the antipode condition for
+> `|G| > 1`.
+>
+> Full write-up:
+> [`2026-09-15-frobenius-hopf-has-no-nontrivial-linear-model.md`](2026-09-15-frobenius-hopf-has-no-nontrivial-linear-model.md).
+
 **What it means for the 2026-09-14 axiom addition.** The owner's decision A
 (add the Hopf antipode condition) is not neutral with respect to the rest of the
 definition: it is what excludes counit-unitality. Before it, `S` was free data

@@ -60,6 +60,32 @@ import QOU.BraidKnot.HookSumElasticity
 -- block, the run and the bottom block stop interacting, and e_inf becomes a sum of three
 -- k-free pieces rather than a single-n measurement.
 import QOU.BraidKnot.EdgeDecoupling
+--- The maximisation that decomposition leaves behind is over a FINITE set (bean qou-hok7).
+--- `e_inf = max over (a, b) of [f a + h (a + b) + g b]` ranges over all pairs of naturals, but
+--- the two edge energies are bounded above while the run falls linearly, so `le_of_le_join`
+--- confines any pair matching an incumbent to `a + b <= L`. The bound on the edges comes from
+--- `sub_le_mul_of_antitone_step` and its downward twin: a sequence with ANTITONE downward steps
+--- -- `eps` convex decreasing, in discrete form, proved by induction with no analysis -- has
+--- `e a - e (a + D) <= D * delta a` for both signs of `D`, which linearises every pair term and
+--- lets the block's pair sum telescope. Both signs matter: keeping only `D > 0` drops the
+--- negative pair terms and the bound diverges.
+import QOU.BraidKnot.SearchCoercivity
+--- Making that finite search DECIDED, and one non-step in the argument (bean qou-hok7).
+--- `sup_le_of_supergradient` takes what concavity supplies (a supergradient inequality at a
+--- point) together with what the coercivity bound supplies (confinement of any competitive `u`
+--- to a box) and returns an explicit upper bound on the objective EVERYWHERE, including outside
+--- the box, where it is already below the incumbent. Its load-bearing step is `box_mul_sub_le`,
+--- a case split on the sign of the gradient: the linear term is maximised at `hi` when `g >= 0`
+--- and at `lo` when `g < 0`. `boundary_charge_eq_zero` and `abs_charge_pos` say why that split
+--- is not a refinement -- a coordinate pinned to `lo` with `g < 0` (correct KKT behaviour)
+--- contributes EXACTLY ZERO, where charging it `|g| (hi - lo)` contributes strictly positively,
+--- and in the measured case the whole factor of 2.25e11 between a 6.4e-12 slack and a useless
+--- 1.447 one lives in that case alone.
+--- `capped_lt_not_sufficient` is separate and is about evidence rather than about optimisation:
+--- a maximum over a CAPPED class is a lower bound on the true maximum, so observing that it
+--- falls short of a bound implies nothing about the true one -- only EXCEEDING a bound refutes.
+--- The corpus's sole recorded support for G1 (`Xbot(s) <= Xblock(s)`) has exactly that shape.
+import QOU.BraidKnot.SupergradientCertificate
 -- The M_1 edge calculus (bean qou-t6hc): Fact A, giving the per-edge sign of
 -- P = Cov(Sum|c|, omega_3) >= 0 -- which is pure integer algebra, true of any two
 -- contents -- and the 1-Lipschitz diagonal lemma |D(c) - D(c+1)| <= 1, which is
