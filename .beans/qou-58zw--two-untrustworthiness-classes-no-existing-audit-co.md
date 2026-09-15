@@ -610,3 +610,88 @@ number quoted without the method that produced it. The tool prints its own scope
 and I did not carry it. `qou-baye` is the live carrier for the write-path half
 and owns its three options (its author recommends repointing the two
 paper-visible citations, then deleting the orphans) — **not duplicated here.**
+
+## 2026-09-15 — Class 3: the green is about a REFERENCE that has since moved
+
+A third member of the same family, found while trying to answer a different
+question (whether `phi_k_weight_family_discriminator`'s witness could be checked
+without the matching `pyhecke_native` binary). Same shape as classes 1 and 2:
+a witness records a green that no longer reproduces, no existing audit can see
+it, and the check that would catch it is one line.
+
+**The instance.** `computations/probes/phi-k-weight-family-discriminator.witness.json`
+records `8/8 ok`, `computedAt 2026-09-05T06:38:03`. A fresh run on this tree is
+**7/8**, and the failure is `reproduces_committed_producer_under_dq2_over_D2`:
+
+| row | reference (read today) | this probe (fresh) | rel |
+|---|---|---|---|
+| no_FR | 1.54887547774 | 1.76060685111 | 0.1367 |
+| 4_1 | 1.23085660637 | 2.10490813661 | 0.7101 |
+| 5_2 | 1.21688276949 | 2.47527495144 | 1.034 |
+| 6_1 | 1.60678321377 | 1.92396555287 | 0.1974 |
+
+That assertion is not about this probe's own numbers. Line 542 reads
+**another producer's committed witness** —
+`COMPUTATIONS / "fr-pullback-k3-test.witness.json"`, field `["data"]` — and the
+probe's own header (line 94) calls itself a *"READ-ONLY companion"* that
+deliberately does not touch `fr_pullback_k3_test.py` because that file is owned
+elsewhere. So the coupling is one-way by design and the probe has no say in when
+its reference is regenerated.
+
+**The reference was regenerated 2h16m after the green was recorded.**
+`fr-pullback-k3-test.witness.json` carries `computedAt 2026-09-05T08:54:32`
+against the phi-k witness's `06:38:03`. It now holds `1.5488 / 1.2308 / 1.2168 /
+1.6067` — which is the **molien** row of `qou-oots`'s own record — where that
+bean records the d_q²/D² row this assertion compares against as
+`1.0659881 / 1.2425297 / 1.2911323 / 1.0478474`. So the reference appears to
+have been regenerated under a different weight family. **Appears**, not
+established: see the limitation below.
+
+**Ruled out: the producer's own source drift.** The probe IS self-stale —
+witness `scriptHash 02567f2cea25`, live source `adb0a178178a`, drifted by
+`70ae502091` (*"drain(qou-psjm): route 372 AME/CODATA literals to the
+registry"*), which replaced three hardcoded AME binding energies with registry
+constants. That is a real substantive-looking drift and it is **not the cause**.
+Measured both ways:
+
+- the constants move by `5.84e-8` (D), `2.12e-7` (T), `1.92e-7` (³He),
+  `4.10e-7` (⁴He) relative;
+- checking the producer out at the pre-drain commit `53e53959d7` and re-running
+  gives `2.10490760997 / 2.47527433214 / 1.92396634162` against today's
+  `2.10490813661 / 2.47527495144 / 1.92396555287` — agreement to ~`2.5e-7`, the
+  scale of the inputs, with **no amplification** and **no ranking change**
+  (`6_1 < 4_1 < 5_2` both ways).
+
+I first read the 20-103 % discrepancy as a ~10⁶ amplification of the AME
+correction and that was wrong; the pre-drain run refutes it. Recording the
+refuted reading because it is the tempting one — a self-stale `scriptHash` sat
+right next to a large discrepancy and the two are unrelated.
+
+**NOT established, and not establishable in this container.** Whether the cause
+is the reference regeneration or the `pyhecke_native` rebuild. The witness
+records `pyhecke_native 0.9.0 / build e3fab84c4c1df76a`; this container has the
+same version at build `5df83fbc24b06f8a`, and the probe calls
+`pyhecke_native.chi_lambda_braid_mpfr` (line 307) for the characters the whole
+discriminator is built on. The clean separation — check the reference witness
+out as it stood at the phi-k witness's own `commitSha` and re-run — is
+**unavailable**: both `69f29ec5219abc5d838e85f74d33a8fa0896313b` (phi-k) and
+`46bfe7fa5fc7b134698795411684dd2e61500f5b` (reference) fail `git cat-file -e`
+on this shallow clone, the ~55 % `rewritten` class AGENTS.md documents. So this
+entry establishes that the green is stale and that the AME drain is not why; it
+does not establish which of the two remaining causes it is.
+
+**Why nothing catches it.** `witness_dependency_drift` keys self-staleness on
+the producer's own `scriptHash`, which here points at the wrong change.
+`ghost_value_sweep` catches a producer whose source changed. `qou-381n`'s
+screen catches a *Lean literal* citing a producer whose witness moved. None of
+them look at a witness's assertions to see that they READ ANOTHER WITNESS. The
+check is as cheap as the other two classes': for any producer that opens a
+sibling `*.witness.json`, compare that file's `computedAt` against the
+consuming witness's own `computedAt`, and flag every consumer whose reference is
+newer than the green it recorded.
+
+**Not fixed here, deliberately.** Regenerating either witness belongs to the
+`qou-oots` / FR-pullback arc, not to this bean, and is outside the two
+ask-first exemptions — it is neither a precision increase nor corpus-derived.
+The tree was restored after both runs (`git status` clean); nothing was
+committed but this note.

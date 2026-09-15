@@ -103,6 +103,23 @@ export default conjecture({
       see:
         "computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json",
     },
+    {
+      kind: "note",
+      date: "2026-09-14",
+      body:
+        "Provenance for the **Convention frame** section added to the `.md`. The " +
+        "excision of Markov convention C in favour of D (z = q³/(q²+1)) is the owner " +
+        "ruling of 2026-08-15. The C→D re-extraction figures quoted there " +
+        "(implied c₂ −1.0176 → −9.2989; c₃ −2.0693 → −974.43; distance to −Vol(4₁) " +
+        "972.402; swing ratio 1.00522) are measured at 60 dps on the proton pin and " +
+        "come from `qbeta-c3-ladder-trace-convention-sensitivity.witness.json` " +
+        "(10/10 PASS). The one-rung localisation of the convention (the N=1 " +
+        "eigenphase α = (z−1)h/2) is recorded in " +
+        "`docs/audits/2026-09-13-d2-convention-enters-at-one-rung.md`; the " +
+        "re-derivation is bean `qou-cds1`, blocked on `qou-pdix`.",
+      see:
+        "computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json",
+    },
   ],
   computation: {
     engine: "python+mpmath",

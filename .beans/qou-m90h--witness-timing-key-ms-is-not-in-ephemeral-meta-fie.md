@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T11:01:32Z
-updated_at: 2026-09-13T05:17:15Z
+updated_at: 2026-09-14T19:47:46Z
 ---
 
 Found on PR #7061 while classifying witness churn from verification runs.
@@ -209,3 +209,81 @@ re-measure counts and locates the key, it does not re-verify semantics. So the
 caveat against blind-masking `ms` stands unchanged — a field genuinely meaning
 milliseconds-of-something-measured would be wrongly hidden, and the producer-side
 fix avoids that question entirely.
+
+## 2026-09-14 — the remaining 16 are verified, and there IS a counter-example. Do NOT type the one-liner.
+
+This bean records *'twelve independent confirmations, zero counter-examples; 16
+of the 28 remain unverified'*, and asks for the rest to be checked before
+masking. Done — by **reading the producers** rather than re-running them, which
+is cheaper and does not dirty the tree.
+
+### The population splits three ways, not one
+
+| shape | count | files |
+|---|--:|---|
+| top-level `/ms`, scalar int | **24** | the `m1-*` family, `a3-mirror-selection`, `wn-tower-domain`, `qbeta-d-ladder-attack-options`, `c-frame-conditionality-audit` |
+| nested per-row `ms`, scalar int | **2** | `b1-kappa-window-extension` (`/data/rows[i]/ms`), `atom-nf-q-degree` (`/data/cross_check/stock_cases[i]/ms`) |
+| **`ms` is a LIST of consecutive ints** | **2** | `qbeta-habiro-all-10-pairs-phi8-universality`, `qbeta-habiro-delta-am-partial-sum-scan` |
+
+### 🛑 The two lists are NOT wall-clock — they are the plural of `m`
+
+Both producers, at `qbeta_habiro_all_10_pairs_phi8_universality.py:206` and
+`qbeta_habiro_delta_am_partial_sum_scan.py:221`:
+
+    ms = sorted(delta_a.keys())
+    M_max = max(ms)
+
+`ms` is the sorted list of **Habiro `a_m` differencing indices** — the plural
+of the index `m`, nothing to do with milliseconds. In the witness:
+
+    /data/n_minus_p/ms   = [0,1,2,3,4,5,6,7,8]        M_max = 8
+    /data/D_minus_n/ms   = [0,...,12]                 M_max = 12
+    /data/He3_minus_D/ms = [0,...,15]                 M_max = 15
+
+This bean anticipated exactly this shape — *'a field genuinely meaning
+milliseconds-of-something-measured would be wrongly hidden'* — and the real
+counter-example turns out to be sharper than the one imagined: not a different
+duration, a different **part of speech**.
+
+### Why that kills the one-liner
+
+`_strip_ephemeral_fields` (`witness.py:2631`) is **RECURSIVE** — it removes the
+key from dicts *and* walks lists, at any depth. So adding `ms` to
+`_EPHEMERAL_META_FIELDS` strips `/data/<pair>/ms` in both Habiro witnesses.
+
+The set's own comment already carries the precedent for refusing this:
+
+> `wall_sec` — also in the corpus, also a duration — would need BOTH halves and
+> is **deliberately NOT added blind**; see `qou-ywee`.
+
+and the docstring at :2658 names *'the recursive-mask collision-risk note'*.
+This is that risk, realised.
+
+### Honest mitigation, stated because it weakens my own claim
+
+**`M_max` sits beside `ms` in all four blocks**, so masking would not lose the
+*range* — the endpoint survives. What it loses is the index **set**: `ms` is
+`sorted(delta_a.keys())`, so a GAP (an absent `m`) moves `ms` and leaves
+`M_max` unchanged. So the loss is real but narrower than 'the range disappears'.
+
+### What I did NOT do
+
+No fix. The mask is shared infra in `qou-substrate`, and a type-aware or
+path-scoped mask is neither a precision increase nor corpus-fixed — the corpus
+fixes that `ms` is ambiguous, not which disambiguation to adopt. Under the
+2026-09-07 ASK-THE-OWNER directive that waits, and the `wall_sec` precedent
+says the same.
+
+**Options, for whoever takes it:**
+
+1. **Type-aware mask** — strip `ms` only when its value is a scalar int/float.
+   Smallest change; leaves both lists intact. Risk: a mask that branches on type
+   is a new kind of rule in that set.
+2. **Path-scoped mask** — strip only top-level `/ms`. Covers 24 of 26 durations,
+   leaves the 2 nested per-row ones flagged and both lists intact.
+3. **Rename at the producers** (this bean's own 'best') — emit `durationMs`, and
+   the ambiguity disappears because the Habiro `ms` means something else and
+   keeps its name. Up to 26 files.
+
+**The 28-file false-positive stands** and is unaffected by any of this: 26
+genuine durations still read as REAL VALUE CHANGE on every re-run.
