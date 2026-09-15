@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-13T07:58:29Z
-updated_at: 2026-09-13T11:26:52Z
+updated_at: 2026-09-15T08:17:52Z
 ---
 
 ## Result (2026-09-13) — the convexity route analysed; convexity is the WRONG invariant
@@ -356,3 +356,51 @@ picking an `m` because it yields `b₃ > 0` is selection against the target
 (§NO FITTING), and `qou-kj4v` records that running backwards for `σ²`. Under
 `qou-ales` the braid word is selected by γγ + the confinement SDP, and **that
 derivation is what stays open.** Scope (a); no family derived through the door.
+
+
+## 2026-09-15 — FRAMING SUPERSEDED (note appended by a sibling session; bean not claimed)
+
+This bean's live framing is *"derive the assembly law's homogeneity degree `p`
+and read the sign off `p > 1`"*. Measured on #7396 / #7418, that framing is the
+wrong one and the task underneath it is now closed for the production word.
+Recorded here so the next reader does not work a superseded target; **the bean
+is not claimed, not re-scoped and not closed** — `qou-u5qs` carries the detail.
+
+**1. `p > 1` is a special case, and the wrong one for this corpus.**
+`b3Agg_of_scales` gives `b₃ > 0` ⟺ **`c > 3`** where `Φ(3g) = c·Φ(g)`, with no
+convexity, differentiability or homogeneity hypothesis.
+`b3Agg_pos_iff_exponent_gt_one`'s `p > 1` is the special case `c = 3ᵖ` and holds
+only for a `p`-homogeneous `Φ`. The corpus's multiplicative assembly is
+`Φ(m) = 1 − fᵐ` — **exponential in bond count, not a power** — so the `p`
+criterion does not apply to it and the `c` criterion does.
+
+**2. On the derived assemblies the `c` criterion is the attractive-bond
+question.** `Φ(m) = 1 − fᵐ` gives `c = 1 + f + f²`, and `c − 3` factors as
+`(f+2)(f−1)`, so `c > 3` ⟺ **`f > 1`** — the escape `qou-q8vl` already closes
+for every derived bond family. The log free energy gives `c = 3` exactly,
+`b₃ = 0`, the affine boundary. Cross-checked by recovering
+`MayerThreeBodySign.b3_le_of_nonneg`'s `−(f−1)²(f+2)` from the `c`-form.
+Probe: `computations/onedim/scaling_route_on_the_derived_assemblies_probe.py` (8/8).
+
+**3. A withdrawal, so it is not repeated.** A sibling session briefly recorded
+that `b3Agg` does not apply to the production chain because it is stated at the
+triangle's `m₃ = 3` while the chain has two bonds. **That is wrong.** The `3` is
+two different numbers — the cluster's bond count and the pair count `C(3,2) = 3`
+— and the unbonded pair contributes `Φ(0) = 0`, so the chain form is
+`Φ(2g) − 2Φ(g)`. Convexity gives `b₃ ≥ 0` at *every* bond count and the criterion
+is `p > 1` at every `m`; the bond count cancels. Probe:
+`b3_bond_count_and_the_scaling_criterion_probe.py` (7/7).
+
+**4. And the escape the reframing pointed at is measurably absent.** A
+non-multiplicative trace needed `X < −(f−1)²`, i.e. `|Δ| > tr_free·|b₃|`
+(threshold `0.0417` for ³H). Measured on the production word in `H₉`:
+`tr_M(W_atom)` equals `tr_free·∏(z+d_e)` to every printed digit at 60 dps,
+`Δ = −2.67e-62` — **sixty orders of magnitude** below threshold. So `X = 0` and
+`b₃ = −(f−1)² < 0`, derived. Probe:
+`production_word_cross_term_probe.py` (4/4). Scope (a): one word, one `A`,
+convention D, two pins; the mechanism (connected-sum multiplicativity from
+single-letter interfaces) is cited, not re-proved.
+
+**What remains genuinely open here**, and is the reason this bean stays open:
+proving that single-letter interfaces force `Δ = 0` for *every* admissible word,
+which would make the negative scope (b) rather than a measurement on four words.
