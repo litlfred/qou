@@ -17,6 +17,7 @@ and one fork that is the owner's to settle.
 | **R3** | Closing the chain into a triangle does **not** flip `b₃` | (b), Ursell identity | probe 11/11 |
 | **R4** | The **band** reading admits **every** layout — it removes the selector, it does not derive one | measured | probe 11/11 |
 | **R5** | At H₃ the band reading **changes nothing** the confinement SDP selects — all six band vertices are one conjugacy class | (a), one algebra one pin | probe 8/8 |
+| **R6** | **And at H₆ either** — 120 band vertices, 108 of them inter-block, all one class, all selecting `G³` | (a), two algebras one pin | probe 11/11 |
 | **C1** | The corpus refuses the Coxeter framing; `EnumeratorSelectionDegeneracy` says **bands** are the right generating set | correction | corpus-grep |
 | **C2** | My own "single-letter ⟺ interval" claim was **false** (20 counterexamples) | correction | own probe |
 | **C3** | `MonotoneWordTraceFactorizes`'s docstring claim that the production word is monotone is **stale** | correction | `mass_at_3A_proper.py` |
@@ -333,6 +334,72 @@ the preferred answer would be selection against the target.
 **Scope (a)** — one algebra, one pin. It does **not** settle `H₆`, where the interface bond
 lives and where a band could join non-adjacent nucleon blocks. That is where the two readings
 could still part company, and it is the next step of B.
+
+## 5c. R6 — and H₆, the interface, closes the same way
+
+The H₃ result is local to `H₃` and says nothing about the place the
+**inter-nucleon bond** actually lives. `H₆` is where a band can join two strands
+in *different* nucleon blocks — precisely the move the Artin reading cannot make
+— so it is the one place the two readings could still part company.
+[`band_vertex_h6_interface_selector_probe.py`](../../computations/onedim/band_vertex_h6_interface_selector_probe.py), 11/11, 4.2 s.
+
+Under convention D, `y_λ > 0` on exactly the four two-row blocks
+`(6), (5,1), (4,2), (3,3)` (dims 1, 5, 9, 5) — the other **seven are silent**,
+which is also what makes the compute cheap. Of the 15 BKL bands, **nine** cross
+the interface (3 strands × 3 strands) and exactly **one** of those is an Artin
+generator, `a₍₃,₂₎ = σ₂`. So eight of the nine join non-adjacent nucleon strands.
+
+Anchored to `qou-ales` step 6 first: `a₍₃,₂₎a₍₄,₃₎⁻¹ = σ₂σ₃⁻¹` as a matrix on
+every deciding block, deviation exactly `0`.
+
+**Measured over all 120 band γγ vertices** (bands sharing exactly one strand,
+both orderings), **108 of which span both nucleon blocks**:
+
+| | result |
+|---|---|
+| distinct character vectors | **1** — `(1.0, 1.95629379147, −0.131118625598, −1.08741241707)` |
+| distinct reading-3 feasible sets | **1** — `{3, 6, 9}`, for all 120 |
+| minimal non-trivial survivor | **3**, for every one |
+| cheapest inter-block survivor, Artin cost | the Artin `G³` — six letters |
+| cheapest, band cost | all tie at 6 |
+
+**"All 120 agree" is the shape a broken construction makes, so it was attacked
+rather than reported.** The 120 words are genuinely distinct, and on block
+`(4,2)` they give **120 distinct matrices**. Equal characters therefore come
+from conjugacy, not from a construction that collapsed every word to the same
+element.
+
+**So pick B closes as a negative at both algebras.** The band reading enlarges
+the interface candidate set **120-fold** and changes nothing the confinement SDP
+selects.
+
+At `q = 1` the reason is visible: a band is a transposition, and `a·b⁻¹` for
+bands sharing a strand is a 3-cycle `(u v)(v w)` — and all 3-cycles are one
+`S_n` class. That is an **observation about the classical limit, not a proof**;
+whether every band γγ vertex lies in one `B_n` conjugacy class for all `n` is
+not established here, and the measurement covers `n = 3` and `n = 6` only.
+
+**Scope (a)** — two algebras, one pin, one reading. It does not structurally
+exclude the band reading at `A ≥ 3`.
+
+### What the fork actually reduces to
+
+Combining R4 with R5 and R6: under **either** reading the confinement SDP
+selects the *same* word — `β_Bor` inside a nucleon, `G³` at the interface. The
+readings differ **only** on the layout, and they differ in a way that helps
+neither side:
+
+| reading | layout | word selected | 3-cell |
+|---|---|---|---|
+| **Artin** | forced contiguous, **uniquely** | `β_Bor`, `G³` | excluded |
+| **band** | **wholly unconstrained** — every partition admitted | `β_Bor`, `G³` (identical) | permitted, **never selected** |
+
+So a non-contiguous layout is **not derived under either reading**: Artin
+forbids it, and band permits it while selecting nothing. **The 3-cell is
+underivable from the γγ + SDP rule as it currently stands**, and the reason is
+not which generating set you choose — it is that the γγ half constrains the
+layout either completely or not at all, and the SDP half is blind to the layout
+because it acts on the word, whose selected form is the same either way.
 
 ## 6. The fork, stated properly
 

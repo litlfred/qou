@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T19:44:28Z
-updated_at: 2026-09-15T06:37:07Z
+updated_at: 2026-09-15T06:46:10Z
 ---
 
 ## 2026-09-14 — the measurement (probe 15/15, exact combinatorics, read-only)
@@ -292,3 +292,56 @@ formalises the chain/triangle divergence — but neither it nor
 `UniformBondSimpleGraphExclusion.lean` contains the string "aggregator". **The
 two arcs have never been joined**, and joining them is a small, well-posed Lean
 task.
+
+
+## 2026-09-15 — B's H₆ leg closes too; the fork reduces to something smaller
+
+`computations/onedim/band_vertex_h6_interface_selector_probe.py`, 11/11, 4.2 s.
+
+`H₆` is where the inter-nucleon bond lives and where a band can join strands in
+**different** nucleon blocks — the one place the two readings could part
+company. Of 15 BKL bands, **nine** cross the interface (3×3) and exactly one is
+an Artin generator, so eight join non-adjacent nucleon strands. Convention D
+leaves only the four two-row blocks deciding; seven are silent.
+
+Over all **120** band γγ vertices, **108 of them inter-block**:
+
+- **1** distinct character vector `(1.0, 1.95629379147, −0.131118625598, −1.08741241707)`
+- **1** distinct feasible set, `{3, 6, 9}`, for all 120
+- minimal non-trivial survivor **3** for every one
+- Artin cost picks `G³` (six letters); band cost ties all at 6
+
+Anchored first: `a₍₃,₂₎a₍₄,₃₎⁻¹ = σ₂σ₃⁻¹` on every deciding block, deviation 0.
+
+**Attacked rather than reported**: "all 120 agree" is the shape of a broken
+construction. The 120 words are distinct and give **120 distinct matrices** on
+block (4,2), so equal characters are conjugacy, not collapse.
+
+### What the fork reduces to
+
+Under **either** reading the SDP selects the same word — `β_Bor` inside a
+nucleon, `G³` at the interface. They differ only on the layout, and in a way
+that helps neither:
+
+| reading | layout | word | 3-cell |
+|---|---|---|---|
+| Artin | forced contiguous, uniquely | `β_Bor`, `G³` | excluded |
+| band | wholly unconstrained | `β_Bor`, `G³` (identical) | permitted, never selected |
+
+**A non-contiguous layout is not derived under either reading.** Artin forbids
+it; band permits it while selecting nothing. So the 3-cell is underivable from
+γγ + SDP as the rule currently stands — and the reason is not the generating
+set. It is that the γγ half constrains the layout either completely or not at
+all, while the SDP half is blind to the layout, acting on the word whose
+selected form is identical either way.
+
+**Scope (a)** — two algebras (`H₃`, `H₆`), one pin, reading 3. Does not
+structurally exclude the band reading at `A ≥ 3`. At `q = 1` the reason is
+visible (a band is a transposition; `a·b⁻¹` is a 3-cycle; all 3-cycles are one
+`S_n` class) but that is an observation about the classical limit, **not a
+proof** — whether every band γγ vertex lies in one `B_n` class for all `n` is
+open.
+
+**Corrected in this probe, my arithmetic:** the first run asserted "exactly six
+bands cross the interface". It is **nine** (|block 0| × |block 1| = 3×3). The
+check now states the correct count and says where the wrong one came from.
