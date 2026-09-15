@@ -646,4 +646,62 @@ theorem classicalLimit_unconstraining (e : ℝ) (c : ClassicalMobiusEnergy) :
   intro k hk
   linarith
 
+/-! ### Is a UNIVERSAL constant available?  No — measured, not assumed.
+
+`classicalLimit_unconstraining` above shows the field constrains nothing *per
+instance*.  The natural repair is to ask for **one** `k` shared by every
+instance — that would be a real, falsifiable claim about the normalisation
+rather than a per-instance bookkeeping slot.
+
+**It is not available as the structure is written**, and this is a theorem
+rather than a doubt.  `shiftEnergy` takes any instance to another with the
+**same** `classicalEnergy` and the constant moved by an arbitrary `d`: shift
+`energy` and `energyUnderMobius` together, and both `mobiusInvariant` and
+`classicalLimit` survive by `ring`.  Nothing else in the structure — `sp`,
+`basepoint`, `q`, `q_gt_one`, `knot` — relates `energy` to `classicalEnergy`,
+so nothing obstructs the shift.
+
+Consequence: given even ONE instance, `classicalLimitConst` is **surjective
+onto ℝ** at fixed classical energy, so `∃ k, ∀ c, c.classicalLimitConst = k`
+is false.  Making the constant universal is therefore **not a quantifier
+change** — it requires *adding a constraint to the structure* that ties
+`energy` to `classicalEnergy`, which is new mathematics and is exactly what
+the framework does not currently have. -/
+
+/-- From any instance, another with the SAME classical energy and the
+constant shifted by an arbitrary `d`. -/
+def shiftEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) (d : ℝ) :
+    CategoricalMobiusEnergy M :=
+  { cme with
+    energy := cme.energy + d
+    energyUnderMobius := fun g => cme.energyUnderMobius g + d
+    mobiusInvariant := by intro g; rw [cme.mobiusInvariant g]
+    classicalLimitConst := cme.classicalLimitConst + d
+    classicalLimit := by rw [cme.classicalLimit]; ring }
+
+theorem shiftEnergy_classicalEnergy {M : Type*} (cme : CategoricalMobiusEnergy M)
+    (d : ℝ) : (shiftEnergy cme d).classicalEnergy = cme.classicalEnergy := rfl
+
+theorem shiftEnergy_const {M : Type*} (cme : CategoricalMobiusEnergy M) (d : ℝ) :
+    (shiftEnergy cme d).classicalLimitConst = cme.classicalLimitConst + d := rfl
+
+/-- **The constant is surjective onto ℝ** as soon as one instance exists —
+at fixed classical energy. -/
+theorem classicalLimitConst_surjective {M : Type*} (cme : CategoricalMobiusEnergy M)
+    (k : ℝ) : ∃ c : CategoricalMobiusEnergy M,
+      c.classicalEnergy = cme.classicalEnergy ∧ c.classicalLimitConst = k :=
+  ⟨shiftEnergy cme (k - cme.classicalLimitConst), rfl, by
+    rw [shiftEnergy_const]; ring⟩
+
+/-- **No universal constant exists** for the structure as encoded. -/
+theorem no_universal_classicalLimitConst {M : Type*}
+    (cme : CategoricalMobiusEnergy M) :
+    ¬ ∃ k : ℝ, ∀ c : CategoricalMobiusEnergy M, c.classicalLimitConst = k := by
+  rintro ⟨k, hk⟩
+  have h0 := hk cme
+  have h1 := hk (shiftEnergy cme 1)
+  rw [shiftEnergy_const] at h1
+  linarith
+
+
 end QOU
