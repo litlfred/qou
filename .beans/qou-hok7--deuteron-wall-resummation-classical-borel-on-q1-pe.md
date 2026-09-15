@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-14T19:17:35Z
+updated_at: 2026-09-15T08:31:30Z
 ---
 
 
@@ -1875,5 +1875,95 @@ Probe `rev_e_infinity_g1_bottom_edge_cap_probe.py` gains **G1f** (the symmetric 
 **G1g** (the row-count asymmetry); its docstring, summary, witness `description` and `verdict` are
 corrected, and the witness field is renamed `agreement_widest_cap_ONE_SIDED` with a `_note`
 saying it is not a G1 verdict — so the next agent cannot read the one-sided number as one.
+
+**Do not close this bean.**
+
+
+## 🟩 G2 CLOSED AND MERGED; the Xbot coercivity transfers but is 9.6× too loose (2026-09-15, #7349 merged / #7419 open)
+
+**#7349 is merged** — `05eaebd6b2f`, rebase-merge, **11/11 commits replayed** (patch-id verified
+with `verify-merge-replay.py`, not `git diff`, which after a rebase-merge compares a commit to
+itself and can never fail). Verification on the final rebased head: Lean sweep
+`--only QOU.BraidKnot` **528 ok / 0 RED / 0 TIMEOUT / 0 UNVERIFIED**, with all four changed Lean
+files verified by name.
+
+### 🛑 Two sweep runs had to be rejected as gates first, and neither failure was about Lean
+
+- The first crashed at module **282/1710** on `OSError: [Errno 28] No space left on device`
+  **while printing a clean `1 ok, 0 RED` summary line belonging to a different, tiny package.**
+  Taken at face value that reads as a pass.
+- The second ran clean to **1038/1710** and hit my own 57-minute timeout — 0 RED throughout, but
+  672 modules unverified.
+
+The closure was 1710 modules only because rebasing onto 163 commits of `main` marks most of the
+library's sources newer than their oleans. What scoped it honestly: **all three of my changed
+Lean files import only Mathlib — zero QOU imports**, so the hazard the sweep guards against (a
+*QOU* signature moving under a file that calls it, #6751) cannot touch them; the only changed
+file that depends on QOU is the aggregator `QOU.BraidKnot`, and `--only QOU.BraidKnot` covers it,
+its subtree and all three files.
+
+**Container hygiene, worth recording as a recurring cost.** Disk was at **305 M free** — near the
+point where the Bash harness cannot write its own output capture and every command fails. Freed
+**7.4 G**, all regenerable: two stale ~2.5 G `lean-*-sweep` shadow trees from earlier sessions,
+the **1.7 G leaked `/tmp/tmp.*` lake-cache restore tarball** (the exact leak AGENTS.md documents —
+the `trap` in the restore recipe is load-bearing and something bypassed it), and a 697 M
+already-extracted toolchain zip. Passed on to #7318, whose scope makes it the next likely victim.
+
+### The Xbot upper bound — #7419, the gate on the G1 bypass
+
+No enumeration can settle G1 (a capped maximum is a lower bound; a lower bound can only refute).
+The needed object is an **upper** bound on `Xbot`, which also **bypasses** G1 since the join needs
+a certified cut, not a pointwise inequality. So: does #7349's per-row coercivity transfer?
+
+**It was not a formality.** `staircase_beta` is **two environments glued at a wall** — rows
+`i ≤ k` an AP of **gap 2**, rows `i > k` consecutive **gap 1** — and the bottom block straddles
+them (measured: every gap above the wall is 2, every gap below is 1; `b0` reads `…7,5,3,2,1,0…`
+at the junction). Two further terms the top edge lacks entirely:
+
+| term | `ap_value` (top) | `delta_excess` (bottom) |
+|---|---|---|
+| one-body `fi(β) − fi(b0)` | **identically zero** (`β ~ 2k` saturates `F`) | up to `ε(1) = 1.6695` per unit displacement at the wall |
+| `lin = Σ_{i>k}(i−k)u_i` | **no analogue** | `ln(q₀)·10 = 1.0434` over the class |
+
+Against an `Xbot` worth ~2.16, neither is perturbative.
+
+**Result: the bound holds, 0 violations over 17,534 (profile, pe) pairs**, tightest slack 0.4012:
+
+```
+delta_excess(u) <= sum_a u_a Ghat_bot(a) - ln(q0) lin - (ln q0/2) sum u^2
+
+Ghat_bot(a) = eps(b0_a+1)  +  sum_{b0_j < b0_a} delta(b0_a-b0_j)  -  sum_{b0_j > b0_a} delta(b0_j-b0_a)
+```
+
+`Ghat_bot` is a **difference, not a sum** — rows below a displaced row are a gain, rows above a
+loss, and deep in the staircase there are ~`k` rows above. That was the substantive question and
+it comes out fine. `delta(m) = ε(m) − ε(m+1)` is the **discrete** step, i.e. exactly the object
+`SearchCoercivity.sub_le_mul_of_antitone_step` is stated over, so the per-pair step is licensed by
+a sorry-free lemma rather than by a derivative argument. (The *assembly* over the frame is
+empirical, not formalised — say so when citing this.)
+
+**🛑 And it is 9.62× too loose to use.** Uniform cap **20.7758** against an enumerated maximum
+**2.1598**. `B_sharp` was **1.82×** for the top edge and *even that* gave an unenumerable cut of
+90. So the route is **LIVE** and the bound **is not yet a tool**. The looseness has the same shape
+`B_sharp`'s did — a per-row tangent with no cap while a single row's real gain saturates — so the
+concave relaxation that took the top edge 1.82× → 1.04× is the next step, not a new idea.
+
+**A bug of mine, caught before it was quoted.** X4 first summed the per-row caps across **all nine
+`pe` frames** → **171.11**. A block occupies exactly **one** frame, so the uniform bound is the
+**max over `pe`**: **20.78 at `pe = 6`**, an inflation of **3.9×** that would have made the route
+look four times more hopeless than it is. The probe now prints both and labels the cross-frame sum
+wrong in its own output; the witness carries the per-frame breakdown.
+
+### Status
+
+**G1 is UNTOUCHED** — neither closed nor refuted. #7419 measures whether one already-formalised
+tool reaches the bottom edge, which is the gate on the bypass route, not the bypass. The arc's
+headline problem, the upper bound on `M_n`, is untouched as throughout.
+
+**Next:** the concave relaxation on `Ghat_bot`, mirroring #7349 Part 3 — the bottom edge's
+objective should be concave in `u` for the same second-derivative reason, so maximising over real
+`u ≥ 1` is again a relaxation, and the supergradient certificate of
+`SupergradientCertificate.sup_le_of_supergradient` applies verbatim (it is stated for an arbitrary
+`F`, `w`, gradient and box, and knows nothing about the `REV_n` objective).
 
 **Do not close this bean.**
