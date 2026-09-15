@@ -1,6 +1,7 @@
 import QOU.QuantumObservableUniverse.Instanton
 import QOU.QuantumObservableUniverse.CRRealisation
 import QOU.QuantumObservableUniverse.SubstrateParameter
+import QOU.MathlibExt.MonoidalCalcVar
 
 /-!
 # §8  Gauge Theory Structures
@@ -8,6 +9,33 @@ import QOU.QuantumObservableUniverse.SubstrateParameter
 Projective line object, fibre–adjoint involution, categorical connection,
 module action, categorical action functional, variational equations,
 and observations.
+
+## Rank of the Einstein slot — retyped 2026-09-15 (owner-authorised, `qou-h0ou`)
+
+`CategoricalVariationalData.einsteinTensor` and `.stressTensor`, and the
+`CategoricalAction.gravity` term they are summed against, were typed
+`(𝟙_ C) ⟶ (𝟙_ C)` — the **scalars** `End(𝟙_C)`.  Einstein's equation is a
+rank-2 identity, and a scalar cannot state one; the three were tensors in name
+only.
+
+They are now `PairingSpace C fh.obj fh.obj = fh.obj ⊗ fh.obj ⟶ 𝟙_ C`, the field
+space of `QOU.MathlibExt.MonoidalCalcVar`.  **The co-pairing needed to contract
+back to a scalar is not invented for this change** — it is `fh.coevaluation`,
+already a field of `FrobeniusHopfData`, and the field space already has a
+canonical inhabitant, the Frobenius pairing `fh.mul ≫ fh.frobeniusForm`
+(`frobeniusPairing` below).  `A` being self-dual is what makes
+`fh.obj ⊗ fh.obj` the right pair of slots.
+
+`gauge`, `gaugeCurrent` and `matter` are **unchanged** scalars: only the terms
+entering `gravity = einsteinTensor + stressTensor` had to move, since that
+equation's three terms must inhabit one additive group.  This is a typing
+consequence, not a physical claim about which currents "are" tensors.
+
+`variational_einstein_contracted` derives the old scalar Einstein equation from
+the new rank-2 one against `fh.coevaluation`, so nothing previously statable is
+lost; `MonoidalCalcVar.subsingleton_of_contract_reflects` is why the converse
+fails.  No metric, curvature, stress-energy realisation or numerical constant
+is introduced.
 -/
 
 
@@ -16,6 +44,8 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 namespace QOU
 
 universe u v
+
+open QOU.MathlibExt.MonoidalCalcVar (PairingSpace contract)
 
 /-! ## §8  Missing Formalizations -/
 
@@ -95,8 +125,10 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
   connection : CategoricalConnection C fh
   /-- The state morphism `ψ : 𝟙 → A`. -/
   state : (𝟙_ C) ⟶ fh.obj
-  /-- **Gravity term**: `tr(q · R_λ)`. -/
-  gravity : (𝟙_ C) ⟶ (𝟙_ C)
+  /-- **Gravity term**: `tr(q · R_λ)` — **rank-2**, a pairing on `A ⊗ A`.
+      Retyped 2026-09-15: it is summed against the Einstein and stress terms,
+      so it must live where a rank-2 identity can be stated. -/
+  gravity : PairingSpace C fh.obj fh.obj
   /-- **Gauge term**: `λ ∘ tr_A(F_∇ ∧_q ⋆_q F_∇)`. -/
   gauge : (𝟙_ C) ⟶ (𝟙_ C)
   /-- **Matter term**: `λ(ψ* · D_∇ ψ)`. -/
@@ -123,11 +155,14 @@ structure CategoricalVariationalData (C : Type u) [CategoryTheory.Category.{v} C
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) where
-  /-- The Einstein tensor `G_λ = R_λ − ½ tr(R_λ) id`. -/
-  einsteinTensor : (𝟙_ C) ⟶ (𝟙_ C)
-  /-- The stress-energy tensor `T_q = δS_matter / δg`. -/
-  stressTensor : (𝟙_ C) ⟶ (𝟙_ C)
-  /-- The gauge current density `J_ψ`. -/
+  /-- The Einstein tensor `G_λ = R_λ − ½ tr(R_λ) id` — **rank-2**, a pairing
+      on `A ⊗ A`.  Retyped 2026-09-15 (`qou-h0ou`): it was
+      `(𝟙_ C) ⟶ (𝟙_ C)`, a scalar wearing a tensor's name. -/
+  einsteinTensor : PairingSpace C fh.obj fh.obj
+  /-- The stress-energy tensor `T_q = δS_matter / δg` — **rank-2**. -/
+  stressTensor : PairingSpace C fh.obj fh.obj
+  /-- The gauge current density `J_ψ`.  Unchanged: it is not summed against
+      the Einstein term, so nothing forces it to move. -/
   gaugeCurrent : (𝟙_ C) ⟶ (𝟙_ C)
 
 /-! ### Variational equations as a typeclass (Pattern 4)
@@ -223,6 +258,90 @@ theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
   -- goal `ca.matter = 0` does not mention `vd`, so it cannot be inferred
   -- from the expected type (v4.24.0 elaboration).
   HasCategoricalEOM.transport (vd := vd)
+
+/-! ### The rank-2 field space and the bridge back to the scalars
+
+Added 2026-09-15 with the retype (`qou-h0ou`).  Two things keep the retype
+honest.  The field space is inhabited by something the substrate already
+carries, so the new slots are not empty by construction; and the scalar
+equation this file stated before the retype is *recoverable* from the rank-2
+one, so the change is a refactor rather than a replacement.
+
+The converse direction fails —
+`MonoidalCalcVar.subsingleton_of_contract_reflects` shows that a contraction
+which reflected equality uniformly in the co-pairing would force the field
+space to be a subsingleton — so the rank-2 form is strictly stronger.
+`coevaluation_contract_eq_iff` gives the exact residue for the particular
+co-pairing used here. -/
+
+/-- **The Frobenius pairing, as an element of the field space.**  The
+    evaluation `ev = μ ≫ λ` is what the snake identities
+    (`FrobeniusHopfData.pairing_snake_left` / `_right`) pair against
+    `fh.coevaluation` to exhibit `A` as self-dual, and its type is
+    `fh.obj ⊗ fh.obj ⟶ 𝟙_ C` verbatim — a `PairingSpace`.
+
+    So the retyped Einstein and stress slots have an inhabitant supplied by the
+    substrate itself; the rank-2 field space is not a wider type with nothing
+    in it. -/
+def frobeniusPairing {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C) :
+    PairingSpace C fh.obj fh.obj :=
+  fh.mul ≫ fh.frobeniusForm
+
+/-- **Bridge (contracted form).**  Contracting the rank-2 Einstein identity
+    against `fh.coevaluation` — the co-pairing `FrobeniusHopfData` already
+    carries, not one introduced for this purpose — gives an identity in the
+    scalars `End(𝟙_C)`.
+
+    Derived, not assumed: the proof rewrites by `variational_einstein` and then
+    uses additivity of `MonoidalCalcVar.contract`. -/
+theorem variational_einstein_contracted {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (fh : FrobeniusHopfData C)
+    (ca : CategoricalAction C fh)
+    (vd : CategoricalVariationalData C fh ca)
+    [HasCategoricalEOM fh ca vd] :
+    contract fh.coevaluation ca.gravity
+      = contract fh.coevaluation vd.einsteinTensor
+        + contract fh.coevaluation vd.stressTensor := by
+  rw [variational_einstein fh ca vd, map_add]
+
+/-- **Bridge (unfolded form).**  The same statement with the contraction
+    written out, so that what is recovered is visibly the pre-retype Einstein
+    equation: a morphism identity `𝟙_ C ⟶ 𝟙_ C` between the gravity scalar and
+    the sum of the Einstein and stress scalars.
+
+    This is the declaration to cite for "the scalar form was not lost". -/
+theorem variational_einstein_scalar {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (fh : FrobeniusHopfData C)
+    (ca : CategoricalAction C fh)
+    (vd : CategoricalVariationalData C fh ca)
+    [HasCategoricalEOM fh ca vd] :
+    fh.coevaluation ≫ ca.gravity
+      = fh.coevaluation ≫ vd.einsteinTensor
+        + fh.coevaluation ≫ vd.stressTensor := by
+  simpa using variational_einstein_contracted fh ca vd
+
+/-- **What the bridge costs, exactly.**  Two rank-2 fields have the same
+    contraction against `fh.coevaluation` precisely when their difference is
+    killed by it.  So the scalar Einstein equation determines the rank-2 one
+    only modulo that kernel, and `FrobeniusHopfData` carries no hypothesis
+    making the kernel trivial — there is no epi condition on `coevaluation`
+    anywhere in the structure.
+
+    Stated as the residue rather than as a claim about `fh`, because which of
+    the two holds is a property of the particular category and is not asserted
+    here. -/
+theorem coevaluation_contract_eq_iff {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] (fh : FrobeniusHopfData C)
+    (G T : PairingSpace C fh.obj fh.obj) :
+    fh.coevaluation ≫ G = fh.coevaluation ≫ T
+      ↔ fh.coevaluation ≫ (G - T) = 0 := by
+  rw [CategoryTheory.Preadditive.comp_sub, sub_eq_zero]
 
 /-- **Observation** as a categorical endomorphism `O : A → A`.
     LaTeX: `\label{def:observation}` -/
