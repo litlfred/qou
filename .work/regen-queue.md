@@ -996,7 +996,7 @@ is **C** — measured here, relative difference exactly 0. So the probe that
 defines the A/B/C vocabulary can no longer distinguish A from C, and labels C
 as A. Its conclusions about B are unaffected.
 
-## 29. I regressed the mixed-arithmetic gate with §20 and §26, and the suite hid it
+## 29. I regressed the mixed-arithmetic gate with §20 and §26 — and misread the suite that caught it
 
 Both fixes routed a float64 value through `fmt()`, which is exactly what
 `mpf_mixed_arithmetic_audit` flags as `[serialized] fmt(<float64-tainted>)`.
@@ -1009,12 +1009,30 @@ Neither existed before. The §26 one is the subtler: before that change the
 span went into the witness *unserialized*, so the `float("nan")` sentinel at
 `:189` tainted nothing; wrapping it in `fmt` is what made the taint reachable.
 
-**THE SUITE HID IT.** `scripts/precision-gates.sh` reports RED/green per gate,
-not counts, and `mixed mpf/f64 -> serializer` was ALREADY RED at session start.
-So a gate I was adding findings to looked exactly the same as before. I ran the
-full suite after those commits and read "no new gate went red" as "no
-regression" — which is only true for gates that were green. **On an already-red
-gate, only the count is evidence**, and the suite does not print it.
+**RETRACTED — THE SUITE DID NOT HIDE IT. I DID.** This section first said the
+suite reports only RED/green and so concealed the regression. That is false and
+the correction matters more than the original claim.
+
+`scripts/precision-gates.sh` captures each gate's full stdout (line 658) and
+prints it under a per-gate `▸` header (line 632). Its real output for that run
+is **554 lines with 29 per-gate sections**, and the one for this gate reads:
+
+      candidates         : 9
+      marked deliberate  : 10
+      baseline           : 3
+      OVER baseline      : 6
+
+which is the regression, itemised, at the moment I ran it. What happened is
+that I redirected the suite to a file, the command moved to the background,
+and I then read the BACKGROUND TASK's output file — 33 lines, containing only
+what escaped the redirect — and took my verdict from the single-line `RED:`
+summary at its end.
+
+So the real lesson is about the reading, not the tooling: **a summary line is
+not a measurement, and after redirecting output you have to read the file you
+redirected to.** The gate did its job; the suite did its job; the count was on
+screen. `OVER baseline` went 2 -> 6 under my own commits and I reported "no new
+gate went red", which was true, irrelevant, and reassuring.
 
 ### Two different fixes, because they are two different facts
 
