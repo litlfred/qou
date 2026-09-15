@@ -90,6 +90,18 @@ BASELINE = HERE / "q0-drift-baseline.json"
 # the same function that decides what gets stamped `muon` -- so this audit
 # and the stamps it checks now read one source instead of two.
 from qou_substrate.witness import _q0_value_for_anchor as _pin
+# `q_parameter` lives in computations/substrate/ and is reachable only through
+# _path_bridge, which this file did not import -- `qou_substrate` above
+# resolves for an unrelated reason (the editable .pth in the dev image), so the
+# two are not evidence for each other. This is bean qou-ya1e's defect met head
+# on while fixing something else; the bootstrap is that bean's, verified under
+# a bare-container simulation.
+import sys as _sys, pathlib as _pl  # noqa: E402 -- bean qou-ya1e
+for _anc in _pl.Path(__file__).resolve().parents:
+    if (_anc / '_path_bridge.py').exists():
+        _sys.path.insert(0, str(_anc)); break
+import _path_bridge  # noqa: F401,E402 -- adds the substrate path
+from q_parameter import Q_MUON_50_DIGIT_STR   # noqa: E402 -- pin A, 50 digits
 
 
 def _resolved(anchor: str) -> mpf:
@@ -164,7 +176,11 @@ def _q0_from_muon_ratio(ratio: str) -> mpf:
 
 
 HISTORICAL_PINS = {
-    "A": mpf("1.1099785955573347"),          # not derivable — see above
+    # A is IMPORTED, not retyped. "Not derivable" (above) means no published
+    # muon ratio reproduces it; it is still a NAMED CONSTANT, and typing it by
+    # hand gave a 17-digit truncation of a 50-digit value. The reference-
+    # literal ratchet caught that as a NEW finding, correctly.
+    "A": mpf(Q_MUON_50_DIGIT_STR),
     "B": _q0_from_muon_ratio("206.7682830"),  # CODATA 2018
     "C": Q_CANONICAL,                         # CODATA 2022 == live canonical
 }

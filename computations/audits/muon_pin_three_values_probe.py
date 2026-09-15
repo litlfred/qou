@@ -107,6 +107,7 @@ import _path_bridge as _pb  # noqa: E402
 sys.path.insert(0, str(HERE.parents[1] / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder, _q0_value_for_anchor  # noqa: E402
 from qou_substrate.constants import q_muon_at  # noqa: E402
+from q_parameter import Q_MUON_50_DIGIT_STR  # noqa: E402 -- A, at 50 digits
 
 _T0 = time.monotonic()
 
@@ -212,7 +213,13 @@ def _DEFINED_PINS() -> dict:
     """
     vol = 2 * mp.clsin(2, mp.pi / 3)
     q0 = lambda r: 1 / (1 - mp.sqrt(vol / mp.mpf(r)))     # noqa: E731
-    return {"A": mp.mpf("1.1099785955573347"),
+    # A comes from `q_parameter`, NOT retyped here. The docstring above says A
+    # is "not derivable ... so it is a literal", and that conflated two things:
+    # A is not derivable from any published muon RATIO, which is true and is
+    # assertion 5c, but it is perfectly well AVAILABLE as a constant. Typing it
+    # instead gave a 17-digit truncation of a 50-digit value and a NEW finding
+    # on the reference-literal ratchet, which is what caught it.
+    return {"A": mp.mpf(Q_MUON_50_DIGIT_STR),
             "B": q0("206.7682830"),                        # CODATA 2018
             "C": q0("206.7682827")}                        # CODATA 2022
 
