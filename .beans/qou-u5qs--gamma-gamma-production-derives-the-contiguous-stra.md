@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T19:44:28Z
-updated_at: 2026-09-14T20:13:36Z
+updated_at: 2026-09-15T06:37:07Z
 ---
 
 ## 2026-09-14 — the measurement (probe 15/15, exact combinatorics, read-only)
@@ -231,3 +231,64 @@ triangle whenever all three bonds are repulsive
 (`single_letter_interface_forces_bond_product_probe.py` CHECK 6), and both
 derived bond families are repulsive. So the band reading reopens the
 **surface-holonomy** route to the extensive term, not the Mayer route.
+
+
+## 2026-09-15 — pick B's H₃ leg closes as a negative; and three corrections
+
+**B at H₃: the band reading selects exactly what Artin does.**
+`computations/onedim/band_vertex_h3_frobenius_selector_probe.py`, 8/8, 60 dps,
+proton pin, reusing the corpus's Hoefsmit reps and convention-D `y_λ`.
+
+`H₃` has three BKL bands (`σ₀`, `σ₁`, `σ₁σ₀σ₁⁻¹`); every pair shares exactly one
+strand, so **six** band γγ vertices against the **one** Artin admits. All six are
+Frobenius-feasible at exactly `{3, 6, 9}`; minimal non-trivial power **3** for
+every one — the same `β_Bor`. Artin cost: the Artin vertex's cube is strictly
+cheapest (6 vs 12). Band cost: all six tie. Both reported; picking the cost that
+gives the preferred answer would be selection against the target.
+
+**The reason is measured, not asserted.** All six share ONE character vector
+`(1.0, −1.04370620853, 1.0)` — one conjugacy class, and `χ_λ` is a class
+function. `a₍₂,₀₎`'s character agrees with `σ₀`'s on every block below 1e-40.
+Convention D kills the alternating block and `χ₍₃₎ = q^writhe = 1`, so `(2,1)`
+alone decides. **Scope (a)** — one algebra, one pin. `H₆` untouched, and that is
+where the two readings could still part company.
+
+**CORRECTION 1 — `qou-82mc` is retired.** It is `completed` and carries its own
+header *"🛑 TITLE IS NOW MISLEADING 2026-09-13 — convexity is SUFFICIENT but
+STRICTLY UNNECESSARY"*, naming **`qou-2ss0`** (in-progress) as live carrier. My
+2026-09-14 entry cited it as the live escape.
+
+**CORRECTION 2 — "equivalently an aggregator convex through the origin" is WRONG
+FOR A CHAIN, and that was mine.** `b3Agg Φ g := Φ(3g) − 3Φ(g)`
+(`AggregatorConvexityDichotomy.lean:101`), whose own docstring says `3` is the
+**three-body bond count** — the triangle. The production `A=3` word is a
+**two-bond chain**, forced by `StrandLayoutForcesChain`. At chain counts the
+quantity is `Φ(2g) − 3Φ(g)`, and convexity through the origin gives only
+`Φ(2g) ≥ 2Φ(g)`, hence `≥ −Φ(g)`: **no sign at all.** And the route is circular
+anyway — `sign_carries_no_information_beyond_the_secant` makes it an *iff*, so
+exhibiting a convex `Φ` **is the assumption rewritten**.
+
+**The live non-circular route is SCALING.** `b3Agg_of_scales`: `Φ(3g) = c·Φ(g)`
+⟹ `b₃ = (c−3)·Φ(g)`, no curvature hypothesis; hence
+`b3Agg_pos_iff_exponent_gt_one` — `b₃ > 0` ⟺ `p > 1` for a `p`-homogeneous law.
+Derive `p` from a Hecke-side structural property; do not choose `Φ`. The
+production `B = −α·log(…)` sits at `p < 1`.
+
+**CORRECTION 3 — a sibling's report is not a primary source.** The corpus-grep
+that surfaced all this quoted the interleaved cross term's convention-D closed
+form as `−(q⁴+q²+1)/(q²+1)²`. Checked at source: that is `markovDefect_convD`,
+the **defect** `z²−hz−1` = **−0.752702**. `crossTerm_neg_convD` carries the `z·`
+prefix and is **−0.461172** — the figure already recorded here. Verified rather
+than propagated.
+
+**Confirmed and adopted from that grep:** there is **no derived convex aggregator
+anywhere in the corpus**. Every derived assembly is concave (`multiplicative_W`,
+`b₃ = −(f−1)²(f+2) ≤ 0`) or exactly affine (log free energy; bond-functional sum;
+and the γγ-selected assembly, whose non-affineness its own author predicted and
+then measured at `±1.6e-61`, the arithmetic floor).
+
+**New open item:** `b3Agg` is stated at `m₃ = 3`; `UrsellChainMismatch.lean`
+formalises the chain/triangle divergence — but neither it nor
+`UniformBondSimpleGraphExclusion.lean` contains the string "aggregator". **The
+two arcs have never been joined**, and joining them is a small, well-posed Lean
+task.
