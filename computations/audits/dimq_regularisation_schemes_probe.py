@@ -245,6 +245,14 @@ def main() -> int:
           and sum(mults.values()) == 2)
     check("consequence: the S_5-invariant deformation space of Bring's curve is 0 (rigidity)",
           mults["[5] trivial"] == 0)
+    # Lambda^2 of the standard representation: chi(g) = (chi(g)^2 - chi(g^2))/2.
+    chi_alt2 = {ct: Fraction(chi_standard(ct) ** 2 - chi_standard(square_class(ct)), 2) for ct in CYCLE_TYPES}
+    alt_mults = {name: multiplicity(chi_alt2, row) for name, row in CHAR_TABLE.items()}
+    check("Lambda^2 V_4 = [3,1,1] is irreducible: no S_5-invariant symplectic form on the four-space",
+          alt_mults["[3,1,1]"] == 1 and sum(alt_mults.values()) == 1 and alt_mults["[5] trivial"] == 0,
+          "\n".join(f"{name:18s} x {m}" for name, m in alt_mults.items() if m))
+    sym_inv = multiplicity(chi_sym2, CHAR_TABLE["[5] trivial"])
+    check("Sym^2 V_4 carries exactly one invariant (the quadric through the canonical curve)", sym_inv == 1)
     print()
 
     print(f"{CHECKS - len(FAILURES)}/{CHECKS} checks pass")
@@ -268,6 +276,7 @@ def main() -> int:
             "q_at_which_hadamard_equals_minus_six": mp.nstr(q_star, 40),
             "dimq_fundamental_two_q": mp.nstr(q_int(Q0, 2), 40),
             "h1_tangent_bring_s5_decomposition": {k: int(v) for k, v in mults.items()},
+            "alt2_standard_s5_decomposition": {k: int(v) for k, v in alt_mults.items()},
             "checks": CHECKS,
             "failures": FAILURES,
             "scope": "b for 'neither scheme gives -6 at q0'; a elsewhere; no regularisation selected",
