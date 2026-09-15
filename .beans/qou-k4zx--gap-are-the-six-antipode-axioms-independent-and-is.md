@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-15T08:45:13Z
-updated_at: 2026-09-15T08:45:44Z
+updated_at: 2026-09-15T09:15:12Z
 ---
 
 ## Two loose ends from the 2026-09-15 antipode change (`qou-c64q`), both found by red-teaming it
@@ -54,3 +54,61 @@ blanket-patched ones: `Instanton`, `ChannelSeparation`, `LightningPath`,
 
 Both items are recorded in the red-team section of
 `docs/audits/2026-09-15-antipode-anti-automorphism-package.md`.
+
+
+## MEASURED 2026-09-15 — 1 of 6 independent
+
+`computations/probes/frobenius_hopf_axiom_independence_probe.py`. Semantic
+counter-models on `k[G]`: the structure maps involve no `S`, so the six
+conditions are the only thing varying. Monomial candidates, exhaustive
+`|G|^|G|` up to `S_3` (46656); `D_4`'s 40320 bijections only.
+
+**Only `involutive` is proved INDEPENDENT.** Witness on `V_4`: the 3-cycle on
+the three non-identity elements fixing the identity — an automorphism, hence an
+anti-automorphism since `V_4` is abelian, satisfying the other five, but of
+order 3 so `S^2 != id`.
+
+The other five have no counter-model in the searched space. That is a statement
+about the space, so the probe also measures WHY — minimal forcing subsets, on
+two exhaustively-searched groups on opposite sides of commutativity:
+
+    1 anti_mul    <= {2}                    on V_4 and S_3 alike
+    3 unit        <= {1} or {2} or {4} or {6}
+    4 counit      <= {2} or {6}
+    6 form        <= {2} or {4}
+    2 anti_comul  <= {1,4} or {1,5} or {1,6}
+
+Three readings:
+
+1. **`anti_mul` follows from `anti_comul` alone, on both groups.** If that
+   survives categorically the package carries a redundant axiom in its most
+   load-bearing position — `anti_mul` is what excludes `S = id`.
+2. **`unit` is forced by any ONE of four others** — but it is provably NOT
+   redundant in general. Chasing `antipode_anti_mul` through the unit laws gives
+   only `s = (s (x) s) >> beta >> mu` for `s = eta >> S`, an idempotent-like
+   condition. A monomial `S` on a group algebra lands on a group ELEMENT, where
+   idempotent forces the identity; a general algebra has non-invertible
+   idempotents. So on this axiom the family answers the OPPOSITE of the
+   categorical truth, which is the reason not to shrink the structure on this
+   evidence.
+3. **`counit` and `form` force each other both ways, on every group.** The
+   predicted blind spot, checked rather than assumed: on `k[G]` the counit and
+   the Frobenius form are the same map. In the Lean structure they are separate
+   fields tied by NOTHING (`frobeniusForm` appears only in the two snake
+   identities), so deciding them needs a Frobenius object with `lambda != eps`.
+
+Self-validation: `V_4` and `S_3` agree on every row except axiom 2, where `V_4`
+carries three extra forcings (`{3,5}`, `{4,5}`, `{5,6}`) — exactly the abelian
+artifact the two-column design anticipated. A forcing in both columns is the one
+worth citing. `D_4` excluded from the table: bijections-only search would
+manufacture forcings involving `involutive`.
+
+## Still open (do NOT close)
+
+- Does `anti_comul => anti_mul` hold CATEGORICALLY, or is it an artifact of
+  monomial maps on group algebras? This is the live question and it is a
+  formalize-first target, not another search.
+- Are `counit` and `form` independent? Needs a Frobenius object with
+  `lambda != eps`; no such model is in the corpus.
+- The braiding-instance over-application (six blanket-patched consumer files)
+  is untouched by this measurement.
