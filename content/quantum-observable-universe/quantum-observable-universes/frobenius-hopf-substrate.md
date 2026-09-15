@@ -1,7 +1,26 @@
-Let $\mathbf{C}$ be a monoidal category. A **Frobenius--Hopf substrate** is a sextuple $(A, \mu, \eta, \Delta, \varepsilon, S)$ in $\mathbf{C}$ equipped with a Frobenius form $\lambda \colon A \to \mathbf{1}$ satisfying the following axioms:
+Let $\mathbf{C}$ be a braided monoidal category, with braiding $\beta$. A **Frobenius--Hopf substrate** is a sextuple $(A, \mu, \eta, \Delta, \varepsilon, S)$ in $\mathbf{C}$ equipped with a Frobenius form $\lambda \colon A \to \mathbf{1}$ satisfying the following axioms:
 
 1. **Algebra structure:** The morphisms $\mu \colon A \otimes A \to A$ and $\eta \colon \mathbf{1} \to A$ make $A$ an associative unital algebra object in $\mathbf{C}$.
-2. **Coalgebra structure and antipode:** The morphisms $\Delta \colon A \to A \otimes A$ and $\varepsilon \colon A \to \mathbf{1}$ make $A$ a coassociative counital coalgebra object, and the antipode $S \colon A \to A$ satisfies the Hopf condition $\mu \circ (S \otimes \mathrm{id}_A) \circ \Delta = \eta \circ \varepsilon = \mu \circ (\mathrm{id}_A \otimes S) \circ \Delta$. Equivalently, $S$ is the convolution inverse of $\mathrm{id}_A$ in $\mathrm{Hom}(A, A)$; since convolution inverses are unique, $S$ is *determined* by $(\mu, \eta, \Delta, \varepsilon)$ and is not independent data. The counit is multiplicative, $\varepsilon \circ \mu = u \circ (\varepsilon \otimes \varepsilon)$ with $u$ the canonical unit isomorphism.
+2. **Coalgebra structure and antipode:** The morphisms $\Delta \colon A \to A \otimes A$ and $\varepsilon \colon A \to \mathbf{1}$ make $A$ a coassociative counital coalgebra object. The counit is multiplicative, $\varepsilon \circ \mu = u \circ (\varepsilon \otimes \varepsilon)$ with $u$ the canonical unit isomorphism.
+
+   The antipode $S \colon A \to A$ is an *involutive anti-automorphism of the whole structure*:
+
+```tex
+\[
+\begin{aligned}
+  S \circ \mu &= \mu \circ \beta_{A,A} \circ (S \otimes S),
+  &\qquad \Delta \circ S &= (S \otimes S) \circ \beta_{A,A} \circ \Delta, \\
+  S \circ \eta &= \eta,
+  &\qquad \varepsilon \circ S &= \varepsilon, \\
+  S \circ S &= \mathrm{id}_A,
+  &\qquad \lambda \circ S &= \lambda.
+\end{aligned}
+\]
+```
+
+   In elements the first two read $S(ab) = S(b)\,S(a)$ and $\Delta(S x) = \sum S(x_{(2)}) \otimes S(x_{(1)})$. The braiding $\beta$ is what makes "reverses" expressible, which is why $\mathbf{C}$ is taken braided; that is no extra demand, since the substrate is invoked at the level of a [quantum universe](#def:quantum-universe), which is braided monoidal.
+
+   **$S$ is constrained but not determined.** Every classical antipode satisfies these six conditions, and on a non-commutative $A$ they exclude the trivial choice $S = \mathrm{id}_A$. They do not single $S$ out: the only condition that does is the convolution identity $\mu \circ (S \otimes \mathrm{id}) \circ \Delta = \eta \circ \varepsilon$, and that identity forces $A$ to be trivial whenever the scalars form a field, so it cannot be imposed here.
 3. **Frobenius relation:** The Frobenius form $\lambda$ satisfies $\mu \circ \Delta = (\Delta \otimes \mathrm{id}) \circ \alpha \circ (\mathrm{id} \otimes \mu)$, where $\alpha$ is the associator in $\mathbf{C}$.
 4. **Non-degeneracy:** Write $\mathrm{ev} = \lambda \circ \mu \colon A \otimes A \to \mathbf{1}$ for the Frobenius pairing $\langle a, b \rangle_F = \lambda(\mu(a \otimes b))$. There is a morphism $\mathrm{coev} \colon \mathbf{1} \to A \otimes A$ such that both snake identities hold:
 
