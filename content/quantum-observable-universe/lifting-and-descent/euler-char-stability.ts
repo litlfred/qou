@@ -7,7 +7,8 @@ export default proposition({
   lean: { ref: "qou:QOU.Torsion.euler_char_constant",
     validation: "not_checked",
   },
-  uses: ["def:quantum-characteristic-classes", "rem:three-euler-characteristics"],
+  uses: ["def:quantum-characteristic-classes"],
+  foreshadows: ["rem:three-euler-characteristics"],
   proofs: ["prf:euler-char-stability", "prf:euler-char-stability-C"],
   authorNotes: [
     {

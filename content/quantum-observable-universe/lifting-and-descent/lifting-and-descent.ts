@@ -103,8 +103,8 @@ export default chapter({
         "kummer-filtration-obstruction",
         "kummer-tower",
         "kummer-tower-motivic-galois",
-        "hkr-theorem",
         "hochschild-kummer-connection",
+        "hkr-theorem",
         // def:motivic-substrate — substrate of the classical-limit
         // functor; lives here alongside motivic-galois-character +
         // qou-motivic-galois-instance (its consumers). Detangler
