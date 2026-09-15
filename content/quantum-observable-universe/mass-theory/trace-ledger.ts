@@ -5,6 +5,9 @@ export default remark({
   title: "The trace ledger: four traces, one Markov trace, and where the Euler characteristic is not",
   interprets: "prop:markov-trace-frobenius-selection",
   uses: [
+    "def:chern-character",
+    "def:grothendieck-group-of-a-qou",
+    "def:hochschild-homology",
     "prop:markov-trace-frobenius-selection",
     "rem:three-euler-characteristics",
   ],

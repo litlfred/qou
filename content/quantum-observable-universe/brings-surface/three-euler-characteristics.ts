@@ -4,7 +4,7 @@ export default remark({
   label: "rem:three-euler-characteristics",
   title: "The three Euler characteristics, and the trace that is not one",
   interprets: "lem:brings-euler-characteristic",
-  uses: ["lem:brings-euler-characteristic", "rem:hkr-theorem", "conj:wigner-axiom"],
+  uses: ["lem:brings-euler-characteristic", "rem:hkr-theorem", "conj:wigner-axiom", "def:hochschild-homology", "def:chern-character"],
   foreshadows: [
     "def:archimedean-condition",
     "rem:chern-character-and-riemann-roch",
