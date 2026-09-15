@@ -72,5 +72,34 @@ export default definition({
         "argues against a Hopf structure on $A$ borne by a *different* " +
         "comultiplication — that is a separate object the corpus does not have.",
     },
+    {
+      kind: "caveat",
+      date: "2026-09-15",
+      body:
+        "**The antipode axiom of this block excludes counit-unitality.** Sharper " +
+        "than the note above, and with *no* extra hypothesis: axiom 2's Hopf " +
+        "condition together with axiom 3's Frobenius relation forces " +
+        "$\\varepsilon(1) \\cdot x = \\varepsilon(x) \\cdot 1$ for every $x$ — " +
+        "`QOU.FrobeniusHopfData.scalar_id_eq_counit_unit` " +
+        "(`FrobeniusBialgebraCollapse.lean`, sorry-free, no `Classical.choice`). " +
+        "The Frobenius relation makes $\\Delta$ a right $A$-module map, so the " +
+        "convolution $S * \\mathrm{id}$ is left multiplication by the single " +
+        "element $(S * \\mathrm{id})(1)$; the Hopf condition says that same " +
+        "convolution is $\\varepsilon(-) \\cdot 1$. Consequently, if " +
+        "$\\varepsilon(1) = 1$ — the ordinary normalisation of a counit, and " +
+        "Mathlib's `BimonObj.one_counit` — then $A \\cong \\mathbf{1}$ " +
+        "(`isoUnitOfUnital`). The usable form is the contrapositive " +
+        "`counit_not_unital_of_nontrivial`: **a non-trivial substrate has a " +
+        "non-unital counit.** " +
+        "So both of the two unit-side bimonoid axioms are individually excluded " +
+        "for a non-trivial $A$ — $\\Delta(1) = 1 \\otimes 1$ by the note above, " +
+        "$\\varepsilon(1) = 1$ by this one. " +
+        "**Scope:** $\\varepsilon(1) = 1$ is not an axiom of this block, so this " +
+        "is *not* a proof that the stated axioms force $A = \\mathbf{1}$; it is " +
+        "the identity above plus its contrapositive. Whether the framework wants " +
+        "a substrate whose counit is non-unital is an open question for the " +
+        "author, bean `qou-aawz`; nothing here is a reason to revert axiom 2. " +
+        "Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md`.",
+    },
   ],
 });

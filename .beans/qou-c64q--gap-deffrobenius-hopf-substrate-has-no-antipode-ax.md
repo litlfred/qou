@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T18:01:40Z
-updated_at: 2026-09-14T20:00:51Z
+updated_at: 2026-09-15T02:14:07Z
 ---
 
 ## Measured 2026-09-14 (session: duality-sigma-hermitian-derivation)
@@ -181,3 +181,53 @@ The corpus has exactly ONE witness of `FrobeniusHopfData` and it is `A = 1`
 only by the trivial object. The collapse result does NOT show the current axioms
 force `A = 1` — but a definition whose only model is trivial, one axiom away
 from a proof that trivial is the only model, is worth testing. Priority high.
+
+
+## 2026-09-15 — the axiom added on owner decision A excludes counit-unitality
+
+Sorry-free, `lean`-direct exit 0, `#print axioms` = `[propext, Quot.sound]`
+(no `Classical.choice`):
+`QOU.FrobeniusHopfData.scalar_id_eq_counit_unit`, in
+`QOU/QuantumObservableUniverse/FrobeniusBialgebraCollapse.lean`.
+
+With **no hypothesis beyond the structure's own fields**, `antipode_left`
+together with the Frobenius relation forces
+
+    eps(1) . x  =  eps(x) . 1     for every x
+
+i.e. `eps >> eta = (lambda_A)^-1 >> ((eta >> eps) |> A) >> (lambda_A).hom`.
+
+Mechanism, two steps: the Frobenius relation makes `Delta` a right `A`-module
+map, so the convolution `S * id` is left multiplication by the single element
+`(S * id)(1)` (`convolution_eq_left_mul`, which uses NO antipode axiom and is
+true whatever `S` is); `antipode_left` then says that same convolution is
+`eps(-) . 1`; evaluating at `1` identifies the element as `eps(1) . 1`.
+
+Consequences, all sorry-free:
+- `counit_comp_unit_of_unital` -- if `eps(1) = 1` then `eps >> eta = id_A`
+- `isoUnitOfUnital`            -- and then `A = 1_C`
+- `counit_not_unital_of_nontrivial` -- contrapositive: a NON-TRIVIAL substrate
+  has a NON-UNITAL counit
+
+So both unit-side bimonoid axioms are individually excluded for a non-trivial
+`A`: `one_comul` (`Delta(1) = 1 (x) 1`) by the earlier result, `one_counit`
+(`eps(1) = 1`) by this one. The second is the sharper statement because
+`eps(1) = 1` is a NORMALISATION, assumed without comment of every bialgebra
+and Hopf algebra, not a structural compatibility.
+
+### Scope -- load-bearing, do not overstate this
+
+`eps(1) = 1` is NOT a field of `FrobeniusHopfData` and nothing here supplies
+it. This is therefore NOT a proof that the stated axioms are inconsistent, nor
+that `A = 1_C`. What is proved is the identity above and its contrapositive.
+
+### What it means for decision A
+
+Decision A (add the Hopf antipode condition) is not neutral with respect to the
+rest of the definition: it is what excludes counit-unitality. Before it, `S`
+was free data and nothing of the kind followed. Whether the framework wants a
+substrate whose counit is non-unital is an owner question -- bean `qou-aawz`,
+which stays open. Nothing here is a reason to revert the axiom.
+
+Audit: `docs/audits/2026-09-14-frobenius-bialgebra-collapse.md` (leading
+section). PR #7405.
