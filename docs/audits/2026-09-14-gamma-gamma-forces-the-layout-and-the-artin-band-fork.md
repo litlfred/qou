@@ -16,12 +16,18 @@ and one fork that is the owner's to settle.
 | **R2** | Connected-sum multiplicativity does **not** force it — the wrap-around cycle survives | measured | probe 11/11 |
 | **R3** | Closing the chain into a triangle does **not** flip `b₃` | (b), Ursell identity | probe 11/11 |
 | **R4** | The **band** reading admits **every** layout — it removes the selector, it does not derive one | measured | probe 11/11 |
-| **R5** | At H₃ the band reading **changes nothing** the confinement SDP selects — all six band vertices are one conjugacy class | (a), one algebra one pin | probe 8/8 |
+| **R5** | At H₃ the band reading **changes nothing** the confinement SDP selects — six vertices, one conjugacy class | (a), one algebra one pin | probe 8/8 |
+| **R6** | **And at H₆ either** — 120 band vertices, 108 inter-block, one class, all selecting `G³` | (a), two algebras one pin | probe 11/11 |
+| **R7** | The chain-vs-triangle **bond count does not change** the `b₃` sign criterion | measured | probe 7/7 |
 | **R8** | **Item 3 closed.** The periodic band **is** the TL chain's band; the periodic *spectrum* is not, and at `q₀` the open chain cannot resolve the string at any reachable `N` | (a) | probe 24/24 |
-| **R6** | **And at H₆ either** — 120 band vertices, 108 of them inter-block, all one class, all selecting `G³` | (a), two algebras one pin | probe 11/11 |
+| **R9** | `qou-2ss0`'s scaling route, on the assemblies the corpus **derives**, is the attractive-bond question in other coordinates | measured | probe 8/8 |
 | **C1** | The corpus refuses the Coxeter framing; `EnumeratorSelectionDegeneracy` says **bands** are the right generating set | correction | corpus-grep |
-| **C2** | My own "single-letter ⟺ interval" claim was **false** (20 counterexamples) | correction | own probe |
+| **C2** | My "single-letter ⟺ interval" claim was **false** (20 counterexamples) | correction | own probe |
 | **C3** | `MonotoneWordTraceFactorizes`'s docstring claim that the production word is monotone is **stale** | correction | `mass_at_3A_proper.py` |
+| **C4** | `qou-82mc` is **retired** (live carrier `qou-2ss0`); the convexity route is circular by `sign_carries_no_information_beyond_the_secant` | correction | corpus-grep, verified at source |
+| **C5** | A corpus-grep quoted the cross term's D-form as the **defect** `−0.752702`; the cross term is `−0.461172` | correction | source |
+| **C6** | **A correction to C4, and mine**: "convexity does not apply to the chain" was wrong — R7 | correction | own probe |
+| **C7** | The H₆ probe's first run asserted "six bands cross the interface"; it is **nine** | correction | own probe's own check |
 
 ---
 
@@ -525,14 +531,32 @@ almost entirely unexplored.
    `NoThreeCellOnTheChain` in Lean rather than in prose.
 3. **Formalise `vertexStrands`** as a theorem about `GammaGammaWordSelection.vertex` — give
    `Word` a strand-support function and prove `support (vertex i) = vertexStrands i`.
-4. **The aggregator route** — reframed, see the correction in §4. `qou-82mc` is retired;
-   the live carrier is **`qou-2ss0`**. Measured this session: there is **no derived convex
-   aggregator anywhere in the corpus** — every derived assembly is concave (`multiplicative_W`,
-   `b₃ = −(f−1)²(f+2) ≤ 0`) or exactly affine (the log free energy, the bond-functional sum,
-   and the γγ-selected assembly, whose non-affineness its own author predicted and then
-   measured as `±1.6e-61`, the arithmetic floor). The live task is the **scaling** question:
-   derive the assembly law's homogeneity degree `p` from a Hecke-side structural property and
-   read the sign off `p > 1`, rather than choosing a `Φ`.
+4. **The aggregator route** — reframed twice, and now **measured** (R9). `qou-82mc` is
+   retired; live carrier `qou-2ss0`. There is **no derived convex aggregator anywhere in the
+   corpus** — every derived assembly is concave (`multiplicative_W`, `b₃ = −(f−1)²(f+2) ≤ 0`)
+   or exactly affine (log free energy, bond-functional sum, and the γγ-selected assembly,
+   whose non-affineness its own author predicted and then measured at `±1.6e-61`, the
+   arithmetic floor).
+
+   **The scaling reformulation is not a new escape either.** `b3Agg_of_scales` gives
+   `b₃ > 0` ⟺ **`c > 3`** where `Φ(3g) = c·Φ(g)`, with no convexity or homogeneity
+   hypothesis; `p > 1` is the *special case* `c = 3ᵖ` and applies only to a `p`-homogeneous
+   `Φ` — **the wrong framing for the multiplicative assembly, which is exponential in bond
+   count rather than a power.** On the two derived assemblies: `Φ(m) = 1 − fᵐ` gives
+   `c = 1 + f + f²`, so `c > 3` factors as `(f+2)(f−1) > 0` ⟺ **`f > 1`**, an attractive
+   bond — the escape `qou-q8vl` already closes for every derived bond family; the log free
+   energy gives `c = 3` exactly, `b₃ = 0`, the boundary. Cross-checked by recovering
+   `b3_le_of_nonneg`'s `−(f−1)²(f+2)` from the `c`-form.
+
+   **So a new escape needs a different `Φ` — a non-multiplicative trace.** With a cross term
+   `X` on the two-bond chain, `b₃ = −(f−1)² − X`, hence `b₃ > 0` ⟺ `X < −(f−1)²` — **the
+   same target derived independently from the Ursell side in §4.** Two routes, one target.
+
+   🛑 **Not settled, deliberately:** whether the corpus's one exact cross term
+   (`−0.4611715803`, proton pin) is large enough. It is a difference of **traces**; `Z` is a
+   **ratio**. No conversion is attempted, and the comparison must not be made until one is.
+   What *is* settled: it lives on adjacent generators in `H₄` while the chain's interface
+   generators sit at `3k+2`, three apart and far-commuting.
 5. ~~**The chain-vs-triangle bond-count mismatch.**~~ **Closed 2026-09-15, and it was never
    open** — see the withdrawal in §4. The bond count does not change the sign criterion, so
    joining `UrsellChainMismatch` to the aggregator arc is not needed *for this purpose*.
