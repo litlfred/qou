@@ -75,7 +75,7 @@ namespace QOU.FrobeniusHopfData
 
 universe u v
 
-variable {C : Type u} [Category.{v} C] [MonoidalCategory C]
+variable {C : Type u} [Category.{v} C] [MonoidalCategory C] [BraidedCategory C]
 variable (F : QOU.FrobeniusHopfData C)
 
 /-! ### The identity factors through the scalar `ε(1)` -/
@@ -99,18 +99,19 @@ theorem frobeniusLoop_counit_unit :
     Read in elements: `x = ε(1) · (μ ∘ Δ)(x)`. So the whole identity morphism
     is `ε(1)` times something, which is what makes both branches of the
     dichotomy below work. -/
-theorem id_factors_through_unitCounit :
+theorem id_factors_through_unitCounit (hconv : F.ConvolutionLeft) :
     𝟙 F.obj = F.comul ≫ (F.obj ◁ ((λ_ F.obj).inv
         ≫ ((F.unit ≫ F.counit) ▷ F.obj) ≫ (λ_ F.obj).hom)) ≫ F.mul := by
   conv_lhs => rw [← frobeniusLoop_counit_unit F]
-  rw [F.scalar_id_eq_counit_unit]
+  rw [F.scalar_id_eq_counit_unit_of_convolutionLeft hconv]
 
 /-! ### Branch one: `ε(1)` invertible -/
 
 /-- If the scalar `σ = η ≫ ε` is invertible, so is `ε ≫ η`. -/
-theorem isIso_counit_comp_unit (h : IsIso (F.unit ≫ F.counit)) :
+theorem isIso_counit_comp_unit (hconv : F.ConvolutionLeft)
+    (h : IsIso (F.unit ≫ F.counit)) :
     IsIso (F.counit ≫ F.unit) := by
-  rw [F.scalar_id_eq_counit_unit]
+  rw [F.scalar_id_eq_counit_unit_of_convolutionLeft hconv]
   haveI : IsIso ((F.unit ≫ F.counit) ▷ F.obj) :=
     ⟨⟨inv (F.unit ≫ F.counit) ▷ F.obj, by
         rw [← MonoidalCategory.comp_whiskerRight, IsIso.hom_inv_id,
@@ -125,9 +126,10 @@ theorem isIso_counit_comp_unit (h : IsIso (F.unit ≫ F.counit)) :
 
     In `ModuleCat k` the unit is `k`, whose only retracts are `0` and `k`, so
     this says `A` is at most one-dimensional. -/
-theorem retract_of_unit_of_isIso (h : IsIso (F.unit ≫ F.counit)) :
+theorem retract_of_unit_of_isIso (hconv : F.ConvolutionLeft)
+    (h : IsIso (F.unit ≫ F.counit)) :
     ∃ (i : F.obj ⟶ 𝟙_ C) (r : (𝟙_ C : C) ⟶ F.obj), i ≫ r = 𝟙 F.obj := by
-  haveI := F.isIso_counit_comp_unit h
+  haveI := F.isIso_counit_comp_unit hconv h
   exact ⟨F.counit, F.unit ≫ inv (F.counit ≫ F.unit), by
     rw [← Category.assoc, IsIso.hom_inv_id]⟩
 
@@ -140,8 +142,8 @@ theorem retract_of_unit_of_isIso (h : IsIso (F.unit ≫ F.counit)) :
     linearity, no field, no antipode beyond what
     `scalar_id_eq_counit_unit` already spent. -/
 theorem id_eq_zero_of_unitCounit_eq_zero [Preadditive C] [MonoidalPreadditive C]
-    (h : F.unit ≫ F.counit = 0) : 𝟙 F.obj = 0 := by
-  rw [id_factors_through_unitCounit F, h]
+    (hconv : F.ConvolutionLeft) (h : F.unit ≫ F.counit = 0) : 𝟙 F.obj = 0 := by
+  rw [id_factors_through_unitCounit F hconv, h]
   simp
 
 /-! ### The dichotomy -/
@@ -160,11 +162,12 @@ theorem id_eq_zero_of_unitCounit_eq_zero [Preadditive C] [MonoidalPreadditive C]
     **This is the negative answer to bean `qou-aawz`** in the linear setting. It
     is silent about a bare monoidal category, where `σ = 0` is not statable. -/
 theorem dichotomy_of_scalars_field [Preadditive C] [MonoidalPreadditive C]
+    (hconv : F.ConvolutionLeft)
     (hscal : ∀ σ : (𝟙_ C : C) ⟶ 𝟙_ C, σ = 0 ∨ IsIso σ) :
     𝟙 F.obj = 0
       ∨ ∃ (i : F.obj ⟶ 𝟙_ C) (r : (𝟙_ C : C) ⟶ F.obj), i ≫ r = 𝟙 F.obj := by
   rcases hscal (F.unit ≫ F.counit) with h | h
-  · exact Or.inl (F.id_eq_zero_of_unitCounit_eq_zero h)
-  · exact Or.inr (F.retract_of_unit_of_isIso h)
+  · exact Or.inl (F.id_eq_zero_of_unitCounit_eq_zero hconv h)
+  · exact Or.inr (F.retract_of_unit_of_isIso hconv h)
 
 end QOU.FrobeniusHopfData
