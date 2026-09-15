@@ -61,7 +61,7 @@ universe u v
     LaTeX: new definition supporting `\label{def:graded-frobenius-hopf}` -/
 -- Ref: [mathas1999]
 structure GradedFrobeniusHopf (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] extends FrobeniusHopfData C where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] extends FrobeniusHopfData C where
   /-- The degree-0 (symmetric) component of `A`.
       Isomorphic to `Hom(𝟙, A)` — the space of invariant elements. -/
   symComponent : C
@@ -88,7 +88,7 @@ structure GradedFrobeniusHopf (C : Type u) [CategoryTheory.Category.{v} C]
 -- Ref: [mathas1999]
 structure SymDim1
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (gfh : GradedFrobeniusHopf C) where
   /-- The symmetric component is categorically 1-dimensional. -/
   symDim : ℕ := 1

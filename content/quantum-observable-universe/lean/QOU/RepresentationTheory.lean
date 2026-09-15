@@ -159,7 +159,7 @@ def CategoricalHadron.totalTensorPower {C : Type u}
 
     LaTeX: `\label{rem:adjoint-trace}` -/
 structure AdjointTrace (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The Frobenius–Hopf data providing the trace infrastructure. -/
   frobHopf : FrobeniusHopfData C
   /-- The fundamental object `V` on which endomorphisms are traced. -/

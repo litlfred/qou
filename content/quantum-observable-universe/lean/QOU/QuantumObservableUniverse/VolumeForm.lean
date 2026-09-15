@@ -78,7 +78,7 @@ structure SU2Emergence (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **q-Hodge star** involution on differential forms.
     LaTeX: `\label{def:q-hodge-star}` -/
 structure QHodgeStar (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The degree `k` of the forms. -/
   degree : ℕ
