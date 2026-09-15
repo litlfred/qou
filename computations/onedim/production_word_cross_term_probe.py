@@ -61,7 +61,18 @@ so "some other admissible word" is a narrower set than it sounds.
 
 Identical to every printed digit at 60 dps; the residual is the diagonalisation
 floor, **60 orders of magnitude** below the threshold a cross term would have to
-clear. Both pins agree (muon: Delta = 1.70e-62).
+clear.
+
+EXTENDED 2026-09-15 to three nuclei x two pins -- SIX measurements across TWO
+algebras, with one and with two interfaces, every one at the floor:
+
+    nucleus   A   algebra  bonds   rel deviation (proton / muon)
+    2H        2   H_6        1     2.56e-61 / 5.12e-61
+    3H        3   H_9        2     9.17e-61 / 5.84e-61
+    3He       3   H_9        2     7.47e-61 / 4.98e-61
+
+4He (A = 4, H_12, blocks to dim 132) does NOT complete in 28 minutes at 60 dps
+and is omitted rather than reported as unreached -- measured, not assumed.
 
 So the bond product `Z_S = prod_e f_e` is not an ansatz for this word -- it is
 EXACT, verified here independently in H_9 against a prediction assembled from
@@ -122,6 +133,55 @@ def trace(M, dim):
     return mp.fsum(M[i, i] for i in range(dim))
 
 
+
+def two_row_parts(n):
+    """Partitions of n with at most two rows -- convention D's support."""
+    return [(n - k, k) if k else (n,) for k in range(0, n // 2 + 1)]
+
+
+def markov_trace(word, n, q, h, cache=None):
+    """tr_M over convention-D's two-row support at level n."""
+    cache = cache or BlockCacheMP(q, h)
+    yv = y_lambda_su_n(n, q, 2)
+    tot = mp.mpf(0)
+    for lam in two_row_parts(n):
+        if lam not in yv or yv[lam] <= TOL:
+            continue
+        sig, dim, _ = seminormal_matrices_mp(lam, cache=cache)
+        tot += yv[lam] * trace(word_image(sig, dim, word), dim)
+    return tot
+
+
+def run_case(q, h, z, label, nuc, Z, N, nstr, check, t0):
+    """Is tr_M(W_atom) == tr_free * prod(z + d_e) for this nucleus?"""
+    word = m3a.atom_braid_word_3A(Z, N, q=q)
+    A = Z + N
+    iface_gens = {3 * k + 2 for k in range(A - 1)}
+    bonds = [d for (c, d, g) in word if g in iface_gens]
+
+    tr_atom = markov_trace(word, nstr, q, h)
+
+    c3 = BlockCacheMP(q, h)
+    trp = markov_trace(m3a.atom_braid_word_3A(1, 0, include_inter=False, q=q), 3, q, h, c3)
+    trn = markov_trace(m3a.atom_braid_word_3A(0, 1, include_inter=False, q=q), 3, q, h, c3)
+    tr_free = trp ** Z * trn ** N
+    bond_prod = mp.mpf(1)
+    for d in bonds:
+        bond_prod *= (z + d)
+    pred = tr_free * bond_prod
+    delta = tr_atom - pred
+    rel = abs(delta) / abs(pred) if pred != 0 else mp.inf
+    thr = abs(tr_free) * mp.mpf("0.19")      # conservative: smallest |b3| in play
+
+    print(f"    {nuc:<5} A={A} H_{nstr:<3} bonds={len(bonds)}  "
+          f"tr_atom={mp.nstr(tr_atom, 14):>18}  pred={mp.nstr(pred, 14):>18}")
+    print(f"          Delta={mp.nstr(delta, 8):>14}  rel={mp.nstr(rel, 6):>12}  "
+          f"threshold~{mp.nstr(thr, 8)}   [t+{time.time()-t0:5.1f}s]")
+    check(f"[{label}] {nuc}: Delta is at the arithmetic floor, not physical",
+          rel < mp.mpf("1e-45"),
+          f"rel = {mp.nstr(rel, 6)} -- bond product EXACT for this word")
+
+
 def main():
     checks, failures = 0, []
 
@@ -137,11 +197,18 @@ def main():
     print("Does the PRODUCTION A=3 word carry a Markov cross term?")
     print("=" * 78)
 
+    # 4He (H_12, blocks to dim 132) does not complete in 28 min at 60 dps and is
+    # OMITTED rather than reported as unreached -- measured, not assumed.
+    CASES = [("2H", 1, 1, 6), ("3H", 1, 2, 9), ("3He", 2, 1, 9)]
     for label, qs in (("proton pin", Q_50_DIGIT_STR), ("muon pin", Q_MUON)):
         q = mp.mpf(qs)
         h = q - 1 / q
         z = q ** 3 / (q ** 2 + 1)          # convention D
         print(f"\n########## {label}   q = {mp.nstr(q, 20)}   z_D = {mp.nstr(z, 14)}")
+
+        for nuc, Z, N, nstr in CASES:
+            run_case(q, h, z, label, nuc, Z, N, nstr, check, t0)
+        continue
 
         # ---- the word, from the corpus's own producer
         word = m3a.atom_braid_word_3A(1, 2, q=q)      # 3H
