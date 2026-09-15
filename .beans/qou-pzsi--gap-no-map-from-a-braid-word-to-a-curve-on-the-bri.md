@@ -3,8 +3,9 @@
 title: 'GAP: no map from a braid word to a curve on the Bring surface — the embedding-energy selection rule cannot be built without it'
 status: todo
 type: task
+priority: normal
 created_at: 2026-09-14T16:50:05Z
-updated_at: 2026-09-14T16:50:05Z
+updated_at: 2026-09-15T20:03:17Z
 ---
 
 
@@ -92,6 +93,70 @@ surface is supposed to supply, and whether `E_cat`'s classical limit is sound
 after the recorded vacuity incident. Until then the gluon dressing stays
 unselected and the `qou-99qc` dashboard rows stay un-re-scored.
 
+## 2026-09-14 (session gifted-feynman) — the caveat checked: both its reasons are wrong, and its conclusion is right for a better one
+
+This bean's "Next honest step" names two things to establish before building.
+The second — *whether `E_cat`'s classical limit is sound after the recorded
+vacuity incident* — is settled here. **Both stated grounds for doubt are wrong,
+and a third, worse one is proved.**
+
+**1. "`QOU/MobiusEnergy.lean` carries 2 sorries" — FALSE. It carries ZERO.**
+Measured on the merged head: `grep -cE '(^|[[:space:]])sorry([[:space:]]|$)'`
+returns **0**, and the file is `lean`-direct **exit 0**
+(`-DautoImplicit=false -s 65536`), so that is an elaborated fact, not a parse
+artifact. The three `sorry` strings in the file are all prose — two inside the
+docstring *describing* the incident, one in a §-heading.
+
+**2. The vacuity incident is FIXED, and has been since 2026-08-30.** The field
+now reads `unknot_iff : value = 4 ↔ isUnknot`, which is the Freedman–He–Wang
+statement. The broken spelling was `value = 4 ↔ True`; `P ↔ True` is `P`, so it
+forced `value = 4` for *every* instance and, through `classicalLimit`, made
+`E_cat = 1 + const` for every knot. The file's own docstring records the repair.
+So the bean's caveat is **stale**, not merely imprecise.
+
+**3. 🛑 But there is a SECOND defect in the very same field, it is live, and it
+is worse.** `CategoricalMobiusEnergy.classicalLimit` reads
+
+    energy = (1/4) * classicalEnergy.value + classicalLimitConst
+
+and `classicalLimitConst` is a **free field of the same structure**, occurring
+once and linearly. So the field **constrains the pair `(energy,
+classicalEnergy)` not at all**: for any `e` and any `c` whatever, exactly one
+constant satisfies it. Proved, sorry-free, appended to the file itself:
+
+| declaration | statement |
+|---|---|
+| `QOU.classicalLimitConst_eq` | `classicalLimitConst = energy − ¼·classicalEnergy.value` — determined by the other two fields |
+| `QOU.classicalLimit_unconstraining` | `∃! k, e = ¼·c.value + k` for **every** `e` and **every** `c` |
+
+`#print axioms` on both: `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
+
+**Why it matters, in the framework's terms.** The mathematical statement the
+docstring quotes — `lim_{q→1} E_cat(γ) = ¼ E(γ) + const` — means a **universal**
+constant, the same for every knot. That is what carries the content. Encoded
+**per instance**, the content is gone: the categorical energy and the classical
+energy are related by nothing.
+
+**It is the same class as the incident the file already records** — *"no
+`sorry`, no `axiom` and no tautological conclusion, so no vacuity detector saw
+it"* — one field over, and it **survived that repair**. The 2026-08-30 fix
+corrected `unknot_iff` and did not look at the field consuming it.
+
+**Not repaired, deliberately.** Making the constant universal changes what the
+structure asserts; that is an authoring decision for the owner, not an agent's
+fix, and §ASK THE OWNER applies. Recorded in the file and here.
+
+**Corpus-grep before claiming:** `classicalLimitConst` appears **nowhere else**
+in the corpus — not in any bean, audit, probe or other `.lean`. Not previously
+recorded.
+
+**So this bean's conclusion stands and its reasons should be replaced.** The
+categorical↔classical leg still cannot bear weight — not because of sorries
+(there are none) or the old blindness (fixed), but because the bridge field is
+unconstraining as encoded. Open item (1) — *which of minimiser-or-canonical-
+embedding the Bring surface is meant to supply* — is untouched and remains the
+live research question.
+
 ---
 
 ## CORRECTION (2026-09-14) — the headline claim of this bean is WRONG
@@ -158,3 +223,114 @@ the two drifts differ by exactly 4×.
 The `qou-99qc` dashboard rows stay un-re-scored and the gluon dressing stays
 unselected: this bridge does not select, and nothing here proposes that it
 should.
+
+## 2026-09-14 (session gifted-feynman, 2) — THE FORK COLLAPSES: the answer is NEITHER
+
+This bean asks which of (1) the FHW minimiser or (2) a canonical Bring embedding
+supplies "the energy of a braid word", and calls it the research content.
+**Measured, and neither branch survives.** Probe
+`computations/qbeta/qbeta_candidate_closures_are_links_probe.py` (5/5).
+
+### Route (1) cannot be cited: the candidates are LINKS, not knots
+
+The closure of a braid word has one component per cycle of its underlying
+permutation. Computed exactly in `S₃` (integer arithmetic; **no floats anywhere
+in the probe**, inputs, intermediates or witness):
+
+| candidate | letters | permutation | components |
+|---|---|---|---|
+| `nuc9` | 9 | `(0,2,1)` | **2** |
+| **`nuc11_interleaved`** — LIVE SCORED | 11 | `(0,2,1)` | **2** |
+| `nuc11_gen_grouped` | 11 | `(1,0,2)` | **2** |
+| `…σ₁σ₀` | 11 | `(1,0,2)` | **2** |
+| `…σ₀σ₁` | 11 | `(2,1,0)` | **2** |
+| `…σ₁σ₁` | 11 | `(0,2,1)` | **2** |
+| `…σ₀σ₀` | 11 | `(0,2,1)` | **2** |
+
+**Not one is a knot.** FHW Theorem B, as held
+(`library/arxiv-math-9301212v1/sections/sec-000-2-…md:12-14`), reads verbatim:
+
+> Theorem B. If K is a smooth prime (not a connected sum) **knot**, then there
+> exists a simple closed rectifiable γ_K of knot type K with E(γ_K) ≤ E(γ) for
+> all rectifiable loops γ which are topologically ambient isotopic to K.
+
+and the document quantifies throughout over **a single** curve `γ : S¹ → R³`
+(`sec-front-matter.md:25-26`). A 2-component link satisfies neither hypothesis.
+**Scope-(b); the invariant is the component count.**
+
+**The corpus agrees from the other side.** `def:hadron`
+(`content/…/knots-particles-confinement/hadron.md:3`) defines a hadron as
+`K_1,…,K_n` **prime knot types** ⊕ `𝓛` a **link** — a composite of primes *and*
+a link, i.e. both things Theorem B excludes, at once.
+
+### 🛑 What is NOT claimed, and the distinction is load-bearing
+
+This does **not** show no minimiser exists for these links. That is the
+**Kusner–Sullivan CONJECTURE**, and the held text says so in terms
+(`library/arxiv-1905.06064v1/sections/sec-000-1-introduction.md:85-86`):
+*"Kusner and Sullivan **conjectured** that there are no minimizers in composite
+knot classes, **supporting their intuition with numerical experiments** [33]."*
+`[KS97]` is **not held**; FHW 1994 itself is **not held** (only the 1993 BAMS
+announcement); and the held literature does not treat **links** at all. So:
+Theorem B **does not apply** (proved), whether a minimiser exists anyway is
+**open** — do not upgrade it.
+
+### Route (2) is asserted nowhere
+
+A canonical embedding of a braid word into/onto the **Bring** surface is not
+proved, not conjectured, and not named as an object. Three homonyms are not it:
+`prop:cohomological-embedding` is a genus/spectral admissibility **filter** for
+**torus knots** and supplies no curve (and the corpus already flags the naive
+geometric reading as **WRONG AS STATED**,
+`docs/audits/2026-08-01-tau-knot-discussion-review.md:33`); *canonical
+embedding* in the Bring audits means the algebro-geometric map of the genus-4
+curve; and `qbeta_cusp_lattice_geodesic_probe` lands on the **genus-1 cusp
+torus**, not Bring — its own bridge probe says *"the genus-4 Bring curve itself
+is not used here"* — and is proved order-blind.
+
+### So the question to ask is a different one
+
+Not *which* of the two, but **whether the selection object should be a curve in
+R³ at all**, given that every scored element is a 2-component link, that
+`def:hadron` says so independently, and that the owner-ruled selection rule
+(γγ + confinement SDP, `qou-ales`) already rejects `nuc11_interleaved` on the
+`(2,1)` block. **That is an owner decision and is not taken here.** Nothing
+selected, nothing re-scored.
+
+### Two stale claims found in passing
+
+`qou-6xt9`'s "WHAT IS ACTUALLY MISSING" lists (a) O'Hara 1991 not greppable and
+(b) its DOI unverified. **Both are closed**: the paper is ingested at
+`library/1-s20-0040938391900102-main/`, and `content/schema/references.ts:5602`
+records the DOI verified 2026-09-13 against that full text. That bean wants an
+update; not edited here, since it is another arc's.
+
+## Option 4 enacted 2026-09-15 — the Möbius block is scoped in its own prose
+
+The owner picked options 4 / 2 / 3 on `CategoricalMobiusEnergy.classicalLimit`
+and asked for the formalize-first comparison first. The comparison established
+that **option 2 (make the constant universal) is not available as the structure
+is encoded** — `no_universal_classicalLimitConst` is now a sorry-free theorem,
+so 2 is a request for new structure, not a value to supply. Option 4 is enacted;
+option 3 (retire the field) is NOT, because retiring it would delete the affine
+shape that is the block's actual content.
+
+Enacted:
+
+- `climax-volume-mass/mobius-energy.md` — a paragraph after the classical-limit
+  display saying the additive constant is not determined by the construction,
+  that every real value is realised by an additive shift preserving both Möbius
+  invariance and the relation, and that a topological reading needs further
+  structure fixing the additive zero of `E_cat`.
+- `climax-volume-mass/mobius-energy.ts` — an `authorNotes` entry naming the
+  three declarations and their axiom set.
+
+Verification: render-QA grep battery clean (`$$` 6, inline `$` 52, braces 33/33,
+`\Bigl`/`\Bigr` 3/3, no list-parser hijack, no non-ASCII inside math — the em
+dashes are in prose, matching the file's existing §Archimedean paragraph);
+`run-validate content/quantum-observable-universe` against pinned platform
+`df28d02` → **2 issue(s)**, both pre-existing and unrelated (a bibliography info
+line, `lem:piece-a-corner-removal-obligation` without a Lean declaration).
+No Lean changed in this commit.
+
+The research target that option 2 actually names is `qou-uh5f`.

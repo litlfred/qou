@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T17:59:52Z
+updated_at: 2026-09-14T23:12:47Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -2406,6 +2406,438 @@ Contaminated sites: this bean's preceding entry, the PR #7340 body's
 recommendation, and two chat reports. The probe and witness now carry the
 correction in a `gap_magnitude_correction` field.
 
+
+## 2026-09-13 (session gifted-feynman) — the braid-image exclusion left the CONSTANT case open; closed by QUANTIZATION
+
+**Part 1 is a result (scope-(b), proved invariant). Part 2 is a fit and is labelled
+one.** Probe: `computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py`
+(14/14), witness `qbeta-eigenphase-rationality-quantization.witness.json`.
+
+### The hole in the sibling exclusion, and it is the case a derivation would want
+
+`qbeta_braid_image_eigenphase_exclusion_probe.py` closes branch (1) like this:
+`tr ρ(w)` is a Laurent polynomial, `|2cos α| ≤ 2`, bounded on `(0,∞)` ⟹ constant,
+and `α_C`/`α_D` are both non-constant ⟹ contradiction. **A CONSTANT `α` walks
+straight through that**, and nothing in the ladder requires the phase to vary —
+`Q_N1 = Q_A·cos(α − u/2)` is already `q`-dependent through `u`. Anyone proposing
+`α = α_req`, a pure number, was excluded by nothing in the corpus.
+
+### The closure — the same argument, carried through INTEGRALITY
+
+  1. `det ρ(σ_i) = −1` identically ⟹ `det ρ(w) = (−1)^{e(w)}`. So **`det = 1` is
+     not an assumption on `M` — it is a parity condition on the WORD.**
+  2. `σ^{-1} = σ − (q − q^{-1})I` (Hecke relation) ⟹ every word matrix is over
+     `ℤ[q,q^{-1}]`, so `tr ρ(w) ∈ ℤ[q,q^{-1}]`.
+  3. bounded ⟹ constant ⟹ **an integer**. On the 2-dim `V_(2,1)`, `|tr| ≤ 2` then
+     forces `tr ∈ {−2,−1,0,1,2}` and
+
+         α ∈ {0, π/3, π/2, 2π/3, π}
+
+`|α_req| = 0.05235868` is **4795 windows** from the nearest member. So branch (1)
+is closed on `V_(2,1)` for **every** `α`, not only the `(z−1)h/2` family, and
+**without the transcendence assertion** the corpus carries in a docstring.
+
+General `d`: every `tr ρ(w^k)` is a constant integer ⟹ integral char poly ⟹
+eigenvalues are algebraic integers with all conjugates on the unit circle ⟹
+**Kronecker: roots of unity**, so `α ∈ 2πℚ` in any irrep. The five-element set is
+its `d = 2` case. **The Lean twin of the Kronecker step is NOT written.**
+
+Verified exhaustively over all **5460 words `|w| ≤ 6`** in exact `ℤ[q,q^{-1}]`
+integer Laurent arithmetic (no sympy simplify, no floats); anchors at 60 dps.
+
+### Corollary for `qou-cds1`, and it is convention-free
+
+If `α` is a braid-image eigenphase at all, it is a **pure number with no `z` in
+it**. So the C-vs-D question for the **phase** dissolves — the phase does not need
+re-deriving per convention. It survives only for the **base**.
+
+### Part 2 — 2π/120 is the unique rational in the window. THIS IS A FIT.
+
+Given `α ∈ 2πℚ` the search space is discrete, so one can just ask which members
+fit. Never run before. Answer: `2π/120 = π/60` is the **unique** primitive
+rational phase with `N ≤ 1000` inside the `|c₃| ≤ 1` window — **0.109 windows**
+from `α_req`, where convention C is **2.066** (i.e. C is *outside*). It implies
+`|c₃| ≈ 0.1095` against C's `−2.0693`.
+
+**🛑 Under §NO FITTING this is SELECTION AGAINST THE TARGET** — `N = 120` was
+picked because it reproduces `α_req`. Not adopted, not wired, not proposed as a
+value for anything. Three honesty checks, all in the probe:
+
+  * **the cross-anchor swing discriminates nothing** — 0.049 in `c₃` for the
+    candidate and 0.049 for C, because it is `α_req`'s own anchor dependence, not
+    a property of either phase;
+  * **a unique hit at `N ≤ 1000` is GENERIC** (E = 1.06). Only *which* denominator
+    won carries information: `P(N = 120 | one hit) = 1.05e-4`. At `N ≤ 120`,
+    E = 0.0152;
+  * **🛑 the mechanism a reader reaches for first is REFUTED, in the same probe.**
+    `|2I| = |S_5| = |Aut(Bring)| = 120` — but a *primitive* 120th root of unity
+    needs an **element** of order divisible by 120, and **`S_5`'s maximal element
+    order is 6** while **`2I = SL(2,5)`'s is 10** (exponent 60, not 120). A group
+    of order 120 does not supply a 120th root of unity. **The candidate has no
+    identified mechanism at all**, which makes it weaker than the uniqueness
+    measurement alone suggests.
+
+### Scope limit, load-bearing
+
+The ladder inverted here sits on `Q_A = m_e|q²−2q−1|(q+1)/(2q³)` — the **`z = 1`
+cell, RETIRED as the base by the 2026-09-08 ruling** (`qou-99qc`). Nothing here
+moves the dashboard, whose `Q_β` row is base-only at ~4.3e+8 ppb on the ruled
+`z_D` base. **A ~0.1 % phase cannot address a 43 % base gap: the D-base miss is
+not a phase problem**, and this entry must not be cited as if it were.
+
+### What would close it
+
+Derive the **120** — exhibit a braid word and a partition whose `q`-uniform
+eigenphase is `2π/120` — rather than read it off `α_req`. Given the refutation
+above, that requires an element of order divisible by 120 from somewhere the
+framework actually supplies, and no such source is identified here.
+
+
+## 2026-09-13 (session gifted-feynman, 2) — 🛑 DERIVING α CANNOT UNBLOCK `qou-cds1`. The gap is in the BASE.
+
+**This supersedes the dependency chain the whole S1 tranche is organised around.**
+Lean twin sorry-free (`lean`-direct exit 0, axioms `[propext, Classical.choice,
+Quot.sound]`): `QOU/QBeta/EigenphaseQuantization.lean`. Probe now 16/16.
+
+The author asked whether the `2π/120` candidate was a compute problem. **It is
+not — and the question was the right one.** The compute is correct; it is
+computing a **retired** object. On the **live** object the entire rung is
+structurally excluded, which nobody had checked.
+
+### The exclusion, one line
+
+`qou-iagg` ← `qou-cds1` ← `qou-pdix`. **The second link does not hold.** On the
+ruled `z_D` base the ladder must supply
+
+    Q_codata / Q_D = 0.78233341 / 0.4447004 = 1.7592370…  > 1
+
+while its `N = 1` rung is `cos(α − u/2) ≤ 1` for **every** `α`, and its `N = 2`
+rung is `(1 + c₂u²) = 0.99992745… < 1` at the committed `c₂ = −1`. The two
+together are bounded by `0.99992745 < 1 < 1.7592`.
+
+**No phase whatsoever repairs a base that is 43 % low, because a cosine cannot
+exceed one.** The `c₃` that would be required instead is **1.23e6**, not `O(1)`
+— which is the same fact the corpus already reports as "c₃ ≈ −974 under D",
+seen from the side that shows it is not a coefficient problem.
+
+Scope-(b), citing `Real.cos_le_one`. **This is the mirror of this bean's own
+2026-08-22 (8) entry**, which excluded a `cosh` re-reading because `cosh ≥ 1`
+sat on the wrong side of a required value *below* 1. Here the required value is
+*above* 1 and `cos ≤ 1` is on the wrong side of it.
+
+### What this means for the arc
+
+  * **The `Q_β` L2 residual is a BASE problem** — not a phase problem, and not a
+    ladder problem at all. Work on `α` is not on the L2 critical path.
+  * `qou-cds1`'s blocker is **not** this bean. Re-deriving the `c_k` ladder on
+    the `z_D` base cannot succeed in the committed multiplicative-cos form
+    whatever `α` is; the form itself, or the base, has to change.
+  * `qou-iagg` (the second re-score) is therefore **not** waiting on `α` either.
+  * This does **not** say the ladder is wrong, or that no `Q_β` closure exists.
+    It says where the gap is not.
+
+### Lean, formalize-first (all sorry-free)
+
+  * `cos_rung_lt_of_base_short` — the exclusion, general form
+  * `cos_rung_lt_of_base_short_ladder` — the `(1 − u²)` shape the ladder uses
+  * `two_cos_eq_int_cases` — Part 1: `2cos α ∈ ℤ ∩ [−2,2]` ⟹ five cosines
+  * `not_isInt_of_mem_Ioo_one_two` — the exclusion mechanism
+  * `not_braid_eigenphase_of_two_cos_mem_Ioo` — `2cos(α_req) = 1.99725…` is
+    strictly inside `(1,2)`, hence not an integer. **This covers a CONSTANT `α`**,
+    the case the boundedness-only argument leaves open.
+
+**NOT formalised, named so it is not mistaken for done:** "a Laurent polynomial
+bounded on `(0,∞)` is constant", and the general-`d` Kronecker step. Both proved
+on paper and verified numerically over all 5460 words `|w| ≤ 6`; neither has a
+Lean twin. **Options stay open until those land** — per the author's standing
+instruction, nothing is closed on the strength of the paper argument alone.
+
+### Status of the `2π/120` candidate after this
+
+Weaker still, and its scope is now doubly moot: its base is retired, **and** on
+the live base no `α` at all can matter. Kept recorded, not adopted, not wired.
+
+
+## 2026-09-13 (session gifted-feynman, 3) — Part 3 RE-OPENS the cosh route: that exclusion was computed on the retired base
+
+**A re-opening, not a candidate.** Nothing is proposed, nothing is wired.
+
+Entry **2026-08-22 (8)** closed the modular/cosh horn like this: *"required N1 =
+0.99839767 < 1; cosh(x) ≥ 1 for every real x; wrong side of 1 — EXCLUDED."*
+That arithmetic is correct **and its `required N1` came from `Q_A`, the `z = 1`
+cell retired as the base on 2026-09-08.**
+
+Recomputed per base (assertion 17):
+
+| base | required `N=1` factor | `cosh ≥ 1` |
+|---|---|---|
+| retired `z = 1` | **0.998325241673** (< 1) | wrong side — correctly excluded |
+| **ruled `z_D`** | **1.7592370279** (> 1) | **right side — the exclusion is VOID** |
+
+So the 2026-08-22 horn was closed against a base that no longer holds, and no
+one re-checked it when the base was ruled. Under the ruling, the requirement
+inverts: the `N = 1` factor must be **above** 1, which is exactly where `cos`
+cannot go (Part 3) and where `cosh` lives.
+
+### 🛑 And nothing clean is on offer — this is the half that must not be dropped
+
+`arccosh(1.7592370279) = 1.16521714843`. Against the natural substrate
+quantities (assertion 18):
+
+    arccosh / ln q     = 11.16742481
+    arccosh / h        =  5.573593624       (h = q - 1/q)
+    arccosh / hbar_q   = 11.76016318
+
+**None is within 1e-3 of an integer or a half-integer.** `5.5736` is 1.3 % from
+`11/2`, which is not a match at this precision. So there is **no cosh closed
+form here**, and hunting for a `c` that fits would be selection against the
+target under §NO FITTING. The finding is that the *exclusion* fails, not that
+the route succeeds.
+
+### The other admissible cell, recorded only (assertion 19)
+
+Of the two admissible Markov points, only the **augmentation** cell admits a
+bounded multiplicative rung at all:
+
+    CODATA / Q(z = q)  = 0.889125773136   < 1   -> a cos rung CAN reach it
+    CODATA / Q(z_D)    = 1.7592370279     > 1   -> none can
+
+(The two cells sit at the exact ratio `1/α = (q²+1)²/(q⁴+1) = 1.97861424`,
+measured `1.97861437`, confirming AGENTS.md's proportionality.) **`z_D` is the
+owner-ruled cell and nothing here proposes changing it** — this is recorded so
+the asymmetry is visible, not as an argument.
+
+### Consequence for `qou-cds1`
+
+The tranche's job was "re-derive the `c_k` ladder under D". Part 3 says the
+committed **form** cannot be carried over whatever `α` is; this entry says the
+one alternative form the bean already considered was dismissed on the old base.
+So `qou-cds1` needs a **form** decision before any coefficient work, and that
+decision is the author's — it is not something to settle by which shape fits.
+
+Probe now 19/19.
+
+
+## 2026-09-14 — SYNTHESIS across two sessions: the retired-cell staleness is a CLASS, and it cuts both ways
+
+Merged `origin/main` into `claude/gifted-feynman-fhjzwv`. Both sessions worked
+this bean on 2026-09-13 in parallel; **nothing duplicated** — the two entry sets
+are disjoint and this reconciles them.
+
+### 1. Two sessions, two places, the SAME defect class — independently
+
+The sibling entry *"attack A measured"* found that the one computational test of
+A's bridge *"was aimed at a functional that is no longer canonical, and nothing
+had re-aimed it"* — `qbeta-delta-tr-vs-formA.witness.json` compares against the
+`z = 1` cell, retired as the base on **2026-09-08**, one day after that witness
+was last touched.
+
+This session found the same thing in two different places:
+
+  * the **2026-08-22 (8) cosh exclusion** — its `required N1 = 0.99839767 < 1`
+    is the `z = 1` cell's requirement; on the ruled base the requirement is
+    `1.7592 > 1` and the exclusion is **void**;
+  * the **ladder form itself** — `α_req` and its window are inverted from that
+    same retired base.
+
+**Neither session found the other's instance.** Two independent hits make this a
+**class**, not two accidents: *the 2026-09-08 base ruling silently invalidated
+arguments that were computed against the old cell, and the corpus was not swept
+for them.* Assume more remain. The cheap test is: does the artifact's number
+trace to `Q_A = m_e|q²−2q−1|(q+1)/(2q³)`? If so it is aimed at a retired cell.
+
+### 2. 🛑 It cuts BOTH ways, and that is the part a sweep would get wrong
+
+The sibling's instance invalidated a **positive** (a bridge test) and the
+re-aimed negative *held*. This session's cosh instance invalidated a
+**negative** — a route the bean had closed is now **re-opened**. A sweep that
+assumes "stale ⇒ the claim was too optimistic" will re-close the cosh horn by
+reflex. It must be re-aimed, not re-asserted, in each direction.
+
+### 3. Part 3 is UPSTREAM of both attacks, and changes what they are for
+
+Attacks A and B are both routes to **derive `α`**. Part 3 (this session,
+sorry-free Lean) shows that on the ruled `z_D` base **no `α` whatsoever** moves
+`Q_β`, because the `N = 1` rung is a cosine bounded by 1 while the required
+factor is `1.7592 > 1`.
+
+So the two measured negatives on A and B, and any future positive on either,
+are **moot for the L2 `Q_β` gap** — they bear only on `qou-pdix`'s own stated
+goal of deriving `α` as mathematics. This does not diminish them; it re-labels
+what they are evidence about. **`α` is not on the L2 critical path.**
+
+Combined state of the tranche:
+
+| item | status |
+|---|---|
+| attack A (Habiro / roots of unity) | measured negative, re-aimed at the ruled base — sibling |
+| attack B (Faddeev modular double) | measured negative, inert at the substrate — sibling |
+| branch (1), braid image, `q`-varying `α` | closed (prior) |
+| branch (1), braid image, **constant** `α` | closed this session by quantization, Lean sorry-free |
+| **any `α` at all, for L2** | **excluded this session — the gap is in the BASE**, Lean sorry-free |
+| the cosh / modular form | **RE-OPENED** — its exclusion was aimed at the retired cell |
+
+### 4. What is actually left, stated without a recommendation
+
+`qou-cds1` needs a **form** decision before any coefficient work: the committed
+multiplicative-cos ladder cannot reach a base that is 43 % low, and the one
+alternative form the bean considered (cosh) was dismissed on a base that no
+longer holds. **No closed form is on offer for it** — `arccosh(1.7592370279) =
+1.16521714843` over `ln q` / `h` / `ℏ_q` gives 11.1674, 5.5736, 11.7602, none
+near an integer or half-integer. Choosing a shape because it fits would be
+selection against the target; this is an author decision, not an agent one.
+
+### 5. Scope limit on Part 3, stated explicitly
+
+Part 3 assumes the correction multiplies the base — `Q = Q_base · cos(…) ·
+Π(1 + c_k u^k)`, the committed form. **It does not exclude a non-multiplicative
+correction**, and `Q_β = |ε(Δ)|·E₀` with `Δ` a *difference* of two words
+(sibling retraction `a64570260f`) is a reminder that the surrounding structure
+is additive one level down. If a D-frame ladder were additive, the cosine bound
+would not apply. That limit belongs beside the result.
+
+
+## 2026-09-14 (session gifted-feynman, 2) — 🛑 MY OWN Part 3 WAS AN INSTANCE OF THE CLASS IT DOCUMENTS
+
+**Correcting my own figure, and the correction is the point.** Part 3 hardcoded
+one base cell, `Q_D = 0.4447004` MeV (−43.157 %), giving a required ladder
+factor of **1.7592**. **That cell had already moved when I wrote it.**
+
+The scored base changed twice on 2026-09-13 — `173da443b6` made the
+tower-summed `E₀` canonical, then `573b2ece24` migrated the scored element to
+the γγ word `nuc11_interleaved`. The live dashboard row has read **1.668e+8 ppb,
+−16.678 %** since 2026-09-12, not 4.316e+8 / −43.157 %. Verified directly
+against `origin/main:computations/per-observable-100x-status.witness.json`.
+
+**So the required factor is 1.2002, not 1.7592 — wrong by 1.47×.** My *Part 4*,
+in the same probe, names exactly this failure class ("an argument aimed at a
+cell that has since moved"), and Part 3 was an instance of it. The
+`AGENTS.md` paragraph I read the figure from even carries the instruction that
+would have caught it — *"Quote the witness, not this paragraph"* — and I quoted
+the paragraph.
+
+### What is contaminated, and what is not
+
+  * **The conclusion is UNAFFECTED.** 1.2002 is still > 1, so a cosine rung
+    still cannot reach it.
+  * **The Lean is UNAFFECTED.** `cos_rung_lt_of_base_short` takes
+    `Qbase * d < Qtarget` as a *hypothesis*, never a literal, so the theorem was
+    already stated at the right generality. Only the probe's instantiation and
+    its prose carried the stale number.
+  * **Contaminated and now fixed:** the probe docstring, its Part 3 block, its
+    witness, the 2026-09-13 (2) bean entry above, PR #7262's body and one PR
+    comment. All quote 1.7592 / 0.4447004.
+
+### The fix is to stop naming a cell at all
+
+The exclusion is **base-independent**, and stating it that way makes it immune
+to the element moving again — which it may, since the 2026-09-13 ruling records
+that the scored element **fails** the confinement SDP and its replacement is an
+open owner decision:
+
+| cell | vs CODATA | required factor | `cos` rung reaches it? |
+|---|---|---|---|
+| `nuc11_interleaved`, tower `E₀` — **LIVE** | −16.678 % | **1.2002** | **no** |
+| `z_D` on `Δ_S`, tower `E₀` | −42.594 % | **1.7420** | **no** |
+| `z_D` on `Δ_S`, order-zero `E₀` | −43.157 % | **1.7592** | **no** |
+| bar-odd survivor (parity-forced) | −54.825 % | **2.2136** | **no** |
+| augmentation `z = q` — *not ruled* | +12.470 % | 0.8891 | yes |
+| retired `z = 1` — *retired* | +0.17 % | 0.9983 | yes |
+
+**Every cell the ruling admits sits below CODATA**, so each needs a factor
+above 1, and the `N = 1` rung is a cosine bounded by 1 while the `N = 2` rung is
+`0.99992745 < 1`. **The two cells a cosine can reach are exactly the two the
+ruling does not select.** So the exclusion holds for the live element, for its
+two predecessors, for the parity-forced alternative, and for whatever replaces
+the element provided the replacement is below CODATA.
+
+`c₃` required on the live cell: **324098.7**, not `O(1)`. (It was 1.23e6 on the
+stale cell — same order of conclusion, different number.)
+
+Probe re-run 19/19; Lean re-verified `exit 0`, axioms unchanged.
+
+## 2026-09-14 (session gifted-feynman) — the SAME stale-cell defect, inside the probe that documents it
+
+Third instance this arc, and the first one *inside* the artifact whose Part 4
+is about the defect class.
+
+**The claim.** Assertion 18's failure message in
+`qbeta_eigenphase_rationality_quantization_probe.py` hardcoded
+`arccosh(required)/{ln q, h, ℏ_q} = 11.1674, 5.5736, 11.7602`. Those are the
+**retired-cell** ratios (`need = 1.7592`, the `z_D`-on-`Δ_S`-order-zero-`E₀`
+cell). The code four lines above already computed `need_D = live_factor`, i.e.
+the **live** `nuc11_interleaved` / tower-`E₀` cell, so the printed table and the
+assertion message disagreed by 47 % on every figure.
+
+**Evidence.** Live-cell ratios, computed: `ln q 5.967071281`, `h 2.97812889`,
+`ℏ_q 6.283788176`, from `arccosh(1.2001632) = 0.62260851569`. The assertion's
+own *predicate* (`not near_int and not near_half`) was always evaluated on the
+computed ratios and is unaffected — **the test was right and its explanation
+was wrong**, which is the worst shape: a reader checking the reasoning gets
+retired numbers from a passing assertion.
+
+**Implication.** The defect is a hardcoded literal in a message, so the fix is
+structural rather than arithmetic: the message now interpolates `ratios`
+directly and no literal remains to go stale. Same treatment applied to the
+witness note. Assertion count unchanged, **19/19**.
+
+**Recorded, not proposed.** Computing the live-cell ratios surfaces
+`arccosh/ℏ_q = 6.283788176` against `2π = 6.283185307` — `6.029e-4` apart, rel
+`9.6e-5`, about **55 `α_req` windows**. That is *not* a hit (the window is
+`1.0919e-5`), it is not within the assertion's own `1e-3` integer tolerance
+under any reading, and no mechanism is offered. It is written into the
+assertion message only so a later reader who recomputes it does not read it as
+a discovery. Chasing a `c` that makes it exact would be selection against the
+target, per the anti-fit directive.
+
+**What did NOT change.** Parts 1 and 3 and the Lean twin are untouched;
+`EigenphaseQuantization.lean` is `lean`-direct exit 0 against the post-merge
+tree (108 commits of `origin/main` merged as `0433359e6f`), and the live `Q_β`
+dashboard row is still `err_ppb 1.668e+8` / `miss_factor 2.139e+7`, so Part 3's
+corrected figure holds across the merge. Part 3 is base-independent regardless.
+
+## 2026-09-14 (session gifted-feynman) — TRAP: `precision-gates.sh` in a bare container rewrites 12 audit witnesses with ITS OWN environment
+
+**The claim.** `scripts/precision-gates.sh --changed` exits **0** on this branch
+(the blocking ratchets are clean), but running it leaves **12 modified audit
+witnesses** in `computations/`, and those modifications are **artifacts of the
+container, not measurements of the corpus**. Restore them; do not commit them.
+
+**Evidence.** This container has no `scipy`, no `clarabel`, and `mpmath 1.3.0`.
+The committed witnesses record `scipy 1.17.1`, `clarabel 0.11.1`,
+`mpmath 1.4.1`. So the re-run does not merely refresh timestamps — it
+*removes* two packages from every `environment` block it touches and downgrades
+a third. The counts move with it:
+
+| witness | committed | this container |
+|---|---|---|
+| `witness-provenance-audit` | 105 | **91** |
+| `q0-anchor-consistency-audit` | 2 | **4** |
+| `witness-raw-float64-audit` `dirty_witnesses` | 981 | **978** |
+| `witness-value-copy-audit` `indexed_literals` | 232482 | **232638** |
+
+The provenance drop (105 → 91) is the one to notice: it moves in the direction
+a *missing dependency* produces, not the direction a drain produces, and
+committing it would read as 14 witnesses' worth of progress that nobody made.
+
+**Implication.** This is the AGENTS.md sibling-witness hazard one level up —
+the doc warns that *producers* write sibling witnesses, and the same is true of
+the **gate**. The gate's job is to tell you whether *your* change is clean; its
+exit code is the deliverable and the witnesses it rewrites are not. In a bare
+container the rewrite is worse than noise, because an `environment` block is
+exactly what a later agent consults to decide whether a re-run is comparable.
+
+**Action taken.** `git checkout -- computations/`; tree clean; nothing from the
+gate run is committed. The gate's verdict (**exit 0**) is recorded here and in
+PR #7262 instead.
+
+**Rule for the next agent.** After `precision-gates.sh`, run
+`git status --porcelain computations/` and restore anything it touched unless
+you deliberately intend a witness refresh AND your container's `environment`
+matches the committed one. Check that with
+`python3 -c "import scipy, clarabel, mpmath; print(mpmath.__version__)"` before
+trusting any count the gate prints.
+
 ---
 
 ## 2026-09-14 — on the RULED base the ladder is excluded for EVERY phase, so α is not the blocker
@@ -2724,3 +3156,208 @@ Verified and **merged** in
 Previous entry here was 2026-09-12 and predates this. AGENTS.md's two
 "blocked on the phase `qou-pdix`" sites are scoped in the same PR as this
 append.
+
+
+## 2026-09-14 (session gifted-feynman, 3) — a stale figure in this arc's own probe, and the sign-free bound
+
+**Stale figure, fixed at the producer.**
+`qbeta_eigenphase_rationality_quantization_probe.py:117` read *"the `c₃` that
+would be required instead is `1.23e6`"* while **its own witness** carries
+`c3_required_on_live_cell = 324098.735988813964`. Both are right for their own
+cell — `(F−1)/u³` is 1.23e6 on the **superseded** `z_D` order-zero cell
+(`F = 1.7592`) and 324098.7 on the **LIVE SCORED** one (`nuc11_interleaved`,
+tower `E₀`, `F = 1.20016`) — so it is a cell-attribution error, not arithmetic.
+
+What makes it worth recording: that same file carries a
+`stale_figure_corrected` witness field **one screen below the bad line**,
+documenting this exact failure class for this exact quantity. The code was
+corrected and the prose was not moved with it. Fixed to name the cell beside
+the number and to point readers at the witness field rather than the docstring.
+Found by the corpus-grep checklist, not by me.
+
+**The phase stays open and its priority is unchanged** — α is still the
+ladder's N=1 phase and still underived. What is new is that the *reason* it is
+off the L2 critical path no longer leans on the signs of the `c_k`:
+`QOU.QBeta.LadderUniformBound` (sorry-free, 7 declarations) proves the
+exclusion from **uniform boundedness** instead, so it survives the `qou-cds1`
+re-derivation that would void `LadderFactorBound.ladder_lt_of_rungs` with a
+single positive rung. `C_min = 2279.46` against a corpus whose largest live
+`|c_k|` is 2.0693 — a factor of 1101.5, and still 177.1 against the largest
+coefficient the corpus has ever held. Full record on `qou-cds1`.
+
+
+## 2026-09-14 (session gifted-feynman, 4) — the near-2π landing is PRICED, and it is cheap
+
+The session's own assertion 13 recorded that `arccosh(F_required)/ℏ_q` lands
+`9.6e-5` from `2π` and refused to treat it as a candidate. The refusal was
+right; it was **unpriced**, and `9.6e-5` reads impressive to a cold reader.
+Assertion 15 prices it. Three measurements, all saying not much:
+
+**(a) Cell-dependence.** `arccosh(F)/ℏ_q` over the four cells that need a
+factor at all:
+
+| cell | `arccosh(F)/ℏ_q` |
+|---|---|
+| `nuc11_interleaved`, tower `E₀` (LIVE SCORED) | **6.283788176** |
+| `z_D` on `Δ_S`, tower `E₀` | 11.63893426 |
+| `z_D` on `Δ_S`, order-zero `E₀` | 11.7601251 |
+| bar-odd survivor (parity-forced) | 14.45612053 |
+
+A **130.05 %** spread. All four share the same `q₀`, so the ratio varies
+exactly as `arccosh(F)` does — the `2π` attaches to **one value of `F`** and to
+no structure.
+
+**(b) Look-elsewhere.** **1** independent hit over **171** (divisor, target)
+trials at `1e-4` relative, against **0.0342** expected — about **1 in 50**, not
+1 in 10000. The single-trial `9.6e-5` overstates it by ~50×. The grid is fixed
+in the source before any result is inspected, and it **collapses algebraically
+identical hits**: `x/(2ℏ_q) ≈ π` and `x/ℏ_q ≈ 2π` are the same statement, and a
+naive grid carrying both reports two hits where there is one. Mine did, until
+it was keyed on `x/(d·t)` rather than on `(d, t)`.
+
+**(c) Decisive, and not a statistics argument.** `F = Q_codata/Q_base` is a
+ratio to an **experimental** value, so any identity pinning `arccosh(F)/ℏ_q` is
+a constraint on the **measured** `Q_β`, not a prediction, unless the base
+derives it independently. And per the 2026-09-13 ruling the scored element is
+**rejected** by the confinement-SDP selection rule, so `F_live` moves when the
+element is replaced. A coincidence attached to a number under revision is worth
+nothing.
+
+**Scope-(a), stated in the assertion itself:** this does **not** exclude a cosh
+structure — Part 4's re-opening of that route stands untouched. It prices
+**this** near-coincidence and finds it cheap, so a later agent does not spend a
+session on it. Assertion 13 now points here.
+
+
+## 2026-09-14 (session gifted-feynman, 5) — the Laurent-boundedness lemma is FORMALISED; the Kronecker step still is not
+
+Assertion 5 of the eigenphase probe — *"no word is bounded-but-not-constant"* —
+was a **paper step asserted numerically** over the sampled words, and it is the
+hinge of PART 1: the sibling exclusion probe closes the braid-image branch only
+against a **q-varying** ansatz, so a constant `α` walks straight through it.
+
+**`QOU.QBeta.LaurentBoundedness`** — 5 declarations, sorry-free, `lean`-direct
+exit 0 with `-DautoImplicit=false -s 65536`, `#print axioms` on all 5 =
+`[propext, Classical.choice, Quot.sound]`.
+
+**The argument is one asymptotic lemma applied twice, not two.** The `q → ∞`
+end is `degree_le_of_bounded_div_pow`, off Mathlib's
+`abs_div_tendsto_atTop_of_degree_gt`. The `q → 0⁺` end needs **no** second
+asymptotic argument, because
+
+    P(x) / x^m  =  (reflect m P)(1/x)        for x ≠ 0, given deg P ≤ m
+
+(`laurent_reflect`, from `Polynomial.eval₂_reflect_mul_pow` through
+`RingHom.id`) — the Laurent polynomial **is** an honest polynomial read at
+`1/x`, with no division on the right. `q ↦ 1/q` is a bijection of `(0,∞)`, so
+boundedness transports and the same lemma finishes it.
+`laurent_const_of_bounded` **names** the constant (`P.coeff m`) rather than
+asserting existence.
+
+**🛑 Scope — three things this does NOT do, all of them recorded in the file's
+own docstring so they cannot be misread later:**
+
+1. **The Kronecker step is still not formalised.** Assertion 8 read *"the Lean
+   twin of this step is NOT written"*; it now reads that the chain's **first
+   input** is written and that the step from bounded-hence-integer to
+   root-of-unity is not. Do **not** read the new file as closing assertion 8.
+2. **This is not L2 progress.** Part 3 already established the phase is off the
+   L2 critical path — the `Q_β` residual is a base/assembly problem. This
+   closes a named gap in an argument whose conclusion does not move L2, and
+   reporting it as L2 progress would be wrong.
+3. **No integrality claim.** Bounded ⟹ constant is here; constant ⟹ integer
+   runs through `σ⁻¹ = σ − (q − q⁻¹)I` and is a separate argument about the
+   Hecke presentation.
+
+**Container note, worth more than the lemma to the next agent.**
+`Mathlib.Analysis.Polynomial.Basic` and
+`Mathlib.Analysis.Asymptotics.SpecificAsymptotics` are **not** in the restored
+`lake-cache/qou-v4-24-0`; `scripts/lean-build-mathlib-gap-cone.py
+Mathlib.Analysis.Polynomial.Basic` builds both in **~5 s**. They land in the
+**paper** mathlib tree, which `scripts/lean-direct-env.sh` puts *after* the root
+tree — prepend it to `LEAN_PATH` or the import still will not resolve. Two
+failures this session were that path ordering, not the proof. A third was
+`Mathlib.Analysis.SpecialFunctions.Polynomials`, which **no longer exists** in
+this Mathlib: the gap-cone builder reports it as one missing module and then
+fails in 0 s because the *source* is absent. A 0-second failure from that script
+means a renamed module, not a build error.
+
+
+## 2026-09-14 (session gifted-feynman, 7) — 🛑 CORRECTION: my own `LEAN_PATH` advice was wrong, and it would have RED-ed a file
+
+The entry above told the next agent to build the missing Mathlib modules into
+the default (**paper**) tree and **prepend** it to `LEAN_PATH`. **Retracted.**
+It makes `LaurentBoundedness` compile and it **breaks `QOU/MobiusEnergy.lean`**,
+which needs `Mathlib.GroupTheory.SpecificGroups.Dihedral` — present in the
+**root** tree and absent from the paper one.
+
+**The two trees are missing DIFFERENT modules, so neither ordering verifies the
+whole set.** Measured on all five Lean files of this branch, both ways:
+
+| `LEAN_PATH` | result |
+|---|---|
+| paper tree **prepended** (my old advice) | `MobiusEnergy` **RED** — no `Dihedral` |
+| paper tree **appended** | `LaurentBoundedness` **RED** — no `Analysis.Polynomial.Basic` |
+| **stock `lean-direct-env.sh`, after the fix below** | **all five exit 0** |
+
+**Path ordering is not the fix; completing the root tree is:**
+
+    scripts/lean-build-mathlib-gap-cone.py Mathlib.Analysis.Polynomial.Basic \
+      --dest "$(git rev-parse --show-toplevel)/.lake/packages/mathlib/.lake/build/lib/lean"
+
+~7 s, and afterwards the **stock** env needs no override at all. The file's own
+docstring now carries the corrected recipe and the retraction.
+
+**Why this is worth its own entry rather than a silent edit.** The wrong advice
+was *load-bearing and plausible* — it was derived from a real failure, it fixed
+the file I was looking at, and I verified that file and no other. Verifying the
+one file the advice was written for is exactly what hides this class. The
+20-commit merge is what surfaced it, because the check-in re-verified **all
+five** rather than the one I had changed.
+
+**Also checked this pass, and it is a real check rather than an assumption:**
+`main` landed a **sharpened** `scripts/lean-self-assuming-audit.py` (the
+conjunctive `⟨X.a, X.b, X.c⟩` blind spot, taxonomy row 46, +7 hits). Run against
+this branch: **none of the five files is flagged.**
+
+
+## 2026-09-14 (session gifted-feynman, 8) — the Kronecker gap is NOT LOAD-BEARING, and the d=2 chain is now complete in Lean
+
+Assertion 8 carried *"the Lean twin of this step is NOT written"* for the
+general-`d` Kronecker step. I went to close it and found the more useful thing:
+**it does not need closing.**
+
+**Why.** `V_(2,1)` is **2-dimensional**, so the conclusion this probe actually
+draws — *"a q-uniform braid-image eigenphase on `V_(2,1)` lies in
+`{0, π/3, π/2, 2π/3, π}`"* — is the **`d = 2`** case. At `d = 2` the argument
+is elementary: an integer trace with `|tr| ≤ 2` has five values, full stop. No
+Kronecker anywhere in it. The general-`d` step therefore **generalises a
+conclusion already had**, and nothing downstream consumes the generalisation.
+Leaving it open costs nothing — a different situation from a gap that blocks,
+and the assertion's wording did not distinguish the two.
+
+**The `d = 2` chain is now complete in Lean, sorry-free end to end:**
+
+| step | carrier |
+|---|---|
+| bounded ⟹ constant | `LaurentBoundedness.laurent_const_of_bounded` (this session) |
+| constant integer character ⟹ cos α ∈ 5 values | `EigenphaseQuantization.two_cos_eq_int_cases` (existing) |
+| **⟹ α ∈ {0, π/3, π/2, 2π/3, π}** | `EigenphaseQuantization.phase_quantized` **(new)** |
+| the whole thing | `EigenphaseQuantization.braid_eigenphase_quantized` **(new)** |
+
+`#print axioms` on both new theorems: `[propext, Classical.choice, Quot.sound]`.
+
+**The `phase_quantized` step was a real gap, not bookkeeping.**
+`two_cos_eq_int_cases` quantises the **cosine**; the corpus's sentence is about
+the **phase**. Those are different statements and the bridge was prose
+arithmetic. `Real.injOn_cos` is what makes it an equality rather than a
+containment.
+
+**The cost of closing the general-`d` step, measured rather than guessed:**
+**Mathlib has no Kronecker theorem.** `Mathlib/` contains only
+`kroneckerTMul*` — the matrix *product*, unrelated. So it is a from-scratch
+formalisation: bounded roots ⟹ bounded elementary symmetric functions ⟹
+finitely many monic integer polynomials of that degree and height ⟹ pigeonhole
+on powers ⟹ finite order. Days, not hours, for a generalisation nothing
+consumes. **Recommendation (my judgement, not a finding): leave it open and
+say why, which assertion 8 now does.**

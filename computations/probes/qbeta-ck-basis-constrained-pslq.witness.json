@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-14T08:20:46.617693+00:00",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-15T19:43:47.319029+00:00",
   "computation": "qbeta-ck-basis-constrained-pslq",
   "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
-  "commitSha": "4c0827da86f14fc0e35f0ceefafadb64677fdcd4",
+  "commitSha": "de57167a6cbef8c3e8f569be257cf030e3e2beaa",
   "description": "PROBE 4 (2026-07-11 avenues audit \u00a73.D): basis-constrained PSLQ for the empirical Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic-dictated basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)} (4\u2081 trace field \u211a(\u221a\u22123)). Two-stage formalize-first: STAGE 1 is a mandatory entropy audit of the ACTUAL effective precision of the empirical coefficients, traced through the extraction chain c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3, which amplifies the relative Q_\u03b2 error by 1/u\u00b3 \u2248 1.6e6 (c_4: 1/u\u2074 \u2248 1.9e8). STAGE 2 (PSLQ) runs only if the effective digits exceed the PSLQ entropy bound D > n\u00b7log10(2H) + margin (PR #1805 discipline). No c_k value proposed; nothing wired.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -134,7 +134,7 @@
   },
   "allPassed": false,
   "scriptHash": "bf5cbed1eeff",
-  "scriptCommitSha": "41ac6e9804a8eac1a163e2b2b4cad4181888133b",
+  "scriptCommitSha": "216616ce876e1e61f62ac5452c998ea54776f040",
   "durationMs": 0,
   "q0Anchor": "ambiguous",
   "q0AnchorReason": "reads BOTH pins on purpose: c3_reproduced_canonical is at the muon canonical pin (data.q0_canonical) while the proton readout and cross-anchor slope (data.q0_proton, data.anchor_slope_dc3_dq) are at the proton pin. The witness carries both signatures, so the pin is undetermined and the manifest files this stem ambiguous; the values actually used are in data.q0_canonical / data.q0_proton. NOT q0-independent (bean qou-v6wz)."

@@ -3148,3 +3148,150 @@ the perturbed `q`. That produced three false claims, including a "root of
 shrinks like `10^-dps` at **every** `q` and is identically zero, with no root.
 Exactly the straddle class AGENTS.md §"Never straddle the two layers" warns
 about, one layer over — and it was caught by the author, not by a gate.
+
+## 2026-09-14 (session gifted-feynman) — the Lean step `cost_eq` stops short of, and a wrong turn worth keeping
+
+**Claim.** `FrobeniusSelected.cost_eq` says two *selected* words have equal
+**cost**. The step this bean needs is the next one: that the selection predicate
+can hold of **two different words**, so the rule does not determine the word.
+Nothing in the corpus drew it. `QOU.Mass.CostOrderSensitivity` now does, for an
+**arbitrary quotient** the cost factors through — sorry-free, `lean`-direct
+exit 0 (`-DautoImplicit=false -s 65536`), `#print axioms` clean on all eight
+declarations (two depend on **no axioms at all**; the rest only `propext` /
+`Quot.sound`).
+
+| declaration | statement |
+|---|---|
+| `minimal_transfers_along_fibre` | minimality transfers along a fibre of `π` |
+| `selected_not_determined_of_cost_factors` | …so **both** words are selected |
+| `lengthCost_not_determined` | the corpus's own crossing-count cost |
+| `letterSumCost_not_determined` | any letter-sum cost |
+
+**Cited, not re-derived.** The *invariance* half is already held four times
+over and the file says so: `OptionELevelAcceptanceTest.monoidHom_order_blind`
+(the multiplicative twin), `AltCharShiftMultiset.wordChar_of_perm`,
+`YekutieliIntegration.holonomy_perm`, and **definitionally** in
+`crossing-energy.lean`, which models `BraidWord := List Bool` and reads only two
+counts. The letter-sum scope-(b) exclusion is already prose on `main`
+(`qbeta_embedding_energy_can_discriminate_probe.py:46–52`, bean `qou-pzsi`).
+
+**🛑 The wrong turn, recorded because it is the interesting part.** This was
+first drafted around the **abelianization** — *"a cost factoring through
+`B_n^ab ≅ ℤ` cannot separate two words of equal exponent sum"*. **That framing
+is wrong for its own targets.** `B_n^ab` records only `e = n₊ − n₋`, so of the
+corpus's own three crossing-energy components only `baseline` (the writhe)
+factors through it. **Crossing count `n₊ + n₋` does not** — and it is
+`FrobeniusSelected`'s *only* instantiation in the entire corpus — and neither
+does `E_cross = n₊q − n₋q⁻¹`. An abelianization-quantified theorem would have
+claimed a family it provably does not cover: the `da-arity-conflation` shape.
+The right invariant is the **multiset** (equivalently `List.Perm`), strictly
+coarser, and it is what the sibling probe already names. **Caught by the
+corpus-grep checklist before anything was committed** — paths 1–6 with the
+claim SHAPE rather than the topic, which is exactly the case §"Grep the claim
+SHAPE" exists for.
+
+**Scope, deliberately narrow.** It does **not** prove a selection cost must be
+order-sensitive — blindness *precludes separating these candidates*, it does not
+*force* a replacement to see order. That caution is this bean's own (~line 1100)
+and is restated inside the file so the theorems are not read as more than they
+are. It does **not** exhibit a rearrangement pair inside the live `cands` that
+is also feasible; that stays a measurement. It proposes **no** replacement cost
+and re-scores **nothing**.
+
+**What this leaves as the live open item** is unchanged and is `qou-pzsi`: there
+is still **no map from a braid word to a curve in or on the Bring surface**, so
+the order-sensitive functional the owner's objection points at has nothing to
+consume. This result says what any replacement must have (it must not be
+constant on the multiset); it does not supply one.
+
+## 2026-09-14 (session gifted-feynman, 2) — my retraction was HALF wrong: the abelianization is right for the EMBEDDING
+
+The entry above retracts an abelianization framing as *"wrong for its own
+targets"*. That retraction is **correct for costs and wrong one step over**, and
+a sibling's merged bridge is what shows it.
+
+**The claim.** `qbeta_bring_ohara_bridge_probe.py` (7/7, merged #7374) sends a
+braid word to a cusp-torus lattice class
+
+    (m, ℓ) = (exponent sum, strand count)
+
+— verified at source, `:36-37` and `:65`, and again at `:343-344`
+(`m = BASE_WRITHE + writhe(g)`, `ell = STRANDS`). **`m` is exactly the
+abelianization**: `e : B_d → ℤ`, `σ_i ↦ 1`, induces `B_d/[B_d,B_d] ≅ ℤ`
+(Black–Samson, `library/black-samson-phd2010sp/…/sec-008-12-summary-of-thesis.md:126`),
+and `ℓ` does not depend on the word at all.
+
+**So the same quotient under-prunes on one side of the pipeline and
+over-collapses on the other.** Against the *cost* functions it is too coarse to
+bite — crossing count `n₊ + n₋` and `E_cross = n₊q − n₋q⁻¹` both survive it,
+which is why the retraction stands. Against the *embedding map* it is precisely
+what the corpus does, and it is **strictly coarser than the multiset**, so it
+loses strictly more.
+
+**Consequence for the Lean.** `selected_not_determined_of_cost_factors` is
+quantified over an **arbitrary** quotient `π`, so it covers this instance with
+no change: put `π = (writhe, strands)` and the sibling's measured negative —
+all four two-crossing gluon dressings share one class, one geodesic and one
+energy — is an instance of the general theorem rather than a separate fact.
+The docstring now records this beside the retraction.
+
+**The reusable lesson is about attachment, not about the invariant.** "X is
+blind to Y" is a claim about a *particular map*; carrying it to a neighbouring
+map in the same pipeline is not a corollary. I made that error in one direction
+and would have missed the true instance in the other.
+
+**Nothing re-scored, nothing selected.** The sibling's own scoping stands: the
+bridge does not select, the dashboard rows stay un-re-scored, and the
+`u = ln q₀` vs `u = 2 ln q₀` meridian-normalisation binary stays open with
+neither branch adopted.
+
+
+## 2026-09-14 (session gifted-feynman, 6) — the replacement my theorem demanded HAS been built, by a sibling; I am not re-deriving it
+
+My entry above ends: *"This result says what any replacement must have (it must
+not be constant on the multiset); it does not supply one."* **A sibling
+supplied one, and it is on `main`.**
+
+`claude/99qc-crossing-budget-parity-2026-09-14` (PR #7390), commits
+`380f5935c2` / `aa224aba03` / `27250649ff`:
+
+* `QOU.QBeta.ECatBlockDecomposition.pairSum_not_perm_invariant` and
+  `blockCost_can_separate` — a **pair kernel** in the cost socket, with the
+  O'Hara `1/d_arc²` separation weight doing the work;
+* `qbeta_ecat_pair_kernel_probe` (4/4), run here against the merged tree: four
+  distinct proton values over the four gluon dressings
+  (`8.68872560885`, `7.76875635932`, `8.89780952920`, `9.06507666548`) against
+  **one** value for every letter-sum, and a control showing the sharp pair
+  separating by `0.91996925` weighted against **exactly 0.0** unweighted.
+
+**It escapes MY quotient, not only permutation — and that composition is
+already measured, so there is nothing for me to add.**
+`LetterSumBlindness.bridgeClass_perm_blind` is exactly the
+`(exponent sum, strands)` map my own entry identified as the corpus's
+embedding map; all four candidates sit at **writhe +2, length 2**, one fibre
+of it; the kernel separates them. That is assertions 1 and 2 of their probe.
+
+**Deliberately not re-derived.** Per the convergence rule the second route
+verifies and cites. I added no companion lemma; `CostOrderSensitivity.lean`
+gains a docstring section recording the finding and the credit, nothing more.
+Their commit's own account of the complementarity is correct: theirs turns on
+**permutation** of letters, mine on the **writhe/count split** at fixed
+writhe, and neither implies the other.
+
+**What stays open is narrower, not closed**, and their assertion 4 scopes it
+themselves: the kernel is a **discretisation**, its continuum limit is not
+proved to be `E_cat`, and the classical-limit leg it would need is *assumed*.
+
+**That leg is worse than assumed, and I proved it this session.**
+`CategoricalMobiusEnergy.classicalLimit` has `classicalLimitConst` as a **free
+field of the same structure**, so it is satisfiable for any pair of energies by
+exactly one `k` — `QOU.MobiusEnergy.classicalLimit_unconstraining` and
+`classicalLimitConst_eq` (sorry-free). So a future agent cannot close the
+continuum-limit question by appealing to that field. Reported on #7390;
+**not repaired** — §ASK THE OWNER applies and it stays an owner decision.
+
+**The replacement ELEMENT is still an owner call.** None of this selects a
+word. Their own declined claims stand (not `E_cat`; nothing selects a word;
+`t_lambda` not computed), and this bean's first open item — what replaces
+`nuc11_interleaved` after the confinement-SDP reading-3 rejection — is
+untouched by all of it.

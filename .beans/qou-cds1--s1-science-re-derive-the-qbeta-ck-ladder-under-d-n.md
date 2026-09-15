@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-14T17:59:27Z
+updated_at: 2026-09-14T20:32:51Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8475,3 +8475,82 @@ augmentation base. Nothing here touches the C-frame ladder results.
 `qbeta_zd_gap_anatomy_probe` decomposes the gap and
 `qbeta_cds1_terminus_status_probe` recomputes the load-bearing numbers, neither
 solves for z.
+
+
+## 2026-09-14 (session gifted-feynman, 3) — the ladder exclusion no longer depends on the SIGNS, so a re-derivation here cannot void it
+
+**The fragility this closes.** `LadderFactorBound.ladder_lt_of_rungs` (#7355,
+sorry-free) is the corpus's whole-product exclusion, and its hypothesis is
+`∀ x ∈ l, 0 < x ∧ x ≤ 1` — i.e. **every `c_k` negative**. That file is honest
+about it ("`P` is a *hypothesis*, not a claim about the rungs, and the numeric
+fact that this corpus's rungs satisfy it is measured in the probe"). But **this
+bean is the open task of re-deriving those very coefficients**, and a
+re-derivation producing one positive `c_k` voids that theorem outright — the
+hypothesis fails and it says nothing at all. An agent reading only that file
+would then be entitled to conclude the exclusion had lifted.
+
+**The sign-blind replacement**, `QOU.QBeta.LadderUniformBound` (7 declarations,
+sorry-free, `lean`-direct exit 0 with `-DautoImplicit=false -s 65536`,
+`#print axioms` on all 7 = `[propext, Classical.choice, Quot.sound]`):
+
+    ∑ |c_k u^k| ≤ S < 1   ⟹   ∏ (1 + c_k u^k) · (1 − S) ≤ 1
+
+proved by induction, division-free, nothing past `nlinarith`; composed with the
+`cos ≤ 1` cap as `ladder_lt_of_sum_bound`, and `sum_abs_le_of_scaled` reduces
+the hypothesis to **one scalar `C`**.
+
+**The numbers** (`qbeta_ladder_uniform_coefficient_bound_probe.py`, 9/9):
+
+| quantity | value |
+|---|---|
+| `u` (proton pin) | 0.0085172345501561421893 |
+| `G = ∑_{k≥2} u^k = u²/(1−u)` | 7.31664602858e-5 |
+| `C_min`, LIVE SCORED cell | **2279.45973262** |
+| `C_min / largest live \|c_k\|` (= \|c₃\| = 2.0693425728) | **1101.54×** |
+| `C_min / largest EVER held` (superseded `c₅ = +12.8676`) | **177.15×** |
+| ladder cap at a gratuitous `C = 100` | 1.00737 vs required 1.20016 |
+
+So the exclusion survives not merely a sign flip but an order-of-magnitude
+coefficient blow-up. **A re-derivation under D overturns the base-not-rungs
+conclusion only by producing a coefficient above ~2279** — a single scalar,
+checkable the moment this bean's work lands.
+
+**THE CONCLUSION IS NOT NEW AND MUST NOT BE REPORTED AS SUCH.** That the `Q_β`
+L2 residual is a base/assembly problem is already the corpus's position in at
+least five places — the merged adjudication
+`docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` ("the live
+open question is not *what is α* but *what object supplies a factor above 1 at
+all*"), this bean, `qou-pdix`,
+`qbeta_eigenphase_rationality_quantization_probe.py`, and that probe's witness.
+Every one of them rests on `cos ≤ 1` plus the **measured sign**. None argues
+from magnitude. Nothing here establishes the conclusion; it replaces a fragile
+premise so the conclusion stays standing through this bean's work.
+
+**Mathlib already had half of it, and the corpus-grep is what found that.**
+`Finset.norm_prod_one_add_sub_one_le` bounds `‖∏(1+fᵢ) − 1‖ ≤ exp(∑‖fᵢ‖) − 1`
+over any `NormedCommRing` with **no hypotheses at all**, so the induction is a
+re-derivation rather than a necessity. Both are kept, and the difference is
+stated rather than glossed: Mathlib's is the **tighter** product bound
+(`1/(1−S) ≥ exp S` on `[0,1)`), which is why the **Weierstrass** `C_min`
+(2279.46) is quoted over the exp route's (2493.73) — a weaker product bound is
+easier to beat, so it concedes more to the thing being excluded, the honest
+direction for a refutation. Mathlib's carries no `S < 1` hypothesis and so
+survives a blow-up that makes the induction vacuous.
+`ladder_lt_of_sum_bound_exp` is that second, independent route; assertion 9
+records that the two bracket the requirement.
+
+**Scope, deliberately narrow.** Proves the **implication** only. Does NOT prove
+a re-derived convention-D ladder's coefficients **are** bounded by any `C` —
+that is a hypothesis and this bean has not run. Exhibits no missing factor.
+Says nothing about the cosh route, which Part 4 of the sibling probe re-opened
+on the ruled base (the 2026-08-22 exclusion was computed on the retired `z = 1`
+cell and is void). Nothing selected, nothing re-scored.
+
+**Two process notes worth more than the result.** The cells are **read from the
+sibling witness, not hardcoded**: the first draft hardcoded four cells from
+AGENTS.md prose and the witness carries **five** — the bar-odd parity-forced
+survivor (`F = 2.2136`, `C_min = 7493`) was simply absent — and the prose's
+live-cell factor differs from the computed one at the 8th digit. For the same
+reason assertion 4 keys on the **property** (`F > 1`) rather than on a curated
+list of ruled cells, which had already drifted. A hand-kept list narrows a
+claim without saying so.
