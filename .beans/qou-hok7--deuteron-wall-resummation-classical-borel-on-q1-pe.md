@@ -1967,3 +1967,78 @@ objective should be concave in `u` for the same second-derivative reason, so max
 `F`, `w`, gradient and box, and knows nothing about the `REV_n` objective).
 
 **Do not close this bean.**
+
+## 2026-09-15 — the concave relaxation reaches the bottom edge, and the two edges differ in KIND
+
+PR #7419, continued.  #7349 closed G2 by certifying the TOP edge (concave relaxation +
+supergradient certificate, slack 6.4e-12, 1.04x the integer maximum).  The sibling coercivity
+probe showed the per-row linearisation reaches the bottom edge but caps it 9.6x too high.  This
+session carried the concave route across.  Three things are established and two bugs were caught
+by invariants rather than by inspection.
+
+**The extension to real `u` is exact, not merely valid.**  `delta_excess`'s one-body term
+`fi(beta) - fi(b0)` is a partial sum with no canonical real extension.  The obvious integral
+extension `int_0^u eps(b0+t)dt` is concave and is an upper bound, so it would relax — but it is
+NOT exact at integers, and would carry avoidable slack at every one.  `R(b0) - R(b0+u)` with
+`R(x) = sum_{j>=1} eps(x+j)` is both, because the constant `sum_m eps(m)` cancels.  Verified
+against the committed `delta_excess` on 36 (pe, block) pairs to 8.7e-25.  The extended objective
+is concave (min gap 0.0057 over 300 random feasible triples) and its closed-form tails and
+analytic gradient agree with direct sums to 6.2e-25 / 4.2e-16.
+
+**`Gamma_j` is exactly independent of the block length** (agrees to 1.7e-23 across T = 3, 7, 11).
+The block rows above `j` and the undisplaced tail above the block are one sum split at an
+arbitrary place.  So a length-T program is the restriction of ONE program to its first T
+coordinates, and a certificate at a zero-padded ascent point bounds every length at once.
+
+**#7349's block-length bound does NOT transfer, and the reason is the class, not the analysis.**
+Its blocks have every entry `>= 1`, so a row whose tangent slope falls below `ln q0 / 2`
+contributes a strictly NEGATIVE cap and the cumulative cap eventually drops below the certified
+bound.  The bottom class permits zero entries (`bot_profiles` requires only the leading one
+positive), the relaxation therefore has `u >= 0`, every row cap is `>= 0`, and the cumulative cap
+never falls.  I wrote the transfer first and asserted the padded rows are charged zero; they are
+not — every `Gamma_j` is strictly POSITIVE, in the pure AP exactly `sum_{i odd} gx(b0_j + i)`,
+the odd gaps the one-body term reaches and the gap-2 ladder does not.  A termination test written
+for `cap == 0` never fires, which is how it was caught: by a guard that refused to return a
+truncated sum, not by reading the code.
+
+**Consequence: the plain relaxation is valid and measurably NOT tight.**  A real `u` collects a
+gain from an arbitrarily small displacement on arbitrarily many rows; no integer block can, since
+its entries jump from 0 to 1.  Measured at `pe = 2`, the relaxed sup is still rising by `+0.2301`
+at `T = 6`.  The tightening is a valid inequality rather than more compute: every integer
+`u_j >= 0` has `u_j^2 >= u_j`, so `sup_integer G <= sup_{real u>=0} [G(u) + lam sum (u_j^2 - u_j)]`
+for any `lam >= 0`, and `+lam sum u^2` eats into `G`'s own `-(ln q0/2) sum u^2` so the program
+stays CONCAVE for `lam < ln q0/2`.  Select `lam` on the CERTIFICATE: the T-free tangent sum goes
+the wrong way (14.17 -> 251 across the grid), because the cap is
+`Gamma'^2/(2(ln q0 - 2 lam))` and the denominator collapses faster than the numerator shrinks on
+the dominant row — selecting by that proxy returns `lam = 0` and discards the tightening.
+
+**Two search bugs, both caught by invariants:**
+
+1. **Cold start + value-based stopping.**  `pe = 2` returned 1.8466 at `T = 6` against 2.0310 at
+   `T = 5` — impossible, since padding the T=5 optimum with a zero is feasible at T=6.  From
+   `u = 0` every barrier is at its tightest and coordinates unlock one sweep at a time; and
+   `|G_k - G_{k-1}| < tol` was satisfied while the largest coordinate gradient was still 1.12.
+   Warm-start across T, and stop on the projected gradient, not the value.
+2. **The lower barrier is not 0.**  A row BELOW `i` displaced by more than the gap forces
+   `u_i > u_j - (b0_i - b0_j) > 0`.  The search maximised over `[0, hi]` and evaluated the
+   derivative at an infeasible `0`, where `gx` returns a plausible NEGATIVE number rather than
+   failing.  `gx` now refuses a non-positive argument, and `_lo_for` keeps it from having to.
+
+With both fixed: 0 monotonicity violations, worst KKT residual 8.9e-14, and the per-program
+certificate closes with slack 3.9e-12 at 1.23x the enumerated maximum (T <= 6 smoke range).
+
+**Lean (sorry-free, `#print axioms` clean on all nine declarations in the file):**
+`box_charge_eq_zero_of_nonpos` (a padded coordinate with `g <= 0` and `w = lo` is charged zero in
+BOTH branches — the hypothesis is `<=`, not `<`, because a padded coordinate may have gradient
+exactly zero and there the `if` takes the opposite branch), `sum_charge_extend` (its consequence),
+and `sum_charge_extend_le` — the honest form, which bounds the padded block instead of deleting
+it, because that is what a geometrically decaying tail permits and a vanishing one would not.
+
+**G1 is untouched.**  It is neither proved nor refuted; what the arc is doing is removing it from
+the argument, since the join needs a finite window and that follows from SEPARATE certified caps
+on the two edges.
+
+Probe: `computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py`.
+Lean: `content/quantum-observable-universe/lean/QOU/BraidKnot/SupergradientCertificate.lean`.
+
+**Do not close this bean.**
