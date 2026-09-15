@@ -10,11 +10,21 @@ encoding observer drift via the contact structure.
 
 LaTeX label: `def:categorical-reeb-derivation`
 
-This file is verified standalone.  The upstream substrate structure
-`FrobeniusHopfSubstrate` lives in the sibling content block
-`frobenius-hopf-substrate.lean` (`def:frobenius-hopf-substrate`); a
-minimal copy is inlined here so the derivation block elaborates without
-an inter-sibling import.  Keep the two in sync.
+This file is verified standalone.  `ReebAlgebraData` below is a
+file-local three-field carrier — object, multiplication, unit — inlined
+so the derivation block elaborates without an inter-sibling import.  It
+is **not** the Frobenius–Hopf substrate, which is the eight-field
+`FrobeniusHopfSubstrate` of `frobenius-hopf-substrate.lean`
+(`def:frobenius-hopf-substrate`) and carries eleven laws this one does
+not, the two antipode axioms among them.
+
+"Keep the two in sync" is what this note used to say, and it is
+withdrawn: they are different structures with different obligations, so
+there is nothing to synchronise.  What the old wording produced was a
+*fully qualified* name collision — this carrier, the canonical
+structure, and a third in `substrate-self-duality.lean` all declared
+`QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate` — latent only because
+nothing imports two of them.  Bean `qou-hmhw`.
 -/
 
 set_option autoImplicit false
@@ -26,16 +36,26 @@ namespace QOU.AlgebraicSubstrate
 
 universe u v
 
-/-- **Frobenius–Hopf substrate** (inlined from
-    `def:frobenius-hopf-substrate`): a self-dual Frobenius–Hopf algebra
-    object `A` in a rigid monoidal category `C`.
+/-- **Reeb algebra data**: the object, multiplication and unit that the
+    Reeb derivation below consumes, and nothing else.
 
-    Only the fields consumed by the Reeb derivation are retained here
-    (object, multiplication, unit); the full Frobenius/snake data is in
-    the canonical sibling block.
+    This is a file-local minimal carrier, **not** a Frobenius–Hopf
+    substrate.  It was named `FrobeniusHopfSubstrate` until 2026-09-15,
+    which collided — at the *fully qualified* name
+    `QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate` — with the canonical
+    eight-field structure in `frobenius-hopf-substrate.lean` and with a
+    third three-field carrier in `substrate-self-duality.lean`.  Nothing
+    imported two of the three, so the collision was latent rather than a
+    build error; renamed per bean `qou-hmhw`.
+
+    What it is NOT, and the difference is load-bearing: it carries no
+    comultiplication, no counit, no antipode, no Frobenius form and no
+    laws.  In particular the antipode axioms added to the canonical
+    structure on 2026-09-14 (bean `qou-c64q`) do not apply here, so a
+    reader must not transport results about that structure to this one.
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
-structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
+structure ReebAlgebraData (C : Type u) [Category.{v} C]
     [MonoidalCategory C] where
   /-- The underlying object `A` in `C`. -/
   obj : C
@@ -61,7 +81,7 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
 
     LaTeX: `\label{def:categorical-reeb-derivation}` -/
 structure CategoricalReebDerivation (C : Type u) [Category.{v} C]
-    [MonoidalCategory C] extends FrobeniusHopfSubstrate C where
+    [MonoidalCategory C] extends ReebAlgebraData C where
   /-- The Reeb derivation `ξ_q : A → A`, carried as an element of the
       endomorphism monoid `End obj` so that the periodicity field below
       can use its monoid power.  `End obj` unfolds to `obj ⟶ obj`, so
