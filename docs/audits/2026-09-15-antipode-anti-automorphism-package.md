@@ -74,9 +74,17 @@ repaired exactly where `A` is non-commutative and nowhere else.
 **2. The six axioms have not been checked for independence.** Classically
 anti-algebra and anti-coalgebra are *theorems* derived from the antipode axiom,
 not axioms. Here they are asserted. Whether any of the six follows from the
-others plus the Frobenius relation is **unmeasured**. Asserting a redundant
+others plus the Frobenius relation was **unmeasured**. Asserting a redundant
 axiom is not wrong, but AGENTS.md's derive-then-check discipline says measure
 it, and I did not.
+
+> **MEASURED the same day, and the answer is worse for the package than the
+> item suggested — §"Independence" below.** Exactly **one** of the six is
+> proved independent. Five have no counter-model in the searched family, and
+> the forcing table says why: on the group algebra, `anti_mul` follows from
+> `anti_comul` alone, `unit` follows from any one of four others, and `counit`
+> and `form` force each other. The item stands as written — it is the
+> measurement that has changed, not the criticism.
 
 **3. The corpus still has only the trivial Lean witness.** `k[G]` is a model
 *in Python*. `QOU.TrivialWitness.unitFrobHopf` (`A = 𝟙`) remains the only
@@ -113,6 +121,75 @@ out as a new axiom 3 and renumbered 3→4, 4→5, 5→6. That silently invalidat
 by me in the same commit that cites that warning. Reverted: the antipode stays
 inside axiom 2, and every historical reference is valid again. Recorded because
 the next person to reorganise this block will be tempted the same way.
+
+## Independence — measured 2026-09-15, one of six
+
+[`frobenius_hopf_axiom_independence_probe.py`](../../computations/probes/frobenius_hopf_axiom_independence_probe.py).
+Method: semantic counter-models on `k[G]`. The structure maps involve no `S`, so
+every structure axiom holds for any candidate and the six conditions are the only
+thing varying. For each axiom `i`, search for a map satisfying the other five and
+violating `i`; one such map proves `i` is not derivable from them. Candidates are
+the monomial maps `S(g) = σ(g)` — exhaustive `|G|^|G|` up to `S₃` (46 656), and
+`D₄`'s 40 320 bijections only.
+
+| axiom | verdict |
+|---|---|
+| 1 `anti_mul` | undecided here |
+| 2 `anti_comul` | undecided here |
+| 3 `unit` | undecided here |
+| 4 `counit` | undecided here |
+| **5 `involutive`** | **INDEPENDENT** — witness on `V₄`: the 3-cycle `(0,1) → (1,0) → (1,1) → (0,1)` fixing the identity. It is an automorphism of `V₄`, hence an anti-automorphism since `V₄` is abelian, and it satisfies the other five; but it has order 3, so `S² ≠ id`. |
+| 6 `form` | undecided here |
+
+**"Undecided here" is not "dependent", and the distinction is the whole point.**
+No counter-model in a searched space is a statement about the space. What makes
+the five informative anyway is the *reason* — for each, the minimal subsets of
+the others that already force it, measured on two exhaustively-searched groups
+on opposite sides of commutativity:
+
+| axiom | forced by, on `V₄` and `S₃` alike |
+|---|---|
+| 1 `anti_mul` | `{2 anti_comul}` |
+| 3 `unit` | `{1}`, `{2}`, `{4}`, or `{6}` — any one alone |
+| 4 `counit` | `{2}` or `{6}` |
+| 6 `form` | `{2}` or `{4}` |
+| 2 `anti_comul` | `{1,4}`, `{1,5}`, `{1,6}` |
+
+Three readings, in descending order of how much they should worry a reviewer:
+
+1. **`anti_mul` follows from `anti_comul` alone, on both groups.** If that
+   survives categorically, the package has a redundant axiom in its most
+   load-bearing position — `anti_mul` is the one doing the work of excluding
+   `S = id`.
+2. **`unit` is forced by any single one of four others.** `S(1) = 1` is very
+   likely redundant *in this family*. Note it is provably **not** redundant in
+   general: chasing `antipode_anti_mul` through the unit laws gives only
+   `s = (s ⊗ s) ≫ β ≫ μ` for `s = η ≫ S`, an idempotent-like condition. A
+   monomial `S` on a group algebra lands on a *group element*, where idempotent
+   forces the identity; a general algebra has non-invertible idempotents. **So
+   the family is the wrong instrument for this axiom, not evidence against it.**
+3. **`counit` and `form` force each other, in both directions, on every group.**
+   That is the predicted blind spot and it is confirmed rather than assumed: the
+   probe checks the coincidence directly. On `k[G]` the counit and the Frobenius
+   form are the same map, so no counter-model can separate them. In the Lean
+   structure they are separate fields — `frobeniusForm` is constrained only by
+   the two snake identities, `counit` only by the counit laws, and **nothing ties
+   them** — so deciding their independence needs a Frobenius object with
+   `λ ≠ ε`, which this family cannot supply.
+
+**The two-column design validates itself.** `V₄` and `S₃` agree on every row
+above except axiom 2, where `V₄` carries three further forcings (`{3,5}`,
+`{4,5}`, `{5,6}`) that `S₃` does not. Those are exactly the abelian artifact the
+method anticipated — on an abelian group an anti-automorphism *is* an
+automorphism — so a forcing appearing in both columns is the one worth citing.
+`D₄` is deliberately excluded from this table: only its bijections were searched,
+and restricting to bijections would manufacture forcings involving `involutive`.
+
+**What this does NOT license.** Do not shrink the Lean structure on this
+evidence. Every row is a statement about monomial antipodes on group algebras,
+and reading 2 shows a case where that family answers the opposite of the
+categorical truth. Shrinking needs the categorical derivation — the formalize-
+first move — and it is an owner decision besides. Bean `qou-k4zx`.
 
 ## Verification
 
