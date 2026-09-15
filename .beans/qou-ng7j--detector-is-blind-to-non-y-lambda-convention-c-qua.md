@@ -259,3 +259,66 @@ compares. Recorded as a finding for the excision campaign, not fixed here.
 
 `z` itself and derived quantities (ρ, Δρ, binding, mass) remain uncovered — the
 original table's other rows. `tr_M` is the one closed here.
+
+## 2026-09-15 (same session) — the `z` row is closed too
+
+`z` was the table's other tractable row: "detector sees it? **only if it happens
+to match a listed decimal**" — it never did. The existing
+`y_lambda_convention_c_fingerprint_audit` says outright in its own docstring
+that its test "needs no source, **no `z` grep**, and no anchor", so nothing
+covered it.
+
+z_C is one number per pin, so it costs two fingerprints:
+
+    proton     z_C = 0.49932033418369445241   (z_D = 0.61268803714646525160)
+    muon-live  z_C = 0.49932033403256001689   (z_D = 0.61268805063827241522)
+
+The proton value matches the figure `qou-98g5` states for convention C, whose
+subject is the corpus conflating it with `1/δ = 0.497290545`. Those differ in
+the third decimal, so at this audit's 15-digit threshold the conflation is not
+a detector hazard — worth saying, since the bean makes it sound like one.
+
+### Measured before building, at three thresholds
+
+    min sig digits   hits   C-labelled files   UNLABELLED files
+             8        100          44                 20
+            12         98          43                 19
+            15         82          41                 11
+
+The 8-digit row is below this corpus's coincidence floor (the audit's own
+docstring puts 9-11 figures at 2.7 %), and it shows: at 8 digits a
+`tr_M_p2_JW_sym` field looked like a stray hit. At 21 digits it is not a
+coincidence at all — for a 2-strand element `tr_M(σ) = z` by definition, so
+that field IS z, and it is the C one. Reading the near-miss correctly required
+the strict threshold, not looser matching.
+
+### The discriminator, and why it is a PATH and not a registry
+
+41 of the 52 carriers name the convention in the JSON path itself —
+`/conventions/C_sqrt_q_over_q_plus_1`, `/parameters/z_C_for_comparison`,
+`/data/conventions/C/z_at_q0`. That is the author declaring what the field
+holds, and it is a better discriminator here than the `DELIBERATE` registry:
+`qou-ztee` records that this family has "no way to mark a deliberate
+comparison" and a registry does not scale to 41 entries, while `qou-4bq3`
+records a DELIBERATE stem regex over-blocking 8 of 24 verdicts. A path label is
+narrower than either — it exempts the one FIELD the author labelled, not the
+whole file.
+
+### Result
+
+    fingerprints  64 -> 66      witness files 41 -> 51
+    ACTIONABLE    12 -> 20      z hits surfaced: 16
+
+The 41 self-declaring files auto-exclude; the residue lands in plain fields —
+`/z`, `/parameters/z`, `/parameters/w_bond_tr_M`, `/data/markov_parameters/z_M_v1`,
+`/verification/tr_M(σ_1)`. That last one is the sharpest: `tr_M(σ_1)` is z by
+definition, so a verification block is verifying against the C parameter.
+
+Not a registered gate and it exits 0 by design, so nothing turns red on this.
+
+### What remains on this bean
+
+Only the last row: derived quantities (ρ, Δρ, binding, mass). Those are the hard
+case and `qou-u5z0` already warns a C dependency "can survive as a derived
+IDENTITY — invisible to every detector". `tr_M` and `z` were tractable because
+each has a value you can compute and match; a derived identity has neither.

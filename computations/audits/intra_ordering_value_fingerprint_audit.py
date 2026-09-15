@@ -210,7 +210,19 @@ def fingerprints() -> dict[str, tuple[str, str, str, str]]:
                                    * val for lam, val in chi.items()),
                                   mp.mpf(0)))
                     _add(v_c, (atom, pin, order, conv, "C"))
+        # THE MARKOV PARAMETER ITSELF, not an atom trace. `qou-ng7j`'s table
+        # lists `z` as a convention-dependent quantity the detector sees "only
+        # if it happens to match a listed decimal" — it never did. z_C is one
+        # number per pin, so it costs two fingerprints.
+        _add(z_c, ("z", pin, "n/a", "n/a", "C"))
     return out
+
+
+#: A JSON path that declares its value is convention C. Deliberately matched on
+#: the PATH, not the file — see the note at its use site.
+_C_LABELLED_PATH = __import__("re").compile(
+    r"convention|/C/|(^|[/_\[])C($|[/_\]])|z_C|_c_for|c_sqrt|naive|cited",
+    __import__("re").I)
 
 
 def _chi_all(word, n, q):
@@ -424,9 +436,9 @@ def main() -> int:
     print(f"Intra-ordering value fingerprint audit — {SIG_DIGITS} significant digits")
     print(f"  {len(fps)} fingerprints: {len(ATOMS)} atoms x "
           f"{len(PINS)} pins x 2 orderings x 2 colour conventions x "
-          f"2 trace conventions (C/D) — a lone nucleon has no p-n "
-          f"interface, so its two colour conventions coincide and fold "
-          f"to one entry\n")
+          f"2 trace conventions (C/D), plus z_C itself at each pin — a "
+          f"lone nucleon has no p-n interface, so its two colour "
+          f"conventions coincide and fold to one entry\n")
 
     # This audit's OWN witness records its findings, and its findings contain
     # the grouped values it found — so scanning it reports the report. Excluded
@@ -452,6 +464,21 @@ def main() -> int:
                 continue
             atom, pin, order, conv, trace = meta
             rel = str(f.relative_to(_ROOT))
+            # A `z` value sitting in a field whose PATH names the convention is
+            # the author saying so: `/conventions/C_sqrt_q_over_q_plus_1`,
+            # `/parameters/z_C_for_comparison`, `/data/conventions/C/z_at_q0`.
+            # Measured at 15 sig digits: 82 z_C hits over 52 files, of which 41
+            # files are self-declaring like that and 11 are not.
+            #
+            # Discriminating on the PATH rather than the file stem is the whole
+            # point. `qou-ztee` records that this audit family has "no way to
+            # mark a deliberate comparison", and a registry does not scale to
+            # 41 entries; `qou-4bq3` records a DELIBERATE stem regex
+            # over-blocking 8 of 24 verdicts. A path label is narrower than
+            # either: it exempts the one FIELD the author labelled, not the
+            # whole file.
+            if atom == "z" and _C_LABELLED_PATH.search(path):
+                continue
             # SUPERSEDED ON ANY OF THREE AXES. This tested `order == "grouped"`
             # only, so a value in the canonical ordering but the colour-BLIND
             # convention read as clean (`qou-uujo`), and a convention-C TRACE

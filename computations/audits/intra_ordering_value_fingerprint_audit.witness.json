@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-15T06:26:44.050704+00:00",
-  "commitSha": "6229029329052648ea2fbf1525e3c0a3de93c236",
+  "computedAt": "2026-09-15T06:35:36.832374+00:00",
+  "commitSha": "a417af2362d6940e24e60bed1242323a45c1015c",
   "assertions": [
     {
       "name": "scan_completed",
@@ -21,8 +21,8 @@
   "durationMs": 7,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
-  "scriptHash": "ce22fd4cc7ec",
-  "scriptCommitSha": "6229029329052648ea2fbf1525e3c0a3de93c236",
+  "scriptHash": "92c072e0b28d",
+  "scriptCommitSha": "a417af2362d6940e24e60bed1242323a45c1015c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,8 +48,34 @@
   "description": "Scans every committed witness for grouped-era |tr_M| values, matched to 15 significant digits against fingerprints computed live from atom_braid_word_3A under both orderings at both documented pins. Keys on the VALUE rather than on a symptom, because the ordering ruling has escaped three symptom-keyed sweeps.",
   "data": {
     "significant_digits_required": 15,
-    "witness_files_scanned": 3696,
+    "witness_files_scanned": 3697,
     "grouped_candidates": {
+      "computations/alpha-k-jones-markov-h3.witness.json": [
+        [
+          "/z",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/verification/tr_M(σ_1)",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/verification/expected/σ_1",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ]
+      ],
       "computations/atomic-mass-via-rho-k.witness.json": [
         [
           "/data/rows[0]/tr_M_at_q0",
@@ -106,6 +132,16 @@
           "C"
         ]
       ],
+      "computations/beta-decay-matrix.witness.json": [
+        [
+          "/parameters/markov_z",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ]
+      ],
       "computations/binding-K-direct.witness.json": [
         [
           "/data/results[0]/abs_tr_M",
@@ -150,6 +186,24 @@
           "grouped",
           "either",
           "D"
+        ]
+      ],
+      "computations/cal4-disguise-hunt.witness.json": [
+        [
+          "/data/findings[49]/value",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/data/findings[240]/value",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
         ]
       ],
       "computations/canonical-tr-m-three-path-comparison.witness.json": [
@@ -280,6 +334,16 @@
           "D"
         ]
       ],
+      "computations/delta-q-decoration.witness.json": [
+        [
+          "/parameters/z",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ]
+      ],
       "computations/derivation-chain-audit.witness.json": [
         [
           "/assertions[42]/computed",
@@ -312,6 +376,16 @@
           "grouped",
           "either",
           "D"
+        ]
+      ],
+      "computations/h2o-bond-angle-magnitude-vsepr.witness.json": [
+        [
+          "/parameters/w_bond_tr_M",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
         ]
       ],
       "computations/habiro/habiro-neutron-cross-check.witness.json": [
@@ -474,6 +548,76 @@
           "D"
         ]
       ],
+      "computations/probes/casimir-phi-q-markov-probe.witness.json": [
+        [
+          "/data/markov_parameters/z_M_v1",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/data/geom_multiplied_candidates[2]/raw_value",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ]
+      ],
+      "computations/probes/he4-body-order-shortfall-location.witness.json": [
+        [
+          "/data/runs[2]/z",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/data/runs[3]/z",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/data/runs[3]/f_pn",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ]
+      ],
+      "computations/probes/mayer-threebody-sign-threshold.witness.json": [
+        [
+          "/results[2]/z",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/results[3]/z",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/results[3]/fpn",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ]
+      ],
       "computations/probes/path-b-defect-binding-probe.witness.json": [
         [
           "/rows[0]/tr_M_free",
@@ -498,6 +642,16 @@
           "grouped",
           "bring_color_weighted",
           "D"
+        ]
+      ],
+      "computations/probes/ursell-alternation-sign-identity.witness.json": [
+        [
+          "/boltzmann_chain/rows[1]/z",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
         ]
       ],
       "computations/qbeta/qbeta-bond-factors-derived.witness.json": [
@@ -543,6 +697,24 @@
           "proton",
           "grouped",
           "either",
+          "C"
+        ]
+      ],
+      "computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json": [
+        [
+          "/data/anchors[0]/tr_M_p2_JW_sym",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/data/anchors[1]/tr_M_p2_JW_sym",
+          "z",
+          "muon-live",
+          "n/a",
+          "n/a",
           "C"
         ]
       ],
@@ -674,6 +846,22 @@
           "grouped",
           "either",
           "D"
+        ],
+        [
+          "/findings[402]/literal",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
+        ],
+        [
+          "/findings[412]/literal",
+          "z",
+          "proton",
+          "n/a",
+          "n/a",
+          "C"
         ]
       ]
     },
@@ -688,14 +876,22 @@
       "computations/probes/the_character_closure_block_and_a_lean_file_publish_convention_c_probe.witness.json"
     ],
     "grouped_actionable": [
+      "computations/alpha-k-jones-markov-h3.witness.json",
       "computations/atomic-tr-m-helium4.witness.json",
       "computations/binding-combiner-markov-peel-fallback.witness.json",
       "computations/brane-tower-full-channel-trace-audit.witness.json",
       "computations/convergence-safe-vhat-tower.witness.json",
+      "computations/delta-q-decoration.witness.json",
+      "computations/h2o-bond-angle-magnitude-vsepr.witness.json",
       "computations/probes/b-pred-mirror-slope-closed-form.witness.json",
+      "computations/probes/casimir-phi-q-markov-probe.witness.json",
+      "computations/probes/he4-body-order-shortfall-location.witness.json",
+      "computations/probes/mayer-threebody-sign-threshold.witness.json",
       "computations/probes/path-b-defect-binding-probe.witness.json",
+      "computations/probes/ursell-alternation-sign-identity.witness.json",
       "computations/qbeta/qbeta-chain-closed-form.witness.json",
       "computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json",
+      "computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json",
       "computations/qbeta/qbeta-option-e-order-dof-range.witness.json",
       "computations/vhat-per-crossing-chain.witness.json",
       "computations/vhat-std-vs-full-tower-compare.witness.json",
@@ -705,6 +901,7 @@
       "computations/atomic-mass-via-rho-k.witness.json",
       "computations/audits/fitted-labelled-canonical-audit.witness.json",
       "computations/binding-K-direct.witness.json",
+      "computations/cal4-disguise-hunt.witness.json",
       "computations/canonical-tr-m-three-path-comparison.witness.json",
       "computations/cross-check-trM-wenzl-lr-1ppb.witness.json",
       "computations/derivation-chain-audit.witness.json",
@@ -723,10 +920,16 @@
     ],
     "grouped_unresolved_producer": [
       "computations/b-over-a-v5-unified.witness.json",
+      "computations/beta-decay-matrix.witness.json",
       "computations/chain-binding-closed-form.witness.json",
       "computations/logratio-exactly-extensive.witness.json"
     ],
     "producer_classification": {
+      "computations/alpha-k-jones-markov-h3.witness.json": {
+        "kind": "computes",
+        "why": "calls build_seminormal_matrices",
+        "scriptFile": "alpha_k_jones_markov_h3.py"
+      },
       "computations/atomic-mass-via-rho-k.witness.json": {
         "kind": "reflects",
         "why": "reads artifacts; calls no trace machinery",
@@ -747,6 +950,11 @@
         "why": "witness names no scriptFile",
         "scriptFile": null
       },
+      "computations/beta-decay-matrix.witness.json": {
+        "kind": "unresolved",
+        "why": "witness names no scriptFile",
+        "scriptFile": null
+      },
       "computations/binding-K-direct.witness.json": {
         "kind": "reflects",
         "why": "reads artifacts; calls no trace machinery",
@@ -761,6 +969,11 @@
         "kind": "neither",
         "why": "no trace call and no artifact read — hardcodes, or computes inline",
         "scriptFile": "brane_tower_full_channel_trace_audit.py"
+      },
+      "computations/cal4-disguise-hunt.witness.json": {
+        "kind": "reflects",
+        "why": "reads artifacts; calls no trace machinery",
+        "scriptFile": "cal4_disguise_hunt.py"
       },
       "computations/canonical-tr-m-three-path-comparison.witness.json": {
         "kind": "reflects",
@@ -782,10 +995,20 @@
         "why": "reads artifacts; calls no trace machinery",
         "scriptFile": "cross_check_trM_wenzl_lr_1ppb.py"
       },
+      "computations/delta-q-decoration.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "delta_q_decoration.py"
+      },
       "computations/derivation-chain-audit.witness.json": {
         "kind": "reflects",
         "why": "reads artifacts; calls no trace machinery",
         "scriptFile": "derivation_chain_validator.py"
+      },
+      "computations/h2o-bond-angle-magnitude-vsepr.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "h2o_bond_angle_magnitude_vsepr.py"
       },
       "computations/habiro/habiro-neutron-cross-check.witness.json": {
         "kind": "reflects",
@@ -827,10 +1050,30 @@
         "why": "calls tr_M_via_wenzl_bridge_mpfr",
         "scriptFile": "b_pred_mirror_slope_closed_form.py"
       },
+      "computations/probes/casimir-phi-q-markov-probe.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "casimir_phi_q_markov_probe.py"
+      },
+      "computations/probes/he4-body-order-shortfall-location.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "he4_body_order_shortfall_location_probe.py"
+      },
+      "computations/probes/mayer-threebody-sign-threshold.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "mayer_threebody_sign_threshold_probe.py"
+      },
       "computations/probes/path-b-defect-binding-probe.witness.json": {
         "kind": "neither",
         "why": "no trace call and no artifact read — hardcodes, or computes inline",
         "scriptFile": "path_b_defect_binding_probe.py"
+      },
+      "computations/probes/ursell-alternation-sign-identity.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "ursell_alternation_sign_identity_probe.py"
       },
       "computations/qbeta/qbeta-bond-factors-derived.witness.json": {
         "kind": "reflects",
@@ -846,6 +1089,11 @@
         "kind": "neither",
         "why": "no trace call and no artifact read — hardcodes, or computes inline",
         "scriptFile": "qbeta_habiro_phase5q_dn_refactorize.py"
+      },
+      "computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json": {
+        "kind": "neither",
+        "why": "no trace call and no artifact read — hardcodes, or computes inline",
+        "scriptFile": "qbeta_klr_composite4_preflight_run.py"
       },
       "computations/qbeta/qbeta-mixed-chain-closed-form.witness.json": {
         "kind": "reflects",
