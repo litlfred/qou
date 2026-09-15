@@ -68,8 +68,8 @@ noncomputable def unitEndEquivModuleCat : R ≃+* End (𝟙_ (ModuleCat R)) wher
     `qou-c64q`, which is the point of keeping this witness: it is the only
     record-literal construction of `FrobeniusHopfData` in the corpus, so it is
     the only thing that can falsify a newly-added field. -/
-noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C] :
-    FrobeniusHopfData C where
+noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C]
+    [BraidedCategory C] : FrobeniusHopfData C where
   obj := 𝟙_ C
   mul := (λ_ (𝟙_ C)).hom
   unit := 𝟙 _
@@ -87,8 +87,12 @@ noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C] :
   counit_comul := by coherence
   comul_counit := by coherence
   comul_assoc := by coherence
-  antipode_left := by coherence
-  antipode_right := by coherence
+  antipode_anti_mul := by simp [MonoidalCategory.unitors_inv_equal]
+  antipode_anti_comul := by simp [MonoidalCategory.unitors_inv_equal]
+  antipode_unit := by simp
+  antipode_counit := by simp
+  antipode_involutive := by simp
+  antipode_frobeniusForm := by simp
 
 /-- **The trivial quantum universe.**  `C = ModuleCat R`, `A = 𝟙`, one block.
 
