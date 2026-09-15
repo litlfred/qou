@@ -1,0 +1,1449 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-q-alg-9709040v1",
+ "source": {
+  "file": "9709040v1.pdf",
+  "sha256": "8baf650d86c5b8ab0a8b6a70f0f04b0d66e16dca69846247c8869b864180d9e8",
+  "bytes": 432925,
+  "pages": 46,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "q-alg/9709040",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "29 Sep 1997"
+  },
+  "doi": null,
+  "title": "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I",
+  "authors_raw": "Maxim Kontsevich",
+  "title_lines": [
+   "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126160132-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:q-alg/9709040v1  29 Sep 1997"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 2,
+   "title": "Content of the paper",
+   "page": 1,
+   "source": "inferred",
+   "number": "0.1"
+  },
+  {
+   "level": 2,
+   "title": "Plans",
+   "page": 2,
+   "source": "inferred",
+   "number": "0.2"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 2,
+   "source": "inferred",
+   "number": "0.3"
+  },
+  {
+   "level": 1,
+   "title": "Deformation quantization",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Star-products",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "First approximation: Poisson structures",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "(f,g ) = B+",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(g,f ), B\u2212",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(f,g ) =\u2212B\u2212",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Description of quantizations",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 3,
+   "title": "Moyal product",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Deformation quantization up to the second order",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4.2"
+  },
+  {
+   "level": 2,
+   "title": "Remarks",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "Explicit universal formula",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Deformation theory via di\ufb00erential graded Lie algebras",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "T ensor categories Super and Graded",
+   "page": 7,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Maurer-Cartan equation in di\ufb00erential graded Lie alge bras",
+   "page": 7,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Remark",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 3,
+   "title": "T angent complex",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.4.1"
+  },
+  {
+   "level": 3,
+   "title": "Hochschild complex",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.4.2"
+  },
+  {
+   "level": 1,
+   "title": "Homotopy Lie algebras and quasi-isomorphisms",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "F ormal manifolds",
+   "page": 10,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Pre-L\u221e-morphisms",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "L\u221e-algebras and L\u221e-morphisms",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Quasi-isomorphisms",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "A sketch of the proof",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.5"
+  },
+  {
+   "level": 3,
+   "title": "Homotopy classi\ufb01cation of L\u221e-algebras",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Deformation functors at \ufb01xed points of Q",
+   "page": 14,
+   "source": "inferred",
+   "number": "4.5.2"
+  },
+  {
+   "level": 2,
+   "title": "F ormality",
+   "page": 15,
+   "source": "inferred",
+   "number": "4.6"
+  },
+  {
+   "level": 3,
+   "title": "Two di\ufb00erential graded Lie algebras",
+   "page": 15,
+   "source": "inferred",
+   "number": "4.6.1"
+  },
+  {
+   "level": 4,
+   "title": "It is a quasi-isomorphism",
+   "page": 16,
+   "source": "inferred",
+   "number": "4.6.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Main theorem",
+   "page": 17,
+   "source": "inferred",
+   "number": "4.6.2"
+  },
+  {
+   "level": 3,
+   "title": "Non-uniqueness",
+   "page": 18,
+   "source": "inferred",
+   "number": "4.6.3"
+  },
+  {
+   "level": 1,
+   "title": "Con\ufb01guration spaces and their compacti\ufb01cations",
+   "page": 18,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "De\ufb01nitions",
+   "page": 18,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Looking through a magnifying glass",
+   "page": 19,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 3,
+   "title": "Boundary strata",
+   "page": 22,
+   "source": "inferred",
+   "number": "5.2.1"
+  },
+  {
+   "level": 1,
+   "title": "Universal formula",
+   "page": 22,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Admissible graphs",
+   "page": 22,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Di\ufb00erential forms on con\ufb01guration spaces",
+   "page": 22,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Pre-L\u221e-morphisms associated with graphs",
+   "page": 23,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Main Theorem for X = Rd, and the proof",
+   "page": 24,
+   "source": "inferred",
+   "number": "6.4"
+  },
+  {
+   "level": 3,
+   "title": "Case S1",
+   "page": 25,
+   "source": "inferred",
+   "number": "6.4.1"
+  },
+  {
+   "level": 4,
+   "title": "First subcase of S1: n2 = 2",
+   "page": 25,
+   "source": "inferred",
+   "number": "6.4.1.1"
+  },
+  {
+   "level": 4,
+   "title": "Second subcase of S1: n2\u2265 3",
+   "page": 26,
+   "source": "inferred",
+   "number": "6.4.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Case S2",
+   "page": 26,
+   "source": "inferred",
+   "number": "6.4.2"
+  },
+  {
+   "level": 4,
+   "title": "First subcase of S2: no bad edges",
+   "page": 26,
+   "source": "inferred",
+   "number": "6.4.2.1"
+  },
+  {
+   "level": 4,
+   "title": "Second subcase of S2: there is a bad edge",
+   "page": 27,
+   "source": "inferred",
+   "number": "6.4.2.2"
+  },
+  {
+   "level": 3,
+   "title": "We \ufb01nish the proof of the theorem from 6.4",
+   "page": 27,
+   "source": "inferred",
+   "number": "6.4.3"
+  },
+  {
+   "level": 3,
+   "title": "Comparison with the formula from section 2",
+   "page": 28,
+   "source": "inferred",
+   "number": "6.4.4"
+  },
+  {
+   "level": 2,
+   "title": "Grading, orientations, factorials, signs",
+   "page": 28,
+   "source": "inferred",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "V anishing of integrals",
+   "page": 28,
+   "source": "inferred",
+   "number": "6.6"
+  },
+  {
+   "level": 3,
+   "title": "A trick using logarithms",
+   "page": 29,
+   "source": "inferred",
+   "number": "6.6.1"
+  },
+  {
+   "level": 3,
+   "title": "Remark",
+   "page": 30,
+   "source": "inferred",
+   "number": "6.6.2"
+  },
+  {
+   "level": 1,
+   "title": "F ormality conjecture for general manifolds",
+   "page": 30,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "F ormal geometry (in the sense of I. Gelfand and D. Kazhda n)",
+   "page": 31,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Flat connections and Q-equivariant maps",
+   "page": 31,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Flat families in deformation quantization",
+   "page": 32,
+   "source": "inferred",
+   "number": "7.3"
+  },
+  {
+   "level": 3,
+   "title": "Flat families over W",
+   "page": 32,
+   "source": "inferred",
+   "number": "7.3.1"
+  },
+  {
+   "level": 4,
+   "title": "Proof of the property P4",
+   "page": 32,
+   "source": "inferred",
+   "number": "7.3.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Flat families over \u03a0 T (X coor)",
+   "page": 33,
+   "source": "inferred",
+   "number": "7.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Flat families over \u03a0 T (X af f)",
+   "page": 33,
+   "source": "inferred",
+   "number": "7.3.3"
+  },
+  {
+   "level": 4,
+   "title": "Property P5",
+   "page": 34,
+   "source": "inferred",
+   "number": "7.3.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Flat families over X",
+   "page": 35,
+   "source": "inferred",
+   "number": "7.3.4"
+  },
+  {
+   "level": 3,
+   "title": "Passing to global sections",
+   "page": 36,
+   "source": "inferred",
+   "number": "7.3.5"
+  },
+  {
+   "level": 1,
+   "title": "Cup-products",
+   "page": 36,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Cup-products on tangent cohomology",
+   "page": 36,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Compatibility of U with cup-products",
+   "page": 37,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 3,
+   "title": "Pictures for the cup-product in polyvector \ufb01elds",
+   "page": 37,
+   "source": "inferred",
+   "number": "8.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Pictures for the cup-product in the Hochschild compl ex",
+   "page": 38,
+   "source": "inferred",
+   "number": "8.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Homotopy between two pictures",
+   "page": 38,
+   "source": "inferred",
+   "number": "8.2.3"
+  },
+  {
+   "level": 2,
+   "title": "First application: Du\ufb02o-Kirillov isomorphism",
+   "page": 39,
+   "source": "inferred",
+   "number": "8.3"
+  },
+  {
+   "level": 3,
+   "title": "Quanization of the Kirillov-Poisson bracket",
+   "page": 39,
+   "source": "inferred",
+   "number": "8.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Three isomorphisms",
+   "page": 40,
+   "source": "inferred",
+   "number": "8.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Automorphisms of Sym (g)",
+   "page": 40,
+   "source": "inferred",
+   "number": "8.3.3"
+  },
+  {
+   "level": 4,
+   "title": "Isomorphism IT",
+   "page": 41,
+   "source": "inferred",
+   "number": "8.3.3.1"
+  },
+  {
+   "level": 4,
+   "title": "Isomorphism Ialg\u25e6IP BW",
+   "page": 42,
+   "source": "inferred",
+   "number": "8.3.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Comparison with the Du\ufb02o-Kirillov isomorphism",
+   "page": 43,
+   "source": "inferred",
+   "number": "8.3.4"
+  },
+  {
+   "level": 3,
+   "title": "Results in rigid tensor categories",
+   "page": 44,
+   "source": "inferred",
+   "number": "8.3.5"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 102,
+   "n_words": 14
+  },
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 104,
+   "n_words": 17
+  },
+  {
+   "id": "sec-001-1-deformation-quantization",
+   "number": "1",
+   "title": "Deformation quantization",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 564,
+   "n_words": 88
+  },
+  {
+   "id": "sec-002-01-content-of-the-paper",
+   "number": "0.1",
+   "title": "Content of the paper",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3115,
+   "n_words": 492
+  },
+  {
+   "id": "sec-003-02-plans",
+   "number": "0.2",
+   "title": "Plans",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1033,
+   "n_words": 167
+  },
+  {
+   "id": "sec-004-03-acknowledgements",
+   "number": "0.3",
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 75,
+   "n_words": 12
+  },
+  {
+   "id": "sec-005-11-star-products",
+   "number": "1.1",
+   "title": "Star-products",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1358,
+   "n_words": 242
+  },
+  {
+   "id": "sec-006-12-first-approximation-poisson-structures",
+   "number": "1.2",
+   "title": "First approximation: Poisson structures",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 444,
+   "n_words": 84
+  },
+  {
+   "id": "sec-007-1-fg-b",
+   "number": "1",
+   "title": "(f,g ) = B+",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-1-gf-b",
+   "number": "1",
+   "title": "(g,f ), B\u2212",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-1-fg-b",
+   "number": "1",
+   "title": "(f,g ) =\u2212B\u2212",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1608,
+   "n_words": 291
+  },
+  {
+   "id": "sec-010-13-description-of-quantizations",
+   "number": "1.3",
+   "title": "Description of quantizations",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 546,
+   "n_words": 96
+  },
+  {
+   "id": "sec-011-14-examples",
+   "number": "1.4",
+   "title": "Examples",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-141-moyal-product",
+   "number": "1.4.1",
+   "title": "Moyal product",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 522,
+   "n_words": 110
+  },
+  {
+   "id": "sec-013-142-deformation-quantization-up-to-the-second-or",
+   "number": "1.4.2",
+   "title": "Deformation quantization up to the second order",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 492,
+   "n_words": 94
+  },
+  {
+   "id": "sec-014-15-remarks",
+   "number": "1.5",
+   "title": "Remarks",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 556,
+   "n_words": 89
+  },
+  {
+   "id": "sec-015-2-explicit-universal-formula",
+   "number": "2",
+   "title": "Explicit universal formula",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 4713,
+   "n_words": 981
+  },
+  {
+   "id": "sec-016-3-deformation-theory-via-di\ufb00erential-graded-lie",
+   "number": "3",
+   "title": "Deformation theory via di\ufb00erential graded Lie algebras",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-017-31-t-ensor-categories-super-and-graded",
+   "number": "3.1",
+   "title": "T ensor categories Super and Graded",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2356,
+   "n_words": 406
+  },
+  {
+   "id": "sec-018-32-maurer-cartan-equation-in-di\ufb00erential-graded",
+   "number": "3.2",
+   "title": "Maurer-Cartan equation in di\ufb00erential graded Lie alge bras",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2299,
+   "n_words": 428
+  },
+  {
+   "id": "sec-019-33-remark",
+   "number": "3.3",
+   "title": "Remark",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 318,
+   "n_words": 51
+  },
+  {
+   "id": "sec-020-342-hochschild-complex",
+   "number": "3.4.2",
+   "title": "Hochschild complex",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 611,
+   "n_words": 104
+  },
+  {
+   "id": "sec-021-34-examples",
+   "number": "3.4",
+   "title": "Examples",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 97,
+   "n_words": 15
+  },
+  {
+   "id": "sec-022-341-t-angent-complex",
+   "number": "3.4.1",
+   "title": "T angent complex",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2727,
+   "n_words": 515
+  },
+  {
+   "id": "sec-023-4-homotopy-lie-algebras-and-quasi-isomorphisms",
+   "number": "4",
+   "title": "Homotopy Lie algebras and quasi-isomorphisms",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 259,
+   "n_words": 42
+  },
+  {
+   "id": "sec-024-41-f-ormal-manifolds",
+   "number": "4.1",
+   "title": "F ormal manifolds",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2437,
+   "n_words": 449
+  },
+  {
+   "id": "sec-025-42-pre-l-morphisms",
+   "number": "4.2",
+   "title": "Pre-L\u221e-morphisms",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 820,
+   "n_words": 144
+  },
+  {
+   "id": "sec-026-43-l-algebras-and-l-morphisms",
+   "number": "4.3",
+   "title": "L\u221e-algebras and L\u221e-morphisms",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4019,
+   "n_words": 729
+  },
+  {
+   "id": "sec-027-44-quasi-isomorphisms",
+   "number": "4.4",
+   "title": "Quasi-isomorphisms",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1432,
+   "n_words": 240
+  },
+  {
+   "id": "sec-028-45-a-sketch-of-the-proof",
+   "number": "4.5",
+   "title": "A sketch of the proof",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-029-451-homotopy-classi\ufb01cation-of-l-algebras",
+   "number": "4.5.1",
+   "title": "Homotopy classi\ufb01cation of L\u221e-algebras",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2750,
+   "n_words": 460
+  },
+  {
+   "id": "sec-030-452-deformation-functors-at-\ufb01xed-points-of-q",
+   "number": "4.5.2",
+   "title": "Deformation functors at \ufb01xed points of Q",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3003,
+   "n_words": 520
+  },
+  {
+   "id": "sec-031-46-f-ormality",
+   "number": "4.6",
+   "title": "F ormality",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-032-461-two-di\ufb00erential-graded-lie-algebras",
+   "number": "4.6.1",
+   "title": "Two di\ufb00erential graded Lie algebras",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1614,
+   "n_words": 296
+  },
+  {
+   "id": "sec-033-4611-it-is-a-quasi-isomorphism",
+   "number": "4.6.1.1",
+   "title": "It is a quasi-isomorphism",
+   "level": 4,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3868,
+   "n_words": 704
+  },
+  {
+   "id": "sec-034-462-main-theorem",
+   "number": "4.6.2",
+   "title": "Main theorem",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1817,
+   "n_words": 304
+  },
+  {
+   "id": "sec-035-463-non-uniqueness",
+   "number": "4.6.3",
+   "title": "Non-uniqueness",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 292,
+   "n_words": 46
+  },
+  {
+   "id": "sec-036-51-de\ufb01nitions",
+   "number": "5.1",
+   "title": "De\ufb01nitions",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1814,
+   "n_words": 293
+  },
+  {
+   "id": "sec-037-5-con\ufb01guration-spaces-and-their-compacti\ufb01cations",
+   "number": "5",
+   "title": "Con\ufb01guration spaces and their compacti\ufb01cations",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2706,
+   "n_words": 496
+  },
+  {
+   "id": "sec-038-52-looking-through-a-magnifying-glass",
+   "number": "5.2",
+   "title": "Looking through a magnifying glass",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 5685,
+   "n_words": 1109
+  },
+  {
+   "id": "sec-039-521-boundary-strata",
+   "number": "5.2.1",
+   "title": "Boundary strata",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 551,
+   "n_words": 110
+  },
+  {
+   "id": "sec-040-6-universal-formula",
+   "number": "6",
+   "title": "Universal formula",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 189,
+   "n_words": 30
+  },
+  {
+   "id": "sec-041-61-admissible-graphs",
+   "number": "6.1",
+   "title": "Admissible graphs",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 811,
+   "n_words": 156
+  },
+  {
+   "id": "sec-042-62-di\ufb00erential-forms-on-con\ufb01guration-spaces",
+   "number": "6.2",
+   "title": "Di\ufb00erential forms on con\ufb01guration spaces",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2371,
+   "n_words": 458
+  },
+  {
+   "id": "sec-043-63-pre-l-morphisms-associated-with-graphs",
+   "number": "6.3",
+   "title": "Pre-L\u221e-morphisms associated with graphs",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1813,
+   "n_words": 365
+  },
+  {
+   "id": "sec-044-64-main-theorem-for-x-rd-and-the-proof",
+   "number": "6.4",
+   "title": "Main Theorem for X = Rd, and the proof",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3881,
+   "n_words": 774
+  },
+  {
+   "id": "sec-045-641-case-s1",
+   "number": "6.4.1",
+   "title": "Case S1",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 383,
+   "n_words": 72
+  },
+  {
+   "id": "sec-046-6411-first-subcase-of-s1-n2-2",
+   "number": "6.4.1.1",
+   "title": "First subcase of S1: n2 = 2",
+   "level": 4,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 517,
+   "n_words": 108
+  },
+  {
+   "id": "sec-047-6412-second-subcase-of-s1-n2-3",
+   "number": "6.4.1.2",
+   "title": "Second subcase of S1: n2\u2265 3",
+   "level": 4,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 245,
+   "n_words": 49
+  },
+  {
+   "id": "sec-048-642-case-s2",
+   "number": "6.4.2",
+   "title": "Case S2",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 462,
+   "n_words": 87
+  },
+  {
+   "id": "sec-049-6421-first-subcase-of-s2-no-bad-edges",
+   "number": "6.4.2.1",
+   "title": "First subcase of S2: no bad edges",
+   "level": 4,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 536,
+   "n_words": 112
+  },
+  {
+   "id": "sec-050-6422-second-subcase-of-s2-there-is-a-bad-edge",
+   "number": "6.4.2.2",
+   "title": "Second subcase of S2: there is a bad edge",
+   "level": 4,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 656,
+   "n_words": 141
+  },
+  {
+   "id": "sec-051-643-we-\ufb01nish-the-proof-of-the-theorem-from-64",
+   "number": "6.4.3",
+   "title": "We \ufb01nish the proof of the theorem from 6.4",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 587,
+   "n_words": 123
+  },
+  {
+   "id": "sec-052-644-comparison-with-the-formula-from-section-2",
+   "number": "6.4.4",
+   "title": "Comparison with the formula from section 2",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 294,
+   "n_words": 57
+  },
+  {
+   "id": "sec-053-65-grading-orientations-factorials-signs",
+   "number": "6.5",
+   "title": "Grading, orientations, factorials, signs",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1985,
+   "n_words": 368
+  },
+  {
+   "id": "sec-054-66-v-anishing-of-integrals",
+   "number": "6.6",
+   "title": "V anishing of integrals",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1600,
+   "n_words": 330
+  },
+  {
+   "id": "sec-055-661-a-trick-using-logarithms",
+   "number": "6.6.1",
+   "title": "A trick using logarithms",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2584,
+   "n_words": 498
+  },
+  {
+   "id": "sec-056-662-remark",
+   "number": "6.6.2",
+   "title": "Remark",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 487,
+   "n_words": 82
+  },
+  {
+   "id": "sec-057-7-f-ormality-conjecture-for-general-manifolds",
+   "number": "7",
+   "title": "F ormality conjecture for general manifolds",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2167,
+   "n_words": 372
+  },
+  {
+   "id": "sec-058-71-f-ormal-geometry-in-the-sense-of-i-gelfand-an",
+   "number": "7.1",
+   "title": "F ormal geometry (in the sense of I. Gelfand and D. Kazhda n)",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1661,
+   "n_words": 314
+  },
+  {
+   "id": "sec-059-72-flat-connections-and-q-equivariant-maps",
+   "number": "7.2",
+   "title": "Flat connections and Q-equivariant maps",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 2039,
+   "n_words": 379
+  },
+  {
+   "id": "sec-060-73-flat-families-in-deformation-quantization",
+   "number": "7.3",
+   "title": "Flat families in deformation quantization",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 201,
+   "n_words": 37
+  },
+  {
+   "id": "sec-061-731-flat-families-over-w",
+   "number": "7.3.1",
+   "title": "Flat families over W",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 938,
+   "n_words": 164
+  },
+  {
+   "id": "sec-062-7311-proof-of-the-property-p4",
+   "number": "7.3.1.1",
+   "title": "Proof of the property P4",
+   "level": 4,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 1260,
+   "n_words": 245
+  },
+  {
+   "id": "sec-063-732-flat-families-over-\u03c0-t-x-coor",
+   "number": "7.3.2",
+   "title": "Flat families over \u03a0 T (X coor)",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 985,
+   "n_words": 189
+  },
+  {
+   "id": "sec-064-733-flat-families-over-\u03c0-t-x-af-f",
+   "number": "7.3.3",
+   "title": "Flat families over \u03a0 T (X af f)",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 1560,
+   "n_words": 325
+  },
+  {
+   "id": "sec-065-7331-property-p5",
+   "number": "7.3.3.1",
+   "title": "Property P5",
+   "level": 4,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 1718,
+   "n_words": 337
+  },
+  {
+   "id": "sec-066-734-flat-families-over-x",
+   "number": "7.3.4",
+   "title": "Flat families over X",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 1699,
+   "n_words": 310
+  },
+  {
+   "id": "sec-067-735-passing-to-global-sections",
+   "number": "7.3.5",
+   "title": "Passing to global sections",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1682,
+   "n_words": 268
+  },
+  {
+   "id": "sec-068-8-cup-products",
+   "number": "8",
+   "title": "Cup-products",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-069-81-cup-products-on-tangent-cohomology",
+   "number": "8.1",
+   "title": "Cup-products on tangent cohomology",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 2604,
+   "n_words": 427
+  },
+  {
+   "id": "sec-070-82-compatibility-of-u-with-cup-products",
+   "number": "8.2",
+   "title": "Compatibility of U with cup-products",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 802,
+   "n_words": 148
+  },
+  {
+   "id": "sec-071-821-pictures-for-the-cup-product-in-polyvector-\ufb01",
+   "number": "8.2.1",
+   "title": "Pictures for the cup-product in polyvector \ufb01elds",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 1205,
+   "n_words": 236
+  },
+  {
+   "id": "sec-072-822-pictures-for-the-cup-product-in-the-hochschi",
+   "number": "8.2.2",
+   "title": "Pictures for the cup-product in the Hochschild compl ex",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 794,
+   "n_words": 154
+  },
+  {
+   "id": "sec-073-823-homotopy-between-two-pictures",
+   "number": "8.2.3",
+   "title": "Homotopy between two pictures",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 180,
+   "n_words": 36
+  },
+  {
+   "id": "sec-074-83-first-application-du\ufb02o-kirillov-isomorphism",
+   "number": "8.3",
+   "title": "First application: Du\ufb02o-Kirillov isomorphism",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-075-831-quanization-of-the-kirillov-poisson-bracket",
+   "number": "8.3.1",
+   "title": "Quanization of the Kirillov-Poisson bracket",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2608,
+   "n_words": 469
+  },
+  {
+   "id": "sec-076-832-three-isomorphisms",
+   "number": "8.3.2",
+   "title": "Three isomorphisms",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 1468,
+   "n_words": 254
+  },
+  {
+   "id": "sec-077-833-automorphisms-of-sym-g",
+   "number": "8.3.3",
+   "title": "Automorphisms of Sym (g)",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 1034,
+   "n_words": 195
+  },
+  {
+   "id": "sec-078-8331-isomorphism-it",
+   "number": "8.3.3.1",
+   "title": "Isomorphism IT",
+   "level": 4,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1744,
+   "n_words": 327
+  },
+  {
+   "id": "sec-079-8332-isomorphism-ialgip-bw",
+   "number": "8.3.3.2",
+   "title": "Isomorphism Ialg\u25e6IP BW",
+   "level": 4,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 2497,
+   "n_words": 462
+  },
+  {
+   "id": "sec-080-834-comparison-with-the-du\ufb02o-kirillov-isomorphis",
+   "number": "8.3.4",
+   "title": "Comparison with the Du\ufb02o-Kirillov isomorphism",
+   "level": 3,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 2540,
+   "n_words": 435
+  },
+  {
+   "id": "sec-081-835-results-in-rigid-tensor-categories",
+   "number": "8.3.5",
+   "title": "Results in rigid tensor categories",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 6330,
+   "n_words": 1046
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 82,
+  "sections": 83,
+  "chars_total": 115824
+ }
+}
