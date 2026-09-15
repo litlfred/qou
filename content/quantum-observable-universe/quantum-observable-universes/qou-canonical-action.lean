@@ -41,6 +41,7 @@ universe u v
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The underlying categorical action, carrying the gravity, gauge,
       and matter term morphisms `tr(q·R_∫)`, `∫_A∘tr_A(F∧_q⋆_qF)`, and
@@ -58,6 +59,7 @@ structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
 noncomputable def qou_canonical_action_dirac_sq
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
     (ca : QOUCanonicalAction C fh) :
     -- The Dirac squared operator decomposes into gravity + gauge.
@@ -85,20 +87,38 @@ noncomputable def qou_canonical_action_dirac_sq
     absence is the honest open state.
 
     Full proof would require showing the evaluation/coevaluation maps are
-    determined up to unique isomorphism by the duality data. -/
+    determined up to unique isomorphism by the duality data.
+
+    **Composition side, 2026-09-15 (`qou-h0ou`).**  `s` was applied by
+    *pre*-composition (`s.hom ≫ ca₁.action.gravity`).  That stopped
+    typechecking when `CategoricalAction.gravity` was retyped to the rank-2
+    pairing space `fh.obj ⊗ fh.obj ⟶ 𝟙_ C`: `s.hom` ends at `𝟙_ C`, which is
+    no longer where `gravity` begins.
+
+    It is now applied by *post*-composition, uniformly to all three terms.
+    That is the side this docstring's own account of the rescaling asks for:
+    the claim is that replacing `∫_A` by `λ·∫_A` sends `S_q ↦ λ·S_q`, and the
+    Frobenius form is the **last** map into the unit in each term, so
+    rescaling it composes on the right.  The uniformity the paragraph above
+    promises ("applied uniformly to all three terms") is preserved — for the
+    two terms that are already endomorphisms of `𝟙_ C` the two sides agree in
+    any case, since `End(𝟙_C)` is commutative in a monoidal category, though
+    nothing here needs or asserts that. -/
 -- Ref: [manuscript] §2, Proposition: Canonical action
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 def qou_canonical_action_unique_up_to_scalar
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C)
     (ca₁ ca₂ : QOUCanonicalAction C fh) : Prop :=
   -- The two actions' term-triples are related by a common unit
-  -- automorphism `s` (the categorical scalar `λ`):
-  --   ca₂.gravity = s.hom ≫ ca₁.gravity, etc.
+  -- automorphism `s` (the categorical scalar `λ`), applied on the side the
+  -- Frobenius form sits on:
+  --   ca₂.gravity = ca₁.gravity ≫ s.hom, etc.
   ∃ s : (𝟙_ C) ≅ (𝟙_ C),
-    ca₂.action.gravity = s.hom ≫ ca₁.action.gravity ∧
-    ca₂.action.gauge   = s.hom ≫ ca₁.action.gauge ∧
-    ca₂.action.matter  = s.hom ≫ ca₁.action.matter
+    ca₂.action.gravity = ca₁.action.gravity ≫ s.hom ∧
+    ca₂.action.gauge   = ca₁.action.gauge ≫ s.hom ∧
+    ca₂.action.matter  = ca₁.action.matter ≫ s.hom
 
 end QOU
