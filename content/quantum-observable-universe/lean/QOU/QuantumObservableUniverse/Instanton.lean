@@ -26,9 +26,9 @@ universe u v
 
     LaTeX: `\label{def:categorical-q-ext-deriv}` -/
 structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The Frobenius–Hopf object `A` in `C`. -/
-  frobHopf : @FrobeniusHopfData C _ _
+  frobHopf : @FrobeniusHopfData C _ _ _
   /-- The classical differential `d : Ωᵏ(A) → Ωᵏ⁺¹(A)`. -/
   d_classical : frobHopf.obj ⟶ frobHopf.obj
   /-- The vertical projection `π_V`. -/
@@ -56,14 +56,14 @@ structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-- The horizontal projection `π_H = id − π_V`. -/
 def proj_H {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
   𝟙 _ - cqd.proj_V
 
 /-- The q-deformed derivative `d_q` as a morphism: `q⁻¹ d + (1 − q⁻¹) π_V ≫ d`. -/
 noncomputable def CategoricalQExtDeriv.dq {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear QOU.GroundRing.R_q C]
     (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
   -- `q⁻¹` supplied by `qinv`; `R_q` has no `Inv` instance to write it with.
@@ -71,7 +71,7 @@ noncomputable def CategoricalQExtDeriv.dq {C : Type u}
 
 /-- When `q = 1`, `d_q` reduces to `d`. -/
 theorem CategoricalQExtDeriv.dq_classical {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear QOU.GroundRing.R_q C]
     (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
     cqd.dq = cqd.d_classical := by
@@ -89,8 +89,8 @@ theorem CategoricalQExtDeriv.dq_classical {C : Type u}
 
     LaTeX: `\label{def:categorical-instanton}` -/
 structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : @FrobeniusHopfData C _ _) where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+    (fh : @FrobeniusHopfData C _ _ _) where
   /-- The connection morphism `∇ : A → A ⊗ Ω¹(A)` (represented as endo). -/
   connection : fh.obj ⟶ fh.obj
   /-- The curvature `F_∇ = ∇² : A → Ω²(A)` (represented as endo). -/
@@ -144,7 +144,7 @@ References:
     Stated in zero-free form (`s ≫ f = t ≫ f` rather than `s ≫ f = 0`)
     because `C` is not assumed to have zero morphisms. -/
 class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     {frobHopf : FrobeniusHopfData C}
     (adjointObj : C)
     (adjointInclusion : adjointObj ⟶ frobHopf.obj)
@@ -216,7 +216,7 @@ class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]
     non-degeneracy of `∫_A` — by cancelling the monomorphism, which is the
     manuscript proof of `prf:categorical-irreducible`. -/
 theorem categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     {frobHopf : FrobeniusHopfData C}
     {adjointObj : C}
     {adjointInclusion : adjointObj ⟶ frobHopf.obj}
@@ -251,9 +251,9 @@ theorem categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
     stated against it. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : @FrobeniusHopfData C _ _)
-    (inst : @CategoricalInstanton C _ _ fh) :
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+    (fh : @FrobeniusHopfData C _ _ _)
+    (inst : @CategoricalInstanton C _ _ _ fh) :
     inst.hodge.IsSelfDual inst.curvature :=
   inst.self_dual
 
@@ -266,7 +266,7 @@ theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
 -- Ref: [manuscript] §1-quantum-observable-universe
 theorem categorical_dq_squared_classical_limit {C : Type u}
     [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear QOU.GroundRing.R_q C]
     (cqd : CategoricalQExtDeriv C)
     (hq : cqd.q = 1)
@@ -312,7 +312,7 @@ References:
     scope. Replaces the universal axiom over all monoidal `C`. -/
 class HasDqSquaredNonvanishing {C : Type u}
     [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear QOU.GroundRing.R_q C]
     (cqd : CategoricalQExtDeriv C)
     (hq : cqd.q ≠ 1)
@@ -354,7 +354,7 @@ class HasDqSquaredNonvanishing {C : Type u}
     Disclosure added 2026-09-05 per bean `qou-pqmw`. -/
 theorem categorical_dq_squared_nonvanishing {C : Type u}
     [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear QOU.GroundRing.R_q C]
     (cqd : CategoricalQExtDeriv C)
     (hq : cqd.q ≠ 1)
@@ -367,10 +367,10 @@ theorem categorical_dq_squared_nonvanishing {C : Type u}
 /-- **Categorical jet object**: `J¹(A) = A ⊗_C Ω¹(A)`.
     LaTeX: `\label{def:categorical-jet}` -/
 structure CategoricalJet (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] where
   /-- The Frobenius–Hopf object `A` in `C`. -/
-  frobHopf : @FrobeniusHopfData C _ _
+  frobHopf : @FrobeniusHopfData C _ _ _
   /-- The jet object `J¹(A)` in `C`. -/
   jetObj : C
   /-- Jet evaluation `j¹ : J¹(A) → A` (the counit). -/
@@ -381,7 +381,7 @@ structure CategoricalJet (C : Type u) [CategoryTheory.Category.{v} C]
   exact : kernelIncl ≫ jetEval = 0
 
 theorem kernelIncl_exact {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (cj : CategoricalJet C) :
     cj.kernelIncl ≫ cj.jetEval = 0 :=
@@ -390,7 +390,7 @@ theorem kernelIncl_exact {C : Type u}
 /-- **Proposition (Jet prolongation).**
     LaTeX: `\label{prop:categorical-jet-prolongation}` -/
 structure CategoricalJetProlongation {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (cj : CategoricalJet C) where
   /-- The prolonged connection `∇' : J¹(A) → J¹(A)`. -/
@@ -401,7 +401,7 @@ structure CategoricalJetProlongation {C : Type u}
   commutes : cj.jetEval ≫ connection = prolonged_connection ≫ cj.jetEval
 
 theorem categorical_jet_prolongation {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (cj : CategoricalJet C) (jp : CategoricalJetProlongation cj) :
     cj.jetEval ≫ jp.connection = jp.prolonged_connection ≫ cj.jetEval :=
@@ -413,12 +413,12 @@ theorem categorical_jet_prolongation {C : Type u}
     the knot chapter.)
     LaTeX: `\label{def:categorical-transport}` -/
 structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] where
   /-- The categorical jet data. -/
   jet : CategoricalJet C
   /-- The instanton connection. -/
-  instanton : @CategoricalInstanton C _ _ jet.frobHopf
+  instanton : @CategoricalInstanton C _ _ _ jet.frobHopf
   /-- The vertical projection of the covariant derivative `π_V(∇ψ)`. -/
   proj_V_nabla : jet.jetObj ⟶ jet.jetObj
   /-- The q-Hamiltonian `Ĥ_q` (LaTeX `\hat{H}_q`). -/
@@ -428,7 +428,7 @@ structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-- The transport equation implies `Ĥ_q − π_V ∇ = 0`. -/
 theorem kernel_condition {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (ct : CategoricalTransport C) :
     ct.hamiltonian - ct.proj_V_nabla = 0 := by
