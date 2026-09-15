@@ -857,3 +857,48 @@ require `exit 1` **with an error at each expected line number**. Measured: exit 
 `decide` proved that the proposition … is false`, which is a stronger red than
 `omega could not prove the goal` — prefer a decidable formulation for the control
 where the objects are concrete finite sets.
+
+## 20. Auditing a CONDITIONAL result whose hypothesis you were told is irreducible (2026-09-15, `SingleCrossingChainFactorizes.lean`)
+
+The brief asked for one new named hypothesis. The honest answer was **zero** — the
+hypothesis is a theorem of one the corpus already had. Order that found it, ~15 min:
+
+1. **Probe the "already checked" claim first, before writing anything.** One scratch
+   file, 4 s. If it compiles, the whole file's design changes, so doing it *after*
+   authoring wastes the authoring.
+2. **Then state the property anyway, as a `def … : Prop`, and PROVE it.** A `class`
+   with a `[C T]` binder would sell a theorem as an assumption. Naming it is still
+   worth it — it is the physically meaningful step (the connected sum).
+
+**Mutating the right declaration.** §19 says mutate by line number. Add: when a
+lemma exists in a *delegating* and a *proof-carrying* form (`tr_affine_letter :=
+tr_affine_letter_of_join …`), the line-number mutant must hit the **proof-carrying**
+one — mutating the delegate only re-types a term. My first two mutants hit neither
+(wrong lines entirely) and the **identity guard caught both**; without it I would
+have reported 2 passes as evidence.
+
+**When no counter-model exists, say which check you could NOT run.** Semantic
+necessity (§19.2) wants an instance where the hypothesis fails and the conclusion
+fails with it. Not constructible here. **The reason is a PEN-AND-PAPER argument, not a machine
+check, and must be reported as one:** with `H n = ⊤`, (T3)
+`∀ a ∈ H n, tr (a * g n) = z * tr a` appears to force `g n` to be the central scalar
+`z·1` — substituting the matrix units `a = E₁₁, E₁₂` into `Mat₂(ℚ)` with the
+normalised trace gives `G₁₁ = G₂₂ = z`, `G₁₂ = G₂₁ = 0`, and `R × R` collapses the
+same way. **Unverified in Lean.** If it holds, every *small* model is degenerate and
+a counter-model needs a genuinely growing tower, which Mathlib has not got — so the
+honest report is syntactic dependence (mutants) + satisfiability +
+trivial-inhabitation, **with the semantic-necessity check named as NOT run.**
+Do not let a hand argument for why a check is impossible get quoted later as
+though the check had been run.
+
+**Make the witness's degeneracy machine-checked, not prose.** Mirror the parent
+file's `towerSpan_of_constant`: prove `shifted n ≤ ⊥ → DisjointBlockMultiplicative`,
+then prove the witness satisfies the antecedent. The reader then sees *in Lean* that
+the witness exercises none of the hypothesis.
+
+**A filename is not a namespace.** `QOU/MathlibExt/MonotoneWordTraceFactorizes.lean`
+opens `namespace QOU.MathlibExt.MonotoneWordFactorizes` — no "Trace". Both spellings
+are live in the corpus and **each is correct for a different thing** (module name for
+`import`, namespace for the FQN). I nearly "corrected" a correct citation off the
+filename; `#check @<fqn>` settled it in 5 s. Cousin of §19's "a `section` is not a
+namespace", inverted.

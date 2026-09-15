@@ -405,6 +405,28 @@ block's sidecar (128 files for one block) — revert all but yours.
 6. **`lean -o` refuses a source outside its root** (cwd, or `--root`): stand-in /
    mutant modules go under a scratch root laid out `QOU/…/Mod.lean` — harness §10.
 
+## TRAP — "it does not follow from X" in a brief is a claim about a PROOF ATTEMPT, not about X (2026-09-15)
+
+A task brief told me a property *"does NOT follow from L1 + Markov. I checked
+this; do not spend time trying to derive it."* It follows in **two lines**. The
+brief's reasoning was sound and its conclusion false, and the gap between them is
+worth naming because it is reusable:
+
+**A tower law universally quantified over a LEVEL must be tried at every level,
+not only the level the object sits at.** `DisjointBlockMultiplicative` is
+`∀ n, ∀ a ∈ H n, ∀ b ∈ shifted n, …`. The dead route applies it at `m`, where the
+interface `g m` sits, and then needs cyclicity to move `b` — which genuinely
+fails. Applying it at **`m+1`**, with `a * g m` **grouped into one left factor**
+(`H (m+1)` is a `Subalgebra`, so it is closed under multiplication), works
+immediately. Mutants M8/M9 confirm it: level `m` red, grouping into `H m` red.
+
+Generalise to: when a brief says "already checked, don't try", the cheapest
+possible probe is still worth **one** scratch file — here 4 s. The same file's
+own history records the identical error one level down (`TwoSidedMarkov`
+introduced as "the one input MarkovTrace does not carry", retracted as a
+four-line theorem), so this is a *recurring* shape on tower/trace objects, not a
+one-off. Detail: `verification-harness.md` §20.
+
 ## TRAP — a theorem that IS a refutation needs more than the gate → `verification-harness.md` §19
 
 **A `False`-CONCLUDING theorem is a different animal — §19a.** The stock
