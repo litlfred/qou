@@ -82,6 +82,19 @@ comultiplication is not its Hopf comultiplication — and it is why
 `antipode_sq_of_comm` below is stated for Mathlib's `HopfObj` rather than
 transported to `FrobeniusHopfData`.
 
+**🛑 And the axioms this file is about do more than that, with no hypothesis at
+all.** `QOU.FrobeniusHopfData.scalar_id_eq_counit_unit` (same file, sorry-free,
+`[propext, Quot.sound]`) shows that `antipode_left` together with the Frobenius
+relation forces `ε(1)·x = ε(x)·1` for every `x`. So a **non-trivial** substrate
+has a **non-unital counit** — `ε(1) ≠ 1`, Mathlib's `BimonObj.one_counit`, the
+normalisation every bialgebra and Hopf algebra assumes without comment. Both
+unit-side bimonoid axioms are therefore individually excluded.
+
+`ε(1) = 1` is not a field here, so this is not a proof that the axioms force
+`A = 𝟙_C`; it is the identity above and its contrapositive. What it does mean is
+that the antipode axiom is not neutral with respect to the rest of the
+definition. Bean `qou-aawz`.
+
 ## References
 
 - [kassel1995] C. Kassel, *Quantum Groups*, Springer 1995, Ch. III
