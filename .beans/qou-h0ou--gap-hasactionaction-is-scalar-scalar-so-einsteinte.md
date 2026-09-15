@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-09-15T06:45:53Z
+updated_at: 2026-09-15T09:10:37Z
 ---
 
 ## 2026-09-15 — DIAGNOSIS CONFIRMED, and a rank-2 field space is now formalized
@@ -130,3 +130,153 @@ domain; `MonoidalCalcVar.lean` and `GaugeTheory.lean` are untouched. Retyping
 `HasAction.action` to take a field space is neither a precision fix nor
 corpus-derived, so per AGENTS.md "ASK THE OWNER BEFORE CHANGING THINGS" it is an
 owner call. It is cheap when wanted: zero instances, zero consumers.
+
+
+## 2026-09-15 (third pass) — RETYPED, owner-authorised. Branch `claude/hasaction-rank-two-retype-2026-09-15`
+
+The owner selected "Retype `HasAction.action` to rank-2", so the §"ASK THE
+OWNER BEFORE CHANGING THINGS" gate that held the second pass back is
+satisfied for this change. Done, verified, pushed. Bean stays OPEN (§13a) —
+the residual problem below is untouched.
+
+### Blast radius — CONFIRMED, with two corrections to the record
+
+`grep -rn einsteinTensor`, tree minus `.beans/`/`.git/`: **9 hits, 3 files,
+all `.lean`** — MonoidalCalcVar 4, GaugeTheory 4, Instanton:239 a comment.
+Exactly as this bean recorded. `HasAction` had **zero instances**, confirmed.
+
+Two corrections a later reader needs:
+
+1. **The path is `QOU/QuantumObservableUniverse/GaugeTheory.lean`**, not
+   `QOU/GaugeTheory.lean`. Line numbers were right; the directory was not.
+2. **GaugeTheory does NOT import MonoidalCalcVar.** The two files were
+   *parallel duplicates* of the same defect, not consumer and producer. So
+   "fix GaugeTheory's consumers" was the wrong shape of task — GaugeTheory
+   had to be retyped independently. It now imports MonoidalCalcVar so the
+   field space and contraction are shared rather than re-declared.
+
+And one thing the 9-hit grep structurally could not see: a **third** site,
+`quantum-observable-universes/categorical-action.lean`, a CONTENT BLOCK
+(`.ts`/`.md`/`.qa.json` siblings) redeclaring `QOU.CategoricalAction`,
+`QOU.CategoricalConnection` and all three `variational_*` in the same
+namespace as the library. It has no `einsteinTensor`, which is why the grep
+missed it, and its `variational_einstein` is
+
+    ca.gravity = ca.matter -> ca.gravity = ca.matter := id
+
+— a tautology stating the WRONG equation (gravity = matter, not
+gravity = einsteinTensor + stressTensor). `variational_yang_mills` is
+`ca.gauge = ca.gauge >> id -> ca.gauge = ca.gauge`. Both are §"Strict Lean
+Discipline" item 5 violations. NOT touched: outside the authorised change,
+and deciding what that block should say is a separate call.
+
+### What was retyped
+
+Field space `PairingSpace C X Y := X (x) Y --> 1_C`, generic in an ordered
+pair of objects. Deliberately NOT indexed by `FrobeniusPairingData`: that
+would give the MathlibExt module a QOU-specific import cone, and it is the
+same space as the second pass's `fieldSpace d` at `(X,Y) := (d.dual, d.obj)`.
+
+* `HasAction.action : PairingSpace C X Y -> R` (was `End(1_C) -> R`)
+* `VariationalData.gravity`, `ExternalCurrents.{einsteinTensor,stressTensor}`
+* `CategoricalAction.gravity`,
+  `CategoricalVariationalData.{einsteinTensor,stressTensor}`
+
+UNCHANGED, deliberately: `gauge`, `gaugeCurrent`, `matter`, and their two
+equations. The split is forced by `gravity = einsteinTensor + stressTensor`
+needing one additive group, not by a physics claim about which currents "are"
+tensors.
+
+### The bridge — the deliverable that makes it a refactor
+
+`contract eta : PairingSpace C X Y ->+ End(1_C)`, `T |-> eta >> T`. Then
+`einstein_contracted` / `einstein_contracted_comp` DERIVE the pre-retype
+scalar Einstein equation from the rank-2 one (rw by the identity, then
+`map_add`). Nothing previously statable is lost.
+
+On the GaugeTheory side the co-pairing is **not a free parameter**:
+`FrobeniusHopfData` already carries `coevaluation : 1_C --> obj (x) obj`, and
+`A` is self-dual there — `pairing_snake_left/right` pair that coevaluation
+against `mul >> frobeniusForm`, whose type is `obj (x) obj --> 1_C`, i.e. a
+`PairingSpace` verbatim. So `frobeniusPairing` gives the retyped slots a
+substrate-supplied inhabitant, and `variational_einstein_scalar` is the
+bridge at the corpus's own datum.
+
+`coevaluation_contract_eq_iff` states the residue exactly: two rank-2 fields
+contract equally iff their difference is killed by `coevaluation`, and
+`FrobeniusHopfData` carries **no epi hypothesis** making that kernel trivial.
+
+### What the retype does NOT fix — say this, do not imply otherwise
+
+`hasMonoidalEOM_of_def` still discharges all three EOM by `rfl`. Retyping
+does not touch it: rank and tautology are independent defects, and the
+honest report has to say so rather than let the reader infer the `rfl` was
+what got removed. `einstein_split_iff` now states the residual problem
+exactly — `g = G + T <-> T = g - G`, i.e. the identity says only that the
+stress term IS the residual and places NO condition on `einsteinTensor`.
+AGENTS.md §"Defined residual != derived decomposition", in Lean. Open.
+
+### The one consumer that broke, and the semantic choice it forced
+
+`qou_canonical_action_unique_up_to_scalar` applied the unit automorphism by
+PRE-composition (`s.hom >> ca1.action.gravity`). `s.hom` ends at `1_C`, which
+is no longer where `gravity` begins:
+
+    error: Type mismatch
+      s.hom >> ?m.40 has type 1_C --> ?m.27
+      but is expected to have type PairingSpace C fh.obj fh.obj
+
+Under the old typing both sides were `End(1_C)` and the composition side was
+unobservable; it became a real question the moment the field space stopped
+being the scalars. Fixed by post-composing uniformly, which is the side the
+block's OWN docstring argues for (rescaling `\int_A`, the last map into the
+unit). Flagged in the commit as a semantic choice, not a mechanical retype.
+
+`qou_canonical_action_dirac_sq` (same file) still typechecks unchanged —
+`gravity >> gauge` is fine because gravity still ENDS at `1_C`.
+
+### Verification
+
+`lean -DautoImplicit=false -s 65536`, exit 0, against a COMPLETE symlink-farm
+overlay (`scripts/lean-overlay-env.sh`) carrying this branch's own
+MonoidalCalcVar and GaugeTheory oleans. `lake` never invoked.
+
+**17 files GREEN**: the 3 library files, all 9 importers of GaugeTheory, and
+the `CategoricalAction` consumers that do not import it. `qou-canonical-action`
+was the only break.
+
+`#print axioms` on all 33 touched/new declarations: **propext only, no
+sorryAx** — kernel-checked. `#check` confirms the retype is real, not
+cosmetic: `HasAction.action`'s domain and `einsteinTensor`'s codomain both
+now name the paired objects.
+
+`scripts/lean-self-assuming-audit.py` on the 3 files: **0 candidates** — and
+per `qou-1ccx` that is a LOWER BOUND, so the four new `[HasMonoidalEOM]` /
+`[HasCategoricalEOM]` theorems were checked by eye. None is a projection:
+each conclusion needs `map_add` on top of the class field, so the field is
+not restated verbatim.
+
+No `R`, no ordering, no `Real.*`, no `linarith`/`positivity`/`norm_num`, no
+numerical constant added (§7c verified by diff grep). No `sorry`, no `axiom`,
+no `native_decide`, no `: True`.
+
+### Not done
+
+* **Root `QOU.lean` cannot be checked here** — blocked behind
+  `QOU.Eightfold.ObstructionClassForcesComplexType`, which has no olean in
+  the cache because it is red on `main` (AGENTS.md records the same
+  `[6459/6460]` failure). Pre-existing, unrelated.
+* **`proof-statement-integrity` on `qou-canonical-action` left
+  `needs-agent`**, deliberately. The existing entry is
+  `[EXPIRED-NO-FIELD-HASH]`, which the sidecar's own `$expired` note says
+  adjudicates nothing — so there is no live verdict, and an honest one would
+  be FAIL: the `.md` asserts `D^2 = q R_int + tr_A(F /\_q *_q F)` and the
+  Lean concludes `gravity >> gauge = gravity >> gauge` by `rfl`. Pre-existing
+  and a separate adjudication.
+* **`qa-staleness` on the whole chapter: 310 blocks, fresh=0,
+  stale/partial=310.** The block I refreshed was not singled out by my
+  change; the chapter is uniformly stale on `main`.
+* **§7c warning at `GaugeTheory.lean:220`** (`obs : StateSections -> R` in
+  `ArchimedeanObservation`) is PRE-EXISTING — verified absent from my diff —
+  and is arguably a false positive, since the structure is the archimedean
+  side of the wall by name and construction.
