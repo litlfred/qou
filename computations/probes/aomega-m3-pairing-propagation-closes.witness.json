@@ -1,0 +1,61 @@
+{
+  "name": "aomega-m3-pairing-propagation-closes",
+  "description": "The GGM pairing propagation law derived with no free parameters and verified to close exactly against printed (92); supersedes the Parts 3-5 blocker.",
+  "computation": "aomega-m3-pairing-propagation-closes",
+  "engine": "python+sympy",
+  "scriptFile": "aomega_m3_pairing_propagation_closes_probe.py",
+  "computedAt": "2026-09-14T18:54:48.435718+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "parameters": {
+    "law": "P_{m+1} = A_{m-1} P_m R ([R Abar_{-m-2} R]^T)^-1 R",
+    "inputs": "GGM (86), (87), (88), Theorem 11 — all printed"
+  },
+  "data": {
+    "closes_per_integer_m": {
+      "-3": true,
+      "-2": true,
+      "-1": true,
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true
+    },
+    "closes_symbolically": true,
+    "artifact_entry_1_0": "0"
+  },
+  "verdict": "GATE 1 DONE. The pairing propagation law closes EXACTLY against GGM's printed (92), derived end-to-end with no free parameters from (86), (88), (87) and Theorem 11 — the last of which supplies the W^- law without a further lookup, since it makes BOTH branches of (87) solve (86). The law is P_{m+1} = A_{m-1} P_m R ([R Abar_{-m-2} R]^T)^{-1} R. It is verified at eight explicit integer m with q carrying NO assumptions (G1), and symbolically in m under positivity (G2). This SUPERSEDES the blocker of Parts 3-5, whose three causes were: Part 3's retracted m-invariance premise; the genuine structural point that (87) makes W at q^-1 a DIFFERENT block family (found by Part 6's source read); and a sympy artifact — with q unassumed, (1/q)^m does not fold to q^-m, so entry (1,0) displayed as q**m - 1/(1/q)**m, identically zero. ONE of the three was mathematics and TWO were the harness. Caveat recorded rather than smoothed over: that nonzero DISPLAY is path-dependent and this probe's own path simplifies the entry to 0 outright, so only the vanishing is reproducible here (G3). A residue that reads zero or nonzero depending on how simplify is reached is a worse hazard than a stable one.",
+  "assertions": [
+    {
+      "name": "G1-the derived propagation law closes EXACTLY at eight explicit integer m with q carrying NO assumptions — so the result does not rest on declaring q positive, which is precisely what masked the artifact in Parts 3-5",
+      "passed": true,
+      "per_m": {
+        "-3": true,
+        "-2": true,
+        "-1": true,
+        "0": true,
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true
+      }
+    },
+    {
+      "name": "G2-the same law closes symbolically in m once q is positive and m is an integer",
+      "passed": true
+    },
+    {
+      "name": "G3-the Parts 3-5 residue was NOT mathematics: entry (1,0) of the unassumed symbolic residue vanishes. Note this probe's path simplifies it to 0 outright, so the literal display 'q**m - 1/(1/q)**m' seen in the ad-hoc run is NOT reproduced here — the artifact is PATH-DEPENDENT, which makes it a worse hazard than a stable one, not a better one: the same residue can read zero or nonzero depending on how simplify is reached",
+      "passed": true,
+      "entry_1_0": "0",
+      "reproducibility": "the nonzero DISPLAY is path-dependent and is not reproduced by this probe; only the vanishing is reproducible",
+      "evaluated_at_integer_m": true
+    }
+  ],
+  "scriptHash": "3a56a921074a",
+  "scriptCommitSha": "unknown",
+  "commitSha": "9b5abe64b8c96b1dc006df98086dcf2f83348923",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

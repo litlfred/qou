@@ -108,7 +108,7 @@ theorem dq_sq_eq_zero_of_scalar_one {R : Type*} [Ring R] {C : Type u}
 
     LaTeX: `\label{prop:categorical-dq-squared}` -/
 theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
     (cqd : CategoricalQExtDeriv C)
     (hq : cqd.q = 1)

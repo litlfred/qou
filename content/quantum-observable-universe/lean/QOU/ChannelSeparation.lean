@@ -65,7 +65,7 @@ universe u v
 -- Ref: [kock2004]
 structure JetGradedChannelSeparation (C : Type u)
     [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The base graded Frobenius--Hopf object (level 0). -/
   base : GradedFrobeniusHopf C
   /-- The adjoint object at the base level. -/
@@ -87,7 +87,7 @@ structure JetGradedChannelSeparation (C : Type u)
 -- Ref: [kock2004]
 structure JetFiltrationPreservesGrading
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C] where
   /-- The categorical jet data. -/
   jet : CategoricalJet C

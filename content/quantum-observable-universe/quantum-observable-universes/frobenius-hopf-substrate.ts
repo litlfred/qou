@@ -138,7 +138,43 @@ export default definition({
         "merely $g \\mapsto g^{-1}$ — satisfies the antipode condition for " +
         "$|G| > 1$, verified by exact rational elimination on the full " +
         "$|G|^2$ system for $\\mathbb{Z}/2, \\mathbb{Z}/3, \\mathbb{Z}/4, S_3$. " +
-        "Audit: `docs/audits/2026-09-15-frobenius-hopf-has-no-nontrivial-linear-model.md`.",
+        "Audit: `docs/audits/2026-09-15-frobenius-hopf-has-no-nontrivial-linear-model.md`. " +
+        "**Acted on the same day — see the note below: the convolution condition " +
+        "was replaced, so this block no longer carries an axiom with no models.**",
+    },
+    {
+      kind: "status",
+      date: "2026-09-15",
+      body:
+        "**Axiom 3 replaced: the antipode is now an involutive anti-automorphism, " +
+        "not a convolution inverse** (owner decision). Until today axiom 2 asked " +
+        "for $\\mu \\circ (S \\otimes \\mathrm{id}) \\circ \\Delta = " +
+        "\\eta \\circ \\varepsilon$. The note above proves that condition has " +
+        "**no non-trivial model over a field**, so it is not an axiom one can keep. " +
+        "It now asks instead that $S$ reverse $\\mu$ and $\\Delta$, fix $\\eta$, " +
+        "preserve $\\varepsilon$ and $\\lambda$, and square to the identity. " +
+        "**What this buys, measured:** $k[G]$ with the Frobenius comultiplication " +
+        "and the classical $S(g) = g^{-1}$ **is a model**, verified for " +
+        "$\\mathbb{Z}/1..4$, $V_4$, $S_3$ and $D_4$ by exact integer arithmetic " +
+        "(`computations/probes/frobenius_hopf_intermediate_axioms_probe.py`, 7/7). " +
+        "**What it costs, and this is not hidden:** $S$ is *constrained* but no " +
+        "longer *determined*. Uniqueness came only from the convolution identity, " +
+        "which is exactly the one with no models — the two cannot both be had. On a " +
+        "non-commutative $A$ the anti-algebra law does exclude the vacuous " +
+        "$S = \\mathrm{id}_A$ (measured: excluded on $S_3$ and $D_4$, not on any " +
+        "abelian group), which is what stops $S$ being decoration. " +
+        "**Why $S^2 = \\mathrm{id}$ is not carried alone:** it pins nothing — " +
+        "$S = \\mathrm{id}_A$ satisfies it on every group tested, non-abelian " +
+        "included. It earns its place only beside the anti-algebra law. " +
+        "**New requirement:** $\\mathbf{C}$ is now braided, since \"reverses\" is " +
+        "not expressible without a way to exchange tensor factors. That is not a new " +
+        "demand on the framework: `def:quantum-universe` is braided monoidal, and its " +
+        "Lean carrier already supplied the instance. " +
+        "The three theorems recording the collapse are **not** deleted — they now " +
+        "take the convolution condition as an explicit hypothesis " +
+        "(`ConvolutionLeft` / `ConvolutionRight`), which is strictly stronger than " +
+        "reading it off a field. Audit: " +
+        "`docs/audits/2026-09-15-antipode-anti-automorphism-package.md`.",
     },
   ],
 });

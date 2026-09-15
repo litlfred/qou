@@ -40,7 +40,7 @@ structure ProjectiveLineObject (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **Fibre–adjoint-fibre involution** `σ : P(V) ↪ Ad(A)`.
     LaTeX: `\label{prop:fiber-adjoint-involution}` -/
 structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The adjoint bundle object `Ad(A)` in `C`. -/
   adjointObj : C
@@ -61,7 +61,7 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **Categorical connection** on a Frobenius–Hopf object.
     LaTeX: `\label{def:categorical-connection}` -/
 structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The object of 1-forms `Ω¹` in `C`. -/
   Omega1 : C
@@ -74,7 +74,7 @@ structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-- **Left module action** of `A` on another object `V`. -/
 structure ModuleAction (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The object `V` acted upon. -/
   target : C
@@ -89,7 +89,7 @@ structure ModuleAction (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **Categorical action functional** `S_q[∇, λ, ψ]`.
     LaTeX: `\label{def:categorical-action}` -/
 structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The connection on `A`. -/
   connection : CategoricalConnection C fh
@@ -120,7 +120,7 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
     categorical equations of motion — the Einstein tensor, stress-energy
     tensor, and gauge current density. -/
 structure CategoricalVariationalData (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) where
   /-- The Einstein tensor `G_λ = R_λ − ½ tr(R_λ) id`. -/
@@ -150,7 +150,7 @@ is formalised. -/
     `(C, fh, ca, vd)` choice, encoding the on-shell relations
     between action terms and external currents/tensors. -/
 class HasCategoricalEOM {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
     (vd : CategoricalVariationalData C fh ca) : Prop where
@@ -170,7 +170,7 @@ class HasCategoricalEOM {C : Type u} [CategoryTheory.Category.{v} C]
     construction), the `HasCategoricalEOM` instance follows
     immediately. -/
 instance hasCategoricalEOM_of_facts {C : Type u}
-    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
@@ -189,7 +189,7 @@ instance hasCategoricalEOM_of_facts {C : Type u}
 -- Ref: [manuscript] §1-quantum-observable-universe
 -- Ref: [wald1984] General Relativity — see content/schema/references.ts
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
     (vd : CategoricalVariationalData C fh ca)
@@ -201,7 +201,7 @@ theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
 -- Ref: [manuscript] §1-quantum-observable-universe
 -- Ref: [bleecker1981] Gauge Theory and Variational Principles — see content/schema/references.ts
 theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
     (vd : CategoricalVariationalData C fh ca)
@@ -213,7 +213,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
 -- Ref: [manuscript] §1-quantum-observable-universe
 -- Ref: [kobayashi1963] Kobayashi-Nomizu, Foundations of Differential Geometry, Vol. I (1963 Interscience; 1996 Wiley reprint = kobayashi1996), DOI 10.1002/9780470316559
 theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
     (vd : CategoricalVariationalData C fh ca)
@@ -227,7 +227,7 @@ theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
 /-- **Observation** as a categorical endomorphism `O : A → A`.
     LaTeX: `\label{def:observation}` -/
 structure Observation (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The observation morphism `O : A → A`. -/
   morphism : fh.obj ⟶ fh.obj

@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-13T12:41:19Z
-updated_at: 2026-09-13T12:42:15Z
+updated_at: 2026-09-14T18:32:25Z
 ---
 
 Found 2026-09-13 while screening `r5-full-canonical-knot-solver.witness.json`
@@ -106,3 +106,85 @@ Aside, unresolved and small: my non-integral float count for this witness is
 **677** against a baseline entry of **637**. The same count matched the baseline
 exactly on three other files (93/93, 117/117, 216/216), so the method is right in
 general and something about this file differs. Not chased.
+
+## RESOLVED 2026-09-14 — it is the IMPORT CONE. The environment is present, drifted, and INERT.
+
+Ran the discriminator this bean prescribes. **Reproduced the baseline exactly in
+a different container first**: 733 moved / 33 appeared / 1 vanished, byte-for-byte
+the figures above. New detail: **61 of the 733 are structural** (rank /
+channel_braid_words / active_set), the rest numeric.
+
+### The discriminator
+
+Used a better base than the one proposed: the witness's **own recorded
+commitSha**, `550985daa5a` (2026-08-24 05:01:35), which **resolves** in this
+clone. That is the exact tree when the witness was written, rather than
+`78c74bc5ed4^`.
+
+| run | moved | appeared | vanished | structural |
+|---|---|---|---|---|
+| current cone + current env (reference) | **733** | 33 | 1 | **61** |
+| **OLD cone + current env** (discriminator) | **0** | 6 | 0 | **0** |
+
+**Verdict: the import cone, unambiguously.** With the cone reverted and the
+environment left untouched, the committed witness reproduces with **zero** moved
+fields. The 6 that appear are additive LP-dual diagnostics
+(`gap_recomputed_str`, `residual_dual_str`, `residual_primal_str`, ~1e-21 to
+1e-46), not moved values.
+
+The environment in this container **is** drifted, and is demonstrably inert:
+
+    clarabel              absent           -> 0.11.1
+    mpmath                1.3.0            -> 1.4.1
+    pyhecke_native_build  e114ae83ee1a611f -> 5df83fbc24b06f8a   (a THIRD build, not the one above)
+
+### Per-module attribution (each at HEAD, other two at the witness commit)
+
+| module | moved | structural |
+|---|---|---|
+| `q_parameter.py` | **0** | 0 |
+| `substrate/experimental_constants.py` | **360** | 27 |
+| `mass_formula_6term.py` | **722** | 60 |
+
+`mass_formula_6term` dominates; `experimental_constants` is a substantial
+second; they overlap (722 + 360 > 733). `q_parameter` is inert for this witness.
+
+## 🛑 The bean's cone evidence was wrong, and the way it was wrong is reusable
+
+This bean names **`lp_dual_solver` as the leading candidate** — *'the module
+that would decide the channel words'* — on the strength of *'four in one commit
+78c74bc5ed4'*. Measured:
+
+- `computations/lp_dual_solver.py` is **byte-identical** to the witness commit.
+  It cannot be the cause. Same for `witness_base.py` and
+  `klr_canonical_basis_filter.py`. **Three of the six named modules did not
+  change at all**; only three did.
+- `78c74bc5ed4` is **45,555 files changed, 15,589,663 insertions, zero
+  deletions** — a bulk re-add / history artifact, not a code change. Every entry
+  reads `| N +`.
+- The real history: `lp_dual_solver.py` has **exactly one** commit between the
+  witness and main (`638f298ffb`, itself a merge), with identical content.
+
+**The lesson:** a `git log` date says a commit *touched* a path; it does not say
+the *content* changed. A bulk re-add makes every file it sweeps look freshly
+modified. Check `git diff <base> -- <file>` for content before attributing cause
+— the same metadata-vs-content confusion this corpus keeps finding one level up.
+
+The bean's discriminator **design** was right and is what settled this; only its
+inputs were wrong.
+
+## Consequence for the standing AGENTS.md question
+
+AGENTS.md records environment drift as *'a hazard, not yet measured here'* whose
+one candidate (`binding_canonical`, 48 %) turned out to be import-cone. **This
+is a second candidate, also import-cone** — and stronger than the first, because
+here the environment is *demonstrably* drifted on three keys and *demonstrably*
+inert. Environment drift remains **unconfirmed in this corpus, now 0 for 2**.
+
+## Unchanged
+
+Nothing committed; tree verified byte-identical to HEAD afterwards (the producer
+writes no sibling witnesses — confirmed, only its own). The 637 raw-float64
+fields still cannot be drained without landing the 733-field regeneration, which
+belongs to the R5/SDP arc. **Bean stays open on that**: what is resolved is the
+cause, not the regeneration decision.

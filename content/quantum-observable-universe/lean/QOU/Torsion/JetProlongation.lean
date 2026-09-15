@@ -21,7 +21,7 @@ universe u v
 /-- **Jet prolongation data**: the categorical jet object `J¹(A) = A ⊗ Ω¹(A)`.
     LaTeX: `\label{prop:jet-prolongation}`, Steps 1–2. -/
 structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] where
   /-- The base Frobenius–Hopf object `A`. -/
   base : FrobeniusHopfData C
   /-- The jet Frobenius–Hopf object `J¹(A)`. -/

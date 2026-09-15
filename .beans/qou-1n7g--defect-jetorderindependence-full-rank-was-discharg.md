@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-09T22:14:20Z
-updated_at: 2026-09-08T04:37:28Z
+updated_at: 2026-09-14T20:43:31Z
 ---
 
 
@@ -92,3 +92,106 @@ and let `qou-xc8t` carry the residue** — it costs nothing, loses no open item,
 removes a `bug` that no longer describes any live defect. The no-op is equally
 safe: nothing breaks if it stays `todo`, it simply keeps re-surfacing on the
 completion-candidate queue, which is how it reached me.
+
+## 2026-09-14 — THIRD verification: the two prior entries hold, and this one COMPILED the file
+
+Both entries above read the source; neither built it. On main `2b8206e504` — **69
+commits after** the 2026-09-08 entry — the file is byte-unchanged (last non-merge
+touch `638f298ffb`, 2026-09-05) and every structural claim re-checks:
+
+- **One `instance`**, `trivialError_bound` at L180. The L405 hit is the word
+  "instance" inside a docstring.
+- **`jetPivots` at L305 is a plain `def`**, consumed at L312-313 by
+  `jetOrder3_certificate` alone. L410/L413 are docstring prose.
+- **Zero real `sorry`, zero `axiom`.** The three `sorry` grep hits are the string
+  "sorry-free" in docstrings at L250, L259, L414 — the `qou-0a0z` false-positive
+  shape, unchanged.
+
+### What this entry adds that the other two did not
+
+**1. The instance search was CORPUS-WIDE, not file-scoped.** Both prior entries
+say "the only instance left **in the file**", which leaves open the one thing
+that would resurrect the defect: an instance supplied from somewhere else.
+
+```
+grep -rn "instance.*JetOrderIndependence\|: JetOrderIndependence" --include=*.lean .   -> 0 hits
+grep -rn "ofPivots"                                              --include=*.lean .   -> 5 hits
+```
+
+All five `ofPivots` hits are in this file, and **four of them are docstring
+prose**; the fifth is the definition at L282. So there is **no consumer of
+`ofPivots` anywhere in the corpus** — nothing feeds it the constant, and no
+`.lean` in the tree (content-block siblings included, the grep walks them)
+declares a `JetOrderIndependence` instance at all. The conjecture is carried by a
+content-bearing class with no instance, which is exactly the §3b-tax honest state.
+
+**2. It compiles.** `lean -DautoImplicit=false -s 65536` on the file, **exit 0**,
+2m49s wall, no diagnostics. Flags per AGENTS.md: a bare `lean` is a weaker check
+than `lake build` because it does not read the lakefile's `autoImplicit := false`.
+
+The snapshot caveat AGENTS.md attaches to lean-direct does **not** bite here, and
+that was checked rather than assumed. The file's only non-Mathlib import is
+`QOU.Archimedean.HyperbolicVolumeIndependence`, whose olean is stamped
+2026-09-07 19:46 against a source last changed 2026-09-05 16:29 — the olean
+**post-dates its own source**, so the `descartesWtrace` failure mode (compiles
+green against a stale snapshot, red against the source it names) cannot apply.
+
+**3. `qou-xc8t` exists and is dormant.** Still `status: todo`, but
+`updated_at: 2026-08-09T22:04:32Z` — **five weeks with no entry**. The 2026-09-08
+entry is right that the carrier exists; worth adding that nothing has moved on it,
+so "tracked separately" currently means tracked, not worked.
+
+### What is still open, and what I did NOT establish
+
+The residue is untouched and is real. `jacobianRank_eq_three_of_base` is an
+**abstract** principle over `{r : ℕ → ℕ}` — one line, `le_antisymm (hle N)
+(hbase ▸ hmono hN)` — and says nothing about the concrete order-`N` Jacobian. The
+file flags this itself at L328-331: discharging `Monotone` / `≤ 3` / base `= 3`
+for the concrete Jacobian "is the remaining structural input, **not a lemma proved
+in this file**". `jetJacobianBase_rank = 3` is genuine and witnessed
+(`det = 1/16`, `Matrix.rank_of_isUnit`); the step to all orders is not there.
+
+Exit 0 is a claim about *this* file against *this* olean cone. It is not a claim
+about the rest of the QOU library, and I did not run a sweep.
+
+### Status untouched — and I am not repeating the recommendation as though it were new
+
+The 2026-09-08 entry already recommends closing and letting `qou-xc8t` carry the
+residue, and already defers to the owner. I agree with it and add nothing to the
+argument, so restating it would just be a second vote dressed as new evidence.
+What changed is the evidence under it: the defect is now verified *absent from the
+whole corpus* rather than from one file, and the file is verified *to compile*
+rather than to read correctly. The no-op remains safe — nothing breaks if this
+stays `todo`.
+
+## 2026-09-14 (same session, later) — the constant is not the only stale thing in that file
+
+Working `qou-xc8t` straight after the verification above turned up something the
+three verification entries all missed, because all three checked the *shape* of
+the discharge and none re-ran the producer.
+
+**`jetJacobianBase` and `jetPivots` do not reproduce.** The Lean's literals and
+the committed witness (2026-06-08) agree with each other and disagree with
+`jet_order_pivots.py` as it stands today:
+
+| | Lean + witness | live producer |
+|---|---|---|
+| elimination det | `1/16` | **`−11/4`** |
+| LU pivots | `(1/4, 2, 1/8)` | **`(1/4, 1, −11)`** |
+
+Two of three rows moved (`Borromean` is unchanged, and the `h^0` column is
+unchanged for all three). Producer drift, not import-cone drift — the producer's
+own `scriptHash` is `1eadd3f17d76` against the witness's `380671554d5b`. The
+braid words are unchanged and still match the Lean docstring.
+
+**This does not reopen the defect and does not weaken the verification above.**
+There is still no `JetOrderIndependence` instance anywhere, `ofPivots` still has
+no consumer, and the file still compiles `exit 0` — `−11/4 ≠ 0` the same as
+`1/16 ≠ 0`, so every theorem in it remains true. What is no longer true is the
+docstring's claim that these literals are *"witnessed from the framework's own
+canonical Markov traces"*: they were, three months ago.
+
+Recorded here only so a reader of this bean does not take "verified three times"
+to mean the file's numbers were checked — they were not, until now. Full
+measurement, the options and the recommendation are in **`qou-xc8t`**, which owns
+the discharge routes; nothing is proposed here.

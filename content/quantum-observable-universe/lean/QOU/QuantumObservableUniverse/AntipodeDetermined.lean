@@ -1,4 +1,5 @@
 import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.QuantumObservableUniverse.FrobeniusBialgebraCollapse
 import Mathlib.CategoryTheory.Monoidal.Conv
 import Mathlib.CategoryTheory.Monoidal.Hopf_
 
@@ -109,7 +110,7 @@ namespace QOU
 universe u v
 
 variable {C : Type u} [CategoryTheory.Category.{v} C]
-  [CategoryTheory.MonoidalCategory C]
+  [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
 
 namespace FrobeniusHopfData
 
@@ -150,6 +151,7 @@ def toComonObj (F : FrobeniusHopfData C) : ComonObj F.obj where
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 Ch. III
 --      (the antipode is the convolution inverse of the identity, hence unique)
 theorem antipode_unique_of_left (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
+    (hconv : F.ConvolutionRight)
     (hl : F.comul ≫ S' ▷ F.obj ≫ F.mul = F.counit ≫ F.unit) :
     S' = F.antipode := by
   letI : MonObj F.obj := F.toMonObj
@@ -159,7 +161,8 @@ theorem antipode_unique_of_left (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
   · rw [CategoryTheory.Conv.mul_eq, CategoryTheory.Conv.one_eq]
     simpa [toMonObj, toComonObj] using hl
   · rw [CategoryTheory.Conv.mul_eq, CategoryTheory.Conv.one_eq]
-    simpa [toMonObj, toComonObj] using F.antipode_right
+    simpa [toMonObj, toComonObj] using
+      (hconv : F.comul ≫ (F.obj ◁ F.antipode) ≫ F.mul = F.counit ≫ F.unit)
 
 /-- **Uniqueness of the antipode**, in the usual two-sided form: anything
     satisfying both antipode axioms is the antipode.
@@ -168,21 +171,24 @@ theorem antipode_unique_of_left (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
     recorded in that direction because a theorem should not carry a hypothesis
     it does not spend. -/
 theorem antipode_unique (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
+    (hconv : F.ConvolutionRight)
     (hl : F.comul ≫ S' ▷ F.obj ≫ F.mul = F.counit ≫ F.unit)
     (_hr : F.comul ≫ F.obj ◁ S' ≫ F.mul = F.counit ≫ F.unit) :
     S' = F.antipode :=
-  F.antipode_unique_of_left S' hl
+  F.antipode_unique_of_left S' hconv hl
 
 /-- Restated with the sides swapped, for rewriting. -/
 theorem antipode_eq_of_left (F : FrobeniusHopfData C) (S' : F.obj ⟶ F.obj)
+    (hconv : F.ConvolutionRight)
     (hl : F.comul ≫ S' ▷ F.obj ≫ F.mul = F.counit ≫ F.unit) :
     F.antipode = S' :=
-  (F.antipode_unique_of_left S' hl).symm
+  (F.antipode_unique_of_left S' hconv hl).symm
 
 end FrobeniusHopfData
 
 /-! ### The `S² = id` question -/
 
+omit [CategoryTheory.BraidedCategory C] in
 /-- **`S² = id` needs commutativity — it does not follow from the Hopf axioms
     alone.**
 

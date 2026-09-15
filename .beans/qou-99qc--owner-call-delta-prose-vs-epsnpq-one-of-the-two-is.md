@@ -2803,6 +2803,352 @@ says which operator the ILP selects at each fixed length; it does not settle the
 element, because the reading-3 + PSD-3 whole-word criterion is the owner's and
 five of `nuc11_interleaved`'s eleven letters remain census-derived.
 
+## 2026-09-14 — the owner's proposed cost is the one it replaces: crossing ENERGY = crossing COUNT + a writhe term
+
+The section above records the owner's objection to crossing count as the
+selection cost, and measures that crossing energy disagrees with it on the
+gluon. It left open **when** they disagree. Answered exactly, and from the
+corpus's own decomposition rather than a new principle.
+
+**The structure is already in the tree.** `QOU.Braiding.crossingEnergy p m q =
+p·q − m·q⁻¹` splits (`crossingEnergy_split`,
+`lean/QOU/Braiding/crossing_energy_channels.lean`) into
+
+    symChannel  = (p − m)·(q + q⁻¹)/2      multiplicity = the WRITHE
+    asymChannel = (p + m)·(q − q⁻¹)/2      multiplicity = the COUNT
+
+and the writhe is a braid invariant while the crossing count is not. Every
+result below is that one asymmetry.
+
+**THE LEAN** —
+`lean/QOU/Mass/CrossingEnergySelectionEqualsCount.lean`, 9 theorems,
+sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, `#print axioms` clean
+on all nine (`propext, Classical.choice, Quot.sound` only):
+
+* `energy_le_iff_count_le_of_writhe_eq` — at fixed writhe the energy ordering
+  and the count ordering are **the same ordering**, as an `iff`. Swapping the
+  cost changes **no** selection inside a fixed-writhe family.
+* `crossingEnergy_sub_eq_writhe_term_of_count_eq` — at fixed count the two
+  energies differ by exactly `(W₁ − W₂)·symmetricWeight q`.
+* `crossingEnergy_lt_of_cancelling_pair` — a cancelling pair leaves the braid
+  element alone and strictly raises the energy by `q − q⁻¹ > 0`.
+
+**THE MEASUREMENT** — `qbeta_crossing_energy_is_count_plus_writhe_probe.py`,
+8/8, 60 dps, proton pin, convention D:
+
+| check | result |
+|---|---|
+| `E_cross = n₊·h + W/q` on 11 candidates | exact, `< 1e-50` |
+| `tr_M` over all 10 cyclic rotations of the 11-letter word | max deviation `1.55575e-61` |
+| `tr_M` with the gluon **prepended** instead of appended | delta **exactly 0** |
+| `tr_M` with `σ₁σ₁⁻¹` appended | delta **exactly 0** |
+| `E_cross` under that same insertion | `+h = 0.20906029879563931543` exactly |
+| equal-writhe ordered pairs, orderings agree | **9 / 9** |
+| differing-writhe pairs where the costs disagree | 20 of 46 |
+| the sibling's headline `σ₁` vs `σ₁⁻¹` gap | `2.0108968667071222998` = the writhe term exactly |
+
+**THREE CONSEQUENCES.**
+
+1. **The objection to the count is not answered by the energy.** Crossing energy
+   *is* crossing count plus a writhe correction. It re-ranks candidates **iff**
+   their writhes differ, never otherwise — so the measured disagreement the
+   sibling probe found (`σ₁` vs `σ₁⁻¹`, tied at count 1) is a writhe difference
+   and is the *only* kind of disagreement available. **A genuine upgrade must be
+   a functional that is not a function of `(n₊, n₋)` at all.** An embedding
+   energy is exactly that, which is the structural reason the owner's direction
+   is the right class rather than an analogy. It remains unbuilt.
+
+2. **The cost is a WORD functional; the observable is a BRAID-ELEMENT one.**
+   Inserting a cancelling pair leaves `tr_M` exactly unchanged and raises
+   `E_cross` by `h`. So `E_cross` ranks two presentations of one object
+   differently while the thing being predicted ranks them identically. That is
+   an admissibility problem for any letter-sum cost, independent of which one.
+
+3. **A free prune on the candidate set.** `tr_M` is cyclic, so a *contiguous*
+   gluon's **position** in the word is not a degree of freedom — prepended and
+   appended give the identical trace. Only genuinely non-contiguous
+   interleavings differ. Nothing in the corpus was relying on the placement, but
+   it narrows what an enumeration has to cover.
+
+**WHAT IS NOT CLAIMED, and one thing explicitly NOT measured.** Neither cost is
+adopted or retired; no candidate is selected; **no Q_β is computed in the
+probe at all**, deliberately — a target that is never evaluated cannot be
+selected on. The converse of consequence 1 is **not** claimed: a
+differing-writhe pair may still agree, and 26 of the 46 do. What is established
+is the one-way implication, which is what bounds the upgrade.
+
+**🛑 RETRACTED, same session — my "incidental finding" was a re-derivation, and
+bean `qou-hv27` had it first, better.** I wrote here that the sweep's
+`UNVERIFIED — missing olean` on `QOU.Braiding.crossing_energy_channels` was a
+new discovery contradicting AGENTS.md, having measured root 3480 vs paper 2337
+mathlib oleans. `qou-hv27` (**completed 2026-09-07**) records the same asymmetry
+with a **sharper mechanism** and a **better repair**:
+
+* **Mechanism.** It is not that the paper tree is short — it is that a *partial*
+  tree **shadows** a complete one, and the sweep's `LEAN_PATH` ordering decides
+  which. Lean commits to the first root containing the module's top-level
+  namespace directory and never falls through (`qou-tpdg`). My framing missed
+  this entirely.
+* **Repair.** `cp -rln` — **hardlinks, zero disk cost**. I used plain `cp` for 94
+  files on a container already at 93 % full. Strictly worse, for no benefit.
+
+**How I got here is the instructive part.** I ran the six-path corpus-grep for
+the bean's *subject* and not for my own *incidental* observation, which is
+exactly the gap path 6 exists to close — a prior agent's conclusion sitting in a
+bean before it reaches any other artifact. A finding noticed in passing needs
+the checklist just as much as the one you went looking for.
+
+**What survives, and it is small:** AGENTS.md's own text still describes this
+UNVERIFIED class as the cache branch being short, "absent from the **paper and
+root trees alike**", which is not what either measurement shows. That wording is
+worth correcting against `qou-hv27`, and it is a docs fix rather than a finding.
+
+**And the limitation it caused is now gone.** Applying `qou-hv27`'s documented
+per-session repair (it does not survive a fresh container), the sweep gate runs
+the new module properly: **2 ok, 0 RED, 0 UNVERIFIED** — dependency rebuilt from
+source, not linked from a snapshot. So the verification below is the sound gate,
+not lean-direct against an olean whose source I had to argue was unchanged.
+
+**Open items unchanged.** Item 1 (what replaces `nuc11_interleaved` on the three
+L2 rows) is still the owner's decision and is untouched here. Item 3 (whether
+the bar-odd hypothesis survives the move to `z_D`) is untouched. This narrows
+the cost question that superseded item 2; it does not close it, because the
+functional the argument points at is not built.
+
+### Same day, the closing move: the energy's only ADMISSIBLE form *is* the count
+
+The section above shows the energy is a **word** functional. A word functional
+has exactly one canonical descent to the object — its extremum over the fibre —
+and here that extremum is computable, because the writhe is constant on a braid
+class while the count is not. `crossingEnergy = symChannel(W) + (p+m)·(q−q⁻¹)/2`
+with `W` invariant and `q − q⁻¹ > 0`, so:
+
+**`isLeast_energy_iff_isLeast_count_of_writhe_eq`** (sorry-free; the file is now
+10 theorems, `lean`-direct exit 0, `#print axioms` clean on all of them) — over
+any finite family of presentations sharing a writhe, which is what a braid class
+is, **the energy-minimal presentation is exactly the count-minimal one.**
+
+So making the energy admissible turns it **into** the crossing-count cost it was
+proposed to replace, up to an additive invariant. That closes the "energy
+instead of count" proposal as posed, rather than merely bounding it.
+
+**And the proposed replacement inherits the same defect.** Checked directly:
+`QOU.MobiusEnergy.ClassicalMobiusEnergy` is a functional of an **embedding**,
+and its own docstring says so — *"this structure holds no isotopy-class data"*.
+So as encoded it is no more a braid-element invariant than `E_cross` is, and
+swapping it in would swap one presentation-dependent cost for another.
+
+**This is what makes the Bring embedding load-bearing rather than an
+implementation detail.** What repairs an embedding functional is either the FHW
+minimiser (the infimum over the isotopy class — bean `qou-zfs6`) or a
+**canonical** embedding, and the Bring surface is the candidate canonical
+embedding. The owner's instinct that the Bring half matters is therefore right
+for a sharper reason than "it is where the geometry lives": without it the
+proposal does not clear the admissibility bar its own objection implies.
+
+**Caveat carried forward, not re-derived:** `MobiusEnergy.lean` has 2 sorries
+and its header records a prior vacuity incident in which `unknot_iff` read
+`value = 4 ↔ True`, forcing `value = 4` for every instance and making `E_cat`
+blind to the knot, with no `sorry` to flag it. That leg cannot bear weight
+unexamined — the observation above is about the structure's *arity*, which is
+visible from the docstring and is unaffected by the sorries.
+
+### 2026-09-14, ~1 h later — 🛑 my "it remains unbuilt" went STALE while the PR was open, and a sibling reached the same exclusion by a different invariant
+
+The entry above ends by naming the open target: *"a genuine upgrade must be a
+functional that is not a function of `(n₊, n₋)` at all... An embedding energy is
+exactly that... It remains unbuilt."* **Three commits landed on `main` between
+18:34 and 19:10 that make that false**, and the convergence is worth recording
+rather than quietly deleting.
+
+**What landed** (branch `claude/lean-crossing-budget-invariants-2026-09-14`,
+PR #7391, now closed):
+
+* `380f5935c2` — **`QOU/QBeta/LetterSumBlindness.lean`**, sorry-free.
+  `letterSum_perm_invariant`, `no_letterSum_separates`,
+  `crossingCount_perm_blind`, **`crossingEnergy_perm_blind`**,
+  `factorsThrough_blind`, plus a scope lemma
+  (`objective_blindness_does_not_transfer_to_constrained_optimum`) delimiting
+  the exclusion so it does not kill the SDP route.
+* `aa224aba03` — **`QOU/QBeta/ECatBlockDecomposition.lean`** + probe
+  `qbeta_ecat_pair_kernel_probe.py` (4/4): a **pair kernel** dropped into the
+  `cost : W → R` socket of `GammaGammaWordSelection`, with
+  `pairSum_not_perm_invariant` — a pair sum whose kernel reads the **separation**
+  of the two letters escapes the letter-sum exclusion. Four distinct values over
+  the four 2-crossing gluons against one value for every letter-sum.
+* `27250649ff` — the per-block cost vector `t_λ`.
+
+**The two results are COMPLEMENTARY, and neither implies the other.** Stating
+this precisely because "both exclude letter-sums" invites collapsing them:
+
+| | invariant used | what it says |
+|---|---|---|
+| **theirs** | permutation of letters | `E_cross` cannot **separate** two reorderings — a statement about the letter *multiset* |
+| **mine** | the writhe/count channel split | `E_cross` and the count are **the same ordering** at fixed writhe; they differ by exactly the writhe term at fixed count; the energy's admissible descent **is** count-minimisation |
+
+Permutation-blindness says nothing about how the energy *compares to the count*
+across different multisets, which is my whole result. And
+`crossingEnergy_lt_of_cancelling_pair` is orthogonal to both: a cancelling pair
+**changes** the multiset, so permutation-invariance cannot reach it — that
+lemma is about the map word → braid *element*, not word → multiset.
+
+**Their control is my `crossingEnergy_eq_of_writhe_and_count_eq`, measured.**
+With the separation weight removed, the sharp pair — *"same multiset, same
+writhe, differing only in ORDER"* — reads `34.6134315674846072` for **both**, a
+difference of **exactly 0.0**, against `0.91996925` weighted. That is the forced
+tie my Lean states, arrived at from the other direction and used as a control
+rather than as a theorem.
+
+**What is corrected in my PR body:** "It remains unbuilt" → built, with the
+citation. **What is NOT corrected:** every theorem and every measured figure in
+the entry above stands; the re-verification after merging `main` (69 commits) is
+**2 ok, 0 RED, 0 UNVERIFIED**.
+
+**What their own commit message declines to claim, carried here so it is not
+lost downstream:** the discretisation is **not** `E_cat` (whether its continuum
+limit is `E_cat` is unproved), **nothing selects a word** — *"a cost that
+separates is a precondition for selection, not a selection"* — the per-block
+`t_λ` is proved a refinement but **not computed**, and the `MobiusEnergy`
+classical-limit leg stays assumed with its blindness incident unretired
+(`qou-pzsi`). So the open item is narrower than before and is **not** closed:
+a separating cost now exists; **which** cost, and whether minimising it is
+legitimate, is untouched.
+
+**Coordination note.** I posted intent on #7391 at 18:44 naming my distinct
+angle; it landed ~30 min later. That is the sanctioned research-overlap pattern
+working as intended (AGENTS.md §Parallel exploration) — two routes, one
+exclusion, neither re-deriving the other. Converging per that rule: I do not
+re-derive their pair kernel, and this bean cites it.
+
+### 2026-09-14 21:46–22:29Z — the classical-limit BRIDGE FIELD is vacuous, and an attribution correction
+
+Two cross-branch notes landed on #7390. Both verified here rather than taken.
+
+**1. `MobiusEnergy.classicalLimit` constrains nothing** (reported by #7262;
+checked at the structure, not at their theorem, because it is **not on `main`**):
+
+```lean
+classicalLimitConst : ℝ
+classicalLimit : energy = (1 / 4) * classicalEnergy.value + classicalLimitConst
+```
+
+`classicalLimitConst` is a **free field of the same structure**, so for any pair
+`(energy, classicalEnergy)` exactly one `k` satisfies it — the field relates the
+two energies **not at all**. #7262 proves it sorry-free as
+`classicalLimit_unconstraining` / `classicalLimitConst_eq`, on that branch only;
+the structure field is checkable on `main` today.
+
+**This compounds with the entry above rather than repeating it.** That entry
+established `ClassicalMobiusEnergy` is a functional of an **embedding** (its own
+docstring: *"this structure holds no isotopy-class data"*). Now the **bridge**
+field is vacuous too. So there are **two independent reasons** the
+classical-limit route cannot bear weight: the functional is of a presentation,
+and the field that would connect it to `E_cat` asserts nothing. It is also the
+same defect class as the header's recorded incident (`unknot_iff : value = 4 ↔
+True`) **one field over** — a structure whose constraint is discharged by a free
+companion field, with no `sorry` to flag it. Not repaired: §ASK THE OWNER,
+neither exemption applies.
+
+**2. An attribution correction, made because the commenter said they would cite
+it.** #7262 credited `blockCost_can_separate`, `pairSum_not_perm_invariant`,
+`bridgeClass_perm_blind` and `qbeta_ecat_pair_kernel_probe` to #7390. **All four
+are #7391's** (`aa224aba03` / `380f5935c2`, both on `main`). Measured: this
+branch's `git diff --name-only origin/main...HEAD` is exactly four files — the
+bean, the probe, its witness, and
+`QOU/Mass/CrossingEnergySelectionEqualsCount.lean` — and none contains those
+names. Cause is partly mine: `cf2cc9d011`'s body *describes* #7391's work next
+to my own, which is presumably how it got attached. **Lesson worth keeping: when
+a PR body summarises a sibling's landing, name the sibling in the same sentence
+as the declaration, not in a heading two paragraphs up.**
+
+**3. From #7399 — the ILP escape is closed, and it composes with this entry.**
+A linear objective cannot select `𝓑₃` by the face argument (S4, `qou-v7qj`), and
+the obvious reply — *"the face argument needs convexity, an integer program is
+not convex"* — is measured not to escape: over `ℤ⁶` `𝓑₃` is not feasible at all
+(worst coordinate `0.0456` from ℤ), and over `ℤ[q₀,q₀⁻¹]⁶` **that ring is
+dense**, because `ℤ[q]` is discrete iff `q` is Pisot and `q₀ = 1.10998` sits
+below the plastic number `1.3247…` (Siegel 1944); constructively a feasible
+lattice point beats `𝓑₃` at `0.8642` vs `0.9986`. Their
+`linear_min_two_sided_kills_direction` gets `f d = 0` over an arbitrary set from
+two-sided reachability and linearity alone — **convexity was never the
+load-bearing hypothesis**, so non-convexity buys nothing.
+
+Composed with this entry: **if crossing energy IS the count, then the count is
+both permutation-blind and unable to select by any linear program, integer or
+not.** That is a constraint on where the selection can come from — not a problem
+with the reduction.
+
+### 2026-09-15 10:25Z — twelve `qou-99qc` commits landed overnight; what they do to this entry, checked rather than assumed
+
+`main` moved 24 → 85 while #7390 sat open, and **twelve** of those are on this
+bean. The merge conflicted on exactly the file AGENTS.md predicts — this bean —
+and was resolved losslessly with the prescribed
+[`scripts/bean-append-merge.py`](scripts/bean-append-merge.py) (`+16309 ch
+appended`, `main` byte-for-byte preserved), not by hand.
+
+**THE ONE THAT CONTINUES THIS ENTRY DIRECTLY.** `b7b5e3e290` adds
+`QOU/Mass/PairEnergyRewardsShort.lean` (7 decls, sorry-free), stated for an
+**arbitrary** kernel `K`:
+
+* `pairEnergy_singleton_le` — under non-negativity a **1-letter word is a global
+  minimiser over every word**;
+* `exists_singleton_minimiser` — any catalogue containing a singleton has its
+  optimum there, whatever else it holds;
+* the contrapositive — **to select anything longer, the kernel must go negative
+  somewhere.**
+
+**Composed with this entry, the lesson is sharper than either half.** Mine:
+minimising `E_cross` *is* minimising the count
+(`isLeast_energy_iff_isLeast_count_of_writhe_eq`). Theirs: minimising a
+non-negative pair energy picks the shortest word. Both say the same thing about
+a different functional — **plain minimisation drives you to the degenerate short
+end, so the pathology is the MINIMISATION FRAME, not the particular cost.** A
+cost that *separates* (the pair kernel of `aa224aba03`) is therefore still not
+enough: separation is necessary, and the selection rule must additionally not be
+bare minimisation of a non-negative functional.
+
+**An observation, marked as suggestive and NOT a theorem.** Their contrapositive
+says a selecting kernel must go negative somewhere, and the table in the entry
+above already *exhibits* negativity: `E_cross(σ₁⁻¹) = −0.90091828395574` and
+`E_cross(σ₀⁻¹σ₁⁻¹) = −1.8018365679115` — a negative crossing carries negative
+energy. **Scope: mine is a letter-sum, negative per LETTER; theirs is a kernel
+on letter PAIRS.** So this is not an instance of their hypothesis, only evidence
+that the corpus's own energy convention supplies the sign structure their design
+constraint asks for. Do not cite it as satisfying the hypothesis.
+
+**WHAT DOES NOT TOUCH THIS ENTRY, checked three ways rather than assumed.**
+`6fb8dafe3c` reports two hazards that look like they should land on my probe —
+*"the H_3 legacy path is float64"* (`atom_per_generator_volumes` warns but
+RETURNS, and its `mpf` is bit-exactly a padded float64; 32 callers) and *"the
+H_3 answer is a truncation artifact at every length ≥ 2"*. Neither reaches it:
+
+1. **Import cone.** Walked all 19 modules reachable from
+   `qbeta_crossing_energy_is_count_plus_writhe_probe`: `atom_per_generator_volumes`
+   appears in **none**.
+2. **Re-ran the probe on the merged tree — 8/8, and the witness is byte-
+   UNCHANGED**, so no import-cone drift moved a number.
+3. **Structurally, and this is the durable half.** Checks 1, 3, 4, 5 and 6 use
+   **no `tr_M` at all** — they are algebra on `E_cross`. Checks 2 are
+   *invariance* claims (cyclic rotation, contiguous-block position, cancelling
+   pair), which hold for **any** trace, whatever algebra it is taken in; the
+   measured `1.55575e-61` and exact-`0` deltas are what establish that `tr_at`
+   *is* a trace. So **no claim in this arc depends on H_3 vs H_6** — only on
+   tr_M being a trace. That was luck rather than design, and is worth stating
+   explicitly so a future reader does not re-litigate it.
+
+**Verification after the merge:** library sweep on
+`QOU.Mass.CrossingEnergySelectionEqualsCount` — **2 ok, 0 RED, 0 TIMEOUT,
+0 UNVERIFIED, 0 skipped** (176 s), dependency rebuilt from source.
+
+**Also worth carrying: they caught a LAYER STRADDLE in their own measuring
+script** — it rebound `q` in the character kernel but not in `_order`, whose
+`word_nf` folds with `_order.H0`, so the NF was at the anchor while `χ` was at
+the perturbed `q`. That produced three false claims, including a "root of
+`χ_(2,1)` at `q₀` agreeing to 40 digits"; measured correctly, `χ_(2,1)(s0s1s1)`
+shrinks like `10^-dps` at **every** `q` and is identically zero, with no root.
+Exactly the straddle class AGENTS.md §"Never straddle the two layers" warns
+about, one layer over — and it was caught by the author, not by a gate.
+
 ## 2026-09-14 (session gifted-feynman) — the Lean step `cost_eq` stops short of, and a wrong turn worth keeping
 
 **Claim.** `FrobeniusSelected.cost_eq` says two *selected* words have equal
