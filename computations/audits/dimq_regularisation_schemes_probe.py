@@ -85,7 +85,7 @@ sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
 
 import mpmath as mp  # noqa: E402
 
-from qou_substrate.constants import Q  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
@@ -105,7 +105,7 @@ def check(label: str, ok: bool, detail: str = "") -> None:
         FAILURES.append(label)
 
 
-Q0 = mp.mpf(str(Q))
+Q0 = mp.mpf(Q_50_DIGIT_STR)  # the 50-digit proton pin, not the float64 `Q` (f64-into-mpmath gate)
 
 
 def q_int(q: mp.mpf, m: int) -> mp.mpf:
@@ -187,7 +187,7 @@ def multiplicity(chi: dict, irrep: dict) -> Fraction:
 
 
 def main() -> int:
-    print(f"q0 = {mp.nstr(Q0, 20)}   (proton pin, qou_substrate.constants.Q)")
+    print(f"q0 = {mp.nstr(Q0, 20)}   (proton pin, qou_substrate.constants.Q_50_DIGIT_STR)")
     print()
 
     # -- 1. the closed form is the generating function --------------------
