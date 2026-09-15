@@ -393,14 +393,11 @@ exists in the corpus, and `sign_carries_no_information_beyond_the_secant` makes
 ## 2026-09-15 — item 3 closed (R8), and my own commit message was stale
 
 `computations/onedim/tl_open_chain_string_band_probe.py`, **24/24**, `mp.dps = 50`,
-both pins, 477 s — the agent's figure. **My own independent re-run is in
-progress at the time of writing**; confirmed so far: tree clean, the blob at HEAD
-byte-identical to the verified version, CHECK 1-7 passing with values matching
-the report exactly (`8.55285e-50`, `2.005e-50`, `9.58398597343`), and the two
-headline numbers reproduced from scratch at 40 dps — `ξ = 1/ln Δ = 184.038545493`
-and `B(0) = 4(Δ−1)²/Δ = 0.0001180982535690475`, the latter rounding to the
-periodic probe's independently-recorded `1.180983e-4`. The full 24/24 is the
-agent's claim until my run completes.
+both pins. **Independently re-run by me on the blob at HEAD: 24 PASS, 0 FAIL,
+exit 0.** Also confirmed: tree clean, HEAD blob byte-identical to the version
+that was reported, and the two headline numbers reproduced from scratch at 40 dps
+— `ξ = 1/ln Δ = 184.038545493` and `B(0) = 4(Δ−1)²/Δ = 0.0001180982535690475`,
+the latter rounding to the periodic probe's independently-recorded `1.180983e-4`.
 
 **Headline: the periodic band IS the TL chain's band; the periodic SPECTRUM is
 not.**
