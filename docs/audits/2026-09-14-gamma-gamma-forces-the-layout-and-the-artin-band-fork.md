@@ -16,6 +16,7 @@ and one fork that is the owner's to settle.
 | **R2** | Connected-sum multiplicativity does **not** force it — the wrap-around cycle survives | measured | probe 11/11 |
 | **R3** | Closing the chain into a triangle does **not** flip `b₃` | (b), Ursell identity | probe 11/11 |
 | **R4** | The **band** reading admits **every** layout — it removes the selector, it does not derive one | measured | probe 11/11 |
+| **R5** | At H₃ the band reading **changes nothing** the confinement SDP selects — all six band vertices are one conjugacy class | (a), one algebra one pin | probe 8/8 |
 | **C1** | The corpus refuses the Coxeter framing; `EnumeratorSelectionDegeneracy` says **bands** are the right generating set | correction | corpus-grep |
 | **C2** | My own "single-letter ⟺ interval" claim was **false** (20 counterexamples) | correction | own probe |
 | **C3** | `MonotoneWordTraceFactorizes`'s docstring claim that the production word is monotone is **stale** | correction | `mass_at_3A_proper.py` |
@@ -207,9 +208,47 @@ three-body correction to `Z₁₂₃` that is **negative and at least**
 
 *(cited from `UrsellPartitionFunctionB3` / bean `qou-rwhv`; not recomputed here)*
 
-— same units as `Z`, no normalisation ambiguity. Equivalently, in the corpus's own form: an
-aggregator **convex through the origin**, `AggregatorConvexity.b3Agg_nonneg_of_convexOn`,
-bean `qou-82mc`.
+— same units as `Z`, no normalisation ambiguity.
+
+> **🛑 CORRECTED 2026-09-15. This paragraph first continued *"equivalently, an aggregator
+> convex through the origin, `b3Agg_nonneg_of_convexOn`, bean `qou-82mc`"*. Both halves are
+> wrong.**
+>
+> **The bean is retired.** `qou-82mc` is **`completed`** and carries its own header —
+> *"🛑 TITLE IS NOW MISLEADING 2026-09-13 — convexity is SUFFICIENT but STRICTLY
+> UNNECESSARY"* — naming **`qou-2ss0`** (in-progress) as the live carrier.
+>
+> **And the equivalence does not hold for a chain.** `b3Agg Φ g := Φ(3g) − 3Φ(g)`
+> (`AggregatorConvexityDichotomy.lean:101`), whose own docstring says `g` is the common bond
+> weight and **`3` the three-body bond count** — i.e. the statement is at the **triangle's**
+> `m₃ = 3`. The production `A = 3` word is a **two-bond chain**, and that is forced
+> (`QOU.Mass.StrandLayoutForcesChain`). At chain counts the quantity is `Φ(2g) − 3Φ(g)`, and
+> convexity-through-the-origin yields only `Φ(2g) ≥ 2Φ(g)`, hence `≥ −Φ(g)` — **no sign at
+> all.** So the convex-aggregator route does not even apply to the object in question
+> without first closing the chain.
+>
+> **The route is circular anyway, and that is a theorem.**
+> `B3AggSecantCharacterisation.sign_carries_no_information_beyond_the_secant`: for `g > 0`,
+> `0 ≤ b3Agg Φ g` **iff** `Φ(g)/g ≤ Φ(3g)/(3g)`. Because it is an *iff*, exhibiting a `Φ`
+> with `b₃ > 0` **is the assumption rewritten** — selection against the target under
+> §"NO FITTING". "Find a convex `Φ`" is not a closable task.
+>
+> **The live non-circular reformulation is the SCALING route.** `b3Agg_of_scales`: if
+> `Φ(3g) = c·Φ(g)` then `b₃ = (c−3)·Φ(g)`, with no convexity or differentiability
+> hypothesis; hence `b3Agg_pos_iff_exponent_gt_one` — for a `p`-homogeneous law,
+> **`b₃ > 0` ⟺ `p > 1`**. A homogeneity degree is fixed by how the assembly responds to
+> rescaling the bond weight, not chosen to fix a sign, so it can in principle be settled
+> without reference to the measured `b₃`. The open question becomes: **is the framework's
+> assembly law superlinear in the bond count, and why?** The production `B = −α·log(…)` sits
+> at `p < 1`.
+>
+> Surfaced by a corpus-grep this session, then verified at source rather than taken on
+> trust. Two of that grep's own claims did not survive the check: it reported *no derived
+> convex aggregator anywhere in the corpus* (confirmed — every derived assembly is concave
+> or exactly affine), but it also quoted the interleaved cross term's convention-D closed
+> form as `−(q⁴+q²+1)/(q²+1)²`. That is `markovDefect_convD`, the **defect** `z²−hz−1`
+> (−0.752702); the **cross term** `crossTerm_neg_convD` carries the `z·` prefix and is
+> −0.461172, which is the figure in the table above.
 
 The corpus holds **one** exact cross term of the right **sign**:
 `MarkovTraceInterleavedCrossTerm` gives `z(z² − hz − 1)` between the interleaved
@@ -257,6 +296,44 @@ structurally cannot separate the two readings. And a non-adjacent band vertex is
 `GammaGammaWord`: `a_{2,0}a_{3,2}⁻¹` expands to sign pattern `(+,+,−,−)`, violating the
 inductive definition.
 
+## 5b. R5 — and at H₃ the band reading selects exactly what Artin does
+
+Owner picked **B** as well as C. Its H₃ leg is done —
+[`band_vertex_h3_frobenius_selector_probe.py`](../../computations/onedim/band_vertex_h3_frobenius_selector_probe.py), 8/8,
+60 dps, proton pin. This is step 3 of `qou-ales` redone on the enlarged set.
+
+`H₃` has exactly three BKL bands — `a₍₁,₀₎ = σ₀`, `a₍₂,₁₎ = σ₁`,
+`a₍₂,₀₎ = σ₁σ₀σ₁⁻¹` — and every pair shares exactly one strand, so all six ordered pairs
+give a band γγ vertex, against the **one** the Artin reading admits.
+
+Under the owner's 2026-09-12 ruling the SDP means **reading 3**, Frobenius positivity. Under
+convention D the two-row truncation gives `y₍₁³₎ = 0`, and `χ₍₃₎ = q^writhe = 1` on any
+vertex power, so **`(2,1)` alone decides** — the enlarged candidate set does not enlarge the
+set of deciding blocks.
+
+| | feasible `k` (1…10), reading 3 | minimal non-trivial | Artin cost | band cost |
+|---|---|---|---|---|
+| `a₍₁,₀₎a₍₂,₁₎⁻¹` (**the Artin vertex**) | **{3, 6, 9}** | 3 | **6** | 6 |
+| the other five band vertices | **{3, 6, 9}** each | 3 | 12 | 6 |
+
+`χ₍₂,₁₎` for the Artin vertex, `k = 1…10`: `−1.0437062, −0.91067735, 1.9941858, −1.1706668,
+−0.77235364, 1.9767771, −1.2908208, −0.62953933, 1.9478749, −1.4034698` — the sign pattern
+`− − + − − + − − + −` of `qou-ales` step 7, reproduced.
+
+**And the reason is measured, not asserted.** All six vertices share **one** character vector
+`(1.0, −1.04370620853, 1.0)` across the three blocks — characters separate classes here, so
+the six are **one conjugacy class**, and `χ_λ` is a class function. (`a₍₂,₀₎` is itself a
+conjugate of `σ₀`: its character agrees with `σ₀`'s on every block to below `1e-40`.)
+
+**Cost is a choice, so both are reported.** A band is a conjugate of one crossing, so it has
+Artin length 3 but band length 1. Under Artin cost the Artin vertex's own cube is strictly
+cheapest (6 against 12); under band cost all six tie. Picking the cost function that gives
+the preferred answer would be selection against the target.
+
+**Scope (a)** — one algebra, one pin. It does **not** settle `H₆`, where the interface bond
+lives and where a band could join non-adjacent nucleon blocks. That is where the two readings
+could still part company, and it is the next step of B.
+
 ## 6. The fork, stated properly
 
 It is **not** "does the framework have a 3-cell". It is **where the selection happens**:
@@ -285,8 +362,19 @@ almost entirely unexplored.
    `NoThreeCellOnTheChain` in Lean rather than in prose.
 3. **Formalise `vertexStrands`** as a theorem about `GammaGammaWordSelection.vertex` — give
    `Word` a strand-support function and prove `support (vertex i) = vertexStrands i`.
-4. **The aggregator route** (`qou-82mc`): is there a **derived** convex-through-the-origin
-   aggregator, or is the corpus's `W(Z) = 1 − Z` the only one it has? Under investigation.
-5. **The periodic-vs-open band gap**: the XXZ n-string band was measured on the *periodic*
+4. **The aggregator route** — reframed, see the correction in §4. `qou-82mc` is retired;
+   the live carrier is **`qou-2ss0`**. Measured this session: there is **no derived convex
+   aggregator anywhere in the corpus** — every derived assembly is concave (`multiplicative_W`,
+   `b₃ = −(f−1)²(f+2) ≤ 0`) or exactly affine (the log free energy, the bond-functional sum,
+   and the γγ-selected assembly, whose non-affineness its own author predicted and then
+   measured as `±1.6e-61`, the arithmetic floor). The live task is the **scaling** question:
+   derive the assembly law's homogeneity degree `p` from a Hecke-side structural property and
+   read the sign off `p > 1`, rather than choosing a `Φ`.
+5. **The chain-vs-triangle bond-count mismatch.** `b3Agg` is stated at `m₃ = 3`; the
+   production word is a two-bond chain. `QOU/Mass/UrsellChainMismatch.lean` formalises that
+   divergence, but neither it nor `UniformBondSimpleGraphExclusion.lean` contains the string
+   "aggregator" — **the two arcs have never been joined**, and joining them is a small,
+   well-posed Lean task.
+6. **The periodic-vs-open band gap**: the XXZ n-string band was measured on the *periodic*
    chain while `tl_is_the_xxz_chain_probe` identifies TL with the *open* chain plus a
    boundary field `((q−q⁻¹)/2)(σᶻ₁ − σᶻₙ)`. Under investigation.
