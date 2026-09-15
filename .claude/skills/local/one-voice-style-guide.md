@@ -110,6 +110,77 @@ Milnor standard is *perfection* — a single non-perfect dimension drops
 the block out of `pass`. Full spec (rubric, prompt, scoring, fixtures):
 [`docs/requirements/2026-07-04-folio-assistant-proof-narrative-checkers.md` §5A](../../../docs/requirements/2026-07-04-folio-assistant-proof-narrative-checkers.md).
 
+## The primary reader (owner ruling, 2026-09-15 — STRICT)
+
+The Milnor standard above says *how* to write. This section fixes *for
+whom*, because every hallmark ("concrete before abstract", "respect for
+the reader's time") is a statement about a particular reader, and the
+paper has been written for several at once. The owner's ruling, recorded
+here in the terms it was given:
+
+> Definitions as general as possible, but let the examples make it more
+> concrete for the primary audience: mathematics graduate students in
+> their second year, after they have taken their core courses. They do
+> not know derived or monoidal category theory or sheaves, but have had
+> complex-manifold and group-theory level exposure. This is not a
+> category-theory or algebraic-geometry course: they are expected to look
+> up proofs and detail, but should be gently informed of the relevant
+> consequences, in Milnor style. The examples should be ones they are
+> familiar with from their core courses. They have had only undergraduate
+> physics courses.
+
+What this fixes, hallmark by hallmark:
+
+- **Definitions stay general.** A definition is stated at the generality
+  the mathematics needs — a monoidal category, a dg-category, a Frobenius
+  object — and is *not* dumbed down to the example. Generality is what
+  makes the definition reusable across chapters; the example is what
+  makes it legible.
+- **Examples are the reader's own.** The concrete instance that follows a
+  definition is drawn from the second-year core: finite-dimensional
+  vector spaces and their tensor products; representations of finite
+  groups and of $\mathrm{SU}(2)$; a compact Riemann surface and its genus;
+  a finite CW complex and its Euler characteristic; $\mathbb{C}[G]$; the
+  de Rham complex of a smooth manifold; a matrix and its trace. Never an
+  example the reader must first learn in order to be helped by it.
+  (So: illustrate Hochschild homology on $\mathbb{C}[x]$ or on a matrix
+  algebra before, or instead of, on a scheme; illustrate a distinguished
+  triangle by a short exact sequence of chain complexes; illustrate the
+  categorical trace by the ordinary trace of a matrix.)
+- **Consequences are told; proofs are cited.** When a heavy theorem is
+  invoked (Hochschild–Kostant–Rosenberg, Tannaka–Krein, Riemann–Roch,
+  Orlov representability), the block says in one or two sentences *what it
+  buys us here* and *which hypothesis it needs*, and cites where the proof
+  lives. It does not reprove it and does not merely name it. A reader who
+  has seen the result once in a seminar should recognise it and see why it
+  is the exact tool (hallmark 7); a reader who has not should learn what
+  to look up and what they will get for looking.
+- **The reminder-remark is a legitimate block kind.** When a block leans
+  on a notion the reader met in a core course but may not remember in the
+  form needed — the Euler characteristic as an alternating sum, the
+  Grothendieck group, the trace of an endomorphism of a dualisable object
+  — a short `remark` restating that notion, in the paper's notation and
+  at the paper's generality, is the right tool. It is not padding; it is
+  hallmark 8 (no disrespectful gaps). Keep it to the form the argument
+  needs, and let the example carry the rest.
+- **Physics is explained, never presumed.** The reader has undergraduate
+  physics only. A physical name attached to a model term (mass, gauge
+  field, action) is introduced as a *name for a construction* (AGENTS.md,
+  "the paper is a mathematical model by default"), and the physical
+  reading is given in a follow-on remark, not assumed as background.
+- **The running example is the load-bearing example.** The $\mathrm{SU}(2)$
+  thread (§Running Example Consistency, below) is exactly the kind of
+  example the ruling asks for — a compact group the reader has met, a
+  two-dimensional representation with explicit matrices — and every new
+  definition in the QU / QOU / lifting chapters owes it an instance.
+
+What this does **not** license: lowering the generality of a definition
+to match the example; omitting a hypothesis because the example happens
+to satisfy it; or replacing a cited theorem's statement with a slogan. The
+standard is Milnor's *Characteristic Classes*: the definitions are for
+everyone, the examples are for the second-year reader, and the reader is
+trusted to follow a citation.
+
 ## Paper-Level Voice Rules
 
 | Rule | Standard | Violation example |
