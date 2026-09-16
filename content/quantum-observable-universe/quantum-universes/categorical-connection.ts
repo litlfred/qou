@@ -7,7 +7,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:higher-forms"],
-  examples: ["ex:connection-su2"],
+  examples: ["ex:connection-su2", "ex:categorical-connection-su2"],
   tags: ["connection", "curvature"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-connection-0.svg", blockIndex: 0, hash: "c99fb28bf175" },
