@@ -282,6 +282,8 @@ $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N
 
 — exact, no residuals. (`z = 1/(q^{1/2} + q^{-1/2})` from Markov axiom; `tr_M^3(B_p)` from Wenzl disjoint multiplicativity.)
 
+> **🛑 CONVENTION LABEL (added 2026-09-15, bean `qou-6tdg`):** the `z` in the line above is `√q/(q+1)`, **convention C**. The 2026-08-15 owner ruling (R1) makes convention D, `z_D = q³/(q²+1)`, canonical and excises C; the Phase-5 identities in this section are correct **for C** and are kept as recorded — they need scoping, not correction (AGENTS.md, the `c_k` banner and §R1). Under D the Z-step factor is `z_D · tr_M^3(𝓑_p, q)` with the D-frame traces, which the live producers (`bond_factors_are_z_plus_d_probe`, `binding_canonical`) already use; `rem:categorical-trace-is-the-markov-trace` identifies `z_D` as the normalised rigid trace of one generator. Do not substitute `z_D` into a C-frame identity by hand (`decayLadder_zC_threeRow_ne_zero`).
+
 **Full closed-form $\mathrm{tr}_M(\mathcal{B}_K)$ (Phase 5q):**
 
 $$\mathrm{tr}_M(\mathcal{B}_K) \;=\; \mathrm{tr}_M^3(\mathcal{B}_p, q)^Z \cdot \mathrm{tr}_M^3(\mathcal{B}_n, q)^N \cdot \prod_{i \in \bowtie_K} f_i(q),$$
