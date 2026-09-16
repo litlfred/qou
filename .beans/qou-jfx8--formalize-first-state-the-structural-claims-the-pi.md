@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-09-16T01:29:13Z
+updated_at: 2026-09-16T06:17:08Z
 ---
 
 ## 2026-09-16 — derived half landed; conjecture half held for the owner
@@ -18,3 +18,15 @@ Probe: computations/probes/deuteron_block_measure_entangled_support_probe.py (6/
 
 
 Correction (same hour): the ℝ theorem bindingForm_eq_zero_of_entangledSupp_empty lives in the §7c companion QOU/MassTheory/BlockMeasureBindingFormArchimedean.lean, not in the generic file — check-sidecars flagged the mixed file and it was split before commit.
+
+
+
+## 2026-09-16 — owner: 'formalize and work on RelativeReebDatum conjecture class'
+
+Owner clarification (verbatim gist): the relative Reeb angle between two knots 'is supposed to be the evaluation/trace of the substrate phase space at the point'. That is explicit consent for the held class. Branch claude/lr-a3-reeb-datum-composition-program-2026-09-16 from main 1a5059cffb; committing RelativeReebDatum as a content-bearing primary conjecture class (no instance), with derived consequences as theorems taking the class as hypothesis.
+
+
+
+## 2026-09-16 — RelativeReebDatum committed (class, no instance)
+
+QOU/MassTheory/RelativeReebDatum.lean: class over BranchingData ℝ A₁ A₁ A Λ₁ Λ₁ Λ with lightCone, compose, Entangled; clauses compose_eq (a ⋈ b = (a⊗b)·lightCone), lightCone_of_not_entangled (= 1), trM_lightCone_mem (∈ [−1,1]); phaseSpace (block vector of the light cone), relAngle := arccos ∘ trM ∘ lightCone; proved sum_phaseSpace and the four no-shared-history consequences (composite = free product, trace factorises, bindingForm 0, relAngle 0). Probe relative_reeb_datum_trace_angle_probe.py (7/7): trace-level candidate θ = arccos(∏(z_D+d)) defined and monotone (D 59.45°, 3He 71.86°, T 78.16°, 4He 82.78°); block-level ratio NOT definable (|χ_atom/χ_free| > 1 on T (5,4), 3He (9),(5,4)). Roast: on the only defined candidate the angle is the binding form under cos θ = exp(−B/α) — redundant. Stays in-progress (rule 13a: lightCone is data, the conjecture is open); options doc §8 O2/O5.
