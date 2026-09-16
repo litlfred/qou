@@ -1606,4 +1606,5 @@ import QOU.QBeta.FloorRemainderFromDerivedShapeFields
 import QOU.QBeta.PretzelRemainderFromPtolemy
 import QOU.Archimedean.VolumeTranscendental
 import QOU.MassTheory.BlockMeasureFromFrobeniusPairing
+import QOU.MassTheory.BranchingPushforwardMultiplicativity
 import QOU.MassTheory.BlockMeasureBindingFormArchimedean
