@@ -137,6 +137,104 @@ theorem blockMass_tensor_char (a : A₁) (b : A₂) (l : Λ) :
       = B.D.y l * ∑ μ, ∑ ν, (B.c μ ν l : R) * (B.D₁.χ μ a * B.D₂.χ ν b) := by
   rw [B.branching]
 
+/-- **The `y`-weighted deviation is pinned by any multiplicative bond law.** If the
+composite's trace is the free product's trace times a bond factor `bond` — the corpus's
+`tr_M(atom) = tr_M(free) · ∏(z_D + d_i)`, exact to ≤ 9e-51 on D, T, ³He, ⁴He
+(`branching_pushforward_entangled_support_probe.py`) — then
+`Σ_λ y_λ δ_λ = tr_M(a) tr_M(b) (bond − 1)`: the weighted total of the deviation is fixed by
+the marginals and the bond product. Any objective on the composition program therefore
+sees only the *direction* of `δ` on that hyperplane, never its weighted total
+(bean `qou-ypc5`). -/
+theorem weighted_deviation_eq_of_trM_eq_mul (atom : A) (a : A₁) (b : A₂) (bond : R)
+    (h : B.D.trM atom = B.D₁.trM a * B.D₂.trM b * bond) :
+    ∑ l, B.D.y l * B.deviation atom a b l = B.D₁.trM a * B.D₂.trM b * (bond - 1) := by
+  have := B.trM_eq_tensor_add_weighted_deviation atom a b
+  linear_combination h - this
+
+/-! ## Iterated branching — three factors through an intermediate level (`A = 3`)
+
+`H_9 ⊃ H_6 × H_3 ⊃ (H_3 × H_3) × H_3`: a second `BranchingData` `B'` whose first factor is
+the composite of `B`. The three-factor multiplicities are the convolution
+`c^λ_{μνρ} = Σ_κ c^κ_{μν} c^λ_{κρ}`, the restriction rule and the weight identity iterate,
+and the free three-body product's trace is the product of the three marginal traces.
+Bean `qou-672t`; measured at `H_9` on the committed T / ³He characters by
+`lr_a3_three_factor_branching_probe.py`. -/
+
+section Iterated
+
+variable {A₃ A' : Type*} [Ring A₃] [Ring A']
+variable {Λ₃ Λ' : Type*} [Fintype Λ₃] [Fintype Λ']
+variable (B' : BranchingData R A A₃ A' Λ Λ₃ Λ')
+
+/-- Three-factor branching multiplicities through the intermediate level:
+`c^λ_{μνρ} = Σ_κ c^κ_{μν} c^λ_{κρ}`. -/
+def c₃ (μ : Λ₁) (ν : Λ₂) (ρ : Λ₃) (l : Λ') : ℕ :=
+  ∑ κ, B.c μ ν κ * B'.c κ ρ l
+
+private theorem sum4_comm {ι₁ ι₂ ι₃ ι₄ : Type*} [Fintype ι₁] [Fintype ι₂] [Fintype ι₃]
+    [Fintype ι₄] {M : Type*} [AddCommMonoid M] (F : ι₁ → ι₂ → ι₃ → ι₄ → M) :
+    ∑ κ, ∑ ρ, ∑ μ, ∑ ν, F κ ρ μ ν = ∑ μ, ∑ ν, ∑ ρ, ∑ κ, F κ ρ μ ν := by
+  calc ∑ κ, ∑ ρ, ∑ μ, ∑ ν, F κ ρ μ ν
+      = ∑ κ, ∑ μ, ∑ ν, ∑ ρ, F κ ρ μ ν := by
+        refine sum_congr rfl fun κ _ => ?_
+        rw [sum_comm]
+        refine sum_congr rfl fun μ _ => ?_
+        rw [sum_comm]
+    _ = ∑ μ, ∑ ν, ∑ κ, ∑ ρ, F κ ρ μ ν := by
+        rw [sum_comm]
+        refine sum_congr rfl fun μ _ => ?_
+        rw [sum_comm]
+    _ = ∑ μ, ∑ ν, ∑ ρ, ∑ κ, F κ ρ μ ν := by
+        refine sum_congr rfl fun μ _ => sum_congr rfl fun ν _ => ?_
+        rw [sum_comm]
+
+/-- **The iterated restriction rule.** With `B'.D₁ = B.D` (the second branching's first
+factor is the first branching's composite),
+`χ_λ((a ⊗ b) ⊗ c) = Σ_{μ,ν,ρ} c^λ_{μνρ} χ_μ(a) χ_ν(b) χ_ρ(c)`. -/
+theorem branching₃ (hD : B'.D₁ = B.D) (a : A₁) (b : A₂) (c : A₃) (l : Λ') :
+    B'.D.χ l (B'.tensor (B.tensor a b) c)
+      = ∑ μ, ∑ ν, ∑ ρ, (B.c₃ B' μ ν ρ l : R) * (B.D₁.χ μ a * B.D₂.χ ν b * B'.D₂.χ ρ c) := by
+  rw [B'.branching, hD]
+  simp_rw [B.branching]
+  calc ∑ κ, ∑ ρ, (B'.c κ ρ l : R)
+          * ((∑ μ, ∑ ν, (B.c μ ν κ : R) * (B.D₁.χ μ a * B.D₂.χ ν b)) * B'.D₂.χ ρ c)
+      = ∑ κ, ∑ ρ, ∑ μ, ∑ ν, ((B.c μ ν κ : R) * (B'.c κ ρ l : R))
+          * (B.D₁.χ μ a * B.D₂.χ ν b * B'.D₂.χ ρ c) := by
+        refine sum_congr rfl fun κ _ => sum_congr rfl fun ρ _ => ?_
+        simp_rw [sum_mul, mul_sum]
+        refine sum_congr rfl fun μ _ => sum_congr rfl fun ν _ => ?_
+        ring
+    _ = ∑ μ, ∑ ν, ∑ ρ, ∑ κ, ((B.c μ ν κ : R) * (B'.c κ ρ l : R))
+          * (B.D₁.χ μ a * B.D₂.χ ν b * B'.D₂.χ ρ c) := sum4_comm _
+    _ = ∑ μ, ∑ ν, ∑ ρ, (B.c₃ B' μ ν ρ l : R) * (B.D₁.χ μ a * B.D₂.χ ν b * B'.D₂.χ ρ c) := by
+        refine sum_congr rfl fun μ _ => sum_congr rfl fun ν _ => sum_congr rfl fun ρ _ => ?_
+        simp only [c₃, Nat.cast_sum, Nat.cast_mul, sum_mul]
+
+/-- **The iterated weight identity.** `Σ_λ y_λ c^λ_{μνρ} = y_μ y_ν y_ρ`. -/
+theorem weight_branching₃ (hD : B'.D₁ = B.D) (μ : Λ₁) (ν : Λ₂) (ρ : Λ₃) :
+    ∑ l, B'.D.y l * (B.c₃ B' μ ν ρ l : R) = B.D₁.y μ * B.D₂.y ν * B'.D₂.y ρ := by
+  calc ∑ l, B'.D.y l * (B.c₃ B' μ ν ρ l : R)
+      = ∑ κ, (B.c μ ν κ : R) * ∑ l, B'.D.y l * (B'.c κ ρ l : R) := by
+        simp_rw [c₃, Nat.cast_sum, Nat.cast_mul, mul_sum]
+        rw [sum_comm]
+        refine sum_congr rfl fun κ _ => sum_congr rfl fun l _ => ?_
+        ring
+    _ = ∑ κ, (B.c μ ν κ : R) * (B.D.y κ * B'.D₂.y ρ) := by
+        simp_rw [B'.weight_branching, hD]
+    _ = (∑ κ, B.D.y κ * (B.c μ ν κ : R)) * B'.D₂.y ρ := by
+        rw [sum_mul]
+        refine sum_congr rfl fun κ _ => ?_
+        ring
+    _ = B.D₁.y μ * B.D₂.y ν * B'.D₂.y ρ := by rw [B.weight_branching]
+
+/-- **Three-body disjoint-union multiplicativity.**
+`tr_M((a ⊗ b) ⊗ c) = tr_M(a) tr_M(b) tr_M(c)`. -/
+theorem trM_tensor₃ (hD : B'.D₁ = B.D) (a : A₁) (b : A₂) (c : A₃) :
+    B'.D.trM (B'.tensor (B.tensor a b) c) = B.D₁.trM a * B.D₂.trM b * B'.D₂.trM c := by
+  rw [B'.trM_tensor, hD, B.trM_tensor]
+
+end Iterated
+
 end BranchingData
 
 end QOU.MassTheory.BlockMeasure
