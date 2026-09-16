@@ -1608,3 +1608,6 @@ import QOU.Archimedean.VolumeTranscendental
 import QOU.MassTheory.BlockMeasureFromFrobeniusPairing
 import QOU.MassTheory.BranchingPushforwardMultiplicativity
 import QOU.MassTheory.BlockMeasureBindingFormArchimedean
+import QOU.MassTheory.InterfaceLetterCrossingMixture
+import QOU.MassTheory.CompositionFeasibilityProgram
+import QOU.MassTheory.RelativeReebDatum
