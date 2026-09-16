@@ -9,7 +9,9 @@ Bean `qou-jfx8`, session `qou-0nrt`.
 -- Ref: [manuscript] prop:frobenius-pairing; def:markov-axioms-primitive
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Tactic.FieldSimp
 import QOU.MassTheory.BlockMeasureFromFrobeniusPairing
+import QOU.MassTheory.BranchingPushforwardMultiplicativity
 
 namespace QOU.MassTheory.BlockMeasure
 
@@ -35,5 +37,26 @@ theorem bindingForm_eq_zero_of_entangledSupp_empty (α : ℝ) {atom free : A}
 
 
 end FrobeniusPairingData
+
+namespace BranchingData
+
+variable {A₁ A₂ A : Type*} [Ring A₁] [Ring A₂] [Ring A]
+variable {Λ₁ Λ₂ Λ : Type*} [Fintype Λ₁] [Fintype Λ₂] [Fintype Λ]
+variable (B : BranchingData ℝ A₁ A₂ A Λ₁ Λ₂ Λ)
+
+/-- **The binding form is a function of the `y`-weighted entangled deviation alone.**
+Against the free product of two marginals with non-vanishing traces,
+`B = −α · log(1 + Σ_λ y_λ δ_λ / (tr_M(a) tr_M(b)))`. Nothing else about the composite
+enters: two composites with the same weighted deviation bind identically. -/
+theorem bindingForm_tensor_eq (α : ℝ) (atom : A) (a : A₁) (b : A₂)
+    (ha : B.D₁.trM a ≠ 0) (hb : B.D₂.trM b ≠ 0) :
+    B.D.bindingForm α atom (B.tensor a b)
+      = -α * Real.log (1 + (∑ l, B.D.y l * B.deviation atom a b l) / (B.D₁.trM a * B.D₂.trM b)) := by
+  unfold FrobeniusPairingData.bindingForm
+  rw [B.trM_tensor, B.trM_eq_tensor_add_weighted_deviation atom a b]
+  congr 2
+  field_simp
+
+end BranchingData
 
 end QOU.MassTheory.BlockMeasure
