@@ -38,18 +38,20 @@ and run `bash /abs/x.sh`. (2) `mcp__github__*` can be "connected" and offer
 merge, 9/9 (2026-09-11/12); the post-push hook's `list_pull_requests` /
 `subscribe_pr_activity` are then UNSATISFIABLE — do the sibling sweep by REST
 (`GET /pulls?state=open` + `/pulls/<n>/files`) and say so in the body, once.
-(3) `precision-gates.sh` exits **2 "PREFLIGHT FAILED"**
-without `qou_substrate` importable — **not a red**; wrap with `PYTHONPATH=…`.
+(3) `precision-gates.sh` exits **2 "PREFLIGHT FAILED"** without `qou_substrate` importable — **not a red**; wrap with `PYTHONPATH=…`.
 (4) A dead sibling's 2.4G `shadow/` survives in the scratchpad; the restore
 bottomed at **139M free** from 8.5G. (5) No QOU oleans? shadow-compile — §6.
-(6) **Read `/tmp/qou-lean-build-status.json` FIRST**: when the SessionStart bg
-`lake build` says `ready` (log: `Build completed successfully`), the shared
-clone's oleans are Lake-certified at that time, while `lean-library-sweep.py
---report` still says ~94 % dirty (mtime heuristic) — export the PR's `.lean`
-by `git show`, full farm + `content/*/lean/.lake/build/lib/lean` (the root
-imports `UGB`), compile the ROOT too (927 imports, 2 s) — §7. (7)
-`precision-gates.sh` is RED on `main` ALONE (11 ratchets at `67f52ddf58`): run
-the FULL family in a worktree at `origin/main` before calling a red yours — §7.
+(6) **Read `/tmp/qou-lean-build-status.json` FIRST**: `ready` (log `Build
+completed successfully`) = the shared clone's oleans are Lake-certified then;
+`lean-library-sweep.py --report` says ~94 % dirty EITHER WAY — the clone is
+SHALLOW, so `git log -1 -- <f>` returns the boundary commit for every file and
+the commit-date leg flags all 2472; never wait for that rebuild. Gate = the
+PR's transitive QOU cone rebuilt from source into a FULL farm
+(`lean-overlay-env.sh init`, 6799 links incl. UGB, which the root imports; its
+`build` runs BARE lean — run `lean -DautoImplicit=false -s 65536 -o` yourself)
++ the ROOT `QOU.lean` (931 imports; 176 s cold / 2 s warm) — §7/§8. (7)
+`precision-gates.sh` is RED on `main` ALONE (11 ratchets at `67f52ddf58`, same
+at `5bb980ca4a`): run the FULL family at `origin/main` before calling a red yours — §7.
 
 ## STABLE — the Phase-4 verification gate (what replaces "CI green")
 
@@ -169,8 +171,8 @@ Recipes and full diagnosis: [`api-down-and-shared-worktree.md`](api-down-and-sha
 **That Copilot row is a METHOD, not a verdict**: request once, push nothing after,
 read at 5/15/60 min; never flip the TRAP row on one run. (2026-09-12 #7234: one
 more CLEAN zero — no push after the request, zero at 18 min. #7230: zero at 2
-min, too early to count. 2026-09-16 #7430/#7429/#7432: three more, each a
-single REST request then no push: zero/zero/zero at 15 min.) [`copilot-review-arrival.md`](copilot-review-arrival.md)
+min, too early to count. 2026-09-16 #7430/#7429/#7432/#7434: four more, one
+REST request each then no push: zero every time (15 min where timed); #7434 still zero 1 min post-merge.) [`copilot-review-arrival.md`](copilot-review-arrival.md)
 
 ## TRAP — `git diff --stat` omits untracked files, so a quoted diff can be 7x low
 

@@ -214,3 +214,79 @@ last verdict per criterion against `main`'s copy AND note absence separately
 as `factorial(n) // prod` is the exact-int false positive already in §3 — marker
 on the line, re-run the producer so `scriptHash` follows (it is NOT in
 `_EPHEMERAL_META_FIELDS`, so the writer rewrites the witness), commit both.
+
+## 8. #7434 (2026-09-16): the 94 % census is the SHALLOW clone, the gate is the PR's own cone from source, and the shared checkout at 1 GB free
+
+One PR (13 commits: 11 content + 2 currency merges), all REST again (no
+`mcp__github__*` tool in the toolset at all this time): `GET /pulls/7434` 200,
+`POST …/ccr/ready_for_review` → `200 {"draft": false}` first try at 17:13:03Z
+(re-read confirmed), Copilot `POST …/requested_reviewers` 201 at 17:14:47Z,
+`PATCH` body 200, `PUT …/merge {"merge_method":"rebase","sha":<head>}` 200 →
+`665c91e403`, replay 11/11. Copilot: zero at 17:30:17Z (15.5 min) and zero
+again 1 min after the merge, no push after the request — a clean zero.
+
+**Why `lean-library-sweep.py --report` says 94 % dirty, measured.** `changed
+2472 / dirty closure 2767 of 2930`. §7 called it the mtime heuristic. Half
+right: `Basic.lean` mtime 2026-09-11 vs `Basic.olean` 2026-08-23 (the seed)
+does flag it — but the commit-date leg flags it TOO, and that leg cannot be
+repaired by touching files: `git rev-parse --is-shallow-repository` → `true`,
+`.git/shallow` holds three boundary commits, and `git log -1 --format=%ci --
+QOU/Basic.lean` returns the boundary `870c65d84b 2026-09-15 10:45` — which
+`git show --stat` renders as "95,560 files changed, 17.9 M insertions" because
+its parent is absent. Every source untouched since the boundary carries that
+date, and the boundary postdates the 2026-09-06 cache seed. The 163 "clean"
+modules are exactly the ones the bg `lake build` rewrote after checkout
+(`MayerThreeBodySign.olean` 2026-09-15 22:26 > both legs). So in any container
+cloned after the seed the sweep is a whole-library rebuild (hours) and is not
+a merge gate; its own docstring says the max() "can only over-sweep" — here it
+over-sweeps everything.
+
+**The gate that ran instead, and what it can honestly claim.** Compute the PR's
+transitive QOU import cone from source (parse `^import QOU\.` recursively from
+the five files; here 6 modules, all `MassTheory/`, one already on `main`), then:
+
+```sh
+bash scripts/lean-overlay-env.sh init --overlay $S/ovl     # 6799 links, 33 s: root pkgs + QOU + UGB + Fred2005
+source scripts/lean-direct-env.sh; export LEAN_PATH=$S/ovl:$LEAN_PATH
+cd content/quantum-observable-universe/lean
+rm -f $S/ovl/QOU/MassTheory/X.olean                       # drop the symlink or -o writes THROUGH it
+lean -DautoImplicit=false -s 65536 -o $S/ovl/QOU/MassTheory/X.olean QOU/MassTheory/X.lean   # in import order
+lean -DautoImplicit=false -s 65536 QOU.lean               # the root: 931 imports, 176 s cold
+```
+
+`lean-overlay-env.sh build` is NOT the same thing: it runs bare `lean -o` with
+no `-DautoImplicit=false -s 65536`, i.e. the weaker check AGENTS.md warns about;
+use its `init`/`env` and run `lean` yourself. Timings: first module 177 s (cold
+Mathlib page cache), the next five 5/40/2/1/3 s, root 176 s. `#print axioms` via
+scratch files `import QOU.MassTheory.X` + fully-qualified names (36 decls, all ⊆
+propext/Classical.choice/Quot.sound). The claim to write in the PR: "cone
+source-rebuilt, Mathlib and out-of-cone QOU snapshot-conditional, UGB/Fred2005
+unswept" — not "sweep ran".
+
+**Shared checkout at 1020 M free.** A worktree is ~1.7 G of checkout and was not
+affordable, so everything ran in `/home/user/qou` (HEAD already at the PR head,
+tree clean). Discipline that made it safe: `git rev-parse HEAD` printed at the
+start of every script and before the one restore; no checkout, no add, no
+commit; push nothing. Two measured facts about what the runs dirty: the four
+probes rewrote their witnesses **byte-identical** (`git diff` empty — do not
+revert what did not change), and `precision-gates.sh --changed` dirtied exactly
+TEN tree-measuring witnesses, restored by name:
+`computations/audits/q0-anchor-consistency-audit`, `audits/witness-provenance-audit`,
+`codata-truncation-audit`, `mpf-float-source-audit`, `mpf-import-time-dps-audit`,
+`mpf-mixed-arithmetic-audit`, `q0-value-drift-audit`, `witness-float64-padding-audit`,
+`witness-raw-float64-audit`, `witness-value-copy-audit` (all `.witness.json`).
+`--changed` on this branch reproduced §7's 11 reds with the identical counts
+(Q0_FLIP 1, refill NEW 188, padding NEW 63, LOSSY 1, raw 976, drift NEW 5) at
+`5bb980ca4a`, none naming a PR file — grep the gates log for the PR's stems
+before writing "none named", it is one command.
+
+**`verify-merge-replay.py` on a branch carrying merge commits** reports the
+merge commits under "empty diff (no patch-id; not counted as replayed)" and the
+content commits as replayed — 13 → 11 + 2 here. That is the expected shape, not
+a drop; a drop is `MISSING > 0`. `git cherry origin/main pr/N` shows only the
+11 (`-`), never the merges.
+
+**Sibling sweep by REST** over 40 open PRs × `/files`: the only shared path was
+`QOU.lean` with #4845 (a 2026-08-09 stalled-cleanup draft) — an append-only
+import list is not an overlap worth a comment; say so in the body instead.
+

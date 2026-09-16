@@ -17,8 +17,10 @@ coming decides whether waiting is a gate or a dead wait.
 | 2026-08-23 | 5 | `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 | **zero** on all five | force-pushes and re-requests |
 | 2026-08-30 | 4 | qou#6122, fa#153, qou#6104, qou#6116 | **arrived**, ~3–4 min, substantive findings; two landed *after* a merge | not recorded whether pushes followed |
 | 2026-08-31 | 2 | qou#6404, qou#6405 at 19:37 UTC | **zero** at 19:43 and 19:47 | #6405: I pushed twice after requesting. #6404: **clean** |
+| 2026-09-12 | 1 | qou#7234, one REST request | **zero** at 18 min | **clean** (no push after) |
+| 2026-09-16 | 4 | qou#7430 (01:43Z), #7429 (02:02Z), #7432, #7434 (17:14:47Z) — one `POST …/requested_reviewers` each, 201 | **zero** on all four — at 15 min on #7430/#7429, time not recorded on #7432, at 15.5 min on #7434 (and still zero 1 min after its 17:31:50Z merge) | **clean** ×4 (no push after any request; recorded in the merge-coordinator memory §7/§8) |
 
-**So the clean sample size across the whole question is 1.** The 2026-08-31 pair
+**So the clean sample size across the whole question was 1 when this was written; as of 2026-09-16 it is 6 clean ZEROS (#6404, #7234, #7430, #7429, #7432, #7434) and still zero clean POSITIVES — the 2026-08-30 arrivals were never push-controlled, so the table still does not separate the two hypotheses below.** The 2026-08-31 pair
 is not n=2 — #6405's zero is uninformative, because if a request binds to the
 head SHA it was made against, my two later pushes could have superseded it.
 #6404 is the clean one: a single commit, `c031248eb9`, untouched from 19:24,
