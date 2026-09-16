@@ -152,3 +152,65 @@ a restore:
   local proof to hold while it recomputes. `main` landed 14 and 8 commits under
   the queue in ~15 min; none overlapped, and no re-rebase was needed because the
   API rebase-merge replays onto the current tip itself.
+
+## 7. Queue #7430/#7429/#7432 (2026-09-16): the bg `lake build` had ALREADY certified the tree, the sweep census said 94 % dirty anyway, and `precision-gates` is red on `main` alone
+
+Three PRs, all REST (MCP `github` toolless again: `GET /pulls/{n}` 200 first try),
+all three `ccr/ready_for_review` → `200 {"draft": false}` first try, three
+`PUT …/merge` 200, replay 2/2, 2/2, 6/6. Copilot requested once per PR, no push
+after any request: zeros at 15 min on #7430 (01:43→01:58Z) and #7429
+(02:02→02:17Z), zero on #7432. Four more clean data for
+`copilot-review-arrival.md`.
+
+**Lean in a worktree, without `lake` and without the sweep.** A detached worktree
+has no `.lake`; `lean-library-sweep.py` cannot run there and its `--report` census
+on the shared clone said `changed 2469 / dirty closure 2763 of 2925 (94.5 %)` —
+while `/tmp/qou-lean-build-status.json` read `ready` and `/tmp/qou-lake-build.log`
+ended `Build completed successfully (6761 jobs)` at 01:22:56Z, with `.trace`
+files beside every olean and every commit on `main` older than that build. The
+census is an mtime heuristic (its own docstring's "wide direction" on a fresh
+checkout); Lake's trace check is hash-based. **Read the bg-build status before
+believing a sweep census**, and when it says `ready`, the shared clone's oleans
+are Lake-certified at that timestamp. Then:
+
+```sh
+git -C /home/user/qou show pr/N:content/quantum-observable-universe/lean/QOU/X.lean > $S/src/QOU/X.lean   # export, no worktree
+cp -rs <shared>/content/quantum-observable-universe/lean/.lake/build/lib/lean/. $S/lib/                     # FULL farm (§#7430 TRAP)
+rm -f $S/lib/QOU/X.olean; LEAN_PATH=$S/lib:<pkg dirs> lean -DautoImplicit=false -s 65536 QOU/X.lean -o $S/lib/QOU/X.olean
+```
+
+with `cd $S/src` so the module name derives from the relative path. **Compile the
+registry root `QOU.lean` too** (927 imports, **2 s**) — it is the flat-environment
+duplicate-FQN check for new library modules — and put
+`content/unital-groebner-bases/lean/.lake/build/lib/lean` and the fred2005 one on
+`LEAN_PATH`: `QOU.lean` line 3 is `import UGB`, and without them the root fails
+`unknown module prefix 'UGB'` in 0 s, which reads like a PR defect and is not.
+`#print axioms` names come from the module's `namespace` lines, not the PR body
+(#7432's seven were nine, under `QOU.MassTheory.BlockMeasure.FrobeniusPairingData`).
+
+**`precision-gates.sh` is RED on `origin/main` by itself — 11 ratchets, exit 1,
+324 s** (`67f52ddf58`, full family, fresh worktree): `Q0_FLIP 1`, q0-anchor refill
+`NEW 188`, float64-padding `NEW 63`, module-const `LOSSY 1`, raw-float64 976
+witnesses, q0-drift `NEW 5`, mixed-arith `OVER baseline 4`, plus reference-literal,
+witness-value-copy, import-time-dps, never-raises-dps. The PR head gave the
+**identical** line and counts, and no red named a file the PR touched — so the
+memory rule "confirm main alone is also red" is what turned an apparent 11-gate
+red into a non-finding. `--changed` on `main` itself short-circuits (merge-base
+is HEAD), so the discriminator is the FULL run in a worktree at `origin/main`.
+It regenerates 10–13 tree-measuring witnesses; `revert_audit_witnesses.sh`
+lists them by name. The PR author had measured `--changed` exit 0 in the shared
+clone the same night; the two runs differ, and I did not find out why — record
+which tree and which command, not just the exit code.
+
+**A sidecar `fail` with no counterpart on `main`'s copy is "never run there",
+not a regression.** #7429's refresh wrote `lean-docstring-honesty: fail` on
+`descent-lemma` (evidence at `descent-lemma.lean:109`, a file the PR did not
+touch); `git show origin/main:<qa.json>` had no such criterion. Compare the
+last verdict per criterion against `main`'s copy AND note absence separately
+(`sidecar_fresh.py` prints `new_fail=` only for verdicts absent-or-not-fail on
+`main`; read the entry's `result`, since `verdict` may be missing).
+
+`probe-float64-guard --diff` on a probe: `from math import factorial` used only
+as `factorial(n) // prod` is the exact-int false positive already in §3 — marker
+on the line, re-run the producer so `scriptHash` follows (it is NOT in
+`_EPHEMERAL_META_FIELDS`, so the writer rewrites the witness), commit both.
