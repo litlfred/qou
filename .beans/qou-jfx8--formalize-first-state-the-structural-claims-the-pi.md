@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-16T00:47:53Z
-updated_at: 2026-09-16T01:25:54Z
+updated_at: 2026-09-16T01:29:13Z
 ---
 
 ## 2026-09-16 — derived half landed; conjecture half held for the owner
@@ -15,3 +15,6 @@ LANDED: content/quantum-observable-universe/lean/QOU/MassTheory/BlockMeasureFrom
 HELD (not committed): a primary conjecture class RelativeReebDatum for the owner's relative-angle datum — Lean text in the analysis doc §8 O3. Reason: §3b-tax needs content-bearing fields and the content is exactly what is undefined; owner's rule against speculative code. Also held: any Möbius-energy objective (O4) until qou-99qc pins classicalLimitConst.
 
 Probe: computations/probes/deuteron_block_measure_entangled_support_probe.py (6/6, committed inputs only, weight_family declared). Bean stays in-progress per rule 13a (the picture's structural claims are open).
+
+
+Correction (same hour): the ℝ theorem bindingForm_eq_zero_of_entangledSupp_empty lives in the §7c companion QOU/MassTheory/BlockMeasureBindingFormArchimedean.lean, not in the generic file — check-sidecars flagged the mixed file and it was split before commit.
