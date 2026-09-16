@@ -42,7 +42,7 @@ from __future__ import annotations
 
 import json
 import sys
-from math import comb, factorial
+from math import comb, factorial  # float64-ok: exact arbitrary-precision ints (C(6,3) and the hook-length count f^λ; only //, %, == below), never a float
 from pathlib import Path
 
 import mpmath as mp

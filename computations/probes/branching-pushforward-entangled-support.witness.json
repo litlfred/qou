@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-16T01:52:16.623410+00:00",
-  "commitSha": "cfd5af7a6b3f719aaf2c0d0f0abe6404aad471da",
+  "computedAt": "2026-09-16T02:37:14.289131+00:00",
+  "commitSha": "c144dca416188b1cee3a74b2ff8dbf6b60819f55",
   "assertions": [
     {
       "name": "lr_table_dimension_identity",
@@ -76,11 +76,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "branching-pushforward-entangled-support",
   "scriptFile": "branching_pushforward_entangled_support_probe.py",
-  "scriptHash": "d117357f6c77",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0fd22346e22f",
+  "scriptCommitSha": "8915df70373b54a4008bbd98a8e56ee3adf71d26",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
