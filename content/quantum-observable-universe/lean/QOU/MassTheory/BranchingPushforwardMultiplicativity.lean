@@ -18,9 +18,17 @@ blocks). Two hypotheses are carried, both **checkable on committed data**:
 ## What is proved
 
 * `trM_tensor` — **disjoint-union multiplicativity** `tr_M(a ⊗ b) = tr_M(a) tr_M(b)`
-  follows from the two hypotheses. (The corpus verifies the conclusion numerically —
-  `tr_M(W) = tr_M(p)²`, bean `qou-ales` step 10 — and this file records *why*: it
-  is the weight identity, not a separate fact.)
+  follows from the two hypotheses. The conclusion is already in the corpus by two
+  other routes — `QOU.MathlibExt.MarkovTraceMultiplicative` (`markovTrace_juxtapose`,
+  from `Matrix.trace_kronecker`) and `QOU.MathlibExt.DisjointBlockTraceLaw`
+  (`TwoSidedMarkov → DisjointBlockMultiplicative`) — and numerically
+  (`tr_M(W) = tr_M(p)²`, bean `qou-ales` step 10). What this route adds is the
+  **characterisation through the weights**: on the block side, multiplicativity is
+  the LR-compatibility of `y`. Scope, per those files: this is the *disjoint-union*
+  (Kronecker) statement, not a connected-sum one (bean `qou-bsfg`), and it fails
+  for *interleaved* blocks (`QOU.MathlibExt.MarkovTraceInterleavedCrossTerm`,
+  bean `qou-ls86`) — which is exactly why a bound composite's trace differs from the
+  free product by the deviation term below.
 * `blockMass_tensor_char` — the composite's characters on a free product are the
   pushforward of the two marginals' characters along `c`; hence the free composite is
   "unentangled": nothing in its block data goes beyond the two inputs.
