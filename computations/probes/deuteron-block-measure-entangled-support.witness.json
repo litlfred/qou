@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-16T01:20:38.258489+00:00",
-  "commitSha": "66f61c738a6fe81ed1211b14642ce10b2524cf6e",
+  "computedAt": "2026-09-16T02:18:42.870116+00:00",
+  "commitSha": "49e7be09dd5d46f7983b764ecc56f565d66c2776",
   "assertions": [
     {
       "name": "block_measure_sums_to_one_to_50dps",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "deuteron-block-measure-entangled-support",
   "scriptFile": "deuteron_block_measure_entangled_support_probe.py",
-  "scriptHash": "1948d4558164",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "14224ef7aba1",
+  "scriptCommitSha": "49e7be09dd5d46f7983b764ecc56f565d66c2776",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

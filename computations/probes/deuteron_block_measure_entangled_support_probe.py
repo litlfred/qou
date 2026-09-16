@@ -39,7 +39,7 @@ from __future__ import annotations
 
 import json
 import sys
-from math import factorial
+from math import factorial  # float64-ok: exact arbitrary-precision int (hook-length count f^λ, lines below use // and %), never a float
 from pathlib import Path
 
 import mpmath as mp
