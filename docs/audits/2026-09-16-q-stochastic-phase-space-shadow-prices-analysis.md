@@ -323,9 +323,10 @@ That is a re-founding, not a fix, and it is **not done here** (§8, O2).
 ### 5.1 Lean — `QOU/MassTheory/BlockMeasureFromFrobeniusPairing.lean`
 
 Abstract Frobenius-pairing data `(trM, y, χ, dim)` with `trM = Σ y_λ χ_λ`,
-`χ_λ(1) = dim λ`, `trM 1 = 1`. Verified `lean -DautoImplicit=false -s 65536`,
-exit 0, no warnings; `#print axioms` on all seven theorems:
-`propext, Classical.choice, Quot.sound` only.
+`χ_λ(1) = dim λ`, `trM 1 = 1`; generic over `CommRing` / `Field`, with the one
+`ℝ` theorem in the companion `BlockMeasureBindingFormArchimedean.lean` (§7c).
+Verified `lean -DautoImplicit=false -s 65536`, exit 0, no warnings; `#print
+axioms` on all seven theorems: `propext, Classical.choice, Quot.sound` only.
 
 | declaration | content |
 |---|---|
@@ -333,7 +334,7 @@ exit 0, no warnings; `#print axioms` on all seven theorems:
 | `trM_eq_expectation` | `trM x = Σ_λ P(λ) · χ_λ(x)/dim λ` |
 | `trM_le_of_normalised_le`, `le_trM_of_le_normalised` | with `y ≥ 0`, `trM x` lies between the min and max normalised character — the falsifiable content of "probability" (fails for `w_λ`) |
 | `entangledSupp`, `trM_eq_of_entangledSupp_empty` | blocks where two elements' characters differ; empty ⇒ equal traces |
-| `bindingForm_eq_zero_of_entangledSupp_empty` (ℝ) | no shared block ⇒ `−α log(tr_M(atom)/tr_M(free)) = 0` |
+| `bindingForm_eq_zero_of_entangledSupp_empty` (ℝ; companion file `BlockMeasureBindingFormArchimedean.lean`, §7c split) | no shared block ⇒ `−α log(tr_M(atom)/tr_M(free)) = 0` |
 | `charSupp`, `level`, `level_le_top`, `level_one_eq_top`, `level_le_level_one` | §4.2 |
 
 Positivity of the convention-D weights is a **hypothesis** (`IsProbability`),

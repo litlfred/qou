@@ -26,10 +26,11 @@ output, no fit enters.
 * `trM_eq_of_entangledSupp_empty` — if a bound word and its free constituent
   product have the same character on every block, their traces agree, so every
   `log(tr_M(atom)/tr_M(free))` binding form vanishes
-  (`binding_form_eq_zero_of_entangledSupp_empty`, archimedean section). The
-  contrapositive is the one-line formal content of "the entangled phase space is
-  what carries the binding": a nonzero binding **forces** a block on which the two
-  characters differ.
+  (`bindingForm_eq_zero_of_entangledSupp_empty`, in the archimedean companion
+  `BlockMeasureBindingFormArchimedean.lean`, per §7c). The contrapositive is the
+  one-line formal content of "the entangled phase space is what carries the
+  binding": a nonzero binding **forces** a block on which the two characters
+  differ.
 * `level_one_eq_top` / `level_le_top` — for the energy-ranked level
   `ℓ(x) = max{E(λ) : λ ∈ supp x}`, which is the shape of `def:confinement-level`,
   the **unit has the maximal level of any element**. This is the abstract form
@@ -59,7 +60,6 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.FieldSimp
 
 namespace QOU.MassTheory.BlockMeasure
@@ -210,31 +210,6 @@ theorem le_trM_of_le_normalised (hy : D.IsProbability) (hdim : ∀ l, (D.dim l :
         sum_le_sum fun l _ => mul_le_mul_of_nonneg_left (hm l) (D.blockMass_nonneg hy l)
 
 end Ordered
-
-section Archimedean
-
-/-! **Archimedean specialisation** (§7c): the logarithmic binding form lives over
-`ℝ`; everything above it is generic. -/
-
-variable {A : Type*} [Ring A] {Λ : Type*} [Fintype Λ]
-variable (D : FrobeniusPairingData ℝ A Λ)
-
-/-- The logarithmic binding form `B = −α · log(tr_M(atom) / tr_M(free))` used by the
-corpus's log-assembly binding routes. -/
-noncomputable def bindingForm (α : ℝ) (atom free : A) : ℝ :=
-  -α * Real.log (D.trM atom / D.trM free)
-
-/-- **No shared block, no binding.** If the bound word and its free constituent
-product agree on every block character, the logarithmic binding vanishes. The
-contrapositive: a nonzero binding forces a block on which the two characters
-differ — the "entangled" block set is non-empty. -/
-theorem bindingForm_eq_zero_of_entangledSupp_empty (α : ℝ) {atom free : A}
-    (h : D.entangledSupp atom free = ∅) (hfree : D.trM free ≠ 0) :
-    D.bindingForm α atom free = 0 := by
-  unfold bindingForm
-  rw [D.trM_eq_of_entangledSupp_empty h, div_self hfree, Real.log_one, mul_zero]
-
-end Archimedean
 
 end FrobeniusPairingData
 
