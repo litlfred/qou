@@ -1,0 +1,301 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2106.07444v2",
+ "source": {
+  "file": "2106.07444v2.pdf",
+  "sha256": "5acca39c07bcdddd870a36a840a97c79a675d3c3c309d596ead9ea2f0c902602",
+  "bytes": 953116,
+  "pages": 88,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2106.07444",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "21 Jun 2021"
+  },
+  "doi": null,
+  "title": "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS",
+  "authors_raw": "MINH-T\u00c2M QUANG TRINH",
+  "title_lines": [
+   "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS"
+  ],
+  "abstract": "Let W be the W eyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double \ufb02ag variety of G. By developing a formalism of generalized realization func tors, we construct a monoidal trace from HW to a category of bigraded modules over a certain graded ring: namely, the endomorphisms of the equi variant Springer sheaf over the unipotent locus of G. W e prove that: (1) On objects attached to positive braids \u03b2 , the output is the weight-graded, equivariant Borel\u2013Moore homology of a generalized Steinberg scheme Z(\u03b2 ). (2) Our functor contains, as a summand, one used by W ebster\u2013Williamson to construct th e Khovanov\u2013 Rozansky link invariant. In particular, the Khovanov\u2013Roza nsky homology of the link closure of \u03b2 is fully encoded in the Springer theory of Z(\u03b2 ). Decategorifying, we get a trace on the Iwahori\u2013Hecke algebr a, valued in graded virtual characters of W . W e give a formula for it in terms of a pairing on characters of W called Lusztig\u2019s exotic Fourier transform, which generali zes it to all \ufb01nite Coxeter groups. Using this formula, we establ ish properties of the trace like rationality, symmetry, and compatibility with p arabolic induction. W e also show that on periodic braids, the trace produces the c haracters of explicit virtual modules over Cherendik\u2019s rational double a\ufb03ne Hecke algebra. For W = Sn, we recover an identity of Gorsky\u2013Oblomkov\u2013Rasmussen\u2013She nde relating these modules to the HOMFLY polynomials of torus kn ots.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210622205357-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Purity, Mixedness, and Realization",
+   "page": 15,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Mixed Categories in Representation Theory",
+   "page": 22,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The AW Trace",
+   "page": 30,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Steinberg Schemes",
+   "page": 32,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Steinberg Schemes of Braids",
+   "page": 38,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Khovanov\u2013Rozansky Homology",
+   "page": 41,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The Decategorified Trace",
+   "page": 45,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Deligne\u2013Lusztig Theory",
+   "page": 52,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Periodic Braids",
+   "page": 61,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "The Rational DAHA",
+   "page": 64,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Coxeter Groups and Their Characters",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Braid Varieties in the Literature",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix C. Examples of the Decategorified Trace",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 84,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1644,
+   "n_words": 276
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 15,
+   "n_chars": 34308,
+   "n_words": 6454
+  },
+  {
+   "id": "sec-001-1-purity-mixedness-and-realization",
+   "number": "1",
+   "title": "Purity, Mixedness, and Realization",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 22,
+   "n_chars": 13092,
+   "n_words": 2532
+  },
+  {
+   "id": "sec-002-2-mixed-categories-in-representation-theory",
+   "number": "2",
+   "title": "Mixed Categories in Representation Theory",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 30,
+   "n_chars": 16513,
+   "n_words": 3292
+  },
+  {
+   "id": "sec-003-3-the-aw-trace",
+   "number": "3",
+   "title": "The AW Trace",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 3708,
+   "n_words": 706
+  },
+  {
+   "id": "sec-004-4-steinberg-schemes",
+   "number": "4",
+   "title": "Steinberg Schemes",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 38,
+   "n_chars": 9960,
+   "n_words": 2132
+  },
+  {
+   "id": "sec-005-5-steinberg-schemes-of-braids",
+   "number": "5",
+   "title": "Steinberg Schemes of Braids",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 4688,
+   "n_words": 957
+  },
+  {
+   "id": "sec-006-6-khovanovrozansky-homology",
+   "number": "6",
+   "title": "Khovanov\u2013Rozansky Homology",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 45,
+   "n_chars": 7102,
+   "n_words": 1356
+  },
+  {
+   "id": "sec-007-7-the-decategorified-trace",
+   "number": "7",
+   "title": "The Decategorified Trace",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 52,
+   "n_chars": 13159,
+   "n_words": 2777
+  },
+  {
+   "id": "sec-008-8-delignelusztig-theory",
+   "number": "8",
+   "title": "Deligne\u2013Lusztig Theory",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 61,
+   "n_chars": 17239,
+   "n_words": 3616
+  },
+  {
+   "id": "sec-009-9-periodic-braids",
+   "number": "9",
+   "title": "Periodic Braids",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 64,
+   "n_chars": 5344,
+   "n_words": 1077
+  },
+  {
+   "id": "sec-010-10-the-rational-daha",
+   "number": "10",
+   "title": "The Rational DAHA",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 71,
+   "n_chars": 14426,
+   "n_words": 2974
+  },
+  {
+   "id": "sec-011-appendix-a-coxeter-groups-and-their-characters",
+   "number": null,
+   "title": "Appendix A. Coxeter Groups and Their Characters",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 82,
+   "n_chars": 21212,
+   "n_words": 4420
+  },
+  {
+   "id": "sec-012-appendix-c-examples-of-the-decategorified-trace",
+   "number": null,
+   "title": "Appendix C. Examples of the Decategorified Trace",
+   "level": 1,
+   "page_start": 82,
+   "page_end": 84,
+   "n_chars": 3335,
+   "n_words": 899
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 84,
+   "page_end": 88,
+   "n_chars": 14621,
+   "n_words": 2334
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 15,
+  "chars_total": 180351
+ }
+}

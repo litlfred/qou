@@ -23,6 +23,7 @@ import QOU.AlgebraicSubstrate.SurrealRateCalculus
 import QOU.AlgebraicSubstrate.SurrealSqueeze
 import QOU.AlgebraicSubstrate.PvsNPQou
 import QOU.AlgebraicSubstrate.MetallicHierarchy
+import QOU.AlgebraicSubstrate.WignerAxiom
 
 /-!
 # QOU.AlgebraicSubstrate — Chapter 8 aggregator

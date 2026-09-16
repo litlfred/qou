@@ -286,6 +286,7 @@ import QOU.MassDerivation
 import QOU.Mass.IntraOrderingInvariance
 import QOU.Mass.FreeEnergyReadingIsSigned
 import QOU.MassTheory.MarginalRatioExtensivity
+import QOU.MassTheory.BondFactorClassicalFloor
 import QOU.MassTheory.TwoRowTwoColumnCollision
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
@@ -489,6 +490,9 @@ import QOU.BringsSurface.OctonionCocycle
 import QOU.Brings.RamificationParityMonodromy
 import QOU.Brings.CategoricalLagrangianDMCubic
 import QOU.Brings.HeckeMapFaceSize
+import QOU.Brings.S5CharactersOnBringDeformations
+import QOU.Brings.WignerTargetEquivariance
+import QOU.Brings.BringConeLinkEulerNumber
 import QOU.BringCone
 import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
@@ -732,6 +736,9 @@ import QOU.BraidsAndKnots.CFromColorFlavorSwap
 -- term, and the q≠1 analytic-continuation conjecture-class.
 import QOU.BraidKnot.QRogersPentagonArchimedean
 import QOU.Information.p_bandwidth_bound
+import QOU.Information.DimqRegularisationIdentities
+import QOU.Information.EulerCharacteristicOfHochschild
+import QOU.GrothendieckChern
 import QOU.ParticleInteractions.atomic_lp_stability
 import QOU.ParticleInteractions.silver_ratio_beta_decay_null
 import QOU.ParticleInteractions.delta_pre_archimedean
@@ -1542,6 +1549,7 @@ import QOU.MassTheory.PnOffsetBarOddClass
 -- orphan population (986 of 2257 modules); their only type-check was the
 -- lean-direct run in that PR.  Wiring them here is the other half of the fix.
 import QOU.AlgebraicSubstrate.LocalQZetaFunction
+import QOU.AlgebraicSubstrate.WignerAxiom
 import QOU.Archimedean.ParticleKnots
 
 -- Same fix, same reason, a third module (bean qou-aemx follow-on).

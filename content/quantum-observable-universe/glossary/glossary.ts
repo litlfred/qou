@@ -94,6 +94,17 @@ export default chapter({
     }),
 
     section({
+      title: "Homological algebra",
+      label: "sec:glossary-homological",
+      blocks: [
+        "glossary-distinguished-triangle",
+        "glossary-derived-category",
+        "glossary-dg-category",
+        "glossary-fourier-mukai-transform",
+      ],
+    }),
+
+    section({
       title: "Elliptic and surface geometry",
       label: "sec:glossary-elliptic",
       blocks: [

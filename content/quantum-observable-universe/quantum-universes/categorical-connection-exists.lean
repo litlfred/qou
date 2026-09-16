@@ -28,7 +28,7 @@ universe u v
 -- Ref: [kock2004]
 theorem CategoricalConnection.exists
     {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
     (fh : FrobeniusHopfData C) :
     Nonempty (CategoricalConnection C fh) :=
   -- Trivial witness: Ω¹ = 𝟙, ∇ = ρ⁻¹, leibniz_rhs ≡ fh.mul ≫ ∇.

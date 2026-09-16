@@ -8,6 +8,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
+    "def:hochschild-homology",
     "def:classical-limit-functor",
     "def:quantum-characteristic-classes",
   ],

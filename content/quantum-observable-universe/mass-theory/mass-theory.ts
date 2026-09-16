@@ -300,6 +300,8 @@ export default chapter({
             "active-set-trace-concentration",
             "markov-trace-frobenius-selection",
             "markov-trace-frobenius-selection-proof",
+            "trace-ledger",
+            "categorical-trace-is-the-markov-trace",
             // Re-homed orphans: the min-Frobenius-norm collapse T_β = S·1
             // (and its general unital-R-algebra lift) that selects the
             // Markov-trace direction the Hoefsmit He-4 channel uses.
@@ -876,6 +878,7 @@ export default chapter({
       label: "sec:canonical-closure-as-link",
       blocks: [
         "subset-cumulant-recursion",
+        "body-number-expansion-classical-floor",
         "canonical-closure-torus-chain",
         "canonical-trace-factorises-over-chain",
         "torus-chain-pages-on-bring",
