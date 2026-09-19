@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-19T06:00:38Z
-updated_at: 2026-09-19T06:11:18Z
+updated_at: 2026-09-19T06:21:58Z
 ---
 
 ## Measured on `origin/main` @ `665c91e403` (2026-09-19)
@@ -169,3 +169,61 @@ I installed `clarabel==0.11.1`, forced `mpmath==1.4.1`, and re-ran all four
 producers: **all three target values are byte-identical under mpmath 1.3.0 and
 1.4.1**. So this is one case where the environment hazard was checked and found
 not to apply.
+
+
+## precision-gates.sh --changed: RED on ten gates, NONE of them mine
+
+`scripts/precision-gates.sh --changed` exits 1 with
+
+    RED: q0-anchor flip, q0-anchor refill ratchet, import-time dps ratchet,
+         never-raises-dps ratchet, float64-padding ratchet, module-const
+         precision, reference-literal ratchet, witness-value copy ratchet,
+         q0-value drift ratchet, mixed mpf/f64 -> serializer
+
+**Attributed file-by-file rather than assumed.** Each gate re-run on its own
+and its output grepped for the eight files this change touches
+(`markov-trace-assembly*`, `applied-uniqueness*`, `braid-encoding*`,
+`build_markov_trace_assembly*`):
+
+| gate | exit | cites my files |
+|---|---|---|
+| q0-anchor flip | 1 | **0** |
+| q0-anchor refill ratchet | 1 | **0** |
+| import-time dps ratchet | 1 | **0** |
+| never-raises-dps ratchet | 1 | **0** |
+| module-const precision | 1 | **0** |
+| float64-padding ratchet | 1 | **0** |
+| reference-literal ratchet | 1 | **0** |
+| witness-value copy ratchet | 1 | **0** |
+| q0-value drift ratchet | 1 | **0** |
+| mixed mpf/f64 -> serializer | 1 | **0** |
+
+Consistent with PR #7435's independent reading, "precision-gates red on main
+alone".
+
+### The gate-trade (`qou-3jwy`) was checked, not assumed
+
+A float64 drain can push the float64-**padding** ratchet up. Measured both ways
+by restoring `origin/main`'s version of the five data files and re-running:
+
+    with the fix   : baseline 13, NEW 63
+    on main        : baseline 13, NEW 63
+
+Identical, and neither run cites any file I touched. **No gate-trade.**
+
+Two things fall out of that measurement worth recording:
+
+- The padded `"tr_M_q0": "0.6293284022029220000...0"` on main — 16 real digits
+  and 44 zeros — is **not** detected by the padding audit. I removed it anyway
+  (it is now a real 60-digit value), but the detector has a blind spot at that
+  shape. Not chased here.
+- I expected `witness_value_copy` to be the risk, since `target_value` now
+  equals the canonical reference string exactly, which is what a value-copy
+  detector looks for. It does not fire on any of these. Recorded because the
+  guess was reasonable and wrong.
+
+### Tree hygiene
+
+Every gate run rewrites tree-measuring audit witnesses. `precision-gates.sh`
+names them and says DO NOT COMMIT (bean `qou-v0t8`); all reverted, tree clean
+at 0 dirty before each commit.
