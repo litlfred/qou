@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-13T08:21:42Z
+updated_at: 2026-09-19T07:37:38Z
 ---
 
 ## Context
@@ -476,3 +476,29 @@ or they re-introduce an over-claim the corpus removed once.
 `-- Ref:` line — and **two of the three were not mine**, i.e. the same text the
 entry above corrects. My PR #7267's measured finding is unaffected by any of it:
 `ocneanuTrace_mul_of_markov` is about `Hecke2` and never mentions Jones' theorem.
+
+
+---
+
+### 2026-09-19 — MEASURED: the multiplicativity hypothesis is DISCHARGED at the Hecke colimit, and this bean's own framing is stale
+
+This bean's "Attack options" offer (1) a full geometric Jones formalisation, months, and (2) an algebraic Markov-trace-functional route needing "the Markov trace formalised as a functional with the tower property". **Option 2 is DONE on `main`, sorry-free, and this bean does not say so.**
+
+`QOU/SchurWeyl/HeckeColimitMarkovTrace.lean` (0 `sorry`; header: *"This is the bridge"*):
+
+```
+heckeColimitMarkovTrace : MarkovTrace ℝ (HeckeLim ℝ q q⁻¹)
+instance braidedTower_heckeColimit
+theorem  towerSpan_heckeColimit      : TowerSpan (heckeColimitMarkovTrace …)
+theorem  disjointBlock_heckeColimit  : DisjointBlockMultiplicative (heckeColimitMarkovTrace …)
+```
+
+**And it is the non-degenerate carrier.** `MathlibExt/BraidedTowerInstances.lean` documents about *itself* that `heckeTowerMarkovTrace` needs `z*z = h*z + 1` to be a `MarkovTrace` at all and that the same equation makes its trace an algebra **homomorphism**, so its `disjointBlock_heckeTower` "holds for reasons that have nothing to do with disjoint blocks"; its verdict was **"no witness has all three properties"** (growing filtration, `h ≠ 0`, non-multiplicative trace). The colimit carrier has all three — `trLim` is `DirectLimit.Module.lift`, **not** `Ring.lift`, because *"`wtrace` is linear and is not a ring map (it is not multiplicative)"* — with `h = q − q⁻¹` at generic `q`, and `z = q³/(q²+1)` **convention D**, *"inherited from `wtrace_markov`, not chosen here"*, `zinv` *"derived, not posited"*. No fit.
+
+**Machine-checked consequence (RC=0, 2026-09-19).** Sibling PR #7418's chain theorems take `hdb : DisjointBlockMultiplicative T` as an explicit hypothesis, and `disjointBlock_heckeColimit` discharges it: `three_body_cumulant_vanishes` and `tr_chainWord` both elaborate at `heckeColimitMarkovTrace`, fully instantiated over `HeckeLim ℝ q q⁻¹`, carrying only the four genericity hypotheses and **no `TowerSpan` argument**. Method: compiled #7418's file from its branch to an olean, staged into the gitignored `.lake/build`, `#check`-only probe, then removed — nothing of theirs committed. Recorded as §7c of the step-11 audit (PR #7442).
+
+**What is still open, and it is NOT multiplicativity:** **faithfulness.** The colimit file's own "What is NOT proved here" — *"`H n` remains the image of level `n`, and whether `ofLim n` is injective is bean `qou-ejde`, assumed nowhere. Nor is `trLim` claimed faithful."*
+
+**Sibling beans stale in the same direction, none recording the above:** `qou-0fmb` is `todo` while its own steps 4–6 are landed (it is the plan this file executes); `qou-ejde` is `todo` while its step-1 keystone `heckeProduct_injective` is landed on `main` (`SchurWeyl/HeckeProductInjective.lean`, 0 sorry).
+
+**Bean stays open (rule 13a).** What remains is faithfulness and the geometric Jones statement, neither of which this discharges. Do not read "the hypothesis is dischargeable at one carrier" as "Jones multiplicativity is formalised" — that conflation is the error class this session recorded twice.
