@@ -47,7 +47,30 @@ export default table({
         "the fetched window. Settling the origin needs a full-history clone and " +
         "`git log -S`, which is not available here -- so what is established is *no " +
         "producer is findable by the six paths*, strengthened by the hand-assembly " +
-        "evidence above, not a proof that none ever existed.",
+        "evidence above, not a proof that none ever existed.\n\n" +
+        "**The excluding ruling, with its date.** The two model columns name routes "
+        + "excluded as consolidated binding routes by the no-knot-selection ruling of "
+        + "2026-09-05 (`docs/audits/2026-09-05-binding-route-consolidation-no-knot-"
+        + "selection.md`). The date sits here rather than in the block prose because a "
+        + "dated reference in prose is what `voice-author-notes-pollution` exists to "
+        + "catch -- it fired on exactly that line (`:15`, `P4:date-ref`) when the "
+        + "caveat was first written, and the fix was to move the date, not to drop "
+        + "the citation.\n\n"
+        + "**An independent prior analysis of this table sits in its own QA sidecar, "
+        + "and the six-path checklist cannot reach it.** `<block>.qa.json` carries an "
+        + "*agent* verdict on criterion `trap-superlative`, reviewed 2026-08-22 -- "
+        + "four weeks before the hunt above -- which reaches the same conclusion by a "
+        + "different route: \"the fourth column is unexplained\"; it is identical to "
+        + "`B_unif` \"only in the D row (-16.45)\"; and `B_unif - B_AME` and "
+        + "`B_unif - B_dedi` were both tested as readings of it and neither fits. It "
+        + "also independently confirms that `B_dedi` tracks AME to better than 0.5 % "
+        + "on every row. This CORROBORATES the finding above; it does not contradict "
+        + "it, and it is not a producer. It is recorded because of where it lives: "
+        + "`.qa.json` sidecars are **not** among the six corpus-grep paths (audits, "
+        + "content, computations, coordination ledgers, library, beans), so a negative "
+        + "established by that checklist is silent about this surface. Anyone "
+        + "declaring an item open or unexamined should read the block's own sidecar "
+        + "as well.",
     },
   ],
 });

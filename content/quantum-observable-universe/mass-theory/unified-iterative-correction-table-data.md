@@ -12,8 +12,8 @@
 > in this repository emits these seven rows, and a six-path corpus-grep sweep found
 > none. The two model columns name retired routes: $B_{\mathrm{dedi}}$ is the
 > dedicated per-$A$ knot-factor route and $B_{\mathrm{unif}}$ the unified
-> accumulator, both excluded as consolidated binding routes by the 2026-09-05
-> no-knot-selection ruling. The accumulator has since changed underneath the table,
+> accumulator, both excluded as consolidated binding routes by the
+> no-knot-selection ruling on binding-route consolidation. The accumulator has since changed underneath the table,
 > its Pass-2 sign gate having been dropped as asserted-not-derived, so
 > $B_{\mathrm{unif}}$ and $\sum_\lambda B_\lambda$ describe a functional the corpus
 > no longer computes. Two internal checks fail: the identity
