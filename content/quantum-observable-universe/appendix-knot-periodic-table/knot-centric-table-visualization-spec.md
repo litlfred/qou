@@ -8,7 +8,7 @@ magic-receptive shells.
 **Visualization specification (for implementation).**
 
 The visualization should be an interactive HTML page
-(`folio-assistant/simulators/knot_periodic_table.html`).  Its feature
+(`simulators/knot_periodic_table.html`).  Its feature
 groups fall into three physical layers the static table cannot expose
 side by side — the nuclear Borromean composition of each element, the
 trefoil-shell structure of its electrons, and the way both respond to
