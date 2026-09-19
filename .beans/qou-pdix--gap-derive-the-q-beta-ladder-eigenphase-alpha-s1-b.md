@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-14T23:12:47Z
+updated_at: 2026-09-19T07:18:22Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -3361,3 +3361,44 @@ finitely many monic integer polynomials of that degree and height ⟹ pigeonhole
 on powers ⟹ finite order. Days, not hours, for a generalisation nothing
 consumes. **Recommendation (my judgement, not a finding): leave it open and
 say why, which assertion 8 now does.**
+
+
+### 2026-09-19 — owner picked option 2: #7252 CLOSED, the locus Lean salvaged to #7441
+
+Owner's disposition on the supersession audit above. Executed:
+
+  * **#7252 CLOSED** as superseded, with a comment stating exactly what was
+    superseded and why, and pointing at the successor. Branch retained per the
+    never-delete-branches rule. Unsubscribed.
+  * **#7441 OPENED** — `QOU/QBeta/ModularDoubleLocusSeparation.lean` alone, six
+    sorry-free theorems, branched from current `origin/main` `665c91e403a` and
+    **re-verified there** rather than carried over: `lean`-direct exit 0
+    (`-DautoImplicit=false -s 65536`, PAPER olean tree, 3564 mathlib oleans),
+    0 warnings, 0 sorry, all six `#print axioms` →
+    `[propext, Classical.choice, Quot.sound]`. Subscribed.
+
+**Three defects fixed in the salvage, not merely carried:**
+
+  1. **Prior art now CITED.** `qbeta_modular_double_reciprocity.py` (scope-(b),
+     2026-09-07) is named as the sharper result *at the substrate pin*
+     (`log q · log q̃ = 4π²` ⇒ `q̃ ≈ 4.8e-165`), with this file positioned as
+     the *pin-independent* complement. #7252 cited only the weaker `FaddeevPhi`
+     docstring and missed the producer entirely.
+  2. **Convention stated, and shown not to matter.** Canonical is
+     `q = exp(2πib²)`; the file's display uses `q = exp(iπb²)`. Every theorem is
+     independent of the choice — the loci are cut out by `b²` alone and the
+     principal branch `Re b² = 0` lies in both admissible sets. The docstring
+     says so, and says why it is worth saying: the same slip made the numerical
+     claim wrong by a factor 4.
+  3. **No probe shipped.** Both salvage candidates measured against `α_req`,
+     which is inverted from the retired `z = 1` base. Left behind explicitly
+     rather than silently.
+
+**NOT salvaged, and named so nobody re-lands them as they stand:**
+`qbeta_pdix_step2_holonomy_slope_probe.py`, `qbeta_pdix_target_in_kz_level_probe.py`.
+Both need **re-aiming, not re-asserting** — and per the 2026-09-14 synthesis the
+class cuts both ways, so a stale *negative* in them could be re-opening a route
+rather than closing one.
+
+This bean stays **OPEN** (rule 13a — the conjecture is unclosed) and at **lower
+priority** than #7252 claimed: α is off the L2 critical path.
