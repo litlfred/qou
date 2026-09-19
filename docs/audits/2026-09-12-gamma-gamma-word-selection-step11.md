@@ -392,9 +392,69 @@ cannot flip the sign for a **single-crossing** interface, invariant = `interface
 step's contribution there is only that the exclusion is *vacuous on γγ words* — which is step
 8's theorem.
 
-3. And the arity premise itself now rests on **connected-sum multiplicativity, which is not
-   formalised** (§2). Formalising it would make the arity obstruction scope-(b) — that is the
-   single highest-value follow-up this step identifies, and it is a larger job than step 11.
+3. And the arity premise rests on **connected-sum multiplicativity**, whose formalisation
+   status changed under us — see §7b. It is *conditionally* formalised on an open sibling PR,
+   which keeps this scope-(a) but sharpens the follow-up considerably.
+
+## 7b. The route to scope-(b) is no longer "formalise it from scratch" — and this step constrains where that arc hands off
+
+§2 says the arity premise rests on connected-sum multiplicativity of the Markov trace, and
+§7 used to add *"which is not formalised — that block's own note says ‘Not formalised, as
+ever’."* **That is now out of date, and the correction cuts both ways.** Verified at source on
+`origin/claude/trusting-planck-wncjcc` rather than from its PR text.
+
+**What exists (PR #7418, `qou-2ss0`, OPEN — not on `main`).**
+`QOU/MathlibExt/SingleCrossingChainFactorizes.lean`, 23 declarations, sorry-free, proves the
+chain trace factorises and the three-body cumulant vanishes identically, from
+
+```
+DisjointBlockMultiplicative T :  ∀ n, ∀ a ∈ H n, ∀ b ∈ shifted n,  tr (a * b) = tr a * tr b
+```
+
+— which **is** the disjoint-block form of the multiplicativity §2 invokes. Its
+`singleCrossingJoin_of_disjointBlock` derives the one-crossing join from that law in three
+tactic lines, and it records that the *same* level-indexing error had been made twice before on
+this object. That is the structural shape of this step's junction factorisation, one level of
+abstraction up.
+
+**Why scope-(a) nevertheless stands, unchanged.** Three reasons, and the file states all three
+about itself:
+
+1. `TowerSpan`, the hypothesis it runs on, is **unproved, has no Hecke instance, and is not
+   provable from `MarkovTrace`** — the structure places no constraint on how `H (m+1)` is
+   generated. Its own docstring cites AGENTS.md §"Axiomatization is NOT a Proof" and says the
+   bond product is *"still not unconditionally derived"*. This is the
+   conditional-proved-≠-premise-established rule, and it binds here.
+2. **It is on an open PR, not in the product.** A result on a branch is not a corpus fact; that
+   is the `qou-3v8h` lesson, and citing it as though it had landed is exactly the move this
+   audit's §9 is a record of.
+3. Its satisfiability witness is **degenerate by its own admission** — the only model is `R`
+   with `⊥ = ⊤`, since Mathlib has no Hecke tower, so nothing yet connects the abstract
+   `MarkovTrace` structure to the Hecke Markov trace on braid closures. **That instantiation is
+   not established by anything read here**, and it is the step my §2 mechanism would actually
+   need.
+
+**What this changes for the follow-up, which is the useful part.** The decision this step hands
+the owner was *"formalise connected-sum multiplicativity — session-scale, not started."* That
+framing is superseded. The gap is now **`TowerSpan` plus instantiating the abstract tower at the
+Hecke tower** — the sibling's own words for the first half are *"one classical, citable
+structure theorem rather than two independent unknowns."* Sharper target, and a different
+question from the one I asked.
+
+**And step 11 constrains that arc's hand-off, which is why this is two-way.** #7418 ends by
+handing off: route (b) *"needs a word whose interfaces are **adjacent and non-commuting**. Which
+word is selected is the γγ / confinement-SDP question (`qou-ales`, `qou-99qc`)."* That is this
+bean. §1 and §2 answer part of it: the `H₆` interface is the **single** generator `2`, every
+γγ vertex occupies **two adjacent** generators and so must borrow one from a nucleon, and the
+resulting response is one-body at **every** placement. So an adjacent-and-non-commuting
+interface pair cannot be obtained by re-placing a γγ vertex on this interface — the obstruction
+is the arity of the functional, not the geometry of the choice. Whatever word that arc needs, it
+is not in the four-placement family.
+
+**Independent agreement on a third point.** #7418's C9 reports that *"the corpus's bond-product
+grounding cites a theorem whose hypothesis the production word fails."* §6b reaches the same
+finding from the other side — `ProductionChainBondProduct`'s strand-window hypotheses are
+sufficient-not-necessary. Two arcs, two methods, same conclusion about the same citation.
 
 **Nothing here retracts step 10.** Its closed form, `Θ(h⁴)` bracket and `α/100` ceiling are
 correct statements about the word they are about. What narrows is the interpretation of `r` as a

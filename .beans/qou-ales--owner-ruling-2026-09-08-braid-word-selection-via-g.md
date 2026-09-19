@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-19T06:31:41Z
+updated_at: 2026-09-19T06:37:25Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -177,3 +177,26 @@ Earlier today I retracted step 11's clause *"reading-3 feasibility is a conditio
 Cost: a true claim retracted, three declarations written against a parked question, and the wrong framing pushed to five artifacts before a re-read caught it. All five corrected (`ae00c24c80`): audit doc §4 + §7 + §9, the Lean docstring, the PR body, a correction comment to the siblings, and this entry.
 
 Head `ae00c24c80`; `lean`-direct `-DautoImplicit=false -s 65536` exit 0, zero warnings, no `sorryAx`. **The arity result is untouched under all three readings** — step 11's Lean carries no PSD hypothesis at all.
+
+
+### 2026-09-19 — the route to scope-(b) SHARPENED by sibling PR #7418, and step 11 constrains that arc's hand-off
+
+Found by sweeping open sibling PRs, not by being told. **#7418 (`qou-2ss0`, branch `claude/trusting-planck-wncjcc`, OPEN — not on `main`)** formalises the chain trace factorisation, and it changes the follow-up this bean records. Verified at source, not from its PR body.
+
+`QOU/MathlibExt/SingleCrossingChainFactorizes.lean` — 23 declarations, sorry-free — proves the chain trace factorises and the three-body cumulant vanishes identically, from
+
+```
+DisjointBlockMultiplicative T :  ∀ n, ∀ a ∈ H n, ∀ b ∈ shifted n,  tr (a * b) = tr a * tr b
+```
+
+which **is** the disjoint-block form of the connected-sum multiplicativity step 11's §2 mechanism invokes; `singleCrossingJoin_of_disjointBlock` derives the one-crossing join from it in three tactic lines.
+
+**Step 11 stays scope-(a), for three reasons the file states about itself:** `TowerSpan` is unproved, **has no Hecke instance**, and is **not provable from `MarkovTrace`** (its docstring cites AGENTS.md §"Axiomatization is NOT a Proof" and says the bond product is *"still not unconditionally derived"*); it is on an **open PR, not in the product** (the `qou-3v8h` lesson); and its satisfiability witness is **degenerate by its own admission** — the only model is `R` with `⊥ = ⊤`, since Mathlib has no Hecke tower, so nothing yet connects the abstract `MarkovTrace` to the Hecke Markov trace on braid closures. That last step is the one §2 would actually need and it is **not** established.
+
+**But the follow-up I recorded is superseded.** It said *"formalise connected-sum multiplicativity — session-scale, not started."* The gap is now **`TowerSpan` + instantiating the abstract tower at the Hecke tower**; the sibling's own phrase for the first half is *"one classical, citable structure theorem rather than two independent unknowns."* Sharper target, and a different question from the one put to the owner.
+
+**Two-way: step 11 constrains #7418's hand-off, which names this bean.** That PR ends by saying route (b) *"needs a word whose interfaces are adjacent and non-commuting. Which word is selected is the γγ / confinement-SDP question (`qou-ales`, `qou-99qc`)."* Step 11 answers part of it: the `H₆` interface is the **single** generator `2`, every γγ vertex occupies **two adjacent** generators and must borrow one from a nucleon, and the response is one-body at **every** placement. So an adjacent-and-non-commuting interface pair cannot be had by re-placing a γγ vertex on this interface — the obstruction is the **arity of the functional**, not the geometry of the choice. Whatever word that arc needs is not in the four-placement family.
+
+**Third point, independent agreement:** #7418's C9 (*"the corpus's bond-product grounding cites a theorem whose hypothesis the production word fails"*) is §6b's finding from the other side — `ProductionChainBondProduct`'s strand-window hypotheses are sufficient-not-necessary. Two arcs, two methods, same conclusion about the same citation.
+
+Recorded as §7b of the step-11 audit; §7 reason 3 re-scoped from "not formalised" to "conditionally formalised on an open PR". Coordination comment posted on #7418.
