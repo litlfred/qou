@@ -166,8 +166,41 @@ if _anchor in ("ideal", "muon", "canonical"):
     def log_q(x, _LN_Q=LN_Q):
         return _math.log(x) / _LN_Q
 
-    def q_int(n, _Q=Q, _QI=Q_INV, _HA=HA):
-        return (_Q**n - _QI**n) / _HA
+    # EXACT as of 2026-09-19 (bean `qou-oiz3`). This used to close over
+    # the muon binary64 globals as default arguments:
+    #     def q_int(n, _Q=Q, _QI=Q_INV, _HA=HA):
+    #         return (_Q**n - _QI**n) / _HA
+    # which is the SECOND float64 definition of [n]_q in the corpus and
+    # the one no grep of `qou_substrate` can reach. Fixing only
+    # constants.py would have left the whole muon layer on float64.
+    #
+    # It resolves the muon `q_at` from module globals at CALL time, so
+    # it picks up the rebind ~60 lines below (the 70-digit muon witness
+    # string) rather than qou_substrate's proton Newton solve. Cache is
+    # keyed on the working precision and built inside an explicit
+    # precision context, so it cannot inherit an ambient `mp.dps`.
+    _Q_INT_MUON_CACHE: dict = {}
+    _Q_INT_DPS_FLOOR = 50
+
+    def q_int(n):
+        """Quantum integer [n]_q at the IDEAL/MUON anchor, exact mpmath
+        at ``max(mp.dps, 50)``. Returns an ``mpf``."""
+        import mpmath as _m
+        d = max(_m.mp.dps, _Q_INT_DPS_FLOOR)
+        key = (n, d)
+        val = _Q_INT_MUON_CACHE.get(key)
+        if val is None:
+            prev = _m.mp.dps
+            try:
+                _m.mp.dps = max(prev, d + 10)
+                qq = q_at(d + 10)          # muon-rebound below
+                v = (qq ** n - qq ** (-n)) / (qq - 1 / qq)
+                _m.mp.dps = max(prev, d)
+                val = +v
+            finally:
+                _m.mp.dps = prev
+            _Q_INT_MUON_CACHE[key] = val
+        return val
 
     def q_int_err(n, _Q=Q, _QI=Q_INV, _HA=HA, _QE=Q_ERR):
         num_deriv = n * (_Q**(n - 1) + _QI**(n + 1))
