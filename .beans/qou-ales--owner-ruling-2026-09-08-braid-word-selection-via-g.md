@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-08T07:40:02Z
-updated_at: 2026-09-19T06:21:33Z
+updated_at: 2026-09-19T06:31:41Z
 ---
 
 ## Ruling (owner, 2026-09-08, chat, verbatim)
@@ -160,3 +160,20 @@ PSD is a property of the **matrix**, not of its trace, so `trace_cayleyInverse` 
 **PR #7249: open, non-draft, `mergeable_state: clean`, base = current main, 0 review threads.** Awaiting explicit owner merge permission — none has been given for this PR.
 
 **Bean stays `in-progress`** (rule 13a — open conjectures). Still open on `qou-ales`: formalising connected-sum multiplicativity (the one route to scope-(b) for the arity obstruction, session-scale, **owner's word needed, not started**); the colour-weighted `−h(1/2−δ/4)` word, whose four-letter alphabet `qou-99qc` explicitly flags as open at word level; `m > 3` bonds; `k > 10`; `θ/π` rationality; and the unresolved `InterfaceScalar.charge_independence_iff` vs `WeakIsospinT3Grading` tension, on which step 11 still takes neither side.
+
+
+### 2026-09-19 (same day, later) — 🛑 WITHDRAWING my own retraction: I had the wrong PSD reading
+
+Earlier today I retracted step 11's clause *"reading-3 feasibility is a condition on the character"* against the 2026-09-13 (B) ruling as relayed on PR #7249, which describes the criterion as `Matrix.PosSemidef` on every Wedderburn projection. **That is reading 1, reading 1 is parked, and the clause was correct.** Retraction withdrawn.
+
+**This bean is where the answer was.** The entry dated 2026-09-12 in this very file carries the owner verbatim — *"try PSD condfinement 3 for now, but keep 1 2 for later"* — with reading 3 spelled out as `χ_λ(w) ≥ 0` on every block with `y_λ > 0`, and reading 1 recorded as **provably selecting nothing non-trivial for `k ≤ 5`** on the interval. Step 5's `FrobeniusFeasible` / `FrobeniusSelected` formalise reading 3. I ran no corpus-grep, because a ruling relayed by a sibling reads like a primary source.
+
+**The argument is stronger than the clause claimed.** Reading 3 needs only character invariance, which `trace_cayleyInverse` already gave: `(2,1)` is 2-dimensional, step 4 proves `det V = 1`, so `χ_(2,1)(V⁻¹) = χ_(2,1)(V)`. And it propagates to the whole `H₆` interface for free — `GammaGammaH6Interface.InterfaceBranching` makes every `H₆` block character on `G^m` equal `a_λ + b_λ·χ_(2,1)(V^m) + c_λ` with `(a,b,c)` the Young-lattice path counts, i.e. **affine in the one `(2,1)` character**. So all eleven are swap-invariant, and under reading 3 the orientation swap cannot change feasibility at `H₃` **or** `H₆` — with no dimension caveat and no spectral criterion. (B) moves the *letter scope*, not the reading.
+
+**The three new declarations stay, relabelled as the reading-1 half.** `cayleyInverse_eq`, `det_cayleyInverse`, `cayleyInverse_preserves_charpoly_data` are sorry-free and true; the same ruling keeps readings 1 and 2 for later, and there PSD genuinely is a matrix rather than a character condition, so they say the swap cannot change reading 1's verdict on a 2-dimensional block when it is revisited. Not needed for the live reading; the docstring now leads with that.
+
+**The reusable lesson, recorded as §9 error 4 (replacing the wrong diagnosis I had put there):** the corpus-grep discipline applies to a claim about **what a ruling requires**, not only to a status or a figure — and a sibling's PR comment relaying a ruling is exactly as secondary as a source file's `## Status` note. The three readings differ in *what kind of object* they constrain (a matrix, its symmetric part, its character), so getting the reading wrong does not shift a threshold, it changes which theorem is relevant at all. This was the **second** propagation of the same wrong reading — AGENTS.md's note on this ruling records it being written as `Matrix.PosSemidef` and corrected 2026-09-14 (`qou-99qc`).
+
+Cost: a true claim retracted, three declarations written against a parked question, and the wrong framing pushed to five artifacts before a re-read caught it. All five corrected (`ae00c24c80`): audit doc §4 + §7 + §9, the Lean docstring, the PR body, a correction comment to the siblings, and this entry.
+
+Head `ae00c24c80`; `lean`-direct `-DautoImplicit=false -s 65536` exit 0, zero warnings, no `sorryAx`. **The arity result is untouched under all three readings** — step 11's Lean carries no PSD hypothesis at all.
