@@ -187,9 +187,68 @@ def log_q(x):
     Maps Skein polynomial ratios to q-integers: log_q(q^n) = n."""
     return math.log(x) / LN_Q
 
+# ── q_int: EXACT, not float64 (2026-09-19, bean `qou-oiz3`) ──────
+# This function used to be `(Q**n - Q_INV**n) / HA` over the binary64
+# globals above. It is the ROOT of the corpus-wide float64 leak that
+# PR #7245 mis-attributed to `pyhecke/wedderburn.py`: that module only
+# CALLS this, accumulating into an `mp.mpf`, so its results are
+# mpf-TYPED and float64-VALUED — they print 40 digits and carry ~16.
+#
+# The error is NOT bounded by float64 eps: `q_factorial(n)` multiplies
+# n such factors, so it grows with the strand count. Measured worst
+# relative move of `wedderburn_weight` over all partitions:
+#   n=3 3.05e-16 · n=6 8.75e-16 · n=9 1.62e-15 · n=12 2.41e-15
+# n = 3A, so at A >= 3 the L1 target (1 ppQ = 1e-15) was MISSED in the
+# Wedderburn-weight layer, invisibly.
+#
+# Two caches. `_Q_AT_CACHE` exists because `q_at` is an uncached Newton
+# solve and `q_int` is called inside O(n^2) hook loops. Both are keyed
+# on the working precision and both are built INSIDE an explicit
+# precision context, so neither can inherit the ambient `mp.dps` of
+# whoever touched it first (the cached-mpf trap).
+#
+# `_Q_INT_DPS_FLOOR` is deliberate: mpmath's ambient default is 15 dps,
+# so returning at the ambient precision would hand a bare-import caller
+# FEWER digits than the float64 route it replaces. The floor makes the
+# change non-regressive at every call site.
+_Q_AT_CACHE: dict = {}
+_Q_INT_CACHE: dict = {}
+_Q_INT_DPS_FLOOR = 50
+
+
+def _q_at_cached(dps: int):
+    """`q_at(dps)`, memoised on dps. `q_at` sets its own working
+    precision, so the cached value carries `dps` digits whatever the
+    ambient `mp.dps` was at first touch."""
+    v = _Q_AT_CACHE.get(dps)
+    if v is None:
+        v = q_at(dps)
+        _Q_AT_CACHE[dps] = v
+    return v
+
+
 def q_int(n):
-    """Quantum integer [n]_q = (q^n - q^{-n}) / (q - q^{-1})."""
-    return (Q**n - Q_INV**n) / HA
+    """Quantum integer [n]_q = (q^n - q^{-n}) / (q - q^{-1}).
+
+    Exact mpmath at ``max(mp.dps, 50)``, pinned on the proton anchor
+    (`q_at`). Returns an ``mpf``; the previous binary64 return is gone.
+    """
+    if not HAS_MPMATH:
+        # No silent float64 fallback — same disposition as the four
+        # other fallbacks in this module (owner directive 2026-09-07,
+        # AGENTS.md's own worked example of exemption 1).
+        raise RuntimeError(
+            "q_int requires mpmath: the float64 route was excised "
+            "2026-09-19 (bean qou-oiz3) and there is no exact "
+            "alternative without it. `pip install mpmath`"
+        )
+    d = max(_mp.mp.dps, _Q_INT_DPS_FLOOR)
+    key = (n, d)
+    val = _Q_INT_CACHE.get(key)
+    if val is None:
+        val = q_int_at(n, q=_q_at_cached(d + 10), dps=d)
+        _Q_INT_CACHE[key] = val
+    return val
 
 # ── Error propagation for derived constants ──────────────────────
 # All errors are δX = |dX/dq| × Q_ERR
